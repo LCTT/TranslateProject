@@ -1,16 +1,16 @@
-认领：by sd886393
-What containers can teach us about DevOps
+容器技术对指导我们 DevOps 的一些启发
 ======
 
-The use of containers supports the three pillars of DevOps practices: flow, feedback, and continual experimentation and learning.
+容器技术的使用支撑了目前 DevOps 三大主要实践：流水线，及时反馈，持续实验与学习以改进。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/LAW-patent_reform_520x292_10136657_1012_dc.png?itok=Cd2PmDWf)
 
-One can argue that containers and DevOps were made for one another. Certainly, the container ecosystem benefits from the skyrocketing popularity of DevOps practices, both in design choices and in DevOps’ use by teams developing container technologies. Because of this parallel evolution, the use of containers in production can teach teams the fundamentals of DevOps and its three pillars: [The Three Ways][1].
+容器技术与 DevOps 二者在发展的过程中是互相促进的关系。得益于 DevOps 的设计理念愈发先进，容器生态系统在设计上与组件选择上也有相应发展。同时，由于容器技术在生产环境中的使用，反过来也促进了 DevOps 三大主要实践：[DevOps 三个实践][1].
 
-### Principles of flow
 
-**Container flow**
+### 流水线的原则
+
+**容器流**
 
 A container can be seen as a silo, and from inside, it is easy to forget the rest of the system: the host node, the cluster, the underlying infrastructure. Inside the container, it might appear that everything is functioning in an acceptable manner. From the outside perspective, though, the application inside the container is a part of a larger ecosystem of applications that make up a service: the web API, the web app user interface, the database, the workers, and caching services and garbage collectors. Teams put constraints on the container to limit performance impact on infrastructure, and much has been done to provide metrics for measuring container performance because overloaded or slow container workloads have downstream impact on other services or customers.
 
@@ -85,7 +85,7 @@ via: https://opensource.com/article/18/9/containers-can-teach-us-devops
 
 作者：[Chris Hermansen][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/sd886393)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
