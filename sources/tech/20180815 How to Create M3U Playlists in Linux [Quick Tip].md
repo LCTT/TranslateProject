@@ -1,37 +1,36 @@
-translating by lujun9972
-How to Create M3U Playlists in Linux [Quick Tip]
+Linux下如何创建 M3U 播放列表 [小建议]
 ======
-**Brief: A quick tip on how to create M3U playlists in Linux terminal from unordered files to play them in a sequence.**
+**简介：关于如何在Linux终端中根据乱序文件创建M3U播放列表实现循序播放的小建议。**
 
 ![Create M3U playlists in Linux Terminal][1]
 
-I am a fan of foreign tv series and it’s not always easy to get them on DVD or on streaming services like [Netflix][2]. Thankfully, you can find some of them on YouTube and [download them from YouTube][3].
+我是外国电视连续剧的粉丝，这些连续剧不太容易从DVD或像[Netflix] [2]这样的流媒体上获得。还在，您可以在YouTube上找到一些内容并[从YouTube下载][3]。
 
-Now there comes a problem. Your files might not be sorted in a particular order. In GNU/Linux files are not naturally sort ordered by number sequencing so I had to make a .m3u playlist so [MPV video player][4] would play the videos in sequence and not out of sequence.
+现在出现了一个问题. 你的文件可能不是按顺序存储的. 在GNU / Linux中，文件不是按数字顺序自然排序的，因此我必须创建.m3u播放列表，以便[MPV视频播放器][4]可以按顺序播放视频而不是乱顺进行播放。
 
-Also sometimes the numbers are in the middle or the end like ‘My Web Series S01E01.mkv’ as an example. The episode information here is in the middle of the filename, the ‘S01E01’ which tells us, humans, which is the first episode and which needs to come in next.
+同样的，有时候表示第几集的数字实在文件名中间或结尾的,像这样 ‘My Web Series S01E01.mkv’. 这里的剧集信息位于文件名的中间，'S01E01'告诉我们人类，哪个是第一集，下一集是哪一个文件。
 
-So what I did was to generate an m3u playlist in the video directory and tell MPV to play the .m3u playlist and it would take care of playing them in the sequence.
+因此我要做的事情就是在视频墓中创建一个 m3u 播放列表并告诉MPV播放这个 .m3u 播放列表，MPV自然会按顺序播放这些视频.
 
-### What is an M3U file?
+### 什么是M3U 文件?
 
-[M3U][5] is basically a text file that contains filenames in a specific order. When a player like MPV or VLC opens an M3U file, it tries to play the specified files in the given sequence.
+[M3U][5] 基本上就是个按特定顺序包含文件名的文本文件. 当类似MPV或VLC这样的播放器打开M3U文件时, 它会尝试按给定的顺序播放指定文件.
 
-### Creating M3U to play audio/video files in a sequence
+### 创建M3U来按顺序播放音频/视频文件
 
-In my case, I used the following command:
+就我而言, 我使用了下面命令:
 ```
 $/home/shirish/Videos/web-series-video/$ ls -1v |grep .mkv > /tmp/1.m3u && mv /tmp/1.m3u .
 
 ```
 
-Let’s break it down a bit and see each bit as to what it means –
+然我们拆分一下看看每个部分表示什么意思 –
 
-**ls -1v** = This is using the plain ls or listing entries in the directory. The -1 means list one file per line. while -v natural sort of (version) numbers within text
+**ls -1v** = 这就是用普通的 ls 来列出目录中的内容. 其中 `-1` 表示每行显示一个文件. 而 `-v` 表示根据文本中的数字(版本)进行自然排序
 
-**| grep .mkv** = It’s basically telling `ls` to look for files which are ending in .mkv . It could be .mp4 or any other media file format that you want.
+**| grep .mkv** = 基本上就是告诉 `ls` 寻找那些以 `.mkv` 结尾的文件. 它也可以是 `.mp4` 或其他任何你想要的媒体文件格式.
 
-It’s usually a good idea to do a dry run by running the command on the console:
+通过在控制台上运行命令来进行试运行通常是个好主意：
 ```
 ls -1v |grep .mkv
 My Web Series S01E01 [Episode 1 Name] Multi 480p WEBRip x264 - xRG.mkv
@@ -45,25 +44,25 @@ My Web Series S01E08 [Episode 8 Name] Multi 480p WEBRip x264 - xRG.mkv
 
 ```
 
-This tells me that what I’m trying to do is correct. Now just have to make that the output is in the form of a .m3u playlist which is the next part.
+结果显示我要做的事情是正确的. 现在下一步就是让输出以 `.m3u` 播放列表的格式输出.
 ```
 ls -1v |grep .mkv > /tmp/web_playlist.m3u && mv /tmp/web_playlist.m3u .
 
 ```
 
-This makes the .m3u generate in the current directory. The .m3u playlist is nothing but a .txt file with the same contents as above with the .m3u extension. You can edit it manually as well and add the exact filenames in an order you desire.
+这就在当前目录中创建了 `.m3u` 文件. 这个`.m3u`播放列表只不过是一个.txt文件，其内容与上面相同，扩展名为.m3u。 你也可以手动编辑它，并按照想要的顺序添加确切的文件名。
 
-After that you just have to do something like this:
+之后你只需要这样做:
 ```
 mpv web_playlist.m3u
 
 ```
 
-The great thing about MPV and the playlists, in general, is that you don’t have to binge-watch. You can see however much you want to do in one sitting and see the rest in the next session or the session after that.
+一般来说，关于MPV和播放列表的好处在于你不需要一次性全部看完。 您可以一次看任意长时间，然后在下一次查看其余部分。
 
-I hope to do articles featuring MPV as well as how to make mkv files embedding subtitles in a media file but that’s in the future.
+我希望写一些有关MPV的文章，以及如何制作在媒体文件中嵌入字幕的mkv文件，但这是将来的事情了。
 
-Note: It’s FOSS doesn’t encourage piracy.
+注意: 这是开源软件，不鼓励盗版
 
 --------------------------------------------------------------------------------
 
