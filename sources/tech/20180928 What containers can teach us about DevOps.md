@@ -12,6 +12,7 @@
 
 **容器流**
 
+每个容器都可以看成一个独立的封闭仓库，当你置身其中，不需要管外部的系统环境、集群环境、以及其他基础设施。而在容器内部，
 A container can be seen as a silo, and from inside, it is easy to forget the rest of the system: the host node, the cluster, the underlying infrastructure. Inside the container, it might appear that everything is functioning in an acceptable manner. From the outside perspective, though, the application inside the container is a part of a larger ecosystem of applications that make up a service: the web API, the web app user interface, the database, the workers, and caching services and garbage collectors. Teams put constraints on the container to limit performance impact on infrastructure, and much has been done to provide metrics for measuring container performance because overloaded or slow container workloads have downstream impact on other services or customers.
 
 **Real-world flow**
