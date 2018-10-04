@@ -1,4 +1,4 @@
-
+thecyanbird translating
 
 Linux Has a Code of Conduct and Not Everyone is Happy With it
 ======
