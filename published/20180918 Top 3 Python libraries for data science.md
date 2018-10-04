@@ -1,7 +1,7 @@
 3 个用于数据科学的顶级 Python 库
 ======
 
->使用这些库把 Python 变成一个科学数据分析和建模工具。
+> 使用这些库把 Python 变成一个科学数据分析和建模工具。
 
 ![][7]
 
@@ -49,7 +49,6 @@ matrix_two = np.arange(1,10).reshape(3,3)
 matrix_two
 ```
 
-Here is the output:
 输出如下：
 
 ```
@@ -62,9 +61,7 @@ array([[1, 2, 3],
 
 ```
 matrix_multiply = np.dot(matrix_one, matrix_two)
-
 matrix_multiply
-
 ```
 
 相乘后的输出如下：
@@ -96,17 +93,15 @@ matrix_multiply
 
 ### Pandas
 
-[Pandas][3] 是另一个可以提高你的 Python 数据科学技能的优秀库。就和 NumPy 一样，它属于 SciPy 开源软件家族，可以在 BSD 免费许可证许可下使用。
+[Pandas][3] 是另一个可以提高你的 Python 数据科学技能的优秀库。就和 NumPy 一样，它属于 SciPy 开源软件家族，可以在 BSD 自由许可证许可下使用。
 
-Pandas 提供了多功能并且很强大的工具用于管理数据结构和执行大量数据分析。该库能够很好的处理不完整、非结构化和无序的真实世界数据，并且提供了用于整形、聚合、分析和可视化数据集的工具
+Pandas 提供了多能而强大的工具，用于管理数据结构和执行大量数据分析。该库能够很好的处理不完整、非结构化和无序的真实世界数据，并且提供了用于整形、聚合、分析和可视化数据集的工具
 
 Pandas 中有三种类型的数据结构：
 
-  * Series: 一维、相同数据类型的数组
-  * DataFrame: 二维异型矩阵
-  * Panel: 三维大小可变数组
-
-
+  * Series：一维、相同数据类型的数组
+  * DataFrame：二维异型矩阵
+  * Panel：三维大小可变数组
 
 例如，我们来看一下如何使用 Panda 库（缩写成 `pd`）来执行一些描述性统计计算。
 
@@ -232,7 +227,7 @@ via: https://opensource.com/article/18/9/top-3-python-libraries-data-science
 作者：[Dr.Michael J.Garbade][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
