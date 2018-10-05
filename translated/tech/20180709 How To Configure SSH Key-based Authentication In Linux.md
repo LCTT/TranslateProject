@@ -64,14 +64,14 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-如果你已经创建了密钥对，你将看到以下信息。输入 y 就会覆盖已存在的密钥。
+如果你已经创建了密钥对，你将看到以下信息。输入 `y` 就会覆盖已存在的密钥。
 
 ```
 /home/username/.ssh/id_rsa already exists.
 Overwrite (y/n)?
 ```
 
-请注意**密码是可选的**。如果你输入了密码，那么每次通过 SSH 访问远程系统时都要求输入密码，除非你使用了 SSH 代理保存了密码。如果你不想要密码（虽然不安全），简单地敲两次回车。不过，我建议你使用密码。从安全的角度来看，使用无密码的 ssh 密钥对不是什么好主意。这种方式应该限定在特殊的情况下使用，例如，没有用户介入的服务访问远程系统。（例如，用 rsync 远程备份……）
+请注意**密码是可选的**。如果你输入了密码，那么每次通过 SSH 访问远程系统时都要求输入密码，除非你使用了 SSH 代理保存了密码。如果你不想要密码（虽然不安全），简单地敲两次回车。不过，我建议你使用密码。从安全的角度来看，使用无密码的 ssh 密钥对不是什么好主意。这种方式应该限定在特殊的情况下使用，例如，没有用户介入的服务访问远程系统。（例如，用 `rsync` 远程备份……）
 
 如果你已经在个人文件 `~/.ssh/id_rsa` 中有了无密码的密钥，但想要更新为带密码的密钥。使用下面的命令：
 
@@ -95,7 +95,7 @@ $ ssh-copy-id sk@192.168.225.22
 
 在这里，我把本地（Arch Linux）系统上的公钥拷贝到了远程系统（Ubuntu 18.04 LTS）上。从技术上讲，上面的命令会把本地系统 `~/.ssh/id_rsa.pub` 文件中的内容拷贝到远程系统 `~/.ssh/authorized_keys` 中。明白了吗？非常棒。
 
-输入 yes 来继续连接你的远程 SSH 服务端。接着，输入远程系统 sk 用户的密码。
+输入 `yes` 来继续连接你的远程 SSH 服务端。接着，输入远程系统用户  `sk` 的密码。
 
 ```
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -118,7 +118,7 @@ $ ssh-copy-id -f sk@192.168.225.22
 
 ### 在远程系统上禁用基于密码认证的 SSH
 
-你需要在 root 或者 sudo 用户下执行下面的命令。
+你需要在 root 用户或者 `sudo` 执行下面的命令。
 
 禁用基于密码的认证，你需要在远程系统的终端里编辑 `/etc/ssh/sshd_config` 配置文件：
 
@@ -170,7 +170,7 @@ Warning: Permanently added '192.168.225.22' (ECDSA) to the list of known hosts.
 Permission denied (publickey).
 ```
 
-如你所见，除了 CentOS（译注：根据上文，这里应该是 Arch）系统外，我不能通过其它任何系统 SSH 访问我的远程系统 Ubuntu 18.04。
+如你所见，除了 CentOS（LCTT 译注：根据上文，这里应该是 Arch）系统外，我不能通过其它任何系统 SSH 访问我的远程系统 Ubuntu 18.04。
 
 ### 为 SSH 服务端添加更多客户端系统的密钥
 
