@@ -1,3 +1,4 @@
+【bookug翻译中】
 Moving to Linux from dated Windows machines
 ======
 
