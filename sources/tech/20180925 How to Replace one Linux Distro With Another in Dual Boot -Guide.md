@@ -1,3 +1,5 @@
+HankChow translating
+
 How to Replace one Linux Distro With Another in Dual Boot [Guide]
 ======
 **If you have a Linux distribution installed, you can replace it with another distribution in the dual boot. You can also keep your personal documents while switching the distribution.**
