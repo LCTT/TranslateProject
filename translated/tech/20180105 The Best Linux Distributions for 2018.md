@@ -97,7 +97,7 @@ Ubuntu Core 内置的另一个安全领域是登录机制。Ubuntu Core使用Ubu
 via: https://www.linux.com/blog/learn/intro-to-linux/2018/1/best-linux-distributions-2018
 
 作者：[JACK WALLEN ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[dianbanjiu](https://github.com/dianbanjiu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
