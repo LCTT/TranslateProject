@@ -1,4 +1,4 @@
-Rock Solid React.js Foundations: A Beginner’s Guide
+GraveAccent翻译中 Rock Solid React.js Foundations: A Beginner’s Guide
 ============================================================
  ** 此处有Canvas,请手动处理 ** 
 
