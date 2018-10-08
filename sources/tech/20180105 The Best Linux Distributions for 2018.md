@@ -1,4 +1,4 @@
-The Best Linux Distributions for 2018
+[translating by dianbanjiu] The Best Linux Distributions for 2018
 ============================================================
 
 ![Linux distros 2018](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/linux-distros-2018.jpg?itok=Z8sdx4Zu "Linux distros 2018")
