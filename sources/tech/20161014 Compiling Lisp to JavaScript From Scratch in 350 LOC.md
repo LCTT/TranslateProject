@@ -617,12 +617,14 @@ undefined
 via: https://gilmi.me/blog/post/2016/10/14/lisp-to-js
 
 作者：[ Gil Mizrahi ][a]
+选题：[oska874][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://gilmi.me/home
+[b]:https://github.com/oska874
 [1]:https://gilmi.me/blog/authors/Gil
 [2]:https://gilmi.me/blog/tags/compilers
 [3]:https://gilmi.me/blog/tags/fp
