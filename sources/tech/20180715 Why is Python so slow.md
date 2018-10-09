@@ -172,12 +172,14 @@ All about JIT compilers [https://hacks.mozilla.org/2017/02/a-crash-course-in-ju
 via: https://hackernoon.com/why-is-python-so-slow-e5074b6fe55b
 
 作者：[Anthony Shaw][a]
+选题：[oska874][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://hackernoon.com/@anthonypjshaw?source=post_header_lockup
+[b]:https://github.com/oska874
 [1]:http://dabeaz.blogspot.com/2010/01/python-gil-visualized.html
 [2]:http://cython.org/
 [3]:http://notes-on-cython.readthedocs.io/en/latest/std_dev.html
