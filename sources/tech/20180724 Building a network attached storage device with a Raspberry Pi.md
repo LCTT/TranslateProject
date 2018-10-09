@@ -1,3 +1,5 @@
+[翻译中]translating by jrg
+
 Building a network attached storage device with a Raspberry Pi
 ======
 
