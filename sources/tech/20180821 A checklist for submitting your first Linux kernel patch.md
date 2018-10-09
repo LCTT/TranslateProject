@@ -1,3 +1,4 @@
+Translating by qhwdw
 A checklist for submitting your first Linux kernel patch
 ======
 
