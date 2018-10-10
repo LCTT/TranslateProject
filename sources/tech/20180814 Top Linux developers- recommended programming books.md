@@ -1,5 +1,3 @@
-translated by stephenxs
-
 Top Linux developers' recommended programming books
 ======
 Without question, Linux was created by brilliant programmers who employed good computer science knowledge. Let the Linux programmers whose names you know share the books that got them started and the technology references they recommend for today's developers. How many of them have you read?
