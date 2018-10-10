@@ -1,21 +1,22 @@
-The df Command Tutorial With Examples For Beginners
+df 命令的新手教程
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/04/df-command-1-720x340.png)
 
-In this guide, we are going to learn to use **df** command. The df command, stands for **D** isk **F** ree, reports file system disk space usage. It displays the amount of disk space available on the file system in a Linux system. The df command is not to be confused with **du** command. Both serves different purposes. The df command reports **how much disk space we have** (i.e free space) whereas the du command reports **how much disk space is being consumed** by the files and folders. Hope I made myself clear. Let us go ahead and see some practical examples of df command, so you can understand it better.
+在本指南中，我们将学习如何使用 **df** 命令。df 命令是 `Disk Free` 的首字母组合，它报告文件系统磁盘空间的使用情况。它显示一个 Linux 系统中文件系统上可用磁盘空间的数量。df 命令很容易与 **du** 命令混淆。它们的用途不同。df 命令报告 **我们拥有多少磁盘空间**（空闲磁盘空间），而 du 命令报告 **被文件和目录占用了多少磁盘空间**。希望我这样的解释你能更清楚。在继续之前，我们来看一些 df 命令的实例，以便于你更好地理解它。
 
-### The df Command Tutorial With Examples
+### df 命令使用举例
 
-**1\. View entire file system disk space usage**
+**1、查看整个文件系统磁盘空间使用情况**
 
-Run df command without any arguments to display the entire file system disk space.
+无需任何参数来运行 df 命令，以显示整个文件系统磁盘空间使用情况。
 ```
 $ df
 
 ```
 
-**Sample output:**
+**示例输出：**
+
 ```
 Filesystem 1K-blocks Used Available Use% Mounted on
 dev 4033216 0 4033216 0% /dev
@@ -32,20 +33,20 @@ tmpfs 807776 28 807748 1% /run/user/1000
 
 ![][2]
 
-As you can see, the result is divided into six columns. Let us see what each column means.
+正如你所见，输出结果分为六列。我们来看一下每一列的含义。
 
-  * **Filesystem** – the filesystem on the system.
-  * **1K-blocks** – the size of the filesystem, measured in 1K blocks.
-  * **Used** – the amount of space used in 1K blocks.
-  * **Available** – the amount of available space in 1K blocks.
-  * **Use%** – the percentage that the filesystem is in use.
-  * **Mounted on** – the mount point where the filesystem is mounted.
+  * **Filesystem** – Linux 系统中的文件系统
+  * **1K-blocks** – 文件系统的大小，用 1K 大小的块来表示。
+  * **Used** – 以 1K 大小的块所表示的已使用数量。
+  * **Available** – 以 1K 大小的块所表示的可用空间的数量。
+  * **Use%** – 文件系统中已使用的百分比。
+  * **Mounted on** – 已挂载的文件系统的挂载点。
 
 
 
-**2\. Display file system disk usage in human readable format**
+**2、以人类友好格式显示文件系统硬盘空间使用情况**
 
-As you may noticed in the above examples, the usage is showed in 1k blocks. If you want to display them in human readable format, use **-h** flag.
+在上面的示例中你可能已经注意到了，它使用 1K 大小的块为单位来表示使用情况，如果你以人类友好格式来显示它们，可以使用 **-h** 标志。
 ```
 $ df -h
 Filesystem Size Used Avail Use% Mounted on
@@ -61,11 +62,11 @@ tmpfs 789M 28K 789M 1% /run/user/1000
 
 ```
 
-Now look at the **Size** and **Avail** columns, the usage is shown in GB and MB.
+现在，在 **Size** 列和 **Avail** 列，使用情况是以 GB 和 MB 为单位来显示的。
 
 **3\. Display disk space usage only in MB**
 
-To view file system disk space usage only in Megabytes, use **-m** flag.
+如果仅以 MB 为单位来显示文件系统磁盘空间使用情况，使用 **-m** 标志。
 ```
 $ df -m
 Filesystem 1M-blocks Used Available Use% Mounted on
@@ -81,9 +82,9 @@ tmpfs 789 1 789 1% /run/user/1000
 
 ```
 
-**4\. List inode information instead of block usage**
+**4、列出节点而不是块的使用情况**
 
-We can list inode information instead of block usage by using **-i** flag as shown below.
+如下所示，我们可以通过使用 **-i** 标记来列出节点而不是块的使用情况。
 ```
 $ df -i
 Filesystem Inodes IUsed IFree IUse% Mounted on
@@ -99,9 +100,9 @@ tmpfs 1009720 29 1009691 1% /run/user/1000
 
 ```
 
-**5\. Display the file system type**
+**5、显示文件系统类型**
 
-To display the file system type, use **-T** flag.
+使用 **-T** 标志显示文件系统类型。
 ```
 $ df -T
 Filesystem Type 1K-blocks Used Available Use% Mounted on
@@ -117,11 +118,11 @@ tmpfs tmpfs 807776 28 807748 1% /run/user/1000
 
 ```
 
-As you see, there is an extra column (second from left) that shows the file system type.
+正如你所见，现在出现了显示文件系统类型的额外的列（从左数的第二列）。
 
-**6\. Display only the specific file system type**
+**6、仅显示指定类型的文件系统**
 
-We can limit the listing to a certain file systems. for example **ext4**. To do so, we use **-t** flag.
+我们可以限制仅列出某些文件系统。比如，只列出 **ext4** 文件系统。我们使用 **-t** 标志。
 ```
 $ df -t ext4
 Filesystem 1K-blocks Used Available Use% Mounted on
@@ -130,11 +131,11 @@ Filesystem 1K-blocks Used Available Use% Mounted on
 
 ```
 
-See? This command shows only the ext4 file system disk space usage.
+看到了吗？这个命令仅显示了 ext4 文件系统的磁盘空间使用情况。
 
-**7\. Exclude specific file system type**
+**7、不列出指定类型的文件系统**
 
-Some times, you may want to exclude a specific file system from the result. This can be achieved by using **-x** flag.
+有时，我们可能需要从结果中去排除指定类型的文件系统。我们可以使用 **-x** 标记达到我们的目的。
 ```
 $ df -x ext4
 Filesystem 1K-blocks Used Available Use% Mounted on
@@ -148,11 +149,11 @@ tmpfs 807776 28 807748 1% /run/user/1000
 
 ```
 
-The above command will display all file systems usage, except **ext4**.
+上面的命令列出了除 **ext4** 类型以外的全部文件系统。
 
-**8\. Display usage for a folder**
+**8、显示一个目录的磁盘使用情况**
 
-To display the disk space available and where it is mounted for a folder, for example **/home/sk/** , use this command:
+去显示某个目录的硬盘空间使用情况以及它的挂载点，例如 **/home/sk/** 目录，可以使用如下的命令：
 ```
 $ df -hT /home/sk/
 Filesystem Type Size Used Avail Use% Mounted on
@@ -160,19 +161,19 @@ Filesystem Type Size Used Avail Use% Mounted on
 
 ```
 
-This command shows the file system type, used and available space in human readable form and where it is mounted. If you don’t to display the file system type, just ignore the **-t** flag.
+这个命令显示文件系统类型、以人类友好格式显示已使用和可用磁盘空间、以及它的挂载点。如果你不想去显示文件系统类型，只需要忽略 **-t** 标志即可。
 
-For more details, refer the man pages.
+更详细的使用情况，请参阅 man 手册页。
 ```
 $ man df
 
 ```
 
-**Recommended read:**
+**建议阅读：**
 
-And, that’s all for today! I hope this was useful. More good stuffs to come. Stay tuned!
+今天就到此这止！我希望对你有用。还有更多更好玩的东西即将奉上。请继续关注！
 
-Cheers!
+再见！
 
 
 
@@ -181,7 +182,7 @@ Cheers!
 via: https://www.ostechnix.com/the-df-command-tutorial-with-examples-for-beginners/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
@@ -190,3 +191,4 @@ via: https://www.ostechnix.com/the-df-command-tutorial-with-examples-for-beginne
 [a]:https://www.ostechnix.com/author/sk/
 [1]:data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
 [2]:http://www.ostechnix.com/wp-content/uploads/2018/04/df-command.png
+
