@@ -1,3 +1,5 @@
+translating by singledo
+
 How to use the SSH and SFTP protocols on your home network
 ======
 
