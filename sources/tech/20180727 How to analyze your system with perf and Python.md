@@ -1,5 +1,3 @@
-pinewall translating
-
 How to analyze your system with perf and Python
 ======
 
