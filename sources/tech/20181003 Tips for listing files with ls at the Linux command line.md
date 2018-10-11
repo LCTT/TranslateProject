@@ -1,3 +1,5 @@
+translating---geekpi
+
 Tips for listing files with ls at the Linux command line
 ======
 Learn some of the Linux 'ls' command's most useful variations.
