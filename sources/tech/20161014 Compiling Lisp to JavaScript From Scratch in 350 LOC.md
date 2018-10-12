@@ -1,3 +1,5 @@
+BriFuture is translating this article
+
 # Compiling Lisp to JavaScript From Scratch in 350 
 
 In this article we will look at a from-scratch implementation of a compiler from a simple LISP-like calculator language to JavaScript. The complete source code can be found [here][7].
