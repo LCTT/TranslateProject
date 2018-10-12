@@ -1,14 +1,15 @@
 三周内构建 JavaScript 全栈 web 应用
-============================================================
+===========
 
 ![](https://cdn-images-1.medium.com/max/2000/1*PgKBpQHRUgqpXcxtyehPZg.png)
-应用 Align 中，用户主页的控制面板
+
+*应用 Align 中，用户主页的控制面板*
 
 ### 从构思到部署应用程序的简单分步指南
 
-我在 Grace Hopper Program 为期三个月的编码训练营即将结束，实际上这篇文章的标题有些纰漏 —— 现在我已经构建了 _三个_ 全栈应用：[从零开始的电子商店（an e-commerce store from scratch）][3]、我个人的 [私人黑客马拉松项目（personal hackathon project）][4]，还有这个“三周的结业项目”。这个项目是迄今为止强度最大的 —— 我和另外两名队友共同花费三周的时光 —— 而它也是我在训练营中最引以为豪的成就。这是我目前所构建和涉及的第一款稳定且复杂的应用。
+我在 Grace Hopper Program 为期三个月的编码训练营即将结束，实际上这篇文章的标题有些纰漏 —— 现在我已经构建了 _三个_ 全栈应用：[从零开始的电子商店][3]、我个人的 [私人黑客马拉松项目][4]，还有这个“三周的结业项目”。这个项目是迄今为止强度最大的 —— 我和另外两名队友共同花费三周的时光 —— 而它也是我在训练营中最引以为豪的成就。这是我目前所构建和涉及的第一款稳定且复杂的应用。
 
-如大多数开发者所知，即使你“知道怎么编写代码”，但真正要制作第一款全栈的应用却是非常困难的。JavaScript 生态系统出奇的大：有包管理器，模块，构建工具，转译器，数据库，库文件，还要对上述所有东西进行选择，难怪如此多的编程新手除了 Codecademy 的教程外，做不了任何东西。这就是为什么我想让你体验这个决策的分布教程，跟着我们队伍的脚印，构建可用的应用。
+如大多数开发者所知，即使你“知道怎么编写代码”，但真正要制作第一款全栈的应用却是非常困难的。JavaScript 生态系统出奇的大：有包管理器、模块、构建工具、转译器、数据库、库文件，还要对上述所有东西进行选择，难怪如此多的编程新手除了 Codecademy 的教程外，做不了任何东西。这就是为什么我想让你体验这个决策的分布教程，跟着我们队伍的脚印，构建可用的应用。
 
 * * *
 
@@ -38,11 +39,7 @@
 
 ![](https://cdn-images-1.medium.com/max/400/1*r5FBoa8JsYOoJihDgrpzhg.jpeg)
 
-
-
 ![](https://cdn-images-1.medium.com/max/400/1*0O8ZWiyUgWm0b8wEiHhuPw.jpeg)
-
-
 
 ![](https://cdn-images-1.medium.com/max/400/1*y9Q5v-sF0PWmkhthcW338g.jpeg)
 
@@ -53,35 +50,32 @@
 到了设计数据结构的时候。基于我们的示意图和用户故事，我们在 Google doc 中制作了一个清单，它包含我们将会需要的模型和每个模型应该包含的属性。我们知道需要 “目标（goal）” 模型、“用户（user）”模型、“里程碑（milestone）”模型、“记录（checkin）”模型还有最后的“资源（resource）”模型和“上传（upload）”模型，
 
 ![](https://cdn-images-1.medium.com/max/800/1*oA3mzyixVzsvnN_egw1xwg.png)
-最初的数据模型结构
+
+*最初的数据模型结构*
 
 在正式确定好这些模型后，我们需要选择某种 _类型_ 的数据库：“关系型的”还是“非关系型的”（也就是“SQL”还是“NoSQL”）。由于基于表的 SQL 数据库需要预定义的格式，而基于文档的 NoSQL 数据库却可以用动态格式描述非结构化数据。
 
 对于我们这个情况，用 SQL 型还是 No-SQL 型的数据库没多大影响，由于下列原因，我们最终选择了 Google 的 NoSQL 云数据库 Firebase：
 
 1.  它能够把用户上传的图片保存在云端并存储起来
-
 2.  它包含 WebSocket 功能，能够实时更新
-
 3.  它能够处理用户验证，并且提供简单的 OAuth 功能。
 
-我们确定了数据库后，就要理解数据模型之间的关系了。由于 Firebase 是 NoSQL 类型，我们无法创建联合表或者设置像 _"记录 （Checkins）属于目标（Goals）"_ 的从属关系。因此我们需要弄清楚 JSON 树是什么样的，对象是怎样嵌套的（或者不是嵌套的关系）。最终，我们构建了像这样的模型：
-
+我们确定了数据库后，就要理解数据模型之间的关系了。由于 Firebase 是 NoSQL 类型，我们无法创建联合表或者设置像 _“记录 （Checkins）属于目标（Goals）”_ 的从属关系。因此我们需要弄清楚 JSON 树是什么样的，对象是怎样嵌套的（或者不是嵌套的关系）。最终，我们构建了像这样的模型：
 
 ![](https://cdn-images-1.medium.com/max/800/1*py0hQy-XHZWmwff3PM6F1g.png)
-我们最终为目标（Goal）对象确定的 Firebase 数据格式。注意里程碑（Milestones）和记录（Checkins）对象嵌套在 Goals 中。
 
-_(注意: 出于性能考虑，Firebase 更倾向于简单、常规的数据结构, 但对于我们这种情况，需要在数据中进行嵌套，因为我们不会从数据库中获取目标（Goal）却不获取相应的子对象里程碑（Milestones）和记录（Checkins）。)_ 
+*我们最终为目标（Goal）对象确定的 Firebase 数据格式。注意里程碑（Milestones）和记录（Checkins）对象嵌套在 Goals 中。*
+
+_（注意: 出于性能考虑，Firebase 更倾向于简单、常规的数据结构, 但对于我们这种情况，需要在数据中进行嵌套，因为我们不会从数据库中获取目标（Goal）却不获取相应的子对象里程碑（Milestones）和记录（Checkins）。）_ 
 
 ### 第 4 步：设置好 Github 和敏捷开发工作流
 
 我们知道，从一开始就保持井然有序、执行敏捷开发对我们有极大好处。我们设置好 Github 上的仓库，我们无法直接将代码合并到主（master）分支，这迫使我们互相审阅代码。
 
-
 ![](https://cdn-images-1.medium.com/max/800/1*5kDNcvJpr2GyZ0YqLauCoQ.png)
 
-我们还在 [Waffle.io][5] 网站上创建了敏捷开发的面板，它是免费的，很容易集成到 Github。我们在 Waffle 面板上罗列出所有用户故事以及需要我们去修复的 bugs。之后当我们开始编码时，我们每个人会为自己正在研究的每一个用户故事创建一个 git 分支，在完成工作后合并这一条条的分支。
-
+我们还在 [Waffle.io][5] 网站上创建了敏捷开发的面板，它是免费的，很容易集成到 Github。我们在 Waffle 面板上罗列出所有用户故事以及需要我们去修复的 bug。之后当我们开始编码时，我们每个人会为自己正在研究的每一个用户故事创建一个 git 分支，在完成工作后合并这一条条的分支。
 
 ![](https://cdn-images-1.medium.com/max/800/1*gnWqGwQsdGtpt3WOwe0s_A.gif)
 
@@ -103,9 +97,9 @@ _(注意: 出于性能考虑，Firebase 更倾向于简单、常规的数据结�
 
 接下来是为应用创建 “概念证明”，也可以说是实现起来最复杂的基本功能的原型，证明我们的应用 _可以_ 实现。对我们而言，这意味着要找个前端库来实现时间线的渲染，成功连接到 Firebase，显示数据库中的一些种子数据。
 
-
 ![](https://cdn-images-1.medium.com/max/800/1*d5Wu3fOlX8Xdqix1RPZWSA.png)
-Victory.JS 绘制的简单时间线
+
+*Victory.JS 绘制的简单时间线*
 
 我们找到了基于 D3 构建的响应式库 Victory.JS，花了一天时间阅读文档，用 _VictoryLine_ 和 _VictoryScatter_ 组件实现了非常基础的示例，能够可视化地显示数据库中的数据。实际上，这很有用！我们可以开始构建了。
 
@@ -113,26 +107,16 @@ Victory.JS 绘制的简单时间线
 
 最后，是时候构建出应用中那些令人期待的功能了。取决于你要构建的应用，这一重要步骤会有些明显差异。我们根据所用的框架，编码出不同的用户故事并保存在 Waffle 上。常常需要同时接触前端和后端代码（比如，创建一个前端表格同时要连接到数据库）。我们实现了包含以下这些大大小小的功能：
 
-*   能够创建新目标（goals）、里程碑（milestones）和记录（checkins）
-
+*   能够创建新目标、里程碑和记录
 *   能够删除目标，里程碑和记录
-
 *   能够更改时间线的名称，颜色和详细内容
-
 *   能够缩放时间线
-
 *   能够为资源添加链接
-
 *   能够上传视频
-
 *   在达到相关目标的里程碑和记录时弹出资源和视频
-
 *   集成富文本编辑器
-
 *   用户注册、验证、OAuth 验证
-
 *   弹出查看时间线选项
-
 *   加载画面
 
 有各种原因，这一步花了我们很多时间 —— 这一阶段是产生最多优质代码的阶段，每当我们实现了一个功能，就会有更多的事情要完善。
@@ -142,7 +126,8 @@ Victory.JS 绘制的简单时间线
 当我们使用 MVP 架构实现了想要的功能，就可以开始清理，对它进行美化了。像表单，菜单和登陆栏等组件，我的团队用的是 Material-UI，不需要很多深层次的设计知识，它也能确保每个组件看上去都很圆润光滑。
 
 ![](https://cdn-images-1.medium.com/max/800/1*PCRFAbsPBNPYhz6cBgWRCw.gif)
-这是我制作的最喜爱功能之一了。它美得令人心旷神怡。
+
+*这是我制作的最喜爱功能之一了。它美得令人心旷神怡。*
 
 我们花了一点时间来选择颜色方案和编写 CSS ，这让我们在编程中休息了一段美妙的时间。期间我们还设计了 logo 图标，还上传了网站图标。
 
@@ -169,15 +154,16 @@ Victory.JS 绘制的简单时间线
 但是，现在我们感到非常开心，不仅是因为成品，还因为我们从这个过程中获得了难以估量的知识和理解。点击 [这里][7] 查看 Align 应用！
 
 ![](https://cdn-images-1.medium.com/max/800/1*KbqmSW-PMjgfWYWS_vGIqg.jpeg)
-Align 团队：Sara Kladky (左), Melanie Mohn (中), 还有我自己.
+
+*Align 团队：Sara Kladky（左），Melanie Mohn（中），还有我自己。*
 
 --------------------------------------------------------------------------------
 
 via: https://medium.com/ladies-storm-hackathons/how-we-built-our-first-full-stack-javascript-web-app-in-three-weeks-8a4668dbd67c?imm_mid=0f581a&cmp=em-web-na-na-newsltr_20170816
 
-作者：[Sophia Ciocca ][a]
+作者：[Sophia Ciocca][a]
 译者：[BriFuture](https://github.com/BriFuture)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
