@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 How to Install Pip on Ubuntu
 ======
 **Pip is a command line tool that allows you to install software packages written in Python. Learn how to install Pip on Ubuntu and how to use it for installing Python applications.**
