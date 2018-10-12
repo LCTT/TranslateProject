@@ -1,3 +1,4 @@
+translating by littleji
 Cloc – Count The Lines Of Source Code In Many Programming Languages
 ======
 
