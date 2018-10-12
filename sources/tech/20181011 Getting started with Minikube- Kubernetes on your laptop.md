@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 Getting started with Minikube: Kubernetes on your laptop
 ======
 A step-by-step guide for running Minikube.
