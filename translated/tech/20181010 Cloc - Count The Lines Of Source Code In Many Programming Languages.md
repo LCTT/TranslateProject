@@ -1,9 +1,9 @@
-Cloc – 计算不同编程语言源代码的行数
+Cloc –– 计算不同编程语言源代码的行数
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/10/cloc-720x340.png)
 
-作为一个开发人员，你可能需要不时的想你的领导或者同事分享你目前的工作与代码开发进展，抑或你的领导想对代码进行全方位的分析。在这种情况下，你就需要用到我所知的这么几个程序，其中一个是[**Ohcount**][1]。今天，我遇到了另一个程序， **"Cloc"**。通过使用 Cloc，你可以很容易的计算出多种语言的源代码行数。它还可以计算空行数、代码行数、实际占用的行数，并通过整齐的表格进行结果输出。Cloc 是免费的、开源的、跨平台程序，使用的 **Perl** 进行开发。
+作为一个开发人员，你可能需要不时的想你的领导或者同事分享你目前的工作与代码开发进展，抑或你的领导想对代码进行全方位的分析。在这种情况下，你就需要用到我所知的这么几个程序，其中一个是 [**Ohcount**][1]。今天，我遇到了另一个程序，**Cloc**。通过使用 Cloc，你可以很容易的计算出多种语言的源代码行数。它还可以计算空行数、代码行数、实际占用的行数，并通过整齐的表格进行结果输出。Cloc 是免费的、开源的、跨平台程序，使用 **Perl** 进行开发。
 
 ### 特点
 
@@ -19,7 +19,7 @@ Cloc 有很多优势：
 
 ### 安装
 
-Cloc 的安装包在大多数的 *nix 操作系统的默认软件库内，所以你只需要使用默认的包管理器安装如下这样。
+Cloc 的安装包在大多数的 \*nix 操作系统的默认软件库内，所以你只需要使用默认的包管理器安装如下这样。
 
 Arch Linux:
 
@@ -27,13 +27,13 @@ Arch Linux:
 $ sudo pacman -S cloc
 ```
 
-Debian, Ubuntu:
+Debian/Ubuntu:
 
 ```
 $ sudo apt-get install cloc
 ```
 
-CentOS, Red Hat, Scientific Linux:
+CentOS/Red Hat/Scientific Linux:
 
 ```
 $ sudo yum install cloc
@@ -51,7 +51,7 @@ FreeBSD:
 $ sudo pkg install cloc
 ```
 
-当然你也可以使用第三方的包管理器比如[**NPM**][2]。
+当然你也可以使用第三方的包管理器比如 [**NPM**][2]。
 
 ```
 $ npm install -g cloc
@@ -66,9 +66,9 @@ $ cat hello.c
 #include <stdio.h>
 int main()
 {
- // printf() displays the string inside quotation
- printf("Hello, World!");
- return 0;
+    // printf() displays the string inside quotation
+    printf("Hello, World!");
+    return 0;
 }
 ```
 
@@ -102,7 +102,7 @@ $ cloc file.tar.gz
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/10/cloc-1.png)
 
-根据上述输出，手动查找准确的代码计数非常困难。但是，Cloc以易读的表格格式显示结果。你还可以在最后查看每个部分的总计，这在分析程序的源代码时非常方便。
+根据上述输出，手动查找准确的代码计数非常困难。但是，Cloc 以易读的表格格式显示结果。你还可以在最后查看每个部分的总计，这在分析程序的源代码时非常方便。
 
 除了源代码文件，Cloc 还能递归的计算各个目录及其子目录下的文件、压缩包、甚至 git 中的 commit 数目等。
 
@@ -114,7 +114,7 @@ $ cloc dir/
 
 ![][4]
 
-**子文件夹中使用的例子:**
+**子文件夹中使用的例子**：
 
 ```
 $ cloc dir/cloc/tests
@@ -122,7 +122,7 @@ $ cloc dir/cloc/tests
 
 ![][5]
 
-**计算一个压缩包中源代码的行数：**
+**计算一个压缩包中源代码的行数**：
 
 ```
 $ cloc archive.zip
@@ -130,7 +130,7 @@ $ cloc archive.zip
 
 ![][6]
 
-**你还可以计算一个 git 项目：**
+**你还可以计算一个 git 项目**：
 
 ```
 $ git clone https://github.com/AlDanial/cloc.git
@@ -142,7 +142,7 @@ $ cloc 157d706
 
 ![][7]
 
-**使用下面的命令，查看 Cloc 支持的语言类型：**
+**使用下面的命令，查看 Cloc 支持的语言类型**：
 
 ```
 $ cloc --show-lang
