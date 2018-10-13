@@ -1,3 +1,5 @@
+Translating by StdioA
+
 Design faster web pages, part 1: Image compression
 ======
 
