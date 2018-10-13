@@ -9,15 +9,13 @@ Cloc – 计算不同编程语言源代码的行数
 
 Cloc 有很多优势：
 
-  * 容易安装和实用，不需要额外的依赖项。
-  * 便携式
-  * 支持多种的结果格式导出，包括：纯文本、SQL、JSON、XML、YAML、CSV
-  * 可以计算 git 的提交数
-  * 可递归计算文件夹内的代码行数
-  * 可计算压缩后的文件，如：tar、zip、Java ear
-  * 开源跨平台部署
-
-
+* 容易安装和实用，不需要额外的依赖项。
+* 便携式
+* 支持多种的结果格式导出，包括：纯文本、SQL、JSON、XML、YAML、CSV
+* 可以计算 git 的提交数
+* 可递归计算文件夹内的代码行数
+* 可计算压缩后的文件，如：tar、zip、Java ear
+* 开源跨平台部署
 
 ### 安装
 
@@ -27,42 +25,36 @@ Arch Linux:
 
 ```
 $ sudo pacman -S cloc
-
 ```
 
 Debian, Ubuntu:
 
 ```
 $ sudo apt-get install cloc
-
 ```
 
 CentOS, Red Hat, Scientific Linux:
 
 ```
 $ sudo yum install cloc
-
 ```
 
 Fedora:
 
 ```
 $ sudo dnf install cloc
-
 ```
 
 FreeBSD:
 
 ```
 $ sudo pkg install cloc
-
 ```
 
 当然你也可以使用第三方的包管理器比如[**NPM**][2]。
 
 ```
 $ npm install -g cloc
-
 ```
 
 ### 使用实例
@@ -78,14 +70,12 @@ int main()
  printf("Hello, World!");
  return 0;
 }
-
 ```
 
 想要计算行数，只需要简单运行：
 
 ```
 $ cloc hello.c
-
 ```
 
 输出：
@@ -106,7 +96,6 @@ $ cloc hello.c
 
 ```
 $ cloc file.tar.gz
-
 ```
 
 输出：
@@ -117,12 +106,10 @@ $ cloc file.tar.gz
 
 除了源代码文件，Cloc 还能递归的计算各个目录及其子目录下的文件、压缩包、甚至 git 中的 commit 数目等。
 
-
 **文件夹中使用的例子:**
 
 ```
 $ cloc dir/
-
 ```
 
 ![][4]
@@ -131,7 +118,6 @@ $ cloc dir/
 
 ```
 $ cloc dir/cloc/tests
-
 ```
 
 ![][5]
@@ -140,7 +126,6 @@ $ cloc dir/cloc/tests
 
 ```
 $ cloc archive.zip
-
 ```
 
 ![][6]
@@ -153,7 +138,6 @@ $ git clone https://github.com/AlDanial/cloc.git
 $ cd cloc
 
 $ cloc 157d706
-
 ```
 
 ![][7]
@@ -162,19 +146,15 @@ $ cloc 157d706
 
 ```
 $ cloc --show-lang
-
 ```
 
 当然，help 能告诉你更多关于 Cloc 的使用帮助。
 
 ```
 $ cloc --help
-
 ```
 
 开始使用吧！
-
-
 
 --------------------------------------------------------------------------------
 
