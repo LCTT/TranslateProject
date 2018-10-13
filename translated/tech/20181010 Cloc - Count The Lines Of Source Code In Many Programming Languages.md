@@ -112,7 +112,7 @@ $ cloc file.tar.gz
 $ cloc dir/
 ```
 
-![][4]
+![][3]
 
 **子文件夹中使用的例子**：
 
@@ -120,7 +120,7 @@ $ cloc dir/
 $ cloc dir/cloc/tests
 ```
 
-![][5]
+![][4]
 
 **计算一个压缩包中源代码的行数**：
 
@@ -128,7 +128,7 @@ $ cloc dir/cloc/tests
 $ cloc archive.zip
 ```
 
-![][6]
+![][5]
 
 **你还可以计算一个 git 项目**：
 
@@ -140,7 +140,7 @@ $ cd cloc
 $ cloc 157d706
 ```
 
-![][7]
+![][6]
 
 **使用下面的命令，查看 Cloc 支持的语言类型**：
 
@@ -171,8 +171,7 @@ via: https://www.ostechnix.com/cloc-count-the-lines-of-source-code-in-many-progr
 [b]: https://github.com/lujun9972
 [1]: https://www.ostechnix.com/ohcount-the-source-code-line-counter-and-analyzer/
 [2]: https://www.ostechnix.com/install-node-js-linux/
-[3]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
-[4]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-2-1.png
-[5]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-4.png
-[6]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-3.png
-[7]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-5.png
+[3]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-2-1.png
+[4]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-4.png
+[5]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-3.png
+[6]: http://www.ostechnix.com/wp-content/uploads/2018/10/cloc-5.png
