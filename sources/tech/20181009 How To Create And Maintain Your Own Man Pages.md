@@ -1,3 +1,4 @@
+Translating by way-ww
 How To Create And Maintain Your Own Man Pages
 ======
 
