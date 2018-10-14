@@ -1,3 +1,5 @@
+thecyanbird translating
+
 Linux Has a Code of Conduct and Not Everyone is Happy With it
 ======
 **Linux kernel has a new code of conduct (CoC). Linus Torvalds took a break from Linux kernel development just 30 minutes after signing this code of conduct. And since **the writer of this code of conduct has had a controversial past,** it has now become a point of heated discussion. With all the politics involved, not many people are happy with this new CoC.**
