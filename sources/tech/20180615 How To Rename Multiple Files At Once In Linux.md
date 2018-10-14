@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 How To Rename Multiple Files At Once In Linux
 ======
 

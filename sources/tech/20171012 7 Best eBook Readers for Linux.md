@@ -1,3 +1,4 @@
+Translating by bayar199468
 7 Best eBook Readers for Linux
 ======
 **Brief:** In this article, we are covering some of the best ebook readers for Linux. These apps give a better reading experience and some will even help in managing your ebooks.

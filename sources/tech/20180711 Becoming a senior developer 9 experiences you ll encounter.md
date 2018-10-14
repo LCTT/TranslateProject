@@ -1,5 +1,3 @@
-bestony is translating
-
 Becoming a senior developer: 9 experiences you'll encounter
 ============================================================
 
