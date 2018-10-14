@@ -1,3 +1,6 @@
+translating---cyleft
+====
+
 6 Commands To Shutdown And Reboot The Linux System From Terminal
 ======
 Linux administrator performing many tasks in their routine work. The system Shutdown and Reboot task also included in it.
