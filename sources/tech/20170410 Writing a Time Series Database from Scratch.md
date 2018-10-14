@@ -1,7 +1,4 @@
-cielong translating
-----
-
-Writing a Time Series Database from Scratch
+[haoqixu翻译中]Writing a Time Series Database from Scratch
 ============================================================
 
 

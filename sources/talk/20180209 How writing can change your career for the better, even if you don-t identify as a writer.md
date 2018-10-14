@@ -1,4 +1,4 @@
-How writing can change your career for the better, even if you don't identify as a writer
+How writing can change your career for the better, even if you don't identify as a writer Translating by FelixYFZ
 ======
 Have you read Marie Kondo's book [The Life-Changing Magic of Tidying Up][1]? Or did you, like me, buy it and read a little bit and then add it to the pile of clutter next to your bed?
 

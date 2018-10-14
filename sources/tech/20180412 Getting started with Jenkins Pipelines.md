@@ -1,5 +1,3 @@
-translating by 
-
 Getting started with Jenkins Pipelines
 ======
 

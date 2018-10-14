@@ -1,5 +1,3 @@
-translated by cyleft
-
 How to Enable Click to Minimize On Ubuntu
 ============================================================
 
