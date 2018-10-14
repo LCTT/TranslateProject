@@ -1,4 +1,4 @@
-translated by hopefully2333
+translating by hopefully2333
 
 Play Windows games on Fedora with Steam Play and Proton
 ======
