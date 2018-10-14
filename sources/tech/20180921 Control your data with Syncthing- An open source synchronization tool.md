@@ -1,3 +1,5 @@
+translating by ypingcn
+
 Control your data with Syncthing: An open source synchronization tool
 ======
 Decide how to store and share your personal information.
