@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 Build a bikesharing app with Redis and Python
 ======
 

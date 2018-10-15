@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 # [Improve your Bash scripts with Argbash][1]
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/11/argbash-1-945x400.png)
