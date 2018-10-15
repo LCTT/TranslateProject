@@ -1,3 +1,5 @@
+[translating by jrg 20181014]
+
 Using Grails with jQuery and DataTables
 ======
 
