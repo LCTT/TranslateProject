@@ -1,3 +1,5 @@
+[translation by jrg]
+
 An introduction to using tcpdump at the Linux command line
 ======
 
