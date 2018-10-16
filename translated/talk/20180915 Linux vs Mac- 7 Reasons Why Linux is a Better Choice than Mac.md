@@ -55,7 +55,7 @@ Linux 支持多种平台。无论你的电脑配置如何，你都可以在上�
 
 如果你有不喜欢的东西，自己定制或者修改它都行。
 
-举个例子，如果你不喜欢 Ubuntu 18.04.1 的 [Gnome 桌面环境][11]，你可以换成 [KDE Plasma][11]。你也可以尝试一些 [Gnome 扩展][12]丰富你的桌面选择。这种灵活性和可定制性在 Mac OS 是不可能有的。
+举个例子，如果你不喜欢 Ubuntu 18.04.1 的 [Gnome 桌面环境][11]，你可以换成 [KDE Plasma][18]。你也可以尝试一些 [Gnome 扩展][12]丰富你的桌面选择。这种灵活性和可定制性在 Mac OS 是不可能有的。
 
 除此之外你还可以根据需要修改一些操作系统的代码（但是可能需要一些专业知识）以创造出适合你的系统。这个在 Mac OS 上可以做吗?
 
@@ -130,3 +130,4 @@ via: https://itsfoss.com/linux-vs-mac/
 [15]: https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/linux-vs-mac-6.jpeg
 [16]: https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/linux-vs-mac-7.jpeg
 [17]: https://opensource.com/life/15/12/why-open-source
+[18]: https://www.kde.org/plasma-desktop
