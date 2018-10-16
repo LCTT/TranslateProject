@@ -1,3 +1,5 @@
+thecyanbird translating
+
 Terminalizer – A Tool To Record Your Terminal And Generate Animated Gif Images
 ======
 This is know topic for most of us and i don’t want to give you the detailed information about this flow. Also, we had written many article under this topics.

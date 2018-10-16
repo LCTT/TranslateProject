@@ -1,10 +1,11 @@
 如何在 Linux 中列出可用的软件包组
 ======
+
 我们知道，如果想要在 Linux 中安装软件包，可以使用软件包管理器来进行安装。由于系统管理员需要频繁用到软件包管理器，所以它是 Linux 当中的一个重要工具。
 
 但是如果想一次性安装一个软件包组，在 Linux 中有可能吗？又如何通过命令去实现呢？
 
-在 Linux 中确实可以用软件包管理器来达到这样的目的。很多软件包管理器都有这样的选项来实现这个功能，但就我所知，`apt` 或 `apt-get` 软件包管理器却并没有这个选项。因此对基于 Debian 的系统，需要使用的命令是 `tasksel`，而不是 `apt`或 `apt-get` 这样的官方软件包管理器。
+在 Linux 中确实可以用软件包管理器来达到这样的目的。很多软件包管理器都有这样的选项来实现这个功能，但就我所知，`apt` 或 `apt-get` 软件包管理器却并没有这个选项。因此对基于 Debian 的系统，需要使用的命令是 `tasksel`，而不是 `apt` 或 `apt-get` 这样的官方软件包管理器。
 
 在 Linux 中安装软件包组有很多好处。对于 LAMP 来说，安装过程会包含多个软件包，但如果安装软件包组命令来安装，只安装一个包就可以了。
 
@@ -13,19 +14,20 @@
 软件包组是一组用于公共功能的软件包，包括系统工具、声音和视频。 安装软件包组的过程中，会获取到一系列的依赖包，从而大大节省了时间。
 
 **推荐阅读：**
-**(#)** [如何在 Linux 上按照大小列出已安装的软件包][1]
-**(#)** [如何在 Linux 上查看/列出可用的软件包更新][2]
-**(#)** [如何在 Linux 上查看软件包的安装/更新/升级/移除/卸载时间][3]
-**(#)** [如何在 Linux 上查看一个软件包的详细信息][4]
-**(#)** [如何查看一个软件包是否在你的 Linux 发行版上可用][5]
-**(#)** [萌新指导：一个可视化的 Linux 包管理工具][6]
-**(#)** [老手必会：命令行软件包管理器的用法][7]
+
+- [如何在 Linux 上按照大小列出已安装的软件包][1]
+- [如何在 Linux 上查看/列出可用的软件包更新][2]
+- [如何在 Linux 上查看软件包的安装/更新/升级/移除/卸载时间][3]
+- [如何在 Linux 上查看一个软件包的详细信息][4]
+- [如何查看一个软件包是否在你的 Linux 发行版上可用][5]
+- [萌新指导：一个可视化的 Linux 包管理工具][6]
+- [老手必会：命令行软件包管理器的用法][7]
 
 ### 如何在 CentOS/RHEL 系统上列出可用的软件包组
 
 RHEL 和 CentOS 系统使用的是 RPM 软件包，因此可以使用 `yum` 软件包管理器来获取相关的软件包信息。
 
-`yum` 是 Yellowdog Updater, Modified 的缩写，它是一个用于基于 RPM 系统（例如 RHEL 和 CentOS）的，开源的命令行软件包管理工具。它是从分发库或其它第三方库中获取、安装、删除、查询和管理 RPM 包的主要工具。
+`yum` 是 “Yellowdog Updater, Modified” 的缩写，它是一个用于基于 RPM 系统（例如 RHEL 和 CentOS）的，开源的命令行软件包管理工具。它是从发行版仓库或其它第三方库中获取、安装、删除、查询和管理 RPM 包的主要工具。
 
 **推荐阅读：** [使用 yum 命令在 RHEL/CentOS 系统上管理软件包][8]
 
@@ -69,10 +71,9 @@ Available Language Groups:
 .
 .
 Done
-
 ```
 
-如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 Performance Tools 组相关联的软件包。
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 “Performance Tools” 组相关联的软件包。
 
 ```
 # yum groupinfo "Performance Tools"
@@ -103,18 +104,17 @@ Group: Performance Tools
  tiobench
  tuned
  tuned-utils
-
 ```
 
 ### 如何在 Fedora 系统上列出可用的软件包组
 
 Fedora 系统使用的是 DNF 软件包管理器，因此可以通过 DNF 软件包管理器来获取相关的信息。
 
-DNF 的含义是 Dandified yum。、DNF 软件包管理器是 YUM 软件包管理器的一个分支，它使用 hawkey/libsolv 库作为后端。从 Fedora 18 开始，Aleš Kozumplík 开始着手 DNF 的开发，直到在Fedora 22 开始加入到系统中。
+DNF 的含义是 “Dandified yum”。DNF 软件包管理器是 YUM 软件包管理器的一个分支，它使用 hawkey/libsolv 库作为后端。从 Fedora 18 开始，Aleš Kozumplík 开始着手 DNF 的开发，直到在 Fedora 22 开始加入到系统中。
 
 `dnf` 命令可以在 Fedora 22 及更高版本上安装、更新、搜索和删除软件包， 它可以自动解决软件包的依赖关系并其顺利安装，不会产生问题。
 
-由于一些长期未被解决的问题的存在，YUM 被 DNF 逐渐取代了。而 Aleš Kozumplík 的 DNF 却并未对 yum 的这些问题作出修补，他认为这是技术上的难题，YUM 团队也从不接受这些更改。而且 YUM 的代码量有 5.6 万行，而 DNF 只有 2.9 万行。因此已经不需要沿着 YUM 的方向继续开发了，重新开一个分支才是更好的选择。
+YUM 被 DNF 取代是由于 YUM 中存在一些长期未被解决的问题。为什么 Aleš Kozumplík 没有对 yum 的这些问题作出修补呢，他认为补丁解决存在技术上的难题，而 YUM 团队也不会马上接受这些更改，还有一些重要的问题。而且 YUM 的代码量有 5.6 万行，而 DNF 只有 2.9 万行。因此已经不需要沿着 YUM 的方向继续开发了，重新开一个分支才是更好的选择。
 
 **推荐阅读：** [在 Fedora 系统上使用 DNF 命令管理软件包][9]
 
@@ -167,13 +167,11 @@ Available Groups:
  Hardware Support
  Sound and Video
  System Tools
-
 ```
 
-如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 Editor 组相关联的软件包。
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 “Editor” 组相关联的软件包。
 
 ```
-
 # dnf groupinfo Editors
 Last metadata expiration check: 0:04:57 ago on Sun 09 Sep 2018 07:10:36 PM IST.
 
@@ -267,7 +265,7 @@ i | yast2_basis | 20150918-25.1 | @System |
  | yast2_install_wf | 20150918-25.1 | Main Repository (OSS) |
 ```
 
-如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 file_server 组相关联的软件包。另外 `zypper` 还允许用户使用不同的选项执行相同的操作。
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 “file_server” 组相关联的软件包。另外 `zypper` 还允许用户使用不同的选项执行相同的操作。
 
 ```
 # zypper info file_server
@@ -346,7 +344,7 @@ Contents :
  | yast2-tftp-server | package | Recommended
 ```
 
-如果需要列出相关联的软件包，可以执行以下这个命令。
+如果需要列出相关联的软件包，也可以执行以下这个命令。
 
 ```
 # zypper info pattern file_server
@@ -385,7 +383,7 @@ Contents :
  | yast2-tftp-server | package | Recommended
 ```
 
-如果需要列出相关联的软件包，可以执行以下这个命令。
+如果需要列出相关联的软件包，也可以执行以下这个命令。
 
 ```
 # zypper info -t pattern file_server
@@ -431,7 +429,7 @@ Contents :
 
 [tasksel][11] 是 Debian/Ubuntu 系统上一个很方便的工具，只需要很少的操作就可以用它来安装好一组软件包。可以在 `/usr/share/tasksel` 目录下的 `.desc` 文件中安排软件包的安装任务。
 
-默认情况下，`tasksel` 工具是作为 Debian 系统的一部分安装的，但桌面版 Ubuntu 则没有自带 `tasksel`，类似软件包管理器中的元包（meta-packages）。
+默认情况下，`tasksel` 工具是作为 Debian 系统的一部分安装的，但桌面版 Ubuntu 则没有自带 `tasksel`，这个功能类似软件包管理器中的元包（meta-packages）。
 
 `tasksel` 工具带有一个基于 zenity 的简单用户界面，例如命令行中的弹出图形对话框。
 
@@ -483,7 +481,7 @@ u openssh-server OpenSSH server
 u server Basic Ubuntu server
 ```
 
-如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 lamp-server 组相关联的软件包。
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 “lamp-server” 组相关联的软件包。
 
 ```
 # tasksel --task-desc "lamp-server"
@@ -494,7 +492,7 @@ Selects a ready-made Linux/Apache/MySQL/PHP server.
 
 基于 Arch Linux 的系统使用的是 pacman 软件包管理器，因此可以通过 pacman 软件包管理器来获取相关的信息。
 
-pacman 是 package manager 的缩写。`pacman` 可以用于安装、构建、删除和管理 Arch Linux 软件包。`pacman` 使用 libalpm（Arch Linux Package Management 库，ALPM）作为后端来执行所有操作。
+pacman 是 “package manager” 的缩写。`pacman` 可以用于安装、构建、删除和管理 Arch Linux 软件包。`pacman` 使用 libalpm（Arch Linux Package Management 库，ALPM）作为后端来执行所有操作。
 
 **推荐阅读：** [使用 pacman 在基于 Arch Linux 的系统上管理软件包][13]
 
@@ -536,10 +534,9 @@ realtime
 sugar-fructose
 tesseract-data
 vim-plugins
-
 ```
 
-如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 gnome 组相关联的软件包。
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 “gnome” 组相关联的软件包。
 
 ```
 # pacman -Sg gnome
@@ -603,7 +600,6 @@ Interrupt signal received
 ```
 # pacman -Sg gnome | wc -l
 64
-
 ```
 
 --------------------------------------------------------------------------------
@@ -613,7 +609,7 @@ via: https://www.2daygeek.com/how-to-list-an-available-package-groups-in-linux/
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

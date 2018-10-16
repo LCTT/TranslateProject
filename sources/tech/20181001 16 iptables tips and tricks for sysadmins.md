@@ -1,3 +1,5 @@
+[translating by jrg, 20181014]
+
 16 iptables tips and tricks for sysadmins
 ======
 Iptables provides powerful capabilities to control traffic coming in and out of your system.
