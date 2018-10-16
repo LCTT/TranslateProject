@@ -1,3 +1,5 @@
+HankChow translating
+
 3 areas to drive DevOps change
 ======
 Driving large-scale organizational change is painful, but when it comes to DevOps, the payoff is worth the pain.
