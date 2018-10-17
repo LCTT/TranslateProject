@@ -1,3 +1,5 @@
+Translating by way-ww
+
 Why Linux users should try Rust
 ======
 
