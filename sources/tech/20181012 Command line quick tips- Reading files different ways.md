@@ -1,3 +1,5 @@
+translating by distant1219
+
 Command line quick tips: Reading files different ways
 ======
 
