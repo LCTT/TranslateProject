@@ -1,3 +1,5 @@
+translating---geekpi
+
 Happy birthday, KDE: 11 applications you never knew existed
 ======
 Which fun or quirky app do you need today?
