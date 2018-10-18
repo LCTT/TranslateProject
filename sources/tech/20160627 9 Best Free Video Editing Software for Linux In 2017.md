@@ -1,3 +1,5 @@
+fuowang  翻译中
+
 9 Best Free Video Editing Software for Linux In 2017
 ======
 **Brief: Here are best video editors for Linux, their feature, pros and cons and how to install them on your Linux distributions.**
