@@ -1,6 +1,7 @@
 使用 Python 为你的油箱加油
 ======
-我来介绍一下我是如何使用 Python 来节省成本的。
+
+> 我来介绍一下我是如何使用 Python 来节省成本的。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bulb-light-energy-power-idea.png?itok=zTEEmTZB)
 
@@ -82,7 +83,7 @@ while i < 21:                   # 20 次迭代 (加油次数)
 
 如你所见，这个调整会令混合汽油号数始终略高于 91。当然，我的油量表并没有 1/12 的刻度，但是 7/12 略小于 5/8，我可以近似地计算。
 
-一个更简单地方案是每次都首先加满 93 号汽油，然后在油箱半满时加入 89 号汽油直到耗尽，这可能会是我的常规方案。但就我个人而言，这种方法并不太好，有时甚至会产生一些麻烦。但对于长途旅行来说，这种方案会相对简便一些。有时我也会因为油价突然下跌而购买一些汽油，所以，这个方案是我可以考虑的一系列选项之一。
+一个更简单地方案是每次都首先加满 93 号汽油，然后在油箱半满时加入 89 号汽油直到耗尽，这可能会是我的常规方案。就我个人而言，这种方法并不太好，有时甚至会产生一些麻烦。但对于长途旅行来说，这种方案会相对简便一些。有时我也会因为油价突然下跌而购买一些汽油，所以，这个方案是我可以考虑的一系列选项之一。
 
 当然最重要的是：开车不写码，写码不开车！
 
@@ -93,7 +94,7 @@ via: https://opensource.com/article/18/10/python-gas-pump
 作者：[Greg Pittman][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
