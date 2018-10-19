@@ -1,3 +1,4 @@
+translating by dianbanjiu
 How To Browse And Read Entire Arch Wiki As Linux Man Pages
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/10/arch-wiki-720x340.jpg)
