@@ -1,3 +1,5 @@
+translating by ypingcn
+
 Creator of the World Wide Web is Creating a New Decentralized Web
 ======
 **Creator of the world wide web, Tim Berners-Lee has unveiled his plans to create a new decentralized web where the data will be controlled by the users.**
