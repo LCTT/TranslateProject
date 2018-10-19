@@ -1,3 +1,4 @@
+Translating by qhwdw
 Final JOS project
 ======
 Piazza Discussion Due, November 2, 2018 Proposals Due, November 8, 2018 Code repository Due, December 6, 2018 Check-off and in-class demos, Week of December 10, 2018
