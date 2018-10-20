@@ -1,6 +1,7 @@
 如何在双系统引导下替换 Linux 发行版
 ======
-在双系统引导的状态下，你可以将已安装的 Linux 发行版替换为另一个发行版，同时还可以保留原本的个人数据。
+
+> 在双系统引导的状态下，你可以将已安装的 Linux 发行版替换为另一个发行版，同时还可以保留原本的个人数据。
 
 ![How to Replace One Linux Distribution With Another From Dual Boot][1]
 
@@ -26,11 +27,9 @@
   * 需要安装的 Linux 发行版的 USB live 版
   * 在外部磁盘备份 Windows 和 Linux 中的重要文件（并非必要，但建议备份一下）
 
-
-
 #### 在替换 Linux 发行版时要记住保留你的 home 目录
 
-如果想让个人文件在安装新 Linux 系统的过程中不受影响，原有的 Linux 系统必须具有单独的 root 目录和 home 目录。你可能会发现我的[双系统引导教程][8]在安装过程中不选择“与 Windows 一起安装”选项，而选择“其它”选项，然后手动创建 root 和 home 分区。所以，手动创建单独的 home 分区也算是一个磨刀不误砍柴工的操作。因为如果要在不丢失文件的情况下，将现有的 Linux 发行版替换为另一个发行版，需要将 home 目录存放在一个单独的分区上。
+如果想让个人文件在安装新 Linux 系统的过程中不受影响，原有的 Linux 系统必须具有单独的 root 目录和 home 目录。你可能会发现我的[双系统引导教程][8]在安装过程中不选择“与 Windows 共存”选项，而选择“其它”选项，然后手动创建 root 和 home 分区。所以，手动创建单独的 home 分区也算是一个磨刀不误砍柴工的操作。因为如果要在不丢失文件的情况下，将现有的 Linux 发行版替换为另一个发行版，需要将 home 目录存放在一个单独的分区上。
 
 不过，你必须记住现有 Linux 系统的用户名和密码才能使用与新系统中相同的 home 目录。
 
@@ -51,69 +50,80 @@
 在安装过程中，进入“安装类型”界面时，选择“其它”选项。
 
 ![Replacing one Linux with another from dual boot][10]
-（在这里选择“其它”选项）
+
+*在这里选择“其它”选项*
 
 #### 步骤 3：准备分区操作
 
 下图是分区界面。你会看到使用 Ext4 文件系统类型来安装 Linux。
 
 ![Identifying Linux partition in dual boot][11]
-（确定 Linux 的安装位置）
+
+*确定 Linux 的安装位置*
 
 在上图中，标记为 Linux Mint 19 的 Ext4 分区是 root 分区，大小为 82691 MB 的第二个 Ext4 分区是 home 分区。在这里我这里没有使用[交换空间][12]。
 
 如果你只有一个 Ext4 分区，就意味着你的 home 目录与 root 目录位于同一分区。在这种情况下，你就无法保留 home 目录中的文件了，这个时候我建议将重要文件复制到外部磁盘，否则这些文件将不会保留。
 
-然后是删除 root 分区。选择 root 分区，然后点击 - 号，这个操作释放了一些磁盘空间。
+然后是删除 root 分区。选择 root 分区，然后点击 `-` 号，这个操作释放了一些磁盘空间。
 
 ![Delete root partition of your existing Linux install][13]
-（删除 root 分区）
 
-磁盘空间释放出来后，点击 + 号。
+*删除 root 分区*
+
+磁盘空间释放出来后，点击 `+` 号。
 
 ![Create root partition for the new Linux][14]
-（创建新的 root 分区）
+
+*创建新的 root 分区*
 
 现在已经在可用空间中创建一个新分区。如果你之前的 Linux 系统中只有一个 root 分区，就应该在这里创建 root 分区和 home 分区。如果需要，还可以创建交换分区。
 
 如果你之前已经有 root 分区和 home 分区，那么只需要从已删除的 root 分区创建 root 分区就可以了。
 
 ![Create root partition for the new Linux][15]
-（创建 root 分区）
 
-你可能有疑问，为什么要经过“删除”和“添加”两个过程，而不使用“更改”选项。这是因为以前使用“更改”选项好像没有效果，所以我更喜欢用 - 和 +。这是迷信吗？也许是吧。
+*创建 root 分区*
+
+你可能有疑问，为什么要经过“删除”和“添加”两个过程，而不使用“更改”选项。这是因为以前使用“更改”选项好像没有效果，所以我更喜欢用 `-` 和 `+`。这是迷信吗？也许是吧。
 
 这里有一个重要的步骤，对新创建的 root 分区进行格式化。在没有更改分区大小的情况下，默认是不会对分区进行格式化的。如果分区没有被格式化，之后可能会出现问题。
 
 ![][16]
-（格式化 root 分区很重要）
+
+*格式化 root 分区很重要*
 
 如果你在新的 Linux 系统上已经划分了单独的 home 分区，选中它并点击更改。
 
 ![Recreate home partition][17]
-（修改已有的 home 分区）
+
+*修改已有的 home 分区*
 
 然后指定将其作为 home 分区挂载即可。
 
 ![Specify the home mount point][18]
-（指定 home 分区的挂载点）
+
+*指定 home 分区的挂载点*
 
 如果你还有交换分区，可以重复与 home 分区相同的步骤，唯一不同的是要指定将空间用作交换空间。
 
 现在的状态应该是有一个 root 分区（将被格式化）和一个 home 分区（如果需要，还可以使用交换分区）。点击“立即安装”可以开始安装。
 
 ![Verify partitions while replacing one Linux with another][19]
-（检查分区情况）
+
+*检查分区情况*
 
 接下来的几个界面就很熟悉了，要重点注意的是创建用户和密码的步骤。如果你之前有一个单独的 home 分区，并且还想使用相同的 home 目录，那你必须使用和之前相同的用户名和密码，至于设备名称则可以任意指定。
 
 ![To keep the home partition intact, use the previous user and password][20]
-（要保持 home 分区不变，请使用之前的用户名和密码）
+
+*要保持 home 分区不变，请使用之前的用户名和密码*
 
 接下来只要静待安装完成，不需执行任何操作。
 
 ![Wait for installation to finish][21]
-（等待安装完成）
+
+*等待安装完成*
 
 安装完成后重新启动系统，你就能使用新的 Linux 发行版。
 
@@ -126,7 +136,7 @@ via: https://itsfoss.com/replace-linux-from-dual-boot/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
