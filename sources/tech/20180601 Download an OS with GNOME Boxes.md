@@ -1,3 +1,4 @@
+translating by dianbanjiu
 Download an OS with GNOME Boxes
 ======
 

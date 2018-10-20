@@ -1,3 +1,4 @@
+translating by dianbanjiu
 How To List The Enabled/Active Repositories In Linux
 ======
 There are many ways to list enabled repositories in Linux.
