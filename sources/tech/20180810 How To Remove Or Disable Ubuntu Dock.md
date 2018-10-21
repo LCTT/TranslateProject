@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How To Remove Or Disable Ubuntu Dock
 ======
 
