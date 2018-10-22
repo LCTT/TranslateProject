@@ -1,7 +1,7 @@
-在 Linux 命令行中使用 ls 列出文件的提示
+在 Linux 命令行中使用 ls 列出文件的技巧
 ======
 
-学习一些 Linux `ls` 命令最有用的变化。
+> 学习一些 Linux `ls` 命令最有用的变化。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/button_push_open_keyboard_file_organize.png?itok=KlAsk1gx)
 

@@ -1,3 +1,4 @@
+FSSlc Translating
 Flameshot – A Simple, Yet Powerful Feature-rich Screenshot Tool
 ======
 
