@@ -1,63 +1,62 @@
-translating by dianbanjiu
-How To List The Enabled/Active Repositories In Linux
+列出在 Linux 上已开启/激活的仓库
 ======
-There are many ways to list enabled repositories in Linux.
+这里有很多方法可以列出在 Linux 已开启的仓库。  
 
-Here we are going to show you the easy methods to list active repositories.
+我们将在下面展示给你列出已激活仓库的简便方法。  
 
-It will helps you to know what are the repositories enabled on your system.
+这有助于你知晓你的系统上都开启了哪些仓库。  
 
-Once you have this information in handy then you can add any repositories that you want if it’s not already enabled.
+一旦你掌握了这些信息，你就可以添加任何之前还没有准备开启的仓库了。  
 
-Say for example, if you would like to enable `epel repository` then you need to check whether the epel repository is enabled or not. In this case this tutorial would help you.
+举个例子，如果你想开启 `epel repository` ，你需要先检查 epel repository 是否已经开启了。这篇教程将会帮助你做这件事情。  
 
-### What Is Repository?
+### 什么是仓库？ 
 
-A software repository is a central place which stores the software packages for the particular application.
+存储特定程序软件包的中枢位置就是一个软件仓库。  
 
-All the Linux distributions are maintaining their own repositories and they allow users to retrieve and install packages on their machine.
+所有的 Linux 发行版都开发了他们自己的仓库，而且允许用户下载并安装这些软件包到他们的机器上。  
 
-Each vendor offered a unique package management tool to manage their repositories such as search, install, update, upgrade, remove, etc.
+每个供应商都提供了一套包管理工具，用以管理他们的仓库，比如搜索、安装、更新、升级、移除等等。  
 
-Most of the Linux distributions comes as freeware except RHEL and SUSE. To access their repositories you need to buy a subscriptions.
+大多数 Linux 发行版都作为免费软件，除了 RHEL 和 SUSE。接收他们的仓库你需要先购买订阅。  
 
-**Suggested Read :**
-**(#)** [How To Add, Enable And Disable A Repository By Using The DNF/YUM Config Manager Command On Linux][1]
-**(#)** [How To List Installed Packages By Size (Largest) On Linux][2]
-**(#)** [How To View/List The Available Packages Updates In Linux][3]
-**(#)** [How To View A Particular Package Installed/Updated/Upgraded/Removed/Erased Date On Linux][4]
-**(#)** [How To View Detailed Information About A Package In Linux][5]
-**(#)** [How To Search If A Package Is Available On Your Linux Distribution Or Not][6]
-**(#)** [How To List An Available Package Groups In Linux][7]
-**(#)** [Newbies corner – A Graphical frontend tool for Linux Package Manager][8]
-**(#)** [Linux Expert should knows, list of Command line Package Manager & Usage][9]
+**建议阅读：**  
+**(#)** [在 Linux 上，如何通过 DNF/YUM 设置管理命令添加、开启、关闭一个仓库][1]  
+**(#)** [在 Linux 上如何以尺寸列出已安装的包][2]  
+**(#)** [在 Linux 上如何列出升级的包][3]  
+**(#)** [在 Linux 上如何查看一个特定包已安装/已升级/已更新/已移除/已清除的数据][4]  
+**(#)** [在 Linux 上如何查看一个包的详细信息][5]  
+**(#)** [在你的 Linux 发行版上如何查看一个包是否可用][6]  
+**(#)** [在 Linux 如何列出可用的软件包组][7]  
+**(#)** [Newbies corner - 一个图形化的 Linux 包管理的前端工具][8]  
+**(#)** [Linux 专家须知，命令行包管理 & 使用列表][9]  
 
-### How To List The Enabled Repositories on RHEL/CentOS
+### 在 RHEL/CentOS上列出已开启的库
 
-RHEL & CentOS systems are using RPM packages hence we can use the `Yum Package Manager` to get this information.
+RHEL 和 CentOS 系统使用的是 RPM 包管理，所以我们可以使用 `Yum 包管理` 查看这些信息。  
 
-YUM stands for Yellowdog Updater, Modified is an open-source command-line front-end package-management utility for RPM based systems such as Red Hat Enterprise Linux (RHEL) and CentOS.
+YUM 代表的是 `Yellowdog Updater,Modified`，它是一个包管理的开源前端，作用在基于 RPM 的系统上，例如 RHEL 和 CentOS。  
 
-Yum is the primary tool for getting, installing, deleting, querying, and managing RPM packages from distribution repositories, as well as other third-party repositories.
+YUM 是获取、安装、删除、查询和管理来自发行版仓库和其他第三方库的 RPM 包的主要工具。  
 
-**Suggested Read :** [YUM Command To Manage Packages on RHEL/CentOS Systems][10]
+**建议阅读：Suggested Read :** [在 RHEL/CentOS 系统上用 YUM 命令管理包][10]
 
-RHEL based systems are mainly offering the below three major repositories. These repository will be enabled by default.
+基于 RHEL 的系统主要提供以下三个主要的仓库。这些仓库是默认开启的。  
 
-  * **`base:`** It’s containing all the core packages and base packages.
-  * **`extras:`** It provides additional functionality to CentOS without breaking upstream compatibility or updating base components. It is an upstream repository, as well as additional CentOS packages.
-  * **`updates:`** It’s offering bug fixed packages, Security packages and Enhancement packages.
+  * **`base:`** 它包含了所有的核心包和基础包。
+  * **`extras:`** 它向 CentOS 提供不破坏上游兼容性或更新基本组件的额外功能。这是一个上游仓库，还有额外的 CentOS 包。
+  * **`updates:`** 它提供了 bug 修复包、安全性包和增强包。
 
 
 
 ```
 # yum repolist
-or
+或者
 # yum repolist enabled
 
 Loaded plugins: fastestmirror
 Determining fastest mirrors
- 选题模板.txt 中文排版指北.md comic core.md Dict.md lctt2014.md lctt2016.md lctt2018.md LCTT翻译规范.md LICENSE Makefile published README.md sign.md sources translated epel: ewr.edge.kernel.org
+epel: ewr.edge.kernel.org
 repo id repo name status
 !base/7/x86_64 CentOS-7 - Base 9,911
 !epel/x86_64 Extra Packages for Enterprise Linux 7 - x86_64 12,687
@@ -67,26 +66,26 @@ repolist: 24,349
 
 ```
 
-### How To List The Enabled Repositories on Fedora
+### 如何列出 Fedora 上已开启的包
 
-DNF stands for Dandified yum. We can tell DNF, the next generation of yum package manager (Fork of Yum) using hawkey/libsolv library for backend. Aleš Kozumplík started working on DNF since Fedora 18 and its implemented/launched in Fedora 22 finally.
+DNF 代表 Dandified yum。我们可以说 DNF 是下一代的 yum 包管理，使用了 hawkey/libsolv 作为后端。自从 Fedroa 18 开始，Aleš Kozumplík 就开始研究 DNF 最终在 Fedora 22 上实现。  
 
-Dnf command is used to install, update, search & remove packages on Fedora 22 and later system. It automatically resolve dependencies and make it smooth package installation without any trouble.
+Fedora 22 及之后的系统上都使用 Dnf 安装、升级、搜索和移除包。它可以自动解决依赖问题，并使包的安装过程平顺没有任何麻烦。  
 
-Yum replaced by DNF due to several long-term problems in Yum which was not solved. Asked why ? he did not patches the Yum issues. Aleš Kozumplík explains that patching was technically hard and YUM team wont accept the changes immediately and other major critical, YUM is 56K lines but DNF is 29K lies. So, there is no option for further development, except to fork.
+因为 Yum 许多未解决的问题，现在 Yum 已经被 DNF 所替代。你问为什么？他没有给 Yum 打补丁。Aleš Kozumplík 解释说修补在技术上太困难了，YUM 团队无法立即承受这些变更，还有其他的问题，YUM 是 56k 行，而 DNF 是 29k 行。因此，除了 fork 之外，别无选择。  
 
-**Suggested Read :** [DNF (Fork of YUM) Command To Manage Packages on Fedora System][11]
+**建议阅读：** [在 Fedora 上使用 DNF（Fork 自 YUM）管理软件][11]
 
-Fedora system is mainly offering the below two major repositories. These repository will be enabled by default.
+Fedora 主要提供下面两个主仓库。这些库将被默认开启。  
 
-  * **`fedora:`** It’s containing all the core packages and base packages.
-  * **`updates:`** It’s offering bug fixed packages, Security packages and Enhancement packages from the stable release branch.
+  * **`fedora:`** 它包括所有的核心包和基础包。
+  * **`updates:`** 它提供了来自稳定发行版的 bug 修复包、安全性包和增强包
 
 
 
 ```
 # dnf repolist
-or
+或者
 # dnf repolist enabled
 
 Last metadata expiration check: 0:02:56 ago on Wed 10 Oct 2018 06:12:22 PM IST.
@@ -106,13 +105,13 @@ rabiny-albert Copr repo for albert owned by rabiny 3
 
 ```
 
-### How To List The Enabled Repositories on Debian/Ubuntu
+### 如何列出 Debian/Ubuntu 上已开启的仓库
 
-Debian based systems are using APT/APT-GET package manager hence we can use the `APT/APT-GET Package Manager` to get this information.
+基于 Debian  的系统使用的是 APT/APT-GET 包管理，因此我们可以使用 `APT/APT-GET 包管理` 去获取更多的信息。  
 
-APT stands for Advanced Packaging Tool (APT) which is replacement for apt-get, like how DNF came to picture instead of YUM. It’s feature rich command-line tools with included all the futures in one command (APT) such as apt-cache, apt-search, dpkg, apt-cdrom, apt-config, apt-key, etc..,. and several other unique features. For example we can easily install .dpkg packages through APT but we can’t do through Apt-Get similar more features are included into APT command. APT-GET replaced by APT Due to lock of futures missing in apt-get which was not solved.
+APT 代表 Advanced Packaging Tool，它取代了 apt-get，就像 DNF 取代 Yum一样。 它具有丰富的命令行工具，在一个命令（APT）中包含了所有，如 apt-cache，apt-search，dpkg，apt-cdrom，apt-config，apt-key等。 还有其他几个独特的功能。 例如，我们可以通过 APT 轻松安装 .dpkg 软件包，而我们无法通过 Apt-Get 获得和包含在 APT 命令中类似的更多功能。 由于未能解决的 apt-get 问题，用 APT 取代了 APT-GET 的锁定。  
 
-Apt-Get stands for Advanced Packaging Tool (APT). apg-get is a powerful command-line tool which is used to automatically download and install new software packages, upgrade existing software packages, update the package list index, and to upgrade the entire Debian based systems.
+APT_GET 代表 Advanced Packaging Tool。apt-get 是一个强大的命令行工具，它用以自动下载和安装新的软件包、升级已存在的软件包、更新包索引列表、还有升级整个基于 Debian  的系统。  
 
 ```
 # apt-cache policy
@@ -156,13 +155,13 @@ Pinned packages:
 
 ```
 
-### How To List The Enabled Repositories on openSUSE
+### 如何在 openSUSE 上列出已开启的仓库
 
-openSUSE system uses zypper package manager hence we can use the zypper Package Manager to get this information.
+openSUSE 使用 zypper 包管理，因此我们可以使用 zypper 包管理获得更多信息。  
 
-Zypper is a command line package manager for suse & openSUSE distributions. It’s used to install, update, search & remove packages & manage repositories, perform various queries, and more. Zypper command-line interface to ZYpp system management library (libzypp).
+Zypper 是 suse 和 openSUSE 发行版的命令行包管理。它用于安装、更新、搜索、移除包和管理仓库，执行各种查询等。Zypper 以 libzypp（ZYpp 系统管理库）作为后端。  
 
-**Suggested Read :** [Zypper Command To Manage Packages On openSUSE & suse Systems][12]
+**建议阅读：** [在 openSUSE 和 suse 系统上使用 Zypper 命令管理包][12]
 
 ```
 # zypper repos
@@ -179,7 +178,7 @@ Zypper is a command line package manager for suse & openSUSE distributions. It�
 
 ```
 
-List Repositories with URI.
+以 URI 列出仓库。  
 
 ```
 # zypper lr -u
@@ -196,7 +195,7 @@ List Repositories with URI.
 
 ```
 
-List Repositories by priority.
+通过优先级列出仓库。  
 
 ```
 # zypper lr -p
@@ -213,13 +212,13 @@ List Repositories by priority.
 
 ```
 
-### How To List The Enabled Repositories on ArchLinux
+### 如何列出 Arch Linux 上已开启的仓库
 
-Arch Linux based systems are using pacman package manager hence we can use the pacman Package Manager to get this information.
+基于 Arch Linux 的系统使用 pacman 包管理，因此我们可以使用 pacman 包管理获取这些信息。  
 
-pacman stands for package manager utility (pacman). pacman is a command-line utility to install, build, remove and manage Arch Linux packages. pacman uses libalpm (Arch Linux Package Management (ALPM) library) as a back-end to perform all the actions.
+pacman 代表 package manager utility。pacman 是一个命令行实用程序，用以安装、构建、移除和管理 Arch Linux 包。pacman 使用 libalpm （Arch Linux包管理库）作为后端去进行这些操作。  
 
-**Suggested Read :** [Pacman Command To Manage Packages On Arch Linux Based Systems][13]
+**建议阅读：** [在基于 Arch Linux的系统上使用 Pacman命令管理包][13]
 
 ```
 # pacman -Syy
@@ -231,15 +230,15 @@ pacman stands for package manager utility (pacman). pacman is a command-line uti
 
 ```
 
-### How To List The Enabled Repositories on Linux using INXI Utility
+### 如何使用 INXI Utility 列出 Linux 上已开启的仓库 
 
-inxi is a nifty tool to check hardware information on Linux and offers wide range of option to get all the hardware information on Linux system that i never found in any other utility which are available in Linux. It was forked from the ancient and mindbendingly perverse yet ingenius infobash, by locsmif.
+inix 是 Linux 上检查硬件信息非常有用的工具，还提供很多的选项去获取 Linux 上的所有硬件信息，我从未在 Linux 上发现其他有如此效用的程序。它由 locsmif fork 自 ingenius infobash。  
 
-inxi is a script that quickly shows system hardware, CPU, drivers, Xorg, Desktop, Kernel, GCC version(s), Processes, RAM usage, and a wide variety of other useful information, also used for forum technical support & debugging tool.
+inix 是一个可以快速显示硬件信息、CPU、硬盘、Xorg、桌面、内核、GCC 版本、进程、内存使用和很多其他有用信息的程序，还使用于论坛技术支持和调试工具上。  
 
-Additionally this utility will display all the distribution repository data information such as RHEL, CentOS, Fedora, Debain, Ubuntu, LinuxMint, ArchLinux, openSUSE, Manjaro, etc.,
+这个实用程序将会显示所有发行版仓库的数据信息，例如 RHEL、CentOS、Fedora、Debain、Ubuntu、LinuxMint、ArchLinux、openSUSE、Manjaro等。  
 
-**Suggested Read :** [inxi – A Great Tool to Check Hardware Information on Linux][14]
+**建议阅读：** [inxi – 一个在 Linux 上检查硬件信息的好工具][14]
 
 ```
 # inxi -r
@@ -267,7 +266,7 @@ via: https://www.2daygeek.com/how-to-list-the-enabled-active-repositories-in-lin
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[dianbanjiu](https://github.com/dianbanjiu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
