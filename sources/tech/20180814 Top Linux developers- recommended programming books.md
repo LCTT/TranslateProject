@@ -1,13 +1,22 @@
 Translateing By DavidChenLiang
 Top Linux developers' recommended programming books
 ======
+
+顶级 Linux 开发者推荐编程书籍
+======
+
+毫无疑问，Linux 是由哪些拥有强大计算机知识背景的天才程序员发明的。让那些大名鼎鼎的 Linux 程序员和今日的开发者分享一些让他们一窥门径的好书和技术参考吧，你读过其中几本呢？
+
 Without question, Linux was created by brilliant programmers who employed good computer science knowledge. Let the Linux programmers whose names you know share the books that got them started and the technology references they recommend for today's developers. How many of them have you read?
+
+Linux 极具争议的21世纪的操作系统。
 
 Linux is, arguably, the operating system of the 21st century. While Linus Torvalds made a lot of good business and community decisions in building the open source community, the primary reason networking professionals and developers adopted Linux is the quality of its code and its usefulness. While Torvalds is a programming genius, he has been assisted by many other brilliant developers.
 
 I asked Torvalds and other top Linux developers which books helped them on their road to programming excellence. This is what they told me.
 
 ### By shining C
+### 熠熠发光的 C
 
 Linux was developed in the 1990s, as were other fundamental open source applications. As a result, the tools and languages the developers used reflected the times, which meant a lot of C programming language. While [C is no longer as popular][1], for many established developers it was their first serious language, which is reflected in their choice of influential books.
 
@@ -24,6 +33,7 @@ Torvalds is not the only open source developer to recommend K&R. Several others 
 If you want to tackle C today, Jeremy Allison, co-founder of Samba, recommends [21st Century C][4]. Then, Allison suggests, follow it up with the older but still thorough [Expert C Programming][5] as well as the 20-year-old [Programming with POSIX Threads][6].
 
 ### If not C, what?
+### 如果不是C 语言， 那用什么？
 
 Linux developers’ recommendations for current programming books naturally are an offshoot of the tools and languages they think are most suitable for today’s development projects. They also reflect the developers’ personal preferences. For example, Allison thinks young developers would be well served by learning Go with the help of [The Go Programming Language][7] and Rust with [Programming Rust][8].
 
@@ -36,24 +46,40 @@ That infrastructure includes programming books specific to the operating system 
 Coekaerts is also fond of Maurice Bach's [The Design of the Unix Operating System][17]. So is James Bottomley, a Linux kernel developer who used Bach's tome to pull apart Linux when the OS was new.
 
 ### Design knowledge never goes stale
+### 软件设计知识永不过时
 
 But even that may be too tech-specific. "All developers should start with design before syntax,” says Stevens. “[The Design of Everyday Things][18] is one of my favorites.”
 
+Coekaerts 喜欢Kernighan 和 Rob Pike合著的[][19]。这本关于设计实践的书当 Coekaerts 还在学校念书的时候还未出版，他说道,“但是我把它推荐给每一个人”。
+
 Coekaerts likes Kernighan and Rob Pike's [The Practice of Programming][19]. The design-practice book wasn't around when Coekaerts was in school, “but I recommend it to everyone to read," he says.
+
+Donald Knuth的[计算机编程的艺术][20]。Dirk Hohndel,VMware 的首席开源官，认为这本书尽管有永恒的价值，但他也承认，“今时今日并非完全必需”。
 
 Whenever you ask serious long-term developers about their favorite books, sooner or later someone's going to mention Donald Knuth’s [The Art of Computer Programming][20]. Dirk Hohndel, VMware's chief open source officer, considers it timeless though, admittedly, “not necessarily super-useful today."
 
 ### Read code. Lots of code
+### 读代码。大量的读代码。
+
+有不可计数的代码例子阐述如果解决编程问题（以及如何让你陷入麻烦）。Stevens 说他的排名第一的磨炼编程技巧的“书”是 Unix 的源代码。
 
 While programming books can teach you a lot, don’t miss another opportunity that is unique to the open source community: [reading the code][21]. There are untold megabytes of examples of how to solve a given programming problem—and how you can get in trouble, too. Stevens says his No. 1 “book” for honing programming skills is having access to the Unix source code.
+
+[Mastering Machine Code on Your ZX81][22]和Honeywell L66 B编译器手册，但是和其他开发者一起工作就有很大不同。
 
 Don’t overlook the opportunity to learn in person, too. “I learned BASIC by being in a computer club with other people all learning together,” says Cox. “In my opinion, that is still by far the best way to learn." He learned machine code from [Mastering Machine Code on Your ZX81][22] and the Honeywell L66 B compiler manuals, but working with other developers made a big difference.
 
 “I still think the way to learn best remains to be with a group of people having fun and trying to solve a problem you care about together,” says Cox. “It doesn't matter if you are 5 or 55."
 
+毫无疑问，这曾经对帮助开发者理解计算机在非常微观的底层级别是怎么工作的起了非常大的作用。
+
 What struck me the most about these recommendations is how often the top Linux developers started at a low level—not just C or assembly language but machine language. Obviously, it’s been very useful in helping developers understand how computing works at a very basic level.
 
+准备好尝试一下硬核 Linux 开发了吗？Greg Kroah-Hartman,这位 Linux 内核过期分支的维护者，推荐了Steve Oualline 的[][23]和Samuel harbison 以及Guy Steels 合著的[][24]。接下来请阅读“[][25]”,到这时，就像Kroah-Hartman所说，你已经准备好启程了。
+
 So, ready to give hard-core Linux development a try? Greg Kroah-Hartman, the Linux stable branch kernel maintainer, recommends Steve Oualline's [Practical C Programming][23] and Samuel Harbison and Guy Steele's [C: A Reference Manual][24]. Next, read "[HOWTO do Linux kernel development][25]." Then, says Kroah-Hartman, you'll be ready to start.
+
+于此同时，还请你刻苦学习并大量编程，最后祝你在跟随顶级 Linux 程序员的道路上好运相随。
 
 In the meantime, study hard, program lots, and best of luck to you in following the footsteps of Linux's top programmers.
 
