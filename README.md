@@ -1,10 +1,10 @@
 简介
 -------------------------------
 
-![已发布](https://lujun9972.github.io/TranslateProject/badge/published.svg) 
-![已翻译](https://lujun9972.github.io/TranslateProject/badge/translated.svg)
-![翻译中](https://lujun9972.github.io/TranslateProject/badge/translating.svg)
 ![待翻译](https://lujun9972.github.io/TranslateProject/badge/sources.svg)
+![翻译中](https://lujun9972.github.io/TranslateProject/badge/translating.svg)
+![待校正](https://lujun9972.github.io/TranslateProject/badge/translated.svg)
+![已发布](https://lujun9972.github.io/TranslateProject/badge/published.svg) 
 
 LCTT 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译 Linux 相关的技术、资讯、杂文等内容。
 
