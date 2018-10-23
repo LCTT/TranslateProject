@@ -17,5 +17,3 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: badge
-  on:
-branch: master
