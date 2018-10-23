@@ -1,4 +1,4 @@
-[haoqixu翻译中]Writing a Time Series Database from Scratch
+Writing a Time Series Database from Scratch
 ============================================================
 
 
