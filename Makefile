@@ -51,8 +51,8 @@ rule-translation-published:
 	echo 'Rule Matched: $(@)'
 
 badge:
-	mkdir -p badge
-	./lctt-scripts/show_status.sh -s published >badge/published.svg
-	./lctt-scripts/show_status.sh -s translated >badge/translated.svg
-	./lctt-scripts/show_status.sh -s translating >badge/translating.svg
-	./lctt-scripts/show_status.sh -s sources >badge/sources.svg
+	mkdir -p build/badge
+	./lctt-scripts/show_status.sh -s published >build/badge/published.svg
+	./lctt-scripts/show_status.sh -s translated >build/badge/translated.svg
+	./lctt-scripts/show_status.sh -s translating >build/badge/translating.svg
+	./lctt-scripts/show_status.sh -s sources >build/badge/sources.svg
