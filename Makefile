@@ -49,3 +49,10 @@ rule-translation-published:
 	[ $(shell egrep '^A\s*"?published/$(NAME_PATTERN)' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
+
+badge:
+	mkdir -p build/badge
+	./lctt-scripts/show_status.sh -s published >build/badge/published.svg
+	./lctt-scripts/show_status.sh -s translated >build/badge/translated.svg
+	./lctt-scripts/show_status.sh -s translating >build/badge/translating.svg
+	./lctt-scripts/show_status.sh -s sources >build/badge/sources.svg
