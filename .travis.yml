@@ -1,5 +1,6 @@
 language: c
 script:
+  - make -s check
   - make -s badge
 
 
@@ -16,3 +17,5 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: badge
+  on:
+    branch: badge
