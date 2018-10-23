@@ -1,2 +1,21 @@
 language: c
-script: make -s check
+script:
+  - make -s badge
+  - make -s check
+
+
+branches:
+  only:
+    - master
+
+install:
+ - git clone --depth=1 https://github.com/LCTT/lctt-scripts
+ - sed -i "/ProjectRoot=/cProjectRoot=$(pwd)" ./lctt-scripts/lctt.cfg
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
