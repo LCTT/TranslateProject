@@ -52,11 +52,20 @@ If you want to tackle C today, Jeremy Allison, co-founder of Samba, recommends [
 ### If not C, what?
 ### 如果不选C 语言， 那选什么？
 
+ Linux 开发者推荐的书籍都是他们认为今时今日的开发项目合适的语言工具。这也折射了开发者自身的个人偏好。例如, Allison认为年轻的开发者应该去学习 Go 语言,在[][7]的帮助下，以及[][8]。
+
 Linux developers’ recommendations for current programming books naturally are an offshoot of the tools and languages they think are most suitable for today’s development projects. They also reflect the developers’ personal preferences. For example, Allison thinks young developers would be well served by learning Go with the help of [The Go Programming Language][7] and Rust with [Programming Rust][8].
+
+在编程语言之上来考虑问题也不无道理（尽管这些书传授了你技巧）。今日要做些有意义的开发工作的话，"要从那些已经完成了99%显而易见工作的框架开始，然后你就能围绕着它开始写脚本了"， Torvalds 推荐了这种做法。
 
 But it may make sense to think beyond programming languages (and thus books to teach you their techniques). To do something meaningful today, “start from some environment with a toolkit that does 99 percent of the obscure details for you, so that you can script things around it," Torvalds recommends.
 
+“坦率来说，语言本身远远没有围绕着它的基础架构重要”，他继续道，“可能你会从 Java 或者Kotlin 开始,但是因为你想为自己的手机开发一个应用因此安卓 SDK 成为了最佳的选择，又或者，你对游戏开发感兴趣，它们通常有着他们自己的脚本语言”
+
 "Honestly, the language itself isn't nearly as important as the infrastructure around it,” he continues. “Maybe you'd start with Java or Kotlin—not because of those languages per se, but because you want to write an app for your phone and the Android SDK ends up making those better choices. Or, maybe you're interested in games, so you start with one of the game engines, which often have some scripting language of their own."
+
+这里提及的基础架构包括和操作系统本身相关的编程书籍。
+Garner 就是一边读W. Richard Steven 的[Unix 网络编程][10]一边读大名鼎鼎的 K&R。特别的是，Steven 的[TCP/IP详解，卷1：协议][11]在出版了30年之后仍然被认为是必读的。因为 Linux 开发很大程度上和[和网络基础架构有关][12]，Garner 也推荐了很多 O’Reilly 的书，包括[Sendmail][13],[Bash][14],[DNS][15],以及[IMAP/POP][16]。
 
 That infrastructure includes programming books specific to the operating system itself. Graner followed K&R by reading W. Richard Stevens' [Unix Network Programming][10] books. In particular, Stevens' [TCP/IP Illustrated, Volume 1: The Protocols][11] is considered still relevant even though it's almost 30 years old. Because Linux development is largely [relevant to networking infrastructure][12], Graner also recommends the many O’Reilly books on [Sendmail][13], [Bash][14], [DNS][15], and [IMAP/POP][16].
 
