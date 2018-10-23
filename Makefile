@@ -49,3 +49,6 @@ rule-translation-published:
 	[ $(shell egrep '^A\s*"?published/$(NAME_PATTERN)' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
+
+deploy:
+	echo 'deployed'
