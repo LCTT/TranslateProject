@@ -1,6 +1,5 @@
 language: c
 script:
-  - make -s check
   - make -s badge
 
 
