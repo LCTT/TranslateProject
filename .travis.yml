@@ -1,12 +1,12 @@
 language: c
 script:
   - make -s check
-  - make -s deploy
+  - make -s badge
 
 
 branches:
   only:
-    - master
+    - badge
 
 install:
  - git clone --depth=1 https://github.com/LCTT/lctt-scripts
@@ -16,6 +16,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: status_badge
+  local_dir: badge
   on:
 branch: master
