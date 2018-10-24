@@ -1,3 +1,4 @@
+translating by dianbanjiu
 Manage Your Games Using Lutris In Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/01/Lutris-1-720x340.jpg)
