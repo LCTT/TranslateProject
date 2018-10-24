@@ -1,24 +1,25 @@
-translating by Flowsnow
-
-Peeking into your Linux packages
+探秘你的Linux软件包
 ======
-Do you ever wonder how many _thousands_ of packages are installed on your Linux system? And, yes, I said "thousands." Even a fairly modest Linux system is likely to have well over a thousand packages installed. And there are many ways to get details on what they are.
+你有没有想过你的 Linux 系统上安装了多少千个软件包？ 是的，我说的是“千”。 即使是相当一般的 Linux 系统也可能安装了超过一千个软件包。 有很多方法可以获得这些包到底是什么包的详细信息。
 
-First, to get a quick count of your installed packages on a Debian-based distribution such as Ubuntu, use the command **apt list --installed** like this:
+首先，要在基于 Debian 的发行版（如 Ubuntu）上快速得到已安装的软件包数量，请使用 **apt list --installed**， 如下：
+
 ```
 $ apt list --installed | wc -l
 2067
 
 ```
 
-This number is actually one too high because the output contains "Listing..." as its first line. This command would be more accurate:
+这个数字实际上多了一个，因为输出中包含了 “Listing ...” 作为它的第一行。 这个命令会更准确：
+
 ```
 $ apt list --installed | grep -v "^Listing" | wc -l
 2066
 
 ```
 
-To get some details on what all these packages are, browse the list like this:
+要获得所有这些包的详细信息，请按以下方式浏览列表：
+
 ```
 $ apt list --installed | more
 Listing...
@@ -32,9 +33,9 @@ account-plugin-salut/xenial,now 3.12.11-0ubuntu3 amd64 [installed]
 
 ```
 
-That's a lot of detail to absorb -- especially if you let your eyes wander through all 2,000+ files rolling by. It contains the package names, versions, and more but isn't the easiest information display for us humans to parse. The dpkg-query makes the descriptions quite a bit easier to understand, but they will wrap around your command window unless it's _very_ wide. So, the data display below has been split into the left and right hand sides to make this post easier to read.
+这需要观察很多细节--特别是让你的眼睛在所有 2000 多个文件中徘徊。 它包含包名称，版本等，但不是我们人类解析的最简单的信息显示。 dpkg-query 使得描述更容易理解，但这些描述塞满你的命令窗口，除非窗口非常宽。 因此，为了让此篇文章更容易阅读，下面的数据显示已经分成了左右两侧。
 
-Left side:
+左侧：
 ```
 $ dpkg-query -l | more
 Desired=Unknown/Install/Remove/Purge/Hold
@@ -54,7 +55,7 @@ rc account-plugin-windows-live 0.11+14.04.20140409.1-0ubuntu2
 
 ```
 
-Right side:
+右侧：
 ```
 Architecture Description
 ============-=====================================================================
@@ -70,7 +71,8 @@ all GNOME Control Center account plugin for single signon - windows live
 
 ```
 
-The "ii" and "rc" designations at the beginning of each line (see "Left side" above) are package state indicators. The first letter represents the desirable package state:
+每行开头的 “ii” 和 “rc” 名称（见上文“左侧”）是包状态指示符。 第一个字母表示包的理想状态：
+
 ```
 u -- unknown
 i -- install
@@ -80,7 +82,8 @@ h -- hold
 
 ```
 
-The second represents the current package state:
+第二个代表包的当前状态：
+
 ```
 n -- not-installed
 i -- installed
@@ -93,9 +96,10 @@ t -- triggers-pending (the package has been triggered)
 
 ```
 
-An added "R" at the end of the normally two-character field would indicate that reinstallation is required. You may never run into these.
+在通常的双字符字段末尾添加的 “R” 表示需要重新安装。 你可能永远不会碰到这些。
 
-One easy way to take a quick look at your overall package status is to count how many packages are in which of the different states:
+快速查看整体包状态的一种简单方法是计算在不同状态中包含的包的数量：
+
 ```
 $ dpkg-query -l | tail -n +6 | awk '{print $1}' | sort | uniq -c
  2066 ii
@@ -103,25 +107,24 @@ $ dpkg-query -l | tail -n +6 | awk '{print $1}' | sort | uniq -c
 
 ```
 
-I excluded the top five lines from the dpkg-query output above because these are the header lines that would have confused the output.
+我从上面的 dpkg-query 输出中排除了前五行，因为这些是标题行，会混淆输出。
 
-The two lines basically tell us that on this system, 2,066 packages should be and are installed, while 134 other packages have been removed but have left configuration files behind. You can always remove a package's remaining configuration files with a command like this:
+这两行基本上告诉我们，在这个系统上，应该安装了 2066 个软件包，而 134 个其他的软件包已被删除，但已经留下了配置文件。 你始终可以使用以下命令删除程序包的剩余配置文件：
+
 ```
 $ sudo dpkg --purge xfont-mathml
-
 ```
 
-Note that the command above would have removed the package binaries along with the configuration files if both were still installed.
-
+请注意，如果程序包二进制文件和配置文件都已经安装了，则上面的命令将两者都删除。
 
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3242808/linux/peeking-into-your-linux-packages.html
 
 作者：[Sandra Henry-Stocker][a]
-译者：[runningwater](https://github.com/runningwater)
+译者：[Flowsnow](https://github.com/Flowsnow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.networkworld.com/author/Sandra-Henry_Stocker/
+[a]: https://www.networkworld.com/author/Sandra-Henry_Stocker/

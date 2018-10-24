@@ -18,7 +18,7 @@ check: $(CHANGE_FILE)
 	make -k $(RULES) 2>/dev/null | grep '^Rule Matched: '
 
 $(CHANGE_FILE):
-	git --no-pager diff $(TRAVIS_BRANCH) FETCH_HEAD --no-renames --name-status > $@
+	git --no-pager diff $(TRAVIS_BRANCH) origin/master --no-renames --name-status > $@
 
 rule-source-added:
 	echo 'Unmatched Files:'
