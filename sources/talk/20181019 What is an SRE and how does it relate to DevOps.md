@@ -1,3 +1,5 @@
+translating by belitex
+
 What is an SRE and how does it relate to DevOps?
 ======
 The SRE role is common in large enterprises, but smaller businesses need it, too. 
