@@ -1,3 +1,5 @@
+translating---geekpi
+
 MidnightBSD Hits 1.0! Checkout What’s New
 ======
 A couple days ago, Lucas Holt announced the release of MidnightBSD 1.0. Let’s take a quick look at what is included in this new release.
