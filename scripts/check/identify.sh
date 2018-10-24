@@ -51,7 +51,7 @@ rule_translation_revised() {
 # 发布译文：发布多篇译文
 rule_translation_published() {
   [ "$TSL_D" -ge 1 ] && [ "$PUB_A" -ge 1 ] && [ "$TSL_D" -eq "$PUB_A" ] \
-      && [ "$TOTAL" -eq $(("$TSL_D" + "$PUB_A")) ] \
+      && [ "$TOTAL" -eq $(($TSL_D + $PUB_A)) ] \
       && echo "匹配规则：发布译文 ${PUB_A} 篇"
 }
 
