@@ -1,3 +1,4 @@
+translating by dianbanjiu
 How to set up WordPress on a Raspberry Pi
 ======
 
