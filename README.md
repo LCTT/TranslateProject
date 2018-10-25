@@ -72,7 +72,7 @@ LCTT 的组成
 * 2018/05/15 提升 MjSeven 为核心成员。
 * 2018/08/01 [发布 Linux 中国通证：LCCN](https://linux.cn/article-9886-1.html)。
 * 2018/08/17 提升 pityonline 为核心成员，担任校对，并接受他的建议采用 PR 审核模式。
-* 2018/09/10 LCTT 五周年。
+* 2018/09/10 [LCTT 五周年](https://linux.cn/article-9999-1.html)。
 * 2018/10/25 重构了 CI，感谢 vizv、lujun9972、bestony。
 
 核心成员
@@ -82,11 +82,11 @@ LCTT 的组成
 
 - 组长 @wxy,
 - 选题 @oska874,
-- 选题 @lujun9972
+- 选题 @lujun9972,
 - 校对 @jasminepeng,
 - 校对 @pityonline,
 - 钻石译者 @geekpi,
-- 核心成员 @qhwdw,
+- 钻石译者 @qhwdw,
 - 钻石译者 @GOLinux,
 - 技术组长 @bestony,
 - 漫画组长 @GHLandy,
