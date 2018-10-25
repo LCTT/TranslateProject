@@ -6,9 +6,9 @@
 ![待校正](https://lctt.github.io/TranslateProject/badge/translated.svg)
 ![已发布](https://lctt.github.io/TranslateProject/badge/published.svg) 
 
-LCTT 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译 Linux 相关的技术、资讯、杂文等内容。
+[LCTT](https://linux.cn/lctt/) 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译 Linux 相关的技术、资讯、杂文等内容。
 
-LCTT 已经拥有几百名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
+LCTT 已经拥有几百名活跃成员，并欢迎更多的 Linux 志愿者加入我们的团队。
 
 ![logo](https://linux.cn/static/image/common/lctt_logo.png)
 
@@ -70,6 +70,10 @@ LCTT 的组成
 * 2018/01/11 提升 lujun9972 成为核心成员，并加入选题组。
 * 2018/02/20 遭遇 DMCA 仓库被封。
 * 2018/05/15 提升 MjSeven 为核心成员。
+* 2018/08/01 [发布 Linux 中国通证：LCCN](https://linux.cn/article-9886-1.html)。
+* 2018/08/17 提升 pityonline 为核心成员，担任校对，并接受他的建议采用 PR 审核模式。
+* 2018/09/10 [LCTT 五周年](https://linux.cn/article-9999-1.html)。
+* 2018/10/25 重构了 CI，感谢 vizv、lujun9972、bestony。
 
 核心成员
 -------------------------------
@@ -78,13 +82,16 @@ LCTT 的组成
 
 - 组长 @wxy,
 - 选题 @oska874,
+- 选题 @lujun9972,
+- 技术 @bestony,
 - 校对 @jasminepeng,
+- 校对 @pityonline,
 - 钻石译者 @geekpi,
+- 钻石译者 @qhwdw,
 - 钻石译者 @GOLinux,
-- 钻石译者 @ictlyh,
-- 技术组长 @bestony,
-- 漫画组长 @GHLandy,
-- LFS 组长 @martin2011qi,
+- 核心成员 @GHLandy,
+- 核心成员 @martin2011qi,
+- 核心成员 @ictlyh,
 - 核心成员 @strugglingyouth,
 - 核心成员 @FSSlc,
 - 核心成员 @zpl1025,
@@ -96,8 +103,6 @@ LCTT 的组成
 - 核心成员 @Locez,
 - 核心成员 @ucasFL,
 - 核心成员 @rusking,
-- 核心成员 @qhwdw,
-- 核心成员 @lujun9972
 - 核心成员 @MjSeven
 - 前任选题 @DeadFire,
 - 前任校对 @reinoir222,
