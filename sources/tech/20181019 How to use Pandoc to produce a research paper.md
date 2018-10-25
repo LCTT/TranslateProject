@@ -1,3 +1,4 @@
+translating by dianbanjiu
 How to use Pandoc to produce a research paper
 ======
 Learn how to manage section references, figures, tables, and more in Markdown.
