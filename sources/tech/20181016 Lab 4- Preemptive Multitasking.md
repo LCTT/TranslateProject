@@ -1,27 +1,22 @@
-Translating by qhwdw
-Lab 4: Preemptive Multitasking
+实验 4：抢占式多任务处理
 ======
-### Lab 4: Preemptive Multitasking
+### 实验 4：抢占式多任务处理
 
-**Part A due Thursday, October 18, 2018
-Part B due Thursday, October 25, 2018
-Part C due Thursday, November 1, 2018**
+#### 简介
 
-#### Introduction
+在本实验中，你将在多个同时活动的用户模式环境中实现抢占式多任务处理。
 
-In this lab you will implement preemptive multitasking among multiple simultaneously active user-mode environments.
+在 part A 中，你将在 JOS 中添加对多处理器的支持，实现循环调度，并且添加基本的环境管理系统调用（创建和毁坏环境的调用、以及分配/映射内存）。
 
-In part A you will add multiprocessor support to JOS, implement round-robin scheduling, and add basic environment management system calls (calls that create and destroy environments, and allocate/map memory).
+在 part B 中，你将要实现一个类 Unix 的 `fork()`，它将允许一个用户模式的环境去创建一个它自身的副本。
 
-In part B, you will implement a Unix-like `fork()`, which allows a user-mode environment to create copies of itself.
+最后，在 part C 中，你将添加对进程间通讯（IPC）的支持，以允许不同用户模式环境之间显式地通讯和同步。你也将要去添加对硬件时钟中断和优先权的支持。
 
-Finally, in part C you will add support for inter-process communication (IPC), allowing different user-mode environments to communicate and synchronize with each other explicitly. You will also add support for hardware clock interrupts and preemption.
-
-##### Getting Started
+##### 预备知识
 
 Use Git to commit your Lab 3 source, fetch the latest version of the course repository, and then create a local branch called `lab4` based on our lab4 branch, `origin/lab4`:
 
-```
+```markdown
     athena% cd ~/6.828/lab
     athena% add git
     athena% git pull
@@ -36,13 +31,15 @@ Use Git to commit your Lab 3 source, fetch the latest version of the course repo
 ```
 
 Lab 4 contains a number of new source files, some of which you should browse before you start: 
-| kern/cpu.h      | Kernel-private definitions for multiprocessor support                    |
-| kern/mpconfig.c | Code to read the multiprocessor configuration                            |
-| kern/lapic.c    | Kernel code driving the local APIC unit in each processor                |
-| kern/mpentry.S  | Assembly-language entry code for non-boot CPUs                           |
-| kern/spinlock.h | Kernel-private definitions for spin locks, including the big kernel lock |
-| kern/spinlock.c | Kernel code implementing spin locks                                      |
-| kern/sched.c    | Code skeleton of the scheduler that you are about to implement           |
+```markdown
+kern/cpu.h       Kernel-private definitions for multiprocessor support
+kern/mpconfig.c  Code to read the multiprocessor configuration 
+kern/lapic.c     Kernel code driving the local APIC unit in each processor
+kern/mpentry.S   Assembly-language entry code for non-boot CPUs
+kern/spinlock.h  Kernel-private definitions for spin locks, including the big kernel lock 
+kern/spinlock.c  Kernel code implementing spin locks
+kern/sched.c     Code skeleton of the scheduler that you are about to implement
+```
 
 ##### Lab Requirements
 
@@ -68,7 +65,7 @@ In an SMP system, each CPU has an accompanying local APIC (LAPIC) unit. The LAPI
 
 A processor accesses its LAPIC using memory-mapped I/O (MMIO). In MMIO, a portion of _physical_ memory is hardwired to the registers of some I/O devices, so the same load/store instructions typically used to access memory can be used to access device registers. You've already seen one IO hole at physical address `0xA0000` (we use this to write to the VGA display buffer). The LAPIC lives in a hole starting at physical address `0xFE000000` (32MB short of 4GB), so it's too high for us to access using our usual direct map at KERNBASE. The JOS virtual memory map leaves a 4MB gap at `MMIOBASE` so we have a place to map devices like this. Since later labs introduce more MMIO regions, you'll write a simple function to allocate space from this region and map device memory to it.
 
-```
+```markdown
 Exercise 1. Implement `mmio_map_region` in `kern/pmap.c`. To see how this is used, look at the beginning of `lapic_init` in `kern/lapic.c`. You'll have to do the next exercise, too, before the tests for `mmio_map_region` will run.
 ```
 
@@ -80,11 +77,11 @@ The `boot_aps()` function (in `kern/init.c`) drives the AP bootstrap process. AP
 
 After that, `boot_aps()` activates APs one after another, by sending `STARTUP` IPIs to the LAPIC unit of the corresponding AP, along with an initial `CS:IP` address at which the AP should start running its entry code (`MPENTRY_PADDR` in our case). The entry code in `kern/mpentry.S` is quite similar to that of `boot/boot.S`. After some brief setup, it puts the AP into protected mode with paging enabled, and then calls the C setup routine `mp_main()` (also in `kern/init.c`). `boot_aps()` waits for the AP to signal a `CPU_STARTED` flag in `cpu_status` field of its `struct CpuInfo` before going on to wake up the next one.
 
-```
+```markdown
 Exercise 2. Read `boot_aps()` and `mp_main()` in `kern/init.c`, and the assembly code in `kern/mpentry.S`. Make sure you understand the control flow transfer during the bootstrap of APs. Then modify your implementation of `page_init()` in `kern/pmap.c` to avoid adding the page at `MPENTRY_PADDR` to the free list, so that we can safely copy and run AP bootstrap code at that physical address. Your code should pass the updated `check_page_free_list()` test (but might fail the updated `check_kern_pgdir()` test, which we will fix soon).
 ```
 
-```
+```markdown
 Question
 
   1. Compare `kern/mpentry.S` side by side with `boot/boot.S`. Bearing in mind that `kern/mpentry.S` is compiled and linked to run above `KERNBASE` just like everything else in the kernel, what is the purpose of macro `MPBOOTPHYS`? Why is it necessary in `kern/mpentry.S` but not in `boot/boot.S`? In other words, what could go wrong if it were omitted in `kern/mpentry.S`?
@@ -114,17 +111,17 @@ All registers, including system registers, are private to a CPU. Therefore, inst
 
 
 
-```
+```markdown
 Exercise 3. Modify `mem_init_mp()` (in `kern/pmap.c`) to map per-CPU stacks starting at `KSTACKTOP`, as shown in `inc/memlayout.h`. The size of each stack is `KSTKSIZE` bytes plus `KSTKGAP` bytes of unmapped guard pages. Your code should pass the new check in `check_kern_pgdir()`.
 ```
 
-```
+```markdown
 Exercise 4. The code in `trap_init_percpu()` (`kern/trap.c`) initializes the TSS and TSS descriptor for the BSP. It worked in Lab 3, but is incorrect when running on other CPUs. Change the code so that it can work on all CPUs. (Note: your new code should not use the global `ts` variable any more.)
 ```
 
 When you finish the above exercises, run JOS in QEMU with 4 CPUs using make qemu CPUS=4 (or make qemu-nox CPUS=4), you should see output like this:
 
-```
+```c
     ...
     Physical memory: 66556K available, base = 640K, extended = 65532K
     check_page_alloc() succeeded!
@@ -150,7 +147,7 @@ Our current code spins after initializing the AP in `mp_main()`. Before letting 
   * In `env_run()`, release the lock _right before_ switching to user mode. Do not do that too early or too late, otherwise you will experience races or deadlocks.
 
 
-```
+```markdown
 Exercise 5. Apply the big kernel lock as described above, by calling `lock_kernel()` and `unlock_kernel()` at the proper locations.
 ```
 
@@ -184,7 +181,7 @@ Your next task in this lab is to change the JOS kernel so that it can alternate 
 
 
 
-```
+```c
 Exercise 6. Implement round-robin scheduling in `sched_yield()` as described above. Don't forget to modify `syscall()` to dispatch `sys_yield()`.
 
 Make sure to invoke `sched_yield()` in `mp_main`.
@@ -252,11 +249,11 @@ For all of the system calls above that accept environment IDs, the JOS kernel su
 
 We have provided a very primitive implementation of a Unix-like `fork()` in the test program `user/dumbfork.c`. This test program uses the above system calls to create and run a child environment with a copy of its own address space. The two environments then switch back and forth using `sys_yield` as in the previous exercise. The parent exits after 10 iterations, whereas the child exits after 20.
 
-```
+```c
 Exercise 7. Implement the system calls described above in `kern/syscall.c` and make sure `syscall()` calls them. You will need to use various functions in `kern/pmap.c` and `kern/env.c`, particularly `envid2env()`. For now, whenever you call `envid2env()`, pass 1 in the `checkperm` parameter. Be sure you check for any invalid system call arguments, returning `-E_INVAL` in that case. Test your JOS kernel with `user/dumbfork` and make sure it works before proceeding.
 ```
 
-```
+```c
 Challenge! Add the additional system calls necessary to _read_ all of the vital state of an existing environment as well as set it up. Then implement a user mode program that forks off a child environment, runs it for a while (e.g., a few iterations of `sys_yield()`), then takes a complete snapshot or _checkpoint_ of the child environment, runs the child for a while longer, and finally restores the child environment to the state it was in at the checkpoint and continues it from there. Thus, you are effectively  "replaying" the execution of the child environment from an intermediate state. Make the child environment perform some interaction with the user using `sys_cgetc()` or `readline()` so that the user can view and mutate its internal state, and verify that with your checkpoint/restart you can give the child environment a case of selective amnesia, making it "forget" everything that happened beyond a certain point.
 ```
 
@@ -286,7 +283,7 @@ This is a lot of information for the kernel to keep track of. Instead of taking 
 
 In order to handle its own page faults, a user environment will need to register a _page fault handler entrypoint_ with the JOS kernel. The user environment registers its page fault entrypoint via the new `sys_env_set_pgfault_upcall` system call. We have added a new member to the `Env` structure, `env_pgfault_upcall`, to record this information.
 
-```
+```markdown
 Exercise 8. Implement the `sys_env_set_pgfault_upcall` system call. Be sure to enable permission checking when looking up the environment ID of the target environment, since this is a "dangerous" system call.
 ```
 
@@ -304,7 +301,7 @@ You will now need to change the page fault handling code in `kern/trap.c` to han
 
 If there is no page fault handler registered, the JOS kernel destroys the user environment with a message as before. Otherwise, the kernel sets up a trap frame on the exception stack that looks like a `struct UTrapframe` from `inc/trap.h`:
 
-```
+```assembly
                       <-- UXSTACKTOP
     trap-time esp
     trap-time eflags
@@ -328,7 +325,7 @@ If the user environment is _already_ running on the user exception stack when an
 
 To test whether `tf->tf_esp` is already on the user exception stack, check whether it is in the range between `UXSTACKTOP-PGSIZE` and `UXSTACKTOP-1`, inclusive.
 
-```
+```markdown
 Exercise 9. Implement the code in `page_fault_handler` in `kern/trap.c` required to dispatch page faults to the user-mode handler. Be sure to take appropriate precautions when writing into the exception stack. (What happens if the user environment runs out of space on the exception stack?)
 ```
 
@@ -336,13 +333,13 @@ Exercise 9. Implement the code in `page_fault_handler` in `kern/trap.c` required
 
 Next, you need to implement the assembly routine that will take care of calling the C page fault handler and resume execution at the original faulting instruction. This assembly routine is the handler that will be registered with the kernel using `sys_env_set_pgfault_upcall()`.
 
-```
+```markdown
 Exercise 10. Implement the `_pgfault_upcall` routine in `lib/pfentry.S`. The interesting part is returning to the original point in the user code that caused the page fault. You'll return directly there, without going back through the kernel. The hard part is simultaneously switching stacks and re-loading the EIP.
 ```
 
 Finally, you need to implement the C user library side of the user-level page fault handling mechanism.
 
-```
+```c
 Exercise 11. Finish `set_pgfault_handler()` in `lib/pgfault.c`.
 ```
 
@@ -350,7 +347,7 @@ Exercise 11. Finish `set_pgfault_handler()` in `lib/pgfault.c`.
 
 Run `user/faultread` (make run-faultread). You should see:
 
-```
+```c
     ...
     [00000000] new env 00001000
     [00001000] user fault va 00000000 ip 0080003a
@@ -360,7 +357,7 @@ Run `user/faultread` (make run-faultread). You should see:
 
 Run `user/faultdie`. You should see:
 
-```
+```c
     ...
     [00000000] new env 00001000
     i faulted at va deadbeef, err 6
@@ -370,7 +367,7 @@ Run `user/faultdie`. You should see:
 
 Run `user/faultalloc`. You should see:
 
-```
+```c
     ...
     [00000000] new env 00001000
     fault deadbeef
@@ -386,7 +383,7 @@ If you see only the first "this string" line, it means you are not handling recu
 
 Run `user/faultallocbad`. You should see:
 
-```
+```c
     ...
     [00000000] new env 00001000
     [00001000] user_mem_check assertion failure for va deadbeef
@@ -395,7 +392,7 @@ Run `user/faultallocbad`. You should see:
 
 Make sure you understand why `user/faultalloc` and `user/faultallocbad` behave differently.
 
-```
+```markdown
 Challenge! Extend your kernel so that not only page faults, but _all_ types of processor exceptions that code running in user space can generate, can be redirected to a user-mode exception handler. Write user-mode test programs to test user-mode handling of various exceptions such as divide-by-zero, general protection fault, and illegal opcode.
 ```
 
@@ -434,7 +431,7 @@ Each time one of the environments writes a copy-on-write page that it hasn't yet
 
 The user-level `lib/fork.c` code must consult the environment's page tables for several of the operations above (e.g., that the PTE for a page is marked `PTE_COW`). The kernel maps the environment's page tables at `UVPT` exactly for this purpose. It uses a [clever mapping trick][1] to make it to make it easy to lookup PTEs for user code. `lib/entry.S` sets up `uvpt` and `uvpd` so that you can easily lookup page-table information in `lib/fork.c`.
 
-``````
+```c
 Exercise 12. Implement `fork`, `duppage` and `pgfault` in `lib/fork.c`.
 
 Test your code with the `forktree` program. It should produce the following messages, with interspersed 'new env', 'free env', and 'exiting gracefully' messages. The messages may not appear in this order, and the environment IDs may be different.
@@ -456,11 +453,11 @@ Test your code with the `forktree` program. It should produce the following mess
         1006: I am '101'
 ```
 
-```
+```c
 Challenge! Implement a shared-memory `fork()` called `sfork()`. This version should have the parent and child _share_ all their memory pages (so writes in one environment appear in the other) except for pages in the stack area, which should be treated in the usual copy-on-write manner. Modify `user/forktree.c` to use `sfork()` instead of regular `fork()`. Also, once you have finished implementing IPC in part C, use your `sfork()` to run `user/pingpongs`. You will have to find a new way to provide the functionality of the global `thisenv` pointer.
 ```
 
-```
+```markdown
 Challenge! Your implementation of `fork` makes a huge number of system calls. On the x86, switching into the kernel using interrupts has non-trivial cost. Augment the system call interface so that it is possible to send a batch of system calls at once. Then change `fork` to use this interface.
 
 How much faster is your new `fork`?
@@ -490,7 +487,7 @@ In JOS, we make a key simplification compared to xv6 Unix. External device inter
 
 You will have to ensure that the `FL_IF` flag is set in user environments when they run so that when an interrupt arrives, it gets passed through to the processor and handled by your interrupt code. Otherwise, interrupts are _masked_ , or ignored until interrupts are re-enabled. We masked interrupts with the very first instruction of the bootloader, and so far we have never gotten around to re-enabling them.
 
-```
+```markdown
 Exercise 13. Modify `kern/trapentry.S` and `kern/trap.c` to initialize the appropriate entries in the IDT and provide handlers for IRQs 0 through 15. Then modify the code in `env_alloc()` in `kern/env.c` to ensure that user environments are always run with interrupts enabled.
 
 Also uncomment the `sti` instruction in `sched_halt()` so that idle CPUs unmask interrupts.
@@ -506,7 +503,7 @@ In the `user/spin` program, after the child environment was first run, it just s
 
 The calls to `lapic_init` and `pic_init` (from `i386_init` in `init.c`), which we have written for you, set up the clock and the interrupt controller to generate interrupts. You now need to write the code to handle these interrupts.
 
-```
+```markdown
 Exercise 14. Modify the kernel's `trap_dispatch()` function so that it calls `sched_yield()` to find and run a different environment whenever a clock interrupt takes place.
 
 You should now be able to get the `user/spin` test to work: the parent environment should fork off the child, `sys_yield()` to it a couple times but in each case regain control of the CPU after one time slice, and finally kill the child environment and terminate gracefully.
@@ -548,7 +545,7 @@ If either the sender or the receiver does not indicate that a page should be tra
 
 ###### Implementing IPC
 
-```
+```markdown
 Exercise 15. Implement `sys_ipc_recv` and `sys_ipc_try_send` in `kern/syscall.c`. Read the comments on both before implementing them, since they have to work together. When you call `envid2env` in these routines, you should set the `checkperm` flag to 0, meaning that any environment is allowed to send IPC messages to any other environment, and the kernel does no special permission checking other than verifying that the target envid is valid.
 
 Then implement the `ipc_recv` and `ipc_send` functions in `lib/ipc.c`.
@@ -568,7 +565,7 @@ Challenge! The prime sieve is only one neat use of message passing between a lar
 Challenge! One of the most impressive examples of the power of message passing is Doug McIlroy's power series calculator, described in [M. Douglas McIlroy, ``Squinting at Power Series,'' _Software--Practice and Experience_ , 20(7) (July 1990), 661-683][4]. Implement his power series calculator and compute the power series for _sin_ ( _x_ + _x_ ^3).
 ```
 
-```
+```markdown
 Challenge! Make JOS's IPC mechanism more efficient by applying some of the techniques from Liedtke's paper, [Improving IPC by Kernel Design][5], or any other tricks you may think of. Feel free to modify the kernel's system call API for this purpose, as long as your code is backwards compatible with what our grading scripts expect.
 ```
 
