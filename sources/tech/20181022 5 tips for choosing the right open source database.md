@@ -1,3 +1,5 @@
+HankChow translating
+
 5 tips for choosing the right open source database
 ======
 When selecting a mission-critical application, you can't afford to make mistakes. 
