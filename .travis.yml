@@ -1,3 +1,18 @@
 language: c
 script:
-  - make -s check
+  - sh ./scripts/check.sh
+  - ./scripts/badge.sh
+branches:
+  only:
+  - master
+  except:
+  - gh-pages
+git:
+  submodules: false
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
