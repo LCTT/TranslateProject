@@ -2,7 +2,13 @@ language: c
 script:
   - sh ./scripts/check.sh
   - ./scripts/badge.sh
-
+branches:
+  only:
+  - master
+  except:
+  - gh-pages
+git:
+  submodules: false
 deploy:
   provider: pages
   skip_cleanup: true
