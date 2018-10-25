@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 Getting started with functional programming in Python using the toolz library
 ======
 
