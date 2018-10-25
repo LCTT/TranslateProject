@@ -1,3 +1,5 @@
+translating---geekpi
+
 Simulating the Altair
 ======
 The [Altair 8800][1] was a build-it-yourself home computer kit released in 1975. The Altair was basically the first personal computer, though it predated the advent of that term by several years. It is Adam (or Eve) to every Dell, HP, or Macbook out there.
