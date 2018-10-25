@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 Quiet log noise with Python and machine learning
 ======
 
