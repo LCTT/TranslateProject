@@ -1,3 +1,5 @@
+Translating by cycoe...
+cycoe 翻译中
 24 Must Have Essential Linux Applications In 2017
 ======
 Brief: What are the must have applications for Linux? The answer is subjective and it depends on for what purpose do you use your desktop Linux. But there are still some essentials Linux apps that are more likely to be used by most Linux user. We have listed such best Linux applications that you should have installed in every Linux distribution you use.
