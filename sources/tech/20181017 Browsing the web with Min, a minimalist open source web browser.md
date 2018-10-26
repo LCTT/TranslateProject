@@ -1,3 +1,5 @@
+HankChow translating
+
 Browsing the web with Min, a minimalist open source web browser
 ======
 Not every web browser needs to carry every single feature. Min puts a minimalist spin on the everyday web browser.
