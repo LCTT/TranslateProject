@@ -1,5 +1,3 @@
-Translating by jlztan
-
 Top 10 Raspberry Pi blogs to follow
 ======
 
