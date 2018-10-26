@@ -74,7 +74,7 @@ for catalog in "$@";do
   </mask>
   <g mask="url(#a)">
     <path fill="#555" d="M0 0 h60 v20 H0 z" />
-    <path fill="${comment}" d="M60 0 h40 v20 H70.53125 z" />
+    <path fill="${color}" d="M60 0 h40 v20 H60 z" />
     <path fill="url(#b)" d="M0 0 h100 v20 H0 z" />
   </g>
   <g fill="#fff" font-family="DejaVu Sans" font-size="11">
