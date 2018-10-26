@@ -1,6 +1,6 @@
 使用 Lakka Linux 将你的旧 PC 变成复古游戏主机
 ======
-**如果你有一台吃灰的旧计算机，你可以用 Lakka Linux 将它变成像 PlayStation 那样的复古游戏主机。**
+> 如果你有一台吃灰的旧计算机，你可以用 Lakka Linux 将它变成像 PlayStation 那样的复古游戏主机。
 
 你可能已经了解[专门用于复活旧计算机的 Linux 发行版][1]。但是你知道有个 Linux 发行版专门是为了将旧电脑变成复古游戏主机创建的么？
 
@@ -12,8 +12,7 @@
 
 Lakka 提供类似的界面和类似的体验。我稍后会谈到“体验”。先看一下界面。
 
-<https://itsfoss.com/wp-content/uploads/2018/10/lakka-linux-gaming-console.webm>
-Lakka 复古游戏界面
+[Lakka 复古游戏界面](https://itsfoss.com/wp-content/uploads/2018/10/lakka-linux-gaming-console.webm)
 
 ### Lakka：为复古游戏而生的 Linux 发行版
 
@@ -27,20 +26,18 @@ Lakka 是轻量级的，你可以将它安装在大多数老系统或单板计�
 
 它支持大量的模拟器。你只需要在系统上下载 ROM，Lakka 将从这些 ROM 运行游戏。你可以在[这里][6]找到支持的模拟器和硬件列表。
 
-它通过器顺滑的图形界面让你能够在许多计算机和主机上运行经典游戏。设置也是统一的，因此可以一劳永逸地完成配置。
+它通过其顺滑的图形界面让你能够在许多计算机和主机上运行经典游戏。设置也是统一的，因此可以一劳永逸地完成配置。
 
 让我总结一下 Lakka 的主要特点：
 
-  * RetroArch 中与 PlayStation 类似的界面
-  * 支持许多复古游戏模拟器
-  * 支持最多 5 名玩家在同一系统上玩游戏
-  * 存档允许你随时保存游戏中的进度
-  * 你可以使用各种图形过滤器改善旧游戏的外表
-  * 你可以通过网络加入多人游戏
-  * 开箱即用支持 XBOX360、Dualshock 3 和 8bitdo 等多种游戏手柄
-  * 连接到 [RetroAchievements] [7] 获取奖杯和徽章
-
-
+* RetroArch 中与 PlayStation 类似的界面
+* 支持许多复古游戏模拟器
+* 支持最多 5 名玩家在同一系统上玩游戏
+* 存档允许你随时保存游戏中的进度
+* 你可以使用各种图形过滤器改善旧游戏的外表
+* 你可以通过网络加入多人游戏
+* 开箱即用支持 XBOX360、Dualshock 3 和 8bitdo 等多种游戏手柄
+* 连接到 [RetroAchievements] [7] 获取奖杯和徽章
 
 ### 获取 Lakka
 
@@ -50,7 +47,7 @@ Lakka 是轻量级的，你可以将它安装在大多数老系统或单板计�
 
 [项目的 FAQ 部分][8]回答了常见的疑问，所以如有任何其他的问题，请参考它。
 
-[获取 Lakka][9]
+- [获取 Lakka][9]
 
 你喜欢复古游戏吗？你使用什么模拟器？你以前用过 Lakka 吗？在评论区与我们分享你的观点。
 
@@ -61,7 +58,7 @@ via: https://itsfoss.com/lakka-retrogaming-linux/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -75,4 +72,4 @@ via: https://itsfoss.com/lakka-retrogaming-linux/
 [6]: http://www.lakka.tv/powerful/
 [7]: https://retroachievements.org/
 [8]: http://www.lakka.tv/doc/FAQ/
-[9]; http://www.lakka.tv/disclaimer/
+[9]: http://www.lakka.tv/disclaimer/
