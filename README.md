@@ -1,10 +1,15 @@
-简介
--------------------------------
 
 ![待翻译](https://lctt.github.io/TranslateProject/badge/sources.svg)
 ![翻译中](https://lctt.github.io/TranslateProject/badge/translating.svg)
 ![待校正](https://lctt.github.io/TranslateProject/badge/translated.svg)
 ![已发布](https://lctt.github.io/TranslateProject/badge/published.svg) 
+
+[![Travis (.org)](https://img.shields.io/travis/LCTT/TranslateProject.svg)](https://travis-ci.org/LCTT/TranslateProject)
+[![GitHub contributors](https://img.shields.io/github/contributors/LCTT/TranslateProject.svg)](https://github.com/LCTT/TranslateProject/graphs/contributors)
+[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/LCTT/TranslateProject.svg)](https://github.com/LCTT/TranslateProject/pulls?q=is%3Apr+is%3Aclosed)
+
+简介
+-------------------------------
 
 [LCTT](https://linux.cn/lctt/) 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译 Linux 相关的技术、资讯、杂文等内容。
 
