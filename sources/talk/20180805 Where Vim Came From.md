@@ -1,3 +1,5 @@
+thecyanbird translating
+
 Where Vim Came From
 ======
 I recently stumbled across a file format known as Intel HEX. As far as I can gather, Intel HEX files (which use the `.hex` extension) are meant to make binary images less opaque by encoding them as lines of hexadecimal digits. Apparently they are used by people who program microcontrollers or need to burn data into ROM. In any case, when I opened up a HEX file in Vim for the first time, I discovered something shocking. Here was this file format that, at least to me, was deeply esoteric, but Vim already knew all about it. Each line of a HEX file is a record divided into different fields—Vim had gone ahead and colored each of the fields a different color. `set ft?` I asked, in awe. `filetype=hex`, Vim answered, triumphant.
