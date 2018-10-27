@@ -1,5 +1,3 @@
-Translating by cycoe...
-cycoe 翻译中
 2017 年必备的 24 个 Linux 应用程序
 ======
 前情提要：Linux 上必备的应用程序是什么呢？这个答案具有主观性并取决于你使用 Linux 桌面的目的是什么。但确实存在一些必备的并且大部分 Linux 用户都会安装的应用程序。接下来我们会列举出那些在所有 Linux 发行版上你都会安装的最优秀的 Linux 应用程序。
@@ -136,68 +134,67 @@ Rhythmbox 是一款主要为 GNOME 桌面环境开发的音乐播放器，当然
 
 #### [VLC][32]
 
-VLC is an open source media player. It is simple, fast, lightweight and really powerful. VLC can play almost any media formats you can throw at it out-of-the-box. It can also stream online medias. It also have some nifty extensions for various tasks like downloading subtitles right from the player.
-VLC 是一款
+VLC 是一款简洁、快速、轻量并且非常强大的开源媒体播放器，它能够直接播放几乎所有格式的媒体文件，同时也能够播放在线的流媒体。它也能够安装一些时髦的扩展来完成不同的任务，比如直接在播放器内下载字幕。
 
 #### [Kodi][33]
 
-Kodi is a full-fledged media center. Kodi is open source and very popular among its user base. It can handle videos, music, pictures, podcasts and even games, from both local and network media storage. You can even record TV with it. The behavior of Kodi can be customized via add-ons and skins.
+Kodi 是一款成熟并且开源的媒体中心，在它的用户群中非常受欢迎。它能够处理来自本地或者网络媒体存储的视频、音乐、图片、播客甚至游戏，更强大的是你还能用它来录制电视节目。Kodi 可由附加组件和皮肤进行定制。
 
-[Suggested read4 Format Factory Alternative In Linux][47]
+[推荐阅读 Linux 平台上的 4 款格式工厂替代品][47]
 
-### Photo Editor
+### 照片编辑器
 
-![Photo Editors](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Photo-Editor-1024x512.jpg)
-[Save][9]Photo Editors
+![照片编辑器](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Photo-Editor-1024x512.jpg)
+[Save][9]照片编辑器
 
 #### [GIMP][34]
 
-GIMP is the Photoshop alternative for Linux. It is open source, full-featured and professional photo editing software. It is packed with a wide range of tools for manipulating images. And on top of that, there is various customization options and third-party plugins for enhancing the experience.
+GIMP 是 Linux 平台上 Photoshop 的替代品，它是一款开源、全功能并且专业的照片编辑软件。它打包了各式各样的工具用来编辑图片，更强大的是，它包含丰富的自定义设置以及第三方插件来增强体验。
 
 #### [Krita][35]
 
-Krita is mainly a painting tool but serves as a photo editing application as well. It is open source and packed with lots of sophisticated and advanced tools.
+Krita 主要是作为一款绘图工具，但也可以作为照片编辑软件。它是开源的并且打包了非常多复杂的高级工具。
 
-[Suggested readBest Photo Applications For Linux][48]
+[推荐阅读 Linux 平台最好的照片应用][48]
 
-### Text Editor
+### 文字编辑器
 
-Every Linux distribution comes with their own solution for text editors. Generally, they are quite simple and without much functionality. But here are some text editors with enhanced capabilities.
+每个 Linux 发行版都拥有自己的文字编缉器解决方案，当然大体上它们都非常简洁并且没有太多功能。但是也有一些文字编辑器具有更强大的功能。
 
-![Text Editors](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Text-Editor-1024x512.jpg)
-[Save][10]Text Editors
+![文字编辑器](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Text-Editor-1024x512.jpg)
+[Save][10]文字编辑器
 
 #### [Atom][36]
 
-Atom is the modern and hackable text editor maintained by GitHub. It is completely open-source and offers everything you can think of to get out of a text editor. You can use it right out-of-the-box or you can customize and tune it just the way you want. And it has a ton of extensions and themes from the community up for grab.
+Atom 是由 GitHub 开发的一款现代高度可配置的文字编辑器，它是完全开源的并且能够提供所有你能想到的文字编辑器功能。你可以开箱即用，也可以将其配置成你想要的样子。并且你可以从它的社区安装大量的扩展和主题。
 
 #### [Sublime Text][37]
 
-Sublime Text is one of the most popular text editors. Though it is not free, it allows you to use the software for evaluation without any time limit. Sublime Text is a feature-rich and sophisticated piece of software. And of course, it has plugins and themes support.
+Sublime Text 是最受欢迎的文字编辑器之一，虽然它并不是免费的，但你可以无限地试用该款软件。Sublime Text 是一款特性丰富并且高度模块化的软件，当然它也提供插件和主题支持。
 
-[Suggested read4 Best Modern Open Source Code Editors For Linux][49]
+[推荐阅读 Linux 平台最优秀的 4 款现代开源代码编辑器][49]
 
-### Launcher
+### 启动器
 
-![Launchers](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Launcher-1024x512.jpg)
-[Save][11]Launchers
+![启动器](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Launcher-1024x512.jpg)
+[Save][11]启动器
 
 #### [Albert][38]
 
-Albert is inspired by Alfred (a productivity application for Mac, which is totally kickass by-the-way) and still in the development phase. Albert is fast, extensible and customizable. The goal is to “Access everything with virtually zero effort”. It integrates with your Linux distribution nicely and helps you to boost your productivity.
+Albert 是一款快速、可扩展、可定制的生产力工具，受 Alfred（Mac 平台上一个非常好的生产力工具）启发并且仍处于开发阶段，它的目标是“使所有触手可及”。它能够与你的 Linux 发行版非常好的集成，帮助你提高生产力。
 
 #### [Synapse][39]
 
-Synapse has been around for years. It’s a simple launcher that can search and run applications. It can also speed up various workflows like – controlling music, searching files, directories, bookmarks etc., running commands and such.
+Synapse 已经有些年头了，它是一个能够搜索和运行程序的简单启动器。它也同时能够加速一些工作流，譬如音乐控制、文件搜索、路径切换、书签、运行命令，等等。
 
-As Abhishek advised, we will keep this list of best Linux software updated with our readers’ (i.e. yours) feedback. So, what are your favorite must have Linux applications? Share with us and do suggest more categories of software to add to this list.
+正如 Abhishek 所考虑的，我们将根据读者的（也就是你的）反馈更新最佳 Linux 应用程序清单。那么，你最爱的 Linux 应用程序是什么呢？分享给我们或者为这个清单增加新的软件分类吧。
 
 ---
 
 via: https://itsfoss.com/essential-linux-applications/
 
 作者：[Munif Tanjim][a]
-译者：[译者 ID](https://github.com/译者ID)
+译者：[cycoe](https://github.com/cycoe)
 校对：[校对者 ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux 中国](https://linux.cn/) 荣誉推出
