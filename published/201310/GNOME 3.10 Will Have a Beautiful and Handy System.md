@@ -12,10 +12,10 @@
 从将在2013年9月25号发布 GNOME 3.10 开始，使用者将会发现所有出现的指示器都使用一个单一的面板菜单，这将大幅度提升你和GNOME桌面的交互体验。
 
 
-![img](http://i1-news.softpedia-static.com/images/extra/LINUX/large/gnomesystemmenu-large_001.jpg)
+![img](https://dn-linuxcn.qbox.me/data/attachment/album/201309/12/2308053y73y43ed5ticm97.jpg)
 旧的系统状态区
 
-![img](http://i1-news.softpedia-static.com/images/extra/LINUX/large/gnomesystemmenu-large_002.jpg)
+![img](https://dn-linuxcn.qbox.me/data/attachment/album/201309/12/230829cevaoagllmoppqmg.jpg)
 新的系统状态区
 
 新系统状态区不仅仅是统一了所有的面板菜单，而且它也将仅显示你所关注的主要信息。用鼠标点击，你可以看到你的笔记本电脑的电量还能剩多少时间使用（也显示百分比）、连接无线宽带或者是WI-Fi、及调整音量和亮度。

@@ -42,7 +42,7 @@ screenFetch将显示以下系统信息：
 
 输出示例：
 
-![img](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/sk@sk-screenfetch-3.1.0_008.png)
+![img](https://dn-linuxcn.qbox.me/data/attachment/album/201309/12/213241tndd7ze8z88ndl4z.png)
 
 ###通过git库安装
 

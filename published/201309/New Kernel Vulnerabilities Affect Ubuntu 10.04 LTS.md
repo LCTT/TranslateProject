@@ -1,3 +1,4 @@
+![](https://dn-linuxcn.qbox.me/data/attachment/album/201309/11/205101mmr3bedjm1rxmwbr.jpg)
 
 ##Ubuntu 10.04 LTS受Linux新内核漏洞影响
 

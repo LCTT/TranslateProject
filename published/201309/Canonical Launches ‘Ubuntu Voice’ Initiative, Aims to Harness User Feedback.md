@@ -1,3 +1,4 @@
+![](https://dn-linuxcn.qbox.me/data/attachment/album/201309/11/201609conoy411sssnno0n.jpg)
 ##Canonical公司推出“Ubuntu Voice”，旨在利用用户的反馈
 
 今天，Canonical公司发起一项[新倡议](http://design.canonical.com/2013/09/join-in-ubuntuvoice-be-the-voice-of-millions-of-ubuntu-users/)，旨在帮助塑造用户想要的Ubuntu的未来。

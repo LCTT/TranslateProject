@@ -1,3 +1,4 @@
+![](https://dn-linuxcn.qbox.me/data/attachment/album/201309/12/095817kss1s8k03kykkkz3.png)
 ##通过推出Ubuntu Voice，Ubuntu进一步扩展了其开放性，正式开放供参与用户体验网络。
 
 Ubuntu是一个全球规模的巨大项目，超越了国界、年龄、国籍和社会地位，汇聚2000万用户，在这里，友谊、情感和性能都成为了Ubuntu操作系统的坚固基础。
