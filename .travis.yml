@@ -1,7 +1,7 @@
 language: c
 script:
-  - sh ./scripts/check.sh
-  - sh -c '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && ./scripts/badge.sh'
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then sh ./scripts/check.sh; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sh ./scripts/badge.sh; fi'
 branches:
   only:
   - master
