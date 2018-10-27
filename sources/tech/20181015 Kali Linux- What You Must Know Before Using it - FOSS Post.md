@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Kali Linux: What You Must Know Before Using it – FOSS Post
 ======
 ![](https://i1.wp.com/fosspost.org/wp-content/uploads/2018/10/kali-linux.png?fit=1237%2C527&ssl=1)
