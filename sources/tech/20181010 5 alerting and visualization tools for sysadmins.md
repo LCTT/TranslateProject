@@ -1,3 +1,5 @@
+HackChow translating
+
 5 alerting and visualization tools for sysadmins
 ======
 These open source tools help users understand system behavior and output, and provide alerts for potential problems.
