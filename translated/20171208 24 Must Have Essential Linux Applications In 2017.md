@@ -14,7 +14,7 @@
 
 ### 网页浏览器
 
-![Web Browsers](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Web-Browser-1024x512.jpg)
+![网页浏览器](https://itsfoss.com/wp-content/uploads/2016/10/Essential-Linux-Apps-Web-Browser-1024x512.jpg)
 [Save][1]网页浏览器
 
 #### [Google Chrome][12]
