@@ -1,7 +1,3 @@
-# sober-wang 翻译中
-
-
-
 30 Best Sources For Linux / *BSD / Unix Documentation On the We
 ======
 
