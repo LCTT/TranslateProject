@@ -1,5 +1,6 @@
 推动 DevOps 变革的三个方面
 ======
+
 推动大规模的组织变革是一个痛苦的过程。对于 DevOps 来说，尽管也有阵痛，但变革带来的价值则相当可观。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/diversity-inclusion-transformation-change_20180927.png?itok=2E-g10hJ)
@@ -30,10 +31,8 @@ DevOps 主导者必须和管理层密切合作，在进行决策的时候给出�
 
 对于和管理层之间的协调，这里有两条建议：
 
-  * 一是**重视所有规章制度**。如果管理层对合同、安全等各方面有任何疑问，你都可以向法务或安全负责人咨询，这样做可以避免犯下后果严重的错误。
-  * 二是**将管理层的重点关注的方面输出为量化指标**。举个例子，如果公司的目标是减少客户流失，而你调查得出计划外的停机是造成客户流失的主要原因，那么就可以让团队对故障的<ruby>平均检测时间<rt>Mean Time To Detection</rt></ruby>（MTTD）和<ruby>平均解决时间<rt>Mean Time To Resolution</rt></ruby>（MTTR）实行重点优化。你可以使用这些关键指标来量化团队的工作成果，而管理层对此也可以有一个直观的了解。
-
-
+* 一是**重视所有规章制度**。如果管理层对合同、安全等各方面有任何疑问，你都可以向法务或安全负责人咨询，这样做可以避免犯下后果严重的错误。
+* 二是**将管理层的重点关注的方面输出为量化指标**。举个例子，如果公司的目标是减少客户流失，而你调查得出计划外的停机是造成客户流失的主要原因，那么就可以让团队对故障的<ruby>平均检测时间<rt>Mean Time To Detection</rt></ruby>（MTTD）和<ruby>平均解决时间<rt>Mean Time To Resolution</rt></ruby>（MTTR）实行重点优化。你可以使用这些关键指标来量化团队的工作成果，而管理层对此也可以有一个直观的了解。
 
 ### 团队文化
 
@@ -96,4 +95,3 @@ via: https://opensource.com/article/18/10/tales-devops-transformation
 [10]: https://www.execu-search.com/~/media/Resources/pdf/2017_Hiring_Outlook_eBook
 [11]: https://allthingsopen.org/talk/tales-from-a-devops-transformation/
 [12]: https://allthingsopen.org/
-
