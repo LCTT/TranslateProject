@@ -1,5 +1,3 @@
-fuowang 翻译中
-
 Using Your Own Private Registry with Docker Enterprise Edition
 ======
 
