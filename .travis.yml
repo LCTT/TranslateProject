@@ -1,2 +1,18 @@
 language: c
-script: make -s check
+script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then sh ./scripts/check.sh; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sh ./scripts/badge.sh; fi'
+branches:
+  only:
+  - master
+  except:
+  - gh-pages
+git:
+  submodules: false
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master

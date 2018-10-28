@@ -1,59 +1,59 @@
-Play Windows games on Fedora with Steam Play and Proton
+在 Fedora 上使用 Steam play 和 Proton 来玩 Windows 游戏
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/09/steam-proton-816x345.jpg)
 
-Some weeks ago, Steam [announced][1] a new addition to Steam Play with Linux support for Windows games using Proton, a fork from WINE. This capability is still in beta, and not all games work. Here are some more details about Steam and Proton.
+几周前，Steam 宣布要给 Steam Play 增加一个新组件，用于支持在 Linux 平台上使用 Proton 来玩 Windows 的游戏，这个组件是 WINE 的一个分支。这个功能仍然处于测试阶段，且并非对所有游戏都有效。这里有一些关于 Steam 和 Proton 的细节。
 
-According to the Steam website, there are new features in the beta release:
+据 Steam 网站称，测试版本中有以下这些新功能：
 
-  * Windows games with no Linux version currently available can now be installed and run directly from the Linux Steam client, complete with native Steamworks and OpenVR support.
-  * DirectX 11 and 12 implementations are now based on Vulkan, which improves game compatibility and reduces performance impact.
-  * Fullscreen support has been improved. Fullscreen games seamlessly stretch to the desired display without interfering with the native monitor resolution or requiring the use of a virtual desktop.
-  * Improved game controller support. Games automatically recognize all controllers supported by Steam. Expect more out-of-the-box controller compatibility than even the original version of the game.
-  * Performance for multi-threaded games has been greatly improved compared to vanilla WINE.
+  * 现在没有 Linux 版本的 Windows 游戏可以直接从 Linux 上的 Steam 客户端进行安装和运行，并且有完整、原生的 Steamworks 和 OpenVR 的支持。
+  * 现在 DirectX 11 和 12 的实现都基于 Vulkan，它可以提高游戏的兼容性并减小游戏性能收到的影响。
+  * 全屏支持已经得到了改进，全屏游戏时可以无缝扩展到所需的显示程度，而不会干扰到显示屏本身的分辨率或者说需要使用虚拟桌面。
+  * 改进了对游戏控制器的支持，游戏自动识别所有 Steam 支持的控制器，比起游戏的原始版本，能够获得更多开箱即用的控制器兼容性。
+  * 和 vanilla WINE 比起来，游戏的多线程性能得到了极大的提高。
 
 
 
-### Installation
+### 安装
 
-If you’re interested in trying Steam with Proton out, just follow these easy steps. (Note that you can ignore the first steps to enable the Steam Beta if you have the [latest updated version of Steam installed][2]. In that case you no longer need Steam Beta to use Proton.)
+如果你有兴趣，想尝试一下 Steam 和 Proton。请按照下面这些简单的步骤进行操作。（请注意，如果你已经安装了最新版本的 Steam，可以忽略启用 Steam 测试版这个第一步。在这种情况下，你不再需要通过 Steam 测试版来使用 Proton。）
 
-Open up Steam and log in to your account. This example screenshot shows support for only 22 games before enabling Proton.
+打开 Steam 并登陆到你的帐户，这个截屏示例显示的是在使用 Proton 之前仅支持22个游戏。
 
 ![][3]
 
-Now click on Steam option on top of the client. This displays a drop down menu. Then select Settings.
+现在点击客户端顶部的 Steam 选项，这会显示一个下拉菜单。然后选择设置。
 
 ![][4]
 
-Now the settings window pops up. Select the Account option and next to Beta participation, click on change.
+现在弹出了设置窗口，选择账户选项，并在 Beta participation 旁边，点击更改。
 
 ![][5]
 
-Now change None to Steam Beta Update.
+现在将 None 更改为 Steam Beta Update。
 
 ![][6]
 
-Click on OK and a prompt asks you to restart.
+点击确定，然后系统会提示你重新启动。
 
 ![][7]
 
-Let Steam download the update. This can take a while depending on your internet speed and computer resources.
+让 Steam 下载更新，这会需要一段时间，具体需要多久这要取决于你的网络速度和电脑配置。
 
 ![][8]
 
-After restarting, go back to the Settings window. This time you’ll see a new option. Make sure the check boxes for Enable Steam Play for supported titles, Enable Steam Play for all titles and Use this tool instead of game-specific selections from Steam are enabled. The compatibility tool should be Proton.
+在重新启动之后，返回到上面的设置窗口。这次你会看到一个新选项。确定有为提供支持的游戏使用 Stream Play 这个复选框，让所有的游戏都使用 Steam Play 进行运行，而不是 steam 中游戏特定的选项。兼容性工具应该是 Proton。
 
 ![][9]
 
-The Steam client asks you to restart. Do so, and once you log back into your Steam account, your game library for Linux should be extended.
+Steam 客户端会要求你重新启动，照做，然后重新登陆你的 Steam 账户，你的 Linux 的游戏库就能得到扩展了。
 
 ![][10]
 
-### Installing a Windows game using Steam Play
+### 使用 Steam Play 来安装一个 Windows 游戏
 
-Now that you have Proton enabled, install a game. Select the title you want and you’ll find the process is similar to installing a normal game on Steam, as shown in these screenshots.
+现在你已经启用 Proton，开始安装游戏，选择你想要安装的游戏，然后你会发现这个安装过程类似于在 Steam 上安装一个普通游戏，如下面这些截图所示。
 
 ![][11]
 
@@ -63,13 +63,13 @@ Now that you have Proton enabled, install a game. Select the title you want and 
 
 ![][14]
 
-After the game is done downloading and installing, you can play it.
+在下载和安装完游戏后，你就可以开始玩了。
 
 ![][15]
 
 ![][16]
 
-Some games may be affected by the beta nature of Proton. The game in this example, Chantelise, had no audio and a low frame rate. Keep in mind this capability is still in beta and Fedora is not responsible for results. If you’d like to read further, the community has created a [Google doc][17] with a list of games that have been tested.
+一些游戏可能会受到 Proton 测试性质的影响，在下面这个叫 Chantelise 游戏中，没有了声音并且帧率很低。请记住这个功能仍然在测试阶段，Fedora 不会对结果负责。如果你想要了解更多，社区已经创建了一个 Google 文档，这个文档里有已经测试过的游戏的列表。
 
 
 --------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ via: https://fedoramagazine.org/play-windows-games-steam-play-proton/
 
 作者：[Francisco J. Vergara Torres][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[hopefully2333](https://github.com/hopefully2333)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
