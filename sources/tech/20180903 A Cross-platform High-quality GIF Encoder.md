@@ -1,3 +1,5 @@
+FSSlc translating
+
 A Cross-platform High-quality GIF Encoder
 ======
 
