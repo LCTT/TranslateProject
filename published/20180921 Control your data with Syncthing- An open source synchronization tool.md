@@ -104,4 +104,4 @@ via: https://opensource.com/article/18/9/take-control-your-data-syncthing
 [2]: https://syncthing.net/
 [3]: https://docs.syncthing.net/specs/bep-v1.html
 [4]: /file/410191
-[5]: https://opensource.com/sites/default/files/uploads/syncthing1.png	
+[5]: https://opensource.com/sites/default/files/uploads/syncthing1.png
