@@ -1,3 +1,5 @@
+Northurland Translating
+
 How Lisp Became God's Own Programming Language
 ======
 When programmers discuss the relative merits of different programming languages, they often talk about them in prosaic terms as if they were so many tools in a tool belt—one might be more appropriate for systems programming, another might be more appropriate for gluing together other programs to accomplish some ad hoc task. This is as it should be. Languages have different strengths and claiming that a language is better than other languages without reference to a specific use case only invites an unproductive and vitriolic debate.

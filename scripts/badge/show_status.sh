@@ -27,6 +27,7 @@ shift $(( OPTIND - 1 ))
 OPTIND=1
 
 declare -A catalog_comment_dict
+declare -A catalog_color_dict
 catalog_comment_dict=([sources]="待翻译" [translating]="翻译中" [translated]="待校对" [published]="已发布")
 catalog_color_dict=([sources]="#97CA00" [translating]="#00BCD5" [translated]="#FF9800" [published]="#FF5722")
 
