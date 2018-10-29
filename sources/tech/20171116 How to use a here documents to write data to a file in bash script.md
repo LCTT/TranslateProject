@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 How to use a here documents to write data to a file in bash script
 ======
 
