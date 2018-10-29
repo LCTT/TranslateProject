@@ -1,3 +1,5 @@
+Translating by StdioA
+
 Design faster web pages, part 2: Image replacement
 ======
 ![](https://fedoramagazine.org/wp-content/uploads/2018/03/fasterwebsites2-816x345.jpg)
