@@ -1,3 +1,5 @@
+Translating by StdioA
+
 Design faster web pages, part 3: Font and CSS tweaks
 ======
 
