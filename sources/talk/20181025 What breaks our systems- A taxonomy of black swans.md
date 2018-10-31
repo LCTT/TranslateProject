@@ -1,3 +1,5 @@
+translating by belitex
+
 What breaks our systems: A taxonomy of black swans
 ======
 
