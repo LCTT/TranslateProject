@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How To Disable Ads In Terminal Welcome Message In Ubuntu Server
 ======
 
