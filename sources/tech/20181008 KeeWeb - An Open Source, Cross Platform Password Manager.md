@@ -1,3 +1,5 @@
+Translating by jlztan
+
 KeeWeb – An Open Source, Cross Platform Password Manager
 ======
 

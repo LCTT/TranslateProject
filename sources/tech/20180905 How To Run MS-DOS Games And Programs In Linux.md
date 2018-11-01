@@ -1,3 +1,5 @@
+Translating by way-ww
+
 How To Run MS-DOS Games And Programs In Linux
 ======
 
