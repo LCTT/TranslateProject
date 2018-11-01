@@ -1,28 +1,23 @@
-# 用 350 行代码从零开始，将 Lisp 编译成 JavaScript
+用 350 行代码从零开始，将 Lisp 编译成 JavaScript
+======
 
-我们将会在本篇文章中看到从零开始实现的编译器，将简单的类 LISP 计算语言编译成 JavaScript。完整的源代码在 [这里][7].
+我们将会在本篇文章中看到从零开始实现的编译器，将简单的类 LISP 计算语言编译成 JavaScript。完整的源代码在 [这里][7]。
 
 我们将会：
 
 1.  自定义语言，并用它编写一个简单的程序
-
 2.  实现一个简单的解析器组合器
-
 3.  为该语言实现一个解析器
-
 4.  为该语言实现一个美观的打印器
-
-5.  为我们的需求定义 JavaScript 的一个子集
-
+5.  为我们的用途定义 JavaScript 的一个子集
 6.  实现代码转译器，将代码转译成我们定义的 JavaScript 子集
-
 7.  把所有东西整合在一起
 
 开始吧！
 
-### 1. 定义语言
+### 1、定义语言
 
-lisps 最迷人的地方在于，它们的语法就是树状表示的，这就是这门语言很容易解析的原因。我们很快就能接触到它。但首先让我们把自己的语言定义好。关于我们语言的语法的范式（BNF）描述如下：
+Lisp 族语言最迷人的地方在于，它们的语法就是树状表示的，这就是这门语言很容易解析的原因。我们很快就能接触到它。但首先让我们把自己的语言定义好。关于我们语言的语法的范式（BNF）描述如下：
 
 ```
 program ::= expr
@@ -35,17 +30,17 @@ expr ::= <integer> | <name> | ([<expr>])
 
 该语言中，我们保留一些内建的特殊形式，这样我们就能做一些更有意思的事情：
 
-*   let 表达式使我们可以在它的 body 环境中引入新的变量。语法如下：
+* `let` 表达式使我们可以在它的 `body` 环境中引入新的变量。语法如下：
 
-```
+    ```
 let ::= (let ([<letarg>]) <body>)
 letargs ::= (<name> <expr>)
 body ::= <expr>
 ```
 
-*   lambda 表达式：也就是匿名函数定义。语法如下：
+* `lambda` 表达式：也就是匿名函数定义。语法如下：
 
-```
+    ```
 lambda ::= (lambda ([<name>]) <body>)
 ```
 
@@ -94,12 +89,11 @@ data Atom
 另一件你想做的事情可能是在语法中添加一些注释信息。比如定位：`Expr` 是来自哪个文件的，具体到这个文件的哪一行哪一列。你可以在后面的阶段中使用这一特性，打印出错误定位，即使它们不是处于解析阶段。
 
 *   _练习 1_：添加一个 `Program` 数据类型，可以按顺序包含多个 `Expr`
-
 *   _练习 2_：向语法树中添加一个定位注解。
 
-### 2. 实现一个简单的解析器组合库
+### 2、实现一个简单的解析器组合库
 
-我们要做的第一件事情是定义一个嵌入式领域专用语言（Embedded Domain Specific Language 或者 EDSL），我们会用它来定义我们的语言解析器。这常常被称为解析器组合库。我们做这件事完全是出于学习的目的，Haskell 里有很好的解析库，在实际构建软件或者进行实验时，你应该使用它们。[megaparsec][8] 就是这样的一个库。
+我们要做的第一件事情是定义一个<ruby>嵌入式领域专用语言<rt>Embedded Domain Specific Language</rt></ruby>（EDSL），我们会用它来定义我们的语言解析器。这常常被称为解析器组合库。我们做这件事完全是出于学习的目的，Haskell 里有很好的解析库，在实际构建软件或者进行实验时，你应该使用它们。[megaparsec][8] 就是这样的一个库。
 
 首先我们来谈谈解析库的实现的思路。本质上，我们的解析器就是一个函数，接受一些输入，可能会读取输入的一些或全部内容，然后返回解析出来的值和无法解析的输入部分，或者在解析失败时抛出异常。我们把它写出来。
 
@@ -114,7 +108,6 @@ data ParseError
   = ParseError ParseString Error
 
 type Error = String
-
 ```
 
 这里我们定义了三个主要的新类型。
@@ -124,9 +117,7 @@ type Error = String
 第二个，`ParseString` 是我们的输入或携带的状态。它有三个重要的部分：
 
 *   `Name`: 这是源的名字
-
 *   `(Int, Int)`: 这是源的当前位置
-
 *   `String`: 这是等待解析的字符串
 
 第三个，`ParseError` 包含了解析器的当前状态和一个错误信息。
@@ -180,13 +171,11 @@ instance Monad Parser where
        Right (rs, rest) ->
          case f rs of
            Parser parser -> parser rest
-
 ```
 
 接下来，让我们定义一种的方式，用于运行解析器和防止失败的助手函数：
 
 ```
-
 runParser :: String -> String -> Parser a -> Either ParseError (a, ParseString)
 runParser name str (Parser parser) = parser $ ParseString name (0,0) str
 
@@ -237,7 +226,6 @@ many parser = go []
 many1 :: Parser a -> Parser [a]
 many1 parser =
   (:) <$> parser <*> many parser
-
 ```
 
 下面的这些解析器通过我们定义的组合器来实现一些特殊的解析器：
@@ -273,14 +261,13 @@ sepBy sep parser = do
   frst <- optional parser
   rest <- many (sep *> parser)
   pure $ maybe rest (:rest) frst
-
 ```
 
 现在为该门语言定义解析器所需要的所有东西都有了。
 
-*   _练习_ ：实现一个 EOF（end of file/input，即文件或输入终止符）解析器组合器。
+* _练习_ ：实现一个 EOF（end of file/input，即文件或输入终止符）解析器组合器。
 
-### 3. 为我们的语言实现解析器
+### 3、为我们的语言实现解析器
 
 我们会用自顶而下的方法定义解析器。
 
@@ -296,7 +283,6 @@ parseAtom = parseSymbol <|> parseInt
 
 parseSymbol :: Parser Atom
 parseSymbol = fmap Symbol parseName
-
 ```
 
 注意到这四个函数是在我们这门语言中属于高阶描述。这解释了为什么 Haskell 执行解析工作这么棒。在定义完高级部分后，我们还需要定义低级别的 `parseName` 和 `parseInt`。
@@ -311,7 +297,7 @@ parseName = do
   pure (c:cs)
 ```
 
-整数是一系列数字，数字前面可能有负号 ‘-’：
+整数是一系列数字，数字前面可能有负号 `-`：
 
 ```
 parseInt :: Parser Atom
@@ -333,12 +319,10 @@ runExprParser name str =
 ```
 
 *   _练习 1_ ：为第一节中定义的 `Program` 类型编写一个解析器
-
 *   _练习 2_ ：用 Applicative 的形式重写 `parseName`
-
 *   _练习 3_ ：`parseInt` 可能出现溢出情况，找到处理它的方法，不要用 `read`。
 
-### 4. 为这门语言实现一个更好看的输出器
+### 4、为这门语言实现一个更好看的输出器
 
 我们还想做一件事，将我们的程序以源代码的形式打印出来。这对完善错误信息很有用。
 
@@ -372,7 +356,7 @@ indent tabs e = concat (replicate tabs "  ") ++ e
 
 好，目前为止我们写了近 200 行代码，这些代码一般叫做编译器的前端。我们还要写大概 150 行代码，用来执行三个额外的任务：我们需要根据需求定义一个 JS 的子集，定义一个将我们的语言转译成这个子集的转译器，最后把所有东西整合在一起。开始吧。
 
-### 5. 根据需求定义 JavaScript 的子集
+### 5、根据需求定义 JavaScript 的子集
 
 首先，我们要定义将要使用的 JavaScript 的子集：
 
@@ -411,10 +395,9 @@ printJSExpr doindent tabs = \case
 ```
 
 *   _练习 1_ ：添加 `JSProgram` 类型，它可以包含多个 `JSExpr` ，然后创建一个叫做 `printJSExprProgram` 的函数来生成代码。
-
 *   _练习 2_ ：添加 `JSExpr` 的新类型：`JSIf`，并为其生成代码。
 
-### 6. 实现到我们定义的 JavaScript 子集的代码转译器
+### 6、实现到我们定义的 JavaScript 子集的代码转译器
 
 我们快做完了。这一节将会创建函数，将 `Expr` 转译成 `JSExpr`。
 
@@ -437,7 +420,6 @@ translateList = \case
       f xs
   f:xs ->
     JSFunCall <$> translateToJS f <*> traverse translateToJS xs
-
 ```
 
 `builtins` 是一系列要转译的特例，就像 `lambada` 和 `let`。每一种情况都可以获得一系列参数，验证它是否合乎语法规范，然后将其转译成等效的 `JSExpr`。
@@ -456,7 +438,6 @@ builtins =
   ,("div", transBinOp "div" "/")
   ,("print", transPrint)
   ]
-
 ```
 
 我们这种情况，会将内建的特殊形式当作特殊的、非第一类的进行对待，因此不可能将它们当作第一类函数。
@@ -480,10 +461,9 @@ transLambda = \case
 fromSymbol :: Expr -> Either String Name
 fromSymbol (ATOM (Symbol s)) = Right s
 fromSymbol e = Left $ "cannot bind value to non symbol type: " ++ show e
-
 ```
 
-我们会将 let 转译成带有相关名字参数的函数定义，然后带上参数调用函数，因此会在这一作用域中引入变量：
+我们会将 `let` 转译成带有相关名字参数的函数定义，然后带上参数调用函数，因此会在这一作用域中引入变量：
 
 ```
 transLet :: [Expr] -> Either TransError JSExpr
@@ -522,35 +502,27 @@ transBinOp _ f list = foldl1 (JSBinOp f) <$> traverse translateToJS list
 transPrint :: [Expr] -> Either TransError JSExpr
 transPrint [expr] = JSFunCall (JSSymbol "console.log") . (:[]) <$> translateToJS expr
 transPrint xs     = Left $ "Syntax error. print expected 1 arguments, got: " ++ show (length xs)
-
 ```
 
 注意，如果我们将这些代码当作 `Expr` 的特例进行解析，那我们就可能会跳过语法验证。
 
 *   _练习 1_ ：将 `Program` 转译成 `JSProgram`
-
 *   _练习 2_ ：为 `if Expr Expr Expr` 添加一个特例，并将它转译成你在上一次练习中实现的 `JSIf` 条件语句。
 
-### 7. 把所有东西整合到一起
+### 7、把所有东西整合到一起
 
 最终，我们将会把所有东西整合到一起。我们会：
 
 1.  读取文件
-
 2.  将文件解析成 `Expr`
-
 3.  将文件转译成 `JSExpr`
-
 4.  将 JavaScript 代码发送到标准输出流
 
 我们还会启用一些用于测试的标志位：
 
 *   `--e` 将进行解析并打印出表达式的抽象表示（`Expr`）
-
 *   `--pp` 将进行解析，美化输出
-
 *   `--jse` 将进行解析、转译、并打印出生成的 JS 表达式（`JSExpr`）的抽象表示
-
 *   `--ppc` 将进行解析，美化输出并进行编译
 
 ```
@@ -616,10 +588,10 @@ undefined
 
 via: https://gilmi.me/blog/post/2016/10/14/lisp-to-js
 
-作者：[ Gil Mizrahi ][a]
+作者：[Gil Mizrahi][a]
 选题：[oska874][b]
 译者：[BriFuture](https://github.com/BriFuture)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
