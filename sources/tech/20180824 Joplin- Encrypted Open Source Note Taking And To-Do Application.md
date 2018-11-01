@@ -1,3 +1,5 @@
+translating---geekpi
+
 Joplin: Encrypted Open Source Note Taking And To-Do Application
 ======
 **[Joplin][1] is a free and open source note taking and to-do application available for Linux, Windows, macOS, Android and iOS. Its key features include end-to-end encryption, Markdown support, and synchronization via third-party services like NextCloud, Dropbox, OneDrive or WebDAV.**
