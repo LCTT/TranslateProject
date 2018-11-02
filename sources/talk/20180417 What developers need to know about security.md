@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 What developers need to know about security
 ======
 

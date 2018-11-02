@@ -1,49 +1,49 @@
-Chrony – An Alternative NTP Client And Server For Unix-like Systems
+Chrony – 一个类 Unix 系统可选的 NTP 客户端和服务器
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/10/chrony-1-720x340.jpeg)
 
-In this tutorial, we will be discussing how to install and configure **Chrony** , an alternative NTP client and server for Unix-like systems. Chrony can synchronise the system clock faster with better time accuracy and it can be particularly useful for the systems which are not online all the time. Chrony is free, open source and supports GNU/Linux and BSD variants such as FreeBSD, NetBSD, macOS, and Solaris.
+在这个教程中，我们会讨论如何安装和配置 **Chrony**，一个类 Unix 系统上可选的 NTP 客户端和服务器。Chrony 可以更快的同步系统时钟，具有更好的时钟准确度，并且它对于那些不是一直在线的系统很有帮助。Chrony 是免费、开源的，并且支持 GNU/Linux 和 BSD 衍生版比如 FreeBSD，NetBSD，macOS 和 Solaris 等。
 
-### Installing Chrony
+### 安装 Chrony
 
-Chrony is available in the default repositories of most Linux distributions. If you’re on Arch Linux, run the following command to install it:
+Chrony 可以从大多数 Linux 发行版的默认软件库中获得。如果你使用的是 Arch Linux，运行下面的命令来安装它：
 
 ```
 $ sudo pacman -S chrony
 ```
 
-On Debian, Ubuntu, Linux Mint:
+在 Debian，Ubuntu，Linux Mint 上：
 
 ```
 $ sudo apt-get install chrony
 ```
 
-On Fedora:
+在 Fedora 上：
 
 ```
 $ sudo dnf install chrony
 ```
 
-Once installed, start **chronyd.service** daemon if it is not started already:
+当安装完成后，如果之前没有启动过的话需启动 **chronyd.service** 守护进程：
 
 ```
 $ sudo systemctl start chronyd.service
 ```
 
-Make it to start automatically on every reboot using command:
+使用下面的命令让它每次重启系统后自动运行：
 
 ```
 $ sudo systemctl enable chronyd.service
 ```
 
-To verify if the Chronyd.service has been started, run:
+为了确认 Chronyd.service 已经启动，运行：
 
 ```
 $ sudo systemctl status chronyd.service
 ```
 
-If everything is OK, you will see an output something like below.
+如果一切正常，你将看到类似下面的输出：
 
 ```
 ● chrony.service - chrony, an NTP client/server
@@ -67,13 +67,13 @@ Oct 17 10:35:03 ubuntuserver chronyd[2482]: Selected source 91.189.89.199
 Oct 17 10:35:06 ubuntuserver chronyd[2482]: Selected source 106.10.186.200
 ```
 
-As you can see, Chrony service is started and working!
+可以看到，Chrony 服务已经启动并且正在工作！
 
-### Configure Chrony
+### 配置 Chrony
 
-The NTP clients needs to know which NTP servers it should contact to get the current time. We can specify the NTP servers in the **server** or **pool** directive in the NTP configuration file. Usually, the default configuration file is **/etc/chrony/chrony.conf** or **/etc/chrony.conf** depending upon the Linux distribution version. For better reliability, it is recommended to specify at least three servers.
+NTP 客户端需要知道它要连接到哪个 NTP 服务器来获取当前时间。我们可以直接在 NTP 配置文件中的 **server** 或者 **pool** 项指定 NTP 服务器。通常，默认的配置文件位于 **/etc/chrony/chrony.conf** 或者 **/etc/chrony.conf**，取决于 Linux 发行版版本。为了更可靠的时间同步，建议指定至少三个服务器。
 
-The following lines are just an example taken from my Ubuntu 18.04 LTS server.
+下面几行是我的 Ubuntu 18.04 LTS 服务器上的一个示例。
 
 ```
 [...]
@@ -87,22 +87,19 @@ pool 2.ubuntu.pool.ntp.org iburst maxsources 2
 [...]
 ```
 
-As you see in the above output, [**NTP Pool Project**][1] has been set as the default time server. For those wondering, NTP pool project is the cluster of time servers that provides NTP service for tens of millions clients across the world. It is the default time server for Ubuntu and most of the other major Linux distributions.
+从上面的输出中你可以看到，[**NTP Pool Project**][1] 已经被设置成为了默认的时间服务器。对于那些好奇的人，NTP Pool project 是一个时间服务器集群，用来为全世界千万个客户端提供 NTP 服务。它是 Ubuntu 以及其他主流 Linux 发行版的默认时间服务器。
 
-Here,
+在这里，
+  * **iburst** 选项用来加速初始的同步过程
+  * **maxsources** 代表 NTP 源的最大数量
 
-  * the **iburst** option is used to speed up the initial synchronisation.
-  * the **maxsources** refers the maximum number of NTP sources.
+请确保你选择的 NTP 服务器是同步的、稳定的、离你的位置较近的，以便使用这些 NTP 源来提升时间准确度。
 
+### 在命令行中管理 Chronyd
 
+Chrony 有一个命令行工具叫做 **chronyc** 用来控制和监控 **chrony** 守护进程（chronyd）。
 
-Please make sure that the NTP servers you have chosen are well synchronised, stable and close to your location to improve the accuracy of the time with NTP sources.
-
-### Manage Chronyd from command line
-
-Chrony has a command line utility named **chronyc** to control and monitor the **chrony** daemon (chronyd).
-
-To check if **chrony** is synchronized, we can use the **tracking** command as shown below.
+为了检查是否 **chrony** 已经同步，我们可以使用下面展示的 **tracking** 命令。
 
 ```
 $ chronyc tracking
@@ -121,7 +118,7 @@ Update interval : 515.1 seconds
 Leap status : Normal
 ```
 
-We can verify the current time sources that chrony uses with command:
+我们可以使用命令确认现在 chrony 使用的时间源：
 
 ```
 $ chronyc sources
@@ -138,7 +135,7 @@ MS Name/IP address Stratum Poll Reach LastRx Last sample
 ^- ns2.pulsation.fr 2 10 377 311 -75ms[ -73ms] +/- 250ms
 ```
 
-Chronyc utility can find the statistics of each sources, such as drift rate and offset estimation process, using **sourcestats** command.
+Chronyc 工具可以对每个源进行统计，比如使用 **sourcestats** 命令获得漂移速率和进行偏移估计。
 
 ```
 $ chronyc sourcestats
@@ -155,7 +152,7 @@ sin1.m-d.net 29 13 83m +0.049 6.060 -8466us 9940us
 ns2.pulsation.fr 32 17 88m +0.784 9.834 -62ms 22ms
 ```
 
-If your system is not connected to Internet, you need to notify Chrony that the system is not connected to the Internet. To do so, run:
+如果你的系统没有连接到 Internet，你需要告知 Chrony 系统没有连接到 Internet。为了这样做，运行：
 
 ```
 $ sudo chronyc offline
@@ -163,7 +160,7 @@ $ sudo chronyc offline
 200 OK
 ```
 
-To verify the status of your NTP sources, simply run:
+为了确认你的 NTP 源的状态，只需要运行：
 
 ```
 $ chronyc activity
@@ -175,16 +172,16 @@ $ chronyc activity
 0 sources with unknown address
 ```
 
-As you see, all my NTP sources are down at the moment.
+可以看到，我的所有源此时都是离线状态。
 
-Once you’re connected to the Internet, just notify Chrony that your system is back online using command:
+一旦你连接到 Internet，只需要使用命令告知 Chrony 你的系统已经回到在线状态：
 
 ```
 $ sudo chronyc online
 200 OK
 ```
 
-To view the status of NTP source(s), run:
+为了查看 NTP 源的状态，运行：
 
 ```
 $ chronyc activity
@@ -196,7 +193,7 @@ $ chronyc activity
 0 sources with unknown address
 ```
 
-For more detailed explanation of all options and parameters, refer the man pages.
+所有选项和参数的详细解释，请参考帮助手册。
 
 ```
 $ man chronyc
@@ -204,9 +201,9 @@ $ man chronyc
 $ man chronyd
 ```
 
-And, that’s all for now. Hope this was useful. In the subsequent tutorials, we will see how to setup a local NTP server using Chrony and configure the clients to use it to synchronise time.
+这就是文章的所有内容。希望对你有所帮助。在随后的教程中，我们会看到如何使用 Chrony 启动一个本地的 NTP 服务器并且配置客户端来使用这个服务器同步时间。
 
-Stay tuned!
+保持关注！
 
 
 
@@ -216,7 +213,7 @@ via: https://www.ostechnix.com/chrony-an-alternative-ntp-client-and-server-for-u
 
 作者：[SK][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zianglei](https://github.com/zianglei)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
