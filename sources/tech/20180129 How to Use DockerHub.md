@@ -1,3 +1,6 @@
+**translating by [erlinux](https://github.com/erlinux)** 
+
+
 How to Use DockerHub
 ======
 
