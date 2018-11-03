@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How To Add, Enable And Disable A Repository In Linux
 ======
 Many of us using yum package manager to manage package installation, remove, update, search, etc, on RPM based system such as RHEL, CentOS, etc,.
