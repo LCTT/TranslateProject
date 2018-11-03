@@ -1,3 +1,5 @@
+translating by cyleft
+
 Taking notes with Laverna, a web-based information organizer
 ======
 
