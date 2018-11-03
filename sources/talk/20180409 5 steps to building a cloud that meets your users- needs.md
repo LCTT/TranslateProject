@@ -1,25 +1,33 @@
 Translating by FelixYFZ
 5 steps to building a cloud that meets your users' needs
+构建满足客户需求的一套云环境的5个步骤
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003601_05_mech_osyearbook2016_cloud_cc.png?itok=XSV7yR9e)
 This article was co-written with [Ian Tewksbury][1].
-
+这篇文是和[Ian Teksbury][1]共同完成的。
 However you define it, a cloud is simply another tool for your users to perform their part of your organization's value stream. It can be easy when talking about any new paradigm or technology (the cloud is arguably both) to get distracted by the shiny newness of it. Conversations can quickly devolve into feature wish lists set off by a series of never-ending questions, all of which you probably have already considered:
-
+无论你如何定义，云就是你的用户展现组织价值的另一个工具。当谈论新的范例或者技术的时候是很容易被，(云是两者兼有)它的新特性所分心。由一系列无止境的问题引发的对话能够很快的被发展为工能愿景清单，所有的这些多是你可能已经考虑到的。
   * Will it be public, private, or hybrid?
+  * 是公有云，私有云还是混合云？
   * Will it use virtual machines or containers, or both?
+  * 将会使用虚拟机还是容器，或者是两者？
   * Will it be self-service?
+  * 将会提供自助服务吗？
   * Will it be fully automated from development to production, or will it have manual gates?
+  * 将会完全自动的从开发转移到生产，还是它将需要手动操作？
   * How fast can we make it?
+  * 我们能以多块的速度创建？
   * What about tool X, Y, or Z?
+  * 关于工具X,Y,还有Z？
 
 
 
 The list goes on.
+这样的清单还可以列举很多。
 
 The usual approach to beginning IT modernization, or digital transformation, or whatever you call it is to start answering high-level questions in the higher-level echelons of management. The outcome of this approach is predictable: failure. After extensively researching and spending months, if not years, deploying the fanciest new technology, the new cloud is never used and falls into disrepair until it is eventually scrapped or forgotten in the dustier corners of the datacenter and budget.
-
+开始现代化，或者数字转型，无论你如何称呼的方法是开始回答高级管理层的一些高层次问题，
 That's because whatever was delivered was not the tool the users wanted or needed. Worse yet, it likely was a single tool when users really needed a collection of tools that could be swapped out over time as newer, shinier, upgraded tools come along that better meet their needs.
 
 ### Focus on what matters
