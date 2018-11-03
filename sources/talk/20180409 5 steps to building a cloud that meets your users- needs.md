@@ -27,21 +27,27 @@ The list goes on.
 这样的清单还可以列举很多。
 
 The usual approach to beginning IT modernization, or digital transformation, or whatever you call it is to start answering high-level questions in the higher-level echelons of management. The outcome of this approach is predictable: failure. After extensively researching and spending months, if not years, deploying the fanciest new technology, the new cloud is never used and falls into disrepair until it is eventually scrapped or forgotten in the dustier corners of the datacenter and budget.
-开始现代化，或者数字转型，无论你如何称呼的方法是开始回答高级管理层的一些高层次问题，
+开始现代化，或者数字转型，无论你如何称呼的通常方法是开始回答高级管理层的一些高层次问题，这种方法的结果是可以预想到的：失败。经过大范围的调研并且花费
+了数月的时间，如果不是几年，部署这个最炫的新技术，新的云技术从未被使用过而且陷入了荒废直到它最终被丢弃或者遗忘在数据中心的一角和预算中。
 That's because whatever was delivered was not the tool the users wanted or needed. Worse yet, it likely was a single tool when users really needed a collection of tools that could be swapped out over time as newer, shinier, upgraded tools come along that better meet their needs.
-
+因为无论你交付的是什么工具都不是用户所想要或者需要的。更加糟糕的是，当用户真正需要的是一个单独的工具时，一系列的工具就会被用户抛弃因为新的，闪光的
+升级的工具能够更好的满足他们的需求。
 ### Focus on what matters
+### 议题聚焦
 
 The problem is focus, which has traditionally been on the tools. But the tools are not what add to your organization's value stream; end users making use of tools are what do that. You need to shift your focus from building your cloud—for example, the technology and the tools, to your people, your users.
-
+问题是关注，传统一直是关注工具。但工具并不是要增加到组织价值中的东西；终端用户利用它做什么。你需要将你的注意力从创建云(列入技术和工具)转移到你的人员和用户身上。
 Beyond the fact that users using tools (not the tools themselves) are what drive value, there are other reasons to focus attention on the users. The tools are for the users to use to solve their problems and allow them to create value, so it follows that if those tools don't meet those users' needs, then those tools won't be used. If you deliver tools that your users don't like, they won't use them. This is natural human behavior.
-
+事实上，使用工具的用户(而不是工具本身)是驱动价值的因素，聚焦注意力在用户身上也是由其他原因的。工具是给用户使用去解决他们的问题并允许他们创造价值的，
+所有这就导致了如果那些工具不能满足那些用户的需求，那么那些工具将不会被使用。如果你交付给你的用户的工具并不是他们喜欢的，他们将不会使用，这就是人类的
+行为。
 The IT industry got away with providing a single solution to users for decades because there were only one or two options, and the users had no power to change that. That is no longer the case. We now live in the world of technological choice. It is no longer acceptable to users to not be given a choice; they have choices in their personal technological lives, and they expect it in the workplace, too. Today's users are educated and know there are better options than the ones you've been providing.
-
+数十年来，IT产业只为用户提供一种解决方案，因为仅有一个或两个选项，用户是没有权力去改变的。现在情况已经不同了。我们现在生活在一个技术选择的世界中。
+不给用户一个选择的机会的情况将不会被接受的；他们在个人的科技生活中由选择，同时希望在工作中也有选择。现在的用户都是受过教育的并且知道将会有比你提供的机会更好的选择。
 As a result, outside the most physically secure locations, there is no way to stop them from just doing what they want, which we call "shadow IT." If your organization has such strict security and compliance polices that shadow IT is impossible, many of your best people will grow frustrated and leave for other organizations that offer them choices.
-
+因此，在物理上的最安全的地点之外，没有能够阻止他们只做他们自己想要的东西的方法，我们称之为“影子IT。”如果你的组织由如此严格的安全策略和承诺策略，许多员工将会感到灰心丧气并且会离职去其他能提供更好机会的公司。
 For all of these reasons, you must design your expensive and time-consuming cloud project with your end user foremost in mind.
-
+基于以上所有的原因，你必须牢记要首要和你的终端用户设计你的昂贵又费时的云项目。
 ### Five-step process to build a cloud for users' needs
 
 Now that we know the why, let's talk about the how. How do you build a cloud for the end user? How do you start refocusing your attention from the technology to the people using that technology?
