@@ -1,3 +1,5 @@
+Translating by Jamkr
+
 Understanding Linux Links: Part 2
 ======
 
