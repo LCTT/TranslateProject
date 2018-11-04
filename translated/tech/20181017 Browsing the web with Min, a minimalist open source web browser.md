@@ -1,9 +1,11 @@
 使用极简浏览器 Min 浏览网页
 ======
+
 > 并非所有 web 浏览器都要做到无所不能，Min 就是一个极简主义风格的浏览器。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/openweb-osdc-lead.png?itok=yjU4KliG)
 
-现在还有开发新的网络浏览器的需要吗？即使现在浏览器领域已经成为了寡头市场，但仍然不断涌现出各种前所未有的浏览器产品。
+现在还有开发新的 Web 浏览器的需要吗？即使现在浏览器领域已经成为了寡头市场，但仍然不断涌现出各种前所未有的浏览器产品。
 
 [Min][1] 就是其中一个。顾名思义，Min 是一个小的浏览器，也是一个极简主义的浏览器。但它麻雀虽小五脏俱全，而且还是一个开源的浏览器，它的 Apache 2.0 许可证引起了我的注意。
 
@@ -29,7 +31,7 @@ Min 号称是更智能、更快速的浏览器。经过尝试以后，我觉得�
 
 Min 和其它浏览器一样，支持页面选项卡。它还有一个称为 Tasks 的功能，可以对打开的选项卡进行分组。
 
-[DuckDuckGo][6]是我最喜欢的搜索引擎，而 Min 的默认搜索引擎恰好就是它，这正合我意。当然，如果你喜欢另一个搜索引擎，也可以在 Min 的偏好设置中配置你喜欢的搜索引擎作为默认搜索引擎。
+[DuckDuckGo][6] 是我最喜欢的搜索引擎，而 Min 的默认搜索引擎恰好就是它，这正合我意。当然，如果你喜欢另一个搜索引擎，也可以在 Min 的偏好设置中配置你喜欢的搜索引擎作为默认搜索引擎。
 
 Min 没有使用类似 AdBlock 这样的插件来过滤你不想看到的内容，而是使用了一个名为 [EasyList][7] 的内置的广告拦截器，你可以使用它来屏蔽脚本和图片。另外 Min 还带有一个内置的防跟踪软件。
 
@@ -54,7 +56,7 @@ Min 确实也有自己的缺点，例如它无法将网站添加为书签。替�
 ### 总结
 
 Min 算是一个中规中矩的浏览器，它可以凭借轻量、快速的优点吸引很多极简主义的用户。但是对于追求多功能的用户来说，Min 就显得相当捉襟见肘了。
-.
+
 所以，如果你想摆脱当今多功能浏览器的束缚，我觉得可以试用一下 Min。
 
 
@@ -65,7 +67,7 @@ via: https://opensource.com/article/18/10/min-web-browser
 作者：[Scott Nesbitt][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
