@@ -1,3 +1,5 @@
+HankChow translating
+
 Machine learning with Python: Essential hacks and tricks
 ======
 Master machine learning, AI, and deep learning with Python.
