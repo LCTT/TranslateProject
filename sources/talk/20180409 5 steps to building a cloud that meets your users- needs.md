@@ -59,25 +59,31 @@ Your cloud environment will continually evolve with your organization. The follo
 #### 1\. Identify who your users will be.
 ### 1\. 识别谁将是你的用户
 Before you can start asking users questions, you first must identify who the users of your new cloud will be. They will likely include developers who build applications on the cloud; the operations team who will operate, maintain, and likely build the cloud; and the security team who protects your organization. For the first iteration, scope down your users to a smaller group so you're less overwhelmed by feedback. Ask each of your identified user groups to appoint two liaisons (a primary and a secondary) who will represent their team on this journey. This will also keep your first delivery small in both size and time.
-在你开始询问用户问题之前，你首先必须识别谁将是你的新的云环境的用户。他们可能包括将在云上创建开发应用的开发者。也可能是运营，维护或者或者创建云的运维团队；还可能是保护组织的安全团队。
+在你开始询问用户问题之前，你首先必须识别谁将是你的新的云环境的用户。他们可能包括将在云上创建开发应用的开发者。也可能是运营，维护或者或者创建云的运维团队；还可能是保护组织的安全团队。在第一次迭代时，将你的用户数量缩小至人数较少的小组防止你被大量的反馈所淹没，让你识别的每个小组指派两个代表(一个主要的一个辅助的)。这将使你的第一次交付在大小和时间上都很小。
 #### 2\. Talk to your users face-to-face to get valuable input.
+#### 2\. 和你的用户面对面的交谈来收获有价值的输入。
 
 The best way to get users' feedback is through direct communication. Mass emails asking for input will self-select respondents—if you even get a response. Group discussions can be helpful, but people tend to be more candid when they have a private, attentive audience.
-
+获得反馈的最佳途径时和用户直接交谈。如果你收到回复，大量的邮件要求你输入信息，你会选择自动回复。小组讨论会很有帮助的，但是当人们有拿私人，吸引人注意的观众，他们会比较的坦诚。
 Schedule in-person, individual meetings with your first set of users to ask them questions like the following:
-
+和你的第一批用户安排面对面的个人的会谈并且向他们询问以下的问题：
   * What do you need in order to accomplish your tasks?
+  * 为了完成你的任务，你需要什么？
   * What do you want in order to accomplish your tasks?
+  * 为了完成你的任务，你想要什么？
   * What is your current, most annoying technological pain?
+  * 你现在最头疼的技术点是什么？
   * What is your current, most annoying policy or procedural pain?
+  * 你现在最头疼的政策或者程序是哪个？
   * What ideas do you have to address any of your needs, wants, or pains?
+  * 为了满足你的需求你有什么想法，欲望还是疼痛？
 
 
 
 These questions are guidelines and not ideal for every organization. They should not be the only questions you ask, and they should lead to further discussion. Be sure to tell people that anything said or asked is taken as feedback, and all feedback is helpful, whether positive or negative. The outcome of these conversations will help set your development priorities.
-
+这些问题只是指导性的并不一定适合每个组。你不应该只询问这些问题，他们应该导向更深层次的讨论。确保告诉用户任何所说的和被问的都会被反馈的。所有的反馈都是由帮助的，无论是消极的还是积极的。这些对话将会帮助你设置你的开发优先级。
 Gathering this level of personalized feedback is another reason to keep your initial group of users small: It takes a lot of time to sit down with each user, but we have found it is absolutely worth the investment.
-
+收集这种个性化的反馈是保持初始用户群较小的另一个原因：将会花费你大量的时间来和每个用户交流，但是我们已经发现这是相当值得付出的投入。
 #### 3\. Design and deliver your first iteration of the solution.
 
 Once you've collected feedback from your initial users, it is time to design and deliver a piece of functionality. We do not recommend trying to deliver the entire solution. The design and delivery phase should be short; this is to avoid making the huge mistake of spending a year building what you think is the correct solution, only to have your users reject it because it isn't beneficial to them. The specific tools you choose for building your cloud will depend on your organization and its specific needs. Just make sure that the solution you build is based on your users' feedback and that you deliver it in small chunks to solicit feedback from them as often as possible.
