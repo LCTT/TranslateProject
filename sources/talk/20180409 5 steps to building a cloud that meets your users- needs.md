@@ -49,17 +49,17 @@ As a result, outside the most physically secure locations, there is no way to st
 For all of these reasons, you must design your expensive and time-consuming cloud project with your end user foremost in mind.
 基于以上所有的原因，你必须牢记要首要和你的终端用户设计你的昂贵又费时的云项目。
 ### Five-step process to build a cloud for users' needs
-
+### 创建满足用户需求的云五个步骤的过程
 Now that we know the why, let's talk about the how. How do you build a cloud for the end user? How do you start refocusing your attention from the technology to the people using that technology?
-
+既然我们已经知道了为什么，接下来我们来讨论一下怎么做。你如何去为终端用户创建一个云？你怎样重新将你的注意力从技术转移到使用技术的用户身上？
 Through experience, we've learned that the best approach involves two things: getting constant feedback from your users, and building things iteratively.
-
+根据以往的经验，我们知道最好的方法中包含两件重要的事情：从你的用户中得到及时的反馈，创建中和用户进行更多的互动。
 Your cloud environment will continually evolve with your organization. The following five-step process will help you create a cloud that meets your users' needs.
-
+你的云环境将继续随着你的组织不段发展。下面的五个步骤将会帮助你创建满足用户需求的云环境。
 #### 1\. Identify who your users will be.
-
+### 1\. 识别谁将是你的用户
 Before you can start asking users questions, you first must identify who the users of your new cloud will be. They will likely include developers who build applications on the cloud; the operations team who will operate, maintain, and likely build the cloud; and the security team who protects your organization. For the first iteration, scope down your users to a smaller group so you're less overwhelmed by feedback. Ask each of your identified user groups to appoint two liaisons (a primary and a secondary) who will represent their team on this journey. This will also keep your first delivery small in both size and time.
-
+在你开始询问用户问题之前，你首先必须识别谁将是你的新的云环境的用户。他们可能包括将在云上创建开发应用的开发者。也可能是运营，维护或者或者创建云的运维团队；还可能是保护组织的安全团队。
 #### 2\. Talk to your users face-to-face to get valuable input.
 
 The best way to get users' feedback is through direct communication. Mass emails asking for input will self-select respondents—if you even get a response. Group discussions can be helpful, but people tend to be more candid when they have a private, attentive audience.
