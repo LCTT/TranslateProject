@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 17 Ways To Check Size Of Physical Memory (RAM) In Linux
 ======
 Most of the system administrators checks CPU & Memory utilization when they were facing some performance issue.
