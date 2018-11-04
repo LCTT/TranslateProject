@@ -1,3 +1,4 @@
+translating by dianbanjiu
 SDKMAN – A CLI Tool To Easily Manage Multiple Software Development Kits
 ======
 
