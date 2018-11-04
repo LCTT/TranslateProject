@@ -85,15 +85,16 @@ These questions are guidelines and not ideal for every organization. They should
 Gathering this level of personalized feedback is another reason to keep your initial group of users small: It takes a lot of time to sit down with each user, but we have found it is absolutely worth the investment.
 收集这种个性化的反馈是保持初始用户群较小的另一个原因：将会花费你大量的时间来和每个用户交流，但是我们已经发现这是相当值得付出的投入。
 #### 3\. Design and deliver your first iteration of the solution.
-
+#### 3\. 设计并交付你的解决方案的第一个版本
 Once you've collected feedback from your initial users, it is time to design and deliver a piece of functionality. We do not recommend trying to deliver the entire solution. The design and delivery phase should be short; this is to avoid making the huge mistake of spending a year building what you think is the correct solution, only to have your users reject it because it isn't beneficial to them. The specific tools you choose for building your cloud will depend on your organization and its specific needs. Just make sure that the solution you build is based on your users' feedback and that you deliver it in small chunks to solicit feedback from them as often as possible.
-
+一旦你收到初始用户的反馈，就是时候开始去设计并交付一部分的功能了。我们不推荐尝试一次性交付整个解决方案。设计和交付的时期要短；这是为了避免犯一个需要你花费一年的时间去寻找解决方案的错误，只会让你的用户拒绝它，因为对他们来说毫无用处。创建你的云所需要的工具取决于你的组织和它的特殊需求。只需确保你的解决方案是建立在用户的反馈的基础上的，你将功能小块化的交付并且要经常的去征求用户的反馈。
 #### 4\. Ask users for feedback on the first iteration.
+#### 4\. 询问用户对第一个版本的反馈
 
 Great, now you've designed and delivered the first iteration of your fancy new cloud to your end users! You didn't spend a year doing it but instead tackled it in small pieces. Why is it important to do things in small chunks? It's because you're going back to your user groups and collecting feedback about your design and delivery. What do they like? What don't they like? Did you properly address their concerns? Is the technology great, but the process or policy side of the system still lacking?
-
+太棒了，现在你已经设计并向你的用户交付了你的炫酷的新的云环境的第一个版本！你并不是花费一整年去完成它而是将它处理成小的模块。为什么将其分为小的模块如此重要呢？因为你要回归你的用户并且向他们收集关于你的设计和交付的功能。他们喜欢什么？不喜欢什么?你正确的处理了他们所关注的吗？是技术工能上很厉害，但系统进程或者策略方面仍然欠缺？
 Again, the questions you'll ask depend on your organization; the key here is to continue the discussions from the earlier phases. You're building this cloud for users after all, so make sure it's useful for them and a productive use of everyone's time.
-
+再重申一次，你要问的问题取决于你的组织；这里的关键是继续前一个阶段的讨论。毕竟你正在为用户创建云环境，所以确保它对用户来说是有用的并且能够有效利用每个人的时间。
 #### 5\. Return to step 1.
 
 This is an iterative process. Your first delivery should have been quick and small, and all future iterations should be, too. Don't expect to be able to follow this process once, twice, or even three times and be done. As you iterate, you will introduce more users and get better at the process. You will get more buy-in from users. You will be able to iterate faster and more reliably. And, finally, you will change your process to meet your users' needs.
