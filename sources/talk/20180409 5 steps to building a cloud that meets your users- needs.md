@@ -96,27 +96,30 @@ Great, now you've designed and delivered the first iteration of your fancy new c
 Again, the questions you'll ask depend on your organization; the key here is to continue the discussions from the earlier phases. You're building this cloud for users after all, so make sure it's useful for them and a productive use of everyone's time.
 再重申一次，你要问的问题取决于你的组织；这里的关键是继续前一个阶段的讨论。毕竟你正在为用户创建云环境，所以确保它对用户来说是有用的并且能够有效利用每个人的时间。
 #### 5\. Return to step 1.
-
+#### 5\. 回到第一步。
 This is an iterative process. Your first delivery should have been quick and small, and all future iterations should be, too. Don't expect to be able to follow this process once, twice, or even three times and be done. As you iterate, you will introduce more users and get better at the process. You will get more buy-in from users. You will be able to iterate faster and more reliably. And, finally, you will change your process to meet your users' needs.
-
+这是一个互动的过程。你的第一次交付应该是快速而小规模的，而且以后的迭代也应该是这样的。不要期待仅仅按照这个流程完成了一次，两次即使是三次就能完成。
+一旦你持续的迭代，你将会吸引更多的用户从而能够在这个过程中得到更好的回报。你将会从用户那里得到更多的支持。你能狗迭代的更迅速并且更可靠。到最后，你
+将会通过改变你的进程来满足用户的需求。
 Users are the most important part of this process, but the iteration is the second most important part because it allows you to keep going back to the users and getting more information. Throughout each phase, take note of what worked and what didn't. Be introspective and honest with yourself. Are we providing the most value possible for the time we spent? If not, try something different in the next phase. The great part about not spending too much time in each cycle is that, if something doesn't work this time, you can easily tweak it for next time, until you find an approach that works for your organization.
-
+用户是这个过程中最重要的一部分，但迭代是第二重要的因为它让你能够回到用户中进行持续沟通从而得到更多有用的信息。在每个阶段，记录那些是有效的哪些没有起到应有的效果。要自省，要对自己诚实。我们所花费的时间提供了最有价值的了吗？如果不是，在下一个阶段尝试些不同的。在每次循环中不要花费太多时间的重要部分是，如果某部分在这次不起作用，你能够很容易的在写一次中调整它，知道你找到能够在你组织中起作用的方法。
 ### This is just the beginning
-
+### 这仅仅是开始
 Through many customer engagements, feedback gathered from users, and experiences from peers in the field, we've found time and time again that the most important thing you can do when building a cloud is to talk to your users. It seems obvious, but it is surprising how many organizations will go off and build something for months or years, then find out it isn't even useful to end users.
-
+通过许多客户的约定，从他们那里收集反馈，以及在这个领域的同行的经验，我们一次次的发现在你创建云的时候最重要事就是和你的用户交谈。这看起来是很明显的，
+但很让人惊讶的是很多组织却偏离了这个方向去花费数月或者数年的时间去创建，然后最终发现它对终端用户甚至一点用处都没有。
 Now you know why you should keep your focus on the end users and have a process for building a cloud with them at the center. The remaining piece is the part that we all enjoy, the part where you go out and do it.
-
+现在你已经知道为什么你需要将你的注意力集中到终端用户身上并且在中心节点和用户有一个一起创建云的过程。剩下的是我们所喜欢的部分，你出去做的部分。
 This article is based on "[Design your hybrid cloud for the end user—or fail][2]," a talk the authors will be giving at [Red Hat Summit 2018][3], which will be held May 8-10 in San Francisco.
-
+这篇文章是基于"[为终端用户设计混合云或者失败]，"一篇作者将在[Red Hat Summit 2018][3]上发表的文章，并且将于5月8日至10日在旧金山举行
 [Register by May 7][3] to save US$ 500 off of registration. Use discount code **OPEN18** on the payment page to apply the discount.
-
+[在5月7号前注册][3]将会节省US$500。在支付页面使用折扣码**OPEN18**将会享受到折扣。
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/4/5-steps-building-your-cloud-correctly
 
 作者：[Cameron Wyatt][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FelixYFZ](https://github.com/FelixYFZ)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
