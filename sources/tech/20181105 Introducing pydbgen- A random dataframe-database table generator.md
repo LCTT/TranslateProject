@@ -1,3 +1,5 @@
+HankChow translating
+
 Introducing pydbgen: A random dataframe/database table generator
 ======
 Simple tool generates large database files with multiple tables to practice SQL commands for data science.
