@@ -1,4 +1,4 @@
-对 C++ 的忧虑？Bjarne Stroustrup 警告，关于 C++ 的某些未来计划十分危险
+对 C++ 的忧虑？C++创始人警告：关于 C++ 的某些未来计划十分危险
 ======
 
 ![](https://regmedia.co.uk/2018/06/15/shutterstock_38621860.jpg?x=442&y=293&crop=1)
