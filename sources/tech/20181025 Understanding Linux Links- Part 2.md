@@ -1,11 +1,9 @@
-Translating by Jamkr
-
 Understanding Linux Links: Part 2
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/links-fikri-rasyid-7853.jpg?itok=0jBT_1M2)
 
-In the [first part of this series][1], we looked at hard links and soft links and discussed some of the various ways that linking can be useful. Linking may seem straightforward, but there are some non-obvious quirks you have to be aware of. That’s what we’ll be looking at here. Consider, for example, at the way we created the link to _libblah_ in the previous article. Notice how we linked from within the destination folder:
+在[本系列的第一篇文章中][1], 我们认识了硬链接，软链接，知道在很多时候链接是非常有用的。链接看起来比较简单，但是也有一些不易察觉的奇怪的地方需要注意。这就是我们这篇文章中要讲的。例如，像一下我们在前一篇文章中创建的指向 _libblah_ 的链接。请注意，我们是如何从目标文件夹中创建链接的。
 
 ```
 cd /usr/local/lib
@@ -13,7 +11,7 @@ cd /usr/local/lib
 ln -s /usr/lib/libblah
 ```
 
-That will work. But this:
+这样是可以工作的，但是下面的这个例子却是不行的。
 
 ```
 cd /usr/lib
@@ -21,11 +19,11 @@ cd /usr/lib
 ln -s libblah /usr/local/lib
 ```
 
-That is, linking from within the original folder to the destination folder, will not work.
+也就是说，从原始文件夹内到目标文件夹之间的链接将不起作用。
 
-The reason for that is that _ln_ will think you are linking from inside _/usr/local/lib_ to _/usr/local/lib_ and will create a linked file from _libblah_ in _/usr/local/lib_ to _libblah_ also in _/usr/local/lib_. This is because all the link file gets is the name of the file ( _libblah_ ) but not the path to the file. The end result is a very broken link.
+出现这种情况的原因是 _ln_ 会把它当作是你在 _/usr/local/lib_ 中创建一个到 _/usr/local/lib_ 的链接， 并在 _/usr/local/lib_ 中创建了从 _libblah_ 到 _libblah_ 的一个链接。这是因为所有链接文件获取的是文件的名称(_libblah_), 而不是文件的路径， 最终的结果将会产生一个坏的链接。
 
-However, this:
+然而， 请看下面的这种情况。
 
 ```
 cd /usr/lib
@@ -33,55 +31,55 @@ cd /usr/lib
 ln -s /usr/lib/libblah /usr/local/lib
 ```
 
-will work. Then again, it would work regardless of from where you executed the instruction within the filesystem. Using absolute paths, that is, spelling out the whole the path, from root (/) drilling down to to the file or directory itself, is just best practice.
+是可以工作的。奇怪的事情又来了，不管你在文件系统的任何位置执行指令，它都可以好好的工作。使用绝对路径，也就是说，指定整个完整的路径，从根目录(/)开始到需要的文件或者是文件夹，是最好的实现方式。
 
-Another thing to note is that, as long as both _/usr/lib_ and _/usr/local/lib_ are on the same partition, making a hard link like this:
+其它需要注意的事情是， 只要 _/usr/lib_ 和 _/usr/local/lib_ 在一个分区上，做一个如下的硬链接：
 
 ```
 cd /usr/lib
 
-ln -s libblah /usr/local/lib
+ln libblah /usr/local/lib
 ```
 
-will also work because hard links don't rely on pointing to a file within the filesystem to work.
+也是可以工作的，因为硬链接不依赖于指向文件系统内的文件来工作。
 
-Where hard links will not work is if you want to link across partitions. Say you have _fileA_ on partition A and the partition is mounted at _/path/to/partitionA/directory_. If you want to link _fileA_ to _/path/to/partitionB/directory_ that is on partition B, this will not work:
+如果硬链接不起作用，那么可能是你想跨分区之间建立一个硬链接。就比如说，你有分区A上有文件 _fileA_，并且把这个分区挂载到 _/path/to/partitionA/directory_ 目录，而你又想从 _fileA_ 链接到分区B上 _/path/to/partitionB/directory_ 目录，这样是行不通的。
 
 ```
 ln /path/to/partitionA/directory/file /path/to/partitionB/directory
 ```
 
-As we saw previously, hard links are entries in a partition table that point to data on the *same partition*. You can't have an entry in the table of one partition pointing to data on another partition. Your only choice here would be to us a soft link:
+正如我们之前说的一样，硬链接是分区表中指向的是同一个分区的数据的条目，你不能把一个分区表的条目指向另一个分区上的数据，这种情况下，你只能选择创建一个软链接：
 
 ```
 ln -s /path/to/partitionA/directory/file /path/to/partitionB/directory
 ```
 
-Another thing that soft links can do and hard links cannot is link to whole directories:
+另一个软链接能做到，而硬链接不能的是链接到一个目录。
 
 ```
 ln -s /path/to/some/directory /path/to/some/other/directory
 ```
 
-will create a link to _/path/to/some/directory_ within _/path/to/some/other/directory_ without a hitch.
+这将在 _/path/to/some/other/directory_ 中创建 _/path/to/some/directory_ 的链接， 没有任何问题。
 
-Trying to do the same by hard linking will show you an error saying that you are not allowed to do that. And the reason for that is unending recursiveness: if you have directory B inside directory A, and then you link A inside B, you have situation, because then A contains B within A inside B that incorporates A that encloses B, and so on ad-infinitum.
+当你使用硬链接做同样的事情的时候，会提示你一个错误，说不允许那么做。而不允许这么做的原因量会导致无休止的递归： 如果你在目录A中有一个目录B，然后你在目录B中链接A，就会出现同样的情况，在目录A中，目录A包含了目录B，而在目录B中又包含了A，然后又包含了B，等等无穷无尽。
 
-You can have recursive using soft links, but why would you do that to yourself?
+当然你可以在递归中使用软链接，但你为什么要那样做呢？
 
-### Should I use a hard or a soft link?
+### 我应该使用硬链接还是软链接呢？
 
-In general you can use soft links everywhere and for everything. In fact, there are situations in which you can only use soft links. That said, hard links are slightly more efficient: they take up less space on disk and are faster to access. On most machines you will not notice the difference, though: the difference in space and speed will be negligible given today's massive and speedy hard disks. However, if you are using Linux on an embedded system with a small storage and a low-powered processor, you may want to give hard links some consideration.
+通常，你可以在任何地方使用软链接做任何事情。实际上，在有些情况下你只能使用软软链接。话说回来，硬链接的效率要稍高一些： 它们占用的磁盘空间更少，访问速度更快。在大多数的机器上，你可以忽略这一点点的差异，因为：在磁盘空间越来越大，访问速度越来越快的今天，空间和速度的差异可以忽略不计。不过，如果你是在一个有小存储和低功耗的处理器上使用嵌入式系统上使用linux，则可能需要考虑使用硬链接。
 
-Another reason to use hard links is that a hard link is much more difficult to break. If you have a soft link and you accidentally move or delete the file it is pointing to, your soft link will be broken and point to... nothing. There is no danger of this happening with a hard link, since the hard link points directly to the data on the disk. Indeed, the space on the disk will not be flagged as free until the last hard link pointing to it is erased from the file system.
+另一个使用硬链接的原因是硬链接不容易破碎。假设你有一个软链接，而你意外的移动或者删除了它指向的文件，那么你的软链接将会破碎，并指向了一个不存在的东西。这种情况是不会发生在硬链接中的，因为硬链接直接指向的是磁盘上的数据。实际上，磁盘上的空间不不会被标记为空闲，除非最后一个指向它的硬链接把它从文件系统中擦除掉。
 
-Soft links, on the other hand can do more than hard links and point to anything, be it file or directory. They can also point to items that are on different partitions. These two things alone often make them the only choice.
+软链接，在另一方面比硬链接可以做更多的事情，而且可以指向任何东西，可以是文件或目录。它也可以指向不在同一个分区上的文件和目录。仅这两个不同，我们就可以做出唯一的选择了。
 
-### Next Time
+### 下期
 
-Now we have covered files and directories and the basic tools to manipulate them, you are ready to move onto the tools that let you explore the directory hierarchy, find data within files, and examine the contents. That's what we'll be dealing with in the next installment. See you then!
+现在我们已经介绍了文件和目录以及操作它们的工具，你是否已经准备好转到这些工具，可以浏览目录层次结构，可以查找文件中的数据，也可以检查目录。这就是我们下一期中要做的事情。下期见。
 
-Learn more about Linux through the free ["Introduction to Linux" ][2]course from The Linux Foundation and edX.
+你可以通过Linux 基金会和edX [Linux 简介][2]了解更多关于Linux的免费课程。
 
 --------------------------------------------------------------------------------
 
