@@ -1,4 +1,4 @@
-Commandline quick tips: How to locate a file
+translating by dianbanjiu Commandline quick tips: How to locate a file
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/10/commandlinequicktips-816x345.jpg)
