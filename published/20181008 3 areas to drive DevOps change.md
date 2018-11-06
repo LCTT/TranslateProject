@@ -1,7 +1,7 @@
 推动 DevOps 变革的三个方面
 ======
 
-推动大规模的组织变革是一个痛苦的过程。对于 DevOps 来说，尽管也有阵痛，但变革带来的价值则相当可观。
+> 推动大规模的组织变革是一个痛苦的过程。对于 DevOps 来说，尽管也有阵痛，但变革带来的价值则相当可观。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/diversity-inclusion-transformation-change_20180927.png?itok=2E-g10hJ)
 
