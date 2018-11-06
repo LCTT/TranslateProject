@@ -1,3 +1,4 @@
+hkurj translating
 Why schools of the future are open
 ======
 
