@@ -4,9 +4,9 @@ script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sh ./scripts/badge.sh; fi'
 branches:
   only:
-  - master
+    - master
   except:
-  - gh-pages
+    - gh-pages
 git:
   submodules: false
 deploy:
