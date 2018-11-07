@@ -1,53 +1,50 @@
-zianglei translating
-How Do We Find Out The Installed Packages Came From Which Repository?
-======
-Sometimes you might want to know the installed packages came from which repository. This will helps you to troubleshoot when you are facing the package conflict issue.
+# s我们如何得知安装的包来自哪个仓库？
 
-Because [third party vendor repositories][1] are holding the latest version of package and sometime it will causes the issue when you are trying to install any packages due to incompatibility.
+有时候你可能想知道安装的软件包来自于哪个仓库。这将帮助你在遇到包冲突问题时进行故障排除。
 
-Everything is possible in Linux because you can able to install a packages on your system even though when the package is not available on your distribution.
+因为[第三方仓库][1]拥有最新版本的软件包，所以有时候当你试图安装一些包的时候会出现兼容性的问题。
 
-Also, you can able to install a package with latest version when your distribution don’t have it. How?
+在 Linux 上一切都是可能的，因为你可以安装一个即使在你的发行版系统上不能使用的包。
 
-That’s why third party repositories are came in the picture. They are allowing users to install all the available packages from their repositories.
+你也可以安装一个最新版本的包即使你的发行版系统仓库还没有这个版本，怎么做到的呢？
 
-Almost all the distributions are allowing third party repositories. Some of the distribution officially suggesting few of third party repositories which are not replacing the base packages badly like CentOS officially suggesting us to install [EPEL repository][2].
+这就是为什么出现了第三方仓库。它们允许用户从库中安装所有可用的包。
 
-[List of Major repositories][1] and it’s details are below.
+几乎所有的发行版系统都允许第三方软件库。一些发行版还会官方推荐一些不会取代基础仓库的第三方仓库，例如 CentOS 官方推荐安装 [EPEL 库][2]。
 
-  * **`CentOS:`** [EPEL][2], [ELRepo][3], etc is [CentOS Community Approved Repositories][4].
-  * **`Fedora:`** [RPMfusion repo][5] is commonly used by most of the [Fedora][6] users.
-  * **`ArchLinux:`** ArchLinux community repository contains packages that have been adopted by Trusted Users from the Arch User Repository.
-  * **`openSUSE:`** [Packman repo][7] offers various additional packages for openSUSE, especially but not limited to multimedia related applications and libraries that are on the openSUSE Build Service application blacklist. It’s the largest external repository of openSUSE packages.
-  * **`Ubuntu:`** Personal Package Archives (PPAs) are a kind of repository. Developers create them in order to distribute their software. You can find this information on the PPA’s Launchpad page. Also, you can enable Cananical partners repositories.
+下面是常用的仓库列表和它们的详细信息。
 
+  * **`CentOS:`** [EPEL][2], [ELRepo][3] 等是 [Centos 社区认证仓库](4)。
+  * **`Fedora:`** [RPMfusion repo][5] 是经常被很多 [Fedora][6] 用户使用的仓库。
+  * **`ArchLinux:`** ArchLinux 社区仓库包含了来自于 Arch 用户仓库的已经被信任用户 ( Trusted User ) 审核通过的软件包。
+  * **`openSUSE:`** [Packman repo][7] 为 openSUSE 提供了各种附加的软件包，特别是但不限于那些在 openSUSE Build Service 应用黑名单上的与多媒体相关的应用和库。它是 openSUSE 软件包的最大外部软件库。
+  * **`Ubuntu:`** Personal Package Archives (PPAs) 是一种软件仓库。开发者们可以创建这种仓库来分发他们的软件。你可以在 PPA 导航页面（ PPA’s Launchpad page ）找到相关信息。同时，你也可以启用 Cananical 合作伙伴软件仓库。
 
+### 仓库是什么？
 
-### What Is Repository?
+软件仓库是存储特定的应用程序的软件包的集中场所。
 
-A software repository is a central place which stores the software packages for the particular application.
+所有的 Linux 发行版都在维护他们自己的仓库，并允许用户在他们的机器上获取和安装包。
 
-All the Linux distributions are maintaining their own repositories and they allow users to retrieve and install packages on their machine.
+每个厂商都提供了各自的包管理工具来管理它们的仓库，例如搜索、安装、更新、升级、删除等等。
 
-Each vendor offered a unique package management tool to manage their repositories such as search, install, update, upgrade, remove, etc.
+大部分 Linux 发行版除了 RHEL 和 SUSE 以外都是免费的。要访问付费的仓库，你需要购买订阅。
 
-Most of the Linux distributions comes as freeware except RHEL and SUSE. To access their repositories you need to buy a subscriptions.
+### 为什么我们需要启用第三方仓库？
 
-### Why do we need to enable third party repositories?
+在 Linux 里，并不建议从源代码安装包，因为这样做可能会在升级软件和系统的时候产生很多问题，这也是为什么我们建议从库中安装包而不是从源代码安装。
 
-In Linux, installing a package from source is not advisable as this might cause so many issues while upgrading the package or system that’s why we are advised to install a package from repo instead of source.
+### 在 RHEL/CentOS 系统上我们如何得知安装的软件包来自哪个仓库？
 
-### How Do We Find Out The Installed Packages Came From Which Repository on RHEL/CentOS Systems?
+这可以通过很多方法实现。我们会给你所有可能的选择，你可以选择一个对你来说最合适的。
 
-This can be done in multiple ways. Here we will be giving you all the possible options and you can choose which one is best for you.
+### 方法-1：使用 Yum 命令
 
-### Method-1: Using Yum Command
+RHEL 和 CentOS 系统使用 RPM 包因此我们能够使用 [Yum 包管理器][8] 来获得信息。
 
-RHEL & CentOS systems are using RPM packages hence we can use the [Yum Package Manager][8] to get this information.
+YUM 即 Yellodog Updater，Modified 是适用于基于 RPM 的系统例如 Red Hat Enterpise Linux （RHEL）和 CentOS 的一个开源命令行前端包管理工具。
 
-YUM stands for Yellowdog Updater, Modified is an open-source command-line front-end package-management utility for RPM based systems such as Red Hat Enterprise Linux (RHEL) and CentOS.
-
-Yum is the primary tool for getting, installing, deleting, querying, and managing RPM packages from distribution repositories, as well as other third-party repositories.
+Yum 是从发行版仓库和其他第三方库中获取、安装、删除、查询和管理 RPM 包的一个主要工具。
 
 ```
 # yum info apachetop
@@ -70,11 +67,12 @@ Description : ApacheTop watches a logfile generated by Apache (in standard commo
  : fields in combined) and generates human-parsable output in realtime.
 ```
 
-The **`apachetop`** package is coming from **`epel repo`**.
 
-### Method-2: Using Yumdb Command
+**`apachetop`** 包来自 **`epel repo`**。
 
-Yumdb info provides information similar to yum info but additionally it provides package checksum data, type, user info (who installed the package). Since yum 3.2.26 yum has started storing additional information outside of the rpmdatabase (where user indicates it was installed by the user, and dep means it was brought in as a dependency).
+### 方法-2：使用 Yumdb 命令
+
+Yumdb info 提供了类似于 yum info 的信息但是它又提供了包校验和数据、类型、用户信息（谁安装的软件包）。从 yum 3.2.26 开始，yum 已经开始在 rpmdatabase 之外存储额外的信息（ user 表示软件是用户安装的，dep 表示它是作为依赖项引入的）。
 
 ```
 # yumdb info lighttpd
@@ -95,13 +93,13 @@ lighttpd-1.4.50-1.el7.x86_64
  var_uuid = ce328b07-9c0a-4765-b2ad-59d96a257dc8
 ```
 
-The **`lighttpd`** package is coming from **`epel repo`**.
+**`lighttpd`** 包来自 **`epel repo`**。
 
-### Method-3: Using RPM Command
+### 方法-3：使用 RPM 命令
 
-[RPM command][9] stands for Red Hat Package Manager is a powerful, command line Package Management utility for Red Hat based system such as (RHEL, CentOS, Fedora, openSUSE & Mageia) distributions.
+[RPM 命令][9] 即 Red Hat Package Manager 是一个适用于基于 Red Hat 的系统（例如 RHEL, CentOS, Fedora, openSUSE & Mageia）的强大的命令行包管理工具。
 
-The utility allow you to install, upgrade, remove, query & verify the software on your Linux system/server. RPM files comes with .rpm extension. RPM package built with required libraries and dependency which will not conflicts other packages were installed on your system.
+这个工具允许你在你的 Linux 系统/服务器上安装、更新、移除、查询和验证软件。RPM 文件具有 .rpm 后缀名。RPM 包是用必需的库和依赖关系构建的，不会与系统上安装的其他包冲突。
 
 ```
 # rpm -qi apachetop
@@ -128,12 +126,11 @@ combined logformat, although it doesn't (yet) make use of any of the extra
 fields in combined) and generates human-parsable output in realtime.
 ```
 
-The **`apachetop`** package is coming from **`epel repo`**.
+**`apachetop`** 包来自 **`epel repo`**。
 
 ### Method-4: Using Repoquery Command
 
-repoquery is a program for querying information from YUM repositories similarly to rpm queries.
-
+repoquery 是一个从 YUM 库查询信息的程序，类似于 rpm 查询。
 ```
 # repoquery -i httpd
 
@@ -153,13 +150,13 @@ The Apache HTTP Server is a powerful, efficient, and extensible
 web server.
 ```
 
-The **`httpd`** package is coming from **`CentOS updates repo`**.
+**`httpd`** 包来自 **`CentOS updates repo`**。
 
-### How Do We Find Out The Installed Packages Came From Which Repository on Fedora System?
+### 在 Fedora 系统上我们如何得知安装的包来自哪个仓库？
 
-DNF stands for Dandified yum. We can tell DNF, the next generation of yum package manager (Fork of Yum) using hawkey/libsolv library for back-end. Aleš Kozumplík started working on DNF since Fedora 18 and its implemented/launched in Fedora 22 finally.
+DNF 是 Dandified yum 的缩写。我们可以说 DNF 是使用 hawkey/libsolv 库作为后端的下一代 yum 包管理器（ yum 的分支）。从 Fedora 18 开始 Aleš Kozumplík 开始开发 DNF 并最终在 Fedora 22 上得以应用/启用。
 
-[Dnf command][10] is used to install, update, search & remove packages on Fedora 22 and later system. It automatically resolve dependencies and make it smooth package installation without any trouble.
+[Dnf 命令][10] 用于在 Fedora 22 以及之后的系统上安装、更新、搜索和删除包。它会自动解决依赖并使安装包的过程变得顺畅，不会出现任何问题。
 
 ```
 $ dnf info tilix
@@ -195,12 +192,11 @@ Description : Tilix is a tiling terminal emulator with the following features:
  : GNOME Human Interface Guidelines (HIG).
 ```
 
-The **`tilix`** package is coming from **`Fedora updates repo`**.
+**`tilix`**  包来自 **`Fedora updates repo`**。
 
-### How Do We Find Out The Installed Packages Came From Which Repository on openSUSE System?
+### 在 openSUSE 系统上我们如何得知安装的包来自哪个仓库？
 
-Zypper is a command line package manager which makes use of libzypp. [Zypper command][11] provides functions like repository access, dependency solving, package installation, etc.
-
+Zypper 是一个使用 libzypp 的命令行包管理器。[Zypper 命令][11] 提供了存储库访问、依赖处理、包安装等功能。
 ```
 $ zypper info nano
 
@@ -226,10 +222,11 @@ Description :
 ```
 
 The **`nano`** package is coming from **`openSUSE Main repo (OSS)`**.
+**`nano`** 包来自于 **`openSUSE Main repo（OSS）`**。
 
-### How Do We Find Out The Installed Packages Came From Which Repository on ArchLinux System?
+### 在 ArchLinux 系统上我们如何得知安装的包来自哪个仓库？
 
-[Pacman command][12] stands for package manager utility. pacman is a simple command-line utility to install, build, remove and manage Arch Linux packages. Pacman uses libalpm (Arch Linux Package Management (ALPM) library) as a back-end to perform all the actions.
+[Pacman 命令][12] 即包管理器工具（ package manager utility ），是一个简单的用来安装、构建、删除和管理 Arch Linux 软件包的命令行工具。Pacman 使用 libalpm（ Arch Linux Package Managment （ ALPM ）library）作为后端来执行所有的操作。
 
 ```
 # pacman -Ss chromium
@@ -247,9 +244,9 @@ community/fcitx-mozc 2.17.2313.102-1
  Input)
 ```
 
-The **`chromium`** package is coming from **`ArchLinux extra repo`**.
+**`chromium`** 包来自 **`ArchLinux extra repo`**。
 
-Alternatively, we can use the following option to get the detailed information about the package.
+或者，我们可以使用以下选项获得关于包的详细信息。
 
 ```
 # pacman -Si chromium
@@ -277,15 +274,15 @@ Build Date : Fri 19 Feb 2016 04:17:12 AM IST
 Validated By : MD5 Sum SHA-256 Sum Signature
 ```
 
-The **`chromium`** package is coming from **`ArchLinux extra repo`**.
+**`chromium`** 包来自 **`ArchLinux extra repo`**。
 
-### How Do We Find Out The Installed Packages Came From Which Repository on Debian Based Systems?
+### 在基于 Debian 的系统上我们如何得知安装的包来自哪个仓库？
 
-It can be done in two ways on Debian based systems such as Ubuntu, LinuxMint, etc.,
+在基于 Debian 的系统例如 Ubuntu，LinuxMint 上可以使用两种方法实现。
 
-### Method-1: Using apt-cache Command
+### 方法-1：使用 apt-cache 命令
 
-The [apt-cache command][13] can display much of the information stored in APT’s internal database. This information is a sort of cache since it is gathered from the different sources listed in the sources.list file. This happens during the apt update operation.
+[apt-cache 命令][13] 可以显示存储在 APT 内部数据库的很多信息。这些信息是一种缓存，因为它们是从列在 source.list 文件里的不同的源中获得的。这个过程发生在 apt 更新操作期间。
 
 ```
 $ apt-cache policy python3
@@ -300,11 +297,11 @@ python3:
  100 /var/lib/dpkg/status
 ```
 
-The **`python3`** package is coming from **`Ubuntu updates repo`**.
+**`python3`** 包来自 **`Ubuntu updates repo`**。
 
-### Method-2: Using apt Command
+### 方法-2：使用 apt 命令
 
-[APT command][14] stands for Advanced Packaging Tool (APT) which is replacement for apt-get, like how DNF came to picture instead of YUM. It’s feature rich command-line tools with included all the futures in one command (APT) such as apt-cache, apt-search, dpkg, apt-cdrom, apt-config, apt-key, etc..,. and several other unique features. For example we can easily install .dpkg packages through APT but we can’t do through Apt-Get similar more features are included into APT command. APT-GET replaced by APT Due to lock of futures missing in apt-get which was not solved.
+[APT 命令][14] 即 Advanced Packaging Tool（APT）是 apt-get 命令的替代品，就像 DNF 是如何取代 YUM 一样。它是具有丰富功能的命令行工具并将所有的功能例如 apt-cache、apt-search、dpkg、apt-cdrom、apt-config、apt-ket 等包含在一个命令（APT）中，并且还有几个独特的功能。例如我们可以通过 APT 轻松安装 .dpkg 包但我们不能使用 Apt-Get 命令安装，更多类似的功能都被包含进了 APT 命令。APT-GET 因缺失了很多未被解决的特性而被 apt 取代。
 
 ```
 $ apt -a show notepadqq
@@ -337,8 +334,7 @@ Description: Notepad++-like editor for Linux
  Text editor with support for multiple programming
  languages, multiple encodings and plugin support.
 ```
-
-The **`notepadqq`** package is coming from **`Launchpad PPA`**.
+**`notepadqq`** 包来自 **`Launchpad PPA`**。
 
 --------------------------------------------------------------------------------
 
@@ -346,7 +342,7 @@ via: https://www.2daygeek.com/how-do-we-find-out-the-installed-packages-came-fro
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zianglei](https://github.com/zianglei)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
