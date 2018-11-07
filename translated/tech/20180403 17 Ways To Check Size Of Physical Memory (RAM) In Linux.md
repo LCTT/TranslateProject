@@ -1,40 +1,36 @@
-17 Ways To Check Size Of Physical Memory (RAM) In Linux
-======
-Most of the system administrators checks CPU & Memory utilization when they were facing some performance issue.
+在 Linux 中 17 种方法来查看物理内存（RAM）
+=======
 
-There is lot of utilities are available in Linux to check physical memory.
+大多数系统管理员在遇到性能问题时会检查 CPU 和内存利用率。
 
-These commands are help us to check the physical RAM present in system, also allow users to check memory utilization in varies aspect.
+Linux 中有许多实用程序可以用于检查物理内存。
 
-Most of us know only few commands and we are trying to include all the possible commands in this article.
+这些命令有助于我们检查系统中存在的物理 RAM，还允许用户检查各种方面的内存利用率。
 
-You may think, why i want to know all these commands instead of knowing some of the specific and routine commands.
+我们大多数人只知道很少的命令，在本文中我们试图包含所有可能的命令。
 
-Don’t think bad or don’t take in negative way because each one has different requirement and perception so, who’s looking for other purpose then this will very helpful for them.
+你可能会想，为什么我想知道所有这些命令，而不是知道一些特定的和例行的命令。
 
-### What Is RAM
+不要认为不好或采取负面的方式，因为每个人都有不同的需求和看法，所以，对于那些在寻找其它目的的人，这对于他们非常有帮助。
 
-Computer memory is a physical device which capable to store information temporarily or permanently. RAM stands for Random Access Memory is a volatile memory that stores information used by the operating system, software, and hardware.
+### 什么是 RAM
 
-Two types of memory is available.
+计算机内存是能够临时或永久存储信息的物理设备。RAM 代表随机存取存储器，它是一种易失性存储器，用于存储操作系统，软件和硬件使用的信息。
 
-  * Primary Memory
-  * Secondary Memory
+有两种类型的内存可供选择：
+ * 主存
+ * 辅助内存
 
+主存是计算机的主存储器。CPU 可以直接读取或写入此内存。它固定在电脑的主板上。
 
+ * **`RAM:`** 随机存取存储器是临时存储。关闭计算机后，此信息将消失。
+ * **`ROM:`** 只读存储器是永久存储，即使系统关闭也能保存数据。
 
-Primary memory is the main memory of the computer. CPU can directly read or write on this memory. It is fixed on the motherboard of the computer.
+### 方法-1 : 使用 free 命令
 
-  * **`RAM:`** Random Access Memory is a temporary memory. This information will go away when the computer is turned off.
-  * **`ROM:`** Read Only Memory is permanent memory, that holds the data even if the system is switched off.
+free 显示系统中空闲和已用的物理内存和交换内存的总量，以及内核使用的缓冲区和缓存。它通过解析 /proc/meminfo 来收集信息。
 
-
-
-### Method-1 : Using free Command
-
-free displays the total amount of free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel. The information is gathered by parsing /proc/meminfo.
-
-**Suggested Read :** [free – A Standard Command to Check Memory Usage Statistics (Free & Used) in Linux][1]
+**建议阅读：** [free – 在 Linux 系统中检查内存使用情况统计（空闲和已用）的标准命令][1]
 ```
 $ free -m
  total used free shared buff/cache available
@@ -48,11 +44,11 @@ Swap: 12 1 11
 
 ```
 
-### Method-2 : Using /proc/meminfo file
+### 方法-2 : 使用 /proc/meminfo 文件
 
-/proc/meminfo is a virtual text file that contains a large amount of valuable information about the systems RAM usage.
+/proc/meminfo 是一个虚拟文本文件，它包含有关系统 RAM 使用情况的大量有价值的信息。
 
-It’s report the amount of free and used memory (both physical and swap) on the system.
+它报告系统上的空闲和已用内存（物理和交换）的数量。
 ```
 $ grep MemTotal /proc/meminfo
 MemTotal: 2041396 kB
@@ -65,11 +61,11 @@ $ grep MemTotal /proc/meminfo | awk '{print $2 / 1024 / 1024}'
 
 ```
 
-### Method-3 : Using top Command
+### 方法-3 : 使用 top 命令
 
-​Top command is one of the basic command to monitor real-time system processes in Linux. It display system information and running processes information like uptime, average load, tasks running, number of users logged in, number of CPUs & cpu utilization, Memory & swap information. Run top command then hit `E` to bring the memory utilization in MB.
+​Top 命令是 Linux 中监视实时系统进程的基本命令之一。它显示系统信息和运行的进程信息，如正常运行时间，平均负载，正在运行的任务，登录的用户数，CPU 数量和 CPU 利用率，以及内存和交换信息。运行 top 命令，然后按下 `E` 来使内存利用率以 MB 为单位。
 
-**Suggested Read :** [TOP Command Examples to Monitor Server Performance][2]
+**建议阅读：** [TOP 命令示例监视服务器性能][2]
 ```
 $ top
 
@@ -86,11 +82,11 @@ MiB Swap: 12689.58+total, 11196.83+free, 1492.750 used. 306.465 avail Mem
 
 ```
 
-### Method-4 : Using vmstat Command
+### 方法-4 : 使用 vmstat 命令
 
-vmstat is a standard nifty tool that report virtual memory statistics of Linux system. vmstat reports information about processes, memory, paging, block IO, traps, and cpu activity. It helps Linux administrator to identify system bottlenecks while troubleshooting the issues.
+vmstat 是一个标准且漂亮的工具，它报告 Linux 系统的虚拟内存统计信息。vmstat 报告有关进程，内存，分页，块 IO，陷阱和 CPU 活动的信息。它有助于 Linux 管理员在故障检修时识别系统瓶颈。
 
-**Suggested Read :** [vmstat – A Standard Nifty Tool to Report Virtual Memory Statistics][3]
+**建议阅读：** [vmstat – 一个报告虚拟内存统计信息的标准且漂亮的工具][3]
 ```
 $ vmstat -s | grep "total memory"
  2041396 K total memory
@@ -103,13 +99,13 @@ $ vmstat -s | awk '{print $1 / 1024 / 1024}' | head -1
 
 ```
 
-### Method-5 : Using nmon Command
+### 方法-5 : 使用 nmon 命令
 
-nmon is a another nifty tool to monitor various system resources such as CPU, memory, network, disks, file systems, NFS, top processes, Power micro-partition and resources (Linux version & processors) on Linux terminal.
+nmon 是另一个很棒的工具，用于监视各种系统资源，如 CPU，内存，网络，磁盘，文件系统，NFS，top 进程，Power 微分区和 Linux 终端上的资源（Linux 版本和处理器）。
 
-Just press `m` key to see memory utilization stats (cached, active, inactive, buffered, free in MB & free percent)
+只需按下 `m` 键，即可查看内存利用率统计数据（缓存，活动，非活动，缓冲，空闲，以 MB 和百分比为单位）。
 
-**Suggested Read :** [nmon – A Nifty Tool To Monitor System Resources On Linux][4]
+**建议阅读：** [nmon – Linux 中一个监视系统资源的漂亮的工具][4]
 ```
 ┌nmon─14g──────[H for help]───Hostname=2daygeek──Refresh= 2secs ───07:24.44─────────────────┐
 │ Memory Stats ─────────────────────────────────────────────────────────────────────────────│
@@ -133,15 +129,14 @@ Just press `m` key to see memory utilization stats (cached, active, inactive, bu
 
 ```
 
-### Method-6 : Using dmidecode Command
+### 方法-6 : 使用 dmidecode 命令
 
-Dmidecode is a tool which reads a computer’s DMI (stands for Desktop Management Interface)
-(some say SMBIOS – stands for System Management BIOS) table contents and display system hardware information in a human-readable format.
+Dmidecode 是一个读取计算机 DMI表内容的工具，它以人类可读的格式显示系统硬件信息。（DMI 代表桌面管理接口，有人说 SMBIOS 代表系统管理 BIOS）
 
-This table contains a description of the system’s hardware components, as well as other useful information such as serial number, Manufacturer information, Release Date, and BIOS revision, etc,.
+此表包含系统硬件组件的描述，以及其它有用信息，如序列号，制造商信息，发布日期和 BIOS 修改等。
 
-**Suggested Read :**
-[Dmidecode – Easy Way To Get Linux System Hardware Information][5]
+**建议阅读：**
+[Dmidecode – 获取 Linux 系统硬件信息的简便方法][5]
 ```
 # dmidecode -t memory | grep Size:
  Size: 8192 MB
@@ -171,7 +166,7 @@ This table contains a description of the system’s hardware components, as well
 
 ```
 
-Print only installed RAM modules.
+只打印已安装的 RAM 模块。
 ```
 
 # dmidecode -t memory | grep Size: | grep -v "No Module Installed"
@@ -182,20 +177,20 @@ Print only installed RAM modules.
 
 ```
 
-Sum all the installed RAM modules.
+汇总所有已安装的 RAM 模块。
 ```
 # dmidecode -t memory | grep Size: | grep -v "No Module Installed" | awk '{sum+=$2}END{print sum}'
 32768
 
 ```
 
-### Method-7 : Using hwinfo Command
+### 方法-7 : 使用 hwinfo 命令
 
-hwinfo stands for hardware information tool is another great utility that used to probe for the hardware present in the system and display detailed information about varies hardware components in human readable format.
+hwinfo 代表硬件信息，它是另一个很棒的实用工具，用于探测系统中存在的硬件，并以人类可读的格式显示有关各种硬件组件的详细信息。
 
-It reports information about CPU, RAM, keyboard, mouse, graphics card, sound, storage, network interface, disk, partition, bios, and bridge, etc,.
+它报告有关 CPU，RAM，键盘，鼠标，图形卡，声音，存储，网络接口，磁盘，分区，BIOS 和网桥等的信息。
 
-**Suggested Read :** [hwinfo (Hardware Info) – A Nifty Tool To Detect System Hardware Information On Linux][6]
+**建议阅读：** [hwinfo（硬件信息）– 一个在 Linux 系统上检测系统硬件信息的好工具][6]
 ```
 $ hwinfo --memory
 01: None 00.0: 10102 Main Memory
@@ -209,13 +204,13 @@ $ hwinfo --memory
 
 ```
 
-### Method-8 : Using lshw Command
+### 方法-8 : 使用 lshw 命令
 
-lshw (stands for Hardware Lister) is a small nifty tool that generates detailed reports about various hardware components on the machine such as memory configuration, firmware version, mainboard configuration, CPU version and speed, cache configuration, usb, network card, graphics cards, multimedia, printers, bus speed, etc.
+lshw（代表 Hardware Lister）是一个小巧的工具，可以生成机器上各种硬件组件的详细报告，如内存配置，固件版本，主板配置，CPU 版本和速度，缓存配置，USB，网卡，显卡，多媒体，打印机，总线速度等。
 
-It’s generating hardware information by reading varies files under /proc directory and DMI table.
+它通过读取 /proc 目录和 DMI 表中的各种文件来生成硬件信息。
 
-**Suggested Read :** [LSHW (Hardware Lister) – A Nifty Tool To Get A Hardware Information On Linux][7]
+**建议阅读：** [LSHW (Hardware Lister) – 一个在 Linux 上获取硬件信息的好工具][7]
 ```
 $ sudo lshw -short -class memory
 [sudo] password for daygeek:
@@ -226,24 +221,24 @@ H/W path Device Class Description
 
 ```
 
-### Method-9 : Using inxi Command
+### 方法-9 : 使用 inxi 命令
 
-inxi is a nifty tool to check hardware information on Linux and offers wide range of option to get all the hardware information on Linux system that i never found in any other utility which are available in Linux. It was forked from the ancient and mindbendingly perverse yet ingenius infobash, by locsmif.
+inxi 是一个很棒的工具，它可以检查 Linux 上的硬件信息，并提供了大量的选项来获取 Linux 系统上的所有硬件信息，这些特性是我在 Linux 上的其它工具中从未发现的。它是从 locsmif 编写的古老的但至今看来都异常灵活的 infobash 演化而来的。
 
-inxi is a script that quickly shows system hardware, CPU, drivers, Xorg, Desktop, Kernel, GCC version(s), Processes, RAM usage, and a wide variety of other useful information, also used for forum technical support & debugging tool.
+inxi 是一个脚本，它可以快速显示系统硬件，CPU，驱动程序，Xorg，桌面，内核，GCC 版本，进程，RAM 使用情况以及各种其它有用的信息，还可以用于论坛技术支持和调试工具。
 
-**Suggested Read :** [inxi – A Great Tool to Check Hardware Information on Linux][8]
+**建议阅读：** [inxi – 一个检查 Linux 上硬件信息的好工具][8]
 ```
 $ inxi -F | grep "Memory"
 Info: Processes: 234 Uptime: 3:10 Memory: 1497.3/1993.6MB Client: Shell (bash) inxi: 2.3.37
 
 ```
 
-### Method-10 : Using screenfetch Command
+### 方法-10 : 使用 screenfetch 命令
 
-screenFetch is a bash script. It will auto-detect your distribution and display an ASCII art version of that distribution’s logo and some valuable information to the right.
+screenFetch 是一个 bash 脚本。它将自动检测你的发行版，并在右侧显示该发行版标识的 ASCII 艺术版本和一些有价值的信息。
 
-**Suggested Read :** [ScreenFetch – Display Linux System Information On Terminal With Distribution ASCII Art Logo][9]
+**建议阅读：** [ScreenFetch – 以 ASCII 艺术标志在终端显示 Linux 系统信息][9]
 ```
 $ screenfetch
  ./+o+- [email protected]
@@ -267,11 +262,11 @@ $ screenfetch
 
 ```
 
-### Method-11 : Using neofetch Command
+### 方法-11 : 使用 neofetch 命令
 
-Neofetch is a cross-platform and easy-to-use command line (CLI) script that collects your Linux system information and display it on the terminal next to an image, either your distributions logo or any ascii art of your choice.
+Neofetch 是一个跨平台且易于使用的命令行（CLI）脚本，它收集你的 Linux 系统信息，并将其作为一张图片显示在终端上，也可以是你的发行版徽标，或者是你选择的任何 ascii 艺术。
 
-**Suggested Read :** [Neofetch – Shows Linux System Information With ASCII Distribution Logo][10]
+**建议阅读：** [Neofetch – 以 ASCII 分发标志来显示 Linux 系统信息][10]
 ```
 $ neofetch
  .-/+oossssoo+/-. [email protected]
@@ -297,9 +292,9 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso WM: GNOME Shell
 
 ```
 
-### Method-12 : Using dmesg Command
+### 方法-12 : 使用 dmesg 命令
 
-dmesg (stands for display message or driver message) is a command on most Unix-like operating systems that prints the message buffer of the kernel.
+dmesg（代表显示消息或驱动消息）是大多数类 unix 操作系统上的命令，用于打印内核的消息缓冲区。
 ```
 $ dmesg | grep "Memory"
 [ 0.000000] Memory: 1985916K/2096696K available (12300K kernel code, 2482K rwdata, 4000K rodata, 2372K init, 2368K bss, 110780K reserved, 0K cma-reserved)
@@ -307,13 +302,13 @@ $ dmesg | grep "Memory"
 
 ```
 
-### Method-13 : Using atop Command
+### 方法-13 : 使用 atop 命令
 
-Atop is an ASCII full-screen system performance monitoring tool for Linux that is capable of reporting the activity of all server processes (even if processes have finished during the interval).
+Atop 是一个用于 Linux 的 ASCII 全屏系统性能监视工具，它能报告所有服务器进程的活动（即使进程在间隔期间已经完成）。
 
-It’s logging of system and process activity for long-term analysis (By default, the log files are preserved for 28 days), highlighting overloaded system resources by using colors, etc. It shows network activity per process/thread with combination of the optional kernel module netatop.
+它记录系统和进程活动以进行长期分析（默认情况下，日志文件保存 28 天），通过使用颜色等来突出显示过载的系统资源。它结合可选的内核模块 netatop 显示每个进程或线程的网络活动。
 
-**Suggested Read :** [Atop – Monitor real time system performance, resources, process & check resource utilization history][11]
+**建议阅读：** [Atop – 实时监控系统性能，资源，进程和检查资源利用历史][11]
 ```
 $ atop -m
 
@@ -340,11 +335,11 @@ NET | lo ---- | pcki 9 | pcko 9 | sp 0 Mbps | si 0 Kbps | so 0 Kbps | | coll 0 |
 
 ```
 
-### Method-14 : Using htop Command
+### 方法-14 : 使用 htop 命令
 
-htop is an interactive process viewer for Linux which was developed by Hisham using ncurses library. Htop have many of features and options compared to top command.
+htop 是由 Hisham 用 ncurses 库开发的用于 Linux 的交互式进程查看器。与 top 命令相比，htop 有许多特性和选项。
 
-**Suggested Read :** [Monitor system resources using Htop command][12]
+**建议阅读：** [使用 Htop 命令监视系统资源][12]
 ```
 $ htop
 
@@ -365,13 +360,13 @@ $ htop
 
 ```
 
-### Method-15 : Using corefreq Utility
+### 方法-15 : 使用 corefreq 实用程序
 
-CoreFreq is a CPU monitoring software designed for Intel 64-bits Processors and supported architectures are Atom, Core2, Nehalem, SandyBridge and superior, AMD Family 0F.
+CoreFreq 是为 Intel 64 位处理器设计的 CPU 监控软件，支持的架构有 Atom，Core2，Nehalem，SandyBridge 和 superior，AMD 家族。(to 校正：这里 OF 最后什么意思)
 
-CoreFreq provides a framework to retrieve CPU data with a high degree of precision.
+CoreFreq 提供了一个框架来以高精确度检索 CPU 数据。
 
-**Suggested Read :** [CoreFreq – A Powerful CPU monitoring Tool for Linux Systems][13]
+**建议阅读：** [CoreFreq – 一个用于 Linux 系统的强大的 CPU 监控工具][13]
 ```
 $ ./corefreq-cli -k
 Linux:
@@ -394,13 +389,13 @@ $ ./corefreq-cli -k | grep "Total RAM" | awk '{print $4 / 1024 / 1024}'
 
 ```
 
-### Method-16 : Using glances Command
+### 方法-16 : 使用 glances 命令
 
-Glances is a cross-platform curses-based system monitoring tool written in Python. We can say all in one place, like maximum of information in a minimum of space. It uses psutil library to get information from your system.
+Glances 是用 Python 编写的跨平台基于 curses（LCTT 译注：curses 是一个 Linux/Unix 下的图形函数库）的系统监控工具。我们可以说一物俱全，就像在最小的空间含有最大的信息。它使用 psutil 库从系统中获取信息。
 
-Glances capable to monitor CPU, Memory, Load, Process list, Network interface, Disk I/O, Raid, Sensors, Filesystem (and folders), Docker, Monitor, Alert, System info, Uptime, Quicklook (CPU, MEM, LOAD), etc,.
+Glances 可以监视 CPU，内存，负载，进程列表，网络接口，磁盘 I/O，Raid，传感器，文件系统（和文件夹），Docker，监视器，警报，系统信息，正常运行时间，快速预览（CPU，内存，负载）等。
 
-**Suggested Read :** [Glances (All in one Place)– An Advanced Real Time System Performance Monitoring Tool for Linux][14]
+**建议阅读：** [Glances (一物俱全)– 一个 Linux 的高级的实时系统性能监控工具][14]
 ```
 $ glances
 
@@ -425,17 +420,19 @@ sda1 9.46M 12K 0.0 4.9 1.78G 97.2M 6125 daygeek 0 S 1:36.57 0 0 /usr/lib/firefox
 
 ```
 
-### Method-17 : Using gnome-system-monitor
+### 方法-17 : 使用 gnome-system-monitor
 
-System Monitor is a tool to manage running processes and monitor system resources. It shows you what programs are running and how much processor time, memory, and disk space are being used.
+系统监视器是一个管理正在运行的进程和监视系统资源的工具。它向你显示正在运行的程序以及耗费的处理器时间，内存和磁盘空间。
 ![][16]
+
+
 
 --------------------------------------------------------------------------------
 
 via: https://www.2daygeek.com/easy-ways-to-check-size-of-physical-memory-ram-in-linux/
 
 作者：[Ramya Nuvvula][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

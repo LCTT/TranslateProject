@@ -1,3 +1,5 @@
+translating---geekpi
+
 KRS: A new tool for gathering Kubernetes resource statistics
 ======
 Zero-configuration tool simplifies gathering information, such as how many pods are running in a certain namespace.

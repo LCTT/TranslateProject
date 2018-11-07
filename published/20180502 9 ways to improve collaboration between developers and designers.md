@@ -1,9 +1,8 @@
 9 个提升开发者与设计师协作的方法
 ======
+> 抛开成见，设计师和开发者的命运永远交织在一起。 以下是如何让每个人都在同一页面上。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BUS_consensuscollab1.png?itok=ULQdGjlV)
-
-本文由我与 [Jason Porter][1] 共同完成。
 
 在任何软件项目中，设计至关重要。设计师不像开发团队那样熟悉其内部工作，但迟早都要知道开发人员写代码的意图。
 
@@ -53,7 +52,7 @@
 
 via: https://opensource.com/article/18/5/9-ways-improve-collaboration-developers-designers
 
-作者：[Jason Brock][a]
+作者：[Jason Brock][a], [Jason Porter][1]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[LuuMing](https://github.com/LuuMing)
 校对：[pityonline](https://github.com/pityonline)

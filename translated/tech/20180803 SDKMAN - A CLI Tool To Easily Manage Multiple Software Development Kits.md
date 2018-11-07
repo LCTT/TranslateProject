@@ -1,39 +1,40 @@
-SDKMAN – A CLI Tool To Easily Manage Multiple Software Development Kits
+SDKMAN – 轻松管理多个软件开发套件 (SDK) 的命令行工具
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/08/sdkman-720x340.png)
 
-Are you a developer who often install and test applications on different SDKs? I’ve got a good news for you! Say hello to **SDKMAN** , a CLI tool that helps you to easily manage multiple software development kits. It provides a convenient way to install, switch, list and remove candidates. Using SDKMAN, you can now manage parallel versions of multiple SDKs easily on any Unix-like operating system. It allows the developers to install Software Development Kits for the JVM such as Java, Groovy, Scala, Kotlin and Ceylon. Ant, Gradle, Grails, Maven, SBT, Spark, Spring Boot, Vert.x and many others are also supported. SDKMAN is free, light weight, open source and written in **Bash**.
+你是否是一个经常在不同的 SDK 下安装和测试应用的开发者？我有一个好消息要告诉你！**SDKMAN**，一个可以帮你轻松管理多个 SDK 的命令行工具。它为安装、切换、列出和移除 SDK 提供了一个简便的方式。有了 SDKMAN，你可以在任何类 Unix 的操作系统上轻松地并行管理多个 SDK 的多个版本。它允许开发者为 JVM 安装不同的 SDK，例如 Java、Groovy、Scala、Kotlin 和 Ceylon、Ant、Gradle、Grails、Maven、SBT、Spark、Spring Boot、Vert.x，以及许多其他支持的 SDK。SDKMAN 是免费、轻量、开源、使用 **Bash** 编写的程序。   
 
-### Installing SDKMAN
+### 安装 SDKMAN
 
-Installing SDKMAN is trivial. First, make sure you have installed **zip** and **unzip** applications. It is available in the default repositories of most Linux distributions. For instance, to install unzip on Debian-based systems, simply run:
+安装 SDKMAN 很简单。首先，确保你已经安装了 **zip** 和 **unzip** 这两个应用。它们在大多数的 Linux 发行版的默认仓库中。  
+例如，在基于 Debian 的系统上安装 unzip，只需要运行：  
 ```
 $ sudo apt-get install zip unzip
 
 ```
 
-Then, install SDKMAN using command:
+然后使用下面的命令安装 SDKMAN：  
 ```
 $ curl -s "https://get.sdkman.io" | bash
 
 ```
 
-It’s that simple. Once the installation is completed, run the following command:
+在安装完成之后，运行以下命令：  
 ```
 $ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ```
 
-If you want to install it in a custom location of your choice other than **$HOME/.sdkman** , for example **/usr/local/** , do:
+如果你希望自定义安装到其他位置，例如  **/usr/local/**，你可以这样做：  
 ```
 $ export SDKMAN_DIR="/usr/local/sdkman" && curl -s "https://get.sdkman.io" | bash
 
 ```
 
-Make sure your user has full access rights to this folder.
+确保你的用户有足够的权限访问这个目录。  
 
-Finally, check if the installation is succeeded using command:
+最后，在安装完成后使用下面的命令检查一下：  
 ```
 $ sdk version
 ==== BROADCAST =================================================================
@@ -46,17 +47,17 @@ SDKMAN 5.7.2+323
 
 ```
 
-Congratulations! SDKMAN has been installed. Let us go ahead and see how to install and manage SDKs.
+恭喜你！SDKMAN 已经安装完成了。让我们接下来看如何安装和管理 SDKs 吧。  
 
-### Manage Multiple Software Development Kits
+### 管理多个 SDK
 
-To view the list of available candidates(SDKs), run:
+查看可用的 SDK 清单，运行：  
 ```
 $ sdk list
 
 ```
 
-Sample output would be:
+将会输出：  
 ```
 ================================================================================
 Available Candidates
@@ -81,15 +82,15 @@ tasks.
 
 ```
 
-As you can see, SDKMAN list one candidate at a time along with the description of the candidate and it’s official website and the installation command. Press ENTER key to list the next candidates.
+就像你看到的，SDK 每次列出众多 SDK 中的一个，以及该 SDK 的描述信息、官方网址和安装命令。按回车键继续下一个。   
 
-To install a SDK, for example Java JDK, run:
+安装一个新的 SDK，例如 Java JDK，运行：  
 ```
 $ sdk install java
 
 ```
 
-Sample output:
+将会输出：  
 ```
 Downloading: java 8.0.172-zulu
 
@@ -108,27 +109,27 @@ Setting java 8.0.172-zulu as default.
 
 ```
 
-If you have multiple SDKs, it will prompt if you want the currently installed version to be set as **default**. Answering **Yes** will set the currently installed version as default.
+如果你安装了多个 SDK，它将会提示你是否想要将当前安装的版本设置为 **默认版本**。回答 **Yes** 将会把当前版本设置为默认版本。  
 
-To install particular version of a SDK, do:
+使用以下命令安装一个 SDK  的其他版本：  
 ```
 $ sdk install ant 1.10.1
 
 ```
 
-If you already have local installation of a specific candidate, you can set it as local version like below.
+如果你之前已经在本地安装了一个 SDK，你可以像下面这样设置它为本地版本。  
 ```
 $ sdk install groovy 3.0.0-SNAPSHOT /path/to/groovy-3.0.0-SNAPSHOT
 
 ```
 
-To list a particular candidates versions:
+列出一个 SDK 的多个版本：  
 ```
 $ sdk list ant
 
 ```
 
-Sample output:
+将会输出
 ```
 ================================================================================
 Available Ant Versions
@@ -147,21 +148,21 @@ Available Ant Versions
 
 ```
 
-Like I already said, If you have installed multiple versions, SDKMAN will prompt you if you want the currently installed version to be set as **default**. You can answer Yes to set it as default. Also, you can do that later by using the following command:
+像我之前说的，如果你安装了多个版本，SDKMAN 会提示你是否想要设置当前安装的版本为 **默认版本**。你可以回答 Yes 设置它为默认版本。当然，你也可以在稍后使用下面的命令设置：  
 ```
 $ sdk default ant 1.9.9
 
 ```
 
-The above command will set Apache Ant version 1.9.9 as default.
+上面的命令将会设置 Apache Ant 1.9.9 为默认版本。  
 
-You can choose which version of an installed candidate to use by using the following command:
+你可以根据自己的需要选择使用任何已安装的 SDK 版本，仅需运行以下命令：  
 ```
 $ sdk use ant 1.9.9
 
 ```
 
-To check what is currently in use for a Candidate, for example Java, run:
+检查某个具体 SDK 当前的版本号，例如 Java，运行：  
 ```
 $ sdk current java
 
@@ -169,7 +170,7 @@ Using java version 8.0.172-zulu
 
 ```
 
-To check what is currently in use for all Candidates, for example Java, run:
+检查所有当下在使用的 SDK 版本号，运行：  
 ```
 $ sdk current
 
@@ -180,19 +181,19 @@ java: 8.0.172-zulu
 
 ```
 
-To upgrade an outdated candidate, do:
+升级过时的 SDK，运行：  
 ```
 $ sdk upgrade scala
 
 ```
 
-You can also check what is outdated for all Candidates as well.
+你也可以检查所有的 SDKs 中还有哪些是过时的。  
 ```
 $ sdk upgrade
 
 ```
 
-SDKMAN has offline mode feature that allows the SDKMAN to function when working offline. You can enable or disable the offline mode at any time by using the following commands:
+SDKMAN 有离线模式，可以让 SDKMAN 在离线时也正常运作。你可以使用下面的命令在任何时间开启或者关闭离线模式：  
 ```
 $ sdk offline enable
 
@@ -200,13 +201,13 @@ $ sdk offline disable
 
 ```
 
-To remove an installed SDK, run:
+要移除已安装的 SDK，运行：  
 ```
 $ sdk uninstall ant 1.9.9
 
 ```
 
-For more details, check the help section.
+要了解更多的细节，参阅帮助章节。  
 ```
 $ sdk help
 
@@ -238,15 +239,15 @@ version : where optional, defaults to latest stable if not provided
 
 ```
 
-### Update SDKMAN
+### 更新 SDKMAN
 
-The following command installs a new version of SDKMAN if it is available.
+如果有可用的新版本，可以使用下面的命令安装：  
 ```
 $ sdk selfupdate
 
 ```
 
-SDKMAN will also periodically check for any updates and let you know with instruction on how to update.
+SDKMAN 会定期检查更新，以及让你了解如何更新的指令。  
 ```
 WARNING: SDKMAN is out-of-date and requires an update.
 
@@ -255,30 +256,29 @@ Adding new candidates(s): scala
 
 ```
 
-### Remove cache
+### 清除缓存
 
-It is recommended to clean the cache that contains the downloaded SDK binaries for time to time. To do so, simply run:
+建议时不时的清理缓存（包括那些下载的 SDK 的二进制文件）。仅需运行下面的命令就可以了：  
 ```
 $ sdk flush archives
 
 ```
 
-It is also good to clean temporary folder to save up some space:
+它也可以用于清理空的文件夹，节省一点空间：  
 ```
 $ sdk flush temp
 
 ```
 
-### Uninstall SDKMAN
+### 卸载 SDKMAN
 
-If you don’t need SDKMAN or don’t like it, remove as shown below.
+如果你觉得不需要或者不喜欢 SDKMAN，可以使用下面的命令删除。  
 ```
 $ tar zcvf ~/sdkman-backup_$(date +%F-%kh%M).tar.gz -C ~/ .sdkman
 $ rm -rf ~/.sdkman
 
 ```
-
-Finally, open your **.bashrc** , **.bash_profile** and/or **.profile** files and find and remove the following lines.
+最后打开你的 **.bashrc**，**.bash_profile** 和/或者 **.profile**，找到并删除下面这几行。  
 ```
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/sk/.sdkman"
@@ -286,11 +286,14 @@ export SDKMAN_DIR="/home/sk/.sdkman"
 
 ```
 
-If you use ZSH, remove the above line from the **.zshrc** file.
+如果你使用的是 ZSH，就从 **.zshrc** 中删除上面这一行。  
 
-And, that’s all for today. I hope you find SDKMAN useful. More good stuffs to come. Stay tuned!
+这就是所有的内容了。我希望 SDKMAN 可以帮到你。还有更多的干货即将到来。敬请期待！  
 
-Cheers!
+祝近祺！  
+
+
+：）
 
 
 
@@ -300,7 +303,7 @@ via: https://www.ostechnix.com/sdkman-a-cli-tool-to-easily-manage-multiple-softw
 
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[dianbanjiu](https://github.com/dianbanjiu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

@@ -1,31 +1,29 @@
-How To Add, Enable And Disable A Repository In Linux
+如何在 Linux 中添加，启用和禁用一个仓库
 ======
-Many of us using yum package manager to manage package installation, remove, update, search, etc, on RPM based system such as RHEL, CentOS, etc,.
 
-Linux distributions gets most of its software from distribution official repositories. The official distribution repositories contain good amount of free and open source apps/software’s. It’s readily available to install and use.
+在基于 RPM 的系统上，例如 RHEL, CentOS 等，我们中的许多人使用 yum 包管理器来管理软件的安装，删除，更新，搜索等。
 
-RPM based distribution doesn’t offer some of the packages in their official distribution repository due to some limitation and proprietary issue. Also it won’t offer latest version of core packages due to stability.
+Linux 发行版的大部分软件都来自发行版官方仓库。官方仓库包含大量免费和开源的应用和软件。它很容易安装和使用。
 
-To overcome this situation/issue, we need to install/enable the requires third party repository. There are many third party repositories are available for RPM based systems but only few of the repositories are advised to use because they didn’t replace large amount of base packages.
+由于一些限制和专有问题，基于 RPM 的发行版在其官方仓库中没有提供某些包。另外，出于稳定性考虑，它不会提供最新版本的核心包。
 
-**Suggested Read :**
-**(#)** [YUM Command To Manage Packages on RHEL/CentOS Systems][1]
-**(#)** [DNF (Fork of YUM) Command To Manage Packages on Fedora System][2]
-**(#)** [List of Command line Package Manager & Usage][3]
-**(#)** [A Graphical front-end tool for Linux Package Manager][4]
+为了克服这种情况，我们需要安装或启用需要的第三方仓库。对于基于 RPM 的系统，有许多第三方仓库可用，但建议使用的仓库很少，因为它们不会替换大量的基础包。
 
-This can be done on RPM based system such as RHEL, CentOS, OEL, Fedora, etc,.
+**建议阅读：**
+**(#)** [在 RHEL/CentOS 系统中使用 YUM 命令管理包][1]
+**(#)** [在 Fedora 系统中使用 DNF (YUM 的分支) 命令来管理包][2]
+**(#)** [命令行包管理器和用法列表][3]
+**(#)** [Linux 包管理器的图形化工具][4]
 
-  * Fedora system uses “dnf config-manager [options] [section …]”
-  * Other RPM based system uses “yum-config-manager [options] [section …]”
+这可以在基于 RPM 的系统上完成，比如 RHEL, CentOS, OEL, Fedora 等。
+ * Fedora 系统使用 “dnf config-manager [options] [section …]”
+ * 其它基于 RPM 的系统使用 “yum-config-manager [options] [section …]”
 
+### 如何列出启用的仓库
 
+只需运行以下命令即可检查系统上启用的仓库列表。
 
-### How To List Enabled Repositories
-
-Just run the below command to check list of enabled repositories on your system.
-
-For CentOS/RHEL/OLE systems
+对于 CentOS/RHEL/OLE 系统：
 ```
 # yum repolist
 Loaded plugins: fastestmirror, security
@@ -38,33 +36,32 @@ repolist: 8,014
 
 ```
 
-For Fedora system
+对于 Fedora 系统：
 ```
 # dnf repolist
 
 ```
 
-### How To Add A New Repository In System
+### 如何在系统中添加一个新仓库
 
-Every repositories commonly provide their own `.repo` file. To add such a repository to your system, run the
-following command as root user. In our case, we are going to add `EPEL Repository` and `IUS Community Repo`, see below.
+每个仓库通常都提供自己的 `.repo` 文件。要将此类仓库添加到系统中，使用 root 用户运行以下命令。在我们的例子中将添加 `EPEL Repository` 和 `IUS Community Repo`，见下文。
 
-There is no `.repo` files are available for these repositories. Hence, we are installing by using below methods.
+但是没有 `.repo` 文件可用于这些仓库。因此，我们使用以下方法进行安装。
 
-For **EPEL Repository** , since it’s available from CentOS extra repository so, run the below command to install it.
+对于 **EPEL Repository**，因为它可以从 CentOS 额外仓库获得（to 校正：额外仓库什么意思？），所以运行以下命令来安装它。
 ```
 # yum install epel-release -y
 
 ```
 
-For **IUS Community Repo** , run the below bash script to install it.
+对于 **IUS Community Repo**，运行以下 bash 脚本来安装。
 ```
 # curl 'https://setup.ius.io/' -o setup-ius.sh
 # sh setup-ius.sh
 
 ```
 
-If you have `.repo` file, simple run the following command to add a repository on RHEL/CentOS/OEL.
+如果你有 `.repo` 文件，在 RHEL/CentOS/OEL 中，只需运行以下命令来添加一个仓库。
 ```
 # yum-config-manager --add-repo http://www.example.com/example.repo
 
@@ -76,7 +73,7 @@ repo saved to /etc/yum.repos.d/example.repo
 
 ```
 
-For Fedora system, run the below command to add a repository.
+对于 Fedora 系统，运行以下命令来添加一个仓库。
 ```
 # dnf config-manager --add-repo http://www.example.com/example.repo
 
@@ -84,9 +81,9 @@ adding repo from: http://www.example.com/example.repo
 
 ```
 
-If you run `yum repolist` command after adding these repositories, you can able to see newly added repositories. Yes, i saw that.
+如果在添加这些仓库之后运行 `yum repolist` 命令，你就可以看到新添加的仓库了。Yes，我看到了。
 
-Make a note: whenever you run “yum repolist” command, that automatically fetch updates from corresponding repository and save the caches in local system.
+注意：每当运行 “yum repolist” 命令时，该命令会自动从相应的仓库获取更新，并将缓存保存在本地系统中。
 ```
 # yum repolist
 
@@ -106,7 +103,7 @@ repolist: 20,909
 
 ```
 
-Each repository has multiple channels such as Testing, Dev, Archive. You can understand this better by navigating to repository files location.
+每个仓库都有多个渠道，比如测试，开发和存档（Testing, Dev, Archive）。通过导航到仓库文件位置，你可以更好地理解这一点。
 ```
 # ls -lh /etc/yum.repos.d
 total 64K
@@ -127,11 +124,11 @@ total 64K
 
 ```
 
-### How To Enable A Repository In System
+### 如何在系统中启用一个仓库
 
-When you add a new repository by default it’s enable the their stable repository that’s why we are getting the repository information when we ran “yum repolist” command. In some cases if you want to enable their Testing or Dev or Archive repo, use the following command. Also, we can enable any disabled repo using this command.
+当你在默认情况下添加一个新仓库时，它将启用它们的稳定仓库，这就是为什么我们在运行 “yum repolist” 命令时要获取仓库信息。在某些情况下，如果你希望启用它们的测试，开发或存档仓库，使用以下命令。另外，我们还可以使用此命令启用任何禁用的仓库。
 
-To validate this, we are going to enable `epel-testing.repo` by running the below command.
+为了验证这一点，我们将启用 `epel-testing.repo`，运行下面的命令：
 ```
 # yum-config-manager --enable epel-testing
 
@@ -187,7 +184,7 @@ username =
 
 ```
 
-Run the “yum repolist” command to check whether “epel-testing” is enabled or not. It’s enabled, i could able to see the repo.
+运行 “yum repolist” 命令来检查是否启用了 “epel-testing”。它被启用了，我可以从列表中看到它。
 ```
 # yum repolist
 Loaded plugins: fastestmirror, security
@@ -220,23 +217,23 @@ repolist: 22,250
 
 ```
 
-If you want to enable multiple repositories at once, use the below format. This command will enable epel, epel-testing, and ius repositories.
+如果你想同时启用多个仓库，使用以下格式。这个命令将启用 epel, epel-testing 和 ius 仓库。
 ```
 # yum-config-manager --enable epel epel-testing ius
 
 ```
 
-For Fedora system, run the below command to enable a repository.
+对于 Fedora 系统，运行下面的命令来启用仓库。
 ```
 # dnf config-manager --set-enabled epel-testing
 
 ```
 
-### How To Disable A Repository In System
+### 如何在系统中禁用一个仓库
 
-Whenever you add a new repository by default it enables their stable repository that’s why we are getting the repository information when we ran “yum repolist” command. If you dont want to use the repository then disable that by running below command.
+无论何时你在默认情况下添加一个新的仓库，它都会启用它们的稳定仓库，这就是为什么我们在运行 “yum repolist” 命令时要获取仓库信息。如果你不想使用仓库，那么可以通过下面的命令来禁用它。
 
-To validate this, we are going to disable `epel-testing.repo` & `ius.repo` by running below command.
+为了验证这点，我们将要禁用 `epel-testing.repo` 和 `ius.repo`，运行以下命令：
 ```
 # yum-config-manager --disable epel-testing ius
 
@@ -341,7 +338,7 @@ username =
 
 ```
 
-Run the “yum repolist” command to check whether “epel-testing” & “ius” repositories are disabled or not. It’s disabled, i could not able to see those repo in the below list except “epel”.
+运行 “yum repolist” 命令检查 “epel-testing” 和 “ius” 仓库是否被禁用。它被禁用了，我不能看到那些仓库，除了 “epel”。
 ```
 # yum repolist
 Loaded plugins: fastestmirror, security
@@ -357,7 +354,7 @@ repolist: 21,051
 
 ```
 
-Alternatively, we can run the following command to see the details.
+或者，我们可以运行以下命令查看详细信息。
 ```
 # yum repolist all | grep "epel*\|ius*"
  * epel: mirror.steadfast.net
@@ -382,16 +379,15 @@ ius-testing-source IUS Community Packages for Enterprise disabled
 
 ```
 
-For Fedora system, run the below command to enable a repository.
+对于 Fedora 系统，运行以下命令来启用一个仓库。
 ```
 # dnf config-manager --set-disabled epel-testing
 
 ```
 
-Alternatively this can be done by editing the appropriate repo file manually. To do, open the corresponding repo file and change the value from `enabled=0`
-to `enabled=1` (To enable the repo) or from `enabled=1` to `enabled=0` (To disable the repo).
+或者，可以通过手动编辑适当的 repo 文件来完成。为此，打开相应的 repo 文件并将值从 `enabled=0` 改为 `enabled=1`（启用仓库）或从 `enabled=1` 变为 `enabled=0`（禁用仓库）。
 
-From:
+即从：
 ```
 [epel]
 name=Extra Packages for Enterprise Linux 6 - $basearch
@@ -403,8 +399,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
 
 ```
-
-To:
+改为
 ```
 [epel]
 name=Extra Packages for Enterprise Linux 6 - $basearch
@@ -423,7 +418,7 @@ via: https://www.2daygeek.com/how-to-add-enable-disable-a-repository-dnf-yum-con
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
