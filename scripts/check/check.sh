@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # 检查脚本状态
 set -e
 
