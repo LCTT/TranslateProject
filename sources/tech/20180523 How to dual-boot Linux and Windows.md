@@ -1,3 +1,4 @@
+translating by Auk7F7
 How to dual-boot Linux and Windows
 ======
 
