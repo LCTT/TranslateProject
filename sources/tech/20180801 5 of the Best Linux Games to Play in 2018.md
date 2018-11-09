@@ -1,3 +1,5 @@
+Translating by seriouszyx
+
 5 of the Best Linux Games to Play in 2018
 ======
 
