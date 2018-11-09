@@ -1,7 +1,7 @@
 设计更快的网页（二）：图片替换
 ======
-![](https://fedoramagazine.org/wp-content/uploads/2018/03/fasterwebsites2-816x345.jpg)
 
+![](https://fedoramagazine.org/wp-content/uploads/2018/03/fasterwebsites2-816x345.jpg)
 
 欢迎回到我们为了构建更快网页所写的系列文章。上一篇[文章][1]讨论了只通过图片压缩实现这个目标的方法。这个例子从一开始有 1.2MB 的“浏览器脂肪”，然后它减轻到了 488.9KB 的大小。但这还不够快！那么本文继续来给浏览器“减肥”。你可能在这个过程中会认为我们所做的事情有点疯狂，但一旦完成，你就会明白为什么要这么做了。
 
@@ -21,16 +21,14 @@ $ sudo dnf install inkscape
 
 ![Getfedora 的页面，对其中的图片做了标记][5]
 
-这次分析更好地以图形方式完成，这也就是它从屏幕截图开始的原因。上面的截图标记了页面中的所有图形元素。Fedora 网站团队已经针对两种情况措施（也有可能是四种，这样更好）来替换图像了。社交媒体的图标变成了字体的字形，而语言选择器变成了 SVG.
+这次分析以图形方式完成更好，这也就是它从屏幕截图开始的原因。上面的截图标记了页面中的所有图形元素。Fedora 网站团队已经针对两种情况措施（也有可能是四种，这样更好）来替换图像了。社交媒体的图标变成了字体的字形，而语言选择器变成了 SVG.
 
 我们有几个可以替换的选择：
-
 
 + CSS3
 + 字体
 + SVG
 + HTML5 Canvas
-
 
 #### HTML5 Canvas
 
@@ -42,7 +40,7 @@ $ sudo dnf install inkscape
 
 #### 字体
 
-另外一种方式是使用字体来装饰网页，[Fontawesome][9] 在这方面很流行。比如，在这个例子中你可以使用字体来替换“风味”和“旋转”的图标。这种方法有一个负面影响，但解决起来很容易，我们会在本系列的下一部分中来介绍。
+另外一种方式是使用字体来装饰网页，[Fontawesome][9] 在这方面很流行。比如，在这个例子中你可以使用字体来替换“Flavor”和“Spin”的图标。这种方法有一个负面影响，但解决起来很容易，我们会在本系列的下一部分中来介绍。
 
 #### SVG
 
@@ -94,13 +92,13 @@ inkscape:connector-curvature="0" />
 
 ![Inkscape - 激活节点工具][10]
 
-这个例子中有五个不必要的节点——就是直线中间的那些。要删除它们，你可以使用已激活的节点工具依次选中它们，并按下 **Del** 键。然后，选中这条线的定义节点，并使用工具栏的工具把它们重新做成角。
+这个例子中有五个不必要的节点——就是直线中间的那些。要删除它们，你可以使用已激活的节点工具依次选中它们，并按下 `Del` 键。然后，选中这条线的定义节点，并使用工具栏的工具把它们重新做成角。
 
 ![Inkscape - 将节点变成角的工具][11]
 
 如果不修复这些角，我们还有方法可以定义这条曲线，这条曲线会被保存，也就会增加文件体积。你可以手动清理这些节点，因为它无法有效的自动完成。现在，你已经为下一阶段做好了准备。
 
-使用_另存为_功能，并选择_优化的 SVG_。这会弹出一个窗口，你可以在里面选择移除或保留哪些成分。
+使用“另存为”功能，并选择“优化的 SVG”。这会弹出一个窗口，你可以在里面选择移除或保留哪些成分。
 
 ![Inkscape - “另存为”“优化的 SVG”][12]
 
@@ -121,7 +119,7 @@ insgesamt 928K
 -rw-rw-r--. 1 user user 112K 19. Feb 19:05 greyscale-pattern-opti.svg.gz
 ```
 
-这是我为可视化这个主题所做的一个小测试的输出。你可能应该看到光栅图形——PNG——已经被压缩，不能再被压缩了。而 SVG，一个 XML 文件正相反。它是文本文件，所以可被压缩至原来的四分之一不到。因此，现在它的体积要比 PNG 小 50 KB 左右。
+这是我为可视化这个主题所做的一个小测试的输出。你可能应该看到光栅图形——PNG——已经被压缩，不能再被压缩了。而 SVG，它是一个 XML 文件正相反。它是文本文件，所以可被压缩至原来的四分之一不到。因此，现在它的体积要比 PNG 小 50 KB 左右。
 
 现代浏览器可以以原生方式处理压缩文件。所以，许多 Web 服务器都打开了 mod_deflate (Apache) 和 gzip (Nginx) 模式。这样我们就可以在传输过程中节省空间。你可以在[这儿][13]看看你的服务器是不是启用了它。
 
@@ -129,18 +127,16 @@ insgesamt 928K
 
 首先，没有人希望每次都要用 Inkscape 来优化 SVG. 你可以在命令行中脱离 GUI 来运行 Inkscape，但你找不到选项来将 Inkscape SVG 转换成优化的 SVG. 用这种方式只能导出光栅图像。但是我们替代品：
 
-  * SVGO (看起来开发过程已经不活跃了)
-  * Scour
+* SVGO (看起来开发过程已经不活跃了)
+* Scour
 
-
-
-本例中我们使用 scour 来进行优化。先来安装它：
+本例中我们使用 `scour` 来进行优化。先来安装它：
 
 ```
 $ sudo dnf install scour
 ```
 
-要想自动优化 SVG 文件，请运行 scour，就像这样：
+要想自动优化 SVG 文件，请运行 `scour`，就像这样：
 
 ```
 [user@localhost ]$ scour INPUT.svg OUTPUT.svg -p 3 --create-groups --renderer-workaround --strip-xml-prolog --remove-descriptive-elements --enable-comment-stripping --disable-embed-rasters --no-line-breaks --enable-id-stripping --shorten-ids
@@ -156,13 +152,13 @@ via: https://fedoramagazine.org/design-faster-web-pages-part-2-image-replacement
 作者：[Sirko Kemter][a]
 选题：[lujun9972][b]
 译者：[StdioA](https://github.com/StdioA)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://fedoramagazine.org/author/gnokii/
 [b]: https://github.com/lujun9972
-[1]: https://wp.me/p3XX0v-5fJ
+[1]: https://linux.cn/article-10166-1.html
 [2]: https://fedoramagazine.org/howto-use-sudo/
 [3]: https://fedoramagazine.org/?s=Inkscape
 [4]: https://getfedora.org
