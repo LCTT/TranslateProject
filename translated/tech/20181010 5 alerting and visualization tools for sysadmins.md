@@ -77,9 +77,9 @@
 
 如果你的电脑出现问题，得多亏 Stack Exchange 你才能在网上查到解决办法。Stack Exchange 以众包问答的模式运营着很多不同类型的网站。其中就有广受开发者欢迎的 [Stack Overflow][5]，以及运维方面有名的 [Super User][6]。除此以外，从育儿经验到科幻小说、从哲学讨论到单车论坛，Stack Exchange 都有涉猎。
 
-Stack Exchange 开源了它的开源告警管理系统 [Bosun][7]，同时也发布了 Prometheus 及其 [AlertManager][8] 系统。这两个系统有共通点。Bosun 和 Prometheus 一样使用 Golang 开发，但 Bosun 比 Prometheus 更为强大，因为它可以使用<ruby>权值聚合<rt>metrics aggregation</rt></ruby>以外的方式与系统交互。Bosun 还可以从日志和事件收集系统中提取数据，并且支持 Graphite、InfluxDB、OpenTSDB 和 Elasticsearch。
+Stack Exchange 开源了它的告警管理系统 [Bosun][7]，同时也发布了 Prometheus 及其 [AlertManager][8] 系统。这两个系统有共通点。Bosun 和 Prometheus 一样使用 Golang 开发，但 Bosun 比 Prometheus 更为强大，因为它可以使用<ruby>指标聚合<rt>metrics aggregation</rt></ruby>以外的方式与系统交互。Bosun 还可以从日志和事件收集系统中提取数据，并且支持 Graphite、InfluxDB、OpenTSDB 和 Elasticsearch。
 
-Bosun 的架构包括一个单一的服务器的二进制文件，以及一个诸如 OpenTSDB 的后端、Redis 以及 [scollector 代理][9]。 scollector 代理会自动检测主机上正在运行的服务，并反馈这些进程和其它的系统资源的情况。这些数据将发送到后端。随后 Bosun 的二进制服务文件会向后端发起查询，确定是否需要触发告警。也可以通过 [Grafana][10] 这些工具通过一个通用接口查询 Bosun 的底层后端。而 Redis 则用于存储 Bosun 的状态信息和元数据。
+Bosun 的架构包括一个单一的服务器的二进制文件，一个诸如 OpenTSDB 的后端、Redis 以及 [scollector 代理][9]。 scollector 代理会自动检测主机上正在运行的服务，并反馈这些进程和其它的系统资源的情况。这些数据将发送到后端。随后 Bosun 的二进制服务文件会向后端发起查询，确定是否需要触发告警。也可以通过 [Grafana][10] 这些工具通过一个通用接口查询 Bosun 的底层后端。而 Redis 则用于存储 Bosun 的状态信息和元数据。
 
 Bosun 有一个非常巧妙的功能，就是可以根据历史数据来测试告警。这是我几年前在使用 Prometheus 的时候就非常需要的功能，当时我有一个异常的数据需要产生告警，但没有一个可以用于测试的简便方法。为了确保告警能够正常触发，我不得不造出对应的数据来进行测试。而 Bosun 让这个步骤的耗时大大缩短。
 
@@ -87,9 +87,9 @@ Bosun 更是涵盖了所有常用过的功能，包括简单的图形化表示�
 
 #### Cabot
 
-[Cabot][12] 由 [Arachnys][13] 公司开发。你或许对 Arachnys 公司并不了解，但它很有影响力：Arachnys 公司构建了一个基于云的先进解决方案，用于防范金融犯罪。在以前的公司，我也曾经参与过类似“[了解你的客户][14]”的工作。但大多数公司都认为与恐怖组织产生联系会造成相当不好的影响，因为恐怖组织可能会利用自己的系统来筹集资金。而这些解决方案将有助于防范欺诈类犯罪，尽管这类犯罪情节相对较轻，但仍然也会对机构产生风险。
+[Cabot][12] 由 [Arachnys][13] 公司开发。你或许对 Arachnys 公司并不了解，但它很有影响力：Arachnys 公司构建了一个基于云的先进解决方案，用于防范金融犯罪。在之前的公司时，我也曾经参与过类似“[了解你的客户][14]（KYC）”的工作。大多数公司都认为与恐怖组织产生联系会造成相当不好的影响，因为恐怖组织可能会利用自己的系统来筹集资金。而这些解决方案将有助于防范欺诈类犯罪，尽管这类犯罪情节相对较轻，但仍然也会对机构产生风险。
 
-Arachnys 公司为什么要开发 Cabot 呢？其实只是因为 Arachnys 的开发人员对 [Nagios][15] 不太熟悉。Cabot 的出现对很多人来说都是一个好消息，它基于 Django 和 Bootstrap 开发，因此如果相对这个项目做出自己的贡献，门槛并不高。另外值得一提的是，Cabot 这个名字来源于开发者的狗。
+Arachnys 公司为什么要开发 Cabot 呢？其实只是因为 Arachnys 的开发人员对 [Nagios][15] 不太熟悉。Cabot 的出现对很多人来说都是一个好消息，它基于 Django 和 Bootstrap 开发，因此如果想对这个项目做出自己的贡献，门槛并不高。（另外值得一提的是，Cabot 这个名字来源于开发者的狗。）
 
 与 Bosun 类似，Cabot 也不对数据进行收集，而是使用监控对象的 API 提供的数据。因此，Cabot 告警的模式是拉取而不是推送。它通过访问每个监控对象的 API，根据特定的指标检索所需的数据，然后将告警数据使用 Redis 缓存，进而持久化存储到 Postgres 数据库。
 
