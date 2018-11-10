@@ -1,3 +1,5 @@
+Translating by jlztan
+
 Convert files at the command line with Pandoc
 ======
 
