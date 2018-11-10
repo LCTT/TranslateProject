@@ -1,3 +1,5 @@
+Translating by StdioA
+
 Functional programming in Python: Immutable data structures
 ======
 Immutability can help us better understand our code. Here's how to achieve it without sacrificing performance.
