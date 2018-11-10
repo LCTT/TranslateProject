@@ -1,3 +1,5 @@
+Translating by Jamkr
+
 Revisiting the Unix philosophy in 2018
 ======
 The old strategy of building small, focused applications is new again in the modern microservices environment.
