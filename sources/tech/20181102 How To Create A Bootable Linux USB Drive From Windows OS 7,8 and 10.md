@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Create A Bootable Linux USB Drive From Windows OS 7,8 and 10?
 ======
 If you would like to learn about Linux, the first thing you have to do is install the Linux OS on your system.

@@ -1,3 +1,5 @@
+translating---geekpi
+
 Dropbox To End Sync Support For All Filesystems Except Ext4 on Linux
 ======
 Dropbox is thinking of limiting the synchronization support to only a handful of file system types: NTFS for Windows, HFS+/APFS for macOS and Ext4 for Linux.
