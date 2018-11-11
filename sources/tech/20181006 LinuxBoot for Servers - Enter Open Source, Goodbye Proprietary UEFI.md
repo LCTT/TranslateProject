@@ -1,5 +1,4 @@
-qhwdw is translating
-
+Translating by qhwdw
 LinuxBoot for Servers: Enter Open Source, Goodbye Proprietary UEFI
 ============================================================
 
