@@ -1,4 +1,4 @@
-**translating by [ivo-wang](https://github.com/ivo-wang)** 
+**translating by [ivo](https://github.com/ivo)** 
 
 
 10 keys to quick game development
