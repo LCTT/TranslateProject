@@ -1,10 +1,11 @@
-Python 函数式编程 —— 不可变数据结构
+Python 函数式编程：不可变数据结构
 ======
-不可变性可以帮助我们更好地理解我们的代码。下面我将讲述如何在不牺牲性能的条件下来实现它。
+
+> 不可变性可以帮助我们更好地理解我们的代码。下面我将讲述如何在不牺牲性能的条件下来实现它。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/metrics_graph_stats_blue.png?itok=OKCc_60D)
 
-在这个由两篇文章构成的系列中，我将讨论如何将函数式编程方法论中的观点引入至 Python 中，来充分发挥这两个领域的优势。
+在这个由两篇文章构成的系列中，我将讨论如何将函数式编程方法论中的思想引入至 Python 中，来充分发挥这两个领域的优势。
 
 本文（也就是第一篇文章）中，我们将探讨不可变数据结构的优势。第二部分会探讨如何在 `toolz` 库的帮助下，用 Python 实现高层次的函数式编程理念。
 
@@ -46,7 +47,7 @@ class IRectangle(Interface):
 
 这似乎像是个学术问题 —— 直到我们认为正方形和矩形可以在某种意义上看做一个容器的侧面。在理解了这个例子以后，我们会处理更传统的容器，以解决更现实的案例。比如，考虑一下随机存取数组。
 
-我们现在有 `ISquare` 和 `IRectangle`，`ISequere` 是 `IRectangle` 的子类。
+我们现在有 `ISquare` 和 `IRectangle`，而且 `ISequere` 是 `IRectangle` 的子类。
 
 我们希望把矩形放进随机存取数组中：
 
@@ -133,8 +134,7 @@ b = a.set(1, "hello")
 
 尽管 `b` 不是一个由整数构成的向量，但没有什么能够改变 `a` 只由整数构成的性质。
 
-如果 `a` 有一百万个元素呢？`b` 会将其中的 999999 个元素复制一遍吗？`Pyrsistent` 包含“大 O”性能保证：所有操作的时间复杂度都是 `O(log n)`. 它还带有一个可选的 C 语言扩展，以提高大 O 之外的性能。
-
+如果 `a` 有一百万个元素呢？`b` 会将其中的 999999 个元素复制一遍吗？`Pyrsistent` 具有“大 O”性能保证：所有操作的时间复杂度都是 `O(log n)`. 它还带有一个可选的 C 语言扩展，以在“大 O”性能之上进行提升。
 
 修改嵌套对象时，会涉及到“变换器”的概念：
 
@@ -172,7 +172,7 @@ def silly_sum(a, b, extra=v(1, 2)):
     return sum(extra)
 ```
 
-在本文中，我们了解了为什么不可变性有助于我们来思考我们的代码，以及如何在不带来过大性能代价的条件下实现它。下一篇，我们将学习如何借助不可变对象来实现强大的程序结构。
+在本文中，我们了解了为什么不可变性有助于我们来思考我们的代码，以及如何在不带来过大性能负担的条件下实现它。下一篇，我们将学习如何借助不可变对象来实现强大的程序结构。
 
 --------------------------------------------------------------------------------
 
@@ -181,7 +181,7 @@ via: https://opensource.com/article/18/10/functional-programming-python-immutabl
 作者：[Moshe Zadka][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[StdioA](https://github.com/StdioA)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
