@@ -3,7 +3,7 @@
 
 ![地牢](https://i2.wp.com/www.linuxlinks.com/wp-content/uploads/2017/12/dungeon.jpg?zoom=2&resize=600%2C386&ssl=1)
 
-Roguelike 属于角色扮演游戏的一个子流派，它从字面上理解就是“类 Rogue 游戏”。Rogue 是一个地牢爬行视频游戏，第一个版本由开发者 Michel Toy、Glenn Wichman 和 Ken Arnold 在 1980 年发布，由于其极易上瘾使得它从一众游戏中脱颖而出。整个游戏的目标是深入第 26 层，取回 Yendor 的护身符并回到地面，所有设定都基于龙与地下城的世界观。
+Roguelike 属于角色扮演游戏的一个子流派，它从字面上理解就是“类 Rogue 游戏”。Rogue 是一个地牢探索视频游戏，第一个版本由开发者 Michel Toy、Glenn Wichman 和 Ken Arnold 在 1980 年发布，由于其极易上瘾使得它从一众游戏中脱颖而出。整个游戏的目标是深入第 26 层，取回 Yendor 的护身符并回到地面，所有设定都基于龙与地下城的世界观。
 
 Rogue 被认为是一个经典、极其困难并且让人废寝忘食的游戏。虽然它在大学校园中非常受欢迎，但并不十分畅销。在 Rogue 发布时，它并没有使用开源许可证，导致了爱好者们开发了许多克隆版本。
 

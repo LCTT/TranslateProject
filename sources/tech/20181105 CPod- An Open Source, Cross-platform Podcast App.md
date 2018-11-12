@@ -1,3 +1,5 @@
+translating---geekpi
+
 CPod: An Open Source, Cross-platform Podcast App
 ======
 Podcasts are a great way to be entertained and informed. In fact, I listen to about ten different podcasts covering technology, mysteries, history, and comedy. Of course, [Linux podcasts][1] are also on this list.
