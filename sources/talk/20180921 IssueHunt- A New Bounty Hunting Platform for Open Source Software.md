@@ -1,3 +1,5 @@
+translating---geekpi
+
 IssueHunt: A New Bounty Hunting Platform for Open Source Software
 ======
 One of the issues that many open-source developers and companies struggle with is funding. There is an assumption, an expectation even, among the community that Free and Open Source Software must be provided free of cost. But even FOSS needs funding for continued development. How can we keep expecting better quality software if we don’t create systems that enable continued development?
