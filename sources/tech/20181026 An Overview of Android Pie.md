@@ -1,3 +1,5 @@
+HankChow translating
+
 An Overview of Android Pie
 ======
 
