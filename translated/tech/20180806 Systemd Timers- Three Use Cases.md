@@ -7,7 +7,7 @@ Systemd 定时器: 三种使用场景
 
 ### 简单的类 _cron_ 行为
 
-我每周都要去收集 [Debian popcon 数据][2]，如果每次都能在同一时间收集更好，这样我就能看到某些应用程序的下载趋势。这是一个可以使用 _cron_ 任务来完成的典型事例，但 systemd 定时器同样也能做到：
+我每周都要去收集 [Debian popcon 数据][2]，如果每次都能在同一时间收集更好，这样我就能看到某些应用程序的下载趋势。这是一个可以使用 _cron_ 任务来完成的典型事例，但 systemd 定时器同样能做到：
 ```
 # 类 cron 的 popcon.timer
 
@@ -23,9 +23,9 @@ WantedBy= basic.target
 
 ```
 
-实际的 _popcon.service_ 会执行一个常规的 _wget_ 任务，并没有什么特别之处。这里的新内容是 `OnCalendar=` 指令。这个指令可以让你在一个特定日期的特定时刻来运行一个服务。在这个例子中，`Thu` 表示“_在周四运行_”，`*-*-*` 表示“_具体年份、月份和日期无关紧要_”，这些可以翻译成“不管年月日，只要在周四运行”。
+实际的 _popcon.service_ 会执行一个常规的 _wget_ 任务，并没有什么特别之处。这里的新内容是 `OnCalendar=` 指令。这个指令可以让你在一个特定日期的特定时刻来运行某个服务。在这个例子中，`Thu` 表示“_在周四运行_”，`*-*-*` 表示“_具体年份、月份和日期无关紧要_”，这些可以翻译成“不管年月日，只在每周四运行”。
 
-这样你就设置了这个服务的运行时间。我选择在欧洲中部夏令时区的上午 5:30 左右运行，这个时候服务器不是很忙。
+这样，你就设置了这个服务的运行时间。我选择在欧洲中部夏令时区的上午 5:30 左右运行，那个时候服务器不是很忙。
 
 如果你的服务器关闭了，而且刚好错过了每周的截止时间，你还可以在同一个计时器中使用像 _anacron_ 一样的功能。
 ```
@@ -50,7 +50,7 @@ WantedBy=basic.target
 
 ### 延迟执行
 
-但是，我们提升一个档次，来“改进”这个 [基于 systemd 的监控系统][3]。你应该记得，当你接入摄像头的时候，系统就会开始拍照。假设你并不希望它在你安装摄像头的时候拍下你的脸。你希望将拍照服务的启动时间向后推迟一两分钟，这样你就有时间接入摄像头，然后走到画框外面。
+但是，我们提升一个档次，来“改进”这个[基于 systemd 的监控系统][3]。你应该记得，当你接入摄像头的时候，系统就会开始拍照。假设你并不希望它在你安装摄像头的时候拍下你的脸。你希望将拍照服务的启动时间向后推迟一两分钟，这样你就有时间接入摄像头，然后走到画框外面。
 
 为了完成这件事，首先你要更改 Udev 规则，将它指向一个定时器：
 ```
@@ -82,7 +82,7 @@ WantedBy= basic.target
 
 在最后一个例子中，我们认为你决定用 systemd 作为唯一的依赖。讲真，不管怎么样，systemd 差不多要接管你的生活了。为什么不拥抱这个必然性呢？
 
-你有个为你的孩子设置的 Minetest 服务。但你还想要假装关心一下他们的教育和成长，要让他们做作业和家务活。所以，你要确保 Minetest 只在每天晚上的一段时间内可用，比如五点到七点。
+你有个为你的孩子设置的 Minetest 服务。不过，你还想要假装关心一下他们的教育和成长，要让他们做作业和家务活。所以你要确保 Minetest 只在每天晚上的一段时间内可用，比如五点到七点。
 
 这个跟之前的“_在特定时间启动服务_”不太一样。写个定时器在下午五点启动服务很简单…：
 ```
@@ -120,12 +120,11 @@ WantedBy= basic.target
 
 这里棘手的部分是如何去告诉 _stopminetest.service_ 去 —— 你知道的 —— 停止 Minetest. 我们无法从 _minetest.service_ 中传递 Minetest 服务器的 PID. 而且 systemd 的单元词汇表中也没有明显的命令来停止或禁用正在运行的服务。
 
-我们的诀窍是使用 systemd 的 `Conflicts=` 指令。它和 systemd 的 `Wants=` 指令类似，不过它做的事情_正相反_。如果你有一个 _b.service_ 单元，包含一个 `Wants=a.service` 指令，在这个单元启动时，如果 _a.service_ 没有运行，则 _b.service_ 会运行它。同样，如果你的 _b.service_ 单元中有一行写着 `Conflicts= a.service`，那么在 _b.service_ 启动时，systemd 会停止 _a.service_.
+我们的诀窍是使用 systemd 的 `Conflicts=` 指令。它和 systemd 的 `Wants=` 指令类似，不过它所做的事情_正相反_。如果你有一个 _b.service_ 单元，其中包含一个 `Wants=a.service` 指令，在这个单元启动时，如果 _a.service_ 没有运行，则 _b.service_ 会运行它。同样，如果你的 _b.service_ 单元中有一行写着 `Conflicts= a.service`，那么在 _b.service_ 启动时，systemd 会停止 _a.service_.
 
-This was created for when two services could clash when trying to take control of the same resource simultaneously, say when two services needed to access your printer at the same time. By putting a `Conflicts=` in your preferred service, you could make sure it would override the least important one.
 这种机制用于两个服务在尝试同时控制同一资源时会发生冲突的场景，例如当两个服务要同时访问打印机的时候。通过在首选服务中设置 `Conflicts=`，你就可以确保它会覆盖掉最不重要的服务。
 
-不过，你会在一个稍微不同的场景中来使用 `Conflicts=`. 你将使用 `Conflicts=` 来干净地关闭 _mintest.service_：
+不过，你会在一个稍微不同的场景中来使用 `Conflicts=`. 你将使用 `Conflicts=` 来干净地关闭 _minetest.service_：
 ```
 # stopminetest.service
 
@@ -139,9 +138,9 @@ ExecStart= /bin/echo "Closing down minetest.service"
 
 ```
 
-_stopminetest.service_ 并不会做特别的东西。事实上，它什么都不会做。不过因为它包含那行 `Conflicts=`，所以在它启动时，systemd 会关掉 _mintest.service_.
+_stopminetest.service_ 并不会做特别的东西。事实上，它什么都不会做。不过因为它包含那行 `Conflicts=`，所以在它启动时，systemd 会关掉 _minetest.service_.
 
-在你完美的 Minetest 设置中，还有最后一点涟漪：你下班晚了，错过了服务器的开机时间，可当你开机的时候游戏时间还没结束，这可怎么办？`Persistent=` 指令（如上所述）在错过开始时间后仍然可以运行服务，但这个方案还是不行。如果你在早上十一点把服务器打开，它就会启动 Minetest，而这不是你想要的。你真正需要的是一个确保 systemd 只在晚上五到七点启动 Minetest 的方法：
+在你完美的 Minetest 设置中，还有最后一点涟漪：你下班晚了，错过了服务器的开机时间，可当你开机的时候游戏时间还没结束，这该怎么办？`Persistent=` 指令（如上所述）在错过开始时间后仍然可以运行服务，但这个方案还是不行。如果你在早上十一点把服务器打开，它就会启动 Minetest，而这不是你想要的。你真正需要的是一个确保 systemd 只在晚上五到七点启动 Minetest 的方法：
 ```
 # minetest.timer
 
@@ -159,7 +158,6 @@ WantedBy= basic.target
 
 `OnCalendar= *-*-* 17..19:*:00` 这一行有两个有趣的地方：(1) `17..19` 并不是一个时间点，而是一个时间段，在这个场景中是 17 到 19 点；以及，(2) 分钟字段中的 `*` 表示服务每分钟都要运行。因此，你会把它读做 “_在下午五到七点间的每分钟，运行 minetest.service_”
 
-There is still one catch, though: once the _minetest.service_ is up and running, you want _minetest.timer_ to stop trying to run it again and again. You can do that by including a `Conflicts=` directive into _minetest.service_ :
 不过还有一个问题：一旦 _minetest.service_ 启动并运行，你会希望 _minetest.timer_ 不要再次尝试运行它。你可以在 _minetest.service_ 中包含一条 `Conflicts=` 指令：
 ```
 # minetest.service
