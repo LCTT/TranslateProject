@@ -1,4 +1,4 @@
-在 Fedora 上使用 Steam play 和 Proton 来玩 Windows 游戏
+在 Fedora 上使用 Steam play 和 Proton 来玩 Windows 游戏 
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/09/steam-proton-816x345.jpg)
