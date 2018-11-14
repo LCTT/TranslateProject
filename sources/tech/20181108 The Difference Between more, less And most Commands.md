@@ -1,3 +1,5 @@
+HankChow translating
+
 The Difference Between more, less And most Commands
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/more-less-and-most-commands-720x340.png)
