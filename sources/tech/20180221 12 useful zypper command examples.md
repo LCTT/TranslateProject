@@ -1,3 +1,5 @@
+translating by cycoe
+cycoe 翻译中
 12 useful zypper command examples
 ======
 Learn zypper command with 12 useful examples along with sample outputs. zypper is used for package and patch management in Suse Linux systems.
