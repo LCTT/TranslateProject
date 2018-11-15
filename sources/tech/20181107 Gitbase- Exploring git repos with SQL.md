@@ -1,3 +1,5 @@
+HankChow translating
+
 Gitbase: Exploring git repos with SQL
 ======
 Gitbase is a Go-powered open source project that allows SQL queries to be run on Git repositories.
