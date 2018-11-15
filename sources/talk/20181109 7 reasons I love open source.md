@@ -1,3 +1,4 @@
+[ChiZelin翻译中]
 7 reasons I love open source
 ======
 Being a part of the open source community is a huge win for many reasons.
