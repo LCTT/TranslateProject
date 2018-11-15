@@ -22,7 +22,12 @@ do_analyze() {
       # 统计每个类别的每个操作
       REGEX="$(get_operation_regex "$STAT" "$TYPE")"
       OTHER_REGEX="${OTHER_REGEX}|${REGEX}"
-      eval "${TYPE}_${STAT}=\"\$(grep -Ec '$REGEX' /tmp/changes)\"" || true
+      CHANGES_FILE="/tmp/changes_${TYPE}_${STAT}"
+      eval "grep -E '$REGEX' /tmp/changes" \
+          | sed 's/^[^\/]*\///g' \
+          | sort > "$CHANGES_FILE" || true
+      sed 's/^.*\///g' "$CHANGES_FILE" > "${CHANGES_FILE}_basename"
+      eval "${TYPE}_${STAT}=$(wc -l < "$CHANGES_FILE")"
       eval echo "${TYPE}_${STAT}=\$${TYPE}_${STAT}"
     done
   done

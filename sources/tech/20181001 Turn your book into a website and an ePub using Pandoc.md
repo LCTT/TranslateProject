@@ -1,3 +1,5 @@
+Translating by jlztan
+
 Turn your book into a website and an ePub using Pandoc
 ======
 Write once, publish twice using Markdown and Pandoc.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # PR 检查脚本
 set -e
 

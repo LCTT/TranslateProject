@@ -1,3 +1,5 @@
+plutoid Translating!
+
 Write Dumb Code
 ======
 The best way you can contribute to an open source project is to remove lines of code from it. We should endeavor to write code that a novice programmer can easily understand without explanation or that a maintainer can understand without significant time investment.
