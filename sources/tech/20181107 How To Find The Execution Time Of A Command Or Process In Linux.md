@@ -1,3 +1,4 @@
+translating by caixiangyue
 How To Find The Execution Time Of A Command Or Process In Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/time-command-720x340.png)
