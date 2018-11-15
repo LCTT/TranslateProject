@@ -1,3 +1,5 @@
+Translating by Jamkr
+
 How to partition and format a drive on Linux
 ======
 Everything you wanted to know about setting up storage but were afraid to ask.
