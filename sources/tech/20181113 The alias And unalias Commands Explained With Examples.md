@@ -1,4 +1,4 @@
-The alias And unalias Commands Explained With Examples
+translating by dianbanjiu The alias And unalias Commands Explained With Examples
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/alias-command-720x340.png)
 
