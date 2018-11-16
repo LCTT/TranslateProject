@@ -609,10 +609,14 @@ and here’s how to use this id in our embedded style as a selector:
   </p>
 </div>
 ```
- Our HTML is ready with embedded styling.
- However, you can see that as we include more styles, the <style></style> will get bigger. This can quickly clutter our main html file. So let’s go one step further and use linked styling by copying the content inside our style tag to a new file.
- Create a new file in the project root directory and save it as style.css:
- ```
+Our HTML is ready with embedded styling.
+
+However, you can see that as we include more styles, the <style></style> will get bigger. This can quickly clutter our main html file. 
+
+So let’s go one step further and use linked styling by copying the content inside our style tag to a new file.
+
+Create a new file in the project root directory and save it as style.css:
+```
 #letter-container{
   width:550px;
 }
@@ -620,23 +624,33 @@ and here’s how to use this id in our embedded style as a selector:
   width:100%;
 }
 ```
- We don’t need to write `<style>` and `</style>` in our CSS file.
- We need to link our newly created CSS file to our HTML file using the `<link>`tag in our html file. Here’s how we can do that:
- ```
+
+
+We don’t need to write `<style>` and `</style>` in our CSS file.
+
+We need to link our newly created CSS file to our HTML file using the `<link>`tag in our html file. Here’s how we can do that:
+
+```
 <link rel="stylesheet" type="text/css" href="style.css">
 ```
- We use the link element to include external resources inside your HTML document. It is mostly used to link Stylesheets. The three attributes that we are using are:
+
+We use the link element to include external resources inside your HTML document. It is mostly used to link Stylesheets. The three attributes that we are using are:
  *   rel: Relation. What relationship the linked file has to the document. The file with the .css extension is called a stylesheet, and so we keep rel=“stylesheet”.
  *   type: the Type of the linked file; it’s “text/css” for a CSS file.
  *   href: Hypertext Reference. Location of the linked file.
- There is no </link> at the end of the link element. So, <link> is also a self-closing tag.
- ```
+
+There is no </link> at the end of the link element. So, <link> is also a self-closing tag.
+
+```
 <link rel="gf" type="cute" href="girl.next.door">
 ```
- If only getting a Girlfriend was so easy :D
- Nah, that’s not gonna happen, let’s move on.
- Here’s the content of our loveletter.html:
- ```
+If only getting a Girlfriend was so easy :D
+
+Nah, that’s not gonna happen, let’s move on.
+
+Here’s the content of our loveletter.html:
+
+```
 <link rel="stylesheet" type="text/css" href="style.css">
 <div id="letter-container">
   <h1>Bat Letter</h1>
@@ -670,8 +684,9 @@ and here’s how to use this id in our embedded style as a selector:
   </p>
 </div>
 ```
- and our style.css:
- ```
+and our style.css:
+
+```
 #letter-container{
   width:550px;
 }
@@ -679,13 +694,20 @@ and here’s how to use this id in our embedded style as a selector:
   width:100%;
 }
 ```
- Save both the files and refresh, and your output in the browser should remain the same.
- ### A Few Formalities
- Our love letter is almost ready to deliver to Batman, but there are a few formal pieces remaining.
- Like any other programming language, HTML has also gone through many versions since its birth year(1990). The current version of HTML is HTML5.
- So, how would the browser know which version of HTML you are using to code your page? To tell the browser that you are using HTML5, you need to include `<!DOCTYPE html>` at top of the page. For older versions of HTML, this line used to be different, but you don’t need to learn that because we don’t use them anymore.
- Also, in previous HTML versions, we used to encapsulate the entire document inside `<html></html>` tag. The entire file was divided into two major sections: Head, inside `<head></head>`, and Body, inside `<body></body>`. This is not required in HTML5, but we still do this for compatibility reasons. Let’s update our code with `<Doctype>`, `<html>`, `<head>` and `<body>`:
- ```
+
+Save both the files and refresh, and your output in the browser should remain the same.
+
+### A Few Formalities
+
+Our love letter is almost ready to deliver to Batman, but there are a few formal pieces remaining.
+
+Like any other programming language, HTML has also gone through many versions since its birth year(1990). The current version of HTML is HTML5.
+
+So, how would the browser know which version of HTML you are using to code your page? To tell the browser that you are using HTML5, you need to include `<!DOCTYPE html>` at top of the page. For older versions of HTML, this line used to be different, but you don’t need to learn that because we don’t use them anymore.
+
+Also, in previous HTML versions, we used to encapsulate the entire document inside `<html></html>` tag. The entire file was divided into two major sections: Head, inside `<head></head>`, and Body, inside `<body></body>`. This is not required in HTML5, but we still do this for compatibility reasons. Let’s update our code with `<Doctype>`, `<html>`, `<head>` and `<body>`:
+
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -726,14 +748,22 @@ and here’s how to use this id in our embedded style as a selector:
 </body>
 </html>
 ```
- The main content goes inside `<body>` and meta information goes inside `<head>`. So we keep the div inside `<body>` and load the stylesheets inside `<head>`.
- Save and refresh, and your HTML page should display the same as earlier.
- ### Title in HTML
- This is the last change. I promise.
- You might have noticed that the title of the tab is displaying the path of the HTML file:
- ![](https://cdn-images-1.medium.com/max/1000/1*PASKm4ji29hbcZXVSP8afg.jpeg)
- We can use `<title>` tag to define a title for our HTML file. The title tag also, like the link tag, goes inside head. Let’s put “Bat Letter” in our title:
- ```
+
+The main content goes inside `<body>` and meta information goes inside `<head>`. So we keep the div inside `<body>` and load the stylesheets inside `<head>`.
+
+Save and refresh, and your HTML page should display the same as earlier.
+
+### Title in HTML
+
+This is the last change. I promise.
+
+You might have noticed that the title of the tab is displaying the path of the HTML file:
+
+![](https://cdn-images-1.medium.com/max/1000/1*PASKm4ji29hbcZXVSP8afg.jpeg)
+
+We can use `<title>` tag to define a title for our HTML file. The title tag also, like the link tag, goes inside head. Let’s put “Bat Letter” in our title:
+
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -775,12 +805,18 @@ and here’s how to use this id in our embedded style as a selector:
 </body>
 </html>
 ```
- Save and refresh, and you will see that instead of the file path, “Bat Letter” is now displayed on the tab.
- Batman’s Love Letter is now complete.
- Congratulations! You made Batman’s Love Letter in HTML.
- ![](https://cdn-images-1.medium.com/max/1000/1*qC8qtrYtxAB6cJfm9aVOOQ.jpeg)
- ### What we learned
- We learned the following new concepts:
+
+Save and refresh, and you will see that instead of the file path, “Bat Letter” is now displayed on the tab.
+
+Batman’s Love Letter is now complete.
+
+Congratulations! You made Batman’s Love Letter in HTML.
+
+![](https://cdn-images-1.medium.com/max/1000/1*qC8qtrYtxAB6cJfm9aVOOQ.jpeg)
+
+### What we learned
+
+We learned the following new concepts:
  *   The structure of an HTML document
  *   How to write elements in HTML (<p></p>)
  *   How to write styles inside the element using the style attribute (this is called inline styling, avoid this as much as you can)
