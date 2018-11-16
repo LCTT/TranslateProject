@@ -1,4 +1,4 @@
-4 tips for learning Golang
+translating by dianbanjiu   4 tips for learning Golang
 ======
 Arriving in Golang land: A senior developer's journey.
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/computer_laptop_code_programming_mountain_view.jpg?itok=yx5buqkr)
