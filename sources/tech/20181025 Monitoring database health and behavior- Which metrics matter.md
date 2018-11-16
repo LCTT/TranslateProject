@@ -1,3 +1,4 @@
+[translating by ChiZelin]
 Monitoring database health and behavior: Which metrics matter?
 ======
 Monitoring your database can be overwhelming or seem not important. Here's how to do it right.
