@@ -556,4 +556,272 @@ We want to apply our styles to the specific div and img that we are using right 
 <div id="letter-container">
 ```
 
-and here’s how to use th
+and here’s how to use this id in our embedded style as a selector:
+ ```
+#letter-container{
+  ...
+}
+```
+ Notice the “#” symbol. It indicates that it is an id, and the styles inside {…} should apply to the element with that specific id only.
+ Let’s apply this to our code:
+ ```
+<style>
+  #letter-container{
+    width:550px;
+  }
+  #header-bat-logo{
+    width:100%;
+  }
+</style>
+```
+ ```
+<div id="letter-container">
+  <h1>Bat Letter</h1>
+  <img id="header-bat-logo" src="bat-logo.jpeg">
+  <p>
+    After all the battles we faught together, after all the difficult times we saw together, after all the good and bad moments we've been through, I think it's time I let you know how I feel about you.
+  </p>
+```
+ ```
+  <h2>You are the light of my life</h2>
+  <p>
+    You complete my darkness with your light. I love:
+  </p>
+  <ul>
+    <li>the way you see good in the worse</li>
+    <li>the way you handle emotionally difficult situations</li>
+    <li>the way you look at Justice</li>
+  </ul>
+  <p>
+    I have learned a lot from you. You have occupied a special place in my heart over the time.
+  </p>
+  <h2>I have a confession to make</h2>
+  <p>
+    It feels like my chest <em>does</em> have a heart. You make my heart beat. Your smile brings smile on my face, your pain brings pain to my heart.
+  </p>
+  <p>
+    I don't show my emotions, but I think this man behind the mask is falling for you.
+  </p>
+  <p><strong>I love you Superman.</strong></p>
+  <p>
+    Your not-so-secret-lover, <br>
+    Batman
+  </p>
+</div>
+```
+ Our HTML is ready with embedded styling.
+ However, you can see that as we include more styles, the <style></style> will get bigger. This can quickly clutter our main html file. So let’s go one step further and use linked styling by copying the content inside our style tag to a new file.
+ Create a new file in the project root directory and save it as style.css:
+ ```
+#letter-container{
+  width:550px;
+}
+#header-bat-logo{
+  width:100%;
+}
+```
+ We don’t need to write `<style>` and `</style>` in our CSS file.
+ We need to link our newly created CSS file to our HTML file using the `<link>`tag in our html file. Here’s how we can do that:
+ ```
+<link rel="stylesheet" type="text/css" href="style.css">
+```
+ We use the link element to include external resources inside your HTML document. It is mostly used to link Stylesheets. The three attributes that we are using are:
+ *   rel: Relation. What relationship the linked file has to the document. The file with the .css extension is called a stylesheet, and so we keep rel=“stylesheet”.
+ *   type: the Type of the linked file; it’s “text/css” for a CSS file.
+ *   href: Hypertext Reference. Location of the linked file.
+ There is no </link> at the end of the link element. So, <link> is also a self-closing tag.
+ ```
+<link rel="gf" type="cute" href="girl.next.door">
+```
+ If only getting a Girlfriend was so easy :D
+ Nah, that’s not gonna happen, let’s move on.
+ Here’s the content of our loveletter.html:
+ ```
+<link rel="stylesheet" type="text/css" href="style.css">
+<div id="letter-container">
+  <h1>Bat Letter</h1>
+  <img id="header-bat-logo" src="bat-logo.jpeg">
+  <p>
+    After all the battles we faught together, after all the difficult times we saw together, after all the good and bad moments we've been through, I think it's time I let you know how I feel about you.
+  </p>
+  <h2>You are the light of my life</h2>
+  <p>
+    You complete my darkness with your light. I love:
+  </p>
+  <ul>
+    <li>the way you see good in the worse</li>
+    <li>the way you handle emotionally difficult situations</li>
+    <li>the way you look at Justice</li>
+  </ul>
+  <p>
+    I have learned a lot from you. You have occupied a special place in my heart over the time.
+  </p>
+  <h2>I have a confession to make</h2>
+  <p>
+    It feels like my chest <em>does</em> have a heart. You make my heart beat. Your smile brings smile on my face, your pain brings pain to my heart.
+  </p>
+  <p>
+    I don't show my emotions, but I think this man behind the mask is falling for you.
+  </p>
+  <p><strong>I love you Superman.</strong></p>
+  <p>
+    Your not-so-secret-lover, <br>
+    Batman
+  </p>
+</div>
+```
+ and our style.css:
+ ```
+#letter-container{
+  width:550px;
+}
+#header-bat-logo{
+  width:100%;
+}
+```
+ Save both the files and refresh, and your output in the browser should remain the same.
+ ### A Few Formalities
+ Our love letter is almost ready to deliver to Batman, but there are a few formal pieces remaining.
+ Like any other programming language, HTML has also gone through many versions since its birth year(1990). The current version of HTML is HTML5.
+ So, how would the browser know which version of HTML you are using to code your page? To tell the browser that you are using HTML5, you need to include `<!DOCTYPE html>` at top of the page. For older versions of HTML, this line used to be different, but you don’t need to learn that because we don’t use them anymore.
+ Also, in previous HTML versions, we used to encapsulate the entire document inside `<html></html>` tag. The entire file was divided into two major sections: Head, inside `<head></head>`, and Body, inside `<body></body>`. This is not required in HTML5, but we still do this for compatibility reasons. Let’s update our code with `<Doctype>`, `<html>`, `<head>` and `<body>`:
+ ```
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="letter-container">
+  <h1>Bat Letter</h1>
+  <img id="header-bat-logo" src="bat-logo.jpeg">
+  <p>
+    After all the battles we faught together, after all the difficult times we saw together, after all the good and bad moments we've been through, I think it's time I let you know how I feel about you.
+  </p>
+  <h2>You are the light of my life</h2>
+  <p>
+    You complete my darkness with your light. I love:
+  </p>
+  <ul>
+    <li>the way you see good in the worse</li>
+    <li>the way you handle emotionally difficult situations</li>
+    <li>the way you look at Justice</li>
+  </ul>
+  <p>
+    I have learned a lot from you. You have occupied a special place in my heart over the time.
+  </p>
+  <h2>I have a confession to make</h2>
+  <p>
+    It feels like my chest <em>does</em> have a heart. You make my heart beat. Your smile brings smile on my face, your pain brings pain to my heart.
+  </p>
+  <p>
+    I don't show my emotions, but I think this man behind the mask is falling for you.
+  </p>
+  <p><strong>I love you Superman.</strong></p>
+  <p>
+    Your not-so-secret-lover, <br>
+    Batman
+  </p>
+</div>
+</body>
+</html>
+```
+ The main content goes inside `<body>` and meta information goes inside `<head>`. So we keep the div inside `<body>` and load the stylesheets inside `<head>`.
+ Save and refresh, and your HTML page should display the same as earlier.
+ ### Title in HTML
+ This is the last change. I promise.
+ You might have noticed that the title of the tab is displaying the path of the HTML file:
+ ![](https://cdn-images-1.medium.com/max/1000/1*PASKm4ji29hbcZXVSP8afg.jpeg)
+ We can use `<title>` tag to define a title for our HTML file. The title tag also, like the link tag, goes inside head. Let’s put “Bat Letter” in our title:
+ ```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bat Letter</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="letter-container">
+  <h1>Bat Letter</h1>
+  <img id="header-bat-logo" src="bat-logo.jpeg">
+  <p>
+    After all the battles we faught together, after all the difficult times we saw together, after all the good and bad moments we've been through, I think it's time I let you know how I feel about you.
+  </p>
+  <h2>You are the light of my life</h2>
+  <p>
+    You complete my darkness with your light. I love:
+  </p>
+  <ul>
+    <li>the way you see good in the worse</li>
+    <li>the way you handle emotionally difficult situations</li>
+    <li>the way you look at Justice</li>
+  </ul>
+  <p>
+    I have learned a lot from you. You have occupied a special place in my heart over the time.
+  </p>
+  <h2>I have a confession to make</h2>
+  <p>
+    It feels like my chest <em>does</em> have a heart. You make my heart beat. Your smile brings smile on my face, your pain brings pain to my heart.
+  </p>
+  <p>
+    I don't show my emotions, but I think this man behind the mask is falling for you.
+  </p>
+  <p><strong>I love you Superman.</strong></p>
+  <p>
+    Your not-so-secret-lover, <br>
+    Batman
+  </p>
+</div>
+</body>
+</html>
+```
+ Save and refresh, and you will see that instead of the file path, “Bat Letter” is now displayed on the tab.
+ Batman’s Love Letter is now complete.
+ Congratulations! You made Batman’s Love Letter in HTML.
+ ![](https://cdn-images-1.medium.com/max/1000/1*qC8qtrYtxAB6cJfm9aVOOQ.jpeg)
+ ### What we learned
+ We learned the following new concepts:
+ *   The structure of an HTML document
+ *   How to write elements in HTML (<p></p>)
+ *   How to write styles inside the element using the style attribute (this is called inline styling, avoid this as much as you can)
+ *   How to write styles of an element inside <style>…</style> (this is called embedded styling)
+ *   How to write styles in a separate file and link to it in HTML using <link> (this is called a linked stylesheet)
+ *   What is a tag name, attribute, opening tag, and closing tag
+ *   How to give an id to an element using id attribute
+ *   Tag selectors and id selectors in CSS
+ We learned the following HTML tags:
+ *   <p>: for paragraphs
+ *   <br>: for line breaks
+ *   <ul>, <li>: to display lists
+ *   <div>: for grouping elements of our letter
+ *   <h1>, <h2>: for heading and sub heading
+ *   <img>: to insert an image
+ *   <strong>, <em>: for bold and italic text styling
+ *   <style>: for embedded styling
+ *   <link>: for including external an stylesheet
+ *   <html>: to wrap the entire HTML document
+ *   <!DOCTYPE html>: to let the browser know that we are using HTML5
+ *   <head>: to wrap meta info, like <link> and <title>
+ *   <body>: for the body of the HTML page that is actually displayed
+ *   <title>: for the title of the HTML page
+ We learned the following CSS properties:
+ *   width: to define the width of an element
+ *   CSS units: “px” and “%”
+ That’s it for the day friends, see you in the next tutorial.
+ * * *
+ Want to learn Web Development with fun and engaging tutorials?
+ [Click here to get new Web Development tutorials every week.][4]
+ --------------------------------------------------------------------------------
+ 作者简介:
+ Developer + Writer | supersarkar.com | twitter.com/supersarkar
+ -------------
+ via: https://medium.freecodecamp.org/for-your-first-html-code-lets-help-batman-write-a-love-letter-64c203b9360b
+ 作者：[Kunal Sarkar][a]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+ 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+ [a]:https://medium.freecodecamp.org/@supersarkar
+[1]:https://www.pexels.com/photo/batman-black-and-white-logo-93596/
+[2]:https://code.visualstudio.com/
+[3]:https://www.pexels.com/photo/batman-black-and-white-logo-93596/
+[4]:http://supersarkar.com/
