@@ -1,3 +1,5 @@
+HankChow translating
+
 ProtectedText – A Free Encrypted Notepad To Save Your Notes Online
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/protected-text-720x340.png)
