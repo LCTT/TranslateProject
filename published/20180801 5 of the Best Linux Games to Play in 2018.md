@@ -29,7 +29,7 @@ Linux 可能不会很快成为游戏玩家选择的平台 —— Valve Steam Mac
 
 再强调一次，它仍处于早期阶段，所以它只会变得越来越好！
 
-### 3、<ruby>战斗机甲<rtBattletech</rt></ruby>
+### 3、<ruby>战斗机甲<rt>Battletech</rt></ruby>
 
 ![best-linux-games-2018-battletech][4]
 
