@@ -1,6 +1,7 @@
 pydbgen：一个数据库随机生成器
 ======
-> 用这个简单的工具生成大型数据库，让你更好地研究数据科学。
+
+> 用这个简单的工具生成带有多表的大型数据库，让你更好地用 SQL 研究数据科学。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/features_solutions_command_data.png?itok=4_VQN3RK)
 
@@ -38,7 +39,6 @@ from pydbgen import pydbgen
 myDB=pydbgen.pydb()
 ```
 
-Then you can access the various internal functions exposed by the **pydb** object. For example, to print random US cities, enter:
 随后就可以调用 `pydb` 对象公开的各种内部函数了。可以按照下面的例子，输出随机的美国城市和车牌号码：
 
 ```
@@ -58,7 +58,7 @@ for _ in range(10):
    SZL-0934
 ```
 
-另外，如果你输入的是 city 而不是 city_real，返回的将会是虚构的城市名。
+另外，如果你输入的是 `city()` 而不是 `city_real()`，返回的将会是虚构的城市名。
 
 ```
 print(myDB.gen_data_series(num=8,data_type='city'))
@@ -97,11 +97,12 @@ fields=['name','city','street_address','email'])
 ```
 
 上面的例子种生成了一个能被 MySQL 和 SQLite 支持的 `.db` 文件。下图则显示了这个文件中的数据表在 SQLite 可视化客户端中打开的画面。
+
 ![](https://opensource.com/sites/default/files/uploads/pydbgen_db-browser-for-sqlite.png)
 
 ### 生成 Excel 文件
 
-和上面的其它示例类似，下面的代码可以生成一个具有随机数据的 Excel 文件。值得一提的是，通过将`phone_simple` 参数设为 `False` ，可以生成较长较复杂的电话号码。如果你想要提高自己在数据提取方面的能力，不妨尝试一下这个功能。
+和上面的其它示例类似，下面的代码可以生成一个具有随机数据的 Excel 文件。值得一提的是，通过将 `phone_simple` 参数设为 `False` ，可以生成较长较复杂的电话号码。如果你想要提高自己在数据提取方面的能力，不妨尝试一下这个功能。
 
 ```
 myDB.gen_excel(num=20,fields=['name','phone','time','country'],
@@ -109,6 +110,7 @@ phone_simple=False,filename='TestExcel.xlsx')
 ```
 
 最终的结果类似下图所示：
+
 ![](https://opensource.com/sites/default/files/uploads/pydbgen_excel.png)
 
 ### 生成随机电子邮箱地址
@@ -133,7 +135,7 @@ Tirtha.S@comcast.net
 
 ### 未来的改进和用户贡献
 
-目前的版本中并不完美。如果你发现了 pydbgen 的 bug 导致 pydbgen 在运行期间发生崩溃，请向我反馈。如果你打算对这个项目贡献代码，[也随时欢迎你][1]。当然现在也还有很多改进的方向：
+目前的版本中并不完美。如果你发现了 pydbgen 的 bug 导致它在运行期间发生崩溃，请向我反馈。如果你打算对这个项目贡献代码，[也随时欢迎你][1]。当然现在也还有很多改进的方向：
 
   * pydbgen 作为随机数据生成器，可以集成一些机器学习或统计建模的功能吗？
   * pydbgen 是否会添加可视化功能？
@@ -151,7 +153,7 @@ via: https://opensource.com/article/18/11/pydbgen-random-database-table-generato
 作者：[Tirthajyoti Sarkar][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
