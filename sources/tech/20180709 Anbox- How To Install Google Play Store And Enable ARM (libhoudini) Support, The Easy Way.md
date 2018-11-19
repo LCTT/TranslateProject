@@ -1,5 +1,3 @@
-translating---geekpi
-
 Anbox: How To Install Google Play Store And Enable ARM (libhoudini) Support, The Easy Way
 ======
 **[Anbox][1], or Android in a Box, is a free and open source tool that allows running Android applications on Linux.** It works by running the Android runtime environment in an LXC container, recreating the directory structure of Android as a mountable loop image, while using the native Linux kernel to execute applications.
