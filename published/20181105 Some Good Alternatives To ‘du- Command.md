@@ -11,9 +11,9 @@
 
 ### tin-summer
 
-`tin-summer` 是使用 Rust 语言编写的免费开源工具，它可以用于查找占用磁盘空间的文件，它也是 `du` 命令的另一个替代品。由于使用了多线程，因此 `tin-summer` 在计算大目录的大小时会比 `du` 命令快得多。`tin-summer` 与 `du` 命令之间的区别是前者读取文件的大小，而后者则读取磁盘使用情况。
+tin-summer 是使用 Rust 语言编写的自由开源工具，它可以用于查找占用磁盘空间的文件，它也是 `du` 命令的另一个替代品。由于使用了多线程，因此 tin-summer 在计算大目录的大小时会比 `du` 命令快得多。tin-summer 与 `du` 命令之间的区别是前者读取文件的大小，而后者则读取磁盘使用情况。
 
-`tin-summer` 的开发者认为它可以替代 `du`，因为它具有以下优势：
+tin-summer 的开发者认为它可以替代 `du`，因为它具有以下优势：
 
   * 在大目录的操作速度上比 `du` 更快；
   * 在显示结果上默认采用易读格式；
@@ -21,25 +21,25 @@
   * 可以对输出进行排序和着色处理；
   * 可扩展，等等。
 
-
-
 **安装 tin-summer**
 
-要安装 `tin-summer`，只需要在终端中执行以下命令：
+要安装 tin-summer，只需要在终端中执行以下命令：
 
 ```
 $ curl -LSfs https://japaric.github.io/trust/install.sh | sh -s -- --git vmchale/tin-summer
 ```
 
-你也可以使用 `cargo` 软件包管理器安装 `tin-summer`，但你需要在系统上先安装 Rust。在 Rust 已经安装好的情况下，执行以下命令：
+你也可以使用 `cargo` 软件包管理器安装 tin-summer，但你需要在系统上先安装 Rust。在 Rust 已经安装好的情况下，执行以下命令：
 
 ```
 $ cargo install tin-summer
 ```
 
-如果上面提到的这两种方法都不能成功安装 `tin-summer`，还可以从它的[软件发布页][1]下载最新版本的二进制文件编译，进行手动安装。
+如果上面提到的这两种方法都不能成功安装 tin-summer，还可以从它的[软件发布页][1]下载最新版本的二进制文件编译，进行手动安装。
 
 **用法**
+
+（LCTT 译注：tin-summer 的命令名为 `sn`）
 
 如果需要查看当前工作目录的文件大小，可以执行以下命令：
 
@@ -80,13 +80,13 @@ $ sn sort /home/sk/ -n5
 $ sn ar
 ```
 
-`tin-summer` 同样支持查找指定大小的带有构建工程的目录。例如执行以下命令可以查找到大小在 100 MB 以上的带有构建工程的目录：
+tin-summer 同样支持查找指定大小的带有构建工程的目录。例如执行以下命令可以查找到大小在 100 MB 以上的带有构建工程的目录：
 
 ```
 $ sn ar -t100M
 ```
 
-如上文所说，`tin-summer` 在操作大目录的时候速度比较快，因此在操作小目录的时候，速度会相对比较慢一些。不过它的开发者已经表示，将会在以后的版本中优化这个缺陷。
+如上文所说，tin-summer 在操作大目录的时候速度比较快，因此在操作小目录的时候，速度会相对比较慢一些。不过它的开发者已经表示，将会在以后的版本中优化这个缺陷。
 
 要获取相关的帮助，可以执行以下命令：
 
@@ -98,7 +98,7 @@ $ sn --help
 
 ### dust
 
-`dust` （含义是 `du` + `rust` = `dust`）使用 Rust 编写，是一个免费、开源的更直观的 `du` 工具。它可以在不需要 `head` 或`sort` 命令的情况下即时显示目录占用的磁盘空间。与 `tin-summer` 一样，它会默认情况以易读的格式显示每个目录的大小。 
+`dust` （含义是 `du` + `rust` = `dust`）使用 Rust 编写，是一个免费、开源的更直观的 `du` 工具。它可以在不需要 `head` 或`sort` 命令的情况下即时显示目录占用的磁盘空间。与 tin-summer 一样，它会默认情况以易读的格式显示每个目录的大小。 
 
 **安装 dust**
 
@@ -114,7 +114,7 @@ $ cargo install du-dust
 $ wget https://github.com/bootandy/dust/releases/download/v0.3.1/dust-v0.3.1-x86_64-unknown-linux-gnu.tar.gz
 ```
 
-抽取文件:
+抽取文件：
 
 ```
 $ tar -xvf dust-v0.3.1-x86_64-unknown-linux-gnu.tar.gz
@@ -283,7 +283,7 @@ via: https://www.ostechnix.com/some-good-alternatives-to-du-command/
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

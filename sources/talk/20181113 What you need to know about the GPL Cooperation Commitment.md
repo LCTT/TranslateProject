@@ -1,3 +1,5 @@
+HankChow translating
+
 What you need to know about the GPL Cooperation Commitment
 ======
 
