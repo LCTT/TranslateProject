@@ -1,56 +1,52 @@
 translating by cycoe
 cycoe 翻译中
-12 useful zypper command examples
+12 条实用的 zypper 命令范例
 ======
-Learn zypper command with 12 useful examples along with sample outputs. zypper is used for package and patch management in Suse Linux systems.
+zypper 是 Suse Linux 系统的包和补丁管理器，你可以根据下面的 12 条附带输出示例的实用范例来学习 zypper 命令的使用。
 
-![zypper command examples][1]
+![zypper 命令示例][1]
 
-zypper is package management system powered by [ZYpp package manager engine][2]. Suse Linux uses zypper for package management. In this article we will be sharing 12 useful zypper commands along with examples whcih are helpful for your day today sysadmin tasks.
+Suse Linux 使用 zypper 进行包管理，其是一个由 [ZYpp 包管理引擎][2]提供技术支持的包管理系统。在此篇文章中我们将分享 12 条附带输出示例的实用 zypper 命令，能帮助你处理日常的系统管理任务。
 
-Without any argument `zypper` command will list you all available switches which can be used. Its quite handy than referring to man page which is pretty much in detail.
+不带参数的 `zypper` 命令将列出所有可用的选项，这比参考详细的 man 手册要容易上手得多。
 
 ```
 root@kerneltalks # zypper
-  Usage:
+  用法：
         zypper [--global-options] <command> [--command-options] [arguments]
         zypper <subcommand> [--command-options] [arguments]
  
-  Global Options:
-        --help, -h              Help.
-        --version, -V           Output the version number.
-        --promptids             Output a list of zypper's user prompts.
-        --config, -c <file>     Use specified config file instead of the default                                                                                        .
-        --userdata <string>     User defined transaction id used in history and                                                                                         plugins.
-        --quiet, -q             Suppress normal output, print only error
-                                messages.
-        --verbose, -v           Increase verbosity.
+  全局选项：
+        --help, -h              帮助
+        --version, -V           输出版本号
+        --promptids             输出 zypper 用户提示符列表
+        --config, -c <file>     使用制定的配置文件来替代默认的
+        --userdata <string>     在历史和插件中使用的用户自定义事务 id
+        --quiet, -q             忽略正常输出，只打印错误信息
+        --verbose, -v           增加冗长程度
         --color
-        --no-color              Whether to use colors in output if tty supports                                                                                         it.
-        --no-abbrev, -A         Do not abbreviate text in tables.
-        --table-style, -s       Table style (integer).
-        --non-interactive, -n   Do not ask anything, use default answers
-                                automatically.
+        --no-color              是否启用彩色模式如果 tty 支持
+        --no-abbrev, -A         表格中的文字不使用缩写
+        --table-style, -s       表格样式（整型）
+        --non-interactive, -n   不询问任何选项，自动使用默认答案
         --non-interactive-include-reboot-patches
-                                Do not treat patches as interactive, which have
-                                the rebootSuggested-flag set.
-        --xmlout, -x            Switch to XML output.
-        --ignore-unknown, -i    Ignore unknown packages.
+                                针对带有重启标志的补丁，不使用交互模式
+        --xmlout, -x            切换至 XML 输出
+        --ignore-unknown, -i    忽略未知的包
  
         --reposd-dir, -D <dir>  Use alternative repository definition file
                                 directory.
-        --cache-dir, -C <dir>   Use alternative directory for all caches.
-        --raw-cache-dir <dir>   Use alternative raw meta-data cache directory.
-        --solv-cache-dir <dir>  Use alternative solv file cache directory.
-        --pkg-cache-dir <dir>   Use alternative package cache directory.
+        --cache-dir, -C <dir>   为所有缓存启用可选路径
+        --raw-cache-dir <dir>   启用可选 raw 元数据缓存路径
+        --solv-cache-dir <dir>  启用可选 solv 文件缓存路径
+        --pkg-cache-dir <dir>   启用可选包缓存路径
  
-     Repository Options:
-        --no-gpg-checks         Ignore GPG check failures and continue.
-        --gpg-auto-import-keys  Automatically trust and import new repository
-                                signing keys.
-        --plus-repo, -p <URI>   Use an additional repository.
-        --plus-content <tag>    Additionally use disabled repositories providing                                                                                         a specific keyword.
-                                Try '--plus-content debug' to enable repos indic                                                                                        ating to provide debug packages.
+     仓库选项：
+        --no-gpg-checks         忽略 GPG 检查失败并跳过
+        --gpg-auto-import-keys  自动信任并导入新仓库的签名密钥
+        --plus-repo, -p <URI>   使用附加仓库
+        --plus-content <tag>    另外使用禁用的仓库来提供特定的关键词
+                                尝试 '--plus-content debug' 选项来启用仓库
         --disable-repositories  Do not read meta-data from repositories.
         --no-refresh            Do not refresh the repositories.
         --no-cd                 Ignore CD/DVD repositories.
