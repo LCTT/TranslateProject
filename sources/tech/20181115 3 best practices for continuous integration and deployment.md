@@ -1,3 +1,4 @@
+[Translating by ChiZelin]
 3 best practices for continuous integration and deployment
 ======
 Learn about automating, using a Git repository, and parameterizing Jenkins pipelines.
