@@ -1,11 +1,11 @@
-设计更快的网页（三）：字体和 CSS 转换
+设计更快的网页（三）：字体和 CSS 调整
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/10/designfaster3-816x345.jpg)
 
-欢迎回到我们为了构建更快网页所写的系列文章。本系列的[第一][1]和[第二][2]部分讲述了如何通过优化和替换图片来减少浏览器脂肪。本部分会着眼于在 CSS（[层叠式样式表][3]）和字体中减掉更多的脂肪。
+欢迎回到我们为了构建更快网页所写的系列文章。本系列的[第一部分][1]和[第二部分][2]讲述了如何通过优化和替换图片来减少浏览器脂肪。本部分会着眼于在 CSS（[层叠式样式表][3]）和字体中减掉更多的脂肪。
 
-### CSS 转换
+### 调整 CSS
 
 首先，我们先来看看问题的源头。CSS 的出现曾是技术的一大进步。你可以用一个集中式的样式表来装饰多个网页。如今很多 Web 开发者都会使用 Bootstrap 这样的框架。
 
@@ -35,7 +35,7 @@ Font-awesome CSS 代表了包含未使用样式的极端。这个页面中只用
 current free version 912 glyphs/icons, smallest set ttf 30.9KB, woff 14.7KB, woff2 12.2KB, svg 107.2KB, eot 31.2
 ```
 
-所以问题是，你需要所有的字形吗？很可能不需要。你可以通过 [FontForge][10] 来摆脱这些无用字形，但这需要很大的工作量。你还可以用 [Fontello][11]. 你可以使用公共实例，也可以配置你自己的版本，因为它是自由软件，可以在 [Github][12] 上找到。
+所以问题是，你需要所有的字形吗？很可能不需要。你可以通过 [FontForge][10] 来去除这些无用字形，但这需要很大的工作量。你还可以用 [Fontello][11]. 你可以使用公共实例，也可以配置你自己的版本，因为它是自由软件，可以在 [Github][12] 上找到。
 
 这种自定义字体集的缺点在于，你必须自己来托管字体文件。你也没法使用其它在线服务来提供更新。但与更快的性能相比，这可能算不上一个缺点。
 
@@ -53,14 +53,14 @@ via: https://fedoramagazine.org/design-faster-web-pages-part-3-font-css-tweaks/
 作者：[Sirko Kemter][a]
 选题：[lujun9972][b]
 译者：[StdioA](https://github.com/StdioA)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://fedoramagazine.org/author/gnokii/
 [b]: https://github.com/lujun9972
-[1]: https://fedoramagazine.org/design-faster-web-pages-part-1-image-compression/
-[2]: https://fedoramagazine.org/design-faster-web-pages-part-2-image-replacement/
+[1]: https://linux.cn/article-10166-1.html
+[2]: https://linux.cn/article-10217-1.html
 [3]: https://en.wikipedia.org/wiki/Cascading_Style_Sheets
 [4]: https://getfedora.org
 [5]: https://fedoramagazine.org/wp-content/uploads/2018/02/CSS_delivery_tool_-_Examine_how_a_page_uses_CSS_-_2018-02-24_15.00.46.png
