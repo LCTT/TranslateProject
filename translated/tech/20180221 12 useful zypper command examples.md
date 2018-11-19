@@ -1,5 +1,3 @@
-translating by cycoe
-cycoe 翻译中
 12 条实用的 zypper 命令范例
 ======
 zypper 是 Suse Linux 系统的包和补丁管理器，你可以根据下面的 12 条附带输出示例的实用范例来学习 zypper 命令的使用。
@@ -34,8 +32,7 @@ root@kerneltalks # zypper
         --xmlout, -x            切换至 XML 输出
         --ignore-unknown, -i    忽略未知的包
  
-        --reposd-dir, -D <dir>  Use alternative repository definition file
-                                directory.
+        --reposd-dir, -D <dir>  使用自定义仓库文件目录
         --cache-dir, -C <dir>   为所有缓存启用可选路径
         --raw-cache-dir <dir>   启用可选 raw 元数据缓存路径
         --solv-cache-dir <dir>  启用可选 solv 文件缓存路径
@@ -47,16 +44,16 @@ root@kerneltalks # zypper
         --plus-repo, -p <URI>   使用附加仓库
         --plus-content <tag>    另外使用禁用的仓库来提供特定的关键词
                                 尝试 '--plus-content debug' 选项来启用仓库
-        --disable-repositories  Do not read meta-data from repositories.
-        --no-refresh            Do not refresh the repositories.
-        --no-cd                 Ignore CD/DVD repositories.
-        --no-remote             Ignore remote repositories.
-        --releasever            Set the value of $releasever in all .repo files                                                                                         (default: distribution version)
+        --disable-repositories  不从仓库中读取元数据
+        --no-refresh            不刷新仓库
+        --no-cd                 忽略 CD/DVD 中的仓库
+        --no-remote             忽略远程仓库
+        --releasever            设置所有 .repo 文件中的 $releasever 变量（默认值：发行版版本）
  
      Target Options:
-        --root, -R <dir>        Operate on a different root directory.
+        --root, -R <dir>        在另一个根路径下进行操作
         --disable-system-resolvables
-                                Do not read installed packages.
+                                不读取已安装包
  
   命令:
         help, ?                 打印帮助
