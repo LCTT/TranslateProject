@@ -1,3 +1,4 @@
+（translating by runningwater)
 Version Control Before Git with CVS
 ======
 Github was launched in 2008. If your software engineering career, like mine, is no older than Github, then Git may be the only version control software you have ever used. While people sometimes grouse about its steep learning curve or unintuitive interface, Git has become everyone’s go-to for version control. In Stack Overflow’s 2015 developer survey, 69.3% of respondents used Git, almost twice as many as used the second-most-popular version control system, Subversion. After 2015, Stack Overflow stopped asking developers about the version control systems they use, perhaps because Git had become so popular that the question was uninteresting.
@@ -296,7 +297,7 @@ via: https://twobithistory.org/2018/07/07/cvs.html
 
 作者：[Two-Bit History][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
