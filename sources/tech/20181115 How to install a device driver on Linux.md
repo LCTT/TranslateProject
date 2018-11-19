@@ -1,3 +1,5 @@
+Translating by Jamskr
+
 How to install a device driver on Linux
 ======
 Learn how Linux drivers work and how to use them.
