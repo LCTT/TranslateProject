@@ -1,22 +1,23 @@
-使用 gitbase 在 git 仓库进行 SQL 查询
+gitbase：用 SQL 查询 Git 仓库 
 ======
-gitbase 是一个使用 go 开发的的开源项目，它实现了在 git 仓库上执行 SQL 查询。
+
+> gitbase 是一个使用 go 开发的的开源项目，它实现了在 Git 仓库上执行 SQL 查询。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bus_cloud_database.png?itok=lhhU42fg)
 
-git 已经成为了代码版本控制的事实标准，但尽管 git 相当普及，对代码仓库的深入分析的工作难度却没有因此而下降；而 SQL 在大型代码库的查询方面则已经是一种久经考验的语言，因此诸如 Spark 和 BigQuery 这样的项目都采用了它。
+Git 已经成为了代码版本控制的事实标准，但尽管 Git 相当普及，对代码仓库的深入分析的工作难度却没有因此而下降；而 SQL 在大型代码库的查询方面则已经是一种久经考验的语言，因此诸如 Spark 和 BigQuery 这样的项目都采用了它。
 
-所以，source{d} 很顺理成章地将这两种技术结合起来，就产生了 gitbase。gitbase 是一个<ruby>代码即数据<rt>code-as-data</rt></ruby>的解决方案，可以使用 SQL 对 git 仓库进行大规模分析。 
+所以，source{d} 很顺理成章地将这两种技术结合起来，就产生了 gitbase（LCTT 译注：source{d} 是一家开源公司，本文作者是该公司开发者关系副总裁）。gitbase 是一个<ruby>代码即数据<rt>code-as-data</rt></ruby>的解决方案，可以使用 SQL 对 git 仓库进行大规模分析。 
 
 [gitbase][1] 是一个完全开源的项目。它站在了很多巨人的肩上，因此得到了足够的发展竞争力。下面就来介绍一下其中的一些“巨人”。
 
 ![](https://opensource.com/sites/default/files/uploads/gitbase.png)
 
-[gitbase playground][2] 为 gitbase 提供了一个可视化的操作环境。
+*[gitbase playground][2] 为 gitbase 提供了一个可视化的操作环境。*
 
 ### 用 Vitess 解析 SQL
 
-gitbase 通过 SQL 与用户进行交互，因此需要能够遵循 MySQL 协议来对传入的 SQL 请求作出解析和理解，万幸由 YouTube 建立的 [Vitess][3] 项目已经在这一方面给出了解决方案。Vitess 是一个横向扩展的 MySQL数据库集群系统。 
+gitbase 通过 SQL 与用户进行交互，因此需要能够遵循 MySQL 协议来对通过网络传入的 SQL 请求作出解析和理解，万幸由 YouTube 建立的 [Vitess][3] 项目已经在这一方面给出了解决方案。Vitess 是一个横向扩展的 MySQL 数据库集群系统。 
 
 我们只是使用了这个项目中的部分重要代码，并将其转化为一个可以让任何人在数分钟以内编写出一个 MySQL 服务器的[开源程序][4]，就像我在 [justforfunc][5] 视频系列中展示的 [CSVQL][6] 一样，它可以使用 SQL 操作 CSV 文件。
 
@@ -28,17 +29,17 @@ gitbase 通过 SQL 与用户进行交互，因此需要能够遵循 MySQL 协议
 
 ### 使用 enry 检测语言、使用 babelfish 解析文件
 
-gitbase 集成了我们的语言检测开源项目 [enry][9] 以及代码解析项目 [babelfish][10]，因此在分析 git 仓库历史代码的能力也相当强大。babelfish 是一个自托管服务，普适于各种源代码解析，并将代码文件转换为<ruby>通用抽象语法树<rt>Universal Abstract Syntax Tree</rt></ruby>（UAST）。
+gitbase 集成了我们开源的语言检测项目 [enry][9] 以及代码解析项目 [babelfish][10]，因此在分析 git 仓库历史代码的能力也相当强大。babelfish 是一个自托管服务，普适于各种源代码解析，并将代码文件转换为<ruby>通用抽象语法树<rt>Universal Abstract Syntax Tree</rt></ruby>（UAST）。
 
-这两个功能在 gitbase 中可以被用户以函数 LANGUAGE 和 UAST 调用，诸如“查找上个月最常被修改的函数的名称”这样的请求就需要通过这两个功能实现。
+这两个功能在 gitbase 中可以被用户以函数 `LANGUAGE` 和 `UAST` 调用，诸如“查找上个月最常被修改的函数的名称”这样的请求就需要通过这两个功能实现。
 
 ### 提高性能
 
-gitbase 可以对非常大的数据集进行分析，例如源代码大小达 3 TB 的 Public Git Archive。面临的工作量如此巨大，因此每一点性能都必须运用到极致。于是，我们也使用到了 Rubex 和 Pilosa 这两个项目。
+gitbase 可以对非常大的数据集进行分析，例如来自 GitHub 高达 3 TB 源代码的 Public Git Archive（[公告][11]）。面临的工作量如此巨大，因此每一点性能都必须运用到极致。于是，我们也使用到了 Rubex 和 Pilosa 这两个项目。
 
 #### 使用 Rubex 和 Oniguruma 优化正则表达式速度
 
-[Rubex][12] 是 go 的正则表达式标准库包的一个准替代品。之所以说它是准替代品，是因为它没有在 regexp.Regexp 类中实现 LiteralPrefix 方法，直到现在都还没有。
+[Rubex][12] 是 go 的正则表达式标准库包的一个准替代品。之所以说它是准替代品，是因为它没有在 `regexp.Regexp` 类中实现 `LiteralPrefix` 方法，直到现在都还没有。
 
 Rubex 的高性能是由于使用 [cgo][14] 调用了 [Oniguruma][13]，它是一个高度优化的 C 代码库。
 
@@ -65,7 +66,7 @@ via: https://opensource.com/article/18/11/gitbase
 作者：[Francesc Campoy][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
