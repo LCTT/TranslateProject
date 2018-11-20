@@ -1,3 +1,4 @@
+[zianglei translating]
 How to manage storage on Linux with LVM
 ======
 Create, expand, and encrypt storage pools as needed with the Linux LVM utilities.
