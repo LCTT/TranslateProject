@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to enter single user mode in SUSE 12 Linux?
 ======
 Short article to learn how to enter single user mode in SUSE 12 Linux server.
