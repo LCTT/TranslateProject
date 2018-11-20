@@ -1,13 +1,13 @@
 服务器的 LinuxBoot：告别 UEFI、拥抱开源
-============================================================
+============
 
-[LinuxBoot][13] 是私有的 [UEFI][15] 固件的 [替代者][14]。它发布于去年，并且现在已经得到主流的硬件生产商的认可成为他们产品的默认固件。去年，LinuxBoot 已经被 Linux 基金会接受并[纳入][16]开源家族。
+[LinuxBoot][13] 是私有的 [UEFI][15] 固件的开源 [替代品][14]。它发布于去年，并且现在已经得到主流的硬件生产商的认可成为他们产品的默认固件。去年，LinuxBoot 已经被 Linux 基金会接受并[纳入][16]开源家族。
 
 这个项目最初是由 Ron Minnich 在 2017 年 1 月提出，它是 LinuxBIOS 的创造人，并且在 Google 领导 [coreboot][17] 的工作。
 
-Google、Facebook、[Horizon 计算解决方案][18]、和 [Two Sigma][19] 共同合作，在运行 Linux 的服务器上开发 [LinuxBoot 项目][20]（以前叫 [NERF][21]）。
+Google、Facebook、[Horizon Computing Solutions][18]、和 [Two Sigma][19] 共同合作，在运行 Linux 的服务器上开发 [LinuxBoot 项目][20]（以前叫 [NERF][21]）。
 
-它开放允许服务器用户去很容易地定制他们自己的引导脚本、修复问题、构建他们自己的[运行时][22] 和用他们自己的密钥去 [刷入固件][23]。他们不需要等待供应商的更新。
+它的开放性允许服务器用户去很容易地定制他们自己的引导脚本、修复问题、构建他们自己的 [运行时环境][22] 和用他们自己的密钥去 [刷入固件][23]，而不需要等待供应商的更新。
 
 下面是第一次使用 NERF BIOS 去引导 [Ubuntu Xenial][24] 的视频：
 
@@ -17,40 +17,36 @@ Google、Facebook、[Horizon 计算解决方案][18]、和 [Two Sigma][19] 共
 
 ### LinuxBoot 超越 UEFI 的优势
 
-![LinuxBoot vs UEFI](https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2018/10/linuxboot-uefi.png)
+![LinuxBoot vs UEFI](https://i1.wp.com/itsfoss.com/wp-content/uploads/2018/10/linuxboot-uefi.png?w=800&ssl=1)
 
 下面是一些 LinuxBoot 超越 UEFI 的主要优势：
 
-### 启动速度显著加快
+#### 启动速度显著加快
 
 它能在 20 秒钟以内完成服务器启动，而 UEFI 需要几分钟的时间。
 
-### 显著的灵活性
+#### 显著的灵活性
 
-LinuxBoot 可以用在各种设备、文件系统和 Linux 支持的协议上。
+LinuxBoot 可以用在 Linux 支持的各种设备、文件系统和协议上。
 
-### 更加安全
+#### 更加安全
 
 相比 UEFI 而言，LinuxBoot 在设备驱动程序和文件系统方面进行更加严格的检查。
 
-我们可能主张 UEFI 是使用 [EDK II][25] 而部分开源的，而 LinuxBoot 是部分闭源的。但有人[提出][26]，即便有像 EDK II 这样的代码，但也没有做适当的审查级别和像 [Linux 内核][27] 那样的正确性检查，并且在 UEFI 的开发中还大量使用闭源组件。
+我们可能争辩说 UEFI 是使用 [EDK II][25] 而部分开源的，而 LinuxBoot 是部分闭源的。但有人[提出][26]，即便有像 EDK II 这样的代码，但也没有做适当的审查级别和像 [Linux 内核][27] 那样的正确性检查，并且在 UEFI 的开发中还大量使用闭源组件。
 
-其它方面，LinuxBoot 有非常少的二进制文件，它仅用了大约一百多 KB，相比而言，UEFI 的二进制文件有 32 MB。
+另一方面，LinuxBoot 有非常小的二进制文件，它仅用了大约几百 KB，相比而言，而 UEFI 的二进制文件有 32 MB。
 
 严格来说，LinuxBoot 与 UEFI 不一样，更适合于[可信计算基础][28]。
-
-[建议阅读 Linux 上最好的自由开源的 Adobe 产品的替代者][29]
 
 LinuxBoot 有一个基于 [kexec][30] 的引导加载器，它不支持启动 Windows/非 Linux 内核，但这影响并不大，因为主流的云都是基于 Linux 的服务器。
 
 ### LinuxBoot 的采用者
 
-自 2011 年， [Facebook][32] 发起了[开源计算项目][31]，它的一些服务器是基于[开源][33]设计的，目的是构建的数据中心更加高效。LinuxBoot 已经在下面列出的几个开源计算硬件上做了测试：
+自 2011 年， [Facebook][32] 发起了[开源计算项目（OCP）][31]，它的一些服务器是基于[开源][33]设计的，目的是构建的数据中心更加高效。LinuxBoot 已经在下面列出的几个开源计算硬件上做了测试：
 
 *   Winterfell
-
 *   Leopard
-
 *   Tioga Pass
 
 更多 [OCP][34] 硬件在[这里][35]有一个简短的描述。OCP 基金会通过[开源系统固件][36]运行一个专门的固件项目。
@@ -58,9 +54,7 @@ LinuxBoot 有一个基于 [kexec][30] 的引导加载器，它不支持启动 
 支持 LinuxBoot 的其它一些设备有：
 
 *   [QEMU][9] 仿真的 [Q35][10] 系统
-
 *   [Intel S2600wf][11]
-
 *   [Dell R630][12]
 
 上个月底（2018 年 9 月 24 日），[Equus 计算解决方案][37] [宣布][38] 发行它的 [白盒开放式™][39] M2660 和 M2760 服务器，作为它们的定制的、成本优化的、开放硬件服务器和存储平台的一部分。它们都支持 LinuxBoot 灵活定制服务器的 BIOS，以提升安全性和设计一个非常快的纯净的引导体验。
@@ -73,10 +67,10 @@ LinuxBoot 在 [GitHub][40] 上有很丰富的文档。你喜欢它与 UEFI 不�
 
 via: https://itsfoss.com/linuxboot-uefi/
 
-作者：[ Avimanyu Bandyopadhyay][a]
+作者：[Avimanyu Bandyopadhyay][a]
 选题：[oska874][b]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
