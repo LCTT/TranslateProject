@@ -1,3 +1,5 @@
+Translating by lixinyuxx
+
 Mixing software development roles produces great results
 ======
 
