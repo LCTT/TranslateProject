@@ -1,6 +1,6 @@
 Translating by lixinyuxx
 
-混合软件开发角色效果更佳
+融合软件开发角色效果更佳
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/checklist_hands_team_collaboration.png?itok=u82QepPk)
