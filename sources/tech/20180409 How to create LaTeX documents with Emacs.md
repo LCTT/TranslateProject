@@ -1,32 +1,32 @@
-How to create LaTeX documents with Emacs
+Translate by oneforalone
+
+如何使用Emacs创建LaTeX文档
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/email_paper_envelope_document.png?itok=uPj_kouJ)
 
-In his excellent article, [An introduction to creating documents in LaTeX][1], author [Aaron Cocker][2] introduces the [LaTeX typesetting system][3] and explains how to create a LaTeX document using [TeXstudio][4]. He also lists a few LaTeX editors that many users find helpful in creating LaTeX documents.
+一篇由Aaron Cocker写的很棒的文章[An introduction to creating documents in LaTeX][1]中，介绍了LaTeX排版系统[LaTeX typesetting system][3]并解释如何使用[TeXstudio][4]来创建LaTeX文档。同时，他也列举了一些很多用户觉得创建LaTeX文档很方便的编辑器。
 
-This comment on the article by [Greg Pittman][5] caught my attention: "LaTeX seems like an awful lot of typing when you first start...". This is true. LaTeX involves a lot of typing and debugging, if you missed a special character like an exclamation mark, which can discourage many users, especially beginners. In this article, I will introduce you to [GNU Emacs][6] and describe how to use it to create LaTeX documents.
+[Greg Pittman][5]对这篇文章的评论吸引了我："当你第一次开始使用LaTeX时，他似乎是个和差劲的排版...". 事实也确实如此。LaTeX包含了多种排版字体和调试，如果你漏了一个特殊的字符比如说感叹号，这会阻碍很多用户，尤其是新手。在本文中，我将介绍如何使用GNU Emacs[6]来创建LaTeX文档。
 
-### Creating your first document
-
-Launch Emacs by typing:
+### 创建你的第一个文档
+启动 Emacs:
 ```
 emacs -q --no-splash helloworld.org
-
 ```
-
-The `-q` flag ensures that no Emacs initializations will load. The `--no-splash-screen` flag prevents splash screens to ensure that only one window is open, with the file `helloworld.org`.
+参数`-q`确保Emacs不会加载其他的初始化配置。参数`--no-splash-screen`阻止emacs打开多个窗口来确保只有一窗口打开，最后的参数`helloworld.org`表示你要创建的文件名为`helloworld.org`。
 
 ![Emacs startup screen][8]
 
-GNU Emacs with the helloworld.org file opened in a buffer window
+GNU Emacs打开文件名为helloworld.org的窗口时的样子。
 
-Let's add some LaTeX headers the Emacs way: Go to **Org** in the menu bar and select **Export/Publish**.
+现在让我们用Emacs添加一些LaTeX的标题吧: 在菜单栏找到**Org**选项并选择**Export/Publish**.
 
 ![template_flow.png][10]
 
-Inserting a default template
+导入一个默认的模板:
 
-In the next window, Emacs offers options to either export or insert a template. Insert the template by entering **#** ([#] Insert template). This will move a cursor to a mini-buffer, where the prompt reads **Options category:**. At this time you may not know the category names; press Tab to see possible completions. Type  "default" and press Enter. The following content will be inserted:
+在下一个窗口中，Emacs同时提供了导入和导出一个模板。使用#([#] Insert template)来导入一个模板。这将会是光标跳转到一个带有**Options category：**提示的mini-buffer中。第一次你可能不知道这个类型的名字，但是你可以使用Tab键来查看所有的补全。输入"default"然后按回车，之后你就能看到如下的内容被插入了：
+
 ```
 #+TITLE: helloworld
 
@@ -58,7 +58,7 @@ In the next window, Emacs offers options to either export or insert a template. 
 
 ```
 
-Change the title, date, author, and email as you wish. Mine looks like this:
+根据自己的需求修改标题，日期，作者和email。我自己的话是下面这样的：
 ```
 #+TITLE: Hello World! My first LaTeX document
 
@@ -70,13 +70,14 @@ Change the title, date, author, and email as you wish. Mine looks like this:
 
 ```
 
-We don't want to create a Table of Contents yet, so change the value of `toc` from `t` to `nil` inline, as shown below:
+我们目前还不想创建一个目录表，所以把行内`toc`的值由`t`改为`nil`，具体如下：
 ```
 #+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
 
 ```
 
-Let's add a section and paragraphs. A section starts with an asterisk (*). We'll copy the content of some paragraphs from Aaron's post (from the [Lipsum Lorem Ipsum generator][11]):
+现在让我们添加一个章节和段落吧。章节是由一个星号(*)开始。我们将从Aaron的贴子([Lipsum Lorem Ipsum generator][11])复制一些段落过来。
+
 ```
 * Introduction
 
@@ -107,37 +108,38 @@ Let's add a section and paragraphs. A section starts with an asterisk (*). We'll
 
 ![helloworld_file.png][13]
 
-The helloworld.org file
+helloworld.org文件
 
-With the content in place, we'll export the content as a PDF. Select **Export/Publish** from the **Org** menu again, but this time, type **l** (export to LaTeX), followed by **o** (as PDF file and open). This not only opens PDF file for you to view, but also saves the file as `helloworld.pdf` in the same path as `helloworld.org`.
+
+将内容修改好后，我们要把它导出为PDF格式。再次在**Org**的菜单选项中选择**Export/Publish**，但是这次，要输入**l**(export to LaTeX)，紧跟着输入**o**(as PDF file and open).这次操作不止会打开PDF文件让你浏览，同时也会将文件保存为`helloworld.pdf`，并保存在与`helloworld.org`的同一个目录下。
 
 ![org_to_pdf.png][15]
 
-Exporting helloworld.org to helloworld.pdf
+将helloworld.org导出为helloworld.pdf
 
 ![org_and_pdf_file.png][17]
 
-Opening the helloworld.pdf file
+打开helloworld.pdf文件
 
-You can also export org to PDF by pressing `Alt + x`, then typing "org-latex-export-to-pdf". Use Tab to auto-complete.
+你也可以按下`Alt + x`键，然后输入"org-latex-export-to-pdf"来将org文件导出为PDF文件。可以使用Tab键来自动补全命令。
 
-Emacs also creates the `helloworld.tex` file to give you control over the content.
+Emacs也会创建`helloworld.tex`文件来让你控制具体的内容。
 
 ![org_tex_pdf.png][19]
 
-Emacs with LaTeX, org, and PDF files open in three different windows
+Emacs在三个不同的窗口中分别打开LaTeX，org 和 PDF文档。
 
-You can compile the `.tex` file to `.pdf` using the command:
+你可以使用命令来将`.tex`文件转换为`.pdf`文件：
 ```
 pdflatex helloworld.tex
 
 ```
 
-You can also export the `.org` file to HTML or as a simple text file. What I like about .org files is they can be pushed to [GitHub][20], where they are rendered just like any other markdown formats.
+你也可以将`.org`文件输出问HTML或是一个简单的文本格式的文件。我最喜欢.org文件的原因是他们可以被push到[GitHub][20]上，然后被渲染的同markdown的一样的格式。
 
-### Creating a LaTeX Beamer presentation
+### 创建一个LaTeX的Beamer presentation
 
-Let's go a step further and create a LaTeX [Beamer][21] presentation using the same file with some modifications as shown below:
+让我们更进一步地用同样的文件通过少量的修改来创建一个LaTeX [Beamer][21]的presentation，如下所示：
 ```
 #+TITLE: LaTeX Beamer presentation
 
@@ -235,20 +237,20 @@ We have added three more lines to the header:
 
 ```
 
-To export to PDF, press `Alt + x` and type "org-beamer-export-to-pdf".
+导出为PDF，按下`Alt + x`键后输入"org-beamer-export-to-pdf".
 
 ![latex_beamer_presentation.png][23]
 
-The Latex Beamer presentation, created using Emacs and Org mode
+用Emacs和Org mode创建的Latex Beamer persentation.
 
-I hope you enjoyed creating this LaTeX and Beamer document using Emacs (note that it's faster to use keyboard shortcuts than a mouse). Emacs Org-mode offers much more than I can cover in this post; you can learn more at [orgmode.org][24].
+希望你能够喜欢使用Emacs来创建这个LaTex和Beamer文档(注意:使用快捷键比用鼠标更快些)。Emacs的Org-mode提供了比我在这篇文章中说的更多的功能，你可以在[orgmode.org][24]获取更多的信息.
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/4/how-create-latex-documents-emacs
 
 作者：[Sachin Patil][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[oneforalone](https://github.com/oneforalone)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
