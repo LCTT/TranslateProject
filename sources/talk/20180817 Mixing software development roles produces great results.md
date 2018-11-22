@@ -1,53 +1,53 @@
 Translating by lixinyuxx
 
-Mixing software development roles produces great results
+混合软件开发角色效果更佳
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/checklist_hands_team_collaboration.png?itok=u82QepPk)
 
-Most open source communities don’t have a lot of formal roles. There are certainly people who help with sysadmin tasks, testing, writing documentation, and translating or developing code. But people in open source communities typically move among different roles, often fulfilling several at once.
+大多数开源社区没有很多正式的角色。当然, 也有一些固定人员帮助处理系统管理员任务、测试、编写文档以及翻译或开发代码。但开源社区的人员通常在不同的角色之间流动, 往往同时履行几个角色的职责。
 
-In contrast, team members at most traditional companies have defined roles, working on documentation, support, QA, and in other areas.
+相反, 大多数传统公司的团队成员都定义了角色,例如, 负责文档、技术支持、质量检验和其他领域。
 
-Why do open source communities take a shared-role approach, and more importantly, how does this way of collaborating affect products and customers?
+为什么开源社区采取共享角色的方法, 更重要的是, 这种协作方式如何影响产品和客户？
 
-[Nextcloud][1] has adopted this community-style practice of mixing roles, and we see large benefits for our customers and our users.
+[Nextcloud][1]  采用了这种社区式的混合角色的做法, 我们看到了我们的客户和用户受益颇多。
 
-### 1\. Better product testing
+### 1\.更好的产品测试
 
-Testing is a difficult job, as any tester can tell you. You need to understand the products engineers develop, and you need to devise test plans, execute them, and return the results to the developers. When that process is done, the developer makes changes, and you repeat the process, going back-and-forth as many times as necessary until the job is done.
+ 任何测试人员都会说测试是一项困难的工作。你需要了解工程师开发的产品, 并且需要设计测试案例、执行测试案例并将结果返回给开发人员。完成该过程后, 开发人员将进行更改, 然后重复该过程, 根据需要来回进行多次,直到任务完成。
 
-In a community, contributors typically feel responsible for the projects they develop, so they test and document them extensively before handing them to users. Users close to the project often help test, translate, and write documentation in collaboration with developers. This creates a much tighter, faster feedback loop, speeding up development and improving quality.
+在社区中, 贡献者通常会对他们开发的项目负责, 因此他们会对这些项目进行广泛的测试和记录, 然后再将其交给用户。贴近项目的用户通常会与开发人员协作, 帮助测试、翻译和编写文档。这将创建一个更紧密、更快的反馈循环, 从而加快开发速度并提高质量。
 
-When developers continuously confront the results of their work, it encourages them to write in a way that minimizes testing and debugging. Automated testing is an important element in development, and the feedback loop ensures that it is done right: Developers are organically motivated to automate what should be automated—no more and no less. Sure, they might _want_ others to do more testing or test automation, but when testing is the right thing to do, they do it. Moreover, they review each others' code because they know that issues tend to come back bite them later.
+当开发人员不断面对他们的工作结果时, 它鼓励他们以最大限度地减少测试和调试的方式去书写。自动化测试是开发中的一个重要元素, 反馈循环可以确保正确地完成操作: 开发人员主观能动的来实现自动化--而不过于简化也不过于复杂。当然, 他们可能希望别人做更多的测试或自动化的测试 但当测试是正确的选择时, 他们就会这样做。此外, 他们还审查对方的代码, 因为他们知道问题往往会在以后让他们付出代价。
 
-So, while I won't argue that it's better to forgo dedicated testers, certainly in a project without community volunteers who test, testers should be developers and closely embedded in the development team. The result? Customers get a product that was tested and developed by people who are 100% motivated to ensure that it is stable and reliable.
+因此, 虽然我不认为放弃专用测试人员更好, 但在没有社区志愿者进行测试的项目中, 测试人员应该是开发人员, 并密切嵌入到开发团队中。结果如何？客户得到的产品是由100% 有动机的人测试和开发的, 以确保它是稳定和可靠的。
 
-### 2\. Close alignment between development and customer needs
+### 2\. 开发和客户需求之间的密切协作
 
-It is extraordinarily difficult to align product development with customer needs. Every customer has their own unique needs, there are long- and short-term factors to consider—and of course, as a company, you have ideas on where you want to go. How do you integrate all these ideas and visions?
+要使产品开发与客户需求保持一致是非常困难的。每个客户都有自己独特的需求, 有长期和短期的因素需要考虑--当然, 作为一家公司, 你对你的方向有想法。你如何整合所有这些想法和愿景？
 
-Companies typically create roles like product management, support, QA, and others, which are separate from engineering and product development. The idea behind this is that people do best when they specialize, and engineers shouldn't be bothered with "simple" tasks like testing or support.
+公司通常创建与工程和产品开发分开的角色, 如产品管理、支持、质量检测等。这背后的想法是, 人们在专攻的时候做得最好, 工程师不应该为测试或支持等 "简单" 的任务而烦恼。
 
-In effect, this role separation is a cost-cutting measure. It enables management to micromanage and feel more in control as they can simply order product management, for example, to prioritize items on the roadmap. (It also creates more meetings!)
+实际上, 这种角色分离是一项削减成本的措施。它使管理层能够进行微观管理, 并更能掌握全局, 因为他们可以简单地进行产品管理, 例如, 确定路线图项目的优先次序。(它还创建了更多的会议!)
 
-In communities, on the other hand, "those who do the work decide." Developers are often also users (or are paid by users), so they align with users’ needs naturally. When users help with testing (as described above), developers work with them constantly, so both sides fully understand what is possible and what is needed.
+另一方面, 在社区, "决定权在工作者手上"。开发人员通常也是用户 (或由用户支付报酬), 因此他们自然地与用户的需求保持一致。当用户帮助进行测试时 (如上所述), 开发人员会不断地与他们合作, 因此双方都完全了解什么是可行的, 什么是需要的。
 
-This open way of working closely aligns users and projects. Without management interference and overhead, users' most pressing needs can be quickly met because engineers already intimately understand them.
+这种开放的合作方式使用户和项目紧密协作。在没有管理层干涉和指手画脚的情况下, 用户最迫切的需求可以迅速得到满足, 因为工程师已经非常了解这些需求。
 
-At Nextcloud, customers never need to explain things twice or rely on a junior support team member to accurately communicate issues to an engineer. Our engineers continuously calibrate their priorities based on real customer needs. Meanwhile, long-term goals are set collaboratively, based on a deep knowledge of our customers.
+在 nextcloud 中, 客户永远不需要解释两次, 也不需要依靠初级支持团队成员将问题准确地传达给工程师。我们的工程师根据客户的实际需求不断调整他们的优先级。同时, 基于对客户的深入了解, 合作制定长期目标。
 
-### 3\. The best support
+### 3\. 最佳支持
 
-Unlike proprietary or [open core][2] vendors, open source vendors have a powerful incentive to offer the best possible support: It is a key differentiator from other companies in their ecosystem.
+与专有的或 [open core][2]（开放源核心）的开发商不同, 开源供应商有强大的动力提供尽可能最好的支持: 它是与其他公司在其生态系统中的关键区别。
 
-Why is the driving force behind a project—think [Collabora][3] behind [LibreOffice][4], [The Qt Company][5] behind [Qt][6], or [Red Hat][7] behind [RHEL][8]—the best source of customer support?
+为什么项目背后有动力？—比如 [Collabora][3] 在 [LibreOffice][4] 背后, [The Qt Company][5] 在 [Qt][6] 背后, 或者 [Red Hat][7] 在 [RHEL][8] 背后—最佳来源于客户的支持？
 
-Direct access to engineers, of course. Rather than walling off support from engineering, many of these companies offer customers access to engineers' expertise. This helps ensure that customers always get the best answers as quickly as possible. While some engineers may spend more time than others on support, the entire engineering team plays a role in customer success. Proprietary vendors might provide customers a dedicated on-site engineer for a considerable cost, for example, but an open source company like [OpenNMS][9] offers that same level of service in your support contract—even if you’re not a Fortune 500 customer.
+当然, 直接接触工程师。许多公司并阻断工程的支持, 而是为客户提供了获得工程师专业知识的机会。这有助于确保客户始终尽快获得最佳答案。虽然一些工程师可能比其他人在支持上花费更多的时间, 但整个工程团队在客户成功方面发挥着作用。自营供应商可能会为客户提供一个专门的现场工程师, 费用相当高, 例如,但一个开源公司, 如 [OpenNMS][9] 在您的支持合同中提供相同级别的服务, 即使您不是财富500强客户也是如此。
 
-There's another benefit, which relates back to testing and customer alignment: Sharing roles ensures that engineers deal with customer issues and wishes daily, which motivates them to fix the most common problems quickly. They also tend to build extra tools and features to save customers from asking.
+还有一个好处, 那就是与测试和客户协作有关: 共享角色可确保工程师每天处理客户问题和愿望, 从而促使他们快速解决最常见的问题。他们还倾向于构建额外的工具和功能, 以满足客户预期。
 
-Put simply, folding QA, support, product management, and other engineering roles into one team ensures that the three famous virtues of great developers—[laziness, impatience, and hubris][10]—closely align with customers.
+简单地说, 将 质量检测、支持、产品管理和其他工程角色合并为一个团队, 可确保优秀开发人员的三大优点--[laziness, impatience, and hubris][10](从简，精益求精，高度自我要求)—与客户紧密保持一致。
 
 --------------------------------------------------------------------------------
 
