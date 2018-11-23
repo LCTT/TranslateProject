@@ -1,3 +1,4 @@
+Translating by Guevaraya
 How To Change GDM Login Screen Background In Ubuntu
 ======
 Whenever you log in or lock and unlock your Ubuntu 18.04 LTS desktop, you will be greeted with a plain purple-colored screen. It is the default GDM (GNOME Display Manager) background since Ubuntu version 17.04. Some of you may feel boring to look at this plain background and want to make the Login screen something cool and eye-candy! If so, you’re on the right track. This brief guide describes how to change GDM Login screen background in Ubuntu 18.04 LTS desktop.
