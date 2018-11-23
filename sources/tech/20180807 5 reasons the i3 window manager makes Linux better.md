@@ -1,3 +1,5 @@
+translating by lixinyuxx
+
 5 reasons the i3 window manager makes Linux better
 ======
 
