@@ -4,7 +4,7 @@
 [^#]: published: 发布者ID
 [^#]: subject: How to Build a Netboot Server, Part 1
 [^#]: via: https://fedoramagazine.org/how-to-build-a-netboot-server-part-1/
-[^#]: author: [Gregory Bartholomew]()
+[^#]: author: [Gregory Bartholomew](https://fedoramagazine.org/author/glb/)
 [^#]: url: 
 
 How to Build a Netboot Server, Part 1
