@@ -1,3 +1,5 @@
+translating by cycoe
+cycoe 翻译中
 How to Manage Fonts in Linux
 ======
 
