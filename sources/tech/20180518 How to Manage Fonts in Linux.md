@@ -1,51 +1,51 @@
 translating by cycoe
 cycoe 翻译中
-How to Manage Fonts in Linux
+如何在 Linux 上管理字体
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/fonts_main.jpg?itok=qcJks7-c)
 
-Not only do I write technical documentation, I write novels. And because I’m comfortable with tools like GIMP, I also create my own book covers (and do graphic design for a few clients). That artistic endeavor depends upon a lot of pieces falling into place, including fonts.
+我不仅写技术文档，还写小说。并且因为我对 GIMP 等工具感到满意，所以我也（译者注：此处应指使用 GIMP）创建了自己的书籍封面（并为少数客户做了图形设计）。艺术创作取决于很多东西，包括字体。
 
-Although font rendering has come a long way over the past few years, it continues to be an issue in Linux. If you compare the look of the same fonts on Linux vs. macOS, the difference is stark. This is especially true when you’re staring at a screen all day. But even though the rendering of fonts has yet to find perfection in Linux, one thing that the open source platform does well is allow users to easily manage their fonts. From selecting, adding, scaling, and adjusting, you can work with fonts fairly easily in Linux.
+虽然字体渲染已经在过去的几年里取得了长足进步，但它在 Linux 平台上仍是个问题。如果你在 Linux 和 macOS 平台上比较相同字体的外观，差别是显而易见的，尤其是你要盯着屏幕一整天的时候。虽然在 Linux 平台上尚未找到完美的字体渲染方案，开源平台做得好的一件事是允许用户轻松地管理他们的字体。通过选择、添加、缩放和调整，你可以在 Linux 平台上相当轻松地使用字体。
 
-Here, I’ll share some of the tips I’ve depended on over the years to help extend my “font-ability” in Linux. These tips will especially help those who undertake artistic endeavors on the open source platform. Because there are so many desktop interfaces available for Linux (each of which deal with fonts in a different way), when a desktop environment becomes central to the management of fonts, I’ll be focusing primarily on GNOME and KDE.
+此处，我将分享一些这些年来我赖于在 Linux 上帮助我扩展“字体能力”的技巧。这些技巧将对那些在开源平台上进行艺术创作的人有特别的帮助。因为 Linux 平台上有非常多可用的桌面界面（每种界面以不同的方式处理字体），因此当桌面环境成为字体管理的中心时，我将主要聚焦在 GNOME 和 KDE 上。
 
-With that said, let’s get to work.
+话虽如此，让我们开始吧。
 
-### Adding new fonts
+### 添加新字体
 
-For the longest time, I have been a collector of fonts. Some might say I have a bit of an obsession. And since my early days of using Linux, I’ve always used the same process for adding fonts to my desktops. There are two ways to do this:
+在相当长的一段时间里，我都是一个字体收藏家，甚至有些人会说我有些痴迷。从我使用 Linux 的早期开始，我就总是用相同的方法向我的桌面添加字体。有两种方法可以做到这一点：
 
-  * Make the fonts available on a per-user basis.
+  * 使字体针对每个用户可用；
 
-  * Make the fonts available system-wide.
-
-
+  * 使字体在系统范围内可用。
 
 
-Because my desktops never have other users (besides myself), I only ever work with fonts on a per-user basis. However, I will show you how to do both. First, let’s see how to add fonts on a per-user basis. The first thing you must do is find fonts. Both True Type Fonts (TTF) and Open Type Fonts (OTF) can be added. I add fonts manually. Do this is, I create a new hidden directory in ~/ called ~/.fonts. This can be done with the command:
+
+
+因为我的桌面从没有其他用户（除了我自己），我只使用了每个用户的字体设置。然而，我会向你演示如何完成这两种设置。首先，让我们来看一下如何向每个用户添加新字体。你首先要做的是找到字体文件，真实类型字体（TTF）和开源类型字体（OTF）都可以被添加。我选择手动添加字体，也就是说，我在 ~/ 目录下新建了一个名为 ~/.fonts 的隐藏目录。该操作可由以下命令完成：
 ```
 mkdir ~/.fonts
 
 ```
 
-With that folder created, I then move all of my TTF and OTF files into the directory. That’s it. Every font you add into that directory will now be available for use to your installed apps. But remember, those fonts will only be available to that one user.
+当此文件夹新建完成，我将所有 TTF 和 OTF 字体文件移动到此文件夹中。也就是说，你在此文件夹中添加的所有字体都可以在已安装的应用中使用了。但是要记住，这些字体只会对这一个用户可用。
 
-If you want to make that collection of fonts available to all, here’s what you do:
+如果你想要使这个字体集合对所有用户可用，你可以如下操作：
 
-  1. Open up a terminal window.
+  1. 打开一个终端窗口；
 
-  2. Change into the directory housing all of your fonts.
+  2. 切换路径到包含你所有字体的目录中；
 
-  3. Copy all of those fonts with the commands sudo cp *.ttf *.TTF /usr/share/fonts/truetype/ and sudo cp *.otf *.OTF /usr/share/fonts/opentype
-
-
+  3. 使用 `sudo cp *.ttf *.TTF /usr/share/fonts/truetype/` 和 `sudo cp *.otf *.OTF /usr/share/fonts/opentype` 命令拷贝所有字体。
 
 
-The next time a user logs in, they’ll have access to all those glorious fonts.
 
-### GUI Font Managers
+
+当下次用户登录时，他们就将可以使用所有这些漂亮的字体。
+
+### 图形界面字体管理
 
 There are a few ways to manage your fonts in Linux, via GUI. How it’s done will depend on your desktop environment. Let’s examine KDE first. With the KDE that ships with Kubuntu 18.04, you’ll find a Font Management tool pre-installed. Open that tool and you can easily add, remove, enable, and disable fonts (as well as get information about all of the installed fonts. This tool also makes it easy for you to add and remove fonts for personal and system-wide use. Let’s say you want to add a particular font for personal usage. To do this, download your font and then open up the Font Management tool. In this tool (Figure 1), click on Personal Fonts and then click the + Add button.
 
