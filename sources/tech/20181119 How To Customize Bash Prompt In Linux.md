@@ -1,3 +1,5 @@
+HankChow translating
+
 How To Customize Bash Prompt In Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/10/BASH-720x340.jpg)
