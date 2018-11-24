@@ -1,3 +1,5 @@
+Translating by Jamskr
+
 Continuous infrastructure: The other CI
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BIZ_darwincloud_520x292_0311LL.png?itok=74DLgd8Q)
