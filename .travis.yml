@@ -1,4 +1,4 @@
-language: c
+language: minimal
 install:
   - sudo apt-get install jq
   - git clone --depth=1 -b gh-pages https://github.com/LCTT/TranslateProject/ build && rm -rf build/.git
