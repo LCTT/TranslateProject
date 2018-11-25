@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 重新生成badge
+# 重新生成status data
 set -o errexit
 
 SCRIPTS_DIR=$(cd $(dirname "$0") && pwd)
