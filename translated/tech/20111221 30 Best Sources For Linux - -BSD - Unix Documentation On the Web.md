@@ -1,4 +1,4 @@
-关于Linux/\*BSD/Unix操作系统的30个最佳在线文档
+学习Linux/\*BSD/Unix操作系统的30个最佳在线文档
 ======
 
 
@@ -12,48 +12,47 @@
 
 ![Red hat Enterprise Linux Docs][2]
 
-RHEL是由红帽公司开发的商业市场导向的的Linux发行版。红帽的文档是最好的文档之一，涵盖RHEL的基础到一些高级主题比如安全、安全增强式Linux、虚拟化、目录服务器、服务器集群、JBOSS应用程序服务器、高可用性集群等。红帽的文档已经被翻译成22种语言，发布成多页面HTML、单页面HTML、PDF、EPUB等文件格式。比较好的一点是你可以针对Centos和Scientific Linux（社区企业发行版）。这些文档随操作系统一起下载提供，也就是说当你没有网络的时候，你也可以使用他们。RHEL的文档**涵盖从安装到配置器群的所有内容**。唯一的缺点是你需要成为付费用户。当然这对于企业公司来说是一件完美的事。
+RHEL是由红帽公司开发的商业市场导向的的Linux发行版。红帽的文档是最好的文档之一，涵盖RHEL的基础到一些高级主题比如安全、安全增强式Linux、虚拟化、目录服务器、服务器集群、JBOSS应用程序服务器、高可用性集群等。红帽的文档已经被翻译成22种语言，发布成多页面HTML、单页面HTML、PDF、EPUB等文件格式。比较好的一点是你可以对于Centos和Scientific Linux（社区企业发行版）使用相同的文档。这些文档随操作系统一起下载提供，也就是说当你没有网络的时候，你也可以使用他们。RHEL的文档**涵盖从安装到配置器群的所有内容**。唯一的缺点是你需要成为付费用户。当然这对于企业公司来说是一件完美的事。
 
     1. RHEL 文档: [HTML/PDF格式][3]
-    2. 支持论坛: Only available to Red Hat customer portal to submit a support case.
-只提供给红帽的客户
+    2. 支持论坛: 只能通过红帽公司的用户网站提交支持案例。
+
 
 
 ### 关于CentOS Wiki和论坛的说明
 
 ![Centos Linux Wiki][4]
 
-CentOS (Community ENTerprise Operating System) is a free rebuild of source packages freely available from a RHEL. It provides truly reliable, free enterprise Linux for personal and other usage. You will get RHEL stability without the cost of certification and support. CentOS wiki divided into Howtos, Tips & Tricks, and much more at the following locations:
+CentOS（社区企业操作系统）是由RHEL免费提供的源包免费重建的。它为个人电脑或其他用途提供了可靠的、免费的企业级Linux。你可以不用任何支持和认证费用获取RHEL的稳定版。CentOS的wiki分为如何使用、技巧还有下图中其他更多的信息：
 
-  1. [Documentation Wiki][87]
-  2. [Support forum][88]
+  1. [文档 wiki][87]
+  2. [论坛支持][88]
 
-## #2: Arch的 Wiki and 论坛
+## #2: Arch的 Wiki 和 论坛
 
-![Arch Linux wiki and tutorials][5]
+![Arch Linux wiki 和 教程][5]
 
-Arch Linux is an independently developed, Linux operating system and it comes with pretty good documentation in form of wiki based site. It is developed collaboratively by a community of Arch users, allowing any user to add and edit content. The articles are divided into various categories like [networking][6], optimization, package management, system administration, X window system, and getting & installing Arch Linux. The official [forums][7] are useful for solving many issues. It has total 40k+ registered users with over 1 million posts. The wiki contains some **general information that can also apply in other Linux distros**.
+Arch linux 是一个独立开发的 Linux 操作系统，它有基于wiki网站形式的非常不错的文档。它是由Arch社区的一些用户共同协作开发出来的，并且允许任何用户添加或修改内容。这些文档教程被分为几类比如说[网络][6]、优化、软件包管理、系统管理、X window 系统还有获取安装 Arch 。它的[官方论坛][7]在解决许多问题的时候也非常有用。他有总共4万多个注册用户、超过1百万次提交。 wiki 包含一些 **其他Linux发行版也适用的通用信息**。
 
-  1. Arch community Documentation: [Wiki format][8]
-  2. Support forums: [Yes][7]
+  1. Arch 社区文档: [Wiki][8]
+  2. 是否支持论坛: [是][7]
 
+## #3: Gentoo Linux Wiki 和 论坛
 
+![Gentoo Linux 手册 和 Wiki][9]
 
-## #3: Gentoo Linux Wiki and Forums
+Gentoo Linux 基于portage包管理系统。Gentoo Linux 用户根据他们选择的配置在本地编译源代码。多数 Gentoo Linux 用户都会定制自己独有的程序集。 Gentoo Linux 的文档会给你一些有关Gento Linux操作系统的说明和一些有关安装、软件包、网络和其他等主要出现的问题的解决方法。Gentoo有对你来说 **非常有用的论坛**，论坛中有超过13万4千的用户，总共有5442416次文章提交。
 
-![Gentoo Linux Handbook and Wiki][9]
-
-Gentoo Linux is based on the Portage package management system. The Gentoo user compiles the source code locally according to their chosen configuration. The majority of users have configurations and sets of installed programs which are unique to themselves. The Gentoo give you some explanation about the Gentoo Linux and answer most of your questions regarding installations, packages, networking, and much more. Gentoo has **very helpful forum** with over one hundred thirty-four thousand plus users who have posted a total of 5442416 articles.
-
-  1. Gentoo community documentation: [Handbook][10] and [Wiki format][11]
-  2. Support forums: [Yes][12]
-  3. User-supplied documentation available at [gentoo-wiki.com][13]
+  1. Gentoo 社区文档: [手册][10] and [Wiki][11]
+  2. 是否支持论坛: [是][12]
+  3. 用户提供的文档可以在 [gentoo-wiki.com][13] 查看
 
 
 
-## #4: Ubuntu Wiki and Documentation
+## #4: Ubuntu Wiki 和 文档
 
 Ubuntu is one of the leading desktop and laptop distro. The official documentation developed and maintained by the Ubuntu Documentation Project. You can access a wealth of information including a getting started Guide. The best part is information contained herein may also work with other Debian-based systems. You will also find the community documentation for Ubuntu created by its users. This is a reference for Ubuntu-related 'Howtos, Tips, Tricks, and Hacks'. Ubuntu Linux has one of the biggest Linux communities on the web. It offers help to the both new and experienced users.
+Ubuntu 是领先的台式机和笔记本电脑发行版之一。官方文档由 Ubuntu 文档工程开发维护。
 
 ![Ubuntu Linux Wiki and Forums][14]
 
