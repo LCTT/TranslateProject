@@ -1,7 +1,7 @@
 [^#]: collector: lujun9972
 [^#]: translator: 
 [^#]: reviewer: 
-[^#]: publishor: 
+[^#]: publisher: 
 [^#]: subject: A Closer Look at Voice-Assisted Speakers
 [^#]: via: https://www.linux.com/blog/2018/11/closer-look-voice-assisted-speakers
 [^#]: author: [Eric Brown](https://www.linux.com/users/ericstephenbrown)
