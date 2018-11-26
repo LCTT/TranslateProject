@@ -1,7 +1,7 @@
 [^#]: collector: lujun9972
 [^#]: translator: 
 [^#]: reviewer: 
-[^#]: publishor: 
+[^#]: publisher: 
 [^#]: subject: 10 ways to give thanks to open source and free software maintainers
 [^#]: via: https://opensource.com/article/18/11/ways-give-thanks-open-source
 [^#]: author: [Moshe Zadka]( https://opensource.com/users/moshez)
