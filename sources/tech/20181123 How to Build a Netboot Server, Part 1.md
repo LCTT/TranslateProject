@@ -435,11 +435,6 @@ $ sed -i '/daemon/a AutomaticLoginEnable=true' /fc28/etc/gdm/custom.conf
 $ sed -i '/daemon/a AutomaticLogin=liveuser' /fc28/etc/gdm/custom.conf
 ```
 
-#### Like this:
-
-Like
-
-Loading...
 
 --------------------------------------------------------------------------------
 

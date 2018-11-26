@@ -1,14 +1,15 @@
-[^#]: collector: lujun9972
-[^#]: translator: 
-[^#]: reviewer: 
-[^#]: publisher: 
-[^#]: subject: A Closer Look at Voice-Assisted Speakers
-[^#]: via: https://www.linux.com/blog/2018/11/closer-look-voice-assisted-speakers
-[^#]: author: [Eric Brown](https://www.linux.com/users/ericstephenbrown)
-[^#]: url: 
+[^#]: collector: (lujun9972)
+[^#]: translator: ( )
+[^#]: reviewer: ( )
+[^#]: publisher: ( )
+[^#]: subject: (A Closer Look at Voice-Assisted Speakers)
+[^#]: via: (https://www.linux.com/blog/2018/11/closer-look-voice-assisted-speakers)
+[^#]: author: (Eric Brown https://www.linux.com/users/ericstephenbrown)
+[^#]: url: ( )
 
 A Closer Look at Voice-Assisted Speakers
 ====== 
+
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/anavi-elc.png?itok=vN-QXvJf)
 
 U.S. consumers are expected to drop a bundle this Black Friday on smart speakers and home hubs. A Nov. 15 [Canalys report][1] estimates that shipments of voice-assisted speakers grew 137 percent in Q3 2018 year-to-year and are on the way to 75 million-unit sales in 2018. At the recent [Embedded Linux Conference and Open IoT Summit][2] in Edinburgh, embedded Linux developer and [Raspberry Pi HAT][3] creator Leon Anavi of the Konsulko Group reported on the latest smart speaker trends.
