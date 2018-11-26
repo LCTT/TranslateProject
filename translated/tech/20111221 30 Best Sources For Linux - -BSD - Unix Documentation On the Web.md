@@ -12,16 +12,14 @@
 
 ![Red hat Enterprise Linux Docs][2]
 
-RHEL is developed by Red Hat and targeted toward the commercial market. It has one of the best documentations covering basis of RHEL to advanced topics like security, SELinux, virtualization, directory server, clustering, JBOSS, HPC, and much more. Red Hat documentation has been translated into twenty-two languages and is available in multi-page HTML, single-page HTML, PDF, and EPUB formats. The good news is you can use the same documentation for CentOS or Scientific Linux (community enterprise distros). All of these documents ship with the OS, so if you don't have a network connection, then you have them there as well. The RHEL docs **covers everything from installation to configuring clusters**. The only downside is you need to be a paid customer. This is perfect for an enterprise company.
+RHEL是由红帽公司开发的商业市场导向的的Linux发行版。红帽的文档是最好的文档之一，涵盖RHEL的基础到一些高级主题比如安全、安全增强式Linux、虚拟化、目录服务器、服务器集群、JBOSS应用程序服务器、高可用性集群等。红帽的文档已经被翻译成22种语言，发布成多页面HTML、单页面HTML、PDF、EPUB等文件格式。比较好的一点是你可以针对Centos和Scientific Linux（社区企业发行版）。这些文档随操作系统一起下载提供，也就是说当你没有网络的时候，你也可以使用他们。RHEL的文档**涵盖从安装到配置器群的所有内容**。唯一的缺点是你需要成为付费用户。当然这对于企业公司来说是一件完美的事。
 
-RHEL是由红帽公司开发的商业市场导向的的Linux发行版。RHEL的文档是最好的文档之一，包含了一些
-
-    1. RHEL Documentation: [in HTML/PDF format][3]
-    2. Support forums: Only available to Red Hat customer portal to submit a support case.
-
+    1. RHEL 文档: [HTML/PDF格式][3]
+    2. 支持论坛: Only available to Red Hat customer portal to submit a support case.
+只提供给红帽的客户
 
 
-### A Note About CentOS Wiki and Forums
+### 关于CentOS Wiki和论坛的说明
 
 ![Centos Linux Wiki][4]
 
@@ -30,7 +28,7 @@ CentOS (Community ENTerprise Operating System) is a free rebuild of source packa
   1. [Documentation Wiki][87]
   2. [Support forum][88]
 
-## #2: Arch Wiki and Forums
+## #2: Arch的 Wiki and 论坛
 
 ![Arch Linux wiki and tutorials][5]
 
