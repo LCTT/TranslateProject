@@ -1,7 +1,7 @@
 [^#]: collector: lujun9972
 [^#]: translator: 
 [^#]: reviewer: 
-[^#]: publishor: 
+[^#]: publisher: 
 [^#]: subject: Getting started with Jenkins X
 [^#]: via: https://opensource.com/article/18/11/getting-started-jenkins-x
 [^#]: author: [Dave Johnson](https://opensource.com/users/snoopdave)
