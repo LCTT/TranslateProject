@@ -3,27 +3,26 @@
 Ubuntu 18.04 LTS桌面系统在登录，锁屏和解锁状态下，我们会看到一个纯紫色的背景。它是GDM(GNOME Display Manager)从ubuntu 17.04版本开始使用的默认背景有一些人可能会不喜欢这个纯色的背景，想换一个酷一点,更吸睛的！如果是这样，你找对地方了。这篇简文将会告诉你如何更换Ubuntu 18.04 LTS的GDM登录界面的背景。
 ### 更换Ubuntu的登录界面背景
 
-这是Ubuntu 18.04 LTS桌面系统的默认的登录界面的样子
+这是Ubuntu 18.04 LTS桌面系统默认的登录界面
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-1.png)
 
-不管你喜欢还是不喜欢，你总是会不经意的在登录，解锁屏的时瞅见他。别担心！你可以随便更换一个你喜欢的图片。
+不管你喜欢还是不喜欢，你总是会不经意在登录，解/锁屏的时面对它。别担心！你可以随便更换一个你喜欢的图片。
 
-Changing desktop wallpaper and user’s profile picture is not a big deal in Ubuntu. We can do it with a few mouse clicks in no time. However, changing Login/Lock screen background need a little bit editing of a file called **ubuntu.css** located under **/usr/share/gnome-shell/theme** directory.
+在Ubuntu上更换桌面壁纸和用户的资料图像不难。我们可以点击鼠标就搞定了。但是更换解/锁屏的背景需要修改文件 **ubuntu.css** 位于 **/usr/share/gnome-shell/theme**。
 
-
-Before modifying this file, take a backup of this file. So, we can restore it if something went wrong.
+修改这个文件之前，最好备份一下它。这样我们可以避免出现问题是可以恢复它。
 
 ```
 $ sudo cp /usr/share/gnome-shell/theme/ubuntu.css /usr/share/gnome-shell/theme/ubuntu.css.bak
 ```
 
-Now, edit ubuntu.css file:
+现在修改文件ubuntu.css ：
 
 ```
 $ sudo nano /usr/share/gnome-shell/theme/ubuntu.css
 ```
+在文件中找到关键字是 **“lockDialogGroup”**的如下行：
 
-Find the following lines under the directive named **“lockDialogGroup”** in the file:
 
 ```
 #lockDialogGroup {
@@ -34,8 +33,9 @@ Find the following lines under the directive named **“lockDialogGroup”** in 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/ubuntu_css.png)
 
 As you can see, the default image for the GDM login screen is **noise-texture.png**.
+可以看到，GDM默认登录的背景图片是 **noise-texture.png**
 
-Now, change the background image by adding your image path. You can use either .jpg or .png file. Both format images worked fine for me. After editing the file, the contents of file will look like below:
+现在修改为你自己的图片路径。也可以选择.jpg或.png格式的文件，两种格式的图片文件都是支持的。修改完成后的文件内容如下：
 
 ```
 #lockDialogGroup {
@@ -46,26 +46,27 @@ Now, change the background image by adding your image path. You can use either .
 }
 ```
 
-Please pay little attention to the modified version of this directive in the ubuntu.css file. I have marked the changes in bold.
+请注意ubuntu.css文件里这个关键字的修改，我把修改点加粗了.
 
-As you might have noticed, I have changed the line “… **url(resource:///org/gnome/shell/theme/noise-texture.png);** ” with “ **…url(file:///home/sk/image.png);”**. I.e You should change “… **url(resource** …” to “… **url(file**..”.
+你可能注意到，我原来的“… **url(resource:///org/gnome/shell/theme/noise-texture.png);** ” 修改为“ **…url(file:///home/sk/image.png);”**。也就是说，你可以把“… **url(resource** …” 修改为to “… **url(file**..”。
 
-Also, I have changed the value of “background-repeat:” parameter from **“repeat”** to **“no-repeat”** and added two more lines. You can simply copy/paste the above lines and change image path with your own in your ubuntu.css file.
+同时，你可以把参数“background-repeat:” 的值**“repeat”** 修改为**“no-repeat”**来增加多行。你可以直接复制上面几行的修改到你的ubuntu.css文件，对应的修改为你的图片路径。
 
 Once you are done, save and close the file. And, reboot your system.
+修改完成后，保存和关闭此文件。然后系统重启生效。
 
-Here is my GDM login screen with updated backgrounds:
+下面是GDM登录界面的最新背景图片：
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-2.png)
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-3.png)
 
-Cool, yeah? As you can see, changing GDM login screen is not that difficult either. All you have to do is to change the path of the image in ubuntu.css file and restart your system. It is simple as that. Have fun!
+是不是很酷，你都看到了，更换GDM登录的默认背景很简单。你只需要修改ubuntu.css 文件中图片的路径然后重启系统。是不是很简单也很有意思.
 
-You can also edit **gdm3.css** file located under **/usr/share/gnome-shell/theme** directory and modify it as shown above to get the same result. Again, don’t forget to take the backup of the file before making any changes.
+你可以修改 **/usr/share/gnome-shell/theme** 目录下的文件 **gdm3.css**，具体修改内容和修改结果如上所示。同时记得修改前备份要修改的文件。
 
-And, that’s all now. More good stuffs to come. Stay tuned!
+就这些了。如果有好的东东再分享了，请大家关注！
 
-Cheers!
+后会有期
 
 
 
@@ -75,7 +76,7 @@ via: https://www.ostechnix.com/how-to-change-gdm-login-screen-background-in-ubun
 
 作者：[SK][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/guevaraya)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
