@@ -1,3 +1,5 @@
+translating by valonia
+
 How Creative Commons benefits artists and big business
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/CreativeCommons_ideas_520x292_1112JS.png?itok=otei0vKb)
