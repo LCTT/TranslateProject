@@ -51,50 +51,55 @@ Gentoo Linux 基于portage包管理系统。Gentoo Linux 用户根据他们选�
 
 ## #4: Ubuntu Wiki 和 文档
 
-Ubuntu is one of the leading desktop and laptop distro. The official documentation developed and maintained by the Ubuntu Documentation Project. You can access a wealth of information including a getting started Guide. The best part is information contained herein may also work with other Debian-based systems. You will also find the community documentation for Ubuntu created by its users. This is a reference for Ubuntu-related 'Howtos, Tips, Tricks, and Hacks'. Ubuntu Linux has one of the biggest Linux communities on the web. It offers help to the both new and experienced users.
-Ubuntu 是领先的台式机和笔记本电脑发行版之一。官方文档由 Ubuntu 文档工程开发维护。
+Ubuntu 是领先的台式机和笔记本电脑发行版之一。官方文档由 Ubuntu 文档工程开发维护。你可以在从官方文档中查看大量的信息，比如如何开始使用Ubuntu的教程。这些信息中最好的一部分是和基于 Debian 的系统共同工作。你可能会找到由Ubuntu的用户们创建的社区文档，其中是有关Ubuntu的使用教程和技巧等。Ubuntu Linux 是有着网络上最大的Linux社区的操作系统。
 
-![Ubuntu Linux Wiki and Forums][14]
+![Ubuntu Linux Wiki 和 论坛][14]
 
-  1. Ubuntu community documentation: [wiki format][15].
-  2. Ubuntu official documentation: [wiki format][16].
-  3. Support forums: [Yes][17].
-
+  1. Ubuntu 社区文档: [wiki][15].
+  2. Ubuntu 官方文档: [wiki][16].
+  3. 是否支持论坛: [是][17].
 
 
-## #5: IBM Developer Works
+
+## #5: IBM开发者项目
 
 IBM developer works offers technical resources for Linux programmers and system administrators. It contains hundreds of articles, tutorials, and tips to help developers with Linux programming and application development, as well as Linux system administration.
 
-![IBM: Technical for Linux programmers and system administrators][18]
+IBM开发者项目为 Linux 程序员和系统管理员提供技术资源，其中包含数以百计的文章、教程和技巧来协助 Linux 程序员的编程工作和应用开发还有系统管理员的日常工作。
 
-  1. IBM Developer Works Documentation: [HTML format][19]
-  2. Support forums: [Yes][20].
+![IBM: Linux 程序员和系统管理员用到的技术][18]
+
+  1. IBM 开发者项目文档: [HTML格式][19]
+  2. 是否支持论坛: [是][20].
 
 
 
-## #6: FreeBSD Documentation and Handbook
+## #6: FreeBSD 文档和手册
 
 The FreeBSD handbook is created by the FreeBSD Documentation Project. It describes the installation, administration and day-to-day use of the FreeBSD OS. BSD manpages are usually better as compare to GNU/Linux man pages. The FreeBSD **comes with all the documents** with upto date man pages. The FreeBSD Handbook **covers everything**. The handbook contains some general Unix information that can also apply in other Linux distros. The official FreeBSD forums also provides helps whenever you will get stuck with problems.
 
+FreeBSD 的手册是由 FreeBSD 文档工程所创建的，介绍 FreeBSD 操作系统的安装、管理和一些日常使用技巧等内容。FreeBSD 的手册页通常比GNU Linux 的手册页要好一点。FreeBSD **附带有全部最新手册页的文档**。 FreeBSD 手册涵盖任何你想要的内容。手册包含一些通用 Unix 资料，这些资料同样适用于其他的 Linux 发行版。FreeBSD 官方论坛会在你遇到棘手问题时给予帮助。
+
 ![Freebsd Documentation][21]
 
-  1.  FreeBSD Documentation: [HTML/PDF format][90]
-  2.  Support forums: [Yes][91].
+  1.  FreeBSD 文档: [HTML/PDF 格式][90]
+  2.  是否支持论坛: [是][91].
 
 
-## #7: Bash Hackers Wiki
+## #7: Bash 用户的 Wiki
 
-![Bash hackers wiki for bash users][22]
+![Bash 用户的 wiki][22]
 This is an excellent resource for bash user. The bash hackers wiki is intended to hold documentations of any kind about the GNU Bash. The main motivation was to provide human-readable documentation and information to not force users to read every bit of the Bash manpage  - which is hard sometimes. The wiki is divided into various sections such as - scripting and general information, howtos, coding style, bash syntax, and much more.
 
-  1. Bash hackers [wiki][23] in wiki format
+这是一个对于 bash 使用者来说非常好的资源。Bash 使用者的 wiki 是为了归纳所有类型的 GNU Bash 文档。这个项目的动力是为了提供可阅读的文档和资料来避免用户被迫一点一点阅读 Bash 的手册，有时候这是非常麻烦的。Bash 用户 Wiki 分为各个类，比如说脚本和通用资料、如何使用、代码风格、bash 命令格式和其他。
+
+  1. Bash 用户教程 [wiki][23] （wiki 格式）
 
 
 
-## #8: Bash FAQ
+## #8: Bash 常见问题
 
-![Bash FAQ: Answers to frequently asked questions about GNU/BASH][24]
+![Bash 常见问题: 一些有关 GNU/BASH 常见问题的解决方法][24]
 A wiki designed for new bash users. It has good collections to frequently asked questions on channel #bash on the freenode IRC network. These answers are contributed by the regular members of the channel. Don't forget to check out common mistakes made by Bash programmers, in [BashPitfalls][25] section. The answers given in this FAQ may be slanted toward Bash, or they may be slanted toward the lowest common denominator Bourne shell, depending on who wrote the answer. In most cases, an effort is made to provide both a portable (Bourne) and an efficient (Bash, where appropriate) answer.
 
   1. Bash FAQ [in wiki ][26] format.
