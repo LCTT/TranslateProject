@@ -21,7 +21,7 @@ $ sudo cp /usr/share/gnome-shell/theme/ubuntu.css /usr/share/gnome-shell/theme/u
 ```
 $ sudo nano /usr/share/gnome-shell/theme/ubuntu.css
 ```
-在文件中找到关键字是 **“lockDialogGroup”** 的如下行：
+在文件中找到关键字 **“lockDialogGroup”** ，如下行：
 
 
 ```
@@ -32,7 +32,6 @@ $ sudo nano /usr/share/gnome-shell/theme/ubuntu.css
 ```
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/ubuntu_css.png)
 
-As you can see, the default image for the GDM login screen is **noise-texture.png** .
 可以看到，GDM默认登录的背景图片是 **noise-texture.png**
 
 现在修改为你自己的图片路径。也可以选择.jpg或.png格式的文件，两种格式的图片文件都是支持的。修改完成后的文件内容如下：
@@ -61,7 +60,7 @@ As you can see, the default image for the GDM login screen is **noise-texture.pn
 
 是不是很酷，你都看到了，更换GDM登录的默认背景很简单。你只需要修改ubuntu.css 文件中图片的路径然后重启系统。是不是很简单也很有意思.
 
-你可以修改 **/usr/share/gnome-shell/theme** 目录下的文件 **gdm3.css** ，具体修改内容和修改结果如上所示。同时记得修改前备份要修改的文件。
+你可以修改 **/usr/share/gnome-shell/theme** 目录下的文件 **gdm3.css** ，具体修改内容和修改结果和上面一样。同时记得修改前备份要修改的文件。
 
 就这些了。如果有好的东东再分享了，请大家关注！
 
