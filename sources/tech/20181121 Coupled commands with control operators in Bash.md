@@ -1,3 +1,5 @@
+Translating by Jamskr
+
 Coupled commands with control operators in Bash
 ======
 Add logic to the command line with control operators in compound commands.
