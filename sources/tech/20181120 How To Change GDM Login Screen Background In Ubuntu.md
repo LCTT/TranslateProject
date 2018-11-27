@@ -1,15 +1,15 @@
-How To Change GDM Login Screen Background In Ubuntu
+如何更换Ubuntu系统的GDM登录界面背景
 ======
-Whenever you log in or lock and unlock your Ubuntu 18.04 LTS desktop, you will be greeted with a plain purple-colored screen. It is the default GDM (GNOME Display Manager) background since Ubuntu version 17.04. Some of you may feel boring to look at this plain background and want to make the Login screen something cool and eye-candy! If so, you’re on the right track. This brief guide describes how to change GDM Login screen background in Ubuntu 18.04 LTS desktop.
+Ubuntu 18.04 LTS桌面系统在登录，锁屏和解锁状态下，我们会看到一个纯紫色的背景。它是GDM(GNOME Display Manager)从ubuntu 17.04版本开始使用的默认背景有一些人可能会不喜欢这个纯色的背景，想换一个酷一点,更吸睛的！如果是这样，你找对地方了。这篇简文将会告诉你如何更换Ubuntu 18.04 LTS的GDM登录界面的背景。
+### 更换Ubuntu的登录界面背景
 
-### Change GDM Login Screen Background In Ubuntu
-
-Here is how the default GDM login screen background image looks like in Ubuntu 18.04 LTS desktop.
+这是Ubuntu 18.04 LTS桌面系统的默认的登录界面的样子
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-1.png)
 
-Whether you like it or not, you will stumbled upon this screen every time you log in or lock and unlock the system. No worries! You can change this background with any beautiful image of your choice.
+不管你喜欢还是不喜欢，你总是会不经意的在登录，解锁屏的时瞅见他。别担心！你可以随便更换一个你喜欢的图片。
 
 Changing desktop wallpaper and user’s profile picture is not a big deal in Ubuntu. We can do it with a few mouse clicks in no time. However, changing Login/Lock screen background need a little bit editing of a file called **ubuntu.css** located under **/usr/share/gnome-shell/theme** directory.
+
 
 Before modifying this file, take a backup of this file. So, we can restore it if something went wrong.
 
