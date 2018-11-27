@@ -50,9 +50,8 @@ As you can see, the default image for the GDM login screen is **noise-texture.pn
 
 你可能注意到，我原来的“… **url(resource:///org/gnome/shell/theme/noise-texture.png);** ” 修改为“ **…url(file:///home/sk/image.png);”**。也就是说，你可以把“… **url(resource** …” 修改为to “… **url(file**..”。
 
-同时，你可以把参数“background-repeat:” 的值**“repeat”** 修改为**“no-repeat”**来增加多行。你可以直接复制上面几行的修改到你的ubuntu.css文件，对应的修改为你的图片路径。
+同时，你可以把参数“background-repeat:” 的值 **“repeat”** 修改为 **“no-repeat”** 来增加多行。你可以直接复制上面几行的修改到你的ubuntu.css文件，对应的修改为你的图片路径。
 
-Once you are done, save and close the file. And, reboot your system.
 修改完成后，保存和关闭此文件。然后系统重启生效。
 
 下面是GDM登录界面的最新背景图片：
@@ -62,7 +61,7 @@ Once you are done, save and close the file. And, reboot your system.
 
 是不是很酷，你都看到了，更换GDM登录的默认背景很简单。你只需要修改ubuntu.css 文件中图片的路径然后重启系统。是不是很简单也很有意思.
 
-你可以修改 **/usr/share/gnome-shell/theme** 目录下的文件 **gdm3.css**，具体修改内容和修改结果如上所示。同时记得修改前备份要修改的文件。
+你可以修改 **/usr/share/gnome-shell/theme** 目录下的文件 **gdm3.css** ，具体修改内容和修改结果如上所示。同时记得修改前备份要修改的文件。
 
 就这些了。如果有好的东东再分享了，请大家关注！
 
