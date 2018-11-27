@@ -21,7 +21,7 @@ $ sudo cp /usr/share/gnome-shell/theme/ubuntu.css /usr/share/gnome-shell/theme/u
 ```
 $ sudo nano /usr/share/gnome-shell/theme/ubuntu.css
 ```
-在文件中找到关键字是 **“lockDialogGroup”**的如下行：
+在文件中找到关键字是 **“lockDialogGroup”** 的如下行：
 
 
 ```
@@ -32,7 +32,7 @@ $ sudo nano /usr/share/gnome-shell/theme/ubuntu.css
 ```
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/ubuntu_css.png)
 
-As you can see, the default image for the GDM login screen is **noise-texture.png**.
+As you can see, the default image for the GDM login screen is **noise-texture.png** .
 可以看到，GDM默认登录的背景图片是 **noise-texture.png**
 
 现在修改为你自己的图片路径。也可以选择.jpg或.png格式的文件，两种格式的图片文件都是支持的。修改完成后的文件内容如下：
