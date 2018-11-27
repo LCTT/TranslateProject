@@ -1,22 +1,22 @@
 如何更换Ubuntu系统的GDM登录界面背景
 ======
-Ubuntu 18.04 LTS桌面系统在登录，锁屏和解锁状态下，我们会看到一个纯紫色的背景。它是GDM(GNOME Display Manager)从ubuntu 17.04版本开始使用的默认背景有一些人可能会不喜欢这个纯色的背景，想换一个酷一点,更吸睛的！如果是这样，你找对地方了。这篇简文将会告诉你如何更换Ubuntu 18.04 LTS的GDM登录界面的背景。
+Ubuntu 18.04 LTS桌面系统在登录，锁屏和解锁状态下，我们会看到一个纯紫色的背景。它是GDM(GNOME Display Manager)从ubuntu 17.04版本开始使用的默认背景。有一些人可能会不喜欢这个纯色的背景，想换一个酷一点,更吸睛的！如果是这样，你找对地方了。这篇简文将会告诉你如何更换Ubuntu 18.04 LTS的GDM登录界面的背景。
 ### 更换Ubuntu的登录界面背景
 
 这是Ubuntu 18.04 LTS桌面系统默认的登录界面
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-1.png)
 
-不管你喜欢还是不喜欢，你总是会不经意在登录，解/锁屏的时面对它。别担心！你可以随便更换一个你喜欢的图片。
+不管你喜欢还是不喜欢，你总是会不经意在登录，解屏/锁屏的时面对它。别担心！你可以随便更换一个你喜欢的图片。
 
-在Ubuntu上更换桌面壁纸和用户的资料图像不难。我们可以点击鼠标就搞定了。但是更换解/锁屏的背景需要修改文件 **ubuntu.css** 位于 **/usr/share/gnome-shell/theme**。
+在Ubuntu上更换桌面壁纸和用户的资料图像不难。我们可以点击鼠标就搞定了。但更换解屏/锁屏的背景则需要修改文件 **ubuntu.css** 位于 **/usr/share/gnome-shell/theme**。
 
-修改这个文件之前，最好备份一下它。这样我们可以避免出现问题是可以恢复它。
+修改这个文件之前，最好备份一下它。这样我们可以避免出现问题时可以恢复它。
 
 ```
 $ sudo cp /usr/share/gnome-shell/theme/ubuntu.css /usr/share/gnome-shell/theme/ubuntu.css.bak
 ```
 
-现在修改文件ubuntu.css ：
+修改文件ubuntu.css ：
 
 ```
 $ sudo nano /usr/share/gnome-shell/theme/ubuntu.css
