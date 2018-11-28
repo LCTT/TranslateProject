@@ -1,3 +1,5 @@
+Translating by jlztan
+
 How to swap Ctrl and Caps Lock keys in Linux
 ======
 Linux desktop environments make it easy to set up your keyboard as you want it. Here's how.
