@@ -1,3 +1,5 @@
+Translating by LazyWolfLin
+
 7 command-line tools for writers | Opensource.com
 ======
 Put away your word processor and start writing from the command line using these open source tools.
