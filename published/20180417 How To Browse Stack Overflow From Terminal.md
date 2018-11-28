@@ -101,7 +101,7 @@ $ how2 create archive tgz
 $ how2 -l python linked list
 ```
 
-[![][4]][8]
+![][8]
 
 要获得快速帮助，请输入：
 
