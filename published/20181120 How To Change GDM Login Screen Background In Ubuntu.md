@@ -1,6 +1,8 @@
 如何更换 Ubuntu 系统的 GDM 登录界面背景
 ======
 
+![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-3.png)
+
 Ubuntu 18.04 LTS 桌面系统在登录、锁屏和解锁状态下，我们会看到一个纯紫色的背景。它是 GDM（<ruby>GNOME 显示管理器<rt>GNOME Display Manager</rt></ruby>）从 ubuntu 17.04 版本开始使用的默认背景。有一些人可能会不喜欢这个纯色的背景，想换一个酷一点、更吸睛的！如果是这样，你找对地方了。这篇短文将会告诉你如何更换 Ubuntu 18.04 LTS 的 GDM 登录界面的背景。
 
 ### 更换 Ubuntu 的登录界面背景
@@ -60,8 +62,6 @@ $ sudo nano /usr/share/gnome-shell/theme/ubuntu.css
 下面是 GDM 登录界面的最新背景图片：
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-2.png)
-
-![](https://www.ostechnix.com/wp-content/uploads/2018/11/GDM-login-screen-3.png)
 
 是不是很酷，你都看到了，更换 GDM 登录的默认背景很简单。你只需要修改 `ubuntu.css` 文件中图片的路径然后重启系统。是不是很简单也很有意思.
 
