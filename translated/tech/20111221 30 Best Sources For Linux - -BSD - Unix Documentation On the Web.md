@@ -63,8 +63,6 @@ Ubuntu 是领先的台式机和笔记本电脑发行版之一。官方文档由 
 
 ## #5: IBM开发者项目
 
-IBM developer works offers technical resources for Linux programmers and system administrators. It contains hundreds of articles, tutorials, and tips to help developers with Linux programming and application development, as well as Linux system administration.
-
 IBM开发者项目为 Linux 程序员和系统管理员提供技术资源，其中包含数以百计的文章、教程和技巧来协助 Linux 程序员的编程工作和应用开发还有系统管理员的日常工作。
 
 ![IBM: Linux 程序员和系统管理员用到的技术][18]
@@ -75,8 +73,6 @@ IBM开发者项目为 Linux 程序员和系统管理员提供技术资源，其�
 
 
 ## #6: FreeBSD 文档和手册
-
-The FreeBSD handbook is created by the FreeBSD Documentation Project. It describes the installation, administration and day-to-day use of the FreeBSD OS. BSD manpages are usually better as compare to GNU/Linux man pages. The FreeBSD **comes with all the documents** with upto date man pages. The FreeBSD Handbook **covers everything**. The handbook contains some general Unix information that can also apply in other Linux distros. The official FreeBSD forums also provides helps whenever you will get stuck with problems.
 
 FreeBSD 的手册是由 FreeBSD 文档工程所创建的，介绍 FreeBSD 操作系统的安装、管理和一些日常使用技巧等内容。FreeBSD 的手册页通常比GNU Linux 的手册页要好一点。FreeBSD **附带有全部最新手册页的文档**。 FreeBSD 手册涵盖任何你想要的内容。手册包含一些通用 Unix 资料，这些资料同样适用于其他的 Linux 发行版。FreeBSD 官方论坛会在你遇到棘手问题时给予帮助。
 
@@ -89,7 +85,6 @@ FreeBSD 的手册是由 FreeBSD 文档工程所创建的，介绍 FreeBSD 操作
 ## #7: Bash 用户的 Wiki
 
 ![Bash 用户的 wiki][22]
-This is an excellent resource for bash user. The bash hackers wiki is intended to hold documentations of any kind about the GNU Bash. The main motivation was to provide human-readable documentation and information to not force users to read every bit of the Bash manpage  - which is hard sometimes. The wiki is divided into various sections such as - scripting and general information, howtos, coding style, bash syntax, and much more.
 
 这是一个对于 bash 使用者来说非常好的资源。Bash 使用者的 wiki 是为了归纳所有类型的 GNU Bash 文档。这个项目的动力是为了提供可阅读的文档和资料来避免用户被迫一点一点阅读 Bash 的手册，有时候这是非常麻烦的。Bash 用户 Wiki 分为各个类，比如说脚本和通用资料、如何使用、代码风格、bash 命令格式和其他。
 
@@ -102,11 +97,13 @@ This is an excellent resource for bash user. The bash hackers wiki is intended t
 ![Bash 常见问题: 一些有关 GNU/BASH 常见问题的解决方法][24]
 A wiki designed for new bash users. It has good collections to frequently asked questions on channel #bash on the freenode IRC network. These answers are contributed by the regular members of the channel. Don't forget to check out common mistakes made by Bash programmers, in [BashPitfalls][25] section. The answers given in this FAQ may be slanted toward Bash, or they may be slanted toward the lowest common denominator Bourne shell, depending on who wrote the answer. In most cases, an effort is made to provide both a portable (Bourne) and an efficient (Bash, where appropriate) answer.
 
-  1. Bash FAQ [in wiki ][26] format.
+这是一个为bash新手设计的一个wiki。在IRC网络的 #bash 频道里有比较常见的问题集合的解决方法，这些解决方法是由频道的常规成员提供。当你遇到问题的时候不要忘了在[BashPitfalls][25]模块检索查找答案。这些常见问题的解决方法可能会倾向于Bash，或者偏向于最低标准的Bourne Shell，这决定于是谁给出的答案。大多数情况会尽力提供方便的（Bourne）和高效的（Bash，在适当情况下）的两类答案。
+
+  1. Bash 常见问题 [wiki][26] 格式.
 
 
 
-## #9: Howtoforge - Linux Tutorials
+## #9: 如何锻造技术 - Linux 教程
 
 ![Howtoforge][27]
 
@@ -366,7 +363,7 @@ The author is the creator of nixCraft and a seasoned sysadmin and a trainer for 
 via: https://www.cyberciti.biz/tips/linux-unix-bsd-documentations.html
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ScarboroughCoral](https://github.com/ScarboroughCoral)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
