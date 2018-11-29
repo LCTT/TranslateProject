@@ -4,6 +4,14 @@
 
 正文内容:
 
+  [#]: collector: (选题人github id)
+  [#]: translator: (译者github id)
+  [#]: reviewer: (校对人github id)
+  [#]: publisher: (发布人github id)
+  [#]: subject: (标题)
+  [#]: via: (原文地址)
+  [#]: author: ([作者名](作者介绍地址))
+  [#]: url: (译文发布地址)
   标题
   =======
   
