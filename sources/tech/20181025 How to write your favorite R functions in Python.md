@@ -1,3 +1,5 @@
+yongshouzhang translating
+
 How to write your favorite R functions in Python
 ======
 R or Python? This Python script mimics convenient R-style functions for doing statistics nice and easy.
