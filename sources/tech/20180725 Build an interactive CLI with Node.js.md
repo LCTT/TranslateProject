@@ -1,5 +1,3 @@
-translating by Flowsnow
-
 Build an interactive CLI with Node.js
 ======
 

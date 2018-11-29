@@ -1,10 +1,10 @@
 
-![待翻译](https://lctt.github.io/TranslateProject/badge/sources.svg)
-![翻译中](https://lctt.github.io/TranslateProject/badge/translating.svg)
-![待校正](https://lctt.github.io/TranslateProject/badge/translated.svg)
-![已发布](https://lctt.github.io/TranslateProject/badge/published.svg) 
+[![待翻译](https://lctt.github.io/TranslateProject/badge/sources.svg)](https://lctt.github.io/new)
+[![翻译中](https://lctt.github.io/TranslateProject/badge/translating.svg)](https://lctt.github.io/translating)
+[![待校正](https://lctt.github.io/TranslateProject/badge/translated.svg)](https://github.com/LCTT/TranslateProject/tree/master/translated)
+[![已发布](https://lctt.github.io/TranslateProject/badge/published.svg)](https://github.com/LCTT/TranslateProject/tree/master/published) 
 
-[![Travis (.org)](https://img.shields.io/travis/LCTT/TranslateProject.svg)](https://travis-ci.org/LCTT/TranslateProject)
+[![Travis](https://img.shields.io/travis/LCTT/TranslateProject.svg)](https://travis-ci.com/LCTT/TranslateProject)
 [![GitHub contributors](https://img.shields.io/github/contributors/LCTT/TranslateProject.svg)](https://github.com/LCTT/TranslateProject/graphs/contributors)
 [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/LCTT/TranslateProject.svg)](https://github.com/LCTT/TranslateProject/pulls?q=is%3Apr+is%3Aclosed)
 

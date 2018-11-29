@@ -1,3 +1,5 @@
+[#]: translator: (oneforalone)
+
 Emacs #1: Ditching a bunch of stuff and moving to Emacs and org-mode
 ======
 I’ll admit it. After over a decade of vim, I’m hooked on [Emacs][1].
