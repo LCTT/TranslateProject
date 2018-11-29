@@ -1,3 +1,5 @@
+translating---geekpi
+
 A Free Guide for Setting Your Open Source Strategy
 ======
 
