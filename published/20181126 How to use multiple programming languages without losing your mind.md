@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (heguangzhi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (How to use multiple programming languages without losing your mind)
 [#]: via: (https://opensource.com/article/18/11/multiple-programming-languages)
 [#]: author: (Bart Copeland https://opensource.com/users/bartcopeland)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10291-1.html)
 
 如何使用多种编程语言而又不失理智
 ======
