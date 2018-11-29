@@ -1,4 +1,3 @@
-imquanquan Translating
 Trying Other Go Versions
 ============================================================
 

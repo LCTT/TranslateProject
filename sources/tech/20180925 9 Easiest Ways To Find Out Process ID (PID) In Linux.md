@@ -1,4 +1,3 @@
-【moria(knuth.fan at gmail.com)翻译中】
 9 Easiest Ways To Find Out Process ID (PID) In Linux
 ======
 Everybody knows about PID, Exactly what is PID? Why you want PID? What are you going to do using PID? Are you having the same questions on your mind? If so, you are in the right place to get all the details.
