@@ -11,9 +11,9 @@
 
 ### 编辑器
 
-Yes, you _can_ do actual writing at the command line. I know writers who do their work using editors like [Nano][2], [Vim][3], [Emacs][4], and [Jove][5] in a terminal window. And those editors [aren't the only games in town][6]. Text editors are great because they (at a basic level, anyway) are easy to use and distraction free. They're perfect for tapping out a first draft of anything or even completing a long and complicated writing project.
+没错，你_可以_在命令行进行真正的写作。我知道一些写作者会使用 [Nano][2]、[Vim][3]、[Emacs][4]、以及 [Jove][5] 等编辑器在终端窗口中进行工作。而这些编辑器并不是[aren't the only games in town][6]。文本编辑器的优势在于它们简单易用和专注。它们非常适合于编辑任何文本的初稿甚至完成一个漫长而复杂的写作项目。
 
-If you want a more word processor-like experience at the command line, take a look at [WordGrinder][7] . WordGrinder is a bare-bones word processor, but it has more than enough features for writing and publishing your work. It supports basic formatting and styles, and you can export your writing to formats like Markdown, ODT, LaTeX, and HTML.
+如果你想在命令行中获得更像文字编辑器的体验，不妨了解一下[WordGrinder][7]。WordGrinder 是一款简单但拥有足够的编写和发布功能的文字编辑器。它支持基本的格式和样式，并且你可以将你的文字以 Markdown, ODT, LaTeX, 以及 HTML等格式导出。
 
 ### 拼写检查
 
