@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: subject: (How to test your network with PerfSONAR)
 [#]: via: (https://opensource.com/article/18/11/how-test-your-network-perfsonar)
-[#]: author: ([Jessica Repka](https://opensource.com/users/jrepka))
+[#]: author: (Jessica Repka https://opensource.com/users/jrepka)
 [#]: url: ( )
 
 How to test your network with PerfSONAR
