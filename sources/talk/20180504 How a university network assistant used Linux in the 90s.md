@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (geekpi)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: subject: (Easily Fund Open Source Projects With These Platforms)
+[#]: via: (https://itsfoss.com/open-source-funding-platforms/)
+[#]: author: ([Ambarish Kumar](https://itsfoss.com/author/ambarish/))
+[#]: url: ( )
+
 How a university network assistant used Linux in the 90s
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/moneyrecycle_520x292.png?itok=SAaIziNr)
