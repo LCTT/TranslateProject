@@ -17,11 +17,11 @@
 
 ### 拼写检查
 
-Every writer does (or at least should do) a spelling check on their work at least once. Why? An immutable law of the writing universe states that, no matter how many times you look over your manuscript, a spelling mistake or typo will creep in.
+每个写作者在完成他们的工作前至少要（或者说应该要）进行一次拼写检查。为什么呢？在写作的世界里有个永恒的定律，无论你检查了多少次手稿，拼写错误和错字依然会存在。
 
-My favorite command-line spelling checker is [GNU Aspell][8], which I previously [looked at][9] in detail. Aspell checks plaintext documents interactively and not only highlights errors but often puts the best correction at the top of its list of suggestions. Aspell also ignores many markup languages while doing its thing.
+我曾经详细[介绍][9]过我最喜欢的命令行拼写检查工具 [GNU Aspell][8]。交互式检测文本文档的 Aspell 不仅能够高亮显示拼写错误还能在拼写错误的上方提供正确的拼写建议。Aspell 在进行拼写检查同样能够忽略许多标记语言文本。
 
-A much older but still useful alternative is [Ispell][10]. It's a bit slower than Aspell, but both utilities work the same way. As you interact with your text file, Ispell suggests corrections. Ispell also has good support for foreign languages.
+另一个够老但仍然有用的代替品是 [Ispell][10]。虽然它比 Aspell 稍慢一点，但它们都以相同的方式工作。当你在你的文本文件上工作时，Ispell 将提供正确的建议。Ispell 同样也对英语以外的语言提供了良好的支持。
 
 ### Prose linters
 
