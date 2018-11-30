@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: subject: (Standalone web applications with GNOME Web)
 [#]: via: (https://fedoramagazine.org/standalone-web-applications-gnome-web/)
-[#]: author: ([Ryan Lerch](https://fedoramagazine.org/introducing-flatpak/))
+[#]: author: (Ryan Lerch https://fedoramagazine.org/introducing-flatpak/)
 [#]: url: ( )
 
 Standalone web applications with GNOME Web
