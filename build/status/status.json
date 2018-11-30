@@ -1,0 +1,2121 @@
+{
+  "translating": [
+    {
+      "file": "sources/talk/20180904 Why schools of the future are open.md",
+      "time": "2018-11-06",
+      "user": "hkurj"
+    },
+    {
+      "file": "sources/talk/20170921 The Rise and Rise of JSON.md",
+      "time": "2018-11-02",
+      "user": "thecyanbird"
+    },
+    {
+      "file": "sources/talk/20180412 A new approach to security instrumentation.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181029 How I organize my knowledge as a Software Engineer.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181116 Akash Angle- How do you Fedora.md",
+      "time": "2018-11-22",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20180523 How to dual-boot Linux and Windows.md",
+      "time": "2018-11-08",
+      "user": "Auk7F7"
+    },
+    {
+      "file": "sources/tech/20171108 Continuous infrastructure- The other CI.md",
+      "time": "2018-11-24",
+      "user": "Jamkr"
+    },
+    {
+      "file": "sources/tech/20180725 Build an interactive CLI with Node.js.md",
+      "time": "2018-10-29",
+      "user": "chenliang"
+    },
+    {
+      "file": "sources/tech/20180727 How to analyze your system with perf and Python.md",
+      "time": "2018-11-03",
+      "user": "erlinux"
+    },
+    {
+      "file": "sources/tech/20180417 How To Browse Stack Overflow From Terminal.md",
+      "time": "2018-11-21",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20180806 GPaste Is A Great Clipboard Manager For Gnome Shell.md",
+      "time": "2018-11-23",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20180131 For your first HTML code lets help Batman write a love letter.md",
+      "time": "2018-11-07",
+      "user": "MjSeven"
+    },
+    {
+      "file": "sources/tech/20181004 4 Must-Have Tools for Monitoring Linux.md",
+      "time": "2018-11-02",
+      "user": "way-ww"
+    },
+    {
+      "file": "sources/tech/20181105 How to manage storage on Linux with LVM.md",
+      "time": "2018-11-20",
+      "user": "ziang"
+    },
+    {
+      "file": "sources/tech/20180707 Version Control Before Git with CVS.md",
+      "time": "2018-11-19",
+      "user": "runningwater"
+    },
+    {
+      "file": "sources/tech/20181008 Taking notes with Laverna, a web-based information organizer.md",
+      "time": "2018-10-30",
+      "user": "ChenYi"
+    },
+    {
+      "file": "sources/tech/20181011 Exploring the Linux kernel- The secrets of Kconfig-kbuild.md",
+      "time": "2018-10-27",
+      "user": "leemeans"
+    },
+    {
+      "file": "sources/tech/20171202 Easily control delivery of your Python applications to millions of Linux users with Snapcraft.md",
+      "time": "2018-10-30",
+      "user": "David Chen"
+    },
+    {
+      "file": "sources/tech/20181102 Create a containerized machine learning model.md",
+      "time": "2018-11-07",
+      "user": "suncle"
+    },
+    {
+      "file": "sources/tech/20181119 9 obscure Python libraries for data science.md",
+      "time": "2018-11-23",
+      "user": "heguangzhi"
+    },
+    {
+      "file": "sources/tech/20181115 3 best practices for continuous integration and deployment.md",
+      "time": "2018-11-19",
+      "user": "Leon Chi"
+    },
+    {
+      "file": "sources/tech/20181120 How To Change GDM Login Screen Background In Ubuntu.md",
+      "time": "2018-11-23",
+      "user": "guevaraya"
+    }
+  ],
+  "unselected": [
+    {
+      "file": "sources/talk/20170908 Betting on the Web.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20170911 What every software engineer should know about search.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180109 How Mycroft used WordPress and GitHub to improve its documentation.md",
+      "time": "2018-01-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181003 13 tools to measure DevOps success.md",
+      "time": "2018-10-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180719 Finding Jobs in Software.md",
+      "time": "2018-11-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180124 Security Chaos Engineering- A new paradigm for cybersecurity.md",
+      "time": "2018-01-26",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171119 The Ruby Story.md",
+      "time": "2018-10-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180201 6 pivotal moments in open source history.md",
+      "time": "2018-02-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/talk/20180206 Building Slack for the Linux community and adopting snaps.md",
+      "time": "2018-02-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180206 UQDS- A software-development process that puts quality first.md",
+      "time": "2018-02-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180207 Why Mainframes Aren-t Going Away Any Time Soon.md",
+      "time": "2018-02-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180208 Gathering project requirements using the Open Decision Framework.md",
+      "time": "2018-02-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180209 Arch Anywhere Is Dead, Long Live Anarchy Linux.md",
+      "time": "2018-02-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180209 How writing can change your career for the better, even if you don-t identify as a writer.md",
+      "time": "2018-10-24",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/talk/20180209 Why an involved user community makes for better software.md",
+      "time": "2018-02-12",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180214 Can anonymity and accountability coexist.md",
+      "time": "2018-02-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20180220 4 considerations when naming software development projects.md",
+      "time": "2018-02-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180221 3 warning flags of DevOps metrics.md",
+      "time": "2018-03-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180222 3 reasons to say -no- in DevOps.md",
+      "time": "2018-02-22",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180223 Why culture is the most important issue in a DevOps transformation.md",
+      "time": "2018-03-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180227 Emacs -1- Ditching a bunch of stuff and moving to Emacs and org-mode.md",
+      "time": "2018-03-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180301 How to hire the right DevOps talent.md",
+      "time": "2018-03-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180302 Beyond metrics- How to operate as team on today-s open source project.md",
+      "time": "2018-03-07",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180303 4 meetup ideas- Make your data open.md",
+      "time": "2018-03-07",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180314 How to apply systems thinking in DevOps.md",
+      "time": "2018-03-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180314 Pi Day- 12 fun facts and ways to celebrate.md",
+      "time": "2018-03-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180315 6 ways a thriving community will help your project succeed.md",
+      "time": "2018-03-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180315 Lessons Learned from Growing an Open Source Project Too Fast.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180316 How to avoid humiliating newcomers- A guide for advanced developers.md",
+      "time": "2018-03-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180319 6 common questions about agile development practices for teams.md",
+      "time": "2018-03-22",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180321 8 tips for better agile retrospective meetings.md",
+      "time": "2018-03-22",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180323 7 steps to DevOps hiring success.md",
+      "time": "2018-03-26",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180117 How technology changes the rules for doing agile.md",
+      "time": "2018-11-11",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/talk/20180330 Meet OpenAuto, an Android Auto emulator for Raspberry Pi.md",
+      "time": "2018-04-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180404 Is the term DevSecOps necessary.md",
+      "time": "2018-04-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180405 Rethinking -ownership- across the organization.md",
+      "time": "2018-04-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171007 The Most Important Database You-ve Never Heard of.md",
+      "time": "2018-10-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180410 Microservices Explained.md",
+      "time": "2018-09-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180412 Management, from coordination to collaboration.md",
+      "time": "2018-04-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180416 For project safety back up your people, not just your data.md",
+      "time": "2018-04-17",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180417 How to develop the FOSS leaders of the future.md",
+      "time": "2018-04-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171030 Why I love technical debt.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180418 Is DevOps compatible with part-time community teams.md",
+      "time": "2018-05-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180419 3 tips for organizing your open source project-s workflow on GitHub.md",
+      "time": "2018-09-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180419 5 guiding principles you should know before you design a microservice.md",
+      "time": "2018-04-23",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180420 What You Don-t Know About Linux Open Source Could Be Costing to More Than You Think.md",
+      "time": "2018-04-23",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180424 There-s a Server in Every Serverless Platform.md",
+      "time": "2018-04-26",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20170928 The Lineage of Man.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180504 How a university network assistant used Linux in the 90s.md",
+      "time": "2018-05-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180508 Person with diabetes finds open source and builds her own medical device.md",
+      "time": "2018-05-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180623 The IBM 029 Card Punch.md",
+      "time": "2018-10-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180604 10 principles of resilience for women in tech.md",
+      "time": "2018-06-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180128 Getting Linux Jobs.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180613 AI Is Coming to Edge Computing Devices.md",
+      "time": "2018-06-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180619 A summer reading list for open organization enthusiasts.md",
+      "time": "2018-06-21",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180622 7 tips for promoting your project and community on Twitter.md",
+      "time": "2018-06-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180703 What Game of Thrones can teach us about open innovation.md",
+      "time": "2018-07-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180704 Comparing Twine and Ren-Py for creating interactive fiction.md",
+      "time": "2018-07-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180705 New Training Options Address Demand for Blockchain Skills.md",
+      "time": "2018-07-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180216 Q4OS Makes Linux Easy for Everyone.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180713 What-s the difference between a fork and a distribution.md",
+      "time": "2018-07-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180724 Open Source Certification- Preparing for the Exam.md",
+      "time": "2018-07-26",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171222 10 keys to quick game development.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180726 Tech jargon- The good, the bad, and the ugly.md",
+      "time": "2018-07-30",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180731 How to be the lazy sysadmin.md",
+      "time": "2018-08-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180802 Design thinking as a way of life.md",
+      "time": "2018-08-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180802 How blockchain will influence open source.md",
+      "time": "2018-08-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180807 Becoming a successful programmer in an underrepresented community.md",
+      "time": "2018-08-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180807 Building more trustful teams in four steps.md",
+      "time": "2018-08-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171229 Important Papers- Codd and the Relational Model.md",
+      "time": "2018-10-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180808 3 tips for moving your team to a microservices architecture.md",
+      "time": "2018-08-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180809 How do tools affect culture.md",
+      "time": "2018-08-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180620 3 pitfalls everyone should avoid with hybrid multi-cloud, part 2.md",
+      "time": "2018-08-12",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180717 Tips for Success with Open Source Certification.md",
+      "time": "2018-07-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180816 Debian Turns 25- Here are Some Interesting Facts About Debian Linux.md",
+      "time": "2018-08-17",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180104 How Creative Commons benefits artists and big business.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180817 OERu makes a college education affordable.md",
+      "time": "2018-08-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171114 Why pair writing helps improve documentation.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20140412 My Lisp Experiences and the Development of GNU Emacs.md",
+      "time": "2018-09-28",
+      "user": "zhousiyu325"
+    },
+    {
+      "file": "sources/talk/20171115 Why and How to Set an Open Source Strategy.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180826 How to Install and Use FreeDOS on VirtualBox.md",
+      "time": "2018-08-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180511 Looking at the Lispy side of Perl.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180904 How blockchain can complement open source.md",
+      "time": "2018-09-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180527 Whatever Happened to the Semantic Web.md",
+      "time": "2018-10-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180906 DevOps- The consequences of blame.md",
+      "time": "2018-09-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180724 Why moving all your workloads to the cloud is a bad idea.md",
+      "time": "2018-09-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181009 4 best practices for giving open source code feedback.md",
+      "time": "2018-10-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171128 The politics of the Linux desktop.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180917 How gaming turned me into a coder.md",
+      "time": "2018-09-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180919 5 ways DevSecOps changes security.md",
+      "time": "2018-09-21",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180112 in which the cost of structured data is reduced.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181009 GCC- Optimizing Linux, the Internet, and Everything.md",
+      "time": "2018-10-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180920 Building a Secure Ecosystem for Node.js.md",
+      "time": "2018-09-21",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181010 Talk over text- Conversational interface design and usability.md",
+      "time": "2018-10-12",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181011 How to level up your organization-s security expertise.md",
+      "time": "2018-10-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181018 Think global- How to overcome cultural communication challenges.md",
+      "time": "2018-10-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171107 How to Monetize an Open Source Project.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180925 Troubleshooting Node.js Issues with llnode.md",
+      "time": "2018-10-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171116 Why is collaboration so difficult.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181004 Interview With Peter Ganten, CEO of Univention GmbH.md",
+      "time": "2018-10-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181017 We already have nice things, and other reasons not to write in-house ops tools.md",
+      "time": "2018-10-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20171129 Inside AGL Familiar Open Source Components Ease Learning Curve.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20171221 Changing how we use Slack solved our transparency and silo problems.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20171222 18 Cyber-Security Trends Organizations Need to Brace for in 2018.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180104 How allowing myself to be vulnerable made me a better leader.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180111 The open organization and inner sourcing movements can share knowledge.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180131 How to write a really great resume that actually gets you hired.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180209 A review of Virtual Labs virtualization solutions for MOOCs - WebLog Pro Olivier Berger.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180223 Plasma Mobile Could Give Life to a Mobile Linux Experience.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180328 What NASA Has Been Doing About Open Science.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180403 3 pitfalls everyone should avoid with hybrid multicloud.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180620 Anatomy of a perfect pull request.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180625 8 reasons to use the Xfce Linux desktop environment.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180629 Reflecting on the GPLv3 license for its 11th anniversary.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180701 How to migrate to the world of Linux from Windows.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180705 5 Reasons Open Source Certification Matters More Than Ever.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180706 Robolinux Lets You Easily Run Linux and Windows Without Dual Booting.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180711 Becoming a senior developer 9 experiences you ll encounter.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180711 Open hardware meets open science in a multi-microphone hearing aid project.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180716 Confessions of a recovering Perl hacker.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180720 A brief history of text-based games and open source.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180722 Dawn of the Microcomputer- The Altair 8800.md",
+      "time": "2018-10-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180818 What Did Ada Lovelace-s Program Actually Do.md",
+      "time": "2018-10-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180820 Keeping patient data safe with open source tools.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180831 3 innovative open source projects for the new school year.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180916 The Rise and Demise of RSS.md",
+      "time": "2018-10-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20180930 A Short History of Chaosnet.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181018 The case for open source classifiers in AI algorithms.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181019 To BeOS or not to BeOS, that is the Haiku.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181023 What MMORPGs can teach us about leveling up a heroic developer team.md",
+      "time": "2018-10-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181024 5 tips for facilitators of agile meetings.md",
+      "time": "2018-10-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181024 Why it matters that Microsoft released old versions of MS-DOS as open source.md",
+      "time": "2018-10-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181031 3 scary sysadmin stories.md",
+      "time": "2018-11-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181031 How open source hardware increases security.md",
+      "time": "2018-11-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181107 5 signs you are doing continuous testing wrong - Opensource.com.md",
+      "time": "2018-11-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181107 How open source in education creates new developers.md",
+      "time": "2018-11-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181112 A Free Guide for Setting Your Open Source Strategy.md",
+      "time": "2018-11-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181112 The Source History of Cat.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181113 Have you seen these personalities in open source.md",
+      "time": "2018-11-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181114 Analyzing the DNA of DevOps.md",
+      "time": "2018-11-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20181114 Is your startup built on open source- 9 tips for getting started.md",
+      "time": "2018-11-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20091104 Linux-Unix App For Prevention Of RSI (Repetitive Strain Injury).md",
+      "time": "2018-01-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171111 A CEOs Guide to Emacs.md",
+      "time": "2018-09-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20140510 Managing Digital Files (e.g., Photographs) in Files and Folders.md",
+      "time": "2018-03-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180902 Learning BASIC Like It-s 1983.md",
+      "time": "2018-10-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171012 7 Best eBook Readers for Linux.md",
+      "time": "2018-10-27",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20160922 Annoying Experiences Every Linux Gamer Never Wanted.md",
+      "time": "2017-12-09",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20161106 Myths about -dev-urandom.md",
+      "time": "2018-02-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180928 Quiet log noise with Python and machine learning.md",
+      "time": "2018-11-24",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20170710 iWant - The Decentralized Peer To Peer File Sharing Commandline Application.md",
+      "time": "2018-07-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171130 Excellent Business Software Alternatives For Linux.md",
+      "time": "2018-10-07",
+      "user": "lctt9972"
+    },
+    {
+      "file": "sources/tech/20180130 Trying Other Go Versions.md",
+      "time": "2018-10-11",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20111221 30 Best Sources For Linux - -BSD - Unix Documentation On the Web.md",
+      "time": "2018-10-08",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180829 4 open source monitoring tools.md",
+      "time": "2018-11-14",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20180612 Systemd Services- Reacting to Change.md",
+      "time": "2018-11-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180518 How to Manage Fonts in Linux.md",
+      "time": "2018-09-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180619 Systemd Services- Monitoring Files and Directories.md",
+      "time": "2018-11-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20170928 How to create a free baby monitoring system with Gonimo.md",
+      "time": "2018-01-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180522 How to Enable Click to Minimize On Ubuntu.md",
+      "time": "2018-10-07",
+      "user": "lctt9972"
+    },
+    {
+      "file": "sources/tech/20171006 7 deadly sins of documentation.md",
+      "time": "2018-01-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171006 Create a Clean-Code App with Kotlin Coroutines and Android Architecture Components.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20171010 In Device We Trust Measure Twice Compute Once with Xen Linux TPM 2.0 and TXT.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20171018 How to create an e-book chapter template in LibreOffice Writer.md",
+      "time": "2018-01-07",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171005 10 Games You Can Play on Linux with Wine.md",
+      "time": "2018-10-27",
+      "user": "付峥"
+    },
+    {
+      "file": "sources/tech/20180611 12 fiction books for Linux and open source types.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20171027 Share And Upload Files To Compatible Hosting Sites Automatically.md",
+      "time": "2018-01-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171030 5 open source alternatives to Mint and Quicken for personal finance.md",
+      "time": "2018-01-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171216 Sysadmin 101- Troubleshooting.md",
+      "time": "2018-11-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171113 IT disaster recovery- Sysadmins vs. natural disasters - HPE.md",
+      "time": "2017-12-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171114 Finding Files with mlocate- Part 2.md",
+      "time": "2017-12-29",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171116 Unleash Your Creativity – Linux Programs for Drawing and Image Editing.md",
+      "time": "2017-12-03",
+      "user": "qhwdw"
+    },
+    {
+      "file": "sources/tech/20171117 5 open source fonts ideal for programmers.md",
+      "time": "2017-12-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171121 Finding Files with mlocate- Part 3.md",
+      "time": "2018-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20181112 Behind the scenes with Linux containers.md",
+      "time": "2018-11-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20170410 Writing a Time Series Database from Scratch.md",
+      "time": "2018-10-23",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20170523 Best Websites to Download Linux Games.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180327 Protecting Code Integrity with PGP - Part 7- Protecting Online Accounts.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20171129 Interactive Workflows for Cpp with Jupyter.md",
+      "time": "2017-12-03",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20171129 TLDR pages Simplified Alternative To Linux Man Pages.md",
+      "time": "2017-12-09",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20171130 Tap the power of community with organized chaos.md",
+      "time": "2017-12-27",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171201 Linux Distros That Serve Scientific and Medical Communities.md",
+      "time": "2018-04-21",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20181029 Create animated, scalable vector graphic images with MacSVG.md",
+      "time": "2018-11-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180531 How to Build an Amazon Echo with Raspberry Pi.md",
+      "time": "2018-09-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20171203 Top 20 GNOME Extensions You Should Be Using Right Now.md",
+      "time": "2017-12-09",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180925 9 Easiest Ways To Find Out Process ID (PID) In Linux.md",
+      "time": "2018-10-28",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20181029 DF-SHOW - A Terminal File Manager Based On An Old DOS Application.md",
+      "time": "2018-10-30",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171206 Getting started with Turtl, an open source alternative to Evernote.md",
+      "time": "2017-12-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181101 Getting started with OKD on your Linux desktop.md",
+      "time": "2018-11-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171208 GeckoLinux Brings Flexibility and Choice to openSUSE.md",
+      "time": "2018-01-07",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171212 Toplip – A Very Strong File Encryption And Decryption CLI Utility.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20171215 Top 5 Linux Music Players.md",
+      "time": "2017-12-22",
+      "user": "Alex Chen"
+    },
+    {
+      "file": "sources/tech/20181025 How to write your favorite R functions in Python.md",
+      "time": "2018-10-30",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171222 Why the diversity and inclusion conversation must include people with disabilities.md",
+      "time": "2017-12-27",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171223 My personal Email setup - Notmuch, mbsync, postfix and dovecot.md",
+      "time": "2017-12-27",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20171224 My first Rust macro.md",
+      "time": "2018-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20171226 Top 10 Microsoft Visio Alternatives for Linux.md",
+      "time": "2017-12-30",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180101 27 open solutions to everything in education.md",
+      "time": "2018-01-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181123 How to Build a Netboot Server, Part 1.md",
+      "time": "2018-11-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180821 How I recorded user behaviour on my competitor-s websites.md",
+      "time": "2018-08-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181022 Improve login security with challenge-response authentication.md",
+      "time": "2018-10-23",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181030 Podman- A more secure way to run containers.md",
+      "time": "2018-10-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180108 5 arcade-style games in your Linux repository.md",
+      "time": "2018-01-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180108 Debbugs Versioning- Merging.md",
+      "time": "2018-01-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180108 SuperTux- A Linux Take on Super Mario Game.md",
+      "time": "2018-01-09",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180108 You GNOME it- Windows and Apple devs get a compelling reason to turn to Linux.md",
+      "time": "2018-02-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180109 Profiler adventures resolving symbol addresses is hard.md",
+      "time": "2018-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20181023 How to Check HP iLO Firmware Version from Linux Command Line.md",
+      "time": "2018-10-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181031 Working with data streams on the Linux command line.md",
+      "time": "2018-11-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180112 8 KDE Plasma Tips and Tricks to Improve Your Productivity.md",
+      "time": "2018-01-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180114 Playing Quake 4 on Linux in 2018.md",
+      "time": "2018-01-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180116 How To Create A Bootable Zorin OS USB Drive.md",
+      "time": "2018-01-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180118 Rediscovering make- the power behind rules.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180119 Two great uses for the cp command Bash shortcuts.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180122 Ick- a continuous integration system.md",
+      "time": "2018-02-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180126 An introduction to the Web Simple Perl module a minimalist web framework.md",
+      "time": "2018-02-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180129 CopperheadOS Security features installing apps and more.md",
+      "time": "2018-02-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20181105 5 Easy Tips for Linux Web Browser Security.md",
+      "time": "2018-11-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180129 WebSphere MQ programming in Python with Zato.md",
+      "time": "2018-01-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180129 What Happens When You Want to Create a Special Fille with All Special Characters in Linux.md",
+      "time": "2018-02-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180130 An introduction to the DomTerm terminal emulator for Linux.md",
+      "time": "2018-02-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180130 Create and manage MacOS LaunchAgents using Go.md",
+      "time": "2018-02-02",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180130 Graphics and music tools for game development.md",
+      "time": "2018-02-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180130 Mitigating known security risks in open source libraries.md",
+      "time": "2018-02-02",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180130 Refreshing old computers with Linux.md",
+      "time": "2018-02-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180130 tmux - A Powerful Terminal Multiplexer For Heavy Command-Line Linux User.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180131 How to test Webhooks when youre developing locally.md",
+      "time": "2018-02-02",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20181119 7 command-line tools for writers - Opensource.com.md",
+      "time": "2018-11-21",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180131 Migrating the debichem group subversion repository to Git.md",
+      "time": "2018-05-25",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20181112 A Free, Secure And Cross-platform Password Manager.md",
+      "time": "2018-11-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180823 Getting started with Sensu monitoring.md",
+      "time": "2018-08-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180201 I Built This - Now What How to deploy a React App on a DigitalOcean Droplet.md",
+      "time": "2018-02-02",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180205 Writing eBPF tracing tools in Rust.md",
+      "time": "2018-10-11",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20180202 CompositeAcceleration.md",
+      "time": "2018-02-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180202 Tips for success when getting started with Ansible.md",
+      "time": "2018-02-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180205 Getting Started with the openbox windows manager in Fedora.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180205 Rancher - Container Management Application.md",
+      "time": "2018-02-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180206 Power(Shell) to the people.md",
+      "time": "2018-02-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180207 23 open source audio-visual production tools.md",
+      "time": "2018-02-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180208 How to start writing macros in LibreOffice Basic.md",
+      "time": "2018-02-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181114 How to use systemd-nspawn for Linux system recovery.md",
+      "time": "2018-11-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180209 How to use Twine and SugarCube to create interactive adventure games.md",
+      "time": "2018-02-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180211 Latching Mutations with GitOps.md",
+      "time": "2018-04-06",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20181017 Automating upstream releases with release-bot.md",
+      "time": "2018-10-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181107 Top 30 OpenStack Interview Questions and Answers.md",
+      "time": "2018-11-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181109 Must-Have Tools for Writers on the Linux Platform.md",
+      "time": "2018-11-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181113 An introduction to Udev- The Linux subsystem for managing device events.md",
+      "time": "2018-11-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180225 What I learnt from building 3 high traffic web applications on an embedded key value store.md",
+      "time": "2018-04-06",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180226 -Getting to Done- on the Linux command line.md",
+      "time": "2018-03-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180824 Add free books to your eReader- Formatting tips.md",
+      "time": "2018-08-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180302 How to manage your workstation configuration with Ansible.md",
+      "time": "2018-03-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180129 The 5 Best Linux Distributions for Development.md",
+      "time": "2018-10-25",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180306 Exploring free and open web fonts.md",
+      "time": "2018-03-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180307 3 open source tools for scientific publishing.md",
+      "time": "2018-03-12",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180307 Protecting Code Integrity with PGP - Part 4- Moving Your Master Key to Offline Storage.md",
+      "time": "2018-03-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180307 What Is sosreport- How To Create sosreport.md",
+      "time": "2018-03-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180309 A Comparison of Three Linux -App Stores.md",
+      "time": "2018-03-12",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180312 ddgr - A Command Line Tool To Search DuckDuckGo From The Terminal.md",
+      "time": "2018-03-29",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180314 5 open source card and board games for Linux.md",
+      "time": "2018-03-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180314 Protecting Code Integrity with PGP - Part 5- Moving Subkeys to a Hardware Device.md",
+      "time": "2018-03-21",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180321 Protecting Code Integrity with PGP - Part 6- Using PGP with Git.md",
+      "time": "2018-03-22",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180911 Know Your Storage- Block, File - Object.md",
+      "time": "2018-10-15",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/tech/20180324 Memories of writing a parser for man pages.md",
+      "time": "2018-04-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180326 How to create an open source stack using EFK.md",
+      "time": "2018-03-29",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180326 Manage your workstation with Ansible- Automating configuration.md",
+      "time": "2018-03-29",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181115 11 Things To Do After Installing elementary OS 5 Juno.md",
+      "time": "2018-11-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180327 Anna A KVS for any scale.md",
+      "time": "2018-04-06",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180330 Go on very small hardware Part 1.md",
+      "time": "2018-04-21",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180403 Open Source Accounting Program GnuCash 3.0 Released With a New CSV Importer Tool Rewritten in C plus plus.md",
+      "time": "2018-04-06",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180404 Bring some JavaScript to your Java enterprise with Vert.x.md",
+      "time": "2018-05-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180406 MX Linux- A Mid-Weight Distro Focused on Simplicity.md",
+      "time": "2018-04-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180407 12 Best GTK Themes for Ubuntu and other Linux Distributions.md",
+      "time": "2018-04-12",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180411 5 Best Feed Reader Apps for Linux.md",
+      "time": "2018-04-17",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180411 How To Setup Static File Server Instantly.md",
+      "time": "2018-04-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180411 Replicate your custom Linux settings with DistroTweaks.md",
+      "time": "2018-04-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180412 Getting started with Jenkins Pipelines.md",
+      "time": "2018-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180413 Redcore Linux Makes Gentoo Easy.md",
+      "time": "2018-04-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180414 Go on very small hardware Part 2.md",
+      "time": "2018-04-21",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180416 Cgo and Python.md",
+      "time": "2018-04-21",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180416 How To Resize Active-Primary root Partition Using GParted Utility.md",
+      "time": "2018-04-17",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180419 Migrating to Linux- Network and System Settings.md",
+      "time": "2018-04-23",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180419 Writing Advanced Web Applications with Go.md",
+      "time": "2018-04-21",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180420 A handy way to add free books to your eReader.md",
+      "time": "2018-04-23",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180420 How To Remove Password From A PDF File in Linux.md",
+      "time": "2018-04-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180422 Command Line Tricks For Data Scientists - kade killary.md",
+      "time": "2018-06-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180423 Breach detection with Linux filesystem forensics - Opensource.com.md",
+      "time": "2018-04-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180423 Managing virtual environments with Vagrant.md",
+      "time": "2018-04-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180730 50 Best Ubuntu Apps You Should Be Using Right Now.md",
+      "time": "2018-08-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180425 An introduction to the GNU Core Utilities - Opensource.com.md",
+      "time": "2018-04-26",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20180723 System Snapshot And Restore Utility For Linux.md",
+      "time": "2018-08-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180428 A Beginners Guide To Flatpak.md",
+      "time": "2018-05-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180429 The Easiest PDO Tutorial (Basics).md",
+      "time": "2018-06-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180430 PCGen- An easy way to generate RPG characters.md",
+      "time": "2018-05-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180503 11 Methods To Find System-Server Uptime In Linux.md",
+      "time": "2018-05-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180503 How the four components of a distributed tracing system work together.md",
+      "time": "2018-05-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180509 4MLinux Revives Your Older Computer [Review].md",
+      "time": "2018-05-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180511 MidnightBSD Could Be Your Gateway to FreeBSD.md",
+      "time": "2018-05-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180514 MapTool- A robust, flexible virtual tabletop for RPGs.md",
+      "time": "2018-05-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180515 Termux turns Android into a Linux development environment.md",
+      "time": "2018-05-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180518 What-s a hero without a villain- How to add one to your Python game.md",
+      "time": "2018-05-21",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180522 Advanced use of the less text file viewer in Linux.md",
+      "time": "2018-05-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180920 Distributed tracing in a microservices world.md",
+      "time": "2018-09-27",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180329 Python ChatOps libraries- Opsdroid and Errbot.md",
+      "time": "2018-10-07",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20180524 TrueOS- A Simple BSD Distribution for the Desktop Users.md",
+      "time": "2018-06-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180525 How to Set Different Wallpaper for Each Monitor in Linux.md",
+      "time": "2018-05-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180529 How the Go runtime implements maps efficiently.md",
+      "time": "2018-07-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180529 Manage your workstation with Ansible- Configure desktop settings.md",
+      "time": "2018-05-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180530 Introduction to the Pony programming language.md",
+      "time": "2018-05-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180914 A day in the life of a log message.md",
+      "time": "2018-09-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180531 Qalculate- - The Best Calculator Application in The Entire Universe.md",
+      "time": "2018-06-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180601 3 open source music players for Linux.md",
+      "time": "2018-06-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180601 Get Started with Snap Packages in Linux.md",
+      "time": "2018-06-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180604 4 Firefox extensions worth checking out.md",
+      "time": "2018-06-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180604 BootISO - A Simple Bash Script To Securely Create A Bootable USB Device From ISO File.md",
+      "time": "2018-08-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180605 How to use autofs to mount NFS shares.md",
+      "time": "2018-06-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180605 Sound themes in Linux- What every user should know.md",
+      "time": "2018-06-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180606 Working with modules in Fedora 28.md",
+      "time": "2018-06-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180608 How to Install and Use Flatpak on Linux.md",
+      "time": "2018-06-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180608 How to use screen scraping tools to extract data from the web.md",
+      "time": "2018-06-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180609 4 tips for getting an older relative online with Linux.md",
+      "time": "2018-06-11",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180817 AryaLinux- A Distribution and a Platform.md",
+      "time": "2018-08-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180611 3 open source alternatives to Adobe Lightroom.md",
+      "time": "2018-06-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180612 7 open source tools to make literature reviews easy.md",
+      "time": "2018-06-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180612 Using Ledger for YNAB-like envelope budgeting.md",
+      "time": "2018-07-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180614 Bash tips for everyday at the command line.md",
+      "time": "2018-06-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180914 Freespire Linux- A Great Desktop for the Open Source Purist.md",
+      "time": "2018-09-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180918 Cozy Is A Nice Linux Audiobook Player For DRM-Free Audio Files.md",
+      "time": "2018-09-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180618 Write fast apps with Pronghorn, a Java framework.md",
+      "time": "2018-06-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180621 How to connect to a remote desktop from Linux.md",
+      "time": "2018-06-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180621 Troubleshooting a Buildah script.md",
+      "time": "2018-06-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180622 Use LVM to Upgrade Fedora.md",
+      "time": "2018-06-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180806 Recreate Famous Data Decryption Effect Seen On Sneakers Movie.md",
+      "time": "2018-08-23",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180625 The life cycle of a software bug.md",
+      "time": "2018-06-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180626 How To Search If A Package Is Available On Your Linux Distribution Or Not.md",
+      "time": "2018-06-28",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180629 100 Best Ubuntu Apps.md",
+      "time": "2018-07-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180629 Discover hidden gems in LibreOffice.md",
+      "time": "2018-07-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180629 How To Get Flatpak Apps And Games Built With OpenGL To Work With Proprietary Nvidia Graphics Drivers.md",
+      "time": "2018-07-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180629 Is implementing and managing Linux applications becoming a snap.md",
+      "time": "2018-07-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180629 SoCLI - Easy Way To Search And Browse Stack Overflow From The Terminal.md",
+      "time": "2018-07-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180701 12 Things to do After Installing Linux Mint 19.md",
+      "time": "2018-07-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180702 5 open source alternatives to Skype.md",
+      "time": "2018-07-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180702 Diggs v4 launch an optimism born of necessity.md",
+      "time": "2018-07-05",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20180816 Designing your garden with Edraw Max - FOSS adventures.md",
+      "time": "2018-08-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180703 10 killer tools for the admin in a hurry.md",
+      "time": "2018-07-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180703 AGL Outlines Virtualization Scheme for the Software Defined Vehicle.md",
+      "time": "2018-07-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20180704 BASHing data- Truncated data items.md",
+      "time": "2018-07-05",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180706 Using Ansible to set up a workstation.md",
+      "time": "2018-07-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180708 simple and elegant free podcast player.md",
+      "time": "2018-07-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180709 5 Firefox extensions to protect your privacy.md",
+      "time": "2018-07-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180924 5 ways to play old-school games on a Raspberry Pi.md",
+      "time": "2018-09-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180710 The aftermath of the Gentoo GitHub hack.md",
+      "time": "2018-07-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180710 Users, Groups, and Other Linux Beasts.md",
+      "time": "2018-07-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180711 5 open source racing and flying games for Linux.md",
+      "time": "2018-07-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180923 Gunpoint is a Delight for Stealth Game Fans.md",
+      "time": "2018-09-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180719 Building tiny container images.md",
+      "time": "2018-08-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180919 Streama - Setup Your Own Streaming Media Server In Minutes.md",
+      "time": "2018-09-20",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180920 Record Screen in Ubuntu Linux With Kazam -Beginner-s Guide.md",
+      "time": "2018-09-21",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181015 An introduction to Ansible Operators in Kubernetes.md",
+      "time": "2018-10-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180724 How To Mount Google Drive Locally As Virtual File System In Linux.md",
+      "time": "2018-07-26",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180725 Best Online Linux Terminals and Online Bash Editors.md",
+      "time": "2018-07-30",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180828 Linux for Beginners- Moving Things Around.md",
+      "time": "2018-09-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180816 Garbage collection in Perl 6.md",
+      "time": "2018-08-17",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180727 4 Ways to Customize Xfce and Give it a Modern Look.md",
+      "time": "2018-07-30",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180727 Download Subtitles Via Right Click From File Manager Or Command Line With OpenSubtitlesDownload.py.md",
+      "time": "2018-08-02",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180829 Containers in Perl 6.md",
+      "time": "2018-08-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180731 What-s in a container image- Meeting the legal challenges.md",
+      "time": "2018-08-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180801 Getting started with Standard Notes for encrypted note-taking.md",
+      "time": "2018-08-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180801 Hiri is a Linux Email Client Exclusively Created for Microsoft Exchange.md",
+      "time": "2018-08-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180801 Migrating Perl 5 code to Perl 6.md",
+      "time": "2018-08-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180810 Strawberry- Quality sound, open source music player.md",
+      "time": "2018-08-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180802 Walkthrough On How To Use GNOME Boxes.md",
+      "time": "2018-08-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180803 How to use Fedora Server to create a router - gateway.md",
+      "time": "2018-08-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20180830 A quick guide to DNF for yum users.md",
+      "time": "2018-09-03",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180806 How ProPublica Illinois uses GNU Make to load 1.4GB of data every day.md",
+      "time": "2018-08-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181003 Oomox - Customize And Create Your Own GTK2, GTK3 Themes.md",
+      "time": "2018-10-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180822 9 flowchart and diagramming tools for Linux.md",
+      "time": "2018-08-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20180806 Use Gstreamer and Python to rip CDs.md",
+      "time": "2018-08-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180929 Use Cozy to Play Audiobooks in Linux.md",
+      "time": "2018-09-30",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180514 Tuptime - A Tool To Report The Historical Uptime Of Linux System.md",
+      "time": "2018-08-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180809 Getting started with Postfix, an open source mail transfer agent.md",
+      "time": "2018-08-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180830 How to scale your website across all mobile devices.md",
+      "time": "2018-09-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180809 Perform robust unit tests with PyHamcrest.md",
+      "time": "2018-08-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180802 Top 5 CAD Software Available for Linux in 2018.md",
+      "time": "2018-08-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180810 Use Plank On Multiple Monitors Without Creating Multiple Docks With autoplank.md",
+      "time": "2018-08-14",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180925 Taking the Audiophile Linux distro for a spin.md",
+      "time": "2018-09-26",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180828 An Introduction to Quantum Computing with Open Source Cirq Framework.md",
+      "time": "2018-08-29",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180814 5 open source strategy and simulation games for Linux.md",
+      "time": "2018-08-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181018 4 open source alternatives to Microsoft Access.md",
+      "time": "2018-10-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180716 Users, Groups and Other Linux Beasts- Part 2.md",
+      "time": "2018-07-24",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180814 HTTP request routing and validation with gorilla-mux.md",
+      "time": "2018-08-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180815 Happy birthday, GNOME- 6 reasons to love this Linux desktop.md",
+      "time": "2018-08-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180817 Cloudgizer- An introduction to a new open source web development tool.md",
+      "time": "2018-08-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20140929 A Word from The Beegoist - Richard Kenneth Eng - Medium.md",
+      "time": "2018-08-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180828 Orion Is A QML - C-- Twitch Desktop Client With VODs And Chat Support.md",
+      "time": "2018-08-31",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180906 What a shell dotfile can do for you.md",
+      "time": "2018-09-07",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180912 How subroutine signatures work in Perl 6.md",
+      "time": "2018-09-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20180912 How to turn on an LED with Fedora IoT.md",
+      "time": "2018-09-13",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181005 Dbxfs - Mount Dropbox Folder Locally As Virtual File System In Linux.md",
+      "time": "2018-10-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181005 How to use Kolibri to access educational material offline.md",
+      "time": "2018-10-08",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181011 The First Beta of Haiku is Released After 16 Years of Development.md",
+      "time": "2018-10-12",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181016 piwheels- Speedy Python package installation for the Raspberry Pi.md",
+      "time": "2018-10-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20181018 TimelineJS- An interactive, JavaScript timeline building tool.md",
+      "time": "2018-10-19",
+      "user": "darksun"
+    }
+  ]
+}
