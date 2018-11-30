@@ -1,3 +1,5 @@
+[#]: translator (MZqk)
+
 The politics of the Linux desktop
 ============================================================
 
