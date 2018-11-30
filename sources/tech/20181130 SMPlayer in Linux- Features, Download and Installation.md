@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: subject: (SMPlayer in Linux: Features, Download and Installation)
 [#]: via: (https://itsfoss.com/smplayer/)
-[#]: author: ([Aquil Roshan;Abhishek Prakash](https://itsfoss.com/author/aquil/))
+[#]: author: (Aquil Roshan;Abhishek Prakash https://itsfoss.com/author/aquil/)
 [#]: url: ( )
 
 SMPlayer in Linux: Features, Download and Installation
