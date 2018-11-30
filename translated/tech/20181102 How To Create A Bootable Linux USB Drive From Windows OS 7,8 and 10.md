@@ -1,10 +1,11 @@
-如何从 Windows OS 7、8 和 10 创建可启动的 Linux USB 盘？
+如何从 Windows 7、8 和 10 创建可启动的 Linux USB 盘？
 ======
+
 如果你想了解 Linux，首先要做的是在你的系统上安装 Linux 系统。
 
 它可以通过两种方式实现，使用 Virtualbox、VMWare 等虚拟化应用，或者在你的系统上安装 Linux。
 
-如果你倾向从 Windows 系统迁移到 Linux 系统或计划在备用机上安装 Linux 系统，那么你须为此创建可启动的 USB 盘。
+如果你倾向于从 Windows 系统迁移到 Linux 系统或计划在备用机上安装 Linux 系统，那么你须为此创建可启动的 USB 盘。
 
 我们已经写过许多[在 Linux 上创建可启动 USB 盘][1] 的文章，如 [BootISO][2]、[Etcher][3] 和 [dd 命令][4]，但我们从来没有机会写一篇文章关于在 Windows 中创建 Linux 可启动 USB 盘的文章。不管怎样，我们今天有机会做这件事了。
 
@@ -22,29 +23,32 @@
 
 有许多程序可供使用，但我的首选是 [Universal USB Installer][6]，它使用起来非常简单。只需访问 Universal USB Installer 页面并下载该程序即可。
 
-### 步骤3：如何使用 Universal USB Installer 创建可启动的 Ubuntu ISO
+### 步骤3：创建可启动的 Ubuntu ISO
 
 这个程序在使用上不复杂。首先连接 USB 盘，然后点击下载的 Universal USB Installer。启动后，你可以看到类似于我们的界面。
+
 ![][8]
 
-  * **`步骤 1：`** 选择Ubuntu 系统。
-  * **`步骤 2：`** 选择 Ubuntu ISO 下载位置。
-  * **`步骤 3：`** 默认它选择的是 USB 盘，但是要验证一下，接着勾选格式化选项。
-
-
+  * 步骤 1：选择 Ubuntu 系统。
+  * 步骤 2：选择 Ubuntu ISO 下载位置。
+  * 步骤 3：它默认选择的是 USB 盘，但是要验证一下，接着勾选格式化选项。
 
 ![][9]
 
-当你点击 `Create` 按钮时，它会弹出一个带有警告的窗口。不用担心，只需点击 `Yes` 继续进行此操作即可。
+当你点击 “Create” 按钮时，它会弹出一个带有警告的窗口。不用担心，只需点击 “Yes” 继续进行此操作即可。
+
 ![][10]
 
 USB 盘分区正在进行中。
+
 ![][11]
 
-要等待一会儿才能完成。如你您想将它移至后台，你可以点击 `Background` 按钮。
+要等待一会儿才能完成。如你您想将它移至后台，你可以点击 “Background” 按钮。
+
 ![][12]
 
 好了，完成了。
+
 ![][13]
 
 现在你可以进行[安装 Ubuntu 系统][14]了。但是，它也提供了一个 live 模式，如果你想在安装之前尝试，那么可以使用它。
@@ -56,7 +60,7 @@ via: https://www.2daygeek.com/create-a-bootable-live-usb-drive-from-windows-usin
 作者：[Prakash Subramanian][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
