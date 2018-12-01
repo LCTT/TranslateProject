@@ -1,3 +1,4 @@
+[#]:translator:(oneforalone)
 A CEO's Guide to Emacs
 ============================================================
 
