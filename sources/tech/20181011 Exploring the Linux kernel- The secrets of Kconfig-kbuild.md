@@ -1,3 +1,5 @@
+Translating by Jamskr
+
 Exploring the Linux kernel: The secrets of Kconfig/kbuild
 ======
 Dive into understanding how the Linux config/build system works.
