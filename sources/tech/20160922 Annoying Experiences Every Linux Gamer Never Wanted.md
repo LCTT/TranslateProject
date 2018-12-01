@@ -1,3 +1,5 @@
+xxx is translating
+
 Annoying Experiences Every Linux Gamer Never Wanted!
 ============================================================
 
