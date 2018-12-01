@@ -1,3 +1,4 @@
+Name1e5s translating.
 The Source History of Cat
 ======
 I once had a debate with members of my extended family about whether a computer science degree is a degree worth pursuing. I was in college at the time and trying to decide whether I should major in computer science. My aunt and a cousin of mine believed that I shouldn’t. They conceded that knowing how to program is of course a useful and lucrative thing, but they argued that the field of computer science advances so quickly that everything I learned would almost immediately be outdated. Better to pick up programming on the side and instead major in a field like economics or physics where the basic principles would be applicable throughout my lifetime.
