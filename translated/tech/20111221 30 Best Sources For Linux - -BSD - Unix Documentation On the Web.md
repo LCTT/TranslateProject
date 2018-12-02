@@ -141,7 +141,6 @@ OpenBSD 是另一个类Unix 计算机操作系统，它是基于伯克利软件�
 ## #12: Slackware Book Project
 
 ![Slackware Linux 手册和文档 ][34]
-Slackware Linux was my first distro. It was one of the earliest distro based on the Linux kernel and is the oldest currently being maintained. The distro is targeted towards power users with strong focus on stability. Slackware is one of few the most "Unix-like" Linux distribution. The official slackware book is designed to get you started with the Slackware Linux operating system. It's not meant to cover every single aspect of the distribution, but rather to show what it is capable of and give you a basic working knowledge of the system. The book is divided into various topics such as Installation, Network & System Configuration, System administration, Package management, and much more.
 
 Slackware Linux 是我的第一个 Linux 发行版。Slackware 是基于 Linux 内核的最早的发行版之一，也是当前正在维护的最古老的 Linux 发行版。 这个发行版面向专注于稳定性的高级用户。 Slackware 也是很少有的的类Unix的 Linux 发行版之一。官方 slackware 手册是为了让用户快速开始了解 Slackware 操作系统的使用方法而设计的。 这不是说它将包含发行版的每一个方面，而是为了说明它的实用性和给使用者一些有关系统的基础工作使用方法。手册分为多个主题，比如说安装、网络和系统配置、系统管理、包管理等。
 
@@ -163,23 +162,23 @@ Linux 文档工程旨在给 Linux 操作系统提供自由开发、高质量文�
 
 ## #14: Linux Home Networking
 
-![Linux Home Networking ][40]
+![Linux Home Networking][40]
 
-Linux home networking is another good resource for learning Linux. This site covers topics needed for Linux software certification exams, such as the RHCE, and many computer training courses. The site is divided into various topics such as networking, samba file server, wirless networking, web-server, and much more.
+Linux Home Networking 是学习 linux 的另一个比较好的资源，这个网站包含了 Linux 软件认证考试的内容比如 RHCE，还有一些计算机培训课程。网站包含了许多主题，比如说网络、Samba 文件服务器、无线网络、web 服务器等。
 
-  1. Linux [home networking][41] available in html and PDF (with small fee) formats.
-  2. Support forums: Yes
+  1. Linux [home networking][41] 可通过 html 格式和 PDF（部分免费）格式查阅.
+  2. 是否支持论坛: 是
 
 
 
 ## #15: Linux Action Show
 
-![Linux Podcast ][42]
+![Linux 播客][42]
 
-Linux Action Show ("LAS") is a podcast about Linux. The show is hosted by Bryan Lunduke, Allan Jude, and Chris Fisher. It covers the latest news in the FOSS world. The show reviews various apps and Linux distros. Sometime an interview with a major personal in the open source world is posted on the show.
+Linux Action Show ("LAS") 是一个关于 Linux 的资源播放平台。这个网站是由 Bryan Lunduke, Allan Jude, 和 Chris Fisher 共同发布的。它包含了 FOSS 的最新消息。网站内容主要是评论一些应用程序和 Linux 发行版。有时候也会发布一些和开源项目著名人物的采访视频。
 
-  1. Linux [action show][43] available in audio/video format.
-  2. Support forums: Yes
+  1. Linux [action show][43] 支持音频和视频格式.
+  2. 是否支持论坛: 是
 
 
 
@@ -187,37 +186,40 @@ Linux Action Show ("LAS") is a podcast about Linux. The show is hosted by Bryan 
 
 Commandlinefu lists various shell commands that you may find interesting and useful. All commands can be commented on, discussed and voted up or down. Ths is an awesome resource for all Unix command line users. Don't forget to checkout all [top voted][44] commands here.
 
-![The best Unix / Linux Commands By Commandlinefu][45]
+Commandlinefu 列出了各个 shell 命令，这些命令可能会让你感到十分有趣和有用。对于所有命令都可以评论、讨论和投票（支持或反对）。对于所有 Unix 命令行用户来说是一个极好的资源。不要忘了查看[最佳命令][44]
 
-  1. [Commandlinefu][46] available in html format.
-  2. Support forums: No
+![Commandlinefu 的最优 Unix / Linux 命令][45]
 
-
-
-## #17: Debian Administration Tips and Resources
-
-This site covers topics, tips, and tutorial only related to Debian GNU/Linux. It contain interesting and useful information related to the System Administration. You can contribute an article, tip, or question here. Don't forget to checkout [top articles][47] posted in the hall of fame section.
-![Debian Linux Adminstration: Tips and Tutorial For Sys Admin][48]
-
-  1. Debian [administration][49] available in html format.
-  2. Support forums: No
+  1. [Commandlinefu][46] 支持 html 格式.
+  2. 是否支持论坛: 否
 
 
 
-## #18: Catonmat - Sed, Awk, Perl Tutorials
+## #17: Debian 管理技巧和资源
 
-![Sed, Awk, Perl Tutorials][50]
+这个网站包含一些只和 Debian GNU/Linux 相关的主题、技巧和教程，特别是关于系统管理的有趣和有用的信息。你可以在上面贡献文章、建议和问题。提交了之后不要忘记查看[最佳文章列表][47里有没有你的文章。
 
-This site run by a fellow blogger Peteris Krumins. The main focus is on command line and Unix programming topics such as sed, perl, awk, and others. Don't forget to check out [introduction to sed][51], sed [one liner][52] explained, the definitive [guide][53] to Bash Command line history, and [awk][54] liner explained.
+![Debian Linux 管理: 系统管理员技巧和教程][48]
 
-  1. [catonmat][55] available in html format.
-  2. Support forums: No
+  1. Debian [系统管理][49] 支持 html 格式.
+  2. 是否支持论坛s: 否
 
 
 
-## #19: Debian GNU/Linux Documentation and Wiki
+## #18: Catonmat - Sed 流编辑器, Awk 文本处理工具, Perl 语言教程
 
-![Debian Linux Tutorials and Wiki][56]
+![Sed 流编辑器, Awk 文本处理工具, Perl 语言教程][50]
+
+这个网站是由博客作者 Peteris Krumins 维护的。主要关注命令行和 Unix 编程主题，比如说 sed 流编辑器、perl 语言、AWK 文本处理工具等。不要忘了查看 [sed 介绍][51]、sed [one liner][52] 的含义解释，还有命令行历史的[权威指南][53]和 [awk][54]的解释。
+
+  1. [catonmat][55] 支持html格式.
+  2. 是否支持论坛: 否
+
+
+
+## #19: Debian GNU/Linux 文档和 WIKI
+
+![Debian Linux 教程和 Wiki][56]
 
 Debian is another Linux based operating system that primarily uses software released under the GNU General Public. Debian is well known for strict adherence to the philosophies of Unix and free software. It is also one of popular and influential Linux distribution. It is also used as a base for many other distributions such as Ubuntu and others. The Debian project provides its users with proper documentation in an easily accessible form. The site is divided into wiki, installation guide, faqs, and support forum.
 
