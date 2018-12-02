@@ -95,7 +95,6 @@ FreeBSD 的手册是由 FreeBSD 文档工程所创建的，介绍 FreeBSD 操作
 ## #8: Bash 常见问题
 
 ![Bash 常见问题: 一些有关 GNU/BASH 常见问题的解决方法][24]
-A wiki designed for new bash users. It has good collections to frequently asked questions on channel #bash on the freenode IRC network. These answers are contributed by the regular members of the channel. Don't forget to check out common mistakes made by Bash programmers, in [BashPitfalls][25] section. The answers given in this FAQ may be slanted toward Bash, or they may be slanted toward the lowest common denominator Bourne shell, depending on who wrote the answer. In most cases, an effort is made to provide both a portable (Bourne) and an efficient (Bash, where appropriate) answer.
 
 这是一个为bash新手设计的一个wiki。在IRC网络的 #bash 频道里有比较常见的问题集合的解决方法，这些解决方法是由频道的常规成员提供。当你遇到问题的时候不要忘了在[BashPitfalls][25]模块检索查找答案。这些常见问题的解决方法可能会倾向于Bash，或者偏向于最低标准的Bourne Shell，这决定于是谁给出的答案。大多数情况会尽力提供方便的（Bourne）和高效的（Bash，在适当情况下）的两类答案。
 
@@ -105,55 +104,60 @@ A wiki designed for new bash users. It has good collections to frequently asked 
 
 ## #9: 如何锻造技术 - Linux 教程
 
-![Howtoforge][27]
-
-Fellow blogger Falko has some great stuff over at How-To Forge. The site provides Linux tutorials about various topic including its famous "The Perfect Server" series. The site is divided into various topics such as web-server, Linux distros, DNS servers, Virtualization, High-availability, Email and anti-spam, FTP servers, programming topics, and much more. The site is also available in German language.
-
-  1. Howtoforge [in html][28] format.
-  2. Support forums: Yes
+![如何锻造技术][27]
 
 
+研究员 Falko 在如何锻造技术文档上有一些非常不错的东西。这个网站提供 Linux 关于各种各样主题的教程，比如说其作为最佳服务器系列，网站将主题分为几类，比如说 web 服务器、linux 发行版、DNS 服务器、虚拟化、高可用性、电子邮件和反垃圾邮件、FTP 服务器、编程主题还有一些其他的内容。这个网站也支持德语。
 
-## #10: OpenBSD FAQ and Documentation
 
-![OpenBSD Documenation][29]
-
-OpenBSD is another Unix-like computer operating system based on Berkeley Software Distribution (BSD). It was forked from NetBSD by project. The OpenBSD is well known for the **quality code, documentation** , uncompromising position on software licensing, with strong focus on security. The documenation is divided into various topics such as - installations, package management, firewall setup, user management, networking, disk / RAID management and much more.
-
-  1. OpenBSD [in html][30] format.
-  2. Support forums: No, but [mail lists][31] are available.
+  1. 如何锻造技术 [html][28] 格式.
+  2. 是否支持论坛: 是
 
 
 
-## #11: Calomel - Open Source Research and Reference
+## #10: OpenBSD 常见问题和文档
 
-This amazing site dedicated to documenting open source software, and programs with special focus on OpenBSD. This is one of the cleanest and easy to to navigate website, with focus on the quality content. The site is divided into various server topic such as DNS, OpeBSD, security, web-server, Samba file server, various tools, and much more.
+![OpenBSD 文档][29]
 
-![Open Source Research and Reference Documentation][32]
+OpenBSD 是另一个类Unix 计算机操作系统，它是基于伯克利软件包的。OpenBSD 是来由 NetBSD 项目分支而来。OpenBSD 因高质量的代码和文档而著名，对软件许可协议有着坚定的立场，并且强烈关注安全问题。OpenBSD 的文档分为多个主题类别，比如说安装、包管理、防火墙设置、用户管理、网络、磁盘和磁盘阵列管理等。
 
-  1. Calomel Org [in html][33] format.
-  2. Support forums: No
+  1. OpenBSD [html][30] 格式.
+  2. 是否支持论坛: 否, 但是可以通过 [邮件列表][31] 来咨询.
+
+
+
+## #11: Calomel -开源研究和参考文档
+
+
+这个极好的网站是专门作为开源软件和那些特别专注于 OpenBSD 的软件的文档来使用的。这是最简洁的引导网站之一，专注于高质量的内容。网站内容分为多个类，比如说 DNS、OpenBSD、安全、web 服务器、Samba 文件服务器、各种工具等。
+
+![开源研究和参考文档][32]
+
+  1. Calomel 官网 [html][33] 格式.
+  2. 是否支持论坛: 否
 
 
 
 ## #12: Slackware Book Project
 
-![Slackware Linux Book and Documentation ][34]
+![Slackware Linux 手册和文档 ][34]
 Slackware Linux was my first distro. It was one of the earliest distro based on the Linux kernel and is the oldest currently being maintained. The distro is targeted towards power users with strong focus on stability. Slackware is one of few the most "Unix-like" Linux distribution. The official slackware book is designed to get you started with the Slackware Linux operating system. It's not meant to cover every single aspect of the distribution, but rather to show what it is capable of and give you a basic working knowledge of the system. The book is divided into various topics such as Installation, Network & System Configuration, System administration, Package management, and much more.
 
-  1. Slackware [Linux books in html][35], pdf, and other format.
-  2. Support forums: Yes
+Slackware Linux 是我的第一个 Linux 发行版。Slackware 是基于 Linux 内核的最早的发行版之一，也是当前正在维护的最古老的 Linux 发行版。 这个发行版面向专注于稳定性的高级用户。 Slackware 也是很少有的的类Unix的 Linux 发行版之一。官方 slackware 手册是为了让用户快速开始了解 Slackware 操作系统的使用方法而设计的。 这不是说它将包含发行版的每一个方面，而是为了说明它的实用性和给使用者一些有关系统的基础工作使用方法。手册分为多个主题，比如说安装、网络和系统配置、系统管理、包管理等。
+
+  1. Slackware [Linux 手册 html][35], pdf, 和 其他 格式.
+  2. 是否支持论坛: 是
 
 
 
-## #13: The Linux Documentation Project (TLDP)
+## #13: Linux 文档工程 (TLDP)
 
-![Linux Learning Site and Documentation ][36]
+![Linux 学习网站和文档][36]
 
-The Linux Documentation Project is working towards developing free, high quality documentation for the Linux operating system. The site is created and maintained by volunteers. The site is divided into subject-specific help, longer and in-depth guide books, and much more. I recommend [this document][37] which is both a tutorial and a reference on shell scripting with Bash. The [single list][38] of HOWTOs is also a good starting point for new users.
+Linux 文档工程旨在给 Linux 操作系统提供自由开发、高质量文档。网站是由志愿者创建和维护的。网站分为具体主题的帮助、由浅入深的指南等。在此我想推荐一个非常好的[文档t[37]，这个文档既是一个教程也是一个 shell 脚本编程的参考文档，对于新用户来说[使用方法列表][38]也是一个不错的开始。
 
-  1. The Linux [documentation project][39] available in multiple formats.
-  2. Support forums: No
+  1. Linux [文档工程][39] 支持多种查阅格式.
+  2. 是否支持论坛: 否
 
 
 
