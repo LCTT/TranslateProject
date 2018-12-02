@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (stevenzdg988 )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (How to use the sudo command to deploy superuser powers on Linux)
