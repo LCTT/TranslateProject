@@ -184,8 +184,6 @@ Linux Action Show ("LAS") 是一个关于 Linux 的资源播放平台。这个�
 
 ## #16: Commandlinefu
 
-Commandlinefu lists various shell commands that you may find interesting and useful. All commands can be commented on, discussed and voted up or down. Ths is an awesome resource for all Unix command line users. Don't forget to checkout all [top voted][44] commands here.
-
 Commandlinefu 列出了各个 shell 命令，这些命令可能会让你感到十分有趣和有用。对于所有命令都可以评论、讨论和投票（支持或反对）。对于所有 Unix 命令行用户来说是一个极好的资源。不要忘了查看[最佳命令][44]
 
 ![Commandlinefu 的最优 Unix / Linux 命令][45]
@@ -242,23 +240,21 @@ Linux Sea 这本书提供了比较通俗易懂但充满技术（从最终用户�
 
 ![免费 Linux / Unix / Php / Javascript / Ubuntu 学习笔记][61]
 
-The oreilly publishing house has posted quite a few titles in wiki format for all. The purpose of this site is to provide content to communities that would like to create, reference, use, modify, update and revise material from O'Reilly or other sources. The site includes books about Ubuntu, Php, Spamassassin, Linux, and much more all for free.
+Oreilly 出版社发布了不少 wiki 格式的文章。这个网站主要是为了给那些喜欢创作、参考、使用、修改、更新和修订 OReilly上面或者其他来源的材料的社区提供资料。这个网站包含关于 Ubuntu、PHP、Spamassassin、Linux 等的免费书籍。
 
-这个网站
-
-  1. Oreilly [commons][62] available in wiki format.
-  2. Support forums: No
+  1. Oreilly [commons][62] 支持 Wiki 格式.
+  2. 是否支持论坛: 否
 
 
 
-## #22: Ubuntu Pocket Guide
+## #22: Ubuntu 袖珍指南
 
-![Ubuntu Book For New Users][63]
+![Ubuntu 新手书籍][63]
 
-This book is written by Keir Thomas. This guide/book is a good read for everyday Ubuntu user. The purpose of this book is to introduce you to the Ubuntu operating system, and the philosophy that underpins it. You can download a pdf version from the official site or order a print version using Amazon.
+这本书的作者是 Keir Thomas。这本指南或者说是书籍对于所有 ubuntu 用户来说都值得一读。这本书旨在向用户介绍 Ubuntu 操作系统和支撑的理念。你可以从官网下载这本书的 PDF 版本，也可以在亚马逊买印刷版。
 
-  1. Ubuntu [pocket guide][64] available in pdf and print formats.
-  2. Support forums: No
+  1. Ubuntu [pocket guide][64] 支持 PDF 和印刷版本.
+  2. 是否支持论坛: 否
 
 
 
@@ -266,109 +262,114 @@ This book is written by Keir Thomas. This guide/book is a good read for everyday
 
 ![GNU/LINUX system administration book][65]
 
-This book covers GNU/LINUX system administration, for popular distributions like RedHat and Debian, as a tutorial for new users and a reference for advanced administrators. It aims to give concise, thorough explanations and practical examples of each aspect of a UNIX system. Anyone who wants a comprehensive text on (what is commercially called) LINUX need look no further-there is little that is not covered here.
 
-  1. Linux: [Rute User's Tutorial and Exposition][66] available in print and html formats.
-  2. Support forums: No
+这本书讲述了 GNU/LINUX 系统管理，主要是对主流的发布版本比如红帽和 Debian 的说明，作为新用户的教程和高级管理员的参考。这本书旨在给出 Unix 系统的每个面的简明彻底的解释和实践性的例子。想要全面了解LINUX的人都不需要再看了 - 这里没有涉及的内容。
+
+  1. Linux: [Rute User's Tutorial and Exposition][66] 支持印刷版和 html 格式.
+  2. 是否支持论坛: 否
 
 
 
-## #24: Advanced Linux Programming
+## #24: 高级 Linux 编程
 
-![Advanced Linux Programming][67]
+![高级 Linux 编程][67]
 
-This book is intended for the programmer already familiar with the C programming language. It take a tutorial approach and teach the most important concepts and power features of the GNU/Linux system in application programs. If you're a developer already experienced with programming for the GNU/Linux system, are experienced with another UNIX-like system and are interested in developing GNU/Linux software, or want to make the transition for a non-UNIX environment and are already familiar with the general principles of writing good software, this book is for you. In addition, you will find that this book is equally applicable to C and C++ programming.
+这本书是写给那些已经熟悉了C语言编程的程序员的。这本书采取一种教程式的方式来讲述大多数在 GNU/Linux 系统应用编程中重要的概念和功能特性。如果你是一个已经对 GNU/Linux 系统编程有一定经验的开发者，或者是对其他类Unix系统编程有一定经验的开发者，或者对 GNU/Linux 软件开发有兴趣，或者想要从非Unix系统环境转换到 Unix 平台并且已经熟悉了优秀软件的开发原则，那你很适合读这本书。另外，你会发现这本书同样适合于 C 和 C++编程。
 
-  1. Advanced [Linux programming][68] available in print and pdf formats.
-  2. Support forums: No
+  1. [高级 Linux 编程][68] 支持印刷版和 PDF 格式.
+  2. 是否支持论坛: 否
 
 
 
 ## #25: LPI 101 Course Notes
 
-![Linux Professional Institute Certification Books][69]
+![Linux 国际专业协会认证书籍][69]
 
-LPIC-1/2/3 levels are certification for Linux administrators. This site provides training manuals for LPI 101 and 102 exams. These are licenced under the GNU Free Documentation Licence (FDL). This course material is based on the objectives for the Linux Professionals Institutea€™s LPI 101 and 102 examination. The course is intended to provide you with the skills required for operating and administering Linux systems.
-
-  1. Download LPI [training manuals][70] in pdf format.
-  2. Support forums: No
+LPIC 1、2、3级是用于 Linux 系统管理员认证的。这个网站提供了 LPI 101 和 LPI 102 的测试训练。这些是根据 GNU自有文档协议 发布的。这些课程材料基于Linux 国际专业协会的 LPI 101 和 102 考试的目的。这个课程是为了提供给你一些必备的 Linux 系统的操作和管理的技能。
 
 
+  1. 下载 LPI [训练手册][70] 支持 PDF 格式.
+  2. 是否支持论坛: 否
 
-## #26: FOSS Manuals
 
-FLOSS Manuals is a collection of manuals about free and open source software together with the tools used to create them and the community that uses those tools. They include authors, editors, artists, software developers, activists, and many others. There are manuals that explain how to install and use a range of free and open source softwares, about how to do things (like design or stay safe online) with open source software, and manuals about free culture services that use or support free software and formats. You will find manuals about software such as VLC, [Linux video editing][71], Linux, OLPC / SUGAR, GRAPHICS, and much more.
+
+## #26: FOSS 手册
+
+FLOSS手册是一系列关于免费和开源软件以及用于创建它们的工具和使用这些工具的社区的手册。社区的成员包含作者、编辑、设计师、软件开发者、积极分子等。这些手册中说明了怎样安装使用一些免费开源软件，如何操作（比如设计和维持在线安全）开源软件，这其中也包含如何使用或支持免费软件和格式的免费文化服务的手册。你也会发现关于一些像 VLC, [Linux video editing][71], Linux, OLPC / SUGAR, GRAPHICS 等软件的手册。
 
 ![FLOSS Manuals is a collection of manuals about free and open source software][72]
 
-  1. You can browse [FOSS manuals][73] in wiki format.
-  2. Support forums: No
+  1. 你可以浏览 [FOSS 手册][73] 支持 Wiki 格式.
+  2. 是否支持论坛: 否
 
 
 
-## #27: Linux Starter Pack
+## #27: Linux 入门包
 
-![The Linux Starter Pack][74]
+![Linux 入门包][74]
 
-New to the wonderful world of Linux? Looking for an easy way to get started? You can download 130-page guide and get to grips with the OS. This will show you how to install Linux onto your PC, navigate around the desktop, master the most popular Linux programs and fix any problems that may arise.
+刚接触 Linux 这个美好世界？想找一个简单的入门方式？你可以下载一个130页的指南来掌握系统。这个指南会向你展示如何在你的个人电脑上安装 Linux，如何浏览桌面，掌握最主流行的 Linux 程序和修复可能出现的问题的方法。
 
-  1. Download [Linux starter][75] pack in pdf format.
-  2. Support forums: No
+  1. 下载 [Linux 入门包][75]  支持 PDF 格式.
+  2. 是否支持论坛: f否
 
 
 
 ## #28: Linux.com - The Source of Linux Info
 
-Linux.com is a product of the Linux Foundation. The side provides news, guides, tutorials and other information about Linux by harnessing the power of Linux users worldwide to inform, collaborate and connect on all matters Linux.
+Linux.com 是Linux基金会的一个产品。这个网站上提供一些新闻、指南、教程和一些关于Linux的其他信息。利用全球 Linux 用户的力量来通知、写作、连接 Linux 的事务。
 
-  1. Visit [Linux.com][76] online.
-  2. Support forums: Yes
+  1. 在线访问 [Linux.com][76] .
+  2. 是否支持论坛: 是
 
 
 
 ## #29: LWN
 
-LWN is a site with an emphasis on free software and software for Linux and other Unix-like operating systems. It consists of a weekly issue, separate stories which are published most days, and threaded discussion attached to every story. The site provide comprehensive coverage of development, legal, commercial, and security issues related to Linux and FOSS.
+LWN 是一个注重Linux和其他类Unix操作系统免费软件的网站。这个网站有周刊、每日小故事碎片和对小故事线索的讨论。该网站提供有关Linux和FOSS相关的开发，法律，商业和安全问题的全面报道。
 
-  1. Visit [lwn.net][77] online.
-  2. Support forums: No
+  1. 在线访问 [lwn.net][77].
+  2. 是否支持论坛: 否
 
 
 
-## #30: Mac OS X Related sites
+## #30: Mac OS X 相关网站
 
-A quick links to Max OS X related sites:
+与Mac OS X相关网站的快速链接：
 
-  * [Mac OS X Hints][78] - This site is dedicated to the Apple's Mac OS X unix operating systems. It has tons of tips, tricks and tutorial about Bash, and OS X
-  * [Mac OS development library][79] - Apple has good collection related to OS X development. Don't forget to checkout [bash shell scripting primer][80].
-  * [Apple kbase][81] - This is like RHN kbase. It provides guides and troublshooting tips for all apple products including OS X.
+  * [Mac OS X 提示][78] - 这个网站专用于苹果的 Mac OS X Unix 操作系统。网站有很多有关 Bash 和 Mac OS X 的使用建议、技巧和教程
+  
+  * [Mac OS 开发库][79] - 苹果拥有和 OS X 开发相关的优秀系列。不要忘了看一看 [bash shell 脚本入门][80].
+  
+  * [Apple 知识库][81] - 这个有点像红帽网络公司的知识库。这个网站提供了所有苹果产品包括 OS X 相关的指南和故障报修建议。
 
 
 
 ## #30: NetBSD
 
-NetBSD is another free open source operating system based upon the Berkeley Software Distribution (BSD) Unix operating system. The NetBSD project is primarily focused on high quality design, stability and performance of the system. Due to its portability and Berkeley-style license, NetBSD is often used in embedded systems. This site provides links to the official NetBSD documentation and also links to various external documents.
+NetBSD 是另一个基于伯克利软件包 Unix 操作系统的免费开源操作系统。NetBSD 项目专注于系统的高质量设计、稳定性和性能。由于 NetBSD 的可移植性和伯克利类的协议，NetBSD 常用于嵌入式系统。这个网站提供了一些 NetBSD 官方文档和各种第三方文档 的链接。
 
-  1. View [netbsd][82] documentation online in html / pdf format.
-  2. Support forums: No
+  1. 在线访问 [netbsd][82] 文档，支持 html、PDF 格式.
+  2. 是否支持论坛: 否
 
 
 
-## Your Turn:
+## 你要做的事:
 
-This is my personal list and it is not absolutely definitive, so if you've got your own favorite Unix/Linux specific site, share in the comments below.
+这是我的个人列表，这可能并不完全是权威的，因此如果你有你自己喜欢的独特 Unix/Linux 网站，可以在下方参与评论分享。
 
-// Image credit: [Flickr photo][83] by PanelSwitchman. Some links are suggested by user on our facebook fan page.
+// 图片来源: [Flickr photo][83] by PanelSwitchman. 一些连接是用户在我们的Facebook粉丝页面上建议添加的。
 
-// For those who celebrate, Merry Christmas! For everyone else, enjoy the weekend.
+// 对于那些庆祝的人，圣诞快乐！ 对于其他人来说，享受周末。
 
-## About the author
+## 关于作者
 
-The author is the creator of nixCraft and a seasoned sysadmin and a trainer for the Linux operating system/Unix shell scripting. He has worked with global clients and in various industries, including IT, education, defense and space research, and the nonprofit sector. Follow him on [Twitter][84], [Facebook][85], [Google+][86].
+
+作者是nixCraft的创建者和经验丰富的系统管理员以及Linux操作系统/ Unix shell脚本的培训师。他曾与全球客户及各行各业合作，包括IT，教育，国防和空间研究以及一些非营利部门。可以关注作者的[Twitter][84], [Facebook][85], [Google+][86]。
 
 --------------------------------------------------------------------------------
 
-via: https://www.cyberciti.biz/tips/linux-unix-bsd-documentations.html
+来源: https://www.cyberciti.biz/tips/linux-unix-bsd-documentations.html
 
 作者：[Vivek Gite][a]
 译者：[ScarboroughCoral](https://github.com/ScarboroughCoral)
