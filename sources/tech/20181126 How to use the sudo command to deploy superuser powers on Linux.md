@@ -7,19 +7,19 @@
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 [#]: url: ( )
 
-How to use the sudo command to deploy superuser powers on Linux
+如何使用 sudo 命令在 Linux 上部署超级用户权限
 ======
 
 ![](https://images.idgesg.net/images/article/2018/11/superman-100781085-large.jpg)
 
-The **sudo** command is very handy when you need to run occasional commands with superuser power, but you can sometimes run into problems when it doesn’t do everything you expect it should. Say you want to add an important message at the end of some log file and you try something like this:
+当您偶尔需要以超级用户权限运行命令时， **sudo** 命令非常方便，但是当它没有完成您期望的所有操作时，有时会遇到问题。假设您要在某个日志文件的末尾添加一条重要消息，并尝试像这样做：
 
 ```
 $ echo "Important note" >> /var/log/somelog
 -bash: /var/log/somelog: Permission denied
 ```
 
-OK, it looks like you need to employ some extra privilege. In general, you can't write to a system log file with your user account. Let’s try that again with **sudo**.
+好的，看起来您需要使用一些额外的权限。通常，您无法使用您的用户帐户写入系统日志文件。让我们用 **sudo** 再试一次吧。
 
 ```
 $ sudo !!
@@ -27,34 +27,36 @@ sudo echo "Important note" >> /var/log/somelog
 -bash: /var/log/somelog: Permission denied
 ```
 
-Hmm, that didn't work either. Let's try something a little different.
+嗯，也不能运行。我们再尝试一下。
 
 ```
 $ sudo 'echo "Important note" >> /var/log/somelog'
 sudo: echo "Important note" >> /var/log/somelog: command not found
 ```
 
-**[ Also see:[Invaluable tips and tricks for troubleshooting Linux][1] ]**
+**[ 另请参阅:[ Linux 疑难解答的提示和技巧][1] ]**
 
-### What's going on here?
+### 当前运行了什么?
 
-The response to the first of the commands shown above indicates that you lack the required privilege to write to the log file. In the second, you have simply tried to run the previously entered command with root privilege, but that resulted in a **Permission denied** error. In the third, you've tried to rerun the command by putting the entire command in quotes and ran into a **command not found** error. So, what went wrong?
+对上面显示的第一个命令的响应表明您缺少写入日志文件所需的权限。在第二种情况下，您只是尝试使用root权限运行前面输入的命令，但这导致了 ** Permission denied ** 错误。在第三种情况中，您尝试通过将整个命令放在引号中并重新运行命令， 却出现 **command not found** 错误。那么，出了什么问题？
 
-  * First command: You can’t write to that log without root privilege.
-  * Second command: Your superpowers don't extend to the redirect.
-  * Third command: Sudo doesn’t recognize everything you’ve put into the quotes as a "command."
+  * 第一个命令：如果没有 root 权限，则无法写入该日志。
+  * 第二个命令：超级用户权限没有赋予重定向。
+  * 第三个命令：Sudo 无法识别你作为“命令”放入引号的所有内容。
 
 
 
 And if you had tried to use sudo when you had no sudo access at all, you would have seen an error like this:
+如果你在没有 sudo 访问权限的情况下尝试使用 sudo，你会看到如下错误：
 
 ```
 nemo is not in the sudoers file. This incident will be reported.
 ```
 
-### What can you do?
+### 你能做什么?
 
 One fairly simple option is to use the sudo command to briefly become root. Given you have sudo privileges, you might be able to do that with a command like this one:
+一个相当简单的选项是使用 sudo 命令简单地成为 root。鉴于您拥有 sudo 权限，您可以使用以下命令执行此操作：
 
 ```
 $ sudo su
@@ -63,22 +65,23 @@ $ sudo su
 ```
 
 Notice that the prompt has changed to indicate your new authority. Then you can run the original command as root:
+请注意，提示已更改以显示出您的新权限。然后，您可以以 root 用户身份运行原始命令：
 
 ```
 # echo "Important note" >> /var/log/somelog
 ```
 
-And then you can enter **^d** and go back to being yourself. Of course, some sudo configurations might prevent you from using sudo to become root.
+接着你可以输入 ** ^d ** 并原始用户。当然，一些 sudo 配置可能会阻止你使用 sudo 成为 root 用户。
 
-Another option is to switch user to root with just the **su** command, but that requires knowing the root password. Many people will be given access to sudo without being provided with the root password, so this won't always work.
+另外一个选项是仅使用 ** su ** 命令将用户切换到 root 用户，但这需要知道 root 用户密码。许多人将被授予访问sudo而无需提供 root 用户密码，因此这并不总是有效。
 
-If you switch user to root, you can then run commands as root to your heart’s content. The problems with this approach are 1) everyone exercising root privilege will have to know the root password (not very secure) and 2) you won't be protected from the repercussions of making big mistakes if you fail to exit your privileged status after you run the specific commands that require root privilege. The sudo command is intended to allow you to use root privilege _only_ when you really need it and to control how much of root’s power each sudo user ought to have. It’s also intended to easily revert to having you working in your normal user state.
+如果您将用户切换到 root 用户，则可以以 root 用户身份运行命令。这种方法存在的问题是：1）每个行使 root 权限的人都必须知道 root 密码（不是很安全）; 2）如果你在你之后未能退出特权状态，将会受到重大错误的影响。运行需要root权限的特定命令。sudo命令旨在允许您仅在真正需要时使用root权限，并控制每个sudo用户应具有的root权限。它还可以轻松恢复为您在正常用户状态下工作。
 
-Note also that this entire discussion is predicated on the assumption that you have access to sudo and that your access is not narrowly defined. More on that in a moment.
+另请注意，整个讨论的前提是您可以访问 sudo，并且您的访问权限不是狭义定义的。稍后详细介绍。
 
-Another option is to use a different command. If adding to a file by editing it is an option, you might use a command such as "sudo vi /var/log/somelog", though editing an active log file isn't generally a good idea because of how frequently the system might need to write to it.
+另一种选项是使用不同的命令。如果通过编辑添加到文件是一个选项，您可以使用诸如 “sudo vi /var/log/somelog” 之类的命令，尽管编辑活动日志文件通常不是一个好主意，因为系统可能会频繁需要读写此文件。
 
-A final but more complex option is to use one of the following commands that get around the problems we saw earlier, but they involve more complex syntax. The first command allows you to repeat your command using !! after getting the "Permission denied" rejection:
+最后一个选项便是更复杂的使用以下命令之一来解决我们之前遇到的问题，但它们涉及更复杂的语法。当遇到 “ Permission denied ”拒绝后，第一个命令允许您使用重复命令 !! ：
 
 ```
 $ sudo echo "Important note" >> /var/log/somelog
@@ -88,7 +91,7 @@ $ tail -1 /var/log/somelog
 Important note
 ```
 
-The second allows you to add your message by passing your message to **tee** using the sudo command. Note that the **-a** specifies that the text should be appended to the file:
+第二个允许您通过使用 sudo 命令将消息传递给 **tee** 来添加消息。请注意，**-a ** 选项指定文本应附加到文件：
 
 ```
 $ echo "Important note" | sudo tee -a /var/log/somelog
@@ -96,11 +99,11 @@ $ tail -1 /var/log/somelog
 Important note
 ```
 
-### How controllable is sudo?
+### sudo 有多可控?
 
-The quick answer to this question is that it depends on the person administering it. Most Linux systems default to a very simple setup. If a user is assigned to a particular group, which might be called **wheel** or **admin** , that user will have the ability to run any command as root without having to know the root password. This is the default setup on most Linux systems. Once a user is added to the privileged group in the **/etc/group** file, that person can run any command with root privilege. On the other hand, sudo can be set up so that some users can only run a single command or any in a set of commands as root and nothing more.
+这个问题的快速解决取决于管理它的人。大多数Linux系统默认设置非常简单。如果将用户分配给特定组，可能称为 **wheel** 或 **admin**，则该用户将能够以 root 身份运行任何命令，而无需知道 root 密码。这是大多数 Linux 系统上的默认设置。将一个用户添加到特权组文件 **/etc/group** 中后，该用户便可以使用 root 权限运行任何命令。另一方面，可以进行配置sudo，以便某些用户只能以 root 身份运行单个命令或任何一组命令中的任何命令。
 
-If lines like those shown below were added to the **/etc/sudoers** file, for example, the user  "nemo" would be allowed to run the **whoami** command with root authority. While this might not make any sense in the  "real world," it works fairly well as an example.
+例如，如果将以下所示的行添加到 **/etc/sudoers** 文件中，则允许用户 “nemo” 以 root 权限运行 **whoami** 命令。虽然这在现实世界中可能没有任何意义，但它作为一个例子非常有效。
 
 ```
 # User alias specification
@@ -110,18 +113,18 @@ nemo ALL=(root) NOPASSWD: WHOAMI
 Cmnd_Alias WHOAMI = /usr/bin/whoami
 ```
 
-Note that we've added both a command alias (Cmnd_Alias) that specifies the command that can be run — with their full paths — and a user alias that allows that user to run that single command with sudo without even entering a password.
+请注意，我们添加了一个命令的别名（Cmnd_Alias），它指定了可以运行的命令 - 带有其完整路径 - 以及一个用户别名，允许该用户使用 sudo 甚至无需输入密码运行该单个命令。
 
-When nemo runs the command **sudo whoami** , he will see this:
+当 nemo 用户运行命令 **sudo whoami** 时，便会看到：
 
 ```
 $ sudo whoami
 root
 ```
 
-Notice that, since nemo is running the command using sudo, the response to **whoami** shows that when the command is running, the user is **root**.
+请注意，由于 nemo 使用 sudo 运行命令，因此对命令 **whoami** 的响应显示当前命令运行时的用户是 **root** 用户。
 
-For other commands, nemo will see something like this:
+对于其他命令，nemo 会得到如下显示内容：
 
 ```
 $ sudo date
@@ -129,9 +132,9 @@ $ sudo date
 Sorry, user nemo is not allowed to execute '/bin/date' as root on butterfly.
 ```
 
-### Default sudo setup
+### sudo的默认配置
 
-In the default approach, we'd be taking advantage of a line like one of those shown below from the **/etc/sudoers** file:
+在默认方法中，向 **/etc/sudoers** 文件中添加一定的内容，我们将得到一定的便利，如下所示：
 
 ```
 $ sudo egrep "admin|sudo" /etc/sudoers
@@ -141,19 +144,19 @@ $ sudo egrep "admin|sudo" /etc/sudoers
 %sudo ALL=(ALL:ALL) ALL <=====
 ```
 
-In these lines, **%admin** and **%sudo** both refer to groups that permit anyone added to one of these groups to run any command as root using the sudo command.
+在这些行中，**％admin** 和 **％sudo** 都能提交允许添加到其中一个以 root 用户身份运行任何命令的组的任何用户使用 sudo 命令。
 
-A line like the one shown below from the /etc/group file makes the individuals listed members of the group, thereby giving them sudo privileges without any changes required in the /etc/sudoers file.
+**/etc/group** 文件中的其中一行如下所示，使其单独列出该组的成员，从而为他们提供 sudo 权限，而无需在 **/etc/sudoers** 文件中进行任何更改。
 
 ```
 sudo:x:27:shs,nemo
 ```
 
-### Wrap-up
+### 结语
 
-The sudo command is meant to allow you to easily deploy superuser access on an as-needed basis, but also to endow users with very limited privileged access when that's all that is required. You can run into problems that require a different approach than a simple "sudo command," and the responses that you get from **sudo** should indicate what problem you've run into.
+sudo 命令旨在允许您根据需要轻松部署超级用户访问权限，同时也能为用户提供非常有限的特权访问权限。您可能在执行命令时遇到需要与简单的 “sudo” 命令不同的方法的问题，并且从 **sudo** 获得的响应，并且指出您遇到的这个问题。
 
-Join the Network World communities on [Facebook][2] and [LinkedIn][3] to comment on topics that are top of mind.
+加入 [Facebook][2] 和 [LinkedIn][3] 上的 Network World 社区，评论置顶的重要主题。
 
 --------------------------------------------------------------------------------
 
@@ -161,7 +164,7 @@ via: https://www.networkworld.com/article/3322504/linux/selectively-deploying-yo
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/stevenzdg988)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
