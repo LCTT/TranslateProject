@@ -1,76 +1,74 @@
-Translating by hopefully2333
-
-A new approach to security instrumentation
+一种新的用于安全检测的方法
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/security_privacy_lock.png?itok=ZWjrpFzx)
 
-How many of us have ever uttered the following phrase: “I hope this works!”?
+我们当中有多少人曾说出过下面这句话：“我希望这能起到作用！”？
 
-Without a doubt, most of us have, likely more than once. It’s not a phrase that inspires confidence, as it reveals doubts about our abilities or the functionality of whatever we are testing. Unfortunately, this very phrase defines our traditional security model all too well. We operate based on the assumption and the hope that the controls we put in place—from vulnerability scanning on web applications to anti-virus on endpoints—prevent malicious actors and software from entering our systems and damaging or stealing our information.
+毫无疑问，我们中的大多数人可能都不止一次地说过这句话。这句话不是用来激发信心的，相反它揭示了我们对自身能力和当前正在测试功能的怀疑。不幸的是，这句话非常好地描述了我们传统的安全模型。我们的运营基于这样的假设，并希望我们实施的控制措施——从 web 应用的漏扫到终端上的杀毒软件——防止恶意的病毒和软件进入我们的系统，损坏或偷取我们的信息。
 
-Penetration testing took a step to combat relying on assumptions by actively trying to break into the network, inject malicious code into a web application, or spread “malware” by sending out phishing emails. Composed of finding and poking holes in our different security layers, pen testing fails to account for situations in which holes are actively opened. In security experimentation, we intentionally create chaos in the form of controlled, simulated incident behavior to objectively instrument our ability to detect and deter these types of activities.
+渗透测试通过积极地尝试侵入网络、向 web 应用注入恶意代码或者通过发送钓鱼邮件来传播病毒等等这些步骤来避免我们对假设的依赖。由于我们在不同的安全层面上来发现和渗透漏洞，手动测试无法解决漏洞被主动打开的情况。在安全实验中，我们故意在受控的情形下创造混乱，模拟事故的情形，来客观地检测我们检测、阻止这类问题的能力。
 
-> “Security experimentation provides a methodology for the experimentation of the security of distributed systems to build confidence in the ability to withstand malicious conditions.”
+> “安全实验为分布式系统的安全性实验提供了一种方法，以建立对抗恶意攻击的能力的信心。”
 
-When it comes to security and complex distributed systems, a common adage in the chaos engineering community reiterates that “hope is not an effective strategy.” How often do we proactively instrument what we have designed or built to determine if the controls are failing? Most organizations do not discover that their security controls are failing until a security incident results from that failure. We believe that “Security incidents are not detective measures” and “Hope is not an effective strategy” should be the mantras of IT professionals operating effective security practices.
+在分布式系统的安全性和复杂性方面，需要反复地重申混沌工程界的一句名言，“希望不是一种有效的策略”。我们多久会主动测试一次我们设计或构建的系统，来确定我们是否已失去对它的控制？大多数组织都不会发现他们的安全控制措施失效了，直到安全事件的发生。我们相信“安全事件不是侦察措施”，而且“希望不要出事也不是一个有效的策略”应该是 IT 专业人士执行有效安全实践的口号。
 
-The industry has traditionally emphasized preventative security measures and defense-in-depth, whereas our mission is to drive new knowledge and insights into the security toolchain through detective experimentation. With so much focus on the preventative mechanisms, we rarely attempt beyond one-time or annual pen testing requirements to validate whether or not those controls are performing as designed.
+工业在传统上强调预防性的安全措施和纵深防御，但我们的任务是通过侦探实验来驱动对安全工具链新的知识和见解。因为过于专注于预防机制，我们很少尝试一次以上地或者年度性地手动测试要求的安全措施，来验证这些控件是否按设计的那样执行。
 
-With all of these constantly changing, stateless variables in modern distributed systems, it becomes next to impossible for humans to adequately understand how their systems behave, as this can change from moment to moment. One way to approach this problem is through robust systematic instrumentation and monitoring. For instrumentation in security, you can break down the domain into two primary buckets: **testing** , and what we call **experimentation**. Testing is the validation or assessment of a previously known outcome. In plain terms, we know what we are looking for before we go looking for it. On the other hand, experimentation seeks to derive new insights and information that was previously unknown. While testing is an important practice for mature security teams, the following example should help further illuminate the differences between the two, as well as provide a more tangible depiction of the added value of experimentation.
+随着现代分布式系统中的无状态变量的不断改变，人们很难充分理解他们的系统的行为，因为会随时变化。解决这个问题的一种途径是通过强大的系统性的设备进行检测，对于安全性检测，你可以将这个问题分成两个主要方面，测试，和我们称之为实验的部分。测试是对我们已知部分的验证和评估，简单来说，就是我们在开始找之前，要先弄清楚我们在找什么。另一方面，实验是去寻找获得我们之前并不清楚的见解和知识。虽然测试对于一个成熟的安全团队来说是一项重要实践，但以下示例会有助于进一步地阐述两者之间的差异，并对实验的附加价值提供一个更为贴切的描述。
 
-### Example scenario: Craft beer delivery
+### 示例场景：精酿啤酒
 
-Consider a simple web service or web application that takes orders for craft beer deliveries.
+思考一个用于接收精酿啤酒订单的 web 服务或者 web 应用。
 
-This is a critical service for this craft beer delivery company, whose orders come in from its customers' mobile devices, the web, and via its API from restaurants that serve its craft beer. This critical service runs in the company's AWS EC2 environment and is considered by the company to be secure. The company passed its PCI compliance with flying colors last year and annually performs third-party penetration tests, so it assumes that its systems are secure.
+这是这家精酿啤酒运输公司的一项重要服务，这些订单来自客户的移动设备，网页，和通过为这家公司精酿啤酒提供服务的餐厅的 API。这项重要服务运行在 AWS EC2 环境上，并且公司认为它是安全的。这家公司去年成功地通过了 PCI 规则，并且每年都会请第三方进行渗透测试，所以公司认为这个系统是安全的。
 
-This company also prides itself on its DevOps and continuous delivery practices by deploying sometimes twice in the same day.
+这家公司有时一天两次部署来进行 DevOps 和持续交付工作，公司为其感到自豪。
 
-After learning about chaos engineering and security experimentation, the company's development teams want to determine, on a continuous basis, how resilient and effective its security systems are to real-world events, and furthermore, to ensure that they are not introducing new problems into the system that the security controls are not able to detect.
+在了解了混沌工程和安全实验方面的东西后，该公司的开发团队希望能确定，在一个连续不断的基础上，他们的安全系统对真实世界事件的有效性和快速恢复性怎么样。与此同时，确保他们不会把安全控件不能检测到的新问题引入到系统中。
 
-The team wants to start small by evaluating port security and firewall configurations for their ability to detect, block, and alert on misconfigured changes to the port configurations on their EC2 security groups.
+该团队希望能小规模地通过评估端口安全和防火墙设置来让他们能够检测、阻止和警告他们 EC2 安全组上端口设置的错误配置更改。
 
-  * The team begins by performing a summary of their assumptions about the normal state.
-  * Develops a hypothesis for port security in their EC2 instances
-  * Selects and configures the YAML file for the Unauthorized Port Change experiment.
-  * This configuration would designate the objects to randomly select from for targeting, as well as the port ranges and number of ports that should be changed.
-  * The team also configures when to run the experiment and shrinks the scope of its blast radius to ensure minimal business impact.
-  * For this first test, the team has chosen to run the experiment in their stage environments and run a single run of the test.
-  * In true Game Day style, the team has elected a Master of Disaster to run the experiment during a predefined two-hour window. During that window of time, the Master of Disaster will execute the experiment on one of the EC2 Instance Security Groups.
-  * Once the Game Day has finished, the team begins to conduct a thorough, blameless post-mortem exercise where the focus is on the results of the experiment against the steady state and the original hypothesis. The questions would be something similar to the following:
-
-
-
-### Post-mortem questions
-
-  * Did the firewall detect the unauthorized port change?
-  * If the change was detected, was it blocked?
-  * Did the firewall report log useful information to the log aggregation tool?
-  * Did the SIEM throw an alert on the unauthorized change?
-  * If the firewall did not detect the change, did the configuration management tool discover the change?
-  * Did the configuration management tool report good information to the log aggregation tool?
-  * Did the SIEM finally correlate an alert?
-  * If the SIEM threw an alert, did the Security Operations Center get the alert?
-  * Was the SOC analyst who got the alert able to take action on the alert, or was necessary information missing?
-  * If the SOC alert determined the alert to be credible, was Security Incident Response able to conduct triage activities easily from the data?
+  * 该团队首先对他们正常状态下的假设进行总结。
+  * 在 EC2 实例里为端口安全进行一个假设。
+  * 为未认证的端口改变实验选择和配置 YAML 文件。
+  * 该配置会从已选择的目标中随机指定对象，同时端口的范围和数量也会被改变。
+  * 团队还会设置进行实验的时间并缩小爆破攻击的范围，来确保对业务的影响最小。
+  * 对于第一次测试，团队选择在他们的测试环境中运行实验并运行一个单独的测试。
+  * 在真实的游戏日风格里，团队在预先计划好的两个小时的窗口期内，选择灾难大师来运行实验。在那段窗口期内，灾难大师会在 EC2 实例安全组中的一个上执行这次实验。
+  * 一旦游戏日结束，团队就会开始进行一个彻底的、无可指责的事后练习。它的重点在于针对稳定状态和原始假设的实验结果。问题会类似于下面这些：
 
 
 
-The acknowledgment and anticipation of failure in our systems have already begun unraveling our assumptions about how our systems work. Our mission is to take what we have learned and apply it more broadly to begin to truly address security weaknesses proactively, going beyond the reactive processes that currently dominate traditional security models.
+### 事后验证问题
 
-As we continue to explore this new domain, we will be sure to post our findings. For those interested in learning more about the research or getting involved, please feel free to contact [Aaron Rinehart][1] or [Grayson Brewer][2].
+  * 防火墙是否检测到未经授权的端口更改？
+  * 如果更改被检测到，更改是否会被阻止？
+  * 防火墙是否会将有用的日志信息记录到日志聚合工具中？
+  * SIEM 是否会对未经授权的更改发出警告？
+  * 如果防火墙没有检测到未经授权的更改，那么配置的管理工具是否发现了这次更改？
+  * 配置管理工具是否向日志聚合工具报告了完善的信息？
+  * SIEM 最后是否进行了关联报警？
+  * 如果 SIEM 发出了警报，安全运营中心是否能收到这个警报？
+  * 获得警报的 SOC 分析师是否能对警报采取措施，还是缺少必要的信息？
+  * 如果 SOC 确定警报是真实的，那么安全事件响应是否能简单地从数据中进行分类活动？
 
-Special thanks to Samuel Roden for the insights and thoughts provided in this article.
 
-**[See our related story,[Is the term DevSecOps necessary?][3]]**
+
+我们系统中对失败的承认和预期已经开始揭示我们对系统工作的假设。我们的使命是利用我们所学到的，并更加广泛地应用它。以此来真正主动地解决安全问题，来超越当前传统主流的被动处理问题的安全模型。
+
+随着我们继续在这个新领域内进行探索，我们一定会发布我们的研究成果。如果您有兴趣想了解更多有关研究的信息或是想参与进来，请随时联系 Aaron Rinehart 或者 Grayson Brewer。
+
+特别感谢 Samuel Roden 对本文提供的见解和想法。
+
+**[看我们相关的文章，是否需要 DevSecOps 这个词？][3]]**
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/4/new-approach-security-instrumentation
 
 作者：[Aaron Rinehart][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hopefully2333](https://github.com/hopefully2333)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
