@@ -44,9 +44,6 @@ sudo: echo "Important note" >> /var/log/somelog: command not found
   * 第二个命令：超级用户权限没有赋予重定向。
   * 第三个命令：Sudo 无法识别你作为“命令”放入引号的所有内容。
 
-
-
-And if you had tried to use sudo when you had no sudo access at all, you would have seen an error like this:
 如果你在没有 sudo 访问权限的情况下尝试使用 sudo，你会看到如下错误：
 
 ```
@@ -55,8 +52,7 @@ nemo is not in the sudoers file. This incident will be reported.
 
 ### 你能做什么?
 
-One fairly simple option is to use the sudo command to briefly become root. Given you have sudo privileges, you might be able to do that with a command like this one:
-一个相当简单的选项是使用 sudo 命令简单地成为 root。鉴于您拥有 sudo 权限，您可以使用以下命令执行此操作：
+一个相当简单的选项是使用 sudo 命令简单地成为 root 用户。鉴于您拥有 sudo 权限，您可以使用以下命令执行此操作：
 
 ```
 $ sudo su
@@ -64,7 +60,6 @@ $ sudo su
 #
 ```
 
-Notice that the prompt has changed to indicate your new authority. Then you can run the original command as root:
 请注意，提示已更改以显示出您的新权限。然后，您可以以 root 用户身份运行原始命令：
 
 ```
