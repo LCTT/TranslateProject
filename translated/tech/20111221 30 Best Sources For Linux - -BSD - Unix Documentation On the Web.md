@@ -217,32 +217,34 @@ Commandlinefu 列出了各个 shell 命令，这些命令可能会让你感到�
 
 
 
-## #19: Debian GNU/Linux 文档和 WIKI
+## #19: Debian GNU/Linux 文档和 Wiki
 
 ![Debian Linux 教程和 Wiki][56]
 
-Debian is another Linux based operating system that primarily uses software released under the GNU General Public. Debian is well known for strict adherence to the philosophies of Unix and free software. It is also one of popular and influential Linux distribution. It is also used as a base for many other distributions such as Ubuntu and others. The Debian project provides its users with proper documentation in an easily accessible form. The site is divided into wiki, installation guide, faqs, and support forum.
+Debian 是另外一个基于 Linux 的操作系统，主要使用 GNU 发布的软件。Debian 因严格坚持 Unix 和自由软件的理念而著名，它也是很受欢迎并且有一定影响力的 Linux 发行版本之一。 Ubuntu 等发行版本都是基于 Debian 的。Debian 项目提供给用户一种易于访问的形式的特有文档。这个网站分为 Wiki、安装指导、常见问题、支持论坛几个模块。
 
-  1. Debian GNU/Linux [documentation][57] available in html and other format.
+  1. Debian GNU/Linux [文档][57] 支持 html 和其他格式访问.
   2. Debian GNU/Linux [wiki][58]
-  3. Support forums: [Yes][59]
+  3. 是否支持论坛: [是][59]
 
 
 
 ## #20: Linux Sea
 
-The book "Linux Sea" offers a gentle yet technical (from end-user perspective) introduction to the Linux operating system, using Gentoo Linux as the example Linux distribution. It does not nor will it ever talk about the history of the Linux kernel or Linux distributions or dive into details that are less interesting for Linux users.
+Linux Sea 这本书提供了比较通俗易懂但充满技术（从最终用户角度来看）的 Linux 操作系统的介绍，使用 Gentoo Linux 作为例子。它既没有谈论Linux内核或Linux发行版的历史，也没有谈到 Linux 用户不那么感兴趣的细节。
 
-  1. Linux [sea][60] available in html format.
-  2. Support forums: No
+  1. Linux [sea][60] 支持 html 格式访问.
+  2. 是否支持论坛: 否
 
 
 
 ## #21: Oreilly Commons
 
-![Oreilly Free Linux / Unix / Php / Javascript / Ubuntu Books][61]
+![免费 Linux / Unix / Php / Javascript / Ubuntu 学习笔记][61]
 
 The oreilly publishing house has posted quite a few titles in wiki format for all. The purpose of this site is to provide content to communities that would like to create, reference, use, modify, update and revise material from O'Reilly or other sources. The site includes books about Ubuntu, Php, Spamassassin, Linux, and much more all for free.
+
+这个网站
 
   1. Oreilly [commons][62] available in wiki format.
   2. Support forums: No
