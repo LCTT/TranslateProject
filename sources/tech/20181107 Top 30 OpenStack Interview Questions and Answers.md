@@ -1,3 +1,6 @@
+ScarboroughCoral translating!
+
+
 Top 30 OpenStack Interview Questions and Answers
 ======
 Now a days most of the firms are trying to migrate their IT infrastructure and Telco Infra into private cloud i.e OpenStack. If you planning to give interviews on Openstack admin profile, then below list of interview questions might help you to crack the interview.
