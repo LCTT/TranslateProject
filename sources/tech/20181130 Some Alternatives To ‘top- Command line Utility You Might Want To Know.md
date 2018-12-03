@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (HankChow)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Some Alternatives To ‘top’ Command line Utility You Might Want To Know)
