@@ -1,19 +1,30 @@
-ScarboroughCoral translating!
 
-
-Top 30 OpenStack Interview Questions and Answers
+Openstack 面试问题和解答 TOP 30
 ======
-Now a days most of the firms are trying to migrate their IT infrastructure and Telco Infra into private cloud i.e OpenStack. If you planning to give interviews on Openstack admin profile, then below list of interview questions might help you to crack the interview.
+
+现在，大多数公司都试图将它们的 IT 基础设施和 Telco Infra 迁移到私有云，即OpenStack。如果你打算面试 OpenStack 管理员这个岗位，那么下面列出的这些面试问题可能会帮助你通过面试。
 
 ![](https://www.linuxtechi.com/wp-content/uploads/2018/11/OpenStack-Interview-Questions.jpg)
 
-### Q:1 Define OpenStack and its key components?
+### Q:1 说一下 OpenStack 和它的主要组件？
 
 Ans: It is a bundle of opensource software, which all in combine forms a provide cloud software known as OpenStack.OpenStack is known as Stack of Open source Software or Projects.
 
-Following are the key components of OpenStack
+OpenStack 是一系列开源软件，这些软件组成了一个提供云软件，也就是 OpenStack，被称为开源软件或项目栈。
+
+下面是 OpenStack 的主要关键组件
 
   * **Nova** – It handles the Virtual machines at compute level and performs other computing task at compute or hypervisor level.
+  * **Neutron** – It provides the networking functionality to VMs, Compute and Controller Nodes.
+  * **Keystone** – It provides the identity service for all cloud users and openstack services. In other words, we can say Keystone a method to provide access to cloud users and services.
+  * **Horizon** – It provides a GUI (Graphical User Interface), using the GUI Admin can all day to day operations task at ease.
+  * **Cinder** – It provides the block storage functionality, generally in OpenStack Cinder is integrated with Chef and ScaleIO to service block storage to Compute  & Controller nodes.
+  * **Swift** – It provides the object storage functionality. Generally, Glance images are on object storage. External storage like ScaleIO can work as Object storage too and can easily be integrated with Glance Service.
+  * **Glance** – It provides Cloud image services, using glance admin used to upload and download cloud images.
+  * **Heat** – It provides an orchestration service or functionality. Using Heat admin can easily VMs as stack and based on requirements VMs in the stack can be scale-in and Scale-out
+  * **Ceilometer** – It provides the telemetry and billing services.
+  
+  * **Nova** – 
   * **Neutron** – It provides the networking functionality to VMs, Compute and Controller Nodes.
   * **Keystone** – It provides the identity service for all cloud users and openstack services. In other words, we can say Keystone a method to provide access to cloud users and services.
   * **Horizon** – It provides a GUI (Graphical User Interface), using the GUI Admin can all day to day operations task at ease.
