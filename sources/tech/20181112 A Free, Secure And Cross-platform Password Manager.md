@@ -1,3 +1,5 @@
+translating by seriouszyx
+
 A Free, Secure And Cross-platform Password Manager
 ======
 
