@@ -1,3 +1,5 @@
+translating by lixinyuxx
+
 My personal Email setup - Notmuch, mbsync, postfix and dovecot
 ======
 I've been using personal email setup for quite long and have not documented it anywhere. Recently when I changed my laptop (a post is pending about it) I got lost trying to recreate my local mail setup. So this post is a self documentation so that I don't have to struggle again to get it right.
