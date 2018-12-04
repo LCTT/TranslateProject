@@ -1,3 +1,5 @@
+Translating by Guevaraya
+
 'Getting to Done' on the Linux command line
 ======
 

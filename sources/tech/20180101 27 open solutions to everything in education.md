@@ -1,3 +1,5 @@
+translating by lixinyuxx
+
 27 open solutions to everything in education
 ======
 ![27 open solutions to everything in education](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/EDU_OpenEducationResources_520x292_cm.png?itok=9y4FGgRo)

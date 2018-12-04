@@ -1,4 +1,4 @@
-Manage your workstation with Ansible: Automating configuration
+Manage your workstation with Ansible: Automating configuration   Translating By FelixYFZ
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/robot_arm_artificial_ai.png?itok=8CUU3U_7)
