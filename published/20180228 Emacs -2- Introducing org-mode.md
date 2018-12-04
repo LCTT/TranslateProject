@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (oneforalone)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Emacs #2: Introducing org-mode)
 [#]: via: (https://changelog.complete.org/archives/9865-emacs-2-introducing-org-mode)
 [#]: author: (John Goerzen http://changelog.complete.org/archives/author/jgoerzen)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10312-1.html)
 
 Emacs 系列（二）：org 模式介绍
 ======
