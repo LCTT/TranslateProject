@@ -47,20 +47,20 @@ rule_translation_completed() {
       && [ "$TOTAL" -eq 2 ] && echo "匹配规则：提交译文"
 }
 
-# 校对译文：只能校对一篇
+# 校对译文：只能校对一篇译文
 rule_translation_revised() {
   [ "$TSL_M" -eq 1 ] \
       && check_category TSL M \
       && [ "$TOTAL" -eq 1 ] && echo "匹配规则：校对译文"
 }
 
-# 发布译文：发布多篇译文
+# 发布译文：只能发布一篇译文
 rule_translation_published() {
-  [ "$TSL_D" -ge 1 ] && [ "$PUB_A" -ge 1 ] && [ "$TSL_D" -eq "$PUB_A" ] \
-      && ensure_identical SRC D TSL A 1 \
+  [ "$TSL_D" -eq 1 ] && [ "$PUB_A" -eq 1 ] \
+      && ensure_identical TSL D PUB A 1 \
       && check_category TSL D \
       && [ "$TOTAL" -eq $((TSL_D + PUB_A)) ] \
-      && echo "匹配规则：发布译文 ${PUB_A} 篇"
+      && echo "匹配规则：发布译文"
 }
 
 # 定义常见错误
