@@ -63,6 +63,12 @@ rule_translation_published() {
       && echo "匹配规则：发布译文"
 }
 
+# 校对已发布译文：只能校对一篇已发布的译文
+rule_published_translation_revised() {
+  [ "$PUB_M" -eq 1 ] \
+      && [ "$TOTAL" -eq 1 ] && echo "匹配规则：校对已发布译文"
+}
+
 # 定义常见错误
 
 # 未知错误
@@ -84,6 +90,7 @@ do_check() {
       || rule_translation_completed \
       || rule_translation_revised \
       || rule_translation_published \
+      || rule_published_translation_revised \
       || {
         error_translation_requested_multiple \
             || error_undefined
