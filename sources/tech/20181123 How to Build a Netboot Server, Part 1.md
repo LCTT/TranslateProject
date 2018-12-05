@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (qhwdw)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (How to Build a Netboot Server, Part 1)
