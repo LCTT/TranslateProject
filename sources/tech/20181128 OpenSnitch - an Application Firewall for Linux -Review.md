@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (qhwdw)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (OpenSnitch – an Application Firewall for Linux [Review])
