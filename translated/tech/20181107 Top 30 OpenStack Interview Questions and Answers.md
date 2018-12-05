@@ -81,7 +81,7 @@ vrouter
 
 Ans: 假设我们想在 “qdhcp-a51635b1-d023-419a-93b5-39de47755d2d” 网络命名空间中执行 “ifconfig” 命令，我们可以执行如下命令。
 
-格式 : ip netns exec {network-space} <command>
+命令格式 : ip netns exec {network-space} <command>
 
 ```
 ~# ip netns exec qdhcp-a51635b1-d023-419a-93b5-39de47755d2d "ifconfig"
@@ -117,47 +117,47 @@ Ans: 可使用如下命令来显示可用浮动 IP 列表：
 ~]# openstack ip floating list | grep None | head -10
 ```
 
-### Q:12 How to provision a virtual machine in specific availability zone and compute Host?
+### Q:12 如何在特定可用区域中或在计算主机上配置虚拟机？
 
-Ans: Let’s assume we want to provision a VM on the availability zone NonProduction in compute-02, use the beneath command to accomplish this,
+Ans: 假设我们想在 compute-02 中的可用区 NonProduction 上配置虚拟机，可以使用如下命令：
 
 ```
 ~]# openstack server create --flavor m1.tiny --image cirros --nic net-id=e0be93b8-728b-4d4d-a272-7d672b2560a6 --security-group NonProd_SG  --key-name linuxtec --availability-zone NonProduction:compute-02  nonprod_testvm
 ```
 
-### Q:13 How to get list of VMs which are provisioned on a specific Compute node?
+### Q:13 如何在特定计算节点上获取配置的虚拟机列表？
 
-Ans: Let’s assume we want to list the vms which are provisioned on compute-0-19, use below
+Ans: 假设我们想要获取在 compute-0-19 中配置的虚拟机列表，可以使用如下命令：
 
-Syntax: openstack server list –all-projects –long -c Name -c Host | grep -i {Compute-Node-Name}
+命令格式: openstack server list –all-projects –long -c Name -c Host | grep -i {Compute-Node-Name}
 
 ```
 ~# openstack server list --all-projects --long -c Name -c Host | grep -i  compute-0-19
 ```
 
-### Q:14 How to view the console log of an openstack instance from command line?
+### Q:14 如何使用命令行查看 OpenStack 实例的打印信息？
 
-Ans: Console logs of an instance can be viewed from the command line using the following commands,
+Ans: 使用如下命令可查看实例的命令行打印信息：
 
-First get the ID of an instance and then use the below command,
+首先获取实例的 ID，然后使用如下命令：
 
 ```
 ~# openstack console log show {Instance-id}
 ```
 
-### Q:15 How to get console URL of an openstack instance?
+### Q:15 如何获取 OpenStack 实例的控制台的 URL 地址？
 
-Ans: Console URL of an instance can be retrieved from command line using the below openstack command,
+Ans: 可以使用以下 OpenStack 命令从命令行检索实例的控制台 URL 地址：
 
 ```
 ~# openstack console url show {Instance-id}
 ```
 
-### Q:16 How to create a bootable cinder / block storage volume from command line?
+### Q:16 如何使用命令行创建可启动的 cinder / block 存储卷？
 
-Ans: To Create a bootable cinder or block storage volume (assume 8 GB) , refer the below steps:
+Ans: 假设创建一个 8GB 可启动存储卷，可参考如下步骤：
 
-  * Get Image list using below
+  * 使用如下命令获取镜像列表
 
 
 
@@ -166,7 +166,7 @@ Ans: To Create a bootable cinder or block storage volume (assume 8 GB) , refer t
 | 89254d46-a54b-4bc8-8e4d-658287c7ee92 | cirros  | active |
 ```
 
-  * Create bootable volume of size 8 GB using cirros image
+  *  使用 cirros 镜像创建 8GB 的可启动存储卷
 
 
 
@@ -174,41 +174,41 @@ Ans: To Create a bootable cinder or block storage volume (assume 8 GB) , refer t
 ~# cinder create --image-id 89254d46-a54b-4bc8-8e4d-658287c7ee92 --display-name cirros-bootable-vol  8
 ```
 
-### Q:17 How to list all projects or tenants that has been created in your opentstack?
+### Q:17 如何列出所有在你的 OpenStack 中创建的项目或用户？
 
-Ans: Projects or tenants list can be retrieved from the command using the below openstack command,
+Ans: 可以使用如下命令来检索所有项目和用户：
 
 ```
 ~# openstack project list --long
 ```
 
-### Q:18 How to list the endpoints of openstack services?
+### Q:18 如何显示 OpenStack 服务端点列表？
 
-Ans: Openstack service endpoints are classified into three categories,
+Ans: OpenStack 服务端点被分为 3 类：
 
-  * Public Endpoint
-  * Internal Endpoint
-  * Admin Endpoint
+  * 公共端点
+  * 内部端点
+  * 管理端点
 
 
 
-Use below openstack command to view endpoints of each openstack service,
+使用如下 OpenStack 命令来查看各种 OpenStack 服务端点：
 
 ```
 ~# openstack catalog list
 ```
 
-To list the endpoint of a specific service like keystone use below,
+可通过以下命令来显示特定服务端点（比如说 keystone）列表：
 
 ```
 ~# openstack catalog show keystone
 ```
 
-Read More : [**Step by Step Instance Creation Flow in OpenStack**][2]
+想了解更多请访问 : [**OpenStack 中的实例创建流程**][2]
 
-### Q:19 In which order we should restart nova services on a controller node?
+### Q:19 在控制节点上你应该按照什么步骤来重启 nova 服务？
 
-Ans: Following order should be followed to restart the nova services on openstack controller node,
+Ans: 应该按照如下步骤来重启 OpenStack 控制节点的 nova 服务：
 
   * service nova-api restart
   * service nova-cert restart
