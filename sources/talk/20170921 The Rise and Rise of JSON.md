@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (runningwater)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: subject: (The Rise and Rise of JSON)
+[#]: via: ( https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html)
+[#]: author: (https://twobithistory.org)
+[#]: url: ( )
+
 The Rise and Rise of JSON
 ======
 JSON has taken over the world. Today, when any two applications communicate with each other across the internet, odds are they do so using JSON. It has been adopted by all the big players: Of the ten most popular web APIs, a list consisting mostly of APIs offered by major companies like Google, Facebook, and Twitter, only one API exposes data in XML rather than JSON. Twitter, to take an illustrative example from that list, supported XML until 2013, when it released a new version of its API that dropped XML in favor of using JSON exclusively. JSON has also been widely adopted by the programming rank and file: According to Stack Overflow, a question and answer site for programmers, more questions are now asked about JSON than about any other data interchange format.
@@ -80,7 +89,7 @@ via: https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html
 
 作者：[Two-Bit History][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
