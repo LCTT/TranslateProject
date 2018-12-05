@@ -79,7 +79,13 @@ error_undefined() {
 # 申领多篇
 error_translation_requested_multiple() {
   [ "$SRC_M" -gt 1 ] \
-      && echo "匹配错误：申领多篇，请一次仅申领一篇"
+      && echo "匹配错误：请勿申领多篇，请一次仅申领一篇"
+}
+
+# 提交多篇
+error_translation_completed_multiple() {
+  [ "$TSL_A" -gt 1 ] \
+      && echo "匹配错误：请勿提交多篇，请一次仅提交一篇"
 }
 
 # 执行检查并输出匹配项目
@@ -93,6 +99,7 @@ do_check() {
       || rule_published_translation_revised \
       || {
         error_translation_requested_multiple \
+            || error_translation_completed_multiple \
             || error_undefined
         exit 1
       }
