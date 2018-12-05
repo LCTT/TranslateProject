@@ -1,86 +1,74 @@
 
-Openstack 面试问题和解答 TOP 30
+Openstack  30个经典面试问题和解答
 ======
 
 现在，大多数公司都试图将它们的 IT 基础设施和 Telco Infra 迁移到私有云，即OpenStack。如果你打算面试 OpenStack 管理员这个岗位，那么下面列出的这些面试问题可能会帮助你通过面试。
 
 ![](https://www.linuxtechi.com/wp-content/uploads/2018/11/OpenStack-Interview-Questions.jpg)
 
-### Q:1 说一下 OpenStack 和它的主要组件？
+### Q:1 说一下 OpenStack 及其主要组件？
 
-Ans: It is a bundle of opensource software, which all in combine forms a provide cloud software known as OpenStack.OpenStack is known as Stack of Open source Software or Projects.
+Ans: OpenStack 是一系列开源软件，这些软件组成了一个云提供软件，也就是 OpenStack，被称为开源软件或项目栈。
 
-OpenStack 是一系列开源软件，这些软件组成了一个提供云软件，也就是 OpenStack，被称为开源软件或项目栈。
-
-下面是 OpenStack 的主要关键组件
-
-  * **Nova** – It handles the Virtual machines at compute level and performs other computing task at compute or hypervisor level.
-  * **Neutron** – It provides the networking functionality to VMs, Compute and Controller Nodes.
-  * **Keystone** – It provides the identity service for all cloud users and openstack services. In other words, we can say Keystone a method to provide access to cloud users and services.
-  * **Horizon** – It provides a GUI (Graphical User Interface), using the GUI Admin can all day to day operations task at ease.
-  * **Cinder** – It provides the block storage functionality, generally in OpenStack Cinder is integrated with Chef and ScaleIO to service block storage to Compute  & Controller nodes.
-  * **Swift** – It provides the object storage functionality. Generally, Glance images are on object storage. External storage like ScaleIO can work as Object storage too and can easily be integrated with Glance Service.
-  * **Glance** – It provides Cloud image services, using glance admin used to upload and download cloud images.
-  * **Heat** – It provides an orchestration service or functionality. Using Heat admin can easily VMs as stack and based on requirements VMs in the stack can be scale-in and Scale-out
-  * **Ceilometer** – It provides the telemetry and billing services.
+下面是 OpenStack 的主要关键组件：
   
-  * **Nova** – 
-  * **Neutron** – It provides the networking functionality to VMs, Compute and Controller Nodes.
-  * **Keystone** – It provides the identity service for all cloud users and openstack services. In other words, we can say Keystone a method to provide access to cloud users and services.
-  * **Horizon** – It provides a GUI (Graphical User Interface), using the GUI Admin can all day to day operations task at ease.
-  * **Cinder** – It provides the block storage functionality, generally in OpenStack Cinder is integrated with Chef and ScaleIO to service block storage to Compute  & Controller nodes.
-  * **Swift** – It provides the object storage functionality. Generally, Glance images are on object storage. External storage like ScaleIO can work as Object storage too and can easily be integrated with Glance Service.
-  * **Glance** – It provides Cloud image services, using glance admin used to upload and download cloud images.
-  * **Heat** – It provides an orchestration service or functionality. Using Heat admin can easily VMs as stack and based on requirements VMs in the stack can be scale-in and Scale-out
-  * **Ceilometer** – It provides the telemetry and billing services.
+  * **Nova** – 用于计算级别管理虚拟机，并在计算或管理程序级别执行其他计算任务。
+  * **Neutron** – 为虚拟机、计算和控制节点提供网络功能。
+  * **Keystone** – 为所有云用户和 OpenStack 云服务提供身份认证服务。换句话说，我们可以说 Keystone 是一个提供给云用户和云服务访问权限的方法。
+  * **Horizon** – 用于提供图形用户界面。使用图形化管理界面可以很轻松地完成各种日常操作任务。
+  * **Cinder** – 用于提供块存储功能。通常来说 OpenStack 的 Cinder 中集成了 Chef 和 ScaleIO 来共同为计算和控制节点提供块存储服务。
+  * **Swift** – 用于提供对象存储功能。通常来说，Glance 管理的镜像是存储在对象存储空间的。扩展存储就像 ScaleIO 也可以提供对象存储，可以很容易的集成 Glance 服务。
+  * **Glance** – 用于提供镜像服务。使用 Glance 的管理平台来上传和下载云镜像。
+  * **Heat** – 用于提供编排服务或功能。使用 Heat 管理平台可以轻松地将虚拟机作为堆栈，并且根据需要可以将虚拟机扩展或收缩。
+  * **Ceilometer** – 用于提供计量与监控功能。
 
 
 
-### Q:2 What are services generally run on a controller node?
+### Q:2 什么服务通常在控制节点上运行？
 
-Ans: Following services run on a controller node:
+Ans: 以下服务通常在控制节点上运行：
 
-  * Identity Service ( KeyStone)
-  * Image Service ( Glance)
-  * Nova Services like Nova API, Nova Scheduler & Nova DB
-  * Block & Object Service
-  * Ceilometer Service
-  * MariaDB / MySQL and RabbitMQ Service
-  * Management services of Networking (Neutron) and Networking agents
-  * Orchestration Service (Heat)
-
-
-
-### Q:3 What are the services generally run on a Compute Node?
-
-Ans: Following services run on a compute node,
-
-  * Nova-Compute
-  * Networking Services like OVS
+  * 认证服务 ( KeyStone)
+  * 镜像服务 ( Glance)
+  * Nova 服务比如 Nova API, Nova Scheduler 和 Nova DB
+  * 块存储和对象存储服务
+  * Ceilometer 服务
+  * MariaDB / MySQL 和 RabbitMQ 服务
+  * 网络(Neutron)和网络代理的管理服务
+  * 编排服务 (Heat)
 
 
 
-### Q:4 What is the default location of VMs on the Compute Nodes?
+### Q:3 什么服务通常在计算节点上运行？
 
-Ans: VMs in the Compute node are stored at “ **/var/lib/nova/instances** ”
+Ans: 以下服务通常在计算节点运行：
 
-### Q:5 What is default location of glance images?
+  * Nova 计算
+  * 网络服务，比如 OVS
 
-Ans: As the Glance service runs on a controller node, all the glance images are store under the folder “ **/var/lib/glance/images** ” on a controller node.
 
-Read More : [**How to Create and Delete Virtual Machine(VM) from Command line in OpenStack**][1]
 
-### Q:6 Tell me the command how to spin a VM from Command Line?
+### Q:4 计算节点上虚拟机的默认地址是什么?
 
-Ans: We can easily spin a new VM using the following openstack command,
+Ans: 虚拟机存储在计算节点的 “ **/var/lib/nova/instances** ”
+
+### Q:5 Glance 镜像的默认地址是什么？
+
+Ans: 因为Glance 服务运行在控制节点上，所以 Glance 镜像都被存储在控制节点的“ **/var/lib/glance/images** ”文件夹下。
+
+想了解更多请访问 : [**在 OpenStack 中如何使用命令行创建和删除虚拟机**][1]
+
+### Q:6 说一下如何使用命令行启动一个虚拟机？
+
+Ans: 我们可以使用如下 OpenStack 命令来启动一个新的虚拟机:
 
 ```
 # openstack server create --flavor {flavor-name} --image {Image-Name-Or-Image-ID}  --nic net-id={Network-ID} --security-group {Security_Group_ID} –key-name {Keypair-Name} <VM_Name>
 ```
 
-### Q:7 How to list the network namespace of a tenant in OpenStack?
+### Q:7 如何在 OpenStack 中显示用户的网络命名空间列表？
 
-Ans: Network namespace of a tenant can be listed using “ip net ns” command
+Ans: 可以使用 “ip net ns” 命令来列出用户的网络命名空间。
 
 ```
 ~# ip netns list
@@ -89,41 +77,41 @@ haproxy
 vrouter
 ```
 
-### Q:8 How to execute command inside network namespace in openstack?
+### Q:8 如何在 OpenStack 中执行网络命名空间内的命令？
 
-Ans: Let’s assume we want to execute “ifconfig” command inside the network namespace “qdhcp-a51635b1-d023-419a-93b5-39de47755d2d”, then run the beneath command,
+Ans: 假设我们想在 “qdhcp-a51635b1-d023-419a-93b5-39de47755d2d” 网络命名空间中执行 “ifconfig” 命令，我们可以执行如下命令。
 
-Syntax : ip netns exec {network-space} <command>
+格式 : ip netns exec {network-space} <command>
 
 ```
 ~# ip netns exec qdhcp-a51635b1-d023-419a-93b5-39de47755d2d "ifconfig"
 ```
 
-### Q:9 How to upload and download a cloud image in Glance from command line?
+### Q:9 在 Glance 服务中如何使用命令行上传和下载镜像？
 
-Ans: A Cloud image can be uploaded in glance from command using beneath openstack command,
+Ans: Glance 服务中云镜像上传可以使用如下 OpenStack 命令：
 
 ```
 ~# openstack image create --disk-format qcow2 --container-format bare   --public --file {Name-Cloud-Image}.qcow2     <Cloud-Image-Name>
 ```
 
-Use below openstack command to download a cloud image from command line,
+下载云镜像则使用如下命令：
 
 ```
 ~# glance image-download --file <Cloud-Image-Name> --progress  <Image-ID>
 ```
 
-### Q:10 How to reset error state of a VM into active in OpenStack env?
+### Q:10 OpenStack 如何将虚拟机从错误状态转换为活动状态？
 
-Ans: There are some scenarios where some VMs went to error state and this error state can be changed into active state using below commands,
+Ans: 在某些情况下虚拟机可能会进入错误状态，可以使用如下命令将错误状态转换为活动状态：
 
 ```
 ~# nova reset-state --active {Instance_id}
 ```
 
-### Q:11 How to get list of available Floating IPs from command line?
+### Q:11 如何使用命令行来获取可使用的浮动 IP 列表？
 
-Ans: Available floating ips can be listed using the below command,
+Ans: 可使用如下命令来显示可用浮动 IP 列表：
 
 ```
 ~]# openstack ip floating list | grep None | head -10
@@ -327,7 +315,7 @@ via: https://www.linuxtechi.com/openstack-interview-questions-answers/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ScarboroughCoral](https://github.com/ScarboroughCoral)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
