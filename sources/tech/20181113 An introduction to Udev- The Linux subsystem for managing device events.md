@@ -1,3 +1,4 @@
+Translating by qhwdw
 An introduction to Udev: The Linux subsystem for managing device events
 ======
 Create a script that triggers your computer to do a specific action when a specific device is plugged in.
