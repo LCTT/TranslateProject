@@ -218,51 +218,60 @@ Ans: 应该按照如下步骤来重启 OpenStack 控制节点的 nova 服务：
 
 
 
-### Q:20 Let’s assume DPDK ports are configured on compute node for data traffic, now how you will check the status of dpdk ports?
+### Q:20 假如计算节点上为数据流量配置了一些 DPDK 端口，你如何检查 DPDK 端口的状态呢？
 
-Ans: As DPDK ports are configured via openvSwitch (OVS), use below commands to check the status,
+Ans: 因为我们使用 openvSwitch (OVS) 来配置 DPDK 端口，因此可以使用如下命令来检查端口的状态：
 
-### Q:21 How to add new rules to the existing SG(Security Group) from command line in openstack?
+```
+root@compute-0-15:~# ovs-appctl bond/show | grep dpdk
+active slave mac: 90:38:09:ac:7a:99(dpdk0)
+slave dpdk0: enabled
+slave dpdk1: enabled
+root@compute-0-15:~#
+root@compute-0-15:~# dpdk-devbind.py --status
+```
 
-Ans: New rules to the existing SG in openstack can be added using the neutron command,
+### Q:21 How to add new rules to the existing SG(Security Group) from command line in openstack?如何使用命令行在 OpenStack 中向存在的安全组 SG(Security Group)中添加新规则？
+
+Ans: 可以使用 neutron 命令向 OpenStack 已存在的安全组中添加新规则：
 
 ```
 ~# neutron security-group-rule-create --protocol <tcp or udp>  --port-range-min <port-number> --port-range-max <port-number> --direction <ingress or egress>  --remote-ip-prefix <IP-address-or-range> Security-Group-Name
 ```
 
-### Q:22 How to view the OVS bridges configured on Controller and Compute Nodes?
+### Q:22 如何查看控制节点和计算节点的 OVS 桥配置？
 
-Ans: OVS bridges on Controller and Compute nodes can be viewed using below command,
+Ans: 控制节点和计算节点的 OVS 桥配置可使用以下命令来查看：
 
 ```
 ~]# ovs-vsctl show
 ```
 
-### Q:23 What is the role of Integration Bridge(br-int) on the Compute Node ?
+### Q:23 计算节点上的集成桥(br-int)的作用是什么？
 
-Ans: The integration bridge (br-int) performs VLAN tagging and untagging for the traffic coming from and to the instance running on the compute node.
+Ans: 集成桥（br-int）对来自和运行在计算节点上的实例的流量执行 VLAN 标记和取消标记。
 
-Packets leaving the n/w interface of an instance goes through the linux bridge (qbr) using the virtual interface qvo. The interface qvb is connected to the Linux Bridge & interface qvo is connected to integration bridge (br-int). The qvo port on integration bridge has an internal VLAN tag that gets appended to packet header when a packet reaches to the integration bridge.
+数据包从实例的 n/w 接口发出使用虚拟接口 qvo 通过 linux 桥(qbr)。qvb接口是用来连接 Linux 桥的，qvo 接口是用来连接集成桥(br-int)的。集成桥上的 qvo 端口有一个内部 VLAN 标签，这个标签是用于当数据包到达集成桥的时候贴到数据包头部的。
 
-### Q:24 What is the role of Tunnel Bridge (br-tun) on the compute node?
+### Q:24 隧道桥（br-tun）在计算节点上的作用是什么？
 
-Ans: The tunnel bridge (br-tun) translates the VLAN tagged traffic from integration bridge to the tunnel ids using OpenFlow rules.
+Ans: 隧道网桥（br-tun）根据 OpenFlow 规则将 VLAN 标记的流量从集成网桥转换为隧道 ID。
 
-br-tun (tunnel bridge) allows the communication between the instances on different networks. Tunneling helps to encapsulate the traffic travelling over insecure networks, br-tun supports two overlay networks i.e GRE and VXLAN
+br-tun(tunnel bridge，即隧道桥)允许不同网络的实例彼此进行通信。隧道有利于封装在非安全网络上传输的流量，br-tun 支持两层网络，即 GRE 和 VXLAN。
 
-### Q:25 What is the role of external OVS bridge (br-ex)?
+### Q:25 外部 OVS 桥（br-ex）的作用是什么？
 
-Ans: As the name suggests, this bridge forwards the traffic coming to and from the network to allow external access to instances. br-ex connects to the physical interface like eth2, so that floating IP traffic for tenants networks is received from the physical network and routed to the tenant network ports.
+Ans: 顾名思义，此网桥转发来往网络的流量，以允许外部访问实例。br-ex 连接物理接口比如 eth2，这样用户网络的浮动 IP 数据从物理网络接收并路由到用户网络端口。
 
-### Q:26 What is function of OpenFlow rules in OpenStack Networking?
+### Q:26  OpenStack 网络中 OpenFlow 规则的作用是什么？
 
-Ans: OpenFlow rules is a mechanism that define how a packet will reach to destination starting from its source. OpenFlow rules resides in flow tables. The flow tables are part of OpenFlow switch.
+Ans: OpenFlow 规则是一种机制，这种机制定义了一个数据包如何从源到达目的地。OpenFlow 规则存储在 flow 表中。flow 表是 OpenFlow 交换机的一部分。
 
-When a packet arrives to a switch, it is processed by the first flow table, if it doesn’t match any flow entries in the table then packet is dropped or forwarded to another table.
+当一个数据包到达交换机就会被第一个 flow 表检查，如果不匹配 flow 表中的任何入口，那这个数据包就会被丢弃或者转发到其他 flow 表中。
 
-### Q:27 How to display the information about a OpenFlow switch (like ports, no. of tables, no of buffer)?
+### Q:27 怎样查看 OpenFlow 交换机的信息（比如端口、表编号、缓存编号等）？
 
-Ans: Let’s assume we want to display the information about OpenFlow switch (br-int), run the following command,
+Ans: 假如我们要显示 OpenFlow 交换机的信息(br-int)，需要执行如下命令：
 
 ```
 root@compute-0-15# ovs-ofctl show br-int
@@ -282,32 +291,36 @@ actions: output enqueue set_vlan_vid set_vlan_pcp strip_vlan mod_dl_src mod_dl_d
  ………………………………………
 ```
 
-### Q:28 How to display the entries for all the flows in a switch?
+### Q:28 如何显示交换机中的所有 flow 的入口？
 
-Ans: Flows entries of a switch can be displayed using the command ‘ **ovs-ofctl dump-flows** ‘
+Ans: 可以使用命令 ‘ **ovs-ofctl dump-flows** ‘ 来查看交换机的 flow 入口
 
-Let’s assume we want to display flow entries of OVS integration bridge (br-int),
+假设我们想显示 OVS 集成桥(br-int)的所有 flow 入口，可以使用如下命令：
 
-### Q:29 What are Neutron Agents and how to list all neutron agents?
+```
+[root@compute01 ~]# ovs-ofctl dump-flows br-int
+```
 
-Ans: OpenStack neutron server acts as the centralized controller, the actual network configurations are executed either on compute and network nodes. Neutron agents are software entities that carry out configuration changes on compute or network nodes. Neutron agents communicate with the main neutron service via Neuron API and message queue.
+### Q:29 什么是 Neutron 代理？如何显示所有 Neutron 代理？
 
-Neutron agents can be listed using the following command,
+Ans:  OpenStack Neutron 服务器充当中心控制器，实际网络配置是在计算节点或者网络节点上执行的。Neutron 代理是计算节点或者网络节点上进行配置更新的软件实体。Neutron 代理通过 Neuron 服务和消息队列来和中心 Neutron 服务通信。
+
+可通过如下命令查看 Neutron 代理列表：
 
 ```
 ~# openstack network agent list -c ‘Agent type’ -c Host -c Alive -c State
 ```
 
-### Q:30 What is CPU pinning?
+### Q:30 CPU Pinning 是什么？
 
-Ans: CPU pinning refers to reserving the physical cores for specific virtual machine. It is also known as CPU isolation or processor affinity. The configuration is in two parts:
+Ans: CPU Pinning 是指为某个虚拟机保留物理核心。它也称为 CPU 隔离或处理器关联。有两个目的：
 
-  * it ensures that virtual machine can only run on dedicated cores
-  * it also ensures that common host processes don’t run on those cores
+  * 它确保虚拟机只能在专用核心上运行
+  * 它还确保公共主机进程不在这些核心上运行
 
 
 
-In other words we can say pinning is one to one mapping of a physical core to a guest vCPU.
+我们也可以认为 Pinning 是物理核心到一个用户虚拟 CPU(vCPU) 的一对一映射。
 
 --------------------------------------------------------------------------------
 
