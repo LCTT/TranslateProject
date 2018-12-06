@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (heguangzhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Have a cow at the Linux command line)
