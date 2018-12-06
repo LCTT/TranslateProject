@@ -25,7 +25,7 @@
 
 ### Prose linters
 
-Software developers use [linters][11] to check their code for errors or bugs. There are also linters for prose that check for style and syntax errors; think of them as the _Elements of Style_ for the command line. While any writer can (and probably should) use one, a prose linter is especially useful for team documentation projects that require a consistent voice and style.
+软件开发人员使用[linters][11]来检查他们的代码是否存在错误或者 bugs。同样也有用于检查文本样式或语法错误的linters；而命令行会认为这些错误是_样式元素_。任何写作者都可以（也应该）使用它，一个文本 linter 对于要求文档风格和样式一致的文档团队项目而言尤其有用。
 
 [Proselint][12] is a comprehensive tool for checking what you're writing. It looks for jargon, hyperbole, incorrect date and time format, misused terms, and [much more][13]. It's also easy to run and ignores markup in a plaintext file.
 
