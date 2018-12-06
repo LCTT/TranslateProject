@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Standalone web applications with GNOME Web)
 [#]: via: (https://fedoramagazine.org/standalone-web-applications-gnome-web/)
 [#]: author: (Ryan Lerch https://fedoramagazine.org/introducing-flatpak/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10317-1.html)
 
 使用 GNOME Web “安装”独立 Web 应用
 ======
