@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (5 Firefox extensions to protect your privacy)
 [#]: via: (https://opensource.com/article/18/7/firefox-extensions-protect-privacy)
-[#]: author: ([Chris Short](https://opensource.com/users/chrisshort)
-[#]: url: ( )
+[#]: author: ( Chris Short https://opensource.com/users/chrisshort)
+[#]: url: (https://linux.cn/article-10316-1.html)
 
 5 个保护你隐私的 Firefox 扩展
 ======
