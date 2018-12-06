@@ -1,4 +1,3 @@
-robsean Translating
 Graphics and music tools for game development
 ======
 
