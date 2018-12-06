@@ -57,7 +57,7 @@ rule_translation_revised() {
 # 发布译文：发布一篇译文
 rule_translation_published() {
   [ "$TSL_D" -eq 1 ] && [ "$PUB_A" -eq 1 ] \
-      && ensure_identical TSL D PUB A 1 \
+      && ensure_identical TSL D PUB A \
       && check_category TSL D \
       && check_category PUB A \
       && [ "$TOTAL" -eq $((TSL_D + PUB_A)) ] \
