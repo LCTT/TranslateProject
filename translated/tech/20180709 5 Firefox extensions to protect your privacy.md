@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: subject: (5 Firefox extensions to protect your privacy)
 [#]: via: (https://opensource.com/article/18/7/firefox-extensions-protect-privacy)
@@ -9,12 +9,13 @@
 
 5 个保护你隐私的 Firefox 扩展
 ======
+> 用这些关注隐私的工具使你的浏览器免于泄露数据。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/biz_cinderblock_cloud_yellowhat.jpg?itok=sJdlsYTF)
 
-在剑桥分析公司这件事后，我仔细研究了我让 Facebook 渗透到我的网络生活的程度。由于我一般担心单点故障，我不是一个使用社交登录的人。我使用密码管理器为每个站点创建唯一的登录（你也应该这样做）。
+在<ruby>剑桥分析公司<rt>Cambridge Analytica</rt></ruby>这件事后，我仔细研究了我让 Facebook 渗透到我的网络生活的程度。由于我一般担心单点故障，我不是一个使用社交登录的人。我使用密码管理器为每个站点创建唯一的登录（你也应该这样做）。
 
-我最担心的 Facebook 对我的数字生活的普遍侵扰。在深入了解剑桥分析公司这件事后，我几乎立即卸载了 Facebook 的移动程序。我还从 Facebook [取消连接了所有应用、游戏和网站][1]。是的，这将改变你在 Facebook 上的体验，但它也将保护您的隐私。作为一名有遍布全球朋友的人，保持 Facebook 的社交连接对我来说非常重要。
+我最担心的 Facebook 对我的数字生活的普遍侵扰。在深入了解剑桥分析公司这件事后，我几乎立即卸载了 Facebook 的移动程序。我还从 Facebook [断开了对所有应用、游戏和网站的连接][1]。是的，这将改变你在 Facebook 上的体验，但它也将保护您的隐私。作为一名有遍布全球朋友的人，保持 Facebook 的社交连接对我来说非常重要。
 
 我还仔细审查了其他服务。我检查了 Google、Twitter、GitHub 以及任何未使用的连接应用。但我知道这还不够。我需要我的浏览器主动防止侵犯我隐私的行为。我开始研究如何做到最好。当然，我可以锁定浏览器，但是我需要使我用的网站和工具正常使用，同时试图防止它们泄露数据。
 
@@ -22,11 +23,11 @@
 
 ### Privacy Badger
 
-我已经使用 [Privacy Badger][2] 有一段时间了。其他内容或广告拦截器做得更好吗？也许。很多内容拦截器的问题在于它们“付费显示”。这意味着他们有收费的“合作伙伴”白名单。这就站在了为什么存在内容拦截器的对立面。Privacy Badger 是由电子前沿基金会 （EFF） 制作的，这是一家以捐赠为基础的商业模式的非营利实体。Privacy Badger 承诺从你的浏览习惯中学习，并且很少需要调整。例如，我只需将一些网站列入白名单。Privacy Badger 允许精确控制在哪些站点上启用哪些跟踪器。这是我的第一个无论在哪个浏览器必须安装的扩展。
+我已经使用 [Privacy Badger][2] 有一段时间了。其他内容或广告拦截器做得更好吗？也许。很多内容拦截器的问题在于它们的“付费显示”。这意味着他们有收费的“合作伙伴”白名单。这就站在了为什么存在内容拦截器这件事的对立面。Privacy Badger 是由电子前沿基金会 （EFF） 制作的，这是一家以捐赠为基础的商业模式的非营利实体。Privacy Badger 承诺从你的浏览习惯中学习，并且很少需要调整。例如，我只需将一些网站列入白名单。Privacy Badger 允许精确控制在哪些站点上启用哪些跟踪器。这是我无论在哪个浏览器必须安装的头号扩展。
 
 ### DuckDuckGo Privacy Essentials
 
-搜索引擎 DuckDuckGo 通常有隐私意识。[DuckDuckGo Privacy Essentials][3] 适用于主流的移动设备和浏览器。它的独特之处在于它根据你提供的设置对网站进行评分。例如，即使启用了隐私保护，Facebook 也会获得 D。同时，[chrisshort.net][4] 在启用隐私保护时获得 B 和禁用时获得 C。如果你因任何原因不喜欢于 EFF 或 Privacy Badger，我会推荐 DuckDuckGo Privacy Essentials（选择一个，而不是两个，因为它们基本上做同样的事情）。
+搜索引擎 DuckDuckGo 通常有隐私意识。[DuckDuckGo Privacy Essentials][3] 适用于主流的移动设备和浏览器。它的独特之处在于它根据你提供的设置对网站进行评分。例如，即使启用了隐私保护，Facebook 也会获得 D。同时，[chrisshort.net][4] 在启用隐私保护时获得 B 和禁用时获得 C。如果你因任何原因不喜欢 EFF 或 Privacy Badger，我会推荐 DuckDuckGo Privacy Essentials（选择一个，而不是两个，因为它们基本上做同样的事情）。
 
 ### HTTPS Everywhere
 
@@ -38,7 +39,7 @@
 
 ### Facebook Container
 
-Facebook Container][7] 使 Firefox 成为我在使用 Facebook 时的唯一浏览器。 “Facebook Container 的工作原理是将你的 Facebook 身份隔离到一个单独的容器中，这使得 Facebook 更难以使用第三方 Cookie 跟踪你访问其他网站。” 这意味着 Facebook 无法窥探浏览器中其他地方发生的活动。 突然间，这些令人毛骨悚然的广告将停止频繁出现（假设你在移动设备上卸载了 Facebook 应用）。 在隔离的空间中使用 Facebook 将阻止任何额外的数据收集。 请记住，你已经提供了 Facebook 数据，而 Facebook Container 无法阻止这些数据被共享。
+[Facebook Container][7] 使 Firefox 成为我在使用 Facebook 时的唯一浏览器。 “Facebook Container 的工作原理是将你的 Facebook 身份隔离到一个单独的容器中，这使得 Facebook 更难以使用第三方 Cookie 跟踪你访问其他网站。” 这意味着 Facebook 无法窥探浏览器中其他地方发生的活动。 突然间，这些令人毛骨悚然的广告将停止频繁出现（假设你在移动设备上卸载了 Facebook 应用）。 在隔离的空间中使用 Facebook 将阻止任何额外的数据收集。 请记住，你已经提供了 Facebook 数据，而 Facebook Container 无法阻止这些数据被共享。
 
 这些是我浏览器隐私的首选扩展。 你的是什么？ 请在评论中分享。
 
@@ -49,7 +50,7 @@ via: https://opensource.com/article/18/7/firefox-extensions-protect-privacy
 作者：[Chris Short][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
