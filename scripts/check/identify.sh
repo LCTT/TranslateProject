@@ -54,13 +54,21 @@ rule_translation_revised() {
       && [ "$TOTAL" -eq 1 ] && echo "匹配规则：校对译文"
 }
 
-# 发布译文：发布多篇译文
+# 发布译文：发布一篇译文
 rule_translation_published() {
-  [ "$TSL_D" -ge 1 ] && [ "$PUB_A" -ge 1 ] && [ "$TSL_D" -eq "$PUB_A" ] \
-      && ensure_identical SRC D TSL A 1 \
+  [ "$TSL_D" -eq 1 ] && [ "$PUB_A" -eq 1 ] \
+      && ensure_identical TSL D PUB A 1 \
       && check_category TSL D \
+      && check_category PUB A \
       && [ "$TOTAL" -eq $((TSL_D + PUB_A)) ] \
       && echo "匹配规则：发布译文 ${PUB_A} 篇"
+}
+
+# 校对已发布：只能校对一篇
+rule_published_revised() {
+  [ "$PUB_M" -eq 1 ] \
+      && check_category PUB M \
+      && [ "$TOTAL" -eq 1 ] && echo "匹配规则：校对已发布"
 }
 
 # 定义常见错误
@@ -76,6 +84,12 @@ error_translation_requested_multiple() {
       && echo "匹配错误：申领多篇，请一次仅申领一篇"
 }
 
+# 提交多篇
+error_translation_completed_multiple() {
+  [ "$TSL_A" -gt 1 ] \
+      && echo "匹配错误：提交多篇，请一次仅提交一篇"
+}
+
 # 执行检查并输出匹配项目
 do_check() {
   rule_bypass_check \
@@ -84,8 +98,10 @@ do_check() {
       || rule_translation_completed \
       || rule_translation_revised \
       || rule_translation_published \
+      || rule_published_revised \
       || {
         error_translation_requested_multiple \
+            || error_translation_completed_multiple \
             || error_undefined
         exit 1
       }
