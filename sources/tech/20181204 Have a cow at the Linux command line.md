@@ -1,5 +1,3 @@
-heguangzhi Translating
-
 [#]: collector: (lujun9972)
 [#]: translator: (heguangzhi)
 [#]: reviewer: ( )
