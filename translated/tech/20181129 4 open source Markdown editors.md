@@ -36,7 +36,6 @@ Ghostwriter 区别于其他的 Markdown 编辑器的是它有更多的导出选�
 
 ### Abricotine
 
- But don't let its simplicity fool you; Abricotine packs quite a punch.
 如果喜欢简洁的 Markdown 编辑器，你会爱上[Abricotine][6]。但是不要让它的简单性欺骗了你；Abricotine 包含了很多强大的功能。
 
 ![](https://opensource.com/sites/default/files/uploads/markdown-editors_abricotine.png)
