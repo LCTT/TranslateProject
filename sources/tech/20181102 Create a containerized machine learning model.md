@@ -1,5 +1,3 @@
-translating by Flowsnow
-
 Create a containerized machine learning model
 ======
 

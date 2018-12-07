@@ -87,44 +87,44 @@ LCTT 的组成
 
 LCTT 现由项目管理委员会（PMC）进行管理，成员如下：
 
-- 组长 @wxy （主席）
-- 选题 @oska874
-- 选题 @lujun9972
-- 技术 @bestony
-- 校对 @pityonline
-- 译者 @geekpi
-- 译者 @qhwdw
+- 🎩 主席 @wxy
+- 🎩 选题 @oska874
+- 🎩 选题 @lujun9972
+- 🎩 技术 @bestony
+- 🎩 校对 @pityonline
+- 🎩 译者 @geekpi
+- 🎩 译者 @qhwdw
 
 目前 LCTT 核心成员有：
 
-- 核心成员 @vizv
-- 核心成员 @zpl1025
-- 核心成员 @runningwater
-- 核心成员 @FSSlc
-- 核心成员 @Vic020
-- 核心成员 @alim0x
-- 核心成员 @martin2011qi
-- 核心成员 @Locez
-- 核心成员 @ucasFL
-- 核心成员 @MjSeven
+- ❤️ 核心成员 @vizv
+- ❤️ 核心成员 @zpl1025
+- ❤️ 核心成员 @runningwater
+- ❤️ 核心成员 @FSSlc
+- ❤️ 核心成员 @Vic020
+- ❤️ 核心成员 @alim0x
+- ❤️ 核心成员 @martin2011qi
+- ❤️ 核心成员 @Locez
+- ❤️ 核心成员 @ucasFL
+- ❤️ 核心成员 @MjSeven
 
 曾经做出了巨大贡献的核心成员，被列入荣誉榜：
 
-- 前任选题 @DeadFire
-- 前任校对 @reinoir222
-- 前任校对 @PurlingNayuki
-- 前任校对 @carolinewuyan
-- 功勋成员 @tinyeyeser
-- 功勋成员 @vito-L
-- 功勋成员 @willqian
-- 功勋成员 @GOLinux
-- 功勋成员 @bazz2
-- 功勋成员 @ictlyh
-- 功勋成员 @jasminepeng
-- 功勋成员 @dongfengweixiao
-- 功勋成员 @strugglingyouth
-- 功勋成员 @GHLandy
-- 功勋成员 @rusking
+- 🏆 前任选题 @DeadFire
+- 🏆 前任校对 @reinoir222
+- 🏆 前任校对 @PurlingNayuki
+- 🏆 前任校对 @carolinewuyan
+- 🏆 前任校对 @jasminepeng
+- 🏆 功勋成员 @tinyeyeser
+- 🏆 功勋成员 @vito-L
+- 🏆 功勋成员 @willqian
+- 🏆 功勋成员 @GOLinux
+- 🏆 功勋成员 @bazz2
+- 🏆 功勋成员 @ictlyh
+- 🏆 功勋成员 @dongfengweixiao
+- 🏆 功勋成员 @strugglingyouth
+- 🏆 功勋成员 @GHLandy
+- 🏆 功勋成员 @rusking
 
 全部成员列表请参见： https://linux.cn/lctt-list/ 。
 
