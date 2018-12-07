@@ -1,37 +1,38 @@
-yongshouzhang translating
-
-HTTP request routing and validation with gorilla/mux
+使用 gorilla/mux 进行HTTP请求路由和验证
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/data_metrics_analytics_desktop_laptop.png?itok=9QXd7AUr)
 
-The Go networking library includes the `http.ServeMux` structure type, which supports HTTP request multiplexing (routing): A web server routes an HTTP request for a hosted resource, with a URI such as /sales4today, to a code handler; the handler performs the appropriate logic before sending an HTTP response, typically an HTML page. Here’s a sketch of the architecture:
+Go 网络库包括 `http.ServeMux` 结构类型，它支持 HTTP 请求多路复用（路由）：Web 服务器将托管资源的 HTTP 请求与诸如 sales4today 之类的 URI 路由到代码处理程序; 处理程序在发送 HTTP 响应（通常是 HTML 页面）之前执行适当的逻辑。 这是该体系的草图：
+
 ```
                  +------------+     +--------+     +---------+
-HTTP request---->| web server |---->| router |---->| handler |
+HTTP 请求---->| web 服务器 |---->| 路由   |---->| 处理程序|
                  +------------+     +--------+     +---------+
 ```
 
-In a call to the `ListenAndServe` method to start an HTTP server
+调用 `ListenAndServe` 方法后启动 HTTP 服务器
+
 ```
 http.ListenAndServe(":8888", nil) // args: port & router
 ```
 
-a second argument of `nil` means that the `DefaultServeMux` is used for request routing.
 
-The `gorilla/mux` package has a `mux.Router` type as an alternative to either the `DefaultServeMux` or a customized request multiplexer. In the `ListenAndServe` call, a `mux.Router` instance would replace `nil` as the second argument. What makes the `mux.Router` so appealing is best shown through a code example:
+第二个参数 `nil` 意味着 `DefaultServeMux` 用于请求路由。
+
+`gorilla/mux` 库包含 `mux.Router` 类型，可替代 `DefaultServeMux` 或自定义请求多路复用器。 在 `ListenAndServe` 调用中，`mux.Router` 实例将代替 `nil` 作为第二个参数。 下面的示例代码很好的说明了为什么 `mux.Router`如此吸引人：
 
 ### 1\. A sample crud web app
 
-The crud web application (see below) supports the four CRUD (Create Read Update Delete) operations, which match four HTTP request methods: POST, GET, PUT, and DELETE, respectively. In the crud app, the hosted resource is a list of cliche pairs, each a cliche and a conflicting cliche such as this pair:
+crud web 应用程序（见下文）支持四种 CRUD（创建读取更新删除）操作，它们分别对应四种 HTTP 请求方法：POST，GET，PUT 和 DELETE。 在 crud 应用程序中，托管资源是陈词滥调对的列表，每个陈词滥调都是陈词滥调和冲突的陈词滥调，例如这对：
 ```
 Out of sight, out of mind. Absence makes the heart grow fonder.
 
 ```
 
-New cliche pairs can be added, and existing ones can be edited or deleted.
+可以添加新的陈词滥调对，可以编辑或删除现有的陈词滥调对。
 
-**The crud web app**
+**crud web 应用程序**
 ```
 package main
 
@@ -446,43 +447,45 @@ func populateClichesList() {
 
 ```
 
-To focus on request routing and validation, the crud app does not use HTML pages as responses to requests. Instead, requests result in plaintext response messages: A list of the cliche pairs is the response to a GET request, confirmation that a new cliche pair has been added to the list is a response to a POST request, and so on. This simplification makes it easy to test the app, in particular, the `gorilla/mux` components, with a command-line utility such as [curl][1].
+为了专注于请求路由和验证，crud 应用程序不使用 HTML 页面作为请求响应。 相反，请求会产生明文响应消息：陈词滥调对的列表是对 GET 请求的响应，确认新的陈词滥调对已添加到列表中是对 POST 请求的响应，依此类推。 这种简化使得使用命令行实用程序（如 [curl] [1]）可以轻松地测试应用程序，尤其是 `gorilla/mux` 组件。
 
-The `gorilla/mux` package can be installed from [GitHub][2]. The crud app runs indefinitely; hence, it should be terminated with a Control-C or equivalent. The code for the crud app, together with a README and sample curl tests, is available on [my website][3].
+`gorilla/mux` 包可以从 [GitHub] [2] 安装。 crud app 无限期运行; 因此，应使用 Control-C 或同等命令终止。 crud 应用程序的代码，以及自述文件和简单的 curl 测试，可以在[我的网站] [3]上找到。
 
-### 2\. Request routing
+### 2\. 请求路由
 
-The `mux.Router` extends REST-style routing, which gives equal weight to the HTTP method (e.g., GET) and the URI or path at the end of a URL (e.g., /cliches). The URI serves as the noun for the HTTP verb (method). For example, in an HTTP request a startline such as
+`mux.Router` 扩展了 REST 风格的路由，它赋给 HTTP 方法（例如，GET）和 URL 末尾的 URI 或路径（例如/cliches）相同的权重。 URI 用作 HTTP 动词（方法）的名词。 例如，在HTTP请求中有一个起始行，例如
+
 ```
 GET /cliches
 
 ```
 
-means get all of the cliche pairs, whereas a startline such as
+意味着得到所有的陈词滥调对，而一个起始线，如
+
 ```
 POST /cliches
 
 ```
 
-means create a cliche pair from data in the HTTP body.
+意味着从HTTP正文中的数据创建一个陈词滥调对。
 
-In the crud web app, there are five functions that act as request handlers for five variations of an HTTP request:
+在 crud web 应用程序中，有五个函数充当HTTP请求的五种变体的请求处理程序：
 ```
-ClichesAll(...)    # GET: get all of the cliche pairs
+ClichesAll(...)    # GET: 获取所有的陈词滥调对
 
-ClichesOne(...)    # GET: get a specified cliche pair
+ClichesOne(...)    # GET: 获取指定的陈词滥调对
 
-ClichesCreate(...) # POST: create a new cliche pair
+ClichesCreate(...) # POST: 创建新的陈词滥调对
 
-ClichesEdit(...)   # PUT: edit an existing cliche pair
+ClichesEdit(...)   # PUT: 编辑现有的陈词滥调对
 
-ClichesDelete(...) # DELETE: delete a specified cliche pair
+ClichesDelete(...) # DELETE: 删除指定的陈词滥调对
 
 ```
 
-Each function takes two arguments: an `http.ResponseWriter` for sending a response back to the requester, and a pointer to an `http.Request`, which encapsulates information from the underlying HTTP request. The `gorilla/mux` package makes it easy to register these request handlers with the web server, and to perform regex-based validation.
+每个函数都有两个参数：一个 `http.ResponseWriter` 用于向请求者发送一个响应，一个指向 `http.Request` 的指针，该指针封装了底层 HTTP 请求的信息。 使用 `gorilla/mux` 包可以轻松地将这些请求处理程序注册到Web服务器，并执行基于正则表达式的验证。
 
-The `startServer` function in the crud app registers the request handlers. Consider this pair of registrations, with `router` as a `mux.Router` instance:
+crud 应用程序中的 `startServer` 函数注册请求处理程序。 考虑这对注册，`router` 作为 `mux.Router` 实例：
 ```
 router.HandleFunc("/", ClichesAll).Methods("GET")
 
@@ -490,13 +493,14 @@ router.HandleFunc("/cliches", ClichesAll).Methods("GET")
 
 ```
 
-These statements mean that a GET request for either the single slash / or /cliches should be routed to the `ClichesAll` function, which then handles the request. For example, the curl request (with % as the command-line prompt)
+这些语句意味着对单斜线/ 或 /cliches 的 GET 请求应该路由到 `ClichesAll` 函数，然后处理请求。 例如，curl 请求（使用％作为命令行提示符）
+
 ```
 % curl --request GET localhost:8888/
 
 ```
 
-produces this response:
+会产生如下结果
 ```
 1: Out of sight, out of mind.  Absence makes the heart grow fonder.
 
@@ -506,9 +510,10 @@ produces this response:
 
 ```
 
-The three cliche pairs are the initial data in the crud app.
+三个陈词滥调对是 crud 应用程序中的初始数据。
 
-In this pair of registration statements
+
+在这句注册语句中
 ```
 router.HandleFunc("/cliches", ClichesAll).Methods("GET")
 
@@ -516,84 +521,85 @@ router.HandleFunc("/cliches", ClichesCreate).Methods("POST")
 
 ```
 
-the URI is the same (/cliches) but the verbs differ: GET in the first case, and POST in the second. This registration exemplifies REST-style routing because the difference in the verbs alone suffices to dispatch the requests to two different handlers.
+URI是相同的（/cliches），但动词不同：第一种情况下为 GET 请求，第二种情况下为 POST 请求。 此注册举例说明了 REST 样式的路由，因为仅动词的不同就足以将请求分派给两个不同的处理程序。
 
-More than one HTTP method is allowed in a registration, although this strains the spirit of REST-style routing:
+注册中允许多个 HTTP 方法，尽管这会影响 REST 风格路由的精髓：
+
 ```
 router.HandleFunc("/cliches", DoItAll).Methods("POST", "GET")
 
 ```
+除了动词和 URI 之外，还可以在功能上路由 HTTP 请求。 例如，注册
 
-HTTP requests can be routed on features besides the verb and the URI. For example, the registration
 ```
 router.HandleFunc("/cliches", ClichesCreate).Schemes("https").Methods("POST")
 
 ```
-
-requires HTTPS access for a POST request to create a new cliche pair. In similar fashion, a registration might require a request to have a specified HTTP header element (e.g., an authentication credential).
+要求对 POST 请求进行 HTTPS 访问以创建新的陈词滥调对。 以类似的方式，注册可能需要具有指定的 HTTP 头元素（例如，认证凭证）的请求。
 
 ### 3\. Request validation
 
-The `gorilla/mux` package takes an easy, intuitive approach to request validation through regular expressions. Consider this request handler for a get one operation:
+`gorilla/mux` 包采用简单，直观的方法通过正则表达式进行请求验证。 考虑此请求处理程序以获取一个操作：
 ```
 router.HandleFunc("/cliches/{id:[0-9]+}", ClichesOne).Methods("GET")
 
 ```
-
-This registration rules out HTTP requests such as
+此注册排除了 HTTP 请求，例如
 ```
 % curl --request GET localhost:8888/cliches/foo
 
 ```
 
-because foo is not a decimal numeral. The request results in the familiar 404 (Not Found) status code. Including the regex pattern in this handler registration ensures that the `ClichesOne` function is called to handle a request only if the request URI ends with a decimal integer value:
+因为 foo 不是十进制数字。 该请求导致熟悉的 404（未找到）状态码。 在此处理程序注册中包含正则表达式模式可确保仅在请求 URI 以十进制整数值结束时才调用 `ClichesOne` 函数来处理请求：
+
 ```
 % curl --request GET localhost:8888/cliches/3  # ok
 
 ```
 
-As a second example, consider the request
+另一个例子，请求如下
 ```
 % curl --request PUT --data "..." localhost:8888/cliches
 
 ```
+此请求导致状态代码为 405（错误方法），因为 /cliches URI 在 crud 应用程序中仅在 GET 和 POST 请求中注册。 像 GET 请求一样，PUT 请求必须在 URI 的末尾包含一个数字id：
 
-This request results in a status code of 405 (Bad Method) because the /cliches URI is registered, in the crud app, only for GET and POST requests. A PUT request, like a GET one request, must include a numeric id at the end of the URI:
 ```
 router.HandleFunc("/cliches/{id:[0-9]+}", ClichesEdit).Methods("PUT")
 
 ```
 
-### 4\. Concurrency issues
+### 4\. 并发问题
 
-The `gorilla/mux` router executes each call to a registered request handler as a separate goroutine, which means that concurrency is baked into the package. For example, if there are ten simultaneous requests such as
+`gorilla/mux` 路由器作为单独的 goroutine 执行对已注册的请求处理程序的每次调用，这意味着并发性被烘焙到包中。 例如，如果有十个同时发出的请求，例如
+
 ```
 % curl --request POST --data "..." localhost:8888/cliches
 
 ```
 
-then the `mux.Router` launches ten goroutines to execute the `ClichesCreate` handler.
+然后 `mux.Router` 启动十个 goroutines 来执行 `ClichesCreate` 处理程序。
 
-Of the five request operations GET all, GET one, POST, PUT, and DELETE, the last three alter the requested resource, the shared `clichesList` that houses the cliche pairs. Accordingly, the crudapp needs to guarantee safe concurrency by coordinating access to the `clichesList`. In different but equivalent terms, the crud app must prevent a race condition on the `clichesList`. In a production environment, a database system might be used to store a resource such as the `clichesList`, and safe concurrency then could be managed through database transactions.
+GET all，GET one，POST，PUT 和 DELETE 中的五个请求操作中，最后三个改变了所请求的资源，即包含陈词滥调对的共享 `clichesList`。 因此，crudapp 需要通过协调对`clichesList` 的访问来保证安全的并发性。 在不同但等效的术语中，crud app 必须防止 `clichesList` 上的竞争条件。 在生产环境中，可以使用数据库系统来存储诸如 `clichesList` 之类的资源，然后可以通过数据库事务来管理安全并发。
 
-The crud app takes the recommended Go approach to safe concurrency:
+crud 应用程序采用推荐的Go方法来实现安全并发：
 
-  * Only a single goroutine, the resource manager started in the crud app `startServer` function, has access to the `clichesList` once the web server starts listening for requests.
-  * The request handlers such as `ClichesCreate` and `ClichesAll` send a (pointer to) a `crudRequest` instance to a Go channel (thread-safe by default), and the resource manager alone reads from this channel. The resource manager then performs the requested operation on the `clichesList`.
+* 只有一个 goroutine，资源管理器在 crud app`startServer` 函数中启动，一旦 Web 服务器开始侦听请求，就可以访问 `clichesList`。
+* 诸如 `ClichesCreate` 和 `ClichesAll` 之类的请求处理程序向 Go 通道发送（指向）`crudRequest` 实例（默认情况下是线程安全的），并且资源管理器单独从该通道读取。 然后，资源管理器对 `clichesList` 执行请求的操作。
 
-
-
-The safe-concurrency architecture can be sketched as follows:
-```
-                 crudRequest                   read/write
-
-request handlers------------->resource manager------------>clichesList
+安全并发体系结构绘制如下：
 
 ```
+                 crudRequest                   读/写
 
-With this architecture, no explicit locking of the `clichesList` is needed because only one goroutine, the resource manager, accesses the `clichesList` once CRUD requests start coming in.
+请求处理程序 -------------> 资源托管者 ------------> 陈词滥调列表
 
-To keep the crud app as concurrent as possible, it’s essential to have an efficient division of labor between the request handlers, on the one side, and the single resource manager, on the other side. Here, for review, is the `ClichesCreate` request handler:
+```
+
+在这种架构中，不需要显式锁定 `clichesList`，因为一旦 CRUD 请求开始进入，只有一个 goroutine（资源管理器）访问 `clichesList`。
+
+为了使 crud 应用程序尽可能保持并发，在一方请求处理程序与另一方的单一资源管理器之间进行有效的分工至关重要。 在这里，为了审查，是 `ClichesCreate` 请求处理程序：
+
 ```
 func ClichesCreate(res http.ResponseWriter, req *http.Request) {
 
@@ -612,42 +618,40 @@ func ClichesCreate(res http.ResponseWriter, req *http.Request) {
 }ClichesCreateres httpResponseWriterreqclichecountergetDataFromRequestreqcpclichePaircpClicheclichecpCountercountercr&crudRequestverbPOSTcpcpconfirmcompleteRequestcrres
 
 ```
+`ClichesCreate` 调用实用函数 `getDataFromRequest`，它从 POST 请求中提取新的陈词滥调和反陈词滥调。 然后 `ClichesCreate` 函数创建一个新的 `ClichePair`，设置两个字段，并创建一个 `crudRequest` 发送给单个资源管理器。 此请求包括一个确认通道，资源管理器使用该通道将信息返回给请求处理程序。 所有设置工作都可以在不涉及资源管理器的情况下完成，因为尚未访问 `clichesList`。
 
-`ClichesCreate` calls the utility function `getDataFromRequest`, which extracts the new cliche and counter-cliche from the POST request. The `ClichesCreate` function then creates a new `ClichePair`, sets two fields, and creates a `crudRequest` to be sent to the single resource manager. This request includes a confirmation channel, which the resource manager uses to return information back to the request handler. All of the setup work can be done without involving the resource manager because the `clichesList` is not being accessed yet.
+请求处理程序调用实用程序函数，该函数从 POST 请求中提取新的陈词滥调和反陈词滥调。 然后，该函数创建一个新的，设置两个字段，并创建 ato 发送到单个资源管理器。 此请求包括一个确认通道，资源管理器使用该通道将信息返回给请求处理程序。 所有设置工作都可以在不涉及资源管理器的情况下完成，因为尚未访问它。
 
-The request handlercalls the utility function, which extracts the new cliche and counter-cliche from the POST request. Thefunction then creates a new, sets two fields, and creates ato be sent to the single resource manager. This request includes a confirmation channel, which the resource manager uses to return information back to the request handler. All of the setup work can be done without involving the resource manager because theis not being accessed yet.
-
-The `completeRequest` utility function called at the end of the `ClichesCreate` function and the other request handlers
+`completeRequest` 实用程序函数在 `ClichesCreate` 函数和其他请求处理程序的末尾调用
 ```
 completeRequest(cr, res, "create") // shown above
 
 ```
 
-brings the resource manager into play by putting a `crudRequest` into the `crudRequests` channel:
+通过将 `crudRequest` 放入 `crudRequests` 频道，使资源管理器发挥作用：
 ```
 func completeRequest(cr *crudRequest, res http.ResponseWriter, logMsg string) {
 
-   crudRequests<-cr          // send request to resource manager
+   crudRequests<-cr          // 向资源托管者发送请求
 
-   msg := <-cr.confirm       // await confirmation string
+   msg := <-cr.confirm       // 等待确认
 
-   res.Write([]byte(msg))    // send confirmation back to requester
+   res.Write([]byte(msg))    // 向请求方发送确认
 
-   logIt(logMsg)             // print to the standard output
+   logIt(logMsg)             // 打印到标准输出
 
 }
 
 ```
-
-For a POST request, the resource manager calls the utility function `addPair`, which changes the `clichesList` resource:
+对于 POST 请求，资源管理器调用实用程序函数 `addPair`，它会更改 `clichesList` 资源：
 ```
 func addPair(cp *clichePair) string {
 
-   cp.Id = masterId  // assign a unique ID
+   cp.Id = masterId  // 分配一个唯一的 ID 
 
-   masterId++        // update the ID counter
+   masterId++        // 更新 ID 计数器
 
-   clichesList = append(clichesList, cp) // update the list
+   clichesList = append(clichesList, cp) // 更新列表
 
    return "\nCreated: " + cp.Cliche + " " + cp.Counter + "\n"
 
@@ -655,9 +659,9 @@ func addPair(cp *clichePair) string {
 
 ```
 
-The resource manager calls similar utility functions for the other CRUD operations. It’s worth repeating that the resource manager is the only goroutine to read or write the `clichesList` once the web server starts accepting requests.
+资源管理器为其他CRUD操作调用类似的实用程序函数。 值得重复的是，一旦 Web 服务器开始接受请求，资源管理器就是唯一可以读取或写入 `clichesList` 的 goroutine。
 
-For web applications of any type, the `gorilla/mux` package provides request routing, request validation, and related services in a straightforward, intuitive API. The crud web app highlights the package’s main features. Give the package a test drive, and you’ll likely be a buyer.
+对于任何类型的 Web 应用程序，`gorilla/mux` 包在简单直观的API中提供请求路由，请求验证和相关服务。 crud web 应用程序突出了软件包的主要功能。 给包裹一个测试驱动，你可能会成为买主。
 
 --------------------------------------------------------------------------------
 
@@ -665,7 +669,7 @@ via: https://opensource.com/article/18/8/http-request-routing-validation-gorilla
 
 作者：[Marty Kalin][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[yongshouzhang](https://github.com/yongshouzhang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
