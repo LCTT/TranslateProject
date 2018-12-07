@@ -11,7 +11,7 @@
 简介
 -------------------------------
 
-[LCTT](https://linux.cn/lctt/) 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译 Linux 相关的技术、资讯、杂文等内容。
+[LCTT](https://linux.cn/lctt/) 是“Linux 中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译 Linux 相关的技术、资讯、杂文等内容。
 
 LCTT 已经拥有几百名活跃成员，并欢迎更多的 Linux 志愿者加入我们的团队。
 
@@ -31,14 +31,14 @@ LCTT 的组成
 加入我们
 -------------------------------
 
-请首先加入翻译组的 QQ 群，群号是：198889102，加群时请说明是“志愿者”。加入后记得修改您的群名片为您的 GitHub 的 ID。
+请首先加入翻译组的 QQ 群，群号是：**198889102**，加群时请说明是“*志愿者*”。加入后记得修改您的群名片为您的 GitHub 的 ID。
 
 加入的成员，请先阅读 [WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
 
 如何开始
 -------------------------------
 
-请阅读 [WIKI](https://github.com/LCTT/TranslateProject/wiki)。
+请阅读 [WIKI](https://github.com/LCTT/TranslateProject/wiki)。如需要协助，请在群内发问。
 
 历史
 -------------------------------
@@ -79,44 +79,52 @@ LCTT 的组成
 * 2018/08/17 提升 pityonline 为核心成员，担任校对，并接受他的建议采用 PR 审核模式。
 * 2018/09/10 [LCTT 五周年](https://linux.cn/article-9999-1.html)。
 * 2018/10/25 重构了 CI，感谢 vizv、lujun9972、bestony。
+* 2018/11/13 [成立了项目管理委员会（PMC）](https://linux.cn/article-10279-1.html)，初始成员为：@wxy （主席）、@oska874、@lujun9972、@bestony、@pityonline、@geekpi、@qhwdw。
 
-核心成员
+
+项目管理委员及核心成员
 -------------------------------
 
-目前 LCTT  核心成员有：
+LCTT 现由项目管理委员会（PMC）进行管理，成员如下：
 
-- 组长 @wxy,
-- 选题 @oska874,
-- 选题 @lujun9972,
-- 技术 @bestony,
-- 校对 @jasminepeng,
-- 校对 @pityonline,
-- 钻石译者 @geekpi,
-- 钻石译者 @qhwdw,
-- 钻石译者 @GOLinux,
-- 核心成员 @GHLandy,
-- 核心成员 @martin2011qi,
-- 核心成员 @ictlyh,
-- 核心成员 @strugglingyouth,
-- 核心成员 @FSSlc,
-- 核心成员 @zpl1025,
-- 核心成员 @runningwater,
-- 核心成员 @bazz2,
-- 核心成员 @Vic020,
-- 核心成员 @alim0x,
-- 核心成员 @tinyeyeser,
-- 核心成员 @Locez,
-- 核心成员 @ucasFL,
-- 核心成员 @rusking,
-- 核心成员 @MjSeven
-- 前任选题 @DeadFire,
-- 前任校对 @reinoir222,
-- 前任校对 @PurlingNayuki,
-- 前任校对 @carolinewuyan,
-- 功勋成员 @vito-L,
-- 功勋成员 @willqian,
-- 功勋成员 @vizv,
-- 功勋成员 @dongfengweixiao,
+- 🎩 主席 @wxy
+- 🎩 选题 @oska874
+- 🎩 选题 @lujun9972
+- 🎩 技术 @bestony
+- 🎩 校对 @pityonline
+- 🎩 译者 @geekpi
+- 🎩 译者 @qhwdw
+
+目前 LCTT 核心成员有：
+
+- ❤️ 核心成员 @vizv
+- ❤️ 核心成员 @zpl1025
+- ❤️ 核心成员 @runningwater
+- ❤️ 核心成员 @FSSlc
+- ❤️ 核心成员 @Vic020
+- ❤️ 核心成员 @alim0x
+- ❤️ 核心成员 @martin2011qi
+- ❤️ 核心成员 @Locez
+- ❤️ 核心成员 @ucasFL
+- ❤️ 核心成员 @MjSeven
+
+曾经做出了巨大贡献的核心成员，被列入荣誉榜：
+
+- 🏆 前任选题 @DeadFire
+- 🏆 前任校对 @reinoir222
+- 🏆 前任校对 @PurlingNayuki
+- 🏆 前任校对 @carolinewuyan
+- 🏆 前任校对 @jasminepeng
+- 🏆 功勋成员 @tinyeyeser
+- 🏆 功勋成员 @vito-L
+- 🏆 功勋成员 @willqian
+- 🏆 功勋成员 @GOLinux
+- 🏆 功勋成员 @bazz2
+- 🏆 功勋成员 @ictlyh
+- 🏆 功勋成员 @dongfengweixiao
+- 🏆 功勋成员 @strugglingyouth
+- 🏆 功勋成员 @GHLandy
+- 🏆 功勋成员 @rusking
 
 全部成员列表请参见： https://linux.cn/lctt-list/ 。
 
