@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lxfminions)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (4 open source Markdown editors)
 [#]: via: (https://opensource.com/article/18/11/markdown-editors)
 [#]: author: (Scott Nesbitt https://opensource.com/users/scottnesbitt)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10320-1.html)
 
 4 个 Markdown 开源编辑器
 ======
