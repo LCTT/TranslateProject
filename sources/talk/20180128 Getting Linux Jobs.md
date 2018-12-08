@@ -1,3 +1,4 @@
+translating by ryze-borgia
 Getting Linux Jobs
 ======
 

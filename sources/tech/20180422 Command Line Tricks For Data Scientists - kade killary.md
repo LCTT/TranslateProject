@@ -1,4 +1,4 @@
-Command Line Tricks For Data Scientists • kade killary
+GraveAccent翻译中 Command Line Tricks For Data Scientists • kade killary
 ======
 
 ![](https://i.imgur.com/0mzQMcB.png)
