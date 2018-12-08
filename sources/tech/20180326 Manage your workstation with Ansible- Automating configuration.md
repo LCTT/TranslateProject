@@ -88,23 +88,25 @@ As you can see, it uses the same syntax, but we stripped out everything that isn
 ```
 
 This new `local.yml` acts as an index that will import all our taskbooks. I've added a few new things to this file that you haven't seen yet in this series. First, at the beginning of the file, I added `pre_tasks`, which allows us to have Ansible perform a task before all the other tasks run. In this case, we're telling Ansible to update our distribution's repository index. This line does that for us:
-这个新的'local.yml'扮演的是将要导入我们的taksbooks的主页的角色。我已经在这个文件中添加了一些你在这个系列中看不到的内容。首先，在这个文件的开头处，我添加了'pre——tasks',这个任务的作用是在其他所有任务运行之前先运行某个任务。
+这个新的'local.yml'扮演的是将要导入我们的taksbooks的主页的角色。我已经在这个文件中添加了一些你在这个系列中看不到的内容。首先，在这个文件的开头处，我添加了'pre——tasks',这个任务的作用是在其他所有任务运行之前先运行某个任务。在这种情况下，我们给Ansible的命令是让它去更新我们的分布存储库主页，下面的配置将执行这个任务要求：
 ```
 apt: update_cache=yes
 
 ```
 
 Normally the `apt` module allows us to install packages, but we can also tell it to update our repository index. The idea is that we want all our individual plays to work with a fresh index each time Ansible runs. This will help ensure we don't have an issue with a stale index while attempting to install a package. Note that the `apt` module works only with Debian, Ubuntu, and their derivatives. If you're running a different distribution, you'll want to use a module specific to your distribution rather than `apt`. See the documentation for Ansible if you need to use a different module.
-
+通常'apt'模块是用来安装包文件的，但我们也能够让它来更新库索引。这样做的目的是让我们的每个play在Ansible运行的时候能够以最新的索引工作。这将确保我们在使用一个老旧的索引安装一个包的时候不会出现问题。因为'apt'模块仅仅在Debian，Ubuntu和他们的衍生环境下工作。如果你运行的一个不同的环境，你期望在你的环境中使用一个特殊的模块而不是'apt'。如果你需要使用一个不同的模块请查看Ansible的相关文档。
 The following line is also worth further explanation:
+下面这行值得以后解释：
 ```
 changed_when: False
 
 ```
 
 This line on an individual task stops Ansible from reporting the results of the play as changed even when it results in a change in the system. In this case, we don't care if the repository index contains new data; it almost always will, since repositories are always changing. We don't care about changes to `apt` repositories, as index changes are par for the course. If we omit this line, we'll see the summary at the end of the process report that something has changed, even if it was merely about the repository being updated. It's better to ignore these types of changes.
-
+在独立任务中的这行阻止了Ansible去报告play改变的结果即使是它在系统中导致的一个改变。在这中情况下，我们不会去在意库索引是否包含新的数据；它几乎总是会的因为库总是在改变的。我们不会去在意'apt'库额改变，因为索引的改变是正常的过程。如果我们删除这行，我们将在过程保告的后面看到所有的变动，即使仅仅库的更新而已。最好能够去忽略这类的改变。
 Next is our normal tasks section, and we import the taskbook we created. Each time we add another taskbook, we add another line here:
+接下来是正常任务的阶段，我们将创建好的taskbook导入。我们每次添加另一个taskbook的时候，要添加下面这一行：
 ```
 tasks:
 
@@ -113,16 +115,18 @@ tasks:
 ```
 
 If you were to run the `ansible-pull` command here, it should essentially do the same thing as it did in the last article. The difference is that we have improved our organization and we can more efficiently expand on it. The `ansible-pull` command syntax, to save you from finding the previous article, is this:
+如果你将要运行'ansible-pull'命令，他应该向上一篇文章中的那样做同样重要的事情。 不同的是我们已经提高了我们的组织并且能够更有效的扩展它。'ansible-pull'命令的语法，为了节省你到上一篇文章中去寻找，参考如下：
 ```
 sudo ansible-pull -U https://github.com/<github_user>/ansible.git
 
 ```
 
 If you recall, the `ansible-pull` command pulls down a Git repository and applies the configuration it contains.
-
+如果你还记得话，'ansib,e-pull'的命令下来了一个Git库并且应用了它所包含的配置。
 Now that our foundation is in place, we can expand upon our Ansible config and add features. Specifically, we'll add configuration to automate the deployment of future changes to our workstations. To support this goal, the first thing we should do is to create a user specifically to apply our Ansible configuration. This isn't required—we can continue to run our Ansible configuration under our own user. But using a separate user segregates this to a system process that will run in the background, without our involvement.
-
+既然我们的基础已经搭建好，我们现在可以扩展我们的Ansible并且添加功能。更特别的是，我们将添加配置来自动化的部署对工作站要做的改变。为了支撑这个目的，首先我们要创建一个特殊的账户来应用我们的Ansible配置。这个不是必要的，我们仍然能够在我们自己的用户下运行Ansible配置。但是使用一个隔离的用户能够将其隔离到不需要我们参与的在后台运行的一个系统进程中，
 We could create this user with the normal method, but since we're using Ansible, we should shy away from manual changes. Instead, we'll create a taskbook to handle user creation. This taskbook will create just one user for now, but you can always add additional plays to this taskbook to add additional users. I'll call this user `ansible`, but you can name it something else if you wish (if you do, make sure to update all occurrences). Let's create a taskbook named `users.yml` and place this code inside of it:
+我们可以使用常规的方式来创建这个用户，但是既我们正在使用Ansible,我们应该尽量避开使用手动的改变。替代的是，我们将会创建一个taskbook来处理用户的创建任务。这个taskbook目前将会仅仅创建一个用户，但你可以在这个taskbook中添加额外的plays来创建更过的用户。我将这个用户命名为'ansible'，你可以按照自己的想法来命名（如果你做了这个改变要确保更新所有的变动）。让我们来创建一个名为'user.yml'的taskbook并且将以下代码写进去：
 ```
 - name: create ansible user
 
@@ -131,6 +135,7 @@ We could create this user with the normal method, but since we're using Ansible,
 ```
 
 Next, we need to edit our `local.yml` file and append this new taskbook to the file, so it will look like this:
+下一步，我们需要编辑'local.yml'文件，将这个新的taskbook添加进去，像如下这样写：
 ```
 - hosts: localhost
 
@@ -155,14 +160,16 @@ Next, we need to edit our `local.yml` file and append this new taskbook to the f
 ```
 
 Now when we run our `ansible-pull` command, a user named `ansible` will be created on the system. Note that I specifically declared `User ID 900` for this user by using the `UID` option. This isn't required, but it's recommended. The reason is that UIDs under 1,000 are typically not shown on the login screen, which is great because there's no reason we would need to log into a desktop session as our `ansible` user. UID 900 is arbitrary; it should be any number under 1,000 that's not already in use. You can find out if UID 900 is in use on your system with the following command:
+现在当我们运行'ansible-pull'命令的时候，一个名为'ansible'的用户将会在系统中被创建。注意我特地通过参数'UID '为这个用户声明了用户ID为900。这个不是必须的，但建议这样声明以下。因为在1000以下的UID在登陆界面是不会显示的，这样是很棒的因为我们根本没有需要去使用'ansibe'账户来登陆我们的桌面。UID 900是固定的；它应该是在1000以下没有被使用的任何一个数值。你可以使用以下命令在系统中去验证UID 900是否已经被使用了。
 ```
 cat /etc/passwd |grep 900
 
 ```
 
 However, you shouldn't run into a problem with this UID because I've never seen it used by default in any distribution I've used so far.
-
+然而，你使用这个UID应该不会遇到什么问题，因为迄今为止在我在任何发行版中我还没遇到过它是被默认使用的。
 Now, we have an `ansible` user that will later be used to apply our Ansible configuration automatically. Next, we can create the actual cron job that will be used to automate this. Rather than place this in the `users.yml` taskbook we just created, we should separate this into its own file. Create a taskbook named `cron.yml` in the tasks directory and place the following code inside:
+现在，我们已经拥有了一个名为
 ```
 - name: install cron job (ansible-pull)
 
