@@ -169,7 +169,7 @@ cat /etc/passwd |grep 900
 However, you shouldn't run into a problem with this UID because I've never seen it used by default in any distribution I've used so far.
 然而，你使用这个UID应该不会遇到什么问题，因为迄今为止在我在任何发行版中我还没遇到过它是被默认使用的。
 Now, we have an `ansible` user that will later be used to apply our Ansible configuration automatically. Next, we can create the actual cron job that will be used to automate this. Rather than place this in the `users.yml` taskbook we just created, we should separate this into its own file. Create a taskbook named `cron.yml` in the tasks directory and place the following code inside:
-现在，我们已经拥有了一个名为
+现在，我们已经拥有了一个名为'ansible'的账户，它将会在之后的自动化配置中使用。接下来，我们可以创建实际的定时作业来自动操作它。而不是将其放置到我们刚刚创建的'users.yml'文件中，我们应该将其分开放到它自己的文件中。在任务目录中创建一个名为'cron.yml'的taskbook并且将以下的代买写进去：
 ```
 - name: install cron job (ansible-pull)
 
@@ -178,24 +178,28 @@ Now, we have an `ansible` user that will later be used to apply our Ansible conf
 ```
 
 The syntax for the cron module should be fairly self-explanatory. With this play, we're creating a cron job to be run as the `ansible` user. The job will execute every 10 minutes, and the command it will execute is this:
+定时模块的语法几乎是不需加以说明的。通过这个play,我们创建了一个通过用户'ansible'运行的定时作业。这个作业将每隔10分钟执行一次，下面是它将要执行的命令：
 ```
 /usr/bin/ansible-pull -o -U https://github.com/<github_user>/ansible.git > /dev/null
 
 ```
 
 Also, we can put additional cron jobs we want all our workstations to have into this one file. We just need to add additional plays to add new cron jobs. However, simply adding a new taskbook for cron isn't enough—we'll also need to add it to our `local.yml` file so it will be called. Place the following line with the other includes:
+同样，我们也可以添加想要我们的所有工作站部署的额外定时作业到这个文件中。我们只需要在新的定时作业中添加额外的palys即可。然而，仅仅是添加一个定时的taskbook是不够的，我们还需要将它添加到'local.yml'文件中以便它能够被调用。将下面的一行添加到其余的下面：
 ```
 - include: tasks/cron.yml
 
 ```
 
 Now when `ansible-pull` is run, it will set up a new cron job that will be run as the `ansible` user every 10 minutes. But, having an Ansible job running every 10 minutes isn't ideal because it will take considerable CPU power. It really doesn't make sense for Ansible to run every 10 minutes unless we've changed something in the Git repository.
+现在当'ansible-pull'命令执行的时候，它将会以通过用户'ansible'每个十分钟设置一个新的定时作业。但是，每个十分钟运行一个Ansible作业并不是一个好的方式因为这个将消耗很多的CPU资源。每隔十分钟来运行对于Ansible来说是毫无意义的除非欧文已经在Git库中改变一些东西。
 
 However, we've already solved this problem. Notice the `-o` option I added to the `ansible-pull` command in the cron job that we've never used before. This option tells Ansible to run only if the repository has changed since the last time `ansible-pull` was called. If the repository hasn't changed, it won't do anything. This way, you're not wasting valuable CPU for no reason. Sure, some CPU will be used when it pulls down the repository, but not nearly as much as it would use if it were applying your entire configuration all over again. When `ansible-pull` does run, it will go through all the tasks in the Playbook and taskbooks, but at least it won't run for no purpose.
-
+然而，我们已经解决了这个问题。注意到我在定时作业中的命令'ansible-pill'添加的我们之前从未用到过的参数'-o'.这个参数告诉Ansible只有在从上次'ansible-pull'被调用以后库有了变化采取运行。如果库没有任何变化，他将不会做任何事情。通过这个方法，你将不会无端的浪费CPU资源。当然，一些CPU资源将会在下来存储库的时候被使用，但不会像再一次应用整个配置的时候使用的那么多。当'ansible-pull'执行的时候，它将会遍历在playbooks和taskbooks中的所有任务，但至少它不糊毫无目的的运行。
 Although we've added all the required components to automate `ansible-pull`, it actually won't work properly yet. The `ansible-pull` command will run with `sudo`, which would give it access to perform system-level commands. However, our `ansible` user is not set up to perform tasks as `sudo`. Therefore, when the cron job triggers, it will fail. Normally we could just use `visudo` and manually set the `ansible` user up to have this access. However, we should do things the Ansible way from now on, and this is a great opportunity to show you how the `copy` module works. The `copy` module allows you to copy a file from your Ansible repository to somewhere else in the filesystem. In our case, we'll copy a config file for `sudo` to `/etc/sudoers.d/` so that the `ansible` user can perform administrative tasks.
-
+尽管我们已经添加了所有必须的配置要素来自动化'ansible-pull',它任然还不能正常的工作。'ansible-pull'命令需要sudo的权限来运行，这将允许它执行系统级的命令。然而我们创建的用户'ansible'并没有被设置为以'sudo'的权限来执行命令，因此当定时作业触发的时候，执行将会失败。通常沃恩可以使用命令'visudo'来手动的去设置用户'ansible'的拥有这个权限。然而我们现在应该以Ansible的方式来操作，而且这将会是一个向你展示'copy'模块是如何工作的机会。'copy'模块允许你从库复制一个文件到文件系统的任何位置。在这个案列中，我们将会复制'sudo'的一个配置文件到'/etc/sudoers.d/'以便用户'ansible'能够以管理员的权限执行任务。
 Open up the `users.yml` taskbook, and add the following play to the bottom:
+打开'users.yml',将下面的play添加到文件末尾。
 ```
 - name: copy sudoers_ansible
 
@@ -204,43 +208,51 @@ Open up the `users.yml` taskbook, and add the following play to the bottom:
 ```
 
 The `copy` module, as we can see, copies a file from our repository to somewhere else. In this case, we're grabbing a file named `sudoers_ansible` (which we will create shortly) and copying it to `/etc/sudoers.d/ansible` with `root` as the owner.
-
+'copy'模块，正如我们看到的，从库复制一个文件到其他任何位置。在这个过程中，我们正在抓取一个名为'sudoers_ansible'(我们将在后续创建)的文件并将它复制到拥有者为'root'的'/etc/sudoers/ansible'中。
 Next, we need to create the file that we'll be copying. In the root of your Ansible repository, create a `files` directory:​
+接下来，我们需要创建我们将要复制的文件。在你的库的根目录下，创建一个名为'files'的目录：
 ```
 mkdir files
 
 ```
 
 Then, in the `files` directory we just created, create the `sudoers_ansible` file with the following content:
+然后，在我们刚刚创建的'files'目录里，创建包含以下内容的名为'sudoers_ansible'的文件：
 ```
 ansible ALL=(ALL) NOPASSWD: ALL
 
 ```
 
 Creating a file in `/etc/sudoers.d`, like we're doing here, allows us to configure `sudo` for a specific user. Here we're allowing the `ansible` user full access to the system via `sudo` without a password prompt. This will allow `ansible-pull` to run as a background task without us needing to run it manually.
+在'/etc/sudoer.d'目录里创建一个文件，就像我们正在这样做的，允许我们为一个特殊的用户配置'sudo'权限。现在我们正在通过'sudo'允许用户'ansible'不需要密码拥有完全控制权限。这将允许'ansible-pull'以后台任务的形式运行而不需要手动去运行。
 
 Now, you can run `ansible-pull` again to pull down the latest changes:
+现在，你可以通过再次运行'ansible-pull'来拉取最新的变动：
 ```
 sudo ansible-pull -U https://github.com/<github_user>/ansible.git
 
 ```
 
 From this point forward, the cron job for `ansible-pull` will run every 10 minutes in the background and check your repository for changes. If it finds changes, it will run your playbook and apply your taskbooks.
+从这个节点开始，'ansible-pull'的定时作业将会在后台每隔十分钟运行一次来检查你的库是否有变化，如果它发现有变化，将会运行你的palybook并且应用你的taskbooks.
 
 So now we have a fully working solution. When you first set up a new laptop or desktop, you'll run the `ansible-pull` command manually, but only the first time. From that point forward, the `ansible` user will take care of subsequent runs in the background. When you want to make a change to your workstation machines, you simply pull down your Git repository, make the changes, then push those changes back to the repository. Then, the next time the cron job fires on each machine, it will pull down those changes and apply them. You now only have to make changes once, and all your workstations will follow suit. This method may be a bit unconventional though. Normally, you'd have an `inventory` file with your machines listed and several roles each machine could be a member of. However, the `ansible-pull` method, as described in this article, is a very efficient way of managing workstation configuration.
+所以现在我们有了一个完整的工作方案。当你第一次设置一台新的笔记本或者台式机的时候，你要去手动的运行'ansible-pull'命令，但仅仅是在第一次的时候。从第一次之后，用户'ansible'将会在后台接手后续的运行任务。当你想对你的机器做变动的时候，你只需要简单的去拉取你的Git库来做变动，然后将这些变化回传到库中。接着，当定时作业下次在每台机器上运行的时候，它将会拉取变动的部分并应用它们。你现在只需要做一次变动，你的所有工作站将会跟着一起变动。这方法尽管有一点不方便，通常，你会有一个你的机器列表的文件和包含不同机器的规则。不管怎样，'ansible-pull'的方法，就像在文章中描述的，是管理工作站配置的非常有效的方法。
 
 I have updated the code in my [GitHub repository][2] for this article, so feel free to browse the code there and check your syntax against mine. Also, I moved the code from the previous article into its own directory in that repository.
+我已经在我的[Github repository]中更新了这篇文章中的代码，所以你可以随时去浏览来再一次检查你的语法。同时我将前一篇文章中的代码移到了它自己的目录中。
 
 In part 3, we'll close out the series by using Ansible to configure GNOME desktop settings. I'll show you how to set your wallpaper and lock screen, apply a desktop theme, and more.
-
+在第三部分，我们将通过介绍使用Ansible来配置GNOME桌面设置来结束这个系列。我将会告诉你如何设置你的墙纸和锁屏壁纸，应用一个桌面主题以及更多的东西。
 In the meantime, it's time for a little homework assignment. Most of us have configuration files we like to maintain for various applications we use. This could be configuration files for Bash, Vim, or whatever tools you use. I challenge you now to automate copying these configuration files to your machines via the Ansible repository we've been working on. In this article, I've shown you how to copy a file, so take a look at that and see if you can apply that knowledge to your personal files.
+同时，到了布置一些作业的时候了，大多数人有我们使用的各种应用的配置文件。可能是Bash,Vim或者其他你使用的工具的配置文件。现在你可以尝试通过我们在使用的Ansible库来自动复制这些配置到你的机器中。在这篇文章中，我已将想你展示了如何去复制文件，所以去尝试以下看看你是都已经能应用这些知识。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/3/manage-your-workstation-configuration-ansible-part-2
 
 作者：[Jay LaCroix][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FelixYFZ](https://github.com/FelixYFZ)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
