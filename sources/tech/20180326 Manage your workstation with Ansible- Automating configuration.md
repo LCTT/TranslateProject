@@ -1,14 +1,16 @@
 Manage your workstation with Ansible: Automating configuration
+使用Ansible来管理你的工作站：自动化配置
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/robot_arm_artificial_ai.png?itok=8CUU3U_7)
 Ansible is an amazing automation and configuration management tool. It is mainly used for servers and cloud deployments, and it gets far less attention for its use in workstations, both desktops and laptops, which is the focus of this series.
-
+Ansible是一个令人惊讶的自动化的配置管理工具。主要应用在服务器和云部署上，但在工作站上的应用（无论是台式机还是笔记本）却得到了很少的关注，这就是本系列所要关注的重点。
 In the [first part][1] of this series, I showed you basic usage of the `ansible-pull` command, and we created a playbook that installs a handful of packages. That wasn't extremely useful by itself, but it set the stage for further automation.
-
+在这个系列的第一部分，我会向你展示'ansible-pull'命令的基本用法，我们创建了一个安装了少量包的palybook.它本身是没有多大的用处的，但是它为后续的自动化做了准备阶段。
 In this article, everything comes together full circle, and by the end we will have a fully working solution for automating workstation configuration. This time, we'll set up our Ansible configuration such that future changes we make will automatically be applied to our workstations. At this point, I'm assuming you already worked through part one. If you haven't, feel free to do that now and then return to this article when you're done. You should already have a GitHub repository with the code from the first article inside it. We're going to build directly on what we did before.
-
+在这篇文章总，所有的事件操作都是闭环的，而且在最后部分，我们将会有一个针对工作站自动配置的完整的工作解决方案。现在，我们将要设置Ansible的配置，这样未来将要做的改变将会自动的部署应用到我们的工作站上。现阶段，假设你已经完成了第一部分的工作。如果没有的话，当你完成的时候回到本文。你应该已经有一个包含第一篇文章中代码的Github库。我们将直接按照之前的方式创建。
 First, we need to do some reorganization because we're going to do more than just install packages. At this point, we currently have a playbook named `local.yml` with the following content:
+首先，因为我们要做的不仅仅是安装报文件，所以我们要做一些重新的组织工作。现在，我们已经有一个名为'local.yml'并包含以下内容的playbook:
 ```
 - hosts: localhost
 
@@ -31,18 +33,22 @@ First, we need to do some reorganization because we're going to do more than jus
 ```
 
 That's all well and good if we only want to perform one task. As we add new things to our configuration, this file will become quite large and get very cluttered. It's better to organize our plays into individual files with each responsible for a different type of configuration. To achieve this, create what's called a taskbook, which is very much like a playbook but the contents are more streamlined. Let's create a directory for our taskbooks inside our Git repository:
+如果我们仅仅想实现一个任务那么上面的配置就足够了。随着向我们的配置中不断的添加内容，这个文件将会变的相当的庞大和杂乱。最好能够根据不同类型的配置将play文件分为独立的文件。为了达到这个要求，创建一个名为taskbook的文件，它和playbook很像但内容更加的流线型。让我们在Git库中为taskbook创建一个目录。
 ```
 mkdir tasks
 
 ```
 
 The code inside our current `local.yml` playbook lends itself well to become a taskbook for installing packages. Let's move this file into the `tasks` directory we just created with a new name:
+在'local.yml'playbook中的代码使它很好过过渡到成为安装包文件的taskbook.让我们把这个文件移动到刚刚创建好并新命名的目录中。
+
 ```
 mv local.yml tasks/packages.yml
 
 ```
 
 Now, we can edit our `packages.yml` taskbook and strip it down quite a bit. In fact, we can strip everything except for the individual task itself. Let's make `packages.yml` look like this:
+现在，我们剋编辑'packages.yml'文件将它进行大幅的瘦身，事实上，我们可以精简所有的除了独立任务本身之外的内容。让我们把'packages.yml'编辑成如下的形式：
 ```
 - name: Install packages
 
@@ -59,6 +65,7 @@ Now, we can edit our `packages.yml` taskbook and strip it down quite a bit. In f
 ```
 
 As you can see, it uses the same syntax, but we stripped out everything that isn't necessary to the task it's performing. Now we have a dedicated taskbook for installing packages. However, we still need a file named `local.yml`, since `ansible-pull` still expects to find a file with that name. So we'll create a fresh one with this content in the root of our repository (not in the `tasks` directory):
+正如你所看到的，它使用同样的语法，但我们去掉了对这个任务无用没有必要的所有内容。现在我们有了一个专门安装包文件的taskbook.然而我们任然需要一个名为'local.yml'的文件，因为'ansible-pull'命令仍然会去发现这个文件。所以我们将在我们库的根目录下（不是在'task'目录下）创建一个包含这些内容的全新文件：
 ```
 - hosts: localhost
 
@@ -81,6 +88,7 @@ As you can see, it uses the same syntax, but we stripped out everything that isn
 ```
 
 This new `local.yml` acts as an index that will import all our taskbooks. I've added a few new things to this file that you haven't seen yet in this series. First, at the beginning of the file, I added `pre_tasks`, which allows us to have Ansible perform a task before all the other tasks run. In this case, we're telling Ansible to update our distribution's repository index. This line does that for us:
+这个新的'local.yml'扮演的是将要导入我们的taksbooks的主页的角色。我已经在这个文件中添加了一些你在这个系列中看不到的内容。首先，在这个文件的开头处，我添加了'pre——tasks',这个任务的作用是在其他所有任务运行之前先运行某个任务。
 ```
 apt: update_cache=yes
 
