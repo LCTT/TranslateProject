@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (jrg)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Boxing yourself in on the Linux command line)
