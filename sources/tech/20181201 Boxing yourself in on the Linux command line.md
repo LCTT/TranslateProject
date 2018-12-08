@@ -7,6 +7,7 @@
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
 [#]: url: ( )
 
+translating by jrg
 Boxing yourself in on the Linux command line
 ======
 Learn how to use the boxes utility to draw shapes with characters at the Linux terminal and make your words stand out.
