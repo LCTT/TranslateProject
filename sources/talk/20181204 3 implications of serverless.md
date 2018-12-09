@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (HankChow)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (3 implications of serverless)
