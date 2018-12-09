@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (chenxinlong)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (How To Configure IP Address In Ubuntu 18.04 LTS)
 [#]: via: (https://www.ostechnix.com/how-to-configure-ip-address-in-ubuntu-18-04-lts/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10324-1.html)
 
 如何在 Ubuntu 18.04 LTS 中配置 IP 地址
 ======
