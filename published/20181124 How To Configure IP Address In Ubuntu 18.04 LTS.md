@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (chenxinlong)
-[#]: reviewer: ( )
-[#]: publisher: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
 [#]: subject: (How To Configure IP Address In Ubuntu 18.04 LTS)
 [#]: via: (https://www.ostechnix.com/how-to-configure-ip-address-in-ubuntu-18-04-lts/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10324-1.html)
 
 如何在 Ubuntu 18.04 LTS 中配置 IP 地址
 ======
@@ -13,7 +13,7 @@
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/configure-ip-address-720x340.jpg)
 
 
-在 Ubuntu 18.04 LTS 中配置 IP 地址的方法和以往使用的配置方法有很大的不同。和旧版本的不同之处在于，Ubuntu 18.04 使用 **Netplan** 来配置 IP 地址，**Netplan**  是一个新的命令行网络配置工具。其实在 Ubuntu 17.10 的时候 Ubuntu 开发者就已经介绍过 Netplan 了。接下来要介绍的新的 IP 配置方法不会再用到 **/etc/network/interfaces** 这个文件，取而代之的是一个 YAML 文件。默认的 Netplan 配置文件一般在 **/etc/netplan** 目录下。 在这篇教程中，我们会去学习在 **Ubuntu 18.04 LTS** 的最小版本中配置静态 IP 和动态 IP 。
+在 Ubuntu 18.04 LTS 中配置 IP 地址的方法和以往使用的配置方法有很大的不同。和旧版本的不同之处在于，Ubuntu 18.04 使用 **Netplan** 来配置 IP 地址，**Netplan** 是一个新的命令行网络配置工具。其实在 Ubuntu 17.10 的时候 Ubuntu 开发者就已经介绍过 Netplan 了。接下来要介绍的新的 IP 配置方法不会再用到 `/etc/network/interfaces` 这个文件，取而代之的是一个 YAML 文件。默认的 Netplan 配置文件一般在 `/etc/netplan` 目录下。 在这篇教程中，我们会去学习在 **Ubuntu 18.04 LTS** 的最小化服务器中配置静态 IP 和动态 IP 。
 
 ### 在 Ubuntu 18.04 LTS 中配置静态 IP 地址
 
@@ -24,7 +24,7 @@ $ ls /etc/netplan/
 50-cloud-init.yaml
 ```
 
-我们可以看到，默认的网络配置文件是 **50-cloud-init.yaml** ，这是一个 YAML 文件。
+我们可以看到，默认的网络配置文件是 `50-cloud-init.yaml` ，这是一个 YAML 文件。
 
 然后我们再看一下这个文件的内容是什么：
 
@@ -36,7 +36,7 @@ $ cat /etc/netplan/50-cloud-init.yaml
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/configure-network.png)
 
-可以看到这边有两个网卡，分别是 **enp0s3** 和 **enp0s8** ，并且这两个网卡都配置为从 DHCP 服务器中获取 IP。 
+可以看到这边有两个网卡，分别是 `enp0s3` 和 `enp0s8` ，并且这两个网卡都配置为从 DHCP 服务器中获取 IP。 
 
 现在我们给这两个网卡都配置为静态 IP 地址，先用任意一种编辑器来编辑配置文件。
 
@@ -44,12 +44,11 @@ $ cat /etc/netplan/50-cloud-init.yaml
 $ sudo nano /etc/netplan/50-cloud-init.yaml
 ```
 
-接下来我们分别添加 IP 地址、子网掩码、网关、DNS 服务器等配置。分别用 **192.168.225.50** 作为网卡 **enp0s3** 的 IP 地址， **192.168.225.51** 作为网卡 **enp0s8** 的 IP 地址， **192.168.225.1** 作为网关地址， **255.255.255.0** 作为子网掩码。然后用  **8.8.8.8** 、 **8.8.4.4** 这两个 DNS 服务器 IP。
-
+接下来我们分别添加 IP 地址、子网掩码、网关、DNS 服务器等配置。分别用 `192.168.225.50` 作为网卡 `enp0s3` 的 IP 地址， `192.168.225.51` 作为网卡 `enp0s8` 的 IP 地址， `192.168.225.1` 作为网关地址， `255.255.255.0` 作为子网掩码。然后用 `8.8.8.8` 、 `8.8.4.4` 这两个 DNS 服务器 IP。
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/configure-static-ip.png)
 
-要注意的一点是，在 Ubuntu 18.04 里，这个配置文件的每一行都必须靠空格来缩进，不能用 **TAB** 来代替，否则配置会不起作用。如上图所示的配置文件中每行的缩进都是靠空格键实现的。
+要注意的一点是，在 Ubuntu 18.04 里，这个配置文件的每一行都必须靠空格来缩进，不能用 `TAB` 来代替，否则配置会不起作用。如上图所示的配置文件中每行的缩进都是靠空格键实现的。
 
 同时，在 Ubuntu 18.04 中，我们定义子网掩码的时候不是像旧版本的那样把 IP 和子网掩码分成两项配置。在旧版本的 Ubuntu 里，我们一般配置的 IP 和子网掩码是这样的：
 
@@ -118,8 +117,7 @@ $ man netplan
 
 其实配置文件中的初始配置就是动态 IP 的配置，所以你想要使用动态 IP 的话不需要再去做任何的配置操作。如果你已经配置了静态 IP 地址，想要恢复之前动态 IP 的配置，就把在上面静态 IP 配置中所添加的相关配置项删除，把整个配置文件恢复成上面的图 1 所示的样子就行了。
 
-现在你已经学会在 Ubuntu 18.04 中配置静态和动态 IP 地址了。个人而言，我 (原作者) 其实不太喜欢这种方式，旧的配置方式反而来得简单。你们觉得呢 ？
-
+现在你已经学会在 Ubuntu 18.04 中配置静态和动态 IP 地址了。个人而言，我其实不太喜欢这种方式，旧的配置方式反而来得简单。你们觉得呢 ？
 
 
 --------------------------------------------------------------------------------
@@ -129,7 +127,7 @@ via: https://www.ostechnix.com/how-to-configure-ip-address-in-ubuntu-18-04-lts/
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[chenxinlong](https://github.com/chenxinlong)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
