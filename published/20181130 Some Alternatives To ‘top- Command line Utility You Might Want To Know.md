@@ -3,7 +3,7 @@
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/Alternatives-To-Top-Command-720x340.png)
 
-在 GitHub 和 GitLab 上，不断有来自世界各地的开源应用程序和工具涌现。其中有全新的应用程序，也有针对现有各种被广泛使用的 Linux 程序的替代方案。在本文档中，我会介绍一些针对 [`top`][1] 工具（也就是命令行任务管理器程序）的替代方案。
+在 GitHub 和 GitLab 上，不断有来自世界各地的开源应用程序和工具涌现。其中有全新的应用程序，也有针对现有各种被广泛使用的 Linux 程序的替代方案。在本文档中，我会介绍一些针对 [top][1] 工具（也就是命令行任务管理器程序）的替代方案。
 
 ### top 工具的替代方案
 
@@ -24,7 +24,7 @@
 
 和原版的 `top` 工具相比，`htop` 工具有这些优势：
 
-  * `htop` 比  `top`  启动更快
+  * `htop` 比 `top` 启动更快
   * `htop` 支持横向滚动和纵向滚动浏览进程列表，以便看到所有的进程和完整的命令行
   * 在 `top` 工具中进行杀死进程、更改进程优先级这些操作时，需要输入进程 ID，而在 `htop` 工具中则不需要输入
   * 在 `htop` 中可以同时杀死多个进程
@@ -69,6 +69,7 @@ $ sudo zypper in htop
 ```
 $ htop
 ```
+
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/htop-command-1.png)
 
 从图上可以看出，`htop` 会在界面顶部显示内存、交换空间、任务总数、系统平均负载、系统正常运行时间这些常用指标，在下方则和 `top` 一样显示进程列表，并且将进程的 ID、用户、进程优先级、进程 nice 值、虚拟内存使用情况、CPU 使用情况、内存使用情况等信息以多列显示出来。如果你想详细了解这些数据的含义，可以在[这里][1]阅读参考。
@@ -86,8 +87,6 @@ $ htop
   * `F9`、`k`：杀死所选进程。可以用 `↑` / `↓` 键选择不同的进程并按 `F9` 杀死进程。
   * `F10`、`q`： 退出 `htop`
 
-
-
 以上这些快捷键都在 `htop` 界面底部显示。
 
 需要注意的是，这其中有一些快捷键可能会与已有的快捷键发生冲突。例如按 `F2` 之后可能没有进入 `htop` 的设置界面，而是开始了对终端窗口的重命名。在这种情况下，你可能要更改一下快捷键的设置。
@@ -100,8 +99,6 @@ $ htop
   * `Shit+t` 可以按照进程启动时间对进程列表排序。
   * `CTRL+l` 刷新界面。
 
-
-
 `htop` 的所有功能都可以在启动后通过快捷键来调用，而不需要在启动的时候带上某个参数。当然，`htop` 也支持带参数启动。
 
 例如按照以下方式启动 `htop` 就可以只显示某个用户的进程：
@@ -112,7 +109,7 @@ $ htop -u <username>
 
 更改界面自动刷新的时间间隔：
 
-```kan
+```
 $ htop -d 10
 ```
 
@@ -124,11 +121,11 @@ $ htop -d 10
 $ man htop
 ```
 
-也可以查看它的[项目主页](http://hisham.hm/htop/)和 [GitHub 仓库](https://github.com/hishamhm/htop)。
+也可以查看它的[项目主页](http://hisham.hm/htop/) 和 [GitHub 仓库](https://github.com/hishamhm/htop)。
 
 #### Vtop
 
-`vtop` 是 `top` 工具的另一个替代方案。它是一个使用 NodeJS 编写的、自由开源的命令行界面系统活动监视器，并使用 MIT 许可发布。`vtop` 通过使用 unicode 中的盲文字符来绘制 CPU 和内存使用情况的可视化图表。
+`vtop` 是 `top` 工具的另一个替代方案。它是一个使用 NodeJS 编写的、自由开源的命令行界面系统活动监视器，并使用 MIT 许可证发布。`vtop` 通过使用 unicode 中的盲文字符来绘制 CPU 和内存使用情况的可视化图表。
 
 在安装 `vtop` 之前，需要先安装 NodeJS。如果还没有安装 NodeJS，可以按照[这个教程](https://www.ostechnix.com/install-node-js-linux/)进行安装。
 
@@ -148,7 +145,7 @@ $ vtop
 
 ![][3]
 
-如上图所示，`vtop` 界面和 `top`、`htop` 都有所不同，它将不同的内容分别以多个盒子的布局显示。另外在界面底部也展示了用于与 `vtop` 交互的所有快捷键。
+如上图所示，`vtop` 界面和 `top`、`htop` 都有所不同，它将不同的内容分别以多个框的布局显示。另外在界面底部也展示了用于与 `vtop` 交互的所有快捷键。
 
 `vtop` 有这些快捷键：
 
@@ -161,8 +158,6 @@ $ vtop
   * `Shift+g` ：跳转到进程列表底部。
   * `c` ：以 CPU 使用量对进程排序。
   * `m` ：以内存使用量对进程排序。
-
-
 
 想要了解更多关于 `vtop` 的细节，可以查阅它的[项目主页](http://parall.ax/vtop)或者 [GitHub 仓库](https://github.com/MrRio/vtop)。
 
@@ -186,7 +181,7 @@ $ gtop
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/gtop.png)
 
-`gtop` 有一个好，就是它会以不同的颜色来显示不同的模块，这种表现形式非常清晰明了。
+`gtop` 有一个优点，就是它会以不同的颜色来显示不同的模块，这种表现形式非常清晰明了。
 
 主要的快捷键包括：
 
@@ -194,8 +189,6 @@ $ gtop
   * `c`：按照 CPU 使用量对进程排序。
   * `m`：按照内存使用量对进程排序。
   * `q`、`Ctrl+c`：退出。
-
-
 
 想要了解更多关于 `gtop` 的细节，可以查阅它的 [GitHub 仓库](https://github.com/aksakalli/gtop)。
 
@@ -239,6 +232,7 @@ $ ptop
 ```
 
 就像下面这样：
+
 ![](https://www.ostechnix.com/wp-content/uploads/2018/11/ptop-1.png)
 
 `ptop` 的快捷键包括以下这些：
@@ -252,8 +246,6 @@ $ ptop
   * `g`：跳转到进程列表顶部。
   * `Ctrl+q`：退出。
 
-
-
 `ptop` 还支持更改显示主题。如果你想让 `ptop` 更好看，可以选择你喜欢的主题。可用的主题包括以下这些：
 
   * colorful
@@ -261,8 +253,6 @@ $ ptop
   * simple
   * dark
   * light
-
-
 
 如果需要更换主题（例如更换到 colorful 主题），可以执行以下命令：
 
@@ -287,7 +277,6 @@ $ ptop -h
 以上就是关于 `top` 工具的 6 个替代方案。我并不会说它们比 `top` 更好或者可以完全替代 `top`，但多了解一些类似的工具总是好的。你有使用过这些工具吗？哪个是你最喜欢的？欢迎在评论区留言。
 
 
-
 --------------------------------------------------------------------------------
 
 via: https://www.ostechnix.com/some-alternatives-to-top-command-line-utility-you-might-want-to-know/
@@ -295,7 +284,7 @@ via: https://www.ostechnix.com/some-alternatives-to-top-command-line-utility-you
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
