@@ -1,3 +1,5 @@
+ScarboroughCoral translating!
+
 Migrating to Linux: Network and System Settings
 ======
 
