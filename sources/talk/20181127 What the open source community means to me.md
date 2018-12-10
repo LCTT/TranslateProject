@@ -1,3 +1,5 @@
+translating by seriouszyx
+
 [#]: collector: (lujun9972)
 [#]: translator: ( )
 [#]: reviewer: ( )
