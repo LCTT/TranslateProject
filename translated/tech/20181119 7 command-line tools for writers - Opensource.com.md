@@ -19,17 +19,17 @@
 
 每个写作者在完成他们的工作前至少要（或者说应该要）进行一次拼写检查。为什么呢？在写作的世界里有个永恒的定律，无论你检查了多少次手稿，拼写错误和错字依然会存在。
 
-我曾经详细[介绍][9]过我最喜欢的命令行拼写检查工具 [GNU Aspell][8]。交互式检测文本文档的 Aspell 不仅能够高亮显示拼写错误还能在拼写错误的上方提供正确的拼写建议。Aspell 在进行拼写检查同样能够忽略许多标记语言文本。
+我曾经详细[介绍][9]过我最喜欢的命令行拼写检查工具 [GNU Aspell][8]。交互式检测文本文档的 Aspell 不仅能够高亮显示拼写错误还能在拼写错误的上方提供正确的拼写建议。Aspell 在进行拼写检查时同样能够忽略许多语法标记。
 
 另一个够老但仍然有用的代替品是 [Ispell][10]。虽然它比 Aspell 稍慢一点，但它们都以相同的方式工作。当你在你的文本文件上工作时，Ispell 将提供正确的建议。Ispell 同样也对英语以外的语言提供了良好的支持。
 
 ### Prose linters
 
-软件开发人员使用[linters][11]来检查他们的代码是否存在错误或者 bugs。同样也有用于检查文本样式或语法错误的linters；而命令行会认为这些错误是_样式元素_。任何写作者都可以（也应该）使用它，一个文本 linter 对于要求文档风格和样式一致的文档团队项目而言尤其有用。
+软件开发人员使用[linters][11]来检查他们的代码是否存在错误或者 bugs。同样也有用于检查文本样式或语法错误的linters；而命令行会认为这些错误是_样式元素_。任何写作者都可以（也应该）使用它，一个 prose linter 对于要求文档风格和样式一致的文档团队项目而言尤其有用。
 
-[Proselint][12] is a comprehensive tool for checking what you're writing. It looks for jargon, hyperbole, incorrect date and time format, misused terms, and [much more][13]. It's also easy to run and ignores markup in a plaintext file.
+[Proselint][12]是一款全能的实时检查工具。它会找出行话，大话，不正确日期和时间格式，滥用的术语[等等][13]。它也很容易运行并忽略文本中的标记。
 
-[Alex][14] is a simple yet powerful prose linter. Run it against a plaintext document or one formatted with Markdown or HTML. Alex pumps out warnings of "gender favouring, polarising, race related, religion inconsiderate, or other unequal phrasing in text." If you want to give Alex a test drive, there's an [online demo][15].
+[Alex][14] 是一个简单但有用的 prose linter。 对明文文本或者格式为Markdown或HTML的文档使用它。 Alex 会对 “性别偏好，极端主义，种族相关，宗教，或者文章中其他不平等的措辞” 产生警告。 如果你想要试试看 Alex，这里有一个在线[demo][15].
 
 ### 其他工具
 
