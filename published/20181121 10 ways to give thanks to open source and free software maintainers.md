@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (10 ways to give thanks to open source and free software maintainers)
 [#]: via: (https://opensource.com/article/18/11/ways-give-thanks-open-source)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10333-1.html)
 
 感谢开源和自由软件维护者的 10 种方法
 =======
