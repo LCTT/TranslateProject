@@ -7,26 +7,28 @@
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
 [#]: url: ( )
 
-Have a cow at the Linux command line
+
+在Linux命令行上拥有一头奶牛
 ======
-Bring a bovine voice to your terminal output with the cowsay utility.
+
+使用 cowsay 实用程序将牛的声音带到你的终端输出。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/uploads/linux-toy-cowsay.png?itok=RA4NDbrY)
 
-Welcome to the fourth day of the Linux command-line toys advent calendar. If this is your first visit to the series, you might be asking yourself, what’s a command-line toy. We’re figuring that out as we go, but generally, it could be a game, or any simple diversion that helps you have fun at the terminal.
+欢迎来到 Linux 命令行玩具第四天。如果这是你第一次访问这个系列，你可能会问自己，什么是命令行玩具。我们也在考虑这一点，但是一般来说，这可能是一个游戏，或者任何简单的娱乐，可以帮助你在终端玩得开心。
 
-Some of you will have seen various selections from our calendar before, but we hope there’s at least one new thing for everyone. Because just about everyone who I’ve mentioned this series to has asked me about it already, today’s selection is an obligatory one.
+你们中的一些人以前会看过我们日历上的各种选项，但是我们希望每个人都至少有一个新的选项。因为几乎所有我提到这个系列的人都已经问过我了，今天的选项是必须的。
 
-You didn’t think we’d make it through this series without mentioning cowsay, did you?
+你不认为我们会在不提及 cowsay 的情况下完成这个系列，是吗？ 
 
-Cowsay is an udderly fantastic utility that takes text and outputs it as the spoken text of an ASCII-art bovine.
+Cowsey 是一个神奇的实用程序，它将文本作为ASCII艺术牛的口语文本输出。
 
-You’ll likely find cowsay packaged in your default repositories, and perhaps even already installed. For me, in Fedora, all it took to install was:
+你可能会发现 cowsey 打包在你的默认存储库中，甚至可能已经安装了。对我来说，在 Fedora,像这样安装:
 
 ```
 $ sudo dnf install -y cowsay
 ```
-
-Then, invoke it with cowsay followed by your message. Perhaps you’d like to pipe in the [fortune][1] [utility][1] we talked about yesterday.
+然后，用 cowsey 调用它，然后是你的消息。也许你想到昨天我们谈到的 [幸运][1] [应用][1]。 
 
 ```
 $ fortune | cowsay
@@ -41,7 +43,7 @@ $ fortune | cowsay
                 ||     ||
 ```
 
-That’s it! **Cowsay** ships with few variations, called cow files, that can usually be found in **/usr/share/cowsay.** To see the cow file options available on your system, use **-l** flag after cowsay. Then, use the **-f** flag to try one out.
+就这样！**CowSay** 几乎没有变化，称为 cow 文件，通常可以在 **/usr/share/cowsay** ，要查看系统上可用的 cow 文件选项，请在 cowsay 之后使用 **-l** 。然后，用 **-f** 试试其中之一。 
 
 ```
 $ cowsay -f dragon "Run for cover, I feel a sneeze coming on."
@@ -66,10 +68,10 @@ $ cowsay -f dragon "Run for cover, I feel a sneeze coming on."
                ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
                                                                   /.-~
 ```
+我对 **cowsay** 的真正不满是，我今天没有足够的时间来为牛的挤奶。牛排太高了，我可能会开个玩笑。 
 
-My real beef with **cowsay** is that I don’t have enough time today to really milk the cow puns for all they are worth. The steaks are just too high, and I might butcher the joke.
+更严重的是，我已经完全忘记了 **cowsay** 直到我在学习可翻译的剧本时再次遇到它。如果你碰巧安装了 **cowyay**，当你运行脚本时，你会从一系列奶牛身上获得产出。例如，运行本脚本:
 
-On a more serious note, I had completely forgotten about **cowsay** until I re-encountered it when learning Ansible playbooks. If you happen to have **cowsay** installed, when you run a playbook, you’ll get your output from a series of cows. For example, running this playbook:
 
 ```
 - hosts:
@@ -77,8 +79,7 @@ On a more serious note, I had completely forgotten about **cowsay** until I re-e
   tasks:
     - action: ping
 ```
-
-Might give you the following:
+可能会给你以下信息:
 
 ```
 $ ansible-playbook playbook.yml
@@ -122,14 +123,14 @@ ok: [localhost]
 
 localhost                  : ok=2    changed=0    unreachable=0    failed=0  
 ```
-
-**Cowsay** is available under a GPLv3 license, and you can find the Perl [source code][2] on GitHub. I’ve also seen versions floating around in other languages, so take a look around for other variants; here’s [one in R][3], for example. Implementing your own version in your language of choice might even be a fun programming learning task.
+**Cowsay** 在GPLV3许可证下可用，您可以在 GitHub 上找到 Perl [源代码][2]。我也见过其他语言的版本，所以看看其他变体；例如，这是 [R语言][3] 。用你选择的语言实现你自己的版本可能是一项有趣的编程学习任务。 
 
 Now that **cowsay** is out of the way, we can move on to greener pastures.
+既然 **cowsay** 不碍事了，我们可以去更绿色的牧场了。
 
-Do you have a favorite command-line toy that you think I ought to profile? The calendar for this series is mostly filled out but I've got a few spots left. Let me know in the comments below, and I'll check it out. If there's space, I'll try to include it. If not, but I get some good submissions, I'll do a round-up of honorable mentions at the end.
+你有最喜欢的命令行玩具吗，你认为我应该对它进行分析？这个系列的日历大部分都填好了，但我还有一些地方。在下面的评论中让我知道，梦幻篮球来看看。如果有空间，梦幻篮球会尝试把它包括进去。如果没有，但是我收到了一些好的意见书，梦幻篮球在结尾做了一个荣誉提名的总结。
 
-Check out yesterday's toy, [How to bring good fortune to your Linux terminal][1], and check back tomorrow for another!
+看看昨天的玩具，[如何给你的Linux终端带来好运][1]，明天再来看看另一个！
 
 --------------------------------------------------------------------------------
 
@@ -137,7 +138,7 @@ via: https://opensource.com/article/18/12/linux-toy-cowsay
 
 作者：[Jason Baker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[heguangzhi](https://github.com/heguangzhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
