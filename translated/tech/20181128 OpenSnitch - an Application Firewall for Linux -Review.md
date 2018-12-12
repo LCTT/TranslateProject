@@ -1,13 +1,13 @@
 [#]: collector: "lujun9972"
 [#]: translator: "qhwdw"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: subject: "OpenSnitch – an Application Firewall for Linux [Review]"
 [#]: via: "https://itsfoss.com/opensnitch-firewall-linux/"
-[#]: author: "[John Paul](https://itsfoss.com/author/john/)"
+[#]: author: "John Paul https://itsfoss.com/author/john/"
 [#]: url: " "
 
-OpenSnitch – 一个 Linux 上的应用程序防火墙
+OpenSnitch：一个 Linux 上的应用程序防火墙
 ======
 
 不能因为 Linux 比 Windows 更安全，就可以在 Linux 上放松警惕。Linux 上可以使用的防火墙很多，它们可以让你的 Linux 系统更安全。今天，我们将带你了解一个这样的防火墙工具，它就是 OpenSnitch。
@@ -20,9 +20,11 @@ OpenSnitch – 一个 Linux 上的应用程序防火墙
 
 OpenSnitch 所做的主要事情就是跟踪你机器上安装的应用程序所发起的互联网请求。OpenSnitch 允许你去创建规则以同意或阻止那个应用程序发起的互联网访问。当一个应用程序尝试去访问互联网而没有相应的访问规则存在时，就会出现一个对话框，这个对话框让你去选择允许还是阻止那个连接。
 
-你也可以决定这个新规则是应用到进程上、精确的 URL 上、域名上、单个实例上，以及本次会话还是永久有效。
+你也可以决定这个新规则是应用到进程上、具体的 URL 上、域名上、单个实例上，以及本次会话还是永久有效。
 
-![OpenSnitch firewall app in Linux][5]OpenSnatch 规则请求
+![OpenSnitch firewall app in Linux][5]
+
+*OpenSnatch 规则请求*
 
 你创建的所有规则都保存为 [JSON 文件][6]，如果以后需要修改它，就可以去修改这个文件。比如说，你错误地阻止了一个应用程序。
 
@@ -33,17 +35,17 @@ OpenSnitch 也有一个漂亮的、一目了然的图形用户界面：
   * 属主用户是谁
   * 使用哪个端口
 
-
-
 如果你愿意，也可以将这些信息导出到一个 CSV 文件中。
 
 OpenSnitch 遵循 GPL v3 许可证使用。
 
-![OpenSnitch firewall interface][7]OpenSnitch 进程标签页
+![OpenSnitch firewall interface][7]
+
+*OpenSnitch 进程标签页*
 
 ### 在 Linux 中安装 OpenSnitch
 
-[OpenSnitch GitHub 页面][8] 上的安装介绍是针对 Ubuntu 用户的。如果你使用的是其它发行版，你需要调整一下相关的命令。据我所知，这个应用程序仅打包到 [Arch User Repository][9] 中。
+[OpenSnitch GitHub 页面][8] 上的安装介绍是针对 Ubuntu 用户的。如果你使用的是其它发行版，你需要调整一下相关的命令。据我所知，这个应用程序仅在 [Arch User Repository][9] 中打包了。
 
 在你开始之前，你必须正确安装了 Go，并且已经定义好了 `$GOPATH` 环境变量。
 
@@ -67,7 +69,7 @@ go get github.com/evilsocket/opensnitch
 cd $GOPATH/src/github.com/evilsocket/opensnitch
 ```
 
-如果没有正确设置 `$GOPATH` 环境变量，运行上面的命令时将会出现一个 “no such folder found” 的错误信息。只需要进入到你刚才克隆仓库位置的 “evilsocket/opensnitch” 文件夹中即可。
+如果没有正确设置 `$GOPATH` 环境变量，运行上面的命令时将会出现一个 “no such folder found” 的错误信息。只需要进入到你刚才克隆仓库位置的 `evilsocket/opensnitch` 文件夹中即可。
 
 现在，我们构建并安装它。
 
@@ -77,7 +79,7 @@ make
 sudo make install
 ```
 
-如果出现 “`dep` command could not be found” 的错误信息，在 `PATH` 中添加 `GOPATH/bin` 即可。
+如果出现 “dep command could not be found” 的错误信息，在 `$PATH` 中添加 `$GOPATH/bin` 即可。
 
 安装完成后，我们将要启动它的守护程序和图形用户界面。
 
@@ -90,7 +92,8 @@ opensnitch-ui
 ```
 
 ![OpenSnitch firewall interface][10]
-运行在 Manjaro 上的 OpenSnitch
+
+*运行在 Manjaro 上的 OpenSnitch*
 
 ### 使用体验
 
@@ -98,7 +101,7 @@ opensnitch-ui
 
 不幸的是，我安装之后，不能启动图形用户界面。因此，我手动去运行最后三个步骤。一切似乎很顺利。如果我想让 Firefox 去访问 Manjaro 的网站，对话框就会弹出来询问我。
 
-有趣的是，当我运行一个 [AUR 工具][11] `yay` 去更新我的系统时，弹出对话框要求了 `yay`、`pacman`、`pamac`、和 `git` 的访问规则。后来，我关闭并重启动 GUI，因为它是活动的。当我重启动它时，它不再要求我去创建规则了。我安装了 Falkon，而 OpenSnitch 并没有询问我去授予它任何权限。它甚至在 OpenSnitch 的 GUI 中没有列出 Falkon。我重新安装了 OpenSnitch 后，这个问题依旧存在。
+有趣的是，当我运行一个 [AUR 工具][11] `yay` 去更新我的系统时，弹出对话框要求了 `yay`、`pacman`、`pamac`、和 `git` 的访问规则。后来，我关闭并重启动 GUI，因为它当前是激活的。当我重启动它时，它不再要求我去创建规则了。我安装了 Falkon，而 OpenSnitch 并没有询问我去授予它任何权限。它甚至在 OpenSnitch 的 GUI 中没有列出 Falkon。我重新安装了 OpenSnitch 后，这个问题依旧存在。
 
 然后，我转到 Ubuntu Mate 上安装 OpenSnitch，因为安装介绍就是针对 Ubuntu 所写的，进展很顺利。但是，我遇到了几个问题。我调整了一下上面介绍的安装过程以解决我遇到的问题。
 
@@ -106,7 +109,9 @@ opensnitch-ui
 
 GUI 也有一点需要去改进。由于某些原因，每次窗口都被放在顶部。而且不能通过设置来修改这个问题。如果能够从 GUI 中改变规则将是一个不错的选择。
 
-![][12]OpenSnitch 的 hosts 标签
+![][12]
+
+*OpenSnitch 的 hosts 标签*
 
 ### 对 OpenSnitch 的最后意见
 
@@ -125,7 +130,7 @@ via: https://itsfoss.com/opensnitch-firewall-linux/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
