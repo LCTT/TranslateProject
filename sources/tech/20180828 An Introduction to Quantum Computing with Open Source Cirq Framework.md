@@ -1,3 +1,4 @@
+Translating by qhwdw
 An Introduction to Quantum Computing with Open Source Cirq Framework
 ======
 As the title suggests what we are about to begin discussing, this article is an effort to understand how far we have come in Quantum Computing and where we are headed in the field in order to accelerate scientific and technological research, through an Open Source perspective with Cirq.
