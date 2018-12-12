@@ -1,22 +1,22 @@
-27 open solutions to everything in education
+27个解决教学问题的开放式方法
 ======
 ![27 open solutions to everything in education](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/EDU_OpenEducationResources_520x292_cm.png?itok=9y4FGgRo)
 
-Openness (from open source software, to open hardware, to open principles) is changing the paradigm of education. So, to celebrate all that's gone on this year, I collected 27 of the best articles published on Opensource.com in 2017 on the subject. I divided them into broad themes, rather than ordering them by popularity. And, if these 27 stories don't satisfy your appetite for information about open source in education, check out our companion article on how [education is leveraging Raspberry Pi and Linux][30].
+开放式理念 (从开源软件到开放硬件, 再到开放原则) 正在改变教育的范式。因此, 为了庆祝今年发生的一切, 我收集了2017年在 Opensource.com 上发表的27篇关于这个主题的最好的文章。我把它们分成明确的主题, 而不是按人气来分类。而且, 如果这27个故事不能满足你对教育公开信息的胃口, 那就看看我们的协同文章吧 " [education is leveraging Raspberry Pi and Linux][30].
 
-### Open is better for everyone
+### 开放对每个人都有好处
 
-1.  [Book review: 'OPEN' explores broad cultural implications of openness][1]: Scott Nesbitt reviews David Price's book OPEN, which explores the idea that "open" isn't just a technological shift, rather it's "how we'll work, live, and learn in the future." 
+1.  [Book review: 'OPEN' explores broad cultural implications of openness][1]:  Scott Nesbitt 评价David Price 的书 'OPEN' ，该书探讨了 "开放" 不仅仅是技术转变的观点, 而是 "我们未来将如何工作、生活和学习"。
 
-2.  [Jump-start your career with open source skills][2]: VM (Vicky) Brasseur points out how to get ahead in the workforce by learning open source. This advice isn't just for programmers; designers, writers, marketers, and other creative professionals are also essential to the success of open source.
+2.  [Jump-start your career with open source skills][2]:  VM (Vicky) Brasseur 指出了如何利用开放式学习在工作群体中脱颖而出。 这个建议不仅仅是针对程序员的, 而是针对程序员的。设计师、作家、营销人员和其他创意专业人士也是开放式成功的关键。
 
-3.  [A graduate degree could springboard you into an open source job][3]: Citing research that shows that Linux skills lead to higher pay, Joshua Pearce makes the case that open source proficiency and a graduate degree are an unbeatable career combination.
+3.  [A graduate degree could springboard you into an open source job][3]:  引用的研究表明会 Linux 技能会带来更高的薪水, Joshua Pearce 说对开源的熟练和研究生学位是无与伦比的职业技能组合。
 
-4.  [These 3 practices revolutionized Penn Manor's school culture][4]: Charlie Reisinger shows us how open practices are creating a more inclusive, agile, and open culture in a Pennsylvania school district. Charlie says it's not just about saving money; the district also gains from "open leadership principles that foster innovation among teachers and students, help to better engage the community, and create a more vibrant and inclusive learning community."
+4.  [These 3 practices revolutionized Penn Manor's school culture][4]:  Charlie Reisinger 向我们展示了开放的做法是如何在宾夕法尼亚州的一个学区创造一种更具包容性、敏捷性和开放性的文化的。 Charlie 说, 这不仅仅是为了省钱;该区还受益于 "开放式领导原则, 促进师生创新, 帮助更好地吸引社区, 创造一个更有活力和包容性的学习社区"。
 
-5.  [15 ways to empower students with open source tools][5]: I write how open source gives students the freedom to explore, tinker, and learn, whether they're learning basic digital literacy or expanding on those skills with fun projects.
+5.  [15 ways to empower students with open source tools][5]: 我写开源是如何让学生自由探索、补拙和学习的, 不管他们是在学习基本的数字化素养, 还是通过有趣的项目来扩展这些技能。
 
-6.  [Developer opportunities to code for good][6]: Open source is often the backbone of socially beneficial projects. As Ahn Bui, vice president of Benetech Labs, states in this interview: "Establishing open data standards is an integral step in breaking down data silos. Those open standards will provide the foundation for interoperability and in turn, translate to more organizations building together, often more cost effectively. The ultimate goal is to serve more people at the same cost or even less."
+6.  [Developer opportunities to code for good][6]: 开源往往是对社会有益的项目的支柱。正如 Benetech Labs 副总裁 Ahn Bui 在这次采访中指出的那样: "建立开放数据标准是打破数据孤岛不可或缺的一步。这些开放标准将为互操作性提供基础, 进而转化为更多的组织共同建设, 往往更具成本效益。最终目标是以同样的成本甚至更低的成本为更多的人服务。
 
 ### Open education resources for remixing and reusing
 
