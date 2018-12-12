@@ -1,4 +1,11 @@
-translating by Flowsnow
+[#]: collector: (lujun9972)
+[#]: translator: (geekpi)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: subject: (Create a containerized machine learning model)
+[#]: via: (https://fedoramagazine.org/create-containerized-machine-learning-model/)
+[#]: author: (Sven Bösiger)
+[#]: url: ( )
 
 Create a containerized machine learning model
 ======
