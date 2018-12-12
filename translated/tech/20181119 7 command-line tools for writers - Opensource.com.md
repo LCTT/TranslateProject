@@ -33,11 +33,11 @@
 
 ### 其他工具
 
-Sometimes you just can't find the right synonym for a word. But you don't need to grab a "dead tree" thesaurus or go to a dedicated website to perfect your word choice. Just run [Aiksaurus][16] against the word you want to replace, and it does the work for you. This utility's main drawback, though, is that it supports English only.
+有时候你找不到一个单词的恰当的同义词。但你不需要去呆板的词库中抓取或者去专门的网站完善你的单词完整。仅仅需要对你想要替换的单词运行[Aiksaurus][16]，然后它就会为你完成这个工作。但是，这个程序最大的缺点是它只支持英语。
 
-Even writers with few (if any) technical skills are embracing [Markdown][17] to quickly and easily format their work. Sometimes, though, you need to convert files formatted with Markdown to something else. That's where [Pandoc][18] comes in. You can use it to convert your documents to HTML, Word, LibreOffice Writer, LaTeX, EPUB, and other formats. You can even use Pandoc to produce books and [research papers][19].
+即使是只会很少（甚至只有一项）技术技能的写作者都能接受 [Markdown][17] 来快速而简单地格式化他们的作品。但是，有时候你也需要将使用Markdown格式的文件转换成其他格式。这就是[Pandoc][18]的用武之地。你可以用它来将你的文档转换成 HTML, Word, LibreOffice Writer, LaTeX, EPUB以及其他格式。你甚至可以用Pandoc来生成书籍和[研究论文][19]。
 
-Do you have a favorite command-line tool for writing? Share it with the Opensource.com community by leaving a comment.
+你有一个最喜欢的命令行写作工具吗？在Opensource.com社区发表评论分享它。
 
 --------------------------------------------------------------------------------
 
