@@ -1,11 +1,11 @@
 [#]: collector: "lujun9972"
 [#]: translator: "qhwdw"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
+[#]: publisher: "wxy"
 [#]: subject: "OpenSnitch – an Application Firewall for Linux [Review]"
 [#]: via: "https://itsfoss.com/opensnitch-firewall-linux/"
 [#]: author: "John Paul https://itsfoss.com/author/john/"
-[#]: url: " "
+[#]: url: "https://linux.cn/article-10337-1.html"
 
 OpenSnitch：一个 Linux 上的应用程序防火墙
 ======
