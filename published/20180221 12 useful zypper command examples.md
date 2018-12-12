@@ -266,7 +266,7 @@ Found 37 applicable patches:
 
 你可以通过发出 `zypper patch` 命令安装所有需要的补丁。
 
-##### 如何使用 zypper 更新包
+### 如何使用 zypper 更新包
 
 要使用 `zypper` 更新包，使用 `update` 或 `up` 子命令后接包名。在上述列出的更新命令中，我们知道在我们的服务器上 `rsync` 包更新可用。让我们现在来更新它吧！
 
