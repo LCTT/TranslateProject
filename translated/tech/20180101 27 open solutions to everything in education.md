@@ -18,21 +18,21 @@
 
 6.  [Developer opportunities to code for good][6]: 开源往往是对社会有益的项目的支柱。正如 Benetech Labs 副总裁 Ahn Bui 在这次采访中指出的那样: "建立开放数据标准是打破数据孤岛不可或缺的一步。这些开放标准将为互操作性提供基础, 进而转化为更多的组织共同建设, 往往更具成本效益。最终目标是以同样的成本甚至更低的成本为更多的人服务。
 
-### Open education resources for remixing and reusing
+### 用于再混合和再利用的开放教育资源
 
-1.  [Can academic faculty members teach with Wikipedia?][7] LiAnna Davis, director of programs for Wiki Ed, discusses how open educational resources (OERs), such as Wiki Ed, are providing high-quality and affordable open source learning resources as classroom teaching tools.
+1.  [Can academic faculty members teach with Wikipedia?][7] LiAnna Davis，Wiki Ed 的, 项目总监，讨论开放教育资源 (OERs) ，如 Wiki Ed，如何提供高质量且经济实惠的开源学习资源作为课堂教学工具。
 
-2.  [Are textbooks in or out? The state of open educational resources][8]: Cable Green, director of open education for Creative Commons, shares how the face of education is changing in higher education and what Creative Commons is doing to facilitate it.
+2.  [Are textbooks in or out? The state of open educational resources][8]: Cable Green, Creative Common 开放教育主任,分享高等教育中教育面貌是如何变化的, 以及 Creative Common 正在采取哪些措施来促进教育。
 
-3.  [School systems desperate for standards-aligned curricula find hope][9]: Karen Vaites, community evangelist and chief marketing officer of Open Up Resources, talks about the nonprofit organization's efforts to provide open, standards-aligned curricula for K-12 schools.
+3.  [School systems desperate for standards-aligned curricula find hope][9]: Karen Vaites,Open Up Resources 的社区福音传教士和首席营销官, 谈论非营利组织努力为 K-12 学校提供开放的, 标准一致的课程。
 
-4.  [How the University of Hawaii is solving today's higher ed problems][10]: Billy Meinke, educational technologist at the University of Hawaii at Manoa, says that transitioning to OER in college courses will "empower faculty to take control of what content they teach with, which we expect will result in their saving students money."
+4.  [How the University of Hawaii is solving today's higher ed problems][10]: Billy Meinke夏威夷大学马诺阿分校的教育技术专家，他说, 在大学课程中过渡到 ORE 将 "使教师能够控制他们教授的内容, 我们预计这将为他们节省学生的费用"。
 
-5.  [How open courses are slashing the cost of higher education][11]: Saylor Academy's director of education Devon Ritter reports how Saylor is building its college credit-eligible courses on openly licensed content, with the goal of making higher education affordable and accessible to more people.
+5.  [How open courses are slashing the cost of higher education][11]: Saylor Academy 的教育主任 Devon Ritter 报告了 Saylor 是如何建立以公开许可内容为基础的大学学分课程, 目的是使更多的人能够负担得起和获得高等教育。
 
-6.  [Open educational resources movement gains speed][12]: Alexis Clifton, executive director of the State University of New York OER Services, describes how New York's US$ 8 million investment is spurring growth in open education and making college more affordable.
+6.  [Open educational resources movement gains speed][12]: Alexis Clifton，State University of New York 的 OER 服务的执行主任, 描述了纽约800万美元的投资如何刺激开放教育的增长, 并使大学更实惠。
 
-7.  [Open project collaboration from elementary to university classrooms][13]: Aria F. Chernik from Duke University explores OSPRI (Open Source Pedagogy Research and Innovation), a collaboration between Duke and Red Hat that's building a 21st-century, preK-12 learning ecosystem that is open by design.
+7.  [Open project collaboration from elementary to university classrooms][13]: Aria F. Chernik 在Duke University 探索 OSPRI (Open Source Pedagogy Research and Innovation，开源教育学的研究与创新), 在 Duke 和 Red Hat 的联合合作这是建立一个21世纪的,  preK-12 学习生态系统, 是开放的设计。
 
 8.  [Perma.cc stops scholarly link rot][14]: Virginia Tech's Phillip Young writes about Perma.cc, a solution to "link rot," which is the high probability that hyperlinks in academic papers will disappear or change over time.
 
