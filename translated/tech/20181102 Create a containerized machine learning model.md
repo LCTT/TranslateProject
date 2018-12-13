@@ -7,46 +7,46 @@
 [#]: author: (Sven Bösiger)
 [#]: url: ( )
 
-Create a containerized machine learning model
+创建一个容器化的机器学习模型
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/10/machinelearning-816x345.jpg)
 
-After data scientists have created a machine learning model, it has to be deployed into production. To run it on different infrastructures, using containers and exposing the model via a REST API is a common way to deploy a machine learning model. This article demonstrates how to roll out a [TensorFlow][1] machine learning model, with a REST API delivered by [Connexion][2] in a container with [Podman][3].
+数据科学家在创建机器学习模型后，必须将其部署到生产中。要在不同的基础架构上运行它，使用容器并通过 REST API 公开模型是部署机器学习模型的常用方法。本文演示了如何在 [Podman][3] 容器中使用 [Connexion][2] 推出使用 REST API 的 [TensorFlow][1] 机器学习模型。 
 
-### Preparation
+### 准备
 
-First, install Podman with the following command:
+首先，使用以下命令安装 Podman：
 
 ```
 sudo dnf -y install podman
 ```
 
-Next, create a new folder for the container and switch to that directory.
+接下来，为容器创建一个新文件夹并切换到该目录。
 
 ```
 mkdir deployment_container && cd deployment_container
 ```
 
-### REST API for the TensorFlow model
+### TensorFlow 模型的 REST API
 
-The next step is to create the REST-API for the machine learning model. This [github repository][4] contains a pretrained model, and well as the setup already configured for getting the REST API working.
+下一步是为机器学习模型创建 REST API。这个 [github 仓库][4]包含一个预训练模型，以及能让 REST API 工作的设置。
 
-Clone this in the deployment_container directory with the command:
+使用以下命令在 deployment_container 目录中克隆它：
 
 ```
 git clone https://github.com/svenboesiger/titanic_tf_ml_model.git
 ```
 
-#### prediction.py & ml_model/
+#### prediction.py 和 ml_model/
 
-The [prediction.py][5] file allows for a Tensorflow prediction, while the weights for the 20x20x20 neural network are located in folder [ml_model/][6].
+[prediction.py][5] 能进行 Tensorflow 预测，而 20x20x20 神经网络的权重位于文件夹 [ml_model/][6] 中。
 
 #### swagger.yaml
 
-The file swagger.yaml defines the API for the Connexion library using the [Swagger specification][7]. This file contains all of the information necessary to configure your server to provide input parameter validation, output response data validation, URL endpoint definition.
+swagger.yaml 使用 [Swagger规范][7] 定义 Connexion 库的 API。此文件包含让你的服务器提供输入参数验证、输出响应数据验证、URL 端点定义所需的所有信息。
 
-As a bonus Connexion will provide you also with a simple but useful single page web application that demonstrates using the API with JavaScript and updating the DOM with it.
+额外地，Connexion 还将给你提供一个简单但有用的单页 Web 应用，它演示了如何使用 Javascript 调用 API 和更新 DOM。
 
 ```
 swagger: "2.0"
@@ -85,9 +85,9 @@ definitions:
     type: object
 ```
 
-#### server.py & requirements.txt
+#### server.py 和 requirements.txt
 
-[server.py][8] defines an entry point to start the Connexion server.
+[server.py][8] 定义了启动 Connexion 服务器的入口点。
 
 ```
 import connexion
@@ -100,7 +100,7 @@ if __name__ == '__main__':
  app.run(debug=True)
 ```
 
-[requirements.txt][9] defines the python requirements we need to run the program.
+[requirements.txt][9] 定义了运行程序所需的 python 包。
 
 ```
 connexion
@@ -108,9 +108,9 @@ tensorflow
 pandas
 ```
 
-### Containerize!
+### 容器化！
 
-For Podman to be able to build an image, create a new file called “Dockerfile” in the **deployment_container** directory created in the preparation step above:
+为了让 Podman 构建映像，请在上面的准备步骤中创建的 **deployment_container** 目录中创建一个名为 “Dockerfile” 的新文件：
 
 ```
 FROM fedora:28
@@ -143,25 +143,25 @@ WORKDIR /titanic_tf_ml_model
 CMD python3 server.py
 ```
 
-Next, build the container image with the command:
+接下来，使用以下命令构建容器镜像：
 
 ```
 podman build -t ml_deployment .
 ```
 
-### Run the container
+### 运行容器
 
-With the Container image built and ready to go, you can run it locally with the command:
+随着容器镜像的构建和准备就绪，你可以使用以下命令在本地运行它：
 
 ```
 podman run -p 5000:5000 ml_deployment
 ```
 
-Navigate to [http://0.0.0.0:5000/ui][10] in your web browser to access the Swagger/Connexion UI and to test-drive the model:
+在 Web 浏览器中输入 [http://0.0.0.0:5000/ui][10] 访问 Swagger/Connexion UI 并测试模型：
 
 ![][11]
 
-Of course you can now also access the model with your application via the REST-API.
+当然，你现在也可以在应用中通过 REST API 访问模型。
 
 
 --------------------------------------------------------------------------------
@@ -170,7 +170,7 @@ via: https://fedoramagazine.org/create-containerized-machine-learning-model/
 
 作者：[Sven Bösiger][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
