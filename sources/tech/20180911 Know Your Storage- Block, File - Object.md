@@ -1,3 +1,4 @@
+Translating by qhwdw
 Know Your Storage: Block, File & Object
 ======
 
