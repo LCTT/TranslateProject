@@ -1,9 +1,11 @@
-使用开放决策框架收集项目需求
+降低项目失败率的三个原则
 ======
+
+> 透明和包容性的项目要求可以降低您的失败率。 以下是如何协作收集它们。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/suitcase_container_bag.png?itok=q40lKCBY)
 
-众所周知，明确、简洁和可衡量的需求会带来更多成功的项目。一项关于[麦肯锡与牛津大学][1]的大型项目的研究表明：“平均而言，大型 IT 项目超出预算 45％，时间每推移 7％，价值就比预期低 56％ “。该研究还表明，造成这种失败的一些原因是“模糊的业务目标，不同步的利益相关者以及过度的返工”。
+众所周知，明确、简洁和可衡量的需求会带来更多成功的项目。一项[麦肯锡与牛津大学][1]的关于大型项目的研究表明：“平均而言，大型 IT 项目超出预算 45％，时间每推移 7％，价值就比预期低 56％ 。”该研究还表明，造成这种失败的一些原因是“模糊的业务目标，不同步的利益相关者以及过度的返工。”
 
 业务分析师经常发现自己通过持续对话来构建这些需求。为此，他们必须吸引多个利益相关方，并确保参与者提供明确的业务目标。这样可以减少返工，提高更多项目的成功率。
 
@@ -29,7 +31,7 @@ via: https://opensource.com/open-organization/18/2/constructing-project-requirem
 
 作者：[Tracy Buckner][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
