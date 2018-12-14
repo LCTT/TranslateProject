@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (heguangzhi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Have a cow at the Linux command line)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-cowsay)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10346-1.html)
 
 
 在 Linux 命令行上拥有一头奶牛
