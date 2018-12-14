@@ -1,11 +1,12 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (LazyWolfLin)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Update Ubuntu [Terminal & GUI Methods] It's FOSS)
 [#]: via: (https://itsfoss.com/update-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
+Translating by LazyWolfLin
 
 How to Update Ubuntu [Terminal & GUI Methods] It's FOSS
 ======
