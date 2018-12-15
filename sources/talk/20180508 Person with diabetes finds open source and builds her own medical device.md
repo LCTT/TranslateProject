@@ -1,3 +1,5 @@
+translating by valoniakim
+
 Person with diabetes finds open source and builds her own medical device
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/health_heartbeat.png?itok=P-GXea-p)
