@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Easily Convert Audio File Formats with SoundConverter in Linux)
 [#]: via: (https://itsfoss.com/sound-converter-linux/)
 [#]: author: (Abhishek Prakash  https://itsfoss.com/author/abhishek/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10350-1.html)
 
 在 Linux 中使用 SoundConverter 轻松转换音频文件格式
 ======
