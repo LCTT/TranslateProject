@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Create a containerized machine learning model)
 [#]: via: (https://fedoramagazine.org/create-containerized-machine-learning-model/)
 [#]: author: (Sven Bösiger)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10349-1.html)
 
 创建一个容器化的机器学习模型
 ======
