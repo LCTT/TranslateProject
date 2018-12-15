@@ -7,6 +7,7 @@
 [#]: via: (https://www.2daygeek.com/check-laptop-battery-status-and-charging-state-in-linux-terminal/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
+[translating by dianbanjiu]  
 5 Ways To Check Laptop Battery Status And Level From Linux Terminal
 ======
 
