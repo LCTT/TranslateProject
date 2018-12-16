@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (dianbanjiu )
+[#]: translator: ( dianbanjiu )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,38 +7,38 @@
 [#]: via: (https://www.2daygeek.com/check-laptop-battery-status-and-charging-state-in-linux-terminal/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-5 Ways To Check Laptop Battery Status And Level From Linux Terminal
+从 Linux 终端查看笔记本电池状态等级的 5 个方法  
 ======
 
-We can easily check the battery status through GUI such as current battery percentage, whether it’s charging or not charging and how long it will be usable without charging, but we can’t able to check the battery health and other related information.
+我们可以轻松地通过图形化界面查看当前电量百分比、是否在充电以及当前电量还可以使用多长时间等电池状态，但是却无法查看电池健康度等相关信息。  
 
-In this scenario what will be the solutions.
+在这篇文章就是为了解决这些问题。  
 
-Yes, we have few utilities available for this in Linux and it can be achieved through command line.
+在 Linux 上有很多实用工具可以用命令行进行使用。  
 
-We are going to discuss about this topic today through this article and i will try to cover possible information i can.
+这篇文章今天就要探讨这个主题，我会尽我所能的覆盖尽可能多的信息。  
 
-Checking your battery health monthly once is something good. It will help you to identify whether we are facing any battery or charge related issues.
+每月检查一次你的电池健康度是一个很好的想法。它可以帮你检查你当前遇到的问题是否与电池或者充电相关。  
 
-Also, we can see battery model name, power source, vendor and battery technology, etc,.
+同时，我们也可以查看电池模组名称、电源、出售商以及电池规格等。  
 
-Power management is a feature that turns off the power or switches system’s components to a low-power state when inactive.
+电源管理是在非活跃状态时关闭电源或者切换系统的组件到低耗模式的一种功能。  
 
-### Following Utilities are available in Linux to Check Battery Status.
+### 几种在 Linux 下检查电池状态的实用工具  
 
-  * `upower`: upower is a command line tool which provides an interface to enumerate power sources on the system.
-  * `acpi`: acpi Shows information from the /proc or the /sys filesystem, such as battery status or thermal information.
-  * `batstat`: batstat is a command line tool to print battery status for linux.
-  * `tlp`: TLP brings you the benefits of advanced power management for Linux without changing any configuration.
-  * `class file`: The sysfs filesystem is a pseudo-filesystem which provides an interface to kernel data structures.
+  * `upower`: upower 是一个提供了接口来罗列系统中电源的命令行工具。    
+  * `acpi`: acpi显示来自 /proc 或者 /sys 文件中的一些信息，例如电池状态或者热量信息  
+  * `batstat`: batstat 是一个为 Linux 打印电池状态的命令行工具。  
+  * `tlp`: TLP 可以为你带来更高级的电源管理，而无需修改任何配置。  
+  * `class file`: 这个文件系统是一个提供了内核数据结构接口的伪文件系统。  
 
 
 
-### How to Check Laptop Battery Status Using upower Command?
+### 如何使用 upower 命令检查笔记本电池状态  
 
-[upower][1] is a command line tool that provides an interface to enumerate power sources on the system. It control the latency of different operations on your computer, which enables you to save significant amounts of power.
+[upower][1] 是一个提供了接口来罗列系统中电源的命令行工具。它在你的电脑上可以控制不同操作的延迟，这可以为你节省很大一部分电量。  
 
-Just run the following command to get the battery and it’s related information on Linux.
+只需要在 Linux 中运行以下命令获取电池以及它所依赖的其他信息。    
 
 ```
 $ upower -i /org/freedesktop/UPower/devices/battery_BAT0
@@ -72,7 +72,7 @@ $ upower -i /org/freedesktop/UPower/devices/battery_BAT0
  1543847178 10.714  discharging
 ```
 
-To check the specific information about battery, use the following format.
+使用下面的格式检查电池的特定信息。  
 
 ```
 $ upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i "state\|percentage\|time to empty"
@@ -81,7 +81,7 @@ $ upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i "state\|perce
  percentage: 43%
 ```
 
-It’s same as above, but it’s taken after power cable plugged in, that’s why the state showing charging.
+这个类似于上面的那个，但是充电线缆的插入就相当于一个令牌，这也就是为什么下面会显示正在充电状态的原因。  
 
 ```
 $ upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i "state\|percentage\|time to empty"
@@ -89,15 +89,15 @@ $ upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i "state\|perce
  percentage: 41%
 ```
 
-### How to Check Laptop Battery Status Using TLP Command?
+### 如何使用 TLP 命令检查笔记本电池状态  
 
-TLP is a free opensource feature-rich command line tool which optimize laptop battery without making any configuration change.
+TLP 是一个自由开源多功能的命令行工具，它可以优化笔记本电池而无需修改任何配置。  
 
-TLP brings you the benefits of advanced power management for Linux without the need to understand every technical detail. TLP comes with a default configuration already optimized for battery life, so you may just install and forget it. Nevertheless TLP is highly customizable to fulfil your specific requirements.
+TLP 可以为你的 Linux 带来更高级的电源管理，而无需理解任何技术细节。TLP 默认附带了一个已经为你的电池优化好的配置，所以你可以安装好后就不再管它了。尽管 TLP 是一个可以根据你的需求高度可定制的工具。  
 
-TLP package is available in most of the Linux distribution official repository such as Arch, Debian, Fedora, Gentoo, openSUSE, etc. Use your distribution Package Manager to install the TLP utility.
+TLP 在绝大多数 Linux 发行版，例如 Arch、Debian、Fedora、Gentoo、openSUSE等的官方库中都可用。使用你的 Linux 发行版的包管理安装 TLP 即可。  
 
-Just run the following command to get the battery and it’s related information on Linux.
+只需要在 Linux 中运行以下命令获取电池以及其他所依赖的信息。  
 
 ```
 $ sudo tlp-stat -b
@@ -117,7 +117,7 @@ Charge = 42.0 [%]
 Capacity = 87.1 [%]
 ```
 
-To see other information as well.
+也可以查看其他的信息。  
 
 ```
 $ sudo tlp-stat -s
@@ -139,16 +139,16 @@ Mode = battery
 Power source = battery
 ```
 
-### How to Check Laptop Battery Status Using ACPI Command?
+### 如何使用 ACPI 命令检查电池状态  
 
-ACPI stands for Advanced Configuration and Power Interface modules are kernel modules for different ACPI parts. They enable special ACPI functions or add information to /proc or /sys. These information can be parsed by acpid for events or other monitoring applications.
+ACPI 代表高级配置和电源接口模块，它们是不同 ACPI 部件的内核模块。它们启用特殊的 ACPI 函数向 /proc 或者 /sys 中添加信息。这些信息可以通过事件或者其他监控程序的 acpid 进行解析。   
 
 ```
 $ acpi
 Battery 0: Charging, 43%, 01:05:11 until charged
 ```
 
-To see battery capacity.
+查看电池容量。  
 
 ```
 $ acpi -i
@@ -156,7 +156,7 @@ Battery 0: Charging, 43%, 01:05:07 until charged
 Battery 0: design capacity 3817 mAh, last full capacity 3324 mAh = 87%
 ```
 
-To see more details about battery and related information.
+查看更多有关电池及其相关的信息。  
 
 ```
 $ acpi -V
@@ -177,9 +177,9 @@ Cooling 10: x86_pkg_temp no state information available
 Cooling 11: Processor 0 of 10
 ```
 
-### How to Check Laptop Battery Status Using Batstat Command?
+### 如何使用 Batstat 命令查看笔记本电池状态  
 
-batstat is a command line tool to print battery status in linux terminal.
+batstat 是一个在 Linux 终端打印电池信息的命令行工具。  
 
 ```
 Status: Charging
@@ -193,13 +193,13 @@ Time elapsed: 0: 0:12 since 49.00%
  0: 0: 0 49.00%
 ```
 
-### How to Check Laptop Battery Status Using sysfs filesystem?
+### 如何使用 sysfs 文件系统查看笔记本电池状态  
 
-The sysfs filesystem is a pseudo-filesystem which provides an interface to kernel data structures. The files under sysfs provide information about devices, kernel modules, filesystems, and other kernel components.
+sysfs 文件系统是一个提供了内核数据结构接口的伪文件系统。sysfs 下的文件提供有关设备、内核模块、文件系统和其他内核组件的信息。  
 
-The sysfs filesystem is commonly mounted at /sys. Typically, it is mounted automatically by the system, but it can also be mounted manually using a command such as `mount -t sysfs sysfs /sys`
+sysfs 文件系统通常挂载在 /sys。通常来说，它会被系统自动挂载，但是也可以使用例如 `mount -t sysfs sysfs /sys` 命令进行手动挂载。  
 
-Many of the files in the sysfs filesystem are read-only, but some files are writable, allowing kernel variables to be changed. To avoid redundancy, symbolic links are heavily used to connect entries across the filesystem tree.
+在 sysfs 文件系统中的很多文件都是只读的，但也有一些是可写的，允许更改内核变量。为了避免冗余，符号链接被大量用于连接文件系统数中的条目。  
 
 ```
 $ cat /sys/class/power_supply/BAT0/*
@@ -247,7 +247,7 @@ via: https://www.2daygeek.com/check-laptop-battery-status-and-charging-state-in-
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[dianbanjiu](https://github.com/dianbanjiu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
