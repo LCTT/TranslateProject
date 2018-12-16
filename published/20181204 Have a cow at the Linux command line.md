@@ -23,13 +23,13 @@
 
 `cowsay` 是一个神奇的实用程序，它将文本作为 ASCII 艺术牛的讲话文本输出。
 
-你可能会发现 `cowsey` 打包在你的默认存储库中，甚至可能已经安装了。对我来说，在 Fedora，像这样安装:
+你可能会发现 `cowsay` 打包在你的默认存储库中，甚至可能已经安装了。对我来说，在 Fedora，像这样安装:
 
 ```
 $ sudo dnf install -y cowsay
 ```
 
-然后，用 `cowsey` 调用它，然后是你的消息。也许你想到昨天我们谈到的 [fortune 应用][1] 连接起来。 
+然后，用 `cowsay` 调用它，然后是你的消息。也许你想到昨天我们谈到的 [fortune 应用][1] 连接起来。 
 
 ```
 $ fortune | cowsay
@@ -72,7 +72,7 @@ $ cowsay -f dragon "Run for cover, I feel a sneeze coming on."
 
 我对 `cowsay` 的真正不满是，我今天没有足够的时间来为牛的挤奶 —— 一语双关。牛排价格太高了，我只是开个玩笑。 
 
-更严重的是，我已经完全忘记了 `cowsay` 直到我在学习 Ansible 的剧本时再次遇到它。如果你碰巧安装了 `cowyay`，当你运行Ansible 的剧本时，你会从一队奶牛那里获得输出。例如，运行这个剧本：
+更严重的是，我已经完全忘记了 `cowsay` 直到我在学习 Ansible 的剧本时再次遇到它。如果你碰巧安装了 `cowsay`，当你运行 Ansible 的剧本时，你会从一队奶牛那里获得输出。例如，运行这个剧本：
 
 ```
 - hosts:
