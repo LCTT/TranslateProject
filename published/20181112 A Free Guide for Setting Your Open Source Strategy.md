@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (A Free Guide for Setting Your Open Source Strategy)
 [#]: via: (https://www.linux.com/blog/2018/11/free-guide-setting-your-open-source-strategy)
 [#]: author: ([Amber Ankerholz](https://www.linux.com/users/aankerholz)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10354-1.html)
 
 制定开源战略的免费指南
 ======
