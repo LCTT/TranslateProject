@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (jrglinux)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Boxing yourself in on the Linux command line)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-boxes)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10352-1.html)
 
 神奇的 Linux 命令行字符形状工具 boxes
 ======
