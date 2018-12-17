@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Drive a locomotive through your Linux terminal)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-sl)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10357-1.html)
 
 在 Linux 终端中开火车
 ======
