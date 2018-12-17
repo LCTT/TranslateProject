@@ -3,19 +3,19 @@ TLDR 页：Linux 手册页的简化替代品
 
 [![](https://fossbytes.com/wp-content/uploads/2017/11/tldr-page-ubuntu-640x360.jpg "tldr page ubuntu")][22] 
 
-在终端上使用各种命令执行重要任务是 Linux 桌面体验中不可或缺的一部分。Linux 这个开源操作系统拥有[丰富的命令][23]，使得任何用户都无法记住所有这些命令。而使事情变得更复杂的是，每个命令都有自己的一组带来丰富的功能的选项。
+在终端上使用各种命令执行重要任务是 Linux 桌面体验中不可或缺的一部分。Linux 这个开源操作系统拥有[丰富的命令][23]，任何用户都无法全部记住所有这些命令。而使事情变得更复杂的是，每个命令都有自己的一组带来丰富的功能的选项。
 
-为了解决这个问题，人们创建了[手册页][12]，（手册 —— man 是 manual 的缩写）。首先，它是用英文写成的，包含了大量关于不同命令的深入信息。有时候，当你在寻找命令的基本信息时，它就会显得有点庞杂。 为了解决这个问题，人们创建了[TLDR 页][13]。
+为了解决这个问题，人们创建了<ruby>[手册页][12]<rt>man page</rt></ruby>，（手册 —— man 是 manual 的缩写）。首先，它是用英文写成的，包含了大量关于不同命令的深入信息。有时候，当你在寻找命令的基本信息时，它就会显得有点庞杂。为了解决这个问题，人们创建了[TLDR 页][13]。
 
 ### 什么是 TLDR 页？
 
-用于 Linux / Unix 的 TLDR 页的 GitHub 仓库将其描述为简化的、社区驱动的手册页的集合。在实际示例的帮助下，努力让使用手册页的体验变得更简单。如果还不知道，TLDR 取自互联网的常见俚语：<ruby>太长没读<rt>Too Long Didn’t Read</rt></ruby>。
+TLDR 页的 GitHub 仓库将其描述为简化的、社区驱动的手册页集合。在实际示例的帮助下，努力让使用手册页的体验变得更简单。如果还不知道，TLDR 取自互联网的常见俚语：<ruby>太长没读<rt>Too Long Didn’t Read</rt></ruby>。
 
-如果你想比较一下，让我们以 `tar` 命令为例。 通常，手册页会超过 1000 行。它是一个归档实用程序，经常与 `bzip` 或 `gzip` 等压缩方法结合使用。看一下它的手册页：
+如果你想比较一下，让我们以 `tar` 命令为例。 通常，手册页的篇幅会超过 1000 行。`tar` 是一个归档实用程序，经常与 `bzip` 或 `gzip` 等压缩方法结合使用。看一下它的手册页：
 
 [![tar man page](https://fossbytes.com/wp-content/uploads/2017/11/tar-man-page.jpg)][14] 
 
-而另一方面，TLDR 页面让你只是浏览一下命令，看看它是如何工作的。 `tar` 的 TLDR 页面看起来像这样，并带有一些方便的例子——你可以使用此实用程序完成的最常见任务：
+而另一方面，TLDR 页面让你只是浏览一下命令，看看它是如何工作的。 `tar` 的 TLDR 页面看起来像这样，并带有一些方便的例子 —— 你可以使用此实用程序完成的最常见任务：
 
 [![tar tldr page](https://fossbytes.com/wp-content/uploads/2017/11/tar-tldr-page.jpg)][15]
 
@@ -23,18 +23,18 @@ TLDR 页：Linux 手册页的简化替代品
 
 [![tldr-page-of-apt](https://fossbytes.com/wp-content/uploads/2017/11/tldr-page-of-apt.jpg)][16]
 
-如上向你展示了 TLDR 如何工作并使你的生活更轻松，下面让我们告诉你如何在基于 Linux 的操作系统上安装它。
+如上，它向你展示了 TLDR 如何工作并使你的生活更轻松，下面让我们告诉你如何在基于 Linux 的操作系统上安装它。
 
 ### 如何在 Linux 上安装和使用 TLDR 页？
 
-最成熟的 TLDR 客户端基于 Node.js，你可以使用 NPM 包管理器轻松安装它。如果你的系统上没有 Node 和 NPM，请运行以下命令：
+最成熟的 TLDR 客户端是基于 Node.js 的，你可以使用 NPM 包管理器轻松安装它。如果你的系统上没有 Node 和 NPM，请运行以下命令：
 
 ```
 sudo apt-get install nodejs
 sudo apt-get install npm 
 ```
 
-如果你使用的是 Debian、Ubuntu 或 Ubuntu 衍生产品以外的操作系统，你可以根据自己的情况使用`yum`、`dnf` 或 `pacman`包管理器。
+如果你使用的是 Debian、Ubuntu 或 Ubuntu 衍生发行版以外的操作系统，你可以根据自己的情况使用`yum`、`dnf` 或 `pacman`包管理器。
 
 现在，通过在终端中运行以下命令，在 Linux 机器上安装 TLDR 客户端：
 
@@ -76,7 +76,7 @@ via: https://fossbytes.com/tldr-pages-linux-man-pages-alternative/
 
 作者：[Adarsh Verma][a]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
