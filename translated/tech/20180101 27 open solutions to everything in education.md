@@ -34,46 +34,46 @@
 
 7.  [Open project collaboration from elementary to university classrooms][13]: Aria F. Chernik 在Duke University 探索 OSPRI (Open Source Pedagogy Research and Innovation，开源教育学的研究与创新), 在 Duke 和 Red Hat 的联合合作这是建立一个21世纪的,  preK-12 学习生态系统, 是开放的设计。
 
-8.  [Perma.cc stops scholarly link rot][14]: Virginia Tech's Phillip Young writes about Perma.cc, a solution to "link rot," which is the high probability that hyperlinks in academic papers will disappear or change over time.
+8.  [Perma.cc stops scholarly link rot][14]: Virginia Tech 的 Phillip Young 写关于 Perma.cc,  "link rot,"(链接失效) 的解决方案 很大可能在学术论文中的超链接随着时间的推移而消失或变化。
 
-9.  [Open education: How students save money by creating open textbooks][15]: OER pioneer Robin DeRosa talks about "the freedom that the openly licensed textbook introduced, and the overarching idea that education and learning should be contextualized in inclusive ecosystems that enhance the public good."
+9.  [Open education: How students save money by creating open textbooks][15]: OER 先驱 Robin DeRosa 谈到 "公开许可教科书引入的自由, 以及教育和学习应结合包容性生态系统, 以增强公益的总体理念"。
 
-### Open source tools in the classroom
+### 课堂上的开源工具
 
-1.  [How an open source board game is saving the planet][16]: Joshua Pearce writes about Save the Planet, a board game that empowers students to solve environmental problems while having fun and contributing to the maker community.
+1.  [How an open source board game is saving the planet][16]: Joshua Pearce 写关于拯救地球, 一个棋盘游戏, 使学生能够解决环境问题, 同时有乐趣, 并为制造商社区作出贡献。
 
-2.  [A new Android app for teaching kids how to read][17]: Michael Hall talks about Phoenicia, a children's literacy app he developed after his son was diagnosed with autism, the value of coding for good, and why user testing matters more than you think.
+2.  [A new Android app for teaching kids how to read][17]: Michael Hall 谈到 Phoenicia,他在儿子被诊断为自闭症后开发的儿童识字应用, 为了产生更好的编码价值, 以及为什么用户测试比你想象的更重要。
 
-3.  [8 open source Android apps for education][18]: Joshua Allen Holm challenges us to use our smartphones as learning tools by recommending eight open source apps from the F-Droid repository to try.
+3.  [8 open source Android apps for education][18]: Joshua Allen Holm 通过推荐 F-Droid 存储库中的8个开源应用来尝试, 这将挑战我们将智能手机用作学习工具。
 
-4.  [3 open source alternatives to MATLAB][19]: Jason Baker's update to his 2016 survey of open source mathematical computing software presents alternatives to MATLAB, the expensive, proprietary solution nearly ubiquitous in mathematics, physical sciences, engineering, and economics.
+4.  [3 open source alternatives to MATLAB][19]: Jason Baker's 更新了他2016年的开源数学计算软件调查, 提出了 MATLAB 的替代方案, 这是数学、物理科学、工程和经济学中几乎无处不在的昂贵的专有解决方案。
 
-5.  [What does SVG have to do with teaching kids to code?][20] Retired engineer Jay Nick talks about how he uses art as a creative way to introduce students to coding. He volunteers in schools, using Scalable Vector Graphics (SVG) to teach an approach to coding that combines principles of mathematics and art.
+5.  [What does SVG have to do with teaching kids to code?][20] 退休工程师 Jay Nick 谈论他如何使用艺术作为一种创造性的方式, 向学生介绍编码。他在学校做志愿者, 使用可缩放矢量图形 (SVG，Scalable Vector Graphics) 教授一种结合数学和艺术原理的编码方法。
 
-6.  [5 myths busted: Using open source in higher education][21]: Kyle Conway, who holds a PhD in fine arts from Texas Tech, shares his experience using open source tools in a world ruled by proprietary solutions. Kyle says there's a bias against using open source in disciplines outside of computer science: "Many people think non-technical students can't use Linux, and they make a lot of assumptions about people who use it in their advanced degree programs. … Well, it is possible, and I'm proof."
+6.  [5 myths busted: Using open source in higher education][21]: Kyle Conway, 在 Texas Tech 拥有美术博士学位 分享他在单一解决方案统治的世界中使用开源工具的经验。 Kyle 说有一种偏见, 反对在计算机科学以外的学科中使用开源:"很多人认为非技术专业的学生不能使用 Linux, 他们对在高级学位课程中使用 Linux 的人做出了很多假设。...嗯, 这是有可能的, 我就是证明。
 
-7.  [A list of open source tools for college][22]: Aaron Cocker outlines the open source tools (including presentation, backup, and programming software) he uses while working on his undergraduate degree in computer science.
+7.  [A list of open source tools for college][22]: Aaron Cocker 概述了他在攻读计算机科学本科学位时使用的开源工具 (包括演示、备份和编程软件)。
 
-8.  [5 great KDE apps to help you study][23]: Zsolt Szakács offers five KDE applications that help anyone who wants to learn new skills or cultivate existing ones.
+8.  [5 great KDE apps to help you study][23]: Zsolt Szakács 提供五个 KDE 应用程序, 帮助任何想要学习新技能或培养现有技能的人。
 
-### Coding in the classroom
+### 在教室编码
 
-1.  [How to get the next generation coding early][24]: Bryson Payne says we need to teach kids to code before high school: By ninth grade 80% of girls and 60% of boys have already self-selected out of a STEM career. But it's not only about jobs and closing the IT skills gap, he suggests. "Teaching a young person to code could be the single most life-changing skill you can give them. And it's not just a career-enhancer. Coding is about problem-solving, it's about creativity, and more importantly, it's about empowerment."
+1.  [How to get the next generation coding early][24]: Bryson Payne 说我们需要教孩子们在高中前编码: 到了九年级, 80% 的女孩和60% 的男孩已经从 STEM 职业中自选。但他建议, 这不仅仅是就业和缩小 IT 技能差距的问题。"教一个年轻人编写代码可能是你能给他们的最改变生活的技能。而且这不仅仅是一个职业提升者。编码是关于解决问题, 它是关于创造力, 更重要的是, 它是关于授权。
 
-2.  [Kids can't code without computers][25]: Patrick Masson introduces the FLOSS Desktops for Kids program, which teaches students at underserved schools to repurpose older computers with open source software, such as Linux, LibreOffice, and GIMP. Not only is the program breathing new life into broken or decommissioned hardware, it's also giving students important skills that may translate into future careers.
+2.  [Kids can't code without computers][25]: Patrick Masson 推出了 FLOSS 儿童桌面计划, 该计划教授服务不足学校的学生使用开源软件 (如 Linux、LibreOffice 和 GIMP) 重新设计较旧的计算机。该计划不仅为破碎或退役的硬件注入新的生命, 还为学生提供了重要的技能, 这些技能可能会转化为未来的职业。
 
-3.  [Is Scratch today like the Logo of the '80s for teaching kids to code?][26] Anderson Silva offers suggestions for using [Scratch][27] to spark kids' interest in programming, just as LOGO did when he started using it in the 1980s.
+3.  [Is Scratch today like the Logo of the '80s for teaching kids to code?][26] Anderson Silva 提供 [Scratch][27] 的使用建议激发孩子们对编程的兴趣, 就像 LOGO 在20世纪80年代开始使用它时一样。
 
-4.  [Learn Android development with this drag-and-drop framework][28]: Eric Eslinger describes App Inventor, a programming framework for building Android applications using a visual blocks language (similar to Scratch or [Snap][29]).
+4.  [Learn Android development with this drag-and-drop framework][28]: Eric Eslinger 描述应用发明者, 一个编程框架, 用于构建 Android 应用程序使用可视块语言 (类似 Scratch 或者[Snap][29]).
 
-Throughout the year we learned that there is an open solution to everything in education, and I expect this theme to continue in 2018 and beyond. Are there open education topics you'd like Opensource.com to cover in the coming year? If so, please share your ideas in the comments.
+在这一年里, 我们了解到, 教育领域的一切都有一个开放的解决方案, 我预计这一主题将在2018年及以后继续下去。在未来的一年里, 你是否希望 Opensource.com 涵盖开放的教育主题？如果是, 请在评论中分享你的想法。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/1/best-open-education
 
 作者：[Don Watkins][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lixinyuxx](https://github.com/lixinyuxx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
