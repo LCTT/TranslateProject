@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/update-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何更新Ubuntu [终端及GUI方式] It's FOSS
+如何更新 Ubuntu [终端及GUI方式] It's FOSS
 ======
 
 **这篇教程将向你展示如何更新服务器版本或者桌面版本的Ubuntu。它还解释了更新和升级之间的区别以及你应该了解的有关于Ubuntu Linux中的更新的一些其他内容。**
@@ -16,38 +16,38 @@
 
 更新 Ubuntu 非常简单。我并不夸张的说。它简单得只要运行两个命令。让我来告诉你更多更新细节。
 
-Please note that the tutorial is valid for Ubuntu 18.04, 16.04 or any other version. The command line way is also valid for Ubuntu-based distributions like Linux Mint, Linux Lite, elementary OS etc.
+请注意，本教程适用于 Ubuntu 18.04，16.04 或任何其他版本。命令行方式也适用于基于 Ubuntu 的发行版如 Linux Mint，Linux Lite，elementary OS 等。
 
-### Update Ubuntu via Command Line
+### 通过命令行更新 Ubuntu
 
-![How to Update Ubuntu][2]
+![如何更新 Ubuntu][2]
 
-On the desktop, open the terminal. You can find it in the menu or use the Ctrl+Alt+T [keyboard shortcut][3]. If you are logged on to an [Ubuntu server][4], you already have access to a terminal.
+在桌面上，打开终端。你可以在菜单里找到它或者使用 Ctrl+Alt+T [快捷键][3]。如果你登陆到一台 [Ubuntu 服务器][4]，那你已经在访问一个终端了。
 
-In the terminal, you just have to use the following command:
+在终端里，你只需要使用以下命令：
 
 ```
 sudo apt update && sudo apt upgrade -y
 ```
 
-It will ask for password and you can use your account’s password. You won’t see the anything on the screen while typing so keep on typing your password and hit enter.
+它将询问密码，而你可以使用你账号的密码。输入时，你将不会看到任何内容在屏幕上，所以请继续输入你的密码并按回车键。
 
-Now let me explain the above command.
+现在，我来解释下上面的命令。
 
-Actually, it’s not a single command. It’s a combination of two commands. The && is a way to combine two commands in a way that the second command runs only when the previous command ran successfully.
+事实上，这不是一条命令。它由两条命令组成。符号 `&&` 是合并两条命令的一个方法，第二条命令仅在前一条命令执行成功时执行。
 
-The ‘-y’ in the end automatically enters yes when the command ‘apt upgrade’ ask for your confirmation before installing the updates.
+当命令 `apt upgrade` 要求你在安装更新前确认时，末尾的参数 `-y` 会自动输入 yes。
 
-Note that you can also use the two commands separately, one by one:
+请注意，你也可以逐条使用这两条命令：
 
 ```
 sudo apt update
 sudo apt upgrade
 ```
 
-It will take a little longer because you have to wait for one command to finish and then enter the second command.
+这将花费更长的时间，因为你必须等待第一条命令执行完成后才能输入第二条命令。
 
-#### Explanation: sudo apt update
+#### 说明：sudo apt update
 
 This command updates the local database of available packages. If you won’t run this command, the local database won’t be updated and your system will not know if there are any new versions available.
 
@@ -63,7 +63,7 @@ apt list --upgradable
 
 **Additional Reading:** Read this article to learn [what is Ign, Hit and Get in the apt update command output][6].
 
-#### Explanation: sudo apt upgrade
+#### 说明：sudo apt upgrade
 
 This command matches the versions of installed packages with the local database. It collects all of them and then it will list all of the packages that have a newer version available. At this point, it will ask if you want to upgrade (the installed packages to the newer version).
 
@@ -75,7 +75,7 @@ So the bottom line is that the sudo apt update checks for the availability of ne
 
 The term update might be confusing as you might expect the apt update command to update the system by installing the updates but that doesn’t happen.
 
-### Update Ubuntu via GUI [For Desktop Users]
+### 通过 GUI 更新 Ubuntu［适用于桌面用户］
 
 If you are using Ubuntu as a desktop, you don’t have to go to terminal just for updating the system. You can still use the command line but it’s optional for you.
 
@@ -109,11 +109,11 @@ You can choose to restart later if you don’t want to reboot your system straig
 
 Tip: If the software updater returns an error, you should use the command ‘sudo apt update’ in the terminal. The last few lines of the output will contain the actual error message. You can search on the internet for that error and fix the problem.
 
-### Few things to keep in mind abou updating Ubuntu
+### 更新 Ubuntu 时要记住几件事
 
 You just learned how to update your Ubuntu system. If you are interested, you should also know these few things around Ubuntu updates.
 
-#### Clean up after an update
+#### 更新后清理
 
 Your system will have some unnecessary packages that won’t be required after the updates. You can remove such packages and [free up some space][14] using this command:
 
@@ -121,7 +121,7 @@ Your system will have some unnecessary packages that won’t be required after t
 sudo apt autoremove
 ```
 
-####  Live patching kernel in Ubuntu Server to avoid rebooting
+####  在 Ubuntu Server 中热修复内核以避免重启
 
 In case of a Linux kernel updates, you’ll have to restart the system after the update. This is an issue when you don’t want downtime for your server.
 
@@ -129,13 +129,13 @@ In case of a Linux kernel updates, you’ll have to restart the system after the
 
 If you manage servers, you may want to [enable live patching in Ubuntu][16].
 
-#### Version upgrades are different
+#### 版本升级是不同的
 
 The updates discussed here is to keep your Ubuntu install fresh and updated. It doesn’t cover the [version upgrades][17] (for example upgrading Ubuntu 16.04 to 18.04).
 
 [Ubuntu version][18] upgrades are entirely a different thing. It updates the entire operating system core. You need to make proper backups before starting this lengthy process.
 
-### Conclusion
+### 总结
 
 I hope you liked this tutorial on updating the Ubuntu system and you learned a few new things.
 
