@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (How a university network assistant used Linux in the 90s)
 [#]: via: (https://opensource.com/article/18/5/my-linux-story-student)
 [#]: author: ([Alan Formy-Duva](https://opensource.com/users/alanfdoss)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10359-1.html)
 
 90 年代的大学网管如何使用 Linux
 ======
