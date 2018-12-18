@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Bring some color to your Linux terminal with lolcat)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-lolcat)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10361-1.html)
 
 使用 lolcat 为你的 Linux 终端带来彩虹
 ======
