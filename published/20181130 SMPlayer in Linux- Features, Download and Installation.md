@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (SMPlayer in Linux: Features, Download and Installation)
 [#]: via: (https://itsfoss.com/smplayer/)
 [#]: author: (Aquil Roshan;Abhishek Prakash https://itsfoss.com/author/aquil/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10365-1.html)
 
 SMPlayer：增强版的媒体播放器
 ======
