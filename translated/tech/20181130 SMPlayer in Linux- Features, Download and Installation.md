@@ -1,29 +1,30 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: subject: (SMPlayer in Linux: Features, Download and Installation)
 [#]: via: (https://itsfoss.com/smplayer/)
 [#]: author: (Aquil Roshan;Abhishek Prakash https://itsfoss.com/author/aquil/)
 [#]: url: ( )
 
-Linux 中的 SMPlayer：功能，下载和安装
+SMPlayer：增强版的媒体播放器
 ======
 
 当你要播放视频时，你会在[全新安装的 Ubuntu][1]，或其他许多发行版中，会注意到一个消息：
 
 ![][2]
-默认媒体播放器没有适合的编解码器
 
-这意味着系统上没有安装播放媒体的[所需编解码器][3]。现在，由于某些版权问题，某些基于 Linux 的操作系统无法在安装介质中预先打包编解码器。但是它们能让你只需点击即可下载和安装编解码器，或者你可以安装拥有所有媒体编解码器的媒体播放器。了解一下 [SMPlayer][4]。
+*默认媒体播放器没有适合的编解码器*
+
+这意味着系统上没有安装播放媒体的[所需编解码器][3]。现在，由于某些版权问题，某些基于 Linux 的操作系统无法在安装介质中预先打包编解码器。但是它们能让你只需点击即可下载和安装编解码器，或者你可以安装拥有所有媒体编解码器的媒体播放器。让我们了解一下 [SMPlayer][4]。
 
 ### 认识 SMPlayer：适用于 Linux 的更好的媒体播放器
 
-SMPlayer 是一款免费的开源媒体播放器，它基于强大的 [MPlayer][5] 媒体引擎。SMPlayer 能够播放 avi、mp4、mkv、mpeg、mov、divx、h.264 以及其他任何主要媒体格式。锦上添花的是，它也可以播放 [YouTube][6] 视频，并且无广告。
+SMPlayer 是一款自由开源媒体播放器，它基于强大的 [MPlayer][5] 媒体引擎。SMPlayer 能够播放 avi、mp4、mkv、mpeg、mov、divx、h.264 以及其他任何主要媒体格式。锦上添花的是，它也可以播放 [YouTube][6] 视频，并且无广告。
 
 ![SMPlayer default interface][7]
 
-SMPlayer 是一个完整的媒体解决方案。它是跨平台的，因此可在所有操作系统上使用。如果你是双启动，则可以将其安装在 Windows 和 Linux 操作系统上，以便在两个系统上获得统一的体验。它还支持带触摸的可变形笔记本。
+SMPlayer 是一个完整的媒体解决方案。它是跨平台的，因此可在所有操作系统上使用。如果你是双启动系统，则可以将其安装在 Windows 和 Linux 操作系统上，以便在两个系统上获得统一的体验。它还支持带触摸的可变形笔记本。
 
 你也可以在 SMPlayer 上播放 YouTube。我知道每次复制粘贴视频 URL 并在外部播放器上播放是不切实际的。但是当你观看相对较长的视频时，SMPlayer 特别有用。SMPlayer 以相当好的质量播放 YouTube 视频，我觉得比在浏览器中播放得更好。通过在 SMPlayer 上播放较长的视频，你可以远离视频中间弹出的插播广告。
 
@@ -51,7 +52,7 @@ SMPlayer 应该可在所有主要 Linux 发行版的软件中心获取。你可�
 sudo apt install smplayer
 ```
 
-或者，你可以在[这里][11]下载 Fedora、Arch Linux、OpenSUSE 和 Debian 的软件包
+或者，你可以在[这里][11]下载 Fedora、Arch Linux、OpenSUSE 和 Debian 的软件包。
 
 ### 总结
 
@@ -66,7 +67,7 @@ via: https://itsfoss.com/smplayer/
 作者：[Aquil Roshan;Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
