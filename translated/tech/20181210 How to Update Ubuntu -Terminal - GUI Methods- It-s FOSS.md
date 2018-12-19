@@ -49,31 +49,31 @@ sudo apt upgrade
 
 #### 说明：sudo apt update
 
-This command updates the local database of available packages. If you won’t run this command, the local database won’t be updated and your system will not know if there are any new versions available.
+这条命令更新了可用软件包的本地数据库。如果你没运行这条命令，本地数据库将不会更新而你的系统将不会知道是否又可用的新版本。
 
-This is why when you run the sudo apt update, you’ll see lots of URLs in the output. The command fetches the package information from the respective repositories (the URLs you see in the output).
+这就是为什么当你运行 `sudo apt update`，你会在输出中看到大量的 URLs。这条命令从对应的储存库（你在输出中看到的 URLs）中获取软件包信息。
 
-![Updating Ubuntu Linux][5]
+![更新 Ubuntu Linux][5]
 
-At the end of the command, it tells you how many packages can be upgraded. You can see these packages by running the following command:
+在命令的末尾，它告诉你有多少个软件包可以被更新。你可以使用下列命令查看这些软件包：
 
 ```
 apt list --upgradable
 ```
 
-**Additional Reading:** Read this article to learn [what is Ign, Hit and Get in the apt update command output][6].
+**补充阅读：** 阅读这篇文章了解[命令 `apt update` 的输出中的 Ign，Hit 和 Get 是什么][6]。
 
 #### 说明：sudo apt upgrade
 
-This command matches the versions of installed packages with the local database. It collects all of them and then it will list all of the packages that have a newer version available. At this point, it will ask if you want to upgrade (the installed packages to the newer version).
+这条命令将已安装的软件包版本与本地数据库进行匹配。它收集全部信息，然后列出所有具有更新版本的软件包。此时，它会询问您是否要升级（已安装的软件包更新到新版本）。
 
-![Update Ubuntu Linux via Command Line][7]
+![通过命令行更新 Ubuntu Linux][7]
 
-You can type ‘yes’, ‘y’ or just press enter to confirm the installation of updates.
+你可以键入 `yes`,`y` 或者只敲回车键去确认安装这些更新。
 
-So the bottom line is that the sudo apt update checks for the availability of new versions while as the sudo apt upgrade actually performs the update.
+所以总的来说，`sudo apt update` 会检查可用的新版本，而 `sudo apt upgrade` 实际上会执行更新。
 
-The term update might be confusing as you might expect the apt update command to update the system by installing the updates but that doesn’t happen.
+命令 `update` 可能会令人困惑，因为你可能期望通过命令 `apt update` 安装更新来更新系统，但这并不会发生。
 
 ### 通过 GUI 更新 Ubuntu［适用于桌面用户］
 
