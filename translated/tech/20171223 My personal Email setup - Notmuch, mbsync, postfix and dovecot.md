@@ -1,12 +1,12 @@
 我的个人电子邮件系统 - Notmuch, mbsync, postfix and dovecot
 ======
-我使用个人电子邮件系统已经相当长的时间了, 没有文字记录。最近当我换了我的笔记本电脑(职业变更做的变动)我在试图重新创建本地邮件设置时迷路了。所以这篇文章是一个自我文档, 这样我就不用再挣扎了就能改正过来。
+我使用个人电子邮件系统已经相当长的时间了, 没有文字记录。最近当我换了我的笔记本电脑(职业变更做的变动)我在试图重新创建本地邮件设置时迷茫了。所以这篇文章是一个自己的文档, 这样我就不用费劲就能修正过来。
 
 ### 服务器端
 
 我运行自己的邮件服务器, 并使用 Postfix 作为 SMTP 服务器和用 Dovecot 实现 IMAP 。我不打算详细介绍如何配置这些设置, 因为我的设置主要是通过使用 Jonas 为 Redpill 基础架构创建的脚本完成的。什么是 Redpill ？(用 Jonas 自己的话说)
 
-> <jonas> Redpill 是一个概念 - 一种设置 Debian hosts 去跨组织协作的方式<jonas> 我发展了这个概念, 并将其首次使用 Redpill 去联网 redpill.dk, 涉及我自己的网络 (jones.dk), 我的主要客户的网络 (homebase.dk),在德国的一个网络, 包括Skolelinux Germany (free-owl.de), 和 Vasudev 的网络 (copyninja.info)
+> <jonas> Redpill 是一个概念 - 一种设置 Debian hosts 去跨组织协作的方式<jonas> 我延申了这个概念, 并将其首次使用 Redpill 去联网 redpill.dk, 涉及我自己的网络 (jones.dk), 我的主要客户的网络 (homebase.dk),在德国的一个网络, 包括Skolelinux Germany (free-owl.de), 和 Vasudev 的网络 (copyninja.info)
 
 除此之外, 我还有一个 dovecot sieve 过滤, 根据邮件的来源, 对高级邮件进行分类, 并将其分类到各种文件夹中。所有的规则都存在于每个有邮件地址的账户下的 ~/dovecot.sieve文件中。
 
@@ -25,9 +25,9 @@
 
 ### 邮件同步
 
-邮件同步是使用 mbsync 工具完成的, 我以前是离线的用户, 最近切换到 mbsync, 因为我觉得它比 OfflineIMAP 的配置更轻, 更简单。命令是由包 isync 提供的。
+邮件同步是使用 mbsync 工具完成的, 我以前是 OfflineIMAP 的用户, 最近切换到 mbsync, 因为我觉得它比 OfflineIMAP 的配置更轻, 更简单。命令是由包 isync 提供的。
 
-配置文件是 ~/.mbsyncrc. 下面是我的例子与一些私人设置。
+配置文件是 ~/.mbsyncrc. 下面是我的例子与一些个人设置。
 
 ```
 IMAPAccount  copyninja
@@ -79,7 +79,7 @@ SyncState *
 Sync All
 ```
 
-对上述配置中的一些有趣部分进行说明。一个是 PassCmd , 它允许您提供 shell 命令来获取帐户的密码。这样可以避免在配置文件中填写密码。我使用对称加密与 gpg 和存储密码在我的磁盘上的一些地方。这当然是由 Unix ACL 保护安全。
+对上述配置中的一些有趣部分进行说明。一个是 PassCmd , 它允许您提供 shell 命令来获取帐户的密码。这样可以避免在配置文件中填写密码。我在我磁盘上的一些地方使用对称加密 gpg 和存储密码。这当然是由 Unix ACL 保护安全。
 
 实际上, 我想使用我的公钥加密文件, 但当脚本在后台或通过 systemd 运行时, 解锁文件看起来很困难 (或看起来几乎不可能)。如果你有更好的建议, 我洗耳恭听:-)。
 
@@ -87,9 +87,9 @@ Sync All
 
 ### 邮件分类
 
-一旦邮件在您本地的设备, 我们需要一种方法来轻松地在邮件读取器中读取邮件。我最初的设置使用本地 dovecot 实例提供同步 Maildir, 并在 Gnus 中阅读。这种设置是有点大题小作相比于设置所有服务器软件, 但 Gnus 无法很好地应付 maildir 格式, 这是最好的方法。这个设置也有一个缺点, 那就是在你有大量邮件要看的时候快速搜索邮件。这是为数不多的情况。
+一旦邮件在您本地的设备, 我们需要一种方法来轻松地在邮件读取器中读取邮件。我最初的设置使用本地 dovecot 实例提供同步 Maildir, 并在 Gnus 中阅读。这种设置相比于设置所有服务器软件是有点大题小作, 但 Gnus 无法很好地应付 maildir 格式, 这是最好的方法。这个设置也有一个缺点, 那就是在你有大量邮件要看的时候快速搜索邮件。这是为数不多的情况。
 
-不多让我很容易索引通过千兆字节的邮件档案, 并很容易得到我需要的东西。我已经创建了一个小脚本, 它结合了执行 mbsync 和 notmuch 执行语句。我基于 Maildirs 标记邮件, 实际上是创建在服务器端使用 dovecot sieve 。下面是我的完整 shell 脚本, 它正在执行同步分类和删除垃圾邮件的任务。
+不多的情况下我想很容易索引通过千兆字节的邮件档案, 并得到我需要的东西。我已经创建了一个小脚本, 它结合了执行 mbsync 和 notmuch 执行语句。我基于 Maildirs 标记邮件, 实际上是创建在服务器端使用 dovecot sieve 。下面是我的完整 shell 脚本, 它正在执行同步分类和删除垃圾邮件的任务。
 
 ```
 #!/bin/sh
@@ -135,15 +135,15 @@ done
 
 ### 阅读邮件
 
-现在, 我们已经实现同步和分类邮件，是时候来设置阅读部分。我使用 notmuch-emacs 界面来阅读邮件。我使用 emacs 的 Spacemacs 风格, 所以我花了一些时间写下一个私有层, 它将我所有的快捷键和分类集中在一个地方, 不会扰乱我的整个. spacemacs 文件。您可以在 [notmuch-emacs-layer repository][1] 找到我私有层的代码。
+现在, 我们已经实现同步和分类邮件，是时候来设置阅读部分。我使用 notmuch-emacs 界面来阅读邮件。我使用 emacs 的 Spacemacs 风格, 所以我花了一些时间写下一个私有层（private layer）, 它将我所有的快捷键和分类集中在一个地方, 不会扰乱我的整个. spacemacs 文件。您可以在 [notmuch-emacs-layer repository][1] 找到我私有层的代码。
 
 ### 发送邮件
 
-如果我们能阅读邮件, 我们就需要能够回复邮件, 这还不够。而这是我最近迷惑的一个略显棘手的部分, 不得不写这篇文章, 这样我就不会再忘记了。(当然也不必在网络上引用一些过时的帖子)。
+如果我们能阅读邮件, 我们就需要能够回复邮件, 这还不够。而这是最近是我感到迷茫的一个略显棘手的部分, 不得不写这篇文章, 这样我就不会再忘记了。(当然也不必在网络上引用一些过时的帖子)。
 
 我的设置发送邮件使用 postfix 作为 SMTP 客户端与我自己的 SMTP 服务器作为它的转接主机。转接的问题是, 它不是具有动态 IP 的主机。有几种方法可以允许具有动态 ip 的主机使用转接服务器, 一种是将邮件从其中发源于 my_network 或第二个使用 SASL 身份验证的 IP 地址。
 
-我的首选方法是使用 SASL 身份验证。为此, 我首先要为每台机器创建一个单独的账户, 它将把邮件传递到我的主服务器上。想法是不使用我的主帐户 SASL 进行身份验证。(最初我使用的是主要账户, 但 Jonas 给出了每个可行账户的想法
+我的首选方法是使用 SASL 身份验证。为此, 我首先要为每台机器创建一个单独的账户, 它将把邮件传递到我的主服务器上。想法是不使用我的主帐户 SASL 进行身份验证。（最初我使用的是主要账户, 但 Jonas 给出了每个可行账户的想法）
 ```
 adduser <hostname>_relay
 
@@ -167,16 +167,16 @@ smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 
 ```
 
-替换 smtp.example.com 用你的 SMTP 服务器名称, 您已输入的 relayhost 认证。 用您创建的用户及其密码替换 user with <hostname>_relay 。
+ 用你的 SMTP 服务器名称替换 smtp.example.com ,您已输入的 relayhost 认证。 用您创建的用户及其密码替换 user with <hostname>_relay 。
 
-若要保护 sasl_passwd 文件, 并创建它的哈希值进行 postfix 使用以下命令。
+若要保护 sasl_passwd 文件, 并创建它的 hash（哈希） 进行 postfix 使用以下命令。
 ```
 chown root:root /etc/postfix/sasl_passwd
 chmod 0600 /etc/postfix/sasl_passwd
 postmap /etc/postfix/sasl_passwd
 ```
 
-最后的命令将创建 /etc/postfix/sasl_passwd.db 文件是您的文件的哈希值 /etc/postfix/sasl_passwd 具有相同的所有者和权限。现在重新加载 postfix, 并检查邮件是否使用邮件命令从您的系统中取出。
+最后的命令将创建 /etc/postfix/sasl_passwd.db 文件是您的文件的 hash /etc/postfix/sasl_passwd 具有相同的所有者和权限。现在重新加载 postfix, 并检查邮件是否使用邮件命令从您的系统中取出。
 
 ### Bonus 的部分
 
@@ -212,14 +212,14 @@ StandardOutput=syslog
 StandardError=syslog
 ```
 
-将这些文件置于 /etc/systemd/user 目录下并运行以下代码去开启他们
+将这些文件置于 /etc/systemd/user 目录下并运行以下代码去开启它们
 ```
 systemctl enable --user mailsync.timer
 systemctl enable --user mailsync.service
 systemctl start --user mailsync.timer
 ```
 
-这就是我从系统同步和发送邮件的方式。我从 Jonas Smedegaard 那里了解到了 afew 他同时阅读了这篇帖子。因此, 下一步, 我将尝试使用 afew 改进我的 notmuch 配置, 当然还会有一个后续的帖子:-)。
+这就是我从系统同步和发送邮件的方式。我从 Jonas Smedegaard 那里了解到了 afew ，他同时阅读了这篇帖子。因此, 下一步, 我将尝试使用 afew 改进我的 notmuch 配置, 当然还会有一个后续的帖子:-)。
 
 --------------------------------------------------------------------------------
 
