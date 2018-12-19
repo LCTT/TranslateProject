@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
 [#]: subject: (Create a containerized machine learning model)
 [#]: via: (https://fedoramagazine.org/create-containerized-machine-learning-model/)
 [#]: author: (Sven Bösiger)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10349-1.html)
 
 创建一个容器化的机器学习模型
 ======
@@ -32,7 +32,7 @@ mkdir deployment_container && cd deployment_container
 
 下一步是为机器学习模型创建 REST API。这个 [github 仓库][4]包含一个预训练模型，以及能让 REST API 工作的设置。
 
-使用以下命令在 deployment_container 目录中克隆它：
+使用以下命令在 `deployment_container` 目录中克隆它：
 
 ```
 git clone https://github.com/svenboesiger/titanic_tf_ml_model.git
@@ -44,7 +44,7 @@ git clone https://github.com/svenboesiger/titanic_tf_ml_model.git
 
 #### swagger.yaml
 
-swagger.yaml 使用 [Swagger规范][7] 定义 Connexion 库的 API。此文件包含让你的服务器提供输入参数验证、输出响应数据验证、URL 端点定义所需的所有信息。
+[swagger.yaml][12] 使用 [Swagger规范][7] 定义 Connexion 库的 API。此文件包含让你的服务器提供输入参数验证、输出响应数据验证、URL 端点定义所需的所有信息。
 
 额外地，Connexion 还将给你提供一个简单但有用的单页 Web 应用，它演示了如何使用 Javascript 调用 API 和更新 DOM。
 
@@ -110,7 +110,7 @@ pandas
 
 ### 容器化！
 
-为了让 Podman 构建映像，请在上面的准备步骤中创建的 **deployment_container** 目录中创建一个名为 “Dockerfile” 的新文件：
+为了让 Podman 构建映像，请在上面的准备步骤中创建的 `deployment_container` 目录中创建一个名为 `Dockerfile` 的新文件：
 
 ```
 FROM fedora:28
@@ -171,7 +171,7 @@ via: https://fedoramagazine.org/create-containerized-machine-learning-model/
 作者：[Sven Bösiger][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -188,3 +188,4 @@ via: https://fedoramagazine.org/create-containerized-machine-learning-model/
 [9]: https://github.com/svenboesiger/titanic_tf_ml_model/blob/master/requirements.txt
 [10]: http://0.0.0.0:5000/
 [11]: https://fedoramagazine.org/wp-content/uploads/2018/10/Screenshot-from-2018-10-27-14-46-56-682x1024.png
+[12]: https://github.com/svenboesiger/titanic_tf_ml_model/blob/master/swagger.yaml

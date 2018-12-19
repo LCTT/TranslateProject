@@ -1,38 +1,43 @@
-在 Linux 下交换 Ctrl 与 Caps Lock 键
+在 Linux 下交换 Ctrl 与大写锁定键
 ======
 
-Linux 桌面环境使你可以根据需要轻松设置键盘。下面来演示如何去做。
+> Linux 桌面环境使你可以根据需要轻松设置键盘。下面来演示如何去做。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/keyboard_numbers_letters_type_game.jpg?itok=fLlWGw1K)
 
-对于许多使用计算机很多年的用户来说，自从第一批 PC 键盘从生产线上下线后不久，Ctrl 和 Caps Lock 键就已经在错误的位置上了。对我来说，这张 1995 年 Sun 工作站的老式键盘照片上的两个键的位置才是正确的。（原谅我放了一张模糊的图片，它是在昏暗的光线下使用 Minox 间谍相机拍摄的。）
+对于许多使用计算机很多年的用户来说，自从第一批 PC 键盘从生产线上下线后不久，Ctrl 和大写锁定键就已经在错误的位置上了。对我来说，这张 1995 年 Sun 工作站的老式键盘照片上的两个键的位置才是正确的。（原谅我放了一张模糊的图片，它是在昏暗的光线下使用 Minox 间谍相机拍摄的。）
 
-感兴趣的话，可以读一下维基百科上对于 [Ctrl 键位置的历史][1] 的介绍。我不打算讨论将 Ctrl 键放在“a”旁边而不是 Shift 键下方的各种理由，不评论 Caps Lock 键的无用性，也没有打算与那些主张使用手掌根来触发 Ctrl 键的人争论，即使在一些笔记本电脑键盘上也不可能这样做，因为有的键会位于腕托以下。
+![](https://opensource.com/sites/default/files/uploads/keyboard.jpg)
 
-相反，我将假设我不是唯一喜欢把 Ctrl 键放在“a”旁边的人，并说明如何使用 Linux 自带的灵活性在各种桌面环境中交换 Ctrl 和 Caps Lock 键的位置。请注意，下面的演示可能只有有限的有效期，因为调整桌面设置的方法经常发生变化，但我希望这为你开了一个好头。
+感兴趣的话，可以读一下维基百科上对于 [Ctrl 键位置的历史][1] 的介绍。我不打算讨论将 Ctrl 键放在“a”旁边而不是 Shift 键下方的各种理由，也不评论大写锁定键的无用性，也没有打算与那些主张使用手掌根来触发 Ctrl 键的人争论，即使在一些笔记本电脑键盘上不可能这样做到，因为有的键会位于腕托以下。
+
+相反，我将假设我不是唯一喜欢把 Ctrl 键放在“a”旁边的人，并说明如何使用 Linux 自带的灵活性在各种桌面环境中交换 Ctrl 和大写锁定键的位置。请注意，下面的演示可能只有有限的有效期，因为调整桌面设置的方法经常发生变化，但我希望这为你开了一个好头。
 
 ### GNOME 3
 
-[GNOME 3][2] 桌面环境用户可以使用 [Tweaks][3] 工具交换 Caps Lock 和 Ctrl 键，如下所示。![](https://opensource.com/sites/default/files/uploads/tweaks-tool.png)
+[GNOME 3][2] 桌面环境用户可以使用 [Tweaks][3] 工具交换大写锁定和 Ctrl 键，如下所示。
+
+![](https://opensource.com/sites/default/files/uploads/tweaks-tool.png)
 
 具体步骤如下：
 
   1. 从你的 Linux 发行版的软件仓库安装 Tweaks 工具。
   2. 启动 Tweaks 程序。
-  3. 从左侧菜单中选择“Keyboard & Mouse”。
-  4. 单击“Additional Layout Options”。
-  5. 在打开的窗口中单击“Ctrl position”，然后选择“Swap Ctrl and Caps Lock”。
+  3. 从左侧菜单中选择 “Keyboard & Mouse”。
+  4. 单击 “Additional Layout Options”。
+  5. 在打开的窗口中单击 “Ctrl position”，然后选择 “Swap Ctrl and Caps Lock”。
 
-完成！顺便说一句，你可以使用 Tweaks 工具做很多很酷的事情。例如，我将我的右 Ctrl 键设置为 Compose 键，这让我可以使用键盘快捷键打出各种字符，例如通过 `Compose+c+,`、`Compose+e+'`、`Compose+O+^` 以及 `Compose+n+~` 分别键入 ç、é、ô 和 ñ。
+完成！顺便说一句，你可以使用 Tweaks 工具做很多很酷的事情。例如，我将我的右 Ctrl 键设置为 Compose 键，这让我可以使用键盘快捷键打出各种字符，例如通过 `Compose+c+,`、`Compose+e+'`、`Compose+o+^` 以及 `Compose+n+~` 分别键入 ç、é、ô 和 ñ。（LCTT 译注：可参考 [Special characters listed by extended compose sequence](https://www.ibm.com/support/knowledgecenter/en/SSKTWP_9.0.0/com.ibm.notes900.help.doc/acc_spec_characters_r.html)）
 
 ### KDE
 
-我不使用 [KDE][4]，但我的同事 Seth Kenlon 写的 [KDE tweaks that will change your life][5] 这篇文章的第 5 项演示了如何重新映射按键。
+我不使用 [KDE][4]，但我的同事 Seth Kenlon 写的 [将改变你的生命的 KDE tweaks][5] 这篇文章的第 5 项演示了如何重新映射按键。
 
 ### Xfce
 
 据我所知，[Xfce][6] 桌面环境没有一个方便的工具来管理这些（指交换按键）设置。 但是，`setxkbmap` 命令的 `ctrl:swapcaps` 选项可以帮助你完成交换按键的修改。这个修改包含两部分：
 
-  1. 弄清楚命令的用法;
+  1. 弄清楚命令的用法；
   2. 找出调用命令的位置，以便在桌面启动时激活它。
 
 第一部分非常简单，命令是：
@@ -43,7 +48,7 @@ Linux 桌面环境使你可以根据需要轻松设置键盘。下面来演示�
 
 在终端窗口中执行此命令，以确保结果符合你的预期。
 
-假设上述命令有效，应该在哪里调用此命令呢？这需要一些实验。一种可能是在用户主目录的 `.profile` 文件中；另一个可能是将命令添加到 Xfce 的自启动配置（在设置管理器中查找“Session and Startup”）里。
+假设上述命令有效，应该在哪里调用此命令呢？这需要一些实验。一种可能是在用户主目录的 `.profile` 文件中；另一个可能是将命令添加到 Xfce 的自启动配置（在设置管理器中查找 “Session and Startup”）里。
 
 还有一种可能性是在文件 `/etc/default/keyboard` 中使用相同的选项，最终可能看起来像这样：
 
@@ -76,7 +81,7 @@ BACKSPACE="guess"
 
 ### 其他环境
 
-最后，上面 StackExchange 的链接中提到的这一点值得强调--配置控制台与配置终端窗口不同；如前所述，后者是通过桌面管理器进行配置的。
+最后，上面 StackExchange 的链接中提到的这一点值得强调 —— 配置控制台与配置终端窗口不同；如前所述，后者是通过桌面管理器进行配置的。
 
 `setxkbmap`、`xkeyboard-config`、`keyboard`、`console-setup` 和 `setupcon` 命令的手册都是有用的参考资料。或者，如果你不喜欢阅读手册，可以看一下 [这篇极好的文章][13]。
 
@@ -87,7 +92,7 @@ via: https://opensource.com/article/18/11/how-swap-ctrl-and-caps-lock-your-keybo
 作者：[Chris Hermansen][a]
 选题：[lujun9972][b]
 译者：[jlztan](https://github.com/jlztan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
