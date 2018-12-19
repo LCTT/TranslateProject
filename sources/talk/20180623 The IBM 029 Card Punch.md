@@ -1,3 +1,6 @@
+Translating by wwhio
+
+
 The IBM 029 Card Punch
 ======
 Lines of code longer than 80 characters drive me crazy. I appreciate that this is pedantic. I’ve seen people on the internet make good arguments for why the 80-character limit ought to be respected even on our modern Retina-display screens, but those arguments hardly justify the visceral hatred I feel for even that one protruding 81st character.
