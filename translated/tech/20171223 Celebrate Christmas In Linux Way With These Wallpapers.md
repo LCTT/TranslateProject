@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (jlztan)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: subject: (Celebrate Christmas In Linux Way With These Wallpapers)
+[#]: via: (https://itsfoss.com/christmas-linux-wallpaper/)
+[#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
+[#]: url: ( )
+
 使用这些壁纸以 Linux 的方式庆祝圣诞节
 ======
 
