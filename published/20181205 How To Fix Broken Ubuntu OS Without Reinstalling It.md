@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (How To Fix Broken Ubuntu OS Without Reinstalling It)
 [#]: via: (https://www.ostechnix.com/how-to-fix-broken-ubuntu-os-without-reinstalling-it/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10367-1.html)
 
 如何不重装修复损坏的 Ubuntu 系统
 ======
