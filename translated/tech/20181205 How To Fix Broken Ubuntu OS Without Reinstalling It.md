@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: subject: (How To Fix Broken Ubuntu OS Without Reinstalling It)
 [#]: via: (https://www.ostechnix.com/how-to-fix-broken-ubuntu-os-without-reinstalling-it/)
@@ -18,29 +18,20 @@
 
 首先，尝试使用 live cd 登录并**在外部驱动器中备份数据**。以防这个方法没用，你仍然可以获取数据并重新安装系统！
 
-在登录页上，按下 **CTRL+ALT+F1** 切换到 **tty1**。你可以在[**此处**][1]了解有关在 TTY 之间切换的更多信息。
+在登录页上，按下 `CTRL+ALT+F1` 切换到 tty1。你可以在[此处][1]了解有关在 TTY 之间切换的更多信息。
 
 现在，逐个输入以下命令来修复损坏的 Ubuntu Linux。
 
 ```
 $ sudo rm /var/lib/apt/lists/lock
-
 $ sudo rm /var/lib/dpkg/lock
-
 $ sudo rm /var/lib/dpkg/lock-frontend
-
 $ sudo dpkg --configure -a
-
 $ sudo apt clean
-
 $ sudo apt update --fix-missing
-
 $ sudo apt install -f
-
 $ sudo dpkg --configure -a
-
 $ sudo apt upgrade
-
 $ sudo apt dist-upgrade
 ```
 
@@ -52,7 +43,7 @@ $ sudo reboot
 
 你现在可以像往常一样登录到你的 Ubuntu 系统。
 
-我做完这些步骤后，我 Ubuntu 18.04 测试系统中的所有数据都还在，一切都之前的一样。此方法可能不适用于所有人。但是，这个小小的贴士对我有用，并且比重装节省了一些时间。如果你了解其他更好的方法，请在评论区告诉我。我也会在本指南中添加它们。
+我做完这些步骤后，我 Ubuntu 18.04 测试系统中的所有数据都还在，一切都之前的一样。此方法可能不适用于所有人。但是，这个小小的技巧对我有用，并且比重装节省了一些时间。如果你了解其他更好的方法，请在评论区告诉我。我也会在本指南中添加它们。
 
 这是这些了。希望这篇文章有用。
 
@@ -69,7 +60,7 @@ via: https://www.ostechnix.com/how-to-fix-broken-ubuntu-os-without-reinstalling-
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
