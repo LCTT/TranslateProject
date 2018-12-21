@@ -1,3 +1,4 @@
+translated by lixinyuxx
 5 guiding principles you should know before you design a microservice
 ======
 
