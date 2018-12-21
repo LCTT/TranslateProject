@@ -7,6 +7,8 @@
 [#]: author: (Prakash Subramanian https://www.2daygeek.com/author/prakash/)
 [#]: url: ( )
 
+translating by Auk7F7
+
 Arch-Audit : A Tool To Check Vulnerable Packages In Arch Linux
 ======
 
