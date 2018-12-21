@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: ( Auk7F7)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Arch-Audit : A Tool To Check Vulnerable Packages In Arch Linux)
@@ -7,7 +7,6 @@
 [#]: author: (Prakash Subramanian https://www.2daygeek.com/author/prakash/)
 [#]: url: ( )
 
-translating by Auk7F7
 
 Arch-Audit : A Tool To Check Vulnerable Packages In Arch Linux
 ======
