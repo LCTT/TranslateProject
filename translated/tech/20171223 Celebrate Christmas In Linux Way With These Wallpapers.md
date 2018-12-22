@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (jlztan)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Celebrate Christmas In Linux Way With These Wallpapers)
@@ -7,138 +7,136 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: url: ( )
 
-Celebrate Christmas In Linux Way With These Wallpapers
+使用这些壁纸以 Linux 的方式庆祝圣诞节
 ======
 
-It’s the holiday season and many of you might be celebrating Christmas already. From the team of It’s FOSS, I would like to wish you a Merry Christmas and a happy new year.
+当前正是假日季节，很多人可能已经在庆祝圣诞节了。我代表 It's FOSS 团队祝你圣诞快乐，新年快乐。
 
-To continue the festive mood, I’ll show you some really awesome [Linux wallpapers][1] on Christmas theme. But before we see that, how about a Christmas Tree in Linux terminal.
+为了延续节日氛围，我将向你展示一些非常棒的圣诞主题 [Linux壁纸][1]。在呈现这些壁纸之前，先来看一棵 Linux 终端下的圣诞树。
 
-### Display Christmas Tree in Linux Terminal
+### 在 Linux 终端下显示圣诞树
 
-<https://giphy.com/embed/xUNda6KphvbpYxL3tm>
+圣诞树的效果如 [这个页面](https://giphy.com/embed/xUNda6KphvbpYxL3tm) 所示。
 
-If you want to display an animated Christmas tree in the terminal, you can use the command below:
+使用以下命令在终端中显示一棵动画圣诞树：
 
 ```
 curl https://raw.githubusercontent.com/sergiolepore/ChristBASHTree/master/tree-EN.sh | bash
 ```
 
-If you don’t want to get it from the internet all the time, you can get the shell script from its GitHub repository, change the permission and run it like a normal shell script.
+要是不想一直从互联网上获取这棵圣诞树，也可以从它的 [GitHub 仓库][2] 中获取对应的 shell 脚本，更改权限之后按照运行普通 shell 脚本的方式运行它。
 
-[ChristBASHTree][2]
-
-### Display Christmas Tree in Linux terminal using Perl
+### 使用 Perl 在 Linux 终端下显示圣诞树
 
 [![Christmas Tree in Linux terminal by NixCraft][3]][4]
 
-This trick was originally shared by [NixCraft][5]. You’ll need to install a Perl module for this.
+这个技巧最初由 [NixCraft][5] 分享，你需要为此安装 Perl 模块。
 
-To be honest, I don’t like using Perl modules because uninstalling them is a real pain. So **use this Perl module knowing that you’ll have to manually remove it**.
+说实话，我不喜欢使用 Perl 模块，因为卸载它们真的很痛苦。所以使用这个 Perl 模块时需谨记，你必须手动移除它。
 
 ```
 perl -MCPAN -e 'install Acme::POE::Tree'
 ```
 
-You can read the original article [here][5] to know more about it.
+你可以阅读 [原文][5] 来了解更多信息。
 
-## Download Linux Christmas Wallpapers
+## 下载 Linux 圣诞主题壁纸
 
-All these Linux Christmas wallpapers are created by Mark Riedesel and you can find plenty of other artwork on [his website][6].
+所有这些 Linux 圣诞主题壁纸都是由 Mark Riedesel 制作的，你可以在 [他的网站][6] 上找到很多其他艺术品。
 
-He has been making such wallpapers almost every year since 2002. Quite understandably some of the earliest wallpapers don’t have modern aspect ratio. I have put them up in reverse chronological order.
+自 2002 年以来，他几乎每年都在制作这样的壁纸。可以理解的是，最早的一些壁纸不具有现代的宽高比。我把它们按时间倒序排列。
 
-One tiny note. The images displayed here are highly compressed so download the wallpapers from the provided link only.
+注意一个小地方，这里显示的图片都是高度压缩的，因此你要通过图片下方提供的链接进行下载。
 
 ![Christmas Linux Wallpaper][7]
 
-[Download This Wallpaper][8]
+[下载此壁纸][8]
 
 [![Christmas Linux Wallpapers][9]][10]
 
-[Download This Wallpaper][11]
+[下载此壁纸][11]
 
 [![Christmas Linux Wallpapers][12]][13]
 
-[Download This Wallpaper][14]
+[下载此壁纸][14]
 
 [![Christmas Linux Wallpapers][15]][16]
 
-[Download This Wallpaper][17]
+[下载此壁纸][17]
 
 [![Christmas Linux Wallpapers][18]][19]
 
-[Download This Wallpaper][20]
+[下载此壁纸][20]
 
 [![Christmas Linux Wallpapers][21]][22]
 
-[Download This Wallpaper][23]
+[下载此壁纸][23]
 
 [![Christmas Linux Wallpapers][24]][25]
 
-[Download This Wallpaper][26]
+[下载此壁纸][26]
 
 [![Christmas Linux Wallpapers][27]][28]
 
-[Download This Wallpaper][29]
+[下载此壁纸][29]
 
 [![Christmas Linux Wallpapers][30]][31]
 
-[Download This Wallpaper][32]
+[下载此壁纸][32]
 
 [![Christmas Linux Wallpapers][33]][34]
 
-[Download This Wallpaper][35]
+[下载此壁纸][35]
 
 [![Christmas Linux Wallpapers][36]][37]
 
-[Download This Wallpaper][38]
+[下载此壁纸][38]
 
 [![Christmas Linux Wallpapers][39]][40]
 
-[Download This Wallpaper][41]
+[下载此壁纸][41]
 
 [![Christmas Linux Wallpapers][42]][43]
 
-[Download This Wallpaper][44]
+[下载此壁纸][44]
 
 [![Christmas Linux Wallpapers][45]][46]
 
-[Download This Wallpaper][47]
+[下载此壁纸][47]
 
 [![Christmas Linux Wallpapers][48]][49]
 
-[Download This Wallpaper][50]
+[下载此壁纸][50]
 
-### Bonus: Linux Christmas carols
+### 福利：Linux 圣诞颂歌
 
-Here is a bonus for you. Christmas carols Linuxified for Linux lovers like us.
+这是给你的一份福利，给像我们一样的 Linux 爱好者的关于 Linux 的圣诞颂歌。
 
-In [an article on Computer World][51], [Sandra Henry-Stocker][52] shared such Christmas carols. An excerpt:
+在 [计算机世界的一篇文章][51] 中，[Sandra Henry-Stocker][52] 分享了这些圣诞颂歌。摘录片段如下：
 
-To the tune of: [Chestnuts Roasting on an Open Fire][53]
+这一段用的 [Chestnuts Roasting on an Open Fire][53] 的曲调：
 
 > Running merrily on open source
 >  With users happy as can be
 >  We’re using Linux and getting lots done
 >  And happy everything is free
 
-To the tune of: [The Twelve Days of Christmas][54]
+这一段用的 [The Twelve Days of Christmas][54] 的曲调：
 
 > On my first day with Linux, my admin gave to me a password and a login ID
 >  On my second day with Linux my admin gave to me two new commands and a password and a login ID
 
-You can read full carols [here][51].
+在 [这里][51] 阅读完整的颂歌。
 
-Merry Linux to you!!
+祝你享受 Linux！
 
---------------------------------------------------------------------------------
+------
 
 via: https://itsfoss.com/christmas-linux-wallpaper/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[jlztan](https://github.com/jlztan)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

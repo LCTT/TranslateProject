@@ -1,3 +1,4 @@
+translated by lixinyuxx
 4 Firefox extensions worth checking out
 ======
 
