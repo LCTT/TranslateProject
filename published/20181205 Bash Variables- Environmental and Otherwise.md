@@ -1,28 +1,30 @@
 Bash 环境变量的那些事
 ======
+> 初学者可以在此教程中了解环境变量。
+
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/wynand-van-poortvliet-40467-unsplash.jpg?itok=tr6Eb4N0)
 
-bash 变量，尤其是讨厌的环境变量，已经是一个老生常谈的话题了。我们也更应该对它有一个详细的了解，让它为我们所用。
+bash 变量，尤其是讨厌的*环境变量*，已经是一个老生常谈的话题了。我们也更应该对它有一个详细的了解，让它为我们所用。
 
 下面就打开终端，开始吧。
 
 ### 环境变量
 
-`HOME` 除了是你脱下帽子惬意休息的地方，同时也是 Linux 中的一个变量，它是当前用户主目录的路径：
+`HOME` （LCTT 译注：双关语）除了是你脱下帽子惬意休息的地方，同时也是 Linux 中的一个变量，它是当前用户主目录的路径：
 
 ```
 echo $HOME
 ```
 
-以上这个命令会显示当前用户的主目录路径，通常都在 `/home/` 下。
+以上这个命令会显示当前用户的主目录路径，通常都在 `/home/<your username>` 下。
 
-顾名思义，一个变量的值并不是固定的。实际上，Linux 系统中每一个用户的 `HOME` 变量都是不一样的，当然你也可以这样自行更改 `HOME` 变量的值：
+顾名思义，变量的值是可以根据上下文变化的。实际上，Linux 系统中每一个用户的 `HOME` 变量都是不一样的，当然你也可以这样自行更改 `HOME` 变量的值：
 
 ```
 HOME=/home/<your username>/Documents
 ```
 
-以上这个命令将会把 `HOME` 变量设置为 `/home/<your username>/Documents` 目录。
+以上这个命令将会把 `HOME` 变量设置为你的 `Documents` 目录。
 
 其中有三点需要留意：
 
@@ -45,7 +47,7 @@ $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 ```
 
-每两个目录之间使用冒号(`:`)分隔。如果某个应用程序的所在目录不在 `PATH` 变量中，那么运行的时候就需要声明应用程序的目录让 shell 能够找到。
+每两个目录之间使用冒号 `:` 分隔。如果某个应用程序的所在目录不在 `PATH` 变量中，那么运行的时候就需要声明应用程序的目录让 shell 能够找到。
 
 ```
 /home/<user name>/bin/my_program.sh
@@ -67,9 +69,9 @@ PATH=$PATH:$HOME/bin
 
 然后 `/home/<user name>/bin/` 目录就会出现在 `PATH` 变量中了。但正如之前所说，这个变更只会在当前的 shell 生效，当前的 shell 一旦关闭，环境变量的值就又恢复原状了。
 
-如果要让变更对当前用户持续生效，就不能在 shell 中直接执行对应的变更，而是应该将这些变更操作卸载每次启动 shell 时都会运行的文件当中。这个文件就是当前用户主目录中的 `.bashrc` 文件。文件名前面的点号表明这是一个隐藏文件，执行普通的 `ls` 命令是不会将这个文件显示出来的，但只要在 `ls` 命令中加入 `-a` 参数就可以看到这个文件了。
+如果要让变更对当前用户持续生效，就不能在 shell 中直接执行对应的变更，而是应该将这些变更操作写在每次启动 shell 时都会运行的文件当中。这个文件就是当前用户主目录中的 `.bashrc` 文件。文件名前面的点号表明这是一个隐藏文件，执行普通的 `ls` 命令是不会将这个文件显示出来的，但只要在 `ls` 命令中加入 `-a` 参数就可以看到这个文件了。
 
-你可以使用诸如 [kate][1]、[gedit][2]、[nano][3] 或者 [vim][4] 这些文本编辑器来打开 `.bashrc` 文件（但不要用 LibreOffice Writer，它是一个文字处理软件，跟前面几个文字编辑器并不一个量级的东西）。打开 `.bashrc` 文件之后，你会看见里面放置了一些 shell 命令，是用于为当前用户设置环境的。
+你可以使用诸如 [kate][1]、[gedit][2]、[nano][3] 或者 [vim][4] 这些文本编辑器来打开 `.bashrc` 文件（但不要用 LibreOffice Writer，它是一个文字处理软件，跟前面几个文字编辑器完全不同）。打开 `.bashrc` 文件之后，你会看见里面放置了一些 shell 命令，是用于为当前用户设置环境的。
 
 在文件的末尾添加新行并输入以下内容：
 
@@ -97,13 +99,13 @@ source .bashrc
 new_variable="Hello"
 ```
 
-然后可以用一下的方式读取到已定义变量的值：
+然后可以用以下的方式读取到已定义变量的值：
 
 ```
 echo $new_variable
 ```
 
-程序的正常工作离不开各种变量，例如要将某个选项设置为 on，又或者让程序找到所需的代码库，都需要使用变量。在 bash 中运行程序的时候会生成一个子 shell，这个子 shell 和执行原程序的父 shell 并不是完全一样的，只是继承了父 shell 的部分内容，而且默认是不继承父 shell 中的变量的。因为变量默认情况下是局部变量，出于安全原因，一个 shell 中的局部变量不会被另一个 shell 读取到，即使是子 shell 也不可以。
+程序的正常工作离不开各种变量，例如要将某个选项设置为打开，又或者让程序找到所需的代码库，都需要使用变量。在 bash 中运行程序的时候会生成一个子 shell，这个子 shell 和执行原程序的父 shell 并不是完全一样的，只是继承了父 shell 的部分内容，而且默认是不继承父 shell 中的变量的。因为变量默认情况下是局部变量，出于安全原因，一个 shell 中的局部变量不会被另一个 shell 读取到，即使是子 shell 也不可以。
 
 下面举一个例子。首先定义一个变量：
 
@@ -198,7 +200,7 @@ via: https://www.linux.com/blog/learn/2018/12/bash-variables-environmental-and-o
 作者：[Paul Brown][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
