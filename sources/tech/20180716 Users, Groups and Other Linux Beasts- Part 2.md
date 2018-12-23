@@ -1,3 +1,4 @@
+Translating by MjSeven
 Users, Groups and Other Linux Beasts: Part 2
 ======
 ![](https://www.linux.com/blog/learn/intro-to-linux/2018/7/users-groups-and-other-linux-beasts-part-2)
