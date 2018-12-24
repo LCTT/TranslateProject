@@ -1,3 +1,4 @@
+translated by lixinyuxx
 The life cycle of a software bug
 ======
 
