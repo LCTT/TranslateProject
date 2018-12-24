@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (jlztan)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Celebrate Christmas In Linux Way With These Wallpapers)
 [#]: via: (https://itsfoss.com/christmas-linux-wallpaper/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10381-1.html)
 
 以 Linux 的方式庆祝圣诞节
 ======
