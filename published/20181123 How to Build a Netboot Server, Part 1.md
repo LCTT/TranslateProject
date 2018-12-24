@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (qhwdw)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (How to Build a Netboot Server, Part 1)
 [#]: via: (https://fedoramagazine.org/how-to-build-a-netboot-server-part-1/)
 [#]: author: (Gregory Bartholomew https://fedoramagazine.org/author/glb/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10379-1.html)
 
 如何构建一台网络引导服务器（一）
 ======
