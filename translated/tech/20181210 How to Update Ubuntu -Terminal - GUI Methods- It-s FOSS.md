@@ -77,45 +77,45 @@ apt list --upgradable
 
 ### 通过 GUI 更新 Ubuntu［适用于桌面用户］
 
-If you are using Ubuntu as a desktop, you don’t have to go to terminal just for updating the system. You can still use the command line but it’s optional for you.
+如果你使用桌面版 Ubuntu，你并不需要为了更新系统而打开终端。你可以仍可以使用命令行更新，但这只是一个选择。
 
-In the menu, look for ‘Software Updater’ and run it.
+在菜单力，找到 `Software Updater` 并运行它。
 
-![Run Software Updater in Ubuntu][8]
+![在 Ubuntu 中运行 Software Updater][8]
 
-It will check if there are updates available for your system.
+它将检查你的系统是否有可用的更新。
 
-![Checking if updates are available for Ubuntu][9]
+![检查 Ubuntu 是否有可用更新][9]
 
-If there are updates available, it will give provide you with options to install the updates.
+如果有可用的更新，它将给你提供安装更新的选择。
 
-![Install Updates via Update Manager in Ubuntu][10]
+![在 Ubuntu 中通过更新管理器安装更新][10]
 
-Click on Install Now, it may ask for your password.
+现在，点击 `Install`，它可能会向你询问密码。
 
-![Installing Updates in Ubuntu Linux via GUI][11]
+![通过 GUI 在 Ubuntu Linux 中安装更新][11]
 
-Once you enter your password, it will start installing the updates.
+一旦你输入你的密码，它将开始安装更新。
 
-![Updating Ubuntu via GUI][12]
+![通过 GUI 更新 Ubuntu][12]
 
-In some cases, you may need to reboot the system for the installed updates to work properly. You’ll be notified at the end of the update if you need to restart the system.
+在某些情况下，你可能需要重启系统才能使已安装的更新正常工作。如果需要重启系统，你将在更新结束时收到通知。
 
-![Updating Ubuntu via GUI][12]
+![通过 GUI 更新 Ubuntu][12]
 
-You can choose to restart later if you don’t want to reboot your system straightaway.
+如果你不希望马上重启你的系统，可以选择稍后重启。
 
-![Installing updates via GUI in Ubuntu][13]
+![通过 GUI 在 Ubuntu 中安装更新][13]
 
-Tip: If the software updater returns an error, you should use the command ‘sudo apt update’ in the terminal. The last few lines of the output will contain the actual error message. You can search on the internet for that error and fix the problem.
+提示：如果 `software updater` 返回一个错误，你需要在终端是使用命令 `sudo apt update`。输出的最后几行将包含真正的错误信息。你可以在因特网上搜索该错误并解决问题。
 
 ### 更新 Ubuntu 时要记住几件事
 
-You just learned how to update your Ubuntu system. If you are interested, you should also know these few things around Ubuntu updates.
+你刚学习了如何更新你的 Ubuntu 系统。如果你感兴趣，你还需要了解一些关于 Ubuntu 更新的内容。
 
 #### 更新后清理
 
-Your system will have some unnecessary packages that won’t be required after the updates. You can remove such packages and [free up some space][14] using this command:
+你的系统将会有一些更新后不再需要的软件包。你可用使用这条命令删除这些软件包并[释放空间][14]：
 
 ```
 sudo apt autoremove
