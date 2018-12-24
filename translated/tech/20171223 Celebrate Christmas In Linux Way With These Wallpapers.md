@@ -1,24 +1,38 @@
 [#]: collector: (lujun9972)
 [#]: translator: (jlztan)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: subject: (Celebrate Christmas In Linux Way With These Wallpapers)
 [#]: via: (https://itsfoss.com/christmas-linux-wallpaper/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: url: ( )
 
-使用这些壁纸以 Linux 的方式庆祝圣诞节
+以 Linux 的方式庆祝圣诞节
 ======
 
-当前正是假日季节，很多人可能已经在庆祝圣诞节了。我代表 It's FOSS 团队祝你圣诞快乐，新年快乐。
+当前正是假日季，很多人可能已经在庆祝圣诞节了。祝你圣诞快乐，新年快乐。
 
-为了延续节日氛围，我将向你展示一些非常棒的圣诞主题 [Linux壁纸][1]。在呈现这些壁纸之前，先来看一棵 Linux 终端下的圣诞树。
+为了延续节日氛围，我将向你展示一些非常棒的圣诞主题的 [Linux 壁纸][1]。在呈现这些壁纸之前，先来看一棵 Linux 终端下的圣诞树。
+
+### 让你的桌面飘雪（针对 GNOME 用户）
+
+- [Let it Snow on Your Linux Desktop](https://youtu.be/1QI1ludzZuA)
+
+如果您在 Ubuntu 18.04 或任何其他 Linux 发行版中使用 GNOME 桌面，您可以使用一个小的 [GNOME 扩展][55]并在桌面上飘雪。
+
+您可以从软件中心或 GNOME 扩展网站获取此 gsnow 扩展。我建议您阅读一些关于[使用 GNOME 扩展][55]的内容。
+
+安装此扩展程序后，您会在顶部面板上看到一个小雪花图标。 如果您单击一次，您会看到桌面屏幕上的小絮状物掉落。
+
+![](https://itsfoss.com/wp-content/uploads/2018/12/snowfall-on-linux-desktop-1.webm)
+
+你可以再次点击该图标来禁止雪花落下。
 
 ### 在 Linux 终端下显示圣诞树
 
-圣诞树的效果如 [这个页面](https://giphy.com/embed/xUNda6KphvbpYxL3tm) 所示。
+![Display Christmas Tree in Linux Terminal](https://i.giphy.com/xUNda6KphvbpYxL3tm.gif)
 
-使用以下命令在终端中显示一棵动画圣诞树：
+如果你想要在终端里显示一个动画的圣诞树，你可以使用如下命令：
 
 ```
 curl https://raw.githubusercontent.com/sergiolepore/ChristBASHTree/master/tree-EN.sh | bash
@@ -40,7 +54,7 @@ perl -MCPAN -e 'install Acme::POE::Tree'
 
 你可以阅读 [原文][5] 来了解更多信息。
 
-## 下载 Linux 圣诞主题壁纸
+### 下载 Linux 圣诞主题壁纸
 
 所有这些 Linux 圣诞主题壁纸都是由 Mark Riedesel 制作的，你可以在 [他的网站][6] 上找到很多其他艺术品。
 
@@ -48,87 +62,95 @@ perl -MCPAN -e 'install Acme::POE::Tree'
 
 注意一个小地方，这里显示的图片都是高度压缩的，因此你要通过图片下方提供的链接进行下载。
 
+![Christmas Linux Wallpaper][56]
+
+*[下载此壁纸][57]*
+
 ![Christmas Linux Wallpaper][7]
 
-[下载此壁纸][8]
+*[下载此壁纸][8]*
 
 [![Christmas Linux Wallpapers][9]][10]
 
-[下载此壁纸][11]
+*[下载此壁纸][11]*
 
 [![Christmas Linux Wallpapers][12]][13]
 
-[下载此壁纸][14]
+*[下载此壁纸][14]*
 
 [![Christmas Linux Wallpapers][15]][16]
 
-[下载此壁纸][17]
+*[下载此壁纸][17]*
 
 [![Christmas Linux Wallpapers][18]][19]
 
-[下载此壁纸][20]
+*[下载此壁纸][20]*
 
 [![Christmas Linux Wallpapers][21]][22]
 
-[下载此壁纸][23]
+*[下载此壁纸][23]*
 
 [![Christmas Linux Wallpapers][24]][25]
 
-[下载此壁纸][26]
+*[下载此壁纸][26]*
 
 [![Christmas Linux Wallpapers][27]][28]
 
-[下载此壁纸][29]
+*[下载此壁纸][29]*
 
 [![Christmas Linux Wallpapers][30]][31]
 
-[下载此壁纸][32]
+*[下载此壁纸][32]*
 
 [![Christmas Linux Wallpapers][33]][34]
 
-[下载此壁纸][35]
+*[下载此壁纸][35]*
 
 [![Christmas Linux Wallpapers][36]][37]
 
-[下载此壁纸][38]
+*[下载此壁纸][38]*
 
 [![Christmas Linux Wallpapers][39]][40]
 
-[下载此壁纸][41]
+*[下载此壁纸][41]*
 
 [![Christmas Linux Wallpapers][42]][43]
 
-[下载此壁纸][44]
+*[下载此壁纸][44]*
 
 [![Christmas Linux Wallpapers][45]][46]
 
-[下载此壁纸][47]
+*[下载此壁纸][47]*
 
 [![Christmas Linux Wallpapers][48]][49]
 
-[下载此壁纸][50]
+*[下载此壁纸][50]*
 
 ### 福利：Linux 圣诞颂歌
 
 这是给你的一份福利，给像我们一样的 Linux 爱好者的关于 Linux 的圣诞颂歌。
 
-在 [计算机世界的一篇文章][51] 中，[Sandra Henry-Stocker][52] 分享了这些圣诞颂歌。摘录片段如下：
+在 [《计算机世界》的一篇文章][51] 中，[Sandra Henry-Stocker][52] 分享了这些圣诞颂歌。摘录片段如下：
 
 这一段用的 [Chestnuts Roasting on an Open Fire][53] 的曲调：
 
-> Running merrily on open source
+>  Running merrily on open source
+> 
 >  With users happy as can be
+> 
 >  We’re using Linux and getting lots done
+
 >  And happy everything is free
 
 这一段用的 [The Twelve Days of Christmas][54] 的曲调：
 
-> On my first day with Linux, my admin gave to me a password and a login ID
+>  On my first day with Linux, my admin gave to me a password and a login ID
+> 
 >  On my second day with Linux my admin gave to me two new commands and a password and a login ID
 
 在 [这里][51] 阅读完整的颂歌。
 
-祝你享受 Linux！
+Linux 快乐！
 
 ------
 
@@ -137,7 +159,7 @@ via: https://itsfoss.com/christmas-linux-wallpaper/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[jlztan](https://github.com/jlztan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -197,3 +219,6 @@ via: https://itsfoss.com/christmas-linux-wallpaper/
 [52]: https://twitter.com/bugfarm
 [53]: https://www.youtube.com/watch?v=dhzxQCTCI3E
 [54]: https://www.youtube.com/watch?v=oyEyMjdD2uk
+[55]: https://itsfoss.com/gnome-shell-extensions/
+[56]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2016/12/ChristmasTux2018.jpeg?w=800&ssl=1
+[57]: http://www.klowner.com/wallery/christmas_tux_2018/download/ChristmasTux2018_4K_3840x2160.png
