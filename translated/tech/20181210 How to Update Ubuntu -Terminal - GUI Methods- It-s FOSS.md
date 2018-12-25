@@ -121,25 +121,25 @@ apt list --upgradable
 sudo apt autoremove
 ```
 
-####  在 Ubuntu Server 中热修复内核以避免重启
+####  在 Ubuntu Server 中内核热修复以避免重启
 
-In case of a Linux kernel updates, you’ll have to restart the system after the update. This is an issue when you don’t want downtime for your server.
+如果是 Linux 内核更新，你将需要在系统更新后重启。当你不希望服务器停机时，这将是一个问题。
 
-[Live patching][15] feature allows the patching of Linux kernel while the kernel is still running. In other words, you don’t have to reboot your system.
+[热修复][15]功能允许Linux内核在持续运行时打补丁。换句话说就是你不需要重启你的系统。
 
-If you manage servers, you may want to [enable live patching in Ubuntu][16].
+如果你在管理服务器，你可能需要[在 Ubuntu 中启用热修复][16]。
 
 #### 版本升级是不同的
 
-The updates discussed here is to keep your Ubuntu install fresh and updated. It doesn’t cover the [version upgrades][17] (for example upgrading Ubuntu 16.04 to 18.04).
+本文讨论的更新是使你安装的 Ubuntu 保持最新。它不包括[版本升级][17]（例如从 Ubuntu 16.04 升级到 18.04）。
 
-[Ubuntu version][18] upgrades are entirely a different thing. It updates the entire operating system core. You need to make proper backups before starting this lengthy process.
+[Ubuntu 版本][18] 升级完全是另一回事。它更新整个操作系统核心。你需要在这个漫长的过程开始前做好备份。
 
 ### 总结
 
-I hope you liked this tutorial on updating the Ubuntu system and you learned a few new things.
+我希望你喜欢这个关于 Ubuntu 系统更新的教程并学到一些新东西。
 
-If you have any questions, please fee free to ask. If you are an experienced Linux users and have some tip that can make this tutorial more useful, please share it with the rest of us.
+如果你有其他问题，请随时提出。如果你是一位经验丰富的 Linux 用户并且有些更好的技巧，请同我们分享。
 
 --------------------------------------------------------------------------------
 
@@ -147,7 +147,7 @@ via: https://itsfoss.com/update-ubuntu/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[LazyWolfLin](https://github.com/LazyWolfLin)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
