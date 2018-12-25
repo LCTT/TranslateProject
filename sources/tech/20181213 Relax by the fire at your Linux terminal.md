@@ -1,11 +1,13 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zhs852)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Relax by the fire at your Linux terminal)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-aafire)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
+
+zhs852 is translating.
 
 Relax by the fire at your Linux terminal
 ======
