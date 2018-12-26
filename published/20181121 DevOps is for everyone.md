@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (alim0x)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (DevOps is for everyone)
 [#]: via: (https://opensource.com/article/18/11/how-non-engineer-got-devops)
 [#]: author: (Dawn Parych https://opensource.com/users/dawnparzych)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10386-1.html)
 
 所有人的 DevOps
 ======
