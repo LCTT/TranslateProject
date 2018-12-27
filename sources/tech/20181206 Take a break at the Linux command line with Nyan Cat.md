@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zhs852)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Take a break at the Linux command line with Nyan Cat)
