@@ -7,22 +7,22 @@
 [#]: via: (https://www.2daygeek.com/how-to-install-rust-programming-language-in-linux/)
 [#]: author: (Prakash Subramanian https://www.2daygeek.com/author/prakash/)
 
-How To Install Rust Programming Language In Linux
+如何在 Linux 中安装 Rust 编程语言
 ======
 
-Rust is often called rust-lang.
+Rust 通常被称为 rust-lang。
 
-Rust is a general-purpose, multi-paradigm, modern, cross-platform, and open source systems programming language sponsored by Mozilla Research.
+Rust 是一个由 Mozilla Research 赞助的通用、多范式、现代、跨平台和开源系统编程语言。
 
-It was designed to be achieve a goals such as safety, speed, and concurrency.
+它旨在实现安全性、速度和并发性等目标。
 
-Rust is syntactically similar to C++,[14] but its designers intend it to provide better memory safety while still maintaining performance.
+Rust 在语法上与 C++ 相似，但它的设计者希望它在保持性能的同时提供更好的内存安全性。
 
-Rust is currently used in many organization such as Firefox, Chef, Dropbox, Oracle, GNOME, etc,.
+Rust 目前在许多组织中使用，例如 Firefox、Chef、Dropbox、Oracle、GNOME 等。
 
-### How to Install Runs Language in Linux?
+### 如何在 Linux 中安装 Rust 语言？
 
-There are many ways we can install Rust but below is the officially recommended way to install it.
+我们可以通过多种方式安装 Rust，但以下是官方推荐的安装方式。
 
 ```
 $ curl https://sh.rustup.rs -sSf | sh
@@ -85,22 +85,22 @@ environment variable. Next time you log in this will be done automatically.
 To configure your current shell run source $HOME/.cargo/env
 ```
 
-Run the following command to configure your current shell.
+运行以下命令配置当前 shell。
 
 ```
 $ source $HOME/.cargo/env
 ```
 
-Run the following command to verify the installed Rust version.
+运行以下命令验证已安装的 Rust 版本。
 
 ```
 $ rustc --version
 rustc 1.31.0 (abe02cefd 2018-12-04)
 ```
 
-### How To Test Rust programming language?
+### 如何测试 Rust 编程语言？
 
-Once you installed Rust follow the below steps to check whether Rust programe language is working fine or not.
+安装 Rust 后，请按照以下步骤检查 Rust 语言是否正常工作。
 
 ```
 $ mkdir ~/projects
@@ -109,7 +109,7 @@ $ mkdir hello_world
 $ cd hello_world
 ```
 
-Create a file and add the below code and save the file. Make sure, Rust files always end in a .rs extension.
+创建一个文件并添加以下代码并保存。确保 Rust 文件始终以 .rs 扩展名结尾。
 
 ```
 $ vi 2g.rs
@@ -119,13 +119,13 @@ fn main() {
 }
 ```
 
-Run the following command to compile the rust code.
+运行以下命令编译 rust 代码。
 
 ```
 $ rustc 2g.rs
 ```
 
-The above command will create a executable Rust program file in the same directory.
+上面的命令将在同一目录中创建一个可执行的 Rust 程序。
 
 ```
 $ ls -lh
@@ -134,16 +134,16 @@ total 3.9M
 -rw-r--r-- 1 daygeek daygeek 86 Dec 14 11:09 2g.rs
 ```
 
-Run the Rust executable file to get the output.
+运行 Rust 可执行文件得到输出。
 
 ```
 $ ./2g
 Hello, It's 2DayGeek.com - Best Linux Practical Blog!
 ```
 
-Yup! that’s working fine.
+好了！正常工作了。
 
-To update Rust to latest version.
+将 Rust 更新到最新版本。
 
 ```
 $ rustup update
@@ -153,13 +153,13 @@ info: checking for self-updates
  stable-x86_64-unknown-linux-gnu unchanged - rustc 1.31.0 (abe02cefd 2018-12-04)
 ```
 
-Run the following command to remove the Rust package from your system.
+运行以下命令从系统中删除 Rust 包。
 
 ```
 $ rustup self uninstall
 ```
 
-Once you uninstalled the Rust package, remove the Rust project directory.
+卸载 Rust 包后，删除 Rust 项目目录。
 
 ```
 $ rm -fr ~/projects
@@ -170,7 +170,7 @@ via: https://www.2daygeek.com/how-to-install-rust-programming-language-in-linux/
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
