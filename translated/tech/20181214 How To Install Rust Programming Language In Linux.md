@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Install Rust Programming Language In Linux)
@@ -10,9 +10,7 @@
 如何在 Linux 中安装 Rust 编程语言
 ======
 
-Rust 通常被称为 rust-lang。
-
-Rust 是一个由 Mozilla Research 赞助的通用、多范式、现代、跨平台和开源系统编程语言。
+Rust 通常被称为 rust-lang。Rust 是一个由 Mozilla Research 赞助的通用的、多范式、现代的、跨平台和开源系统编程语言。
 
 它旨在实现安全性、速度和并发性等目标。
 
@@ -30,28 +28,28 @@ info: downloading installer
 
 Welcome to Rust!
 
-This will download and install the official compiler for the Rust programming
+This will download and install the official compiler for the Rust programming 
 language, and its package manager, Cargo.
 
-It will add the cargo, rustc, rustup and other commands to Cargo's bin
+It will add the cargo, rustc, rustup and other commands to Cargo's bin 
 directory, located at:
 
- /home/daygeek/.cargo/bin
+  /home/daygeek/.cargo/bin
 
 This path will then be added to your PATH environment variable by modifying the
 profile files located at:
 
- /home/daygeek/.profile
- /home/daygeek/.bash_profile
+  /home/daygeek/.profile
+  /home/daygeek/.bash_profile
 
 You can uninstall at any time with rustup self uninstall and these changes will
 be reverted.
 
 Current installation options:
 
- default host triple: x86_64-unknown-linux-gnu
- default toolchain: stable
- modify PATH variable: yes
+   default host triple: x86_64-unknown-linux-gnu
+     default toolchain: stable
+  modify PATH variable: yes
 
 1) Proceed with installation (default)
 2) Customize installation
@@ -61,25 +59,25 @@ Current installation options:
 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
 info: latest update on 2018-12-06, rust version 1.31.0 (abe02cefd 2018-12-04)
 info: downloading component 'rustc'
- 77.7 MiB / 77.7 MiB (100 %) 1.2 MiB/s ETA: 0 s
+ 77.7 MiB /  77.7 MiB (100 %)   1.2 MiB/s ETA:   0 s                
 info: downloading component 'rust-std'
- 54.2 MiB / 54.2 MiB (100 %) 1.2 MiB/s ETA: 0 s
+ 54.2 MiB /  54.2 MiB (100 %)   1.2 MiB/s ETA:   0 s                
 info: downloading component 'cargo'
- 4.7 MiB / 4.7 MiB (100 %) 1.2 MiB/s ETA: 0 s
+  4.7 MiB /   4.7 MiB (100 %)   1.2 MiB/s ETA:   0 s                
 info: downloading component 'rust-docs'
- 8.5 MiB / 8.5 MiB (100 %) 1.2 MiB/s ETA: 0 s
+  8.5 MiB /   8.5 MiB (100 %)   1.2 MiB/s ETA:   0 s                
 info: installing component 'rustc'
 info: installing component 'rust-std'
 info: installing component 'cargo'
 info: installing component 'rust-docs'
 info: default toolchain set to 'stable'
 
- stable installed - rustc 1.31.0 (abe02cefd 2018-12-04)
+  stable installed - rustc 1.31.0 (abe02cefd 2018-12-04)
 
 
 Rust is installed now. Great!
 
-To get started you need Cargo's bin directory ($HOME/.cargo/bin) in your PATH
+To get started you need Cargo's bin directory ($HOME/.cargo/bin) in your PATH 
 environment variable. Next time you log in this will be done automatically.
 
 To configure your current shell run source $HOME/.cargo/env
@@ -150,7 +148,7 @@ $ rustup update
 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
 info: checking for self-updates
 
- stable-x86_64-unknown-linux-gnu unchanged - rustc 1.31.0 (abe02cefd 2018-12-04)
+  stable-x86_64-unknown-linux-gnu unchanged - rustc 1.31.0 (abe02cefd 2018-12-04)
 ```
 
 运行以下命令从系统中删除 Rust 包。
@@ -164,6 +162,7 @@ $ rustup self uninstall
 ```
 $ rm -fr ~/projects
 ```
+
 --------------------------------------------------------------------------------
 
 via: https://www.2daygeek.com/how-to-install-rust-programming-language-in-linux/
@@ -171,7 +170,7 @@ via: https://www.2daygeek.com/how-to-install-rust-programming-language-in-linux/
 作者：[Prakash Subramanian][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
