@@ -7,303 +7,285 @@
 [#]: via: (https://itsfoss.com/image-viewers-linux/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Top 11 best Image Viewer for Ubuntu and other Linux
+Linux 下最棒的 11 个图片查看器
 ======
 
-It is probably a good idea to stick with the default system image viewer unless you want a specific feature (that’s missing) or if you crave for better user experience.
+如果不是因为系统自带的图片查看器没有你想要的功能，或者你想要更棒的体验，你大概不会想切换到其它图片查看器吧。
 
-However, if you like to experiment, you may try out different image viewers. You could end up loving the new user experience of viewing the images or get hooked on to the extra features offered.
+不过，如果你喜欢折腾，你可能就会想用不同的图片查看器了吧。我猜最终你会被新图片查看器的全新用户体验或特色功能所吸引的。
 
-In this article, we have mentioned every kind of image viewers ranging from the simplest to the most advanced tool available for Ubuntu or any other Linux distro.
+在本篇文章中，无论是简单的还是复杂的、无论是为 Ubuntu 准备的还是其它 Linux 发行版准备的，我们都有提到。
 
-### Best Image Viewers for Linux
+### Linux 下最棒的图片查看器
 
-![Best image viewers for Ubuntu and other Linux distributions][1]
+![Ubuntu 或其它 Linux 发行版适用的最棒的图片查看器][1]
 
-**Note:** You should be able to find these image viewers listed in your software center or AppCenter. If you don’t find it there, we’ve mentioned the instructions for manual installation as well.
+**注意：** 在准备安装一个图片查看器时，请前往您系统中预先安装的软件商店中查找。如果您没有任何软件商店或无法在软件商店中找到它，请手动执行我们给出的命令。
 
 #### 1. Nomacs
 
-![nomacs image viewer][2]
+![Nomacs 图片查看器][2]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * Simple & Fast UI
-  * Image adjustment tools (color & size)
-  * Geolocation of the image
-  * Metadata information panel
-  * LAN Synchronization
-  * Fullscreen mode
+  * 轻快
+  * 内建图像调整工具（可以调整色彩和大小）
+  * 拍摄位置信息
+  * 元数据调节器
+  * 局域网同步
+  * 全屏模式
 
+Nomacs 是一款自由软件。虽然没有什么出众的功能，但是它的兼容性还不错，可以支持许多常见格式。
 
+它的界面超级简单，但是提供了简单的图片编辑功能（可以调整色彩、亮度、大小）。除此之外，它还支持全屏模式、元数据调整等功能。
 
-A free and open source image viewer that does not come baked with any fancy features. However, Nomacs does support most of the common image file formats if you want to use it.
+**我该如何安装它？**
 
-The user interface is very simple but it does offer some essential features for image adjustment (color, brightness, resize, crop, & cut). In addition to that, it also supports fullscreen mode, histogram, and a lot of different panels that you can toggle for metadata, edit history, and more such information.
-
-**How do I install it?**
-
-You can find it listed in the software center/AppCenter for easy installation. If you want to install it via terminal, you can take a look at their [GitHub page][3] or type in the command below:
+简单起见，你可以在各种软件中心中安装它。如果你想通过终端安装它，请参见它的 [GitHub 界面][3] 。或者，在使用 APT 包管理的系统中使用如下命令安装：
 
 ```
 sudo apt install nomacs
 ```
 
-#### 2. Eye Of Gnome
-![eye of gnome][4]
+#### 2. Gnome 之眼
+![Gnome 之眼][4]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * A dead simple image viewer
-  * Slideshow style (if that’s what you like)
-  * An image viewer tailored for GNOME desktop environment
+  * 极其简单的图像查看器
+  * 幻灯片视图
+  * 为 GNOME 量身打造的图片查看器
 
+这是一款经典的图片查看器，它在数年前作为 GNOME 项目的一部分被开发出来。不过需要注意的是，对它的维护目前已经不是很活跃了。不过它仍能在最新版 Ubuntu LTS 和部分 Linux 发行版中正常工作。
 
+如果你需要一个简单、有幻灯片视图并可以在侧栏看到元数据的图像查看器，Gnome 之眼是最佳选择。
 
-This is a classic image viewer developed as a part of The GNOME Project a lot of years ago. Do note that this isn’t actively maintained anymore. But, it still works on Ubuntu’s latest LTS release and several other Linux distros.
+**我该如何安装它？**
 
-If you want a dead simple image viewer where you browse through the images in a slideshow-type UI and get the meta info in the sidebar, Eye of GNOME should be your choice. One of the best for GNOME desktop environment!
-
-**How do I install it?**
-
-To manually install it on Ubuntu (or Ubuntu-based Linux distros) type in the following command:
+若要在 Ubuntu 及基于 Ubuntu 的 Linux 发行版上安装它，仅需一条命令：
 
 ```
 sudo apt install eog
 ```
 
-For other distros and source, you should follow the [GitHub page.][5]
+如果你想在其它发行版中安装它，请参见 [项目的 GitHub 页面][5] 。
 
-#### 3. Eye Of MATE Image Viewer
+#### 3. EOM
 
-![eye of mate image viewer][6]
+![EOM 图像查看器][6]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * A simple image viewer
-  * Plugins supported
-  * An image viewer tailored for MATE desktop environment
+  * 简洁
+  * 可扩展
+  * 为 MATE 量身打造的图片查看器
 
+另一个基本功能齐全，支持幻灯片视图和图像旋转的查看器。
 
+虽然它没什么特色功能，但它支持大部分的图像格式，并且还能处理大体积的图像。
 
-Yet another simple image viewer with the basic functionalities of slideshow view and rotating images.
+**我该如何安装它？**
 
-Even if doesn’t support any image manipulation feature, it does support numerous image file formats and can handle big image files.
-
-**How do I install it?**
-
-For Ubuntu/Ubuntu-based distros, type in the following command:
+若要在 Ubuntu 及基于 Ubuntu 的 Linux 发行版上安装它，仅需一条命令：
 
 ```
 sudo apt install eom
 ```
 
-If you need help for other distros and the source, follow their [GitHub page][7].
+如果你想在其它发行版中安装它，请参见 [项目的 GitHub 页面][7] 。
 
 #### 4. Geeqie
-![geeqie image viewer][8]
+![Geeqie 图像查看器][8]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * A flexible image manager that supports plugins (you’ll find other image viewers supported as well)
-  * Information about the color profile
+  * 可扩展
+  * 色彩信息显示
 
+Geeqie 是一个令用户印象深刻的图片管理/查看器。他支持将其它查看器作为扩展使用，不过它并不提供任何对图像操作的工具。
 
+如果你希望获取图像的颜色信息、元数据，或是查看/管理一堆图片，它将会是一个不错的选择。
 
-Geeqie is an impressive image manager and viewer. It supports other image viewers as plugins but does not offer any image manipulation tools.
+**我该如何安装它？**
 
-If you need to know the color profile, image info, and manage/view a collection of images. It should be a good choice for that.
-
-**How do I install it?**
-
-Type in the terminal:
+在终端输入：
 
 ```
 sudo apt install geeqie
 ```
 
-For the source, you can refer the [GitHub page][9].
+若想查看它的源代码，请前往 [它的 GitHub 主页][9]。
 
-#### 5. gThumb Image Viewer
+#### 5. gThumb
 
-![gthumb image viewer][10]
+![gThumb 图片查看器][10]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * An all-in-one image viewer with the ability to manage, edit and view the images
-  * Reset EXIF orientation
-  * Convert image formats
-  * Find duplicate images
+  * 多种功能（查看、编辑和管理）
+  * 可清除 EXIF 信息
+  * 图像格式转换
+  * 查找重复的图像
 
+gThumb 会让你眼前一亮，因为它有很多功能。它的查看/管理界面和编辑工具（裁剪、颜色编辑等等）将会给你留下很深的印象。
 
+你甚至可以为图像添加评论或清除它的 EXIF 信息。它使得你可以方便地编辑或转码图像。
 
-gThumb is an amazing image viewer with a lot of features. You get an impressive user interface to view/manage your images along with the basic image manipulation tools (crop, resize, color, and so on.)
+**我该如何安装它？**
 
-You can also add comments to an image or reset the EXIF orientation info. It also gives you the ability to find duplicate images and convert image formats.
-
-**How do I install it?**
-
-You can enter this command in the terminal:
+你可以在终端中输入这条命令：
 
 ```
 sudo apt install gthumb
 ```
 
-If that doesn’t work, head to the [GitHub page][11] for more info.
+输了没用？请参阅 [项目 GitHub 主页][11] 来获取帮助。
 
 #### 6. Gwenview
-![gwenview image viewer][12]
+![Gwenview 图像查看器][12]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * A basic image viewer with common image manipulation tools to rotate and resize
-  * Feature extension using KIPI plugins
+  * 简单，有基础图像编辑功能（旋转、调整大小）
+  * 可使用 KIPI 插件扩展
 
+Gwenview 又是一个基本的图像查看器，它为 KDE 量身定做。不过这并不影响你在其它桌面环境中使用它。
 
+如果你使用 Konqueror 浏览器，你可以将 Gwenview 作为它的内嵌图片浏览器。你也可以为图片添加评论。此外，它还支持 [KIPI][13] 插件。
 
-Gwenview is just another basic image viewer tailored for KDE desktop environment. However, you can install it on other desktop environments as well.
+**我该如何安装它？**
 
-If you utilize the Konqueror web browser, you can use it as an embedded image viewer. Here, you can add comments/description to the image as well. In addition, it supports [KIPI][13] plugins.
-
-**How do I install it?**
-
-Type the following in the terminal to install it:
+你可以在终端中输入这条命令：
 
 ```
 sudo apt install gwenview
 ```
 
-For the source, check out their [GitHub page][14].
+若想查看它的源代码，请前往 [它的 GitHub 主页][14]。
 
 #### 7. Mirage
 
-![mirage image viewer][15]
+![Mirage 图像查看器][15]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * Customizable interface even it is a basic UI
-  * Basic image manipulation tools
-  * Command-line access
+  * 可定制的 UI
+  * 基本图像编辑工具
+  * 可在命令行使用
 
+如果你想要一个可在命令行中访问、支持全屏和幻灯片视图、带有基础编辑工具以及可定制 UI 的查看器，Mirage 是个不二之选。
 
+它是一个非常快速且兼容性优良的查看器。它支持包括 png、jpg、svg、xpm、gif、bmp 和 tifff 在内的多种图像格式。
 
-If you want a decent image viewer along with the ability to access it via command line, a fullscreen mode, slideshow mode, basic editing tools to resize/crop/rotate/flip, and a configurable interface – Mirage would be the simplest option.
+**我该如何安装它？**
 
-It is a very fast and capable image viewer that supports a lot of image formats that include png, jpg, svg, xpm, gif, bmp, and tifff.
-
-**How do I install it?**
-
-You need to type in the following:
+你需要执行：
 
 ```
 sudo apt install mirage
 ```
 
-For the source code and other installation instructions, refer the [GitHub page][16].
+访问 [项目 GitHub 页面][16] 来获取更多信息。
 
 #### 8. KPhotoAlbum
-![][17]
+![KPhotoAlbum][17]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * Perfect image manager to tag and manage the pictures
-  * Demo databases
-  * Image compression
-  * Merge/Remove images to/from Stack
+  * 为图像添加标签
+  * 数据库支持
+  * 图片比较
+  * 合并/移除一堆图像
 
+确切地说，KPhotoAlbum 其实不仅仅是一款图像查看器，它还能为图像添加标签并管理图像。
 
+你可以用它来比较图片以及使用标签搜索你的图片。你还可以使用幻灯片视图来观看图片。
 
-KPhotoAlbum is not exactly a dedicated image viewer but a photo manager to tag and manage the pictures you’ve got.
+**我该如何安装它？**
 
-You can opt for slideshows to view the image along with the ability to compress images and search them using the labels/tags.
-
-**How do I install it?**
-
-You can install it via the terminal by typing in:
+在终端中输入：
 
 ```
 sudo apt kphotoalbum
 ```
 
-In either case, you can check for the [official instructions on their website][18] to get it installed on your Linux distro.
+跟从 [官网上的指引][18] 来在其它 Linux 发行版中安装它。
 
 #### 9. Shotwell
 
-![shotwell][19]
+![Shotwell][19]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * Red-eye correction tool
-  * Upload photos to Facebook, Flickr, etc.
-  * Supports RAW file formats as well
+  * 红眼消除工具
+  * 将照片上传到 Facebook 或 Flickr 等社交网络中
+  * 支持原始格式（RAW）的图片
 
+Shotwell 是一个多功能照片管理器。在此，你能查看或管理你的照片。虽然它没带有许多图像编辑工具，但是你还是可以裁剪和调整亮度的。
 
+**我该如何安装它？**
 
-Shotwell is a feature-rich photo manager. You can view and manage your photos. Although you do not get all the basic image manipulation tools baked in it – you can easily crop and enhance your photos in a single click (auto brightness/contrast adjustments).
+在终端中执行以下命令 (Ubuntu 及其衍生版本)：
 
-**How do I install it?**
-
-Go to the terminal and enter the following (Ubuntu/Ubuntu-based distros):
-
+```
 sudo apt install shotwell
+```
 
-For more information, check out their [GitHub page][20].
+若想获取更多信息，请 [前往它的 GitHub 界面][20]。
 
 #### 10. Ristretto
 
-![ristretto][21]
+![Ristretto][21]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * A dead simple image viewer
-  * Fullscreen mode & Slideshow
+  * 极其简单
+  * 全屏模式
+  * 幻灯片视图
 
+简易的图像查看器。它能查看、全屏查看、缩放查看或以幻灯片视图查看图片。
 
+它是为 Xfce 定制的，但你仍然可以在其它任何地方安装它。
 
-A very straightforward image viewer where you just get the ability to zoom, view in fullscreen mode and view the images as a slideshow.
+**我该如何安装它？**
 
-It is tailored for Xfce desktop environment – but you can install it anywhere.
-
-**How do I install it?**
-
-Even though it’s built for Xfce desktop environment, you can install it on any Ubuntu/Ubuntu-based distro by typing the following command in the terminal:
+即使它是为 Xfce 桌面环境构建的，你仍能在其它地方安装它。对 Ubuntu 及其衍生发行版，请执行：
 
 ```
 sudo apt install ristretto
 ```
+
 #### 11. digiKam
 
-![digikam image viewer][22]
+![digiKam 图像查看器][22]
 
-**What’s good about it?**
+**它有什么特点？**
 
-  * An all-in-one image viewer with advanced photo management features (editing/managing/viewing)
-  * Batch Queue Manager
-  * [Light Table][23]
+  * 带有高级图像管理功能（查看/管理/编辑）的多合一查看器
+  * 可以进行批处理
+  * 带有 [Light Table 功能][23]
 
+digiKam 是一个带有多种图像编辑功能的高级照片管理器。你可以使用 SQLite 或 MySQL 来配置它的数据库。
 
+为了提升你的看图体验，你可以在预览图片时加载低画质的图片。这样一来，即使你有一大堆图片，它也丝滑般流畅。不仅如此，你还可以通过 Google、Facebook、Imgur 等来导入/导出图片。如果你希望使用一个超多功能的查看器，请务必试试这个 digiKam。
 
-digiKam is an advanced photo manager with some additional image manipulation tools. You get the ability to configure the database using SQLite or MySQL.
+**我该如何安装它？**
 
-To enhance your experience of viewing images, it lets you choose the reduced version of images while you preview them. So, that becomes super fast even if you have a lot of images. You get several import/export options via Google, Facebook, Imgur, and so on. If you want a feature-rich image viewer, this is the one you should have installed.
-
-**How do I install it?**
-
-Type in the following command:
+执行这条命令：
 
 ```
 sudo apt install digikam
 ```
 
-For more information, visit their [GitHub page][24].
+访问 [项目 GitHub 页面][24] 来获取更多信息。
 
-### Wrapping Up
+### 尾声
 
-So, no matter whether you want a different user experience or a rich set of features and powerful tools to manage your photos – there’s something everyone.
+总的来说，无论你想要不同的用户体验、丰富的功能还是强大的管理工具，上面总有适合你的工具。
 
-Which image viewer do you prefer to use? Is it the system’s default viewer?
+你更喜欢哪个图像查看器呢？它是系统自带的吗？
 
-Let us know in the comments below.
+欢迎前往原文的评论区留下你的答案。
 
 --------------------------------------------------------------------------------
 
@@ -311,7 +293,7 @@ via: https://itsfoss.com/image-viewers-linux/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zhs852](https://github.com/zhs852)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
