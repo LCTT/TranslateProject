@@ -1,22 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10393-1.html)
 [#]: subject: (Listen to the radio at the Linux terminal)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-mplayer)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
 
 在 Linux 终端收听广播
 ======
-MPlayer 是一个多功能的开源媒体播放器，它在 Linux 命令行中非常有用。
+
+> MPlayer 是一个多功能的开源媒体播放器，它在 Linux 命令行中非常有用。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/uploads/linux-toy-mplayer.png?itok=6iTm3Xi7)
 
 你已经看到我们为期 24 天的 Linux 命令行玩具日历。如果这是你第一次访问该系列，你可能会问自己什么是命令行玩具。它可能是一个游戏或任何简单的消遣，可以帮助你在终端玩得开心。
 
-你们中的一些人之前已经看过我们日历中的各种玩具，但我们希望每个人至少见到一件新事物。
+你们中的一些人之前已经看过我们日历中的各种玩具，但我们希望每个人至少见到一件新玩具。
 
-在命令行中有很多方法可以听音乐。如果你有本地存储的媒体，**cmus** 是一个很好的选择，但还有[很多其他选择][1]。
+在命令行中有很多方法可以听音乐。如果你有本地存储的媒体，`cmus` 是一个很好的选择，但还有[很多其他选择][1]。
 
 不过，很多时候，当我在终端的时候，我会走神并且不会注意挑选每首歌，并让其他的来做。虽然为了这个我有很多播放列表，但过了一段时间，即使过时，我也会切换到互联网电台。
 
@@ -47,7 +49,7 @@ via: https://opensource.com/article/18/12/linux-toy-mplayer
 作者：[Jason Baker][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
