@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zhs852)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Take a break at the Linux command line with Nyan Cat)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-nyancat)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10398-1.html)
 
 在 Linux 命令行中观看彩虹猫来稍事休息
 ======
