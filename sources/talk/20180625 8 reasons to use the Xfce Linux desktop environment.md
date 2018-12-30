@@ -1,3 +1,5 @@
+translating by WangYueScream
+===========================
 8 reasons to use the Xfce Linux desktop environment
 ======
 
