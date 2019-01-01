@@ -1,13 +1,14 @@
-Build an interactive CLI with Node.js
+使用 Node.js 构建交互式 CLI 
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/programming_keyboard_coding.png?itok=E0Vvam7A)
 
-Node.js can be very useful when it comes to building command-line interfaces (CLIs). In this post, I'll teach you how to use [Node.js][1] to build a CLI that asks some questions and creates a file based on the answers.
 
-### Get started
+当用于构建命令行界面（CLIs)时，Node.js变得十分的有用。在这篇文章中，我将会教你如何使用 [Node.js][1] 来构建一个问一些问题并基于回答创建一个文件 CLI。
 
-Let's start by creating a brand new [npm][2] package. (Npm is the JavaScript package manager.)
+### 开始
+
+首先，创建一个新的 [npm][2] 包（NPM 是 JavaScript 包管理器）。
 ```
 mkdir my-script
 
@@ -17,24 +18,27 @@ npm init
 
 ```
 
-Npm will ask some questions. After that, we need to install some packages.
+
+NPM 将会问一些问题。随后，我们需要安装一些 Packages。
+
 ```
 npm install --save chalk figlet inquirer shelljs
 
 ```
 
-Here's what these packages do:
 
-  * **Chalk:** Terminal string styling done right
-  * **Figlet:** A program for making large letters out of ordinary text
-  * **Inquirer:** A collection of common interactive command-line user interfaces
-  * **ShellJS:** Portable Unix shell commands for Node.js
+这是我们需要的 packages：
+
+  * **Chalk:** 正确的设定终端的字符样式
+  * **Figlet:** 使用普通字符制作大字母的程序（译者注：使用标准字符，拼凑出图片）
+  * **Inquirer:** 通用交互式命令行用户界面的集合
+  * **ShellJS:** Node.js 版本的可移植 Unix Shell 命令行工具
 
 
 
-### Make an index.js file
+### 创建一个 index.js 文件
 
-Now we'll create an `index.js` file with the following content:
+现在我们要使用下述内容创建一个 `index.js` 文件。
 ```
 #!/usr/bin/env node
 
@@ -50,11 +54,12 @@ const shell = require("shelljs");
 
 ```
 
-### Plan the CLI
+### 规划 CLI
 
-It's always good to plan what a CLI needs to do before writing any code. This CLI will do just one thing: **create a file**.
+在我们写 CLI 所需的任何代码之前，做计划总是很棒的。这个 Cli 只做一件事：**创建一个文件**
 
-The CLI will ask two questions—what is the filename and what is the extension?—then create the file, and show a success message with the created file path.
+这个 CLI 将会问两个问题：文件名是什么以及文件后缀名是什么？然后创建文件，并展示一个包含了所创建文件路径的成功信息。
+
 ```
 // index.js
 
@@ -78,7 +83,7 @@ run();
 
 ```
 
-The first function is the script introduction. Let's use `chalk` and `figlet` to get the job done.
+第一个函数是脚本的介绍。让我们使用 `chalk` 和 `figlet` 来完成这项工作。
 ```
 const init = () => {
 
@@ -126,7 +131,7 @@ run();
 
 ```
 
-Second, we'll write a function that asks the questions.
+然后，我们来写一个函数来问问题。
 ```
 const askQuestions = () => {
 
@@ -196,9 +201,9 @@ const run = async () => {
 
 ```
 
-Notice the constants FILENAME and EXTENSIONS that came from `inquirer`.
+注意，常量 FILENAME 和 EXTENSIONS 来自 `inquirer` 包。
 
-The next step will create the file.
+下一步将会创建文件。
 ```
 const createFile = (filename, extension) => {
 
@@ -244,7 +249,8 @@ const run = async () => {
 
 ```
 
-And last but not least, we'll show the success message along with the file path.
+最后，重要的是，我们将展示成功信息以及文件路径。
+
 ```
 const success = (filepath) => {
 
@@ -292,11 +298,12 @@ const run = async () => {
 
 ```
 
-Let's test the script by running `node index.js`. Here's what we get:
 
-### The full code
+来让我们通过运行 `node index.js` 来测试这个脚本，这是我们得到的：
 
-Here is the final code:
+### 完整代码
+
+下述代码为完整代码：
 ```
 #!/usr/bin/env node
 
@@ -434,9 +441,10 @@ run();
 
 ```
 
-### Use the script anywhere
+### 在任何地方使用这个脚本
 
 To execute this script anywhere, add a `bin` section in your `package.json` file and run `npm link`.
+想要在任何地方执行这个脚本，在你的 `package.json` 文件中添加一个 `bin` 部分，并执行 `npm link`
 ```
 {
 
@@ -482,9 +490,11 @@ To execute this script anywhere, add a `bin` section in your `package.json` file
 
 ```
 
-Running `npm link` makes this script available anywhere.
 
-That's what happens when you run this command:
+执行 `npm link` 使得这个脚本可以在任何地方调用。
+
+这就是是当你运行这个命令时会发生的事情。
+
 ```
 /usr/bin/creator -> /usr/lib/node_modules/creator/index.js
 
@@ -492,25 +502,26 @@ That's what happens when you run this command:
 
 ```
 
-It links the `index.js` file as an executable. This is only possible because of the first line of the CLI script: `#!/usr/bin/env node`.
 
-Now we can run this script by calling:
+这会连接 `index.js` 作为一个可执行文件。这是完全可能的，因为这个 CLI 脚本的第一行是 `#!/usr/bin/env node`。
+
+
+现在我们可以通过执行如下命令来调用。
 ```
 $ creator
 
 ```
 
-### Wrapping up
+### 总结
 
-As you can see, Node.js makes it very easy to build nice command-line tools! If you want to go even further, check this other packages:
+正如你所看到的，Node.js 使得构建一个好的命令行工具变得非常简单。如果你希望了解更多内容，查看下列包。
 
-  * [meow][3] – a simple command-line helper
-  * [yargs][4] – a command-line opt-string parser
-  * [pkg][5] – package your Node.js project into an executable
+  * [meow][3] – 一个简单的命令行助手工具
+  * [yargs][4] – 一个命令行参数 opts 解析工具
+  * [pkg][5] – 将你的 Node.js 程序包装在一个可执行文件中。
 
 
-
-Tell us about your experience building a CLI in the comments.
+在评论中留下你关于构建 CLI 的经验吧！
 
 --------------------------------------------------------------------------------
 
@@ -518,7 +529,7 @@ via: https://opensource.com/article/18/7/node-js-interactive-cli
 
 作者：[Hugo Dias][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[bestony](https://github.com/bestony)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
