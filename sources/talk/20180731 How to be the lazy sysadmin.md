@@ -1,3 +1,4 @@
+zgj1024 is translating
 How to be the lazy sysadmin
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cat-yawn-vm.png?itok=0c_zy6aQ)

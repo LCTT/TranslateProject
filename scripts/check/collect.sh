@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # PR 文件变更收集
 set -e
 
@@ -31,7 +31,16 @@ git --no-pager show --summary "${MERGE_BASE}..HEAD"
 
 echo "[收集] 写出文件变更列表……"
 
-git diff "$MERGE_BASE" HEAD --no-renames --name-status > /tmp/changes
+RAW_CHANGES="$(git diff "$MERGE_BASE" HEAD --no-renames --name-status -z \
+    | tr '\0' '\n')"
+[ -z "$RAW_CHANGES" ] && {
+  echo "[收集] 无变更，退出……"
+  exit 1
+}
+echo "$RAW_CHANGES" | while read -r STAT; do
+  read -r NAME
+  echo "${STAT}	${NAME}"
+done > /tmp/changes
 echo "[收集] 已写出文件变更列表："
 cat /tmp/changes
 { [ -z "$(cat /tmp/changes)" ] && echo "（无变更）"; } || true
