@@ -52,7 +52,7 @@ mount -n -o remount,rw /
 
 将 Ubuntu 引导到紧急模式与上述方法相同。你只需在编辑 Grub 菜单时将 `systemd.unit=rescue.target` 替换为 `systemd.unit=emergency.target` 即可。
 
-[![emergency mode][3]][4]
+![emergency mode][4]
 
 添加 `systemd.unit=emergency.target` 后，按下 `Ctrl+x` 或 `F10` 继续启动到紧急模式。
 
