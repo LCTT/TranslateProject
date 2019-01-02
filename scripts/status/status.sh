@@ -5,13 +5,7 @@ cd "$(dirname "$0")/../.."        # 进入TP root
 function file-translating-p ()
 {
     local file="$*"
-    if head -n 1 "${file}" |grep  '\[^#\]:'>/dev/null 2>&1 ;then
-        # 新模板
-        head -n 12 "$file" |grep -v '\[^#\]:' |grep -E -i "translat|fanyi|翻译" >/dev/null 2>&1
-    else
-        # 旧模板
-        head -n 3 "$file" |grep -E -i "translat|fanyi|翻译" >/dev/null 2>&1
-    fi
+    head -n 3 "$file" | grep -iE "^[^[].*translat|^\[#\]: translator: \([^[:space:]]+\)|fanyi|翻译" >/dev/null 2>&1
 }
 function get_status_of()
 {
