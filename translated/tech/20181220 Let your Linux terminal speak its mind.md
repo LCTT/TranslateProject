@@ -10,6 +10,7 @@
 让 Linux 终端说出它的想法
 ======
 > eSpeak 是一个可在 Linux 命令行中使用的开源的 TTS 合成器。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/uploads/linux-toy-cava.png?itok=4EWYL8uZ)
 
 欢迎回到《24 天介绍 Linux 命令行小玩具》。如果这是你首次阅读本系列文章，你大概连什么是 Linux 命令行小玩具都不知道。无需担心，你只需要边看边体会。通常来说，它有可能是游戏或其它能让你在终端中娱乐的小程序。
