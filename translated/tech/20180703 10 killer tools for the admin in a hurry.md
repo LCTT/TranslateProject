@@ -3,9 +3,11 @@
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cloud_tools_hardware.png?itok=PGjJenqT)
 
-当工作负载累加时，管理网络和系统变得富有压力。每个人都希望在昨天能够完成他们的具体事务，但没有人能真正意识到需要花费多长时间。
+当工作负载累计时，管理网络和系统变得富有压力。没有人能真正意识到需要花费多长时间，每个人都希望在昨天能够完成他们的具体事务。
 
 所以难怪我们这么多人都被致力于找出有效的方法并与大家分享的开源精神所吸引。因为，当截止日期来临，并且当天没有足够多的时间时，如果你可以找到立刻施行的免费答案，那会非常有帮助。
+
+So, without further ado, here's my Swiss Army Knife of stuff to get you out of the office before dinner time.
 
 因此，闲话少叙，下述是我的瑞士军刀，可以保证你在晚饭前离开办公室。
 
@@ -32,7 +34,7 @@
 
 ### 设置网络，这样你就无需再这样做了。
 
-一个考虑不周的网络是厌恶加班的管理员的死敌。
+一个考虑不周的网络是厌恶加班管理员的死敌。
 
 **[可拓展的 IP 寻址方案][5]**
 
