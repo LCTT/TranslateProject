@@ -1,19 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (FSSlc)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10414-1.html)
 [#]: subject: (McFly – A Replacement To ‘Ctrl+R’ Bash History Search Feature)
 [#]: via: (https://www.ostechnix.com/mcfly-a-replacement-to-ctrlr-bash-history-search-feature/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
 
-McFly – Bash 历史命令搜索特性的一个替代品
+McFly：利用神经网络为 Bash 提供历史命令搜索功能
 ======
+
 ![](https://www.ostechnix.com/wp-content/uploads/2018/12/mcfly-720x340.png)
 
-假如你在命令行模式下花费过很长时间，那么你必定使用过或者听说过 BASH 的 **反向搜索** 功能，在 Bash 中执行反向搜索功能的快捷键是 **Ctrl+r**。通过使用这个特性，我们可以找到我们执行过的命令而无需再次输入它们。当然，你可以使用上下键来搜索你的 bash 命令记录，但使用 Ctrl+r 快捷键可以让这个搜索过程更简单快速。今天我找寻到了 Bash 历史命令搜索特性 ‘Ctrl+r’ 的一个替代品，它就是 **“McFly”**。McFly 是一个使用 **Rust** 编程语言写就的简洁工具，自带一个智能的搜索引擎，用来替换默认的 Ctrl+r 这个 Bash 历史命令搜索特性。 McFly 提供的命令建议都是通过一个小巧的 **神经网络** 来实时排序给出的。
+假如你在命令行模式下渡过了很长时间，那么你必定使用过或者听说过 BASH 的 **反向搜索** 功能，在 Bash 中执行反向搜索功能的快捷键是 `Ctrl+r`。通过使用这个特性，我们可以找到我们执行过的命令而无需再次输入它们。当然，你可以使用上下键来搜索你的 bash 命令记录，但使用 `Ctrl+r` 快捷键可以让这个搜索过程更简单快速。今天我找寻到了 Bash 历史命令搜索特性 `Ctrl+r` 的一个替代品，它就是 McFly。McFly 是一个使用 Rust 编程语言写就的简洁工具，自带一个智能的搜索引擎，用来替换默认的 `Ctrl+r` 这个 Bash 历史命令搜索功能。 McFly 提供的命令建议都是通过一个小巧的 **神经网络** 来实时排序给出的。
 
-McFly 重新绑定了 Ctrl+r 快捷键，可以从你的 Bash 历史命令中找到所有最近执行过的命令。它通过追溯下面的信息来增强你的 shell 历史命令搜索特性：
+McFly 重新绑定了 `Ctrl+r` 快捷键，可以从你的 Bash 历史命令中找到所有最近执行过的命令。它通过追溯下面的信息来增强你的 shell 历史命令搜索特性：
 
 * 命令结束状态
 * 当你运行命令时的时间戳
@@ -34,9 +35,9 @@ McFly 维护着你的默认 Bash 历史文件，所以你可以随时停止使�
 
 ### 安装 McFly
 
-在 Linux 中，McFly 可以使用 Linuxbrew 来安装。如若你还没有安装过 Linuxbrew，那么你可以参考下面的这个链接。（译者注：从其github 主页了解到也可以下载其二进制来使用。）
+在 Linux 中，McFly 可以使用 Linuxbrew 来安装。如若你还没有安装过 Linuxbrew，那么你可以参考下面的这个链接。（LCTT 译注：从其 [GitHub 主页](https://github.com/cantino/mcfly)了解到也可以下载其二进制来使用。）
 
-[Linuxbrew —— 一个使用 Linux 和 Mac OS X 的通用包管理][1]
+- [Linuxbrew：一个用于 Linux 和 Mac OS X 的通用包管理][1]
 
 一旦安装好了 Linuxbrew，运行下面的命令来安装 McFly：
 
@@ -62,9 +63,10 @@ fi
 ```
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/12/install-mcfly.png)
+
 正如你上面看到的那样，在使用 McFly 之前我们需要再做一些配置。
 
-将下面几行添加到你的 **~/.bashrc** 文件中：
+将下面几行添加到你的 `~/.bashrc` 文件中：
 
 ```
 if [ -f $(brew --prefix)/opt/mcfly/mcfly.bash ]; then
@@ -88,7 +90,7 @@ McFly: Importing Bash history for the first time. This may take a minute or two.
 
 ### 使用方法
 
-要在你的命令中执行搜索，只需要键入 ‘mcfly search’ 再加上命令名的一部分，最后敲击 ENTER 键即可。Mcfly 将会基于你刚才键入的搜索查询语句给出命令建议。
+要在你的命令历史中执行搜索，只需要键入 `mcfly search` 再加上命令名的一部分，最后敲击回车键即可。Mcfly 将会基于你刚才键入的搜索查询语句给出命令建议。
 
 ```
 $ mcfly search <part-of-the-command>
@@ -104,7 +106,7 @@ $ mcfly search mk
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/12/mcfly-command-1.png)
 
-如你所见，我已经使用过 'mkdir' 这个命令两次。假如你想从这些命令建议中执行其中之一，只需使用上下键来选择它，然后敲击 ENTER 键来执行它就可以了。假如你想编辑其中一个命令，则需要先选择它，然后敲 **TAB** 键将这个命令放置到终端中，最后在运行它之前更改它就行了。要从历史中删除已经选择的命令，按 **F2** 即可。
+如你所见，我已经使用过 `mkdir` 这个命令两次。假如你想从这些命令建议中执行其中之一，只需使用上下键来选择它，然后敲击**回车键**来执行它就可以了。假如你想编辑其中一个命令，则需要先选择它，然后敲 `TAB` 键将这个命令放置到终端中，最后在运行它之前更改它就行了。要从历史中删除已经选择的命令，按 `F2` 即可。
 
 或者，输入下面的命令来打开历史搜索，然后输入任意一个命令或者命令的一部分来从你的历史命令中查看它提供的建议。
 
@@ -115,6 +117,7 @@ $ mcfly search
 在你输入的同时， McFly 将会展示命令的提示。
 
 下面是一个介绍 McFly 的简短演示视频：
+
 ![](https://www.ostechnix.com/wp-content/uploads/2018/12/mcfly-demo.gif)
 
 你还可以使用下面的命令来查看帮助：
@@ -133,11 +136,11 @@ $ brew uninstall mcfly
 $ brew untap cantino/mcfly
 ```
 
-最后，移除先前添加到 **~/.bashrc** 文件中的几行命令。
+最后，移除先前添加到 `~/.bashrc` 文件中的几行命令。
 
 好了，这些就是所有了，更多精彩内容敬请期待，请保存关注！
 
-Cheers!
+干杯！
 
 --------------------------------------------------------------------------------
 
@@ -146,7 +149,7 @@ via: https://www.ostechnix.com/mcfly-a-replacement-to-ctrlr-bash-history-search-
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
