@@ -27,7 +27,7 @@ Gonimo是作为一个典型监视器缺点的开源解决方案而创建的：
 
 ### 开始
 
-将您的设备转换为婴儿监视器很容易。 从您设备的浏览器（理想情况下为Chrome），访问[gonimo.com] [1]并单击启动婴儿监视器以访问Web应用程序。
+将您的设备转换为婴儿监视器很容易。 从您设备的浏览器（理想情况下为Chrome），访问 [gonimo.com] [1]并单击启动婴儿监视器以访问Web应用程序。
 
   1. **创建家庭:** 在第一次启动屏幕上，你会看到一只可爱的兔子在地球上运行。 这是您创建新家庭的地方. 单击 **+** 按钮并接受随机生成的姓氏或您自己选择的类型.
 
@@ -111,7 +111,7 @@ Robert Klotzner;我是双胞胎的父亲;一个程序员. 当我听到普通人�
 via: https://opensource.com/article/17/9/gonimo
 
 作者：[Robert Klotzner][a]
-译者：[译者ID](https://github.com/lintaov587)
+译者：[lintaov587](https://github.com/lintaov587)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
