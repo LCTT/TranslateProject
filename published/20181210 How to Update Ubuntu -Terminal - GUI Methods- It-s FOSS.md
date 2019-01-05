@@ -1,28 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (LazyWolfLin)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10406-1.html)
 [#]: subject: (How to Update Ubuntu [Terminal & GUI Methods] It's FOSS)
 [#]: via: (https://itsfoss.com/update-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何更新 Ubuntu [终端及GUI方式] It's FOSS
+初级：如何在终端及图形界面中更新 Ubuntu
 ======
 
-**这篇教程将向你展示如何更新服务器版本或者桌面版本的 Ubuntu。它还解释了更新和升级之间的区别以及你应该了解的有关于 Ubuntu Linux 中的更新的一些其他内容。**
+> 这篇教程将向你展示如何更新服务器版本或者桌面版本的 Ubuntu。它还解释了更新和升级之间的区别以及你应该了解的有关于 Ubuntu Linux 中的更新的一些其他内容。
 
 如果你是一个新手并已经体验 Ubuntu 数天或几周，你可能想知道如何更新你的 [Ubuntu][1] 系统以获取安全补丁，错误修复和应用升级。
 
 更新 Ubuntu 非常简单。我并不是瞎说。它简单得只要运行两个命令。让我来告诉你这两个命令的更多细节。
 
-请注意，本教程适用于 Ubuntu 18.04，16.04 或任何其他版本。命令行方式也适用于基于 Ubuntu 的发行版如 Linux Mint，Linux Lite，elementary OS 等。
+请注意，本教程适用于 Ubuntu 18.04、16.04 或任何其他版本。命令行方式也适用于基于 Ubuntu 的发行版如 Linux Mint、Linux Lite、elementary OS 等。
 
 ### 通过命令行更新 Ubuntu
 
 ![如何更新 Ubuntu][2]
 
-在桌面上，打开终端。你可以在菜单里找到它或者使用 Ctrl+Alt+T [快捷键][3]。如果你是登陆到一台 [Ubuntu 服务器][4]，那你已经在访问一个终端了。
+在桌面上，打开终端。你可以在菜单里找到它或者使用 `Ctrl+Alt+T` [快捷键][3]。如果你是登录到一台 [Ubuntu 服务器][4]，那你已经在访问一个终端了。
 
 在终端里，你只需要使用以下命令：
 
@@ -30,13 +30,13 @@
 sudo apt update && sudo apt upgrade -y
 ```
 
-它将询问密码，而你可以使用你的账号密码。输入时，你将不会看到任何内容在屏幕上，所以请继续输入你的密码并按回车键。
+它将询问你密码，而你可以使用你的账号密码。输入时，你将不会看到任何内容在屏幕上，所以请继续输入你的密码并按回车键。
 
 现在，我来解释下上面的命令。
 
 事实上，这不是一条命令。它由两条命令组成。符号 `&&` 是合并两条命令的一个方法，第二条命令仅在前一条命令执行成功时执行。
 
-当命令 `apt upgrade` 要求你在安装更新前确认时，末尾的参数 `-y` 会自动输入 yes。
+当命令 `apt upgrade` 要求你在安装更新前确认时，末尾的参数 `-y` 会自动输入 `yes`。
 
 请注意，你也可以逐条使用这两条命令：
 
@@ -51,7 +51,7 @@ sudo apt upgrade
 
 这条命令更新了可用软件包的本地数据库。如果你没运行这条命令，本地数据库将不会被更新，而你的系统将不会知道是否有可用的新版本。
 
-这就是为什么当你运行 `sudo apt update`，你会在输出中看到大量的 URLs。这条命令会从对应的储存库（你在输出中看到的 URLs）中获取软件包信息。
+这就是为什么当你运行 `sudo apt update`，你会在输出中看到大量的 URL。这条命令会从对应的储存库（你在输出中看到的 URL）中获取软件包信息。
 
 ![更新 Ubuntu Linux][5]
 
@@ -61,7 +61,7 @@ sudo apt upgrade
 apt list --upgradable
 ```
 
-**补充阅读：** 阅读这篇文章了解[命令 `apt update` 的输出中的 Ign，Hit 和 Get 是什么][6]。
+**补充阅读：** 阅读这篇文章了解[命令 apt update 的输出中的 Ign、Hit 和 Get 是什么][6]。
 
 #### 说明：sudo apt upgrade
 
@@ -69,17 +69,17 @@ apt list --upgradable
 
 ![通过命令行更新 Ubuntu Linux][7]
 
-你可以键入 `yes`，`y` 或者只敲回车键去确认安装这些更新。
+你可以键入 `yes`、`y` 或者只敲回车键去确认安装这些更新。
 
 所以总的来说，`sudo apt update` 会检查可用的新版本，而 `sudo apt upgrade` 实际上会执行更新。
 
 命令 `update` 可能会令人困惑，因为你可能期望通过命令 `apt update` 安装更新来更新系统，但这并不会发生。
 
-### 通过 GUI 更新 Ubuntu［适用于桌面用户］
+### 通过 GUI 更新 Ubuntu（适用于桌面用户）
 
 如果你使用桌面版 Ubuntu，你并不需要为了更新系统而打开终端。你可以仍可以使用命令行更新，但这只是一个选择。
 
-在菜单力，找到 `Software Updater` 并运行它。
+在菜单里，找到 “软件更新” 并运行它。
 
 ![在 Ubuntu 中运行 Software Updater][8]
 
@@ -91,7 +91,7 @@ apt list --upgradable
 
 ![在 Ubuntu 中通过更新管理器安装更新][10]
 
-现在，点击 `Install`，它可能会向你询问密码。
+现在，点击 “安装”，它可能会向你询问密码。
 
 ![通过 GUI 在 Ubuntu Linux 中安装更新][11]
 
@@ -107,7 +107,7 @@ apt list --upgradable
 
 ![通过 GUI 在 Ubuntu 中安装更新][13]
 
-提示：如果 `software updater` 返回一个错误，你需要在终端是使用命令 `sudo apt update`。输出的最后几行将包含真正的错误信息。你可以在因特网上搜索该错误并解决问题。
+提示：如果“软件更新”返回一个错误，你需要在终端是使用命令 `sudo apt update`。输出的最后几行将包含真正的错误信息。你可以在因特网上搜索该错误并解决问题。
 
 ### 更新 Ubuntu 时要记住几件事
 
@@ -125,7 +125,7 @@ sudo apt autoremove
 
 如果是 Linux 内核更新，你将需要在系统更新后重启。当你不希望服务器停机时，这将会是一个问题。
 
-[热修复][15]功能允许Linux内核在持续运行时打补丁。换句话说就是你不需要重启你的系统。
+[热修复][15]功能允许 Linux 内核在持续运行时打补丁。换句话说就是你不需要重启你的系统。
 
 如果你在管理服务器，你可能需要[在 Ubuntu 中启用热修复][16]。
 
@@ -148,7 +148,7 @@ via: https://itsfoss.com/update-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[LazyWolfLin](https://github.com/LazyWolfLin)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
