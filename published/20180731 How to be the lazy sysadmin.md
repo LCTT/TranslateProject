@@ -1,6 +1,6 @@
 如何成为一名懒惰的系统管理员
 ======
-> 我们是聪明地工作，而不是刻苦工作，但仍把你的工作做好。
+> 我们是聪明地工作，而不是刻苦工作，但仍能把工作做好。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cat-yawn-vm.png?itok=0c_zy6aQ)
 
