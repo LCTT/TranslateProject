@@ -7,6 +7,9 @@
 [#]: via: (https://www.ostechnix.com/how-to-display-thumbnail-images-in-terminal/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
 
+translating by WangYueScream
+========================
+
 How To Display Thumbnail Images In Terminal
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/lsix-720x340.png)
