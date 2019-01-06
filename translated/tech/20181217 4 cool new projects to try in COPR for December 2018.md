@@ -1,23 +1,25 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (4 cool new projects to try in COPR for December 2018)
 [#]: via: (https://fedoramagazine.org/4-try-copr-december-2018/)
 [#]: author: (Dominik Turecek https://fedoramagazine.org)
 
-2018 年 12 月值得尝试的 4个很酷的 COPR 新项目
+COPR 仓库中 4 个很酷的新软件（2018.12）
 ======
+
 ![](https://fedoramagazine.org/wp-content/uploads/2017/08/4-copr-945x400.jpg)
 
-COPR 是个人软件仓库[集合][1]，它不在 Fedora 中。某些软件不符合允许轻松打包的标准。或者它可能不符合其他 Fedora 标准，尽管它是自由开源的。COPR 可在 Fedora套件之外提供这些项目。COPR 中的软件不受 Fedora 基础设施的支持，或由项目自己签名。但是，这是尝试新的或实验性软件的一种很好的方法。
+COPR 是软件的个人存储库的[集合][1]，它包含那些不在标准的 Fedora 仓库中的软件。某些软件不符合允许轻松打包的标准。或者它可能不符合其他 Fedora 标准，尽管它是自由开源的。COPR 可以在标准的 Fedora 包之外提供这些项目。COPR 中的软件不受 Fedora 基础设施的支持，或者是由项目自己背书的。但是，它是尝试新的或实验性软件的一种很好的方法。
 
 这是 COPR 中一组新的有趣项目。
 
 ### MindForger
 
-[MindForger][2] 是 Markdown 编辑器和笔记本。除了你希望的 Markdown 编辑器的功能之外，MindForger 还允许你将单个文件拆分为多个笔记。组织笔记并在文件之间移动、搜索它们都很容易。我已经使用 MindForger 一段时间来记录学习笔记了，现在可以在 COPR 中找到它啦。
+[MindForger][2] 是一个 Markdown 编辑器和笔记本。除了你预期的 Markdown 编辑器的功能之外，MindForger 还允许你将单个文件拆分为多个笔记。组织笔记并在文件之间移动、搜索它们都很容易。我已经使用 MindForger 一段时间来记录学习笔记了，现在可以在 COPR 中找到它啦。
+
 ![][3]
 
 #### 安装说明
@@ -31,7 +33,7 @@ sudo dnf install mindforger
 
 ### Clingo
 
-[Clingo][4] 是使用[回答集编程][5] （ASP） 建模语言解决逻辑问题的程序。使用 ASP，你可以将问题声明为一个 Clingo 逻辑程序然后解决。最后，Clingo 以逻辑模型的形式产生问题的解决方案，称为回答集。
+[Clingo][4] 是使用[回答集编程][5]（ASP）建模语言解决逻辑问题的程序。使用 ASP，你可以将问题声明为一个逻辑程序，然后 Clingo 来解决。最后，Clingo 以逻辑模型的形式产生问题的解决方案，称为回答集。
 
 #### 安装说明
 
@@ -44,7 +46,8 @@ sudo dnf install clingo
 
 ### SGVrecord
 
-[SGVrecord][6] 是一个用于录制屏幕的简单工具。它允许你捕获整个屏幕或仅选择其中的一部分。此外，有没有声音都可以进行录制。Sgvrecord 以 WebM 格式生成文件。
+[SGVrecord][6] 是一个用于录制屏幕的简单工具。它允许你捕获整个屏幕或仅选择其中的一部分。此外，有没有声音都可以进行录制。SGVrecord 以 WebM 格式生成文件。
+
 ![][7]
 
 #### 安装说明
@@ -77,7 +80,7 @@ via: https://fedoramagazine.org/4-try-copr-december-2018/
 作者：[Dominik Turecek][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
