@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10423-1.html)
 [#]: subject: (YAML: probably not so great after all)
 [#]: via: (https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html)
 [#]: author: (Martin Tournoij https://arp242.net/)
@@ -292,7 +292,7 @@ via: https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html
 作者：[Martin Tournoij][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
