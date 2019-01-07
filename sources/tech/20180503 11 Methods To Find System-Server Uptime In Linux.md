@@ -1,3 +1,4 @@
+LuMing is translating
 11 Methods To Find System/Server Uptime In Linux
 ======
 Do you want to know, how long your Linux system has been running without downtime? when the system is up and what date.
