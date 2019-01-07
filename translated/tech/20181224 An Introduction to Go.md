@@ -12,9 +12,9 @@ Go 简介
 
 （以下内容是我的硕士论文的摘录，几乎整个 2.1 章节，向具有 CS 背景的人快速介绍 Go）
 
-Go 是一门用于并发编程的命令式编程语言，它主要由创造者 Google 进行开发，最初主要由 Robert Griesemer、Rob Pike 和 Ken Thompson开发。 Design of the language started in 2007, and an initial version was released in 2009; with the first stable version, 1.0 released in 2012 .
+Go 是一门用于并发编程的命令式编程语言，它主要由创造者 Google 进行开发，最初主要由 Robert Griesemer、Rob Pike 和 Ken Thompson开发。这门语言的设计起始于 2017 年，并在 2019 年推出最初版本；而第一个稳定版本是 2012 年发布的 1.0。
 
-Go has a C-like syntax (without a preprocessor), garbage collection, and, like its predecessors devloped at Bell Labs – Newsqueak (Rob Pike), Alef (Phil Winterbottom), and Inferno (Pike, Ritchie, et al.) – provides built-in support for concurrency using so-called goroutines and channels, a form of co-routines, based on the idea of Hoare’s ‘Communicating Sequential Processes’ .
+Go 有 C 风格语法（没有预处理器），垃圾回收机制，并且类似它在贝尔实验室里被开发出来的前辈们，Newsqueak (Rob Pike)、Alef (Phil Winterbottom) 和 Inferno (Pike, Ritchie, et al.)，使用所谓的 goroutines 和 channels（一种基于 Hoare 的“通信顺序进程”理论的协程）提供内建的并发支持。
 
 Go programs are organised in packages. A package is essentially a directory containing Go files. All files in a package share the same namespace, and there are two visibilities for symbols in a package: Symbols starting with an upper case character are visible to other packages, others are private to the package:
 
