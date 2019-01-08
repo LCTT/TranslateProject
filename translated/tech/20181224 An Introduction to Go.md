@@ -14,9 +14,9 @@ Go 简介
 
 Go 是一门用于并发编程的命令式编程语言，它主要由创造者 Google 进行开发，最初主要由 Robert Griesemer、Rob Pike 和 Ken Thompson开发。这门语言的设计起始于 2017 年，并在 2019 年推出最初版本；而第一个稳定版本是 2012 年发布的 1.0。
 
-Go 有 C 风格语法（没有预处理器），垃圾回收机制，并且类似它在贝尔实验室里被开发出来的前辈们，Newsqueak (Rob Pike)、Alef (Phil Winterbottom) 和 Inferno (Pike, Ritchie, et al.)，使用所谓的 goroutines 和 channels（一种基于 Hoare 的“通信顺序进程”理论的协程）提供内建的并发支持。
+Go 有 C 风格语法（没有预处理器），垃圾回收机制，而且类似它在贝尔实验室里被开发出来的前辈们，Newsqueak (Rob Pike)、Alef (Phil Winterbottom) 和 Inferno (Pike, Ritchie, et al.)，使用所谓的 goroutines 和 channels（一种基于 Hoare 的“通信顺序进程”理论的协程）提供内建的并发支持。
 
-Go programs are organised in packages. A package is essentially a directory containing Go files. All files in a package share the same namespace, and there are two visibilities for symbols in a package: Symbols starting with an upper case character are visible to other packages, others are private to the package:
+Go 程序以包的形式组织。包本质是一个包含 Go 文件的文件夹。包内的所有文件共享相同的命名空间，而包内的符号有两种可见行：以大写字母开头的符号对于其他包是可见，而其他符号则是该包私有的：
 
 ```
 func PublicFunction() {
@@ -30,35 +30,35 @@ func privateFunction() {
 
 ### 类型
 
-Go has a fairly simple type system: There is no subtyping (but there are conversions), no generics, no polymorphic functions, and there are only a few basic categories of types:
+Go 有一个相当简单的类型系统：没有子类型（但有类型转换），没有泛型，没有多态函数，只有一些基本的类型：
 
-  1. base types: `int`, `int64`, `int8`, `uint`, `float32`, `float64`, etc.
+  1. 基本类型：`int`、`int64`、`int8`、`uint`、`float32`、`float64` 等。
 
   2. `struct`
 
-  3. `interface` \- a set of methods
+  3. `interface` \- 一类方法
 
-  4. `map[K, V]` \- a map from a key type to a value type
+  4. `map[K, V]` \- 从键类型到值类型的映射
 
-  5. `[number]Type` \- an array of some element type
+  5. `[number]Type` \- 一些元素类型组成的数组
 
-  6. `[]Type` \- a slice (pointer to array with length and capability) of some type
+  6. `[]Type` \- 某种类型的切片（指向具有长度和功能的数组）
 
-  7. `chan Type` \- a thread-safe queue
+  7. `chan Type` \- 一个线程安全的队列
 
-  8. pointer `*T` to some other type
+  8. 指针 `*T` 指向其他类型
 
-  9. functions
+  9. 函数
 
-  10. named type - aliases for other types that may have associated methods:
+  10. 命名类型 - 可能具有关联方法的其他类型的别名：
 
-```
-type T struct { foo int }
-type T *T
-type T OtherNamedType
-```
+      ```
+      type T struct { foo int }
+      type T *T
+      type T OtherNamedType
+      ```
 
-Named types are mostly distinct from their underlying types, so you cannot assign them to each other, but some operators like `+` do work on objects of named types with an underlying numerical type (so you could add two `T` in the example above).
+      Named types are mostly distinct from their underlying types, so you cannot assign them to each other, but some operators like `+` do work on objects of named types with an underlying numerical type (so you could add two `T` in the example above).
 
 
 Maps, slices, and channels are reference-like types - they essentially are structs containing pointers. Other types are passed by value (copied), including arrays (which have a fixed length and are copied).
