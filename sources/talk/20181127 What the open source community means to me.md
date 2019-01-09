@@ -1,5 +1,7 @@
+translating by seriouszyx
+
 [#]: collector: (lujun9972)
-[#]: translator: (seriouszyx)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (What the open source community means to me)
