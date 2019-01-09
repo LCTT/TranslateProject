@@ -7,7 +7,7 @@
 [#]: via: (https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/introduction.html)
 [#]: author: (Robert Mullins http://www.cl.cam.ac.uk/~rdm34)
 
-计算机实验室 – 树莓派：课程 0 简介
+计算机实验室之树莓派：课程 0 简介
 ======
 
 这个课程简介不包含实践内容，但它解释了一个操作系统的基本概念、汇编代码、和其它很重要的一些基本原理。如果你想直接进入实践环节，跳过本课程并不会有什么问题。
