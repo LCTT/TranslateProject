@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (An introduction to the Tornado Python web app framework)

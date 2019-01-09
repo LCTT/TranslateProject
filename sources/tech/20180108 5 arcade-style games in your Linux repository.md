@@ -1,3 +1,4 @@
+Scoutydren is translating. 
 5 arcade-style games in your Linux repository
 ======
 
