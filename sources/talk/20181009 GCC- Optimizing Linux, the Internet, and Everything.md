@@ -1,5 +1,3 @@
-translating by belitex
-
 GCC: Optimizing Linux, the Internet, and Everything
 ======
 
