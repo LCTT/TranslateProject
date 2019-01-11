@@ -50,7 +50,7 @@ Go 有一个相当简单的类型系统：没有子类型（但有类型转换�
 
   9. 函数
 
-  10. 命名类型 - 可能具有关联方法的其他类型的别名：
+  10. 具名类型 - 可能具有关联方法的其他类型的别名（译者注：这里的别名并非指 Go 1.9 中的新特性“类型别名”）：
 
       ```
       type T struct { foo int }
@@ -58,14 +58,13 @@ Go 有一个相当简单的类型系统：没有子类型（但有类型转换�
       type T OtherNamedType
       ```
 
-      Named types are mostly distinct from their underlying types, so you cannot assign them to each other, but some operators like `+` do work on objects of named types with an underlying numerical type (so you could add two `T` in the example above).
+      具名类型完全不同于他们的底层类型，所以你不能让他们互相赋值，但一些运输符，例如 `+`，能够处理同一底层数值类型的具名类型对象们（所以你可以在上面的示例中把两个 `T` 加起来）。
 
-
-Maps, slices, and channels are reference-like types - they essentially are structs containing pointers. Other types are passed by value (copied), including arrays (which have a fixed length and are copied).
+Maps、slices 和 channels 是类似于引用的类型——他们实际上是包含指针的结构。包括数组（具有固定长度并可被拷贝）在内的其他类型则是值（拷贝）传递。
 
 #### 类型转换
 
-Conversions are the similar to casts in C and other languages. They are written like this:
+类型转换类似于 C 或其他语言中的转换。它们写成这样子：
 
 ```
 TypeName(value)
@@ -73,23 +72,23 @@ TypeName(value)
 
 #### 常量
 
-Go has “untyped” literals and constants.
+Go 有“无类型”字面量和常量。
 
 ```
-1 // untyped integer literal
-const foo = 1 // untyped integer constant
-const foo int = 1 // int constant
+1 // 无类型整数字面量
+const foo = 1 // 无类型整数常量
+const foo int = 1 // int 类型常量
 ```
 
-Untyped values are classified into the following categories: `UntypedBool`, `UntypedInt`, `UntypedRune`, `UntypedFloat`, `UntypedComplex`, `UntypedString`, and `UntypedNil` (Go calls them basic kinds, other basic kinds are available for the concrete types like `uint8`). An untyped value can be assigned to a named type derived from a base type; for example:
+无类型值可以分为以下几类：`UntypedBool`、`UntypedInt`、`UntypedRune`、`UntypedFloat`、`UntypedComplex`、`UntypedString` 以及 `UntypedNil`（Go 称它们为基础类型，other basic kinds are available for the concrete types like `uint8`）。一个无类型值可以赋值给一个从基础类型中派生的具名类型；例如：
 
 ```
 type someType int
 
 const untyped = 2 // UntypedInt
-const bar someType = untyped // OK: untyped can be assigned to someType
+const bar someType = untyped // OK: untyped 可以被赋值给 someType
 const typed int = 2 // int
-const bar2 someType = typed // error: int cannot be assigned to someType
+const bar2 someType = typed // error: int 不能被赋值给 someType
 ```
 
 ### 接口和对象
