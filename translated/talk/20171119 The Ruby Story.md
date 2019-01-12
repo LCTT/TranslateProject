@@ -7,6 +7,7 @@ Ruby 社区一直将<ruby>灵活表达<rt>freedom of expression</rt></ruby>视�
 ### 松本 行弘
 
 <ruby>松本行弘<rt>Yukihiro Matsumoto</rt></ruby>，也叫 “Matz”，于 1990 年毕业于筑波大学。筑波是东京东北方向上的一个小城市，是科学研究与技术开发的中心之一。那里的筑波大学以其 STEM 计划广为流传。松本行弘就在筑波大学的信息科学专业学习过，且专攻编程语言。他也在 Ikuo Nakata 的编程语言实验室工作过。
+（LCTT译注：STEM是科学（Science），技术（Technology），工程（Engineering），数学（Mathematics）四门学科英文首字母的缩写。）
 
 松本从 1993 年开始制作 Ruby，那时他才刚毕业几年。他制作 Ruby 的起因是觉得那时的脚本语言缺乏一些特性。他在使用 Perl 的时候觉得这门语言过于“玩具”，此外 Python 也有点弱，用他自己的话说：
 
@@ -30,7 +31,8 @@ Ruby 主要受到 Perl 的印象。Perl 则是由 Larry Wall 与 20 世纪 80 �
 
 但影响了 Ruby 的不仅仅只有 Perl 。在 Ruby 之前松本使用过运行在 Emacs Lisp 上的邮件客户端。这一经历让他对 Emacs 和 Lisp 语言运行的内部原理有了更多的认识。松本说 Ruby 的对象模型也受其启发。在那之上，松本添加了一个 Smalltalk 风格的信息传递系统，这一系统随后成为了 Ruby 中任何依赖 `#method_missing` 的操作的基石。松本说 Ada 和 Eiffel 也影响了 Ruby 的设计。
 
-当时间来到了给这门新语言命名的时候，松本和它的同事 Keiju Ishitsuka 挑选了很多个名字。他们希望名字能够体现新语言和 Perl、shell 脚本间的联系。在[这一段聊天记录][2]中，Ishitsuka 和 松本也许花了太多的时间来思考 <ruby>shell<rt>贝壳</rt></ruby>、<ruby>clam<rt>蛤蛎</rt></ruby>、<ruby>oyster<rt>牡蛎</rt></ruby>和<ruby>pearl<rt>珍珠</rt></ruby>之间的关系了，以至于差点把 Ruby 命名为“<ruby>Coral<rt>珊瑚虫</rt></ruby>”或“<ruby>Bisque<rt>贝类浓汤</rt></ruby>”。幸好，他们决定使用 Ruby ，因为他就像 pearl 一样，是一种珍贵的宝石。此外，<ruby>Ruby<rt>红宝石</rt></ruby> 还是 7 月的诞生石，而 <ruby>Peral<rt>珍珠</rt></ruby> 则是 6 月的诞生石，采用了类似 C++ 和 C# 的隐喻，暗示着她们是改进自前辈的编程语言。（LCTT译注：Perl 和 Pearl 发音相同；shell 是操作系统提供的用户界面，这里指的是命令行界面；更多有关诞生石的[信息](https://zh.wikipedia.org/zh-hans/%E8%AA%95%E7%94%9F%E7%9F%B3)。）
+当时间来到了给这门新语言命名的时候，松本和它的同事 Keiju Ishitsuka 挑选了很多个名字。他们希望名字能够体现新语言和 Perl、shell 脚本间的联系。在[这一段聊天记录][2]中，Ishitsuka 和 松本也许花了太多的时间来思考 <ruby>shell<rt>贝壳</rt></ruby>、<ruby>clam<rt>蛤蛎</rt></ruby>、<ruby>oyster<rt>牡蛎</rt></ruby>和<ruby>pearl<rt>珍珠</rt></ruby>之间的关系了，以至于差点把 Ruby 命名为“<ruby>Coral<rt>珊瑚虫</rt></ruby>”或“<ruby>Bisque<rt>贝类浓汤</rt></ruby>”。幸好，他们决定使用 Ruby ，因为他就像 pearl 一样，是一种珍贵的宝石。此外，<ruby>Ruby<rt>红宝石</rt></ruby> 还是 7 月的诞生石，而 <ruby>Peral<rt>珍珠</rt></ruby> 则是 6 月的诞生石，采用了类似 C++ 和 C# 的隐喻，暗示着她们是改进自前辈的编程语言。
+（LCTT译注：Perl 和 Pearl 发音相同；shell 是操作系统提供的用户界面，这里指的是命令行界面；更多有关诞生石的[信息](https://zh.wikipedia.org/zh-hans/%E8%AA%95%E7%94%9F%E7%9F%B3)。）
 
 ### Ruby 走向西方
 
