@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zhs852)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,96 +7,93 @@
 [#]: via: (https://www.2daygeek.com/termtosvg-record-your-terminal-sessions-as-svg-animations-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Termtosvg – Record Your Terminal Sessions As SVG Animations In Linux
+Termtosvg – 将你在 Linux 终端中操作录制成 SVG 动画
 ======
 
-By default everyone prefer history command to review/recall the previously entered commands in terminal.
+一般人喜欢使用历史命令功能来查看/再次调用之前在终端中输入的命令。
 
-But unfortunately, that shows only the commands that we ran and doesn’t shows the commands output which was performed previously.
+不幸的是，那样做只会显示先前输入的命令，而不是之前输出的内容。
 
-There are many utilities available in Linux to record the terminal session activity.
+在 Linux 中，有许多可以用来记录终端活动的实用工具。
 
-This tool will help us to record the users terminal activity, also will help us to identify other useful information from the output.
+这种工具将会帮助我们记录用户在终端中的活动，并帮助我们识别输出中有用的信息。
 
-Also, we had written about few utilities in the past and today also we are going to discuss about the same kind of topic.
+在这之前，我们已经介绍了一些这类实用工具了。今天，让我们接着讨论这类工具。
 
-If you would like to check other utilities to record your Linux terminal session activity then you can give a try to **[Script Command][1]** and **[Terminalizer Tool][2]**.
+如果你希望尝试其它一些记录你终端活动的工具，我推荐你试试 **[Script Command][1]** 和 **[Terminalizer Tool][2]**。
 
-But if you are looking for **[GIF Recorder][3]** then try **[Gifine][4]** , **[Kgif][5]** and **[Peek][6]** utilities.
+不过，如果你在寻找 **[GIF 录制器][3]** ，你可以尝试 **[Gifine][4]** 、**[Kgif][5]** 和 **[Peek][6]** 。
 
-Script is one of the best utility to record your terminal session on headless server.
+脚本是在无头服务器中记录终端活动的最佳方式之一。
 
-Script is a Unix command line utility that records a terminal session (in other terms, It’s record everything displayed on your terminal).
+脚本是记录在终端中输入过的 Unix 命令的实用工具（在某些终端中，它会记录显示在你终端中的所有东西）。
 
-It stores the output in the current directory as a text file and the default file name is typescript.
+它会在当前工作目录下以文本文件方式储存所有终端输出。
 
-### What is Termtosvg
+### 什么是 Termtosvg
 
-Termtosvg is a Unix terminal recorder written in Python that renders your command line sessions as standalone SVG animations.
+Termtosvg 是一个用 Python 编写的 Unix 终端录制器，它可以将你的命令行会话保存为 SVG 动画。
 
-### Termtosvg Features
+### Termtosvg 的特点
 
-  * Produce lightweight and clean looking animations embeddable on a project page.
-  * Custom color themes, terminal UI and animation controls via SVG templates.
-  * Compatible with asciinema recording format.
-  * It requires Python >= 3.5
+  * 可以制作用于某个项目主页且简洁美观的动画。
+  * 可以在 SVG 模板中自定义配色、终端 UI 和动画。
+  * 兼容 asciinema 录制格式。
+  * 要求 Python 版本为 3.5 或更高。
+  
+### 如何在 Linux 中安装 Termtosvg
 
+它是用 Python 编写的，所以我推荐使用 pip 来安装它。
 
+请确保你已经安装了 **python-pip** 包。如果你还没安装，请输入下面的命令。
+对于 Debian 或 Ubuntu 用户，请使用 **[apt][7]** 或 **[apt-get][8]** 来安装 pip。
 
-### How to Install Termtosvg In Linux
-
-It was written in Python and pip installation is a recommended method to install Termtosvg on Linux.
-
-Make sure you should have installed python-pip package on your system. If no, use the following command to install it.
-
-For Debian/Ubuntu users, use **[Apt Command][7]** or **[Apt-Get Command][8]** to install pip package.
-
-```
-$ sudo apt install python-pip
+```shell
+sudo apt install python-pip
 ```
 
-For Archlinux users, use **[Pacman Command][9]** to install pip package.
+对于 Archlinux 用户，请使用 **[pacman][9]** 来安装 pip。
 
-```
-$ sudo pacman -S python-pip
-```
-
-For Fedora users, use **[DNF Command][10]** to install pip package.
-
-```
-$ sudo dnf install python-pip
+```shell
+sudo pacman -S python-pip
 ```
 
-For CentOS/RHEL users, use **[YUM Command][11]** to install pip package.
+对于 Fedora 用户，请使用 **[dnf][10]** 来安装 pip。
 
-```
-$ sudo yum install python-pip
-```
-
-For openSUSE users, use **[Zypper Command][12]** to install pip package.
-
-```
-$ sudo zypper install python-pip
+```shell
+sudo dnf install python-pip
 ```
 
-Finally run the following **[pip command][13]** to install Termtosvg tool in Linux.
+对于 CentOS 或 RHEL 用户，请使用 **[yum][11]** 来安装 pip。
 
+```shell
+sudo yum install python-pip
 ```
-$ sudo pip3 install termtosvg pyte python-xlib svgwrite
+
+对于 openSUSE 用户，请使用 **[zypper][12]** 来安装 pip。
+
+```shell
+sudo zypper install python-pip
 ```
 
-### How to Record Your Terminal Session Using Termtosvg
+最后，请执行 **[pip][13]** 来安装 Termtosvg。
 
-Once you successfully installed Termtosvg. Just run the following command to start recording.
-
+```shell
+sudo pip3 install termtosvg pyte python-xlib svgwrite
 ```
+
+### 如何使用 Termtosvg
+
+成功安装 Termtosvg 后，请使用以下命令来开始录制。
+
+```shell
 $ termtosvg
 Recording started, enter "exit" command or Control-D to end
 ```
 
-For testing purpose run few commands and see whether it’s working fine or not.
+如果只是想测试它是否正常工作，随意输入几行命令即可。
 
-```
+```shell
 $ uname -a
 Linux daygeek-Y700 4.19.8-2-MANJARO #1 SMP PREEMPT Sat Dec 8 14:45:36 UTC 2018 x86_64 GNU/Linux
 $ hostname
@@ -124,21 +121,21 @@ $ pip3 --version
 pip 18.1 from /usr/lib/python3.7/site-packages/pip (python 3.7)
 ```
 
-Once you have done, simple press `CTRL+D` or type `exit` to stop the recording. The result will be saved in `/tmp` folder with a unique name.
+完成后，你可以按下 `CTRL+D` 或输入 `exit` 来停止录制。录制完后，输出文件会以一个独一无二的名字被保存在 `/tmp` 文件夹中。
 
-```
+```shell
 $ exit
 exit
 Recording ended, SVG animation is /tmp/termtosvg_5waorper.svg
 ```
 
-We can open the SVG file output with help of any web browser.
+我们可以在任意浏览器中打开 SVG 文件。
 
-```
-$ firefox /tmp/termtosvg_5waorper.svg
+```shell
+firefox /tmp/termtosvg_5waorper.svg
 ```
 
-![][15]
+![最终效果][15]
 
 --------------------------------------------------------------------------------
 
@@ -146,7 +143,7 @@ via: https://www.2daygeek.com/termtosvg-record-your-terminal-sessions-as-svg-ani
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zhs852](https://github.com/zhs852)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
