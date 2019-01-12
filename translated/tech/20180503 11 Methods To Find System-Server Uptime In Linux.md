@@ -1,27 +1,27 @@
-LuMing is translating
-11 Methods To Find System/Server Uptime In Linux
+Linux 上查看系统/服务器运行时间的 11 种方法
 ======
-Do you want to know, how long your Linux system has been running without downtime? when the system is up and what date.
+你是否想知道自己的 Linux 系统除宕机外正常运行了多长时间？系统什么时候启动以及现在的日期？
 
-There are multiple commands is available in Linux to check server/system uptime and most of users prefer the standard and very famous command called `uptime` to get this details.
+Linux 上有多个查看服务器/系统运行时间的命令，大多数用户喜欢使用标准并且很有名的 `uptime` 命令获取这些具体的信息。
 
-Server uptime is not important for some people but it’s very important for server administrators when the server running with mission-critical applications such as online shopping portal, netbanking portal, etc,.
+服务器的运行时间对一些用户来说不那么重要，但是当服务器运行诸如在线商城<ruby>门户<rt>portal</rt></ruby>、网上银行门户等<ruby>关键任务应用<rt>mission-critical applications</rt></ruby>时，它对于<ruby>服务器管理员<rt>server adminstrators</rt></ruby>来说就至关重要。
 
-It must be zero downtime because if there is a down time then it will impact badly to million users.
+它必须做到 0 宕机，因为一旦停机就会影响到数百万用户。
 
-As i told, many commands are available to check server uptime in Linux. In this tutorial we are going teach you how to check this using below 11 methods.
+正如我所说，许多命令都可以让用户看到 Linux 服务器的运行时间。在这篇教程里我会教你如何使用下面 11 种方式来查看。
 
-Uptime means how long the server has been up since its last shutdown or reboot.
+<ruby>正常运行时间<rt>uptime</rt></ruby>指的是服务器自从上次关闭或重启以来经过的时间。
 
-The uptime command the fetch the details from `/proc` files and print the server uptime, the `/proc` file is not directly readable by humans.
+`uptime` 命令获取 `/proc` 文件中的详细信息并输出正常运行时间，`/proc` 文件不能直接读取。
 
-The below commands will print how long the system has been running and up. It also shows some additional information.
+以下这些命令会输出系统运行和启动的时间。也会显示一些额外的信息。
 
-### Method-1 : Using uptime Command
+### 方法 1：使用 uptime 命令
 
-uptime command will tell how long the system has been running. It gives a one line display of the following information.
+`uptime` 命令会告诉你系统运行了多长时间。它会用一行显示以下信息。
 
-The current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes.
+当前时间，系统运行时间，当前登录用户的数量，过去 1 分钟、5 分钟、15 分钟系统负载的均值。
+
 ```
 # uptime
 
@@ -29,10 +29,9 @@ The current time, how long the system has been running, how many users are curre
 
 ```
 
-### Method-2 : Using w Command
+### 方法 2：使用 w 命令
 
-w command provides a quick summary of every user logged into a computer, what each user is currently doing,
-and what load all the activity is imposing on the computer itself. The command is a one-command combination of several other Unix programs: who, uptime, and ps -a.
+`w` 命令为每个登录进系统的用户，每个用户当前所做的事情，所有活动的负载对计算机的影响提供了一个快速的概要。这个单一命令结合了多个 Unix 程序：who，uptime，和 ps -a。
 ```
 # w
 
@@ -42,11 +41,11 @@ root pts/1 103.5.134.167 08:34 0.00s 0.01s 0.00s w
 
 ```
 
-### Method-3 : Using top Command
+### 方法 3：使用 top 命令
 
-Top command is one of the basic command to monitor real-time system processes in Linux. It display system information and running processes information like uptime, average load, tasks running, number of users logged in, number of CPUs & cpu utilization, Memory & swap information. Run top command then hit E to bring the memory utilization in MB.
+`top` 命令是 Linux 上监视实时系统进程的基础命令之一。它显示系统信息和运行进程的信息，例如正常运行时间，平均负载，运行的任务，登录用户数量，CPU 数量 & CPU 利用率，内存 & 交换空间信息。
 
-**Suggested Read :** [TOP Command Examples to Monitor Server Performance][1]
+**推荐阅读：**[TOP 命令监视服务器性能的例子][1]
 ```
 # top -c
 
@@ -65,9 +64,10 @@ Swap: 2097148k total, 0k used, 2097148k free, 1098140k cached
 
 ```
 
-### Method-4 : Using who Command
+### 方法 4：使用 who 命令
 
-who command displays a list of users who are currently logged into the computer. The who command is related to the command w, which provides the same information but also displays additional data and statistics.
+`who` 命令列出当前登录进计算机的用户。`who` 命令与 `w` 命令类似，但后者还包含额外的数据和统计信息。
+
 ```
 # who -b
 
@@ -75,9 +75,10 @@ system boot 2018-04-12 02:48
 
 ```
 
-### Method-5 : Using last Command
+### 方法 5：使用 last 命令
 
-The last command displays a list of last logged in users. Last searches back through the file /var/log/wtmp and displays a list of all users logged in (and out) since that file was created.
+`last` 命令列出最近登录过的用户。`last` 往回查找 `/var/log/wtmp` 文件并显示自从文件创建后登录进（出）的用户。
+
 ```
 # last reboot -F | head -1 | awk '{print $5,$6,$7,$8,$9}'
 
@@ -85,11 +86,12 @@ Thu Apr 12 02:48:04 2018
 
 ```
 
-### Method-6 : Using /proc/uptime File
+### 方法 6：使用 /proc/uptime 文件
 
-This file contains information detailing how long the system has been on since its last restart. The output of `/proc/uptime` is quite minimal.
+这个文件中包含系统上次启动后运行时间的详细信息。`/proc/uptime` 的输出相当精简。
 
-The first number is the total number of seconds the system has been up. The second number is how much of that time the machine has spent idle, in seconds.
+第一个数字是系统自从启动的总秒数。第二个数字是总时间中系统空闲所花费的时间，以秒为单位。
+
 ```
 # cat /proc/uptime
 
@@ -97,19 +99,21 @@ The first number is the total number of seconds the system has been up. The seco
 
 ```
 
-# date -d “$(Method-7 : Using tuptime Command
+### 方法 7：使用 tuptime 命令
 
-Tuptime is a tool for report the historical and statistical running time of the system, keeping it between restarts. Like uptime command but with more interesting output.
+`tuptime` 是一个汇报系统运行时间的工具，输出历史信息并作以统计，保留重启之间的数据。和 `uptime` 命令很像，但输出更有意思一些。
+
 ```
 $ tuptime
 
 ```
 
-### Method-8 : Using htop Command
+### 方法 8：使用 htop 命令
 
-htop is an interactive process viewer for Linux which was developed by Hisham using ncurses library. Htop have many of features and options compared to top command.
+`htop` 是运行在 Linux 上一个由 Hisham 使用 ncurses 库开发的交互式进程查看器。`htop` 比起 `top` 有很多的特性和选项。
 
-**Suggested Read :** [Monitor system resources using Htop command][2]
+**推荐阅读：** [使用 Htop 命令监控系统资源][2]
+
 ```
 # htop
 
@@ -126,13 +130,13 @@ htop is an interactive process viewer for Linux which was developed by Hisham us
 
 ```
 
-### Method-9 : Using glances Command
+### 方法 9：使用 glances 命令
 
-Glances is a cross-platform curses-based system monitoring tool written in Python. We can say all in one place, like maximum of information in a minimum of space. It uses psutil library to get information from your system.
+`glances` 是一个跨平台基于 curses 使用 python 写的监控工具。我们可以说它非常强大，仅用一点空间就能获得很多信息。它使用 psutil 库从系统中获取信息。
 
-Glances capable to monitor CPU, Memory, Load, Process list, Network interface, Disk I/O, Raid, Sensors, Filesystem (and folders), Docker, Monitor, Alert, System info, Uptime, Quicklook (CPU, MEM, LOAD), etc,.
+`glances` 可以监控 CPU，内存，负载，进程，网络接口，磁盘 I/O，<ruby>磁盘阵列<rt>RAID</rt></ruby>，传感器，文件系统（与文件夹），容器，显示器，Alert 日志，系统信息，运行时间，<ruby>快速查看<rt>Quicklook</rt></ruby>（CPU，内存等）。
 
-**Suggested Read :** [Glances (All in one Place)– An Advanced Real Time System Performance Monitoring Tool for Linux][3]
+**推荐阅读：** [Glances （集大成）– Linux 上高级的实时系统运行监控工具][3]
 ```
 glances
 
@@ -157,9 +161,10 @@ sda1 9.46M 12K 0.0 4.9 1.78G 97.2M 6125 daygeek 0 S 1:36.57 0 0 /usr/lib/firefox
 
 ```
 
-### Method-10 : Using stat Command
+### 方法 10：使用 stat 命令
 
-stat command displays the detailed status of a particular file or a file system.
+`stat` 命令显示指定文件或文件系统的详细状态。
+
 ```
 # stat /var/log/dmesg | grep Modify
 
@@ -167,9 +172,10 @@ Modify: 2018-04-12 02:48:04.027999943 -0400
 
 ```
 
-### Method-11 : Using procinfo Command
+### 方法 11：使用 procinfo 命令
 
-procinfo gathers some system data from the /proc directory and prints it nicely formatted on the standard output device.
+`procinfo` 从 `/proc` 文件夹下收集一些系统数据并将其很好的格式化输出在标准输出设备上。
+
 ```
 # procinfo | grep Bootup
 
@@ -183,7 +189,7 @@ via: https://www.2daygeek.com/11-methods-to-find-check-system-server-uptime-in-l
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[LuuMing](https://github.com/LuuMing)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
