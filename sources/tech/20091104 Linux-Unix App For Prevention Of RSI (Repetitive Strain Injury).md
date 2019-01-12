@@ -1,3 +1,5 @@
+Translating  By Guevaraya
+
 Linux/Unix App For Prevention Of RSI (Repetitive Strain Injury)
 ======
 ![workrave-image][1]

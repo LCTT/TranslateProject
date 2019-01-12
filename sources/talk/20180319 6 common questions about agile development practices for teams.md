@@ -1,3 +1,4 @@
+translated by lixinyuxx
 6 common questions about agile development practices for teams
 ======
 
