@@ -1,34 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zhs852)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Termtosvg – Record Your Terminal Sessions As SVG Animations In Linux)
 [#]: via: (https://www.2daygeek.com/termtosvg-record-your-terminal-sessions-as-svg-animations-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Termtosvg – 将你在 Linux 终端中操作录制成 SVG 动画
+Termtosvg：将你在 Linux 终端中操作录制成 SVG 动画
 ======
 
-一般人喜欢使用历史命令功能来查看/再次调用之前在终端中输入的命令。
+一般人喜欢使用历史命令功能来查看/再次调用之前在终端中输入的命令。不幸的是，那样做只会显示先前输入的命令，而不是之前输出的内容。
 
-不幸的是，那样做只会显示先前输入的命令，而不是之前输出的内容。
-
-在 Linux 中，有许多可以用来记录终端活动的实用工具。
-
-这种工具将会帮助我们记录用户在终端中的活动，并帮助我们识别输出中有用的信息。
+在 Linux 中，有许多可以用来记录终端活动的实用工具。这种工具将会帮助我们记录用户在终端中的活动，并帮助我们识别输出中有用的信息。
 
 在这之前，我们已经介绍了一些这类实用工具了。今天，让我们接着讨论这类工具。
 
-如果你希望尝试其它一些记录你终端活动的工具，我推荐你试试 **[Script Command][1]** 和 **[Terminalizer Tool][2]**。
+如果你希望尝试其它一些记录你终端活动的工具，我推荐你试试 [script][1] 命令和 [Terminalizer][2] 工具。`script` 是在无头服务器中记录终端活动的最佳方式之一。`script` 是一个记录在终端中输入过的 Unix 命令的实用工具（在某些终端中，它会记录显示在你终端中的所有东西）。它会在当前工作目录下以文本文件方式储存所有终端输出。
 
-不过，如果你在寻找 **[GIF 录制器][3]** ，你可以尝试 **[Gifine][4]** 、**[Kgif][5]** 和 **[Peek][6]** 。
-
-脚本是在无头服务器中记录终端活动的最佳方式之一。
-
-脚本是记录在终端中输入过的 Unix 命令的实用工具（在某些终端中，它会记录显示在你终端中的所有东西）。
-
-它会在当前工作目录下以文本文件方式储存所有终端输出。
+不过，如果你在寻找 [GIF 录制器][3] ，你可以尝试 [Gifine][4]、[Kgif][5] 和 [Peek][6]。
 
 ### 什么是 Termtosvg
 
@@ -36,47 +26,47 @@ Termtosvg 是一个用 Python 编写的 Unix 终端录制器，它可以将你�
 
 ### Termtosvg 的特点
 
-  * 可以制作用于某个项目主页且简洁美观的动画。
+  * 可以制作嵌入于项目主页的简洁美观的动画。
   * 可以在 SVG 模板中自定义配色、终端 UI 和动画。
   * 兼容 asciinema 录制格式。
   * 要求 Python 版本为 3.5 或更高。
   
 ### 如何在 Linux 中安装 Termtosvg
 
-它是用 Python 编写的，所以我推荐使用 pip 来安装它。
+它是用 Python 编写的，所以我推荐使用 `pip` 来安装它。
 
-请确保你已经安装了 **python-pip** 包。如果你还没安装，请输入下面的命令。
-对于 Debian 或 Ubuntu 用户，请使用 **[apt][7]** 或 **[apt-get][8]** 来安装 pip。
+请确保你已经安装了 python-pip 包。如果你还没安装，请输入下面的命令。
+对于 Debian 或 Ubuntu 用户，请使用 [apt][7] 或 [apt-get][8] 来安装 `pip`。
 
 ```shell
 sudo apt install python-pip
 ```
 
-对于 Archlinux 用户，请使用 **[pacman][9]** 来安装 pip。
+对于 Archlinux 用户，请使用 [pacman][9] 来安装 `pip`。
 
 ```shell
 sudo pacman -S python-pip
 ```
 
-对于 Fedora 用户，请使用 **[dnf][10]** 来安装 pip。
+对于 Fedora 用户，请使用 [dnf][10] 来安装 `pip`。
 
 ```shell
 sudo dnf install python-pip
 ```
 
-对于 CentOS 或 RHEL 用户，请使用 **[yum][11]** 来安装 pip。
+对于 CentOS 或 RHEL 用户，请使用 [yum][11] 来安装 `pip`。
 
 ```shell
 sudo yum install python-pip
 ```
 
-对于 openSUSE 用户，请使用 **[zypper][12]** 来安装 pip。
+对于 openSUSE 用户，请使用 [zypper][12] 来安装 `pip`。
 
 ```shell
 sudo zypper install python-pip
 ```
 
-最后，请执行 **[pip][13]** 来安装 Termtosvg。
+最后，请执行 [pip][13] 来安装 Termtosvg。
 
 ```shell
 sudo pip3 install termtosvg pyte python-xlib svgwrite
