@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (runningwater)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (The Rise and Rise of JSON)
-[#]: via: ( https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html)
+[#]: via: (https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html)
 [#]: author: (https://twobithistory.org)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10440-1.html)
 
 JSON 的兴起与崛起
 ======
