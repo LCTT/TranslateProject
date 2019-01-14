@@ -93,7 +93,7 @@ const bar2 someType = typed // error: int 不能被赋值给 someType
 
 ### 接口和对象
 
-As mentioned before, interfaces are a set of methods. Go is not an object-oriented language per se, but it has some support for associating methods with named types: When declaring a function, a receiver can be provided - a receiver is an additional function argument that is passed before the function and involved in the function lookup, like this:
+正如上面所说的，接口是一组方法的集合。Go 本身不是一种面向对象的语言，但它支持将方法关联到命名类型上：当声明一个函数时，可以提供一个接收者。接收者是函数的一个额外参数，可以在函数之前传递并参与函数查找，就像这样：
 
 ```
 type SomeType struct { ... }
@@ -107,7 +107,7 @@ func main() {
 }
 ```
 
-An object implements an interface if it implements all methods; for example, the following interface `MyMethoder` is implemented by `*SomeType` (note the pointer), and values of `*SomeType` can thus be used as values of `MyMethoder`. The most basic interface is `interface{}`, that is an interface with an empty method set - any object satisfies that interface.
+如果对象实现了所有方法，那么它就实现了接口；例如，`*SomeType`（注意指针）实现了下面的接口 `MyMethoder`，因此 `*SomeType` 类型的值就能作为 `MyMethoder` 类型的值使用。最基本的接口类型是 `interface{}`，它是一个带空方法集的接口——任何对象都满足该接口。
 
 ```
 type MyMethoder interface {
@@ -115,7 +115,7 @@ type MyMethoder interface {
 }
 ```
 
-There are some restrictions on valid receiver types; for example, while a named type could be a pointer (for example, `type MyIntPointer *int`), such a type is not a valid receiver type.
+合法的接收者类型是有些限制的；例如，命名类型可以是指针类型（例如，`type MyIntPointer *int`），但这种类型不是合法的接收者类型。
 
 ### 控制流
 
