@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (fuowang)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (An introduction to the Flask Python web app framework)
