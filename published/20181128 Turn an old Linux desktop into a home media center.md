@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Turn an old Linux desktop into a home media center)
 [#]: via: (https://opensource.com/article/18/11/old-linux-desktop-new-home-media-center)
 [#]: author: ([Alan Formy-Duval](https://opensource.com/users/alanfdoss))
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10446-1.html)
 
 将旧的 Linux 台式机变成家庭媒体中心
 ======
