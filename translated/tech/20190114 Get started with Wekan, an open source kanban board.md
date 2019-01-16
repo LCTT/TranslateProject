@@ -22,7 +22,7 @@
 
 ![](https://opensource.com/sites/default/files/uploads/wekan-1.png)
 
-但这些 APP 通常需要连接到一个工作账户或者商业服务中。而 [Wekan][3] 作为一款开源看板工具，你可以让他完全在本地运行，或者使用你自己选择的服务运行它。其他的看板 APP 中拥有的功能在 Wekan 中也有，例如创建看板、列表、泳道、卡片，在列表间拖放，给指定的用户安排任务，给卡片添加标签等等，几乎你对一款现代看板软件的功能需求它都有。
+但这些 APP 通常需要连接到一个工作账户或者商业服务中。而 [Wekan][3] 作为一款开源看板工具，你可以让他完全在本地运行，或者使用你自己选择的服务运行它。其他的看板 APP 提供的功能在 Wekan 里几乎都有，例如创建看板、列表、泳道、卡片，在列表间拖放，给指定的用户安排任务，给卡片添加标签等等，基本上你对一款现代看板软件的功能需求它都能提供。
 
 ![](https://opensource.com/sites/default/files/uploads/wekan-2.png)
 
@@ -34,7 +34,7 @@ Wekan 的独到之处在于它的内置规则。虽然其他的看板软件支�
 
 ![](https://opensource.com/sites/default/files/uploads/wekan-4.png)
 
-可以直接使用 snap 在本地搭建 Wekan 。如果你的桌面支持 [Snapcraft][4] 构建的应用，那么只需要一条命令就能安装 Wekan ：
+Wekan 的本地搭建可以直接使用 snap 。如果你的桌面环境支持 [Snapcraft][4] 构建的应用，那么只需要一条命令就能安装 Wekan ：
 
 ```
 sudo snap install wekan
