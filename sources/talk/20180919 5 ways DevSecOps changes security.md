@@ -1,3 +1,5 @@
+ translating by hopefully2333 
+
 5 ways DevSecOps changes security
 ======
 
