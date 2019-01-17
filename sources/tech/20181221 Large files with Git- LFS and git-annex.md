@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (runningwater)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -96,7 +96,7 @@ via: https://anarc.at/blog/2018-12-21-large-files-with-git/
 
 作者：[Anarc.at][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
