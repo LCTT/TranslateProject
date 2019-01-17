@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (runningwater)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Install Microsoft .NET Core SDK On Linux)
@@ -38,7 +38,7 @@ $ sudo apt-get update
 $ sudo apt-get install dotnet-sdk-2.2
 ```
 
-**Debian 8 系统上安装:** 
+**Debian 8 系统上安装：** 
 
 增加微软密钥，添加 .NET 仓库源：
 
@@ -51,14 +51,14 @@ $ sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 $ sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 ```
 
-安装 .NET SDK:
+安装 .NET SDK：
 
 ```
 $ sudo apt-get update
 $ sudo apt-get install dotnet-sdk-2.2
 ```
 
-**Fedora 28 系统上安装:**
+**Fedora 28 系统上安装：**
 
 增加微软密钥，添加 .NET 仓库源：
 
@@ -69,7 +69,7 @@ $ sudo mv prod.repo /etc/yum.repos.d/microsoft-prod.repo
 $ sudo chown root:root /etc/yum.repos.d/microsoft-prod.repo
 ```
 
-现在, 可以安装 .NET SDK 了:
+现在, 可以安装 .NET SDK 了：
 
 ```
 $ sudo dnf update
@@ -87,29 +87,29 @@ $ sudo mv prod.repo /etc/yum.repos.d/microsoft-prod.repo
 $ sudo chown root:root /etc/yum.repos.d/microsoft-prod.repo
 ```
 
-接着安装 .NET SDK ，命令如下:
+接着安装 .NET SDK ，命令如下：
 
 ```
 $ sudo dnf update
 $ sudo dnf install dotnet-sdk-2.2
 ```
 
-**CentOS/Oracle 版本的 Linux 系统上:**
+**CentOS/Oracle 版本的 Linux 系统上：**
 
-增加微软密钥，添加 .NET 仓库源，使其可用
+增加微软密钥，添加 .NET 仓库源，使其可用：
 
 ```
 $ sudo rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 ```
 
-更新源仓库，安装 .NET SDK:
+更新源仓库，安装 .NET SDK：
 
 ```
 $ sudo yum update
 $ sudo yum install dotnet-sdk-2.2
 ```
 
-**openSUSE Leap 版本的系统上:**
+**openSUSE Leap 版本的系统上：**
 
 添加密钥，使仓库源可用，安装必需的依赖包，其命令如下：
 
@@ -128,7 +128,7 @@ $ sudo zypper update
 $ sudo zypper install dotnet-sdk-2.2
 ```
 
-**Ubuntu 18.04 LTS 版本的系统上:**
+**Ubuntu 18.04 LTS 版本的系统上：**
 
 注册微软的密钥和 .NET Core 仓库源，命令如下：
 
@@ -137,13 +137,13 @@ $ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-
 $ sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-使 ‘Universe’ 仓库可用：
+使 Universe 仓库可用：
 
 ```
 $ sudo add-apt-repository universe
 ```
 
-然后，安装 .NET Core SDK ，命令如下:
+然后，安装 .NET Core SDK ，命令如下：
 
 ```
 $ sudo apt-get install apt-transport-https
@@ -151,7 +151,7 @@ $sudo apt-get update
 $ sudo apt-get install dotnet-sdk-2.2
 ```
 
-**Ubuntu 16.04 LTS 版本的系统上:**
+**Ubuntu 16.04 LTS 版本的系统上：**
 
 注册微软的密钥和 .NET Core 仓库源，命令如下：
 
@@ -160,7 +160,7 @@ $ wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-
 $ sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-然后安装 .NET core SDK:
+然后安装 .NET core SDK：
 
 ```
 $ sudo apt-get install apt-transport-https
@@ -172,13 +172,13 @@ $ sudo apt-get install dotnet-sdk-2.2
 
 我们已经成功的在 Linux 机器中安装了 .NET Core SDK。是时候使用 dotnet 创建第一个应用程序了。
 
-接下来的目的，我们会创建一个名为 **“ostechnixApp”** 的应用程序。为此，可以简单的运行如下命令：
+接下来的目的，我们会创建一个名为 ostechnixApp 的应用程序。为此，可以简单的运行如下命令：
 
 ```
 $ dotnet new console -o ostechnixApp
 ```
 
-**简单的输出:**
+**示例输出：**
 
 ```
 Welcome to .NET Core!
@@ -220,21 +220,21 @@ $ ls
 obj ostechnixApp.csproj Program.cs
 ```
 
-可以看到有两个名为 **ostechnixApp.csproj** 和 **Program.cs** 的文件，以及一个名为 **ojb** 的目录。默认情况下,  `Program.cs` 文件包含有可以在控制台中运行的 'Hello World' 程序代码。可以看看此代码：
+可以看到有两个名为 `ostechnixApp.csproj` 和 `Program.cs` 的文件，以及一个名为 `ojb` 的目录。默认情况下,  `Program.cs` 文件包含有可以在控制台中运行的 “Hello World” 程序代码。可以看看此代码：
 
 ```
-$ cat Program.cs
+$ cat Program.cs 
 using System;
 
 namespace ostechnixApp
 {
- class Program
- {
- static void Main(string[] args)
- {
- Console.WriteLine("Hello World!");
- }
- }
+     class Program
+     {
+       static void Main(string[] args)
+       {
+         Console.WriteLine("Hello World!");
+       }
+   }
 }
 ```
 
@@ -247,13 +247,12 @@ Hello World!
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/12/run-dotnet.png)
 
-很简单，对吧？是的，就是如此简单。现在你可以在 **Program.cs** 这文件中写上自己的代码，然后像上面所示的执行。
+很简单，对吧？是的，就是如此简单。现在你可以在 `Program.cs` 这文件中写上自己的代码，然后像上面所示的执行。
 
 或者，你可以创建一个新的目录，如例子所示的 `mycode` 目录，命令如下：
 
 ```
 $ mkdir ~/.mycode
-
 $ cd mycode/
 ```
 
@@ -263,7 +262,7 @@ $ cd mycode/
 $ dotnet new console
 ```
 
-简单的输出:
+示例输出：
 
 ```
 The template "Console Application" was created successfully.
@@ -278,9 +277,9 @@ Restore completed in 331.87 ms for /home/sk/mycode/mycode.csproj.
 Restore succeeded.
 ```
 
-上的命令会创建两个名叫 **mycode.csproj** 和 **Program.cs** 的文件及一个名为 **obj** 的目录。用你喜欢的编辑器打开 `Program.cs` 文件, 删除或修改原来的 'hello world' 代码段，然后编写自己的代码。
+上的命令会创建两个名叫 `mycode.csproj` 和 `Program.cs` 的文件及一个名为 `obj` 的目录。用你喜欢的编辑器打开 `Program.cs` 文件, 删除或修改原来的 “hello world” 代码段，然后编写自己的代码。
 
-写完代码，保存，关闭 Program.cs 文件，然后运行此应用程序，命令如下：
+写完代码，保存，关闭 `Program.cs` 文件，然后运行此应用程序，命令如下：
 
 ```
 $ dotnet run
@@ -301,17 +300,17 @@ $ dotnet --help
 
 ### 使用微软的 Visual Studio Code 编辑器
 
-要编写代码，你可以任选自己喜欢的编辑器。同时微软自己也有一款支持 .NET 的编辑器，其名为 “ **Microsoft Visual Studio Code** ”。它是一款开源、轻量级、功能强大的源代码编辑器。其内置了对 JavaScript、TypeScript 和 Node.js 的支持，并为其它语言（如 C++、C#、Python、PHP、Go）和运行时态（如 .NET 和 Unity）提供了丰富的扩展，已经形成一个完整的生态系统。它是一款跨平台的代码编辑器，所以在微软的 Windows 系统、GNU/Linux 系统和 Mac OS X 系统都可以使用。如果对其感兴趣，就可以使用。
+要编写代码，你可以任选自己喜欢的编辑器。同时微软自己也有一款支持 .NET 的编辑器，其名为 “Microsoft Visual Studio Code”。它是一款开源、轻量级、功能强大的源代码编辑器。其内置了对 JavaScript、TypeScript 和 Node.js 的支持，并为其它语言（如 C++、C#、Python、PHP、Go）和运行时态（如 .NET 和 Unity）提供了丰富的扩展，已经形成一个完整的生态系统。它是一款跨平台的代码编辑器，所以在微软的 Windows 系统、GNU/Linux 系统和 Mac OS X 系统都可以使用。如果对其感兴趣，就可以使用。
 
-To know how to install and use it on Linux, please refer the following guide.想了解如何在 Linux 上安装和使用，请参阅以下指南。
+想了解如何在 Linux 上安装和使用，请参阅以下指南。
 
 [Linux 中安装 Microsoft Visual Studio Code][3]
 
-关于 Visual Studio Code editor 中 .NET Core 和 .NET Core SDK 工具的使用，[**此网页**][1]有一些基础的教程。想了解更多就去看看吧。
+关于 Visual Studio Code editor 中 .NET Core 和 .NET Core SDK 工具的使用，[此网页][1]有一些基础的教程。想了解更多就去看看吧。
 
 ### Telemetry
 
-默认情况下，.NET core SDK 会采集用户使用情况数据，此功能被称为 **‘Telemetry’**。采集数据是匿名的，并根据[知识共享署名许可][2]分享给其开发团队和社区。因此 .NET 团队会知道这些工具的使用状况，然后根据统计做出决策，改进产品。如果你不想分享自己的使用信息的话，可以使用顺手的 shell 工具把名为 **DOTNET_CLI_TELEMETRY_OPTOUT** 的环境变量参数设置为 **‘1’** 或 **‘true’**，这样就简单的关闭此功能了。
+默认情况下，.NET core SDK 会采集用户使用情况数据，此功能被称为 Telemetry。采集数据是匿名的，并根据[知识共享署名许可][2]分享给其开发团队和社区。因此 .NET 团队会知道这些工具的使用状况，然后根据统计做出决策，改进产品。如果你不想分享自己的使用信息的话，可以使用顺手的 shell 工具把名为 `DOTNET_CLI_TELEMETRY_OPTOUT` 的环境变量参数设置为 `1` 或 `true`，这样就简单的关闭此功能了。
 
 就这样。你已经知道如何在各 Linux 平台上安装 .NET Core SDK 以及知道如何创建基本的应用程序了。想了解更多 .NET 使用知识的话，请参阅此文章末尾给出的链接。
 
@@ -319,6 +318,9 @@ To know how to install and use it on Linux, please refer the following guide.想
 
 祝贺下!
 
+### 资源
+
+- [.NET Core](https://dotnet.microsoft.com/)
 
 
 --------------------------------------------------------------------------------
@@ -328,7 +330,7 @@ via: https://www.ostechnix.com/how-to-install-microsoft-net-core-sdk-on-linux/
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[runningwater](https://github.com/runningwater)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
