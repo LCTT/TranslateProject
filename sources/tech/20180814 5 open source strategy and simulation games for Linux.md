@@ -1,3 +1,4 @@
+Scoutydren is translating. 
 5 open source strategy and simulation games for Linux
 ======
 
