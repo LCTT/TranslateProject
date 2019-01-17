@@ -119,24 +119,21 @@ type MyMethoder interface {
 
 ### 控制流
 
-Go provides three primary statements for control flow: `if`, `switch`, and `for`. The statements are fairly similar to their equivalent in other C-like languages, with some exceptions:
+Go 提供了三个主要的控制了语句：`if`、`switch` 和 `for`。这些语句同其他 C 风格语言内的语句非常类似，但有一些不同：
 
-  * There are no parentheses around conditions, so it is `if a == b {}`, not `if (a == b) {}`. The braces are mandatory.
+  * 条件语句没有括号，所以条件语句是 `if a == b {}` 而不是 `if (a == b) {}`。大括号是必须的。
 
-  * All of them can have initialisers, like this
+  * 所有的语句都可以有初始化，比如这个
+    
+    `if result, err := someFunction(); err == nil { // use result }`
+    
+  * `switch` 语句在 cases 里可以使用任何表达式
 
-`if result, err := someFunction(); err == nil { // use result }`
+  * `switch` 语句可以处理空的表达式（等于 true）
 
-  * The `switch` statement can use arbitrary expressions in cases
+  * 默认情况下，Go 不会从一个 case 进入下一个 case（不需要 `break`），在程序块的末尾使用 `fallthrough` 则会进入下一个 case。
 
-  * The `switch` statement can switch over nothing (equals switching over true)
-
-  * Cases do not fall through by default (no `break` needed), use `fallthrough` at the end of a block to fall through.
-
-  * The `for` loop can loop over ranges: `for key, val := range map { do something }`
-
-
-
+  * 循环语句 `for` 不止能循环值域：`for key, val := range map { do something }`
 
 ### Goroutines
 
