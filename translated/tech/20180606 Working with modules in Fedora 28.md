@@ -1,6 +1,8 @@
 使用 Fedora 28 中的模块
 ======
+
 ![](https://fedoramagazine.org/wp-content/uploads/2018/05/modules-workingwith-816x345.jpg)
+
 最近 Fedora Magazine 中题为 [Fedora 28 服务器版的模块化][1]在解释 Fedora  28 中的模块化方面做得很好。它还给出了一些示例模块并解释了它们解决的问题。本文将其中一个模块用于实际应用，包括使用模块安装设置 Review Board 3.0。
 
 ### 入门
@@ -21,9 +23,9 @@ sudo dnf -y update
 dnf module list
 ```
 
-输出列出了一组模块，这些模块显示了每个模块的关联流，版本和可用安装配置文件。模块流旁边的 [d] 表示安装命名模块时使用的默认流。
+输出列出了一组模块，这些模块显示了每个模块的关联流、版本和可用安装配置文件。模块流旁边的 `[d]` 表示安装命名模块时使用的默认流。
 
-输出还显示大多数模块都有名为 default 的配置文件。这不是巧合，因为 default 是默认配置文件使用的名称。
+输出还显示大多数模块都有名为 `default` 的配置文件。这不是巧合，因为 `default` 是默认配置文件使用的名称。
 
 要查看所有这些模块的来源，请运行：
 
@@ -31,7 +33,7 @@ dnf module list
 dnf repolist
 ```
 
-与通常的 [fedora 和更新包仓库][5]一起，输出还显示了fedora-modular 和 updates-modular 仓库。
+与通常的 [fedora 和更新包仓库][5]一起，输出还显示了 fedora-modular 和 updates-modular 仓库。
 
 介绍声明你将设置 Review Board 3.0。也许名为 reviewboard 的模块在之前的输出中引起了你的注意。接下来，要获取有关该模块的一些详细信息，请运行以下命令：
 
@@ -45,7 +47,7 @@ dnf module info reviewboard
 dnf module list reviewboard
 ```
 
-2.5 旁边的 [d] 表示它被配置为 reviewboard 的默认流。因此，请明确你想要的流：
+2.5 旁边的 `[d]` 表示它被配置为 reviewboard 的默认流。因此，请明确你想要的流：
 
 ```
 dnf module info reviewboard:3.0
@@ -65,7 +67,7 @@ dnf module info reviewboard:3.0 -v
 sudo dnf -y module install reviewboard:3.0
 ```
 
-输出显示已安装 ReviewBoard 以及其他几个依赖软件包，其中包括 django:1.6 模块中的几个软件包。安装还启用了reviewboard:3.0 模块和相关的 django:1.6 模块。
+输出显示已安装 ReviewBoard 以及其他几个依赖软件包，其中包括 django:1.6 模块中的几个软件包。安装还启用了 reviewboard:3.0 模块和相关的 django:1.6 模块。
 
 接下来，要查看已启用的模块，请使用以下命令：
 
@@ -73,13 +75,13 @@ sudo dnf -y module install reviewboard:3.0
 dnf module list --enabled
 ```
 
-输出中，[e] 表示已启用的流，[i] 表示已安装的配置。对于 reviewboard:3.0 模块，已安装默认配置。你可以在安装模块时指定其他配置。实际上，你仍然可以安装它，而且这次你不需要指定 3.0，因为它已经启用：
+输出中，`[e]` 表示已启用的流，`[i]` 表示已安装的配置。对于 reviewboard:3.0 模块，已安装默认配置。你可以在安装模块时指定其他配置。实际上，你仍然可以安装它，而且这次你不需要指定 3.0，因为它已经启用：
 
 ```
 sudo dnf -y module install reviewboard/server
 ```
 
-但是，安装 reviewboard:3.0/服务配置非常平常。reviewboard:3.0 模块的服务器配置与默认配置文件相同 - 因此无需安装。
+但是，安装 reviewboard:3.0/server 配置非常平常。reviewboard:3.0 模块的服务器配置与默认配置文件相同 —— 因此无需安装。
 
 ### 启动 Review Board  网站
 
@@ -100,7 +102,7 @@ sudo setsebool -P httpd_can_sendmail=1 httpd_can_network_connect=1 \
 sudo systemctl enable --now httpd
 ```
 
-现在启动系统中的 Web 浏览器，打开 <http://localhost>，然后享受全新的 Review Board 网站！要以 Review Board 管理员身份登录，请使用上面 rb-site 命令中的用户 ID 和密码。
+现在启动系统中的 Web 浏览器，打开 <http://localhost>，然后享受全新的 Review Board 网站！要以 Review Board 管理员身份登录，请使用上面 `rb-site` 命令中的用户 ID 和密码。
 
 ### 模块清理
 
@@ -118,12 +120,16 @@ sudo rm -rf /var/www/rev.local
 在 [Fedora 模块化][7]网站上了解有关在 Fedora 28 中使用模块的更多信息。dnf 手册页中的 module 命令部分也包含了有用的信息。
 
 --------------------------------------------------------------------------------
+
 via: https://fedoramagazine.org/working-modules-fedora-28/
+
 作者：[Merlin Mathesius][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
+
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
 [a]:https://fedoramagazine.org/author/merlinm/
 [1]:https://fedoramagazine.org/modularity-fedora-28-server-edition/
 [2]:https://getfedora.org/server/
