@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wwhio)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Get started with Wekan, an open source kanban board)
@@ -9,7 +9,9 @@
 
 开始使用 Wekan 吧，一款开源看板软件
 ======
-这是开源工具类软件推荐的第二期，本文将让你在 2019 年更具生产力。来，让我们一起看看 Wekan 吧。
+
+> 这是开源工具类软件推荐的第二期，本文将让你在 2019 年更具生产力。来，让我们一起看看 Wekan 吧。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/kanban-board.png?itok=tXC0dkKV)
 
 每年年初，人们似乎都在想方设法地让自己更具生产力。对新年目标、期待，当然还有“新年新气象”这样的口号等等都促人上进。可大部分生产力软件的推荐都严重偏向闭源的专有软件，但事实上并不用这样。
@@ -22,7 +24,7 @@
 
 ![](https://opensource.com/sites/default/files/uploads/wekan-1.png)
 
-但这些 APP 通常需要连接到一个工作账户或者商业服务中。而 [Wekan][3] 作为一款开源看板工具，你可以让他完全在本地运行，或者使用你自己选择的服务运行它。其他的看板 APP 提供的功能在 Wekan 里几乎都有，例如创建看板、列表、泳道、卡片，在列表间拖放，给指定的用户安排任务，给卡片添加标签等等，基本上你对一款现代看板软件的功能需求它都能提供。
+但这些 APP 通常需要连接到一个工作账户或者商业服务中。而 [Wekan][3] 作为一款开源看板工具，你可以让它完全在本地运行，或者使用你自己选择的服务运行它。其他的看板 APP 提供的功能在 Wekan 里几乎都有，例如创建看板、列表、泳道、卡片，在列表间拖放，给指定的用户安排任务，给卡片添加标签等等，基本上你对一款现代看板软件的功能需求它都能提供。
 
 ![](https://opensource.com/sites/default/files/uploads/wekan-2.png)
 
@@ -52,7 +54,7 @@ via: https://opensource.com/article/19/1/productivity-tool-wekan
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[wwhio](https://github.com/wwhio)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
