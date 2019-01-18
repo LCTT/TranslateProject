@@ -1,3 +1,5 @@
+zhs852 is translating.
+
 Dawn of the Microcomputer: The Altair 8800
 ======
 Subscribers to Popular Electronics were a sophisticated group. The magazine’s editor, Arthur Salsberg, felt compelled to point out as much in the editorial section of the [December 1974 issue][1]. The magazine had received letters complaining that a recent article, titled “How to Set Up a Home TV Service Shop,” would inspire a horde of amateur TV technicians to go out and undercut professional repairmen, doing great damage to everyone’s TVs in the process. Salsberg thought this concern was based on a misunderstanding about who read Popular Electronics. He explained that, according to the magazine’s own surveys, 52% of Popular Electronics subscribers were electronics professionals of some kind and 150,000 of them had repaired a TV in the last 60 days. Moreover, the average Popular Electronics subscriber had spent $470 on electronics equipment ($3578 in 2018) and possessed such necessities as VOMs, VTVMs, tube testers, transistor testers, r-f signal generators, and scopes. “Popular Electronics readers are not largely neophytes,” Salsberg concluded.
