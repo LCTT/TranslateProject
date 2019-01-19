@@ -1,10 +1,10 @@
-[#]: collector:	(lujun9972)
-[#]: translator:	(jlztan)
+[#]: collector: (lujun9972)
+[#]: translator: (jlztan)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10456-1.html)
 [#]: subject: (What is PPA? Everything You Need to Know About PPA in Linux)
-[#]: via:	(https://itsfoss.com/ppa-guide/)
+[#]: via: (https://itsfoss.com/ppa-guide/)
 [#]: author: (Abhishek Prakash  https://itsfoss.com/author/abhishek/)
 
 Ubuntu PPA 使用指南
