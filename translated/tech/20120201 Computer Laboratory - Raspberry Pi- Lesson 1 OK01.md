@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (qhwdw)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: ()
+[#]: url: ()
 [#]: subject: (Computer Laboratory – Raspberry Pi: Lesson 1 OK01)
 [#]: via: (https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/ok01.html)
 [#]: author: (Robert Mullins http://www.cl.cam.ac.uk/~rdm34)
@@ -196,15 +196,15 @@ b loop$
 
 将这个 SD 卡插入到树莓派，并打开它的电源。这个 OK 的 LED 灯将亮起来。如果不是这样，请查看故障排除页面。如果一切如愿，恭喜你，你已经写出了你的第一个操作系统。[课程 2 OK02][12] 将指导你让 LED 灯闪烁和关闭闪烁。
 
-[^1]: OK, I'm lying it tells the linker, which is another program used to link several assembled files together. It doesn't really matter.
-[^2]: Clearly they're important to you. Since the GNU toolchain is mainly used for creating programs, it expects there to be an entry point labelled `_start`. As we're making an operating system, the `_start` is always whatever comes first, which we set up with the `.section .init` command. However, if we don't say where the entry point is, the toolchain gets upset. Thus, the first line says that we are going to define a symbol called `_start` for all to see (globally), and the second line says to make the symbol `_start` the address of the next line. We will come onto addresses shortly.
-[^3]: This tutorial is designed to spare you the pain of reading it, but, if you must, it can be found here [SoC-Peripherals.pdf](https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/downloads/SoC-Peripherals.pdf). For added confusion, the manual uses a different addressing system. An address listed as 0x7E200000 would be 0x20200000 in our OS.
-[^4]: Only values which have a binary representation which only has 1s in the first 8 bits of the representation. In other words, 8 1s or 0s followed by only 0s.
-[^5]: A hardware engineer was kind enough to explain this to me as follows: 
+[^1]: 是的，我说错了，它告诉的是链接器，它是另一个程序，用于将汇编器转换过的几个代码文件链接到一起。直接说是汇编器也没有大问题。
+[^2]: 其实它们对你很重要。由于 GNU 工具链主要用于开发操作系统，它要求入口点必须是名为 `_start` 的地方。由于我们是开发一个操作系统，无论什么时候，它总是从 `_start` 开时的，而我们可以使用 `.section .init` 命令去设置它。因此，如果我们没有告诉它入口点在哪里，就会使工具链困惑而产生警告消息。所以，我们先定义一个名为 `_start` 的符号，它是所有人可见的（全局的），紧接着在下一行生成符号 `_start` 的地址。我们很快就讲到这个地址了。
+[^3]: 本教程的设计减少了你阅读树莓派开发手册的难度，但是，如果你必须要阅读它，你可以在这里 [SoC-Peripherals.pdf](https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/downloads/SoC-Peripherals.pdf) 找到它。由于添加了混淆，手册中 GPIO 使用了不同的地址系统。我们的操作系统中的地址 0x20200000 对应到手册中是 0x7E200000。
+[^4]: mov 能够加载的值只有前 8 位是 1s 的二进制表示的值。换句话说就是一个 0s 后面紧跟着 8 个 1s 或 0s。
+[^5]: 一个很友好的硬件工程师是这样向我解释这个问题的：
+
+    原因是现在的芯片都是用一种称为 CMOS 的技术来制成的，它是互补金属氧化物半导体的简称。互补的意思是每个信号都连接到两个晶体管上，一个是使用 N 型半导体的材料制成，它用于将电压拉低，而另一个使用 P 型半导体材料制成，它用于将电压升高。在任何时刻，仅有一个半导体是打开的，否则将会短路。P 型材料的导电性能不如 N 型材料。这意味着三倍大的 P 型半导体材料才能提供与 N 型半导体材料相同的电流。这就是为什么 LED 总是通过降低为低电压来打开它，因为 N 型半导体拉低电压比 P 型半导体拉高电压的性能更强。
     
-    The reason is that modern chips are made of a technology called CMOS, which stands for Complementary Metal Oxide Semiconductor. The Complementary part means each signal is connected to two transistors, one made of material called N-type semiconductor which is used to pull it to a low voltage and another made of P-type material to pull it to a high voltage. Only one transistor of the pair turns on at any time, otherwise we'd get a short circuit. P-type isn't as conductive as N-type, which means the P-type transistor has to be about 3 times as big to provide the same current. This is why LEDs are often wired to turn on by pulling them low, because the N-type is stronger at pulling low than the P-type is in pulling high.
-    
-    There's another reason. Back in the 1970s chips were made out of entirely out of N-type material ('NMOS'), with the P-type replaced by a resistor. That means that when a signal is pulled low the chip is consuming power (and getting hot) even while it isn't doing anything. Your phone getting hot and flattening the battery when it's in your pocket doing nothing wouldn't be good. So signals were designed to be 'active low' so that they're high when inactive and so don't take any power. Even though we don't use NMOS any more, it's still often quicker to pull a signal low with the N-type than to pull it high with the P-type. Often a signal that's 'active low' is marked with a bar over the top of the name, or written as SIGNAL_n or /SIGNAL. But it can still be confusing, even for hardware engineers!
+    还有一个原因。早在上世纪七十年代，芯片完全是由 N 型材料制成的（NMOS），P 型材料部分使用了一个电阻来代替。这意味着当信号为低电压时，即便它什么事都没有做，芯片仍然在消耗能量（并发热）。你的电话装在口袋里什么事都不做，它仍然会发热并消耗你的电池电量，这不是好的设计。因此，信号设计成 'active low'，而不活动时为高电压，这样就不会消耗能源了。虽然我们现在已经不使用 NMOS 了，但由于 N 型材料的低电压信号比 P 型材料的高电压信号要快，所以仍然使用了这种设计。通常在一个 'active low' 信号名字上方会有一个条型标记，或者写作 SIGNAL_n 或 /SIGNAL。但是即便这样，仍然很让人困惑，那怕是硬件工程师，也不可避免这种困惑！
 
 --------------------------------------------------------------------------------
 
