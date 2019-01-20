@@ -1,23 +1,23 @@
-[#]: collector: (lujun9972)
-[#]: translator: (qhwdw)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How to Build a Netboot Server, Part 4)
-[#]: via: (https://fedoramagazine.org/how-to-build-a-netboot-server-part-4/)
-[#]: author: (Gregory Bartholomew https://fedoramagazine.org/author/glb/)
+[#]: collector: "lujun9972"
+[#]: translator: "qhwdw"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "How to Build a Netboot Server, Part 4"
+[#]: via: "https://fedoramagazine.org/how-to-build-a-netboot-server-part-4/"
+[#]: author: "Gregory Bartholomew https://fedoramagazine.org/author/glb/"
 
-How to Build a Netboot Server, Part 4
+如何构建一台网络引导服务器（四）
 ======
 ![](https://fedoramagazine.org/wp-content/uploads/2018/11/netboot4-816x345.jpg)
 
-One significant limitation of the netboot server built in this series is the operating system image being served is read-only. Some use cases may require the end user to modify the image. For example, an instructor may want to have the students install and configure software packages like MariaDB and Node.js as part of their course walk-through.
+在本系列教程中所构建的网络引导服务器有一个很重要的限制，那就是所提供的操作系统镜像是只读的。一些使用场景或许要求终端用户能够修改操作系统镜像。例如，一些教师或许希望学生能够安装和配置一些像 MariaDB 和 Node.js 这样的包来做为他们课程练习的一部分。
 
-An added benefit of writable netboot images is the end user’s “personalized” operating system can follow them to different workstations they may use at later times.
+可写镜像的另外的好处是，终端用户“私人定制”的操作系统，在下次不同的工作站上使用时能够“跟着”他们。
 
-### Change the Bootmenu Application to use HTTPS
+### 修改 Bootmenu 应用程序去使用 HTTPS
 
-Create a self-signed certificate for the bootmenu application:
+为 bootmenu 应用程序创建一个自签名的证书：
 
 ```
 $ sudo -i
@@ -27,21 +27,21 @@ $ sudo -i
 # openssl req -newkey rsa:2048 -nodes -keyout $MY_TLSD/$MY_NAME.key -x509 -days 3650 -out $MY_TLSD/$MY_NAME.pem
 ```
 
-Verify your certificate’s values. Make sure the “CN” value in the “Subject” line matches the DNS name that your iPXE clients use to connect to your bootmenu server:
+验证你的证书的值。确保 “Subject” 行中 “CN” 的值与你的 iPXE 客户端连接你的网络引导服务器所使用的 DNS 名字是相匹配的：
 
 ```
 # openssl x509 -text -noout -in $MY_TLSD/$MY_NAME.pem
 ```
 
-Next, update the bootmenu application’s listen directive to use the HTTPS port and the newly created certificate and key:
+接下来，更新 bootmenu 应用程序去监听 HTTPS 端口和新创建的证书及密钥：
 
 ```
 # sed -i "s#listen => .*#listen => ['https://$MY_NAME:443?cert=$MY_TLSD/$MY_NAME.pem\&key=$MY_TLSD/$MY_NAME.key\&ciphers=AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA'],#" /opt/bootmenu/bootmenu.conf
 ```
 
-Note the ciphers have been restricted to [those currently supported by iPXE][1].
+注意 [iPXE 当前支持的][1] 加密算法是有限制的。
 
-GnuTLS requires the “CAP_DAC_READ_SEARCH” capability, so add it to the bootmenu application’s systemd service:
+GnuTLS 要求 “CAP_DAC_READ_SEARCH” 能力，因此将它添加到 bootmenu 应用程序的 systemd 服务：
 
 ```
 # sed -i '/^AmbientCapabilities=/ s/$/ CAP_DAC_READ_SEARCH/' /etc/systemd/system/bootmenu.service
@@ -49,7 +49,7 @@ GnuTLS requires the “CAP_DAC_READ_SEARCH” capability, so add it to the bootm
 # systemctl daemon-reload
 ```
 
-Now, add an exception for the bootmenu service to the firewall and restart the service:
+现在，在防火墙中为 bootmenu 服务添加一个例外规则并重启动服务：
 
 ```
 # MY_SUBNET=192.0.2.0
@@ -59,7 +59,7 @@ Now, add an exception for the bootmenu service to the firewall and restart the s
 # systemctl restart bootmenu.service
 ```
 
-Use wget to verify it’s working:
+使用 wget 去验证是否工作正常：
 
 ```
 $ MY_NAME=server-01.example.edu
@@ -67,9 +67,9 @@ $ MY_TLSD=/opt/bootmenu/tls
 $ wget -q --ca-certificate=$MY_TLSD/$MY_NAME.pem -O - https://$MY_NAME/menu
 ```
 
-### Add HTTPS to iPXE
+### 添加 HTTPS 到 iPXE
 
-Update init.ipxe to use HTTPS. Then recompile the ipxe bootloader with options to embed and trust the self-signed certificate you created for the bootmenu application:
+更新 init.ipxe 去使用 HTTPS。接着使用选项重新编译 ipxe 引导加载器，以便它包含和信任你为 bootmenu 应用程序创建的自签名证书：
 
 ```
 $ echo '#define DOWNLOAD_PROTO_HTTPS' >> $HOME/ipxe/src/config/local/general.h
@@ -80,22 +80,22 @@ $ make clean
 $ make bin-x86_64-efi/ipxe.efi EMBED=../init.ipxe CERT="../$MY_NAME.pem" TRUST="../$MY_NAME.pem"
 ```
 
-You can now copy the HTTPS-enabled iPXE bootloader out to your clients and test that everything is working correctly:
+你现在可以将启用了 HTTPS 的 iPXE 引导加载器复制到你的客户端上，并测试它能否正常工作：
 
 ```
 $ cp $HOME/ipxe/src/bin-x86_64-efi/ipxe.efi $HOME/esp/efi/boot/bootx64.efi
 ```
 
-### Add User Authentication to Mojolicious
+### 添加用户验证到 Mojolicious 中
 
-Create a PAM service definition for the bootmenu application:
+为 bootmenu 应用程序创建一个 PAM 服务定义：
 
 ```
 # dnf install -y pam_krb5
 # echo 'auth required pam_krb5.so' > /etc/pam.d/bootmenu
 ```
 
-Add a library to the bootmenu application that uses the Authen-PAM perl module to perform user authentication:
+添加一个库到 bootmenu 应用程序中，它使用 Authen-PAM 的 perl 模块去执行用户验证：
 
 ```
 # dnf install -y perl-Authen-PAM;
@@ -144,9 +144,9 @@ return 1;
 END
 ```
 
-The above code is taken almost verbatim from the Authen::PAM::FAQ man page.
+以上的代码是一字不差是从 Authen::PAM::FAQ 的 man 页面中复制来的。
 
-Redefine the bootmenu application so it returns a netboot template only if a valid username and password are supplied:
+重定义 bootmenu 应用程序，以使它仅当提供了有效的用户名和密码之后返回一个网络引导模板：
 
 ```
 # cat << 'END' > $MY_MOJO/bootmenu.pl
@@ -185,14 +185,14 @@ app->start;
 END
 ```
 
-The bootmenu application now looks for the lib directory relative to its WorkingDirectory. However, by default the working directory is set to the root directory of the server for systemd units. Therefore, you must update the systemd unit to set WorkingDirectory to the root of the bootmenu application instead:
+bootmenu 应用程序现在查找 lib 去找到相应的 WorkingDirectory。但是，默认情况下，对于 systemd 单元它的工作目录设置为服务器的 root 目录。因此，你必须更新 systemd 单元去设置 WorkingDirectory 为 bootmenu 应用程序的根目录：
 
 ```
 # sed -i "/^RuntimeDirectory=/ a WorkingDirectory=$MY_MOJO" /etc/systemd/system/bootmenu.service
 # systemctl daemon-reload
 ```
 
-Update the templates to work with the redefined bootmenu application:
+更新模块去使用重定义后的 bootmenu 应用程序：
 
 ```
 # cd $MY_MOJO/templates
@@ -201,7 +201,7 @@ Update the templates to work with the redefined bootmenu application:
 # for i in $MY_FEDORA_RELEASES; do echo '#!ipxe' > fc$i.html.ep; grep "^kernel\|initrd" menu.html.ep | grep "fc$i" >> fc$i.html.ep; echo "boot || chain https://$MY_BOOTMENU_SERVER/menu" >> fc$i.html.ep; sed -i "/^:f$i$/,/^boot /c :f$i\nlogin\nchain https://$MY_BOOTMENU_SERVER/boot?instance=fc$i\&username=\${username}\&password=\${password:uristring} || goto failed" menu.html.ep; done
 ```
 
-The result of the last command above should be three files similar to the following:
+上面的最后的命令将生成类似下面的三个文件：
 
 **menu.html.ep** :
 
@@ -259,41 +259,41 @@ initrd --name initrd.img ${prefix}/initramfs-4.19.3-200.fc28.x86_64.img
 boot || chain https://server-01.example.edu/menu
 ```
 
-Now, restart the bootmenu application and verify authentication is working:
+现在，重启动 bootmenu 应用程序，并验证用户认证是否正常工作：
 
 ```
 # systemctl restart bootmenu.service
 ```
 
-### Make the iSCSI Target Writeable
+### 使得 iSCSI Target 可写
 
-Now that user authentication works through iPXE, you can create per-user, writeable overlays on top of the read-only image on demand when users connect. Using a [copy-on-write][2] overlay has three advantages over simply copying the original image file for each user:
+现在，用户验证通过 iPXE 可以正常工作，在用户连接时，你可以按需在只读镜像的上面创建每用户的可写覆盖。使用一个 [写时复制][2] 覆盖与简单地为每个用户复制原始镜像相比有三个好处：
 
-  1. The copy can be created very quickly. This allows creation on-demand.
-  2. The copy does not increase the disk usage on the server. Only what the user writes to their personal copy of the image is stored in addition to the original image.
-  3. Since most sectors for each copy are the same sectors on the server’s storage, they’ll likely already be loaded in RAM when subsequent users access their copies of the operating system. This improves the server’s performance because RAM is faster than disk I/O.
+  1. 复制创建非常快。这样就可以按需创建。
+  2. 复制并不增加服务器上的磁盘使用。除了原始镜像之外，仅存储用户写入个人镜像的内容。
+  3. 由于每个用户复制的扇区大多都是服务器的存储上的相同的扇区，在随后的用户访问这些操作系统的副本时，它们可能已经加载到内存中，这样就提升了服务器的性能，因为对内存的访问速度要比磁盘 I/O 快得多。
 
 
 
-One potential pitfall of using copy-on-write is that once overlays are created, the images on which they are overlayed must not be changed. If they are changed, all the overlays will be corrupted. Then the overlays must be deleted and replaced with new, blank overlays. Even simply mounting the image file in read-write mode can cause sufficient filesystem updates to corrupt the overlays.
+使用写时复制的一个潜在隐患是，一旦覆盖创建后，覆盖之下的镜像就不能再改变。如果它们改变，所有它们之上的覆盖将出错。因此，覆盖必须被删除并用新的、空白的替换。即便只是简单地以读写模式加载的镜像，也可能因为某些文件系统更新导致覆盖出错。
 
-Due to the potential for the overlays to be corrupted if the original image is modified, mark the original image as immutable by running:
+由于这个隐患，如果原始镜像被修改将导致覆盖出错，因此运行下列的命令，将原始镜像标记为不可改变：
 
 ```
 # chattr +i </path/to/file>
 ```
 
-You can use lsattr </path/to/file> to view the status of the immutable flag and use to chattr -i </path/to/file> unset the immutable flag. While the immutable flag is set, even the root user or a system process running as root cannot modify or delete the file.
+你可以使用 `lsattr </path/to/file>` 去查看不可改变标志，并可以使用 `chattr -i </path/to/file>` 取消设置不可改变标志。在设置了不可改变标志之后，即便是 root 用户或以 root 运行的系统进程也不修改或删除这个文件。
 
-Begin by stopping the tgtd.service so you can change the image files:
+停止 tgtd.service 之后，你就可以改变镜像文件：
 
 ```
 # systemctl stop tgtd.service
 ```
 
-It’s normal for this command to take a minute or so to stop when there are connections still open.
+当仍有连接打开的时候，运行这个命令一般需要一分钟或更长的时间。
 
-Now, remove the read-only iSCSI export. Then update the readonly-root configuration file in the template so the image is no longer read-only:
+现在，移除只读的 iSCSI 出口。然后更新模板中的配置文件为 readonly-root，以使镜像不再是只读的：
 
 ```
 # MY_FC=fc29
@@ -305,16 +305,16 @@ Now, remove the read-only iSCSI export. Then update the readonly-root configurat
 # umount $TEMP_MNT
 ```
 
-Journald was changed from logging to volatile memory back to its default (log to disk if /var/log/journal exists) because a user reported his clients would freeze with an out-of-memory error due to an application generating excessive system logs. The downside to setting logging to disk is that extra write traffic is generated by the clients, and might burden your netboot server with unnecessary I/O. You should decide which option — log to memory or log to disk — is preferable depending on your environment.
+将 Journald 日志从发送到内存修改回缺省值（记录到磁盘，如果 /var/log/journal 存在的话），因为一个用户报告说，他的客户端由于应用程序生成了大量的系统日志而产生内存溢出错误，导致它的客户端被卡住。而将日志记录到磁盘的负面影响是客户端产生了额外的写入流量，这将在你的网络引导服务器上可能增加一些没有必要的 I/O。你应该去决定到底使用哪个选择 — 记录到内存还是记录到硬盘 — 哪个更合适取决于你的环境。
 
-Since you won’t make any further changes to the template image, set the immutable flag on it and restart the tgtd.service:
+因为你的模板镜像在以后不能做任何的更改，因此在它上面设置不可更改标志，然后重启动 tgtd.service：
 
 ```
 # chattr +i /$MY_FC.img
 # systemctl start tgtd.service
 ```
 
-Now, update the bootmenu application:
+现在，更新 bootmenu 应用程序：
 
 ```
 # cat << 'END' > $MY_MOJO/bootmenu.pl
@@ -355,13 +355,13 @@ app->start;
 END
 ```
 
-This new version of the bootmenu application calls a custom mktgt script which, on success, returns a random [CHAP][3] password for each new iSCSI target that it creates. The CHAP password prevents one user from mounting another user’s iSCSI target by indirect means. The app only returns the correct iSCSI target password to a user who has successfully authenticated.
+新版本的 bootmenu 应用程序调用一个定制的 mktgt 脚本，如果成功，它将为每个它自己创建的新的 iSCSI 目标返回一个随机的 [CHAP][3] 密码。这个 CHAP 密码可以防止其它用户的 iSCSI 目标以间接方式挂载这个用户的目标。这个应用程序只有在用户密码认证成功之后才返回一个正确的 iSCSI 目标密码。
 
-The mktgt script is prefixed with sudo because it needs root privileges to create the target.
+mktgt 脚本要加 sudo 前缀来运行，因为它需要 root 权限去创建目标。
 
-The $username and $chapscrt variables also pass to the render command so they can be incorporated into the templates returned to the user when necessary.
+\$username 和 \$chapscrt 变量也传递 render 命令，因此在需要的时候，它们也能够被纳入到模板中返回给用户。
 
-Next, update our boot templates so they can read the username and chapscrt variables and pass them along to the end user. Also update the templates to mount the root filesystem in rw (read-write) mode:
+接下来，更新我们的引导模板，以便于它们能够读取用户名和 chapscrt 变量，并传递它们到所属的终端用户。也要更新模板以 rw（读写）模式加载根文件系统：
 
 ```
 # cd $MY_MOJO/templates
@@ -370,7 +370,7 @@ Next, update our boot templates so they can read the username and chapscrt varia
 # sed -i "s/ ro / rw /" $MY_FC.html.ep
 ```
 
-After running the above commands, you should have boot templates like the following:
+运行上面的命令后，你应该会看到如下的引导模板：
 
 ```
 #!ipxe
@@ -379,17 +379,17 @@ initrd --name initrd.img ${prefix}/initramfs-4.19.5-300.fc29.x86_64.img
 boot || chain https://server-01.example.edu/menu
 ```
 
-NOTE: If you need to view the boot template after the variables have been [interpolated][4], you can insert the “shell” command on its own line just before the “boot” command. Then, when you netboot your client, iPXE gives you an interactive shell where you can enter “imgstat” to view the parameters being passed to the kernel. If everything looks correct, you can type “exit” to leave the shell and continue the boot process.
+注意：如果在 [插入][4] 变量后需要查看引导模板，你可以在 “boot” 命令之前，在它自己的行中插入 “shell” 命令。然后在你网络引导你的客户端时，iPXE 将在那里给你提供一个用于交互的 shell，你可以在 shell 中输入 “imgstat” 去查看传递到内核的参数。如果一切正确，你可以输入 “exit” 去退出 shell 并继续引导过程。
 
-Now allow the bootmenu user to run the mktgt script (and only that script) as root via sudo:
+现在，通过 sudo 允许 bootmenu 用户以 root 权限去运行 mktgt 脚本（仅那个脚本）：
 
 ```
 # echo "bootmenu ALL = NOPASSWD: $MY_MOJO/scripts/mktgt *" > /etc/sudoers.d/bootmenu
 ```
 
-The bootmenu user should not have write access to the mktgt script or any other files under its home directory. All the files under /opt/bootmenu should be owned by root, and should not be writable by any user other than root.
+bootmenu 用户不应该写访问 mktgt 脚本或在它的 home 目录下的任何其它文件。在 /opt/bootmenu 目录下的所有文件的属主应该是 root，并且不应该被其它任何 root 以外的用户可写。
 
-Sudo does not work well with systemd’s DynamicUser option, so create a normal user account and set the systemd service to run as that user:
+Sudo 在使用 systemd 的 DynamicUser 选项下不能正常工作，因此创建一个普通用户帐户，并设置 systemd 服务以那个用户运行：
 
 ```
 # useradd -r -c 'iPXE Boot Menu Service' -d /opt/bootmenu -s /sbin/nologin bootmenu
@@ -397,7 +397,7 @@ Sudo does not work well with systemd’s DynamicUser option, so create a normal 
 # systemctl daemon-reload
 ```
 
-Finally, create a directory for the copy-on-write overlays and create the mktgt script that manages the iSCSI targets and their overlayed backing stores:
+最后，为写时复制覆盖创建一个目录，并创建管理 iSCSI 目标的 mktgt 脚本和它们的覆盖支持存储：
 
 ```
 # mkdir /$MY_FC.cow
@@ -508,27 +508,27 @@ END
 # chmod +x $MY_MOJO/scripts/mktgt
 ```
 
-The above script does five things:
+上面的脚本将做以下五件事情：
 
-  1. It creates the /<instance>.cow/<username> sparse file if it does not already exist.
-  2. It creates the /dev/mapper/<instance>-<username> device node that serves as the copy-on-write backing store for the iSCSI target if it does not already exist.
-  3. It creates the iqn.<reverse-hostname>:<instance>-<username> iSCSI target if it does not exist. Or, if the target does exist, it closes any existing connections to it because the image can only be opened in read-write mode from one place at a time.
-  4. It (re)sets the chap password on the iqn.<reverse-hostname>:<instance>-<username> iSCSI target to a new random value.
-  5. It prints the new chap password on [standard output][5] if all of the previous tasks compeleted successfully.
+  1. 创建 /<instance>.cow/<username> 稀疏文件（如果不存在的话）。
+  2. 创建 /dev/mapper/<instance>-<username> 设备节点作为 iSCSI 目标的写时复制支持存储（如果不存在的话）。
+  3. 创建 iqn.<reverse-hostname>:<instance>-<username> iSCSI 目标（如果不存在的话）。或者，如果已存在了，它将关闭任何已存在的连接，因为在任何时刻，镜像只能以只读模式从一个地方打开。
+  4. 它在 iqn.<reverse-hostname>:<instance>-<username> iSCSI 目标上（重新）设置 chap 密码为一个新的随机值。
+  5. （如果前面的所有任务都成功的话）它在 [标准输出][5] 上显示新的 chap 密码。
 
 
 
-You should be able to test the mktgt script from the command line by running it with valid test parameters. For example:
+你应该可以在命令行上通过使用有效的测试参数来运行它，以测试 mktgt 脚本能否正常工作。例如：
 
 ```
 # echo `$MY_MOJO/scripts/mktgt fc29 jsmith`
 ```
 
-When run from the command line, the mktgt script should print out either the eight-character random password for the iSCSI target if it succeeded or the line number on which something went wrong if it failed.
+当你从命令行上运行时，mktgt 脚本应该会输出 iSCSI 目标的一个随意的八字符随机密码（如果成功的话）或者是出错位置的行号（如果失败的话）。
 
-On occasion, you may want to delete an iSCSI target without having to stop the entire service. For example, a user might inadvertently corrupt their personal image, in which case you would need to systematically undo everything that the above mktgt script does so that the next time they log in they will get a copy of the original image.
+有时候，你可能需要在不停止整个服务的情况下删除一个 iSCSI 目标。例如，一个用户可能无意中损坏了他的个人镜像，在那种情况下，你可能需要按步骤撤销上面的 mktgt 脚本所做的事情，以便于他下次登入时他将得到一个原始镜像。
 
-Below is an rmtgt script that undoes, in reverse order, what the above mktgt script did:
+下面是用于撤销的 rmtgt 脚本，它以相反的顺序做了上面 mktgt 脚本所做的事情：
 
 ```
 # mkdir $HOME/bin
@@ -594,22 +594,21 @@ END
 # chmod +x $HOME/bin/rmtgt
 ```
 
-For example, to use the above script to completely remove the fc29-jsmith target including its backing store device node and its sparse file, run the following:
+例如，使用上面的脚本去完全删除 fc29-jsmith 目标，包含它的支持存储设备节点和稀疏文件，可以按下列方式运行命令：
 
 ```
 # rmtgt fc29 jsmith +f
 ```
 
-Once you’ve verified that the mktgt script is working properly, you can restart the bootmenu service. The next time someone netboots, they should receive a personal copy of the the netboot image they can write to:
+一旦你验证 mktgt 脚本工作正常，你可以重启动 bootmenu 服务。下次有人从网络引导时，他们应该能够接收到一个他们可以写入的、可”私人定制“的网络引导镜像的副本：
 
 ```
 # systemctl restart bootmenu.service
 ```
 
-Users should now be able to modify the root filesystem as demonstrated in the below screenshot:
+现在，就像下面的截屏示范的那样，用户应该可以修改根文件系统了：
 
 ![][6]
-
 
 --------------------------------------------------------------------------------
 
@@ -617,7 +616,7 @@ via: https://fedoramagazine.org/how-to-build-a-netboot-server-part-4/
 
 作者：[Gregory Bartholomew][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
