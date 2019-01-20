@@ -4,31 +4,38 @@
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (XML vs JSON)
-[#]: via: (https://www.cs.tufts.edu/comp/150IDS/final_papers/tstras01.1/FinalReport/FinalReport.html#xml-advantages)
+[#]: via: (https://www.cs.tufts.edu/comp/150IDS/final_papers/tstras01.1/FinalReport/FinalReport.html)
 [#]: author: (TOM STRASSNER  tomstrassner@gmail.com)
 
 XML vs JSON
 ======
 
-### Introduction
+### 简介 Introduction
 
 XML and JSON are the two most common formats for data interchange in the Web today. XML was created by the W3C in 1996, and JSON was publicly specified by Douglas Crockford in 2002. Although their purposes are not identical, they are frequently used to accomplish the same task, which is data interchange. Both have well-documented open standards on the Web ([RFC 7159][1], [RFC 4825][2]), and both are human and machine-readable. Neither one is absolutely superior to the other, as each is better suited for different use cases.
+在今天，XML 和 JSON 是互联网上最常用的两种数据交换格式。XML 格式由 W3C 于 1996 年提出。JSON 格式由 Douglas Crockford 于 2020 年提出。虽然制作这两种格式的目的不同，但它们都是数据交换中常用的格式。这两种格式的文档都很完善([RFC 7159][1], [RFC 4825][2])，且都同时具有<ruby>人类可读性<rt>human-readable</rt></ruby>和<ruby>机器可读性<rt>machine-readable</rt></ruby>。这两种格式并没有哪一个比另一个更强，只是各自适用的领域不用。（LCTT译注：W3C 是[互联网联盟](https://www.w3.org/)，制定了各种 Web 相关的标准，如 HTML、CSS 等。Douglas Crockford 除了制定了 JSON 格式，还致力于改进 JavaScript，开发了 JavaScript 相关工具 [JSLint](http://jslint.com/) 和 [JSMin](http://www.crockford.com/javascript/jsmin.html)。）
 
-### XML Advantages
+### XML 的优点 Advantages
 
 There are several advantages that XML has over JSON. One of the biggest differences between the two is that in XML you can put metadata into the tags in the form of attributes. With JSON, the programmer could accomplish the same goal that metadata achieves by making the entity an object and adding the attributes as members of the object. However, the way XML does it may often be preferable, given the slightly misleading nature of turning something into an object that is not one in the client program. For example, if your C++ program sends an int via JSON and needs metadata to be sent along with it, you would have to make it an object, with one name/value pair for the actual value of the int, and more name/value pairs for each attribute. The program that receives the JSON would read it as an object, when in fact it is not one. While this is a viable solution, it defies one of JSON’s key advantages: “JSON's structures look like conventional programming language structures. No restructuring is necessary.”[2]
+XML 与 JSON 相比有很多优点。二者间最大的不同在于使用 XML 时可以通过在标签中添加属性这一简单的方法来存储<ruby>元数据<rt>metadata</rt></ruby>。而使用 JSON 时需要创建一个对象，把元数据当作对象的成员来存储。虽然二者都能达到存储元数据的目的，但在这一情况下通常选择 XML，因为 JSON 的表达形式会让客户端程序误以为要将数据转换成一个对象。举个例子，如果你的 C++ 程序需要使用 JSON 格式发送一个附带元数据的整型数据，需要创建一个对象，用对象中的一个<ruby>名称/值对<rt>name/value pair</rt></ruby>来记录整型数据的值，再为每一个附带的属性添加一个名称/值对。接收到这个 JSON 的程序在读取后很可能把它当成一个对象，可事实并不是这样。虽然这是使用 JSON 传递元数据的一种变通方法，但他违背了 JSON 的核心优势：“<ruby>JSON 的结构与常规的程序语言中的结构相对应，而无需修改。<rt>JSON's structures look like conventional programming language structures. No restructuring is necessary.</rt></ruby>”[2]
 
 Although I will argue later that this can also be a drawback of XML, its mechanism to resolve name conflicts, prefixes, gives it power that JSON does not have. With prefixes, the programmer has the ability to name two different kinds of entities the same thing.[1] This would be advantageous in situations where the different entities should have the same name in the client program, perhaps if they are used in entirely different scopes.
+虽然我后面会说这也是 XML 的一个缺点，但 XML 中处理命名冲突、<ruby>前缀<rt>prefix</rt></ruby>的机制赋予了它 JSON 所不具备的能力。程序员们使用前缀可以给两个不同的实体使用同一名称。[1]当不同的实体在客户端中使用的名称相同时，这一特性会非常有用。
 
 Another advantage of XML is that most browsers render it in a highly readable and organized way. The tree structure of XML lends itself well to this formatting, and allows for browsers to let users to naturally collapse individual tree elements. This feature would be particularly useful in debugging.
+XML 的另一个优势在于大多数的浏览器可以把它以<ruby>具有高可读性和强组织性的方式<rt>highly readable and organized way</rt></ruby>展现给用户。XML 的树形结构让它易于结构化，浏览器也让用户可以自行展开或折叠树中的元素，这简直就是调试的福音。
 
 One of the most significant advantages that XML has over JSON is its ability to communicate mixed content, i.e. strings that contain structured markup. In order to handle this with XML, the programmer need only put the marked-up text within a child tag of the parent in which it belongs. Similar to the metadata situation, since JSON only contains data, there is no such simple way to indicate markup. It would again require storing metadata as data, which could be considered an abuse of the format.
+XML 对比 JSON 有一个很重要的能力就是它可以<ruby>混合多种内容<rt>mixed content</rt></ruby>。例如在 XML 中处理包含结构化标记的字符串时，程序员们只要把带有标记的文本放在一个标签内就可以了。而且和元数据的处理类似，由于 JSON 只包含数据，没有用于指明标签的简单方式。虽然这里还可以使用处理元数据的解决方法，但这总有点误用格式之嫌。
 
-### JSON Advantages
+### JSON 的优点 Advantages
 
 JSON has several advantages as well. One of the most obvious of these is that JSON is significantly less verbose than XML, because XML necessitates opening and closing tags (or in some cases less verbose self-closing tags), and JSON uses name/value pairs, concisely delineated by “{“ and “}” for objects, “[“ and “]” for arrays, “,” to separate pairs, and “:” to separate name from value. Even when zipped (using gzip), JSON is still smaller and it takes less time to zip it.[6] As determined by Sumaray and Makki as well as Nurseitov, Paulson, Reynolds, and Izurieta in their experimental findings, JSON outperforms XML in a number of ways. First, naturally following from its conciseness, JSON files that contain the same information as their XML counterparts are almost always significantly smaller, which leads to faster transmission and processing. Second, difference in size aside, both groups found that JSON was serialized and deserialized drastically faster than XML.[3][4] Third, the latter study determined that JSON processing outdoes XML in CPU resource utilization. They found that JSON used less total resources, more user CPU, and less system CPU. The experiment used RedHat machines, and RedHat claims that higher user CPU usage is preferable.[3] Unsurprisingly, the Sumaray and Makki study determined that JSON performance is superior to XML on mobile devices too.[4] This makes sense, given that JSON uses less resources, and mobile devices are less powerful than desktop machines.
+JSON 自身也有很多优点。其最显而易见的一点就是 JSON 比 XML 简洁得多。因为 XML 中需要标签的打开和关闭，而 JSON 使用名称/值对，使用简单的“{”和“}”来标记对象，“\[”和“\]”来标记数组，“,”来表示数据的分隔，“:”表示名称和值的分隔。就算是使用 gzip 压缩，JSON 还是比 XML 要小，而且耗时更少。[6]正如 Sumaray 和 Makki 在实验中指出的那样，JSON 在很多方面都比 XML 更具优势，得出同样结果的还有 Nurseitov、Paulson、Reynolds 和 Izurieta。首先，由于 JSON 文件天生的简洁性，与包含相同信息的 XML 相比，JSON 总是更小，这就意味着更快的传输和处理速度。第二，在不考虑大小的情况下，两组研究[3][4]表明使用 JSON 序列化和反序列化的速度显著优于使用 XML。第三，后续的研究指出 JSON 的处理会使用更多的 CPU 资源。他们发现 JSON 在总体上使用的资源更少，但在用户空间消耗更多的 CPU 资源，同时系统空间消耗更少的 CPU 资源。这一实验是在 RedHat 的设备上进行的，RedHat 更倾向于在用户空间消耗更多的 CPU 资源。[3]不出意外，Sumaray 和 Makki 的研究里还说明了在移动设备上 JSON 的性能也优于 XML。[4]这说得通，因为 JSON 在整体上消耗的资源更少，而且移动设备也没有台式机那么强劲。
 
 Yet another advantage that JSON has over XML is that its representation of objects and arrays allows for direct mapping onto the corresponding data structures in the host language, such as objects, records, structs, dictionaries, hash tables, keyed lists, and associative arrays for objects, and arrays, vectors, lists, and sequences for arrays.[2] Although it is perfectly possible to represent these structures in XML, it is only as a function of the parsing, and it takes more code to serialize and deserialize properly. It also would not always be obvious to the reader of arbitrary XML what tags represent an object and what tags represent an array, especially because nested tags can just as easily be structured markup instead. The curly braces and brackets of JSON definitively show the structure of the data. However, this advantage does come with the caveat explained above, that the JSON can inaccurately represent the data if the need arises to send metadata.
+JSON 的另一个优点在于其对对象和数组的描述允许<ruby>宿主语言<rt>host language</rt></ruby>直接将它映射到对应数据结构上，例如<ruby>对象<rt>object</rt></ruby>、<ruby>记录<rt>record</rt></ruby>、<ruby>结构体<rt>struct</rt></ruby>、<ruby>字典<rt>dictionary</rt></ruby>、<ruby>哈希表<rt>hash table</rt></ruby>、<ruby>键值列表<rt>keyed list</rt></ruby>还有对象组成的数组，以及<ruby>数组<rt>array</rt></ruby>、<ruby>向量<rt>vector</rt></ruby>、<ruby>列表<rt>list</rt></ruby>等等。[2] 虽然 XML 里也能表达这些数据结构，也只需调用一个函数就能完成解析，但需要更多的代码才能正确的完成 XML 的序列化和反序列化处理。而且 XML 对于人类来说不如 JSON 那么直观，因为 XML 标准缺乏对象、数组的标签的明确定义，尤其是潜逃的标签可以简单的使用结构化的标记替代时。
 
 Although XML supports namespaces and prefixes, JSON’s handling of name collisions is less verbose than prefixes, and arguably feels more natural with the program using it; in JSON, each object is its own namespace, so names may be repeated as long as they are in different scopes. This may be preferable, as in most programming languages members of different objects can have the same name, because they are distinguished by the names of the objects to which they belong.
 
@@ -92,7 +99,7 @@ The given trends indicate that JSON will continue to dominate the Web, and XML u
 
 --------------------------------------------------------------------------------
 
-via: https://www.cs.tufts.edu/comp/150IDS/final_papers/tstras01.1/FinalReport/FinalReport.html#xml-advantages
+via: https://www.cs.tufts.edu/comp/150IDS/final_papers/tstras01.1/FinalReport/FinalReport.html
 
 作者：[TOM STRASSNER][a]
 选题：[lujun9972][b]
