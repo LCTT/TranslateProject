@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Move Multiple File Types Simultaneously From Commandline)
@@ -12,20 +12,20 @@
 
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/Move-Multiple-File-Types-720x340.png)
 
-前几天，我想知道如何将多个文件类型从一个目录移动（不复制）到另一个目录。我已经知道如何[**查找并将某些类型的文件从一个目录复制到另一个目录**][1]。但是，我不知道如何同时移动多种文件类型。如果你曾遇到这样的情况，我知道在类 Unix 系统中从命令行执行该操作的一个简单方法。
+前几天，我想知道如何将多个文件类型从一个目录移动（不复制）到另一个目录。我已经知道如何[查找并将某些类型的文件从一个目录复制到另一个目录][1]。但是，我不知道如何同时移动多种文件类型。如果你曾遇到这样的情况，我知道在类 Unix 系统中从命令行执行该操作的一个简单方法。
 
 ### 同时移动多种文件类型
 
-想象一下这种场景，你在名为 **‘dir1’** 的目录中有多种类型的文件，例如 .pdf, .doc, .mp3, .mp4, .txt 等等。我们来看看 dir1 的内容：
+想象一下这种场景，你在名为 `dir1` 的目录中有多种类型的文件，例如 .pdf、 .doc、 .mp3、 .mp4、 .txt 等等。我们来看看 `dir1` 的内容：
 
 ```
 $ ls dir1
 file.txt image.jpg mydoc.doc personal.pdf song.mp3 video.mp4
 ```
 
-你希望将某些文件类型（不是所有文件类型）移动到另一个位置。例如，假设你想将 doc, pdf 和 txt 文件一次性移动到名为 **‘dir2’** 的另一个目录中。
+你希望将某些文件类型（不是所有文件类型）移动到另一个位置。例如，假设你想将 .doc、 .pdf 和 .txt 文件一次性移动到名为 `dir2` 的另一个目录中。
 
-要同时将 .doc, .pdf 和 .txt 文件从 dir1 移动到 dir2，命令是：
+要同时将 .doc、 .pdf 和 .txt 文件从 `dir1` 移动到 `dir2`，命令是：
 
 ```
 $ mv dir1/*.{doc,pdf,txt} dir2/
@@ -33,31 +33,32 @@ $ mv dir1/*.{doc,pdf,txt} dir2/
 
 很容易，不是吗？
 
-现在让我们来查看一下 dir2 的内容：
+现在让我们来查看一下 `dir2` 的内容：
+
 ```
 $ ls dir2/
 file.txt mydoc.doc personal.pdf
 ```
 
-看到了吗？只有 .doc, .pdf 和 .txt 从 dir1 移到了 dir2。
+看到了吗？只有 .doc、 .pdf 和 .txt 从 `dir1` 移到了 `dir2`。
 
 ![][3]
 
 在上面的命令中，你可以在花括号内添加任意数量的文件类型，以将它们移动到不同的目录中。它在 Bash 上非常适合我。
 
-另一种移动多种文件类型的方法是转到源目录，在我们的例子中即为 dir1:
+另一种移动多种文件类型的方法是转到源目录，在我们的例子中即为 `dir1`：
 
 ```
 $ cd ~/dir1
 ```
 
-将你选择的文件类型移动到目的地（即 dir2），如下所示：
+将你选择的文件类型移动到目的地（即 `dir2`），如下所示：
 
 ```
 $ mv *.doc *.txt *.pdf /home/sk/dir2/
 ```
 
-要移动具有特定扩展名的所有文件，例如 **.doc**，运行：
+要移动具有特定扩展名的所有文件，例如 .doc，运行：
 
 ```
 $ mv dir1/*.doc dir2/
@@ -82,7 +83,7 @@ via: https://www.ostechnix.com/how-to-move-multiple-file-types-simultaneously-fr
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
