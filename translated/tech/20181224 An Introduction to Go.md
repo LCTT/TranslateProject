@@ -137,7 +137,7 @@ Go 提供了三个主要的控制了语句：`if`、`switch` 和 `for`。这些�
 
 ### Goroutines
 
-The keyword `go` spawns a new goroutine, a concurrently executed function. It can be used with any function call, even a function literal:
+关键词 `go` 会产生一个新的 goroutine，一个可以并行执行的函数。它可以用于任何函数调用，甚至一个匿名函数：
 
 ```
 func main() {
@@ -150,7 +150,7 @@ func main() {
 }
 ```
 
-### Channels
+### 信道
 
 Goroutines are often combined with channels to provide an extended form of Communicating Sequential Processes . A channel is a concurrent-safe queue, and can be buffered or unbuffered:
 
