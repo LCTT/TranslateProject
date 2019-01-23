@@ -35,27 +35,36 @@ JSON has several advantages as well. One of the most obvious of these is that JS
 JSON 自身也有很多优点。其最显而易见的一点就是 JSON 比 XML 简洁得多。因为 XML 中需要标签的打开和关闭，而 JSON 使用名称/值对，使用简单的“{”和“}”来标记对象，“\[”和“\]”来标记数组，“,”来表示数据的分隔，“:”表示名称和值的分隔。就算是使用 gzip 压缩，JSON 还是比 XML 要小，而且耗时更少。[6]正如 Sumaray 和 Makki 在实验中指出的那样，JSON 在很多方面都比 XML 更具优势，得出同样结果的还有 Nurseitov、Paulson、Reynolds 和 Izurieta。首先，由于 JSON 文件天生的简洁性，与包含相同信息的 XML 相比，JSON 总是更小，这就意味着更快的传输和处理速度。第二，在不考虑大小的情况下，两组研究[3][4]表明使用 JSON 序列化和反序列化的速度显著优于使用 XML。第三，后续的研究指出 JSON 的处理会使用更多的 CPU 资源。他们发现 JSON 在总体上使用的资源更少，但在用户空间消耗更多的 CPU 资源，同时系统空间消耗更少的 CPU 资源。这一实验是在 RedHat 的设备上进行的，RedHat 更倾向于在用户空间消耗更多的 CPU 资源。[3]不出意外，Sumaray 和 Makki 的研究里还说明了在移动设备上 JSON 的性能也优于 XML。[4]这说得通，因为 JSON 在整体上消耗的资源更少，而且移动设备也没有台式机那么强劲。
 
 Yet another advantage that JSON has over XML is that its representation of objects and arrays allows for direct mapping onto the corresponding data structures in the host language, such as objects, records, structs, dictionaries, hash tables, keyed lists, and associative arrays for objects, and arrays, vectors, lists, and sequences for arrays.[2] Although it is perfectly possible to represent these structures in XML, it is only as a function of the parsing, and it takes more code to serialize and deserialize properly. It also would not always be obvious to the reader of arbitrary XML what tags represent an object and what tags represent an array, especially because nested tags can just as easily be structured markup instead. The curly braces and brackets of JSON definitively show the structure of the data. However, this advantage does come with the caveat explained above, that the JSON can inaccurately represent the data if the need arises to send metadata.
-JSON 的另一个优点在于其对对象和数组的描述允许<ruby>宿主语言<rt>host language</rt></ruby>直接将它映射到对应数据结构上，例如<ruby>对象<rt>object</rt></ruby>、<ruby>记录<rt>record</rt></ruby>、<ruby>结构体<rt>struct</rt></ruby>、<ruby>字典<rt>dictionary</rt></ruby>、<ruby>哈希表<rt>hash table</rt></ruby>、<ruby>键值列表<rt>keyed list</rt></ruby>还有对象组成的数组，以及<ruby>数组<rt>array</rt></ruby>、<ruby>向量<rt>vector</rt></ruby>、<ruby>列表<rt>list</rt></ruby>等等。[2] 虽然 XML 里也能表达这些数据结构，也只需调用一个函数就能完成解析，但需要更多的代码才能正确的完成 XML 的序列化和反序列化处理。而且 XML 对于人类来说不如 JSON 那么直观，因为 XML 标准缺乏对象、数组的标签的明确定义，尤其是潜逃的标签可以简单的使用结构化的标记替代时。
+JSON 的另一个优点在于其对对象和数组的描述允许<ruby>宿主语言<rt>host language</rt></ruby>直接将它映射到对应数据结构上，例如<ruby>对象<rt>object</rt></ruby>、<ruby>记录<rt>record</rt></ruby>、<ruby>结构体<rt>struct</rt></ruby>、<ruby>字典<rt>dictionary</rt></ruby>、<ruby>哈希表<rt>hash table</rt></ruby>、<ruby>键值列表<rt>keyed list</rt></ruby>还有对象组成的数组，以及<ruby>数组<rt>array</rt></ruby>、<ruby>向量<rt>vector</rt></ruby>、<ruby>列表<rt>list</rt></ruby>等等。[2] 虽然 XML 里也能表达这些数据结构，也只需调用一个函数就能完成解析，但需要更多的代码才能正确的完成 XML 的序列化和反序列化处理。而且 XML 对于人类来说不如 JSON 那么直观，因为 XML 标准缺乏对象、数组的标签的明确定义，尤其是潜逃的标签可以简单的使用结构化的标记替代时。JSON 中的花括号和中括号则明确表示了数据的结构，当然这一优势也符合前文中的警告，在包含元数据时 JSON 的表示不如 XML 精确。
 
 Although XML supports namespaces and prefixes, JSON’s handling of name collisions is less verbose than prefixes, and arguably feels more natural with the program using it; in JSON, each object is its own namespace, so names may be repeated as long as they are in different scopes. This may be preferable, as in most programming languages members of different objects can have the same name, because they are distinguished by the names of the objects to which they belong.
+虽然 XML 支持<ruby>命名空间<rt>namespace</rt></ruby>与<ruby>前缀<rt>prefix</rt></ruby>，但这不代表 JSON 没有处理命名冲突的能力。比起 XML 的前缀，它处理命名冲突的方式更简洁，在程序中的处理也更自然。在 JSON 里，每一个对象都在它自己的命名空间中，因此不同对象内的元素可以随意的重复。因为在大多数编程语言中，不同的对象中的成员可以包含相同的名字，所以 JSON 根据对象名称进行区分的规则在处理时更加自然。
 
 Perhaps the most significant advantage that JSON has over XML is that JSON is a subset of JavaScript, so code to parse and package it fits very naturally into JavaScript code. This seems highly beneficial for JavaScript programs, but does not directly benefit any programs that use languages other than JavaScript. However, this drawback has been largely overcome, as currently the JSON website lists over 175 tools for 64 different programming languages that exist to integrate JSON processing. While I cannot speak to the quality of most of these tools, it is clear that the developer community has embraced JSON and has made it simple to use in many different platforms.
+也许 JSON 比 XML 更优的部分是因为 JSON 是 JavaScript 的子集，所以在 JavaScript 代码中对它的解析或封装都非常的自然。虽然这看起来对 JavaScript 程序非常有用，而其他程序则不能直接从中获益，可实际上这一问题已经被很好的解决了。现在 JSON 的网站的列表上展示了 64 种不同语言的 175 个工具，它们都继承了 JSON 处理功能。虽然我不能评价大多数工具的质量，但它们的存在明确了开发者社区拥抱 JSON 这一现象，而且它们切实简化了在不同平台使用 JSON 的难度。
 
-### Purposes
+
+### 目标
 
 Simply put, XML’s purpose is document markup. This is decidedly not a purpose of JSON, so XML should be used whenever this is what needs to be done. It accomplishes this purpose by giving semantic meaning to text through its tree-like structure and ability to represent mixed content. Data structures can be represented in XML, but that is not its purpose.
+简单地说，XML 的目标是完成一种文档标记。这和 JSON 的目标想去甚远，所以只要用得到 XML 的地方就尽管用。它使用树形的结构和包含语义的文本来表达混合内容以达成这一目标。XML 可以表示数据的结构，但这并不是它的初衷。
 
 JSON’s purpose is structured data interchange. It serves this purpose by directly representing objects, arrays, numbers, strings, and booleans. Its purpose is distinctly not document markup. As described above, JSON does not have a natural way to represent mixed content.
+JSON 的目标是完成一种结构化的数据交换。它直接使用对象、数组、数字、字符串、布尔值这些元素来达成这一目标。这完全不同于文档标记语言。正如上面说的那样，JSON 本身不存在表示混合内容的方法。
 
-### Software
+### 软件
 
 The following major public APIs uses XML only: Amazon Product Advertising API.
+这些主流的开放 API 仅提供 XML：<ruby>亚马逊产品广告 API<rt>Amazon Product Advertising API</rt></ruby>。
 
 The following major APIs use JSON only: Facebook Graph API, Google Maps API, Twitter API, AccuWeather API, Pinterest API, Reddit API, Foursquare API.
+这些主流 API 仅提供 JSON：<ruby>脸书图 API<rt>Facebook Graph API</rt></ruby>，<ruby>谷歌地图 API<rt>Google Maps API</rt></ruby>，<ruby>推特 API<rt>Twitter API</rt></ruby>，AccuWeather API，Pinterest API，Reddit API，Foursquare API。
 
 The following major APIs use both XML and JSON: Google Cloud Storage, Linkedin API, Flickr API
+这些主流 API 同时提供 XML 和 JSON：<ruby>谷歌云存储<rt>Google Cloud Storage</rt></ruby>，<ruby>领英 API<rt>Linkedin API</rt></ruby>，Flickr API。
 
 Of the top 10 most popular APIs according to Programmable Web[9], along with a couple more popular ones, only one supports XML and not JSON. Several support both, and several support only JSON. Among developer APIs for modern and popular websites, JSON clearly seems to be preferred. This also indicates that more app developers that use these APIs prefer JSON. This is likely a result of its reputation as the faster and leaner of the two. Furthermore, most of these APIs communicate data rather than documents, so JSON would be more appropriate. For example, Facebook is mainly concerned with communicating data about users and posts, Google Maps deals in coordinates and information about entities on their maps, and AccuWeather just sends weather data. Overall, it is impossible to say whether JSON or XML is currently used more in APIs, but the trend is certainly swinging towards JSON.[10][11]
+
 
 The following major desktop software uses XML only: Microsoft Word, Apache OpenOffice, LibreOffice.
 
