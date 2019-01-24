@@ -1,11 +1,11 @@
 [#]: collector: "lujun9972"
 [#]: translator: "Auk7F7"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
+[#]: publisher: "wxy"
 [#]: subject: "Arch-Audit : A Tool To Check Vulnerable Packages In Arch Linux"
 [#]: via: "https://www.2daygeek.com/arch-audit-a-tool-to-check-vulnerable-packages-in-arch-linux/"
 [#]: author: "Prakash Subramanian https://www.2daygeek.com/author/prakash/"
-[#]: url: " "
+[#]: url: "https://linux.cn/article-10473-1.html"
 
 Arch-Audit：一款在 Arch Linux 上检查易受攻击的软件包的工具
 ======
