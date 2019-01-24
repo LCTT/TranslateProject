@@ -152,43 +152,43 @@ func main() {
 
 ### 信道
 
-Goroutines are often combined with channels to provide an extended form of Communicating Sequential Processes . A channel is a concurrent-safe queue, and can be buffered or unbuffered:
+Goroutines 通常同信道结合以提供一种通信顺序进程的扩展。信道是一个并发安全的队列，而且可以缓冲或者不缓冲：
 
 ```
-var unbuffered = make(chan int) // sending blocks until value has been read
-var buffered = make(chan int, 5) // may have up to 5 unread values queued
+var unbuffered = make(chan int) // 直到数据被读取时完成数据块发送
+var buffered = make(chan int, 5) // 最多有 5 个未读取的数据块
 ```
 
-The `<-` operator is used to communicate with a single channel.
+运输符 `<-` 用于同单个信道通信。
 
 ```
 valueReadFromChannel := <- channel
 otherChannel <- valueToSend
 ```
 
-The `select` statement allows communication with multiple channels:
+语句 `select` 允许多个信道进行通信：
 
 ```
 select {
  case incoming := <- inboundChannel:
- // A new message for me
+ // 一条新消息
  case outgoingChannel <- outgoing:
- // Could send a message, yay!
+ // 可以发送消息
 }
 ```
 
 ### `defer` 声明
 
-Go provides a `defer` statement that allows a function call to be scheduled for execution when the function exits. It can be used for resource clean-up, for example:
+Go 提供语句 `defer` 允许函数退出时调用执行预定的函数。它可以用于资源释放，例如：
 
 ```
 func myFunc(someFile io.ReadCloser) {
  defer someFile.close()
- /bin /boot /dev /etc /home /lib /lib64 /lost+found /media /mnt /opt /proc /root /run /sbin /srv /sys /tmp /usr /var Do stuff with file */
+ /* 文件相关操作 */
 }
 ```
 
-It is of course possible to use function literals as the function to call, and any variables can be used as usual when writing the call.
+当然，它允许使用匿名函数作为被调函数，而且编写被调函数时可以像平常一样使用任何变量。
 
 ### 错误处理
 
