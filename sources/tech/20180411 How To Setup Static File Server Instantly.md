@@ -1,3 +1,5 @@
+Transltaing by MjSeven
+
 How To Setup Static File Server Instantly
 ======
 
