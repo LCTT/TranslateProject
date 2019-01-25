@@ -192,21 +192,21 @@ func myFunc(someFile io.ReadCloser) {
 
 ### 错误处理
 
-Go does not provide exceptions or structured error handling. Instead, it handles errors by returning them in a second or later return value:
+Go 没有提供异常类或者结构化的错误处理。然而，它通过第二个及后续的返回值来返回错误从而处理错误：
 
 ```
 func Read(p []byte) (n int, err error)
 
-// Built-in type:
+// 内建类型：
 type error interface {
  Error() string
 }
 ```
 
-Errors have to be checked in the code, or can be assigned to `_`:
+必须在代码中检查错误或者赋值给 `_`：
 
 ```
-n0, _ := Read(Buffer) // ignore error
+n0, _ := Read(Buffer) // 忽略错误
 n, err := Read(buffer)
 if err != nil {
  return err
@@ -217,15 +217,15 @@ There are two functions to quickly unwind and recover the call stack, though: `p
 
 ```
 func Function() (err error) {
- defer func() {
- s := recover()
- switch s := s.(type) { // type switch
- case error:
- err = s // s has type error now
- default:
- panic(s)
- }
- }
+  defer func() {
+    s := recover()
+    switch s := s.(type) { // type switch
+      case error:
+        err = s // s has type error now
+      default:
+        panic(s)
+    }
+  }
 }
 ```
 
