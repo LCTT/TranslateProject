@@ -43,7 +43,6 @@ Although XML supports namespaces and prefixes, JSON’s handling of name collisi
 Perhaps the most significant advantage that JSON has over XML is that JSON is a subset of JavaScript, so code to parse and package it fits very naturally into JavaScript code. This seems highly beneficial for JavaScript programs, but does not directly benefit any programs that use languages other than JavaScript. However, this drawback has been largely overcome, as currently the JSON website lists over 175 tools for 64 different programming languages that exist to integrate JSON processing. While I cannot speak to the quality of most of these tools, it is clear that the developer community has embraced JSON and has made it simple to use in many different platforms.
 也许 JSON 比 XML 更优的部分是因为 JSON 是 JavaScript 的子集，所以在 JavaScript 代码中对它的解析或封装都非常的自然。虽然这看起来对 JavaScript 程序非常有用，而其他程序则不能直接从中获益，可实际上这一问题已经被很好的解决了。现在 JSON 的网站的列表上展示了 64 种不同语言的 175 个工具，它们都继承了 JSON 处理功能。虽然我不能评价大多数工具的质量，但它们的存在明确了开发者社区拥抱 JSON 这一现象，而且它们切实简化了在不同平台使用 JSON 的难度。
 
-
 ### 目标
 
 Simply put, XML’s purpose is document markup. This is decidedly not a purpose of JSON, so XML should be used whenever this is what needs to be done. It accomplishes this purpose by giving semantic meaning to text through its tree-like structure and ability to represent mixed content. Data structures can be represented in XML, but that is not its purpose.
@@ -64,11 +63,13 @@ The following major APIs use both XML and JSON: Google Cloud Storage, Linkedin A
 这些主流 API 同时提供 XML 和 JSON：<ruby>谷歌云存储<rt>Google Cloud Storage</rt></ruby>，<ruby>领英 API<rt>Linkedin API</rt></ruby>，Flickr API。
 
 Of the top 10 most popular APIs according to Programmable Web[9], along with a couple more popular ones, only one supports XML and not JSON. Several support both, and several support only JSON. Among developer APIs for modern and popular websites, JSON clearly seems to be preferred. This also indicates that more app developers that use these APIs prefer JSON. This is likely a result of its reputation as the faster and leaner of the two. Furthermore, most of these APIs communicate data rather than documents, so JSON would be more appropriate. For example, Facebook is mainly concerned with communicating data about users and posts, Google Maps deals in coordinates and information about entities on their maps, and AccuWeather just sends weather data. Overall, it is impossible to say whether JSON or XML is currently used more in APIs, but the trend is certainly swinging towards JSON.[10][11]
-
+根据<ruby>可编程网络<rt>Programmable Web</rt></ruby>[9]的数据，最流行的 10 个 API 中只有一个是仅提供 XML 且不支持 JSON 的。其他的要么同时支持 XML 和 JSON，要么只支持 JSON。这表明了大多数应用开发者都更倾向于使用支持 JSON 的 API，原因大概是因为 JSON 的处理更快的良好口碑和与 XML 相比相对轻量。此外，大多数 API 只是传递数据而非文档，所以 JSON 更加合适。例如 Facebook 的重点在于用户的交流与帖子，谷歌地图则主要处理坐标和地图信息，AccuWeather 就只传递天气数据。总之，虽然不能说天气 API 在使用时究竟是 JSON 用的多还是 XML 用的多，但是趋势明确偏向了 JSON。[10][11]
 
 The following major desktop software uses XML only: Microsoft Word, Apache OpenOffice, LibreOffice.
+这些主流的桌面软件仍然只是用 XML：Microsoft Word，Apache OpenOffice，LibraOffice。
 
 It makes sense for software that is mainly concerned with document creation, manipulation, and storage to use XML rather than JSON. Also, all three of these programs support mixed content, which JSON does not do well. For example, if a user is typing up an essay in Microsoft Word, they may put different font, size, color, positioning, and styling on different blocks of text. XML naturally represents these properties with nested tags and attributes.
+因为这些软件需要考虑引用、格式、存储等等，所以比起 JSON，XML 优势更大。另外，这三款程序都支持混合内容，而 JSON 在这一点上做得并不如 XML 好。 For example, if a user is typing up an essay in Microsoft Word, they may put different font, size, color, positioning, and styling on different blocks of text. XML naturally represents these properties with nested tags and attributes.
 
 The following major databases support XML: IBM DB2, Microsoft SQL Server, Oracle Database, PostgresSQL, BaseX, eXistDB, MarkLogic, MySQL.
 
