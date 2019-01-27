@@ -23,7 +23,7 @@ sudo dnf -y update
 dnf module list
 ```
 
-输出列出了一组模块，这些模块显示了每个模块的关联流、版本和可用安装配置文件。模块流旁边的 `[d]` 表示安装命名模块时使用的默认流。
+输出列出了一组模块，这些模块显示了每个模块的关联的流、版本和可用安装配置文件。模块流旁边的 `[d]` 表示安装命名模块时使用的默认流。
 
 输出还显示大多数模块都有名为 `default` 的配置文件。这不是巧合，因为 `default` 是默认配置文件使用的名称。
 
@@ -83,22 +83,22 @@ sudo dnf -y module install reviewboard/server
 
 但是，安装 reviewboard:3.0/server 配置非常平常。reviewboard:3.0 模块的服务器配置与默认配置文件相同 —— 因此无需安装。
 
-### 启动 Review Board  网站
+### 启动 Review Board 网站
 
 现在已经安装了 Review Board 3.0 模块及其相关软件包，[创建一个本地运行的 Review Board 网站][6]。无需解释，请复制并粘贴以下命令：
 
 ```
 sudo rb-site install --noinput \
- --domain-name=localhost --db-type=sqlite3 \
- --db-name=/var/www/rev.local/data/reviewboard.db \
- --admin-user=rbadmin --admin-password=secret \
- /var/www/rev.local
+    --domain-name=localhost --db-type=sqlite3 \
+    --db-name=/var/www/rev.local/data/reviewboard.db \
+    --admin-user=rbadmin --admin-password=secret \
+    /var/www/rev.local
 sudo chown -R apache /var/www/rev.local/htdocs/media/uploaded \
- /var/www/rev.local/data
+    /var/www/rev.local/data
 sudo ln -s /var/www/rev.local/conf/apache-wsgi.conf \
- /etc/httpd/conf.d/reviewboard-localhost.conf
+    /etc/httpd/conf.d/reviewboard-localhost.conf
 sudo setsebool -P httpd_can_sendmail=1 httpd_can_network_connect=1 \
- httpd_can_network_memcache=1 httpd_unified=1
+    httpd_can_network_memcache=1 httpd_unified=1
 sudo systemctl enable --now httpd
 ```
 
@@ -131,7 +131,7 @@ via: https://fedoramagazine.org/working-modules-fedora-28/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://fedoramagazine.org/author/merlinm/
-[1]:https://fedoramagazine.org/modularity-fedora-28-server-edition/
+[1]:https://linux.cn/article-10479-1.html
 [2]:https://getfedora.org/server/
 [3]:https://fedoramagazine.org/howto-use-sudo/
 [4]:https://fedoramagazine.org/modularity-fedora-28-server-edition/#comment-476696
