@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,235 +7,157 @@
 [#]: via: (https://www.linux.com/blog/learn/2019/1/top-5-linux-server-distributions)
 [#]: author: (Jack Wallen https://www.linux.com/users/jlwallen)
 
-Top 5 Linux Server Distributions
+另一种 5 个顶级 Linux 服务器发行版
 ======
+
+> Jack Wallen 为 Linux 服务器发行版提供了一些可靠的选择，绝对值回票价。
+
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/rockstor-main.jpg?itok=VNvfEIlf)
 
-Ah, the age-old question: Which Linux distribution is best suited for servers? Typically, when this question is asked, the standard responses pop up:
+啊，这个古老的问题：哪种 Linux 发行版最适合做服务器？通常，问这种问题时，所浮现出来的标准的答复就是：
 
   * RHEL
-
   * SUSE
-
-  * Ubuntu Server
-
+  * Ubuntu 服务器
   * Debian
-
   * CentOS
 
+然而，假如你将眼界放得更宽（不将服务器只看做是 IDC 托管的那种互联网服务器时），可能答案会有点不同。我准备稍微来点不同的。我想做出一个满足入选标准的发行版列表，这些发行版不仅是优秀的候选者，而且易于使用，可以为你的业务中的许多功能提供服务。在某些情况下，我选择的是一些替代品，可以取代其它需要一些工作才能达成要求的操作系统。
 
-
-
-However, in the name of opening your eyes to maybe something a bit different, I’m going to approach this a bit differently. I want to consider a list of possible distributions that are not only outstanding candidates but also easy to use, and that can serve many functions within your business. In some cases, my choices are drop-in replacements for other operating systems, whereas others require a bit of work to get them up to speed.
-
-Some of my choices are community editions of enterprise-grade servers, which could be considered gateways to purchasing a much more powerful platform. You’ll even find one or two entries here to be duty-specific platforms. Most importantly, however, what you’ll find on this list isn’t the usual fare.
+我的一些选择是企业级服务器的社区版本，它们可以被视为购买更强大平台的入门级产品。你甚至可以在这里找到一两个作为特定任务平台的候选者。然而，最重要的是，你在此列表中找到的并非寻常的泛泛之辈。
 
 ### ClearOS
 
-What is ClearOS? For home and small business usage, you might not find a better solution. Out of the box, ClearOS includes tools like intrusion detection, a strong firewall, bandwidth management tools, a mail server, a domain controller, and much more. What makes ClearOS stand out above some of the competition is its purpose is to server as a simple Home and SOHO server with a user-friendly, graphical web-based interface. From that interface, you’ll find an application marketplace (Figure 1), with hundreds of apps (some of which are free, whereas some have an associated cost), that makes it incredibly easy to extend the ClearOS featureset. In other words, you make ClearOS the platform your home and small business needs it to be. Best of all, unlike many other alternatives, you only pay for the software and support you need.
+什么是 ClearOS？对于家庭和小型企业用途，你可能找不到比它更好的解决方案。ClearOS 开箱即用，包括了入侵检测、强大的防火墙、带宽管理工具、邮件服务器、域控制器等工具。其目的是将服务器作为一个简单的家庭和 SOHO 服务器，并具有用户友好的基于 Web 的图形化界面，这使得 ClearOS 在某些评比中脱颖而出。从其界面中，你可以找到一个应用程序市场（图 1），其中包含数百个应用程序（其中一些是免费的，而另一些则具有相关费用），这使得扩展 ClearOS 功能集非常容易。换句话说，你可以将 ClearOS 作为你的家庭和小型企业所需的平台。最重要的是，与许多其他替代方案不同，你只需支付所需的软件和支持。
+
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/clearos.jpg?itok=knQkn5ch)
-There are three different editions of ClearOS:
 
-  * [ClearOS Community][1] - the free edition of ClearOS
+*图 1：ClearOS 应用程序市场*
 
-  * [ClearOS Home][2] - ideal for home offices
+有三种版本的 ClearOS：
 
-  * [ClearOS Business][3] - ideal for small businesses, due to the inclusion of paid support
+  * [ClearOS Community][1] - 免费版 ClearOS
+  * [ClearOS Home][2] - 适于家庭办公
+  * [ClearOS Business][3] - 适于小型企业，包括了付费支持。
 
+为了使软件安装更加容易，ClearOS 应用市场允许你通过以下方式进行选择软件：
 
+   * 按功能（根据任务显示应用程序）
+   * 按类别（显示相关应用程序组）
+   * 快速选择文件（允许你按预先配置的模板选择，以帮助你快速启动和运行）
 
+换句话说，如果你正在寻找 Linux 的家庭、SOHO 或 SMB 服务器，ClearOS 是一个出色的选择（特别是如果你没有启动和运行标准的 Linux 服务器的能力时）。
 
-To make the installation of software even easier, the ClearOS marketplace allows you to select via:
+### Fedora 服务器
 
-  * By Function (which displays apps according to task)
+你肯定听说过 Fedora Linux。它是市场上最好的前沿发行版之一。但是你知道这个出色的 Fedora 桌面发行版的开发者们也开发了服务器版吗？Fedora 服务器平台是一个短生命周期的、社区支持的服务器操作系统。这使得经验丰富的、或对任何类型的 Linux（或任何操作系统）有经验的系统管理员，可以使用开源社区中提供的最新技术。在这段描述中有三个关键词：
 
-  * By Category (which displays groups of related apps)
+  * 经验丰富
+  * 系统
+  * 管理员
 
-  * Quick Select File (which allows you to select pre-configured templates to get you up and running fast)
-
-
-
-
-In other words, if you’re looking for a Linux Home, SOHO, or SMB server, ClearOS is an outstanding choice (especially if you don’t have the Linux chops to get a standard server up and running).
-
-### Fedora Server
-
-You’ve heard of Fedora Linux. Of course you have. It’s one of the finest bleeding edge distributions on the market. But did you know the developers of that excellent Fedora Desktop distribution also has a Server edition? The Fedora Server platform is a short-lifecycle, community-supported server OS. This take on the server operating system enables seasoned system administrators, experienced with any flavor of Linux (or any OS at all), to make use of the very latest technologies available in the open source community. There are three key words in that description:
-
-  * Seasoned
-
-  * System
-
-  * Administrators
-
-
-
-
-In other words, new users need not apply. Although Fedora Server is quite capable of handling any task you throw at it, it’s going to require someone with a bit more Linux kung fu to make it work and work well. One very nice inclusion with Fedora Server is that, out of the box, it includes one of the finest open source, web-based interface for servers on the market. With Cockpit (Figure 2) you get a quick glance at system resources, logs, storage, network, as well as the ability to manage accounts, services, applications, and updates.
+换言之，新用户就不要考虑了。虽然 Fedora 服务器完全能够处理你抛出的任何任务，但它需要一些拥有更多的 Linux 功夫的人来使它工作并且运行良好。Fedora 服务器非常好的一点是，开箱即用，它包括了市场上用于服务器的开源的基于 Web 的最好的界面之一。通过 Cockpit（图 2），你可以快速浏览系统资源、日志、存储、网络以及拥有管理帐户、服务、应用程序和更新的能力。
 
 ![Fedora Server][5]
 
-Figure 2: Cockpit running on Fedora Server.
+*图 2：运行在 Fedora 服务器上的 Cockpit*
 
-[Used with permission][6]
-
-If you’re okay working with bleeding edge software, and want an outstanding admin dashboard, Fedora Server might be the platform for you.
+如果你可以使用最前沿的软件，并想要一个出色的管理仪表板，Fedora 服务器可能就是你要的平台。
 
 ### NethServer
 
-NethServer is about as no-brainer of a drop-in SMB Linux server as you’ll find. With the latest iteration of NethServer, your small business will enjoy:
+正如你所发现的那样，NethServer 是每个人都知道的简单 SMB Linux 服务器。通过 NethServer 的最新版本，你的小型企业将得到：
 
-  * Built-in Samba Active Directory Controller
+   * 内置 Samba 活动目录控制器
+   * 与 Nextcloud 的无缝集成
+   * 证书管理
+   * HTTPS 透明代理
+   * 防火墙
+   * 邮件服务器和过滤器
+   * Web 服务器和过滤器
+   * 群件
+   * IPS / IDS 或 VPN
 
-  * Seamless Nextcloud integration
-
-  * Certificate management
-
-  * Transparent HTTPS proxy
-
-  * Firewall
-
-  * Mail server and filter
-
-  * Web server and filter
-
-  * Groupware
-
-  * IPS/IDS or VPN
-
-
-
-
-All of the included features can be easily configured with a user-friendly, web-based interface that includes single-click installation of modules to expand the NethServer feature set (Figure 3) What sets NethServer apart from ClearOS is that it was designed to make the admin job easier. In other words, this platform offers much more in the way of flexibility and power. Unlike ClearOS, which is geared more toward home office and SOHO deployments, NethServer is equally at home in small business environments.
+所有包含的功能都可以通过用户友好的基于 Web 的界面轻松配置，包括单击安装模块以扩展 NethServer 功能集（图 3）。NethServer 与 ClearOS 的区别在于它的设计目的是使管理工作更轻松。换句话说，这个平台提供了更多的灵活性和功能。与面向家庭办公室和 SOHO 部署的 ClearOS 不同，NethServer 在小型商业环境中用起来就像在家庭里使用一样方便。
 
 ![NethServer][8]
 
-Figure 3: Adding modules to NethServer.
-
-[Used with permission][6]
+*图 3：给 NethServer 添加模块*
 
 ### Rockstor
 
-Rockstor is a Linux and Btfrs powered advanced Network Attached Storage (NAS) and Cloud storage server that can be deployed for Home, SOHO, as well as small- and mid-sized businesses alike. With Rockstor, you get a full-blown NAS/Cloud solution with a user-friendly, web-based GUI tool that is just as easy for admins to set up as it is for users to use. Once you have Rockstor deployed, you can create pools, shares, snapshots, manage replication and users, share files (with the help of Samba, NFS, SFTP, and AFP), and even extend the featureset, thanks to add-ons (called Rock-ons). The list of Rock-ons includes:
+Rockstor 是采用 Linux 和 Btfrs 的高级网络附加存储（NAS）和云存储服务器，可部署用于家庭、SOHO 以及中小型企业。借助 Rockstor，你可以获得一个完整的 NAS /云解决方案，其中包含一个用户友好的基于 Web 的 GUI 工具，管理员可以像普通用户一样轻松使用它来设置。一旦部署好了 Rockstor，你就可以创建存储池、共享、快照、管理复制和用户、共享文件（借助 Samba、NFS、SFTP 和 AFP），甚至扩展它的功能集，这要归功于附加组件（称为 Rock-ons）。Rock-ons 列表包括：
 
-  * CouchPotato (Downloader for usenet and bittorrent users)
+  * CouchPotato（Usenet 和 BitTorrent 用户的下载器）
+  * Deluge（BitTorrent 用户的电影下载器）
+  * EmbyServer（Emby 媒体服务器）
+  * Ghost（专业博主的发布平台）
+  * GitLab CE（Git 仓库托管和协作）
+  * Gogs Go Git Service（轻量级 Git 版本控制服务器和前端）
+  * Headphones（NZB 和 Torrent 的音乐自动下载器）
+  * 用于 Squeezebox 设备的罗技 Squeezebox 服务器
+  * MariaDB（关系型数据管理系统）
+  * NZBGet（高效的 usenet 下载器）
+  * OwnCloud-Official（安全的文件共享和托管）
+  * Plexpy（基于 Python 的 Plex 用量跟踪器）
+  * Rocket.Chat（开源聊天平台）
+  * SaBnzbd（Usenet 下载器）
+  * Sickbeard（用于电视节目的互联网个人视频录像机）
+  * Sickrage（电视节目的自动视频库管理器）
+  * Sonarr（Usenet 和 BitTorrent 用户的个人视频录像机）
+  * Symform（备份设备）
 
-  * Deluge (Movie downloader for bittorrent users)
-
-  * EmbyServer (Emby media server)
-
-  * Ghost (Publishing platform for professional bloggers)
-
-  * GitLab CE (Git repository hosting and collaboration)
-
-  * Gogs Go Git Service (Lightweight Git version control server and front end)
-
-  * Headphones (An automated music downloader for NZB and Torrent)
-
-  * Logitech Squeezebox Server for Squeezebox Devices
-
-  * MariaDB (Relational database management system)
-
-  * NZBGet (Efficient usenet downloader)
-
-  * OwnCloud-Official (Secure file sharing and hosting)
-
-  * Plexpy (Python-based Plex Usage tracker)
-
-  * Rocket.Chat (Open Source Chat Platform)
-
-  * SaBnzbd (Usenet downloader)
-
-  * Sickbeard (Internet PVR for TV shows)
-
-  * Sickrage (Automatic Video Library Manager for TV Shows)
-
-  * Sonarr (PVR for usenet and bittorrent users)
-
-  * Symform (Backup service)
-
-
-
-
-Rockstor also includes an at-a-glance dashboard that gives admins quick access to all the information they need about their server (Figure 4).
+Rockstor 还包括了一目了然的仪表板，使管理员可以快速访问他们所需的有关其服务器的所有信息（图 4）。
 
 ![Rockstor][10]
 
-The Rockstor dashboard in action.
-
-[Used with permission][6]
+*图 4： Rockstor 面板*
 
 ### Zentyal
 
-Zentyal is another Small Business Server that does a great job of handling multiple tasks. If you’re looking for a Linux distribution that can handle the likes of:
+Zentyal 是另一个小型企业服务器，可以很好地处理多个任务。如果你正在寻找可以处理以下内容的 Linux 发行版：
 
-  * Directory and Domain server
-
-  * Mail server
-
-  * Gateway
-
-  * DHCP, DNS, and NTP server
-
-  * Certification Authority
-
+  * 目录和域服务器
+  * 邮件服务器
+  * 网关
+  * DHCP、DNS 和 NTP 服务器
+  * 认证机构（CA）
   * VPN
+  * 实时消息（IM）
+  * FTP 服务器
+  * 反病毒
+  * SSO 认证
+  * 文件共享
+  * RADIUS 认证
+  * 虚拟化管理
+  * 等等
 
-  * Instant Messaging
+Zentyal 可能是你的新选择。从 2004 年 Zentyal 就存在了，它基于 Ubuntu Server，因此它拥有坚实的基础和丰富的应用程序。在 Zentyal 仪表板的帮助下（图 5），管理员可以轻松管理：
 
-  * FTP server
-
-  * Antivirus
-
-  * SSO authentication
-
-  * File sharing
-
-  * RADIUS
-
-  * Virtualization Management
-
-  * And more
-
-
-
-
-Zentyal might be your new go-to. Zentyal has been around since 2004 and is based on Ubuntu Server, so it enjoys a rock-solid base and plenty of applications. And with the help of the Zentyal dashboard (Figure 5), admins can easily manage:
-
-  * System
-
-  * Network
-
-  * Logs
-
-  * Software updates and installation
-
-  * Users/groups
-
-  * Domains
-
-  * File sharing
-
-  * Mail
-
+  * 系统
+  * 网络
+  * 日志
+  * 软件更新和安装
+  * 用户/组
+  * 域
+  * 文件共享
+  * 邮件
   * DNS
-
-  * Firewall
-
-  * Certificates
-
-  * And much more
+  * 防火墙
+  * 证书
+  * 等等
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/zentyal.jpg?itok=Un9lpgh6)
 
+*图 5：Zentyal 仪表板*
 
-Adding new components to the Zentyal server is as simple as opening the Dashboard, clicking on Software Management > Zentyal Components, selecting what you want to add, and clicking Install. The one issue you might find with Zentyal is that it doesn’t offer nearly the amount of addons as you’ll find in the likes of Nethserver and ClearOS. But the services it does offer, Zentyal does incredibly well.
+向 Zentyal 服务器添加新组件只需要打开仪表板，单击“软件管理” -> “Zentyal 组件”，选择要添加的组件，然后单击安装。Zentyal 可能会遇到的一个问题是，它提供不了与 Nethserver 和 ClearOS 一样多的插件。但它提供的服务，则做得非常好。
 
-### Plenty More Where These Came From
+### 更多来自于
 
-This list of Linux servers is clearly not exhaustive. What it is, however, is a unique look at the top five server distributions you’ve probably not heard of. Of course, if you’d rather opt to use a more traditional Linux server distribution, you can always stick with [CentOS][11], [Ubuntu Server][12], [SUSE][13], [Red Hat Enterprise Linux][14], or [Debian][15]… most of which are found on every list of best server distributions on the market. If, however, you’re looking for something a bit different, give one of these five distos a try.
+这个 Linux 服务器列表显然不是详尽无遗的。然而，这是一种对你可能没有听说过的五大服务器发行版的独特视角。当然，如果你更愿意使用更传统的 Linux 服务器发行版，你可以随时坚持使用 [CentOS][11]、[Ubuntu 服务器][12]、[SUSE][13]、[RHEL][14] 或 [Debian][15]……它们大多都出现在市场上最好的服务器发行版列表中。但是，如果你正在寻找一些不同的东西，那么试试这五个发行版中的一个。
 
-Learn more about Linux through the free ["Introduction to Linux" ][16]course from The Linux Foundation and edX.
+通过 Linux 基金会和 edX 的免费[“Linux 简介”][16]课程了解有关 Linux 的更多信息。
 
 --------------------------------------------------------------------------------
 
@@ -243,7 +165,7 @@ via: https://www.linux.com/blog/learn/2019/1/top-5-linux-server-distributions
 
 作者：[Jack Wallen][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
