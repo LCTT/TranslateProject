@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (How to bring good fortune to your Linux terminal)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-fortune)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10486-1.html)
 
 如何为你的 Linux 终端带来好运
 ======
