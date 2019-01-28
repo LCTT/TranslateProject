@@ -213,7 +213,7 @@ if err != nil {
 }
 ```
 
-There are two functions to quickly unwind and recover the call stack, though: `panic()` and `recover()`. When `panic()` is called, the call stack is unwound, and any deferred functions are run as usual. When a deferred function invokes `recover()`, the unwinding stops, and the value given to `panic()` is returned. If we are unwinding normally and not due to a panic, `recover()` simply returns `nil`. In the example below, a function is deferred and any `error` value that is given to `panic()` will be recovered and stored in an error return value. Libraries sometimes use that approach to make highly recursive code like parsers more readable, while still maintaining the usual error return value for public functions.
+有两个函数可以快速跳出和恢复调用栈：`panic()` 和 `recover()`。当 `panic()` 被调用时，调用栈开始弹出，同时每个 `defer` 函数都会正常运行。当一个 `defer` 函数调用 `recover()`时，调用栈停止弹出，同时返回函数 `panic()` 给出的值。如果我们让调用栈正常弹出而不是由于调用 `panic()` 函数，`recover()` 将只返回 `nil`。在下面的例子中，`defer` 函数将捕获 `panic()` 抛出的任何 `error` 类型的值并储存在错误返回值中。第三方库中有时会使用这个方法增强递归代码的可读性，如解析器，同时保持公有函数仍使用普通错误返回值。
 
 ```
 func Function() (err error) {
@@ -229,7 +229,7 @@ func Function() (err error) {
 }
 ```
 
-### Arrays 和 slices
+### 数组和切片
 
 As mentioned before, an array is a value type and a slice is a pointer into an array, created either by slicing an existing array or by using `make()` to create a slice, which will create an anonymous array to hold the elements.
 
