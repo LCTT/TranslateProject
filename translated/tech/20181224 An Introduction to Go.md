@@ -231,17 +231,17 @@ func Function() (err error) {
 
 ### 数组和切片
 
-As mentioned before, an array is a value type and a slice is a pointer into an array, created either by slicing an existing array or by using `make()` to create a slice, which will create an anonymous array to hold the elements.
+正如前边说的，数组是值类型而切片是指向数组的指针。切片可以由现有的数组切片产生，也可以使用 `make()` 创建切片，这会创建一个匿名数组以保存元素。
 
 ```
-slice1 := make([]int, 2, 5) // 5 elements allocated, 2 initialized to 0
-slice2 := array[:] // sliced entire array
-slice3 := array[1:] // slice of array without first element
+slice1 := make([]int, 2, 5) // 分配 5 个元素，其中 2 个初始化为0
+slice2 := array[:] // 整个数组的切片
+slice3 := array[1:] // 除了首元素的切片
 ```
 
 There are some more possible combinations for the slicing operator than mentioned above, but this should give a good first impression.
 
-A slice can be used as a dynamically growing array, using the `append()` function.
+使用 `append()` 函数，切片可以作为一个变长数组使用。
 
 ```
 slice = append(slice, value1, value2)
@@ -252,11 +252,11 @@ Slices are also used internally to represent variable parameters in variable len
 
 ### Maps
 
-Maps are simple key-value stores and support indexing and assigning. They are not thread-safe.
+Maps 是简单的键值对储存容器并支持索引和分配。但它们不是线程安全的。
 
 ```
 someValue := someMap[someKey]
-someValue, ok := someMap[someKey] // ok is false if key not in someMap
+someValue, ok := someMap[someKey] // 如果键值不在 someMap 中，变量 ok 会赋值为 `false`
 someMap[someKey] = someValue
 ```
 --------------------------------------------------------------------------------
