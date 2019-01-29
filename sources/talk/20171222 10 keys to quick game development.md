@@ -1,78 +1,77 @@
-XYenChi is translating
-10 keys to quick game development
+快速开发游戏的十个关键
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/computer_keyboard_laptop_development_code_woman.png?itok=vbYz6jjb)
 
-In early October, the inaugural [Open Jam][1] sponsored by Opensource.com drew 45 entries from teams located around the world. The teams had just three days to create a game using open source software to enter into the competition, and [three teams came out on top][2].
+十月早些时候，Opensource.com赞助的 [Open Jam][1] 入职仪式为处于世界各地的团队设立了45个入口。这些队伍只有三天时间用开源软件制作出一个游戏来参与角逐，并 [取前三][2]。
 
-We hosted our own Open Jam event at our university for anyone who wanted to participate. We reserved a computer lab for the weekend and taught people how to use open source software--[Godot][3] for the game engine, [LMMS][4] for music creation, [GIMP][5] for 2D art, and [Blender][6] for 3D art--to create games and game art assets. Three games were submitted from our event: [Loathsome][7], [Lost Artist][8], and [Paint Rider][9] (which I created).
+我们在大学为每一位愿意参与的人举办了我们自己的 Open Jam 活动。周末预留了计算机实验室教大家使用开源软件——游戏引擎：[Godot][3]，音乐：[LMMS][4] ，2D画面： [GIMP][5] 和3D画面 [Blender][6] ——来创作游戏和相关组件。活动产出了三个游戏： [Loathsome][7]， [Lost Artist][8], 和 [Paint Rider][9] （我做的）。
 
-From my experience with game jams and game development in general, here are 10 lessons I've learned about game engines, coding, and rapid game development.
+总的说来，我从游戏创作和游戏开发中，学到了十课关于游戏引擎、代码和快速游戏开发。
 
-## 1\. Narrow your scope
+## 1\. 限定规模
 
-It's easy to get carried away with ideas to make an expansive adventure game or something that compares to your favorite game. Pursuing that outside of a game jam can be awesome, once you have some experience, but don't overestimate what you have time for. What I love about game jams is they force you to focus on getting a game from the conceptual stage to a final product quickly, since you have such a limited amount of time. This is why narrowing your scope is so important.
+很容易想要去做一个规模宏大的冒险游戏或者比拟你最喜欢的游戏的东西。追求高于游戏创作之外的东西可能很酷，如果你有体会，但不要高估自己拥有的时间。我欣赏游戏创作的一点是强制你快速将一个游戏从概念阶段变成最终产品，因为你的时间非常有限。这也就是限定规模如此重要。
 
-The theme for Open Jam was "Leave a Mark." As soon as it was announced, my friends and I started brainstorming games that could fit that theme. One idea was a 3D boxing game where the player left bruises on their enemy. I had very little experience making 3D games and, while I would have loved to get better at them, I probably would have spent too much time learning how to get all the textures situated and hit boxes working before I could even start to figure out what would make a fun game.
+Open Jam 的主题是“留下痕迹”，题目一出来，我和朋友就开始讨论什么样的游戏合题意。有个想法就是做玩家能在敌人身上留下伤痕的3D拳击游戏。我几乎没有做3D游戏的经验，我想做好的话，在我甚至还没发掘出可玩性之前，就得花太多时间在学习如何让痕迹合理和打击有效。
 
-## 2\. Have something playable very early
+## 2\. 尽早可玩
 
-This is my favorite advice for game jams. Try to come up with the core mechanics and code them to a working state quickly so you can test them and decide whether it's worthy of making a full game. You shouldn't be hours away from the deadline and still trying to get your game playable. For a three-day jam like Open Jam, it shouldn't take more than a few hours to have some sort of demo running.
+对游戏创作我最中肯的建议就是这。试着做出核心部件，快速写出代码，这样你就可以测试并决定它是否值得做成一个完整的游戏。不应该只剩几个小时截止了，才让你的游戏可玩。像 Open Jam 这样的三天创作，最好少花时间在实现概念上。
 
-## 3\. Keep it simple
+## 3\. 保持简单
 
-Every feature that you want to include extends your total development time. You never know if committing to a feature will lead to a major time sink because you just can't quite get it to work. Arcade-style high-score games typically work well for game jams because they're usually simple by nature. Once you've finished the core, you can start adding features and polish without having to worry whether you'll have a functioning game in the end.
+你想加入的每个特性都会延长整个开发时间。因为你不能迅速使之运行，所以无从得知提交一个新特性是否会消耗大量时间。街机风格的高分作品往往会在游戏创作中表现良好，它们天生就很简单。一旦核心部分完成，你可以开始加入特性并润色，无需担心最后游戏是否功能强大。
 
-## 4\. Take inspiration from other games
+## 4\. 从其他游戏获取灵感
 
-You may be tempted to create something totally original, but having models to base your work on is extremely helpful. It will decrease the time it takes to come up with the mechanics, since you'll already have an idea of what is fun. Remind yourself that the more experience you have under your belt, the easier it is to create that massive game you have so many ideas for, so you might as well practice by trying to recreate things other people have done.
+可能你想做出完全原创的作品，但作品的原型极其有用。原型将节省重复劳动的时间，因为你已经知道什么有趣。告诉自己实践的经验越多，越容易做出包含自己想法的大型游戏，自然你也能从再创作其他人的作品中很好地练习。
 
-Considering Open Jam's "Leave a Mark" theme, I thought it would be fun to create a game where you leave a trail of paint as you played, so you could see the mark you left. I remembered the old Flash game [Line Rider 2 Beta][10] (hence the name Paint Rider), and about the secret feature where you could draw a track if you held the Control button down while you played. I simplified that concept even more by requiring only one button for vertical movement (much like old helicopter games). About an hour or two into the jam, I had a basic demo where you could move up or down with one button and leave a trail of little black circles.
+考虑到 Open Jam 的“留下痕迹”主题，我觉得创作一个玩的时候可以留下颜料痕迹的游戏会很有趣，这样也可以看到你留下的标记。我记得这款老式动画游戏 [Line Rider 2 Beta][10] （后来叫 Paint Rider），而且知道玩的时候按住 Control 键可以画出痕迹的彩蛋。我简化了概念，甚至只需要一个按键来垂直移动。（更像老式飞机游戏）。大概一两个小时的创作，我有了基本模型，用一个按钮上下移动和留下小黑圈的痕迹。
 
-## 5\. Don't overlook accessibility
+## 5\. 不要忽视可得性
 
-Make sure as many people as possible can play your game. One of the games submitted to Open Jam was a virtual-reality game. As cool as that was, hardly anyone was able to play it, because not many people have a VR device. Luckily, its developer didn't expect it would do well in the ratings, and instead considered it practice. But, if you want to share your game with lots of people (or win game jams), it's important to pay attention to accessibility.
+确保尽可能多的人能玩你的游戏。某个提交到 Open Jam 的游戏是虚拟现实游戏。尽管那很酷，但几乎没有人可以玩，因为拥有VR设备的人不多。所幸它的开发者并不期望取得好名次，只是想练手。但如果你想和人们分享你的游戏（或者赢得游戏创作），注意可得性是很重要的。
 
-Godot (and most other game engines) allow you to export your game to all major platforms. When submitting a game specifically to [Itch.io][11], having an in-browser version will allow most people to play it. But always look into exporting to as many platforms and operating systems as you can. I even tried exporting Paint Rider to mobile, but technical difficulties got in the way.
+Godot （和其他大多数游戏引擎）允许你在所有主流平台发布游戏。提交游戏时，特别是在 [Itch.io][11]，有浏览器版本将支持大多数人玩。但尽你所能去发布在更多的平台和开放系统上。我甚至试着在移动端发布 Paint Rider ，但技术有限。
 
-## 6\. Don't make it too difficult
+## 6\. 不要做得太难
 
-If your game takes too much effort to learn or play, you'll lose a portion of your audience. This aligns nicely with keeping your game simple and within scope, and it puts even more importance on the game planning phase. Again, it's easy to come up with an epic game idea you could spend weeks or months developing; it's harder to come up with a good, simple game.
+如果游戏需要花费过多精力去学或者玩，你将失去一部分玩家。这照应了保持简单和限定规模，在游戏计划阶段非常重要。再次重申，想做一个宏大的游戏花上十天半个月开发很容易；难的是做出好玩、简单的游戏。
 
-I showed Paint Rider to my Mom and she was able to play it immediately. I don't think I need to say anything more about that.
+给妈妈介绍了 Paint Rider 之后，她很快开始玩起来，我认为不需要跟她说明更多。
 
-## 7\. Don't be too neat
+## 7\. 不用太整洁
 
-If you're used to taking your time applying design patterns everywhere and making sure that your code will be reusable and readable, try to loosen up a bit. If you spend too much time worrying about design, when you finally get to the point when you can play your game, you may find out it's not very fun. By then, it's too late to make changes.
+如果你习惯于花时间在设计每处图案和确保代码可复用、可适应，试着放松一点。如果你花太多时间考虑设计，当你最后到了可以玩游戏的时候，你可能发现游戏不是很有趣，那时候就来不及修改了。
 
-This process is also used for prototyping more serious games: You quickly code up messy proof-of-concept demos until you find one that's worth making into a full game, then you dive into building a perfect code base to support it. Creating a game for a game jam is like quickly coding up a proof of concept.
+这过程也适用于简化更严格的游戏：快速码出验证概念性展示模型直到找出值得做成完整游戏的，然后你潜心建立完美的代码基础来支持它。游戏创作的开发游戏就像快速码出可验证的理念。
 
-## 8\. But don't be too messy, either
+## 8\. 但也不要太随意
 
-On the other hand, [spaghetti code][12] can easily get out of control, even if there's not a ton of code in a game. Luckily, most game engines are built with design patterns in mind. Take Godot's [Signals][13] functionality, which allows nodes to send messages with data to nodes they've been "connected" with--it's the [observer pattern][14] automatically baked into your design. As long as you know how to take advantage of the game engine's features, you should be able to code quickly without making your code too painful to look at.
+另一方面， [意大利面式代码][12] 容易失控，即使游戏开发没有大量代码。还好大多是游戏引擎用脑中的设计图建成。Luckily, most game engines are built with design patterns in mind. 就拿 Godot 的[信号][13] 功能来说，节点可以发送数据信息给它们“连上了”的节点——这是你的设计自动成型的[观测图][14]。 只要你知道如何利用游戏引擎的特性，就可以快速写代码，你的代码也不会特别难读。
 
-## 9\. Get feedback
+## 9\. 取得反馈
 
-Show people what you're working on. Have them try it out and see what they say about it. Watch how they play your game and see if they find something you didn't expect. If the game jam has a [Discord][15] channel or something similar, post your game there, or bounce your ideas off people. One of Paint Rider's defining features is that the canvas loops, so you see the paint you left before. I hadn't even considered that mechanic until someone asked me why the game didn't have it.
+向人们展示你正在做的。让他们试一试并看看他们说些啥。看看他们如何玩你的游戏，找找他们有没有发现你期望之外的事。如果游戏创作有[争论][15] 频道或者类似的，把你的游戏放上去，人们会反馈你的想法。 Paint Rider 的定义功能之一是画布循环，所以你可以看到之前留下来的画。在有人问我为什么这个游戏没有之前，我甚至没有考虑那个设置。 
 
-Working on a team will ensure that there are other people built into the process who can pass feedback around.
+团队协作的话，确保有其他可以传递周围反馈的人参与这个开发。
 
-And don't forget to help other people out in the same way; it's a win-win if you realize something that could help your game while you're playing someone else's game.
+而且不要忘了用相同的方式帮助其他人；如果你在玩其他人游戏的时候发现了有助于你游戏的东西，这就是双赢。
 
-## 10\. Know where to find resources
+## 10\. 哪里找资源
 
-Creating all your own assets can really slow you down. During Open Jam, I noticed that Loathsome's developer was spending multiple hours drawing the main character while I was busy incorporating new features and fixing bugs. You could simplify your art style for the game and still come up with something that looks and sounds good, but there are other options. Try looking for assets in [Creative Commons][16] or on free music sites like [Anttis Instrumentals][17]. Or, if possible, form a team with a dedicated artist, writer, or musician.
+做出所有你自己的组件真的会拖你后腿。 Open Jam 期间，当我忙于组装新特性和修漏洞时，我注意到 Loathsome 的开发者花了大量时间在绘制主要角色 developer was spending multiple hours drawing the main character while I was busy incorporating new features and fixing bugs. 你可以简化游戏的艺术风格创作并且用一些视听效果尚可的东西，这里有其他选择。试着在 [Creative Commons][16] 上寻找组件或者免费音乐站点，比如 [Anttis Instrumentals][17] 。或者，可行的话，组一个有专门艺术家、作家或者音乐家的团队。
 
-Other software you might find useful includes [Krita][18], an open source 2D image creator that's nice for digital painting, especially if you have a drawing tablet, and [sfxr][19], a game sound-effect creator that has a lot of parameters to play with, but as its creator says: "Basic usage involves hitting the randomize button." (All sound effects in Paint Rider were made with Sfxr.) You can also check out [Calinou][20]'s large and neatly organized list of open source game development software.
+其他你可能觉得有用的软件有 [Krita][18] ，一款适合数字绘画的开源 2D 图像生成软件，特别是如果你有一块绘图板，还有 [sfxr][19] ，一款游戏音效生成软件，很多参数可以调，但正如它的开发者所说：“基本用法包括了按下随机按钮。”（ Paint Rider 的所有音效都是用 Sfxr 做的。）你也可以试试 [Calinou][20] 的众多但有序的开源游戏开发软件列表。
 
-Have you participated in Open Jam or another a game jam and have other advice? Or do you have questions I didn't address? If so, please share them in the comments.
+你参加 Open Jam 或者其他游戏创作并有别的建议吗？对我未提及的有问题吗？有的话，请在评论中分享。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/17/12/10-keys-rapid-open-source-game-development
 
 作者：[Ryan Estes][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[XYenChi](https://github.com/XYenChi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
