@@ -1,15 +1,17 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (The Linux terminal is no one-trick pony)
 [#]: via: (https://opensource.com/article/18/12/linux-toy-ponysay)
 [#]: author: (Jason Baker https://opensource.com/users/jason-baker)
 
-Linux 终端能做其他事
+Linux 终端上的漂亮小马
 ======
-将小马宝莉的魔力带到终端
+
+> 将小马宝莉的魔力带到终端
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/uploads/linux-toy-ponysay.png?itok=ehl6pTr_)
 
 欢迎再次来到 Linux 命令行玩具日历。如果这是你第一次访问该系列，你甚至可能会问自己什么是命令行玩具。我们正在思考中，但一般来说，它可能是一个游戏，或任何简单的消遣，可以帮助你在终端玩得开心。
@@ -22,11 +24,11 @@ Linux 终端能做其他事
 
 我对此感到好奇，并去看了一下，发现没有让我失望。
 
-简而言之，**[ponysay][3]** 的 **cowsay**的重写，它包括了来自[小马宝莉][4]中的许多全彩色人物，你可以用它在 Linux 命令行输出短句。它实际上是一个非常完善的项目，拥有超过 400 个字符和字符组合，它还有让人难以置信的的[ 78 页的 PDF 文档][5]涵盖了了所有的用法。
+简而言之，[ponysay][3] 的 cowsay 的重写，它包括了来自[小马宝莉][4]中的许多全彩色人物，你可以用它在 Linux 命令行输出短句。它实际上是一个非常完善的项目，拥有超过 400 个字符和字符组合，它还有让人难以置信的的 [78 页的 PDF 文档][5]涵盖了所有的用法。
 
-要安装 **ponysay**，你需要查看项目的 [README][6] 来选择最适合你的发行版和情况的安装方法。由于 ponysay 似乎没有为我的 Fedora 发行版打包，我选择试用 Docker 容器镜像，但你可以选择最适合你的方法。从源码安装可能也适合你。
+要安装 `ponysay`，你需要查看项目的 [README][6] 来选择最适合你的发行版和情况的安装方法。由于 `ponysay` 似乎没有为我的 Fedora 发行版打包，我选择试用 Docker 容器镜像，但你可以选择最适合你的方法。从源码安装可能也适合你。
 
-作为一个业余容器用户，我很想试试 [**podman**][7] 来代替 **docker**。至少对于我而言，它可以正常工作。
+作为一个业余容器用户，我很想试试 [podman][7] 来代替 docker。至少对于我而言，它可以正常工作。
 
 ```
 $ podman run -ti --rm mpepping/ponysay 'Ponytastic'
@@ -49,7 +51,7 @@ via: https://opensource.com/article/18/12/linux-toy-ponysay
 作者：[Jason Baker][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
