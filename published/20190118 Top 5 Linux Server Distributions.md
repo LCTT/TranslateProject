@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10490-1.html)
 [#]: subject: (Top 5 Linux Server Distributions)
 [#]: via: (https://www.linux.com/blog/learn/2019/1/top-5-linux-server-distributions)
 [#]: author: (Jack Wallen https://www.linux.com/users/jlwallen)
 
-另一种 5 个顶级 Linux 服务器发行版
+5 个用于 SOHO 的 Linux 服务器发行版
 ======
 
 > Jack Wallen 为 Linux 服务器发行版提供了一些可靠的选择，绝对值回票价。
@@ -166,7 +166,7 @@ via: https://www.linux.com/blog/learn/2019/1/top-5-linux-server-distributions
 作者：[Jack Wallen][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
