@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/19/1/pygame-zero)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-PyGame Zero: Games without boilerplate
+PyGame Zero: Games without 模板
 ======
 Say goodbye to boring boilerplate in your game development with PyGame Zero.
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/python3-game.png?itok=jG9UdwC3)
