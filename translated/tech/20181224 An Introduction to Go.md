@@ -239,7 +239,7 @@ slice2 := array[:] // 整个数组的切片
 slice3 := array[1:] // 除了首元素的切片
 ```
 
-There are some more possible combinations for the slicing operator than mentioned above, but this should give a good first impression.
+除了上述例子，还有更多可行的切片运算组合，但需要明了直观。
 
 使用 `append()` 函数，切片可以作为一个变长数组使用。
 
@@ -248,7 +248,7 @@ slice = append(slice, value1, value2)
 slice = append(slice, arrayOrSlice...)
 ```
 
-Slices are also used internally to represent variable parameters in variable length functions.
+切片也可以用于函数的变长参数。
 
 ### Maps
 
