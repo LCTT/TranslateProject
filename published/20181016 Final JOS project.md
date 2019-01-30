@@ -1,4 +1,4 @@
-Caffeinated 6.828：实验 6：最终的 JOS 项目
+Caffeinated 6.828：实验 7：最终的 JOS 项目
 ======
 
 ### 简介
