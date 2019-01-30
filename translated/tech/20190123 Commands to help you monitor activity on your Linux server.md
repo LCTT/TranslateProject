@@ -7,7 +7,7 @@
 [#]: via: (https://www.networkworld.com/article/3335200/linux/how-to-monitor-activity-on-your-linux-server.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-帮你监控你的 Linux 服务器的命令  
+监控 Linux 服务器的几个常用命令  
 ======
 
 watch、top 和 ac 命令为我们监视 Linux 服务器上的活动提供了一些十分高效的途径。  
