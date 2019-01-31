@@ -86,12 +86,13 @@ One of the most heavily anticipated changes in the Internet is the “Internet o
 对互联网的变革中，最让人期待的便是<ruby>物联网<rt>Internet of Things</rt></ruby>。这会给互联网带来大量的非计算机设备，例如手表、温度计、电视、冰箱等等。这一势头的发展良好，预期将在不久的将来迎来爆发式的增长。据估计，到 2020 年时会有 260 亿 到 2000 亿的物联网设备被接入互联网。[12][13] 几乎所有的物联网设备都是小型设备，此外比笔记本或者台式电脑的性能要弱很多。大多数都是嵌入式系统。因此，当他们需要与 web 上的系统交换数据时，更轻量，更快速的 JSON 自然比 XML 更受青睐。[10] 受益于 JSON 在 web 上的快速普及，与 XML 相比，这些新的物联网设备更有可能从使用 JSON 中受益。这是一个典型的梅特卡夫定律的实例，无论是 XML 还是 JSON，抑或是什么其他全新的格式，现存的设备和新的设备都会从支持最广泛使用的格式中受益。
 
 With the creation and recent rapid increase in popularity of Node.js, a server-side JavaScript framework, along with NoSQL databases like MongoDB, full-stack JavaScript development has become a reality. This bodes well for the future of JSON, as with these new apps, JSON is spoken at every level of the stack, which generally makes the apps very fast and lightweight. This is a desirable trait for any app, so this trend towards full-stack JavaScript is not likely to die out anytime soon.[10]
-Node.js 是一款服务器端的 JavaScript 框架，随着她的诞生与快速成长，与 MongoDB 等 NoSQL 数据库一起，让全栈使用 JavaScript 开发成为可能。This bodes well for the future of JSON, as with these new apps, JSON is spoken at every level of the stack, which generally makes the apps very fast and lightweight. This is a desirable trait for any app, so this trend towards full-stack JavaScript is not likely to die out anytime soon.[10]
+Node.js 是一款服务器端的 JavaScript 框架，随着她的诞生与快速成长，与 MongoDB 等 NoSQL 数据库一起，让全栈使用 JavaScript 开发成为可能。这些发展预示着 JSON 光明的未来，这些软件让 JSON 运用在全栈开发的每一个环节中，使应用更加轻量，响应更快。这也是任何应用的追求之一，所以，全栈使用 JavaScript 的趋势在不久的将来都不会消退。[10]
 
 Another existing trend in the world of app development is toward REST and away from SOAP.[11][15][16] Both XML and JSON can be used with REST, but SOAP exclusively uses XML.
-
+此外，另一个应用开发的趋势是从 SOAP 转向 REST。[11][15][16] XML 和 JSON 都可以用于 REST，可 SOAP 只能使用 XML。
 
 The given trends indicate that JSON will continue to dominate the Web, and XML use will continue to decrease. This should not be overblown, however, because XML is still very heavily used in the Web, and it is the only option for apps that use SOAP. Given the widespread migration from SOAP to REST, the rise of NoSQL databases and full-stack JavaScript, and the far superior performance of JSON, I believe that JSON will soon be much more widely used than XML in the Web. There seem to be very few applications where XML is the better choice.
+从这些事实中可以推断，JSON 会发展将统一 Web 的信息交换格式，XML 的使用率将继续降低。虽然不应该把 JSON 吹过头了，因为 XML 在 Web 中的使用依旧很广，而且它还是 SOAP 的唯一选择，可考虑到 SOAP 到 REST 的迁移，NoSQL 数据库和全栈 JavaScript 的兴起，JSON 的卓越性能，我相信 JSON 很快就会在 Web 开发中超过 XML。至于其他领域，把 XML 作为更好的选择的情况似乎并不多。
 
 
 ### 参考链接
