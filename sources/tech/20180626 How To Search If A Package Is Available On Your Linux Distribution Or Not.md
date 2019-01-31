@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 How To Search If A Package Is Available On Your Linux Distribution Or Not
 ======
 You can directly install the require package which you want if you know the package name.
