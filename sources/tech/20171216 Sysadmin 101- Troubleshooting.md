@@ -1,4 +1,3 @@
-translating by lujun9972
 Sysadmin 101: Troubleshooting
 ======
 I typically keep this blog strictly technical, keeping observations, opinions and the like to a minimum. But this, and the next few posts will be about basics and fundamentals for starting out in system administration/SRE/system engineer/sysops/devops-ops (whatever you want to call yourself) roles more generally.
