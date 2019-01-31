@@ -1,51 +1,46 @@
-Translating by MjSeven
-
-How To Search If A Package Is Available On Your Linux Distribution Or Not
+如何搜索一个包是否在你的 Linux 发行版中
 ======
-You can directly install the require package which you want if you know the package name.
+如果你知道包名称，那么你可以直接安装所需的包。
 
-In some cases, if you don’t know the exact package name or you want to search some packages then you can easily search that package with help of distribution package manager.
+在某些情况下，如果你不知道确切的包名称或者你想搜索某些包，那么你可以在分发包管理器的帮助下轻松搜索该包。
 
-Searches automatically include both installed and available packages.
+自动搜索包括已安装和可用的包。
 
-The format of the results depends upon the option. If the query produces no information, there are no packages matching the criteria.
+结果的格式取决于选项。如果查询没有生成任何信息，那么意味着没有匹配条件的包。
 
-This can be done through distribution package managers with variety of options.
+这可以通过具有各种选项的分发包管理器来完成。
 
-I had added all the possible options in this article and you can select which is the best and suitable for you.
+我已经在本文中添加了所有可能的选项，你可以选择最好的和最合适你的选项。
 
-Alternatively we can achieve this through **whohas** command. This will search the given package to all the major distributions (such as Debian, Ubuntu, Fedora, etc.,) not only your own system distribution.
+或者，我们可以通过 **whohas** 命令实现这一点。它会从所有的主流发行版（例如 Debian, Ubuntu, Fedora 等）中搜索，而不仅仅是你自己的系统发行版。
 
-**Suggested Read :**
-**(#)** [List of Command line Package Managers For Linux & Usage][1]
-**(#)** [A Graphical frontend tool for Linux Package Manager][2]
+**建议阅读：**
+**(#)** [适用于 Linux 的命令行包管理器列表以及用法][1]
+**(#)** [Linux 包管理器的图形前端工具][2]
 
-### How to Search a Package in Debian/Ubuntu
+### 如何在 Debian/Ubuntu 中搜索一个包
 
-We can use apt, apt-cache and aptitude package managers to find a given package on Debian based distributions. I had included vast of options with this package managers.
+我们可以使用 apt, apt-cache 和 aptitude 包管理器在基于 Debian 的发行版上查找给定的包。我为这个包管理器中包括了大量的选项。
 
-We can done this on three ways in Debian based systems.
+我们可以在基于 Debian 的系统中使用三种方式完成此操作。
 
-  * apt command
-  * apt-cache command
-  * aptitude command
+  * apt 命令
+  * apt-cache 命令
+  * aptitude 命令
 
+### 如何使用 apt 命令搜索一个包
 
+APT 代表高级包管理工具 Advanced Packaging Tool（APT），它取代了 apt-get。它有功能丰富的命令行工具，包括所有功能包含在一个命令（APT）里，包括 apt-cache, apt-search, dpkg, apt-cdrom, apt-config, apt-key 等，还有其他几个独特的功能。
 
-### How to search a package using apt command
-
-APT stands for Advanced Packaging Tool (APT) which is replacement for apt-get. It’s feature rich command-line tools with included all the futures in one command (APT) such as apt-cache, apt-search, dpkg, apt-cdrom, apt-config, apt-key, etc..,. and several other unique features.
-
-APT is a powerful command-line tool for installing, downloading, removing, searching and managing as well as querying information about packages as a low-level access to all features of the libapt-pkg library. It’s contains some less used command-line utilities related to package management.
+APT 是一个强大的命令行工具，它可以访问 libapt-pkg 底层库的所有特性，它可以用于安装，下载，删除，搜索和管理以及查询关于包的信息，另外它还包含一些较少使用的与包管理相关的命令行实用程序。
 ```
 $ apt -q list nano vlc
 Listing...
 nano/artful,now 2.8.6-3 amd64 [installed]
 vlc/artful 2.2.6-6 amd64
-
 ```
 
-Alternatively we can search a given package using below format.
+或者，我们可以使用以下格式搜索指定的包。
 ```
 $ apt search ^vlc
 Sorting... Done
@@ -70,9 +65,9 @@ vlc-plugin-base/artful 2.2.6-6 amd64
 
 ```
 
-### How to search a package using apt-cache command
+### 如何使用 apt-cache 命令搜索一个包
 
-apt-cache performs a variety of operations on APT’s package cache. Displays information about the given packages. apt-cache does not manipulate the state of the system but does provide operations to search and generate interesting output from the package metadata.
+apt-cache 会在 APT 的包缓存上执行各种操作。它会显示有关指定包的信息。apt-cache 不会操纵系统的状态，但提供了从包的元数据中搜索和生成有趣输出的操作。
 ```
 $ apt-cache search nano | grep ^nano
 nano - small, friendly text editor inspired by Pico
@@ -86,7 +81,7 @@ nanopolish - consensus caller for nanopore sequencing data
 
 ```
 
-Alternatively we can search a given package using below format.
+或者，我们可以使用以下格式搜索指定的包。
 ```
 $ apt-cache policy vlc
 vlc:
@@ -98,7 +93,7 @@ vlc:
 
 ```
 
-Alternatively we can search a given package using below format.
+或者，我们可以使用以下格式搜索给定的包。
 ```
 $ apt-cache pkgnames vlc
 vlc-bin
@@ -123,9 +118,9 @@ vlc-plugin-base
 
 ```
 
-### How to search a package using aptitude command
+### 如何使用 aptitude 命令搜索一个包
 
-aptitude is a text-based interface to the Debian GNU/Linux package system. It allows the user to view the list of packages and to perform package management tasks such as installing, upgrading, and removing packages. Actions may be performed from a visual interface or from the command-line.
+aptitude 一个基于文本的 Debian GNU/Linux 软件包系统的接口。它允许用户查看包列表，并执行包管理任务，例如安装，升级和删除包，它可以从可视化界面或命令行执行操作。
 ```
 $ aptitude search ^vlc
 p vlc - multimedia player and streamer
@@ -168,9 +163,9 @@ p vlc-plugin-zvbi:i386
 
 ```
 
-### How to Search a Package in RHEL/CentOS
+### 如何在 RHEL/CentOS 中搜索一个包
 
-Yum (Yellowdog Updater Modified) is one of the package manager utility in Linux operating system. Yum command is used to install, update, search & remove packages on some Linux distributions based on RedHat.
+Yum（Yellowdog Updater Modified）是 Linux 操作系统中的包管理器实用程序之一。Yum 命令用于在一些基于 RedHat 的 Linux 发行版上，它用来安装，更新，搜索和删除软件包。
 ```
 # yum search ftpd
 Loaded plugins: fastestmirror, refresh-packagekit, security
@@ -189,15 +184,14 @@ vsftpd.x86_64 : Very Secure Ftp Daemon
 
 ```
 
-Alternatively we can search the same using below command.
+或者，我们可以使用以下命令搜索相同内容。
 ```
 # yum list ftpd
-
 ```
 
-### How to Search a Package in Fedora
+### 如何在 Fedora 中搜索一个包
 
-DNF stands for Dandified yum. We can tell DNF, the next generation of yum package manager (Fork of Yum) using hawkey/libsolv library for backend. Aleš Kozumplík started working on DNF since Fedora 18 and its implemented/launched in Fedora 22 finally.
+DNF 代表 Dandified yum。我们可以说 DNF 是下一代 yum 包管理器（Yum 的衍生），它使用 hawkey/libsolv 库作为底层。自从 Fedora 18 开始以及它最终在 Fedora 22 中实施以来，Aleš Kozumplík 就在开始研究 DNF。
 ```
 # dnf search ftpd
 Last metadata expiration check performed 0:42:28 ago on Tue Jun 9 22:52:44 2018.
@@ -217,24 +211,22 @@ perl-ftpd.noarch : Secure, extensible and configurable Perl FTP server
 pure-ftpd.x86_64 : Lightweight, fast and secure FTP server
 pyftpdlib.noarch : Python FTP server library
 nordugrid-arc-gridftpd.x86_64 : ARC gridftp server
-
 ```
 
-Alternatively we can search the same using below command.
+或者，我们可以使用以下命令搜索相同的内容。
 ```
 # dnf list proftpd
 Failed to synchronize cache for repo 'heikoada-terminix', disabling.
 Last metadata expiration check: 0:08:02 ago on Tue 26 Jun 2018 04:30:05 PM IST.
 Available Packages
 proftpd.x86_64
-
 ```
 
-### How to Search a Package in Arch Linux
+### 如何在 Arch Linux 中搜索一个包
 
-pacman stands for package manager utility (pacman). pacman is a command-line utility to install, build, remove and manage Arch Linux packages. pacman uses libalpm (Arch Linux Package Management (ALPM) library) as a back-end to perform all the actions.
+pacman 代表包管理实用程序（pacman）。它是一个用于安装，构建，删除和管理 Arch Linux 软件包的命令行实用程序。pacman 使用 libalpm（Arch Linux Package Management（ALPM）库）作为底层来执行所有操作。
 
-In my case, i’m going to search chromium package.
+在本例中，我将要搜索 chromium 包。
 ```
 # pacman -Ss chromium
 extra/chromium 48.0.2564.116-1
@@ -249,24 +241,22 @@ community/chromium-chromevox latest-1
 community/fcitx-mozc 2.17.2313.102-1
  Fcitx Module of A Japanese Input Method for Chromium OS, Windows, Mac and Linux (the Open Source Edition of Google Japanese
  Input)
-
 ```
 
-By default `-s`‘s builtin ERE (Extended Regular Expressions) can cause a lot of unwanted results. Use the following format to match the package name only.
+默认情况下，`-s` 选项内置 ERE（扩展正则表达式）会导致很多不需要的结果。使用以下格式会仅匹配包名称。
 ```
 # pacman -Ss '^chromium-'
 
 ```
 
-pkgfile is a tool for searching files from packages in the Arch Linux official repositories.
+pkgfile 是一个用于在 Arch Linux 官方仓库的包中搜索文件的工具。
 ```
 # pkgfile chromium
-
 ```
 
-### How to Search a Package in openSUSE
+### 如何在 openSUSE 中搜索一个包
 
-Zypper is a command line package manager for suse & openSUSE distributions. It’s used to install, update, search & remove packages & manage repositories, perform various queries, and more. Zypper command-line interface to ZYpp system management library (libzypp).
+Zypper 是 SUSE 和 openSUSE 发行版的命令行包管理器。它用于安装，更新，搜索和删除包以及管理仓库，执行各种查询等。Zypper 命令行接口到 ZYpp 系统管理库（libzypp）。
 ```
 # zypper search ftp
 or
@@ -286,12 +276,11 @@ S | Name | Summary | Type
  | proftpd-sqlite | SQLite Module for ProFTPD | package
  | pure-ftpd | A Lightweight, Fast, and Secure FTP S-> | package
  | vsftpd | Very Secure FTP Daemon - Written from-> | package
-
 ```
 
-### How to Search a Package using whohas command
+### 如何使用 whohas 命令搜索一个包
 
-whohas command such a intelligent tools which search a given package to all the major distributions such as Debian, Ubuntu, Gentoo, Arch, AUR, Mandriva, Fedora, Fink, FreeBSD, NetBSD.
+whohas 命令是一个智能工具，从所有主流发行版中搜索指定包，如 Debian, Ubuntu, Gentoo, Arch, AUR, Mandriva, Fedora, Fink, FreeBSD 和 NetBSD。
 ```
 $ whohas nano
 Mandriva nano-debug 2.3.1-1mdv2010.2.x http://sophie.zarb.org/rpms/0b33dc73bca710749ad14bbc3a67e15a
@@ -308,10 +297,9 @@ Gentoo nano 9999 http://packages.gentoo.org/package/app-editors/nano
 Gentoo nano 9999 http://packages.gentoo.org/package/app-editors/nano
 Gentoo nano 2.9.8 http://packages.gentoo.org/package/app-editors/nano
 Gentoo nano 2.9.7 http://packages.gentoo.org/package/app-editors/nano
-
 ```
 
-If you want to search a given package to only current distribution repository, use the below format.
+如果你希望只从当前发行版仓库中搜索指定包，使用以下格式：
 ```
 $ whohas -d Ubuntu vlc
 Ubuntu vlc 2.1.6-0ubuntu14.04 1M all http://packages.ubuntu.com/trusty/vlc
@@ -330,7 +318,6 @@ Ubuntu browser-plugin-vlc 2.0.6-4 47K all http://packages.ubuntu.com/cosmic/brow
 Ubuntu libvlc-bin 2.2.6-6 27K all http://packages.ubuntu.com/artful/libvlc-bin
 Ubuntu libvlc-bin 3.0.1-3build1 17K all http://packages.ubuntu.com/bionic/libvlc-bin
 Ubuntu libvlc-bin 3.0.2-0ubuntu0.1 17K all http://packages.ubuntu.com/bionic-updates/libvlc-bin
-
 ```
 
 --------------------------------------------------------------------------------
@@ -339,7 +326,7 @@ via: https://www.2daygeek.com/how-to-search-if-a-package-is-available-on-your-li
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
