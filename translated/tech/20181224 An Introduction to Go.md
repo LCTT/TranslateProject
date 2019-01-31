@@ -12,11 +12,11 @@ Go 简介
 
 （以下内容是我的硕士论文的摘录，几乎整个 2.1 章节，向具有 CS 背景的人快速介绍 Go）
 
-Go 是一门用于并发编程的命令式编程语言，它主要由创造者 Google 进行开发，最初主要由 Robert Griesemer、Rob Pike 和 Ken Thompson开发。这门语言的设计起始于 2017 年，并在 2019 年推出最初版本；而第一个稳定版本是 2012 年发布的 1.0。
+Go 是一门用于并发编程的命令式编程语言，它主要由创造者 Google 进行开发，最初主要由 Robert Griesemer、Rob Pike 和 Ken Thompson开发。这门语言的设计起始于 2017 年，并在 2019 年推出最初版本；而第一个稳定版本是 2012 年发布的 1.0 版本。
 
-Go 有 C 风格语法（没有预处理器），垃圾回收机制，而且类似它在贝尔实验室里被开发出来的前辈们，Newsqueak (Rob Pike)、Alef (Phil Winterbottom) 和 Inferno (Pike, Ritchie, et al.)，使用所谓的 goroutines 和 channels（一种基于 Hoare 的“通信顺序进程”理论的协程）提供内建的并发支持。
+Go 有 C 风格的语法（没有预处理器），垃圾回收机制，而且类似它在贝尔实验室里被开发出来的前辈们：Newsqueak (Rob Pike)、Alef (Phil Winterbottom) 和 Inferno (Pike, Ritchie, et al.)，使用所谓的 goroutines 和信道（一种基于 Hoare 的“通信顺序进程”理论的协程）提供内建的并发支持。
 
-Go 程序以包的形式组织。包本质是一个包含 Go 文件的文件夹。包内的所有文件共享相同的命名空间，而包内的符号有两种可见行：以大写字母开头的符号对于其他包是可见，而其他符号则是该包私有的：
+Go 程序以包的形式组织。包本质是一个包含 Go 文件的文件夹。包内的所有文件共享相同的命名空间，而包内的符号有两种可见性：以大写字母开头的符号对于其他包是可见，而其他符号则是该包私有的：
 
 ```
 func PublicFunction() {
@@ -36,11 +36,11 @@ Go 有一个相当简单的类型系统：没有子类型（但有类型转换�
 
   2. `struct`
 
-  3. `interface` \- 一类方法
+  3. `interface` \- 一组方法的集合
 
-  4. `map[K, V]` \- 从键类型到值类型的映射
+  4. `map[K, V]` \- 一个从键类型到值类型的映射
 
-  5. `[number]Type` \- 一些元素类型组成的数组
+  5. `[number]Type` \- 一些 Type 类型的元素组成的数组
 
   6. `[]Type` \- 某种类型的切片（指向具有长度和功能的数组）
 
@@ -64,7 +64,7 @@ Maps、slices 和 channels 是类似于引用的类型——他们实际上是�
 
 #### 类型转换
 
-类型转换类似于 C 或其他语言中的转换。它们写成这样子：
+类型转换类似于 C 或其他语言中的类型转换。它们写成这样子：
 
 ```
 TypeName(value)
@@ -80,7 +80,7 @@ const foo = 1 // 无类型整数常量
 const foo int = 1 // int 类型常量
 ```
 
-无类型值可以分为以下几类：`UntypedBool`、`UntypedInt`、`UntypedRune`、`UntypedFloat`、`UntypedComplex`、`UntypedString` 以及 `UntypedNil`（Go 称它们为基础类型，other basic kinds are available for the concrete types like `uint8`）。一个无类型值可以赋值给一个从基础类型中派生的具名类型；例如：
+无类型值可以分为以下几类：`UntypedBool`、`UntypedInt`、`UntypedRune`、`UntypedFloat`、`UntypedComplex`、`UntypedString` 以及 `UntypedNil`（Go 称它们为基础类型，其他基础种类可用于具体类型，如 `uint8`）。一个无类型值可以赋值给一个从基础类型中派生的具名类型；例如：
 
 ```
 type someType int
@@ -131,9 +131,9 @@ Go 提供了三个主要的控制了语句：`if`、`switch` 和 `for`。这些�
 
   * `switch` 语句可以处理空的表达式（等于 true）
 
-  * 默认情况下，Go 不会从一个 case 进入下一个 case（不需要 `break`），在程序块的末尾使用 `fallthrough` 则会进入下一个 case。
+  * 默认情况下，Go 不会从一个 case 进入下一个 case（不需要 `break`语句），在程序块的末尾使用 `fallthrough` 则会进入下一个 case。
 
-  * 循环语句 `for` 不止能循环值域：`for key, val := range map { do something }`
+  * 循环语句 `for` 不仅能循环值域：`for key, val := range map { do something }`
 
 ### Goroutines
 
@@ -152,14 +152,14 @@ func main() {
 
 ### 信道
 
-Goroutines 通常同信道结合以提供一种通信顺序进程的扩展。信道是一个并发安全的队列，而且可以缓冲或者不缓冲：
+Goroutines 通常和信道结合，用来提供一种通信顺序进程的扩展。信道是一个并发安全的队列，而且可以选择是否缓冲数据：
 
 ```
 var unbuffered = make(chan int) // 直到数据被读取时完成数据块发送
 var buffered = make(chan int, 5) // 最多有 5 个未读取的数据块
 ```
 
-运输符 `<-` 用于同单个信道通信。
+运算符 `<-` 用于和单个信道进行通信。
 
 ```
 valueReadFromChannel := <- channel
@@ -179,7 +179,7 @@ select {
 
 ### `defer` 声明
 
-Go 提供语句 `defer` 允许函数退出时调用执行预定的函数。它可以用于资源释放，例如：
+Go 提供语句 `defer` 允许函数退出时调用执行预定的函数。它可以用于进行资源释放操作，例如：
 
 ```
 func myFunc(someFile io.ReadCloser) {
