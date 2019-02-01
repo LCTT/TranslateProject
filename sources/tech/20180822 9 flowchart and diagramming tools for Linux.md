@@ -1,5 +1,3 @@
-translating by cycoe
-cycoe 翻译中
 9 flowchart and diagramming tools for Linux
 ======
 
