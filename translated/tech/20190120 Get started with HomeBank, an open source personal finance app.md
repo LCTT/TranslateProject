@@ -1,15 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Get started with HomeBank, an open source personal finance app)
 [#]: via: (https://opensource.com/article/19/1/productivity-tools-homebank)
 [#]: author: (Kevin Sonney https://opensource.com/users/ksonney (Kevin Sonney))
 
-开始使用 HomeBank，一个开源个人财务应用
+开始使用 HomeBank 吧，一款开源个人财务应用
 ======
-使用 HomeBank 跟踪你的资金流向，这是我们开源工具系列中的第八个工具，它将在 2019 年提高你的工作效率。
+> 使用 HomeBank 跟踪你的资金流向，这是我们开源工具系列中的第八个工具，它将在 2019 年提高你的工作效率。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/math_money_financial_calculator_colors.jpg?itok=_yEVTST1)
 
 每年年初似乎都有疯狂的冲动想提高工作效率。新年的决心，渴望开启新的一年，当然，“抛弃旧的，拥抱新的”的态度促成了这一切。通常这时的建议严重偏向闭源和专有软件，但事实上并不用这样。
@@ -24,7 +25,7 @@
 
 [HomeBank][1] 是一款个人财务桌面应用，帮助你轻松跟踪你的财务状况，来帮助减少此类压力。它有很好的报告可以帮助你找出你花钱的地方，允许你设置导入交易的规则，并支持大多数现代格式。
 
-HomeBank 默认可在大多数发行版上可用，因此安装它非常简单。当你第一次启动它时，它将引导你完成设置并让你创建一个帐户。之后，你可以导入任意一种支持的文件格式或开始输入交易。交易簿本身就是一个交易列表。 [与其他一些应用不同][2]，你不必学习[复式簿记][3]来使用 HomeBank。
+HomeBank 默认可在大多数发行版上可用，因此安装它非常简单。当你第一次启动它时，它将引导你完成设置并让你创建一个帐户。之后，你可以导入任意一种支持的文件格式或开始输入交易。交易簿本身就是一个交易列表。[与其他一些应用不同][2]，你不必学习[复式记账法][3]来使用 HomeBank。
 
 ![](https://opensource.com/sites/default/files/uploads/homebank-2.png)
 
@@ -40,7 +41,7 @@ HomeBank 还有预算功能，允许你计划未来几个月的开销。
 
 对我来说，最棒的功能是 HomeBank 的报告。主页面上不仅有一个图表显示你花钱的地方，而且还有许多其他报告可供你查看。如果你使用预算功能，还会有一份报告会根据预算跟踪你的支出情况。你还可以以饼图和条形图的方式查看报告。它还有趋势报告和余额报告，因此你可以回顾并查看一段时间内的变化或模式。
 
-总的来说，HomeBank 是一个非常友好，有用的程序，可以帮助你保持良好的财务。如果跟踪你的钱是你生活中的一件麻烦事，它使用起来很简单并且非常有用。
+总的来说，HomeBank 是一个非常友好，有用的程序，可以帮助你保持良好的财务状况。如果跟踪你的钱是你生活中的一件麻烦事，它使用起来很简单并且非常有用。
 
 
 --------------------------------------------------------------------------------
@@ -50,7 +51,7 @@ via: https://opensource.com/article/19/1/productivity-tools-homebank
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
