@@ -1,3 +1,4 @@
+tomjlw is translating
 Building Slack for the Linux community and adopting snaps
 ======
 ![][1]
@@ -63,7 +64,7 @@ We are taking it step by step currently – first get people on the snap, and bu
 via: https://insights.ubuntu.com/2018/02/06/building-slack-for-the-linux-community-and-adopting-snaps/
 
 作者：[Sarah][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
