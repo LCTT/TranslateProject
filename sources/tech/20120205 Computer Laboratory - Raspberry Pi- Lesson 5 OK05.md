@@ -1,11 +1,13 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (oska874)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Computer Laboratory – Raspberry Pi: Lesson 5 OK05)
 [#]: via: (https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/ok05.html)
 [#]: author: (Robert Mullins http://www.cl.cam.ac.uk/~rdm34)
+
+translating by ezio
 
 Computer Laboratory – Raspberry Pi: Lesson 5 OK05
 ======
