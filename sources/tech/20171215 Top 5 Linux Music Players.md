@@ -1,3 +1,4 @@
+tomjlw is translating
 Top 5 Linux Music Players
 ======
 
@@ -114,7 +115,7 @@ Learn more about Linux through the free ["Introduction to Linux" ][22]course fro
 via: https://www.linux.com/learn/intro-to-linux/2017/12/top-5-linux-music-players
 
 作者：[][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tomjlw](https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
