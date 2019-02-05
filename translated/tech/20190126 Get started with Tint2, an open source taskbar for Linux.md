@@ -7,10 +7,10 @@
 [#]: via: (https://opensource.com/article/19/1/productivity-tool-tint2)
 [#]: author: (Kevin Sonney https://opensource.com/users/ksonney (Kevin Sonney))
 
-开始使用 Tint2，一款 Linux 中的开源任务栏
+开始使用 Tint2 吧，一款 Linux 中的开源任务栏
 ======
 
-Tint2 是我们在开源工具系列中的第 14 个工具，它将在 2019 年提高你的工作效率，能在任何窗口管理器中提供一致的用户体验。
+> Tint2 是我们在开源工具系列中的第 14 个工具，它将在 2019 年提高你的工作效率，能在任何窗口管理器中提供一致的用户体验。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/tools_hardware_purple.png?itok=3NdVoYhl)
 
@@ -20,7 +20,7 @@ Tint2 是我们在开源工具系列中的第 14 个工具，它将在 2019 年�
 
 ### Tint2
 
-让我提高工作效率的最佳方法之一是使用尽可能不让我分心的干净界面。作为 Linux 用户，这意味着使用一种最小的窗口管理器，如 [Openbox][1]、[i3][2] 或 [Awesome][3]。它们每种都有让我更有效率的自定义选项。但让我失望的一件事是，它们都没有一致的配置，所以我不得不经常重新调整我的窗口管理器。
+让我提高工作效率的最佳方法之一是使用尽可能不让我分心的干净界面。作为 Linux 用户，这意味着使用一种极简的窗口管理器，如 [Openbox][1]、[i3][2] 或 [Awesome][3]。它们每种都有让我更有效率的自定义选项。但让我失望的一件事是，它们都没有一致的配置，所以我不得不经常重新调整我的窗口管理器。
 
 ![](https://opensource.com/sites/default/files/uploads/tint2-1.png)
 
@@ -30,7 +30,7 @@ Tint2 是我们在开源工具系列中的第 14 个工具，它将在 2019 年�
 
 ![](https://opensource.com/sites/default/files/uploads/tint2-2.png)
 
-启动配置工具能让你选择主题并自定义屏幕的顶部、底部和侧边栏。我建议从最接近你想要的主题开始，然后从那里进行自定义。
+启动该配置工具能让你选择主题并自定义屏幕的顶部、底部和侧边栏。我建议从最接近你想要的主题开始，然后从那里进行自定义。
 
 ![](https://opensource.com/sites/default/files/uploads/tint2-3.png)
 
@@ -47,7 +47,7 @@ via: https://opensource.com/article/19/1/productivity-tool-tint2
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
