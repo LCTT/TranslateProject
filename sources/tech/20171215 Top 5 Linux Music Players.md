@@ -1,40 +1,29 @@
-tomjlw is translating
-Top 5 Linux Music Players
+Linux 上最好的五款音乐播放器
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/live-music.jpg?itok=Ejbo4rf7_)
->Jack Wallen rounds up his five favorite Linux music players. Creative Commons Zero 
+>Jack Wallen 盘点他最爱的五款 Linux 音乐播放器。图片来源 Creative Commons Zero 
 >Pixabay
 
-No matter what you do, chances are you enjoy a bit of music playing in the background. Whether you're a coder, system administrator, or typical desktop user, enjoying good music might be at the top of your list of things you do on the desktop. And, with the holidays upon us, you might wind up with some gift cards that allow you to purchase some new music. If your music format of choice is of a digital nature (mine happens to be vinyl) and your platform is Linux, you're going to want a good GUI player to enjoy that music.
+不管你做什么，你都有时会来一点背景音乐。不管你是码农，运维或是一个典型的电脑用户，享受美妙的音乐都可能是你在电脑上最想做的事情之一。同时随着即将到来的假期，你可能收到一些能让你买几首新歌的礼物卡。如果你所选的音乐是数字形式（我的恰好是唱片形式）而且你的平台是 Linux 的话，你会想要一个好的图形用户界面播放器来享受音乐。
 
-Fortunately, Linux has no lack of digital music players. In fact, there are quite a few, most of which are open source and available for free. Let's take a look at a few such players, to see which one might suit your needs.
+幸运的是，Linux 不缺好的数字音乐播放器。事实上，Linux 上有不少播放器，大部分是开源并且可以免费获得的。让我们看看其中的几款，看哪个能满足你的需要。
 
 ### Clementine
 
-I wanted to start out with the player that has served as my default for years. [Clementine][1] offers probably the single best ratio of ease-of-use to flexibility you'll find in any player. Clementine is a fork of the new defunct [Amarok][2] music player, but isn't limited to Linux-only; Clementine is also available for Mac OS and Windows platforms. The feature set is seriously impressive and includes the likes of:
+我想从当了我许多年默认选项的播放器开始。[Clementine][1] 可能在播放器中提供了最好的易用性与灵活性间的平衡。Clementine是新的停运的 [Amarok][2] 音乐播放器的复刻，但它不仅限于 Linux； Clementine 在 Mac OS 和 Windows 平台上也可以获得。它的一系列特性十分惊艳，包括：
 
-  * Built-in equalizer
-
-  * Customizable interface (display current album cover as background -- Figure 1)
-
-  * Play local music or from Spotify, Last.fm, and more
-
-  * Sidebar for easy library navigation
-
-  * Built-in audio transcoding (into MP3, OGG, Flac, and more)
-
-  * Remote control using [Android app][3]
-
-  * Handy search function
-
-  * Tabbed playlists
-
-  * Easy creation of regular and smart playlists
-
-  * CUE sheet support
-
-  * Tag support
+* 內建的均衡器
+* 可定制的界面（将现在的专辑封面显示成背景——图一） 
+* 播放本地音乐或者从 Spotify， Last.fm 等播放音乐
+* 便于库导向的侧边栏
+* 內建的音频转码（转成 MP3，OGG，Flac等）
+* 通过 [安卓应用][3] 远程控制
+* 便利的搜索功能
+* 分页的播放列表
+* 简单的规律性和智能化的播放列表创建
+* 支持音乐追踪表单
+* 支持标签
 
 
 
@@ -42,73 +31,70 @@ I wanted to start out with the player that has served as my default for years. [
 ![Clementine][5]
 
 
-Figure 1: The Clementine interface might be a bit old-school, but it's incredibly user-friendly and flexible.
+图一：Clementine 界面可能有一点老派，但是它不可思议得灵活好用。
 
-[Used with permission][6]
+[受许可使用][6]
+ 
+在所有我用过的音乐播放器中，Clementine 是目前为止功能最多也是最容易使用的。它同时也包含了你能在 Linux 音乐播放器中找到的最好的均衡器（有十个频带可以调）。尽管它的界面不够时髦，但它创建、操控播放列表的能力是无与伦比的。如果你的音乐集很大，同时你想完全控制你的音乐集的话，这就是你想要的播放器。
 
-Of all the music players I have used, Clementine is by far the most feature-rich and easy to use.  It also includes one of the finest equalizers you'll find on a Linux music player (with 10 bands to adjust). Although it may not enjoy a very modern interface, it is absolutely unmatched for its ability to create and manipulate playlists. If your music collection is large, and you want total control over it, this is the player you want.
-
-Clementine can be found in the standard repositories and installed from either your distribution's software center or the command line.
+Clementine 可以在标准仓库中找到。它可以从你的发行版的软件中心或通过命令行来安装。
 
 ### Rhythmbox
 
-[Rhythmbox][7] is the default player for the GNOME desktop, but it does function well on other desktops. The Rhythmbox interface is slightly more modern than Clementine and takes a minimal approach to design. That doesn't mean the app is bereft of features. Quite the opposite. Rhythmbox offers gapless playback, Soundcloud support, album cover display, audio scrobbling from Last.fm and Libre.fm, Jamendo support, podcast subscription (from [Apple iTunes][8]), web remote control, and more.
+[Rhythmbox][7] 是 GNOME 桌面的默认播放器，但是它在其它桌面工作得也很好。Rhythmbox 的界面比 Clementine 的界面稍微时尚一点，它的设计遵循极简的理念。这并不意味着它缺乏特性，相反 Rhythmbox 提供无间隔回放，Soundcloud 支持，专辑封面显示，从 Last.fm 和 Libre.fm 导入音频，Jamendo 支持，播客订阅 （从 [Apple iTunes][8]），从网页远程控制等特性。
 
-One very nice feature found in Rhythmbox is plugin support, which allows you to enable features like DAAP Music Sharing, FM Radio, Cover art search, notifications, ReplayGain, Song Lyrics, and more.
+在 Rhythmbox 中发现的一个很好的特性是插件支持，这使得你可以使用像 DAAP 音乐分享，FM 电台，封面艺术查找，通知，ReplayGain，歌词等特性。
 
-The Rhythmbox playlist feature isn't quite as powerful as that found in Clementine, but it still makes it fairly easy to organize your music into quick playlists for any mood. Although Rhythmbox does offer a slightly more modern interface than Clementine (Figure 2), it's not quite as flexible.
+Rhythmbox 播放列表特性不像 Clementine 上的那么强大，但是将你的音乐整理进任何形式的快速播放列表还是很简单的。尽管 Rhythmbox 的界面（图二）比 Clementine 要时髦一点，但是它不像 Clementine 那样灵活。
 
 ![Rhythmbox][10]
 
 
-Figure 2: The Rhythmbox interface is simple and straightforward.
+图二: Rhythmbox 界面简单直接。
 
-[Used with permission][6]
+[受许可使用][6]
 
 ### VLC Media Player
 
-For some, [VLC][11] cannot be beat for playing videos. However, VLC isn't limited to the playback of video. In fact, VLC does a great job of playing audio files. For [KDE Neon][12] users, VLC serves as your default for both music and video playback. Although VLC is one of the finest video players on the Linux market (it's my default), it does suffer from some minor limitations with audio--namely the lack of playlists and the inability to connect to remote directories on your network. But if you're looking for an incredibly simple and reliable means to play local files or network mms/rtsp streams VLC is a quality tool.
-
-VLC does include an equalizer (Figure 3), a compressor, and a spatializer as well as the ability to record from a capture device.
+对于部分人来说，[VLC][11] 在视频播放方面是无懈可击的。然而 VLC 不仅限于视频播放。事实上，VLC在播放音频文件方面做得也很好。对于 [KDE Neon][12] 用户来说，VLC 既是音乐也是视频的默认播放器。 尽管 VLC 是 Linux 市场最好的视频播放器的之一（它是我的默认播放器），它在音频方面确实略有瑕疵——缺少播放列表以及不能够连接到你网络中的远程仓库。但如果你是在寻找一种播放本地文件或者网络 mms/rtsp 的简单可靠的方式，VLC是上佳之选。VLC 确实包括一个均衡器（图三），一个压缩器以及一个空间音响。它同样也能够从捕捉到的设备录音。
 
 ![VLC][14]
 
 
-Figure 3: The VLC equalizer in action.
+图三: 运转中的 VLC 均衡器。
 
-[Used with permission][6]
+[受许可使用][6]
 
 ### Audacious
+如果你在寻找一个轻量级的音乐播放器，Audacious 完美地满足要求。这个音乐播放器相当的专一，但是它确实包括了一个均衡器和一小部分能够改善许多音频的声效（比如回声，消除默音，调节速度和音调，去除人声等——图四）。
 
-If you're looking for a lightweight music player, Audacious perfectly fits that bill. This particular music player is fairly single minded, but it does include an equalizer and a small selection of effects that will please many an audiophile (e.g., Echo, Silence removal, Speed and Pitch, Voice Removal, and more--Figure 4).
-
-![Audacious ][16]
+![Audacious][16]
 
 
-Figure 4: The Audacious EQ and plugins.
+图四: Audacious 均衡器和插件。
 
-[Used with permission][6]
+[受许可使用][6]
 
-Audacious also includes a really handy alarm feature, that allows you to set an alarm that will start playing your currently selected track at a user-specified time and duration.
+Audacious 也包括了一个十分简便的闹铃功能。它允许你设置一个能在用户选定的时间点和持续的时间段内播放选定乐段的闹铃。
 
 ### Spotify
 
-I must confess, I use spotify daily. I'm a subscriber and use it to find new music to purchase--which means I am constantly searching and discovering. Fortunately, there is a desktop client for Spotify (Figure 5) that can be easily installed using the [official Spotify Linux installation instructions][17]. Outside of listening to vinyl, I probably make use of Spotify more than any other music player. It also helps that I can seamlessly jump between the desktop client and the [Android app][18], so I never miss out on the music I enjoy.
+我必须承认，我每天都用 Spotify。我是一个 Spotify 的订阅者并用它去发现、购买新的音乐——这意味着我在不停地探索发现。辛运的是，Spotify 有一个我能按照 [Spotify官方 Linux 平台安装指导][17] 轻松安装的桌面客户端。在桌面客户端与 [安卓应用][18] 间无缝转换对我来说也大有帮助，这样我就永远不会错过我喜欢的音乐了。
 
-![Spotify][20]
+![Spotify][16]
 
 
-Figure 5: The official Spotify client on Linux.
+图五: Linux 上的 Spotify 官方客户端。
 
-[Used with permission][6]
+[受许可使用][6]
 
-The Spotify interface is very easy to use and, in fact, it beats the web player by leaps and bounds. Do not settle for the [Spotify Web Player][21] on Linux, as the desktop client makes it much easier to create and manage your playlists. If you're a Spotify power user, don't even bother with the built-in support for the streaming client in the other desktop apps--once you've used the Spotify Desktop Client, the other apps pale in comparison.
+Spotify 界面十分易于使用，事实上它完胜网页端的播放器。不要在 Linux 上装 [Spotify 网页播放器][21] 因为桌面客户端在创建管理你的播放列表方面简便得多。如果你是 Spotify 重度用户，甚至没必要用其他桌面应用的內建流传输客户端支持——一旦你用过 Spotify 桌面客户端，其它应用就根本没可比性。
 
-### The choice is yours
+### 选择在你
 
-Other options are available (check your desktop software center), but these five clients (in my opinion) are the best of the best. For me, the one-two punch of Clementine and Spotify gives me the best of all possible worlds. Try them out and see which one best meets your needs.
+其它选择也是有的（查看你的桌面软件中心），但这五款客户端（在我看来）是最好的了。对我来说，Clementine 和 Spotify 的组合拳就已经让我美好得唱赞歌了。尝试它们看看哪个能更好地满足你的需要。
 
-Learn more about Linux through the free ["Introduction to Linux" ][22]course from The Linux Foundation and edX.
+通过 edX 和 Linux Foundation 上免费的 ["Introduction to Linux" ][22] 课程学习更多有关 Linux 的知识。
 
 --------------------------------------------------------------------------------
 
