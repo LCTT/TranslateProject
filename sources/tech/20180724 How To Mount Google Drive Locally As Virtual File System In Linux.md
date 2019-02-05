@@ -1,23 +1,24 @@
-How To Mount Google Drive Locally As Virtual File System In Linux
+
+如何把Google Driver当做虚拟磁盘一样挂载到Linux操作系统
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/07/Google-Drive-720x340.png)
 
-[**Google Drive**][1] is the one of the popular cloud storage provider on the planet. As of 2017, over 800 million users are actively using this service worldwide. Even though the number of users have dramatically increased, Google haven’t released a Google drive client for Linux yet. But it didn’t stop the Linux community. Every now and then, some developers had brought few google drive clients for Linux operating system. In this guide, we will see three unofficial google drive clients for Linux. Using these clients, you can mount Google drive locally as a virtual file system and access your drive files in your Linux box. Read on.
+[**Google Drive**][1] 是全球比较受欢迎的云存储平台. 直到2017年, 全球有超过8亿的活跃用户在使用它。即使用户数在持续增长，但直到现在Google还是没有发布一款可以在Linux平台使用的客户端。但这难不倒Linux开源组织的大神。 不时,一些开发者已经把功能实现了。 下面我将会介绍三个用于Linux系统非官方开发的Google Driver客户端。使用这些客户端，你能把Google Driver像虚拟磁盘一样挂载到Linux系统。 请记好笔记了。
 
 ### 1. Google-drive-ocamlfuse
+**google-driver-ocamlfuse** 把Google Driver当做是一个FUSE类型的文件系统，是用OCam语言写的。FUSE到底是何物，用户态文件系统，此项目允许非管理员用户在用户空间开发文件系统。 **google-drive-ocamlfuse** 可以让你把Google Driver当做磁盘一样挂载到Linux系统。支持对文件和目录的读写操作，支持只读操作，支持多用户，支持拖拉文件，支持访问Google Driver的回收站，等操作。
 
-The **google-drive-ocamlfuse** is a FUSE filesystem for Google Drive, written in OCaml. For those wondering, FUSE, stands for **F** ilesystem in **Use** rspace, is a project that allows the users to create virtual file systems in user level. **google-drive-ocamlfuse** allows you to mount your Google Drive on Linux system. It features read/write access to ordinary files and folders, read-only access to Google docks, sheets, and slides, support for multiple google drive accounts, duplicate file handling, access to your drive trash directory, and more.
 
-#### Installing google-drive-ocamlfuse
+#### 安装 google-drive-ocamlfuse
 
-google-drive-ocamlfuse is available in the [**AUR**][2], so you can install it using any AUR helper programs, for example [**Yay**][3].
+google-drive-ocamlfuse 能在Arch系统的[**AUR**][2]上直接找到, 所以这安装起来就比较简单了, 使用[**Yay**][3]命令直接安装。
 ```
 $ yay -S google-drive-ocamlfuse
 
 ```
 
-On Ubuntu:
+在Ubuntu系统:
 ```
 $ sudo add-apt-repository ppa:alessandro-strada/ppa
 $ sudo apt-get update
@@ -25,7 +26,7 @@ $ sudo apt-get install google-drive-ocamlfuse
 
 ```
 
-To install latest beta version, do:
+安装最新的测试版本:
 ```
 $ sudo add-apt-repository ppa:alessandro-strada/google-drive-ocamlfuse-beta
 $ sudo apt-get update
@@ -33,143 +34,140 @@ $ sudo apt-get install google-drive-ocamlfuse
 
 ```
 
-#### Usage
+#### 使用方法
 
-Once installed, run the following command to launch **google-drive-ocamlfuse** utility from your Terminal:
+安装完成后，直接在终端里面输入如下命令，就可以启动**google-drive-ocamlfuse**程序了：
 ```
 $ google-drive-ocamlfuse
 
 ```
-
-When you run this first time, the utility will open your web browser and ask your permission to authorize your google drive files. Once you gave authorization, all necessary config files and folders it needs to mount your google drive will be automatically created.
+当你第一次运行命令，程序会直接打开你的浏览器并要求你确认是否对Google Driver的操作进行授权。当你确认授权后，授权信息和挂载Google Driver用到的目录都会自动进行创建的。
 
 ![][5]
 
-After successful authentication, you will see the following message in your Terminal.
+当成功授权后，你会在终端里面看到如下的信息。
 ```
 Access token retrieved correctly.
 
 ```
-
-You’re good to go now. Close the web browser and then create a mount point to mount your google drive files.
+好了，我们可以进行下一步操作了。关闭浏览器并为我们的Google Driver创建一个挂载点吧。
 ```
 $ mkdir ~/mygoogledrive
 
 ```
-
-Finally, mount your google drive using command:
+最后操作，使用如下命令挂载Google Driver:
 ```
 $ google-drive-ocamlfuse ~/mygoogledrive
 
 ```
 
-Congratulations! You can access access your files either from Terminal or file manager.
+恭喜你了！你可以使用终端或文件管理器来访问Google Driver里面的文件了。
 
-From **Terminal** :
+使用 **终端** :
 ```
 $ ls ~/mygoogledrive
 
 ```
 
-From **File manager** :
+使用 **文件管理器** :
 
 ![][6]
 
-If you have more than one account, use **label** option to distinguish different accounts like below.
+如何你有不止一个账户，可以使用**label**命令对其进行区分不同的账户，就像下面一样
 ```
 $ google-drive-ocamlfuse -label label [mountpoint]
 
 ```
 
-Once you’re done, unmount the FUSE flesystem using command:
+当操作完成后，你可以使用如下的命令卸载Google Driver:
 ```
 $ fusermount -u ~/mygoogledrive
 
 ```
 
-For more details, refer man pages.
+获取更多信息，你可以命令用户操作手册。
 ```
 $ google-drive-ocamlfuse --help
 
 ```
 
-Also, do check the [**official wiki**][7] and the [**project GitHub repository**][8] for more details.
+当然你也可以看看[**官方文档**][7]和[**Github项目**][8] 以获取更多内容。
 
 ### 2. GCSF
 
-**GCSF** is a FUSE filesystem based on Google Drive, written using **Rust** programming language. The name GCSF has come from the Romanian word “ **G** oogle **C** onduce **S** istem de **F** ișiere”, which means “Google Drive Filesystem” in English. Using GCSF, you can mount your Google drive as a local virtual file system and access the contents from the Terminal or file manager. You might wonder how it differ from other Google Drive FUSE projects, for example **google-drive-ocamlfuse**. The developer of GCSF replied to a similar [comment on Reddit][9] “GCSF tends to be faster in several cases (listing files recursively, reading large files from Drive). The caching strategy it uses also leads to very fast reads (x4-7 improvement compared to google-drive-ocamlfuse) for files that have been cached, at the cost of using more RAM“.
+**GCSF** 是Google Driver基于FUSE的文件系统，使用**Rust**语言编写。GCSF主要是来源于罗马尼亚语中的“ **G** oogle **C** onduce **S** istem de **F** ișiere”，翻译成英文就是“Google Drive Filesystem”（即Google Drive 文件系统）使用GCSF，你可以把Google Driver当做虚拟磁盘一样挂载到Linux系统，可以通过终端和文件管理器对其进行操作。你肯定会很好奇，这到底于其它的Google Dirver FUSE项目有什么不同，就比如**google-drive-ocamlfuse**。就类型的问题，GCSF的开发者有如下的回复[comment on Reddit][9] “GCSF意在某些方面更快（循环列举文件，从Google Driver中读取大文件)。缓存策略也能让读取速度更快（x4-7 的修改更突显了与google-drive-ocamlfuse的差别)当文件被结存后，此为浪费更多的内在”。
 
-#### Installing GCSF
+#### 安装 GCSF
 
-GCSF is available in the [**AUR**][10], so the Arch Linux users can install it using any AUR helper, for example [**Yay**][3].
+GCSF 能在[**AUR**][10]上面找到, 对于Arch用户来说直接使用AUR助手来安装就行了，例如[**Yay**][3].
 ```
 $ yay -S gcsf-git
 
 ```
 
-For other distributions, do the following.
+对于其它的发行版本，需要进行如下的操作来进行安装。
 
-Make sure you have installed Rust on your system.
+首先，你得确认系统中是否安装了Rust语言。
 
-Make sure **pkg-config** and the **fuse** packages are installed. They are available in the default repositories of most Linux distributions. For example, on Ubuntu and derivatives, you can install them using command:
+确保**pkg-config**和**fuse**软件包是否安装了。它们在绝大多数的Linux发行片的默认仓库中都能找到。例如，在Ubuntu及其衍生版本中，你可以使用如下的命令进行安装:
 ```
 $ sudo apt-get install -y libfuse-dev pkg-config
 
 ```
 
-Once all dependencies installed, run the following command to install GCSF:
+当所有的依赖软件安装完成后，你可以使用如下的命令来安装GCSF:
 ```
 $ cargo install gcsf
 
 ```
 
-#### Usage
+#### 使用方法
 
-First, we need to authorize our google drive. To do so, simply run:
+首先，我们需要对Google Driver的操作进行授权，跟上面的一样方法，终端输入如下命令:
 ```
 $ gcsf login ostechnix
 
 ```
 
-You must specify a session name. Replace **ostechnix** with your own session name. You will see an output something like below with an URL to authorize your google drive account.
+你必须要指定一个会话名称。使用自己的会话名称来代**ostechnix**。你会看到像下图的提示信息和Google Driver账户的授权验证连接。
 
 ![][11]
 
-Just copy and navigate to the above URL from your browser and click **allow** to give permission to access your google drive contents. Once you gave the authentication you will see an output like below.
+直接把授权验证信息复制出来，并用浏览器打开它，并点击最下面的**allow**来完成授权操作。当完成授权后，你的终端会显示如下的信息。
 ```
 Successfully logged in. Credentials saved to "/home/sk/.config/gcsf/ostechnix".
 
 ```
 
-GCSF will create a configuration file in **$XDG_CONFIG_HOME/gcsf/gcsf.toml** , which is usually defined as **$HOME/.config/gcsf/gcsf.toml**. Credentials are stored in the same directory.
+GCSF会把配置保存文件在**$XDG_CONFIG_HOME/gcsf/gcsf.toml**,一般文件会保存在**$HOME/.config/gcsf/gcsf.toml**。授权信息也会保存在此目录当中。
 
-Next, create a directory to mount your google drive contents.
+下一步，创建一个用来挂载Google Driver的目录。
 ```
 $ mkdir ~/mygoogledrive
 
 ```
 
-Then, edit **/etc/fuse.conf** file:
+之后，修改**/etc/fuse.conf**文件:
 ```
 $ sudo vi /etc/fuse.conf
 
 ```
 
-Uncomment the following line to allow non-root users to specify the allow_other or allow_root mount options.
+注释掉以下的行，以允许非管理员进行挂载操作（内容像allow_other或allow_root）
 ```
 user_allow_other
 
 ```
 
-Save and close the file.
+保存并关闭文件。
 
-Finally, mount your google drive using command:
+最后一步，挂载Google Driver命令如下的命令:
 ```
 $ gcsf mount ~/mygoogledrive -s ostechnix
 
 ```
 
-Sample output:
+简单的终端输入内容:
 ```
 INFO gcsf > Creating and populating file system...
 INFO gcsf > File sytem created.
@@ -180,7 +178,7 @@ INFO gcsf::gcsf::file_manager > Checking for changes and possibly applying them.
 
 ```
 
-Again, replace **ostechnix** with your session name. You can view the existing sessions using command:
+重复一次，使用自己的会话名来更换**ostechnix**。你可以命令如下的命令来查看已经存在的会话:
 ```
 $ gcsf list
 Sessions:
@@ -188,19 +186,19 @@ Sessions:
 
 ```
 
-You can now access your google drive contents either from the Terminal or from File manager.
+你现在可以使用终端和文件管理器对Google Driver进行操作了。.
 
-From **Terminal** :
+使用**终端** :
 ```
 $ ls ~/mygoogledrive
 
 ```
 
-From **File manager** :
+使用**文件管理器** :
 
 ![][12]
 
-If you don’t know where your Google drive is mounted, use **df** or **mount** command as shown below.
+如果你不知道自己把Google Driver挂载到哪个目录了，可以使用**df**或者**mount**命令，就像下面一样。
 ```
 $ df -h
 Filesystem Size Used Avail Use% Mounted on
@@ -218,23 +216,22 @@ GCSF on /home/sk/mygoogledrive type fuse (rw,nosuid,nodev,relatime,user_id=1000,
 
 ```
 
-Once done, unmount the google drive using command:
+当操作完成后，你可以使用如下命令来卸载Google Driver:
 ```
 $ fusermount -u ~/mygoogledrive
 
 ```
 
-Check the [**GCSF GitHub repository**][13] for more details.
+浏览[**GCSF GitHub项目**][13]以获取更多内容。
 
 ### 3. Tuxdrive
 
-**Tuxdrive** is yet another unofficial google drive client for Linux. We have written a detailed guide about Tuxdrive a while ago. Please check the following link.
+**Tuxdrive**是其它的非官方Linux Google Driver客户端。我们之前有写过一篇关于Tuxdrive比较详细的使用方法。你可以找一找之前的文档。
 
-Of course, there were few other unofficial google drive clients available in the past, such as Grive2, Syncdrive. But it seems that they are discontinued now. I will keep updating this list when I come across any active google drive clients.
+这当然，还有其它的非官方的Google Driver客户端在过去有出现过，例如Grive2, Syncdrive。但它们好像都已经停止开发了。我会对这个列表进行持续的跟进当有更受欢迎的Google Driver客户端出现。
 
-And, that’s all for now, folks. Hope this was useful. More good stuffs to come. Stay tuned!
 
-Cheers!
+谢谢你的阅读。
 
 
 
@@ -244,7 +241,7 @@ via: https://www.ostechnix.com/how-to-mount-google-drive-locally-as-virtual-file
 
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/sndnvaps)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
