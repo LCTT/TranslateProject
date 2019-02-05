@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (oneforalone)
 [#]: reviewer: (acyanbird wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10510-1.html)
 [#]: subject: (Two Years With Emacs as a CEO (and now CTO))
 [#]: via: (https://www.fugue.co/blog/2018-08-09-two-years-with-emacs-as-a-cto.html)
 [#]: author: (Josh Stella https://www.fugue.co/blog/author/josh-stella)
 
-作为 CEO 使用 Emacs 的两年经验之谈（现任 CTO）
+作为 CEO 使用 Emacs 的两年经验之谈
 ======
 
 两年前，我写了一篇[博客][1]，并取得了一些反响。这让我有点受宠若惊。那篇博客写的是我准备将 Emacs 作为我的主办公软件，当时我还是 CEO，现在已经是 CTO 了。现在回想起来，我发现我之前不是做程序员就是做软件架构师，而且那时我也喜欢用 Emacs 写代码。重新考虑使用 Emacs 是一次令我振奋的尝试，但我不太清楚这次行动会造成什么反响。在网上，那篇博客的评论也是褒贬不一，但是还是有数万的阅读量，所以总的来说，我写的是一个蛮有意思的题材。在 [Reddit][2] 和 [HackerNews][3] 上有些令人哭笑不得的回复，说我的手会变成鸡爪，或者说我会因白色的背景而近视。在这里我可以很高兴地回答，到目前为止并没有出现什么特别糟糕的后果，相反，我的手腕还因此变得更灵活了。还有一些人担心，说使用 Emacs 会耗费一个 CEO 的精力。把 Fugue 从一个在我家后院的灵感变成强大的产品，并有一大批忠实的顾客，我发现在做这种真正复杂之事的时候，Emacs 可以给你带来安慰。还有，我现在仍然在用白色的背景。
