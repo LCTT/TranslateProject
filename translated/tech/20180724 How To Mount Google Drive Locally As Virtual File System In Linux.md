@@ -7,7 +7,8 @@
 [**Google Drive**][1] 是全球比较受欢迎的云存储平台. 直到2017年, 全球有超过8亿的活跃用户在使用它。即使用户数在持续增长，但直到现在Google还是没有发布一款可以在Linux平台使用的客户端。但这难不倒Linux开源组织的大神。 不时,一些开发者已经把功能实现了。 下面我将会介绍三个用于Linux系统非官方开发的Google Driver客户端。使用这些客户端，你能把Google Driver像虚拟磁盘一样挂载到Linux系统。 请记好笔记了。
 
 ### 1. Google-drive-ocamlfuse
-**google-driver-ocamlfuse** 把Google Driver当做是一个FUSE类型的文件系统，是用OCam语言写的。FUSE到底是何物，用户态文件系统，此项目允许非管理员用户在用户空间开发文件系统。 **google-drive-ocamlfuse** 可以让你把Google Driver当做磁盘一样挂载到Linux系统。支持对文件和目录的读写操作，支持只读操作，支持多用户，支持拖拉文件，支持访问Google Driver的回收站，等操作。
+
+**google-driver-ocamlfuse**把Google Driver当做是一个FUSE类型的文件系统，是用OCam语言写的。FUSE到底是何物，用户态文件系统，此项目允许非管理员用户在用户空间开发文件系统。**google-drive-ocamlfuse**可以让你把Google Driver当做磁盘一样挂载到Linux系统。支持对文件和目录的读写操作，支持只读操作，支持多用户，支持拖拉文件，支持访问Google Driver的回收站，等操作。
 
 
 #### 安装 google-drive-ocamlfuse
@@ -55,7 +56,7 @@ Access token retrieved correctly.
 $ mkdir ~/mygoogledrive
 
 ```
-最后操作，使用如下命令挂载Google Driver:
+最后操作，使用如下命令挂载Google Driver：
 ```
 $ google-drive-ocamlfuse ~/mygoogledrive
 
@@ -63,13 +64,13 @@ $ google-drive-ocamlfuse ~/mygoogledrive
 
 恭喜你了！你可以使用终端或文件管理器来访问Google Driver里面的文件了。
 
-使用 **终端** :
+使用**终端**：
 ```
 $ ls ~/mygoogledrive
 
 ```
 
-使用 **文件管理器** :
+使用**文件管理器**:
 
 ![][6]
 
@@ -79,7 +80,7 @@ $ google-drive-ocamlfuse -label label [mountpoint]
 
 ```
 
-当操作完成后，你可以使用如下的命令卸载Google Driver:
+当操作完成后，你可以使用如下的命令卸载Google Driver：
 ```
 $ fusermount -u ~/mygoogledrive
 
@@ -91,15 +92,15 @@ $ google-drive-ocamlfuse --help
 
 ```
 
-当然你也可以看看[**官方文档**][7]和[**Github项目**][8] 以获取更多内容。
+当然你也可以看看[**官方文档**][7]和[**Github项目**][8]以获取更多内容。
 
 ### 2. GCSF
 
-**GCSF** 是Google Driver基于FUSE的文件系统，使用**Rust**语言编写。GCSF主要是来源于罗马尼亚语中的“ **G** oogle **C** onduce **S** istem de **F** ișiere”，翻译成英文就是“Google Drive Filesystem”（即Google Drive 文件系统）使用GCSF，你可以把Google Driver当做虚拟磁盘一样挂载到Linux系统，可以通过终端和文件管理器对其进行操作。你肯定会很好奇，这到底于其它的Google Dirver FUSE项目有什么不同，就比如**google-drive-ocamlfuse**。就类型的问题，GCSF的开发者有如下的回复[comment on Reddit][9] “GCSF意在某些方面更快（循环列举文件，从Google Driver中读取大文件)。缓存策略也能让读取速度更快（x4-7 的修改更突显了与google-drive-ocamlfuse的差别)当文件被结存后，此为浪费更多的内在”。
+**GCSF** 是Google Driver基于FUSE的文件系统，使用**Rust**语言编写。GCSF主要是来源于罗马尼亚语中的“ **G** oogle **C** onduce **S** istem de **F** ișiere”，翻译成英文就是“Google Drive Filesystem”（即Google Drive 文件系统）使用GCSF，你可以把Google Driver当做虚拟磁盘一样挂载到Linux系统，可以通过终端和文件管理器对其进行操作。你肯定会很好奇，这到底于其它的Google Dirver FUSE项目有什么不同，就比如**google-drive-ocamlfuse**。就类型的问题，GCSF的开发者有如下的回复[在Reddit论坛上的评论][9] “GCSF意在某些方面更快（循环列举文件，从Google Driver中读取大文件)。缓存策略也能让读取速度更快（x4-7 的修改更突显了与google-drive-ocamlfuse的差别)当文件被结存后，此为浪费更多的内在”。
 
 #### 安装 GCSF
 
-GCSF 能在[**AUR**][10]上面找到, 对于Arch用户来说直接使用AUR助手来安装就行了，例如[**Yay**][3].
+GCSF能在[**AUR**][10]上面找到, 对于Arch用户来说直接使用AUR助手来安装就行了，例如[**Yay**][3]。
 ```
 $ yay -S gcsf-git
 
@@ -109,13 +110,13 @@ $ yay -S gcsf-git
 
 首先，你得确认系统中是否安装了Rust语言。
 
-确保**pkg-config**和**fuse**软件包是否安装了。它们在绝大多数的Linux发行片的默认仓库中都能找到。例如，在Ubuntu及其衍生版本中，你可以使用如下的命令进行安装:
+确保**pkg-config**和**fuse**软件包是否安装了。它们在绝大多数的Linux发行片的默认仓库中都能找到。例如，在Ubuntu及其衍生版本中，你可以使用如下的命令进行安装：
 ```
 $ sudo apt-get install -y libfuse-dev pkg-config
 
 ```
 
-当所有的依赖软件安装完成后，你可以使用如下的命令来安装GCSF:
+当所有的依赖软件安装完成后，你可以使用如下的命令来安装GCSF：
 ```
 $ cargo install gcsf
 
@@ -123,7 +124,7 @@ $ cargo install gcsf
 
 #### 使用方法
 
-首先，我们需要对Google Driver的操作进行授权，跟上面的一样方法，终端输入如下命令:
+首先，我们需要对Google Driver的操作进行授权，跟上面的一样方法，终端输入如下命令：
 ```
 $ gcsf login ostechnix
 
@@ -147,7 +148,7 @@ $ mkdir ~/mygoogledrive
 
 ```
 
-之后，修改**/etc/fuse.conf**文件:
+之后，修改**/etc/fuse.conf**文件：
 ```
 $ sudo vi /etc/fuse.conf
 
@@ -161,7 +162,7 @@ user_allow_other
 
 保存并关闭文件。
 
-最后一步，挂载Google Driver命令如下的命令:
+最后一步，挂载Google Driver命令如下的命令：
 ```
 $ gcsf mount ~/mygoogledrive -s ostechnix
 
@@ -178,7 +179,7 @@ INFO gcsf::gcsf::file_manager > Checking for changes and possibly applying them.
 
 ```
 
-重复一次，使用自己的会话名来更换**ostechnix**。你可以命令如下的命令来查看已经存在的会话:
+重复一次，使用自己的会话名来更换**ostechnix**。你可以命令如下的命令来查看已经存在的会话：
 ```
 $ gcsf list
 Sessions:
@@ -186,15 +187,15 @@ Sessions:
 
 ```
 
-你现在可以使用终端和文件管理器对Google Driver进行操作了。.
+你现在可以使用终端和文件管理器对Google Driver进行操作了。
 
-使用**终端** :
+使用**终端**：
 ```
 $ ls ~/mygoogledrive
 
 ```
 
-使用**文件管理器** :
+使用**文件管理器**：
 
 ![][12]
 
@@ -216,7 +217,7 @@ GCSF on /home/sk/mygoogledrive type fuse (rw,nosuid,nodev,relatime,user_id=1000,
 
 ```
 
-当操作完成后，你可以使用如下命令来卸载Google Driver:
+当操作完成后，你可以使用如下命令来卸载Google Driver：
 ```
 $ fusermount -u ~/mygoogledrive
 
@@ -228,7 +229,7 @@ $ fusermount -u ~/mygoogledrive
 
 **Tuxdrive**是其它的非官方Linux Google Driver客户端。我们之前有写过一篇关于Tuxdrive比较详细的使用方法。你可以找一找之前的文档。
 
-这当然，还有其它的非官方的Google Driver客户端在过去有出现过，例如Grive2, Syncdrive。但它们好像都已经停止开发了。我会对这个列表进行持续的跟进当有更受欢迎的Google Driver客户端出现。
+这当然，还有其它的非官方的Google Driver客户端在过去有出现过，例如Grive2,Syncdrive。但它们好像都已经停止开发了。我会对这个列表进行持续的跟进当有更受欢迎的Google Driver客户端出现。
 
 
 谢谢你的阅读。
