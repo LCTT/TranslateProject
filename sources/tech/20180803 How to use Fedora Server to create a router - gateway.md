@@ -1,5 +1,3 @@
-ScarboroughCoral translating!
-
 How to use Fedora Server to create a router / gateway
 ======
 
