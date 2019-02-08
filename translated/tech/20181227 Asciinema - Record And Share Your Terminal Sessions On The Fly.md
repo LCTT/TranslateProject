@@ -1,91 +1,76 @@
- [#]: collector: (lujun9972)
+[#]: collector: (lujun9972)
 [#]: translator: (bestony)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Asciinema – Record And Share Your Terminal Sessions On The Fly)
 [#]: via: (https://www.2daygeek.com/linux-asciinema-record-your-terminal-sessions-share-them-on-web/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Asciinema - 在云端记录并分享你的终端会话
+Asciinema：在云端记录并分享你的终端会话
 ======
 
-这个众所周知的话题我们早已经写过了足够多的文章。
+这个众所周知的话题我们早已经写过了足够多的文章。即使这样，我们今天也要去讨论相同的话题。
 
-即使这样，我们今天也要去讨论相同的话题。
+其他的工具都是在本地运行的，但是 Asciinema 可以以相同的方式在本地和 Web 端运行。我的意思是我们可以在 Web 上分享这个录像。
 
-其他的工具都是在本地运行的，但是 Asciinema 可以以相同的方式在本地和 Web 端运行。
+默认情况下，每个人都更愿意使用 `history` 命令来回看、调用之前在终端内输入的命令。不过，不行的是，这个命令只展示了我们运行的命令却没有展示这些命令上次运行时的输出。
 
-我的意思是我们可以在 Web 上分享这个录像。
+在 Linux 下有很多的组件来记录终端会话活动。在过去，我们也写了一些组件，不过今天我们依然要讨论这同一类心的工具。
 
-默认情况下下，每个人都更愿意使用 history 命令来回看、调用之前在终端内输入的命令。
+如果你想要使用其他工具来记录你的 Linux 终端会话活动，你可以试试 [Script 命令][1]、[Terminalizer 工具][2] 和 [Asciinema 工具][3]。
 
-不过，不行的是，这个命令只展示了我们运行的命令却没有展示这些命令上次运行时的输出。
-
-在 Linux 下有很多的组件来记录终端会话活动。
-
-在过去，我们也写了一些组件，不过今天我们依然要讨论这同一类心的工具。
-
-如果你想要使用其他工具来记录你的 Linux 终端会话活动，你可以试试 **[Script Command][1]** , **[Terminalizer Tool][2]** 和 **[Asciinema Tool][3]**.
-
-不过如果你想要找一个 **[GIF 录制工具][4]**，可以试试 **[Gifine][5]** , **[Kgif][6]** 和 **[Peek][7]**.
-
+不过如果你想要找一个 [GIF 录制工具][4]，可以试试 [Gifine][5]、[Kgif][6] 和 [Peek][7]。
 
 ### 什么是 Asciinema
 
-asciinema 是一个免费且开源的用于录制终端会话并将它们分享到网络上的解决方案。
+`asciinema` 是一个自由开源的用于录制终端会话并将它们分享到网络上的解决方案。
 
-当你在你的终端内运行 asciinema rec 来启动录像时，你输入命令的时候，终端内的所有输出都会被抓取。
+当你在你的终端内运行 `asciinema rec` 来启动录像时，你输入命令的时候，终端内的所有输出都会被抓取。
 
 当抓取停止时（通过按下 `Ctrl-D` 或输出 `exit`)，抓取的输出将会被上传到 asciinema.org 的网站，并为后续的回放做准备。
 
-Asciinema 项目基于多个不同的完整的部分构建的，比如 asciinema 命令行工具、asciinema.org API 和 JavaScript 播放器。
+Asciinema 项目由多个不同的完整的部分组成，比如 `asciinema` 命令行工具、asciinema.org API 和 JavaScript 播放器。
 
-Asciinema 是受到了 script 和 scriptreplay 命令影响而产生的。
-
-Asciinema was inspired by script and scriptreplay commands.
+Asciinema 的灵感来自于 `script` 和 `scriptreplay` 命令。
 
 ### 如何在 Linux 上安装 Asciinema 
 
-
-Asciinema 基于 Python 写就，在 Linux 上，推荐使用 pip 安装的方法来安装。
+Asciinema 由 Python 写就，在 Linux 上，推荐使用 `pip` 安装的方法来安装。
 
 确保你已经在你的系统里安装了 python-pip 包。如果没有，使用下述命令来安装它。
 
-
-对于 Debian/Ubuntu 用户，使用 **[Apt 命令][8]**或 **[Apt-Get 命令][9]** 来安装 pip 包。
-
-
+对于 Debian/Ubuntu 用户，使用 [Apt 命令][8] 或 [Apt-Get 命令][9] 来安装 pip 包。
 
 ```
 $ sudo apt install python-pip
 ```
 
-对于 Archlinux 用户, 使用 **[Pacman 命令][10]** 来安装 pip 包。
+对于 Archlinux 用户，使用 [Pacman 命令][10] 来安装 pip 包。
 
 ```
 $ sudo pacman -S python-pip
 ```
 
-对于 Fedora 用户, 使用 **[DNF 命令][11]** 来安装 pip 包。
+对于 Fedora 用户，使用 [DNF 命令][11] 来安装 pip 包。
 
 ```
 $ sudo dnf install python-pip
 ```
 
-对于 CentOS/RHEL 用户, 使用 **[YUM Command][12]** 来安装 pip 包。
+对于 CentOS/RHEL 用户，使用 [YUM 命令][12] 来安装 pip 包。
 
 ```
 $ sudo yum install python-pip
 ```
 
-对于 openSUSE 用户, 使用 **[Zypper Command][13]** 来安装 pip 包。
+对于 openSUSE 用户，使用 [Zypper 命令][13] 来安装 pip 包。
 
 ```
 $ sudo zypper install python-pip
 ```
 
-最后，运行如下的 **[pip 命令][14]** 来在 Linux 上安装 Asciinema 工具。
+最后，运行如下的 [pip 命令][14] 来在 Linux 上安装 Asciinema 工具。
 
 ```
 $ sudo pip3 install asciinema
@@ -93,7 +78,7 @@ $ sudo pip3 install asciinema
 
 ### 如何使用 Asciinema 工具来记录你的终端会话
 
-一旦你成功的安装了 Asciinema，只需要运行如下命令来开始录制
+一旦你成功的安装了 Asciinema，只需要运行如下命令来开始录制：
 
 ```
 $ asciinema rec 2g-test
@@ -101,7 +86,7 @@ asciinema: recording asciicast to 2g-test
 asciinema: press "ctrl-d" or type "exit" when you're done
 ```
 
-为了测试的目的，运行一些简单的命令，并看一看它是否运行的很好。
+出于测试的目的，运行一些简单的命令，并看一看它是否运行良好。
 
 ```
 $ free
@@ -151,7 +136,7 @@ NUMA node0 CPU(s):   0-7
 Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_add fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp flush_l1d
 ```
 
-当你完成后，简单的按下  `CTRL+D` 或输入 `exit` 来退出录制。这个结果将会被保存在同一个目录。
+当你完成后，简单的按下 `CTRL+D` 或输入 `exit` 来退出录制。这个结果将会被保存在同一个目录。
 
 ```
 $ exit
@@ -160,7 +145,7 @@ asciinema: recording finished
 asciinema: asciicast saved to 2g-test
 ```
 
-如果你想要保存输出到不同的目录中，就需要提醒 Asciinema 你想要保存文件的目录
+如果你想要保存输出到不同的目录中，就需要提醒 Asciinema 你想要保存文件的目录。
 
 ```
 $ asciinema rec /opt/session-record/2g-test1
@@ -172,13 +157,13 @@ $ asciinema rec /opt/session-record/2g-test1
 $ asciinema play 2g-test
 ```
 
-我们能够以两倍速来运行录制的会话。
+我们能够以两倍速来回放录制的会话。
 
 ```
 $ asciinema play -s 2 2g-test
 ```
 
-或者，我们可以以正常速度播放录制的会话，限制空白时间为2秒。
+或者，我们可以以正常速度播放录制的会话，限制空闲时间为 2 秒。
 
 ```
 $ asciinema play -i 2 2g-test
@@ -186,9 +171,7 @@ $ asciinema play -i 2 2g-test
 
 ### 如何在网络上分享已经录制的会话
 
-If you would like to share the recorded session with your friends, just run the following command which upload the recording to asciinema.org and provide you the unique link.
-
-如果你想要分享录制的会话给你的朋友，只要运行下述上传你的会话到 asciinema.org 的命令，就可以获得一个唯一链接。
+如果你想要分享录制的会话给你的朋友，只要运行下述命令上传你的会话到 asciinema.org，就可以获得一个唯一链接。
 
 它将会在被上传 7 天后被归档。
 
@@ -196,7 +179,7 @@ If you would like to share the recorded session with your friends, just run the 
 $ asciinema upload 2g-test
 View the recording at:
 
- https://asciinema.org/a/jdJrxhDLboeyrhzZRHsve0x8i
+    https://asciinema.org/a/jdJrxhDLboeyrhzZRHsve0x8i
 
 This installation of asciinema recorder hasn't been linked to any asciinema.org
 account. All unclaimed recordings (from unknown installations like this one)
@@ -205,29 +188,24 @@ are automatically archived 7 days after upload.
 If you want to preserve all recordings made on this machine, connect this
 installation with asciinema.org account by opening the following link:
 
- https://asciinema.org/connect/10cd4f24-45b6-4f64-b737-ae0e5d12baf8
+    https://asciinema.org/connect/10cd4f24-45b6-4f64-b737-ae0e5d12baf8
 ```
 
 ![][16]
 
-如果你想要分享录制的会话在社交媒体上，只需要点击页面底部的 `分享` 按钮。
+如果你想要分享录制的会话在社交媒体上，只需要点击页面底部的 “Share” 按钮。
 
-如果任何人想要去下载这个录制，只需要点击页面底部的 `下载` 按钮，就可以将其保存在你系统里。
+如果任何人想要去下载这个录制，只需要点击页面底部的 “Download” 按钮，就可以将其保存在你系统里。
 
-If anyone wants to download this recording, just click the `Download` button in the bottom of the page to save on your system.
+### 如何管理 asciinema.org 中的录制片段
 
-### 如何 asciinema.org 中的录制片段
-
-If you want to preserve all recordings made on this machine, connect this installation with asciinema.org account by opening the following link and follow the instructions.
-
-如果你想要保护所有在这个机器上录制的片段，点击下方的链接并使用你在 asciinema.org 的账户登陆，然后跟随这个说明继续操作。
+如果你想要留存所有在这个机器上录制的片段，点击上述显示的链接并使用你在 asciinema.org 的账户登录，然后跟随这个说明继续操作，来将你的机器和该网站连接起来。
 
 ```
 https://asciinema.org/connect/10cd4f24-45b6-4f64-b737-ae0e5d12baf8
 ```
 
-如果你早已录制了一个 asciicast，但是你没有在你的 asciinema.org 账户界面看到它，只需要运行 `asciinema auth` 命令来移动他们。
-
+如果你早已录制了一份，但是你没有在你的 asciinema.org 账户界面看到它，只需要运行 `asciinema auth` 命令来移动它们。
 
 ```
 $ asciinema auth
@@ -246,14 +224,6 @@ This will associate all recordings uploaded from this machine (past and future o
 ```
 $ asciinema rec
 asciinema: recording asciicast to /tmp/tmp6kuh4247-ascii.cast
-asciinema: press "ctrl-d" or type "exit" when you're done
-```
-
-只要运行如下命令来开始录制。
-
-```
-$ asciinema rec 2g-test
-asciinema: recording asciicast to 2g-test
 asciinema: press "ctrl-d" or type "exit" when you're done
 ```
 
@@ -279,8 +249,7 @@ $ uname -a
 Linux daygeek-Y700 4.19.8-2-MANJARO #1 SMP PREEMPT Sat Dec 8 14:45:36 UTC 2018 x86_64 GNU/Linux
 ```
 
-
-如果你完成了，简单的按下 `CTRL+D` 或输入  `exit` 来停止录制，然后按下`回车`按钮来上传文件到 asciinema.org 网站。
+如果你完成了，简单的按下 `CTRL+D` 或输入 `exit` 来停止录制，然后按下回车来上传文件到 asciinema.org 网站。
 
 这将会花费一些时间来为你的录制生成唯一链接。一旦它完成，你会看到和下面一样的样式：
 
@@ -302,7 +271,7 @@ via: https://www.2daygeek.com/linux-asciinema-record-your-terminal-sessions-shar
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[Bestony](https://github.com/bestony)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
