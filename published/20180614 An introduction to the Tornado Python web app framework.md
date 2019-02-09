@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (An introduction to the Tornado Python web app framework)
 [#]: via: (https://opensource.com/article/18/6/tornado-framework)
 [#]: author: (Nicholas Hunt-Walker https://opensource.com/users/nhuntwalker)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10522-1.html)
 
 Python Web 应用程序 Tornado  框架简介
 ======
