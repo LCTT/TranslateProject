@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Hacking math education with Python)
@@ -9,6 +9,7 @@
 
 将 Python 结合到数学教育中
 ======
+
 > 身兼教师、开发者、作家数职的 Peter Farrell 来讲述为什么使用 Python 来讲数学课会比传统方法更加好。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/getting_started_with_python.png?itok=MFEKm3gl)
@@ -19,11 +20,11 @@
 
 Peter 的灵感来源于 Logo 语言之父 [Seymour Papert][2]，他的 Logo 语言现在还存在于 Python 的 [Turtle 模块][3]中。Logo 语言中的海龟形象让 Peter 喜欢上了 Python，并且进一步将 Python 应用到数学教学中。
 
-Peter 在他的新书《[<ruby>Python 数学奇遇记<rt>Math Adventures with Python</rt></ruby>][5]》中分享了他的方法：“图文并茂地指导如何用代码探索数学”。因此我最近对他进行了一次采访，向他了解更多这方面的情况。
+Peter 在他的新书《<ruby>[Python 数学奇遇记][5]<rt>Math Adventures with Python</rt></ruby>》中分享了他的方法：“图文并茂地指导如何用代码探索数学”。因此我最近对他进行了一次采访，向他了解更多这方面的情况。
 
-**Don Watkins（译者注：本文作者）：** 你的教学背景是什么？
+**Don Watkins（LCTT 译注：本文作者）：** 你的教学背景是什么？
 
-**Peter Farrell：** 我曾经当过八年的数学老师，之后又教了十年的数学。我还在当老师的时候，就阅读过 Papert 的 《[<ruby>头脑风暴<rt>Mindstorms</rt></ruby>][6]》并从中受到了启发，将 Logo 语言和海龟引入到了我所有的数学课上。
+**Peter Farrell：** 我曾经当过八年的数学老师，之后又做了十年的数学私教。我还在当老师的时候，就阅读过 Papert 的 《<ruby>[头脑风暴][6]<rt>Mindstorms</rt></ruby>》并从中受到了启发，将 Logo 语言和海龟引入到了我所有的数学课上。
 
 **DW：** 你为什么开始使用 Python 呢？
 
@@ -68,7 +69,7 @@ via: https://opensource.com/article/19/1/hacking-math
 作者：[Don Watkins][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
