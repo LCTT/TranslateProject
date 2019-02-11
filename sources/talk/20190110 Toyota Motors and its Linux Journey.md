@@ -7,12 +7,11 @@
 [#]: via: (https://itsfoss.com/toyota-motors-linux-journey)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Toyota Motors and its Linux Journey
+丰田汽车的Linux之旅
 ======
 
-**This is a community submission from It’s FOSS reader Malcolm Dean.**
-
 I spoke with Brian R Lyons of TMNA Toyota Motor Corp North America about the implementation of Linux in Toyota and Lexus infotainment systems. I came to find out there is an Automotive Grade Linux (AGL) being used by several autmobile manufacturers.
+我之前跟丰田汽车北美分公司的Brian.R.Lyons聊过天，话题是关于Linux在丰田和雷克萨斯汽车的信息娱乐系统上的实施方案。我发现一些汽车制造商使用了Automotive Grade Linux (AGL)。
 
 I put together a short article comprising of my discussion with Brian about Toyota and its tryst with Linux. I hope that Linux enthusiasts will like this quick little chat.
 
