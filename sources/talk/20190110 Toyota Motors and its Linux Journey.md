@@ -10,39 +10,39 @@
 丰田汽车的Linux之旅
 ======
 
-I spoke with Brian R Lyons of TMNA Toyota Motor Corp North America about the implementation of Linux in Toyota and Lexus infotainment systems. I came to find out there is an Automotive Grade Linux (AGL) being used by several autmobile manufacturers.
-我之前跟丰田汽车北美分公司的Brian.R.Lyons聊过天，话题是关于Linux在丰田和雷克萨斯汽车的信息娱乐系统上的实施方案。我发现一些汽车制造商使用了Automotive Grade Linux (AGL)。
+**这篇文章来自 It's FOSS 的读者 Malcolm Dean的投递。**
 
-I put together a short article comprising of my discussion with Brian about Toyota and its tryst with Linux. I hope that Linux enthusiasts will like this quick little chat.
+我之前跟丰田汽车北美分公司的 Brian.R.Lyons（丰田发言人）聊了聊，话题是关于Linux在丰田和雷克萨斯汽车的信息娱乐系统上的实施方案。我了解到一些汽车制造商使用了 Automotive Grade Linux (AGL)。
 
-All [Toyota vehicles and Lexus vehicles are going to use Automotive Grade Linux][1] (AGL) majorly for the infotainment system. This is instrumental in Toyota Motor Corp because as per Mr. Lyons “As a technology leader, Toyota realized that adopting open source development methodology is the best way to keep up with the rapid pace of new technologies”.
+然后我写了一篇短文，记录了我和 Brian 的讨论内容，就是丰田和 Linux 的一些渊源。希望 Linux 的狂热粉丝们能够喜欢这次对话。
 
-Toyota among other automotive companies thought, going with a Linux based operating system might be cheaper and quicker when it comes to updates, and upgrades compared to using proprietary software.
+全部[丰田和雷克萨斯汽车都将会使用 Automotive Grade Linux][1] (AGL)，主要是用于车载信息娱乐系统。这项措施对于丰田集团来说是至关重要的，因为据 Lyons 先生所说：“作为技术的引领者之一，丰田认识到，赶上科技快速进步最好的方法就是拥抱开源理念”。
 
-Wow! Finally Linux in a vehicle. I use Linux every day on my desktop; what a great way to expand the use of this awesome software to a completely different industry.
+丰田和众多汽车制造公司都认为，与使用非自由软件相比，采用基于 Linux 的操作系统在更新和升级方面会更加廉价和快捷。
 
-I was curious when Toyota decided to use the [Automotive Grade Linux][2] (AGL). According to Mr. Lyons, it goes back to 2011.
+这简直太棒了！ Linux 终于跟汽车结合起来了。我每天都在电脑上使用 Linux；能看到这个优秀的软件在一个完全不同的产业领域里大展拳脚真是太好了。
 
-> “Toyota has been an active member and contributor to AGL since its launch more than five years ago, collaborating with other OEMs, Tier 1s and suppliers to develop a robust, Linux-based platform with increased security and capabilities”
+我很好奇丰田是什么时候开始使用 [Automotive Grade Linux][2](AGL) 的。按照 Lyons 先生的说法，这要追溯到 2011 年。
 
-![Toyota Infotainment][3]
+>“自 AGL 项目在五年前启动之始，作为活跃的会员和贡献者，丰田与其他顶级制造商和供应商展开合作，着手开发一个基于 Linux 的强大平台，并不断地增强其功能和安全性。”
 
-In 2011, [Toyota joined the Linux Foundation][4] and started discussions about IVI (In-Vehicle Infotainment) software with other car OEMs and software companies. As a result, in 2012, Automotive Grade Linux working group was formed in the Linux Foundation.
+![丰田信息娱乐系统][3]
 
-What Toyota did at first in AGL group was to take “code first” approach as normal as in the open source domains, and then start the conversation about the initial direction by specifying requirement specifications which had been discussed among car OEMs, IVI Tier-1 companies, software companies, and so on.
+[丰田于2011年加入了 Linux 基金会][4]，与其他汽车制造商和软件公司就 IVI（车内信息娱乐系统）展开讨论，最终在 2012 年，Linux 基金会内部成立了 Automotive Grade Linux 工作组。
 
-Toyota had already realized that sharing the software code among Tier1 companies was going to essential at the time when it joined the Linux Foundation. This was because the cost of maintaining such a huge software was very costly and was no longer differentiation by Tier1 companies. Toyota and its Tier1 supplier companies wanted to spend more resources n new functions and new user experiences rather than maintaining conventional code all by themselves.
+丰田在 AGL 工作组里首先提出了“代码优先”的策略，这在开源领域是很常见的做法。然后丰田和其他汽车制造商、IVI 一线厂家，软件公司等各方展开对话，根据各方的技术需求详细制定了初始方向。
 
-This is a huge thing as automotive companies have gone in together to further their cooperation. Many companies have adopted this after finding proprietary software to be expensive.
+在加入 Linux 基金会的时候，丰田就已经意识到，在一线公司之间共享软件代码将会是至关重要的。因为要维护如此复杂的软件系统，对于任何一家顶级厂商都是一笔不小的开销。丰田和它的一级供货商想把更多的资源用在开发新功能和新的用户体验上，而不是用在维护各自的代码上。
 
-Today, AGL is used for all Toyota and Lexus vehicles and is used in all markets where vehicles are sold.
+各个汽车公司联合起来深入合作是一件大事。许多公司都达成了这样的共识，因为他们都发现开发维护私有软件其实更费钱。
 
-As someone who has sold cars for Lexus, I think this is a huge step forward. I and other sales associates had many customers who would come back to speak with a technology specialist to learn about the full capabilities of their infotainment system.
+今天，在全球市场上，丰田和雷克萨斯的全部车型都使用了 AGL。
 
-I see this as a huge step forward for the Linux community, and users. The operating system we use on a daily basis is being put to use right in front of us albeit in a modified form but is there none-the-less.
+身为雷克萨斯的销售人员，我认为这是一大进步。我和其他销售顾问都曾接待过很多回来找技术专员的客户，他们想更多的了解自己车上的信息娱乐系统到底都能做些什么。
 
-Where does this lead? Hopefully a better user-friendly and less glitchy experience for consumers.
+这件事本身对于 Linux 社区和用户是个重大利好。虽然那个我们每天都在使用的操作系统变了模样，被推到了更广阔的舞台上，但它仍然是那个 Linux，简单、包容而强大。
 
+未来将会如何发展呢？我希望它能少出差错，为消费者带来更佳的用户体验。
 
 --------------------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ via: https://itsfoss.com/toyota-motors-linux-journey
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/jdh8383)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
