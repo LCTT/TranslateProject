@@ -22,7 +22,7 @@
 
 这简直太棒了！ Linux 终于跟汽车结合起来了。我每天都在电脑上使用 Linux；能看到这个优秀的软件在一个完全不同的产业领域里大展拳脚真是太好了。
 
-我很好奇丰田是什么时候开始使用 [Automotive Grade Linux][2](AGL) 的。按照 Lyons 先生的说法，这要追溯到 2011 年。
+我很好奇丰田是什么时候开始使用 [Automotive Grade Linux][2] (AGL) 的。按照 Lyons 先生的说法，这要追溯到 2011 年。
 
 >“自 AGL 项目在五年前启动之始，作为活跃的会员和贡献者，丰田与其他顶级制造商和供应商展开合作，着手开发一个基于 Linux 的强大平台，并不断地增强其功能和安全性。”
 
@@ -50,7 +50,7 @@ via: https://itsfoss.com/toyota-motors-linux-journey
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/jdh8383)
+译者：[jdh8383](https://github.com/jdh8383)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
