@@ -7,47 +7,47 @@
 [#]: via: (https://fedoramagazine.org/3-simple-and-useful-gnome-shell-extensions/)
 [#]: author: (Ryan Lerch https://fedoramagazine.org/introducing-flatpak/)
 
-3 simple and useful GNOME Shell extensions
+3 个简单实用的 GNOME Shell 扩展
 ======
-
 ![](https://fedoramagazine.org/wp-content/uploads/2019/01/3simple-816x345.png)
 
-The default desktop of Fedora Workstation — GNOME Shell — is known and loved by many users for its minimal, clutter-free user interface. It is also known for the ability to add to the stock interface using extensions. In this article, we cover 3 simple, and useful extensions for GNOME Shell. These three extensions provide a simple extra behaviour to your desktop; simple tasks that you might do every day.
+Fedora Workstation 的默认桌面 GNOME Shell，因其最小化，整洁的用户界面而闻名并深受许多用户的喜爱。它还以可使用扩展添加到 stock 界面的能力而闻名。在本文中，我们将介绍 GNOME Shell 的 3 个简单且有用的扩展。这三个扩展为你的桌面提供了简单的，你可能每天都会做的行为。
 
+### 安装扩展程序
 
-### Installing Extensions
-
-The quickest and easiest way to install GNOME Shell extensions is with the Software Application. Check out the previous post here on the Magazine for more details:
+安装 GNOME Shell 扩展的最快捷最简单的方法是使用软件应用。有关详细信息，请查看 Magazine 中的上一篇文章：
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/11/installing-extensions-768x325.jpg)
 
 ### Removable Drive Menu
 
 ![][1]
-Removable Drive Menu extension on Fedora 29
 
-First up is the [Removable Drive Menu][2] extension. It is a simple tool that adds a small widget in the system tray if you have a removable drive inserted into your computer. This allows you easy access to open Files for your removable drive, or quickly and easily eject the drive for safe removal of the device.
+Fedora 29 中的 Removable Drive Menu 扩展
+
+首先是 [Removable Drive Menu][2] 扩展。如果你的计算机中有可移动驱动器，那么它是一个可在系统托盘中添加一个 widget 的简单工具。它可以使你轻松打开可移动驱动器中的文件，或者快速方便地弹出驱动器以安全移除设备。
 
 ![][3]
-Removable Drive Menu in the Software application
 
-### Extensions Extension.
+软件应用中的 Removable Drive Menu
+
+### Extensions 扩展
 
 ![][4]
 
-The [Extensions][5] extension is super useful if you are always installing and trying out new extensions. It provides a list of all the installed extensions, allowing you to enable or disable them. Additionally, if an extension has settings, it allows quick access to the settings dialog for each one.
+如果你一直在安装和尝试新扩展，那么 [Extensions][5] 扩展非常有用。它提供了所有已安装扩展的列表，允许你启用或禁用它们。此外，如果扩展有设置，那么可以快速打开每个扩展的设置对话框。
 
 ![][6]
-the Extensions extension in the Software application
+
+软件中的 Extensions 扩展
 
 ### Frippery Move Clock
 
 ![][7]
 
-Finally, there is the simplest extension in the list. [Frippery Move Clock][8], simply moves the position of the clock from the center of the top bar to the right, next to the status area.
+最后的是列表中最简单的扩展。[Frippery Move Clock][8]，只是将时钟位置从顶部栏的中心向右移动，位于状态区旁边。
 
 ![][9]
-
 
 --------------------------------------------------------------------------------
 
@@ -55,9 +55,8 @@ via: https://fedoramagazine.org/3-simple-and-useful-gnome-shell-extensions/
 
 作者：[Ryan Lerch][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
-
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://fedoramagazine.org/introducing-flatpak/
