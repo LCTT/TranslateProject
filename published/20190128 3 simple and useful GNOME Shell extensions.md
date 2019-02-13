@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10536-1.html)
 [#]: subject: (3 simple and useful GNOME Shell extensions)
 [#]: via: (https://fedoramagazine.org/3-simple-and-useful-gnome-shell-extensions/)
 [#]: author: (Ryan Lerch https://fedoramagazine.org/introducing-flatpak/)
@@ -11,37 +11,37 @@
 ======
 ![](https://fedoramagazine.org/wp-content/uploads/2019/01/3simple-816x345.png)
 
-Fedora Workstation 的默认桌面 GNOME Shell，因其最小化，整洁的用户界面而闻名并深受许多用户的喜爱。它还以可使用扩展添加到 stock 界面的能力而闻名。在本文中，我们将介绍 GNOME Shell 的 3 个简单且有用的扩展。这三个扩展为你的桌面提供了简单的，你可能每天都会做的行为。
+Fedora 工作站的默认桌面 GNOME Shell，因其极简、整洁的用户界面而闻名，并深受许多用户的喜爱。它还以可使用扩展添加到 stock 界面的能力而闻名。在本文中，我们将介绍 GNOME Shell 的 3 个简单且有用的扩展。这三个扩展为你的桌面提供了更多的行为，可以完成你可能每天都会做的简单任务。
 
 ### 安装扩展程序
 
-安装 GNOME Shell 扩展的最快捷最简单的方法是使用软件应用。有关详细信息，请查看 Magazine 中的上一篇文章：
+安装 GNOME Shell 扩展的最快捷、最简单的方法是使用“软件”应用。有关详细信息，请查看 Magazine [以前的文章](https://fedoramagazine.org/install-extensions-via-software-application/)：
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/11/installing-extensions-768x325.jpg)
 
-### Removable Drive Menu
+### 可移动驱动器菜单
 
 ![][1]
 
-Fedora 29 中的 Removable Drive Menu 扩展
+*Fedora 29 中的 Removable Drive Menu 扩展*
 
-首先是 [Removable Drive Menu][2] 扩展。如果你的计算机中有可移动驱动器，那么它是一个可在系统托盘中添加一个 widget 的简单工具。它可以使你轻松打开可移动驱动器中的文件，或者快速方便地弹出驱动器以安全移除设备。
+首先是 [Removable Drive Menu][2] 扩展。如果你的计算机中有可移动驱动器，它是一个可在系统托盘中添加一个 widget 的简单工具。它可以使你轻松打开可移动驱动器中的文件，或者快速方便地弹出驱动器以安全移除设备。
 
 ![][3]
 
-软件应用中的 Removable Drive Menu
+*软件应用中的 Removable Drive Menu*
 
-### Extensions 扩展
+### 扩展之扩展
 
 ![][4]
 
-如果你一直在安装和尝试新扩展，那么 [Extensions][5] 扩展非常有用。它提供了所有已安装扩展的列表，允许你启用或禁用它们。此外，如果扩展有设置，那么可以快速打开每个扩展的设置对话框。
+如果你一直在安装和尝试新扩展，那么 [Extensions][5] 扩展非常有用。它提供了所有已安装扩展的列表，允许你启用或禁用它们。此外，如果该扩展有设置，那么可以快速打开每个扩展的设置对话框。
 
 ![][6]
 
-软件中的 Extensions 扩展
+*软件中的 Extensions 扩展*
 
-### Frippery Move Clock
+### 无用的时钟移动
 
 ![][7]
 
@@ -56,7 +56,8 @@ via: https://fedoramagazine.org/3-simple-and-useful-gnome-shell-extensions/
 作者：[Ryan Lerch][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
+
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://fedoramagazine.org/introducing-flatpak/
