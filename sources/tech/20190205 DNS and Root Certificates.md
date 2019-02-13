@@ -7,120 +7,115 @@
 [#]: via: (https://lushka.al/dns-and-certificates/)
 [#]: author: (Anxhelo Lushka https://lushka.al/)
 
-DNS and Root Certificates
+DNS 和根证书
 ======
 
-Due to recent events we (as in we from the Privacy Today group) felt compelled to write an impromptu article on this matter. It’s intended for all audiences so it will be kept simple - technical details may be posted later.
+> 关于 DNS 和根证书你需要了解的内容。
 
-### What Is DNS And Why Does It Concern You?
+由于最近发生的事件，我们（来自 Privacy Today 组织）感到有必要写一篇关于此事的即兴文章。它适用于所有读者，因此它将保持简单 —— 技术细节可能会在稍后发布。
 
-DNS stands for Domain Name System and you encounter it daily. Whenever your web browser or any other application connects to the internet, it will most likely do so using a domain. A domain is simply the address you type: i.e. [duckduckgo.com][1]. Your computer needs to know where this leads to and will ask a DNS resolver for help. It will return an IP like [176.34.155.23][2]; the public network address you need to know to connect. This process is called a DNS lookup.
+### 什么是 DNS，为什么它与你有关？
 
-There are certain implications for both your privacy and your security as well as your liberty:
+DNS 的意思是<ruby>域名系统<rt>Domain Name System</rt></ruby>，你每天都会接触到它。每当你的 Web 浏览器或任何其他应用程序连接到互联网时，它很可能会使用域名。域名简单来说就是你键入的地址：例如 [duckduckgo.com][1]。你的计算机需要知道它所导向的地方，会向 DNS 解析器寻求帮助。而它将返回类似 [176.34.155.23][2] 的 IP —— 这就是连接时所需要知道的公开的网络地址。 此过程称为 DNS 查找。
 
-#### Privacy
+这对你的隐私和安全以及你的自由都有一定的影响：
 
-Since you ask the resolver for an IP for a domain name, it knows exactly which sites you’re visiting and, thanks to the “Internet Of Things”, often abbreviated as IoT, even which appliances you use at home.
+#### 隐私
 
-#### Security
+由于你要求解析器获取域名的 IP，因此它会确切地知道你正在访问哪些站点，并且由于“物联网”（通常缩写为 IoT），甚至还知道是你在家中使用的哪个设备。
 
-You’re trusting the resolver that the IP it returns is correct. There are certain checks to ensure it is so, under normal circumstances, that is not a common source of issues. These can be undermined though and that’s why this article is important. If the IP is not correct, you can be fooled into connecting to malicious 3rd parties - even without ever noticing any difference. In this case, your privacy is in much greater danger because, not only are the sites you visit tracked, but the contents as well. 3rd parties can see exactly what you’re looking at, collect personal information you enter (such as passwords), and a lot more. Your whole identity can be taken over with ease.
+#### 安全
 
-#### Liberty
+你相信解析器返回的 IP 是正确的。有一些检查可以确保如此，在正常情况下这一般不是问题。但这些可能会被破坏，这就是本文重要的原因。如果返回的 IP 不正确，你可能会被欺骗引向了恶意的第三方 —— 甚至你都不会注意到任何差异。在这种情况下，你的隐私会受到更大的危害，因为不仅会被跟踪你访问了什么网站，甚至你访问的内容也会被跟踪。第三方可以准确地看到你正在查看的内容，收集你输入的个人信息（例如密码）等等。你的整个身份可以轻松接管。
 
-Censorship is commonly enforced via DNS. It’s not the most effective way to do so but it is extremely widespread. Even in western countries, it’s routinely used by corporations and governments. They use the same methods as potential attackers; they will not return the correct IP when you ask. They could act as if the domain doesn’t exist or direct you elsewhere entirely.
+#### 自由
 
-### Ways DNS lookups can happen
-
-#### 3rd Party DNS Resolvers Hosted By Your ISP
-
-Most people are using 3rd party resolvers hosted by their Internet Service Provider. When you connect your modem, they will automatically be fetched and you might never bother with it at all.
-
-#### 3rd Party DNS Resolver Of Your Choice
-
-If you already knew what DNS means then you might have decided to use another DNS resolver of your choice. This might improve the situation since it makes it harder for your ISP to track you and you can avoid some forms of censorship. Both are still possible though, but the methods required are not as widely used.
-
-#### Your Own (local) DNS Resolver
-
-You can run your own and avoid some of the possible perils of using others’. If you’re interested in more information drop us a line.
-
-### Root Certificates
-
-#### What Is A Root Certificate?
-
-Whenever you visit a website starting with https, you communicate with it using a certificate it sends. It enables your browser to encrypt the communication and ensures that nobody listening in can snoop. That’s why everybody has been told to look out for the https (rather than http) when logging into websites. The certificate itself only verifies that it has been generated for a certain domain. There’s more though:
-
-That’s where the root certificate comes in. Think of it as the next higher level that makes sure the levels below are correct. It verifies that the certificate sent to you has been authorized by a certificate authority. This authority ensures that the person creating the certificate is actually the real operator.
-
-This is also referred to as the chain of trust. Your operating system includes a set of these root certificates by default so that the chain of trust can be guaranteed.
-
-#### Abuse
-
-We now know that:
-
-  * DNS resolvers send you an IP address when you send a domain name
-  * Certificates allow encrypting your communication and verify they have been generated for the domain you visit
-  * Root certificates verify that the certificate is legitimate and has been created by the real site operator
+审查通常是通过 DNS 实施的。这不是最有效的方法，但它非常普遍。即使在西方国家，它也经常被公司和政府使用。他们使用与潜在攻击者相同的方法；当你查询 IP 地址时，他们不会返回正确的 IP。他们可以表现得就好像某个域名不存在，或完全将访问指向别处。
 
 
+### DNS 查询的方式
 
-**How can it be abused?**
+#### 由你的 ISP 提供的第三方 DNS 解析器
 
-  * A malicious DNS resolver can send you a wrong IP for the purpose of censorship as said before. They can also send you to a completely different site.
-  * This site can send you a fake certificate.
-  * A malicious root certificate can “verify” this fake certificate.
+大多数人都在使用由其互联网接入服务提供商提供的第三方解析器。当你连接调制解调器时（LCTT 译注：或宽带路由器），这些 DNS 就会被自动取出，你可能从来没注意过它。
 
+#### 你自己选择的第三方 DNS 解析器
 
+如果你已经知道 DNS 意味着什么，那么你可能决定使用你选择的另一个 DNS 解析器。这可能会改善这种情况，因为它使你的 ISP 更难以跟踪你，并且你可以避免某些形式的审查。尽管仍然是可能的，但这种追踪和审查所需的方法并没有被广泛使用。
 
-This site will look absolutely fine to you; it has https in the URL and, if you click it, it will say verified. All just like you learned, right? **No!**
+#### 你自己（本地）的 DNS 解析器
 
-It now receives all the communication you intended to send to the original. This bypasses the checks created to avoid it. You won’t receive error messages, your browser won’t complain.
+你可以自己动手，避免使用别人的 DNS 解析器的一些危险。如果你对此感兴趣，请告诉我们。
 
-**All your data is compromised!**
+### 根证书
 
-### Conclusion
+#### 什么是根证书？
 
-#### Risks
+每当你访问以 https 开头的网站时，你都会使用它发送的证书与之通信。它使你的浏览器能够加密通信并确保没有人可以窥探。这就是为什么每个人都被告知在登录网站时要注意 https（而不是 http）。证书本身仅验证是否为某个域所生成。以及：
 
-  * Using a malicious DNS resolver can always compromise your privacy but your security will be unharmed as long as you look out for the https.
-  * Using a malicious DNS resolver and a malicious root certificate, your privacy and security are fully compromised.
+这就是根证书的来源。可以其视为一个更高的级别，以确保其下的级别是正确的。它验证发送给你的证书是否已由证书颁发机构授权。此权限确保创建证书的人实际上是真正的运营者。
 
+这也被称为信任链。默认情况下，你的操作系统包含一组这些根证书，以确保该信任链的存在。
 
+#### 滥用
 
-#### Actions To Take
+我们现在知道：
 
-**Do not ever install a 3rd party root certificate!** There are very few exceptions why you would want to do so and none of them are applicable to general end users.
+* DNS 解析器在你发送域名时向你发送 IP 地址
+* 证书允许加密你的通信，并验证它们是否为你访问的域生成
+* 根证书验证证书是否合法，并且是由真实站点运营者创建的
 
-**Do not fall for clever marketing that ensures “ad blocking”, “military grade security”, or something similar**. There are methods of using DNS resolvers on their own to enhance your privacy but installing a 3rd party root certificate never makes sense. You are opening yourself up to extreme abuse.
+**怎么会被滥用呢？**
 
-### Seeing It Live
+* 如前所述，恶意 DNS 解析器可能会向你发送错误的 IP 以进行审查。他们还可以将你导向完全不同的网站。
+* 这个网站可以向你发送假的证书。
+* 恶意的根证书可以“验证”此假证书。
 
-**WARNING**
+对你来说，这个网站看起来绝对没问题；它在网址中有 https，如果你点击它，它会说已经通过验证。就像你学到的一样，对吗？ **不对！**
 
-A friendly sysadmin provided a live demo so you can see for yourself in realtime. This is real.
+它现在可以接收你要发送给原站点的所有通信。这会绕过想要避免被滥用而创建的检查。你不会收到错误消息，你的浏览器不会抱怨。
 
-**DO NOT ENTER PRIVATE DATA! REMOVE THE CERT AND DNS AFTERWARDS!**
+**而你所有数据都受到了损害！**
 
-If you do not know how to, don’t install it in the first place. While we trust our friend you still wouldn’t want to have the root certificate of a random and unknown 3rd party installed.
+### 结论
 
-#### Live Demo
+#### 风险
 
-Here is the link: <http://https-interception.info.tm/>
+* 使用恶意 DNS 解析器总是会损害你的隐私，但只要你注意 https，你的安全性就不会受到损害。
+* 使用恶意 DNS 解析程序和恶意根证书，你的隐私和安全性完全受到损害。
 
-  * Set the provided DNS resolver
-  * Install the provided root certificate
-  * Visit <https://paypal.com> and enter random login data
-  * Your data will show up on the website
+#### 可以采取的动作
 
+**不要安装第三方根证书！**只有非常少的例外情况才需要这样做，并且它们都不适用于一般最终用户。
 
+**不要被那些“广告拦截”、“军事级安全”或类似的东西营销噱头所吸引**。有一些方法可以自行使用 DNS 解析器来增强你的隐私，但安装第三方根证书永远不会有意义。你正在将自己置身于陷阱之中。
 
-### Further Information
+### 实际看看
 
-If you are interested in more technical details, let us know. If there is enough interest, we might write an article but, for now, the important part is sharing the basics so you can make an informed decision and not fall for marketing and straight up fraud. Feel free to suggest other topics that are important to you.
+**警告**
 
-This post is mirrored from [Privacy Today channel][3]. [Privacy Today][4] is a group about all things privacy, open source, libre philosophy and more!
+有一个友好的系统管理员提供了一个现场演示，你可以实时看到自己。这是真事。
 
-All content is licensed under CC BY-NC-SA 4.0. ([Attribution-NonCommercial-ShareAlike 4.0 International][5]).
+**千万不要输入私人数据！之后务必删除证书和该 DNS！**
+
+如果你不知道如何操作，那就不要安装它。虽然我们相信我们的朋友，但你不要随便安装随机和未知第三方的根证书。
+
+#### 实际演示
+
+链接在这里：<http://https-interception.info.tm/>
+
+* 设置所提供的 DNS 解析程序
+* 安装所提供的根证书
+* 访问 <https://paypal.com> 并输入随机登录数据
+* 你的数据将显示在该网站上
+
+### 延伸信息
+
+如果你对更多技术细节感兴趣，请告诉我们。如果有足够的兴趣，我们可能会写一篇文章，但是目前最重要的部分是分享基础知识，这样你就可以做出明智的决定，而不会因为营销和欺诈而陷入陷阱。请随时提出对你很关注的其他主题。
+
+这篇文章来自 [Privacy Today 频道][3]。[Privacy Today][4] 是一个关于隐私、开源、自由哲学等所有事物的组织！
+
+所有内容均根据 CC BY-NC-SA 4.0 获得许可。（[署名 - 非商业性使用 - 共享 4.0 国际][5]）。
 
 --------------------------------------------------------------------------------
 
@@ -128,7 +123,7 @@ via: https://lushka.al/dns-and-certificates/
 
 作者：[Anxhelo Lushka][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
