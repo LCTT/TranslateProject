@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Top 5 Linux Distributions for Development in 2019)
@@ -14,7 +14,7 @@
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/dev-main.jpg?itok=DEe9pYtb)
 
-Linux 上最受欢迎的任务之一肯定是开发。理由很充分：业务依赖 Linux。没有 Linux，技术根本无法满足当今不断发展的世界的需求。因此，开发人员不断努力改善他们的工作环境。而进行此类改善的一种方法就是拥有合适的平台。值得庆幸的是，这就是 Linux，所以你总是有很多选择。
+Linux 上最受欢迎的任务之一肯定是开发。理由很充分：业务依赖于 Linux。没有 Linux，技术根本无法满足当今不断发展的世界的需求。因此，开发人员不断努力改善他们的工作环境。而进行此类改善的一种方法就是拥有合适的平台。值得庆幸的是，这就是 Linux，所以你总是有很多选择。
 
 但有时候，太多的选择本身就是一个问题。哪种发行版适合你的开发需求？当然，这取决于你正在开发的工作，但某些发行版更适合作为你的工作任务的基础。我将重点介绍我认为 2019 年最适合开发人员的五个发行版。
 
@@ -54,11 +54,11 @@ Fedora 还提供了你将体验到的最佳 GNOME 体验之一（图 3）。换�
 
 *图 3：Fedora 上的 GNOME 桌面。*
 
-但是如果 GNOME 不是你的菜，你还可以选择安装一个 [Fedora 花样版][12]（包括 KDE、XFCE、LXQT、Mate-Compiz、Cinnamon、LXDE 和 SOAS）。
+但是如果 GNOME 不是你的菜，你还可以选择安装一个 [Fedora 花样版][12]（包括 KDE、XFCE、LXQT、Mate-Compiz、Cinnamon、LXDE 和 SOAS 等桌面环境）。
 
 ### Pop!_OS
 
-如果我不包括 [System76][13] 平台专门为他们的硬件定制的操作系统（虽然它也在其他硬件上运行良好），那我算是失职了。为什么我要包含这样的发行版，尤其是它还并未远离其所基于的 Ubuntu 平台？ 主要是因为如果你计划从 System76 购买台式机或笔记本电脑，那它就是你想要的发行版。但是你为什么要这样做呢（特别是考虑到 Linux 几乎适用于所有现成的硬件）？因为 System76 销售的出色硬件。随着他们的 Thelio 桌面的发布，这是你可以使用的市场上最强大的台式计算机之一。如果你正在努力开发大型应用程序（特别是那些非常依赖于非常大的数据库或需要大量处理能力进行编译的应用程序），为什么不用最好的计算机呢？而且由于 Pop!_OS 完全适用于 System76 硬件，因此这是一个明智的选择。
+如果这个列表中我没有包括 [System76][13] 平台专门为他们的硬件定制的操作系统（虽然它也在其他硬件上运行良好），那我算是失职了。为什么我要包含这样的发行版，尤其是它还并未远离其所基于的 Ubuntu 平台？主要是因为如果你计划从 System76 购买台式机或笔记本电脑，那它就是你想要的发行版。但是你为什么要这样做呢（特别是考虑到 Linux 几乎适用于所有现成的硬件）？因为 System76 销售的出色硬件。随着他们的 Thelio 桌面的发布，这是你可以使用的市场上最强大的台式计算机之一。如果你正在努力开发大型应用程序（特别是那些非常依赖于非常大的数据库或需要大量处理能力进行编译的应用程序），为什么不用最好的计算机呢？而且由于 Pop!_OS 完全适用于 System76 硬件，因此这是一个明智的选择。
 
 由于 Pop!_OS 基于 Ubuntu，因此你可以轻松获得其所基于的 Ubuntu 可用的所有工具（图 4）。
 
@@ -70,9 +70,9 @@ Pop!_OS 也会默认加密驱动器，因此你可以放心你的工作可以避
 
 ### Manjaro
 
-对于那些喜欢在 Arch Linux 上开发，但不想经历安装和使用 Arch Linux 的所有环节的人来说，那就是 Manjaro。Manjaro 可以轻松地启动和运行一个基于 Arch Linux 的发行版（就像安装和使用 Ubuntu 一样简单）。
+对于那些喜欢在 Arch Linux 上开发，但不想经历安装和使用 Arch Linux 的所有环节的人来说，那选择就是 Manjaro。Manjaro 可以轻松地启动和运行一个基于 Arch Linux 的发行版（就像安装和使用 Ubuntu 一样简单）。
 
-但是 Manjaro 对开发人员友好的原因（除了享受 Arch 式本色）是你可以下载好多种不同口味的桌面。从[Manjaro 下载页面][16] 中，你可以获得以下口味：
+但是 Manjaro 对开发人员友好的原因（除了享受 Arch 式好处）是你可以下载好多种不同口味的桌面。从[Manjaro 下载页面][16] 中，你可以获得以下口味：
 
   * GNOME
   * XFCE
@@ -110,7 +110,7 @@ via: https://www.linux.com/blog/2019/1/top-5-linux-distributions-development-201
 作者：[Jack Wallen][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
