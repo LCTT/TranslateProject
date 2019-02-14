@@ -16,7 +16,6 @@
 首先，你需要在你用来远程访问其它电脑的的主机上安装 Remmina。如果你用的是 Fedora，你可以运行如下的命令来安装 Remmina：
 ```
 sudo dnf install -y remmina
-
 ```
 
 如果你想在一个不同的 Linux 平台上安装 Remmina，跟着 [安装教程][4] 走。然后你会发现 Remmina 正和你其它软件待在一起（Remmina 在这张图片里被选中）。
@@ -121,7 +120,7 @@ via: https://opensource.com/article/18/6/linux-remote-desktop
 
 作者：[Kedar Vijay Kulkarni][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[tomjlw](https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
