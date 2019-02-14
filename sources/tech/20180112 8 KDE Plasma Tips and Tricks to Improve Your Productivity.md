@@ -1,6 +1,7 @@
 8 KDE Plasma Tips and Tricks to Improve Your Productivity
 ======
 
+[#] leon-shi is translating
 ![](https://www.maketecheasier.com/assets/uploads/2018/01/kde-plasma-desktop-featured.jpg)
 
 KDE's Plasma is easily one of the most powerful desktop environments available for Linux. It's highly configurable, and it looks pretty good, too. That doesn't amount to a whole lot unless you can actually get things done.
