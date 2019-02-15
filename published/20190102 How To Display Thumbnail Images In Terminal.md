@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10538-1.html)
 [#]: subject: (How To Display Thumbnail Images In Terminal)
 [#]: via: (https://www.ostechnix.com/how-to-display-thumbnail-images-in-terminal/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
@@ -12,19 +12,19 @@
 
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/lsix-720x340.png)
 
-不久前，我们讨论了 [Fim][1]，这是一个轻量级的命令行图像查看器应用程序，用于从命令行显示各种类型的图像，如 bmp、gif、jpeg 和 png 等。今天，我偶然发现了一个名为 `lsix` 的类似工具。它类似于类 Unix 系统中的 `ls` 命令，但仅适用于图像。`lsix` 是一个简单的命令行实用程序，旨在使用 Sixel 图形在终端中显示缩略图。对于那些想知道的人来说，Sixel 是六像素的缩写，是一种位图图形格式。它使用 ImageMagick，因此几乎所有 imagemagick 支持的文件格式都可以正常工作。
+不久前，我们讨论了 [Fim][1]，这是一个轻量级的命令行图像查看器应用程序，用于从命令行显示各种类型的图像，如 bmp、gif、jpeg 和 png 等。今天，我偶然发现了一个名为 `lsix` 的类似工具。它类似于类 Unix 系统中的 `ls` 命令，但仅适用于图像。`lsix` 是一个简单的命令行实用程序，旨在使用 Sixel 图形格式在终端中显示缩略图。对于那些想知道的人来说，Sixel 是<ruby>六像素<rt>six pixels</rt></ruby>的缩写，是一种位图图形格式。它使用 ImageMagick，因此几乎所有 imagemagick 支持的文件格式都可以正常工作。
 
 ### 功能
 
 关于 `lsix` 的功能，我们可以列出如下：
 
-* 自动检测你的终端是否支持 Sixel 图形。如果你的终端不支持 Sixel，它会通知你启用它。
+* 自动检测你的终端是否支持 Sixel 图形格式。如果你的终端不支持 Sixel，它会通知你启用它。
 * 自动检测终端背景颜色。它使用终端转义序列来试图找出终端应用程序的前景色和背景色，并清楚地显示缩略图。
-* 如果目录中有更多图像，通常大于 21 个，`lsix` 将一次显示这些图像，因此你无需等待创建整个蒙太奇图像。
+* 如果目录中有更多图像（通常大于 21 个），`lsix` 将一次显示这些图像，因此你无需等待创建整个蒙太奇图像（LCTT 译注：拼贴图）。
 * 可以通过 SSH 工作，因此你可以轻松操作存储在远程 Web 服务器上的图像。
 * 它支持非位图图形，例如 .svg、.eps、.pdf、.xcf 等。
 * 用 Bash 编写，适用于几乎所有 Linux 发行版。
-   
+
 ### 安装 lsix
 
 由于 `lsix` 使用 ImageMagick，请确保已安装它。它在大多数 Linux 发行版的默认软件库中都可用。 例如，在 Arch Linux 及其变体如 Antergos、Manjaro Linux 上，可以使用以下命令安装ImageMagick：
@@ -53,7 +53,7 @@ $ wget https://github.com/hackerb9/lsix/archive/master.zip
 $ unzip master.zip
 ```
 
-此命令将所有内容提取到名为 `lsix-master` 的文件夹中。将 `lsix` 二进制文件从此目录复制到 `$ PATH` ，例如 `/usr/local/bin/`。
+此命令将所有内容提取到名为 `lsix-master` 的文件夹中。将 `lsix` 二进制文件从此目录复制到 `$ PATH` 中，例如 `/usr/local/bin/`。
 
 ```
 $ sudo cp lsix-master/lsix /usr/local/bin/
@@ -67,13 +67,13 @@ $ sudo chmod +x /usr/local/bin/lsix
 
 如此，现在是在终端本身显示缩略图的时候了。
 
-在开始使用 `lsix` 之前，请确保你的终端支持 Sixel 图形。
+在开始使用 `lsix` 之前，请确保你的终端支持 Sixel 图形格式。
 
 开发人员在 vt340 仿真模式下的 Xterm 上开发了 `lsix`。 然而，他声称 `lsix` 应该适用于任何Sixel 兼容终端。
 
-Xterm 支持 Sixel 图形，但默认情况下不启用。
+Xterm 支持 Sixel 图形格式，但默认情况下不启用。
 
-你可以从另外一个终端使用命令启动有个启用了 Sixel 模式的 Xterm：
+你可以从另外一个终端使用命令来启动一个启用了 Sixel 模式的 Xterm：
 
 ```
 $ xterm -ti vt340
@@ -101,7 +101,7 @@ xterm*decTerminalID    :   vt340
 $ xrdb -merge .Xresources
 ```
 
-现在，每次启动 Xterm 就会默认启用 Sixel 模式。
+现在，每次启动 Xterm 就会默认启用 Sixel 图形支持。
 
 ### 在终端中显示缩略图
 
@@ -110,7 +110,6 @@ $ xrdb -merge .Xresources
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/xterm-1.png)
 
 就像我已经说过的那样，`lsix` 非常简单实用。它没有任何命令行选项或配置文件。你所要做的就是将文件的路径作为参数传递，如下所示。
-Like I already stated, lsix is very simple utility. It doesn’t have any command 
 
 ```
 $ lsix ostechnix/logo.png
@@ -173,7 +172,7 @@ via: https://www.ostechnix.com/how-to-display-thumbnail-images-in-terminal/
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
