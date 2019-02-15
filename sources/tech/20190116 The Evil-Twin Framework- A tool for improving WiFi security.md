@@ -1,7 +1,5 @@
-translating by hopefully2333
-
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hopefully2333)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
