@@ -53,13 +53,13 @@ $ wget https://github.com/hackerb9/lsix/archive/master.zip
 $ unzip master.zip
 ```
 
-此命令将所有内容提取到名为 `lsix-master` 的文件夹中。将 `lsix` 二进制文件从此目录复制到 `$ PATH` 中，例如 `/usr/local/bin/`。
+此命令将所有内容提取到名为 `lsix-master` 的文件夹中。将 `lsix` 二进制文件从此目录复制到 `$PATH` 中，例如 `/usr/local/bin/`。
 
 ```
 $ sudo cp lsix-master/lsix /usr/local/bin/
 ```
 
-最后，使 `lsbix` 二进制文件可执行：
+最后，使 `lsix` 二进制文件可执行：
 
 ```
 $ sudo chmod +x /usr/local/bin/lsix
