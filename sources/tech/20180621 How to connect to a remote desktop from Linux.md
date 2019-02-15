@@ -1,120 +1,119 @@
-tomjlw is translating
-How to connect to a remote desktop from Linux
+如何从 Linux 上连接到远程桌面
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003499_01_cloud21x_cc.png?itok=5UwC92dO)
 
-A [remote desktop][1], according to Wikipedia, is "a software or operating system feature that allows a personal computer's desktop environment to be run remotely on one system (usually a PC, but the concept applies equally to a server), while being displayed on a separate client device."
+根据维基百科，[远程桌面][1] 是一种“可以让个人电脑上的桌面环境在一个系统（通常是电脑，但是也可以是服务器）上远程运行并在另一个分开的客户端设备显示的软件或者操作系统特性”。
 
-In other words, a remote desktop is used to access an environment running on another computer. For example, the [ManageIQ/Integration tests][2] repository's pull request (PR) testing system exposes a Virtual Network Computing (VNC) connection port so I can remotely view my PRs being tested in real time. Remote desktops are also used to help customers solve computer problems: with the customer's permission, you can establish a VNC or Remote Desktop Protocol (RDP) connection to see or interactively access the computer to troubleshoot or repair the problem.
+换句话说，远程桌面是用来访问在另一台电脑上运行的环境的。比如说 [ManageIQ/Integration tests][2] 仓库的拉取请求 (PR) 测试系统暴露了一个虚拟网络计算 (VNC) 连接端口，使得我能够远程浏览正被实时测试的拉取请求。远程桌面也被用于帮助客户解决电脑问题：在客户的许可下，你可以远程建立 VNC 或者远程桌面协议（RDP）连接来看或者交互式地访问电脑以寻找并解决问题。
 
-These connections are made using remote desktop connection software, and there are many options available. I use [Remmina][3] because I like its minimal, easy-to-use user interface (UI). It's written in GTK+ and is open source under the GNU GPL license.
+运用远程桌面连接软件可以建立这些连接。可供选择的软件有很多，我用 [Remmina][3] 因为我喜欢它极简、好用的用户界面 (UI)。它是用 GTK+ 编写的，在 GNU GPL 证书下它是开源的。
 
-In this article, I'll explain how to use the Remmina client to connect remotely from a Linux computer to a Windows 10 system and a Red Hat Enterprise Linux 7 system.
+在这篇文章里，我会解释如何使用 Remmina 客户端从一台 Linux 电脑上远程连接到 Windows 10 系统 和 Red Hat 企业版 Linux 7 系统。
 
-### Install Remmina on Linux
+### 在 Linux 上安装 Remmina
 
-First, you need to install Remmina on the computer you'll use to access the other computer(s) remotely. If you're using Fedora, you can run the following command to install Remmina:
+首先，你需要在你用来远程访问其它电脑的的主机上安装 Remmina。如果你用的是 Fedora，你可以运行如下的命令来安装 Remmina：
 ```
 sudo dnf install -y remmina
 
 ```
 
-If you want to install Remmina on a different Linux platform, follow these [installation instructions][4]. You should then find Remmina with your other apps (Remmina is selected in this image).
+如果你想在一个不同的 Linux 平台上安装 Remmina，跟着 [安装教程][4] 走。然后你会发现 Remmina 正和你其它软件待在一起（Remmina 在这张图片里被选中）。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina1-on-desktop.png)
 
-Launch Remmina by clicking on the icon. You should see a screen that resembles this:
+点击图标运行 Remmina，你应该能看到像这样的屏幕：
 
 ![](https://opensource.com/sites/default/files/uploads/remmina2_launched.png)
 
-Remmina offers several types of connections, including RDP, which is used to connect to Windows-based computers, and VNC, which is used to connect to Linux machines. As you can see in the top-left corner above, Remmina's default setting is RDP.
+Remmina 提供不同种类的连接，其中包括用来连接到 Windows 系统的 RDP 和 用来连接到 Linux 系统的 VNC。如你在上图左上角所见的，Remmina 的默认设置是 RDP。
 
-### Connecting to Windows 10
+### 连接到 Windows 10
 
-Before you can connect to a Windows 10 computer through RDP, you must change some permissions to allow remote desktop sharing and connections through your firewall.
+在你通过 RDP 连接到一台 Windows 10 电脑之前，你必须修改权限以允许分享远程桌面并通过防火墙建立连接。
 
-[Note: Windows 10 Home has no RDP feature listed. ][5]
+[注意: Windows 10 家庭版没有列出 RDP 特性][5]
 
-To enable remote desktop sharing, in **File Explorer** right-click on **My Computer → Properties → Remote Settings** and, in the pop-up that opens, check **Allow remote connections to this computer** , then select **Apply**.
+要许可远程桌面分享，在**文件管理器**界面右击**我的电脑 → 属性 → 远程设置**，接着在跳出的窗口中，勾选**在这台电脑上允许远程连接**，再点击**应用**。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina3_connect_win10.png)
 
-Next, enable remote desktop connections through your firewall. First, search for **firewall settings** in the **Start** menu and select **Allow an app through Windows Firewall**.
+然后，允许远程连接通过你的防火墙。首先在**开始菜单中**查找**防火墙设置**，选择**允许应用通过防火墙**。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina4_firewall.png)
 
-In the window that opens, look for **Remote Desktop** under **Allowed apps and features**. Check the box(es) in the **Private **and/or **Public** columns, depending on the type of network(s) you will use to access this desktop. Click **OK**.
+在打开的窗口中，在**允许的应用和特性**下找到**远程桌面**。根据你用来访问这个桌面的网络酌情勾选**隐私**和/或**公开**列的选框。点击**确定**。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina5_firewall_2.png)
 
-Go to the Linux computer you use to remotely access the Windows PC and launch Remmina. Enter the IP address of your Windows computer and hit the Enter key. (How do I locate my IP address [in Linux][6] and [Windows 10][7]?) When prompted, enter your username and password and click OK.
+回到你用来远程访问 Windows 主机的 Linux 电脑，打开 Remmina。输入你的 Windows 主机的 IP 地址，敲击回车键。（我怎么在 [Linux][6] 和 [Windws][7] 中定位我的 IP 地址？）看到提示后，输入你的用户名和密码，点击确定。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina6_login.png)
 
-If you're asked to accept the certificate, select OK.
+如果你被询问是否接受证书，点击确定。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina7_certificate.png)
 
-You should be able to see your Windows 10 computer's desktop.
+你此时应能看到你的 Windows 10 主机桌面。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina8_remote_desktop.png)
 
-### Connecting to Red Hat Enterprise Linux 7
+### 连接到 Red Hat 企业版 Linux 7
 
-To set permissions to enable remote access on your RHEL7 computer, open **All Settings** on the Linux desktop.
+要在你的 RHEL7 电脑上允许远程访问，在 Linux 桌面上打开**所有设置**。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina9_settings.png)
 
-Click on the Sharing icon, and this window will open:
+点击分享图标会打开如下的窗口：
 
 ![](https://opensource.com/sites/default/files/uploads/remmina10_sharing.png)
 
-If **Screen Sharing** is off, click on it. A window will open, where you can slide it into the **On** position. If you want to allow remote connections to control the desktop, set **Allow Remote Control** to **On**. You can also select between two access options: one that prompts the computer's primary user to accept or deny the connection request, and another that allows connection authentication with a password. At the bottom of the window, select the network interface where connections are allowed, then close the window.
+如果**屏幕分享**处于关闭状态，点击一下。一个窗口会弹出，你可以滑动到**打开**的位置。如果你想允许远程控制桌面，将**允许远程控制**调到**打开**。你同样也可以在两种访问选项间选择：一个能够让电脑的主要用户接受或者否绝连接要求，另一个能用密码验证连接。在窗口底部，选择被允许连接的网络界面，最后关闭窗口。
 
-Next, open **Firewall Settings** from **Applications Menu → Sundry → Firewall**.
+接着，从**应用菜单 → 其它 → 防火墙**打开**防火墙设置**。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina11_firewall_settings.png)
 
-Check the box next to vnc-server (as shown above) and close the window. Then, head to Remmina on your remote computer, enter the IP address of the Linux desktop you want to connect with, select **VNC** as the protocol, and hit the **Enter** key.
+勾选 vnc-服务器旁边的选框（如下图所示）关闭窗口。接着直接到你远程电脑上的 Remmina，输入 你想连接到的 Linux 桌面的 IP 地址，选择 **VNC** 作为协议，点击**回车**键。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina12_vncprotocol.png)
 
-If you previously chose the authentication option **New connections must ask for access** , the RHEL system's user will see a prompt like this:
+如果你之前选择的验证选项是**新连接必须询问访问许可**，RHEL 系统用户会看到这样的一个弹窗
 
 ![](https://opensource.com/sites/default/files/uploads/remmina13_permission.png)
 
-Select **Accept** for the remote connection to succeed.
+点击**接受**以成功进行远程连接。
 
-If you chose the option to authenticate the connection with a password, Remmina will prompt you for the password.
+如果你选择用密码验证连接，Remmina 会向你询问密码。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina14_password-auth.png)
 
-Enter the password and hit **OK** , and you should be connected to the remote computer.
+输入密码然后**确认**，你应该能连接到远程电脑。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina15_connected.png)
 
-### Using Remmina
+### 使用 Remmina
 
-Remmina offers a tabbed UI, as shown in above picture, much like a web browser. In the top-left corner, as shown in the screenshot above, you can see two tabs: one for the previously established Windows 10 connection and a new one for the RHEL connection.
+Remmina 提供如上图所示的标签化的 UI，就好像一个浏览器一样。在上图所示的左上角你可以看到两个标签：一个是之前建立的 WIndows 10 连接，另一个新的是 RHEL 连接。
 
-On the left-hand side of the window, there is a toolbar with options such as **Resize Window** , **Full-Screen Mode** , **Preferences** , **Screenshot** , **Disconnect** , and more. Explore them and see which ones work best for you.
+在窗口的左侧，有一个有着**缩放窗口**，**全屏模式**，**偏好**，**截屏**，**断开连接**等选项的工具栏。你可以自己探索看那种适合你。
 
-You can also create saved connections in Remmina by clicking on the **+** (plus) sign in the top-left corner. Fill in the form with details specific to your connection and click **Save**. Here is an example Windows 10 RDP connection:
+你也可以通过点击左上角的**+**号创建保存过的连接。根据你的连接情况填好表单点击**保存**。以下是一个 Windows 10 RDP 连接的示例：
 
 ![](https://opensource.com/sites/default/files/uploads/remmina16_saved-connection.png)
 
-The next time you open Remmina, the connection will be available.
+下次你打开 Remmina 时连接就在那了。
 
 ![](https://opensource.com/sites/default/files/uploads/remmina17_connection-available.png)
 
-Just click on it, and your connection will be established without re-entering the details.
+点击一下它你不用补充细节就可以建立连接了。
 
-### Additional info
+### 补充说明
 
-When you use remote desktop software, all the operations you perform take place on the remote desktop and use its resources—Remmina (or similar software) is just a way to interact with that desktop. You can also access a computer remotely through SSH, but it usually limits you to a text-only terminal to that computer.
+当你使用远程桌面软件时，你所有的操作都在远程桌面上消耗资源—— Remmina（或者其它类似软件）仅仅是一种与远程桌面交互的方式。你也可以通过 SSH 远程访问一台电脑，但那将会让你在那台电脑上局限于仅能使用文字的终端。
 
-You should also note that enabling remote connections with your computer could cause serious damage if an attacker uses this method to gain access to your computer. Therefore, it is wise to disallow remote desktop connections and block related services in your firewall when you are not actively using Remote Desktop.
+你也应当注意到当你允许你的电脑远程连接时，如果一名攻击者用这种方法获得你电脑的访问权同样会给你带来严重损失。因此当你不频繁使用远程桌面时，禁止远程桌面连接以及其在防火墙中相关的服务是很明智的做法。
 
 --------------------------------------------------------------------------------
 
