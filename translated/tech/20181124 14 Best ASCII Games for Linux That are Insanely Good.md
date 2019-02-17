@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
 [#]: subject: (14 Best ASCII Games for Linux That are Insanely Good)
 [#]: via: (https://itsfoss.com/best-ascii-games/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10546-1.html)
 
 14 个依然很棒的 Linux ASCII 游戏
 ======
@@ -299,7 +299,7 @@ via: https://itsfoss.com/best-ascii-games/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
