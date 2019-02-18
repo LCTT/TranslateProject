@@ -8,15 +8,20 @@
 [#]: author: (Dan Barker https://opensource.com/users/barkerd427)
 
 7 CI/CD tools for sysadmins
+系统管理员的 7 个 CI/CD 工具
 ======
 An easy guide to the top open source continuous integration, continuous delivery, and continuous deployment tools.
+一篇简单指南:常见的开源持续集成、持续交付和持续部署工具。
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cicd_continuous_delivery_deployment_gears.png?itok=kVlhiEkc)
 
 Continuous integration, continuous delivery, and continuous deployment (CI/CD) have all existed in the developer community for many years. Some organizations have involved their operations counterparts, but many haven't. For most organizations, it's imperative for their operations teams to become just as familiar with CI/CD tools and practices as their development compatriots are.
+虽然持续集成、持续交付和持续部署（CI/CD）在开发者社区里已经存在很多年，一些机构在运维部门也有实施，但大多数公司并没有做这样的尝试。对于很多机构来说，让运维团队能够像他们的开发同行一样熟练操作 CI/CD 工具，已经变得十分必要了。
 
 CI/CD practices can equally apply to infrastructure and third-party applications and internally developed applications. Also, there are many different tools but all use similar models. And possibly most importantly, leading your company into this new practice will put you in a strong position within your company, and you'll be a beacon for others to follow.
+在基础设施、第三方应用和内部开发应用上，都可以开展 CI/CD 实践。尽管你会发现有很多不同的工具，但它们都有相似的设计模型。也许最重要的一点是：通过带领你的公司进行这些实践，会让你在公司内部变得举足轻重，你将成为他人学习的榜样。
 
 Some organizations have been using CI/CD practices on infrastructure, with tools like [Ansible][1], [Chef][2], or [Puppet][3], for several years. Other tools, like [Test Kitchen][4], allow tests to be performed on infrastructure that will eventually host applications. In fact, those tests can even deploy the application into a production-like environment and execute application-level tests with production loads in more advanced configurations. However, just getting to the point of being able to test the infrastructure individually is a huge feat. Terraform can also use Test Kitchen for even more [ephemeral][5] and [idempotent][6] infrastructure configurations than some of the original configuration-management tools. Add in Linux containers and Kubernetes, and you can now test full infrastructure and application deployments with prod-like specs and resources that come and go in hours rather than months or years. Everything is wiped out before being deployed and tested again.
+
 
 However, you can also focus on getting your network configurations or database data definition language (DDL) files into version control and start running small CI/CD pipelines on them. Maybe it just checks syntax or semantics or some best practices. Actually, this is how most development pipelines started. Once you get the scaffolding down, it will be easier to build on. You'll start to find all kinds of use cases for pipelines once you get started.
 
