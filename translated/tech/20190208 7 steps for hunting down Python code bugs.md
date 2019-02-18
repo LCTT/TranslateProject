@@ -12,9 +12,9 @@
 了解一些技巧来减少你花费在寻找代码失败原因的时间。
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bug-insect-butterfly-diversity-inclusion-2.png?itok=TcC9eews)
 
-在周五的下午三点钟。为什么是这个时间？因为事情总会在周五下午三点钟发生。你收到一条通知，客户发现你的软件出现一个错误。在有了初步的怀疑后，你联系运维，查看你的软件日志以了解发生了什么，因为你记得收到过日志已经转移了的通知。
+在周五的下午三点钟。为什么是这个时间？因为事情总会在周五下午三点钟发生。你收到一条通知，客户发现你的软件出现一个错误。在有了初步的怀疑后，你联系运维，查看你的软件日志以了解发生了什么，因为你记得收到过日志已经移动了的通知。
 
-Turns out they are somewhere you can't get to, but they are in the process of being moved to a web application—so you will have this nifty application for searching and reading them, but of course, it is not finished yet. It should be up in a couple of days. I know, totally unrealistic situation, right? Unfortunately not; it seems logs or log messages often come up missing at just the wrong time. Before we track down the bug, a public service announcement: Check your logs to make sure they are where you think they are and logging what you think they should log, regularly. Amazing how these things just change when you aren't looking.
+结果这些日志被转移到你获取不到的地方，但他们正在转移到一个网页应用中——所以你将可以用这个漂亮的应用来检索日志，但是，这个应用现在还没完成。它应该会在几天内完成。我知道，这完全不符合实际情况，对吧？Unfortunately not; it seems logs or log messages often come up missing at just the wrong time. Before we track down the bug, a public service announcement: Check your logs to make sure they are where you think they are and logging what you think they should log, regularly. Amazing how these things just change when you aren't looking.
 
 OK, so you found the logs or tried the call, and indeed, the customer has found a bug. Maybe you even think you know where the bug is.
 
