@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (mySoul8012)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,48 +7,47 @@
 [#]: via: (https://itsfoss.com/fundamentals-of-linux-book-review)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
 
-Book Review: Fundamentals of Linux
+书评：linux的基础知识
 ======
+有很多很棒的书籍涵盖了Linux的基础知识以及它的工作原理，今天，我们将会书评这样一本书，讨论的主题为Oliver Pelz所写的[linux的基础知识][1]，由[PacktPub][2]发布。
 
-There are many great books that cover the basics of what Linux is and how it works. Today, I will be taking a look at one such book. Today, the subject of our discussion is [Fundamentals of Linux][1] by Oliver Pelz and is published by [PacktPub][2].
+[Oliver Pelz][3] 是一位超过十年软件开发人员和系统管理员经验人员，同时拥有生物信息学学位证书。
 
-[Oliver Pelz][3] has over ten years of experience as a software developer and a system administrator. He holds a degree in bioinformatics.
-
-### What is the book ‘Fundamentals of Linux’ about?
+### 什么是linux基础知识一书
 
 ![Fundamental of Linux books][4]
+正如可以从标题中猜到那样，该书（Linux基础知识）的目标是为读者打下一个了解Linux命令行的坚实基础。这本书一共有两百多页。因此它专注于教授用户日常遇到的问题，以及任务。本书为想要成为Linux管理员的读者而书写。
 
-As can be guessed from the title, the goal of Fundamentals of Linux is to give the reader a strong foundation from which to learn about the Linux command line. The book is a little over two hundred pages long, so it only focuses on teaching the everyday tasks and problems that users commonly encounter. The book is designed for readers who want to become Linux administrators.
+第一章首先概述了虚拟化。本书作者指导了读者如何在[VirtualBox][6]中创建[CentOS][5]实例。如何克隆实例，如何使用快照。并且同时你也会学习到如何通过SSH命令连接到虚拟机。
 
-The first chapter starts out by giving an overview of virtualization. From there the author instructs how to create a virtual instance of [CentOS][5] in [VirtualBox][6], how to clone it, and how to use snapshots. You will also learn how to connect to the virtual machines via SSH.
+第二章介绍了Linux的命令行的基础知识，包括shell GLOB模式，shell扩展，如何使用包含空格和特殊字符的文件名称。如何来获取命令手册的帮助页面。如何使用`sed`, `awk`这两个命令。如何浏览Linux的文件系统。
 
-The second chapter covers the basics of the Linux command line. This includes shell globbing, shell expansion, how to work with file names that contain spaces or special characters. It also explains how to interpret a command’s manual page, as well as, how to use `sed`, `awk`, and to navigate the Linux file system.
+第三章更深入的介绍了Linux文件系统。您将了解如何在Linux中链接文件，以及如何搜索它们。您还将获得用户，组，以及文件权限的概述。由于本章的重点介绍了如何与文件进行交互。因此还将会介绍如何从命令行中读取文本文件，以及如何使用vim编辑器。
 
-The third chapter takes a more in-depth look at the Linux file system. You will learn how files are linked in Linux and how to search for them. You will also be given an overview of users, groups and file permissions. Since the chapter focuses on interacting with files, it tells how to read text files from the command line, as well as, an overview of how to use the VIM editor.
+第四章重点介绍了如何使用命令行。以及涵盖的重要命令。如`cat`, `sort`, `awk`. `tee`, `tar`，`rsync`, `nmap`, `htop`等。您还将会了解这些命令的流程，以及如何相互使用，还将介绍Bash shell脚本。
 
-Chapter four focuses on using the command line. It covers important commands, such as `cat`, `sort`, `awk`. `tee`, `tar`, `rsync`, `nmap`, `htop` and more. You will learn what processes are and how they communicate with each other. This chapter also includes an introduction to Bash shell scripting.
+第五章同时也是本书的最后一章，将会介绍Linux和其他高级命令，以及网络的概念。本书的作者讨论了Linux如何处理网络并提供使用多个虚拟机的示例。同时还将会介绍如何安装新的程序，如何设置防火墙。
 
-The fifth and final chapter covers networking on Linux and other advanced command line concepts. The author discusses how Linux handles networking and gives examples using multiple virtual machines. He also covers how to install new programs and how to set up a firewall.
+### 关于这本书的想法
 
-### Thoughts on the book
+Linux的基础知识可能看起来很见到，但是涵盖了相当多的信息。同时也将会获得如何使用命令行所需要的知识的一切。
 
-Fundamentals of Linux might seem short at five chapters and a little over two hundred pages. However, quite a bit of information is covered. You are given everything that you need to get going on the command line.
+使用本书的时候，需要注意一件事情，即，本书专注于对命令行的关注，没有任何关于如何使用图形化的用户界面的任何教程。这是因为在Linux中有太多不同的桌面环境，以及很多的类似的操作系统。因此很难编写一本可以涵盖所有变量的书。部分原因还因为本书的面向的用户群体为Linux管理员。
 
-The book’s sole focus on the command line is one thing to keep in mind. You won’t get any information on how to use a graphical user interface. That is partially because Linux has so many different desktop environments and so many similar system applications that it would be hard to write a book that could cover all of the variables. It is also partially because the book is aimed at potential Linux administrators.
+当我看到作者使用Centos教授Linux的时候有点惊讶。我原本以为他会使用更为常见的Linux的发行版本，例如Ubuntu，Debian或者Fedora。原因在于Centos是为服务器设计的发行版本。随着时间的推移变化很小。能够为Linux的基础知识打下一个非常坚实的基础。
 
-I was kinda surprised to see that the author used [CentOS][7] to teach Linux. I would have expected him to use a more common Linux distro, like Ubuntu, Debian, or Fedora. However, because it is a distro designed for servers very little changes over time, so it is a very stable basis for a course on Linux basics.
+自己使用Linux已经操作五年了。我大部分时间都在使用桌面版本的Linux。我有些时候会使用命令行操作。但我并没有花太多的时间在哪里。我使用鼠标执行了本书中很多的操作。现在呢。我同时也知道了如何通过终端做出同样的事情。这种方式不会改变我完成任务的路径。但是会更加帮助自己理解幕后发生的事情。
 
-I’ve used Linux for over half a decade. I spent most of that time using desktop Linux. I dove into the terminal when I needed to, but didn’t spend lots of time there. I have performed many of the actions covered in this book using a mouse. Now, I know how to do the same things via the terminal. It won’t change the way I do my tasks, but it will help me understand what goes on behind the curtain.
+如果您刚刚使用Linux，或者计划使用。我不会推荐您阅读这本书。这可能有点绝对化。但是如何您已经花了一些时间在Linux上。或者可以快速掌握某种技术语言。那么这本书很适合你。
 
-If you have either just started using Linux or are planning to do so in the future, I would not recommend this book. It might be a little overwhelming. If you have already spent some time with Linux or can quickly grasp the technical language, this book may very well be for you.
+如果您认为本书适合您的学习需求。您可以从以下链接获取到该书。
 
-If you think this book is apt for your learning needs, you can get the book from the link below:
+我们将在未来几个月内尝试查看更多Linux书籍，敬请关注我们。
 
-We will be trying to review more Linux books in coming months so stay tuned with us.
+你最喜欢的关于Linux的入门书籍是什么？请在下面的评论中告诉我们。
 
-What is your favorite introductory book on Linux? Let us know in the comments below.
+如果您发现这篇文章很有趣，请花一点时间在社交媒体，黑客新闻或[Reddit][8]上分享
 
-If you found this article interesting, please take a minute to share it on social media, Hacker News or [Reddit][8].
 
 
 --------------------------------------------------------------------------------
