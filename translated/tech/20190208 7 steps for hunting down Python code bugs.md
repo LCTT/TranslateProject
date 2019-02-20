@@ -14,19 +14,19 @@
 
 在周五的下午三点钟。为什么是这个时间？因为事情总会在周五下午三点钟发生。你收到一条通知，客户发现你的软件出现一个错误。在有了初步的怀疑后，你联系运维，查看你的软件日志以了解发生了什么，因为你记得收到过日志已经移动了的通知。
 
-结果这些日志被转移到你获取不到的地方，但他们正在转移到一个网页应用中——所以你将可以用这个漂亮的应用来检索日志，但是，这个应用现在还没完成。它应该会在几天内完成。我知道，这完全不符合实际情况，对吧？Unfortunately not; it seems logs or log messages often come up missing at just the wrong time. Before we track down the bug, a public service announcement: Check your logs to make sure they are where you think they are and logging what you think they should log, regularly. Amazing how these things just change when you aren't looking.
+结果这些日志被转移到你获取不到的地方，但他们正在转移到一个网页应用中——所以你将可以用这个漂亮的应用来检索日志，但是，这个应用现在还没完成。它应该会在几天内完成。我知道，这完全不符合实际情况，对吧？然而不，日志或者日志消息似乎经常在错误的时间出现缺少。在我们追踪错误前，一个忠告：经常检查你的日志保证他们在你认为它们该在的地方并记录你认为它们该记的东西。当你不看的时候，这些东西会发生令人惊讶的变化。
 
-OK, so you found the logs or tried the call, and indeed, the customer has found a bug. Maybe you even think you know where the bug is.
+好的，所以你寻找了日志或者尝试了呼叫运维，而客户确实发现了一个错误。可能你甚至认为你知道错误在哪儿。
 
-You immediately open the file you think might be the problem and start poking around.
+你立即打开你认为可能有问题的文件并开始寻找。
 
-### 1. Don't touch your code yet
+### 1. 不要碰你的代码
 
 Go ahead and look at it, maybe even come up with a hypothesis. But before you start mucking about in the code, take that call that creates the bug and turn it into a test. This will be an integration test because although you may have suspicions, you do not yet know exactly where the problem is.
 
 Make sure this test fails. This is important because sometimes the test you make doesn't mimic the broken call; this is especially true if you are using a web or other framework that can obfuscate the tests. Many things may be stored in variables, and it is unfortunately not always obvious, just by looking at the test, what call you are making in the test. I'm not going to say that I have created a test that passed when I was trying to imitate a broken call, but, well, I have, and I don't think that is particularly unusual. Learn from my mistakes.
 
-### 2. Write a failing test
+### 2. 编写错误的测试
 
 Now that you have a failing test or maybe a test with an error, it is time to troubleshoot. But before you do that, let's do a review of the stack, as this makes troubleshooting easier.
 
@@ -44,7 +44,7 @@ If you are fuzzy on the stack, I highly recommend playing around on [Python Tuto
 
 Now, if something goes wrong with your Python program, the interpreter helpfully prints out the stack for you. This means that whatever the program was doing at the moment it became apparent that something went wrong is on the bottom.
 
-### 3. Always check the bottom of the stack first
+### 3. 始终先检查 stack 的底部
 
 Not only is the bottom of the stack where you can see which error occurred, but often the last line of the stack is where you can find the issue. If the bottom doesn't help, and your code has not been linted in a while, it is amazing how helpful it can be to run. I recommend pylint or flake8. More often than not, it points right to where there is an error that I have been overlooking.
 
