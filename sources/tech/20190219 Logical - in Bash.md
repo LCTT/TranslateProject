@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zero-MK)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -19,7 +19,7 @@ This means we haven't even touched on `&` as an AND operator, so let's do that n
 ### & is a Bitwise Operator
 
 If you are at all familiar with binary operations, you will have heard of AND and OR. These are bitwise operations that operate on individual bits of a binary number. In Bash, you use `&` as the AND operator and `|` as the OR operator:
-
+如果您完全熟悉二进制字符的各种操作，您肯定听说过AND和OR。这些是按位操作，对二进制数的各个位进行操作。在Bash中，使用`&`作为AND运算符，使用`|`作为OR运算符：
 **AND**
 
 ```
@@ -45,6 +45,7 @@ If you are at all familiar with binary operations, you will have heard of AND an
 ```
 
 You can test this by ANDing any two numbers and outputting the result with `echo`:
+您可以通过对任何两个数字进行AND运算并使用`echo`输出结果来测试：
 
 ```
 $ echo $(( 2 & 3 )) # 00000010 AND 00000011 = 00000010
@@ -57,6 +58,7 @@ $ echo $(( 120 & 97 )) # 01111000 AND 01100001 = 01100000
 ```
 
 The same goes for OR (`|`):
+OR（`|`）也是如此：
 
 ```
 $ echo $(( 2 | 3 )) # 00000010 OR 00000011 = 00000011
@@ -69,6 +71,7 @@ $ echo $(( 120 | 97 )) # 01111000 OR 01100001 = 01111001
 ```
 
 Three things about this:
+关于这个的三件事：
 
   1. You use `(( ... ))` to tell Bash that what goes between the double brackets is some sort of arithmetic or logical operation. `(( 2 + 2 ))`, `(( 5 % 2 ))` (`%` being the [modulo][3] operator) and `((( 5 % 2 ) + 1))` (equals 3) will all work.
   2. [Like with variables][4], `$` extracts the value so you can use it.
@@ -213,7 +216,7 @@ via: https://www.linux.com/blog/learn/2019/2/logical-ampersand-bash
 
 作者：[Paul Brown][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zero-MK](https://github.com/zero-MK)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
