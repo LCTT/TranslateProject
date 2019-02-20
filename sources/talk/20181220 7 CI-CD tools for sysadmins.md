@@ -24,34 +24,39 @@ Some organizations have been using CI/CD practices on infrastructure, with tools
 一些机构在自己的基础设施上已有多年的 CI/CD 实践经验，常用的工具包括 [Ansible][1]、[Chef][2] 或者 [Puppet][3]。另一些工具，比如 [Test Kitchen][4]，允许在用于生产的基础设施上运行测试。事实上，如果使用更高级的配置方法，你甚至可以将应用部署到有真实负载的仿真“生产环境”上，来运行应用级别的测试。然而，单单是能够测试基础设施就是一项了不起的成就了。配置管理工具 Terraform 可以通过 Test Kitchen 来快速创建可复用的基础设施配置，这比它的前辈要强不少。再加上 Linux 容器和 Kubernetes，在数小时内，你就可以创建一套类似于生产环境的配置参数和系统资源，来测试整个基础设施和其上部署的应用，这在以前可能需要花费几个月的时间。而且，删除和再次创建整个测试环境也非常容易。
 
 However, you can also focus on getting your network configurations or database data definition language (DDL) files into version control and start running small CI/CD pipelines on them. Maybe it just checks syntax or semantics or some best practices. Actually, this is how most development pipelines started. Once you get the scaffolding down, it will be easier to build on. You'll start to find all kinds of use cases for pipelines once you get started.
-当然，你也可以把网络配置和 DDL（数据定义语言）文件加入版本控制，然后开始尝试一些简单的 CI/CD 流程。虽然只能帮你检查一下语义语法，但实际上大多数开发流水线都是这样起步的。只要你把脚手架搭起来，建造就容易得多了。而一旦起步，你就会发现各种真实的使用场景。
+当然，你也可以把网络配置和 DDL（数据定义语言）文件加入版本控制，然后开始尝试一些简单的 CI/CD 流程。虽然只能帮你检查一下语义语法，但实际上大多数开发管道（pipeline）都是这样起步的。只要你把脚手架搭起来，建造就容易得多了。而一旦起步，你就会发现各种真实的使用场景。
 
 For example, I regularly write a newsletter within my company, and I maintain it in version control using [MJML][7]. I needed to be able to host a web version, and some folks liked being able to get a PDF, so I built a [pipeline][8]. Now when I create a new newsletter, I submit it for a merge request in GitLab. This automatically creates an index.html with links to HTML and PDF versions of the newsletter. The HTML and PDF files are also created in the pipeline. None of this is published until someone comes and reviews these artifacts. Then, GitLab Pages publishes the website and I can pull down the HTML to send as a newsletter. In the future, I'll automatically send the newsletter when the merge request is merged or after a special approval step. This seems simple, but it has saved me a lot of time. This is really at the core of what these tools can do for you. They will save you time.
-举个例子，我经常会在公司内部写新闻简报，我使用 [MJML][7] 制作邮件模板，然后把它加入版本控制。我一般会维护一个 web 版本，但是一些同事喜欢 PDF 版，于是我创建了一个[流水线][8]。每当我写好一篇新闻稿，就在 Gitlab 上提交一个合并请求。这样做会自动创建一个 index.html 文件，生成这篇新闻稿的 HTML 和 PDF 版链接。HTML 和 PDF 文件也会在流水线里同时生成。这些文件不会被直接发布出去，除非有人来检查确认。GitLab Pages 发布这个网站后，我就可以下载一份 HTML 版，用来发送新闻简报。未来，我会修改这个流程，当合并请求通过或者在特殊的审核步骤后，自动发出对应的新闻稿。这些处理逻辑并不复杂，但的确为我节省了不少时间。实际上这些工具最核心的用途就是替你节省时间。
+举个例子，我经常会在公司内部写新闻简报，我使用 [MJML][7] 制作邮件模板，然后把它加入版本控制。我一般会维护一个 web 版本，但是一些同事喜欢 PDF 版，于是我创建了一个[管道][8]。每当我写好一篇新闻稿，就在 Gitlab 上提交一个合并请求。这样做会自动创建一个 index.html 文件，生成这篇新闻稿的 HTML 和 PDF 版链接。HTML 和 PDF 文件也会在管道里同时生成。这些文件不会被直接发布出去，除非有人来检查确认。GitLab Pages 发布这个网站后，我就可以下载一份 HTML 版，用来发送新闻简报。未来，我会修改这个流程，当合并请求通过或者在特殊的审核步骤后，自动发出对应的新闻稿。这些处理逻辑并不复杂，但的确为我节省了不少时间。实际上这些工具最核心的用途就是替你节省时间。
 
 The key is creating tools to work in the abstract so that they can apply to multiple problems with little change. I should also note that what I created required almost no code except [some light HTML templating][9], some [node to loop through the HTML files][10], and some more [node to populate the index page with all the HTML pages and PDFs][11].
 关键是要在抽象层创建出工具，这样它们稍加修改就可以处理不同的问题。值得留意的是，我创建的这套流程几乎不需要任何代码，除了一些[轻量级的 HTML 模板][9]，一些[把 HTML 文件转换成 PDF 的 nodejs 代码][10]，还有一些[生成 index 页面的 nodejs 代码][11]。
 
 Some of this might look a little complex, but most of it was taken from the tutorials of the different tools I'm using. And many developers are happy to work with you on these types of things, as they might also find them useful when they're done. The links I've provided are to a newsletter we plan to start for [DevOps KC][12], and all the code for creating the site comes from the work I did on our internal newsletter.
-这其中一些东西可能看起来有点复杂，但其中大部分都来源于我使用的不同工具的教学文档。而且很多开发人员也乐意跟你合作干这些事，因为他们在完工时会发现这些东西也挺有用。上面我提供的那些代码链接是给 [DevOps KC][12]（一个地方性DevOps组织） 发送新闻简报用的，其中大部分用来创建网站的代码来自我在内部新闻简报项目上所作的工作。
+这其中一些东西可能看起来有点复杂，但其中大部分都源自我使用的不同工具的教学文档。而且很多开发人员也乐意跟你合作干这些事，因为他们在完工时会发现这些东西也挺有用。上面我提供的那些代码链接是给 [DevOps KC][12]（一个地方性DevOps组织） 发送新闻简报用的，其中大部分用来创建网站的代码来自我在内部新闻简报项目上所作的工作。
 
 Many of the tools listed below can offer this type of interaction, but some offer a slightly different model. The emerging model in this space is that of a declarative description of a pipeline in something like YAML with each stage being ephemeral and idempotent. Many of these systems also ensure correct sequencing by creating a [directed acyclic graph][13] (DAG) over the different stages of the pipeline.
-下面列出的大多数工具都可以提供这种类型的交互，但是有些工具提供的模型略有不同。这一领域新兴的模型是用声明性的语言如 YAML 来描述一个流水线，其中的每个阶段都是短暂而幂等的。许多系统还会创建有向无环图（DAG），来确保流水线上不同阶段的排序正确。
+下面列出的大多数工具都可以提供这种类型的交互，但是有些工具提供的模型略有不同。这一领域新兴的模型是用声明性的语言如 YAML 来描述一个管道，其中的每个阶段都是短暂而幂等的。许多系统还会创建[有向无环图（DAG）][13]，来确保管道上不同的阶段能正确排序。
 
 These stages are often run in Linux containers and can do anything you can do in a container. Some tools, like [Spinnaker][14], focus only on the deployment component and offer some operational features that others don't normally include. [Jenkins][15] has generally kept pipelines in an XML format and most interactions occur within the GUI, but more recent implementations have used a [domain specific language][16] (DSL) using [Groovy][17]. Further, Jenkins jobs normally execute on nodes with a special Java agent installed and consist of a mix of plugins and pre-installed components.
-
+这些阶段一般运行在 Linux 容器里，和普通的容器没有区别。有一些工具，比如 [Spinnaker][14]，只关注部署组件而且提供一些其他工具没有的操作特性。[Jenkins][15] 通常把管道配置存成 XML 格式，大部分交互都可以在图形界面里完成，但最新的方案是使用 [领域专用语言（DSL）][16] 如[Groovy][17]。并且，Jenkins 的任务（job）通常运行在各个节点里，这些节点会装一个专门的 Java 程序还有一堆混杂的插件和预装组件。
 
 Jenkins introduced pipelines in its tool, but they were a bit challenging to use and contained several caveats. Recently, the creator of Jenkins decided to move the community toward a couple different initiatives that will hopefully breathe new life into the project—which is the one that really brought CI/CD to the masses. I think its most interesting initiative is creating a Cloud Native Jenkins that can turn a Kubernetes cluster into a Jenkins CI/CD platform.
+Jenkins 在自己的工具里引入了管道的概念，但使用起来却并不轻松，甚至包含一些禁区。最近，Jenkins 的创始人决定带领社区向新的方向前进，希望能为这个项目注入新的活力，把 CI/CD 真正推广开(译者注：详见后面的 Jenkins 章节)。我认为其中最有意思的想法是构建一个云原生 Jenkins，能把 Kubernetes 集群转变成 Jenkins CI/CD 平台。
 
 As you learn more about these tools and start bringing these practices into your company or your operations division, you'll quickly gain followers. You will increase your own productivity as well as that of others. We all have years of backlog to get to—how much would your co-workers love if you could give them enough time to start tackling that backlog? Not only that, but your customers will start to see increased application reliability, and your management will see you as a force multiplier. That certainly can't hurt during your next salary negotiation or when interviewing with all your new skills.
+当你更多地了解这些工具并把实践带入你的公司和运维部门，你很快就会有追随者，因为你有办法提升自己和别人的工作效率。我们都有多年积累下来的技术债要解决，如果你能给同事们提供足够的时间来处理这些积压的工作，他们该会有多感激呢？不止如此，你的客户也会开始看到应用稳定性的提升，管理层会把你看作得力干将，你也会在下次谈薪资待遇或参加面试时更有底气。
 
 Let's dig into the tools a bit more. We'll briefly cover each one and share links to more information.
+让我们开始深入了解这些工具吧，我们将对每个工具做简短的介绍，并分享一些有用的链接。
 
 ### GitLab CI
 
 GitLab is a fairly new entrant to the CI/CD space, but it's already achieved the top spot in the [Forrester Wave for Continuous Integration Tools][20]. That's a huge achievement in such a crowded and highly qualified field. What makes GitLab CI so great? It uses a YAML file to describe the entire pipeline. It also has a functionality called Auto DevOps that allows for simpler projects to have a pipeline built automatically with multiple tests built-in. This system uses [Herokuish buildpacks][21] to determine the language and how to build the application. Some languages can also manage databases, which is a real game-changer for building new applications and getting them deployed to production from the beginning of the development process. The system has native integrations into Kubernetes and will deploy your application automatically into a Kubernetes cluster using one of several different deployment methodologies, like percentage-based rollouts and blue-green deployments.
+GitLab 可以说是 CI/CD 领域里新登场的玩家，但它却在 [Forrester（一个权威调研机构） 的调查报告][20]中位列第一。这在一个高水平、竞争激烈的领域里是个了不起的成就。是什么让 GitLab CI 这么成功呢？它使用 YAML 文件来描述整个管道。它还有一个功能叫做 Auto DevOps，可以为简单的工程自动生成管道，并且包含多种内置的测试单元。这套系统使用 [Herokuish buildpacks][21]来判断语言的种类以及如何构建应用。它和 Kubernetes 整合地很紧密，可以根据不同的方案将你的应用自动部署到 Kubernetes 集群，比如灰度发布、蓝绿部署等。
 
 In addition to its CI functionality, GitLab offers many complementary features like operations and monitoring with Prometheus deployed automatically with your application; portfolio and project management using GitLab Issues, Epics, and Milestones; security checks built into the pipeline with the results provided as an aggregate across multiple projects; and the ability to edit code right in GitLab using the WebIDE, which can even provide a preview or execute part of a pipeline for faster feedback.
+除了它的持续集成功能，GitLab 还提供了许多值得称赞的特性，比如：
 
 ### GoCD
 
@@ -74,7 +79,7 @@ Jenkins在 CI/CD 界绝对是元老级的存在，也是事实上的标准。我
 [Jenkins 配置既代码][28]（JCasC）应该可以帮助管理员解决困扰了他们多年的配置复杂性问题。与其他 CI/CD 系统类似，只需要修改一个简单的 YAML 文件就可以完成 Jenkins 主节点的配置工作。[Jenkins Evergreen][29] 的出现让配置工作变得更加轻松，它提供了很多预设的使用场景，你只管套用就可以了。这些发行版会比官方的标准版本 Jenkins 更容易维护和升级。
 
 Jenkins 2 introduced native pipeline functionality with two types of pipelines, which [I discuss][30] in a LISA17 presentation. Neither is as easy to navigate as YAML when you're doing something simple, but they're quite nice for doing more complex tasks.
-Jenkins 2 引入了两种原生的流水线（pipeline）功能，我在 LISA（一个系统架构和运维大会） 2017 年的研讨会上已经[讨论过了][30]。这两种功能都没有 YAML 简便，但在处理复杂任务时它们很好用。
+Jenkins 2 引入了两种原生的管道（pipeline）功能，我在 LISA（一个系统架构和运维大会） 2017 年的研讨会上已经[讨论过了][30]。这两种功能都没有 YAML 简便，但在处理复杂任务时它们很好用。
 
 [Jenkins X][31] is the full transformation of Jenkins and will likely be the implementation of Cloud Native Jenkins (or at least the thing most users see when using Cloud Native Jenkins). It will take JCasC and Evergreen and use them at their best natively on Kubernetes. These are exciting times for Jenkins, and I look forward to its innovation and continued leadership in this space.
 [Jenkins X][31] 是 Jenkins 的一个全新变种，用来实现云端原生 Jenkins（至少在用户看来是这样）。它会使用 JCasC 及 Evergreen，并且和 Kubernetes 整合的更加紧密。对于 Jenkins 来说这是个令人激动的时刻，我很乐意看到它在这一领域的创新，并且继续发挥领袖作用。
