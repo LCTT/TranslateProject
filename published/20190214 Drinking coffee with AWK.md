@@ -1,15 +1,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10555-1.html)
 [#]: subject: (Drinking coffee with AWK)
 [#]: via: (https://opensource.com/article/19/2/drinking-coffee-awk)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
 用 AWK 喝咖啡
 ======
-> 用一个简单的 AWK 程序跟踪你的同事所喝咖啡的欠款。
+> 用一个简单的 AWK 程序跟踪你的同事喝咖啡的欠款。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/coffee_cafe_brew_laptop_desktop.jpg?itok=G-n1o1-o)
 
@@ -63,7 +63,7 @@ $1 == "member" {
 }
 ```
 
-第二条规则在记录付款时减少欠账。
+第二条规则在记录付款（`payment`）时减少欠账。
 
 ```
 $1 == "payment" {
@@ -71,7 +71,7 @@ $1 == "payment" {
 }
 ```
 
-还款则相反：它增加欠账。这可以优雅地支持意外地给了某人太多钱的情况。
+还款（`payback`）则相反：它增加欠账。这可以优雅地支持意外地给了某人太多钱的情况。
 
 ```
 $1 == "payback" {
@@ -79,7 +79,7 @@ $1 == "payback" {
 }
 ```
 
-最复杂的部分出现在有人购买速溶咖啡供咖啡角使用时。它被视为付款，并且该人的债务减少了适当的金额。接下来，它计算每个会员的费用。它根据成员的级别对所有成员进行迭代并增加欠款
+最复杂的部分出现在有人购买（`bought`）速溶咖啡供咖啡角使用时。它被视为付款（`payment`），并且该人的债务减少了适当的金额。接下来，它计算每个会员的费用。它根据成员的级别对所有成员进行迭代并增加欠款
 
 ```
 $1 == "bought" {
@@ -101,7 +101,7 @@ END {
 }
 ```
 
-除了一个遍历成员文件，并向人们发送提醒电子邮件以支付他们的会费（积极清账）的脚本外，这个系统管理咖啡角相当一段时间。
+再配合一个遍历成员文件，并向人们发送提醒电子邮件以支付他们的会费（积极清账）的脚本，这个系统管理咖啡角相当一段时间。
 
 --------------------------------------------------------------------------------
 
@@ -110,7 +110,7 @@ via: https://opensource.com/article/19/2/drinking-coffee-awk
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
