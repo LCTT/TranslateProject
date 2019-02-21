@@ -1,3 +1,5 @@
+translating by Cycoe
+Cycoe 翻译中
 8 KDE Plasma Tips and Tricks to Improve Your Productivity
 ======
 
