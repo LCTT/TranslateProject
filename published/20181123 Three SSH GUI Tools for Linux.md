@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (Three SSH GUI Tools for Linux)
 [#]: via: (https://www.linux.com/blog/learn/intro-to-linux/2018/11/three-ssh-guis-linux)
 [#]: author: (Jack Wallen https://www.linux.com/users/jlwallen)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-10559-1.html)
 
 3 个 Linux 上的 SSH 图形界面工具
 ======
