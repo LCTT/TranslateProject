@@ -36,7 +36,7 @@ Some of this might look a little complex, but most of it was taken from the tuto
 这其中一些东西可能看起来有点复杂，但其中大部分都源自我使用的不同工具的教学文档。而且很多开发人员也乐意跟你合作干这些事，因为他们在完工时会发现这些东西也挺有用。上面我提供的那些代码链接是给 [DevOps KC][12]（一个地方性DevOps组织） 发送新闻简报用的，其中大部分用来创建网站的代码来自我在内部新闻简报项目上所作的工作。
 
 Many of the tools listed below can offer this type of interaction, but some offer a slightly different model. The emerging model in this space is that of a declarative description of a pipeline in something like YAML with each stage being ephemeral and idempotent. Many of these systems also ensure correct sequencing by creating a [directed acyclic graph][13] (DAG) over the different stages of the pipeline.
-下面列出的大多数工具都可以提供这种类型的交互，但是有些工具提供的模型略有不同。这一领域新兴的模型是用声明性的语言如 YAML 来描述一个管道，其中的每个阶段都是短暂而幂等的。许多系统还会创建[有向无环图（DAG）][13]，来确保管道上不同的阶段能正确排序。
+下面列出的大多数工具都可以提供这种类型的交互，但是有些工具提供的模型略有不同。这一领域新兴的模型是用声明性的语言如 YAML 来描述一个管道，其中的每个阶段都是短暂而幂等的。许多系统还会创建[有向无环图（DAG）][13]，来确保管道上不同的阶段排序的正确性。
 
 These stages are often run in Linux containers and can do anything you can do in a container. Some tools, like [Spinnaker][14], focus only on the deployment component and offer some operational features that others don't normally include. [Jenkins][15] has generally kept pipelines in an XML format and most interactions occur within the GUI, but more recent implementations have used a [domain specific language][16] (DSL) using [Groovy][17]. Further, Jenkins jobs normally execute on nodes with a special Java agent installed and consist of a mix of plugins and pre-installed components.
 这些阶段一般运行在 Linux 容器里，和普通的容器没有区别。有一些工具，比如 [Spinnaker][14]，只关注部署组件而且提供一些其他工具没有的操作特性。[Jenkins][15] 通常把管道配置存成 XML 格式，大部分交互都可以在图形界面里完成，但最新的方案是使用 [领域专用语言（DSL）][16] 如[Groovy][17]。并且，Jenkins 的任务（job）通常运行在各个节点里，这些节点会装一个专门的 Java 程序还有一堆混杂的插件和预装组件。
@@ -56,19 +56,23 @@ GitLab is a fairly new entrant to the CI/CD space, but it's already achieved the
 GitLab 可以说是 CI/CD 领域里新登场的玩家，但它却在 [Forrester（一个权威调研机构） 的调查报告][20]中位列第一。这在一个高水平、竞争激烈的领域里是个了不起的成就。是什么让 GitLab CI 这么成功呢？它使用 YAML 文件来描述整个管道。它还有一个功能叫做 Auto DevOps，可以为简单的工程自动生成管道，并且包含多种内置的测试单元。这套系统使用 [Herokuish buildpacks][21]来判断语言的种类以及如何构建应用。它和 Kubernetes 整合地很紧密，可以根据不同的方案将你的应用自动部署到 Kubernetes 集群，比如灰度发布、蓝绿部署等。
 
 In addition to its CI functionality, GitLab offers many complementary features like operations and monitoring with Prometheus deployed automatically with your application; portfolio and project management using GitLab Issues, Epics, and Milestones; security checks built into the pipeline with the results provided as an aggregate across multiple projects; and the ability to edit code right in GitLab using the WebIDE, which can even provide a preview or execute part of a pipeline for faster feedback.
-除了它的持续集成功能，GitLab 还提供了许多值得称赞的特性，比如：
+除了它的持续集成功能，GitLab 还提供了许多补充特性，比如：将 Prometheus 和你的应用一同部署，以提供监控功能；通过 GitLab 提供的 Issues、Epics 和 Milestones 功能来实现项目评估和管理；管道中集成了安全检测功能，多个项目的检测结果会聚合显示；你可以通过 GitLab 提供的网页版 IDE 在线编辑代码，还可以快速查看管道的预览或执行状态。
 
 ### GoCD
 
 GoCD comes from the great minds at Thoughtworks, which is testimony enough for its capabilities and efficiency. To me, GoCD's main differentiator from the rest of the pack is its [Value Stream Map][22] (VSM) feature. In fact, pipelines can be chained together with one pipeline providing the "material" for the next pipeline. This allows for increased independence for different teams with different responsibilities in the deployment process. This may be a useful feature when introducing this type of system in older organizations that intend to keep these teams separate—but having everyone using the same tool will make it easier later to find bottlenecks in the VSM and reorganize the teams or work to increase efficiencies.
+GoCD 是由老牌软件公司 Thoughtworks 出品，这已经足够证明它的能力和效率。对我而言，GoCD 最有亮点的特性是它的[价值流视图（VSM）][22]。实际上，一个管道的输出可以变成下一个管道的输入，从而把管道串联起来。这样做有助于提高不同开发团队在整个开发流程中的独立性。比如在引入 CI/CD 系统时，有些成立较久的机构希望保持他们各个团队相互隔离，这时候 VSM 就很有用了：让每个人都使用相同的工具就很容易在 VSM 中发现工作流程上的瓶颈，然后可以按图索骥调整团队或者想办法提高工作效率。
 
 It's incredibly valuable to have a VSM for each product in a company; that GoCD allows this to be [described in JSON or YAML][23] in version control and presented visually with all the data around wait times makes this tool even more valuable to an organization trying to understand itself better. Start by installing GoCD and mapping out your process with only manual approval gates. Then have each team use the manual approvals so you can start collecting data on where bottlenecks might exist.
+为公司的每个产品配置 VSM 是非常有价值的；GoCD 可以使用 [JSON 或 YAML 格式存储配置][23]，还能以可视化的方式展示等待时间，这让一个机构能有效减少学习它的成本。刚开始使用 GoCD 创建你自己的流程时，建议使用手动批复的方式。让每个团队也采用手动批复，这样你就可以开始收集数据并且找到可能的瓶颈点。
 
 ### Travis CI
 
 Travis CI was my first experience with a Software as a Service (SaaS) CI system, and it's pretty awesome. The pipelines are stored as YAML with your source code, and it integrates seamlessly with tools like GitHub. I don't remember the last time a pipeline failed because of Travis CI or the integration—Travis CI has a very high uptime. Not only can it be used as SaaS, but it also has a version that can be hosted. I haven't run that version—there were a lot of components, and it looked a bit daunting to install all of it. I'm guessing it would be much easier to deploy it all to Kubernetes with [Helm charts provided by Travis CI][26]. Those charts don't deploy everything yet, but I'm sure it will grow even more in the future. There is also an enterprise version if you don't want to deal with the hassle.
+我使用的第一个软件既服务（SaaS）类型的 CI 系统就是 Travis CI，体验很不错。管道配置以源码形式用 YAML 保存，它与 GitHub 等工具无缝整合。我印象中管道从来没有失效过，因为 Travis CI 的在线率很高。除了 SaaS 版之外，你也可以使用自行部署的版本。我还没有自行部署过，它的组件非常多，要全部安装的话，工作量就有点吓人了。我猜更简单的办法是把它部署到 Kubernetes 上，[Travis CI 提供了 Helm charts][26]，这些 charts 目前不包含所有要部署的组件，但我相信以后会越来越多的。如果你不想处理这些细枝末节的问题，还有一个企业版可以试试。
 
 However, if you're developing open source code, you can use the SaaS version of Travis CI for free. That is an awesome service provided by an awesome team! This alleviates a lot of overhead and allows you to use a fairly common platform for developing open source code without having to run anything.
+如果你在开发一个开源项目，你就可以免费使用 SaaS 版的 Travis CI，享受顶尖团队提供的优质服务！这样能省去很多麻烦，你能在一个相对通用的平台上研发开源项目，而不用运行任何东西。
 
 ### Jenkins
 
