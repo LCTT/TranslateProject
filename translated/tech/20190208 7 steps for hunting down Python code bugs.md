@@ -22,7 +22,7 @@
 
 ### 1. 不要碰你的代码
 
-Go ahead and look at it, maybe even come up with a hypothesis. But before you start mucking about in the code, take that call that creates the bug and turn it into a test. This will be an integration test because although you may have suspicions, you do not yet know exactly where the problem is.
+阅读代码，你甚至可能会想出一个假设。但是在开始修改你的代码前，请重现导致错误的调用并把它变成一个测试。这将是一个集成测试，因为你可能还有疑问，目前你还没能准确地知道问题在哪儿。
 
 Make sure this test fails. This is important because sometimes the test you make doesn't mimic the broken call; this is especially true if you are using a web or other framework that can obfuscate the tests. Many things may be stored in variables, and it is unfortunately not always obvious, just by looking at the test, what call you are making in the test. I'm not going to say that I have created a test that passed when I was trying to imitate a broken call, but, well, I have, and I don't think that is particularly unusual. Learn from my mistakes.
 
