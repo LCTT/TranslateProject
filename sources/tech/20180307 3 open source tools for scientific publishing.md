@@ -1,3 +1,4 @@
+tomjlw is translating
 3 open source tools for scientific publishing
 ======
 
@@ -51,7 +52,7 @@ We are always on the lookout for opportunities to engage with the best emerging 
 via: https://opensource.com/article/18/3/scientific-publishing-software
 
 作者：[Paul Shanno][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tomjlw](https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
