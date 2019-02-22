@@ -24,7 +24,7 @@
 
 阅读代码，你甚至可能会想出一个假设。但是在开始修改你的代码前，请重现导致错误的调用并把它变成一个测试。这将是一个集成测试，因为你可能还有疑问，目前你还没能准确地知道问题在哪儿。
 
-Make sure this test fails. This is important because sometimes the test you make doesn't mimic the broken call; this is especially true if you are using a web or other framework that can obfuscate the tests. Many things may be stored in variables, and it is unfortunately not always obvious, just by looking at the test, what call you are making in the test. I'm not going to say that I have created a test that passed when I was trying to imitate a broken call, but, well, I have, and I don't think that is particularly unusual. Learn from my mistakes.
+确保这个测试是失败的。这很重要，因为有时你的测试不能重现失败的调用，尤其是你使用了可以混淆测试的 web 或者其他框架。很多东西可能被存储在变量中，但遗憾的是，只通过观察测试，你在测试里调用的东西并不总是明显可见的。I'm not going to say that I have created a test that passed when I was trying to imitate a broken call, but, well, I have, and I don't think that is particularly unusual. Learn from my mistakes.
 
 ### 2. 编写错误的测试
 
