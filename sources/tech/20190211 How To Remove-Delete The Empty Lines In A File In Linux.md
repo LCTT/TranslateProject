@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: ( pityonline )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -180,7 +180,7 @@ via: https://www.2daygeek.com/remove-delete-empty-lines-in-a-file-in-linux/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[pityonline](https://github.com/pityonline)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
