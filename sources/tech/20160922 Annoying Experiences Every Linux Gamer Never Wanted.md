@@ -1,110 +1,105 @@
-tomjlw is translating
-Annoying Experiences Every Linux Gamer Never Wanted!
+每个 Linux 平台上的玩家都从不想要的恼人经历
 ============================================================
+ [![Linux 平台上玩家的问题](https://itsfoss.com/wp-content/uploads/2016/09/Linux-Gaming-Problems.jpg)][10]
 
+[在 Linux 平台上玩游戏][12] 已经走了很远，现在有专门的 [Linux 游戏型发行版]。但是这不意味着在 Linux 上打游戏的感觉和在 Windows 上一样顺畅。
 
- [![Linux gamer's problem](https://itsfoss.com/wp-content/uploads/2016/09/Linux-Gaming-Problems.jpg)][10]
+为了确保我们和 Windows 用户同样地享受游戏，什么是我们应该考虑的困难呢？
 
-[Gaming on Linux][12] has come a long way. There are dedicated [Linux gaming distributions][13] now. But this doesn’t mean that gaming experience on Linux is as smooth as on Windows.
+[Wine][14]，[PlayOnLinux][15] 和其它类似软件不总是能够玩所有流行的 Windows 游戏。在这篇文章里，我想讨论一下为了拥有一个最好的 Linux 游戏体验所必须处理好的若干因素。 
 
-What are the obstacles that should be thought about to ensure that we enjoy games as much as Windows users do?
+### #1 SteamOS 是一个开源平台，Steam for Linux 并不是 
 
-[Wine][14], [PlayOnLinux][15] and other similar tools are not always able to play every popular Windows game. In this article, I would like to discuss various factors that must be dealt with in order to have the best possible Linux gaming experience.
-
-### #1 SteamOS is Open Source, Steam for Linux is NOT
-
-As stated on the [SteamOS page][16], even though SteamOS is open source, Steam for Linux continues to be proprietary. Had it also been open source, the amount of support from the open source community would have been tremendous! Since it is not, [the birth of Project Ascension was inevitable][17]:
+正如 [StemOS 主页][16]所说， 即便 SteamOS 是一个开源平台，Steam for Linux 仍然是专有的。如果 Steam for Linux 也开源，那么它从开源社区得到的支持将会是巨大的。既然它不是，那么 [Ascension 计划的诞生自然是不可避免的][17]：
 
 [video](https://youtu.be/07UiS5iAknA)
 
-Project Ascension is an open source game launcher designed to launch games that have been bought and downloaded from anywhere – they can be Steam games, [Origin games][18], Uplay games, games downloaded directly from game developer websites or from DVD/CD-ROMs.
+Ascension 计划是一个开源的能够启动从任何平台购买、下载的游戏的游戏启动器。这些游戏可以是 Steam 平台的，[Origin 游戏]平台的，Uplay 平台的，以及直接从游戏开发者主页或者从 DVD、CD-ROM 拷下来的。
 
-Here is how it all began: [Sharing The Idea][19] resulted in a very interesting discussion with readers all over from the gaming community pitching in their own opinions and suggestions.
+这是 Ascension 计划如何开始的：[头脑风暴][19]激发了一场与游戏社区读者之间有趣的讨论，在这场讨论中读者们纷纷发表自己的观点并给出建议。
 
-### #2 Performance compared to Windows
+### #2 与 Windows 平台的性能比较
 
-Getting Windows games to run on Linux is not always an easy task. But thanks to a feature called [CSMT][20] (command stream multi-threading), PlayOnLinux is now better equipped to deal with these performance issues, though it’s still a long way to achieve Windows level outcomes.
+在 Linux 平台上运行 Windows 游戏并不总是一件轻松的任务。但是感谢一个叫做 [CSMT][20]（多线程命令流）的特性，尽管离 Windows 级别的性能还有相当长的路要走，PlayOnLinux 现在依旧可以更好地解决这些性能方面的问题。
 
-Native Linux support for games has not been so good for past releases.
+原生态 Linux 对游戏的支持在过去发行的游戏中从未如人意。
 
-Last year, it was reported that SteamOS performed [significantly worse][21] than Windows. Tomb Raider was released on SteamOS/Steam for Linux last year. However, benchmark results were [not at par][22] with performance on Windows.
+去年，有报道说 SteamOS 比 Windows 在游戏方面的表现要[差得多][21]。古墓丽影去年在 SteamOS 及 Steam for Linux 上发行，然而基准测试的结果与 Windows 上的性能无法抗衡。
 
-[video](https://youtu.be/nkWUBRacBNE)
+[视频](https://youtu.be/nkWUBRacBNE)
 
-This was much obviously due to the fact that the game had been developed with [DirectX][23] in mind and not [OpenGL][24].
+这明显是因为游戏是基于 [DirectX][23] 而不是 [OpenGL][24] 开发的缘故。
 
-Tomb Raider is the [first Linux game that uses TressFX][25]. This video includes TressFX comparisons:
+古墓丽影是[第一个使用 TressFX 的游戏][25]。这个视频包涵了 TressFX 的比较：
 
-[video](https://youtu.be/-IeY5ZS-LlA)
+[视频](https://youtu.be/-IeY5ZS-LlA)
 
-Here is another interesting comparison which shows Wine+CSMT performing much better than the native Linux version itself on Steam! This is the power of Open Source!
+下面是另一个有趣的比较，它显示出使用 Wine+CSMT 带来的游戏性能比 Steam 上原生的 Linux 版游戏带来的游戏性能要好得多！这就是开源的力量！ 
 
-[Suggested readA New Linux OS "OSu" Vying To Be Ubuntu Of Arch Linux World][26]
+[推荐阅读：一个新 Linux 操作系统 "OSu"，力争成为 Arch Linux 世界中的 Ubuntu][26]
 
-[video](https://youtu.be/sCJkC6oJ08A)
+[视频](https://youtu.be/sCJkC6oJ08A)
 
-TressFX has been turned off in this case to avoid FPS loss.
+以防 FPS 损失，TressFX 已经被关闭。
 
-Here is another Linux vs Windows comparison for the recently released “[Life is Strange][27]” on Linux:
+以下是另一个有关在 Linux 上最新发布的 “[Life is Strange][27]”在 Linux 与 Windows上的比较：
 
-[video](https://youtu.be/Vlflu-pIgIY)
+[视频](https://youtu.be/Vlflu-pIgIY)
 
-It’s good to know that  [_Steam for Linux_][28]  has begun to show better improvements in performance for this new Linux game.
+[_Steam for Linux_][28] 开始在这个游戏上展示出比 Windows 更好的游戏性能，这是一件好事。
 
-Before launching any game for Linux, developers should consider optimizing them especially if it’s a DirectX game and requires OpenGL translation. We really do hope that [Deus Ex: Mankind Divided on Linux][29] gets benchmarked well, upon release. As its a DirectX game, we hope it’s being ported well for Linux. Here’s [what the Executive Game Director had to say][30].
+在发布任何 Linux 版的游戏前，开发者应该考虑优化游戏，特别是基于 DirectX 并需要 OpenGL转换的游戏。我们十分希望[ Linux 上的杀出重围：人类分裂][29] 在正式发行时能有一个好的基准测试结果。由于它是基于 DirectX的游戏，我们希望它能良好地移植到 Linux 上。以下是[游戏执行总监不得不说的话][30]。
 
-### #3 Proprietary NVIDIA Drivers
+### #3 专有的 NVIDIA 驱动
 
-[AMD’s support for Open Source][31] is definitely commendable when compared to [NVIDIA][32]. Though [AMD][33] driver support is [pretty good on Linux][34] now due to its better open source driver, NVIDIA graphic card owners will still have to use the proprietary NVIDIA drivers because of the limited capabilities of the open-source version of NVIDIA’s graphics driver called Nouveau.
+相比于 [NVIDIA][32]，[AMD 对于开源的支持][31]绝对是值得称赞的。尽管 [AMD][33] 因其更好的开源驱动在 Linux 上的驱动支持挺不错，NVIDIA 显卡用户由于开源版本的 NVIDIA 显卡驱动 “Nouveau” 有限的能力，仍不得不用专有的 NVIDIA 驱动。
 
-In the past, legendary Linus Torvalds has also shared his thoughts about Linux support from NVIDIA to be totally unacceptable:
+在过去，传奇般的 Linus Torvalds 同样分享了他关于“来自 NIVIDIA 的 Linux 支持完全不可接受”的想法。
 
-[video](https://youtu.be/O0r6Pr_mdio)
+[视频](https://youtu.be/O0r6Pr_mdio)
 
-You can watch the complete talk [here][35]. Although NVIDIA responded with [a commitment for better linux support][36], the open source graphics driver still continues to be weak as before.
+你可以在这里观看完整的[讲话][35]，尽管 NVIDIA 用 [承诺更好的 Linux 平台支持][36]作为回复，开源显卡驱动仍如之前一样毫无起色。
 
-### #4 Need for Uplay and Origin DRM support on Linux
+### #4 需要 Uplay 和 Origin 在 Linux 平台上的 DRM 支持
 
-[video](https://youtu.be/rc96NFwyxWU)
+[视频](https://youtu.be/rc96NFwyxWU)
 
-The above video describes how to install the [Uplay][37] DRM on Linux. The uploader also suggests that the use of wine as the main tool of games and applications is not recommended on Linux. Rather, preference to native applications should be encouraged instead.
+以上的视频描述了如何在 Linux 上安装 [Uplay][37] DRM。上传者还建议使用 Wine 作为 Linux 上的主要的应用和游戏支持软件并不推荐。相反，使用原生的应用更值得鼓励。
 
-The following video is a guide about installing the [Origin][38] DRM on Linux:
+以下视频是一个关于如何在 Linux 上安装 [Origin][38] DRM 的教程。
 
-[video](https://youtu.be/ga2lNM72-Kw)
+[视频](https://youtu.be/ga2lNM72-Kw)
 
-Digital Rights Management Software adds another layer for game execution and hence it adds up to the already challenging task to make a Windows game run well on Linux. So in addition to making the game execute, W.I.N.E has to take care of running the DRM software such as Uplay or Origin as well. It would have been great if, like Steam, Linux could have got its own native versions of Uplay and Origin.
+数字版权管理软件给游戏运行又加了一层阻碍，使得在 Linux 上良好运行 Windows 游戏这一本就充满挑战性的任务更有难度。因此除了使游戏能够运行之外，W.I.N.E 不得不同时负责运行像 Uplay 或 Origin 之类的 DRM 软件。如果能像 Steam 一样，Linux 也能够有自己原生版本的 Uplay 和 Origin 那就好了。
 
-[Suggested readLinux Foundation Head Calls 2017 'Year of the Linux Desktop'... While Running Apple's macOS Himself][39]
+[推荐阅读：Linux 基金会会长称 2017 是 Linux 桌面之年......尽管他自己正使用苹果的 macOS][39]
 
-### #5 DirectX 11 support for Linux
+### #5 DirectX 11 对于 Linux 的支持
 
-Even though we have tools on Linux to run Windows applications, every game comes with its own set of tweak requirements for it to be playable on Linux. Though there was an announcement about [DirectX 11 support for Linux][40] last year via Code Weavers, it’s still a long way to go to make playing newly launched titles on Linux a possibility. Currently, you can
+尽管我们在 Linux 平台上有可以运行 Windows 应用的工具，每个游戏为了能在 Linux 上运行都带有自己的配套插件需求。尽管去年通过 Code Weavers 有一篇关于 [DirectX 11 对于 Linux 的支持][40] 的公告，在 Linux 上畅玩新发大作仍是长路漫漫。现在你可以[从 Codweavers 购买 Crossover][41] 以获得可得到的最佳 DirectX 11 支持。这个在 Arch Linux 论坛上的[频道][42]清楚展现了将这个梦想成真需要多少的努力。以下是一个 [Reddit 频道][44] 上的有趣[发现][43]。这个发现提到了[来自 Codeweavers 的 DirectX 11 补丁][45]，现在看来这无疑是好消息。 
 
-Currently, you can [buy Crossover from Codeweavers][41] to get the best DirectX 11 support available. This [thread][42] on the Arch Linux forums clearly shows how much more effort is required to make this dream a possibility. Here is an interesting [find][43] from a [Reddit thread][44], which mentions Wine getting [DirectX 11 patches from Codeweavers][45]. Now that’s definitely some good news.
+### #6 100%的 Steam 游戏在 Linux 上无法获得 
 
-### #6 100% of Steam games are not available for Linux  
+随着 Linux 游戏玩家持续错过每一款主要游戏的发行，这是需要考虑的一个重点，因为大部分主要游戏都在 Windows 上发行。以下是[如何在 Linux 上安装 Windows 版的 Steam 的教程][46]。
 
-This is an important point to ponder as Linux gamers continue to miss out on every major game release since most of them land up on Windows. Here is a guide to [install Steam for Windows on Linux][46].
+### #7 游戏发行商对OpenGL更好的支持
 
-### #7 Better Support from video game publishers for OpenGL
+目前开发者和发行商主要着眼于 DirectX 而不是 OpenGL 来开发游戏。现在随着 Steam 正式登录 Linux，开发者应该同样考虑在 OpenGL 下开发。 
 
-Currently, developers and publishers focus primarily on DirectX for video game development rather than OpenGL. Now as Steam is officially here for Linux, developers should start considering development in OpenGL as well.
+[Direct3D][47] 仅仅是为了 Windows 平台打造。而 OpenGL API 拥有开放性标准，并且它不仅能在 Windows 上同样也能在其它各种各样的平台上实现。
 
-[Direct3D][47] is made solely for the Windows platform. The OpenGL API is an open standard, and implementations exist for not only Windows but a wide variety of other platforms.
+尽管是一篇很老的文章，[这个很有价值的资源][48]分享了许多有关 OpenGL 和 DirectX 现状的很有想法的信息。所提出的观点确实十分明智，基于按时间排序的事件给予读者启迪。
 
-Though quite an old article, [this valuable resource][48] shares a lot of thoughtful information on the realities of OpenGL and DirectX. The points made are truly very sensible and enlightens the reader about the facts based on actual chronological events.
+在 Linux 平台上发布大作的发行商绝不应该忽视一个事实：在 OpenGL 下直接开发游戏要比从 DirectX 移植到 OpenGL 合算得多。如果不得不转换平台，移植必须被仔细优化并谨慎研究。发布游戏可能会有延迟但这绝对值得。
 
-Publishers who are launching their titles on Linux should definitely not leave out the fact that developing the game on OpenGL would be a much better deal than translating it from DirectX to OpenGL. If conversion has to be done, the translations must be well optimized and carefully looked into. There might be a delay in releasing the games but still it would definitely be worth the wait.
-
-Have more annoyances to share? Do let us know in the comments.
+有更多的烦恼要分享？务必在评论区让我们知道。
 
 --------------------------------------------------------------------------------
 
 via: https://itsfoss.com/linux-gaming-problems/
 
 作者：[Avimanyu Bandyopadhyay  ][a]
-译者：[tomjlw](https://github.com/tomjlw
+译者：[tomjlw](https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
