@@ -7,16 +7,15 @@
 [#]: via: (https://hookrace.net/blog/linux-desktop-setup/)
 [#]: author: (Dennis Felsing http://felsin9.de/nnis/)
 
-Linux Desktop Setup · HookRace Blog
+Linux Desktop Setup
 ======
 
-### Linux Desktop Setup
 
 My software setup has been surprisingly constant over the last decade, after a few years of experimentation since I initially switched to Linux in 2006. It might be interesting to look back in another 10 years and see what changed. A quick overview of what’s running as I’m writing this post:
 
 [![htop overview][1]][2]
 
-#### Motivation
+### Motivation
 
 My software priorities are, in no specific order:
 
@@ -28,7 +27,7 @@ My software priorities are, in no specific order:
 
 
 
-#### Operating Systems
+### Operating Systems
 
 I had a hard start with Linux 12 years ago by removing Windows, armed with just the [Gentoo Linux][3] installation CD and a printed manual to get a functioning Linux system. It took me a few days of compiling and tinkering, but in the end I felt like I had learnt a lot.
 
@@ -40,7 +39,7 @@ Similar problems happen with other programs, commonly Firefox, cron or Samba req
 
 For the [DDNet][8] production servers I prefer [Debian][9] over Arch Linux, so that I have a lower chance of breakage on each upgrade. For my firewall and router I used [OpenBSD][10] for its clean system, documentation and great [pf firewall][11], but right now I don’t have a need for a separate router anymore.
 
-#### Window Manager
+### Window Manager
 
 Since I started out with Gentoo I quickly noticed the huge compile time of KDE, which made it a no-go for me. I looked around for more minimal solutions, and used [Openbox][12] and [Fluxbox][13] initially. At some point I jumped on the tiling window manager train in order to be more keyboard-focused and picked up [dwm][14] and [awesome][15] close to their initial releases.
 
@@ -69,11 +68,11 @@ I hear that [i3][23] has become quite popular in the last years, but it requires
 
 I realize that there are also terminal multiplexers like [tmux][24], but I still require a few graphical applications, so in the end I never used them productively.
 
-#### Terminal Persistency
+### Terminal Persistency
 
 In order to keep terminals alive I use [dtach][25], which is just the detach feature of screen. In order to make every terminal on my computer detachable I wrote a [small wrapper script][26]. This means that even if I had to restart my X server I could keep all my terminals running just fine, both local and remote.
 
-#### Shell & Programming
+### Shell & Programming
 
 Instead of [bash][27] I use [zsh][28] as my shell for its huge number of features.
 
@@ -103,7 +102,7 @@ One problem with Vim is that you get so used to its key mappings that you’ll w
 
 [Python][33] and [Nim][34] do well as scripting languages where the shell is not powerful enough.
 
-#### System Monitoring
+### System Monitoring
 
 [htop][35] (look at the background of that site, it’s a live view of the server that’s hosting it) works great for getting a quick overview of what the software is currently doing. [lm_sensors][36] allows monitoring the hardware temperatures, fans and voltages. [powertop][37] is a great little tool by Intel to find power savings. [ncdu][38] lets you analyze disk usage interactively.
 
@@ -111,7 +110,7 @@ One problem with Vim is that you get so used to its key mappings that you’ll w
 
 There are of course many more great tools.
 
-#### Mails & Synchronization
+### Mails & Synchronization
 
 On my home server I have a [fetchmail][42] daemon running for each email acccount that I have. Fetchmail just retrieves the incoming emails and invokes [procmail][43]:
 
@@ -185,7 +184,7 @@ application/msword; antiword %s; copiousoutput
 application/pdf; pdftotext -layout /dev/stdin -; copiousoutput
 ```
 
-#### News & Communication
+### News & Communication
 
 [Newsboat][48] is a nice little RSS/Atom feed reader in the terminal. I have it running on the server in a `tach` session with about 150 feeds. Filtering feeds locally is also possible, for example:
 
@@ -195,7 +194,7 @@ ignore-article "https://forum.ddnet.tw/feed.php" "title =~ \"Map Testing •\" o
 
 I use [Irssi][49] the same way for communication via IRC.
 
-#### Calendar
+### Calendar
 
 [remind][50] is a calendar that can be used from the command line. Setting new reminders is done by editing the `rem` files:
 
@@ -245,7 +244,7 @@ to show a calendar fitting just the width of my terminal:
 
 ![remcal][51]
 
-#### Dictionary
+### Dictionary
 
 [rdictcc][52] is a little known dictionary tool that uses the excellent dictionary files from [dict.cc][53] and turns them into a local database:
 
@@ -278,7 +277,7 @@ Rasch model:
  - Rasch-Modell {n}
 ```
 
-#### Writing and Reading
+### Writing and Reading
 
 I have a simple todo file containing my tasks, that is basically always sitting open in a Vim session. For work I also use the todo file as a “done” file so that I can later check what tasks I finished on each day.
 
@@ -320,19 +319,19 @@ Further example documents and presentations can be found over at [my private sit
 
 To read PDFs [Zathura][56] is fast, has Vim-like controls and even supports two different PDF backends: Poppler and MuPDF. [Evince][57] on the other hand is more full-featured for the cases where I encounter documents that Zathura doesn’t like.
 
-#### Graphical Editing
+### Graphical Editing
 
 [GIMP][58] and [Inkscape][59] are easy choices for photo editing and interactive vector graphics respectively.
 
 In some cases [Imagemagick][60] is good enough though and can be used straight from the command line and thus automated to edit images. Similarly [Graphviz][61] and [TikZ][62] can be used to draw graphs and other diagrams.
 
-#### Web Browsing
+### Web Browsing
 
 As a web browser I’ve always used [Firefox][63] for its extensibility and low resource usage compared to Chrome.
 
 Unfortunately the [Pentadactyl][64] extension development stopped after Firefox switched to Chrome-style extensions entirely, so I don’t have satisfying Vim-like controls in my browser anymore.
 
-#### Media Players
+### Media Players
 
 [mpv][65] with hardware decoding allows watching videos at 5% CPU load using the `vo=gpu` and `hwdec=vaapi` config settings. `audio-channels=2` in mpv seems to give me clearer downmixing to my stereo speakers / headphones than what PulseAudio does by default. A great little feature is exiting with `Shift-Q` instead of just `Q` to save the playback location. When watching with someone with another native tongue you can use `--secondary-sid=` to show two subtitles at once, the primary at the bottom, the secondary at the top of the screen
 
@@ -358,7 +357,7 @@ My music collection sits on my home server so that I can access it from anywhere
 root@server:/media/media /mnt/media fuse.sshfs noauto,x-systemd.automount,idmap=user,IdentityFile=/root/.ssh/id_rsa,allow_other,reconnect 0 0
 ```
 
-#### Cross-Platform Building
+### Cross-Platform Building
 
 Linux is great to build packages for any major operating system except Linux itself! In the beginning I used [QEMU][71] to with an old Debian, Windows and Mac OS X VM to build for these platforms.
 
@@ -366,7 +365,7 @@ Nowadays I switched to using chroot for the old Debian distribution (for maximum
 
 The script used to [build DDNet][74] as well as the [instructions for updating library builds][75] are based on this.
 
-#### Backups
+### Backups
 
 As usual, we nearly forgot about backups. Even if this is the last chapter, it should not be an afterthought.
 
@@ -415,7 +414,7 @@ Host chn.ddnet.tw
  Port 22
 ```
 
-#### Final Remarks
+### Final Remarks
 
 Thanks for reading my random collection of tools. I probably forgot many programs that I use so naturally every day that I don’t even think about them anymore. Let’s see how stable my software setup stays in the next years. If you have any questions, feel free to get in touch with me at [dennis@felsin9.de][78].
 
