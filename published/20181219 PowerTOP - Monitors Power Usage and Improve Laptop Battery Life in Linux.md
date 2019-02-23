@@ -1,76 +1,68 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10560-1.html)
 [#]: subject: (PowerTOP – Monitors Power Usage and Improve Laptop Battery Life in Linux)
 [#]: via: (https://www.2daygeek.com/powertop-monitors-laptop-battery-usage-linux/)
 [#]: author: (Vinoth Kumar https://www.2daygeek.com/author/vinoth/)
 
-PowerTOP – Monitors Power Usage and Improve Laptop Battery Life in Linux
+PowerTOP：在 Linux 上监视电量使用和改善笔记本电池寿命
 ======
 
-We all know, we almost 80-90% migrated from PC (Desktop) to laptop.
+我们都知道，现在几乎都从 PC 机换到了笔记本电脑了。但是使用笔记本有个问题，我们希望电池耐用，我们可以使用到每一点电量。所以，我们需要知道电量都去哪里了，是不是浪费了。
 
-But one thing we want from a laptop, it’s long battery life and we want to use every drop of power.
+你可以使用 PowerTOP 工具来查看没有接入电源线时电量都用在了何处。你需要在终端中使用超级用户权限来运行 PowerTOP 工具。它可以访问该电池硬件并测量电量使用情况。
 
-So it’s good to know where our power is going and getting waste.
+### 什么是 PowerTOP
 
-You can use the powertop utility to see what’s drawing power when your system’s not plugged in.
+PowerTOP 是一个 Linux 工具，用于诊断电量消耗和电源管理的问题。
 
-You need to run the powertop utility in terminal with super user privilege.
+它是由 Intel 开发的，可以在内核、用户空间和硬件中启用各种节电模式。
 
-It will access the hardware and measure power usage.
+除了作为一个一个诊断工具之外，PowweTop 还有一个交互模式，可以让你实验 Linux 发行版没有启用的各种电源管理设置。
 
-### What is PowerTOP
+它也能监控进程，并展示其中哪个正在使用 CPU，以及从休眠状态页将其唤醒，也可以找出电量消耗特别高的应用程序。
 
-PowerTOP is a Linux tool to diagnose issues with power consumption and power management.
+### 如何安装 PowerTOP
 
-It was developed by Intel to enable various power-saving modes in kernel, userspace, and hardware.
+PowerTOP 软件包在大多数发行版的软件库中可用，使用发行版的 [包管理器][1] 安装即可。
 
-In addition to being a diagnostic tool, PowerTOP also has an interactive mode where the user can experiment various power management settings for cases where the Linux distribution has not enabled these settings.
-
-It is possible to monitor processes and show which of them are utilizing the CPU and wake it from its Idle-States, allowing to identify applications with particular high power demands.
-
-### How to Install PowerTOP
-
-PowerTOP package is available in most of the distributions official repository so, use the distributions **[Package Manager][1]** to install it.
-
-For **`Fedora`** system, use **[DNF Command][2]** to install PowerTOP.
+对于 Fedora 系统，使用 [DNF 命令][2] 来安装 PowerTOP。
 
 ```
 $ sudo dnf install powertop
 ```
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install PowerTOP.
+对于 Debian/Ubuntu 系统，使用 [APT-GET 命令][3] 或 [APT 命令][4] 来安装 PowerTOP。
 
 ```
 $ sudo apt install powertop
 ```
 
-For **`Arch Linux`** based systems, use **[Pacman Command][5]** to install PowerTOP.
+对于基于 Arch Linux 的系统，使用 [Pacman 命令][5] 来安装 PowerTOP。
 
 ```
 $ sudo pacman -S powertop
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][6]** to install PowerTOP.
+对于 RHEL/CentOS 系统，使用 [YUM 命令][6] 来安装 PowerTOP。
 
 ```
 $ sudo yum install powertop
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][7]** to install PowerTOP.
+对于 openSUSE Leap 系统，使用 [Zypper 命令][7] 来安装 PowerTOP。
 
 ```
 $ sudo zypper install powertop
 ```
 
-### How To Access PowerTOP
+### 如何使用 PowerTOP
 
-PowerTOP requires super user privilege so, run as root to use PowerTOP utility on your Linux system.
+PowerTOP 需要超级用户权限，所以在 Linux 系统中以 root 身份运行 PowerTOP 工具。
 
-By default it shows `Overview` tab where we can see the power usage consumption for all the devices. Also shows your system wakeups seconds.
+默认情况下其显示 “概览” 页，在这里我们可以看到所有设备的电量消耗情况，也可以看到系统的唤醒秒数。
 
 ```
 $ sudo powertop
@@ -132,11 +124,11 @@ Summary: 1692.9 wakeups/second,  0.0 GPU ops/seconds, 0.0 VFS ops/sec and 54.9% 
  Exit |  /  Navigate |
 ```
 
-The powertop output looks similar to the above screenshot, it will be slightly different based on your hardware. This have many screen you can switch between screen the using `Tab` and `Shift+Tab` button.
+PowerTOP 的输出类似如上截屏，在你的机器上由于硬件不同会稍有不同。它的显示有很多页，你可以使用 `Tab` 和 `Shift+Tab` 在它们之间切换。
 
-### Idle Stats Tab
+### 空闲状态页
 
-It displays various information about the processor.
+它会显示处理器的各种信息。
 
 ```
 PowerTOP v2.9     Overview   Idle stats   Frequency stats   Device stats   Tunables                                     
@@ -194,9 +186,9 @@ C10 (pc10)  0.0%    |                     | C10        39.5%    4.7 ms 41.4%    
  Exit |  /  Navigate |
 ```
 
-### Frequency Stats Tab
+### 频率状态页
 
-It displays the frequency of CPU.
+它会显示 CPU 的主频。
 
 ```
 PowerTOP v2.9     Overview   Idle stats   Frequency stats   Device stats   Tunables                                     
@@ -220,9 +212,9 @@ Idle                | Idle                | Idle
 
 ```
 
-### Device Stats Tab
+### 设备状态页
 
-It displays power usage information against only devices.
+它仅针对设备显示其电量使用信息。
 
 ```
 PowerTOP v2.9     Overview   Idle stats   Frequency stats   Device stats   Tunables                                     
@@ -277,12 +269,12 @@ The power consumed was 280 J
               0.0%        runtime-coretemp.0
               0.0%        runtime-alarmtimer
 
- Exit |  /  Navigate |       
+ Exit |  /  Navigate |    
 ```
 
-### Tunables Stats Tab
+### 可调整状态页
 
-This tab is important area that provides suggestions to optimize your laptop battery.
+这个页面是个重要区域，可以为你的笔记本电池优化提供建议。
 
 ```
 PowerTOP v2.9     Overview   Idle stats   Frequency stats   Device stats   Tunables                                     
@@ -340,9 +332,9 @@ PowerTOP v2.9     Overview   Idle stats   Frequency stats   Device stats   Tunab
   Exit |  Toggle tunable |  Window refresh
 ```
 
-### How To Generate PowerTop HTML Report
+### 如何生成 PowerTop 的 HTML 报告
 
-Run the following command to generate the PowerTop HTML report.
+运行如下命令生成 PowerTop 的 HTML 报告。
 
 ```
 $ sudo powertop --html=powertop.html
@@ -363,12 +355,13 @@ Taking 1 measurement(s) for a duration of 20 second(s) each.
 PowerTOP outputing using base filename powertop.html
 ```
 
-Navigate to `file:///home/daygeek/powertop.html` file to access the generated PowerTOP HTML report.
+打开 `file:///home/daygeek/powertop.html` 文件以访问生成的 PowerTOP 的 HTML 报告。
+
 ![][9]
 
-### Auto-Tune mode
+### 自动调整模式
 
-This feature sets all tunable options from `BAD` to `GOOD` which increase the laptop battery life in Linux.
+这个功能可以将所有可调整选项从 BAD 设置为 GOOD，这可以提升 Linux 中的笔记本电池寿命。
 
 ```
 $ sudo powertop --auto-tune
@@ -393,8 +386,8 @@ via: https://www.2daygeek.com/powertop-monitors-laptop-battery-usage-linux/
 
 作者：[Vinoth Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
