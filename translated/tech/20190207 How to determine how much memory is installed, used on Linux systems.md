@@ -7,24 +7,24 @@
 [#]: via: (https://www.networkworld.com/article/3336174/linux/how-much-memory-is-installed-and-being-used-on-your-linux-systems.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-How to determine how much memory is installed, used on Linux systems
+如何在Linux系统中判断安装、使用了多少内存
 ======
 ![](https://images.idgesg.net/images/article/2019/02/memory-100787327-large.jpg)
 
-There are numerous ways to get information on the memory installed on Linux systems and view how much of that memory is being used. Some commands provide an overwhelming amount of detail, while others provide succinct, though not necessarily easy-to-digest, answers. In this post, we'll look at some of the more useful tools for checking on memory and its usage.
+在Linux系统中有很多种方法获取有关安装了多少内存的信息及查看多少内存正在被使用。有些命令提供了大量的细节，而其他命令提供了简洁但不一定易于理解的答案。在这篇文章中，我们将介绍一些查看内存及其使用状态的有用的工具。
 
-Before we get into the details, however, let's review a few details. Physical memory and virtual memory are not the same. The latter includes disk space that configured to be used as swap. Swap may include partitions set aside for this usage or files that are created to add to the available swap space when creating a new partition may not be practical. Some Linux commands provide information on both.
+在我们开始之前，让我们先来回顾一些基础知识。物理内存和虚拟内存并不是一回事。后者包括配置为 swap 的磁盘空间。Swap 空间可能包括为此目的特意留出来的分区，以及在创建新的 swap 分区不可行时创建的用来增加可用 swap 空间的文件。有些Linux命令提供关于两者的信息。
 
-Swap expands memory by providing disk space that can be used to house inactive pages in memory that are moved to disk when physical memory fills up.
+Swap 通过提供当物理内存占满时可以用来存放内存中非活动页的磁盘空间来扩展内存。
 
-One file that plays a role in memory management is **/proc/kcore**. This file looks like a normal (though extremely large) file, but it does not occupy disk space at all. Instead, it is a virtual file like all of the files in /proc.
+**/proc/kcore** 是在内存管理中起作用的一个文件。这个文件看上去是个普通文件（虽然非常大），但它并不占用任何空间。它就像其他 /proc 下的文件一样是个虚拟文件。
 
 ```
 $ ls -l /proc/kcore
 -r--------. 1 root root 140737477881856 Jan 28 12:59 /proc/kcore
 ```
 
-Interestingly, the two systems queried below do _not_ have the same amount of memory installed, yet the size of /proc/kcore is the same on both. The first of these two systems has 4 GB of memory installed; the second has 6 GB.
+有趣的是，下面查询的两个系统并没有安装相同大小的内存，但 /proc/kcore 的大小却是相同的。第一个系统安装了 4 GB 的内存，而第二个系统安装了 6 GB。
 
 ```
 system1$ ls -l /proc/kcore
@@ -33,7 +33,7 @@ system2$ ls -l /proc/kcore
 -r-------- 1 root root 140737477881856 Feb 5 13:00 /proc/kcore
 ```
 
-Explanations that claim the size of this file represents the amount of available virtual memory (maybe plus 4K) don't hold much weight. This number would suggest that the virtual memory on these systems is 128 terrabytes! That number seems to represent instead how much memory a 64-bit systems might be capable of addressing — not how much is available on the system. Calculations of what 128 terrabytes and that number, plus 4K would look like are fairly easy to make on the command line:
+一种不靠谱的解释说这个文件代表可用虚拟内存的大小（没准要加 4 KB），如果这样，这些系统的虚拟内存可就是 128TB 了！这个数字似乎代表了64位系统可以寻址多少内存，而不是当前系统有多少可用内存。在命令行中计算 128 TB 和这个文件大小加上 4 KB 很容易。
 
 ```
 $ expr 1024 \* 1024 \* 1024 \* 1024 \* 128
@@ -42,7 +42,7 @@ $ expr 1024 \* 1024 \* 1024 \* 1024 \* 128 + 4096
 140737488359424
 ```
 
-Another and more human-friendly command for examining memory is the **free** command. It gives you an easy-to-understand report on memory.
+另一个用来检查内存的更人性化的命令是 **free**。它会给出一个易于理解的内存报告。
 
 ```
 $ free
@@ -51,7 +51,7 @@ Mem:        6102476      812244     4090752       13112     1199480     4984140
 Swap:       2097148           0     2097148
 ```
 
-With the **-g** option, free reports the values in gigabytes.
+使用 **-g** 选项，free会以 GB 为单位返回结果。
 
 ```
 $ free -g
@@ -60,7 +60,7 @@ Mem:              5           0           3           0           1           4
 Swap:             1           0           1
 ```
 
-With the **-t** option, free shows the same values as it does with no options (don't confuse -t with terrabytes!) but by adding a total line at the bottom of its output.
+使用 **-t** 选项，free 会显示与无附加选项时相同的值（不要把 -t 选项与 TB 搞混），并额外在输出的底部添加一行总计数据。
 
 ```
 $ free -t
@@ -70,7 +70,7 @@ Swap:       2097148           0     2097148
 Total:      8199624      812408     6187760
 ```
 
-And, of course, you can choose to use both options.
+当然，你也可以选择同时使用两个选项。
 
 ```
 $ free -tg
@@ -80,9 +80,9 @@ Swap:             1           0           1
 Total:            7           0           5
 ```
 
-You might be disappointed in this report if you're trying to answer the question "How much RAM is installed on this system?" This is the same system shown in the example above that was described as having 6GB of RAM. That doesn't mean this report is wrong, but that it's the system's view of the memory it has at its disposal.
+如果你尝试用这个报告来解释“这个系统安装了多少内存？”，你可能会感到失望。上面的报告就是在前文说的装有 6 GB 内存的系统上运行的结果。这并不是说这个结果是错的，这就是系统对其可使用的内存的看法。
 
-The free command also provides an option to update the display every X seconds (10 in the example below).
+free 命令也提供了每隔 X 秒刷新显示的选项（下方示例中 X 为 10）。
 
 ```
 $ free -s 10
@@ -95,7 +95,7 @@ Mem:        6102476      812260     4090712       13112     1199504     4984120
 Swap:       2097148           0     2097148
 ```
 
-With **-l** , the free command provides high and low memory usage.
+使用 **-l** 选项，free命令会提供高低内存使用信息。
 
 ```
 $ free -l
@@ -106,7 +106,7 @@ High:             0           0           0
 Swap:       2097148           0     2097148
 ```
 
-Another option for looking at memory is the **/proc/meminfo** file. Like /proc/kcore, this is a virtual file and one that gives a useful report showing how much memory is installed, free and available. Clearly, free and available do not represent the same thing. MemFree seems to represent unused RAM. MemAvailable is an estimate of how much memory is available for starting new applications.
+查看内存的另一个选择是 **/proc/meminfo** 文件。像 /proc/kcore 一样，这也是一个虚拟文件，它可以提供关于安装/使用了多少内存以及可用内存的报告。显然，空闲内存和可用内存并不是同一回事。MemFree 看起来代表未使用的 RAM。MemAvailable则是对于启动新程序时可使用的内存的一个估计。
 
 ```
 $ head -3 /proc/meminfo
@@ -115,7 +115,7 @@ MemFree: 4090596 kB
 MemAvailable: 4984040 kB
 ```
 
-If you only want to see total memory, you can use one of these commands:
+如果只想查看内存总计，可以使用下面的命令之一：
 
 ```
 $ awk '/MemTotal/ {print $2}' /proc/meminfo
@@ -124,7 +124,7 @@ $ grep MemTotal /proc/meminfo
 MemTotal: 6102476 kB
 ```
 
-The **DirectMap** entries break information on memory into categories.
+**DirectMap** 将内存信息分为几类。
 
 ```
 $ grep DirectMap /proc/meminfo
@@ -132,9 +132,9 @@ DirectMap4k: 213568 kB
 DirectMap2M: 6076416 kB
 ```
 
-DirectMap4k represents the amount of memory being mapped to standard 4k pages, while DirectMap2M shows the amount of memory being mapped to 2MB pages.
+DirectMap4k 代表被映射成标准 4 k 页的内存大小，DirectMap2M 则显示了被映射为 2 MB 的页的内存大小。
 
-The **getconf** command is one that will provide quite a bit more information than most of us want to contemplate.
+**getconf** 命令将会提供比我们大多数人想要看到的更多的信息。
 
 ```
 $ getconf -a | more
@@ -164,14 +164,14 @@ CHAR_MAX 127
 --More--
 ```
 
-Pare that output down to something specific with a command like the one shown below, and you'll get the same kind of information provided by some of the commands above.
+使用类似下面的命令来将其输出精简为指定的内容，你会得到跟前文提到的其他命令相同的结果。
 
 ```
 $ getconf -a | grep PAGES | awk 'BEGIN {total = 1} {if (NR == 1 || NR == 3) total *=$NF} END {print total / 1024" kB"}'
 6102476 kB
 ```
 
-That command calculates memory by multiplying the values in the first and last lines of output like this:
+上面的命令通过将下方输出的第一行和最后一行的值相乘来计算内存。
 
 ```
 PAGESIZE 4096 <==
@@ -179,16 +179,16 @@ _AVPHYS_PAGES 1022511
 _PHYS_PAGES 1525619 <==
 ```
 
-Calculating that independently, we can see how that value is derived.
+自己动手计算一下，我们就知道这个值是怎么来的了。
 
 ```
 $ expr 4096 \* 1525619 / 1024
 6102476
 ```
 
-Clearly that's one of those commands that deserves to be turned into an alias!
+显然值得为以上的指令之一设置个 alias。 
 
-Another command with very digestible output is **top**. In the first five lines of top's output, you'll see some numbers that show how memory is being used.
+另一个具有非常易于理解的输出的命令是 **top** 。在 top 输出的前五行，你可以看到一些数字显示多少内存正被使用。 
 
 ```
 $ top
@@ -199,16 +199,16 @@ MiB Mem : 3244.8 total, 377.9 free, 1826.2 used, 1040.7 buff/cache
 MiB Swap: 3536.0 total, 3535.7 free, 0.3 used. 1126.1 avail Mem
 ```
 
-And finally a command that will answer the question "So, how much RAM is installed on this system?" in a succinct fashion:
+最后一个命令将会以一个非常简洁的方式回答“系统安装了多少内存？”：
 
 ```
 $ sudo dmidecode -t 17 | grep "Size.*MB" | awk '{s+=$2} END {print s / 1024 "GB"}'
 6GB
 ```
 
-Depending on how much detail you want to see, Linux systems provide a lot of options for seeing how much memory is installed on your systems and how much is used and available.
+取决于你想要获取多少细节，Linux系统提供了许多用来查看系统安装内存以及使用/空闲内存的选择。
 
-Join the Network World communities on [Facebook][1] and [LinkedIn][2] to comment on topics that are top of mind.
+在 [Facebook][1] 或 [LinkedIn][2] 上加入 Network World 社区，评论最重要的话题。
 
 --------------------------------------------------------------------------------
 
