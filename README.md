@@ -15,30 +15,26 @@
 
 LCTT 已经拥有几百名活跃成员，并欢迎更多的 Linux 志愿者加入我们的团队。
 
-![logo](https://linux.cn/static/image/common/lctt_logo.png)
+![LCTT](https://lctt.github.io/wiki/images/lctt_logo.png)
 
-LCTT 的组成
--------------------------------
-
-**选题**，负责选择合适的内容，并将原文转换为 markdown 格式，提交到 LCTT 的 [TranslateProject](https://github.com/LCTT/TranslateProject) 库中。
-
-**译者**，负责从选题中选择内容进行翻译。
-
-**校对**，负责将初译的文章进行文字润色、技术校对等工作。
-
-**发布**，负责将校对后的文章，排版进行发布。
+- LCTT 官网： [https://linux.cn/lctt/](https://linux.cn/lctt/)
+- LCTT 状态： [https://lctt.github.io/](https://lctt.github.io/)
 
 加入我们
 -------------------------------
 
-请首先加入翻译组的 QQ 群，群号是：**198889102**，加群时请说明是“*志愿者*”。加入后记得修改您的群名片为您的 GitHub 的 ID。
+请首先加入翻译组的 QQ 群，群号是：**198889102**，加群时请说明是“*志愿者*”。
 
-加入的成员，请先阅读 [WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
+加入的成员，请：
+
+1. 修改你的 QQ 群名片为“译者-您的_GitHub_ID”。
+2. 阅读 [WIKI](http://lctt.github.io/wiki) 了解如何开始。
+3. 遇到不解之处，请在群内发问。
 
 如何开始
 -------------------------------
 
-请阅读 [WIKI](https://github.com/LCTT/TranslateProject/wiki)。如需要协助，请在群内发问。
+请阅读 [WIKI](http://lctt.github.io/wiki)。如需要协助，请在群内发问。
 
 历史
 -------------------------------
