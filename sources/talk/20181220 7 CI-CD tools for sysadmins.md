@@ -102,17 +102,18 @@ Spinnaker comes from Netflix and is more focused on continuous deployment than c
 Spinnaker 出自 Netflix，它更关注持续部署而非持续集成。它可以与其他工具整合，比如Travis 和 Jenkins，来启动测试和部署流程。它也能与 Prometheus、Datadog 这样的监控工具集成，参考它们提供的指标来决定如何部署。例如，在一次金丝雀发布（canary deployment）里，我们可以根据收集到的相关监控指标来做出判断：最近这次发布导致了服务降级应该立刻回滚；或者看起来一切OK，于是继续执行部署。
 
 A couple of additional, unique features related to deployments cover an area that is often overlooked when discussing continuous deployment, and might even seem antithetical, but is critical to success: Spinnaker helps make continuous deployment a little less continuous. It will prevent a stage from running during certain times to prevent a deployment from occurring during a critical time in the application lifecycle. It can also enforce manual approvals to ensure the release occurs when the business will benefit the most from the change. In fact, the whole point of continuous integration and continuous deployment is to be ready to deploy changes as quickly as the business needs to change.
-谈到持续部署，一些另类但却至关重要的问题往往被忽略掉了，说出来可能有点让人困惑：Spinnaker 可以帮助持续部署不那么“持续”。在整个应用部署流程期间，如果发生了重大问题，它可以让流程停止继续执行，以阻止可能发生的部署错误。实际上，CI/CD 的主要目的
+谈到持续部署，一些另类但却至关重要的问题往往被忽略掉了，说出来可能有点让人困惑：Spinnaker 可以帮助持续部署不那么“持续”。在整个应用部署流程期间，如果发生了重大问题，它可以让流程停止执行，以阻止可能发生的部署错误。但它也可以在最关键的时刻让手动审核强制通过，发布新版本上线，使整体收益最大化。实际上，CI/CD 的主要目的就是在商业模式需要调整时，能够让待更新的代码立即得到部署。
 
 ### Screwdriver
 
 Screwdriver is an impressively simple piece of engineering. It uses a microservices approach and relies on tools like Nomad, Kubernetes, and Docker to act as its execution engine. There is a pretty good [deployment tutorial][34] for deploying to AWS and Kubernetes, but it could be improved once the in-progress [Helm chart][35] is completed.
+Screwdriver 是个简单而又强大的软件。它采用微服务架构，依赖像 Nomad、Kubernetes 和 Docker 这样的工具作为执行引擎。官方有一篇很不错的[部署教学文档][34]，介绍了如何将它部署到 AWS 和 Kubernetes 上，但如果相应的 [Helm chart][35] 也完成的话，就更完美了。
 
 Screwdriver also uses YAML for its pipeline descriptions and includes a lot of sensible defaults, so there's less boilerplate configuration for each pipeline. The configuration describes an advanced workflow that can have complex dependencies among jobs. For example, a job can be guaranteed to run after or before another job. Jobs can run in parallel and be joined afterward. You can also use logical operators to run a job, for example, if any of its dependencies are successful or only if all are successful. Even better is that you can specify certain jobs to be triggered from a pull request. Also, dependent jobs won't run when this occurs, which allows easy segregation of your pipeline for when an artifact should go to production and when it still needs to be reviewed.
+Screwdriver 也使用 YAML 来描述它的管道，并且有很多合理的默认值，这样可以有效减少各个管道重复的配置项。用配置文件可以组织起高级的工作流，来描述各个 job 间复杂的依赖关系。例如，一项工作可以确保在另一个工作开始前或结束后运行；各个工作可以并行也可以串行执行；更赞的是你可以预先定义一项工作，只在特定的 pull request 请求时被触发，而且与之有依赖关系的工作并不会被执行，这能让你的管道具有一定的隔离性：什么时候被构造的工件应该被部署到生产环境，什么时候应该被审核。
 
 This is only a brief description of these CI/CD tools—each has even more cool features and differentiators you can investigate. They are all open source and free to use, so go deploy them and see which one fits your needs best.
-
-### What to read next
+以上只是我对这些 CI/CD 工具的简单介绍，它们还有许多很酷的特性和差异值得你深入探索。它们都是开源软件，可以自由使用，去部署一下看看，究竟哪个才是最适合你的那个。
 
 --------------------------------------------------------------------------------
 
