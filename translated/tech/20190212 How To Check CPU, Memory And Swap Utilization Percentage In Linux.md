@@ -7,72 +7,72 @@
 [#]: via: (https://www.2daygeek.com/linux-check-cpu-memory-swap-utilization-percentage/)
 [#]: author: (Vinoth Kumar https://www.2daygeek.com/author/vinoth/)
 
-How To Check CPU, Memory And Swap Utilization Percentage In Linux?
+如何查看Linux下CPU，内存和Swap（交换分区）的利用率？
 ======
 
-There is a lot of commands and options are available in Linux to check memory utilization but i don’t see much information to check about memory utilization percentage.
+在Linux下有很多可用的命令和选项来查看内存利用情况，但是我并没有看见关于内存利用率的更多的信息。
 
-Most of the times we are checking memory utilization alone and we won’t think about how much percentage is used.
+在大多数情况下我们只单独查看内存使用情况，没有考虑究竟占用了多少百分比。
 
-If you want to know those information then you are in the right page.
+如果你想要了解这些信息，那你看这篇文章就对了。
 
-We are here to help you out on this in details.
+我们将详细地在这里帮助你摆脱困境。
 
-This tutorial will help you to identify the memory utilization when you are facing high memory utilization frequently in Linux server.
+这篇教程将会帮助你在面对Linux服务器下频繁内存高占用情况时，确定内存使用情况。
 
-But the same time, you won’t be getting the clear utilization if you are using `free -m` or `free -g`.
+但是在同时，如果你使用的是`free -m`或者`free -g`，你将不会得到描述清楚的占用情况。
 
-These format commands fall under Linux advanced commands. It will be very useful for Linux Experts and Middle Level Linux Users.
+这些格式命令属于Linux高级命令。它将会对于Linux专家和中等水平Linux使用者非常有用。
 
-### Method-1: How To Check Memory Utilization Percentage In Linux?
+### 方法-1：如何查看Linux下内存占用率？
 
-We can use the following combination of commands to get this done. In this method, we are using combination of free and awk command to get the memory utilization percentage.
+我们可以使用下面命令的组合来达到此目的。在该方法中，我们使用的是free和awk命令的组合来获取内存占用率。
 
-If you are looking for other articles which is related to memory then navigate to the following link. Those are **[free Command][1]** , **[smem Command][2]** , **[ps_mem Command][3]** , **[vmstat Command][4]** and **[Multiple ways to check size of physical memory][5]**.
+如果你正在寻找其他有关于内存的文章，你可以导航到如下链接。这些文章有 **[free命令][1]** , **[smem 命令][2]** , **[ps_mem 命令][3]** , **[vmstat 命令][4]** and **[多种方式来查看物理内存大小][5]**.
 
-For `Memory` Utilization Percentage without Percent Symbol:
+对于获取不包含百分比符号的`内存`占用率：
 
 ```
 $ free -t | awk 'NR == 2 {print "Current Memory Utilization is : " $3/$2*100}'
-or
+或
 $ free -t | awk 'FNR == 2 {print "Current Memory Utilization is : " $3/$2*100}'
 
 Current Memory Utilization is : 20.4194
 ```
 
-For `Swap` Utilization Percentage without Percent Symbol:
+对于获取不包含百分比符号的`Swap（交换空间）`占用率：
 
 ```
 $ free -t | awk 'NR == 3 {print "Current Swap Utilization is : " $3/$2*100}'
-or
+或
 $ free -t | awk 'FNR == 3 {print "Current Swap Utilization is : " $3/$2*100}'
 
 Current Swap Utilization is : 0
 ```
 
-For `Memory` Utilization Percentage with Percent Symbol and two decimal places:
+对于获取包含百分比符号及保留两位小数的`内存`占用率：
 
 ```
 $ free -t | awk 'NR == 2 {printf("Current Memory Utilization is : %.2f%"), $3/$2*100}'
-or
+或
 $ free -t | awk 'FNR == 2 {printf("Current Memory Utilization is : %.2f%"), $3/$2*100}'
 
 Current Memory Utilization is : 20.42%
 ```
 
-For `Swap` Utilization Percentage with Percent Symbol and two decimal places:
+对于获取包含百分比符号及保留两位小数的`Swap（交换空间）`占用率：
 
 ```
 $ free -t | awk 'NR == 3 {printf("Current Swap Utilization is : %.2f%"), $3/$2*100}'
-or
+或
 $ free -t | awk 'FNR == 3 {printf("Current Swap Utilization is : %.2f%"), $3/$2*100}'
 
 Current Swap Utilization is : 0.00%
 ```
 
-If you are looking for other articles which is related to memory then navigate to the following link. Those are **[Create/Extend Swap Partition using LVM][6]** , **[Multiple Ways To Create Or Extend Swap Space][7]** and **[Shell Script to automatically Create/Remove and Mount Swap File][8]**.
+如果你正在寻找有关于内存的其他文章，你可以导航至如下链接。这些链接有 **[使用LVM（逻辑盘卷管理，Logical Volume Manager）创建和扩展Swap交换分区][6]** , **[多种方式创建或扩展Swap交换分区][7]** 和 **[多种方式创建/删除和挂载交换分区文件][8]**。
 
-free command output for better clarification:
+键入free命令输出更好的相关说明：
 
 ```
 $ free
@@ -82,15 +82,22 @@ Swap: 17454 0 17454
 Total: 33322 3730 27322
 ```
 
-Details are follow:
+下面是一些细节：
 
   * **`free:`** free is a standard command to check memory utilization in Linux.
+  * **`free:`** free是一个标准命令，用于在Linux下查看内存使用情况。
   * **`awk:`** awk is a powerful command which is specialized for textual data manipulation.
+  * **`awk:`** awk是一个强大的专门用来做文本数据处理的强大命令。
   * **`FNR == 2:`** It gives the total number of records for each input file. Basically it’s used to select the given line (Here, it chooses the line number 2).
+  * **`FNR == 2:`** 该命令给出了对于每一个输入文件的记录总数。基本上它用于选择给出的行(针对于这里，它选择了行数字为2的行)
   * **`NR == 2:`** It gives the total number of records processed. Basically it’s used to filter the given line (Here, it chooses the line number 2)..
+  * **`NR == 2:`** 该命令给出了处理的记录总数。基本上它用于过滤给出的行（针对于这里，它选择的是行数字为2的行）
   * **`$3/$2*100:`** It divides column 2 with column 3 and it’s multiply the results with 100.
+  * **`$3/$2*100:`** 该命令将列3除以列2并将结果乘以100。
   * **`printf:`** It used to format and print data.
+  * **`printf:`** 该命令用已格式化和打印数据。
   * **`%.2f%:`** By default it prints floating point numbers with 6 decimal places. Use the following format to limit a decimal places.
+  * **`%.2f%:`** 默认情况下，该命令打印保留6位的浮点数。使用后跟的格式来约束小数位。
 
 
 
@@ -205,7 +212,7 @@ via: https://www.2daygeek.com/linux-check-cpu-memory-swap-utilization-percentage
 
 作者：[Vinoth Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[An-DJ](https://github.com/An-DJ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
