@@ -9,53 +9,55 @@
 
 ezio is translating
 
-Computer Laboratory – Raspberry Pi: Lesson 10 Input01
+计算机实验课 – 树莓派: 课程 10 输入01
 ======
 
-Welcome to the Input lesson series. In this series, you will learn how to receive inputs to the Raspberry Pi using the keyboard. We will start with just revealing the input, and then move to a more traditional text prompt.
+欢迎进入输入课程系列。在本系列，你将会学会如何使用键盘接收输入给树莓派。我们将会从揭示输入开始本课，然后开始传统的文本命令。
 
-This first input lesson teaches some theory about drivers and linking, as well as about keyboards and ends up displaying text on the screen.
+这是第一堂输入课，会教授一些关于驱动和链接的理论，同样也包含键盘的知识，最后以在屏幕上显示文本结束。
 
-### 1 Getting Started
+### 1 开始
 
-It is expected that you have completed the OK series, and it would be helpful to have completed the Screen series. Many of the files from that series will be called, without comment. If you do not have these files, or prefer to use a correct implementation, download the template for this lesson from the [Downloads][1] page. If you're using your own implementation, please remove everything after your call to SetGraphicsAddress.
+希望你已经完成了 OK 系列课程， 这会对你完成屏幕系列课程很有帮助。很多 OK 课程上的文件会被使用而不会做解释。如果你没有这些文件，或者希望使用一个正确的实现， 可以从该堂课的[下载页][1]下载模板。如果你使用你自己的实现，请删除调用了 `SetGraphicsAddress` 之后全部的代码。
 
 ### 2 USB
 
 ```
-The USB standard was designed to make simple hardware in exchange for complex software.
+USB 标准的设计目的是通过复杂的硬件来简化硬件。
 ```
 
-As you are no doubt aware, the Raspberry Pi model B has two USB ports, commonly used for connecting a mouse and keyboard. This was a very good design decision, USB is a very generic connector, and many different kinds of device use it. It's simple to build new devices for, simple to write device drivers for, and is highly extensible thanks to USB hubs. Could it get any better? Well, no, in fact for an Operating Systems developer this is our worst nightmare. The USB standard is huge. I really mean it this time, it is over 700 pages, before you've even thought about connecting a device.
+如你所知，树莓派 B 型有两个 USB 接口，通常用来连接一个鼠标和一个键盘。这是一个非常好的设计决策，USB 是一个非常通用的接口， 很多种设备都可以使用它。这就很容易为它设计新外设，很容易为它编写设备驱动， 而且通过 USB 集线器可以非常容易扩展。还能更好吗？当然是不能，实际上对一个操作系统开发者来说，这就是我们的噩梦。USB 标准太大了。 我是真的，在你思考如何连接设备之前，它的文档将近 700 页。
 
-I spoke to a number of other hobbyist Operating Systems developers about this and they all say one thing: don't bother. "It will take too long to implement", "You won't be able to write a tutorial on it" and "It will be of little benefit". In many ways they are right, I'm not able to write a tutorial on the USB standard, as it would take weeks. I also can't teach how to write device drivers for all the different devices, so it is useless on its own. However, I can do the next best thing: Get a working USB driver, get a keyboard driver, and then teach how to use these in an Operating System. I set out searching for a free driver that would run in an operating system that doesn't even know what a file is yet, but I couldn't find one. They were all too high level. So, I attempted to write one. Everybody was right, this took weeks to do. However, I'm pleased to say I did get one that works with no external help from the Operating System, and can talk to a mouse and keyboard. It is by no means complete, efficient, or correct, but it does work. It has been written in C and the full source code can be found on the downloads page for those interested.
+我和很多爱好操作系统的开发者谈过这些，而他们全部都说几句话：不要抱怨。“实现这个需要花费很久时间”，“你不可能写出关于 USB 的教程”，“收益太小了”。在很多方面，他们是对的，我不可能写出一个关于 USB 标准的教程， 那得花费几周时间。我同样不能教授如何为全部所有的设备编写外设驱动，所以使用自己写的驱动是没什么用的。然而，我可以做仅次于最好的事情是获取一个正常工作的 USB 驱动，拿一个键盘驱动，然后教授如何在操作系统中使用它们。我开始寻找可以运行在一个甚至不知道文件是什么的操作系统的自由驱动，但是我一个都找不到。他们都太高层了。所以我尝试写一个。每个人都是对的，这耗费了我几周时间。然而我高兴的说我我做这些工作没有获取操作系统以外的帮助，并且可以和鼠标和键盘通信。这句不是完整的，高效的，或者正确的，但是它能工作。驱动是以 C 编写的，而且有兴趣的可以在下载页找到全部源代码。
 
-So, this tutorial won't be a lesson on the USB standard (at all). Instead we'll look at how to work with other people's code.
+所以，这一个教程不会是 USB 标准的课程（一点也没有）。实际上我们将会看到如何使用其他人的代码。
 
-### 3 Linking
-
-```
-Linking allows us to make reusable code 'libraries' that anyone can use in their program.
-```
-
-Since we're about to incorporate external code into the Operating System, we need to talk about linking. Linking is a process which is applied to programs or Operating System to link in functions. What this means is that when a program is made, we don't necessarily code every function (almost certainly not in fact). Linking is what we do to make our program link to functions in other people's code. This has actually been going on all along in our Operating Systems, as the linker links together all of the different files, each of which is compiled separately.
+### 3 链接
 
 ```
-Programs often just call libraries, which call other libraries and so on until eventually they call an Operating System library which we would write.
+链接允许我们制作可重用的代码库，所有人都可以在他们的程序中使用。
 ```
 
-There are two types of linking: static and dynamic. Static linking is like what goes on when we make our Operating Systems. The linker finds all the addresses of the functions, and writes them into the code, before the program is finished. Dynamic linking is linking that occurs after the program is 'complete'. When it is loaded, the dynamic linker goes through the program and links any functions which are not in the program to libraries in the Operating System. This is one of the jobs our Operating System should eventually be capable of, but for now everything will be statically linked.
+既然我们要引进外部代码到操作系统，我们就需要谈一谈链接。链接是一种过程，可以在程序或者操作系统中链接函数。这意味着当一个程序生成之后，我们不必要编写每一个函数（几乎可以肯定，实际上并非如此）。链接就是我们做的用来把我们程序和别人代码中的函数连结在一起。这个实际上已经在我们的操作系统进行了，因为链接器吧所有不同的文件链接在一起，每个都是分开编译的。
 
-The USB driver I have written is suitable for static linking. This means I give you the compiled code for each of my files, and then the linker finds functions in your code which are not defined in your code, and links them to functions in my code. On the [Downloads][1] page for this lesson is a makefile and my USB driver, which you will need to continue. Download them and replace the makefile in your code with this one, and also put the driver in the same folder as that makefile.
 
-### 4 Keyboards
+```
+程序经常知识调用库，这些库会调用其它的库，知道最终调用了我们写的操作系统。
+```
 
-In order to get input into our Operating System, we need to understand at some level how keyboards actually work. Keyboards have two types of keys: Normal and Modifier keys. The normal keys are the letters, numbers, function keys, etc. They constitute almost every key on the keyboard. The modifiers are up to 8 special keys. These are left shift, right shift, left control, right control, left alt, right alt, left GUI and right GUI. The keyboard can detect any combination of the modifier keys being held, as well as up to 6 normal keys. Every time a key changes (i.e. is pushed or released), it reports this to the computer. Typically, keyboards also have three LEDs for Caps Lock, Num Lock and Scroll Lock, which are controlled by the computer, not the keyboard itself. Keyboards may have many more lights such as power, mute, etc.
+有两种链接：静态和动态。静态链接就像我们在制作自己的操作系统时进行的。链接器找到全部函数的地址，然后在链接结束前，将这些地址都写入代码中。动态链接是在程序“完成”之后。当程序加载后，动态链接器检查程序，然后在操作系统的库找到所有不在程序里的函数。这就是我们的操作系统最终应该能够完成的一项工作，但是现在所有东西都将是静态链接的。
 
-In order to help standardise USB keyboards, a table of values was produced, such that every keyboard key ever is given a unique number, as well as every conceivable LED. The table below lists the first 126 of values.
+我编写的 USB 驱动程序适合静态编译。这意味着我给你我的每个文件的编译后的代码，然后链接器找到你的代码中的那些没有实现的函数，就将这些函数链接到我的代码。在本课的 [下载页][1] 是一个 makefile 和我的 USB 驱动，这是接下来需要的。下载并使用这 makefile 替换你的代码中的 makefile， 同事将驱动放在和这个 makefile 相同的文件夹。
 
-Table 4.1 USB Keyboard Keys
-| Number | Description             | Number | Description          | Number      | Description              | Number  | Description            |          |
+### 4 键盘
+
+为了将输入传给我们的操作系统，我们需要在某种程度上理解键盘是如何实际工作的。键盘有两种按键：普通键和修饰键。普通按键是字母、数字、功能键，等等。他们构成了键盘上几乎每一个按键。修饰键是最多 8 个特殊键。他们是左 shift ， 右 shift， 左 ctrl，右 ctrl，左 alt， 右 alt，左 GUI 和右 GUI。键盘可以检测出所有的组合中那个修饰键被按下了，以及最多 6 个普通键。每次一个按钮变化了（i.e. 是按下了还是释放了），键盘就会报告给电脑。通常，键盘也会有 3 个 LED 灯，分别指示 Caps 锁定，Num 锁定，和 Scroll 锁定，这些都是由电脑控制的，而不是键盘自己。键盘也可能由更多的灯，比如电源、静音，等等。
+
+为了帮助标准 USB 键盘，产生了一个按键值的表，每个键盘按键都一个唯一的数字，每个可能的 LED 也类似。下面的表格列出了前 126 个值。
+
+Table 4.1 USB 键盘值
+
+| 序号 | 描述             | 序号 | 描述          | 序号      | 描述              | 序号  | 描述            |          |
 | ------ | ---------------- | ------- | ---------------------- | -------- | -------------- | --------------- | -------------------- |          |
 | 4      | a and A                 | 5      | b and B              | 6           | c and C                  | 7       | d and D                |          |
 | 8      | e and E                 | 9      | f and F              | 10          | g and G                  | 11      | h and H                |          |
@@ -91,29 +93,31 @@ Table 4.1 USB Keyboard Keys
 | 128    | Volume Up               | 129    | Volume Down          |             |                          |         |                        |          |
 
 The full list can be found in section 10, page 53 of [HID Usage Tables 1.12][2].
+完全列表可以在[HID 页表 1.12][2]的 53 页，第 10 节找到
 
-### 5 The Nut Behind the Wheel
+### 5 车轮后的螺母
 
 ```
-These summaries and the code they describe form an API - Application Product Interface.
+这些总结和代码的描述组成了一个 API - 应用程序产品接口。
+
 ```
 
-Normally, when you work with someone else's code, they provide a summary of their methods, what they do and roughly how they work, as well as how they can go wrong. Here is a table of the relevant instructions required to use my USB driver.
+通常，当你使用其他人的代码，他们会提供一份自己代码的总结，描述代码都做了什么，粗略介绍了是如何工作的，以及什么情况下会出错。下面是一个使用我的 USB 驱动的相关步骤要求。
 
 Table 5.1 Keyboard related functions in CSUD 
-| Function                | Arguments                       | Returns              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ----------------------- | ----------------------- | ----------------------- | -----------------------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| UsbInitialise           | None                            | r0 is result code    | This method is the all-in-one method that loads the USB driver, enumerates all devices and attempts to communicate with them. This method generally takes about a second to execute, though with a few USB hubs plugged in this can be significantly longer. After this method is completed methods in the keyboard driver become available, regardless of whether or not a keyboard is indeed inserted. Result code explained below.                                                                                                                                    |
-| UsbCheckForChange       | None                            | None                 | Essentially provides the same effect as UsbInitialise, but does not provide the same one time initialisation. This method checks every port on every connected hub recursively, and adds new devices if they have been added. This should be very quick if there are no changes, but can take up to a few seconds if a hub with many devices is attached.                                                                                                                                                                                                                |
-| KeyboardCount           | None                            | r0 is count          | Returns the number of keyboards currently connected and detected. UsbCheckForChange may update this. Up to 4 keyboards are supported by default. Up to this many keyboards may be accessed through this driver.                                                                                                                                                                                                                                                                                                                                                          |
-| KeyboardGetAddress      | r0 is index                     | r0 is address        | Retrieves the address of a given keyboard. All other functions take a keyboard address in order to know which keyboard to access. Thus, to communicate with a keyboard, first check the count, then retrieve the address, then use other methods. Note, the order of keyboards that this method returns may change after calls to UsbCheckForChange.                                                                                                                                                                                                                     |
-| KeyboardPoll            | r0 is address                   | r0 is result code    | Reads in the current key state from the keyboard. This operates via polling the device directly, contrary to the best practice. This means that if this method is not called frequently enough, a key press could be missed. All reading methods simply return the value as of the last poll.                                                                                                                                                                                                                                                                            |
-| KeyboardGetModifiers    | r0 is address                   | r0 is modifier state | Retrieves the status of the modifier keys as of the last poll. These are the shift, alt control and GUI keys on both sides. This is returned as a bit field, such that a 1 in the bit 0 means left control is held, bit 1 means left shift, bit 2 means left alt, bit 3 means left GUI and bits 4 to 7 mean the right versions of those previous. If there is a problem r0 contains 0.                                                                                                                                                                                   |
-| KeyboardGetKeyDownCount | r0 is address                   | r0 is count          | Retrieves the number of keys currently held down on the keyboard. This excludes modifier keys. Normally, this cannot go above 6. If there is an error this method returns 0.                                                                                                                                                                                                                                                                                                                                                                                             |
+| Function                | Arguments                       | Returns              | Description   |
+| ----------------------- | ----------------------- | ----------------------- | -----------------------|
+| UsbInitialise           | None                            | r0 is result code    | This method is the all-in-one method that loads the USB driver, enumerates all devices and attempts to communicate with them. This method generally takes about a second to execute, though with a few USB hubs plugged in this can be significantly longer. After this method is completed methods in the keyboard driver become available, regardless of whether or not a keyboard is indeed inserted. Result code explained below. |
+| UsbCheckForChange       | None                            | None                 | Essentially provides the same effect as UsbInitialise, but does not provide the same one time initialisation. This method checks every port on every connected hub recursively, and adds new devices if they have been added. This should be very quick if there are no changes, but can take up to a few seconds if a hub with many devices is attached.|
+| KeyboardCount           | None                            | r0 is count          | Returns the number of keyboards currently connected and detected. UsbCheckForChange may update this. Up to 4 keyboards are supported by default. Up to this many keyboards may be accessed through this driver.|
+| KeyboardGetAddress      | r0 is index                     | r0 is address        | Retrieves the address of a given keyboard. All other functions take a keyboard address in order to know which keyboard to access. Thus, to communicate with a keyboard, first check the count, then retrieve the address, then use other methods. Note, the order of keyboards that this method returns may change after calls to UsbCheckForChange.|
+| KeyboardPoll            | r0 is address                   | r0 is result code    | Reads in the current key state from the keyboard. This operates via polling the device directly, contrary to the best practice. This means that if this method is not called frequently enough, a key press could be missed. All reading methods simply return the value as of the last poll.|
+| KeyboardGetModifiers    | r0 is address                   | r0 is modifier state | Retrieves the status of the modifier keys as of the last poll. These are the shift, alt control and GUI keys on both sides. This is returned as a bit field, such that a 1 in the bit 0 means left control is held, bit 1 means left shift, bit 2 means left alt, bit 3 means left GUI and bits 4 to 7 mean the right versions of those previous. If there is a problem r0 contains 0.|
+| KeyboardGetKeyDownCount | r0 is address                   | r0 is count          | Retrieves the number of keys currently held down on the keyboard. This excludes modifier keys. Normally, this cannot go above 6. If there is an error this method returns 0.|
 | KeyboardGetKeyDown      | r0 is address, r1 is key number | r0 is scan code      | Retrieves the scan code (see Table 4.1) of a particular held down key. Normally, to work out which keys are down, call KeyboardGetKeyDownCount and then call KeyboardGetKeyDown up to that many times with increasing values of r1 to determine which keys are down. Returns 0 if there is a problem. It is safe (but not recommended) to call this method without calling KeyboardGetKeyDownCount and interpret 0s as keys not held. Note, the order or scan codes can change randomly (some keyboards sort numerically, some sort temporally, no guarantees are made). |
-| KeyboardGetKeyIsDown    | r0 is address, r1 is scan code  | r0 is status         | Alternative to KeyboardGetKeyDown, checks if a particular scan code is among the held down keys. Returns 0 if not, or a non-zero value if so. Faster when detecting particular scan codes (e.g. looking for ctrl+c). On error, returns 0.                                                                                                                                                                                                                                                                                                                                |
-| KeyboardGetLedSupport   | r0 is address                   | r0 is LEDs           | Checks which LEDs a particular keyboard supports. Bit 0 being 1 represents Number Lock, bit 1 represents Caps Lock, bit 2 represents Scroll Lock, bit 3 represents Compose, bit 4 represents Kana, bit 5 represents Power, bit 6 represents Mute and bit 7 represents Compose. As per the USB standard, none of these LEDs update automatically (e.g. Caps Lock must be set manually when the Caps Lock scan code is detected).                                                                                                                                          |
-| KeyboardSetLeds         | r0 is address, r1 is LEDs       | r0 is result code    | Attempts to turn on/off the specified LEDs on the keyboard. See below for result code values. See KeyboardGetLedSupport for LEDs' values.                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| KeyboardGetKeyIsDown    | r0 is address, r1 is scan code  | r0 is status         | Alternative to KeyboardGetKeyDown, checks if a particular scan code is among the held down keys. Returns 0 if not, or a non-zero value if so. Faster when detecting particular scan codes (e.g. looking for ctrl+c). On error, returns 0.|
+| KeyboardGetLedSupport   | r0 is address                   | r0 is LEDs           | Checks which LEDs a particular keyboard supports. Bit 0 being 1 represents Number Lock, bit 1 represents Caps Lock, bit 2 represents Scroll Lock, bit 3 represents Compose, bit 4 represents Kana, bit 5 represents Power, bit 6 represents Mute and bit 7 represents Compose. As per the USB standard, none of these LEDs update automatically (e.g. Caps Lock must be set manually when the Caps Lock scan code is detected).|
+| KeyboardSetLeds         | r0 is address, r1 is LEDs       | r0 is result code    | Attempts to turn on/off the specified LEDs on the keyboard. See below for result code values. See KeyboardGetLedSupport for LEDs' values.|
 
 ```
 Result codes are an easy way to handle errors, but often more elegant solutions exist in higher level code.
@@ -146,8 +150,8 @@ The general usage of the driver is as follows:
       1. Check whether or not it has just been pushed
       2. Store that the key is down
     4. For each key stored:
-      1. Check whether or not key is released
-      2. Remove key if released
+      3. Check whether or not key is released
+      4. Remove key if released
   6. Perform actions based on keys pushed/released
   7. Go to 2.
 
