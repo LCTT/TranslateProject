@@ -24,19 +24,16 @@
 
 阅读代码，你甚至可能会想出一个假设。但是在开始修改你的代码前，请重现导致错误的调用并把它变成一个测试。这将是一个集成测试，因为你可能还有疑问，目前你还没能准确地知道问题在哪儿。
 
-确保这个测试是失败的。这很重要，因为有时你的测试不能重现失败的调用，尤其是你使用了可以混淆测试的 web 或者其他框架。很多东西可能被存储在变量中，但遗憾的是，只通过观察测试，你在测试里调用的东西并不总是明显可见的。I'm not going to say that I have created a test that passed when I was trying to imitate a broken call, but, well, I have, and I don't think that is particularly unusual. Learn from my mistakes.
+确保这个测试是失败的。这很重要，因为有时你的测试不能重现失败的调用，尤其是你使用了可以混淆测试的 web 或者其他框架。很多东西可能被存储在变量中，但遗憾的是，只通过观察测试，你在测试里调用的东西并不总是明显可见的。当我尝试着重现这个失败的调用时，我不准备说我创建了一个测试，但是，对的，我已经创建了，但我不认为这是特别不寻常的。从自己的错误中吸取教训。
 
 ### 2. 编写错误的测试
 
-Now that you have a failing test or maybe a test with an error, it is time to troubleshoot. But before you do that, let's do a review of the stack, as this makes troubleshooting easier.
+现在，你有了一个失败的测试或者可能是一个带有错误的测试，那么是时候解决问题了。但是在你开干之前，让我们先检查下调用栈，因为这样可以更轻松地解决问题。
 
-The stack consists of all of the tasks you have started but not finished. So, if you are baking a cake and adding the flour to the batter, then your stack would be:
-
-  * Make cake
-  * Make batter
-  * Add flour
-
-
+调用栈包括你已经启动但尚未完成地所有任务。所以，比如你正在烤蛋糕并准备往面糊里加面粉，那你的调用栈将是：
+* 做蛋糕
+* 打面糊
+* 加面粉
 
 You have started making your cake, you have started making the batter, and you are adding the flour. Greasing the pan is not on the list since you already finished that, and making the frosting is not on the list because you have not started that.
 
