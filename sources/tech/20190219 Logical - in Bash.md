@@ -7,7 +7,6 @@
 [#]: via: "https://www.linux.com/blog/learn/2019/2/logical-ampersand-bash"
 [#]: author: "Paul Brown https://www.linux.com/users/bro66"
 
-Logical & in Bash
 Bash中的逻辑和（`&`）
 ======
 
