@@ -1,35 +1,36 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10567-1.html)
 [#]: subject: (Get started with gPodder, an open source podcast client)
 [#]: via: (https://opensource.com/article/19/1/productivity-tool-gpodder)
 [#]: author: (Kevin Sonney https://opensource.com/users/ksonney (Kevin Sonney))
 
-开始使用 gPodder，一个开源播客客户端
+开始使用 gPodder 吧，一个开源播客客户端
 ======
-使用 gPodder 将你的播客同步到你的设备上，gPodder 是我们开源工具系列中的第 17 个工具，它将在 2019 年提高你的工作效率。
+
+> 使用 gPodder 将你的播客同步到你的设备上，gPodder 是我们开源工具系列中的第 17 个工具，它将在 2019 年提高你的工作效率。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/podcast-record-microphone.png?itok=8yUDOywf)
 
-每年年初似乎都有疯狂的冲动，想方设法提高工作效率。新年的决议，开始一年的权利，当然，“与旧的，与新的”的态度都有助于实现这一目标。通常的一轮建议严重偏向封闭源和专有软件。它不一定是这样。
+每年年初似乎都有疯狂的冲动想提高工作效率。新年的决心，渴望开启新的一年，当然，“抛弃旧的，拥抱新的”的态度促成了这一切。通常这时的建议严重偏向闭源和专有软件，但事实上并不用这样。
 
 这是我挑选出的 19 个新的（或者对你而言新的）开源工具中的第 17 个工具来帮助你在 2019 年更有效率。
 
 ### gPodder
 
-我喜欢播客。哎呀，我非常喜欢他们，因此我录制了其中的三个（你可以在[我的个人资料][1]中找到它们的链接）。我从播客那里学到了很多东西，并在我工作时在后台播放它们。但是，在多台桌面和移动设备之间保持同步可能会带来一些挑战。
+我喜欢播客。哎呀，我非常喜欢它们，因此我录制了其中的三个（你可以在[我的个人资料][1]中找到它们的链接）。我从播客那里学到了很多东西，并在我工作时在后台播放它们。但是，如何在多台桌面和移动设备之间保持同步可能会有一些挑战。
 
-[gPodder][2] 是一个简单的跨平台播客下载器、播放器和同步工具。它支持 RSS feed、[FeedBurner][3]、[YouTube][4] 和 [SoundCloud][5]，它还有一个开源同步服务，你可以根据需要运行它。gPodder 不直接播放播客。相反, 它使用你选择的音频或视频播放器。
+[gPodder][2] 是一个简单的跨平台播客下载器、播放器和同步工具。它支持 RSS feed、[FeedBurner][3]、[YouTube][4] 和 [SoundCloud][5]，它还有一个开源的同步服务，你可以根据需要运行它。gPodder 不直接播放播客。相反，它会使用你选择的音频或视频播放器。
 
 ![](https://opensource.com/sites/default/files/uploads/gpodder-1.png)
 
-安装 gPodder 非常简单。安装程序适用于 Windows 和 MacOS，同时包可用于主要的 Linux 发行版。如果你的发行版中没有它，你可以直接从 Git 下载运行。通过 “Add Podcasts via URL” 菜单，你可以输入播客的 RSS 源 URL 或其他服务的“特殊” URL。gPodder 将获取节目列表并显示一个对话框，你可以在其中选择要下载的节目或在列表上标记旧节目。
+安装 gPodder 非常简单。安装程序适用于 Windows 和 MacOS，同时也有用于主要的 Linux 发行版的软件包。如果你的发行版中没有它，你可以直接从 Git 下载运行。通过 “Add Podcasts via URL” 菜单，你可以输入播客的 RSS 源 URL 或其他服务的 “特殊” URL。gPodder 将获取节目列表并显示一个对话框，你可以在其中选择要下载的节目或在列表上标记旧节目。
 
 ![](https://opensource.com/sites/default/files/uploads/gpodder-2.png)
 
-它一个更好的功能是，如果 URL 已经在你的剪贴板中，gPodder 会自动将它放入播放 URL 中，这样你就可以很容易地将新的播客添加到列表中。如果你已有播客 feed 的 OPML 文件，那么可以上传并导入它。还有一个发现选项，让你可搜索 [gPodder.net][6] 上的播客，这是由编写和维护 gPodder 的人员提供的免费和开源播客列表网站。
+它一个更好的功能是，如果 URL 已经在你的剪贴板中，gPodder 会自动将它放入播放 URL 中，这样你就可以很容易地将新的播客添加到列表中。如果你已有播客 feed 的 OPML 文件，那么可以上传并导入它。还有一个发现选项，让你可搜索 [gPodder.net][6] 上的播客，这是由编写和维护 gPodder 的人员提供的自由及开源的播客的列表网站。
 
 ![](https://opensource.com/sites/default/files/uploads/gpodder-3.png)
 
@@ -48,7 +49,7 @@ via: https://opensource.com/article/19/1/productivity-tool-gpodder
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
