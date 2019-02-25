@@ -9,7 +9,7 @@
 
 系统管理员的 7 个 CI/CD 工具
 ======
-本文是一篇简单指南:介绍一些常见的开源 CI/CD 工具。
+本文是一篇简单指南：介绍一些常见的开源 CI/CD 工具。
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cicd_continuous_delivery_deployment_gears.png?itok=kVlhiEkc)
 
 虽然持续集成、持续交付和持续部署（CI/CD）在开发者社区里已经存在很多年，一些机构在运维部门也有实施经验，但大多数公司并没有做这样的尝试。对于很多机构来说，让运维团队能够像他们的开发同行一样熟练操作 CI/CD 工具，已经变得十分必要了。
