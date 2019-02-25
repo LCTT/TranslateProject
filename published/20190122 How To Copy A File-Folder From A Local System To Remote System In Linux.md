@@ -208,7 +208,7 @@ server-list.txt 100% 23 0.0KB/s 00:00
 使用下面的 `rsync` 命令复制单个文件到远程服务器。
 
 ```
-# rsync -avz /home/daygeek/2g/shell-script/output.txt root@:/opt/backup
+# rsync -avz /home/daygeek/2g/shell-script/output.txt root@2g.CentOS.com:/opt/backup
 
 sending incremental file list
 output.txt
