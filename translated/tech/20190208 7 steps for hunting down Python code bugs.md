@@ -35,23 +35,23 @@
 * 打面糊
 * 加面粉
 
-You have started making your cake, you have started making the batter, and you are adding the flour. Greasing the pan is not on the list since you already finished that, and making the frosting is not on the list because you have not started that.
+你已经开始做蛋糕，你已经开始打面糊，而你现在正在加面粉。锅底抹油不在这个列表中因为你已经做完了，而做糖霜不在这个列表上因为你还没开始做。
 
-If you are fuzzy on the stack, I highly recommend playing around on [Python Tutor][1], where you can watch the stack as you execute lines of code.
+如果你对调用栈不清楚，我强烈建议你使用 [Python Tutor][1]，它能帮你在执行代码时观察调用栈。
 
-Now, if something goes wrong with your Python program, the interpreter helpfully prints out the stack for you. This means that whatever the program was doing at the moment it became apparent that something went wrong is on the bottom.
+现在，如果你的 Python 程序出现了错误，接收器会帮你打印出当前调用栈。这意味着无论那一时刻程序在做什么，很明显调用栈的底部发生了错误。
 
 ### 3. 始终先检查 stack 的底部
 
-Not only is the bottom of the stack where you can see which error occurred, but often the last line of the stack is where you can find the issue. If the bottom doesn't help, and your code has not been linted in a while, it is amazing how helpful it can be to run. I recommend pylint or flake8. More often than not, it points right to where there is an error that I have been overlooking.
+你不仅能在栈底看到发生了哪个错误，而且通常可以在调用栈的最后一行发现问题。如果栈底对你没有帮助，而你的代码还没有经过代码分析，那么使用代码分析非常有用。我推荐 pylint 或者 flake8。通常情况下，它会指出我一直忽略的错误的地方。
 
-If the error is something that seems obscure, your next move might just be to Google it. You will have better luck if you don't include information that is relevant only to your code, like the name of variables, files, etc. If you are using Python 3 (which you should be), it's helpful to include the 3 in the search; otherwise, Python 2 solutions tend to dominate the top.
+如果对错误看起来很迷惑，你下一步行动可能是用 Google 搜索它。如果你搜索的内容不包含你的代码的相关信息，如变量名、文件等，那你将获得更好的搜索结果。如果你使用的是 Python 3（你应该使用它），那么搜索内容包含 Python 3 是有帮助的，否则 Python 2 的解决方案往往会占据大多数。
 
-Once upon a time, developers had to troubleshoot without the benefit of a search engine. This was a dark time. Take advantage of all the tools available to you.
+很久以前，开发者需要在没有搜索引擎的帮助下解决问题。这是一段黑暗的时光。充分利用你可以使用的所有工具。
 
-Unfortunately, sometimes the problem occurred earlier and only became apparent during the line executed on the bottom of the stack. Think about how forgetting to add the baking powder becomes obvious when the cake doesn't rise.
+不幸的是，有时候问题发生得比较早但只有在调用栈底部执行的地方才变得明显。就像当蛋糕没有膨胀时，忘记加发酵粉的事才被发现。
 
-It is time to look up the stack. Chances are quite good that the problem is in your code, and not Python core or even third-party packages, so scan the stack looking for lines in your code first. Plus it is usually much easier to put a breakpoint in your own code. Stick the breakpoint in your code a little further up the stack and look around to see if things look like they should.
+那就该检查整个调用栈。问题很可能在于你的代码而不算 Python 核心或者第三方包，所以先检查调用栈内你的代码。另外，在你的代码中放置断点通常会更容易检查代码。在调用栈的代码中放置断点然后看看周围是否如你预期。
 
 "But Maria," I hear you say, "this is all helpful if I have a stack trace, but I just have a failing test. Where do I start?"
 
