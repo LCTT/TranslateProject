@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lujun9972)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Get started with Org mode without Emacs)
