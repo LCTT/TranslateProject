@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/olive-video-editor)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Olive：一款类似 Final Cut Pro 的开源视频编辑器
+Olive：一款以 Final Cut Pro 为目标的开源视频编辑器
 ======
 
 [Olive][1] 是一个正在开发的新的开源视频编辑器。这个非线性视频编辑器旨在提供高端专业视频编辑软件的免费替代品。目标高么？我认为是的。
