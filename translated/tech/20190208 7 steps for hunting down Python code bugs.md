@@ -53,15 +53,15 @@
 
 那就该检查整个调用栈。问题很可能在于你的代码而不算 Python 核心或者第三方包，所以先检查调用栈内你的代码。另外，在你的代码中放置断点通常会更容易检查代码。在调用栈的代码中放置断点然后看看周围是否如你预期。
 
-"But Maria," I hear you say, "this is all helpful if I have a stack trace, but I just have a failing test. Where do I start?"
+“但是，玛丽，”我听到你说，“如果我有一个调用栈，那这些都是有帮助的，但我只有一个失败的测试。我该从哪里开始？”
 
-Pdb, the Python Debugger.
+Pdb, 一个 Python 调试器。
 
-Find a place in your code where you know this call should hit. You should be able to find at least one place. Stick a pdb break in there.
+找到你代码里会被这个调用命中的地方。你应该能至少找到一个这样的地方。在那里打上一个 pdb 的断点。
 
-#### A digression
+#### 一句题外话
 
-Why not a print statement? I used to depend on print statements. They still come in handy sometimes. But once I started working with complicated code bases, and especially ones making network calls, print just became too slow. I ended up with print statements all over the place, I lost track of where they were and why, and it just got complicated. But there is a more important reason to mostly use pdb. Let's say you put a print statement in and discover that something is wrong—and must have gone wrong earlier. But looking at the function where you put the print statement, you have no idea how you got there. Looking at code is a great way to see where you are going, but it is terrible for learning where you've been. And yes, I have done a grep of my code base looking for where a function is called, but this can get tedious and doesn't narrow it down much with a popular function. Pdb can be very helpful.
+为什么不使用 print 语句呢？我曾经依赖于 print 语句。他们有时候仍然派得上用场。但当我开始处理复杂的代码库，尤其是有网络调用的代码库，print 语句就变得太慢了。我最终得到所有打印出来的数据，但我没法追踪他们的位置和原因，而且他们变得复杂了。 But there is a more important reason to mostly use pdb. Let's say you put a print statement in and discover that something is wrong—and must have gone wrong earlier. But looking at the function where you put the print statement, you have no idea how you got there. Looking at code is a great way to see where you are going, but it is terrible for learning where you've been. And yes, I have done a grep of my code base looking for where a function is called, but this can get tedious and doesn't narrow it down much with a popular function. Pdb can be very helpful.
 
 You follow my advice, and put in a pdb break and run your test. And it whooshes on by and fails again, with no break at all. Leave your breakpoint in, and run a test already in your test suite that does something very similar to the broken test. If you have a decent test suite, you should be able to find a test that is hitting the same code you think your failed test should hit. Run that test, and when it gets to your breakpoint, do a `w` and look at the stack. If you have no idea by looking at the stack how/where the other call may have gone haywire, then go about halfway up the stack, find some code that belongs to you, and put a breakpoint in that file, one line above the one in the stack trace. Try again with the new test. Keep going back and forth, moving up the stack to figure out where your call went off the rails. If you get all the way up to the top of the trace without hitting a breakpoint, then congratulations, you have found the issue: Your app was spelled wrong. No experience here, nope, none at all.
 
