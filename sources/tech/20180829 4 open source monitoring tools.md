@@ -1,4 +1,3 @@
-translating by sd886393
 4 open source monitoring tools
 ======
 
