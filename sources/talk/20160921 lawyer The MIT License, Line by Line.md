@@ -1,3 +1,4 @@
+Amanda0212 is translating
 [#]: collector: (lujun9972)
 [#]: translator: (Amanda0212)
 [#]: reviewer: ( )
