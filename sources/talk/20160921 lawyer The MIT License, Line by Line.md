@@ -8,27 +8,37 @@
 [#]: author: (Kyle E. Mitchell https://kemitchell.com/)
 
 lawyer The MIT License, Line by Line
+麻省理工学院律师执照，逐行
 ======
 
 ### The MIT License, Line by Line
+### 麻省理工学院律师执照，逐行
 
 [The MIT License][1] is the most popular open-source software license. Here’s one read of it, line by line.
+[MIT许可证][1] 是最流行的开源软件许可证，请逐行阅读下面的内容。
 
 #### Read the License
+#### 阅读许可证
 
 If you’re involved in open-source software and haven’t taken the time to read the license from top to bottom—it’s only 171 words—you need to do so now. Especially if licenses aren’t your day-to-day. Make a mental note of anything that seems off or unclear, and keep trucking. I’ll repeat every word again, in chunks and in order, with context and commentary. But it’s important to have the whole in mind.
+如果你参与了开源软件的开发，然而你还没有花时间从头开始阅读尽管只有171个单词的许可证，你现在就需要这么做，尤其是如果许可证不是你的日常生活。记住任何看起来不对劲或不清楚的事情，然后继续思考。我将重复上下文和评论的每一个字，按块和顺序。但重要的是你要做到心中有数。
 
-> The MIT License (MIT)
->
+> The MIT License (MIT) MIT 执照
+> 
 > Copyright (c) <year> <copyright holders>
+> 版权(c)<年份><版权持有人> 
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+> 现免费准许任何人取得本软件及相关文件档案（"软件"）的副本，以便不受限制地处理该软件，包括不受限制地使用、复制、修改，合并、公布、分发、转授许可证和/或出售软件副本的权利，并允许向其提供软件的人这样做，但须符合下列条件：
 >
 > The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+> 在软件和软件的所有副本中都必须包含版权声明和许可声明。
 >
 > The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the Software.
+> 该软件是"原封不动地"提供的，没有任何明示或默示的保证，包括但不限于适销性、适合某一特定目的和不侵权的保证。在任何情况下，作者或版权所有人都不应对因下列原因引起的任何索赔、损害或其他责任负责，与软件或软件中的使用或其他交易有关的。
 
 The license is arranged in five paragraphs, but breaks down logically like this:
+许可证由五个部分组成，在逻辑组成上像下面这样：
 
   * **Header**
     * **License Title** : “The MIT License”
@@ -39,52 +49,84 @@ The license is arranged in five paragraphs, but breaks down logically like this:
       * **Attribution and Notice** : “The above … shall be included …”
       * **Warranty Disclaimer** : “The software is provided ‘as is’ …”
       * **Limitation of Liability** : “In no event …”
+  
+   * **页眉**
+    * **许可证所有权** : “MIT执照”
+    * **版权公告** : “版权 (c) …”
+  * **许可证授予** : “特此批准 …”
+    * **授予范围** : “… 在软件方面的处理 …”
+    * **条件** : “… 服从于 …”
+      * **归属和通知** : “以上...应包含...在内”
+      * **保修免责声明** : “该软件“原封不动地”提供...”
+      * **赔偿责任限制** : “在任何情况下....”
 
 
 
 Here we go:
+我们开始了：
 
 #### Header
+#### 页眉
 
 ##### License Title
+##### 许可证所有权
 
 > The MIT License (MIT)
+> 麻省理工执照（麻省理工）
 
 “The MIT License” is a not a single license, but a family of license forms derived from language prepared for releases from the Massachusetts Institute of Technology. It has seen a lot of changes over the years, both for the original projects that used it, and also as a model for other projects. The Fedora Project maintains a [kind of cabinet of MIT license curiosities][2], with insipid variations preserved in plain text like anatomical specimens in formaldehyde, tracing a wayward kind of evolution.
+“麻省理工许可证”并不是一个单一的许可证，而是包含来自于麻省理工学院为发布而准备的语言的一系列许可证表格。这些年来，无论是对于使用它的原始项目都经历了许多变化，还是作为其他项目的模型。fedora项目保持了一种[mit许可证陈列室的种类][2]，在简单文本中保留了微小的变化，如甲醛中的解剖标本，追踪着一种没有规律的进化。
 
 Fortunately, the [Open Source Initiative][3] and [Software Package Data eXchange][4] groups have standardized a generic MIT-style license form as “The MIT License”. OSI in turn has adopted SPDX’ standardized [string identifiers][5] for common open-source licenses, with `MIT` pointing unambiguously to the standardized form “MIT License”. If you want MIT-style terms for a new project, use [the standardized form][1].
+幸运的是，[开源计划][3]和[数据交换软件包][4]组已经将通用的MIT式许可证表格标准化为“mit许可证”。而OSI则将SPDX的标准化（字符串标识符）[5]用于普通的开源许可证，“MIT”明确指向标准化的表格“MIT许可证”。
 
 Even if you include “The MIT License” or “SPDX:MIT” in a `LICENSE` file, any responsible reviewer will still run a comparison of the text against the standard form, just to be sure. While various license forms calling themselves “MIT License” vary only in minor details, the looseness of what counts as an “MIT License” has tempted some authors into adding bothersome “customizations”. The canonical horrible, no good, very bad example of this is [the JSON license][6], an MIT-family license plus “The Software shall be used for Good, not Evil.”. This kind of thing might be “very Crockford”. It is definitely a pain in the ass. Maybe the joke was supposed to be on the lawyers. But they laughed all the way to the bank.
+即使在“许可证”文件中包含“MIT许可证”或“SPDX：MIT”，负责任的评论者为了确定仍然会对文本和标准表单进行比较。尽管各种自称为“麻省理工许可证”的许可证表格只在细节上有所不同，但所谓的“麻省理工许可证”的宽松已经诱使一些作者添加了令人讨厌的“定制”。典型的可怕的的例子就是[JSON许可证][6]，一个MIT-family许可证加上“软件应该用于正途的，而不是邪恶的...”这种事情可能是“非常克罗克福德”。这绝对是一个痛苦的事情。可能是律师们开的一个玩笑，但他们一路笑到最后。
 
 Moral of the story: “MIT License” alone is ambiguous. Folks probably have a good idea what you mean by it, but you’re only going to save everyone—yourself included—time by copying the text of the standard MIT License form into your project. If you use metadata, like the `license` property in package manager metadata files, to designate the `MIT` license, make sure your `LICENSE` file and any header comments use the standard form text. All of this can be [automated][7].
+这个故事的寓意是：“麻省理工许可证”本身是模棱两可的。人们或许对你的意思有清晰的理解，但是你只会通过将标准的mit许可证表格的文本复制到你的项目中来节省所有人的时间，包括你自己。如果您使用元数据，如包管理器元数据文件中的“许可证”属性来指定“MIT”许可证，请确保您的“许可证”文件和任何头注使用标准窗体文本。而这些都可以[自动化][7]。
 
 ##### Copyright Notice
+##### 版权公告
 
 > Copyright (c) <year> <copyright holders>
+> 版权(c)<年份><版权持有人>
 
 Until the 1976 Copyright Act, United States copyright law required specific actions, called “formalities”, to secure copyright in creative works. If you didn’t follow those formalities, your rights to sue others for unauthorized use of your work were limited, often completely lost. One of those formalities was “notice”: Putting marks on your work and otherwise making it known to the market that you were claiming copyright. The © is a standard symbol for marking copyrighted works, to give notice of copyright. The ASCII character set doesn’t have the © symbol, but `Copyright (c)` gets the same point across.
+直到1976年的版权法，美国版权法要求采取具体行动以确保创作作品的版权，称为“手续”。如果你没有遵循这些手续，你起诉他人未经授权使用你的作品的权利是有限的，但这种权利基本丧失。其中一种形式是“通知”：在你的作品上做标记，或者在声明过后让市场知道你拥有版权。 © 是标记有版权作品的标准符号，以发出版权通知。ascii字符集没有 © 符号，但是“版权（c）”得到了这种权利。
 
 The 1976 Copyright Act, which “implemented” many requirements of the international Berne Convention, eliminated formalities for securing copyright. At least in the United States, copyright holders still need to register their copyrighted works before suing for infringement, with potentially higher damages if they register before infringement begins. In practice, however, many register copyright right before bringing suit against someone in particular. You don’t lose your copyright just by failing to put notices on it, registering, sending a copy to the Library of Congress, and so on.
+1976年“执行”了伯尔尼国际公约的许多要求版权法却取消了保护版权的手续。至少在美国，版权拥有者仍然需要在起诉侵权行为之前登记他们的版权作品，但如果他们在侵权行为开始前登记，也许会造成更高的损害。然而，现实中许多人在提起诉讼之前登记了版权。你不会因为只是没有在版权上张贴通知、注册、向国会图书馆发送副本等行为而失去版权。
 
 Even if copyright notices aren’t as absolutely necessary as they used to be, they are still plenty useful. Stating the year a work was authored and who the copyright belonged to give some sense of when copyright in the work might expire, bringing the work into the public domain. The identity of the author or authors is also useful: United States law calculates copyright terms differently for individual and “corporate” authors. Especially in business use, it may also behoove a company to think twice about using software from a known competitor, even if the license terms give very generous permission. If you’re hoping others will see your work and want to license it from you, copyright notices serve nicely for attribution.
+即使版权公告不再像过去那样绝对必要，但它们仍然很有用。说明作品创作的年份和版权持有者，使人们对作品的版权何时到期有某种感觉，从而使作品进入公共领域。作者的身份也很有用：美国法律对个人和“公司”两种身份的作者的版权计算方法不同。尤其是在商业上，即使许可条款给予非常慷慨的许可，公司也有必要对使用已知竞争对手的软件三思而后行。如果你希望别人看到你的作品，并希望从你那里获得许可，版权公告就可以很好裁决归属问题。
 
 As for “copyright holder”: Not all standard form licenses have a space to write this out. More recent license forms, like [Apache 2.0][8] and [GPL 3.0][9], publish `LICENSE` texts that are meant to be copied verbatim, with header comments and separate files elsewhere to indicate who owns copyright and is giving the license. Those approaches neatly discourage changes to the “standard” texts, accidental or intentional. They also make automated license identification more reliable.
+至于“版权持有人”：并不是所有的标准格式许可证都有地方写出来。近期的许可证表格，如[apache 2.0][8]和[gpl 3.0][9]，发布“许可证”文本，这些文本本应逐字复制，与头注和单独的文件其他地方，以表明谁拥有版权，并正在给予许可证。这些做法有意无意地阻止了对"标准"文本的更改，还使自动许可证认证更加可靠。
 
-The MIT License descends from language written for releases of code by institutions. For institutional releases, there was just one clear “copyright holder”, the institution releasing the code. Other institutions cribbed these licenses, replacing “MIT” with their own names, leading eventually to the generic forms we have now. This process repeated for other short-form institutional licenses of the era, notably the [original four-clause BSD License][10] for the University of California, Berkeley, now used in [three-clause][11] and [two-clause][12] variants, as well as [The ISC License][13] for the Internet Systems Consortium, an MIT variant.
+The MIT License descends from language written for releases of code by institutions. For institutional releases, there was just one clear “copyright holder”, the institution releasing the code. Other institutions cribbed these licenses, replacing “MIT” with their own names, leading eventually to the generic forms we have now. This process repeated for other short-form institutional licenses of the era, notably the [original four-clause BSD License][10] for the University of California, Berkeley, now used in [three-clause][11] and [two-clause][12] variants, as well as [The ISC License][13] for the Internet Systems Consortium, an MIT variant. 
+MIT许可证是机构为发布代码而编写的语言。对于机构发布，只有一个明确的“版权持有人”，即机构发布代码。其他一些机构用他们自己的名字代替了“MIT”，最终形成了我们现在的通用格式。这个过程重复了这个时代的其他短形式的机构许可证，值得注意的是加州大学伯克利分校的[原四条款BSD许可证][10]，现在用于[三条款][11]和[二条款][12]的变体，以及互联网系统联盟（MIT的一种变体）的（ISC许可证）。
 
 In each case, the institution listed itself as the copyright holder in reliance on rules of copyright ownership, called “[works made for hire][14]” rules, that give employers and clients ownership of copyright in some work their employees and contractors do on their behalf. These rules don’t usually apply to distributed collaborators submitting code voluntarily. This poses a problem for project-steward foundations, like the Apache Foundation and Eclipse Foundation, that accept contributions from a more diverse group of contributors. The usual foundation approach thus far has been to use a house license that states a single copyright holder—[Apache 2.0][8] and [EPL 1.0][15]—backed up by contributor license agreements—[Apache CLAs][16] and [Eclipse CLAs][17]—to collect rights from contributors. Collecting copyright ownership in one place is even more important under “copyleft” licenses like the GPL, which rely on copyright owners to enforce license conditions to promote software-freedom values.
+在所有情况下，机构都将自己列为版权所有人，以依赖版权所有权规则，称为"[受雇作品][14]"规则，这就给了雇主和客户一些版权，他们的雇员和承包商代表他们做的工作。这些规则通常不适用于自愿提交代码的分布式合作者。这给项目管理者基金会带来了一个问题，比如apache基金会和日食基金会，这些基金会接受了来自更多样化的捐助者群体的捐助。到目前为止，通常的基础方法是使用一种房屋许可证，该许可证规定只有一个版权持有人——[Apache 2.0][8]和[EPL 1.0][15]——由出资人许可证协议支持——[apache clas][16]并且[clas][17]——从贡献者那里收集权利。在像GPL这样的“版权许可”下，在一个地方收集版权所有权更加重要，因为它依赖于版权所有人强制执行许可条件以促进软件自由值。
 
 These days, loads of projects without any kind of institutional or business steward use MIT-style license terms. SPDX and OSI have helped these use cases by standardizing forms of licenses like MIT and ISC that don’t refer to a specific entity or institutional copyright holder. Armed with those forms, the prevailing practice of project authors is to fill their own name in the copyright notice of the form very early on … and maybe bump the year here and there. At least under United States copyright law, the resulting copyright notice doesn’t give a full picture.
+如今，只有很少的任何机构或企业管理者的项目在使用MIT式的许可证条款。SPDX和OSI通过规范MIT和ISC等不涉及特定实体或机构版权持有人的许可证形式，帮助了这些案例的使用。有了这些表格，项目作者的普遍做法是在很早表格的版权通知时就填写他们自己的名字，也许会在这里或那里增加一年的时间。至少根据美国版权法，由此产生的版权通知并没有给出一个完整的情况。
 
 The original owner of a piece of software retains ownership of their work. But while MIT-style license terms give others rights to build on and change the software, creating what the law calls “derivative works”, they don’t give the original author ownership of copyright in others’ contributions. Rather, each contributor has copyright in any [even marginally creative][18] work they make using the existing code as a starting point.
+软件的原拥有者保留对其作品的所有权。但是，尽管MIT式的许可条款赋予了其他人在软件上进行开发和更改的权利，创造了法律所称的“衍生作品”，但它们并没有赋予原始作者在他人贡献中的版权所有权。相反，每个贡献者都拥有以现有代码为起点的作品的版权。
 
 Most of these projects also balk at the idea of taking contributor license agreements, to say nothing of signed copyright assignments. That’s both naive and understandable. Despite the assumption of some newer open-source developers that sending a pull request on GitHub “automatically” licenses the contribution for distribution on the terms of the project’s existing license, United States law doesn’t recognize any such rule. Strong copyright protection, not permissive licensing, is the default.
+这些项目中的大多数也对接受贡献者许可协议的想法有所保留，更不用说签署版权转让了。这其实很好理解。尽管假定一些较新的开源开发者对github“自动”发送退出请求，根据项目的现有许可条款授权分配贡献，但美国法律不承认这样的规则。默认的是强有力的版权保护，而不是许可许可。
 
 Update: GitHub later changed its site-wide terms of service to include an attempt to flip this default, at least on GitHub.com. I’ve written up some thoughts on that development, not all of them positive, in [another post][19].
+更新：GitHub后来改变了它在整个网站的服务条款，包括试图翻转这个默认，至少在GitHub.com。我已经写了一些关于这个发展的想法，不是所有的都是积极的，在[另一个帖子][19]。
 
 To fill the gap between legally effective, well-documented grants of rights in contributions and no paper trail at all, some projects have adopted the [Developer Certificate of Origin][20], a standard statement contributors allude to using `Signed-Off-By` metadata tags in their Git commits. The Developer Certificate of Origin was developed for Linux kernel development in the wake of the infamous SCO lawsuits, which alleged that chunks of Linux’ code derived from SCO-owned Unix source. As a means of creating a paper trail showing that each line of Linux came from a contributor, the Developer Certificate of Origin functions nicely. While the Developer Certificate of Origin isn’t a license, it does provide lots of good evidence that those submitting code expected the project to distribute their code, and for others to use it under the kernel’s existing license terms. The kernel also maintains a machine-readable `CREDITS` file listing contributors with name, affiliation, contribution area, and other metadata. I’ve done [some][21] [experiments][22] adapting that approach for projects that don’t use the kernel’s development flow.
+为填补具有法律效力的且有充分文件证明的捐款权利授予与完全没有书面记录之间的空白，一些项目采用了[开发商原产地证书][20]，一个标准的语句贡献者暗示在他们的Git提交中使用“签名关闭”元数据标签。在臭名昭著的SCO诉讼事件之后，Linux内核开发人员为Linux内核开发了原产地证书，该诉讼指控Linux的代码块来自于SCO拥有的UNIX源代码。作为一种创建文件线索的手段，显示每一行Linux代码的贡献者，开发人员原产地证书的功能很好。虽然开发人员的原产地证书不是许可证，但它确实提供了大量的证据，证明提交代码的人希望项目分发他们的代码，并让其他人在内核的现有许可条款下使用。内核还维护一个机器可读的“信用”文件，列出具有名称、关联、贡献区域和其他元数据的贡献者。我已经做了[一些][实验][22]将这种方法应用于不使用内核开发流程的项目。
 
 #### License Grant
+#### 许可授权
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”),
 
