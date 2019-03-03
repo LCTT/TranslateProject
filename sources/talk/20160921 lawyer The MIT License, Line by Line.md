@@ -7,49 +7,30 @@
 [#]: via: (https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html)
 [#]: author: (Kyle E. Mitchell https://kemitchell.com/)
 
-lawyer The MIT License, Line by Line
-麻省理工学院律师执照，逐行
+
+MIT许可证的“精华”
 ======
 
-### The MIT License, Line by Line
-### 麻省理工学院律师执照，逐行
+###  MIT许可证的“精华”
 
-[The MIT License][1] is the most popular open-source software license. Here’s one read of it, line by line.
 [MIT许可证][1] 是最流行的开源软件许可证，请逐行阅读下面的内容。
 
-#### Read the License
 #### 阅读许可证
 
-If you’re involved in open-source software and haven’t taken the time to read the license from top to bottom—it’s only 171 words—you need to do so now. Especially if licenses aren’t your day-to-day. Make a mental note of anything that seems off or unclear, and keep trucking. I’ll repeat every word again, in chunks and in order, with context and commentary. But it’s important to have the whole in mind.
 如果你参与了开源软件的开发，然而你还没有花时间从头开始阅读尽管只有171个单词的许可证，你现在就需要这么做，尤其是如果许可证不是你的日常生活。记住任何看起来不对劲或不清楚的事情，然后继续思考。我将重复上下文和评论的每一个字，按块和顺序。但重要的是你要做到心中有数。
 
-> The MIT License (MIT) MIT 执照
+>  MIT 许可证
 > 
-> Copyright (c) <year> <copyright holders>
 > 版权(c)<年份><版权持有人> 
 >
-> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 > 现免费准许任何人取得本软件及相关文件档案（"软件"）的副本，以便不受限制地处理该软件，包括不受限制地使用、复制、修改，合并、公布、分发、转授许可证和/或出售软件副本的权利，并允许向其提供软件的人这样做，但须符合下列条件：
 >
-> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 > 在软件和软件的所有副本中都必须包含版权声明和许可声明。
 >
-> The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the Software.
 > 该软件是"原封不动地"提供的，没有任何明示或默示的保证，包括但不限于适销性、适合某一特定目的和不侵权的保证。在任何情况下，作者或版权所有人都不应对因下列原因引起的任何索赔、损害或其他责任负责，与软件或软件中的使用或其他交易有关的。
 
-The license is arranged in five paragraphs, but breaks down logically like this:
 许可证由五个部分组成，在逻辑组成上像下面这样：
 
-  * **Header**
-    * **License Title** : “The MIT License”
-    * **Copyright Notice** : “Copyright (c) …”
-  * **License Grant** : “Permission is hereby granted …”
-    * **Grant Scope** : “… to deal in the Software …”
-    * **Conditions** : “… subject to …”
-      * **Attribution and Notice** : “The above … shall be included …”
-      * **Warranty Disclaimer** : “The software is provided ‘as is’ …”
-      * **Limitation of Liability** : “In no event …”
-  
    * **页眉**
     * **许可证所有权** : “MIT执照”
     * **版权公告** : “版权 (c) …”
@@ -62,234 +43,208 @@ The license is arranged in five paragraphs, but breaks down logically like this:
 
 
 
-Here we go:
 我们开始了：
 
-#### Header
 #### 页眉
 
-##### License Title
 ##### 许可证所有权
 
-> The MIT License (MIT)
-> 麻省理工执照（麻省理工）
+> 麻省理工许可证（MIT）
 
-“The MIT License” is a not a single license, but a family of license forms derived from language prepared for releases from the Massachusetts Institute of Technology. It has seen a lot of changes over the years, both for the original projects that used it, and also as a model for other projects. The Fedora Project maintains a [kind of cabinet of MIT license curiosities][2], with insipid variations preserved in plain text like anatomical specimens in formaldehyde, tracing a wayward kind of evolution.
 “麻省理工许可证”并不是一个单一的许可证，而是包含来自于麻省理工学院为发布而准备的语言的一系列许可证表格。这些年来，无论是对于使用它的原始项目都经历了许多变化，还是作为其他项目的模型。fedora项目保持了一种[mit许可证陈列室的种类][2]，在简单文本中保留了微小的变化，如甲醛中的解剖标本，追踪着一种没有规律的进化。
 
-Fortunately, the [Open Source Initiative][3] and [Software Package Data eXchange][4] groups have standardized a generic MIT-style license form as “The MIT License”. OSI in turn has adopted SPDX’ standardized [string identifiers][5] for common open-source licenses, with `MIT` pointing unambiguously to the standardized form “MIT License”. If you want MIT-style terms for a new project, use [the standardized form][1].
 幸运的是，[开源计划][3]和[数据交换软件包][4]组已经将通用的MIT式许可证表格标准化为“mit许可证”。而OSI则将SPDX的标准化[字符串识别符][5]用于普通的开源许可证，“MIT”明确指向标准化的表格“MIT许可证”。
 
-Even if you include “The MIT License” or “SPDX:MIT” in a `LICENSE` file, any responsible reviewer will still run a comparison of the text against the standard form, just to be sure. While various license forms calling themselves “MIT License” vary only in minor details, the looseness of what counts as an “MIT License” has tempted some authors into adding bothersome “customizations”. The canonical horrible, no good, very bad example of this is [the JSON license][6], an MIT-family license plus “The Software shall be used for Good, not Evil.”. This kind of thing might be “very Crockford”. It is definitely a pain in the ass. Maybe the joke was supposed to be on the lawyers. But they laughed all the way to the bank.
 即使在“许可证”文件中包含“MIT许可证”或“SPDX：MIT”，负责任的评论者为了确定仍然会对文本和标准表单进行比较。尽管各种自称为“麻省理工许可证”的许可证表格只在细节上有所不同，但所谓的“麻省理工许可证”的宽松已经诱使一些作者添加了令人讨厌的“定制”。典型的可怕的的例子就是[JSON许可证][6]，一个MIT-family许可证加上“软件应该用于正途的，而不是邪恶的...”这种事情可能是“非常克罗克福德”。这绝对是一个痛苦的事情。可能是律师们开的一个玩笑，但他们一路笑到最后。
 
-Moral of the story: “MIT License” alone is ambiguous. Folks probably have a good idea what you mean by it, but you’re only going to save everyone—yourself included—time by copying the text of the standard MIT License form into your project. If you use metadata, like the `license` property in package manager metadata files, to designate the `MIT` license, make sure your `LICENSE` file and any header comments use the standard form text. All of this can be [automated][7].
-这个故事的寓意是：“麻省理工许可证”本身是模棱两可的。人们或许对你的意思有清晰的理解，但是你只会通过将标准的mit许可证表格的文本复制到你的项目中来节省所有人的时间，包括你自己。如果您使用元数据，如包管理器元数据文件中的“许可证”属性来指定“MIT”许可证，请确保您的“许可证”文件和任何头注使用标准窗体文本。而这些都可以[自动化][7]。
+这个故事的寓意是：“麻省理工许可证”本身是模棱两可的。人们或许对你的意思有清晰的理解，但是你只会通过将标准的MIT许可证表格的文本复制到你的项目中来节省所有人的时间，包括你自己。如果您使用元数据，如包管理器元数据文件中的“许可证”属性来指定“MIT”许可证，请确保您的“许可证”文件和任何头注使用标准窗体文本。而这些都可以[自动化][7]。
 
-##### Copyright Notice
 ##### 版权公告
 
-> Copyright (c) <year> <copyright holders>
 > 版权(c)<年份><版权持有人>
 
-Until the 1976 Copyright Act, United States copyright law required specific actions, called “formalities”, to secure copyright in creative works. If you didn’t follow those formalities, your rights to sue others for unauthorized use of your work were limited, often completely lost. One of those formalities was “notice”: Putting marks on your work and otherwise making it known to the market that you were claiming copyright. The © is a standard symbol for marking copyrighted works, to give notice of copyright. The ASCII character set doesn’t have the © symbol, but `Copyright (c)` gets the same point across.
 直到1976年的版权法，美国版权法要求采取具体行动以确保创作作品的版权，称为“手续”。如果你没有遵循这些手续，你起诉他人未经授权使用你的作品的权利是有限的，但这种权利基本丧失。其中一种形式是“通知”：在你的作品上做标记，或者在声明过后让市场知道你拥有版权。 © 是标记有版权作品的标准符号，以发出版权通知。ascii字符集没有 © 符号，但是“版权（c）”得到了这种权利。
 
-The 1976 Copyright Act, which “implemented” many requirements of the international Berne Convention, eliminated formalities for securing copyright. At least in the United States, copyright holders still need to register their copyrighted works before suing for infringement, with potentially higher damages if they register before infringement begins. In practice, however, many register copyright right before bringing suit against someone in particular. You don’t lose your copyright just by failing to put notices on it, registering, sending a copy to the Library of Congress, and so on.
 1976年“执行”了伯尔尼国际公约的许多要求版权法却取消了保护版权的手续。至少在美国，版权拥有者仍然需要在起诉侵权行为之前登记他们的版权作品，但如果他们在侵权行为开始前登记，也许会造成更高的损害。然而，现实中许多人在提起诉讼之前登记了版权。你不会因为只是没有在版权上张贴通知、注册、向国会图书馆发送副本等行为而失去版权。
 
-Even if copyright notices aren’t as absolutely necessary as they used to be, they are still plenty useful. Stating the year a work was authored and who the copyright belonged to give some sense of when copyright in the work might expire, bringing the work into the public domain. The identity of the author or authors is also useful: United States law calculates copyright terms differently for individual and “corporate” authors. Especially in business use, it may also behoove a company to think twice about using software from a known competitor, even if the license terms give very generous permission. If you’re hoping others will see your work and want to license it from you, copyright notices serve nicely for attribution.
 即使版权公告不再像过去那样绝对必要，但它们仍然很有用。说明作品创作的年份和版权持有者，使人们对作品的版权何时到期有某种感觉，从而使作品进入公共领域。作者的身份也很有用：美国法律对个人和“公司”两种身份的作者的版权计算方法不同。尤其是在商业上，即使许可条款给予非常慷慨的许可，公司也有必要对使用已知竞争对手的软件三思而后行。如果你希望别人看到你的作品，并希望从你那里获得许可，版权公告就可以很好裁决归属问题。
 
-As for “copyright holder”: Not all standard form licenses have a space to write this out. More recent license forms, like [Apache 2.0][8] and [GPL 3.0][9], publish `LICENSE` texts that are meant to be copied verbatim, with header comments and separate files elsewhere to indicate who owns copyright and is giving the license. Those approaches neatly discourage changes to the “standard” texts, accidental or intentional. They also make automated license identification more reliable.
 至于“版权持有人”：并不是所有的标准格式许可证都有地方写出来。近期的许可证表格，如[apache 2.0][8]和[gpl 3.0][9]，发布“许可证”文本，这些文本本应逐字复制，与头注和单独的文件其他地方，以表明谁拥有版权，并正在给予许可证。这些做法有意无意地阻止了对"标准"文本的更改，还使自动许可证认证更加可靠。
 
-The MIT License descends from language written for releases of code by institutions. For institutional releases, there was just one clear “copyright holder”, the institution releasing the code. Other institutions cribbed these licenses, replacing “MIT” with their own names, leading eventually to the generic forms we have now. This process repeated for other short-form institutional licenses of the era, notably the [original four-clause BSD License][10] for the University of California, Berkeley, now used in [three-clause][11] and [two-clause][12] variants, as well as [The ISC License][13] for the Internet Systems Consortium, an MIT variant. 
 MIT许可证是机构为发布代码而编写的语言。对于机构发布，只有一个明确的“版权持有人”，即机构发布代码。其他一些机构用他们自己的名字代替了“MIT”，最终形成了我们现在的通用格式。这个过程重复了这个时代的其他短形式的机构许可证，值得注意的是加州大学伯克利分校的[原四条款BSD许可证][10]，现在用于[三条款][11]和[二条款][12]的变体，以及互联网系统联盟（MIT的一种变体）的（ISC许可证）。
 
-In each case, the institution listed itself as the copyright holder in reliance on rules of copyright ownership, called “[works made for hire][14]” rules, that give employers and clients ownership of copyright in some work their employees and contractors do on their behalf. These rules don’t usually apply to distributed collaborators submitting code voluntarily. This poses a problem for project-steward foundations, like the Apache Foundation and Eclipse Foundation, that accept contributions from a more diverse group of contributors. The usual foundation approach thus far has been to use a house license that states a single copyright holder—[Apache 2.0][8] and [EPL 1.0][15]—backed up by contributor license agreements—[Apache CLAs][16] and [Eclipse CLAs][17]—to collect rights from contributors. Collecting copyright ownership in one place is even more important under “copyleft” licenses like the GPL, which rely on copyright owners to enforce license conditions to promote software-freedom values.
 在所有情况下，机构都将自己列为版权所有人，以依赖版权所有权规则，称为"[受雇作品][14]"规则，这就给了雇主和客户一些版权，他们的雇员和承包商代表他们做的工作。这些规则通常不适用于自愿提交代码的分布式合作者。这给项目管理者基金会带来了一个问题，比如apache基金会和日食基金会，这些基金会接受了来自更多样化的捐助者群体的捐助。到目前为止，通常的基础方法是使用一种房屋许可证，该许可证规定只有一个版权持有人——[Apache 2.0][8]和[EPL 1.0][15]——由出资人许可证协议支持——[apache clas][16]并且[clas][17]——从贡献者那里收集权利。在像GPL这样的“版权许可”下，在一个地方收集版权所有权更加重要，因为它依赖于版权所有人强制执行许可条件以促进软件自由值。
 
-These days, loads of projects without any kind of institutional or business steward use MIT-style license terms. SPDX and OSI have helped these use cases by standardizing forms of licenses like MIT and ISC that don’t refer to a specific entity or institutional copyright holder. Armed with those forms, the prevailing practice of project authors is to fill their own name in the copyright notice of the form very early on … and maybe bump the year here and there. At least under United States copyright law, the resulting copyright notice doesn’t give a full picture.
 如今，只有很少的任何机构或企业管理者的项目在使用MIT式的许可证条款。SPDX和OSI通过规范MIT和ISC等不涉及特定实体或机构版权持有人的许可证形式，帮助了这些案例的使用。有了这些表格，项目作者的普遍做法是在很早表格的版权通知时就填写他们自己的名字，也许会在这里或那里增加一年的时间。至少根据美国版权法，由此产生的版权通知并没有给出一个完整的情况。
 
-The original owner of a piece of software retains ownership of their work. But while MIT-style license terms give others rights to build on and change the software, creating what the law calls “derivative works”, they don’t give the original author ownership of copyright in others’ contributions. Rather, each contributor has copyright in any [even marginally creative][18] work they make using the existing code as a starting point.
 软件的原拥有者保留对其作品的所有权。但是，尽管MIT式的许可条款赋予了其他人在软件上进行开发和更改的权利，创造了法律所称的“衍生作品”，但它们并没有赋予原始作者在他人贡献中的版权所有权。相反，每个贡献者都拥有以现有代码为起点的作品的版权。
 
-Most of these projects also balk at the idea of taking contributor license agreements, to say nothing of signed copyright assignments. That’s both naive and understandable. Despite the assumption of some newer open-source developers that sending a pull request on GitHub “automatically” licenses the contribution for distribution on the terms of the project’s existing license, United States law doesn’t recognize any such rule. Strong copyright protection, not permissive licensing, is the default.
 这些项目中的大多数也对接受贡献者许可协议的想法有所保留，更不用说签署版权转让了。这其实很好理解。尽管假定一些较新的开源开发者对github“自动”发送退出请求，根据项目的现有许可条款授权分配贡献，但美国法律不承认这样的规则。默认的是强有力的版权保护，而不是许可许可。
 
-Update: GitHub later changed its site-wide terms of service to include an attempt to flip this default, at least on GitHub.com. I’ve written up some thoughts on that development, not all of them positive, in [another post][19].
 更新：GitHub后来改变了它在整个网站的服务条款，包括试图翻转这个默认，至少在GitHub.com。我已经写了一些关于这个发展的想法，不是所有的都是积极的，在[另一个帖子][19]。
 
-To fill the gap between legally effective, well-documented grants of rights in contributions and no paper trail at all, some projects have adopted the [Developer Certificate of Origin][20], a standard statement contributors allude to using `Signed-Off-By` metadata tags in their Git commits. The Developer Certificate of Origin was developed for Linux kernel development in the wake of the infamous SCO lawsuits, which alleged that chunks of Linux’ code derived from SCO-owned Unix source. As a means of creating a paper trail showing that each line of Linux came from a contributor, the Developer Certificate of Origin functions nicely. While the Developer Certificate of Origin isn’t a license, it does provide lots of good evidence that those submitting code expected the project to distribute their code, and for others to use it under the kernel’s existing license terms. The kernel also maintains a machine-readable `CREDITS` file listing contributors with name, affiliation, contribution area, and other metadata. I’ve done [some][21] [experiments][22] adapting that approach for projects that don’t use the kernel’s development flow.
 为填补具有法律效力的且有充分文件证明的捐款权利授予与完全没有书面记录之间的空白，一些项目采用了[开发商原产地证书][20]，一个标准的语句贡献者暗示在他们的Git提交中使用“签名关闭”元数据标签。在臭名昭著的SCO诉讼事件之后，Linux内核开发人员为Linux内核开发了原产地证书，该诉讼指控Linux的代码块来自于SCO拥有的UNIX源代码。作为一种创建文件线索的手段，显示每一行Linux代码的贡献者，开发人员原产地证书的功能很好。虽然开发人员的原产地证书不是许可证，但它确实提供了大量的证据，证明提交代码的人希望项目分发他们的代码，并让其他人在内核的现有许可条款下使用。内核还维护一个机器可读的“信用”文件，列出具有名称、关联、贡献区域和其他元数据的贡献者。我已经做了[一些][实验][22]将这种方法应用于不使用内核开发流程的项目。
 
-#### License Grant
 #### 许可授权
 
-> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”),
 > 现免费准许任何人取得本软件及相关文件档案（"软件"）的副本.
 
-The meat of The MIT License is, you guessed it, a license. In general terms, a license is permission that one person or legal entity—the “licensor”—gives another—the “licensee”—to do something the law would otherwise let them sue for. The MIT License is a promise not to sue.
 按照猜测，麻省理工执照的重点是执照。一般而言，许可是一个人或一个法律规定的实体----"许可人"----允许另一人----"被许可人"----做法律本来允许他们起诉的事情。MIT执照承诺不起诉。
 
-The law sometimes distinguishes licenses from promises to give licenses. If someone breaks a promise to give a license, you may be able to sue them for breaking their promise, but you may not end up with a license. “Hereby” is one of those hokey, archaic-sounding words lawyers just can’t get rid of. It’s used here to show that the license text itself gives the license, and not just a promise of a license. It’s a legal [IIFE][23].
 法律有时会将许可证与承诺颁发许可证区分开来。如果有人违背了给他发许可证的承诺，你也许可以控告他违反了承诺，但你可能没有得到许可证。"在此"是律师们无法摆脱的时髦的古语之一。它在这里用来显示许可证文本本身给出了许可证，而不仅仅是一个许可证的承诺。这是合法的[IIFE][23]。
 
-While many licenses give permission to a specific, named licensee, The MIT License is a “public license”. Public licenses give everybody—the public at large—permission. This is one of the three great ideas in open-source licensing. The MIT License captures this idea by giving a license “to any person obtaining a copy of … the Software”. As we’ll see later, there is also a condition to receiving this license that ensures others will learn about their permission, too.
 虽然许多许可证给予许可的具体命名的许可证，麻省理工学院许可证则是一个“公共许可证”。公共许可证给予广大公众许可。这是开放源码许可的三大理念之一。MIT许可证通过向“获得该软件副本的任何人”颁发许可证来捕捉这一想法。正如我们将在后面看到的，若获得这个许可证也有一个条件，以确保其他人也会知道他们的许可。
 
-The parenthetical with a capitalized term in quotation marks (a “Definition”), is the standard way to give terms specific meanings in American-style legal documents. Courts will reliably look back to the terms of the definition when they see a defined, capitalized term used elsewhere in the document.
 在美国式的法律文件中，用大写的引号（一个“定义”）来表示术语的标准方法。当法院在文件的其他地方看到一个定义明确、资本化的术语时，大写的引号将会很可靠地回顾定义的术语。
 
-##### Grant Scope
+##### 授予范围
 
-> to deal in the Software without restriction,
+> 不受限制的软件处理
 
-From the licensee’s point of view, these are the seven most important words in The MIT License. The key legal concerns are getting sued for copyright infringement and getting sued for patent infringement. Neither copyright law nor patent law uses “to deal in” as a term of art; it has no specific meaning in court. As a result, any court deciding a dispute between a licensor and a licensee would ask what the parties meant and understood by this language. What the court will see is that the language is intentionally broad and open-ended. It gives licensees a strong argument against any claim by a licensor that they didn’t give permission for the licensee to do that specific thing with the software, even if the thought clearly didn’t occur to either side when the license was given.
-
-> including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
-
-No piece of legal writing is perfect, “fully settled in meaning”, or unmistakably clear. Beware anyone who pretends otherwise. This is the least perfect part of The MIT License. There are three main issues:
-
-First, “including without limitation” is a legal antipattern. It crops up in any number of flavors:
-
-  * “including, without limitation”
-  * “including, without limiting the generality of the foregoing”
-  * “including, but not limited to”
-  * many, many pointless variations
+麻省理工许可证中最重要的七个词就是从被许可人的观点来看。其关键的法律问题是被起诉侵犯版权和被起诉侵犯专利。版权法和专利法都没有使用“处理”作为术语，它在法庭上没有具体的含义。因此，对许可人与被许可人之间的争议作出裁决的任何法院都会询问该措词所指的当事人的含义和理解。法院将会看到的是，该描述是不详细的和开放式的。这给了被许可人一个强有力的论据——在许可人没有允许被许可人对软件做特定的事情时反对许可人的任何主张，即使在许可的时候，这一想法都没有出现。
 
 
+> 包括在不受限制的情况下使用、复制、修改、合并、公布、分发、转授许可证和/或出售软件副本的权利，以及允许软件给予者这样做的权利。
 
-All of these share a common purpose, and they all fail to achieve it reliably. Fundamentally, drafters who use them try to have their cake and eat it, too. In The MIT License, that means introducing specific examples of “dealing in the Software”—“use, copy, modify” and so on—without implying that licensee action has to be something like the examples given to count as “dealing in”. The trouble is that, if you end up needing a court to review and interpret the terms of a license, the court will see its job as finding out what those fighting meant by the language. If the court needs to decide what “deal in” means, it cannot “unsee” the examples, even if you tell it to. I’d argue that “deal in the Software without restriction” alone would be better for licensees. Also shorter.
+没有哪篇法律文章是完美的，“在根本上完全解决”，或者明确无误的。要小心那些装模作样的人。这是麻省理工执照中最不完美的部分。有三个主要问题：
 
-Second, the verbs given as examples of “deal in” are a hodgepodge. Some have specific meanings under copyright or patent law, others almost do or just plain don’t:
+首先，"包括不受限制"是一种法律上的反模式。它产生了各种理解：
 
-  * use appears in [United States Code title 35, section 271(a)][24], the patent law’s list of what patent owners can sue others for doing without permission.
-
-  * copy appears in [United States Code title 17, section 106][25], the copyright law’s list of what copyright owners can sue others for doing without permission.
-
-  * modify doesn’t appear in either copyright or patent statute. It is probably closest to “prepare derivative works” under the copyright statute, but may also implicate improving or otherwise derivative inventions.
-
-  * merge doesn’t appear in either copyright or patent statute. “Merger” has a specific meaning in copyright, but that’s clearly not what’s intended here. Rather, a court would probably read “merge” according to its meaning in industry, as in “to merge code”.
-
-  * publish doesn’t appear in either copyright or patent statute. Since “the Software” is what’s being published, it probably hews closest to “distribute” under the [copyright statute][25]. That statute also covers rights to perform and display works “publicly”, but those rights apply only to specific kinds of copyrighted work, like plays, sound recordings, and motion pictures.
-
-  * distribute appears in the [copyright statute][25].
-
-  * sublicense is a general term of intellectual property law. The right to sublicense means the right to give others licenses of their own, to do some or all of what you have permission to do. The MIT License’s right to sublicense is actually somewhat unusual in open-source licenses generally. The norm is what Heather Meeker calls a “direct licensing” approach, where everyone who gets a copy of the software and its license terms gets a license direct from the owner. Anyone who might get a sublicense under the MIT License will probably end up with a copy of the license telling them they have a direct license, too.
-
-  * sell copies of is a mongrel. It is close to “offer to sell” and “sell” in the [patent statute][24], but refers to “copies”, a copyright concept. On the copyright side, it seems close to “distribute”, but the [copyright statute][25] makes no mention of sales.
-
-  * permit persons to whom the Software is furnished to do so seems redundant of “sublicense”. It’s also unnecessary to the extent folks who get copies also get a direct license.
+  * “包括，不受限制”
+  * “包括，在不限制上述一般性的情况下”
+  * “包括，但不局限于”
+  * 很多很多毫无意义的措辞变化
 
 
 
+所有这些都有共同的目标，但都没能真正地实现。从根本上说，它们的创始人也在尝试从中得到好处。在MIT许可证中，这意味着引入“软件交易”，其具体示例是“使用、复制、修改”等等，而不是暗示被许可人的行为必须类似于给出的“交易”的示例。问题是，如果你最终需要一个法庭来审查和解释许可证的条款，法庭则看作找出那些争论的语言的含义。法院不能“忽略”示例决定什么是“交易”，，即使你告诉它。也是较短的。
 
-Lastly, as a result of this mishmash of legal, industry, general-intellectual-property, and general-use terms, it isn’t clear whether The MIT License includes a patent license. The general language “deal in” and some of the example verbs, especially “use”, point toward a patent license, albeit a very unclear one. The fact that the license comes from the copyright holder, who may or may not have patent rights in inventions in the software, as well as most of the example verbs and the definition of “the Software” itself, all point strongly toward a copyright license. More recent permissive open-source licenses, like [Apache 2.0][8], address copyright, patent, and even trademark separately and specifically.
+第二，作为“处理”的例子给出的动词是一个大杂烩。有些在版权法或专利法下有特定的含义，有些却没有：
+
+  *使用出现在[美国法典第35章，第271(a)条][24]，专利法的清单中，列出了专利所有人可以因未经许可而起诉他人的行为。
+  
+  *复制出现在《版权法》（美国法典第17编第106条）[25]中，列出了版权所有人可以因未经许可而起诉他人的行为
+
+  *修改不出现在版权或专利法规中。它可能最接近版权法规下的“准备衍生作品”，但也可能涉及改进或其他衍生发明。
+  
+  *合并没有出现在版权或专利法规中。“合并”在版权上有特定的含义，但这显然不是这里的本意。相反，法院可能根据其在业界的含义来理解“合并”，如“合并代码”。
+  
+  *出版不出现在版权或专利法规中。由于“软件”是发布的内容，它可能最接近于[版权法规][25]下的“发布”。法律也涵盖了“公开”表演和展示作品的权利，但这些权利只适用于特定类型的有版权的作品，如戏剧、录音和电影。
+ 
+  *散布出现在[版权法规][25]中。
+  
+  *次级许可是知识产权法的总称。转牌权是指利用给予他人自己的执照做一些有权利做的事情的权利。MIT许可证的转行权在开源许可证中是不常见的。每个人只要拿到软件及其许可条款的副本，就可以直接从所有者那里得到许可，这就是Heather Meeker所说的“直接授权”方法。任何可能通过麻省理工许可证获得次级许可证的人，很可能最终会得到一份许可证副本，告诉他们自己也有直接许可证。
+  
+   *出售的副本是一个混合物。它接近[专利法规][24]中的"要约销售"和"销售"，却指的是版权概念中的"副本"。在版权方面，它似乎接近“发行”，但[版权法规][25]没有提到出售。
+  
+   *允许向软件提供者这样做，"次级许可"似乎是多余的并且也是不必要的，因为人们得到的副本也获得了直接许可证。
+
+
+
+
+最后，由于法律、工业、一般知识产权和一般用途条款的混淆，目前还不清楚麻省理工学院的许可证是否包括专利许可证。一般的语言“处理”和一些例子动词，特别是“使用”，指向专利许可，尽管是一个非常不清楚的。许可证来自版权持有人，他对软件中的发明可能有也可能没有专利权，以及大多数示例动词和"软件"本身的定义，所有这些都强烈指向版权许可证.更近期的许可开放源码许可证，如[apache 2.0][8]，涉及单独和具体的版权、专利甚至商标。
 
 ##### Three License Conditions
+##### 许可证的三个条件
 
-> subject to the following conditions:
+> 须符合以下条件：
 
-There’s always a catch! MIT has three!
+总有人能符合MIT的三个条件！
 
-If you don’t follow The MIT License’s conditions, you don’t get the permission the license offers. So failing to do what the conditions say at least theoretically leaves you open to a lawsuit, probably a copyright lawsuit.
+如果你不遵守麻省理工的许可条件，你就得不到许可。因此，如果不按条件所说的做，至少在理论上，你会面临一场诉讼，很可能是一场版权诉讼。
 
-Using the value of the software to the licensee to motivate compliance with conditions, even though the licensee paid nothing for the license, is the second great idea of open-source licensing. The last, not found in The MIT License, builds off license conditions: “Copyleft” licenses like the [GNU General Public License][9] use license conditions to control how those making changes can license and distribute their changed versions.
+利用软件的价值来激励被许可人遵守条件，即使被许可人没有为许可支付任何费用，是开源许可的第二个伟大想法。最后一个，在MIT许可证中没有，建立在许可证条件的基础上：“版权”许可证，像[GNU通用公共许可证][9]使用利益来控制那些进行更改的人去许可和分发他们的更改版本。
 
 ##### Notice Condition
+##### 公告条件
 
-> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+> 上述版权通知和许可通知应包含在软件的副本的绝大部分内容中。
 
-If you give someone a copy of the software, you need to include the license text and any copyright notice. This serves a few critical purposes:
+如果你给某人软件的副本，你需要包括许可证文本和任何版权通知。这有几个关键目的：
 
-  1. Gives others notice that they have permission for the software under the public license. This is a key part of the direct-licensing model, where each user gets a license direct from the copyright holder.
-
-  2. Makes known who’s behind the software, so they can be showered in praises, glory, and cold, hard cash donations.
-
-  3. Ensures the warranty disclaimer and limitation of liability (coming up next) follow the software around. Everyone who gets a copy should get a copy of those licensor protections, too.
-
-
+  1.通知他人他们有许可使用该软件的公共许可证。这是直接授权模式的一个关键部分，即每个用户直接从版权持有人那里获得许可证。
+  
+  2.让他们知道谁是软件的参与者，使得他们能够接受检验。
+  
+  3.确保免责声明和赔偿责任限制（下一步）伴随软件。每个得到副本的人也应该得到一份这些许可人保护的副本。
 
 
-There’s nothing to stop you charging for providing a copy, or even a copy in compiled form, without source code. But when you do, you can’t pretend that the MIT code is your own proprietary code, or provided under some other license. Those receiving get to know their rights under the “public license”.
 
-Frankly, compliance with this condition is breaking down. Nearly every open-source license has such an “attribution” condition. Makers of system and installed software often understand they’ll need to compile a notices file or “license information” screen, with copies of license texts for libraries and components, for each release of their own. The project-steward foundations have been instrumental in teaching those practices. But web developers, as a whole, haven’t got the memo. It can’t be explained away by a lack of tooling—there is plenty—or the highly modular nature of packages from npm and other repositories—which uniformly standardize metadata formats for license information. All the good JavaScript minifiers have command-line flags for preserving license header comments. Other tools will concatenate `LICENSE` files from package trees. There’s really no excuse.
+没有源代码的情况下，没有什么可以阻止您付费获得副本，甚至是编译形式的副本。但是当你这样做的时候，你不能假装MIT的代码是你自己的专有代码，或者是在其他许可证下提供的代码。领取者得了解他们在"公共许可证"下的权利。
+
+坦率地说，这一条件很难去遵守。几乎每个开源许可证都有这样的“归属”条件。系统和已安装软件的制造商通常都明白，他们需要为自己的每个版本编写一个通知文件或“许可证信息”，并为库和组件提供许可证文本的副本。项目管理基金会在传授这些做法方面发挥了重要作用。但总体而言，网络开发者并没有得到这份备忘录。这不能用缺少工具来解释——有大量的工具——或者是来自npm和其他存储库的软件包的高度模块化性质——它们统一地将许可证信息的元数据格式标准化。所有好的JavaScript迷你机都有用于保存许可证标题注释的命令行标记。其他工具将从包装箱树连接“许可证”文件。实在没有理由去遗忘这一条件。
 
 ##### Warranty Disclaimer
+##### 保护免责声明
 
-> The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement.
+> 该软件是"原封不动地"提供的，没有任何明示或默示的保证，包括但不限于适销性、适合某一特定目的和不侵权的保证。
 
-Nearly every state in the United States has enacted a version of the Uniform Commercial Code, a model statute of laws governing commercial transactions. Article 2 of the UCC—“Division 2” in California—governs contracts for sales of goods, from used automobiles bought off the lot to large shipments of industrial chemicals to manufacturing plants.
+美国几乎每个州都颁布了统一商业法典，这是一个规范商业交易的法律范本。加州大学洛杉矶分校（UCC）的第2条则规定了货物销售合同，从旧汽车的购进到工业化学品的大规模运输，再到制造工厂。
 
-Some of the UCC’s rules about sales contracts are mandatory. These rules always apply, whether those buying and selling like them or not. Others are just “defaults”. Unless buyers and sellers opt out in writing, the UCC implies that they want the baseline rule found in the UCC’s text for their deal. Among the default rules are implied “warranties”, or promises by sellers to buyers about the quality and usability of the goods being sold.
+加州大学洛杉矶分销关于销售合同的某些规则是强制性的。不管那些买卖他们喜欢与否这些规则总是适用的。而其他的只是“默认”。除非买卖双方以书面形式选择不参与，否则UCC暗示他们希望在UCC的文本中找到他们交易的基准规则。在默认规则中，隐含着“保证”，或卖方向买方承诺所售货物的质量和可用性。
 
-There is a big theoretical debate about whether public licenses like The MIT License are contracts—enforceable agreements between licensors and licensees—or just licenses, which go one way, but may come with strings attached, their conditions. There is less debate about whether software counts as “goods”, triggering the UCC’s rules. There is no debate among licensors on liability: They don’t want to get sued for lots of money if the software they give away for free breaks, causes problems, doesn’t work, or otherwise causes trouble. That’s exactly the opposite of what three default rules for “implied warranties” do:
+对于像MIT许可证这样的公共许可证到底是合同（许可人和被许可人之间可执行的协议）还是仅仅只是许可证（只有一种方式，但可能附带条件），存在着很大的争论。而关于软件是否算作“商品”的争论则较少，这触发了UCC的规则。许可证持有者之间没有关于赔偿责任的争论：他们不想因为大量的钱财而被起诉，如果他们赠送的软件是免费、则会引起一些麻烦。这与“默认保证”的三个默认规则正好相反：
 
-  1. The implied warranty of “merchantability” under [UCC section 2-314][26] is a promise that “the goods”—the Software—are of at least average quality, properly packaged and labeled, and fit for the ordinary purposes they are intended to serve. This warranty applies only if the one giving the software is a “merchant” with respect to the software, meaning they deal in software and hold themselves out as skilled in software.
+  1.[UCC第2-314][26]条对"适销性"的默认保证是"货物"或者软件应至少具有平均质量，包装和适当的标签，适合他们的用途。这个保证只适用于提供软件的人是软件的“商人”，这意味着他们从事软件交易，并坚持自己在软件方面很熟练。
+  
+  2.[UCC第2-315][27]条中关于"适合某一特定目的"的默认保证，在卖方知道买方因为某一用途而购买软件时，默认保护是有用的。因此，货物必须"合适"。
 
-  2. The implied warranty of “fitness for a particular purpose” under [UCC section 2-315][27] kicks in when the seller knows the buyer is relying on them to provide goods for a particular purpose. The goods need to actually be “fit” for that purpose.
-
-  3. The implied warranty of “noninfringement” is not part of the UCC, but is a common feature of general contract law. This implied promise protects the buyer if it turns out the goods they received infringe somebody else’s intellectual property rights. That would be the case if the software under The MIT License didn’t actually belong to the one trying to license it, or if it fell under a patent owned by someone else.
-
-
+  3.“不侵权”的默认保证不是合同约定的一部分，而是一般合同法的共同特征。如果买方收到的货物侵犯了他人的知识产权，该默认承诺保护买方。如果MIT许可下的软件实际上不属于试图授权它的软件，或者它属于其他人拥有的专利，就不会去保护买方。
 
 
-[Section 2-316(3)][28] of the UCC requires language opting out of, or “excluding”, implied warranties of merchantability and fitness for a particular purpose to be conspicuous. “Conspicuous” in turn means written or formatted to call attention to itself, the opposite of microscopic fine print meant to slip past unwary consumers. State law may impose a similar attention-grabbing requirement for disclaimers of noninfringement.
 
-Lawyers have long suffered under the delusion that writing anything in `ALL-CAPS` meets the conspicuous requirement. That isn’t true. Courts have criticized the Bar for pretending as much, and most everyone agrees all-caps does more to discourage reading than compel it. All the same, most open-source-license forms set their warranty disclaimers in all-caps, in part because that’s the only obvious way to make it stand out in plain-text `LICENSE` files. I’d prefer to use asterisks or other ASCII art, but that ship sailed long, long ago.
+UCC[章节 2-316(3)][28]条要求选择或"排除"关于适销性和适合某一特定目的的隐含保证的语言非常一目了然。而“显眼”则意味着书写或格式化的目的是为了引起人们对其本身的注意，这与微观的细微印刷相反，其目的是为了避开不谨慎的消费者。州法律可能对不侵权的免责声明规定类似的吸引注意力的要求。
+
+长期以来，律师们一直被一种错觉所困扰，认为用“全盖”写任何东西都符合明显的要求，然而这确实假的。法院已经批判了这一标准，因为它太假了，而且大多数人都同意全上限的做法更多的是为了阻止阅读，而不是强迫阅读。尽管如此，大多数开源许可证的格式都将其保证免责声明设置为全上限，部分原因是这是唯一明显的方法，可以使其在纯文本“许可证”文件中脱颖而出。我宁愿用星号或其他的ASCII艺术，但那已经很久了。
 
 ##### Limitation of Liability
+##### 限制
+> 在任何情况下，作者或版权持有人均不对因下列原因而引起的任何索赔、损害或其他责任承担任何责任或是与软件或者软件中的使用或其他交易有关的责任。
 
-> In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.
+MIT许可证允许“免费”使用软件，但法律并不认为获得免费许可证的人会在事情出了差错时放弃起诉的权利，而应归咎于许可人。“赔偿责任限制”，通常与“损害赔偿排除”结合在一起，就像保证不起诉一样，很像许可证。但这些是对许可人免受被许可人诉讼的保护。
 
-The MIT License gives permission for software “free of charge”, but the law does not assume that folks receiving licenses free of charge give up their rights to sue when things go wrong and the licensor is to blame. “Limitations of liability”, often paired with “damages exclusions”, work a lot like licenses, as promises not to sue. But these are protections for the licensor against lawsuits by licensees.
+一般来说，法院谨慎地解读赔偿责任和损害赔偿排除的限制，因为它们可以将巨大的风险从一方转移到另一方。为了保护社区的重大利益，他们“严格解释”限制责任的语言让人们能够纠正在法庭上犯下的错误，在可能的情况下对照受其保护的语言来解读。限制赔偿责任必须是明确的，才能成立。尤其是在“消费者”合同和其他情况下，那些放弃起诉权的人缺乏技巧或议价能力，法院有时拒绝尊重那些言外之意。律师们由于这个原因可能也由于纯粹的习惯而倾向于限制给予赔偿责任。
 
-In general, courts read limitations of liability and damages exclusions warily, since they can shift an incredible amount of risk from one side to another. To protect the community’s vital interest in giving folks a way to redress wrongs done in court, they “strictly construe” language limiting liability, reading it against the one protected by it where possible. Limitations of liability have to be specific to stand up. Especially in “consumer” contracts and other situations where those giving up the right to sue lack sophistication or bargaining power, courts have sometimes refused to honor language that seemed buried out of sight. Partly for that reason, partly by sheer force of habit, lawyers tend to give limits of liability the all-caps treatment, too.
+只要稍微钻低一点，“赔偿责任限额”就是被许可人可以起诉的金额的上限。在开源许可证中，这个限制总是没有钱的——0美元，“不负责任”。相比之下，在商业许可证中，尽管它通常是经过协商的而决定出为过去12个月期间支付的许可证费用的倍数。
 
-Drilling down a bit, the “limitation of liability” part is a cap on the amount of money a licensee can sue for. In open-source licenses, that limit is always no money at all, $0, “not liable”. By contrast, in commercial licenses, it’s often a multiple of license fees paid in the last 12-month period, though it’s often negotiated.
+"排除"部分具体列出了各类法律索赔以及许可人不能使用造成损害赔偿的理由。和许多法律形式一样，MIT执照提到了“合同”行为中的违约行为和“侵权行为”。侵权行为规则是防止不小心或恶意伤害他人的一般规则。如果你发短信的时候在路上撞上了某人，你就犯下了侵权行为。如果你的公司出售的耳机有问题，让人耳朵发麻，那么你的公司就犯下了侵权行为。如果合同没有明确排除侵权索赔，法院有时会在合同中阅读排除语，以防止只发生合同索赔。为了更好地衡量这种排除部分，麻省理工的执照上写着“或者其他”，仅仅是不同寻常的法律主张。
 
-The “exclusion” part lists, specifically, kinds of legal claims—reasons to sue for damages—the licensor cannot use. Like many, many legal forms, The MIT License mentions actions “of contract”—for breaching a contract—and “of tort”. Tort rules are general rules against carelessly or maliciously harming others. If you run someone down on the road while texting, you have committed a tort. If your company sells faulty headphones that burn peoples’ ears off, your company has committed a tort. If a contract doesn’t specifically exclude tort claims, courts sometimes read exclusion language in a contract to prevent only contract claims. For good measure, The MIT License throws in “or otherwise”, just to catch the odd admiralty law or other, exotic kind of legal claim.
-
-The phrase “arising from, out of or in connection with” is a recurring tick symptomatic of the legal draftsman’s inherent, anxious insecurity. The point is that any lawsuit having anything to do with the software is covered by the limitation and exclusions. On the off chance something can “arise from”, but not “out of”, or “in connection with”, it feels better to have all three in the form, so pack ‘em in. Never mind that any court forced to split hairs in this part of the form will have to come up with different meanings for each, on the assumption that a professional drafter wouldn’t use different words in a row to mean the same thing. Never mind that in practice, where courts don’t feel good about a limitation that’s disfavored to begin with, they’ll be more than ready to read the scope trigger narrowly. But I digress. The same language appears in literally millions of contracts.
+"产生于、或与之有关"这句话是法律起草人固有的、焦虑的不安全感的反复出现的症状。重点是任何与软件有关的诉讼都在限制和排除范围之内。在偶然的机会，一些东西可以"产生"，但不是"产生"，或"联系"，不必介意它在形式上的三种的说法。出现在不同地方的同一个词语或许都是不同意思，假设一个专业起草人不会使用不同的词语在一排的意思相同的事情则不必介意，在实践中，如果法院对一开始就不满意想这个限制，那么他们就会非常愿意仔细地解读范围触发因素。但我离题了。同样的语言出现在数百万份合同中或许理解都不一样。
 
 #### Overall
+#### 总结
 
-All these quibbles are a bit like spitting out gum on the way into church. The MIT License is a legal classic. The MIT License works. It is by no means a panacea for all software IP ills, in particular the software patent scourge, which it predates by decades. But MIT-style licenses have served admirably, fulfilling a narrow purpose—reversing troublesome default rules of copyright, sales, and contract law—with a minimal combination of discreet legal tools. In the greater context of computing, its longevity is astounding. The MIT License has outlasted and will outlast the vast majority of software licensed under it. We can only guess how many decades of faithful legal service it will have given when it finally loses favor. It’s been especially generous to those who couldn’t have afforded their own lawyer.
+这些俏皮话虽然有点像碎碎念，但MIT租客正却是法律上的经典。MIT租客正是有用的。虽然MIT式的许可非常出色但它绝不是解决所有软件ip弊病的灵丹妙药，尤其是早于它几十年出现的软件专利的祸害。实现了用最低限度的谨慎的法律工具组合来扭转麻烦的版权、销售和合同法的默认规则这个狭隘的目标。在更大的计算环境中，它的生命周期是惊人的。MIT许可证的有效期已经超过了它所授权的绝大多数软件。我们只能猜测，当它最终对那些自己请不起律师的人失去好感时，它将提供多少几十年忠实的法律服务。
 
-We’ve seen how the The MIT License we know today is a specific, standardized set of terms, bringing order at long last to a chaos of institution-specific, haphazard variations.
+我们已经看到了我们今天所知的MIT许可证是一套具体的、标准化的术语，最终给机构特有的、随意变化的混乱带来了秩序。
 
-We’ve seen how its approach to attribution and copyright notice informed intellectual property management practices for academic, standards, commercial, and foundation institutions.
+我们已经看到了它是如何为学术、标准、商业和基金会机构的知识产权管理实践提供归属和版权通知的依据。
 
-We’ve seen how The MIT Licenses grants permission for software to all, for free, subject to conditions that protect licensors from warranties and liability.
+我们已经看到了MIT许可证是如何向所有人免费授予软件许可的，但我们必须遵守保护许可人免受担保和赔偿责任的条件。
 
-We’ve seen that despite some crusty verbiage and lawyerly affectation, one hundred and seventy one little words can get a hell of a lot of legal work done, clearing a path for open-source software through a dense underbrush of intellectual property and contract.
+我们已经看到，尽管有一些不是很精准的词和修饰，但这一百七十一个词已经足够严谨，能够通过一个密集的知识产权和合同为开源软件开辟新的道路。
 
-I’m so grateful for all who’ve taken the time to read this rather long post, to let me know they found it useful, and to help improve it. As always, I welcome your comments via [e-mail][29], [Twitter][30], and [GitHub][31].
+我非常感谢所有愿意花时间来阅读这篇长文的人，让我知道他们认为它有用，并帮助改进它。和往常一样，我欢迎您通过[电子邮件][29], [推特][30], 和 [GitHub][31].发表评论。
 
-A number of folks have asked where they can read more, or find run-downs of other licenses, like the GNU General Public License or the Apache 2.0 license. No matter what your particular continuing interest may be, I heartily recommend the following books:
+若是想阅读更多的内容或者找到其他许可证的概要，比如GNU公共许可证或者Apache 2.0许可证。无论你有什么关于这方面的兴趣，我都衷心推荐以下的书：
 
   * Andrew M. St. Laurent’s [Understanding Open Source & Free Software Licensing][32], from O’Reilly.
 
-I start with this one because, while it’s somewhat dated, its approach is also closest to the line-by-line approach used above. O’Reilly has made it [available online][33].
+我是这本书开始入门的，虽然它有点过时，但它的方法也最接近上面使用的逐行方法。O’Reilly 已经在网上提供了它。
 
   * Heather Meeker’s [Open (Source) for Business][34]
 
-In my opinion, by far the best writing on the GNU General Public License and copyleft more generally. This book covers the history, the licenses, their development, as well as compatibility and compliance. It’s the book I lend to clients considering or dealing with the GPL.
+在我看来，目前为止，关于GNU公共许可证和版权写的比较好的已经有很多了。这本书涵盖了许可证的历史、发展、以及兼容性和合规性。这是我借给客户的书，考虑或处理GPL。
 
   * Larry Rosen’s [Open Source Licensing][35], from Prentice Hall.
 
-A great first book, also available for free [online][36]. This is the best introduction to open-source licensing and related law for programmers starting from scratch. This one is also a bit dated in some specific details, but Larry’s taxonomy of licenses and succinct summary of open-source business models stand the test of time.
+这是很棒的一本书，也[在线][36]免费的。这是对程序员关于从零开始的开源许可和相关法律的最好的介绍。虽然这一点也有点过时了，但是在一些具体的细节中拉里对许可证的分类法和对开源商业模式的简洁总结是经得起时间考验的。
 
 
 
+所有的这些教育都对作为开源授权律师的我至关重要。他们的作者是我这行的英雄。强烈推荐阅读！-- K.E.M
 
-All of these were crucial to my own education as an open-source licensing lawyer. Their authors are professional heroes of mine. Have a read! — K.E.M
-
-I license this article under a [Creative Commons Attribution-ShareAlike 4.0 license][37].
-
+我在[创意共享许可4.0版本][37]授权这篇文章.
 
 --------------------------------------------------------------------------------
 
@@ -297,7 +252,7 @@ via: https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html
 
 作者：[Kyle E. Mitchell][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Amanda0212](https://github.com/Amanda0212)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
