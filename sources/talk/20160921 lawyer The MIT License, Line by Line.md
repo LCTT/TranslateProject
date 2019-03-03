@@ -129,14 +129,19 @@ To fill the gap between legally effective, well-documented grants of rights in c
 #### 许可授权
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”),
+> 现免费准许任何人取得本软件及相关文件档案（"软件"）的副本.
 
 The meat of The MIT License is, you guessed it, a license. In general terms, a license is permission that one person or legal entity—the “licensor”—gives another—the “licensee”—to do something the law would otherwise let them sue for. The MIT License is a promise not to sue.
+按照猜测，麻省理工执照的重点是执照。一般而言，许可是一个人或一个法律规定的实体----"许可人"----允许另一人----"被许可人"----做法律本来允许他们起诉的事情。MIT执照承诺不起诉。
 
 The law sometimes distinguishes licenses from promises to give licenses. If someone breaks a promise to give a license, you may be able to sue them for breaking their promise, but you may not end up with a license. “Hereby” is one of those hokey, archaic-sounding words lawyers just can’t get rid of. It’s used here to show that the license text itself gives the license, and not just a promise of a license. It’s a legal [IIFE][23].
+法律有时会将许可证与承诺颁发许可证区分开来。如果有人违背了给他发许可证的承诺，你也许可以控告他违反了承诺，但你可能没有得到许可证。"在此"是律师们无法摆脱的时髦的古语之一。它在这里用来显示许可证文本本身给出了许可证，而不仅仅是一个许可证的承诺。这是合法的[IIFE][23]。
 
 While many licenses give permission to a specific, named licensee, The MIT License is a “public license”. Public licenses give everybody—the public at large—permission. This is one of the three great ideas in open-source licensing. The MIT License captures this idea by giving a license “to any person obtaining a copy of … the Software”. As we’ll see later, there is also a condition to receiving this license that ensures others will learn about their permission, too.
+虽然许多许可证给予许可的具体命名的许可证，麻省理工学院许可证则是一个“公共许可证”。公共许可证给予广大公众许可。这是开放源码许可的三大理念之一。MIT许可证通过向“获得该软件副本的任何人”颁发许可证来捕捉这一想法。正如我们将在后面看到的，若获得这个许可证也有一个条件，以确保其他人也会知道他们的许可。
 
 The parenthetical with a capitalized term in quotation marks (a “Definition”), is the standard way to give terms specific meanings in American-style legal documents. Courts will reliably look back to the terms of the definition when they see a defined, capitalized term used elsewhere in the document.
+在美国式的法律文件中，用大写的引号（一个“定义”）来表示术语的标准方法。当法院在文件的其他地方看到一个定义明确、资本化的术语时，大写的引号将会很可靠地回顾定义的术语。
 
 ##### Grant Scope
 
