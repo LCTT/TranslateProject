@@ -63,11 +63,11 @@ Pdb, 一个 Python 调试器。
 
 为什么不使用 print 语句呢？我曾经依赖于 print 语句。他们有时候仍然派得上用场。但当我开始处理复杂的代码库，尤其是有网络调用的代码库，print 语句就变得太慢了。我最终得到所有打印出来的数据，但我没法追踪他们的位置和原因，而且他们变得复杂了。但是主要使用 pdb 还有一个更重要的原因。假设你添加一条 print 语句去发现错误问题，而且 print 语句必须早于错误出现的地方。但是，看看你放 print 语句的函数，你不知道你是怎么调用它的。查看代码是寻找的好方法，但看你以前写的代码是恐怖的。是的，我会用 grep 处理我的代码库以寻找调用函数的地方，但这会变得乏味而且匹配一个通用函数时不能缩小范围。Pdb 就变得非常有用。
 
-你遵循我的建议，打上 pdb 断点并运行你的测试。然后测试再次失败，但是没有任何一个断点被打到。保留你的断点，并运行测试套件中一个同这个失败的测试非常相似的测试。如果你有个不错的测试，你应该能够找到一个测试。它会击中了你认为你的失败测试应该击中的代码。Run that test, and when it gets to your breakpoint, do a `w` and look at the stack. If you have no idea by looking at the stack how/where the other call may have gone haywire, then go about halfway up the stack, find some code that belongs to you, and put a breakpoint in that file, one line above the one in the stack trace. Try again with the new test. Keep going back and forth, moving up the stack to figure out where your call went off the rails. If you get all the way up to the top of the trace without hitting a breakpoint, then congratulations, you have found the issue: Your app was spelled wrong. No experience here, nope, none at all.
+你遵循我的建议，打上 pdb 断点并运行你的测试。然后测试再次失败，但是没有任何一个断点被打到。保留你的断点，并运行测试套件中一个同这个失败的测试非常相似的测试。如果你有个不错的测试，你应该能够找到一个测试。它会击中了你认为你的失败测试应该击中的代码。运行这个测试，然后当它打到你的断点，按下 `w` 并检查调用栈。如果你不知道如何查看因为其他调用而变得混乱的调用栈，那么在调用栈的中间找到属于你的代码，并在其中堆栈中代码的上一行放置一个断点。再试一次新的测试。如果仍然没打到断点，那么继续，向上追踪调用栈并找出你的调用在哪里脱轨了。如果你一直没有打到断点，最后到了追踪的顶部，那么恭喜你，你发现了问题：你的应用程序拼写错了。没有经验，没有经验，一点都没有经验。
 
 ### 4. Change things
 
-If you still feel lost, try making a new test where you vary something slightly. Can you get the new test to work? What is different? What is the same? Try changing something else. Once you have your test, and maybe additional tests in place, it is safe to start changing things in the code to see if you can narrow down the problem. Remember to start troubleshooting with a fresh commit so you can easily back out changes that do not help. (This is a reference to version control, if you aren't using version control, it will change your life. Well, maybe it will just make coding easier. See "[A Visual Guide to Version Control][2]" for a nice introduction.)
+如果你仍觉得迷惑，在你稍微改变了一些的地方尝试新的测试。你能让新的测试跑起来么？有什么不同的呢？有什么相同的呢？尝试改变别的东西。 Once you have your test, and maybe additional tests in place, it is safe to start changing things in the code to see if you can narrow down the problem. Remember to start troubleshooting with a fresh commit so you can easily back out changes that do not help. (This is a reference to version control, if you aren't using version control, it will change your life. Well, maybe it will just make coding easier. See "[A Visual Guide to Version Control][2]" for a nice introduction.)
 
 ### 5. Take a break
 
