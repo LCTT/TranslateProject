@@ -1,3 +1,5 @@
+cycoe translating
+cycoe 翻译中
 [#]: collector: (lujun9972)
 [#]: translator: (LazyWolfLin)
 [#]: reviewer: ( )
