@@ -1,22 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (FinalCrypt – An Open Source File Encryption Application)
 [#]: via: (https://itsfoss.com/finalcrypt/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-FinalCrypt  - 一个开源文件加密应用
+FinalCrypt：一个开源文件加密应用
 ======
 
-我通常不会加密文件 - 但如果我打算整理我的重要文件或凭证，加密程序就会派上用场。
+我通常不会加密文件，但如果我打算整理我的重要文件或凭证，加密程序就会派上用场。
 
 你可能已经在使用像 [GnuPG][1] 这样的程序来帮助你加密/解密 Linux 上的文件。还有 [EncryptPad][2] 也可以加密你的笔记。
 
-但是，我看到了一个名为 FinalCrypt 的新的免费开源加密工具。你可以在 [GitHub 页面][3]上查看最新的版本和源码。
+但是，我看到了一个名为 FinalCrypt 的新的免费开源加密工具。你可以在 [GitHub 页面][3]上查看其最新的版本和源码。
 
-在本文中，我将分享使用此工具的经验。请注意，我不会将它与其他程序进行比较 - 因此，如果你想要多个程序之间的详细比较，请在评论中告诉我们。
+在本文中，我将分享使用此工具的经验。请注意，我不会将它与其他程序进行比较 —— 因此，如果你想要多个程序之间的详细比较，请在评论中告诉我们。
 
 ![FinalCrypt][4]
 
@@ -30,7 +30,9 @@ FinalCrypt 使用[一次性密码本][5]密钥生成密码来加密文件。换�
 
 如果要使用 FinalCrypt，可以从它的网站下载 DEB/RPM 文件。FinalCrypt 也可用于 Windows 和 macOS。
 
-下载后，只需双击 [deb][6] 或 rpm 文件就能安装。如果需要，你还可以从源码编译。
+- [下载 FinalCrypt](https://sites.google.com/site/ronuitholland/home/finalcrypt)
+
+下载后，只需双击该 [deb][6] 或 rpm 文件就能安装。如果需要，你还可以从源码编译。
 
 ### 使用 FileCrypt
 
@@ -50,17 +52,17 @@ FinalCrypt 使用[一次性密码本][5]密钥生成密码来加密文件。换�
 
 ![finalcrypt otp][9]
 
-请注意你的文件名可以是任何内容 - 但你需要确保密钥文件大小大于或等于要加密的文件。我觉得这很荒谬，但事实就是如此。
+请注意你的文件名可以是任何内容 —— 但你需要确保密钥文件的大小大于或等于要加密的文件。我觉得这很荒谬，但事实就是如此。
 
 ![][10]
 
 生成文件后，选择窗口右侧的密钥，然后选择要在窗口左侧加密的文件。
 
-生成 OTP 后，你会看到高亮显示的校验和值，密钥文件大小和有效状态：
+生成 OTP 后，你会看到高亮显示的校验和、密钥文件大小和有效状态：
 
 ![][11]
 
-选择之后，你只需要点击“**加密**”来加密这些文件，如果已经加密，那么点击“**解密**”来解密这些文件。
+选择之后，你只需要点击 “Encrypt” 来加密这些文件，如果已经加密，那么点击 “Decrypt” 来解密这些文件。
 
 ![][12]
 
@@ -80,7 +82,7 @@ FinalCrypt 使用[一次性密码本][5]密钥生成密码来加密文件。换�
 
 [FinalCrypt](https://sites.google.com/site/ronuitholland/home/finalcrypt)
 
-**总结**
+### 总结
 
 它开始时看上去有点复杂，但它实际上是 Linux 中一个简单且用户友好的加密程序。如果你想看看其他的，还有一些其他的[加密保护文件夹][14]的程序。
 
@@ -94,7 +96,7 @@ via: https://itsfoss.com/finalcrypt/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
