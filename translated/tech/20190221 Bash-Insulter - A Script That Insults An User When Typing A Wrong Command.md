@@ -1,74 +1,74 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Bash-Insulter : A Script That Insults An User When Typing A Wrong Command)
-[#]: via: (https://www.2daygeek.com/bash-insulter-insults-the-user-when-typing-wrong-command/)
-[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
+[#]: collector: "lujun9972"
+[#]: translator: "zero-mk"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Bash-Insulter : A Script That Insults An User When Typing A Wrong Command"
+[#]: via: "https://www.2daygeek.com/bash-insulter-insults-the-user-when-typing-wrong-command/"
+[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
-Bash-Insulter : A Script That Insults An User When Typing A Wrong Command
+Bash-Insulter : 一个在输入错误命令时侮辱用户的脚本
 ======
 
-This is such a nice and funny script that insult an user whenever they are typing a wrong command in terminal.
+这是一个非常有趣的脚本，每当用户在终端输入错误的命令时，它都会侮辱用户。
 
-It’s make you to feel happy when you are working on some issues.
+它让你在处理一些问题时感到快乐。
 
-But somebody feel bad when the get an insult. However, i really feel happy when i get an insulted on terminal.
+有的人在受到终端侮辱的时候感到不愉快。但是，当我受到终端的侮辱时，我真的很开心。
 
-It’s a funny CLI tool that insults you with random phrases if you do mistake.
+这是一个有趣的CLI（译者注：command-line interface） 工具，在你弄错的时候，会用随机短语侮辱你。
 
-Also, it allows you to update your own phrases.
+此外，它允许您添加自己的短语。
 
-### How To Install Bash-Insulter In Linux?
+### 如何在 Linux 上安装 Bash-Insulter?
 
-Make sure, git package were installed on your system before performing Bash-Insulter installation. If no, use the following command to install it.
+在安装 Bash-Insulter 之前，请确保您的系统上安装了 git。如果没有，请使用以下命令安装它。
 
-For **`Fedora`** system, use **[DNF Command][1]** to install git.
+对于 **`Fedora`** 系统, 请使用 **[DNF 命令][1]** 安装 git
 
 ```
 $ sudo dnf install git
 ```
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][2]** or **[APT Command][3]** to install git.
+对于 **`Debian/Ubuntu`** 系统,，请使用 **[APT-GET 命令][2]** 或者 **[APT 命令][3]** 安装 git。
 
 ```
 $ sudo apt install git
 ```
 
-For **`Arch Linux`** based systems, use **[Pacman Command][4]** to install git.
+对于基于 **`Arch Linux`** 的系统， 请使用 **[Pacman 命令][4]** 安装 git。
 
 ```
 $ sudo pacman -S git
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][5]** to install git.
+对于 **`RHEL/CentOS`** systems, 请使用 **[YUM 命令][5]** 安装 git。
 
 ```
 $ sudo yum install git
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][6]** to install git.
+对于 **`openSUSE Leap`** system, 请使用 **[Zypper 命令][6]** 安装 git。
 
 ```
 $ sudo zypper install git
 ```
 
-We can easily install it by cloning the developer github repository.
+我们可以通过克隆（clone）开发人员的github存储库轻松地安装它。
 
-First clone the Bash-insulter repository.
+首先克隆 Bash-insulter 存储库。
 
 ```
 $ git clone https://github.com/hkbakke/bash-insulter.git bash-insulter
 ```
 
-Move the downloaded file under `/etc` folder.
+将下载的文件移动到文件夹 `/etc` 下。
 
 ```
 $ sudo cp bash-insulter/src/bash.command-not-found /etc/
 ```
 
-Append the following lines into `/etc/bash.bashrc` file.
+将下面的代码添加到 `/etc/bash.bashrc` 文件中。
 
 ```
 $ vi /etc/bash.bashrc
@@ -79,13 +79,13 @@ if [ -f /etc/bash.command-not-found ]; then
 fi
 ```
 
-Run the following command to take the changes to effect.
+运行以下命令使更改生效。
 
 ```
 $ sudo source /etc/bash.bashrc
 ```
 
-Do you want to test this? if so, type some wrong command in terminal and see how it insult you.
+你想测试一下安装是否生效吗？你可以试试在终端上输入一些错误的命令，看看它如何侮辱你。
 
 ```
 $ unam -a
@@ -95,9 +95,9 @@ $ pin 2daygeek.com
 
 ![][8]
 
-If you would like to append your own phrases then navigate to the following file and update it.
+如果您想附加您自己的短语，则导航到以下文件并更新它
 
-You can add your phrases within `messages` section.
+您可以在 `messages` 部分中添加短语。
 
 ```
 # vi /etc/bash.command-not-found
@@ -177,7 +177,7 @@ via: https://www.2daygeek.com/bash-insulter-insults-the-user-when-typing-wrong-c
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zero-mk](https://github.com/zero-mk)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
