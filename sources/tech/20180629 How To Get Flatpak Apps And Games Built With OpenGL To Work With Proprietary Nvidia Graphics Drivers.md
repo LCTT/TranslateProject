@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (geekpi)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (How To Get Flatpak Apps And Games Built With OpenGL To Work With Proprietary Nvidia Graphics Drivers)
+[#]: via: (https://www.linuxuprising.com/2018/06/how-to-get-flatpak-apps-and-games-built.html)
+[#]: author: (Logix https://plus.google.com/118280394805678839070)
+
 How To Get Flatpak Apps And Games Built With OpenGL To Work With Proprietary Nvidia Graphics Drivers
 ======
 **Some applications and games built with OpenGL support and packaged as Flatpak fail to start with proprietary Nvidia drivers. This article explains how to get such Flatpak applications or games them to start, without installing the open source drivers (Nouveau).**
