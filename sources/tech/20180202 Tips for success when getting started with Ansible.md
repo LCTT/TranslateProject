@@ -1,3 +1,5 @@
+jdh8383 is translating.
+
 Tips for success when getting started with Ansible
 ======
 
