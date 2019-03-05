@@ -1,3 +1,5 @@
+Translating by cycoe
+Cycoe 翻译中
 What's a hero without a villain? How to add one to your Python game
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/game-dogs-chess-play-lead.png?itok=NAuhav4Z)
