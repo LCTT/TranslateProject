@@ -7,28 +7,28 @@
 [#]: via: (https://www.2daygeek.com/linux-check-cpu-memory-swap-utilization-percentage/)
 [#]: author: (Vinoth Kumar https://www.2daygeek.com/author/vinoth/)
 
-如何查看Linux下CPU，内存和Swap（交换分区）的利用率？
+如何查看Linux下CPU，内存和Swap（交换分区）的占用率？
 ======
 
-在Linux下有很多可用的命令和选项来查看内存利用情况，但是我并没有看见关于内存利用率的更多的信息。
+在Linux下有很多可用的命令和选项来查看内存占用情况，但是我并没有看见关于内存利用率的更多的信息。
 
-在大多数情况下我们只单独查看内存使用情况，没有考虑究竟占用了多少百分比。
+在大多数情况下我们只单独查看内存使用情况，并没有考虑占用的百分比究竟是多少。
 
 如果你想要了解这些信息，那你看这篇文章就对了。
 
-我们将详细地在这里帮助你摆脱困境。
+我们将会详细地在这里帮助你解决这个问题。
 
 这篇教程将会帮助你在面对Linux服务器下频繁内存高占用情况时，确定内存使用情况。
 
-但是在同时，如果你使用的是`free -m`或者`free -g`，你将不会得到描述清楚的占用情况。
+但是在同时，如果你使用的是`free -m`或者`free -g`，占用情况描述地并不是十分清楚。
 
-这些格式命令属于Linux高级命令。它将会对于Linux专家和中等水平Linux使用者非常有用。
+这些格式化命令属于Linux高级命令。它将会对Linux专家和中等水平Linux使用者非常有用。
 
 ### 方法-1：如何查看Linux下内存占用率？
 
-我们可以使用下面命令的组合来达到此目的。在该方法中，我们使用的是free和awk命令的组合来获取内存占用率。
+我们可以使用下面命令的组合来达到此目的。在该方法中，我们使用的是`free`和`awk`命令的组合来获取内存占用率。
 
-如果你正在寻找其他有关于内存的文章，你可以导航到如下链接。这些文章有 **[free命令][1]** , **[smem 命令][2]** , **[ps_mem 命令][3]** , **[vmstat 命令][4]** and **[多种方式来查看物理内存大小][5]**.
+如果你正在寻找其他有关于内存的文章，你可以导航到如下链接。这些文章有 **[free命令][1]** , **[smem命令][2]** , **[ps_mem命令][3]** , **[vmstat命令][4]** and **[多种方式来查看物理内存大小][5]**.
 
 对于获取不包含百分比符号的`内存`占用率：
 
@@ -40,7 +40,7 @@ $ free -t | awk 'FNR == 2 {print "Current Memory Utilization is : " $3/$2*100}'
 Current Memory Utilization is : 20.4194
 ```
 
-对于获取不包含百分比符号的`Swap（交换空间）`占用率：
+对于获取不包含百分比符号的`Swap（交换分区）`占用率：
 
 ```
 $ free -t | awk 'NR == 3 {print "Current Swap Utilization is : " $3/$2*100}'
@@ -60,7 +60,7 @@ $ free -t | awk 'FNR == 2 {printf("Current Memory Utilization is : %.2f%"), $3/$
 Current Memory Utilization is : 20.42%
 ```
 
-对于获取包含百分比符号及保留两位小数的`Swap（交换空间）`占用率：
+对于获取包含百分比符号及保留两位小数的`Swap（交换分区）`占用率：
 
 ```
 $ free -t | awk 'NR == 3 {printf("Current Swap Utilization is : %.2f%"), $3/$2*100}'
@@ -72,7 +72,7 @@ Current Swap Utilization is : 0.00%
 
 如果你正在寻找有关于内存的其他文章，你可以导航至如下链接。这些链接有 **[使用LVM（逻辑盘卷管理，Logical Volume Manager）创建和扩展Swap交换分区][6]** , **[多种方式创建或扩展Swap交换分区][7]** 和 **[多种方式创建/删除和挂载交换分区文件][8]**。
 
-键入free命令输出更好的相关说明：
+键入free命令会更好地作出阐释：
 
 ```
 $ free
@@ -82,64 +82,56 @@ Swap: 17454 0 17454
 Total: 33322 3730 27322
 ```
 
-下面是一些细节：
+如下是一些细节：
 
-  * **`free:`** free is a standard command to check memory utilization in Linux.
   * **`free:`** free是一个标准命令，用于在Linux下查看内存使用情况。
-  * **`awk:`** awk is a powerful command which is specialized for textual data manipulation.
-  * **`awk:`** awk是一个强大的专门用来做文本数据处理的强大命令。
-  * **`FNR == 2:`** It gives the total number of records for each input file. Basically it’s used to select the given line (Here, it chooses the line number 2).
-  * **`FNR == 2:`** 该命令给出了对于每一个输入文件的记录总数。基本上它用于选择给出的行(针对于这里，它选择了行数字为2的行)
-  * **`NR == 2:`** It gives the total number of records processed. Basically it’s used to filter the given line (Here, it chooses the line number 2)..
-  * **`NR == 2:`** 该命令给出了处理的记录总数。基本上它用于过滤给出的行（针对于这里，它选择的是行数字为2的行）
-  * **`$3/$2*100:`** It divides column 2 with column 3 and it’s multiply the results with 100.
+  * **`awk:`** awk是一个专门用来做文本数据处理的强大命令。
+  * **`FNR == 2:`** 该命令给出了对于每一个输入文件的行数。其基本上用于挑选出给定的行(针对于这里，它选择的是行数为2的行)
+  * **`NR == 2:`** 该命令给出了处理的行总数。其基本上用于过滤给出的行（针对于这里，它选择的是行数为2的行）
   * **`$3/$2*100:`** 该命令将列3除以列2并将结果乘以100。
-  * **`printf:`** It used to format and print data.
-  * **`printf:`** 该命令用已格式化和打印数据。
-  * **`%.2f%:`** By default it prints floating point numbers with 6 decimal places. Use the following format to limit a decimal places.
-  * **`%.2f%:`** 默认情况下，该命令打印保留6位的浮点数。使用后跟的格式来约束小数位。
+  * **`printf:`** 该命令用于格式化和打印数据。
+  * **`%.2f%:`** 默认情况下，其打印小数点后保留6位的浮点数。使用后跟的格式来约束小数位。
 
 
 
-### Method-2: How To Check Memory Utilization Percentage In Linux?
+### 方法-2：如何查看Linux下内存占用率？
 
-We can use the following combination of commands to get this done. In this method, we are using combination of free, grep and awk command to get the memory utilization percentage.
+我们可以使用下面命令的组合来达到此目的。在这种方法中，我们使用`free`,`grep`和`awk`命令的组合来获取内存占用率。
 
-For `Memory` Utilization Percentage without Percent Symbol:
+对于获取不包含百分比符号的`内存`占用率：
 
 ```
 $ free -t | grep Mem | awk '{print "Current Memory Utilization is : " $3/$2*100}'
 Current Memory Utilization is : 20.4228
 ```
 
-For `Swap` Utilization Percentage without Percent Symbol:
+对于获取不包含百分比符号的`Swap（交换分区）`占用率：
 
 ```
 $ free -t | grep Swap | awk '{print "Current Swap Utilization is : " $3/$2*100}'
 Current Swap Utilization is : 0
 ```
 
-For `Memory` Utilization Percentage with Percent Symbol and two decimal places:
+对于获取包含百分比符号及保留两位小数的`内存`占用率：
 
 ```
 $ free -t | grep Mem | awk '{printf("Current Memory Utilization is : %.2f%"), $3/$2*100}'
 Current Memory Utilization is : 20.43%
 ```
 
-For `Swap` Utilization Percentage with Percent Symbol and two decimal places:
-
+对于获取包含百分比符号及保留两位小数的`Swap（交换空间）`占用率：
 ```
 $ free -t | grep Swap | awk '{printf("Current Swap Utilization is : %.2f%"), $3/$2*100}'
 Current Swap Utilization is : 0.00%
 ```
 
-### Method-1: How To Check CPU Utilization Percentage In Linux?
+### 方法-1：如何查看Linux下CPU的占用率？
 
-We can use the following combination of commands to get this done. In this method, we are using combination of top, print and awk command to get the CPU utilization percentage.
+我们可以使用如下命令的组合来达到此目的。在这种方法中，我们使用`top`,`print`和`awk`命令的组合来获取CPU的占用率。
 
-If you are looking for other articles which is related to memory then navigate to the following link. Those are **[top Command][9]** , **[htop Command][10]** , **[atop Command][11]** and **[Glances Command][12]**.
+如果你正在寻找其他有关于CPU（译者勘误，原文为memory)的文章，你可以导航至如下链接。这些文章有 **[top命令][9]** , **[htop命令][10]** , **[atop命令][11]** and **[Glances命令][12]**.
 
-If it shows multiple CPU in the output then you need to use the following method.
+如果在输出中展示的是多个CPU的情况，那么你需要使用下面的方法。
 
 ```
 $ top -b -n1 | grep ^%Cpu
@@ -153,56 +145,56 @@ $ top -b -n1 | grep ^%Cpu
 %Cpu7 : 5.3 us, 0.0 sy, 0.0 ni, 94.7 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st
 ```
 
-For `CPU` Utilization Percentage without Percent Symbol:
+对于获取不包含百分比符号的`CPU`占用率：
 
 ```
 $ top -b -n1 | grep ^%Cpu | awk '{cpu+=$9}END{print "Current CPU Utilization is : " 100-cpu/NR}'
 Current CPU Utilization is : 21.05
 ```
 
-For `CPU` Utilization Percentage with Percent Symbol and two decimal places:
+对于获取包含百分比符号及保留2位小数的`CPU`占用率：
 
 ```
 $ top -b -n1 | grep ^%Cpu | awk '{cpu+=$9}END{printf("Current CPU Utilization is : %.2f%"), 100-cpu/NR}'
 Current CPU Utilization is : 14.81%
 ```
 
-### Method-2: How To Check CPU Utilization Percentage In Linux?
+### 方法-2：如何查看Linux下CPU的占用率？
 
-We can use the following combination of commands to get this done. In this method, we are using combination of top, print/printf and awk command to get the CPU utilization percentage.
+我们可以使用如下命令的组合来达到此目的。在这种方法中，我们使用的是`top`,`print/printf`和`awk`命令的组合来获取CPU的占用率。
 
-If it shows all together CPU(s) in the single output then you need to use the following method.
+如果在单个输出中一起展示了所有的CPU的情况，那么你需要使用下面的方法。
 
 ```
 $ top -b -n1 | grep ^%Cpu
 %Cpu(s): 15.3 us, 7.2 sy, 0.8 ni, 69.0 id, 6.7 wa, 0.0 hi, 1.0 si, 0.0 st
 ```
 
-For `CPU` Utilization Percentage without Percent Symbol:
+对于获取不包含百分比符号的`CPU`占用率：
 
 ```
 $ top -b -n1 | grep ^%Cpu | awk '{print "Current CPU Utilization is : " 100-$8}'
 Current CPU Utilization is : 5.6
 ```
 
-For `CPU` Utilization Percentage with Percent Symbol and two decimal places:
+对于获取包含百分比符号及保留2位小数的`CPU`占用率：
 
 ```
 $ top -b -n1 | grep ^%Cpu | awk '{printf("Current CPU Utilization is : %.2f%"), 100-$8}'
 Current CPU Utilization is : 5.40%
 ```
 
-Details are follow:
+如下是一些细节：
 
-  * **`top:`** top is one of the best command to check currently running process on Linux system.
-  * **`-b:`** -b option, allow the top command to switch in batch mode. It is useful when you run the top command from local system to remote system.
-  * **`-n1:`** Number-of-iterations
-  * **`^%Cpu:`** Filter the lines which starts with %Cpu
-  * **`awk:`** awk is a powerful command which is specialized for textual data manipulation.
-  * **`cpu+=$9:`** For each line, add column 9 to a variable ‘cpu’.
-  * **`printf:`** It used to format and print data.
-  * **`%.2f%:`** By default it prints floating point numbers with 6 decimal places. Use the following format to limit a decimal places.
-  * **`100-cpu/NR:`** Finally print the ‘CPU Average’ by subtracting 100, divided by the number of records.
+  * **`top:`** top命令是一种用于查看当前Linux系统下正在运行的进程的非常好的命令。
+  * **`-b:`** -b选项，允许top命令切换至批处理的模式。当你从本地系统运行top命令至远程系统时，它将会非常有用。
+  * **`-n1:`** 迭代次数
+  * **`^%Cpu:`** 过滤以%CPU开头的行。
+  * **`awk:`** awk是一种专门用来做文本数据处理的强大命令。
+  * **`cpu+=$9:`** 对于每一行，将第9列添加至变量‘cpu'。
+  * **`printf:`** 该命令用于格式化和打印数据。
+  * **`%.2f%:`** 默认情况下，它打印小数点后保留6位的浮点数。使用后跟的格式来限制小数位数。
+  * **`100-cpu/NR:`** 最终打印出’CPU平均占用‘，即用100减去其并除以行数。
 
 
 
