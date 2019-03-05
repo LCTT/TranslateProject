@@ -65,32 +65,30 @@ Pdb, 一个 Python 调试器。
 
 你遵循我的建议，打上 pdb 断点并运行你的测试。然后测试再次失败，但是没有任何一个断点被打到。保留你的断点，并运行测试套件中一个同这个失败的测试非常相似的测试。如果你有个不错的测试，你应该能够找到一个测试。它会击中了你认为你的失败测试应该击中的代码。运行这个测试，然后当它打到你的断点，按下 `w` 并检查调用栈。如果你不知道如何查看因为其他调用而变得混乱的调用栈，那么在调用栈的中间找到属于你的代码，并在其中堆栈中代码的上一行放置一个断点。再试一次新的测试。如果仍然没打到断点，那么继续，向上追踪调用栈并找出你的调用在哪里脱轨了。如果你一直没有打到断点，最后到了追踪的顶部，那么恭喜你，你发现了问题：你的应用程序拼写错了。没有经验，没有经验，一点都没有经验。
 
-### 4. Change things
+### 4. 修改代码
 
-如果你仍觉得迷惑，在你稍微改变了一些的地方尝试新的测试。你能让新的测试跑起来么？有什么不同的呢？有什么相同的呢？尝试改变别的东西。 Once you have your test, and maybe additional tests in place, it is safe to start changing things in the code to see if you can narrow down the problem. Remember to start troubleshooting with a fresh commit so you can easily back out changes that do not help. (This is a reference to version control, if you aren't using version control, it will change your life. Well, maybe it will just make coding easier. See "[A Visual Guide to Version Control][2]" for a nice introduction.)
+如果你仍觉得迷惑，在你稍微改变了一些的地方尝试新的测试。你能让新的测试跑起来么？有什么不同的呢？有什么相同的呢？尝试改变别的东西。当你有了你的测试，可能也还有其他测试，那就可以开始安全地修改代码，确定是否可以缩小问题范围。记得从一个新提交开始解决问题，以便于可以轻松地撤销无效地更改。（这就是版本控制，如果你没有使用版本控制，这将会改变你的生活。好吧，可能它只是让编码更容易。查阅“版本控制可视指南”，以了解更多。）
 
-### 5. Take a break
+### 5. 休息一下
 
-In all seriousness, when it stops feeling like a fun challenge or game and starts becoming really frustrating, your best course of action is to walk away from the problem. Take a break. I highly recommend going for a walk and trying to think about something else.
+尽管如此，当它不再感觉起来像一个有趣的挑战或者游戏而开始变得令人沮丧时，你最好的举措是脱离这个问题。休息一下。我强烈建议你去散步并尝试考虑别的事情。
 
-### 6. Write everything down
+### 6. 把一切写下来
 
-When you come back, if you aren't suddenly inspired to try something, write down any information you have about the problem. This should include:
+当你回来了，如果你没有突然受到启发，那就把你关于这个问题所知的每一个点信息写下来。这应该包括：
 
-  * Exactly the call that is causing the problem
-  * Exactly what happened, including any error messages or related log messages
-  * Exactly what you were expecting to happen
-  * What you have done so far to find the problem and any clues that you have discovered while troubleshooting
+  * 真正造成问题的调用
+  * 真正发生了什么，包括任何错误信息或者相关的日志信息
+  * 你真正期望发生什么
+  * 到目前为止，为了找出问题，你做了什么工作；以及解决问题中你发现的任何线索。
 
+有时这里有很多信息，但相信我，从零碎中挖掘信息是很烦人。所以尽量简洁，但是要完整。
 
-
-Sometimes this is a lot of information, but trust me, it is really annoying trying to pry information out of someone piecemeal. Try to be concise, but complete.
-
-### 7. Ask for help
+### 7. 寻求帮助
 
 I often find that just writing down all the information triggers a thought about something I have not tried yet. Sometimes, of course, I realize what the problem is immediately after hitting the submit button. At any rate, if you still have not thought of anything after writing everything down, try sending an email to someone. First, try colleagues or other people involved in your project, then move on to project email lists. Don't be afraid to ask for help. Most people are kind and helpful, and I have found that to be especially true in the Python community.
 
-Maria McKinley will present [Hunting the Bugs][3] at [PyCascades 2019][4], February 23-24 in Seattle.
+Maria McKinley 将在 [PyCascades 2019][4] 发表[代码查错][3]，二月 23-24，西雅图。
 
 --------------------------------------------------------------------------------
 
