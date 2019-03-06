@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Regex groups and numerals)
 [#]: via: (https://leancrew.com/all-this/2019/02/regex-groups-and-numerals/)
 [#]: author: (Dr.Drang https://leancrew.com)
 
-正则组和数字
+正则表达式的分组和数字
 ======
 
 大约一周前，我在编辑一个程序时想要更改一些变量名。我之前认为这将是一个简单的正则表达式查找/替换。只是这没有我想象的那么简单。
@@ -16,9 +16,9 @@
 
 ![Mistaken BBEdit replacement pattern][2]
 
-我不能简单地 `30` 替换为 `10`，因为代码中有一些与变量无关的数字 `10`。我认为我很聪明，所以我不想写三个非正则表达式替换，`a10`、`v10` 和 `x10` 每个一个。但是我却没有注意到替换模式中的蓝色。如果我这样做了，我会看到 BBEdit 将我的替换模式解释为“匹配组 13，后面跟着 `0`，而不是”匹配组 1，后面跟着 `30`，后者是我想要的。由于匹配组 13 是空白的，因此所有变量名都会被替换为 `0`。
+我不能简单地 `30` 替换为 `10`，因为代码中有一些与变量无关的数字 `10`。我认为我很聪明，所以我不想写三个非正则表达式替换，`a10`、`v10` 和 `x10`，每个一个。但是我却没有注意到替换模式中的蓝色。如果我这样做了，我会看到 BBEdit 将我的替换模式解释为“匹配组 13，后面跟着 `0`，而不是”匹配组 1，后面跟着 `30`，后者是我想要的。由于匹配组 13 是空白的，因此所有变量名都会被替换为 `0`。
 
-你看，BBEdit 可以在搜索模式中匹配多达 99 个组，严格来说，我们应该在替换模式中引用它们时使用两位数字。但在大多数情况下，我们可以使用 `\1` 到 `\9` 而不是 `\01` 到 `\09`，因为这没有歧义。换句话说，如果我尝试将 `a10`、`v10` 和 `x10` 更改为 `az`、`vz` 和 `xz`，那么使用 `\1z`的替换模式就可以了。因为后面的 `z` 意味着不会误解释该模式中 `\1`。
+你看，BBEdit 可以在搜索模式中匹配多达 99 个分组，严格来说，我们应该在替换模式中引用它们时使用两位数字。但在大多数情况下，我们可以使用 `\1` 到 `\9` 而不是 `\01` 到 `\09`，因为这没有歧义。换句话说，如果我尝试将 `a10`、`v10` 和 `x10` 更改为 `az`、`vz` 和 `xz`，那么使用 `\1z`的替换模式就可以了。因为后面的 `z` 意味着不会误解释该模式中 `\1`。
 
 因此，在撤消替换后，我将模式更改为这样：
 
@@ -30,10 +30,9 @@
 
 ![Named BBEdit replacement pattern][4]
 
-在任何情况下，我从来都没有使用过命名组，无论正则表达式是在文本编辑器还是在脚本中。我的总体感觉是，如果模式复杂到我必须使用变量来跟踪所有组，那么我应该停下来并将问题分解为更小的部分。
+我从来都没有使用过命名组，无论正则表达式是在文本编辑器还是在脚本中。我的总体感觉是，如果模式复杂到我必须使用变量来跟踪所有组，那么我应该停下来并将问题分解为更小的部分。
 
-By the way, you may have heard that BBEdit is celebrating its [25th anniversary][5] of not sucking. When a well-documented app has such a long history, the manual starts to accumulate delightful callbacks to the olden days. As I was looking up the notation for named groups in the BBEdit manual, I ran across this note:
-顺便说一下，你可能已经听说 BBEdit 正在庆祝它诞生[25周年][5]。当一个有良好文档的应用有如此历史时，手册的积累能让人愉快地回到过去的日子。当我在 BBEdit 手册中查找命名组的表示法时，我遇到了这个说明：
+顺便说一下，你可能已经听说 BBEdit 正在庆祝它诞生[25周年][5]。当一个有良好文档的应用有如此长的历史时，手册的积累能让人愉快地回到过去的日子。当我在 BBEdit 手册中查找命名组的表示法时，我遇到了这个说明：
 
 ![BBEdit regex manual excerpt][6]
 
@@ -45,8 +44,8 @@ via: https://leancrew.com/all-this/2019/02/regex-groups-and-numerals/
 
 作者：[Dr.Drang][a]
 选题：[lujun9972][b]
-译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[s](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
