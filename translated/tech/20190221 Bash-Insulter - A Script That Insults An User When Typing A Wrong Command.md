@@ -1,60 +1,56 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zero-mk"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 [#]: subject: "Bash-Insulter : A Script That Insults An User When Typing A Wrong Command"
 [#]: via: "https://www.2daygeek.com/bash-insulter-insults-the-user-when-typing-wrong-command/"
 [#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
-Bash-Insulter : 一个在输入错误命令时侮辱用户的脚本
+Bash-Insulter：一个在输入错误命令时嘲讽用户的脚本
 ======
 
-这是一个非常有趣的脚本，每当用户在终端输入错误的命令时，它都会侮辱用户。
+这是一个非常有趣的脚本，每当用户在终端输入错误的命令时，它都会嘲讽用户。
 
-它让你在处理一些问题时感到快乐。
+它让你在解决一些问题时会感到快乐。有的人在受到终端嘲讽的时候感到不愉快。但是，当我受到终端的批评时，我真的很开心。
 
-有的人在受到终端侮辱的时候感到不愉快。但是，当我受到终端的侮辱时，我真的很开心。
-
-这是一个有趣的CLI（译者注：command-line interface） 工具，在你弄错的时候，会用随机短语侮辱你。
-
-此外，它允许您添加自己的短语。
+这是一个有趣的 CLI 工具，在你弄错的时候，会用随机短语嘲讽你。此外，它允许你添加自己的短语。
 
 ### 如何在 Linux 上安装 Bash-Insulter?
 
-在安装 Bash-Insulter 之前，请确保您的系统上安装了 git。如果没有，请使用以下命令安装它。
+在安装 Bash-Insulter 之前，请确保你的系统上安装了 git。如果没有，请使用以下命令安装它。
 
-对于 **`Fedora`** 系统, 请使用 **[DNF 命令][1]** 安装 git
+对于 Fedora 系统, 请使用 [DNF 命令][1] 安装 git。
 
 ```
 $ sudo dnf install git
 ```
 
-对于 **`Debian/Ubuntu`** 系统,，请使用 **[APT-GET 命令][2]** 或者 **[APT 命令][3]** 安装 git。
+对于 Debian/Ubuntu 系统，请使用 [APT-GET 命令][2] 或者 [APT 命令][3] 安装 git。
 
 ```
 $ sudo apt install git
 ```
 
-对于基于 **`Arch Linux`** 的系统， 请使用 **[Pacman 命令][4]** 安装 git。
+对于基于 Arch Linux 的系统，请使用 [Pacman 命令][4] 安装 git。
 
 ```
 $ sudo pacman -S git
 ```
 
-对于 **`RHEL/CentOS`** systems, 请使用 **[YUM 命令][5]** 安装 git。
+对于 RHEL/CentOS 系统，请使用 [YUM 命令][5] 安装 git。
 
 ```
 $ sudo yum install git
 ```
 
-对于 **`openSUSE Leap`** system, 请使用 **[Zypper 命令][6]** 安装 git。
+对于 openSUSE Leap 系统，请使用 [Zypper 命令][6] 安装 git。
 
 ```
 $ sudo zypper install git
 ```
 
-我们可以通过克隆（clone）开发人员的github存储库轻松地安装它。
+我们可以通过<ruby>克隆<rt>clone</rt></ruby>开发人员的 GitHub 存储库轻松地安装它。
 
 首先克隆 Bash-insulter 存储库。
 
@@ -85,7 +81,7 @@ fi
 $ sudo source /etc/bash.bashrc
 ```
 
-你想测试一下安装是否生效吗？你可以试试在终端上输入一些错误的命令，看看它如何侮辱你。
+你想测试一下安装是否生效吗？你可以试试在终端上输入一些错误的命令，看看它如何嘲讽你。
 
 ```
 $ unam -a
@@ -95,9 +91,7 @@ $ pin 2daygeek.com
 
 ![][8]
 
-如果您想附加您自己的短语，则导航到以下文件并更新它
-
-您可以在 `messages` 部分中添加短语。
+如果你想附加你自己的短语，则导航到以下文件并更新它。你可以在 `messages` 部分中添加短语。
 
 ```
 # vi /etc/bash.command-not-found
@@ -178,7 +172,7 @@ via: https://www.2daygeek.com/bash-insulter-insults-the-user-when-typing-wrong-c
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[zero-mk](https://github.com/zero-mk)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
