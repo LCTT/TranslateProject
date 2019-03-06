@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Linux security: Cmd provides visibility, control over user activity)
-[#]: via: (https://www.networkworld.com/article/3342454/linux-security-cmd-provides-visibility-control-over-user-activity.html)
-[#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
+[#]: collector: "lujun9972"
+[#]: translator: "zero-mk "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Linux security: Cmd provides visibility, control over user activity"
+[#]: via: "https://www.networkworld.com/article/3342454/linux-security-cmd-provides-visibility-control-over-user-activity.html"
+[#]: author: "Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/"
 
 Linux security: Cmd provides visibility, control over user activity
 ======
@@ -69,7 +69,7 @@ via: https://www.networkworld.com/article/3342454/linux-security-cmd-provides-vi
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zero-mk](https://github.com/zero-mk)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
