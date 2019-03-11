@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (Flowsnow)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (An introduction to the Pyramid web framework for Python)
