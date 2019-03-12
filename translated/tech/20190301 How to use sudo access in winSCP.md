@@ -7,41 +7,41 @@
 [#]: via: (https://kerneltalks.com/tools/how-to-use-sudo-access-in-winscp/)
 [#]: author: (kerneltalks https://kerneltalks.com)
 
-How to use sudo access in winSCP
+如何在 winSCP 中使用 sudo
 ======
 
-Learn how to use sudo access in winSCP with screenshots.
+用截图了解如何在 winSCP 中使用 sudo
 
 ![How to use sudo access in winSCP][1]sudo access in winSCP
 
-First of all you need to check where is your SFTP server binary located on server you are trying to connect with winSCP.
+首先你需要检查你尝试使用 winSCP 连接的 sftp 服务器的二进制文件的位置。
 
-You can check SFTP server binary location with below command –
+你可以使用以下命令检查 SFTP 服务器二进制文件位置： 
 
 ```
 [root@kerneltalks ~]# cat /etc/ssh/sshd_config |grep -i sftp-server
 Subsystem sftp  /usr/libexec/openssh/sftp-server
 ```
 
-Here you can see sftp server binary is located at `/usr/libexec/openssh/sftp-server`
+你可以看到 sftp 服务器的二进制文件位于 `/usr/libexec/openssh/sftp-server`。
 
-Now open winSCP and click `Advanced` button to open up advanced settings.
+打开 winSCP 并单击“高级”按钮打开高级设置。
 
 ![winSCP advance settings][2]
-winSCP advance settings
+winSCP 高级设置
 
-It will open up advanced setting window like one below. Here select `SFTP `under `Environment` on left hand side panel. You will be presented with option on right hand side.
+它将打开如下高级设置窗口。在左侧面板上选择`环境`下的 `SFTP`。你会在右侧看到选项。
 
-Now, add SFTP server value here with command `sudo su -c` here as displayed in screenshot below –
+现在，使用命令 `sudo su -c` 在这里添加 SFTP 服务器值，如下截图所示：
 
 ![SFTP server setting in winSCP][3]
-SFTP server setting in winSCP
+winSCP 中的 SFTP 服务器设置
 
-So we added `sudo su -c /usr/libexec/openssh/sftp-server` in settings here. Now click Ok and connect to server as you normally do.
+所以我们在设置中添加了 `sudo su -c /usr/libexec/openssh/sftp-server`。单击“确定”并像平常一样连接到服务器。
 
-After connection you will be able to transfer files from directory where you normally need sudo permission to access.
+连接之后，你将可以从需要 sudo 权限的目录传输文件了。
 
-That’s it! You logged to server using winSCP and sudo access.
+完成了！你已经使用 winSCP 使用 sudo 登录服务器了。
 
 --------------------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ via: https://kerneltalks.com/tools/how-to-use-sudo-access-in-winscp/
 
 作者：[kerneltalks][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
