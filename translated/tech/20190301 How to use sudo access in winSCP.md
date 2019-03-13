@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to use sudo access in winSCP)
@@ -10,9 +10,11 @@
 如何在 winSCP 中使用 sudo
 ======
 
-用截图了解如何在 winSCP 中使用 sudo
+> 用截图了解如何在 winSCP 中使用 sudo。
 
-![How to use sudo access in winSCP][1]sudo access in winSCP
+![How to use sudo access in winSCP][1]
+
+*sudo access in winSCP*
 
 首先你需要检查你尝试使用 winSCP 连接的 sftp 服务器的二进制文件的位置。
 
@@ -28,18 +30,20 @@ Subsystem sftp  /usr/libexec/openssh/sftp-server
 打开 winSCP 并单击“高级”按钮打开高级设置。
 
 ![winSCP advance settings][2]
-winSCP 高级设置
 
-它将打开如下高级设置窗口。在左侧面板上选择`环境`下的 `SFTP`。你会在右侧看到选项。
+*winSCP 高级设置*
+
+它将打开如下高级设置窗口。在左侧面板上选择“Environment”下的 “SFTP”。你会在右侧看到选项。
 
 现在，使用命令 `sudo su -c` 在这里添加 SFTP 服务器值，如下截图所示：
 
 ![SFTP server setting in winSCP][3]
-winSCP 中的 SFTP 服务器设置
 
-所以我们在设置中添加了 `sudo su -c /usr/libexec/openssh/sftp-server`。单击“确定”并像平常一样连接到服务器。
+*winSCP 中的 SFTP 服务器设置*
 
-连接之后，你将可以从需要 sudo 权限的目录传输文件了。
+所以我们在设置中添加了 `sudo su -c /usr/libexec/openssh/sftp-server`。单击“Ok”并像平常一样连接到服务器。
+
+连接之后，你将可以从你以前需要 sudo 权限的目录传输文件了。
 
 完成了！你已经使用 winSCP 使用 sudo 登录服务器了。
 
@@ -50,7 +54,7 @@ via: https://kerneltalks.com/tools/how-to-use-sudo-access-in-winscp/
 作者：[kerneltalks][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
