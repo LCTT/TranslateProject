@@ -1,50 +1,50 @@
-[#]: collector: (lujun9972)
-[#]: translator: (zero-MK)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How To Install, Configure And Use Fish Shell In Linux?)
-[#]: via: (https://www.2daygeek.com/linux-fish-shell-friendly-interactive-shell/)
-[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
+[#]: collector: "lujun9972"
+[#]: translator: "zero-MK"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "How To Install, Configure And Use Fish Shell In Linux?"
+[#]: via: "https://www.2daygeek.com/linux-fish-shell-friendly-interactive-shell/"
+[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
-How To Install, Configure And Use Fish Shell In Linux?
+如何在Linux中安装，配置和使用Fish Shell？
 ======
 
-Every Linux administrator might heard the word called shell.
+每个 Linux 管理员都可能听到过 shell 这个词。
 
-Do you know what is shell? Do you know what is the role for shell in Linux? How many shell is available in Linux?
+你知道什么是 shell 吗? 你知道 shell 在 Linux 中的作用是什么吗？ Linux 中有多少 shell 可用？
 
-A shell is a program that provides an interface between a user and kernel.
+shell 是一个程序，它是提供用户和内核之间交互的接口。
 
-kernel is a heart of the Linux operating system that manage everything between user and operating system (OS).
+内核是 Linux 操作系统的核心，它管理用户和操作系统（ OS ）之间的所有内容。
 
-Shell is available for all the users when they launch the terminal.
+Shell 可供所有用户在启动终端时使用。
 
-Once the terminal launched then user can run any commands which is available for him.
+终端启动后，用户可以运行任何可用的命令。
 
-When shell completes the command execution then you will be getting the output on the terminal window.
+当shell完成命令执行时，您将在终端窗口上获取输出。
 
-Bash stands for Bourne Again Shell is the default shell which is running on most of the Linux distribution on today’s.
+Bash 全称是 Bourne Again Shell 是默认的 shell ，它运行在今天的大多数 Linux 发行版上。
 
-It’s very popular and has a lot of features. Today we are going to discuss about the fish shell.
+它非常受欢迎，并具有很多功能。今天我们将讨论 Fish Shell 。
 
-### What Is Fish Shell?
+### 什么是 Fish Shell?
 
-[Fish][1] stands for friendly interactive shell, is a fully-equipped, smart and user-friendly command line shell for Linux which comes with some handy features that is not available in most of the shell.
+[Fish][1]  是友好的交互式 shell ， 是一个功能齐全，智能且对用户友好的 Linux 命令行 shell ，它带有一些在大多数 shell 中都不具备的方便功能。
 
-The features are Autosuggestion, Sane Scripting, Man Page Completions, Web Based configuration and Glorious VGA Color. Are you curious to test it? if so, go ahead and install it by following the below installation steps.
+这些功能包括 自动补全建议，Sane Scripting，手册页完成，基于 Web 的配置器和 Glorious VGA Color 。你对它感到好奇并想测试它吗？如果是这样，请按照以下安装步骤继续安装。
 
-### How To Install Fish Shell In Linux?
+### 如何在 Linux 中安装 Fish Shell ？
 
-It’s very simple to install but it doesn’t available in most of the distributions except few. However, it can be easily installed by using the following [fish repository][2].
+它的安装非常简单，但除了少数几个发行版外，它在大多数发行版中都不可用。但是，可以使用以下 [fish repository][2] 轻松安装。
 
-For **`Arch Linux`** based systems, use **[Pacman Command][3]** to install fish shell.
+对于基于 **`Arch Linux`** 的系统, 使用 **[Pacman Command][3]** 来安装 fish shell。
 
 ```
 $ sudo pacman -S fish
 ```
 
-For **`Ubuntu 16.04/18.04`** systems, use **[APT-GET Command][4]** or **[APT Command][5]** to install fish shell.
+对于 **`Ubuntu 16.04/18.04`** 系统来说,，请使用 **[APT-GET Command][4]** 或者 **[APT Command][5]** 安装 fish shell。
 
 ```
 $ sudo apt-add-repository ppa:fish-shell/release-3
@@ -52,25 +52,25 @@ $ sudo apt-get update
 $ sudo apt-get install fish
 ```
 
-For **`Fedora`** system, use **[DNF Command][6]** to install fish shell.
+对于 **`Fedora`** 系统来说，请使用 **[DNF Command][6]** 安装 fish shell。
 
-For Fedora 29 System:
+对于 Fedora 29 系统来说：
 
 ```
 $ sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/Fedora_29/shells:fish:release:3.repo
 $ sudo dnf install fish
 ```
 
-For Fedora 28 System:
+对于 Fedora 28 系统来说：
 
 ```
 $ sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/Fedora_28/shells:fish:release:3.repo
 $ sudo dnf install fish
 ```
 
-For **`Debian`** systems, use **[APT-GET Command][4]** or **[APT Command][5]** to install fish shell.
+对于 **`Debian`** 系统来说,，请使用 **[APT-GET Command][4]** 或者 **[APT Command][5]** 安装 fish shell。
 
-For Debian 9 System:
+对于 Debian 9 系统来说：
 
 ```
 $ sudo wget -nv https://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key -O Release.key
@@ -80,7 +80,7 @@ $ sudo apt-get update
 $ sudo apt-get install fish
 ```
 
-For Debian 8 System:
+对于 Debian 8 系统来说：
 
 ```
 $ sudo wget -nv https://download.opensuse.org/repositories/shells:fish:release:3/Debian_8.0/Release.key -O Release.key
@@ -90,37 +90,37 @@ $ sudo apt-get update
 $ sudo apt-get install fish
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][7]** to install fish shell.
+对于 **`RHEL/CentOS`** 系统来说，请使用 **[YUM Command][7]** 安装 fish shell。
 
-For RHEL 7 System:
+对于 RHEL 7 系统来说：
 
 ```
 $ sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/RHEL_7/shells:fish:release:3.repo
 $ sudo yum install fish
 ```
 
-For RHEL 6 System:
+对于 RHEL 6 系统来说：
 
 ```
 $ sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/RedHat_RHEL-6/shells:fish:release:3.repo
 $ sudo yum install fish
 ```
 
-For CentOS 7 System:
+对于 CentOS 7 系统来说：
 
 ```
 $ sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_7/shells:fish:release:2.repo
 $ sudo yum install fish
 ```
 
-For CentOS 6 System:
+对于 CentOS 6 系统来说：
 
 ```
 $ sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_6/shells:fish:release:2.repo
 $ sudo yum install fish
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][8]** to install fish shell.
+对于 **`openSUSE Leap`** 系统来说，请使用 **[Zypper Command][8]** 安装 fish shell。
 
 ```
 $ sudo zypper addrepo https://download.opensuse.org/repositories/shells:/fish:/release:/3/openSUSE_Leap_42.3/shells:fish:release:3.repo
@@ -128,9 +128,9 @@ $ suod zypper refresh
 $ sudo zypper install fish
 ```
 
-### How To Use Fish Shell?
+### 如何使用 Fish Shell ？
 
-Once you have successfully installed the fish shell. Simply type `fish` on your terminal, which will automatically switch to the fish shell from your default bash shell.
+一旦你成功安装了 fish shell 。只需在您的终端上输入 `fish` ，它将自动从默认的 bash shell 切换到 fish shell 。
 
 ```
 $ fish
@@ -138,37 +138,37 @@ $ fish
 
 ![][10]
 
-### Auto Suggestions
+### 自动补全建议
 
-When you type any commands in the fish shell, it will auto suggest a command in a light grey color after typing few letters.
+当你在 fish shell 中键入任何命令时，它会在输入几个字母后自动建议一个浅灰色的命令。 
 ![][11]
 
-Once you got a suggestion then simple hit the `Left Arrow Mark` to complete it instead of typing the full command.
+一旦你得到一个建议然后点击 ` Right Arrow Mark`  （译者注：原文是左，错的）就能完成它而不是输入完整的命令。
 ![][12]
 
-Instantly you can access the previous history based on the command by pressing `Up Arrow Mark` after typing a few letters. It’s similar to bash shell `CTRL+r` option.
+您可以在键入几个字母后立即按下  `Up Arrow Mark` 检索该命令以前的历史记录。它类似于 bash shell 的 `CTRL+r `选项。
 
-### Tab Completions
+### Tab 补全
 
-If you would like to see if there are any other possibilities for the given command then simple press the `Tab` button once after typing a few letters.
+如果您想查看给定命令是否还有其他可能性，那么在键入几个字母后，只需按一下 `Tab`  按钮即可。
 ![][13]
 
-Press the `Tab` button one more time to see the full lists.
+再次按  `Tab`  按钮可查看完整列表。
 ![][14]
 
-### Syntax highlighting
+### 语法高亮
 
-fish performs syntax highlighting, that you can see when you are typing any commands in the terminal. Invalid commands are colored by `RED color`.
+fish 执行语法高亮显示，您可以在终端中键入任何命令时看到。 无效的命令被着色为 `RED color` 。
 ![][15]
 
-The same way valid commands are shown in a different color. Also, fish will underline valid file paths when you type and it doesn’t show the underline if the path is not valid.
+同样的，有效命令以不同的颜色显示。此外，当您键入有效的文件路径时，fish会在其下面加下划线，如果路径无效，则不会显示下划线。
 ![][16]
 
-### Web based configuration
+### 基于 Web 的配置器
 
-There is a cool feature is available in the fish shell, that allow us to set colors, prompt, functions, variables, history and bindings via web browser.
+fish shell 中有一个很酷的功能，它允许我们通过网络浏览器设置颜色，提示，功能，变量，历史和绑定。
 
-Run the following command on your terminal to start the web configuration interface. Simply press `Ctrl+c` to exit it.
+在终端上运行以下命令以启动 Web 配置界面。只需按下 `Ctrl+c` 即可退出。
 
 ```
 $ fish_config
@@ -182,9 +182,9 @@ Shutting down.
 
 ### Man Page Completions
 
-Other shells support programmable completions, but only fish generates them automatically by parsing your installed man pages.
+其他 shell 支持 programmable completions, 但只有 fish 可以通过解析已安装的手册页自动生成它们。
 
-To do so, run the below command.
+如果是这样，请运行以下命令
 
 ```
 $ fish_update_completions
@@ -192,18 +192,18 @@ Parsing man pages and writing completions to /home/daygeek/.local/share/fish/gen
  3466 / 3466 : zramctl.8.gz
 ```
 
-### How To Set Fish as default shell
+### 如何将 Fish 设置为默认 shell
 
 If you would like to test the fish shell for some times then you can set the fish shell as your default shell instead of switching it every time.
 
-If so, first get the fish shell location by using the below command.
+如果是这样，首先使用以下命令获取 Fish Shell 的位置。
 
 ```
 $ whereis fish
 fish: /usr/bin/fish /etc/fish /usr/share/fish /usr/share/man/man1/fish.1.gz
 ```
 
-Change your default shell as a fish shell by running the following command.
+通过运行以下命令将默认 shell 更改为 fish shell 。
 
 ```
 $ chsh -s /usr/bin/fish
@@ -211,21 +211,21 @@ $ chsh -s /usr/bin/fish
 
 ![][18]
 
-`Make note:` Just verify whether the fish shell is added into `/etc/shells` directory or not. If no, then run the following command to append it.
+`Make note:` 只需验证 Fish Shell 是否已添加到 `/etc/shells` 目录中。如果不是，则运行以下命令以附加它。
 
 ```
 $ echo /usr/bin/fish | sudo tee -a /etc/shells
 ```
 
-Once you have done the testing and if you would like to come back to the bash shell permanently then use the following command.
+完成测试后，如果要返回 bash shell ，请使用以下命令。
 
-For temporary:
+暂时的：
 
 ```
 $ bash
 ```
 
-For permanent:
+永久性的：
 
 ```
 $ chsh -s /bin/bash
@@ -237,7 +237,7 @@ via: https://www.2daygeek.com/linux-fish-shell-friendly-interactive-shell/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zero-MK](https://github.com/zero-MK)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
