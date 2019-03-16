@@ -3,32 +3,33 @@
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-[#]: subject: (Asynchronous rsync with Emacs, dired and tramp.)
+[#]: subject: (Asynchronous rsync with Emacs，dired and tramp。)
 [#]: via: (https://vxlabs.com/2018/03/30/asynchronous-rsync-with-emacs-dired-and-tramp/)
 [#]: author: (cpbotha https://vxlabs.com/author/cpbotha/)
 
-Asynchronous rsync with Emacs, dired and tramp.
+在 Emacs 的 dired 和 tramp 中异步运行 rsync
 ======
 
-[tmtxt-dired-async][1] by [Trần Xuân Trường][2] is an unfortunately lesser known Emacs package which extends dired, the Emacs file manager, to be able to run rsync and other commands (zip, unzip, downloading) asynchronously.
+[Trần Xuân Trường][2] 写的 [tmtxt-dired-async][1] 是一个不为人知的 Emacs 包，它可以扩展 dired(Emacs 内置的文件管理器)，使之可以异步地运行 rsync 等其他命令 (例如 zip，unzip，downloading)。
 
-This means you can copy gigabytes of directories around whilst still happily continuing with all of your other tasks in the Emacs operating system.
+这意味着你可以拷贝成 G 的目录而不影响 Emacs 的其他任务。
 
-It has a feature where you can add any number of files from different locations into a wait list with `C-c C-a`, and then asynchronously rsync the whole wait list into a final destination directory with `C-c C-v`. This alone is worth the price of admission.
+它的一个功能时让你可以通过 `C-c C-a` 从不同位置添加任意多的文件到一个等待列表中，然后按下 `C-c C-v` 异步地使用 rsync 将整个等待列表中的文件同步到目标目录中 . 光这个功能就值得一试了。
 
-For example here it is pointlessly rsyncing the arduino 1.9 beta archive to another directory:
+例如这里将 arduino 1.9 beta 存档同步到另一个目录中：
+
 
 [![][3]][4]
 
-When the process is complete, the window at the bottom will automatically be killed after 5 seconds. Here is a separate session right after the asynchronous unzipping of the above-mentioned arduino archive:
+整个进度完成后，底部的窗口会在 5 秒后自动退出。下面时异步解压上面的 arduino 存档后出现的另一个会话：
 
 [![][5]][6]
 
-This package has further increased the utility of my dired configuration.
+这个包进一步增加了我 dired 配置的实用性。
 
-I just contributed [a pull request that enables tmtxt-dired-async to rsync to remote tramp-based directories][7], and I immediately used this new functionality to sort a few gigabytes of new photos onto the Linux server.
+我刚刚贡献了 [一个 pull request 来允许 tmtxt-dired-async 同步到远程 tramp 目录中 ][7]，而且我立即使用该功能来将成 G 的新照片传输到 Linux 服务器上。
 
-To add tmtxt-dired-async to your config, download [tmtxt-async-tasks.el][8] (a required library) and [tmtxt-dired-async.el][9] (check that my PR is in there if you plan to use this with tramp) into your `~/.emacs.d/` and add the following to your config:
+若你想配置 tmtxt-dired-async，下载 [tmtxt-async-tasks.el][8]  (被依赖的库) 以及  [tmtxt-dired-async.el][9]  (若你想让它支持 tramp，请确保我的 PR 以及被合并) 到 =~/.emacs.d/= 目录中，然后添加下面配置：
 
 ```
 ;; no MELPA packages of this, so we have to do a simple check here
@@ -50,7 +51,7 @@ To add tmtxt-dired-async to your config, download [tmtxt-async-tasks.el][8] (a r
  (define-key dired-mode-map (kbd "C-c C-q") 'tda/download-to-current-dir))
 ```
 
-Enjoy!
+祝你开心！
 
 
 --------------------------------------------------------------------------------

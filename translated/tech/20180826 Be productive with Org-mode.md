@@ -7,23 +7,23 @@
 [#]: via: (https://www.badykov.com/emacs/2018/08/26/be-productive-with-org-mode/)
 [#]: author: (Ayrat Badykov https://www.badykov.com)
 
-Be productive with Org-mode
+高效使用 Org-mode
 ======
 
 
 ![org-mode-collage][1]
 
-### Introduction
+### 简介
 
-In my [previous post about emacs][2] I mentioned [Org-mode][3], a note manager and organizer. In this post, I’ll describe my day-to-day Org-mode use cases.
+在我 [前篇关于 Emacs 的文章中 ][2] 我提到了 [Org-mode][3]，一个笔记管理工具和组织工具。文本，我将会描述一下我日常的 Org-mode 使用案例。
 
-### Notes and to-do lists
+### 笔记和代办列表
 
-First and foremost, Org-mode is a tool for managing notes and to-do lists and all work in Org-mode is centered around writing notes in plain text files. I manage several kinds of notes using Org-mode.
+首先而且最重要的是，Org-mode 是一个管理笔记和待办列表的工具，Org-mode 的所有工具都聚焦于使用纯文本文件记录笔记。我使用 Org-mode 管理多种笔记。
 
-#### General notes
+#### 一般性笔记
 
-The most basic Org-mode use case is writing simple notes about things that you want to remember. For example, here are my notes about things I’m learning right now:
+Org-mode 最基本的应用场景就是以笔记的形式记录下你想记住的事情。比如，下面是我正在学习的笔记内容：
 
 ```
 * Learn
@@ -51,21 +51,19 @@ The most basic Org-mode use case is writing simple notes about things that you w
 *** Read Erlang in Anger
 ```
 
-How it looks using [org-bullets][4]:
+借助 [org-bullets][4] 它看起来是这样的：
 
 ![notes][5]
 
-In this simple example you can see some of the Org-mode features:
+在这个简单的例子中，你能看到 Org-mode 的一些功能：
 
-  * nested notes
-  * links
-  * lists with checkboxes
+- 笔记允许嵌套
+- 链接
+- 带复选框的列表
 
+#### 项目待办
 
-
-#### Project todos
-
-Often when I’m working on some task I notice things that I can improve or fix. Instead of leaving TODO comment in source code files (bad smell) I use [org-projectile][6] which allows me to write TODO items with a single shortcut in a separate file. Here’s an example of this file:
+我在工作时时常会发现一些能够改进或修复的事情。我并不会在代码文件中留下 TODO 注释 (坏味道)，相反我使用 [org-projectile][6] 来在另一个文件中记录一个 TODO 事项，并留下一个快捷方式。下面是一个该文件的例子：
 
 ```
 * [[elisp:(org-projectile-open-project%20"mana")][mana]] [3/9]
@@ -102,24 +100,24 @@ Often when I’m working on some task I notice things that I can improve or fix.
  CLOSED: [2018-08-26 Вс 11:48]
 ```
 
-How it looks in Emacs:
+它看起来是这样的：
 
 ![project-todos][7]
 
-In this example you can see more Org mode features:
+本例中你能看到更多的 Org mode 功能：
 
-  * todo items have states - `TODO`, `DONE`. You can define your own states (`WAITING` etc)
-  * closed items have `CLOSED` timestamp
-  * some items have priorities - A, B, C.
-  * links can be internal (`[[file:~/...]`)
+- todo 列表具有 `TODO`，`DONE` 两个状态。你还可以定义自己的状态 (`WAITING` 等)
+- 关闭的事项有 `CLOSED` 时间戳
+- 有些事项有优先级 - A，B，C。
+- 链接可以指向文件内部 (`[[file:~/。..]`)
 
 
 
-#### Capture templates
+#### 捕获模板
 
-As described in Org-mode’s documentation, capture lets you quickly store notes with little interruption of your workflow.
+正如 Org-mode 的文档中所描述的，capture 可以在不怎么干扰你工作流的情况下让你快速存储笔记。
 
-I configured several capture templates which help me to quickly create notes about things that I want to remember.
+我配置了许多捕获模板，可以帮我快速记录想要记住的事情。
 
 ```
 (setq org-capture-templates
@@ -139,42 +137,42 @@ I configured several capture templates which help me to quickly create notes abo
 "* %^{book name} by %^{author} %^g")))
 ```
 
-For a book note I should add its name and its author, for a movie note I should add tags etc.
+做书本记录时我需要记下它的名字和作者，做电影记录时我需要记下标签，等等。
 
-### Planning
+### 规划
 
-Another great feature of Org-mode is that you can use it as a day planner. Let’s see an example of one of my days:
+Org-mode 的另一个超棒的功能是你可以用它来作日常规划。让我们来看一个例子：
 
 ![schedule][8]
 
-I didn’t give a lot of thought to this example, it’s my real file for today. It doesn’t look like much but it helps to spend your time on things that important to you and fight with procrastination.
+我没有挖空心思虚构一个例子，这就是我现在真实文件的样子。它看起来内容并不多，但它有助于你花时间在在重要的事情上并且帮你对抗拖延症。
 
-#### Habits
+#### 习惯
 
-From Org mode’s documentation, Org has the ability to track the consistency of a special category of TODOs, called “habits”. I use this feature along with day planning when I want to create new habits:
+根据 Org mode 的文档，Org 能够跟踪一种特殊的代办事情，称为 “习惯”。当我想养成新的习惯时，我会将该功能与日常规划功能一起连用：
 
 ![habits][9]
 
-As you can see currently I’m trying to wake early every day and workout once in two days. Also, it helped to start reading books every day.
+你可以看到，目前我在尝试每天早期并且每两天锻炼一次。另外，它也有助于让我每天阅读书籍。
 
-#### Agenda views
+#### 议事日程视图
 
-Last but not least I use agenda views. Todo items can be scattered throughout different files (in my case daily plan and habits are in separate files), agenda views give an overview of all todo items:
+最后，我还使用议事日程视图功能。待办事项可能分散在不同文件中(比如我就是日常规划和习惯分散在不同文件中)，议事日程视图可以提供所有待办事项的总览：
 
 ![agenda][10]
 
-### More Org mode features
+### 更多 Org mode 功能
+
++ 手机应用 ([Android][https://play.google.com/store/apps/details？id=com.orgzly&hl=en]，[ios][https://itunes.apple.com/app/id1238649962])
+
++ [将 Org mode 文档导出为其他格式 ][https://orgmode.org/manual/Exporting.html](html，markdown，pdf，latex etc)
+
++ 使用 [ledger][https://github.com/ledger/ledger-mode] [追踪财务状况 ][https://orgmode.org/worg/org-tutorials/weaving-a-budget.html]
 
 
-+ Smartphone apps (Android, ios)
+### 总结
 
-+ Exporting Org mode files into different formats (html, markdown, pdf, latex etc)
-
-+ Tracking Finances with ledger
-
-### Conclusion
-
-In this post, I described a small subset of Org-mode’s extensive functionality that helps me be productive every day, spending time on things that important to me.
+本文我描述了 Org-mode 广泛功能中的一小部分，我每天都用它来提高工作效率，把时间花在重要的事情上。
 
 
 --------------------------------------------------------------------------------
