@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (mokshal)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (5 reasons to give Linux for the holidays)
