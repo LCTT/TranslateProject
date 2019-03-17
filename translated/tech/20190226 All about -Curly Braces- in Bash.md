@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (All about {Curly Braces} in Bash)
@@ -9,6 +9,7 @@
 
 浅析 Bash 中的 {花括号}
 ======
+> 让我们继续我们的 Bash 基础之旅，来近距离观察一下花括号，了解一下如何和何时使用它们。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/curly-braces-1920.jpg?itok=cScRhWrX)
 
@@ -70,7 +71,6 @@ month=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec")
 
 ```
 $ echo ${month[3]} # 数组索引从 0 开始，因此 [3] 对应第 4 个元素
-
 Apr
 ```
 
@@ -94,13 +94,12 @@ dec2bin=({0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1})
 
 ```
 $ echo ${dec2bin[25]}
-
 00011001
 ```
 
 对于进制转换，确实还有更好的方法，但这不失为一个有趣的方法。
 
-### <ruby>参数展开<rt>parameter expansion</rt></ruby>
+### 参数展开
 
 再看回前面的
 
@@ -108,7 +107,7 @@ $ echo ${dec2bin[25]}
 echo ${month[3]}
 ```
 
-在这里，花括号的作用就不是构造序列了，而是用于参数展开。顾名思义，参数展开就是将花括号中的变量展开为这个变量实际的内容。
+在这里，花括号的作用就不是构造序列了，而是用于<ruby>参数展开<rt>parameter expansion</rt></ruby>。顾名思义，参数展开就是将花括号中的变量展开为这个变量实际的内容。
 
 我们继续使用上面的 `month` 数组来举例：
 
@@ -132,7 +131,7 @@ a="Too longgg"
 echo ${a%gg}
 ```
 
-可以输出“too long”，也就是去掉了最后的两个 g。
+可以输出 “too long”，也就是去掉了最后的两个 g。
 
 在这里，
 
@@ -140,8 +139,6 @@ echo ${a%gg}
   * `a` 就是需要操作的变量
   * `%` 告诉 shell 需要在展开字符串之后从字符串的末尾去掉某些内容
   * `gg` 是被去掉的内容
-
-
 
 这个特性在转换文件格式的时候会比较有用，我来举个例子：
 
@@ -206,14 +203,6 @@ echo "I found all these PNGs:"; find . -iname "*.png"; echo "Within this bunch o
 
 在后续的文章中，我会介绍其它“包裹”类符号的用法，敬请关注。
 
-相关阅读：
-
-[And, Ampersand, and & in Linux][4]
-
-[Ampersands and File Descriptors in Bash][5]
-
-[Logical & in Bash][2]
-
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/blog/learn/2019/2/all-about-curly-braces-bash
@@ -221,15 +210,12 @@ via: https://www.linux.com/blog/learn/2019/2/all-about-curly-braces-bash
 作者：[Paul Brown][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.linux.com/users/bro66
 [b]: https://github.com/lujun9972
-[1]: https://www.linux.com/blog/learn/2019/1/linux-tools-meaning-dot
-[2]: https://www.linux.com/blog/learn/2019/2/logical-ampersand-bash
+[1]: https://linux.cn/article-10465-1.html
 [3]: http://www.imagemagick.org/
-[4]: https://www.linux.com/blog/learn/2019/2/and-ampersand-and-linux
-[5]: https://www.linux.com/blog/learn/2019/2/ampersands-and-file-descriptors-bash
 
