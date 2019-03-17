@@ -1,3 +1,4 @@
+sanfusu is translating
 Power(Shell) to the people
 ======
 
