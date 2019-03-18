@@ -47,7 +47,7 @@ via: https://www.ostechnix.com/blockchain-2-0-an-introduction/
 
 作者：[EDITOR][a]
 选题：[lujun9972][b]
-译者：[译者 ID](https://github.com/译者ID)
+译者：[sanfusu](https://github.com/sanfusu)
 校对：[校对者 ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux 中国](https://linux.cn/) 荣誉推出
