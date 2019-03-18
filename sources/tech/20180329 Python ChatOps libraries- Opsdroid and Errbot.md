@@ -1,3 +1,4 @@
+tomjlw is translating
 Python ChatOps libraries: Opsdroid and Errbot
 ======
 
@@ -211,7 +212,7 @@ Have you used Errbot or Opsdroid? If so, please leave a comment with your impres
 via: https://opensource.com/article/18/3/python-chatops-libraries-opsdroid-and-errbot
 
 作者：[Jeff Triplett][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tomjlw](https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
