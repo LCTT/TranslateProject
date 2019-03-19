@@ -7,83 +7,82 @@
 [#]: via: (https://www.2daygeek.com/odrive-open-drive-google-drive-gui-client-for-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-ODrive (Open Drive) – Google Drive GUI Client For Linux
+ODrive（Open Drive） - Linux 中的 Google Drive 图形客户端
 ======
 
-This we had discussed in so many times. However, i will give a small introduction about it.
+这个我们已经多次讨论过。但是，我还要简要介绍一下它。
 
-As of now there is no official Google Drive Client for Linux and we need to use unofficial clients.
+截至目前，还没有官方的 Google Drive 的 Linux 客户端，我们需要使用非官方客户端。
 
-There are many applications available in Linux for Google Drive integration.
+Linux 中有许多集成 Google Drive 的应用。
 
-Each application has came out with set of features.
+每个应用都提供了一组功能。
 
-We had written few articles about this in our website in the past.
+我们过去在网站上很少写过此类文章。
 
-Those are **[DriveSync][1]** , **[Google Drive Ocamlfuse Client][2]** and **[Mount Google Drive in Linux Using Nautilus File Manager][3]**.
+这些文章是 **[DriveSync][1]** 、**[Google Drive Ocamlfuse 客户端][2]** 和 **[在 Linux 中使用 Nautilus 文件管理器挂载 Google Drive][3]**。
 
-Today also we are going to discuss about the same topic and the utility name is ODrive.
+今天我们也将讨论相同的主题，程序名字是 ODrive。
 
-### What’s ODrive?
+### ODrive 是什么？
 
-ODrive stands for Open Drive. It’s a GUI client for Google Drive which was written in electron framework.
+ODrive 代表 Open Drive。它是 Google Drive 的图形客户端，它用 electron 框架编写。
 
-It’s simple GUI which allow users to integrate the Google Drive with few steps.
+它简单的图形界面能让用户几步就能集成 Google Drive。
 
-### How To Install & Setup ODrive on Linux?
+### 如何在 Linux 上安装和设置 ODrive？
 
-Since the developer is offering the AppImage package and there is no difficulty for installing the ODrive on Linux.
+由于开发者提供了 AppImage 包，因此在 Linux 上安装 ODrive 没有任何困难。
 
-Simple download the latest ODrive AppImage package from developer github page using **wget Command**.
+只需使用 **wget 命令**从开发者的 github 页面下载最新的 ODrive AppImage 包。
 
 ```
 $ wget https://github.com/liberodark/ODrive/releases/download/0.1.3/odrive-0.1.3-x86_64.AppImage
 ```
 
-You have to set executable file permission to the ODrive AppImage file.
+你必须为 ODrive AppImage 文件设置可执行文件权限。
 
 ```
 $ chmod +x odrive-0.1.3-x86_64.AppImage
 ```
 
-Simple run the following ODrive AppImage file to launch the ODrive GUI for further setup.
+只需运行 ODrive AppImage 文件以启动 ODrive GUI 以进行进一步设置。
 
 ```
 $ ./odrive-0.1.3-x86_64.AppImage
 ```
 
-You might get the same window like below when you ran the above command. Just hit the **`Next`** button for further setup.
+运行上述命令时，可能会看到下面的窗口。只需按下**“下一步”**按钮即可进行进一步设置。
 ![][5]
 
-Click **`Connect`** link to add a Google drive account.
+点击**`连接`**链接添加 Google Drive 帐户。
 ![][6]
 
-Enter your email id which you want to setup a Google Drive account.
+输入你要设置 Google Drive 帐户的电子邮箱。
 ![][7]
 
-Enter your password for the given email id.
+输入邮箱密码。
 ![][8]
 
-Allow ODrive (Open Drive) to access your Google account.
+允许 ODrive（Open Drive） 访问你的 Google 帐户。
 ![][9]
 
-By default, it will choose the folder location. You can change if you want to use the specific one.
+默认情况下，它将选择文件夹位置。如果你要选择特定文件夹，则可以更改。
 ![][10]
 
-Finally hit **`Synchronize`** button to start download the files from Google Drive to your local system.
+最后点击**`同步`**按钮开始将文件从 Google Drive 下载到本地系统。
 ![][11]
 
-Synchronizing is in progress.
+同步正在进行中。
 ![][12]
 
-Once synchronizing is completed. It will show you all files downloaded.
-Once synchronizing is completed. It’s shows you that all the files has been downloaded.
+同步完成后。它会显示所有已下载的文件。
 ![][13]
 
-I have seen all the files were downloaded in the mentioned directory.
+我看到所有文件都下载到上述目录中。
 ![][14]
 
-If you want to sync any new files from local system to Google Drive. Just start the `ODrive` from the application menu but it won’t actual launch the application. But it will be running in the background that we can able to see by using the ps command.
+如果要将本地系统中的任何新文件同步到 Google Drive。只需从应用菜单启动 `ODrive`，但它不会实际启动应用。但它将在后台运行，我们可以使用 ps 命令查看。
 
 ```
 $ ps -df | grep odrive
@@ -91,10 +90,10 @@ $ ps -df | grep odrive
 
 ![][15]
 
-It will automatically sync once you add a new file into the google drive folder. The same has been checked through notification menu. Yes, i can see one file was synced to Google Drive.
+将新文件添加到 Google Drive 文件夹后，它会自动开始同步。从通知菜单中也可以看到。是的，我看到一个文件已同步到 Google Drive 中。
 ![][16]
 
-GUI is not loading after sync, and i’m not sure this functionality. I will check with developer and will add update based on his input.
+同步完成后图形界面没有加载，我不确定这个功能。我会向开发者之后，根据他的反馈更新。
 
 --------------------------------------------------------------------------------
 
@@ -102,7 +101,7 @@ via: https://www.2daygeek.com/odrive-open-drive-google-drive-gui-client-for-linu
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
