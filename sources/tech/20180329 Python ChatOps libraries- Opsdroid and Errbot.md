@@ -1,24 +1,22 @@
-tomjlw is translating
-Python ChatOps libraries: Opsdroid and Errbot
+Python ChatOps 库: Opsdroid 和 Errbot
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/idea_innovation_mobile_phone.png?itok=RqVtvxkd)
-This article was co-written with [Lacey Williams Henschel][1].
+这篇文章由笔者和 [Lacey Williams Henschel][1] 共同编写。
 
-ChatOps is conversation-driven development. The idea is you can write code that is executed in response to something typed in a chat window. As a developer, you could use ChatOps to merge pull requests from Slack, automatically assign a support ticket to someone from a received Facebook message, or check the status of a deployment through IRC.
+ChatOps 是基于会话导向而进行的开发。它的想法是你可以编写能够对聊天窗口中的某些输入进行回复的可执行代码。作为一个开发者，你能够用 ChatOps 从 Slack 合并拉取请求，自动从收到的 Facebook 消息中给某人分配支持票或者通过 IRC 检查开发状态。
 
-In the Python world, the most widely used ChatOps libraries are Opsdroid and Errbot. In this month's Python column, let's chat about what it's like to use them, what each does well, and how to get started with them.
+在 Python 世界，最为广泛使用的 ChatOps 库是 Opsdroid 和 Errbot。在这个月的 Python 专栏，让我们一起聊聊使用它们是怎样的体验，它们各自适用于什么方面以及如何着手使用它们。
 
 ### Opsdroid
 
-[Opsdroid][2] is a relatively young (since 2016) open source chatbot library written in Python. It has good documentation, a great tutorial, and includes plugins to help you connect to popular chat services.
+[Opsdroid][2] 是一个相对年轻的（始于 2016）Python 开源聊天机器人库。它有着良好的开发文档，不错的教程并且包含能够帮助你对接流行的聊天服务的插件。
 
-#### What's built in
+#### 它内建了什么
 
-The library itself doesn't ship with everything you need to get started, but this is by design. The lightweight framework encourages you to enable its existing connectors (what Opsdroid calls the plugins that help you connect to chat services) or write your own, but it doesn't weigh itself down by shipping with connectors you may not need. You can easily enable existing Opsdroid connectors for:
+库本身并没有自带所有你需要上手的东西，但这是故意的。轻量级的框架鼓励你去运用它现存的连接器（Opsdroid 所谓的帮你接入聊天服务的插件）或者去编写你自己的，但是它并不会因自带你所不需要的的连接器而自贬身价。你可以轻松使用现有的 Opsdroid 连接器来接入：
 
-
-+ The command line
++ 命令行
 + Cisco Spark
 + Facebook
 + GitHub
@@ -28,24 +26,21 @@ The library itself doesn't ship with everything you need to get started, but thi
 + Twitter
 + Websockets
 
+Opsdroid 引用使聊天机器人能够展现它们的技能的函数。这些技能其实是 `异步` Python 函数并使用 Opsdroid 叫做“匹配器”的匹配装饰器。你可以设置你的 Opsdroid 项目，来使用同样从你设置文件所在的代码基地来的技能。你也可以从外面的公共或私人仓库调用这些技能。
 
-Opsdroid calls the functions the chatbot performs "skills." Skills are `async` Python functions and use Opsdroid's matching decorators, called "matchers." You can configure your Opsdroid project to use skills from the same codebase your configuration file is in or import skills from outside public or private repositories.
+你同样可以激活一些现存的 Opsdroid 技能包括 [seen][3]，它会告诉你什么时候一个特定用户被聊天机器人所看到以及 [weather][4]，会将天气报告给用户。
 
-You can enable some existing Opsdroid skills as well, including [seen][3], which tells you when a specific user was last seen by the bot, and [weather][4], which will report the weather to the user.
-
-Finally, Opdroid allows you to configure databases using its existing database modules. Current databases with Opsdroid support include:
-
+最后，Opdroid 允许你使用现存的数据库模块设置数据库。现在 Opdroid 支持的数据库包括：
 
 + Mongo
 + Redis
 + SQLite
 
+你可以在你的 Opdroid 项目中的 `configuration.yaml` 文件设置数据库、技能和连接器。
 
-You configure databases, skills, and connectors in the `configuration.yaml` file in your Opsdroid project.
+#### Opsdroid 的优势
 
-#### Opsdroid pros
-
-**Docker support:** Opsdroid is meant to work well in Docker from the get-go. Docker instructions are part of its [installation documentation][5]. Using Opsdroid with Docker Compose is also simple: Set up Opsdroid as a service and when you run `docker-compose up`, your Opsdroid service will start and your chatbot will be ready to chat.
+**Docker 支持：**从一开始 Opsdroid 就打算在 Docker 中良好运行。Docker 指导是它 [安装文档][5] 中的一部分。使用 Opsdroid 和 Docker Copmose 也很简单：将 Opsdroid 设置成一种服务，当你运行 `docker-compose up` 时，你的 Opsdroid 服务将会开启你的聊天机器人也将就绪。
 ```
 version: "3"
 
@@ -65,7 +60,7 @@ services:
 
 ```
 
-**Lots of connectors:** Opsdroid supports nine connectors to services like Slack and GitHub out of the box; all you need to do is enable those connectors in your configuration file and pass necessary tokens or API keys. For example, to enable Opsdroid to post in a Slack channel named `#updates`, add this to the `connectors` section of your configuration file:
+**丰富的连接器：**  Opsdroid 支持九种从外部接入像 Slack 和 Github 等服务的连接器。你所要做的一切就是在你的设置文件中激活那些连接器然后把必须的口令或者 API 密匙传过去。比如为了激活 Opsdroid 以在一个叫做 `#updates` 的 Slack 频道发帖，你需要将以下代码加入你设置文件的 `connectors` 部分：
 ```
  - name: slack
 
@@ -75,21 +70,19 @@ services:
 
 ```
 
-You will have to [add a bot user][6] to your Slack workspace before configuring Opsdroid to connect to Slack.
+在设置 Opsdroid 以接入 Slack 之前你需要[添加一个机器人用户][6]。
 
-If you need to connect to a service that Opsdroid does not support, there are instructions for adding your own connectors in the [docs][7].
+如果你需要接入一个 Opsdroid 不支持的服务，在[文档][7]里有有添加你自己的连接器的教程。
 
-**Pretty good docs.** Especially for a young-ish library in active development, Opsdroid's docs are very helpful. The docs include a [tutorial][8] that leads you through creating a couple of different basic skills. The Opsdroid documentation on [skills][9], [connectors][7], [databases][10], and [matchers][11] is also clear.
+**相当不错的文档：** 特别是对于一个在积极开发中的新兴库来说，Opsdroid 的文档十分有帮助。这些文档包括一篇带你创建几个不同的基本技能的[教程][8]。Opsdroid 在[技能][9]，[连接器][7]，[数据库][10]，以及[匹配器][11]方面的文档也十分清晰。
 
-The repositories for its supported skills and connectors provide helpful example code for when you start writing your own custom skills and connectors.
+**自然语言处理：**它所支持的技能和连接器的仓库为它的技能提供了富有帮助的示范代码。它同样提供了几个包括 [Dialogflow][12]，[luis.ai][13]，[Recast.AI][14] 以及 [wit.ai][15] 的 NLP API。
 
-**Natural language processing:** Opsdroid supports regular expressions for its skills, but also several NLP APIs, including [Dialogflow][12], [luis.ai][13], [Recast.AI][14], and [wit.ai][15].
+#### 对 Opsdroid 可能的考虑
 
-#### Possible Opsdroid concern
+Opsdroid 对它的一部分连接器还没有激活全部的特性。比如说，Slack API 允许你向你的消息添加颜色柱，图片以及其他的“附件”。Opsdroid Slack 连接器并没有激活“附件”特性，所以如果那些特性对你来说很重要的话，你需要编写一个自定义的 Slack 连接器。如果连接器缺少一个你需要的特性，Opsdroid 将欢迎你的[贡献][16]。文档中可以使用更多的例子，特别是对于预料到的使用场景。
 
-Opsdroid doesn't yet enable the full features of some of its connectors. For example, the Slack API allows you to add color bars, images, and other "attachments" to your message. The Opsdroid Slack connector doesn't enable the "attachments" feature, so you would need to write a custom Slack connector if those features were important to you. If a connector is missing a feature you need, though, Opsdroid would welcome your [contribution][16]. The docs could use some more examples, especially of expected use cases.
-
-#### Example usage
+#### 示例用法
 
 `hello/__init__.py`
 ```
@@ -131,35 +124,35 @@ skills:
 
 ### Errbot
 
-[Errbot][17] is a batteries-included open source chatbot. Errbot was released in 2012 and has everything anyone would expect from a mature project, including good documentation, a great tutorial, and plenty of plugins to help you connect to existing popular chat services.
+[Errbot][17] 是一个功能齐全的开源聊天机器人。Errbot 发行于2012年并且拥有人们从一个成熟的项目能期待的一切，包括良好的文档，优秀的教程以及许多帮你连入现存的流行聊天服务的插件。
 
-#### What's built in
+#### 它内建了什么
 
-Unlike Opsdroid, which takes a more lightweight approach, Errbot ships with everything you need to build a customized bot safely.
+不像采用了一个较轻量级途径的 Opsdroid，Errbot 安全地自带了你需要创建一个自定义机器人的一切东西。
 
-Errbot includes support for XMPP, IRC, Slack, Hipchat, and Telegram services natively. It lists support for 10 other services through community-supplied backends.
+Errbot 包括了对于本地 XMPP， IRC， Slack， Hipchat 以及 Telegram 服务的支持。它通过社区支持的后端列出了另外十种服务。
 
-#### Errbot pros
+#### Errbot 的优势
 
-**Good docs:** Errbot's docs are mature and easy to use.
+**良好的文档：** Errbot 的文档成熟易读。
 
-**Dynamic plugin architecture:** Errbot allow you to securely install, uninstall, update, enable, and disable plugins by chatting with the bot. This makes development and adding features easy. For the security conscious, this can all be locked down thanks to Errbot's granular permission system.
+**动态插件架构：** Errbot 允许你通过和聊天机器人交谈安全安装，卸载，更新，激活以及禁用插件。这使得开发和添加特性十分简便。感谢 Errbot 的颗粒性授权系统，出于安全意识这所有的一切都可以被锁闭。
 
-Errbot uses your plugin docstrings to generate documentation for available commands when someone types `!help`, which makes it easier to know what each command does.
+当某个人输入 `!help`，Errbot 使用你的插件文档字符串来为可获取的命令生成文档，这使得了解每行命令的作用更加简便。
 
-**Built-in administration and security:** Errbot allows you to restrict lists of users who have administrative rights and even has fine-grained access controls. For example, you can restrict which commands may be called by specific users and/or specific rooms.
+**內建的管理和安全特性：** Errbot 允许你限制拥有管理员权限甚至细粒度访问控制用户列表。比如说你可以限制特定用户或房间访问特定命令。
 
-**Extensive plugin framework:** Errbot supports hooks, callbacks, subcommands, webhooks, polling, and many [more features][18]. If those aren't enough, you can even write [Dynamic plugins][19]. This feature is useful if you want to enable chat commands based on what commands are available on a remote server.
+**额外的插件框架：** Errbot 支持钩子，回调，子命令，webhook，轮询以及其它[多得多的特性][18]。如果那些还不够，你甚至可以编写[动态插件][19]。当你需要基于在远程服务器上什么命令可以获取来激活聊天命令时，这个特性十分有用。
 
-**Ships with a testing framework:** Errbot supports [pytest][20] and ships with some useful utilities that make testing your plugins easy and possible. Its "[testing your plugins][21]" docs are well thought out and provide enough to get started.
+**自带测试框架：** Errbot 支持 [pytest][20] 同时也自带一些能使测试插件变的可能且简便的有用设施。它“[测试你的插件][21]”的文档出于深思熟虑并提供足够的资料让你上手。
 
-#### Possible Errbot concerns
+#### 对 Errbot 可能的考虑
 
-**Initial !:** By default, Errbot commands are issued starting with an exclamation mark (`!help` and `!hello`). Some people may like this, but others may find it annoying. Thankfully, this is easy to turn off.
+**首先 !：** 默认情况下，Errbot 命令发出时以一个惊叹号打头（`!help` 以及 `!hello`）。一些人可能会喜欢这样，但是另一些人可能认为这让人烦恼。谢天谢地，这很容易关掉。
 
-**Plugin metadata:** At first, Errbot's [Hello World][22] plugin example seems easy to use. However, I couldn't get my plugin to load until I read further into the tutorial and discovered that I also needed a `.plug` file, a file Errbot uses to load plugins. This is a pretty minor nitpick, but it wasn't obvious to me until I dug further into the docs.
+**插件元数据** 首先，Errbot 的 [Hello World][22] 插件示例看上去易于使用。然而我无法加载我的插件直到我进一步阅读了教程并发现我还需要一个 `.plug` 文档，一个 Errbot 用来加载插件的文档。这可能比较吹毛求疵了，但是在我深挖文档之前，这对我来说都不是显而易见的。
 
-#### Example usage
+### 示例用法
 
 `hello.py`
 ```
@@ -205,7 +198,7 @@ Description = Example "Hello" plugin
 
 ```
 
-Have you used Errbot or Opsdroid? If so, please leave a comment with your impressions on these tools.
+你用过 Errbot 或 Opsdroid 吗？如果用过请留下关于你对于这些工具印象的留言。
 
 --------------------------------------------------------------------------------
 
