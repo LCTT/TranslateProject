@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How To Parse And Pretty Print JSON With Linux Commandline Tools)
-[#]: via: (https://www.ostechnix.com/how-to-parse-and-pretty-print-json-with-linux-commandline-tools/)
-[#]: author: (EDITOR https://www.ostechnix.com/author/editor/)
+[#]: collector: "lujun9972"
+[#]: translator: "zhangxiangping "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "How To Parse And Pretty Print JSON With Linux Commandline Tools"
+[#]: via: "https://www.ostechnix.com/how-to-parse-and-pretty-print-json-with-linux-commandline-tools/"
+[#]: author: "EDITOR https://www.ostechnix.com/author/editor/"
 
 How To Parse And Pretty Print JSON With Linux Commandline Tools
 ======
