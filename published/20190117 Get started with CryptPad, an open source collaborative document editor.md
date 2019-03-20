@@ -1,18 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10636-1.html)
 [#]: subject: (Get started with CryptPad, an open source collaborative document editor)
 [#]: via: (https://opensource.com/article/19/1/productivity-tool-cryptpad)
 [#]: author: (Kevin Sonney https://opensource.com/users/ksonney (Kevin Sonney))
 
-开始使用 CryptPad，一个开源的协作文档编辑器
+开始使用 CryptPad 吧，一个开源的协作文档编辑器
 ======
-使用 CryptPad 安全地共享你的笔记、文档、看板等，这是我们在开源工具系列中的第 5 个工具，它将使你在 2019 年更高效。
+
+> 使用 CryptPad 安全地共享你的笔记、文档、看板等，这是我们在开源工具系列中的第 5 个工具，它将使你在 2019 年更高效。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/web_browser_desktop_devlopment_design_system_computer.jpg?itok=pfqRrJgh)
 
-每年年初似乎都有疯狂的冲动，想方设法提高工作效率。新年的决议，开始一年的权利，当然，“与旧的，与新的”的态度都有助于实现这一目标。通常的一轮建议严重偏向封闭源和专有软件。它不一定是这样。
+每年年初似乎都有疯狂的冲动想提高工作效率。新年的决心，渴望开启新的一年，当然，“抛弃旧的，拥抱新的”的态度促成了这一切。通常这时的建议严重偏向闭源和专有软件，但事实上并不用这样。
 
 这是我挑选出的 19 个新的（或者对你而言新的）开源工具中的第 5 个工具来帮助你在 2019 年更有效率。
 
@@ -28,7 +30,7 @@
 
 ![](https://opensource.com/sites/default/files/uploads/cryptpad-2.png)
 
-然而，CryptPad 的真正强大之处在于它的共享和协作功能。共享文档只需在“共享”选项中获取可共享 URL，CryptPad 支持使用 iframe 标签嵌入其他网站的文档。可以在“编辑”或“查看”模式下使用密码和会过期的链接共享文档。内置聊天能够让编辑者相互交谈（请注意，具有浏览权限的人也可以看到聊天但无法发表评论）。
+然而，CryptPad 的真正强大之处在于它的共享和协作功能。共享文档只需在“共享”选项中获取可共享 URL，CryptPad 支持使用 `<iframe>` 标签嵌入其他网站的文档。可以在“编辑”或“查看”模式下使用密码和会过期的链接共享文档。内置聊天能够让编辑者相互交谈（请注意，具有浏览权限的人也可以看到聊天但无法发表评论）。
 
 ![](https://opensource.com/sites/default/files/pictures/cryptpad-3.png)
 
@@ -46,7 +48,7 @@ via: https://opensource.com/article/19/1/productivity-tool-cryptpad
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
