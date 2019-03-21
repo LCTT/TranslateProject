@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lujun9972)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10639-1.html)
 [#]: subject: (Asynchronous rsync with Emacs，dired and tramp。)
 [#]: via: (https://vxlabs.com/2018/03/30/asynchronous-rsync-with-emacs-dired-and-tramp/)
 [#]: author: (cpbotha https://vxlabs.com/author/cpbotha/)
@@ -60,7 +60,7 @@ via: https://vxlabs.com/2018/03/30/asynchronous-rsync-with-emacs-dired-and-tramp
 作者：[cpbotha][a]
 选题：[lujun9972][b]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

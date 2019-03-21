@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 iWant – The Decentralized Peer To Peer File Sharing Commandline Application
 ======
 
