@@ -1,18 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10642-1.html)
 [#]: subject: (Get started with Cypht, an open source email client)
 [#]: via: (https://opensource.com/article/19/1/productivity-tool-cypht-email)
 [#]: author: (Kevin Sonney https://opensource.com/users/ksonney (Kevin Sonney))
 
-开始使用 Cypht，一个开源的电子邮件客户端
+开始使用 Cypht 吧，一个开源的电子邮件客户端
 ======
-使用 Cypht 将你的电子邮件和新闻源集成到一个界面中，这是我们 19 个开源工具系列中的第 4 个，它将使你在 2019 年更高效。
+
+> 使用 Cypht 将你的电子邮件和新闻源集成到一个界面中，这是我们 19 个开源工具系列中的第 4 个，它将使你在 2019 年更高效。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/email_mail_box_envelope_send_blue.jpg?itok=6Epj47H6)
 
-每年年初似乎都有疯狂的冲动，想方设法提高工作效率。新年的决议，开始一年的权利，当然，“与旧的，与新的”的态度都有助于实现这一目标。通常的一轮建议严重偏向封闭源和专有软件。它不一定是这样。
+每年年初似乎都有疯狂的冲动想提高工作效率。新年的决心，渴望开启新的一年，当然，“抛弃旧的，拥抱新的”的态度促成了这一切。通常这时的建议严重偏向闭源和专有软件，但事实上并不用这样。
 
 这是我挑选出的 19 个新的（或者对你而言新的）开源工具中的第 4 个工具来帮助你在 2019 年更有效率。
 
@@ -26,7 +28,7 @@
 
 ![](https://opensource.com/sites/default/files/uploads/cypht-2.png)
 
-它使用简化的 HTML 消息来显示邮件，或者你也可以将其设置为查看纯文本版本。由于 Cypht 不会加载远程图像（以帮助维护安全性），HTML 渲染可能有点粗糙，但它足以完成工作。你将看到包含大量富文本邮件的纯文本视图 - 这意味着很多链接并且难以阅读。我不会说是 Cypht 的问题，因为这确实是发件人所做的，但它确实降低了阅读体验。阅读新闻源大致相同，但它们与你的电子邮件帐户集成，这意味着可以轻松获取最新的（我有时会遇到问题）。
+它使用简化的 HTML 消息来显示邮件，或者你也可以将其设置为查看纯文本版本。由于 Cypht 不会加载远程图像（以帮助维护安全性），HTML 渲染可能有点粗糙，但它足以完成工作。你将看到包含大量富文本邮件的纯文本视图 —— 这意味着很多链接并且难以阅读。我不会说是 Cypht 的问题，因为这确实是发件人所做的，但它确实降低了阅读体验。阅读新闻源大致相同，但它们与你的电子邮件帐户集成，这意味着可以轻松获取最新的（我有时会遇到问题）。
 
 ![](https://opensource.com/sites/default/files/uploads/cypht-3.png)
 
@@ -34,7 +36,7 @@
 
 ![](https://opensource.com/sites/default/files/pictures/cypht-4.png)
 
-本地[安装 Cypht][4] 非常容易。虽然它不适用容器或类似技术，但安装说明非常清晰且易于遵循，并且不需要我做任何更改。在我的笔记本上，从安装开始到首次登录大约需要 10 分钟。服务器上的共享安装使用相同的步骤，因此它应该大致相同。
+本地[安装 Cypht][4] 非常容易。虽然它不使用容器或类似技术，但安装说明非常清晰且易于遵循，并且不需要我做任何更改。在我的笔记本上，从安装开始到首次登录大约需要 10 分钟。服务器上的共享安装使用相同的步骤，因此它应该大致相同。
 
 最后，Cypht 是桌面和基于 Web 的电子邮件客户端的绝佳替代方案，它有简单的界面，可帮助你快速有效地处理电子邮件。
 
@@ -45,7 +47,7 @@ via: https://opensource.com/article/19/1/productivity-tool-cypht-email
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
