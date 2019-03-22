@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "qhwdw"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "3 popular programming languages you can learn with Raspberry Pi"
-[#]: via: "https://opensource.com/article/19/3/programming-languages-raspberry-pi"
-[#]: author: "Anderson Silva https://opensource.com/users/ansilva"
+[#]: collector: (lujun9972)
+[#]: translator: (qhwdw)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (3 popular programming languages you can learn with Raspberry Pi)
+[#]: via: (https://opensource.com/article/19/3/programming-languages-raspberry-pi)
+[#]: author: (Anderson Silva https://opensource.com/users/ansilva)
 
 可以使用树莓派学习的 3 种流行编程语言
 ======
