@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (qhwdw)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Learn Linux with the Raspberry Pi)
