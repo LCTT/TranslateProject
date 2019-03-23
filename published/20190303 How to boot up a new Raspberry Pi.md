@@ -1,15 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (qhwdw)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10644-1.html)
 [#]: subject: (How to boot up a new Raspberry Pi)
 [#]: via: (https://opensource.com/article/19/3/how-boot-new-raspberry-pi)
 [#]: author: (Anderson Silva https://opensource.com/users/ansilva)
 
-如何启动一个新的树莓派
+树莓派使用入门：如何启动一个新的树莓派
 ======
-在本系列文章的第三篇中，我们将教你开始使用树莓派，学习如何安装一个 Linux 操作系统。
+> 在本系列文章的第三篇中，我们将教你开始使用树莓派，学习如何安装一个 Linux 操作系统。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/programming_code_keyboard_orange_hands.png?itok=G6tJ_64Y)
 
 如果你按顺序看我们本系列的文章，那么你已经 [选择][1] 和 [购买][2] 了你的树莓派和外围设备，现在，你将要去使用它。在第三篇文章中，我们来看一下你需要做些什么才能让它启动起来。
@@ -20,11 +21,11 @@
 
 ### 如何安装 Raspbian
 
-你拿到新树莓派的第一件事情就是将它的操作系统安装到一个 Micro SD 卡上。尽管树莓派上可用的操作系统（基于 Linux 的或非基于 Linux 的都有）很多，但本系列课程将专注于 [Raspbian][3]，它是树莓派的官方 Linux 版本。
+你拿到新树莓派的第一件事情就是将它的操作系统安装到一个 Micro SD 卡上。尽管树莓派上可用的操作系统很多（基于 Linux 的或非基于 Linux 的都有），但本系列课程将专注于 [Raspbian][3]，它是树莓派的官方 Linux 版本。
 
 ![](https://opensource.com/sites/default/files/uploads/raspbian.png)
 
-安装 Raspbian 的最简单的方式是使用 [NOOBS][4]，它是 "New Out Of Box Software” 的缩写。树莓派官方提供了非常详细的 [NOOBS 文档][5]，因此，我就不在这里重复这些安装指令了。
+安装 Raspbian 的最简单的方式是使用 [NOOBS][4]，它是 “New Out Of Box Software” 的缩写。树莓派官方提供了非常详细的 [NOOBS 文档][5]，因此，我就不在这里重复这些安装指令了。
 
 NOOBS 可以让你选择安装以下的这些操作系统：
 
@@ -47,14 +48,14 @@ via: https://opensource.com/article/19/3/how-boot-new-raspberry-pi
 作者：[Anderson Silva][a]
 选题：[lujun9972][b]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/ansilva
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/article/19/3/which-raspberry-pi-choose
-[2]: https://opensource.com/article/19/2/how-buy-raspberry-pi
+[1]: https://linux.cn/article-10611-1.html
+[2]: https://linux.cn/article-10615-1.html
 [3]: https://www.raspbian.org/RaspbianFAQ
 [4]: https://www.raspberrypi.org/downloads/noobs/
 [5]: https://www.raspberrypi.org/documentation/installation/noobs.md
