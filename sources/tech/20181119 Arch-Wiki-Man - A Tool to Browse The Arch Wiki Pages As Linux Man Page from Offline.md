@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Auk7F7)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Arch-Wiki-Man – A Tool to Browse The Arch Wiki Pages As Linux Man Page from Offline)
