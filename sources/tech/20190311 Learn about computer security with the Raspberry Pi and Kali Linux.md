@@ -7,32 +7,32 @@
 [#]: via: (https://opensource.com/article/19/3/computer-security-raspberry-pi)
 [#]: author: (Anderson Silva https://opensource.com/users/ansilva)
 
-Learn about computer security with the Raspberry Pi and Kali Linux
+通过树莓派和 kali Linux 学习计算机安全
 ======
-Raspberry Pi is a great way to learn about computer security. Learn how in the 11th article in our getting-started series.
+树莓派是学习计算机安全的一个好方法。在我们入门系列的第 11 篇文章中会进行学习。
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/security_privacy_lock.png?itok=ZWjrpFzx)
 
-Is there a hotter topic in technology than securing your computer? Some experts will tell you that there is no such thing as perfect security. They joke that if you want your server or application to be truly secure, then turn off your server, unplug it from the network, and put it in a safe somewhere. The problem with that should be obvious: What good is an app or server that nobody can use?
+是否有比保护你的计算机更热门的技术？一些专家会告诉你，没有绝对安全的系统。他们开玩笑说，如果你想要你的服务器或者应用程序真正的安全，就关掉你的服务器，从网络上断线，然后把它放在一个安全的地方。但问题是显而易见的：没人能用的应用程序或者服务器有什么用？
 
-That's the conundrum around security. How can we make something secure enough and still usable and valuable? I am not a security expert by any means, although I hope to be one day. With that in mind, I thought it would make sense to share some ideas about what you can do with a Raspberry Pi to learn more about security.
+这是围绕安全的一个难题，我们如何才能在保证安全性的同时，让服务器或应用程序依然可用且有价值？我无论如何都不是一个安全专家，虽然我希望有一天我能是。考虑到这一点，对于你能用树莓派做什么，分享和这有关的想法来学习计算机安全，我认为是有意义的。
 
-I should note that, like the other articles in this series dedicated to Raspberry Pi beginners, my goal is not to dive in deep, rather to light a fire of interest for you to learn more about these topics.
+我会注意到，就像本系列中其他写给树莓派初学者的文章一样，我的目标不是深入研究，而是起个头，让你有兴趣去了解更多与这些主题相关的东西。
 
 ### Kali Linux
 
-When it comes to "doing security things," one of the Linux distributions that comes to mind is [Kali Linux][1]. Kali's development is primarily focused on forensics and penetration testing. It has more than 600 preinstalled [penetration-testing programs][2] to test your computer's security, and a [forensics mode][3], which prevents it from touching the internal hard drive or swap space of the system being examined.
+当我们谈到“做一些安全方面的事”的时候，出现在脑海中的一个 Linux 发行版就是 Kali Linux。kali Linux 的开发主要集中在调查取证和渗透测试方面。它有超过 600 个已经预先安装好了的渗透测试工具来测试你的计算机的安全性，以及取证模式，它可以防止自己接触到内部的硬盘驱动器或是被检查系统的交换空间。
 
 ![](https://opensource.com/sites/default/files/uploads/raspberrypi_11_kali.png)
 
-Like Raspbian, Kali Linux is based on the Debian distribution, and you can find directions on installing it on the Raspberry Pi in its main [documentation portal][4]. If you installed Raspbian or another Linux distribution on your Raspberry Pi, you should have no problem installing Kali. Kali Linux's creators have even put together [training, workshops, and certifications][5] to help boost your career in the security field.
+就像 Raspbian 一样，Kali Linux 基于 Debian 的发行版，你可以在 kali 的主文档门户网页上找到将它安装在树莓派上的文档（译者注：截至到翻译时，该网页是这个：https://docs.kali.org/kali-on-arm/install-kali-linux-arm-raspberry-pi）。如果你已经在你的树莓派上安装了 Raspbian 或者是其他的 Linux 发行版。那么你装 Kali 应该是没问题的，Kali 的创造者甚至将培训、研讨会和职业认证整合到了一起，以此来帮助提升你在安全领域内的职业生涯。
 
-### Other Linux distros
+### 其他的 Linux 发行版
 
-Most standard Linux distributions, like Raspbian, Ubuntu, and Fedora, also have [many security tools available][6] in their repositories. Some great tools to explore include [Nmap][7], [Wireshark][8], [auditctl][9], and [SELinux][10].
+大多数的标准 Linux 发行版，比如 Raspbian，Ubuntu 和 Fedora 这些，在它们的仓库里同样也有很多可用的安全工具。一些很棒的探测工具包括 Nmap，Wireshark，auditctl，和 SELinux。
 
-### Projects
+### 项目
 
-There are many other security-related projects you can run on your Raspberry Pi, such as [Honeypots][11], [Ad blockers][12], and [USB sanitizers][13]. Take some time and learn about them!
+你可以在树莓派上运行很多其他的安全相关的项目，例如蜜罐，广告拦截器和 USB 清洁器。花些时间了解它们！
 
 --------------------------------------------------------------------------------
 
