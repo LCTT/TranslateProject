@@ -23,7 +23,7 @@ Arch Linux Mirrorlist Manager
 
 这些服务器的最终目标时让每个国家都有多个镜像。这样就能让当地的用户可以快速升级系统。然而，这并不绝对。有时别国的镜像反而更快。
 
-###Arch Linux Mirrorlist Manager 让在 ArchLinux 中管理镜像更简单
+### Arch Linux Mirrorlist Manager 让在 ArchLinux 中管理镜像更简单
 
 ！[Arch Linux Mirrorlist Manager][2]
 主界面
