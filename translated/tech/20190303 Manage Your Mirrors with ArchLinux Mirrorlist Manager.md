@@ -7,36 +7,36 @@
 [#]:via:(https://itsfoss。com/archlinux-mirrorlist-manager)
 [#]:author:(JohnPaulhttps://itsfoss.com/author/john/)
 
-使用Arch Linux Mirrorlist Manager管理你的镜像
+使用 Arch Linux Mirrorlist Manager 管理你的镜像
 ======
 
-**Arch Linux Mirrorlist Manager时一个简单的图形化程序，它让你可以方便地管理ArchLinux中的镜像。**
+**Arch Linux Mirrorlist Manager 时一个简单的图形化程序，它让你可以方便地管理 ArchLinux 中的镜像。**
 
-对于Linux用户来说，保持好的镜像列表非常重要。今天我们来介绍一个用来管理Arch镜像列表的应用程序。
+对于 Linux 用户来说，保持好的镜像列表非常重要。今天我们来介绍一个用来管理 Arch 镜像列表的应用程序。
 
 ！[Arch Linux Mirrorlist Manager][1]
 Arch Linux Mirrorlist Manager
 
-###什么是镜像?
+### 什么是镜像？
 
-至新手，Linux操作系统有赖于分布全球的的一系列服务器。这些服务器包含了特定发行版的所有可用的软件包的相同副本。这就是为什么它们被称为“镜像”。
+至新手，Linux 操作系统有赖于分布全球的的一系列服务器。这些服务器包含了特定发行版的所有可用的软件包的相同副本。这就是为什么它们被称为“镜像”。
 
 这些服务器的最终目标时让每个国家都有多个镜像。这样就能让当地的用户可以快速升级系统。然而，这并不绝对。有时别国的镜像反而更快。
 
-###Arch Linux Mirrorlist Manager让在ArchLinux中管理镜像更简单
+###Arch Linux Mirrorlist Manager 让在 ArchLinux 中管理镜像更简单
 
 ！[Arch Linux Mirrorlist Manager][2]
 主界面
 
-在Arch中[管理并对有效镜像进行排序][3]不是个简单的事情。它需要用到很长的命令。还好，有人想出了一个解决方案。
+在 Arch 中[管理并对有效镜像进行排序 ][3] 不是个简单的事情。它需要用到很长的命令。还好，有人想出了一个解决方案。
 
-去年，[RizwanHasan][4]用Python编写了一个名为[Arch Linux Mirrorlist Manager][5]的Qt应用程序。你可能对Rizwan这个名字感到眼熟，因为这不是第一次我们在本站介绍他做的玩意了。一年多前，我介绍过一个名为[MagpieOS][6]的基于Arch的新Linux发行版就是Rizwan创造的。我想Rizwan创造MagpieOS的经历激励了他创建了这个程序。
+去年，[RizwanHasan][4] 用 Python 编写了一个名为 [Arch Linux Mirrorlist Manager][5] 的 Qt 应用程序。你可能对 Rizwan 这个名字感到眼熟，因为这不是第一次我们在本站介绍他做的玩意了。一年多前，我介绍过一个名为 [MagpieOS][6] 的基于 Arch 的新 Linux 发行版就是 Rizwan 创造的。我想 Rizwan 创造 MagpieOS 的经历激励了他创建了这个程序。
 
-Arch Linux Mirrorlist Manager的功能并不多。它让你根据回应速度对镜像进行排序，并可以根据数量和国家进行过滤。
+Arch Linux Mirrorlist Manager 的功能并不多。它让你根据回应速度对镜像进行排序，并可以根据数量和国家进行过滤。
 
-也就是说，若你在德国，你可以限制只保留在位于德国的最快的3个镜像。
+也就是说，若你在德国，你可以限制只保留在位于德国的最快的 3 个镜像。
 
-###安装Arch Linux Mirrorlist Manager
+### 安装 Arch Linux Mirrorlist Manager
 
 ```
 它仅适用于 Arch Linux 用户
@@ -60,15 +60,15 @@ Manjaro的镜像管理器替代者
 注意: Pacman-mirrors 仅仅适用于 **Manjaro**.
 ```
 
-Arch Linux Mirrorlist Manager包含在[ArchUserRepository][8]中。高级Arch用户可以直接从[theGitHubpage][9]下载PKGBUILD。
+Arch Linux Mirrorlist Manager 包含在 [ArchUserRepository][8] 中。高级 Arch 用户可以直接从 [theGitHubpage][9] 下载 PKGBUILD。
 
-###对Arch Linux Mirrorlist Manager的最后思考
+### 对 Arch Linux Mirrorlist Manager 的最后思考
 
-虽然[Arch Linux Mirrorlist Manager][5]对我不太有用，我很高兴有它的存在。这说明Linux用户正在努力让Linux更n加易于使用。正如我之前说过的，在Arch中管理镜像并不容易。Rizwan的小工具可以让Arch对新手更加友好。
+虽然 [Arch Linux Mirrorlist Manager][5] 对我不太有用，我很高兴有它的存在。这说明 Linux 用户正在努力让 Linux 更 n 加易于使用。正如我之前说过的，在 Arch 中管理镜像并不容易。Rizwan 的小工具可以让 Arch 对新手更加友好。
 
-你有用过Arch Linux Mirrorlist Manager吗?你是怎么管理Arch镜像的?请在下面的评论告诉我。
+你有用过 Arch Linux Mirrorlist Manager 吗？你是怎么管理 Arch 镜像的？请在下面的评论告诉我。
 
-如果你觉的本文有趣的话，请花点时间将它分享到社交媒体，HackerNews或[Reddit][10]中去。
+如果你觉的本文有趣的话，请花点时间将它分享到社交媒体，HackerNews 或 [Reddit][10] 中去。
 
 
 --------------------------------------------------------------------------------
