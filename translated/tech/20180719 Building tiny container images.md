@@ -1,113 +1,84 @@
 如何打造更小巧的容器镜像
 ======
+> 五种优化 Linux 容器大小和构建更小的镜像的方法。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/containers_scale_performance.jpg?itok=R7jyMeQf)
 
-[Docker][1] 近几年的爆炸性发展让大家逐渐了解到容器和容器镜像的概念。尽管 Linux 容器技术在很早之前就已经出现，这项技术近来的蓬勃发展却还是要归功于 Docker 对用户友好的命令行界面以及使用 Dockerfile 轻松构建镜像的方式。纵然 Docker 大大降低了入门容器技术的难度，但构建一个兼具功能强大、体积小巧的容器镜像的过程中，有很多技巧需要了解。
+[Docker][1] 近几年的爆炸性发展让大家逐渐了解到容器和容器镜像的概念。尽管 Linux 容器技术在很早之前就已经出现，这项技术近来的蓬勃发展却还是要归功于 Docker 对用户友好的命令行界面以及使用 Dockerfile 格式轻松构建镜像的方式。纵然 Docker 大大降低了入门容器技术的难度，但构建一个兼具功能强大、体积小巧的容器镜像的过程中，有很多技巧需要了解。
 
-### 清理不必要的文件
+### 第一步：清理不必要的文件
 
 这一步和在普通服务器上清理文件没有太大的区别，而且要清理得更加仔细。一个小体积的容器镜像在传输方面有很大的优势，同时，在磁盘上存储大量不必要的数据也是对资源的一种浪费。这个原则对于所有服务器来说都是合适的。
 
 清理容器镜像中的缓存文件可以有效缩小镜像体积。下面的对比是分别使用 `dnf` 安装 [Nginx][2] 构建的镜像和使用 `yum` 安装 Nginx 后清理缓存文件构建的镜像：
+
 ```
 # Dockerfile with cache
-
 FROM fedora:28
-
 LABEL maintainer Chris Collins <collins.christopher@gmail.com>
-
-
 
 RUN dnf install -y nginx
 
-
-
 -----
-
-
 
 # Dockerfile w/o cache
-
 FROM fedora:28
-
 LABEL maintainer Chris Collins <collins.christopher@gmail.com>
 
-
-
 RUN dnf install -y nginx \
-
         && dnf clean all \
-
         && rm -rf /var/cache/yum
-
-
 
 -----
 
-
-
 [chris@krang] $ docker build -t cache -f Dockerfile .  
-
-[chris@krang] $ docker images --format "{{.Repository}}: {{.Size}}"
-
+[chris@krang] $ docker images --format "{{.Repository}}: {{.Size}}" 
 | head -n 1
-
 cache: 464 MB
 
-
-
 [chris@krang] $ docker build -t no-cache -f Dockerfile-wo-cache .
-
 [chris@krang] $ docker images --format "{{.Repository}}: {{.Size}}"  | head -n 1
-
 no-cache: 271 MB
-
 ```
 
-从上面的结果来看，清理缓存文件的效果相当显著。和清除了 `yum` 缓存文件的容器镜像相比，不清除 `dnf` 缓存文件构建出来的容器镜像体积接近前者的两倍。除此以外，包管理器缓存文件、Ruby gem 临时文件、`nodejs` 缓存文件，甚至是下载的源码 tarball 最好都全部清理掉。
+从上面的结果来看，清理缓存文件的效果相当显著。和清除了 `yum` 缓存文件的容器镜像相比，不清除 `dnf` 元数据和缓存文件构建出来的容器镜像体积接近前者的两倍。除此以外，包管理器缓存文件、Ruby gem 临时文件、nodejs 缓存文件，甚至是下载的源码 tarball 最好都全部清理掉。
 
 ### 层：一个潜在的隐患
 
 很不幸（当你往下读，你会发现这是不幸中的万幸），根据容器层的概念，不能简单地向 Dockerfile 中写一句 `RUN rm -rf /var/cache/yum` 就完事儿了。因为 Dockerfile 的每一条命令都以一个层的形式存储，并一层层地叠加。所以，如果你是这样写的：
+
 ```
 RUN dnf install -y nginx
-
 RUN dnf clean all
-
 RUN rm -rf /var/cache/yum
-
 ```
 
-你的容器镜像就会包含三层，而 `RUN dnf install -y nginx` 这一层仍然会保留着那些缓存文件，然后在另外两层中被移除，但缓存仍然是存在的，只是你在最终的容器镜像中见不到它们而已。
+你的容器镜像就会包含三层，而 `RUN dnf install -y nginx` 这一层仍然会保留着那些缓存文件，然后在另外两层中被移除。但缓存仍然是存在的，只是因为你把一个文件系统挂载在另外一个文件系统顶部，文件仍然在那里，只不过你见不到也访问不到它们而已。
 
 在上一节的示例中，你会看到正确的做法是将几条命令连接起来，在产生缓存文件的同一层里把缓存文件清理掉：
+
 ```
 RUN dnf install -y nginx \
-
         && dnf clean all \
-
         && rm -rf /var/cache/yum
-
 ```
 
-这样就把几条命令连成了一条命令，在最终的镜像中只占用一个层。这样只会稍微多耗费一点点构建容器镜像的时间，但被清理掉的缓存文件就不会留存在最终的镜像中了。这是一个很好的折中方法，只需要把一些相关的命令（例如 `yum install` 和 `yum clean all`、下载文件、解压文件、移除 tarball 等等）连接成一个命令，就可以在最终的容器镜像中节省出大量体积，Docker 层也能更好地发挥作用。
+这样就把几条命令连成了一条命令，在最终的镜像中只占用一个层。这样只会浪费一点缓存的好处，稍微多耗费一点点构建容器镜像的时间，但被清理掉的缓存文件就不会留存在最终的镜像中了。作为一个折中方法，只需要把一些相关的命令（例如 `yum install` 和 `yum clean all`、下载文件、解压文件、移除 tarball 等等）连接成一个命令，就可以在最终的容器镜像中节省出大量体积，Docker 层也能更好地发挥作用。
 
-层还有一个更隐蔽的特性。每一层都记录了文件的更改，这里的更改并不仅仅指文件是否存在、文件内容是否被改动，而是包括文件属性在内的所有更改。因此即使是对文件使用了 `chmod` 操作也会被记录在层中。
+层还有一个更隐蔽的特性。每一层都记录了文件的更改，这里的更改并不仅仅指文件是否存在、文件内容是否被改动，而是包括文件属性在内的所有更改。因此即使是对文件使用了 `chmod` 操作也会被在新的层创建文件的副本。
 
 下面是一次 `docker images` 命令的输出内容。其中容器镜像 `layer_test_1` 是仅在 CentOS 基础镜像中增加了一个 1GB 大小的文件后构建出来的镜像，而容器镜像 `layer_test_2` 是使用了 `FROM layer_test_1` 语句，仅仅再执行一条 `chmod u+x` 命令后构建出来的镜像。
+
 ```
 layer_test_2        latest       e11b5e58e2fc           7 seconds ago           2.35 GB
-
 layer_test_1        latest       6eca792a4ebe           2 minutes ago           1.27 GB
-
 ```
 
-如你所见，`layer_test_2` 镜像比 `layer_test_1` 镜像大了 1GB 以上。尽管 `layer_test_2` 基于 `layer_test_1` 且只比 `layer_test_1` 多出一层，但恰好就在这多出来的一层中包含了一个额外的 1GB 的文件。在构建容器镜像的过程中，如果在单独一层中进行移动、更改、删除文件，都会出现类似的结果。
+如你所见，`layer_test_2` 镜像比 `layer_test_1` 镜像大了 1GB 以上。尽管 `layer_test_2` 基于 `layer_test_1` 且，只比 `layer_test_1` 多出一层，但恰好就在这多出来的一层中包含了一个额外的 1GB 的文件。在构建容器镜像的过程中，如果在单独一层中进行移动、更改、删除文件，都会出现类似的结果。
 
 ### 专用镜像和公用镜像
 
-就有这么一个亲身经历：我们的项目重度依赖于 [Ruby on Rails][3]，于是我们开始使用容器。一开始我们就建立了一个 Ruby 的基础镜像供所有的团队使用，为了简单起见（实际上这样并不好），我们使用 [rbenv][4] 将 Ruby 最新的 4 个版本都安装到了这个镜像当中，目的是让开发人员只用这个镜像就可以将使用不同版本 Ruby 的应用程序迁移到容器中。我们当时还认为这是一个有点大但兼容性相当好的镜像，因为这个镜像可以同时满足各个团队的使用。
+有这么一个亲身经历：我们的项目重度依赖于 [Ruby on Rails][3]，于是我们开始使用容器。一开始我们就建立了一个 Ruby 的基础镜像供所有的团队使用，为了简单起见（实际上这样并不好），我们使用 [rbenv][4] 将 Ruby 最新的 4 个版本都安装到了这个镜像当中，目的是让开发人员只用这个镜像就可以将使用不同版本 Ruby 的应用程序迁移到容器中。我们当时还认为这是一个有点大但兼容性相当好的镜像，因为这个镜像可以同时满足各个团队的使用。
 
 实际上这是费力不讨好的。如果将不同版本应用程序安装在独立的镜像中，可以很轻松地实现镜像的自动化维护。同时，还可以在应用程序接近生命周期结束前提前做好预防措施，以免产生不可控的后果。庞大的公用镜像也会对资源造成浪费，当我们后来将这个庞大的镜像按照 Ruby 版本进行拆分之后，每个基于这些基础镜像构建出来的应用镜像体积都会比原来缩小很多，节省了大量的服务器存储资源。
 
