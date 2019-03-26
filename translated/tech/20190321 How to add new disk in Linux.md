@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (luckyele)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,43 +7,40 @@
 [#]: via: (https://kerneltalks.com/hardware-config/how-to-add-new-disk-in-linux/)
 [#]: author: (kerneltalks https://kerneltalks.com)
 
-How to add new disk in Linux
+如何在Linux中添加新磁盘
 ======
 
 * * *
 
-_Step by step procedure to add disk in Linux machine_
+_在Linux机器中逐步添加磁盘的过程_
 
 ![New disk addition in Linux][1]
 
-In this article we will walk you through steps to add new disk in Linux machine. Adding raw disk to linux machine may very depending upon the type of server you have but once disk is presented to machine, procedure of getting it to mount points is almost same.
+本文将向您介绍在Linux机器中添加新磁盘的步骤。将原始磁盘添加到 Linux 机器可能非常依赖于您所拥有的服务器类型，但是一旦将磁盘提供给机器，将其添加到挂载点的过程几乎相同。 
 
-**Objective** : Add new 10GB disk to server and create 5GB mount point out of it using LVM and newly created volume group.
-
-* * *
-
-### Adding raw disk to Linux machine
-
-If you are using AWS EC2 Linux server, you may [follow these steps][2] to add raw disk. If you are on VMware Linux VM you will have different set of steps to follow to add disk. If you are running physical rack mount/blade server then adding disk will be a physical task.
-
-Now once the disk is attached to Linux machine physically/virtually, it will be identified by kernel and then our rally starts.
+**目标** : 向服务器添加新的 10GB 磁盘，并使用 lvm 和新创建的卷组创建 5GB 装载点。
 
 * * *
 
-### Identifying newly added disk in Linux
+### 向 Linux 机器添加原始磁盘
 
-After attachment of raw disk, you need to ask kernel to [scan new disk][3]. Mostly its done now automatically by kernel in new versions.
+如果您使用的是 AWS EC2 Linux 服务器，可以 [按照以下步骤][2] 添加原始磁盘。 如果使用的是 VMware Linux VM，那么需要按照不同的步骤来添加磁盘。如果您正在运行物理机架安装/刀片服务器，那么添加磁盘将是一项物理任务。
 
-First thing is to identify newly added disk and its name in kernel. There are numerous ways to achieve this. I will list few –
+一旦磁盘物理/虚拟地连接到 Linux 机器上，它将被内核识别。
 
-  * You can observer `lsblk` output before and after adding/scanning disk to get new disk name.
-  * Check newly created disk files in `/dev` filesystem. Match timestamp of file and disk addition time.
-  * Observer `fdisk -l` output before and after adding/scanning disk to get new disk name.
+* * *
 
+### 识别 Linux 最新添加的磁盘
 
+原始磁盘连接后，需要让内核去 [扫描新磁盘][3]。在新版中，它主要是由内核自动完成。
 
-For our example I am using AWS EC2 server and I added 5GB disk to my server. here is my lsblk output –
+第一件事是在内核中识别新添加的磁盘及其名称。实现这一点的方法有很多，以下作少量列举 –
 
+  * 可以在添加/扫描磁盘前后观察 `lsblk` 输出，以获取新的磁盘名。
+  * 检查 `/dev` 文件系统中新创建的磁盘文件。匹配文件和磁盘添加时间的时间戳。
+  * 观察 `fdisk-l` 添加/扫描磁盘前后的输出，以获取新的磁盘名。
+
+在本示例中，我使用的是 AWS EC2 服务器，向服务器添加了 5GB 磁盘。我的 lsblk 输出如下： –
 
 ```
 [root@kerneltalks ~]# lsblk
@@ -54,25 +51,23 @@ xvda    202:0    0  10G  0 disk
 xvdf    202:80   0  10G  0 disk
 ```
 
-You can see xvdf is our newly added disk. Full path for disk is `/dev/xvdf`.
+可以看到 xvdf 是新添加的磁盘。完整路径是 `/dev/xvdf`。
 
 * * *
 
-### Add new disk in LVM
+### 在 LVM 中添加新磁盘
 
-We are using LVM here since its widely used and flexible volume manager on Linux plateform. Make sure you have `lvm` or `lvm2` [package installed on your system][4]. If not, [install lvm/lvm2 package][5].
+我们这里使用 LVM，因为它是 Linux 平台上广泛使用的非常灵活的卷管理器。确认已安装 `lvm` 或 `lvm2` [安装在系统上的程序包][4]. 如未安装，请 [安装 lvm/lvm2 程序包][5].
 
-Now, we are going to add this RAW disk in Logical Volume Manager and create 10GB of mount point out of it. List of commands you need to follow are –
+现在，我们将在逻辑卷管理器中添加这个原始磁盘，并从中创建 10GB 的挂接点。所用到的命令如下 –
 
   * [pvcreate][6]
   * [vgcreate][7]
   * [lvcreate][8]
 
+如果要将磁盘添加到现有挂接点，并使用其空间来[扩展挂接点][9] ，则 `vgcreate` 应替换为 `vgextend`。
 
-
-If you are willing to add disk to existing mount point and use its space to [extend mount point][9] then `vgcreate` should be replaced by `vgextend`.
-
-Sample outputs from my session –
+会话示例输出如下： –
 
 ```
 [root@kerneltalks ~]# pvcreate /dev/xvdf
@@ -83,7 +78,7 @@ Sample outputs from my session –
   Logical volume "lvdata" created.
 ```
 
-Now, you have logical volume created. You need to format it with filesystem on your choice and mount it. We are choosing ext4 filesystem here and formatting using `mkfs.ext4` .
+现在, 已完成逻辑卷创建。您需要使用所选的文件系统格式化它，并将其载入。在这里选择ext4文件系统，并使用 `mkfs.ext4` 进行格式化。
 
 ```
 [root@kerneltalks ~]# mkfs.ext4 /dev/vgdata/lvdata
@@ -111,9 +106,9 @@ Writing superblocks and filesystem accounting information: done
 
 * * *
 
-### Mounting volume from new disk on mount point
+### 在挂载点上从新磁盘挂载卷
 
-Lets mount the logical volume of 5GB which we created and formatted on /data mount point using `mount` command.
+使用 `mount` 命令，在 /data 安装点上安装已创建并格式化的5GB逻辑卷。
 
 ```
 [root@kerneltalks ~]# mount /dev/vgdata/lvdata /data
@@ -122,9 +117,9 @@ Filesystem                 Size  Used Avail Use% Mounted on
 /dev/mapper/vgdata-lvdata  4.8G   20M  4.6G   1% /data
 ```
 
-Verify your mount point with df command as above and you are all done! You can always add an entry in [/etc/fstab][10] to make this mount persistent over reboots.
+使用df命令验证挂载点。如上所述，您都完成了！您可以在 [/etc/fstab][10] 中添加一个条目，以便在重新启动时保持此装载。
 
-You have attached 10GB disk to Linux machine and created 5GB mount point out of it!
+您已将10GB磁盘连接到 Linux 计算机，并创建了 5GB 挂载点！
 
 --------------------------------------------------------------------------------
 
@@ -132,7 +127,7 @@ via: https://kerneltalks.com/hardware-config/how-to-add-new-disk-in-linux/
 
 作者：[kerneltalks][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[luckyele](https://github.com/luckyele/)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
