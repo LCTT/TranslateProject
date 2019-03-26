@@ -1,4 +1,4 @@
-[#]: translator: (Modrisco)
+Modrisco is translating
 10 Games You Can Play on Linux with Wine
 ======
 ![](https://www.maketecheasier.com/assets/uploads/2017/09/wine-games-feat.jpg)
