@@ -1,3 +1,11 @@
+[#]: collector: (lujun9972)
+[#]: translator: (runningwater)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (What a shell dotfile can do for you)
+[#]: via: (https://opensource.com/article/18/9/shell-dotfile)
+[#]: author: (H.Waldo Grunenwald https://opensource.com/users/gwaldo)
 What a shell dotfile can do for you
 ======
 
@@ -223,7 +231,7 @@ via: https://opensource.com/article/18/9/shell-dotfile
 
 作者：[H.Waldo Grunenwald][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

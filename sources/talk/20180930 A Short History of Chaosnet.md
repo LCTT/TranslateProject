@@ -1,3 +1,4 @@
+acyanbird translating
 A Short History of Chaosnet
 ======
 If you fire up `dig` and run a DNS query for `google.com`, you will get a response somewhat like the following:
