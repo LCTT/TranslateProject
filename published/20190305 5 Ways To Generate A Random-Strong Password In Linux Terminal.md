@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (leommxj)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10657-1.html)
 [#]: subject: (5 Ways To Generate A Random/Strong Password In Linux Terminal)
 [#]: via: (https://www.2daygeek.com/5-ways-to-generate-a-random-strong-password-in-linux-terminal/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -10,9 +10,7 @@
 在 Linux 终端下生成随机/强密码的五种方法
 ======
 
-最近我们在网站上发表过一篇关于 **[密码强度与密码分数检查][1]** 的文章。
-
-它可以帮助你检查你的密码的强度和分数。
+最近我们在网站上发表过一篇关于 [检查密码复杂性/强度和评分][1] 的文章。它可以帮助你检查你的密码的强度和评分。
 
 我们可以手工创建我们需要的密码。但如果你想要为多个用户或服务器生成密码，解决方案是什么呢？
 
@@ -20,57 +18,55 @@
 
 这些工具可以为你生成高强度随机密码。如果你想要为多个用户和服务器更新密码，请继续读下去。
 
-这些工具易于使用，这也是我喜欢用它们的原因。默认情况下它们会生成一个足够强壮的密码，你也可以通过使用其他可用的选项来生成一个超强的密码。
+这些工具易于使用，这也是我喜欢用它们的原因。默认情况下它们会生成一个足够健壮的密码，你也可以通过使用其他可用的选项来生成一个超强的密码。
 
 它会帮助你生成符合下列要求的超强密码。密码长度至少有 12-15 个字符，包括字母（大写及小写），数字及特殊符号。
 
 工具如下：
 
-  * `pwgen:` pwgen 程序生成易于人类记忆并且尽可能安全的密码。
-  * `openssl:` openssl 是一个用来从 shell 中调用 OpenSSL 加密库提供的多种密码学函数的命令行工具。
-  * `gpg:` OpenPGP 加密/签名工具。
-  * `mkpasswd:` 生成新密码，可以选择直接应用给一名用户。
-  * `makepasswd:` makepasswd 使用 /dev/urandom 生成真随机密码，比起好记它更重视安全性。
-  * `/dev/urandom file` 两个特殊的字符文件 /dev/random 和 /dev/urandom （自 Linux 1.3.30 起） 提供了内核随机数生成器的接口。
-  * `md5sum:` md5sum 是一个用来计算及校验 128-bit MD5 哈希的程序。
-  * `sha256sum:` sha256sum 被设计用来使用 SHA-256 算法（SHA-2系列，摘要长度为256位）校验数据完整性。
-  * `sha1pass:` sha1pass 生成一个 SHA1 密码哈希。在命令缺少盐值的情况下，将会生成一个随机的盐值向量。
-
-
+  * `pwgen`：生成易于人类记忆并且尽可能安全的密码。
+  * `openssl`：是一个用来从 shell 中调用 OpenSSL 加密库提供的多种密码学函数的命令行工具。
+  * `gpg`：OpenPGP 加密/签名工具。
+  * `mkpasswd`：生成新密码，可以选择直接设置给一名用户。
+  * `makepasswd`：使用 `/dev/urandom` 生成真随机密码，比起好记它更重视安全性。
+  * `/dev/urandom` 文件：两个特殊的字符文件 `/dev/random` 和 `/dev/urandom` （自 Linux 1.3.30 起出现）提供了内核随机数生成器的接口。
+  * `md5sum`：是一个用来计算及校验 128 位 MD5 哈希的程序。
+  * `sha256sum`：被设计用来使用 SHA-256 算法（SHA-2 系列，摘要长度为 256 位）校验数据完整性。
+  * `sha1pass`：生成一个 SHA1 密码哈希。在命令缺少盐值的情况下，将会生成一个随机的盐值向量。
 
 ### 怎么用 pwgen 命令在 linux 下生成一个随机的强壮密码？
 
-pwgen 程序生成易于人类记忆并且尽可能安全的密码。
+`pwgen` 程序生成易于人类记忆并且尽可能安全的密码。
 
 易于人类记忆的密码永远都不会像完全随机的密码一样安全。
 
 使用 `-s` 选项来生成完全随机，难于记忆的密码。由于我们记不住，这些密码应该只用于机器。
 
-在 **`Fedora`** 系统中，使用 **[DNF 命令][2]** 来安装 pwgen。
+在 Fedora 系统中，使用 [DNF 命令][2] 来安装 `pwgen`。
 
 ```
 $ sudo dnf install pwgen
 ```
 
-在 **`Debian/Ubuntu`** 系统中，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 来安装 pwgen。
+在 Debian/Ubuntu 系统中，使用 [APT-GET 命令][3] 或 [APT 命令][4] 来安装 `pwgen`。
 
 ```
 $ sudo apt install pwgen
 ```
 
-在 **`Arch Linux`** 系统中，使用 **[Pacman 命令][5]** 来安装 pwgen。
+在 Arch Linux 系统中，使用 [Pacman 命令][5] 来安装 `pwgen`。
 
 ```
 $ sudo pacman -S pwgen
 ```
 
-在 **`RHEL/CentOS`** 系统中，使用 **[YUM 命令][6]** 来安装 pwgen。
+在 RHEL/CentOS 系统中，使用 [YUM 命令][6] 来安装 `pwgen`。
 
 ```
 $ sudo yum install pwgen
 ```
 
-在 **`openSUSE Leap`** 系统中，使用 **[Zypper 命令][7]** 来安装pwgen。
+在 openSUSE Leap 系统中，使用 [Zypper 命令][7] 来安装 `pwgen`。
 
 ```
 $ sudo zypper install pwgen
@@ -106,7 +102,7 @@ Sid1aeji mohj4Ko7 lieDi0pe Zeemah6a thuevu2E phi4Ohsh paiKeix1 ooz1Ceph
 ahV4yore ue2laePh fu1eThui qui7aePh Fahth1nu ohk9puLo aiBeez0b Neengai5
 ```
 
-生成安全的随机密码，使用 pwgen 命令的 `-s` 选项。 
+生成安全的随机密码，使用 `pwgen` 命令的 `-s` 选项。 
 
 ```
 $ pwgen -s
@@ -132,14 +128,14 @@ C6RqDQMy gKt28c9O ZCi0tQKE 0Ekdjh3P ox2vWOMI 14XF4gwc nYA0L6tV rRN3lekn
 lmwZNjz1 4ovmJAr7 shPl9o5f FFsuNwj0 F2eVkqGi 7gw277RZ nYE7gCLl JDn05S5N
 ```
 
-假设你想要生成五个14字符长的密码，方法如下。
+假设你想要生成 5 个 14 字符长的密码，方法如下：
 
 ```
 $ pwgen -s 14 5
 7YxUwDyfxGVTYD em2NT6FceXjPfT u8jlrljbrclcTi IruIX3Xu0TFXRr X8M9cB6wKNot1e
 ```
 
-如果你真的想要生成20个超强随机密码，方法如下。
+如果你真的想要生成 20 个超强随机密码，方法如下：
 
 ```
 $ pwgen -cnys 14 20
@@ -151,16 +147,16 @@ mQ3E=vfGfZ,5[B #zmj{i5|ZS){jg Ht_8i7OqJ%N`~2 443fa5iJ\W-L?] ?Qs$o=vz2vgQBR
 
 ### 如何在 Linux 下使用 openssl 命令生成随机强密码？
 
-openssl 是一个用来从 shell 中调用 OpenSSL 加密库提供的多种密码学函数的命令行工具。
+`openssl` 是一个用来从 shell 中调用 OpenSSL 加密库提供的多种密码学函数的命令行工具。
 
-像下面这样运行 openssl 命令可以生成一个14字符长的随机强密码。
+像下面这样运行 `openssl` 命令可以生成一个 14 字符长的随机强密码。
 
 ```
 $ openssl rand -base64 14
 WjzyDqdkWf3e53tJw/c=
 ```
 
-如果你想要生成十个14字符长的随机强密码，将 openssl 命令与 for 循环结合起来使用。
+如果你想要生成 10 个 14 字符长的随机强密码，将 `openssl` 命令与 `for` 循环结合起来使用。
 
 ```
 $ for pw in {1..10}; do openssl rand -base64 14; done
@@ -178,9 +174,9 @@ ktpBpCSQFOD+5kIIe7Y=
 
 ### 如何在 Linux 下使用 gpg 命令生成随机强密码？
 
-gpg 是 Gnu Privacy Guard （GnuPG） 中的 OpenPGP 实现部分。它是一个提供 OpenPGP 标准的数字加密与签名服务的工具。gpg 具有完整的密钥管理功能和其他完整 OpenPGP 实现应该具备的全部功能。
+`gpg` 是 Gnu Privacy Guard （GnuPG） 中的 OpenPGP 实现部分。它是一个提供 OpenPGP 标准的数字加密与签名服务的工具。`gpg` 具有完整的密钥管理功能和其他完整 OpenPGP 实现应该具备的全部功能。
 
-下面这样执行 gpg 命令来生成一个14字符长的随机强密码。
+下面这样执行 `gpg` 命令来生成一个 14 字符长的随机强密码。
 
 ```
 $ gpg --gen-random --armor 1 14
@@ -189,7 +185,7 @@ $ gpg2 --gen-random --armor 1 14
 jq1mtY4gBa6gIuJrggM=
 ```
 
-如果想要使用 gpg 生成十个14字符长的随机强密码，像下面这样使用 for 循环。
+如果想要使用 `gpg` 生成 10 个 14 字符长的随机强密码，像下面这样使用 `for` 循环。
 
 ```
 $ for pw in {1..10}; do gpg --gen-random --armor 1 14; done
@@ -209,33 +205,33 @@ eJjhtA6oHhBrUpLY4fM=
 
 ### 如何在 Linux 下使用 mkpasswd 命令生成随机强密码？
 
-mkpasswd 生成密码并可以自动将其应用在用户上。不加任何参数的情况下，mkpasswd 返回一个新的密码。它是 expect 软件包的一部分，所以想要使用 mkpasswd 命令，你需要安装 expect 软件包。
+`mkpasswd` 生成密码并可以自动将其为用户设置。不加任何参数的情况下，`mkpasswd` 返回一个新的密码。它是 expect 软件包的一部分，所以想要使用 `mkpasswd` 命令，你需要安装 expect 软件包。
 
-在 **`Fedora`** 系统中，使用 **[DNF 命令][2]** 来安装 mkpasswd。
+在 Fedora 系统中，使用 [DNF 命令][2] 来安装 `mkpasswd`。
 
 ```
 $ sudo dnf install expect
 ```
 
-在 **`Debian/Ubuntu`** 系统中，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 来安装 mkpasswd。
+在 Debian/Ubuntu 系统中，使用 [APT-GET 命令][3] 或 [APT 命令][4] 来安装 `mkpasswd`。
 
 ```
 $ sudo apt install expect
 ```
 
-在 **`Arch Linux`** 系统中，使用 **[Pacman 命令][5]** 来安装 mkpasswd。
+在 Arch Linux 系统中，使用 [Pacman 命令][5] 来安装 `mkpasswd`。
 
 ```
 $ sudo pacman -S expect
 ```
 
-在 **`RHEL/CentOS`** 系统中，使用 **[YUM 命令][6]** 来安装 mkpasswd。
+在 RHEL/CentOS 系统中，使用 [YUM 命令][6] 来安装 `mkpasswd`。
 
 ```
 $ sudo yum install expect
 ```
 
-在 **`openSUSE Leap`** 系统中，使用 **[Zypper 命令][7]** 来安装 mkpasswd。
+在 openSUSE Leap 系统中，使用 [Zypper 命令][7] 来安装 `mkpasswd`。
 
 ```
 $ sudo zypper install expect
@@ -248,21 +244,21 @@ $ mkpasswd
 37_slQepD
 ```
 
-像下面这样执行 mkpasswd 命令可以生成一个14字符长的随机强密码。
+像下面这样执行 `mkpasswd` 命令可以生成一个 14 字符长的随机强密码。
 
 ```
 $ mkpasswd -l 14
 W1qP1uv=lhghgh
 ```
 
-像下面这样执行 mkpasswd 命令 来生成一个14字符长，包含大小写字母、数字和特殊字符的随机强密码。
+像下面这样执行 `mkpasswd` 命令 来生成一个 14 字符长，包含大小写字母、数字和特殊字符的随机强密码。
 
 ```
 $ mkpasswd -l 14 -d 3 -C 3 -s 3
 3aad!bMWG49"t,
 ```
 
-如果你想要生成十个14字符长的随机强密码(包括大小写字母、数字和特殊字符)，使用 for 循环和 mkpasswd 命令。
+如果你想要生成 10 个 14 字符长的随机强密码（包括大小写字母、数字和特殊字符），使用 `for` 循环和 `mkpasswd` 命令。
 
 ```
 $ for pw in {1..10}; do mkpasswd -l 14 -d 3 -C 3 -s 3; done
@@ -278,10 +274,9 @@ $of?Rj9kb2N(1J
 Tu9m56+Ev_Yso(
 ```
 
-### How To Generate A Random Strong Password In Linux Using makepasswd Command?
 ### 如何在 Linux 下使用 makepasswd 命令生成随机强密码？
 
-makepasswd 使用 /dev/urandom 生成真随机密码，跟易于记忆相比它更注重安全性。它也可以加密命令行中给出的明文密码。
+`makepasswd` 使用 `/dev/urandom` 生成真随机密码，与易于记忆相比它更注重安全性。它也可以加密命令行中给出的明文密码。
 
 在终端中执行 `makepasswd` 命令来生成一个随机密码。
 
@@ -290,14 +285,14 @@ $ makepasswd
 HdCJafVaN
 ```
 
-在终端中像下面这样执行 makepasswd 命令来生成14字符长的随机强密码。
+在终端中像下面这样执行 `makepasswd` 命令来生成 14 字符长的随机强密码。
 
 ```
 $ makepasswd --chars 14
 HxJDv5quavrqmU
 ```
 
-像下面这样执行 makepasswd 来生成十个14字符长的随机强密码。
+像下面这样执行 `makepasswd` 来生成 10 个 14 字符长的随机强密码。
 
 ```
 $ makepasswd --chars 14 --count 10
@@ -317,28 +312,28 @@ M2TMCEoahzLNYC
 
 如果你还在寻找其他的方案，下面的工具也可以用来在 Linux 中生成随机密码。
 
-**使用 md5sum** md5sum 是一个用来计算及校验 128-bit MD5 哈希的程序。
+使用 `md5sum`：它是一个用来计算及校验 128 位 MD5 哈希的程序。
 
 ```
 $ date | md5sum
 9baf96fb6e8cbd99601d97a5c3acc2c4 -
 ```
 
-**使用 /dev/urandom:** 两个特殊的字符文件 /dev/random 和 /dev/urandom （自 Linux 1.3.30 起） 提供了内核随机数生成器的接口。/dev/random 的主设备号为1，次设备号为8。/dev/urandom 主设备号为1，次设备号为9。
+使用 `/dev/urandom`: 两个特殊的字符文件 `/dev/random` 和 `/dev/urandom` （自 Linux 1.3.30 起出现）提供了内核随机数生成器的接口。`/dev/random` 的主设备号为 1，次设备号为 8。`/dev/urandom` 主设备号为 1，次设备号为 9。
 
 ```
 $ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 14
 15LQB9J84Btnzz
 ```
 
-**使用 sha256sum:** sha256sum 被设计用来使用 SHA-256 算法（SHA-2系列，摘要长度为256位）校验数据完整性。
+使用 `sha256sum`：它被设计用来使用 SHA-256 算法（SHA-2 系列，摘要长度为 256 位）校验数据完整性。
 
 ```
 $ date | sha256sum
 a114ae5c458ae0d366e1b673d558d921bb937e568d9329b525cf32290478826a -
 ```
 
-**使用 sha1pass:** sha1pass 生成一个 SHA1 密码哈希。在命令缺少盐值的情况下，将会生成一个随机的盐值向量。
+使用 `sha1pass`：它生成一个 SHA1 密码哈希。在命令缺少盐值的情况下，将会生成一个随机的盐值向量。
 
 ```
 $ sha1pass
@@ -351,14 +346,14 @@ via: https://www.2daygeek.com/5-ways-to-generate-a-random-strong-password-in-lin
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[leommx](https://github.com/leommxj)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[leommxj](https://github.com/leommxj)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/how-to-check-password-complexity-strength-and-score-in-linux/
+[1]: https://linux.cn/article-10623-1.html
 [2]: https://www.2daygeek.com/dnf-command-examples-manage-packages-fedora-system/
 [3]: https://www.2daygeek.com/apt-get-apt-cache-command-examples-manage-packages-debian-ubuntu-systems/
 [4]: https://www.2daygeek.com/apt-command-examples-manage-packages-debian-ubuntu-systems/
