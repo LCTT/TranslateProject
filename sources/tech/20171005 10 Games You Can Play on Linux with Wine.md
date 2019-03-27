@@ -1,27 +1,28 @@
 Modrisco is translating
-10 Games You Can Play on Linux with Wine
+10款你可以通过Wine在Linux上玩的游戏
 ======
 ![](https://www.maketecheasier.com/assets/uploads/2017/09/wine-games-feat.jpg)
 
-Linux _does_ have games. It has a lot of them, actually. Linux is a thriving platform for indie gaming, and it 's not too uncommon for Linux to be supported on day one by top indie titles. In stark contrast, however, Linux is still largely ignored by the big-budget AAA developers, meaning that the games your friends are buzzing about probably won't be getting a Linux port anytime soon.
+Linux _确实_ 能玩游戏，能玩的也不少。独立游戏在Linux平台上蓬勃发展，顶级的独立游戏也常常会在发售首日便发布Linux版本。然而，3A游戏大作的开发者们却常常忽略Linux，所以你不会很快就能玩上身边朋友们口中正火的那些游戏。
 
-It's not all bad, though. Wine, the Windows compatibility layer for Linux, Mac, and BSD systems, is making huge strides in both the number of titles supported and performance. In fact, a lot of big name games now work under Wine. No, you won't get native performance, but they are playable and can actually run very well, depending on your system. Here are some games that it might surprise you can run with Wine on Linux.
+但情况还没有糟透。Wine —— 一个能使 Windows 应用在类似 Linux, BSD和OS X上运行的兼容层，在支持的游戏数量和性能表现上都取得了巨大进步。很多游戏大作都可以在Wine的支持下运行。你不能完全释放本机性能，但还是可以跑起来游戏，运行也还算流畅，当然这也要取决与你的操作系统。下面带来一些可能会令你大吃一惊的可以通过Wine在Linux上玩的游戏。
 
-### 10. World of Warcraft
+### 10. 魔兽世界
 
 ![World of Warcraft Wine][1]
+![World of Warcraft Wine][1]
 
-The venerable king of MMORPGs is still alive and going strong. Even though it might not be the most graphically advanced game, it still takes some power to crank all the settings up to max. World of Warcraft has actually worked under Wine for years. Until this latest expansion, WoW supported OpenGL for its Mac version, making it very easy to get working under Linux. That's not quite the case anymore.
+这款经典的MMORPG之王仍旧坚挺并保持活力。虽然这不是一款以画面见长的游戏，但想要开到全画质也需要费一些功夫。魔兽世界已经在Wine的支持下运行了很多年。到了最新资料片发布时，魔兽世界为它的Mac版本提供了OpenGL支持，使得游戏可以很轻松地在Linux下运行。这已经不再是个问题了。
 
-You'll need to run WoW with DX9 and will definitely see some benefit from the [Gallium Nine][2] patches, but you can confidently make the switch over to Linux without missing raid night.
+你需要通过DX9来运行游戏并从[Gallium Nine][2]补丁来获得一些性能提升，不过你也可以放心大胆地在Linux中下副本了。
 
-### 9. Skyrim
+### 9. 上古卷轴5：天际
 
 ![Skyrim Wine][3]
 
 Skyrim's not exactly new, but it's still fueled by a thriving modding community. You can now easily enjoy Skyrim and its many, many mods if you have a Linux system with enough resources to handle it all. Remember that Wine uses more system power than running the game natively, so account for that in your mod usage.
 
-### 8. StarCraft II
+### 8. 星际争霸2
 
 ![StarCraft II Wine][4]
 
@@ -31,7 +32,7 @@ Given the competitive nature of this game, you obviously need the game to run we
 
 This is an instance where you'll benefit from the "staging" patches, so continue using them when you're getting the game set up.
 
-### 7. Fallout 3/New Vegas
+### 7. 辐射3 / 辐射：新维加斯
 
 ![Fallout 3 Wine][5]
 
@@ -43,7 +44,7 @@ Before you ask, Fallout 4 is on the verge of working. At the time you're reading
 
 Doom is one of the most exciting shooters of the past few years, and it run very well under Wine with the latest versions and the "staging" patches. Both single player and multiplayer work great, and you don't need to spend loads of time configuring Wine and tweaking settings. Doom just works. So, if you're looking for a brutal AAA shooter on Linux, consider giving Doom a try.
 
-### 5. Guild Wars 2
+### 5. 激战2
 
 ![Guild Wars 2 Wine][7]
 
@@ -51,7 +52,7 @@ Guild War 2 is a sort-of hybrid MMO/dungeon crawler without a monthly fee. It's 
 
 Guild Wars 2 isn't some ancient MMO either. It's tried to keep itself modern graphically and has fairly high resolution textures and visual effects for the genre. All of it looks and works very well under Wine.
 
-### 4. League Of Legends
+### 4. 英雄联盟
 
 ![League Of Legends Wine][8]
 
@@ -59,7 +60,7 @@ There are two top players in the MOBA world: DoTA2 and League of Legends. Valve 
 
 League of Legends is an interesting case. The game itself runs fine, but the installer breaks because it requires Adobe Air. There are some installer scripts available from Lutris and PlayOnLinux that get you through the process. Once it's installed, you should have no problem running League and even playing it smoothly in competitive situations.
 
-### 3. Hearthstone
+### 3. 炉石传说
 
 ![HearthStone Wine][9]
 
@@ -67,7 +68,7 @@ Hearthstone is a popular and addictive free-to-play digital card game that's ava
 
 Hearthstone doesn't require any special configuration or even patches. It just works.
 
-### 2. Witcher 3
+### 2. 巫师3
 
 ![Witcher 3 Wine][10]
 
@@ -75,7 +76,7 @@ If you're surprised to see this one here, you're not alone. With the latest "sta
 
 Don't expect everything to be perfect just yet. Support for Witcher 3 is _very_ new, and some things might not work as expected. That said, if you only have Linux to game on, and you 're willing to deal with a couple of rough edges, you can enjoy this awesome game for the first time with few, if any, troubles.
 
-### 1. Overwatch
+### 1. 守望先锋
 
 ![Overwatch Wine][11]
 
@@ -94,7 +95,7 @@ Speaking of progress, right now Wine is making massive strides in DirectX11 supp
 via: https://www.maketecheasier.com/games-play-on-linux-with-wine/
 
 作者：[Nick Congleton][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Modrisco](https://github.com/Modrisco)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
