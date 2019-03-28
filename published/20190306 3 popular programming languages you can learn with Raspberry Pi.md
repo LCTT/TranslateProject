@@ -1,15 +1,17 @@
 [#]: collector: (lujun9972)
 [#]: translator: (qhwdw)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10661-1.html)
 [#]: subject: (3 popular programming languages you can learn with Raspberry Pi)
 [#]: via: (https://opensource.com/article/19/3/programming-languages-raspberry-pi)
 [#]: author: (Anderson Silva https://opensource.com/users/ansilva)
 
-可以使用树莓派学习的 3 种流行编程语言
+树莓派使用入门：可以使用树莓派学习的 3 种流行编程语言
 ======
-通过树莓派学习编程，让你在就业市场上更值钱。
+
+> 通过树莓派学习编程，让你在就业市场上更值钱。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/programming_language_c.png?itok=mPwqDAD9)
 
 在本系列的上一篇文章中，我分享了 [教孩子们使用树莓派编程][1] 的一些方式。理论上，这些资源并不局限于只适用于孩子们，成人也是可以使用的。但是学习就业市场上急需的编程语言，可以让你得到更好的机会。
@@ -24,7 +26,7 @@
 
 ### Java
 
-虽然 [Java][6] 已经不像以前那样引人注目了，但它仍然在世界各地的大学和企业中占据着重要的地位。因此，即便是一些人对我建议新手学习 Java 持反对意见，但我仍然强烈推荐大家去学习 Java；之所以这么做，原因之一是，它仍然很流行，原因之二是，它有大量的便于你学习的图书、课程、和其它的可用信息。在树莓派上学习它，你可以从使用 Java 集成开发环境 [BlueJ][7] 开始。
+虽然 [Java][6] 已经不像以前那样引人注目了，但它仍然在世界各地的大学和企业中占据着重要的地位。因此，即便是一些人对我建议新手学习 Java 持反对意见，但我仍然强烈推荐大家去学习 Java；之所以这么做，原因之一是，它仍然很流行，原因之二是，它有大量的便于你学习的图书、课程和其它的可用信息。在树莓派上学习它，你可以从使用 Java 集成开发环境 [BlueJ][7] 开始。
 
 ![](https://opensource.com/sites/default/files/uploads/bluejayide.png)
 
@@ -34,7 +36,7 @@
 
 ### 其它编程语言
 
-如果这里没有列出你想学习的编程语言，别失望。你可以使用你的树莓派去编译或解释任何你选择的语言，包括 C、C++、PHP、和 Ruby，这种可能性还是很大的。
+如果这里没有列出你想学习的编程语言，别失望。你可以使用你的树莓派去编译或解释任何你选择的语言，包括 C、C++、PHP 和 Ruby，这种可能性还是很大的。
 
 微软的 [Visual Studio Code][11] 也可以运行在 [树莓派][12] 上。它是来自微软的开源代码编辑器，它支持多种标记和编程语言。
 
@@ -45,13 +47,13 @@ via: https://opensource.com/article/19/3/programming-languages-raspberry-pi
 作者：[Anderson Silva][a]
 选题：[lujun9972][b]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/ansilva
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/article/19/2/teach-kids-program-raspberry-pi
+[1]: https://linux.cn/article-10653-1.html
 [2]: https://opensource.com/resources/python
 [3]: https://www.economist.com/graphic-detail/2018/07/26/python-is-becoming-the-worlds-most-popular-coding-language
 [4]: https://thonny.org/
