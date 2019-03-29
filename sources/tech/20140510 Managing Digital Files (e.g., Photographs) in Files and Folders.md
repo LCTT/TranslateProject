@@ -1,4 +1,3 @@
-Moelf translating
 Managing Digital Files (e.g., Photographs) in Files and Folders
 ======
 Update 2014-05-14: added real world example

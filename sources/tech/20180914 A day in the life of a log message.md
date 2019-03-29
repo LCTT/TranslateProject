@@ -1,4 +1,3 @@
-Ryze-Borgia is translating
 A day in the life of a log message
 ======
 
