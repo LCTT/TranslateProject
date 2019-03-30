@@ -7,37 +7,37 @@
 [#]: via: (https://www.2daygeek.com/navigate-switch-directory-without-using-cd-command-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How To Navigate Inside A Directory/Folder In Linux Without CD Command?
+如何在 Linux 中不使用 CD 命令进入目录/文件夹？
 ======
 
-As everybody know that we can’t navigate inside a directory in Linux without CD command.
+众所周知，如果没有 CD 命令，我们无法 Linux 中切换目录。
 
-Yes that’s true but we have the Linux built-in command called `shopt` that help us to solve this issue.
+这个没错，但我们有一个名为 `shopt` 的 Linux 内置命令能帮助我们解决这个问题。
 
-[shopt][1] is a shell builtin command to set and unset various bash shell options, which is installed so, we no need to install it again.
+[shopt][1] 是一个 shell 内置命令，用于设置和取消设置各种 bash shell 选项，由于它已安装，因此我们不需要再次安装它。
 
-Yes we can navigate inside a directory without CD command after enabling this option.
+是的，我们可以在启用此选项后，可以不使用 CD 命令切换目录。
 
-We will show you, how to do this in this article. This is a small tweak but it’s very useful for newbies who all are moving from Windows to Linux.
+我们将在本文中向你展示如何操作。这是一个小的调整，但对于那些从 Windows 迁移到 Linux 的新手来说非常有用。
 
-This is not useful for Linux administrator because we won’t navigate to the directory without CD command, as we had a good practices on this.
+这对 Linux 管理员没用，因为我们不会在没有 CD 命令的情况下切换到该目录，因为我们对此有一个很好的做法。
 
-If you are trying to navigate a directory/folder in Linux without cd command, you will be getting the following error message. This is common in Linux.
+如果你尝试在没有 cd 命令的情况下切换 Linux 的目录/文件夹，你将看到以下错误消息。这在 Linux 中很常见。
 
 ```
 $ Documents/
 bash: Documents/: Is a directory
 ```
 
-To achieve this, we need to append the following values in a user `.bashrc` file.
+为此，我们需要在用户 `.bashrc` 中追加以下值。
 
-### What Is the .bashrc File?
+### 什么是 .bashrc ？
 
-The “.bashrc” file is a shell script which is run every time a user opens a new shell in interactive mode.
+“.bashrc” 是一个 shell 脚本，每次用户以交互模式打开新 shell 时都会运行该脚本。
 
-You can add any command in that file that you want to type at the command prompt.
+你可以在该文件中添加要在命令提示符下输入的任何命令。
 
-The .bashrc file itself contains a series of configurations for the terminal session. This includes setting up or enabling: colouring, completion, the shell history, command aliases and more.
+.bashrc 文件本身包含终端会话的一系列配置。包括设置和启用：着色、补全，shell 历史，命令别名等。
 
 ```
 $ vi ~/.bashrc
@@ -45,13 +45,13 @@ $ vi ~/.bashrc
 shopt -s autocd
 ```
 
-Run the following command to make the changes to take effect.
+运行以下命令使更改生效。
 
 ```
 $ source ~/.bashrc
 ```
 
-We have done all the configuration. Simple do the testing on this to confirm whether this working or not.
+我们已完成所有配置。简单地对此进行测试以确认这是否有效。
 
 ```
 $ Documents/
@@ -68,12 +68,12 @@ $ pwd
 ```
 
 ![][3]
-Yes, it’s working fine as expected.
+是的，它正如预期的那样正常工作。
 
-However, it’s working fine in `fish shell` without making any changes in the `.bashrc` file.
+而且，它在 `fish shell` 中工作正常，而无需对 `.bashrc` 进行任何更改。
 ![][4]
 
-If you would like to perform this action for temporarily then use the following commands (set/unset). This will go away when you reboot the system.
+如果要暂时执行此操作，请使用以下命令（set/unset）。重启系统时，它将消失。
 
 ```
 # shopt -s autocd
@@ -87,7 +87,7 @@ autocd  on
 autocd  off
 ```
 
-shopt command is offering so many other options and if you want to verify those, run the following command.
+shopt 命令提供了许多其他选项，如果要验证这些选项，请运行以下命令。
 
 ```
 $ shopt
@@ -146,9 +146,9 @@ sourcepath  on
 xpg_echo    off
 ```
 
-I had found few other utilities, that are help us to navigate a directory faster in Linux compared with cd command.
+我找到了一些其他程序，它们可以帮助我们在 Linux 中比 cd 命令更快地切换目录。
 
-Those are pushd, popd, up shell script and bd utility. We will cover these topics in the upcoming articles.
+它们是 pushd、popd、up shell 脚本和 bd 工具。我们将在接下来的文章中介绍这些主题。
 
 --------------------------------------------------------------------------------
 
@@ -156,7 +156,7 @@ via: https://www.2daygeek.com/navigate-switch-directory-without-using-cd-command
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
