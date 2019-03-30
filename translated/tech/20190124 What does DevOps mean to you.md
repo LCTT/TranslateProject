@@ -1,21 +1,22 @@
-[#]: collector: "lujun9972"
-[#]: translator: "MZqk"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "What does DevOps mean to you?"
-[#]: via: "https://opensource.com/article/19/1/what-does-devops-mean-you"
-[#]: author: "Girish Managoli https://opensource.com/users/gammay"
+[#]: collector: (lujun9972)
+[#]: translator: (MZqk)
+[#]: reviewer: (wxy)
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (What does DevOps mean to you?)
+[#]: via: (https://opensource.com/article/19/1/what-does-devops-mean-you)
+[#]: author: (Girish Managoli https://opensource.com/users/gammay)
 
 DevOps 对你意味着什么？
 ======
-6 位专家对 DevOps 的实现、实践关键和哲学分解。
+
+> 6 位专家为你解析 DevOps 及其实现、实践和哲学的关键。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/innovation_lightbulb_gears_devops_ansible.png?itok=TSbmp3_M)
 
-如果你问 10 个人关于 DevOps 的问题，你会得到 12 个答案。这是对于 DevOps 意见和期望多样性的结果，更不用说它在实践中的差异。
+如果你问 10 个人关于 DevOps 的问题，你会得到 12 个答案。这是对于 DevOps 的意见和期望的多样性的结果，更不用说它在实践中的差异。
 
-为了解读 DevOps 的悖论，我们找到了最了解它的人 - 这个行业的顶尖从业者。这些人熟悉 DevOps，了解技术的来龙去脉，并且已经有了多年 DevOps 实践。他们的观点应该能鼓励、刺激和激发您对 DevOps 的想法。
+为了解读 DevOps 的悖论，我们找到了最了解它的人 —— 这个行业的顶尖从业者。这些人熟悉 DevOps，了解技术的来龙去脉，并且已经有了多年 DevOps 实践。他们的观点应该能鼓励、刺激和激发您对 DevOps 的想法。
 
 ### DevOps 对你意味着什么？
 
@@ -23,31 +24,29 @@ DevOps 对你意味着什么？
 
 简而言之，专家们说的是关于 DevOps 的原则、实践和工具。
 
-IBM 数字企业集团 DevOps 商业平台领导者 [Ann Marie Fred][1]，说，“对于我来说，DevOps 是一套实践的原则，旨在使团队在设计，开发，交付和操作软件方面有更好的效率。”
+IBM 数字企业集团 DevOps 商业平台领导者 [Ann Marie Fred][1]，说，“对于我来说，DevOps 是一套实践和原则，旨在使团队在设计、开发、交付和操作软件方面有更好的效率。”
 
-根据红帽资深 DevOps 布道者 [Daniel Oh][2]，“ 通常来说，DevOps 促使企业基于当前的 IT 流程和工具之上发展与开发相关的应用程序 、IT 运营和安全协议。”
+据红帽资深 DevOps 布道者 [Daniel Oh][2]，“通常来说，DevOps 促使企业基于当前的 IT 发展与应用开发、IT 运维和安全协议的流程和工具。”
 
-Tactec Strategic Solutions 的创始人 [Brent Reed][3]，就持续改进利益相关者进行了会谈。“DevOps 对我来说意味着一种工作方式，包括一种思维方式，允许持续改进运营绩效，逐渐使其成熟为组织提升绩效，从而让利益相关者高兴。”
+Tactec 战略解决方案的创始人 [Brent Reed][3]，谈及了利益相关者的持续改进，“DevOps 对我来说意味着包括了一种思维方式的工作方式，它允许持续改进运维绩效，进而提升组织绩效，从而让利益相关者受益。”
 
-许多专家也强调 DevOps 文化。Ann Marie 说，“这也关于持续改进和学习的问题。它涉及的是人和文化，以及工具和技术。”
+许多专家也强调 DevOps 文化。Ann Marie 说，“这也是持续改进和学习的问题。它涉及的是人和文化，以及工具和技术。”
 
-美国保监会 (NAIC) 首席架构师兼 DevOps 领导者 [Dan Barker][4]，“DevOps 主要是关于文化…它将几个独立的领域聚集在一起，如精益生产、[合适文化 ][5] 和持续的学习。我认为文化是最关键和最难执行的。”
+美国保监会 (NAIC) 首席架构师兼 DevOps 领导者 [Dan Barker][4]，“DevOps 主要是关于文化…它将几个独立的领域聚集在一起，如精益生产、[公正文化][5] 和持续的学习。我认为文化是最关键和最难执行的。”
 
 Atos 的 DevOps 负责人 [Chris Baynham-Hughes][6]，说，“[DevOps] 实践是通过组织内的文化、流程和工具的发展而被采用的。重点是文化变革，DevOps 文化借鉴的关键是协作、试验、快速反馈和持续改进。”
 
-云架构师 [Geoff Purdy][7]，谈论敏捷和反馈，“缩短和放大反馈回路。我们希望团队在几分钟内而不是几周内获得反馈。”
+云架构师 [Geoff Purdy][7]，谈及敏捷和反馈，“缩短和放大反馈回路。我们希望团队在几分钟内而不是几周内获得反馈。”
 
 但在最后，Daniel 通过解释开源和开源文化是如何让他以简单快捷的方式实现目标来强调这点，“在推动 DevOps 中，最重要的事情应该是开源文化而不是具体的工具或复杂的解决方案。”
 
 ### 你认为哪些 DevOps 实践有效？
 
-“选择一个自动化配置，对我的团队来说非常有效。”
-
 专家列举的那些最佳实践是普遍存在的，但又各不相同。
 
 Ann Marie 表示：“一些十分强大灵活的项目管理[实践]，能在职能、独立的小组之间打破壁垒；全自动化持续部署，蓝/绿部署实现零时间停机状态；开发人员设置自己的监控和警告，无缝自我修复，自动化的安全性与合规性。”
 
-Chris 说，“特别的突破是倾情合作；持续改成；开放的领导；缩短业务时长；从垂直孤岛转向横向，跨功能的产品团队。工作透明化，相互影响，Mobius 循环，缩短反馈回路，自动化（环境上的 CI/CD）。”
+Chris 说，“特别的突破是倾情合作；持续改进；开放领导；缩短业务距离；从垂直孤岛转向横向、跨功能的产品团队。工作透明化，相互影响，Mobius 循环，缩短反馈回路，自动化（从环境到 CI/CD）。”
 
 Brent 支持“发展学习文化，包括 TTD[ 测试驱动开发]和 BDD[ 行为驱动开发]捕获事件，并通过持续集成和持续交付从设计、构建和测试到实施在生产环境上一系列事件的自动化。测试采用故障优先的方法，能够自动化集成和交付流程，并在整个生命周期中包含快速反馈。”
 
