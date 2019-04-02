@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Lintaov587)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (Three SSH GUI Tools for Linux)
