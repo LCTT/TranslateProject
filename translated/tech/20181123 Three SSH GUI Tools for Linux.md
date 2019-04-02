@@ -12,7 +12,7 @@ Linux 的三个 SSH GUI 工具
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ssh.jpg?itok=3UcXhJt7)
 
-在 Linux 管理员的职业生涯中的某个阶段，您将使用 SecureShell(ssh) 远程访问 Linux 服务器或桌面。现在你已经有机会了。在某些情况下，您将同时进入多个 Linux 服务器。实际上，SecureShell 很可能是 Linux 工具箱中最常用的工具之一。因此，您将希望尽可能提高体验的效率。对于许多管理员来说，没有什么比命令行更有效了。但是，有一些用户更喜欢使用GUI工具，特别是在从台式机到远程服务器以及在服务器上工作时。
+在 Linux 管理员的职业生涯中的某个阶段，您将使用 SecureShell(ssh) 远程访问 Linux 服务器或桌面。现在你已经有机会了。在某些情况下，您将同时进入多个 Linux 服务器。实际上，SecureShell 很可能是 Linux 工具箱中最常用的工具之一。因此，您将希望尽可能提高体验的效率。对于许多管理员来说，没有什么比命令行更有效了。但是，有一些用户更喜欢使用 GUI 工具，特别是在从台式机到远程服务器以及在服务器上工作时。
 
 如果您碰巧比较喜欢好的 GUI 工具，那么您会很高兴地知道 Linux 上有一些出色的 SSH 图形工具。再加上一个独特的终端窗口，允许您从同一个窗口远程进入多台机器，您就拥有了高效工作所需的一切。让我们看一下这三个工具，看看它们中是否有一个（或多个）完全适合您的需求。
 
@@ -20,7 +20,7 @@ Linux 的三个 SSH GUI 工具
 
 ### PuTTY
 
-任何一个使用 Linux 足够久的人基本都知道 [PuTTY][2]。 事实上，PuTTY是通过 SSH 从的 Windows 环境连接到 Linux 服务器的标准工具。 但PuTTY不仅仅是用于 Windows。 实际上，通过使用标准存储库，PuTTY 也可以安装在 Linux 上。Putty 的功能列表包括：
+任何一个使用 Linux 足够久的人基本都知道 [PuTTY][2]。 事实上，PuTTY 是通过 SSH 从的 Windows 环境连接到 Linux 服务器的标准工具。 但 PuTTY 不仅仅是用于 Windows。 实际上，通过使用标准存储库，PuTTY 也可以安装在 Linux 上。Putty 的功能列表包括：
 
   * 保存会话。
 
@@ -43,7 +43,7 @@ Linux 的三个 SSH GUI 工具
 
 
 
-Putty GUI 主要是保存 ssh 会话的一种方法。 因此，更容易管理所有需要经常远程进出的各种 Linux 服务器和桌面。一旦连接好了，从 Putty 到Linux 服务器，您将有一个终端窗口可以在其中工作。这时，你可能会问自己，为什么不从终端窗口开始工作呢？对某些人来说，保存会话的便利性确实使 PuTTY 值得使用。
+Putty GUI 主要是保存 SSH 会话的一种方法。 因此，更容易管理所有需要经常远程进出的各种 Linux 服务器和桌面。一旦连接好了，从 Putty 到 Linux 服务器，您将有一个终端窗口可以在其中工作。这时，你可能会问自己，为什么不从终端窗口开始工作呢？对某些人来说，保存会话的便利性确实使 PuTTY 值得使用。
 
 在 Linux 上安装 PuTTY 很简单。例如，可以在基于 Debian 的发行版上使用命令：
 
@@ -51,19 +51,19 @@ Putty GUI 主要是保存 ssh 会话的一种方法。 因此，更容易管理�
 sudo apt-get install -y putty
 ```
 
-安装后，您可以从桌面菜单运行 Putty GUI 或使用 putty 命令。 在 Putty 配置窗口（图1）中，在主机名（或 IP 地址）部分中键入主机名或 IP 地址，配置端口（如果不是默认值22），从连接类型中选择 ssh ，然后单击打开。
+安装后，您可以从桌面菜单运行 Putty GUI 或使用 putty 命令。 在 Putty 配置窗口（图 1）中，在主机名（或 IP 地址）部分中键入主机名或 IP 地址，配置端口（如果不是默认值22），从连接类型中选择 ssh ，然后单击打开。
 
 ![PuTTY Connection][4]
 
-图1：Putty 连接配置窗口。
+图 1：Putty 连接配置窗口。
 
 [Used with permission][5]
 
-一旦建立了连接，就会提示您在远程服务器上输入用户凭据（图2）。
+一旦建立了连接，就会提示您在远程服务器上输入用户凭据（图 2）。
 
 ![log in][7]
 
-图2：使用 Putty 登录远程服务器。
+图 2：使用 Putty 登录远程服务器。
 
 [Used with permission][5]
 
@@ -71,7 +71,7 @@ sudo apt-get install -y putty
 
 ### EasySSH
 
-虽然 [EasySSH][8] 没有提供 Putty 中大量的配置选项，但顾名思义，它非常容易使用。 EasySSH 的一个最佳特性是它提供了一个选项卡式接口，因此您可以打开多个SSH连接，并在它们之间快速切换。 Easyssh 的其他功能包括：
+虽然 [EasySSH][8] 没有提供 Putty 中大量的配置选项，但顾名思义，它非常容易使用。 EasySSH 的一个最佳特性是它提供了一个选项卡式接口，因此您可以打开多个 SSH 连接，并在它们之间快速切换。 Easyssh 的其他功能包括：
 
   * 分组（这样您就可以将选项卡分组以获得更高效的体验）。
 
@@ -97,27 +97,27 @@ sudo flatpak install flathub com.github.muriloventuroso.easyssh
 flatpak run com.github.muriloventuroso.easyssh
 ```
 
-EasySSH 应用程序将打开，您可以单击左上角的 + 按钮。 在弹出的窗口（图3）中， 根据需要配置SSH连接。
+EasySSH 应用程序将打开，您可以单击左上角的 + 按钮。 在弹出的窗口（图 3）中， 根据需要配置 SSH 连接。
 
 ![Adding a connection][10]
 
-图3：在 EasySSH 中添加连接很简单。
+图 3：在 EasySSH 中添加连接很简单。
 
 [Used with permission][5]
 
-添加连接后，它将出现在主窗口的左侧导航栏中（图4）。
+添加连接后，它将出现在主窗口的左侧导航栏中（图 4）。
 
 ![EasySSH][12]
 
-图4：EasySSH 主窗口。
+图 4：EasySSH 主窗口。
 
 [Used with permission][5]
 
-要在EasySSH中连接到远程服务器，请从左侧导航中选择它，然后单击连接按钮（图5）。
+要在 EasySSH 中连接到远程服务器，请从左侧导航中选择它，然后单击连接按钮（图 5）。
 
 ![Connecting][14]
 
-图5：使用 EasySSH 连接到远程服务器。
+图 5：使用 EasySSH 连接到远程服务器。
 
 [Used with permission][5]
 
@@ -125,11 +125,11 @@ EasySSH 必须注意的一点，必须在连接配置中保存用户名和密码
 
 ### Terminator
 
-Terminator 实际上不是一个 SSH GUI 工具。 相反，Terminator 作为一个窗口工作，允许您一次运行多个终端（甚至是多组终端）。 你可以很高效的打开 Terminator， 垂直和水平拆分窗口（直到您拥有所需的所有终端），然后通过标准的 SSH 命令连接到所有远程的 Linux 服务器（图6）。
+Terminator 实际上不是一个 SSH GUI 工具。 相反，Terminator 作为一个窗口工作，允许您一次运行多个终端（甚至是多组终端）。 你可以很高效的打开 Terminator，垂直和水平拆分窗口（直到您拥有所需的所有终端），然后通过标准的 SSH 命令连接到所有远程的 Linux 服务器（图 6）。
 
 ![Terminator][16]
 
-图6：Terminator 分为三个不同的窗口，每个窗口连接到不同的 Linux 的服务器。
+图 6：Terminator 分为三个不同的窗口，每个窗口连接到不同的 Linux 的服务器。
 
 [Used with permission][5]
 
@@ -171,4 +171,4 @@ via: https://www.linux.com/blog/learn/intro-to-linux/2018/11/three-ssh-guis-linu
 [13]: https://www.linux.com/files/images/sshguis5jpg
 [14]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ssh_guis_5.jpg?itok=piFEFYTQ (Connecting)
 [15]: https://www.linux.com/files/images/sshguis6jpg
-[16]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ssh_guis_6.jpg?itok=-kYl6iSE (Terminator)
+[16]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ssh_guis_6.jpg?itok=-kYl6iSE (Terminator)F
