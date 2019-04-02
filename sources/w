@@ -1,0 +1,234 @@
+[#]: collector: (lujun9972)
+[#]: translator: ( )
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (How to use behavior-driven development in Drupal with Behat)
+[#]: via: (https://opensource.com/article/19/3/how-drupal-behat)
+[#]: author: (Mauricio Dinarte https://opensource.com/users/dinarcon)
+
+How to use behavior-driven development in Drupal with Behat
+======
+
+Test your Drupal site's functionality in a human-readable format.
+
+![Team checklist and to dos][1]
+
+Behavior-driven development is a great way to write tests for code because it uses language that real humans can understand. Once you [learn about BDD and its benefits][2], you may want to implement it in your next project. Let's see how to implement BDD in Drupal using [Behat][3] with the [Mink][4] extension.
+
+### Install and configure the tools
+
+Since it is good practice to use [Composer][5] to manage a Drupal site's dependencies, use it to install the tools for BDD tests: Behat, Mink, and the Behat Drupal Extension. The Behat Drupal Extension lists Behat and Mink among its dependencies, so you can get all of the tools by installing the Behat Drupal Extension package:
+
+```
+composer require drupal/drupal-extension --dev
+```
+
+Mink allows you to write tests in a human-readable format. For example:
+
+> Given I am registered user,
+>  When I visit the homepage,
+>  Then I should see a personalized news feed
+
+Because these tests are supposed to emulate user interaction, you can assume they will be executed within a web browser. That is where Mink comes into play. There are various browser emulators, such as Goutte and Selenium, and they all behave differently and have very different APIs. Mink allows you to write a test once and execute it in different browser emulators. In layman's terms, Mink allows you to control a browser programmatically to emulate a user's action.
+
+Now that you have the tools installed, you should have a **behat** command available. If you run it:
+
+```
+./vendor/bin/behat
+```
+
+you should get an error, like:
+
+```
+FeatureContext context class not found and can not be used
+```
+
+Start by initializing Behat:
+
+```
+./vendor/bin/behat --init
+```
+
+This will create two folders and one file, which we will revisit later; for now, running **behat** without the extra parameters should not yield an error. Instead, you should see an output similar to this:
+
+```
+No scenarios
+No steps
+0m0.00s (7.70Mb)
+```
+
+Now you are ready to write your first test, for example, to verify that website visitors can leave a message using the site-wide contact form.
+
+### Writing test scenarios
+
+By default, Behat will look for files in the **features** folder that's created when the project is initialized. The file inside that folder should have the **.feature** extension. Let's tests the site-wide contact form. Creata a file **contact-form.feature** in the features folder with the following content:
+
+```
+Feature: Contact form
+  In order to send a message to the site administrators
+  As a visitor
+  I should be able to use the site-wide contact form
+
+  Scenario: A visitor can use the site-wide contact form
+    Given I am at "contact/feedback"
+    When I fill in "name" with "John Doe"
+    And I fill in "mail" with "john@doe.com"
+    And I fill in "subject" with "Hello world"
+    And I fill in "message" with "Lorem Ipsum"
+    And I press "Send message"
+    Then I should see the text "Your message has been sent."
+```
+
+
+Behat tests are written in Gherkin, a human-readable format that follows the Context–Action–Outcome pattern. It consists of several special keywords that, when parsed, will execute commands to emulate a user's interaction with the website.
+
+The sentences that start with the keywords **Given** , **When** , and **Then** indicate the Context, Action, and Outcome, respectively. They are called **Steps** and they should be written from the perspective of the user performing the action. Behat will read them and execute the corresponding **Step Definitions**. (More on this later.)
+
+This example instructs the browser to visit a page under the "contact/feedback" link, fill in some field values, press a button, and check whether a message is present on the page to verify that the action worked. Run the test; your output should look similar to this:
+
+```
+1 scenario (1 undefined)
+7 steps (7 undefined)
+0m0.01s (8.01Mb)
+
+>> default suite has undefined steps. Please choose the context to generate snippets:
+
+[0] None
+[1] FeatureContext
+>
+```
+
+Type 0 at the prompt to select the None option. This verifies that Behat found the test and tried to execute it, but it is complaining about undefined steps. These are the **Step Definitions** , PHP code that will execute the tasks required to fulfill the step. You can check which steps definitions are available by running:
+
+```
+./vendor/bin/behat -dl
+```
+
+Currently there are no step definitions, so you shouldn't see any output. You could write your own, but for now, you can use some provided by the Mink extension and the Behat Drupal Extension. Create a **behat.yml** file at the same level as the Features folder—not inside it—with the following contents:
+
+```
+default:
+  suites:
+    default:
+      contexts:
+       - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+```
+
+Steps definitions are provided through **Contexts**. When you initialized Behat, it created a FeatureContext without any step definitions. In the example above, we are updating the configuration file to include this empty context along with others provided by the Drupal Behat Extension. Running **./vendor/bin/behat -dl** again produces a list of 120+ steps you can use; here is a trimmed version of the output:
+```
+
+default | Given I am an anonymous user
+default | When I visit :path
+default | When I click :link
+default | Then I (should )see the text :text
+```
+
+Now you can perform lots of actions. Run the tests again with **./vendor/bin/behat** .The test should fail with an error similar to:
+
+```
+ Scenario: A visitor can use the site-wide contact form        # features/contact-form.feature:8
+        And I am at "contact/feedback"                          # Drupal\DrupalExtension\Context\MinkContext::assertAtPath()
+        When I fill in "name" with "John Doe"                   # Drupal\DrupalExtension\Context\MinkContext::fillField()
+        And I fill in "mail" with "john@doe.com"                # Drupal\DrupalExtension\Context\MinkContext::fillField()
+        And I fill in "subject" with "Hello world"              # Drupal\DrupalExtension\Context\MinkContext::fillField()
+        Form field with id|name|label|value|placeholder "subject" not found. (Behat\Mink\Exception\ElementNotFoundException)
+        And I fill in "message" with "Lorem Ipsum"              # Drupal\DrupalExtension\Context\MinkContext::fillField()
+        And I press "Send message"                              # Drupal\DrupalExtension\Context\MinkContext::pressButton()
+        Then I should see the text "Your message has been sent." # Drupal\DrupalExtension\Context\MinkContext::assertTextVisible()
+
+--- Failed scenarios:
+
+        features/contact-form.feature:8
+
+1 scenario (1 failed)
+7 steps (3 passed, 1 failed, 3 skipped)
+0m0.10s (12.84Mb)
+```
+
+The output shows that the first three steps—visiting the contact page and filling in the name and subject fields—worked. But the test fails when the user tries to enter the subject, then it skips the rest of the steps. These steps require you to use the name attribute of the HTML tag that renders the form field.
+
+When I created the test, I purposely used the proper values for the name and address fields so they would pass. When in doubt, use your browser's developer tools to inspect the source code and find the proper values you should use. By doing this, I found I should use **subject[0][value]** for the subject and **message[0][value]** for the message. When I update my test to use those values and run it again, it should pass with flying colors and produce an output similar to:
+
+```
+1 scenario (1 passed)
+7 steps (7 passed)
+0m0.29s (12.88Mb)
+```
+
+Success! The test passes! In case you are wondering, I'm using the Goutte browser. It is a command line browser, and the driver to use it with Behat is installed as a dependency of the Behat Drupal Extension package.
+
+### Other things to note
+
+As mentioned above, BDD tests should be written from the perspective of the user performing the action. Users don't think in terms of HTML name attributes. That is why writing tests using **subject[0][value]** and **message[0][value]** is both cryptic and not very user friendly. You can improve this by creating custom steps at **features/bootstrap/FeatureContext.php** , which was generated when Behat initialized.
+
+Also, if you run the test several times, you will find that it starts failing. This is because Drupal, by default, imposes a limit of five submissions per hour. Each time you run the test, it's like a real user is performing the action. Once the limit is reached, you'll get an error on the Drupal interface. The test fails because the expected success message is missing.
+
+This illustrates the importance of debugging your tests. There are some steps that can help with this, like **Then print last drush output** and **Then I break**. Better yet is using a real debugger, like [Xdebug][7]. You can also install other packages that provide more step definitions specifically for debugging purposes, like [Behatch][8] and [Nuvole's][9] extension,. For example, you can configure Behat to take a screenshot of the state of the browser when a test fails (if this capability is provided by the driver you're using).
+
+Regarding drivers and browser emulators, Goutte doesn't support JavaScript. If a feature depends on JavaScript, you can test it by using the [Selenium2Driver][10] in combination with [Geckodriver][11] [][11]and Firefox. Every driver and browser has different features and capabilities. For example, the Goutte driver provides access to the response's HTTP status code, but the Selenium2Driver doesn't. (You can read more about [drivers in Mink and Behat][12].) For Behat to pickup a javascript enabled driver/browser you need to annotate the scenario using the @javascript tag. Example:
+
+```
+Feature:
+ (feature description)
+
+@javascript
+Scenario: An editor can select the author of a node from an autocomplete field
+ (list of steps)
+```
+
+Another tag that is useful for Drupal sites is **@api**. This instructs the Behat Drupal Extension to use a driver that can perform operations specific to Drupal; for example, creating users and nodes for your tests. Although you could follow the registration process to create a user and assign roles, it is easier to simply use a step like **Given I am logged in as a user with the "Authenticated user" role**. For this to work, you need to [specify whether you want to use the Drupal or Drush driver][13]. Make sure to update your **behat.yml** file accordingly. For example, to use the Drupal driver:
+```
+default:
+  extensions:
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: drupal
+      drupal:
+        drupal_root: ./relative/path/to/drupal
+```
+
+I hope this introduction to BDD testing in Drupal serves you well. If you have questions, feel free to add a comment below, send me an email to {my first name}@{my last name}.me or a tweet at [@dinarcon][14].
+
+* * *
+
+_Mauricio Dinarte will present[Behavior-Driven Development in Drupal 8 with Behat][15] at [DrupalCon][16] in Seattle, April 8-12, 2019._
+
+* * *
+
+--------------------------------------------------------------------------------
+
+via: https://opensource.com/article/19/3/how-drupal-behat
+
+作者：[Mauricio Dinarte][a]
+选题：[lujun9972][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://opensource.com/users/dinarcon
+[b]: https://github.com/lujun9972
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/todo_checklist_team_metrics_report.png?itok=oB5uQbzf (Team checklist and to dos)
+[2]: https://opensource.com/article/19/2/behavior-driven-development-tools
+[3]: http://behat.org/en/latest/
+[4]: http://mink.behat.org/en/latest/index.html
+[5]: https://www.drupal.org/project/composer
+[6]: mailto:john@doe.com
+[7]: https://xdebug.org/
+[8]: https://github.com/Behatch/contexts
+[9]: https://github.com/nuvoleweb/drupal-behat
+[10]: http://mink.behat.org/en/latest/drivers/selenium2.html
+[11]: https://github.com/mozilla/geckodriver
+[12]: http://mink.behat.org/en/latest/guides/drivers.html
+[13]: https://behat-drupal-extension.readthedocs.io/en/3.1/drivers.html
+[14]: https://twitter.com/dinarcon?lang=en
+[15]: https://events.drupal.org/seattle2019/sessions/behavior-driven-development-drupal-8-behat
+[16]: https://events.drupal.org/seattle2019
