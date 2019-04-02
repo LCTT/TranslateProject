@@ -291,7 +291,7 @@ This is just the beginning, so if you have ideas for how to solve these problems
 
 via: https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/
 
-作者：[Samuel D. Crow;Olivier Mengué;Andy Jackson;Quentin Quaadgras;Roberto Malatesta][a]
+作者：[Lin Clark][a]
 选题：[lujun9972][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
