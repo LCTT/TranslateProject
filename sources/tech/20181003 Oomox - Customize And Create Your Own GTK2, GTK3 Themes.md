@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (geekpi)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Oomox – Customize And Create Your Own GTK2, GTK3 Themes)
+[#]: via: (https://www.ostechnix.com/oomox-customize-and-create-your-own-gtk2-gtk3-themes/)
+[#]: author: (EDITOR https://www.ostechnix.com/author/editor/)
+
 Oomox – Customize And Create Your Own GTK2, GTK3 Themes
 ======
 
