@@ -1,3 +1,4 @@
+tomjlw is translating
 Rediscovering make: the power behind rules
 ======
 
@@ -88,7 +89,7 @@ There's a lot more to discover about make, but at least this counts as a start, 
 via: https://monades.roperzh.com/rediscovering-make-power-behind-rules/
 
 作者：[Roberto Dip][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tomjlw](https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
