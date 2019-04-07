@@ -7,87 +7,85 @@
 [#]: via: (https://www.2daygeek.com/bd-quickly-go-back-to-a-specific-parent-directory-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Quickly Go Back To A Specific Parent Directory Using bd Command In Linux
+在 Linux 中使用 bd 命令快速返回到特定的父目录
 ======
 
-Two days back we had written an article about autocd. It’s a builtin shell variable that helps us to **[navigate to inside a directory without cd command][1]**.
+<to 校正：我在 ubuntu 上似乎没有按照这个教程成功使用 bd 命令，难道我的姿势不对？>
 
-If you want to come back to previous directory then you have to type `cd ..`.
+两天前我们写了一篇关于 `autocd` 的文章，它是一个内置的 `shell` 变量，可以帮助我们在**[没有 `cd` 命令的情况下导航到目录中][1]**.
 
-If you want to go back to two directories then you have to type `cd ../..`.
+如果你想回到上一级目录，那么你需要输入 `cd ..`。
 
-It’s normal in Linux but if you want to come back from 9th directory to 3rd directory, then it’s horrible to use cd command.
+如果你想回到上两级目录，那么你需要输入 `cd ../..`。
 
-What will be the solution for this.
+这在 Linux 中是正常的，但如果你想从第九个目录回到第三个目录，那么使用 cd 命令是很糟糕的。
 
-Yes, we have a solution in Linux for everything. We can go with bd command, to make easy this kind of situation.
+有什么解决方案呢？
 
-### What Is bd Command?
+是的，在 Linux 中有一个解决方案。我们可以使用 bd 命令来轻松应对这种情况。
 
-bd command allow users to quickly go back to a parent directory in Linux instead of typing `cd ../../..` repeatedly.
+### 什么是 bd 命令？
 
-You can list the contents of a given directory without mentioning the full path `ls `bd Directory_Name``. It supports following other commands such as ls, ln, echo, zip, tar etc..
+bd 命令允许用户快速返回 Linux 中的父目录，而不是反复输入 `cd ../../..`。
 
-Also, it allow us to execute a shell file without mentioning the full path `bd p`/shell_file.sh`.
+你可以列出给定目录的内容，而不用提供完整路径 `ls `bd Directory_Name``。它支持以下其它命令，如 ls、ln、echo、zip、tar 等。
 
-### How To Install bd Command in Linux?
+另外，它还允许我们执行 shell 文件而不用提供完整路径 `bd p`/shell_file.sh``。
 
-There is no official distribution package for bd except Debian/Ubuntu. Hence, we need to perform manual method.
+### 如何在 Linux 中安装 bd 命令？
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][2]** or **[APT Command][3]** to install bd.
+除了 Debian/Ubuntu 之外，bd 没有官方发行包。因此，我们需要手动执行方法。
+
+对于 **`Debian/Ubuntu`** 系统，使用 **[APT-GET 命令][2]**或**[APT 命令][3]**来安装 bd。
 
 ```
 $ sudo apt install bd
 ```
 
-For other Linux distributions.
-
-Download the bd executable binary file using **[wget command][4]**.
+对于其它 Linux 发行版，使用 **[wget 命令][4]**下载 bd 可执行二进制文件。
 
 ```
 $ sudo wget --no-check-certificate -O /usr/local/bin/bd https://raw.github.com/vigneshwaranr/bd/master/bd
 ```
 
-Set executable permission to the bd binary file.
+设置 bd 二进制文件的可执行权限。
 
 ```
 $ sudo chmod +rx /usr/local/bin/bd
 ```
 
-Append the below values in the `.bashrc` file.
+在 `.bashrc` 文件中添加以下值。
 
 ```
 $ echo 'alias bd=". bd -si"' >> ~/.bashrc
 ```
 
-Run the following command to make the changes to take effect.
-
+运行以下命令以使更改生效。
 ```
 $ source ~/.bashrc
 ```
 
-To enable auto completion, perform the following two steps.
-
+要启用自动完成，执行以下两个步骤。
 ```
 $ sudo wget -O /etc/bash_completion.d/bd https://raw.github.com/vigneshwaranr/bd/master/bash_completion.d/bd  
 $ sudo source /etc/bash_completion.d/bd
 ```
 
-We have successfully installed and configured the bd utility on the system. It’s time to test it.
+我们已经在系统上成功安装并配置了 bd 实用程序，现在是时候测试一下了。
 
-I’m going to take the below directory path for this testing.
+我将使用下面的目录路径进行测试。
 
-Run the `pwd` command or `dirs` command or `tree` command to know your current location.
+运行 `pwd` 命令或 `dirs` 命令，亦或是 `tree` 命令来了解你当前的路径。
 
 ```
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ pwd
-or
+或者
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ dirs
 
 /usr/share/icons/Adwaita/256x256/apps
 ```
 
-I’m currently in `/usr/share/icons/Adwaita/256x256/apps` and if i want to go to `icons` directory quickly then simple type the following command.
+我现在在 `/usr/share/icons/Adwaita/256x256/apps` 目录，如果我想快速跳转到 `icons` 目录，那么只需输入以下命令即可。
 
 ```
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ bd icons
@@ -95,17 +93,16 @@ daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ bd icons
 daygeek@Ubuntu18:/usr/share/icons$
 ```
 
-Even, you no need to type full directory name instead you can type few letters.
-
+甚至，你不需要输入完整的目录名称，也可以输入几个字母。
 ```
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ bd i
 /usr/share/icons/
 daygeek@Ubuntu18:/usr/share/icons$ 
 ```
 
-`Note:` If there are more than one directories with same name up in the hierarchy, bd will take you to the closest. (Not considering the immediate parent.)
+`注意:` 如果层次结构中有多个同名的目录，bd 会将你带到最近的目录。（不考虑直接的父目录）
 
-If you would like to list a given directory contents then the following format. It prints the contents of `/usr/share/icons/`.
+如果要列出给定的目录内容，使用以下格式。它会打印出 `/usr/share/icons/` 的内容。
 
 ```
 $ ls -lh `bd icons`
@@ -131,7 +128,7 @@ drwxr-xr-x 10 root root 4.0K Feb 25 15:46 ubuntu-mono-light
 drwxr-xr-x  3 root root 4.0K Jul 25  2018 whiteglass
 ```
 
-If you want to execute a file somewhere in a parent directory then use the following format. It will run the following shell file `/usr/share/icons/users-list.sh`.
+如果要在父目录中的某个位置执行文件，使用以下格式。它将运行 shell 文件 `/usr/share/icons/users-list.sh`。
 
 ```
 $ `bd i`/users-list.sh
@@ -150,7 +147,7 @@ user2
 user3
 ```
 
-If you reside in `/usr/share/icons/Adwaita/256x256/apps` and would you like to navigate to different parent directory then use the following format. The below command will navigate to `/usr/share/icons/gnome` directory.
+如果你位于 `/usr/share/icons/Adwaita/256x256/apps` 中，想要导航到不同的父目录，使用以下格式。以下命令将导航到 `/usr/share/icons/gnome` 目录。
 
 ```
 $ cd `bd i`/gnome
@@ -159,7 +156,7 @@ daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ cd `bd icon`/gnome
 daygeek@Ubuntu18:/usr/share/icons/gnome$ 
 ```
 
-If you reside in `/usr/share/icons/Adwaita/256x256/apps` and would you like to create a new directory under `/usr/share/icons/` then use the following format.
+如果你位于 `/usr/share/icons/Adwaita/256x256/apps` ，你想在 `/usr/share/icons/` 下创建一个新目录，使用以下格式。
 
 ```
 $ daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ sudo mkdir `bd icons`/2g
@@ -168,9 +165,9 @@ daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ ls -ld `bd icon`/2g
 drwxr-xr-x 2 root root 4096 Mar 16 05:44 /usr/share/icons//2g
 ```
 
-This tutorial allows you to quickly go back to a specific parent directory but there is no option to move forward quickly.
+本教程允许你快速返回到特定的父目录，但没有快速前进的选项。
 
-We have another solution for this, will come up with new solution shortly. Please stay tune with us.
+我们有另一个解决方案，很快就会提出新的解决方案，请跟我们保持联系。
 
 --------------------------------------------------------------------------------
 
