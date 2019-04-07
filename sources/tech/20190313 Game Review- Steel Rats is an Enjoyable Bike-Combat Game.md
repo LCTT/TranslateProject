@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Game Review: Steel Rats is an Enjoyable Bike-Combat Game)
-[#]: via: (https://itsfoss.com/steel-rats)
+[#]: via: (https://itsfoss.com/steel-rats/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
 Game Review: Steel Rats is an Enjoyable Bike-Combat Game
@@ -16,11 +16,11 @@ In case you didn’t know, you can easily [install Steam on Ubuntu][2] or other 
 
 So, in this article, we shall take a look at what the game is all about and if it is a good purchase for you.
 
-This game is neither free nor open source. We have covered it here because the game developers made an effort to port it to Linux.
+_This game is neither free nor open source. We have covered it here because the game developers made an effort to port it to Linux._
 
 ### Story Overview
 
-![steel rats][4]
+![][4]
 
 You belong to a biker gang – “ **Steel Rats** ” – who stepped up to protect their city from alien robots invasion. The alien robots aren’t just any tiny toys that you can easily defeat but with deadly weapons and abilities.
 
@@ -46,8 +46,6 @@ You just need to keep the right pace and the perfect jump while hitting every en
 
 If you’re curious about the gameplay, we recommend watching this video:
 
-<https://www.youtube.com/embed/e2RhSKjLKf0?enablejsapi=1&autoplay=0&cc_load_policy=0&iv_load_policy=1&loop=0&modestbranding=1&rel=0&showinfo=0&fs=1&playsinline=0&autohide=2&theme=dark&color=red&controls=2&?
-
 ### Performance & Visuals
 
 ![][7]
@@ -70,11 +68,13 @@ Depending on your region – you will find this game listed on Steam for either 
 
 Is it worth it? **Yes** , if you want a exciting and fun motorbike-action game in a 2.5D experience. **No** , if you want an extremely challenging 2D game in your library.
 
+[Purchase on steam][1]
+
 What do you think about the game? Let us know in the comments below.
 
 --------------------------------------------------------------------------------
 
-via: https://itsfoss.com/steel-rats
+via: https://itsfoss.com/steel-rats/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
