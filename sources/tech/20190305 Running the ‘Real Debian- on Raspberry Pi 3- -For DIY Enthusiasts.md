@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Running the ‘Real Debian’ on Raspberry Pi 3+ [For DIY Enthusiasts])
-[#]: via: (https://itsfoss.com/debian-raspberry-pi)
+[#]: via: (https://itsfoss.com/debian-raspberry-pi/)
 [#]: author: (Shirish https://itsfoss.com/author/shirish/)
 
 Running the ‘Real Debian’ on Raspberry Pi 3+ [For DIY Enthusiasts]
@@ -18,7 +18,7 @@ Raspbian is a heavily customized form of Debian to run on low-powered ARM proces
 
 Above all, running the official Debian on Raspberry Pi is sort of challenge and I like such challenges.
 
-![Real Debian on Raspberry Pi][3]
+![][3]
 
 I am not the only one who thinks like this. There are many other Debian users who share the same feeling and this is why there exists an ongoing project to create a [Debian image for Raspberry Pi][4].
 
@@ -28,11 +28,9 @@ I’ll be quickly showing you how can you install this Raspberry Pi Debian Buste
 
 ### Getting Debian on Raspberry Pi [For Experts]
 
-```
 Warning
 
 Be aware this Debian image is very raw and unsupported at the moment. Though it’s very new, I believe experienced Raspberry Pi and Debian users should be able to use it.
-```
 
 Now as far as [Debian][6] is concerned, here is the Debian image and instructions that you could use to put the Debian stock image on your Raspberry pi 3 Model B+.
 
@@ -60,7 +58,7 @@ sha256sum -c 20190206-raspberry-pi-3-buster-PREVIEW.img.xz.sha256
 
 Once you have verified the image, take a look at it. It is around 400MB in the compressed xzip format. You can extract it to get an image of around 1.5GB in size.
 
-Insert your SD card. **Before you carry on to the next command please change the sdX to a suitable name that corresponds to your SD card.**
+Insert your SD card. _**Before you carry on to the next command please change the sdX to a suitable name that corresponds to your SD card.**_
 
 The command basically extracts the img.xz archive to the SD card. The progress switch/flag enables you to see a progress line with a number as to know how much the archive has extracted.
 
@@ -71,14 +69,14 @@ xzcat 20190206-raspberry-pi-3-buster-PREVIEW.img.xz | dd of=/dev/sdX bs=64k ofla
 Once you have successfully flashed your SD card, you should be able test if the installation went ok by sshing into your Raspberry Pi. The default root password is raspberry.
 
 ```
-ssh root@rpi3
+ssh [email protected]
 ```
 
 If you are curious to know how the Raspberry Pi image was built, you can look at the [build scripts][8].
 
 You can find more info on the project homepage.
 
-[DEBIAN RASPBERRY PI IMAGE][15]
+[Debian Raspberry pi image][4]
 
 ### How to contribute to the Raspberry Pi Buster effort
 
@@ -106,7 +104,7 @@ I hope the above sheds some light why it makes sense to have Debian on the Raspb
 
 --------------------------------------------------------------------------------
 
-via: https://itsfoss.com/debian-raspberry-pi
+via: https://itsfoss.com/debian-raspberry-pi/
 
 作者：[Shirish][a]
 选题：[lujun9972][b]
@@ -131,4 +129,3 @@ via: https://itsfoss.com/debian-raspberry-pi
 [12]: https://liw.fi/vmdb2/
 [13]: https://wiki.debian.org/Arm64Port
 [14]: https://raspi.farm/
-[15]: https://wiki.debian.org/RaspberryPi3
