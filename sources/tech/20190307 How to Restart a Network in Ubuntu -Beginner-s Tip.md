@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Restart a Network in Ubuntu [Beginner’s Tip])
-[#]: via: (https://itsfoss.com/restart-network-ubuntu)
+[#]: via: (https://itsfoss.com/restart-network-ubuntu/)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
 How to Restart a Network in Ubuntu [Beginner’s Tip]
@@ -14,7 +14,12 @@ You’re [using an Ubuntu-based system and you just can’t seem to connect to y
 
 In this article, I’ll go over multiple ways you can restart network in Ubuntu and other Linux distributions, so you can use whatever suits your needs. The methods are basically divided into two parts:
 
-![Ubuntu Restart Network][2]
+  * Restart Ubuntu network in command line
+  * Restart Ubuntu network via GUI
+
+
+
+![][2]
 
 ### Restart network in Ubuntu using command line
 
@@ -72,7 +77,7 @@ A good practice would be to combine both of these commands:
 sudo ifdown -a && sudo ifup -a
 ```
 
-**Note:** This method will not make the network icon in your systray disappear, and yet you won’t be able to have a connection of any sort.
+**Note:** _This method will not make the network icon in your systray disappear, and yet you won’t be able to have a connection of any sort._
 
 **Bonus tool: nmtui (click to expand)**
 
@@ -84,45 +89,45 @@ nmtui
 
 This should open up the following menu:
 
-![nmtui Menu][5]
+![][5]
 
 **Note** that in **nmtui** , you can select another option by using the **up** and **down arrow keys**.
 
 Select **Activate a connection** :
 
-![nmtui Menu Select "Activate a connection"][6]
+![][6]
 
 Press **Enter**. This should now open the **connections** menu.
 
-![nmtui Connections Menu][7]
+![][7]
 
 Here, go ahead and select the network with a **star (*)** next to it. In my case, it’s MGEO72.
 
-![Select your connection in the nmtui connections menu.][8]
+![][8]
 
 Press **Enter**. This should **deactivate** your connection.
 
-![nmtui Connections Menu with no active connection][9]
+![][9]
 
 Select the connection you want to activate:
 
-![Select the connection you want in the nmtui connections menu.][10]
+![][10]
 
 Press **Enter**. This should reactivate the selected connection.
 
-![nmtui Connections Menu][11]
+![][11]
 
 Press **Tab** twice to select **Back** :
 
-![Select "Back" in the nmtui connections menu.][12]
+![][12]
 
 Press **Enter**. This should bring you back to the **nmtui** main menu.
 
-![nmtui Main Menu][13]
+![][13]
 
 Select **Quit** :
 
-![nmtui Quit Main Menu][14]
+![][14]
 
 This should exit the application and bring you back to your terminal.
 
@@ -138,13 +143,13 @@ First of all, check out your top panel. You should find a network icon in your s
 
 Go ahead and click on that icon (or the sound or battery icon). This will open up the menu. Select “Turn Off” here.
 
-![Restart network in Ubuntu][16]Turn off your network
+![Turn off your network][16]
 
 The network icon should now disappear from the top panel. This means the network has been successfully turned off.
 
 Click again on your systray to reopen the menu. Select “Turn On”.
 
-![Restarting network in Ubuntu][17]Turn the network back on
+![Turn the network back on][17]
 
 Congratulations! You have now restarted your network.
 
@@ -156,11 +161,11 @@ Ubuntu doesn’t have a ‘refresh wifi networks’ option directly. It’s sort
 
 You’ll have to open the setting menu again and this time, click on “Select Network”.
 
-![Refresh wifi network list in Ubuntu][18]Select Network to change your WiFi connection
+![Select Network to change your WiFi connection][18]
 
 Now, you won’t see the list of available wireless networks immediately. When you open the networks list, it takes around 5 seconds to refresh and show up other available wireless networks.
 
-![Select another wifi network in Ubuntu][19]Wait for around 5- seconds to see other available networks
+![Wait for around 5- seconds to see other available networks][19]
 
 And here, you can select the network of your choice and click connect. That’s it.
 
@@ -172,10 +177,9 @@ We hope that we helped you with plenty of methods for handling such issues!
 
 What do you use to restart/handle your network? Is there something we missed? Leave us a comment below.
 
-
 --------------------------------------------------------------------------------
 
-via: https://itsfoss.com/restart-network-ubuntu
+via: https://itsfoss.com/restart-network-ubuntu/
 
 作者：[Sergiu][a]
 选题：[lujun9972][b]
@@ -205,4 +209,3 @@ via: https://itsfoss.com/restart-network-ubuntu
 [17]: https://i2.wp.com/itsfoss.com/wp-content/uploads/2019/03/restart-network-ubuntu-2.jpg?resize=800%2C400&ssl=1
 [18]: https://i2.wp.com/itsfoss.com/wp-content/uploads/2019/03/select-wifi-network-ubuntu.jpg?resize=800%2C400&ssl=1
 [19]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2019/03/select-wifi-network-ubuntu-1.jpg?resize=800%2C400&ssl=1
-[20]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2019/03/ubuntu-restart-network.png?fit=800%2C450&ssl=1
