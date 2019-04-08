@@ -1,11 +1,11 @@
 [#]: collector: "lujun9972"
 [#]: translator: "Auk7F7"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
+[#]: publisher: "wxy"
 [#]: subject: "Arch-Wiki-Man – A Tool to Browse The Arch Wiki Pages As Linux Man Page from Offline"
 [#]: via: "https://www.2daygeek.com/arch-wiki-man-a-tool-to-browse-the-arch-wiki-pages-as-linux-man-page-from-offline/"
-[#]: author: "[Prakash Subramanian](https://www.2daygeek.com/author/prakash/)"
-[#]: url: " "
+[#]: author: "Prakash Subramanian https://www.2daygeek.com/author/prakash/"
+[#]: url: "https://linux.cn/article-10694-1.html"
 
 Arch-Wiki-Man：一个以 Linux Man 手册样式离线浏览 Arch Wiki 的工具
 ======
