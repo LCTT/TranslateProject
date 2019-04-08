@@ -7,7 +7,7 @@
 [#]: via: (https://www.ostechnix.com/how-to-set-password-policies-in-linux/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
 
-如何在 Linux 系统下的密码策略
+如何在 Linux 系统中设置密码策略
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/How-To-Set-Password-Policies-In-Linux-720x340.jpg)
 
