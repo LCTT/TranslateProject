@@ -11,7 +11,7 @@
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/How-To-Set-Password-Policies-In-Linux-720x340.jpg)
 
-虽然 Linux 的设计是安全的，但还是存在许多安全漏洞的风险。弱密码就是其中之一。作为系统管理员，你必须为用户提供一个强密码。因为大部分的系统漏洞就是由于弱密码而引发的。本教程描述了在基于 DEB 系统的 Linux，比如 Debian、Ubuntu、Linux Mint 等和基于 RPM 系统的 Linux，比如 RHEL、CentOS、Scientific Linux 等的系统下设置像**密码长度**，**密码复杂度***，**密码有效期***等密码策略。　　
+虽然 Linux 的设计是安全的，但还是存在许多安全漏洞的风险。弱密码就是其中之一。作为系统管理员，你必须为用户提供一个强密码。因为大部分的系统漏洞就是由于弱密码而引发的。本教程描述了在基于 DEB 系统的 Linux，比如 Debian, Ubuntu, Linux Mint 等和基于 RPM 系统的 Linux，比如 RHEL, CentOS, Scientific Linux 等的系统下设置像**密码长度**，**密码复杂度**，**密码有效期**等密码策略。　　
 
 ### 在基于 DEB 的系统中设置密码长度
 
@@ -33,7 +33,7 @@ password [success=2 default=ignore] pam_unix.so obscure sha512
 
 ![][2]
 
-在末尾添加额外的文字：**minlen=8**。在这里我设置的最小密码长度为　**8**。
+在末尾添加额外的文字：**minlen=8**。在这里我设置的最小密码长度为 **8**。
 
 ```
 password [success=2 default=ignore] pam_unix.so obscure sha512 minlen=8
@@ -288,7 +288,7 @@ Number of days of warning before password expires : 7
 $ sudo chage -E 24/06/2018 -m 5 -M 90 -I 10 -W 10 sk
 ```
 
-上面的命令将会设置用户 **‘sk’** 的密码期限是 **24/06/2018**。并且修改密码的最小间隔时间为 5 天，最大间隔时间为 **90** 天。用户账号将会在 **10 天**后被自动锁定而且在到期之前的 **10　天**将会显示警告信息。
+上面的命令将会设置用户 **‘sk’** 的密码期限是 **24/06/2018**。并且修改密码的最小间隔时间为 5 天，最大间隔时间为 **90** 天。用户账号将会在 **10 天**后被自动锁定而且在到期之前的 **10 天**将会显示警告信息。
 
 ### 在基于 RPM 的系统中设置密码效期
 
@@ -315,7 +315,7 @@ password        [success=2 default=ignore]      pam_unix.so obscure use_a
 
 这点对于 RHEL 6.x 和 RHEL 7.x 是相同的。他们的克隆系统类似于 CentOS, Scientific Linux。 
 
-以root用户编辑 **/etc/pam.d/system-auth** 文件，
+以root身份编辑 **/etc/pam.d/system-auth** 文件，
 
 ```
 # vi /etc/pam.d/system-auth
@@ -327,7 +327,7 @@ password        [success=2 default=ignore]      pam_unix.so obscure use_a
 password     sufficient     pam_unix.so sha512 shadow nullok try_first_pass use_authtok remember=5
 ```
 
-现在你知道了 Linux　中的密码策略是什么，以及如何在基于 DEB 和 RPM 的系统中设置不同的密码策略。
+现在你知道了 Linux 中的密码策略是什么，以及如何在基于 DEB 和 RPM 的系统中设置不同的密码策略。
 
 现在就这样，我很快会在这里发表另外一天有趣而且有用的文章。在此之前会与 OSTechNix 保持联系。如果您觉得本教程对你有帮助，请在您的社交，专业网络上分享并支持我们。
 
