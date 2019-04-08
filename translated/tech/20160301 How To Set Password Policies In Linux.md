@@ -11,7 +11,7 @@
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/How-To-Set-Password-Policies-In-Linux-720x340.jpg)
 
-虽然 Linux 的设计是安全的，但还是存在许多安全漏洞的风险。弱密码就是其中之一。作为系统管理员，你必须为用户提供一个强密码。因为大部分的系统漏洞就是由于弱密码而引发的。本教程描述了在基于 DEB 系统的 Linux，比如 Debian、Ubuntu、Linux Mint 等和基于　RPM 系统的　Linux，比如　RHEL、CentOS、Scientific Linux 等的系统下设置像**密码长度**，**密码复杂度***，**密码有效期***等密码策略。　　
+虽然 Linux 的设计是安全的，但还是存在许多安全漏洞的风险。弱密码就是其中之一。作为系统管理员，你必须为用户提供一个强密码。因为大部分的系统漏洞就是由于弱密码而引发的。本教程描述了在基于 DEB 系统的 Linux，比如 Debian、Ubuntu、Linux Mint 等和基于 RPM 系统的 Linux，比如 RHEL、CentOS、Scientific Linux 等的系统下设置像**密码长度**，**密码复杂度***，**密码有效期***等密码策略。　　
 
 ### 在基于 DEB 的系统中设置密码长度
 
