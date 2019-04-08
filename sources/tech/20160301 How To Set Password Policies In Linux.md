@@ -7,25 +7,25 @@
 [#]: via: (https://www.ostechnix.com/how-to-set-password-policies-in-linux/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
 
-How To Set Password Policies In Linux
+如何在 Linux 系统下的密码策略
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/How-To-Set-Password-Policies-In-Linux-720x340.jpg)
 
-Even though Linux is secure by design, there are many chances for the security breach. One of them is weak passwords. As a System administrator, you must provide a strong password for the users. Because, mostly system breaches are happening due to weak passwords. This tutorial describes how to set password policies such as **password length** , **password complexity** , **password** **expiration period** etc., in DEB based systems like Debian, Ubuntu, Linux Mint, and RPM based systems like RHEL, CentOS, Scientific Linux.
+虽然 Linux 的设计是安全的，但还是存在许多安全漏洞的风险。弱密码就是其中之一。作为系统管理员，你必须为用户提供一个强密码。因为大部分的系统漏洞就是由于弱密码而引发的。本教程描述了在基于 DEB 系统的 Linux ，比如 Debian, Ubuntu, Linux Mint 等和基于　RPM 系统的　Linux ，比如　RHEL, CentOS, Scientific Linux等的系统下设置像**密码长度**，**密码复杂度***，**密码有效期***等密码策略。　　
 
-### Set password length in DEB based systems
+### 在基于 DEB 的系统中设置密码长度
 
-By default, all Linux operating systems requires **password length of minimum 6 characters** for the users. I strongly advice you not to go below this limit. Also, don’t use your real name, parents/spouse/kids name, or your date of birth as a password. Even a novice hacker can easily break such kind of passwords in minutes. The good password must always contains more than 6 characters including a number, a capital letter, and a special character.
+默认情况下，所有的 Linux 操作系统要求用户**密码长度最少6个字符**。我强烈建议不要低于这个限制。并且不要使用你的真实名称、父母、配偶、孩子的名字，或者你的生日作为密码。即便是一个黑客新手，也可以很快地破解这类密码。一个好的密码必须是至少 6 个字符，并且包含数字，大写字母和特殊符号。
 
-Usually, the password and authentication-related configuration files will be stored in **/etc/pam.d/** location in DEB based operating systems.
+通常地，在基于 DEB 的操作系统中，密码和身份认证相关的配置文件被存储在 **/etc/pam.d/** 目录中。
 
-To set minimum password length, edit**/etc/pam.d/common-password** file;
+设置最小密码长度，编辑 **/etc/pam.d/common-password** 文件；
 
 ```
 $ sudo nano /etc/pam.d/common-password
 ```
 
-Find the following line:
+找到下面这行：
 
 ```
 password [success=2 default=ignore] pam_unix.so obscure sha512
@@ -33,7 +33,7 @@ password [success=2 default=ignore] pam_unix.so obscure sha512
 
 ![][2]
 
-And add an extra word: **minlen=8** at the end. Here I set the minimum password length as **8**.
+在末尾添加额外的文字：**minlen=8**。在这里我设置的最小密码长度为　**8**。
 
 ```
 password [success=2 default=ignore] pam_unix.so obscure sha512 minlen=8
@@ -41,35 +41,35 @@ password [success=2 default=ignore] pam_unix.so obscure sha512 minlen=8
 
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/sk@sk-_002-3-1.jpg)
 
-Save and close the file. So, now the users can’t use less than 8 characters for their password.
+保存并关闭该文件。这样一来，用户现在不能设置小于 8 个字符的密码。
 
-### Set password length in RPM based systems
+### 在基于RPM的系统中设置密码长度
 
-**In RHEL, CentOS, Scientific Linux 7.x** systems, run the following command as root user to set password length.
+**在 RHEL, CentOS, Scientific Linux 7.x** 系统中， 以root身份执行下面的命令来设置密码长度。
 
 ```
 # authconfig --passminlen=8 --update
 ```
 
-To view the minimum password length, run:
+查看最小密码长度, 执行：
 
 ```
 # grep "^minlen" /etc/security/pwquality.conf
 ```
 
-**Sample output:**
+**输出样例：**
 
 ```
 minlen = 8
 ```
 
-**In RHEL, CentOS, Scientific Linux 6.x** systems, edit **/etc/pam.d/system-auth** file:
+**在 RHEL, CentOS, Scientific Linux 6.x** 系统中, 编辑 **/etc/pam.d/system-auth** 文件：
 
 ```
 # nano /etc/pam.d/system-auth
 ```
 
-Find the following line and add the following at the end of the line:
+找到下面这行并在该行末尾添加：
 
 ```
 password requisite pam_cracklib.so try_first_pass retry=3 type= minlen=8
@@ -77,25 +77,25 @@ password requisite pam_cracklib.so try_first_pass retry=3 type= minlen=8
 
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/root@server_003-3.jpg)
 
-As per the above setting, the minimum password length is **8** characters.
+在以上所有设置中，最小密码长度是 **8** 个字符。
 
-### Set password complexity in DEB based systems
+### 在基于DEB的系统中设置密码复杂度
 
-This setting enforces how many classes, i.e upper-case, lower-case, and other characters, should be in a password.
+此设置会强制要求密码中应该包含多少类型，比如大写字母，小写字母和其他字符。
 
-First install password quality checking library using command:
+首先，用下面命令安装密码质量检测库：
 
 ```
 $ sudo apt-get install libpam-pwquality
 ```
 
-Then, edit **/etc/pam.d/common-password** file:
+之后，编辑 **/etc/pam.d/common-password** 文件：
 
 ```
 $ sudo nano /etc/pam.d/common-password
 ```
 
-To set at least one **upper-case** letters in the password, add a word **‘ucredit=-1’** at the end of the following line.
+为了设置密码中至少有一个**大写字母**，则在下面这行的末尾添加文字 **‘ucredit=-1’**。
 
 ```
 password requisite pam_pwquality.so retry=3 ucredit=-1
@@ -103,135 +103,133 @@ password requisite pam_pwquality.so retry=3 ucredit=-1
 
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/sk@sk-_001-7.jpg)
 
-Set at least one **lower-case** letters in the password as shown below.
+设置密码中至少有一个**小写字母**，如下所示。
 
 ```
 password requisite pam_pwquality.so retry=3 dcredit=-1
 ```
 
-Set at least **other** letters in the password as shown below.
+设置密码中至少含有其他字符，如下所示。
 
 ```
 password requisite pam_pwquality.so retry=3 ocredit=-1
 ```
 
-As you see in the above examples, we have set at least (minimum) one upper-case, lower-case, and a special character in the password. You can set any number of maximum allowed upper-case, lower-case, and other letters in your password.
+正如你在上面样例中看到的一样，我们设置了密码中至少含有一个大写字母、一个小写字母和一个特殊字符。你可以设置被最大允许的任意数量的大写字母，小写字母和特殊字符。
 
-You can also set the minimum/maximum number of allowed classes in the password.
+你还可以设置密码中被允许的最大或最小类型的数量。
 
-The following example shows the minimum number of required classes of characters for the new password:
+下面的例子展示了设置一个新密码中被要求的字符类的最小数量：
 
 ```
 password requisite pam_pwquality.so retry=3 minclass=2
 ```
 
-### Set password complexity in RPM based systems
+### 在基于RPM的系统中设置密密码杂度
 
-**In RHEL 7.x / CentOS 7.x / Scientific Linux 7.x:**
+**在 RHEL 7.x / CentOS 7.x / Scientific Linux 7.x 中：**
 
-To set at least one lower-case letter in the password, run:
+设置密码中至少有一个小写字母，执行：
 
 ```
 # authconfig --enablereqlower --update
 ```
 
-To view the settings, run:
+查看该设置，执行：
 
 ```
 # grep "^lcredit" /etc/security/pwquality.conf
 ```
 
-**Sample output:**
+**输出样例：**
 
 ```
 lcredit = -1
 ```
 
-Similarly, set at least one upper-case letter in the password using command:
+类似地，使用以下命令去设置密码中至少有一个大写字母：
 
 ```
 # authconfig --enablerequpper --update
 ```
 
-To view the settings:
+查看该设置：
 
 ```
 # grep "^ucredit" /etc/security/pwquality.conf
 ```
 
-**Sample output:**
+**输出样例：**
 
 ```
 ucredit = -1
 ```
 
-To set at least one digit in the password, run:
+设置密码中至少有一个数字，执行：
 
 ```
 # authconfig --enablereqdigit --update
 ```
 
-To view the setting, run:
+查看该设置，执行：
 
 ```
 # grep "^dcredit" /etc/security/pwquality.conf
 ```
 
-**Sample output:**
+**输出样例：**
 
 ```
 dcredit = -1
 ```
 
-To set at least one other character in the password, run:
+设置密码中至少含有一个其他字符，执行：
 
 ```
 # authconfig --enablereqother --update
 ```
 
-To view the setting, run:
+查看该设置，执行：
 
 ```
 # grep "^ocredit" /etc/security/pwquality.conf
 ```
 
-**Sample output:**
+**输出样例：**
 
 ```
 ocredit = -1
 ```
 
-In **RHEL 6.x / CentOS 6.x / Scientific Linux 6.x systems** , edit **/etc/pam.d/system-auth** file as root user:
+在 **RHEL 6.x / CentOS 6.x / Scientific Linux 6.x systems** 中，以root身份编辑 **/etc/pam.d/system-auth** 文件：
 
 ```
 # nano /etc/pam.d/system-auth
 ```
 
-Find the following line and add the following at the end of the line:
+找到下面这行并且在该行末尾添加：
 
 ```
 password requisite pam_cracklib.so try_first_pass retry=3 type= minlen=8 dcredit=-1 ucredit=-1 lcredit=-1 ocredit=-1
 ```
+在以上每个设置中，密码必须要至少包含 8 个字符。另外，密码必须至少包含一个大写字母、一个小写字母、一个数字和一个其他字符。
 
-As per the above setting, the password must have at least 8 characters. In addtion, the password should also have at least one upper-case letter, one lower-case letter, one digit, and one other characters.
+### 在基于DEB的系统中设置密码有效期
 
-### Set password expiration period in DEB based systems
-
-Now, We are going to set the following policies.
-
-  1. Maximum number of days a password may be used.
-  2. Minimum number of days allowed between password changes.
-  3. Number of days warning given before a password expires.
+现在，我们将要设置下面的策略。
+  1. 密码被使用的最长天数。
+  2. 密码更改允许的最小间隔天数。
+  3. 密码到期之前发出警告的天数。 
 
 
 
-To set this policy, edit:
+设置这些策略，编辑：
 
 ```
 $ sudo nano /etc/login.defs
 ```
 
-Set the values as per your requirement.
+在你的每个需求后设置值。
 
 ```
 PASS_MAX_DAYS 100
@@ -241,37 +239,37 @@ PASS_WARN_AGE 7
 
 ![](https://www.ostechnix.com/wp-content/uploads/2016/03/sk@sk-_002-8.jpg)
 
-As you see in the above example, the user should change the password once in every **100** days and the warning message will appear **7** days before password expiration.
+正如你在上面样例中看到的一样，用户应该每 **100** 天修改一次密码，并且密码到期之前的 **7** 天开始出现警告信息。
 
-Be mindful that these settings will impact the newly created users.
+请注意，这些设置将会在新创建的用户中有效。
 
-To set maximum number of days between password change to existing users, you must run the following command:
+为已存在的用户设置修改密码的最大间隔天数，你必须要运行下面的命令：
 
 ```
 $ sudo chage -M <days> <username>
 ```
 
-To set minimum number of days between password change, run:
+设置修改密码的最小间隔天数，执行：
 
 ```
 $ sudo chage -m <days> <username>
 ```
 
-To set warning before password expires, run:
+设置密码到期之前的警告，执行：
 
 ```
 $ sudo chage -W <days> <username>
 ```
 
-To display the password for the existing users, run:
+显示已存在用户的密码，执行：
 
 ```
 $ sudo chage -l sk
 ```
 
-Here, **sk** is my username.
+这里，**sk** 是我的用户名。
 
-**Sample output:**
+**输出样例：**
 
 ```
 Last password change : Feb 24, 2017
@@ -282,60 +280,58 @@ Minimum number of days between password change : 0
 Maximum number of days between password change : 99999
 Number of days of warning before password expires : 7
 ```
+正如你在上面看到的输出一样，该密码是无限期的。
 
-As you see in the above output, the password never expires.
-
-To change the password expiration period of an existing user,
+修改已存在用户的密码有效期，
 
 ```
 $ sudo chage -E 24/06/2018 -m 5 -M 90 -I 10 -W 10 sk
 ```
 
-The above command will set password of the user **‘sk’** to expire on **24/06/2018**. Also the the minimum number days between password change is set 5 days and the maximum number of days between password changes is set to **90** days. The user account will be locked automatically after **10 days** and It will display a warning message for **10 days** before password expiration.
+上面的命令将会设置用户 **‘sk’** 的密码期限是 **24/06/2018**。并且修改密码的最小间隔时间为 5 天，最大间隔时间为 **90** 天。用户账号将会在 **10 天**后被自动锁定而且在到期之前的 **10　天**将会显示警告信息。
 
-### Set password expiration period in RPM based systems
+### 在基于 RPM 的系统中设置密码效期
 
-This is same as DEB based systems.
+这点和基于 DEB 的系统是相同的。
 
-### Forbid previously used passwords in DEB based systems
+### 在基于 DEB 的系统中禁止使用近期使用过的密码
+你可以限制用户去设置一个已经使用过的密码。通俗的讲，就是说用户不能再次使用相同的密码。
 
-You can limit the users to set a password which is already used in the past. To put this in layman terms, the users can’t use the same password again.
-
-To do so, edit**/etc/pam.d/common-password** file:
+为设置这一点，编辑 **/etc/pam.d/common-password** 文件：
 
 ```
 $ sudo nano /etc/pam.d/common-password
 ```
 
-Find the following line and add the word **‘remember=5’** at the end:
+找到下面这行并且在末尾添加文字 **‘remember=5’**：
 
 ```
 password        [success=2 default=ignore]      pam_unix.so obscure use_authtok try_first_pass sha512 remember=5
 ```
 
-The above policy will prevent the users to use the last 5 used passwords.
+上面的策略将会阻止用户去使用最近使用过的 5 个密码。
 
-### Forbid previously used passwords in RPM based systems
+### 在基于 RPM 的系统中禁止使用近期使用过的密码
 
-This is same for both RHEL 6.x and RHEL 7.x and it’s clone systems like CentOS, Scientific Linux.
+这点对于 RHEL 6.x 和 RHEL 7.x 是相同的。他们的克隆系统类似于 CentOS, Scientific Linux。 
 
-Edit **/etc/pam.d/system-auth** file as root user,
+以root用户编辑 **/etc/pam.d/system-auth** 文件，
 
 ```
 # vi /etc/pam.d/system-auth
 ```
 
-Find the following line, and add **remember=5** at the end.
+找到下面这行，并且在末尾添加文字 **remember=5**。
 
 ```
 password     sufficient     pam_unix.so sha512 shadow nullok try_first_pass use_authtok remember=5
 ```
 
-You know now what is password policies in Linux, and how to set different password policies in DEB and RPM based systems.
+现在你知道了 Linux　中的密码策略是什么，以及如何在基于 DEB 和 RPM 的系统中设置不同的密码策略。
 
-That’s all for now. I will be here soon with another interesting and useful article. Until then stay tuned with OSTechNix. If you find this tutorial helpful, share it on your social, professional networks and support us.
+现在就这样，我很快会在这里发表另外一天有趣而且有用的文章。在此之前会与 OSTechNix 保持联系。如果您觉得本教程对你有帮助，请在您的社交，专业网络上分享并支持我们。
 
-Cheers!
+祝贺！
 
 
 
@@ -345,7 +341,7 @@ via: https://www.ostechnix.com/how-to-set-password-policies-in-linux/
 
 作者：[SK][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[liujing97](https://github.com/liujing97)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
