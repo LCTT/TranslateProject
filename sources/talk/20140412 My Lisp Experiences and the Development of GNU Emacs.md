@@ -1,4 +1,3 @@
-zgj1024 is translating
 My Lisp Experiences and the Development of GNU Emacs
 ======
 
