@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Liwen Jiang)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,6 +7,7 @@
 [#]: via: (https://opensource.com/article/19/4/radiodroid-internet-radio-player)
 [#]: author: (Chris Hermansen (Community Moderator) https://opensource.com/users/clhermansen)
 
+tomjlw is translating
 Streaming internet radio with RadioDroid
 ======
 Listen to your favorite internet radio stations over your home stereo
@@ -55,7 +56,7 @@ via: https://opensource.com/article/19/4/radiodroid-internet-radio-player
 
 作者：[Chris Hermansen (Community Moderator)][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tomjlw(https://github.com/tomjlw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
