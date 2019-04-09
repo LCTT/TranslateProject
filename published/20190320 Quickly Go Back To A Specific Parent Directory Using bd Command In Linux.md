@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10695-1.html)
 [#]: subject: (Quickly Go Back To A Specific Parent Directory Using bd Command In Linux)
 [#]: via: (https://www.2daygeek.com/bd-quickly-go-back-to-a-specific-parent-directory-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -10,45 +10,43 @@
 在 Linux 中使用 bd 命令快速返回到特定的父目录
 ======
 
-<to 校正：我在 ubuntu 上似乎没有按照这个教程成功使用 bd 命令，难道我的姿势不对？>
-
-两天前我们写了一篇关于 `autocd` 的文章，它是一个内置的 `shell` 变量，可以帮助我们在**[没有 `cd` 命令的情况下导航到目录中][1]**.
+两天前我们写了一篇关于 `autocd` 的文章，它是一个内置的 shell 变量，可以帮助我们在[没有 cd 命令的情况下导航到目录中][1]。
 
 如果你想回到上一级目录，那么你需要输入 `cd ..`。
 
 如果你想回到上两级目录，那么你需要输入 `cd ../..`。
 
-这在 Linux 中是正常的，但如果你想从第九个目录回到第三个目录，那么使用 cd 命令是很糟糕的。
+这在 Linux 中是正常的，但如果你想从第九级目录回到第三级目录，那么使用 `cd` 命令是很糟糕的。
 
 有什么解决方案呢？
 
-是的，在 Linux 中有一个解决方案。我们可以使用 bd 命令来轻松应对这种情况。
+是的，在 Linux 中有一个解决方案。我们可以使用 `bd` 命令来轻松应对这种情况。
 
 ### 什么是 bd 命令？
 
-bd 命令允许用户快速返回 Linux 中的父目录，而不是反复输入 `cd ../../..`。
+`bd` 命令允许用户快速返回 Linux 中的父目录，而不是反复输入 `cd ../../..`。
 
-你可以列出给定目录的内容，而不用提供完整路径 `ls `bd Directory_Name``。它支持以下其它命令，如 ls、ln、echo、zip、tar 等。
+你可以列出给定目录的内容，而不用提供完整路径 ls `bd Directory_Name`。它支持以下其它命令，如 `ls`、`ln`、`echo`、`zip`、`tar` 等。
 
-另外，它还允许我们执行 shell 文件而不用提供完整路径 `bd p`/shell_file.sh``。
+另外，它还允许我们执行 shell 文件而不用提供完整路径 bd p`/shell_file.sh`。
 
 ### 如何在 Linux 中安装 bd 命令？
 
-除了 Debian/Ubuntu 之外，bd 没有官方发行包。因此，我们需要手动执行方法。
+除了 Debian/Ubuntu 之外，`bd` 没有官方发行包。因此，我们需要手动执行方法。
 
-对于 **`Debian/Ubuntu`** 系统，使用 **[APT-GET 命令][2]**或**[APT 命令][3]**来安装 bd。
+对于 Debian/Ubuntu 系统，使用 [APT-GET 命令][2]或[APT 命令][3]来安装 `bd`。
 
 ```
 $ sudo apt install bd
 ```
 
-对于其它 Linux 发行版，使用 **[wget 命令][4]**下载 bd 可执行二进制文件。
+对于其它 Linux 发行版，使用 [wget 命令][4]下载 `bd` 可执行二进制文件。
 
 ```
 $ sudo wget --no-check-certificate -O /usr/local/bin/bd https://raw.github.com/vigneshwaranr/bd/master/bd
 ```
 
-设置 bd 二进制文件的可执行权限。
+设置 `bd` 二进制文件的可执行权限。
 
 ```
 $ sudo chmod +rx /usr/local/bin/bd
@@ -61,17 +59,19 @@ $ echo 'alias bd=". bd -si"' >> ~/.bashrc
 ```
 
 运行以下命令以使更改生效。
+
 ```
 $ source ~/.bashrc
 ```
 
 要启用自动完成，执行以下两个步骤。
+
 ```
 $ sudo wget -O /etc/bash_completion.d/bd https://raw.github.com/vigneshwaranr/bd/master/bash_completion.d/bd  
 $ sudo source /etc/bash_completion.d/bd
 ```
 
-我们已经在系统上成功安装并配置了 bd 实用程序，现在是时候测试一下了。
+我们已经在系统上成功安装并配置了 `bd` 实用程序，现在是时候测试一下了。
 
 我将使用下面的目录路径进行测试。
 
@@ -79,7 +79,7 @@ $ sudo source /etc/bash_completion.d/bd
 
 ```
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ pwd
-或者
+或
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ dirs
 
 /usr/share/icons/Adwaita/256x256/apps
@@ -94,19 +94,20 @@ daygeek@Ubuntu18:/usr/share/icons$
 ```
 
 甚至，你不需要输入完整的目录名称，也可以输入几个字母。
+
 ```
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ bd i
 /usr/share/icons/
 daygeek@Ubuntu18:/usr/share/icons$ 
 ```
 
-`注意:` 如果层次结构中有多个同名的目录，bd 会将你带到最近的目录。（不考虑直接的父目录）
+注意：如果层次结构中有多个同名的目录，`bd` 会将你带到最近的目录。（不考虑直接的父目录）
 
 如果要列出给定的目录内容，使用以下格式。它会打印出 `/usr/share/icons/` 的内容。
 
 ```
 $ ls -lh `bd icons`
-or
+或
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ ls -lh `bd i`
 total 64K
 drwxr-xr-x 12 root root 4.0K Jul 25  2018 Adwaita
@@ -132,7 +133,7 @@ drwxr-xr-x  3 root root 4.0K Jul 25  2018 whiteglass
 
 ```
 $ `bd i`/users-list.sh
-or
+或
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ `bd icon`/users-list.sh
 daygeek
 thanu
@@ -151,7 +152,7 @@ user3
 
 ```
 $ cd `bd i`/gnome
-or
+或
 daygeek@Ubuntu18:/usr/share/icons/Adwaita/256x256/apps$ cd `bd icon`/gnome
 daygeek@Ubuntu18:/usr/share/icons/gnome$ 
 ```
@@ -167,7 +168,7 @@ drwxr-xr-x 2 root root 4096 Mar 16 05:44 /usr/share/icons//2g
 
 本教程允许你快速返回到特定的父目录，但没有快速前进的选项。
 
-我们有另一个解决方案，很快就会提出新的解决方案，请跟我们保持联系。
+我们有另一个解决方案，很快就会提出，请保持关注。
 
 --------------------------------------------------------------------------------
 
@@ -176,7 +177,7 @@ via: https://www.2daygeek.com/bd-quickly-go-back-to-a-specific-parent-directory-
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
