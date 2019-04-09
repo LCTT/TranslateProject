@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How to create a filesystem on a Linux partition or logical volume)
 [#]: via: (https://opensource.com/article/19/4/create-filesystem-linux-partition)
-[#]: author: (Kedar Vijay Kulkarni (Red Hat) https://opensource.com/users/kkulkarn)
+[#]: 作者: (Kedar Vijay Kulkarni (Red Hat) https://opensource.com/users/kkulkarn)
 
 如何在 Linux 分区或逻辑卷中创建文件系统
 ======
