@@ -140,7 +140,7 @@ tmpfs 93M 0 93M 0% /run/user/0
 /dev/sda1 2.9G 9.0M 2.7G 1% /mnt/mount_point_for_dev_sda1
 ```
 
-  5. 你也可以检测文件系统被挂载在何处：
+  5. 你也可以检测文件系统是否被挂载：
 
 ```
 [root@localhost ~]# mount | grep ^/dev/sd
