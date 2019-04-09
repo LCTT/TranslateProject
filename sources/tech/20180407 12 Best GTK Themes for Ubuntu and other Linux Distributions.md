@@ -1,3 +1,5 @@
+translating by robsean
+
 12 Best GTK Themes for Ubuntu and other Linux Distributions
 ======
 **Brief: Let’s have a look at some of the beautiful GTK themes that you can use not only in Ubuntu but other Linux distributions that use GNOME.**
