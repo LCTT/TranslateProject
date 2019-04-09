@@ -7,40 +7,40 @@
 [#]: via: (https://opensource.com/article/19/4/what-do-you-love-about-git)
 [#]: author: (Jen Wike Huger (Red Hat) https://opensource.com/users/jen-wike/users/seth)
 
-Happy 14th anniversary Git: What do you love about Git?
+Git 十四周年：你喜欢 Git 的哪一点？
 ======
-Git's huge influence on software development practices is hard to match.
+> Git 为软件开发所带来的巨大影响是其它工具难以企及的。
 ![arrows cycle symbol for failing faster][1]
 
-In the 14 years since Linus Torvalds developed Git, its influence on software development practices would be hard to match—in StackOverflow's 2018 developer survey, [87% of respondents][2] said they use Git for version control. Clearly, no other tool is anywhere close to knocking Git off its throne as the king of source control management (SCM).
+在 Linus Torvalds 开发 Git 后的十四年间，它为软件开发所带来的影响是其它工具难以企及的—在 [StackOverflow 的 2018 年开发者调查][2] 中，87% 的受访者都表示他们使用 Git 来作为他们项目的版本控制工具。显然，没有其它工具能撼动 Git 版本控制管理工具（SCM）之王的地位。
 
-In honor of Git's 14th anniversary on April 7, I asked some enthusiasts what they love most about it. Here's what they told me.
+为了在 4 月 7 日 Git 的十四周年这一天向 Git 表示敬意，我问了一些热衷者它们最喜欢 Git 的哪一点。以下便是他们所告诉我的：
 
-_(Some responses have been lightly edited for grammar and clarity)_
+_（为了便于理解，部分回答已经进行了小幅修改）_
 
-"I can't stand Git. Incomprehensible terminology, distributed so that truth does not exist, requires add-ons like Gerrit to make it 50% as usable as a nice centralized repository like Subversion or Perforce. But in the spirit of answering 'what do you like about Git?': Git makes arbitrarily abstruse source tree manipulations possible and usually makes it easy to undo them when it takes 20 tries to get them right." — _[Sweet Tea Dorminy][3]_
+“我无法忍受 Git。无论是难以理解的术语还是它的分布式。除非使用 Gerrit 这样的插件来使它达到像 Subversion 或 Perforce 这样的集中式仓库管理器使用的工具的 50%。不过既然这次的问题是‘你喜欢 Git 的什么？’，我还是希望回答：Git 使得对复杂的源代码树操作成为可能，并且它的回滚功能使得实现一个要 20 次修改才能更正的问题变得简单起来。” — _[Sweet Tea Dorminy][3]_
 
-"I like that Git doesn't enforce any particular workflow and development teams are free to collaborate in a way that works for them, be it with pull requests or emailed diffs or push permission for all." — _[Andy Price][4]_
+“我喜欢 Git 是因为它不会强制我执行特定的工作流程，并且开发团队可以自由地以适合自己的方式来进行团队开发，无论是 Pull Requests、以电子邮件递送差异或是给予所有人 Push 的权限。” — _[Andy Price][4]_
 
-"I've been using Git since 2006 or 2007. What I love about Git is that it works well both for small projects that may never leave my computer and for large, collaborative, distributed projects. Git provides you all the tools to rollback from (almost) every bad commit you make, and as such has significantly reduced my stress when it comes to software management." — _[Jonathan S. Katz][5]_
+“我从 06、07 年的样子就开始使用 Git 了。我喜欢 Git 是因为，它既适用于那种从未离开过我电脑的小项目，也适用于团队合作和对外发行的大型项目。Git 使你可以从（几乎）所有的错误提交中回滚到先前版本，这个功能显著地减轻了我在软件版本管理方面的压力。” — _[Jonathan S. Katz][5]_
 
-"I appreciate Git's principle of ["plumbing" vs. "porcelain" commands][6]. Users can effectively share any kind of information using Git without needing to know how the internals work. That said, the curious have access to commands that peel back the layers, revealing the content-addressable filesystem that powers many code-sharing communities." — _[Matthew Broberg][7]_
+“我很欣赏 Git 那种 [底层命令和高层命令][6] 的理念。用户可以使用 Git 有效率地分享任何形式的信息，而不需要知道其内部工作原理。也就是说，你只需要好奇心，就能使用这个没有图形界面的命令行工具了，它同时也揭示了为许多代码共享社区提供支持的内容可寻址文件系统。” — _[Matthew Broberg][7]_
 
-"I love Git because I can do almost anything to explore, develop, build, test, and commit application codes in my own Git repo. It always motivates me to participate in open source projects." — _[Daniel Oh][8]_
+“我喜欢 Git 是因为浏览、开发、构建、测试和向我的 Git 仓库中提交代码的工作几乎都能用它来完成。它经常会调动起我参与开源项目的积极性。” — _[Daniel Oh][8]_
 
-"Git is the first version control tool I used, and it went from being scary to friendly over the years. I love how it empowers you to feel confident about code you are changing while it gives you the assurance that your master branch is safe (obviously unless you force-push half-baked code to the production/master branch). Its ability to reverse changes by checking out older commits is great too." — _[Kedar Vijay Kulkarni][9]_
+“Git 是我用过的首个版本控制工具。数年间，它从一个可怕的工具变成了一个友好的工具。我喜欢它使你在修改代码的时候更加自信，因为它能保证你主分支的安全（除非你强制提交了一段考虑不周的代码到主分支）。你可以检出先前的提交来撤销更改，这一点也是很棒的。” — _[Kedar Vijay Kulkarni][9]_
 
-"I love Git because it made several other SCM software obsolete. No one uses VS, Subversion can be used with git-svn (if needed at all), BitKeeper is remembered only by elders, it's similar with Monotone. Sure, there is Mercurial, but for me it was kind of 'still a work in progress' when I used it while upstreaming Firefox support for AArch64 (a few years ago). Someone may even mention Perforce, SourceSafe, or some other 'enterprise' solutions, but they are not popular in the FOSS world." — _[Marcin Juszkiewicz][10]_
+“我之所以喜欢 Git 是因为它淘汰了一些其它的版本控制工具。没人使用 VSS，而 Subversion 可以和 git-svn 一起使用（如果必要），BitKeeper 则和 Monotone 一样只为老一辈所知。当然，我们还有 Mercurial，不过在我几年之前用它来为 Firefox 添加 AArch64 支持时，我觉得它仍是那种还未完善的工具。部分人可能还会提到 Perforce、SourceSafe 或是其它企业级的解决方案，我只想说他们在开源世界里并不流行。” — _[Marcin Juszkiewicz][10]_
 
-"I love the simplicity of the internal model of SHA1ed (commit → tree → blob) objects. And porcelain commands. And that I used it as patching mechanism for JBoss/Red Hat Fuse. And that this mechanism works. And how Git can be explained in the [great tale of three trees][11]." — _[Grzegorz Grzybek][12]_
+“我喜欢 SHA1 化（commit → tree → blob）的内建模型，它们十分易用。我也喜欢它的高层命令。同时我也将它作为对 JBoss/Red Hat Fuse 的修补工具。并且这个工具的确有用。我还喜欢 Git 的 [三棵树的故事][11]。” — _[Grzegorz Grzybek][12]_
 
-"I like the [generated Git man pages][13] which make me humble in front of Git. (This is a page that generates Git-sounding but in reality completely nonsense pages—which often gives the same feeling as real Git pages…)" — _[Marko Myllynen][14]_
+“我喜欢 [自动生成的 Git 说明页][13]（这个页面虽然听起来是有关 Git 的，但是事实上这是一个没有实际意义的页面—不过它总是会给人一种像是真的 Git 页面的感觉…），这使得我对 Git 的敬意油然而生。” — _[Marko Myllynen][14]_
 
-"Git changed my life as a developer going from a world where SCM was a problem to a world where it is a solution." — _[Joel Takvorian][15]_
+“Git 改变了我作为开发者的生活。它使得 SCM 问题从世界上消失得无影无踪。”— _[Joel Takvorian][15]_
 
 * * *
 
-Now that we've heard from these 10 Git enthusiasts, it's your turn: What do _you_ appreciate about Git? Please share your opinions in the comments.
+看完这十个热衷者的回答之后，就轮到你了：你最欣赏 Git 的什么？请在评论区分享你的看法！
 
 --------------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ via: https://opensource.com/article/19/4/what-do-you-love-about-git
 
 作者：[Jen Wike Huger (Red Hat)][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zhs852](https://github.com/zhs852)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
