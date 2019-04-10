@@ -56,7 +56,7 @@
 
 如果你很了解 Linux，那么你可以借助上表很容易地识别文件类型。
 
-#### 如何在 Linux 中查看普通文件？
+#### 在 Linux 中如何查看普通文件？
 
 在 Linux 中使用下面的命令去查看普通文件。在 Linux 文件系统中普通文件是随处可用的。
 普通文件的颜色是`白色`
@@ -76,7 +76,7 @@
 -rw-r--r--. 1 root root 60 Dec 27 19:01 test-bzip2.txt
 ```
 
-#### 如何在 Linux 中查看目录文件？
+#### 在 Linux 中如何查看目录文件？
 
 在 Linux 中使用下面的命令去查看目录文件。在 Linux 文件系统中目录文件是随处可用的。目录文件的颜色是`蓝色`
 
@@ -88,9 +88,9 @@ drwxr-xr-x. 2 mageshm mageshm 4096 Nov 16 15:37 public_ftp/
 drwxr-xr-x. 3 mageshm mageshm 4096 Nov 16 15:37 public_html/
 ```
 
-#### 如何在 Linux 中查看链接文件？
+#### 在 Linux 中如何查看链接文件？
 
-在 Linux 中使用下面的目录去查看链接文件。在 Linux 文件系统中链接文件是随处可用的。
+在 Linux 中使用下面的命令去查看链接文件。在 Linux 文件系统中链接文件是随处可用的。
 链接文件有两种可用类型，软连接和硬链接。链接文件的颜色是`浅绿宝石色`
 
 ```
@@ -99,9 +99,9 @@ lrwxrwxrwx. 1 root root 31 Dec 7 15:11 s-link-file -> /links/soft-link/test-soft
 lrwxrwxrwx. 1 root root 38 Dec 7 15:12 s-link-folder -> /links/soft-link/test-soft-link-folder
 ```
 
-#### 如何在 Linux 中查看字符设备文件？
+#### 在 Linux 中如何查看字符设备文件？
 
-在 Linux 中使用下面的命令查看字符设备文件。字符设备文件仅仅在特殊的位置是可用的。
+在 Linux 中使用下面的命令查看字符设备文件。字符设备文件仅在特定位置是可用的。
 
 它在目录 `/dev` 下是可用的。字符设备文件的颜色是`黄色`
 
@@ -115,9 +115,9 @@ crw-rw-rw-. 1 root root 1, 7 Jan 28 14:05 full
 crw-rw-rw-. 1 root root 10, 229 Jan 28 14:05 fuse
 ```
 
-#### 如何在 Linux 中查看块文件？
+#### 在 Linux 中如何查看块文件？
 
-在 Linux 中使用下面的命令查看块文件。块文件仅仅是在特殊位置可用。
+在 Linux 中使用下面的命令查看块文件。块文件仅在特定位置是可用的。
 它在目录 `/dev` 中可用。块文件的颜色是`黄色`
 
 ```
@@ -129,9 +129,9 @@ brw-rw----. 1 root disk 7, 3 Jan 28 14:05 loop3
 brw-rw----. 1 root disk 7, 4 Jan 28 14:05 loop4
 ```
 
-#### 如何在 Linux 中查看 Socket 文件？
+#### 在 Linux 中如何查看 Socket 文件？
 
-在 Linux 中使用下面的命令查看 Socket 文件。Socket 文件仅在特殊位置可用。
+在 Linux 中使用下面的命令查看 Socket 文件。Socket 文件仅在特定位置是可用的。
 Scoket 文件的颜色是`粉色`
 
 ```
@@ -139,9 +139,9 @@ Scoket 文件的颜色是`粉色`
 srw-rw-rw- 1 root root 0 Jan 5 16:36 system_bus_socket
 ```
 
-#### 如何在 Linux 中查看命名管道文件？
+#### 在 Linux 中如何查看命名管道文件？
 
-在 Linux 中使用下面的命令查看命名管道文件。命名管道文件仅在特定位置可用。命名管道文件的颜色是`黄色`
+在 Linux 中使用下面的命令查看命名管道文件。命名管道文件仅在特定位置是可用的。命名管道文件的颜色是`黄色`
 
 ```
 # ls -la | grep ^p
@@ -151,12 +151,11 @@ prw-------. 1 root root 0 Jan 28 14:06 stats-mail|
 
 ### 方法２：在 Linux 中如何使用 file 命令识别文件类型
 
-在 Linux 中 file 命令允许我们去定义不同的文件类型。这里有三个测试集，按此顺序展示：文件系统测试，逻辑测试和语言测试去识别文件类型。
-The file command allow us to determine various file types in Linux. There are three sets of tests, performed in this order: filesystem tests, magic tests, and language tests to identify file types.
+在 Linux 中 file 命令允许我们去定义不同的文件类型。这里有三个测试集，按此顺序进行三组测试：文件系统测试，magic 测试和用于识别文件类型的语言测试。
 
 #### 在 Linux 中如何使用 file 命令查看普通文件
 
-在你的终端简单的输入 file 命令并且后面跟着普通文件名称。file 命令将会读取提供的文件内容并且准确地显示文件的类型。
+在你的终端简单地输入 file 命令，接着输入普通文件。file 命令将会读取提供的文件内容并且准确地显示文件的类型。
 
 这就是我们看到对于每个普通文件有不同结果的原因。参考下面普通文件的不同结果。
 
@@ -179,7 +178,7 @@ powertop.txt: HTML document, UTF-8 Unicode text, with very long lines
 
 #### 在 Linux 中如何使用 file 命令查看目录文件？
 
-简单地在你的终端输入 file 命令，接着输入目录文件。参阅下面的结果。
+在你的终端简单地输入 file 命令，接着输入目录文件。参阅下面的结果。
 
 ```
 # file Pictures/
@@ -188,7 +187,7 @@ Pictures/: directory
 
 #### 在 Linux 中如何使用 file 命令查看链接文件？
 
-简单地在你的终端输入 file 命令，接着输入链接文件。参阅下面的结果。
+在你的终端简单地输入 file 命令，接着输入链接文件。参阅下面的结果。
 
 ```
 # file log
@@ -197,7 +196,7 @@ log: symbolic link to /run/systemd/journal/dev-log
 
 #### 在 Linux 中如何使用 file 命令查看字符设备文件？
 
-简单地在你的终端输入 file 命令，接着输入字符设备文件。参阅下面的结果。
+在你的终端简单地输入 file 命令，接着输入字符设备文件。参阅下面的结果。
 
 ```
 # file vcsu
@@ -206,7 +205,7 @@ vcsu: character special (7/64)
 
 #### 在 Linux 中如何使用 file 命令查看块文件？
 
-简单地在你的终端输入 file 命令，接着输入块文件。参阅下面的结果。
+在你的终端简单地输入 file 命令，接着输入块文件。参阅下面的结果。
 
 ```
 # file sda1
@@ -215,7 +214,7 @@ sda1: block special (8/1)
 
 #### 在 Linux 中如何使用 file 命令查看 Socket 文件？
 
-简单地在你的终端输入 file 命令，接着输入 Socket 文件。参阅下面的结果。
+在你的终端简单地输入 file 命令，接着输入 Socket 文件。参阅下面的结果。
 
 ```
 # file system_bus_socket
@@ -224,7 +223,7 @@ system_bus_socket: socket
 
 #### 在 Linux 中如何使用 file 命令查看命名管道文件？
 
-简单地在你的终端输入 file 命令，接着输入命名管道文件。参阅下面的结果。
+在你的终端简单地输入 file 命令，接着输入命名管道文件。参阅下面的结果。
 
 ```
 # file pipe-test
@@ -237,7 +236,7 @@ stat 命令允许我们去查看文件类型或文件系统状态。该实用程
 
 #### 在 Linux 中如何使用 stat 命令查看普通文件？
 
-简单地在你的终端输入 stat 命令，接着输入普通文件。参阅下面的结果。
+在你的终端简单地输入 stat 命令，接着输入普通文件。参阅下面的结果。
 
 ```
 # stat 2daygeek_access.log
@@ -253,7 +252,7 @@ Change: 2019-01-03 14:05:26.460328868 +0530
 
 #### 在 Linux 中如何使用 stat 命令查看目录文件？
 
-简单地在你的终端输入 stat 命令，接着输入目录文件。参阅下面的结果。
+在你的终端简单地输入 stat 命令，接着输入目录文件。参阅下面的结果。
 
 ```
 # stat Pictures/
@@ -269,7 +268,7 @@ Change: 2019-01-05 18:27:01.546958817 +0530
 
 #### 在 Linux 中如何使用 stat 命令查看链接文件？
 
-简单地在你的终端输入 stat 命令，接着输入链接文件。参阅下面的结果。
+在你的终端简单地输入 stat 命令，接着输入链接文件。参阅下面的结果。
 
 ```
 # stat /dev/log
@@ -285,7 +284,7 @@ Change: 2019-01-05 16:36:30.766666768 +0530
 
 #### 在 Linux 中如何使用 stat 命令查看字符设备文件？
 
-简单地在你的终端输入 stat 命令，接着输入字符设备文件。参阅下面的结果。
+在你的终端简单地输入 stat 命令，接着输入字符设备文件。参阅下面的结果。
 
 ```
 # stat /dev/vcsu
@@ -301,7 +300,7 @@ Change: 2019-01-05 16:36:31.056666781 +0530
 
 #### 在 Linux 中如何使用 stat 命令查看块文件？
 
-简单地在你的终端输入 stat 命令，接着输入块文件。参阅下面的结果。
+在你的终端简单地输入 stat 命令，接着输入块文件。参阅下面的结果。
 
 ```
 # stat /dev/sda1
@@ -317,7 +316,7 @@ Change: 2019-01-05 16:36:31.596666806 +0530
 
 #### 在 Linux 中如何使用 stat 命令查看 Socket 文件？
 
-简单地在你的终端输入 stat 命令，接着输入 Socket 文件。参阅下面的结果。
+在你的终端简单地输入 stat 命令，接着输入 Socket 文件。参阅下面的结果。
 
 ```
 # stat /var/run/dbus/system_bus_socket
@@ -333,7 +332,7 @@ Change: 2019-01-05 16:36:31.810000149 +0530
 
 #### 在 Linux 中如何使用 stat 命令查看命名管道文件？
 
-简单地在你的终端输入 stat 命令，接着输入命名管道文件。参阅下面的结果。
+在你的终端简单地输入 stat 命令，接着输入命名管道文件。参阅下面的结果。
 
 ```
 # stat pipe-test
