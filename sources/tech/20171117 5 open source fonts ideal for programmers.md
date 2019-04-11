@@ -1,3 +1,4 @@
+FSSlc translating
 5 open source fonts ideal for programmers
 ======
 
@@ -102,7 +103,7 @@ Whichever typeface you select, you will most likely spend hours each day immerse
 via: https://opensource.com/article/17/11/how-select-open-source-programming-font
 
 作者：[Andrew Lekashman][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FSSlc](https://github.com/FSSlc)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
