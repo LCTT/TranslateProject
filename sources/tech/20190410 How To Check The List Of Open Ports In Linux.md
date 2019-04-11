@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (heguangzhi is translating)
+[#]: translator: (heguangzhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
