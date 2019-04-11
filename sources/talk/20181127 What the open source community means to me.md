@@ -1,10 +1,10 @@
 [#]: collector: (lujun9972)
-[#]: translator: (seriouszyx)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (What the open source community means to me)
 [#]: via: (https://opensource.com/article/18/11/what-open-source-community-means-me)
-[#]: author: ([Florian Effenberger](https://opensource.com/users/floeff))
+[#]: author: (Florian Effenberger https://opensource.com/users/floeff)
 [#]: url: ( )
 
 What the open source community means to me
