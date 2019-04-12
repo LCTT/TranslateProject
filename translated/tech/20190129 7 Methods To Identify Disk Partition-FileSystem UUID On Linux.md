@@ -7,7 +7,7 @@
 [#]: via: (https://www.2daygeek.com/check-partitions-uuid-filesystem-uuid-universally-unique-identifier-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-7 种方法在 Linux 中获取硬盘分区或文件系统的 UUID
+Linux 中获取硬盘分区或文件系统的 UUID 的七种方法
 ======
 
 作为一个 Linux 系统管理员，你应该知道如何去查看分区或文件系统的 UUID。
