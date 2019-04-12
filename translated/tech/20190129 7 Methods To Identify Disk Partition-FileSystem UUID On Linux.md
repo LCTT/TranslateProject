@@ -10,21 +10,21 @@
 Linux 中获取硬盘分区或文件系统的 UUID 的七种方法
 ======
 
-作为一个 Linux 系统管理员，你应该知道如何去查看分区或文件系统的 UUID。
+作为一个 Linux 系统管理员，你应该知道如何去查看分区的 UUID 或文件系统的 UUID。
 
-因为大多数的 Linux 系统使用 UUID 挂载分区。在 `/etc/fstab` 文件中可以验证相同的内容。
+因为大多数的 Linux 系统使用 UUID 挂载分区。在 `/etc/fstab` 文件中可以验证此的内容。
 
-有许多有用的程序可以查看 UUID。本文我们将会向你展示如何使用多种方式查看 UUID，并且你可以选择一种适合于你的方法。
+有许多可用的实用程序可以查看 UUID。本文我们将会向你展示多种查看 UUID 的方法，并且你可以选择一种适合于你的方法。
 
 ### 何为 UUID？
 
-UUID 代表着通用唯一识别码，它帮助 Linux 系统去识别一个硬盘而不是块设备文件。
+UUID 代表着通用唯一识别码，它帮助 Linux 系统去识别一个磁盘驱动分区而不是块设备文件。
 
-libuuid 是内核 2.15.1 中 util-linux-ng 包的一部分，它被默认安装在 Linux 系统中。
+libuuid 是内核 2.15.1 中 util-linux-ng 包中的一部分，它被默认安装在 Linux 系统中。
 
-UUID 被该库生成，可以合理地认为它在一个系统中是唯一的，并且在所有系统中也是唯一的。
+UUID 由该库生成，可以合理地认为它在一个系统中是唯一的，并且在所有系统中也是唯一的。
 
-在计算机系统中使用了 128 位数字去标识信息。UUID 最初被用在 Apollo 网络计算机系统（NCS）中，之后 UUID 被开放软件基金会（OSF）标准化成为分布式计算环境（DCE）的一部分。
+在计算机系统中使用了 128 位数字去标识信息。UUID 最初被用在 Apollo 网络计算机系统（NCS）中，之后 UUID 被开放软件基金会（OSF）标准化，成为分布式计算环境（DCE）的一部分。
 
 UUID 以 32 个十六进制（基数为 16）的数字表示，被连字符分割为 5 组显示，总共的 36 个字符格式为 8-4-4-4-12（32 个字母或数字和 4 个连字符）。
 
@@ -50,17 +50,17 @@ UUID=a2092b92-af29-4760-8e68-7a201922573b swap swap defaults,noatime 0 2
 
   * **`blkid 命令：`** 定位或打印块设备的属性。
   * **`lsblk 命令：`** lsblk 列出所有可用的或指定的块设备的信息。
-  * **`hwinfo 命令：`** hwinfo 代表硬件信息工具，是另外一个用于探索系统中存在硬件的很好的实用工具。
+  * **`hwinfo 命令：`** hwinfo 表示硬件信息工具，是另外一个很好的实用工具，用于查询系统中已存在硬件。
   * **`udevadm 命令：`** udev 管理工具
-  * **`tune2fs 命令：`** 调整 ext2/ext3/ext4 文件系统上的可调文件系统参数。
-  * **`dumpe2fs 命令：`** dump ext2/ext3/ext4 filesystem information.
-  * **`使用 by-uuid 路径：`** 该目录下包含有 UUID 和实际的块设备文件，UUID 与实际的块设备文件链接在一起。
+  * **`tune2fs 命令：`**　调整 ext2/ext3/ext4 文件系统上的可调文件系统参数。
+  * **`dumpe2fs 命令：`**　查询 ext2/ ext3/ext4 文件系统的信息。　
+  * **`使用 by-uuid 路径：`**　该目录下包含有 UUID 和实际的块设备文件，UUID 与实际的块设备文件链接在一起。
 
 
 
 ### 在 Linux 中如何使用 blkid 命令查看磁盘分区或文件系统的 UUID？
 
-blkid 是定位或打印块设备属性的命令行实用工具。它利用 libblkid 库在 Linux 系统中获得到磁盘分区 UUID。
+blkid 是定位或打印块设备属性的命令行实用工具。它利用 libblkid 库在 Linux 系统中获得到磁盘分区的 UUID。
 
 ```
 # blkid
@@ -106,7 +106,7 @@ lrwxrwxrwx 1 root root 10 Jan 29 08:34 d92fa769-e00f-4fd7-b6ed-ecf7224af7fa -> .
 
 ### 在 Linux 中如何使用 hwinfo 命令查看磁盘分区或文件系统的 UUID？
 
-**[hwinfo][1]** 代表硬件信息工具，是另外一种很好的实用工具。它被用来检测系统中已存在的硬件，并且以人类可读的格式显示各种硬件组件的细节信息。
+**[hwinfo][1]** 表示硬件信息工具，是另外一种很好的实用工具。它被用来检测系统中已存在的硬件，并且以可读的格式显示各种硬件组件的细节信息。
 
 ```
 # hwinfo --block | grep by-uuid | awk '{print $3,$7}'
@@ -117,7 +117,7 @@ lrwxrwxrwx 1 root root 10 Jan 29 08:34 d92fa769-e00f-4fd7-b6ed-ecf7224af7fa -> .
 
 ### 在 Linux 中如何使用 udevadm 命令查看磁盘分区或文件系统的 UUID？
 
-udevadm 需要命令和特定的命令操作。它控制 systemd-udevd 的运行时的行为，请求内核事件、管理事件队列并且提供简单的调试机制。
+udevadm 需要命令和命令特定的操作。它控制 systemd-udevd 的运行时的行为，请求内核事件、管理事件队列并且提供简单的调试机制。
 
 ```
 udevadm info -q all -n /dev/sdc1 | grep -i by-uuid | head -1
@@ -135,7 +135,7 @@ Filesystem UUID: d17e3c31-e2c9-4f11-809c-94a549bc43b7
 
 ### 在 Linux 中如何使用 dumpe2fs 命令查看磁盘分区或文件系统的 UUID？
 
-dumpe2fs 打印出现在设备文件系统中的超级块和块组信息。
+dumpe2fs 打印出现在设备文件系统中的超级块和块组的信息。
 
 ```
 # dumpe2fs /dev/sdc1 | grep UUID
