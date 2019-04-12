@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (heguangzhi is translating)
+[#]: translator: (heguangzhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,41 +7,41 @@
 [#]: via: (https://www.2daygeek.com/linux-scan-check-open-ports-using-netstat-ss-nmap/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How To Check The List Of Open Ports In Linux?
+
+如何检查Linux中的开放端口列表？
 ======
 
-Recently we had written two articles in the same kind of topic.
+最近，我们就同一主题写了两篇文章。
 
-Those articles helps you to check whether the given ports are open or not in the remote servers.
+这些文章内容帮助您如何检查远程服务器中给定的端口是否打开。
 
-If you want to **[check whether a port is open on the remote Linux system][1]** then navigate to this article.
+如果您想 **[检查远程 Linux 系统上的端口是否打开][1]** 请点击链接浏览。
 
-If you want to **[check whether a port is open on multiple remote Linux system][2]** then navigate to this article.
+如果您想 **[检查多个远程 Linux 系统上的端口是否打开][2]** 请点击链接浏览。
 
-If you would like to **[check multiple ports status on multiple remote Linux system][2]** then navigate to this article.
+如果您想 **[检查多个远程Linux系统上的多个端口状态][2]** 请点击链接浏览。
 
-But this article helps you to check the list of open ports on the local system.
+但是本文帮助您检查本地系统上的开放端口列表。
 
-There are few utilities are available in Linux for this purpose.
+在 Linux 中很少有用于此目的的实用程序。
 
-However, I’m including top four Linux commands to check this.
+然而，我提供了四个最重要的 Linux 命令来检查这一点。
 
-It can be done using the following four commands. These are very famous and widely used by Linux admins.
+您可以使用以下四个命令来完成这个工作。这些命令是非常出名的并被 Linux 管理员广泛使用。
 
-  * **`netstat:`** netstat (“network statistics”) is a command-line tool that displays network connections related information (both incoming and outgoing) such as routing tables, masquerade connections, multicast memberships and a number of network interface
-  * **`nmap:`** Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks.
-  * **`ss:`** ss is used to dump socket statistics. It allows showing information similar to netstat. It can display more TCP and state information than other tools.
-  * **`lsof:`** lsof stands for List Open File. It is used to print all the open files which is opened by process.
+  * **`netstat:`** netstat (“network statistics”) 是一个显示网络连接（进和出）相关信息命令行工具，例如：路由表, 伪装连接,多点传送成员和网络端口。
+  * **`nmap:`** Nmap (“Network Mapper”) 是一个网络探索与安全审计的开源工具。它旨在快速扫描大型网络。
+  * **`ss:`** ss 被用于转储套接字统计信息。它也可以类似 netstat 使用。相比其他工具它可以展示更多的TCP状态信息。
+  * **`lsof:`** lsof 是 List Open File 的缩写. 它用于输出被某个进程打开的所有文件。
 
 
+### 如何使用 Linux 命令 netstat 检查系统中的开放端口列表
 
-### How To Check The List Of Open Ports In Linux Using netstat Command?
+netstat 是 Network Statistics 的缩写，是一个显示网络连接（进和出）相关信息命令行工具，例如：路由表, 伪装连接,多点传送成员和网络端口。
 
-netstat stands for Network Statistics, is a command-line tool that displays network connections related information (both incoming and outgoing) such as routing tables, masquerade connections, multicast memberships and a number of network interface.
+它可以列出所有的 tcp, udp 连接 和所有的 unix 套接字连接。
 
-It lists out all the tcp, udp socket connections and the unix socket connections.
-
-It is used for diagnosing network problems in the network and to determine the amount of traffic on the network as a performance measurement.
+它用于发现发现网络问题，确定网络连接数量。
 
 ```
 # netstat -tplugn
@@ -81,7 +81,7 @@ eth0            1      ff02::1
 eth0            1      ff01::1
 ```
 
-If you would like to check any particular port status then use the following format.
+您也可以使用下面的命令检查特定的端口。
 
 ```
 # # netstat -tplugn | grep :22
@@ -90,9 +90,9 @@ tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
 tcp6       0      0 :::22                   :::*                    LISTEN      1388/sshd
 ```
 
-### How To Check The List Of Open Ports In Linux Using ss Command?
+### 如何使用 Linux 命令 ss 检查系统中的开放端口列表？
 
-ss is used to dump socket statistics. It allows showing information similar to netstat. It can display more TCP and state information than other tools.
+ss 被用于转储套接字统计信息。它也可以类似 netstat 使用。相比其他工具它可以展示更多的TCP状态信息。
 
 ```
 # ss -lntu
@@ -121,7 +121,7 @@ tcp    LISTEN     0      100                                   :::25            
 tcp    LISTEN     0      128                                   :::22                                                :::*
 ```
 
-If you would like to check any particular port status then use the following format.
+您也可以使用下面的命令检查特定的端口。
 
 ```
 # # ss -lntu | grep ':25'
@@ -130,13 +130,14 @@ tcp    LISTEN     0      100       *:25                    *:*
 tcp    LISTEN     0      100      :::25                   :::*
 ```
 
-### How To Check The List Of Open Ports In Linux Using nmap Command?
+### 如何使用 Linux 命令 nmap 检查系统中的开放端口列表？
 
-Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts.
 
-Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics.
+Nmap (“Network Mapper”) 是一个网络探索与安全审计的开源工具。它旨在快速扫描大型网络，当然它也可以工作在独立主机上。
 
-While Nmap is commonly used for security audits, many systems and network administrators find it useful for routine tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime.
+Nmap使用裸 IP 数据包以一种新颖的方式来确定网络上有哪些主机可用，这些主机提供什么服务(应用程序名称和版本)，它们运行什么操作系统(操作系统版本)，使用什么类型的数据包过滤器/防火墙，以及许多其他特征。
+
+虽然 Nmap 通常用于安全审计，但许多系统和网络管理员发现它对于日常工作也非常有用，例如网络清点、管理服务升级计划以及监控主机或服务正常运行时间。
 
 ```
 # nmap -sTU -O localhost
@@ -165,7 +166,9 @@ OS detection performed. Please report any incorrect results at http://nmap.org/s
 Nmap done: 1 IP address (1 host up) scanned in 1.93 seconds
 ```
 
-If you would like to check any particular port status then use the following format.
+
+您也可以使用下面的命令检查特定的端口。
+
 
 ```
 # nmap -sTU -O localhost | grep 123
@@ -173,9 +176,10 @@ If you would like to check any particular port status then use the following for
 123/udp open  ntp
 ```
 
-### How To Check The List Of Open Ports In Linux Using lsof Command?
 
-It shows you the list of open files on the system and the processes that opened them. Also shows you other informations related to the files.
+### 如何使用 Linux 命令 lsof 检查系统中的开放端口列表？
+
+它向您显示系统上打开的文件列表以及打开它们的进程。还会向您显示与文件相关的其他信息。
 
 ```
 # lsof -i
@@ -210,7 +214,8 @@ httpd   13374 apache    3u  IPv4   20337      0t0  TCP *:http (LISTEN)
 httpd   13375 apache    3u  IPv4   20337      0t0  TCP *:http (LISTEN)
 ```
 
-If you would like to check any particular port status then use the following format.
+您也可以使用下面的命令检查特定的端口。
+
 
 ```
 # lsof -i:80
@@ -230,7 +235,7 @@ via: https://www.2daygeek.com/linux-scan-check-open-ports-using-netstat-ss-nmap/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[heguangzhi](https://github.com/heguangzhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
