@@ -26,7 +26,7 @@ sudo 命令提供了一种机制，它可以在不用分享 root 用户的密码
 
 ### 什么是 sudo？
 
-sudo是一个程序，普通用户可以使用它以超级用户或其他用户的身份执行命令，是由安全策略指定的。
+sudo 是一个程序，普通用户可以使用它以超级用户或其他用户的身份执行命令，是由安全策略指定的。
 
 sudo 用户的访问权限是由 `/etc/sudoers` 文件控制的。
 
@@ -38,11 +38,11 @@ sudo 用户的访问权限是由 `/etc/sudoers` 文件控制的。
   * 每一次它都为当前的操作提示输入密码。所以，你将会有时间去验证这个操作是不是你想要执行的。如果你发觉它是不正确的行为，你可以安全地退出而且没有执行此操作。
 
 
-基于 RHEL 的系统（如 Redhat　(RHEL), CentOS 和 Oracle Enterprise Linux (OEL)）和基于 Debian 的系统（如 Debian, Ubuntu 和 LinuxMint）在这点是不一样的。
+基于 RHEL 的系统（如 Redhat (RHEL), CentOS 和 Oracle Enterprise Linux (OEL)）和基于 Debian 的系统（如 Debian, Ubuntu 和 LinuxMint）在这点是不一样的。
 
 我们将会教你如何在本文中的两种发行版中执行该操作。
 
-这里用三种方法可以应用于两个发行版本。
+这里有三种方法可以应用于两个发行版本。
 
   * 增加用户到相应的组。基于 RHEL 的系统，我们需要添加用户到 `wheel` 组。基于 Debain 的系统，我们添加用户到 `sudo` 或 `admin` 组。
   * 手动添加用户到 `/etc/group` 文件中。
