@@ -1,3 +1,5 @@
+translating by MjSeven
+
 Getting started with Sensu monitoring
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003601_05_mech_osyearbook2016_cloud_cc.png?itok=XSV7yR9e)
