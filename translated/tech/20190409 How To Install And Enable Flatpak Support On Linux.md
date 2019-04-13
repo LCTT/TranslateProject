@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,69 +7,68 @@
 [#]: via: (https://www.2daygeek.com/how-to-install-and-enable-flatpak-support-on-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How To Install And Enable Flatpak Support On Linux?
+如何在 Linux 上安装并启用 Flatpak 支持？
 ======
 
-Currently we all are using distributions official package managers to install any required packages.
+<to 校正：之前似乎发表过跟这个类似的一篇 https://linux.cn/article-10459-1.html>
 
-in Linux, it’s doing good without any issues. (It’s doing their job nicely without any compromise)
+目前，我们都在使用 Linux 发行版的官方软件包管理器来安装所需的软件包。
 
-There was some limitation on this that will think about other alternative solutions to fix it.
+在 Linux 中，它做得很好，没有任何问题。（它很好地完成了它应该做的工作，同时它没有任何妥协）
 
-Yes, by default we won’t get the latest version of packages from the distributions official package managers because as these were built while building a current OS version. And they offers only security updates until the next major release comes.
+在一些方面它也有一些限制，所以会让我们考虑其他替代解决方案来解决。
 
-So, what will be the solution for this?
+是的，默认情况下，我们不会从发行版官方软件包管理器获取最新版本的软件包，因为这些软件包是在构建当前 OS 版本时构建的。它们只会提供安全更新，直到下一个主要版本发布。
 
-Yes, we have multiple solutions for this and most of us were already started using few of those.
+那么，这种情况有什么解决办法吗？
 
-What it is and what is the benefit of those?
+是的，我们有多种解决方案，而且我们大多数人已经开始使用其中的一些了。
 
-  * **For Ubuntu based systems:** PPAs
-  * **For RHEL based systems:** [EPEL Repository][1], [ELRepo Repository][2], [nux-dextop Repository][3], [IUS Community Repo][4], [RPMfusion Repository][5] and [Remi Repository][6].
+有些什么呢，它们有什么好处？
 
-
-
-Using the above repos, we will be getting the latest packages for the distribution. And these are usually well maintained and suggested by most of the community. But these are advisable by the OS and may not always be safe.
-
-In recent years, the following universal packaging formats were come out and gained a lot of popularity.
-
-  * **`Flatpak:`**`` It’s distribution independent package format and the main contributor is Fedora project team. The Flatpak framework is adopted by most of the major Linux distributions.
-  * **`Snaps:`**`` Snappy is a universal packaging formats originally designed and built by Canonical for the Ubuntu phone and it’s operating system. Later most of the distributions are adapted.
-  * **`AppImage:`**`` AppImage is a portable package format and it can run without installation or the need for root rights.
+  * **对于基于 Ubuntu 的系统：** PPAs
+  * **对于基于 RHEL 的系统：** [EPEL Repository][1]、[ELRepo Repository][2]、[nux-dextop Repository][3]、[IUS Community Repo][4]、[RPMfusion Repository][5] 和 [Remi Repository][6]
 
 
+使用上面的仓库，我们将获得最新的软件包。这些软件包通常都得到了很好的维护，还有大多数社区的建议。但这对于操作系统来说应该是适当的，因为它们可能并不安全。
 
-We had already covered about the **[Snap package manager& packaging format][7]** in the past. Today we are going to discuss about Flatpak packing format.
+近年来，出现了一下通用软件包封装格式，并且得到了广泛的应用。
 
-### What Is Flatpak?
+  * **`Flatpak:`** 它是独立于发行版的包格式，主要贡献者是 Fedora 项目团队。大多数主要的 Linux 发行版都采用了 Flatpak 框架。
+  * **`Snaps:`** Snappy 是一种通用的软件包封装格式，最初由 Canonical 为 Ubuntu 手机及其操作系统设计和构建的。后来，大多数发行版都进行了改编。
+  * **`AppImage:`** AppImage 是一种可移植的包格式，可以在不安装或不需要 root 权限的情况下运行。
 
-Flatpak (formerly know as X Desktop Group or xdg-app) is a software utility. It’s offering a universal packaging formats which can be used in any Linux distributions.
+我们之前已经介绍过 **[Snap 包管理器和包封装格式][7]**。今天我们将讨论 Flatpak 包封装格式。
 
-It provides a sandbox (isolated) environment to run the app and it doesn’t impact either other apps and distribution core packages. Also we can install and run the different version of same package.
+### 什么是 Flatpak？
 
-There is an disadvantage on flatpak is that doesn’t support server OS unlike Snap and AppImage. It’s working only on few desktops environment.
+Flatpak（以前称为 X Desktop Group 或 xdg-app）是一个软件实用程序。它提供了一种通用的包封装格式，可以在任何 Linux 发行版中使用。
 
-Say for example. If you would like to run two version of php on your system then you can easily install and run as your wish.
+它提供了一个沙箱（隔离的）环境来运行应用程序，不会影响其他应用程序和发行版核心软件包。我们还可以安装并运行不同版本的软件包。
 
-That’s where the universal packaging formats are become very famous nowadays.
+Flatpak 的一个缺点是不像 Snap 和 AppImage 那样支持服务器操作系统，它只在少数桌面环境下工作。
 
-### How To Install Flatpak On Linux?
+比如说，如果你想在系统上运行两个版本的 php，那么你可以轻松安装并按照你的意愿运行。
 
-Flatpak package is available in most of the Linux distribution official repository. Hence, it can be installed using those.
+这就是现在通用包封装格式非常有名的地方。
 
-For **`Fedora`** system, use **[DNF Command][8]** to install flatpak.
+### 如何在 Linux 中安装 Flatpak？
+
+大多数 Linux 发行版官方仓库都提供 Flatpak 软件包。因此，可以使用它们来进行安装。
+
+对于 **`Fedora`** 系统，使用 **[DNF 命令][8]** 来安装 flatpak。
 
 ```
 $ sudo dnf install flatpak
 ```
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][9]** or **[APT Command][10]** to install flatpak.
+对于 **`Debian/Ubuntu`** 系统，使用 **[APT-GET 命令][9]** 或 **[APT 命令][10]** 来安装 flatpak。
 
 ```
 $ sudo apt install flatpak
 ```
 
-For older Ubuntu versions.
+对于较旧的 Ubuntu 版本：
 
 ```
 $ sudo add-apt-repository ppa:alexlarsson/flatpak
@@ -77,52 +76,52 @@ $ sudo apt update
 $ sudo apt install flatpak
 ```
 
-For **`Arch Linux`** based systems, use **[Pacman Command][11]** to install flatpak.
+对于基于 **`Arch Linux`** 的系统，使用 **[Pacman 命令][11]** 来安装 flatpak。
 
 ```
 $ sudo pacman -S flatpak
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][12]** to install flatpak.
+对于 **`RHEL/CentOS`** 系统，使用 **[YUM 命令][12]** 来安装 flatpak。
 
 ```
 $ sudo yum install flatpak
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][13]** to install flatpak.
+对于 **`openSUSE Leap`** 系统，使用 **[Zypper 命令][13]** 来安装 flatpak。
 
 ```
 $ sudo zypper install flatpak
 ```
 
-### How To Enable Flathub Support On Linux?
+### 如何在 Linux 上启用 Flathub 支持？
 
-Flatbub website is a app store for Flatpak packages where you can find them.
+Flathub 网站是一个应用程序商店，你可以在其中找到 flatpak。
 
-It’s a central repository where all the flatpak applications are available for users.
+它是一个中央仓库，所有的 flatpak 应用程序都可供用户使用。
 
-Run the following command to enable Flathub support on Linux.
+运行以下命令在 Linux 上启用 Flathub 支持：
 
 ```
 $ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
-Install the Software Flatpak plugin for GNOME Desktop Environment.
+为 GNOME 桌面环境安装 Software Flatpak 插件。
 
 ```
 $ sudo apt install gnome-software-plugin-flatpak
 ```
 
-Also, you can enable GNOME Repository if you are using GNOME Desktop Environment. It’s containing all GNOME core applications.
+此外，如果你使用的是 GNOME 桌面环境，则可以启用 GNOME 仓库。它包含所有 GNOME 核心应用程序。
 
 ```
 $ wget https://sdk.gnome.org/keys/gnome-sdk.gpg
 $ sudo flatpak remote-add --gpg-import=gnome-sdk.gpg --if-not-exists gnome-apps https://sdk.gnome.org/repo-apps/
 ```
 
-### How To List configured flatpak repositories?
+### 如何列出已配置的 flakpak 仓库？
 
-Run the following command, if you would like to view list of the configured flatpak repositories on your system.
+如果要查看系统上已配置的 flatpak 仓库列表，运行以下命令：
 
 ```
 $ flatpak remotes
@@ -131,9 +130,9 @@ flathub    system
 gnome-apps system
 ```
 
-### How To List The Available Packages In The Configured Repositories?
+### 如何列出已配置仓库中的可用软件包？
 
-Run the following command, if you would like to view list of the available packages (It will display all together like, applications and run times) in the configured repositories.
+如果要查看已配置仓库中的可用软件包的列表（它将显示所有软件包，如应用程序和运行环境），运行以下命令：
 
 ```
 $ flatpak remote-ls | head -10
@@ -150,21 +149,21 @@ org.gnome.Documents gnome-apps
 org.gnome.Epiphany  gnome-apps
 ```
 
-To list only applications not runtimes.
+仅列出应用程序：
 
 ```
 $ flatpak remote-ls --app
 ```
 
-To list specific repository applications.
+列出特定的仓库应用程序：
 
 ```
 $ flatpak remote-ls gnome-apps
 ```
 
-### How To Install A Package From flatpak?
+### 如何从 flatpak 安装包？
 
-Run the following command to install a package from flatpak repository.
+运行以下命令从 flatpak 仓库安装软件包：
 
 ```
 $ sudo flatpak install flathub com.github.muriloventuroso.easyssh
@@ -198,24 +197,24 @@ Installing: com.github.muriloventuroso.easyssh.Locale/x86_64/stable from flathub
 Now at af837356b222.
 ```
 
-All the installed application will be placed in the following location.
+所有已安装的应用程序都将放在以下位置：
 
 ```
 $ ls /var/lib/flatpak/app/
 com.github.muriloventuroso.easyssh
 ```
 
-### How To Run The Installed Application?
+### 如何运行已安装的应用程序？
 
-Run the following command to launch the required application. Make sure, you have to replace with your application name instead.
+运行以下命令以启动所需的应用程序，确保替换为你的应用程序名称：
 
 ```
 $ flatpak run com.github.muriloventuroso.easyssh
 ```
 
-### How To View The Installed Application?
+### 如何查看已安装的应用程序？
 
-Run the following command to view the installed application.
+运行以下命令来查看已安装的应用程序：
 
 ```
 $ flatpak list
@@ -225,9 +224,9 @@ org.freedesktop.Platform.html5-codecs/x86_64/18.08 system,runtime
 org.gnome.Platform/x86_64/3.30                     system,runtime
 ```
 
-### How To View The Detailed Information About The Installed Application?
+### 如何查看有关已安装应用程序的详细信息？
 
-Run the following command to view the detailed information about the installed application.
+运行以下命令以查看有关已安装应用程序的详细信息。
 
 ```
 $ flatpak info com.github.muriloventuroso.easyssh
@@ -248,29 +247,28 @@ Runtime: org.gnome.Platform/x86_64/3.30
 Sdk: org.gnome.Sdk/x86_64/3.30
 ```
 
-### How To Update The Installed Application?
+### 如何更新已安装的应用程序？
 
-Run the following command to updated the installed application to latest version.
+运行以下命令将已安装的应用程序更新到最新版本：
 
 ```
 $ flatpak update
 ```
 
-For specific application, use the following format.
+对于特定应用程序，使用以下格式：
 
 ```
 $ flatpak update com.github.muriloventuroso.easyssh
 ```
 
-### How To Remove The Installed Application?
+### 如何移除已安装的应用程序？
 
-Run the following command to remove the installed application.
-
+运行以下命令来移除已安装的应用程序：
 ```
 $ sudo flatpak uninstall com.github.muriloventuroso.easyssh
 ```
 
-Go to the man page for more details and options.
+进入 man 页面以获取更多细节和选项：
 
 ```
 $ flatpak --help
@@ -282,7 +280,7 @@ via: https://www.2daygeek.com/how-to-install-and-enable-flatpak-support-on-linux
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
