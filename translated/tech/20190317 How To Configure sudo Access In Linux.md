@@ -7,16 +7,16 @@
 [#]: via: (https://www.2daygeek.com/how-to-configure-sudo-access-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Linux 中怎样配置 sudo 访问权限？
+Linux 中如何配置 sudo 访问权限？
 ======
 
-Linux 系统中，root 用户拥有所有的控制权力。
+Linux 系统中 root 用户拥有所有的控制权力。
 
-Linux 系统中 root 用户是拥有最高权力的用户，可以在系统中实施任意的行为。
+Linux 系统中 root 是拥有最高权力的用户，可以在系统中实施任意的行为。
 
 如果其他用户想去实施一些行为，不能为所有人都提供 root 访问权限。因为如果他或她做了一些错误的操作，没有办法去纠正它。
 
-为了解决这个问题，有什么解决方案？
+为了解决这个问题，有什么方案吗？
 
 我们可以把 sudo 权限发放给相应的用户来克服这种情况。
 
@@ -28,22 +28,21 @@ sudo 命令提供了一种机制，它可以在不用分享 root 用户的密码
 
 sudo是一个程序，普通用户可以使用它以超级用户或其他用户的身份执行命令，是由安全策略指定的。
 
-sudo 用户的访问权限是有 `/etc/sudoers` 文件控制的。
+sudo 用户的访问权限是由 `/etc/sudoers` 文件控制的。
 
 ### sudo 用户有什么优点？
 
-在 Linux 系统中，如果你熟悉一个命令，sudo 是运行它的一个安全方式。
+在 Linux 系统中，如果你不熟悉一个命令，sudo 是运行它的一个安全方式。
 
-  * Linux 系统在 `/var/log/secure` 和 `/var/log/auth.log` 文件中保留了日志，并且你可以验证 sudo 用户实施了哪些行为操作。
-  * 每一次它都为当前的操作提示输入密码。所以，你将会有时间去验证这个操作是不是你需要执行的。如果你发觉它是不正确的行为，你可以安全地退出而且没有执行此操作。
+  * Linux 系统在 `/var/log/secure` 和 `/var/log/auth.log` 文件中保留日志，并且你可以验证 sudo 用户实施了哪些行为操作。
+  * 每一次它都为当前的操作提示输入密码。所以，你将会有时间去验证这个操作是不是你想要执行的。如果你发觉它是不正确的行为，你可以安全地退出而且没有执行此操作。
 
 
-基于 RHEL 的系统（如 Redhat　(RHEL), CentOS 和 Oracle Enterprise Linux (OEL)）和基于 Debian 的系统（如 Debian, Ubuntu 和 LinuxMint）是不一样的。
+基于 RHEL 的系统（如 Redhat　(RHEL), CentOS 和 Oracle Enterprise Linux (OEL)）和基于 Debian 的系统（如 Debian, Ubuntu 和 LinuxMint）在这点是不一样的。
 
 我们将会教你如何在本文中的两种发行版中执行该操作。
 
 这里用三种方法可以应用于两个发行版本。
-It can be done in three ways in both the distributions.
 
   * 增加用户到相应的组。基于 RHEL 的系统，我们需要添加用户到 `wheel` 组。基于 Debain 的系统，我们添加用户到 `sudo` 或 `admin` 组。
   * 手动添加用户到 `/etc/group` 文件中。
@@ -57,7 +56,7 @@ It can be done in three ways in both the distributions.
 
 ### 方法 1：在 Linux 中如何使用 wheel 组为普通用户授予超级用户访问权限？
 
-Wheel 是基于 RHEL 的系统中的一个特殊组，它提供额外的权限，授权用户像超级用户一样执行受到限制的命令。
+Wheel 是基于 RHEL 的系统中的一个特殊组，它提供额外的权限，可以授权用户像超级用户一样执行受到限制的命令。
 
 注意，应该在 `/etc/sudoers` 文件中激活 `wheel` 组来获得该访问权限。
 
@@ -91,7 +90,7 @@ $ tail -5 /var/log/secure
 tail: cannot open _/var/log/secure_ for reading: Permission denied
 ```
 
-当我试图以普通用户身份访问 `/var/log/secure` 文件时出现错误。 我要使用 sudo 访问同一个文件，让我们看看这个魔术。
+当我试图以普通用户身份访问 `/var/log/secure` 文件时出现错误。 我将使用 sudo 访问同一个文件，让我们看看这个魔术。
 
 ```
 $ sudo tail -5 /var/log/secure
@@ -103,7 +102,7 @@ Mar 17 07:05:10 CentOS7 sudo: daygeek : TTY=pts/0 ; PWD=/home/daygeek ; USER=roo
 Mar 17 07:05:10 CentOS7 sudo: pam_unix(sudo:session): session opened for user root by daygeek(uid=0)
 ```
 
-### 方法 2：在 Linux 中如何使用 /etc/group 文件为普通用户授予超级用户访问权限？
+### 方法 2：在 RHEL/CentOS/OEL 中如何使用 /etc/group 文件为普通用户授予超级用户访问权限？
 
 我们可以通过编辑 `/etc/group` 文件来手动地添加用户到 wheel 组。
 
@@ -132,7 +131,6 @@ Mar 17 07:12:35 CentOS7 sudo: user1 : TTY=pts/0 ; PWD=/home/user1 ; USER=root ; 
 ### 方法 3：在 Linux 中如何使用 /etc/sudoers 文件为普通用户授予超级用户访问权限？
 
 sudo 用户的访问权限是被 `/etc/sudoers` 文件控制的。因此，只需将用户添加到 wheel 组下的 sudoers 文件中即可。
-sudo users access is controlled by `/etc/sudoers` file. So, simply add an user into the sudoers file under wheel group.
 
 只需通过 visudo 命令将期望的用户追加到 /etc/sudoers 文件中。
 
@@ -161,7 +159,7 @@ Mar 17 07:26:52 CentOS7 sudo: user2 : TTY=pts/0 ; PWD=/home/user2 ; USER=root ; 
 
 ### 方法 1：在 Linux 中如何使用 sudo 或 admin 组为普通用户授予超级用户访问权限？
 
-sudo 或 admin 是基于 Debian 的系统中的一个特殊组，它提供额外的权限，授权用户像超级用户一样执行受到限制的命令。
+sudo 或 admin 是基于 Debian 的系统中的特殊组，它提供额外的权限，可以授权用户像超级用户一样执行受到限制的命令。
 
 注意，应该在 `/etc/sudoers` 文件中激活 `sudo` 或 `admin` 组来获得该访问权限。
 
@@ -197,7 +195,7 @@ $ less /var/log/auth.log
 /var/log/auth.log: Permission denied
 ```
 
-当我试图以普通用户身份访问 `/var/log/auth.log` 文件时出现错误。 我要使用 sudo 访问同一个文件，让我们看看这个魔术。
+当我试图以普通用户身份访问 `/var/log/auth.log` 文件时出现错误。 我将要使用 sudo 访问同一个文件，让我们看看这个魔术。
 
 ```
 $ sudo tail -5 /var/log/auth.log
