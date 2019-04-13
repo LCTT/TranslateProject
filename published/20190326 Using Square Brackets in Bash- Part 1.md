@@ -1,24 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10717-1.html)
 [#]: subject: (Using Square Brackets in Bash: Part 1)
 [#]: via: (https://www.linux.com/blog/2019/3/using-square-brackets-bash-part-1)
 [#]: author: (Paul Brown https://www.linux.com/users/bro66)
 
-在 Bash 中使用方括号 [第 1 节]
+在 Bash 中使用[方括号] （一）
 ======
 
 ![square brackets][1]
 
->  这篇文章将要介绍方括号及其在命令行中的用法。
+> 这篇文章将要介绍方括号及其在命令行中的不同用法。
 
 看完[花括号在命令行中的用法][3]之后，现在我们继续来看方括号（`[]`）在上下文中是如何发挥作用的。
 
-### <ruby>通配<rt>Globbing</rt></ruby>
+### 通配
 
-方括号最简单的用法就是通配。你可能在知道“通配”这个概念之前就已经通过通配来匹配内容了，列出具有相同特征的多个文件就是一个很常见的场景，例如列出所有 JPEG 文件：
+方括号最简单的用法就是通配。你可能在知道“<ruby><rt>Globbing</rt></ruby>”这个概念之前就已经通过通配来匹配内容了，列出具有相同特征的多个文件就是一个很常见的场景，例如列出所有 JPEG 文件：
 
 ```
 ls *.jpg
@@ -70,7 +70,7 @@ ls file0[259][278]
 cp file0[12]? archive0[12]?
 ```
 
-因为通配只能针对已有的文件，而 archive 开头的文件并不存在，不能进行通配。
+因为通配只能针对已有的文件，而 `archive` 开头的文件并不存在，不能进行通配。
 
 而这条命令
 
@@ -82,7 +82,6 @@ cp file0[12]? archive0[1..2][0..9]
 
 ```
 mkdir archive
-
 cp file0[12]? archive
 ```
 
@@ -94,7 +93,6 @@ cp file0[12]? archive
 
 ```
 myvar="Hello World"
-
 echo Goodbye Cruel ${myvar#Hello}
 ```
 
@@ -104,11 +102,8 @@ echo Goodbye Cruel ${myvar#Hello}
 
 ```
 for i in file0[12]?;\
-
 do\
-
 cp $i archive${i#file};\
-
 done
 ```
 
@@ -120,7 +115,7 @@ done
 "archive" + "file019" - "file" = "archive019"
 ```
 
-最终整个 `cp` 命令是这样的：
+最终整个 `cp` 命令展开为：
 
 ```
 cp file019 archive019
@@ -137,7 +132,7 @@ via: https://www.linux.com/blog/2019/3/using-square-brackets-bash-part-1
 作者：[Paul Brown][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -145,5 +140,5 @@ via: https://www.linux.com/blog/2019/3/using-square-brackets-bash-part-1
 [b]: https://github.com/lujun9972
 [1]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/square-gabriele-diwald-475007-unsplash.jpg?itok=cKmysLfd "square brackets"
 [2]: https://www.linux.com/LICENSES/CATEGORY/CREATIVE-COMMONS-ZERO
-[3]: https://www.linux.com/blog/learn/2019/2/all-about-curly-braces-bash
+[3]: https://linux.cn/article-10624-1.html
 
