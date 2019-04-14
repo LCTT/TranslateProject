@@ -7,73 +7,72 @@
 [#]: via: (https://opensource.com/article/19/3/getting-started-vim)
 [#]: author: (Bryant Son (Red Hat, Community Moderator) https://opensource.com/users/brson)
 
-Getting started with Vim: The basics
+Vim 入门：基础
 ======
 
-Learn to use Vim enough to get by at work or for a new project.
+为工作或者新项目学习足够的 Vim 知识。
 
 ![Person standing in front of a giant computer screen with numbers, data][1]
 
-I remember the very first time I encountered Vim. I was a university student, and the computers in the computer science department's lab were installed with Ubuntu Linux. While I had been exposed to different Linux variations (like RHEL) even before my college years (Red Hat sold its CDs at Best Buy!), this was the first time I needed to use the Linux operating system regularly, because my classes required me to do so. Once I started using Linux, like many others before and after me, I began to feel like a "real programmer."
+我还清晰地记得我第一次接触 Vim 的时候。那时我还是一名大学生，计算机学院的机房里都装着 Ubuntu 系统。尽管我在上大学前也曾接触过不同的 Linux 发行版（比如 RHEL，Red Hat 在百思买出售它的 CD），但这却是我第一次要在日常中频繁使用 Linux 系统，因为我的课程要求我这样做。当我开始使用 Linux 时，正如我的前辈和将来的后继者们一样，我感觉自己像是一名“真正的程序员”了。
 
 ![Real Programmers comic][2]
 
-Real Programmers, by [xkcd][3]
+真正的程序员，来自 [xkcd][3]
 
-Students could use a graphical text editor like [Kate][4], which was installed on the lab computers by default. For students who could use the shell but weren't used to the console-based editor, the popular choice was [Nano][5], which provided good interactive menus and an experience similar to Windows' graphical text editor.
+学生们可以使用像 [Kate][4] 一样的图形文本编辑器，这也安装在学校的电脑上了。对于那些可以使用 shell 但不习惯使用控制台编辑器的学生，最流行的选择是 [Nano][5]，它提供了很好的交互式菜单和类似于 Windows 图形文本编辑器的体验。
 
-I used Nano sometimes, but I heard awesome things about [Vi/Vim][6] and [Emacs][7] and really wanted to give them a try (mainly because they looked cool, and I was also curious to see what was so great about them). Using Vim for the first time scared me—I did not want to mess anything up! But once I got the hang of it, things became much easier and I could appreciate the editor's powerful capabilities. As for Emacs, well, I sort of gave up, but I'm happy I stuck with Vim.
+我有时会用 Nano，但当我听说 [Vi/Vim][6] 和 [Emacs][7] 能做一些很棒的事情时我决定试一试它们（主要是因为它们看起来很酷，而且我也很好奇它们有什么特别之处）。第一次使用 Vim 时吓到我了 —— 我不想搞砸任何事情！但是，一旦我掌握了它的诀窍，事情就变得容易得多，我可以欣赏编辑器的强大功能。至于 Emacs，呃，我有点放弃了，但我很高兴我坚持和 Vim 在一起。
 
-In this article, I will walk through Vim (based on my personal experience) just enough so you can get by with it as an editor on a Linux system. This will neither make you an expert nor even scratch the surface of many of Vim's powerful capabilities. But the starting point always matters, and I want to make the beginning experience as easy as possible, and you can explore the rest on your own.
+在本文中，我将介绍一下 Vim（基于我的个人经验），这样你就可以在 Linux 系统上用它来作为编辑器使用了。这篇文章不会让你变成 Vim 的专家，甚至不会触及 Vim 许多强大功能的皮毛。但是起点总是很重要的，我想让开始的经历尽可能简单，剩下的则由你自己去探索。
 
-### Step 0: Open a console window
+### 第 0 步：打开一个控制台窗口
 
-Before jumping into Vim, you need to do a little preparation. Open a console terminal from your Linux operating system. (Since Vim is also available on MacOS, Mac users can use these instructions, also.)
+在使用 Vim 前，你需要做一些准备工作。在 Linux 操作系统打开控制台终端。（因为 Vim 也可以在 MacOS 上使用，Mac 用户也可以使用这些说明）。
 
-Once a terminal window is up, type the **ls** command to list the current directory. Then, type **mkdir Tutorial** to create a new directory called **Tutorial**. Go inside the directory by typing **cd Tutorial**.
+打开终端窗口后，输入 `ls` 命令列出当前目录下的内容。然后，输入 `mkdir Tutorial` 命令创建一个名为 `Tutorial` 的新目录。通过输入 `cd Tutorial` 来进入该目录。
 
 ![Create a folder][8]
 
-That's it for preparation. Now it's time to move on to the fun part—starting to use Vim.
+这就是全部的准备工作。现在是时候转到有趣的部分了——开始使用 Vim。
 
-### Step 1: Create and close a Vim file without saving
+### 第 1 步：创建一个 Vim 文件和不保存退出
 
-Remember when I said I was scared to use Vim at first? Well, the scary part was thinking, "what if I change an existing file and mess things up?" After all, several computer science assignments required me to work on existing files by modifying them. I wanted to know: _How can I open and close a file without saving my changes?_
+还记得我一开始说过我不敢使用 Vim 吗？我当时在害怕“如果我改变了一个现有的文件，把事情搞砸了怎么办？”毕竟，一些计算机科学作业要求我修改现有的文件。我想知道：_如何在不保存更改的情况下打开和关闭文件？_
 
-The good news is you can use the same command to create or open a file in Vim: **vim <FILE_NAME**>, where **< FILE_NAME>** represents the target file name you want to create or modify. Let's create a file named **HelloWorld.java** by typing **vim HelloWorld.java**.
+好消息是你可以使用相同的命令在 Vim 中创建或打开文件：`vim <FILE_NAME>`，其中 **<FILE_NAME>** 表示要创建或修改的目标文件名。让我们通过输入 `vim HelloWorld.java` 来创建一个名为 `HelloWorld.java` 的文件。
 
-Hello, Vim! Now, here is a very important concept in Vim, possibly the most important to remember: Vim has multiple modes. Here are three you need to know to do Vim basics:
+你好，Vim！现在，讲一下 Vim 中一个非常重要的概念，可能也是最需要记住的：Vim 有多种模式，下面是 Vim 基础中需要知道的的三种：
 
-Mode | Description
+模式 | 描述
 ---|---
-Normal | Default; for navigation and simple editing
-Insert | For explicitly inserting and modifying text
-Command Line | For operations like saving, exiting, etc.
+正常模式 | 默认模式，用于导航和简单编辑
+插入模式 | 用于插入和修改文本
+命令模式 | 用于执行如保存，退出等命令
 
-Vim has other modes, like Visual, Select, and Ex-Mode, but Normal, Insert, and Command Line modes are good enough for us.
+Vim 也有其他模式，例如可视模式、选择模式和命令模式。不过上面的三种模式对我们来说已经足够好了。
 
-You are now in Normal mode. If you have text, you can move around with your arrow keys or other navigation keystrokes (which you will see later). To make sure you are in Normal mode, simply hit the **Esc** (Escape) key.
+你现在正处于正常模式，如果有文本，你可以用箭头键移动或使用其他导航键（将在稍后看到）。要确定你正处于正常模式，只需按下 `esc` (Escape）键即可。
 
-> **Tip:** **Esc** switches to Normal mode. Even though you are already in Normal mode, hit **Esc** just for practice's sake.
+> **提示:** **Esc** 切换到正常模式。即使你已经在正常模式下，点击 **Esc** 只是为了练习。 
 
-Now, this will be interesting. Press **:** (the colon key) followed by **q!** (i.e., **:q!** ). Your screen will look like this:
+现在，有趣的事情发生了。输入 `:` （冒号键）并接着 `q!` (完整命令：`:q!`)。你的屏幕将显示如下：
 
 ![Editing Vim][9]
 
-Pressing the colon in Normal mode switches Vim to Command Line mode, and the **:q!** command quits the Vim editor without saving. In other words, you are abandoning all changes. You can also use **ZQ** ; choose whichever option is more convenient.
+在正常模式下输入冒号会将 Vim 切换到命令行模式，执行 `:q!` 命令将退出 Vim 编辑器而不进行保存。换句话说，你放弃了所有的更改。你也可以使用 `ZQ` 命令；选择你认为更方便的选项。
 
-Once you hit **Enter** , you should no longer be in Vim. Repeat the exercise a few times, just to get the hang of it. Once you've done that, move on to the next section to learn how to make a change to this file.
+一旦你按下 `Enter` （回车），你就不再在 Vim 中。重复练习几次来掌握这条命令。熟悉了这部分内容之后，请转到下一节，了解如何对文件进行更改。
 
-### Step 2: Make and save modifications in Vim
+### 第 2 步：在 Vim 中修改并保存
 
-Reopen the file by typing **vim HelloWorld.java** and pressing the **Enter** key. Insert mode is where you can make changes to a file. First, hit **Esc** to make sure you are in Normal mode, then press **i** to go into Insert mode. (Yes, that is the letter **i**.)
+通过输入 `vim HelloWorld.java` 和回车键来再次打开这个文件。你可以在插入模式中修改文件。首先，通过 `Esc` 键来确定你正处于正常模式。接着输入 `i` 来进入插入模式（没错，就是字母 **i**）。
 
-In the lower-left, you should see **\-- INSERT --**. This means you are in Insert mode.
+在左下角，你将看到 `\-- INSERT --`，这标志着你这处于插入模式。
 
 ![Vim insert mode][10]
 
-Type some Java code. You can type anything you want, but here is an example for you to follow. Your screen will look like this:
-
+写一些 Java 代码。你可以写任何你想写的，不过这也有一份你可以参照的例子。你的屏幕将显示如下：
 
 ```
 public class HelloWorld {
@@ -81,109 +80,109 @@ public class HelloWorld {
   }
 }
 ```
-Very pretty! Notice how the text is highlighted in Java syntax highlight colors. Because you started the file in Java, Vim will detect the syntax color.
+非常漂亮！注意文本是如何在 Java 语法中高亮显示的。因为这是个 Java 文件，所以 Vim 将自动检测语法并高亮颜色。
 
-Save the file. Hit **Esc** to leave Insert mode and enter Command Line mode. Type **:** and follow that with **x!** (i.e., a colon followed by x and !). Hit **Enter** to save the file. You can also type **wq** to perform the same operation.
+保存文件：按下 `Esc` 来退出插入模式并进入命令模式。输入 `:` 并接着 `x!` (完整命令：`:x!`)，按回车键来保存文件。你也可以输入 `wq` 来执行相同的操作。
 
-Now you know how to enter text using Insert mode and save the file using **:x!** or **:wq**.
+现在，你知道了如何使用插入模式输入文本并使用以下命令保存文件：`:x!` 或者 `:wq`。
 
-### Step 3: Basic navigation in Vim
+### 第 3 步：Vim 中的基本导航
 
-While you can always use your friendly Up, Down, Left, and Right arrow buttons to move around a file, that would be very difficult in a large file with almost countless lines. It's also helpful to be able to be able to jump around within a line. Although Vim has a ton of awesome navigation features, the first one I want to show you is how to go to a specific line.
+虽然你总是可以使用上箭头、下箭头、左箭头和右箭头在文件中移动，但在一个几乎有数不清行数的大文件中，这将是非常困难的。能够在一行中跳跃光标将会是很有用的。虽然 Vim 提供了不少很棒的导航功能，不过在一开始，我想向你展示如何在 Vim 中到达某一特定的行。
 
-Press the **Esc** key to make sure you are in Normal mode, then type **:set number** and hit **Enter** .
+单击 `Esc` 来确定你处于正常模式，接着输入 `:set number` 并键入回车。
 
-Voila! You see line numbers on the left side of each line.
+瞧！你现在可以在每一行的左侧看到行号。
 
 ![Showing Line Numbers][12]
 
-OK, you may say, "that's cool, but how do I jump to a line?" Again, make sure you are in Normal mode, then press **: <LINE_NUMBER>**, where **< LINE_NUMBER>** is the number of the line you want to go to, and press **Enter**. Try moving to line 2.
+好，你也许会说，“这确实很酷，不过我该怎么跳到某一行呢？”再一次的，确认你正处于正常模式。接着输入 `: <LINE_NUMBER>`，在这里 **< LINE_NUMBER>** 是你想去的那一行的行数。按下回车键来试着移动到第二行。
 
 ```
 :2
 ```
 
-Now move to line 3.
+现在，跳到第三行。
 
 ![Jump to line 3][13]
 
-But imagine a scenario where you are dealing with a file that is 1,000 lines long and you want to go to the end of the file. How do you get there? Make sure you are in Normal mode, then type **:$** and press **Enter**.
+但是，假如你正在处理一个一千多行的文件，而你正想到文件底部。这该怎么办呢？确认你正处于正常模式，接着输入 `:$` 并按下回车。
 
-You will be on the last line!
+你将来到最后一行！
 
-Now that you know how to jump among the lines, as a bonus, let's learn how to move to the end of a line. Make sure you are on a line with some text, like line 3, and type **$**.
+现在，你知道如何在行间跳跃了，作为补充，我们来学一下如何移动到一行的行尾。确认你正处于有文本内容的一行，如第三行，接着输入 `$`。
 
 ![Go to the last character][14]
 
-You're now at the last character on the line. In this example, the open curly brace is highlighted to show where your cursor moved to, and the closing curly brace is highlighted because it is the opening curly brace's matching character.
+你现在来到这行的最后一个字节了。在此示例中，高亮左大括号以显示光标移动到的位置，右大括号被高亮是因为它是高亮的左大括号的匹配字符。
 
-That's it for basic navigation in Vim. Wait, don't exit the file, though. Let's move to basic editing in Vim. Feel free to grab a cup of coffee or tea, though.
+这就是 Vim 中的基本导航功能。等等，别急着退出文件。让我们转到 Vim 中的基本编辑。不过，你可以暂时随便喝杯咖啡或茶休息一下。
 
-### Step 4: Basic editing in Vim
+### 第 4 步：Vim 中的基本编辑
 
-Now that you know how to navigate around a file by hopping onto the line you want, you can use that skill to do some basic editing in Vim. Switch to Insert mode. (Remember how to do that, by hitting the **i** key?) Sure, you can edit by using the keyboard to delete or insert characters, but Vim offers much quicker ways to edit files.
+现在，你已经知道如何通过跳到想要的一行来在文件中导航，你可以使用这个技能在 Vim 中进行一些基本编辑。切换到插入模式。（还记得怎么做吗？是不是输入 `i` ？）当然，你可以使用键盘逐一删除或插入字符来进行编辑，但是 Vim 提供了更快捷的方法来编辑文件。
 
-Move to line 3, where it shows **public static void main(String[] args) {**. Quickly hit the **d** key twice in succession. Yes, that is **dd**. If you did it successfully, you will see a screen like this, where line 3 is gone, and every following line moved up by one (i.e., line 4 became line 3).
+来到第三行，这里的代码是 **public static void main(String[] args) {**。双击 `d` 键，没错，就是 `dd`。如果你成功做到了，你将会看到，第三行消失了，剩下的所有行都向上移动了一行。（例如，第四行变成了第三行）。
 
 ![Deleting A Line][15]
 
-That's the _delete_ command. Don't fear! Hit **u** and you will see the deleted line recovered. Whew. This is the _undo_ command.
+这就是 _删除_（delete） 命令。不要担心，键入 `u`，你会发现这一行又回来了。喔，这就是 _撤销_（undo） 命令。
 
 ![Undoing a change in Vim][16]
 
-The next lesson is learning how to copy and paste text, but first, you need to learn how to highlight text in Vim. Press **v** and move your Left and Right arrow buttons to select and deselect text. This feature is also very useful when you are showing code to others and want to identify the code you want them to see.
+下一课是学习如何复制和粘贴文本，但首先，你需要学习如何在 Vim 中突出显示文本。按下 `v` 并向左右移动光标来选择或反选文本。当你向其他人展示代码并希望标识你想让他们注意到的代码时，这个功能也非常有用。
 
 ![Highlighting text in Vim][17]
 
-Move to line 4, where it says **System.out.println("Hello, Opensource");**. Highlight all of line 4. Done? OK, while line 4 is still highlighted, press **y**. This is called _yank_ mode, and it will copy the text to the clipboard. Next, create a new line underneath by entering **o**. Note that this will put you into Insert mode. Get out of Insert mode by pressing **Esc** , then hit **p** , which stands for _paste_. This will paste the copied text from line 3 to line 4.
+来到第四行，这里的代码是 **System.out.println("Hello, Opensource");**。高亮这一行的所有内容。好了吗？当第四行的内容处于高亮时，按下 `y`。这就叫做 _复制_（yank）模式，文本将会被复制到剪贴板上。接下来，输入 `o` 来创建新的一行。注意，这将让你进入插入模式。通过按 `Esc` 退出插入模式，然后按下 `p`，代表 _粘贴_。这将把复制的文本从第三行粘贴到第四行。
 
 ![Pasting in Vim][18]
 
-As an exercise, repeat these steps but also modify the text on your newly created lines. Also, make sure the lines are aligned well.
+作为练习，请重复这些步骤，但也要修改新创建的行中的文字。此外，请确保这些行对齐工整。
 
-> **Hint:** You need to switch back and forth between Insert mode and Command Line mode to accomplish this task.
+> **提示：** 您需要在插入模式和命令行模式之间来回切换才能完成此任务。
 
-Once you are finished, save the file with the **x!** command. That's all for basic editing in Vim.
+当你完成了，通过 `x!` 命令保存文件。以上就是 Vim 基本编辑的全部内容。
 
-### Step 5: Basic searching in Vim
+### 第 5 步：Vim 中的基本搜索
 
-Imagine your team lead wants you to change a text string in a project. How can you do that quickly? You might want to search for the line using a certain keyword.
+假设你的团队领导希望你更改项目中的文本字符串。你该如何快速完成任务？你可能希望使用某个关键字来搜索该行。
 
-Vim's search functionality can be very useful. Go into the Command Line mode by (1) pressing **Esc** key, then (2) pressing colon **:** ****key. We can search a keyword by entering : **/ <SEARCH_KEYWORD>**, where **< SEARCH_KEYWORD>** is the text string you want to find. Here we are searching for the keyword string "Hello." In the image below, the colon is missing but required.
+Vim 的搜索功能非常有用。通过 `Esc` 键来进入命令模式，然后输入冒号 `:`，我们可以通过输入 `/ <SEARCH_KEYWORD>` 来搜索关键词， **< SEARCH_KEYWORD>** 指你希望搜索的字符串。在这里，我们搜索关键字符串 “Hello”。在面的图示中缺少冒号，但这是必需的。
 
 ![Searching in Vim][19]
 
-However, a keyword can appear more than once, and this may not be the one you want. So, how do you navigate around to find the next match? You simply press the **n** key, which stands for _next_. Make sure that you aren't in Insert mode when you do this!
+但是，一个关键字可以出现不止一次，而这可能不是你想要的那一个。那么，如何找到下一个匹配项呢？只需按 `n` 键即可，这代表 _下一个_（next）。执行此操作时，请确保你没有处于插入模式！
 
-### Bonus step: Use split mode in Vim
+### 附加步骤：Vim中的分割模式
 
-That pretty much covers all the Vim basics. But, as a bonus, I want to show you a cool Vim feature called _split mode_.
+以上几乎涵盖了所有的 Vim 基础知识。但是，作为一个额外奖励，我想给你展示 Vim 一个很酷的特性，叫做 _分割_（split）模式。
 
-Get out of _HelloWorld.java_ and create a new file. In a terminal window, type **vim GoodBye.java** and hit **Enter** to create a new file named _GoodBye.java_.
+退出 _HelloWorld.java_ 并创建一个新文件。在控制台窗口中，输入 `vim GoodBye.java` 并按回车键来创建一个名为 _GoodBye.java_ 的新文件。
 
-Enter any text you want; I decided to type "Goodbye." Save the file. (Remember you can use **:x!** or **:wq** in Command Line mode.)
+输入任何你想输入的让内容，我选择输入“Goodbye”。保存文件（记住你可以在命令模式中使用 `:x!` 或者 `:wq`）。
 
-In Command Line mode, type **:split HelloWorld.java** , and see what happens.
+在命令模式中，输入 `:split HelloWorld.java`，来看看发生了什么。
 
 ![Split mode in Vim][20]
 
-Wow! Look at that! The **split** command created horizontally divided windows with _HelloWorld.java_ above and _GoodBye.java_ below. How can you switch between the windows? Hold **Control** (on a Mac) or **CTRL** (on a PC) then hit **ww** (i.e., **w** twice in succession).
+Wow！快看！**split** 命令将控制台窗口水平分割成了两个部分，上面是  _HelloWorld.java_，下面是 _GoodBye.java_。该怎么能在窗口之间切换呢？按住 `Control` 键 (在 Mac 上)或 `Ctrl` 键（在PC上），然后按下 `ww` (即双击 `w` 键)。
 
-As a final exercise, try to edit _GoodBye.java_ to match the screen below by copying and pasting from _HelloWorld.java_.
+作为最后一个练习，尝试通过复制和粘贴 _HelloWorld.java_ 来编辑 _GoodBye.java_ 以匹配下面屏幕上的内容。
 
 ![Modify GoodBye.java file in Split Mode][21]
 
-Save both files, and you are done!
+保存两份文件，成功！
 
-> **TIP 1:** If you want to arrange the files vertically, use the command **:vsplit <FILE_NAME>** (instead of **:split <FILE_NAME>**, where **< FILE_NAME>** is the name of the file you want to open in Split mode.
+> **提示 1:** 如果你想将两个文件窗口垂直分割，使用 `:vsplit <FILE_NAME>` 命令。（代替  `:split <FILE_NAME>` 命令，**< FILE_NAME>** 指你想要使用分割模式打开的文件名）。
 >
-> **TIP 2:** You can open more than two files by calling as many additional **split** or **vsplit** commands as you want. Try it and see how it looks.
+> **提示 2:** 你可以通过调用任意数量的  **split** 或者 **vsplit** 命令来打开两个以上的文件。试一试，看看它效果如何。
 
-### Vim cheat sheet
+### Vim 速查表
 
-In this article, you learned how to use Vim just enough to get by for work or a project. But this is just the beginning of your journey to unlock Vim's powerful capabilities. Be sure to check out other great tutorials and tips on Opensource.com.
+在本文中，您学会了如何使用 Vim 来完成工作或项目。但这只是你开启 Vim 强大功能之旅的开始。请务必在 Opensource.com 上查看其他很棒的教程和技巧。
 
-To make things a little easier, I've summarized everything you've learned into [a handy cheat sheet][22].
+为了让一切变得简单些，我已经将你学到的一切总结到了 [a handy cheat sheet][22] 中。
 
 --------------------------------------------------------------------------------
 
@@ -191,7 +190,7 @@ via: https://opensource.com/article/19/3/getting-started-vim
 
 作者：[Bryant Son (Red Hat, Community Moderator)][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Modrisco](https://github.com/Modrisco)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
