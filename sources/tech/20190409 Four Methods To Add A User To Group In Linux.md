@@ -7,47 +7,42 @@
 [#]: via: (https://www.2daygeek.com/linux-add-user-to-group-primary-secondary-group-usermod-gpasswd/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Four Methods To Add A User To Group In Linux
+在 Linux 中添加用户到组的四个方法
 ======
 
-Linux groups are organization units which are used to manage user accounts in Linux.
+Linux 组是用于管理 Linux 中用户帐户的组织单位。
 
-It has unique numerical identification number for each users and groups in the Linux system.
+对于 Linux 系统中的每一个用户和组，它都有惟一的数字标识号。
 
-It’s called a userid (UID) and a groupid (GID). The main purpose of groups is to define a set of privileges to the member of the group.
+它被称为 userid (UID) 和 groupid (GID)。组的主要目的是为组的成员定义一组特权。
 
-They all can perform the particular operations but not others.
+它们都可以执行特定的操作，但不能执行其他操作。
 
-There are two types of default groups are available in Linux. Each user should have exactly one primary group and any number of secondary groups.
+Linux 中有两种类型的默认组可用。每个用户应该只有一个 <ruby>主要组<rt>primary group</rt></ruby> 和任意数量的 <ruby>次要组<rt>secondary group</rt></ruby>。
 
-  * **Primary Group:** Primary group has been added to the user when the user account creation. It’s typically the name of the user. The primary group is applied to the user when performing any actions such as creating new files (or directories), modifying files, or executing commands, etc,. The user primary group information is stored in the `/etc/passwd` file.
-  * **Secondary Group:** It’s known as Supplementary Groups. It allows the group of users to perform the particular action in the same group members files.
-Say for example, if you would like to allow few users to run Apache (httpd) service command then it will perfectly suits.
+  * **主要组：** 创建用户帐户时，已将主组添加到用户。它通常是用户的名称。在执行诸如创建新文件（或目录）、修改文件或执行命令等任何操作时，主组将应用于用户。用户主要组信息存储在 `/etc/passwd` 文件中。
+  * **次要组：** 它被称为次要组。它允许用户组在同一组成员文件中执行特定操作。
 
+例如，如果你希望允许少数用户运行 apache（httpd）服务命令，那么它将非常适合。
 
+你可能对以下与用户管理相关的文章感兴趣。
 
-You may have interested in the following articles which is related to user management.
+  * 在 Linux 中创建用户帐户的三种方法？
+  * 如何在 Linux 中创建批量用户？
+  * 如何在 Linux 中使用不同的方法更新/更改用户密码？
 
-  * [Three Methods To Create An User Account In Linux?][1]
-  * [How To Create The Bulk Users In Linux?][2]
-  * [How to Update/Change Users Password in Linux Using Different Ways][3]
+可以使用以下四种方法实现。
 
+  * **`usermod:`** usermod 命令修改系统帐户文件，以反映在命令行中指定的更改。
+  * **`gpasswd:`** gpasswd 命令用于管理 /etc/group 和 /etc/gshadow。每个组都可以有管理员、成员和密码。
+  * **`Shell Script:`** shell 脚本允许管理员自动执行所需的任务。
+  * **`Manual Method:`** 我们可以通过编辑 `/etc/group` 文件手动将用户添加到任何组中。
 
+我假设你已经拥有此活动所需的组和用户。在本例中，我们将使用以下用户和组：`user1`、`user2`、`user3`，group 是 `mygroup` 和 `mygroup1`。
 
-It can be done using the following four methods.
+在进行更改之前，我想检查用户和组信息。详见下文。
 
-  * **`usermod:`** The usermod command modifies the system account files to reflect the changes that are specified on the command line.
-  * **`gpasswd:`** The gpasswd command is used to administer /etc/group, and /etc/gshadow. Every group can have administrators, members and a password.
-  * **`Shell Script:`** Shell scripts are allow administrator to automate the required tasks.
-  * **`Manual Method:`** We can manually add the users into any group by editing the `/etc/group` file.
-
-
-
-I assume that you already have the necessary group and users for this activity. In this example, we are going to use following users and groups `user1`, `user2`, `user3` and group is `mygroup` and `mygroup1`.
-
-Before making the changes, i would like to check the users and group information. See the details below.
-
-I could see the below users were associate with their own group and not with others.
+我可以看到下面的用户与他们自己的组关联，而不是与其他组关联。
 
 ```
 # id user1
@@ -60,7 +55,7 @@ uid=1009(user2) gid=1009(user2) groups=1009(user2)
 uid=1010(user3) gid=1010(user3) groups=1010(user3)
 ```
 
-I could see there is no users are associated in this group.
+我可以看到这个组中没有关联的用户。
 
 ```
 # getent group mygroup
@@ -70,175 +65,176 @@ mygroup:x:1012:
 mygroup1:x:1013:
 ```
 
-### Method-1: What Is usermod Command?
+### 方法 1：什么是 usermod 命令？
 
-The usermod command modifies the system account files to reflect the changes that are specified on the command line.
+usermod 命令修改系统帐户文件，以反映命令行上指定的更改。
 
-### How to Add an Existing User to Secondary or Supplementary Group Using usermod Command?
+### 如何使用 usermod 命令将现有的用户添加到次要组或附加组？
 
-To add an existing user to a secondary group, use the usermod command with `-G` option and the name of the group.
-Syntax
+要将现有用户添加到辅助组，请使用带有 `-g` 选项和组名称的 usermod 命令。
+
+语法
 
 ```
 # usermod [-G] [GroupName] [UserName]
 ```
 
-You will be getting an error message if the given user or group doesn’t exist in your system. If you doesn’t get any error then the user has been added to the corresponding group.
+如果系统中不存在给定的用户或组，你将收到一条错误消息。如果没有得到任何错误，那么用户已经被添加到相应的组中。
 
 ```
 # usermod -a -G mygroup user1
 ```
 
-Let me see the output using id command. Yes, it’s added successfully.
+让我使用 id 命令查看输出。是的，添加成功。
 
 ```
 # id user1
 uid=1008(user1) gid=1008(user1) groups=1008(user1),1012(mygroup)
 ```
 
-### How to Add an Existing User to Multiple Secondary or Supplementary Groups Using usermod Command?
+### 如何使用 usermod 命令将现有的用户添加到多个次要组或附加组？
 
-To add an existing user to multiple secondary groups, use the usermod command with `-G` option and the name of the groups with comma.
+要将现有用户添加到多个次要组中，请使用带有 `-G` 选项的 usermod 命令和带有逗号分隔的组名称。
 
-Syntax
+语法
 
 ```
 # usermod [-G] [GroupName1,GroupName2] [UserName]
 ```
 
-In this example, we are going to add the `user2` into `mygroup` and `mygroup1`.
+在本例中，我们将把 `user2` 添加到 `mygroup` 和 `mygroup1` 中。
 
 ```
 # usermod -a -G mygroup,mygroup1 user2
 ```
 
-Let me see the output using id command. Yes, `user2` is successfully added into `mygroup` and `mygroup1`.
+让我使用 `id` 命令查看输出。是的，`user2` 已成功添加到 `myGroup` 和 `myGroup1` 中。
 
 ```
 # id user2
 uid=1009(user2) gid=1009(user2) groups=1009(user2),1012(mygroup),1013(mygroup1)
 ```
 
-### How to Change a User’s Primary Group?
+### 如何改变用户的主要组？
 
-To change a user’s primary group, use the usermod command with `-g` option and the name of the group.
+要更改用户的主要组，请使用带有 `-g` 选项和组名称的 usermod 命令。
 
-Syntax
+语法
 
 ```
 # usermod [-g] [GroupName] [UserName]
 ```
 
-We have to use `-g` to change user’s primary group.
+我们必须使用 `-g` 改变用户的主要组。
 
 ```
 # usermod -g mygroup user3
 ```
 
-Let see the output. Yes, it has been successfully changed. Now, it’s showing `mygroup` as `user3` primary group instead of `user3`.
+让我们看看输出。是的，已成功更改。现在，它将 mygroup 显示为 user3 主要组而不是 user3。
 
 ```
 # id user3
 uid=1010(user3) gid=1012(mygroup) groups=1012(mygroup)
 ```
 
-### Method-2: What Is gpasswd Command?
+### 方法 2：什么是 gpasswd 命令？
 
-The gpasswd command is used to administer /etc/group, and /etc/gshadow. Every group can have administrators, members and a password.
+`gpasswd` 命令用于管理 `/etc/group` 和 `/etc/gshadow`。每个组都可以有管理员、成员和密码。
 
-### How to Add an Existing User to Secondary or Supplementary Group Using gpasswd Command?
+### 如何使用 gpasswd 命令将现有用户添加到次要组或者附加组？
 
-To add an existing user to a secondary group, use the gpasswd command with `-M` option and the name of the group.
+要将现有用户添加到次要组，请使用带有 `-M` 选项和组名称的 gpasswd 命令。
 
-Syntax
+语法
 
 ```
 # gpasswd [-M] [UserName] [GroupName]
 ```
 
-In this example, we are going to add the `user1` into `mygroup`.
+在本例中，我们将把 `user1 ` 添加到 `mygroup` 中。
 
 ```
 # gpasswd -M user1 mygroup
 ```
 
-Let me see the output using id command. Yes, `user1` is successfully added into `mygroup`.
+让我使用 id 命令查看输出。是的，`user1` 已成功添加到 `mygroup` 中。
 
 ```
 # id  user1
 uid=1008(user1) gid=1008(user1) groups=1008(user1),1012(mygroup)
 ```
 
-### How to Add The Multiple User’s to Secondary or Supplementary Group Using gpasswd Command?
+### 如何使用 gpasswd 命令添加多个用户到次要组或附加组中？
 
-To add the multiple users to a secondary group, use the gpasswd command with `-M` option and the name of the group.
+要将多个用户添加到辅助组中，请使用带有 `-M` 选项和组名称的 gpasswd 命令。
 
-Syntax
+语法
 
 ```
 # gpasswd [-M] [UserName1,UserName2] [GroupName]
 ```
 
-In this example, we are going to add the `user2` and `user3` into `mygroup1`.
+在本例中，我们将把 `user2` 和 `user3` 添加到 `mygroup1` 中。
 
 ```
 # gpasswd -M user2,user3 mygroup1
 ```
 
-Let me see the output using getent command. Yes, `user2` and `user3` are successfully added into `mygroup1`.
+让我使用 getent 命令查看输出。是的，`user2` 和 `user3` 已成功添加到 `myGroup1` 中。
 
 ```
 # getent group mygroup1
 mygroup1:x:1013:user2,user3
 ```
 
-### How to Remove a User From a Group Using gpasswd Command?
+### 如何使用 gpasswd 命令从组中删除一个用户？
 
-To remove the user from the group, use the gpasswd command with `-d` option and the name of the user and group.
+要从组中删除用户，请使用带有 `-d` 选项的 gpasswd 命令以及用户和组的名称。
 
-Syntax
+语法
 
 ```
 # gpasswd [-d] [UserName] [GroupName]
 ```
 
-In this example, we are going to remove the `user1` from `mygroup`.
+在本例中，我们将从 `mygroup` 中删除 `user1` 。
 
 ```
 # gpasswd -d user1 mygroup
 Removing user user1 from group mygroup
 ```
 
-### Method-3: Using Shell Script?
+### 方法 3：使用 Shell 脚本？
 
-Based on the above examples what i came to know is the `usermod` command doesn’t has capable to add multiple users into the group but it can be done through the `gpasswd` command.
+基于上面的例子，我知道 `usermod` 命令没有能力将多个用户添加到组中，但是可以通过 `gpasswd` 命令完成。
 
-However, it will overwrite the existing users which are currently associated on the group.
+但是，它将覆盖当前与组关联的现有用户。
 
-For example, `user1` has already associated with `mygroup`. If you would like to add `user2` and `user3` into the `mygroup` with `gpasswd` command, it doesn’t work as expected and it over right the group instead of modifying it.
+例如，`user1` 已经与 `mygroup` 关联。如果要使用 `gpasswd` 命令将 `user2` 和 `user3` 添加到 `mygroup` 中，它将不会按预期生效，而是对组进行修改。
 
-What would be the solution if you would like to add multiple users to multiple groups?
+如果要将多个用户添加到多个组中，解决方案是什么？
 
-There is no default option is available in both of the commands to achieve this.
+两个命令中都没有默认选项来实现这一点。
 
-Hence, we need to write a small shell script to achieve this.
+因此，我们需要编写一个小的 shell 脚本来实现这一点。
 
-### Method-3a: How to Add The Multiple Users to Secondary or Supplementary Group Using gpasswd Command?
+### 如何使用 gpasswd 命令将多个用户添加到次要组或附加组？
 
-Create the following small shell script if you would like to add the multiple users to secondary or supplementary group using gpasswd command.
+如果要使用 gpasswd 命令将多个用户添加到次要组或附加组，请创建以下小的 shell 脚本。
 
-Create The Users list. Each user should be in separate line.
+创建用户列表。每个用户应该在单独的行中。
 
-```
+```bash
 $ cat user-lists.txt
 user1
 user2
 user3
 ```
 
-Use the following shell script to add multiple users to single secondary group.
+使用以下 shell 脚本将多个用户添加到单个次要组。
 
-```
+```bash
 vi group-update.sh
 
 #!/bin/bash
@@ -248,49 +244,49 @@ usermod -a -G mygroup $user
 done
 ```
 
-Set an executable permission to `group-update.sh` file.
+设置 `group-update.sh` 文件的可执行权限。
 
 ```
 # chmod + group-update.sh
 ```
 
-Finally run the script to achieve this.
+最后运行脚本来实现它。
 
 ```
 # sh group-update.sh
 ```
 
-Let me see the output using getent command. Yes, `user1`, `user2` and `user3` are successfully added into `mygroup`.
+让我看看使用 getent 命令的输出。 是的，`user1`，`user2` 和 `user3` 已成功添加到 `mygroup` 中。
 
 ```
 # getent group mygroup
 mygroup:x:1012:user1,user2,user3
 ```
 
-### Method-3a: How to Add The Multiple Users Into Multiple Secondary or Supplementary Group Using gpasswd Command?
+### 如何使用 gpasswd 命令将多个用户添加到多个次要组或附加组？
 
-Create the following small shell script if you would like to add the multiple users into multiple secondary or supplementary group using gpasswd command.
+如果要使用 gpasswd 命令将多个用户添加到多个次要组或附加组中，请创建以下小的 shell 脚本。
 
-Create The Users list. Each user should be in separate line.
+创建用户列表。每个用户应该在单独的行中。
 
-```
+```bash
 $ cat user-lists.txt
 user1
 user2
 user3
 ```
 
-Create The Groups list. Each group should be in separate line.
+创建组列表。每组应在单独的行中。
 
-```
+```bash
 $ cat group-lists.txt
 mygroup
 mygroup1
 ```
 
-Use the following shell script to add multiple users to multiple secondary groups.
+使用以下 shell 脚本将多个用户添加到多个次要组。
 
-```
+```bash
 #!/bin/sh
 for user in `more user-lists.txt`
 do
@@ -298,40 +294,39 @@ for group in `more group-lists.txt`
 do
 usermod -a -G $group $user
 done
-done
 ```
 
-Set an executable permission to `group-update-1.sh` file.
+设置 `group-update-1.sh` 文件的可执行权限。
 
 ```
 # chmod +x group-update-1.sh
 ```
 
-Finally run the script to achieve this.
+最后运行脚本来实现它。
 
 ```
 # sh group-update-1.sh
 ```
 
-Let me see the output using getent command. Yes, `user1`, `user2` and `user3` are successfully added into `mygroup`.
+让我看看使用 getent 命令的输出。 是的，`user1`，`user2` 和 `user3` 已成功添加到 `mygroup` 中。
 
 ```
 # getent group mygroup
 mygroup:x:1012:user1,user2,user3
 ```
 
-Also, `user1`, `user2` and `user3` are successfully added into `mygroup1`.
+此外，`user1`，`user2` 和 `user3` 已成功添加到 `mygroup1` 中。
 
 ```
 # getent group mygroup1
 mygroup1:x:1013:user1,user2,user3
 ```
 
-### Method-4: Manual Method To Add A User Into A Group In Linux?
+### 方法 4：在 Linux 中将用户添加到组中的手动方法？
 
-We can manually add the users into any group by editing the `/etc/group` file.
+我们可以通过编辑 `/etc/group` 文件手动将用户添加到任何组中。
 
-Open the `/etc/group` file and search the group name where you want to update the users. Finally update the Users into the corresponding group.
+打开 `/etc/group` 文件并搜索要更新用户的组名。最后将用户更新到相应的组中。
 
 ```
 # vi /etc/group
@@ -343,10 +338,10 @@ via: https://www.2daygeek.com/linux-add-user-to-group-primary-secondary-group-us
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[NeverKnowsTomorrow](https://github.com/NeverKnowsTomorrow)
+校对：[校对者 ID](https://github.com/校对者 ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux 中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
