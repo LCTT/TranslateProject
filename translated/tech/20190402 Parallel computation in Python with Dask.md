@@ -7,17 +7,16 @@
 [#]: via: (https://opensource.com/article/19/4/parallel-computation-python-dask)
 [#]: author: (Moshe Zadka (Community Moderator) https://opensource.com/users/moshez)
 
-Parallel computation in Python with Dask
+使用 Dask 在 Python 中进行并行计算
 ======
-The Dask library scales Python computation to multiple cores or even to
-multiple machines.
+Dask 库将 Python 计算扩展到多个核心甚至是多台机器。
 ![Pair programming][1]
 
-One frequent complaint about Python performance is the [global interpreter lock][2] (GIL). Because of GIL, only one thread can execute Python byte code at a time. As a consequence, using threads does not speed up computation—even on modern, multi-core machines.
+关于 Python 性能的一个常见抱怨是[全局解释器锁][2]（GIL）。由于 GIL，一次只能有一个线程执行 Python 字节码。因此，即使在现代的多核机器上，使用线程也不会加速计算。
 
-But when you need to parallelize to many cores, you don't need to stop using Python: the **[Dask][3]** library will scale computation to multiple cores or even to multiple machines. Some setups configure Dask on thousands of machines, each with multiple cores; while there are scaling limits, they are not easy to hit.
+但当你需要并行化到多核时，你不需要停止使用 Python：**[Dask][3]** 库可以将计算扩展到多个内核甚至多个机器。某些设置在数千台机器上配置 Dask，每台机器都有多个内核。虽然存在扩展限制，但并不容易达到。
 
-While Dask has many built-in array operations, as an example of something not built-in, we can calculate the [skewness][4]:
+虽然 Dask 有许多内置的数组操作，但举一个非内置的例子，我们可以计算[偏度][4]：
 ```
 import numpy
 import dask
@@ -32,11 +31,11 @@ skewness = ((unnormalized_moment - (3 * mean * stddev ** 2) - mean ** 3) /
             stddev ** 3)
 ```
 
-Notice that each operation will use as many cores as needed. This will parallelize across all cores, even when calculating across billions of elements.
+请注意，每个操作将根据需要使用尽可能多的内核。这将在所有核心上并行化，即使在计算数十亿个元素时也是如此。
 
-Of course, it is not always the case that our operations can be parallelized by the library; sometimes we need to implement parallelism on our own.
+当然，并不是我们所有的操作都可由库并行化，有时我们需要自己实现并行性。
 
-For that, Dask has a "delayed" functionality:
+为此，Dask 有一个“延迟”功能：
 ```
 import dask
 
@@ -48,9 +47,9 @@ total = dask.delayed(sum)(palindromes)
 result = total.compute()
 ```
 
-This will calculate whether strings are palindromes in parallel and will return a count of the palindromic ones.
+这将计算字符串是否是回文并返回回回文的数量。
 
-While Dask was created for data scientists, it is by no means limited to data science. Whenever we need to parallelize tasks in Python, we can turn to Dask—GIL or no GIL.
+虽然 Dask 是为数据科学家创建的，但它绝不仅限于数据科学。每当我们需要在 Python 中并行化任务时，我们可以使用 Dask-有 GIL 或没有 GIL。
 
 --------------------------------------------------------------------------------
 
@@ -58,7 +57,7 @@ via: https://opensource.com/article/19/4/parallel-computation-python-dask
 
 作者：[Moshe Zadka (Community Moderator)][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
