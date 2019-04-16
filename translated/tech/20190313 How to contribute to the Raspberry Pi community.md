@@ -1,15 +1,17 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to contribute to the Raspberry Pi community)
 [#]: via: (https://opensource.com/article/19/3/contribute-raspberry-pi-community)
 [#]: author: (Anderson Silva (Red Hat) https://opensource.com/users/ansilva/users/kepler22b/users/ansilva)
 
-如何为树莓派社区做出贡献
+树莓派使用入门：如何为树莓派社区做出贡献
 ======
-在我们的入门系列的第 13 篇文章中, 发现参与树莓派社区的方法。
+
+> 在我们的入门系列的第 13 篇文章中，发现参与树莓派社区的方法。
+
 ![][1]
 
 这个系列已经逐渐接近尾声，我已经写了很多它的乐趣，我大多希望它能帮助人们使用树莓派进行教育或娱乐。也许这些文章能说服你买你的第一个树莓派，或者让你重新发现抽屉里的吃灰设备。如果这里有真的，那么我认为这个系列就是成功的。
@@ -24,8 +26,6 @@
   * 帮助[翻译][7]
   * 在 [Raspberry Jam][8] 当志愿者
 
-
-
 这些只是你可以为树莓派社区做贡献的几种方式。最后但同样重要的是，你可以加入我并[投稿文章][9]到你最喜欢的开源网站 [Opensource.com][10]。 :-)
 
 --------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ via: https://opensource.com/article/19/3/contribute-raspberry-pi-community
 作者：[Anderson Silva (Red Hat)][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
