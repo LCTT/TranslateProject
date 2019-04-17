@@ -92,7 +92,7 @@ via: https://itsfoss.com/history-of-firefox
 [3]: https://en.wikipedia.org/wiki/Tim_Berners-Lee
 [4]: https://www.w3.org/DesignIssues/TimBook-old/History.html
 [5]: http://viola.org/
-[6]: https://en.wikipedia.org/wiki/Mosaic_(web_browser
+[6]: https://en.wikipedia.org/wiki/Mosaic_(web_browser)
 [7]: http://www.computinghistory.org.uk/det/1789/Marc-Andreessen/
 [8]: http://www.davetitus.com/mozilla/
 [9]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2019/03/Mozilla_boxing.jpg?ssl=1
@@ -110,7 +110,7 @@ via: https://itsfoss.com/history-of-firefox
 [21]: https://en.wikipedia.org/wiki/Usage_share_of_web_browsers
 [22]: http://gs.statcounter.com/browser-market-share/desktop/worldwide/#monthly-201901-201901-bar
 [23]: https://en.wikipedia.org/wiki/Red_panda
-[24]: https://en.wikipedia.org/wiki/Flock_(web_browser
+[24]: https://en.wikipedia.org/wiki/Flock_(web_browser)
 [25]: https://www.windowscentral.com/microsoft-building-chromium-powered-web-browser-windows-10
 [26]: https://itsfoss.com/why-firefox/
 [27]: https://itsfoss.com/firefox-quantum-ubuntu/
