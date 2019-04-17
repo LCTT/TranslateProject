@@ -1,45 +1,35 @@
 [#]: collector: (lujun9972)
 [#]: translator: (heguangzhi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10736-1.html)
 [#]: subject: (How To Check The List Of Open Ports In Linux?)
 [#]: via: (https://www.2daygeek.com/linux-scan-check-open-ports-using-netstat-ss-nmap/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-
-如何检查Linux中的开放端口列表？
+如何检查 Linux 中的开放端口列表？
 ======
 
-最近，我们就同一主题写了两篇文章。
+最近，我们就同一主题写了两篇文章。这些文章内容帮助你如何检查远程服务器中给定的端口是否打开。
 
-这些文章内容帮助您如何检查远程服务器中给定的端口是否打开。
+如果你想 [检查远程 Linux 系统上的端口是否打开][1] 请点击链接浏览。如果你想 [检查多个远程 Linux 系统上的端口是否打开][2] 请点击链接浏览。如果你想 [检查多个远程 Linux 系统上的多个端口状态][2] 请点击链接浏览。
 
-如果您想 **[检查远程 Linux 系统上的端口是否打开][1]** 请点击链接浏览。
+但是本文帮助你检查本地系统上的开放端口列表。
 
-如果您想 **[检查多个远程 Linux 系统上的端口是否打开][2]** 请点击链接浏览。
+在 Linux 中很少有用于此目的的实用程序。然而，我提供了四个最重要的 Linux 命令来检查这一点。
 
-如果您想 **[检查多个远程Linux系统上的多个端口状态][2]** 请点击链接浏览。
+你可以使用以下四个命令来完成这个工作。这些命令是非常出名的并被 Linux 管理员广泛使用。
 
-但是本文帮助您检查本地系统上的开放端口列表。
-
-在 Linux 中很少有用于此目的的实用程序。
-
-然而，我提供了四个最重要的 Linux 命令来检查这一点。
-
-您可以使用以下四个命令来完成这个工作。这些命令是非常出名的并被 Linux 管理员广泛使用。
-
-  * **`netstat:`** netstat (“network statistics”) 是一个显示网络连接（进和出）相关信息命令行工具，例如：路由表, 伪装连接,多点传送成员和网络端口。
-  * **`nmap:`** Nmap (“Network Mapper”) 是一个网络探索与安全审计的开源工具。它旨在快速扫描大型网络。
-  * **`ss:`** ss 被用于转储套接字统计信息。它也可以类似 netstat 使用。相比其他工具它可以展示更多的TCP状态信息。
-  * **`lsof:`** lsof 是 List Open File 的缩写. 它用于输出被某个进程打开的所有文件。
-
+  * `netstat`：netstat (“network statistics”) 是一个显示网络连接（进和出）相关信息命令行工具，例如：路由表, 伪装连接,多点传送成员和网络端口。
+  * `nmap`：Nmap (“Network Mapper”) 是一个网络探索与安全审计的开源工具。它旨在快速扫描大型网络。
+  * `ss`： ss 被用于转储套接字统计信息。它也可以类似 netstat 使用。相比其他工具它可以展示更多的TCP状态信息。
+  * `lsof`： lsof 是 List Open File 的缩写. 它用于输出被某个进程打开的所有文件。
 
 ### 如何使用 Linux 命令 netstat 检查系统中的开放端口列表
 
-netstat 是 Network Statistics 的缩写，是一个显示网络连接（进和出）相关信息命令行工具，例如：路由表, 伪装连接,多点传送成员和网络端口。
+`netstat` 是 Network Statistics 的缩写，是一个显示网络连接（进和出）相关信息命令行工具，例如：路由表、伪装连接、多播成员和网络端口。
 
-它可以列出所有的 tcp, udp 连接 和所有的 unix 套接字连接。
+它可以列出所有的 tcp、udp 连接和所有的 unix 套接字连接。
 
 它用于发现发现网络问题，确定网络连接数量。
 
@@ -81,7 +71,7 @@ eth0            1      ff02::1
 eth0            1      ff01::1
 ```
 
-您也可以使用下面的命令检查特定的端口。
+你也可以使用下面的命令检查特定的端口。
 
 ```
 # # netstat -tplugn | grep :22
@@ -92,7 +82,7 @@ tcp6       0      0 :::22                   :::*                    LISTEN      
 
 ### 如何使用 Linux 命令 ss 检查系统中的开放端口列表？
 
-ss 被用于转储套接字统计信息。它也可以类似 netstat 使用。相比其他工具它可以展示更多的TCP状态信息。
+`ss` 被用于转储套接字统计信息。它也可以显示类似 `netstat` 的信息。相比其他工具它可以展示更多的 TCP 状态信息。
 
 ```
 # ss -lntu
@@ -121,7 +111,7 @@ tcp    LISTEN     0      100                                   :::25            
 tcp    LISTEN     0      128                                   :::22                                                :::*
 ```
 
-您也可以使用下面的命令检查特定的端口。
+你也可以使用下面的命令检查特定的端口。
 
 ```
 # # ss -lntu | grep ':25'
@@ -132,12 +122,11 @@ tcp    LISTEN     0      100      :::25                   :::*
 
 ### 如何使用 Linux 命令 nmap 检查系统中的开放端口列表？
 
-
 Nmap (“Network Mapper”) 是一个网络探索与安全审计的开源工具。它旨在快速扫描大型网络，当然它也可以工作在独立主机上。
 
-Nmap使用裸 IP 数据包以一种新颖的方式来确定网络上有哪些主机可用，这些主机提供什么服务(应用程序名称和版本)，它们运行什么操作系统(操作系统版本)，使用什么类型的数据包过滤器/防火墙，以及许多其他特征。
+Nmap 使用裸 IP 数据包以一种新颖的方式来确定网络上有哪些主机可用，这些主机提供什么服务（应用程序名称和版本），它们运行什么操作系统（版本），使用什么类型的数据包过滤器/防火墙，以及许多其他特征。
 
-虽然 Nmap 通常用于安全审计，但许多系统和网络管理员发现它对于日常工作也非常有用，例如网络清点、管理服务升级计划以及监控主机或服务正常运行时间。
+虽然 Nmap 通常用于安全审计，但许多系统和网络管理员发现它对于日常工作也非常有用，例如网络资产清点、管理服务升级计划以及监控主机或服务正常运行时间。
 
 ```
 # nmap -sTU -O localhost
@@ -166,9 +155,7 @@ OS detection performed. Please report any incorrect results at http://nmap.org/s
 Nmap done: 1 IP address (1 host up) scanned in 1.93 seconds
 ```
 
-
-您也可以使用下面的命令检查特定的端口。
-
+你也可以使用下面的命令检查特定的端口。
 
 ```
 # nmap -sTU -O localhost | grep 123
@@ -176,10 +163,9 @@ Nmap done: 1 IP address (1 host up) scanned in 1.93 seconds
 123/udp open  ntp
 ```
 
-
 ### 如何使用 Linux 命令 lsof 检查系统中的开放端口列表？
 
-它向您显示系统上打开的文件列表以及打开它们的进程。还会向您显示与文件相关的其他信息。
+它向你显示系统上打开的文件列表以及打开它们的进程。还会向你显示与文件相关的其他信息。
 
 ```
 # lsof -i
@@ -214,8 +200,7 @@ httpd   13374 apache    3u  IPv4   20337      0t0  TCP *:http (LISTEN)
 httpd   13375 apache    3u  IPv4   20337      0t0  TCP *:http (LISTEN)
 ```
 
-您也可以使用下面的命令检查特定的端口。
-
+你也可以使用下面的命令检查特定的端口。
 
 ```
 # lsof -i:80
@@ -236,11 +221,11 @@ via: https://www.2daygeek.com/linux-scan-check-open-ports-using-netstat-ss-nmap/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[heguangzhi](https://github.com/heguangzhi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/how-to-check-whether-a-port-is-open-on-the-remote-linux-system-server/
+[1]: https://linux.cn/article-10675-1.html
 [2]: https://www.2daygeek.com/check-a-open-port-on-multiple-remote-linux-server-using-nc-command/
