@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zgj1024)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,86 +7,83 @@
 [#]: via: (https://www.2daygeek.com/httpie-curl-wget-alternative-http-client-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-HTTPie – A Modern Command Line HTTP Client For Curl And Wget Alternative
+HTTPie – 替代 Curl 和 Wget 的现代 HTTP 命令行客户端
 ======
 
-Most of the time we use Curl Command or Wget Command for file download and other purpose.
+大多数时间我们会使用 Curl 命令或是 Wget 命令下载文件或者做其他事
 
-We had written **[best command line download manager][1]** in the past. You can navigate those articles by clicking the corresponding URLs.
+我们以前曾写过 **[最佳命令行下载管理器][1]** 的文章。你可以点击相应的 URL 连接来浏览这些文章。
 
-  * **[aria2 – A Command Line Multi-Protocol Download Tool For Linux][2]**
-  * **[Axel – A Lightweight Command Line Download Accelerator For Linux][3]**
-  * **[Wget – A Standard Command Line Download Utility For Linux][4]**
-  * **[curl – A Nifty Command Line Download Tool For Linux][5]**
-
-
-
-Today we are going to discuss about the same kind of topic. The utility name is HTTPie.
-
-It’s modern command line http client and best alternative for curl and wget commands.
-
-### What Is HTTPie?
-
-HTTPie (pronounced aitch-tee-tee-pie) is a command line HTTP client.
-
-The httpie tool is a modern command line http client which makes CLI interaction with web services.
-
-It provides a simple http command that allows for sending arbitrary HTTP requests using a simple and natural syntax, and displays colorized output.
-
-HTTPie can be used for testing, debugging, and generally interacting with HTTP servers.
-
-### Main Features
-
-  * Expressive and intuitive syntax
-  * Formatted and colorized terminal output
-  * Built-in JSON support
-  * Forms and file uploads
-  * HTTPS, proxies, and authentication
-  * Arbitrary request data
-  * Custom headers
-  * Persistent sessions
-  * Wget-like downloads
-  * Python 2.7 and 3.x support
+  * **[aria2 – Linux 下的多协议命令行下载工具][2]**
+  * **[Axel – Linux 下的轻量级命令行下载加速器][3]**
+  * **[Wget – Linux 下的标准命令行下载工具][4]**
+  * **[curl – Linux 下的实用的命令行下载工具][5]**
 
 
+今天我们将讨论同样的话题。实用程序名为 HTTPie。
 
-### How To Install HTTPie In Linux?
+它是现代命令行 http 客户端，也是curl和wget命令的最佳替代品。
 
-Most Linux distributions provide a package that can be installed using the system package manager.
+### 什么是 HTTPie？
 
-For **`Fedora`** system, use **[DNF Command][6]** to install httpie.
+HTTPie (发音是 aitch-tee-tee-pie) 是一个 Http 命令行客户端。
+
+httpie 工具是现代命令的 HTTP 客户端，它能让命令行界面与 Web 服务进行交互。
+
+他提供一个简单 Http 命令，运行使用简单而自然的语法发送任意的 HTTP 请求，并会显示彩色的输出。
+
+HTTPie 能用于测试、debugging及与 HTTP 服务器交互。
+
+### 主要特点
+
+  * 具表达力的和直观语法
+  * 格式化的及彩色化的终端输出
+  * 内置 JSON 支持
+  * 表单和文件上传
+  * HTTPS, 代理, 和认证
+  * 任意请求数据
+  * 自定义头部
+  * 持久化会话（sessions）
+  * 类似 wget 的下载
+  * 支持 Python 2.7 和 3.x
+
+### 在 Linux 下如何安装 HTTPie
+
+大部分 Linux 发行版都提供了系统包管理器，可以用它来安装。
+
+**`Fedora`** 系统，使用 **[DNF 命令][6]** 来安装 httpie
 
 ```
 $ sudo dnf install httpie
 ```
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][7]** or **[APT Command][8]** to install httpie.
+**`Debian/Ubuntu`** 系统, 使用 **[APT-GET 命令][7]** 或 **[APT 命令][8]** 来安装 httpie。
 
 ```
 $ sudo apt install httpie
 ```
 
-For **`Arch Linux`** based systems, use **[Pacman Command][9]** to install httpie.
+基于 **`Arch Linux`** 的系统, 使用 **[Pacman 命令][9]** 来安装 httpie。
 
 ```
 $ sudo pacman -S httpie
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][10]** to install httpie.
+**`RHEL/CentOS`** 的系统, 使用 **[YUM 命令][10]** 来安装 httpie。
 
 ```
 $ sudo yum install httpie
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][11]** to install httpie.
+**`openSUSE Leap`** 系统, 使用 **[Zypper 命令][11]** 来安装 httpie。
 
 ```
 $ sudo zypper install httpie
 ```
 
-### 1) How To Request A URL Using HTTPie?
+### 1) 如何使用 HTTPie 请求URL？
 
-The basic usage of httpie is to request a website URL as an argument.
+httpie 的基本用法是将网站的 URL 作为参数。
 
 ```
 # http 2daygeek.com
@@ -102,9 +99,9 @@ Transfer-Encoding: chunked
 Vary: Accept-Encoding
 ```
 
-### 2) How To Download A File Using HTTPie?
+### 2) 如何使用 HTTPie 下载文件
 
-You can download a file using HTTPie with the `--download` parameter. This is similar to wget command.
+你可以使用带 `--download` 参数的 HTTPie 命令下载文件。类似于 wget 命令。
 
 ```
 # http --download https://www.2daygeek.com/wp-content/uploads/2019/04/Anbox-Easy-Way-To-Run-Android-Apps-On-Linux.png
@@ -128,7 +125,7 @@ Downloading 31.31 kB to "Anbox-Easy-Way-To-Run-Android-Apps-On-Linux.png"
 Done. 31.31 kB in 0.01187s (2.58 MB/s)
 ```
 
-Alternatively you can save the output file with different name by using `-o` parameter.
+你还可以使用 `-o` 参数用不同的名称保存输出文件。
 
 ```
 # http --download https://www.2daygeek.com/wp-content/uploads/2019/04/Anbox-Easy-Way-To-Run-Android-Apps-On-Linux.png -o Anbox-1.png
@@ -151,11 +148,10 @@ Vary: Accept-Encoding
 Downloading 31.31 kB to "Anbox-1.png"
 Done. 31.31 kB in 0.01551s (1.97 MB/s)
 ```
+如何使用HTTPie恢复部分下载？
+### 3) 如何使用 HTTPie 恢复部分下载？
 
-### 3) How To Resume Partial Download Using HTTPie?
-
-You can resume the download using HTTPie with the `-c` parameter.
-
+你可以使用带 `-c` 参数的 HTTPie 继续下载。
 ```
 # http --download --continue https://speed.hetzner.de/100MB.bin -o 100MB.bin
 HTTP/1.1 206 Partial Content
@@ -173,24 +169,24 @@ Downloading 100.00 MB to "100MB.bin"
  |  24.14 %   24.14 MB    1.12 MB/s  0:01:07 ETA^C
 ```
 
-You can verify the same in the below output.
-
+你根据下面的输出验证是否同一个文件
 ```
 [email protected]:/var/log# ls -lhtr 100MB.bin
 -rw-r--r-- 1 root root 25M Apr  9 01:33 100MB.bin
 ```
 
-### 5) How To Upload A File Using HTTPie?
+### 5) 如何使用 HTTPie 上传文件？
 
+你可以通过使用带有 `小于号 "<"` 的 HTTPie 命令上传文件
 You can upload a file using HTTPie with the `less-than symbol "<"` symbol.
 
 ```
 $ http https://transfer.sh < Anbox-1.png
 ```
 
-### 6) How To Download A File Using HTTPie With Redirect Symbol ">"?
+### 6) 如何使用带有重定向符号">" 的 HTTPie 下载文件？
 
-You can download a file using HTTPie with the `redirect ">"` symbol.
+你可以使用带有 `重定向 ">"` 符号的 HTTPie 命令下载文件。
 
 ```
 # http https://www.2daygeek.com/wp-content/uploads/2019/03/How-To-Install-And-Enable-Flatpak-Support-On-Linux-1.png > Flatpak.png
@@ -199,9 +195,10 @@ You can download a file using HTTPie with the `redirect ">"` symbol.
 -rw-r--r-- 1 root root 47K Apr  9 01:44 Flatpak.png
 ```
 
-### 7) Send a HTTP GET Method?
+### 7) 发送一个 HTTP GET 请求？
+ 
+您可以在请求中发送 HTTP GET 方法。GET 方法会使用给定的 URI，从给定服务器检索信息。
 
-You can send a HTTP GET method in the request. The GET method is used to retrieve information from the given server using a given URI.
 
 ```
 # http GET httpie.org
@@ -217,9 +214,9 @@ Transfer-Encoding: chunked
 Vary: Accept-Encoding
 ```
 
-### 8) Submit A Form?
+### 8) 提交表单?
 
-Use the following format to Submit a forms. A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+使用以下格式提交表单。POST 请求用于向服务器发送数据，例如客户信息、文件上传等。要使用 HTML 表单。
 
 ```
 # http -f POST Ubuntu18.2daygeek.com hello='World'
@@ -237,7 +234,7 @@ Server: Apache/2.4.29 (Ubuntu)
 Vary: Accept-Encoding
 ```
 
-Run the following command to see the request that is being sent.
+运行下面的指令以查看正在发送的请求。
 
 ```
 # http -v Ubuntu18.2daygeek.com
@@ -264,24 +261,24 @@ Server: Apache/2.4.29 (Ubuntu)
 Vary: Accept-Encoding
 ```
 
-### 9) HTTP Authentication?
+### 9) HTTP 认证？
 
+当前支持的身份验证认证方案是基本认证（Basic）和摘要验证（Digest）
 The currently supported authentication schemes are Basic and Digest
 
-Basic auth
+基本认证
 
 ```
 $ http -a username:password example.org
 ```
 
-Digest auth
+摘要验证
 
 ```
 $ http -A digest -a username:password example.org
 ```
 
-Password prompt
-
+提示输入密码
 ```
 $ http -a username example.org
 ```
@@ -292,7 +289,7 @@ via: https://www.2daygeek.com/httpie-curl-wget-alternative-http-client-linux/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/zgj1024)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
