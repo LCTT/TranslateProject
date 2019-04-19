@@ -1,12 +1,3 @@
-[#]: collector: (lujun9972)
-[#]: translator: (pityonline)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Get Started with Snap Packages in Linux)
-[#]: via: (https://www.linux.com/learn/intro-to-linux/2018/5/get-started-snap-packages-linux)
-[#]: author: (Jack Wallen https://www.linux.com/users/jlwallen)
-
 Get Started with Snap Packages in Linux
 ======
 
@@ -148,7 +139,7 @@ via: https://www.linux.com/learn/intro-to-linux/2018/5/get-started-snap-packages
 
 作者：[Jack Wallen][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[pityonline](https://github.com/pityonline)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
