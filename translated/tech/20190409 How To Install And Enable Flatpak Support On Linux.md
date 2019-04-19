@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Install And Enable Flatpak Support On Linux?)
@@ -10,35 +10,30 @@
 如何在 Linux 上安装并启用 Flatpak 支持？
 ======
 
-<to 校正：之前似乎发表过跟这个类似的一篇 https://linux.cn/article-10459-1.html>
-
 目前，我们都在使用 Linux 发行版的官方软件包管理器来安装所需的软件包。
 
-在 Linux 中，它做得很好，没有任何问题。（它很好地完成了它应该做的工作，同时它没有任何妥协）
+在 Linux 中，它做得很好，没有任何问题。（它不打折扣地很好的完成了它应该做的工作）
 
-在一些方面它也有一些限制，所以会让我们考虑其他替代解决方案来解决。
+但在一些方面它也有一些限制，所以会让我们考虑其他替代解决方案来解决。
 
-是的，默认情况下，我们不会从发行版官方软件包管理器获取最新版本的软件包，因为这些软件包是在构建当前 OS 版本时构建的。它们只会提供安全更新，直到下一个主要版本发布。
+是的，默认情况下，我们不能从发行版官方软件包管理器获取到最新版本的软件包，因为这些软件包是在构建当前 OS 版本时构建的。它们只会提供安全更新，直到下一个主要版本发布。
 
-那么，这种情况有什么解决办法吗？
-
-是的，我们有多种解决方案，而且我们大多数人已经开始使用其中的一些了。
+那么，这种情况有什么解决办法吗？是的，我们有多种解决方案，而且我们大多数人已经开始使用其中的一些了。
 
 有些什么呢，它们有什么好处？
 
-  * **对于基于 Ubuntu 的系统：** PPAs
-  * **对于基于 RHEL 的系统：** [EPEL Repository][1]、[ELRepo Repository][2]、[nux-dextop Repository][3]、[IUS Community Repo][4]、[RPMfusion Repository][5] 和 [Remi Repository][6]
+  * **对于基于 Ubuntu 的系统：** PPA
+  * **对于基于 RHEL 的系统：** [EPEL 仓库][1]、[ELRepo 仓库][2]、[nux-dextop 仓库][3]、[IUS 社区仓库][4]、[RPMfusion 仓库][5] 和 [Remi 仓库][6]
 
-
-使用上面的仓库，我们将获得最新的软件包。这些软件包通常都得到了很好的维护，还有大多数社区的建议。但这对于操作系统来说应该是适当的，因为它们可能并不安全。
+使用上面的仓库，我们将获得最新的软件包。这些软件包通常都得到了很好的维护，还有大多数社区的推荐。但这些只是建议，可能并不总是安全的。
 
 近年来，出现了一下通用软件包封装格式，并且得到了广泛的应用。
 
-  * **`Flatpak:`** 它是独立于发行版的包格式，主要贡献者是 Fedora 项目团队。大多数主要的 Linux 发行版都采用了 Flatpak 框架。
-  * **`Snaps:`** Snappy 是一种通用的软件包封装格式，最初由 Canonical 为 Ubuntu 手机及其操作系统设计和构建的。后来，大多数发行版都进行了改编。
-  * **`AppImage:`** AppImage 是一种可移植的包格式，可以在不安装或不需要 root 权限的情况下运行。
+  * Flatpak：它是独立于发行版的包格式，主要贡献者是 Fedora 项目团队。大多数主要的 Linux 发行版都采用了 Flatpak 框架。
+  * Snaps：Snappy 是一种通用的软件包封装格式，最初由 Canonical 为 Ubuntu 手机及其操作系统设计和构建的。后来，更多的发行版都接纳了它。
+  * AppImage：AppImage 是一种可移植的包格式，可以在不安装和不需要 root 权限的情况下运行。
 
-我们之前已经介绍过 **[Snap 包管理器和包封装格式][7]**。今天我们将讨论 Flatpak 包封装格式。
+我们之前已经介绍过 [Snap 包管理器和包封装格式][7]。今天我们将讨论 Flatpak 包封装格式。
 
 ### 什么是 Flatpak？
 
@@ -56,13 +51,13 @@ Flatpak 的一个缺点是不像 Snap 和 AppImage 那样支持服务器操作�
 
 大多数 Linux 发行版官方仓库都提供 Flatpak 软件包。因此，可以使用它们来进行安装。
 
-对于 **`Fedora`** 系统，使用 **[DNF 命令][8]** 来安装 flatpak。
+对于 Fedora 系统，使用 [DNF 命令][8] 来安装 flatpak。
 
 ```
 $ sudo dnf install flatpak
 ```
 
-对于 **`Debian/Ubuntu`** 系统，使用 **[APT-GET 命令][9]** 或 **[APT 命令][10]** 来安装 flatpak。
+对于 Debian/Ubuntu 系统，使用 [APT-GET 命令][9] 或 [APT 命令][10] 来安装 flatpak。
 
 ```
 $ sudo apt install flatpak
@@ -76,19 +71,19 @@ $ sudo apt update
 $ sudo apt install flatpak
 ```
 
-对于基于 **`Arch Linux`** 的系统，使用 **[Pacman 命令][11]** 来安装 flatpak。
+对于基于 Arch Linux 的系统，使用 [Pacman 命令][11] 来安装 flatpak。
 
 ```
 $ sudo pacman -S flatpak
 ```
 
-对于 **`RHEL/CentOS`** 系统，使用 **[YUM 命令][12]** 来安装 flatpak。
+对于 RHEL/CentOS 系统，使用 [YUM 命令][12] 来安装 flatpak。
 
 ```
 $ sudo yum install flatpak
 ```
 
-对于 **`openSUSE Leap`** 系统，使用 **[Zypper 命令][13]** 来安装 flatpak。
+对于 openSUSE Leap 系统，使用 [Zypper 命令][13] 来安装 flatpak。
 
 ```
 $ sudo zypper install flatpak
@@ -96,9 +91,7 @@ $ sudo zypper install flatpak
 
 ### 如何在 Linux 上启用 Flathub 支持？
 
-Flathub 网站是一个应用程序商店，你可以在其中找到 flatpak。
-
-它是一个中央仓库，所有的 flatpak 应用程序都可供用户使用。
+Flathub 网站是一个应用程序商店，你可以在其中找到 flatpak 软件包。它是一个中央仓库，所有的 flatpak 应用程序都可供用户使用。
 
 运行以下命令在 Linux 上启用 Flathub 支持：
 
@@ -226,7 +219,7 @@ org.gnome.Platform/x86_64/3.30                     system,runtime
 
 ### 如何查看有关已安装应用程序的详细信息？
 
-运行以下命令以查看有关已安装应用程序的详细信息。
+运行以下命令以查看有关已安装应用程序的详细信息：
 
 ```
 $ flatpak info com.github.muriloventuroso.easyssh
@@ -264,6 +257,7 @@ $ flatpak update com.github.muriloventuroso.easyssh
 ### 如何移除已安装的应用程序？
 
 运行以下命令来移除已安装的应用程序：
+
 ```
 $ sudo flatpak uninstall com.github.muriloventuroso.easyssh
 ```
@@ -281,7 +275,7 @@ via: https://www.2daygeek.com/how-to-install-and-enable-flatpak-support-on-linux
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
