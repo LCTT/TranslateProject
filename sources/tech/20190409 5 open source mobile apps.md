@@ -1,4 +1,4 @@
-fuzheng1998 applying
+tranlator:（fuzheng1998）
 
 [#]: collector: (lujun9972)
 [#]: translator: ( )
