@@ -8,19 +8,21 @@
 [#]: author: (Martin Tournoij https://arp242.net/)
 
 The shell scripting trap
+Shell 脚本的陷阱
 ======
 
 
 Shell scripting is great. It is amazingly simple to create something very useful. Even a simple no-brainer command such as:
-
+Shell 脚本很棒，你可以非常轻轻地写出有用的东西来。甚至是下面这个傻瓜式的命令：
 ```
 # Official way of naming Go-related things:
+# 用含有 Go 的词汇起名字：
 $ grep -i ^go /usr/share/dict/american-english /usr/share/dict/british /usr/share/dict/british-english /usr/share/dict/catala /usr/share/dict/catalan /usr/share/dict/cracklib-small /usr/share/dict/finnish /usr/share/dict/french /usr/share/dict/german /usr/share/dict/italian /usr/share/dict/ngerman /usr/share/dict/ogerman /usr/share/dict/spanish /usr/share/dict/usa /usr/share/dict/words | cut -d: -f2 | sort -R | head -n1
 goldfish
 ```
 
 Takes several lines of code and a lot more brainpower in many programming languages. For example in Ruby:
-
+如果用其他编程语言，就需要花费更多的脑力用多行代码实现，比如用 Ruby 的话：
 ```
 puts(Dir['/usr/share/dict/*-english'].map do |f|
  File.open(f)
