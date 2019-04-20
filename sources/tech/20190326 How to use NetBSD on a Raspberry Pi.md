@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How to use NetBSD on a Raspberry Pi)
 [#]: via: (https://opensource.com/article/19/3/netbsd-raspberry-pi)
-[#]: author: (Seth Kenlon (Red Hat, Community Moderator) https://opensource.com/users/seth)
+[#]: author: (Seth Kenlon  https://opensource.com/users/seth)
 
 How to use NetBSD on a Raspberry Pi
 ======

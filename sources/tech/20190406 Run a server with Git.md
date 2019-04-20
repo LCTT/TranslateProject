@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Run a server with Git)
 [#]: via: (https://opensource.com/article/19/4/server-administration-git)
-[#]: author: (Seth Kenlon (Red Hat, Community Moderator) https://opensource.com/users/seth/users/seth)
+[#]: author: (Seth Kenlon  https://opensource.com/users/seth/users/seth)
 
 Run a server with Git
 ======

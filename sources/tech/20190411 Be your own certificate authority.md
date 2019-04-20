@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Be your own certificate authority)
 [#]: via: (https://opensource.com/article/19/4/certificate-authority)
-[#]: author: (Moshe Zadka (Community Moderator) https://opensource.com/users/moshez/users/elenajon123)
+[#]: author: (Moshe Zadka  https://opensource.com/users/moshez/users/elenajon123)
 
 Be your own certificate authority
 ======
