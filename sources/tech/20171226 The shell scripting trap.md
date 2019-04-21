@@ -13,7 +13,7 @@ Shell 脚本的陷阱
 
 
 Shell scripting is great. It is amazingly simple to create something very useful. Even a simple no-brainer command such as:
-Shell 脚本很棒，你可以非常轻轻地写出有用的东西来。甚至是下面这个傻瓜式的命令：
+Shell 脚本很棒，你可以非常轻松地写出有用的东西来。甚至是下面这个傻瓜式的命令：
 ```
 # Official way of naming Go-related things:
 # 用含有 Go 的词汇起名字：
@@ -32,8 +32,10 @@ end.flatten.sample.chomp)
 ```
 
 The Ruby version isn’t that long, or even especially complicated. But the shell script version was so simple that I didn’t even need to actually test it to make sure it is correct, whereas I did have to test the Ruby version to ensure I didn’t make a mistake. It’s also twice as long and looks a lot more dense.
+Ruby 版本的代码虽然不是那么长，也没有那么复杂。但是 Shell 版是如此简单，我甚至不用实际测试就可以确保它是正确的。而 Ruby 版的我就没法确定它不会出错了，必须得测试一下。而且它要长一倍，看起来也更复杂。
 
 This is why people use shell scripts, it’s so easy to make something useful. Here’s is another example:
+这就是人们使用 Shell 脚本的原因，它简单却实用。下面是另一个例子：
 
 ```
 curl https://nl.wikipedia.org/wiki/Lijst_van_Nederlandse_gemeenten |
@@ -43,10 +45,13 @@ curl https://nl.wikipedia.org/wiki/Lijst_van_Nederlandse_gemeenten |
 ```
 
 This gets a list of all Dutch municipalities. I actually wrote this as a quick one-shot script to populate a database years ago, but it still works fine today, and it took me a minimum of effort to make it. Doing this in e.g. Ruby would take a lot more effort.
+这个脚本可以从维基百科上获取荷兰基层政权的列表。几年前我写了这个临时的脚本来快速生成一个数据库，到现在它仍然可以正常运行，当时写它并没有花费我多少精力。要使用 Ruby 完成同样的功能则会麻烦地多。
 
 But there’s a downside, as your script grows it will become increasingly harder to maintain, but you also don’t really want to rewrite it to something else, as you’ve already spent so much time on the shell script version.
+现在来说说 Shell 的缺点吧。随着代码量的增加，你的脚本会变得越来越难维护，但你也不会想用别的语言来重写一遍，因为你已经在这个 Shell 版上花费了很多时间。
 
 This is what I call ‘the shell script trap’, which is a special case of the [sunk cost fallacy][1].
+
 
 And many scripts do grow beyond their original intended size, and often you will spend a lot more time than you should on “fixing that one bug”, or “adding just one small feature”. Rinse, repeat.
 
