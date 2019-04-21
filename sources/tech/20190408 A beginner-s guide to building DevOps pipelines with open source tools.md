@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (A beginner's guide to building DevOps pipelines with open source tools)
 [#]: via: (https://opensource.com/article/19/4/devops-pipeline)
-[#]: author: (Bryant Son (Red Hat, Community Moderator) https://opensource.com/users/brson/users/milindsingh/users/milindsingh/users/dscripter)
+[#]: author: (Bryant Son  https://opensource.com/users/brson/users/milindsingh/users/milindsingh/users/dscripter)
 
 A beginner's guide to building DevOps pipelines with open source tools
 ======

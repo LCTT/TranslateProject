@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How do you contribute to open source without code?)
 [#]: via: (https://opensource.com/article/19/4/contribute-without-code)
-[#]: author: (Chris Hermansen (Community Moderator) https://opensource.com/users/clhermansen/users/don-watkins/users/greg-p/users/petercheer)
+[#]: author: (Chris Hermansen  https://opensource.com/users/clhermansen/users/don-watkins/users/greg-p/users/petercheer)
 
 How do you contribute to open source without code?
 ======

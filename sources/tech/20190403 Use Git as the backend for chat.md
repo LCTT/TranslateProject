@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Use Git as the backend for chat)
 [#]: via: (https://opensource.com/article/19/4/git-based-chat)
-[#]: author: (Seth Kenlon (Red Hat, Community Moderator) https://opensource.com/users/seth)
+[#]: author: (Seth Kenlon  https://opensource.com/users/seth)
 
 Use Git as the backend for chat
 ======

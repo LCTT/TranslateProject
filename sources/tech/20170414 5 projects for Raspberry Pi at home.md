@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (5 projects for Raspberry Pi at home)
 [#]: via: (https://opensource.com/article/17/4/5-projects-raspberry-pi-home)
-[#]: author: (Ben Nuttall (Community Moderator) )
+[#]: author: (Ben Nuttall  https://opensource.com/users/bennuttall)
 
 5 projects for Raspberry Pi at home
 ======
@@ -100,14 +100,14 @@ Let us know in the comments.
 
 via: https://opensource.com/article/17/4/5-projects-raspberry-pi-home
 
-作者：[Ben Nuttall (Community Moderator)][a]
+作者：[Ben Nuttall][a]
 选题：[lujun9972][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: 
+[a]: https://opensource.com/users/bennuttall
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/raspberry_pi_home_automation.png?itok=2TnmJpD8 (5 projects for Raspberry Pi at home)
 [2]: https://www.raspberrypi.org/

@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Detecting malaria with deep learning)
 [#]: via: (https://opensource.com/article/19/4/detecting-malaria-deep-learning)
-[#]: author: (Dipanjan (DJ) Sarkar (Red Hat) https://opensource.com/users/djsarkar)
+[#]: author: (Dipanjan  Sarkar  https://opensource.com/users/djsarkar)
 
 Detecting malaria with deep learning
 ======
