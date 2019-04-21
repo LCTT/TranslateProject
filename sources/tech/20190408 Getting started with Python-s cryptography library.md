@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Getting started with Python's cryptography library)
 [#]: via: (https://opensource.com/article/19/4/cryptography-python)
-[#]: author: (Moshe Zadka (Community Moderator) https://opensource.com/users/moshez)
+[#]: author: (Moshe Zadka  https://opensource.com/users/moshez)
 
 Getting started with Python's cryptography library
 ======

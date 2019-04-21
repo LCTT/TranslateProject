@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Getting started with Mercurial for version control)
 [#]: via: (https://opensource.com/article/19/4/getting-started-mercurial)
-[#]: author: (Moshe Zadka (Community Moderator) https://opensource.com/users/moshez)
+[#]: author: (Moshe Zadka  https://opensource.com/users/moshez)
 
 Getting started with Mercurial for version control
 ======
