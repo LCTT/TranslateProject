@@ -7,22 +7,17 @@
 [#]: via: (https://arp242.net/weblog/shell-scripting-trap.html)
 [#]: author: (Martin Tournoij https://arp242.net/)
 
-The shell scripting trap
-Shell 脚本的陷阱
+Shell 脚本陷阱
 ======
 
-
-Shell scripting is great. It is amazingly simple to create something very useful. Even a simple no-brainer command such as:
-Shell 脚本很棒，你可以非常轻松地写出有用的东西来。甚至是下面这个傻瓜式的命令：
+Shell 脚本很棒，你可以非常轻松地写出有用的东西来。甚至像是下面这个傻瓜式的命令：
 ```
-# Official way of naming Go-related things:
 # 用含有 Go 的词汇起名字：
 $ grep -i ^go /usr/share/dict/american-english /usr/share/dict/british /usr/share/dict/british-english /usr/share/dict/catala /usr/share/dict/catalan /usr/share/dict/cracklib-small /usr/share/dict/finnish /usr/share/dict/french /usr/share/dict/german /usr/share/dict/italian /usr/share/dict/ngerman /usr/share/dict/ogerman /usr/share/dict/spanish /usr/share/dict/usa /usr/share/dict/words | cut -d: -f2 | sort -R | head -n1
 goldfish
 ```
 
-Takes several lines of code and a lot more brainpower in many programming languages. For example in Ruby:
-如果用其他编程语言，就需要花费更多的脑力用多行代码实现，比如用 Ruby 的话：
+如果用其他编程语言，就需要花费更多的脑力，用多行代码实现，比如用 Ruby 的话：
 ```
 puts(Dir['/usr/share/dict/*-english'].map do |f|
  File.open(f)
@@ -31,10 +26,8 @@ puts(Dir['/usr/share/dict/*-english'].map do |f|
 end.flatten.sample.chomp)
 ```
 
-The Ruby version isn’t that long, or even especially complicated. But the shell script version was so simple that I didn’t even need to actually test it to make sure it is correct, whereas I did have to test the Ruby version to ensure I didn’t make a mistake. It’s also twice as long and looks a lot more dense.
-Ruby 版本的代码虽然不是那么长，也没有那么复杂。但是 Shell 版是如此简单，我甚至不用实际测试就可以确保它是正确的。而 Ruby 版的我就没法确定它不会出错了，必须得测试一下。而且它要长一倍，看起来也更复杂。
+Ruby 版本的代码虽然不是那么长，也并不复杂。但是 shell 版是如此简单，我甚至不用实际测试就可以确保它是正确的。而 Ruby 版的我就没法确定它不会出错了，必须得测试一下。而且它要长一倍，看起来也更复杂。
 
-This is why people use shell scripts, it’s so easy to make something useful. Here’s is another example:
 这就是人们使用 Shell 脚本的原因，它简单却实用。下面是另一个例子：
 
 ```
@@ -44,51 +37,46 @@ curl https://nl.wikipedia.org/wiki/Lijst_van_Nederlandse_gemeenten |
     grep -Ev '(^Tabel van|^Lijst van|Nederland)'
 ```
 
-This gets a list of all Dutch municipalities. I actually wrote this as a quick one-shot script to populate a database years ago, but it still works fine today, and it took me a minimum of effort to make it. Doing this in e.g. Ruby would take a lot more effort.
-这个脚本可以从维基百科上获取荷兰基层政权的列表。几年前我写了这个临时的脚本来快速生成一个数据库，到现在它仍然可以正常运行，当时写它并没有花费我多少精力。要使用 Ruby 完成同样的功能则会麻烦地多。
+这个脚本可以从维基百科上获取荷兰基层政权的列表。几年前我写了这个临时的脚本，用来快速生成一个数据库，到现在它仍然可以正常运行，当时写它并没有花费我多少精力。但要用 Ruby 完成同样的功能则会麻烦得多。
 
-But there’s a downside, as your script grows it will become increasingly harder to maintain, but you also don’t really want to rewrite it to something else, as you’ve already spent so much time on the shell script version.
-现在来说说 Shell 的缺点吧。随着代码量的增加，你的脚本会变得越来越难维护，但你也不会想用别的语言来重写一遍，因为你已经在这个 Shell 版上花费了很多时间。
+现在来说说 shell 的缺点吧。随着代码量的增加，你的脚本会变得越来越难以维护，但你也不会想用别的语言重写一遍，因为你已经在这个 shell 版上花费了很多时间。
 
-This is what I call ‘the shell script trap’, which is a special case of the [sunk cost fallacy][1].
+我把这种情况称为“Shell 脚本陷阱”，这是[沉没成本谬论][1]的一种特例（沉没成本谬论是一个经济学概念，可以简单理解为，对已经投入的成本可能被浪费而念念不忘）。
 
+实际上许多脚本会增长到超出预期的大小，你经常会花费过多的时间来“修复某个 bug”，或者“添加一个小功能”。如此循环往复，让人头大。
 
-And many scripts do grow beyond their original intended size, and often you will spend a lot more time than you should on “fixing that one bug”, or “adding just one small feature”. Rinse, repeat.
+如果你从一开始就使用 Python、Ruby 或是其他类似的语言来写这个程序，你可能会在写第一版的时候多花些时间，但以后维护起来就容易很多，bug 也肯定会少很多。
 
-If you had written it in Python or Ruby or another similar language from the start, you would have spent some more time writing the original version, but would have spent much less time maintaining it, while almost certainly having fewer bugs.
+以我的 [packman.vim][2] 脚本为例。它起初只包含一个简单的用来遍历所有目录的 `for` 循环，外加一个 `git pull`，但在这之后就刹不住车了，它现在有 200 行左右的代码，这肯定不能算是最复杂的脚本，但假如我一上来就按计划用 Go 来编写它的话，那么增加一些像“打印状态”或者“从配置文件里克隆新的 git 库”这样的功能就会轻松很多；添加“并行克隆”的支持也几乎不算个事儿了，而在 shell 脚本里却很难实现（尽管不是不可能）。事后看来，我本可以节省时间，并且获得更好的结果。
 
-Take my [packman.vim][2] script for example. It started out as a simple `for` loop over all directories and a `git pull` and has grown from there. At about 200 lines it’s hardly the most complex script, but had I written it in Go as I originally planned then it would have been much easier to add support for printing out the status or cloning new repos from a config file. It would also be almost trivial to add support for parallel clones, which is hard (though not impossible) to do correct in a shell script. In hindsight, I would have saved time, and gotten a better result to boot.
+出于类似的原因，我很后悔写出了许多这样的 shell 脚本，而我在 2018 年的新年誓言就是不要再犯类似的错误了。
 
-I regret writing most shell scripts I’ve written for similar reasons, and my 2018 new year’s pledge will be to not write any more.
+#### 附录：问题汇总
 
-#### Appendix: the problems
+需要指出的是，shell 编程的确存在一些实际的限制。下面是一些例子：
 
-And to be clear, shell scripting does come with some real limitation. Some examples:
+  * 在处理一些包含“空格”或者其他“特殊”字符的文件名时，需要特别注意细节。绝大多数脚本都会犯错，即使是那些经验丰富的作者（比如我）编写的脚本，因为太容易写错了，[只添加引号是不够的][3]。
 
-  * Dealing with filenames that contain spaces or other ‘special’ characters requires careful attention to detail. The vast majority of scripts get this wrong, even when written by experienced authors who care about such things (e.g. me), because it’s so easy to do it wrong. [Adding quotes is not enough][3].
+  * 有许多所谓“正确”和“错误”的做法。你应该用 `which` 还是 `command`？该用 `$@` 还是 `$*`，是不是得加引号？你是该用 `cmd $arg` 还是 `cmd "$arg"`？等等等等。
 
-  * There are many “right” and “wrong” ways to do things. Should you use `which` or `command`? Should you use `$@` or `$*`, and should that be quoted? Should you use `cmd $arg` or `cmd "$arg"`? etc. etc.
+  * 你没法在变量里存储空字节（0x00）；shell 脚本处理二进制数据很麻烦。
 
-  * You cannot store any NULL bytes (0x00) in variables; it is very hard to make shell scripts deal with binary data.
+  * 虽然你可以非常快速地写出有用的东西，但实现更复杂的算法则要痛苦许多，即使用 ksh/zsh/bash 扩展也是如此。我上面那个解析 HTML 的脚本临时用用是可以的，但你真的不会想在生产环境中使用这种脚本。
 
-  * While you can make something very useful very quickly, implementing more complex algorithms can be very painful – if not nigh-impossible – even when using the ksh/zsh/bash extensions. My ad-hoc HTML parsing in the example above was okay for a quick one-off script, but you really don’t want to do things like that in a production-script.
+  * 很难写出跨平台的通用型 shell 脚本。`/bin/sh` 可能是 `dash` 或者 `bash`，不同的 shell 有不同的运行方式。外部工具如 `grep`、`sed` 等，不一定能支持同样的参数。你能确定你的脚本可以适用于 Linux、macOS 和 Windows 的所有版本吗（过去、现在和将来）？
 
-  * It can be hard to write shell scripts that work well on all platforms. `/bin/sh` could be `dash` or `bash`, and will behave different. External tools such as `grep`, `sed`, etc. may or may not support certain flags. Are you sure that your script works on all versions (past, present, and future) of Linux, macOS, and Windows equally well?
+  * 调试 shell 脚本会很难，特别是你眼中的语法可能会很快变得模糊起来，并不是所有人都熟悉 shell 编程的语境。
 
-  * Debugging shell scripts can be hard, especially as the syntax can get fairly obscure quite fast, and not everyone is equally well versed in shell scripting.
+  * 处理错误会很棘手（检查 `$?` 或是 `set -e`），排查一些超过“出了个小错”级别的复杂错误几乎是不可能的。
 
-  * Error handling can be tricky (check `$?` or `set -e`), and doing something more advanced beyond “an error occurred” is practically impossible.
+  * 除非你使用了 `set -u`，变量未定义将不会报错，而这会导致一些“搞笑事件”，比如 `rm -r ~/$undefined` 会删除用户的整个家目录（[瞅瞅 Github 上的这个悲剧][4]）。
 
-  * Undefined variables are not an error unless you use `set -u`, leading to “fun stuff” like `rm -r ~/$undefined` deleting user’s home dir ([not a theoretical problem][4]).
-
-  * Everything is a string. Some shells add arrays, which works but the syntax is obscure and ugly. Numeric computations with fractions remain tricky and rely on external tools such as `bc` or `dc` (`$(( .. ))` expansion only works for integers).
+  * 所有东西都是字符串。一些 shell 引入了数组，能用，但是语法非常丑陋和模糊。带分数的数字运算仍然难以应付，并且依赖像 `bc` 或 `dc` 这样的外部工具（`$(( .. ))` 这种方式只能对付一下整数）。
 
 
+**反馈**
 
-
-**Feedback**
-
-You can mail me at [martin@arp242.net][5] or [create a GitHub issue][6] for feedback, questions, etc.
+你可以发邮件到 [martin@arp242.net][5]，或者[在 GitHub 上创建 issue][6] 来向我反馈，提问等。
 
 --------------------------------------------------------------------------------
 
