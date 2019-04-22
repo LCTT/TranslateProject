@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Manage your daily schedule with Git)
 [#]: via: (https://opensource.com/article/19/4/calendar-git)
-[#]: author: (Seth Kenlon (Red Hat, Community Moderator) https://opensource.com/users/seth)
+[#]: author: (Seth Kenlon  https://opensource.com/users/seth)
 
 Manage your daily schedule with Git
 ======
