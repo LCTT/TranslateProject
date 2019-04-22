@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Using Square Brackets in Bash: Part 2)
@@ -14,8 +14,6 @@
 
 > 我们继续来看方括号的用法，它们甚至还可以在 Bash 当中作为一个命令使用。
 
-[Creative Commons Zero][2]
-
 欢迎回到我们的方括号专题。在[前一篇文章][3]当中，我们介绍了方括号在命令行中可以用于通配操作，如果你已经读过前一篇文章，就可以从这里继续了。
 
 方括号还可以以一个命令的形式使用，就像这样：
@@ -26,7 +24,7 @@
 
 上面这种  `[ ... ]` 的形式就可以看成是一个可执行的命令。要注意，方括号内部的内容 `"a" = "a"` 和方括号 `[`、`]` 之间是有空格隔开的。因为这里的方括号被视作一个命令，因此要用空格将命令和它的参数隔开。
 
-上面这个命令的含义是“判断字符串 `"a"` 和字符串 `"a"` 是否相同”，如果判断结果为真，那么 `[ ... ]` 就会以<ruby>状态码<rt>status code</rt></ruby> 0 退出，否则以状态码 1 退出。在之前的文章中，我们也有介绍过状态码的概念，可以通过 `$?` 变量获取到最近一个命令的状态码。
+上面这个命令的含义是“判断字符串 `"a"` 和字符串 `"a"` 是否相同”，如果判断结果为真，那么 `[ ... ]` 就会以<ruby>状态码<rt>status code</rt></ruby> 0 退出，否则以状态码 1 退出。在[之前的文章][4]中，我们也有介绍过状态码的概念，可以通过 `$?` 变量获取到最近一个命令的状态码。
 
 分别执行
 
@@ -42,22 +40,22 @@ echo $?
 echo $?
 ```
 
-这两段命令中，前者会输出 0（判断结果为真），后者则会输出 1（判断结果为假）。在 Bash 当中，如果一个命令的状态码是 0，表示这个命令正常执行完成并退出，而且其中没有出现错误，对应布尔值 `true`；如果在命令执行过程中出现错误，就会返回一个非零的状态码，对应布尔值 `false`。而 `[ ... ]`也同样遵循这样的规则。
+这两段命令中，前者会输出 0（判断结果为真），后者则会输出 1（判断结果为假）。在 Bash 当中，如果一个命令的状态码是 0，表示这个命令正常执行完成并退出，而且其中没有出现错误，对应布尔值 `true`；如果在命令执行过程中出现错误，就会返回一个非零的状态码，对应布尔值 `false`。而 `[ ... ]` 也同样遵循这样的规则。
 
 因此，`[ ... ]` 很适合在 `if ... then`、`while` 或 `until` 这种在代码块结束前需要判断是否达到某个条件结构中使用。
 
 对应使用的逻辑判断运算符也相当直观：
 
 ```
-[ STRING1 = STRING2 ] => checks to see if the strings are equal
-[ STRING1 != STRING2 ] => checks to see if the strings are not equal
-[ INTEGER1 -eq INTEGER2 ] => checks to see if INTEGER1 is equal to INTEGER2
-[ INTEGER1 -ge INTEGER2 ] => checks to see if INTEGER1 is greater than or equal to INTEGER2
-[ INTEGER1 -gt INTEGER2 ] => checks to see if INTEGER1 is greater than INTEGER2
-[ INTEGER1 -le INTEGER2 ] => checks to see if INTEGER1 is less than or equal to INTEGER2
-[ INTEGER1 -lt INTEGER2 ] => checks to see if INTEGER1 is less than INTEGER2
-[ INTEGER1 -ne INTEGER2 ] => checks to see if INTEGER1 is not equal to INTEGER2
-etc...
+[ STRING1 = STRING2 ] => 检查字符串是否相等
+[ STRING1 != STRING2 ] => 检查字符串是否不相等
+[ INTEGER1 -eq INTEGER2 ] => 检查整数 INTEGER1 是否等于 INTEGER2 
+[ INTEGER1 -ge INTEGER2 ] => 检查整数 INTEGER1 是否大于等于 INTEGER2
+[ INTEGER1 -gt INTEGER2 ] => 检查整数 INTEGER1 是否大于 INTEGER2
+[ INTEGER1 -le INTEGER2 ] => 检查整数 INTEGER1 是否小于等于 INTEGER2
+[ INTEGER1 -lt INTEGER2 ] => 检查整数 INTEGER1 是否小于 INTEGER2
+[ INTEGER1 -ne INTEGER2 ] => 检查整数 INTEGER1 是否不等于 INTEGER2
+等等……
 ```
 
 方括号的这种用法也可以很有 shell 风格，例如通过带上 `-f` 参数可以判断某个文件是否存在：
@@ -129,7 +127,16 @@ done
 
 在下一篇文章中，我们会开始介绍圆括号 `()` 在 Linux 命令行中的用法，敬请关注！
 
+### 更多
 
+- [Linux 工具：点的含义][6]
+- [理解 Bash 中的尖括号][7]
+- [Bash 中尖括号的更多用法][8]
+- [Linux 中的 &][9]
+- [Bash 中的 ＆ 符号和文件描述符][10]
+- [Bash 中的逻辑和（&）][4]
+- [浅析 Bash 中的 {花括号}][11]
+- [在 Bash 中使用[方括号] （一）][3]
 
 --------------------------------------------------------------------------------
 
@@ -138,7 +145,7 @@ via: https://www.linux.com/blog/learn/2019/4/using-square-brackets-bash-part-2
 作者：[Paul Brown][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -146,13 +153,13 @@ via: https://www.linux.com/blog/learn/2019/4/using-square-brackets-bash-part-2
 [b]: https://github.com/lujun9972
 [1]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/square-brackets-3734552_1920.jpg?itok=hv9D6TBy "square brackets"
 [2]: /LICENSES/CATEGORY/CREATIVE-COMMONS-ZERO
-[3]: https://www.linux.com/blog/2019/3/using-square-brackets-bash-part-1
-[4]: https://www.linux.com/blog/learn/2019/2/logical-ampersand-bash
+[3]: https://linux.cn/article-10717-1.html
+[4]: https://linux.cn/article-10596-1.html
 [5]: https://www.gnu.org/software/bash/manual/bashref.html#Bash-Conditional-Expressions
-[6]: https://www.linux.com/blog/learn/2019/1/linux-tools-meaning-dot
-[7]: https://www.linux.com/blog/learn/2019/1/understanding-angle-brackets-bash
-[8]: https://www.linux.com/blog/learn/2019/1/more-about-angle-brackets-bash
-[9]: https://www.linux.com/blog/learn/2019/2/and-ampersand-and-linux
-[10]: https://www.linux.com/blog/learn/2019/2/ampersands-and-file-descriptors-bash
-[11]: https://www.linux.com/blog/learn/2019/2/all-about-curly-braces-bash
+[6]: https://linux.cn/article-10465-1.html
+[7]: https://linux.cn/article-10502-1.html
+[8]: https://linux.cn/article-10529-1.html
+[9]: https://linux.cn/article-10587-1.html
+[10]: https://linux.cn/article-10591-1.html
+[11]: https://linux.cn/article-10624-1.html
 
