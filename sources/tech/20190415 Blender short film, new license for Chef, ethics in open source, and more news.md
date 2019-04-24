@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Blender short film, new license for Chef, ethics in open source, and more news)
 [#]: via: (https://opensource.com/article/15/4/news-april-15)
-[#]: author: (Joshua Allen Holm (Community Moderator) https://opensource.com/users/holmja)
+[#]: author: (Joshua Allen Holm  https://opensource.com/users/holmja)
 
 Blender short film, new license for Chef, ethics in open source, and more news
 ======

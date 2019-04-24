@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How to set up a homelab from hardware to firewall)
 [#]: via: (https://opensource.com/article/19/3/home-lab)
-[#]: author: (Michael Zamot (Red Hat) https://opensource.com/users/mzamot)
+[#]: author: (Michael Zamot  https://opensource.com/users/mzamot)
 
 How to set up a homelab from hardware to firewall
 ======

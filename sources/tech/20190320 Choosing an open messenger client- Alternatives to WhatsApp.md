@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Choosing an open messenger client: Alternatives to WhatsApp)
 [#]: via: (https://opensource.com/article/19/3/open-messenger-client)
-[#]: author: (Chris Hermansen (Community Moderator) https://opensource.com/users/clhermansen)
+[#]: author: (Chris Hermansen  https://opensource.com/users/clhermansen)
 
 Choosing an open messenger client: Alternatives to WhatsApp
 ======

@@ -5,19 +5,19 @@
 [#]: url: ( )
 [#]: subject: (Getting started with Mercurial for version control)
 [#]: via: (https://opensource.com/article/19/4/getting-started-mercurial)
-[#]: author: (Moshe Zadka (Community Moderator) https://opensource.com/users/moshez)
+[#]: author: (Moshe Zadka  https://opensource.com/users/moshez)
 
-Getting started with Mercurial for version control
+开始使用 Mercurial 进行版本控制
 ======
-Learn the basics of Mercurial, a distributed version control system
-written in Python.
+了解 Mercurial 的基础知识，它是一个用 Python 写的分布式版本控制系统。
+
 ![][1]
 
-[Mercurial][2] is a distributed version control system written in Python. Because it's written in a high-level language, you can write a Mercurial extension with a few Python functions.
+[Mercurial][2] 是一个用 Python 编写的分布式版本控制系统。因为它是用高级语言编写的，所以你可以用 Python 函数编写一个 Mercurial 扩展。
 
-There are several ways to install Mercurial, which are explained in the [official documentation][3]. My favorite one is not there: using **pip**. This is the most amenable way to develop local extensions!
+在[官方文档中][3]说明了几种安装 Mercurial 的方法。我最喜欢的一种方法不在里面：使用 **pip**。这是开发本地扩展的最合适方式！
 
-For now, Mercurial only supports Python 2.7, so you will need to create a Python 2.7 virtual environment:
+目前，Mercurial 仅支持 Python 2.7，因此你需要创建一个 Python 2.7 虚拟环境：
 
 
 ```
@@ -25,7 +25,7 @@ python2 -m virtualenv mercurial-env
 ./mercurial-env/bin/pip install mercurial
 ```
 
-To have a short command, and to satisfy everyone's insatiable need for chemistry-based humor, the command is called **hg**.
+为了有一个简短的命令，以及满足人们对化学幽默的无法满足的需求，命令称之为 **hg**。
 
 
 ```
@@ -37,7 +37,7 @@ $ source mercurial-env/bin/activate
 (mercurial-env)$
 ```
 
-The status is empty since you do not have any files. Add a couple of files:
+由于还没有任何文件，因此状态为空。添加几个文件：
 
 
 ```
@@ -58,11 +58,11 @@ date: Fri Mar 29 12:42:43 2019 -0700
 summary: Adding stuff
 ```
 
-The **addremove** command is useful: it adds any new files that are not ignored to the list of managed files and removes any files that have been removed.
+**addremove** 命令很有用：它将任何未被忽略的新文件添加到托管文件列表中，并移除任何已删除的文件。
 
-As I mentioned, Mercurial extensions are written in Python—they are just regular Python modules.
+如我所说，Mercurial 扩展用 Python 写成，它们只是常规的 Python 模块。
 
-This is an example of a short Mercurial extension:
+这是一个简短的 Mercurial 扩展示例：
 
 
 ```
@@ -78,14 +78,14 @@ def say_hello(ui, repo, **opts):
 ui.write("hello ", opts['whom'], "\n")
 ```
 
-A simple way to test it is to put it in a file in the virtual environment manually:
+一个简单的测试方法是将它手动加入虚拟环境中的文件中：
 
 
 ```
 `$ vi ../mercurial-env/lib/python2.7/site-packages/hello_ext.py`
 ```
 
-Then you need to _enable_ the extension. You can start by enabling it only in the current repository:
+然后你需要_启用_扩展。你可以仅在当前仓库中启用它开始：
 
 
 ```
@@ -94,7 +94,7 @@ $ cat >> .hg/hgrc
 hello_ext =
 ```
 
-Now, a greeting is possible:
+现在，问候有了：
 
 
 ```
@@ -102,9 +102,9 @@ Now, a greeting is possible:
 hello world
 ```
 
-Most extensions will do more useful stuff—possibly even things to do with Mercurial. The **repo** object is a **mercurial.hg.repository** object.
+大多数扩展会做更多有用的东西，甚至可能与 Mercurial 有关。 **repo** 对象是 **mercurial.hg.repository** 的对象。
 
-Refer to the [official documentation][5] for more about Mercurial's API. And visit the [official repo][6] for more examples and inspiration.
+有关 Mercurial API 的更多信息，请参阅[官方文档][5]。并访问[官方仓库][6]获取更多示例和灵感。
 
 --------------------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ via: https://opensource.com/article/19/4/getting-started-mercurial
 
 作者：[Moshe Zadka (Community Moderator)][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

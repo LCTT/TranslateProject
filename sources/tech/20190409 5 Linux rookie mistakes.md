@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (5 Linux rookie mistakes)
 [#]: via: (https://opensource.com/article/19/4/linux-rookie-mistakes)
-[#]: author: (Jen Wike Huger (Red Hat) https://opensource.com/users/jen-wike/users/bcotton/users/petercheer/users/greg-p/users/greg-p)
+[#]: author: (Jen Wike Huger  https://opensource.com/users/jen-wike/users/bcotton/users/petercheer/users/greg-p/users/greg-p)
 
 5 Linux rookie mistakes
 ======

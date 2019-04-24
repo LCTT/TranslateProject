@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Managed, enabled, empowered: 3 dimensions of leadership in an open organization)
 [#]: via: (https://opensource.com/open-organization/19/4/managed-enabled-empowered)
-[#]: author: (Heidi Hess von Ludewig (Red Hat) https://opensource.com/users/heidi-hess-von-ludewig/users/amatlack)
+[#]: author: (Heidi Hess von Ludewig  https://opensource.com/users/heidi-hess-von-ludewig/users/amatlack)
 
 Managed, enabled, empowered: 3 dimensions of leadership in an open organization
 ======

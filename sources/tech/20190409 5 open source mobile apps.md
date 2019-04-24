@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (fuzheng1998 )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (5 open source mobile apps)
 [#]: via: (https://opensource.com/article/19/4/mobile-apps)
-[#]: author: (Chris Hermansen (Community Moderator) https://opensource.com/users/clhermansen/users/bcotton/users/clhermansen/users/bcotton/users/clhermansen)
+[#]: author: (Chris Hermansen  https://opensource.com/users/clhermansen/users/bcotton/users/clhermansen/users/bcotton/users/clhermansen)
 
 5 open source mobile apps
 ======
