@@ -18,7 +18,7 @@ Sensu 服务器处理事件数据并采取行动。它注册客户端并使用�
 
 [Sensu 客户端][8]执行 Sensu 服务器安排的检查或本地检查定义。Sensu 使用数据存储（Redis）来保存所有的持久数据。最后，[Uchiwa][9] 是与 Sensu API 进行通信的 Web 界面。
 
-![sensu_system.png][11]
+![][11]
 
 ### 安装 Sensu
 
