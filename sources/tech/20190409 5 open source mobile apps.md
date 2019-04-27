@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/19/4/mobile-apps)
 [#]: author: (Chris Hermansen (Community Moderator) https://opensource.com/users/clhermansen/users/bcotton/users/clhermansen/users/bcotton/users/clhermansen)
 
-5 open source mobile apps
+5 个开源的移动应用
 ======
 You can count on these apps to meet your needs for productivity,
 communication, and entertainment.
@@ -16,6 +16,7 @@ communication, and entertainment.
 Like most people in the world, I'm rarely further than an arm's reach from my smartphone. My Android device provides a seemingly limitless number of communication, productivity, and entertainment services thanks to the open source mobile apps I've installed from Google Play and F-Droid.
 
 ​​​​​​Of the many open source apps on my phone, the following five are the ones I consistently turn to whether I want to listen to music; connect with friends, family, and colleagues; or get work done on the go.
+在我的手机上的许多开源应用程序中，以下五个是我一直转向的，我是否想听音乐; 与朋友，家人和同事联系; 或者在旅途中完成工作。
 
 ### MPDroid
 
@@ -40,6 +41,7 @@ _An Android internet radio tuner that I use standalone and with Chromecast_
 _![RadioDroid][6]_
 
 RadioDroid is to internet radio as MPDroid is to managing my music database; essentially, RadioDroid is a frontend to [Internet-Radio.com][7]. Moreover, RadioDroid can be enjoyed by plugging headphones into the Android device, by connecting the Android device directly to the stereo via the headphone jack or USB, or by using its Chromecast capability with a compatible device. It's a fine way to check the weather in Finland, listen to the Spanish top 40, or hear the latest news from down under.
+好比 MPDroid 是管理我音乐的数据库一样，RadioDroid 是互联网广播; 从本质上讲，RadioDroid 是[Internet-Radio.com] [7]的前端。 此外，通过将耳机插入 Android 设备，通过耳机插孔或 USB 将Android 设备直接连接到立体声系统，或通过兼容设备使用其 Chromecast 功能，可以享受 RadioDroid。 这是检查芬兰天气，听取西班牙排名前 40 的音乐，或听到最新消息的好方法。
 
 RadioDroid is available on [Google Play][8] and [F-Droid][9].
 
@@ -59,6 +61,10 @@ If you like WhatsApp but are bothered by its [getting-closer-every-day][11] rela
 
 Signal is available for [Android][12], [iOS][13], and [desktop][14].
 
+如果你喜欢 WhatsApp，但是因为它与 Facebook 日益密切的关系而感到困扰，那么Signal应该是你的下一步。 Signal的唯一问题是说服你的联系人他们最好用WhatsApp取代Signal。 但除此之外，它有一个类似的界面; 很棒的语音和视频通话; 很好的加密; 体面的匿名; 并且它得到了一个不打算通过软件使用货币化的基金会的支持。 有什么不喜欢的？
+
+Signal 适用于 Android，iOS和桌面系统。
+
 ### ConnectBot
 
 _Android SSH client_
@@ -75,6 +81,10 @@ Sometimes I'm far away from my computer, but I need to log into the server to do
 
 ConnectBot is available on [Google Play][17].
 
+有时我离电脑很远，但我需要登录服务器才能做某事。 [ConnectBot] [16]是将SSH会话移动到手机上的绝佳解决方案。
+
+ConnectBot可在[Google Play] [17]上找到。
+
 ### Termux
 
 _Android terminal emulator with many familiar utilities_
@@ -89,11 +99,14 @@ _![Termux][18]_
 
 Have you ever needed to run an **awk** script on your phone? [Termux][19] is your solution. If you need to do terminal-type stuff, and you don't want to maintain an SSH connection to a remote computer the whole time, bring the files over to your phone with ConnectBot, quit the session, do your stuff in Termux, and send the results back with ConnectBot.
 
+你有没有需要在手机上运行 **awk** 脚本？ [Termux] [19]是您的解决方案。 如果您需要做终端类型的东西，并且您不想一直保持与远程计算机的 SSH 连接，请使用 ConnectBot 将文件带到手机，退出会话，在 Termux 中执行您的操作，以及使用 ConnectBot 发回结果。
+
 Termux is available on [Google Play][20] and [F-Droid][21].
+Termux 可在 [Google Play][20] 和 [F-Droid][21] 上找到。
 
 * * *
 
-What are your favorite open source mobile apps for work or fun? Please share them in the comments.
+你最喜欢用于工作或娱乐的开源移动应用是什么呢？请在评论中分享它们。
 
 --------------------------------------------------------------------------------
 
