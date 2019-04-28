@@ -1,36 +1,35 @@
 [#]: collector: (lujun9972)
 [#]: translator: (arrowfeng)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Install MySQL in Ubuntu Linux)
 [#]: via: (https://itsfoss.com/install-mysql-ubuntu/)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
-怎样在Ubuntu Linux上安装MySQL
+怎样在 Ubuntu Linux 上安装 MySQL
 ======
 
-_**简要: 本教程教你如何在基于Ubuntu的Linux发行版上安装MySQL。对于首次使用的用户，你将会学习到如何验证你的安装和第一次怎样去连接MySQL。**_
+> 本教程教你如何在基于 Ubuntu 的 Linux 发行版上安装 MySQL。对于首次使用的用户，你将会学习到如何验证你的安装和第一次怎样去连接 MySQL。
 
-**[MySQL][1]** 是一个典型的数据库管理系统。它被用于许多技术栈中，包括流行的  **[LAMP][2]** (Linux, Apache, MySQL, PHP) 技术栈. 它已经被证实了其稳定性。 另一个让**MySQL**受欢迎的原因是它是开源的。
+[MySQL][1] 是一个典型的数据库管理系统。它被用于许多技术栈中，包括流行的  [LAMP][2] （Linux、Apache、MySQL、PHP）技术栈。它已经被证实了其稳定性。另一个让 MySQL 受欢迎的原因是它是开源的。
 
-**MySQL** 是 **关系型数据库** (基本上是 **表格 数据** ). 以这种方式它很容易去存储，组织和访问数据。它使用**SQL**( **结构化查询语言** )来管理数据。
+MySQL 是关系型数据库（基本上是表格数据）。以这种方式它很容易去存储、组织和访问数据。它使用SQL（结构化查询语言）来管理数据。
 
-这这篇文章中，我将向你展示如何在Ubuntu 18.04安装和使用MySQL 8.0。让我们一起来看看吧！
+这这篇文章中，我将向你展示如何在 Ubuntu 18.04 安装和使用 MySQL 8.0。让我们一起来看看吧！
 
-
-### 在Ubuntu上安装MySQL
+### 在 Ubuntu 上安装 MySQL
 
 ![][3]
 
-我将会介绍两种在Ubuntu18.04上安装**MySQL**的方法：
-  1. 从Ubuntu仓库上安装MySQL。非常简单，但不是最新版（5.7）
-  2. 从官方仓库安装MySQL。你将额外增加一些步处理过程，但不用担心。你将会拥有最新版的MySQL（8.0）
+我将会介绍两种在 Ubuntu 18.04 上安装 MySQL 的方法：
 
+  1. 从 Ubuntu 仓库上安装 MySQL。非常简单，但不是最新版（5.7）
+  2. 从官方仓库安装 MySQL。你将额外增加一些步处理过程，但不用担心。你将会拥有最新版的MySQL（8.0）
 
-有必要的时候，我将会提供屏幕截图去引导你。但这边文章中的大部分步骤，我将直接在**终端**（**默认热键**: CTRL+ALT+T）输入命令。别害怕它！
+有必要的时候，我将会提供屏幕截图去引导你。但这篇文章中的大部分步骤，我将直接在终端（默认热键： `CTRL+ALT+T`）输入命令。别害怕！
 
-#### 方法 1. 从Ubuntu仓库安装MySQL
+#### 方法 1、从 Ubuntu 仓库安装 MySQL
 
 首先，输入下列命令确保你的仓库已经被更新：
 
@@ -38,7 +37,7 @@ _**简要: 本教程教你如何在基于Ubuntu的Linux发行版上安装MySQL�
 sudo apt update
 ```
 
-现在, 安装 **MySQL 5.7** , 简单输入下列命令:
+现在，安装 MySQL 5.7，简单输入下列命令：
 
 ```
 sudo apt install mysql-server -y
@@ -46,80 +45,77 @@ sudo apt install mysql-server -y
 
 就是这样！简单且高效。
 
-#### 方法 2. 使用官方仓库安装MySQL
+#### 方法 2、使用官方仓库安装 MySQL
 
 虽然这个方法多了一些步骤，但我将逐一介绍，并尝试写下清晰的笔记。
 
-首先浏览官方的MySQL网站[download page][4]。
+首先浏览 MySQL 官方网站的[下载页面][4]。
 
 ![][5]
 
-在这，选择**DEB Package**点击**download link**。
+在这里，选择 DEB 软件包，点击“Download”链接。
 
 ![][6]
 
-滑到有关于Oracle网站信息的底部，右键 **No thanks, just start my download.** ，然后选择 **Copy link location**。
+滑到有关于 Oracle 网站信息的底部，右键 “No thanks, just start my download.”，然后选择 “Copy link location”。
 
-
-现在回到终端，我们将使用 **[Curl][7]** 命令去下载这个软件包：
-
-Now go back to the terminal. We’ll [use][7] **[Curl][7]** [command][7] to the download the package:
+现在回到终端，我们将使用 [Curl][7] 命令去下载这个软件包：
 
 ```
 curl -OL https://dev.mysql.com/get/mysql-apt-config_0.8.12-1_all.deb
 ```
 
-**<https://dev.mysql.com/get/mysql-apt-config\_0.8.12-1\_all.deb>** 是我刚刚从网页上复制的链接。根据当前的MySQL版本，它有可能不同。让我们使用**dpkg**去开始安装MySQL：
+`https://dev.mysql.com/get/mysql-apt-config_0.8.12-1_all.deb` 是我刚刚从网页上复制的链接。根据当前的 MySQL 版本，它有可能不同。让我们使用 `dpkg` 去开始安装 MySQL：
 
 ```
 sudo dpkg -i mysql-apt-config*
 ```
 
-更新你的仓库:
+更新你的仓库：
 
 ```
 sudo apt update
 ```
 
-要实际安装MySQL,我们将使用像第一个方法中同样的命令来安装：
+要实际安装 MySQL，我们将使用像第一个方法中同样的命令来安装：
 
 ```
 sudo apt install mysql-server -y
 ```
 
-这样做会在你的终端中打开**包配置**的提示。使用**向下箭头**选择 **Ok**选项。
+这样做会在你的终端中打开包配置的提示。使用向下箭头选择“Ok”选项。
 
 ![][8]
 
-点击 **Enter**.这应该会提示你输入**password**：你的基本上是在为MySQL设置root密码。不要与[Ubuntu的root密码混淆][9]。
+点击回车。这应该会提示你输入密码：这是在为 MySQL 设置 root 密码。不要与 [Ubuntu 的 root 密码混淆][9]。
 
 ![][10]
 
-输入密码然后点击**Tab**键去选择 **< Ok>**.点击**Enter**键，你将**重新输入** **password**。操作完之后，再次键入**Tab**去选择 **< Ok>**。按下**Enter**键。
+输入密码然后点击 Tab 键去选择“Ok“。点击回车键，你将重新输入密码。操作完之后，再次键入 Tab 去选择 “Ok”。按下回车键。
 
 ![][11]
 
-一些关于MySQL Server的配置信息将会展示。再次按下**Tab**去选择 **< Ok>** 和按下 **Enter**键：
+将会展示一些关于 MySQL Server 的配置信息。再次按下 Tab 去选择 “Ok” 和按下回车键：
 
 ![][12]
 
-这里你需要去选择**default authentication plugin**。确保**Use Strong Password Encryption**被选择。按下**Tab**键和**Enter**键。
+这里你需要去选择默认验证插件。确保选择了“Use Strong Password Encryption”。按下 Tab 键和回车键。
 
-就是这样！你已经成功地安装了MySQL。
+就是这样！你已经成功地安装了 MySQL。
 
-#### 验证你的MySQL安装
+#### 验证你的 MySQL 安装
 
-要验证MySQL已经正确安装，使用下列命令：
+要验证 MySQL 已经正确安装，使用下列命令：
 
 ```
 sudo systemctl status mysql.service
 ```
 
-这将展示一些关于MySQL服务的信息：
+这将展示一些关于 MySQL 服务的信息：
 
 ![][13]
 
-你应该在那里看到 **Active: active (running)** 。如果你没有看到，使用下列命令去开始这个 **service**：
+你应该在那里看到 “Active: active (running)”。如果你没有看到，使用下列命令去开始这个服务：
 
 ```
 sudo systemctl start mysql.service
@@ -127,50 +123,49 @@ sudo systemctl start mysql.service
 
 #### 配置/保护 MySQL
 
-对于刚安装的MySQL，你应该运行它提供的安全相关的更新命令。就是：
+对于刚安装的 MySQL，你应该运行它提供的安全相关的更新命令。就是：
 
 ```
 sudo mysql_secure_installation
 ```
 
-这样做首先会询问你是否想使用**VALIDATE PASSWORD COMPONENT**.如果你想使用它，你将不得不去选择一个最小密码强度( **0 – Low, 1 – Medium, 2 – High** )。你将无法输入任何不遵守所选规则的密码。如果你没有使用强密码的习惯（本应该使用），这可能会配上用场。如果你认为它可能有帮助，那你就键入**y** 或者 **Y**，按下**Enter**键，然后为你的密码选择一个**强度等级**和输入一个你想使用的。如果成功，你将继续**securing**过程；否则你将重新输入一个密码。
+这样做首先会询问你是否想使用 “<ruby>密码有效强度<rt>validate password component</rt></ruby>”。如果你想使用它，你将必须选择一个最小密码强度（0 – 低，1 – 中，2 – 高）。你将无法输入任何不遵守所选规则的密码。如果你没有使用强密码的习惯（本应该使用），这可能会配上用场。如果你认为它可能有帮助，那你就键入 `y` 或者 `Y`，按下回车键，然后为你的密码选择一个强度等级和输入一个你想使用的密码。如果成功，你将继续强化过程；否则你将重新输入一个密码。
 
+但是，如果你不想要此功能（我不会），只需按回车或任何其他键即可跳过使用它。
 
-但是，如果你不想要此功能（我不会），只需按**Enter**或**任何其他键**即可跳过使用它。
+对于其他选项，我建议开启它们（对于每一步输入 `y` 或者 `Y` 和按下回车）。它们（依序）是：“<ruby>移除匿名用户<rt>remove anonymous user</rt></ruby>”，“<ruby>禁止 root 远程登录<rt>disallow root login remotely</rt></ruby>”，“<ruby>移除测试数据库及其访问<rt>remove test database and access to it</rt></ruby>”。“<ruby>重新载入权限表<rt>reload privilege tables now</rt></ruby>”。
 
-对于其他选项，我建议**开启**他们(对于每一步输入**y** 或者 **Y** 和按下**Enter**)。他们是（以这样的顺序）：**remove anonymous user, disallow root login remotely, remove test database and access to it, reload privilege tables now**.
-MySQL Server上
-#### 链接与断开MySQL Server
+#### 链接与断开 MySQL Server
 
-为了去运行SQL查询，你首先不得不使用MySQL链接到MySQL服务并使用MySQL提示符。
-To be able to run SQL queries, you’ll first have to connect to the server using MySQL and use the MySQL prompt. 执行此操作的命令是：
+为了运行 SQL 查询，你首先必须使用 MySQL 连到服务器并在 MySQL 提示符使用。
+
+执行此操作的命令是：
 
 ```
 mysql -h host_name -u user -p
 ```
 
-  * **-h** 被用来指定一个 **主机名** （如果这个服务被安装到其他机器上，那么会有用；如果没有，忽略它）
-  * **-u** 指定登录的 **用户**
-  * **-p** 指定你想输入的 **密码**.
+* `-h` 用来指定一个主机名（如果这个服务被安装到其他机器上，那么会有用；如果没有，忽略它）
+* `-u` 指定登录的用户
+* `-p` 指定你想输入的密码.
 
-
-
-你能通过在最右边输入 **-p**后直接输入密码在命令行，但这样做是不建议的（为了安全原因），如果用户**test_user** 的密码是**1234**，那么你可以尝试去连接你正在使用的机器上的mysql，你应该这样使用：
+虽然出于安全原因不建议，但是你可以在命令行最右边的 `-p` 后直接输入密码。例如，如果用户`test_user` 的密码是 `1234`，那么你可以在你使用的机器上尝试去连接，你可以这样使用：
 
 ```
 mysql -u test_user -p1234
 ```
 
-如果你成功输入了必要的参数，你将会收到由**MySQL shell 提示符**提供的欢迎（ **mysql >** ）：
+如果你成功输入了必要的参数，你将会收到由 MySQL shell 提示符提供的欢迎（`mysql >`）：
+
 ![][14]
 
-要从服务端断开连接和离开mysql提示符，输入：
+要从服务端断开连接和离开 MySQL 提示符，输入：
 
 ```
 QUIT
 ```
 
-输入**quit** （MySQL不区分大小写）或者 **\q**也能工作。按下**Enter**退出。
+输入 `quit` （MySQL 不区分大小写）或者 `\q` 也能工作。按下回车退出。
 
 你使用简单的命令也能输出关于版本的信息：
 
@@ -178,7 +173,7 @@ QUIT
 sudo mysqladmin -u root version -p
 ```
 
-如果你想看 **选项列表**，使用：
+如果你想看命令行选项列表，使用：
 
 ```
 mysql --help
@@ -186,9 +181,7 @@ mysql --help
 
 #### 卸载 MySQL
 
-
-
-如果您决定要使用较新版本或只是想停止使用MySQL。
+如果您决定要使用较新版本或只是想停止使用 MySQL。
 
 首先，关闭服务：
 
@@ -196,7 +189,7 @@ mysql --help
 sudo systemctl stop mysql.service && sudo systemctl disable mysql.service
 ```
 
-确保你备份了你的数据库，以防你之后想使用它们。你可以通过运行下列命令卸载MySQL：
+确保你备份了你的数据库，以防你之后想使用它们。你可以通过运行下列命令卸载 MySQL：
 
 ```
 sudo apt purge mysql*
@@ -208,12 +201,11 @@ sudo apt purge mysql*
 sudo apt autoremove
 ```
 
-**小结**
+### 小结
 
-在这边文章中，我已经介绍如何在Ubuntu Linux上**安装 Mysql**。我很高兴如果这篇文章能帮助到那些正为此挣扎的用户或者刚刚开始的用户。
-In this article, I’ve covered **installing MySQL** in Ubuntu Linux. I’d be glad if this guide helps struggling users and beginners.
+在这篇文章中，我已经介绍如何在 Ubuntu Linux 上安装 Mysql。我很高兴如果这篇文章能帮助到那些正为此挣扎的用户或者刚刚开始的用户。
 
-如果你发现这篇文章是一个很有用的资源，在评论里告诉我们。你为了什么使用MySQL? 我们渴望收到你的任何反馈，印象和建议。感谢阅读，并毫不犹豫地尝试这个令人难以置信的工具！
+如果你发现这篇文章是一个很有用的资源，在评论里告诉我们。你为了什么使用 MySQL? 我们渴望收到你的任何反馈、印象和建议。感谢阅读，并毫不犹豫地尝试这个很棒的工具！
 
 --------------------------------------------------------------------------------
 
@@ -222,7 +214,7 @@ via: https://itsfoss.com/install-mysql-ubuntu/
 作者：[Sergiu][a]
 选题：[lujun9972][b]
 译者：[arrowfeng](https://github.com/arrowfeng)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
