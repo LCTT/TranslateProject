@@ -7,30 +7,30 @@
 [#]: via: (https://itsfoss.com/restart-network-ubuntu)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
-How to Restart a Network in Ubuntu [Beginner’s Tip]
+如何在 Ubuntu 中重启网络服务 [新手提示]
 ======
 
-You’re [using an Ubuntu-based system and you just can’t seem to connect to your network][1]? You’d be surprised how many problems can a simple restart fix.
+你 [using an Ubuntu-based system and you just can’t seem to connect to your network][1]? 你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决.
 
-In this article, I’ll go over multiple ways you can restart network in Ubuntu and other Linux distributions, so you can use whatever suits your needs. The methods are basically divided into two parts:
+在这篇文章中，我会介绍在 Ubuntu 或者其他 Linux 发行版中重启网络服务的几种方法，你可以根据自身需要选择对应的方法。这些方法基本分为两类：
 
 ![Ubuntu Restart Network][2]
 
-### Restart network in Ubuntu using command line
+### 通过命令行方式重启网络
 
-If you are using Ubuntu server edition, you are already in the terminal. If you are using the desktop edition, you can access the terminal using Ctrl+Alt+T [keyboard shortcut in Ubuntu][3].
+如果你使用的 Ubuntu 服务器版，那么你已经在使用命令行终端了。如果你使用的是桌面版，那么你可以通过快捷键 Ctrl+Alt+T [Ubuntu 键盘快捷键][3] 打开命令行终端。
 
-Now you have several commands at your disposal to restart network in Ubuntu. Some (or perhaps most) commands mentioned here should be applicable for restarting network in Debian and other Linux distributions as well.
+在 Ubuntu 中，你有多个命令可以重启网络。这些命令，一部分或者说大部分，也适用于在 Debian 或者其他的 Linux 发行版中重启网络。
 
 #### 1\. network manager service
 
-This is the easiest way to restart your network using the command line. It’s equivalent to the graphical way of doing it (restarts the Network-Manager service).
+这是通过命令行方式重启网络最简单的方法. 它相当于是通过图形化界面重启网络（重启 Network-Manager 服务）。
 
 ```
 sudo service network-manager restart
 ```
 
-The network icon should disappear for a moment and then reappear.
+此时，网络图标会消失一会儿然后重新显示。
 
 #### 2\. systemd
 
@@ -40,29 +40,29 @@ The **service** command is just a wrapper for this method (and also for init.d s
 sudo systemctl restart NetworkManager.service
 ```
 
-The network icon (again) should disappear for a moment. To check out other **systemctl** options, you can refer to its man page.
+这是，网络图标又会消失一会儿。 如果你想了解 **systemctl** 的其他选项, 可以参考帮助文档（man page）.
 
 #### 3\. nmcli
 
-This is yet another tool for handling networks on a Linux machine. It is a pretty powerful tool that I find very practical. Many sysadmins prefer it since it is easy to use.
+这是 Linux 上可以管理网络的另一个工具。这是一个功能强大而且实用的工具。很多系统管理员都喜欢使用该工具，因为很容易使用。
 
-There are two steps to this method: turning the network off, and then turning it back on.
+这种方法有两个操作步骤：关闭网络，重新开启网络。
 
 ```
 sudo nmcli networking off
 ```
 
-The network will shut down and the icon will disappear. To turn it back on:
+这样就会关闭网络，网络图标会消失。接下来，再开启网络：
 
 ```
 sudo nmcli networking on
 ```
 
-You can check out the man page of nmcli for more options.
+你可以通过帮助文档（man page）了解 nmcli 的更多使用方法。
 
 #### 4\. ifup & ifdown
 
-This commands handle a network interface directly, changing it’s state to one in which it either can or can not transmit and receive data. It’s one of the [must know networking commands in Linux][4].
+这两个命令是直接操作网卡，, changing it’s state to one in which it either can or can not transmit and receive data. It’s one of the [must know networking commands in Linux][4].
 
 To shut down all network interfaces, use ifdown and then use ifup to turn all network interfaces back on.
 
@@ -82,7 +82,7 @@ This is another method often used by system administrators. It is a text menu fo
 nmtui
 ```
 
-This should open up the following menu:
+这样会打开如下菜单：
 
 ![nmtui Menu][5]
 
@@ -112,23 +112,23 @@ Press **Enter**. This should reactivate the selected connection.
 
 ![nmtui Connections Menu][11]
 
-Press **Tab** twice to select **Back** :
+双击 **Tab** 键，选择到 **Back** ：
 
 ![Select "Back" in the nmtui connections menu.][12]
 
-Press **Enter**. This should bring you back to the **nmtui** main menu.
+按下 **Enter**。这样就会回到 **nmtui** 主菜单。
 
 ![nmtui Main Menu][13]
 
-Select **Quit** :
+选择 **Quit** ：
 
 ![nmtui Quit Main Menu][14]
 
-This should exit the application and bring you back to your terminal.
+这样就会退出该界面，返回到命令行终端。
 
-That’s it! You have successfully restarted your network
+就这样，你已经成功重启网络了。
 
-### Restart network in Ubuntu graphically
+### 通过图形化界面重启网络
 
 This is, of course, the easiest way of restarting the network for Ubuntu desktop users. If this one doesn’t work, you can of course check the command line options mentioned in the previous section.
 
