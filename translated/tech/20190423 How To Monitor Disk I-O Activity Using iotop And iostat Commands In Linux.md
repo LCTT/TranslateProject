@@ -7,78 +7,76 @@
 [#]: via: (https://www.2daygeek.com/check-monitor-disk-io-in-linux-using-iotop-iostat-command/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How To Monitor Disk I/O Activity Using iotop And iostat Commands In Linux?
-======
+在 Linux 中如何使用 iotop 和 iostat 监控磁盘 I/O 活动？
+===================================================
 
-Do you know what are the tools we can use for troubleshooting or monitoring real-time disk activity in Linux?
+你知道在 Linux 中我们使用什么工具检修和监控实时的磁盘活动吗？
 
-If **[Linux system performance][1]** gets slow down we may use **[top command][2]** to see the system performance.
+如果 **[Linux 系统性能][1]**变慢，我们会用 **[top 命令][12]** 来查看系统性能。
 
-It is used to check what are the processes are consuming high utilization on server.
+它被用来检查是什么进程在服务器上占有如此高的使用率。
 
-It’s common for most of the Linux administrator.
+对于大多数 Linux 系统管理员来说很常见。
 
-It’s widely used by Linux administrator in the real world.
+现实世界中被 Linux 系统管理员广泛采用。
 
-If you don’t see much difference in the process output still you have an option to check other things.
+如果在进程输出中你没有看到很大的不同，你仍然有选择查看其他东西。
 
-I would like to advise you to check `wa` status in the top output because most of the time the server performance will be degraded due to high I/O Read and Write on hard disk.
+我会建议你在 top 输出中检查 `wa` 状态因为大多数时间服务器性能由于在硬盘上的高 I/O 读和写降低了性能。
 
-If it’s high or fluctuation, it could be a cause. So, we need to check I/O activity on hard drive.
+如果它很高或者波动，很可能就是它造成的。因此，我们需要检查硬盘上的 I/O 活动。
 
-We can monitory disk I/O statistics for all disks and file system in Linux system using `iotop` and `iostat` commands.
+我们可以在 Linux 中使用 `iotop` 和  `iostat` 命令监控所有的磁盘和文件系统的磁盘 I/O 统计。
 
-### What Is iotop?
+### 什么是 iotop？
 
-iotop is a top-like utility for displaying real-time disk activity.
+iotop 是一个类似 top 的工具来显示实时的磁盘活动。
 
-iotop watches I/O usage information output by the Linux kernel and displays a table of current I/O usage by processes or threads on the system.
+iotop 监控 Linux 内核输出的 I/O 使用信息并且显示一个系统中进程或线程的当前 I/O 使用情况。
 
-It displays the I/O bandwidth read and written by each process/thread. It also displays the percentage of time the thread/process spent while swapping in and while waiting on I/O.
+它显示每个进程/线程读写 I/O 带宽。它同样显示当等待换入和等待 I/O 的线程/进程 时间花费的百分比。
 
-Total DISK READ and Total DISK WRITE values represent total read and write bandwidth between processes and kernel threads on the one side and kernel block device subsystem on the other.
+Total DISK READ 和 Total DISK WRITE 的值表示了一方面进程和内核线程之间的总的读写带宽，另一方面表示内核块设备子系统的。
 
-Actual DISK READ and Actual DISK WRITE values represent corresponding bandwidths for actual disk I/O between kernel block device subsystem and underlying hardware (HDD, SSD, etc.).
+Actual DISK READ 和 Actual DISK WRITE 的值表示在内核块设备子系统和下面硬件（HDD，SSD，等等。）对应的实际磁盘 I/O 带宽。
 
-### How To Install iotop In Linux?
+### 如何在 Linux 中安装 iotop ？
 
-We can easily install it with help of package manager since the package is available in all the Linux distributions repository.
+我们可以轻松在包管理器的帮助下安装，因为该软件包在所有的 Linux 发行版仓库中都可以获得。
 
-For **`Fedora`** system, use **[DNF Command][3]** to install iotop.
+对于 **`Fedora`** 系统，使用 **[DNF 命令][3]** 来安装 iotop。
 
 ```
 $ sudo dnf install iotop
 ```
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][4]** or **[APT Command][5]** to install iotop.
+对于 **`Debian/Ubuntu`** 系统，使用 **[API-GET 命令][4]** 或者 **[APT 命令][5]** 来安装 iotop。
 
 ```
 $ sudo apt install iotop
 ```
 
-For **`Arch Linux`** based systems, use **[Pacman Command][6]** to install iotop.
+对于基于 **`Arch Linux`** 的系统，使用 **[Pacman Command][6]** 来安装 iotop。
 
 ```
 $ sudo pacman -S iotop
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][7]** to install iotop.
+对于 **`RHEL/CentOS`** 的系统，使用 **[YUM Command][7]** 来安装 iotop。
 
 ```
 $ sudo yum install iotop
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][8]** to install iotop.
+对于使用  **`openSUSE Leap`** 的系统，使用 **[Zypper Command][8]** 来安装 iotop。
 
 ```
 $ sudo zypper install iotop
 ```
 
-### How To Monitor Disk I/O Activity/Statistics In Linux Using iotop Command?
+### 在 Linux 中如何使用 iotop 命令来监控磁盘 I/O 活动/统计？
 
-There are many options are available in iotop command to check varies statistics about disk I/O.
-
-Run the iotop command without any arguments to see each process or thread current I/O usage.
+iotop 命令有很多参数来检查关于磁盘 I/O 的变化
 
 ```
 # iotop
@@ -86,7 +84,7 @@ Run the iotop command without any arguments to see each process or thread curren
 
 [![][9]![][9]][10]
 
-If you would like to check which process are actually doing IO then run the iotop command with `-o` or `--only` option.
+如果你想检查那个进程实际在做 I/O，那么运行 iotop 命令加上 `-o` 或者 `--only` 参数。
 
 ```
 # iotop --only
@@ -94,66 +92,66 @@ If you would like to check which process are actually doing IO then run the ioto
 
 [![][9]![][9]][11]
 
-**Details:**
+**细节：**
 
-  * **`IO:`** It shows I/O utilization for each process, which includes disk and swap.
-  * **`SWAPIN:`** It shows only the swap usage of each process.
+  * **`IO:`** 它显示每个进程的 I/O 利用率，包含磁盘和交换。
+  * **`SWAPIN:`** 它只显示每个进程的交换使用率。
 
 
 
-### What Is iostat?
+### 什么是 iostat？
 
-iostat is used to report Central Processing Unit (CPU) statistics and input/output statistics for devices and partitions.
+iostat 被用来报告中央处理单元（CPU）的统计和设备与分区的输出/输出的统计。
 
-The iostat command is used for monitoring system input/output device loading by observing the time the devices are active in relation to their average transfer rates.
+iostat 命令通过观察与他们平均传输率相关的设备活跃时间来监控系统输入/输出设备载入。
 
-The iostat command generates reports that can be used to change system configuration to better balance the input/output load between physical disks.
+iostat 命令生成的报告可以被用来改变系统配置来更好的平衡物理磁盘之间的输入/输出负载。
 
-All statistics are reported each time the iostat command is run. The report consists of a CPU header row followed by a row of CPU statistics.
+所有的统计都在 iostat 命令每次运行时被报告。该报告包含一个 CPU 头部，后面是一行 CPU 统计。
 
-On multiprocessor systems, CPU statistics are calculated system-wide as averages among all processors. A device header row is displayed followed by a line of statistics for each device that is configured.
+在多处理器系统中，CPU 统计被计算为系统层面的所有处理器的平均值。一个设备头行显示后紧跟一行每个配置设备的统计。
 
-The iostat command generates two types of reports, the CPU Utilization report and the Device Utilization report.
+iostat 命令生成两种类型的报告，CPU 利用率报告和设备利用率报告。
 
-### How To Install iostat In Linux?
+### 在 Linux 中怎样安装 iostat？
 
-iostat tool is part of sysstat package so, We can easily install it with help of package manager since the package is available in all the Linux distributions repository.
+iostat 工具是 sysstat 包的一部分，所以我们可以轻松地在包管理器地帮助下安装因为在所有的 Linux 发行版的仓库都是可以获得的。
 
-For **`Fedora`** system, use **[DNF Command][3]** to install sysstat.
+对于 **`Fedora`** 系统，使用 **[DNF Command][3]** 来安装 sysstat。
 
 ```
 $ sudo dnf install sysstat
 ```
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][4]** or **[APT Command][5]** to install sysstat.
+对于 **`Debian/Ubuntu`** 系统，使用 **[APT-GET Command][4]** 或者 **[APT Command][5]** 来安装 sysstat。
 
 ```
 $ sudo apt install sysstat
 ```
 
-For **`Arch Linux`** based systems, use **[Pacman Command][6]** to install sysstat.
+对于基于 **`Arch Linux`** 的系统，使用 **[Pacman Command][6]** 来安装 sysstat。
 
 ```
 $ sudo pacman -S sysstat
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][7]** to install sysstat.
+对于 **`RHEL/CentOS`** 系统，使用 **[YUM Command][7]** 来安装 sysstat。
 
 ```
 $ sudo yum install sysstat
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][8]** to install sysstat.
+对于 **`openSUSE Leap`** 系统，使用 **[Zypper Command][8]** 来安装 sysstat。
 
 ```
 $ sudo zypper install sysstat
 ```
 
-### How To Monitor Disk I/O Activity/Statistics In Linux Using sysstat Command?
+### 在 Linux 中如何使用 sysstat 命令监控磁盘 I/O 活动/统计？
 
-There are many options are available in iostat command to check varies statistics about disk I/O and CPU.
+在 iostat 命令中有很多参数来检查关于 I/O 和 CPU 的变化统计信息。
 
-Run the iostat command without any arguments to see complete statistics of the system.
+不加参数运行 iostat 命令会看到完整的系统统计。
 
 ```
 # iostat
@@ -171,7 +169,7 @@ loop1             0.00         0.00         0.00         0.00       1093        
 loop2             0.00         0.00         0.00         0.00       1077          0          0
 ```
 
-Run the iostat command with `-d` option to see I/O statistics for all the devices
+运行 iostat 命令加上 `-d` 参数查看所有设备的 I/O 统计。
 
 ```
 # iostat -d
@@ -186,7 +184,7 @@ loop1             0.00         0.00         0.00         0.00       1093        
 loop2             0.00         0.00         0.00         0.00       1077          0          0
 ```
 
-Run the iostat command with `-p` option to see I/O statistics for all the devices and their partitions.
+运行 iostat 命令加上 `-p` 参数查看所有的设备和分区的 I/O 统计。
 
 ```
 # iostat -p
@@ -208,7 +206,7 @@ loop1             0.00         0.00         0.00         0.00       1093        
 loop2             0.00         0.00         0.00         0.00       1077          0          0
 ```
 
-Run the iostat command with `-x` option to see detailed I/O statistics for all the devices.
+运行 iostat 命令加上 `-x` 参数显示所有设备的详细的 I/O 统计信息。
 
 ```
 # iostat -x
@@ -226,7 +224,7 @@ loop1            0.00      0.00     0.00   0.00    0.40    12.86    0.00      0.
 loop2            0.00      0.00     0.00   0.00    0.38    19.58    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00   0.00
 ```
 
-Run the iostat command with `-d [Device_Name]` option to see I/O statistics of particular device and their partitions.
+运行 iostat 命令加上 `-d [设备名]` 参数查看具体设备和它的分区的 I/O 统计信息。
 
 ```
 # iostat -p [Device_Name]
@@ -244,7 +242,7 @@ sda2              0.18         6.76        80.21         0.00    3112916   36924
 sda1              0.00         0.01         0.00         0.00       3224          0          0
 ```
 
-Run the iostat command with `-m` option to see I/O statistics with `MB` for all the devices instead of `KB`. By default it shows the output with KB.
+运行 iostat 命令加上 `-m` 参数以 `MB` 为单位而不是 `KB` 查看所有设备的统计。默认以 KB 显示输出。
 
 ```
 # iostat -m
@@ -262,7 +260,7 @@ loop1             0.00         0.00         0.00         0.00          1        
 loop2             0.00         0.00         0.00         0.00          1          0          0
 ```
 
-Run the iostat command with certain interval then use the following format. In this example, we are going to capture totally two reports at five seconds interval.
+运行 iostat 命令使用特定的间隔使用如下的格式。在这个例子中，我们打算以 5 秒捕获的间隔捕获两个报告。
 
 ```
 # iostat [Interval] [Number Of Reports]
@@ -292,7 +290,7 @@ loop1             0.00         0.00         0.00         0.00          0        
 loop2             0.00         0.00         0.00         0.00          0          0          0
 ```
 
-Run the iostat command with `-N` option to see the LVM disk I/O statistics report.
+运行 iostat 命令 与 `-N` 参数来查看 LVM 磁盘 I/O 统计报告。
 
 ```
 # iostat -N
@@ -309,7 +307,7 @@ sdc               0.01         0.12         0.00       2108          0
 2g-2gvol1         0.00         0.07         0.00       1204          0
 ```
 
-Run the nfsiostat command to see the I/O statistics for Network File System(NFS).
+运行 nfsiostat 命令来查看 Network File System（NFS）的 I/O 统计。
 
 ```
 # nfsiostat
@@ -321,7 +319,7 @@ via: https://www.2daygeek.com/check-monitor-disk-io-in-linux-using-iotop-iostat-
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[warmfrog](https://github.com/warmfrog)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
