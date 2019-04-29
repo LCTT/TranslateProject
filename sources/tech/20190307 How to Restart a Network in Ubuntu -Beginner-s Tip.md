@@ -12,7 +12,7 @@
 
 你 [using an Ubuntu-based system and you just can’t seem to connect to your network][1]? 你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决.
 
-在这篇文章中，我会介绍在 Ubuntu 或者其他 Linux 发行版中重启网络服务的几种方法，你可以根据自身需要选择对应的方法。这些方法基本分为两类：
+在这篇文章中，我会介绍在 Ubuntu 或者其他 Linux 发行版中重启网络的几种方法，你可以根据自身需要选择对应的方法。这些方法基本分为两类：
 
 ![Ubuntu Restart Network][2]
 
@@ -34,19 +34,19 @@ sudo service network-manager restart
 
 #### 2\. systemd
 
-The **service** command is just a wrapper for this method (and also for init.d scripts and Upstart commands). The **systemctl** command is much more versatile than **service**. This is what I usually prefer.
+**service** 命令仅仅是该命令的一个封装命令（同样的还有 init.d 系列脚本和 Upstart 相关命令）。 **systemctl** 命令的功能远多于 **service** 命令。通常我更喜欢使用这个命令。
 
 ```
 sudo systemctl restart NetworkManager.service
 ```
 
-这是，网络图标又会消失一会儿。 如果你想了解 **systemctl** 的其他选项, 可以参考帮助文档（man page）.
+这时，网络图标又会消失一会儿。 如果你想了解 **systemctl** 的其他选项, 可以参考 man 帮助文档。
 
 #### 3\. nmcli
 
-这是 Linux 上可以管理网络的另一个工具。这是一个功能强大而且实用的工具。很多系统管理员都喜欢使用该工具，因为很容易使用。
+这是 Linux 上可以管理网络的另一个工具。这是一个功能强大而且实用的工具。很多系统管理员都喜欢使用该工具，因为它非常容易使用。
 
-这种方法有两个操作步骤：关闭网络，重新开启网络。
+这种方法有两个操作步骤：关闭网络，再开启网络。
 
 ```
 sudo nmcli networking off
@@ -58,7 +58,7 @@ sudo nmcli networking off
 sudo nmcli networking on
 ```
 
-你可以通过帮助文档（man page）了解 nmcli 的更多使用方法。
+你可以通过 man 帮助文档了解 nmcli 的更多用法。
 
 #### 4\. ifup & ifdown
 
@@ -76,47 +76,47 @@ sudo ifdown -a && sudo ifup -a
 
 **Bonus tool: nmtui (click to expand)**
 
-This is another method often used by system administrators. It is a text menu for managing networks right in your terminal.
+这是系统管理员们常用的另外一种方法。它是在命令行终端中管理网络的文本菜单工具。
 
 ```
 nmtui
 ```
 
-这样会打开如下菜单：
+这样就会打开如下菜单：
 
 ![nmtui Menu][5]
 
-**Note** that in **nmtui** , you can select another option by using the **up** and **down arrow keys**.
+**注意** 在 **nmtui** 中，你可以通过 **up** 和 **down 方向键** 选择选项。
 
-Select **Activate a connection** :
+选择 **Activate a connection** :
 
 ![nmtui Menu Select "Activate a connection"][6]
 
-Press **Enter**. This should now open the **connections** menu.
+按下 **Enter** 键，打开 **connections** 菜单。
 
 ![nmtui Connections Menu][7]
 
-Here, go ahead and select the network with a **star (*)** next to it. In my case, it’s MGEO72.
+接下来，选择前面带 **星号 （*）** 的网络。在这个例子中，就是 MGEO72 。
 
 ![Select your connection in the nmtui connections menu.][8]
 
-Press **Enter**. This should **deactivate** your connection.
+按下 **Enter** 键。这样就 **关闭** 你的网络连接。
 
 ![nmtui Connections Menu with no active connection][9]
 
-Select the connection you want to activate:
+选择你要连接的网络：
 
 ![Select the connection you want in the nmtui connections menu.][10]
 
-Press **Enter**. This should reactivate the selected connection.
+按下 **Enter** 键。这样就重启了所选择的网络连接。
 
 ![nmtui Connections Menu][11]
 
-双击 **Tab** 键，选择到 **Back** ：
+双击 **Tab** 键，选择 **Back** ：
 
 ![Select "Back" in the nmtui connections menu.][12]
 
-按下 **Enter**。这样就会回到 **nmtui** 主菜单。
+按下 **Enter** 键。这样就会回到 **nmtui** 的主菜单。
 
 ![nmtui Main Menu][13]
 
