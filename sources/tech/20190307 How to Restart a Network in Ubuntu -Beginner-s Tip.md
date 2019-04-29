@@ -10,7 +10,7 @@
 如何在 Ubuntu 中重启网络服务 [新手提示]
 ======
 
-你 [using an Ubuntu-based system and you just can’t seem to connect to your network][1]? 你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决.
+你 [是否正在使用基于 Ubuntu 的系统，然后发现无法连接网络][1]？你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决。
 
 在这篇文章中，我会介绍在 Ubuntu 或者其他 Linux 发行版中重启网络的几种方法，你可以根据自身需要选择对应的方法。这些方法基本分为两类：
 
@@ -62,17 +62,17 @@ sudo nmcli networking on
 
 #### 4\. ifup & ifdown
 
-这两个命令是直接操作网卡，, changing it’s state to one in which it either can or can not transmit and receive data. It’s one of the [must know networking commands in Linux][4].
+这两个命令是直接操作网口，将网口状态xxx。这是 [Linux 中最应该了解的网络命令][4] 之一。
 
-To shut down all network interfaces, use ifdown and then use ifup to turn all network interfaces back on.
+使用 ifdown 关闭所有网口，再使用 ifup 重新启用网口。
 
-A good practice would be to combine both of these commands:
+通常推荐的做法是将这两个命令一起使用。
 
 ```
 sudo ifdown -a && sudo ifup -a
 ```
 
-**Note:** This method will not make the network icon in your systray disappear, and yet you won’t be able to have a connection of any sort.
+**注意：** 这种方法不会让网络图标从系统托盘中消失，另外，你也无法进行网络连接。
 
 **Bonus tool: nmtui (click to expand)**
 
