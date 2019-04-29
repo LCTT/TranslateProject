@@ -67,10 +67,10 @@ app = config.make_wsgi_app()
 import time
 from prometheus_client import push_to_gateway
 def push_temperature(url):
-while True:
-registry = prometheus_temperature(get_temperature())
-push_to_gateway(url, "temperature collector", registry)
-time.sleep(60*60)
+    while True:
+        registry = prometheus_temperature(get_temperature())
+        push_to_gateway(url, "temperature collector", registry)
+        time.sleep(60*60)
 ```
 
 URL 是推送网关的 URL。它通常以 **:9091** 结尾。
