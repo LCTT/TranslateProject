@@ -7,33 +7,32 @@
 [#]: via: (https://opensource.com/article/19/4/environment-projects)
 [#]: author: (Laura Hilliger https://opensource.com/users/laurahilliger)
 
-8 environment-friendly open software projects you should know
+8 个你应该了解的环保开源项目
 ======
-Celebrate Earth Day by contributing to these projects dedicated to
-improving our environment.
+通过给这些致力于提升环境的项目做贡献来庆祝地球日。
 ![][1]
 
-For the last few years, I've been helping [Greenpeace][2] build its first fully open source software project, Planet 4. [Planet 4][3] is a global engagement platform where Greenpeace supporters and activists can interact and engage with the organization. The goal is to drive people to action on behalf of our planet. We want to invite participation and use people power to battle global issues like climate change and plastic pollution. Developers, designers, writers, contributors, and others who are looking for an open source way to support environmentalism are more than welcome to [get involved][4]!
+在过去的几年里，我一直在帮助 [Greenpeace][2] 建立其第一个完全开源的项目，Planet 4. [Planet 4][3] 是一个全球参与平台，Greenpeace 的支持者和活动家可以互动并参与组织。它的目标是让人们代表我们的星球采取行动。我们希望邀请参与并利用人力来应对气候变化和塑料污染等全球性问题。它们正在寻找开发者、设计师、作者、贡献者和其他通过开源支持环保主义的人都非常欢迎[参与进来][4]！
 
-Planet 4 is far from the only open source project focused on the environment. For Earth Day, I thought I'd share seven other open source projects that have our planet in mind.
+Planet 4 远非唯一关注环境的开源项目。对于地球日，我会分享其他七个关注我们星球的开源项目。
 
-**[Eco Hacker Farm][5]** works to support sustainable communities. It advises and supports projects combining hackerspaces/hackbases and permaculture living. The organization also has online software projects. Visit its [wiki][6] or reach out on [Twitter][7] to learn more about what Eco Hacker Farm is doing.
+**[Eco Hacker Farm][5]** 致力于支持可持续社区。它建议并支持将黑客空间/黑客基地和永续农业生活结合在一起的项目。该组织还有在线项目。访问其 [wiki][6] 或 [Twitter][7] 了解有关 Eco Hacker Farm 正在做的更多信息。
 
-**[Public Lab][8]** is an open community and nonprofit organization that works to put science in the hands of citizens. Formed after the BP oil disaster in 2010, Public Lab works with open source to aid environmental exploration and investigation. It's a diverse community with lots of ways to [contribute][9].
+**[Public Lab][8]** 是一个开放社区和非营利组织，它致力于将科学掌握在公民手中。它于 2010 年在 BP 石油灾难后形成，Public Lab 与开源合作，协助环境勘探和调查。它是一个多元化的社区，有很多方法可以做[贡献][9]。
 
-A while back, Don Watkins, a community moderator here on Opensource.com, wrote about **[Open Climate Workbench][10]** , a project from the Apache Foundation. The [OCW][11] provides software to do climate modeling and evaluation, which can have all sorts of applications.
+不久前，Opensource.com 的管理 Don Watkins 撰写了一篇 **[Open Climate Workbench][10]** 的文章，该项目来自 Apache 基金会。 [OCW][11] 提供了进行气候建模和评估的软件，可用于各种应用。
 
-**[Open Source Ecology][12]** is a project that aims to improve how our economy functions. With an eye on environmental regeneration and social justice, the project seeks to redefine some of our dirty production and distribution techniques to create a more sustainable civilization.
+**[Open Source Ecology][12]** 是一个旨在改善经济运作方式的项目。该项目着眼于环境再生和社会公正，它旨在重新定义我们的一些肮脏的生产和分配技术，以创造一个更可持续的文明。
 
-Fostering collaboration around open source and big data tools to enable research in ocean, atmosphere, land, and climate, " **[Pangeo][13]** is first and foremost a community promoting open, reproducible, and scalable science." Big data can change the world!
+促进开源和大数据工具之间的合作，以实现海洋、大气、土地和气候的研究，“ **[Pangeo][13]** 是第一个推广开放、可重复和可扩展科学的社区。”大数据可以改变世界！
 
-**[**Leaflet**][14]** is a well-known open source JavaScript library. It can be used for all sorts of things, including environmentally friendly projects like the [Arctic Web Map][15], which allows scientists to accurately visualize and analyze the arctic region, a critical ability for climate research.
+**[Leaflet][14]** 是一个著名的开源 JavaScript 库。它可以做各种各样的事情，包括环保项目，如 [Arctic Web Map][15]，它能让科学家准确地可视化和分析北极地区，这是气候研究的关键能力。
 
-And of course, no list would be complete (not that this is a complete list!) without pointing to my friends at Mozilla. The **[Mozilla Science Lab][16]** community is, like all of Mozilla, fiercely open, and it's committed to bringing open source principles to the scientific community. Its projects and communities enable scientists to do the sorts of research our world needs to address some of the most pervasive environmental issues.
+当然，没有我在 Mozilla 的朋友就没有这个列表（不是这个完整的列表！）。**[Mozilla Science Lab][16]** 社区就像所有 Mozilla 项目一样，非常开放，它致力于将开源原则带给科学界。它的项目和社区使科学家能够进行我们世界所需的各种研究，以解决一些最普遍的环境问题。
 
-### How you can contribute
+### 如何贡献
 
-This Earth Day, make a six-month commitment to contribute some of your time to an open source project that helps fight climate change or otherwise encourages people to step up for Mother Earth. There must be scores of environmentally minded open source projects out there, so please leave your favorites in the comments!
+在这个地球日，做为期六个月的承诺，将一些时间贡献给一个有助于应对气候变化的开源项目，或以其他方式鼓励人们保护地球母亲。肯定还有许多关注环境的开源项目，所以请在评论中留言！
 
 --------------------------------------------------------------------------------
 
@@ -41,7 +40,7 @@ via: https://opensource.com/article/19/4/environment-projects
 
 作者：[Laura Hilliger][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
