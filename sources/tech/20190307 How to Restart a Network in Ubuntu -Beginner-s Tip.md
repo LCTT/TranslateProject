@@ -20,9 +20,9 @@
 
 如果你使用的 Ubuntu 服务器版，那么你已经在使用命令行终端了。如果你使用的是桌面版，那么你可以通过快捷键 Ctrl+Alt+T [Ubuntu 键盘快捷键][3] 打开命令行终端。
 
-在 Ubuntu 中，你有多个命令可以重启网络。这些命令，一部分或者说大部分，也适用于在 Debian 或者其他的 Linux 发行版中重启网络。
+在 Ubuntu 中，有多个命令可以重启网络。这些命令，一部分或者说大部分，也适用于在 Debian 或者其他的 Linux 发行版中重启网络。
 
-#### 1\. network manager service
+#### 1\、 network manager service
 
 这是通过命令行方式重启网络最简单的方法。它相当于是通过图形化界面重启网络（重启 Network-Manager 服务）。
 
@@ -32,9 +32,9 @@ sudo service network-manager restart
 
 此时，网络图标会消失一会儿然后重新显示。
 
-#### 2\. systemd
+#### 2\、 systemd
 
-**service** 命令仅仅是该命令的一个封装命令（同样的还有 init.d 系列脚本和 Upstart 相关命令）。 **systemctl** 命令的功能远多于 **service** 命令。通常我更喜欢使用这个命令。
+**service** 命令仅仅是该命令的一个封装（同样的还有 init.d 系列脚本和 Upstart 相关命令）。 **systemctl** 命令的功能远多于 **service** 命令。通常我更喜欢使用这个命令。
 
 ```
 sudo systemctl restart NetworkManager.service
@@ -42,7 +42,7 @@ sudo systemctl restart NetworkManager.service
 
 这时，网络图标又会消失一会儿。 如果你想了解 **systemctl** 的其他选项, 可以参考 man 帮助文档。
 
-#### 3\. nmcli
+#### 3\、 nmcli
 
 这是 Linux 上可以管理网络的另一个工具。这是一个功能强大而且实用的工具。很多系统管理员都喜欢使用该工具，因为它非常容易使用。
 
@@ -96,7 +96,7 @@ nmtui
 
 ![nmtui Connections Menu][7]
 
-接下来，选择前面带 **星号 （*）** 的网络。在这个例子中，就是 MGEO72 。
+接下来，选择前面带 **星号 （*）** 的网络。在这个例子中，就是 MGEO72。
 
 ![Select your connection in the nmtui connections menu.][8]
 
