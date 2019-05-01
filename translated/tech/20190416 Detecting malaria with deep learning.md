@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (warmfrog)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,79 +7,78 @@
 [#]: via: (https://opensource.com/article/19/4/detecting-malaria-deep-learning)
 [#]: author: (Dipanjan  Sarkar  https://opensource.com/users/djsarkar)
 
-Detecting malaria with deep learning
-======
-Artificial intelligence combined with open source tools can improve
-diagnosis of the fatal disease malaria.
+使用深度学习检测疟疾
+==================
+人工智能结合开源硬件工具能够提升严重传染病疟疾的诊断。
 ![][1]
 
-Artificial intelligence (AI) and open source tools, technologies, and frameworks are a powerful combination for improving society. _"Health is wealth"_ is perhaps a cliche, yet it's very accurate! In this article, we will examine how AI can be leveraged for detecting the deadly disease malaria with a low-cost, effective, and accurate open source deep learning solution.
+人工智能（AI）和开源工具，技术，和框架是促进社会进步的强有力的结合。_“健康就是财富”_可能有点陈词滥调，但它却是非常准确的！在本篇文章，我们将测试 AI 是如何与低花费，有效，精确的开源深度学习方法一起被利用来检测致死的传染病疟疾。
 
-While I am neither a doctor nor a healthcare researcher and I'm nowhere near as qualified as they are, I am interested in applying AI to healthcare research. My intent in this article is to showcase how AI and open source solutions can help malaria detection and reduce manual labor.
+我既不是一个医生，也不是一个医疗保健研究者，我也绝不像他们那样合格，我只是对将 AI 应用到医疗保健研究感兴趣。在这片文章中我的想法是展示 AI 和开源解决方案如何帮助疟疾检测和减少人工劳动的方法。
 
 ![Python and TensorFlow][2]
 
-Python and TensorFlow: A great combo to build open source deep learning solutions
+Python and TensorFlow: 一个构建开源深度学习方法的很棒的结合
 
-Thanks to the power of Python and deep learning frameworks like TensorFlow, we can build robust, scalable, and effective deep learning solutions. Because these tools are free and open source, we can build solutions that are very cost-effective and easily adopted and used by anyone. Let's get started!
+感谢 Python 的强大 和像 TensorFlow 这样的深度学习框架，我们能够构建鲁棒的，大规模的，有效的深度学习方法。因为这些工具是自由和开源的，我们能够构建低成本的能够轻易被任何人采纳和使用的解决方案。让我们开始吧！
 
-### Motivation for the project
+### 项目动机
 
-Malaria is a deadly, infectious, mosquito-borne disease caused by _Plasmodium_ parasites that are transmitted by the bites of infected female _Anopheles_ mosquitoes. There are five parasites that cause malaria, but two types— _P. falciparum_ and _P. vivax_ —cause the majority of the cases.
+疟疾是由_疟原虫_造成的致死的，有传染性的，蚊子传播的疾病，主要通过受感染的雌性按蚊叮咬传播。共有五种寄生虫能够造成疟疾，但是样例中的大多数是这两种类型- _恶性疟原虫_ 和 _间日疟原虫_ 造成的。
 
-![Malaria heat map][3]
+![疟疾热图][3]
 
-This map shows that malaria is prevalent around the globe, especially in tropical regions, but the nature and fatality of the disease is the primary motivation for this project.
+这个地图显示了疟疾在全球传播分布形势，尤其在热带地区，但疾病的性质和致命性是该项目的主要动机。
 
-If an infected mosquito bites you, parasites carried by the mosquito enter your blood and start destroying oxygen-carrying red blood cells (RBC). Typically, the first symptoms of malaria are similar to a virus like the flu and they usually begin within a few days or weeks after the mosquito bite. However, these deadly parasites can live in your body for over a year without causing symptoms, and a delay in treatment can lead to complications and even death. Therefore, early detection can save lives.
+如果一个雌性蚊子咬了你，蚊子携带的寄生虫进入你的血液并且开始破坏携带氧气的红细胞（RBC）。通常，疟疾的最初症状类似于流感病毒，在蚊子叮咬后，他们通常在几天或几周内发作。然而，这些致死的寄生虫可以在你的身体里生存长达一年并且不会造成任何症状，延迟治疗可能造成并发症甚至死亡。因此，早期的检查能够挽救生命。
 
-The World Health Organization's (WHO) [malaria facts][4] indicate that nearly half the world's population is at risk from malaria, and there are over 200 million malaria cases and approximately 400,000 deaths due to malaria every year. This is a motivatation to make malaria detection and diagnosis fast, easy, and effective.
+世界健康组织（WHO）的[疟疾事件][4]暗示世界近乎一半的人口面临疟疾的风险，有超过 2 亿 的疟疾病例，每年由于疟疾造成的死亡近乎 40 万。这是使疟疾检测和诊断快速，简单和有效的一个动机。
 
-### Methods of malaria detection
+### 检测疟疾的方法
 
-There are several methods that can be used for malaria detection and diagnosis. The paper on which our project is based, "[Pre-trained convolutional neural networks as feature extractors toward improved Malaria parasite detection in thin blood smear images][5]," by Rajaraman, et al., introduces some of the methods, including polymerase chain reaction (PCR) and rapid diagnostic tests (RDT). These two tests are typically used where high-quality microscopy services are not readily available.
+有几种方法能够用来检测和诊断疟疾。该文中的项目就是基于 Rajaraman，et al. 的论文：“[预先训练的卷积神经网络作为特征提取器，用于改善薄血涂片图像中的疟疾寄生虫检测][5]”，介绍了一些方法，包含聚合酶链反应（PCR）和快速诊断测试（RDT）。这两种测试通常在高质量的显微镜下使用，但这样的设备不是轻易能够获得的。
 
-The standard malaria diagnosis is typically based on a blood-smear workflow, according to Carlos Ariza's article "[Malaria Hero: A web app for faster malaria diagnosis][6]," which I learned about in Adrian Rosebrock's "[Deep learning and medical image analysis with Keras][7]." I appreciate the authors of these excellent resources for giving me more perspective on malaria prevalence, diagnosis, and treatment.
+标准的疟疾诊断通常使基于血液涂片工作流的，根据 Carlos Ariza 的文章“[Malaria Hero: 一个更快诊断疟原虫的网络应用][6]”，我从中了解到 Adrian Rosebrock 的“[使用 Keras 的深度学习和医学图像分析][7]”。我感激这些优秀的资源的作者，让我在疟原虫预防，诊断和治疗方面有了更多的想法。
 
-![Blood smear workflow for Malaria detection][8]
+![疟原虫检测的血涂片工作流程][8]
 
-A blood smear workflow for Malaria detection
+一个疟原虫检测的血涂片工作流程
 
-According to WHO protocol, diagnosis typically involves intensive examination of the blood smear at 100X magnification. Trained people manually count how many red blood cells contain parasites out of 5,000 cells. As the Rajaraman, et al., paper cited above explains:
+根据 WHO 草案，诊断通常包括对放大 100 倍的血涂片的集中检测。训练人们人工计数在 5000 个细胞中有多少红细胞中包含疟原虫。正如上述解释中引用的 Rajaraman， et al. 的论文：
 
-> Thick blood smears assist in detecting the presence of parasites while thin blood smears assist in identifying the species of the parasite causing the infection (Centers for Disease Control and Prevention, 2012). The diagnostic accuracy heavily depends on human expertise and can be adversely impacted by the inter-observer variability and the liability imposed by large-scale diagnoses in disease-endemic/resource-constrained regions (Mitiku, Mengistu, and Gelaw, 2003). Alternative techniques such as polymerase chain reaction (PCR) and rapid diagnostic tests (RDT) are used; however, PCR analysis is limited in its performance (Hommelsheim, et al., 2014) and RDTs are less cost-effective in disease-endemic regions (Hawkes, Katsuva, and Masumbuko, 2009).
+> 薄血涂片帮助检测疟原虫的存在性并且帮助识别造成传染（疾病控制和抑制中心，2012）的物种。诊断准确性在很大程度上取决于人类的专业知识，并且可能受到观察者间差异和疾病流行/资源受限区域大规模诊断所造成的不利影响（Mitiku， Mengistu， and Gelaw， 2003）。可替代的技术是使用聚合酶链反应（PCR）和快速诊断测试（RDT）；然而，PCR 分析受限于它的性能（Hommelsheim， et al.， 2014），RDT 在疾病流行的地区成本效益低(Hawkes，Katsuva， and Masumbuko， 2009)。
 
-Thus, malaria detection could benefit from automation using deep learning.
+因此，疟疾检测可能受益于使用机器学习的自动化。
 
-### Deep learning for malaria detection
+### 疟原虫检测的深度学习
 
-Manual diagnosis of blood smears is an intensive manual process that requires expertise in classifying and counting parasitized and uninfected cells. This process may not scale well, especially in regions where the right expertise is hard to find. Some advancements have been made in leveraging state-of-the-art image processing and analysis techniques to extract hand-engineered features and build machine learning-based classification models. However, these models are not scalable with more data being available for training and given the fact that hand-engineered features take a lot of time.
+人工诊断血涂片是一个加强的人工过程，需要专业知识来分类和计数被寄生虫感染的和未感染的细胞。这个过程可能不能很好的规模化，尤其在那些专业人士不足的地区。在利用最先进的图像处理和分析技术提取人工选取特征和构建基于机器学习的分类模型方面取得了一些进展。然而，这些模型不能大规模推广，因为没有更多的数据用来训练，并且人工选取特征需要花费很长时间。
 
-Deep learning models, or more specifically convolutional neural networks (CNNs), have proven very effective in a wide variety of computer vision tasks. (If you would like additional background knowledge on CNNs, I recommend reading [CS231n Convolutional Neural Networks for Visual Recognition][9].) Briefly, the key layers in a CNN model include convolution and pooling layers, as shown in the following figure.
+深度学习模型，或者更具体地讲，卷积神经网络（CNNs），已经被证明在各种计算机视觉任务中非常有效。（如果你想有额外的关于 CNNs 的背景知识，我推荐你阅读[视觉识别的 CS2331n 卷积神经网络][9]。）简单地讲，CNN 模型的关键层包含卷积和池化层，正如下面图像显示。
 
 ![A typical CNN architecture][10]
 
-A typical CNN architecture
+一个典型的 CNN 架构
 
-Convolution layers learn spatial hierarchical patterns from data, which are also translation-invariant, so they are able to learn different aspects of images. For example, the first convolution layer will learn small and local patterns, such as edges and corners, a second convolution layer will learn larger patterns based on the features from the first layers, and so on. This allows CNNs to automate feature engineering and learn effective features that generalize well on new data points. Pooling layers helps with downsampling and dimension reduction.
+卷积层从数据中学习空间层级模式，它是平移不变的，因此它们能够学习不同方面的图像。例如，第一个卷积层将学习小的和本地图案，例如边缘和角落，第二个卷积层学习基于第一层的特征的更大的图案，等等。这允许 CNNs 自动化提取特征并且学习对于新数据点通用的有效的特征。池化层帮助下采样和降维。
 
-Thus, CNNs help with automated and scalable feature engineering. Also, plugging in dense layers at the end of the model enables us to perform tasks like image classification. Automated malaria detection using deep learning models like CNNs could be very effective, cheap, and scalable, especially with the advent of transfer learning and pre-trained models that work quite well, even with constraints like less data.
+因此，CNNs 帮助自动化和规模化的特征工程。同样，在模型末尾加上密集层允许我们执行像图像分类这样的任务。使用像 CNNs 者的深度学习模型自动的疟疾检测可能非常有效，便宜和具有规模性，尤其是迁移学习和预训练模型效果非常好，甚至在少量数据的约束下。
 
-The Rajaraman, et al., paper leverages six pre-trained models on a dataset to obtain an impressive accuracy of 95.9% in detecting malaria vs. non-infected samples. Our focus is to try some simple CNN models from scratch and a couple of pre-trained models using transfer learning to see the results we can get on the same dataset. We will use open source tools and frameworks, including Python and TensorFlow, to build our models.
+Rajaraman， et al. 的论文在一个数据集上利用六个预训练模型在检测疟疾 vs 无感染样本获取到令人吃惊的 95.9% 的准确率。我们的关注点是从头开始尝试一些简单的 CNN 模型和用一个预训练的训练模型使用迁移学习来查看我们能够从相同的数据集中得到什么。我们将使用开源工具和框架，包括 Python 和 TensorFlow，来构建我们的模型。
 
-### The dataset
+### 数据集
 
-The data for our analysis comes from researchers at the Lister Hill National Center for Biomedical Communications (LHNCBC), part of the National Library of Medicine (NLM), who have carefully collected and annotated the [publicly available dataset][11] of healthy and infected blood smear images. These researchers have developed a mobile [application for malaria detection][12] that runs on a standard Android smartphone attached to a conventional light microscope. They used Giemsa-stained thin blood smear slides from 150 _P. falciparum_ -infected and 50 healthy patients, collected and photographed at Chittagong Medical College Hospital, Bangladesh. The smartphone's built-in camera acquired images of slides for each microscopic field of view. The images were manually annotated by an expert slide reader at the Mahidol-Oxford Tropical Medicine Research Unit in Bangkok, Thailand.
+我们分析的数据来自 Lister Hill 国家生物医学交流中心（LHNCBC），国家医学图书馆（NLM）的一部分，他们细心收集和标记了健康和受感染的血涂片图像的[公众可获得的数据集][11]。这些研究者已经开发了一个运行在 Android 智能手机的移动[疟疾检测应用][12]，连接到一个传统的光学显微镜。它们使用 吉姆萨染液 将 150 个受恶性疟原虫感染的和 50 个健康病人的薄血涂片染色，这些薄血涂片是在孟加拉的吉大港医学院附属医院收集和照相的。使用智能手机的内置相机获取每个显微镜视窗内的图像。这些图片由在泰国曼谷的马希多-牛津热带医学研究所的一个专家使用幻灯片阅读器标记的。
 
-Let's briefly check out the dataset's structure. First, I will install some basic dependencies (based on the operating system being used).
+让我们简洁的查看数据集的结构。首先，我将安装一些基础的依赖（基于使用的操作系统）。
 
 ![Installing dependencies][13]
 
-I am using a Debian-based system on the cloud with a GPU so I can run my models faster. To view the directory structure, we must install the tree dependency (if we don't have it) using **sudo apt install tree**.
+我使用的是云上的带有一个 GPU 的基于 Debian 的操作系统，这样我能更快的运行我的模型。为了查看目录结构，我们必须安装 tree 依赖（如果我们没有安装的话）使用 **sudo apt install tree**。
 
 ![Installing the tree dependency][14]
 
-We have two folders that contain images of cells, infected and healthy. We can get further details about the total number of images by entering:
+我们有两个文件夹包含血细胞的图像，包括受感染的和健康的。我们可以获取关于图像总数更多的细节通过输入：
 
 
 ```
@@ -98,7 +97,7 @@ len(infected_files), len(healthy_files)
 (13779, 13779)
 ```
 
-It looks like we have a balanced dataset with 13,779 malaria and 13,779 non-malaria (uninfected) cell images. Let's build a data frame from this, which we will use when we start building our datasets.
+看起来我们有一个平衡的 13,779 张疟疾的 和 13,779 张非疟疾的（健康的）血细胞图像。让我们根据这些构建数据帧，我们将用这些数据帧来构建我们的数据集。
 
 
 ```
@@ -117,9 +116,9 @@ files_df.head()
 
 ![Datasets][15]
 
-### Build and explore image datasets
+### 构建和参所图像数据集
 
-To build deep learning models, we need training data, but we also need to test the model's performance on unseen data. We will use a 60:10:30 split for train, validation, and test datasets, respectively. We will leverage the train and validation datasets during training and check the performance of the model on the test dataset.
+为了构建深度学习模型，我们需要训练数据，但是我们还需要使用不可见的数据测试模型的性能。相应的，我们将使用 60：10：30 的划分用于训练，验证和测试数据集。我们将在训练期间应用训练和验证数据集并用测试数据集来检查模型的性能。
 
 
 ```
@@ -143,7 +142,7 @@ Val: Counter({'healthy': 970, 'malaria': 959})
 Test: Counter({'malaria': 4193, 'healthy': 4075})
 ```
 
-The images will not be of equal dimensions because blood smears and cell images vary based on the human, the test method, and the orientation of the photo. Let's get some summary statistics of our training dataset to determine the optimal image dimensions (remember, we don't touch the test dataset at all!).
+这些图片维度并不相同，因此血涂片和细胞图像是基于人类，测试方法，图片的朝向。让我们总结我们的训练数据集的统计信息来决定最佳的图像维度（牢记，我们根本不会碰测试数据集）。
 
 
 ```
@@ -183,7 +182,7 @@ Median Dimensions: [130. 130. 3.]
 Max Dimensions: [385 394 3]
 ```
 
-We apply parallel processing to speed up the image-read operations and, based on the summary statistics, we will resize each image to 125x125 pixels. Let's load up all of our images and resize them to these fixed dimensions.
+我们应用并行处理来加速图像读取，并且在总结统计时，我们将重新调整每幅图片到 125x125 像素。让我们载入我们所有的图像并重新调整它们为这些固定的大小。
 
 
 ```
@@ -246,7 +245,7 @@ ThreadPoolExecutor-1_8: working on img num: 8267
 ((17361, 125, 125, 3), (1929, 125, 125, 3), (8268, 125, 125, 3))
 ```
 
-We leverage parallel processing again to speed up computations pertaining to image load and resizing. Finally, we get our image tensors of the desired dimensions, as depicted in the preceding output. We can now view some sample cell images to get an idea of how our data looks.
+我们再次应用并行处理来加速有关图像载入和重新调整大小。最终，我们获得了想要的维度的图片张量，正如之前描述的。我们现在查看一些血细胞图像样本来对我们的数据什么样有个印象。
 
 
 ```
@@ -267,9 +266,9 @@ plt.xticks([]) , plt.yticks([])
 
 ![Malaria cell samples][16]
 
-Based on these sample images, we can see some subtle differences between malaria and healthy cell images. We will make our deep learning models try to learn these patterns during model training.
+基于这些样本图像，我们看到一些疟疾和健康细胞图像的细微不同。我们将使我们的深度学习模型试图在模型训练中学习这些模式。
 
-Before can we start training our models, we must set up some basic configuration settings.
+开始我们的模型训练前，我们必须建立一些基础的配置设置。
 
 
 ```
@@ -295,7 +294,7 @@ print(train_labels[:6], train_labels_enc[:6])
 ['malaria' 'malaria' 'malaria' 'healthy' 'healthy' 'malaria'] [1 1 1 0 0 1]
 ```
 
-We fix our image dimensions, batch size, and epochs and encode our categorical class labels. The alpha version of TensorFlow 2.0 was released in March 2019, and this exercise is the perfect excuse to try it out.
+我们修复我们的图像维度，批大小，和历元并编码我们的分类类标签。TensorFlow 2.0 于 2019 年三月发布，这个练习是非常好的借口来试用它。
 
 
 ```
@@ -311,13 +310,13 @@ tf.__version__
 '2.0.0-alpha0'
 ```
 
-### Deep learning model training
+### 深度学习训练
 
-In the model training phase, we will build three deep learning models, train them with our training data, and compare their performance using the validation data. We will then save these models and use them later in the model evaluation phase.
+在模型训练阶段，我们将构建三个深度训练模型，使用我们的训练集训练，使用验证数据比较它们的性能。我们然后保存这些模型并在之后的模型评估阶段使用它们。
 
-#### Model 1: CNN from scratch
+#### 模型 1：从头开始的 CNN
 
-Our first malaria detection model will build and train a basic CNN from scratch. First, let's define our model architecture.
+我们的第一个疟疾检测模型将从头开始构建和训练一个基础的 CNN。首先，让我们定义我们的模型架构，
 
 
 ```
@@ -376,7 +375,7 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-Based on the architecture in this code, our CNN model has three convolution and pooling layers, followed by two dense layers, and dropouts for regularization. Let's train our model.
+基于这些代码的架构，我们的 CNN 模型有三个卷积和一个池化层，跟随两个致密层，以及用于正则化的丢失。让我们训练我们的模型。
 
 
 ```
@@ -411,7 +410,7 @@ Epoch 25/25
 17361/17361 [====] - 30s 2ms/sample - loss: 0.0034 - accuracy: 0.9994 - val_loss: 0.3699 - val_accuracy: 0.9559
 ```
 
-We get a validation accuracy of 95.6%, which is pretty good, although our model looks to be overfitting slightly (based on looking at our training accuracy, which is 99.9%). We can get a clear perspective on this by plotting the training and validation accuracy and loss curves.
+我们获得了 95.6% 的验证精确率，这很好，尽管我们的模型看起来有些过拟合（通过查看我们的训练精确度，是 99.9%）。通过绘制训练和验证的精度和损失曲线，我们可以清楚地看到这一点。
 
 
 ```
@@ -440,47 +439,47 @@ l2 = ax2.legend(loc="best")
 
 ![Learning curves for basic CNN][17]
 
-Learning curves for basic CNN
+基础 CNN 学习曲线
 
-We can see after the fifth epoch that things don't seem to improve a whole lot overall. Let's save this model for future evaluation.
+我们可以看在在第五个历元，情况并没有改善很多。让我们保存这个模型用于将来的评估。
 
 
 ```
 `model.save('basic_cnn.h5')`
 ```
 
-#### Deep transfer learning
+#### 深度迁移学习
 
-Just like humans have an inherent capability to transfer knowledge across tasks, transfer learning enables us to utilize knowledge from previously learned tasks and apply it to newer, related ones, even in the context of machine learning or deep learning. If you are interested in doing a deep-dive on transfer learning, you can read my article "[A comprehensive hands-on guide to transfer learning with real-world applications in deep learning][18]" and my book [_Hands-On Transfer Learning with Python_][19].
+就像人类有与生俱来的能力在不同任务间传输知识，迁移学习允许我们利用从以前任务学到的知识用到新的任务，相关的任务，甚至在机器学习或深度学习的上下文中。如果想深入探究迁移学习，你应该看我的文章“[一个易于理解与现实应用一起学习深度学习中的迁移学习的指导实践][18]”和我的书[ Python 迁移学习实践][19]。
 
-![Ideas for deep transfer learning][20]
+![深度迁移学习的想法][20]
 
-The idea we want to explore in this exercise is:
+在这篇实践中我们想要探索的想法是：
 
-> Can we leverage a pre-trained deep learning model (which was trained on a large dataset, like ImageNet) to solve the problem of malaria detection by applying and transferring its knowledge in the context of our problem?
+> 在我们的问题上下文中，我们能够利用一个预训练深度学习模型（在大数据集上训练的，像 ImageNet）通过应用和迁移知识来解决疟疾检测的问题吗？
 
-We will apply the two most popular strategies for deep transfer learning.
+我们将应用两个深度迁移学习的最流行的策略。
 
-  * Pre-trained model as a feature extractor
-  * Pre-trained model with fine-tuning
+  * 预训练模型作为特征提取器
+  * 微调的预训练模型
 
 
 
-We will be using the pre-trained VGG-19 deep learning model, developed by the Visual Geometry Group (VGG) at the University of Oxford, for our experiments. A pre-trained model like VGG-19 is trained on a huge dataset ([ImageNet][21]) with a lot of diverse image categories. Therefore, the model should have learned a robust hierarchy of features, which are spatial-, rotational-, and translation-invariant with regard to features learned by CNN models. Hence, the model, having learned a good representation of features for over a million images, can act as a good feature extractor for new images suitable for computer vision problems like malaria detection. Let's discuss the VGG-19 model architecture before unleashing the power of transfer learning on our problem.
+我们将使用预训练的 VGG-19 深度训练模型，由剑桥大学的视觉几何组（VGG）开发，作为我们的实验。一个像 VGG-19 的预训练模型在一个大的数据集上使用了很多不同的图像分类训练（[Imagenet][21]）。因此，这个模型应该已经学习到了鲁棒的特征层级结构，相对于你的 CNN 模型学到的特征，是空间不变的，转动不变的，平移不变的。因此，这个模型，已经从百万幅图片中学习到了一个好的特征显示，对于像疟疾检测这样的计算机视觉问题，可以作为一个好的合适新图像的特征提取器。在我们的问题中释放迁移学习的能力之前，让我们先讨论 VGG-19 模型。
 
-##### Understanding the VGG-19 model
+##### 理解 VGG-19 模型
 
-The VGG-19 model is a 19-layer (convolution and fully connected) deep learning network built on the ImageNet database, which was developed for the purpose of image recognition and classification. This model was built by Karen Simonyan and Andrew Zisserman and is described in their paper "[Very deep convolutional networks for large-scale image recognition][22]." The architecture of the VGG-19 model is:
+VGG-19 模型是一个构建在 ImageNet 数据库之上的 19 层（卷积和全连接的）的深度学习网络，该数据库为了图像识别和分类的目的而开发。该模型由 Karen Simonyan 和 Andrew Zisserman 构建，在它们的论文”[大规模图像识别的非常深的卷积网络][22]“中描述。VGG-19 的架构模型是：
 
-![VGG-19 Model Architecture][23]
+![VGG-19 模型架构][23]
 
-You can see that we have a total of 16 convolution layers using 3x3 convolution filters along with max pooling layers for downsampling and two fully connected hidden layers of 4,096 units in each layer followed by a dense layer of 1,000 units, where each unit represents one of the image categories in the ImageNet database. We do not need the last three layers since we will be using our own fully connected dense layers to predict malaria. We are more concerned with the first five blocks so we can leverage the VGG model as an effective feature extractor.
+你可以看到我们总共有 16 个使用 3x3 卷积过滤器的卷积层，与最大的池化层来下采样，和由 4096 个单元组成的两个全连接的隐藏层，每个隐藏层之后跟随一个由 1000 个单元组成的致密层，每个单元代表 ImageNet 数据库中的一个分类。我们不需要最后三层，因为我们将使用我们自己的全连接致密层来预测疟疾。我们更关心前五块，因此我们可以利用 VGG 模型作为一个有效的特征提取器。
 
-We will use one of the models as a simple feature extractor by freezing the five convolution blocks to make sure their weights aren't updated after each epoch. For the last model, we will apply fine-tuning to the VGG model, where we will unfreeze the last two blocks (Block 4 and Block 5) so that their weights will be updated in each epoch (per batch of data) as we train our own model.
+我们将使用模型之一作为一个简单的特征提取器通过冻结五个卷积块的方式来确保它们的位权在每个时期后不会更新。对于最后一个模型，我们会应用微调到 VGG 模型，我们会解冻最后两个块（第 4 和第 5）因此当我们训练我们的模型时，它们的位权在每个时期（每批数据）被更新。
 
-#### Model 2: Pre-trained model as a feature extractor
+#### 模型 2：预训练的模型作为一个特征提取器
 
-For building this model, we will leverage TensorFlow to load up the VGG-19 model and freeze the convolution blocks so we can use them as an image feature extractor. We will plug in our own dense layers at the end to perform the classification task.
+为了构建这个模型，我们将利用 TensorFlow 载入 VGG-19 模型并且冻结卷积块因此我们用够将他们用作特征提取器。我们插入我们自己的致密层在末尾来执行分类任务。
 
 
 ```
@@ -541,7 +540,7 @@ Non-trainable params: 20,024,384
 _________________________________________________________________
 ```
 
-It is evident from this output that we have a lot of layers in our model and we will be using the frozen layers of the VGG-19 model as feature extractors only. You can use the following code to verify how many layers in our model are indeed trainable and how many total layers are present in our network.
+输出是很明白的，在我们的模型中我们有了很多层，我们将只利用 VGG-19 模型的冻结层作为特征提取器。你可以使用下列代码来验证我们的模型有多少层是实际训练的，我们的网络中总共存在多少层。
 
 
 ```
@@ -554,22 +553,22 @@ Total Layers: 28
 Total trainable layers: 6
 ```
 
-We will now train our model using similar configurations and callbacks to the ones we used in our previous model. Refer to [my GitHub repository][24] for the complete code to train the model. We observe the following plots showing the model's accuracy and loss.
+我们将使用和我们之前的模型相似的配置和回调来训练我们的模型。参考 [我的 GitHub 仓库][24] 获取训练模型的完整代码。我们观察下列显示模型精确度和损失曲线。
 
 ![Learning curves for frozen pre-trained CNN][25]
 
-Learning curves for frozen pre-trained CNN
+冻结的预训练的 CNN 的学习曲线
 
-This shows that our model is not overfitting as much as our basic CNN model, but the performance is slightly less than our basic CNN model. Let's save this model for future evaluation.
+这显示了我们的模型没有像我们的基础 CNN 模型那样过拟合，但是性能有点不如我们的基础的 CNN 模型。让我们保存这个模型用户将来的评估。
 
 
 ```
 `model.save('vgg_frozen.h5')`
 ```
 
-#### Model 3: Fine-tuned pre-trained model with image augmentation
+#### 模型 3：使用图像增强来微调预训练的模型
 
-In our final model, we will fine-tune the weights of the layers in the last two blocks of our pre-trained VGG-19 model. We will also introduce the concept of image augmentation. The idea behind image augmentation is exactly as the name sounds. We load in existing images from our training dataset and apply some image transformation operations to them, such as rotation, shearing, translation, zooming, and so on, to produce new, altered versions of existing images. Due to these random transformations, we don't get the same images each time. We will leverage an excellent utility called **ImageDataGenerator** in **tf.keras** that can help build image augmentors.
+在我们的最后一个模型中，我们微调预定义好的 VGG-19 模型的最后两个块中层的位权。我们同样引入图像增强的概念。图像增强背后的想法和名字一样。我们从训练数据集中载入已存在的图像，并且应用转换操作，例如旋转，裁剪，转换，放大缩小，等等，来产生新的，改变的版本。由于这些随机的转换，我们每次获取到的图像不一样。我们将应用一个在 **tf.keras**  的优秀的工具叫做 **ImageDataGenerator** 来帮助构建图像增强器。
 
 
 ```
@@ -588,7 +587,7 @@ train_generator = train_datagen.flow(train_data, train_labels_enc, batch_size=BA
 val_generator = val_datagen.flow(val_data, val_labels_enc, batch_size=BATCH_SIZE, shuffle=False)
 ```
 
-We will not apply any transformations on our validation dataset (except for scaling the images, which is mandatory) since we will be using it to evaluate our model performance per epoch. For a detailed explanation of image augmentation in the context of transfer learning, feel free to check out my [article][18] cited above. Let's look at some sample results from a batch of image augmentation transforms.
+我们不会应用任何转换在我们的验证数据集上（除非是调整大小，它是强制性适应的）因为我们将在每个时期来评估我们的模型性能。对于在传输学习上下文中的图像增强的详细解释，请自由查看我们上述引用的[文章][18]。让我们从一批图像增强转换中查看一些样本结果。
 
 
 ```
@@ -603,7 +602,7 @@ l = [ax[i].imshow(sample[i][0][0]) for i in range(0,5)]
 
 ![Sample augmented images][26]
 
-You can clearly see the slight variations of our images in the preceding output. We will now build our deep learning model, making sure the last two blocks of the VGG-19 model are trainable.
+你可以清晰的看到与之前的输出中我们图像的轻微变化。我们现在构建我们的学习模型，确保 VGG-19 模型的最后两块是可以训练的。
 
 
 ```
@@ -644,7 +643,7 @@ Total Layers: 28
 Total trainable layers: 16
 ```
 
-We reduce the learning rate in our model since we don't want to make to large weight updates to the pre-trained layers when fine-tuning. The model's training process will be slightly different since we are using data generators, so we will be leveraging the **fit_generator(…)** function.
+在我们的模型中我们降低了学习率，因为我们微调的时候不想在预训练的数据集上做大的位权更新。模型的训练过程可能有轻微的不同，因为我们使用了数据生成器，因此我们应用了 **fit_generator(...)** 函数。
 
 
 ```
@@ -672,24 +671,24 @@ Epoch 25/25
 271/271 [====] - 128s 473ms/step - loss: 0.0792 - accuracy: 0.9729 - val_loss: 0.1127 - val_accuracy: 0.9641
 ```
 
-This looks to be our best model yet. It gives us a validation accuracy of almost 96.5% and, based on the training accuracy, it doesn't look like our model is overfitting as much as our first model. This can be verified with the following learning curves.
+这看起来是我们的最好的模型。它给了我们近乎 96.5% 的验证精确率，基于训练精度，它看起来不像我们的第一个模型那样过拟合。这可以通过下列的学习曲线验证。
 
 ![Learning curves for fine-tuned pre-trained CNN][27]
 
-Learning curves for fine-tuned pre-trained CNN
+微调预训练的 CNN 的学习曲线
 
-Let's save this model so we can use it for model evaluation on our test dataset.
+让我们保存这个模型，因此我们能够在测试集上使用。
 
 
 ```
 `model.save('vgg_finetuned.h5')`
 ```
 
-This completes our model training phase. We are now ready to test the performance of our models on the actual test dataset!
+这完成了我们的模型训练阶段。我们准备好在测试集上测试我们模型的性能。
 
-### Deep learning model performance evaluation
+### 深度学习模型性能评估
 
-We will evaluate the three models we built in the training phase by making predictions with them on the data from our test dataset—because just validation is not enough! We have also built a nifty utility module called **model_evaluation_utils** , which we can use to evaluate the performance of our deep learning models with relevant classification metrics. The first step is to scale our test data.
+我们将评估我们在训练阶段构建的三个模型，通过在我们的测试集上做预测，因为仅仅验证是不够的！我们同样构建了一个检测工具模块叫做 **model_evaluation_utils**，我们可以使用相关分类指标用来评估使用我们深度学习模型的性能。第一步是测量我们的数据集。
 
 
 ```
@@ -700,7 +699,7 @@ test_imgs_scaled.shape, test_labels.shape
 ((8268, 125, 125, 3), (8268,))
 ```
 
-The next step involves loading our saved deep learning models and making predictions on the test data.
+下一步包括载入我们保存的深度学习模型，在测试集上预测。
 
 
 ```
@@ -722,7 +721,7 @@ vgg_ft_pred_labels = le.inverse_transform([1 if pred > 0.5 else 0
 for pred in vgg_ft_preds.ravel()])
 ```
 
-The final step is to leverage our **model_evaluation_utils** module and check the performance of each model with relevant classification metrics.
+下一步是应用我们的 **model_evaluation_utils** 模块根据相应分类指标来检查每个模块的性能。
 
 
 ```
@@ -739,15 +738,15 @@ index=['Basic CNN', 'VGG-19 Frozen', 'VGG-19 Fine-tuned'])
 
 ![Model accuracy][28]
 
-It looks like our third model performs best on the test dataset, giving a model accuracy and an F1-score of 96%, which is pretty good and quite comparable to the more complex models mentioned in the research paper and articles we mentioned earlier.
+看起来我们的第三个模型在我们的测试集上执行的最好，给出了一个模型精确性为 96% 的 F1得分，比起上述我们早期引用的研究论文和文章中提及的复杂的模型是相当好的。
 
-### Conclusion
+### 总结
 
-Malaria detection is not an easy procedure, and the availability of qualified personnel around the globe is a serious concern in the diagnosis and treatment of cases. We looked at an interesting real-world medical imaging case study of malaria detection. Easy-to-build, open source techniques leveraging AI can give us state-of-the-art accuracy in detecting malaria, thus enabling AI for social good.
+疟疾检测不是一个简单的程序，全球的合格的人员的可获得性在样例诊断和治疗当中是一个严重的问题。我们看到一个关于疟疾的有趣的真实世界的医学影像案例。易于构建的，开源的技术利用 AI 在检测疟疾方面可以给我们最先进的精确性，因此允许 AI 对社会是有益的。
 
-I encourage you to check out the articles and research papers mentioned in this article, without which it would have been impossible for me to conceptualize and write it. If you are interested in running or adopting these techniques, all the code used in this article is available on [my GitHub repository][24]. Remember to download the data from the [official website][11].
+我鼓励你检查这片文章中提到的文章和研究论文，没有它们，我就不能形成概念并写出来。如果你对运行和采纳这些技术感兴趣，本篇文章所有的代码都可以在[我的 GitHub 仓库][24]获得。记得从[官方网站][11]下载数据。
 
-Let's hope for more adoption of open source AI capabilities in healthcare to make it less expensive and more accessible for everyone around the world!
+让我们希望在健康医疗方面更多的采纳开源的 AI 能力，使它在世界范围内变得便宜些，易用些。
 
 --------------------------------------------------------------------------------
 
@@ -755,7 +754,7 @@ via: https://opensource.com/article/19/4/detecting-malaria-deep-learning
 
 作者：[Dipanjan (DJ) Sarkar (Red Hat)][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[warmfrog](https://github.com/warmfrog)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
