@@ -10,7 +10,7 @@
 如何在 Ubuntu 中重启网络服务 【新手提示】
 ======
 
-你 [是否正在使用基于 Ubuntu 的系统，然后发现无法连接网络][1]？你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决。
+你[是否正在使用基于 Ubuntu 的系统，然后发现无法连接网络][1]？你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决。
 
 在这篇文章中，我会介绍在 Ubuntu 或者其他 Linux 发行版中重启网络的几种方法，你可以根据自身需要选择对应的方法。这些方法基本分为两类：
 
@@ -134,37 +134,43 @@ nmtui
 
 NM 程序是 [NetworkManager][15] 的系统托盘程序标志。我们将使用它来重启网络。
 
-首先，查看顶部面板。 你会在系统托盘找到一个网络图标 （因为我使用 Wi-Fi，所以这里是一个 Wi-Fi 图标）。
+首先，查看顶部状态栏。 你会在系统托盘找到一个网络图标 （因为我使用 Wi-Fi，所以这里是一个 Wi-Fi 图标）。
 
-接下来，点击该图标（也可以点击声音图标或电池图标）。这会打开菜单。选择“Turn Off”。
+接下来，点击该图标（也可以点击声音图标或电池图标）。这会打开菜单。选择 “Turn Off” 。
 
 ![Restart network in Ubuntu][16]
+
 关闭你的网络。
 
-网络图标会在面板中消失，这表示你已经成功关闭网络了。
+网络图标会在状态栏中消失，这表示你已经成功关闭网络了。
 
-再次点击系统托盘重新打开菜单，选择“Turn On”。
+再次点击系统托盘重新打开菜单，选择 “Turn On” 。
 
 ![Restarting network in Ubuntu][17]
+
 重新开启网络。
 
 恭喜！你现在已经重启你的网络了。
 
 #### Bonus Tip: 刷新可用网络列表
 
-Suppose you are connected to a network already but you want to connect to another network. How do you refresh the WiFi to see what other networks are available? Let me show you that.
+如果你已经连接上一个网络，但是你想连接到另外一个网络，你如何刷新 WiFi 列表，查找其他可用的网络呢？我来向你展示一下。
 
-Ubuntu doesn’t have a ‘refresh wifi networks’ option directly. It’s sort of hidden.
+Ubuntu 没有可以直接 “刷新 WiFi 网络” 的选项，它有点隐蔽。
 
-You’ll have to open the setting menu again and this time, click on “Select Network”.
+你需要再次打开配置菜单，然后点击 “Select Network” 。
 
-![Refresh wifi network list in Ubuntu][18]Select Network to change your WiFi connection
+![Refresh wifi network list in Ubuntu][18]
 
-Now, you won’t see the list of available wireless networks immediately. When you open the networks list, it takes around 5 seconds to refresh and show up other available wireless networks.
+选择对应的网络修改你的 WiFi 连接。
 
-![Select another wifi network in Ubuntu][19]Wait for around 5- seconds to see other available networks
+你无法马上看到可用的无线网络列表。打开网络列表之后，大概需要 5 秒才会显示其他可用的无线网络。
 
-And here, you can select the network of your choice and click connect. That’s it.
+![Select another wifi network in Ubuntu][19]
+
+等待大概 5 秒钟，看到其他可用的网络。
+
+现在，你就可以选择你想要连接的网络，点击连接。这样就完成了。
 
 **总结**
 
@@ -172,7 +178,7 @@ And here, you can select the network of your choice and click connect. That’s 
 
 我们希望这些方法可以帮助你处理这样的问题！
 
-你是如何重启或管理你的网络的？我们是否还有遗漏？请在下方留言。
+你是如何重启或管理你的网络的？我们是否还有遗漏的？请在下方留言。
 
 
 --------------------------------------------------------------------------------
@@ -181,7 +187,7 @@ via: https://itsfoss.com/restart-network-ubuntu
 
 作者：[Sergiu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bodhix](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
