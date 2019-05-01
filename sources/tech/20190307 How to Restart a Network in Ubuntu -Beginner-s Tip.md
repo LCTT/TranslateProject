@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/restart-network-ubuntu)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
-如何在 Ubuntu 中重启网络服务 [新手提示]
+如何在 Ubuntu 中重启网络服务 【新手提示】
 ======
 
 你 [是否正在使用基于 Ubuntu 的系统，然后发现无法连接网络][1]？你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决。
@@ -24,7 +24,7 @@
 
 #### 1\. network manager service
 
-这是通过命令行方式重启网络最简单的方法. 它相当于是通过图形化界面重启网络（重启 Network-Manager 服务）。
+这是通过命令行方式重启网络最简单的方法。它相当于是通过图形化界面重启网络（重启 Network-Manager 服务）。
 
 ```
 sudo service network-manager restart
@@ -62,7 +62,7 @@ sudo nmcli networking on
 
 #### 4\. ifup & ifdown
 
-这两个命令是直接操作网口，将网口状态xxx。这是 [Linux 中最应该了解的网络命令][4] 之一。
+这两个命令是直接操作网口，切换网口是否可以收发包的状态。这是 [Linux 中最应该了解的网络命令][4] 之一。
 
 使用 ifdown 关闭所有网口，再使用 ifup 重新启用网口。
 
@@ -130,25 +130,27 @@ nmtui
 
 ### 通过图形化界面重启网络
 
-This is, of course, the easiest way of restarting the network for Ubuntu desktop users. If this one doesn’t work, you can of course check the command line options mentioned in the previous section.
+显然，这是 Ubuntu 桌面版用户重启网络最简单的方法。如果不生效，你可以尝试使用前文提到的命令行方式重启网络。
 
-NM-applet is the system tray applet indicator for [NetworkManager][15]. That’s what we’re going to use to restart our network.
+NM 程序是 [NetworkManager][15] 的系统托盘程序标志。我们将使用它来重启网络。
 
-First of all, check out your top panel. You should find a network icon in your system tray (in my case, it is a Wi-Fi icon, since that’s what I use).
+首先，查看顶部面板。 你会在系统托盘找到一个网络图标 （因为我使用 Wi-Fi，所以这里是一个 Wi-Fi 图标）。
 
-Go ahead and click on that icon (or the sound or battery icon). This will open up the menu. Select “Turn Off” here.
+接下来，点击该图标（也可以点击声音图标或电池图标）。这会打开菜单。选择“Turn Off”。
 
-![Restart network in Ubuntu][16]Turn off your network
+![Restart network in Ubuntu][16]
+关闭你的网络。
 
-The network icon should now disappear from the top panel. This means the network has been successfully turned off.
+网络图标会在面板中消失，这表示你已经成功关闭网络了。
 
-Click again on your systray to reopen the menu. Select “Turn On”.
+再次点击系统托盘重新打开菜单，选择“Turn On”。
 
-![Restarting network in Ubuntu][17]Turn the network back on
+![Restarting network in Ubuntu][17]
+重新开启网络。
 
-Congratulations! You have now restarted your network.
+恭喜！你现在已经重启你的网络了。
 
-#### Bonus Tip: Refresh available network list
+#### Bonus Tip: 刷新可用网络列表
 
 Suppose you are connected to a network already but you want to connect to another network. How do you refresh the WiFi to see what other networks are available? Let me show you that.
 
@@ -164,13 +166,13 @@ Now, you won’t see the list of available wireless networks immediately. When y
 
 And here, you can select the network of your choice and click connect. That’s it.
 
-**Wrapping Up**
+**总结**
 
-Restarting your network or connection is something that every Linux user has to go through at some point in their experience.
+重启网络连接是每个 Linux 用户在使用过程中必须经历的事情。
 
-We hope that we helped you with plenty of methods for handling such issues!
+我们希望这些方法可以帮助你处理这样的问题！
 
-What do you use to restart/handle your network? Is there something we missed? Leave us a comment below.
+你是如何重启或管理你的网络的？我们是否还有遗漏？请在下方留言。
 
 
 --------------------------------------------------------------------------------
