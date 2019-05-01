@@ -1,52 +1,42 @@
 [#]: collector: (lujun9972)
 [#]: translator: (warmfrog)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10800-1.html)
 [#]: subject: (Four Methods To Check The Default Gateway Or Router IP Address In Linux?)
 [#]: via: (https://www.2daygeek.com/check-find-default-gateway-or-router-ip-address-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-在 Linux 中检查默认网关或者路由 IP 地址的四个方法？
+4 种在 Linux 中检查默认网关或者路由器 IP 地址的方法
 ==============================================
 
-你应该意识到你的默认网关是你的路由器的 IP 地址。
+你应该意识到你的默认网关是你的路由器的 IP 地址。一般这是在安装过程中由操作系统自动检测的，如果没有，你可能需要改变它。如果你的系统不能 ping 自身，那么很可能是一个网关问题，你必须修复它。在网络中，当你有多个网络适配器或路由器时，这种情况可能会发生。
 
-典型地这是在安装过程中由操作系统自动检测的，如果没有，你可能需要改变它。
+网关是一个扮演着入口点角色的路由器，可以从一个网络传递网络数据到另一个网络。
 
-如果你的系统不能 ping 自身，那么很可能是一个网关问题，你必须修复它。
+下面是一些可能帮助你收集到与该话题相似的一些信息。
 
-在网络中，当你有多个网络适配器或路由器时，这种情况可能会发生。
-
-一个网关是一个路由器扮演着一个入口点角色，从一个网络传递网络数据到另一个网络。
-
-下面是一些可能帮助你收集到的与该话题相似的一些信息。
-
-  * **[9 Methods To Check Your Public IP Address In Linux Command Line][1]**
-  * **[How To Enable (UP) And Disable (DOWN) A Network Interface Port (NIC) In Linux?][2]**
-
-
+* [在 Linux 命令行检查你的公网 IP 地址的 9 种方法][1]
+* [如何在 Linux 启用和禁用网卡？][2]
 
 这可以通过下面的四个命令完成。
 
-* **`route 命令`** route 命令被用来显示和操作 IP 路由表。
-* **`ip 命令：`** IP 命令类似于 ifconfig， 非常熟悉赋值静态 IP 地址，路由 & 默认网关，等等。
-* **`netstat 命令`** netstat （“network statistics”）是一个命令行工具来显示网络连接相关的信息（包括入口和出口的）例如路由表，伪装连接，多播成员和很多网络接口。
-* **`routel 命令`** routel 命令被用来以好看的输出格式列出路由。
-
-
+* `route` 命令：被用来显示和操作 IP 路由表。
+* `ip` 命令：类似于 `ifconfig`，常用于设置静态 IP 地址、路由 & 默认网关，等等。
+* `netstat` 命令：是一个命令行工具，用来显示网络连接相关的信息（包括入站和出站的），例如路由表、伪装连接、多播成员和网络接口。
+* `routel` 命令：被用来以好看的输出格式列出路由。
 
 ### 1）在 Linux 中如何使用 route 命令检查默认的网关或者路由 IP 地址？
 
-route 命令被用来显示和操作 IP 路由表。
+`route` 命令被用来显示和操作 IP 路由表。
 
 它主要用于通过一个已经配置的接口给特定的主机或者网络设置静态的路由。
 
-当 add 或者 del 选项被使用时，route 修改路由表。没有这些选项，route 显示路由表的当前内容。
+当使用 `add` 或者 `del` 选项时，`route` 修改路由表。没有这些选项，`route` 显示路由表的当前内容。
 
 ```
 # route
-or
+或
 # route -n
 
 Kernel IP routing table
@@ -57,21 +47,21 @@ default         www.routerlogin 0.0.0.0         UG    600    0        0 wlp8s0
 
 ### 2）如何在 Linux 中使用 ip 命令检查默认网关或者路由 IP 地址？
 
-**[IP 命令][3]** 相似于 ifconfig，非常熟悉配置静态 IP 地址，路由 & 默认网关，等等。
+[IP 命令][3] 类似于 `ifconfig`，常用于配置静态 IP 地址、路由 & 默认网关，等等。
 
-ifconfig 命令因为多年没有维持被遗弃了，即使它仍然在大多数 Linux 分发版上可获得。
+`ifconfig` 命令因为多年没有维护而被遗弃了，即使它仍然在大多数 Linux 发行版上可获得。
 
-ifconfig 命令已经被 IP 命令替代了，IP 命令是非常强大的，只要一个命令就能执行几个网络管理任务。
+`ifconfig` 命令已经被 `ip` 命令替代了，`ip` 命令是非常强大的，只要一个命令就能执行几个网络管理任务。
 
-IP 命令工具附带在 iproute2 包中。默认 iproute2 预安装在主要的 Linux 分发版中。
+`ip` 命令工具附带在 iproute2 包中。在主要的 Linux 发行版中都默认预装了 iproute2 。
 
-如果没有，你可以在你的终端中在包管理器的帮助下通过输入 iproute2 并安装它。
+如果没有，你可以在你的终端中在包管理器的帮助下通过指定 iproute2 来安装它。
 
 ```
 # ip r
-or
+或
 # ip route
-or
+或
 # ip route show
 
 default via 192.168.1.1 dev wlp8s0 proto dhcp metric 600
@@ -80,11 +70,11 @@ default via 192.168.1.1 dev wlp8s0 proto dhcp metric 600
 
 ### 3）如何在 Linux 中使用 netstat 命令检查默认网关或者路由 IP 地址？
 
-netstat 代表 Network Statistics，是一个命令行工具来显示网络连接相关的信息（包括入口和出口的）例如路由表，伪装连接，多播成员和很多网络接口。
+`netstat` 代表 Network Statistics，是一个用来显示网络连接相关的信息（包括入站和出站）的命令行工具，例如路由表、伪装连接，多播成员和网络接口。
 
-它列出所有的 tcp， udp 套接字连接和 unix 套接字连接。
+它列出所有的 tcp、udp 套接字连接和 unix 套接字连接。
 
-它在网络中被用来诊断网络问题并判断网络中的交通总量来作为性能测量指标。
+它在网络中被用来诊断网络问题并判断网络中的流量总量来作为性能测量指标。
 
 ```
 # netstat -r
@@ -97,11 +87,11 @@ default         www.routerlogin 0.0.0.0         UG        0 0          0 wlp8s0
 
 ### 4）如何在 Linux 中使用 routel 命令检查默认网关或者路由 IP 地址？
 
-它用来以好看的输出格式列出路由信息。这些程序是一系列你可以用来替代 iproute2 的帮助脚本。
+它用来以好看的输出格式列出路由信息。这些程序是一系列你可以用来替代 iproute2 的帮助脚本（`routel` 和 `routef`）。
 
-routel 脚本以一种被认为更容易解释并且等价于 route 输出列表的格式来输出路由信息。
+`routel` 脚本以一种被认为更容易解释并且等价于 `route` 输出列表的格式来输出路由信息。
 
-如果 routef 脚本不加任何参数，将仅仅简单的将路由表清空。小心！这意味着删除所有的路由，让你的网络不再可用。
+如果 `routef` 脚本不加任何参数，将仅仅简单的将路由表清空。小心！这意味着删除所有的路由，让你的网络不再可用。
 
 ```
 # routel
@@ -137,7 +127,7 @@ via: https://www.2daygeek.com/check-find-default-gateway-or-router-ip-address-in
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[warmfrog](https://github.com/warmfrog)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
