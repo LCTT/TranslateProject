@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/restart-network-ubuntu)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
-如何在 Ubuntu 中重启网络服务 【新手提示】
+如何在 Ubuntu 中重启网络【新手提示】
 ======
 
 你[是否正在使用基于 Ubuntu 的系统，然后发现无法连接网络][1]？你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决。
@@ -62,7 +62,7 @@ sudo nmcli networking on
 
 #### 4\. ifup & ifdown
 
-这两个命令是直接操作网口，切换网口是否可以收发包的状态。这是 [Linux 中最应该了解的网络命令][4] 之一。
+这两个命令直接操作网口，切换网口是否可以收发包的状态。这是 [Linux 中最应该了解的网络命令][4] 之一。
 
 使用 ifdown 关闭所有网口，再使用 ifup 重新启用网口。
 
@@ -74,7 +74,7 @@ sudo ifdown -a && sudo ifup -a
 
 **注意：** 这种方法不会让网络图标从系统托盘中消失，另外，你也无法进行网络连接。
 
-**Bonus tool: nmtui (click to expand)**
+**其他工具： nmtui （点击展开）**
 
 这是系统管理员们常用的另外一种方法。它是在命令行终端中管理网络的文本菜单工具。
 
@@ -82,13 +82,13 @@ sudo ifdown -a && sudo ifup -a
 nmtui
 ```
 
-这样就会打开如下菜单：
+打开如下菜单：
 
 ![nmtui Menu][5]
 
-**注意** 在 **nmtui** 中，你可以通过 **up** 和 **down 方向键** 选择选项。
+**注意** 在 **nmtui** 中，可以通过 **up** 和 **down 方向键** 选择选项。
 
-选择 **Activate a connection** :
+选择 **Activate a connection** ：
 
 ![nmtui Menu Select "Activate a connection"][6]
 
@@ -100,7 +100,7 @@ nmtui
 
 ![Select your connection in the nmtui connections menu.][8]
 
-按下 **Enter** 键。这样就 **关闭** 你的网络连接。
+按下 **Enter** 键。 **关闭** 你的网络连接。
 
 ![nmtui Connections Menu with no active connection][9]
 
@@ -116,7 +116,7 @@ nmtui
 
 ![Select "Back" in the nmtui connections menu.][12]
 
-按下 **Enter** 键。这样就会回到 **nmtui** 的主菜单。
+按下 **Enter** 键，回到 **nmtui** 的主菜单。
 
 ![nmtui Main Menu][13]
 
@@ -124,35 +124,31 @@ nmtui
 
 ![nmtui Quit Main Menu][14]
 
-这样就会退出该界面，返回到命令行终端。
+退出该界面，返回到命令行终端。
 
 就这样，你已经成功重启网络了。
 
 ### 通过图形化界面重启网络
 
-显然，这是 Ubuntu 桌面版用户重启网络最简单的方法。如果不生效，你可以尝试使用前文提到的命令行方式重启网络。
+显然，这是 Ubuntu 桌面版用户重启网络最简单的方法。如果这个方法不生效，你可以尝试使用前文提到的命令行方式重启网络。
 
 NM 程序是 [NetworkManager][15] 的系统托盘程序标志。我们将使用它来重启网络。
 
 首先，查看顶部状态栏。 你会在系统托盘找到一个网络图标 （因为我使用 Wi-Fi，所以这里是一个 Wi-Fi 图标）。
 
-接下来，点击该图标（也可以点击声音图标或电池图标）。这会打开菜单。选择 “Turn Off” 。
+接下来，点击该图标（也可以点击音量图标或电池图标）。打开菜单。选择 “Turn Off” 关闭网络。
 
 ![Restart network in Ubuntu][16]
 
-关闭你的网络。
-
 网络图标会在状态栏中消失，这表示你已经成功关闭网络了。
 
-再次点击系统托盘重新打开菜单，选择 “Turn On” 。
+再次点击系统托盘重新打开菜单，选择 “Turn On”，重新开启网络。
 
 ![Restarting network in Ubuntu][17]
 
-重新开启网络。
-
 恭喜！你现在已经重启你的网络了。
 
-#### Bonus Tip: 刷新可用网络列表
+#### 其他提示：刷新可用网络列表
 
 如果你已经连接上一个网络，但是你想连接到另外一个网络，你如何刷新 WiFi 列表，查找其他可用的网络呢？我来向你展示一下。
 
