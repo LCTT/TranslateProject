@@ -1,16 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (bodhix)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10804-1.html)
 [#]: subject: (How to Restart a Network in Ubuntu [Beginner’s Tip])
 [#]: via: (https://itsfoss.com/restart-network-ubuntu)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
-如何在 Ubuntu 中重启网络【新手提示】
+Linux 初学者：如何在 Ubuntu 中重启网络
 ======
 
-你[是否正在使用基于 Ubuntu 的系统，然后发现无法连接网络][1]？你一定会很惊讶，很多很多的问题都可以简单地通过重启服务解决。
+你[是否正在使用基于 Ubuntu 的系统，然后发现无法连接网络][1]？你一定会很惊讶，很多的问题都可以简单地通过重启服务解决。
 
 在这篇文章中，我会介绍在 Ubuntu 或者其他 Linux 发行版中重启网络的几种方法，你可以根据自身需要选择对应的方法。这些方法基本分为两类：
 
@@ -18,11 +18,11 @@
 
 ### 通过命令行方式重启网络
 
-如果你使用的 Ubuntu 服务器版，那么你已经在使用命令行终端了。如果你使用的是桌面版，那么你可以通过快捷键 Ctrl+Alt+T [Ubuntu 键盘快捷键][3] 打开命令行终端。
+如果你使用的 Ubuntu 服务器版，那么你已经在使用命令行终端了。如果你使用的是桌面版，那么你可以通过快捷键 `Ctrl+Alt+T` [Ubuntu 键盘快捷键][3] 打开命令行终端。
 
 在 Ubuntu 中，有多个命令可以重启网络。这些命令，一部分或者说大部分，也适用于在 Debian 或者其他的 Linux 发行版中重启网络。
 
-#### 1\. network manager service
+#### 1、network manager 服务
 
 这是通过命令行方式重启网络最简单的方法。它相当于是通过图形化界面重启网络（重启 Network-Manager 服务）。
 
@@ -32,17 +32,17 @@ sudo service network-manager restart
 
 此时，网络图标会消失一会儿然后重新显示。
 
-#### 2\. systemd
+#### 2、systemd
 
-**service** 命令仅仅是该命令的一个封装（同样的还有 init.d 系列脚本和 Upstart 相关命令）。 **systemctl** 命令的功能远多于 **service** 命令。通常我更喜欢使用这个命令。
+`service` 命令仅仅是这个方式的一个封装（同样的也是 init.d 系列脚本和 Upstart 相关命令的封装）。`systemctl` 命令的功能远多于 `service` 命令。通常我更喜欢使用这个命令。
 
 ```
 sudo systemctl restart NetworkManager.service
 ```
 
-这时，网络图标又会消失一会儿。 如果你想了解 **systemctl** 的其他选项, 可以参考 man 帮助文档。
+这时，网络图标又会消失一会儿。 如果你想了解 `systemctl` 的其他选项, 可以参考 man 帮助文档。
 
-#### 3\. nmcli
+#### 3、nmcli
 
 这是 Linux 上可以管理网络的另一个工具。这是一个功能强大而且实用的工具。很多系统管理员都喜欢使用该工具，因为它非常容易使用。
 
@@ -60,11 +60,11 @@ sudo nmcli networking on
 
 你可以通过 man 帮助文档了解 nmcli 的更多用法。
 
-#### 4\. ifup & ifdown
+#### 4、ifup & ifdown
 
 这两个命令直接操作网口，切换网口是否可以收发包的状态。这是 [Linux 中最应该了解的网络命令][4] 之一。
 
-使用 ifdown 关闭所有网口，再使用 ifup 重新启用网口。
+使用 `ifdown` 关闭所有网口，再使用 `ifup` 重新启用网口。
 
 通常推荐的做法是将这两个命令一起使用。
 
@@ -72,9 +72,9 @@ sudo nmcli networking on
 sudo ifdown -a && sudo ifup -a
 ```
 
-**注意：** 这种方法不会让网络图标从系统托盘中消失，另外，你也无法进行网络连接。
+注意：这种方法不会让网络图标从系统托盘中消失，另外，各种网络连接也会断。
 
-**其他工具： nmtui （点击展开）**
+#### 补充工具： nmtui
 
 这是系统管理员们常用的另外一种方法。它是在命令行终端中管理网络的文本菜单工具。
 
@@ -86,21 +86,21 @@ nmtui
 
 ![nmtui Menu][5]
 
-**注意** 在 **nmtui** 中，可以通过 **up** 和 **down 方向键** 选择选项。
+注意：在 nmtui 中，可以通过 `up` 和 `down` 方向键选择选项。
 
-选择 **Activate a connection** ：
+选择 “Activate a connection”：
 
 ![nmtui Menu Select "Activate a connection"][6]
 
-按下 **Enter** 键，打开 **connections** 菜单。
+按下回车键，打开 “connections” 菜单。
 
 ![nmtui Connections Menu][7]
 
-接下来，选择前面带 **星号 （*）** 的网络。在这个例子中，就是 MGEO72。
+接下来，选择前面带星号（*）的网络。在这个例子中，就是 MGEO72。
 
 ![Select your connection in the nmtui connections menu.][8]
 
-按下 **Enter** 键。 **关闭** 你的网络连接。
+按下回车键。 这就将“停用”你的网络连接。
 
 ![nmtui Connections Menu with no active connection][9]
 
@@ -108,19 +108,19 @@ nmtui
 
 ![Select the connection you want in the nmtui connections menu.][10]
 
-按下 **Enter** 键。这样就重启了所选择的网络连接。
+按下回车键。这样就重新激活了所选择的网络连接。
 
 ![nmtui Connections Menu][11]
 
-双击 **Tab** 键，选择 **Back** ：
+按下 `Tab` 键两次，选择 “Back”：
 
 ![Select "Back" in the nmtui connections menu.][12]
 
-按下 **Enter** 键，回到 **nmtui** 的主菜单。
+按下回车键，回到 nmtui 的主菜单。
 
 ![nmtui Main Menu][13]
 
-选择 **Quit** ：
+选择 “Quit” ：
 
 ![nmtui Quit Main Menu][14]
 
@@ -132,9 +132,9 @@ nmtui
 
 显然，这是 Ubuntu 桌面版用户重启网络最简单的方法。如果这个方法不生效，你可以尝试使用前文提到的命令行方式重启网络。
 
-NM 程序是 [NetworkManager][15] 的系统托盘程序标志。我们将使用它来重启网络。
+NM 小程序是 [NetworkManager][15] 的系统托盘程序标志。我们将使用它来重启网络。
 
-首先，查看顶部状态栏。 你会在系统托盘找到一个网络图标 （因为我使用 Wi-Fi，所以这里是一个 Wi-Fi 图标）。
+首先，查看顶部状态栏。你会在系统托盘找到一个网络图标 （因为我使用 Wi-Fi，所以这里是一个 Wi-Fi 图标）。
 
 接下来，点击该图标（也可以点击音量图标或电池图标）。打开菜单。选择 “Turn Off” 关闭网络。
 
@@ -160,7 +160,7 @@ Ubuntu 没有可以直接 “刷新 WiFi 网络” 的选项，它有点隐蔽�
 
 选择对应的网络修改你的 WiFi 连接。
 
-你无法马上看到可用的无线网络列表。打开网络列表之后，大概需要 5 秒才会显示其他可用的无线网络。
+你无法马上看到可用的无线网络列表。打开网络列表之后，大概需要 5 秒才会显示其它可用的无线网络。
 
 ![Select another wifi network in Ubuntu][19]
 
@@ -168,7 +168,7 @@ Ubuntu 没有可以直接 “刷新 WiFi 网络” 的选项，它有点隐蔽�
 
 现在，你就可以选择你想要连接的网络，点击连接。这样就完成了。
 
-**总结**
+### 总结
 
 重启网络连接是每个 Linux 用户在使用过程中必须经历的事情。
 
@@ -184,7 +184,7 @@ via: https://itsfoss.com/restart-network-ubuntu
 作者：[Sergiu][a]
 选题：[lujun9972][b]
 译者：[bodhix](https://github.com/bodhix)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

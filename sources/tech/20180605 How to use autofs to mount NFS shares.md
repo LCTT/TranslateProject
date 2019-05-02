@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (geekpi)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (How to use autofs to mount NFS shares)
+[#]: via: (https://opensource.com/article/18/6/using-autofs-mount-nfs-shares)
+[#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
+
 How to use autofs to mount NFS shares
 ======
 
