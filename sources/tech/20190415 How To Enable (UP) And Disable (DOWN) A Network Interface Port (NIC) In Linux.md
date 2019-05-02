@@ -7,16 +7,14 @@
 [#]: via: (https://www.2daygeek.com/enable-disable-up-down-nic-network-interface-port-linux-using-ifconfig-ifdown-ifup-ip-nmcli-nmtui/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How To Enable (UP) And Disable (DOWN) A Network Interface Port (NIC) In Linux?
+Linux 中如何启用禁用网口？
 ======
 
 You may need to run these commands based on your requirements.
 
 I can tell you few examples, where you would be needed this.
 
-When you add a new network interface or when you create a new virtual network interface from the original physical interface.
-
-you may need to bounce these commands to bring up the new interface.
+当你添加一个网卡或者从一个物理网口创建出一个虚拟网口的时候，你可能需要使用这些命令将新网口启用起来。
 
 Also, if you made any changes or if it’s down then you need to run one of the below commands to bring them up.
 
@@ -24,15 +22,15 @@ It can be done on many ways and we would like to add best five method which we u
 
 It can be done using the below five methods.
 
-  * **`ifconfig Command:`** The ifconfig command is used configure a network interface. It provides so many information about NIC.
-  * **`ifdown/up Command:`** The ifdown command take a network interface down and the ifup command bring a network interface up.
-  * **`ip Command:`** ip command is used to manage NIC. It’s replacement of old and deprecated ifconfig command. It’s similar to ifconfig command but has many powerful features which isn’t available in ifconfig command.
-  * **`nmcli Command:`** nmcli is a command-line tool for controlling NetworkManager and reporting network status.
-  * **`nmtui Command:`** nmtui is a curses‐based TUI application for interacting with NetworkManager.
+  * **`ifconfig 命令：`** ifconfig 命令用于配置网口。 它可以提供网口的很多信息。
+  * **`ifdown/up 命令：`** ifdown 命令用于禁用网口，ifup 命令用于启用网口。
+  * **`ip 命令：`** ip 命令用于管理网口，用于替代老的、不推荐使用的 ifconfig 命令。它和 ifconfig 命令很相似，但是提供了很多 ifconfig 命令不具有的强大的特性。
+  * **`nmcli 命令：`** nmcli 是一个控制 NetworkManager 并报告网络状态的命令行工具。
+  * **`nmtui 命令：`** nmtui 是一个与 NetworkManager 交互的、基于 curses 图形库的终端 UI 应用。
 
 
 
-The below output shows the available network interface card (NIC) information in my Linux system.
+以下显示的是我的 Linux 系统中可用网口的信息。
 
 ```
 # ip a
@@ -56,25 +54,24 @@ The below output shows the available network interface card (NIC) information in
        valid_lft forever preferred_lft forever
 ```
 
-### 1) How To Bring UP And Bring Down A Network Interface In Linux Using ifconfig Command?
+### 1) 如何使用 ifconfig 命令启用禁用网口？
 
-The ifconfig command is used configure a network interface.
+ifconfig 命令用于配置网口。
 
-It is used at boot time to set up interfaces as necessary. It provides so many information about NIC. We can use ifconfig command when we need to make any changes on NIC.
+系统启动过程中如果需要启用网口，调用的命令就是 ifconfig。它可以提供很多网口的信息。不管我们想修改网口的什么配置，都可以使用该命令。
 
-Common Syntax for ifconfig:
+ifconfig 的常用语法：
 
 ```
 # ifconfig [NIC_NAME] Down/Up
 ```
 
-Run the following command to bring down the `enp0s3` interface in Linux. Make a note, you have to input your interface name instead of us.
-
+执行以下命令禁用 `enp0s3` 网口。注意，这里你需要输入你自己的网口名字。
 ```
 # ifconfig enp0s3 down
 ```
 
-Yes, the given interface is down now as per the following output.
+现在，从以下输出结果可以看到网口已经被禁用了。
 
 ```
 # ip a | grep -A 1 "enp0s3:"
@@ -82,13 +79,13 @@ Yes, the given interface is down now as per the following output.
     link/ether 08:00:27:c2:e4:e8 brd ff:ff:ff:ff:ff:ff
 ```
 
-Run the following command to bring down the `enp0s3` interface in Linux.
+执行以下命令启用 `enp0s3` 网口。
 
 ```
 # ifconfig enp0s3 up
 ```
 
-Yes, the given interface is up now as per the following output.
+现在，从以下输出结果可以看到网口已经启用了。
 
 ```
 # ip a | grep -A 5 "enp0s3:"
@@ -100,13 +97,13 @@ Yes, the given interface is up now as per the following output.
        valid_lft forever preferred_lft forever
 ```
 
-### 2) How To Enable And Disable A Network Interface In Linux Using ifdown/up Command?
+### 2) 如何使用 ifdown/up 命令启用禁用网口？
 
-The ifdown command take a network interface down and the ifup command bring a network interface up.
+ifdown 命令用于禁用网口，ifup 命令用于启用网口。
 
-**Note:**It doesn’t work on new interface device name like `enpXXX`
+**注意：** 这两个命令不支持以 `enpXXX` 命名的新的网络设备。
 
-Common Syntax for ifdown/ifup:
+ifdown/ifup 的常用语法：
 
 ```
 # ifdown [NIC_NAME]
@@ -114,13 +111,13 @@ Common Syntax for ifdown/ifup:
 # ifup [NIC_NAME]
 ```
 
-Run the following command to bring down the `eth1` interface in Linux.
+执行以下命令禁用 `eth1` 网口。
 
 ```
 # ifdown eth0
 ```
 
-Run the following command to bring down the `eth1` interface in Linux.
+从以下输出结果可以看到网口已经被禁用了。
 
 ```
 # ip a | grep -A 3 "eth1:"
@@ -128,13 +125,13 @@ Run the following command to bring down the `eth1` interface in Linux.
     link/ether 08:00:27:d5:a0:18 brd ff:ff:ff:ff:ff:ff
 ```
 
-Run the following command to bring down the `eth1` interface in Linux.
+执行以下命令启用 `eth1` 网口。
 
 ```
 # ifup eth0
 ```
 
-Yes, the given interface is up now as per the following output.
+从以下输出结果可以看到网口已经启用了。
 
 ```
 # ip a | grep -A 5 "eth1:"
@@ -145,32 +142,32 @@ Yes, the given interface is up now as per the following output.
        valid_lft forever preferred_lft forever
 ```
 
-ifup and ifdown doesn’t supporting the latest interface device `enpXXX` names. I got the below message when i ran the command.
+ifup 和 ifdown 不支持以 `enpXXX` 命名的新的网口。当我执行该命令的时候得到的结果如下：
 
 ```
 # ifdown enp0s8
 Unknown interface enp0s8
 ```
 
-### 3) How To Bring UP/Bring Down A Network Interface In Linux Using ip Command?
+### 3) 如何使用 ip 命令启用禁用网口？
 
-ip command is used to manage Network Interface Card (NIC). It’s replacement of old and deprecated ifconfig command on modern Linux systems.
+ip 命令用于管理网口，用于替代老的、不推荐使用的 ifconfig 命令。
 
-It’s similar to ifconfig command but has many powerful features which isn’t available in ifconfig command.
+它和 ifconfig 命令很相似，但是提供了很多 ifconfig 命令不具有的强大的特性。
 
-Common Syntax for ip:
+ip 的常用语法：
 
 ```
 # ip link set  Down/Up
 ```
 
-Run the following command to bring down the `enp0s3` interface in Linux.
+执行以下命令禁用 `enp0s3` 网口。
 
 ```
 # ip link set enp0s3 down
 ```
 
-Yes, the given interface is down now as per the following output.
+从以下输出结果可以看到网口已经被禁用了。
 
 ```
 # ip a | grep -A 1 "enp0s3:"
@@ -178,13 +175,13 @@ Yes, the given interface is down now as per the following output.
     link/ether 08:00:27:c2:e4:e8 brd ff:ff:ff:ff:ff:ff
 ```
 
-Run the following command to bring down the `enp0s3` interface in Linux.
+执行以下命令启用 `enp0s3` 网口。
 
 ```
 # ip link set enp0s3 up
 ```
 
-Yes, the given interface is up now as per the following output.
+从以下输出结果可以看到网口已经启用了。
 
 ```
 # ip a | grep -A 5 "enp0s3:"
@@ -196,13 +193,11 @@ Yes, the given interface is up now as per the following output.
        valid_lft forever preferred_lft forever
 ```
 
-### 4) How To Enable And Disable A Network Interface In Linux Using nmcli Command?
+### 4) 如何使用 nmcli 命令启用禁用网口？
 
-nmcli is a command-line tool for controlling NetworkManager and reporting network status.
+nmcli 是一个控制 NetworkManager 并报告网络状态的命令行工具。
 
-It can be utilized as a replacement for nm-applet or other graphical clients. nmcli is used to create, display, edit, delete, activate, and deactivate network
-
-connections, as well as control and display network device status.
+它可以用做 nm-applet 或者其他图形化客户端的替代品。 nmcli 可以用于展示、创建、修改、删除、启用和停用网络连接。除此之后，还可以用来管理和展示网络设备状态。
 
 Run the following command to identify the interface name because nmcli command is perform most of the task using `profile name` instead of `device name`.
 
@@ -213,7 +208,7 @@ Wired connection 1  3d5afa0a-419a-3d1a-93e6-889ce9c6a18c  ethernet  enp0s3
 Wired connection 2  a22154b7-4cc4-3756-9d8d-da5a4318e146  ethernet  enp0s8
 ```
 
-Common Syntax for ip:
+nmcli 的常用语法：
 
 ```
 # nmcli con  Down/Up
@@ -253,9 +248,9 @@ enp0s3  ethernet  connected  Wired connection 1
 lo      loopback  unmanaged  --
 ```
 
-### 5) How To Bring UP/Bring Down A Network Interface In Linux Using nmtui Command?
+### 5) 如何使用 nmtui 命令启用禁用网口？
 
-nmtui is a curses based TUI application for interacting with NetworkManager.
+nmtui 是一个与 NetworkManager 交互的、基于 curses 图形库的终端 UI 应用。
 
 When starting nmtui, the user is prompted to choose the activity to perform unless it was specified as the first argument.
 
@@ -267,7 +262,7 @@ Run the following command launch the nmtui interface. Select “Active a connect
 
 [![][1]![][1]][2]
 
-Select the interface which you want to bring down then hit “Deactivate” button.
+选择你要禁用的网口，然后点击 “Deactivate” 按钮。
 [![][1]![][1]][3]
 
 For activation do the same above procedure.
@@ -279,7 +274,7 @@ via: https://www.2daygeek.com/enable-disable-up-down-nic-network-interface-port-
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bodhix](https://github.com/bodhix)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
