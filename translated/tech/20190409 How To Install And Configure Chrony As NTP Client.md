@@ -7,84 +7,84 @@
 [#]: via: (https://www.2daygeek.com/configure-ntp-client-using-chrony-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How To Install And Configure Chrony As NTP Client?
+如何正确安装和配置Chrony作为NTP客户端？
 ======
 
-The NTP server and NTP client allow us to sync the clock across the network.
+NTP服务器和NTP客户端运行我们通过网络来同步时钟。
 
-We had written an article about **[NTP server and NTP client installation and configuration][1]** in the past.
+在过去，我们已经撰写了一篇关于 **[NTP服务器和NTP客户端的安装与配置][1]** 的文章。
 
-If you would like to check these, navigate to the above URL.
+如果你想看这些内容，点击上述的URL访问。
 
-### What Is Chrony Client?
+### 什么是Chrony客户端?
 
-Chrony is replacement of NTP client.
+Chrony是NTP客户端的替代品。
 
-It can synchronize the system clock faster with better time accuracy and it can be particularly useful for the systems which are not online all the time.
+它能以更精确的时间和更快的速度同步时钟，并且它对于那些不是全天候在线的系统非常有用。
 
-chronyd is smaller, it uses less memory and it wakes up the CPU only when necessary, which is better for power saving.
+chronyd更小、更省电，它占用更少的内存且仅当需要时它才唤醒CPU。
 
-It can perform well even when the network is congested for longer periods of time.
+即使网络拥塞较长时间，它也能很好地运行。
 
-It supports hardware timestamping on Linux, which allows extremely accurate synchronization on local networks.
+它支持Linux上的硬件时间戳，允许在本地网络进行极其准确的同步。
 
-It offers following two services.
+它提供下列两个服务。
 
-  * **`chronyc:`** Command line interface for chrony.
-  * **`chronyd:`** Chrony daemon service.
+  * **`chronyc:`** Chrony的命令行接口。
+  * **`chronyd:`** Chrony守护进程服务。
 
 
 
-### How To Install And Configure Chrony In Linux?
+### 如何在Linux上安装和配置Chrony？
 
-Since the package is available in most of the distributions official repository. So, use the package manager to install it.
+由于安装包在大多数发行版的官方仓库中可用，因此直接使用包管理器去安装它。
 
-For **`Fedora`** system, use **[DNF Command][2]** to install chrony.
+对于 **`Fedora`** 系统, 使用 **[DNF 命令][2]** 去安装chrony.
 
 ```
 $ sudo dnf install chrony
 ```
 
-For **`Debian/Ubuntu`** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install chrony.
+对于 **`Debian/Ubuntu`** 系统, 使用 **[APT-GET 命令][3]** 或者 **[APT 命令][4]** 去安装chrony.
 
 ```
 $ sudo apt install chrony
 ```
 
-For **`Arch Linux`** based systems, use **[Pacman Command][5]** to install chrony.
+对基于 **`Arch Linux`** 的系统, 使用 **[Pacman 命令][5]** 去安装chrony.
 
 ```
 $ sudo pacman -S chrony
 ```
 
-For **`RHEL/CentOS`** systems, use **[YUM Command][6]** to install chrony.
+对于 **`RHEL/CentOS`** 系统, 使用 **[YUM 命令][6]** 去安装chrony.
 
 ```
 $ sudo yum install chrony
 ```
 
-For **`openSUSE Leap`** system, use **[Zypper Command][7]** to install chrony.
+对于**`openSUSE Leap`** 系统, 使用 **[Zypper 命令][7]** 去安装chrony.
 
 ```
 $ sudo zypper install chrony
 ```
 
-In this article, we are going to use the following setup to test this.
+在这篇文章中，我们将使用下列设置去测试。
 
-  * **`NTP Server:`** HostName: CentOS7.2daygeek.com, IP:192.168.1.5, OS:CentOS 7
-  * **`Chrony Client:`** HostName: Ubuntu18.2daygeek.com, IP:192.168.1.3, OS:Ubuntu 18.04
+  * **`NTP服务器:`** 主机名: CentOS7.2daygeek.com, IP:192.168.1.5, OS:CentOS 7
+  * **`Chrony客户端:`** 主机名: Ubuntu18.2daygeek.com, IP:192.168.1.3, OS:Ubuntu 18.04
 
 
+导航到 **[在Linux上安装和配置NTP服务器][1]** 的URL。
 
-Navigate to the following URL for **[NTP server installation and configuration in Linux][1]**.
 
-I have installed and configured the NTP server on `CentOS7.2daygeek.com` so, append the same into all the client machines. Also, include the other required information on it.
+我已经在`CentOS7.2daygeek.com`这台主机上安装和配置了NTP服务器，因此，将其附加到所有的客户端机器上。此外，还包括其他所需信息。
 
-The `chrony.conf` file will be placed in the different locations based on your distribution.
+`chrony.conf`文件的位置根据你的发行版不同而不同。
 
-For RHEL based systems, it’s located at `/etc/chrony.conf`.
+对基于RHEL的系统，它位于`/etc/chrony.conf`。
 
-For Debian based systems, it’s located at `/etc/chrony/chrony.conf`.
+对基于Debian的系统，它位于`/etc/chrony/chrony.conf`。
 
 ```
 # vi /etc/chrony/chrony.conf
@@ -98,27 +98,28 @@ makestep 1 3
 cmdallow 192.168.1.0/24
 ```
 
-Bounce the Chrony service once you update the configuration.
+更新配置后需要重启Chrony服务。
 
-For sysvinit systems. For RHEL based system we need to run `chronyd` instead of chrony.
-
-```
-# service chrony restart
-
-# chkconfig chrony on
-```
-
-For systemctl systems. For RHEL based system we need to run `chronyd` instead of chrony.
+对于sysvinit系统。基于RHEL的系统需要去运行`chronyd`而不是chrony。
 
 ```
-# systemctl restart chrony
+# service chronyd restart
 
-# systemctl enable chrony
+# chkconfig chronyd on
 ```
 
-Use the following commands like tacking, sources and sourcestats to check chrony synchronization details.
+对于systemctl系统。 基于RHEL的系统需要去运行`chronyd`而不是chrony。
 
-To check chrony tracking status.
+```
+# systemctl restart chronyd
+
+# systemctl enable chronyd
+```
+
+使用像tacking，sources和sourcestats这样的命令去检查chrony的同步细节。
+
+去检查chrony的跟踪状态。
+
 
 ```
 # chronyc tracking
@@ -137,7 +138,7 @@ Update interval : 2.0 seconds
 Leap status     : Normal
 ```
 
-Run the sources command to displays information about the current time sources.
+运行sources命令去显示当前时间源的信息。
 
 ```
 # chronyc sources
@@ -147,7 +148,7 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ^* CentOS7.2daygeek.com          2   6    17    62    +36us[+1230us] +/- 1111ms
 ```
 
-The sourcestats command displays information about the drift rate and offset estimation process for each of the sources currently being examined by chronyd.
+sourcestats命令显示有关chronyd当前正在检查的每个源的漂移率和偏移估计过程的信息。
 
 ```
 # chronyc sourcestats
@@ -157,7 +158,7 @@ Name/IP Address            NP  NR  Span  Frequency  Freq Skew  Offset  Std Dev
 CentOS7.2daygeek.com        5   3    71    -97.314     78.754   -469us   441us
 ```
 
-When chronyd is configured as an NTP client or peer, you can have the transmit and receive timestamping modes and the interleaved mode reported for each NTP source by the chronyc ntpdata command.
+当chronyd配置为NTP客户端或对等端时，你就能通过chronyc ntpdata命令向每一个NTP源发送和接收时间戳模式和交错模式报告。
 
 ```
 # chronyc ntpdata
@@ -190,13 +191,14 @@ Total RX        : 46
 Total valid RX  : 46
 ```
 
-Finally run the `date` command.
+最后运行`date`命令。
 
 ```
 # date
 Thu Mar 28 03:08:11 CDT 2019
 ```
 
+为了立即切换系统时钟，通过转换绕过任何正在进行的调整，请以root身份发出以下命令（手动调整系统时钟）。
 To step the system clock immediately, bypassing any adjustments in progress by slewing, issue the following command as root (To adjust the system clock manually).
 
 ```
@@ -209,7 +211,7 @@ via: https://www.2daygeek.com/configure-ntp-client-using-chrony-in-linux/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[arrowfeng](https://github.com/arrowfeng)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
