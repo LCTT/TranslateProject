@@ -10,21 +10,21 @@
 Linux 中如何启用禁用网口？
 ======
 
-You may need to run these commands based on your requirements.
+你可能会根据你的需要执行以下命令。
 
-I can tell you few examples, where you would be needed this.
+举一些你会用到这些命令的例子。
 
 当你添加一个网卡或者从一个物理网口创建出一个虚拟网口的时候，你可能需要使用这些命令将新网口启用起来。
 
-Also, if you made any changes or if it’s down then you need to run one of the below commands to bring them up.
+除此之外，如果你对网口做了某些修改或者网口本身没有启用，那你也需要使用以下的某个命令将网口启用起来。
 
-It can be done on many ways and we would like to add best five method which we used in the article.
+启用禁用网口有很多种方法。在这篇文章里，我们会介绍我们使用过的、最好的 5 种方法。
 
-It can be done using the below five methods.
+启用禁用网口可以通过以下 5 个方法实现：
 
   * **`ifconfig 命令：`** ifconfig 命令用于配置网口。 它可以提供网口的很多信息。
   * **`ifdown/up 命令：`** ifdown 命令用于禁用网口，ifup 命令用于启用网口。
-  * **`ip 命令：`** ip 命令用于管理网口，用于替代老的、不推荐使用的 ifconfig 命令。它和 ifconfig 命令很相似，但是提供了很多 ifconfig 命令不具有的强大的特性。
+  * **`ip 命令：`** ip 命令用于管理网口，用于替代老旧的、不推荐使用的 ifconfig 命令。它和 ifconfig 命令很相似，但是提供了很多 ifconfig 命令不具有的强大的特性。
   * **`nmcli 命令：`** nmcli 是一个控制 NetworkManager 并报告网络状态的命令行工具。
   * **`nmtui 命令：`** nmtui 是一个与 NetworkManager 交互的、基于 curses 图形库的终端 UI 应用。
 
@@ -54,7 +54,7 @@ It can be done using the below five methods.
        valid_lft forever preferred_lft forever
 ```
 
-### 1) 如何使用 ifconfig 命令启用禁用网口？
+### 1、如何使用 ifconfig 命令启用禁用网口？
 
 ifconfig 命令用于配置网口。
 
@@ -71,7 +71,7 @@ ifconfig 的常用语法：
 # ifconfig enp0s3 down
 ```
 
-现在，从以下输出结果可以看到网口已经被禁用了。
+从以下输出结果可以看到网口已经被禁用了。
 
 ```
 # ip a | grep -A 1 "enp0s3:"
@@ -85,7 +85,7 @@ ifconfig 的常用语法：
 # ifconfig enp0s3 up
 ```
 
-现在，从以下输出结果可以看到网口已经启用了。
+从以下输出结果可以看到网口已经启用了。
 
 ```
 # ip a | grep -A 5 "enp0s3:"
@@ -97,7 +97,7 @@ ifconfig 的常用语法：
        valid_lft forever preferred_lft forever
 ```
 
-### 2) 如何使用 ifdown/up 命令启用禁用网口？
+### 2、如何使用 ifdown/up 命令启用禁用网口？
 
 ifdown 命令用于禁用网口，ifup 命令用于启用网口。
 
@@ -114,7 +114,7 @@ ifdown/ifup 的常用语法：
 执行以下命令禁用 `eth1` 网口。
 
 ```
-# ifdown eth0
+# ifdown eth1
 ```
 
 从以下输出结果可以看到网口已经被禁用了。
@@ -128,7 +128,7 @@ ifdown/ifup 的常用语法：
 执行以下命令启用 `eth1` 网口。
 
 ```
-# ifup eth0
+# ifup eth1
 ```
 
 从以下输出结果可以看到网口已经启用了。
@@ -142,16 +142,16 @@ ifdown/ifup 的常用语法：
        valid_lft forever preferred_lft forever
 ```
 
-ifup 和 ifdown 不支持以 `enpXXX` 命名的新的网口。当我执行该命令的时候得到的结果如下：
+ifup 和 ifdown 不支持以 `enpXXX` 命名的网口。当我执行该命令的时候得到的结果如下：
 
 ```
 # ifdown enp0s8
 Unknown interface enp0s8
 ```
 
-### 3) 如何使用 ip 命令启用禁用网口？
+### 3、如何使用 ip 命令启用禁用网口？
 
-ip 命令用于管理网口，用于替代老的、不推荐使用的 ifconfig 命令。
+ip 命令用于管理网口，用于替代老旧的、不推荐使用的 ifconfig 命令。
 
 它和 ifconfig 命令很相似，但是提供了很多 ifconfig 命令不具有的强大的特性。
 
@@ -193,13 +193,13 @@ ip 的常用语法：
        valid_lft forever preferred_lft forever
 ```
 
-### 4) 如何使用 nmcli 命令启用禁用网口？
+### 4、如何使用 nmcli 命令启用禁用网口？
 
 nmcli 是一个控制 NetworkManager 并报告网络状态的命令行工具。
 
 它可以用做 nm-applet 或者其他图形化客户端的替代品。 nmcli 可以用于展示、创建、修改、删除、启用和停用网络连接。除此之后，还可以用来管理和展示网络设备状态。
 
-Run the following command to identify the interface name because nmcli command is perform most of the task using `profile name` instead of `device name`.
+nmcli 命令大部分情况下都是使用`配置名称`工作而不是`设备名称`。所以，执行以下命令，获取网口对应的配置名称。【译者注：在使用 nmtui 或者 nmcli 管理网络连接的时候，可以为网络连接配置一个名称，就是这里提到的`配置名称（Profile name）`】
 
 ```
 # nmcli con show
@@ -214,14 +214,14 @@ nmcli 的常用语法：
 # nmcli con  Down/Up
 ```
 
-Run the following command to bring down the `enp0s3` interface in Linux. You have to give `profile name` instead of `device name` to bring down it.
+执行以下命令禁用 `enp0s3` 网口。 在禁用网口的时候，你需要使用`配置名称`而不是`设备名称`。
 
 ```
 # nmcli con down 'Wired connection 1'
 Connection 'Wired connection 1' successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/6)
 ```
 
-Yes, the given interface is down now as per the following output.
+从以下输出结果可以看到网口已经禁用了。
 
 ```
 # nmcli dev status
@@ -231,14 +231,14 @@ enp0s3  ethernet  disconnected  --
 lo      loopback  unmanaged     --
 ```
 
-Run the following command to bring down the `enp0s3` interface in Linux. You have to give `profile name` instead of `device name` to bring down it.
+执行以下命令启用 `enp0s3` 网口。 同样的，这里你需要使用`配置名称`而不是`设备名称`。
 
 ```
 # nmcli con up 'Wired connection 1'
 Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/7)
 ```
 
-Yes, the given interface is up now as per the following output.
+从以下输出结果可以看到网口已经启用了。
 
 ```
 # nmcli dev status
@@ -248,13 +248,13 @@ enp0s3  ethernet  connected  Wired connection 1
 lo      loopback  unmanaged  --
 ```
 
-### 5) 如何使用 nmtui 命令启用禁用网口？
+### 5、如何使用 nmtui 命令启用禁用网口？
 
 nmtui 是一个与 NetworkManager 交互的、基于 curses 图形库的终端 UI 应用。
 
-When starting nmtui, the user is prompted to choose the activity to perform unless it was specified as the first argument.
+在启用 nmtui 的时候，如果第一个参数没有特别指定，它会引导用户选择对应的操作去执行。
 
-Run the following command launch the nmtui interface. Select “Active a connection” and hit “OK”
+执行以下命令打开 mntui 界面。选择 “Active a connection” 然后点击 “OK”。
 
 ```
 # nmtui
@@ -265,7 +265,7 @@ Run the following command launch the nmtui interface. Select “Active a connect
 选择你要禁用的网口，然后点击 “Deactivate” 按钮。
 [![][1]![][1]][3]
 
-For activation do the same above procedure.
+如果要启用网口，进行上述相同的步骤即可。
 [![][1]![][1]][4]
 
 --------------------------------------------------------------------------------
