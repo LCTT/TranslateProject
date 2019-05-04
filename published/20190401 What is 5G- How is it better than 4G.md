@@ -2,7 +2,7 @@
 [#]: translator: (warmfrog)
 [#]: reviewer: (wxy)
 [#]: publisher: (wxy)
-[#]: url: ()
+[#]: url: (https://linux.cn/article-10812-1.html)
 [#]: subject: (What is 5G? How is it better than 4G?)
 [#]: via: (https://www.networkworld.com/article/3203489/what-is-5g-how-is-it-better-than-4g.html#tk.rss_all)
 [#]: author: (Josh Fruhlinger https://www.networkworld.com/author/Josh-Fruhlinger/)
