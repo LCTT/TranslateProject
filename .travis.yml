@@ -1,2 +1,27 @@
-language: c
-script: make -s check
+language: minimal
+install:
+  - sudo apt-get install jq
+  - git clone --depth=1 -b gh-pages https://github.com/LCTT/TranslateProject/ build && rm -rf build/.git
+script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then sh ./scripts/check.sh; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sh ./scripts/badge.sh; fi'
+  - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then sh ./scripts/status.sh; fi'
+
+branches:
+  only:
+    - master
+    # - status
+  except:
+    - gh-pages
+git:
+  submodules: false
+  depth: false
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch:
+      - master
+      # - status

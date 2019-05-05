@@ -1,4 +1,3 @@
-（translating by runningwater）
 Microservices Explained
 ======
 

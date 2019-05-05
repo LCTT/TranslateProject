@@ -1,4 +1,3 @@
-translating by lujun9972
 Finding Jobs in Software
 ======
 
