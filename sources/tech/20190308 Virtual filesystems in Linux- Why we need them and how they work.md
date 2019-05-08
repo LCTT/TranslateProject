@@ -7,19 +7,21 @@
 [#]: via: (https://opensource.com/article/19/3/virtual-filesystems-linux)
 [#]: author: (Alison Chariken )
 
-Virtual filesystems in Linux: Why we need them and how they work
+Linux 中的虚拟文件系统
 ======
-Virtual filesystems are the magic abstraction that makes the "everything is a file" philosophy of Linux possible.
+
+> 虚拟文件系统是一种神奇的抽象，它使得 “一切皆文件” 哲学在 Linux 中成为了可能。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/documents_papers_file_storage_work.png?itok=YlXpAqAJ)
 
-What is a filesystem? According to early Linux contributor and author [Robert Love][1], "A filesystem is a hierarchical storage of data adhering to a specific structure." However, this description applies equally well to VFAT (Virtual File Allocation Table), Git, and [Cassandra][2] (a [NoSQL database][3]). So what distinguishes a filesystem?
+什么是文件系统？根据早期的 Linux 贡献者和作者 [Robert Love][1] 所说，“文件系统是一个遵循特定结构的数据的分层存储。” 不过，这种描述也同样适用于 VFAT（虚拟文件分配表）、Git 和[Cassandra][2]（一种 [NoSQL 数据库][3]）。那么如何区别文件系统呢？
 
-### Filesystem basics
+### 文件系统基础概念
 
-The Linux kernel requires that for an entity to be a filesystem, it must also implement the **open()** , **read()** , and **write()** methods on persistent objects that have names associated with them. From the point of view of [object-oriented programming][4], the kernel treats the generic filesystem as an abstract interface, and these big-three functions are "virtual," with no default definition. Accordingly, the kernel's default filesystem implementation is called a virtual filesystem (VFS).
-
+Linux 内核要求文件系统必须是实体，它还必须在持久对象上实现 `open()`、`read()` 和 `write()` 方法，并且这些实体需要有与之关联的名字。从 [面向对象编程][4] 的角度来看，内核将通用文件系统视为一个抽象接口，这些三大函数是“虚拟”的，没有默认定义。因此，内核的默认文件系统实现被称为虚拟文件系统（VFS）。
 
 ![][5] 
+
 If we can open(), read(), and write(), it is a file as this console session shows.
 
 VFS underlies the famous observation that in Unix-like systems "everything is a file." Consider how weird it is that the tiny demo above featuring the character device /dev/console actually works. The image shows an interactive Bash session on a virtual teletype (tty). Sending a string into the virtual console device makes it appear on the virtual screen. VFS has other, even odder properties. For example, it's [possible to seek in them][6].
@@ -143,7 +145,7 @@ via: https://opensource.com/article/19/3/virtual-filesystems-linux
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: 
+[a]: https://opensource.com/users/chaiken
 [b]: https://github.com/lujun9972
 [1]: https://www.pearson.com/us/higher-education/program/Love-Linux-Kernel-Development-3rd-Edition/PGM202532.html
 [2]: http://cassandra.apache.org/
