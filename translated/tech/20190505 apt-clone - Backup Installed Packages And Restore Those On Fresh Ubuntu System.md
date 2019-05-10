@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (apt-clone : Backup Installed Packages And Restore Those On Fresh Ubuntu System)
@@ -10,17 +10,9 @@
 apt-clone：备份已安装的软件包并在新的 Ubuntu 系统上恢复它们
 ======
 
-当我们在基于Ubuntu/Debian 的系统上使用 apt-clone，包安装会变得更加容易。
+当我们在基于 Ubuntu/Debian 的系统上使用 `apt-clone`，包安装会变得更加容易。如果你需要在少量系统上安装相同的软件包时，`apt-clone` 会适合你。
 
-如果你需要在少量系统上安装相同的软件包时，apt-clone 会适合你。
-
-如果你想在每个系统上手动构建和安装必要的软件包，这是一个耗时的过程。
-
-它可以通过多种方式实现，Linux 中有许多程序可用。
-
-我们过去曾写过一篇关于 **[Aptik][1]** 的文章。
-
-它是能让 Ubuntu 用户备份和恢复系统设置和数据的程序之一。
+如果你想在每个系统上手动构建和安装必要的软件包，这是一个耗时的过程。它可以通过多种方式实现，Linux 中有许多程序可用。我们过去曾写过一篇关于 [Aptik][1] 的文章。它是能让 Ubuntu 用户备份和恢复系统设置和数据的程序之一。
 
 ### 什么是 apt-clone？
 
@@ -30,15 +22,15 @@ apt-clone：备份已安装的软件包并在新的 Ubuntu 系统上恢复它们
 
 ### 如何安装 apt-clone？
 
-apt-clone 包可以在 Ubuntu/Debian 的官方仓库中找到，所以，使用 **[apt 包管理器][3]** 或 **[apt-get 包管理器][4]** 来安装它。
+`apt-clone` 包可以在 Ubuntu/Debian 的官方仓库中找到，所以，使用 [apt 包管理器][3] 或 [apt-get 包管理器][4] 来安装它。
 
-使用 apt 包管理器安装 apt-clone。
+使用 `apt` 包管理器安装 `apt-clone`。
 
 ```
 $ sudo apt install apt-clone
 ```
 
-使用 apt-get 包管理器安装 apt-clone。
+使用 `apt-get` 包管理器安装 `apt-clone`。
 
 ```
 $ sudo apt-get install apt-clone
@@ -46,17 +38,15 @@ $ sudo apt-get install apt-clone
 
 ### 如何使用 apt-clone 备份已安装的软件包？
 
-成功安装 apt-clone 之后。只需提供一个保存备份文件的位置。
+成功安装 `apt-clone` 之后。只需提供一个保存备份文件的位置。我们将在 `/backup` 目录下保存已安装的软件包备份。
 
-我们将在 `/backup` 目录下保存已安装的软件包备份。
-
-apt-clone 会将已安装的软件包列表保存到 `apt-clone-state-Ubuntu18.2daygeek.com.tar.gz` 中。
+`apt-clone` 会将已安装的软件包列表保存到 `apt-clone-state-Ubuntu18.2daygeek.com.tar.gz` 中。
 
 ```
 $ sudo apt-clone clone /backup
 ```
 
-我们同样可以通过运行 ls 命令来检查。
+我们同样可以通过运行 `ls` 命令来检查。
 
 ```
 $ ls -lh /backup/
@@ -86,7 +76,7 @@ Date: Sat Apr 20 19:06:43 2019
 $ scp /backup/apt-clone-state-ubunt-18-04.tar.gz Destination-Server:/opt
 ```
 
-复制完成后，使用 apt-clone 执行还原。
+复制完成后，使用 `apt-clone` 执行还原。
 
 使用以下命令进行还原。
 
@@ -109,7 +99,7 @@ via: https://www.2daygeek.com/apt-clone-backup-installed-packages-and-restore-th
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
