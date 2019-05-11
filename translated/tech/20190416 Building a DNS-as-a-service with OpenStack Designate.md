@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Building a DNS-as-a-service with OpenStack Designate)
@@ -14,7 +14,7 @@
 
 ![Command line prompt][1]
 
-[Designate][2] 是一个多租户的 DNS 即服务，它包括一个用于域名和记录管理的 REST API 和集成了 [Neutron][3] 的框架，并集成支持了 Bind9。
+[Designate][2] 是一个多租户的 DNS 即服务，它包括一个用于域名和记录管理的 REST API 和集成了 [Neutron][3] 的框架，并支持 Bind9。
 
 DNSaaS 可以提供：
 
@@ -25,11 +25,11 @@ DNSaaS 可以提供：
 
 ![Designate's architecture][4]
 
-这篇文章解释了如何在 CentOS 和 RHEL 上手动安装和配置 Designate 的最新版本，但是这个相同的配置你也可以用在其它发行版上。
+这篇文章解释了如何在 CentOS 和 RHEL 上手动安装和配置 Designate 的最新版本，但是同样的配置也可以用在其它发行版上。
 
 ### 在 OpenStack 上安装 Designate
 
-在我的 [GitHub 仓库][5]里我已经放了 Ansible 的 bind 和 Designate 的角色的示范设置。
+在我的 [GitHub 仓库][5]里，我已经放了 Ansible 的 bind 和 Designate 角色的示范设置。
 
 这个设置假定 bing 服务是安装 OpenStack 控制器节点之外（即使你可以在本地安装 bind）。
 
@@ -51,7 +51,7 @@ MariaDB [(none)]> GRANT ALL PRIVILEGES ON designate.* TO 'designate'@'%' \
 IDENTIFIED BY 'rhlab123';
 ```
 
-注意：bind 包必须安装在控制节点之外才能使<ruby>远程名字服务控制<rt>Remote Name Daemon Control</rt></ruby>（RNDC） 功能正常。
+注意：bind 包必须安装在控制节点之外才能使<ruby>远程名字服务控制<rt>Remote Name Daemon Control</rt></ruby>（RNDC）功能正常。
 
 ### 配置 bind（DNS 服务器）
 
@@ -79,7 +79,7 @@ controls {
 };
 ```
 
-在 `option` 一节中，添加：
+在 `option` 节中，添加：
 
 ```
 options {
@@ -105,7 +105,7 @@ chmod g+w /var/named
 # setsebool named_write_master_zones 1
 ```
 
-3、推送 `rndc.key` 和 `rndc.conf` 到 OpenStack 控制节点：
+3、把 `rndc.key` 和 `rndc.conf` 推入 OpenStack 控制节点：
 
 ```
 # scp -r /etc/rndc* {{ CONTROLLER_SERVER_IP }}:/etc/
@@ -334,7 +334,7 @@ via: https://opensource.com/article/19/4/getting-started-openstack-designate
 作者：[Amjad Yaseen][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
