@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10840-1.html)
 [#]: subject: (Building a DNS-as-a-service with OpenStack Designate)
 [#]: via: (https://opensource.com/article/19/4/getting-started-openstack-designate)
 [#]: author: (Amjad Yaseen https://opensource.com/users/ayaseen)
@@ -12,7 +12,7 @@
 
 > 学习如何安装和配置 Designate，这是一个 OpenStack 的多租户 DNS 即服务（DNSaaS）。
 
-![Command line prompt][1]
+![Command line prompt](https://img.linux.net.cn/data/attachment/album/201905/11/110822rjub9wtwtwtmccet.jpg)
 
 [Designate][2] 是一个多租户的 DNS 即服务，它包括一个用于域名和记录管理的 REST API 和集成了 [Neutron][3] 的框架，并支持 Bind9。
 
