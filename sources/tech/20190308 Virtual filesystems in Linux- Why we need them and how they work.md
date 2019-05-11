@@ -14,39 +14,41 @@ Linux 中的虚拟文件系统
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/documents_papers_file_storage_work.png?itok=YlXpAqAJ)
 
-什么是文件系统？根据早期的 Linux 贡献者和作者 [Robert Love][1] 所说，“文件系统是一个遵循特定结构的数据的分层存储。” 不过，这种描述也同样适用于 VFAT（虚拟文件分配表）、Git 和[Cassandra][2]（一种 [NoSQL 数据库][3]）。那么如何区别文件系统呢？
+什么是文件系统？根据早期的 Linux 贡献者和作家 [Robert Love][1] 所说，“文件系统是一个遵循特定结构的数据的分层存储。” 不过，这种描述也同样适用于 VFAT（虚拟文件分配表）、Git 和[Cassandra][2]（一种 [NoSQL 数据库][3]）。那么如何区别文件系统呢？
 
 ### 文件系统基础概念
 
-Linux 内核要求文件系统必须是实体，它还必须在持久对象上实现 `open()`、`read()` 和 `write()` 方法，并且这些实体需要有与之关联的名字。从 [面向对象编程][4] 的角度来看，内核将通用文件系统视为一个抽象接口，这些三大函数是“虚拟”的，没有默认定义。因此，内核的默认文件系统实现被称为虚拟文件系统（VFS）。
+Linux 内核要求文件系统必须是实体，它还必须在持久对象上实现 `open()`、`read()` 和 `write()` 方法，并且这些实体需要有与之关联的名字。从 [面向对象编程][4] 的角度来看，内核将通用文件系统视为一个抽象接口，这三大函数是“虚拟”的，没有默认定义。因此，内核的默认文件系统实现被称为虚拟文件系统（VFS）。
 
 ![][5] 
 
-If we can open(), read(), and write(), it is a file as this console session shows.
+如果我们能够 `open()`、`read()` 和 `write()`，它就是一个文件，如这个主控台会话所示。
 
-VFS underlies the famous observation that in Unix-like systems "everything is a file." Consider how weird it is that the tiny demo above featuring the character device /dev/console actually works. The image shows an interactive Bash session on a virtual teletype (tty). Sending a string into the virtual console device makes it appear on the virtual screen. VFS has other, even odder properties. For example, it's [possible to seek in them][6].
+VFS 是著名的类 Unix 系统中 “一切皆文件” 的基础。让我们看一下它有多奇怪，上面的小演示体现了字符设备 `/dev/console` 实际的工作。该图显示了一个在虚拟电传打字（tty）上的交互式 Bash 会话。将一个字符串发送到虚拟控制台设备会使其显示在虚拟屏幕上。而 VFS 甚至还有其它更奇怪的属性。例如，它[可以在其中寻址][6]。
 
-The familiar filesystems like ext4, NFS, and /proc all provide definitions of the big-three functions in a C-language data structure called [file_operations][7] . In addition, particular filesystems extend and override the VFS functions in the familiar object-oriented way. As Robert Love points out, the abstraction of VFS enables Linux users to blithely copy files to and from foreign operating systems or abstract entities like pipes without worrying about their internal data format. On behalf of userspace, via a system call, a process can copy from a file into the kernel's data structures with the read() method of one filesystem, then use the write() method of another kind of filesystem to output the data.
+熟悉的文件系统如 ext4、NFS 和 /proc 在名为 [file_operations] [7] 的 C 语言数据结构中都提供了三大函数的定义。此外，特定的文件系统会以熟悉的面向对象的方式扩展和覆盖了 VFS 功能。正如 Robert Love 指出的那样，VFS 的抽象使 Linux 用户可以轻松地将文件复制到（复制自）外部操作系统或抽象实体（如管道），而无需担心其内部数据格式。在用户空间，通过系统调用，进程可以使用一个文件系统的 `read(）`方法从文件复制到内核的数据结构中，然后使用另一种文件系统的 `write()` 方法输出数据。
 
-The function definitions that belong to the VFS base type itself are found in the [fs/*.c files][8] in kernel source, while the subdirectories of fs/ contain the specific filesystems. The kernel also contains filesystem-like entities such as cgroups, /dev, and tmpfs, which are needed early in the boot process and are therefore defined in the kernel's init/ subdirectory. Note that cgroups, /dev, and tmpfs do not call the file_operations big-three functions, but directly read from and write to memory instead.
+属于 VFS 基本类型的函数定义本身可以在内核源代码的 [fs/*.c 文件][8] 中找到，而 `fs/` 的子目录中包含了特定的文件系统。内核还包含了类似文件系统的实体，例如 cgroup、`/dev` 和 tmpfs，它们在引导过程的早期需要，因此定义在内核的 `init/` 子目录中。请注意，cgroup、`/dev` 和 tmpfs 不会调用 `file_operations` 的三大函数，而是直接读取和写入内存。
 
-The diagram below roughly illustrates how userspace accesses various types of filesystems commonly mounted on Linux systems. Not shown are constructs like pipes, dmesg, and POSIX clocks that also implement struct file_operations and whose accesses therefore pass through the VFS layer.
+下图大致说明了用户空间如何访问通常挂载在 Linux 系统上的各种类型的文件系统。未显示的是像管道、dmesg 和 POSIX 时钟这样的结构，它们也实现了 `struct file_operations`，并且因此其访问要通过 VFS 层。
 
 ![How userspace accesses various types of filesystems][9]
-VFS are a "shim layer" between system calls and implementors of specific file_operations like ext4 and procfs. The file_operations functions can then communicate either with device-specific drivers or with memory accessors. tmpfs, devtmpfs and cgroups don't make use of file_operations but access memory directly.
 
-VFS's existence promotes code reuse, as the basic methods associated with filesystems need not be re-implemented by every filesystem type. Code reuse is a widely accepted software engineering best practice! Alas, if the reused code [introduces serious bugs][10], then all the implementations that inherit the common methods suffer from them.
+VFS 是系统调用和特定 `file_operations` 的实现（如 ext4 和 procfs）之间的“垫片层”。然后，`file_operations` 函数可以与特定于设备的驱动程序或内存访问器进行通信。tmpfs、devtmpfs 和 cgroup 不使用 `file_operations` 而是直接访问内存。
 
-### /tmp: A simple tip
+VFS 的存在促进了代码重用，因为与文件系统相关的基本方法不需要由每种文件系统类型重新实现。代码重用是一种被广泛接受的软件工程最佳实践！唉，如果重用的代码[引入了严重的错误][10]，那么继承常用方法的所有实现都会受到影响。
 
-An easy way to find out what VFSes are present on a system is to type **mount | grep -v sd | grep -v :/** , which will list all mounted filesystems that are not resident on a disk and not NFS on most computers. One of the listed VFS mounts will assuredly be /tmp, right?
+### /tmp：一个小提示
+
+找出系统中存在的 VFS 的简单方法是键入 `mount | grep -v sd | grep -v :/`，在大多数计算机上，它将列出所有未驻留在磁盘上也不是 NFS 的已挂载文件系统。其中一个列出的 VFS 挂载肯定是 `/ tmp`，对吧？
 
 ![Man with shocked expression][11]
-Everyone knows that keeping /tmp on a physical storage device is crazy! credit: <https://tinyurl.com/ybomxyfo>
 
-Why is keeping /tmp on storage inadvisable? Because the files in /tmp are temporary(!), and storage devices are slower than memory, where tmpfs are created. Further, physical devices are more subject to wear from frequent writing than memory is. Last, files in /tmp may contain sensitive information, so having them disappear at every reboot is a feature.
+*每个人都知道把 /tmp 放在物理存储设备上简直是疯了！图片：<https://tinyurl.com/ybomxyfo>*
 
-Unfortunately, installation scripts for some Linux distros still create /tmp on a storage device by default. Do not despair should this be the case with your system. Follow simple instructions on the always excellent [Arch Wiki][12] to fix the problem, keeping in mind that memory allocated to tmpfs is not available for other purposes. In other words, a system with a gigantic tmpfs with large files in it can run out of memory and crash. Another tip: when editing the /etc/fstab file, be sure to end it with a newline, as your system will not boot otherwise. (Guess how I know.)
+为什么把 `/tmp` 留在存储设备上是不可取的？因为 `/tmp` 中的文件是临时的（！），并且存储设备比内存慢，所以创建了 tmpfs 这种文件系统。此外，比起内存，物理设备频繁写入更容易磨损。最后，`/tmp` 中的文件可能包含敏感信息，因此在每次重新启动时让它们消失是一项功能。
+
+不幸的是，默认情况下，某些 Linux 发行版的安装脚本仍会在存储设备上创建 /tmp。如果你的系统出现这种情况，请不要绝望。按照一直优秀的 [Arch Wiki][12] 上的简单说明来解决问题就行，记住分配给 tmpfs 的内存不能用于其他目的。换句话说，带有巨大 tmpfs 并且其中包含大文件的系统可能会耗尽内存并崩溃。另一个提示：编辑 `/etc/fstab` 文件时，请务必以换行符结束，否则系统将无法启动。（猜猜我怎么知道。）
 
 ### /proc and /sys
 
