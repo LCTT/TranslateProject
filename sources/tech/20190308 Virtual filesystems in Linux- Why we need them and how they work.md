@@ -50,32 +50,35 @@ VFS 的存在促进了代码重用，因为与文件系统相关的基本方法�
 
 不幸的是，默认情况下，某些 Linux 发行版的安装脚本仍会在存储设备上创建 /tmp。如果你的系统出现这种情况，请不要绝望。按照一直优秀的 [Arch Wiki][12] 上的简单说明来解决问题就行，记住分配给 tmpfs 的内存不能用于其他目的。换句话说，带有巨大 tmpfs 并且其中包含大文件的系统可能会耗尽内存并崩溃。另一个提示：编辑 `/etc/fstab` 文件时，请务必以换行符结束，否则系统将无法启动。（猜猜我怎么知道。）
 
-### /proc and /sys
+### /proc 和 /sys
 
-Besides /tmp, the VFSes with which most Linux users are most familiar are /proc and /sys. (/dev relies on shared memory and has no file_operations). Why two flavors? Let's have a look in more detail.
+除了 `/tmp` 之外，大多数 Linux 用户最熟悉的 VFS 是 `/proc` 和 `/sys`。（`/dev` 依赖于共享内存，没有 `file_operations`）。为什么有两种？让我们来看看更多细节。
 
-The procfs offers a snapshot into the instantaneous state of the kernel and the processes that it controls for userspace. In /proc, the kernel publishes information about the facilities it provides, like interrupts, virtual memory, and the scheduler. In addition, /proc/sys is where the settings that are configurable via the [sysctl command][13] are accessible to userspace. Status and statistics on individual processes are reported in /proc/<PID> directories.
+procfs 提供了内核的瞬时状态及其为用户空间控制的进程的快照。在 `/proc` 中，内核发布有关其提供的工具的信息，如中断、虚拟内存和调度程序。此外，`/proc/sys` 是存放可以通过 [sysctl 命令][13]配置的设置的地方，可供用户空间访问。单个进程的状态和统计信息在 `/proc/<PID>` 目录中报告。
 
 ![Console][14]
-/proc/meminfo is an empty file that nonetheless contains valuable information.
 
-The behavior of /proc files illustrates how unlike on-disk filesystems VFS can be. On the one hand, /proc/meminfo contains the information presented by the command **free**. On the other hand, it's also empty! How can this be? The situation is reminiscent of a famous article written by Cornell University physicist N. David Mermin in 1985 called "[Is the moon there when nobody looks?][15] Reality and the quantum theory." The truth is that the kernel gathers statistics about memory when a process requests them from /proc, and there actually is nothing in the files in /proc when no one is looking. As [Mermin said][16], "It is a fundamental quantum doctrine that a measurement does not, in general, reveal a preexisting value of the measured property." (The answer to the question about the moon is left as an exercise.)
+*/proc/meminfo 是一个空文件，但仍包含有价值的信息。*
+
+`/proc` 文件的行为说明了 VFS 可以与磁盘上的文件系统不同。一方面，`/proc/meminfo` 包含命令 `free` 提供的信息。另一方面，它还是空的！怎么会这样？这种情况让人联想起康奈尔大学物理学家 N. David Mermin 在 1985 年写的一篇名为“[没有人看见月亮的情况吗？][15]现实和量子理论。”事实是当进程从 `/proc` 请求内存时内核再收集有关内存的统计信息，并且当没有人在查看时，`/proc` 中的文件实际上没有任何内容。正如 [Mermin 所说][16]，“这是一个基本的量子学说，一般来说，测量不会揭示被测属性的预先存在的价值。”（关于月球的问题的答案留作练习。）
 
 ![Full moon][17]
-The files in /proc are empty when no process accesses them. ([Source][18])
 
-The apparent emptiness of procfs makes sense, as the information available there is dynamic. The situation with sysfs is different. Let's compare how many files of at least one byte in size there are in /proc versus /sys.
+*当没有进程访问它们时，/proc 中的文件为空。（[来源][18]）*
+
+procfs 的空文件是有道理的，因为那里可用的信息是动态的。sysfs 的情况不同。让我们比较一下 `/proc` 与 `/sys` 中不为空的文件数量。
 
 ![](https://opensource.com/sites/default/files/uploads/virtualfilesystems_6-filesize.png)
 
-Procfs has precisely one, namely the exported kernel configuration, which is an exception since it needs to be generated only once per boot. On the other hand, /sys has lots of larger files, most of which comprise one page of memory. Typically, sysfs files contain exactly one number or string, in contrast to the tables of information produced by reading files like /proc/meminfo.
+procfs 只有一个，即导出的内核配置，这是一个例外，因为每次启动只需要生成一次。另一方面，`/sys` 有许多较大的文件，其中大多数包含一页内存。通常，sysfs 文件只包含一个数字或字符串，与通过读取 `/proc/meminfo` 等文件生成的信息表格形成鲜明对比。
 
-The purpose of sysfs is to expose the readable and writable properties of what the kernel calls "kobjects" to userspace. The only purpose of kobjects is reference-counting: when the last reference to a kobject is deleted, the system will reclaim the resources associated with it. Yet, /sys constitutes most of the kernel's famous "[stable ABI to userspace][19]" which [no one may ever, under any circumstances, "break."][20] That doesn't mean the files in sysfs are static, which would be contrary to reference-counting of volatile objects.
+sysfs 的目的是将内核称为“kobjects”的可读写属性公开给用户空间。kobjects 的唯一目的是引用计数：当删除对 kobject 的最后一个引用时，系统将回收与之关联的资源。然而，`/sys` 构成了内核著名的“[到用户空间的稳定 ABI][19]”，它的大部分内容[在任何情况下都没有人会“破坏”][20]。这并不意味着 sysfs 中的文件是静态，这与易失性对象的引用计数相反。
 
-The kernel's stable ABI instead constrains what can appear in /sys, not what is actually present at any given instant. Listing the permissions on files in sysfs gives an idea of how the configurable, tunable parameters of devices, modules, filesystems, etc. can be set or read. Logic compels the conclusion that procfs is also part of the kernel's stable ABI, although the kernel's [documentation][19] doesn't state so explicitly.
+内核的稳定 ABI 反而限制了 `/sys` 中可能出现的内容，而不是任何给定时刻实际存在的内容。列出 sysfs 中文件的权限可以了解如何设置或读取设备、模块、文件系统等的可配置、可调参数。Logic 强调 procfs 也是内核稳定 ABI 的一部分的结论，尽管内核的[文档][19]没有明确说明。
 
 ![Console][21]
-Files in sysfs describe exactly one property each for an entity and may be readable, writable or both. The "0" in the file reveals that the SSD is not removable.
+
+*sysfs 中的文件恰好描述了实体的每个属性，并且可以是可读的、可写的或两者兼而有之。文件中的“0”表示 SSD 不可移动的存储设备。*
 
 ### Snooping on VFS with eBPF and bcc tools
 
