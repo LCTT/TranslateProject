@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10848-1.html)
 [#]: subject: (TLP – An Advanced Power Management Tool That Improve Battery Life On Linux Laptop)
 [#]: via: (https://www.2daygeek.com/tlp-increase-optimize-linux-laptop-battery-life/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -10,15 +10,17 @@
 TLP：一个可以延长 Linux 笔记本电池寿命的高级电源管理工具
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/201905/13/094413iu77i8w75t80tq7h.jpg)
+
 笔记本电池是针对 Windows 操作系统进行了高度优化的，当我在笔记本电脑中使用 Windows 操作系统时，我已经意识到这一点，但对于 Linux 来说却不一样。
 
 多年来，Linux 在电池优化方面取得了很大进步，但我们仍然需要做一些必要的事情来改善 Linux 中笔记本电脑的电池寿命。
 
-当我考虑电池寿命时，我没有多少选择，但我觉得 TLP 对我来说是一个更好的解决方案，所以我会继续使用它。
+当我考虑延长电池寿命时，我没有多少选择，但我觉得 TLP 对我来说是一个更好的解决方案，所以我会继续使用它。
 
 在本教程中，我们将详细讨论 TLP 以延长电池寿命。
 
-我们之前在我们的网站上写了三篇关于 Linux [笔记本电池节电工具][1] 的文章：[PowerTOP][2] 和 [电池充电状态][3]。
+我们之前在我们的网站上写过三篇关于 Linux [笔记本电池节电工具][1] 的文章：[PowerTOP][2] 和 [电池充电状态][3]。
 
 ### TLP
 
@@ -264,8 +266,7 @@ Driver blacklist = amdgpu nouveau nvidia radeon pcieport
 /sys/bus/pci/devices/0000:00:01.0/power/control = auto (0x060400, PCI bridge, pcieport)
 /sys/bus/pci/devices/0000:00:02.0/power/control = auto (0x030000, VGA compatible controller, i915)
 /sys/bus/pci/devices/0000:00:14.0/power/control = auto (0x0c0330, USB controller, xhci_hcd)
-/sys/bus/pci/devices/0000:00:16.0/power/control = auto (0x078000, Communication controller, mei_me)
-/sys/bus/pci/devices/0000:00:17.0/power/control = auto (0x010601, SATA controller, ahci)
+
 ......
 ```
 
@@ -310,6 +311,7 @@ CPU model      = Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
 /sys/devices/system/cpu/cpu0/cpufreq/energy_performance_available_preferences = default performance balance_performance balance_power power 
 
 ......
+
 /sys/devices/system/cpu/intel_pstate/min_perf_pct      =  22 [%]
 /sys/devices/system/cpu/intel_pstate/max_perf_pct      = 100 [%]
 /sys/devices/system/cpu/intel_pstate/no_turbo          =   0
@@ -389,6 +391,7 @@ WWAN blacklist      = enabled
 
 Bus 002 Device 001 ID 1d6b:0003 control = auto, autosuspend_delay_ms =     0 -- Linux Foundation 3.0 root hub (hub)
 Bus 001 Device 003 ID 174f:14e8 control = auto, autosuspend_delay_ms =  2000 -- Syntek  (uvcvideo)
+
 ......
 ```
 
@@ -423,6 +426,7 @@ DISK_IDLE_SECS_ON_AC=0
 DISK_IDLE_SECS_ON_BAT=2
 MAX_LOST_WORK_SECS_ON_AC=15
 MAX_LOST_WORK_SECS_ON_BAT=60
+
 ......
 
 +++ System Info
@@ -446,6 +450,7 @@ CPU model = Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver = intel_pstate
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor = powersave
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors = performance powersave
+
 ......
 
 /sys/devices/system/cpu/intel_pstate/min_perf_pct = 22 [%]
@@ -532,6 +537,7 @@ Driver blacklist = amdgpu nouveau nvidia radeon pcieport
 /sys/bus/pci/devices/0000:00:00.0/power/control = auto (0x060000, Host bridge, skl_uncore)
 /sys/bus/pci/devices/0000:00:01.0/power/control = auto (0x060400, PCI bridge, pcieport)
 /sys/bus/pci/devices/0000:00:02.0/power/control = auto (0x030000, VGA compatible controller, i915)
+
 ......
 
 +++ USB
@@ -569,7 +575,7 @@ via: https://www.2daygeek.com/tlp-increase-optimize-linux-laptop-battery-life/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
