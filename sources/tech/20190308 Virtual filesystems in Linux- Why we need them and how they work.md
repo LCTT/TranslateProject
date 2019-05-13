@@ -80,64 +80,72 @@ sysfs 的目的是将内核称为“kobjects”的可读写属性公开给用户
 
 *sysfs 中的文件恰好描述了实体的每个属性，并且可以是可读的、可写的或两者兼而有之。文件中的“0”表示 SSD 不可移动的存储设备。*
 
-### Snooping on VFS with eBPF and bcc tools
+### 用 eBPF 和 bcc 工具一窥 VFS 内部
 
-The easiest way to learn how the kernel manages sysfs files is to watch it in action, and the simplest way to watch on ARM64 or x86_64 is to use eBPF. eBPF (extended Berkeley Packet Filter) consists of a [virtual machine running inside the kernel][22] that privileged users can query from the command line. Kernel source tells the reader what the kernel can do; running eBPF tools on a booted system shows instead what the kernel actually does.
+了解内核如何管理 sysfs 文件的最简单方法是观察它的运行情况，在 ARM64 或 x86_64 上观看的最简单方法是使用 eBPF。eBPF（<ruby>扩展的伯克利数据包过滤器<rt>extended Berkeley Packet Filter</rt></ruby>）由[在内核中运行的虚拟机][22]组成，特权用户可以从命令行进行查询。内核源代码告诉读者内核可以做什么；在一个启动的系统上运行 eBPF 工具会显示内核实际上做了什么。
 
-Happily, getting started with eBPF is pretty easy via the [bcc][23] tools, which are available as [packages from major Linux distros][24] and have been [amply documented][25] by Brendan Gregg. The bcc tools are Python scripts with small embedded snippets of C, meaning anyone who is comfortable with either language can readily modify them. At this count, [there are 80 Python scripts in bcc/tools][26], making it highly likely that a system administrator or developer will find an existing one relevant to her/his needs.
+令人高兴的是，通过 [bcc][23] 工具入门使用 eBPF 非常容易，这些工具在[主要 Linux 发行版的软件包][24] 中都有，并且已经由 Brendan Gregg [充分地给出了文档说明][25]。bcc 工具是带有小段嵌入式 C 语言片段的 Python 脚本，这意味着任何对这两种语言熟悉的人都可以轻松修改它们。当前统计，[bcc/tools 中有 80 个 Python 脚本][26]，使系统管理员或开发人员很有可能能够找到与她/他的需求相关的现有脚本。
 
-To get a very crude idea about what work VFSes are performing on a running system, try the simple [vfscount][27] or [vfsstat][28], which show that dozens of calls to vfs_open() and its friends occur every second.
+要了解 VFS 在正在运行的系统上的工作情况，请尝试使用简单的 [vfscount][27] 或 [vfsstat][28]，这表明每秒都会发生数十次对 `vfs_open()` 及其相关的调用
+
 
 ![Console - vfsstat.py][29]
-vfsstat.py is a Python script with an embedded C snippet that simply counts VFS function calls.
 
-For a less trivial example, let's watch what happens in sysfs when a USB stick is inserted on a running system.
+*vfsstat.py 是一个带有嵌入式 C 片段的 Python 脚本，它只是计数 VFS 函数调用。*
+
+作为一个不太重要的例子，让我们看一下在运行的系统上插入 USB 记忆棒时 sysfs 中会发生什么。
+
 
 ![Console when USB is inserted][30]
-Watch with eBPF what happens in /sys when a USB stick is inserted, with simple and complex examples.
 
-In the first simple example above, the [trace.py][31] bcc tools script prints out a message whenever the sysfs_create_files() command runs. We see that sysfs_create_files() was started by a kworker thread in response to the USB stick insertion, but what file was created? The second example illustrates the full power of eBPF. Here, trace.py is printing the kernel backtrace (-K option) plus the name of the file created by sysfs_create_files(). The snippet inside the single quotes is some C source code, including an easily recognizable format string, that the provided Python script [induces a LLVM just-in-time compiler][32] to compile and execute inside an in-kernel virtual machine. The full sysfs_create_files() function signature must be reproduced in the second command so that the format string can refer to one of the parameters. Making mistakes in this C snippet results in recognizable C-compiler errors. For example, if the **-I** parameter is omitted, the result is "Failed to compile BPF text." Developers who are conversant with either C or Python will find the bcc tools easy to extend and modify.
+*用 eBPF 观察插入 USB 记忆棒时 /sys 中会发生什么，简单的和复杂的例子。*
 
-When the USB stick is inserted, the kernel backtrace appears showing that PID 7711 is a kworker thread that created a file called "events" in sysfs. A corresponding invocation with sysfs_remove_files() shows that removal of the USB stick results in removal of the events file, in keeping with the idea of reference counting. Watching sysfs_create_link() with eBPF during USB stick insertion (not shown) reveals that no fewer than 48 symbolic links are created.
+在上面的第一个简单示例中，只要 `sysfs_create_files()` 命令运行，[trace.py][31] bcc 工具脚本就会打印出一条消息。我们看到 `sysfs_create_files()` 由一个 kworker 线程启动，以响应 USB 棒插入事件，但是它创建了什么文件？第二个例子说明了 eBPF 的强大能力。这里，`trace.py` 正在打印内核回溯（`-K` 选项）以及 `sysfs_create_files()` 创建的文件的名称。单引号内的代码段是一些 C 源代码，包括一个易于识别的格式字符串，提供的 Python 脚本[引入 LLVM 即时编译器（JIT）][32] 在内核虚拟机内编译和执行它。必须在第二个命令中重现完整的 `sysfs_create_files()` 函数签名，以便格式字符串可以引用其中一个参数。在此 C 片段中出错会导致可识别的 C 编译器错误。例如，如果省略 `-I` 参数，则结果为“无法编译 BPF 文本”。熟悉 C 或 Python 的开发人员会发现 bcc 工具易于扩展和修改。
 
-What is the purpose of the events file anyway? Using [cscope][33] to find the function [__device_add_disk()][34] reveals that it calls disk_add_events(), and either "media_change" or "eject_request" may be written to the events file. Here, the kernel's block layer is informing userspace about the appearance and disappearance of the "disk." Consider how quickly informative this method of investigating how USB stick insertion works is compared to trying to figure out the process solely from the source.
+插入 USB 记忆棒后，内核回溯显示 PID 7711 是一个 kworker 线程，它在 sysfs 中创建了一个名为 `events` 的文件。使用 `sysfs_remove_files()` 进行相应的调用表明，删除 USB 记忆棒会导致删除该 `events` 文件，这与引用计数的想法保持一致。在 USB 棒插入期间（未显示）在 eBPF 中观察 `sysfs_create_link()` 表明创建了不少于 48 个符号链接。
 
-### Read-only root filesystems make embedded devices possible
+无论如何，`events` 文件的目的是什么？使用 [cscope][33] 查找函数 [`__device_add_disk()`][34] 显示它调用 `disk_add_events()`，并且可以将 “media_change” 或 “eject_request” 写入到该文件。这里，内核的块层通知用户空间 “磁盘” 的出现和消失。考虑一下这种调查 USB 棒插入工作原理的方法与试图仅从源头中找出该过程的速度有多快。
 
-Assuredly, no one shuts down a server or desktop system by pulling out the power plug. Why? Because mounted filesystems on the physical storage devices may have pending writes, and the data structures that record their state may become out of sync with what is written on the storage. When that happens, system owners will have to wait at next boot for the [fsck filesystem-recovery tool][35] to run and, in the worst case, will actually lose data.
+### 只读根文件系统使得嵌入式设备成为可能
 
-Yet, aficionados will have heard that many IoT and embedded devices like routers, thermostats, and automobiles now run Linux. Many of these devices almost entirely lack a user interface, and there's no way to "unboot" them cleanly. Consider jump-starting a car with a dead battery where the power to the [Linux-running head unit][36] goes up and down repeatedly. How is it that the system boots without a long fsck when the engine finally starts running? The answer is that embedded devices rely on [a read-only root fileystem][37] (ro-rootfs for short).
+确实，没有人通过拔出电源插头来关闭服务器或桌面系统。为什么？因为物理存储设备上挂载的文件系统可能有挂起的（未完成的）写入，并且记录其状态的数据结构可能与写入存储器的内容不同步。当发生这种情况时，系统所有者将不得不在下次启动时等待 [fsck 文件系统恢复工具][35] 运行完成，在最坏的情况下，实际上会丢失数据。
+
+然而，狂热爱好者会听说许多物联网和嵌入式设备，如路由器、恒温器和汽车现在都运行 Linux。许多这些设备几乎完全没有用户界面，并且没有办法干净地“解除启动”它们。想一想使用启动电池耗尽的汽车，其中[运行 Linux 的主机设备][36] 的电源会不断加电断电。当引擎最终开始运行时，系统如何在没有长时间 fsck 的情况下启动呢？答案是嵌入式设备依赖于[只读根文件系统][37]（简称 ro-rootfs）。
+
 
 ![Photograph of a console][38]
-ro-rootfs are why embedded systems don't frequently need to fsck. Credit (with permission): <https://tinyurl.com/yxoauoub>
 
-A ro-rootfs offers many advantages that are less obvious than incorruptibility. One is that malware cannot write to /usr or /lib if no Linux process can write there. Another is that a largely immutable filesystem is critical for field support of remote devices, as support personnel possess local systems that are nominally identical to those in the field. Perhaps the most important (but also most subtle) advantage is that ro-rootfs forces developers to decide during a project's design phase which system objects will be immutable. Dealing with ro-rootfs may often be inconvenient or even painful, as [const variables in programming languages][39] often are, but the benefits easily repay the extra overhead.
+*ro-rootfs 是嵌入式系统不经常需要 fsck 的原因。 来源：<https://tinyurl.com/yxoauoub>*
 
-Creating a read-only rootfs does require some additional amount of effort for embedded developers, and that's where VFS comes in. Linux needs files in /var to be writable, and in addition, many popular applications that embedded systems run will try to create configuration dot-files in $HOME. One solution for configuration files in the home directory is typically to pregenerate them and build them into the rootfs. For /var, one approach is to mount it on a separate writable partition while / itself is mounted as read-only. Using bind or overlay mounts is another popular alternative.
+ro-rootfs 提供了许多优点，虽然这些优点不如耐用性那么显然。一个是，如果没有 Linux 进程可以写入，那么恶意软件无法写入 `/usr` 或 `/lib`。另一个是，基本上不可变的文件系统对于远程设备的现场支持至关重要，因为支持人员拥有名义上与现场相同的本地系统。也许最重要（但也是最微妙）的优势是 ro-rootfs 迫使开发人员在项目的设计阶段就决定哪些系统对象是不可变的。处理 ro-rootfs 可能经常是不方便甚至是痛苦的，[编程语言中的常量变量][39]经常就是这样，但带来的好处很容易偿还额外的开销。
 
-### Bind and overlay mounts and their use by containers
+对于嵌入式开发人员，创建只读根文件系统确实需要做一些额外的工作，而这正是 VFS 的用武之地。Linux 需要 `/var` 中的文件可写，此外，嵌入式系统运行的许多流行应用程序将尝试在 `$HOME` 中创建配置点文件。放在家目录中的配置文件的一种解决方案通常是预生成它们并将它们构建到 rootfs 中。对于 `/var`，一种方法是将其挂载在单独的可写分区上，而 `/` 本身以只读方式挂载。使用绑定或叠加挂载是另一种流行的替代方案。
 
-Running **[man mount][40]** is the best place to learn about bind and overlay mounts, which give embedded developers and system administrators the power to create a filesystem in one path location and then provide it to applications at a second one. For embedded systems, the implication is that it's possible to store the files in /var on an unwritable flash device but overlay- or bind-mount a path in a tmpfs onto the /var path at boot so that applications can scrawl there to their heart's delight. At next power-on, the changes in /var will be gone. Overlay mounts provide a union between the tmpfs and the underlying filesystem and allow apparent modification to an existing file in a ro-rootfs, while bind mounts can make new empty tmpfs directories show up as writable at ro-rootfs paths. While overlayfs is a proper filesystem type, bind mounts are implemented by the [VFS namespace facility][41].
+### 绑定和叠加挂载以及在容器中的使用
 
-Based on the description of overlay and bind mounts, no one will be surprised that [Linux containers][42] make heavy use of them. Let's spy on what happens when we employ [systemd-nspawn][43] to start up a container by running bcc's mountsnoop tool:
+运行 [man mount][40] 是了解<ruby>绑定挂载<rt>bind mount</rt></ruby>和<ruby>叠加挂载<rt>overlay mount</rt></ruby>的最好办法，这使嵌入式开发人员和系统管理员能够在一个路径位置创建文件系统，然后在另外一个路径将其提供给应用程序。对于嵌入式系统，这代表着可以将文件存储在 `/var` 中的不可写闪存设备上，但是在启动时将 tmpfs 中的路径叠加挂载或绑定挂载到 `/var` 路径上，这样应用程序就可以在那里随意写它们的内容了。下次加电时，`/var` 中的变化将会消失。叠加挂载提供了 tmpfs 和底层文件系统之间的联合，允许对 ro-rootfs 中的现有文件进行直接修改，而绑定挂载可以使新的空 tmpfs 目录在 ro-rootfs 路径中显示为可写。虽然叠加文件系统是一种适当的文件系统类型，但绑定挂载由 [VFS 命名空间工具][41] 实现的。
+
+根据叠加挂载和绑定挂载的描述，没有人会对 [Linux容器][42] 大量使用它们感到惊讶。让我们通过运行 bcc 的 `mountsnoop` 工具监视当使用 [systemd-nspawn][43] 启动容器时会发生什么：
 
 ![Console - system-nspawn invocation][44]
-The system-nspawn invocation fires up the container while mountsnoop.py runs.
 
-And let's see what happened:
+*在 mountsnoop.py 运行的同时，system-nspawn 调用启动容器。*
+
+让我们看看发生了什么：
 
 ![Console - Running mountsnoop][45]
-Running mountsnoop during the container "boot" reveals that the container runtime relies heavily on bind mounts. (Only the beginning of the lengthy output is displayed)
 
-Here, systemd-nspawn is providing selected files in the host's procfs and sysfs to the container at paths in its rootfs. Besides the MS_BIND flag that sets bind-mounting, some of the other flags that the "mount" system call invokes determine the relationship between changes in the host namespace and in the container. For example, the bind-mount can either propagate changes in /proc and /sys to the container, or hide them, depending on the invocation.
+在容器 “启动” 期间运行 `mountsnoop` 可以看到容器运行时很大程度上依赖于绑定挂载。（仅显示冗长输出的开头）
 
-### Summary
+这里，`systemd-nspawn` 将主机的 procfs 和 sysfs 中的选定文件其 rootfs 中的路径提供给容器按。除了设置绑定挂载时的 `MS_BIND` 标志之外，`mount` 系统调用的一些其他标志用于确定主机命名空间和容器中的更改之间的关系。例如，绑定挂载可以将 `/proc` 和 `/sys` 中的更改传播到容器，也可以隐藏它们，具体取决于调用。
 
-Understanding Linux internals can seem an impossible task, as the kernel itself contains a gigantic amount of code, leaving aside Linux userspace applications and the system-call interface in C libraries like glibc. One way to make progress is to read the source code of one kernel subsystem with an emphasis on understanding the userspace-facing system calls and headers plus major kernel internal interfaces, exemplified here by the file_operations table. The file operations are what makes "everything is a file" actually work, so getting a handle on them is particularly satisfying. The kernel C source files in the top-level fs/ directory constitute its implementation of virtual filesystems, which are the shim layer that enables broad and relatively straightforward interoperability of popular filesystems and storage devices. Bind and overlay mounts via Linux namespaces are the VFS magic that makes containers and read-only root filesystems possible. In combination with a study of source code, the eBPF kernel facility and its bcc interface makes probing the kernel simpler than ever before.
+### 总结
 
-Much thanks to [Akkana Peck][46] and [Michael Eager][47] for comments and corrections.
+理解 Linux 内部结构似乎是一项不可能完成的任务，因为除了 Linux 用户空间应用程序和 glibc 这样的 C 库中的系统调用接口，内核本身也包含大量代码。取得进展的一种方法是阅读一个内核子系统的源代码，重点是理解面向用户空间的系统调用和头文件以及主要的内核内部接口，这里以 `file_operations` 表为例的。`file_operations` 使得“一切都是文件”可以实际工作，因此掌握它们收获特别大。顶级 `fs/` 目录中的内核 C 源文件构成了虚拟文件系统的实现，虚拟文件​​系统是支持流行的文件系统和存储设备的广泛且相对简单的互操作性的垫片层。通过 Linux 命名空间进行绑定挂载和覆盖挂载是 VFS 魔术，它使容器和只读根文件系统成为可能。结合对源代码的研究，eBPF 内核工具及其 bcc 接口使得探测内核比以往任何时候都更简单。
 
-Alison Chaiken will present [Virtual filesystems: why we need them and how they work][48] at the 17th annual Southern California Linux Expo ([SCaLE 17x][49]) March 7-10 in Pasadena, Calif.
+非常感谢 [Akkana Peck][46] 和 [Michael Eager][47] 的评论和指正。
+
+Alison Chaiken 也于 3 月 7 日至 10 日在加利福尼亚州帕萨迪纳举行的第 17 届南加州 Linux 博览会（[SCaLE 17x][49]）上演讲了[本主题][48]。
 
 --------------------------------------------------------------------------------
 
@@ -145,7 +153,7 @@ via: https://opensource.com/article/19/3/virtual-filesystems-linux
 
 作者：[Alison Chariken][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
