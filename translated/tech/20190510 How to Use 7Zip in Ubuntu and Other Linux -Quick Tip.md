@@ -1,78 +1,77 @@
 [#]: collector: (lujun9972)
 [#]: translator: (warmfrog)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Use 7Zip in Ubuntu and Other Linux [Quick Tip])
 [#]: via: (https://itsfoss.com/use-7zip-ubuntu-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何在 Ubuntu 和其他 Linux 分发版上使用 7Zip [快速指南]
-====================================================
+如何在 Ubuntu 和其他 Linux 发行版上使用 7Zip
+==============================================
 
-_**简介: 不能在 Linux 中提取 .7z 文件？ 学习如何在 Ubuntu 和其他 Linux 分发版中安装和使用 7zip。**_
+![](https://img.linux.net.cn/data/attachment/album/201905/14/154515xqy7nbq6eyjzu7qj.jpg)
 
-[7Zip][1]（更适当的写法是 7-Zip）是一种在 Windows 用户中广泛流行的文档格式。一个 7Zip 文档文件通常以 .7z 扩展结尾。它大部分是开源的，除了包含一些少量解压 rar 文件的代码。
+> 不能在 Linux 中提取 .7z 文件？学习如何在 Ubuntu 和其他 Linux 发行版中安装和使用 7zip。
 
-默认大多数 Linux 分发版不支持 7Zip。如果你试图提取它，你会看见这个错误：
+[7Zip][1]（更适当的写法是 7-Zip）是一种在 Windows 用户中广泛流行的归档格式。一个 7Zip 归档文件通常以 .7z 扩展结尾。它大部分是开源的，除了包含一些少量解压 rar 文件的代码。
 
-_**不能打开这种文件类型
-没有已安装的适用 7-zip 文档文件的命令。你想搜索一个命令来打开这个文件吗**_
+默认大多数 Linux 发行版不支持 7Zip。如果你试图提取它，你会看见这个错误：
+
+> 不能打开这种文件类型
+
+> 没有已安装的适用 7-zip 归档文件的命令。你想搜索一个命令来打开这个文件吗？
 
 ![][2]
 
-不要担心，你可以轻松的在 Ubuntu 和其他 Linux 分发版中安装 7zip。
+不要担心，你可以轻松的在 Ubuntu 和其他 Linux 发行版中安装 7zip。
 
-一个问题是你会注意到如果你试图用 [apt-get install 命令][3]，你会发现没有以 7zip 开头的候选安装。因为在 Linux 中 7Zip 包的名字是 [p7zip][4]。以字母 ‘p’ 开头而不是预期的数字 ‘7’。
+一个问题是你会注意到如果你试图用 [apt-get install 命令][3]，你会发现没有以 7zip 开头的候选安装。因为在 Linux 中 7Zip 包的名字是 [p7zip][4]。以字母 “p” 开头而不是预期的数字 “7”。
 
-让我们看一下如何在 Ubuntu 和其他 Linux 分发版中安装 7zip。
+让我们看一下如何在 Ubuntu 和其他 Linux 发行版中安装 7zip。
 
 ### 在 Ubuntu Linux 中安装 7Zip
 
 ![][5]
 
-你需要做的第一件事是安装 p7zip 包。你会在 Ubuntu 中发现 3 个包：p7zip，p7zip-full 和 pzip-rar。
+你需要做的第一件事是安装 p7zip 包。你会在 Ubuntu 中发现 3 个包：p7zip、p7zip-full 和 pzip-rar。
 
-pzip 和 p7zip-full 的不同是 pzip 是一个轻量级的版本，仅仅对 .7z 文件提供支持，而 full 版本提供了更多的 7z 压缩算法（例如音频文件）。
+pzip 和 p7zip-full 的不同是 pzip 是一个轻量级的版本，仅仅对 .7z 文件提供支持，而 p7zip-full 提供了更多的 7z 压缩算法（例如音频文件）。
 
 p7zip-rar 包在 7z 中提供了对 [RAR 文件][6] 的支持
 
-安装 p7zip-full 在大多数情况下足够了，但是你可能想安装 p7zip-rar 来支持 rar 文件的解压。
+在大多数情况下安装 p7zip-full 就足够了，但是你可能想安装 p7zip-rar 来支持 rar 文件的解压。
 
-p7zip 包在[ Ubuntu 的 universe 仓库][7] 因此保证你可以使用以下命令：
+p7zip 包在 [Ubuntu 的 universe 仓库][7] 因此保证你可以使用以下命令：
 
 ```
 sudo add-apt-repository universe
 sudo apt update
 ```
 
-在 Ubuntu 和 基于 Debian 的分发版中使用以下命令。
+在 Ubuntu 和基于 Debian 的发行版中使用以下命令。
 
 ```
 sudo apt install p7zip-full p7zip-rar
 ```
 
-这很好。现在在你的系统之有了 7zip 文档的支持。
+这很好。现在在你的系统就有了 7zip 归档的支持。
 
-[][8]
-
-建议使用 NitroShare 在 Linux，Windows 和 Mac 系统之间轻松共享文件。
-
-### 在 Linux中提取 7Zip 文档文件
+### 在 Linux 中提取 7Zip 归档文件
 
 安装了 7Zip 后，在 Linux 中，你可以在图形用户界面或者 命令行中提取 7zip 文件。
 
 在图形用户界面，你可以像提取其他压缩文件一样提取 .7z 文件。右击文件来提取它。
 
-在终端中，你可以使用下列命令提取 .7z 文档文件：
+在终端中，你可以使用下列命令提取 .7z 归档文件：
 
 ```
 7z e file.7z
 ```
 
-### 在 Linux 中压缩文件为 7zip 文档格式
+### 在 Linux 中压缩文件为 7zip 归档格式
 
-你可以在图形界面压缩文件为 7zip 文档格式。简单的在文件或目录上右击，选择**压缩**。你应该看到几种类型的文件格式选项。选择 .7z。
+你可以在图形界面压缩文件为 7zip 归档格式。简单的在文件或目录上右击，选择“压缩”。你应该看到几种类型的文件格式选项。选择 .7z。
 
 ![7zip Archive Ubuntu][9]
 
@@ -82,9 +81,9 @@ sudo apt install p7zip-full p7zip-rar
 7z a 输出的文件名 要压缩的文件
 ```
 
-默认，文档文件有 .7z 扩展。你可以压缩文件为 zip 格式通过在输出文件中指定0扩展（.zip）。
+默认，归档文件有 .7z 扩展。你可以通过在指定输出文件扩展名为 .zip 以压缩为 zip 格式。
 
-**总结**
+### 总结
 
 就是这样。看，在 Linux 中使用 7zip 多简单？我希望你喜欢这个快速指南。如果你有问题或者建议，请随意在下方评论让我知道。
 
@@ -95,7 +94,7 @@ via: https://itsfoss.com/use-7zip-ubuntu-linux/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[warmfrog](https://github.com/warmfrog)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
