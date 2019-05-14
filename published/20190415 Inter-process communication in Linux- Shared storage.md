@@ -62,47 +62,42 @@ producer-------->| disk file |<-------consumer
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <string.h>
 
 #define FileName "data.dat"
+#define DataString "Now is the winter of our discontent\nMade glorious summer by this sun of York\n"
 
 void report_and_exit(const char* msg) {
-  [perror][4](msg);
-  [exit][5](-1); /* EXIT_FAILURE */
+  perror(msg);
+  exit(-1); /* EXIT_FAILURE */
 }
 
 int main() {
   struct flock lock;
-  lock.l_type = F_WRLCK;    /* read/write (exclusive) lock */
+  lock.l_type = F_WRLCK;    /* read/write (exclusive versus shared) lock */
   lock.l_whence = SEEK_SET; /* base for seek offsets */
   lock.l_start = 0;         /* 1st byte in file */
   lock.l_len = 0;           /* 0 here means 'until EOF' */
   lock.l_pid = getpid();    /* process id */
 
   int fd; /* file descriptor to identify a file within a process */
-  if ((fd = open(FileName, O_RDONLY)) < 0)  /* -1 signals an error */
-    report_and_exit("open to read failed...");
+  if ((fd = open(FileName, O_RDWR | O_CREAT, 0666)) < 0)  /* -1 signals an error */
+    report_and_exit("open failed...");
 
-  /* If the file is write-locked, we can't continue. */
-  fcntl(fd, F_GETLK, &lock); /* sets lock.l_type to F_UNLCK if no write lock */
-  if (lock.l_type != F_UNLCK)
-    report_and_exit("file is still write locked...");
+  if (fcntl(fd, F_SETLK, &lock) < 0) /** F_SETLK doesn't block, F_SETLKW does **/
+    report_and_exit("fcntl failed to get lock...");
+  else {
+    write(fd, DataString, strlen(DataString)); /* populate data file */
+    fprintf(stderr, "Process %d has written to data file...\n", lock.l_pid);
+  }
 
-  lock.l_type = F_RDLCK; /* prevents any writing during the reading */
-  if (fcntl(fd, F_SETLK, &lock) < 0)
-    report_and_exit("can't get a read-only lock...");
-
-  /* Read the bytes (they happen to be ASCII codes) one at a time. */
-  int c; /* buffer for read bytes */
-  while (read(fd, &c, 1) > 0)    /* 0 signals EOF */
-    write(STDOUT_FILENO, &c, 1); /* write one byte to the standard output */
-
-  /* Release the lock explicitly. */
+  /* Now release the lock explicitly. */
   lock.l_type = F_UNLCK;
   if (fcntl(fd, F_SETLK, &lock) < 0)
     report_and_exit("explicit unlocking failed...");
 
-  close(fd);
-  return 0;
+  close(fd); /* close the file: would unlock if needed */
+  return 0;  /* terminating the process would unlock as well */
 }
 ```
 
@@ -140,8 +135,8 @@ lock.l_type = F_UNLCK;
 #define FileName "data.dat"
 
 void report_and_exit(const char* msg) {
-  [perror][4](msg);
-  [exit][5](-1); /* EXIT_FAILURE */
+  perror(msg);
+  exit(-1); /* EXIT_FAILURE */
 }
 
 int main() {
@@ -240,37 +235,37 @@ This is the way the world ends...
 #include "shmem.h"
 
 void report_and_exit(const char* msg) {
-  [perror][4](msg);
-  [exit][5](-1);
+  perror(msg);
+  exit(-1);
 }
 
 int main() {
   int fd = shm_open(BackingFile,      /* name from smem.h */
-            O_RDWR | O_CREAT, /* read/write, create if needed */
-            AccessPerms);     /* access permissions (0644) */
+                    O_RDWR | O_CREAT, /* read/write, create if needed */
+                    AccessPerms);     /* access permissions (0644) */
   if (fd < 0) report_and_exit("Can't open shared mem segment...");
 
   ftruncate(fd, ByteSize); /* get the bytes */
 
   caddr_t memptr = mmap(NULL,       /* let system pick where to put segment */
-            ByteSize,   /* how many bytes */
-            PROT_READ | PROT_WRITE, /* access protections */
-            MAP_SHARED, /* mapping visible to other processes */
-            fd,         /* file descriptor */
-            0);         /* offset: start at 1st byte */
+                        ByteSize,   /* how many bytes */
+                        PROT_READ | PROT_WRITE, /* access protections */
+                        MAP_SHARED, /* mapping visible to other processes */
+                        fd,         /* file descriptor */
+                        0);         /* offset: start at 1st byte */
   if ((caddr_t) -1  == memptr) report_and_exit("Can't get segment...");
 
-  [fprintf][7](stderr, "shared mem address: %p [0..%d]\n", memptr, ByteSize - 1);
-  [fprintf][7](stderr, "backing file:       /dev/shm%s\n", BackingFile );
+  fprintf(stderr, "shared mem address: %p [0..%d]\n", memptr, ByteSize - 1);
+  fprintf(stderr, "backing file:       /dev/shm%s\n", BackingFile );
 
-  /* semahore code to lock the shared mem */
+  /* semaphore code to lock the shared mem */
   sem_t* semptr = sem_open(SemaphoreName, /* name */
-               O_CREAT,       /* create the semaphore */
-               AccessPerms,   /* protection perms */
-               0);            /* initial value */
+                           O_CREAT,       /* create the semaphore */
+                           AccessPerms,   /* protection perms */
+                           0);            /* initial value */
   if (semptr == (void*) -1) report_and_exit("sem_open");
 
-  [strcpy][8](memptr, MemContents); /* copy some ASCII bytes to the segment */
+  strcpy(memptr, MemContents); /* copy some ASCII bytes to the segment */
 
   /* increment the semaphore so that memreader can read */
   if (sem_post(semptr) < 0) report_and_exit("sem_post");
@@ -341,8 +336,8 @@ munmap(memptr, ByteSize); /* unmap the storage *
 #include "shmem.h"
 
 void report_and_exit(const char* msg) {
-  [perror][4](msg);
-  [exit][5](-1);
+  perror(msg);
+  exit(-1);
 }
 
 int main() {
@@ -351,24 +346,24 @@ int main() {
 
   /* get a pointer to memory */
   caddr_t memptr = mmap(NULL,       /* let system pick where to put segment */
-            ByteSize,   /* how many bytes */
-            PROT_READ | PROT_WRITE, /* access protections */
-            MAP_SHARED, /* mapping visible to other processes */
-            fd,         /* file descriptor */
-            0);         /* offset: start at 1st byte */
+                        ByteSize,   /* how many bytes */
+                        PROT_READ | PROT_WRITE, /* access protections */
+                        MAP_SHARED, /* mapping visible to other processes */
+                        fd,         /* file descriptor */
+                        0);         /* offset: start at 1st byte */
   if ((caddr_t) -1 == memptr) report_and_exit("Can't access segment...");
 
   /* create a semaphore for mutual exclusion */
   sem_t* semptr = sem_open(SemaphoreName, /* name */
-               O_CREAT,       /* create the semaphore */
-               AccessPerms,   /* protection perms */
-               0);            /* initial value */
+                           O_CREAT,       /* create the semaphore */
+                           AccessPerms,   /* protection perms */
+                           0);            /* initial value */
   if (semptr == (void*) -1) report_and_exit("sem_open");
 
   /* use semaphore as a mutex (lock) by waiting for writer to increment it */
   if (!sem_wait(semptr)) { /* wait until semaphore != 0 */
     int i;
-    for (i = 0; i < [strlen][6](MemContents); i++)
+    for (i = 0; i < strlen(MemContents); i++)
       write(STDOUT_FILENO, memptr + i, 1); /* one byte at a time */
     sem_post(semptr);
   }
