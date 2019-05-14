@@ -108,7 +108,9 @@ $ sudo apt-get install smartmontools
 当基于 Ubuntu 的系统的官方软件包过时时，请使用以下 PPA 存储库，该存储库提供最新版本。运行以下命令以使用 PPA 安装 TLP。
 
 ```
-$ sudo apt-get install tlp tlp-rdw
+$ sudo add-apt-repository ppa:linrunner/tlp
+$ sudo apt-get update
+$ sudo apt-get install tlp
 ```
 
 对于基于 Arch Linux 的系统，使用 [Pacman 命令][9] 安装 TLP。
