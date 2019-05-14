@@ -9,11 +9,12 @@
 
 5 个开源的移动应用
 ======
-You can count on these apps to meet your needs for productivity,
-communication, and entertainment.
+您可以依靠这些应用来满足您的生产力，
+沟通和娱乐需求。
 ![][1]
 
 Like most people in the world, I'm rarely further than an arm's reach from my smartphone. My Android device provides a seemingly limitless number of communication, productivity, and entertainment services thanks to the open source mobile apps I've installed from Google Play and F-Droid.
+像世界上大多数人一样，我很少伸出胳膊那样的距离拿手机。 由于我从Google Play和F-Droid安装的开源移动应用程序，我的Android设备提供了看似无限的通信，生产力和娱乐服务。
 
 ​​​​​​Of the many open source apps on my phone, the following five are the ones I consistently turn to whether I want to listen to music; connect with friends, family, and colleagues; or get work done on the go.
 在我的手机上的许多开源应用程序中，以下五个是我一直转向的，我是否想听音乐; 与朋友，家人和同事联系; 或者在旅途中完成工作。
@@ -26,7 +27,7 @@ _An Android controller for the Music Player Daemon (MPD)_
 
 MPD is a great way to get music from little music server computers out to the big black stereo boxes. It talks straight to ALSA and therefore to the Digital-to-Analog Converter ([DAC][3]) via the ALSA hardware interface, and it can be controlled over my network—but by what? Well, it turns out that MPDroid is a great MPD controller. It manages my music database, displays album art, handles playlists, and supports internet radio. And it's open source, so if something doesn't work…
 
-MPD是将音乐从小型音乐服务器电脑传输到大型黑色立体声音箱的好方法。 它直接与ALSA对话，因此通过ALSA硬件接口与数模转换器（ DAC ）对话，它可以通过我的网络进行控制 - 但是通过什么？ 好吧，事实证明MPDroid是一个很棒的MPD控制器。 它管理我的音乐数据库，显示专辑封面，处理播放列表，并支持互联网广播。 而且它是开源的，所以如果某些东西不起作用......
+MPD是将音乐从小型音乐服务器电脑传输到大型黑色立体声音箱的好方法。 它直接与ALSA对话，因此通过ALSA硬件接口与数模转换器（ DAC ）对话，它可以通过我的网络进行控制 - 但是通过什么？ 好吧，事实证明MPDroid是一个很棒的MPD控制器。 它管理我的音乐数据库，显示专辑封面，处理播放列表，并支持互联网广播。 而且它是开源的，所以如果某些东西不好用的话......
 
 MPDroid is available on [Google Play][4] and [F-Droid][5].
 
@@ -42,7 +43,7 @@ _An Android internet radio tuner that I use standalone and with Chromecast_
 
 _![RadioDroid][6]_
 
-好比 MPDroid 是管理我音乐的数据库一样，RadioDroid 是一个互联网广播; 从本质上讲，RadioDroid 是[Internet-Radio.com] [7]的前端产物。 此外，通过将耳机插入 Android 设备，通过耳机插孔或 USB 将Android 设备直接连接到立体声系统，或通过兼容设备使用其 Chromecast 功能，可以享受 RadioDroid。 这是查看芬兰天气情况，听取排名前 40 的西班牙语音乐，或收到到最新新闻消息的好方法。
+好比 MPDroid 是管理我音乐的数据库一样，RadioDroid 是一个互联网广播; 从本质上讲，RadioDroid 是[Internet-Radio.com] [7]的前端产物。 此外，通过将耳机插入 Android 设备，通过耳机插孔或 USB 将Android 设备直接连接到立体声系统，或通过兼容设备使用其 Chromecast 功能，可以享受 RadioDroid。这是一个好方法查看芬兰天气情况，听取排名前 40 的西班牙语音乐，或收到到最新新闻消息。
 
 RadioDroid is available on [Google Play][8] and [F-Droid][9].
 
@@ -68,7 +69,7 @@ Signal 适用于 Android，iOS和桌面系统。
 
 ### ConnectBot
 
-_Android SSH client_
+_Android SSH 客户端_
 
 **
 
@@ -84,7 +85,7 @@ ConnectBot可在[Google Play] [17]上找到。
 
 ### Termux
 
-_Android terminal emulator with many familiar utilities_
+_有多种实用工具的安卓终端模拟器_
 
 **
 
