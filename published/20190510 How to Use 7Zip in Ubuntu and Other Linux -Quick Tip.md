@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (warmfrog)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10855-1.html)
 [#]: subject: (How to Use 7Zip in Ubuntu and Other Linux [Quick Tip])
 [#]: via: (https://itsfoss.com/use-7zip-ubuntu-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -31,8 +31,6 @@
 让我们看一下如何在 Ubuntu 和其他 Linux 发行版中安装 7zip。
 
 ### 在 Ubuntu Linux 中安装 7Zip
-
-![][5]
 
 你需要做的第一件事是安装 p7zip 包。你会在 Ubuntu 中发现 3 个包：p7zip、p7zip-full 和 pzip-rar。
 
