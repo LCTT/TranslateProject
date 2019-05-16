@@ -7,12 +7,12 @@
 [#]: via: (https://opensource.com/article/19/5/python-black)
 [#]: author: (Moshe Zadka  https://opensource.com/users/moshez/users/moshez/users/moshez)
 
-使用 Black 随意格式化 Python
+使用 Black 自由格式化 Python
 ======
 
 > 在我们覆盖 7 个 PyPI 库的系列文章中了解解决 Python 问题的更多信息。
 
-![OpenStack source code \(Python\) in VIM][1]
+![OpenStack source code \(Python\) in VIM](https://img.linux.net.cn/data/attachment/album/201905/16/220249ethkikh5h1uib5iy.jpg)
 
 Python 是当今使用最多的[流行编程语言][2]之一，因为：它是开源的，它有广泛的用途（例如 Web 编程、业务应用、游戏、科学编程等等），它有一个充满活力和专注的社区支持它。这个社区可以让我们在 [Python Package Index][3]（PyPI）中有如此庞大、多样化的软件包，用以扩展和改进 Python 并解决不可避免的问题。
 
@@ -83,10 +83,10 @@ $ echo $?
 
 via: https://opensource.com/article/19/5/python-black
 
-作者：[Moshe Zadka ][a]
+作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
