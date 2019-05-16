@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (warmfrog)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,30 +7,30 @@
 [#]: via: (https://www.2daygeek.com/linux-shell-script-to-monitor-disk-space-usage-and-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Linux Shell Script To Monitor Disk Space Usage And Send Email
-======
+用 Linux Shell 脚本来监控磁盘使用情况和发送邮件
+============================================
 
-There are numerous monitoring tools are available in market to monitor Linux systems and it will send an email when the system reaches the threshold limit.
+市场上有很多用来监控 Linux 系统的监控工具，当系统到达阀值后它将发送一封邮件。
 
-It monitors everything such as CPU utilization, Memory utilization, swap utilization, disk space utilization and much more.
+它监控所有的东西例如 CPU 利用率，内存利用率，交换空间利用率，磁盘空间利用率等等。
 
-However, it’s suitable for small and big environment.
+然而，它更适合小环境和大环境。
 
-Think about if you have only few systems then what will be the best approach on this.
+想一想如果你只有少量系统，那么什么是最好的方式来应对这种情况。
 
-Yup, we want to write a **[shell script][1]** to achieve this.
+是的，我们想要写一个 **[shell 脚本][1]** 来实现。
 
-In this tutorial we are going to write a shell script to monitor disk space usage on system.
+在这篇指南中我们打算写一个 shell 脚本来监控系统的磁盘空间使用率。
 
-When the system reaches the given threshold then it will trigger a mail to corresponding email id.
+当系统到达给定的阀值，它将给对应的邮件 id 发送一封邮件。
 
-We have added totally four shell scripts in this article and each has been used for different purpose.
+在这篇文章中我们总共添加了四个 shell 脚本，每个用于不同的目的。
 
-Later, we will come up with other shell scripts to monitor CPU, Memory and Swap utilization.
+之后，我们会想出其他 shell 脚本来监控 CPU，内存和交换空间利用率。
 
-Before step into that, i would like to clarify one thing which i noticed regarding the disk space usage shell script.
+在此之前，我想澄清一件事，根据我观察的磁盘空间使用率 shell 脚本使用情况。
 
-Most of the users were commented in multiple blogs saying they were getting the following error message when they are running the disk space usage script.
+大多数用户在多篇博客中评论说，当他们运行磁盘空间使用率脚本时他们获得了以下错误。
 
 ```
 # sh /opt/script/disk-usage-alert-old.sh
@@ -40,11 +40,11 @@ test-script.sh: line 7: [: /dev/mapper/vg_2g-lv_root: integer expression expecte
 / 9.8G
 ```
 
-Yes that’s right. Even, i had faced the same issue when i ran the script first time. Later, i had found the root causes.
+是的，这是对的。甚至，当我第一次运行这个脚本的时候我遇到了相同的问题。之后，我发现了根本原因。
 
-When you use “df -h” or “df -H” in shell script for disk space alert on RHEL 5 & RHEL 6 based system, you will be end up with the above error message because the output is not in the proper format, see the below output.
+当你在基于 RHEL 5 & RHEL 6 的系统上运行包含用于磁盘空间警告的 “df -h” 或 “df -H” 的 shell 脚本中时，你会发现上述错误信息，因为输出格式不对，查看下列输出。
 
-To overcome this issue, we need to use “df -Ph” (POSIX output format) but by default “df -h” is working fine on RHEL 7 based systems.
+为了解决这个问题，我们需要用  “df -Ph” （POSIX 输出格式），但是默认的 “df -h” 在基于 RHEL 7 的系统上运行的很好。
 
 ```
 # df -h
@@ -60,15 +60,15 @@ tmpfs                 7.8G     0  7.8G   0% /dev/shm
                       4.8G   14M  4.6G   1% /tmp
 ```
 
-### Method-1 : Linux Shell Script To Monitor Disk Space Usage And Send Email
+### 方法一：Linux Shell 脚本来监控磁盘空间使用率和发送邮件
 
-You can use the following shell script to monitor disk space usage on Linux system.
+你可以使用下列 shell 脚本在 Linux 系统中来监控磁盘空间使用率。
 
-It will send an email when the system reaches the given threshold limit. In this example, we set threshold limit at 60% for testing purpose and you can change this limit as per your requirements.
+当系统到达给定的阀值限制时，它将发送一封邮件。在这个例子中，我们设置阀值为 60% 用于测试目的，你可以改变这个限制来符合你的需求。
 
-It will send multiple mails if more than one file systems get reached the given threshold limit because the script is using loop.
+如果超过一个文件系统到达给定的阀值，它将发送多封邮件，因为这个脚本使用了循环。
 
-Also, replace your email id instead of us to get this alert.
+同样，替换你的邮件 id 来获取这份警告。
 
 ```
 # vi /opt/script/disk-usage-alert.sh
@@ -85,7 +85,7 @@ do
 done
 ```
 
-**Output:** I got the following two email alerts.
+**输出：**我获得了下列两封邮件警告。
 
 ```
 The partition "/dev/mapper/vg_2g-lv_home" on 2g.CentOS7 has used 85% at Mon Apr 29 06:16:14 IST 2019
@@ -100,9 +100,9 @@ Finally add a **[cronjob][2]** to automate this. It will run every 10 minutes.
 */10 * * * * /bin/bash /opt/script/disk-usage-alert.sh
 ```
 
-### Method-2 : Linux Shell Script To Monitor Disk Space Usage And Send Email
+### 方法二：Linux Shell 脚本来监控磁盘空间使用率和发送邮件
 
-Alternatively, you can use the following shell script. We have made few changes in this compared with above script.
+作为代替，你可以使用下列的 shell 脚本。对比上面的脚本我们做了少量改变。
 
 ```
 # vi /opt/script/disk-usage-alert-1.sh
@@ -120,7 +120,8 @@ do
 done
 ```
 
-**Output:** I got the following two email alerts.
+**输出：**我获得了下列两封邮件警告。
+
 
 ```
 The partition "/dev/mapper/vg_2g-lv_home" on 2g.CentOS7 has used 85% at Mon Apr 29 06:16:14 IST 2019
@@ -128,24 +129,24 @@ The partition "/dev/mapper/vg_2g-lv_home" on 2g.CentOS7 has used 85% at Mon Apr 
 The partition "/dev/mapper/vg_2g-lv_root" on 2g.CentOS7 has used 67% at Mon Apr 29 06:16:14 IST 2019
 ```
 
-Finally add a **[cronjob][2]** to automate this. It will run every 10 minutes.
+最终添加了一个 **[cronjob][2]** 来自动完成。它会每 10 分钟运行一次。
 
 ```
 # crontab -e
 */10 * * * * /bin/bash /opt/script/disk-usage-alert-1.sh
 ```
 
-### Method-3 : Linux Shell Script To Monitor Disk Space Usage And Send Email
+### 方法三：Linux Shell 脚本来监控磁盘空间使用率和发送邮件
 
-I would like to go with this method. Since, it work like a charm and you will be getting single email for everything.
+我更喜欢这种方法。因为，它工作起来很有魔力，你只会收到一封关于所有事的邮件。
 
-This is very simple and straightforward.
+这相当简单和直接。
 
 ```
 */10 * * * * df -Ph | sed s/%//g | awk '{ if($5 > 60) print $0;}' | mail -s "Disk Space Alert On $(hostname)" [email protected]
 ```
 
-**Output:** I got a single mail for all alerts.
+**输出：** 我获得了一封关于所有警告的邮件。
 
 ```
 Filesystem                            Size  Used Avail Use Mounted on
@@ -153,9 +154,7 @@ Filesystem                            Size  Used Avail Use Mounted on
 /dev/mapper/vg_2g-lv_home             5.0G  4.3G  784M  85 /home
 ```
 
-### Method-4 : Linux Shell Script To Monitor Disk Space Usage Of Particular Partition And Send Email
-
-If anybody wants to monitor the particular partition then you can use the following shell script. Simply replace your filesystem name instead of us.
+### 方法四：Linux Shell 脚本来监控某个分区的磁盘空间使用情况和发送邮件
 
 ```
 # vi /opt/script/disk-usage-alert-2.sh
@@ -168,22 +167,22 @@ echo "The Mount Point "/DB" on $(hostname) has used $used at $(date)" | mail -s 
 fi
 ```
 
-**Output:** I got the following email alerts.
+**输出：** 我得到了下面的邮件警告。
 
 ```
 The partition /dev/mapper/vg_2g-lv_dbs on 2g.CentOS6 has used 82% at Mon Apr 29 06:16:14 IST 2019
 ```
 
-Finally add a **[cronjob][2]** to automate this. It will run every 10 minutes.
+最终添加了一个 **[cronjob][2]** 来自动完成这些工作。它将每 10 分钟运行一次。
 
 ```
 # crontab -e
 */10 * * * * /bin/bash /opt/script/disk-usage-alert-2.sh
 ```
 
-**Note:** You will be getting an email alert 10 mins later since the script has scheduled to run every 10 minutes (But it’s not exactly 10 mins and it depends the timing).
+**注意：** 你将在 10 分钟后收到一封邮件警告，因为这个脚本被计划为每 10 分钟运行一次（但也不是精确的 10 分钟，取决于时间）。
 
-Say for example. If your system reaches the limit at 8.25 then you will get an email alert in another 5 mins. Hope it’s clear now.
+例如这个例子。如果你的系统在 8：25 到达了限制，你将在 5 分钟后收到邮件警告。希望现在讲清楚了。
 
 --------------------------------------------------------------------------------
 
@@ -191,7 +190,7 @@ via: https://www.2daygeek.com/linux-shell-script-to-monitor-disk-space-usage-and
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[warmfrog](https://github.com/warmfrog)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -200,3 +199,10 @@ via: https://www.2daygeek.com/linux-shell-script-to-monitor-disk-space-usage-and
 [b]: https://github.com/lujun9972
 [1]: https://www.2daygeek.com/category/shell-script/
 [2]: https://www.2daygeek.com/crontab-cronjob-to-schedule-jobs-in-linux/
+
+
+
+
+
+
+
