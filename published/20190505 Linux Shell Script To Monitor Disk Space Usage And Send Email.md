@@ -1,32 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (warmfrog)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10868-1.html)
 [#]: subject: (Linux Shell Script To Monitor Disk Space Usage And Send Email)
 [#]: via: (https://www.2daygeek.com/linux-shell-script-to-monitor-disk-space-usage-and-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-用 Linux Shell 脚本来监控磁盘使用情况和发送邮件
+用 Linux Shell 脚本来监控磁盘使用情况并发送邮件
 ============================================
 
-市场上有很多用来监控 Linux 系统的监控工具，当系统到达阀值后它将发送一封邮件。
-
-它监控所有的东西例如 CPU 利用率，内存利用率，交换空间利用率，磁盘空间利用率等等。
-
-然而，它更适合小环境和大环境。
+市场上有很多用来监控 Linux 系统的监控工具，当系统到达阀值后它将发送一封邮件。它监控所有的东西例如 CPU 利用率、内存利用率、交换空间利用率、磁盘空间利用率等等。然而，它更适合小环境和大环境。
 
 想一想如果你只有少量系统，那么什么是最好的方式来应对这种情况。
 
-是的，我们想要写一个 **[shell 脚本][1]** 来实现。
+是的，我们想要写一个 [shell 脚本][1] 来实现。
 
-在这篇指南中我们打算写一个 shell 脚本来监控系统的磁盘空间使用率。
-
-当系统到达给定的阀值，它将给对应的邮件 id 发送一封邮件。
-
-在这篇文章中我们总共添加了四个 shell 脚本，每个用于不同的目的。
-
-之后，我们会想出其他 shell 脚本来监控 CPU，内存和交换空间利用率。
+在这篇指南中我们打算写一个 shell 脚本来监控系统的磁盘空间使用率。当系统到达给定的阀值，它将给对应的邮件地址发送一封邮件。在这篇文章中我们总共添加了四个 shell 脚本，每个用于不同的目的。之后，我们会想出其他 shell 脚本来监控 CPU，内存和交换空间利用率。
 
 在此之前，我想澄清一件事，根据我观察的磁盘空间使用率 shell 脚本使用情况。
 
@@ -42,9 +32,9 @@ test-script.sh: line 7: [: /dev/mapper/vg_2g-lv_root: integer expression expecte
 
 是的，这是对的。甚至，当我第一次运行这个脚本的时候我遇到了相同的问题。之后，我发现了根本原因。
 
-当你在基于 RHEL 5 & RHEL 6 的系统上运行包含用于磁盘空间警告的 “df -h” 或 “df -H” 的 shell 脚本中时，你会发现上述错误信息，因为输出格式不对，查看下列输出。
+当你在基于 RHEL 5 & RHEL 6 的系统上运行包含用于磁盘空间警告的 `df -h` 或 `df -H` 的 shell 脚本中时，你会发现上述错误信息，因为输出格式不对，查看下列输出。
 
-为了解决这个问题，我们需要用  “df -Ph” （POSIX 输出格式），但是默认的 “df -h” 在基于 RHEL 7 的系统上运行的很好。
+为了解决这个问题，我们需要用  `df -Ph` （POSIX 输出格式），但是默认的 `df -h` 在基于 RHEL 7 的系统上运行的很好。
 
 ```
 # df -h
@@ -68,7 +58,7 @@ tmpfs                 7.8G     0  7.8G   0% /dev/shm
 
 如果超过一个文件系统到达给定的阀值，它将发送多封邮件，因为这个脚本使用了循环。
 
-同样，替换你的邮件 id 来获取这份警告。
+同样，替换你的邮件地址来获取这份警告。
 
 ```
 # vi /opt/script/disk-usage-alert.sh
@@ -85,7 +75,7 @@ do
 done
 ```
 
-**输出：**我获得了下列两封邮件警告。
+输出：我获得了下列两封邮件警告。
 
 ```
 The partition "/dev/mapper/vg_2g-lv_home" on 2g.CentOS7 has used 85% at Mon Apr 29 06:16:14 IST 2019
@@ -93,7 +83,7 @@ The partition "/dev/mapper/vg_2g-lv_home" on 2g.CentOS7 has used 85% at Mon Apr 
 The partition "/dev/mapper/vg_2g-lv_root" on 2g.CentOS7 has used 67% at Mon Apr 29 06:16:14 IST 2019
 ```
 
-Finally add a **[cronjob][2]** to automate this. It will run every 10 minutes.
+最终添加了一个 [cronjob][2] 来自动完成。它会每 10 分钟运行一次。
 
 ```
 # crontab -e
@@ -120,7 +110,7 @@ do
 done
 ```
 
-**输出：**我获得了下列两封邮件警告。
+输出：我获得了下列两封邮件警告。
 
 
 ```
@@ -129,7 +119,7 @@ The partition "/dev/mapper/vg_2g-lv_home" on 2g.CentOS7 has used 85% at Mon Apr 
 The partition "/dev/mapper/vg_2g-lv_root" on 2g.CentOS7 has used 67% at Mon Apr 29 06:16:14 IST 2019
 ```
 
-最终添加了一个 **[cronjob][2]** 来自动完成。它会每 10 分钟运行一次。
+最终添加了一个 [cronjob][2] 来自动完成。它会每 10 分钟运行一次。
 
 ```
 # crontab -e
@@ -146,7 +136,7 @@ The partition "/dev/mapper/vg_2g-lv_root" on 2g.CentOS7 has used 67% at Mon Apr 
 */10 * * * * df -Ph | sed s/%//g | awk '{ if($5 > 60) print $0;}' | mail -s "Disk Space Alert On $(hostname)" [email protected]
 ```
 
-**输出：** 我获得了一封关于所有警告的邮件。
+输出： 我获得了一封关于所有警告的邮件。
 
 ```
 Filesystem                            Size  Used Avail Use Mounted on
@@ -167,22 +157,22 @@ echo "The Mount Point "/DB" on $(hostname) has used $used at $(date)" | mail -s 
 fi
 ```
 
-**输出：** 我得到了下面的邮件警告。
+输出： 我得到了下面的邮件警告。
 
 ```
 The partition /dev/mapper/vg_2g-lv_dbs on 2g.CentOS6 has used 82% at Mon Apr 29 06:16:14 IST 2019
 ```
 
-最终添加了一个 **[cronjob][2]** 来自动完成这些工作。它将每 10 分钟运行一次。
+最终添加了一个 [cronjob][2] 来自动完成这些工作。它将每 10 分钟运行一次。
 
 ```
 # crontab -e
 */10 * * * * /bin/bash /opt/script/disk-usage-alert-2.sh
 ```
 
-**注意：** 你将在 10 分钟后收到一封邮件警告，因为这个脚本被计划为每 10 分钟运行一次（但也不是精确的 10 分钟，取决于时间）。
+注意： 你将在 10 分钟后收到一封邮件警告，因为这个脚本被计划为每 10 分钟运行一次（但也不是精确的 10 分钟，取决于时间）。
 
-例如这个例子。如果你的系统在 8：25 到达了限制，你将在 5 分钟后收到邮件警告。希望现在讲清楚了。
+例如这个例子。如果你的系统在 8:25 到达了限制，你将在 5 分钟后收到邮件警告。希望现在讲清楚了。
 
 --------------------------------------------------------------------------------
 
@@ -191,7 +181,7 @@ via: https://www.2daygeek.com/linux-shell-script-to-monitor-disk-space-usage-and
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[warmfrog](https://github.com/warmfrog)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
