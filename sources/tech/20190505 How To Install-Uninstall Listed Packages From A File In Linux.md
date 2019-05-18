@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( way-ww )
+[#]: translator: (way-ww)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
