@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (warmfrog)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Add Application Shortcuts on Ubuntu Desktop)
 [#]: via: (https://itsfoss.com/ubuntu-desktop-shortcut/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-在 Ubuntu 桌面如何添加应用快捷方式
+如何在 Ubuntu 桌面手动添加应用快捷方式
 ===============================
 
-_**在这篇快速指南中，你将学到如何在 Ubuntu 桌面和其他使用 GNOME 桌面的发行版中添加应用图标。**_
+> 在这篇快速指南中，你将学到如何在 Ubuntu 桌面和其他使用 GNOME 桌面的发行版中添加应用图标。
 
-一个经典的桌面操作系统在 ‘桌面屏’ 上总是有图标的。这些桌面图标包括文件管理器，回收站和应用图标。
+一个经典的桌面操作系统在“桌面屏”上总是有图标的。这些桌面图标包括文件管理器、回收站和应用图标。
 
 当在 Windows 中安装应用时，一些程序会询问你是否在桌面创建一个快捷方式。但在 Linux 系统中不是这样。
 
@@ -26,43 +26,37 @@ _**在这篇快速指南中，你将学到如何在 Ubuntu 桌面和其他使用
 
 ![][5]
 
-个人来讲，我更喜欢为应用图标准备的 Ubuntu 启动器方式。如果我经常使用一个程序，我会添加到启动器。但是我知道不是每个人都有相同的偏好并且少数人更喜欢桌面的快捷方式。
+个人来讲，我更喜欢为应用图标准备的 Ubuntu 启动器方式。如果我经常使用一个程序，我会添加到启动器。但是我知道不是每个人都有相同的偏好，可能少数人更喜欢桌面的快捷方式。
 
 让我们看在桌面中创建应用快捷方式的最简单方式。
 
-免责声明
+> 免责声明
 
-这篇指南已经在 Ubuntu18.04 LTS 的 GNOME 桌面上测试过了。它可能在其他发行版和桌面环境上也能发挥作用，但你必须自己尝试。一些 GNOME 特定步骤可能会变，所以请在[其他桌面环境][7]尝试时注意。
-
-[Subscribe to our YouTube Channel for More Linux Videos][8]
+> 这篇指南已经在 Ubuntu 18.04 LTS 的 GNOME 桌面上测试过了。它可能在其他发行版和桌面环境上也能发挥作用，但你必须自己尝试。一些 GNOME 特定步骤可能会变，所以请在[其他桌面环境][7]尝试时注意。
 
 #### 准备
 
 首先最重要的事是确保你有 GNOME 桌面的图标权限。
 
-如果你跟随 Ubuntu 18.04 自定义提示，你会知道如何安装 GNOME Tweaks 工具。在这个工具中，确保你设置 ‘Show Icons’ 选项为允许。
+如果你跟随 Ubuntu 18.04 自定义提示，你会知道如何安装 GNOME Tweaks 工具。在这个工具中，确保你设置“Show Icons”选项为启用。
 
 ![Allow icons on desktop in GNOME][9]
 
 一旦你确保已经设置，是时候在桌面添加应用快捷方式了。
 
-[][10]
-
-建议阅读在双启动中如何替代一个 Linux 发行版 [保留 Home分区]
-
 #### 第一步：定位应用的 .desktop 文件
 
-到 Files -> Other Location -> Computer。
+到 “Files -> Other Location -> Computer”。
 
 ![Go to Other Locations -> Computer][11]
 
-从这里，到目录 usr -> share -> applications。你会在这里看到几个你已经安装的 [Ubuntu 应用][12]。即使你没有看到图标，你应该看到被命名为 应用名.desktop 形式的文件。
+从这里，到目录 “usr -> share -> applications”。你会在这里看到几个你已经安装的 [Ubuntu 应用][12]。即使你没有看到图标，你应该看到被命名为“应用名.desktop”形式的文件。
 
 ![Application Shortcuts][13]
 
 #### 第二步：拷贝 .desktop 文件到桌面
 
-现在你要做的只是查找应用图标（或者它的 desktop 文件）。当你找到后，拖文件到桌面或者拷贝文件（使用 Ctrl+C 快捷方式）并在桌面粘贴（使用 Ctrl+V 快捷方式）。
+现在你要做的只是查找应用图标（或者它的 desktop 文件）。当你找到后，拖文件到桌面或者拷贝文件（使用 `Ctrl+C` 快捷方式）并在桌面粘贴（使用 `Ctrl+V` 快捷方式）。
 
 ![Add .desktop file to the desktop][14]
 
@@ -70,7 +64,7 @@ _**在这篇快速指南中，你将学到如何在 Ubuntu 桌面和其他使用
 
 当你这么做，你应该在桌面上看到一个图标的文本文件而不是应用 logo。别担心，一会就不一样了。
 
-你要做的就是双击桌面的那个文件。它将警告你它是一个 ‘未信任的应用启动器’，点击信任并启动。
+你要做的就是双击桌面的那个文件。它将警告你它是一个“未信任的应用启动器’，点击“信任并启动”。
 
 ![Launch Desktop Shortcut][15]
 
@@ -80,19 +74,15 @@ _**在这篇快速指南中，你将学到如何在 Ubuntu 桌面和其他使用
 
 #### Ubuntu 19.04 或者 GNOME 3.32 用户的疑难杂症
 
-如果你使用 Ubuntu 19.04 或者 GNOME 3.32，你的 .desktop 文件可能根本不会启动。你应该右击 .desktop 文件并选择 “Allow Launching”。
+如果你使用 Ubuntu 19.04 或者 GNOME 3.32，你的 .desktop 文件可能根本不会启动。你应该右击 .desktop 文件并选择 “允许启动”。
 
 在这之后，你应该能够启动应用并且桌面上的应用快捷方式能够正常显示了。
 
-**总结**
+### 总结
 
 如果你不喜欢桌面的某个应用启动器，选择删除就是了。它会删除应用快捷方式，但是应用仍安全的保留在你的系统中。
 
 我希望你发现这篇快速指南有帮助并喜欢在 Ubuntu 桌面上的应用快捷方式。
-
-[][17]
-
-建议阅读在 Ubuntu 中如何安装和设置 Nemo 为默认的文件管理器。
 
 如果你有问题或建议，请在下方评论让我知道。
 
@@ -103,7 +93,7 @@ via: https://itsfoss.com/ubuntu-desktop-shortcut/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[warmfrog](https://github.com/warmfrog)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
