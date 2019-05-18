@@ -1,4 +1,3 @@
-DaivdMax2006 is translating
 100 Best Ubuntu Apps
 ======
 
