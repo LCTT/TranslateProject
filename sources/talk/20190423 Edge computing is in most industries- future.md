@@ -7,38 +7,39 @@
 [#]: via: (https://www.networkworld.com/article/3391016/edge-computing-is-in-most-industries-future.html#tk.rss_all)
 [#]: author: (Anne Taylor https://www.networkworld.com/author/Anne-Taylor/)
 
-Edge computing is in most industries’ future
+边缘计算是大多数行业的未来
 ======
-Nearly every industry can take advantage of edge computing in the journey to speed digital transformation efforts
+几乎每个行业都能够在加速数字化转型的进程中利用边缘计算的优势。
 ![iStock][1]
 
-The growth of edge computing is about to take a huge leap. Right now, companies are generating about 10% of their data outside a traditional data center or cloud. But within the next six years, that will increase to 75%, [according to Gartner][2].
+边缘计算的发展将取得一次巨大的飞跃。现在，公司在传统数据中心或云之外生成了10%的数据。但在未来六年内，这一比例将升至75%。
+[according to Gartner][2].
 
-That’s largely down to the need to process data emanating from devices, such as Internet of Things (IoT) sensors. Early adopters include:
+这很大程度上取决于处理来自设备数据的需要，比如物联网数据传感器。
+早起采用这一方法的人包括:
 
-  * **Manufacturers:** Devices and sensors seem endemic to this industry, so it’s no surprise to see the need to find faster processing methods for the data produced. A recent [_Automation World_][3] survey found that 43% of manufacturers have deployed edge projects. Most popular use cases have included production/manufacturing data analysis and equipment data analytics.
+  * **制造商:** 设备与传感器在这个行业似乎是特有的，因此需要为生产数据找到更快速的方法也就不足为奇。最近 [_Automation World_][3]研究发现43%的制造商已经部署了边缘计算。最流行的事例包括了生产数据分析与设备数据分析。
 
-  * **Retailers** : Like most industries deeply affected by the need to digitize operations, retailers are being forced to innovate their customer experiences. To that end, these organizations are “investing aggressively in compute power located closer to the buyer,” [writes Dave Johnson][4], executive vice president of the IT division at Schneider Electric. He cites examples such as augmented-reality mirrors in fitting rooms that offer different clothing options without the consumer having to try on the items, and beacon-based heat maps that show in-store traffic.
-
-
-
-  * **Healthcare organizations** : As healthcare costs continue to escalate, this industry is ripe for innovation that improves productivity and cost efficiencies. Management consulting firm [McKinsey & Co. has identified][5] at least 11 healthcare use cases that benefit patients, the facility, or both. Two examples: tracking mobile medical devices for nursing efficiency as well as optimization of equipment, and wearable devices that track user exercise and offer wellness advice.
+  * **零售商** : 与大多数深受数字化运营需求影响的产业一样，零售商被迫革新其客户体验。为了达到那一目的，这些组织“正在积极投资靠近买家的计算能力”[writes Dave Johns on][4], 施耐德电气公司IT部门执行副总裁说。他列举了一些例子，例如在试衣间的增强现实镜，给提供了不同的服装选择，而不用顾客试用这些服装。又如用于显示店内交通的基于信标的热图。
 
 
 
-While these are strong use cases, as the edge computing market grows, so too will the number of industries adopting it.
+  * **医疗保健机构** : 随着医疗成本的不断上升，这一行业已经在具备在提高生产能力与成本效率方面的创新能力。管理咨询公司已经确定，[McKinsey & Co. has identified][5] 至少有11个有益于患者、医疗机构或者两者都有的医疗保健用例。两个例子：跟踪移动医疗设备提高护理效率，同时也有助于优化设备；可穿戴设备跟踪用户锻炼并提供健康的建议。
 
-**Getting the edge on digital transformation**
 
-Faster processing at the edge fits perfectly into the objectives and goals of digital transformation — improving efficiencies, productivity, speed to market, and the customer experience. Here are just a few of the potential applications and industries that will be changed by edge computing:
 
-**Agriculture:** Farmers and organizations already use drones to transmit field and climate conditions to watering equipment. Other applications might include monitoring and location tracking of workers, livestock, and equipment to improve productivity, efficiencies, and costs.
+虽然这些是强大的用例，随着边缘计算市场的扩大，使用它的行业也会增加。
 
-**Energy** : There are multiple potential applications in this sector that could benefit both consumers and providers. For example, smart meters help homeowners better manage energy use while reducing grid operators’ need for manual meter reading. Similarly, sensors on water pipes would detect leaks, while providing real-time consumption data.
+**数字化转型的优势**
+
+随着边缘计算的快速处理能力完全符合数字化转型的提高效率、生产能力和市场发展速度和客户体验。以下是一些有潜力的应用及将被边缘计算改变的行业：
+
+**农业** ：农名和组织已经使用无人机将农田和气候环境传给灌溉设备。其他的应用可能包括了工人、牲畜和设备的监测与位置跟踪从而改善生产能力、效率和成本。
+**能源** : 在这一领域有许多的qian that could benefit both consumers and providers. For example, smart meters help homeowners better manage energy use while reducing grid operators’ need for manual meter reading. Similarly, sensors on water pipes would detect leaks, while providing real-time consumption data.
 
 **Financial services** : Banks are adopting interactive ATMs that quickly process data to provide better customer experiences. At the organizational level, transactional data can be more quickly analyzed for fraudulent activity.
 
-**Logistics** : As consumers demand faster delivery of goods and services, logistics companies will need to transform mapping and routing capabilities to get real-time data, especially in terms of last-mile planning and tracking. That could involve street-, package-, and car-based sensors transmitting data for processing.
+**Logistics** : As consumers demand faster delivery of goods and services, logistics companies will need to transform mapping and routing capabilities to get real-time data, especially in terms of last-mile pla钱 nning and tracking. That could involve street-, package-, and car-based sensors transmitting data for processing.
 
 All industries have the potential for transformation, thanks to edge computing. But it will depend on how they address their computing infrastructure. Discover how to overcome any IT obstacles at [APC.com][6].
 
