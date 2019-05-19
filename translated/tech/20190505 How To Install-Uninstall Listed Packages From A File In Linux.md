@@ -7,30 +7,30 @@
 [#]: via: (https://www.2daygeek.com/how-to-install-uninstall-listed-packages-from-a-file-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How To Install/Uninstall Listed Packages From A File In Linux?
+如何在 Linux 上安装/卸载一个文件中列出的软件包？
 ======
 
-In some case you may want to install list of packages from one server to another server.
+在某些情况下，你可能想要将一个服务器上的软件包列表安装到另一个服务器上。
 
-For example, You have installed 15 packages on ServerA, and those packages needs to be installed on ServerB, ServerC, etc.,
+例如，你已经在服务器A 上安装了 15 个软件包并且这些软件包也需要被安装到服务器B，服务器C 上等等。
 
-We can manually install all the packages but it’s time consuming process.
+我们可以手动去安装这些软件但是这将花费大量的时间。
 
-It can be done for one or two servers, think about if you have around 10 servers.
+你可以手动安装一俩个服务器，但是试想如果你有大概十个服务器呢。
 
-In this case it doesn’t help you then What will be the solution?
+在这种情况下你无法手动完成工作，那么怎样才能解决问题呢？
 
-Don’t worry we are here to help you out in this situation or scenario.
+不要担心我们可以帮你摆脱这样的情况和场景。
 
-We have added four methods in this article to overcome this situation.
+我们在这篇文章中增加了四种方法来克服困难。
 
-I hope this will help you to fix your issue. I have tested these commands on CentOS7 and Ubuntu 18.04 systems.
+我希望这可以帮你解决问题。我已经在 Centos7 和 Ubuntu 18.04 上测试了这些命令。
 
-I hope this will work with other distributions too. Just replace with distribution official package manager command instead of us.
+我也希望这可以在其他发行版上工作。这仅仅需要使用该发行版的官方包管理器命令替代本文中的包管理器命令就行了。
 
-Navigate to the following article if you want to **[check list of installed packages in Linux system][1]**.
+如果想要 **[检查 Linux 系统上已安装的软件包列表][1]** 请点击链接。
 
-For example, if you would like to create a package lists from RHEL based system then use the following steps. Do the same for other distributions as well.
+例如，如果你想要在基于 RHEL 系统上创建软件包列表请使用以下步骤。其他发行版也一样。
 
 ```
 # rpm -qa --last | head -15 | awk '{print $1}' > /tmp/pack1.txt
@@ -53,13 +53,13 @@ apr-util-1.5.2-6.el7.x86_64
 apr-1.4.8-3.el7_4.1.x86_64
 ```
 
-### Method-1 : How To Install Listed Packages From A File In Linux With Help Of cat Command?
+### 方法一 :  如何在 Linux 上使用 cat 命令安装文件中列出的包？
 
-To achieve this, i would like to go with this first method. As this very simple and straightforward.
+为实现这个目标，我将使用简单明了的第一种方法。
 
-To do so, just create a file and add the list of packages that you want to install it.
+为此，创建一个文件并添加上你想要安装的包列表。
 
-For testing purpose, we are going to add only the below three packages into the following file.
+出于测试的目的，我们将只添加以下的三个软件包名到文件中。
 
 ```
 # cat /tmp/pack1.txt
@@ -69,7 +69,7 @@ mariadb-server
 nano
 ```
 
-Simply run the following **[apt command][2]** to install all the packages in a single shot from a file in Ubuntu/Debian systems.
+只要简单的运行 **[apt 命令][2]** 就能在 Ubuntu/Debian 系统上一次性安装所有的软件包。
 
 ```
 # apt -y install $(cat /tmp/pack1.txt)
@@ -113,7 +113,7 @@ Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 Setting up mariadb-server (1:10.1.38-0ubuntu0.18.04.1) ...
 ```
 
-For removal, use the same format with appropriate option.
+至于删除，需要使用相同的命令格式和适当的选项。
 
 ```
 # apt -y remove $(cat /tmp/pack1.txt)
@@ -138,129 +138,133 @@ Processing triggers for install-info (6.5.0.dfsg.1-2) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 ```
 
-Use the following **[yum command][3]** to install listed packages from a file on RHEL based systems such as CentOS, RHEL (Redhat) and OEL (Oracle Enterprise Linux).
+使用 **[yum 命令][3]** 在基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上安装文件中列出的软件包。
+
 
 ```
 # yum -y install $(cat /tmp/pack1.txt)
 ```
 
-Use the following format to uninstall listed packages from a file on RHEL based systems such as CentOS, RHEL (Redhat) and OEL (Oracle Enterprise Linux).
+使用以命令在基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上卸载文件中列出的软件包。
 
 ```
 # yum -y remove $(cat /tmp/pack1.txt)
 ```
 
-Use the following **[dnf command][4]** to install listed packages from a file on Fedora system.
+使用以下 **[dnf 命令][4]** 在 Fedora 系统上安装文件中列出的软件包。
 
 ```
 # dnf -y install $(cat /tmp/pack1.txt)
 ```
 
-Use the following format to uninstall listed packages from a file on Fedora system.
+使用以下命令在 Fedora 系统上卸载文件中列出的软件包。
 
 ```
 # dnf -y remove $(cat /tmp/pack1.txt)
 ```
 
-Use the following **[zypper command][5]** to install listed packages from a file on openSUSE system.
+使用以下 **[zypper 命令][5]** 在 openSUSE 系统上安装文件中列出的软件包。
 
 ```
 # zypper -y install $(cat /tmp/pack1.txt)
 ```
 
-Use the following format to uninstall listed packages from a file on openSUSE system.
+使用以下命令从 openSUSE 系统上卸载文件中列出的软件包。
 
 ```
 # zypper -y remove $(cat /tmp/pack1.txt)
 ```
 
-Use the following **[pacman command][6]** to install listed packages from a file on Arch Linux based systems such as Manjaro and Antergos system.
+使用以下 **[pacman 命令][6]** 在基于 Arch Linux (如 Manjaro 和 Antergos) 的系统上安装文件中列出的软件包。
 
 ```
 # pacman -S $(cat /tmp/pack1.txt)
 ```
 
-Use the following format to uninstall listed packages from a file on Arch Linux based systems such as Manjaro and Antergos system.
+使用以下命令从基于 Arch Linux (如 Manjaro 和 Antergos) 的系统中卸载文件中列出的软件包。
+
 
 ```
 # pacman -Rs $(cat /tmp/pack1.txt)
 ```
 
-### Method-2 : How To Install Listed Packages From A File In Linux With Help Of cat And xargs Command?
+### 方法二 : 如何使用 cat 和 xargs 命令在 Linux 中安装文件中列出的软件包。
 
-Even, i prefer to go with this method because this is very simple and straightforward method.
+甚至，我更喜欢使用这种方法，因为这是一种非常简单直接的方法。
 
-Use the following apt command to install listed packages from a file on Debian based systems such as Debian, Ubuntu and Linux Mint.
+使用以下 apt 命令在基于 Debian 的系统 (如 Debian，Ubuntu和Linux Mint) 上安装文件中列出的软件包。
+
 
 ```
 # cat /tmp/pack1.txt | xargs apt -y install
 ```
 
-Use the following apt command to uninstall listed packages from a file on Debian based systems such as Debian, Ubuntu and Linux Mint.
+使用以下 apt 命令 从基于 Debian 的系统 (如 Debian，Ubuntu和Linux Mint) 上卸载文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs apt -y remove
 ```
 
-Use the following yum command to install listed packages from a file on RHEL based systems such as CentOS, RHEL (Redhat) and OEL (Oracle Enterprise Linux).
+使用以下 yum 命令在基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上安装文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs yum -y install
 ```
 
-Use the following format to uninstall listed packages from a file on RHEL based systems such as CentOS, RHEL (Redhat) and OEL (Oracle Enterprise Linux).
+使用以命令从基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上卸载文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs yum -y remove
 ```
 
-Use the following dnf command to install listed packages from a file on Fedora system.
+使用以下 dnf 命令在 Fedora 系统上安装文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs dnf -y install
 ```
 
-Use the following format to uninstall listed packages from a file on Fedora system.
+使用以下命令从 Fedora 系统上卸载文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs dnf -y remove
 ```
 
-Use the following zypper command to install listed packages from a file on openSUSE system.
+使用以下 zypper 命令在 openSUSE 系统上安装文件中列出的软件包。
+
 
 ```
 # cat /tmp/pack1.txt | xargs zypper -y install
 ```
 
-Use the following format to uninstall listed packages from a file on openSUSE system.
+使用以下命令从 openSUSE 系统上卸载文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs zypper -y remove
 ```
 
-Use the following pacman command to install listed packages from a file on Arch Linux based systems such as Manjaro and Antergos system.
+使用以下 pacman 命令在基于 Arch Linux (如 Manjaro 和 Antergos) 的系统上安装文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs pacman -S
 ```
 
-Use the following format to uninstall listed packages from a file on Arch Linux based systems such as Manjaro and Antergos system.
+使用下以命令从基于 Arch Linux (如 Manjaro 和 Antergos) 的系统上卸载文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs pacman -Rs
 ```
 
-### Method-3 : How To Install Listed Packages From A File In Linux With Help Of For Loop Command?
+### 方法三 : 如何使用 For Loop 在 Linux 上安装文件中列出的软件包？
+我们也可以使用 For 循环命令来实现此目的。
 
-Alternatively we can use the “For Loop” command to achieve this.
-
-To install bulk packages. Use the below format to run a “For Loop” with single line.
+安装批量包可以使用以下一条 For 循环的命令。
 
 ```
 # for pack in `cat /tmp/pack1.txt` ; do apt -y install $i; done
 ```
 
-To install bulk packages with shell script use the following “For Loop”.
+要使用 shell 脚本安装批量包，请使用以下 For 循环。
+
 
 ```
 # vi /opt/scripts/bulk-package-install.sh
@@ -271,29 +275,29 @@ do apt -y remove $pack
 done
 ```
 
-Set an executable permission to `bulk-package-install.sh` file.
+为 bulk-package-install.sh 设置可执行权限。
 
 ```
 # chmod + bulk-package-install.sh
 ```
 
-Finally run the script to achieve this.
+最后运行这个脚本。
 
 ```
 # sh bulk-package-install.sh
 ```
 
-### Method-4 : How To Install Listed Packages From A File In Linux With Help Of While Loop Command?
+### 方法四 : 如何使用 While 循环在 Linux 上安装文件中列出的软件包。
 
-Alternatively we can use the “While Loop” command to achieve this.
+我们也可以使用 While 循环命令来实现目的。
 
-To install bulk packages. Use the below format to run a “While Loop” with single line.
+安装批量包可以使用以下一条 While 循环的命令。
 
 ```
 # file="/tmp/pack1.txt"; while read -r pack; do apt -y install $pack; done < "$file"
 ```
 
-To install bulk packages with shell script use the following "While Loop".
+要使用 shell 脚本安装批量包，请使用以下 While 循环。
 
 ```
 # vi /opt/scripts/bulk-package-install.sh
@@ -305,13 +309,13 @@ do apt -y remove $pack
 done < "$file"
 ```
 
-Set an executable permission to `bulk-package-install.sh` file.
+为 bulk-package-install.sh 设置可执行权限。
 
 ```
 # chmod + bulk-package-install.sh
 ```
 
-Finally run the script to achieve this.
+最后运行这个脚本。
 
 ```
 # sh bulk-package-install.sh
@@ -323,7 +327,7 @@ via: https://www.2daygeek.com/how-to-install-uninstall-listed-packages-from-a-fi
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[way-ww](https://github.com/way-ww)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -336,3 +340,4 @@ via: https://www.2daygeek.com/how-to-install-uninstall-listed-packages-from-a-fi
 [4]: https://www.2daygeek.com/dnf-command-examples-manage-packages-fedora-system/
 [5]: https://www.2daygeek.com/zypper-command-examples-manage-packages-opensuse-system/
 [6]: https://www.2daygeek.com/pacman-command-examples-manage-packages-arch-linux-system/
+
