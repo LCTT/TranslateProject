@@ -7,74 +7,62 @@
 [#]: via: (https://www.2daygeek.com/xsos-a-tool-to-read-sosreport-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-xsos – A Tool To Read SOSReport In Linux
+xsos：一个在 Linux 上阅读 SOSReport 的工具
 ======
 
-We all are already know about **[sosreport][1]**. It’s used to collect system information that can be used for diagnostic.
+我们都已经知道 [sosreport][1]。它用来收集可用于诊断的系统信息。Redhat 支持建议我们在提交案例时提供 sosreport 来分析当前的系统状态。
 
-Redhat support advise us to provide a sosreport when we raise a case with them to analyze the current system status.
+它收集全部类型的报告，以帮助用户找出问题的根本原因。我们可以轻松地提取和阅读 sosreport，但它很难阅读。因为它给每个部分都创建了一个单独的文件。
 
-It’s collecting all kind of reports that can help user to identify the root causes of issue.
+那么，在 Linux 中使用语法高亮显示阅读所有这些内容的最佳方法是什么。是的，这可以通过 xsos 工具做到。
 
-We can easily extract and read the sosreport but it’s very difficult to read. Since it has created a separate file for everything.
+### sosreport
 
-If you are looking for performance bottleneck tool then i would recommend you to check the **[oswbb (OSWatcher) utility][2]**.
+`sosreport` 命令是一个从运行中的系统（尤其是 RHEL 和 OEL 系统）收集大量配置细节、系统信息和诊断信息的工具。它可以帮助技术支持工程师在很多方面分析系统。
 
-So, what is the best way to read all together with syntax highlighting in Linux.
+此报告包含有关系统的大量信息，例如引导信息、文件系统、内存、主机名、已安装的 rpm、系统 IP、网络详细信息、操作系统版本、已安装的内核、已加载的内核模块、打开的文件列表、PCI 设备列表、挂载点及其细节、运行中的进程信息、进程树输出、系统路由、位于 `/etc` 文件夹中的所有配置文件，以及位于 `/var` 文件夹中的所有日志文件。
 
-Yes, it can be achieved via xsos tool.
+这将需要一段时间来生成报告，这取决于您的系统安装和配置。
 
-### What Is sosreport?
+完成后，`sosreport` 将在 `/tmp` 目录下生成一个压缩的归档文件。
 
-The sosreport command is a tool that collects bunch of configuration details, system information and diagnostic information from running system (especially RHEL & OEL system).
+### xsos
 
-It helps technical support engineer to analyze the system in many aspect.
+[xsos][3] 是一个帮助用户轻松读取 Linux 系统上的 `sosreport` 的工具。另一方面，我们可以说它是 `sosreport` 考官。
 
-This reports contains bunch of information about the system such as boot information, filesystem, memory, hostname, installed rpms, system IP, networking details, OS version, installed kernel, loaded kernel modules, list of open files, list of PCI devices, mount point and it’s details, running process information, process tree output, system routing, all the configuration files which is located in /etc folder, and all the log files which is located in /var folder.
+它可以立即从 `sosreport` 或正在运行的系统中汇总系统信息。
 
-This will take a while to generate a report and it’s depends on your system installation and configuration.
+`xsos` 将尝试简化、解析、计算和格式化来自数十个文件（和命令）的数据，以便为你提供有关系统的详细概述。
 
-Once completed, sosreport will generate a compressed archive file under /tmp directory.
-
-### What Is xsos?
-
-[xsos][3] is a tool that help user to easily read sosreport on Linux systems. In other hand, we can say sosreport examiner.
-
-It instantly summarize system info from a sosreport or a running system.
-
-xsos will attempt to make it easy, parsing and calculating and formatting data from dozens of files (and commands) to give you a detailed overview about a system.
-
-You can instantly summarize your system information by running the following command.
+你可以通过运行以下命令立即汇总系统信息。
 
 ```
 # curl -Lo ./xsos bit.ly/xsos-direct; chmod +x ./xsos; ./xsos -ya
 ```
 
-[![][4]![][4]][5]
+![][5]
 
-### How To Install xsos In Linux?
+### 如何在 Linux 上安装 xsos
 
-We can easily install xsos using the following two methods.
+我们可以使用以下两种方法轻松安装 `xsos`。
 
-If you are looking for latest bleeding-edge version. Use the following steps.
+如果你正在寻找最新的前沿版本。使用以下步骤：
 
 ```
 # curl -Lo /usr/local/bin/xsos bit.ly/xsos-direct
-
 # chmod +x /usr/local/bin/xsos
 ```
 
-This is the recommended method to install xsos. It will install xsos from rpm file.
+下面是安装 `xsos` 的推荐方法。它将从 rpm 文件安装 `xsos`。
 
 ```
 # yum install http://people.redhat.com/rsawhill/rpms/latest-rsawaroha-release.rpm
-
 # yum install xsos
 ```
 
-### How To Use xsos In Linux?
+### 如何在 Linux 上使用 xsos
 
-Once xsos is installed by one of the above methods. Simply run the xsos command without any options, which show you the basic information about your system.
+一旦通过上述方法之一安装了 xsos。只需运行 `xsos` 命令，不带任何选项，它们会显示有关系统的基本信息。
 
 ```
 # xsos
@@ -115,30 +103,30 @@ OS
       us 1%, ni 0%, sys 1%, idle 99%, iowait 0%, irq 0%, sftirq 0%, steal 0%
 ```
 
-### How To Use xsos Command To View Generated sosreport Output In Linux?
+### 如何使用 xsos 命令在 Linux 中查看生成的 sosreport 输出？
 
-We need the sosreport to read further using xsos command. To do so, navigate the following URL to install and generate sosreport on Linux.
+我们需要份 sosreport 以使用 `xsos` 命令进一步阅读。
 
-Yes, i have already generated a sosreport and file is below.
+是的，我已经生成了一个 sosreport，文件如下。
 
 ```
 # ls -lls -lh /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa.tar.xz
 9.8M -rw-------. 1 root root 9.8M May 12 10:13 /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa.tar.xz
 ```
 
-Run the following command to untar it.
+运行如下命令解开它。
 
 ```
 # tar xf sosreport-CentOS7-01-1005-2019-05-12-pomeqsa.tar.xz
 ```
 
-To view all the info, run xsos with `-a, --all` switch.
+要查看全部信息，带上 `-a` 或 `--all` 开关运行 `xsos`：
 
 ```
 # xsos --all /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
 ```
 
-To view the bios info, run xsos with `-b, --bios` switch.
+要查看 bios 信息，带上 `-b` 或 `--bios` 开关运行 `xsos`。
 
 ```
 # xsos --bios /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -168,7 +156,7 @@ DMIDECODE
     MaxCapacity: 0 MiB (0 GiB / 0.00 TiB)
 ```
 
-To view the system basic info such as hostname, distro, SELinux, kernel info, uptime, etc, run xsos with `-o, --os` switch.
+要查看系统基本信息，如主机名、发行版、SELinux、内核信息、正常运行时间等，请使用 `-o` 或 `--os` 开关运行 `xsos`。
 
 ```
 # xsos --os /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -208,7 +196,7 @@ OS
       us 1%, ni 0%, sys 1%, idle 99%, iowait 0%, irq 0%, sftirq 0%, steal 0%
 ```
 
-To view the kdump configuration, run xsos with `-k, --kdump` switch.
+要查看 kdump 配置，请使用 `-k` 或 `--kdump` 开关运行 `xsos`。
 
 ```
 # xsos --kdump /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -245,7 +233,7 @@ KDUMP CONFIG
     vm.panic_on_oom [0-2] =  0  (no panic)
 ```
 
-To view the information about CPU, run xsos with `-c, --cpu` switch.
+要查看有关 CPU 的信息，请使用 `-c` 或 `--cpu` 开关运行 `xsos`。
 
 ```
 # xsos --cpu /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -280,7 +268,7 @@ MEMORY
     0 GiB (0%) used of 2 GiB total
 ```
 
-To view the added disks information, run xsos with `-d, --disks` switch.
+要查看添加的磁盘信息，请使用 `-d` 和 `-disks` 开关运行 `xsos`。
 
 ```
 # xsos --disks /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -294,7 +282,7 @@ STORAGE
     sdb     10
 ```
 
-To view the network interface configuration, run xsos with `-e, --ethtool` switch.
+要查看网络接口配置，请使用 `-e` 或 `--ethtool` 开关运行 `xsos`。
 
 ```
 # xsos --ethtool /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -306,7 +294,7 @@ ETHTOOL
     virbr0-nic  tap           link=DOWN                          rx ring UNKNOWN   drv tun v1.6 / fw UNKNOWN
 ```
 
-To view the information about IP address, run xsos with `-i, --ip` switch.
+要查看有关 IP 地址的信息，请使用 `-i` 或 `--ip` 开关运行 `xsos`。
 
 ```
 # xsos --ip /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -329,7 +317,7 @@ IP6
   virbr0-nic  virbr0     52:54:00:ae:01:94  1500    DOWN   -                                            -
 ```
 
-To view the running processes via ps, run xsos with `-p, --ps` switch.
+要通过 `ps` 查看正在运行的进程，请使用 `-p` 或 `--ps` 开关运行 `xsos`。
 
 ```
 # xsos --ps /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -392,7 +380,7 @@ via: https://www.2daygeek.com/xsos-a-tool-to-read-sosreport-in-linux/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
