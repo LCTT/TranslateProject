@@ -24,24 +24,24 @@
 
 
 
-  * **医疗保健机构** : 随着医疗成本的不断上升，这一行业已经在具备在提高生产能力与成本效率方面的创新能力。管理咨询公司已经确定，[McKinsey & Co. has identified][5] 至少有11个有益于患者、医疗机构或者两者都有的医疗保健用例。两个例子：跟踪移动医疗设备提高护理效率，同时也有助于优化设备；可穿戴设备跟踪用户锻炼并提供健康的建议。
+  * **医疗保健机构** : 随着医疗成本的不断上升，这一行业已经在具备在提高生产能力与成本效率方面的创新能力。管理咨询公司已经确定，[McKinsey & Co. has identified][5] 至少有11个有益于患者、医疗机构或者两者都有的医疗保健用例。举两个例子：跟踪移动医疗设备提高护理效率，同时也有助于优化设备；可穿戴设备跟踪用户锻炼并提供健康的建议。
 
 
 
-虽然这些是强大的用例，随着边缘计算市场的扩大，使用它的行业也会增加。
+虽然以上这些是明显的用例，随着边缘计算市场的扩大，使用它的行业也会增加。
 
 **数字化转型的优势**
 
 随着边缘计算的快速处理能力完全符合数字化转型的提高效率、生产能力和市场发展速度和客户体验。以下是一些有潜力的应用及将被边缘计算改变的行业：
 
 **农业** ：农名和组织已经使用无人机将农田和气候环境传给灌溉设备。其他的应用可能包括了工人、牲畜和设备的监测与位置跟踪从而改善生产能力、效率和成本。
-**能源** : 在这一领域有许多的qian that could benefit both consumers and providers. For example, smart meters help homeowners better manage energy use while reducing grid operators’ need for manual meter reading. Similarly, sensors on water pipes would detect leaks, while providing real-time consumption data.
+**能源** : 在这一领域有许多的潜在的应用，可以使消费者与供应商都受益。例如，智能电表有助于业主更好地管理能源使用，同时减少电网运营商对手动抄表的需求。 同样的，水管上的传感器能够监测到泄露，同时提供实时漏水数据。
 
-**Financial services** : Banks are adopting interactive ATMs that quickly process data to provide better customer experiences. At the organizational level, transactional data can be more quickly analyzed for fraudulent activity.
+**金融服务** : 银行正在采取交互式ATM机，这种交互式ATM机能够快速地处理数据以提供更好的用户体验。在管理层次，可以更快速地分析交易数据中的欺诈行为。
 
-**Logistics** : As consumers demand faster delivery of goods and services, logistics companies will need to transform mapping and routing capabilities to get real-time data, especially in terms of last-mile pla钱 nning and tracking. That could involve street-, package-, and car-based sensors transmitting data for processing.
+**物流** : 由于消费者需要更快速地提供商品和服务，物流公司将需要转换映射和路由功能以获取实时数据，尤其在最后一公里计划和轨迹方面。这可能涉及到街道、数据包及汽车基于传感器的数据传输过程。
 
-All industries have the potential for transformation, thanks to edge computing. But it will depend on how they address their computing infrastructure. Discover how to overcome any IT obstacles at [APC.com][6].
+得益于边缘计算，所有行业都有转型的潜力。但是，这将取决于他们如何处理计算机基础设施。在APC.com发现如何克服任何IT阻碍。
 
 --------------------------------------------------------------------------------
 
