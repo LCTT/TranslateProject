@@ -1,4 +1,3 @@
-RHSNOW is translating.
 How To Create A Bootable Zorin OS USB Drive
 ======
 ![Zorin OS][17]
