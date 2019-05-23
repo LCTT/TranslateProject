@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 The Easiest PDO Tutorial (Basics)
 ======
 
