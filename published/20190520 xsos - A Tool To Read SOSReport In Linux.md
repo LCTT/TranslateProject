@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10889-1.html)
 [#]: subject: (xsos – A Tool To Read SOSReport In Linux)
 [#]: via: (https://www.2daygeek.com/xsos-a-tool-to-read-sosreport-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -10,19 +10,21 @@
 xsos：一个在 Linux 上阅读 SOSReport 的工具
 ======
 
-我们都已经知道 [sosreport][1]。它用来收集可用于诊断的系统信息。Redhat 支持建议我们在提交案例时提供 sosreport 来分析当前的系统状态。
+![](https://img.linux.net.cn/data/attachment/album/201905/23/133305accwpsvhk1epsisc.jpg)
 
-它收集全部类型的报告，以帮助用户找出问题的根本原因。我们可以轻松地提取和阅读 sosreport，但它很难阅读。因为它给每个部分都创建了一个单独的文件。
+我们都已经知道 [SOSReport][1]。它用来收集可用于诊断的系统信息。Redhat 的支持服务建议我们在提交案例时提供 SOSReport 来分析当前的系统状态。
 
-那么，在 Linux 中使用语法高亮显示阅读所有这些内容的最佳方法是什么。是的，这可以通过 xsos 工具做到。
+它会收集全部类型的报告，以帮助用户找出问题的根本原因。我们可以轻松地提取和阅读 SOSReport，但它很难阅读。因为它的每个部分都是一个单独的文件。
+
+那么，在 Linux 中使用语法高亮显示阅读所有这些内容的最佳方法是什么。是的，这可以通过 `xsos` 工具做到。
 
 ### sosreport
 
 `sosreport` 命令是一个从运行中的系统（尤其是 RHEL 和 OEL 系统）收集大量配置细节、系统信息和诊断信息的工具。它可以帮助技术支持工程师在很多方面分析系统。
 
-此报告包含有关系统的大量信息，例如引导信息、文件系统、内存、主机名、已安装的 rpm、系统 IP、网络详细信息、操作系统版本、已安装的内核、已加载的内核模块、打开的文件列表、PCI 设备列表、挂载点及其细节、运行中的进程信息、进程树输出、系统路由、位于 `/etc` 文件夹中的所有配置文件，以及位于 `/var` 文件夹中的所有日志文件。
+此报告包含有关系统的大量信息，例如引导信息、文件系统、内存、主机名、已安装的 RPM、系统 IP、网络详细信息、操作系统版本、已安装的内核、已加载的内核模块、打开的文件列表、PCI 设备列表、挂载点及其细节、运行中的进程信息、进程树输出、系统路由、位于 `/etc` 文件夹中的所有配置文件，以及位于 `/var` 文件夹中的所有日志文件。
 
-这将需要一段时间来生成报告，这取决于您的系统安装和配置。
+这将需要一段时间来生成报告，这取决于你的系统安装和配置。
 
 完成后，`sosreport` 将在 `/tmp` 目录下生成一个压缩的归档文件。
 
@@ -32,7 +34,7 @@ xsos：一个在 Linux 上阅读 SOSReport 的工具
 
 它可以立即从 `sosreport` 或正在运行的系统中汇总系统信息。
 
-`xsos` 将尝试简化、解析、计算和格式化来自数十个文件（和命令）的数据，以便为你提供有关系统的详细概述。
+`xsos` 将尝试简化、解析、计算并格式化来自数十个文件（和命令）的数据，以便为你提供有关系统的详细概述。
 
 你可以通过运行以下命令立即汇总系统信息。
 
@@ -103,11 +105,11 @@ OS
       us 1%, ni 0%, sys 1%, idle 99%, iowait 0%, irq 0%, sftirq 0%, steal 0%
 ```
 
-### 如何使用 xsos 命令在 Linux 中查看生成的 sosreport 输出？
+### 如何使用 xsos 命令在 Linux 中查看生成的 SOSReport 输出？
 
-我们需要份 sosreport 以使用 `xsos` 命令进一步阅读。
+我们需要份 SOSReport 以使用 `xsos` 命令进一步阅读。
 
-是的，我已经生成了一个 sosreport，文件如下。
+是的，我已经生成了一个 SOSReport，文件如下。
 
 ```
 # ls -lls -lh /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa.tar.xz
@@ -126,7 +128,7 @@ OS
 # xsos --all /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
 ```
 
-要查看 bios 信息，带上 `-b` 或 `--bios` 开关运行 `xsos`。
+要查看 BIOS 信息，带上 `-b` 或 `--bios` 开关运行 `xsos`。
 
 ```
 # xsos --bios /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -242,7 +244,7 @@ CPU
   1 Intel Core i7-6700HQ CPU @ 2.60GHz (flags: aes,constant_tsc,ht,lm,nx,pae,rdrand)
 ```
 
-To view about memory utilization, run xsos with `-m, --mem` switch.
+要查看内存利用情况，请使用 `-m` 或 `--mem` 开关运行 `xsos`。
 
 ```
 # xsos --mem /var/tmp/sosreport-CentOS7-01-1005-2019-05-12-pomeqsa
@@ -381,7 +383,7 @@ via: https://www.2daygeek.com/xsos-a-tool-to-read-sosreport-in-linux/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
