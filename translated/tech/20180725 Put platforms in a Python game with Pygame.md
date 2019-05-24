@@ -7,33 +7,33 @@
 [#]: via: (https://opensource.com/article/18/7/put-platforms-python-game)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Put platforms in a Python game with Pygame
+放置舞台到一个使用 Pygame 的 Python 游戏中
 ======
-In part six of this series on building a Python game from scratch, create some platforms for your characters to travel.
+在这系列的第六部分中，在从零构建一个 Python 游戏时，为你的角色创建一些舞台来旅行。
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/header.png?itok=iq8HFoEJ)
 
-This is part 6 in an ongoing series about creating video games in Python 3 using the Pygame module. Previous articles are:
+这是关于使用 Pygame 模块来在 Python 3 中创建电脑游戏的仍在进行的一系列的文章的第六部分。先前的文章是：
 
-+ [Learn how to program in Python by building a simple dice game][24]
-+ [Build a game framework with Python using the Pygame module][25]
-+ [How to add a player to your Python game][26]
-+ [Using Pygame to move your game character around][27]
-+ [What's a hero without a villain? How to add one to your Python game][28]
++ [通过构建一个简单的骰子游戏来学习如何用 Python 编程][24]
++ [使用 Python 和 Pygame 模块构建一个游戏框架][25]
++ [如何添加一个玩家到你的 Python 游戏][26]
++ [使用 Pygame 来在周围移动你的游戏角色][27]
++ [没有一个坏蛋的一个英雄是什么？如何添加一个坏蛋到你的 Python 游戏][28]
 
 
-A platformer game needs platforms.
+一个舞台游戏需要舞台。
 
-In [Pygame][1], the platforms themselves are sprites, just like your playable sprite. That's important because having platforms that are objects makes it a lot easier for your player sprite to interact with them.
+在 [Pygame][1] 中，舞台本身是小精灵，正像你的可玩的小精灵。这一点是重要的，因为有对象的舞台，使你的玩家小精灵很简单地与舞台一起作用。.
 
-There are two major steps in creating platforms. First, you must code the objects, and then you must map out where you want the objects to appear.
+创建舞台有两个主要步骤。首先，你必须编码对象，然后，你必须设计你希望对象来出现的位置。
 
-### Coding platform objects
+### 编码舞台对象
 
-To build a platform object, you create a class called `Platform`. It's a sprite, just like your [`Player`][2] [sprite][2], with many of the same properties.
+为构建一个舞台对象，你创建一个称为`Platform`的类。它是一个小精灵，正像你的[`玩家`][2] [小精灵][2]，带有很多相同的属性。
 
-Your `Platform` class needs to know a lot of information about what kind of platform you want, where it should appear in the game world, and what image it should contain. A lot of that information might not even exist yet, depending on how much you have planned out your game, but that's all right. Just as you didn't tell your Player sprite how fast to move until the end of the [Movement article][3], you don't have to tell `Platform` everything upfront.
+你的`舞台`类需要知道很多你想要的舞台的类型的信息 ，它应该出现在游戏世界的哪里，和它应该包含的什么图片。它们中很多信息可能还尚不存在，依赖于你计划了多少游戏，但是，没有关系。正像直到[移到文章][3]的结尾时，你不告诉你的玩家小精灵多快速度移到，你没有必要告诉`Platform`预交的每一件事。
 
-Near the top of the script you've been writing in this series, create a new class. The first three lines in this code sample are for context, so add the code below the comment:
+在你所写的这系列中脚本的顶部附近，创建一个新的类。在这代码示例中前三行是用于上下文，因此在注释的下面添加代码：
 
 ```
 import pygame
@@ -53,55 +53,55 @@ def __init__(self,xloc,yloc,imgw,imgh,img):
     self.rect.x = xloc
 ```
 
-When called, this class creates an object onscreen in some X and Y location, with some width and height, using some image file for texture. It's very similar to how players or enemies are drawn onscreen.
+当被调用时，这个类在一些 X 和 Y 位置上创建一个对象 onscreen, 带有一些宽度和高度，对于纹理使用一些图片文件。它非常类似于如何玩家或敌人绘制onscreen。
 
-### Types of platforms
+### 舞台的类型
 
-The next step is to map out where all your platforms need to appear.
+下一步是设计你所有舞台需要出现的地方。
 
-#### The tile method
+#### 瓷砖方法
 
-There are a few different ways to implement a platform game world. In the original side-scroller games, such as Mario Super Bros. and Sonic the Hedgehog, the technique was to use "tiles," meaning that there were a few blocks to represent the ground and various platforms, and these blocks were used and reused to make a level. You have only eight or 12 different kinds of blocks, and you line them up onscreen to create the ground, floating platforms, and whatever else your game needs. Some people find this the easier way to make a game since you just have to make (or download) a small set of level assets to create many different levels. The code, however, requires a little more math.
+这里有几个不同的方法来实施一个舞台游戏世界。在最初的侧面滚动游戏，例如，马里奥超级兄弟和刺猬索尼克，这个技巧是来使用"瓷砖"，意味着这里有几个块“瓷砖”来代表地面和各种各样的舞台，并且这些块被使用和重复使用来制作一个层次。你仅有8或12种不同的块，你排列它们在屏幕上来创建地面，浮动的舞台，和你游戏需要的其它的一切事物。一些人找到这最容易的方法来制作一个游戏，尽管你不得不制作(或下载)一小组价值相等的有用的事物来创建很多不同的有用的事物。然而，代码需要一点更多的数学。
 
 ![Supertux, a tile-based video game][5]
 
-[SuperTux][6], a tile-based video game.
+[SuperTux][6] ，一个基于瓷砖的电脑游戏。
 
-#### The hand-painted method
+#### 手工绘制方法
 
-Another method is to make each and every asset as one whole image. If you enjoy creating assets for your game world, this is a great excuse to spend time in a graphics application, building each and every part of your game world. This method requires less math, because all the platforms are whole, complete objects, and you tell [Python][7] where to place them onscreen.
+另一个方法是来使各个和每一个有用的事物作为一整个图像。如果你享受为你的游戏世界创建有用的事物，在一个图形应用程序中花费时间来构建你的游戏世界的各个和每一部件是一个极好的理由。这个方法需要较少的数学，因为所有的舞台是完整的对象，并且你告诉 [Python][7] 在屏幕上放置它们的位置。
 
-Each method has advantages and disadvantages, and the code you must use is slightly different depending on the method you choose. I'll cover both so you can use one or the other, or even a mix of both, in your project.
+每种方法都有优势和劣势，并且依赖于你的选择使用的代码是稍微不同的.我将覆盖这两方面,所以你可以在你的工程中使用一个或另一个,甚至两者的混合。
 
-### Level mapping
+### 层次映射
 
-Mapping out your game world is a vital part of level design and game programming in general. It does involve math, but nothing too difficult, and Python is good at math so it can help some.
+总的来说，映射出你的游戏世界是层次设计和游戏程序的一个重要的部分。这需要数学，但是没有什么太难的，而且 Python 擅长数学，因此它可以帮助一些。
 
-You might find it helpful to design on paper first. Get a sheet of paper and draw a box to represent your game window. Draw platforms in the box, labeling each with its X and Y coordinates, as well as its intended width and height. The actual positions in the box don't have to be exact, as long as you keep the numbers realistic. For instance, if your screen is 720 pixels wide, then you can't fit eight platforms at 100 pixels each all on one screen.
+你可以发现先在纸张上设计是有益的。获取纸张的一个表格，并绘制一个方框来代表你的游戏窗体。在方框中绘制舞台，用 X 和 Y 坐标标记每一个，以及它的意欲达到的宽度和高度。在方框中的实际位置没有必要是精确的，只要你保持实际的数字。譬如，假如你的屏幕是 720 像素宽，那么你不能在一个屏幕上以 100 像素处容纳8块舞台。
 
-Of course, not all platforms in your game have to fit in one screen-sized box, because your game will scroll as your player walks through it. So keep drawing your game world to the right of the first screen until the end of the level.
+当然，在你的游戏中不是所有的舞台不得不容纳在一个屏幕大小的方框，因为你的游戏将随着你的玩家行走而滚动。所以保持绘制你的游戏世界到第一屏幕的右侧，直到层次的右侧。
 
-If you prefer a little more precision, you can use graph paper. This is especially helpful when designing a game with tiles because each grid square can represent one tile.
+如果你更喜欢精确一点，你可以使用方格纸。当设计一个带有瓷砖的游戏时，这是特别有用的，因为每个方格可以代表一个瓷砖。
 
 ![Example of a level map][9]
 
-Example of a level map.
+一个平面地图示例。
 
-#### Coordinates
+#### 坐标系
 
-You may have learned in school about the [Cartesian coordinate system][10]. What you learned applies to Pygame, except that in Pygame, your game world's coordinates place `0,0` in the top-left corner of your screen instead of in the middle, which is probably what you're used to from Geometry class.
+你可能已经在学校中学习[笛卡尔坐标系][10]。你学习的东西应用到 Pygame，除了在 Pygame 中，你的游戏世界的坐标系放置 `0,0` 在你的屏幕的左上角而不是在中间，中间可能是你which is probably what you're used to from Geometry class.
 
 ![Example of coordinates in Pygame][12]
 
-Example of coordinates in Pygame.
+在 Pygame 中的坐标示例。
 
-The X axis starts at 0 on the far left and increases infinitely to the right. The Y axis starts at 0 at the top of the screen and extends down.
+X 轴起始于最左边的 0 ，无限地向右增加。Y 轴起始于屏幕顶部的 0 ，向下延伸。
 
-#### Image sizes
+#### 图片大小
 
-Mapping out a game world is meaningless if you don't know how big your players, enemies, and platforms are. You can find the dimensions of your platforms or tiles in a graphics program. In [Krita][13], for example, click on the **Image** menu and select **Properties**. You can find the dimensions at the very top of the **Properties** window.
+映射出一个游戏世界不是毫无意义的，如果你不知道你的玩家，敌人，舞台是多大的。你可以找到你的舞台的尺寸或在一个图形程序中的标题。在 [Krita][13] 中，例如，单击**图形**菜单，并选择**属性**。你可以在**属性**窗口的非常顶部处找到尺寸。
 
-Alternately, you can create a simple Python script to tell you the dimensions of an image. Open a new text file and type this code into it:
+可选地，你可以创建一个简单点的 Python 脚本来告诉你的一个图形的尺寸。打开一个新的文本文件，并输入这些代码到其中：
 
 ```
 #!/usr/bin/env python3
@@ -123,44 +123,44 @@ Y   = dim.size[1]
 print(X,Y)
 ```
 
-Save the text file as `identify.py`.
+保存文本文件为 `identify.py` 。
 
-To set up this script, you must install an extra set of Python modules that contain the new keywords used in the script:
+为安装这个脚本，你必需安装安装一组额外的 Python 模块，它们包含使用在脚本中新的关键字：
 
 ```
 $ pip3 install Pillow --user
 ```
 
-Once that is installed, run your script from within your game project directory:
+一旦这些被安装，在你游戏工程目录中运行你的脚本：
 
 ```
 $ python3 ./identify.py images/ground.png
 (1080, 97)
 ```
 
-The image size of the ground platform in this example is 1080 pixels wide and 97 high.
+在这个示例中的地面舞台的图形的大小是1080像素宽和97像素高。
 
-### Platform blocks
+### 舞台块
 
-If you choose to draw each asset individually, you must create several platforms and any other elements you want to insert into your game world, each within its own file. In other words, you should have one file per asset, like this:
+如果你选择单独地绘制每个有用的事物，你必需创建一些舞台和一些你希望插入到你的游戏世界中其它的元素，每个元素都在它自己的文件中。换句话说，你应该每个有用的事物都有一个文件，像这：
 
 ![One image file per object][15]
 
-One image file per object.
+每个对象一个图形文件。
 
-You can reuse each platform as many times as you want, just make sure that each file only contains one platform. You cannot use a file that contains everything, like this:
+你可以按照你希望的次数重复使用每个舞台，只要确保每个文件仅包含一个舞台。你不能使用一个包含每一件事物的文件，像这：
 
 ![Your level cannot be one image file][17]
 
-Your level cannot be one image file.
+你的层次不能是一个图形。
 
-You might want your game to look like that when you've finished, but if you create your level in one big file, there is no way to distinguish a platform from the background, so either paint your objects in their own file or crop them from a large file and save individual copies.
+当你完成时，你可能希望你的游戏看起来像这样，但是如果你在一个大文件中创建你的层次，没有方法从背景中区分一个舞台，因此，要么在它们拥有的文件中绘制你的对象，要么从一个大规模文件中复制它们，并单独地保存副本。
 
-**Note:** As with your other assets, you can use [GIMP][18], Krita, [MyPaint][19], or [Inkscape][20] to create your game assets.
+**注意:** 如同你的其它的有用的事物，你可以使用[GIMP][18]，Krita，[MyPaint][19]，或[Inkscape][20] 来创建你的游戏的有用的事物。
 
-Platforms appear on the screen at the start of each level, so you must add a `platform` function in your `Level` class. The special case here is the ground platform, which is important enough to be treated as its own platform group. By treating the ground as its own special kind of platform, you can choose whether it scrolls or whether it stands still while other platforms float over the top of it. It's up to you.
+舞台出现在每个层次开始的屏幕上，因此你必需在你的`Level`类中添加一个`platform`函数。在这里特殊的情况是地面舞台，作为它自身拥有的舞台组来对待是足够重要的。通过把地面看作它自身拥有的特殊类型的舞台，你可以选择它是否滚动，或在其它舞台漂浮在它上面期间是否仍然站立。它取决于你。
 
-Add these two functions to your `Level` class:
+添加这两个函数到你的`Level`类：
 
 ```
 def ground(lvl,x,y,w,h):
@@ -187,15 +187,15 @@ def platform( lvl ):
     return plat_list
 ```
 
-The `ground` function requires an X and Y location so Pygame knows where to place the ground platform. It also requires the width and height of the platform so Pygame knows how far the ground extends in each direction. The function uses your `Platform` class to generate an object onscreen, and then adds that object to the `ground_list` group.
+ `ground` 函数需要一个 X 和 Y 位置，以便 Pygame 知道在哪里放置地面舞台。它也需要舞台的宽度和高度，这样 Pygame 知道地面延伸到每个方向有多远。该函数使用你的 `Platform` 来来生成一个对象 onscreen ，然后他就这个对象到 `ground_list` 组。
 
-The `platform` function is essentially the same, except that there are more platforms to list. In this example, there are only two, but you can have as many as you like. After entering one platform, you must add it to the `plat_list` before listing another. If you don't add a platform to the group, then it won't appear in your game.
+`platform` 函数本质上是相同的，除了其有更多的舞台来列出。在这个示例中，仅有两个，但是你可以想多少就多少。在进入一个舞台后，在列出另一个前，你必需添加它到 `plat_list` 中。如果你不添加一个舞台到组中，那么它将不出现在你的游戏中。
 
-> **Tip:** It can be difficult to think of your game world with 0 at the top, since the opposite is what happens in the real world; when figuring out how tall you are, you don't measure yourself from the sky down, you measure yourself from your feet to the top of your head.
+> **提示:** 很难想象你的游戏世界的0在顶部，因为在真实世界中发生的情况是相反的；当估计你多高时，你不要从天空下面测量你自己，从脚到头的顶部来测量。
 >
-> If it's easier for you to build your game world from the "ground" up, it might help to express Y-axis values as negatives. For instance, you know that the bottom of your game world is the value of `worldy`. So `worldy` minus the height of the ground (97, in this example) is where your player is normally standing. If your character is 64 pixels tall, then the ground minus 128 is exactly twice as tall as your player. Effectively, a platform placed at 128 pixels is about two stories tall, relative to your player. A platform at -320 is three more stories. And so on.
+> 如果对你来说从“地面”上来构建你的游戏世界更容易，它可能有助于表示 Y 轴值为负数。例如，你知道你的游戏世界的底部是 `worldy` 的值。因此 `worldy` 减去地面(97，在这个示例中)的高度是你的玩家正常站立的位置。如果你的角色是64像素高，那么地面减去128正好是你的玩家的两倍。事实上，一个放置在128像素处舞台大约是两层楼高度，相对于你的玩家。一个舞台在-320处是三层楼高。等等
 
-As you probably know by now, none of your classes and functions are worth much if you don't use them. Add this code to your setup section (the first line is just for context, so add the last two lines):
+正像你现在可能所知的，如果你不使用它们，你的类和函数是没有有价值的。添加这些代码到你的 setup 部分（第一行只是上下文，所以添加最后两行）：
 
 ```
 enemy_list  = Level.bad( 1, eloc )
@@ -203,7 +203,7 @@ ground_list = Level.ground( 1,0,worldy-97,1080,97 )
 plat_list   = Level.platform( 1 )
 ```
 
-And add these lines to your main loop (again, the first line is just for context):
+并提交这些行到你的主循环(再一次，第一行仅用于上下文)：
 
 ```
 enemy_list.draw(world)  # refresh enemies
@@ -211,24 +211,24 @@ ground_list.draw(world)  # refresh ground
 plat_list.draw(world)  # refresh platforms
 ```
 
-### Tiled platforms
+### 瓷砖舞台
 
-Tiled game worlds are considered easier to make because you just have to draw a few blocks upfront and can use them over and over to create every platform in the game. There are even sets of tiles for you to use on sites like [OpenGameArt.org][21].
+瓷砖游戏世界被认为更容易制作，因为你只需要绘制一些在前面的块，就能在游戏中反反复复创建每一个舞台。在网站上甚至有一组供你来使用的瓷砖，像 [OpenGameArt.org][21]。
 
-The `Platform` class is the same as the one provided in the previous sections.
+`Platform` 类与在前面部分中的类是相同的。
 
-The `ground` and `platform` in the `Level` class, however, must use loops to calculate how many blocks to use to create each platform.
+在 `Level` 类中的 `ground` 和 `platform` ， 然而，必需使用循环来计算使用多少块来创建每个舞台。
 
-If you intend to have one solid ground in your game world, the ground is simple. You just "clone" your ground tile across the whole window. For instance, you could create a list of X and Y values to dictate where each tile should be placed, and then use a loop to take each value and draw one tile. This is just an example, so don't add this to your code:
+如果你打算在你的游戏世界中有一个坚固的地面，地面是简单的。你仅从整个窗口一边到另一边"克隆"你的地面瓷砖。例如，你可以创建一个 X 和 Y 值的列表来规定每个瓷砖应该放置的位置，然后使用一个循环来获取每个值和绘制一个瓷砖。这仅是一个示例，所以不要添加这到你的代码：
 
 ```
 # Do not add this to your code
 gloc = [0,656,64,656,128,656,192,656,256,656,320,656,384,656]
 ```
 
-If you look carefully, though, you can see all the Y values are always the same, and the X values increase steadily in increments of 64, which is the size of the tiles. That kind of repetition is exactly what computers are good at, so you can use a little bit of math logic to have the computer do all the calculations for you:
+如果你仔细看，不过，你也可以看到所有的 Y 值是相同的，X 值以64的增量不断地增加，这是瓷砖的东西。这种类型的重复是精确地，是计算机擅长的，因此你可以使用一点数学逻辑来让计算机为你做所有的计算：
 
-Add this to the setup part of your script:
+添加这代你的脚本的 setup 部分：
 
 ```
 gloc = []
@@ -243,9 +243,9 @@ while i <= (worldx/tx)+tx:
 ground_list = Level.ground( 1,gloc,tx,ty )
 ```
 
-Now, regardless of the size of your window, Python divides the width of the game world by the width of the tile and creates an array listing each X value. This doesn't calculate the Y value, but that never changes on flat ground anyway.
+现在，不管你的窗口的大小，Python 通过瓷砖的宽度 分割游戏世界的宽度，并创建一个数组列表列出每个 X 值。这不计算 Y 值，但是无论如何，从不在平的地面上更改。
 
-To use the array in a function, use a `while` loop that looks at each entry and adds a ground tile at the appropriate location:
+为在一个函数中使用数组，使用一个`while`循环，查看每个条目并在适当的位置添加一个地面瓷砖：
 
 ```
 def ground(lvl,gloc,tx,ty):
@@ -263,13 +263,13 @@ def ground(lvl,gloc,tx,ty):
     return ground_list
 ```
 
-This is nearly the same code as the `ground` function for the block-style platformer, provided in a previous section above, aside from the `while` loop.
+除了 `while` 循环，这几乎与在上面一部分中提供的块样式平台游戏 `ground` 函数的代码相同。
 
-For moving platforms, the principle is similar, but there are some tricks you can use to make your life easier.
+对于移到舞台，原理是相似的，但是这里有一些你可以使用的技巧来使你的生活更简单。
 
-Rather than mapping every platform by pixels, you can define a platform by its starting pixel (its X value), the height from the ground (its Y value), and how many tiles to draw. That way, you don't have to worry about the width and height of every platform.
+而不通过像素映射每个舞台，你可以通过它的起始像素（它的 X 值），从地面（它的 Y 值）的高度，绘制多少瓷砖来定义一个舞台。用那种方法，你不必担心每个舞台的宽度和高度。
 
-The logic for this trick is a little more complex, so copy this code carefully. There is a `while` loop inside of another `while` loop because this function must look at all three values within each array entry to successfully construct a full platform. In this example, there are only three platforms defined as `ploc.append` statements, but your game probably needs more, so define as many as you need. Of course, some won't appear yet because they're far offscreen, but they'll come into view once you implement scrolling.
+这个技巧的逻辑有一点更复杂，因此仔细复制这些代码。有一个 `while` 循环在另一个 `while` 循环的内部，因为这个函数必需考虑在每个数组入口处的所有三个值来成功地建造一个完整的舞台。在这个示例中，这里仅有三个舞台被定义为 `ploc.append` 语句，但是你的游戏可能需要更多，因此你需要多少就定义多少。当然，一些也将不出现，因为它们远在屏幕外，但是一旦你实施滚动，它们将呈现眼前。
 
 ```
 def platform(lvl,tx,ty):
@@ -295,7 +295,7 @@ def platform(lvl,tx,ty):
     return plat_list
 ```
 
-To get the platforms to appear in your game world, they must be in your main loop. If you haven't already done so, add these lines to your main loop (again, the first line is just for context):
+为获取舞台，使其出现在你的游戏世界，它们必需在你的主循环中。如果你还没有这样做，添加这些行到你的主循环(再一次，第一行仅被用于上下文)中：
 
 ```
         enemy_list.draw(world)  # refresh enemies
@@ -303,16 +303,16 @@ To get the platforms to appear in your game world, they must be in your main loo
         plat_list.draw(world)   # refresh platforms
 ```
 
-Launch your game, and adjust the placement of your platforms as needed. Don't worry that you can't see the platforms that are spawned offscreen; you'll fix that soon.
+启动你的游戏，根据需要调整你的舞台的放置位置。不要担心，你不能看见在屏幕外面产生的舞台；你将不久后修复。
 
-Here is the game so far in a picture and in code:
+到目前为止，这是在一个图片和在代码中游戏：
 
 ![Pygame game][23]
 
-Our Pygame platformer so far.
+到目前为止，我们的 Pygame 舞台。
 
 ```
-    #!/usr/bin/env python3
+#!/usr/bin/env python3
 # draw a world
 # add a player and player control
 # add player movement
@@ -552,7 +552,7 @@ via: https://opensource.com/article/18/7/put-platforms-python-game
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsan](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
