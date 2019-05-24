@@ -87,8 +87,8 @@ world
 #define WriteEnd 1
 
 void report_and_exit(const char* msg) {
-  [perror][6](msg);
-  [exit][7](-1);    /** failure **/
+  perror(msg);
+  exit(-1);    /** failure **/
 }
 
 int main() {
@@ -112,11 +112,11 @@ int main() {
   else {              /*** parent ***/
     close(pipeFDs[ReadEnd]);                          /* parent writes, doesn't read */
 
-    write(pipeFDs[WriteEnd], msg, [strlen][8](msg));       /* write the bytes to the pipe */
+    write(pipeFDs[WriteEnd], msg, strlen(msg));       /* write the bytes to the pipe */
     close(pipeFDs[WriteEnd]);                         /* done writing: generate eof */
 
     wait(NULL);                                       /* wait for child to exit */
-    [exit][7](0);                                          /* exit normally */
+    exit(0);                                          /* exit normally */
   }
   return 0;
 }
@@ -249,7 +249,7 @@ bye, bye       ## ditto
 ```c
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h> 
+#include <fcntl.h>
 #include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
@@ -264,24 +264,24 @@ int main() {
   const char* pipeName = "./fifoChannel";
   mkfifo(pipeName, 0666);                      /* read/write for user/group/others */
   int fd = open(pipeName, O_CREAT | O_WRONLY); /* open as write-only */
-  if (fd < 0) return -1;                       /** error **/
-  
+  if (fd < 0) return -1;                       /* can't go on */
+
   int i;
   for (i = 0; i < MaxLoops; i++) {          /* write MaxWrites times */
     int j;
     for (j = 0; j < ChunkSize; j++) {       /* each time, write ChunkSize bytes */
       int k;
       int chunk[IntsPerChunk];
-      for (k = 0; k < IntsPerChunk; k++) 
-    chunk[k] = [rand][9]();             
-      write(fd, chunk, sizeof(chunk)); 
+      for (k = 0; k < IntsPerChunk; k++)
+        chunk[k] = rand();
+      write(fd, chunk, sizeof(chunk));
     }
-    usleep(([rand][9]() % MaxZs) + 1);           /* pause a bit for realism */
+    usleep((rand() % MaxZs) + 1);           /* pause a bit for realism */
   }
 
-  close(fd);                                /* close pipe: generates an end-of-file */
-  unlink(pipeName);                         /* unlink from the implementing file */
-  [printf][10]("%i ints sent to the pipe.\n", MaxLoops * ChunkSize * IntsPerChunk);
+  close(fd);           /* close pipe: generates an end-of-stream marker */
+  unlink(pipeName);    /* unlink from the implementing file */
+  printf("%i ints sent to the pipe.\n", MaxLoops * ChunkSize * IntsPerChunk);
 
   return 0;
 }
@@ -318,13 +318,12 @@ unlink(pipeName); /* unlink from the implementing file */
 #include <fcntl.h>
 #include <unistd.h>
 
-
-unsigned is_prime(unsigned n) { /* not pretty, but gets the job done efficiently */
+unsigned is_prime(unsigned n) { /* not pretty, but efficient */
   if (n <= 3) return n > 1;
   if (0 == (n % 2) || 0 == (n % 3)) return 0;
 
   unsigned i;
-  for (i = 5; (i * i) <= n; i += 6) 
+  for (i = 5; (i * i) <= n; i += 6)
     if (0 == (n % i) || 0 == (n % (i + 2))) return 0;
 
   return 1; /* found a prime! */
@@ -332,25 +331,25 @@ unsigned is_prime(unsigned n) { /* not pretty, but gets the job done efficiently
 
 int main() {
   const char* file = "./fifoChannel";
-  int fd = open(file, O_RDONLY); 
+  int fd = open(file, O_RDONLY);
   if (fd < 0) return -1; /* no point in continuing */
   unsigned count = 0, total = 0, primes_count = 0;
 
   while (1) {
     int next;
     int i;
-    ssize_t count = read(fd, &next, sizeof(int));   
 
+    ssize_t count = read(fd, &next, sizeof(int));
     if (0 == count) break;                  /* end of stream */
     else if (count == sizeof(int)) {        /* read a 4-byte int value */
       total++;
       if (is_prime(next)) primes_count++;
-    }   
+    }
   }
 
   close(fd);       /* close pipe from read end */
   unlink(file);    /* unlink from the underlying file */
-  [printf][10]("Received ints: %u, primes: %u\n", total, primes_count);  
+  printf("Received ints: %u, primes: %u\n", total, primes_count);
 
   return 0;
 }
@@ -434,23 +433,23 @@ ID `qid` 在效果上是消息队列文件描述符的对应物。
 #### 示例 5. sender 程序
 
 ```c
-#include <stdio.h> 
-#include <sys/ipc.h> 
+#include <stdio.h>
+#include <sys/ipc.h>
 #include <sys/msg.h>
 #include <stdlib.h>
 #include <string.h>
 #include "queue.h"
 
 void report_and_exit(const char* msg) {
-  [perror][6](msg);
-  [exit][7](-1); /* EXIT_FAILURE */
+  perror(msg);
+  exit(-1); /* EXIT_FAILURE */
 }
 
 int main() {
-  key_t key = ftok(PathName, ProjectId); 
+  key_t key = ftok(PathName, ProjectId);
   if (key < 0) report_and_exit("couldn't get key...");
-  
-  int qid = msgget(key, 0666 | IPC_CREAT); 
+
+  int qid = msgget(key, 0666 | IPC_CREAT);
   if (qid < 0) report_and_exit("couldn't get queue id...");
 
   char* payloads[] = {"msg1", "msg2", "msg3", "msg4", "msg5", "msg6"};
@@ -460,11 +459,11 @@ int main() {
     /* build the message */
     queuedMessage msg;
     msg.type = types[i];
-    [strcpy][11](msg.payload, payloads[i]);
+    strcpy(msg.payload, payloads[i]);
 
     /* send the message */
     msgsnd(qid, &msg, sizeof(msg), IPC_NOWAIT); /* don't block */
-    [printf][10]("%s sent as type %i\n", msg.payload, (int) msg.type);
+    printf("%s sent as type %i\n", msg.payload, (int) msg.type);
   }
   return 0;
 }
@@ -481,21 +480,21 @@ msgsnd(qid, &msg, sizeof(msg), IPC_NOWAIT);
 #### 示例 6. receiver 程序
 
 ```c
-#include <stdio.h> 
-#include <sys/ipc.h> 
+#include <stdio.h>
+#include <sys/ipc.h>
 #include <sys/msg.h>
 #include <stdlib.h>
 #include "queue.h"
 
 void report_and_exit(const char* msg) {
-  [perror][6](msg);
-  [exit][7](-1); /* EXIT_FAILURE */
+  perror(msg);
+  exit(-1); /* EXIT_FAILURE */
 }
-  
-int main() { 
+
+int main() {
   key_t key= ftok(PathName, ProjectId); /* key to identify the queue */
   if (key < 0) report_and_exit("key not gotten...");
-  
+
   int qid = msgget(key, 0666 | IPC_CREAT); /* access if created already */
   if (qid < 0) report_and_exit("no access to queue...");
 
@@ -504,15 +503,15 @@ int main() {
   for (i = 0; i < MsgCount; i++) {
     queuedMessage msg; /* defined in queue.h */
     if (msgrcv(qid, &msg, sizeof(msg), types[i], MSG_NOERROR | IPC_NOWAIT) < 0)
-      [puts][12]("msgrcv trouble...");
-    [printf][10]("%s received as type %i\n", msg.payload, (int) msg.type);
+      puts("msgrcv trouble...");
+    printf("%s received as type %i\n", msg.payload, (int) msg.type);
   }
 
   /** remove the queue **/
   if (msgctl(qid, IPC_RMID, NULL) < 0)  /* NULL = 'no flags' */
     report_and_exit("trouble removing queue...");
-  
-  return 0; 
+
+  return 0;
 }
 ```
 
