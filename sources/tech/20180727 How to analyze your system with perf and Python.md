@@ -1,7 +1,3 @@
-**translating by [erlinux](https://github.com/erlinux)** 
-**PROJECT MANAGEMENT TOOL called [gn2.sh](https://github.com/lctt/lctt-cli)** 
-
-
 How to analyze your system with perf and Python
 ======
 

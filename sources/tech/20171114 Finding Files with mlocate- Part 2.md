@@ -1,3 +1,4 @@
+translating by amwps290
 Finding Files with mlocate: Part 2
 ======
 

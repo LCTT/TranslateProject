@@ -49,11 +49,11 @@ for catalog in "$@";do
             num=$(count_files_under_dir "${catalog}" "[0-9]*.md")
             ;;
         translating)
-            num=$(git grep -niE "translat|fanyi|翻译"  sources/*.md |awk -F ":" '{if ($2<=3) print $1}' |wc -l)
+            num=$(git grep -niE "^[^[].*translat|^\[#\]: translator: \([^[:space:]]+\)|fanyi|翻译"  sources/*.md |awk -F ":" '{if ($2<=3) print $1}'|wc -l)
             ;;
         sources)
             total=$(count_files_under_dir "${catalog}" "[0-9]*.md")
-            translating_num=$(git grep -niE "translat|fanyi|翻译"  sources/*.md |awk -F ":" '{if ($2<=3) print $1}' |wc -l)
+            translating_num=$(git grep -niE "^[^[].*translat|^\[#\]: translator: \([^[:space:]]+\)|fanyi|翻译"  sources/*.md |awk -F ":" '{if ($2<=3) print $1}'|wc -l)
             num=$((${total} - ${translating_num}))
             ;;
         *)

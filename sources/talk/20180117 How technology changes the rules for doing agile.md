@@ -1,4 +1,3 @@
-Translating by ranchong
 How technology changes the rules for doing agile
 ======
 
