@@ -1,5 +1,3 @@
-scoutydren is translating 
-
 3 open source alternatives to Adobe Lightroom
 ======
 
