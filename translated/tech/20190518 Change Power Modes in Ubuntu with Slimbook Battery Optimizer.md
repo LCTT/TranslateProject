@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zhs852)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Change Power Modes in Ubuntu with Slimbook Battery Optimizer)
 [#]: via: (https://itsfoss.com/slimbook-battry-optimizer-ubuntu/)
-[#]: author: Abhishek Prakash https://itsfoss.com/author/abhishek/)
+[#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
 在 Ubuntu 中使用 Slimbook Battery Optimizer 切换电源模式
 ======
 
-> Slimbook Battery Optimizer 是一个美观实用的指示器小程序，它可以让你你在安装 Linux 的笔记本上快速切换电源模式来延长续航时间。
+> Slimbook Battery Optimizer 是一个美观实用的指示器小程序，它可以让你在安装了 Linux 的笔记本上快速切换电源模式来延长续航时间。
 
-[Slimbook][1] 是一个销售 [预装 Linux 的笔电][2] 的西班牙电脑制造商，他们发布了一款好用的小程序，用来在基于 Ubuntu 的 Linux 发行版下调整电池性能。
+[Slimbook][1] 是一个销售 [预装 Linux 的笔记本电脑][2] 的西班牙电脑制造商，他们发布了一款好用的小程序，用来在基于 Ubuntu 的 Linux 发行版下调整电池性能。
 
 因为 Slimbook 销售他们自己的 Linux 系统，所以他们制作了一些在 Linux 上用于调整他们自己硬件性能的小工具。Battery Optimizer 就是这样一个工具。
 
@@ -45,8 +45,6 @@ Slimbook 有专门为多种电源管理参数提供的页面。如果你希望�
 不过，我认为 Slimbook 的界面需要一些改进。例如，某些页面上的“问题标记”的图标应该改为可点击的，以此提供更多信息。然而，在我写这篇文章时，那个标记仍然无法点击。
 
 总的来说，Slimbook Battery 是一个小巧精美的软件，你可以用它来快速切换电源模式。如果你决定在 Ubuntu 及其衍生发行版上（比如 Linux Mint 或 elementary OS 等），你可以使用官方 [PPA 源][8]。
-
-说个题外话，推荐阅读大家阅读 [Ubuntu 论坛被入侵，用户数据被盗取][9] 这篇文章。
 
 #### 在基于 Ubuntu 的发行版上安装 Slimbook Battery
 
@@ -86,7 +84,7 @@ via: https://itsfoss.com/slimbook-battry-optimizer-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[zhs852](https://github.com/zhs852)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
