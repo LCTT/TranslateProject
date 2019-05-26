@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (3 apps to manage personal finances in Fedora)
@@ -14,15 +14,15 @@
 
 网上有很多可以用来管理你个人财务的服务。虽然它们可能很方便，但这通常也意味着将你最宝贵的个人数据放在你无法监控的公司。也有些人对这些不太在意。
 
-无论你是否在意，你可能会对你自己系统上的应用感兴趣。这意味着如果你不想，你的数据永远不会离开莫自己的计算机。这三款之一可能就是你想找的。
+无论你是否在意，你可能会对你自己系统上的应用感兴趣。这意味着如果你不想，你的数据永远不会离开自己的计算机。这三款之一可能就是你想找的。
 
 ### HomeBank
 
-HomeBank 是一款可以管理多个账户的全功能软件。它很容易设置并保持更新。它有多种方式画出你的分类和负载，以便你可以看到资金流向何处。它可以通过官方 Fedora 仓库下载。
+HomeBank 是一款可以管理多个账户的全功能软件。它很容易设置并保持更新。它有多种方式画出你的分类和负债，以便你可以看到资金流向何处。它可以通过官方 Fedora 仓库下载。
 
 ![A simple account set up in HomeBank with a few transactions.][2]
 
-要安装 HomeBank，请打开_软件中心_，搜索 _HomeBank_，然后选择该应用。单击_安装_将其添加到你的系统中。HomeBank 也可以通过 Flatpak 安装。
+要安装 HomeBank，请打开“软件中心”，搜索 “HomeBank”，然后选择该应用。单击“安装”将其添加到你的系统中。HomeBank 也可以通过 Flatpak 安装。
 
 ### KMyMoney
 
@@ -42,13 +42,13 @@ $ sudo dnf install kmymoney
 
 ![Checking account records shown in GnuCash.][5]
 
-打开_软件中心_，搜索 _GnuCash_，然后选择应用。单击_安装_将其添加到你的系统中。或者如上所述使用 _dnf install_ 来安装 _gnucash_ 包。
+打开“软件中心”，搜索 “GnuCash”，然后选择应用。单击“安装”将其添加到你的系统中。或者如上所述使用 `dnf install` 来安装 “gnucash” 包。
 
-它现在可以通过 Flathub 安装，这使得安装变得简单。如果你没有安装 Flathub，请查看 [Fedora Magazine 上的这篇文章][6]了解如何使用它。这样你也可以在终端使用 _flatpak install GnuCash_ 命令。
+它现在可以通过 Flathub 安装，这使得安装变得简单。如果你没有安装 Flathub，请查看 [Fedora Magazine 上的这篇文章][6]了解如何使用它。这样你也可以在终端使用 `flatpak install gnucash` 命令。
 
 * * *
 
-照片由 _[_Fabian Blank_][7]_  拍摄，发布在 [ _Unsplash_][8] 上。
+照片由 [Fabian Blank][7] 拍摄，发布在 [Unsplash][8] 上。
 
 --------------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ via: https://fedoramagazine.org/3-apps-to-manage-personal-finances-in-fedora/
 作者：[Paul W. Frields][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
