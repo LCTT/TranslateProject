@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10900-1.html)
 [#]: subject: (API evolution the right way)
 [#]: via: (https://opensource.com/article/19/5/api-evolution-right-way)
 [#]: author: (A. Jesse https://opensource.com/users/emptysquare)
@@ -58,7 +58,7 @@ def create_event(day,
     if end_time and not start_time:
         raise ValueError("Can't pass end_time without start_time")
 
-    # 女巫集会从午夜一直开到凌晨 4 点
+# 女巫集会从午夜一直开到凌晨 4 点
 create_event(datetime.date.today(),
              datetime.time(0, 0),
              datetime.time(4, 0))
