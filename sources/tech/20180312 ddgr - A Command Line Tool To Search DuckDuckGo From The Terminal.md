@@ -1,3 +1,5 @@
+Translating by MjSeve
+
 ddgr – A Command Line Tool To Search DuckDuckGo From The Terminal
 ======
 Bash tricks are really awesome in Linux that makes everything is possible in Linux.
