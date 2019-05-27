@@ -1,27 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10906-1.html)
 [#]: subject: (Querying 10 years of GitHub data with GHTorrent and Libraries.io)
 [#]: via: (https://opensource.com/article/19/5/chaossearch-github-ghtorrent)
 [#]: author: (Pete Cheslock https://opensource.com/users/petecheslock/users/ghaff/users/payalsingh/users/davidmstokes)
 
 用 GHTorrent 和 Libraries.io 查询 10 年的 GitHub 数据
 ======
-> 有一种方法可以在没有任何本地基础设施的情况下使用开源数据集探索 GitHub 数据.
- 
-![magnifying glass on computer screen][1]
 
-我一直在寻找新的数据集，以用它们来展示我团队工作的力量。[CHAOSSEARCH][2] 可以将你的 [Amazon S3][3] 对象存储数据转换为完全可搜索的 [Elasticsearch][4] 式集群。使用 Elasticsearch API 或 [Kibana][5] 等工具，你可以查询你找的任何数据。
+> 有一种方法可以在没有任何本地基础设施的情况下使用开源数据集探索 GitHub 数据。
+ 
+![magnifying glass on computer screen](https://img.linux.net.cn/data/attachment/album/201905/27/220200jlzrlz333vkfl8ok.jpg)
+
+我一直在寻找新的数据集，以用它们来展示我们团队工作的力量。[CHAOSSEARCH][2] 可以将你的 [Amazon S3][3] 对象存储数据转换为完全可搜索的 [Elasticsearch][4] 式集群。使用 Elasticsearch API 或 [Kibana][5] 等工具，你可以查询你所要找的任何数据。
 
 当我找到 [GHTorrent][6] 项目进行探索时，我很兴奋。GHTorrent 旨在通过 GitHub API 构建所有可用数据的离线版本。如果你喜欢数据集，这是一个值得一看的项目，甚至你可以考虑[捐赠一个 GitHub API 密钥][7]。
 
 ### 访问 GHTorrent 数据
 
-有许多方法可以访问和使用 [GHTorrent 的数据][8]，它以 [NDJSON][9] 格式提供。这个项目可以以多种形式提供数据，包括用于恢复到 [MySQL][11] 数据库的 [CSV][10]，可以转储所有对象的 [MongoDB][12]，以及用于将数据直接导出到 Google 对象存储中的 Google Big Query（免费）。 有一点需要注意：这个数据集有从 2008 年到 2017 年的几乎完整的数据集，但从 2017 年到现在的数据还不完整。这将影响我们确定性查询的能力，但它仍然是一个令人兴奋的信息量。
+有许多方法可以访问和使用 [GHTorrent 的数据][8]，它以 [NDJSON][9] 格式提供。这个项目可以以多种形式提供数据，包括用于恢复到 [MySQL][11] 数据库的 [CSV][10]，可以转储所有对象的 [MongoDB][12]，以及用于将数据直接导出到 Google 对象存储中的 Google Big Query（免费）。 有一点需要注意：这个数据集有从 2008 年到 2017 年几乎完整的数据集，但从 2017 年到现在的数据还不完整。这将影响我们确定性查询的能力，但它仍然是一个令人兴奋的信息量。
 
-我选择 Google Big Query 来避免自己运行任何数据库，那么我就可以很快下载包括用户和项目在内的完整数据库。 CHAOSSEARCH 可以原生分析 NDJSON 格式，因此在将数据上传到 Amazon S3 之后，我能够在几分钟内对其进行索引。 CHAOSSEARCH 平台不要求用户设置索引模式或定义其数据的映射，它可以发现所有字段本身（字符串、整数等）。
+我选择 Google Big Query 来避免自己运行任何数据库，那么我就可以很快下载包括用户和项目在内的完整数据库。CHAOSSEARCH 可以原生分析 NDJSON 格式，因此在将数据上传到 Amazon S3 之后，我能够在几分钟内对其进行索引。CHAOSSEARCH 平台不要求用户设置索引模式或定义其数据的映射，它可以发现所有字段本身（字符串、整数等）。
 
 随着我的数据完全索引并准备好进行搜索和聚合，我想深入了解看看我们可以发现什么，比如哪些软件语言是 GitHub 项目最受欢迎的。
 
@@ -49,10 +50,9 @@
 
 ![The rate at which new projects are created on GitHub.][20]
 
-既然我知道了创建的项目的速度以及用于创建这些项目的最流行的语言，我还想知道这些项目选择的开源许可证。遗憾的是，这个 GitHub 项目数据集中并不存在这些数据，但是 [Tidelift][21] 的精彩团队在 [Libraries.io][22] [数据][23] 里发布了一个 GitHub 项目的详细列表，包括使用的许可证以及其中有关开源软件状态的其他详细信息。将此数据集导入 CHAOSSEARCH 只花了几分钟，让我看看哪些开源软件许可证在 GitHub 上最受欢迎：
+既然我知道了创建项目的速度以及用于创建这些项目的最流行的语言，我还想知道这些项目选择的开源许可证。遗憾的是，这个 GitHub 项目数据集中并不存在这些数据，但是 [Tidelift][21] 的精彩团队在 [Libraries.io][22] [数据][23] 里发布了一个 GitHub 项目的详细列表，包括使用的许可证以及其中有关开源软件状态的其他详细信息。将此数据集导入 CHAOSSEARCH 只花了几分钟，让我看看哪些开源软件许可证在 GitHub 上最受欢迎：
 
 （提醒：这是为了便于阅读而合并的有效 JSON。）
-
 
 ```
 {"aggs":{"2":{"terms":{"field":"Repository License","size":10,"order":{"_count":"desc"}}}},"size":0,"_source":{"excludes":[]},"stored_fields":["*"],"script_fields":{},"docvalue_fields":["Created Timestamp","Last synced Timestamp","Latest Release Publish Timestamp","Updated Timestamp"],"query":{"bool":{"must":[],"filter":[{"match_all":{}}],"should":[],"must_not":[{"match_phrase":{"Repository License":{"query":""}}}]}}}
@@ -62,9 +62,9 @@
 
 ![Which open source software licenses are the most popular on GitHub.][24]
 
-如你所见，[MIT 许可证][25] 和 [Apache 2.0 许可证][26] 的开源项目远远超过了其他大多数开源许可证，而 [各种 BSD 和 GPL 许可证][27] 则差得很远。鉴于 GitHub 的开放模式，我不能说我对这些结果感到惊讶。我猜想用户（而不是公司）创建了大多数项目，并且他们使用 MIT 许可证可以使其他人轻松使用、共享和贡献。而鉴于有不少公司希望确保其商标得到尊重并为其业务提供开源组件，那么 Apache 2.0 许可证数量高企的背后也是有道理的。
+如你所见，[MIT 许可证][25] 和 [Apache 2.0 许可证][26] 的开源项目远远超过了其他大多数开源许可证，而 [各种 BSD 和 GPL 许可证][27] 则差得很远。鉴于 GitHub 的开放模式，我不能说我对这些结果感到惊讶。我猜想是用户（而不是公司）创建了大多数项目，并且他们使用 MIT 许可证可以使其他人轻松地使用、共享和贡献。而鉴于有不少公司希望确保其商标得到尊重并为其业务提供开源组件，那么 Apache 2.0 许可证数量高企的背后也是有道理的。
 
-现在我确定了最受欢迎的许可证，我很想看看到最少使用的许可证。通过调整我的上一个查询，我将前 10 名逆转为最后 10 名，并且只找到了两个使用 [伊利诺伊大学 - NCSA 开源许可证][28] 的项目。我之前从未听说过这个许可证，但它与 Apache 2.0 非常接近。看到了所有 GitHub 项目中使用了多少个不同的软件许可证，这很有意思。
+现在我确定了最受欢迎的许可证，我很想看看最少使用的许可证。通过调整我的上一个查询，我将前 10 名逆转为最后 10 名，并且只找到了两个使用 [伊利诺伊大学 - NCSA 开源许可证][28] 的项目。我之前从未听说过这个许可证，但它与 Apache 2.0 非常接近。看到所有 GitHub 项目中使用了多少个不同的软件许可证，这很有意思。
 
 ![The University of Illinois/NCSA open source license.][29]
 
@@ -78,7 +78,7 @@
 
 ![The most popular open source licenses used for GitHub JavaScript projects.][30]
 
-尽管使用 `npm init` 创建的 [NPM][31] 模块的默认许可证是 [Internet Systems Consortium（ISC）][32] 的许可证，但你可以看到相当多的这些项目使用 MIT 以及 Apache 2.0 的开源许可证。
+尽管使用 `npm init` 创建的 [NPM][31] 模块的默认许可证是来自 [Internet Systems Consortium（ISC）][32] 的许可证，但你可以看到相当多的这些项目使用 MIT 以及 Apache 2.0 的开源许可证。
 
 由于 Libraries.io 数据集中包含丰富的开源项目内容，并且由于 GHTorrent 数据缺少最近几年的数据（因此缺少有关 Golang 项目的任何细节），因此我决定运行类似的查询来查看 Golang 项目是如何许可他们的代码的。
 
@@ -94,7 +94,7 @@
 
 Golang 项目与 JavaScript 项目惊人逆转 —— 使用 Apache 2.0 的 Golang 项目几乎是 MIT 许可证的三倍。虽然很难准确地解释为什么会出现这种情况，但在过去的几年中，Golang 已经出现了大规模的增长，特别是在开源和商业化的项目和软件产品公司中。
 
-正如我们上面所了解的，这些公司中的许多公司都希望强制执行其商标，因此转向 Apache 2.0 许可证是有道理的。
+正如我们上面所了解的，这些公司中的许多公司都希望强制执行其商标策略，因此转向 Apache 2.0 许可证是有道理的。
 
 #### 总结
 
@@ -104,7 +104,7 @@ Golang 项目与 JavaScript 项目惊人逆转 —— 使用 Apache 2.0 的 Gola
 
 你对数据提出了哪些其他问题，以及你使用了哪些数据集？请在评论或推特上告诉我 [@petecheslock] [34]。
 
-本文的一个版本最初发布在 [CHAOSSEARCH][35]。
+本文的一个版本最初发布在 [CHAOSSEARCH][35]，有更多结果可供发现。
 
 --------------------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ via: https://opensource.com/article/19/5/chaossearch-github-ghtorrent
 作者：[Pete Cheslock][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
