@@ -1,4 +1,3 @@
-LuMing Translating
 Writing a Time Series Database from Scratch
 ============================================================
 
