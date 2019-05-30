@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,10 +7,13 @@
 [#]: via: (https://www.linux.com/blog/learn/2019/1/aliases-protect-and-serve)
 [#]: author: (Paul Brown https://www.linux.com/users/bro66)
 
-Aliases: To Protect and Serve
+命令别名：保护和服务
 ======
+> Linux shell 允许你将命令链接在一起以一次触发执行复杂的操作，并创建别名以充当快捷方式。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/prairie-path_1920.jpg?itok=wRARsM7p)
+
+让我们将继续我们的别名系列。到目前为止，你可能已经阅读了我们的[关于别名的第一篇文章][1]，并且应该非常清楚它们是如何为自己省去很多麻烦的最简单方法。 例如，你已经看到他们帮助了肌肉记忆，但让我们看看其他几个别名派上用场的案例。
 
 Happy 2019! Here in the new year, we’re continuing our series on aliases. By now, you’ve probably read our [first article on aliases][1], and it should be quite clear how they are the easiest way to save yourself a lot of trouble. You already saw, for example, that they helped with muscle-memory, but let's see several other cases in which aliases come in handy.
 
@@ -170,7 +173,7 @@ via: https://www.linux.com/blog/learn/2019/1/aliases-protect-and-serve
 
 [a]: https://www.linux.com/users/bro66
 [b]: https://github.com/lujun9972
-[1]: https://www.linux.com/blog/learn/2019/1/aliases-protect-and-serve
+[1]: https://linux.cn/article-10377-1.html
 [2]: https://www.linux.com/files/images/fig01png-0
 [3]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/fig01_0.png?itok=crqTm_va (aliases)
 [4]: https://www.linux.com/licenses/category/used-permission
