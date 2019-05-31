@@ -1,3 +1,4 @@
+XYenChi is translating
 10 principles of resilience for women in tech
 ======
 
