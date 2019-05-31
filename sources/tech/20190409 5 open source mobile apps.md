@@ -12,11 +12,9 @@
 您可以依靠这些应用来满足您的生产力，沟通和娱乐需求。
 ![][1]
 
-
 像世界上大多数人一样，我拿手机连胳膊都懒得伸。 多亏了我从 Google Play 和 F-Droid 安装的开源移动应用程序，让我的 Android 设备好像提供了无限通信，生产力和娱乐服务一样。
 
-Of the many open source apps on my phone, the following five are the ones I consistently turn to whether I want to listen to music; connect with friends, family, and colleagues; or get work done on the go.
-在我的手机上的许多开源应用程序中，以下五个是我一直使用的，我是否想听音乐; 与朋友，家人和同事联系; 或者在旅途中完成工作。
+在我的手机上的许多开源应用程序中，当想听音乐; 与朋友，家人和同事联系; 或者在旅途中完成工作时，以下五个是我一直使用的。
 
 ### MPDroid
 
@@ -88,7 +86,7 @@ _有多种实用工具的安卓终端模拟器_
 
 _![Termux][18]_
 
-你是否需要在手机上运行 **awk** 脚本？ [Termux][19]是您的解决方案。如果您需要做终端类型的东西，而且您不想一直保持与远程计算机的 SSH 连接，请使用 ConnectBot 将文件带到手机上，退出会话，在 Termux 中执行您的操作，用 ConnectBot 发回结果。
+你是否需要在手机上运行 **awk** 脚本？ [Termux][19]是个解决方案。如果您需要做终端类型的东西，而且您不想一直保持与远程计算机的 SSH 连接，请使用 ConnectBot 将文件带到手机上，然后退出会话，在 Termux 中执行您的操作，用 ConnectBot 发回结果。
 
 Termux 可在 [Google Play][20] 和 [F-Droid][21] 上找到。
 
