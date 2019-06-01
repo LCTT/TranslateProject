@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10925-1.html)
 [#]: subject: (Dockly – Manage Docker Containers From Terminal)
 [#]: via: (https://www.ostechnix.com/dockly-manage-docker-containers-from-terminal/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
@@ -10,7 +10,7 @@
 Dockly：从终端管理 Docker 容器
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/201906/01/144422bfwx1e7fqx1ee11x.jpg)
 
 几天前，我们发布了一篇指南，其中涵盖了[开始使用 Docker][2] 时需要了解的几乎所有细节。在该指南中，我们向你展示了如何详细创建和管理 Docker 容器。还有一些可用于管理 Docker 容器的非官方工具。如果你看过我们以前的文章，你可能会看到两个基于 Web 的工具，[Portainer][3] 和 [PiCluster][4]。它们都使得 Docker 管理任务在 Web 浏览器中变得更加容易和简单。今天，我遇到了另一个名为 Dockly 的 Docker 管理工具。
 
