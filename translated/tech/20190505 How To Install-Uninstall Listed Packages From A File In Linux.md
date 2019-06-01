@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (way-ww)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Install/Uninstall Listed Packages From A File In Linux?)
@@ -10,25 +10,17 @@
 如何在 Linux 上安装/卸载一个文件中列出的软件包？
 ======
 
-在某些情况下，你可能想要将一个服务器上的软件包列表安装到另一个服务器上。
+在某些情况下，你可能想要将一个服务器上的软件包列表安装到另一个服务器上。例如，你已经在服务器 A 上安装了 15 个软件包并且这些软件包也需要被安装到服务器 B、服务器 C 上等等。
 
-例如，你已经在服务器A 上安装了 15 个软件包并且这些软件包也需要被安装到服务器B，服务器C 上等等。
+我们可以手动去安装这些软件但是这将花费大量的时间。你可以手动安装一俩个服务器，但是试想如果你有大概十个服务器呢。在这种情况下你无法手动完成工作，那么怎样才能解决问题呢？
 
-我们可以手动去安装这些软件但是这将花费大量的时间。
-
-你可以手动安装一俩个服务器，但是试想如果你有大概十个服务器呢。
-
-在这种情况下你无法手动完成工作，那么怎样才能解决问题呢？
-
-不要担心我们可以帮你摆脱这样的情况和场景。
-
-我们在这篇文章中增加了四种方法来克服困难。
+不要担心我们可以帮你摆脱这样的情况和场景。我们在这篇文章中增加了四种方法来克服困难。
 
 我希望这可以帮你解决问题。我已经在 Centos7 和 Ubuntu 18.04 上测试了这些命令。
 
 我也希望这可以在其他发行版上工作。这仅仅需要使用该发行版的官方包管理器命令替代本文中的包管理器命令就行了。
 
-如果想要 **[检查 Linux 系统上已安装的软件包列表][1]** 请点击链接。
+如果想要 [检查 Linux 系统上已安装的软件包列表][1]，请点击链接。
 
 例如，如果你想要在基于 RHEL 系统上创建软件包列表请使用以下步骤。其他发行版也一样。
 
@@ -53,11 +45,9 @@ apr-util-1.5.2-6.el7.x86_64
 apr-1.4.8-3.el7_4.1.x86_64
 ```
 
-### 方法一 :  如何在 Linux 上使用 cat 命令安装文件中列出的包？
+### 方法一：如何在 Linux 上使用 cat 命令安装文件中列出的包？
 
-为实现这个目标，我将使用简单明了的第一种方法。
-
-为此，创建一个文件并添加上你想要安装的包列表。
+为实现这个目标，我将使用简单明了的第一种方法。为此，创建一个文件并添加上你想要安装的包列表。
 
 出于测试的目的，我们将只添加以下的三个软件包名到文件中。
 
@@ -69,7 +59,7 @@ mariadb-server
 nano
 ```
 
-只要简单的运行 **[apt 命令][2]** 就能在 Ubuntu/Debian 系统上一次性安装所有的软件包。
+只要简单的运行 [apt 命令][2] 就能在 Ubuntu/Debian 系统上一次性安装所有的软件包。
 
 ```
 # apt -y install $(cat /tmp/pack1.txt)
@@ -138,20 +128,19 @@ Processing triggers for install-info (6.5.0.dfsg.1-2) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 ```
 
-使用 **[yum 命令][3]** 在基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上安装文件中列出的软件包。
-
+使用 [yum 命令][3] 在基于 RHEL (如 Centos、RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上安装文件中列出的软件包。
 
 ```
 # yum -y install $(cat /tmp/pack1.txt)
 ```
 
-使用以命令在基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上卸载文件中列出的软件包。
+使用以命令在基于 RHEL (如 Centos、RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上卸载文件中列出的软件包。
 
 ```
 # yum -y remove $(cat /tmp/pack1.txt)
 ```
 
-使用以下 **[dnf 命令][4]** 在 Fedora 系统上安装文件中列出的软件包。
+使用以下 [dnf 命令][4] 在 Fedora 系统上安装文件中列出的软件包。
 
 ```
 # dnf -y install $(cat /tmp/pack1.txt)
@@ -163,7 +152,7 @@ Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 # dnf -y remove $(cat /tmp/pack1.txt)
 ```
 
-使用以下 **[zypper 命令][5]** 在 openSUSE 系统上安装文件中列出的软件包。
+使用以下 [zypper 命令][5] 在 openSUSE 系统上安装文件中列出的软件包。
 
 ```
 # zypper -y install $(cat /tmp/pack1.txt)
@@ -175,7 +164,7 @@ Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 # zypper -y remove $(cat /tmp/pack1.txt)
 ```
 
-使用以下 **[pacman 命令][6]** 在基于 Arch Linux (如 Manjaro 和 Antergos) 的系统上安装文件中列出的软件包。
+使用以下 [pacman 命令][6] 在基于 Arch Linux (如 Manjaro 和 Antergos) 的系统上安装文件中列出的软件包。
 
 ```
 # pacman -S $(cat /tmp/pack1.txt)
@@ -188,36 +177,35 @@ Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 # pacman -Rs $(cat /tmp/pack1.txt)
 ```
 
-### 方法二 : 如何使用 cat 和 xargs 命令在 Linux 中安装文件中列出的软件包。
+### 方法二：如何使用 cat 和 xargs 命令在 Linux 中安装文件中列出的软件包。
 
 甚至，我更喜欢使用这种方法，因为这是一种非常简单直接的方法。
 
-使用以下 apt 命令在基于 Debian 的系统 (如 Debian，Ubuntu和Linux Mint) 上安装文件中列出的软件包。
-
+使用以下 `apt` 命令在基于 Debian 的系统 (如 Debian、Ubuntu 和 Linux Mint) 上安装文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs apt -y install
 ```
 
-使用以下 apt 命令 从基于 Debian 的系统 (如 Debian，Ubuntu和Linux Mint) 上卸载文件中列出的软件包。
+使用以下 `apt` 命令 从基于 Debian 的系统 (如 Debian、Ubuntu 和 Linux Mint) 上卸载文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs apt -y remove
 ```
 
-使用以下 yum 命令在基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上安装文件中列出的软件包。
+使用以下 `yum` 命令在基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上安装文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs yum -y install
 ```
 
-使用以命令从基于 RHEL (如 Centos，RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上卸载文件中列出的软件包。
+使用以命令从基于 RHEL (如 Centos、RHEL (Redhat) 和 OEL (Oracle Enterprise Linux)) 的系统上卸载文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs yum -y remove
 ```
 
-使用以下 dnf 命令在 Fedora 系统上安装文件中列出的软件包。
+使用以下 `dnf` 命令在 Fedora 系统上安装文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs dnf -y install
@@ -229,7 +217,7 @@ Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 # cat /tmp/pack1.txt | xargs dnf -y remove
 ```
 
-使用以下 zypper 命令在 openSUSE 系统上安装文件中列出的软件包。
+使用以下 `zypper` 命令在 openSUSE 系统上安装文件中列出的软件包。
 
 
 ```
@@ -242,7 +230,7 @@ Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 # cat /tmp/pack1.txt | xargs zypper -y remove
 ```
 
-使用以下 pacman 命令在基于 Arch Linux (如 Manjaro 和 Antergos) 的系统上安装文件中列出的软件包。
+使用以下 `pacman` 命令在基于 Arch Linux (如 Manjaro 和 Antergos) 的系统上安装文件中列出的软件包。
 
 ```
 # cat /tmp/pack1.txt | xargs pacman -S
@@ -254,17 +242,17 @@ Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 # cat /tmp/pack1.txt | xargs pacman -Rs
 ```
 
-### 方法三 : 如何使用 For Loop 在 Linux 上安装文件中列出的软件包？
-我们也可以使用 For 循环命令来实现此目的。
+### 方法三 : 如何使用 For 循环在 Linux 上安装文件中列出的软件包
 
-安装批量包可以使用以下一条 For 循环的命令。
+我们也可以使用 `for` 循环命令来实现此目的。
+
+安装批量包可以使用以下一条 `for` 循环的命令。
 
 ```
 # for pack in `cat /tmp/pack1.txt` ; do apt -y install $i; done
 ```
 
-要使用 shell 脚本安装批量包，请使用以下 For 循环。
-
+要使用 shell 脚本安装批量包，请使用以下 `for` 循环。
 
 ```
 # vi /opt/scripts/bulk-package-install.sh
@@ -275,7 +263,7 @@ do apt -y remove $pack
 done
 ```
 
-为 bulk-package-install.sh 设置可执行权限。
+为 `bulk-package-install.sh` 设置可执行权限。
 
 ```
 # chmod + bulk-package-install.sh
@@ -287,17 +275,17 @@ done
 # sh bulk-package-install.sh
 ```
 
-### 方法四 : 如何使用 While 循环在 Linux 上安装文件中列出的软件包。
+### 方法四：如何使用 While 循环在 Linux 上安装文件中列出的软件包
 
-我们也可以使用 While 循环命令来实现目的。
+我们也可以使用 `while` 循环命令来实现目的。
 
-安装批量包可以使用以下一条 While 循环的命令。
+安装批量包可以使用以下一条 `while` 循环的命令。
 
 ```
 # file="/tmp/pack1.txt"; while read -r pack; do apt -y install $pack; done < "$file"
 ```
 
-要使用 shell 脚本安装批量包，请使用以下 While 循环。
+要使用 shell 脚本安装批量包，请使用以下 `while` 循环。
 
 ```
 # vi /opt/scripts/bulk-package-install.sh
@@ -309,7 +297,7 @@ do apt -y remove $pack
 done < "$file"
 ```
 
-为 bulk-package-install.sh 设置可执行权限。
+为 `bulk-package-install.sh` 设置可执行权限。
 
 ```
 # chmod + bulk-package-install.sh
@@ -328,13 +316,13 @@ via: https://www.2daygeek.com/how-to-install-uninstall-listed-packages-from-a-fi
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[way-ww](https://github.com/way-ww)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/check-installed-packages-in-rhel-centos-fedora-debian-ubuntu-opensuse-arch-linux/
+[1]: https://linux.cn/article-10116-1.html
 [2]: https://www.2daygeek.com/apt-command-examples-manage-packages-debian-ubuntu-systems/
 [3]: https://www.2daygeek.com/yum-command-examples-manage-packages-rhel-centos-systems/
 [4]: https://www.2daygeek.com/dnf-command-examples-manage-packages-fedora-system/
