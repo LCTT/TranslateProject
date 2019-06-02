@@ -1,92 +1,70 @@
 [#]: collector: "lujun9972"
-[#]: translator: "fuzheng1998 "
-[#]: reviewer: " "
+[#]: translator: "fuzheng1998"
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 [#]: subject: "5 open source mobile apps"
 [#]: via: "https://opensource.com/article/19/4/mobile-apps"
-[#]: author: "Chris Hermansen (Community Moderator) https://opensource.com/users/clhermansen/users/bcotton/users/clhermansen/users/bcotton/users/clhermansen"
+[#]: author: "Chris Hermansen https://opensource.com/users/clhermansen/users/bcotton/users/clhermansen/users/bcotton/users/clhermansen"
 
-5 个开源的移动应用
+5 个可以满足你的生产力、沟通和娱乐需求的开源手机应用
 ======
-您可以依靠这些应用来满足您的生产力，沟通和娱乐需求。
-![][1]
 
-像世界上大多数人一样，我拿手机连胳膊都懒得伸。 多亏了我从 Google Play 和 F-Droid 安装的开源移动应用程序，让我的 Android 设备好像提供了无限通信，生产力和娱乐服务一样。
+> 你可以依靠这些应用来满足你的生产力、沟通和娱乐需求。
 
-在我的手机上的许多开源应用程序中，当想听音乐; 与朋友，家人和同事联系; 或者在旅途中完成工作时，以下五个是我一直使用的。
+![](https://img.linux.net.cn/data/attachment/album/201906/03/001949brnq19j5qeqn3onv.jpg)
+
+像世界上大多数人一样，我的手似乎就没有离开过手机。多亏了我从 Google Play 和 F-Droid 安装的开源移动应用程序，让我的 Android 设备好像提供了无限的沟通、生产力和娱乐服务一样。
+
+在我的手机上的许多开源应用程序中，当想听音乐、与朋友/家人和同事联系、或者在旅途中完成工作时，以下五个是我一直使用的。
 
 ### MPDroid
 
-_一个 Music Player Daemon (MPD)的 Android 控制器_
+一个音乐播放器进程 (MPD)的 Android 控制器。
 
 ![MPDroid][2]
 
-MPD 是将音乐从小型音乐服务器电脑传输到大型黑色立体声音箱的好方法。 它直接与 ALSA 对话，因此通过 ALSA 硬件接口与数模转换器（ DAC ）对话，它可以通过我的网络进行控制——但是用什么东西控制呢？ 好吧，事实证明 MPDroid 是一个很棒的 MPD 控制器。 它管理我的音乐数据库，显示专辑封面，处理播放列表，并支持互联网广播。 而且它是开源的，所以如果某些东西不好用的话......
+MPD 是将音乐从小型音乐服务器电脑传输到大型的黑色立体声音箱的好方法。它直连 ALSA，因此可以通过 ALSA 硬件接口与数模转换器（DAC）对话，它可以通过我的网络进行控制——但是用什么东西控制呢？好吧，事实证明 MPDroid 是一个很棒的 MPD 控制器。它可以管理我的音乐数据库，显示专辑封面，处理播放列表，并支持互联网广播。而且它是开源的，所以如果某些东西不好用的话……
 
 MPDroid 可在 [Google Play][4] 和 [F-Droid][5] 上找到。
 
 ### RadioDroid
 
-_一台只和 Chromecast 搭配使用的Android 网络收音机_
+一台能单独使用及与 Chromecast 搭配使用的 Android 网络收音机。
 
-**
+![RadioDroid][6]
 
-**
-
-**
-
-_![RadioDroid][6]_
-
-好比 MPDroid 是管理我音乐的数据库，RadioDroid 是一个互联网广播; 从本质上讲，RadioDroid 是 [Internet-Radio.com][7] 的前端产品。 此外，通过将耳机插入 Android 设备，通过耳机插孔或 USB 将Android 设备直接连接到立体声系统，或通过兼容设备使用其 Chromecast 功能，可以享受 RadioDroid。这是一个查看芬兰天气情况，听取排名前 40 的西班牙语音乐，或收到到最新新闻消息的好方法。
+RadioDroid 是一个网络收音机，而 MPDroid 则管理我音乐的数据库；从本质上讲，RadioDroid 是 [Internet-Radio.com][7] 的一个前端。此外，通过将耳机插入 Android 设备，通过耳机插孔或 USB 将 Android 设备直接连接到立体声系统，或通过兼容设备使用其 Chromecast 功能，可以享受 RadioDroid。这是一个查看芬兰天气情况，听取排名前 40 的西班牙语音乐，或收到到最新新闻消息的好方法。
 
 RadioDroid 可在 [Google Play][8] 和 [F-Droid][9] 上找到。
 
 ### Signal
 
-_一个支持 Android，iOS，还有桌面系统的安全即时消息客户端。_
+一个支持 Android、iOS，还有桌面系统的安全即时消息客户端。
 
-**
+![Signal][10]
 
-**
+如果你喜欢 WhatsApp，但是因为它与 Facebook [日益密切][11]的关系而感到困扰，那么 Signal 应该是你的下一个产品。Signal 的唯一问题是说服你的朋友们最好用 Signal 取代 WhatsApp。但除此之外，它有一个与 WhatsApp 类似的界面；很棒的语音和视频通话；很好的加密；恰到好处的匿名；并且它受到了一个不打算通过使用软件来获利的基金会的支持。为什么不喜欢它呢？
 
-**
-
-_![Signal][10]_
-
-如果你喜欢 WhatsApp，但是因为它与 Facebook 日益密切的关系而感到困扰，那么 Signal 应该是你的下一个产品。Signal 的唯一问题是说服你的联系人他们最好用 Signal 取代 WhatsApp。但除此之外，它有一个与 WhatsApp 类似的界面; 很棒的语音和视频通话; 很好的加密; 恰到好处的匿名; 并且它受到了一个不打算通过使用软件来获利的基金会的支持。 为什么不喜欢它呢？
-
-Signal 可用于[Android][12]，[iOS][13]  和 [桌面][14]。
+Signal 可用于 [Android][12]、[iOS][13] 和 [桌面][14]。
 
 ### ConnectBot
 
-_Android SSH 客户端_
+Android SSH 客户端。
 
-**
+![ConnectBot][15]
 
-**
+有时我离电脑很远，但我需要登录服务器才能办事。[ConnectBot][16] 是将 SSH 会话搬到手机上的绝佳解决方案。
 
-**
-
-_![ConnectBot][15]_
-
-有时我离电脑很远，但我需要登录服务器才能办事。 [ConnectBot][16]是将 SSH 会话搬到手机上的绝佳解决方案。
-
-ConnectBot 可在[Google Play][17]上找到。
+ConnectBot 可在 [Google Play][17] 上找到。
 
 ### Termux
 
-_有多种实用工具的安卓终端模拟器_
+有多种熟悉的功能的安卓终端模拟器。
 
-**
+![Termux][18]
 
-**
-
-**
-
-_![Termux][18]_
-
-你是否需要在手机上运行 **awk** 脚本？ [Termux][19]是个解决方案。如果您需要做终端类型的东西，而且您不想一直保持与远程计算机的 SSH 连接，请使用 ConnectBot 将文件带到手机上，然后退出会话，在 Termux 中执行您的操作，用 ConnectBot 发回结果。
+你是否需要在手机上运行 `awk` 脚本？[Termux][19] 是个解决方案。如果你需要做终端类的工作，而且你不想一直保持与远程计算机的 SSH 连接，请使用 ConnectBot 将文件放到手机上，然后退出会话，在 Termux 中执行你的操作，用 ConnectBot 发回结果。
 
 Termux 可在 [Google Play][20] 和 [F-Droid][21] 上找到。
 
@@ -98,10 +76,10 @@ Termux 可在 [Google Play][20] 和 [F-Droid][21] 上找到。
 
 via: https://opensource.com/article/19/4/mobile-apps
 
-作者：[Chris Hermansen (Community Moderator)][a]
+作者：[Chris Hermansen][a]
 选题：[lujun9972][b]
 译者：[fuzheng1998](https://github.com/fuzheng1998)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
