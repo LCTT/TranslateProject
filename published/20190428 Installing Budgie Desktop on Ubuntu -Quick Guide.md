@@ -1,34 +1,34 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10919-1.html)
 [#]: subject: (Installing Budgie Desktop on Ubuntu [Quick Guide])
 [#]: via: (https://itsfoss.com/install-budgie-ubuntu/)
 [#]: author: (Atharva Lele https://itsfoss.com/author/atharva/)
 
-在 Ubuntu 上安装 Budgie 桌面 [快速指南]
+在 Ubuntu 上安装 Budgie 桌面
 ======
 
-_ **简介：在这一步步的教程中学习如何在 Ubuntu 上安装 Budgie 桌面。** _
+> 在这个逐步的教程中学习如何在 Ubuntu 上安装 Budgie 桌面。
 
-在所有[各种 Ubuntu 版本][1]中，[Ubuntu Budgie][2] 是最被低估的版本。它看起来很优雅，而且需要的资源也不多。
+在所有[各种 Ubuntu 版本][1]中，[Ubuntu Budgie][2] 是最被低估的版本。它外观优雅，而且需要的资源也不多。
 
-阅读这篇 [Ubuntu Budgie 的评论][3]或观看此视频，了解 Ubuntu Budgie 18.04 的外观。
+阅读这篇 《[Ubuntu Budgie 点评][3]》或观看下面的视频，了解 Ubuntu Budgie 18.04 的外观如何。
 
-[Subscribe to our YouTube channel for more Linux Videos][4]
+- [Ubuntu 18.04 Budgie Desktop Tour [It's Elegant]](https://youtu.be/KXgreWOK33k)
 
-如果你喜欢 [Budgie 桌面][5]但你正在使用其他版本的 Ubuntu，例如默认的 GNOME 桌面的 Ubuntu，我有个好消息。你可以在当前的 Ubuntu 系统上安装 Budgie 并切换桌面环境。
+如果你喜欢 [Budgie 桌面][5]但你正在使用其他版本的 Ubuntu，例如默认 Ubuntu 带有 GNOME 桌面，我有个好消息。你可以在当前的 Ubuntu 系统上安装 Budgie 并切换桌面环境。
 
 在这篇文章中，我将告诉你到底该怎么做。但首先，对那些不了解 Budgie 的人进行一点介绍。
 
-Budgie 桌面环境主要由 [Solus Linux 团队开发][6]。它的设计注重优雅和现代使用。Budgie 适用于所有主流 Linux 发行版，供用户尝试体验这种新的桌面环境。Budgie 现在非常成熟，并提供了出色的桌面体验。
+Budgie 桌面环境主要由 [Solus Linux 团队开发][6]。它的设计注重优雅和现代使用。Budgie 适用于所有主流 Linux 发行版，可以让用户在其上尝试体验这种新的桌面环境。Budgie 现在非常成熟，并提供了出色的桌面体验。
 
-警告
-
-在同一系统上安装多个桌面可能会导致冲突，你可能会遇到一些问题，如面板中缺少图标或同一程序的多个图标。
-
-你也许不会遇到任何问题。是否要尝试不同桌面由你决定。
+> 警告
+>
+> 在同一系统上安装多个桌面可能会导致冲突，你可能会遇到一些问题，如面板中缺少图标或同一程序的多个图标。
+>
+> 你也许不会遇到任何问题。是否要尝试不同桌面由你决定。
 
 ### 在 Ubuntu 上安装 Budgie
 
@@ -55,15 +55,11 @@ sudo apt install ubuntu-budgie-desktop
 
 ![Budgie login screen][9]
 
-你可以单击登录名旁边的 Budgie 图标获取登录选项。在那里，你可以在已安装的桌面环境 （DE） 之间进行选择。就我而言，我看到了 Budgie 和默认的 Ubuntu（GNOME）桌面。
+你可以单击登录名旁边的 Budgie 图标获取登录选项。在那里，你可以在已安装的桌面环境（DE）之间进行选择。就我而言，我看到了 Budgie 和默认的 Ubuntu（GNOME）桌面。
 
 ![Select your DE][10]
 
 因此，无论何时你想登录 GNOME，都可以使用此菜单执行此操作。
-
-[][11]
-
-建议阅读：在 Ubuntu中 摆脱 “snapd returned status code 400: Bad Request” 错误。
 
 ### 如何删除 Budgie
 
@@ -71,7 +67,7 @@ sudo apt install ubuntu-budgie-desktop
 
 但是，如果你真的想要删除 Budgie 及其组件，你可以按照以下命令回到之前的状态。
 
-_ **在使用这些命令之前先切换到其他桌面环境：** _
+**在使用这些命令之前先切换到其他桌面环境：**
 
 ```
 sudo apt remove ubuntu-budgie-desktop ubuntu-budgie* lightdm
@@ -83,7 +79,7 @@ sudo apt install --reinstall gdm3
 
 现在，你将回到 GNOME 或其他你有的桌面。
 
-**你对Budgie有什么看法？**
+### 你对 Budgie 有什么看法？
 
 Budgie 是[最佳 Linux 桌面环境][12]之一。希望这个简短的指南帮助你在 Ubuntu 上安装了很棒的 Budgie 桌面。
 
@@ -96,7 +92,7 @@ via: https://itsfoss.com/install-budgie-ubuntu/
 作者：[Atharva Lele][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
