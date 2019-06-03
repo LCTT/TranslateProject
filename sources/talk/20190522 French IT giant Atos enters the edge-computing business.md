@@ -7,42 +7,36 @@
 [#]: via: (https://www.networkworld.com/article/3397139/atos-is-the-latest-to-enter-the-edge-computing-business.html)
 [#]: author: (Andy Patrizio https://www.networkworld.com/author/Andy-Patrizio/)
 
-French IT giant Atos enters the edge-computing business
+法国 IT 巨头 Atos 进军边缘计算
 ======
-Atos takes a different approach to edge computing with a device called BullSequana Edge that's the size of a suitcase.
+Atos 另辟蹊径，通过一种只有行李箱大小的设备 BullSequana Edge 进军边缘计算。
 ![iStock][1]
 
-French IT giant Atos is the latest to jump into the edge computing business with a small device called BullSequana Edge. Unlike devices from its competitors that are the size of a shipping container, including those from Vapor IO and Schneider Electronics, Atos' edge device can sit in a closet.
+法国 IT 巨头 Atos 是最晚一个开展边缘计算业务的，他们的产品是一个叫做 BullSequana Edge 的小型设备。和竞争对手们的集装箱大小的设备不同（比如说 Vapor IO 和 Schneider Electronics的产品），Atos 的边缘设备完全可以被放进衣柜里。
 
-Atos says the device uses artificial intelligence (AI) applications to offer fast response times that are needed in areas such as manufacturing 4.0, autonomous vehicles, healthcare and retail/airport security – where data needs to be processed and analyzed at the edge in real time.
+Atos 表示，他们的这个设备使用人工智能应用提供快速响应，适合需要快速响应的领域比如生产 4.0、自动驾驶汽车、健康管理，以及零售业和机场的安保系统。在这些领域，数据需要在边缘进行实时处理和分析。
 
-**[ Also see:[What is edge computing?][2] and [How edge networking and IoT will reshape data centers][3].]**
+**[ 延伸阅读：[什么是边缘计算？][2] 以及 [边缘网络和物联网如何重新定义数据中心][3].]**
 
-The BullSequana Edge can be purchased as standalone infrastructure or bundled with Atos’ software edge software, and that software is pretty impressive. Atos says the BullSequana Edge supports three main categories of use cases:
+BullSequana Edge 可以作为独立的基础设施单独采购，也可以和Atos的边缘软件捆绑采购，并且这个软件还是非常出色的。Atos 表示 BullSequana Edge 主要支持三种使用场景：
 
-  * AI: Atos Edge Computer Vision software for surveillance cameras provide advanced extraction and analysis of features such as people, faces, emotions, and behaviors so that automatic actions can be carried out based on that analysis.
-  * Big data: Atos Edge Data Analytics enables organizations to improve their business models with predictive and prescriptive solutions. It utilizes data lake capabilities to make data trustworthy and useable.
-  * Containers: Atos Edge Data Container (EDC) is an all-in-one container solution that is ready to run at the edge and serves as a decentralized IT system that can run autonomously in non-data center environments with no need for local on-site operation.
+  * AI（人工智能）：Atos 的边缘计算机视觉软件为监控摄像头提供先进的特征抽取和分析技术，包括人像，人脸，行为等特征。这些分析可以支持系统做出自动化响应。
+  * 大数据：Atos 边缘数据分析系统通过预测性和规范性的解决方案，帮助机构优化商业模型。它使用数据湖的功能，确保数据的可信度和可用性。
+  * 容器：Atos 边缘数据容器（EDC）是一种一体化容器解决方案。它可以作为一个去中心化的 IT 系统在边缘运行，并且可以在没有数据中心的环境下自动运行，而不需要现场操作。
 
+由于体积小，BullSequana Edge 并不具备很强的处理能力。它装载一个 16 核的 Intel Xeon 中央处理器，可以装备最多两枚英伟达 Tesla T4 图形处理器或者是FPGA（现场可编程门阵列）。Atos 表示，这就足够让复杂的 AI 模型在边缘进行低延迟的运行了。
 
+考虑到数据的敏感性，BullSequana Edge 同时装备了一个入侵感应器，用来在遭遇物理入侵的时候禁用机器。
 
-Because of its small size, the BullSequana Edge doesn’t pack a lot of processing power. It comes with a 16-core Intel Xeon CPU and can hold up to two Nvidia Tesla T4 GPUs or optional FPGAs. Atos says that is enough to handle the inference of complex AI models with low latency at the edge.
+虽然大多数边缘设备都被安放在信号塔附近，但是考虑到边缘系统可能被安放在任何地方，BullSequana Edge 还支持通过无线电、全球移动通信系统（GSM），或者 Wi-Fi 来进行通信。
 
-Because it handles sensitive data, BullSequana Edge also comes with an intrusion sensor that will disable the machine in case of physical attacks.
+Atos 在美国也许不是一个家喻户晓的名字，但是在欧洲它可以和 IBM 相提并论，并且在过去的十年里已经收购了诸如 Bull SA, Xerox IT Outsourcing, 以及 Siemens IT 的 IT 巨头们。
 
-Most edge devices are placed near cell towers, but since the edge system can be placed anywhere, it can communicate via radio, Global System for Mobile Communications (GSM), or Wi-Fi.
+**关于边缘网络的延伸阅读：**
 
-Atos may not be a household name in the U.S., but it’s on par with IBM in Europe, having acquired IT giants Bull SA, Xerox IT Outsourcing, and Siemens IT all in this past decade.
-
-**More about edge networking:**
-
-  * [How edge networking and IoT will reshape data centers][3]
-  * [Edge computing best practices][4]
-  * [How edge computing can help secure the IoT][5]
-
-
-
-Join the Network World communities on [Facebook][6] and [LinkedIn][7] to comment on topics that are top of mind.
+  * [边缘网络和物联网如何重新定义数据中心][3]
+  * [边缘计算的最佳实践][4]
+  * [边缘计算如何提升物联网安全][5]
 
 --------------------------------------------------------------------------------
 
@@ -50,7 +44,7 @@ via: https://www.networkworld.com/article/3397139/atos-is-the-latest-to-enter-th
 
 作者：[Andy Patrizio][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chen-ni](https://github.com/chen-ni)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
