@@ -1,3 +1,4 @@
+Translating by robsean
 Learning BASIC Like It's 1983
 ======
 I was not yet alive in 1983. This is something that I occasionally regret. I am especially sorry that I did not experience the 8-bit computer era as it was happening, because I think the people that first encountered computers when they were relatively simple and constrained have a huge advantage over the rest of us.

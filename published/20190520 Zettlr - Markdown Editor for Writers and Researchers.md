@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10922-1.html)
 [#]: subject: (Zettlr – Markdown Editor for Writers and Researchers)
 [#]: via: (https://itsfoss.com/zettlr-markdown-editor/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
 
-Zettlr - 适合作者和研究人员的 Markdown 编辑器
+Zettlr：适合写作者和研究人员的 Markdown 编辑器
 ======
 
 有很多[适用于 Linux 的 Markdown 编辑器][1]，并且还在继续增加。问题是，像 [Boostnote][2] 一样，大多数是为编码人员设计的，可能不会受到非技术人员的欢迎。让我们看一个想要替代 Word 和昂贵的文字处理器，适用于非技术人员的 Markdown 编辑器。我们来看看 Zettlr 吧。
@@ -16,34 +16,33 @@ Zettlr - 适合作者和研究人员的 Markdown 编辑器
 
 ![Zettlr Light Mode][3]
 
-我可能在网站上提到过一两次，但我更喜欢用 [Markdown][4] 写下我的所有文档。它易于学习，不会让你与专有文档格式相关联。我还在我的[适合作者的开源工具列表][5]中提到了 Markdown 编辑器。
+我可能在网站上提到过一两次，我更喜欢用 [Markdown][4] 写下我的所有文档。它易于学习，不会让你受困于专有文档格式。我还在我的[适合作者的开源工具列表][5]中提到了 Markdown 编辑器。
 
-我用过许多 Markdown 编辑器，但是我一直有兴趣尝试新的。最近，我遇到了 Zettlr，一个开源 markdown 编辑器。
+我用过许多 Markdown 编辑器，但是我一直有兴趣尝试新的。最近，我遇到了 Zettlr，一个开源 Markdown 编辑器。
 
-[Zettlr][6] 是一位名叫 [Hendrik Erz][7] 的德国社会学家/政治理论家创建的。Hendrik 创建了 Zettlr，因为他对目前的文字处理器感到沮丧。他想要可以让他“专注于写作和阅读”的编辑器。
+[Zettlr][6] 是一位名叫 [Hendrik Erz][7] 的德国社会学家/政治理论家创建的。Hendrik 创建了 Zettlr，因为他对目前的文字处理器感到不满意。他想要可以让他“专注于写作和阅读”的编辑器。
 
-在发现 Markdown 之后，他在不同的操作系统上尝试了几个 Markdown 编辑器。但他们都没有他想要的东西。[根据 Hendrik 的说法][8]，“但我不得不意识到没有为高效组织大量文本而写的编辑器。大多数编辑都是由编码人员编写的，因此可以满足工程师和数学家的需求。没有为我这样的社会科学，历史或政治学的学生的编辑器。“
+在发现 Markdown 之后，他在不同的操作系统上尝试了几个 Markdown 编辑器。但它们都没有他想要的东西。[根据 Hendrik 的说法][8]，“但我不得不意识到没有为高效组织大量文本而写的编辑器。大多数编辑都是由编码人员编写的，因此可以满足工程师和数学家的需求。没有为我这样的社会科学、历史或政治学的学生的编辑器。“
 
-So he decided to create his own. In November of 2017, he started to work on Zettlr.
 所以他决定创造自己的。2017 年 11 月，他开始编写 Zettlr。
 
 ![Zettlr About][9]
 
 #### Zettlr 功能
 
-Zettlr有许多简洁的功能，包括：
+Zettlr 有许多简洁的功能，包括：
 
   * 从 [Zotero 数据库][10]导入源并在文档中引用它们
   * 使用可选的行屏蔽，让你无打扰地专注于写作
   * 支持代码高亮
   * 使用标签对信息进行排序
-  * 能够为会话设定写作目标
+  * 能够为该任务设定写作目标
   * 查看一段时间的写作统计
   * 番茄钟计时器
   * 浅色/深色主题
   * 使用 [reveal.js][11] 创建演示文稿
   * 快速预览文档
-  * 在一个项目文档中搜索 Markdown 文档，并用热图展示文字搜索密度。
+  * 可以在一个项目文件夹中搜索 Markdown 文档，并用热图展示文字搜索密度。
   * 将文件导出为 HTML、PDF、ODT、DOC、reStructuredText、LaTex、TXT、Emacs ORG、[TextBundle][12] 和 Textpack
   * 将自定义 CSS 添加到你的文档
 
@@ -69,7 +68,7 @@ Zettlr 有许多我希望我之前选择的编辑器 （ghostwriter） 有的简
 
 正如 Hendrik 在 [Zettlr 网站][8]中所说的那样，“让自己摆脱文字处理器的束缚，看看你的写作过程如何通过身边的技术得到改善！”
 
-如果你觉得 Zettlr 有用，请考虑支持 [Hendrik][19]。正如他在网站上所说，“它是免费的，因为我不相信激烈竞争，早逝的创业文化。我只是想帮忙。“
+如果你觉得 Zettlr 有用，请考虑支持 [Hendrik][19]。正如他在网站上所说，“它是免费的，因为我不相信激烈竞争、早逝的创业文化。我只是想帮忙。”
 
 你有没有用过 Zettlr？你最喜欢的 Markdown 编辑器是什么？请在下面的评论中告诉我们。
 
@@ -82,7 +81,7 @@ via: https://itsfoss.com/zettlr-markdown-editor/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
