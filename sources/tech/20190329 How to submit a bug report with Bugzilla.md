@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How to submit a bug report with Bugzilla)
 [#]: via: (https://opensource.com/article/19/3/bug-reporting)
-[#]: author: (David Both (Community Moderator) https://opensource.com/users/dboth)
+[#]: author: (David Both  https://opensource.com/users/dboth)
 
 How to submit a bug report with Bugzilla
 ======

@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (12 open source tools for natural language processing)
 [#]: via: (https://opensource.com/article/19/3/natural-language-processing-tools)
-[#]: author: (Dan Barker (Community Moderator) https://opensource.com/users/barkerd427)
+[#]: author: (Dan Barker  https://opensource.com/users/barkerd427)
 
 12 open source tools for natural language processing
 ======

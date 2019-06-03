@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (File sharing with Git)
 [#]: via: (https://opensource.com/article/19/4/file-sharing-git)
-[#]: author: (Seth Kenlon (Red Hat, Community Moderator) https://opensource.com/users/seth)
+[#]: author: (Seth Kenlon  https://opensource.com/users/seth)
 
 File sharing with Git
 ======
