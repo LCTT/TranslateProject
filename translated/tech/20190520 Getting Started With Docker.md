@@ -1,98 +1,98 @@
 [#]: collector:	"lujun9972"
 [#]: translator:	"zhang5788"
-[#]: reviewer:	" "
-[#]: publisher:	" "
-[#]: url:	" "
-[#]: subject:	"Getting Started With Docker"
+[#]: reviewer: "wxy"
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject:	 "Getting Started With Docker"
 [#]: via:	"https://www.ostechnix.com/getting-started-with-docker/"
-[#]: author:	"sk https://www.ostechnix.com/author/sk/"
+[#]: author: "sk https://www.ostechnix.com/author/sk/"
 
 Docker 入门指南
 ======
 
 ![Getting Started With Docker][1]
 
-在我们的上一个教程中，我们已经了解[**如何在ubuntu上安装Docker**][1]，和如何在[**CentOS上安装Docker**][2]。今天，我们将会了解Docker的一些基础用法。该教程包含了如何创建一个新的docker容器，如何运行该容器，如何从现有的docker容器中创建自己的Docker镜像等Docker 的一些基础知识，操作。所有步骤均在Ubuntu 18.04 LTS server 版本下测试通过。
+在我们的上一个教程中，我们已经了解[如何在ubuntu上安装Docker][1]，和如何在[CentOS上安装Docker][2]。今天，我们将会了解 Docker 的一些基础用法。该教程包含了如何创建一个新的 Docker 容器，如何运行该容器，如何从现有的 Docker 容器中创建自己的 Docker 镜像等 Docker 的一些基础知识、操作。所有步骤均在 Ubuntu 18.04 LTS server 版本下测试通过。
 
 ### 入门指南
 
-在开始指南之前，不要混淆Docker镜像和Docker容器这两个概念。在之前的教程中，我就解释过，Docker镜像是决定Docker容器行为的一个文件，Docker容器则是Docker镜像的运行态或停止态。(译者注：在`macOS`下使用docker终端时，不需要加`sudo`)
+在开始指南之前，不要混淆 Docker 镜像和 Docker 容器这两个概念。在之前的教程中，我就解释过，Docker 镜像是决定 Docker 容器行为的一个文件，Docker 容器则是 Docker 镜像的运行态或停止态。（LCTT 译注：在 macOS 下使用 Docker 终端时，不需要加 `sudo`）
 
-##### 1. 搜索Docker镜像
+#### 1、搜索 Docker 镜像
 
-我们可以从Docker的仓库中获取镜像，例如[**Docker hub**][3], 或者自己创建镜像。这里解释一下，`Docker hub`是一个云服务器，用来提供给Docker的用户们，创建，测试，和保存他们的镜像。
+我们可以从 Docker 仓库中获取镜像，例如 [Docker hub][3]，或者自己创建镜像。这里解释一下，Docker hub 是一个云服务器，用来提供给 Docker 的用户们创建、测试，和保存他们的镜像。
 
-`Docker hub`拥有成千上万个Docker 的镜像文件。你可以在这里搜索任何你想要的镜像，通过`docker search`命令。
+Docker hub 拥有成千上万个 Docker 镜像文件。你可以通过 `docker search`命令在这里搜索任何你想要的镜像。
 
-例如，搜索一个基于ubuntu的镜像文件，只需要运行：
+例如，搜索一个基于 Ubuntu 的镜像文件，只需要运行：
 
 ```shell
 $ sudo docker search ubuntu
 ```
 
-**Sample output:**
+示例输出：
 
 ![][5]
 
-搜索基于CentOS的镜像，运行：
+搜索基于 CentOS 的镜像，运行：
 
 ```shell
-$ sudo docker search ubuntu
+$ sudo docker search centos
 ```
 
-搜索AWS的镜像，运行：
+搜索 AWS 的镜像，运行：
 
 ```shell
 $ sudo docker search aws
 ```
 
-搜索`wordpress`的镜像：
+搜索 WordPress 的镜像：
 
 ```shell
 $ sudo docker search wordpress
 ```
 
-`Docker hub`拥有几乎所有种类的镜像，包含操作系统，程序和其他任意的类型，这些你都能在`docker hub`上找到已经构建完的镜像。如果你在搜索时，无法找到你想要的镜像文件，你也可以自己构建一个，将其发布出去，或者仅供你自己使用。
+Docker hub 拥有几乎所有种类的镜像，包含操作系统、程序和其他任意的类型，这些你都能在 Docker hub 上找到已经构建完的镜像。如果你在搜索时，无法找到你想要的镜像文件，你也可以自己构建一个，将其发布出去，或者仅供你自己使用。
 
-##### 2. 下载Docker 镜像
+#### 2、下载 Docker 镜像
 
-下载`ubuntu`的镜像，你需要在终端运行以下命令：
+下载 Ubuntu 的镜像，你需要在终端运行以下命令：
 
 ```shell
 $ sudo docker pull ubuntu
 ```
 
-这条命令将会从**Docker hub**下载最近一个版本的ubuntu镜像文件。
+这条命令将会从 Docker hub 下载最近一个版本的 Ubuntu 镜像文件。
 
-**Sample output:**
+示例输出：
 
-> ```shell
-> Using default tag: latest
-> latest: Pulling from library/ubuntu
-> 6abc03819f3e: Pull complete
-> 05731e63f211: Pull complete
-> 0bd67c50d6be: Pull complete
-> Digest: sha256:f08638ec7ddc90065187e7eabdfac3c96e5ff0f6b2f1762cf31a4f49b53000a5
-> Status: Downloaded newer image for ubuntu:latest
-> ```
+```
+Using default tag: latest
+latest: Pulling from library/ubuntu
+6abc03819f3e: Pull complete 
+05731e63f211: Pull complete 
+0bd67c50d6be: Pull complete 
+Digest: sha256:f08638ec7ddc90065187e7eabdfac3c96e5ff0f6b2f1762cf31a4f49b53000a5
+Status: Downloaded newer image for ubuntu:latest
+```
 
-![下载docker 镜像][6]
+![下载 Docker 镜像][6]
 
-你也可以下载指定版本的ubuntu镜像。运行以下命令：
+你也可以下载指定版本的 Ubuntu 镜像。运行以下命令：
 
 ```shell
 $ docker pull ubuntu:18.04
 ```
 
-Dokcer允许在任意的宿主机操作系统下，下载任意的镜像文件，并运行。
+Docker 允许在任意的宿主机操作系统下，下载任意的镜像文件，并运行。
 
-例如，下载CentOS镜像：
+例如，下载 CentOS 镜像：
 
 ```shell
 $ sudo docker pull centos
 ```
 
-所有下载的镜像文件，都被保存在`/var/lib/docker`文件夹下。（译者注：不同操作系统存放的文件夹并不是一致的，具体存放位置请在官方查询）
+所有下载的镜像文件，都被保存在 `/var/lib/docker` 文件夹下。（LCTT 译注：不同操作系统存放的文件夹并不是一致的，具体存放位置请在官方查询）
 
 查看已经下载的镜像列表，可以使用以下命令：
 
@@ -100,7 +100,7 @@ $ sudo docker pull centos
 $ sudo docker images
 ```
 
-**输出为：**
+示例输出：
 
 ```shell
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -109,17 +109,17 @@ centos              latest              9f38484d220f        2 months ago        
 hello-world         latest              fce289e99eb9        4 months ago        1.84kB
 ```
 
-正如你看到的那样，我已经下载了三个镜像文件：**ubuntu**, **CentOS**和**Hello-world**.
+正如你看到的那样，我已经下载了三个镜像文件：`ubuntu`、`centos` 和 `hello-world`。
 
 现在，让我们继续，来看一下如何运行我们刚刚下载的镜像。
 
-##### 3. 运行Docker镜像
+#### 3、运行 Docker 镜像
 
-运行一个容器有两种方法。我们可以使用`TAG`或者是`镜像ID`。`TAG`指的是特定的镜像快照。`镜像ID`是指镜像的唯一标识。
+运行一个容器有两种方法。我们可以使用标签或者是镜像 ID。标签指的是特定的镜像快照。镜像 ID 是指镜像的唯一标识。
 
-正如上面结果中显示，`latest`是所有镜像的一个标签。**7698f282e524**是Ubuntu docker 镜像的`镜像ID`,**9f38484d220f**是CentOS镜像的`镜像ID`，**fce289e99eb9**是hello_world镜像的`镜像ID`。
+正如上面结果中显示，`latest` 是所有镜像的一个标签。`7698f282e524` 是 Ubuntu Docker 镜像的镜像 ID，`9f38484d220f`是 CentOS 镜像的镜像 ID，`fce289e99eb9` 是 hello_world 镜像的 镜像 ID。
 
-下载完Docker镜像之后，你可以通过下面的命令来使用`TAG`的方式启动：
+下载完 Docker 镜像之后，你可以通过下面的命令来使用其标签来启动：
 
 ```shell
 $ sudo docker run -t -i ubuntu:latest /bin/bash
@@ -127,12 +127,12 @@ $ sudo docker run -t -i ubuntu:latest /bin/bash
 
 在这条语句中：
 
-* **-t**: 在该容器中启动一个新的终端
-* **-i**: 通过容器中的标准输入流建立交互式连接
-* **ubuntu:latest**：带有标签`latest`的ubuntu容器
-* **/bin/bash** : 在新的容器中启动`BASH Shell` 
+* `-t`：在该容器中启动一个新的终端
+* `-i`：通过容器中的标准输入流建立交互式连接
+* `ubuntu:latest`：带有标签 `latest` 的 Ubuntu 容器
+* `/bin/bash`：在新的容器中启动 BASH Shell 
 
-或者，你可以通过`镜像ID`来启动新的容器：
+或者，你可以通过镜像 ID 来启动新的容器：
 
 ```shell
 $ sudo docker run -t -i 7698f282e524 /bin/bash
@@ -140,15 +140,15 @@ $ sudo docker run -t -i 7698f282e524 /bin/bash
 
 在这条语句里：
 
-* **7698f282e524** —`镜像ID`
+* `7698f282e524` — 镜像 ID
 
-在启动容器之后，将会自动进入容器的`shell`中（注意看命令行的提示符）。
+在启动容器之后，将会自动进入容器的 shell 中（注意看命令行的提示符）。
 
 ![][7]
 
-Docker 容器的`Shell`
+*Docker 容器的 Shell*
 
-如果想要退回到宿主机的终端（在这个例子中，对我来说，就是退回到18.04 LTS），并且不中断该容器的执行，你可以按下`CTRL+P `，再按下`CTRL+Q`。现在，你就安全的返回到了你的宿主机系统中。需要注意的是，docker 容器仍然在后台运行，我们并没有中断它。
+如果想要退回到宿主机的终端（在这个例子中，对我来说，就是退回到 18.04 LTS），并且不中断该容器的执行，你可以按下 `CTRL+P`，再按下 `CTRL+Q`。现在，你就安全的返回到了你的宿主机系统中。需要注意的是，Docker 容器仍然在后台运行，我们并没有中断它。
 
 可以通过下面的命令来查看正在运行的容器：
 
@@ -156,7 +156,7 @@ Docker 容器的`Shell`
 $ sudo docker ps
 ```
 
-**Sample output:**
+示例输出：
 
 ```shell
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -165,14 +165,14 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 ![][8]
 
-列出正在运行的容器
+*列出正在运行的容器*
 
-可以看到:
+可以看到：
 
-* **32fc32ad0d54** – `容器 ID`
-* **ubuntu:latest** – Docker 镜像
+* `32fc32ad0d54` – 容器 ID
+* `ubuntu:latest` – Docker 镜像
 
-需要注意的是，**`容器ID`和Docker `镜像ID`是不同的**
+需要注意的是，容器 ID 和 Docker 的镜像 ID是不同的。
 
 可以通过以下命令查看所有正在运行和停止运行的容器：
 
@@ -192,13 +192,13 @@ $ sudo docker stop <container-id>
 $ sudo docker stop 32fc32ad0d54
 ```
 
-如果想要进入正在运行的容器中，你只需要运行
+如果想要进入正在运行的容器中，你只需要运行：
 
 ```shell
 $ sudo docker attach 32fc32ad0d54
 ```
 
-正如你看到的，**32fc32ad0d54**是一个容器的ID。当你在容器中想要退出时，只需要在容器内的终端中输入命令：
+正如你看到的，`32fc32ad0d54` 是一个容器的 ID。当你在容器中想要退出时，只需要在容器内的终端中输入命令：
 
 ```shell
 # exit
@@ -210,46 +210,44 @@ $ sudo docker attach 32fc32ad0d54
 $ sudo docker ps
 ```
 
-##### 4. 构建自己的Docker镜像
+#### 4、构建自己的 Docker 镜像
 
-Docker不仅仅可以下载运行在线的容器，你也可以创建你的自己的容器。
+Docker 不仅仅可以下载运行在线的容器，你也可以创建你的自己的容器。
 
-想要创建自己的Docker镜像，你需要先运行一个你已经下载完的容器：
+想要创建自己的 Docker 镜像，你需要先运行一个你已经下载完的容器：
 
 ```shell
 $ sudo docker run -t -i ubuntu:latest /bin/bash
 ```
 
-现在，你运行了一个容器，并且进入了该容器。
+现在，你运行了一个容器，并且进入了该容器。然后，在该容器安装任意一个软件或做任何你想做的事情。
 
-然后，在该容器安装任意一个软件或做任何你想做的事情。
+例如，我们在容器中安装一个 Apache web 服务器。
 
-例如，我们在容器中安装一个**Apache web 服务器**。
-
-当你完成所有的操作，安装完所有的软件之后，你可以执行以下的命令来构建你自己的Docker镜像：
+当你完成所有的操作，安装完所有的软件之后，你可以执行以下的命令来构建你自己的 Docker 镜像：
 
 ```shell
 # apt update
 # apt install apache2
 ```
 
-同样的，安装和测试所有的你想要安装的软件在容器中。
+同样的，在容器中安装和测试你想要安装的所有软件。
 
-当你安装完毕之后，返回的宿主机的终端。记住，不要关闭容器。想要返回到宿主机的host而不中断容器。请按下CTRL+P ,再按下CTRL+Q。
+当你安装完毕之后，返回的宿主机的终端。记住，不要关闭容器。想要返回到宿主机而不中断容器。请按下`CTRL+P`，再按下 `CTRL+Q`。
 
-从你的宿主机的终端中，运行以下命令如寻找容器的ID：
+从你的宿主机的终端中，运行以下命令如寻找容器的 ID：
 
 ```shell
 $ sudo docker ps
 ```
 
-最后，从一个正在运行的容器中创建Docker镜像：
+最后，从一个正在运行的容器中创建 Docker 镜像：
 
 ```shell
 $ sudo docker commit 3d24b3de0bfc ostechnix/ubuntu_apache
 ```
 
-**输出为：**
+示例输出：
 
 ```shell
 sha256:ce5aa74a48f1e01ea312165887d30691a59caa0d99a2a4aa5116ae124f02f962
@@ -257,17 +255,17 @@ sha256:ce5aa74a48f1e01ea312165887d30691a59caa0d99a2a4aa5116ae124f02f962
 
 在这里：
 
-* **3d24b3de0bfc** — 指ubuntu容器的ID。
-* **ostechnix** — 我们创建的的名称
-* **ubuntu_apache** — 我们创建的镜像
+* `3d24b3de0bfc` — 指 Ubuntu 容器的 ID。
+* `ostechnix` — 我们创建的容器的用户名称
+* `ubuntu_apache` — 我们创建的镜像
 
-让我们检查一下我们新创建的docker镜像
+让我们检查一下我们新创建的 Docker 镜像：
 
 ```shell
 $ sudo docker images
 ```
 
-**输出为：**
+示例输出：
 
 ```shell
 REPOSITORY                TAG                 IMAGE ID            CREATED              SIZE
@@ -279,7 +277,7 @@ hello-world               latest              fce289e99eb9        4 months ago  
 
 ![][9]
 
-列出所有的docker镜像
+*列出所有的 Docker 镜像*
 
 正如你看到的，这个新的镜像就是我们刚刚在本地系统上从运行的容器上创建的。
 
@@ -289,9 +287,9 @@ hello-world               latest              fce289e99eb9        4 months ago  
 $ sudo docker run -t -i ostechnix/ubuntu_apache /bin/bash
 ```
 
-##### 5. 移除容器
+#### 5、删除容器
 
-如果你在docker上的工作已经全部完成，你就可以删除哪些你不需要的容器。
+如果你在 Docker 上的工作已经全部完成，你就可以删除那些你不需要的容器。
 
 想要删除一个容器，首先，你需要停止该容器。
 
@@ -301,14 +299,14 @@ $ sudo docker run -t -i ostechnix/ubuntu_apache /bin/bash
 $ sudo docker ps
 ```
 
-**输出为：**
+示例输出：
 
 ```shell
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
 3d24b3de0bfc ubuntu:latest "/bin/bash" 28 minutes ago Up 28 minutes goofy_easley
 ```
 
-使用`容器ID`来停止该容器：
+使用容器 ID 来停止该容器：
 
 ```shell
 $ sudo docker stop 3d24b3de0bfc
@@ -328,7 +326,7 @@ $ sudo docker rm 3d24b3de0bfc
 $ sudo docker container prune
 ```
 
-按下"**Y**",来确认你的操作
+按下 `Y`，来确认你的操作：
 
 ```sehll
 WARNING! This will remove all stopped containers.
@@ -340,11 +338,11 @@ Deleted Containers:
 Total reclaimed space: 5B
 ```
 
-这个命令仅支持最新的docker。(译者注：仅支持1.25及以上版本的Docker)
+这个命令仅支持最新的 Docker。（LCTT 译注：仅支持 1.25 及以上版本的 Docker）
 
-##### 6. 删除Docker镜像
+#### 6、删除 Docker 镜像
 
-当你移除完不要的Docker容器后，你也可以删除你不需要的Docker镜像。
+当你删除了不要的 Docker 容器后，你也可以删除你不需要的 Docker 镜像。
 
 列出已经下载的镜像：
 
@@ -352,7 +350,7 @@ Total reclaimed space: 5B
 $ sudo docker images
 ```
 
-**输出为：**
+示例输出：
 
 ```shell
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
@@ -364,13 +362,13 @@ hello-world               latest              fce289e99eb9        4 months ago  
 
 由上面的命令可以知道，在本地的系统中存在三个镜像。
 
-使用`镜像ID`来删除镜像。
+使用镜像 ID 来删除镜像。
 
 ```shell
 $ sudo docekr rmi ce5aa74a48f1
 ```
 
-**输出为：**
+示例输出：
 
 ```shell
 Untagged: ostechnix/ubuntu_apache:latest
@@ -378,17 +376,17 @@ Deleted: sha256:ce5aa74a48f1e01ea312165887d30691a59caa0d99a2a4aa5116ae124f02f962
 Deleted: sha256:d21c926f11a64b811dc75391bbe0191b50b8fe142419f7616b3cee70229f14cd
 ```
 
-**解决问题**
+#### 解决问题
 
-Docker禁止我们删除一个还在被容器使用的镜像。
+Docker 禁止我们删除一个还在被容器使用的镜像。
 
-例如，当我试图删除Docker镜像**b72889fa879c**时，我只能获得一个错误提示：
+例如，当我试图删除 Docker 镜像 `b72889fa879c` 时，我只能获得一个错误提示：
 
 ```shell
 Error response from daemon: conflict: unable to delete b72889fa879c (must be forced) - image is being used by stopped container dde4dd285377
 ```
 
-这是因为这个Docker镜像正在被一个容器使用。
+这是因为这个 Docker 镜像正在被一个容器使用。
 
 所以，我们来检查一个正在运行的容器：
 
@@ -396,19 +394,19 @@ Error response from daemon: conflict: unable to delete b72889fa879c (must be for
 $ sudo docker ps
 ```
 
-**输出为：**
+示例输出：
 
 ![][10]
 
 注意，现在并没有正在运行的容器！！！
 
-查看一下所有的容器(包含所有的正在运行和已经停止的容器)：
+查看一下所有的容器（包含所有的正在运行和已经停止的容器）：
 
 ```shell
 $ sudo docker pa -a
 ```
 
-**输出为：**
+示例输出：
 
 ![][11]
 
@@ -420,9 +418,9 @@ $ sudo docker pa -a
 $ sudo docker rm 12e892156219
 ```
 
-我们仍然使用容器ID来删除这些容器。
+我们仍然使用容器 ID 来删除这些容器。
 
-当我们删除了所有使用该镜像的容器之后，我们就可以删除Docker的镜像了。
+当我们删除了所有使用该镜像的容器之后，我们就可以删除 Docker 的镜像了。
 
 例如：
 
@@ -438,19 +436,7 @@ $ sudo docker images
 
 想要知道更多的细节，请参阅本指南末尾给出的官方资源的链接或者在评论区进行留言。
 
-或者，下载以下的关于Docker的电子书来了解更多。
-
-* **Download** – [**Free eBook: “Docker Containerization Cookbook”**][12]
-
-* **Download** – [**Free Guide: “Understanding Docker”**][13]
-
-* **Download** – [**Free Guide: “What is Docker and Why is it So Popular?”**][14]
-
-* **Download** – [**Free Guide: “Introduction to Docker”**][15]
-
-* **Download** – [**Free Guide: “Docker in Production”**][16]
-
-这就是全部的教程了，希望你可以了解Docker的一些基础用法。
+这就是全部的教程了，希望你可以了解 Docker 的一些基础用法。
 
 更多的教程马上就会到来，敬请关注。
 
@@ -461,7 +447,7 @@ via: https://www.ostechnix.com/getting-started-with-docker/
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[zhang5788](https://github.com/zhang5788)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
