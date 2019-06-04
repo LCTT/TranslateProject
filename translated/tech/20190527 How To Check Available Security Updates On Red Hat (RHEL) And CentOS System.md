@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( jdh8383 )
-[#]: reviewer: ( )
+[#]: translator: (jdh8383)
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Check Available Security Updates On Red Hat (RHEL) And CentOS System?)
@@ -10,35 +10,29 @@
 如何在 CentOS 或 RHEL 系统上检查可用的安全更新？
 ======
 
-当你更新系统时，根据你所在公司的安全策略，有时候可能只需要打上与安全相关的补丁。
+![](https://img.linux.net.cn/data/attachment/album/201906/05/003907tljfmy4bnn4qj1tp.jpg)
 
-大多数情况下，这应该是出于程序兼容性方面的考量。
+当你更新系统时，根据你所在公司的安全策略，有时候可能只需要打上与安全相关的补丁。大多数情况下，这应该是出于程序兼容性方面的考量。那该怎样实践呢？有没有办法让 `yum` 只安装安全补丁呢？
 
-那该怎样实践呢？有没有办法让 yum 只安装安全补丁呢？
+答案是肯定的，可以用 `yum` 包管理器轻松实现。
 
-答案是肯定的，可以用 yum 包管理器轻松实现。
+在这篇文章中，我们不但会提供所需的信息。而且，我们会介绍一些额外的命令，可以帮你获取指定安全更新的详实信息。
 
-在这篇文章中，我们不但会提供所需的信息。
+希望这样可以启发你去了解并修复你列表上的那些漏洞。一旦有安全漏洞被公布，就必须更新受影响的软件，这样可以降低系统中的安全风险。
 
-而且，我们会介绍一些额外的命令，可以帮你获取指定安全更新的详实信息。
-
-希望这样可以启发你去了解并修复你列表上的那些漏洞。
-
-一旦有安全漏洞被公布，就必须更新受影响的软件，这样可以降低系统中的安全风险。
-
-对于 RHEL 或 CentOS 6 系统，运行下面的 **[Yum 命令][1]** 来安装 yum 安全插件。
+对于 RHEL 或 CentOS 6 系统，运行下面的 [Yum 命令][1] 来安装 yum 安全插件。
 
 ```
 # yum -y install yum-plugin-security
 ```
 
-在 RHEL 7&8 或是 CentOS 7&8 上面，这个插件已经是 yum 的一部分了，不用单独安装。
+在 RHEL 7&8 或是 CentOS 7&8 上面，这个插件已经是 `yum` 的一部分了，不用单独安装。
 
-只列出全部可用的补丁（包括安全，Bug 修复以及产品改进），但不安装它们。
+要列出全部可用的补丁（包括安全、Bug 修复以及产品改进），但不安装它们：
 
 ```
 # yum updateinfo list available
-已加载插件： changelog, package_upload, product-id, search-disabled-repos,
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos,
               : subscription-manager, verify, versionlock
 RHSA-2014:1031 Important/Sec. 389-ds-base-1.3.1.6-26.el7_0.x86_64
 RHSA-2015:0416 Important/Sec. 389-ds-base-1.3.3.1-13.el7.x86_64
@@ -54,20 +48,18 @@ RHBA-2016:1048 bugfix         389-ds-base-1.3.4.0-30.el7_2.x86_64
 RHBA-2016:1298 bugfix         389-ds-base-1.3.4.0-32.el7_2.x86_64
 ```
 
-要统计补丁的大约数量，运行下面的命令。
+要统计补丁的大约数量，运行下面的命令：
 
 ```
 # yum updateinfo list available | wc -l
 11269
 ```
 
-想列出全部可用的安全补丁但不安装。
-
-以下命令用来展示你系统里已安装和待安装的推荐补丁。
+想列出全部可用的安全补丁但不安装，以下命令用来展示你系统里已安装和待安装的推荐补丁：
 
 ```
 # yum updateinfo list security all
-已加载插件： changelog, package_upload, product-id, search-disabled-repos,
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos,
               : subscription-manager, verify, versionlock
   RHSA-2014:1031 Important/Sec. 389-ds-base-1.3.1.6-26.el7_0.x86_64
   RHSA-2015:0416 Important/Sec. 389-ds-base-1.3.3.1-13.el7.x86_64
@@ -81,13 +73,13 @@ RHBA-2016:1298 bugfix         389-ds-base-1.3.4.0-32.el7_2.x86_64
   RHSA-2018:1380 Important/Sec. 389-ds-base-1.3.7.5-21.el7_5.x86_64
   RHSA-2018:2757 Moderate/Sec.  389-ds-base-1.3.7.5-28.el7_5.x86_64
   RHSA-2018:3127 Moderate/Sec.  389-ds-base-1.3.8.4-15.el7.x86_64
- i RHSA-2014:1031 Important/Sec. 389-ds-base-libs-1.3.1.6-26.el7_0.x86_64
+  RHSA-2014:1031 Important/Sec. 389-ds-base-libs-1.3.1.6-26.el7_0.x86_64
 ```
 
-要显示所有待安装的安全补丁。
+要显示所有待安装的安全补丁：
 
 ```
-# yum updateinfo list security all | egrep -v "^i"
+# yum updateinfo list security all | grep -v "i"
 
   RHSA-2014:1031 Important/Sec. 389-ds-base-1.3.1.6-26.el7_0.x86_64
   RHSA-2015:0416 Important/Sec. 389-ds-base-1.3.3.1-13.el7.x86_64
@@ -102,14 +94,14 @@ RHBA-2016:1298 bugfix         389-ds-base-1.3.4.0-32.el7_2.x86_64
   RHSA-2018:2757 Moderate/Sec.  389-ds-base-1.3.7.5-28.el7_5.x86_64
 ```
 
-要统计全部安全补丁的大致数量，运行下面的命令。
+要统计全部安全补丁的大致数量，运行下面的命令：
 
 ```
 # yum updateinfo list security all | wc -l
 3522
 ```
 
-下面根据已装软件列出可更新的安全补丁。这包括 bugzillas（bug修复），CVEs（知名漏洞数据库），安全更新等。
+下面根据已装软件列出可更新的安全补丁。这包括 bugzilla（bug 修复）、CVE（知名漏洞数据库）、安全更新等：
 
 ```
 # yum updateinfo list security
@@ -118,7 +110,7 @@ RHBA-2016:1298 bugfix         389-ds-base-1.3.4.0-32.el7_2.x86_64
 
 # yum updateinfo list sec
 
-已加载插件： changelog, package_upload, product-id, search-disabled-repos,
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos,
               : subscription-manager, verify, versionlock
 
 RHSA-2018:3665 Important/Sec. NetworkManager-1:1.12.0-8.el7_6.x86_64
@@ -134,11 +126,11 @@ RHSA-2018:3665 Important/Sec. NetworkManager-wifi-1:1.12.0-8.el7_6.x86_64
 RHSA-2018:3665 Important/Sec. NetworkManager-wwan-1:1.12.0-8.el7_6.x86_64
 ```
 
-显示所有与安全相关的更新，并且返回一个结果来告诉你是否有可用的补丁。
+显示所有与安全相关的更新，并且返回一个结果来告诉你是否有可用的补丁：
 
 ```
 # yum --security check-update
-已加载插件： changelog, package_upload, product-id, search-disabled-repos, subscription-manager, verify, versionlock
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos, subscription-manager, verify, versionlock
 rhel-7-server-rpms                                                                                                                            | 2.0 kB  00:00:00
 --> policycoreutils-devel-2.2.5-20.el7.x86_64 from rhel-7-server-rpms excluded (updateinfo)
 --> smc-raghumalayalam-fonts-6.0-7.el7.noarch from rhel-7-server-rpms excluded (updateinfo)
@@ -162,7 +154,7 @@ NetworkManager-libnm.x86_64                  1:1.12.0-10.el7_6            rhel-7
 NetworkManager-ppp.x86_64                    1:1.12.0-10.el7_6            rhel-7-server-rpms
 ```
 
-列出所有可用的安全补丁，并且显示其详细信息。
+列出所有可用的安全补丁，并且显示其详细信息：
 
 ```
 # yum info-sec
@@ -196,12 +188,12 @@ Description : The tzdata packages contain data files with rules for various
    Severity : None
 ```
 
-如果你想要知道某个更新的具体内容，可以运行下面这个命令。
+如果你想要知道某个更新的具体内容，可以运行下面这个命令：
 
 ```
 # yum updateinfo RHSA-2019:0163
 
-已加载插件： changelog, package_upload, product-id, search-disabled-repos, subscription-manager, verify, versionlock
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos, subscription-manager, verify, versionlock
 rhel-7-server-rpms                                                                                                                            | 2.0 kB  00:00:00
 ===============================================================================
   Important: kernel security, bug fix, and enhancement update
@@ -243,12 +235,12 @@ Description : The kernel packages contain the Linux kernel, the core of any
 updateinfo info done
 ```
 
-跟之前类似，你可以只查询那些通过 CVE 释出的系统漏洞。
+跟之前类似，你可以只查询那些通过 CVE 释出的系统漏洞：
 
 ```
 # yum updateinfo list cves
 
-已加载插件： changelog, package_upload, product-id, search-disabled-repos,
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos,
               : subscription-manager, verify, versionlock
 CVE-2018-15688 Important/Sec. NetworkManager-1:1.12.0-8.el7_6.x86_64
 CVE-2018-15688 Important/Sec. NetworkManager-adsl-1:1.12.0-8.el7_6.x86_64
@@ -260,12 +252,12 @@ CVE-2018-15688 Important/Sec. NetworkManager-ppp-1:1.12.0-8.el7_6.x86_64
 CVE-2018-15688 Important/Sec. NetworkManager-team-1:1.12.0-8.el7_6.x86_64
 ```
 
-你也可以查看那些跟 bug 修复相关的更新，运行下面的命令。
+你也可以查看那些跟 bug 修复相关的更新，运行下面的命令：
 
 ```
 # yum updateinfo list bugfix | less
 
-已加载插件： changelog, package_upload, product-id, search-disabled-repos,
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos,
               : subscription-manager, verify, versionlock
 RHBA-2018:3349 bugfix NetworkManager-1:1.12.0-7.el7_6.x86_64
 RHBA-2019:0519 bugfix NetworkManager-1:1.12.0-10.el7_6.x86_64
@@ -277,11 +269,11 @@ RHBA-2018:3349 bugfix NetworkManager-config-server-1:1.12.0-7.el7_6.noarch
 RHBA-2019:0519 bugfix NetworkManager-config-server-1:1.12.0-10.el7_6.noarch
 ```
 
-要想得到待安装更新的摘要信息，运行这个。
+要想得到待安装更新的摘要信息，运行这个：
 
 ```
 # yum updateinfo summary
-已加载插件： changelog, package_upload, product-id, search-disabled-repos, subscription-manager, verify, versionlock
+Loaded plugins: changelog, package_upload, product-id, search-disabled-repos, subscription-manager, verify, versionlock
 rhel-7-server-rpms                                                                                                                            | 2.0 kB  00:00:00
 Updates Information Summary: updates
     13 Security notice(s)
@@ -311,7 +303,7 @@ via: https://www.2daygeek.com/check-list-view-find-available-security-updates-on
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[jdh8383](https://github.com/jdh8383)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
