@@ -1,8 +1,8 @@
 [#]: collector:	"lujun9972"
 [#]: translator:	"zhang5788"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-10940-1.html"
 [#]: subject:	 "Getting Started With Docker"
 [#]: via:	"https://www.ostechnix.com/getting-started-with-docker/"
 [#]: author: "sk https://www.ostechnix.com/author/sk/"
@@ -12,7 +12,7 @@ Docker 入门指南
 
 ![Getting Started With Docker][1]
 
-在我们的上一个教程中，我们已经了解[如何在ubuntu上安装Docker][1]，和如何在[CentOS上安装Docker][2]。今天，我们将会了解 Docker 的一些基础用法。该教程包含了如何创建一个新的 Docker 容器，如何运行该容器，如何从现有的 Docker 容器中创建自己的 Docker 镜像等 Docker 的一些基础知识、操作。所有步骤均在 Ubuntu 18.04 LTS server 版本下测试通过。
+在我们的上一个教程中，我们已经了解[如何在 Ubuntu 上安装 Docker][1]，和如何在 [CentOS 上安装 Docker][2]。今天，我们将会了解 Docker 的一些基础用法。该教程包含了如何创建一个新的 Docker 容器，如何运行该容器，如何从现有的 Docker 容器中创建自己的 Docker 镜像等 Docker 的一些基础知识、操作。所有步骤均在 Ubuntu 18.04 LTS server 版本下测试通过。
 
 ### 入门指南
 
