@@ -7,38 +7,38 @@
 [#]: via: (https://fedoramagazine.org/securing-telnet-connections-with-stunnel/)
 [#]: author: (Curt Warfield https://fedoramagazine.org/author/rcurtiswarfield/)
 
-Securing telnet connections with stunnel
+使用 stunnel 保护 telnet 连接
 ======
 
 ![][1]
 
-Telnet is a client-server protocol that connects to a remote server through TCP over port 23. Telnet does not encrypt data and is considered insecure and passwords can be easily sniffed because data is sent in the clear. However there are still legacy systems that need to use it. This is where **stunnel** comes to the rescue.
+Telnet 是一种客户端-服务端协议，通过 TCP 的 23 端口连接到远程服务器。Telnet 并不加密数据，被认为是不安全的，因为数据是以明文形式发送的，所以密码很容易被嗅探。但是，仍有老旧系统需要使用它。这就是用到 **stunnel** 的地方。
 
-Stunnel is designed to add SSL encryption to programs that have insecure connection protocols. This article shows you how to use it, with telnet as an example.
+stunnel 旨在为使用不安全连接协议的程序增加 SSL 加密。本文将以 telnet 为例介绍如何使用它。
 
-### Server Installation
+### 服务端安装
 
-Install stunnel along with the telnet server and client [using sudo][2]:
+[使用 sudo][2] 安装 stunnel 以及 telnet 的服务端和客户端：
 
 ```
 sudo dnf -y install stunnel telnet-server telnet
 ```
 
-Add a firewall rule, entering your password when prompted:
+添加防火墙规则，在提示时输入你的密码：
 
 ```
 firewall-cmd --add-service=telnet --perm
 firewall-cmd --reload
 ```
 
-Next, generate an RSA private key and an SSL certificate:
+接下来，生成 RSA 私钥和 SSL 证书：
 
 ```
 openssl genrsa 2048 > stunnel.key
 openssl req -new -key stunnel.key -x509 -days 90 -out stunnel.crt
 ```
 
-You will be prompted for the following information one line at a time. When asked for _Common Name_ you must enter the correct host name or IP address, but everything else you can skip through by hitting the **Enter** key.
+系统将一次提示你输入以下信息。当询问 _Common Name_ 时，你必须输入正确的主机名或 IP 地址，但是你可以按**回车**键跳过其他所有内容。
 
 ```
 You are about to be asked to enter information that will be
@@ -57,14 +57,14 @@ Common Name (eg, your name or your server's hostname) []:
 Email Address []
 ```
 
-Merge the RSA key and SSL certificate into a single _.pem_ file, and copy that to the SSL certificate directory:
+将 RSA 密钥和 SSL 证书合并到单个 _.pem_ 文件中，并将其复制到 SSL 证书目录：
 
 ```
 cat stunnel.crt stunnel.key > stunnel.pem
 sudo cp stunnel.pem /etc/pki/tls/certs/
 ```
 
-Now it’s time to define the service and the ports to use for encrypting your connection. Choose a port that is not already in use. This example uses port 450 for tunneling telnet. Edit or create the _/etc/stunnel/telnet.conf_ file:
+现在可以定义服务和用于加密连接的端口了。选择尚未使用的端口。此例使用 450 端口进行隧道传输 telnet。编辑或创建 _/etc/stunnel/telnet.conf_ ：
 
 ```
 cert = /etc/pki/tls/certs/stunnel.pem
@@ -80,15 +80,15 @@ accept = 450
 connect = 23
 ```
 
-The **accept** option is the port the server will listen to for incoming telnet requests. The **connect** option is the internal port the telnet server listens to.
+**accept** 选项是服务器将监听传入 **accept** 请求的接口。**connect** 选项是 telnet 服务器的内部监听接口。
 
-Next, make a copy of the systemd unit file that allows you to override the packaged version:
+接下来，创建一个 systemd 单元文件的副本来覆盖原来的版本：
 
 ```
 sudo cp /usr/lib/systemd/system/stunnel.service /etc/systemd/system
 ```
 
-Edit the _/etc/systemd/system/stunnel.service_ file to add two lines. These lines create a chroot jail for the service when it starts.
+编辑 _/etc/systemd/system/stunnel.service_ 来添加两行。这些行在启动时为服务创建 chroot 监狱。
 
 ```
 [Unit]
@@ -106,49 +106,49 @@ ExecStartPre=/usr/bin/chown -R nobody:nobody /var/run/stunnel
 WantedBy=multi-user.target
 ```
 
-Next, configure SELinux to listen to telnet on the new port you just specified:
+接下来，配置 SELinux 以在你刚刚指定的新端口上监听 telnet：
 
 ```
 sudo semanage port -a -t telnetd_port_t -p tcp 450
 ```
 
-Finally, add a new firewall rule:
+最后，添加新的防火墙规则：
 
 ```
 firewall-cmd --add-port=450/tcp --perm
 firewall-cmd --reload
 ```
 
-Now you can enable and start telnet and stunnel.
+现在你可以启用并启动 telnet 和 stunnel。
 
 ```
 systemctl enable telnet.socket stunnel@telnet.service --now
 ```
 
-A note on the _systemctl_ command is in order. Systemd and the stunnel package provide an additional [template unit file][3] by default. The template lets you drop multiple configuration files for stunnel into _/etc/stunnel_ , and use the filename to start the service. For instance, if you had a _foobar.conf_ file, you could start that instance of stunnel with _systemctl start[stunnel@foobar.service][4]_ , without having to write any unit files yourself.
+要注意 _systemctl_ 命令是有序的。systemd 和 stunnel 包默认提供额外的[模板单元文件][3]。该模板允许你将 stunnel 的多个配置文件放到 _/etc/stunnel_ 中，并使用文件名启动该服务。例如，如果你有一个 _foobar.conf_ 文件，那么可以使用 _systemctl start stunnel@foobar.service_ 启动该 stunnel 实例，而无需自己编写任何单元文件。
 
-If you want, you can set this stunnel template service to start on boot:
+如果需要，可以将此 stunnel 模板服务设置为在启动时启动：
 
 ```
 systemctl enable stunnel@telnet.service
 ```
 
-### Client Installation
+### 客户端安装
 
-This part of the article assumes you are logged in as a normal user ([with sudo privileges][2]) on the client system. Install stunnel and the telnet client:
+本文的这部分假设你在客户端系统上以普通用户（[拥有 sudo 权限][2]）身份登录。安装 stunnel 和 telnet 客户端：
 
 ```
 dnf -y install stunnel telnet
 ```
 
-Copy the _stunnel.pem_ file from the remote server to your client _/etc/pki/tls/certs_ directory. In this example, the IP address of the remote telnet server is 192.168.1.143.
+将 _stunnel.pem_ 从远程服务器复制到客户端的 _/etc/pki/tls/certs_ 目录。在此例中，远程 telnet 服务器的 IP 地址为 192.168.1.143。
 
 ```
 sudo scp myuser@192.168.1.143:/etc/pki/tls/certs/stunnel.pem
 /etc/pki/tls/certs/
 ```
 
-Create the _/etc/stunnel/telnet.conf_ file:
+创建 _/etc/stunnel/telnet.conf_：
 
 ```
 cert = /etc/pki/tls/certs/stunnel.pem
@@ -158,15 +158,15 @@ accept=450
 connect=192.168.1.143:450
 ```
 
-The **accept** option is the port that will be used for telnet sessions. The **connect** option is the IP address of your remote server and the port it’s listening on.
+**accept** 选项是用于 telnet 会话的端口。**connect** 选项是你远程服务器的 IP 地址以及监听的端口。
 
-Next, enable and start stunnel:
+接下来，启用并启动 stunnel：
 
 ```
 systemctl enable stunnel@telnet.service --now
 ```
 
-Test your connection. Since you have a connection established, you will telnet to _localhost_ instead of the hostname or IP address of the remote telnet server:
+测试你的连接。由于有一条已建立的连接，你会 telnet 到 _localhost_ 而不是远程 telnet 服务器的主机名或者 IP 地址。
 
 ```
 [user@client ~]$ telnet localhost 450
@@ -189,7 +189,7 @@ via: https://fedoramagazine.org/securing-telnet-connections-with-stunnel/
 
 作者：[Curt Warfield][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -199,4 +199,3 @@ via: https://fedoramagazine.org/securing-telnet-connections-with-stunnel/
 [1]: https://fedoramagazine.org/wp-content/uploads/2019/05/stunnel-816x345.jpg
 [2]: https://fedoramagazine.org/howto-use-sudo/
 [3]: https://fedoramagazine.org/systemd-template-unit-files/
-[4]: mailto:stunnel@foobar.service
