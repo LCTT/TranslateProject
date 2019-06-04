@@ -61,57 +61,56 @@
 
 *由于该领域还在开发中，因此目前所说的任何定义或标准最多只能说是流畅而模糊的。*
 
-### How smart contracts work**
+### 智能合约是如何工作的？
 
-To simplify things, let’s proceed by taking an example.
+为简化起见，让我们用个例子来说明。
 
-John and Peter are two individuals debating about the scores in a football match. They have conflicting views about the outcome with both of them supporting different teams (context). Since both of them need to go elsewhere and won’t be able to finish the match then, John bets that team A will beat team B in the match and _offers_ Peter $100 in that case. Peter _considers_ and _accepts_ the bet while making it clear that they are _bound_ to the terms. However, neither of them _trusts_ each other to honour the bet and they don’t have the time nor the money to appoint a _third party_ to oversee the same.
+约翰和彼得是两个争论足球比赛得分的人。他们对比赛结果持有相互矛盾的看法，他们都支持不同的团队（这是背景）。由于他们两个都需要去其他地方并且无法看完比赛，所以约翰认为如果 A 队在比赛中击败 B 队，他就*支付*给彼得 100 美元。彼得*考虑*之后*接受*了该赌注，同时明确表示他们必须接受这些条款。但是，他们都没有兑现该赌注的相互信任，也没有时间和钱来指定任命第三方来监督赌注。
 
-Assuming both John and Peter were to use a smart contract platform such as **[Etherparty][5]** , to automatically settle the bet at the time of the contract negotiation, they’ll both link their blockchain based identities to the contract and set the terms, making it clear that as soon as the match is over, the program will find out who the winning side is and automatically credit the amount to the winners bank account from the losers. As soon as the match ends and media outlets report the same, the program will scour the internet for the prescribed sources, identify which team won, relate it to the terms of the contract, in this case since B won Peter gets the money from John and after intimating both the parties transfers $100 from John’s to Peter’s account. After having executed, the smart contract will terminate and be inactive for all the time to come unless otherwise mentioned.
+假设约翰和彼得都使用智能合约平台，例如 [Etherparty][5]，它可以在合同谈判时自动结算赌注，他们都会将基于区块链的身份链接到合约，并设置条款，明确表示一旦比赛结束，程序将找出获胜方是谁，并自动将该金额从输家中归入获胜者银行账户。一旦比赛结束并且媒体报道同样的结果，该程序将在互联网上搜索规定的来源，确定哪支球队获胜，将其与合约条款联系起来，在这种情况下，如果 A 队赢了彼得将从约翰获得钱，也就是说将约翰的 100 美元转移到彼得的账户。执行完毕后，除非另有说明，否则智能合约将终止并在所有时间内处于非活动状态。
 
-The simplicity of the example aside, the situation involved a classic contract (paying attention to the italicized words) and the participants chose to implement the same using a smart contract. All smart contracts basically work on a similar principle, with the program being coded to execute on predefined parameters and spitting out expected outputs only. The outside sources the smart contract consults for information is may a times referred to as the _Oracle_ in the IT world. Oracles are a common part of many smart contract systems worldwide today.
+除了示例的简单性，情况涉及到一个经典合同，参与者选择使用智能合约实现了相同目的。所有的智能合约基本上都遵循类似的原则，程序被编码为在预定义的参数上执行，并且只抛出预期的输出。智能合同咨询的外部来源可能有时被称为 IT 世界中的<ruby>神谕<rt>Oracle</rt></ruby>。神谕是当今全球许多智能合约系统的常见部分。
 
-The use of a smart contract in this situation allowed the participants the following benefits:
+在这种情况下使用智能合约使参与者可以获得以下好处：
 
-  * It was faster than getting together and settling the bet manually.
-  * Removed the issue of trust from the equation.
-  * Eliminated the need for a trusted third party to handle the settlement on behalf of the parties involved.
-  * Costed nothing to execute.
-  * Is secure in how it handles parameters and sensitive data.
-  * The associated data will remain in the blockchain platform they ran it on permanently and future bets can be placed on by calling the same function and giving it added inputs.
-  * Gradually over time, assuming John and Peter develop gambling addictions, the program will help them develop reliable statistics to gauge their winning streaks.
+* 它比在一起手动结算更快。
+* 从等式中删除了信任问题。
+* 消除了受信任的第三方代表有关各方处理和解的需要。
+* 执行时无需任何费用。
+* 处理参数和敏感数据的方式是安全的。
+* 相关数据将永久保留在他们运行的区块链平台中，未来的投注可以通过调用相同的函数并为其添加输入来进行。
+* 随着时间的推移，假设约翰和彼得赌博成瘾，该程序将帮助他们开发可靠的统计数据来衡量他们的连胜纪录。
+   
+现在我们知道**什么是智能合约**和**它们如何工作**，我们还没有解决**为什么我们需要它们**。
+
+### 智能合约的需要
+
+正如之前的例子我们重点提到过的，出于各种原因，我们需要智能合约。
 
 
+#### 透明度
 
-Now that we know **what smart contracts are** and **how they work** , we’re still yet to address **why we need them**.
+所涉及的条款和条件对交易对手来说非常清楚。此外，由于程序或智能合约的执行涉及某些明确的输入，因此用户可以非常直接地验证会影响他们和合约受益人的因素。
 
-### The need for smart contracts
+#### 时间效率高
 
-As the previous example we visited highlights we need smart contracts for a variety of reasons.
+如上所述，智能合约一旦被控制变量或用户调用触发就立即开始工作。由于数据通过区块链和网络中的其它来源即时提供给系统，因此执行不需要任何时间来验证和处理信息并解决交易。例如，转移土地所有权契约，这是一个涉及手工核实大量文书工作并且需要数周时间的过程，可以在几分钟甚至几秒钟内通过智能合约程序来处理文件和相关各方。
 
-##### **Transparency**
+#### 精确
 
-The terms and conditions involved are very clear to the counterparties. Furthermore, since the execution of the program or the smart contract involves certain explicit inputs, users have a very direct way of verifying the factors that would impact them and the contract beneficiaries.
+由于平台基本上只是计算机代码和预定义的内容，因此不存在主观错误，所有结果都是精确的，完全没有人为错误。
 
-##### Time Efficient
+#### 安全
 
-As mentioned, smart contracts go to work immediately once they’re triggered by a control variable or a user call. Since data is made available to the system instantaneously by the blockchain and from other sources in the network, the execution does not take any time at all to verify and process information and settle the transaction. Transferring land title deeds for instance, a process which involved manual verification of tons of paperwork and takes weeks on normal can be processed in a matter of minutes or even seconds with the help of smart contract programs working to vet the documents and the parties involved.
+区块链的一个固有特征是每个数据块都是安全加密的。这意味着为了实现冗余，即使数据存储在网络上的多个节点上，**也只有数据所有者才能访问以查看和使用数据**。类似地，所有过程都将是完全安全和防篡改的，利用区块链在过程中存储重要变量和结果。同样也通过按时间顺序为审计人员提供原始的、未经更改的和不可否认的数据版本，简化了审计和法规事务。
 
-##### Precision
+#### 信任
 
-Since the platform is basically just computer code and everything predefined, there can be no subjective errors and all the results will be precise and completely free of human errors.
+这个文章系列开篇说到区块链为互联网及其上运行的服务增加了急需的信任层。智能合约在任何情况下都不会在执行协议时表现出偏见或主观性，这意味着所涉及的各方对结果完全有约束力，并且可以不附带任何条件地信任该系统。这也意味着此处不需要具有重要价值的传统合同中所需的“可信第三方”。当事人之间的犯规和监督将成为过去的问题。
 
-##### Safety
+#### 成本效益
 
-An inherent feature of the blockchain is that every block of data is cryptographically encrypted. Meaning even though the data is stored on a multitude of nodes on the network for redundancy, **only the owner of the data has access to see and use the data**. Similarly, all process will be completely secure and tamper proof with the execution utilizing the blockchain for storing important variables and outcomes in the process. The same also simplifies auditing and regulatory affairs by providing auditors with a native, un-changed and non-repudiable version of the data chronologically.
-
-##### Trust
-
-The article series started by saying that blockchain adds a much-needed layer of trust to the internet and the services that run on it. The fact that smart contracts will under no circumstances show bias or subjectivity in executing the agreement means that parties involved are fully bound the outcomes and can trust the system with no strings attached. This also means that the **“trusted third-party”** required in conventional contracts of significant value is not required here. Foul play between the parties involved and oversight will be issues of the past.
-
-##### Cost effective
-
-As highlighted in the example, utilizing a smart contract involves minimal costs. Enterprises usually have administrative staff who work exclusively for making that transactions they undertake are legitimate and comply with regulations. If the deal involved multiple parties, duplication of the effort is unavoidable. Smart contracts essentially make the former irrelevant and duplication is eliminated since both the parties can simultaneously have their due diligence done.
+如示例中所强调的，使用智能合约涉及最低成本。企业通常有专门从事使其交易是合法的并遵守法规的行政人员。如果交易涉及多方，则重复工作是不可避免的。智能合约基本上使前者无关紧要，并且消除了重复，因为双方可以同时完成尽职调查。
 
 ### Applications of Smart Contracts
 
