@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Manage your workstation with Ansible: Configure desktop settings
 ======
 
