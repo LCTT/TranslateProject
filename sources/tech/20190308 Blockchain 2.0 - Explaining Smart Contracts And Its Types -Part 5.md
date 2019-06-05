@@ -112,25 +112,26 @@
 
 如示例中所强调的，使用智能合约涉及最低成本。企业通常有专门从事使其交易是合法的并遵守法规的行政人员。如果交易涉及多方，则重复工作是不可避免的。智能合约基本上使前者无关紧要，并且消除了重复，因为双方可以同时完成尽职调查。
 
-### Applications of Smart Contracts
+### 智能合约的应用程序
 
-Basically, if two or more parties use a common blockchain platform and agree on a set of principles or business logic, they can come together to create a smart contract on the blockchain and it is executed with no human intervention at all. No one can tamper with the conditions set and, any changes, if the original code allows for it, is timestamped and carries the editor’s fingerprint increasing accountability. Imagine a similar situation at a much larger enterprise scale and you understand what smart contracts are capable of and in fact a **Capgemini study** from 2016 found that smart contracts could actually be commercially mainstream **“in the early years of the next decade”** [8]. Commercial applications involve uses in Insurance, Financial Markets, IoT, Loans, Identity Management systems, Escrow Accounts, Employment contracts, and Patent & Royalty contracts among others. Platforms such as Ethereum, a blockchain designed keeping smart contracts in mind, allow for individual private users to utilize smart contracts free of cost as well.
+基本上，如果两个或多个参与方使用共同的区块链平台，并就一组原则或业务逻辑达成一致，他们可以一起在区块链上创建一个智能合约，并且在没有人为干预的情况下执行。没有人可以篡改所设置的条件，如果原始代码允许，任何更改都会加上时间戳并带有编辑者的指纹，从而增加了问责制。想象一下，在更大的企业级规模上出现类似的情况，你就会明白智能合约的能力是什么，实际上从 2016 年开始的 **Capgemini 研究** 发现智能合约实际上可能是商业主流**“的下一阶段的早期“** [^8]。商业应用程序涉及保险、金融市场、物联网、贷款、身份管理系统、托管账户、雇佣合同以及专利和版税合同等用途。像以太坊这样的区块链平台，是一个设计时就考虑了智能合约的系统，它也允许个人私人用户免费使用智能合约。
 
-A more comprehensive overview of the applications of smart contracts on current technological problems will be presented in the next article of the series by exploring the companies that deal with it.
+通过对处理智能合约的公司的探讨，本系列的下一篇文章中将更全面地概述智能合约在当前技术问题上的应用。
 
-### So, what are the drawbacks?
+### 那么，它有什么缺点呢？
 
-This is not to say that smart contracts come with no concerns regarding their use whatsoever. Such concerns have actually slowed down development in this aspect as well. The tamper-proof nature of everything blockchain essentially makes it next to impossible to modify or add new clauses to existing clauses if the parties involved need to without major overhaul or legal recourse.
+这并不是说对智能合约的使用没有任何顾虑。这种担忧实际上也减缓了这方面的发展。所有区块链的防篡改性质基本上使得，如果所涉及的各方需要在没有重大改革或法律追索的情况下，几乎不可能修改或添加现有条款的新条款。
 
-Secondly, even though activity on a public blockchain is open for all to see and observe. The personal identities of the parties involved in a transaction are not always known. This anonymity raises question regarding legal impunity in case either party defaults especially since current laws and lawmakers are not exactly accommodative of modern technology.
+其次，即使公有链上的活动是开放的，所有人都可以看到和观察。交易中涉及的各方的个人身份并不总是已知的。这种匿名性造成在任何一方违约的情况下法律有罪不罚的问题，特别是因为现行法律和立法者并不完全适应现代技术。
 
-Thirdly, blockchains and smart contracts are still subject to security flaws in many ways because the technology for all the interest in it is still in a very nascent stage of development. This inexperience with the code and platform is what ultimately led to the DAO incident in 2016.
+第三，区块链和智能合约在很多方面仍然存在安全缺陷，因为对其所以涉及的技术仍处于发展的初期阶段。 对代码和平台的这种缺乏经验最终导致了 2016 年的 DAO 事件。
 
-All of this is keeping aside the significant initial investment that might be needed in case an enterprise or firm needs to adapt a blockchain for its use. The fact that these are initial one-time investments and come with potential savings down the road however is what interests people.
+所有这些都是在企业或公司需要调整区块链以供其使用时可能需要的大量的初始投资。事实上，这些是最初的一次性投资，并且随之而来的是潜在的节省，这是人们感兴趣的。
 
-### Conclusion
 
-Current legal frameworks don’t really support a full-on smart contract enabled society and won’t in the near future due to obvious reasons. A solution is to opt for **“hybrid” contracts** that combine traditional legal texts and documents with smart contract code running on blockchains designed for the purpose[4]. However, even hybrid contracts remain largely unexplored as innovative legislature is required to bring them into fruition. The applications briefly mentioned here and many more are explored in detail in the [**next post of the series**][6].
+### 结论
+
+目前的法律框架并不真正支持一个全面的智能合约的社会，并且由于显然的原因也不会在不久的将来支持。一个解决方案是选择**“混合”合约**，它将传统的法律文本和文件与在为此目的设计的区块链上运行的智能合约代码相结合。然而，即使是混合合约仍然很大程度上尚未得到探索，因为需要创新的立法机构才能实现这些合约。这里简要提到的应用程序以及更多内容将在[本系列的下一篇文章][6]中详细探讨。
 
 [^1]: S. C. A. Chamber of Digital Commerce, “Smart contracts – Is the law ready,” no. September, 2018.
 [^2]: S. C. A. Chamber of Digital Commerce, “Smart contracts – Is the law ready,” no. September, 2018.
