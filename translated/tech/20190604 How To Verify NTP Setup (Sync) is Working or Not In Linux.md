@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Verify NTP Setup (Sync) is Working or Not In Linux?)
@@ -9,6 +9,8 @@
 
 如何在 Linux 下确认 NTP 是否同步？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201906/08/215622oqdhiuhocsndijlu.jpg)
 
 NTP 意即<ruby>网络时间协议<rt>Network Time Protocol</rt></ruby>，它通过网络同步计算机系统之间的时钟。NTP 服务器可以使组织中的所有服务器保持同步，以准确时间执行基于时间的作业。NTP 客户端会将其时钟与 NTP 服务器同步。
 
@@ -132,7 +134,7 @@ via: https://www.2daygeek.com/check-verify-ntp-sync-is-working-or-not-in-linux-u
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
