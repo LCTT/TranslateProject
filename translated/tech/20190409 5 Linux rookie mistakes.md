@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10952-1.html)
 [#]: subject: (5 Linux rookie mistakes)
 [#]: via: (https://opensource.com/article/19/4/linux-rookie-mistakes)
-[#]: author: (Jen Wike Huger  https://opensource.com/users/jen-wike/users/bcotton/users/petercheer/users/greg-p/users/greg-p)
+[#]: author: (Jen Wike Huger https://opensource.com/users/jen-wike/users/bcotton/users/petercheer/users/greg-p/users/greg-p)
 
 5 个 Linux 新手会犯的失误
 ======
 
 > Linux 爱好者们分享了他们犯下的一些最大错误。
 
-![magnifying glass on computer screen, finding a bug in the code][1]
+![](https://img.linux.net.cn/data/attachment/album/201906/09/103635akfkghwh5mp58g68.jpg)
 
 终身学习是明智的 —— 它可以让你的思维敏捷，让你在就业市场上更具竞争力。但是有些技能比其他技能更难学，尤其是那些小菜鸟错误，当你尝试修复它们时可能会花费你很多时间，给你带来很大困扰。
 
@@ -36,10 +36,10 @@
 
 via: https://opensource.com/article/19/4/linux-rookie-mistakes
 
-作者：[Jen Wike Huger (Red Hat)][a]
+作者：[Jen Wike Huger][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
