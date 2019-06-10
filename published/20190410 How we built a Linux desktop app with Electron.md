@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10957-1.html)
 [#]: subject: (How we built a Linux desktop app with Electron)
 [#]: via: (https://opensource.com/article/19/4/linux-desktop-electron)
 [#]: author: (Nils Ganther https://opensource.com/users/nils-ganther)
@@ -12,7 +12,7 @@
 
 > 这是借助 Electron 框架，构建一个在 Linux 桌面上原生运行的开源电子邮件服务的故事。
 
-![document sending][1]
+![document sending](https://img.linux.net.cn/data/attachment/album/201906/10/123114abz0lvbllktkulx7.jpg)
 
 [Tutanota][2] 是一种安全的开源电子邮件服务，它可通过浏览器使用，也有 iOS 和 Android 应用。其客户端代码在 GPLv3 下发布，Android 应用程序可在 [F-Droid][3] 上找到，以便每个人都可以使用完全与 Google 无关的版本。
 
@@ -76,7 +76,7 @@ via: https://opensource.com/article/19/4/linux-desktop-electron
 作者：[Nils Ganther][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
