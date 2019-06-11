@@ -1,23 +1,23 @@
-Memories of writing a parser for man pages
+回忆：为 man 手册页编写解析器
 ======
 
-I generally enjoy being bored, but sometimes enough is enough—that was the case a Sunday afternoon of 2015 when I decided to start an open source project to overcome my boredom.
+我一般都很喜欢无所事事，但有时候太无聊了也不行 —— 2015 年的一个星期天下午就是这样，我决定开始一个开源项目来让我不那么无聊。
 
-In my quest for ideas, I stumbled upon a request to build a [“Man page viewer built with web standards”][1] by [Mathias Bynens][2] and without thinking too much, I started coding a man page parser in JavaScript, which after a lot of back and forths, ended up being [Jroff][3].
+在我寻求创意时，我偶然发现了一个请求，要求构建一个由 [Mathias Bynens][2] 提出的“[按 Web 标准构建的 Man 手册页查看器][1]”。没有考虑太多，我开始使用 JavaScript 编写一个手册页解析器，经过大量的反复思考，最终做出了一个 [Jroff][3]。
 
-Back then, I was familiar with manual pages as a concept and used them a fair amount of times, but that was all I knew, I had no idea how they were generated or if there was a standard in place. Two years later, here are some thoughts on the matter.
+那时候，我非常熟悉手册页这个概念，而且使用过很多次，但我知道的仅止于此，我不知道它们是如何生成的，或者是否有一个标准。在经过两年后，我有了一些关于此事的想法。
 
-### How man pages are written
+### man 手册页是如何写的
 
-The first thing that surprised me at the time, was the notion that manpages at their core are just plain text files stored somewhere in the system (you can check this directory using the `manpath` command).
+当时令我感到惊讶的第一件事是，手册页的核心只是存储在系统某处的纯文本文件（你可以使用 `manpath` 命令检查此目录）。
 
-This files not only contain the documentation, but also formatting information using a typesetting system from the 1970s called `troff`.
+此文件中不仅包含文档，还包含使用了 20 世纪 70 年代名为 `troff` 的排版系统的格式化信息。
 
-> troff, and its GNU implementation groff, are programs that process a textual description of a document to produce typeset versions suitable for printing. **It’s more ‘What you describe is what you get’ rather than WYSIWYG.**
+> troff 及其 GNU 实现 groff 是处理文档的文本描述以生成适合打印的排版版本的程序。**它更像是“你所描述的即你得到的”，而不是你所见即所得的。**
 >
-> — extracted from [troff.org][4]
+>  - 摘自 [troff.org][4]
 
-If you are totally unfamiliar with typesetting formats, you can think of them as Markdown on steroids, but in exchange for the flexibility you have a more complex syntax:
+如果你对排版格式毫不熟悉，可以将它们视为 steroids 期刊用的 Markdown，但其灵活性带来的就是更复杂的语法：
 
 ![groff-compressor][5]
 
