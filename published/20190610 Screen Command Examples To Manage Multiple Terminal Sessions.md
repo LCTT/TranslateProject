@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10962-1.html)
 [#]: subject: (Screen Command Examples To Manage Multiple Terminal Sessions)
 [#]: via: (https://www.ostechnix.com/screen-command-examples-to-manage-multiple-terminal-sessions/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
@@ -10,11 +10,11 @@
 screen 命令示例：管理多个终端会话
 ======
 
-![Screen Command Examples To Manage Multiple Terminal Sessions][1]
+![Screen Command Examples To Manage Multiple Terminal Sessions](https://img.linux.net.cn/data/attachment/album/201906/11/124801th0uy0hti3y211ha.jpg)
 
-GNU Screen 是一个终端多路复用器（窗口管理器）。顾名思义，Screen 在多个交互式 shell 之间复用物理终端，因此我们可以在每个终端会话中执行不同的任务。所有的 Screen 会话都完全独立地运行程序。因此，即使会话意外关闭或断开连接，在屏幕会话内运行的程序或进程也将继续运行。例如，当通过 SSH [升级 Ubuntu][2] 服务器时，`screen` 命令将继续运行升级过程，以防万一 SSH 会话因任何原因而终止。
+GNU Screen 是一个终端多路复用器（窗口管理器）。顾名思义，Screen 可以在多个交互式 shell 之间复用物理终端，因此我们可以在每个终端会话中执行不同的任务。所有的 Screen 会话都完全独立地运行程序。因此，即使会话意外关闭或断开连接，在 Screen 会话内运行的程序或进程也将继续运行。例如，当通过 SSH [升级 Ubuntu][2] 服务器时，`screen` 命令将继续运行升级过程，以防万一 SSH 会话因任何原因而终止。
 
-GNU Screen 允许我们轻松创建多个 Screen 会话，在不同会话之间切换，在会话之间复制文本，随时连上或脱离会话等等。它是每个 Linux 管理员应该在必要时学习和使用的重要命令行工具之一。在本简要指南中，我们将看到 `screen` 命令的基本用法以及 Linux 中的示例。
+GNU Screen 允许我们轻松创建多个 Screen 会话，在不同会话之间切换，在会话之间复制文本，随时连上或脱离会话等等。它是每个 Linux 管理员应该在必要时学习和使用的重要命令行工具之一。在本简要指南中，我们将看到 `screen` 命令的基本用法以及在 Linux 中的示例。
 
 ### 安装 GNU Screen
 
@@ -52,10 +52,9 @@ $ sudo zypper install screen
 
 让我们继续看一些 `screen` 命令示例。
 
-
 ### 管理多个终端会话的 Screen 命令示例
 
-在 Screen 中所有命令的默认前缀快捷方式是 `Ctrl + a`。 使用 Screen 时，你需要经常使用此快捷方式。所以，要需记住这个键盘快捷键。
+在 Screen 中所有命令的默认前缀快捷方式是 `Ctrl + a`。使用 Screen 时，你需要经常使用此快捷方式。所以，要记住这个键盘快捷键。
 
 #### 创建新的 Screen 会话
 
@@ -65,7 +64,7 @@ $ sudo zypper install screen
 screen
 ```
 
-现在，在此会话中运行任何程序或进程。即使你与此会话断开连接，正在运行的进程或程序也将继续运行。
+现在，在此会话中运行任何程序或进程，即使你与此会话断开连接，正在运行的进程或程序也将继续运行。
 
 #### 从 Screen 会话脱离
 
@@ -75,7 +74,7 @@ screen
 [detached from 29149.pts-0.sk]
 ```
 
-这里，`29149` 是 Screen ID，`pts-0.sk` 是屏幕会话的名称。你可以使用 Screen ID 或相应会话的名称来连上、脱离和终止屏幕会话。
+这里，`29149` 是 Screen ID，`pts-0.sk` 是屏幕会话的名称。你可以使用 Screen ID 或相应的会话名称来连上、脱离和终止屏幕会话。
 
 #### 创建命名会话
 
@@ -95,7 +94,7 @@ screen -S lampstack
 
 #### 创建脱离的会话
 
-有时，你可能想要创建一个会话，但不希望自动连上该会话。在这种情况下，运行以下命令来创建名为`senthil` 的脱离会话：
+有时，你可能想要创建一个会话，但不希望自动连上该会话。在这种情况下，运行以下命令来创建名为`senthil` 的已脱离会话：
 
 ```
 screen -S senthil -d -m
@@ -137,7 +136,7 @@ There are screens on:
 screen -r 29415.ostechnix
 ```
 
-或
+或：
 
 ```
 screen -r ostechnix
@@ -171,7 +170,7 @@ There are screens on:
 
 当我们运行 `screen` 命令时，它将为我们创建一个会话。但是，我们可以创建嵌套会话（会话内的会话）。
 
-首先，创建一个新会话或连上已打开的会话。我将创建一个名为 `nested` 的新会话。
+首先，创建一个新会话或连上已打开的会话。然后我将创建一个名为 `nested` 的新会话。
 
 ```
 screen -S nested
@@ -207,16 +206,15 @@ Password:
 
 你可能希望记录 Screen 会话中的所有内容。为此，只需按 `Ctrl + a` 和 `H` 即可。
 
-或者，你也可以使用 `-L` 参数启动新会话来启用日志记录。0
+或者，你也可以使用 `-L` 参数启动新会话来启用日志记录。
 
 ```
 screen -L
 ```
 
-从现在开始，你在会话中做的所有活动都将记录并存储在 `$HOME` 目录中名为 `screenlog.x` 的文件中。这里，`x`是一个数字。
+从现在开始，你在会话中做的所有活动都将记录并存储在 `$HOME` 目录中名为 `screenlog.x` 的文件中。这里，`x` 是一个数字。
 
 你可以使用 `cat` 命令或任何文本查看器查看日志文件的内容。
-
 
 ![][3]
 
@@ -224,19 +222,19 @@ screen -L
 
 #### 终止 Screen 会话
 
-如果不再需要会话，只需杀死它。 要杀死名为 `senthil` 的脱离会话：
+如果不再需要会话，只需杀死它。要杀死名为 `senthil` 的脱离会话：
 
 ```
 screen -r senthil -X quit
 ```
 
-或
+或：
 
 ```
 screen -X -S senthil quit
 ```
 
-或
+或：
 
 ```
 screen -X -S 29415 quit
@@ -255,7 +253,7 @@ No Sockets found in /run/screens/S-sk.
 $ man screen
 ```
 
-还有一个名为 Tmux 的类似命令行实用程序，它与 GNU Screen 执行相同的工作。要了解更多信息，请参阅以下指南。
+还有一个名为 Tmux 的类似的命令行实用程序，它与 GNU Screen 执行相同的工作。要了解更多信息，请参阅以下指南。
 
 * [Tmux 命令示例：管理多个终端会话][5]
 
@@ -270,7 +268,7 @@ via: https://www.ostechnix.com/screen-command-examples-to-manage-multiple-termin
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
