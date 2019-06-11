@@ -7,29 +7,29 @@
 [#]: via: (https://www.2daygeek.com/check-installed-security-updates-on-redhat-rhel-and-centos-system/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Two Methods To Check Or List Installed Security Updates on Redhat (RHEL) And CentOS System
+在 Redhat（RHEL） 和 CentOS 上检查或列出已安装的安全更新的两种方法
 ======
 
-We had wrote two articles in the past about this topic and each articles were published for different requirements.
+我们过去曾写过两篇关于这个主题的文章，每篇文章都是根据不同的要求发表的。
 
-If you would like to check those articles before getting into this topic.
+如果你想在开始之前浏览这些文章。
 
-Navigate to the following links.
+请通过以下链接：
 
-  * **[How To Check Available Security Updates On Red Hat (RHEL) And CentOS System?][1]**
-  * **[Four Ways To Install Security Updates On Red Hat (RHEL) And CentOS Systems?][2]**
+  * **[如何检查 Red Hat（RHEL）和 CentOS 上的可用安全更新？] [1] **
+  * **[在 Red Hat（RHEL）和 CentOS 上安装安全更新的四种方法？][2] **
 
 
 
-These articles are interlinked one with others so, better to read them before digging into this.
+这些文章与其他文章相互关联，因此，在深入研究之前，最好先阅读这些文章。
 
-In this article, we will show you, how to check installed security updates.
+在本文中，我们将向你展示如何检查已安装的安全更新。
 
-I have add two methods to achieve this and you can choose which one is best and suitable for you.
+我会介绍两种方法，你可以选择最适合你的。
 
-Also, i added a small shell script, that gives you a summary about installed security packages count.
+此外，我还添加了一个小的 shell 脚本，它为你提供已安装的安全包计数。
 
-Run the following command to get a list of the installed security updates on your system.
+运行以下命令获取系统上已安装的安全更新的列表。
 
 ```
 # yum updateinfo list security installed
@@ -46,14 +46,14 @@ RHSA-2017:2299 Moderate/Sec.  NetworkManager-adsl-1:1.8.0-9.el7.x86_64
 RHSA-2015:2315 Moderate/Sec.  NetworkManager-bluetooth-1:1.0.6-27.el7.x86_64
 ```
 
-To count the number of installed security packages, run the following command.
+要计算已安装的安全包的数量，请运行以下命令。
 
 ```
 # yum updateinfo list security installed | wc -l
 1046
 ```
 
-To print only install packages list.
+仅打印安装包列表。
 
 ```
 # yum updateinfo list security all | grep -w "i"
@@ -73,16 +73,16 @@ i RHSA-2016:2581 Low/Sec.       NetworkManager-config-server-1:1.4.0-12.el7.x86_
 i RHSA-2017:2299 Moderate/Sec.  NetworkManager-config-server-1:1.8.0-9.el7.noarch
 ```
 
-To count the number of installed security packages, run the following command.
+要计算已安装的安全包的数量，请运行以下命令。
 
 ```
 # yum updateinfo list security all | grep -w "i" | wc -l
 1043
 ```
 
-Alternatively, you can check the list of vulnerabilities had fixed against the given package.
+或者，你可以检查指定包修复的漏洞列表。
 
-In this example, we are going to check the list of vulnerabilities had fixed in the “openssh” package.
+在此例中，我们将检查 “openssh” 包中已修复的漏洞列表。
 
 ```
 # rpm -q --changelog openssh | grep -i CVE
@@ -106,7 +106,7 @@ In this example, we are going to check the list of vulnerabilities had fixed in 
 - use fork+exec instead of system in scp - CVE-2006-0225 (#168167)
 ```
 
-Similarly, you can check whether the given vulnerability is fixed or not in the corresponding package by running the following command.
+同样，你可以通过运行以下命令来检查相应的包中是否修复了指定的漏洞。
 
 ```
 # rpm -q --changelog openssh | grep -i CVE-2016-3115
@@ -114,9 +114,9 @@ Similarly, you can check whether the given vulnerability is fixed or not in the 
 - CVE-2016-3115: missing sanitisation of input for X11 forwarding (#1317819)
 ```
 
-### How To Count Installed Security Packages Using Shell Script?
+### 如何使用 Shell 脚本计算安装的安全包？
 
-I have added a small shell script, which helps you to count the list of installed security packages.
+我添加了一个小的 shell 脚本，它可以帮助你计算已安装的安全包列表。
 
 ```
 # vi /opt/scripts/security-check.sh
@@ -133,13 +133,13 @@ done | column -t
 echo "+-------------------------+"
 ```
 
-Set an executable permission to `security-check.sh` file.
+给 `security-check.sh` 文件执行权限。
 
 ```
 $ chmod +x security-check.sh
 ```
 
-Finally run the script to achieve this.
+最后执行脚本统计。
 
 ```
 # sh /opt/scripts/security-check.sh
@@ -159,7 +159,7 @@ via: https://www.2daygeek.com/check-installed-security-updates-on-redhat-rhel-an
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
