@@ -7,15 +7,16 @@
 [#]: via: (https://blog.hoetzel.info/post/eshell-notifications/)
 [#]: author: (Jürgen Hötzel https://blog.hoetzel.info)
 
-Get desktop notifications from Emacs shell commands ·
+让 Emacs shell 命令发送桌面通知
 ======
-When interacting with the operating systems I always use [Eshell][1] because it integrates seamlessly with Emacs, supports (remote) [TRAMP][2] file names and also works nice on Windows.
 
-After starting shell commands (like long running build jobs) I often lose track the task when switching buffers.
+我总是使用 [Eshell][1] 来与操作系统进行交互，因为它与 Emacs 无缝整合、支持处理 (远程) [TRAMP][2] 文件 而且在 Windows 上也能工作得很好。
 
-Thanks to Emacs [hooks][3] mechanism you can customize Emacs to call a elisp function when an external command finishes.
+启动 shell 命令后 (比如耗时严重的构建任务) 我经常会由于切换 buffer 而忘了追踪任务的运行状态。
 
-I use [John Wiegleys][4] excellent [alert][5] package to send desktop notifications:
+多亏了 Emacs 的 [hooks][3] 机制，你可以配置 Emacs 在某个外部命令完成后调用一个 elisp 函数。
+
+我使用 [John Wiegleys][4] 所编写的超棒的 [alert][5] 包来发送桌面通知：
 
 ```
 (require 'alert)
@@ -32,7 +33,7 @@ I use [John Wiegleys][4] excellent [alert][5] package to send desktop notificati
 (add-hook 'eshell-kill-hook #'eshell-command-alert)
 ```
 
-[alert][5] rules can be setup programmatically. In my case I only want to get notified if the corresponding buffer is not visible:
+[alert][5] 的规则可以用程序来设置。就我这个情况来看，我只需要当对应的 buffer 不可见时被通知：
 
 ```
 (alert-add-rule :status   '(buried)     ;only send alert when buffer not visible
@@ -40,9 +41,10 @@ I use [John Wiegleys][4] excellent [alert][5] package to send desktop notificati
           :style 'notifications)
 ```
 
-This even works on [TRAMP][2] buffers. Below is a screenshot showing a Gnome desktop notification of a failed `make` command.
 
-![../../img/eshell.png][6]
+这甚至对于 [TRAMP][2] 也一样生效。下面这个截屏展示了失败的 `make` 命令产生的 Gnome 桌面通知。
+
+![。./。./img/eshell.png][6]
 
 --------------------------------------------------------------------------------
 
