@@ -1,3 +1,4 @@
+Translanting by robsean
 BootISO – A Simple Bash Script To Securely Create A Bootable USB Device From ISO File
 ======
 Most of us (including me) very often create a bootable USB device from ISO file for OS installation.
