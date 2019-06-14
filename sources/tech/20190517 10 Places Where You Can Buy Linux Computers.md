@@ -7,214 +7,209 @@
 [#]: via: (https://itsfoss.com/get-linux-laptops/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-10 Places Where You Can Buy Linux Computers
+可以买到 Linux 电脑的 10 个地方
 ======
 
-_**Looking for Linux laptops? Here I list some online shops that either sell Linux computers or specialize only in Linux systems.**_
+_**你在找 Linux 笔记本吗? 这里列出一些出售 Linux 电脑或者是专注于 Linux 系统的电商。**_
 
-Almost all the computers (except Apple) sold these days come with Windows preinstalled on it. The standard procedure for Linux users is to buy such a computer and then either remove Windows and install Linux or [dual boot Linux with Windows][1].
+如今市面上几乎所有的电脑（苹果除外）都预装了 Windows 系统。Linux 使用者的惯常做法就是买一台这样的电脑，然后要么删除 Windows 系统并安装 Linux，要么[安装 Linux 和 Windows 的双系统][1]。
 
-But you don’t always have to go through Windows. You can buy Linux computers as well.
+但 Windows 系统并非无法避免。你其实也可以买到 Linux 电脑。
 
-But why buy a computer preinstalled with Linux when you can easily install Linux on any computer? Here are some reasons:
+不过，既然可以轻松地在任何一台电脑上安装 Linux，为什么还要买一台预装了 Linux 的电脑呢？下面列举几个原因：
 
-  * A computer with Windows always has an extra cost for the Windows license. You can avoid that.
-  * Computers preinstalled with Linux are well-tested for hardware compatibility. You can be sure that your system will have WiFi and Bluetooth working instead of figuring these things on your own.
-  * Buying Linux laptops and desktops supports Linux indirectly. More sale indicates that there is a demand for Linux products and thus more vendors may incline to provide Linux as a choice of operating system.
+  * 预装 Windows 系统意味着你额外支付了 Windows 许可证的费用。你可以节省这笔开销。
+  * 预装 Linux 的电脑都经过了硬件适配测试。你不需要担心系统无法正常运行 WiFi 或者蓝牙，也不再需要亲自去搞定这些事情了。
+  * 购买 Linux 电脑相当于间接地支持了 Linux。更多的销售额可以反应出对 Linux 产品的需求，也就可能会有更多商家提供 Linux 作为一种可以选择的操作系统。
 
-
-
-If you are looking to get a new Linux laptop, let me suggest you a few manufacturers and vendors that provide ready-to-use Linux systems.
+如果你正想买一台 Linux 的笔记本，不妨考虑一下我的建议。下面这些制造商或者商家都提供开箱即用的 Linux 系统。
 
 ![][2]
 
-### 10 places to buy Linux laptops and computers
+### 可以买到 Linux 笔记本或者台式机的 10 个地方
 
-A couple of disclaimer/information before you see the list of shops offering computers with Linux preloaded.
+在揭晓这个提供预装 Linux 电脑的商家的清单之前，需要先声明一下。
 
-Please make a purchase on your own decision. I am simply listing the Linux computer sellers here, I cannot vouch for their product quality, after sale service or other such things.
+请根据你的独立决策购买。我在这里只是简单地列出一些售卖 Linux 电脑的商家，并不保证他们的产品质量，售后服务等等这些事情。
 
-This is not a ranking list. The items listed here are in no particular order. The numbers are used for the purpose of counting the items, not ranking them.
+这也并不是一个排行榜。清单并不是按照某个特定次序排列的，每一项前面的数字只是为了方便计数，而并不代表名次。
 
-Let’s see from where you can get desktops and laptops with Linux preinstalled.
+让我们看看你可以在哪儿买到预装 Linux 的台式机或者笔记本吧。
 
-#### 1\. Dell
+#### 1\. 戴尔
 
-![Dell XPS Ubuntu | Image Credit: Lifehacker][3]
+![戴尔 XPS Ubuntu | 图片所有权: Lifehacker][3]
 
-Dell has been offering Ubuntu laptops for several years now. Their flagship product XPS features a Developer Edition series that comes with Ubuntu preinstalled.
+戴尔提供 Ubuntu 笔记本已经有好几年了。他们的旗舰产品 XPS 系列的亮点之一就是预装了 Ubuntu 的开发者版本系列产品。
 
-If you read my [review of Dell XPS Ubuntu edition][4], you know that I loved this laptop. It’s been more than two years and this laptop is still in great condition and performance has not deteriorated.
+如果你读过我的 [戴尔 XPS Ubuntu 版本评测][4]就知道我是很喜欢这款笔记本的。两年多过去了，这个笔记本依然状况良好，没有性能恶化的迹象。
 
-Dell XPS is an expensive device with a price tag of over $1000. If that’s out of your budget, Dell also has inexpensive offering in its Inspiron laptop range.
+戴尔 XPS 是售价超过 1000 美元的昂贵设备。如果你的预算没有这么多，可以考虑戴尔更加亲民的 Inspiron 系列笔记本。
 
-Do note that Dell doesn’t display the Ubuntu/Linux laptops on its website. Unless you already know that Linux laptops are offered by Dell, you wouldn’t be able to find them.
+值得一提的是，戴尔并没有在它的官网上展示 Ubuntu 或者 Linux 笔记本产品。除非你知道戴尔提供 Linux 笔记本，你是不会找到它们的。
 
-So, go to Dell’s website and enter Ubuntu in its search box to see the products that ship with Ubuntu Linux preinstalled.
+所以，去戴尔的官网上搜索关键字 “Ubuntu” 来获取预装 Ubuntu 的产品的信息吧。
 
-**Availability** : Most part of the world.
+**支持范围** : 世界上大部分地区。
 
-[Dell][5]
+[戴尔][5]
 
 #### 2\. System76
 
-[System76][6] is a prominent name in the Linux computers world. This US-based company specializes in high-end computing devices that run Linux. Their targeted user-base is software developers.
+[System76][6] 是 Linux 计算机世界里的一个响亮的名字。这家总部设在美国的企业专注于运行 Linux 的高端技术设备。他们的目标用户群体是软件开发者。
 
-Initially, System76 used to offer Ubuntu on their machines. In 2017, they released their own Linux distribution [Pop!_OS][7] based on Ubuntu. Since then, Pop!_OS is the default OS on their machine with Ubuntu still available as a choice.
+最初，System76 在自己的机器上提供的是 Ubuntu 系统。2017 年，他们发布了属于自己的 Linux 发行版，基于 Ubuntu 的 [Pop!_OS][7]。从此以后，Pop!_OS 就是他们机器上的默认操作系统了，但是仍然保留了 Ubuntu 这个选择。
 
-Apart from performance, System76 has put a great emphasis on the design of its computer. Their [Thelio desktop series][8] has a handcrafted wooden design.
+除了性能之外，System76 还格外重视设计。他们的 [Thelio 系列台式机][8] 采用纯手工木制设计。
 
-![System76 Thelio Desktop][9]
+![System76 Thelio 台式机][9]
 
-You may check their Linux laptops offering [here][10]. They also offer [Linux-based mini PCs][11] and [servers][12].
+你可以在 [这里][10] 查看他们提供的 Linux 笔记本。他们同时也提供 [基于 Linux 的迷你电脑][11] 和 [服务器][12]。
 
-Did I mention that System76 manufactures its computers in America instead of the obvious choice of China and Taiwan? The products are on the expensive side, perhaps for this reason.
+值得一提的是，System76 在美国制造他们的电脑，而没有使用中国大陆或者台湾这种常规的选择。也许是出于这个原因，他们产品的售价较为高昂。
 
-**Availability** : USA and 60 other countries. Extra custom duty may be applicable outside the US. More info [here][13].
+**支持范围** : 美国以及其它 60 个国家。在美国境外可能会有额外的关税。更多信息见[这里][13].
 
 [System76][6]
 
 #### 3\. Purism
 
-Purism is a US-based company that takes pride in creating products and services that help you secure your data and privacy. That’s the reason why Purism calls itself a ‘Social Purpose Corporation’.
+Purism 是一个总部设在美国的企业，以提供确保数据安全和隐私的产品和服务为荣。这就是为什么 Purism 称自己为 “效力社会的公司”。
 
 [][14]
 
-Suggested read How To Use Google Drive In Linux
-
-Purism started with a crowdfunding campaign for creating a high-end open source laptop with (almost) no proprietary software. The [successful $250,000 crowdfunding campaign][15] gave birth to [Librem 15][16] laptop in 2015.
+Purism 是从一个众筹项目开始的，该项目旨在创造一个几乎没有任何专有软件的高端开源笔记本。2015年，从这个 [成功的 25 万美元的众筹项目][15] 中诞生了 [Librem 15][16] 笔记本。
 
 ![Purism Librem 13][17]
 
-Later Purism released a 13″ version called [Librem 13][18]. Purism also created a Linux distribution [Pure OS][19] keeping privacy and security in mind.
+后来 Purism 发布了一个 13 英寸的版本 [Librem 13][18]。Purism 还开发了一个自己的 Linux 发行版 [Pure OS][19]，该发行版非常注重隐私和安全问题。
 
-[Pure OS can run on both desktop and mobile devices][20] and it is the default choice of operating system on its Librem laptops and [Librem 5 Linux phone][21].
+[Pure OS 在台式设备和移动设备上都可以运行][20]，并且是 Librem 笔记本和[Librem 5 Linux 手机] 的默认操纵系统。
 
-Purism gets its components from China, Taiwan, Japan, and the United States and builds/assemble them in the US. All their devices have hardware kill switches to turn off the microphone/camera and wireless/bluetooth.
+Purism 的零部件来自中国大陆、台湾、日本以及美国，并在美国完成组装。他们的所有设备都有可以用来关闭麦克风、摄像头、无线连接或者是蓝牙的硬件开关。
 
-**Availability** : Worldwide with free international shipping. Custom duty may cost extra.
+**支持范围** : 全世界范围国际免邮。可能需要支付额外的关税。
 
 [Purism][22]
 
 #### 4\. Slimbook
 
-Slimbook is a Linux computer vendor based in Spain. Slimbook came to limelight after launching the [first KDE branded laptop][23].
+Slimbook 是一个总部设在西班牙的 Linux 电脑销售商. Slimbook 在发行了 [第一款 KDE 品牌笔记本][23]之后成为了人们关注的焦点。
 
-Their offering is not limited to just KDE Neon. They offer Ubuntu, Kubuntu, Ubuntu MATE, Linux Mint and Spanish distributions like [Lliurex][24] and [Max][25]. You can also choose Windows at an additional cost or opt for no operating system at all.
+他们的产品不仅限于KDE Neon。他们还提供 Ubuntu，Kubuntu，Ubuntu MATE，Linux Mint 以及包括 [Lliurex][24] 和 [Max][25]在内的西班牙发行版。您也可以选择 Windows（需要额外付费）或者不预装任何操作系统。
 
-Slimbook has a wide variety of Linux laptops, desktops and mini PCs available. An iMac like 24″ [curved monitor that has in-built CPU][26] is an awesome addition to their collection.
+Slimbook 有众多 Linux 笔记本，台式机和迷你电脑可供选择。他们另外一个非常不错的产品是一个类似于 iMac 的 24 英寸 [拥有内置 CPU 的曲面显示屏][26]。
 
-![Slimbook Kymera Aqua Liquid Cool Linux Computer][27]
+![Slimbook Kymera Aqua 水冷 Linux 电脑][27]
 
-Want a liquid cooled Linux computer? Slimbook’s [Kymera Aqua][28] is for you.
+想要一台水冷 Linux 电脑吗？Slimbook 的 [Kymera Aqua][28] 是合适之选。
 
-**Availability** : Worldwide but may cost extra in shipping and custom duty
+**支持范围** : 全世界范围，不过在邮费和关税上都可能产生额外费用。
 
 [Slimbook][29]
 
-#### 5\. TUXEDO Computers
+#### 5\. TUXEDO
 
-Another European candidate in this list of Linux computer vendors. [TUXEDO Computers][30] is based out of Germany and mainly focuses on German users and then European users.
+作为这个 Linux 电脑销售商清单里的另一个欧洲成员，[TUXEDO][30] 总部设在德国，主要服务德国用户，其次是欧洲用户。
 
-TUXEDO Computers only uses Linux and the computers are ‘manufactured in Germany’ and come with 5 years of guarantee and lifetime support.
+TUXEDO 只使用 Linux 系统，产品都是“德国制造”，并且提供 5 年保修和终身售后支持。
 
-TUXEDO Computers has put up some real good effort in customizing its hardware to run on Linux. And if you ever run into trouble or want to start afresh, you have the system recovery option to restore factory settings automatically.
+TUXEDO 在 Linux 系统的硬件适配上下了很大功夫。并且如果你遇到了麻烦或者是想从头开始，可以通过系统恢复选项，自动恢复出厂设置。
 
-![Tuxedo Computers supports a wide variety of distributions][31]
+![Tuxedo 电脑支持众多发行版][31]
 
-TUXEDO Computers has a number of Linux laptops, desktops, mini-PCs available. They have both Intel and AMD processors. Apart from the computers, TUXEDO Computers also has a range of Linux supported accessories like docking stations, DVD/Blue-Ray burners, power bank and other peripheral devices.
+TUXEDO 有许多 Linux 笔记本、台式机和迷你电脑产品可供选择。他们还同时拥有 Intel 和 AMD 的处理器。 除了电脑，TUXEDO 还提供一系列 Linux 支持的附件，比如扩展坞、DVD和蓝光刻录机、移动电源以及其它外围设备。
 
-**Availability** : Free shipping in Germany and Europe (for orders above 150 Euro). Extra shipping charges and custom duty for non-EU countries. More info [here][32].
+**支持范围** : 150 欧元以上的订单在德国和欧洲范围内免邮。欧洲外国家会有额外的运费和关税。更多信息见 [这里][32].
 
-[TUXEDO Computers][33]
+[TUXEDO][33]
 
 #### 6\. Vikings
 
-[Vikings][34] is based in Germany (instead of Scandinavia :D). Certified by [Free Software Foundation][35], Vikings focuses exclusively on Libre-friendly hardware.
+[Vikings][34] 的总部设在德国（而不是斯堪的纳维亚半岛，哈哈）。Vikings 拥有[自由软件基金会][35]的认证，专注于自由友好的硬件。
 
-![Vikings’s products are certified by Free Software Foundation][36]
+![Vikings 的产品经过了自由软件基金会认证][36]
 
-The Linux laptops and desktops by Vikings come with [coreboot][37] or [Libreboot][38] instead of proprietary boot systems like BIOS and UEFI. You can also buy [server hardware][39] running no proprietary software.
+Vikings 的 Linux 笔记本和台式机使用的是 [coreboot][37] 或者 [Libreboot][38]，而不是像 BIOS 和 UEFI 这样的专有启动系统。你还可以购买 [服务器硬件][39]，这款产品不运行任何专有软件。
 
-Vikings also has other accessories like router, docking station etc. The products are assembled in Germany.
+Vikings 还有包括路由器、扩展坞等在内的其它配件。他们的产品都是在德国组装完成的。
 
-**Availability** : Worldwide (except North Korea). Non-EU countries may charge custom duty. More information [here][40].
+**支持范围** : 全世界（除了朝鲜）。非欧洲国家可能会有额外关税费用。更多信息见[这里][40].
 
 [Vikings][41]
 
 #### 7\. Ubuntushop.be
 
-No! It’s not the official Ubuntu Shop even though it has Ubuntu in its name. Ubuntushop is based in Belgium and originally started selling computers installed with Ubuntu.
+不！尽管名字里有Ubuntu，但这不是官方的 Ubuntu 商店。Ubuntushop 总部位于比利时，最初是销售安装了 Ubuntu 的电脑。
 
-Today, you can get laptops preloaded with Linux distributions like Mint, Manjaro, elementrayOS. You can also request a distribution of your choice to be installed on the system you buy.
+如今，你可以买到预装了包括 Mint、Manjaro、 elementrayOS 在内的 Linux 发行版的笔记本电脑。你还可以要求所购买的设备上安装你所选择的发行版。
 
 ![][42]
 
-One unique thing about Ubuntushop is that all of its computers come with default Tails OS live option. So even if it has a Linux distribution installed for regular use, you can always choose to boot into the Tails OS (without live USB). [Tails OS][43] is a Debian based distribution that deletes all traces of its use after logging out and it uses Tor network by default.
+Ubuntushop 的一个独特之处在于，它的所有电脑都带有默认的 Tails OS live 选项。即使你安装了某个其它的 Linux 发行版作为日常使用的系统，也随时可以选择启动到 Tails OS（不需要使用 live USB）。[Tails OS][43] 是一个基于 Debian 的发行版，它在用户注销后会删除所有使用痕迹，并且在默认情况下使用 Tor 网络。
 
 [][44]
 
-Suggested read Things to do After Installing Ubuntu 18.04 and 18.10
+和此列表中的许多其他重要玩家不同，我觉得 Ubuntushop 所提供的更像是一种“家庭工艺”。商家手动组装一个电脑，安装 Linux 然后卖给你。不过他们也在一些可选项上下了功夫，比如说轻松的重装系统，拥有自己的云服务器等等。
 
-Unlike many other big players on this list, I feel that Ubuntushop is more of a ‘domestic operation’ where someone manually assembles your computer and installs Linux on it. But they have done quite some job on providing options like easy re-install, own cloud server etc.
+你可以找一台旧电脑快递给他们，同时在他们的网站上买一台新的 Linux 电脑，他们就会在你的旧电脑上安装 [轻量级 Linux][45] 系统然后快递回来，这样你这台旧电脑就可以重新投入使用了。
 
-Got an old PC, send it to them while buying a new Linux computer and they will send it back to you after installing [lightweight Linux][45] on it so that the old computer is recycled and can still be put to some use.
-
-**Availability** : Belgium and rest of Europe.
+**支持范围** : 比利时以及欧洲的其它地区。
 
 [Ubuntushop.be][46]
 
 #### 8\. Minifree
 
-[Minifree][47], short for Ministry of Freedom, is a company registered in England.
+[Minifree][47]，自由部门的缩写，是一家注册在英格兰的公司。
 
-You can guess that Minifree focuses on the freedom. It provides secure and privacy-respcting computers that come with [Libreboot][38] instead of BIOS or UEFI.
+你可以猜到 Minifree 非常注重自由。他们提供安全以及注重隐私的电脑，预装 [Libreboot][38] 而不是 BIOS 或者 UEFI。
 
-Minifree devices are certified by [Free Software Foundation][48] which means that you can be sure that your computer adhere to guidelines and principals of Free and Open Source Software.
+Minifree 的设备经过了 [自由软件基金会][48] 的认证，所以你可以放心买到的电脑都遵循了自由开源软件的指导规则。
 
 ![][49]
 
-Unlike many other Linux laptops vendors on this list, computers from Minifree are not super-expensive. You can get a Libreboot Linux laptop running [Trisquel GNU/Linux][50] from 200 euro.
+和这个清单中许多其它 Linux 笔记本销售商不同，Minifree 的电脑并不是特别贵。花 200 欧元就可以买到一台预装了 Libreboot 和 [Trisquel GNU/Linux][50] 的 Linux 电脑。
 
-Apart from laptops, Minifree also has a range of accessories like a Libre Router, tablet, docking station, batteries, keyboard, mouse etc.
+除了笔记本以外，Minifree 还有一系列的配件，比如 Libre 路由器、平板电、扩展坞、电池、键盘、鼠标等等。
 
-If you care to run only 100% free software like [Richard Stallman][51], Minifree is for you.
+如果你和 [Richard Stallman][51] 一样，希望只运行 100% 自由的软件的话，Minifree 就再适合不过了。
 
-**Availability** : Worldwide. Shipping information is available [here][52].
+**支持范围** : 全世界。运费信息见 [这里][52]。
 
 [Minifree][47]
 
 #### 9\. Entroware
 
-[Entroware][53] is another UK-based vendor that specializes in Linux-based laptops, desktop and servers.
+[Entroware][53] 是另一个总部设在英国的销售商，专注基于 Linux 系统的笔记本、台式机和服务器。
 
-Like many others on the list, Entroware also has Ubuntu as its choice of Linux distribution. [Ubuntu MATE is also available as a choice on Entroware Linux laptops][54].
+和这个清单里的很多其它商家一样，Entroware 也选择 Ubuntu 作为 Linux 发行版。[Ubuntu MATE 也是 Entroware Linux 笔记本的一种可选系统][54].
 
 ![][55]
 
-Apart from laptops, desktop and servers, Entroware also has their [mini-PC Aura][56] and the iMac style [monitor with built-in CPU Ares][57].
+除了笔记本、台式机和服务器之外，Entroware 还拥有自己的 [迷你电脑 Aura][56]，以及一个 iMac 风格的[内置 CPU 的显示器 Ares][57].
 
-Availability: UK, Ireland France, Germany, Italy, Spain
+支持范围: 英国、爱尔兰、法国、德国、意大利、西班牙。
 
 [Entroware][58]
 
-#### 10\. Juno Computers
+#### 10\. Juno
 
-This is a new Linux laptop vendor on our list. Juno Computers is also based in UK and offers computers preinstalled with Linux. elementary OS, Ubuntu and Solus OS are the choices of Linux distributions here.
+这是我们清单上的一个新的 Linux 笔记本销售商。Juno 的总部同样设在英国，提供预装 Linux 的电脑。可选择的 Linux 发行版包括 elementary OS、Ubuntu 和 Solus OS。
 
-Juno offers a range of laptops and a mini-PC called Olympia. Like almost all the mini-PCs offered by other vendors here, Olympia is also basically [Intel NUC][59].
+Juno 提供一系列的笔记本，以及一款叫做 Olympia 迷你电脑。和列表里其它商家提供的大多数迷你电脑一样，Olympia 也基本上相当于一个 [Intel NUC][59]。
 
-The main highlight from Juno Computers is a low-cost Chromebook alternative, Juve that costs £299. It runs a dual-booted system with Solus/elementray with an Android-based desktop operating system, [Prime OS][60].
+Juno 的主要特色是 Juve，一款售价 299 美元的 Chromebook 的低成本替代品。它运行一个双系统，包括 Solus 或者 elementray，以及一个基于安卓的电脑操作系统 [Prime OS][60]。
 
 ![Juve With Android-based Prime Os][61]
 
-Availability: UK, USA, Canada, Mexico, Most part of South America and Europe, Australia, New Zealand, some part of Asia and Africa. More information [here][62].
+支持范围：英国、美国、加拿大、墨西哥、南美和欧洲的大部分地区、新西兰、亚洲和非洲的某些地区。更多信息见 [这里][62]。
 
 [Juno Computers][63]
 
 #### Honorable mentions
+荣誉奖
 
-I have listed 10 places to get Linux computers but there are several other such shops available. I cannot include all of them in the main list and a couple of them seem to be out of stock for most products. However, I am going to mention them here so that you may check them on your own:
+我列举了 10 个可以买到 Linux 电脑的地方，但其实还有一些其它类似的商店。清单里放不下这么多，并且它们其中的几个似乎大多数商品都缺货。不过我还是要在这里稍微提一下它们，方便你自己查找相关信息：
 
   * [ZaReason][64]
   * [Libiquity][65]
@@ -223,10 +218,9 @@ I have listed 10 places to get Linux computers but there are several other such 
   * [Think Penguin][68]
 
 
+包括宏碁和联想在内的其它主流电脑生产商可能也有基于 Linux 系统的产品，所以你不妨也查看一下他们的产品目录吧。
 
-Other mainstream computer manufacturers like Acer, Lenovo etc may also have some Linux systems in their catalog so you may check their products as well.
-
-Have you ever bought a Linux computer? Where did you buy it? How’s your experience with it? Is it worth buying a Linux laptop? Do share your thoughts.
+你有没有买过一台 Linux 电脑？在哪儿买的？使用体验怎么样？Linux 笔记本值不值得买？分享一下你的想法吧。
 
 --------------------------------------------------------------------------------
 
@@ -234,7 +228,7 @@ via: https://itsfoss.com/get-linux-laptops/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/chen-ni)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
