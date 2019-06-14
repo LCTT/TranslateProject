@@ -1,3 +1,4 @@
+Translating by Robsean
 How To Resize Active/Primary root Partition Using GParted Utility
 ======
 Today we are going to discuss about disk partition. It’s one of the best topics in Linux. This allow users to resize the active root partition in Linux.
