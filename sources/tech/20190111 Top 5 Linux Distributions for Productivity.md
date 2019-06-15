@@ -1,18 +1,22 @@
-[#]: collector: (lujun9972)
-[#]: translator: (qfzy1233)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Top 5 Linux Distributions for Productivity)
-[#]: via: (https://www.linux.com/blog/learn/2019/1/top-5-linux-distributions-productivity)
-[#]: author: (Jack Wallen https://www.linux.com/users/jlwallen)
+[#]: collector: "lujun9972"
+[#]: translator: "qfzy1233"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Top 5 Linux Distributions for Productivity"
+[#]: via: "https://www.linux.com/blog/learn/2019/1/top-5-linux-distributions-productivity"
+[#]: author: "Jack Wallen https://www.linux.com/users/jlwallen"
 
-Top 5 Linux Distributions for Productivity
+五个最具生产力的 Linux 发行版
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_main.jpg?itok=2IKyg_7_)
 
+必须承认的是，这样一个热门的话题其实很难被总结出来。为什么呢？首先，Linux 在设计层面就是一种有生产力的操作系统。由于她极强的可靠性和稳定的平台，使得工作的开展变得简易化。其次为了衡量工作的效率，你需要考虑到哪项工作需要得到生产力方面的助推。是普通办公？开发类工作？学校事务？数据挖掘？或者是人力资源？你可以看到这一问题变得复杂起来了。
+
 I have to confess, this particular topic is a tough one to address. Why? First off, Linux is a productive operating system by design. Thanks to an incredibly reliable and stable platform, getting work done is easy. Second, to gauge effectiveness, you have to consider what type of work you need a productivity boost for. General office work? Development? School? Data mining? Human resources? You see how this question can get somewhat complicated.
+
+然而，这并不意味着
 
 That doesn’t mean, however, that some distributions aren’t able to do a better job of configuring and presenting that underlying operating system into an efficient platform for getting work done. Quite the contrary. Some distributions do a much better job of “getting out of the way,” so you don’t find yourself in a work-related hole, having to dig yourself out and catch up before the end of day. These distributions help strip away the complexity that can be found in Linux, thereby making your workflow painless.
 
@@ -149,22 +153,22 @@ via: https://www.linux.com/blog/learn/2019/1/top-5-linux-distributions-productiv
 [b]: https://github.com/lujun9972
 [1]: https://www.ubuntu.com/
 [2]: /files/images/productivity1jpg
-[3]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_1.jpg?itok=yxez3X1w (GNOME Clipboard)
+[3]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_1.jpg?itok=yxez3X1w "GNOME Clipboard"
 [4]: /licenses/category/used-permission
 [5]: https://labs.fedoraproject.org/en/design-suite/
 [6]: https://fedoraproject.org/wiki/Design_Suite/Tutorials
 [7]: /files/images/productivity2jpg
-[8]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_2.jpg?itok=ke0b8qyH (Fedora Design Suite Favorites)
+[8]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_2.jpg?itok=ke0b8qyH "Fedora Design Suite Favorites"
 [9]: https://system76.com/
 [10]: https://system76.com/pop
 [11]: /files/images/productivity3jpg-0
-[12]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_3_0.jpg?itok=8UkCUfsD (Pop!_OS)
+[12]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_3_0.jpg?itok=8UkCUfsD "Pop!_OS"
 [13]: https://www.debian.org/
 [14]: /files/images/productivity4jpg
-[15]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_4.jpg?itok=c9yD3Xw2 (Debian)
+[15]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_4.jpg?itok=c9yD3Xw2 "Debian"
 [16]: https://en.opensuse.org/openSUSE:Education-Li-f-e
 [17]: /files/images/productivity5jpg
-[18]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_5.jpg?itok=oAFtV8nT (Education)
+[18]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_5.jpg?itok=oAFtV8nT "Education"
 [19]: https://en.opensuse.org/Portal:KIWI-LTSP
 [20]: https://en.opensuse.org/SDB:KIWI-LTSP_quick_start
 [21]: https://training.linuxfoundation.org/linux-courses/system-administration-training/introduction-to-linux
