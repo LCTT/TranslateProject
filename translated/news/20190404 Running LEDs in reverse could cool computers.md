@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Running LEDs in reverse could cool computers)
@@ -47,7 +47,7 @@ via: https://www.networkworld.com/article/3386876/running-leds-in-reverse-could-
 作者：[Patrick Nelson][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
