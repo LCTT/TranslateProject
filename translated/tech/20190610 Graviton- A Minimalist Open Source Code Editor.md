@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Graviton: A Minimalist Open Source Code Editor)
@@ -10,7 +10,7 @@
 Graviton：极简的开源代码编辑器
 ======
 
-[Graviton][1]是一款开发中的免费开源跨平台代码编辑器。这位 16 岁的开发人员 Marc Espin 强调说，它是一个“极简”的代码编辑器。我不确定这点，但它确实有一个干净的用户界面，就像其他的[现代代码编辑器，如 Atom][2]。
+[Graviton][1]是一款开发中的自由开源的跨平台代码编辑器。他的开发者 16 岁的 Marc Espin 强调说，它是一个“极简”的代码编辑器。我不确定这点，但它确实有一个清爽的用户界面，就像其他的[现代代码编辑器，如 Atom][2]。
 
 ![Graviton Code Editor Interface][3]
 
@@ -30,9 +30,7 @@ Graviton 一些值得一说的特性有：
   * 提供英语、西班牙语和一些其他欧洲语言。
   * 适用于 Linux、Windows 和 macOS。
 
-
-
-我快速看来一下 Graviton，它可能不像 [VS Code][7] 或 [Brackets][8] 那样功能丰富，但对于一些简单的代码编辑来说，它并不是一个糟糕的工具。
+我快速看来一下 Graviton，它可能不像 [VS Code][7] 或 [Brackets][8] 那样功能丰富，但对于一些简单的代码编辑来说，它还算不错的工具。
 
 ### 下载并安装 Graviton
 
@@ -42,21 +40,19 @@ Graviton 一些值得一说的特性有：
 
 你可以在其发布页面上找到最新版本的 Graviton。Debian 和 [Ubuntu 用户可以使用 .deb 安装][10]。它已提供 [AppImage][11]，以便可以在其他发行版中使用它。DMG 和 EXE 文件也分别可用于 macOS 和 Windows。
 
-[下载 Graviton][12]
+- [下载 Graviton][12]
 
 如果你有兴趣，你可以在 GitHub 仓库中找到 Graviton 的源代码：
 
-[GitHub 中 Graviton 的源码][13]
+- [GitHub 中 Graviton 的源码][13]
 
 如果你决定使用 Graviton 并发现了一些问题，请在[此处][14]写一份错误报告。如果你使用 GitHub，你可能想为 Graviton 项目加星。这可以提高开发者的士气，因为他知道有更多的用户欣赏他的努力。
 
 如果你看到现在，我相信你了解[如何从源码安装软件][16]
 
-**写在最后**
+### 写在最后
 
 有时，简单本身就成了一个特性，而 Graviton 专注于极简可以帮助它在已经拥挤的代码编辑器世界中获取一席之地。
-
-并且它是 FOSS 软件，我们尝试突出开源软件。如果你知道一些有趣的开源软件，并且想要更多的人知道，[请给我们留言][17]
 
 --------------------------------------------------------------------------------
 
@@ -65,7 +61,7 @@ via: https://itsfoss.com/graviton-code-editor/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
