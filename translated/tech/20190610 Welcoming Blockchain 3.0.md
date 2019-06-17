@@ -1,3 +1,11 @@
+[#]: collector: (lujun9972)
+[#]: translator: (murphyzhao)
+[#]: reviewer: (wxy)
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Welcoming Blockchain 3.0)
+[#]: via: (https://www.ostechnix.com/welcoming-blockchain-3-0/)
+[#]: author: (sk https://www.ostechnix.com/author/sk/)
 
 迎接区块链 3.0
 ======
