@@ -7,46 +7,44 @@
 [#]: via: (https://opensource.com/article/19/5/startups-release-code)
 [#]: author: (Clément Flipo https://opensource.com/users/cl%C3%A9ment-flipo)
 
-Why startups should release their code as open source
+为什么初创公司应该将代码开源
 ======
-Dokit wondered whether giving away its knowledge as open source was a
-bad business decision, but that choice has been the foundation of its
-success.
+Dokit 曾经怀疑将自己的知识开源可能是一个失败的商业决策，然而正是这个选择奠定了它的成功。
 ![open source button on keyboard][1]
 
-It's always hard to recall exactly how a project started, but sometimes that can help you understand that project more clearly. When I think about it, our platform for creating user guides and documentation, [Dokit][2], came straight out of my childhood. Growing up in a house where my toys were Meccano and model airplane kits, the idea of making things, taking individual pieces and putting them together to create a new whole, was always a fundamental part of what it meant to play. My father worked for a DIY company, so there were always signs of building, repair, and instruction manuals around the house. When I was young, my parents sent me to join the Boy Scouts, where we made tables, tents and mud ovens, which helped foster my enjoyment of shared learning that I later found in the open source movement.
+回想一个项目开展最初期的细节并不是一件容易的事情，但有时候可以帮助你更清晰地理解这个项目。如果让我来说，关于 [Dokit][2] 这个用来创建用户手册和文档的平台的最早的想法来自我的童年。小时候我家里都是 Meccano（译注：一种类似乐高的拼装玩具）和飞机模型之类的玩具，对于我来说，游戏中很重要的一部分就是动手制作，把独立的零件组装在一起来创造一个新的东西。我父亲在一家 DIY 公司工作，所以家里的很多东西也都和建筑、修理，以及使用说明书有关。小的时候父母还让我参加了童子军，在那里我们制作桌子和帐篷，还有泥巴做的烧烤炉，这些事情都培养了我在共同学习中感受到的乐趣，就像我在开源活动中感受到的一样。
 
-The art of repairing things and recycling products that I learned in childhood became part of what I did for a job. Then it became my ambition to take the reassuring feel of learning how to make and do and repair at home or in a group—but put it online. That inspired Dokit's creation.
+在童年学到的修理东西和回收产品的艺术后来成为了我工作的一部分。后来我决心要用线上的方式，还原这种在家里或者小组里学习如何制作和修理东西时的那种非常棒的感觉。Dokit 就从这个想法中诞生了。
 
-### The first months
+### 创业初期
 
-It hasn't always been easy, but since founding our company in 2017, I've realized that the biggest and most worthwhile goals are generally always difficult. If we were to achieve our plan to revolutionize the way [old-fashioned manuals and user guides are created and published][3], and maximize our impact in what we knew all along would be a niche market, we knew that a guiding mission was crucial to how we organized everything else. It was from there that we reached our first big decision: to [quickly launch a proof of concept using an existing open source framework][4], MediaWiki, and from there to release all of our code as open source.
+事情并非一帆风顺，在我们的公司于 2017 年成立之后，我很快就意识到那些最庞大、最值得奋斗的目标一般来说也总是最困难的。如果想要实现我们的计划 —— 彻底改变 [人们旧有的编写和发行说明书和用户手册的方式][3]，并且在这个细分市场（我们非常清楚这一点）里取得最大的影响力 —— 那么确立一个主导任务就十分关键，它关乎项目的组织方式。我们据此做出了第一个重要决策：首先 [在短时间内使用一个已有的开源框架 MediaWiki 制作产品原型来验证我们的想法][4]，然后将我们的全部代码都作为开源项目发布。
 
-In retrospect, this decision was made easier by the fact that [MediaWiki][5] was already up and running. With 15,000 developers already active around the world and on a platform that included 90% of the features we needed to meet our minimum viable product (MVP), things would have no doubt been harder without support from the engine that made its name by powering Wikipedia. Confluence, a documentation platform in use by many enterprises, offers some good features, but in the end, it was an easy choice between the two.
+当时 [MediaWiki][5] 已经在正常运作了，事后看来，这一点让我们的决策变得容易了许多。这个平台已经拥有我们设想的最小可用产品（MVP）所需要的 90% 的功能，并且在全世界范围内有 15000 名活跃的开发者。MediaWiki 因为是维基百科的驱动引擎而小有名气，如果没有来自它的支持，事情对我们来说无疑会困难很多。还有一个许多公司都在使用的文档平台 Confluence 也有一些不错的功能，但是最终还是不难在这两者之间做出选择。
 
-Placing our faith in the community, we put the first version of our platform straight onto GitHub. The excitement of watching the world's makers start using our platform, even before we'd done any real advertising, felt like an early indication that we were on the right track. Although the [maker and Fablab movements][6] encourage users to share instructions, and even sets out this expectation in the [Fablab charter][7] (as stated by MIT), in reality, there is a lack of real documentation.
+出于对 Github 的信赖，我们把自己平台的初始版本完全放在了这个社区上。我们甚至还没有真正开始进行推广，就已经可以看到世界各地的制造者开始使用我们的平台，这种令人激动的感觉似乎说明我们的选择是正确的。尽管 [制造商以及 Fablab 运动][6]（译注： Fablab 是一种向个人提供包括 3D 打印在内的电子化制造服务的小型工坊）都在鼓励用户积极分享说明材料，并且在 [Fablab 契约][7] 中也写明了这一点，现实中像模像样的文档还是不太多见。
 
-The first and most significant reason people like using our platform is that it responds to the very real problem of poor documentation inside an otherwise great movement—one that we knew could be even better. To us, it felt a bit like we were repairing a gap in the community of makers and DIY. Within a year of our launch, Fablabs, [Wikifab][8], [Open Source Ecology][9], [Les Petits Debrouillards][10], [Ademe][11], and [Low-Tech Lab][12] had installed our tool on their servers for creating step-by-step tutorials.
+人们喜欢使用我们这个平台的首要原因是它可以解决一个非常实在的问题：一个本来还不错的项目，却使用了非常糟糕的文档 —— 其实这个项目本来可以变得更好的。对我们来说，这有点儿像是在修复 DIY 以及动手爱好者社区里的一个裂缝。在我们的平台发布后的一年之内，Fablabs、[Wikifab][8]、[Open Source Ecology][9]、[Les Petits Debrouillards][10]、[Ademe][11] 以及 [Low-Tech Lab][12] 都在他们的服务器上安装了我们的工具，用来制作逐步引导的教程。
 
-Before even putting out a press release, one of our users, Wikifab, began to get praise in national media as "[the Wikipedia of DIY][13]." In just two years, we've seen hundreds of communities launched on their own Dokits, ranging from the fun to the funny to the more formal product guides. Again, the power of the community is the force we want to harness, and it's constantly amazing to see projects—ranging from wind turbines to pet feeders—develop engaging product manuals using the platform we started.
+甚至在我们还没有发新闻稿之前，我们的其中一个用户 Wikifab 就开始在全国性媒体上收到“DIY 界的维基百科”这样的称赞了。仅仅两年之内，我们看到有数百的社区都在他们自己的 Dokits 上开展了项目，从有意思的、搞笑的，到那种很正式的产品手册都有。这种社区的力量正是我们想要驾驭的，并且有这么多的项目 —— 从风力涡轮机到宠物喂食器 —— 都在使用我们创建的平台编写非常有吸引力的产品手册，这件事情真的令我们赞叹不已。
 
-### Opening up open source
+### 项目开源
 
-Looking back at such a successful first two years, it's clear to us that our choice to use open source was fundamental to how we got where we are as fast as we did. The ability to gather feedback in open source is second-to-none. If a piece of code didn't work, [someone could tell us right away][14]. Why wait on appointments with consultants if you can learn along with those who are already using the service you created?
+回头看看前两年的成功，很明显选择开源是我们能迅速取得成果的关键因素。最有价值的事情就是在开源项目中获得反馈的能力了。如果一段代码无法正常运行，[会有人立刻告诉我们][14]。如果可以从这些已经在使用你提供的服务的人那里学到这么多东西，为什么还要需要等着和顾问们开会呢？
 
-The level of engagement from the community also revealed the potential (including the potential interest) in our market. [Paris has a good and growing community of developers][15], but open source took us from a pool of a few thousand locally, and brought us to millions of developers all around the world who could become a part of what we were trying to make happen. The open availability of our code also proved reassuring to our users and customers who felt safe that, even if our company went away, the code wouldn't.
+Github 社区对我们这个项目的关注程度也反映出了这个市场的潜力（包括利润上的潜力）。[巴黎有非常好的、成长迅速的开发者社区][15]（译注：Dokit 是一家设立在巴黎的公司），但是开源将我们从一个只有数千当地人的小池子里带到了全世界数百万的开发者身边，他们都将成为我们的创作中的一部分。与此同时，代码的开放性也让我们的用户和客户更加放心，因为即使我们这个公司不在了，代码仍然会存续下去。
 
-If that was most of what we thought might happen as a result of using open source, there were also surprises along the way. By adopting an open method, we found ourselves gaining customers, reputation, and perfectly targeted advertising that we didn't have to pay for out of our limited startup budget. We found that the availability of our code helped improve our recruitment process because we were able to test candidates using our code before we made hires, and this also helped simplify the onboarding journey for those we did hire.
+如果说上面这些都是在我们之前对开源的预期之中的话，其实这一路上也有不少惊喜。因为开源，我们获得了更多的客户、声望以及精准推广，这种推广本来以我们有限的预算是负担不起的，现在却不需要我们支付费用。开放代码还优化了我们的招聘流程，因为在雇佣之前就可以通过我们的代码来测试候选人，并且被雇佣之后的入职过程也会更加顺利。
 
-In what we see as a mixture of embarrassment and solidarity, the totally public nature of developers creating code in an open setting also helped drive up quality. People can share feedback with one another, but the public nature of the work also seems to encourage people to do their best. In the spirit of constant improvement and of continually building and rebuilding how Dokit works, supporting the community is something that we know we'd like to do more of and get better at in future.
+开发者在完全公开的情况下写代码，既有一点尴尬，同时也很团结，这对我们提升产品质量很有帮助。人们可以互相发表意见和反馈，并且因为工作都是完全公开的，人们似乎会尽可能地想做到最好。为了不断优化、不断重构 Dokit 的运行方式，我们明白未来应该在对社区的支持上做得更好。
 
-### Where to next?
+### 下一步是什么？
 
-Even with the faith we've always had in what we were doing, and seeing the great product manuals that have been developed using our software, it never stops being exciting to see our project grow, and we're certain that the future has good things in store.
+尽管我们对正在做的事情一直都很有信念，并且看到很多出色的产品说明书都是用我们的软件制作出来的，我们还是会对这个项目的成长不断地感到兴奋，并且非常确信未来一定会很好。
 
-In the early days, we found ourselves living a lot under the fear of distributing our knowledge for free. In reality, it was the opposite—open source gave us the ability to very rapidly build a startup that was sustainable from the beginning. Dokit is a platform designed to give its users the confidence to build, assemble, repair, and create entirely new inventions with the support of a community. In hindsight, we found we were doing the same thing by using open source to build a platform.
+在创业初期，我们对将自己的知识免费分发出去这件事还是非常担心的。事实证明正好相反 —— 正是开源让我们能够迅速构建起一个可持续的初创企业。Dokit 平台的设计初衷是通过社区的支持，让它的用户有信心去构建、组装、修理和创造全新的发明。事后看来，我们用开源的方式去构建了 Dokit 这个平台，这和 Dokit 本身想做的其实正好是同一件事情。
 
-Just like when doing a repair or assembling a physical product, it's only when you have confidence in your methods that things truly begin to feel right. Now, at the beginning of our third year, we're starting to see growing global interest as the industry responds to [new generations of customers who want to use, reuse, and assemble products][16] that respond to changing homes and lifestyles. By providing the support of an online community, we think we're helping to create circumstances in which people feel more confident in doing things for themselves.
+如同修理或者组装一件实体产品一样，只有当你对自己的方法有信心的时候，事情才会越来越顺利。现在，在我们创业的第三个年头，我们开始注意到全世界对这个领域的兴趣在增加，因为它迎合了出于不断变化的居家和生活方式的需求而 [想要使用、重复利用以及组装产品的新一代客户][16]。我们正是在通过线上社区的支持，创造一个让大家能够在自己动手做东西的时候感到更加有信心的平台。
 
 --------------------------------------------------------------------------------
 
