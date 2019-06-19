@@ -94,7 +94,7 @@ Kernel: 5.1.2-arch1-1-ARCH x86_64 Up: 1h 31m Mem: 2800.5/7884.2 MiB (35.5%)
 Storage: 465.76 GiB (80.8% used) Procs: 163 Shell: bash 5.0.7 inxi: 3.0.34
 ```
 
-[![Find Linux System Details Using inxi][1]][3]
+![][3]
 
 Find Linux System Details Using inxi
 
@@ -331,7 +331,7 @@ We can set different color schemes for inxi output using **-c** option. Yu can s
 
 Here is inxi output with and without **-c** option.
 
-[![inxi output without color scheme][1]][4]
+![][4]
 
 inxi output without color scheme
 
@@ -597,7 +597,7 @@ via: https://www.ostechnix.com/how-to-find-your-system-details-using-inxi/
 
 [a]: https://www.ostechnix.com/author/sk/
 [b]: https://github.com/lujun9972
-[1]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+[1]: https://www.ostechnix.com/wp-content/uploads/2016/08/inxi-520x245-1-720x340.png
 [2]: https://www.ostechnix.com/yay-found-yet-another-reliable-aur-helper/
 [3]: http://www.ostechnix.com/wp-content/uploads/2016/08/Find-Linux-System-Details-Using-inxi.png
 [4]: http://www.ostechnix.com/wp-content/uploads/2016/08/inxi-output-without-color-scheme.png
