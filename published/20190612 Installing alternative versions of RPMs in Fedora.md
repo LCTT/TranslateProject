@@ -1,24 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-10999-1.html)
 [#]: subject: (Installing alternative versions of RPMs in Fedora)
 [#]: via: (https://fedoramagazine.org/installing-alternative-rpm-versions-in-fedora/)
 [#]: author: (Adam Šamalík https://fedoramagazine.org/author/asamalik/)
 
-在 Fedora 中安装替代版本的 RPM 
+在 Fedora 中安装替代版本的 RPM 包
 ======
 
 ![][1]
 
-[模块化][2]（Modularity）使 Fedora 能够在仓库中提供替代版本的 RPM 软件包。为每个 Fedroa 版本原生构建了多个不同的应用、语言运行时和工具版本。
+<ruby>[模块化][2]<rt>Modularity</rt></ruby>使 Fedora 能够在仓库中提供替代版本的 RPM 软件包。每个 Fedroa 版本可以原生构建不同应用、语言运行时和工具版本的多个版本。
 
-Fedora Magazine 大约一年前就写了 [Fedora 28 服务器版的模块化][3]。那时，它只是一个有附加内容的可选仓库，并且明确只支持服务器版。到目前为止，它已经发生了很多变化，现在**模块化是 Fedora 发行版的核心部分**。一些软件包已完全变成模块。在编写本文时，Fedora 30 的 49,464 个二进制 RPM 软件包中的 1,119（2.26％）来自一个模块（[关于这个数字的更多信息][4]）。
+Fedora Magazine 大约一年前就写了 [Fedora 28 服务器版的模块化][3]。那时，它只是一个有附加内容的可选仓库，并且明确只支持服务器版。到目前为止，它已经发生了很多变化，现在**模块化是 Fedora 发行版的核心部分**。一些软件包已完全变成模块。在编写本文时，Fedora 30 的 49,464 个二进制 RPM 软件包中的 1,119（2.26％）来自模块（[关于这个数字的更多信息][4]）。
 
 ### 模块化基础知识
 
-由于许多软件包有不同的版本会让人难以承受（并且难以管理），所以包被分组为**模块**，这代表一个应用程序、一个语言运行时或任何其他合理的组。
+由于许多软件包有不同的版本会让人难以承受（并且难以管理），所以包被分组为**模块**，它可以代表一个应用程序、一个语言运行时或任何其他合理的组。
 
 模块通常有多个**流**，这通常代表软件的主要版本。它可以并行使用，但在给定系统上只能安装每个模块的一个流。
 
@@ -28,9 +28,9 @@ Fedora Magazine 大约一年前就写了 [Fedora 28 服务器版的模块化][3]
 
 ### 实际使用模块化
 
-当你在 Fedora 系统上安装 RPM 软件包时，它很可能它来自模块流。你可能没有注意到的原因之一是模块化的核心原则之一是在你要了解之前保持不可见。
+当你在 Fedora 系统上安装 RPM 软件包时，它很可能它来自模块流。你可能没有注意到的原因之一是模块化的核心原则之一是在你探究之前保持不可见。
 
-让我们比较以下两种情况。首先，安装流行的 _i3_ 平铺窗口管理器，然后安装极简化的 _dwm_ 窗口管理器：
+让我们比较以下两种情况。首先，安装流行的 i3 平铺窗口管理器，然后安装极简化的 dwm 窗口管理器：
 
 ```
 $ sudo dnf install i3
@@ -38,7 +38,7 @@ $ sudo dnf install i3
 Done!
 ```
 
-正如所料，上面的命令会在系统上安装 _i3_ 包及其依赖项。这里没有其他事情发生。但另一个会怎么样？
+正如所料，上面的命令会在系统上安装 i3 包及其依赖项。这里没有其他事情发生。但另一个会怎么样？
 
 ```
 $ sudo dnf install dwm
@@ -49,11 +49,11 @@ Enabling module streams:
 Done!
 ```
 
-感觉是一样的，但后台发生了一些事情 。它启用了默认的 _dwm_ 模块流 （_6.1_），并且安装了模块中的 _dwm_ 包。
+感觉是一样的，但后台发生了一些事情 。它启用了默认的 dwm 模块流（6.1），并且安装了模块中的 dwm 包。
 
 为了保持透明，输出中有一条关于模块自动启用的消息。但除此之外，用户不需要了解模块化的任何信息，以便按照他们一贯的方式使用他们的系统。
 
-但如果他们使用模块化方式呢？让我们看看如何安装不同版本的 _dwm_。
+但如果他们使用模块化方式呢？让我们看看如何安装不同版本的 dwm。
 
 使用以下命令查看可用的模块流：
 
@@ -68,9 +68,9 @@ dwm                 6.2                   ...
 Hint: [d]efault, [e]nabled, [x]disabled, [i]nstalled
 ```
 
-输出显示 _dwm_ 模块有四个流，_6.1_ 是默认值。
+输出显示 dwm 模块有四个流，6.1 是默认值。
 
-要安装不同版本的 _dwm_ 包，例如，安装 _6.2_ 的流。启用他，然后使用以下两个命令安装软件包：
+要安装不同版本的 dwm 包，例如，安装 6.2 的流。启用它，然后使用以下两个命令安装软件包：
 
 ```
 $ sudo dnf module enable dwm:6.2
@@ -120,7 +120,7 @@ via: https://fedoramagazine.org/installing-alternative-rpm-versions-in-fedora/
 作者：[Adam Šamalík][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -128,6 +128,6 @@ via: https://fedoramagazine.org/installing-alternative-rpm-versions-in-fedora/
 [b]: https://github.com/lujun9972
 [1]: https://fedoramagazine.org/wp-content/uploads/2019/06/modularity-f30-816x345.jpg
 [2]: https://docs.pagure.org/modularity
-[3]: https://fedoramagazine.org/modularity-fedora-28-server-edition/
+[3]: https://linux.cn/article-10479-1.html
 [4]: https://blog.samalik.com/2019/06/12/counting-modularity-packages.html
 [5]: https://docs.fedoraproject.org/en-US/modularity/using-modules/
