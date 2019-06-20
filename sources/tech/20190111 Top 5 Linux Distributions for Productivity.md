@@ -93,11 +93,39 @@ Figure 4: SSH’ing into a remote server on Debian.
 
 And because you can select which desktop you want (from GNOME, Xfce, KDE, Cinnamon, MATE, LXDE), you can be sure to have the interface that best matches your work habits.
 
-### Education
+### 教育
 
-如果你是一名老师或者学生，抑或是其他从事与教育相关工作的人士，你需要适当的工具来变得更具创造力。之前，有 Edubuntu 这样的版本。这一版本从未跌出教育类相关发行版排名的前列。然而，自从 Ubuntu 14.04 版之后这一发行版就再也没有更新。幸运的是，现在有一款基于 openSUSE 的新的以教育为基础的发行版有望夺摘得桂冠。这一改版叫做 [openSUSE:Education-Li-f-e][16] (Linux For Education - Figure 5), 它基于 openSUSE Leap 42.1 （所以它可能稍微有一点过时）。
+如果你是一名老师或者学生，抑或是其他从事与教育相关工作的人士，你需要适当的工具来变得更具创造力。之前，有 Edubuntu 这样的版本。这一版本从未跌出教育类相关发行版排名的前列。然而，自从 Ubuntu 14.04 版之后这一发行版就再也没有更新。还好，现在有一款基于 openSUSE 的新的以教育为基础的发行版有望夺摘得桂冠。这一改版叫做 [openSUSE:Education-Li-f-e][16] (Linux For Education - Figure 5), 它基于 openSUSE Leap 42.1 （所以它可能稍微有一点过时）。
 
-If you are a teacher or student, or otherwise involved in education, you need the right tools to be productive. Once upon a time, there existed the likes of Edubuntu. That distribution never failed to be listed in the top of education-related lists. However, that distro hasn’t been updated since it was based on Ubuntu 14.04. Fortunately, there’s a new education-based distribution ready to take that title, based on openSUSE. This spin is called [openSUSE:Education-Li-f-e][16] (Linux For Education - Figure 5), and is based on openSUSE Leap 42.1 (so it is slightly out of date).
+openSUSE:Education-Li-f-e 包含了一下工具：
+
+  * Brain Workshop（大脑工坊） - 一种基于 dual n-back 模式的大脑训练软件（译注：dual n-back 训练是一种科学的智力训练方法，可以改善人的工作记忆和流体智力）
+  
+  * GCompris - 一种针对青少年的教育软件包
+
+  * gElemental - 一款元素周期表查看工具
+
+  * iGNUit - 一款通用的记忆卡片工具
+
+  * Little Wizard - 基于 Pascal 语言的少儿编程开发环境
+
+  * Stellarium - 天文模拟器
+
+  * TuxMath -  数学入门游戏
+
+  * TuxPaint - 一款少儿绘画软件
+
+  * TuxType - 一款为少儿准备的打字入门软件
+
+  * wxMaxima - A cross platform GUI for the computer algebra system
+
+  * Inkscape - Vector graphics program
+
+  * GIMP - Graphic image manipulation program
+
+  * Pencil - GUI prototyping tool
+
+  * Hugin - Panorama photo stitching and HDR merging program
 
 openSUSE:Education-Li-f-e includes tools like:
 
