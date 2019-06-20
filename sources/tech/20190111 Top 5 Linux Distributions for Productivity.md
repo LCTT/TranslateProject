@@ -12,11 +12,11 @@
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/productivity_main.jpg?itok=2IKyg_7_)
 
-必须承认的是，这样一个热门的话题其实很难被总结出来。为什么呢？首先，Linux 在设计层面就是一种有生产力的操作系统。由于她极强的可靠性和稳定的平台，使得工作的开展变得简易化。其次为了衡量工作的效率，你需要考虑到哪项工作需要得到生产力方面的助推。是普通办公？开发类工作？学校事务？数据挖掘？或者是人力资源？你可以看到这一问题变得复杂起来了。
+必须承认的是，这样一个热门的话题其实很难被总结出来。为什么呢？首先，Linux 在设计层面就是一种有生产力的操作系统。由于它极强的可靠性和稳定的平台，使得工作的开展变得简易化。其次为了衡量工作的效率，你需要考虑到哪项工作需要得到生产力方面的助推。是普通办公？开发类工作？学校事务？数据挖掘？或者是人力资源？你可以看到这一问题变得复杂起来了。
 
 I have to confess, this particular topic is a tough one to address. Why? First off, Linux is a productive operating system by design. Thanks to an incredibly reliable and stable platform, getting work done is easy. Second, to gauge effectiveness, you have to consider what type of work you need a productivity boost for. General office work? Development? School? Data mining? Human resources? You see how this question can get somewhat complicated.
 
-然而，这并不意味着
+然而，这并不意味着那些
 
 That doesn’t mean, however, that some distributions aren’t able to do a better job of configuring and presenting that underlying operating system into an efficient platform for getting work done. Quite the contrary. Some distributions do a much better job of “getting out of the way,” so you don’t find yourself in a work-related hole, having to dig yourself out and catch up before the end of day. These distributions help strip away the complexity that can be found in Linux, thereby making your workflow painless.
 
@@ -94,6 +94,8 @@ Figure 4: SSH’ing into a remote server on Debian.
 And because you can select which desktop you want (from GNOME, Xfce, KDE, Cinnamon, MATE, LXDE), you can be sure to have the interface that best matches your work habits.
 
 ### Education
+
+如果你是一名老师或者学生，抑或是其他从事与教育相关工作的人士，你需要适当的工具来变得更具创造力。之前，有 Edubuntu 这样的版本。这一版本从未跌出教育类相关发行版排名的前列。然而，自从 Ubuntu 14.04 版之后这一发行版就再也没有更新。幸运的是，现在有一款基于 openSUSE 的新的以教育为基础的发行版有望夺摘得桂冠。这一改版叫做 [openSUSE:Education-Li-f-e][16] (Linux For Education - Figure 5), 它基于 openSUSE Leap 42.1 （所以它可能稍微有一点过时）。
 
 If you are a teacher or student, or otherwise involved in education, you need the right tools to be productive. Once upon a time, there existed the likes of Edubuntu. That distribution never failed to be listed in the top of education-related lists. However, that distro hasn’t been updated since it was based on Ubuntu 14.04. Fortunately, there’s a new education-based distribution ready to take that title, based on openSUSE. This spin is called [openSUSE:Education-Li-f-e][16] (Linux For Education - Figure 5), and is based on openSUSE Leap 42.1 (so it is slightly out of date).
 
