@@ -1,0 +1,25 @@
+[#]: collector: (lujun9972)
+[#]: translator: ( )
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Three Ways to Lock and Unlock User Account in Linux)
+[#]: via: (https://www.2daygeek.com/lock-unlock-disable-enable-user-account-linux/)
+[#]: author: ( )
+
+Three Ways to Lock and Unlock User Account in Linux
+======
+
+--------------------------------------------------------------------------------
+
+via: https://www.2daygeek.com/lock-unlock-disable-enable-user-account-linux/
+
+作者：[][a]
+选题：[lujun9972][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: 
+[b]: https://github.com/lujun9972
