@@ -14,23 +14,19 @@
 
 必须承认的是，这样一个热门的话题其实很难被总结出来。为什么呢？首先，Linux 在设计层面就是一种有生产力的操作系统。由于它极强的可靠性和稳定的平台，使得工作的开展变得简易化。其次为了衡量工作的效率，你需要考虑到哪项工作需要得到生产力方面的助推。是普通办公？开发类工作？学校事务？数据挖掘？或者是人力资源？你可以看到这一问题变得复杂起来了。
 
-I have to confess, this particular topic is a tough one to address. Why? First off, Linux is a productive operating system by design. Thanks to an incredibly reliable and stable platform, getting work done is easy. Second, to gauge effectiveness, you have to consider what type of work you need a productivity boost for. General office work? Development? School? Data mining? Human resources? You see how this question can get somewhat complicated.
+然而，这并不意味着那些基于推动底层操作系统成为更为高效平台的发行版们可以在配置和呈现方面做的更好。恰恰相反，许多发行版在偏离生产力这条道路上越走越远，所以你不会意识到你自己处在工作的窘境中，而是继续挖掘自己的潜力在工期结束之前拼命赶上进度。这些 Linux 发行版可以帮助你化繁为简，因此或许可以减少你工作流程中的痛点。
 
-然而，这并不意味着那些
+让我们来看一下这些发行版并为你找出适合你的最佳选择。为了更具条理，我按照生产力诉求把他们分成了几类。这项任务本身也是一种挑战，因为每个人在生产力提升上的需要是千差万别的。然而，我所关注的是下列的几项：
 
-That doesn’t mean, however, that some distributions aren’t able to do a better job of configuring and presenting that underlying operating system into an efficient platform for getting work done. Quite the contrary. Some distributions do a much better job of “getting out of the way,” so you don’t find yourself in a work-related hole, having to dig yourself out and catch up before the end of day. These distributions help strip away the complexity that can be found in Linux, thereby making your workflow painless.
+  * 普通生产力: 适于从事复杂工作并希望提升工作效率。
 
-Let’s take a look at the distros I consider to be your best bet for productivity. To help make sense of this, I’ve divided them into categories of productivity. That task itself was challenging, because everyone’s productivity varies. For the purposes of this list, however, I’ll look at:
+  * 平面设计: 适于从事设计创造和图像处理的人们。
 
-  * General Productivity: For those who just need to work efficiently on multiple tasks.
+  * 开发: 适于那些使用 Linux 桌面发行版来进行编程工作。
 
-  * Graphic Design: For those that work with the creation and manipulation of graphic images.
+  * 管理人员: 适于那些需要某些版本来促进一体化的管理任务的人员。
 
-  * Development: For those who use their Linux desktops for programming.
-
-  * Administration: For those who need a distribution to facilitate their system administration tasks.
-
-  * Education: For those who need a desktop distribution to make them more productive in an educational environment.
+  * 教育: 适于那些需要桌面发行版可以助力他们在教育领域更创造力的人们。
 
 
 
@@ -117,45 +113,15 @@ openSUSE:Education-Li-f-e 包含了一下工具：
 
   * TuxType - 一款为少儿准备的打字入门软件
 
-  * wxMaxima - A cross platform GUI for the computer algebra system
+  * wxMaxima - 一个跨平台的计算机代数系统
 
-  * Inkscape - Vector graphics program
+  * Inkscape - 矢量图形编辑软件
 
-  * GIMP - Graphic image manipulation program
-
-  * Pencil - GUI prototyping tool
-
-  * Hugin - Panorama photo stitching and HDR merging program
-
-openSUSE:Education-Li-f-e includes tools like:
-
-  * Brain Workshop - A dual n-back brain exercise
-
-  * GCompris - An educational software suite for young children
-
-  * gElemental - A periodic table viewer
-
-  * iGNUit - A general purpose flash card program
-
-  * Little Wizard - Development environment for children based on Pascal
-
-  * Stellarium - An astronomical sky simulator
-
-  * TuxMath - An math tutor game
-
-  * TuxPaint - A drawing program for young children
-
-  * TuxType - An educational typing tutor for children
-
-  * wxMaxima - A cross platform GUI for the computer algebra system
-
-  * Inkscape - Vector graphics program
-
-  * GIMP - Graphic image manipulation program
+  * GIMP - 图像处理软件（译注：被誉为 Linux 上的 PhotoShop）
 
   * Pencil - GUI prototyping tool
 
-  * Hugin - Panorama photo stitching and HDR merging program
+  * Hugin - 全景照片拼接及 HDR 效果混合软件
 
 
 ![Education][18]
@@ -166,7 +132,7 @@ Figure 5: The openSUSE:Education-Li-f-e distro has plenty of tools to help you b
 
 Also included with openSUSE:Education-Li-f-e is the [KIWI-LTSP Server][19]. The KIWI-LTSP Server is a flexible, cost effective solution aimed at empowering schools, businesses, and organizations all over the world to easily install and deploy desktop workstations. Although this might not directly aid the student to be more productive, it certainly enables educational institutions be more productive in deploying desktops for students to use. For more information on setting up KIWI-LTSP, check out the openSUSE [KIWI-LTSP quick start guide][20].
 
-Learn more about Linux through the free ["Introduction to Linux" ][21]course from The Linux Foundation and edX.
+Learn more about Linux through the free ["Introduction to Linux"][21]course from The Linux Foundation and edX.
 
 --------------------------------------------------------------------------------
 
