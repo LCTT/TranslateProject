@@ -71,7 +71,7 @@ MatterMost 无疑相当出色，有了 5000 万巨额资金的注入，对于那
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[wahailin](https://github.com/译者ID)
+译者：[wahailin](https://github.com/wahailin)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
