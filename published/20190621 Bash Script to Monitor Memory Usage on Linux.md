@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11007-1.html)
 [#]: subject: (Bash Script to Monitor Memory Usage on Linux)
 [#]: via: (https://www.2daygeek.com/linux-bash-script-to-monitor-memory-utilization-usage-and-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-在 Linux 上用 Bash 脚本监控内存使用情况
+用 Bash 脚本监控 Linux 上的内存使用情况
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201906/23/085446setqkshf5zk0tn2x.jpg)
 
 目前市场上有许多开源监控工具可用于监控 Linux 系统的性能。当系统达到指定的阈值限制时，它可以发送电子邮件警报。它可以监视 CPU 利用率、内存利用率、交换利用率、磁盘空间利用率等所有内容。
 
@@ -20,7 +22,7 @@
 
 如果只想在系统达到给定阈值时通过邮件获取当前内存利用率百分比，请使用以下脚本。
 
-这是非常简单直接的单行脚本。在大多数情况下，我更喜欢使用这种方法。
+这是个非常简单直接的单行脚本。在大多数情况下，我更喜欢使用这种方法。
 
 当你的系统达到内存利用率的 80％ 时，它将触发一封电子邮件。
 
@@ -28,7 +30,7 @@
 */5 * * * * /usr/bin/free | awk '/Mem/{printf("RAM Usage: %.2f%\n"), $3/$2*100}' |  awk '{print $3}' | awk '{ if($1 > 80) print $0;}' | mail -s "High Memory Alert" 2daygeek@gmail.com
 ```
 
-**注意：**你需要更改电子邮件地址而不是我们的电子邮件地址。此外，你可以根据你的要求更改内存利用率阈值。
+**注意：**你需要更改电子邮件地址而不是使用我们的电子邮件地址。此外，你可以根据你的要求更改内存利用率阈值。
 
 **输出：**你将收到类似下面的电子邮件提醒。
 
@@ -36,21 +38,19 @@
 High Memory Alert: 80.40%
 ```
 
-我们过去添加了许多有用的 shel l脚本。如果要查看这些内容，请导航至以下链接。
+我们过去添加了许多有用的 shell 脚本。如果要查看这些内容，请导航至以下链接。
 
  * [如何使用 shell 脚本自动执行日常活动？][1]
 
 ### 方法-2：用 Linux Bash 脚本监视内存利用率并发送电子邮件
 
-如果要在邮件警报中获取有关内存利用率的更多信息。
-
-使用以下脚本，其中包括基于 `top` 命令和 `ps` 命令的最高内存利用率进程详细信息。
+如果要在邮件警报中获取有关内存利用率的更多信息。使用以下脚本，其中包括基于 `top` 命令和 `ps` 命令的最高内存利用率和进程详细信息。
 
 这将立即让你了解系统的运行情况。
 
 当你的系统达到内存利用率的 “80％” 时，它将触发一封电子邮件。
 
-**注意：**你需要更改电子邮件地址而不是我们的电子邮件地址。 此外，你可以根据你的要求更改内存利用率阈值。
+**注意：**你需要更改电子邮件地址而不是使用我们的电子邮件地址。此外，你可以根据你的要求更改内存利用率阈值。
 
 ```
 # vi /opt/scripts/memory-alert.sh
@@ -86,9 +86,9 @@ fi
 */5 * * * * /bin/bash /opt/scripts/memory-alert.sh
 ```
 
-**注意：**由于脚本计划每 5 分钟运行一次，因此你将在 5 分钟后收到电子邮件提醒（但不是 5 分钟，而是取决于具体时间）。
+**注意：**由于脚本计划每 5 分钟运行一次，因此你将在最多 5 分钟后收到电子邮件提醒（但不是 5 分钟，取决于具体时间）。
 
-比如说。 如果你的系统达到 8.25 的给定限制，那么你将在再过 5 分钟收到电子邮件警报。 希望现在说清楚了。
+比如说，如果你的系统达到 8.25 的给定限制，那么你将在 5 分钟内收到电子邮件警报。希望现在说清楚了。
 
 **输出：**你将收到类似下面的电子邮件提醒。
 
@@ -141,7 +141,7 @@ via: https://www.2daygeek.com/linux-bash-script-to-monitor-memory-utilization-us
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
