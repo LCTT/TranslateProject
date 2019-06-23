@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11008-1.html)
 [#]: subject: (Exploring /run on Linux)
 [#]: via: (https://www.networkworld.com/article/3403023/exploring-run-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -12,7 +12,7 @@
 
 > Linux 系统在运行时数据方面的工作方式发生了微小但重大的变化。
 
-![Sandra Henry-Stocker][1]
+![](https://img.linux.net.cn/data/attachment/album/201906/23/092816aqczi984w30j8k12.jpg)
 
 如果你没有密切关注，你可能没有注意到 Linux 系统在运行时数据方面的工作方式有一些小但重大的变化。 它重新组织了文件系统中可访问的方式和位置，而这个变化在大约八年前就开始了。虽然这种变化可能不足以让你的袜子变湿，但它在 Linux 文件系统中提供了更多一致性，值得进行一些探索。
 
@@ -107,7 +107,7 @@ via: https://www.networkworld.com/article/3403023/exploring-run-on-linux.html
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
