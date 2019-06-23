@@ -9,16 +9,16 @@
 
 深入学习 Linux 内核模块
 ======
-The lsmod command can tell you which kernel modules are currently loaded on your system, along with some interesting details about their use.
+lsmod 命令能够告诉你当前系统上加载了哪些内核模块，以及关于使用它们的一些有趣的细节。
 ![Rob Oo \(CC BY 2.0\)][1]
 
 ### 什么是 Linux 内核模块？
 
-Kernel modules are chunks of code that are loaded and unloaded into the kernel as needed, thus extending the functionality of the kernel without requiring a reboot. In fact, unless users inquire about modules using commands like **lsmod** , they won't likely know that anything has changed.
+内核模块是根据需要加载到内核中或从内核中卸载的代码块，因此无需重启就可以扩展内核的功能。事实上，除非用户使用类似 **lsmod** 这样的命令来查询模块，否则用户不太可能知道内核发生的任何变化。
 
-One important thing to understand is that there are _lots_ of modules that will be in use on your Linux system at all times and that a lot of details are available if you're tempted to dive into the details.
+需要理解的重要一点是，在你的 Linux 系统上总会有_很多_模块可用，并且如果你想深入了解细节，那么有很多细节可以获得。
 
-One of the prime ways that lsmod is used is to examine modules when a system isn't working properly. However, most of the time, modules load as needed and users don't need to be aware of how they are working.
+lsmod 的主要用途之一是在系统不能正常工作时检查模块。然而，大多数情况下，模块是根据需要加载的，而且用户不需要知道它们如何工作。
 
 **[ Also see:[Must-know Linux Commands][2] ]**
 
