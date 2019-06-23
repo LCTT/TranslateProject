@@ -7,14 +7,16 @@
 [#]: via: (https://www.networkworld.com/article/3403023/exploring-run-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Exploring /run on Linux
+探索 Linux 上的 /run
 ======
-There's been a small but significant change in how Linux systems work with respect to runtime data.
+
+> Linux 系统在运行时数据方面的工作方式发生了微小但重大的变化。
+
 ![Sandra Henry-Stocker][1]
 
-If you haven’t been paying close attention, you might not have noticed a small but significant change in how Linux systems work with respect to runtime data. A re-arrangement of how and where it’s accessible in the file system started taking hold about eight years ago. And while this change might not have been big enough of a splash to wet your socks, it provides some additional consistency in the Linux file system and is worthy of some exploration.
+如果你没有密切关注，你可能没有注意到 Linux 系统在运行时数据方面的工作方式有一些小但重大的变化。 它重新组织了文件系统中可访问的方式和位置，而这个变化在大约八年前就开始了。虽然这种变化可能不足以让你的袜子变湿，但它在 Linux 文件系统中提供了更多一致性，值得进行一些探索。
 
-To get started, cd your way over to /run. If you use df to check it out, you’ll see something like this:
+要开始，请转到 `/run`。如果你使用 `df` 来检查它，你会看到这样的输出：
 
 ```
 $ df -k .
@@ -22,18 +24,16 @@ Filesystem     1K-blocks  Used Available Use% Mounted on
 tmpfs             609984  2604    607380   1% /run
 ```
 
-Identified as a “tmpfs” (temporary file system), we know that the files and directories in /run are not stored on disk but only in volatile memory. They represent data kept in memory (or disk-based swap) that takes on the appearance of a mounted file system to allow it to be more accessible and easier to manage.
+它被识别为 “tmpfs”（临时文件系统），因此我们知道 `/run` 中的文件和目录没有存储在磁盘上，而只存储在内存中。它们表示保存在内存（或基于磁盘的交换空间）中的数据，它看起来像是一个已挂载的文件系统，这个可以使其更易于访问和管理。
 
-**[ Two-Minute Linux Tips:[Learn how to master a host of Linux commands in these 2-minute video tutorials][2] ]**
-
-/run is home to a wide assortment of data. For example, if you take a look at /run/user, you will notice a group of directories with numeric names.
+`/run` 是各种各样数据的家园。例如，如果你查看 `/run/user`，你会注意到一组带有数字名称的目录。
 
 ```
 $ ls /run/user
 1000  1002  121
 ```
 
-A long file listing will clarify the significance of these numbers.
+使用长文件列表可以发现这些数字的重要性。
 
 ```
 $ ls -l
@@ -43,9 +43,9 @@ drwx------ 5 dory dory 120 Jun 16 16:14 1002
 drwx------ 8 gdm  gdm  220 Jun 14 12:18 121
 ```
 
-This allows us to see that each directory is related to a user who is currently logged in or to the display manager, gdm. The numbers represent their UIDs. The content of each of these directories are files that are used by running processes.
+我们看到每个目录与当前登录的用户或显示管理器 gdm 相关。数字代表他们的 UID。每个目录的内容都是运行中的进程所使用的文件。
 
-The /run/user files represent only a very small portion of what you’ll find in /run. There are lots of other files, as well. A handful contain the process IDs for various system processes.
+`/run/user` 文件只是你在 `/run` 中找到的一小部分。还有很多其他文件。有一些文件包含了各种系统进程的进程 ID。
 
 ```
 $ ls *.pid
@@ -53,7 +53,7 @@ acpid.pid  atopacctd.pid  crond.pid  rsyslogd.pid
 atd.pid    atop.pid       gdm3.pid   sshd.pid
 ```
 
-As shown below, that sshd.pid file listed above contains the process ID for the ssh daemon (sshd).
+如下所示，上面列出的 `sshd.pid` 文件包含 ssh 守护程序（`sshd`）的进程 ID。
 
 ```
 $ cat sshd.pid
@@ -67,7 +67,7 @@ dory     18232 18109  0 16:14 ?        00:00:00 sshd: dory@pts/1
 shs      19276 10923  0 16:50 pts/0    00:00:00 grep --color=auto sshd
 ```
 
-Some of the subdirectories within /run can only be accessed with root authority such as /run/sudo. Running as root, for example, we can see some files related to real or attempted sudo usage:
+`/run` 中的某些子目录只能使用 root 权限访问，例如 `/run/sudo`。例如，以 root 身份运行我们可以看到一些与真实或尝试使用 `sudo` 相关的文件：
 
 ```
 /run/sudo/ts# ls -l
@@ -76,7 +76,7 @@ total 8
 -rw------- 1 root shs  168 Jun 17 08:33 shs
 ```
 
-In keeping with the shift to using /run, some of the old locations for runtime data are now symbolic links. /var/run is now a pointer to /run and /var/lock a pointer to /run/lock, allowing old references to work as expected.
+为了与 `/run` 的变化保持一致，一些运行时数据的旧位置现在是符号链接。`/var/run` 现在是指向 `/run` 的指针，`/var/lock` 指向 `/run/lock` 的指针，可以保证旧的引用按预期工作。
 
 ```
 $ ls -l /var
@@ -98,11 +98,7 @@ drwxrwxrwt  8 root root     4096 Jun 17 00:00 tmp
 drwxr-xr-x  3 root root     4096 Jan 19 12:14 www
 ```
 
-While minor as far as technical changes go, the transition to using /run simply allows for a better organization of runtime data in the Linux file system.
-
-**[ Now read this:[Invaluable tips and tricks for troubleshooting Linux][3] ]**
-
-Join the Network World communities on [Facebook][4] and [LinkedIn][5] to comment on topics that are top of mind.
+虽然技术上的变化很小，但转换到使用 `/run` 只是为了在 Linux 文件系统中更好地组织运行时数据。
 
 --------------------------------------------------------------------------------
 
@@ -110,7 +106,7 @@ via: https://www.networkworld.com/article/3403023/exploring-run-on-linux.html
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
