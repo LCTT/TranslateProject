@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Kubernetes is a dump truck: Here's why)
@@ -12,7 +12,7 @@
 
 > 翻斗车是解决各种基本业务问题的优雅解决方案。
 
-![Dump truck with kids standing in the foreground][1]
+![](https://img.linux.net.cn/data/attachment/album/201906/24/012846v737bts00uwk3qd7.jpg)
 
 这篇文章写于 Kubernetes 的生日（6 月 7 日星期五）前夕。
 
@@ -43,7 +43,7 @@ via: https://opensource.com/article/19/6/kubernetes-dump-truck
 作者：[Scott McCarty][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
