@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,58 +7,50 @@
 [#]: via: (https://www.2daygeek.com/linux-bash-script-to-monitor-memory-utilization-usage-and-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Bash Script to Monitor Memory Usage on Linux
+在 Linux 上用 Bash 脚本监控内存使用情况
 ======
 
-There are many open source monitoring tools are currently available in market to monitor Linux systems performance.
+目前市场上有许多开源监控工具可用于监控 Linux 系统的性能。当系统达到指定的阈值限制时，它可以发送电子邮件警报。它可以监视 CPU 利用率、内存利用率、交换利用率、磁盘空间利用率等所有内容。
 
-It will send an email alert when the system reaches the specified threshold limit.
+如果你只有很少的系统并且想要监视它们，那么编写一个小的 shell 脚本可以使你的任务变得非常简单。
 
-It monitors everything such as CPU utilization, Memory utilization, swap utilization, disk space utilization and much more.
+在本教程中，我们添加了两个 shell 脚本来监视 Linux 系统上的内存利用率。当系统达到给定阈值时，它将给特定电子邮件地址发邮件。
 
-If you only have few systems and want to monitor them then writing a small shell script can make your task very easy.
+### 方法-1：用 Linux Bash 脚本监视内存利用率并发送电子邮件
 
-In this tutorial we have added two shell script to monitor Memory utilization on Linux system.
+如果只想在系统达到给定阈值时通过邮件获取当前内存利用率百分比，请使用以下脚本。
 
-When the system reaches the given threshold then it will trigger a mail to given email id.
+这是非常简单直接的单行脚本。在大多数情况下，我更喜欢使用这种方法。
 
-### Method-1 : Linux Bash Script To Monitor Memory Utilization And Send an Email
-
-If you want to only get current Memory utilization percentage through mail when the system reaches the given threshold, use the following script.
-
-This is very simple, straightforward and one line script. I preferred to go with this method in most of the time.
-
-It will trigger an email when your system reaches `80%` of Memory utilization.
+当你的系统达到内存利用率的 80％ 时，它将触发一封电子邮件。
 
 ```
-*/5 * * * * /usr/bin/free | awk '/Mem/{printf("RAM Usage: %.2f%\n"), $3/$2*100}' |  awk '{print $3}' | awk '{ if($1 > 80) print $0;}' | mail -s "High Memory Alert" [email protected]
+*/5 * * * * /usr/bin/free | awk '/Mem/{printf("RAM Usage: %.2f%\n"), $3/$2*100}' |  awk '{print $3}' | awk '{ if($1 > 80) print $0;}' | mail -s "High Memory Alert" 2daygeek@gmail.com
 ```
 
-**Note:** You need to change the email id instead of ours. Also, you can change the Memory utilization threshold value as per your requirement.
+**注意：**你需要更改电子邮件地址而不是我们的电子邮件地址。此外，你可以根据你的要求更改内存利用率阈值。
 
-**Output:** You will be getting an email alert similar to below.
+**输出：**你将收到类似下面的电子邮件提醒。
 
 ```
 High Memory Alert: 80.40%
 ```
 
-We had added many useful shell scripts in the past. If you want to check those, navigate to the below link.
+我们过去添加了许多有用的 shel l脚本。如果要查看这些内容，请导航至以下链接。
 
-  * **[How to automate day to day activities using shell scripts?][1]**
+ * [如何使用 shell 脚本自动执行日常活动？][1]
 
+### 方法-2：用 Linux Bash 脚本监视内存利用率并发送电子邮件
 
+如果要在邮件警报中获取有关内存利用率的更多信息。
 
-### Method-2 : Linux Bash Script To Monitor Memory Utilization And Send an Email
+使用以下脚本，其中包括基于 `top` 命令和 `ps` 命令的最高内存利用率进程详细信息。
 
-If you want to get more information about the Memory utilization in the mail alert.
+这将立即让你了解系统的运行情况。
 
-Then use the following script, which includes top Memory utilization process details based on the top Command and ps Command.
+当你的系统达到内存利用率的 “80％” 时，它将触发一封电子邮件。
 
-This will instantly gives you an idea what is going on your system.
-
-It will trigger an email when your system reaches `80%` of Memory utilization.
-
-**Note:** You need to change the email id instead of ours. Also, you can change the Memory utilization threshold value as per your requirement.
+**注意：**你需要更改电子邮件地址而不是我们的电子邮件地址。 此外，你可以根据你的要求更改内存利用率阈值。
 
 ```
 # vi /opt/scripts/memory-alert.sh
@@ -68,53 +60,37 @@ ramusage=$(free | awk '/Mem/{printf("RAM Usage: %.2f\n"), $3/$2*100}'| awk '{pri
 
 if [ "$ramusage" > 20 ]; then
 
-SUBJECT="ATTENTION: Memory Utilization is High on $(hostname) at $(date)"
-
-MESSAGE="/tmp/Mail.out"
-
-TO="[email protected]"
-
+  SUBJECT="ATTENTION: Memory Utilization is High on $(hostname) at $(date)"
+  MESSAGE="/tmp/Mail.out"
+  TO="2daygeek@gmail.com"
   echo "Memory Current Usage is: $ramusage%" >> $MESSAGE
-
   echo "" >> $MESSAGE
-
   echo "------------------------------------------------------------------" >> $MESSAGE
-
   echo "Top Memory Consuming Process Using top command" >> $MESSAGE
-
   echo "------------------------------------------------------------------" >> $MESSAGE
-
   echo "$(top -b -o +%MEM | head -n 20)" >> $MESSAGE
-
   echo "" >> $MESSAGE
-
   echo "------------------------------------------------------------------" >> $MESSAGE
-
   echo "Top Memory Consuming Process Using ps command" >> $MESSAGE
-
   echo "------------------------------------------------------------------" >> $MESSAGE
-
   echo "$(ps -eo pid,ppid,%mem,%Memory,cmd --sort=-%mem | head)" >> $MESSAGE
-
   mail -s "$SUBJECT" "$TO" < $MESSAGE
-
   rm /tmp/Mail.out
-
-  fi
+fi
 ```
 
-Finally add a **[cronjob][2]** to automate this. It will run every 5 minutes.
+最后添加一个 [cron 任务][2] 来自动执行此操作。它将每 5 分钟运行一次。
 
 ```
 # crontab -e
 */5 * * * * /bin/bash /opt/scripts/memory-alert.sh
 ```
 
-**Note:** You will be getting an email alert 5 mins later since the script has scheduled to run every 5 minutes (But it’s not exactly 5 mins and it depends the timing).
+**注意：**由于脚本计划每 5 分钟运行一次，因此你将在 5 分钟后收到电子邮件提醒（但不是 5 分钟，而是取决于具体时间）。
 
-Say for example. If your system reaches the given limit at 8.25 then you will be getting an email alert in another 5 mins. Hope it’s clear now.
+比如说。 如果你的系统达到 8.25 的给定限制，那么你将在再过 5 分钟收到电子邮件警报。 希望现在说清楚了。
 
-**Output:** You will be getting an email alert similar to below.
+**输出：**你将收到类似下面的电子邮件提醒。
 
 ```
 Memory Current Usage is: 80.71%
@@ -133,7 +109,7 @@ Tasks: 314 total,   1 running, 313 sleeping,   0 stopped,   0 zombie
 %Cpu6  :  9.1 us,  0.0 sy,  0.0 ni, 90.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 %Cpu7  : 17.4 us,  4.3 sy,  0.0 ni, 78.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 KiB Mem : 16248588 total,  5015964 free,  6453404 used,  4779220 buff/cache
-KiB Swap: 17873388 total, 16928620 free,   944768 used.  6423008 avail Mem
+KiB Swap: 17873388 total, 16928620 free,   944768 used.  6423008 avail Mem 
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
 17163 daygeek   20     2033204 487736 282888 S  10.0   3.0   8:26.07 /usr/lib/firefox/firefox -contentproc -childID 15 -isForBrowser -prefsLen 9408 -prefMapSize 184979 -parentBuildID 20190521202118 -greomni /u+
@@ -164,7 +140,7 @@ via: https://www.2daygeek.com/linux-bash-script-to-monitor-memory-utilization-us
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
