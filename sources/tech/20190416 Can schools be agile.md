@@ -57,8 +57,6 @@ Relentlessly pursuing methods of continuous improvement should not be a behavior
 
 I'm eagerly awaiting the day when I enter a school, recognize that spirit, and smile to myself as I say, "I've seen this before."
 
-Experiential learning using open source is fraught with opportunities for disaster.
-
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/open-organization/19/4/education-culture-agile
