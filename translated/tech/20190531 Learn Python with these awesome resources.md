@@ -1,38 +1,42 @@
 [#]: collector: (lujun9972)
 [#]: translator: (tomjlw)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Learn Python with these awesome resources)
 [#]: via: (https://opensource.com/article/19/5/resources-learning-python)
 [#]: author: (Don Watkins https://opensource.com/users/don-watkins)
 
-通过这些精品资源学习 Python
+学习 Python 的精品 PLN 资源
 ======
-通过将这些资源加入你自己的私人学习网络以拓展你的 Python 知识
-![书单，最爱][1]
 
-我使用和教 Python 已有很长时间了，但我总是感兴趣于增加我对这门实用语言的知识。这就是为什么我一直试着拓展我的 Python [私人学习网络][2]（PLN），一个描述非正式的互惠型分享信息网络的概念。
+> 通过将这些资源加入你自己的私人学习网络以拓展 Python 知识。
 
-教育学家 [Kelly Paredes][3] 和 [Sean Tibor][4] 最近讨论关于如何在他们的播客 [Teaching Python][5] 上搭建 Python PLN。我在克里夫兰的 [PyCon 2019][6] 遇到他们之后就订阅了这个频道（并把它们假如我的 Python PLN）。这个播客鼓励我考虑更多关于我的 Python PLN 中的人，包括那些我最近在 PyCon 遇到的。
+![](https://img.linux.net.cn/data/attachment/album/201906/25/002706hrx0d3dfrxeid3nj.jpg)
 
-我会分享一些我遇到我的 PLN 的地方；可能它们也可以变成你的 Python PLN 的一部分。
+我使用和教授 Python 已有很长时间了，但我总是乐于增加我对这门实用语言的知识。这就是为什么我一直试着拓展我的 Python <ruby>[个人学习网络][2]<rt>personal learning network</rt></ruby>（PLN），这是一个描述用于分享信息的非正式的互惠型网络的概念。
+
+教育学家 [Kelly Paredes][3] 和 [Sean Tibor][4] 最近在他们的播客 [Teaching Python][5] 上谈到了如何搭建 Python PLN。我在克里夫兰的 [PyCon 2019][6] 遇到他们之后就订阅了这个频道（并把它们加入到我的 Python PLN 当中）。这个播客激发了我对 Python PLN 中的人的思考，包括那些我最近在 PyCon 遇到的人们。
+
+我会分享一些我找到 PLN 成员的地方；可能它们也可以变成你的 Python PLN 的一部分。
 
 ### Young Coders 导师
-Python 基金会的活动协调者 [Betsy Waliszewski][7] 是我的 Python PLN 中的一员。当我们在 PyCon2019 碰到彼此时，因为我是个老师她推荐我看看为十二岁及以上的孩子打造的 [Young Coders][8] 工作室。在那我遇到了负责这个教参与者如何搭建并配置树莓派并使用 Python 项目的 [Katie Cunningham][9]。年轻学生也会收到两本书 Jason Briggs 的 _[Python for Kids][10]_ 和 Craig Richardson 的 _[Learn to Program with Minecraft][11]_。我总是寻找提升我教学水平的新方式，因此我在会议上的 [NoStarch Press][12] 展台迅速拿了两本 Minecraft 书的抄本。Katie 是一名优秀的教师以及一名熟练的有着惊艳的充满 Python 培训视频的 [YouTube][13] 频道作者。
 
-我把 Kattie 与另外两个我在 Young Coders 工作室碰到的人加入我的 PLN：[Nat Dunn][14] 和 [Sean Valentine][15]。像 Katie 一样，他们志愿将他们的时间用来把 Python 介绍给青年程序员。Nat 是 [Webucator][16]，一家成为 Python 软件基金会赞助商好几年并赞助了 PyCon 2018 教育峰会的 IT 培训公司的主席。他在教他的13岁儿子和14岁外甥 Python 后决定在 Young Coders 教学。Sean 是 [Hidden Genius Project][17]，一个为黑人男青年而打造的科技及领导力教导项目，的战略倡议指导。Sean 说许多 Hidden Genius 参与者“用 Python打造项目因此我们将 [Young Coders] 看成一个对合作商的好机会”。了解 Hidden Genius Project 鼓励我更深层次地思考编程的未来以及其改变生活的威力。
+Python 基金会的活动协调者 [Betsy Waliszewski][7] 是我的 Python PLN 中的一员。当我们在 PyCon2019 见到时，因为我是个老师，她推荐我看看为十二岁及以上的孩子打造的 [Young Coders][8] 工作室。在那我遇到了正在负责这个计划的 [Katie Cunningham][9]，它会教参与者如何搭建和配置树莓派并使用 Python 项目。年轻学生也会收到两本书 Jason Briggs 的 《[Python for Kids][10]》 和 Craig Richardson 的 《[Learn to Program with Minecraft][11]》。我一直寻找提升我教学水平的新方式，因此我在该会议上的 [NoStarch Press][12] 展台迅速拿到了两本 Minecraft 书。Katie 是一名优秀的教师，也是一名多产作家，拥有一个充满 Python 培训视频的 [YouTube][13] 精彩频道。
 
-### Open Spaces 会面
-我发现 PyCon 的 [Open Spaces][18] 一小时左右的自序即兴会面跟正式的项目活动一样有用。我的最爱之一是关于 [Circuit Playground Express][19] 设备，它是我们会议主题包的一部分。我着迷于这个设备并且 Open Space 提供了学习它的一条大道。组织者提供工作表和拥有成功所需要的所有工具的 [Github][20] 仓库，也提供了一个上手学习的机会以及探索这个独特硬件的方向。
+我把 Kattie 与我在 Young Coders 工作室碰到的另外两个人加入我的 PLN：[Nat Dunn][14] 和 [Sean Valentine][15]。像 Katie 一样，他们自愿花时间把 Python 介绍给青年程序员们。Nat 是 [Webucator][16] 的总裁，这是一家 IT 培训公司，多年来一直是 Python 软件基金会赞助商，并赞助了 PyCon 2018 教育峰会。在将 Python 教他 13 岁的儿子和 14 岁的侄子之后，他决定在 Young Coders 任教。Sean 是 [Hidden Genius 项目][17] 的战略计划总监，这是一个针对黑人男性青年的技术及领导力打造的教导项目。Sean 说许多 Hidden Genius 参与者“用 Python 打造项目因此我们认为 [Young Coders] 是一个很好的合作机会”。了解 Hidden Genius 项目激发了我更深层次地思考编程的未来以及其改变生活的威力。
 
-这次会面满足了我想要了解更多关于编程 Circuit Playground Express 的胃口，因此在 PyCon 之后， 我在 Twitter 上接触到了在会议上就有关编程这个设备发表主旨演讲的 [Nina Zakharenko][21]。Nina 自从去年秋天我在 [All Things Open][23] 上听过她的演讲就在我的 Python PLN 里了。我最近报名了她的[Python 基础][24]课程以加深我的学习。Nina 推荐我将 [Kattni Rembor][25] 加入我的 Python PLN。他的[示例代码][26]正帮助我学习用 CircuitPython 编程。
+### Open Spaces 聚会
 
-### 我 PLN 中的其他资源
+我发现 PyCon 的 [Open Spaces][18] —— 这是一个一小时左右的自组织的即兴聚会 —— 跟正式的项目活动一样有用。我的最爱之一是 [Circuit Playground Express][19] 设备，它是我们会议主题包的一部分。我很喜欢这个设备，并且 Open Space 提供了学习它的一条大道。组织者提供了工作表和一个 [Github][20] 仓库，其中包含有我们成功所需要的所有工具，也提供了一个上手实践的机会以及探索这个独特硬件的方向。
 
-我在 PyCon 2019 也遇见了下属 [Opensource.com][27] 社区的主席 [Moshe Zadka][28] 并和他来了场长谈。他分享了几个新的 Python 资源，包括 _[如何像电脑科学家一样思考][29]_ 社区主席[Seth Kenlon][30] 是我的 PLN 中的另一名成员；他发表了许多优秀的 [Python 文章][31]我也推荐你关注他。
+这次会面激起了了我对学习 Circuit Playground Express 更新信息的兴趣，因此在 PyCon 之后， 我在 Twitter 上接触到了在会议上就该设备编程发表主旨演讲的 [Nina Zakharenko][21]。Nina 自从去年秋天我在 [All Things Open][23] 上听过她的演讲后就在我的 Python PLN 里了。我最近报名参加了她的 [Python 基础][24]课程以加深我的学习。Nina 推荐我将 [Kattni Rembor][25] 加入我的 Python PLN。他的[示例代码][26]正帮助我学习用 CircuitPython 编程。
 
-我的 Python每天都在继续扩大。除了我已经提到的，我同样推荐你关注 [Al Sweigart][32]，[Eric Matthes][33]，以及 [Adafruit][34] 因为他们分享优质内容。我也推荐这本书 _[制作：由 Adafruit Circuit Playground Express 开始][35]_ 和 [Podcast.__init__][36]，一个关于 Python 社区的播客。这两个都是我从我的 PLN 中了解到的。
+### 我的 PLN 中的其他资源
+
+我在 PyCon 2019 也遇见了 [Opensource.com][27] 社区版主 [Moshe Zadka][28]，并和他来了场长谈。他分享了几个新的 Python 资源，包括 [如何像电脑科学家一样思考][29]。社区版主 [Seth Kenlon][30] 是我的 PLN 中的另一名成员；他发表了许多优秀的 [Python 文章][31]，我也推荐你关注他。
+
+我的 Python PLN 每天都在持续扩大。除了我已经提到的，我同样推荐你关注 [Al Sweigart][32]、[Eric Matthes][33] 以及 [Adafruit][34]他们分享的优质内容。我也推荐这本书《[制作：由 Adafruit Circuit Playground Express 开始][35]》和《[Podcast.\_\_init\_\_][36]》，这是一个关于 Python 社区的播客。这两个都是我从我的 PLN 中了解到的。
 
 谁在你的 Python PLN 中？请在留言区分享你的最爱。
 
@@ -43,7 +47,7 @@ via: https://opensource.com/article/19/5/resources-learning-python
 作者：[Don Watkins][a]
 选题：[lujun9972][b]
 译者：[tomjlw](https://github.com/tomjlw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
