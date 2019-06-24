@@ -29,69 +29,68 @@
   * 教育: 适于那些需要桌面发行版可以助力他们在教育领域更创造力的人们。
 
 
+诚然，有很多很多类别的发行版可供挑选，其中的很多可能用起来十分得心应手，但这五种或许是你最为需要的。
 
 
-Yes, there are more categories to be had, many of which can get very niche-y, but these five should fill most of your needs.
+### 普通生产力
 
-### General Productivity
+对普通的生产力诉求来说，你不会找到比 [Ubuntu][1] 更为高效的了。在这个类别中首推 Ubuntu 最基础的原因是因为它实现了桌面操作系统、软件、服务的无缝集成。你可能会问为什么我不选择同类别的 Linux Mint 呢？因为 Ubuntu 现在默认的的桌面环境为 GNOME 桌面，而它拥有 GNOME 许多扩展程序的优势的加成（图 1）。
 
-For general productivity, you won’t get much more efficient than [Ubuntu][1]. The primary reason for choosing Ubuntu for this category is the seamless integration of apps, services, and desktop. You might be wondering why I didn’t choose Linux Mint for this category? Because Ubuntu now defaults to the GNOME desktop, it gains the added advantage of GNOME Extensions (Figure 1).
 
 ![GNOME Clipboard][3]
 
-Figure 1: The GNOME Clipboard Indicator extension in action.
+图 1：运行中的 GNOME 桌面的剪切板管理工具。
 
-[Used with permission][4]
+[经许可使用][4]
 
-These extensions go a very long way to aid in boosting productivity (so Ubuntu gets the nod over Mint). But Ubuntu didn’t just accept a vanilla GNOME desktop. Instead, they tweaked it to make it slightly more efficient and user-friendly, out of the box. And because Ubuntu contains just the right mixture of default, out-of-the-box, apps (that just work), it makes for a nearly perfect platform for productivity.
+这些扩展程序在提升生产力方面做了很多努力(所以 Ubuntu 比 Linux Mint 获得了更多的认可)。但是 Ubuntu 不仅仅支持 vanilla 版本的 GNOME 桌面。事实上，他们致力于将它改进的更为轻量化、更为高效、以及用户友好度更高、开箱即用。总而言之，由于 Ubuntu 正确的融合了多种特性，开箱即用，完善的软件支持（仅对工作方面而言），这些特性使它几乎成为了生产力领域最为完美的一个平台。
 
-Whether you need to write a paper, work on a spreadsheet, code a new app, work on your company website, create marketing images, administer a server or network, or manage human resources from within your company HR tool, Ubuntu has you covered. The Ubuntu desktop distribution also doesn’t require the user to jump through many hoops to get things working … it simply works (and quite well). Finally, thanks to it’s Debian base, Ubuntu makes installing third-party apps incredibly easy.
+不管你是要写一篇文档，制作一张电子表格，写一个新的软件，开啊公司的网站，设计商用的图形，管理一个服务器或是网络，抑或是在你的公司内从事人力资源管理工作， Ubuntu 都可以满足你的需求。Ubuntu 桌面发行版也并不要求你耗费很大的精力才能开始开始开展工作…他只是纯粹的工作（并且十分优秀）。最后，得益于 Debian 的基础，使得 Ubuntu 上安装第三方的软件十分简便。
 
-Although Ubuntu tends to be the go-to for nearly every list of “top distributions for X,” it’s very hard to argue against this particular distribution topping the list of general productivity distributions.
+很难反对这一特殊的发行版在生产力发行版列表中独占鳌头，尽管 Ubuntu 几乎已经成为几乎所有“顶级发行版”列表的榜首。
 
-### Graphic Design
+### 平面设计
 
-If you’re looking to up your graphic design productivity, you can’t go wrong with [Fedora Design Suite][5]. This Fedora respin was created by the team responsible for all Fedora-related art work. Although the default selection of apps isn’t a massive collection of tools, those it does include are geared specifically for the creation and manipulation of images.
+如果你正在寻求提升你的平面设计效率，你不能错过[Fedora设计套件][5]。这一 Fedora 的衍生版是由负责 Fedora 艺术类项目的团队亲自操刀制作的。虽然默认选择的应用程序并不是一个庞大的工具集合，但它所包含的工具都是创建和处理图像专用的。
 
-With apps like GIMP, Inkscape, Darktable, Krita, Entangle, Blender, Pitivi, Scribus, and more (Figure 2), you’ll find everything you need to get your image editing jobs done and done well. But Fedora Design Suite doesn’t end there. This desktop platform also includes a bevy of tutorials that cover countless subjects for many of the installed applications. For anyone trying to be as productive as possible, this is some seriously handy information to have at the ready. I will say, however, the tutorial entry in the GNOME Favorites is nothing more than a link to [this page][6].
+有了GIMP、Inkscape、Darktable、Krita、Entangle、Blender、Pitivi、Scribus等应用程序(图 2)，您将发现完成图像编辑工作所需要的一切都已经准备好了，而且准备得很好。但是Fedora设计套件并不仅限于此。这个桌面平台还包括一堆教程，涵盖了许多已安装的应用程序。对于任何想要尽可能提高效率的人来说，这将是一些非常有用的信息。不过，我要说的是，GNOME Favorites中的教程不过是[此页][6]链接的内容。
 
 ![Fedora Design Suite Favorites][8]
 
-Figure 2: The Fedora Design Suite Favorites menu includes plenty of tools for getting your graphic design on.
+图 2: Fedora Design Suite Favorites菜单包含了许多工具，可以让您用于图形设计。
 
-[Used with permission][4]
+[经许可使用][4]
 
-Those that work with a digital camera will certainly appreciate the inclusion of the Entangle app, which allows you to control your DSLR from the desktop.
+那些使用数码相机的用户肯定会喜欢Entangle应用程序，它可以让你在电脑上上控制单反相机。
 
-### Development
+### 开发人员
 
-Nearly all Linux distributions are great platforms for programmers. However, one particular distributions stands out, above the rest, as one of the most productive tools you’ll find for the task. That OS comes from [System76][9] and it’s called [Pop!_OS][10]. Pop!_OS is tailored specifically for creators, but not of the artistic type. Instead, Pop!_OS is geared toward creators who specialize in developing, programming, and making. If you need an environment that is not only perfected suited for your development work, but includes a desktop that’s sure to get out of your way, you won’t find a better option than Pop!_OS (Figure 3).
+几乎所有的Linux发行版对于程序员来说都是很好的编程平台。然而，有一种特定的发行版脱颖而出，并超越了其他发行版，它将是您见过的用于编程类最有效率的工具之一。这个操作系统来自[System76][9]（译注：一家美国的计算机制造商），名为[Pop!_OS][10]。Pop!_OS是专门为创作者定制的，但不是针对艺术类。相反,Pop!_OS面向专门从事开发、编程和软件制作的程序员。如果您需要一个既能完美的胜任开发平台又包含桌面操作系统的开发环境，Pop!_OS 将会是您的不二选择。 (图 3)
 
-What might surprise you (given how “young” this operating system is), is that Pop!_OS is also one of the single most stable GNOME-based platforms you’ll ever use. This means Pop!_OS isn’t just for creators and makers, but anyone looking for a solid operating system. One thing that many users will greatly appreciate with Pop!_OS, is that you can download an ISO specifically for your video hardware. If you have Intel hardware, [download][10] the version for Intel/AMD. If your graphics card is NVIDIA, download that specific release. Either way, you are sure go get a solid platform for which to create your masterpiece.
+可能会让您感到惊讶(考虑到这个操作系统是多么“年轻”)的是Pop!_OS也是您使用过的基于 GNOME平台的最稳定系统的之一。这意味着 Pop!_OS 不只是为创造者和制造者准备的，也是为任何想要一个可靠的操作系统的人准备的。你可以下载针对你的硬件的专门 ISO 文件，这一点是许多用户十分欣赏的。如果你有英特尔硬件,[下载][10]Intel或AMD的版本。如果您的显卡是NVIDIA，请下载该特定版本。不管怎样，您肯定会得到针对不同平台进行特殊定制的稳定的版本。
 
 ![Pop!_OS][12]
 
-Figure 3: The Pop!_OS take on GNOME Overview.
+图 3: 装有 GNOME 桌面的 Pop!_OS 一览。
 
-[Used with permission][4]
+[经许可使用][4]
 
-Interestingly enough, with Pop!_OS, you won’t find much in the way of pre-installed development tools. You won’t find an included IDE, or many other dev tools. You can, however, find all the development tools you need in the Pop Shop.
+有趣的是，在 Pop!_OS 中，您不会找到太多预装的开发工具。你也不会找到IDE或许多其他开发工具。但是，您可以在Pop 商店中中找到所需的所有开发工具。
 
-### Administration
+### 管理人员
 
-If you’re looking to find one of the most productive distributions for admin tasks, look no further than [Debian][13]. Why? Because Debian is not only incredibly reliable, it’s one of those distributions that gets out of your way better than most others. Debian is the perfect combination of ease of use and unlimited possibility. On top of which, because this is the distribution for which so many others are based, you can bet if there’s an admin tool you need for a task, it’s available for Debian. Of course, we’re talking about general admin tasks, which means most of the time you’ll be using a terminal window to SSH into your servers (Figure 4) or a browser to work with web-based GUI tools on your network. Why bother making use of a desktop that’s going to add layers of complexity (such as SELinux in Fedora, or YaST in openSUSE)? Instead, chose simplicity.
-
+如果你正在寻找适合管理领域的最生产力的发行版本，[Debian][13]将会是你的不二之选。为什么这么说呢？因为 Debian 不仅仅拥有无与伦比的可靠性，它也是众多能从苦海中将你解救出来的最好的一个版本。Debian是易用性和无限可能性的完美结合。最重要的是，因为它是许多其他发行版的基础，所以可以打赌的是，如果您需要一个任务的管理工具，那么它一定支持 Debian 系统。当然，我们讨论的是一般管理任务，这意味着大多数时候您需要使用终端窗口 SSH 连接到服务器(图4)，或者在浏览器上使用网络上基于web的GUI工具。既然如此为什么还要使用一个复杂的桌面呢(比如Fedora中的SELinux或openSUSE中的YaST)呢?所以,应选择更为简洁易用的那一种。
 ![Debian][15]
 
-Figure 4: SSH’ing into a remote server on Debian.
+图 4: 在 Debian 系统上通过SSH 连接到远程服务器。
 
-[Used with permission][4]
+[经授权使用][4]
 
-And because you can select which desktop you want (from GNOME, Xfce, KDE, Cinnamon, MATE, LXDE), you can be sure to have the interface that best matches your work habits.
+你可以选择你想要的不同的桌面（包括GNOME, Xfce, KDE, Cinnamon, MATE, LXDE），确保你所使用的桌面外观最适合你的工作习惯。
 
 ### 教育
 
-如果你是一名老师或者学生，抑或是其他从事与教育相关工作的人士，你需要适当的工具来变得更具创造力。之前，有 Edubuntu 这样的版本。这一版本从未跌出教育类相关发行版排名的前列。然而，自从 Ubuntu 14.04 版之后这一发行版就再也没有更新。还好，现在有一款基于 openSUSE 的新的以教育为基础的发行版有望夺摘得桂冠。这一改版叫做 [openSUSE:Education-Li-f-e][16] (Linux For Education - Figure 5), 它基于 openSUSE Leap 42.1 （所以它可能稍微有一点过时）。
+如果你是一名老师或者学生，抑或是其他从事与教育相关工作的人士，你需要适当的工具来变得更具创造力。之前，有 Edubuntu 这样的版本。这一版本位列教育类相关发行版排名的前列。然而，自从 Ubuntu 14.04 版之后这一发行版就再也没有更新。还好，现在有一款基于 openSUSE 的新的以教育为基础的发行版有望夺摘得桂冠。这一改版叫做 [openSUSE:Education-Li-f-e][16] (Linux For Education - 图 5), 它基于 openSUSE Leap 42.1 （所以它可能稍微有一点过时）。
 
 openSUSE:Education-Li-f-e 包含了一下工具：
 
@@ -119,20 +118,20 @@ openSUSE:Education-Li-f-e 包含了一下工具：
 
   * GIMP - 图像处理软件（译注：被誉为 Linux 上的 PhotoShop）
 
-  * Pencil - GUI prototyping tool
+  * Pencil - GUI 模型制作工具
 
   * Hugin - 全景照片拼接及 HDR 效果混合软件
 
 
 ![Education][18]
 
-Figure 5: The openSUSE:Education-Li-f-e distro has plenty of tools to help you be productive in or for school.
+图 5:  openSUSE:Education-Li-f-e 发行版拥有大量的工具可以帮你在学校中变得更为高效。
 
-[Used with permission][4]
+[经许可使用][4]
 
-Also included with openSUSE:Education-Li-f-e is the [KIWI-LTSP Server][19]. The KIWI-LTSP Server is a flexible, cost effective solution aimed at empowering schools, businesses, and organizations all over the world to easily install and deploy desktop workstations. Although this might not directly aid the student to be more productive, it certainly enables educational institutions be more productive in deploying desktops for students to use. For more information on setting up KIWI-LTSP, check out the openSUSE [KIWI-LTSP quick start guide][20].
+同时还集成在 openSUSE:Education-Li-f-e 中的还有 [KIWI-LTSP Server][19] 。Also included with openSUSE:Education-Li-f-e is the [KIWI-LTSP Server][19]. KIWI-LTSP KIWI-LTSP服务器是一个灵活的、成本有效的解决方案，旨在使全世界的学校、企业和组织能够轻松地安装和部署桌面工作站。虽然这可能不会直接帮助学生变得更具创造力，但它肯定会使教育机构在部署供学生使用的桌面时更有效率。有关配置 KIWI-LTSP 的更多信息，请查看openSUSE [KIWI-LTSP quick start guide][20].
 
-Learn more about Linux through the free ["Introduction to Linux"][21]course from The Linux Foundation and edX.
+通过 Linux 基金会和 edX 的免费["入门介绍"][21]课程来了解更多关于 Linux 的知识。
 
 --------------------------------------------------------------------------------
 
@@ -140,7 +139,7 @@ via: https://www.linux.com/blog/learn/2019/1/top-5-linux-distributions-productiv
 
 作者：[Jack Wallen][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qfzy1233](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
