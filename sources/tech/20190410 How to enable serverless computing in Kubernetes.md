@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How to enable serverless computing in Kubernetes)
 [#]: via: (https://opensource.com/article/19/4/enabling-serverless-kubernetes)
-[#]: author: (Daniel Oh (Red Hat, Community Moderator) https://opensource.com/users/daniel-oh/users/daniel-oh)
+[#]: author: (Daniel Oh  https://opensource.com/users/daniel-oh/users/daniel-oh)
 
 How to enable serverless computing in Kubernetes
 ======

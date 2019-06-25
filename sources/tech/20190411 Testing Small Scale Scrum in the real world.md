@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Testing Small Scale Scrum in the real world)
 [#]: via: (https://opensource.com/article/19/4/next-steps-small-scale-scrum)
-[#]: author: (Agnieszka Gancarczyk (Red Hat)Leigh Griffin (Red Hat) https://opensource.com/users/agagancarczyk/users/lgriffin/users/agagancarczyk/users/lgriffin)
+[#]: author: (Agnieszka Gancarczyk Leigh Griffin  https://opensource.com/users/agagancarczyk/users/lgriffin/users/agagancarczyk/users/lgriffin)
 
 Testing Small Scale Scrum in the real world
 ======

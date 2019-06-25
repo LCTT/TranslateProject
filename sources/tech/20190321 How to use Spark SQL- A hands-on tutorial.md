@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How to use Spark SQL: A hands-on tutorial)
 [#]: via: (https://opensource.com/article/19/3/apache-spark-and-dataframes-tutorial)
-[#]: author: (Dipanjan (DJ) Sarkar (Red Hat) https://opensource.com/users/djsarkar)
+[#]: author: (Dipanjan  Sarkar  https://opensource.com/users/djsarkar)
 
 How to use Spark SQL: A hands-on tutorial
 ======
