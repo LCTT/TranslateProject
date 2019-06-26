@@ -7,38 +7,39 @@
 [#]: via: (https://opensource.com/article/19/6/naomi-ceder-python-software-foundation)
 [#]: author: (Don Watkins https://opensource.com/users/don-watkins)
 
-Leading in the Python community
+Python 社区的领袖
 ======
-A chat with Naomi Ceder, current Python Software Foundation board chair.
+对话现任 Python 软件基金会董事会主席 Naomi Ceder
+
 ![Hands together around the word trust][1]
 
-Like many other leaders in the open source software world, [Naomi Ceder][2], board chair of the [Python Software Foundation][3] (PSF), took a non-traditional path into the Python world. As the title of her 2017 [keynote][4] at PyCon España explains, she came for the language and stayed for the community. In a recent conversation with her, she shared how she became a Python community leader and offered some insight into what makes Python special.
+和开源软件世界的很多其他领袖一样，[Python 软件基金会][3]（PSF）的董事会主席 [Naomi Ceder][2] 通过一种不同寻常的方式走进了 Python 世界。正如她在 2017 年 PyCon España 大会上的 [keynote][4] 的标题所说，她是因为这个编程语言而来，因为这个社区而留下的。在我们和她的一次近期的交流中，她分享了自己成为 Python 社区领袖的历程，并且就“是什么让 Python 如此特别”这个问题提供了一些独到的见解。
 
-### From teaching to coding
+### 从授课到编程
 
-Naomi began her career in the Classics; she earned a PhD in Latin and Ancient Greek with a minor in Indo-European Linguistics, as she says, "several decades ago." While teaching Latin at a private school, she began tinkering with computers, learning to code and to take machines apart to do upgrades and repairs. She started working with open source software in 1995 with [Yggdrasil Linux][5] and helped launch the Fort Wayne, Indiana, [Linux User Group][6].
+Naomi 的职业生涯是从古典文学开始的。她取得了拉丁文和古希腊文的博士学位，并且辅修了印欧语言学。在一家私立学校教授拉丁语的同时，她开始接触了计算机，学习如何编程、如何拆机进行升级或者维修。1995 年，她开始在 [Yggdrasil Linux][5] 系统上开发开源软件，并且帮助建立了印第安纳州韦恩堡的 [Linux 用户小组][6]
 
-A teacher at heart, Naomi believes teaching coding in middle and high school is essential because, by the time most people get to college, they are already convinced that coding and technology careers are not for them. Starting earlier can help increase the supply of technical talent and the diversity and breadth of experience in our talent pools to meet the industry's needs, she says.
+作为一名教师，Naomi 相信在中学教授编程课程是非常重要的，因为等到大多数人上大学的时候，他们已经认为编程和科技相关的职业已经不是自己可以从事的了。她表示，更早地教授相关课程有助于增加科技人才的供给，提高人才的多元化和经验的广度，从而更好地满足行业需求。
 
-Somewhere around 2001, she decided to switch from studying human languages to researching computer languages, as well as teaching computer classes and managing the school's IT. Her interest in Python was sparked at Linux World 2001 when she attended PSF president Guido Van Rossum's day-long tutorial on Python. Back then, it was an obscure language, but she liked it so well that she began teaching Python and using it to track student records and do sysadmin duties at her school.
+大约在 2001 年前后，她决定从学习人类语言转向研究计算机语言，并同时教授计算机课程和管理学校的 IT 系统。在 2001 年的 Linux World 大会上听了一整天 PSF 主席 Guido Van Rossum 关于 Python 的演讲之后，她对 Python 的热情被点燃了。在那个时候，Python 还只是一门晦涩难懂的语言，但是她是如此喜欢 Python，以至于在她的学校开始使用 Python 记录学生信息、进行系统管理。
 
-### Leading the Python community
+### 领导 Python 社区
 
-Naomi says, "community is the key factor behind Python's success. The whole idea behind open source software is sharing. Few people really want to just sit alone, writing code, and staring at their screens. The real satisfaction comes in trading ideas and building something with others."
+Naomi 表示，“社区是 Python 成功背后的关键因素。开源软件的核心思想是分享，很少有人真的喜欢一个人坐在那儿盯着屏幕写代码。真正的满足来源于和别人交流想法，并且共同创造一些东西。”
 
-She started giving talks at the first [PyCon][7] in 2003 has been a consistent attendee and leader since then. She has organized birds-of-a-feather sessions and founded the PyCon and PyCon UK poster sessions, the education summit, and the Spanish language track, [Charlas][8].
+她在第一届 [PyCon][7] 大会上发表了演讲，并且从此之后一直是一名参与者和领导者。她组织了一些 birds-of-a-feather 讨论会（LCTT 译注：一种在大会参与者之间进行的基于兴趣的小规模讨论活动）、PyCon 和 PyCon UK 大会的海报展示会、教育峰会，以及 PyCon 大会的西班牙语频道。
 
-She is also the author of _[The Quick Python Book][9]_ and co-founded [Trans*Code][10], "the UK's only hack event series focused solely on drawing attention to transgender issues and opportunities." Naomi says, "as technology offers growing opportunities, being sure these opportunities are equally accessible to traditionally marginalized groups grows ever more important."
+她同时是 *[The Quick Python Book][9]* 一书的作者，并且联合创立了 [Trans\*Code][10]，“英国唯一一个专注于变性者的问题和机遇的黑客节”（LCTT 译注：黑客节是一种让软件开发、设计、项目管理等相关人员相聚在一起，针对软件项目进行高强度合作的活动）。Naomi 表示，“随着科技能够提供越来越多的机遇，确保传统意义上的边缘化群体能够同等地享受到这些机遇成为了一件更为重要的事情。”
 
-### Contributing through the PSF
+### 通过 PSF 进行贡献
 
-As board chair of the PSF, Naomi contributes actively to the organization's work to support the Python language and the people working with it. In addition to sponsoring PyCon, the PSF funds grants for meetups, conferences, and workshops around the world. In 2018, the organization gave almost $335,000 in grants, most of them in the $500 to $5,000 range.
+作为 PSF 的董事会主席，Naomi 积极地参与着该组织对 Python 语言和其使用者的支持工作。除了赞助 PyCon 大会的举办之外，PSF 基金会还为世界各地的小型聚会、大型会议和研习会提供资助。2018 年，该组织发放的资助接近 335000 美元，其中大多数款项的金额都在 500 美元到 5000 美元之间。
 
-The PSF's short-term goals are to become a sustainable, stable, and mature non-profit organization with professional staff. Its long-term goals include developing resources that offer meaningful support to development efforts for Python and expanding the organization's support for educational efforts in Python around the world.
+PSF 的短期目标是成为一个由专业员工维护的可持续的、稳定的、成熟的非盈利机构。它的长期目标包括发展可以提供对 Python 开发工作有效支持的各种资源，以及扩展该组织对全世界范围内 Python 教育工作的支持。
 
-This work depends on having financial support from the community. Naomi says the PSF's "largest current source of funding is PyCon. To ensure the PSF's sustainability, we are also focusing on [sponsorships][11] from companies using Python, which is our fastest-growing segment." Supporting memberships are $99 per year, and [donations and fundraisers][12] also help sustain the organization's work.
+这些工作都需要来自社区的经济上的支持。Naomi 表示，PSF “最大的资金来源是 PyCon 大会。为了确保 PSF 的可持续性，我们同事也关注使用 Python 的企业的赞助，这是我们增长最快的部分。”会员价格是每年 99 美元，并且 [捐款和募捐人][12] 同样也在帮助维持该组织的工作。
 
-You can learn much more about the PSF's work in its [Annual Report][13].
+你可以在 PSF 的 [年度报告][13] 中了解该组织的更多工作情况。
 
 --------------------------------------------------------------------------------
 
