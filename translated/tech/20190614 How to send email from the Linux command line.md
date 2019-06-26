@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Modrisco)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to send email from the Linux command line)
@@ -9,7 +9,8 @@
 
 如何用 Linux 命令行发电子邮件
 ======
-Linux 提供了几种命令允许您通过终端发送电子邮件，下面来展示一些有趣的方法。
+
+> Linux 提供了几个可以让你通过终端发送电子邮件的命令，下面来展示一些有趣的方法。
 
 ![Molnia/iStock][1]
 
@@ -29,7 +30,7 @@ $ echo "Reminder: Leaving at 4 PM today" | mail -s "early departure" myboss
 $ mail -s "Reminder:Leaving early" myboss < reason4leaving
 ```
 
-在以上两种情况中，你都可以通过 -s 来为邮件添加标题。
+在以上两种情况中，你都可以通过 `-s` 来为邮件添加标题。
 
 ### sendmail
 
@@ -53,13 +54,13 @@ I would just like to say that, in my opinion, longer hair and other flamboyant
 affectations of appearance are nothing more ...
 ```
 
-你也可以发送这样的文件（lyric 文件包含标题和正文）：
+你也可以发送这样的文件（`lyric` 文件包含标题和正文）：
 
 ```
 $ sendmail recip < lyrics
 ```
 
-`sendmain` 的输出可能会很冗长。如果你感到好奇并希望查看发送系统和接收系统之间的交互，请添加 `-v` （verbose）选项。
+`sendmain` 的输出也可以很冗长。如果你感到好奇并希望查看发送系统和接收系统之间的交互，请添加 `-v` （verbose）选项。
 
 ```
 $ sendmail -v recip@emailsite.com < lyrics
@@ -67,9 +68,9 @@ $ sendmail -v recip@emailsite.com < lyrics
 
 ### mutt
 
-`mutt` 是通过命令行发送邮件的一个很好的工具，在使用前你需要安装它。 `mutt` 的一个很方便的优势就是它允许你在邮件中添加附件。
+`mutt` 是通过命令行发送邮件的一个很好的工具，在使用前你需要安装它。`mutt` 的一个很方便的优势就是它允许你在邮件中添加附件。
 
-使用  `mutt` 发送一条快速信息：
+使用 `mutt` 发送一条快速信息：
 
 ```
 $ echo "Please check last night's backups" | mutt -s "backup check" recip
@@ -122,16 +123,16 @@ EHLO mysite.org                <== introduce yourself
 250-AUTH DIGEST-MD5 CRAM-MD5
 250-DELIVERBY
 250 HELP
-MAIL FROM: me@mysite.org       <== specify sender
+MAIL FROM: me@mysite.org       <== 指定发件人
 250 2.1.0 shs@mysite.org... Sender ok
-RCPT TO: recip             <== specify recipient
+RCPT TO: recip             <== 指定收件人
 250 2.1.5 recip... Recipient ok
-DATA                   <== start message
+DATA                   <== 邮件内容开始
 354 Enter mail, end with "." on a line by itself
 This is a test message. Please deliver it for me.
-.                  <== end message
+.                  <== 内容结束
 250 2.0.0 x5CKWDds029287 Message accepted for delivery
-quit                   <== end exchange
+quit                   <== 结束交互
 ```
 
 ### 向多个收件人发送电子邮件
@@ -156,7 +157,7 @@ via: https://www.networkworld.com/article/3402027/how-to-send-email-from-the-lin
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[Modrisco](https://github.com/Modrisco)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
