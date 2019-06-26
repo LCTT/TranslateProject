@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How libraries are adopting open source)
 [#]: via: (https://opensource.com/article/19/4/software-libraries)
-[#]: author: (Don Watkins (Community Moderator) https://opensource.com/users/don-watkins)
+[#]: author: (Don Watkins  https://opensource.com/users/don-watkins)
 
 How libraries are adopting open source
 ======

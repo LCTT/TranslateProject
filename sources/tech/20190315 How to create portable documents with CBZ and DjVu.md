@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (How to create portable documents with CBZ and DjVu)
 [#]: via: (https://opensource.com/article/19/3/comic-book-archive-djvu)
-[#]: author: (Seth Kenlon (Red Hat, Community Moderator) https://opensource.com/users/seth)
+[#]: author: (Seth Kenlon  https://opensource.com/users/seth)
 
 How to create portable documents with CBZ and DjVu
 ======
