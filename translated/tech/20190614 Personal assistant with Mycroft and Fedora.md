@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Personal assistant with Mycroft and Fedora)
@@ -12,7 +12,7 @@
 
 ![][1]
 
-还在找开源的私人助理么？[Mycroft][2] 让你运行开源服务，从而更好地控制你的数据。
+> 想要找个开源的私人助理么？[Mycroft][2] 可以让你运行一个开源的服务，从而更好地控制你的数据。
 
 ### 在 Fedora 上安装 Mycroft
 
@@ -29,9 +29,9 @@ $ cd mycroft-core
 $ ./dev_setup.sh
 ```
 
-安装脚本会提示用户帮助他完成安装过程。建议运行稳定版本并获取自动更新。
+安装脚本会提示用户以帮助他完成安装过程。建议运行稳定版本并获取自动更新。
 
-当提示在本地安装 Mimic 文字转语音引擎时，请回答否。因为根据安装描述，这可能需要很长时间，并且 Mimic 有适合 Fedora 的 rpm 包，因此可以使用 dnf 进行安装。
+当提示在本地安装 Mimic 文字转语音引擎时，请回答否。因为根据安装描述，这可能需要很长时间，并且 Mimic 有适合 Fedora 的 rpm 包，因此可以使用 `dnf` 进行安装。
 
 ```
 $ sudo dnf install mimic
@@ -63,11 +63,9 @@ Hey Mycroft, how are you ?
 Hey Mycroft, what's the weather like ?
 ```
 
-如果你对它是如何工作的感兴趣，_start-mycroft.sh_ 脚本提供了一个_命令行_选项，它能让你使用命令行交互。它也会显示用于调试的有用信息。
+如果你对它是如何工作的感兴趣，`start-mycroft.sh` 脚本提供了一个命令行选项，它能让你使用命令行交互。它也会显示用于调试的有用信息。
 
 Mycroft 总在学习新技能，并且有很多方法给 Mycroft 社区做[贡献][6]。
-
-* * *
 
 由 [Przemyslaw Marczynski][7] 摄影，发布于 [Unsplash][8]
 
@@ -78,7 +76,7 @@ via: https://fedoramagazine.org/personal-assistant-with-mycroft-and-fedora/
 作者：[Clément Verna][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
