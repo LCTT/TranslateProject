@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (bodhix)
+[#]: translator: (LazyWolfLin)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
