@@ -7,63 +7,63 @@
 [#]: via: (https://www.networkworld.com/article/3400847/cisco-to-buy-iot-security-management-firm-sentryo.html)
 [#]: author: (Michael Cooney https://www.networkworld.com/author/Michael-Cooney/)
 
-Cisco to buy IoT security, management firm Sentryo
+思科收购了物联网安全管理公司 Sentryo
 ======
-Buying Sentryo will give Cisco support for anomaly and real-time threat detection for the industrial internet of things.
+买下 Sentryo 将给思科在工业互联网的异常和实时威胁检测两方面予以支持。
 ![IDG Worldwide][1]
 
-Looking to expand its IoT security and management offerings Cisco plans to acquire [Sentryo][2], a company based in France that offers anomaly detection and real-time threat detection for Industrial Internet of Things ([IIoT][3]) networks.
+为了扩展自己的物联网安全管理产品，思科计划收购 Sentryo，这是一家位于法国的公司，Sentryo 为工业互联网提供异常检测和实时威胁检测。
 
-Founded in 2014 Sentryo products include ICS CyberVision – an asset inventory, network monitoring and threat intelligence platform – and CyberVision network edge sensors, which analyze network flows.
+Sentryo 成立于 2014 年，产品包括 ICS CyberVision - 一种用于资产库存、网络监控和威胁情报的平台 - 以及 CyberVision 网络边界传感器，这用于分析网络流量。
 
-**More on IoT:**
+**更多关于物联网的信息：**
 
-  * [What is the IoT? How the internet of things works][4]
-  * [What is edge computing and how it’s changing the network][5]
-  * [Most powerful Internet of Things companies][6]
-  * [10 Hot IoT startups to watch][7]
-  * [The 6 ways to make money in IoT][8]
-  * [What is digital twin technology? [and why it matters]][9]
-  * [Blockchain, service-centric networking key to IoT success][10]
-  * [Getting grounded in IoT networking and security][11]
-  * [Building IoT-ready networks must become a priority][12]
-  * [What is the Industrial IoT? [And why the stakes are so high]][13]
+  * [什么是物联网？物联网如何运行？][4]
+  * [什么是边缘计算，这会如何改变我们的网络？][5]
+  * [最强的物联网公司][6]
+  * [10 个值得关注的热门物联网创业公司][7]
+  * [在物联网领域赚钱的六种方法][8]
+  * [什么是数字双胞胎技术？ [以及它为什么重要]][9]
+  * [区块链，以服务为中心的网络是物联网成功的关键][10]
+  * [物联网的网络和安全作为基础][11]
+  * [构建完整的物联网网络必须优先完成][12]
+  * [什么是工业互联网？ [为什么风险如此之高]][13]
 
 
 
-“We have incorporated Sentryo’s edge sensor and our industrial networking hardware with Cisco’s IOx application framework,” wrote Rob Salvagno, Cisco vice president of Corporate Development and Cisco Investments in a [blog][14] about the proposed buy.
+“我们通过思科的 IOx 应用框架将 Sentryo 的边缘传感器和我们的工业网络硬件相结合”，思科企业发展和思科投资的副总裁 Rob Salvagno 在一篇关于计划收购的博客中写道。
 
-“We believe that connectivity is foundational to IoT projects and by unleashing the power of the network we can dramatically improve operational efficiencies and uncover new business opportunities. With the addition of Sentryo, Cisco can offer control systems engineers deeper visibility into assets to optimize, detect anomalies and secure their networks.”
+“我们相信连接是物联网项目的基础，通过释放网络的力量，我们可以大大提高运作的效率并发现新的商业机会。随着 Sentryo 的加入，思科可以为系统控制工程师提供更加深入的资产可见度，以此来对系统进行优化，检测异常并保护他们的网络”
 
-Gartner [wrote][15] of Sentryo’s system: “ICS CyberVision product provides visibility into its customers'' OT networks in way all OT users will understand, not just technical IT staff. With the increased focus of both hackers and regulators on industrial control systems, it is vital to have the right visibility of an organization’s OT. Many OT networks not only are geographically dispersed, but also are complex and consist of hundreds of thousands of components.”
+Gartner 对 Sentryo 的系统写道：“ICS CyberVision 这个产品为它的客户提供了可见性”所有的 OT 用户都将了解 OT 网络，而不仅仅是 IT 技术人员。随着黑客和监管机构越来越关注工业控制系统，一个组织的 OT 拥有完整的可见性是至关重要的一件事。很多的 OT 网络不仅在地理上位置分散，而且也很复杂，由成千上万的组件组成
 
-Sentryo's ICS CyberVision lets enterprises ensure continuity, resilience and safety of their industrial operations while preventing possible cyberattacks, said [Nandini Natarajan][16] , industry analyst at Frost & Sullivan. "It automatically profiles assets and communication flows using a unique 'universal OT language' in the form of tags, which describe in plain text what each asset is doing. ICS CyberVision gives anyone immediate insights into an asset's role and behaviors; it offers many different analytic views leveraging artificial intelligence algorithms to let users deep-dive into the vast amount of data a typical industrial control system can generate. Sentryo makes it easy to see important or relevant information."
+Frost & Sullivan 的工业分析师 Nandini Natarajan 表示，Sentryo 的 ICS CyberVision 让企业能够确保其工业运作的连续性、动态弹性和安全性，并以此预防可能的网络攻击。“它将在标签的表单中使用一种独特的 ‘通用 OT 语言’ 来自动描述资产和通信流程，它会用纯文本的方式描述每个资产在做什么。ICS CyberVision 可以让任何人都能立刻查看一台设备的类别和行为；它利用人工智能算法提供很多不同的分析视图，来让用户深入了解到一个典型的工业控制系统可以产生多么庞大的数据。Sentryo 可以轻松查看重要或相关的信息”
 
-In addition, Sentryo's platform uses deep packet inspection (DPI) to extract information from communications among industrial assets, Natarajan said. This DPI engine is deployed through an edge-computing architecture that can run either on Sentryo sensor appliances or on network equipment that is already installed. Thus, Sentryo can embed visibility and cybersecurity features in the industrial network rather than deploying an out-of-band monitoring network, Natarajan said.
+Natarajan 表示，除此之外，Sentryo 的平台使用深度数据包检测（DPI）从工业设备之间的通信数据包里提取信息。DPI 引擎通过边缘计算架构进行部署，它可以运行在 Sentryo 传感器设备上，也可以在已经安装好的网络设备上运行。因此，Sentryo 可以将可见性和网络安全特性嵌入进工业网络中，而非部署带外监控网络。
+ 
+**[[好消息！好消息！通过 PluralSight 的综合在线课程，成为一名光荣的认证信息安全系统专家，现在免费提供 10 天试用！走过路过不要错过！][17] ]**
 
-**[[Prepare to become a Certified Information Security Systems Professional with this comprehensive online course from PluralSight. Now offering a 10-day free trial!][17] ]**
+Sentryo 	的技术将扩大思科在物联网上的总体计划。在今年一月，思科推出了一整套的交换机、软件、开发工具和蓝图，这些东西将用于把物联网、基于意图联网的工业网络、传统信息安全、传统信息监控、应用开发支持融为一体。
 
-Sentryo’s technology will broaden [Cisco’s][18] overarching IoT plan. In January it [launched][19] a family of switches, software, developer tools and blueprints to meld IoT and industrial networking with [intent-based networking][20] (IBN) and classic IT security, monitoring and application-development support.
+这个新平台可以通过思科的 DNA 中心进行管理，让客户能将他们的物联网、工业网络控制和他们的商业 IT 世界融为一体。
 
-The new platforms can be managed by Cisco’s DNA Center, and Cisco IoT Field Network Director, letting customers fuse their IoT and industrial-network control with their business IT world.
+DNA 中心是思科用于企业网络的中央管理工具，具有自动化、确保设置、结构配置、基于策略进行分割的功能。它也是公司 IBN 计划的核心，用于主动向客户提供动态自动化完成网络和策略变更的能力，并在这个过程中确保数据的交付。物联网领域网络的主管是软件，这个软件管理思科工业、连接的网格路由器、终端这多个业务的网络。
 
-DNA Center is Cisco’s central management tool for enterprise networks, featuring automation capabilities, assurance setting, fabric provisioning and policy-based segmentation. It is also at the center of the company’s IBN initiative offering customers the ability to automatically implement network and policy changes on the fly and ensure data delivery. The IoT Field Network Director is software that manages multiservice networks of Cisco industrial, connected grid routers and endpoints.
+思科物联网业务部的高级副总裁兼总经理 Liz Centoni 表示，公司希望 Sentryo 的技术能以多种方式帮助物联网客户：
 
-Liz Centoni, senior vice president and general manager of Cisco's IoT business group said the company expects the [Sentryo technology to help][21] IoT customers in a number of ways:
+支持网络的被动 DPI 功能，这用于发现 IOT 和 OT 设备，并且在设备和系统之间建立起通信模式。Sentryo 的传感器可以在思科的 IOx 框架里进行本地部署，并且可以内置到这些设备运行的工业网络中，而不是添加额外的硬件。
 
-Network-enabled, passive DPI capabilities to discover IoT and OT assets, and establish communication patterns between devices and systems. Sentryo’s sensor is natively deployable on Cisco’s IOx framework and can be built into the industrial network these devices run on instead of adding additional hardware.
+随着设备识别和通信模式的建立，思科将把 DNA 中心和身份识别服务引擎（ISE）集成到一起，以便客户能够很轻松地定义分割策略。这种集成将使 OT 团队能够利用 IT 安全团队的专业知识来保护他们的环境，而不会对运营的流程造成风险。
 
-As device identification and communication patterns are created, Cisco will integrate this with DNA Center and Identity Services Engine(ISE) to allow customers to easily define segmentation policy. This integration will allow OT teams to leverage IT security teams’ expertise to secure their environments without risk to the operational processes.
+这些物联网设备缺乏现代嵌入式软件和安全功能，网络分段将成为允许运作设备向合法系统进行通信的关键技术，并降低像我们看见的 WannaCry 和 Norsk Hydro 那样网络安全事件的风险。
 
-With these IoT devices lacking modern embedded software and security capabilities, segmentation will be the key technology to allow communication from operational assets to the rightful systems, and reduce risk of cyber security incidents like we saw with [WannaCry][22] and [Norsk Hydro][23].
+据 Crunchbase 称，Sentryo 的每年预计收入为 350 万美元，与 Cymmetria，Team8，和 Indegy 的竞争最为激烈。此次收购预期将在思科 2020 财年的第一季度 - 2019 年 10 月 26 日 - 结束前完成。思科并未详细披露此次收购的财务细节。
 
-According to [Crunchbase][24], Sentryo has $3.5M in estimated revenue annually and it competes most closely with Cymmetria, Team8, and Indegy. The acquisition is expected to close before the end of Cisco’s Q1 Fiscal Year 2020 -- October 26, 2019. Financial details of the acquisition were not detailed.
-
-Sentryo is Cisco’s second acquisition this year. It bought Singularity for its network analytics technology in January. In 2018 Cisco bought six companies including Duo security software.
+Sentryo 是思科今年的第二次收购。思科在今年一月收购了 Singularity，这是为了这家公司的网络分析技术。在 2018 年，思科收购了包含 Duo security software 在内的 6 家公司。
 
 ** **
 
-Join the Network World communities on [Facebook][25] and [LinkedIn][26] to comment on topics that are top of mind.
+加入 Facebook 和 LinkedIn 上的网络世界社区，评论最重要的主题。
 
 --------------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ via: https://www.networkworld.com/article/3400847/cisco-to-buy-iot-security-mana
 
 作者：[Michael Cooney][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hopefully2333](https://github.com/hopefully2333)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
