@@ -11,7 +11,7 @@
 
 ### 1、Google Chrome 浏览器
 
-几乎所有 Linux 发行版都默认安装了 Mozilla Firefox 网络浏览器，并且它是 Google Chrome 的强力竞争对手。但是 Chrome 相对 Firefox 而言有它自己的优点，比如它可以让你直接访问你的 Google 账户，你可以通过它来同步你在其它操作系统和手机上的 Chrome 浏览器的书签、浏览历史、扩展等等。
+几乎所有 Linux 发行版都默认安装了 Mozilla Firefox 网络浏览器，它是 Google Chrome 的强力竞争对手。但是 Chrome 相对 Firefox 而言有它自己的优点，比如它可以让你直接访问你的 Google 账户，你可以通过它来同步你在其它操作系统和手机上的 Chrome 浏览器的书签、浏览历史、扩展等等。
 
 ![Chrome][3]
 
@@ -19,11 +19,11 @@ Google Chrome 为 Linux 集成了最新的 Flash 播放器，其它 Linux 上的
 
 ### 2、Steam
 
-现在在 Linux 上玩游戏已经不是问题了，这在很多年前还是一个遥不可及的梦。在 2013 年，Valve 发布了 Linux 上的 Steam 游戏客户端，此后一切都变了。早期用户犹豫着从 Windows 转到 Linux，只是因为它们不能在 Ubuntu 上玩它们最喜欢的游戏，但是现在已经不是这样了。
+现在在 Linux 上玩游戏已经不是问题了，这在很多年前还是一个遥不可及的梦。在 2013 年，Valve 发布了 Linux 上的 Steam 游戏客户端，此后一切都变了。早期用户犹豫着从 Windows 转到 Linux，只是因为他们不能在 Ubuntu 上玩它们最喜欢的游戏，但是现在已经不是这样了。
 
 ![Steam][4]
 
-一些用户可能发现在 Linux 上安装 Steam 有点棘手，但如果能在 Linux 上玩上千的 Steam 游戏时这么做就是值得的。一些流行的高端游戏，如《反恐精英:全球攻势》、《Hitman》、《Dota 2》在 Linux 上都能获取，你只需要确保你满足玩这些游戏的最小硬件需求。
+一些用户可能发现在 Linux 上安装 Steam 有点棘手，但如果能在 Linux 上玩上千的 Steam 游戏这么做就是值得的。一些流行的高端游戏，如《反恐精英：全球攻势》、《Hitman》、《Dota 2》在 Linux 上都能获取，你只需要确保你满足玩这些游戏的最小硬件需求。
 
 ```
 $ sudo add-apt-repository multiverse
@@ -33,11 +33,11 @@ $ sudo apt-get install steam
 
 ### 3、WordPress 桌面客户端
 
-是的，没错，WordPress 有它专有的 Ubuntu 平台的客户端，你可以用来管理你的 WordPress 站点。你可以只在桌面客户端上撰写和设计你的站点而不用转到浏览器。
+是的，没错，WordPress 有它专属的 Ubuntu 平台的客户端，你可以用来管理你的 WordPress 站点。你可以在桌面客户端上撰写和设计你的站点而不用转到浏览器。
 
 ![][5]
 
-如果你拥有 WordPress 建立的站点，那么这个桌面客户端就是你必备的应用，它能够让你在单个窗口内追踪所有的 WordPress 通知。你也可以查看站点博客的数据。桌面客户端可以在 Ubuntu 软件中心中获取，你可以在那里下载和安装。
+如果你拥有使用 WordPress 建立的站点，那么这个桌面客户端就是你必备的应用，它能够让你在单个窗口内追踪所有的 WordPress 通知。你也可以查看你的站点上的博客数据。桌面客户端可以在 Ubuntu 软件中心中获取，你可以在那里下载和安装。
 
 ### 4、VLC 媒体播放器
 
@@ -55,11 +55,11 @@ $ sudo apt-get install vlc qtwayland5
 
 ### 5、Atom 文本编辑器
 
-由 GitHub 开发，Atom 是一个自由开源的文本编辑器，它同样能够被用做集成开发环境（IDE）来进行主流编程语言的编码和编辑。Atom 开发者声称它是完全可魔改的 21 世纪文本编辑器。
+由 GitHub 开发的 Atom 是一个自由开源的文本编辑器，它同样能够被用做集成开发环境（IDE）来进行主流编程语言的编码和编辑。Atom 开发者声称它是完全可魔改的 21 世纪文本编辑器。
 
 ![][7]
 
-Atom 文本编辑器属于最好的用户界面之一，它是一个富文本编辑器，提供了自动补全、语法高亮，支持扩展与插件。
+Atom 文本编辑器拥有最佳的用户界面，它是一个富文本编辑器，提供了自动补全、语法高亮，支持扩展与插件。
 
 ```
 $ sudo add-apt-repository ppa:webupd8team/atom
@@ -69,7 +69,7 @@ $ sudo apt-get install atom
 
 ### 6、GIMP 图像编辑器
 
-GIMP（GNU 图形操作程序）是 Ubuntu 上自由开源的图像编辑器。无疑它是 Windows 上 Adobe Photoshop 的最好替代品。如果你过去经常用 Adobe Photoshop，会觉得很难习惯 GIMP，但是你可以自定义 GIMP 使它看起来与 Photoshop 非常相似。
+GIMP（GNU 图形操作程序）是 Ubuntu 上的自由开源的图像编辑器。无疑它是 Windows 上 Adobe Photoshop 的最好替代品。如果你过去经常用 Adobe Photoshop，会觉得很难习惯 GIMP，但是你可以自定义 GIMP 使它看起来与 Photoshop 非常相似。
 
 ![][8]
 
@@ -81,27 +81,27 @@ $ sudo apt-get install gimp
 
 ### 7、Google Play 音乐桌面播放器
 
-Google Play 音乐桌面播放器是一个开源的音乐播放器，它是 Google Play 音乐的一个替代品，或者说比它更好。Google 一直少个桌面的音乐客户端，但第三方的应用完美的填充了空白。
+Google Play 音乐桌面播放器是一个开源的音乐播放器，它是 Google Play 音乐的一个复制品，或者说比它更好。Google 一直少个桌面的音乐客户端，但第三方的应用完美的填充了空白。
 
 ![][9]
 
-就像你在上述截屏里看到的，它的界面在外观和感觉上都是首屈一指的。你只需要登录 Google 账户，之后就会导入所有你的音乐和你的最爱到桌面客户端里。你可以从它的官方[站点][10]下载安装文件并使用软件中心安装它。
+就像你在上面的截屏里看到的，它的界面在外观和感觉上都是首屈一指的。你只需要登录 Google 账户，之后就会导入你的所有音乐和收藏到桌面客户端里。你可以从它的官方[站点][10]下载安装文件并使用软件中心安装它。
 
 ### 8、Franz
 
-Franz 是一个即时消息客户端，它将聊天和信息服务结合到了一个应用中。它是现代化的即时消息平台之一，在单个应用中支持 Facebook Messenger、WhatsApp、Telegram、微信、Google Hangouts、 Skype。
+Franz 是一个即时消息客户端，它将聊天和信息服务结合到了一个应用中。它是一个现代化的即时消息平台，在单个应用中支持了 Facebook Messenger、WhatsApp、Telegram、微信、Google Hangouts、 Skype。
 
 ![][11]
 
 Franz 是一个完备的消息平台，你可以用于商业中管理大量的客户服务。要安装 Franz，你需要从它的[网站][12]下载安装包，在软件中心中打开。
 
-### 9、Synaptic 包管理器
+### 9、新立得包管理器
 
- Synaptic 包管理器是 Ubuntu 上必有工具之一，因为它为我们通常在命令行界面安装软件的 ‘apt-get’ 命令提供了用户图形界面。它是各种 Linux 发行版中默认的应用的强力对手。
+新立得包管理器是 Ubuntu 上必有工具之一，因为它为我们通常在终端里安装软件的 `apt-get` 命令提供了用户图形界面。它是各种 Linux 发行版中的默认应用商店的强力对手。
 
 ![][13]
 
-Synaptic 拥有非常简单的用户图形界面，相比其它的应用商店非常快并易于使用。左手边你可以浏览不同分类的各种应用，也可以轻松安装和卸载。
+新立得拥有非常简单的用户图形界面，相比其它的应用商店非常快并易于使用。在左手边你可以浏览不同分类的各种应用，也可以轻松安装和卸载。
 
 ```
 $ sudo apt-get install synaptic
@@ -109,7 +109,7 @@ $ sudo apt-get install synaptic
 
 ### 10、Skype
 
-Skype 是一个非常流行的跨平台视频电话应用，如今在 Linux 系统的 Snap 应用中可以获取了。Skype 是一个即时通信应用，它提供了视频和音频通话，桌面共享等特点。
+Skype 是一个非常流行的跨平台视频电话应用，如今在 Linux 系统可以以 Snap 应用方式获取。Skype 是一个即时通信应用，它提供了视频和音频通话、桌面共享等功能。
 
 ![][14]
 
@@ -121,15 +121,15 @@ $ sudo snap install skype
 
 ### 13、VirtualBox
 
-VirtualBox 是由 Oracle 公司开发的跨平台的虚拟化软件应用。如果你喜欢尝试新的操作系统，那么 VirtualBox 是为你准备的必备的 Ubuntu 应用。你可以尝试 Windows 内的 Linux，Mac 或者 Linux 系统中的 Windows 和 Mac。
+VirtualBox 是由 Oracle 公司开发的跨平台的虚拟化软件应用（LCTT 译注：实际上是由被 Oracle 公司收购的 Sun 公司开发的，包括 Java、Solaris 也是）。如果你喜欢尝试新的操作系统，那么 VirtualBox 是你必备的 Ubuntu 应用。你可以在 Windows 内尝试 Linux、Mac，也可以在 Linux 系统内尝试 Windows 和 Mac。
 
 ![][15]
 
-VB 实际做的是让你在宿机操作系统里可视化的运行顾客操作系统。它创建虚拟硬盘并在上面安装顾客操作系统。你可以在 Ubuntu 软件中心直接下载和安装。
+VirtualBox 实际做的是让你在宿机操作系统里可视化地运行访客操作系统。它可以创建虚拟硬盘并在上面安装访客操作系统。你可以在 Ubuntu 软件中心直接下载和安装它。
 
 ### 12、Unity Tweak 工具
 
-Unity Tweak 工具（Gnome Tweak 工具）对于每个 Linux 用户都是必须有的，因为它给了用户根据需要自定义桌面的能力。你可以尝试新的 GTK 主题，设置桌面角落，自定义图标集，改变 unity 启动器，等。
+Unity Tweak 工具（Gnome Tweak 工具）对于每个 Linux 用户都是必须拥有的，因为它给了用户根据需要自定义桌面的能力。你可以尝试新的 GTK 主题、设置桌面热角、自定义图标集、调整 unity 启动器等等。
 
 ![][16]
 
@@ -141,11 +141,11 @@ $ sudo apt-get install unity-tweak-tool
 
 ### 13、Ubuntu Cleaner
 
-Ubuntu Cleaner是一个系统管理工具，尤其被设计为移除不再使用的包，移除不必要的应用和清理浏览器缓存的。Ubuntu Cleaner 有易于使用的简易用户界面。
+Ubuntu Cleaner 是一个系统管理工具，其被特别设计用来移除不再使用的包、不需要的应用和清理浏览器缓存。Ubuntu Cleaner 有易于使用的简单用户界面。
 
 ![][17]
 
-Ubuntu Cleaner是 BleachBit 最好的替代品之一，BleachBit 是 Linux 发行版上的相当好的清理工具。
+Ubuntu Cleaner 是 BleachBit 最好的替代品之一，BleachBit 是 Linux 发行版上的相当好的清理工具。
 
 ```
 $ sudo add-apt-repository ppa:gerardpuig/ppa
@@ -155,7 +155,7 @@ $ sudo apt-get install ubuntu-cleaner
 
 ### 14、Visual Studio Code
 
-Visual Studio Code 是一个代码编辑器，你会发现它与 Atom 文本编辑器和 Sublime Text 非常相似，如果你曾用过的话。Visual Studio Code 证明是非常好的教育工具，因为它解释了所有东西，从 HTML 标签到编程中的语法。
+Visual Studio Code 是一个代码编辑器，你会发现它与你可能曾用过的 Atom 文本编辑器和 Sublime Text 非常相似。Visual Studio Code 被证明是非常好的教育工具，因为它可以对编程中的从 HTML 标签到语法的所有东西做出解释。
 
 ![][18]
 
@@ -163,11 +163,11 @@ Visual Studio 自身集成了 Git，它有优秀的用户界面，你会发现�
 
 ### 15、Corebird
 
-如果你在找你可以用 Twitter 的桌面客户端，那 Corebird Twitter 客户端就是你在找的。它被争议是 Linux 发行版下可获得的最好的 Twitter 客户端，它提供了与你手机上的 Twitter 应用非常相似的功能。
+如果你在找你可以使用 Twitter 的桌面客户端，那 Corebird Twitter 客户端就是你在找的。它被视为 Linux 发行版下可获得的最好的 Twitter 客户端，它提供了与你手机上的 Twitter 应用非常相似的功能。
 
 ![][19]
 
- 当有人喜欢或者转发你的 tweet 或者给你发消息时，Corebird Twitter 客户端同样会给你通知。你同样可以在这个客户端上添加多个 Twitter 账户。
+当有人喜欢或者转发你的 tweet 或者给你发消息时，Corebird Twitter 客户端同样会给你通知。你同样可以在这个客户端上添加多个 Twitter 账户。
 
 ```
 $ sudo snap install corebird
@@ -175,19 +175,19 @@ $ sudo snap install corebird
 
 ### 16、Pixbuf
 
-Pixbuf 是来自 Pixbuf 图片社区中心的一个桌面客户端，让你上传，分享和出售你的相片。它支持图片共享到社交媒体像 Facebook，Pinterest，Instagram，Twitter，等等，也包括照相服务像 Flickr，500px and Youpic。
+Pixbuf 是来自 Pixbuf 图片社区中心的一个桌面客户端，可以让你上传、分享和出售你的相片。它支持图片共享，如像 Facebook、Pinterest、Instagram、Twitter 等社交媒体，以及像 Flickr、500px 和 Youpic 等相片服务。
 
 ![][20]
 
-Pixbuf提供了分析等功能，可以让你统计点击量、转发量、照片的回复、预定的帖子、专用的iOS 扩展。它同样有移动应用，因此你可以在任何地方连接到你的 Pixbuf 账户。 Pixbuf 在 Ubuntu 软件中心以 Snap 包的形式获得。
+Pixbuf 提供了分析等功能，可以让你统计点击量、转发量、照片的回复数、定时发帖、iOS 专有的扩展信息。它同样有移动应用，因此你可以在任何地方连接到你的 Pixbuf 账户。Pixbuf 可以在 Ubuntu 软件中心以 Snap 包的形式获得。
 
 ### 17、Clementine 音乐播放器
 
-Clementine 是一个跨平台的音乐播放器，并且是 Ubuntu 上默认音乐播放器 Rhythmbox 的良好竞争者。多亏它的友好的界面，它很快速并易于使用。它支持所有音频文件格式的声音回放。
+Clementine 是一个跨平台的音乐播放器，并且是 Ubuntu 上默认音乐播放器 Rhythmbox 的良好竞争者。它是一个快速而易用的音乐播放器，其用户界面友好。它支持所有主流音频文件格式的回放。
 
 ![][21]
 
-除了播放本地库中的音乐，你也可以在线听 Spotify, SKY.fm, Soundcloud 等的广播。它也支持其它的功能像智能动态播放列表，从像 Dropbox，Google Drive 这样的云存储中同步音乐。
+除了可以播放本地库中的音乐，你也可以在线听 Spotify、SKY.fm、Soundcloud 等的广播。它也支持其它的功能像智能和动态播放列表，可以从像 Dropbox、Google Drive 这样的云存储中同步音乐。
 
 ```
 $ sudo add-apt-repository ppa:me-davidsansome/clementine 
@@ -197,19 +197,19 @@ $ sudo apt-get install clementine
 
 ### 18、Blender
 
-Blender 是一个自由开源的 3D 创建应用软件，你可以用来创建 3D 打印模型，动画电影，视频游戏，等。它自身集成了游戏引擎，你可以用来开发和测试视频游戏。
+Blender 是一个自由开源的 3D 创建应用软件，你可以用来创建 3D 打印模型、动画电影、视频游戏等。它自身集成了游戏引擎，你可以用来开发和测试视频游戏。
 
 ![blender][22]
 
-Blender 拥有赏心悦目的用户界面，易于使用，它包括了内置的渲染引擎，数字雕刻，仿真工具，动画工具，还有很多。考虑到它免费和它的特点，你甚至会认为它可能是 Ubuntu 上最好的应用之一。
+Blender 拥有赏心悦目的用户界面，易于使用，它包括了内置的渲染引擎、数字雕刻、仿真工具、动画工具，还有很多。考虑到它免费和它的特点，你甚至会认为它可能是 Ubuntu 上最好的应用之一。
 
 ### 19、Audacity
 
-Audacity 是一个开源的音频编辑应用，你可以用来记录、编辑音频文件。你可以从各种输入中录入音频，包括麦克风，电子吉它，等等。根据你的需要，它提供了编辑和裁剪音频的能力。
+Audacity 是一个开源的音频编辑应用，你可以用来记录、编辑音频文件。你可以从各种输入中录入音频，包括麦克风、电子吉它等等。它提供了根据你的需要编辑和裁剪音频的能力。
 
 ![][23]
 
-最近 Audacity 发布了 Ubuntu 上的新版本，新特点包括主题提升、放缩命令等。除了这些，它还提供了降噪等更多特点。
+最近 Audacity 发布了 Ubuntu 上的新版本，新特点包括主题改进、放缩命令等。除了这些，它还提供了降噪等音频效果的功能。
 
 ```
 $ sudo add-apt-repository ppa:ubuntuhandbook1/audacity
@@ -219,11 +219,11 @@ $ sudo apt-get install audacity
 
 ### 20、Vim
 
-Vim 是一个集成开发环境，你可以用作一个独立的应用或各种像 Python 等主流编程语言的命令行接口。
+Vim 是一个集成开发环境，你可以以一个独立应用或 CLI 程序使用它，用于各种像 Python 等主流编程语言的编程。
 
 ![][24]
 
-大多数程序员喜欢在 Vim 中编代码，因为它快速并且是一个可高度定制的集成开发环境。最初你可能觉得有点难用，但你会很快习惯它。
+大多数程序员喜欢在 Vim 中编写代码，因为它快速并且是一个可高度定制的集成开发环境。最初你可能觉得有点难用，但你会很快习惯它。
 
 ```
 $ sudo apt-get install vim
@@ -231,11 +231,11 @@ $ sudo apt-get install vim
 
 ### 21、Inkscape
 
-Inkscape 是一个开源和跨平台的矢量图形编辑器，你会觉得它和 Corel Draw 和 Adobe Illustrator 很相似。用它可以创建和编辑矢量图形例如柱形图、logo、图表、插图等。
+Inkscape 是一个开源和跨平台的矢量图形编辑器，你会觉得它和 Corel Draw 和 Adobe Illustrator 很相似。用它可以创建和编辑矢量图形例如柱形图、徽标、图表、插图等。
 
 ![][25]
 
-Inkscape 使用规模矢量图形（SVG），一个基于 XML 的 W3C 标准格式。它只是各种格式包括 JPEG、PNG、GIF、PDF、AI（Adobe Illustrator 格式）、VSD 等等。
+Inkscape 使用可缩放矢量图形（SVG），这是一个基于 XML 的 W3C 标准格式。它支持各种格式，包括 JPEG、PNG、GIF、PDF、AI（Adobe Illustrator 格式）、VSD 等等。
 
 ```
 $ sudo add-apt-repository ppa:inkscape.dev/stable
@@ -245,11 +245,11 @@ $ sudo apt-get install inkscape
 
 ### 22、Shotcut
 
-Shotcut 是一个免费、开源的跨平台的 Meltytech，LLC 在 MLT 多媒体框架下开发的视频编辑应用。你会发现它是 Linux 发行版上最强大的视频编辑器之一，因为它支持所有主要的音频，视频，图片格式。
+Shotcut 是一个 Meltytech, LLC 在 MLT 多媒体框架下开发的自由开源的跨平台视频编辑应用。你会发现它是 Linux 发行版上最强大的视频编辑器之一，它支持所有主要的音频、视频、图片格式。
 
 ![][26]
 
-它给了非线性编辑的各种文件格式多轨道视频的能力。它支持 4K 视频分辨率和各种音频，视频过滤，语气生成、音频混合和很多其它的。
+它提供了非线性编辑多轨编辑各种文件格式的视频的能力。它支持 4K 视频分辨率和各种音频、视频过滤、语气生成、音频混合和很多其它的。
 
 ```
 snap install shotcut -- classic
@@ -257,11 +257,11 @@ snap install shotcut -- classic
 
 ### 23、SimpleScreenRecorder
 
-SimpleScreenRecorder 是 Ubuntu 上的一个免费和轻量级的屏幕录制工具。屏幕录制非常有用，如果你是 YouTube 创作者或应用开发者。
+SimpleScreenRecorder 是 Ubuntu 上的一个免费而轻量级的屏幕录制工具。如果你是 YouTube 创作者或应用开发者，屏幕录制功能非常有用。
 
 ![][27]
 
-它可以捕获桌面屏幕的视频/音频记录或直接录制视频游戏。在屏幕录制前你可以设置视频分辨率、帧率等。它有简单的用户界面，你会发现非常易用。
+它可以捕获桌面屏幕的视频/音频记录或直接录制视频游戏。在录制屏幕前，你可以设置视频分辨率、帧率等。它有简单的用户界面，你会发现非常易用。
 
 ```
 $ sudo add-apt-repository ppa:marten-baert/simplescreenrecorder
@@ -271,17 +271,19 @@ $ sudo apt-get install simplescreenrecorder
 
 ### 24、Telegram
 
-Telegram 是一个基于云的即时通信和网络电话平台，近年来非常流行。它是开源和跨平台的，用户可以用来发送消息，共享视频，图片，音频和其它文件。
+Telegram 是一个基于云的即时通信和网络电话平台，近年来非常流行。它是开源和跨平台的，用户可以用来发送消息，共享视频、图片、音频和其它文件。
 
 ![][28]
 
-Telegram 中容易发现的特点是加密聊天，语音信息，远程视频通话，在线位置和社交登录。在 Telegram 中隐私和安全拥有最高优先级，因此，所有你发送和接收的是端对端加密的。
+Telegram 中容易注意到的特点是加密聊天、语音信息、机器人、远程视频通话、在线位置和社交登录。在 Telegram 中隐私和安全拥有最高优先级，因此，所有你发送和接收的是端对端加密的。
 
 ```
 $ sudo snap install telegram-desktop
 ```
 
-我们所知道的危害 Windows PC 的病毒不能危害 Ubuntu，因为在 Windows PC 中接收到的邮件的破坏性文件会破坏 Windows PC。因此，在 Linux 上有一些抗病毒应用是安全的。
+### 25、ClamTk
+
+正如我们知道的，危害 Windows PC 的病毒不能危害 Ubuntu，但是可能被来自包含破坏性文件的 Windows PC 中的邮件所感染。因此，在 Linux 上有一些抗病毒应用是安全的。
 
 ![][29]
 
@@ -289,27 +291,27 @@ ClamTk 是一个轻量级的病毒扫描器，可以扫描系统中的文件和�
 
 ### 26、MailSpring
 
-早期的 MailSpring 以 Nylas Mail 或 Nylas N1 而著名，是开源的邮件客户端。它保存所有的邮件在电脑本地，因此你可以在任何需要的时候访问它。它提供了高级搜索的功能，使用与或操作，因此你可以基于不同的参数搜索邮件。
+MailSpring 早期名为 Nylas Mail 或 Nylas N1，是开源的邮件客户端。它在电脑本地保存所有的邮件，因此你可以在任何需要的时候访问它。它提供了高级搜索的功能，可以使用“与”和“或”操作，因此你可以基于不同的参数搜索邮件。
 
 ![][30]
 
-MailSpring 有着和其它易于上手的邮件客户端同样优秀的用户界面。MailSpring 同样提供了私密性、安全性、规划期、通讯录管理、日历等功能特点。
+MailSpring 有着和其它易于上手的邮件客户端同样优秀的用户界面。MailSpring 同样提供了私密性、安全性、日程、通讯录管理、日历等功能特点。
 
 ### 27、PyCharm
 
-PyCharm 是我最喜欢的继 Vim 之后的 Python IDE 之一，因为它有优雅的用户界面，有很多扩展和插件支持。基本上，它有两个版本，一个是自由开源的社区版，另一个是付费的专业版。
+继 Vim 之后，PyCharm 是我最喜欢的的 Python IDE 之一，因为它有优雅的用户界面，有很多扩展和插件支持。基本上，它有两个版本，一个是自由开源的社区版，另一个是付费的专业版。
 
 ![][31]
 
-PyCharm 是高度自定义的 IDE 并且有很多功能像错误高亮、代码分析、集成单元测试和 Python 调试器等。PyCharm 对于大多数 Python 程序员和开发者来说是首选的。
+PyCharm 是可高度自定义的 IDE 并且有很多功能，如错误高亮、代码分析、集成单元测试和 Python 调试器等。PyCharm 对于大多数 Python 程序员和开发者来说是首选 IDE。
 
-### 28、Caffeine
+### 28、咖啡因
 
-想象一下你在 Youtube 上看视频或阅读一篇新文章，突然你的 Ubuntu 锁屏了，我知道它很烦人。我们很多人都会遇到这种情况，所以 Caffeine 是一个阻止 Ubuntu 锁屏或屏幕保护程序的工具。
+想象一下你在 Youtube 上看视频或阅读一篇新文章，突然你的 Ubuntu 锁屏了，我知道它很烦人。我们很多人都会遇到这种情况，所以咖啡因是一个阻止 Ubuntu 锁屏或屏幕保护程序的工具。
 
 ![][32]
 
-Caffeine Inhibitor 是一个轻量级的工具，它在通知栏添加图标，你可以在那里轻松的激活或禁止它。不需要额外的设置。
+咖啡因指示器是一个轻量级的工具，它添加图标到通知栏，你可以在那里轻松的激活或禁止它。不需要额外的设置。
 
 ```
 $ sudo add-apt-repository ppa:eugenesan/ppa
@@ -319,15 +321,15 @@ $ sudo apt-get install caffeine -y
 
 ### 29、Etcher USB 镜像写入器
 
-Etcher 是一个有 resin.io 开发的 USB 镜像写入器。它是一个跨平台的应用，帮助你将 ZIP、ISO、IMG 格式的镜像文件写入到 USB 存储中。如果你总是尝试新的操作系统，那么 Ethcher 是你必有的简单可靠的系统。
+Etcher 是一个由 resin.io 开发的 USB 镜像写入器。它是一个跨平台的应用，可以帮助你将 ZIP、ISO、IMG 格式的镜像文件写入到 USB 存储中。如果你经常尝试新的操作系统，那么 Ethcher 是你必有的简单可靠的工具。
 
 ![][33]
 
-Etcher 有干净的用户界面指导你在三步内烧录镜像到 USB 驱动或 SD 卡的过程。步骤包括选择镜像文件，选择 USB 驱动 和最终的 flash（写文件到 USB 驱动）。你可以从它的[官网][34]下载和安装 Etcher。
+Etcher 有干净的用户界面，可以指导你在三步内烧录镜像到 USB 驱动或 SD 卡的过程。步骤包括选择镜像文件、选择 USB 驱动 和最终的烧录（写文件到 USB 驱动）。你可以从它的[官网][34]下载和安装 Etcher。
 
 ### 30、Neofetch
 
-Neofetch 是一个酷炫的系统信息工具，通过在终端中运行 “neofetch” 命令，它会给你关于你的系统的所有信息。它酷是因为它给你关于桌面环境，内核版本，bash 版本和你正在运行的 GTK 主题信息。
+Neofetch 是一个酷炫的系统信息工具，通过在终端中运行 `neofetch` 命令，它会给你关于你的系统的所有信息。它酷是因为它可以给你关于桌面环境、内核版本、bash 版本和你正在运行的 GTK 主题的信息。
 
 ![][35]
 
@@ -341,11 +343,11 @@ $ sudo apt-get update install neofetch
 
 ### 31、Liferea
 
-Liferea（Linux 热点阅读器）是一个自由开源的新闻聚集工具，用于在线新闻订阅。使用新的聚集工具非常快捷和简单，支持各种格式例如 RSS/RDF，Atom 等。
+Liferea（Linux 订阅阅读器）是一个自由开源的新闻聚合工具，用于在线新闻订阅。使用新的聚合非常快捷和简单，支持各种格式例如 RSS/RDF，Atom 等。
 
 ![][36]
-Liferea 自带与 TinyTinyRSS 的同步支持，它给了你离线阅读的能力。你会发现，就可靠性和灵活性而言，它是 Linux 上最好的订阅工具之一。
 
+Liferea 自带与 TinyTinyRSS 的同步支持，它给了你离线阅读的能力。你会发现，就可靠性和灵活性而言，它是 Linux 上最好的订阅工具之一。
 
 ```
 $ sudo add-apt-repository ppa:ubuntuhandbook1/apps
@@ -355,19 +357,19 @@ $ sudo apt-get install liferea
 
 ### 32、Shutter
 
-在 Ubuntu 中很容易截屏，但当编辑截屏时 Shutter 是你必不可少的应用。它帮助你捕获，编辑和轻松的共享截屏。使用 Shutter 的选择工具，你可以选择屏幕的特定区域来截屏。
+在 Ubuntu 中很容易截屏，但当需要编辑截屏时 Shutter 是你必不可少的应用。它帮助你捕获、编辑和轻松的共享截屏。使用 Shutter 的选择工具，你可以选择屏幕的特定区域来截屏。
 
 ![][37]
 
-Shutter 是一个功能强大的截图工具，提供了添加截图效果，画线等功能。它同样给你上传截屏到各种图像保存站点的选项。你可以直接在 Ubuntu 软件中心中下载和安装。
+Shutter 是一个功能强大的截图工具，提供了添加截图效果、画线等功能。它同样给你上传截屏到各种图像托管站点的选项。你可以直接在 Ubuntu 软件中心中下载和安装。
 
 ### 33、Weather
 
-Weather 是一个小的应用，给你关于你的城市或世界上其它位置的实时天气信息。它简单而且轻量级，给你超过 7 天的详细天气预报和今明两天的每个小时的细节信息。
+Weather 是一个小的应用，给你关于你的城市或世界上其它位置的实时天气信息。它简单而且轻量级，可以给你最多 7 天的详细天气预报和今明两天的每个小时的细节信息。
 
 ![][38]
 
-它集成在 GNOME shell 中，给你关于最近搜索位置的当前天气状态。它有最小的用户界面，在最小硬件需求下运行很顺畅。
+它集成在 GNOME shell 中，给你关于最近搜索位置的当前天气状态。它有极简的用户界面，在最小硬件需求下运行很顺畅。
 
 ### 34、Ramme
 
