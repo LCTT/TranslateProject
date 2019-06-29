@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11033-1.html)
 [#]: subject: (FreeDOS turns 25 years old: An origin story)
 [#]: via: (https://opensource.com/article/19/6/freedos-anniversary)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 
-FreeDOS 25 岁：起源故事
+25 岁的 FreeDOS：起源故事
 ======
 
 > 操作系统的历史是开发人员共同造物的开源软件模型的很好例子。
 
-![FreeDOS fish logo and command prompt on computer][1]
+![FreeDOS fish logo and command prompt on computer](https://img.linux.net.cn/data/attachment/album/201906/29/154802szbavz4a0fa8a27f.jpg)
 
 6 月 29 日是 [FreeDOS][2] 25 周年的日子。不管对于哪个开源软件项目来说，这都是一个重要的里程碑，我为过去这 1/4 个世纪来我们在这方面所做的工作感到自豪。我也为我们如何构建 FreeDOS 感到自豪，因为它是开源软件模型如何工作的一个很好的例子。
 
