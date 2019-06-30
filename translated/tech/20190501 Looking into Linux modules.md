@@ -22,9 +22,9 @@ lsmod 的主要用途之一是在系统不能正常工作时检查模块。然�
 
 **[ Also see:[Must-know Linux Commands][2] ]**
 
-### 列出内核模块
+### 显示内核模块
 
-The easiest way to list modules is with the **lsmod** command. While this command provides a lot of detail, this is the most user-friendly output.
+显示内核模块最简单的方法是使用 **lsmod** 命令。虽然这个命令包含了很多细节，但输出却是最用户友好。
 
 ```
 $ lsmod
@@ -103,22 +103,22 @@ e1000e                245760  0
 floppy                 81920  0
 ```
 
-In the output above:
+在上面的输出中：
 
-  * "Module" shows the name of each module
-  * "Size" shows the module size (not how much memory it is using)
-  * "Used by" shows each module's usage count and the referring modules
+  * “Module”显示每个模块的名称
+  * “Size”显示每个模块的大小（并不是它们使占的内存大小）
+  * “Used by”显示每个模块的被使用的计数和使用它们的模块
 
 
 
-Clearly, that's a _lot_ of modules. The number of modules loaded will depend on your system and distribution and what's running. We can count them like this:
+显然，这有_很多_模块。加载的模块数取决于你的系统和版本以及正在运行的内容。我们可以这样计数：
 
 ```
 $ lsmod | wc -l
 67
 ```
 
-To see the number of modules available on the system (not just running), try this command:
+要查看系统中可用的模块数（不止运行当中的），试试这个命令：
 
 ```
 $ modprobe -c | wc -l
@@ -127,14 +127,14 @@ $ modprobe -c | wc -l
 
 ### 与内核模块相关的其他命令
 
-Linux provides several commands for listing, loading and unloading, examining, and checking the status of modules.
+Linux 提供了几条用于罗列，加载及卸载，测试，以及检查模块状态的命令。
 
-  * depmod -- generates modules.dep and map files
-  * insmod -- a simple program to insert a module into the Linux Kernel
-  * lsmod -- show the status of modules in the Linux Kernel
-  * modinfo -- show information about a Linux Kernel module
-  * modprobe -- add and remove modules from the Linux Kernel
-  * rmmod -- a simple program to remove a module from the Linux Kernel
+  * depmod —— 生成 modules.dep 和映射文件
+  * insmod —— 一个往 Linux 内核插入模块的程序
+  * lsmod —— 显示 Linux 内核中模块状态
+  * modinfo —— 显示 Linux 内核模块信息
+  * modprobe —— 添加或移除 Linux 内核模块
+  * rmmod —— 一个从 Linux 内核移除模块的程序
 
 
 
