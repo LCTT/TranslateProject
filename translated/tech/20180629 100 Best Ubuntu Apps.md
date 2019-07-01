@@ -365,7 +365,7 @@ Shutter 是一个功能强大的截图工具，提供了添加截图效果、画
 
 ### 33、Weather
 
-Weather 是一个小的应用，给你关于你的城市或世界上其它位置的实时天气信息。它简单而且轻量级，可以给你最多 7 天的详细天气预报和今明两天的每个小时的细节信息。
+Weather 是一个小的应用，可以给你关于你的城市或世界上其它位置的实时天气信息。它简单而且轻量级，可以给你最多 7 天的详细天气预报和今明两天的每个小时的细节信息。
 
 ![][38]
 
@@ -373,15 +373,15 @@ Weather 是一个小的应用，给你关于你的城市或世界上其它位置
 
 ### 34、Ramme
 
-Ramme 是一个很酷的非官方的 Instagram 桌面客户端，给你带来 Instagram 移动端的感觉。它是基于 Electron 的客户端，所以它替代了 Instagram 应用提供了主题自定义的功能。
+Ramme 是一个很酷的非官方的 Instagram 桌面客户端，给你带来 Instagram 移动端的感觉。它是基于 Electron 开发的客户端，所以它复现了 Instagram 应用的功能，并提供了主题自定义的功能。
 
 ![][39]
 
-但是由于 Instagram 的 API 限制，你不能使用 Ramme 客户端上传图像，但你总是可以通过订阅 Instagram，喜欢和评论，给好友发消息。你可以从 [Github]][40] 下载 Ramme 安装文件。
+但是由于 Instagram 的 API 限制，你不能使用 Ramme 客户端上传图像，但你可以订阅 Instagram 流、喜欢和评论文章，给好友发消息。你可以从 [Github][40] 下载 Ramme 安装文件。
 
 ### 35、Thunderbird
 
-Thunderbird 是一个开源的邮件客户端，是很多 Linux 发行版的默认邮件客户端。尽管在 2017 年与 Mozilla 分离，Thunderbird 仍然是 Linux 平台非常流行的最好的邮件客户端。它自带特点像垃圾短信过滤，IMAP 和 POP 邮件同步，日历支持，通讯录集成和很多其它特定。
+Thunderbird 是一个开源的邮件客户端，是很多 Linux 发行版的默认邮件客户端。尽管在 2017 年与 Mozilla 分离，Thunderbird 仍然是 Linux 平台非常流行的最好的邮件客户端。它自带的功能包括垃圾邮件过滤、IMAP 和 POP 邮件同步、日历支持、通讯录集成和很多其它可以开箱即用的功能。
 
 ![][41]
 
@@ -389,11 +389,11 @@ Thunderbird 是一个开源的邮件客户端，是很多 Linux 发行版的默�
 
 ### 36、Pidgin
 
-Pidgin 是一个即时信息客户端，你能够在单个窗口下登录不同的即时网络。你可以登录到像 Google Talk，XMPP，AIM，Bonjour 等。
+Pidgin 是一个即时信息客户端，你能够在单个窗口下登录不同的即时网络。你可以登录到像 Google Talk、XMPP、AIM、Bonjour 等。
 
 ![][42]
 
-Pidgin 拥有所有你期待的即时通信的特点，你总是可以通过安装额外的插件来提升它的性能。
+Pidgin 拥有你期待的即时通信的所有特点，你总是可以通过安装额外的插件来提升其表现。
 
 ```
 $ sudo apt-get install pidgin
@@ -401,18 +401,19 @@ $ sudo apt-get install pidgin
 
 ### 37、Krita
 
-Krita 是由 KDE 开发的自由开源的数字打印，编辑和动画应用。它有优秀的用户界面，每个组件都放的很完美，因此你可以找到你需要的。
+Krita 是由 KDE 开发的自由开源的数字绘制、编辑和动画应用。它有优秀的用户界面，每个组件都恰到好处，因此你可以轻松找到你所需要的。
 
 ![][43]
 
-它使用 OpenGL 画布，这提升了 Krita 的性能，并且提供了很多特点相不同的绘画工具、动画工具、矢量工具、层、罩等很多。可在 Ubuntu 软件中心获取 Krita 并下载。
+它使用 OpenGL 画布，这提升了 Krita 的性能，并且提供了很多功能，如各种绘画工具、动画工具、矢量工具、层和遮罩等很多。可在 Ubuntu 软件中心获取 Krita 并下载。
 
 ### 38、Dropbox
 
-Dropbox 是一个出色的云存储播放器，一旦安装，它在 Ubuntu 中运行得非常好。即使 Google Drive 在 Ubuntu 16.04 LTS 和以后的版本中运行得不错，就 Dropbox 提供的特点而言，Dropbox 仍然是 Linux 上的首选云存储工具。
+Dropbox 是一个出色的云存储客户端，正确安装后，它在 Ubuntu 中运行得非常好。即使 Google Drive 在 Ubuntu 16.04 LTS 和以后的版本中运行得不错，就 Dropbox 提供的特点而言，Dropbox 仍然是 Linux 上的首选云存储工具。
 
 ![][44]
-它总是在后台运行，备份你系统上的新文件到云存储，持续在你的电脑和云存储间同步。
+
+它总是在后台运行，备份你系统上的新文件到云存储，持续保持你的电脑和云存储间的同步。
 
 ```
 $ sudo apt-get install nautilus-dropbox
@@ -420,43 +421,43 @@ $ sudo apt-get install nautilus-dropbox
 
 ### 39、Kodi
 
-Kodi 的前身是人们熟知的 Xbox 媒体中心（XBMC），是一个开源的媒体播放器。你可以在线或离线播放音乐、视频、播客、视频游戏等。这个软件最初是为第一代的 Xbox 游戏控制台开发的，之后慢慢地面向了个人电脑。
+Kodi 的前身是人们熟知的 Xbox 媒体中心（XBMC），是一个开源的媒体播放器。你可以在线或离线播放音乐、视频、播客、视频游戏等。这个软件最初是为第一代的 Xbox 游戏主机开发的，之后慢慢地移植到了个人电脑上。
 
 ![][45]
 
-Kodi 有令人印象深刻的视频接口，快速而强大。它是可高度定制的媒体播放器，你可以通过安装插件，来获取在线流服务像 Pandora、 Spotify、Amazon Prime Video、Netflix and YouTube。
+Kodi 有令人印象深刻的视频接口，快速而强大。它是可高度定制的媒体播放器，你可以通过安装插件，来获取在线流服务，如 Pandora、Spotify、Amazon Prime Video、Netflix 和 YouTube 等等。
 
 ### 40、Spotify
 
-Spotify 是最好的在线媒体流站点之一。它提供免费和付费音乐、播客、视频流服务。早期的 Spotify 不支持 Linux，但现在它有全功能的 Ubuntu 客户端。
+Spotify 是最好的在线媒体流站点之一。它提供免费和付费的音乐、播客、视频流服务。早期的 Spotify 不支持 Linux，但现在它有了自己的全功能的 Ubuntu 客户端。
 
 ![][46]
 
- 与 Google Play 音乐播放器一样，Spotify 是必不可少的媒体播放器。你只需要登录你的 Spotify 账户，就能在任何地方获取你最爱的在线内容。
+与 Google Play 音乐播放器一样，Spotify 是必不可少的媒体播放器。你只需要登录你的 Spotify 账户，就能在任何地方获取你最爱的在线内容。
 
 ### 41、Brackets
 
-Brackets 是一个有 Adobe 开发的开源的文本编辑器。它可被用来进行 web 开发和设计，例如 HTML，CSS 和 JavaScript。它随改变实时预览是一个很棒的特点，当你在脚本中修改时，你可以获得实时预览效果。
+Brackets 是一个有 Adobe 开发的开源的文本编辑器。它可被用来进行 web 开发和设计，例如 HTML、CSS 和 JavaScript。它带有的实时预览模式是一个很棒的特点，当你在脚本中修改时，你可以获得实时预览效果。
 
 ![][47]
 
-它是 Ubuntu 上的现代文本编辑器之一，拥有平滑的用户界面，这将 web 开发任务带到新的水平。它同样提供行内编辑器的特点，支持流行的扩展像 Emmet、Beautify、Git、File Icons 等等。
+它是 Ubuntu 上的现代文本编辑器之一，拥有平滑的用户界面，这将 web 开发任务带到新的水平。它同样提供了行内编辑器的特点，支持流行的扩展像 Emmet、Beautify、Git、File Icons 等等。
 
 ### 42、Bitwarden
 
-现今，安全问题事件增加，用户密码被盗后，重要的数据受到连累，因此，账户安全性必须严肃对待。推荐你使用 Bitwarden，将你的所有账户和登录密码安全的存在一个地方。
+现今，安全问题事件增加，用户密码被盗后，重要的数据受到连累，因此，账户安全性必须严肃对待。推荐你使用 Bitwarden，将你的所有账户和登录密码安全地存在一个地方。
 
 ![][48]
 
-Bitwarden 使用 AES-256 加密技术来存储所有的登录细节，只有用户可以访问这些数据。它同样帮你创建健壮的密码，因为弱密码容易被黑。
+Bitwarden 使用 AES-256 加密技术来存储所有的登录细节，只有用户可以访问这些数据。它同样可以帮你创建健壮的密码，因为弱密码容易被黑。
 
 ### 43、Terminator
 
-Terminator 是一个开源终端模拟器，用 Java 语言开发的。它是一个跨平台的模拟器，允许你在单个窗口有多个终端，在 Linux 默认的终端模拟器中不是这样。
+Terminator 是一个开源终端模拟器，是用 Java 语言开发的。它是一个跨平台的模拟器，允许你在单个窗口有多个终端，在 Linux 默认的终端模拟器中不是这样。
 
 ![][49]
 
-Terminator 其它杰出的特点包括自动日志、拖、丢、智能垂直和水平滚动等。
+Terminator 其它杰出的特点包括自动日志、拖放、垂直和水平的智能滚动等。
 
 ```
 $ sudo apt-get install terminator
@@ -464,11 +465,11 @@ $ sudo apt-get install terminator
 
 ### 44、Yak Yak
 
-Yak Yak 是一个开源的非官方的 Google Hangouts 消息的桌面客户端。它可能是一个不错的 Microsort 的 Skype 的替代品，自身拥有很多让人吃惊的特点。你可以允许桌面通知，语言偏好，工作在最小内存或电源需求等。
+Yak Yak 是一个开源的非官方的 Google Hangouts 消息的桌面客户端。它可能是一个不错的 Microsort 的 Skype 的替代品，自身拥有很多让人吃惊的特点。你可以启用桌面通知，设置语言偏好，使用最小内存或功率就可以工作等。
 
 ![][50]
 
-Yak Yak 拥有你期待的所有任何即时消息应用的所有特点，例如类型指示、拖、拽媒体文件，音/视频电话。
+Yak Yak 拥有你期待的所有任何即时消息应用的所有特点，例如输入指示、拖放媒体文件、音/视频电话。
 
 ### 45、Thonny
 
@@ -476,27 +477,29 @@ Thonny 是一个简单和轻量级的 IDE，尤其是为编程的初学者设计
 
 ![][51]
 
-Thonny 同样是一个很棒的调试工具，它支持调试过程中的活变量，除此之外，它还提供了执行函数调用是分离窗口、简易用户界面的特点。
+Thonny 同样是一个很棒的调试工具，它支持调试过程中的即时变量值显示，除此之外，它还提供了独立的窗口以执行函数调用，简易的用户界面的特点。
 
 ```
 $ sudo apt-get install thonny
 ```
 
-### 46、Font Manager
+### 46、字体管理器
 
-Font Manager 是一个轻量级的工具，用于管理、添加、移除你的 Ubuntu 系统上的字体。尤其是为 Gnome 桌面环境构建的，当用户不知道如何在命令行管理字体的会发现这个工具非常有用。
+字体管理器是一个轻量级的工具，用于管理、添加、移除你的 Ubuntu 系统上的字体。它是特别为 Gnome 桌面环境构建的，在用户不知道如何在命令行管理字体时会发现这个工具非常有用。
 
 ![][52]
 
-Gtk+ Font Manager 不是为专业用户准备的，它有简单的用户界面，你会发现很容易导航。你只需要从网上下载字体文件，并使用 Font Manager 添加它们。
+Gtk+ 字体管理器不是为专业用户准备的，它有简单的用户界面，你会发现很容易使用。你只需要从网上下载字体文件，并使用字体管理器添加它们。
 
+```
 $ sudo add-apt-repository ppa:font-manager/staging
 $ sudo apt-get update
 $ sudo apt-get install font-manager
+```
 
-### 47、Atril Document Viewer
+### 47、Atril 文档查看器
 
-Atril 是一个简单的文件查看器，支持便携文件格式（PDF）、PostScript（PS）、Encapsulated PostScript（EPS）、DJVU 和 DVI。Atril 绑定在 MATE 桌面环境中，它比大多数 Linux 发行版中默认的文件查看器 Evince 更理想。
+Atril 是一个简单的文件查看器，支持便携文件格式（PDF）、PostScript（PS）、Encapsulated PostScript（EPS）、DJVU 和 DVI。Atril 与 MATE 桌面环境捆绑在一起，它比大多数 Linux 发行版中默认的文件查看器 Evince 更理想。
 
 ![][53]
 
@@ -508,7 +511,7 @@ $ sudo apt-get install atril
 
 ### 48、Notepadqq
 
-如果你曾在 Windows 上用过 Notepad++，并且在 Linux 上寻找相似的程序，别担心，开发者们已经将它移植到 Linux，叫 Notepadqq。它是一个简单且强大的文本编辑器，你可以在日常生活中用它完成各种语言的任务。
+如果你曾在 Windows 上用过 Notepad++，并且想在 Linux 上寻找相似的程序，别担心，开发者们已经将它移植到 Linux，叫 Notepadqq。它是一个简单且强大的文本编辑器，你可以在日常生活中用它，或用各种语言编程。
 
 ![][54]
 
@@ -526,7 +529,7 @@ Amarok 是在 KDE 项目下开发的一个开源音乐播放器。它有直观�
 
 ![][55]
 
-Amarok 上的一些顶尖的特点包括智能播放列表支持，集成在线服务像 MP3tunes、Last.fm、 Magnatune 等。
+Amarok 上的一些顶尖的特点，包括智能播放列表支持，集成在线服务像 MP3tunes、Last.fm、 Magnatune 等。
 
 ### 50、Cheese
 
