@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (oneforalone)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11046-1.html)
 [#]: subject: (Emacs for (even more of) the win)
 [#]: via: (https://so.nwalsh.com/2019/03/01/emacs)
 [#]: author: (Norman Walsh https://so.nwalsh.com)
 
-Emacs 的胜利（或是大胜）
+Emacs 的（更多）胜利
 ======
 
 ![](https://img.linux.net.cn/data/attachment/album/201907/02/002550x2ol48004hx6e0od.jpg)
