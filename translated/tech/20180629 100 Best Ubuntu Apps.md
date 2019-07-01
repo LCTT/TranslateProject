@@ -541,11 +541,11 @@ Cheese 是 Linux 默认的网络摄像头应用，在视频聊天或即时消息
 
 ### 51、MyPaint
 
-MyPaint 是一个自由开源的光栅图形编辑器，关注于数字绘画而不是图像操作和相片处理。它是跨平台的应用，与 Corel Painter 很相似。
+MyPaint 是一个自由开源的光栅图形编辑器，专于数字绘画而不是图像操作和相片处理。它是跨平台的应用，与 Corel Painter 很相似。
 
 ![][57]
 
-MyPaint 可能是 Windows 上的 Microsoft Paint 应用的很好的替代。它有简单的用户界面，快速而强大。MyPaint 可以软件中心下载。
+MyPaint 可能是 Windows 上的 Microsoft Paint 应用的很好的替代品。它有简单的用户界面，快速而强大。MyPaint 可以软件中心下载。
 
 ### 52、PlayOnLinux
 
@@ -555,13 +555,13 @@ PlayOnLinux 是 WINE 模拟器的前端，允许你在 Linux 上运行 Windows �
 
 ### 53、Akregator
 
-Akregator 是在 KDE 项目下为 KDE Plasma 环境开发的默认的 RSS 阅读器。它有简单的用户界面，自带了 KDE 的 Konqueror 浏览器，所以你不需要在阅读新闻提要时切换应用。
+Akregator 是在 KDE 项目下为 KDE Plasma 环境开发的默认 RSS 阅读器。它有简单的用户界面，自带了 KDE 的 Konqueror 浏览器，所以你不需要在阅读新闻提要时切换应用。
 
-Akregator 同样提供了桌面通知、自动提要等功能。你会发现在大多数 Linux 发行版中它是最好的提要阅读器。
+Akregator 同样提供了桌面通知、自动摘要等功能。你会发现在大多数 Linux 发行版中它是最好的提要阅读器。
 
 ### 54、Brave
 
-Brave 是一个开源的 web 浏览器，阻挡了广告和追踪，所以你可以快速和安全的浏览你的内容。它实际做的是代表你像网站和油管主播支付了费用。如果你喜欢像网站和和油管主播共享而不是看广告，这个浏览器更适合你。
+Brave 是一个开源的 web 浏览器，拦截了广告和追踪，所以你可以快速和安全的浏览你的内容。它实际做的是代表你向网站和油管主播支付了费用。如果你宁可向网站和和油管主播做出支持而不是看广告，这个浏览器更适合你。
 
 ![][60]
 
@@ -569,11 +569,11 @@ Brave 是一个开源的 web 浏览器，阻挡了广告和追踪，所以你可
 
 ### 55、Bitcoin Core
 
-Bitcoin Core 是一个官方的客户端，非常安全和可靠。它持续追踪你的所有交易以保证你的所有交易都是有效的。它限制比特币矿工和银行完全掌控你的比特币钱包。
+Bitcoin Core 是一个比特币官方的客户端，非常安全和可靠。它持续追踪你的所有比特币交易以保证你的所有交易都是有效的。它可以防止比特币矿工和银行完全掌控你的比特币钱包。
 
 ![][61]
 
-Bitcoin Core 同样提供了其它重要的特点像私钥备份、冷存储、安全通知等。
+Bitcoin Core 同样提供了其它重要的特点，像私钥备份、冷存储、安全通知等。
 
 ```
 $ sudo add-apt-repository ppa:bitcoin/bitcoin
@@ -581,9 +581,9 @@ $ sudo apt-get update
 $ sudo apt-get install bitcoin-qt
 ```
 
-### 56、Speedy Duplicate Finder
+### 56、Speedy 重复查找工具
 
-Speedy Duplicate Finder 是一个跨平台的文件查找工具，用来帮助你查找你的系统上的重复文件，清理磁盘空间。它是一个智能工具，在整个硬盘上搜索重复文件，同样提供智能过滤功能，根据文件类型、扩展或大小帮你找到文件。
+Speedy 重复查找工具是一个跨平台的文件查找工具，用来帮助你查找你的系统上的重复文件，清理磁盘空间。它是一个智能工具，在整个硬盘上搜索重复文件，同样提供智能过滤功能，根据文件类型、扩展或大小帮你找到文件。
 
 ![][62]
 
@@ -591,15 +591,15 @@ Speedy Duplicate Finder 是一个跨平台的文件查找工具，用来帮助�
 
 ### 57、Zulip
 
-Zulip 是一个自由开源的群聊应用，被 Dropbox 获得了。它是用 Python 写的，用 PostgreSQL 数据库。它被设计和开发为其它聊天应用像 Slack 和 HipChat 的好的替代品。
+Zulip 是一个自由开源的群聊应用，被 Dropbox 收购了。它是用 Python 写的，用 PostgreSQL 数据库。它被设计和开发为其它如 Slack 和 HipChat 的聊天应用的替代品。
 
 ![][63]
 
-Zulip 功能丰富，例如拖拽文件、群聊、私密聊天、图像预览等。它供养集成了 Github、JIRA、Sentry 和上百种其它服务。
+Zulip 功能丰富，支持例如拖放文件、群聊、私密聊天、图像预览等。它也集成了 Github、JIRA、Sentry 和上百种其它服务。
 
 ### 58、Okular
 
-Okular 是 KDE 为 KDE 桌面环境开发的跨平台的文件查看器。它是一个简单的文件查看器，支持 Portable Document Format (PDF), PostScript, DjVu, Microsoft Compiled HTML help 和很多其它文件格式。
+Okular 是为 KDE 桌面环境开发的跨平台的文件查看器。它是一个简单的文件查看器，支持 Portable Document Format (PDF)、PostScript、DjVu、Microsoft Compiled HTML help 和很多其它文件格式。
 
 ![][64]
 
@@ -607,30 +607,31 @@ Okular 是在 Ubuntu 上你应该尝试的最好的文件查看器之一，它�
 
 ### 59、FocusWriter
 
-FocusWriter 是一个集中注意力的字处理工具，隐藏了你的桌面屏幕，因此你能够专注写作。正如你看到的屏幕截图，整个 Ubuntu 屏被隐藏了，只有你和你的字处理工具。但你总是可以进入 Ubuntu 屏幕，当你需要的时候，只需要将光标移动到屏幕的边缘。
+FocusWriter 是一个集中注意力的字处理工具，隐藏了你的桌面屏幕，因此你能够专注写作。正如你看到的屏幕截图，整个 Ubuntu 屏幕被隐藏了，只有你和你的字处理工具。但你总是可以进入 Ubuntu 屏幕，当你需要的时候，只需要将光标移动到屏幕的边缘。
 
 ![][65]
 
-它是一个轻量级的字处理其，支持 TXT、RTF、ODT 文件格式。它同样提供可完全定制的用户界面，还有定时器、警报、每日目标、声音效果等特点，支持翻译为 20 种语言。
+它是一个轻量级的字处理器，支持 TXT、RTF、ODT 文件格式。它同样提供了可完全定制的用户界面，还有定时器、警报、每日目标、声音效果等特点，已经被翻译为 20 种语言。
 
 ### 60、Guake
 
-Guake 是为 GNOME 桌面环境准备的酷炫的下拉式终端。当你任务完成后，你需要它消失时， Guake 会闪一下。你只需要按 F12 按钮来启动或退出，这样启动 Guake 币启动一个新的终端窗口更快。
+Guake 是为 GNOME 桌面环境准备的酷炫的下拉式终端。当你需要时，Guake 就会闪现，当你任务完成后，它就会消失。你只需要按 F12 按钮来启动或退出，这样启动 Guake 比启动一个新的终端窗口更快。
 
 ![][66]
 
-Guake 是一个特点丰富的终端，支持多栏，只需要点击几下就能将你的终端内容保存到文件，并且有完全可定制的用户界面。
+Guake 是一个功能丰富的终端，支持多栏，只需要点击几下就能将你的终端内容保存到文件，并且有完全可定制的用户界面。
 
 ```
 $ sudo apt-get install guake
 ```
+
 ### 61、KDE Connect
 
-KDE Connect 在 Ubuntu 上是一个很棒的应用，我很想在这篇马拉松文章中将它提早列出来，但是竞争激烈。总之 KDE Connect 可以将你的 Android 智能手机的通知直接转到 Ubuntu 桌面来。
+KDE Connect 是 Ubuntu 上的一个很棒的应用，我很想在这篇马拉松文章中将它提早列出来，但是竞争太激烈。总之 KDE Connect 可以将你的 Android 智能手机的通知直接转到 Ubuntu 桌面来。
 
 ![][67]
 
-有了 KDE Connect，你可以做很多事，例如检查手机电池水平，在电脑和 Android 手机间交换文件，剪贴板同步，发送短信，你还可以将你的手机当作无线鼠标或键盘。
+有了 KDE Connect，你可以做很多事，例如检查手机电池电量，在电脑和 Android 手机间交换文件，剪贴板同步，发送短信，你还可以将你的手机当作无线鼠标或键盘。
 
 ```
 $ sudo add-apt-repository ppa:webupd8team/indicator-kedeconnect
@@ -640,11 +641,11 @@ $ sudo apt-get install kdeconnect indicator-kdeconnect
 
 ### 62、CopyQ
 
-CopyQ 是一个简单但是非常有用的剪切板管理器，它保存你的系统剪切板内容，无论你做了什么改变，你都可以在你需要的时候恢复它。它是一个很棒的工具，支持文本、图像、HTML、和其它格式。
+CopyQ 是一个简单但是非常有用的剪贴板管理器，它保存你的系统剪贴板内容，无论你做了什么改变，你都可以在你需要的时候恢复它。它是一个很棒的工具，支持文本、图像、HTML 和其它格式。
 
 ![][68]
 
-CopyQ 自身有很多功能像拖拽、复制/拷贝、编辑、移除、排序、创建等。它同样支持集成文本编辑器，像 Vim，所以如果你是程序员，这非常有用。
+CopyQ 自身有很多功能像拖放、复制/拷贝、编辑、移除、排序、创建等。它同样支持集成文本编辑器，如 Vim，所以如果你是程序员，这非常有用。
 
 ```
 $ sudo add-apt-repository ppa:hluk/copyq
@@ -654,11 +655,11 @@ $ sudo apt-get install copyq
 
 ### 63、Tilix
 
-Tilix 是一个功能丰富的高级 GTX3 瓷砖终端模拟器。如果你使用 GNOME 桌面环境，那你会爱上 Tilix，因为它遵循了 GNOME 人类界面指导。Tilix 模拟器与大多数 Linux 发行版上默认终端模拟器相比，它给了你分离终端窗口为多个终端面板。
+Tilix 是一个功能丰富的高级 GTX3 平铺式终端模拟器。如果你使用 GNOME 桌面环境，那你会爱上 Tilix，因为它遵循了 GNOME 用户界面指导。Tilix 模拟器与大多数 Linux 发行版上默认终端模拟器相比，它给了你切分终端窗口为多个终端面板的功能。
 
 ![][69]
 
-Tilix 提供了自定义链接、图片支持、多面板、拖拽、持续布局等功能。它同样支持键盘快捷方式，你可以根据你的需要在偏好设置中自定义快捷方式。
+Tilix 提供了自定义链接、图片支持、多面板、拖放、固定布局等功能。它同样支持键盘快捷方式，你可以根据你的需要在偏好设置中自定义快捷方式。
 
 ```
 $ sudo add-apt-repository ppa:webupd8team/terminix
@@ -668,7 +669,7 @@ $ sudo apt-get install tilix
 
 ### 64、Anbox
 
-Anbox 是一个 Android 模拟器，让你在 Linux 系统中安装和运行 Android 应用。它是自由开源的 Android 模拟器，通过使用 Linux 容器来执行 Android 运行时环境。它使用最新的 Linux 技术 和 Android 发布版，所以你可以运行任何原生的 Android 应用。
+Anbox 是一个 Android 模拟器，可以让你在 Linux 系统中安装和运行 Android 应用。它是自由开源的 Android 模拟器，通过使用 Linux 容器来执行 Android 运行时环境。它使用最新的 Linux 技术 和 Android 发布版，所以你可以运行任何原生的 Android 应用。
 
 ![][70]
 
@@ -685,11 +686,11 @@ $ snap install --devmode -- beta anbox
 
 ### 65、OpenShot
 
-你会发现 OpenShot 是 Linux 发行版中最好的开源视频编辑器。它是跨平台的视频编辑器，易于使用，不在性能方面妥协。它支持所有主流的音频、视频、图像格式。
+你会发现 OpenShot 是 Linux 发行版中最好的开源视频编辑器。它是跨平台的视频编辑器，易于使用，性能方面毫不逊色。它支持所有主流的音频、视频、图像格式。
 
 ![][71]
 
-OpenShot 有干净的用户界面，功能有拖拽、裁剪大小调整、大小调整、裁剪、快照、实时预览、音频混合和编辑等多种功能。
+OpenShot 有干净的用户界面，功能有拖放、片段大小、大小缩放、裁剪、快照、实时预览、音频混合和编辑等多种功能。
 
 ```
 $ sudo add-apt-repository ppa:openshot.developers/ppa
@@ -703,8 +704,7 @@ $ sudo apt-get install openshot -qt
 
 ![][72]
 
-尽管是一个简单的导航栏，Plank 提供了通过拖拽来重新安排的功能，固定和运行应用图标，转换主题支持。
-
+尽管是一个简单的导航栏，Plank 提供了通过拖放来重新摆放的功能，固定和运行应用图标，转换主题支持。
 
 ```
 $ sudo add-apt-repository ppa:ricotz/docky
@@ -718,7 +718,7 @@ Filezilla 是一个免费和跨平台的 FTP 应用，包括 Filezilla 客户端
 
 ![][73]
 
-它是一个简单的文件传输应用，支持拖拽，支持世界范围的各种语言，多任务的强大用户界面，控制和配置传输速度。
+它是一个简单的文件传输应用，支持拖放，支持世界范围的各种语言，多任务的强大用户界面，控制和配置传输速度。
 
 ### 68、Stacer
 
@@ -777,7 +777,7 @@ $ sudo apt-get install sublime-text
 
 ### 73、TeXstudio
 
-Texstudio 是一个创建和编辑 LaTex 文件的集成写作环境。它是开源的编辑器，提供了语法高亮、集成查看、交互式拼写检查、代码折叠、拖拽等特点。
+Texstudio 是一个创建和编辑 LaTex 文件的集成写作环境。它是开源的编辑器，提供了语法高亮、集成查看、交互式拼写检查、代码折叠、拖放等特点。
 
 ![][80]
 
@@ -857,7 +857,7 @@ $ sudo apt-get install quiterss
 
 ### 80、MPV Media Player
 
-MPV 是一个自由开源的媒体播放器，基于 MPlayer 和 MPlayer 2。它有简单的用户界面，用户之需要拖拽音/视频文件来播放，因为在 GUI 上没有添加媒体文件的选项。
+MPV 是一个自由开源的媒体播放器，基于 MPlayer 和 MPlayer 2。它有简单的用户界面，用户之需要拖放音/视频文件来播放，因为在 GUI 上没有添加媒体文件的选项。
 
 ![][88]
 
@@ -1061,7 +1061,7 @@ via: https://linuxhint.com/100_best_ubuntu_apps/
 作者：[Swapnil Tirthakar][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[warmfrog](https://github.com/warmfrog)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
