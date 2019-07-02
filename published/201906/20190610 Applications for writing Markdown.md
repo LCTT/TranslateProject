@@ -1,30 +1,30 @@
 [#]: collector: (lujun9972)
 [#]: translator: (murphyzhao)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11027-1.html)
 [#]: subject: (Applications for writing Markdown)
 [#]: via: (https://fedoramagazine.org/applications-for-writing-markdown/)
 [#]: author: (Ryan Lerch https://fedoramagazine.org/author/ryanlerch/)
 
-撰写 Markdown 的软件
+三个在 Fedora 平台上撰写 Markdown 的软件
 ======
 
 ![][1]
 
-Markdown 是一种轻量级标记语言，添加格式后，以纯文本格式查看时依然保持可读性。Markdown（和 Markdown 衍生物）被广泛用作 GitHub 和 pagure 等服务上文档标记的主要形式。根据设计，可以在文本编辑器中轻松创建和编辑 Markdown，但是，有许多编辑器可以提供 Markdown 标记的格式化预览，或提供 markdown 语法高亮显示。
+Markdown 是一种轻量级标记语言，可以在添加格式后以纯文本格式查看时依然保持可读性。Markdown（和 Markdown 衍生物）被广泛用作 GitHub 和 pagure 等服务上格式化文档的主要形式。根据其设计，可以在文本编辑器中轻松创建和编辑 Markdown，但是，有许多编辑器可以提供 Markdown 标记的格式化预览，或提供 Markdown 语法高亮显示。
 
 本文介绍了针对 Fedora 平台的 3 个桌面应用程序，以帮助编辑 Markdown。
 
 ### UberWriter
 
-[UberWriter][2] 是一个小巧的 Markdown 编辑器和预览器，允许您编辑文本，并预览渲染的文档。
+[UberWriter][2] 是一个小巧的 Markdown 编辑器和预览器，允许你以文本方式编辑，并预览渲染的文档。
 
 ![][3]
 
-编辑器本身具有内置的内联预览，因此标记为粗体的文本以粗体显示。编辑器还提供图像、公式、脚注等标记的内联预览。按住 Ctrl 键单击其中的一个标记可以即时预览要显示的元素。
+该编辑器本身具有内置的内联预览，因此标记为粗体的文本以粗体显示。编辑器还提供图像、公式、脚注等标记的内联预览。按住 `Ctrl` 键单击其中的一个标记可以即时预览要显示的元素。
 
-除了编辑器功能外，UberWriter 还具有全屏模式和聚焦模式，有助于最大限度地减少干扰。焦点模式将以灰色显示除当前段落以外的所有内容，以帮助您专注于文档中当前元素。
+除了编辑器功能外，UberWriter 还具有全屏模式和聚焦模式，有助于最大限度地减少干扰。焦点模式将以灰色显示除当前段落以外的所有内容，以帮助你专注于文档中当前元素。
 
 从第三方 Flathub 存储库安装 UberWriter 到 Fedora 平台。在将系统[设置为从 Flathub 安装][4]后，可以直接从 Software 应用程序中安装它。
 
@@ -34,13 +34,13 @@ Marker 是一个 Markdown 编辑器，它提供了一个简单的文本编辑器
 
 ![][5]
 
-此外，Marker 允许您以各种格式导出文档，包括 HTML、PDF 和开放文档格式（ODF）。
+此外，Marker 允许你以各种格式导出文档，包括 HTML、PDF 和开放文档格式（ODF）。
 
 从第三方 Flathub 存储库安装 Marker 到 Fedora 平台。在将系统[设置为从 Flathub 安装][4]后，可以直接从 Software 应用程序中安装它。
 
 ### Ghostwriter
 
-以前的编辑更专注于最小的用户体验，Ghostwriter 提供了更多的功能和选项。Ghostwriter 提供了一个文本编辑器，当您以 Markdown 格式书写时，编辑器将 Markdown 部分样式化。粗体标记文本显示为粗体，标题标记显示为较大的字体，以帮助编写 Markdown 标记。
+以前的编辑更专注于最小的用户体验，Ghostwriter 提供了更多的功能和选项。Ghostwriter 提供了一个文本编辑器，当你以 Markdown 格式书写时，编辑器将 Markdown 部分样式化。粗体标记文本显示为粗体，标题标记显示为较大的字体，以帮助编写 Markdown 标记。
 
 ![][6]
 
@@ -60,8 +60,8 @@ via: https://fedoramagazine.org/applications-for-writing-markdown/
 
 作者：[Ryan Lerch][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[murphyzhao](https://github.com/murphyzhao)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

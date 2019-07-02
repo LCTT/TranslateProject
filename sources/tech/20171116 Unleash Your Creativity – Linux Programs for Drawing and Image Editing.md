@@ -1,3 +1,4 @@
+IEAST is translating
 ### Unleash Your Creativity – Linux Programs for Drawing and Image Editing
 
   By: [chabowski][1]
@@ -74,11 +75,11 @@ And indeed, the sky’s the limit on how creative a user wants to be when using 
 
 (
 
- _**2** votes, average: **5.00** out of 5_ 
+ _**2** votes, average: **5.00** out of 5_
 
 )
 
- _You need to be a registered member to rate this post._ 
+ _You need to be a registered member to rate this post._
 
 Tags: [drawing][19], [Getting Started with Linux][20], [GIMP][21], [image editing][22], [Images][23], [InkScape][24], [KDE][25], [Krita][26], [Leap 42.3][27], [LibreOffice][28], [Linux Magazine][29], [Okular][30], [openSUSE][31], [PDF][32] Categories: [Desktop][33], [Expert Views][34], [LibreOffice][35], [openSUSE][36]
 
