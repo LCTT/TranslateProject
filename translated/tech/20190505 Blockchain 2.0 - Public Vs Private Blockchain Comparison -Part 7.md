@@ -1,12 +1,22 @@
-# 区块链 2.0：公有链 Vs 私有链（七）
+[#]: collector: (lujun9972)
+[#]: translator: (zionfuo)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Blockchain 2.0 – Public Vs Private Blockchain Comparison [Part 7])
+[#]: via: (https://www.ostechnix.com/blockchain-2-0-public-vs-private-blockchain-comparison/)
+[#]: author: (editor https://www.ostechnix.com/author/editor/)
 
-![](https://cdn.nlark.com/yuque/0/2019/png/241708/1558488910255-ef5f4381-c3a0-4a43-bb6f-c6890b808d32.png)
+区块链 2.0：公有链 Vs 私有链（七）
+======
 
-[区块链 2.0](https://www.ostechnix.com/blockchain-2-0-an-introduction/) 系列的前一篇文章探索了[智能合同的现状](https://www.ostechnix.com/blockchain-2-0-ongoing-projects-the-state-of-smart-contracts-now/)。这篇文章旨在揭示可以创建的不同类型的区块链。每个协议都用于与众不同的应用程序，并且根据用例的不同，每个应用程序所遵循的协议也不同。现在，让我们比较一下公有链、开源软件与私有链、专有技术。
+![Public vs Private blockchain][1]
+
+[**区块链 2.0**][2]系列的前一篇文章探索了[**智能合同的现状**][3]。这篇文章旨在揭示可以创建的不同类型的区块链。每个协议都用于与众不同的应用程序，并且根据用例的不同，每个应用程序所遵循的协议也不同。现在，让我们比较一下公有链、开源软件与私有链、专有技术。
 
 正如我们所知，基于区块链的分布式账本的基本三层结构如下:
 
-![图1 – 区块链分布式账本的基本结构](https://cdn.nlark.com/yuque/0/2019/png/241708/1558488910943-95ae93e1-6e34-40e7-bff5-0ffdb384c103.png#align=left&display=inline&height=389&originHeight=389&originWidth=744&size=0&status=done&width=744)](http://www.ostechnix.com/wp-content/uploads/2019/04/blockchain-architecture.png)
+![][4]
 图1 – 区块链分布式账本的基本结构
 
 这里提到的类型之间的差异主要是因为底层区块链的协议。该协议规定了参与者的规则和参与的方式。
@@ -19,12 +29,12 @@
 
 大多数区块链要么是公有的，要么是私有的。一般来说，公有链可以被认为是开源软件的等价物，大多数私有链可以被视为源自公有链的专有平台。下图应该会让大多数人明显地看出基本的区别。
 
-![图2 – 公有链/私有链与开源/专有技术的对比](https://cdn.nlark.com/yuque/0/2019/png/241708/1558488910996-6cd845e3-22d7-4edd-b35e-bee59ffb99f8.png#align=left&display=inline&height=390&originHeight=358&originWidth=684&size=0&status=done&width=746)](http://www.ostechnix.com/wp-content/uploads/2019/04/Public-vs-Private-blockchain-comparison.png)
+![][5]
 图2 – 公有链/私有链与开源/专有技术的对比
 
 虽然这是最受欢迎的理解。但是这并不是说所有的私有链都是从公有链中衍生出来的。
 
-## 公有链
+### 公有链
 
 公有链可以被视为是一个开放的平台或网络。任何拥有专业知识和计算资源的人都可以参与其中。这将产生以下影响:
 
@@ -40,7 +50,7 @@
 - 开放式参与，使比特币等公有链中的大量参与者，往往会增加对计算设备和能源成本的初始投资。
 
 
-## 私有链
+### 私有链
 
 相比之下，私有链是被许可的区块链。含义:
 
@@ -54,7 +64,7 @@
 
 私有链通常在其协议中没有任何特征。这使得该系统仅与目前使用的大多数基于云的数据库系统一样安全。
 
-## 智者的观点
+### 智者的观点
 
 需要注意的一点是，它们被命名为 public 或 private (或 open 或 close) 的事实与底层代码库无关。在这两种情况下，平台所基于的代码或文字基础可能是公开的，也可能不是公开的。R3 是一家 DLT (**D**istributed **L**edger **T**echnology) 公司，领导着由 200 多家跨国机构组成的公有财团。他们的目标是在金融和商业领域进一步发展区块链和相关分布式账本技术。Corda 是这一共同努力的产物。R3 将 corda 定义为专门为企业构建的区块链平台。同样的代码库是开源的，鼓励世界各地的开发人员为这个项目做出贡献。然而，考虑到 corda 面临的业务性质和旨在满足的需求，corda 将被归类为许可的封闭区块链平台。这意味着企业可以在部署后选择网络的参与者，并通过使用本机可用的智能合约工具选择这些参与者可以访问的信息类型。
 
@@ -62,8 +72,25 @@
 
 阅读本系列中写一篇文章是有关Hyperledger项目的。
 
-- [**Blockchain 2.0 – An Introduction To Hyperledger Project (HLP)**](https://www.ostechnix.com/blockchain-2-0-an-introduction-to-hyperledger-project-hlp/)
+- [**Blockchain 2.0 – An Introduction To Hyperledger Project (HLP)**][6]
 
 我们正在研究更多有趣的区块链技术话题。敬请期待!
+--------------------------------------------------------------------------------
 
-[https://www.ostechnix.com/blockchain-2-0-public-vs-private-blockchain-comparison/](https://www.ostechnix.com/blockchain-2-0-public-vs-private-blockchain-comparison/)
+via: https://www.ostechnix.com/blockchain-2-0-public-vs-private-blockchain-comparison/
+
+作者：[editor][a]
+选题：[lujun9972][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://www.ostechnix.com/author/editor/
+[b]: https://github.com/lujun9972
+[1]: https://www.ostechnix.com/wp-content/uploads/2019/04/Public-Vs-Private-Blockchain-720x340.png
+[2]: https://www.ostechnix.com/blockchain-2-0-an-introduction/
+[3]: https://www.ostechnix.com/blockchain-2-0-ongoing-projects-the-state-of-smart-contracts-now/
+[4]: http://www.ostechnix.com/wp-content/uploads/2019/04/blockchain-architecture.png
+[5]: http://www.ostechnix.com/wp-content/uploads/2019/04/Public-vs-Private-blockchain-comparison.png
+[6]: https://www.ostechnix.com/blockchain-2-0-an-introduction-to-hyperledger-project-hlp/
