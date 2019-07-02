@@ -7,84 +7,82 @@
 [#]: via: (https://opensource.com/article/19/6/understanding-linux-permissions)
 [#]: author: (Bryant Son https://opensource.com/users/brson/users/greg-p/users/tj)
 
-A beginner's guide to Linux permissions
+Linux 权限入门指南
 ======
-Linux security permissions designate who can do what with a file or
-directory.
+Linux安全权限能够指定谁可以对文件或目录执行什么操作。
 ![Hand putting a Linux file folder into a drawer][1]
 
-One of the main benefits of Linux systems is that they are known to be less prone to security vulnerabilities and exploits than other systems. Linux definitely gives users more flexibility and granular controls over its file systems' security permissions. This may imply that it's critical for Linux users to understand security permissions. That isn't necessarily true, but it's still wise for beginning users to understand the basics of Linux permissions.
+与其他系统相比而言 Linux 系统的众多优点中最为主要一个便是Linux 系统有着更少的安全漏洞和被攻击的隐患。Linux无疑为用户提供了更为灵活和精细化的文件系统安全权限控制。这可能意味着Linux用户理解安全权限是至关重要的。虽然这并不一定是必要的，但是对于初学者来说，理解Linux权限的基本知识仍是一个明智之选。
 
-### View Linux security permissions
+### 查看 Linux 安全权限
 
-To start learning about Linux permissions, imagine we have a newly created directory called **PermissionDemo**. Run **cd** inside the directory and use the **ls -l** command to view the Linux security permissions. If you want to sort them by time modified, add the **-t** option.
+在开始 Linux 权限的相关学习之前，假设我们新建了一个名为 **PermissionDemo**的目录。使用 **cd** 命令进入这个目录，然后使用 **ls -l** 命令查看 Linux 安全管理权限信息。如果你想以时间为序排列，加上 **-t** 选项
 
 
 ```
 `ls -lt`
 ```
 
-Since there are no files inside this new directory, this command returns nothing.
+因为这一目录下没有文件，所以这一命令执行不会返回结果。
 
 ![No output from ls -l command][2]
 
-To learn more about the **ls** option, access its man page by entering **man ls** on the command line.
+要了解关于 **ls** 命令的更多信息，请通过在命令行中输入 **man ls** 来查看命令手册。
 
 ![ls man page][3]
 
-Now, let's create two files: **cat.txt** and **dog.txt** with empty content; this is easy to do using the **touch** command. Let's also create an empty directory called **Pets** with the **mkdir** command. We can use the **ls -l** command again to see the permissions for these new files.
+ 现在，让我们创建两个名为 **cat.txt** 和 **dog.txt** 的空白文件；这一步使用 **touch** 命令将更为简便。然后继续使用 **mkdir** 命令创建一个名为 **Pets** 的空目录。我们可以再次使用**ls -l**命令查看这些新文件的权限。
 
 ![Creating new files and directory][4]
 
-We need to pay attention to two sections of output from this command.
+我们需要留意这个命令输出结果的两个部分。
 
-### Who has permission?
+### 谁拥有权限？
 
-The first thing to examine indicates _who_ has permission to access the file/directory. Note the section highlighted in the red box below. The first column refers to the _user_ who has access, while the second column refers to the _group_ that has access.
+首先要注意的是 _who_ 具有访问文件/目录的权限。请注意下面红色框中突出显示的部分。第一列是指具有访问权限的 _user(用户)_ ，而第二列是指具有访问权限的 _group（组）_ 。
 
 ![Output from -ls command][5]
 
-There are three main types of users: **user** , **group** ; and **other** (essentially neither a user nor a group). There is one more: **all** , which means practically everyone.
+用户的类型主要有三种:**user**、**group**；和**other**(本质上既不是用户也不是组)。还有一个**all**，意思是几乎所有人。
 
 ![User types][6]
 
-Because we are using **root** as the user, we can access any file or directory because **root** is the superuser. However, this is generally not the case, and you will probably be restricted to your username. A list of all users is stored in the **/etc/passwd** file.
+由于我们使用 **root** 作为当前用户，所以我们可以访问任何文件或目录，因为 **root** 是超级用户。然而，通常情况并非如此，您可能会被限定使用您的普通用户登录。所有的用户都存储在 **/etc/passwd** 文件中。
 
 ![/etc/passwd file][7]
 
-Groups are maintained in the **/etc/group** file.
+ “组“的相关信息保存在 **/etc/group** 文件中。
 
 ![/etc/passwd file][8]
 
-### What permissions do they have?
+### 他们有什么权限？
 
-The other section of the output from **ls -l** that we need to pay attention to relates to enforcing permissions. Above, we confirmed that the owner and group permissions for the files dog.txt and cat.txt and the directory Pets we created belong to the **root** account. We can use that information about who owns what to enforce permissions for the different user ownership types, as highlighted in the red box below.
+我们需要注意的是 **ls -l** 命令输出结果的另一部分与执行权限有关。以上，我们查看了创建的dog.txt 和 cat.txt文件以及Pets目录的所有者和组权限都属于 **root** 用户。我们可以通过这一信息了解到不同用户组所拥有的相应权限，如下面的红色框中的标示。
 
 ![Enforcing permissions for different user ownership types][9]
 
-We can dissect each line into five bits of information. The first part indicates whether it is a file or a directory; files are labeled with a **-** (hyphen), and directories are labeled with **d**. The next three parts refer to permissions for **user** , **group** , and **other** , respectively. The last part is a flag for the [**access-control list**][10] (ACL), a list of permissions for an object.
+我们可以把每一行分解成五部分。第一部分标志着它是文件还是目录;文件用 **-** (连字符)标记，目录用 **d** 来标记。接下来的三个部分分别是**user**、**group**和**other**的对应权限。最后一部分是[**access-control list**][10] (ACL)（访问控制列表）的标志，是记录着特定用户或者用户组对该文件的操作权限的列表。
 
 ![Different Linux permissions][11]
 
-Linux permission levels can be identified with letters or numbers. There are three privilege types:
+Linux 的权限级别可以用字母或数字标识。有三种权限类型:
 
-  * **read** : r or 4
-  * **write:** w or 2
-  * **executable:** e or 1
-
-
+  * **read(读):**  r or 4
+  * **write（写）:** w or 2
+  * **executable（可执行）:** x or 1
+（LCTT译注：原文此处对应的字母标示 **x** 误写为 **e** 已更正）
 
 ![Privilege types][12]
 
-The presence of each letter symbol ( **r** , **w** , or **x** ) means that the permission exists, while **-** indicates it does not. In the example below, the file is readable and writeable by the owner, only readable if the user belongs to the group, and readable and executable by anyone else. Converted to numeric notation, this would be 645 (see the image below for an explanation of how this is calculated).
+每个字母符号(**r**、**w**或**x**)表示有该项权限，而 **-** 表示无该项权限。在下面的示例中，文件的所有者可读可写，用户组成员仅可读，其他人可读可执行。转换成数字表示法，对应的是645(如何计算，请参见下图的图示)。
 
 ![Permission type example][13]
 
-Here are a few more examples:
+以下是一些示例：
 
 ![Permission type examples][14]
 
-Test your knowledge by going through the following exercises.
+完成下面的测试，检查你是否掌握了权限管理相关的知识。
 
 ![Permission type examples][15]
 
@@ -94,7 +92,7 @@ via: https://opensource.com/article/19/6/understanding-linux-permissions
 
 作者：[Bryant Son][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/qfzy1233)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
