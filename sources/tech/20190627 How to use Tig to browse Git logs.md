@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -9,8 +9,7 @@
 
 How to use Tig to browse Git logs
 ======
-Tig is more than just a text-mode interface for Git. Here's how it can
-enhance your daily workflow.
+Tig is more than just a text-mode interface for Git. Here's how it can enhance your daily workflow.
 ![A person programming][1]
 
 If you work with Git as your version control system, you've likely already resigned yourself to the fact that Git is a complicated beast. It is a fantastic tool, but it can be cumbersome to navigate Git repositories. That's where a tool like [Tig][2] comes in.
