@@ -15,7 +15,7 @@
 我还记得，在几年前，我的一位朋友一直坚持让我安装[Zorin OS][2]。就我个人而言，当时我并不喜欢它的 UI 风格。但是，现如今 Zorin OS 15 发布了，这也让我有了更多的理由安装并将它作为我日常的操作系统。
 
 不要担心，在这篇文章里，我会向你介绍你所需要了解的一切。
-Fret not, in this article, we’ll talk about everything that you need to know.
+
 
 ### Zorin 15 中的新特性
 
@@ -45,51 +45,47 @@ Zorin OS 15 最主要的一个亮点就是 - Zorin Connect。如果你使用的�
 
 ![Zorin 夜间模式][7]
 
-一提到 “夜间模式” 时我就毫无抵抗力。对我而言，这是Zorin OS 15 自带的最好的功能。
+一提到 “夜间模式” 我就毫无抵抗力。对我而言，这是Zorin OS 15 自带的最好的功能。
 
-[][8]
+[推荐阅读 ： Necuno 是一款新的智能手机开源 KDE][8]
 
-Suggested read Necuno is a New Open Source Smartphone Running KDE
+当我在任意界面深色模式时，我的眼睛都舒适，你不想来试试么？
 
-It’s so pleasing to my eyes when I enable the dark mode on anything, you with me?
+它不单单是一个深色的主题，而是 UI 更干净直观，并且带有恰到好处的新动画。你可以从Zorin 内置的外观应用程序里找到所有的相关内建的所有设置。
 
-Not just a dark theme, the UI is a lot cleaner and intuitive with subtle new animations. You can find all the settings from the Zorin Appearance app built-in.
+#### 自适应背景调整 & 深色浅色模式 
 
-#### 自适应背景调整 & Dark Light 
-
-You get an option to let the background adapt according to the brightness of the environment every hour of the day. Also, you can find the night mode if you don’t want the blue light to stress your eyes.
+你可以选择让桌面背景根据一天中每小时的环境亮度进行自动调整。此外，如果你想避免蓝光给眼睛带来伤害，你可以使用夜间模式。
 
 #### To do app
 
 ![Todo][9]
 
-I always wanted this to happen so that I don’t have to use a separate service that offers a Linux client to add my tasks. It’s good to see a built-in app with integration support for Google Tasks and Todoist.
+我一直希望支持这个功能，这样我就不必使用其他 Linux 客户端程序来添加任务。很高兴看到内置的应用程序集成并支持谷歌任务和 Todoist。
 
-#### There’s More?
+#### 还有更多么？
 
-Yes! Other major changes include the support for Flatpak, a touch layout for convertible laptops, a DND mode, and some redesigned apps (Settings, Libre Office) to give you better user experience.
+是的！其他主要的变化包括对 Flatpak 的支持，支持平板笔记本二合一电脑的触摸布局，DND 模式，以及一些重新设计的应用程序(设置，Libre Office)，以此来给你更好的用户体验。
 
-If you want the detailed list of changes along with the minor improvements, you can follow the [announcement post][6]. If you are already a Zorin user, you would notice that they have refreshed their website with a new look as well.
+如果你想要了解所有更新和改动的详细信息，你可以查看[官方公告][6]。如果你已经是Zorin的用户，你应该已经注意到他们他们的网站已经启用了一个全新的外观。
 
 ### 下载 Zorin OS 15
 
-**Note** : _Direct upgrades from Zorin OS 12 to 15 – without needing to re-install the operating system – will be available later this year._
+**注释** : _今年的晚些时候将会推出从 Zorin OS 12 直升 15 版本而不需要重新安装的升级包。_
 
-In case you didn’t know, there are three versions of Zorin OS – Ultimate, Core, and the Lite version.
+为了防止您不够了解，Zorin OS有三个版本—旗舰版本、核心板和轻量版。
 
-If you want to support the devs and the project while unlocking the full potential of Zorin OS, you should get the ultimate edition for $39.
+如果你想支持开发者和项目，同时解锁 Zorin OS 全部的功能，你可以花39美元购买旗舰版本。
 
-If you just want the essentials, the core edition will do just fine (which you can download for free). In either case, if you have an old computer, the lite version is the one to go with.
+如果你只是想要一些基本功能，核心版就可以了(你可以免费下载)。如果是情况下，比如如果你有一台旧电脑，那么你可以使用轻量版。
 
-[DOWNLOAD ZORIN OS 15][10]
+[下载 ZORIN OS 15][10]
 
-**What do you think of Zorin 15?**
+**你觉得 Zorin 15 怎么样？**
 
-[][11]
+[推荐阅读 Ubuntu 14.04 代号为值得信赖的塔尔羊][11]
 
-Suggested read Ubuntu 14.04 Codenamed Trusty Tahr
-
-I’m definitely going to give it a try as my primary OS – fingers crossed. What about you? What do you think about the latest release? Feel free to let us know in the comments below.
+我肯定会尝试一下，将 Zorin OS 作为我的主要操作系统-(手动狗头)。你呢?你觉得最新的版本怎么样?欢迎在下面的评论中告诉我们。
 
 --------------------------------------------------------------------------------
 
