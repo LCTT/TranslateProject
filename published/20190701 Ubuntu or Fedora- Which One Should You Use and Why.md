@@ -71,8 +71,6 @@ Fedora 通过 [Fedora Spins][8] 的方式提供了一些不同桌面环境的版
 
 Ubuntu 使用 APT 软件包管理器提供软件并进行管理（包括应用程序、库，以及其它所需编解码器），而 Fedora 使用 DNF 软件包管理器。
 
-[][9]
-
 [Ubuntu 拥有庞大的软件仓库][10]，能够让你轻松安装数以千计的程序，包括 FOSS（LCTT 译注：Free and Open-Source Software 的缩写，自由开源软件）和非 FOSS 的软件。Fedora 则只专注于提供开源软件。虽然这一点在最近的版本里有所转变，但是 Fedora 的软件仓库在规模上仍然比 Ubuntu 的要逊色一些。
 
 一些第三方软件开发者为 Linux 提供像 .exe 文件一样可以点击安装的软件包。在 Ubuntu 里这些软件包是 .deb 格式的，在 Fedora 里是 .rpm 格式的。
