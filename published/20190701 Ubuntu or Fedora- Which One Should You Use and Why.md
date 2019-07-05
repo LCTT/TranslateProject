@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (chen-ni)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11059-1.html)
 [#]: subject: (Ubuntu or Fedora: Which One Should You Use and Why)
 [#]: via: (https://itsfoss.com/ubuntu-vs-fedora/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -10,9 +10,9 @@
 你应该选择 Ubuntu 还是 Fedora？
 ======
 
-_**摘要：选择 Ubuntu 还是 Fedora？它们的区别是什么？哪一个更好？你应该使用哪一个？看看这篇对比 Ubuntu 和 Fedora 的文章吧。**_
+> 选择 Ubuntu 还是 Fedora？它们的区别是什么？哪一个更好？你应该使用哪一个？看看这篇对比 Ubuntu 和 Fedora 的文章吧。
 
-Ubuntu 和 Fedora 都是最流行的 Linux 发行版之一，在两者之间做出选择实非易事。在这篇文章里，我会对比一下 Ubuntu 和 Fedora 的不同特点，帮助你进行决策。
+[Ubuntu][1] 和 [Fedora][2] 都是最流行的 Linux 发行版之一，在两者之间做出选择实非易事。在这篇文章里，我会对比一下 Ubuntu 和 Fedora 的不同特点，帮助你进行决策。
 
 请注意，这篇文章主要是从桌面版的角度进行对比的。Fedora 或者 Ubuntu 针对容器的特殊版本不会被考虑在内。
 
@@ -57,7 +57,7 @@ Ubuntu 和 Fedora 默认都使用 GNOME 桌面环境。
 
 ![GNOME Desktop in Fedora][6]
 
-Fedora 使用的是 stock GNOME 桌面，而 Ubuntu 则在此基础上做了个性化调整，让它看起来就像 Ubuntu 之前使用的 Unity 桌面环境。
+Fedora 使用的是原装的 GNOME 桌面，而 Ubuntu 则在此基础上做了个性化调整，让它看起来就像 Ubuntu 之前使用的 Unity 桌面环境。
 
 ![GNOME desktop customized by Ubuntu][7]
 
@@ -69,7 +69,7 @@ Fedora 通过 [Fedora Spins][8] 的方式提供了一些不同桌面环境的版
 
 #### 软件包管理和可用软件数量
 
-Ubuntu 使用 APT 软件包管理器提供软件并进行管理（包括应用程序、库，以及其它所需代码），而 Fedora 使用 DNF 软件包管理器。
+Ubuntu 使用 APT 软件包管理器提供软件并进行管理（包括应用程序、库，以及其它所需编解码器），而 Fedora 使用 DNF 软件包管理器。
 
 [][9]
 
@@ -77,7 +77,7 @@ Ubuntu 使用 APT 软件包管理器提供软件并进行管理（包括应用�
 
 一些第三方软件开发者为 Linux 提供像 .exe 文件一样可以点击安装的软件包。在 Ubuntu 里这些软件包是 .deb 格式的，在 Fedora 里是 .rpm 格式的。
 
-大多数软件供应商都为 Linux 用户提供 DEM 和 RPM 文件，但是我也经历过供应商只提供 DEB 文件的情况。比如说 SEO 工具 [Screaming Frog][11] 就只提供 DEB 软件包。反过来，一个软件只有 RPM 格式但是没有 DEB 格式这种情况就极其罕见了。
+大多数软件供应商都为 Linux 用户提供 DEB 和 RPM 文件，但是我也经历过供应商只提供 DEB 文件的情况。比如说 SEO 工具 [Screaming Frog][11] 就只提供 DEB 软件包。反过来，一个软件只有 RPM 格式但是没有 DEB 格式这种情况就极其罕见了。
 
 #### 硬件支持
 
@@ -113,9 +113,9 @@ Fedora 则是红帽公司的一个社区项目。红帽公司是一个专注于 
 
 #### 在背后支持的企业
 
-Ubuntu 和 Fedora 都有来自母公司的支持。Ubuntu 源自 [Canonical][21] 公司，而 Fedora 源自 [红帽公司][22](现在是 [IBM 的一部分][23])。背后企业的支持非常重要，因为可以确保 Linux 发行版良好的维护。
+Ubuntu 和 Fedora 都有来自母公司的支持。Ubuntu 源自 [Canonical][21] 公司，而 Fedora 源自 [红帽公司][22]（现在是 [IBM 的一部分][23]）。背后企业的支持非常重要，因为可以确保 Linux 发行版良好的维护。
 
-有一些发行版是由一群独立的业余爱好者们共同创建的，但是在工作负荷之下经常会崩溃。你也许见过一些还算比较流行的发行版项目仅仅是因为这个原因而终止了。很多这样的发行版由于开发者没有足够的业余时间可以投入到项目上而不得不终止，比如 [Antergos][24] 和 Korora。
+有一些发行版是由一群独立的业余爱好者们共同创建的，但是在工作压力之下经常会结束。你也许见过一些还算比较流行的发行版项目仅仅是因为这个原因而终止了。很多这样的发行版由于开发者没有足够的业余时间可以投入到项目上而不得不终止，比如 [Antergos][24] 和 Korora。
 
 Ubuntu 和 Fedora 的背后都有基于 Linux 的企业的支持，这让它们比其它独立的发行版更胜一筹。
 
@@ -131,7 +131,7 @@ Fedora 同样有服务端版本，并且也有人在使用。但是大多数系�
 
 学习 Fedora 可以更好地帮助你使用红帽企业级 Linux（RHEL）。RHEL 是一个付费产品，你需要购买订阅才可以使用。如果你希望在服务器上运行一个和 Fedora 或者红帽类似的操作系统，我推荐使用 CentOS。[CentOS][26] 同样是红帽公司附属的一个社区项目，但是专注于服务端。
 
-#### 结论
+### 结论
 
 你可以看到，Ubuntu 和 Fedora 有很多相似之处。不过就可用软件数量、驱动安装和线上支持来说，Ubuntu 的确更有优势。**Ubuntu 也因此成为了一个更好的选择，尤其是对于没有经验的 Linux 新手而言。**
 
@@ -147,8 +147,8 @@ via: https://itsfoss.com/ubuntu-vs-fedora/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[chen-ni](https://github.com/chen-ni)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
