@@ -7,25 +7,26 @@
 [#]: via: (https://www.linuxtechi.com/set-ulimit-file-descriptors-limit-linux-servers/)
 [#]: author: (Shashidhar Soppin https://www.linuxtechi.com/author/shashidhar/)
 
+如何在 Linux 服务器上设置 ulimit 和文件描述符数限制
 How to set ulimit and file descriptors limit on Linux Servers
 ======
-
-**Introduction: ** Challenges like number of open files in any of the production environment has become common now a day. Since many applications which are Java based and Apache based, are getting installed and configured, which may lead to too many open files, file descriptors etc. If this exceeds the default limit that is set, then one may face access control problems and file opening challenges. Many production environments come to standstill kind of situations because of this.
+ **简介**：如今每天（遇到的）像是打开文件数这类的挑战在任何生产环境已经变得司空见惯了。因为许多基于 Java 和 Apache 的应用程序的正在安装和配置，可能会导致打开过多的文件、文件描述符等。如果（文件描述符等）超过默认设置限制，就可能会面临访问控制问题和打开文件的挑战。许多生产环境因此而陷入停滞状态。
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/06/ulimit-number-openfiles-linux-server.jpg>
 
-Luckily, we have “ **ulimit** ” command in any of the Linux based server, by which one can see/set/get number of files open status/configuration details. This command is equipped with many options and with this combination one can set number of open files. Following are step-by-step commands with examples explained in detail.
+幸运的是，在任何基于 Linux 的服务器上，都有 “**ulimit**”命令，通过它可以查看/设置/获取文件打开的状态/配置详情的数量。此命令配备了许多选项，通过此组合可以设置打开文件的数量。下面是分步命令，并用示例详细说明。
 
-### To see what is the present open file limit in any Linux System
 
-To get open file limit on any Linux server, execute the following command,
+### 查看任何 Linux 系统中当前打开文件数的限制
+
+要在任何 Linux 服务器上获得打开文件数限制，请执行以下命令，
 
 ```
 [root@linuxtechi ~]# cat /proc/sys/fs/file-max
 146013
 ```
 
-The above number shows that user can open ‘146013’ file per user login session.
+上面的数字表明用户可以在每个用户登录会话中打开 ‘146013’ 个文件。
 
 ```
 [root@linuxtechi ~]# cat /proc/sys/fs/file-max
@@ -34,11 +35,12 @@ The above number shows that user can open ‘146013’ file per user login sessi
 73906
 ```
 
-This clearly indicates that individual Linux operating systems have different number of open files. This is based on dependencies and applications which are running in respective systems.
+这清楚地表明，各个 Linux 操作系统具有不同数量的打开文件。这基于各自系统中运行的依赖关系和应用程序。
 
-### ulimit command :
+### ulimit 命令 :
 
-As the name suggests, ulimit (user limit) is used to display and set resources limit for logged in user.When we run ulimit command with -a option then it will print all resources’ limit for the logged in user. Now let’s run “ **ulimit -a** ” on Ubuntu / Debian and CentOS systems,
+顾名思义，ulimit(用户限制)用于显示和设置登录用户的资源限制。当我们使用 -a 选项运行 ulimit 命令时，它将打印登录用户的所有资源限制。现在让我们在Ubuntu/Debian 和 CentOS 系统上运行 “**ulimit-a**”，
+
 
 **Ubuntu / Debian System** ,
 
@@ -84,9 +86,9 @@ virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
 ```
 
-As we can be seen here different OS have different limits set. All these limits can be configured/changed using “ulimit” command.
+正如我们可以在这里看到的，不同的操作系统有不同的限制设置。所有这些限制都可以使用 “ulimit” 命令进行配置/更改。
 
-To display the individual resource limit then pass the individual parameter in ulimit command, some of parameters are listed below:
+要显示单个资源限制可以在 ulimit 命令中传递特定的参数，下面列出了一些参数：
 
   * ulimit -n –> It will display number of open files limit
   * ulimit -c –> It display the size of core file
@@ -96,8 +98,7 @@ To display the individual resource limit then pass the individual parameter in u
   * ulimit -v –> It will display the maximum memory size limit
 
 
-
-Use below commands check hard and soft limits for number of open file for the logged in user
+使用以下命令检查登录用户打开文件数量的硬限制和软限制
 
 ```
 root@linuxtechi ~}$ ulimit -Hn
@@ -106,53 +107,54 @@ root@linuxtechi ~}$ ulimit -Sn
 1024
 ```
 
-### How to fix the problem when limit on number of Maximum Files was reached ?
+### 如何修复达到最大文件数限制的问题 ?
 
 Let’s assume our Linux server has reached the limit of maximum number of open files and want to extend that limit system wide, for example we want to set 100000 as limit of number of open files.
 
-Use sysctl command to pass fs.file-max parameter to kernel on the fly, execute beneath command as root user,
+让我们假设我们的 Linux 服务器已经达到了打开文件的最大数量限制，并希望将该限制扩展到整个系统，例如，我们希望将 100000 设置为打开文件数量的限制。
 
 ```
 root@linuxtechi~]# sysctl -w fs.file-max=100000
 fs.file-max = 100000
 ```
 
-Above changes will be active until the next reboot, so to make these changes persistent across the reboot, edit the file **/etc/sysctl.conf** and add same parameter,
+上述更改只会在下次重启之前有效，因此要使这些更改在重启后仍存在，请编辑文件 **/etc/sysctl.conf** 并添加相同的参数，
 
 ```
 root@linuxtechi~]# vi /etc/sysctl.conf
 fs.file-max = 100000
 ```
 
-save and exit file,
+保存并推出文件
 
-Run the beneath command to make above changes into effect immediately without logout and reboot.
+运行下面命令，使上述更改立即生效，而无需注销和重新启动。
 
 ```
 root@linuxtechi~]# sysctl -p
 ```
 
-Now verify whether new changes are in effect or not.
+
+现在验证新的更改是否生效。
 
 ```
 root@linuxtechi~]# cat /proc/sys/fs/file-max
 100000
 ```
 
-Use below command to find out how many file descriptors are currently being utilized:
+
+使用以下命令找出当前正在使用的文件描述符数量：
 
 ```
 [root@linuxtechi ~]# more /proc/sys/fs/file-nr
 1216    0       100000
 ```
 
-Note:- Command “ **sysctl -p** ” is used to commit the changes without reboot and logout.
+注意：-命令 “**sysctl-p**” 用于在不重新启动和注销的情况下提交更改。
+### 通过 limit.conf 文件设置用户级资源限制
 
-### Set User level resource limit via limit.conf file
+“**/etc/sysctl.conf**” 文件用于设置系统范围的资源限制，但如果要为 Oracle、MariaDB 和 Apache 等特定用户设置资源限制，则可以通过 “**/etc/security/limits.conf**” 文件去实现。
 
-“ **/etc/sysctl.conf** ” file is used to set resource limit system wide but if you want to set resource limit for specific user like Oracle, MariaDB and Apache then this can be achieved via “ **/etc/security/limits.conf** ” file.
-
-Sample Limit.conf is shown below,
+示例 Limit.conf 如下所示，
 
 ```
 root@linuxtechi~]# cat /proc/sys/fs/file-max
@@ -162,7 +164,7 @@ root@linuxtechi~]# cat /proc/sys/fs/file-max
 
 ![Limits-conf-linux-part2][2]
 
-Let’s assume we want to set hard and soft limit on number of open files for linuxtechi user and for oracle user set hard and soft limit on number of open process, edit the file “/etc/security/limits.conf” and add the following lines
+假设我们要为 linuxtechi 用户设置打开文件数量的硬限制和软限制，而对于 oracle 用户设置打开进程数量的硬限制和软限制，编辑文件 “/etc/security/limits.conf” 并添加以下行
 
 ```
 # hard limit for max opened files for linuxtechi user
@@ -176,9 +178,9 @@ oracle           hard    nproc          8096
 oracle           soft    nproc          4096
 ```
 
-Save & exit the file.
+保存并退出文件
 
-**Note:** In case you want to put resource limit on a group instead of users, then it can also be possible via limit.conf file, in place of user name , type **@ <Group_Name>** and rest of the items will be same, example is shown below,
+**注意：** 如果你想对一个组而不是用户进行资源限制，那么也可以通过limit.conf文件，输入 **@<Group_name>** 代替用户名，其余项都是相同的，示例如下，
 
 ```
 # hard limit for max opened files for sysadmin group
@@ -187,7 +189,7 @@ Save & exit the file.
 @sysadmin        soft         nofile            1024
 ```
 
-Verify whether new changes are in effect or not,
+验证新的更改是否生效
 
 ```
 ~]# su - linuxtechi
@@ -203,11 +205,11 @@ Verify whether new changes are in effect or not,
 4096
 ```
 
-Note: Other majorly used command is “[ **lsof**][3]” which is used for finding out “how many files are opened currently”. This command is very helpful for admins.
+注：其他主要使用的命令是 “[ **lsof**][3]” 用于找出“当前打开了多少个文件”，这命令对管理员非常有帮助。
 
-**Conclusion:**
+**结尾：**
 
-As mentioned in the introduction section “ulimit” command is very powerful and helps one to configure and make sure application installations are smoother without any bottlenecks. This command helps in fixing many of the number of file limitations in Linux based servers.
+正如在介绍部分提到的，“ulimit” 命令非常强大，可以帮助用户配置并确保应用程序安装更加流畅，没有任何瓶颈。此命令有助于修复基于 Linux 的服务器中的（打开）大量文件的限制。 
 
 --------------------------------------------------------------------------------
 
@@ -215,7 +217,7 @@ via: https://www.linuxtechi.com/set-ulimit-file-descriptors-limit-linux-servers/
 
 作者：[Shashidhar Soppin][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zgj1024](https://github.com/zgj1024)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
