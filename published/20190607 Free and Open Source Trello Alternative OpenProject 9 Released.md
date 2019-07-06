@@ -1,36 +1,37 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11063-1.html)
 [#]: subject: (Free and Open Source Trello Alternative OpenProject 9 Released)
 [#]: via: (https://itsfoss.com/openproject-9-release/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-替代 Trello 的免费开源 OpenProject 9 发布了
+替代 Trello 的 OpenProject 9 发布了
 ======
+![](https://img.linux.net.cn/data/attachment/album/201907/06/130201r9g70u01uuvvvvu7.jpg)
 
 [OpenProject][1] 是一个开源项目协作管理软件。它是 [Trello][2] 和 [Jira][3] 等专有方案的替代品。
 
 如果个人使用，你可以免费使用它，并在你自己的服务器上进行设置（并托管它）。这样，你就可以控制数据。
 
-当然，如果你是[云或企业版用户][4]，那么你可以使用高级功能和更优先的帮助。
+当然，如果你是[企业云版的用户][4]，那么你可以使用高级功能和更优先的帮助。
 
-OpenProject 9 的重点是新的看板试图，包列表视图和工作模板。
+OpenProject 9 的重点是新的面板视图，包列表视图和工作模板。
 
-如果你对此不了解，可以尝试一下。但是，如果你是现有用户 - 在迁移到 OpenProject 9 之前，你应该知道这些新功能。
+如果你对此不了解，可以尝试一下。但是，如果你是已有用户 —— 在迁移到 OpenProject 9 之前，你应该知道这些新功能。
 
 ### OpenProject 9 有什么新功能？
 
-以下是最新版 OpenProjec t的一些主要更改。
+以下是最新版 OpenProject 的一些主要更改。
 
-#### Scrum 和敏捷看板
+#### Scrum 和敏捷面板
 
 ![][5]
 
-对于云和企业版，有一个新的 [scrum][6] 和[敏捷][7]看板视图。你还可以 [kanban 风格][8]方式展示你的工作，从而更轻松地支持你的敏捷和 scrum 团队。
+对于企业云版，有了一个新的 [scrum][6] 和[敏捷][7]面板视图。你还可以[看板风格][8]方式展示你的工作，从而更轻松地支持你的敏捷和 scrum 团队。
 
-新的看板视图使你可以轻松了解为该任务分配的人员并快速更新状态。你还有不同的看板视图选项，如基本看板、状态看板和版本看板。
+新的面板视图使你可以轻松了解为该任务分配的人员并快速更新状态。你还有不同的面板视图选项，如基本面板、状态面板和版本面板。
 
 #### 工作包模板
 
@@ -46,9 +47,9 @@ OpenProject 9 的重点是新的看板试图，包列表视图和工作模板。
 
 #### “我的”页面的可自定义工作包视图
 
-“我的”页面显示你正在处理的内容（以及进度），它不应该一直很无聊。因此，现在你可以自定义它，甚至可以添加甘特图来可视化你的工作。
+“我的”页面显示你正在处理的内容（以及进度），它不应该一直那么呆板。因此，现在你可以自定义它，甚至可以添加甘特图来可视化你的工作。
 
-**总结**
+### 总结
 
 有关迁移和安装的详细说明，请参阅[官方的公告帖][12]，其中包含了必要的细节。
 
@@ -61,7 +62,7 @@ via: https://itsfoss.com/openproject-9-release/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
