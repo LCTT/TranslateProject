@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11066-1.html)
 [#]: subject: (How To Find The Port Number Of A Service In Linux)
 [#]: via: (https://www.ostechnix.com/how-to-find-the-port-number-of-a-service-in-linux/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
@@ -16,9 +16,9 @@
 
 ### 在 Linux 中查找服务的端口号
 
-**方法1：使用 [grep][2] 命令**
+#### 方法1：使用 grep 命令
 
-要使用 grep 命令在 Linux 中查找指定服务的默认端口号，只需运行：
+要使用 `grep` 命令在 Linux 中查找指定服务的默认端口号，只需运行：
 
 ```
 $ grep <port> /etc/services
@@ -84,11 +84,11 @@ tftp 69/tcp
 [...]
 ```
 
-**方法 2：使用 getent 命令**
+#### 方法 2：使用 getent 命令
 
 如你所见，上面的命令显示指定搜索词 “ssh”、“http” 和 “ftp” 的所有端口名称和数字。这意味着，你将获得与给定搜索词匹配的所有端口名称的相当长的输出。
 
-但是，你可以使用 “getent” 命令精确输出结果，如下所示：
+但是，你可以使用 `getent` 命令精确输出结果，如下所示：
 
 ```
 $ getent services ssh
@@ -114,17 +114,15 @@ http 80/tcp
 $ getent services
 ```
 
-**方法 3：使用 Whatportis 程序**
+#### 方法 3：使用 Whatportis 程序
 
-**Whatportis** 是一个简单的 python 脚本，来用于查找端口名称和端口号。与上述命令不同，此程序以漂亮的表格形式输出。
+Whatportis 是一个简单的 Python 脚本，来用于查找端口名称和端口号。与上述命令不同，此程序以漂亮的表格形式输出。
 
-确保已安装 PIP 包管理器。如果没有，请参考以下链接。
+确保已安装 pip 包管理器。如果没有，请参考以下链接。
 
-  * [**如何使用 Pip 管理 Python 包**][6]
+- [如何使用 pip 管理 Python 包][6]
 
-
-
-安装 PIP 后，运行以下命令安装 Whatportis 程序。
+安装 pip 后，运行以下命令安装 Whatportis 程序。
 
 ```
 $ pip install whatportis
@@ -144,9 +142,9 @@ $ whatportis http
 
 ![][7]
 
-在 Linux 中查找服务的端口号
+*在 Linux 中查找服务的端口号*
 
-如果你不知道服务的确切名称，请使用 **–like** 标志来显示相关结果。
+如果你不知道服务的确切名称，请使用 `–like` 标志来显示相关结果。
 
 ```
 $ whatportis mysql --like
@@ -158,7 +156,7 @@ $ whatportis mysql --like
 $ whatportis 993
 ```
 
-你甚至可以以 **JSON** 格式显示结果。
+你甚至可以以 JSON 格式显示结果。
 
 ```
 $ whatportis 993 --json
@@ -168,9 +166,7 @@ $ whatportis 993 --json
 
 有关更多详细信息，请参阅 GitHub 仓库。
 
-  * [**Whatportis GitHub 仓库**][9]
-
-
+* [Whatportis GitHub 仓库][9]
 
 就是这些了。你现在知道了如何使用三种简单方法在 Linux 中查找端口名称和端口号。如果你知道任何其他方法/命令，请在下面的评论栏告诉我。我会查看并更相应地更新本指南。
 
@@ -181,7 +177,7 @@ via: https://www.ostechnix.com/how-to-find-the-port-number-of-a-service-in-linux
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
