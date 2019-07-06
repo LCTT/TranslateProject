@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (chen-ni)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (IPython is still the heart of Jupyter Notebooks for Python developers)
@@ -9,8 +9,10 @@
 
 对 Python 开发者而言，IPython 仍然是 Jupyter Notebook 的核心
 ======
-Jupyter 项目提供的魔法般的开发体验很大程度上得益于它的 IPython 基因。
-![I love Free Software FSFE celebration][1]
+
+> Jupyter 项目提供的魔法般的开发体验很大程度上得益于它的 IPython 基因。
+
+![](https://img.linux.net.cn/data/attachment/album/201907/06/131704z1lsfssamfxrrliq.jpg)
 
 最近刚刚写过我为什么觉得觉得 Jupyter 项目（特别是 JupyterLab）提供了一种 [魔法般的 Python 开发体验][2]。在研究这些不同项目之间的关联的时候，我回顾了一下 Jupyter 最初从 IPython 分支出来的这段历史。正如 Jupyter 项目的 [大拆分™ 声明][3] 所说:
 
@@ -34,7 +36,7 @@ Jupyter 项目提供的魔法般的开发体验很大程度上得益于它的 IP
 
 ### IPython 如今的作用
 
-IPython 提供了一个强大的、交互性的 Python shell，以及 Jupyter 的内核。安装完成之后，我可以在任何命令行运行 **ipython** 本身，将它当作一个（比默认 Python shell 好太多的）Python shell 来使用：
+IPython 提供了一个强大的、交互性的 Python shell，以及 Jupyter 的内核。安装完成之后，我可以在任何命令行运行 `ipython` 本身，将它当作一个（比默认 Python shell 好太多的）Python shell 来使用：
 
 
 ```
@@ -50,15 +52,15 @@ In [4]: print(average)
 6.571428571428571
 ```
 
-这就让我们发现了一个更为重要的问题：是IPython 让 JupyterLab 可以在项目中执行代码，并且支持了一系列被称为 *magic*的功能（感谢 Nicholas Reith 在我上一篇文章的评论里提到这点）。
+这就让我们发现了一个更为重要的问题：是 IPython 让 JupyterLab 可以在项目中执行代码，并且支持了一系列被称为 *Magic* 的功能（感谢 Nicholas Reith 在我上一篇文章的评论里提到这点）。
 
 ### IPython 让魔法成为现实
 
-JupyterLab 和其它使用 IPython 的前端工具可以让你感觉像是在最喜欢的 IDE 或者是终端模拟器的环境下工作。我非常喜欢 [dotfiles][5] 快捷键功能，magic 也有类似 dotfile 的特征。比如说，可以试一下 **[%bookmark][6]** 这个命令。我把默认开发文件夹 **~/Develop** 关联到了一个可以在任何时候直接跳转的快捷方式上。
+JupyterLab 和其它使用 IPython 的前端工具可以让你感觉像是在最喜欢的 IDE 或者是终端模拟器的环境下工作。我非常喜欢 [点文件][5] 快捷键功能，Magic 也有类似点文件的特征。比如说，可以试一下 [%bookmark][6] 这个命令。我把默认开发文件夹 `~/Develop` 关联到了一个可以在任何时候直接跳转的快捷方式上。
 
 ![Screenshot of commands from JupyterLab][7]
 
-**%bookmark**、**%cd**，以及我在前一篇文章里介绍过的 **!** 操作符，都是由 IPython 支持的。正如这篇 [文档][8] 所说：
+`%bookmark`、`%cd`，以及我在前一篇文章里介绍过的 `!` 操作符，都是由 IPython 支持的。正如这篇 [文档][8] 所说：
 
 > Jupyter 用户你们好：Magic 功能是 IPython 内核提供的专属功能。一个内核是否支持 Magic 功能是由该内核的开发者针对该内核所决定的。
 
@@ -66,7 +68,7 @@ JupyterLab 和其它使用 IPython 的前端工具可以让你感觉像是在最
 
 作为一个好奇的新手，我之前并不是特别确定 IPython 是否仍然和 Jupyter 生态还有任何联系。现在我对 IPython 的持续开发有了新的认识和，并且意识到它正是 JupyterLab 强大的用户体验的来源。这也是相当有才华的一批贡献者进行最前沿研究的成果，所以如果你在学术论文中使用到了 Jupyter 项目的话别忘了引用他们。为了方便引用，他们还提供了一个 [现成的引文][9]。
 
-如果你在考虑参与哪个开源项目的贡献的话，一定不要忘了 IPython 哦。记得看看 [最新发布说明][10]，在这里可以找到 magic 功能的完整列表。
+如果你在考虑参与哪个开源项目的贡献的话，一定不要忘了 IPython 哦。记得看看 [最新发布说明][10]，在这里可以找到 Magic 功能的完整列表。
 
 --------------------------------------------------------------------------------
 
@@ -74,8 +76,8 @@ via: https://opensource.com/article/19/6/ipython-still-heart-jupyterlab
 
 作者：[Matthew Broberg][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[chen-ni](https://github.com/chen-ni)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
