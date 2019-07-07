@@ -7,24 +7,24 @@
 [#]: via: (https://www.networkworld.com/article/3391362/looking-into-linux-modules.html#tk.rss_all)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Looking into Linux modules
+深入学习 Linux 内核模块
 ======
-The lsmod command can tell you which kernel modules are currently loaded on your system, along with some interesting details about their use.
+lsmod 命令能够告诉你当前系统上加载了哪些内核模块，以及关于使用它们的一些有趣的细节。
 ![Rob Oo \(CC BY 2.0\)][1]
 
-### What are Linux modules?
+### 什么是 Linux 内核模块？
 
-Kernel modules are chunks of code that are loaded and unloaded into the kernel as needed, thus extending the functionality of the kernel without requiring a reboot. In fact, unless users inquire about modules using commands like **lsmod** , they won't likely know that anything has changed.
+内核模块是根据需要加载到内核中或从内核中卸载的代码块，因此无需重启就可以扩展内核的功能。事实上，除非用户使用类似 **lsmod** 这样的命令来查询模块信息，否则用户不太可能知道内核发生的任何变化。
 
-One important thing to understand is that there are _lots_ of modules that will be in use on your Linux system at all times and that a lot of details are available if you're tempted to dive into the details.
+需要知道的重要一点是，在你的 Linux 系统上总会有*很多*可用的模块，并且如果你想深入了解细节，那么可以获得很多细节。
 
-One of the prime ways that lsmod is used is to examine modules when a system isn't working properly. However, most of the time, modules load as needed and users don't need to be aware of how they are working.
+lsmod 的主要用途之一是在系统不能正常工作时检查模块。然而，大多数情况下，模块会根据需要加载的，而且用户不需要知道它们如何运作。
 
-**[ Also see:[Must-know Linux Commands][2] ]**
+**[ 扩展阅读：[必知的 Linux 命令][2] ]**
 
-### Listing modules
+### 显示内核模块
 
-The easiest way to list modules is with the **lsmod** command. While this command provides a lot of detail, this is the most user-friendly output.
+显示内核模块最简单的方法是使用 **lsmod** 命令。虽然这个命令包含了很多细节，但输出却是非常用户友好。
 
 ```
 $ lsmod
@@ -103,44 +103,44 @@ e1000e                245760  0
 floppy                 81920  0
 ```
 
-In the output above:
+在上面的输出中：
 
-  * "Module" shows the name of each module
-  * "Size" shows the module size (not how much memory it is using)
-  * "Used by" shows each module's usage count and the referring modules
+  * “Module”显示每个模块的名称
+  * “Size”显示每个模块的大小（并不是它们使占的内存大小）
+  * “Used by”显示每个模块的被使用的计数和使用它们的模块
 
 
 
-Clearly, that's a _lot_ of modules. The number of modules loaded will depend on your system and distribution and what's running. We can count them like this:
+显然，这里有*很多*模块。加载的模块数量取决于你的系统和版本以及正在运行的内容。我们可以这样计数：
 
 ```
 $ lsmod | wc -l
 67
 ```
 
-To see the number of modules available on the system (not just running), try this command:
+要查看系统中可用的模块数（不止运行当中的），试试这个命令：
 
 ```
 $ modprobe -c | wc -l
 41272
 ```
 
-### Other commands for examining modules
+### 与内核模块相关的其他命令
 
-Linux provides several commands for listing, loading and unloading, examining, and checking the status of modules.
+Linux 提供了几条用于罗列，加载及卸载，测试，以及检查模块状态的命令。
 
-  * depmod -- generates modules.dep and map files
-  * insmod -- a simple program to insert a module into the Linux Kernel
-  * lsmod -- show the status of modules in the Linux Kernel
-  * modinfo -- show information about a Linux Kernel module
-  * modprobe -- add and remove modules from the Linux Kernel
-  * rmmod -- a simple program to remove a module from the Linux Kernel
+  * depmod —— 生成 modules.dep 和映射文件
+  * insmod —— 一个往 Linux 内核插入模块的程序
+  * lsmod —— 显示 Linux 内核中模块状态
+  * modinfo —— 显示 Linux 内核模块信息
+  * modprobe —— 添加或移除 Linux 内核模块
+  * rmmod —— 一个从 Linux 内核移除模块的程序
 
 
 
-### Listing modules that are built in
+### 显示内置的内核模块
 
-As mentioned above, the **lsmod** command is the most convenient command for listing modules. There are, however, other ways to examine them. The modules.builtin file lists all modules that are built into the kernel and is used by modprobe when trying to load one of these modules. Note that **$(uname -r)** in the commands below provides the name of the kernel release.
+正如前文所说，**lsmod** 命令是显示内核模块最方便的命令。然而，也有其他方式可以显示它们。modules.builtin 文件中列出了所有构建在内核中的模块，并被 modprobe 命令尝试添加文件中的模块时使用。注意，以下命令中的 **$(uname -r)** 提供了内核版本的名称。
 
 ```
 $ more /lib/modules/$(uname -r)/modules.builtin | head -10
@@ -156,7 +156,7 @@ kernel/fs/configfs/configfs.ko
 kernel/fs/crypto/fscrypto.ko
 ```
 
-You can get some additional detail on a module by using the **modinfo** command, though nothing that qualifies as an easy explanation of what service the module provides. The omitted details from the output below include a lengthy signature.
+你可以使用 **modinfo** 获得一个模块的更多细节，虽然没有对模块提供的服务的简单说明。下面输出内容中省略了冗长的签名。
 
 ```
 $ modinfo floppy | head -16
@@ -178,26 +178,26 @@ sig_key:
 sig_hashalgo:   md4
 ```
 
-You can load or unload a module using the **modprobe** command. Using a command like the one below, you can locate the kernel object associated with a particular module:
+你可以使用 **modprobe** 命令加载或卸载模块。使用下面这条命令，你可以找到特定模块关联的内核对象：
 
 ```
 $ find /lib/modules/$(uname -r) -name floppy*
 /lib/modules/5.0.0-13-generic/kernel/drivers/block/floppy.ko
 ```
 
-If you needed to load the module, you could use a command like this one:
+如果你想要加载模块，你可以使用这个命令：
 
 ```
 $ sudo modprobe floppy
 ```
 
-### Wrap-up
+### 总结一下
 
-Clearly the loading and unloading of modules is a big deal. It makes Linux systems considerably more flexible and efficient than if they ran with a one-size-fits-all kernel. It also means you can make significant changes — including adding hardware — without rebooting.
+很明显，内核模块的加载和卸载非常重要。它使得 Linux 系统比使用通用内核运行时更加灵活和高效。这同样意味着你可以进行重大更改而无需重启，例如添加硬件。
 
-**[ Two-Minute Linux Tips:[Learn how to master a host of Linux commands in these 2-minute video tutorials][3] ]**
+**[ 两分钟学 Linux：[在这些两分钟视频教程中掌握大量 Linux 命令][3] ]**
 
-Join the Network World communities on [Facebook][4] and [LinkedIn][5] to comment on topics that are top of mind.
+在 [Facebook][4] 和 [LinkedIn][5] 上关注我们并添加评论。
 
 --------------------------------------------------------------------------------
 
@@ -205,7 +205,7 @@ via: https://www.networkworld.com/article/3391362/looking-into-linux-modules.htm
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[LazyWolfLin](https://github.com/LazyWolfLin)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
