@@ -8,7 +8,6 @@
 [#]: author: (Shashidhar Soppin https://www.linuxtechi.com/author/shashidhar/)
 
 如何在 Linux 服务器上设置 ulimit 和文件描述符数限制
-How to set ulimit and file descriptors limit on Linux Servers
 ======
  **简介**：如今每天（遇到的）像是打开文件数这类的挑战在任何生产环境已经变得司空见惯了。因为许多基于 Java 和 Apache 的应用程序的正在安装和配置，可能会导致打开过多的文件、文件描述符等。如果（文件描述符等）超过默认设置限制，就可能会面临访问控制问题和打开文件的挑战。许多生产环境因此而陷入停滞状态。
 
@@ -39,10 +38,10 @@ How to set ulimit and file descriptors limit on Linux Servers
 
 ### ulimit 命令 :
 
-顾名思义，ulimit(用户限制)用于显示和设置登录用户的资源限制。当我们使用 -a 选项运行 ulimit 命令时，它将打印登录用户的所有资源限制。现在让我们在Ubuntu/Debian 和 CentOS 系统上运行 “**ulimit-a**”，
+顾名思义，ulimit(用户限制)用于显示和设置登录用户的资源限制。当我们使用 -a 选项运行 ulimit 命令时，它将打印登录用户的所有资源限制。现在让我们在Ubuntu/Debian 和 CentOS 系统上运行 “**ulimit -a**”，
 
 
-**Ubuntu / Debian System** ,
+**Ubuntu / Debian 系统** ,
 
 ```
 root@linuxtechi ~}$ ulimit -a
@@ -64,7 +63,7 @@ virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
 ```
 
-**CentOS System**
+**CentOS 系统**
 
 ```
 root@linuxtechi ~}$ ulimit -a
