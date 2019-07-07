@@ -7,35 +7,34 @@
 [#]: via: (https://opensource.com/article/19/6/virtual-environments-python-macos)
 [#]: author: (Matthew Broberg https://opensource.com/users/mbbroberg/users/moshez/users/mbbroberg/users/moshez)
 
-How to set up virtual environments for Python on MacOS
+MacOS 系统中如何设置 Python 虚拟环境
 ======
-Save yourself a lot of confusion by managing your virtual environments
-with pyenv and virtualwrapper.
+使用 pyenv 和 virtualwrapper 来管理你的虚拟环境，可以避免很多困惑。
 ![][1]
 
-If you're a Python developer and a MacOS user, one of your first tasks upon getting a new computer is to set up your Python development environment. Here is the best way to do it (although we have written about [other ways to manage Python environments on MacOS][2]).
+作为 Python 开发者和 MacOS 用户，拿到新机器首先要做的就是设置 Python 开发环境。下面是最佳实践（虽然我们已经写过 [在 MacOS 上管理 Python 的其它方法][2]）。
 
-### Preparation
+### 预备
 
-First, open a terminal and enter **xcode-select --install** at its cold, uncaring prompt. Click to confirm, and you'll be all set with a basic development environment. This step is required on MacOS to set up local development utilities, including "many commonly used tools, utilities, and compilers, including make, GCC, clang, perl, svn, git, size, strip, strings, libtool, cpp, what, and many other useful commands that are usually found in default Linux installations," according to [OS X Daily][3].
+首先，打开终端，在其冰冷毫无提示的窗口输入 **xcode-select --install** 命令。点击确认后，基本的开发环境就会被配置上。MacOS 上需要此步骤来设置本地开发实用工具库，根据 [OS X Daily][3] 的说法，其包括 ”许多常用的工具、实用程序和编译器，如 make、GCC、clang、perl、svn、git、size、strip、strings、libtool、cpp、what 及许多在 Linux 中系统默认安装的有用命令“。
 
-Next, install [Homebrew][4] by executing the following Ruby script from the internet:
-
-
-```
-`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-```
-
-If you, like me, have trust issues with arbitrarily running scripts from the internet, click on the script above and take a longer look to see what it does.
-
-Once this is done, congratulations, you have an excellent package management tool in Homebrew. Naively, you might think that you next **brew install python** or something. No, haha. Homebrew will give you a version of Python, but the version you get will be out of your control if you let the tool manage your environment for you. You want [pyenv][5], "a tool for simple Python version management," that can be installed on [many operating systems][6]. Run:
+接下来,安装 [Homebrew][4], 执行如下的 Ruby 脚本。
 
 
 ```
-`$ brew install pyenv`
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-You want pyenv to run every time you open your prompt, so include the following in your configuration files (by default on MacOS, this is **.bash_profile** in your home directory):
+如果你像我一样，对随意就运行的来源于 internet 的脚本心存顾虑的话，可以点击上面的脚本去仔细看看其具体功能。
+
+一旦安装完成后，就恭喜了，你拥有了一个优秀的包管理工具。自然的，你可能接下来会执行 **brew install python** 或其他的命令。不要这样，哈哈！Homebrew 是为我们提供了一个 Python 的管理版本，但让此工具来管理我们的 Python 环境话，很快会失控的。我们需要 [pyenv][5]，一款简单的 Python 版本管理工具，它可以安装运行在 [许多操作系统][6] 上。运行如下命令：
+
+
+```
+$ brew install pyenv
+```
+
+想要每次打开命令提示框时 pyenv 都会运行的话，需要把下面的内容加入你的配置文件中（MacOS 中默认为 **.bash_profile**，位于家目录下）：
 
 
 ```
@@ -43,16 +42,16 @@ $ cd ~/
 $ echo 'eval "$(pyenv init -)"' >> .bash_profile
 ```
 
-By adding this line, every new terminal will initiate pyenv to manage the **PATH** environment variable in your terminal and insert the version of Python you want to run (as opposed to the first one that shows up in the environment. For more information, read "[How to set your $PATH variable in Linux][7].") Open a new terminal for the updated **.bash_profile** to take effect.
+添加此行内容后，每个终端都会启动 pyenv 来管理其 **PATH** 环境变量，并插入你想要运行的 Python 版本（而不是在环境变量里面设置的初始版本。更详细的信息，请阅读 “[如何给 Linux 系统设置 PATH 变量][7]”）。打开新的终端以使修改的 **.bash_profile** 文件生效。
 
-Before installing your favorite version of Python, you'll want to install a couple of helpful tools:
+在安装你中意的 Python 版本前，需要先安装一些有用的工具，如下示：
 
 
 ```
-`$ brew install zlib sqlite`
+$ brew install zlib sqlite
 ```
 
-The [zlib][8] compression algorithm and the [SQLite][9] database are dependencies for pyenv and often [cause build problems][10] when not configured correctly. Add these exports to your current terminal window to ensure the installation completes:
+Pyenv 依赖于 [zlib][8] 压缩算法和 [SQLite][9] 数据库，如果未正确配置，往往会[导致构建问题][10]。将这些导出配置命令加入当前的终端窗口执行，确保它们安装完成。
 
 
 ```
@@ -60,18 +59,18 @@ $ export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
 $ export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
 ```
 
-Now that the preliminaries are done, it's time to install a version of Python that is fit for a modern person in the modern age:
+现在准备工作已经完成，是时候安装一个适合于现代人的 Python 版本了：
 
 
 ```
-`$ pyenv install 3.7.3`
+$ pyenv install 3.7.3
 ```
 
-Go have a cup of coffee. From beans you hand-roast. After you pick them. What I'm saying here is it's going to take some time.
+去喝杯咖啡吧，挑些豆类，亲自烧烤，然后品尝。说这些的意思是上面的安装过程需要一段时间。
 
-### Adding virtual environments
+### 添加虚拟环境
 
-Once it's finished, it's time to make your virtual environments pleasant to use. Without this next step, you will effectively be sharing one Python development environment for every project you work on. Using virtual environments to isolate dependency management on a per-project basis will give us more certainty and reproducibility than Python offers out of the box. For these reasons, install **virtualenvwrapper** into the Python environment:
+一旦完成，就可以愉快地使用虚拟环境了。如没有接下来的步骤的话，你只能在你所有的工作项目中共享同一个 Python 开发环境。使用虚拟环境来隔离每个项目的依赖关系的管理方式，比起 Python 自身提供的开箱即用功能来说，更加清晰明确和更具有重用性。基于这些原因，把 **virtualenvwrapper** 安装到 Python 环境中吧： 
 
 
 ```
@@ -80,7 +79,7 @@ $ pyenv global 3.7.3
 $ $(pyenv which python3) -m pip install virtualenvwrapper
 ```
 
-Open your **.bash_profile** again and add the following to be sure it works each time you open a new terminal:
+再次打开 **.bash_profile** 文件，把下面内容添加进去，使得每次打开新终端时它都有效：
 
 
 ```
@@ -94,7 +93,7 @@ $ echo 'mkdir -p $WORKON_HOME' >> .bash_profile
 $ echo '. ~/.pyenv/versions/3.7.3/bin/virtualenvwrapper.sh' >> .bash_profile
 ```
 
-Close the terminal and open a new one (or run **exec /bin/bash -l** to refresh the current terminal session), and you'll see **virtualenvwrapper** initializing the environment:
+关掉终端再重新打开（或者运行 **exec /bin/bash -l** 来刷新当前的终端会话），你会看到 **virtualenvwrapper** 正在初始化环境配置：
 
 
 ```
@@ -113,7 +112,7 @@ virtualenvwrapper.user_scripts creating /Users/moshe/.virtualenvs/postactivate
 virtualenvwrapper.user_scripts creating /Users/moshe/.virtualenvs/get_env_details
 ```
 
-From now on, all your work should be in a virtual environment, allowing you to use temporary environments to play around with development safely. With this toolchain, you can set up multiple projects and switch between them, depending upon what you're working on at that moment:
+从此刻开始，你的所有工作都是在虚拟环境中的，其允许你使用临时环境来安全地开发。使用此工具链，你可以根据工作所需，设置多个项目并在它们之间切换：
 
 
 ```
@@ -149,11 +148,11 @@ postmkproject premkproject
 (test1)$
 ```
 
-The **deactivate** command exits you from the current environment.
+此处， **deactivate** 命令可以退出当前环境。
 
-### Recommended practices
+### 推荐实践
 
-You may already set up your long-term projects in a directory like **~/src**. When you start working on a new project, go into this directory, add a subdirectory for the project, then use the power of Bash interpretation to name the virtual environment based on your directory name. For example, for a project named "pyfun":
+你可能已经在比如 **～/src** 这样的目录中添加了长期的项目。当要开始了一个新项目时，进入此目录，为此项目增加子文件夹，然后使用强大的 Bash 解释程序自动根据你的目录名来命令虚拟环境。例如，名称为 “pyfun” 的项目： 
 
 
 ```
@@ -168,7 +167,7 @@ test2
 $
 ```
 
-Whenever you want to work on this project, go back to that directory and reconnect to the virtual environment by entering:
+当需要处理此项目时，只要进入该目录，输入如下命令重新连接虚拟环境：
 
 
 ```
@@ -176,7 +175,7 @@ $ cd ~/src/pyfun
 (pyfun)$ workon .
 ```
 
-Since initializing a virtual environment means taking a point-in-time copy of your Python version and the modules that are loaded, you will occasionally want to refresh the project's virtual environment, as dependencies can change dramatically. You can do this safely by deleting the virtual environment because the source code will remain unscathed:
+初始化虚拟环境意味着对 Python 版本和所加载的模块的时间点的拷贝。由于依赖关系会发生很大的改变，所以偶尔需要刷新项目的虚拟环境。这种情况，你可以通过删除虚拟环境来安全的执行此操作，源代码是不受影响的，如下所示：
 
 
 ```
@@ -185,9 +184,9 @@ $ rmvirtualenv $(basename $(pwd))
 $ mkvirtualenv $(basename $(pwd))
 ```
 
-This method of managing virtual environments with pyenv and virtualwrapper will save you from uncertainty about which version of Python you are running as you develop code locally. This is the simplest way to avoid confusion—especially when you're working with a larger team.
+这种使用 pyenv 和 virtualwrapper 管理虚拟环境的方法可以避免开发环境和运行环境中 Python 版本的不一致出现的苦恼。这是避免混淆的最简单方法 - 尤其是你工作的团队很大的时候。
 
-If you are just beginning to configure your Python environment, read up on how to use [Python 3 on MacOS][2]. Do you have other beginner or intermediate Python questions? Leave a comment and we will consider them for the next article.
+如果你是初学者，正准备配置 Python 环境，可以阅读下 [MacOS 中使用 Python 3][2] 文章。 你们有关于 Python 相关的问题吗，不管是初学者的还是中级使用者的？给我们留下评论信息，我们在下篇文章中会考虑讲解。
 
 --------------------------------------------------------------------------------
 
