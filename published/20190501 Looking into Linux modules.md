@@ -1,30 +1,30 @@
 [#]: collector: (lujun9972)
 [#]: translator: (LazyWolfLin)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11075-1.html)
 [#]: subject: (Looking into Linux modules)
-[#]: via: (https://www.networkworld.com/article/3391362/looking-into-linux-modules.html#tk.rss_all)
+[#]: via: (https://www.networkworld.com/article/3391362/looking-into-linux-modules.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
 深入学习 Linux 内核模块
 ======
-lsmod 命令能够告诉你当前系统上加载了哪些内核模块，以及关于使用它们的一些有趣的细节。
+
+> lsmod 命令能够告诉你当前系统上加载了哪些内核模块，以及关于使用它们的一些有趣的细节。
+
 ![Rob Oo \(CC BY 2.0\)][1]
 
 ### 什么是 Linux 内核模块？
 
-内核模块是根据需要加载到内核中或从内核中卸载的代码块，因此无需重启就可以扩展内核的功能。事实上，除非用户使用类似 **lsmod** 这样的命令来查询模块信息，否则用户不太可能知道内核发生的任何变化。
+内核模块是可以根据需要加载到内核中或从内核中卸载的代码块，因此无需重启就可以扩展内核的功能。事实上，除非用户使用类似 `lsmod` 这样的命令来查询模块信息，否则用户不太可能知道内核发生的任何变化。
 
-需要知道的重要一点是，在你的 Linux 系统上总会有*很多*可用的模块，并且如果你想深入了解细节，那么可以获得很多细节。
+需要知道的重要一点是，在你的 Linux 系统上总会有*很多*可用的模块，并且如果你可以深入其中了解到很多细节。
 
-lsmod 的主要用途之一是在系统不能正常工作时检查模块。然而，大多数情况下，模块会根据需要加载的，而且用户不需要知道它们如何运作。
-
-**[ 扩展阅读：[必知的 Linux 命令][2] ]**
+`lsmod` 的主要用途之一是在系统不能正常工作时检查模块。然而，大多数情况下，模块会根据需要加载的，而且用户不需要知道它们如何运作。
 
 ### 显示内核模块
 
-显示内核模块最简单的方法是使用 **lsmod** 命令。虽然这个命令包含了很多细节，但输出却是非常用户友好。
+显示内核模块最简单的方法是使用 `lsmod` 命令。虽然这个命令包含了很多细节，但输出却是非常用户友好。
 
 ```
 $ lsmod
@@ -105,11 +105,9 @@ floppy                 81920  0
 
 在上面的输出中：
 
-  * “Module”显示每个模块的名称
-  * “Size”显示每个模块的大小（并不是它们使占的内存大小）
-  * “Used by”显示每个模块的被使用的计数和使用它们的模块
-
-
+  * `Module` 显示每个模块的名称
+  * `Size` 显示每个模块的大小（并不是它们占的内存大小）
+  * `Used by` 显示每个模块被使用的次数和使用它们的模块
 
 显然，这里有*很多*模块。加载的模块数量取决于你的系统和版本以及正在运行的内容。我们可以这样计数：
 
@@ -127,20 +125,18 @@ $ modprobe -c | wc -l
 
 ### 与内核模块相关的其他命令
 
-Linux 提供了几条用于罗列，加载及卸载，测试，以及检查模块状态的命令。
+Linux 提供了几条用于罗列、加载及卸载、测试，以及检查模块状态的命令。
 
-  * depmod —— 生成 modules.dep 和映射文件
-  * insmod —— 一个往 Linux 内核插入模块的程序
-  * lsmod —— 显示 Linux 内核中模块状态
-  * modinfo —— 显示 Linux 内核模块信息
-  * modprobe —— 添加或移除 Linux 内核模块
-  * rmmod —— 一个从 Linux 内核移除模块的程序
-
-
+  * `depmod` —— 生成 `modules.dep` 和映射文件
+  * `insmod` —— 一个往 Linux 内核插入模块的程序
+  * `lsmod` —— 显示 Linux 内核中模块状态
+  * `modinfo` —— 显示 Linux 内核模块信息
+  * `modprobe` —— 添加或移除 Linux 内核模块
+  * `rmmod` —— 一个从 Linux 内核移除模块的程序
 
 ### 显示内置的内核模块
 
-正如前文所说，**lsmod** 命令是显示内核模块最方便的命令。然而，也有其他方式可以显示它们。modules.builtin 文件中列出了所有构建在内核中的模块，并被 modprobe 命令尝试添加文件中的模块时使用。注意，以下命令中的 **$(uname -r)** 提供了内核版本的名称。
+正如前文所说，`lsmod` 命令是显示内核模块最方便的命令。然而，也有其他方式可以显示它们。`modules.builtin` 文件中列出了所有构建在内核中的模块，在 `modprobe` 命令尝试添加文件中的模块时会使用它。注意，以下命令中的 `$(uname -r)` 提供了内核版本的名称。
 
 ```
 $ more /lib/modules/$(uname -r)/modules.builtin | head -10
@@ -156,7 +152,7 @@ kernel/fs/configfs/configfs.ko
 kernel/fs/crypto/fscrypto.ko
 ```
 
-你可以使用 **modinfo** 获得一个模块的更多细节，虽然没有对模块提供的服务的简单说明。下面输出内容中省略了冗长的签名。
+你可以使用 `modinfo` 获得一个模块的更多细节，虽然没有对模块提供的服务的简单说明。下面输出内容中省略了冗长的签名。
 
 ```
 $ modinfo floppy | head -16
@@ -178,7 +174,7 @@ sig_key:
 sig_hashalgo:   md4
 ```
 
-你可以使用 **modprobe** 命令加载或卸载模块。使用下面这条命令，你可以找到特定模块关联的内核对象：
+你可以使用 `modprobe` 命令加载或卸载模块。使用下面这条命令，你可以找到特定模块关联的内核对象：
 
 ```
 $ find /lib/modules/$(uname -r) -name floppy*
@@ -191,22 +187,18 @@ $ find /lib/modules/$(uname -r) -name floppy*
 $ sudo modprobe floppy
 ```
 
-### 总结一下
+### 总结
 
 很明显，内核模块的加载和卸载非常重要。它使得 Linux 系统比使用通用内核运行时更加灵活和高效。这同样意味着你可以进行重大更改而无需重启，例如添加硬件。
 
-**[ 两分钟学 Linux：[在这些两分钟视频教程中掌握大量 Linux 命令][3] ]**
-
-在 [Facebook][4] 和 [LinkedIn][5] 上关注我们并添加评论。
-
 --------------------------------------------------------------------------------
 
-via: https://www.networkworld.com/article/3391362/looking-into-linux-modules.html#tk.rss_all
+via: https://www.networkworld.com/article/3391362/looking-into-linux-modules.html
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[LazyWolfLin](https://github.com/LazyWolfLin)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
