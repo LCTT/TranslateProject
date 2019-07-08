@@ -1,3 +1,6 @@
+Translating by Scoutydren....
+
+
 [#]: collector: (lujun9972)
 [#]: translator: ( )
 [#]: reviewer: ( )
