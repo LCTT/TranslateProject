@@ -1,6 +1,4 @@
-translating by qfzy1233
-
-MX Linux: A Mid-Weight Distro Focused on Simplicity
+MX Linux: 一款专注于简洁性的发行版
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/mxlinux.png?itok=OLjmCxT9)
