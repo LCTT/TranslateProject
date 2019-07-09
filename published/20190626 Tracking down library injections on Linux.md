@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (LuuMing)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11079-1.html)
 [#]: subject: (Tracking down library injections on Linux)
 [#]: via: (https://www.networkworld.com/article/3404621/tracking-down-library-injections-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -11,7 +11,7 @@
 ======
 > <ruby>库注入<rt>Library injections</rt></ruby>在 Linux 上不如 Windows 上常见，但它仍然是一个问题。下来看看它们如何工作的，以及如何鉴别它们。
 
-![Sandra Henry-Stocker][1]
+![](https://img.linux.net.cn/data/attachment/album/201907/09/223222gje7l6a2hjhk364a.jpg)
 
 尽管在 Linux 系统上几乎见不到，但库（Linux 上的共享目标文件）注入仍是一个严峻的威胁。在采访了来自 AT&T 公司 Alien 实验室的 Jaime Blasco 后，我更加意识到了其中一些攻击是多么的易实施。
 
