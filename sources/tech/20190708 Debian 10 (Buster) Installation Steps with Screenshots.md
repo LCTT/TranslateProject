@@ -7,208 +7,208 @@
 [#]: via: (https://www.linuxtechi.com/debian-10-buster-installation-guide/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-Debian 10 (Buster) Installation Steps with Screenshots
+Debian 10 (Buster) 安装步骤包括截图
 ======
 
-Debian Project has released its latest and stable operating system as **Debian 10**, code name for Debian 10 is “**Buster**“, this release will get 5 years of support. Debian 10 is available for both 32-bit and 64-bit systems. This release comes with lot of new features, some of them are listed below:
+Debian 项目以 **Debian 10** 的方式发布它的最新稳定版，Debian 10 的代码名称是 "**Buster**"，这个发布版将获得5年的支持。Debian 10 可用于32位和64位系统。这个发布版带来很多新的特色，列出下面一些特色：
 
-  * Introduction of new Debian 10 theme known as “**FuturePrototype**”
-  * Updated Desktop GNOME 3.30, Cinnamon 3.8, KDE Plasma 5.14, MATE 1.20 &amp; Xfce 4.12
-  * LTS kernel 4.19.0-4
-  * New Python 3 (3.7.2), Perl 5.28 &amp; PHP 7.3
-  * Iptables are replaced by nftables
-  * Updated LibreOffice 6.1 &amp; GIMP 2.10.8
-  * Updated OpenJDK 11, MariaDB 10.3 and Apache 2.4.38
-  * Updated Chromium 73.0 &amp; Firefox 60.7
-  * Improved support for UEFI (Unified Extensible Firmware Interface)
-
-
-
-In this article we will demonstrate how to install Debian 10 “Buster” workstation on your Laptop &amp; Desktop.
-
-**Recommended System Requirements for Debian 10**
-
-  * 2 GB RAM
-  * 2 GHz Dual Core Processor
-  * 10 GB Free Hard disk space
-  * Bootable Installation Media (USB/ DVD)
-  * Internet connectivity (Optional)
+  * 引入新的 Debian 10 的主题 “**FuturePrototype**” 
+  * 更新电脑桌面环境 GNOME 3.30，Cinnamon 3.8， KDE Plasma 5.14，MATE 1.20，Xfce 4.12
+  * 长期支持内核 4.19.0-4
+  * 新的 Python 3 (3.7.2), Perl 5.28，PHP 7.3
+  * 替换 Iptables 为 nftables 
+  * 更新 LibreOffice 6.1，GIMP 2.10.8
+  * 更新 OpenJDK 11, MariaDB 10.3 和 Apache 2.4.38
+  * 更新 Chromium 73.0，Firefox 60.7
+  * 改进支持 UEFI (统一可扩展固件接口)
 
 
 
-Let’s jump into the installation steps of Debian 10
+在篇文章中，我们将演示如何在你的笔记本电脑和台式电脑上安装 Debian 10 “Buster” 工作站。
 
-### Step:1) Download Debian 10 ISO file
+**Debian 10 建议系统要求**
 
-Download the Debian 10 ISO file from its official portal,
+  * 2 GB 内存
+  * 2 GHz 双核处理器
+  * 10 GB 可用硬盘空间
+  * 可启动安装介质 (USB/ DVD)
+  * 网络连接(可选)
+
+
+
+让我们跳转到 Debian 10 的安装步骤
+
+### 步骤:1) 下载 Debian 10 ISO 文件
+
+从它的官方入口网站，下载 Debian 10 ISO 文件，
 
 <https://www.debian.org/releases/buster/debian-installer/>
 
-Once the ISO file is downloaded, burn it either into USB or DVD and make it bootable.
+一旦 ISO 文件下载完成，刻录它到 USB 或 DVD ，来使其可启动。
 
-### Step:2) Boot Your System with Installation Bootable Media (USB / DVD)
+### 步骤:2) 使用安装可启动介质 (USB / DVD) 启动你的电脑系统
 
-Reboot your system in which you will be installing Debian 10 and go to bios settings and set the boot medium as USB or DVD.  Once the system is booted with installation bootable media then we will get the following screen.
+重启你将安装 Debian 10的电脑系统，转到 BIOS 设置，并设置启动介质为 USB 或 DVD 。 一旦带有可启动介质的电脑系统启动，那么我们将获得下面的屏幕。
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Choose-Graphical-Install-Debian-10.jpg>
 
-Choose the First option “**Graphical Install**”
+选择第一个选项 “**Graphical Install**”
 
-### Step:3) Choose Your preferred Language, Location and Keyboard Layout
+### 步骤:3) 选择你的首选语言，位置和键盘布局
 
-In this step you will be asked to choose your preferred language
+在这个步骤中，你将被要求选择你的首选语言
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Choose-Language-Debian10-Installation.jpg>
 
-Click on Continue
+在 Continue 上单击
 
-Select your preferred location, based on location, time zone will be automatically set for your system.
+选择你的首选位置，电脑系统将依照位置自动设置时区。
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Select-Location-Debain10-Installation.jpg>
 
-Now Choose your keyboard layout that suits to your installation,
+现在选择适合于你安装设备的键盘布局，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Keyboard-Layout-Debian10-Installation.jpg>
 
-Click on Continue to proceed further,
+在 Continue 上单击来继续，
 
-### Step:4) Set Host name and Domain Name for Debian 10 System
+### 步骤:4) 为 Debian 10 系统设置 Host 名称，和 Domain 名称
 
-Set the hostname that suits to your environment and then click on Continue, in my case I am specifying the hostname as “**debian10-buster**”
+设置适合于你的环境的 host 名称，然后在 Continue 上单击，就我而言, 我指定 hostname 为 “**debian10-buster**”
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Hostname-During-Debian10-Installation.jpg>
 
-Specify the domain name that suits to environment and installation and then click on Continue
+指定适合于环境的 domain 名称，并安装，然后在 Continue 上单击
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Domain-Name-During-Debian10-Installation.jpg>
 
-### Step:5) Specify the root user’s password
+### 步骤:5) 指定 root 用户的密码
 
-Specify the root password in the screen below and then click on Continue
+在下面的屏幕中指定 root 密码，然后在 Continue 上单击
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Root-Password-Debian10-Installation.jpg>
 
-### Step:6) Create Local User and its password
+### 步骤:6) 创建本地用户和它的密码
 
-In this step you will be prompted to specify local user details like full name, user name and its password,
+在这个步骤中，你将被提示指定本地用户具体情况，像完整的姓名，用户名称和它的密码，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Local-User-FullName-Debian10.jpg>
 
-Click on Continue
+在 Continue 上单击
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/UserName-LocalUser-Debian10-Installation.jpg>
 
-Click on Continue and specify the password in the next window
+在 Continue 上单击，并在接下来的窗口中指定密码
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Password-Localuser-Debian10.jpg>
 
-### Step:7) Choose Hard Disk Partitioning Scheme for Debian 10
+### 步骤:7) 为 Debian 10 选择硬盘分区方案
 
-In this step, select partitioning scheme for Debian 10, in my case I have 40 GB hard disk available for OS installation. Partitioning scheme is of two types:
+在这个步骤中，为 Debian 10 选择硬盘分区方案，就我而言，我有 40 GB 硬盘可用于操作系统安装。分区方案有两种类型：
 
-  * Guided Partitioning (Installer will automatically create required partitions)
-  * Manual Partitioning (As name suggests using this we can create manual partitions scheme)
+  * 定向分区(安装器将自动创建需要的分区)
+  * 手动分区(正如名字所示，使用这种方式，我们可以手动创建分区方案)
 
 
 
-In this tutorial we will use guided partitions with LVM on my 42 GB hard drive,
+在这篇教程中，我们将在我 42 GB 硬盘上使用带有 LVM 的定向分区，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Choose-Guided-Partitioning-Scheme-Debain10-Installation.jpg>
 
-Click on Continue to proceed further,
+在 Continue 上单击来继续，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Hard-Disk-Debian10-Installation.jpg>
 
-As we can see I have around 42 GB hard disk space, so choose Continue
+正如我们所视，我大约有 42 GB 硬盘空间，选择 Continue
 
-In the next screen, you will be asked to choose partitions, if are a new Linux user then choose the first option and in case you want a separate home partition then choose second option and else third option, which will create a separate partition for /home, /var and /tmp.
+在接下来的屏幕中，你将被要求选择分区，如果是一个新的 Linux 用户，那么选择第一个选项。假使你想要一个独立的 home 分区，那么选择第二种方案，否则选择第三种方案，它们将为 /home ，/var 和 /tmp 创建独立的分区
 
-In my case I am going to create separate partition for /home, /var and /tmp by choosing the third option.
+就我而言，我将通过选择第三种选项来为 /home ，/var 和 /tmp 创建独立的分区。
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Guided-Separate-Partitions-Debian10-Installation.jpg>
 
-In the next screen select “**yes**” to write changes to disk and Configure LVM and then click on Continue
+在接下来的屏幕中，选择 “**yes**” 来写更改到磁盘中，配置 LVM ，然后在 Continue 上单击
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Write-Changes-Disk-Debian10-Installation.jpg>
 
-In the next screen, partition table will be displayed, cross verify the partitions size, file system type and mount point.
+在接下来的屏幕中，将显示分区表，验证分区大小，文件系统类型和挂载点。
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Debian10-Partition-Table.jpg>
 
-Click on Continue to proceed further,
+在 Continue 上单击来继续，
 
-In the next screen, choose “yes” to write changes to disk,
+在接下来的屏幕中，选择 “yes” 来写更改到磁盘中，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Choose-Yes-Write-Changes-Disk-Debian10-Installation.jpg>
 
-Click on Continue to proceed with installation,
+在 Continue 上单击来继续安装，
 
-### Step:7) Debian 10 Installation Started
+### 步骤:7) Debian 10 安装开始
 
-In this step, Installation of Debian 10 has been started and is in progress,
+在这一步骤中，Debian 10 的安装已经开始，并正在进行中，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Debian10-Installation-Progress.jpg>
 
-During the installation, installer will prompt you to scan CD/DVD for configuring package manager, Choose No and then click on Continue
+在安装期间，安装器将提示你扫描 CD/DVD 以配置软件包管理器，选择 No ，然后在 Continue 上单击
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Scan-DVD-Debian10-Installation.jpg>
 
-In the next screen choose “yes” if you want to configure Package Manager based on Network but for this to work, make sure your system is connected to Internet, else Choose No
+在接下来的屏幕中，如果你想配置基于网络的软件包管理器选择 “yes” ，但是为了使这个方式工作，确保你的系统连接到网络，否则选择 “No”
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Network-Mirror-Debian10-Package-Manager.jpg>
 
-Click on continue to configure package manager based on your location, In next couple of screens you will be prompted to choose location and Debian package repository URL, then you will get below screen
+在 Continue 上单击来配置基于你本地的软件包管理器，在接下来的几个屏幕中，你将被提示选择本地和 Debian 软件包存储库 URL ，然后你将获得下面的屏幕
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Apt-Config-Debian10-Installation.jpg>
 
-Choose “No” to skip package survey step and then click on Continue
+选择 “No” 来跳过软件包审查步骤，然后在 Continue 上单击
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Pkg-Survey-Debian10-Installation.jpg>
 
-In the next window, you will be prompted to choose Desktop environment and other packages, in my case I am selecting **Gnome Desktop**, **SSH Server** and **Standard System utilities**
+在接下来的窗口中，你将被提示选择电脑桌面环境和其它软件包，就我而言，我选择 **Gnome Desktop** ，**SSH Server** 和 **Standard System utilities**
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Software-Selection-Debian10-Installation.jpg>
 
-Click on Continue to proceed with Installation,
+在 Continue 上单击来继续安装，
 
-Choose the option “yes” to install Grub Boot Loader
+选择选项 “yes” 来安装 Grub 引导加载程序
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Install-Grub-Bootloader-Debian10-Installation.jpg>
 
-Click on Continue to proceed further, then in the next window choose the disk (/dev/sda) on which bootloader will be installed
+在 Continue 上单击来继续，然后在接下来的窗口中选择将安装引导加载程序磁盘 (/dev/sda) 
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Install-grub-on-dev-sda-debian10.jpg>
 
-Click on Continue to proceed with installation, Once the installation is completed then installer will prompt us to reboot the system,
+在 Continue 上单击来继续安装，一旦安装完成，安装器将提示我们来重启系统，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Installation-Completed-Debain10.jpg>
 
-Click on Continue to reboot your system and don’t forget to change boot medium from Bios settings so that system boots up with hard disk on which we have installed Debian 10 OS.
+在 Continue 上单击来重启你的系统，不要忘记在 BIOS 设置中更改启动介质，以便系统从我们已经安装 Debian 10 操作系统的硬盘启动。
 
-### Step:8) Boot your newly installed system with Debian 10
+### 步骤:8) 启动你新安装的 Debian 10 系统
 
-Once we reboot the system after the successful installation we will get below bootloader screen
+在成功安装后，一旦我们重启系统，我们将获取下面的引导加载程序屏幕
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Bootloader-Screen-Debian10.jpg>
 
-Choose the first option “**Debian GNU/Linux**” and hit enter,
+选择第一个选项 “**Debian GNU/Linux**” 并敲击 Enter 按键，
 
-Once the system boots up, use the same local user and its password that we have created during the installation,
+一旦系统启动，使用我在安装期间创建的一模一样的本地用户和它的密码，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Local-User-Debian10-Login.jpg>
 
-Following will be Desktop screen after successful login,
+在成功登陆后，下面将是电脑桌面屏幕，
 
 <https://www.linuxtechi.com/wp-content/uploads/2019/07/Desktop-Screen-Debian10-Buster.jpg>
 
-This confirms that Debian 10 has been installed successfully, that’s all from this article, explore this exciting Linux Distribution and have fun 😊
+这证实 Debian 10 已经成功安装，这就是本文的全部，探索这个令人激动的 Linux 发行版，玩得开心 😊
 --------------------------------------------------------------------------------
 
 via: https://www.linuxtechi.com/debian-10-buster-installation-guide/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
