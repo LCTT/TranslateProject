@@ -7,29 +7,30 @@
 [#]: via: (https://opensource.com/article/19/6/continuous-kernel-integration-linux)
 [#]: author: (Major Hayden https://opensource.com/users/mhayden)
 
-Continuous integration testing for the Linux kernel
+Linux 内核的持续集成测试
 ======
-How this team works to prevent bugs from being merged into the Linux
-kernel.
+
+> 团队如何防止 bug 被合并到 Linux 内核中。
+
 ![Linux kernel source code \(C\) in Visual Studio Code][1]
 
-With 14,000 changesets per release from over 1,700 different developers, it's clear that the Linux kernel moves quickly, and brings plenty of complexity. Kernel bugs range from small annoyances to larger problems, such as system crashes and data loss.
+每个版本包含了来自 1,700 个开发者产生的 14,000 个更改，很显然，这使得 Linux 内核在快速迭代同时产生了大量复杂性问题。内核 Bug 有小麻烦也有大问题，例如系统奔溃和数据丢失。
 
 As the call for continuous integration (CI) grows for more and more projects, the [Continuous Kernel Integration (CKI)][2] team forges ahead with a single mission: prevent bugs from being merged into the kernel.
 
-### Linux testing problems
+### Linux 测试问题
 
 Many Linux distributions test the Linux kernel when needed. This testing often occurs around release time, or when users find a bug.
 
 Unrelated issues sometimes appear, and maintainers scramble to find which patch in a changeset full of tens of thousands of patches caused the new, unrelated bug. Diagnosing the bug may require specialized hardware, a series of triggers, and specialized knowledge of that portion of the kernel.
 
-#### CI and Linux
+#### CI 和 Linux
 
 Most modern software repositories have some sort of automated CI testing that tests commits before they find their way into the repository. This automated testing allows the maintainers to find software quality issues, along with most bugs, by reviewing the CI report. Simpler projects, such as a Python library, come with tons of tools to make this process easier.
 
 Linux must be configured and compiled prior to any testing. Doing so takes time and compute resources. In addition, that kernel must boot in a virtual machine or on a bare metal machine for testing. Getting access to certain system architectures requires additional expense or very slow emulation. From there, someone must identify a set of tests which trigger the bug or verify the fix.
 
-#### How the CKI team works
+#### CKI 团队如何运作？
 
 The CKI team at Red Hat currently follows changes from several internal kernels, as well as upstream kernels such as the [stable kernel tree][3]. We watch for two critical events in each repository:
 
@@ -54,7 +55,7 @@ Each kernel is booted on its native architecture, which includes:
 
 Multiple tests run on these kernels, including the [Linux Test Project (LTP)][16], which contains a myriad of tests using a common test harness. My CKI team open-sourced over 44 tests with more on the way.
 
-### Get involved
+### 参与其中
 
 The upstream kernel testing effort grows day-by-day. Many companies provide test output for various kernels, including [Google][17], Intel, [Linaro][18], and [Sony][19]. Each effort is focused on bringing value to the upstream kernel as well as each company’s customer base.
 
