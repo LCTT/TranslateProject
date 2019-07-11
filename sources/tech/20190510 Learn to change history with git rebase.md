@@ -1,5 +1,8 @@
+Translating by Scoutydren....
+
+
 [#]: collector: (lujun9972)
-[#]: translator: (zhang5788)
+[#]: translator: (Scoutydren)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
