@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/install-r-ubuntu/)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
-How to Install and Use R on Ubuntu
+如何在Ubuntu上安装和使用R语言
 ======
 
 _**Brief: This tutorial teaches you to install R on Ubuntu. You’ll also learn how to run your first R program in Ubuntu using various methods.**_
