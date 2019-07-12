@@ -7,22 +7,23 @@
 [#]: via: (https://www.ostechnix.com/how-to-find-virtualbox-version-from-commandline-in-linux/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-How To Find Virtualbox Version From Commandline In Linux
+在 Linux 中如何从命令行查找 Virtualbox 版本
 ======
 
 ![FInd Virtualbox version from commandline In Linux][1]
 
-I use **Oracle VirtualBox** and [**KVM**][2] virtualization applications to [**test different Linux operating systems**][3]. While I use KVM occasionally, Virtualbox is always my first choice. It is not because I don’t like KVM, but because I simply get used to Virtualbox. When using [**Virtualbox on my Ubuntu headless server**][4], I needed to find Virtualbox’s version. If it is a GUI, I could easily find it by navigating to **Virtualbox - > About -> Help**. But mine is Ubuntu server which doesn’t has GUI. If you’re ever wondering how to find Virtualbox version from commandline in Linux, here are few ways to do it.
+我使用 **Oracle VirtualBox** 和 [**KVM**][2] 虚拟化程序[**测试不同的 Linux 操作系统**][3]。虽然我偶尔使用 KVM，但 Virtualbox 始终是我的首选。不是因为我不喜欢 KVM，而是因为我只是习惯了 Virtualbox。当在我的 Ubuntu 无头服务器上使用 [**Virtualbox**][4] 时，我需要知道 Virtualbox 的版本。如果它有 GUI，我可以进入**Virtualbox - > About -> Help** 轻松找到它。但我的是没有 GUI 的 Ubuntu 服务器。如果你想知道如何在 Linux 中从命令行查找 Virtualbox 版本，可以采用以下几种方法。
 
-### Find Virtualbox Version From Commandline In Linux
 
-To find the version of installed Virtualbox, open the Terminal and run the following command:
+### 在 Linux 中从命令行查找 Virtualbox 版本
+
+要查找已安装的 Virtualbox 的版本，请打开终端并运行以下命令：
 
 ```
 $ vboxmanage --version
 ```
 
-Sample output:
+示例输出：
 
 ```
 5.2.18_Ubuntur123745
@@ -30,62 +31,62 @@ Sample output:
 
 ![][5]
 
-Find Virtualbox Version From Commandline In Linux
+在 Linux 中从命令行查找 Virtualbox 版本
 
-As you can see in the above output, the version of installed Virtualbox is **5.2**.
+正如你在上面的输出中看到的，安装的 Virtualbox 的版本是 **5.2**。
 
-The yet another way to find virtualbox version is:
+查找 virtualbox 版本的另一种方法是：
 
 ```
 $ vbox-img --version
 ```
 
-Sample output:
+示例输出：
 
 ```
 5.2.18_Ubuntur123745
 ```
 
-Alternatively, you can use **“head”** and **“awk”** commands to find the Virtualbox version.
+或者，你可以使用 **“head”** 和 **“awk”** 命令来查找 Virtualbox 版本。
 
 ```
 $ virtualbox --help | head -n 1 | awk '{print $NF}'
 ```
 
-Sample output:
+示例输出：
 
 ```
 5.2.18_Ubuntu
 ```
 
-Or, use **“echo”** command combined with “head” and “awk” commands:
+或者，使用 **“echo”** 命令结合 “head” 和 “awk” 命令：
 
 ```
 $ echo $(virtualbox --help | head -n 1 | awk '{print $NF}')
 ```
 
-Sample output:
+示例输出：
 
 ```
 5.2.18_Ubuntu
 ```
 
-The above commands will work on any Linux distributions. If you’re on Ubuntu specifically, you can use **“dpkg”** command to check Virtualbox version.
+以上命令适用于任何 Linux 发行版。如果你使用的是 Ubuntu，你可以使用 **“dpkg”** 命令查看 Virtualbox 版本。
 
 ```
 $ dpkg -l | grep virtualbox | awk '{print $3}'
 ```
 
-Sample output:
+示例输出：
 
 ```
 5.2.30-130521~Ubuntu~bionic
 5.2.18-dfsg-2~ubuntu18.04.5
 ```
 
-That’s it. These are couple ways to find the version of Oracle Virtualbox from Terminal in Linux. Hope this was useful.
+就是这些了。这些是从 Linux 中的终端查找 Oracle Virtualbox 版本的几种方法。希望这篇文章很有用。
 
-**Reference:**
+**参考来自：**
 
   * [**AskUbuntu**][6]
 
@@ -97,7 +98,7 @@ via: https://www.ostechnix.com/how-to-find-virtualbox-version-from-commandline-i
 
 作者：[sk][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
