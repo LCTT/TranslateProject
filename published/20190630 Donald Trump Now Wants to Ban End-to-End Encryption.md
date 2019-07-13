@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11092-1.html)
 [#]: subject: (Donald Trump Now Wants to Ban End-to-End Encryption)
 [#]: via: (https://news.softpedia.com/news/donald-trump-now-wants-to-ban-end-to-end-encryption-526567.shtml)
 [#]: author: (Bogdan Popa https://news.softpedia.com/editors/browse/bogdan-popa)
@@ -12,7 +12,7 @@
 
 > 美国官方在开会讨论端到端加密。
 
-在[禁止][1]和[解禁][2]华为之后，美国总统唐纳德特朗普现在将目光盯上了端到端加密，据一份新的报告声称，白宫高级官员本周会面讨论政府可以在这方面采取的第一项动作。
+在[禁止][1]和[解禁][2]华为之后，美国总统唐纳德特朗普现在将目光盯上了端到端加密，据一份新的报告声称，白宫高级官员本周会面讨论了政府可以在这方面采取的第一项动作。
 
 [Politico][3] 援引了三位知情人士的话指出，来自几个关键机构的二号官员讨论了针对端到端加密的潜在攻击。
 
@@ -36,7 +36,7 @@ FBI 最终使用了第三方开发的软件解锁了该设备。
 
 via: https://news.softpedia.com/news/donald-trump-now-wants-to-ban-end-to-end-encryption-526567.shtml
 
-作者：[Bogdan Popa;Jun][a]
+作者：[Bogdan Popa][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
 校对：[wxy](https://github.com/wxy)
