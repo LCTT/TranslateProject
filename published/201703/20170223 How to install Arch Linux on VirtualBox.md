@@ -234,7 +234,7 @@ clear
 输入下面的命令来挂载主分区以开始系统安装：
 
 ```
-mount /dev/sda1 / mnt
+mount /dev/sda1 /mnt
 ```
 
 [
@@ -282,7 +282,7 @@ arch-chroot /mnt /bin/bash
  现在来更改语言配置：
 
 ```
-nano /etc/local.gen
+nano /etc/locale.gen
 ```
 
 [
@@ -328,7 +328,7 @@ LANG=en_US.UTF-8
 输入下面的命令来同步时区：
 
 ```
-ls user/share/zoneinfo
+ls /usr/share/zoneinfo
 ```
 
 下面你将看到整个世界的时区列表。
@@ -352,7 +352,7 @@ ln –s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 使用下面的命令来设置标准时间：
 
 ```
-hwclock --systohc –utc
+hwclock --systohc --utc
 ```
 
 硬件时钟已同步。

@@ -1,3 +1,5 @@
+translating by qfzy1233
+
 MX Linux: A Mid-Weight Distro Focused on Simplicity
 ======
 
