@@ -1,6 +1,5 @@
-zianglei is translating
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zianglei)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
