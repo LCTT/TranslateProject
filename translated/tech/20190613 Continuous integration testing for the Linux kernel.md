@@ -14,15 +14,15 @@ Linux 内核的持续集成测试
 
 ![Linux kernel source code \(C\) in Visual Studio Code][1]
 
-每个版本包含了来自 1,700 个开发者产生的 14,000 个更改，很显然，这使得 Linux 内核在快速迭代同时产生了大量复杂性问题。内核 Bug 有小麻烦也有大问题，例如系统奔溃和数据丢失。
+Linux 内核的每个发布版本包含了来自 1,700 个开发者产生的 14,000 个更改，很显然，这使得 Linux 内核快速迭代的同时也产生了大量复杂性问题。内核上 Bug 有小麻烦也有大问题，例如系统奔溃和数据丢失。
 
-As the call for continuous integration (CI) grows for more and more projects, the [Continuous Kernel Integration (CKI)][2] team forges ahead with a single mission: prevent bugs from being merged into the kernel.
+随着越来越多的项目对于持续集成（CI）的呼声，[内核持续集成（CKI）][2]小组保持着一个任务目标：防止 Bug 被合并到内核当中。
 
 ### Linux 测试问题
 
-Many Linux distributions test the Linux kernel when needed. This testing often occurs around release time, or when users find a bug.
+许多 Linux 发行版只在需要的时候测试 Linux 内核。而这个测试往往只在版本发布时或者用户发现错误时进行。
 
-Unrelated issues sometimes appear, and maintainers scramble to find which patch in a changeset full of tens of thousands of patches caused the new, unrelated bug. Diagnosing the bug may require specialized hardware, a series of triggers, and specialized knowledge of that portion of the kernel.
+有时会出现不相关的问题，维护人员会在包含了数万个补丁的变更中匆忙地寻找哪个补丁导致这个不相关的新 Bug。诊断 Bug 需要专业的硬件设备、一系列的触发器以及内核相关的专业知识。
 
 #### CI 和 Linux
 
