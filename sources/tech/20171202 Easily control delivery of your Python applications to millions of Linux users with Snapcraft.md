@@ -1,4 +1,3 @@
-Translating by DavidChenLiang
 Python
 ============================================================
 
