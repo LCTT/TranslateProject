@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (4 tools to help you drive Kubernetes)
@@ -10,17 +10,17 @@
 帮助你驾驭 Kubernetes 的 4 个工具
 ======
 
-学习如何驾驭 Kubernetes 比如何建造它更重要，这些工具可以帮助你更快上路。
+> 学习如何驾驭 Kubernetes 比如何建造它更重要，这些工具可以帮助你更快上路。
 
 ![Tools in a workshop][1]
 
-在本系列的第三篇文章中，[Kubernetes 基础：首先学习如何使用][2]，我强调你应该学会驾驭 Kubernetes，而不是建造它。我还解释说，在 Kubernetes 中，你必须学习一组最小的原语来建模应用程序。我想强调这一点：你需要学习的这组原语是最简单的原语集，你可以通过它们学习如何实现生产级的应用程序部署（即高可用性[HA]、多容器、多应用程序）。换句话说，学习 Kubernetes 内置的原语集比学习集群软件、集群文件系统、负载平衡器、让人发疯的 Apache 和 Nginx 的配置、路由器、交换机、防火墙和存储后端更容易 —— 这些是你在传统的 IT 环境（虚拟机或裸机）中建模简单的 HA 应用程序所需要的东西。
+在本系列的第三篇文章中，[Kubernetes 基础：首先学习如何使用][2]，我强调你应该学会使用 Kubernetes，而不是建造它。我还解释说，在 Kubernetes 中，你必须学习最小的一组原语来建模应用程序。我想强调这一点：你需要学习的这组原语是最简单的原语集，你可以通过它们学习如何实现生产级的应用程序部署（即高可用性 [HA]、多容器、多应用程序）。换句话说，学习 Kubernetes 内置的原语集比学习集群软件、集群文件系统、负载平衡器、让人发疯的 Apache 和 Nginx 的配置、路由器、交换机、防火墙和存储后端更容易 —— 这些是你在传统的 IT 环境（虚拟机或裸机）中建模简单的 HA 应用程序所需要的东西。
 
 在这第四篇文章中，我将分享一些有助于你学习快速驾驭 Kubernetes 的工具。
 
 ### 1、Katacoda
 
-[Katacoda][3] 是试驾 Kubernetes 集群的最简单方法。只需单击一下，五秒钟后就可以将基于 Web 的终端直接连接到正在运行的 Kubernetes 集群中。这对于使用和学习来说非常棒。我甚至将它用于演示和测试新想法。Katacoda 提供了一个完整的临时环境，在你使用完毕后可以回收利用。
+无疑，[Katacoda][3] 是试驾 Kubernetes 集群的最简单方法。只需单击一下，五秒钟后就可以将基于 Web 的终端直接连接到正在运行的 Kubernetes 集群中。这对于使用和学习来说非常棒。我甚至将它用于演示和测试新想法。Katacoda 提供了一个完整的临时环境，在你使用完毕后可以回收利用。
 
 ![OpenShift Playground][4]
 
@@ -30,15 +30,15 @@
 
 *[Kubernetes Playground][7]*
 
-Katacoda 提供了一个临时的环境和更深的实验室环境。例如，我最近三四年讲的 [Linux Container Internals Lab][3] 是在 Katacoda 中构建的。
+Katacoda 提供了一个临时的环境和更深入的实验室环境。例如，我最近三四年主讲的 [Linux Container Internals Lab][3] 是在 Katacoda 中构建的。
 
-Katacoda 在其主站点上维护了若干 [Kubernetes 和云教程][8]并与 Red Hat 合作以支持[OpenShift 的专用学习门户][9]。 探索一下它们 —— 它们是极好的学习资源。
+Katacoda 在其主站点上维护了若干 [Kubernetes 和云教程][8]并与 Red Hat 合作以支持了一个 [OpenShift 的专用学习门户][9]。了解一下，它们是极好的学习资源。
 
 当你第一次学习驾驶翻斗车时，最好先观察一下其他人的驾驶方式。
 
 ### 2、Podman generate kube
 
-`podman generate kube` 命令是一个很棒的子命令，可以帮助用户自然地从运行简单容器的简单容器引擎转换到运行许多容器的集群用例（正如我在[上篇文章][2]中所描述的那样）。[Podman][10] 通过让你启动几个容器，然后导出工作的 Kube YAML，然后在 Kubernetes 中启动它来实现这一点。看看这个（你可以在 [Katacoda lab][3] 中运行它，它已经有了 Podman 和 OpenShift）。
+`podman generate kube` 命令是一个很棒的子命令，可以帮助用户自然地从运行简单容器的简单容器引擎转换到运行许多容器的集群用例（正如我在[上篇文章][2]中所描述的那样）。[Podman][10] 通过让你启动一个新的容器，然后导出这个可工作的 Kube YAML，并在 Kubernetes 中启动它来实现这一点。看看这个（你可以在 [Katacoda lab][3] 中运行它，它已经有了 Podman 和 OpenShift）。
 
 首先，请注意运行容器的语法与 Docker 非常相似：
 
@@ -109,7 +109,7 @@ status:
   loadBalancer: {}
 ```
 
-你现在有了一些可以的工作 Kubernetes YAML，你可以用它作为起点来学习、调整等等。`-s` 标志可以为你创造一项服务。[Brent Baude][11] 甚至致力于[添加卷/持久卷宣告][12]等新功能。如果想进一步深入，请在 Brent 的博客文章中查看他很棒的文章《[Podman 现在可以轻松过渡到 Kubernetes 和 CRI-O][13]》。
+你现在有了一些可以的工作 Kubernetes YAML，你可以用它作为练习的起点来学习、调整等等。`-s` 标志可以为你创造一项服务。[Brent Baude][11] 甚至致力于[添加卷/持久卷断言][12]等新功能。如果想进一步深入，请在 Brent 的博客文章《[Podman 现在可以轻松过渡到 Kubernetes 和 CRI-O][13]》中了解他的工作。
 
 ### 3、oc new-app
 
@@ -120,8 +120,7 @@ oc new-project -n example
 oc new-app -f https://raw.githubusercontent.com/openshift/origin/master/examples/quickstarts/cakephp-mysql.json
 ```
 
-使用 `oc new-app`，你可以从 OpenShift 开发人员那里偷取模板，并在开发原语来描述你自己的应用程序时拥有一个已知良好的起点。运行上述命令后，你的 Kubernetes 命名空间（在 OpenShift 中）将由一堆新的已定义资源填充。
-
+使用 `oc new-app`，你可以从 OpenShift 开发人员那里偷取模板，并在开发原语来描述你自己的应用程序时拥有一个已知良好的起点。运行上述命令后，你的 Kubernetes 命名空间（在 OpenShift 中）将由若干新的已定义资源填充。
 
 ```
 oc get all
@@ -160,7 +159,7 @@ NAME                                             HOST/PORT                      
 route.route.openshift.io/cakephp-mysql-example   cakephp-mysql-example-example.2886795271-80-rhsummit1.environments.katacoda.com   cakephp-mysql-example   <all>                   None
 ```
 
-这样做的好处是你可以删除 Pod，观察复制控制器重新创建它们，缩放 Pod。你可以使用模板并将其更改为其他应用程序（这是我第一次启动时所做的）。
+这样做的好处是你可以删除 Pod，观察复制控制器如何重新创建它们，缩放 Pod 等等。你可以使用模板并将其更改为其他应用程序（这是我第一次启动时所做的）。
 
 ### 4、Visual Studio Code
 
@@ -176,7 +175,7 @@ route.route.openshift.io/cakephp-mysql-example   cakephp-mysql-example-example.2
 
 ![VS Code autocomplete filling in boilerplate for an object][18]
 
-当你使用自动补完并选择服务资源时，它会填充该对象的一些模板。当你第一次学习使用 Kubernetes 时，这非常棒。你可以构建 Pod、服务、复制控制器、部署等。当你从头开始构建这些文件甚至修改您使用 `podman generate kube` 创建的文件时，这是一个非常好的功能。
+当你使用自动补完并选择服务资源时，它会填充该对象的一些模板。当你第一次学习使用 Kubernetes 时，这非常棒。你可以构建 Pod、服务、复制控制器、部署等。当你从头开始构建这些文件甚至修改你使用 `podman generate kube` 创建的文件时，这是一个非常好的功能。
 
 ### 总结
 
@@ -189,7 +188,7 @@ via: https://opensource.com/article/19/6/tools-drive-kubernetes
 作者：[Scott McCarty][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
