@@ -62,39 +62,39 @@ WSL 还没有明确的方向或目的，但它在 Windows 机器上提供了 Lin
 
 从 U 盘启动一个“实时 Linux”可提供完整的 Linux 发行版。虽然数据存储与你安装到硬盘驱动器的系统略有不同，但其他所有内容都与你在 Linux 桌面上所期望的一样。在便携式 Linux 操作系统上你几乎没有什么不能做的，所以在你的钥匙串上安装一个以解锁你遇到的每台计算机的全部潜力吧。
 
-### 4、Take an online tour
+### 4、在线导览
 
 ![Linux tour screenshot][12]
 
-Somebody over at Ubuntu thought up the brilliant idea of hosting an Ubuntu GNOME desktop in the browser. To try it out for yourself, open a web browser and navigate to [tour.ubuntu.com][13]. You can select which activity you want demonstrated, or you can skip individual lessons and click the Show Yourself Around button.
+Ubuntu 的某个人想到了在浏览器中托管 Ubuntu GNOME 桌面的好主意。想要自己尝试一下，可以打开 Web 浏览器并导航到 [tour.ubuntu.com][13]。你可以选择要演示的活动，也可以跳过单个课程并单击 “四处看看” 按钮。
 
-Even if you're new to the Linux desktop, you might find showing yourself around is more familiar than you might expect. From the online tour, you can look around, see what applications are available, and view what a typical default Linux desktop is like. You can't adjust settings or launch another tour in Firefox (it was the first thing I tried, naturally), and while you can go through the motions of installing applications, you can't launch them. But if you've never used a Linux desktop before and you want to see what all the fuss is about, this is the whirlwind tour.
+即使你是 Linux 桌面的新用户，你也可能会发现“四处看看”功能比你想象的更还简单。在线游览中，您可以四处看看，查看可用的应用程序，以及查看典型的默认 Linux 桌面。你不能在 Firefox 中调整设置或启动另一个在线导览（这是我尝试的第一件事），虽然你可以完成安装应用程序的动作，但你无法启动它们。 但是，如果你之前从未使用过 Linux 桌面，并且想要看到各种新奇的东西，那这就是一场旋风之旅。
 
 #### 如何使用
 
-An online tour is truly just a tour. If you've never seen a Linux desktop in action, this is an opportunity to get a glimpse of what it's like. Not intended for serious work, this is an attractive display to entice passers-by.
+在线导览真的只是一次旅行。如果你从未见过 Linux 桌面，那么这是一个了解它的情况的机会。不是为了正式的使用，而是一个吸引过客的展示。
 
-### 5、Run Linux in the browser with JavaScript
+### 5、在浏览器中用 JavaScript 运行 Linux
 
 ![JSLinux][14]
 
-Not so long ago, virtualization used to be computationally expensive, limited to users with premium hardware. Now virtualization has been optimized to the point that it can be performed by a JavaScript engine, thanks to Fabrice Bellard, the creator of the excellent and open source [QEMU][15] machine emulator and virtualizer.
+就在不久之前，虚拟化的计算成本还很高，这仅限于使用高级硬件的用户。而现在虚拟化已被优化到可以由 JavaScript 引擎执行的程度，这要归功于 Fabrice Bellard，它是优秀的开源 [QEMU][15] 机器仿真器和虚拟器的创建者。
 
-Bellard also started the JSLinux project, which allows you to run Linux and other operating systems in a browser, in his spare time for fun. It's still an experimental project, but it's a technical marvel. Open a web browser to the [JSLinux][16] page, and you can boot a text-based Linux shell or a minimal graphical Linux environment. You can upload and download files to your JSLinux host or (theoretically) send your files to a network backup location, because JSLinux has access to the internet through a VPN socket (although at capped speeds, dependent upon the VPN service).
-
-#### 如何使用
-
-You won't be doing serious work on JSLinux anytime soon, and the environment is arguably too unusual to learn broad lessons about how Linux normally works. If, however, you're bored of running Linux on a plain old PC and would like to try Linux on a truly distinctive platform, JSLinux is in a class all its own.
-
-### 6、Read about it
-
-Not every Linux experience happens on the computer. Maybe you're the sort of person who likes to keep your distance, observe, and do your research before jumping into something new, or maybe you're just not clear yet on what "Linux" encompasses, or maybe you love full immersion. There's a wealth of information to read about how Linux works, what it's like to run Linux, and what's happening in the Linux world.
-
-The more you get familiar with the world of open source, the easier it is to understand the common lingo and to separate urban myth from actual experience. We publish [book lists][17] from time to time, but one of my favorites is [_The Charm of Linux_][18] by Hazel Russman. It's a tour through Linux from many different angles, written by an independent author out of excitement over discovering Linux.
+Bellard 还启动了 JSLinux 项目，该项目允许你在浏览器中运行 Linux 和其他操作系统，算是闲暇时间的一个乐趣。它仍然是一个实验项目，但它是一个技术奇迹。打开 Web 浏览器导航到 [JSLinux][16] 页面，你可以启动基于文本的 Linux shell 或极简的图形 Linux 环境。你可以上传和下载文件到 JSLinux 主机上或（在理论上）将文件发送到一个网络备份位置，因为 JSLinux 可以通过 VPN 套接字访问互联网（尽管上限速度取决于 VPN 服务）。
 
 #### 如何使用
 
-Nothing beats kicking back with a good book. This is the least traditional method of experiencing Linux, but for people who love the printed word, it's both comforting and effective.
+你不会在 JSLinux 上正经使用多少时间，这个环境可能太不寻常了，无法学习 Linux 正常工作的广泛课程。但是，如果你厌倦了在一台普通的 PC 上运行 Linux 并想在一个真正独特的平台上试用 Linux，那么 JSLinux 就属于这种。
+
+### 6、阅读关于它的书
+
+并非每种 Linux 体验都要用计算机。也许你是那种喜欢在开始新事物之前保持距离，先观察和研究的人，或者你可能还不清楚 “Linux” 所包含的内容，或者你喜欢全情投入其中。关于 Linux 如何工作、运行 Linux 的方式以及 Linux 世界中有什么，有很多书可以读。
+
+你越熟悉开源世界，就越容易理解常用术语，将城市神话与实际经验区分开来。我们不时会发布[图书清单] [17]，但我的最爱之一是 Hazel Russman 的《[The Charm of Linux][18]》。这是一个从不同角度巡览 Linux 的过程，是由一位独立作者在发现 Linux 时兴奋之余写作的。
+
+#### 如何使用
+
+没有什么能比一本好书更好。这是体验 Linux 的最不传统的方法，但对于喜欢印刷文字的人来说，它既舒适又有效。
 
 ### 7、Get a Raspberry Pi
 
