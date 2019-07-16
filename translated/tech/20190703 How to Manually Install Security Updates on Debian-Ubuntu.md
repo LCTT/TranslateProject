@@ -7,28 +7,28 @@
 [#]: via: (https://www.2daygeek.com/manually-install-security-updates-ubuntu-debian/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Manually Install Security Updates on Debian/Ubuntu?
+如何在 Debian/Ubuntu 上手动安装安全更新？
 ======
 
-Installing a package in Linux from command line is a simple task.
+在 Linux 上通过命令行安装一个包程序是一件简单的事。
 
-In a single command or combining of multiple commands could make you to complete your task easily.
+在一行命令中组合使用多个命令能让你更加简单地完成任务。
 
-The same can be done for security updates as well.
+安全更新也同样如此。
 
-In this tutorial, we will show you how to check available security update and install them on Debian based systems such as Ubuntu, LinuxMint, etc,.
+在这个教程里面，我们会向你展示如何查看可用的安全更新，以及如何在 Ubuntu，LinuxMint 等等这些基于 Debian 的系统中安装它们。
 
-It can be done using three methods. All these methods are described in this article in details.
+有三种方法可以完成这件事，下面会详细地描述这三种方法。
 
-As a Linux administrator, you should keep your system up-to-date, that makes your system more secure. It protects your system against unwanted attack.
+作为一个 Linux 管理员，你应该让你的系统保持为最新，这会让你的系统更安全，保护你的系统抵抗意想不到的攻击。
 
-If you are not able to patch entire system with all updates due to some application dependency. At-least, you should install only security patches to make your system 100% compliance.
+如果你因为一些应用的依赖问题不能解决，导致不能给所有的系统进行全部更新。那至少，你应该打上安全补丁来让你的系统 100% 符合要求。
 
-### How to Install unattended-upgrades package in Debian/Ubuntu?
+### 如何在 Debian/Ubuntu 上安装 unattended-upgrades？
 
-By default `unattended-upgrades` package should be installed on your system. But in case if it’s not installed use the following command to install it.
+默认情况下，你的系统上应该是已经安装了 unattended-upgrades 包的。但是如果你的系统没有装这个包，那么请使用下面的命令来安装它。
 
-Use **[APT-GET Command][1]** or **[APT Command][2]** to install unattended-upgrades package.
+使用 **[APT-GET 命令][1]** 或者 **[APT 命令][2]** 来安装 unattended-upgrades 包.
 
 ```
 $ sudo apt-get install unattended-upgrades
@@ -36,13 +36,13 @@ or
 $ sudo apt install unattended-upgrades
 ```
 
-### Method-1: How to Check if any Security Updates are available in Debian/Ubuntu?
+### 方法一：如何检查 Debian/Ubuntu 中是否有任何可用的安全更新？
 
-It’s always a good practice to check list of available security updates before performing the patch installation. It will give you the list of packages that are going to be updated in your system.
+在进行补丁安装之前，检查可用安全更新列表始终是一个好习惯。它会为你提供将在你的系统中进行更新的软件包的列表。
 
-**What’s dry run?** Most of the Linux commands have a dry run option, which stimulate the actual output but nothing will be downloaded or installed.
+**什么是试运行?** 大多数的 Linux 命令都有一个试运行选项，它会给出实际的输出但不会下载或安装任何东西。
 
-To do so, you need to add `--dry-run` option with unattended-upgrades command.
+为此，你需要在 unattended-upgrades 命令中添加 --dry-run 选项。
 
 ```
 $ sudo unattended-upgrade --dry-run -d
@@ -101,21 +101,21 @@ vim-tiny
 xxd
 ```
 
-If the above command output says **“No packages found that can be upgraded unattended and no pending auto-removals”** in the Terminal, this implies your System is up-to-date.
+如果在终端里，上面的命令输出说 **“No packages found that can be upgraded unattended and no pending auto-removals”** , 这意味着你的系统已经是最新的了。
 
-### How to Install available Security Updates in Debian/Ubuntu?
+### 如何在 Debian/Ubuntu 中安装可用的安全更新？
 
-If your got any package updates in the above command output. Then run the following command to install them.
+如果你在上面的命令输出中获得了任意的软件包更新，就运行下面的命令来安装它们。
 
 ```
 $ sudo unattended-upgrade -d
 ```
 
-Alternatively this can be done from apt-get command. It’s bit tricky. However, i would suggest users to go with first option.
+除此之外，你也可以使用 apt-get 命令来进行安装。但是这个方法有点棘手，我会建议用户用第一个选项。
 
-### Method-2: How to Check if any Security Updates are available in Debian/Ubuntu Using apt-get Command?
+### 方法二：如何使用 apt-get 命令在 Debian/Ubuntu 中检查是否有可用的安全更新？
 
-Run the following command to check list of available security updates in your Debian/Ubuntu system
+在你的 Debian/Ubuntu 系统中运行下面的命令来查看可用安全更新的列表。
 
 ```
 $ sudo apt-get -s dist-upgrade | grep "^Inst" | grep -i securi
@@ -160,19 +160,19 @@ Inst gcc [4:7.3.0-3ubuntu2.1] (4:7.4.0-1ubuntu2.3 Ubuntu:18.04/bionic-updates, U
 Inst g++ [4:7.3.0-3ubuntu2.1] (4:7.4.0-1ubuntu2.3 Ubuntu:18.04/bionic-updates, Ubuntu:18.04/bionic-security [amd64])
 ```
 
-### How to Install available Security Updates in Debian/Ubuntu Using apt-get Command?
+### 如何使用 apt-get 命令在 Debian/Ubuntu 系统中安装可用的安全更新？
 
-If you found any package updates in the above output. Finally run the following command to install them.
+如果你在上面命令的输出中发现任何的软件包更新。就运行下面的命令来安装它们。
 
 ```
 $ sudo apt-get -s dist-upgrade | grep "^Inst" | grep -i securi | awk -F " " {'print $2'} | xargs apt-get install
 ```
 
-Alternatively this can be done from apt command. It’s bit tricky. However, i would suggest users to go with first option.
+除此之外，也可以使用 apt 命令来完成。但是这个方法有点棘手，我会建议用户用第一个选项。
 
-### Method-3: How to Check if any Security Updates are available in Debian/Ubuntu Using apt Command?
+### 方法三：如何使用 apt 命令在 Debian/Ubuntu 系统中检查是否有可用的安全更新？
 
-Run the following command to check list of available security updates in your Debian/Ubuntu system
+在 Debian/Ubuntu 系统中运行下面的命令来查看可用安全更新的列表。
 
 ```
 $ sudo apt list --upgradable | grep -e "-security"
@@ -217,15 +217,15 @@ vim-tiny/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.1 amd64 [upgradable 
 xxd/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.1 amd64 [upgradable from: 2:8.0.1453-1ubuntu1]
 ```
 
-### How to Install available Security Updates in Debian/Ubuntu Using apt Command?
+### 如何在 Debian/Ubuntu 系统中使用 apt 命令来安装可用的安全更新？
 
-If you found any package updates in the above output. Finally run the following command to install them.
+如果你在上面命令的输出中发现任何的软件包更新。就运行下面的命令来安装它们。
 
 ```
 $ sudo apt list --upgradable | grep -e "-security" | awk -F "/" '{print $1}' | xargs apt install
 ```
 
-Also, the following file will give you the packages update count.
+同样，下面的文件也会告诉你更新包的总数。
 
 ```
 $ sudo cat /var/lib/update-notifier/updates-available
@@ -240,7 +240,7 @@ via: https://www.2daygeek.com/manually-install-security-updates-ubuntu-debian/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hopefully2333](https://github.com/hopefully2333)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
