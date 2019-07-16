@@ -2,116 +2,108 @@ MX Linux: 一款专注于简洁性的发行版
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/mxlinux.png?itok=OLjmCxT9)
-There are so many distributions of Linux. Some of those distributions go a very long way to differentiate themselves. In other cases, the differences are so minimal, you wonder why anyone would have bothered reinventing that particular wheel. It’s that latter concern that had me wondering why [antiX][1] and [MEPIS][2] communities would come together to create yet another distribution—especially given that the results would be an Xfce edition of antiX, built by the MEPIS community.
+Linux 有着如此多种的发型版。许多发行版为了使自己与众不同而做出了很多改变。另一方面，许多发行版之间的区别又是如此之小，你可能会问为什么有人还愿意不厌其烦的重复别人已经做过的工作呢？也正是基于这一疑惑，让我好奇为什么 [antiX][1] 和 [MEPIS][2]这两个社区要联合推出一个特殊的发行版，考虑到具体情况应该会是一个搭载 Xfce 桌面并基于 antiX 的版本，由 MEPIS 社区承担开发。
 
-Does building antiX with an Xfce desktop warrant its own distribution? After all, antiX claims to be a “fast, lightweight and easy to install systemd-free linux live CD distribution based on Debian Stable.” The antiX desktop of choice is [LXDE][3], which does certainly fit the bill for a lightweight desktop. So why retool antiX into another lightweight distribution, only this time with Xfce? Well, as anyone within the Linux community knows, variance adds flavor and a good lightweight distribution is a worthwhile endeavor (especially in preventing old hardware from making its way to the landfill). Of course, LXDE and Xfce aren’t quite in the same category. LXDE should be considered a true lightweight desktop, whereas Xfce should be considered more a mid-weight desktop. And that, my friends, is key to why MX Linux is an important iteration of antiX. A mid-weight distribution, built on Debian, that includes all the tools you need to get your work done.
+这一开发中的使用 Xfce 桌面的 antiX 系统是否会基于他之前的发行版呢？毕竟，antiX 旨在提供一个“快速、轻量级、易于安装的、支持linux live CD 且基于Debian Stable的发行版”。antiX 所搭载的桌面是 [LXDE][3]，能够极好的满足关于轻量化系统的相关要求和特性。那究竟是什么原因使得 antiX 决定构建另一个轻量化发行版呢，仅仅是因为这次换成了 Xfce 吗？好吧，Linux 社区中的任何人都知道，差异之处体现了不同版本的特性，一个好的轻量级发行版是值得一试的(特别是可以使得我们的旧硬件摆脱进入垃圾填埋场的宿命)。当然，LXDE 和 Xfce 并不完全属于同一类别。LXDE应该被认为是一个真正的轻量级桌面，而 Xfce 应该被认为是一个中等重量的桌面。朋友们，这就是为什么 MX Linux 是 antiX 的一个重要迭代的关键。一个基于Debian的中等体量的发行版，它包含你完成工作所需的所有工具。
 
-But there’s something really keen within MX Linux—something directly borrowed from antiX—and that is the installation tool. When I first set up a VirtualBox VM to install MX Linux, I assumed the installation would be the typical, incredibly easy Linux installation I’d grown accustomed to. Much to my surprise, that antiX installer MX Linux uses could be a real game changer, especially for those on the fence about giving Linux a try.
+但是在 MX linux 中有一些直接从 antiX 借用来的非常有用的东西—那就是安装工具。当我第一次设置VirtualBox 的虚拟机来安装 MX Linux 时，我认为安装将是我已经习惯的典型的、非常简单的Linux安装。令我非常惊讶的是，MX Linux 使用的 antiX 安装程序打破了以往的痛点，特别是对于那些对尝试 Linux 持观望态度的人来说。
 
-So even before I began kicking the tires of MX Linux, I was impressed. Let’s take a look at what makes the installation of this distribution so special, and then finally have a go with the desktop.
+因此，甚至在我开始尝试 MX Linux 之前，我就对它有了深刻的印象。让我们来看看是什么让这个发行版的安装如此特别，最后再来看看桌面。
 
-You can download MX Linux 17.1 from [here][4]. The minimum system requirements are:
+你可以从[这里][4]下载 MX Linux 17.1。系统的最低要求是:
 
-  * A CD/DVD drive (and BIOS capable of booting from that drive), or a live USB (and BIOS capable of booting from USB)
+  * CD/DVD驱动器(以及能够从该驱动器引导的BIOS)或活动USB(以及能够从USB引导的BIOS)
 
-  * A modern i486 Intel or AMD processor
+  * 英特尔 i486 或 AMD 处理器
 
-  * 512 MB of RAM memory
+  * 512 MB 内存
 
-  * 5 GB free hard drive space
+  * 5 GB 硬盘空间
 
-  * A SoundBlaster, AC97 or HDA-compatible sound card
+  * 扬声器，AC97 或 HDA-compatible 声卡
 
-  * For use as a LiveUSB, 4 GB free
+  * 作为一个 LiveUSB 使用，需要 4 GB 空间
 
+### 安装
 
-
-
-### Installation
-
-Out of the gate, the MX Linux installer makes installing Linux a breeze. Although it may not be the most modern-looking installation tool, there’s little to second-guess. The heart of the installation begins with choosing the disks and selecting the installation type (Figure 1).
-
+MX Linux安装程序使安装 Linux 变得轻而易举。虽然它可能不是外观最现代化的安装工具，但也已经差不多了。安装的要点是从选择磁盘和选择安装类型开始的(图1)。
 
 ![install][6]
 
-Figure 1: One of the first installer screens for MX Linux.
+图1:MX Linux 的安装程序截图之一。
 
 [Used with permission][7]
 
-The next important screen (Figure 2) requires you to set a computer name, domain, and (if necessary) a workgroup for MS Networking.
+下一个重要的界面(图2)要求你为MS网络设置一个计算机名称、域名和(如果需要的话)工作组。
 
-That ability to configure a workgroup is the first bit to really stand out. This is the first distribution I can remember that offers this option during installation. It also should clue you in that MX Linux offers the ability to share directories out of the box. It does, and it does so with aplomb. It’s not perfect, but it works without having to install any extra package (more on this in a bit).
+配置工作组的能力是真正值得称赞的第一项。这是我记忆中第一款在安装期间提供此选项的发行版。它还应该提示你，MX Linux 提供了开箱即用共享目录的功能。它做到了，而且深藏功与名。它并不完美，但它可以在不需要安装任何额外包的情况下工作(稍后将详细介绍)。
 
-The last important installation screen (that requires user-interaction) is the creation of the user account and root password (Figure 3).
-
+最后一个重要的安装界面(需要用户交互)是创建用户帐户和 root 权限的密码(图3)。
 
 ![user][9]
 
-Figure 3: Setting up your user account details and the root user password.
+图3:设置用户帐户详细信息和 root 用户密码。
 
 [Used with permission][7]
 
-Once you’ve taken care of this final screen, the installation will complete and ask you to reboot. Upon rebooting, you’ll be greeted with the login screen. Login and enjoy the MX Linux experience.
+最后一个界面设置完成后，安装将完成并要求重新启动。重启后，你将看到登录屏幕。登录并享受MX Linux 带来的体验。
 
-### Usage
+### 使用
 
-The Xfce desktop is quite an easy interface to get up to speed with. The default places the panel on the left edge of the screen (Figure 4).
-
+Xfce桌面是一个非常容易上手的界面。默认设置将面板位于屏幕的左边缘(图4)。
 
 ![desktop ][11]
 
-Figure 4: The default MX Linux desktop.
+图4: MX Linux 的默认桌面。
 
 [Used with permission][7]
 
-If you want to move the panel to a more traditional location, right click a blank spot on the panel and click Panel > Panel Preferences. In the resulting window (Figure 5), click the Mode drop-down to select from between Deskbar, Vertical, or Horizontal.
-
+如果你想将面板移动到更传统的位置，右键单击面板上的空白点，然后单击面板>面板首选项。在生成的窗口中(图5)，单击样式下拉菜单，在桌面栏、垂直栏或水平栏之间进行选择你想要的模式。
 
 ![panel][13]
 
-Figure 5: Configuring the MX Linux Panel.
+图5:配置 MX Linux 面板。
 
 [Used with permission][7]
 
-The difference between the Deskbar and Vertical options is that, in the Deskbar mode, the panel is aligned vertically, just like in the vertical mode, but the plugins are laid out horizontally. This means you can create much wider panels (for widescreen layouts). If you opt for a horizontal layout, it will default to the top—you will have to then uncheck the Lock panel check box, click Close, and then (using the drag handle on the left edge of the panel) drag it to the bottom. You can then go back into the Panel Settings window and re-lock the panel.
+桌面栏和垂直选项的区别在于，在桌面栏模式下，面板垂直对齐，就像在垂直模式下一样，但是插件是水平放置的。这意味着你可以创建更宽的面板(用于宽屏布局)。如果选择水平布局，它将默在顶部，然后你必须取消锁定面板，单击关闭，然后(使用面板左侧边缘的拖动手柄)将其拖动到底部。你可以回到面板设置窗口并重新锁定面板。
 
-Beyond that, using the Xfce desktop should be a no-brainer for nearly any experience level … it’s that easy. You’ll find software to cover productivity (LibreOffice, Orage Calendar, PDF-Shuffler), graphics (GIMP), communication (Firefox, Thunderbird, HexChat), multimedia (Clementine, guvcview, SMTube, VLC media player), and a number of tools specific to MX Linux (called MX Tools, that range from a live-USB drive creator, a network assistant, package installer, repo manager, live ISO snapshot creator, and more).
+除此之外，使用 Xfce 桌面对于任何级别的用户来说都是无需动脑筋的事情……就是这么简单。你会发现很多生产力代表的软件(LibreOffice, Orage日历,PDF-Shuffler)、图像软件(GIMP)、通信(Firefox,Thunderbird,HexChat),多媒体(Clementine、guvcview SMTube, VLC媒体播放器),和一些 MX Linux 专属的工具(称为MX工具,涵盖了 live-USB 驱动器制作工具,包管理工具,repo 管理工具,回购经理,live ISO 快照工具,等等)。
 
 ![sharing][15]
 
-Figure 6: Sharing out a directory to your network.
-
+图6:向网络共享一个目录。
 [Used with permission][7]
 
 ### Samba
 
-Let’s talk about sharing folders to your network. As I mentioned, you won’t have to install any extra packages to get this to function. You simply open up the file manager, right-click anywhere, and select Share a folder on your network. You will be prompted for the administrative password (set during installation). Upon successful authentication, the Samba Server Configuration Tool will open (Figure 6).
+让我们讨论一下如何将文件夹共享到你的网络。正如我所提到的，你不需要安装任何额外的包就可以使其正常工作。只需打开文件管理器，右键单击任何位置，并选择网络上的共享文件夹。系统将提示你输入管理密码(已在安装期间设置)。验证成功之后，Samba服务器配置工具将打开(图6)。
 
 ![sharing][17]
 
-Figure 7: Configuring the share on MX Linux.
+图7：在MX Linux上配置共享。
 
 [Used with permission][7]
 
-Click the + button and configure your share. You will be asked to locate the directory, give the share a name/description, and then decide if the share is writeable and visible (Figure 7).
+单击+按钮并配置你的共享。你将被要求指定一个目录，为共享提供一个名称/描述，然后决定该共享是否可写且可见(图7)。
 
-When you click the Access tab, you have the choice between giving everyone access to the share or just specific users. Here’s where the problem arises. At this point, no users will be available for sharing. Why? They haven’t been added. In order to add them, there are two possibilities: From the command line or using the tool we already have open. Let’s take the obvious route. From the main window of the Samba Server Configuration Tool, click Preferences > Samba Users. In the resulting window, click Add user.
+当你单击 Access 选项时，你可以选择是让每个人都访问共享，还是限于特定的用户。问题就出在这里。此时，没有用户可以共享。为什么？因为它们还没有被添加。，有两种方法可以把它们添加到共享:从命令行或使用我们已经打开的工具。让我们用一种更为简单的方法。在Samba服务器配置工具的主窗口中，单击Preferences > Samba Users。在弹出的窗口中，单击 Add user。
 
-A new window will appear (Figure 8), where you need to select the user from the drop-down, enter a Windows username, and type/retype a password for the user.
+将出现一个新窗口(图8)，你需要从下拉框中选择用户，输入Windows用户名，并为用户键入/重新键入密码。
 
 ![Samba][19]
 
-Figure 8: Adding a user to Samba.
+图8:向 Samba 添加用户。
 
 [Used with permission][7]
 
-Once you’ve clicked OK, the user will be added and the share will be accessible, to that user, across your network. Creating Samba shares really can be that easy.
+一旦你单击确定，用户将被添加，并且基于你的网络的对用户的共享功能也随之启用。创建 Samba 共享从未变得如此容易。
 
-### The conclusion
+### 结论
 
-MX Linux makes transitioning from just about any desktop operating system simple. Although some might find the desktop interface to be a bit less-than-modern, the distribution’s primary focus isn’t on beauty, but simplicity. To that end, MX Linux succeeds in stellar fashion. This flavor of Linux can make anyone feel right at home on Linux. Spin up this mid-weight distribution and see if it can’t serve as your daily driver.
+MX Linux 使任何从桌面操作系统转到 Linux 都变得非常简单。尽管有些人可能会觉得桌面界面不太现代，但发行版的主要关注点不是美观，而是简洁。为此，MX Linux 以出色的方式取得了成功。Linux 的这种特性可以让任何人在使用 Linux 的过程中感到宾至如归。尝试这一中等体量的发行版，看看它能否作为你的日常系统。
 
-Learn more about Linux through the free ["Introduction to Linux" ][20]course from The Linux Foundation and edX.
+从Linux 基金会和 edX 的[“Linux入门”][20]课程了解更多关于Linux的知识。
 
 --------------------------------------------------------------------------------
 
