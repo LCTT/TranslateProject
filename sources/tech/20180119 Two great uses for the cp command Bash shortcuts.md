@@ -1,3 +1,5 @@
+translating by zyk2290
+
 Two great uses for the cp command: Bash shortcuts
 ============================================================
 
