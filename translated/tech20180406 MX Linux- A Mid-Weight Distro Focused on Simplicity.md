@@ -110,7 +110,7 @@ MX Linux 使任何从桌面操作系统转到 Linux 都变得非常简单。尽�
 via: https://www.linux.com/learn/intro-to-linux/2018/4/mx-linux-mid-weight-distro-focused-simplicity
 
 作者：[JACK WALLEN][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qfzy1233](https://github.com/qfzy1233)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
