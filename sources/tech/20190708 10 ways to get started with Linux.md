@@ -96,47 +96,47 @@ Bellard 还启动了 JSLinux 项目，该项目允许你在浏览器中运行 Li
 
 没有什么能比一本好书更好。这是体验 Linux 的最不传统的方法，但对于喜欢印刷文字的人来说，它既舒适又有效。
 
-### 7、Get a Raspberry Pi
+### 7、弄块树莓派
 
 ![Raspberry Pi 4][19]
 
-If you're using a [Raspberry Pi][20], you're running Linux. It's that easy to get started with Linux and low-powered computing. The great thing about the Pi, aside from it costing well under $100, is that its [website][21] is designed for education. You can learn all about what the Pi does, and while you're at it, all about what Linux can do for you.
+如果你正在使用[树莓派][20]，那么你就正在运行 Linux。Linux 和低功耗计算很容易上手。关于树莓派的好处，除了价格低于 100 美元之外，它的[网站][21]是专为教育而设计的。你可以了解树莓派所做的一切，当你了解之后，就知道了 Linux 可以为你做些什么。
 
 #### 如何使用
 
-The Pi is, by design, a low-powered computer. That means you can't do as much multitasking as you might be used to, but that's a convenient way to keep yourself from getting overwhelmed. The Raspberry Pi is a great way to learn Linux and all of the possibilities that come with it, and it's a fun way to discover the power of eco-friendly, small-form-factor, simplified computing. And be sure to stay tuned to Opensource.com—especially during Pi Week every March—for [tips][22] and [tricks][23] and [fun][24] [activities][25].
+树莓派被设计为低功耗计算机。这意味着你不能像过去那样做那么多的多任务处理，但这是一种避免不堪重负的方便方法。树莓派是学习 Linux 及其附带的所有可能性的好方法，它是发现环保、小型、简化计算能力的有趣方式。并且一定要关注 Opensource.com 上的[提示][22]和[技巧][23]和[有趣的][24][活动] [25]，特别是在每年三月份的树莓派之周期间。
 
-### 8、Climb aboard the container craze
+### 8、赶上容器热潮
 
-If you work near the back end of the mythical [cloud][26], then you've heard about the container craze. While you can run Docker and Kubernetes on Windows, Azure, Mac, and Linux, you may not know that the containers themselves are Linux. Cloud computing apps and infrastructure are literally minimal Linux systems that run partly virtualized and partly on bare metal. If you launch a container, you are launching a miniature, hyper-specific Linux distribution.
+如果你在神话般的[云][26]的后端附近工作，那么你已经听说过容器热潮。虽然你可以在 Windows、Azure、Mac 和 Linux 上运行 Docker 和 Kubernetes，但你可能不知道容器本身就是 Linux。云计算应用和基础设施实际上是精简的 Linux 系统，部分虚拟化，部分基于裸机。如果启动容器，则会启动微型的超特定的 Linux 发行版。
 
-Containers are [different][27] than virtual machines or physical servers. They're not intended to be used as a general-purpose operating system. However, if you are developing in a container, you might want to pause and have a look around. You'll get a glimpse of how a Linux system is structured, where important files are kept, and which commands are the most common. You can even [try a container online][28], and you can read all about how they work in my article about going [behind the scenes with Linux containers][29].
-
-#### 如何使用
-
-Containers are, by design, specific to a single task, but they're Linux, so they're extremely flexible. You can use them as they're intended, or you can build a container out into a mostly complete system for your Linux experiments. It's not a desktop Linux experience, but it's a full Linux experience.
-
-### 9、Install Linux as a VM
-
-Virtualization is the easy way to try an operating system, and [VirtualBox][30] is a great open source way to virtualize. VirtualBox runs on Windows and Mac, so you can install Linux as a virtual machine (VM) and use it almost as if it were just another application. If you're not accustomed to installing an operating system, VirtualBox is also a very safe way to try Linux without accidentally installing it over your usual OS.
+容器与虚拟机或物理服务器[不同][27]。它们不打算用作通用操作系统。但是，如果你在容器中进行开发，你可以停下来四处打量一下，你将了解到 Linux 系统的结构、保存重要文件的位置以及最常见的命令。你甚至可以[在线尝试容器][28]，你可以在我的文章中[深入到 Linux 容器的背后][29]了解它们如何工作的。
 
 #### 如何使用
 
-Running Linux as a VM is convenient and easy, either as a trial run or an alternative to dual-booting or rebooting when you need a Linux environment. It's full-featured and, because it uses virtual hardware, the host operating system drives your peripherals. The only disadvantage to running Linux as a virtual machine is primarily psychological. If you intend to use Linux as your main OS, but end up defaulting to the host OS for all but the most Linux-specific tasks, then the VM has failed you. Otherwise, a VM is a triumph of modern technology, and using Linux in VirtualBox provides you with all the best features Linux has to offer.
+根据设计，容器特定于单个任务，但它们是 Linux，因此它们非常灵活。你可以如你预期的使用它们，也可以在你的 Linux 实验当中将容器构建到大部分完整系统中。它虽然不是桌面 Linux 体验，但它是完整的 Linux 体验。
 
-### 10、Install it
+### 9、以虚拟机方式安装 Linux
+
+虚拟化是尝试操作系统的简便方法，[VirtualBox][30]是一种很好的开源虚拟化方法。VirtualBox 可以在 Windows 和 Mac 上运行，因此你可以将 Linux 安装为虚拟机（VM）并使用它，就好像它只是一个应用程序一样。如果你不习惯安装操作系统，VirtualBox 也是一种尝试 Linux 的非常安全的方式，而不会意外地将其安装在你通常的操作系统上。
+
+#### 如何使用
+
+将 Linux 作为虚拟机运行既方便又简单，既可以作为试运行使用，也可以在需要 Linux 环境时进行双启动或重启。它功能齐全，因为它使用虚拟硬件，主机操作系统负责驱动你的外围设备。将 Linux 作为虚拟机运行的唯一缺点主要是心理上的。如果你打算使用 Linux 作为主操作系统，但最终默认在宿主操作系统做除了特定于 Linux 的大多数任务，那么虚拟机就会让你失望。否则，虚拟机是现代技术的胜利，在 VirtualBox 中使用 Linux 可以为你提供 Linux 所提供的所有最佳功能。
+
+### 10、安装一个 Linux
 
 ![Fedora Silverblue][31]
 
-When in doubt, there's always the traditional route. If you want to give Linux the attention it deserves, you can download Linux, burn the installer to a thumb drive (or a DVD, if you prefer optical media), and install it on your computer. Linux is open source, so it can be distributed by anyone who wants to take the time to bundle Linux—and all the bits and pieces that make it usable—into what is commonly called a _distribution_ (or "distro") for short. Ask any Linux user, and you're bound to get a different answer for which distribution is "best" (mostly because the term "best" is often left undefined). Most people admit that you should use the Linux distribution that works for you, meaning that you should test a few popular distros and settle on the one that makes your computer behave as you expect it to behave. This is a pragmatic and functional approach. For example, should a distribution fail to recognize your webcam and you want your webcam to work, then use a distribution that recognizes your webcam.
+如果对上述方式有疑问，那么总会有传统的方式。如果你想给予 Linux 应有的关注，你可以下载 Linux，将安装程序刻录到 U 盘（或 DVD，如果你更喜欢光学介质的话），并将其安装在你的计算机上。Linux 是开源的，所以任何想要花时间打包 Linux 的人都可以分发 Linux，并且可以将所有可用的部分分配到通常称为发行版的内容中。询问任何 Linux 用户哪个发行版是“最好的”，你必然会得到一个不同的答案（主要是因为术语“最佳”通常是未定义的）。大多数人都认可你应该使用适合你的 Linux 发行版，这意味着你应该测试一些流行的发行版，并坚持使你的计算机按照你期望的行为行事。这是一种务实和功能性的方法。例如，如果发行版无法识别你的网络摄像头而你希望它可以正常工作，则可以使用一个可识别该网络摄像头的发行版。
 
-If you've never installed an operating system before, you'll find most Linux distributions include a friendly and easy installer. Just download a distribution (they are delivered as ISO files), and download the [Fedora Media Writer][11] to create a bootable installation thumb drive.
+如果你之前从未安装过操作系统，你会发现大多数 Linux 发行版都包含友好且简单的安装程序。只需下载一个发行版（它们作为 ISO 文件提供），然后下载 [Fedora Media Writer][11] 来创建一个可启动的安装 U 盘。
 
 #### 如何使用
 
-Installing Linux and using it as an operating system is a step toward becoming familiar and familial with it. There's no wrong way to use it. You might discover must-have features you never knew you needed, you might learn more about computers than you ever imagined you could, and you may shift in your worldview. Or you might use a Linux desktop because it was easy to download and install, or because you want to cut out the middleman of some corporate overlord, or because it helps you get your work done.
+安装 Linux 并将其用作操作系统是迈向熟悉和熟悉它的一步。怎么使用它都可以。你可能会发现你从未了解过所需的必备功能，你可能会比你想象的更多地了解计算机，并且可能会改变你的世界观。或者你可以使用 Linux 桌面，因为它易于下载和安装，或者因为你想要削减某些公司霸主的中间人，或者因为它可以帮助你完成工作。
 
-Whatever your reason, just give Linux a try with any (or all) of these options.
+无论你的原因是什么，只需尝试使用上面这些任何（或所有）这些方式。
 
 --------------------------------------------------------------------------------
 
@@ -144,7 +144,7 @@ via: https://opensource.com/article/19/7/ways-get-started-linux
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
