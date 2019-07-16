@@ -5,7 +5,7 @@
 [#]: url: ( )
 [#]: subject: (Getting started with Jaeger to build an Istio service mesh)
 [#]: via: (https://opensource.com/article/19/3/getting-started-jaeger)
-[#]: author: (Daniel Oh (Red Hat) https://opensource.com/users/daniel-oh)
+[#]: author: (Daniel Oh  https://opensource.com/users/daniel-oh)
 
 Getting started with Jaeger to build an Istio service mesh
 ======
