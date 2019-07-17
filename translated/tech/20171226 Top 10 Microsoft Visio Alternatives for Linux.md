@@ -54,7 +54,7 @@ LibreOffice Draw 模块是 Microsoft Visio 的最佳开源替代方案之一。�
 
 很多人都知道 OpenOffice （ LibreOffice 项目最初基于它），但他们并没有真正提到 Apache OpenOffice Draw 作为 Microsoft Visio 的替代方案。但事实上，它是另一个令人惊奇的开源图表软件工具。与 LibreOffice Draw 不同，它不支持编辑 PDF 文件，但它为任何类型的图表创建提供了绘图工具。
 
-这只是个警告。仅当您的系统中已经有 OpenOffic e时才使用此工具。这是因为[安装 OpenOffice ][8] 是一件痛苦的事情，而且[不适合再开发][9]。
+这只是个警告。仅当您的系统中已经有 OpenOffice 时才使用此工具。这是因为[安装 OpenOffice ][8] 是一件痛苦的事情，而且[不再继续开发][9]。
 
 #### 主要功能概述：
 
@@ -195,11 +195,11 @@ Calligra Flow 是[Calligra Project][26]的一部分，宗旨市提供免费和�
 
 [Calligra Flow][27]
 
-### Wrapping Up
+### 总结
 
 既然你已经知道了最好的免费和开源的 Visio 替代方案，你对它们有什么看法？
 
-在您任何方面的需求中，它们是否优于 Microsoft Visio?另外，如果我们错过了您最喜欢的基于 Linux 替代 Microsoft Visio 的绘图工具，请在下面的评论中告诉我们。
+在您任何方面的需求中，它们是否优于 Microsoft Visio？另外，如果我们错过了您最喜欢的基于 Linux 替代 Microsoft Visio 的绘图工具，请在下面的评论中告诉我们。
 --------------------------------------------------------------------------------
 
 via: https://itsfoss.com/visio-alternatives-linux/
