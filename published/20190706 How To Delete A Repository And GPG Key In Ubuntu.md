@@ -1,43 +1,42 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11115-1.html)
 [#]: subject: (How To Delete A Repository And GPG Key In Ubuntu)
 [#]: via: (https://www.ostechnix.com/how-to-delete-a-repository-and-gpg-key-in-ubuntu/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-
-如何在 Ubuntu 中删除仓库和 GPG 密钥
+如何在 Ubuntu 中删除仓库及其 GPG 密钥
 ======
 
 ![Delete A Repository And GPG Key In Ubuntu][1]
 
-前几天我们讨论了如何在基于 RPM 和 DEB 的系统中[**列出已安装的仓库**][2]。今天，我们将学习如何在 Ubuntu 中删除仓库及其 GPG 密钥。对于想知道仓库的人，仓库（简称 **repo**）是开发人员存储软件包的地方。仓库的软件包经过全面测试，并由 Ubuntu 开发人员专门为每个版本构建。用户可以使用 **Apt** **包管理器**在他们的 Ubuntu 系统上下载和安装这些包。 Ubuntu 有四个官方仓库，即 **Main**、**Universe**、**Restricted** 和 **Multiverse**。
+前几天我们讨论了如何在基于 RPM 和 DEB 的系统中[列出已安装的仓库][2]。今天，我们将学习如何在 Ubuntu 中删除仓库及其 GPG 密钥。对于不知道仓库的人，仓库（简称 repo）是开发人员存储软件包的地方。仓库的软件包经过全面测试，并由 Ubuntu 开发人员专门为每个版本构建。用户可以使用 Apt 包管理器在他们的 Ubuntu 系统上下载和安装这些包。Ubuntu 有四个官方仓库，即 Main、Universe、Restricted 和 Multiverse。
 
-除了官方仓库外，还有许多由开发人员（或软件包维护人员）维护的非官方仓库。非官方仓库通常有官方仓库中不可用的包。所有包都由包维护者用一对密钥（公钥和私钥）签名。如你所知，公钥是发给用户的，私人必须保密。每当你在源列表中添加新的仓库时，如果 Apt 包管理器想要信任新添加的仓库，你还应该添加仓库密钥。使用仓库密钥，你可以确保从正确的人那里获得包。到这里希望你对软件仓库和仓库密钥有了一个基本的了解。现在让我们继续看看如果在 Ubuntu 系统中不再需要仓库及其密钥，那么该如何删除它。
+除了官方仓库外，还有许多由开发人员（或软件包维护人员）维护的非官方仓库。非官方仓库通常有官方仓库中不可用的包。所有包都由包维护者用一对密钥（公钥和私钥）签名。如你所知，公钥是发给用户的，私钥必须保密。每当你在源列表中添加新的仓库时，如果 Apt 包管理器想要信任新添加的仓库，你还应该添加仓库密钥（公钥）。使用仓库密钥，你可以确保从正确的人那里获得包。到这里希望你对软件仓库和仓库密钥有了一个基本的了解。现在让我们继续看看如果在 Ubuntu 系统中不再需要仓库及其密钥，那么该如何删除它。
 
 ### 在 Ubuntu 中删除仓库
 
-每当使用 “add-apt-repository” 命令添加仓库时，它都将保存在 **/etc/apt/sources.list** 中。
+每当使用 `add-apt-repository` 命令添加仓库时，它都将保存在 `/etc/apt/sources.list` 中。
 
-要从 Ubuntu 及其衍生版中删除软件仓库，只需打开 /etc/apt/sources.list 文件并查找仓库名字并将其删除即可。
+要从 Ubuntu 及其衍生版中删除软件仓库，只需打开 `/etc/apt/sources.list` 文件并查找仓库名字并将其删除即可。
 
 ```
 $ sudo nano /etc/apt/sources.list
 ```
 
-正如你在下面的截图中看到的，我在我的 Ubuntu 系统中添加了 [**Oracle Virtualbox**][3] 仓库。
+正如你在下面的截图中看到的，我在我的 Ubuntu 系统中添加了 [Oracle Virtualbox][3] 仓库。
 
 ![][4]
 
-virtualbox 仓库
+*virtualbox 仓库*
 
 要删除此仓库，只需删除该条目即可。保存并关闭文件。
 
-如果你已添加 PPA 仓库，请查看 **/etc/apt/sources.list.d/** 目录并删除相应的条目。
+如果你已添加 PPA 仓库，请查看 `/etc/apt/sources.list.d/` 目录并删除相应的条目。
 
-或者，你可以使用 “add-apt-repository” 命令删除仓库。例如，我要删除 [**Systemback**][5] 仓库，如下所示。
+或者，你可以使用 `add-apt-repository` 命令删除仓库。例如，我要删除 [Systemback][5] 仓库，如下所示。
 
 ```
 $ sudo add-apt-repository -r ppa:nemh/systemback
@@ -51,7 +50,7 @@ $ sudo apt update
 
 ### 删除仓库密钥
 
-我们使用 “apt-key” 命令添加仓库密钥。首先，让我们使用命令列出添加的密钥：
+我们使用 `apt-key` 命令添加仓库密钥。首先，让我们使用命令列出添加的密钥：
 
 ```
 $ sudo apt-key list
@@ -112,9 +111,9 @@ $ sudo apt-key del 73C62A1B
 $ sudo apt update
 ```
 
-**资源：**
+资源：
 
-  * [**软件仓库 – Ubuntu 社区 Wiki**][6]
+  * [软件仓库 – Ubuntu 社区 Wiki][6]
 
 --------------------------------------------------------------------------------
 
@@ -123,7 +122,7 @@ via: https://www.ostechnix.com/how-to-delete-a-repository-and-gpg-key-in-ubuntu/
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
