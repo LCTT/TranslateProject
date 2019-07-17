@@ -1,28 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (0x996)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Test 200+ Linux And Unix Operating Systems Online For Free)
 [#]: via: (https://www.ostechnix.com/test-100-linux-and-unix-operating-systems-online-for-free/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-在线试用200多种Linux和Unix操作系统
+在线试用 200 多种 Linux 和 Unix 操作系统
 ======
 
 ![DistroTest——在线试用200多种Linux和Unix操作系统][1]
 
-不久前我们介绍过[**OSBoxes**][2]，该网站提供了一系列免费且开箱即用的Linux和Unix虚拟机。你可以在你的Linux系统中下载这些虚拟机并用VirtualBox或VMWare workstation试用。今天，我偶然发现一个名叫**“DistroTest”**的类似服务。与OSBoxes不同之处在于DistroTest让你免费试用现场版Linux和Unix操作系统。你可以在线试用200多种Linux和Unix操作系统而无需在本地安装它们。只要打开该网站，选择你需要的Linux/Unix发行版，然后开始试用！
+不久前我们介绍过[OSBoxes][2]，该网站提供了一系列免费且开箱即用的 Linux 和 Unix 虚拟机。你可以在你的 Linux 系统中下载这些虚拟机并用 VirtualBox 或 VMWare workstation 试用。今天，我偶然发现一个名叫 “DistroTest” 的类似服务。与 OSBoxes 不同之处在于 DistroTest 让你免费试用现场版 Linux 和 Unix 操作系统。你可以在线试用 200 多种 Linux 和 Unix 操作系统而无需在本地安装它们。只要打开该网站，选择你需要的 Linux/Unix 发行版，然后开始试用！
 
-两个名为**Klemann Andy**和**Forster Tobias**的好心人用**Qemu**在**Debian**上运行这项网络服务。这里列出的公开发行版在使用上没有任何限制。你可以象使用本地系统一样使用系统的所有功能。你可以安装和卸载软件。你可以测试安装的程序，甚至删除或格式化硬盘，删除系统文件。简而言之，DistroTest让喜欢尝试不同发行版的的人自行决定：
+两个名为 Klemann Andy 和 Forster Tobias 的好心人用 Qemu 在 Debian 上运行了这项网络服务。这里列出的公开发行版在使用上没有任何限制。你可以象使用本地系统一样使用系统的所有功能。你可以安装和卸载软件。你可以测试安装的程序，甚至删除或格式化硬盘，删除系统文件。简而言之，DistroTest让喜欢尝试不同发行版的的人自行决定：
 
   * 最适合他们的发行版
   * 想要哪种图形界面
   * 他们可以选择哪些配置
 
-本文撰写之时，DistroTest提供了**227种操作系统的711个版本**。我已经使用Linux很多年，但我从未听说过这里列出的一些发行版。说实话我甚至不知道Linux操作系统有如此之多的版本。
+本文撰写之时，DistroTest 提供了 227 种操作系统的 711 个版本。我已经使用 Linux 很多年，但我从未听说过这里列出的一些发行版。说实话我甚至不知道 Linux 操作系统有如此之多的版本。
 
-DistroTest网站提供的Linux发行版的列表如下。（译者注：其中也包括部分非Linux的操作系统如FreeBSD和FreeDOS，或是分区工具如Gparted）
+DistroTest 网站提供的 Linux 发行版的列表如下。（LCTT 译注：其中也包括部分非 Linux 的操作系统如 FreeBSD 和 FreeDOS，或是分区工具如 Gparted）
 
   * 4mLinux
   * AbsoluteLinux
@@ -186,60 +186,50 @@ DistroTest网站提供的Linux发行版的列表如下。（译者注：其中�
   * Zevenet
   * Zorin OS
 
-
-
 ### 如何使用？
 
-要试用任何操作系统，点击下面的链接：
-
-![1][3]
+要试用任何操作系统，点击下面的链接： https://distrotest.net/
 
 在这个网站，你会看到可用的操作系统列表。单击你想了解的发行版名称即可。
 
 ![1][4]
 
-用DistroTest试用100多种Linux和Unix操作系统
+用 DistroTest 试用 200 多种Linux和Unix操作系统
 
-本文中我会试用Arch Linux。
+本文中我会试用 Arch Linux。
 
-单击发行版链接后，在跳转到的页面单击**System start**按钮即可启动所选操作系统。
+单击发行版链接后，在跳转到的页面单击 “System start” 按钮即可启动所选操作系统。
 
 ![1][5]
 
-此现场版操作系统会在新浏览器窗口中启动。你可以通过内建的**noVNC viewer**访问它。请在浏览器中启用/允许DistroTest 网站的弹出窗口，否则无法看到弹出的noVNC窗口。
+此现场版操作系统会在新浏览器窗口中启动。你可以通过内建的 noVNC viewer 访问它。请在浏览器中启用/允许 DistroTest 网站的弹出窗口，否则无法看到弹出的 noVNC 窗口。
 
 按回车启动现场版系统。
 
 ![1][6]
 
-这就是Arch Linux现场版系统：
+这就是 Arch Linux 现场版系统：
 
 ![1][7]
 
-你可以免费**使用这个系统1小时**。你可以试用该现场版操作系统，安装应用，卸载应用，删除或修改系统文件，测试配置或脚本。每次关机后，一切都会恢复成默认配置。
+你可以免费使用这个系统 1 小时。你可以试用该现场版操作系统、安装应用、卸载应用、删除或修改系统文件、测试配置或脚本。每次关机后，一切都会恢复成默认配置。
 
-一旦试用结束，回到DistroTest页面并停止你试用的系统。如果你不想启用DistroTest页面的弹出窗口，用你本地系统安装的任意VNC客户端也可以。VNC登录信息可在同一页面找到。
+一旦试用结束，回到 DistroTest 页面并停止你试用的系统。如果你不想启用 DistroTest 页面的弹出窗口，用你本地系统安装的任意 VNC 客户端也可以。VNC 登录信息可在同一页面找到。
 
 ![1][8]
 
-DistroTest服务对两类用户比较实用：想在线试用Linux/Unix系统，或是没有喜欢的操作系统现场版ISO镜像文件的人。我在4G 网络上测试的结果一切正常。
+DistroTest 服务对两类用户比较实用：想在线试用 Linux/Unix 系统，或是没有喜欢的操作系统现场版 ISO 镜像文件的人。我在 4G 网络上测试的结果一切正常。
 
-### 实际上，我没法在虚拟机里安装新软件
+### 实际上，我没法在这个虚拟机里安装新软件
 
-试用期间我注意到的**一个问题**是虚拟机没有联网。除了本地环回接口之外没有其他网络接口。没有联网也没有本地镜像源的情况下我没法下载和安装新软件。我不知道为何网站声称可以安装软件。也许在这点上我遗漏了什么。我在DistroTest上能做的只是**看看现成的系统，试用现场版而不能安装任何软件**。
+试用期间我注意到的一个问题是这个虚拟机没有联网。除了本地环回接口之外没有其他网络接口。没有联网也没有本地镜像源的情况下我没法下载和安装新软件。我不知道为何网站声称可以安装软件。也许在这点上我遗漏了什么。我在 DistroTest 上能做的只是看看现成的系统，试用现场版而不能安装任何软件。
 
-* * *
+推荐阅读：
 
-**推荐阅读：**
+  * [免费在线学习和练习 Linux命令！][9]
+  * [在浏览器中运行 Linux 和其他操作系统][10]
 
-  * [**免费在线学习和练习Linux命令！**][9]
-  * [**在浏览器中运行Linux和其他操作系统**][10]
-
-
-
-* * *
-
-暂时就这样了。我不知道DistroTest团队如何设法托管了这么多操作系统。我肯定这会花不少时间。这的确是件值得称赞的工作。我非常感激项目成员的无私行为。荣誉归于你们。加油！
+暂时就这样了。我不知道 DistroTest 团队如何设法托管了这么多操作系统。我肯定这会花不少时间。这的确是件值得称赞的工作。我非常感激项目成员的无私行为。荣誉归于你们。加油！
 
 --------------------------------------------------------------------------------
 
@@ -248,7 +238,7 @@ via: https://www.ostechnix.com/test-100-linux-and-unix-operating-systems-online-
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[0x996](https://github.com/0x996)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
