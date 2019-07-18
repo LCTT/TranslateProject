@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/epic-games-blender-grant/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Epic Games Backs Blender Foundation with $1.2m Epic MegaGrants
+Epic Games 以 120 万美元的 Epic MegaGrants 支持Blender 基金会
 ======
 
 [Epic MegaGrants][1] is a program by [Epic Games][2] to support game developers, enterprise professionals, content creators and tool developers doing amazing things with Unreal Engine or enhancing open-source capabilities for the 3D graphics community.
