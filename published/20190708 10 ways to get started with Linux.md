@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11124-1.html)
 [#]: subject: (10 ways to get started with Linux)
 [#]: via: (https://opensource.com/article/19/7/ways-get-started-linux)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth/users/don-watkins)
@@ -12,7 +12,7 @@ Linux 入门十法
 
 > 想要进入 Linux 之门，试试这十个方法。
 
-![](https://img.linux.net.cn/data/attachment/album/201907/20/061608n0ro5z6p3tjv6w5p.jpg)
+![](https://img.linux.net.cn/data/attachment/album/201907/20/061809wwkmb51vqookoqq5.jpg)
 
 文章《[什么是 Linux 用户？][2]》的作者 Anderson Silva 明确表示，现今人们使用 Linux（在某种程度上）就像使用 Windows 一样，只要你对“使用 Linux”这个事情定义得足够广义。尽管如此，如果你的生活中没有太多的使用 Linux 的机会，现在正是以前所未有的方式尝试 Linux 的好时机。
 
