@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (heguangzhi)
+[#]: translator: (heguangzhi)    
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -54,7 +54,7 @@
 
 解决这些问题需要一种以一致的方式跟踪非正式学习。最近，科学界呼吁创造衡量非正式学习的方法，这样就可以进行系统的研究来解决非正式学习的前因后果的问题。我自己的研究集中在这一呼吁上，我花了几年时间发展和完善我们对非正式学习行为的理解，以便对它们进行测量。
 
-在本文系列的第二部分，我将重点介绍我最近在一个开放组织中进行的一项研究的结果，在该研究中，我测试了我对非正式学习行为的研究，并将它们与更广泛的工作环境和个人工作成果联系起来。
+在本文系列的第二部分，我将重点介绍我最近在一个开放组织中进行的一项研究的成果，在该研究中，我测试了我对非正式学习行为的研究，并将它们与更广泛的工作环境和个人工作成果联系起来。
 
 --------------------------------------------------------------------------------
 
@@ -62,7 +62,7 @@ via: https://opensource.com/open-organization/19/7/informal-learning-adaptabilit
 
 作者：[Colin Willis][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/heguangzhi)
+译者：[译者ID](https://github.com/heguangzhi)  
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
