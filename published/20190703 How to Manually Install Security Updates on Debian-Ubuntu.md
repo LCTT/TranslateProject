@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (hopefully2333)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11132-1.html)
 [#]: subject: (How to Manually Install Security Updates on Debian/Ubuntu?)
 [#]: via: (https://www.2daygeek.com/manually-install-security-updates-ubuntu-debian/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -10,13 +10,11 @@
 如何在 Debian/Ubuntu 上手动安装安全更新？
 ======
 
-在 Linux 上通过命令行安装一个包程序是一件简单的事。
-
-在一行命令中组合使用多个命令能让你更加简单地完成任务。
+在 Linux 上通过命令行安装一个包程序是一件简单的事。在一行命令中组合使用多个命令能让你更加简单地完成任务。
 
 安全更新也同样如此。
 
-在这个教程里面，我们会向你展示如何查看可用的安全更新，以及如何在 Ubuntu，LinuxMint 等等这些基于 Debian 的系统中安装它们。
+在这个教程里面，我们会向你展示如何查看可用的安全更新，以及如何在 Ubuntu、LinuxMint 等等这些基于 Debian 的系统中安装它们。
 
 有三种方法可以完成这件事，下面会详细地描述这三种方法。
 
@@ -24,25 +22,23 @@
 
 如果你因为一些应用的依赖问题不能解决，导致不能给所有的系统进行全部更新。那至少，你应该打上安全补丁来让你的系统 100% 符合要求。
 
-### 如何在 Debian/Ubuntu 上安装 unattended-upgrades？
-
-默认情况下，你的系统上应该是已经安装了 unattended-upgrades 包的。但是如果你的系统没有装这个包，那么请使用下面的命令来安装它。
-
-使用 **[APT-GET 命令][1]** 或者 **[APT 命令][2]** 来安装 unattended-upgrades 包.
-
-```
-$ sudo apt-get install unattended-upgrades
-or
-$ sudo apt install unattended-upgrades
-```
-
 ### 方法一：如何检查 Debian/Ubuntu 中是否有任何可用的安全更新？
 
 在进行补丁安装之前，检查可用安全更新列表始终是一个好习惯。它会为你提供将在你的系统中进行更新的软件包的列表。
 
+默认情况下，你的系统上应该是已经安装了 `unattended-upgrades` 包的。但是如果你的系统没有装这个包，那么请使用下面的命令来安装它。
+
+使用 [APT-GET 命令][1] 或者 [APT 命令][2] 来安装 `unattended-upgrades` 包。
+
+```
+$ sudo apt-get install unattended-upgrades
+或
+$ sudo apt install unattended-upgrades
+```
+
 **什么是试运行?** 大多数的 Linux 命令都有一个试运行选项，它会给出实际的输出但不会下载或安装任何东西。
 
-为此，你需要在 unattended-upgrades 命令中添加 --dry-run 选项。
+为此，你需要在 `unattended-upgrades` 命令中添加 `--dry-run` 选项。
 
 ```
 $ sudo unattended-upgrade --dry-run -d
@@ -101,9 +97,9 @@ vim-tiny
 xxd
 ```
 
-如果在终端里，上面的命令输出说 **“No packages found that can be upgraded unattended and no pending auto-removals”** , 这意味着你的系统已经是最新的了。
+如果在终端里，上面的命令输出说 “No packages found that can be upgraded unattended and no pending auto-removals”，这意味着你的系统已经是最新的了。
 
-### 如何在 Debian/Ubuntu 中安装可用的安全更新？
+#### 如何在 Debian/Ubuntu 中安装可用的安全更新？
 
 如果你在上面的命令输出中获得了任意的软件包更新，就运行下面的命令来安装它们。
 
@@ -111,7 +107,7 @@ xxd
 $ sudo unattended-upgrade -d
 ```
 
-除此之外，你也可以使用 apt-get 命令来进行安装。但是这个方法有点棘手，我会建议用户用第一个选项。
+除此之外，你也可以使用 `apt-get` 命令来进行安装。但是这个方法有点棘手，我会建议用户用第一个选项。
 
 ### 方法二：如何使用 apt-get 命令在 Debian/Ubuntu 中检查是否有可用的安全更新？
 
@@ -160,7 +156,7 @@ Inst gcc [4:7.3.0-3ubuntu2.1] (4:7.4.0-1ubuntu2.3 Ubuntu:18.04/bionic-updates, U
 Inst g++ [4:7.3.0-3ubuntu2.1] (4:7.4.0-1ubuntu2.3 Ubuntu:18.04/bionic-updates, Ubuntu:18.04/bionic-security [amd64])
 ```
 
-### 如何使用 apt-get 命令在 Debian/Ubuntu 系统中安装可用的安全更新？
+#### 如何使用 apt-get 命令在 Debian/Ubuntu 系统中安装可用的安全更新？
 
 如果你在上面命令的输出中发现任何的软件包更新。就运行下面的命令来安装它们。
 
@@ -168,7 +164,7 @@ Inst g++ [4:7.3.0-3ubuntu2.1] (4:7.4.0-1ubuntu2.3 Ubuntu:18.04/bionic-updates, U
 $ sudo apt-get -s dist-upgrade | grep "^Inst" | grep -i securi | awk -F " " {'print $2'} | xargs apt-get install
 ```
 
-除此之外，也可以使用 apt 命令来完成。但是这个方法有点棘手，我会建议用户用第一个选项。
+除此之外，也可以使用 `apt` 命令来完成。但是这个方法有点棘手，我会建议用户用第一个方式。
 
 ### 方法三：如何使用 apt 命令在 Debian/Ubuntu 系统中检查是否有可用的安全更新？
 
@@ -217,7 +213,7 @@ vim-tiny/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.1 amd64 [upgradable 
 xxd/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.1 amd64 [upgradable from: 2:8.0.1453-1ubuntu1]
 ```
 
-### 如何在 Debian/Ubuntu 系统中使用 apt 命令来安装可用的安全更新？
+#### 如何在 Debian/Ubuntu 系统中使用 apt 命令来安装可用的安全更新？
 
 如果你在上面命令的输出中发现任何的软件包更新。就运行下面的命令来安装它们。
 
@@ -241,7 +237,7 @@ via: https://www.2daygeek.com/manually-install-security-updates-ubuntu-debian/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[hopefully2333](https://github.com/hopefully2333)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
