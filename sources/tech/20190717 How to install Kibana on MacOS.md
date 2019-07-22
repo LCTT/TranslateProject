@@ -1,95 +1,88 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to install Kibana on MacOS)
 [#]: via: (https://opensource.com/article/19/7/installing-kibana-macos)
 [#]: author: (Lauren Maffeo https://opensource.com/users/lmaffeo)
 
-How to install Kibana on MacOS
+如何在 MacOS 上安装 Kibana
 ======
-Once you have Elasticsearch installed, the Kibana plugin adds
-visualization to this powerful search tool.
-![Analytics: Charts and Graphs][1]
 
-In my previous post, I walked Mac users through the steps they’ll take to [install Elasticsearch][2], the world’s most popular enterprise search engine. (Here's a [separate article][3] for Linux users.) Its natural language processing power makes Elasticsearch excel at finding details within datasets. Once you’ve discovered the data you need, you can take it to the next level if you’ve installed [Kibana][4] as well.
+> Elasticsearch 当安装好了之后，Kibana 插件可以为这个功能强大的搜索工具添加可视化功能。
 
-Kibana is an open source data visualization plugin for Elasticsearch. Once you’ve found data in Elasticsearch, Kibana helps you put it into line charts, [time series queries][5], geospatial maps, and more. This tool is ideal for data scientists who must present their research results, especially those working with open source data.
+![](https://img.linux.net.cn/data/attachment/album/201907/22/204048vl8t88y6q8988229.jpg)
 
-### Installing Kibana
+在我之前的文章中，我向 Mac 用户介绍了[安装 Elasticsearch][2] 的步骤，这是世界上最受欢迎的企业级搜索引擎。（这里有一篇针对 Linux 用户的[单独文章][3]。）其自然语言处理能力使得 Elasticsearch 在数据集中查找细节方面表现出色。一旦你发现了你需要的数据，如果你已经安装了 [Kibana][4]，你可以将它提升到一个新的水平。
 
-You’ll need to install Kibana separately from Elasticsearch. Since I installed Elasticsearch 7.1.1, I’ll install Kibana 1.1. It’s important to match versions so Kibana runs against an Elasticsearch node of the same version. (Kibana runs on **node.js**.)
+Kibana 是 Elasticsearch 的开源的数据可视化插件。当你在 Elasticsearch 中找到了数据，Kibana 就会帮助你将其放入折线图、[时间序列查询][5]、地理空间地图等。该工具非常适合于必须展示其研究成果的数据科学家，尤其是那些使用开源数据的人。
 
-Here are the steps I followed to install Kibana 7.1.1 for MacOS:
+### 安装 Kibana
 
-  1. Make sure Elasticsearch is downloaded and running. See the previous article for instructions if needed.
+你需要在 Elasticsearch 之外单独安装 Kibana。因为我安装了 Elasticsearch 7.1.1，所以我将安装 Kibana 1.1。版本的匹配非常重要，Kibana 需要针对相同版本的 Elasticsearch 节点运行。 （Kibana 运行在 node.js 上。）
 
+以下是我为 MacOS 安装 Kibana 7.1.1 时所遵循的步骤：
 
+1、确保 Elasticsearch 已下载并运行。如果需要，请参阅上一篇文章。
 
-**Note**: At minimum, you’ll need to install Elasticsearch 1.4.4 or later before you can use Kibana. This is because you’ll need to give Kibana the URL for the Elasticsearch instance to connect to, along with the Elasticsearch indices you want to search. In general, it’s best to install the latest versions of both.
+**注意**：你至少需要先安装 Elasticsearch 1.4.4 或更高版本才能使用 Kibana。这是因为你需要向 Kibana 提供要连接的 Elasticsearch 实例的 URL 以及你要搜索的 Elasticsearch 索引。通常，最好安装两者的最新版本。
 
-  2. Click [here][6] to download Kibana. You’ll see the webpage below, which prompts you to download Kibana for Mac in the top right-hand corner of the **Downloads** section:
-
-
+2、单击[此处][6]下载 Kibana。你将看到如下的网页，它会提示你在**下载**部分的右上角下载 Kibana for Mac：
 
 ![Download Kibana here.][7]
 
-  3. In your **Downloads** folder, open the **.tar** file to expand it. This action creates a folder with the same name (for example, **kibana-7.1.1-darwin-x86_64**).
-  4. If you would prefer Kibana to live in another folder, move it now.
+3、在你的 `Downloads` 文件夹中，打开 .tar 文件以展开它。此操作将创建一个具有相同名称的文件夹（例如，`kibana-7.1.1-darwin-x86_64`）。
 
+4、如果你希望 Kibana 放在另一个文件夹中，请立即移动它。
 
+仔细检查 Elasticsearch 是否正在运行，如果没有，请在继续之前启动它。（如果你需要说明，请参阅上一篇文章。）
 
-Double-check that Elasticsearch is running, and if not, launch it before continuing. (See the previous article if you need instructions.) 
+### 打开 Kibana 插件
 
-### Opening the Kibana plugin
+Elasticsearch 运行起来后，你现在可以启动 Kibana 了。该过程类似于启动 Elasticsearch：
 
-With Elasticsearch running, you can now launch Kibana. The process is similar to launching Elasticsearch:
+1、从 Mac 的 `Downloads` 文件夹（或 Kibana 移动到的新文件夹）里，打开 Kibana 文件夹（即 `~Downloads/kibana-7.1.1-darwin-x86_64`）。
 
-  1. From your Mac’s **Downloads** folder (or the new folder if you moved Kibana), open the Kibana folder (i.e. **~Downloads/kibana-7.1.1-darwin-x86_64**).
-  2. Open the **bin** subfolder to enter that one.
-
-
+2、打开 `bin` 子文件夹。
 
 ![The Kibana bin folder.][8]
 
-  3. Run **kibana-plugin**. You may run into the same security warning that came up in the previous article:
-
-
-
+3、运行 `kibana-plugin`。你可能会遇到上一篇文章中出现的相同安全警告：
+   
 ![Security warning][9]
 
-In general, if you get this warning, follow the instructions in that article to clear the warning and open Kibana. Note that if I try to open the plugin without Elasticsearch running in the terminal, I get this same security warning. To fix this, I open Elasticsearch and run it in the terminal as described in the previous article. Launching Elasticsearch with the GUI should open the terminal as well.
+通常，如果收到此警告，请按照那篇文章中的说明清除警告并打开 Kibana。请注意，如果我在终端中没有运行 Elasticsearch 的情况下打开该插件，我会收到相同的安全警告。要解决此问题，如上一篇文章中所述，打开 Elasticsearch 并在终端中运行它。使用 GUI 启动 Elasticsearch 也应该打开终端。
 
-Then, I right-clicked on **kibana-plugin** and selected **Open**. This solution worked for me, but you might need to try a few times. Several people in my Elasticsearch meetup had some trouble opening Kibana on their devices.
+然后，我右键单击 `kibana-plugin` 并选择“打开”。这个解决方案对我有用，但你可能需要尝试几次。 我的 Elasticsearch 聚会中的几个人在他们的设备上打开 Kibana 时遇到了一些麻烦。
 
-### Changing Kibana’s host and port numbers
+### 更改 Kibana 的主机和端口号
 
-Kibana’s default settings configure it to run on **localhost: 5601**. You’ll need to update the file (in the case of this example) **~Downloads/kibana-7.1.1-darwin-x86_64/config/kibana.yml** to change the host or port number before you run Kibana.
+Kibana 的默认设置将其配置为在 `localhost:5601` 上运行。你需要更新文件（在这个例子的情况下）`~Downloads/kibana-7.1.1-darwin-x86_64/config/kibana.yml` 以在运行 Kibana 之前更改主机或端口号。
 
 ![The Kibana config directory.][10]
 
-Here’s what the terminal looked like when my Elasticsearch meetup group configured Kibana so it would default to **<http://localhost:9200>**, which is the URL to use when querying your Elasticsearch instances:
+以下是我的 Elasticsearch 聚会组里配置 Kibana 时终端的样子，因此默认为 `http://localhost:9200`，这是查询 Elasticsearch 实例时使用的 URL：
 
 ![Configuring Kibana's host and port connections.][11]
 
-### Running Kibana from the command line
+### 从命令行运行 Kibana
 
-Once you’ve opened the plugin, you can run Kibana from the command line or from the GUI. Here’s what the terminal looked like once it connected to Elasticsearch:
+打开插件后，可以从命令行或 GUI 运行 Kibana。这是终端连接到 Elasticsearch 后的样子：
 
 ![Kibana running once it's connected to Elasticsearch.][12]
 
-Like Elasticsearch, Kibana runs in the foreground by default. You can stop it by pressing **Ctrl-C**.
+与 Elasticsearch 一样，Kibana 默认在前台运行。你可以按 `Ctrl-C` 来停止它。
 
-### Wrapping up
+### 总结
 
-Elasticsearch and Kibana are large packages that take up a fair amount of storage. With so many people downloading both packages at once, my fellow Elasticsearch meetup members and I had to wait an average of several minutes for both of them to download. This might have been due to poor WiFi and/or too many users at once, but keep this possibility in mind if the same thing happens to you.
+Elasticsearch 和 Kibana 是占用大量存储空间的大型软件包。有这么多人一次下载这两个软件包，当我的Elasticsearch 会员和我下载它们两个时，我平均要下载几分钟。这可能是由于 WiFi 不佳和/或用户数量太多，但如果发生同样的事情，请记住这种可能性。
 
-After that, I couldn’t upload the JSON file we were using due to low storage on my laptop. I was able to follow the instructor’s visualizations, but couldn’t use Kibana myself in real time. So, before you download Elasticsearch and Kibana, make sure there’s enough room (at least a few gigabytes) on your device to upload and search files with these tools.
+之后，由于我的笔记本电脑存储空间不足，我无法上传我们正在使用的 JSON 文件。我能够按照讲师的可视化进行操作，但无法实时使用 Kibana。因此，在下载 Elasticsearch 和 Kibana 之前，请确保设备上有足够的空间（至少几千兆字节）来上传和使用这些工具搜索文件。
 
-To learn more about Kibana, their user guide’s [Introduction][13] is ideal. (You can configure the guide based on which version of Kibana you’re using.) Their demo also shows you how to [build a dashboard in minutes][14] and then make your first deployment.
+要了解有关 Kibana 的更多信息，他们的用户指南[简介][13]是理想的。（你可以根据你正在使用的 Kibana 版本配置该指南。）他们的演示还向你展示了如何[在几分钟内构建仪表板][14]，然后进行首次部署。
 
-Have fun!
+玩得开心！
 
 --------------------------------------------------------------------------------
 
@@ -97,15 +90,15 @@ via: https://opensource.com/article/19/7/installing-kibana-macos
 
 作者：[Lauren Maffeo][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/lmaffeo
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/analytics-graphs-charts.png?itok=sersoqbV (Analytics: Charts and Graphs)
-[2]: https://opensource.com/article/19/7/installing-elasticsearch-macos
+[2]: https://linux.cn/article-11125-1.html
 [3]: https://opensource.com/article/19/7/installing-elasticsearch-and-kibana-linux
 [4]: https://www.elastic.co/products/kibana
 [5]: https://en.wikipedia.org/wiki/Time_series
