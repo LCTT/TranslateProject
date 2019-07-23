@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (geekpi)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

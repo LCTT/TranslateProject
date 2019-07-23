@@ -1,4 +1,3 @@
-leemeans translating
 7 deadly sins of documentation
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc-lead-cat-writing-king-typewriter-doc.png?itok=afaEoOqc)
