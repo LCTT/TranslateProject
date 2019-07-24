@@ -7,79 +7,73 @@
 [#]: via: (https://itsfoss.com/best-linux-beginners/)
 [#]: author: (Aquil Roshan https://itsfoss.com/author/aquil/)
 
-Best Linux Distributions for Beginners
+最适合于初学者的 Linux 发行版
 ======
 
-_**Brief** : In this article, we will see the **best Linux distro for beginners**_. This will help new Linux users to pick their first distribution.
+> 在本文中，我们将看到**最适合于初学者的 Linux 发行版**。这将有助于新 Linux 用户选择他们的第一个发行版。
 
-Let’s face it, [Linux][1] can pose an overwhelming complexity to new users. But then, it’s not Linux itself that brings this complexity. Rather, it’s the “newness” factor that causes this. Not getting nostalgic, but remembering my first time with Linux, I didn’t even know what to expect. I liked it. But it was an upstream swim for me initially.
+让我们面对现实，[Linux][1] 可能会给新用户带来巨大复杂性。但是，这并不是 Linux 本身带来了这种复杂性。相反，它是导致这种情况的“新奇”因素。并不是怀旧，但我记得第一次使用 Linux 时，我甚至不知道会发生什么。我喜欢它，但最初这对我来说像是逆流游泳一样。
 
-Not knowing where to start can be a downer. Especially for someone who does not have the concept of something else running on their PC in place of Windows.
+不知道从何处着手可能是一个令人沮丧的原因，特别是对于那些在 PC 上运行 Windows 之外的其它系统没有概念的人来说如此。
 
-Linux is more than an OS. It’s an idea where everybody grows together and there’s something for everybody. We have already covered:
+Linux 不仅仅是一个操作系统，而是一个理念：在这里大家共同成长，也适合于每个人的不同需要。我们已经介绍过：
 
-  * [Best Linux distributions for Windows users][2]
-  * [Best lightweight Linux distros][3]
-  * [Best Linux distributions for hacking][4]
-  * [Best Linux distributions for gaming][5]
-  * [Best Linux distributions for privacy and anonymity][6]
-  * [Best Linux distributions that look like MacOS][7]
+* [Windows 用户的最佳 Linux 发行版][2]
+* [最佳轻量级 Linux 发行版][3]
+* [黑客攻击的最佳 Linux 发行版][4]
+* [最佳 Linux 游戏发行版][5]
+* [隐私和匿名的最佳 Linux 发行版][6]
+* [看起来像 MacOS 的最佳 Linux 发行版][7]
 
+除此之外，还有一些发行版能够满足新人的需求。这里有一些适合初学者的 Linux 发行版。你也可以在视频中观看并[订阅我们的 YouTube 频道][8]以获取更多与 Linux 相关的视频。
 
+[视频](https://youtu.be/QC2B2-gCbbI)
 
-In addition to that, there are distributions that cater to the needs of newcomers especially. So here are a few such Linux distros for beginners. You can watch it in a video and [subscribe to our YouTube channel][8] for more Linux related videos.
+### 最适合于初学者的 Linux 发行版
 
-### Best Linux Distros for Beginners
+请记住，此列表没有特别的顺序。编制此列表的主要标准是易于安装、开箱即用的硬件和软件、易用性和软件包的可用性。
 
-Please remember that this list is no particular order. The main criteria for compiling this list is ease of installation, out of the box hardware software, ease of use and availability of software packages.
+#### 1、Ubuntu
 
-#### 1\. Ubuntu
-
-If you’ve researched Linux on the internet, it’s highly probable that you have come across Ubuntu. Ubuntu is one of the leading Linux distributions. It is also the perfect path to begin your Linux journey.
+如果你在互联网上研究过 Linux，那么你很可能遇到过 Ubuntu。Ubuntu 是领先的 Linux 发行版之一。 它也是开始 Linux 之旅的完美之选。
 
 ![][9]
 
-Ubuntu has been tagged as Linux for human beings. Now, this is because Ubuntu has put in a lot of effort on universal usability. Ubuntu does not require you to be technically sound for you to use it. It breaks the notion of Linux=Command line hassle. This is one of the major plus points that rocketed Ubuntu to where it is today.
+Ubuntu 被视为人性化的 Linux，这是因为 Ubuntu 在通用可用性上付出了很多努力。Ubuntu 并不要求你用技术的方式去使用它。它打破了 “Linux = 命令行麻烦”这一概念。这是 Ubuntu 飙升到今天的主要优势之一。
 
-Ubuntu offers a very convenient installation procedure. The installer speaks plain English (or any major language you want). You can even try out Ubuntu before actually going through the installation procedure. The installer provides simple options to:
+Ubuntu 提供了非常方便的安装程序。这个安装程序以简单的英语（或你想要的任何主要语言）描述安装过程。你甚至可以在实际执行安装过程之前尝试使用 Ubuntu。安装程序提供了简单的选项：
 
-  * Install Ubuntu removing the older OS
-  * [Install Ubuntu alongside Windows][10] or any other existing OS (A choice is given at every startup to select the OS to boot).
-  * Configure partitions for users who know what they are doing.
+* 删除旧操作系统安装 Ubuntu。
+* 安装 Ubuntu，与 Windows 或任何其他现有操作系统[共存][10]（每次启动时都会选择要启动的操作系统）。
+* 让高级用户自行配置分区。
 
+*初学者提示：如果你不确定该怎么做，请选择第二个选项。*
 
+Ubuntu 的用户界面名为 GNOME。它既简单又富有成效。你可以通过按 Windows 键搜索从应用程序到文件的任何内容。有什么比这更简单的吗？
 
-_Beginner tip: Select the second option if you are not sure about what to do._
+没有驱动程序安装问题，因为 Ubuntu 附带了一个硬件检测器，可以检测、下载和安装适用于你的 PC 的最佳驱动程序。此外，安装会附带所有基本软件，如音乐播放器、视频播放器、办公套件和一些消磨时间的游戏。
 
-Ubuntu’s user interface is called GNOME. It is as simple as well as productive as it gets. You can search anything from applications to files by pressing the Windows key. Is there any way you can make this simpler?
+Ubuntu 有很好的文档和社区支持。[Ubuntu 论坛][11]和 [Ask Ubuntu][12] 几乎在 Ubuntu 的所有方面都提供了可观的高质量支持。你有的一些问题很有可能已经回答过了，这些答案是适合初学者的。
 
-There are no driver installation issues as Ubuntu comes with a hardware detector which detects, downloads and installs optimal drivers for your PC. Also, the installation comes with all the basic software like a music player, video player, an office suite and games for some time killing.
+请在[官方网站][13]查看并下载 [Ubuntu][13]。
 
-Ubuntu has a great documentation and community support. [Ubuntu forums ][11]and [Ask Ubuntu][12] provide an appreciable quality support in almost all aspects regarding Ubuntu. It’s highly probable that any question you might have will already be answered. And the answers are beginner friendly.
+#### 2、Linux Mint Cinnamon
 
-Do check out and download [Ubuntu][13] at the [official site.][13]
-
-#### 2\. Linux Mint Cinnamon
-
-For years, Linux Mint has been the **number one** Linux distribution on [Distrowatch][14]. Well deserved throne I must say. Linux mint is one of my personal favorites. It is elegant, graceful and provides a superior computing experience (out of the box).
+多年来，Linux Mint 一直是 [Distrowatch][14] 上的**头号** Linux 发行版。我必须说，当之无愧的宝座。Linux Mint 是我个人的最爱之一。它优雅、秀气，提供了卓越的计算体验（开箱即用）。
 
 ![][15]
 
-Linux Mint features the Cinnamon desktop environment. New Linux users who are still in the process of familiarizing themselves with Linux software will find Cinnamon very useful. All the software are very accessibly grouped under categories. Although this is nothing of a mind-blowing feature, to new users who do not know the names of Linux software, this is a huge bonus.
+Linux Mint 具有 Cinnamon 桌面环境。仍处于熟悉 Linux 软件的 Linux 新用户会发现 Cinnamon 非常有用。所有软件都非常易于按类别分组。虽然这不是一个令人兴奋的功能，但对于不了解 Linux 软件名称的新用户来说，这是一个巨大的好处。
 
-[][16]
-
-Suggested read Installing Microsoft Visual Studio Code on Linux
-
-Linux Mint is fast. Runs fine on older computers. Linux Mint is built upon the rock-solid Ubuntu base. It uses the same software repository as Ubuntu. About the Ubuntu software repository, Ubuntu pushes software for general only use after extensive testing. This means users will not have to deal with unexpected crashes and glitches that some new software are prone to, which can be a real no-no for new Linux users.
+Linux Mint 很快。在旧电脑上运行良好。Linux Mint 建立在坚如磐石的 Ubuntu 基础之上。它使用与 Ubuntu 相同的软件存储库。关于 Ubuntu 软件存储库，Ubuntu 推送的软件仅供广泛测试后使用。这意味着用户不必处理一些新软件容易出现的意外崩溃和故障，对于新的 Linux 用户来说这可能是一个真正的禁忌。
 
 ![][17]
 
-Windows 7 lovers who are really not into where Microsoft if heading with Windows 10 will find Linux Mint lovable. Linux Mint desktop is pretty similar to Windows 7 desktop. Similar toolbar, similar menu, similar tray icons are all set to make Windows users feel absolutely at home.
+Windows 7 爱好者如果真的没有升级到微软 Windows 10 的话，那将会发现 Linux Mint 的可爱。 Linux Mint 桌面非常类似于 Windows 7 桌面。类似的工具栏、类似的菜单、类似的托盘图标都绝对会使 Windows 用户感到十分熟悉。
 
-Personally, I’m more likely to suggest Linux Mint to someone who is new to Linux world as Linux Mint does impress users enough for them to accept it. To me, Linux Mint should be the first among the list of Linux for beginners.
+就个人而言，我更倾向于向 Linux 世界的新人推荐 Linux Mint，因为 Linux Mint 确实给用户留下了足够的印象，会让他们接受它。对我来说，Linux Mint 应该是面向初学者的 Linux 列表中的首位。
 
-Do check out [Linux Mint here][18]. Go for the Cinnamon version.
+请在这里查看 [Linux Mint][18]，看看 Cinnamon 版。
 
 #### 3\. Zorin OS
 
