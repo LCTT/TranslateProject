@@ -75,79 +75,75 @@ Windows 7 爱好者如果真的没有升级到微软 Windows 10 的话，那将�
 
 请在这里查看 [Linux Mint][18]，看看 Cinnamon 版。
 
-#### 3\. Zorin OS
+#### 3、Zorin OS
 
-A majority of computer users are Windows users. And when a [Windows user gets a Linux][2], there’s a fair amount of ‘unlearning process’ that user must go through. A huge amount of operations have been fixed in our muscle memory. For example, the mouse reaching to the lower left corner of the screen (Start) everytime you want to launch an application. So if we could find something that eases these issues on Linux, it’s half a battle won. Enter Zorin OS.
+大多数计算机用户是 Windows 用户。当 [Windows 用户拿到一个 Linux][2] 时，他必须经历相当多的“学习过程”。大量的操作已经形成了我们的肌肉记忆。例如，每次要启动应用程序时，鼠标都会到达屏幕的左下角（“开始”菜单）。因此，如果我们能够在 Linux 上找到一些可以缓解这些问题的东西，那就成功了一半了。进入 Zorin OS。
 
 ![][19]
 
-Zorin OS is an Ubuntu-based, highly polished Linux distribution, entirely made for Windows refugees. Although pretty much every Linux distro is usable by everybody, some people might tend to be reluctant when the desktop looks too alien. Zorin OS dodges past this obstacle because of its similarities with Windows appearance wise.
+Zorin OS 是一个基于 Ubuntu 的高度优化的 Linux 发行版，完全是为 Windows 难民制作的。虽然几乎每个 Linux 发行版都可供任何人使用，但是当桌面看起来太陌生时，有些人可能会不情愿。Zorin OS 避开了这个障碍，因为它与 Windows 外观明显相似。
 
-Package managers are something of a new concept to Linux newcomers. That’s why Zorin OS comes with a huge (I mean really huge) list of pre-installed software. Anything you need, there’s good chance it’s already installed on Zorin OS. As if that was not enough, [Wine and PlayOnLinux][20] come pre-installed so you can run your loved Windows software and [games][21] here too.
+软件包管理器对 Linux 新手来说是一个新概念。这就是为什么 Zorin OS 带有一个巨大的（我的意思是真的很大）预安装软件列表。你需要的任何东西，很有可能它已经安装在 Zorin OS 上。好像这还不够，[Wine 和 PlayOnLinux][20] 也预先安装好了，所以你也可以在这里运行你喜爱的 Windows 软件和[游戏][21]。
 
 ![][22]
 
-Zorin OS comes with an amazing theme engine called the ‘Zorin look changer’. It offers some heavy customization options with presets to make your OS look like Windows 7, XP, 2000 or even a Mac for that matter. You’re going to feel home.
+Zorin OS 配备了一款名为 “Zorin look changer” 的惊人的主题引擎。它提供了一些重要的自定义选项和预设，使你的操作系统看起来像 Windows 7、XP、2000 甚至是 Mac。你会有宾至如归的感觉。
 
 ![][23]
 
-These features make Zorin OS the _**best Linux distro for beginners**_ , isn’t it? Do check out the [Zorin OS website][24] to know more and download the OS.
+正是这些功能使 Zorin OS 成为**适合初学者的最佳 Linux 发行版**。查看 [Zorin OS 网站][24]以了解更多信息并下载该操作系统。
 
-#### 4\. Elementary OS
+#### 4、Elementary OS
 
-Since we have taken a look at Linux distros for Windows users, let’s swing by something for MacOS users too. Elementary OS very quickly rose to fame and now is always included in the list of top distros, all thanks to its aesthetic essence. Inspired by MacOS looks, Elementary OS is one of the most beautiful Linux distros.
+由于我们已经看过了给 Windows 用户准备的 Linux 发行版，让我们为 MacOS 用户提供一些东西。Elementary OS 成名非常迅速，现在总是被列入顶级发行列表，这一切都归功于其美学本质。受 MacOS 外观的启发，Elementary OS 是最美丽的 Linux 发行版之一。
 
 ![][25]
 
-Elementary OS is another Ubuntu-based operating system which means the operating system itself is unquestionably stable. Elementary OS features the Pantheon desktop environment. You can immediately notice the resemblance to MacOS desktop. This is an advantage to MacOS users switching to Linux as they will much comfortable with the desktop and this really eases the process of coping to this change.
+Elementary OS 是另一个基于 Ubuntu 的操作系统，这意味着操作系统本身无疑是稳定的。Elementary OS 带有 Pantheon 桌面环境。你会马上注意到与 MacOS 桌面的相似之处。这对于转换到 Linux 的 MacOS 用户来说是一个优势，因为他们会非常熟悉桌面，这确实简化了应对此变化的过程。
 
 ![][26]
 
-The menu is simple and customizable according to user preferences. The operating system is zero intrusive so you can really focus on your work. It comes with a very small number of pre-installed software. So, any new user will not be repulsed by huge bloat. But hey, it’s got everything you need out of the box. For more software, Elementary OS provides a neat AppCenter. It is highly accessible and simple. Everything at one place. You can get all the software you want and perform upgrades in clicks.
+它的菜单简单，可根据用户喜好自定义。该操作系统是零侵入性的，因此你可以真正专注于工作。它附带了非常少量的预安装软件。因此，任何新用户都不会被庞杂的内容所击退。但是，嘿，它具备开箱即用所需要的一切。如果需要更多软件，Elementary OS 提供了一个整洁的 AppCenter。它易于访问且简单易用。一切都在一个地方。你可以一键获得所需的所有软件和升级。
 
-[][27]
+经验表明，[Elementary OS][28] 真的是一个很棒的软件。绝对值得[试一试][28]。
 
-Suggested read How to Install and Use Slack in Linux
+#### 5、inux Mint Mate
 
-Experience wise, [Elementary OS][28] is really a great piece of software. Definitely give [it a try.][28]
-
-#### 5\. Linux Mint Mate
-
-A good number of people who come to Linux are looking to revive older computers. With Windows 10, many computers that had decent specs just some years ago have become incompetent. A quick google will suggest you install Linux on such computers. In that way, you can keep them running up to the mark for the near future. Linux Mint Mate is a great Linux distro if you are looking for something to run your older computers.
+许多来到 Linux 的人都希望让旧电脑焕发新生。随着 Windows 10 的普及，几年前许多具有不错配置的计算机已经变得无力应对。在谷歌上快速搜索一下会建议你在这样的电脑上安装 Linux。通过这种方式，你可以保持它们在之后一段时间仍旧能保持水准。如果你正在寻找可以运行旧计算机的东西，Linux Mint Mate 是一个很棒的 Linux 发行版。
 
 ![][29]
 
-Linux Mint Mate is very light, resource efficient but still a polished distro. It can run smoothly on computers with less muscle power. The desktop environment does not come with bells and jingles. But in no way is it functionally inferior to any other desktop environments. The operating system is non-intrusive and allows you to have a productive computing experience without getting in your way.
+Linux Mint Mate 非常轻便，资源利用效率高，而仍然是一个漂亮的发行版。它可以在计算能力较弱的计算机上平稳运行。桌面环境没有各种花哨的东西。但它在功能上和任何其他桌面环境相比毫不逊色。这个操作系统是非侵入式的，允许你在无需改变习惯的情况下获得高效的计算体验。
 
-Again, the Linux Mint Mate is based on Ubuntu and has the advantage of huge base solid Ubuntu software repository. It comes with a minimum number of necessities pre-installed. Easy driver installation and setting management are made available.
+同样，Linux Mint Mate 基于 Ubuntu，具有巨大的坚实的 Ubuntu 软件存储库的优势。它预装了最少数量的必需软件。提供了简便的驱动程序安装和设置管理。
 
-You can run Linux Mint Mate even if you have 512 MB RAM and 9 GB hard disk space (the more the merrier).
+即使你只有 512 MB 的内存和 9 GB 的硬盘空间（当然是越多越好），你也可以运行 Linux Mint Mate。
 
-The Mate desktop environment is really simple to use with no twists in the tale. This is really a huge plus point for Linux beginners. All the more reason to [try out Linux Mint Mate][30].
+Mate 桌面环境非常简单易用，没有什么费解的地方。对于 Linux 初学者来说，这确实是一个巨大的优势。 更有理由 [尝试 Linux Mint Mate][30]。
 
-#### 6\. Manjaro Linux
+#### 6、Manjaro Linux
 
-Ok. Any long time Linux user will say guiding a newcomer even in the general direction of Arch Linux is a sin. But hear me out.
+好吧。任何一个 Linux 的老用户都会说，即使只是在大方向上，引导新手接触 Arch Linux 也是一种罪过。但是听我说。
 
-Arch is considered experts-only Linux because of it’s highly complex installation procedure. Manajro and Arch Linux have a common origin. But they differ extensively in everything else.
+Arch 被认为是专家级 Linux，因为它的安装过程非常复杂。Manajro 和 Arch Linux 有着共同的起源。但它们在其他方面存在很大差异。
 
 ![][31]
 
-Manajro Linux has an extremely beginner friendly installation procedure. A lot of things are automated like driver installation using ‘Hardware detection’. Manjaro hugely negates the hardware driver hassles that torments a lot of other Linux distros. And even if you face any issues, Manjaro has an amazing community support.
+Manajro Linux 具有非常适合初学者的安装程序。许多事情都是自动化的，比如使用“硬件检测”进行驱动程序安装。Manjaro 极大地解决了困扰许多其他 Linux 发行版的硬件驱动程序的麻烦。即使你遇到任何问题，Manjaro 也有很棒的社区支持。
 
-Manjaro has its own software repository which maintains the latest of software. While providing up to date software to users is a priority, guaranteed stability is not at all compromised. This is one of the prime differences between Arch and Manjaro. Manjaro delays package releases to make sure they are absolutely stable and no regression will be caused. You can also access the Arch User Repository on Manjaro, so anything and everything you need, is always available.
+Manjaro 拥有自己的软件存储库，维护了最新的软件。虽然向用户提供最新软件是一个优先事项，但它可以保证稳定性并不会受到损害。这是 Arch 和 Manjaro 之间的主要区别之一。Manjaro 延迟软件包发布以确保它们绝对稳定并且不会导致回退。你还可以访问 Manjaro 上的 Arch User Repository（AUR），因此你可以随时获得所需的一切。
 
-If you want to know more about Manjaro features, do read my colleague [John’s experience with Manjaro Linux and why he is hooked][32] to it.
+如果你想了解更多有关 Manjaro 功能的信息，请阅读我的同事 [John 的 Manjaro Linux 经历以及为什么他会被它迷住][32]。
 
 ![][33]
 
-Manjaro Linux comes in XFCE, KDE, Gnome, Cinnamon and a host of more desktop environments. Do check out the [official website][34].
+Manjaro Linux 有 XFCE、KDE、Gnome、Cinnamon 以及更多桌面环境，请查看[官方网站][34]。
 
-To install any of the above 6 operating systems, you need to create a bootable USB stick. If you are currently using Windows [use this guide to do so][35]. Mac OS users may [follow this guide][36].
+要安装上述 6 个操作系统中的任何一个，你需要创建一个可启动的 U 盘。如果你当前正在使用 Windows  [请使用本指南][35]。Mac OS 用户可以[遵循本指南][36]。
 
-**Your choice for the best Linux distro for beginners?**
+### 您选择哪个最适合初学者的 Linux 发行版？
 
-Linux might come with a learning curve, but that’s not something anybody ever regretted. Go ahead get an ISO and check out Linux. If you are already a Linux user, do share this article and help someone fall in love with Linux in this season of love. Cheers.
+Linux 可能会有学习曲线，但这并不是每个人都会后悔的。获得一个 ISO 文件并体验一下 Linux 吧。如果你已经是 Linux 用户，请分享这篇文章，并帮助有人在这个爱的季节爱上 Linux。干杯。
 
 --------------------------------------------------------------------------------
 
@@ -155,7 +151,7 @@ via: https://itsfoss.com/best-linux-beginners/
 
 作者：[Aquil Roshan][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
