@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,16 +7,11 @@
 [#]: via: (https://www.2daygeek.com/clustershell-clush-run-commands-on-cluster-nodes-remote-system-in-parallel-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-ClusterShell – A Nifty Tool To Run Commands On Cluster Nodes In Parallel
+ClusterShell：一个在集群节点上并行运行命令的好工具
 ======
 
-We had written two articles in the past to run commands on multiple remote server in parallel.
+我们过去曾写过两篇如何并行地在多个远程服务器上运行命令的文章：这些是[并行 SSH（PSSH）][1] 和 [分布式 Shell（DSH）][2]。今天，我们将讨论相同类型的主题，但它允许我们在群集节点上执行相同的操作。你可能会想，我可以编写一个小的 shell 脚本来实现这个目的，而不是安装这些第三方软件包。
 
-These are **[Parallel SSH (PSSH)][1]** or **[Distributed Shell (DSH)][2]**.
-
-Today also, we are going to discuss about the same kind of topic but it allows us to perform the same on cluster nodes as well.
-
-You may think, i can write a small shell script to archive this instead of installing these third party packages.
 
 Of course you are right and if you are going to run some commands in 10-15 remote systems then you don’t need to use this.
 
