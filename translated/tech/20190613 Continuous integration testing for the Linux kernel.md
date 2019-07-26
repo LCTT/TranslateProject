@@ -26,9 +26,9 @@ Linux 内核的每个发布版本包含了来自 1,700 个开发者产生的 14,
 
 #### CI 和 Linux
 
-Most modern software repositories have some sort of automated CI testing that tests commits before they find their way into the repository. This automated testing allows the maintainers to find software quality issues, along with most bugs, by reviewing the CI report. Simpler projects, such as a Python library, come with tons of tools to make this process easier.
+许多现代软件代码库都采用某种自动化 CI 测试，能够在提交进入代码存储库之前对其进行测试。这种自动化测试运行维护人员通过查看 CI 测试报告来发现软件质量问题已经大多数错误。一些更方便的项目，比如某个 python 库，附带的大量工具使得整个检查过程更简单。
 
-Linux must be configured and compiled prior to any testing. Doing so takes time and compute resources. In addition, that kernel must boot in a virtual machine or on a bare metal machine for testing. Getting access to certain system architectures requires additional expense or very slow emulation. From there, someone must identify a set of tests which trigger the bug or verify the fix.
+在任何测试之前都需要配置和编译 Linux。而这么做将耗费大量的时间和计算资源。此外，Linux 内核必需在虚拟机或者裸机上启动才能进行测试。访问某些体系结构需要额外的开销或者非常慢的仿真。因此，必需有人确定一组能够触发错误或者验证修复的测试组。
 
 #### CKI 团队如何运作？
 
