@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to run virtual machines with virt-manager)
@@ -12,7 +12,7 @@
 
 ![][1]
 
-在早先年，在同一台笔记本中运行多个操作系统只能双启动。当时，这些操作系统很难同时运行或相互影响。许多年过去了，在普通的 PC 上，可以通过虚拟化在一个系统中运行另一个系统。
+在早些年，在同一台笔记本中运行多个操作系统只能双启动。当时，这些操作系统很难同时运行或彼此交互。许多年过去了，在普通的 PC 上，可以通过虚拟化在一个系统中运行另一个系统。
 
 最近的 PC 或笔记本（包括价格适中的笔记本电脑）都有硬件虚拟化，可以运行性能接近物理主机的虚拟机。
 
@@ -24,7 +24,7 @@
 
 QEMU 是一个完整的系统仿真器，它可与 KVM 协同工作，允许你使用硬件和外部设备创建虚拟机。
 
-最后 [libvirt][2] 是能让你管理基础设施的 API 层，即创建和运行虚拟机。
+最后，[libvirt][2] 能让你管理基础设施的 API 层，即创建和运行虚拟机。
 
 这三个技术都是开源的，我们将在 Fedora Workstation 上安装它们。
 
@@ -33,79 +33,55 @@ QEMU 是一个完整的系统仿真器，它可与 KVM 协同工作，允许你�
 #### 步骤 1：安装软件包
 
 安装是一个相当简单的操作。 Fedora 仓库提供了 “virtualization” 软件包组，其中包含了你需要的所有包。
-```
 
 ```
-
 sudo dnf install @virtualization
-```
-
 ```
 
 #### 步骤 2：编辑 libvirtd 配置
 
 默认情况下，系统管理仅限于 root 用户，如果要启用常规用户，那么必须按以下步骤操作。
 
-打开 /etc/libvirt/libvirtd.conf 进行编辑
-```
+打开 `/etc/libvirt/libvirtd.conf` 进行编辑：
 
 ```
-
 sudo vi /etc/libvirt/libvirtd.conf
 ```
 
-```
-
-将域套接字组所有者设置为 libvirt
-```
+将 UNIX 域套接字组所有者设置为 libvirt：
 
 ```
-
 unix_sock_group = "libvirt"
 ```
 
-```
-
-调整 UNIX 套接字的读写权限
-```
+调整 UNIX 域套接字的读写权限：
 
 ```
-
 unix_sock_rw_perms = "0770"
 ```
 
-```
-
 #### 步骤 3：启动并启用 libvirtd 服务
-```
 
 ```
-
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 ```
 
-```
-
 #### 步骤 4：将用户添加到组
 
-为了管理 libvirt 与普通用户，你必须将用户添加到 libvirt 组，否则每次启动 virtual-manager 时，都会要求你输入 sudo 密码。
-```
+为了管理 libvirt 与普通用户，你必须将用户添加到 `libvirt` 组，否则每次启动 `virt-manager` 时，都会要求你输入 sudo 密码。
 
 ```
-
 sudo usermod -a -G libvirt $(whoami)
-```
-
 ```
 
 这会将当前用户添加到组中。你必须注销并重新登录才能应用更改。
 
 ### 开始使用 virt-manager
 
-可以通过命令行 （virsh） 或通过 virt-manager 图形界面管理l ibvirt 系统。如果你想做虚拟机自动化配置，那么命令行非常有用，例如使用 [Ansible][3]，但在本文中我们将专注于用户友好的图形界面。
+可以通过命令行 （`virsh`） 或通过 `virt-manager` 图形界面管理 libvirt 系统。如果你想做虚拟机自动化配置，那么命令行非常有用，例如使用 [Ansible][3]，但在本文中我们将专注于用户友好的图形界面。
 
-virt-manager 界面很简单。主窗口显示连接列表，其中包括本地系统连接。
+`virt-manager` 界面很简单。主窗口显示连接列表，其中包括本地系统连接。
 
 连接设置包括虚拟网络和存储定义。你可以定义多个虚拟网络，这些网络可用于在客户端系统之间以及客户端系统和主机之间进行通信。
 
@@ -115,7 +91,7 @@ virt-manager 界面很简单。主窗口显示连接列表，其中包括本地�
 
 ![][4]
 
-向导的第一步需要选择安装模式。你可以选择本地安装介质、网络引导/安装或现有虚拟磁盘导入：
+向导的第一步需要选择安装模式。你可以选择本地安装介质、网络引导/安装或导入现有虚拟磁盘：
 
 ![][5]
 
@@ -123,7 +99,7 @@ virt-manager 界面很简单。主窗口显示连接列表，其中包括本地�
 
 ![ ][6]
 
-随后的两个步能让你调整新虚拟机的 CPU、内存和磁盘大小。最后一步将要求你选择网络选项：如果你希望虚拟机通过 NAT 与外部隔离，请选择默认网络。如果你希望从外部访问虚拟机，那么选择桥接。请注意，如果选择桥接，那么虚拟机则无法与主机通信。
+随后的两个步骤能让你调整新虚拟机的 CPU、内存和磁盘大小。最后一步将要求你选择网络选项：如果你希望虚拟机通过 NAT 与外部隔离，请选择默认网络。如果你希望从外部访问虚拟机，那么选择桥接。请注意，如果选择桥接，那么虚拟机则无法与主机通信。
 
 如果要在启动设置之前查看或更改配置，请选中“安装前自定义配置”：
 
@@ -141,7 +117,7 @@ virt-manager 界面很简单。主窗口显示连接列表，其中包括本地�
 
 ![][10]
 
-libvirt 和 virt-manager 是功能强大的工具，它们可以以企业级管理为你的虚拟机提供出色的自定义。 如果你需要更简单的东西，请注意 Fedora Workstation [预安装的 GNOME Boxes 已经能够满足基础的虚拟化要求][11]。
+libvirt 和 `virt-manager` 是功能强大的工具，它们可以以企业级管理为你的虚拟机提供出色的自定义。如果你需要更简单的东西，请注意 Fedora Workstation [预安装的 GNOME Boxes 已经能够满足基础的虚拟化要求][11]。
 
 --------------------------------------------------------------------------------
 
@@ -150,7 +126,7 @@ via: https://fedoramagazine.org/full-virtualization-system-on-fedora-workstation
 作者：[Marco Sarti][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
