@@ -113,5 +113,4 @@ via: https://www.2daygeek.com/linux-user-account-creation-in-manual-method/
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
 [1]: https://www.2daygeek.com/linux-user-account-creation-useradd-adduser-newusers/
-
-[2]: https://www.2daygeek.com/linux-bulk-users-creation-useradd-newusers/`'````````` `` ) ) )
+[2]: https://www.2daygeek.com/linux-bulk-users-creation-useradd-newusers/
