@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Master the Linux 'ls' command)
 [#]: via: (https://opensource.com/article/19/7/master-ls-command)
-[#]: author: (Seth Kenlon https://opensource.com/users/sethhttps://opensource.com/users/sambocettahttps://opensource.com/users/scottnesbitthttps://opensource.com/users/sethhttps://opensource.com/users/marcobravohttps://opensource.com/users/sethhttps://opensource.com/users/don-watkinshttps://opensource.com/users/sethhttps://opensource.com/users/jamesfhttps://opensource.com/users/seth)
+[#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
 Master the Linux 'ls' command
 ======
