@@ -1,5 +1,3 @@
-Northurland Translating
-
 What Did Ada Lovelace's Program Actually Do?
 ======
 The story of Microsoft’s founding is one of the most famous episodes in computing history. In 1975, Paul Allen flew out to Albuquerque to demonstrate the BASIC interpreter that he and Bill Gates had written for the Altair microcomputer. Because neither of them had a working Altair, Allen and Gates tested their interpreter using an emulator that they wrote and ran on Harvard’s computer system. The emulator was based on nothing more than the published specifications for the Intel 8080 processor. When Allen finally ran their interpreter on a real Altair—in front of the person he and Gates hoped would buy their software—he had no idea if it would work. But it did. The next month, Allen and Gates officially founded their new company.
