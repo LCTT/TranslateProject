@@ -7,39 +7,38 @@
 [#]: via: (https://www.networkworld.com/article/3410350/getting-help-for-linux-shell-built-ins.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Getting help for Linux shell built-ins
+获取有关 Linux shell 内置命令的帮助
 ======
-Linux built-ins are commands that are part of a user’s shell. Here's an explanation on how to recognize them and get help on their use.
+Linux 内置命令是属于用户 shell 的一部分，本文将告诉你如何识别它们并从它们那获得帮助。
 ![Sandra Henry-Stocker][1]
 
-Linux built-ins are commands that are built into the shell, much like shelves that are built into a wall. You won’t find them as stand-alone files the way standard Linux commands are stored in /usr/bin and you probably use quite a few of them without ever questioning how they’re different from commands such as **ls** and **pwd**.
+Linux 内置命令是内置于 shell 中的命令，很像内置于墙中的架子。与标准 Linux 命令存储在 /usr/bin 中的方式不同，它们不会作为独立文件被你找到，你可能会使用它们中的相当一部分，但不会质疑它们与 **ls** 和 **pwd** 等命令有何不同。
 
-Built-ins are used just like other Linux commands. They are likely to run a bit faster than similar commands that are not part of your shell. Bash built-ins include commands such as **alias**, **export** and **bg**.
+内置命令与其他 Linux 命令一样使，它们可能比不属于 shell 的类似命令运行得快一些。Bash 内置命令包括 **alias**、**export** 和 **bg** 等。
 
-**[ Two-Minute Linux Tips: [Learn how to master a host of Linux commands in these 2-minute video tutorials][2] ]**
+**[ 两分钟 Linux 技巧: [学习如何在 2 分钟视频教程中掌握大量 Linux 命令][2] ]**
 
-As you might suspect, because built-ins are shell-specific, they won't be supplied with man pages. Ask **man** to help with **bg** and you'll see something like this:
+正如你担心的那样，因为内置命令是特定于 shell 的，所以它们不会提供手册页。使用 **man** 来查看 **bg**，你会看到这样的东西：
 
 ```
 $ man bg
 No manual entry for bg
 ```
 
-Another tip-off that a command is a built-in is when you use the **which** command to identify the source of the command. Bash's non-response will remind you that there is no file associated with the built-in:
-
+判断内置命令的另一个提示是当你使用 **which** 命令来识别命令的来源时，Bash 不会响应，表示没有与内置命令关联的文件：
 ```
 $ which bg
 $
 ```
 
-If your shell is **/bin/zsh**, on the other hand, you might get a slightly more illuminating response:
+如果你的 shell 是 **/bin/zsh**，另一方面，你可能会得到一个更有启发性的响应：
 
 ```
 % which bg
 bg: shell built-in command
 ```
 
-Additional help is available with bash, but it comes through the use of the **help** command:
+bash 提供了额外的帮助，但它是通过使用 **help** 命令实现的：
 
 ```
 $ help bg
@@ -54,7 +53,7 @@ bg: bg [job_spec ...]
     Returns success unless job control is not enabled or an error occurs.
 ```
 
-If you want to see a list of all of the built-ins that bash provides, use the **compgen -b**  command. Pipe the output to column for a nicely formatted listing.
+如果你想要查看 bash 提供的所有内置命令的列表，使用 **compgen -b** 命令。通过管道将命令输出到列中，以获得较好格式的清单。
 
 ```
 $ compgen -b | column
@@ -71,8 +70,7 @@ cd             eval           jobs           readarray      true
 command        exec           kill           readonly       type
 ```
 
-If you use the **help** command, you’ll see a list of built-ins along with short descriptions. This list is, however, truncated (ending with the **help** command):
-
+如果你使用 **help** 命令，你将看到一个内置命令列表以及简短描述。但是，这个列表被截断了（以 **help** 命令结尾）：
 ```
 $ help
 GNU bash, version 5.0.3(1)-release (x86_64-pc-linux-gnu)
@@ -123,9 +121,9 @@ A star (*) next to a name means that the command is disabled.
  help [-dms] [pattern ...]                { COMMANDS ; }
 ```
 
-As you can see from the listings above, the **help** command is itself a built-in.
+从上面的清单中可以看出，**help** 命令本身就是内置的。
 
-You can get more information on any of these built-ins by providing the **help** command with the name of the built-in you're curious about — as in **help dirs**.
+你可以通过向 **help** 命令提供你感兴趣的内置命令名称来获取关于它们的更多信息，例如 **help dirs**：
 
 ```
 $ help dirs
@@ -157,7 +155,7 @@ dirs: dirs [-clpv] [+N] [-N]
     Returns success unless an invalid option is supplied or an error occurs.
 ```
 
-Built-ins provide much of the functionality of each shell. Any shell you use will have some built-ins, though how to get information on these built-ins may differ from shell to shell. For **zsh**, for example, you can get a description of built-in commands by using the **man zshbuiltins** command.
+内置命令提供了每个 shell 的大部分功能。你使用的任何 shell 都有一些内置命令，但是如何获取这些内置命令的信息可能因 shell 而异。例如，对于 **zsh**，你可以使用 **man zshbuiltins** 命令获得其内置命令的描述。
 
 ```
 $ man zshbuiltins
@@ -177,7 +175,7 @@ SHELL BUILTIN COMMANDS
 …
 ```
 
-Within this lengthy man page, you will find a list of built-ins with useful descriptions as in this excerpt.
+在这个冗长的手册页中，你将找到一个内置命令列表，其中包含有用的描述，如下摘录中所示：
 
 ```
 bg [ job ... ]
@@ -194,13 +192,13 @@ break [ n ]
        instead of just one.
 ```
 
-### Wrap-up
+### 最后
 
-Linux built-ins are essential to each shell and operate like shell-specific commands. If you use a different shell from time to time and notice that some command you often use doesn’t seem to exist or doesn’t work as you were expecting, it just might be that it's one of your normal shell's built-ins.
+Linux 内置命令对于每个 shell 都很重要，它的操作类似特定于 shell 的命令一样。如果你经常使用不同的 shell，并注意到你经常使用的某些命令似乎不存在或者不能按预期工作，那么它可能是你使用的其他 shell 之一中的内置命令。
 
-**[ Also see: [Invaluable tips and tricks for troubleshooting Linux][3] ]**
+**[ 另请参考： [Linux 疑难解答的宝贵提示和技巧][3] ]**
 
-Join the Network World communities on [Facebook][4] and [LinkedIn][5] to comment on topics that are top of mind.
+加入 [Facebook][4] 和 [Linkedln][5] 上的网络世界社区，对你最关心的话题发表评论。
 
 --------------------------------------------------------------------------------
 
@@ -208,7 +206,7 @@ via: https://www.networkworld.com/article/3410350/getting-help-for-linux-shell-b
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
