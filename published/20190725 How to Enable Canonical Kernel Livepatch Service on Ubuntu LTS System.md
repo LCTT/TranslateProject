@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11152-1.html)
 [#]: subject: (How to Enable Canonical Kernel Livepatch Service on Ubuntu LTS System?)
 [#]: via: (https://www.2daygeek.com/enable-canonical-kernel-livepatch-service-on-ubuntu-lts-system/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
 如何在 Ubuntu LTS 系统上启用 Canonical 的内核实时补丁服务
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201907/27/072251d3dij23lndtuutzr.jpg)
 
 Canonical 在 Ubuntu 14.04 LTS 系统中引入了<ruby>内核实时补丁服务<rt>Kernel Livepatch Service</rt></ruby>。实时补丁服务允许你安装和应用关键的 Linux 内核安全更新，而无需重新启动系统。这意味着，在应用内核补丁程序后，你无需重新启动系统。而通常情况下，我们需要在安装内核补丁后重启 Linux 服务器才能供系统使用。
 
@@ -113,9 +115,9 @@ version: ""
 
 `patchState` 会有以下状态之一：
 
-   * `applied`：未发现任何漏洞
-   * `nothing-to-apply`：成功找到并修补了漏洞
-   * `kernel-upgrade-required`：实时补丁服务无法安装补丁来修复漏洞
+* `applied`：未发现任何漏洞
+* `nothing-to-apply`：成功找到并修补了漏洞
+* `kernel-upgrade-required`：实时补丁服务无法安装补丁来修复漏洞
 
 请注意，安装内核补丁与在系统上升级/安装新内核不同。如果安装了新内核，则必须重新引导系统以激活新内核。
 
