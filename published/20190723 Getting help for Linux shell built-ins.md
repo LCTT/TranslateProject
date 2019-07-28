@@ -1,44 +1,45 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11158-1.html)
 [#]: subject: (Getting help for Linux shell built-ins)
 [#]: via: (https://www.networkworld.com/article/3410350/getting-help-for-linux-shell-built-ins.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
 获取有关 Linux shell 内置命令的帮助
 ======
-Linux 内置命令是属于用户 shell 的一部分，本文将告诉你如何识别它们并从它们那获得帮助。
-![Sandra Henry-Stocker][1]
 
-Linux 内置命令是内置于 shell 中的命令，很像内置于墙中的架子。与标准 Linux 命令存储在 /usr/bin 中的方式不同，它们不会作为独立文件被你找到，你可能会使用它们中的相当一部分，但不会质疑它们与 **ls** 和 **pwd** 等命令有何不同。
+> Linux 内置命令属于用户 shell 的一部分，本文将告诉你如何识别它们并获取使用它们的帮助。
 
-内置命令与其他 Linux 命令一样使，它们可能比不属于 shell 的类似命令运行得快一些。Bash 内置命令包括 **alias**、**export** 和 **bg** 等。
+![](https://img.linux.net.cn/data/attachment/album/201907/28/204915bj1wmhxeargx14lt.jpg)
 
-**[ 两分钟 Linux 技巧: [学习如何在 2 分钟视频教程中掌握大量 Linux 命令][2] ]**
+Linux 内置命令是内置于 shell 中的命令，很像内置于墙中的书架。与标准 Linux 命令存储在 `/usr/bin` 中的方式不同，你不会找到它们的独立文件，你可能使用过相当多的内置命令，但你不会感觉到它们与 `ls` 和 `pwd` 等命令有何不同。
 
-正如你担心的那样，因为内置命令是特定于 shell 的，所以它们不会提供手册页。使用 **man** 来查看 **bg**，你会看到这样的东西：
+内置命令与其他 Linux 命令一样使用，它们可能要比不属于 shell 的类似命令运行得快一些。Bash 内置命令包括 `alias`、`export` 和 `bg` 等。
+
+正如你担心的那样，因为内置命令是特定于 shell 的，所以它们不会提供手册页。使用 `man` 来查看 `bg`，你会看到这样的东西：
 
 ```
 $ man bg
 No manual entry for bg
 ```
 
-判断内置命令的另一个提示是当你使用 **which** 命令来识别命令的来源时，Bash 不会响应，表示没有与内置命令关联的文件：
+判断内置命令的另一个提示是当你使用 `which` 命令来识别命令的来源时，Bash 不会响应，表示没有与内置命令关联的文件：
+
 ```
 $ which bg
 $
 ```
 
-如果你的 shell 是 **/bin/zsh**，另一方面，你可能会得到一个更有启发性的响应：
+另一方面，如果你的 shell 是 `/bin/zsh`，你可能会得到一个更有启发性的响应：
 
 ```
 % which bg
 bg: shell built-in command
 ```
 
-bash 提供了额外的帮助，但它是通过使用 **help** 命令实现的：
+bash 提供了额外的帮助信息，但它是通过使用 `help` 命令实现的：
 
 ```
 $ help bg
@@ -53,7 +54,7 @@ bg: bg [job_spec ...]
     Returns success unless job control is not enabled or an error occurs.
 ```
 
-如果你想要查看 bash 提供的所有内置命令的列表，使用 **compgen -b** 命令。通过管道将命令输出到列中，以获得较好格式的清单。
+如果你想要查看 bash 提供的所有内置命令的列表，使用 `compgen -b` 命令。通过管道将命令输出到列中，以获得较好格式的清单。
 
 ```
 $ compgen -b | column
@@ -70,7 +71,8 @@ cd             eval           jobs           readarray      true
 command        exec           kill           readonly       type
 ```
 
-如果你使用 **help** 命令，你将看到一个内置命令列表以及简短描述。但是，这个列表被截断了（以 **help** 命令结尾）：
+如果你使用 `help` 命令，你将看到一个内置命令列表以及简短描述。但是，这个列表被截断了（以 `help` 命令结尾）：
+
 ```
 $ help
 GNU bash, version 5.0.3(1)-release (x86_64-pc-linux-gnu)
@@ -121,9 +123,9 @@ A star (*) next to a name means that the command is disabled.
  help [-dms] [pattern ...]                { COMMANDS ; }
 ```
 
-从上面的清单中可以看出，**help** 命令本身就是内置的。
+从上面的清单中可以看出，`help` 命令本身就是内置的。
 
-你可以通过向 **help** 命令提供你感兴趣的内置命令名称来获取关于它们的更多信息，例如 **help dirs**：
+你可以通过向 `help` 命令提供你感兴趣的内置命令名称来获取关于它们的更多信息，例如 `help dirs`：
 
 ```
 $ help dirs
@@ -155,7 +157,7 @@ dirs: dirs [-clpv] [+N] [-N]
     Returns success unless an invalid option is supplied or an error occurs.
 ```
 
-内置命令提供了每个 shell 的大部分功能。你使用的任何 shell 都有一些内置命令，但是如何获取这些内置命令的信息可能因 shell 而异。例如，对于 **zsh**，你可以使用 **man zshbuiltins** 命令获得其内置命令的描述。
+内置命令提供了每个 shell 的大部分功能。你使用的任何 shell 都有一些内置命令，但是如何获取这些内置命令的信息可能因 shell 而异。例如，对于 `zsh`，你可以使用 `man zshbuiltins` 命令获得其内置命令的描述。
 
 ```
 $ man zshbuiltins
@@ -196,10 +198,6 @@ break [ n ]
 
 Linux 内置命令对于每个 shell 都很重要，它的操作类似特定于 shell 的命令一样。如果你经常使用不同的 shell，并注意到你经常使用的某些命令似乎不存在或者不能按预期工作，那么它可能是你使用的其他 shell 之一中的内置命令。
 
-**[ 另请参考： [Linux 疑难解答的宝贵提示和技巧][3] ]**
-
-加入 [Facebook][4] 和 [Linkedln][5] 上的网络世界社区，对你最关心的话题发表评论。
-
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3410350/getting-help-for-linux-shell-built-ins.html
@@ -207,7 +205,7 @@ via: https://www.networkworld.com/article/3410350/getting-help-for-linux-shell-b
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
