@@ -32,14 +32,11 @@ Linux 内核的每个发布版本包含了来自 1,700 个开发者产生的 14,
 
 #### CKI 团队如何运作？
 
-The CKI team at Red Hat currently follows changes from several internal kernels, as well as upstream kernels such as the [stable kernel tree][3]. We watch for two critical events in each repository:
+Red Hat 的 CKI 团队当前正追踪来自数个内部内核分支和[稳定内核分支树][3]等上游内核分支的更改。我们关注每个代码库的两类关键事件：
 
-  1. When maintainers merge pull requests or patches, and the resulting commits in the repository change.
+  1. 当维护人员合并 PR 或者补丁时，代码库变化后的最终结果。
 
-  2. When developers propose changes for merging via patchwork or the stable patch queue.
-
-
-
+  2. 当开发人员通过拼凑的或者稳定的补丁队列发起合并时。
 
 As these events occur, automation springs into action and [GitLab CI pipelines][4] begin the testing process. Once the pipeline runs [linting][5] scripts, merges any patches, and compiles the kernel for multiple architectures, the real testing begins. We compile kernels in under six minutes for four architectures and submit feedback to the stable mailing list usually in two hours or less. Over 100,000 kernel tests run each month and over 11,000 GitLab pipelines have completed (since January 2019).
 
