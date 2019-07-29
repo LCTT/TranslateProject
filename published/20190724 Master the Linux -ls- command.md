@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11159-1.html)
 [#]: subject: (Master the Linux 'ls' command)
 [#]: via: (https://opensource.com/article/19/7/master-ls-command)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > Linux 的 ls 命令拥有数量惊人的选项，可以提供有关文件的重要信息。
 
-![Hand putting a Linux file folder into a drawer][1]
+![](https://img.linux.net.cn/data/attachment/album/201907/29/105754ii3874q2ww7lo882.jpg)
 
 `ls` 命令可以列出一个 [POSIX][2] 系统上的文件。这是一个简单的命令，但它经常被低估，不是它能做什么（因为它确实只做了一件事），而是你该如何优化对它的使用。
 
