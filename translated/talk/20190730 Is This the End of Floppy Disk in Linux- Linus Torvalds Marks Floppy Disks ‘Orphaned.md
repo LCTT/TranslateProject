@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11167-1.html)
 [#]: subject: (Is This the End of Floppy Disk in Linux? Linus Torvalds Marks Floppy Disks ‘Orphaned’)
 [#]: via: (https://itsfoss.com/end-of-floppy-disk-in-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -33,8 +33,6 @@ Linux 中的软盘走向终结了吗？Torvalds 将软盘的驱动标记为“�
 ### “孤儿”在 Linux 内核中意味着什么？
 
 “孤儿”意味着没有开发人员能够或愿意支持这部分代码。如果没有其他人出现继续维护和开发它，孤儿模块可能会被弃用并最终删除。
-
-[][5]
 
 ### 它没有被立即删除
 
