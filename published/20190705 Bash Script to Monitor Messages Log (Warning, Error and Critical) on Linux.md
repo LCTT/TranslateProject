@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11171-1.html)
 [#]: subject: (Bash Script to Monitor Messages Log (Warning, Error and Critical) on Linux)
 [#]: via: (https://www.2daygeek.com/linux-bash-script-to-monitor-messages-log-warning-error-critical-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -90,7 +90,8 @@ Jul  3 02:50:14 ns1 kernel: lmtp[8249]: segfault at 20 ip 00007f9cc05295e4 sp 00
 Jul  3 15:36:09 ns1 kernel: php-fpm[17846]: segfault at 299 ip 000055dfe7cc7e25 sp 00007ffd799d7d38 error 4 in php-fpm[55dfe7a89000+3a7000]
 Jul  3 15:45:54 ns1 pure-ftpd: (?@5.188.62.5) [WARNING] Authentication failed for user [daygeek]
 Jul  3 16:25:36 ns1 pure-ftpd: (?@104.140.148.58) [WARNING] Sorry, cleartext sessions and weak ciphers are not accepted on this server.#012Please reconnect using TLS security mechanisms.
-Jul  3 16:44:20 ns1 kernel: php-fpm[8979]: segfault at 299 ip 000055dfe7cc7e25 sp 00007ffd799d7d38 error 4 in php-fpm[55dfe7a89000+3a7000]```
+Jul  3 16:44:20 ns1 kernel: php-fpm[8979]: segfault at 299 ip 000055dfe7cc7e25 sp 00007ffd799d7d38 error 4 in php-fpm[55dfe7a89000+3a7000]
+```
 
 --------------------------------------------------------------------------------
 
