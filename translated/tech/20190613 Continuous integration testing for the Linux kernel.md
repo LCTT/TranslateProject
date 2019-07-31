@@ -10,29 +10,29 @@
 Linux 内核的持续集成测试
 ======
 
-> 团队如何防止 bug 被合并到 Linux 内核中。
+> 这个团队是如何防止 bug 被合并到 Linux 内核中。
 
 ![Linux kernel source code \(C\) in Visual Studio Code][1]
 
-Linux 内核的每个发布版本包含了来自 1,700 个开发者产生的 14,000 个更改，很显然，这使得 Linux 内核快速迭代的同时也产生了大量复杂性问题。内核上 Bug 有小麻烦也有大问题，例如系统奔溃和数据丢失。
+Linux 内核的每个发布版本包含了来自 1,700 个开发者产生的 14,000 个更改，很显然，这使得 Linux 内核快速迭代的同时也产生了巨大的复杂性问题。内核上 Bug 有小麻烦也有大问题，例如系统奔溃和数据丢失。
 
-随着越来越多的项目对于持续集成（CI）的呼声，[内核持续集成（CKI）][2]小组保持着一个任务目标：防止 Bug 被合并到内核当中。
+随着越来越多的项目对于持续集成（CI）的呼声，[内核持续集成（CKI）][2]小组秉承着一个任务目标：防止 Bug 被合并到内核当中。
 
 ### Linux 测试问题
 
-许多 Linux 发行版只在需要的时候测试 Linux 内核。而这个测试往往只在版本发布时或者用户发现错误时进行。
+许多 Linux 发行版只在需要的时候对 Linux 内核进行测试。而这种测试往往只在版本发布时或者用户发现错误时进行。
 
-有时会出现不相关的问题，维护人员会在包含了数万个补丁的变更中匆忙地寻找哪个补丁导致这个不相关的新 Bug。诊断 Bug 需要专业的硬件设备、一系列的触发器以及内核相关的专业知识。
+有时候，出现玄学问题时，维护人员需要在包含了数万个补丁的变更中匆忙地寻找哪个补丁导致这个新的玄学 Bug。诊断 Bug 需要专业的硬件设备、一系列的触发器以及内核相关的专业知识。
 
 #### CI 和 Linux
 
-许多现代软件代码库都采用某种自动化 CI 测试，能够在提交进入代码存储库之前对其进行测试。这种自动化测试运行维护人员通过查看 CI 测试报告来发现软件质量问题已经大多数错误。一些更方便的项目，比如某个 python 库，附带的大量工具使得整个检查过程更简单。
+许多现代软件代码库都采用某种自动化 CI 测试机制，能够在提交进入代码存储库之前对其进行测试。这种自动化测试使得维护人员可以通过查看 CI 测试报告来发现软件质量问题以及大多数的错误。一些更方便的项目，比如某个 python 库，附带的大量工具使得整个检查过程更简单。
 
-在任何测试之前都需要配置和编译 Linux。而这么做将耗费大量的时间和计算资源。此外，Linux 内核必需在虚拟机或者裸机上启动才能进行测试。访问某些硬件架构需要额外的开销或者非常慢的仿真。因此，必需有人确定一组能够触发错误或者验证修复的测试组。
+在任何测试之前都需要配置和编译 Linux。而这么做将耗费大量的时间和计算资源。此外，Linux 内核必需在虚拟机或者裸机上启动才能进行测试。而访问某些硬件架构需要额外的开销或者非常慢的仿真。因此，必需有人确定一组能够触发错误或者验证修复的测试集。
 
 #### CKI 团队如何运作？
 
-Red Hat 公司的 CKI 团队当前正追踪来自数个内部内核分支和[稳定内核分支树][3]等上游内核分支的更改。我们关注每个代码库的两类关键事件：
+Red Hat 公司的 CKI 团队当前正追踪来自数个内部内核分支和上游的[稳定内核分支树][3]等内核分支的更改。我们关注每个代码库的两类关键事件：
 
   1. 当维护人员合并 PR 或者补丁时，代码库变化后的最终结果。
 
@@ -58,7 +58,7 @@ Red Hat 公司的 CKI 团队当前正追踪来自数个内部内核分支和[稳
 
 如果你或者你的公司想要参与这一工作，请参加在葡萄牙里斯本举办的 [Linux Plumbers Conference 2019][20]。在会议结束后的两天加入我们的 Kernel CI hackfest 活动，并推动快速内核测试的发展。
 
-更多详细信息，[参见][21]我在 Texas Linux Fest 2019 上的演讲。
+更多详细信息，[请见][21]我在 Texas Linux Fest 2019 上的演讲。
 
 --------------------------------------------------------------------------------
 
@@ -73,7 +73,7 @@ via: https://opensource.com/article/19/6/continuous-kernel-integration-linux
 
 [a]: https://opensource.com/users/mhayden
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux_kernel_clang_vscode.jpg?itok=fozZ4zrr (Linux kernel source code (C) in Visual Studio Code)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux_kernel_clang_vscode.jpg?itok=fozZ4zrr "Linux kernel source code (C) in Visual Studio Code"
 [2]: https://cki-project.org/
 [3]: https://www.kernel.org/doc/html/latest/process/stable-kernel-rules.html
 [4]: https://docs.gitlab.com/ee/ci/pipelines.html
