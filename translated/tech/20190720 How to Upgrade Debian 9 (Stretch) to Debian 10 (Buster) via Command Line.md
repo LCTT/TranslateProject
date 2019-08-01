@@ -1,51 +1,47 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Upgrade Debian 9 (Stretch) to Debian 10 (Buster) via Command Line)
 [#]: via: (https://www.linuxtechi.com/upgrade-debian-9-to-debian-10-command-line/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-如何通过命令行升级 Debian 9 (Stretch) 为 Debian 10 (Buster)
+如何通过命令行升级 Debian 9 为 Debian 10 
 ======
 
-大家好!!!，很高兴见到你！我们已经在先前的文章中看到如何安装 [Debian 10(Buster)][1]。今天，我们将学习如何从 Debian 9 升级为 Debian 10，虽然我们已将看到 Debian 10 和它的特色a，让我们不要深入它。但是读者没有机会来读那篇文章，让我们给予一个快速更新 Debian 10 和它的新功能。
+我们已经在先前的文章中看到如何安装 [Debian 10（Buster）][1]。今天，我们将学习如何从 Debian 9 升级为 Debian 10，虽然我们已将看到 Debian 10 和它的特色，所以这里我们不会深入介绍。但是可能读者没有机会读到那篇文章，让我们快速了解一下 Debian 10 和它的新功能。
 
-<https://www.linuxtechi.com/wp-content/uploads/2019/07/Upgrade-Debian-9-to-Debian-10.jpg>
+![](https://www.linuxtechi.com/wp-content/uploads/2019/07/Upgrade-Debian-9-to-Debian-10.jpg)
 
-在差不多两年的开发后，Debian 小组最终发布一个稳定版本， Debian 10 的代码名称是Buster。Buster 是一个 LTS (长期支持支持)版本，因此未来将由 Debian 支持5年。
+在差不多两年的开发后，Debian 团队最终发布一个稳定版本，Debian 10 的代码名称是 Buster。Buster 是一个 LTS (长期支持支持)版本，因此未来将由 Debian 支持 5 年。
 
-### Debian 10 (Buster) – 新的特色
+### Debian 10（Buster）新的特色
 
-Debian 10 (Buster) 带来大量打包好的新的特色，对大多数的 Debian 粉丝是有益的。一些特色包括：
+Debian 10（Buster）回报给大多数 Debian 爱好者大量的新特色。一些特色包括：
 
   * GNOME 桌面 3.30
-  * AppArmor 默认启用
+  * 默认启用 AppArmor
   * 支持 Linux 内核 4.19.0-4
   * 支持 OpenJDk 11.0
-  * Moved from.15.2
+  * 从 Nodejs 4 ~ 8 升级到 Nodejs 10.15.2
   * Iptables 替换为 NFTables
 
-
-
-还有很多。
+等等。
 
 ### 从 Debian 9 到 Debian 10 的逐步升级指南
 
-在我们开始升级 Debian 10前，让我们看看升级需要的必备条件：
+在我们开始升级 Debian 10 前，让我们看看升级需要的必备条件：
 
-### 步骤 1) Debian 升级必备条件
+#### 步骤 1) Debian 升级必备条件
 
   * 一个良好的网络连接
-  * Root 用户权限
+  * root 用户权限
   * 数据备份
 
+备份你所有的应用程序代码库、数据文件、用户账号详细信息、配置文件是极其重要的，以便在升级出错时，你可以总是可以还原到先前的版本。
 
-
-备份你所有的应用程序代码库，数据文件，用户账号详细信息，配置文件是极其重要的，以便在升级期间出错时，你可以总是可以还原到先前的版本。
-
-### 步骤 2) 升级 Debian 9 现有的软件包
+#### 步骤 2) 升级 Debian 9 现有的软件包
 
 接下来的步骤是升级你所有现有的软件包，因为一些软件包被标志为保留不能升级，从 Debian 9 升级为 Debian 10 有失败或引发一些问题的可能性。所以，我们不冒任何风险，更好地升级软件包。使用下面的代码来升级软件包：
 
@@ -53,24 +49,24 @@ Debian 10 (Buster) 带来大量打包好的新的特色，对大多数的 Debian
 root@linuxtechi:~$ sudo apt update && sudo apt upgrade -y
 ```
 
-### 步骤 3) 修改软件包存储库文件 (/etc/sources.list)
+#### 步骤 3) 修改软件包存储库文件 /etc/sources.list
 
-接下来的步骤是修改软件包存储库文件 “/etc/sources.list” ，你需要用文本 “Buster” 替换 “Stretch”  
+接下来的步骤是修改软件包存储库文件 `/etc/sources.list`，你需要用文本 `Buster` 替换 `Stretch`。
 
-但是，在你更改任何东西前，确保如下创建一个 sources.list 文件的备份：
+但是，在你更改任何东西前，确保如下创建一个 `sources.list` 文件的备份：
 
 ```
 root@linuxtechi:~$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 ```
 
-现在使用下面的 sed 命令来在软件包存储库文件中使用 ‘**buster**‘ 替换 ‘**stretch**‘ ，示例如下显示，
+现在使用下面的 `sed` 命令来在软件包存储库文件中使用 `buster` 替换 `stretch`，示例如下显示：
 
 ```
 root@linuxtechi:~$ sudo sed -i 's/stretch/buster/g' /etc/apt/sources.list
 root@linuxtechi:~$ sudo sed -i 's/stretch/buster/g' /etc/apt/sources.list.d/*.list
 ```
 
-一旦文本更新，你需要如下更新软件包存储库索引：
+更新后，你需要如下更新软件包存储库索引：
 
 ```
 root@linuxtechi:~$ sudo apt update
@@ -91,25 +87,25 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 root@linuxtechi:~$
 ```
 
-### 步骤 4) 从 Debian 9 升级到 Debian 10
+#### 步骤 4) 从 Debian 9 升级到 Debian 10
 
-一旦你做完所有的更改，是时候从 Debian 9 升级到 Debian 10 。但是在这之前，再次如下确保更新你的软件包：
+你做完所有的更改后，是时候从 Debian 9 升级到 Debian 10 了。但是在这之前，再次如下确保更新你的软件包：
 
 ```
 root@linuxtechi:~$ sudo apt update && sudo apt upgrade -y
 ```
 
-在软件包升级期间，你将被提示启动服务，所以选择你较喜欢的选项
+在软件包升级期间，你将被提示启动服务，所以选择你较喜欢的选项。
 
-一旦你系统的所有软件包升级完成，是时候升级你的发行版的软件包。使用下面的代码来升级发行版：
+一旦你系统的所有软件包升级完成，就升级你的发行版的软件包。使用下面的代码来升级发行版：
 
 ```
 root@linuxtechi:~$ sudo apt dist-upgrade -y
 ```
 
-升级过程可能花费一些时间，取决于你的网络速度。记住在升级过程中，你将被问道一些问题，在软件包升级后是否需要重启服务，你是否需要保留现存的配置文件。如果你不想进行一些自定义更改，简单地键入 “Y” ，来让升级过程继续。
+升级过程可能花费一些时间，取决于你的网络速度。记住在升级过程中，你将被询问一些问题，在软件包升级后是否需要重启服务、你是否需要保留现存的配置文件等。如果你不想进行一些自定义更改，简单地键入 “Y” ，来让升级过程继续。
 
-### 步骤 5) 验证升级
+#### 步骤 5) 验证升级
 
 一旦升级过程完成，重启你的机器，并使用下面的方法检测版本：
 
@@ -129,7 +125,7 @@ root@linuxtechi:~$
 
 是的，你已经成功地从 Debian 9 升级到 Debian 10。
 
-验证升级的备用方法
+验证升级的备用方法：
 
 ```
 root@linuxtechi:~$ cat /etc/*-release
@@ -147,7 +143,7 @@ root@linuxtechi:~$
 
 ### 结束
 
-希望上面的逐步指南为你提供从 Debian 9(Stretch) 简单地升级为 Debian 10 (Buster) 的所有信息。在评论部分，请给予你使用 Debian 10 的反馈，建议，体验，更多 Linux 教程和文章，保持时时访问 LinuxTechi.com 。
+希望上面的逐步指南为你提供了从 Debian 9（Stretch）简单地升级为 Debian 10（Buster）的所有信息。在评论部分，请给予你使用 Debian 10 的反馈、建议、体验。
 
 --------------------------------------------------------------------------------
 
@@ -156,10 +152,10 @@ via: https://www.linuxtechi.com/upgrade-debian-9-to-debian-10-command-line/
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
 译者：[robsean](https://github.com/robsean)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.linuxtechi.com/author/pradeep/
 [b]: https://github.com/lujun9972
-[1]: https://www.linuxtechi.com/debian-10-buster-installation-guide/
+[1]: https://linux.cn/article-11083-1.html
