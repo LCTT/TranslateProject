@@ -1,53 +1,49 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Bash aliases you can’t live without)
 [#]: via: (https://opensource.com/article/19/7/bash-aliases)
-[#]: author: (Seth Kenlon https://opensource.com/users/sethhttps://opensource.com/users/sethhttps://opensource.com/users/marcobravohttps://opensource.com/users/samwebstudiohttps://opensource.com/users/greg-phttps://opensource.com/users/greg-p)
+[#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Bash aliases you can’t live without
+不可或缺的 Bash 别名
 ======
-Tired of typing the same long commands over and over? Do you feel
-inefficient working on the command line? Bash aliases can make a world
-of difference.
-![bash logo on green background][1]
 
-A Bash alias is a method of supplementing or overriding Bash commands with new ones. Bash aliases make it easy for users to customize their experience in a [POSIX][2] terminal. They are often defined in **$HOME/.bashrc** or **$HOME/bash_aliases** (which must be loaded by **$HOME/.bashrc**).
+> 厌倦了一遍又一遍地输入相同的长命令？你觉得在命令行上工作效率低吗？Bash 别名可以为你创造一个与众不同的世界。
 
-Most distributions add at least some popular aliases in the default **.bashrc** file of any new user account. These are simple ones to demonstrate the syntax of a Bash alias:
+![](https://img.linux.net.cn/data/attachment/album/201908/03/095855ip0h0jpi5u9t3r00.jpg)
 
+Bash 别名是一种用新的命令补充或覆盖 Bash 命令的方法。Bash 别名使用户可以轻松地在 [POSIX][2] 终端中自定义其体验。它们通常定义在 `$HOME/.bashrc` 或 `$HOME/bash_aliases` 中（它是由 `$HOME/.bashrc` 加载的）。
+
+大多数发行版在新用户帐户的默认 `.bashrc` 文件中至少添加了一些流行的别名。这些可以用来简单演示 Bash 别名的语法：
 
 ```
 alias ls='ls -F'
 alias ll='ls -lh'
 ```
 
-Not all distributions ship with pre-populated aliases, though. If you add aliases manually, then you must load them into your current Bash session:
-
+但并非所有发行版都附带预先添加好的别名。如果你想手动添加别名，则必须将它们加载到当前的 Bash 会话中：
 
 ```
 $ source ~/.bashrc
 ```
 
-Otherwise, you can close your terminal and re-open it so that it reloads its configuration file.
+否则，你可以关闭终端并重新打开它，以便重新加载其配置文件。
 
-With those aliases defined in your Bash initialization script, you can then type **ll** and get the results of **ls -l**, and when you type **ls** you get, instead of the output of plain old ****[ls][3].
+通过 Bash 初始化脚本中定义的那些别名，你可以键入 `ll` 而得到 `ls -l` 的结果，当你键入 `ls` 时，得到也不是原来的 [ls][3] 的普通输出。
 
-Those aliases are great to have, but they just scratch the surface of what’s possible. Here are the top 10 Bash aliases that, once you try them, you won’t be able to live without.
+那些别名很棒，但它们只是浅尝辄止。以下是十大 Bash 别名，一旦你试过它们，你会发现再也不能离开它们。
 
-### Set up first
+### 首先设置
 
-Before beginning, create a file called **~/.bash_aliases**:
-
+在开始之前，创建一个名为 `~/.bash_aliases` 的文件：
 
 ```
 $ touch ~/.bash_aliases
 ```
 
-Then, make sure that this code appears in your **~/.bashrc** file:
-
+然后，确认这些代码出现在你的 `~/.bashrc` 文件当中：
 
 ```
 if [ -e $HOME/.bash_aliases ]; then
@@ -55,21 +51,19 @@ if [ -e $HOME/.bash_aliases ]; then
 fi
 ```
 
-If you want to try any of the aliases in this article for yourself, enter them into your **.bash_aliases** file, and then load them into your Bash session with the **source ~/.bashrc** command.
+如果你想亲自尝试本文中的任何别名，请将它们输入到 `.bash_aliases` 文件当中，然后使用 `source ~/.bashrc` 命令将它们加载到当前 Bash 会话中。
 
-### Sort by file size
+### 按文件大小排序
 
-If you started your computing life with GUI file managers like Nautilus in GNOME, the Finder in MacOS, or Explorer in Windows, then you’re probably used to sorting a list of files by their size. You can do that in a terminal as well, but it’s not exactly succinct.
+如果你一开始使用过 GNOME 中的 Nautilus、MacOS 中的 Finder 或 Windows 中的资源管理器等 GUI 文件管理器，那么你很可能习惯了按文件大小排序文件列表。你也可以在终端上做到这一点，但这条命令不是很简洁。
 
-Add this alias to your configuration on a GNU system:
-
+将此别名添加到 GNU 系统上的配置中：
 
 ```
 alias lt='ls --human-readable --size -1 -S --classify'
 ```
 
-This alias replaces **lt** with an **ls** command that displays the size of each item, and then sorts it by size, in a single column, with a notation to indicate the kind of file. Load your new alias, and then try it out:
-
+此别名将 `lt` 替换为 `ls` 命令，该命令在单个列中显示每个项目的大小，然后按大小对其进行排序，并使用符号表示文件类型。加载新别名，然后试一下：
 
 ```
 $ source ~/.bashrc
@@ -98,15 +92,13 @@ total 344K
    0 COPYING@
 ```
 
-On MacOS or BSD, the **ls** command doesn’t have the same options, so this alias works instead:
-
+在 MacOS 或 BSD 上，`ls` 命令没有相同的选项，因此这个别名可以改为：
 
 ```
 alias lt='du -sh * | sort -h'
 ```
 
-The results of this version are a little different:
-
+这个版本的结果稍有不同：
 
 ```
 $ du -sh * | sort -h
@@ -133,16 +125,15 @@ $ du -sh * | sort -h
 476K    autom4te.cache
 ```
 
-In fact, even on Linux, that command is useful, because ****using **ls** lists directories and symlinks as being 0 in size, which may not be the information you actually want. It’s your choice.
+实际上，即使在 Linux上，上面这个命令也很有用，因为使用 `ls` 列出的目录和符号链接的大小为 0，这可能不是你真正想要的信息。使用哪个看你自己的喜好。
 
-_Thanks to Brad Alexander for this alias idea._
+*感谢 Brad Alexander 提供的这个别名的思路。*
 
-### View only mounted drives
+### 只查看挂载的驱动器
 
-The **mount** command used to be so simple. With just one command, you could get a list of all the mounted filesystems on your computer, and it was frequently used for an overview of what drives were attached to a workstation. It used to be impressive to see more than three or four entries because most computers don’t have many more USB ports than that, so the results were manageable.
+`mount` 命令过去很简单。只需一个命令，你就可以获得计算机上所有已挂载的文件系统的列表，它经常用于概览连接到工作站有哪些驱动器。在过去看到超过三、四个条目就会令人印象深刻，因为大多数计算机没有那么多的 USB 端口，因此这个结果还是比较好查看的。
 
-Computers are a little more complicated now, and between LVM, physical drives, network storage, and virtual filesystems, the results of **mount** can be difficult to parse:
-
+现在计算机有点复杂，有 LVM、物理驱动器、网络存储和虚拟文件系统，`mount` 的结果就很难一目了然：
 
 ```
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
@@ -159,15 +150,13 @@ gvfsd-fuse on /run/user/100977/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relati
 binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
 ```
 
-To solve that problem, try an alias like this:
-
+要解决这个问题，试试这个别名：
 
 ```
 alias mnt='mount | awk -F' ' '{ printf "%s\t%s\n",$1,$3; }' | column -t | egrep ^/dev/ | sort'
 ```
 
-This alias uses **awk** to parse the output of **mount** by column, reducing the output to what you probably looking for (what hard drives, and not file systems, are mounted):
-
+此别名使用 `awk` 按列解析 `mount` 的输出，将输出减少到你可能想要查找的内容（挂载了哪些硬盘驱动器，而不是文件系统）：
 
 ```
 $ mnt
@@ -178,15 +167,13 @@ $ mnt
 /dev/sdc1                /run/media/seth/trip
 ```
 
-On MacOS, the **mount** command doesn’t provide terribly verbose output, so an alias may be overkill. However, if you prefer a succinct report, try this:
-
+在 MacOS 上，`mount` 命令不提供非常详细的输出，因此这个别名可能过度精简了。但是，如果你更喜欢简洁的报告，请尝试以下方法：
 
 ```
 alias mnt='mount | grep -E ^/dev | column -t'
 ```
 
-The results:
-
+结果：
 
 ```
 $ mnt
@@ -194,21 +181,19 @@ $ mnt
 /dev/disk1s4  on  /private/var/vm  (apfs,  local,  noexec,     journaled,  noatime,  nobrowse)
 ```
 
-### Find a command in your grep history
+### 在你的 grep 历史中查找命令
 
-Sometimes you figure out how to do something in the terminal, and promise yourself that you’ll never forget what you’ve just learned. Then an hour goes by, and you’ve completely forgotten what you did.
+有时你好不容易弄清楚了如何在终端完成某件事，并觉得自己永远不会忘记你刚学到的东西。然后，一个小时过去之后你就完全忘记了你做了什么。
 
-Searching through your Bash history is something everyone has to do from time to time. If you know exactly what you’re searching for, you can use **Ctrl+R** to do a reverse search through your history, but sometimes you can’t remember the exact command you want to find.
+搜索 Bash 历史记录是每个人不时要做的事情。如果你确切地知道要搜索的内容，可以使用 `Ctrl + R` 对历史记录进行反向搜索，但有时你无法记住要查找的确切命令。
 
-Here’s an alias to make that task a little easier:
-
+这是使该任务更容易的别名：
 
 ```
 alias gh='history|grep'
 ```
 
-Here’s an example of how to use it:
-
+这是如何使用的例子：
 
 ```
 $ gh bash
@@ -218,19 +203,17 @@ $ gh bash
 531 source ~/.bashrc
 ```
 
-### Sort by modification time
+### 按修改时间排序
 
-It happens every Monday: You get to work, you sit down at your computer, you open a terminal, and you find you’ve forgotten what you were doing last Friday. What you need is an alias to list the most recently modified files.
+每个星期一都会这样：你坐在你的电脑前开始工作，你打开一个终端，你发现你已经忘记了上周五你在做什么。你需要的是列出最近修改的文件的别名。
 
-You can use the **ls** command to create an alias to help you find where you left off:
-
+你可以使用 `ls` 命令创建别名，以帮助你找到上次离开的位置：
 
 ```
 alias left='ls -t -1'
 ```
 
-The output is simple, although you can extend it with the --**long** option if you prefer. The alias, as listed, displays this:
-
+输出很简单，但如果你愿意，可以使用 `--long` 选项扩展它。这个别名列出的显示如下：
 
 ```
 $ left
@@ -242,21 +225,19 @@ brainstorm.txt
 query-letter.xml
 ```
 
-### Count files
+### 文件计数
 
-If you need to know how many files you have in a directory, the solution is one of the most classic examples of UNIX command construction: You list files with the **ls** command, control its output to be only one column with the **-1** option, and then pipe that output to the **wc** (word count) command to count how many lines of single files there are.
+如果你需要知道目录中有多少文件，那么该解决方案是 UNIX 命令构造的最典型示例之一：使用 `ls` 命令列出文件，用`-1` 选项将其输出控制为只有一列，然后输出到 `wc`（单词计数）命令的管道，以计算有多少行。
 
-It’s a brilliant demonstration of how the UNIX philosophy allows users to build their own solutions using small system components. This command combination is also a lot to type if you happen to do it several times a day, and it doesn’t exactly work for a directory of directories without using the **-R** option, which introduces new lines to the output and renders the exercise useless.
+这是 UNIX 理念如何允许用户使用小型的系统组件构建自己的解决方案的精彩演示。如果你碰巧每天都要做几次，这个命令组合也要输入很多字母，如果没有使用 `-R` 选项，它就不能用于目录，这会为输出引入新行并导致无用的结果。
 
-Instead, this alias makes the process easy:
-
+而这个别名使这个过程变得简单：
 
 ```
 alias count='find . -type f | wc -l'
 ```
 
-This one counts files, ignoring directories, but _not_ the contents of directories. If you have a project folder containing two directories, each of which contains two files, the alias returns four, because there are four files in the entire project.
-
+这个别名会计算文件，忽略目录，但**不会**忽略目录的内容。如果你有一个包含两个目录的项目文件夹，每个目录包含两个文件，则该别名将返回 4，因为整个项目中有 4 个文件。
 
 ```
 $ ls
@@ -265,23 +246,22 @@ $ count
 4
 ```
 
-### Create a Python virtual environment
+### 创建 Python 虚拟环境
 
-Do you code in Python?
+你用 Python 编程吗？
 
-Do you code in Python a lot?
+你用 Python 编写了很多程序吗？
 
-If you do, then you know that creating a Python virtual environment requires, at the very least, 53 keystrokes.
-That’s 49 too many, but that’s easily circumvented with two new aliases called **ve** and **va**:
+如果是这样，那么你就知道创建 Python 虚拟环境至少需要 53 次击键。
 
+这个数字里有 49 次是多余的，它很容易被两个名为 `ve` 和 `va` 的新别名所解决：
 
 ```
 alias ve='python3 -m venv ./venv'
 alias va='source ./venv/bin/activate'
 ```
 
-Running **ve** creates a new directory, called **venv**, containing the usual virtual environment filesystem for Python3. The **va** alias activates the environment in your current shell:
-
+运行 `ve` 会创建一个名为 `venv` 的新目录，其中包含 Python 3 的常用虚拟环境文件系统。`va` 别名在当前 shell 中的激活该环境：
 
 ```
 $ cd my-project
@@ -290,48 +270,44 @@ $ va
 (venv) $
 ```
 
-### Add a copy progress bar
+### 增加一个复制进度条
 
-Everybody pokes fun at progress bars because they’re infamously inaccurate. And yet, deep down, we all seem to want them. The UNIX **cp** command has no progress bar, but it does have a **-v** option for verbosity, meaning that it echoes the name of each file being copied to your terminal. That’s a pretty good hack, but it doesn’t work so well when you’re copying one big file and want some indication of how much of the file has yet to be transferred.
+每个人都会吐槽进度条，因为它们似乎总是不合时宜。然而，在内心深处，我们似乎都想要它们。UNIX 的 `cp` 命令没有进度条，但它有一个 `-v` 选项用于显示详细信息，它回显了复制的每个文件名到终端。这是一个相当不错的技巧，但是当你复制一个大文件并且想要了解还有多少文件尚未传输时，它的作用就没那么大了。
 
-The **pv** command provides a progress bar during copy, but it’s not common as a default application. On the other hand, the **rsync** command is included in the default installation of nearly every POSIX system available, and it’s widely recognized as one of the smartest ways to copy files both remotely and locally.
+`pv` 命令可以在复制期间提供进度条，但它并不常用。另一方面，`rsync` 命令包含在几乎所有的 POSIX 系统的默认安装中，并且它被普遍认为是远程和本地复制文件的最智能方法之一。
 
-Better yet, it has a built-in progress bar.
-
+更好的是，它有一个内置的进度条。
 
 ```
 alias cpv='rsync -ah --info=progress2'
 ```
 
-Using this alias is the same as using the **cp** command:
-
+像使用 `cp` 命令一样使用此别名：
 
 ```
 $ cpv bigfile.flac /run/media/seth/audio/
           3.83M 6%  213.15MB/s    0:00:00 (xfr#4, to-chk=0/4)
 ```
 
-An interesting side effect of using this command is that **rsync** copies both files and directories without the **-r** flag that **cp** would otherwise require.
+使用此命令的一个有趣的副作用是 `rsync` 无需 `-r` 标志就可以复制文件和目录，而 `cp` 则需要。
 
-### Protect yourself from file removal accidents
+### 避免意外删除
 
-You shouldn’t use the **rm** command. The **rm** manual even says so:
+你不应该使用 `rm` 命令。`rm` 手册甚至这样说：
 
-> _Warning_: If you use ‘rm’ to remove a file, it is usually possible to recover the contents of that file. If you want more assurance that the contents are truly unrecoverable, consider using ‘shred’.
+> **警告：**如果使用 `rm` 删除文件，通常可以恢复该文件的内容。如果你想要更加确保内容真正无法恢复，请考虑使用 `shred`。
 
-If you want to remove a file, you should move the file to your Trash, just as you do when using a desktop.
+如果要删除文件，则应将文件移动到“废纸篓”，就像使用桌面时一样。
 
-POSIX makes this easy, because the Trash is an accessible, actual location in your filesystem. That location may change, depending on your platform: On a [FreeDesktop][4], the Trash is located at **~/.local/share/Trash**, while on MacOS it’s **~/.Trash**, but either way, it’s just a directory into which you place files that you want out of sight until you’re ready to erase them forever.
+POSIX 使这很简单，因为垃圾桶是文件系统中可访问的一个实际位置。该位置可能会发生变化，具体取决于你的平台：在 [FreeDesktop][4] 上，“垃圾桶”位于 `~/.local/share/Trash`，而在 MacOS 上则是 `~/.Trash`，但无论如何，它只是一个目录，你可以将文件藏在那个看不见的地方，直到你准备永久删除它们为止。
 
-This simple alias provides a way to toss files into the Trash bin from your terminal:
-
+这个简单的别名提供了一种从终端将文件扔进垃圾桶的方法：
 
 ```
 alias tcn='mv --force -t ~/.local/share/Trash '
 ```
 
-This alias uses a little-known **mv** flag that enables you to provide the file you want to move as the final argument, ignoring the usual requirement for that file to be listed first. Now you can use your new command to move files and folders to your system Trash:
-
+该别名使用一个鲜为人知的 `mv` 标志（`-t`），使你能够提供作为最终移动目标的参数，而忽略了首先列出要移动的文件的通常要求。现在，你可以使用新命令将文件和文件夹移动到系统垃圾桶：
 
 ```
 $ ls
@@ -341,47 +317,45 @@ $ ls
 bar
 ```
 
-Now the file is "gone," but only until you realize in a cold sweat that you still need it. At that point, you can rescue the file from your system Trash; be sure to tip the Bash and **mv** developers on the way out.
+现在文件已“消失”，只有在你一头冷汗的时候才意识到你还需要它。此时，你可以从系统垃圾桶中抢救该文件；这肯定可以给 Bash 和 `mv` 开发人员提供一些帮助。
 
-**Note:** If you need a more robust **Trash** command with better FreeDesktop compliance, see [Trashy][5].
+**注意：**如果你需要一个具有更好的 FreeDesktop 兼容性的更强大的垃圾桶命令，请参阅 [Trashy][5]。
 
-### Simplify your Git workflow
+### 简化 Git 工作流
 
-Everyone has a unique workflow, but there are usually repetitive tasks no matter what. If you work with Git on a regular basis, then there’s probably some sequence you find yourself repeating pretty frequently. Maybe you find yourself going back to the master branch and pulling the latest changes over and over again during the day, or maybe you find yourself creating tags and then pushing them to the remote, or maybe it’s something else entirely.
+每个人都有自己独特的工作流程，但无论如何，通常都会有重复的任务。如果你经常使用 Git，那么你可能会发现自己经常重复的一些操作序列。也许你会发现自己回到主分支并整天一遍又一遍地拉取最新的变化，或者你可能发现自己创建了标签然后将它们推到远端，抑或可能完全是其它的什么东西。
 
-No matter what Git incantation you’ve grown tired of typing, you may be able to alleviate some pain with a Bash alias. Largely thanks to its ability to pass arguments to hooks, Git has a rich set of introspective commands that save you from having to perform uncanny feats in Bash.
+无论让你厌倦一遍遍输入的 Git 魔咒是什么，你都可以通过 Bash 别名减轻一些痛苦。很大程度上，由于它能够将参数传递给钩子，Git 拥有着丰富的内省命令，可以让你不必在 Bash 中执行那些丑陋冗长的命令。
 
-For instance, while you might struggle to locate, in Bash, a project’s top-level directory (which, as far as Bash is concerned, is an entirely arbitrary designation, since the absolute top level to a computer is the root directory), Git knows its top level with a simple query. If you study up on Git hooks, you’ll find yourself able to find out all kinds of information that Bash knows nothing about, but you can leverage that information with a Bash alias.
+例如，虽然你可能很难在 Bash 中找到项目的顶级目录（就 Bash 而言，它是一个完全随意的名称，因为计算机的绝对顶级是根目录），但 Git 可以通过简单的查询找到项目的顶级目录。如果你研究过 Git 钩子，你会发现自己能够找到 Bash 一无所知的各种信息，而你可以利用 Bash 别名来利用这些信息。
 
-Here’s an alias to find the top level of a Git project, no matter where in that project you are currently working, and then to change directory to it, change to the master branch, and perform a Git pull:
-
+这是一个来查找 Git 项目的顶级目录的别名，无论你当前在哪个项目中工作，都可以将目录改变为顶级目录，切换到主分支，并执行 Git 拉取：
 
 ```
-alias startgit='cd `git rev-parse --show-toplevel` &amp;&amp; git checkout master &amp;&amp; git pull'
+alias startgit='cd `git rev-parse --show-toplevel` && git checkout master && git pull'
 ```
 
-This kind of alias is by no means a universally useful alias, but it demonstrates how a relatively simple alias can eliminate a lot of laborious navigation, commands, and waiting for prompts.
+这种别名绝不是一个普遍有用的别名，但它演示了一个相对简单的别名如何能够消除大量繁琐的导航、命令和等待提示。
 
-A simpler, and probably more universal, alias returns you to the Git project’s top level. This alias is useful because when you’re working on a project, that project more or less becomes your "temporary home" directory. It should be as simple to go "home" as it is to go to your actual home, and here’s an alias to do it:
-
+一个更简单，可能更通用的别名将使你返回到 Git 项目的顶级目录。这个别名非常有用，因为当你在一个项目上工作时，该项目或多或少会成为你的“临时家目录”。它应该像回家一样简单，就像回你真正的家一样，这里有一个别名：
 
 ```
 alias cg='cd `git rev-parse --show-toplevel`'
 ```
 
-Now the command **cg** takes you to the top of your Git project, no matter how deep into its directory structure you have descended.
+现在，命令 `cg` 将你带到 Git 项目的顶部，无论你下潜的目录结构有多深。
 
-### Change directories and view the contents at the same time
+### 切换目录并同时查看目录内容
 
-It was once (allegedly) proposed by a leading scientist that we could solve many of the planet’s energy problems by harnessing the energy expended by geeks typing **cd** followed by **ls**.
-It’s a common pattern, because generally when you change directories, you have the impulse or the need to see what’s around.
+（据称）曾经一位著名科学家提出过，我们可以通过收集极客输入 `cd` 后跟 `ls` 消耗的能量来解决地球上的许多能量问题。
 
-But "walking" your computer’s directory tree doesn’t have to be a start-and-stop process.
+这是一种常见的用法，因为通常当你更改目录时，你都会有查看周围的内容的冲动或需要。
 
-This one’s cheating, because it’s not an alias at all, but it’s a great excuse to explore Bash functions. While aliases are great for quick substitutions, Bash allows you to add local functions in your **.bashrc** file (or a separate functions file that you load into **.bashrc**, just as you do your aliases file).
+但是在你的计算机的目录树中移动并不一定是一个走走停停的过程。
 
-To keep things modular, create a new file called **~/.bash_functions** and then have your **.bashrc** load it:
+这是一个作弊，因为它根本不是别名，但它是探索 Bash 功能的一个很好的借口。虽然别名非常适合快速替换一个命令，但 Bash 也允许你在 `.bashrc` 文件中添加本地函数（或者你加载到 `.bashrc` 中的单独函数文件，就像你的别名文件一样）。
 
+为了保持模块化，创建一个名为 `~/.bash_functions` 的新文件，然后让你的 `.bashrc` 加载它：
 
 ```
 if [ -e $HOME/.bash_functions ]; then
@@ -389,8 +363,7 @@ if [ -e $HOME/.bash_functions ]; then
 fi
 ```
 
-In the functions file, add this code:
-
+在该函数文件中，添加这些代码：
 
 ```
 function cl() {
@@ -405,8 +378,7 @@ function cl() {
 }
 ```
 
-Load the function into your Bash session and then try it out:
-
+将函数加载到 Bash 会话中，然后尝试：
 
 ```
 $ source ~/.bash_functions
@@ -421,13 +393,13 @@ $ pwd
 /home/seth
 ```
 
-Functions are much more flexible than aliases, but with that flexibility comes the responsibility for you to ensure that your code makes sense and does what you expect. Aliases are meant to be simple, so keep them easy, but useful. For serious modifications to how Bash behaves, use functions or custom shell scripts saved to a location in your **PATH**.
+函数比别名更灵活，但有了这种灵活性，你就有责任确保代码有意义并达到你的期望。别名是简单的，所以要保持简单而有用。要正式修改 Bash 的行为，请使用保存到 `PATH` 环境变量中某个位置的函数或自定义的 shell 脚本。
 
-For the record, there _are_ some clever hacks to implement the **cd** and **ls** sequence as an alias, so if you’re patient enough, then the sky is the limit even using humble aliases.
+附注，有一些巧妙的奇技淫巧来实现 `cd` 和 `ls` 序列作为别名，所以如果你足够耐心，那么即使是一个简单的别名也永无止限。
 
-### Start aliasing and functioning
+### 开始别名化和函数化吧
 
-Customizing your environment is what makes Linux fun, and increasing your efficiency is what makes Linux life-changing. Get started with simple aliases, graduate to functions, and post your must-have aliases in the comments!
+可以定制你的环境使得 Linux 变得如此有趣，提高效率使得 Linux 可以改变生活。开始使用简单的别名，进而使用函数，并在评论中发布你必须拥有的别名！
 
 --------------------------------------------------------------------------------
 
@@ -435,12 +407,12 @@ via: https://opensource.com/article/19/7/bash-aliases
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: https://opensource.com/users/sethhttps://opensource.com/users/sethhttps://opensource.com/users/marcobravohttps://opensource.com/users/samwebstudiohttps://opensource.com/users/greg-phttps://opensource.com/users/greg-p
+[a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bash_command_line.png?itok=k4z94W2U (bash logo on green background)
 [2]: https://opensource.com/article/19/7/what-posix-richard-stallman-explains
