@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Manage your passwords with Bitwarden and Podman)
@@ -43,13 +43,13 @@ $ podman run -d \
  bitwardenrs/server:latest
 ```
 
-这将下载 bitwarden_rs 镜像并在用户命名空间下的用户容器中运行它。它使用 1024 以上的端口，以便非 root 用户可以绑定它。它还使用 _:Z_ 更改卷的 SELinux 上下文，以防止在 _ /data_ 中的读写权限问题。
+这将下载 bitwarden_rs 镜像并在用户命名空间下的用户容器中运行它。它使用 1024 以上的端口，以便非 root 用户可以绑定它。它还使用 `:Z` 更改卷的 SELinux 上下文，以防止在 `/data` 中的读写权限问题。
 
 如果你在某个域下托管它，建议将此服务器放在 Apache 或 Nginx 的反向代理下。这样，你可以使用 80 和 443 端口指向容器的 8080 端口，而无需以 root 身份运行容器。
 
 ### 在 systemd 下运行
 
-Bitwarden 现在运行了，你可能希望保持这种状态。接下来，创建一个使容器保持运行的单元文件，如果它没有响应则自动重新启动，并在系统重启后开始运行。创建文件 _/etc/systemd/system/bitwarden.service_：
+Bitwarden 现在运行了，你可能希望保持这种状态。接下来，创建一个使容器保持运行的单元文件，如果它没有响应则自动重新启动，并在系统重启后开始运行。创建文件 `/etc/systemd/system/bitwarden.service`：
 
 ```
 [Unit]
@@ -70,7 +70,7 @@ KillMode=none
 WantedBy=multi-user.target
 ```
 
-现在使用 _[sudo][12]_ 启用并启动：
+现在使用 [sudo][12] 启用并启动该服务：
 
 ```
 $ sudo systemctl enable bitwarden.service && sudo systemctl start bitwarden.service
@@ -89,11 +89,11 @@ bitwarden.service - Bitwarden Podman container
 
 如果你有域名，强烈建议你使用类似 LetsEncrypt 的加密证书运行你的 Bitwarden 实例。Certbot 是一个为我们创建 LetsEncrypt 证书的机器人，这里有个[在 Fedora 中操作的指南][13]。
 
-生成证书后，你可以按照 [bitwarden_rs 指南中关于 HTTPS 的部分来][14]。只要记得将 _:Z_ 附加到 LetsEncrypt 来处理权限，而不用更改端口。
+生成证书后，你可以按照 [bitwarden_rs 指南中关于 HTTPS 的部分来][14]。只要记得将 `:Z` 附加到 LetsEncrypt 来处理权限，而不用更改端口。
 
 * * *
 
-* 照片由 _[_CMDR Shane_][15]_  拍摄，发表在 [_Unsplash_][16] 上。
+照片由 [CMDR Shane][15] 拍摄，发表在 [Unsplash][16] 上。
 
 --------------------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ via: https://fedoramagazine.org/manage-your-passwords-with-bitwarden-and-podman/
 作者：[Eric Gustavsson][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
