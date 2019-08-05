@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/19/7/create-pull-request-github)
 [#]: author: (Kedar Vijay Kulkarni https://opensource.com/users/kkulkarnhttps://opensource.com/users/fontanahttps://opensource.com/users/mhanwellhttps://opensource.com/users/mysentimentshttps://opensource.com/users/greg-p)
 
-How to create a pull request in GitHub
+如何在Github上创建一个拉取请求
 ======
 Learn how to fork a repo, make changes, and ask the maintainers to
 review and merge it.
