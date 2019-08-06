@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11193-1.html)
 [#]: subject: (OpenHMD: Open Source Project for VR Development)
 [#]: via: (https://itsfoss.com/openhmd/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
@@ -10,7 +10,9 @@
 OpenHMD：用于 VR 开发的开源项目
 ======
 
-在这个时代，有一些开源替代品可满足你的所有计算需求。甚至还有一个 VR 眼镜之类的开源平台。让我们快速看一下 OpenHMD 这个项目。
+> 在这个时代，有一些开源替代品可满足你的所有计算需求。甚至还有一个 VR 眼镜之类的开源平台。让我们快速看一下 OpenHMD 这个项目。
+
+![][5]
 
 ### 什么是 OpenHMD？
 
@@ -24,8 +26,6 @@ OpenHMD 项目是在 [Boost 许可证][4]下发布的。
 
 ### 新版本中的更多功能和改进功能
 
-![][5]
-
 最近，OpenHMD 项目[发布版本 0.3.0][6]，代号为 Djungelvral（[Djungelvral][7] 是来自瑞典的盐渍甘草）。它带来了不少变化。
 
 这次更新添加了对以下设备的支持：
@@ -37,8 +37,6 @@ OpenHMD 项目是在 [Boost 许可证][4]下发布的。
   * Windows Mixed Reality HMD 支持
   * Deepoon E2
   * GearVR Gen1
-
-
 
 OpenHMD 增加了一个通用扭曲着色器。这一新增功能“可以方便地在驱动程序中设置一些变量，为着色器提供有关镜头尺寸、色差、位置和 Quirks 的信息。”
 
@@ -56,8 +54,6 @@ OpenHMD 背后的团队还不得不删除一些功能，因为他们希望他们
 
 你曾经使用或看到过 OpenHMD 吗？你有没有使用 VR 进行游戏和其他用途？如果是，你是否用过任何开源硬件或软件？请在下面的评论中告诉我们。
 
-如果你觉得这篇文章很有趣，请在社交媒体、Hacker News 或 [Reddit][9] 上分享它。
-
 --------------------------------------------------------------------------------
 
 via: https://itsfoss.com/openhmd/
@@ -65,7 +61,7 @@ via: https://itsfoss.com/openhmd/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
