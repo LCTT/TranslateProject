@@ -1,3 +1,4 @@
+0x996 is translating
 IT disaster recovery: Sysadmins vs. natural disasters | HPE
 ======
 
