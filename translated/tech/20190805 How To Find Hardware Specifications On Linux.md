@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
-[#]: subject: (How To Find Hardware Specifications On Linux)
+[#]: subject: (How  To Find Hardware Specifications On Linux)
 [#]: via: (https://www.ostechnix.com/getting-hardwaresoftware-specifications-in-linux-mint-ubuntu/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
 如何在 Linux 上查找硬件规格
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201908/06/111717t1f77n7v3egxhf18.jpg)
 
 在 Linux 系统上有许多工具可用于查找硬件规格。在这里，我列出了四种最常用的工具，可以获取 Linux 系统的几乎所有硬件（和软件）细节。好在是这些工具在某些 Linux 发行版上默认预装。我在 Ubuntu 18.04 LTS 桌面上测试了这些工具，但是它们也适用于其他 Linux 发行版。
 
@@ -44,7 +46,7 @@ $ sudo lshw
 
 *使用 lshw 在 Linux 上查找硬件规格*
 
-请注意，如果你没有使用 `sudo` 权限运行 `lshw` 命令，则输出可能不完整或不准确。
+请注意，如果你没有以 `sudo` 权限运行 `lshw` 命令，则输出可能不完整或不准确。
 
 `lshw` 可以将输出显示为 HTML 页面。为此，请使用：
 
@@ -75,7 +77,7 @@ $ sudo lshw -short
 $ sudo lshw -businfo
 ```
 
-默认情况下，`lshw` 显示所有硬件详细信息。你还可以居于 `-class` 选项查看特定硬件详细信息的硬件信息，例如处理器、内存、显示器等。可以使用 `lshw -short` 或 `lshw -businfo` 找到 `-class` 选项。
+默认情况下，`lshw` 显示所有硬件详细信息。你还可以使用类选项查看特定硬件详细信息的硬件信息，例如处理器、内存、显示器等。可以使用 `lshw -short` 或 `lshw -businfo` 找到类选项。
 
 要显示特定硬件详细信息，例如处理器，请执行以下操作：
 
@@ -165,7 +167,7 @@ $ lshw -sanitize
 $ sudo lshw-gtk
 ```
 
-这是 lshw 工具的默认 GUI 界面。
+这是 `lshw` 工具的默认 GUI 界面。
 
 ![][4]
 
@@ -187,7 +189,7 @@ $ man lshw
 
 ### 2、Inxi
 
-Inxi 是我查找 Linux 系统上几乎所有内容的另一个最喜欢的工具。它是一个自由开源的功能齐全的命令行系统信息工具。它显示了系统硬件、CPU、驱动程序、Xorg、桌面、内核、GCC 版本、进程、RAM 使用情况以及各种其他有用信息。无论是硬盘还是 CPU、主板还是整个系统的完整细节，inxi 都能在几秒钟内更准确地显示它。由于它是 CLI 工具，你可以在桌面或服务器版本中使用它。有关更多详细信息，请参阅以下指南。
+Inxi 是我查找 Linux 系统上几乎所有内容的另一个最喜欢的工具。它是一个自由开源的、功能齐全的命令行系统信息工具。它显示了系统硬件、CPU、驱动程序、Xorg、桌面、内核、GCC 版本、进程、RAM 使用情况以及各种其他有用信息。无论是硬盘还是 CPU、主板还是整个系统的完整细节，inxi 都能在几秒钟内更准确地显示它。由于它是 CLI 工具，你可以在桌面或服务器版本中使用它。有关更多详细信息，请参阅以下指南。
 
 * [如何使用 inxi 发现系统细节][6]
 
@@ -316,7 +318,7 @@ via: https://www.ostechnix.com/getting-hardwaresoftware-specifications-in-linux-
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
