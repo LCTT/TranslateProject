@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11199-1.html)
 [#]: subject: (Bash Script to Send a Mail When a New User Account is Created in System)
 [#]: via: (https://www.2daygeek.com/linux-bash-script-to-monitor-user-creation-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
 在系统创建新用户时发送邮件的 Bash 脚本
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201908/07/232807l7x4j7y77555j1j5.jpg)
 
 目前市场上有许多开源监测工具可用于监控 Linux 系统的性能。当系统到达指定的阈值时，它将发送邮件提醒。
 
