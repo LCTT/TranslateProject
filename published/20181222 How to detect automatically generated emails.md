@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11200-1.html)
 [#]: subject: (How to detect automatically generated emails)
 [#]: via: (https://arp242.net/weblog/autoreply.html)
 [#]: author: (Martin Tournoij https://arp242.net/)
 
 如何检测自动生成的电子邮件
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201908/08/003503fw0w0pzx2ue6a6a6.jpg)
 
 当你用电子邮件系统发送自动回复时，你需要注意不要向自动生成的电子邮件发送回复。最好的情况下，你将获得无用的投递失败消息。更可能的是，你会得到一个无限的电子邮件循环和一个混乱的世界。
 
