@@ -7,34 +7,34 @@
 [#]: via: (https://www.2daygeek.com/linux-bash-script-to-monitor-user-creation-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Bash Script to Send a Mail When a New User Account is Created in System
+在系统创建新用户时发送邮件的 Bash 脚本
 ======
 
-There are many open source monitoring tools are currently available in market to monitor Linux systems performance.
+目前市场上有许多开源监测工具可用于监控 Linux 系统的性能。
 
-It will send an email alert when the system reaches the specified threshold limit.
+当系统到达指定的阈值时，它将发送邮件提醒。
 
-It monitors everything such as CPU utilization, Memory utilization, swap utilization, disk space utilization and much more.
+它会监控 CPU 利用率、内存利用率、交换内存利用率、磁盘空间利用率等所有内容。
 
-But i don’t think they have an option to monitor a new user creation activity and alert when it’s happening.
+但我不认为他们可以选择监控新用户创建活动，并发送提醒。
 
-If not, it doesn’t really matter as we can write our own bash script to achieve this.
+如果没有，这并不重要，因为我们可以编写自己的 bash 脚本来实现这一点。
 
-We had added many useful shell scripts in the past. If you want to check those, navigate to the below link.
+我们过去写了许多有用的 shell 脚本。如果要查看它们，请点击以下链接。
 
-  * **[How to automate day to day activities using shell scripts?][1]**
+  * **[如何使用 shell 脚本自动化执行日常任务？][1]**
 
 
 
-What the script does? It monitors **`/var/log/secure`**` ` file and alert admin when a new account is created in system.
+脚本做了什么？它监测 **`/var/log/secure`** 文件，并在系统创建新帐户时提醒管理员。
 
-We can’t run this script frequently since user creation is not happening very often. However, I’m planning to run this script once in a day.
+我们不会经常运行此脚本，因为创建用户不经常发生。但是，我打算一天运行一次这个脚本。
 
-So, that we can get a consolidated report about the user creation.
+因此，我们可以获得有关用户创建的综合报告。
 
-If useradd string was found in “/var/log/secure” file for yesterday’s date, then the script will send an email alert to given email id with new users details.
+如果在昨天的 “/var/log/secure” 中找到了 useradd 字符串，那么该脚本将向指定的邮箱发送邮件提醒，其中包含了新用户的详细信息。
 
-**Note:** You need to change the email id instead of ours.
+**注意：**你需要更改邮箱而不是使用我们的邮箱。
 
 ```
 # vi /opt/scripts/new-user.sh
@@ -77,13 +77,13 @@ rm $MESSAGE
 fi
 ```
 
-Set an executable permission to **`new-user.sh`**` ` file.
+给 **`new-user.sh`** 添加可执行权限。
 
 ```
 $ chmod +x /opt/scripts/new-user.sh
 ```
 
-Finally add a cronjob to automate this. It will run everyday at 7'o clock.
+最后添加一个 cron 任务来自动化执行它。它会在每天 7 点运行。
 
 ```
 # crontab -e
@@ -91,9 +91,9 @@ Finally add a cronjob to automate this. It will run everyday at 7'o clock.
 0 7 * * * /bin/bash /opt/scripts/new-user.sh
 ```
 
-Note: You will be getting an email alert everyday at 7 o'clock, which is for yesterday's log.
+注意：你将在每天 7 点收到一封邮件提醒，但这是昨天的日志。
 
-**`Output:`**` ` You will be getting an email alert similar to below.
+你将会看到类似下面的邮件提醒。
 
 ```
 # cat /tmp/logs.txt
@@ -113,7 +113,7 @@ via: https://www.2daygeek.com/linux-bash-script-to-monitor-user-creation-send-em
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
