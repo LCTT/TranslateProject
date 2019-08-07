@@ -1,8 +1,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-11198-1.html"
 [#]: subject: "How To Parse And Pretty Print JSON With Linux Commandline Tools"
 [#]: via: "https://www.ostechnix.com/how-to-parse-and-pretty-print-json-with-linux-commandline-tools/"
 [#]: author: "EDITOR https://www.ostechnix.com/author/editor/"
@@ -216,7 +216,7 @@ $ cat sample.json | jq -r '.phoneNumber[] | select(.type == "home") | .number'
 
 via: https://www.ostechnix.com/how-to-parse-and-pretty-print-json-with-linux-commandline-tools/
 
-作者：[EDITOR][a]
+作者：[ostechnix][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
 校对：[wxy](https://github.com/wxy)
