@@ -1,40 +1,38 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11211-1.html)
 [#]: subject: (GameMode – A Tool To Improve Gaming Performance On Linux)
 [#]: via: (https://www.ostechnix.com/gamemode-a-tool-to-improve-gaming-performance-on-linux/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-GameMode  - 提高 Linux 游戏性能的工具
+GameMode：提高 Linux 游戏性能的工具
 ======
 
 ![Gamemmode improve gaming performance on Linux][1]
 
-去问一些 Linux 用户为什么他们仍然坚持 Windows 双启动，他们的答案可能是 - “游戏！”。这是真的！幸运的是，开源游戏平台如 [**Lutris**][2] 和专有游戏平台 **Steam** 已经为 Linux 平台带来了许多游戏，并且近几年来显著改善了 Linux 的游戏体验。今天，我偶然发现了另一款名为 **GameMode** 的 Linux 游戏相关开源工具，它能让用户提高 Linux 上的游戏性能。
+去问一些 Linux 用户为什么他们仍然坚持 Windows 双启动，他们的答案可能是 - “游戏！”。这是真的！幸运的是，开源游戏平台如 [Lutris][2] 和专有游戏平台 Steam 已经为 Linux 平台带来了许多游戏，并且近几年来显著改善了 Linux 的游戏体验。今天，我偶然发现了另一款名为 GameMode 的 Linux 游戏相关开源工具，它能让用户提高 Linux 上的游戏性能。
 
-GameMode 基本上是一组守护进程/lib，它可以按需优化 Linux 系统的游戏性能。我以为 GameMode 是一个杀死在后台运行的对资源消耗大进程的工具。但它并不是。它实际上只是让 CPU **自动运行在高性能模式下**并帮助 Linux 用户从游戏中获得最佳性能。
+GameMode 基本上是一组守护进程/库，它可以按需优化 Linux 系统的游戏性能。我以为 GameMode 是一个杀死在后台运行的对资源消耗大进程的工具。但它并不是。它实际上只是让 CPU **在用户玩游戏时自动运行在高性能模式下**并帮助 Linux 用户从游戏中获得最佳性能。
 
-在玩游戏时，GameMode 通过请求一组优化临时应用于宿主机来显著提升游戏性能。目前，它支持下面这些优化：
+在玩游戏时，GameMode 通过对宿主机请求临时应用一组优化来显著提升游戏性能。目前，它支持下面这些优化：
 
-  * CPU 调控器，
-  * I/O 优先级，
-  * 进程 nice 值
-  * 内核调度器（SCHED_ISO），
-  * 进制屏幕保护，
-  * GPU 高性能模式（NVIDIA 和 AMD），GPU 超频（NVIDIA），
-  * 自定义脚本。
+* CPU 调控器，
+* I/O 优先级，
+* 进程 nice 值
+* 内核调度器（SCHED_ISO），
+* 禁止屏幕保护，
+* GPU 高性能模式（NVIDIA 和 AMD），GPU 超频（NVIDIA），
+* 自定义脚本。
 
-
-
-GameMode 是由世界领先的游戏发行商 [**Feral Interactive**][3] 开发的免费开源系统工具。
+GameMode 是由世界领先的游戏发行商 [Feral Interactive][3] 开发的自由开源的系统工具。
 
 ### 安装 GameMode
 
 GameMode 适用于许多 Linux 发行版。
 
-在 Arch Linux 及其变体上，你可以使用任何 AUR 助手程序，如 [**Yay**][5] 从 [**AUR**][4] 安装它。
+在 Arch Linux 及其变体上，你可以使用任何 AUR 助手程序，如 [Yay][5] 从 [AUR][4] 安装它。
 
 ```
 $ yay -S gamemode
@@ -50,15 +48,13 @@ $ sudo apt install gamemode
 
 ### 激活 GameMode 支持以改善 Linux 上的游戏性能
 
-以下是 GameMode 集成支持的游戏列表，因此我们无需进行任何其他配置即可激活 GameMode 支持。
+以下是集成支持了 GameMode 的游戏列表，因此我们无需进行任何其他配置即可激活 GameMode 支持。
 
   * 古墓丽影：崛起
   * 全面战争传奇：不列颠尼亚王座
   * 全面战争：战锤 2
   * 尘埃 4
   * 全面战争：三国
-
-
 
 只需运行这些游戏，就会自动启用 GameMode 支持。
 
@@ -72,24 +68,16 @@ gamemoderun ./game
 
 我不喜欢游戏，并且我已经很多年没玩游戏了。所以，我无法分享一些实际的基准测试。
 
-但是，我在 Youtube 上找到了一个简短的视频教程，以便为 Lutris 游戏启用 GameMode 支持。对于那些想要第一次尝试 GameMode 的人来说，这是个不错的开始。
-
-<https://youtu.be/4gyRyYfyGJw>
+但是，我在 Youtube 上找到了一个简短的[视频教程](https://youtu.be/4gyRyYfyGJw)，以便为 Lutris 游戏启用 GameMode 支持。对于那些想要第一次尝试 GameMode 的人来说，这是个不错的开始。
 
 通过浏览视频中的评论，我可以说 GameMode 确实提高了 Linux 上的游戏性能。
 
-对于更多细节，请参阅 [**GameMode 的 GitHub 仓库**][7]。
+对于更多细节，请参阅 [GameMode 的 GitHub 仓库][7]。
 
-* * *
+相关阅读：
 
-**相关阅读：**
-
-  * [**GameHub – 将所有游戏集合在一起的仓库**][8]
-  * [**如何在 Linux 中运行 MS-DOS 游戏和程序**][9]
-
-
-
-* * *
+* [GameHub – 将所有游戏集合在一起的仓库][8]
+* [如何在 Linux 中运行 MS-DOS 游戏和程序][9]
 
 你用过 GameMode 吗？它真的有改善 Linux 上的游戏性能吗？请在下面的评论栏分享你的想法。
 
@@ -100,7 +88,7 @@ via: https://www.ostechnix.com/gamemode-a-tool-to-improve-gaming-performance-on-
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
