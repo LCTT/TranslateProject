@@ -1,15 +1,15 @@
-当你在本地开发时如何测试 Webhooks
+本地开发如何测试 Webhook
 ===================
 
-![](https://cdn-images-1.medium.com/max/1000/1*0HNQmPw5yXva6powvVwn5Q.jpeg)
+![](https://img.linux.net.cn/data/attachment/album/201908/11/090540wipp5c65iinyyf63.jpg)
 
-[Webhooks][10] 可用于外部系统通知你的系统发生了某个事件或更新。可能最知名的 [Webhooks][10] 是支付服务提供商（PSP）通知你的系统支付状态有了更新。
+[Webhook][10] 可用于外部系统通知你的系统发生了某个事件或更新。可能最知名的 [Webhook][10]  类型是支付服务提供商（PSP）通知你的系统支付状态有了更新。
 
-它们通常以你在监听预定义 URL 的形式出现，例如 `http://example.com/webhooks/payment-update`。 同时，另一个系统向该 URL 发送具有特定有效载荷的 POST 请求（例如支付 ID）。一旦请求进入，你就会获取支付 ID，可以通过它们的 API 用这个支付 ID 向 PSP 询问最新状态，然后更新你的数据库。
+它们通常以监听的预定义 URL 的形式出现，例如 `http://example.com/webhooks/payment-update`。同时，另一个系统向该 URL 发送具有特定有效载荷的 POST 请求（例如支付 ID）。一旦请求进入，你就会获得支付 ID，可以通过 PSP 的 API 用这个支付 ID 向它们询问最新状态，然后更新你的数据库。
 
 其他例子可以在这个对 Webhook 的出色的解释中找到：[https://sendgrid.com/blog/whats-webhook/][12]。
 
-只要系统可通过互联网公开访问（这可能是你的生产环境或可公开访问的临时环境），测试这些 webhook 就相当顺利。而当你在笔记本电脑上或虚拟机内部进行本地开发（例如，Vagrant 虚拟机）时，它变得困难了。在这些情况下，发送 webhook 的一方无法公开访问本地 URL。此外，监视发送的请求也很困难，这可能使开发和调试变得困难。
+只要系统可通过互联网公开访问（这可能是你的生产环境或可公开访问的临时环境），测试这些 webhook 就相当顺利。而当你在笔记本电脑上或虚拟机内部（例如，Vagrant 虚拟机）进行本地开发时，它就变得困难了。在这些情况下，发送 webhook 的一方无法公开访问你的本地 URL。此外，监视发送的请求也很困难，这可能使开发和调试变得困难。
 
 因此，这个例子将解决：
 
@@ -19,19 +19,18 @@
 前置需求：
 
 * *可选*：如果你使用虚拟机（VM）进行开发，请确保它正在运行，并确保在 VM 中完成后续步骤。
-* 对于本教程，我们假设你定义了一个 vhost：`webhook.example.vagrant`。我在本教程中使用了 Vagrant VM，但你可以自由选择 vhost 的名称。
-* 按照[安装说明][3]安装 `ngrok`。 在 VM 中，我发现它的 Node 版本也很有用：[https://www.npmjs.com/package/ngrok][4]，但你可以随意使用其他方法。
+* 对于本教程，我们假设你定义了一个 vhost：`webhook.example.vagrant`。我在本教程中使用了 Vagrant VM，但你可以自由选择 vhost。
+* 按照这个[安装说明][3]安装 `ngrok`。在 VM 中，我发现它的 Node 版本也很有用：[https://www.npmjs.com/package/ngrok][4]，但你可以随意使用其他方法。
 
-我假设你没有在你的环境中运行 SSL，但如果你这样做了，请将在下面的示例中的端口 80 替换为端口 433，`http://` 替换为 `https://`。
+我假设你没有在你的环境中运行 SSL，但如果你使用了，请将在下面的示例中的端口 80 替换为端口 433，`http://` 替换为 `https://`。
 
 ### 使 webhook 可测试
 
-我们假设以下示例代码。我将使用 PHP，但将其视作伪代码，因为我留下了一些关键部分（例如 API 密钥、输入验证等）没有编写。
+我们假设以下示例代码。我将使用 PHP，但请将其视作伪代码，因为我留下了一些关键部分（例如 API 密钥、输入验证等）没有编写。
 
 第一个文件：`payment.php`。此文件创建一个 `$payment` 对象，将其注册到 PSP。然后它获取客户需要访问的 URL，以便支付并将用户重定向到客户那里。
 
 请注意，此示例中的 `webhook.example.vagrant` 是我们为开发设置定义的本地虚拟主机。它无法从外部世界进入。
-
 
 ```
 <?php
@@ -73,7 +72,7 @@ elseif ($status === 'cancelled') {
 }
 ```
 
-我们的 webhook URL 无法通过互联网访问（请记住它：`webhook.example.vagrant`）。因此，PSP 永远不可能调用文件 `webhook.php`。 你的系统将永远不会知道付款状态。这最终导致订单永远不会被运送给客户。
+我们的 webhook URL 无法通过互联网访问（请记住它：`webhook.example.vagrant`）。因此，PSP 永远不可能调用文件 `webhook.php`，你的系统将永远不会知道付款状态，这最终导致订单永远不会被运送给客户。
 
 幸运的是，`ngrok` 可以解决这个问题。 [ngrok][13] 将自己描述为：
 
@@ -93,9 +92,9 @@ ngrok http -host-header=rewrite webhook.example.vagrant:80
 
 *ngrok 输出*
 
-我们刚刚做了什么？基本上，我们指示 `ngrok` 在端口 80 建立了一个到 `http://webhook.example.vagrant` 的隧道。同一个 URL 也可以通过 `http://39741ffc.ngrok.io` 或  `https://39741ffc.ngrok.io` 访问。它们能被任何知道此 URL 的人通过互联网公开访问。
+我们刚刚做了什么？基本上，我们指示 `ngrok` 在端口 80 建立了一个到 `http://webhook.example.vagrant` 的隧道。同一个 URL 也可以通过 `http://39741ffc.ngrok.io` 或  `https://39741ffc.ngrok.io` 访问，它们能被任何知道此 URL 的人通过互联网公开访问。
 
-请注意，你可以同时获得 HTTP 和 HTTPS 两个服务。该文档提供了如何仅将此限制为 HTTPS 的示例：[https://ngrok.com/docs#bind-tls][16]。
+请注意，你可以同时获得 HTTP 和 HTTPS 两个服务。这个文档提供了如何将此限制为 HTTPS 的示例：[https://ngrok.com/docs#bind-tls][16]。
 
 那么，我们如何让我们的 webhook 现在工作起来？将 `payment.php` 更新为以下代码：
 
@@ -121,7 +120,7 @@ header("Location: " . $payment->getPaymentUrl());
 
 ### 如何监控对 webhook 的调用？
 
-你在上面看到的屏幕截图概述了对隧道主机的调用。这些数据相当有限。幸运的是，`ngrok` 提供了一个非常好的仪表板，允许你检查所有调用：
+你在上面看到的屏幕截图概述了对隧道主机的调用，这些数据相当有限。幸运的是，`ngrok` 提供了一个非常好的仪表板，允许你检查所有调用：
 
 ![](https://cdn-images-1.medium.com/max/1000/1*qZw9GRTnG1sMgEUmsJPz3g.png)
 
@@ -155,7 +154,7 @@ ngrok http -config=/path/to/config/ngrok.conf -host-header=rewrite webhook.examp
 
 现在将浏览器指向 `http://webhook.example.vagrant:4040` 以访问仪表板。另外，对 `https://e65642b5.ngrok.io/webhook.php` 做个调用。这可能会导致你的浏览器出错，但仪表板应显示正有一个请求。
 
-#### 最后的评论
+### 最后的备注
 
 上面的例子是伪代码。原因是每个外部系统都以不同的方式使用 webhook。我试图基于一个虚构的 PSP 实现给出一个例子，因为可能很多开发人员在某个时刻肯定会处理付款。
 
@@ -173,7 +172,7 @@ via: https://medium.freecodecamp.org/testing-webhooks-while-using-vagrant-for-de
 
 作者：[Stefan Doorn][a]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
