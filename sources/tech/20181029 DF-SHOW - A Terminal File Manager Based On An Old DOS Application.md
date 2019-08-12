@@ -1,3 +1,5 @@
+wxy applied
+
 DF-SHOW – A Terminal File Manager Based On An Old DOS Application
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/10/dfshow-720x340.png)
