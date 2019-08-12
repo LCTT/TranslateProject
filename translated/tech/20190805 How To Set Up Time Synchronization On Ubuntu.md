@@ -7,45 +7,46 @@
 [#]: via: (https://www.ostechnix.com/how-to-set-up-time-synchronization-on-ubuntu/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-How To Set Up Time Synchronization On Ubuntu
+如何在 Ubuntu 上设置时间同步
 ======
 
 ![Set Up Time Synchronization On Ubuntu][1]
 
-You might have set up [**cron jobs**][2] that runs at a specific time to backup important files or perform any system related tasks. Or, you might have configured a [**log server to rotate the logs**][3] out of your system at regular interval time. If your clock is out-of-sync, these jobs will not execute at the desired time. This is why setting up a correct time zone on the Linux systems and keep the clock synchronized with Internet is important. This guide describes how to set up time synchronization on Ubuntu Linux. The steps given below have been tested on Ubuntu 18.04, however they are same for other Ubuntu-based systems that uses systemd’s **timesyncd** service.
+你可能设置过 [**cron 任务**][2] 来在特定时间备份重要文件或执行系统相关任务。也许你配置了一个[**日志服务**][3]在特定时间间隔轮转日志。如果你的时钟不同步，这些任务将无法按时执行。这就是要在 Linux 系统上设置正确的时区并保持时钟与 Internet 同步的原因。本指南介绍如何在 Ubuntu Linux 上设置时间同步。下面的步骤已经在 Ubuntu 18.04 上进行了测试，但是对于使用 systemd 的 **timesyncd** 服务的其他基于 Ubuntu 的系统它们是相同的。
 
-### Set Up Time Synchronization On Ubuntu
 
-Usually, we set time zone during installation. You can however change it or set different time zone if you want to.
+### 在 Ubuntu 上设置时间同步
 
-First, let us see the current time zone in our Ubuntu system using “date” command:
+通常，我们在安装时设置时区。但是，你可以根据需要更改或设置不同的时区。
+
+首先，让我们使用 “date” 命令查看 Ubuntu 系统中的当前时区：
 
 ```
 $ date
 ```
 
-Sample output:
+示例输出：
 
 ```
 Tue Jul 30 11:47:39 UTC 2019
 ```
 
-As you see in the above output, the “date” command shows the actual date as well as the current time. Here, my current time zone is **UTC** which stands for **Coordinated Universal Time**.
+如上所见，“date” 命令显示实际日期和当前时间。这里，我当前的时区是 **UTC**，代表**协调世界时**。
 
-Alternatively, you can look up the **/etc/timezone** file to find the current time zone.
+或者，你可以在 **/etc/timezone** 文件中查找当前时区。
 
 ```
 $ cat /etc/timezone
 UTC
 ```
 
-Now, let us see if the clock is synchronized with Internet. To do so, simply run:
+现在，让我们看看时钟是否与 Internet 同步。只需运行：
 
 ```
 $ timedatectl
 ```
 
-Sample output:
+示例输出：
 
 ```
 Local time: Tue 2019-07-30 11:53:58 UTC
@@ -57,23 +58,23 @@ systemd-timesyncd.service active: yes
 RTC in local TZ: no
 ```
 
-As you can see, the “timedatectl” command displays the local time, universal time, time zone and whether the system clock is synchronized with Internet servers and if the **systemd-timesyncd.service** is active or inactive. In my case, the system clock is synchronizing with Internet time servers.
+如你所见，“timedatectl” 命令显示本地时间、世界时、时区以及系统时钟是否与 Internet 服务器同步，以及 **systemd-timesyncd.service** 是处于活动状态还是非活动状态。就我而言，系统时钟已与 Internet 时间服务器同步。
 
-If the clock is out-of-sync, you would see **“System clock synchronized: no”** as shown in the below screenshot.
+如果时钟不同步，你会看到下面截图中显示的 **“System clock synchronized: no”**。
 
 ![][4]
 
-Time synchronization is disabled.
+时间同步已禁用。
 
-Note: The above screenshot is old one. That’s why you see the different date.
+注意：上面的截图是旧截图。这就是你看到不同日期的原因。
 
-If you see **“System clock synchronized:** value set as **no** , the timesyncd service might be inactive. So, simply restart the service and see if it helps.
+如果你看到 **“System clock synchronized:** 值设置为 **no**，那么 timeyncd 服务可能处于非活动状态。因此，只需重启服务并看下是否正常。
 
 ```
 $ sudo systemctl restart systemd-timesyncd.service
 ```
 
-Now check the timesyncd service status:
+现在检查 timesyncd 服务状态：
 
 ```
 $ sudo systemctl status systemd-timesyncd.service
@@ -99,50 +100,50 @@ Jul 30 10:50:35 ubuntuserver systemd-timesyncd[498]: Network configuration chang
 Jul 30 10:51:06 ubuntuserver systemd-timesyncd[498]: Synchronized to time server [2001:67c:1560:800
 ```
 
-If this service is enabled and active, your system clock should sync with Internet time servers.
+如果此服务已启用并处于活动状态，那么系统时钟应与 Internet 时间服务器同步。
 
-You can verify if the time synchronization is enabled or not using command:
+你可以使用命令验证是否启用了时间同步：
 
 ```
 $ timedatectl
 ```
 
-If it still not works, run the following command to enable the time synchronization:
+如果仍然不起作用，请运行以下命令以启用时间同步：
 
 ```
 $ sudo timedatectl set-ntp true
 ```
 
-Now your system clock will synchronize with Internet time servers.
+现在，你的系统时钟将与 Internet 时间服务器同步。
 
-##### Change time zone using Timedatectl command
+##### 使用 timedatectl 命令更改时区
 
-What if I want to use different time zone other than UTC? It is easy!
+如果我想使用 UTC 以外的其他时区怎么办？这很容易！
 
-First, list of available time zones using command:
+首先，使用命令列出可用时区：
 
 ```
 $ timedatectl list-timezones
 ```
 
-You will see an output similar to below image.
+你将看到类似于下图的输出。
 
 ![][5]
 
-List time zones using timedatectl command
+使用 timedatectl 命令列出时区
 
-You can set the desired time zone(E.g. Asia/Kolkata) using command:
+你可以使用以下命令设置所需的时区（例如，Asia/Kolkata）：
 
 ```
 $ sudo timedatectl set-timezone Asia/Kolkata
 ```
 
-Check again if the time zone has been really changed using “date” command:
+使用 “date” 命令再次检查时区是否已真正更改：
 
 **$ date**
 Tue Jul 30 17:52:33 **IST** 2019
 
-Or, use timedatectl command if you want the detailed output:
+或者，如果需要详细输出，请使用 timedatectl 命令：
 
 ```
 $ timedatectl
@@ -155,31 +156,31 @@ systemd-timesyncd.service active: yes
 RTC in local TZ: no
 ```
 
-As you noticed, I have changed the time zone from UTC to IST (Indian standard time).
+如你所见，我已将时区从 UTC 更改为 IST（印度标准时间）。
 
-To switch back to UTC time zone, simply run:
+要切换回 UTC 时区，只需运行：
 
 ```
 $ sudo timedatectl set-timezone UTC
 ```
 
-##### Change time zone using Tzdata
+##### 使用 tzdata 更改时区
 
-In older Ubuntu versions, the Timedatectl command is not available. In such cases, you can use **Tzdata** (Time zone data) to set up time synchronization.
+在较旧的 Ubuntu 版本中，没有 timedatectl 命令。这种情况下，你可以使用 **tzdata**（Time zone data）来设置时间同步。
 
 ```
 $ sudo dpkg-reconfigure tzdata
 ```
 
-Choose the geographic area in which you live. In my case, I chose **Asia**. Select OK and hit ENTER key.
+选择你居住的地理区域。对我而言，我选择 **Asia**。选择 OK，然后按回车键。
 
 ![][6]
 
-Next, select the city or region corresponding to your time zone. Here I’ve chosen **Kolkata**.
+接下来，选择与你的时区对应的城市或地区。这里，我选择了 **Kolkata**。
 
 ![][7]
 
-Finally, you will see an output something like below in the Terminal.
+最后，你将在终端中看到类似下面的输出。
 
 ```
 Current default time zone: 'Asia/Kolkata'
@@ -187,29 +188,29 @@ Local time is now: Tue Jul 30 19:29:25 IST 2019.
 Universal Time is now: Tue Jul 30 13:59:25 UTC 2019.
 ```
 
-##### Configure time zone in graphical mode
+##### 在图形模式下配置时区
 
-Some users may not be comfortable with CLI way. If you’re one of them, you can easily change do all this from system settings panel in graphical mode.
+有些用户可能对命令行方式不太满意。如果你是其中之一，那么你可以轻松地在图形模式的系统设置面板中进行设置。
 
-Hit the **Super key** (Windows key), type **settings** in the Ubuntu dash and click on **Settings** icon.
+点击**超级键**（Windows 键），在Ubuntu dash 中输入 **settings**，然后点击 **Settings** 图标。
 
 ![][8]
 
-Launch System’s settings from Ubuntu dash
+从 Ubuntu dash 启动系统的设置
 
-Alternatively, click on the down arrow located at the top right corner of your Ubuntu desktop and click the Settings icon in the left corner.
+或者，单击位于 Ubuntu 桌面右上角的向下箭头，然后单击左上角的 “Settings” 图标。
 
 ![][9]
 
-Launch System’s settings from top panel
+从顶部面板启动系统的设置
 
-In the next window, choose **Details** and then Click **Date & Time** option. Turn on both **Automatic Date & Time** and **Automatic Time Zone** options.
+在下一个窗口中，选择 **Details**，然后单击 **Date & Time**  选项。打开 **Automatic Date & Time** 和 **Automatic Time Zone**。
 
 ![][10]
 
-Set automatic time zone in Ubuntu
+在 Ubuntu 中设置自动时区
 
-Close the Settings window an you’re done! Your system clock should now sync with Internet time servers.
+关闭设置窗口就行了！你的系统始终应该与 Internet 时间服务器同步了。
 
 --------------------------------------------------------------------------------
 
