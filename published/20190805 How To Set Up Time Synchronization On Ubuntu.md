@@ -143,7 +143,7 @@ $ sudo timedatectl set-timezone Asia/Shanghai
 
 ```
 $ date
-Tue Jul 30 17:52:33 CST 2019
+Tue Jul 30 20:22:33 CST 2019
 ```
 
 或者，如果需要详细输出，请使用 `timedatectl` 命令：
@@ -159,7 +159,7 @@ systemd-timesyncd.service active: yes
 RTC in local TZ: no
 ```
 
-如你所见，我已将时区从 UTC 更改为 CST（中国标准时间）。（）
+如你所见，我已将时区从 UTC 更改为 CST（中国标准时间）。
 
 要切换回 UTC 时区，只需运行：
 
@@ -186,8 +186,8 @@ $ sudo dpkg-reconfigure tzdata
 最后，你将在终端中看到类似下面的输出。
 
 ```
-Current default time zone: 'Asia/Kolkata'
-Local time is now: Tue Jul 30 19:29:25 IST 2019.
+Current default time zone: 'Asia/Shanghai'
+Local time is now: Tue Jul 30 21:59:25 CST 2019.
 Universal Time is now: Tue Jul 30 13:59:25 UTC 2019.
 ```
 
