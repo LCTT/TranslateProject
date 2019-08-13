@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11220-1.html)
 [#]: subject: (How To Set Up Time Synchronization On Ubuntu)
 [#]: via: (https://www.ostechnix.com/how-to-set-up-time-synchronization-on-ubuntu/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
@@ -10,7 +10,7 @@
 如何在 Ubuntu 上设置时间同步
 ======
 
-![Set Up Time Synchronization On Ubuntu][1]
+![](https://img.linux.net.cn/data/attachment/album/201908/13/135423xnk7zib00nn2aebv.jpg)
 
 你可能设置过 [cron 任务][2] 来在特定时间备份重要文件或执行系统相关任务。也许你配置了一个日志服务器在特定时间间隔[轮转日志][3]。但如果你的时钟不同步，这些任务将无法按时执行。这就是要在 Linux 系统上设置正确的时区并保持时钟与互联网同步的原因。本指南介绍如何在 Ubuntu Linux 上设置时间同步。下面的步骤已经在 Ubuntu 18.04 上进行了测试，但是对于使用 systemd 的 `timesyncd` 服务的其他基于 Ubuntu 的系统它们是相同的。
 
