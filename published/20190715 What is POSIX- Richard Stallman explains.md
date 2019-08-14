@@ -33,9 +33,9 @@ Stallman 在由其本人于 1984 年发起的<ruby>自由软件运动<rt>The fre
 
 **Seth:** 因此，如果两个系统皆具有符合 POSIX 的程序，那么它们便可以彼此假设，从而知道如何相互 “交谈”。我了解到 “POSIX” 这个简称是你想出来的。那你是怎么想出来的呢？它是如何就被 IEEE 采纳了呢？
 
-**RMS:** IEEE 已经完成了规范的开发，但还没为其想好简练的名称。标题类似是 “便携式操作系统接口”，虽然我已记不清确切的单词。委员会倾向于将 “IEEEIX” 作为简称。而我认为那不太好。发音有点怪 - 听起来像恐怖的尖叫，“Ayeee！” - 所以我觉得人们反而会倾向于称之为 “Unix”。
+**RMS:** IEEE 已经完成了规范的开发，但还没为其想好简练的名称。标题类似是 “可移植操作系统接口”，虽然我已记不清确切的单词。委员会倾向于将 “IEEEIX” 作为简称。而我认为那不太好。发音有点怪 - 听起来像恐怖的尖叫，“Ayeee！” - 所以我觉得人们反而会倾向于称之为 “Unix”。
 
-但是，由于 <ruby>[GNU 并不是 Unix][6]<rt>GNU's Not Unix</rt></ruby>，并且它打算取代之，我不希望人们将 GNU 称为 “Unix 系统”。因此，我提出了人们可能会实际使用的简称。那个时候也没有什么灵感，我就用了一个并不是非常聪明的方式创造了这个简称：我使用了 “<ruby>便携式操作系统<rt>portable operating system</rt></ruby>” 的首字母缩写，并在末尾添加了 “ix” 作为简称。IEEE 也欣然接受了。
+但是，由于 <ruby>[GNU 并不是 Unix][6]<rt>GNU's Not Unix</rt></ruby>，并且它打算取代之，我不希望人们将 GNU 称为 “Unix 系统”。因此，我提出了人们可能会实际使用的简称。那个时候也没有什么灵感，我就用了一个并不是非常聪明的方式创造了这个简称：我使用了 “<ruby>可移植操作系统<rt>portable operating system</rt></ruby>” 的首字母缩写，并在末尾添加了 “ix” 作为简称。IEEE 也欣然接受了。
 
 **Seth:** POSIX 缩写中的 “操作系统” 是仅涉及 Unix 和类 Unix 的系统（如 GNU）呢？还是意图包含所有操作系统？
 
@@ -45,7 +45,7 @@ Stallman 在由其本人于 1984 年发起的<ruby>自由软件运动<rt>The fre
 
 **RMS:** 现在不了。
 
-**Seth:** GNU Autotools 工具链可以使应用程序更容易移植，至少在构建和安装时如此。所以可以认为 Autotools 是构建便携式基础设施的重要一环吗？
+**Seth:** GNU Autotools 工具链可以使应用程序更容易移植，至少在构建和安装时如此。所以可以认为 Autotools 是构建可移植基础设施的重要一环吗？
 
 **RMS:** 是的，因为即使在遵循 POSIX 的系统中，也存在着诸多差异。而 Autotools 可以使程序更容易适应这些差异。顺带一提，如果有人想助力 Autotools 的开发，可以发邮件联系我。
 
@@ -125,7 +125,7 @@ POSIX 不仅为开发人员定义了函数和特性，还为用户空间定义�
 
 #### find
 
-`find` 命令是一个<ruby>专门的<rt>ad hoc</rt></ruby> [for 循环][18] 工具，也是 [<ruby>并行<rt>parallel</rt></ruby>][19] 处理的出入口。
+`find` 命令是一个<ruby>特别的<rt>ad hoc</rt></ruby> [for 循环][18] 工具，也是 [<ruby>并行<rt>parallel</rt></ruby>][19] 处理的出入口。
 
 一些从 GNU 引入到 POSIX 的<ruby>便捷操作<rt>conveniences</rt></ruby>，包括 `-path` 和 `-perm` 选项。
 
