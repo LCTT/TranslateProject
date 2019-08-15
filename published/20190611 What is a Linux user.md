@@ -1,8 +1,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "qfzy1233 "
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-11231-1.html"
 [#]: subject: "What is a Linux user?"
 [#]: via: "https://opensource.com/article/19/6/what-linux-user"
 [#]: author: "Anderson Silva https://opensource.com/users/ansilva/users/petercheer/users/ansilva/users/greg-p/users/ansilva/users/ansilva/users/bcotton/users/ansilva/users/seth/users/ansilva/users/don-watkins/users/ansilva/users/seth"
@@ -11,7 +11,8 @@
 ======
 
 > “Linux 用户”这一定义已经拓展到了更大的范围，同时也发生了巨大的改变。
-![][1]
+
+![](https://img.linux.net.cn/data/attachment/album/201908/15/211706trkbzp8juhbzifia.jpg)
 
 *编者按: 本文更新于 2019 年 6 月 11 日下午 1:15:19，以更准确地反映作者对 Linux 社区中开放和包容的社区性的看法。*
 
