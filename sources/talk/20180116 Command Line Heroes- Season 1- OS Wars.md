@@ -25,7 +25,7 @@ Voice Actor:
 
 [00:00:30]
 
-当前形势比较紧张. Bill Gates 与 Steve Jobs 的帝国发起了一场无可避免的专有软件之战. Gates 与 IBM 结成了强大的联盟, 而 Jobs 拒绝对它的硬件和操作系统开放授权. 他们争夺统治地位的争斗在一场操作系统战争中席卷了整个银河系。与此同时, 在偏远之地, 帝王所不知道的是, 开源的反叛者们开始集聚.
+当前形势比较紧张. Bill Gates 与 Steve Jobs 的帝国发起了一场无可避免的专有软件之战. Gates 与 IBM 结成了强大的联盟, 而 Jobs 拒绝对它的硬件和操作系统开放授权. 他们争夺统治地位的争斗在一场操作系统战争中席卷了整个银河系。与此同时, 帝王所不知道的是, 在偏远之地, 开源的反叛者们开始集聚.
 
 Saron Yitbarek:
 
@@ -35,7 +35,7 @@ Saron Yitbarek:
 
 [00:01:30]
 
-我是 Saron Yitbarek, 你现在收听的是代码英雄, 一款红帽公司原创的博客节目. 你问，什么是代码英雄? 嗯, 如果你创造而不仅仅是使用, 如果你相信开发者拥有构建美好未来的能力, 如果你希望拥有一个大家都有权利表达科技如何塑造生活的世界, 那么你, 我的朋友, 就是代码英雄. 在本系列节目中, 我们将为你带来那些从命令行转型的程序员故事. 那么我是谁，凭什么指导你踏上这段艰苦的旅程? Saron Yitbarek是哪根葱? 嗯, 事实上我觉得我跟你差不多. 我是一名面向初学者的开发人员, 我做的任何事都依赖于开源软件. 这是我的世界. 通过在博客中讲故事,我可以跳出无聊的日常工作,看清大局. 希望它对你也一样有用.
+我是 Saron Yitbarek, 你现在收听的是代码英雄, 一款红帽公司原创的博客节目. 你问，什么是代码英雄? 嗯, 如果你创造而不仅仅是使用, 如果你相信开发者拥有构建美好未来的能力, 如果你希望拥有一个大家都有权利表达科技如何塑造生活的世界, 那么你, 我的朋友, 就是代码英雄. 在本系列节目中, 我们将为你带来那些"白码起家(原文是from the command line up,应该是改编自from the ground up)"改变技术的程序员故事. 那么我是谁，凭什么指导你踏上这段艰苦的旅程? Saron Yitbarek是哪根葱? 嗯, 事实上我觉得我跟你差不多. 我是一名面向初学者的开发人员, 我做的任何事都依赖于开源软件. 这是我的世界. 通过在博客中讲故事,我可以跳出无聊的日常工作,看清大局. 希望它对你也一样有用.
 
 [00:02:00]
 
@@ -62,13 +62,13 @@ Saron Yitbarek:
 
 [00:05:00]
 
-Jobs has this big grin on his face as he reveals that the three CEOs on stage have to take turns wooing him. It's essentially an '80s version of The Bachelor, but for tech love. Two of the software bigwigs say their bit, and then it's over to contestant number three. Is that? Yup. A fresh - faced Bill Gates with large square glasses that cover half his face. He proclaims that during 1984, half of Microsoft's revenue is going to come from Macintosh software. The audience loves it, and gives him a big round of applause. What they don't know is that one month after this event, Bill Gates will announce his plans to release Windows 1.0. You'd never guess Jobs is flirting with someone who'd end up as Apple's biggest rival. But Microsoft and Apple are about to live through the worst marriage in tech history. They're going to betray each other, they're going to try and destroy each other, and they're going to be deeply, painfully bound to each other.
+Jobs 的脸上露出一个大大的笑容，台上有三个CEO都需要轮流向他示好. 这基本上就是80年代科技界的钻石王老五. 两个软件大佬讲完话后, 然后就轮到第三个人讲话了. 仅此而已不是吗? 是得. 新面孔 Bill Gates 带着一个大大的方框眼镜遮住了半个脸. 他宣称在 1984 年, 微软的一半收入将来至于 Macintosh 软件. 他的这番话引来了观众热情的掌声. 但是他们不知道的是,在一个月后, Bill Gates 将会宣布发布 Windows 1.0 的计划. 你永远也猜不到 Jobs 正在跟未来苹果最大的敌人打情骂俏. 但微软和苹果即将经历科技史上最糟糕的婚礼. 他们会彼此背叛, 相互毁灭, 但又深深地、痛苦地捆绑在一起.
 
 James Allworth:
 
 [00:05:30]
 
-I guess philosophically, one was more idealistic and focused on the user experience above all else, and was an integrated organization, whereas Microsoft much more pragmatic, a modular focus-
+我猜从哲学上来讲, 一个更理想化，注重用户体验高于一切, 是一个综合性的组织, 而微软则更务实，更模块化-
 
 Saron Yitbarek:
 
