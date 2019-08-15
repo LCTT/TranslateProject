@@ -11,49 +11,50 @@ Command Line Heroes: Season 1: OS Wars
 ======
 Saron Yitbarek:
 
-Some stories are so epic, with such high stakes , that in my head, it's like that crawling text at the start of a Star Wars movie. You know, like-
+有些故事如史诗般,惊险万分, 在我脑海中似乎出现了星球大战电影开头的爬行文字. 你知道的, 就像-
 
 Voice Actor:
 
-Episode One, The OS Wars.
+第一集, 操作系统大战.
 
 Saron Yitbarek:
 
-Yeah, like that.
+是的, 就像那样子.
 
 Voice Actor:
 
 [00:00:30]
 
-It is a period of mounting tensions. The empires of Bill Gates and Steve Jobs careen toward an inevitable battle over proprietary software. Gates has formed a powerful alliance with IBM, while Jobs refuses to license his hardware or operating system. Their battle for dominance threatens to engulf the galaxy in an OS war. Meanwhile, in distant lands, and unbeknownst to the emperors, open source rebels have begun to gather.
+当前形势比较紧张. Bill Gates 与 Steve Jobs 的帝国发起了一场无可避免的专有软件之战. Gates 与 IBM 结成了强大的联盟, 而 Jobs 拒绝对它的硬件和操作系统开放授权. 他们争夺统治地位的争斗在一场操作系统战争中席卷了整个银河系。与此同时, 在偏远之地, 帝王所不知道的是, 开源的反叛者们开始集聚.
 
 Saron Yitbarek:
 
 [00:01:00]
 
-Okay. Maybe that's a bit dramatic, but when we're talking about the OS wars of the 1980s, '90s, and 2000s, it's hard to overstate things. There really was an epic battle for dominance. Steve Jobs and Bill Gates really did hold the fate of billions in their hands. Control the operating system, and you control how the vast majority of people use computers, how we communicate with each other, how we source information. I could go on, but you know all this. Control the OS, and you would be an emperor.
+好吧. 这也许有点戏剧性, 但当我们谈论80年代，90年代和00年代的操作系统之争时, 这也不算言过其实. 确实曾经发生过一场史诗级的通知之战. Steve Jobs 和 Bill Gates 确实掌握着数十亿美元的命运. 掌控了操作系统, 你就掌握了绝大多数人使用计算机的方式, 我们互相通讯的方式, 我们获取信息的方式. 我可以一直罗列下去, 不过你知道我的意思. 掌握了操作系统, 你就是帝王.
 
 [00:01:30]
 
+我是 Saron Yitbarek, 你现在收听的是代码英雄, 一款红帽公司原创的博客节目. 你问，什么是代码英雄? 嗯, 如果你创造而不仅仅是使用, 如果你相信开发者拥有构建美好未来的能力, 如果你希望拥有一个大家都有权利表达科技如何塑造生活的世界, 那么你, 我的朋友, 就是代码英雄. 在本系列节目中, 我们将为你带来那些从命令行转型的程序员故事. 那么我是谁，凭什么指导你踏上这段艰苦的旅程? Saron Yitbarek是哪根葱? 嗯, 事实上我觉得我跟你差不多. 我是一名面向初学者的开发人员, 我做的任何事都依赖于开源软件. 这是我的世界. 通过在博客中讲故事,我可以跳出无聊的日常工作,看清大局. 希望它对你也一样有用.
+
 [00:02:00]
 
-I'm Saron Yitbarek [00:01:24], and you're listening to Command Line Heroes, an original podcast from Red Hat. What is a Command Line Hero, you ask? Well, if you would rather make something than just use it, if you believe developers have the power to build a better future, if you want a world where we all get a say in how our technologies shape our lives, then you, my friend, are a command line hero. In this series, we bring you stories from the developers among us who are transforming tech from the command line up. And who am I to be guiding you on this trek? Who is Saron Yitbarek? Well, actually I'm guessing I'm a lot like you. I'm a developer for starters, and everything I do depends on open source software. It's my world. The stories we tell on this podcast are a way for me to get above the daily grind of my work, and see that big picture. I hope it does the same thing for you , too.
 
 [00:02:30]
 
 [00:03:00]
 
-What I wanted to know right off the bat was, where did open source technology even come from? I mean, I know a fair bit about Linus Torvalds and the glories of L inux ® , as I'm sure you do , too, but really, there was life before open source, right? And if I want to truly appreciate the latest and greatest of things like DevOps and containers, and on and on, well, I feel like I owe it to all those earlier developers to know where this stuff came from. So, let's take a short break from worrying about memory leaks and buffer overflows. Our journey begins with the OS wars, the epic battle for control of the desktop. It was like nothing the world had ever seen, and I'll tell you why. First, in the age of computing, you've got exponentially scaling advantages for the big fish ; and second, there's never been such a battle for control on ground that's constantly shifting. Bill Gates and Steve Jobs? They don't know it yet, but by the time this story is halfway done, everything they're fighting for is going to change, evolve, and even ascend into the cloud.
+我迫不及待地想直到，开源技术从何而来? 我的意思时, 我对 Linus Torvalds 和 Linux ® 的荣耀有一些了解, 我相信你也一样, 但是说真的, 开源并不是一开始就有的对吗? 如果我像发至内心的感激最新最棒的技术，比如 DevOps 和 containers 之类的, 我感觉我对那些早期的开发者有所亏欠，我有必要了解这些东西来自何处. 所以, 让我们暂时先不用担心内存泄露和缓冲溢出. 我们的旅程从操作系统之战开始, 这是一场波澜壮阔的桌面控制之战. 这场战争亘古未有，因为. 首先, 在计算机时代, 大公司拥有指数级的规模优势; 其次, 从未有过这么一场控制争夺战是如此变化多端. Bill Gates 和 Steve Jobs? 他们也不知道结果会如何, 但是到目前为止，这个故事进行到一半的时候, 他们所争夺的所有东西都将发声改变, 进化，最终上升到云端.
 
 [00:03:30]
 
 [00:04:00]
 
-Okay, it's the fall of 1983. I was negative six years old. Ronald Reagan was president, and the U . S . and the Soviet Union are threatening to drag the planet into nuclear war. Over at the Civic Center in Honolulu, it's the annual Apple sales conference. An exclusive bunch of Apple employees are waiting for Steve Jobs to get onstage. He's this super bright-eyed 28-year-old, and he's looking pretty confident. In a very serious voice, Jobs speaks into the mic and says that he's invited three industry experts to have a panel discussion on software. But the next thing that happens is not what you'd expect. Super cheesy '80s music fills the room. A bunch of multi-colored tube lights light up the stage, and then an announcer voice says-
+好的, 让我们回到1983年的秋季. 还有六年我才出生. 那时候的总统还是 Ronald Reagan, 美国和苏联扬言要把星球拖入核战争中. 在 Honolulu 的公民中心正在举办一年一度的苹果公司销售会议. 一群苹果公司的员工正在等待 Steve Jobs 上台. 他 28 岁，热情洋溢, 看起来非常自信. Jobs 很严肃地对着麦克风说他邀请了三个行业专家来软件进行了一次小组讨论. 然而随后发生的事情你肯定想不到. 超级俗气的80年代音乐响彻整个房间. 一堆多彩灯管照亮了舞台, 然后一个播音员的声音响起-
 
 Voice Actor:
 
-And now, ladies and gentlemen, the Macintosh software dating game.
+女士们，先生们, 现在向你们展示的是 Macintosh 软件约会游戏.
 
 Saron Yitbarek:
 
