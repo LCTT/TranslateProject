@@ -54,7 +54,7 @@ Saron Yitbarek:
 
 Voice Actor:
 
-女士们，先生们, 现在向你们展示的是 Macintosh 软件约会游戏.
+女士们，先生们, 现在是 Macintosh 软件的约会游戏.
 
 Saron Yitbarek:
 
@@ -68,35 +68,35 @@ James Allworth:
 
 [00:05:30]
 
-我猜从哲学上来讲, 一个更理想化，注重用户体验高于一切, 是一个综合性的组织, 而微软则更务实，更模块化-
+我猜从哲学上来讲, 一个更理想化，注重用户体验高于一切, 是一个集成的组织, 而微软则更务实，更模块化-
 
 Saron Yitbarek:
 
-That's James Allworth. He's a prolific tech writer who worked inside the corporate team of Apple Retail. Notice that definition of Apple he gives. An integrated organization. That sense of a company beholden only to itself. A company that doesn't want to rely on others. That's key.
+这是James Allworth。他是一位多产的科技作家，曾在苹果零售团队工作。注意他给出的苹果的定义。一个集成的组织。那种只对自己负责的公司。一个不想依赖别人的公司。这是关键。
 
 James Allworth:
 
 [00:06:00]
 
-Apple was the integrated player, and it wanted to focus on a delightful user experience, and that meant that it wanted to control the entire stack and everything that was delivered, from the hardware to the operating system, to even some of the applications that ran on top of the operating system. That always served it well in periods where new innovations, important innovations, were coming to market where you needed to be across both hardware and software, and where being able to change the hardware based on what you wanted to do and what t was new in software was an advantage. For example-
+苹果是一家集成的公司,它专注于愉悦的用户体验,这意味着它希望控制整技术栈以及交付的一切内容,从硬件到操作系统,甚至运行在操作系统上的应用程序。
+当新的创新,重要的创新刚刚进入市场,而你需要横跨软硬件,并且能够根据自己意愿和软件的革新来改变硬件时，这是一个优势。例如-,
 
 [00:06:30]
 
 Saron Yitbarek:
 
 [00:07:00]
-
-A lot of people loved that integration, and became die hard Apple fans. Plenty of others stuck with Microsoft. Back to that sales conference in Honolulu. At that very same event, Jobs gave his audience a sneak peek at the Superbowl ad he was about to release. You might have seen it for yourself. Think George Orwell's 1984. In this cold and gray world, mindless automatons are shuffling along under a dictator's projected gaze. They represent IBM users. Then, beautiful, athletic Anya Major, representing Apple, comes running through the hall in full color. She hurls her sledgehammer at Big Brother's screen, smashing it to bits. Big Brother's spell is broken, and a booming voice tells us that Apple is about to introduce the Macintosh.
+很多人喜欢这种整合的模式，并因此成为了苹果的铁杆粉丝。还有很多人则选择了微软。回到 Honolulu 的销售会议上。在同一场活动中，乔布斯向观众展示了他即将发布的超级碗广告。你可能已经亲眼见过这则广告了。想想 George Orwell 的1984。在这个冰冷、灰暗的世界里，在独裁者投射的目光下，没有头脑的机器人正在缓慢移动。这些机器人代表着IBM的用户们。然后，代表苹果公司的美丽而健壮的Anya Major 穿着鲜艳的衣服跑过大厅。她向着老大哥的屏幕猛地透出大锤,将它砸成一片一片的. 老大哥的咒语解除了,一个低沉的声音响起，苹果公司要开始介绍 Macintosh 了。
 
 Voice Actor:
 
-And you'll see why 1984 will not be like 1984.
+这就是为什么现实中的1984跟小说1984不一样了.
 
 Saron Yitbarek:
 
 [00:07:30]
 
-And yeah, looking back at that commercial, the idea that Apple was a freedom fighter working to set the masses free is a bit much. But the thing hit a nerve. Ken Segal worked at the advertising firm that made the commercial for Apple. He was Steve Jobs' advertising guy for more than a decade in the early days.
+是的，现在回顾这则广告，认为苹果是一个致力于解放大众的自由斗士的想法有点过分了。但这件事触动了我的神经。Ken Segal 曾在为苹果制作这则广告的广告公司工作过。在早期，他为 Steve Jobs 做了十多年的广告。
 
 Ken Segal:
 
