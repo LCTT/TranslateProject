@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11236-1.html)
 [#]: subject: (How to Get Linux Kernel 5.0 in Ubuntu 18.04 LTS)
 [#]: via: (https://itsfoss.com/ubuntu-hwe-kernel/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -11,6 +11,8 @@
 ======
 
 > 最近发布的 Ubuntu 18.04.3 包括 Linux 5.0 内核中的几个新功能和改进，但默认情况下没有安装。本教程演示了如何在 Ubuntu 18.04 LTS 中获取 Linux 5 内核。
+
+![](https://img.linux.net.cn/data/attachment/album/201908/17/101052xday1jyrszbddsfc.jpg)
 
 [Ubuntu 18.04 的第三个“点发布版”已经发布][2]，它带来了新的稳定版本的 GNOME 组件、livepatch 桌面集成和内核 5.0。
 
