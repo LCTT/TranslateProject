@@ -1,28 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Find Out How Long Does it Take To Boot Your Linux System)
 [#]: via: (https://itsfoss.com/check-boot-time-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-了解你的 Linux 系统的启动时间
+你的 Linux 系统开机时间已经击败了 99% 的电脑
 ======
 
-当你打开系统电源时，你会等待制造商的 logo 出现，屏幕上可能会显示一些消息（以非安全模式启动），[Grub][1] 页面，操作系统加载页面以及最后的登录页面。
+当你打开系统电源时，你会等待制造商的徽标出现，屏幕上可能会显示一些消息（以非安全模式启动），然后是 [Grub][1] 屏幕、操作系统加载屏幕以及最后的登录屏。
 
 你检查过这花费了多长时间么？也许没有。除非你真的需要知道，否则你不会在意开机时间。
 
-但是如果你很想知道你的 Linux 系统需要很长时间才能启动呢？使用秒表是一种方法，但在 Linux 中，你有一种更好、更轻松地了解系统启动时间的方法。
+但是如果你很想知道你的 Linux 系统需要很长时间才能启动完成呢？使用秒表是一种方法，但在 Linux 中，你有一种更好、更轻松地了解系统启动时间的方法。
 
 ### 在 Linux 中使用 systemd-analyze 检查启动时间
 
-![][2]
+![](https://img.linux.net.cn/data/attachment/album/201908/17/104358s1ho8ug868hso1y8.jpg)
 
-无论你是否喜欢，[systemd][3] 运行在大多数流行的 Linux 发行版中。systemd 有许多管理 Linux 系统的工具。其中一个就是 systemd-analyze。
+无论你是否喜欢，[systemd][3] 运行在大多数流行的 Linux 发行版中。systemd 有许多管理 Linux 系统的工具。其中一个就是 `systemd-analyze`。
 
-systemd-analyze 命令为你提供上次启动时运行的服务数量以及消耗时间的详细信息。
+`systemd-analyze` 命令为你提供最近一次启动时运行的服务数量以及消耗时间的详细信息。
 
 如果在终端中运行以下命令：
 
@@ -90,9 +90,9 @@ sudo systemctl disable NetworkManager-wait-online.service
 sudo systemctl enable NetworkManager-wait-online.service
 ```
 
-现在，请不要在不知道用途的情况下自行禁用各种服务。这可能会产生危险的后果。
+请不要在不知道用途的情况下自行禁用各种服务。这可能会产生危险的后果。
 
-_ **现在你知道了如何检查 Linux 系统的启动时间，为什么不在评论栏分享你的系统的启动时间？** _
+现在你知道了如何检查 Linux 系统的启动时间，为什么不在评论栏分享你的系统的启动时间？
 
 --------------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ via: https://itsfoss.com/check-boot-time-linux/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
