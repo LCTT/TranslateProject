@@ -54,7 +54,7 @@ Saron Yitbarek:
 
 Voice Actor:
 
-女士们，先生们, 现在是 Macintosh 软件的约会游戏.
+女士们，先生们, 现在是麦金塔软件的约会游戏.
 
 Saron Yitbarek:
 
@@ -62,7 +62,7 @@ Saron Yitbarek:
 
 [00:05:00]
 
-Jobs 的脸上露出一个大大的笑容，台上有三个CEO都需要轮流向他示好. 这基本上就是80年代科技界的钻石王老五. 两个软件大佬讲完话后, 然后就轮到第三个人讲话了. 仅此而已不是吗? 是得. 新面孔 Bill Gates 带着一个大大的方框眼镜遮住了半个脸. 他宣称在 1984 年, 微软的一半收入将来至于 Macintosh 软件. 他的这番话引来了观众热情的掌声. 但是他们不知道的是,在一个月后, Bill Gates 将会宣布发布 Windows 1.0 的计划. 你永远也猜不到 Jobs 正在跟未来苹果最大的敌人打情骂俏. 但微软和苹果即将经历科技史上最糟糕的婚礼. 他们会彼此背叛, 相互毁灭, 但又深深地、痛苦地捆绑在一起.
+Jobs 的脸上露出一个大大的笑容，台上有三个CEO都需要轮流向他示好. 这基本上就是80年代科技界的钻石王老五. 两个软件大佬讲完话后, 然后就轮到第三个人讲话了. 仅此而已不是吗? 是得. 新面孔 Bill Gates 带着一个大大的方框眼镜遮住了半个脸. 他宣称在 1984 年, 微软的一半收入将来至于麦金塔软件. 他的这番话引来了观众热情的掌声. 但是他们不知道的是,在一个月后, Bill Gates 将会宣布发布 Windows 1.0 的计划. 你永远也猜不到 Jobs 正在跟未来苹果最大的敌人打情骂俏. 但微软和苹果即将经历科技史上最糟糕的婚礼. 他们会彼此背叛, 相互毁灭, 但又深深地、痛苦地捆绑在一起.
 
 James Allworth:
 
@@ -86,7 +86,7 @@ James Allworth:
 Saron Yitbarek:
 
 [00:07:00]
-很多人喜欢这种整合的模式，并因此成为了苹果的铁杆粉丝。还有很多人则选择了微软。回到 Honolulu 的销售会议上。在同一场活动中，乔布斯向观众展示了他即将发布的超级碗广告。你可能已经亲眼见过这则广告了。想想 George Orwell 的1984。在这个冰冷、灰暗的世界里，在独裁者投射的目光下，没有头脑的机器人正在缓慢移动。这些机器人代表着IBM的用户们。然后，代表苹果公司的美丽而健壮的Anya Major 穿着鲜艳的衣服跑过大厅。她向着老大哥的屏幕猛地透出大锤,将它砸成一片一片的. 老大哥的咒语解除了,一个低沉的声音响起，苹果公司要开始介绍 Macintosh 了。
+很多人喜欢这种整合的模式，并因此成为了苹果的铁杆粉丝。还有很多人则选择了微软。回到 Honolulu 的销售会议上。在同一场活动中，乔布斯向观众展示了他即将发布的超级碗广告。你可能已经亲眼见过这则广告了。想想 George Orwell 的1984。在这个冰冷、灰暗的世界里，在独裁者投射的目光下，没有头脑的机器人正在缓慢移动。这些机器人代表着IBM的用户们。然后，代表苹果公司的美丽而健壮的Anya Major 穿着鲜艳的衣服跑过大厅。她向着老大哥的屏幕猛地透出大锤,将它砸成一片一片的. 老大哥的咒语解除了,一个低沉的声音响起，苹果公司要开始介绍麦金塔了。
 
 Voice Actor:
 
@@ -102,49 +102,49 @@ Ken Segal:
 
 [00:08:00]
 
-Well, the 1984 commercial came with a lot of risk. In fact, it was so risky that Apple didn't want to run it when they saw it. You've probably heard stories that Steve liked it, but the Apple board did not like it. In fact, they were so outraged that so much money had been spent on such a thing that they wanted to fire the ad agency. Steve was the one sticking up for the agency.
+1984这则广告的风险很大。事实上，它的风险太大，以至于苹果公司在看到它的时候都不想播出它。你可能听说了 Steve 喜欢它，但苹果公司董事会的人并不喜欢它。事实上，他们很愤怒，这么多钱被花在这么一件事情上，以至于他们想解雇广告代理商。Steve 则为我们公司辩护。
 
 Saron Yitbarek:
 
-Jobs, as usual, knew a good mythology when he saw one.
+Jobs, 一如既往地, 慧眼识英雄.
 
 Ken Segal:
 
-That commercial struck such a chord within the company, within the industry, that it became this thing for Apple. Whether or not people were buying computers that day, it had a sort of an aura that stayed around for years and years and years, and helped define the character of the company. We're the rebels. We're the guys with the sledgehammer.
+这则广告在公司内,在业界内都引起了共鸣，成为了苹果产品的代表。无论人们那天是否有在购买电脑，它都带来了一种持续多年的影响，帮助定义了这家公司的品质。我们是叛军。我们是拿着大锤的人。
 
 [00:08:30]
 
 Saron Yitbarek:
 
-So in their battle for the hearts and minds of literally billions of potential consumers, the emperors of Apple and Microsoft were learning to frame themselves as redeemers. As singular heroes. As lifestyle choices. But Bill Gates knew something that Apple had trouble understanding. This idea that in a wired world, nobody, not even an emperor, can really go it alone.
+因此，在争夺数十亿潜在消费者偏好的过程中，苹果公司和微软公司的帝王们正在学着把自己塑造成救世主,非凡的英雄,一种对生活方式的选择。但 Bill Gates 知道一些苹果难以理解的事情。那就是在一个相互连接的世界里，没有人，甚至是皇帝，能独自完成任务.
 
 [00:09:00]
 
 [00:09:30]
 
-June 25th, 1985. Gates sends a memo to Apple's then CEO John Scully. This was during the wilderness years. Jobs had just been excommunicated, and wouldn't return to Apple until 1996. Maybe it was because Jobs was out that Gates felt confident enough to write what he wrote. In the memo, he encourages Apple to license their OS to clone makers. I want to read a bit from the end of the memo, just to give you a sense of how perceptive it was. Gates writes, "It is now impossible for Apple to create a standard out of their innovative technology without support from other personal computer manufacturers. Apple must open the Macintosh architecture to have the independent support required to gain momentum and establish a standard." In other words, no more operating in a silo, you guys. You've got to be willing to partner with others. You have to work with developers.
+1985年6月25日。盖茨给当时的苹果CEO 发了一份备忘录。那是一个迷失的年代。乔布斯刚刚被逐出公司，直到1996年才回到苹果。也许正是因为乔布斯离开了，盖茨才敢写这份东西。在备忘录中，他鼓励苹果授权制造商分发他们的操作系统。我想读一下备忘录的最后部分，让你们知道这份备忘录是多么的有洞察力。盖茨写道:“如果没有其他个人电脑制造商的支持，苹果现在不可能让他们的创新技术成为标准。苹果必须开放麦金塔的架构，以获得获得快速发展和建立标准所需的支持”。换句话说，你们不要再自己玩自己的了。你们必须有与他人合作的意愿。你们必须与开发者合作.
 
 [00:10:00]
 
 [00:10:30]
 
-You see this philosophy years later, when Microsoft CEO Steve Ballmer gets up on stage to give a keynote and he starts shouting, "Developers, developers, developers, developers, developers, developers. Developers, developers, developers, developers, developers, developers, developers, developers." You get the idea. Microsoft likes developers. Now, they're not about to share source code with them, but they do want to build this whole ecosystem of partners. And when Bill Gates suggests that Apple do the same, as you might have guessed, the idea is tossed out the window. Apple had drawn a line in the sand, and five months after they trashed Gates' memo, Microsoft released Windows 1.0. The war was on.
+多年后你依然可以看到这条哲学思想，当微软首席执行官 Steve Ballmer 上台做主题演讲时，他开始大喊:“开发者，开发者，开发者，开发者，开发者，开发者，开发者，开发者，开发者。” 你懂我的意思了吧。微软喜欢开发人员。虽然目前他们不打算与这些开发人员共享源代码，但是他们确实想建立起整个合作伙伴生态系统。而当 Bill Gates 建议苹果公司也这么做时(你可能已经猜到了)，这个想法就被抛到了九霄云外。他们的关系产生了间隙，五个月后，微软发布了Windows 1.0。战争开始了.
 
-Developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers, developers.
+开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者, 开发者.
 
 [00:11:00]
 
-You're listening to Command Line Heroes, an original podcast from Red Hat. In this inaugural episode, we go back in time to relive the epic story of the OS wars, and we're going to find out, how did a war between tech giants clear the way for the open source world we all live in today?
+您正在收听的是来自红帽公司的原创播客《代码英雄》。本集是第一集，我们将回到过去，重温操作系统战争的史诗故事，我们将会找出，科技巨头之间的战争是如何为我们今天所生活的开源世界扫清道路的?
 
 [00:11:30]
 
-Okay, a little backstory. Forgive me if you've heard this one, but it's a classic. It's 1979, and Steve Jobs drives up to the Xerox Park research center in Palo Alto. The engineers there have been developing this whole fleet of elements for what they call a graphical user interface. Maybe you've heard of it. They've got menus, they've got scroll bars, they've got buttons and folders and overlapping windows. It was a beautiful new vision of what a computer interface could look like. And nobody had any of this stuff. Author and journalist Steven Levy talks about its potential.
+好的，让我们先来个背景故事吧。如果你已经听过了，那么请原谅我，但它很经典。当时是1979年，Steve Jobs 开车去 Palo Alto 的 Xerox Park 研究中心。那里的工程师一直在为他们所称之为的"图形用户界面"开发一系列的元素。也许你听说过。它们有菜单，滚动条，按钮，文件夹和重叠的窗口。这是对计算机界面的一个美丽的新设想。这是前所未有的。作家兼记者 Steve Levy 会谈到它的潜力。
 
 Steven Levy:
 
 [00:12:00]
-
-There was a lot of excitement about this new interface that was going to be much friendlier than what we had before, which used what was called the command line, where there was really no interaction between you and the computer in the way you'd interact with something in real life. The mouse and the graphics on the computer gave you a way to do that, to point to something just like you'd point to something in real life. It made it a lot easier. You didn't have to memorize all these codes.
+新界面要前所未有地有好的多，这让我们无比兴奋,以前我们用的是所谓的命令行，它的让你和电脑之间的交互方式跟现实生活中的交互方式完全不同。
+电脑上的鼠标和图像让你可以可以像现实生活中的交互一样实现与电脑的交互，你可以像指向现实生活中的东西一样指向电脑上的东西。这让事情变得简单多了。你无需要记住所有代码。
 
 Saron Yitbarek:
 
@@ -152,11 +152,11 @@ Saron Yitbarek:
 
 [00:13:00]
 
-Except, the Xerox executives did not get that they were sitting on top of a platinum mine. The engineers were more aware than the execs. Typical. So those engineers were, yeah, a little stressed out that they were instructed to show Jobs how everything worked. But the executives were calling the shots. Jobs felt, quote, "The product genius that brought them to that monopolistic position gets rotted out by people running these companies that have no conception of a good product versus a bad product." That's sort of harsh, but hey, Jobs walked out of that meeting with a truckload of ideas that Xerox executives had missed. Pretty much everything he needed to revolutionize the desktop computing experience. Apple releases the Lisa in 1983, and then the Mac in 1984. These devices are made by the ideas swiped from Xerox.
+不过，施乐的高管们并没有意识到他们正坐在金矿上。一如既往地，工程师比主管们更清楚它的价值。因此那些工程师，当被要求向 Jobs 展示所有这些东西是如何工作时，有点紧张。然而这是毕竟是高管的命令。Jobs 觉得，用他的话来说，“这个产品天才本来能够让施乐公司垄断整个行业，可是他最终会被公司的经营者毁掉，因为他们对产品的好坏没有概念”。这话有些苛刻，但是，Jobs 带着一卡车施乐高管错过的想法离开了会议。这几乎包含了他需要革新桌面计算体验的所有东西。1983年，苹果发布了 Lisa 电脑，1984年又发布了Mac电脑。这些设备的创意是抄袭自施乐公司的.
 
 [00:13:30]
 
-What's interesting to me is Jobs' reaction to the claim that he stole the GUI. He's pretty philosophical about it. He quotes Picasso, saying, "Good artists copy, great artists steal." He tells one reporter, "We have always been shameless about stealing great ideas." Great artists steal. Okay. I mean, we're not talking about stealing in a hard sense. Nobody's obtaining proprietary source code and blatantly incorporating it into their operating system. This is softer, more like idea borrowing. And that's much more difficult to control, as Jobs himself was about to learn. Legendary software wizard, and true command line hero, Andy Hertzfeld, was an original member of the Macintosh development team.
+让我感兴趣的是,乔布斯对控诉他偷了图形用户界面的反应。他对此很冷静。他引用毕加索的话:“好的艺术家复制，伟大的艺术家偷窃。”他告诉一位记者，“我们总是无耻地窃取伟大的创意”。伟大的艺术家偷窃。好吧。我的意思是，我们说的并不是严格意义上的偷窃。没有人获得专有的源代码并公然将其集成到他们自己的操作系统中去。这要更温和些，更像是创意的借用。这就难控制的多了，就像 Jobs 自己即将学到的那样。传奇的软件向导、真正的代码英雄 Andy Hertzfeld 就是麦金塔开发团队的最初成员。
 
 [00:14:00]
 
@@ -166,7 +166,7 @@ Andy Hertzfeld:
 
 [00:15:00]
 
-Yeah, Microsoft was our first software partner with the Macintosh. At the time, we didn't really consider them a competitor. They were the very first company outside of Apple that we gave Macintosh prototypes to. I talked with the technical lead at Microsoft usually once a week. They were the first outside party trying out the software that we wrote. They gave us very important feedback, and in general I would say the relationship was pretty good. But I also noticed in my conversations with the technical lead, he started asking questions that he didn't really need to know about how the system was implemented, and I got the idea that they were trying to copy the Macintosh. I t old Steve Jobs about it pretty early on, but it really came to a head in the fall of 1983. We discovered that they actually, without telling us ahead of time, they announced Windows at the COMDEX in November 1983 and Steve Jobs hit the roof. He really considered that a betrayal.
+是的，微软是我们与麦金塔电脑的第一个软件合作伙伴。当时，我们并没有把他们当成是竞争对手。他们是苹果之外,第一家我们交付麦金塔原型的公司。我通常每周都会和微软的技术主管聊一次。他们是尝试我们所编写软件的第一个外部团队。他们给了我们非常重要的反馈，总的来说，我认为我们的关系非常好。但我也注意到，在我与技术主管的交谈中，他开始问一些系统实现方面的问题，而他本无需知道这些，我觉得，他们想要复制麦金塔电脑。我很早以前就像史蒂夫·乔布斯反馈过这件事，但在1983年秋天，这件事达到了高潮。我们发现，他们在1983年11月的COMDEX上发布了Windows，但却没有提前告诉我们. 对此史蒂夫·乔布斯勃然大怒。他认为那是一种背叛。
 
 Saron Yitbarek:
 
@@ -174,7 +174,7 @@ Saron Yitbarek:
 
 [00:16:00]
 
-As newer versions of Windows were released, it became pretty clear that Microsoft had lifted from Apple all the ideas that Apple had lifted from Xerox. Jobs was apoplectic. His Picasso line about how great artists steal. Yeah. That goes out the window. Though maybe Gates was using it now. Reportedly, when Jobs screamed at Gates that he'd stolen from them, Gates responded, "Well Steve, I think it's more like we both had this rich neighbor named Xerox, and I broke into his house to steal the TV set, and found out that you'd already stolen it." Apple ends up suing Microsoft for stealing the look and feel of their GUI. The case goes on for years, but in 1993, a judge from the 9th Circuit Court of Appeals finally sides with Microsoft. Judge Vaughn Walker declares that look and feel are not covered by copyright. This is super important. That decision prevented Apple from creating a monopoly with the interface that would dominate desktop computing. Soon enough, Apple's brief lead had vanished. Here's Steven Levy's take.
+随着新版Windows的发布，很明显，微软从苹果那里学到了苹果从施乐那里学来的所有想法。乔布斯很易怒。他的关于伟大艺术家如何偷窃的毕加索名言被别人学去了。而且恐怕盖茨也正是这么做的。据报道，当乔布斯怒斥盖茨偷了他们的东西时，盖茨回应道:“史蒂夫，我觉得这更像是我们都有一个叫施乐的富有邻居，我闯进他家偷电视机，却发现你已经偷过了”。苹果最终以窃取GUI的外观和风格为名起诉了微软。这个案子持续了好几年，但是在1993年，第九次巡回上诉法院的一名法官最终站在了微软一边。Vaughn Walker 法官宣布外观和风格不受版权保护。这是非常重要的。这一决定让苹果在无法垄断桌面计算的界面。很快，苹果短暂的领先优势消失了。以下是 Steven Levy 的观点。
 
 Steven Levy:
 
@@ -182,33 +182,32 @@ Steven Levy:
 
 [00:17:00]
 
-They lost the lead not because of intellectual property theft on Microsoft's part, but because they were unable to consolidate their advantage in having a better operating system during the 1980s. They overcharged for their computers, quite frankly. So Microsoft had been developing Windows, starting with the mid-1980s, but it wasn't until Windows 3 in 1990, I believe, where they really came across with a version that was ready for prime time. Ready for masses of people to use. At that point is where Microsoft was able to migrate huge numbers of people, hundreds of millions, over to the graphical interface in a way that Apple had not been able to do. Even though they had a really good operating system, they used it since 1984.
+他们之所以失去领先地位，不是因为微软方面窃取了知识产权，而是因为在上世纪80年代，他们无法通过更好的操作系统来巩固自己的优势。坦率地说，他们的电脑索价过高。因此微软从20世纪80年代中期开始开发Windows系统，但直到1990年开发出的Windows 3，我想，他才真正算是一个为黄金时期做好准备的版本,才真正可供大众使用。从此以后，微软能够将数以亿计的用户迁移到图形界面，而这是苹果无法做到的。虽然苹果公司有一个非常好的操作系统，但是那已经是1984年的产品了。
 
 Saron Yitbarek:
 
 [00:17:30]
 
 [00:18:00]
+现在微软主导着操作系统的战场。他们占据了90%的市场份额，并且针对各种各样的个人电脑进行了标准化。操作系统的未来看起来会由微软掌控。此后发生了什么?1997年,波士顿Macworld博览会上，你看到了一个几近破产的苹果。一个谦逊的多的史蒂夫·乔布斯走上舞台，开始谈论伙伴关系的重要性. 特别是他们与微软的新型合作伙伴关系。史蒂夫·乔布斯呼吁双方缓和关系，停止火拼。微软将拥有巨大的市场份额。从表面看，我们可能会认为世界和平了。但当利益如此巨大时，事情就没那么简单了。就在苹果和微软在数十年的争斗中伤痕累累、最终走向死角之际，一名21岁的芬兰计算机科学专业学生出现了。几乎是偶然地，他彻底改变了一切。
 
-Microsoft now dominated the OS battlefield. They held 90% of the market, and standardized their OS across a whole variety of PCs. The future of the OS looked like it'd be controlled by Microsoft. And then? Well, at the 1997 Macworld Expo in Boston, you have an almost bankrupt Apple. A more humble Steve Jobs gets on stage, and starts talking about the importance of partnerships, and one in particular, he says, has become very, very meaningful. Their new partnership with Microsoft. Steve Jobs is calling for a détente, a ceasefire. Microsoft could have their enormous market share. If we didn't know better, we might think we were entering a period of peace in the kingdom. But when stakes are this high, it's never that simple. Just as Apple and Microsoft were finally retreating to their corners, pretty bruised from decades of fighting, along came a 21-year-old Finnish computer science student who, almost by accident, changed absolutely everything.
-
-I'm Saron Yitbarek, and this is Command Line Heroes.
+我是 Saron Yitbarek, 这里是代码英雄.
 
 [00:18:30]
-
-While certain tech giants were busy bashing each other over proprietary software, there were new champions of free and open source software popping up like mushrooms. One of these champions was Richard Stallman. You're probably familiar with his work. He wanted free software and a free society. That's free as in free speech, not free as in free beer. Back in the '80s, Stallman saw that there was no viable alternative to pricey, proprietary OSs, like UNIX . So, he decided to make his own. Stallman's Free Software Foundation developed GNU, which stood for GNU's not UNIX , of course. It'd be an OS like UNIX, but free of all UNIX code, and free for users to share.
+正当某些科技巨头正忙着就专有软件相互攻击时，自由软件和开源软件的新领军者如雨后春笋般涌现。其中一位优胜者就是理查德·斯托尔曼。你也许对他的工作很熟悉。他想要有自由软件和自由社会。这就像言论自由一样的自由，而不是像免费啤酒一样的免费。早在80年代，斯托尔曼就发现，除了昂贵的专有操作系统(如UNIX)外，就没有其他可行的替代品。因此他决定自己做一个。斯托尔曼的自由软件基金会发明了GNU，它的意思是"GNU's not UNIX"。它将是一个像UNIX一样的操作系统，但不包含所有UNIX代码，而且用户可以自由共享。
 
 [00:19:00]
 
 [00:19:30]
 
-Just to give you a sense of how important that idea of free software was in the 1980s, the companies that owned the UNIX code at different points, AT&T Bell Laboratories and then UNIX System Laboratories, they threatened lawsuits on anyone making their own OS after looking at UNIX source code. These guys were next - level proprietary. All those programmers were, in the words of the two companies, "mentally contaminated," because they'd seen UNIX code. In a famous court case between UNIX System Laboratories and Berkeley Software Design, it was argued that any functionally similar system, even though it didn't use the UNIX code itself, was a bre a ch of copyright. Paul Jones was a developer at that time. He's now the director of the digital library ibiblio.org.
+为了让你体会到80年代自由软件概念的重要性,从不同角度来说拥有UNIX代码的两家公司，AT&T贝尔实验室 以及 UNIX系统实验室威胁将会起诉任何看过UNIX源代码后又创建自己操作系统的人.
+这些人是次一级的专利所属。用这两家公司的话来说，所有这些程序员都在“精神上受到了污染”，因为他们都见过UNIX代码。在UNIX系统实验室和Berkeley 软件设计之间的一个著名的法庭案例中，有人认为任何功能类似的系统，即使它本身没有使用UNIX代码，也归版权所有。Paul Jones当时是一名开发人员。他现在是数字图书馆ibiblio.org的主任。
 
 Paul Jones:
 
 [00:20:00]
 
-Anyone who has seen any of the code is mentally contaminated was their argument. That would have made almost anyone who had worked on a computer operating system that involved UNIX , in any computer science department, was mentally contaminated. So in one year at USENIX, we all got little white bar pin s with red letters that say mentally contaminated, and we all wear those around to our own great pleasure, to show that we were sticking it to Bell because we were mentally contaminated.
+他们认为，任何看过代码的人都受到了精神污染。因此几乎所有在安装有与UNIX相关操作系统的电脑上工作过的人以及任何在计算机科学部门工作的人都受到精神上的污染。因此，在USENIX的一年里，我们都a发有带有红字的白色小别针，上面写着“精神受到了污染”. 我们很喜欢带着这些别针到处走，以表达我们力挺Bell，因为我们的精神受到了污染。
 
 [00:20:30]
 
@@ -216,17 +215,17 @@ Saron Yitbarek:
 
 [00:21:00]
 
-The whole world was getting mentally contaminated. Staying pure, keeping things nice and proprietary, that old philosophy was getting less and less realistic. It was into this contaminated reality that one of history's biggest command line heroes was born, a boy in Finland named Linus Torvalds. If this is Star Wars, then Linus Torvalds is our Luke Skywalker. He was a mild-mannered grad student at the University of Helsinki. Talented, but lacking in grand visions. The classic reluctant hero. And, like any young hero, he was also frustrated. He wanted to incorporate the 386 processor into his new PC's functions. He wasn't impressed by the MS-DOS running on his IBM clone, and he couldn't afford the $5,000 price tag on the UNIX software that would have given him some programming freedom. The solution, which Torvalds crafted on MINIX in the spring of 1991, was an OS kernel called Linux. The kernel of an OS of his very own.
+整个世界都被精神污染了。想要保持纯粹，保持事物的美好和专有的旧哲学正变得越来越不现实。正是在这被污染的现实中，历史上最伟大其中一个的代码英雄诞生了，他是一个芬兰男孩，名叫Linus Torvalds。如果这是《星球大战》，那么 Linus Torvalds 就是我们的卢克·天行者。他是赫尔辛基大学一名温文尔雅的研究生。有才华，但缺乏宏伟的愿景。典型的被逼上梁山的英雄。和其他年轻的英雄一样，他也感到沮丧。他想把386处理器整合到他的新电脑中。他对自己的IBM主机上运行的MS-DOS操作系统并不感冒，也负担不起UNIX软件5000美元的价格，而只有UNIX才能让他自由地编程。解决方案是Torvalds在1991年春天基于MINIX开发了一个名为Linux的操作系统内核。他自己的操作系统内核。
 
 [00:21:30]
 
 Steven Vaughan-Nichols:
 
-Linus Torvalds really just wanted to have something to play with.
+Linus Torvalds 真的只想找点乐子.
 
 Saron Yitbarek:
 
-Steven Vaughan-Nichols is a contributing editor at ZDNet.com, and he's been writing about the business of technology since there was a business of technology.
+Steven Vaughan-Nichols 是 ZDNet.com 的特约编辑, 而且他从科技行业出现以来就一直在写科技行业相关的内容.
 
 Steven Vaughan-Nichols:
 
@@ -234,13 +233,13 @@ Steven Vaughan-Nichols:
 
 [00:22:30]
 
-There were a couple of operating systems like it at the time. The main one that he was concerned about was called MINIX. That was an operating system that was meant for students to learn how to build operating systems. Linus looked at that, and thought that it was interesting, but he wanted to build his own. So it really started as a do-it-yourself project at Helsinki. That's how it all started, is just basically a big kid playing around and learning how to do things. But what was different in his case is that he was both bright enough and persistent enough, and also friendly enough to get all these other people working on it, and then he started seeing the project through. 27 years later, it is much, much bigger than he ever dreamed it would be.
+当时有几个类似的操作系统。他最关心的是一个名叫MINIX的操作系统，MINIX旨在让学生学习如何构建操作系统。莱纳斯着到这些，觉得很有趣，但他想建立自己的操作系统。因此它始于赫尔辛基的一个DIY项目。一切就这样开始了，基本上就是一个大孩子在玩耍，学习如何做事。但不同之处在于，他足够聪明，足够执着，也足够友好，让所有其他人都参与进来，然后他开始把这个项目进行到底。27年后，这个项目变得比他想象的要大得多。
 
 Saron Yitbarek:
 
 [00:23:00]
 
-By the fall of 1991, Torvalds releases 10,000 lines of code, and people around the world start offering comments, then tweaks, additions, edits. That might seem totally normal to you as a developer today, but remember, at that time, open collaboration like that was a moral affront to the whole proprietary system that Microsoft, Apple, and IBM had done so well by. Then that openness gets enshrined. Torvalds places Linux under the GNU general public license. The license that had kept Stallman's GNU system free was now going to keep Linux free , too. The importance of that move to incorporate GPL, basically preserving the freedom and openness of the software forever, cannot be overstated. Vaughan-Nichols explains.
+到1991年秋季，Torvalds发布了10,000行代码，世界各地的人们开始提供注释，然后进行优化、添加和修改代码。对于今天的开发人员来说，这似乎很正常，但请记住，在那个时候，像这样的开放协作是对整个专有系统(微软、苹果和IBM在这方面做的非常好)道德上的侮辱。随后这种开放性被奉若神明。Torvalds将Linux置于GNU通用公共许可证之下。曾经保障斯托尔曼的GNU系统自由的许可证现在也将保障Linux的自由。Vaughan-Nichols解释道,迁移到incorporate GPL的重要性怎么强调都不过分,它基本上能永远保证软件的自由和开放性。
 
 [00:23:30]
 
