@@ -3,7 +3,7 @@
 
 > 开源 SVG：墙上的魔法字。
 
-![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/open_design_paper_plane_2_0.jpg?itok=xKdP-GWE)
+![](https://img.linux.net.cn/data/attachment/album/201908/18/000809mzl1wb1ww754z455.jpg)
 
 新巴比伦的摄政王[伯沙撒][1]没有注意到他在盛宴期间神奇地[书写在墙上的文字][2]。但是，如果他在公元前 539 年有一台笔记本电脑和良好的互联网连接，他可能会通过在浏览器上阅读 SVG 来避开那些讨厌的波斯人。
 
@@ -13,7 +13,7 @@ SVG 图像与 JPG 不同，因为它可以缩放而不会丢失其分辨率。�
 
 ### 动起来，动起来
 
-你可以使用多种绘图程序创建 SVG 图像，包括开源的 [Inkscape][4] 和 Adobe Illustrator。让你的图像“能动起来”需要更多的努力。幸运的是，有一些开源解决方案甚至可以引起 Belshazzar 的注意。
+你可以使用多种绘图程序创建 SVG 图像，包括开源的 [Inkscape][4] 和 Adobe Illustrator。让你的图像“能动起来”需要更多的努力。幸运的是，有一些开源解决方案甚至可以引起伯沙撒的注意。
 
 [MacSVG][5] 是一款可以让你的图像动起来的工具。你可以在 [GitHub][6] 上找到源代码。
 
