@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11244-1.html)
 [#]: subject: (How to measure the health of an open source community)
 [#]: via: (https://opensource.com/article/19/8/measure-project)
 [#]: author: (Jon Lawrence https://opensource.com/users/the3rdlaw)
@@ -12,7 +12,7 @@
 
 > 这比较复杂。
 
-![metrics and data shown on a computer screen][1]
+![](https://img.linux.net.cn/data/attachment/album/201908/19/184719nz3xuazppzu3vwcg.jpg)
 
 作为一个经常管理软件开发团队的人，多年来我一直关注度量指标。一次次，我发现自己领导团队使用一个又一个的项目平台（例如 Jira、GitLab 和 Rally）生成了大量可测量的数据。从那时起，我已经及时投入了大量时间从记录平台中提取了有用的指标，并采用了一种我们可以理解的格式，然后使用这些指标对开发的许多方面做出更好的选择。
 
