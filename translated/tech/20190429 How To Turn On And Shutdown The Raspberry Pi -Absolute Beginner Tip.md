@@ -1,16 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How To Turn On And Shutdown The Raspberry Pi [Absolute Beginner Tip])
 [#]: via: (https://itsfoss.com/turn-on-raspberry-pi/)
 [#]: author: (Chinmay https://itsfoss.com/author/chinmay/)
 
-如何打开和关闭树莓派（新手教程）
+如何打开和关闭树莓派（绝对新手）
 ======
 
-_ **简介：这个贴士教你如何打开树莓派以及如何在之后正确关闭它。** _
+> 这篇短文教你如何打开树莓派以及如何在之后正确关闭它。
+
+![](https://img.linux.net.cn/data/attachment/album/201908/19/192825rlrjy3sj77j7j79y.jpg)
 
 [树莓派][1]是[最流行的 SBC（单板计算机）][2]之一。如果你对这个话题感兴趣，我相信你已经有了一个树莓派。我还建议你使用[其他树莓派配件][3]来开始使用你的设备。
 
@@ -26,11 +28,13 @@ _ **简介：这个贴士教你如何打开树莓派以及如何在之后正确�
 
 micro USB 口为树莓派供电，打开它的方式是将电源线插入 micro USB 口。但是开始之前，你应该确保做了以下事情。
 
-  * 根据官方[指南][8]准备带有 Raspbian 的 micro SD 卡并插入 micro SD 卡插槽。
-  * 插入 HDMI 线、USB 键盘和鼠标。
-  * 插入以太网线（可选）。
+* 根据官方[指南][8]准备带有 Raspbian 的 micro SD 卡并插入 micro SD 卡插槽。
+* 插入 HDMI 线、USB 键盘和鼠标。
+* 插入以太网线（可选）。
 
 成上述操作后，请插入电源线。这会打开树莓派，显示屏将亮起并加载操作系统。
+
+如果您将其关闭并且想要再次打开它，则必须从电源插座（首选）或从电路板的电源端口拔下电源线，然后再插上。它没有电源按钮。
 
 ### 关闭树莓派
 
@@ -44,9 +48,11 @@ micro USB 口为树莓派供电，打开它的方式是将电源线插入 micro 
 sudo shutdown now
 ```
 
-shutdown 执行后**等待**它完成，接着你可以关闭电源。树莓派关闭后，没有真正的办法可以在不重新打开电源的情况下打开树莓派。你可以使用 GPIO 打开树莓派，但这需要额外的改装。
+`shutdown` 执行后**等待**它完成，接着你可以关闭电源。
 
-_注意：Micro USB 口往往是脆弱的，因此请关闭/打开电源，而不是经常拔出插入 micro USB 口。_
+再说一次，树莓派关闭后，没有真正的办法可以在不关闭再打开电源的情况下打开树莓派。你可以使用 GPIO 打开树莓派，但这需要额外的改装。
+
+*注意：Micro USB 口往往是脆弱的，因此请关闭/打开电源，而不是经常拔出插入 micro USB 口。
 
 好吧，这就是关于打开和关闭树莓派的所有内容，你打算用它做什么？请在评论中告诉我。
 
@@ -57,13 +63,14 @@ via: https://itsfoss.com/turn-on-raspberry-pi/
 作者：[Chinmay][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://itsfoss.com/author/chinmay/
 [b]: https://github.com/lujun9972
 [1]: https://www.raspberrypi.org/
+[2]: https://linux.cn/article-10823-1.html
 [3]: https://itsfoss.com/things-you-need-to-get-your-raspberry-pi-working/
 [7]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2019/04/raspberry-pi-3-microusb.png?fit=800%2C532&ssl=1
 [8]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
