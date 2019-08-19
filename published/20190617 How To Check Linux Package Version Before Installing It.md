@@ -1,38 +1,38 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11243-1.html)
 [#]: subject: (How To Check Linux Package Version Before Installing It)
 [#]: via: (https://www.ostechnix.com/how-to-check-linux-package-version-before-installing-it/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-How To Check Linux Package Version Before Installing It
+如何在安装之前检查 Linux 软件包的版本？
 ======
 
 ![Check Linux Package Version][1]
 
-Most of you will know how to [**find the version of an installed package**][2] in Linux. But, what would you do to find the packages’ version which are not installed in the first place? No problem! This guide describes how to check Linux package version before installing it in Debian and its derivatives like Ubuntu. This small tip might be helpful for those wondering what version they would get before installing a package.
+大多数人都知道如何在 Linux 中[查找已安装软件包的版本][2]，但是，你会如何查找那些还没有安装的软件包的版本呢？很简单！本文将介绍在 Debian 及其衍生品（如 Ubuntu）中，如何在软件包安装之前检查它的版本。对于那些想在安装之前知道软件包版本的人来说，这个小技巧可能会有所帮助。
 
-### Check Linux Package Version Before Installing It
+### 在安装之前检查 Linux 软件包版本
 
-There are many ways to find a package’s version even if it is not installed already in DEB-based systems. Here I have given a few methods.
+在基于 DEB 的系统中，即使软件包还没有安装，也有很多方法可以查看他的版本。接下来，我将一一介绍。
 
-##### Method 1 – Using Apt
+#### 方法 1 – 使用 Apt
 
-The quick and dirty way to check a package version, simply run:
+检查软件包的版本的懒人方法：
 
 ```
 $ apt show <package-name>
 ```
 
-**Example:**
+**示例：**
 
 ```
 $ apt show vim
 ```
 
-**Sample output:**
+**示例输出：**
 
 ```
 Package: vim
@@ -67,23 +67,21 @@ Description: Vi IMproved - enhanced vi editor
 N: There is 1 additional record. Please use the '-a' switch to see it
 ```
 
-As you can see in the above output, “apt show” command displays, many important details of the package such as,
+正如你在上面的输出中看到的，`apt show` 命令显示了软件包许多重要的细节，例如：
 
-  1. package name,
-  2. version,
-  3. origin (from where the vim comes from),
-  4. maintainer,
-  5. home page of the package,
-  6. dependencies,
-  7. download size,
-  8. description,
-  9. and many.
+  1. 包名称，
+  2. 版本，
+  3. 来源（vim 来自哪里），
+  4. 维护者，
+  5. 包的主页，
+  6. 依赖，
+  7. 下载大小，
+  8. 简介，
+  9. 其他。
 
+因此，Ubuntu 仓库中可用的 Vim 版本是 **8.0.1453**。如果我把它安装到我的 Ubuntu 系统上，就会得到这个版本。
 
-
-So, the available version of Vim package in the Ubuntu repositories is **8.0.1453**. This is the version I get if I install it on my Ubuntu system.
-
-Alternatively, use **“apt policy”** command if you prefer short output:
+或者，如果你不想看那么多的内容，那么可以使用 `apt policy` 这个命令：
 
 ```
 $ apt policy vim
@@ -98,7 +96,7 @@ vim:
         500 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages
 ```
 
-Or even shorter:
+甚至更短：
 
 ```
 $ apt list vim
@@ -107,17 +105,17 @@ vim/bionic-updates,bionic-security 2:8.0.1453-1ubuntu1.1 amd64
 N: There is 1 additional version. Please use the '-a' switch to see it
 ```
 
-**Apt** is the default package manager in recent Ubuntu versions. So, this command is just enough to find the detailed information of a package. It doesn’t matter whether given package is installed or not. This command will simply list the given package’s version along with all other details.
+`apt` 是 Ubuntu 最新版本的默认包管理器。因此，这个命令足以找到一个软件包的详细信息，给定的软件包是否安装并不重要。这个命令将简单地列出给定包的版本以及其他详细信息。
 
-##### Method 2 – Using Apt-get
+#### 方法 2 – 使用 Apt-get
 
-To find a package version without installing it, we can use **apt-get** command with **-s** option.
+要查看软件包的版本而不安装它，我们可以使用 `apt-get` 命令和 `-s` 选项。
 
 ```
 $ apt-get -s install vim
 ```
 
-**Sample output:**
+**示例输出：**
 
 ```
 NOTE: This is only a simulation!
@@ -136,19 +134,19 @@ Inst vim (2:8.0.1453-1ubuntu1.1 Ubuntu:18.04/bionic-updates, Ubuntu:18.04/bionic
 Conf vim (2:8.0.1453-1ubuntu1.1 Ubuntu:18.04/bionic-updates, Ubuntu:18.04/bionic-security [amd64])
 ```
 
-Here, -s option indicates **simulation**. As you can see in the output, It performs no action. Instead, It simply performs a simulation to let you know what is going to happen when you install the Vim package.
+这里，`-s` 选项代表 **模拟**。正如你在输出中看到的，它不执行任何操作。相反，它只是模拟执行，好让你知道在安装 Vim 时会发生什么。
 
-You can substitute “install” option with “upgrade” option to see what will happen when you upgrade a package.
+你可以将 `install` 选项替换为 `upgrade`，以查看升级包时会发生什么。
 
 ```
 $ apt-get -s upgrade vim
 ```
 
-##### Method 3 – Using Aptitude
+#### 方法 3 – 使用 Aptitude
 
-**Aptitude** is an ncurses and commandline-based front-end to APT package manger in Debian and its derivatives.
+在 Debian 及其衍生品中，`aptitude` 是一个基于 ncurses（LCTT 译注：ncurses 是终端基于文本的字符处理的库）和命令行的前端 APT 包管理器。
 
-To find the package version with Aptitude, simply run:
+使用 aptitude 来查看软件包的版本，只需运行：
 
 ```
 $ aptitude versions vim
@@ -156,7 +154,7 @@ p   2:8.0.1453-1ubuntu1                                                         
 p   2:8.0.1453-1ubuntu1.1                                                            bionic-security,bionic-updates                                500
 ```
 
-You can also use simulation option ( **-s** ) to see what would happen if you install or upgrade package.
+你还可以使用模拟选项（`-s`）来查看安装或升级包时会发生什么。
 
 ```
 $ aptitude -V -s install vim
@@ -167,33 +165,29 @@ Need to get 1,152 kB of archives. After unpacking 2,852 kB will be used.
 Would download/install/remove packages.
 ```
 
-Here, **-V** flag is used to display detailed information of the package version.
-
-Similarly, just substitute “install” with “upgrade” option to see what would happen if you upgrade a package.
+这里，`-V` 标志用于显示软件包的详细信息。
 
 ```
 $ aptitude -V -s upgrade vim
 ```
 
-Another way to find the non-installed package’s version using Aptitude command is:
+类似的，只需将 `install` 替换为 `upgrade` 选项，即可查看升级包会发生什么。
 
 ```
 $ aptitude search vim -F "%c %p %d %V"
 ```
 
-Here,
+这里，
 
-  * **-F** is used to specify which format should be used to display the output,
-  * **%c** – status of the given package (installed or not installed),
-  * **%p** – name of the package,
-  * **%d** – description of the package,
-  * **%V** – version of the package.
+  * `-F` 用于指定应使用哪种格式来显示输出，
+  * `%c` – 包的状态（已安装或未安装），
+  * `%p` – 包的名称，
+  * `%d` – 包的简介，
+  * `%V` – 包的版本。
 
+当你不知道完整的软件包名称时，这非常有用。这个命令将列出包含给定字符串（即 vim）的所有软件包。
 
-
-This is helpful when you don’t know the full package name. This command will list all packages that contains the given string (i.e vim).
-
-Here is the sample output of the above command:
+以下是上述命令的示例输出：
 
 ```
 [...]
@@ -207,17 +201,17 @@ p vim-voom                                                      Vim two-pane out
 p vim-youcompleteme                                             fast, as-you-type, fuzzy-search code completion engine for Vim           0+20161219+git
 ```
 
-##### Method 4 – Using Apt-cache
+#### 方法 4 – 使用 Apt-cache
 
-**Apt-cache** command is used to query APT cache in Debian-based systems. It is useful for performing many operations on APT’s package cache. One fine example is we can [**list installed applications from a certain repository/ppa**][3].
+`apt-cache` 命令用于查询基于 Debian 的系统中的 APT 缓存。对于要在 APT 的包缓存上执行很多操作时，它很有用。一个很好的例子是我们可以从[某个仓库或 ppa 中列出已安装的应用程序][3]。
 
-Not just installed applications, we can also find the version of a package even if it is not installed. For instance, the following command will find the version of Vim package:
+不仅是已安装的应用程序，我们还可以找到软件包的版本，即使它没有被安装。例如，以下命令将找到 Vim 的版本：
 
 ```
 $ apt-cache policy vim
 ```
 
-Sample output:
+示例输出：
 
 ```
 vim:
@@ -231,19 +225,19 @@ vim:
         500 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages
 ```
 
-As you can see in the above output, Vim is not installed. If you wanted to install it, you would get version **8.0.1453**. It also displays from which repository the vim package is coming from.
+正如你在上面的输出中所看到的，Vim 并没有安装。如果你想安装它，你会知道它的版本是 **8.0.1453**。它还显示 vim 包来自哪个仓库。
 
-##### Method 5 – Using Apt-show-versions
+#### 方法 5 – 使用 Apt-show-versions
 
-**Apt-show-versions** command is used to list installed and available package versions in Debian and Debian-based systems. It also displays the list of all upgradeable packages. It is quite handy if you have a mixed stable/testing environment. For instance, if you have enabled both stable and testing repositories, you can easily find the list of applications from testing and also you can upgrade all packages in testing.
+在 Debian 和基于 Debian 的系统中，`apt-show-versions` 命令用于列出已安装和可用软件包的版本。它还显示所有可升级软件包的列表。如果你有一个混合的稳定或测试环境，这是非常方便的。例如，如果你同时启用了稳定和测试仓库，那么你可以轻松地从测试库找到应用程序列表，还可以升级测试库中的所有软件包。
 
-Apt-show-versions is not installed by default. You need to install it using command:
+默认情况下系统没有安装 `apt-show-versions`，你需要使用以下命令来安装它：
 
 ```
 $ sudo apt-get install apt-show-versions
 ```
 
-Once installed, run the following command to find the version of a package,for example Vim:
+安装后，运行以下命令查找软件包的版本，例如 Vim：
 
 ```
 $ apt-show-versions -a vim
@@ -253,15 +247,15 @@ vim:amd64 2:8.0.1453-1ubuntu1.1 bionic-updates  archive.ubuntu.com
 vim:amd64 not installed
 ```
 
-Here, **-a** switch prints all available versions of the given package.
+这里，`-a` 选项打印给定软件包的所有可用版本。
 
-If the given package is already installed, you need not to use **-a** option. In that case, simply run:
+如果已经安装了给定的软件包，那么就不需要使用 `-a` 选项。在这种情况下，只需运行：
 
 ```
 $ apt-show-versions vim
 ```
 
-And, that’s all. If you know any other methods, please share them in the comment section below. I will check and update this guide.
+差不多完了。如果你还了解其他方法，在下面的评论中分享，我将检查并更新本指南。
 
 --------------------------------------------------------------------------------
 
@@ -269,8 +263,8 @@ via: https://www.ostechnix.com/how-to-check-linux-package-version-before-install
 
 作者：[sk][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[MjSeven](https://github.com/MjSeven)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
