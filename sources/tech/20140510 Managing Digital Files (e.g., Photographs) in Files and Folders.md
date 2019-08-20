@@ -1,14 +1,17 @@
 qfzy1233 is translating 
-Managing Digital Files (e.g., Photographs) in Files and Folders
+
+
+
+数码文件与文件夹收纳术（以照片为例）
 ======
-Update 2014-05-14: added real world example
+更新   2014-05-14:增加了一些具体实例
 
-Update 2015-03-16: filtering photographs according to their GPS coordinates
+更新   2015-03-16:根据照片的 GPS 坐标过滤图片
 
-Update 2016-08-29: replaced outdated `show-sel.sh` method with new `filetags --filter` method
+更新   2016-08-29:以新的 `filetags--filter` (LCTT译注：文件标签过滤器)替换已经过时的 `show-sel.sh` 脚本（LCTT译注：show-sel 为 show firmware System Event Log records 即硬件系统事件及日志显示）
 
 Update 2017-08-28: Email comment on geeqie video thumbnails
-
+更新   2017-08-28:
 I am a passionate photographer when being on vacation or whenever I see something beautiful. This way, I collected many [JPEG][1] files over the past years. Here, I describe how I manage my digital photographs while avoiding any [vendor lock-in][2] which binds me to a temporary solution and leads to loss of data. Instead, I prefer solutions where I am able to **invest my time and effort for a long-term relationship**.
 
 This (very long) entry is **not about image files only** : I am going to explain further things like my folder hierarchy, file name convention, and so forth. Therefore, this information applies to all kind of files I process.
