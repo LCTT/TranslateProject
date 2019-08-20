@@ -5,7 +5,7 @@
 
 大多数用户发现使用标准流程升级[从一个 Fedora 版本升级到下一个][1]很简单。但是，Fedora 升级也不可避免地会遇到许多特殊情况。本文介绍了使用 DNF 和逻辑卷管理（LVM）进行升级的一种方法，以便在出现问题时保留可引导备份。这个例子是将 Fedora 26 系统升级到 Fedora 28。
 
-此处展示的过程比标准升级过程更复杂。在使用此过程之前，你应该充分掌握 LVM 的工作原理。如果没有适当的技能和细心，你可能会丢失数据和/或被迫重新安装系统！如果你不知道自己在做什么，那么**强烈建议**你坚持只使用受支持的升级方法。
+此处展示的过程比标准升级过程更复杂。在使用此过程之前，你应该充分掌握 LVM 的工作原理。如果没有适当的技能和细心，你可能会丢失数据和/或被迫重新安装系统！如果你不知道自己在做什么，那么**强烈建议**你坚持只使用得到支持的升级方法。
 
 ### 准备系统
 
@@ -45,11 +45,11 @@ VG      #PV #LV #SN Attr    VSize   VFree
 vg_sdg  1   8   0   wz--n-  232.39g 42.39g
 ```
 
-该系统有足够的可用空间，可以为升级后的 Fedora 28 的根卷分配 20G 的逻辑卷。如果你使用的是默认安装，则你的 LVM 中将没有可用空间。对 LVM 的一般性管理超出了本文的范围，但这里有一些可能采取的方法：
+该系统有足够的可用空间，可以为升级后的 Fedora 28 的根卷分配 20G 的逻辑卷。如果你使用的是默认安装，则你的 LVM 中将没有可用空间。对 LVM 的一般性管理超出了本文的范围，但这里有一些情形下可能采取的方法：
 
 1、`/home` 在自己的逻辑卷，而且 `/home` 中有大量空闲空间。
 
-你可以从图形界面中注销并切换到文本控制台，以 `root` 用户身份登录。然后你可以卸载 `/home`，并使用`lvreduce -r` 调整大小并重新分配 `/home` 逻辑卷。你也可以从<ruby>现场镜像<rt>Live image</rt></ruby>启动（以便不使用 `/home`）并使用 gparted GUI 实用程序进行分区调整。
+你可以从图形界面中注销并切换到文本控制台，以 `root` 用户身份登录。然后你可以卸载 `/home`，并使用 `lvreduce -r` 调整大小并重新分配 `/home` 逻辑卷。你也可以从<ruby>现场镜像<rt>Live image</rt></ruby>启动（以便不使用 `/home`）并使用 gparted GUI 实用程序进行分区调整。
 
 2、大多数 LVM 空间被分配给根卷，该文件系统中有大量可用空间。
 
@@ -77,7 +77,7 @@ Using default stripesize 64.00 KiB.
 Logical volume "f26_s" created.
 ```
 
-现在可以将快照复制到新逻辑卷。当你替换自己的卷名时，**请确保目标正确**。如果不小心，就会不可撤销地删除了数据。此外，请确保你从根卷的快照复制，**而不是**你的现在的根卷。
+现在可以将快照复制到新逻辑卷。当你替换自己的卷名时，**请确保目标正确**。如果不小心，就会不可撤销地删除了数据。此外，请确保你从根卷的快照复制，**而不是**从你的现在的根卷。
 
 ```
 $ sudo dd if=/dev/vg_sdg/f26_s of=/dev/vg_sdg/f28 bs=256k
@@ -135,7 +135,7 @@ linux16 /vmlinuz-4.16.11-100.fc26.x86_64 root=/dev/mapper/vg_sdg-f26 ro rd.lvm.l
 linux16 /vmlinuz-4.16.11-100.fc26.x86_64 root=/dev/mapper/vg_sdg-f28 ro rd.lvm.lv=vg_sdg/f28 rd.lvm.lv=vg_sdg/swap rhgb quiet LANG=en_US.UTF-8
 ```
 
-编辑 `/mnt/f28/etc/default/grub` 并改变在启动时激活的默认根卷：
+编辑 `/mnt/f28/etc/default/grub` 并改变在启动时激活的默认的根卷：
 
 ```
 GRUB_CMDLINE_LINUX="rd.lvm.lv=vg_sdg/f28 rd.lvm.lv=vg_sdg/swap rhgb quiet"
@@ -173,7 +173,7 @@ LABEL=F28 / ext4 defaults 1 1
 
 ### 重启与升级
 
-重新启动，你的系统将使用新的根文件系统。它仍然是 Fedora 26，但是带有新的逻辑卷名称的副本，并可以进行 `dnf` 系统升级！如果出现任何问题，请使用旧引导菜单引导回到你的工作系统，此过程可避免触及旧系统。
+重新启动，你的系统将使用新的根文件系统。它仍然是 Fedora 26，但是是带有新的逻辑卷名称的副本，并可以进行 `dnf` 系统升级！如果出现任何问题，请使用旧引导菜单引导回到你的工作系统，此过程可避免触及旧系统。
 
 ```
 $ sudo systemctl reboot # or GUI equivalent
@@ -205,7 +205,7 @@ via: https://fedoramagazine.org/use-lvm-upgrade-fedora/
 作者：[Stuart D Gathman][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
