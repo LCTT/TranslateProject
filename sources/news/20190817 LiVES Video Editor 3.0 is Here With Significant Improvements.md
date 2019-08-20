@@ -7,81 +7,82 @@
 [#]: via: (https://itsfoss.com/lives-video-editor/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-LiVES Video Editor 3.0 is Here With Significant Improvements
+LiVES 视频编辑器 3.0 有了显著的改善
 ======
 
-We recently covered a list of [best open source video editors][1]. LiVES is one of those open source video editors, available for free.
+我们最近列出了[最好开源视频编辑器][1]的清单。LiVES 是这些开源视频编辑器中的免费提供服务的一个。
 
-Even though a lot of users are still waiting for the release on Windows, a major update just popped up for LiVES Video Editor (i.e v3.0.1 as the latest package) on Linux. The new upgrade includes some new features and improvements.
+即使许多用户还在等待 Windows 版本的发行，但在刚刚发行的 LiVES 视频编辑器 Linux 版本中（最新版本 v3.0.1）进行了一个重大更新，更新内容中包括了一些新的功能和改进。
 
-In this article, I’ll cover the key improvements in the new version and I’ll also mention the steps to install it on your Linux system.
+在这篇文章里，我将会列出新版本中的重要改进，并且我将会提到在 Linux 上安装的步骤。
 
-### LiVES Video Editor 3.0: New Changes
+### LiVES 视频编辑器 3.0：新的改进
 
-![Lives Video Editor Loading in Zorin OS][2]
+![Zorin OS 中正在加载的 LiVES 视频编辑器][2]
 
-Overall, with this major update – LiVES Video Editor aims to have a smoother playback, prevent unwanted crashes, optimized video recording, and making the online video downloader more useful.
+总的来说，在这次重大更新中 LiVES 视频编辑器旨在提供更加丝滑的回放、防止闻所未闻的崩溃、优化视频记录，以及让在线视频下载更加实用。
 
-The list of changes are:
+下面列出了修改：
 
-  * Render silence to end of video if necessary during rendering.
-  * Improvements to openGL playback plugin, including much smoother playback.
-  * Re-enable Advanced options for the openGL playback plugin.
-  * Allow “Enough” in VJ / Pre-decode all frames
-  * Refactor code for timebase calculations during playback (better a/v synch).
-  * Overhaul external audio and audio recording to improve accuracy and use fewer CPU cycles.
-  * Auto switch to internal audio when entering multitack mode.
-  * Show correct effects state (on / off) when reshowing effect mapper window.
-  * Eliminate some race conditions between the audio and video threads.
-  * Improvements to online video downloader, clip size and format can now be selected, added an update option.
-  * Implemented reference counting for realtime effect instances.
-  * Extensively rewrote the main interface, cleaning up the code and making many visual improvements.
-  * Optimized recording when video generators are running.
-  * Improvements to the projectM filter wrapper, including SDL2 support.
-  * Added an option to invert the Z-order in multitrack compositor (rear layers can now overlay front ones).
-  * Added support for musl libc
-  * Updated translations for Ukranian
+  * 如果需要加载的话，可以静默加载直到到视频播放完毕。
+  * 改进回放插件为 openGL，提供更加丝滑的回放。
+  * 重新启用了 openGL 回放插件的高级选项。
+  * 在 VJ/预解码 中允许“充足”的所有帧
+  * 重构了在播放时基础计算的代码（有了更好的 a/v 同步）。
+  * 彻底修复了外部音频和音频，提高了准确性并减少了 CPU 周期。
+  * 进入多音轨模式时自动切换至内部音频。
+  * 重新显示效果映射器窗口时，将会正常展示效果状态（on/off）。
+  * 解决了音频和视频线程之间的冲突。
+  * 现在可以对在线视频下载器，剪辑大小和格式进行修改并添加了更新选项。
+  * 对实时效果实行了参考计数的记录。
+  * 大范围重写了主界面，清理代码并改进多视觉。
+  * 优化了视频播放器运行时的录制功能。
+  * 改进了 projectM 过滤器，包括支持了 SDL2。
+  * 添加了一个选项来逆转多轨合成器中的 Z-order（后层现在可以覆盖上层了）。
+  * 增加了对 musl libc 的支持
+  * 更新了乌克兰语的翻译
 
 
-
-While some of the points listed can just go over your head if you are not an advanced video editor. But, in a nutshell, all of these things make ‘LiVES Video Editor’ a better open source video editing software.
+如果您不是一位高级视频编辑师，也许会对上面列出的重要更新提不起太大的兴趣。但正是因为这些更新，才使得“LiVES 视频编辑器”成为了最好的开源视频编辑软件。
 
 [][3]
 
-Suggested read  VidCutter Lets You Easily Trim And Merge Videos In Linux
+推荐阅读  VidCutter Lets You Easily Trim And Merge Videos In Linux
 
-### Installing LiVES Video Editor on Linux
+### 在 Linux 上安装 LiVES 视频编辑器
 
-LiVES is normally available in the repository of all major Linux distributions. However, you may not find the latest version on your software center yet. So, if you want to install it that way – you’ll have to wait.
+LiVES 几乎可以在所有主要 Linux 发行版中使用。但是，您可能并不能在软件中心找到它的最新版本。所以，如果你想通过这种方式安装，那你就不得不耐心等待了。
 
-If you want to install it manually, you can get the RPM packages for Fedora/Open SUSE from its download page. The source is also available for Linux distros.
+如果你想要手动安装，可以从它的下载页面获取 Fedora/Open SUSE 的 RPM 安装包。它也适用于其他 Linux 发行版。
 
-[Download LiVES Video Editor][4]
+[下载 LiVES 视频编辑器] [4]
 
-For Ubuntu (or Ubuntu-based distros), you can add the [unofficial PPA][5] maintained by [Ubuntuhandbook][6]. Here’s how to do it:
+如果您使用的是 Ubuntu（或其他基于 Ubuntu 的发行版），您可以安装由 [Ubuntuhandbook][6] 进行维护的[非官方 PPA][5]。
 
-**1.** Launch the terminal and enter the following command:
+下面由我来告诉你，你该做些什么：
+
+**1. **启动终端后输入以下命令：
 
 ```
-sudo add-apt-repository ppa:ubuntuhandbook1/lives
+sudo add-apt-repository ppa：ubuntuhandbook1 / lives
 ```
 
-You will be prompted for the password to authenticate the addition of PPA.
+系统将提示您输入密码用于确认添加 PPA。
 
-**2.** Once done, you can now easily proceed to update the list of packages and get LiVES Video Editor installed. Here’s the set of commands that you need to enter next:
+**2. **完成后，您现在可以轻松地更新软件包列表并安装 LiVES 视频编辑器。以下是需要您输入的命令段：
 
 ```
 sudo apt update
-sudo apt install lives lives-plugins
+sudo apt install life-plugins
 ```
 
-**3.** Now, it will start downloading and installing the video editor. You should be good to go in a minute.
+**3.** 现在，它开始下载并安装视频编辑器，等待大约一分钟即可完成。
 
-**Wrapping Up**
+**总结**
 
-There are a handful of [video editors available on Linux][7]. But they are not often considered good enough for professional editing. I am not a professional but I do manage simple editing with such freely available video editors like LiVES.
+Linux 上有许多[视频编辑器] [7]。但它们通常被认为不能进行专业的编辑。而我并不是一名专业人士，所以像 LiVES 这样免费的视频编辑器就足以进行简单的编辑了。
 
-How about you? How’s your experience with LiVES or other video editors on Linux? Let us know your thoughts in the comments below.
+您认为怎么样呢？您在 Linux 上使用 LiVES 或其他视频编辑器的体验还好吗？在下面的评论中告诉我们你的感觉吧。
 
 --------------------------------------------------------------------------------
 
@@ -89,13 +90,14 @@ via: https://itsfoss.com/lives-video-editor/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Scvoet][c]
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://itsfoss.com/author/ankush/
 [b]: https://github.com/lujun9972
+[c]: https://github.com/scvoet
 [1]: https://itsfoss.com/open-source-video-editors/
 [2]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2019/08/lives-video-editor-loading.jpg?ssl=1
 [3]: https://itsfoss.com/vidcutter-video-editor-linux/
