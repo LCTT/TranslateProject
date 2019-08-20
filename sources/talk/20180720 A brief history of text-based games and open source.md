@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (cycoe)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (A brief history of text-based games and open source)
+[#]: via: (https://opensource.com/article/18/7/interactive-fiction-tools)
+[#]: author: (Jason Mclntosh https://opensource.com/users/jmac)
+
 A brief history of text-based games and open source
 ======
 

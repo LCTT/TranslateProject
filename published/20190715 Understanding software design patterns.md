@@ -69,17 +69,17 @@ package org.opensource.demo.singleton;
 
 public class OpensourceSingleton {
 
-    private static OpensourceSingleton uniqueInstance;
+    private static OpensourceSingleton uniqueInstance;
 
-    private OpensourceSingleton() {
-    }
+    private OpensourceSingleton() {
+    }
 
-    public static OpensourceSingleton getInstance() {
-        if (uniqueInstance == null) {
-            uniqueInstance = new OpensourceSingleton();
-        }
-        return uniqueInstance;
-    }
+    public static OpensourceSingleton getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new OpensourceSingleton();
+        }
+        return uniqueInstance;
+    }
 
 }
 ```
@@ -102,20 +102,20 @@ package org.opensource.demo.singleton;
 
 public class ImprovedOpensourceSingleton {
 
-    private volatile static ImprovedOpensourceSingleton uniqueInstance;
+    private volatile static ImprovedOpensourceSingleton uniqueInstance;
 
-    private ImprovedOpensourceSingleton() {}
+    private ImprovedOpensourceSingleton() {}
 
-    public static ImprovedOpensourceSingleton getInstance() {
-        if (uniqueInstance == null) {
-            synchronized (ImprovedOpensourceSingleton.class) {
-                if (uniqueInstance == null) {
-                    uniqueInstance = new ImprovedOpensourceSingleton();
-                }
-            }
-        }
-        return uniqueInstance;
-    }
+    public static ImprovedOpensourceSingleton getInstance() {
+        if (uniqueInstance == null) {
+            synchronized (ImprovedOpensourceSingleton.class) {
+                if (uniqueInstance == null) {
+                    uniqueInstance = new ImprovedOpensourceSingleton();
+                }
+            }
+        }
+        return uniqueInstance;
+    }
 
 }
 ```
@@ -141,20 +141,20 @@ package org.opensource.demo.factory;
 
 public class OpensourceFactory {
 
-    public OpensourceJVMServers getServerByVendor([String][18] name) {
-        if(name.equals("Apache")) {
-            return new Tomcat();
-        }
-        else if(name.equals("Eclipse")) {
-            return new Jetty();
-        }
-        else if (name.equals("RedHat")) {
-            return new WildFly();
-        }
-        else {
-            return null;
-        }
-    }
+    public OpensourceJVMServers getServerByVendor(String name) {
+        if(name.equals("Apache")) {
+            return new Tomcat();
+        }
+        else if(name.equals("Eclipse")) {
+            return new Jetty();
+        }
+        else if (name.equals("RedHat")) {
+            return new WildFly();
+        }
+        else {
+            return null;
+        }
+    }
 }
 ```
 
@@ -164,9 +164,9 @@ public class OpensourceFactory {
 package org.opensource.demo.factory;
 
 public interface OpensourceJVMServers {
-    public void startServer();
-    public void stopServer();
-    public [String][18] getName();
+    public void startServer();
+    public void stopServer();
+    public String getName();
 }
 ```
 
@@ -176,17 +176,17 @@ public interface OpensourceJVMServers {
 package org.opensource.demo.factory;
 
 public class WildFly implements OpensourceJVMServers {
-    public void startServer() {
-        [System][19].out.println("Starting WildFly Server...");
-    }
+    public void startServer() {
+        System.out.println("Starting WildFly Server...");
+    }
 
-    public void stopServer() {
-        [System][19].out.println("Shutting Down WildFly Server...");
-    }
+    public void stopServer() {
+        System.out.println("Shutting Down WildFly Server...");
+    }
 
-    public [String][18] getName() {
-        return "WildFly";
-    }
+    public String getName() {
+        return "WildFly";
+    }
 }
 ```
 
@@ -209,9 +209,9 @@ package org.opensource.demo.observer;
 
 public interface Topic {
 
-    public void addObserver([Observer][22] observer);
-    public void deleteObserver([Observer][22] observer);
-    public void notifyObservers();
+    public void addObserver(Observer observer);
+    public void deleteObserver(Observer observer);
+    public void notifyObservers();
 }
 ```
 
@@ -226,39 +226,39 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Conference implements Topic {
-    private List&lt;Observer&gt; listObservers;
-    private int totalAttendees;
-    private int totalSpeakers;
-    private [String][18] nameEvent;
+    private List<Observer> listObservers;
+    private int totalAttendees;
+    private int totalSpeakers;
+    private String nameEvent;
 
-    public Conference() {
-        listObservers = new ArrayList&lt;Observer&gt;();
-    }
+    public Conference() {
+        listObservers = new ArrayList<Observer>();
+    }
 
-    public void addObserver([Observer][22] observer) {
-        listObservers.add(observer);
-    }
+    public void addObserver(Observer observer) {
+        listObservers.add(observer);
+    }
 
-    public void deleteObserver([Observer][22] observer) {
-        int i = listObservers.indexOf(observer);
-        if (i &gt;= 0) {
-            listObservers.remove(i);
-        }
-    }
+    public void deleteObserver(Observer observer) {
+        int i = listObservers.indexOf(observer);
+        if (i >= 0) {
+            listObservers.remove(i);
+        }
+    }
 
-    public void notifyObservers() {
-        for (int i=0, nObservers = listObservers.size(); i &lt; nObservers; ++ i) {
-            [Observer][22] observer = listObservers.get(i);
-            observer.update(totalAttendees,totalSpeakers,nameEvent);
-        }
-    }
+    public void notifyObservers() {
+        for (int i=0, nObservers = listObservers.size(); i < nObservers; ++ i) {
+            Observer observer = listObservers.get(i);
+            observer.update(totalAttendees,totalSpeakers,nameEvent);
+        }
+    }
 
-    public void setConferenceDetails(int totalAttendees, int totalSpeakers, [String][18] nameEvent) {
-        this.totalAttendees = totalAttendees;
-        this.totalSpeakers = totalSpeakers;
-        this.nameEvent = nameEvent;
-        notifyObservers();
-    }
+    public void setConferenceDetails(int totalAttendees, int totalSpeakers, String nameEvent) {
+        this.totalAttendees = totalAttendees;
+        this.totalSpeakers = totalSpeakers;
+        this.nameEvent = nameEvent;
+        notifyObservers();
+    }
 }
 ```
 
@@ -269,8 +269,8 @@ public class Conference implements Topic {
 ```
 package org.opensource.demo.observer;
 
-public interface [Observer][22] {
-    public void update(int totalAttendees, int totalSpeakers, [String][18] nameEvent);
+public interface Observer {
+    public void update(int totalAttendees, int totalSpeakers, String nameEvent);
 }
 ```
 
@@ -281,27 +281,27 @@ public interface [Observer][22] {
 ```
 package org.opensource.demo.observer;
 
-public class MonitorConferenceAttendees implements [Observer][22] {
-    private int totalAttendees;
-    private int totalSpeakers;
-    private [String][18] nameEvent;
-    private Topic topic;
+public class MonitorConferenceAttendees implements Observer {
+    private int totalAttendees;
+    private int totalSpeakers;
+    private String nameEvent;
+    private Topic topic;
 
-    public MonitorConferenceAttendees(Topic topic) {
-        this.topic = topic;
-        topic.addObserver(this);
-    }
+    public MonitorConferenceAttendees(Topic topic) {
+        this.topic = topic;
+        topic.addObserver(this);
+    }
 
-    public void update(int totalAttendees, int totalSpeakers, [String][18] nameEvent) {
-        this.totalAttendees = totalAttendees;
-        this.totalSpeakers = totalSpeakers;
-        this.nameEvent = nameEvent;
-        printConferenceInfo();
-    }
+    public void update(int totalAttendees, int totalSpeakers, String nameEvent) {
+        this.totalAttendees = totalAttendees;
+        this.totalSpeakers = totalSpeakers;
+        this.nameEvent = nameEvent;
+        printConferenceInfo();
+    }
 
-    public void printConferenceInfo() {
-        [System][19].out.println(this.nameEvent + " has " + totalSpeakers + " speakers and " + totalAttendees + " attendees");
-    }
+    public void printConferenceInfo() {
+        System.out.println(this.nameEvent + " has " + totalSpeakers + " speakers and " + totalAttendees + " attendees");
+    }
 }
 ```
 
