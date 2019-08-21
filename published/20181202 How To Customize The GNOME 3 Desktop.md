@@ -1,11 +1,11 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
+[#]: publisher: (wxy)
 [#]: subject: (How To Customize The GNOME 3 Desktop?)
 [#]: via: (https://www.2daygeek.com/how-to-customize-the-gnome-3-desktop/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-11256-1.html)
 
 如何自定义 GNOME 3 桌面？
 ======
