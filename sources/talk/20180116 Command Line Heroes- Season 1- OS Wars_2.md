@@ -7,7 +7,7 @@
 [#]: via: (https://www.redhat.com/en/command-line-heroes/season-1/os-wars-part-2-rise-of-linux)
 [#]: author: (redhat https://www.redhat.com)
 
-Command Line Heroes: Season 1: OS Wars
+Command Line Heroes: Season 1: OS Wars(Part2 Rise of Linux)
 ======
 Saron Yitbarek: Is this thing on? Cue the epic Star Wars crawl, and, action.
 
