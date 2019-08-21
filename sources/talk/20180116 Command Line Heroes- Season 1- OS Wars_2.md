@@ -7,17 +7,17 @@
 [#]: via: (https://www.redhat.com/en/command-line-heroes/season-1/os-wars-part-2-rise-of-linux)
 [#]: author: (redhat https://www.redhat.com)
 
-Command Line Heroes: Season 1: OS Wars(Part2 Rise of Linux)
+代码英雄: 第一季: 操作系统大战(第二部分 Linux 崛起)
 ======
-Saron Yitbarek: Is this thing on? Cue the epic Star Wars crawl, and, action.
+Saron Yitbarek: 这玩意开着的吗? 让我们进一段史诗般的星球大战的开幕吧, 开始了.
 
-Voice Actor: [00:00:30] Episode Two: Rise of Linux ® . The empire of Microsoft controls 90 % of desktop users . C omplete standardization of operating systems seems assured. However, the advent of the internet swerves the focus of the war from the desktop toward enterprise, where all businesses scramble to claim a server of their own. Meanwhile, an unlikely hero arises from amongst the band of open source rebels . Linus Torvalds, head strong, bespectacled, releases his Linux system free of charge. Microsoft reels — and regroups.
+配音: [00:00:30] 第二集:Linux®的崛起。微软帝国控制着90%的桌面用户。操作系统的全面标准化似乎是板上钉钉的事了。然而，互联网的出现将战争的焦点从桌面转向了企业，在该领域，所有商业组织都争相构建自己的服务器。与此同时，一个不太可能的英雄出现在开源反叛组织中。绝顶聪明，头戴眼镜的Linus Torvalds免费发布了他的Linux系统。微软打了个趔趄-并且开始重组。
 
-Saron Yitbarek: [00:01:00] Oh, the nerd in me just loves that. So, where were we? Last time, Apple and Microsoft were trading blows, trying to dominate in a war over desktop users. By the end of e pisode o ne, we saw Microsoft claiming most of the prize. Soon, the entire landscape went through a seismic upheaval. That's all because of the rise of the internet and the army of developers that rose with it. The internet moves the battlefield from PC users in their home offices to giant business clients with hundreds of servers.
+Saron Yitbarek: [00:01:00] 哦，我们书呆子就是喜欢那样。上一次我们讲到哪了?苹果和微软互相攻伐，试图在一场争夺桌面用户的战争中占据主导地位。在第一集的结尾，我们看到微软获得了大部分的市场份额。很快，由于互联网的兴起以及随之而来的开发者大军,整个市场都经历了一场地震。互联网将战场从在家庭和办公室中的个人电脑用户转移到拥有数百台服务器的大型商业客户中。
 
-[00:01:30] This is a huge resource shift. Not only does every company out there wanting to remain relevant suddenly have to pay for server space and get a website built — they also have to integrate software to track resources, monitor databases, et cetera, et cetera. You're going to need a lot of developers to help you with that. At least, back then you did.
+[00:01:30] 这意味着巨量资源的迁移。突然间，所有相关企业不仅被迫为服务器空间和网站建设付费，而且还必须集成软件来进行资源跟踪和数据库监控等工作。你需要很多开发人员来帮助你。至少那时候大家都是这么做的。
 
-In p art t wo of the OS wars, we'll see how that enormous shift in priorities , and the work of a few open source rebels like Linus Torvalds and Richard Stallman , managed to strike fear in the heart of Microsoft, and an entire software industry.
+在操作系统之战的第二部分，我们将看到优先级的巨大转变，以及像Linus Torvalds和Richard Stallman这样的开源叛逆者是如何成功地在微软和整个软件行业的核心地带引起恐惧的。
 
 [00:02:00] I'm Saron Yitbarek and you're listening to Command Line Heroes, an original podcast from Red Hat. In each episode, we're bringing you stories about the people who transform technology from the command line up.
 
