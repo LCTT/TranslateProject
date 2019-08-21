@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11254-1.html)
 [#]: subject: (Fix ‘E: The package cache file is corrupted, it has the wrong hash’ Error In Ubuntu)
 [#]: via: (https://www.ostechnix.com/fix-e-the-package-cache-file-is-corrupted-it-has-the-wrong-hash-error-in-ubuntu/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
@@ -35,13 +35,13 @@ E: The package cache file is corrupted, it has the wrong hash
 
 ![][2]
 
-Ubuntu 中的 “The package cache file is corrupted, it has the wrong hash” 错误
+*Ubuntu 中的 “The package cache file is corrupted, it has the wrong hash” 错误*
 
 经过一番谷歌搜索，我找到了解决此错误的方法。
 
 如果你遇到过这个错误，不要惊慌。只需运行下面的命令修复。
 
-在运行命令之前，**请再次确认你在最后加入了 “\*”**。在命令最后加上 ***** 很重要。如果你没有添加，它会删除 **/var/lib/apt/lists/** 目录，而且无法恢复。我提醒过你了！
+在运行命令之前，**请再次确认你在最后加入了 `*`**。在命令最后加上 `*` 很重要。如果你没有添加，它会删除 `/var/lib/apt/lists/`*目录，而且无法恢复。我提醒过你了！
 
 ```
 $ sudo rm -rf /var/lib/apt/lists/*
@@ -64,7 +64,7 @@ via: https://www.ostechnix.com/fix-e-the-package-cache-file-is-corrupted-it-has-
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
