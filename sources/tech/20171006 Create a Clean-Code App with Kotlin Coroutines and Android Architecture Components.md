@@ -1,5 +1,3 @@
-bestony is translating.
-
 Create a Clean-Code App with Kotlin Coroutines and Android Architecture Components
 ============================================================
 
