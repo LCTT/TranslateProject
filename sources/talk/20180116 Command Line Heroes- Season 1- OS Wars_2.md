@@ -11,7 +11,7 @@
 ======
 Saron Yitbarek: 这玩意开着的吗? 让我们进一段史诗般的星球大战的开幕吧, 开始了.
 
-配音: [00:00:30] 第二集:Linux®的崛起。微软帝国控制着90%的桌面用户。操作系统的全面标准化似乎是板上钉钉的事了。然而，互联网的出现将战争的焦点从桌面转向了企业，在该领域，所有商业组织都争相构建自己的服务器。与此同时，一个不太可能的英雄出现在开源反叛组织中。绝顶聪明，头戴眼镜的Linus Torvalds免费发布了他的Linux系统。微软打了个趔趄-并且开始重组。
+配音: [00:00:30] 第二集:Linux®的崛起。微软帝国控制着90%的桌面用户。操作系统的全面标准化似乎是板上钉钉的事了。然而，互联网的出现将战争的焦点从桌面转向了企业，在该领域，所有商业组织都争相构建自己的服务器。与此同时，一个不太可能的英雄出现在开源反叛组织中。固执，戴着眼镜的Linus Torvalds免费发布了他的Linux系统。微软打了个趔趄-并且开始重组。
 
 Saron Yitbarek: [00:01:00] 哦，我们书呆子就是喜欢那样。上一次我们讲到哪了?苹果和微软互相攻伐，试图在一场争夺桌面用户的战争中占据主导地位。在第一集的结尾，我们看到微软获得了大部分的市场份额。很快，由于互联网的兴起以及随之而来的开发者大军,整个市场都经历了一场地震。互联网将战场从在家庭和办公室中的个人电脑用户转移到拥有数百台服务器的大型商业客户中。
 
@@ -19,35 +19,35 @@ Saron Yitbarek: [00:01:00] 哦，我们书呆子就是喜欢那样。上一次�
 
 在操作系统之战的第二部分，我们将看到优先级的巨大转变，以及像Linus Torvalds和Richard Stallman这样的开源叛逆者是如何成功地在微软和整个软件行业的核心地带引起恐惧的。
 
-[00:02:00] I'm Saron Yitbarek and you're listening to Command Line Heroes, an original podcast from Red Hat. In each episode, we're bringing you stories about the people who transform technology from the command line up.
+[00:02:00] 我是 Saron Yitbarek,您现在收听的是代码英雄，一款红帽公司原创的播客节目. 每一集,我们都会给您带来“从码开始”改变技术的人的故事.
 
-[00:02:30] Okay. Imagine for a second that you're Microsoft in 1991. You're feeling pretty good, right? Pretty confident. Assured global domination feels nice. You've mastered the art of partnering with other businesses, but you're still pretty much cutting out the developers, programmers, and sys admins that are the real foot soldiers out there. There is this Finnish geek named Linus Torvalds. He and his team of open source programmers are starting to put out versions of Linux, this OS kernel that they're duct taping together.
+[00:02:30] 好。假设你是1991年的微软。你自我感觉良好，对吧?满怀信心。确定全球主导的地位感觉不错。你已经掌握了与其他企业合作的艺术，但是仍然将大部分开发人员、程序员和系统管理员排除在联盟之外，而他们才是真正的步兵。这是出现了个叫Linus Torvalds的芬兰极客。他和他的开源程序员团队正在开始发布Linux，其操作系统内核是由他们一起编写出来的。
 
-[00:03:00] If you're Microsoft, frankly, you're not too concerned about Linux or even about open source in general, but eventually, the sheer size of Linux gets so big that it becomes impossible for Microsoft not to notice. The first version comes out in 1991 and it's got maybe 10,000 lines of code. A decade later, there will be three million lines of code. In case you're wondering, today it's at 20 million.
+[00:03:00] 坦白地说，如果你是微软公司，你并不会太在意Linux，甚至是一般意义上的开源运动，但是最终，Linux的规模变得如此之大，以至于微软不可能不注意到。Linux第一个版本出现在1991年，当时大概有10000行代码。十年后，变成了300万行代码。如果你想知道，今天则是2000万行代码。
 
-[00:03:30] For a moment, let's stay in the early 90s. Linux hasn't yet become the behemoth we know now. It's just this strangely viral OS that's creeping across the planet, and the geeks and hackers of the world are falling in love with it. I was too young in those early days, but I sort of wish I'd been there. At that time, discovering Linux was like gaining access to a secret society. Programmers would share the Linux CD set with friends the same way other people would share mixtapes of underground music.
+[00:03:30] 让我们停留在90年代初一会儿。那是Linux还没有成为我们现在所知道的庞然大物。只是这个奇怪的病毒式的操作系统正在这个星球上蔓延，全世界的极客和黑客都爱上了它。那时候我还太年轻，但依然希望加入他们。在那个时候，发现Linux就如同进入了一个秘密社会一样。程序员与朋友分享Linux CD集，就像其他人分享地下音乐混音带一样。
 
-Developer Tristram Oaten [00:03:40] tells the story of how he first encountered Linux when he was 16 years old.
+Developer Tristram Oaten [00:03:40] 讲讲了你16岁时第一次接触Linux的故事吧。
 
-Tristram Oaten: [00:04:00] We went on a scuba diving holiday, my family and I, to Hurghada, which is on the Red Sea. Beautiful place, highly recommend it. The first day, I drank the tap water. Probably, my mom told me not to. I was really sick the whole week — didn't leave the hotel room. All I had with me was a laptop with a fresh install of Slackware Linux, this thing that I'd heard about and was giving it a try. There were no extra apps, just what came on the eight CDs. By necessity, all I had to do this whole week was to get to grips with this alien system. I read man pages, played around with the terminal. I remember not knowing the difference between a single dot, meaning the current directory, and two dots, meaning the previous directory.
+Tristram Oaten: [00:04:00] 我和我的家人去了Red Sea上的Hurghada潜水度假。那是一个美丽的地方，强烈推荐。第一天，我喝了自来水。也许，我妈妈跟我说过不要这么做。我整个星期都病得很厉害，没有离开旅馆房间。当时我只带了一台新安装了Slackware Linux的笔记本电脑，我听说过这玩意并且正在尝试使用它。这台笔记本上没有额外的应用程序，只有8张cd。出于必要，整个星期我所做的就是去了解这个外星一般的系统。我阅读手册，摆弄着终端。我记得当时我甚至我不知道一个点(表示当前目录)和两个点(表示前一个目录)之间的区别。
 
-[00:04:30] I had no clue. I must have made so many mistakes, but slowly, over the course of this forcible solitude, I broke through this barrier and started to understand and figure out what this command line thing was all about. By the end of the holiday, I hadn't seen the pyramids, the Nile, or any Egyptian sites, but I had unlocked one of the wonders of the modern world. I'd unlocked Linux, and the rest is history.
+[00:04:30] 我一点头绪都没有。犯过很多错误，但慢慢地，在这种强迫的孤独中，我突破了障碍，开始理解并明白命令行到底是怎么回事。假期结束时，我没有看过金字塔、尼罗河等任何埃及遗址，但我解锁了现代世界的一个奇迹。我解锁了Linux，接下来的事大家都知道了。
 
-Saron Yitbarek: You can hear some variation on that story from a lot of people. Getting access to that Linux command line was a transformative experience.
+Saron Yitbarek: 你可以从很多人那里听到关于这个故事的不同说法。访问Linux命令行是一种革命性的体验。
 
-David Cantrell: This thing gave me the source code. I was like, "That's amazing."
+David Cantrell: 它给了我源代码. 我当时的感觉是, "太神奇了."
 
-Saron Yitbarek: We're at a 2017 Linux developers conference called Flock to Fedora.
+Saron Yitbarek: 我们正在参加一个名为Flock to Fedora的2017年Linux开发者大会。
 
-David Cantrell: ... very appealing. I felt like I had more control over the system and it just drew me in more and more. From there, I guess, after my first Linux kernel compile in 1995, I was hooked, so, yeah.
+David Cantrell: ... 非常有吸引力。我觉得我对这个系统有了更多的控制力，它越来越吸引我。我想，从那时起，1995年我第一次编译Linux内核时，我就迷上了它。
 
-Saron Yitbarek: Developers David Cantrell and Joe Brockmire.
+Saron Yitbarek: 开发者 David Cantrell 与 Joe Brockmire.
 
-Joe Brockmeier: I was going through the cheap software and found a four - CD set of Slackware Linux. It sounded really exciting and interesting so I took it home, installed it on a second computer, started playing with it, and really got excited about two things. One was, I was excited not to be running Windows, and I was excited by the open source nature of Linux.
+Joe Brockmeier: 我寻遍了便宜软件最终找到一套四张CD的 Slackware Linux. 它看起来来非常令人兴奋而且很有趣，所以我把它带回家，安装在第二台电脑上，开始摆弄它，并为两件事情感到兴奋。一个是，我运行的不是Windows，另一个我Linux的开源特性。
 
-Saron Yitbarek: [00:06:00] That access to the command line was, in some ways, always there. Decades before open source really took off, there was always a desire to have complete control, at least among developers. Go way back to a time before the OS wars, before Apple and Microsoft were fighting over their GUIs. There were command line heroes then, too. Professor Paul Jones is the director of the online library ibiblio.org. He worked as a developer during those early days.
+Saron Yitbarek: [00:06:00] 某种程度上来说，对命令行的访问总是存在的。在开源真正开始流行还要早几十年前，人们(至少在开发人员中是这样)总是希望能够做到完全控制。让我们回到操作系统大战之前的那个时代，在苹果和微软他们的GUI而战之前。那时也有代码英雄。保罗·琼斯(Paul Jones)教授(在线图书馆ibiblio.org负责人)在那个古老的时代，就是一名开发人员。
 
-Paul Jones: [00:07:00] The internet, by its nature, at that time, was less client server, totally, and more peer to peer. We're talking about, really, some sort of VAX to VAX, some sort of scientific workstation, the scientific workstation. That doesn't mean that client and server relationships and applications weren't there, but it does mean that the original design was to think of how to do peer - to - peer things, the opposite of what IBM had been doing, in which they had dumb terminals that had only enough intelligence to manage the user interface, but not enough intelligence to actually let you do anything in the terminal that would expose anything to it.
+Paul Jones: [00:07:00] 从本质上讲，互联网在那个时候比较少是客户端-服务器架构的，而是更多是点对点架构的。讲真，当我们说，某种VAX到VAX，某科学工作站，科学工作站。这并不意味着没有客户端与服务端的关系以及没有应用程序,但这的确意味着,最初的设计是思考如何实现点对点,它与IBM一直在做的东西相对立. IBM给你的只有哑终端,这种终端只能让你管理用户界面,却无法让你像真正的终端一样为所欲为。
 
 Saron Yitbarek: As popular as GUI was becoming among casual users, there was always a pull in the opposite direction for the engineers and developers. Before Linux in the 1970s and 80s, that resistance was there, with EMAX and GNU . W ith Stallman's free software foundation, certain folks were always begging for access to the command line, but it was Linux in the 1990s that delivered like no other.
 
