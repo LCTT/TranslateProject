@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11258-1.html)
 [#]: subject: (How To Change Linux Console Font Type And Size)
 [#]: via: (https://www.ostechnix.com/how-to-change-linux-console-font-type-and-size/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
 如何更改 Linux 控制台字体类型和大小
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201908/23/041741x6qiajjijupjyjsp.jpg)
 
 如果你有图形桌面环境，那么就很容易更改文本的字体以及大小。但你如何在没有图形环境的 Ubuntu 无头服务器中做到？别担心！本指南介绍了如何更改 Linux 控制台的字体和大小。这对于那些不喜欢默认字体类型/大小或者喜欢不同字体的人来说非常有用。
 
