@@ -10,7 +10,7 @@ export TSL_DIR='translated' # 已翻译
 export PUB_DIR='published'  # 已发布
 
 # 定义匹配规则
-export CATE_PATTERN='(talk|tech)'                      # 类别
+export CATE_PATTERN='(talk|tech|news)'                 # 类别
 export FILE_PATTERN='[0-9]{8} [a-zA-Z0-9_.,() -]*\.md' # 文件名
 
 # 获取用于匹配操作的正则表达式
