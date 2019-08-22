@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (tomjlw)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11259-1.html)
 [#]: subject: (Copying files in Linux)
 [#]: via: (https://opensource.com/article/19/8/copying-files-linux)
 [#]: author: (Seth Kenlon https://opensource.com/users/sethhttps://opensource.com/users/scottnesbitthttps://opensource.com/users/greg-p)
@@ -12,7 +12,7 @@
 
 > 了解在 Linux 中多种复制文档的方式以及各自的优点。
 
-![归档文件][1]
+![](https://img.linux.net.cn/data/attachment/album/201908/23/053859f1stcjezllmj28e8.jpg)
 
 在办公室里复印文档过去需要专门的员工与机器。如今，复制是电脑用户无需多加思考的任务。在电脑里复制数据是如此微不足道的事，以致于你还没有意识到复制就发生了，例如当拖动文档到外部硬盘的时候。
 
