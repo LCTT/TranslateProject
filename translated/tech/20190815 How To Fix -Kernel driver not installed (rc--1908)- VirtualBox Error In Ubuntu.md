@@ -7,10 +7,10 @@
 [#]: via: (https://www.ostechnix.com/how-to-fix-kernel-driver-not-installed-rc-1908-virtualbox-error-in-ubuntu/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-How To Fix “Kernel driver not installed (rc=-1908)” VirtualBox Error In Ubuntu
+如何在 Ubuntu 中修复 VirtualBox 的 “Kernel driver not installed (rc=-1908)” 错误
 ======
 
-I use Oracle VirtualBox to test various Linux and Unix distributions. I’ve tested hundred of virtual machines in VirtualBox so far. Today, I started Ubuntu 18.04 server VM in my Ubuntu 18.04 desktop and I got the following error.
+我使用 Oracle VirtualBox 来测试各种 Linux 和 Unix 发行版。到目前为止，我已经在 VirtualBox 中测试了上百个虚拟机。今天，我在我的 Ubuntu 18.04 桌面上启动了 Ubuntu 18.04 服务器版虚拟机，我收到了以下错误。
 
 ```
 Kernel driver not installed (rc=-1908)
@@ -26,9 +26,9 @@ where: suplibOsInit what: 3 VERR_VM_DRIVER_NOT_INSTALLED (-1908) - The support d
 
 ![][2]
 
-“Kernel driver not installed (rc=-1908)” Error in Ubuntu
+Ubuntu 中的 “Kernel driver not installed (rc=-1908)” 错误
 
-I clicked OK to close the message box and and I saw another one in the background.
+我点击了 OK 关闭消息框，然后在后台看到了另一条消息。
 
 ```
 Failed to open a session for the virtual machine Ubuntu 18.04 LTS Server.
@@ -45,45 +45,35 @@ IMachine {85cd948e-a71f-4289-281e-0ca7ad48cd89}
 
 ![][3]
 
-The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)
+启动期间虚拟机意外终止，退出代码为 1（0x1）
 
-I didn’t know what to do first. I ran the following command to check if it helps.
+我不知道该先做什么。我运行以下命令来检查是否有用。
 
 ```
 $ sudo modprobe vboxdrv
 ```
 
-And, I got this error.
+我收到了这个错误：
 
 ```
 modprobe: FATAL: Module vboxdrv not found in directory /lib/modules/5.0.0-23-generic
 ```
 
-After carefully reading the both error messages, I realized that I should update the Virtualbox application.
+仔细阅读这两个错误消息后，我意识到我应该更新 Virtualbox 程序。
 
-If you ever run into this error in Ubuntu and its variants like Linux Mint, all you have to do is just reinstall or update the **“virtualbox-dkms”** package using command:
+如果你在 Ubuntu 及其衍生版（如 Linux Mint）中遇到此错误，你只需使用以下命令重新安装或更新 **“virtualbox-dkms”** 包：
 
 ```
 $ sudo apt install virtualbox-dkms
 ```
 
-Or, it is much better to update the whole system:
+或者，最好更新整个系统：
 
 ```
 $ sudo apt upgrade
 ```
 
-Now the error has gone and I could start VMs from VirtualBox without any issues.
-
-* * *
-
-**Related read:**
-
-  * [**Solve “Result Code: NS_ERROR_FAILURE (0x80004005)” VirtualBox Error In Arch Linux**][4]
-
-
-
-* * *
+错误消失了，我可以正常在 VirtualBox 中启动虚拟机了。
 
 --------------------------------------------------------------------------------
 
@@ -91,7 +81,7 @@ via: https://www.ostechnix.com/how-to-fix-kernel-driver-not-installed-rc-1908-vi
 
 作者：[sk][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
