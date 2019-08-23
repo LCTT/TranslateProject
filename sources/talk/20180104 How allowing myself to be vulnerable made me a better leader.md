@@ -1,3 +1,5 @@
+translating by valoniakim
+
 How allowing myself to be vulnerable made me a better leader
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/leaderscatalysts.jpg?itok=f8CwHiKm)
