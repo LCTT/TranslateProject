@@ -3,7 +3,7 @@ Podman：一个更安全的运行容器的方式
 
 > Podman 使用传统的 fork/exec 模型（相对于客户端/服务器模型）来运行容器。
 
-![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/security-lock-cloud-safe.png?itok=yj2TFPzq)
+![](https://img.linux.net.cn/data/attachment/album/201908/23/234924m55sn8zt3b5q8815.jpg)
 
 在进入本文的主要主题 [Podman][1] 和容器之前，我需要了解一点 Linux 审计功能的技术。
 
