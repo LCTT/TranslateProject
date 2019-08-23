@@ -1,3 +1,4 @@
+Translating by robsean
 4 Ways to Customize Xfce and Give it a Modern Look
 ======
 **Brief: Xfce is a great lightweight desktop environment with one drawback. It looks sort of old. But you don’t have to stick with the default looks. Let’s see various ways you can customize Xfce to give it a modern and beautiful look.**
