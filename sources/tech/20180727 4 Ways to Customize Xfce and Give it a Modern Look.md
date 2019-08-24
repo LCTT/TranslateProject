@@ -1,95 +1,94 @@
-Translating by robsean
-4 Ways to Customize Xfce and Give it a Modern Look
+4 种方式来自定义 Xfce 来给它一个现代化外观
 ======
-**Brief: Xfce is a great lightweight desktop environment with one drawback. It looks sort of old. But you don’t have to stick with the default looks. Let’s see various ways you can customize Xfce to give it a modern and beautiful look.**
+**简介: Xfce 是一个非常轻量的桌面环境，它有一个缺点。它看起来有点老旧。但是你没有必要坚持默认外观。让我们看看你可以自定义 Xfce 的各种各样的方法，来给让一个现代化的和漂亮的外观。**
 
 ![Customize Xfce desktop envirnment][1]
 
-To start with, Xfce is one of the most [popular desktop environments][2]. Being a lightweight DE, you can run Xfce on very low resource and it still works great. This is one of the reasons why many [lightweight Linux distributions][3] use Xfce by default.
+首先，Xfce 是最[受欢迎的桌面环境][2]之一。作为一个轻量级桌面环境，你可以在非常低的资源上运行 Xfce ，并且，它仍然很好工作。这是为什么很多[轻量级 Linux 发行版][3]默认使用 Xfce 的原因之一。
 
-Some people prefer it even on a high-end device stating its simplicity, easy of use and non-resource hungry nature as the main reasons.
+一些人甚至喜欢在高端设备上使用它，说明它的简单性、易用性和非资源匮乏性是主要原因。
 
-[Xfce][4] is in itself minimal and provides just what you need. The one thing that bothers is its look and feel which feel old. However, you can easily customize Xfce to look modern and beautiful without reaching the limit where a Unity/GNOME session eats up system resources.
+[Xfce][4] 是自身很小，并只提供你需要的东西。令人烦恼的事是觉得它的外观和感觉很老了。然而，你可以简单地自定义 Xfce 来看起来现代化和漂亮，而不达到 Unity/GNOME 会话占用系统资源的极限。
 
-### 4 ways to Customize Xfce desktop
+### 4 种方式来自定义 Xfce 桌面
 
-Let’s see some of the ways by which we can improve the look and feel of your Xfce desktop environment.
+让我们看看一些方法，我们可以通过这些方法改善你的 Xfce 桌面环境的外观和感觉。
 
-The default Xfce desktop environment looks something like this :
+默认 Xfce 桌面环境看起来有些像这样：
 
 ![Xfce default screen][5]
 
-As you can see, the default Xfce desktop is kinda boring. We will use some themes, icon packs and change the default dock to make it look fresh and a bit revealing.
+如您所见，默认 Xfce 桌面有点没有趣味性。我们将使用主题，图标包以及更改默认 dock 来使它看起来新鲜和有一个惊艳。
 
-#### 1. Change themes in Xfce
+#### 1. 在 Xfce 中更改主题
 
-The first thing we will do is pick up a theme from [xfce-look.org][6]. My favorite Xfce theme is [XFCE-D-PRO][7].
+我们将做的第一件事是从 [xfce-look.org][6] 中找到一款主题。我最喜欢的 Xfce 主题是 [XFCE-D-PRO][7]。
 
-You can download the theme from [here][8] and extract it somewhere.
+你可以从[这里][8]下载主题，并提取到某处。
 
-You can copy this extracted file to **.theme** folder in your home directory. If the folder is not present by default, you can create one and the same goes for icons which needs a **.icons** folder in the home directory.
+你可以复制提取出的这些主题文件到你 home 目录中的 **.theme** 文件夹。如果文件夹默认不存在，你可以创建一个 ，同样的道理，图标需要一个在 home 目录中的 **.icons** 文件夹。
 
-Open **Settings > Appearance > Style** to select the theme, log out and login to see the change. Adwaita-dark from default is also a nice one.
+打开 **设置 > 外观 > 样式** 来选择主题，注销并重新登录以查看更改。默认的 Adwaita-dark 也是极好的一个。
 
 ![Appearance Xfce][9]
 
-You can use any [good GTK theme][10] on Xfce.
+你可以在 Xfce 上使用一些[好的 GTK 主题][10]。
 
-#### 2. Change icons in Xfce
+#### 2. 在 Xfce 中更改图标
 
-Xfce-look.org also provides icon themes which you can download, extract and put it in your home directory under **.icons** directory. Once you have added the icon theme in the .icons directory, go to **Settings > Appearance > Icons** to select that icon theme.
+Xfce-look.org 也提供你可以下载的图标主题，提取并放置图标到你的 home 目录中 **.icons** 目录。在你添加图标主题到 .icons 目录中后，转到 **设置 > 外观 > 图标** 来选择这个图标主题。
 
 ![Moka icon theme][11]
 
-I have installed [Moka icon set][12] that looks awesome.
+我已经安装 [Moka 图标集][12] ，它看起来令人惊艳。
 
 ![Moka theme][13]
 
-You can also refer to our list of [awesome icon themes][14].
+你也可以参考我们[令人惊艳的图标主题][14]列表。
 
-##### **Optional: Installing themes through Synaptic**
+##### **可选: 通过 Synaptic 安装主题**
 
-If you want to avoid the manual search and copying of the files, install Synaptic Manager in your system. You can look for some best themes over web and icon sets, and using synaptic manager you can search and install it.
+如果你想避免手工搜索和复制文件，在你的系统中安装 Synaptic 软件包管理器。你可以通过网络和图标集来查找最佳的主题，使用 synaptic 软件包管理器，你可以搜索和安装主题。
 ```
 sudo apt-get install synaptic
 
 ```
 
-**Searching and installing theme/icons through Synaptic**
+**通过 Synaptic 搜索和安装主题/图标**
 
-Open synaptic and click on **Search**. Enter your desired theme, and it will display the list of matching items. Mark all the additional required changes and click on **Apply**. This will download the theme and then install it.
+打开 synaptic ，并在**搜索**上单击。输入你期望的主题，接下来，它将显示匹配主题的列表。标记使用附加依赖的更改，并在**应用**上单击。这些操作将下载主题和安装主题。
 
 ![Arc Theme][15]
 
-Once done, you can open the **Appearance** option to select the desired theme.
+在安装后，你可以打开**外观**选项来选择期望的主题。
 
-In my opinion, this is not the best way to install themes in Xfce.
+在我看来，这不是在 Xfce 中安装主题的最佳方法。
 
-#### 3. Change wallpapers in Xfce
+#### 3. 在 Xfce 中更改桌面背景
 
-Again, the default Xfce wallpaper is not bad at all. But you can change the wallpaper to something that matches with your icons and themes.
+在强调一次，默认 Xfce 桌面背景也不错。但是你可以把桌面背景更改成与你的图标和主题相匹配的东西。
 
-To change wallpapers in Xfce, right click on the desktop and click on Desktop Settings. You can change the desktop background from your custom collection or the defaults one given.
+为在 Xfce 中更改桌面背景，在桌面上右击，并单击桌面设置。你可以从你自定义收藏品中或默认收藏品中给定一个来更改桌面背景。
 
-Right click on the desktop and click on **Desktop Settings**. Choose **Background** from the folder option, and choose any one of the default backgrounds or a custom one.
+在桌面上右击，并单击**桌面设置**。从文件夹选择中选择**背景**，并选择任意一个默认背景或自定义背景。
 
 ![Changing desktop wallpapers][16]
 
-#### 4. Change the dock in Xfce
+#### 4. 在 Xfce 中更改 dock
 
-The default dock is nice and pretty much does what it is for. But again, it looks a bit boring.
+默认 dock 是极好的，为此它做的非常多。但是，再强调一次，它看来有点没有趣味性。
 
 ![Docky][17]
 
-However, if you want your dock to be better and with a little more customization options, you can install another dock.
+不过，如果你想你的 dock 变得更好，并带有更多一点的自定义选项，你可以安装另一个 dock 。
 
-Plank is one of the simplest and lightweight docks and is highly configurable.
+Plank 是最简单和轻量以及高度可配置中一个。
 
-To install Plank use the command below:
+为安装 Plank ，使用下面的命令：
 
 `sudo apt-get install plank`
 
-If Plank is not available in the default repository, you can install it from this PPA.
+如果 Plank 在默认存储库中不可获得，你可以从这个 PPA 中安装它。
 ```
 sudo add-apt-repository ppa:ricotz/docky
 sudo apt-get update
@@ -97,21 +96,21 @@ sudo apt-get install plank
 
 ```
 
-Before you use Plank, you should remove the default dock by right-clicking in it and under Panel Settings, clicking on delete.
+在你使用 Plank 前，你应该通过右键单击移除默认的 dockby，并在面板设置下，单击删除。
 
-Once done, go to **Accessory > Plank** to launch Plank dock.
+在完成后，转到 **附件 > Plank** 来启动 Plank dock 。
 
 ![Plank][18]
 
-Plank picks up icons from the one you are using. So if you change the icon themes, you’ll see the change is reflected in the dock also.
+Plank 从你正在使用的图标中选取一个图标。因此，如果你更改图标主题，你也将在 dock 中看到相关的更改。
 
-### Wrapping Up
+### 总结
 
-XFCE is a lightweight, fast and highly customizable. If you are limited on system resource, it serves good and you can easily customize it to look better. Here’s how my screen looks after applying these steps.
+XFCE 是一个轻量级，快速和高度可自定义的桌面环境。如果你的系统资源有限，它服务很好，并且你可以简单地自定义它来看起来更好。这是在应用这些步骤后，我的屏幕的外观。
 
 ![XFCE desktop][19]
 
-This is just with half an hour of effort. You can make it look much better with different themes/icons customization. Feel free to share your customized XFCE desktop screen in the comments and the combination of themes and icons you are using.
+这只是半个小时的努力，你可以使用不同的主题/图标自定义使它看起来更好。可以随意在评论区分享你自定义的 XFCE 桌面屏幕，以及你正在使用的主题和图标组合。
 
 --------------------------------------------------------------------------------
 
@@ -119,7 +118,7 @@ via: https://itsfoss.com/customize-xfce/
 
 作者：[Ambarish Kumar][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
