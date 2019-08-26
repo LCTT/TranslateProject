@@ -10,18 +10,19 @@ qfzy1233 is translating
 
 更新   2016-08-29:以新的 `filetags--filter` (LCTT译注：文件标签过滤器)替换已经过时的 `show-sel.sh` 脚本（LCTT译注：show-sel 为 show firmware System Event Log records 即硬件系统事件及日志显示）
 
-Update 2017-08-28: Email comment on geeqie video thumbnails
-更新   2017-08-28:
-I am a passionate photographer when being on vacation or whenever I see something beautiful. This way, I collected many [JPEG][1] files over the past years. Here, I describe how I manage my digital photographs while avoiding any [vendor lock-in][2] which binds me to a temporary solution and leads to loss of data. Instead, I prefer solutions where I am able to **invest my time and effort for a long-term relationship**.
+更新   2017-08-28: geeqier 视频缩略图的邮件评论
 
-This (very long) entry is **not about image files only** : I am going to explain further things like my folder hierarchy, file name convention, and so forth. Therefore, this information applies to all kind of files I process.
+每当度假或去哪游玩时我就会化身为一个富有激情的摄影师。所以，过去的几年中我积累了许多的 [JPEG][1] 文件。这篇文章中我会介绍我是如何避免[vendor lock-in][2]（LCTT译注：vendor lock-in 供应商锁定，原为经济学术语，这里引申为避免服务平台突然倒闭得现象）造成受限于那些临时性的解决方案及数据丢失。相反，我更倾向于使用那些可以让我投入时间和精力打理并能长久使用的解决方案。
 
-Before I start explaining my method, we should come to an agreement whether or not we do have the same set of requirements I am trying to match with my method. If you are into [raw image formats][3], storing your photographs somewhere in the cloud or anything else very special to you (and not to me), you might not get satisfied with the things described here. Decide yourself.
+这一（相当长的）攻略 **并不仅仅适用于图像文件** ：我将进一步阐述像是文件夹结构，文件的命名规则，等等许多领域的事情。因此，这些规范适用于我所能接触到的所以类型的文件。
 
-### My requirements
+在我开始传授我的方法之前，我们应该先就我将要介绍方法的达成一个共识，那就是我们是否有相同的需求。如果你对[raw 图像格式][3]十分推崇，将照片存储在云端或其他你信赖的地方（对我而言可能不会），那么你可能不会认同这篇文章将要描述的方式了。根据你的情况来灵活做出选择。
 
-For **getting the photographs (and movies) from my digital camera to my computer** , I just want to put the SD card into my computer and invoke the fetch-workflow. This thing also has to **pre-process the files** to meet my file name convention (described further down) and to rotate images that are in portrait orientation (and not in landscape).
+### 我的需求
 
+对于 **将照片（或视频）从我的数码相机中导出到电脑里**，我只是想将 SD 卡茶道我的电脑里并调用 fetch-workflow 软件。这一步也完成了 **图像软件的预处理** 适用于我提出的文件命名规范（下文会具体论述）同时也可以将图片旋转至正常的方向（而不是横着）。
+
+这些文件将会被存入到我的摄影收藏文件夹 `$HOME/tmp/digicam/`。 在这一文件夹中
 Those files are written to my photography inbox folder `$HOME/tmp/digicam/`. In this folder, I want to **look through my image files and play movies** to **sort out/delete, rename, add/remove tags, and put sets of related files into separate destination folders**.
 
 After that, I want to **navigate through my set of folders** containing the sets of image/movie files. In rare occasions, I want to **open an image file in an independent image processing tool** like [the GIMP][4]. Just for **rotating JPEG files** , I want to have a quick method which does not require an image processing tool and which is rotating JPEG images [in a loss-less way][5].
