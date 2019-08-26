@@ -7,26 +7,26 @@
 [#]: via: (https://www.ostechnix.com/find-out-the-linux-distribution-name-version-and-kernel-details/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
 
-Find The Linux Distribution Name, Version And Kernel Details
+查找 Linux 发行版名称、版本和内核详细信息
 ======
 
 ![Find The Linux Distribution Name, Version And Kernel Details][1]
 
-This guide explains how to find the Linux distribution name, version and Kernel details. If your Linux system has GUI mode, you can find these details easily from the System’s Settings. But in CLI mode, it is bit difficult for beginners to find out such details. No problem! Here I have given a few command line methods to find the Linux system information. There could be many, but these methods will work on most Linux distributions.
+本指南介绍了如何查找 Linux 发行版名称，版本和内核详细信息。如果你的 Linux 系统有 GUI 界面，那么你可以从系统设置中轻松找到这些信息。但在命令行模式下，初学者很难找到这些详情。没有问题！我这里给出了一些命令行方法来查找 Linux 系统信息。可能有很多，但这些方法适用于大多数 Linux 发行版。
 
-### 1\. Find Linux distribution name, version
+### 1\. 查找 Linux 发行版名称、版本
 
-There are many methods to find out what OS is running on in your VPS.
+有很多方法可以找出 VPS 中运行的操作系统。
 
-##### Method 1:
+##### 方法 1：
 
-Open your Terminal and run the following command:
+打开终端并运行以下命令：
 
 ```
 $ cat /etc/*-release
 ```
 
-**Sample output from CentOS 7:**
+**CentOS 7 上的示例输出：**
 
 ```
 CentOS Linux release 7.0.1406 (Core)
@@ -45,7 +45,7 @@ CentOS Linux release 7.0.1406 (Core)
 CentOS Linux release 7.0.1406 (Core)
 ```
 
-**Sample output from Ubuntu 18.04:**
+**Ubuntu 18.04 上的示例输出：**
 
 ```
 DISTRIB_ID=Ubuntu
@@ -66,29 +66,29 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
-##### Method 2:
+##### 方法 2：
 
-The following command will also get your distribution details.
+以下命令也能获取你发行版的详细信息。
 
 ```
 $ cat /etc/issue
 ```
 
-**Sample output from Ubuntu 18.04:**
+**Ubuntu 18.04 上的示例输出：**
 
 ```
 Ubuntu 18.04.2 LTS \n \l
 ```
 
-##### Method 3:
+##### 方法 2：
 
-The following command will get you the distribution details in Debian and its variants like Ubuntu, Linux Mint etc.
+以下命令能在 Debian 及其衍生版如 Ubuntu、Linux Mint 上获取发行版详细信息。
 
 ```
 $ lsb_release -a
 ```
 
-**Sample output:**
+**示例输出：**
 
 ```
 No LSB modules are available.
@@ -98,87 +98,75 @@ Release:    18.04
 Codename:   bionic
 ```
 
-### 2\. Find Linux Kernel details
+### 2\. 查找 Linux 内核详细信息
 
-##### Method 1:
+##### 方法 1：
 
-To find out your Linux kernel details, run the following command from your Terminal.
+要查找 Linux 内核详细信息，请在终端运行以下命令。
 
 ```
 $ uname -a
 ```
 
-**Sample output in CentOS 7:**
+**CentOS 7 上的示例输出：**
 
 ```
 Linux server.ostechnix.lan 3.10.0-123.9.3.el7.x86_64 #1 SMP Thu Nov 6 15:06:03 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-**Sample output in Ubuntu 18.04:**
+**Ubuntu 18.04 上的示例输出：**
 
 ```
 Linux ostechnix 4.18.0-25-generic #26~18.04.1-Ubuntu SMP Thu Jun 27 07:28:31 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-Or,
+或者，
 
 ```
 $ uname -mrs
 ```
 
-**Sample output:**
+**示例输出：**
 
 ```
 Linux 4.18.0-25-generic x86_64
 ```
 
-Where,
+这里，
 
-  * **Linux** – Kernel name
-  * **4.18.0-25-generic** – Kernel version
-  * **x86_64** – System hardware architecture (i.e 64 bit system)
+  * **Linux** – 内核名
+  * **4.18.0-25-generic** – 内核版本
+  * **x86_64** – 系统硬件架构（即 64 位系统）
 
 
 
-For more details about uname command, refer the man page.
+有关 uname 命令的更多详细信息，请参考手册页。
 
 ```
 $ man uname
 ```
 
-##### Method 2:
+##### 方法2：
 
-From your Terminal, run the following command:
+在终端中，运行以下命令：
 
 ```
 $ cat /proc/version
 ```
 
-**Sample output from CentOS 7:**
+**CentOS 7 上的示例输出：**
 
 ```
 Linux version 3.10.0-123.9.3.el7.x86_64 ([email protected]) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Thu Nov 6 15:06:03 UTC 2014
 ```
 
-**Sample output from Ubuntu 18.04:**
+**Ubuntu 18.04 上的示例输出：**
 
 ```
 Linux version 4.18.0-25-generic ([email protected]) (gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)) #26~18.04.1-Ubuntu SMP Thu Jun 27 07:28:31 UTC 2019
 ```
 
-* * *
-
-**Suggested read:**
-
-  * [**How To Find Linux System Details Using inxi**][2]
-  * [**Neofetch – Display Linux system Information In Terminal**][3]
-  * [**How To Find Hardware And Software Specifications In Ubuntu**][4]
-
-
-
-* * *
-
-These are few ways to find find out a Linux distribution’s name, version and Kernel details. Hope you find it useful.
+这些是查找 Linux 发行版的名称、版本和内核详细信息的几种方法。希望你觉得它有用。
 
 --------------------------------------------------------------------------------
 
@@ -186,7 +174,7 @@ via: https://www.ostechnix.com/find-out-the-linux-distribution-name-version-and-
 
 作者：[sk][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -194,6 +182,3 @@ via: https://www.ostechnix.com/find-out-the-linux-distribution-name-version-and-
 [a]: https://www.ostechnix.com/author/sk/
 [b]: https://github.com/lujun9972
 [1]: https://www.ostechnix.com/wp-content/uploads/2015/08/Linux-Distribution-Name-Version-Kernel-720x340.png
-[2]: https://www.ostechnix.com/how-to-find-your-system-details-using-inxi/
-[3]: https://www.ostechnix.com/neofetch-display-linux-systems-information/
-[4]: https://www.ostechnix.com/getting-hardwaresoftware-specifications-in-linux-mint-ubuntu/
