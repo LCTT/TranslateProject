@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11271-1.html)
 [#]: subject: (Happy birthday to the Linux kernel: What's your favorite release?)
 [#]: via: (https://opensource.com/article/19/8/linux-kernel-favorite-release)
 [#]: author: (Lauren Pritchett https://opensource.com/users/lauren-pritchetthttps://opensource.com/users/sethhttps://opensource.com/users/luis-ibanezhttps://opensource.com/users/mhayden)
@@ -30,7 +30,7 @@ Linux 内核生日快乐 —— 那么你喜欢哪个版本？
 
 “我最喜欢的 Linux 内核版本是 2.4.0 系列，它集成了对 USB、LVM 和 ext3 的支持。ext3 是第一个具有日志支持的主流 Linux 文件系统，其从 2.4.15 内核可用。我使用的第一个内核版本是 2.2.13。” - Sean Nelson
 
-“也许是 2.2.14，因为它是在我安装的第一个 Linux 上运行的版本（Mandrake Linux 7.0，在 2000  IIRC）。它也是我第一个需要重新编译以让我的视频卡或我的调制解调器（记不清了）工作的版本。“ - GermánPulido
+“也许是 2.2.14，因为它是在我安装的第一个 Linux 上运行的版本（Mandrake Linux 7.0，在 2000  IIRC）。它也是我第一个需要重新编译以让我的视频卡或我的调制解调器（记不清了）工作的版本。” - GermánPulido
 
 “我认为最新的一个！但我有段时间使用实时内核扩展来进行音频制作。” - Mario Torre
 
