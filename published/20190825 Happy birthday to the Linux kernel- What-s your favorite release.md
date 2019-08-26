@@ -5,7 +5,7 @@
 [#]: url: (https://linux.cn/article-11271-1.html)
 [#]: subject: (Happy birthday to the Linux kernel: What's your favorite release?)
 [#]: via: (https://opensource.com/article/19/8/linux-kernel-favorite-release)
-[#]: author: (Lauren Pritchett https://opensource.com/users/lauren-pritchetthttps://opensource.com/users/sethhttps://opensource.com/users/luis-ibanezhttps://opensource.com/users/mhayden)
+[#]: author: (Lauren Pritchett https://opensource.com/users/lauren-pritchett)
 
 Linux 内核生日快乐 —— 那么你喜欢哪个版本？
 ======
