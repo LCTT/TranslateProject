@@ -123,7 +123,7 @@ via: https://opensource.com/article/18/7/interactive-fiction-tools
 [27]:https://github.com/i7/extensions
 [28]:http://twinery.org/
 [29]:https://github.com/klembot/twinejs
-[30]:/article/18/7/twine-vs-renpy-interactive-fiction
+[30]:https://opensource.com/article/18/7/twine-vs-renpy-interactive-fiction
 [31]:https://tiddlywiki.com/
 [32]:https://github.com/idmillington/undum
 [33]:https://github.com/dfabulich/choicescript
