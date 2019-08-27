@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "hello-wn"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "How to Delete Lines from a File Using the sed Command"
-[#]: via: "https://www.2daygeek.com/linux-remove-delete-lines-in-file-sed-command/"
-[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
+[#]: collector: (lujun9972)
+[#]: translator: (hello-wn)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (How to Delete Lines from a File Using the sed Command)
+[#]: via: (https://www.2daygeek.com/linux-remove-delete-lines-in-file-sed-command/)
+[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
 如何使用 sed 命令删除文件中的行
 ======
