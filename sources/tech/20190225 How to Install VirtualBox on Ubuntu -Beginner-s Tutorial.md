@@ -7,124 +7,126 @@
 [#]: via: (https://itsfoss.com/install-virtualbox-ubuntu)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-How to Install VirtualBox on Ubuntu [Beginner’s Tutorial]
+如何在 Ubuntu 上安装 VirtualBox [新手教程]
 ======
 
-**This beginner’s tutorial explains various ways to install VirtualBox on Ubuntu and other Debian-based Linux distributions.**
+**本新手教程解释了在 Ubuntu 和其他基于 Debian 的 Linux 发行版上安装 VirtualBox 的各种方法。**
 
-Oracle’s free and open source offering [VirtualBox][1] is an excellent virtualization tool, specially for desktop operating systems. I prefer using it over [VMWare Workstation in Linux][2], another virtualization tool.
+Oracle 公司的免费开源产品 [VirtualBox][1] 是一款出色的虚拟化工具，专门用于桌面操作系统。和 [Linux 上的 VMWare Workstation][2] — 另一款虚拟化工具，相比起来，我更喜欢它。
 
-You can use virtualization software like VirtualBox for installing and using another operating system within a virtual machine.
+你可以使用 VirtualBox 等虚拟化软件在虚拟机中安装和使用其他操作系统。
 
-For example, you can [install Linux on VirtualBox inside Windows][3]. Similarly, you can also [install Windows inside Linux using VirtualBox][4].
+例如，你可以[在 Windows 上的 VirtualBox 中安装 Linux][3]。同样地，你也可以[用 VirtualBox 在 Linux 中安装 Windows][4]。
 
-You can also use VirtualBox for installing another Linux distribution in your current Linux system. Actually, this is what I use it for. If I hear about a nice Linux distribution, instead of installing it on a real system, I test it on a virtual machine. It’s more convenient when you just want to try out a distribution before making a decision about installing it on your actual machine.
+你也可以用 VirtualBox 在你当前的 Linux 系统中安装别的 Linux 发行版。事实上，这就是我用它的原因。如果我听说了一个不错的 Linux 发行版，我会在虚拟机上测试它，而不是安装在真实的系统上。当你想要在安装之前尝试一下别的发行版时，用虚拟机会很方便。
 
-![Linux installed inside Linux using VirtualBox][5]Ubuntu 18.10 installed inside Ubuntu 18.04
+![Linux installed inside Linux using VirtualBox][5]安装在 Ubuntu 18.04 内的 Ubuntu 18.10
 
-In this beginner’s tutorial, I’ll show you various ways of installing Oracle VirtualBox on Ubuntu and other Debian-based distributions.
+在本新手教程中，我将向你展示在 Ubuntu 和其他基于 Debian 的 Linux 发行版上安装 VirtualBox 的各种方法。
 
-### Installing VirtualBox on Ubuntu and Debian based Linux distributions
+### 在 Ubuntu 和基于 Debian 的 Linux 发行版上安装 VirtualBox
 
-The installation methods mentioned here should also work for other Debian and Ubuntu-based Linux distributions such as Linux Mint, elementary OS etc.
+这里提出的安装方法也适用于其他基于 Debian 和 Ubuntu 的 Linux 发行版，如 Linux Mint，elementar OS 等。
 
-#### Method 1: Install VirtualBox from Ubuntu Repository
+#### 方法 1：从 Ubuntu 仓库安装 VirtualBox
 
-**Pros** : Easy installation
+**优点** : 安装简便
 
-**Cons** : Installs older version
+**缺点** : 下载旧版本
 
-The easiest way to install VirtualBox on Ubuntu would be to search for it in the Software Center and install it from there.
+在 Ubuntu 上下载 VirtualBox 最简单的方法可能是从软件中心查找并下载。
 
-![VirtualBox in Ubuntu Software Center][6]VirtualBox is available in Ubuntu Software Center
+![VirtualBox in Ubuntu Software Center][6]VirtualBox 在 Ubuntu 软件中心提供
 
-You can also install it from the command line using the command:
+你也可以使用该条命令从命令行安装：
 
 ```
 sudo apt install virtualbox
 ```
 
-However, if you [check the package version before installing it][7], you’ll see that the VirtualBox provided by Ubuntu’s repository is quite old.
+然而，如果[在安装前检查软件包版本][7]，你会看到 Ubuntu 仓库提供的 VirtualBox 版本已经很老了。
 
-For example, the current VirtualBox version at the time of writing this tutorial is 6.0 but the one in Software Center is 5.2. This means you won’t get the newer features introduced in the [latest version of VirtualBox][8].
+举个例子，在写下本教程时 VirtualBox 的最新版本是 6.0，但是在软件中心提供的是 5.2。这意味着你无法获得[最新版 VirtualBox ][8]中引入的新功能。
 
-#### Method 2: Install VirtualBox using Deb file from Oracle’s website
+#### 方法 2：使用 Oracle 网站上的 Deb 文件安装 VirtualBox
 
-**Pros** : Easily install the latest version
+**优点** : 容易安装最新版本
 
-**Cons** : Can’t upgrade to newer version
+**缺点** : 不能更新
 
-If you want to use the latest version of VirtualBox on Ubuntu, the easiest way would be to [use the deb file][9].
+如果你想要在 Ubuntu 上使用 VirtualBox 的最新版本，最简单的方法就是[使用 Deb 文件][9]。
 
-Oracle provides read to use binary files for VirtualBox releases. If you look at its download page, you’ll see the option to download the deb installer files for Ubuntu and other distributions.
+建议阅读[如何在 Ubuntu Linux 上下载 GNOME](https://itsfoss.com/fix-white-screen-login-arch-linux/great )
+
+Oracle 为 VirtiualBox 版本提供了开箱可用的二进制文件。如果查看其下载页面，你将看到为 Ubuntu 和其他发行版下载 deb 安装程序的选项。
 
 ![VirtualBox Linux Download][10]
 
-You just have to download this deb file and double click on it to install it. It’s as simple as that.
+你只需要下载 deb 文件并双击它即可安装。就是这么简单。
 
-However, the problem with this method is that you won’t get automatically updated to the newer VirtualBox releases. The only way is to remove the existing version, download the newer version and install it again. That’s not very convenient, is it?
+然而，这种方法的问题在于你不能自动更新到最新的 VirtualBox 版本。唯一的办法是移除现有版本，下载最新版本并再次安装。不太方便，是吧？
 
-#### Method 3: Install VirualBox using Oracle’s repository
+#### 方法 3：用 Oracle 的仓库安装 VirtualBox
 
-**Pros** : Automatically updates with system updates
+**优点** : 自动更新
 
-**Cons** : Slightly complicated installation
+**缺点** : 安装略微复杂
 
-Now this is the command line method and it may seem complicated to you but it has advantages over the previous two methods. You’ll get the latest version of VirtualBox and it will be automatically updated to the future releases. That’s what you would want, I presume.
+现在介绍的是命令行安装方法，它看起来可能比较复杂，但与前两种方法相比，它更具有优势。你将获得 VirtualBox 的最新版本，并且未来它还将自动更新到更新的版本。我想那就是你想要的。
 
-To install VirtualBox using command line, you add the Oracle VirtualBox’s repository in your list of repositories. You add its GPG key so that your system trusts this repository. Now when you install VirtualBox, it will be installed from Oracle’s repository instead of Ubuntu’s repository. If there is a new version released, VirtualBox install will be updated along with the system updates. Let’s see how to do that.
+要通过命令行安装 VirtualBox，请在你的仓库列表中添加 Oracle VirtualBox 的仓库。添加 GPG 密钥以便你的系统信任此仓库。现在，当你安装 VirtualBox 时，它会从 Oracle 仓库而不是 Ubuntu 仓库安装。如果发布了新版本，本地 VirtualBox 将跟随一起更新。让我们看看怎么做到这一点：
 
-First, add the key for the repository. You can download and add the key using this single command.
+首先，添加仓库的密钥。你可以通过这一条命令下载和添加密钥：
 
 ```
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 ```
 
 ```
-Important for Mint users
+Mint 用户请注意：
 
-The next step will work for Ubuntu only. If you are using Linux Mint or some other distribution based on Ubuntu, replace $(lsb_release -cs) in the command with the Ubuntu version your current version is based on. For example, Linux Mint 19 series users should use bionic and Mint 18 series users should use xenial. Something like this
+下一步只适用于 Ubuntu。如果你使用的是 Linux Mint 或其他基于 Ubuntu 的发行版，请将命令行中的 $(lsb_release -cs) 替换成你当前版本所基于的 Ubuntu 版本。例如，Linux Mint 19 系列用户应该使用 bionic，Mint 18 系列用户应该使用 xenial，像这样：
 
 sudo add-apt-repository “deb [arch=amd64] <http://download.virtualbox.org/virtualbox/debian> **bionic** contrib“
 ```
 
-Now add the Oracle VirtualBox repository in the list of repositories using this command:
+现在用以下命令来将 Oracle VirtualBox 仓库添加到仓库列表中：
 
 ```
 sudo add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
 ```
 
-If you have read my article on [checking Ubuntu version][11], you probably know that ‘lsb_release -cs’ will print the codename of your Ubuntu system.
+如果你有读过我的文章[检查 Ubuntu 版本][11]，你大概知道 ‘lsb_release -cs’ 将打印你的 Ubuntu 系统的代号。
 
-**Note** : If you see [add-apt-repository command not found][12] error, you’ll have to install software-properties-common package.
+**注** : 如果你看到 [add-apt-repository command not found][12] 错误，你需要下载 software-properties-common 包。
 
-Now that you have the correct repository added, refresh the list of available packages through these repositories and install VirtualBox.
+现在你已经添加了正确的仓库，请通过此仓库刷新可用包列表并安装 VirtualBox:
 
 ```
 sudo apt update && sudo apt install virtualbox-6.0
 ```
 
-**Tip** : A good idea would be to type sudo apt install **virtualbox–** and hit tab to see the various VirtualBox versions available for installation and then select one of them by typing it completely.
+**提示** : 一个好方法是输入 sudo apt install **virtualbox-** 并点击 tab 以查看可用于安装的各种 VirtualBox 版本，然后通过补全命令来选择其中一个版本。
 
 ![Install VirtualBox via terminal][13]
 
-### How to remove VirtualBox from Ubuntu
+### 如何从 Ubuntu 中删除 VirtualBox
 
-Now that you have learned to install VirtualBox, I would also mention the steps to remove it.
+现在你已经学会了如何安装 VirtualBox，我还想和你提一下删除它的步骤。
 
-If you installed it from the Software Center, the easiest way to remove the application is from the Software Center itself. You just have to find it in the [list of installed applications][14] and click the Remove button.
+如果你是从软件中心安装的，那么删除它最简单的方法是从软件中心下手。你只需要在[已安装的应用程序列表][14]中找到它，然后单击”删除“按钮。
 
-Another ways is to use the command line.
+另一种方式是使用命令行：
 
 ```
 sudo apt remove virtualbox virtualbox-*
 ```
 
-Note that this will not remove the virtual machines and the files associated with the operating systems you installed using VirtualBox. That’s not entirely a bad thing because you may want to keep them safe to use it later or in some other system.
+请注意，这不会删除你用 VirtualBox 安装的操作系统关联的虚拟机和文件。这并不是一件坏事，因为你可能希望以后或在其他系统中使用它们是安全的。
 
-**In the end…**
+**最后…**
 
-I hope you were able to pick one of the methods to install VirtualBox. I’ll also write about using it effectively in another article. For the moment, if you have and tips or suggestions or any questions, feel free to leave a comment below.
+I我希望你能在以上方法中选择一种安装 VirtualBox。我还将在另一篇文章中写到如何有效地使用 VirtualBox。目前，如果你有点子、建议或任何问题，请随时在下面发表评论。
 
 
 --------------------------------------------------------------------------------
@@ -133,7 +135,7 @@ via: https://itsfoss.com/install-virtualbox-ubuntu
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[beamrolling](https://github.com/beamrolling)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
