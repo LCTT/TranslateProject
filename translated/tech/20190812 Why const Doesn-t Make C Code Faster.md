@@ -73,16 +73,16 @@ byArg:
     .cfi_endproc
 ```
 
-函数 `byArg()` 和函数 `constByArg()` 生成的汇编代码中唯一的不同之处是 `constByArg()` 有一句汇编代码 `call constFunc@PLT`，这正是源码中的调用。关键字 `const` 本身并没有造成任何汇编代码上的不同。
+函数 `byArg()` 和函数 `constByArg()` 生成的汇编代码中唯一的不同之处是 `constByArg()` 有一句汇编代码 `call constFunc@PLT`，这正是源码中的调用。关键字 `const` 本身并没有造成任何字面上的不同。
 
-Okay, that’s GCC. Maybe we just need a sufficiently smart compiler. Is Clang any better?
+好了，这是 GCC 的结果。或许我们需要一个更聪明的编译器。Clang 会有更好的表现吗？
 
 ```
 $ clang -S -Wall -O3 -emit-llvm test.c
 $ view test.ll
 ```
 
-Here’s the IR. It’s more compact than assembly, so I’ll dump both functions so you can see what I mean by “literally zero difference except for the call”:
+这是 IR 代码（LLVM 的中间语言）。它比汇编代码更加紧凑，所以我可以把两个函数都导出来，让你可以看清楚我所说的“除了调用外，没有任何字面上的不同”是什么意思：
 
 ```
 ; Function Attrs: nounwind uwtable
