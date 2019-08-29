@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11280-1.html)
 [#]: subject: (A dozen ways to learn Python)
 [#]: via: (https://opensource.com/article/19/8/dozen-ways-learn-python)
 [#]: author: (Don Watkins https://opensource.com/users/don-watkins)
@@ -12,7 +12,7 @@
 
 > 这些资源将帮助你入门并熟练掌握 Python。
 
-![Code on a screen][1]
+![](https://img.linux.net.cn/data/attachment/album/201908/29/083446r00gdsohb7lwxdxy.jpg)
 
 Python 是世界上[最受欢迎的][2]编程语言之一，它受到了全世界各地的开发者和创客的欢迎。大多数 Linux 和 MacOS 计算机都预装了某个版本的 Python，现在甚至一些 Windows 计算机供应商也开始安装 Python 了。
 
@@ -56,14 +56,14 @@ Python 是世界上[最受欢迎的][2]编程语言之一，它受到了全世�
 
 via: https://opensource.com/article/19/8/dozen-ways-learn-python
 
-作者：[Don WatkinsDorris Scott][a]
+作者：[Don Watkins][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: https://opensource.com/users/don-watkinshttps://opensource.com/users/don-watkinshttps://opensource.com/users/chris-engelhardthttps://opensource.com/users/momiji15https://opensource.com/users/asingh31https://opensource.com/users/pshapirohttps://opensource.com/users/greg-phttps://opensource.com/users/don-watkinshttps://opensource.com/users/holmjahttps://opensource.com/users/don-watkins
+[a]: https://opensource.com/users/don-watkins
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/programming_code_screen_display.jpg?itok=2HMTzqz0 (Code on a screen)
 [2]: https://insights.stackoverflow.com/survey/2019#most-popular-technologies
