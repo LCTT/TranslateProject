@@ -1,3 +1,4 @@
+Translating by robsean
 Top 5 CAD Software Available for Linux in 2018
 ======
 [Computer Aided Design (CAD)][1] is an essential part of many streams of engineering. CAD is professionally used is architecture, auto parts design, space shuttle research, aeronautics, bridge construction, interior design, and even clothing and jewelry.
