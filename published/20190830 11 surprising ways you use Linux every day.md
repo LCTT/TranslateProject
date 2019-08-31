@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11289-1.html)
 [#]: subject: (11 surprising ways you use Linux every day)
 [#]: via: (https://opensource.com/article/19/8/everyday-tech-runs-linux)
 [#]: author: (Don Watkins https://opensource.com/users/don-watkins)
@@ -12,7 +12,7 @@
 
 > 什么技术运行在 Linux 上？你可能会惊讶于日常生活中使用 Linux 的频率。
 
-![Truck steering wheel and dash][1]
+![](https://img.linux.net.cn/data/attachment/album/201909/01/000003dsqf45rbavr5vzja.jpg)
 
 现在 Linux 几乎可以运行每样东西，但很多人都没有意识到这一点。有些人可能知道 Linux，可能听说过超级计算机运行着这个操作系统。根据 [Top500][2]，Linux 现在驱动着世界上最快的 500 台计算机。你可以转到他们的网站并[搜索“Linux”][3]自己查看一下结果。
 
