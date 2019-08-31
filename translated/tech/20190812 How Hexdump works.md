@@ -7,26 +7,25 @@
 [#]: via: (https://opensource.com/article/19/8/dig-binary-files-hexdump)
 [#]: author: (Seth Kenlon https://opensource.com/users/sethhttps://opensource.com/users/shishz)
 
-How Hexdump works
+Hexdump 如何工作
 ======
-Hexdump helps you investigate the contents of binary files. Learn how
-hexdump works.
-![Magnifying glass on code][1]
+Hexdump 能帮助你查看二进制文件的内容。让我们来学习 Hexdump 如何工作。
+![代码放大镜][1]
 
-Hexdump is a utility that displays the contents of binary files in hexadecimal, decimal, octal, or ASCII. It’s a utility for inspection and can be used for [data recovery][2], reverse engineering, and programming.
+Hexdump 是个用十六进制、十进制、八进制数或 ASCII 码显示二进制文件内容的工具。它是个用于检查的工具，也可用于[数据恢复][2]、逆向工程和编程。
 
-### Learning the basics
+### 学习基本用法
 
-Hexdump provides output with very little effort on your part and depending on the size of the file you’re looking at, there can be a lot of output. For the purpose of this article, create a 1x1 PNG file. You can do this with a graphics application such as [GIMP][3] or [Mtpaint][4], or you can create it in a terminal with [ImageMagick][5].
+Hexdump 让你毫不费力地得到输出结果，依你所查看文件的尺寸，输出结果可能会非常多。本文中我们会创建一个 1x1 像素的 PNG 文件。你可以用图像处理应用如 [GIMP][3] 或 [Mtpaint][4] 来创建该文件，或者也可以在终端内用 [ImageMagick][5] 创建。
 
-Here’s a command to generate a 1x1 pixel PNG with ImageMagick:
+用 ImagiMagick 生成 1x1 像素 PNG 文件的命令如下：
 
 
 ```
 $ convert -size 1x1 canvas:black pixel.png
 ```
 
-You can confirm that this file is a PNG with the **file** command:
+你可以用 **file** 命令确认此文件是 PNG 格式：
 
 
 ```
@@ -34,7 +33,7 @@ $ file pixel.png
 pixel.png: PNG image data, 1 x 1, 1-bit grayscale, non-interlaced
 ```
 
-You may wonder how the **file** command is able to determine what kind of file it is. Coincidentally, that’s what **hexdump** will reveal. For now, you can view your one-pixel graphic in the image viewer of your choice (it looks like this: **.** ), or you can view what’s inside the file with **hexdump**:
+你可能好奇 **file** 命令是如何判断文件是什么类型。巧的是，那正是 **hexdump**  将要揭示的。眼下你可以用你常用的图像查看软件来看看你的单一像素图片（它看上去就像这样：**.**），或者你可以用  **hexdump** 查看文件内部：
 
 
 ```
@@ -59,11 +58,11 @@ $ hexdump pixel.png
 0000102
 ```
 
-What you’re seeing is the contents of the sample PNG file through a lens you may have never used before. It’s the exact same data you see in an image viewer, encoded in a way that’s probably unfamiliar to you.
+透过一个你以前可能从未用过的镜头，你所见的是该示例 PNG 文件的内容。它和你在图像查看软件中看到的是完全一样的数据，只是用一种你或许不熟悉的方式编码。
 
-### Extracting familiar strings
+### 提取熟悉的字符串
 
-Just because the default data dump seems meaningless, that doesn’t mean it’s devoid of valuable information. You can translate this output or at least the parts that actually translate, to a more familiar character set with the **\--canonical** option:
+尽管默认的数据输出结果看上去毫无意义，那并不意味着其中没有有价值的信息。你可以用 **\--canonical** 选项将输出结果，或至少是其中可翻译的部分，翻译成更加熟悉的字符集：
 
 
 ```
@@ -88,11 +87,11 @@ $ hexdump --canonical foo.png
 00000102
 ```
 
-In the right column, you see the same data that’s on the left but presented as ASCII. If you look carefully, you can pick out some useful information, such as the file’s format (PNG) and—toward the bottom—the date and time the file was created and last modified. The dots represent symbols that aren’t present in the ASCII character set, which is to be expected because binary formats aren’t restricted to mundane letters and numbers.
+在右侧的列中，你看到的是和左侧一样的数据，但是以 ASCII 码展现的。如果你仔细看，你可以从中挑选出一些有用的信息，如文件格式（PNG）以及——向文件底部寻找——文件创建、修改日期和时间。
 
-The **file** command knows from the first 8 bytes what this file is. The [libpng specification][6] alerts programmers what to look for. You can see that within the first 8 bytes of this image file, specifically, is the string **PNG**. That fact is significant because it reveals how the **file** command knows what kind of file to report.
+**file** 命令通过头 8 个字节获取文件类型。程序员会参考 [libpng 规范][6] 来知晓需要查看什么。具体而言，那就是你能在该图像文件的头 8 个字节中看到的字符串 **PNG**。这个事实显而易见，因为它揭示了 **file** 命令是如何知道要报告的文件类型。
 
-You can also control how many bytes **hexdump** displays, which is useful with files larger than one pixel:
+你也可以控制 **hexdump** 显示多少字节，这在处理大于一个像素的文件时很实用：
 
 
 ```
@@ -101,13 +100,14 @@ $ hexdump --length 8 pixel.png
 0000008
 ```
 
-You don’t have to limit **hexdump** to PNG or graphic files. You can run **hexdump** against binaries you run on a daily basis as well, such as [ls][7], [rsync][8], or any binary format you want to inspect.
+**hexdump** 不只限于查看 PNG 或图像文件。你也可以用 **hexdump** 查看你日常使用的二进制文件，如 [ls][7]，[rsync][8]，或你想检查的任何二进制文件。
 
-### Implementing cat with hexdump
 
-If you read the PNG spec, you may notice that the data in the first 8 bytes looks different than what **hexdump** provides. Actually, it’s the same data, but it’s presented using a different conversion. So, the output of **hexdump** is true, but not always directly useful to you, depending on what you’re looking for. For that reason, **hexdump** has options to format and convert the raw data it dumps.
+### 用 hexdump 实现 cat 命令
 
-The conversion options can get complex, so it’s useful to practice with something trivial first. Here’s a gentle introduction to formatting **hexdump** output by reimplementing the [**cat**][9] command. First, run **hexdump** on a text file to see its raw data. You can usually find a copy of the [GNU General Public License (GPL)][10] license somewhere on your hard drive, or you can use any text file you have handy. Your output may differ, but here’s how to find a copy of the GPL on your system (or at least part of it):
+阅读 PNG 规范的时候你可能会注意到头 8 个字节中的数据与 **hexdump** 提供的结果看上去不一样。实际上，那是一样的数据，但以一种不同的转换方式展现出来。所以 **hexdump** 的输出是正确的，但取决于你在寻找的信息，其输出结果对你而言不总是直接了当的。出于这个原因，**hexdump** 有一些选项可供用于定义格式和转化其转储的原始数据。
+
+转换选项可以很复杂，所以用无关紧要的东西练习会比较实用。下面这个简易的介绍，通过重新实现 [**cat**][9] 命令来演示如何格式化 **hexdump** 的输出。首先，对一个文本文件运行 **hexdump** 来查看其原始数据。通常你可以在硬盘上某处找到  [<ruby>GNU 公共授权<rt>GNU General Public License</rt></ruby>（GPL）][10]的一份拷贝，也可以用你手头的任何文本文件。你的输出结果可能不同，但下面是如何在你的系统中找到一份 GPL（或至少其部分）的拷贝：
 
 
 ```
@@ -115,7 +115,7 @@ $ find /usr/share/doc/ -type f -name "COPYING" | tail -1
 /usr/share/doc/libblkid-devel/COPYING
 ```
 
-Run **hexdump** against it:
+对其运行 **hexdump**：
 
 
 ```
@@ -132,9 +132,9 @@ $ hexdump /usr/share/doc/libblkid-devel/COPYING
 [...]
 ```
 
-If the file’s output is very long, use the **\--length** (or **-n** for short) to make it manageable for yourself.
+如果该文件输出结果很长，用 **\length**（或短选项 **-n**）来控制输出长度使其易于管理。
 
-The raw data probably means nothing to you, but you already know how to convert it to ASCII:
+原始数据对你而言可能没什么意义，但你已经知道如何将其转换为 ASCII 码：
 
 
 ```
@@ -150,9 +150,10 @@ hexdump --canonical /usr/share/doc/libblkid-devel/COPYING
 [...]
 ```
 
-That output is helpful but unwieldy and difficult to read. To format **hexdump**’s output beyond what’s offered by its own options, use **\--format** (or **-e**) along with specialized formatting codes. The shorthand used for formatting is similar to what the **printf** command uses, so if you are familiar with **printf** statements, you may find **hexdump** formatting easier to learn.
+这个输出结果有帮助但太累赘且难于阅读。要将 **hexdump** 的输出结果转换为其选项不支持的其他格式，可组合使用 **\--format**（或 **-e**）和专门的格式代码。用来自定义格式的代码和 **printf** 命令使用的类似，所以如果你熟悉 **printf**  语句，你可能会觉得 **hexdump** 自定义格式不难学会。
 
-In **hexdump**, the character sequence **%_p** tells **hexdump** to print a character in your system’s default character set. All formatting notation for the **\--format** option must be enclosed in _single quotes_:
+
+在 **hexdump** 中，字符串 **%_p** 告诉 **hexdump** 用你系统的默认字符集输出字符。**\--format** 选项的所有格式符号必须以_单引号_包括起来：
 
 
 ```
@@ -165,9 +166,9 @@ The complete text of the license is available in the..*
 /Documentation/licenses/COPYING.LGPL-2.1-or-later file..
 ```
 
-This output is better, but still inconvenient to read. Traditionally, UNIX text files assume an 80-character output width (because long ago, monitors tended to fit only 80 characters across).
+这次的输出好些了，但依然不方便阅读。传统上 UNIX 文本文件假定80个字符的输出宽度（因为很久以前显示器一行只能显示80个字符）。
 
-While this output isn’t bound by formatting, you can force **hexdump** to process 80 bytes at a time with additional options. Specifically, by dividing 80 by one, you can tell **hexdump** to treat 80 bytes as one unit:
+尽管这个输出结果未被自定义格式限制输出宽度，你可以用附加选项强制  **hexdump** 一次处理 80 字节。具体而言，通过 80 除以 1 这种形式，你可以告诉 **hexdump** 将 80 字节作为一个单元对待：
 
 
 ```
@@ -175,11 +176,11 @@ $ hexdump -e'80/1 "%_p"' /usr/share/doc/libblkid-devel/COPYING
 This library is free software; you can redistribute it and/or.modify it under the terms of the GNU Lesser General Public.License as published by the Free Software Foundation; either.version 2.1 of the License, or (at your option) any later.version...The complete text of the license is available in the.../Documentation/licenses/COPYING.LGPL-2.1-or-later file..
 ```
 
-Now the file is processed in 80-byte chunks, but it’s lost any sense of new lines. You can add your own with the **\n** character, which in UNIX represents a new line:
+现在该文件被分割成 80 字节的块处理，但没有任何换行。你可以用 **\n** 字符自行添加换行，在 UNIX 中它代表换行：
 
 
 ```
-$ hexdump -e'80/1 "%_p""\n"'
+$ hexdump -e'80/1 "%_p""\n"' /usr/share/doc/libblkid-devel/COPYING
 This library is free software; you can redistribute it and/or.modify it under th
 e terms of the GNU Lesser General Public.License as published by the Free Softwa
 re Foundation; either.version 2.1 of the License, or (at your option) any later.
@@ -187,13 +188,13 @@ version...The complete text of the license is available in the.../Documentation/
 licenses/COPYING.LGPL-2.1-or-later file..
 ```
 
-You have now (approximately) implemented the **cat** command with **hexdump** formatting.
+现在你已经（大致上）用 **hexdump** 自定义格式实现了 **cat** 命令。
 
-### Controlling the output
+### 控制输出结果
 
-Formatting is, realistically, how you make **hexdump** useful. Now that you’re familiar, in principle at least, with **hexdump** formatting, you can make the output of **hexdump -n 8** match the output of the PNG header as described by the official **libpng** spec.
+实际上自定义格式是让 **hexdump** 变得有用的方法。现在你已经，至少是原则上，熟悉 **hexdump** 自定义格式，你可以让 **hexdump -n 8** 的输出结果跟 **libpng**  官方规范中描述的 PNG 文件头相匹配了。
 
-First, you know that you want **hexdump** to process the PNG file in 8-byte chunks. Furthermore, you may know by integer recognition that the PNG spec is documented in decimal, which is represented by **%d** according to the **hexdump** documentation:
+首先，你知道你希望 **hexdump** 以 8 字节的块来处理 PNG 文件。此外，你可能通过识别整数知道 PNG 格式规范以十进制数表述，根据 **hexdump** 文档十进制用 **%d** 来表示：
 
 
 ```
@@ -201,7 +202,7 @@ $ hexdump -n8 -e'8/1 "%d""\n"' pixel.png
 13780787113102610
 ```
 
-You can make the output perfect by adding a blank space after each integer:
+你可以在每个整数后面加个空格使输出结果变得完美：
 
 
 ```
@@ -209,11 +210,11 @@ $ hexdump -n8 -e'8/1 "%d ""\n"' pixel.png
 137 80 78 71 13 10 26 10
 ```
 
-The output is now a perfect match to the PNG specification.
+现在输出结果跟 PNG 规范完美匹配了。
 
-### Hexdumping for fun and profit
+### 为乐趣和益处使用 hexdump
 
-Hexdump is a fascinating tool that not only teaches you more about how computers process and convert information, but also about how file formats and compiled binaries function. You should try running **hexdump** on files at random throughout the day as you work. You never know what kinds of information you may find, nor when having that insight may be useful.
+Hexdump 是个迷人的工具，不仅让你更多地领会计算机如何处理和转换信息，而且让你了解文件格式和编译过的二进制文件如何工作。工作的时候你应该随机地试着对不同文件运行 **hexdump**。你永远不知道你会发现什么样的信息，或是什么时候具有这种洞察力会很实用。
 
 --------------------------------------------------------------------------------
 
@@ -221,7 +222,7 @@ via: https://opensource.com/article/19/8/dig-binary-files-hexdump
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[0x996](https://github.com/0x996)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
