@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11283-1.html)
 [#]: subject: (How To Fix “Kernel driver not installed (rc=-1908)” VirtualBox Error In Ubuntu)
 [#]: via: (https://www.ostechnix.com/how-to-fix-kernel-driver-not-installed-rc-1908-virtualbox-error-in-ubuntu/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
@@ -26,7 +26,7 @@ where: suplibOsInit what: 3 VERR_VM_DRIVER_NOT_INSTALLED (-1908) - The support d
 
 ![][2]
 
-Ubuntu 中的 “Kernel driver not installed (rc=-1908)” 错误
+*Ubuntu 中的 “Kernel driver not installed (rc=-1908)” 错误*
 
 我点击了 OK 关闭消息框，然后在后台看到了另一条消息。
 
@@ -45,7 +45,7 @@ IMachine {85cd948e-a71f-4289-281e-0ca7ad48cd89}
 
 ![][3]
 
-启动期间虚拟机意外终止，退出代码为 1（0x1）
+*启动期间虚拟机意外终止，退出代码为 1（0x1）*
 
 我不知道该先做什么。我运行以下命令来检查是否有用。
 
@@ -61,7 +61,7 @@ modprobe: FATAL: Module vboxdrv not found in directory /lib/modules/5.0.0-23-gen
 
 仔细阅读这两个错误消息后，我意识到我应该更新 Virtualbox 程序。
 
-如果你在 Ubuntu 及其衍生版（如 Linux Mint）中遇到此错误，你只需使用以下命令重新安装或更新 **“virtualbox-dkms”** 包：
+如果你在 Ubuntu 及其衍生版（如 Linux Mint）中遇到此错误，你只需使用以下命令重新安装或更新 `virtualbox-dkms` 包：
 
 ```
 $ sudo apt install virtualbox-dkms
@@ -82,7 +82,7 @@ via: https://www.ostechnix.com/how-to-fix-kernel-driver-not-installed-rc-1908-vi
 作者：[sk][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
