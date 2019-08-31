@@ -108,7 +108,7 @@ define dso_local void @constByArg(i32*) local_unnamed_addr #0 {
 
 ### Something that (sort of) works
 
-Here’s some code where `const` actually does make a difference:
+接下来是一组 `const` 能够真正产生作用的代码：
 
 ```
 void localVar()
@@ -128,7 +128,7 @@ void constLocalVar()
 }
 ```
 
-Here’s the assembly for `localVar()`, which has two instructions that have been optimised out of `constLocalVar()`:
+下面是 `localVar()` 的汇编代码，其中有两条指令在 `constLocalVar()` 中会被优化：
 
 ```
 localVar:
@@ -164,7 +164,7 @@ localVar:
     .cfi_endproc
 ```
 
-The LLVM IR is a little clearer. The `load` just before the second `printf()` call has been optimised out of `constLocalVar()`:
+LLVM 生成的 IR 代码中更明显。在 `constLocalVar()` 中，第二次调用 `printf()` 之前的 `load` 会被优化掉：
 
 ```
 ; Function Attrs: nounwind uwtable
@@ -182,22 +182,22 @@ define dso_local void @localVar() local_unnamed_addr #0 {
 }
 ```
 
-Okay, so, `constLocalVar()` has sucessfully elided the reloading of `*x`, but maybe you’ve noticed something a bit confusing: it’s the same `constFunc()` call in the bodies of `localVar()` and `constLocalVar()`. If the compiler can deduce that `constFunc()` didn’t modify `*x` in `constLocalVar()`, why can’t it deduce that the exact same function call didn’t modify `*x` in `localVar()`?
+好吧，现在，`constLocalVar()` 成功的优化了 `*x` 的重新读取，但是可能你已经注意到一些问题：`localVar()` 和 `constLocalVar()` 在函数体中做了同样的 `constFunc()` 调用。如果编译器能够推断出 `constFunc()` 没有修改 `constLocalVar()` 中的 `*x`，那为什么不能推断出完全一样的函数调用也没有修改 `localVar()` 中的 `*x`？
 
-The explanation gets closer to the heart of why C `const` is impractical as an optimisation aid. C `const` effectively has two meanings: it can mean the variable is a read-only alias to some data that may or may not be constant, or it can mean the variable is actually constant. If you cast away `const` from a pointer to a constant value and then write to it, the result is undefined behaviour. On the other hand, it’s okay if it’s just a `const` pointer to a value that’s not constant.
+这个解释更贴近于为什么 C 语言的 `const` 不能作为优化手段的核心。C 语言的 `const` 有两个有效的含义：它可以表示这个变量是某个可能是常数也可能不是常数的数据的一个只读别名，或者它可以表示这变量真正的常量。如果你移除了一个指向常量的指针的 `const` 属性并写入数据，那结果将是一个未定义行为。另一方面，如果是一个指向非常量值的 `const` 指针，将就没问题。
 
-This possible implementation of `constFunc()` shows what that means:
+这份 `constFunc()` 的可能实现揭示了这意味着什么：
 
 ```
-// x is just a read-only pointer to something that may or may not be a constant
+// x 是一个指向某个可能是常数也可能不是常数的数据的只读指针
 void constFunc(const int *x)
 {
-  // local_var is a true constant
+  // local_var 是一个真正的常数
   const int local_var = 42;
 
-  // Definitely undefined behaviour by C rules
+  // C 语言规定的未定义行为
   doubleIt((int*)&local_var);
-  // Who knows if this is UB?
+  // 谁知道这是不是一个未定义行为呢？
   doubleIt((int*)x);
 }
 
