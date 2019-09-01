@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11295-1.html)
 [#]: subject: (Get modular with Python functions)
 [#]: via: (https://opensource.com/article/19/7/get-modular-python-functions)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth/users/xd-deng/users/nhuntwalker/users/don-watkins)
@@ -12,7 +12,7 @@
 
 > 使用 Python 函数来最大程度地减少重复任务编码工作量。
 
-![OpenStack source code (Python) in VIM][1]
+![](https://img.linux.net.cn/data/attachment/album/201909/01/234309ja7ooanopazo3o2m.jpg)
 
 你是否对函数、类、方法、库和模块等花哨的编程术语感到困惑？你是否在与变量作用域斗争？无论你是自学成才的还是经过正式培训的程序员，代码的模块化都会令人困惑。但是类和库鼓励模块化代码，因为模块化代码意味着只需构建一个多用途代码块集合，就可以在许多项目中使用它们来减少编码工作量。换句话说，如果你按照本文对 [Python][2] 函数的研究，你将找到更聪明的工作方法，这意味着更少的工作。
 
