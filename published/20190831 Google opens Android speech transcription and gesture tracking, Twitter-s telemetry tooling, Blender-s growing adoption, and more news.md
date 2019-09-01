@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11292-1.html)
 [#]: subject: (Google opens Android speech transcription and gesture tracking, Twitter's telemetry tooling, Blender's growing adoption, and more news)
 [#]: via: (https://opensource.com/19/8/news-august-31)
 [#]: author: (Scott Nesbitt https://opensource.com/users/scottnesbitt)
@@ -85,4 +85,4 @@ via: https://opensource.com/19/8/news-august-31
 [14]: https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/120000-lliurex-desktops
 [15]: https://hackaday.com/2019/08/15/spains-first-open-source-satellite/
 [16]: https://www.datacenterknowledge.com/open-source/western-digitals-long-trip-open-standards-open-source-chips
-[17]: ttps://venturebeat.com/2019/08/21/waymo-open-sources-data-set-for-autonomous-vehicle-multimodal-sensors/
+[17]: https://venturebeat.com/2019/08/21/waymo-open-sources-data-set-for-autonomous-vehicle-multimodal-sensors/
