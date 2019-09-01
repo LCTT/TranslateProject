@@ -85,4 +85,4 @@ via: https://opensource.com/19/8/news-august-31
 [14]: https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/120000-lliurex-desktops
 [15]: https://hackaday.com/2019/08/15/spains-first-open-source-satellite/
 [16]: https://www.datacenterknowledge.com/open-source/western-digitals-long-trip-open-standards-open-source-chips
-[17]: ttps://venturebeat.com/2019/08/21/waymo-open-sources-data-set-for-autonomous-vehicle-multimodal-sensors/
+[17]: https://venturebeat.com/2019/08/21/waymo-open-sources-data-set-for-autonomous-vehicle-multimodal-sensors/
