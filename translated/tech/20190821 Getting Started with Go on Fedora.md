@@ -1,6 +1,6 @@
 [#]: collector: "lujun9972"
 [#]: translator: "hello-wn"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 [#]: subject: "Getting Started with Go on Fedora"
@@ -12,7 +12,7 @@
 
 ![][1]
 
-[Go][2]  编程语言于 2009 年首次公开发布，此后被广泛使用。特别是，Go 已经成为云基础设施领域的一种代表性语言，例如 [Kubernetes][3] 、 [OpenShift][4] 或 [Terraform][5] 等大型项目都使用了 Go。
+[Go][2] 编程语言于 2009 年首次公开发布，此后被广泛使用。特别是，Go 已经成为云基础设施领域的一种代表性语言，例如 [Kubernetes][3]、[OpenShift][4] 或 [Terraform][5] 等大型项目都使用了 Go。
 
 Go 越来越受欢迎的原因是性能好、易于编写高并发的程序、语法简单和编译快。
 
@@ -27,6 +27,7 @@ $ sudo dnf install -y golang
 $ go version
 go version go1.12.7 linux/amd64
 ```
+
 既然装好了 Go ，让我们来写个简单的程序，编译并运行。
 
 ### 第一个 Go 程序
@@ -50,7 +51,7 @@ $ go run main.go
 Hello, World!
 ```
 
-Go 会在临时目录将 `main.go` 编译成二进制文件并执行，然后删除临时目录。 这个命令非常适合在开发过程中快速运行程序，它还突显了 Go 的编译速度。
+Go 会在临时目录将 `main.go` 编译成二进制文件并执行，然后删除临时目录。这个命令非常适合在开发过程中快速运行程序，它还凸显了 Go 的编译速度。
 
 编译一个可执行程序就像运行它一样简单。
 
@@ -62,7 +63,7 @@ Hello, World!
 
 ### 使用 Go 的模块
 
-Go 1.11 和 1.12 引入了对模块的初步支持。模块可用于管理应用程序的各种依赖包。 Go 通过 `go.mod` 和 `go.sum` 这两个文件，显式地定义依赖包的版本。
+Go 1.11 和 1.12 引入了对模块的初步支持。模块可用于管理应用程序的各种依赖包。Go 通过 `go.mod` 和 `go.sum` 这两个文件，显式地定义依赖包的版本。
 
 为了演示如何使用模块，让我们为 `hello world` 程序添加一个依赖。
 
@@ -105,7 +106,7 @@ via: https://fedoramagazine.org/getting-started-with-go-on-fedora/
 作者：[Clément Verna][a]
 选题：[lujun9972][b]
 译者：[hello-wn](https://github.com/hello-wn)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
