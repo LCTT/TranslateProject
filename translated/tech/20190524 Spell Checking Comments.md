@@ -7,21 +7,23 @@
 [#]: via: (https://emacsredux.com/blog/2019/05/24/spell-checking-comments/)
 [#]: author: (Bozhidar Batsov https://emacsredux.com)
 
-Spell Checking Comments
+注释中的拼写检查
 ======
-I’m notorious for all the typos I make. Thankfully Emacs features an awesome built-in mode named `flyspell` to help poor typists like me. Flyspell highlights misspelled words as you type (a.k.a. on the fly) and has useful keybindings to quickly fix them.
 
-Most people typically enable `flyspell` only for major modes derived from `text-mode` (e.g. `markdown-mode`, `adoc-mode`), but it can really help programmers as well by pointing out typos they make in comments. All you need to do is enable `flyspell-prog-mode`. I typically enable it for all programming modes like this:
+我出了名的容易拼错单词。谢天谢地 Emacs 内置了一个名为 `flyspell` 的超棒模式来帮助像我这样的可怜的打字员。
+Flyspell 会在你输入时突出显示拼错的单词 (也就是实时的) 并提供有用的快捷键来快速修复该错误。
+
+大多输入通常会对派生自 `text-mode` （比如 `markdown-mode`，`adoc-mode` ）的主模式启用 `flyspell`，但是它对程序员也有所帮助，可以指出他在注释中的错误。所需要的只是启用 `flyspell-prog-mode`。我通常在所有的编程模式中都启用它：
 
 ```
 (add-hook 'prog-mode-hook #'flyspell-prog-mode)
 ```
 
-Now you’ll get instant feedback when you make some typo in a comment. To fix a word just press `C-c $` (`M-x flyspell-correct-word-before-point`), while your cursor is behind it.
+现在当你在注释中输入错误时，就会得到即使反馈了。要修复单词只需要将光标置于单词后，然后按下 `C-c $` (`M-x flyspell-correct-word-before-point`)。
 
 ![flyspell_prog_mode.gif][1]
 
-That’s all I have for you today! Keep fixing those nasty typos!
+今天的分享就到这里！我要继续修正这些讨厌的拼写错误了！
 
 --------------------------------------------------------------------------------
 
