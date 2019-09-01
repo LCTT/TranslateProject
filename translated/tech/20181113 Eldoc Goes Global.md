@@ -7,11 +7,12 @@
 [#]: via: (https://emacsredux.com/blog/2018/11/13/eldoc-goes-global/)
 [#]: author: (Bozhidar Batsov https://emacsredux.com)
 
-Eldoc Goes Global
+Eldoc 全局化了
 ======
-I recently noticed that Emacs 25.1 had added a global variant of the popular `eldoc-mode`, called `global-eldoc-mode`. What’s more - unlike `eldoc-mode`, `global-eldoc-mode` is enabled by default!
 
-This means that you can get rid of all the code in your Emacs config that was wiring up `eldoc-mode` for major modes that support it:
+最近我注意到 Emacs 25.1 增加了一个名为 `global-eldoc-mode` 的模式，它是流行的 `eldoc-mode` 的一个全局化的变体。而且与 `eldoc-mode` 不同的是，`global-eldoc-mode` 默认是开启的！
+
+这意味着你可以删除 Emacs 配置中为主模式开启 `eldoc-mode` 的代码了：
 
 ```
 ;; That code is now redundant
@@ -21,13 +22,12 @@ This means that you can get rid of all the code in your Emacs config that was wi
 (add-hook 'cider-repl-mode-hook #'eldoc-mode)
 ```
 
-There are [some reports][1] that `global-eldoc-mode` is causing performance issues in modes that don’t support it. I’ve never experienced this myself, but if you want to disable it you can simply do so like this:
+[有人说 ][1] `global-eldoc-mode` 在某些不支持的模式中会有性能问题。我自己重未遇到过，但若你像禁用它则只需要这样：
 
 ```
 (global-eldoc-mode -1)
 ```
-
-Now it’s time to clean up my config! Deleting code always feels so good!
+现在是时候清理我的配置了！删除代码就是这么爽！
 
 --------------------------------------------------------------------------------
 
