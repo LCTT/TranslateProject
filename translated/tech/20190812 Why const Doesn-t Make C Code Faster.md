@@ -207,7 +207,7 @@ void doubleIt(int *x)
 }
 ```
 
-`localVar()` gave `constFunc()` a `const` pointer to non-`const` variable. Because the variable wasn’t originally `const`, `constFunc()` can be a liar and forcibly modify it without triggering UB. So the compiler can’t assume the variable has the same value after `constFunc()` returns. The variable in `constLocalVar()` really is `const`, though, so the compiler can assume it won’t change — because this time it _would_ be UB for `constFunc()` to cast `const` away and write to it.
+`localVar()` 传递给 `constFunc()` 一个指向非 `const` 变量的 `const` 指针。因为这个变量并非常量，`constFunc()` 可以撒个谎并强行修改它而不触发而不触发未定义行为。所以，编译器不能断定变量在调用 `constFunc()` 后仍是同样的值。在 `constLocalVar()` 中的变量是真正的常量，因此，编译器可以断定它不会改变——因为在 `constFunc()` 去除变量的 `const` 属性并写入它*将*会是一个未定义行为。
 
 The `byArg()` and `constByArg()` functions in the first example are hopeless because the compiler has no way of knowing if `*x` really is `const`.
 
