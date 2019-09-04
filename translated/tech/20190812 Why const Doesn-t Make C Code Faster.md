@@ -209,9 +209,9 @@ void doubleIt(int *x)
 
 `localVar()` 传递给 `constFunc()` 一个指向非 `const` 变量的 `const` 指针。因为这个变量并非常量，`constFunc()` 可以撒个谎并强行修改它而不触发而不触发未定义行为。所以，编译器不能断定变量在调用 `constFunc()` 后仍是同样的值。在 `constLocalVar()` 中的变量是真正的常量，因此，编译器可以断定它不会改变——因为在 `constFunc()` 去除变量的 `const` 属性并写入它*将*会是一个未定义行为。
 
-The `byArg()` and `constByArg()` functions in the first example are hopeless because the compiler has no way of knowing if `*x` really is `const`.
+第一个例子中的函数 `byArg()` 和 `constByArg()` 是没有可能的，因为编译器没有任何方法可以知道 `*x` 是否真的是 `const` 常量。
 
-But why the inconsistency? If the compiler can assume that `constFunc()` doesn’t modify its argument when called in `constLocalVar()`, surely it can go ahead an apply the same optimisations to other `constFunc()` calls, right? Nope. The compiler can’t assume `constLocalVar()` is ever run at all. If it isn’t (say, because it’s just some unused extra output of a code generator or macro), `constFunc()` can sneakily modify data without ever triggering UB.
+但是为什么不一致呢？如果编译器能够推断出 `constLocalVar()` 中调用的 `constFunc()` 不会修改它的参数，那么肯定也能继续在其他 `constFunc()` 的调用上实施相同的优化，对吧？不。编译器不能假设 `constLocalVar()` 根本没有运行。 If it isn’t (say, because it’s just some unused extra output of a code generator or macro), `constFunc()` can sneakily modify data without ever triggering UB.
 
 You might want to read the above explanation and examples a few times, but don’t worry if it sounds absurd: it is. Unfortunately, writing to `const` variables is the worst kind of UB: most of the time the compiler can’t know if it even would be UB. So most of the time the compiler sees `const`, it has to assume that someone, somewhere could cast it away, which means the compiler can’t use it for optimisation. This is true in practice because enough real-world C code has “I know what I’m doing” casting away of `const`.
 
