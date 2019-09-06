@@ -22,62 +22,59 @@ qfzy1233 is translating
 
 对于 **将照片（或视频）从我的数码相机中导出到电脑里**，我只是想将 SD 卡茶道我的电脑里并调用 fetch-workflow 软件。这一步也完成了 **图像软件的预处理** 适用于我提出的文件命名规范（下文会具体论述）同时也可以将图片旋转至正常的方向（而不是横着）。
 
-这些文件将会被存入到我的摄影收藏文件夹 `$HOME/tmp/digicam/`。 在这一文件夹中
-Those files are written to my photography inbox folder `$HOME/tmp/digicam/`. In this folder, I want to **look through my image files and play movies** to **sort out/delete, rename, add/remove tags, and put sets of related files into separate destination folders**.
+这些文件将会被存入到我的摄影收藏文件夹 `$HOME/tmp/digicam/`。 在这一文件夹中我希望能完成以下的操作 **浏览图像和视频文件** 以便于 **整理排序/删除，重命名，添加/移除标签，以及将一系列相关的文件移动到相应的文件夹中**。
 
-After that, I want to **navigate through my set of folders** containing the sets of image/movie files. In rare occasions, I want to **open an image file in an independent image processing tool** like [the GIMP][4]. Just for **rotating JPEG files** , I want to have a quick method which does not require an image processing tool and which is rotating JPEG images [in a loss-less way][5].
+在完成这些以后，我将会**浏览包含图像/电影文件集的文件夹**。在极少数情况下，我希望**在独立的图像处理工具**中打开一个图像文件，比如[GIMP][4]。如果仅是为了**旋转JPEG文件**，我想找到一个快速的方法，不需要图像处理工具，这是旋转JPEG图像[无损的方式][5]。
 
-My digital camera has now support for tagging images with [GPS][6] coordinates. Therefore, I need a method to **visualize GPS coordinates for single files as well as for a set of files** showing the path I was walking.
+我的数码相机支持用[GPS][6]坐标标记图像。因此，我需要一个方法来**可视化GPS坐标的单个文件以及一组文件**显示我走过的路径。
 
-There is another nice feature I want to use: imagine a beautiful vacation in Venice where you took hundreds of photographs. Each of them is so beautiful so that you do not want to delete some of them. On the other side, you might want to get a smaller set of photographs for presenting to your friends at home. And they are only expecting maybe two dozens of files before being too jealous. Therefore, I want to be able to **define and show a certain sub-set of photos**.
+我想安利的另一个好功能是:假设你在威尼斯度假时拍了几百张照片。每一个都很漂亮，所以你每张都舍不得删除。另一方面，你可能想要一组更小的照片，送给家里的朋友。而且，为了不让他们过于嫉妒，他们可能只希望看到20多张照片。因此，我希望能够**定义并显示一组特定的照片**。
 
-In terms of being independent and **avoid lock-in effects** , I do not want to use a tool I am not able to use when a company discontinues a product or service. For the very same reason and because I am a privacy-aware person, **I do not want to use any cloud-based service**. In order to keep myself open for new possibilities, I do not want to invest any effort in something which is only available on one specific operating system platform. **Basic stuff has to be available on any platform** (viewing, navigation, ...). But the **full set of requirements have to work on GNU/Linux** , in my case Debian GNU/Linux.
+就独立性和**避免锁定效应**而言，我不想使用那种一旦公司停止产品或服务就无法使用的工具。出于同样的原因，由于我是一个注重隐私的人，**我不想使用任何基于云的服务**。为了让自己对新的可能性保持开放的心态，我不希望仅在一个特定的操作系统平台上倾注全部的精力。**基本的东西必须在任何平台上可用**(查看、导航、……)。但是**全套需求必须在GNU/Linux上运行**且我选择Debian GNU/Linux。
 
-Before I describe my current solutions to this fairly large set of requirements mentioned above, I have to explain my general folder structure and file naming convention I also use for digital photographs. But first, there is an important fact you have to consider:
+在我传授当前针对上述大量需求的解决方案之前，我必须解释一下我的一般文件夹结构和文件命名约定，我也使用它来命名数码照片。但首先，你必须考虑一个重要的事实:
 
-#### iPhoto, Picasa, and such considered harmful
+#### iPhoto, Picasa, 诸如此类应被认为是有害的
 
-Software tools which manage collections of photographs do provide pretty cool features. They offer a nice user interface and try to give you cozy work-flows for all kinds of requirements.
+管理照片集合的软件工具确实提供了相当酷的功能。他们提供了一个良好的用户界面，并试图为您提供各种需求的舒适的工作流程。
 
-The big issue I do have got with them is numerous. They mostly use proprietary storage formats for almost everything: image files, meta-data, and so forth. This is a huge issue, when you are going to change to a different software in a couple of years. Trust me: **you are going to switch** , some day, in any case, for multiple reasons.
+这些软件的功能和我的个人需求之间的差异很大。它们几乎对所有东西都使用专有的存储格式:图像文件、元数据等等。这是一个大问题，当你打算在几年内换一个不同的软件。相信我:总有一天你会因为多种原因而改变。
 
-If you are in the position where you need to switch your tool, you are going to realize that iPhoto or Picasa do store original image files and everything you did to them separately. Rotation of images, adding description to image files, tags, cropping, and so forth: **everything will be lost forever** if you are not able to export it and re-import it to the new tool. Chances are very high that you are not going to do this without loss of information or data.
+如果你现在正打算更换 相应的工具，您将会意识到iPhoto或Picasa确实分别存储原始图像文件和您对它们所做的所有操作。旋转图像，向图像文件添加描述，标签，裁剪，等等，如果你不能导出并重新导入到新工具，那么**所有的东西都将永远丢失**。而无损的进行转换和迁移几乎是不可能的。
 
-I do not want to invest any effort in a tool which locks away my work. **I refuse to lock-in myself to any proprietary tool.** Been there, done that. Learned my lessons.
+我不想在一个锁住我工作的工具上投入任何精力。**我也拒绝把自己锁在任何专有工具上**。我是一个过来人，希望你们吸取我的经验。
 
-This is the reason why I keep time-stamps, image descriptions, or tags in the file name itself. File names are permanent unless I manually change them. They do not get lost when I backup my photographs or when I copy them to USB memory sticks or other operating systems. Everybody is able to read them. Any future system is able to process them.
+这就是我在文件名中保留时间戳、图像描述或标记的原因。文件名是永久性的，除非我手动更改它们。当我把照片备份或复制到u盘或其他操作系统时，它们不会丢失。每个人都能读懂。任何未来的系统都能够处理它们。
 
-### My file name convention
+### 我的文件命名约定
 
-All my files which do have a relation to a specific day or a time I start with a **date-stamp** or a **time-stamp** according to an adopted [ISO 8601][7].
+我所有的文件都与一个特定的日期或时间有关，根据所采用的[ISO 8601][7]规范，我采用的是**日期-标记**或**时间-标记**
+带有日期戳和两个标签的示例文件名:`2014-05-09 42号项目的预算 -- 金融公司.csv`
 
-Example file name with a date-stamp and two tags: `2014-05-09 Budget export for project 42 -- finance company.csv`
+带有时间戳(甚至包括可选秒)和两个标签的示例文件名:`2014-05-09T22.19.58 Susan展示她的新鞋子 -- 家庭衣物.jpg`
 
-Example file name with a time-stamp (even including optional seconds) and two tags: `2014-05-09T22.19.58 Susan presenting her new shoes -- family clothing.jpg`
+由于冒号不适用于Windows[文件系统NTFS][8]，所以我必须使用已采用的ISO时间戳。因此，我用点代替冒号，以便将小时与分钟区别开来。
 
-I have to use adopted ISO time-stamps because colons are not suitable for the Windows [file system NTFS][8]. Therefore, I replaced colons with dots for separating hours from minutes from the optional seconds.
+如果是**时间或日期持续时间**，我将两个日期或时间戳用两个负号分开:`2014-05-09—2014-05-13爵士音乐节Graz—folder 旅游音乐.pdf`。
 
-In case of **time or date duration** , I separate the two date- or time-stamps with two minus signs: "`2014-05-09--2014-05-13 Jazz festival Graz -- folder tourism music.pdf`".
+文件名中的时间/日期戳的优点是，除非我手动更改它们，否则它们保持不变。当通过某些不处理这些元数据的软件进行处理时，包含在文件内容本身中的元数据(如[Exif][9])往往会丢失。此外，使用这样的日期/时间戳启动文件名可以确保文件按时间顺序显示，而不是按字母顺序显示。字母表是一种[完全人工的排序顺序][10]，对于用户定位文件通常不太实用。
 
-Time/date-stamps in file names have the advantage that they remain unchanged until I manually change them. Meta-data which is included in the file content itself (like [Exif][9]) tends to get lost when files are processed via tools that do not take care of those meta-data. Additionally, starting a file name with such a date/time-stamp ensures that files are displayed in a temporal order instead of alphabetic order. The alphabet is a [totally artificial sort order][10] and it is typically less practical for locating files by the user.
+当我想将**tags**关联到文件名时，我将它们放在原始文件名和[文件名扩展名][11]之间，中间用空格、两个减号和一个额外的空格分隔"`--`"。我的标签是小写的英文单词，不包含空格或特殊字符。有时，我可能会使用`quantifiedself`或`usergenerated`等连接词。我[倾向于选择一般类别][12]，而不是太过具体的描述标签。我用这一方式在Twitter [hashtags][13]上重用标记、文件名、文件夹名、书签、诸如此类的博客条目等等。
 
-When I want to associate **tags** to a file name, I place them between the original file name and the [file name extension][11] separated by a space, two minus signs and an additional space: "`--`". My tags are lower case English words which do not contain spaces or special characters. Sometimes, I might use concatenated words like `quantifiedself` or `usergenerated`. I [tend to prefer general categories][12] instead of more (too) more specific describing tags. I re-use my tags on Twitter [hashtags][13], file names, folder names, bookmarks, blog entries like this one, and so forth.
+标签作为文件名的一部分有几个优点。通过使用常用的桌面搜索引擎，您可以在标签的帮助下定位文件。文件名称中的标签不能因为在不同的存储介质上复制而丢失。当系统使用与文件名不同的存储位置如:元数据数据库、[dot-files][14]、[备用数据流][15]等，通常会发生这种情况
 
-Tags as part of the file name have several advantages. You are able to locate files with the help of tags by using your usual desktop search engine. Tags in file-names can not be lost because of copying on different storage media. This usually happens, whenever a system uses a different storage place than the file name: meta-data data-base, [dot-files][14], [alternate data streams][15], and so forth.
+当然，在一般的文件和文件夹名称中，**请避免使用特殊字符**，umlauts，冒号等。尤其是在不同操作系统平台之间同步文件时。
 
-Of course, please do **avoid special characters** , umlauts, colons, and so forth in file and folder names in general. Especially when you synchronize files between different operating system platforms.
+我的**文件夹名命名约定**与文件的相应规范相同。
 
-My **file name convention for folders** is the same as for files.
+注意:由于[Memacs][17]的[filenametimestamp][16]-module的聪明之处，所有带有日期/时间戳的文件和文件夹都在同一时间/天出现在我的组织模式日历(agenda)上。这样，我就能很好地了解当天发生了什么，包括我拍的所有照片。
 
-Note: Because of the clever [filenametimestamps][16]-module of [Memacs][17], all files and folders with a date/time-stamp appear on the very same time/day on my Org-mode calendar (agenda). This way, I get a very cool overview on what happened when on which day including all photographs I took.
+### 我的一般文件夹结构
 
-### My general folder structure
+在本节中，我将描述主文件夹中最重要的文件夹。注意:这可能在将来的被移动到一个独立的页面。或许不是。让我们等着瞧:-)
+很多东西只有在一定的时间内才会引起人们的兴趣。这些内容包括快速浏览其内容的下载、解压缩文件以检查包含的文件、一些有趣的小内容等等。对于**临时的东西**，我有 `$HOME/tmp/ ` 子层次结构。新照片放在`$HOME/tmp/digicam/`中。我从CD、DVD或USB记忆棒临时复制的东西放在`$HOME/tmp/fromcd/`中。每当软件工具需要用户文件夹层次结构中的临时数据时，我就使用` $HOME/tmp/Tools/ `作为起点。我经常使用的文件夹是`$HOME/tmp/2del/`:`2del`的意思是“随时可以删除”。例如，我所有的浏览器都使用这个文件夹作为默认的下载文件夹。如果我需要在机器上腾出空间，我首先查看这个`2del`-文件夹，用于删除内容。
 
-In this section, I will describe my most important folders within my home folder. NOTE: this might get moved to an independent page somewhere in the future. Or not. Time will tell. :-)
-
-Lots of stuff is only of interest for a certain period of time. These are things like downloads to quickly skim through its content, unpack ZIP files to examine the files contained, minor interesting stuff, and so forth. For **temporary stuff** I do have the `$HOME/tmp/` sub-hierarchy. New photographs are placed in `$HOME/tmp/digicam/`. Stuff I temporary copy from a CD, DVD, or USB memory stick are put in `$HOME/tmp/fromcd/`. Whenever a software tool needs temporary data within my user folder hierarchy, I use `$HOME/tmp/Tools/` as an starting point. A very frequent folder for me is `$HOME/tmp/2del/`: "2del" means "ready for being deleted any time". All my browser are using this folder as the default download folder for example. In case I need to free space on a machine, I firstly look at this `2del`-folder for stuff to delete.
-
-In contrast to the temporary stuff described above, I certainly want to keep files **for a longer period of time** as well. Those files gets moved to my `$HOME/archive/` sub-hierarchy. Its got several sub-folders for backups, web/download-stuff I want to keep, binary files I want to archive, index files of removable media (CD, DVD, memory sticks, external hard drives), and a folder where I place stuff I want to archive (and look for a decent destination folder) in the near future. Sometimes, I am too busy or impatient for the moment to file things properly. Yes, that's me I even have a "do not bug me now"-folder. Is this weird to you? :-)
+与上面描述的临时文件相比，我当然也想将文件**保存更长的时间**。这些文件被移动到我的`$HOME/archive/`子层次结构中。它有几个子文件夹备份,web /下载我想保留,二进制文件我要存档,索引文件的可移动媒体(CD, DVD,记忆棒、外部硬盘驱动器),和一个文件夹用来存档(和寻找一个合适的的目标文件夹)在不久的将来。有时，我太忙或没有耐心的时候将文件妥善整理。是的，那就是我，我甚至有一个名为`现在不要整理我`的文件夹。这是否对你而言很怪？:-)
 
 The most important sub-hierarchy within my archive is `$HOME/archive/events_memories/` and its sub/folders `2014/`, `2013/`, `2012/`, and so forth. As you might have guessed already, there is one **sub-folder per year**. Within each of them, there are single files and folders. The files are named according to my file name convention described in the previous section. Folder names start with an [ISO 8601][7] datestamp in the form "YYYY-MM-DD" followed by a hopefully descriptive name like `$HOME/archive/events_memories/2014/2014-05-08 Business marathon with colleagues/`. Within those date-related folders I keep all kinds of files which are related to a certain event: photographs, (scanned) PDF-files, text files, and so forth.
 
@@ -504,7 +501,7 @@ What `filetags` with parameter `--filter` does is basically the following: the u
 
 After quitting this new geeqie instance, you see the old geeqie instance, from where you invoked the selection process.
 
-#### Summary with a real world example
+#### 用一个真实的案例来总结
 
 Wow, this was a very long blog entry. No wonder that you might have lost the overview here and there. To sum up the things I am able to do within geeqie (that extends the standard feature set), I have this cool table below:
 
@@ -529,33 +526,35 @@ That's it.
 
 Because this work-flow requires almost no overhead at all, commenting, tagging, and filing photographs is not a tedious job any more.
 
-### Finally
+### 最后
 
-So, this is a detailed description of my work-flows related to photographs and movies I make. You probably have found additional stuff I might be interested in. So please do not hesitate and leave a comment or email by using the links below.
+所以，这是一个详细描述我关于照片和电影的工作流程的叙述。你可能已经发现了我可能感兴趣的其他东西。所以请不要犹豫，请使用下面的链接留下评论或电子邮件。
+我也希望得到反馈，如果我的工作流程适用于你。并且:如果你已经发布了你的工作流程或者找到了其他人工作流程的描述，也请留下评论!
+及时行乐，莫让错误的工具或低效的方法浪费了我们的人生!
 
-I also would like to get feed-back if my work-flow works for you as well. And: if you have published your work-flows or find descriptions of other peoples work-flows, please do leave a comment as well!
+### 其他工具
 
-Have fun and don't waste your time with the wrong tools or inefficient methods!
+阅读关于[本文中关于 gThumb 的部分][43].
 
-### Other Tools
+当您觉得您以上文中所叙述的符合你的需求时，请根据相关的建议来选择对应的工具。
 
-Read about [gThumb in this article][43].
-
-Please do suggest your tools of choice when you've got the feeling that they fit my requirements mentioned above.
-
-### Email Comments
+### 邮件回复
 
 > Date: Sat, 26 Aug 2017 22:05:09 +0200
->  Hello Karl,
->  I like your articles and work with memacs and of course orgmode but I am not very familiar with python by the way... in your blog post of "managing-digital-photographs" you write about to open videos with [Geeqie][26].
->  It works, but I cant see any video thumbnails in the browser of Geeqie. Do you have any suggestions to get this to work?
->  Thank you, Thomas
 
-Hi Thomas,
+>  你好卡尔,
+我喜欢你的文章，喜欢和memacs一起工作，当然还有orgmode，但是我对python不是很熟悉……在你的博客文章“管理数码照片”，你写了关于打开视频与[Geeqie][26]。是的，但是我在浏览器里看不到任何视频缩略图。你有什么建议吗？
 
-Thanks for your kind words. I always feel great when somebody finds my work useful in his/her life. Unfortunately most of the time, I never hear of them.
+> 谢谢你,托马斯 
 
-Yes, I sometimes use Geeqie to visualize folders that not only contain image files but movie files as well. In those cases, I don't see any thumbnail image of the video. You're absolutely right, there are many file browsers out there which are able to display some kind of preview image of a video.
+
+
+你好托马斯,
+
+谢谢你的美言。当有人发现我的工作对他/她的生活有用时，我总是感觉很棒。
+不幸的是，大多数时候，我从未听到过这些。
+是的，我有时使用Geeqie来可视化文件夹，这些文件夹不仅包含图像文件，还包含电影文件。在这些情况下，我没有看到任何视频的缩略图。你说得对，有很多文件浏览器可以显示视频的预览图像。
+坦白地说，我从来没有想过视频缩略图，我也不怀念它们。在我的首选项和搜索引擎上做了一个快速的研究，并没有发现在Geeqie中启用视频预览的相关方法。所以这里要说声抱歉。
 
 Quite frankly, I never thought of video thumbnails and I don't miss them. A quick research in the preferences and with my search engine did not suggest that there is a possible way to enable video previews in Geeqie. So no luck here.
 
