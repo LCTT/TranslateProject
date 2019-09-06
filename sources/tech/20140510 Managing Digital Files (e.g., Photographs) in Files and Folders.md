@@ -36,11 +36,11 @@ qfzy1233 is translating
 
 #### iPhoto, Picasa, 诸如此类应被认为是有害的
 
-管理照片集合的软件工具确实提供了相当酷的功能。他们提供了一个良好的用户界面，并试图为您提供各种需求的舒适的工作流程。
+管理照片集合的软件工具确实提供了相当酷的功能。他们提供了一个良好的用户界面，并试图为你提供各种需求的舒适的工作流程。
 
 这些软件的功能和我的个人需求之间的差异很大。它们几乎对所有东西都使用专有的存储格式:图像文件、元数据等等。这是一个大问题，当你打算在几年内换一个不同的软件。相信我:总有一天你会因为多种原因而改变。
 
-如果你现在正打算更换 相应的工具，您将会意识到iPhoto或Picasa确实分别存储原始图像文件和您对它们所做的所有操作。旋转图像，向图像文件添加描述，标签，裁剪，等等，如果你不能导出并重新导入到新工具，那么**所有的东西都将永远丢失**。而无损的进行转换和迁移几乎是不可能的。
+如果你现在正打算更换 相应的工具，你将会意识到iPhoto或Picasa确实分别存储原始图像文件和你对它们所做的所有操作。旋转图像，向图像文件添加描述，标签，裁剪，等等，如果你不能导出并重新导入到新工具，那么**所有的东西都将永远丢失**。而无损的进行转换和迁移几乎是不可能的。
 
 我不想在一个锁住我工作的工具上投入任何精力。**我也拒绝把自己锁在任何专有工具上**。我是一个过来人，希望你们吸取我的经验。
 
@@ -61,7 +61,7 @@ qfzy1233 is translating
 
 当我想将**tags**关联到文件名时，我将它们放在原始文件名和[文件名扩展名][11]之间，中间用空格、两个减号和一个额外的空格分隔"`--`"。我的标签是小写的英文单词，不包含空格或特殊字符。有时，我可能会使用`quantifiedself`或`usergenerated`等连接词。我[倾向于选择一般类别][12]，而不是太过具体的描述标签。我用这一方式在Twitter [hashtags][13]上重用标记、文件名、文件夹名、书签、诸如此类的博客条目等等。
 
-标签作为文件名的一部分有几个优点。通过使用常用的桌面搜索引擎，您可以在标签的帮助下定位文件。文件名称中的标签不能因为在不同的存储介质上复制而丢失。当系统使用与文件名不同的存储位置如:元数据数据库、[dot-files][14]、[备用数据流][15]等，通常会发生这种情况
+标签作为文件名的一部分有几个优点。通过使用常用的桌面搜索引擎，你可以在标签的帮助下定位文件。文件名称中的标签不能因为在不同的存储介质上复制而丢失。当系统使用与文件名不同的存储位置如:元数据数据库、[dot-files][14]、[备用数据流][15]等，通常会发生这种情况
 
 当然，在一般的文件和文件夹名称中，**请避免使用特殊字符**，umlauts，冒号等。尤其是在不同操作系统平台之间同步文件时。
 
@@ -74,47 +74,46 @@ qfzy1233 is translating
 在本节中，我将描述主文件夹中最重要的文件夹。注意:这可能在将来的被移动到一个独立的页面。或许不是。让我们等着瞧:-)
 很多东西只有在一定的时间内才会引起人们的兴趣。这些内容包括快速浏览其内容的下载、解压缩文件以检查包含的文件、一些有趣的小内容等等。对于**临时的东西**，我有 `$HOME/tmp/ ` 子层次结构。新照片放在`$HOME/tmp/digicam/`中。我从CD、DVD或USB记忆棒临时复制的东西放在`$HOME/tmp/fromcd/`中。每当软件工具需要用户文件夹层次结构中的临时数据时，我就使用` $HOME/tmp/Tools/ `作为起点。我经常使用的文件夹是`$HOME/tmp/2del/`:`2del`的意思是“随时可以删除”。例如，我所有的浏览器都使用这个文件夹作为默认的下载文件夹。如果我需要在机器上腾出空间，我首先查看这个`2del`-文件夹，用于删除内容。
 
-与上面描述的临时文件相比，我当然也想将文件**保存更长的时间**。这些文件被移动到我的`$HOME/archive/`子层次结构中。它有几个子文件夹备份,web /下载我想保留,二进制文件我要存档,索引文件的可移动媒体(CD, DVD,记忆棒、外部硬盘驱动器),和一个文件夹用来存档(和寻找一个合适的的目标文件夹)在不久的将来。有时，我太忙或没有耐心的时候将文件妥善整理。是的，那就是我，我甚至有一个名为`现在不要整理我`的文件夹。这是否对你而言很怪？:-)
+与上面描述的临时文件相比，我当然也想将文件**保存更长的时间**。这些文件被移动到我的`$HOME/archive/`子层次结构中。它有几个子文件夹备份,web /下载我想保留,二进制文件我要存档,索引文件的可移动媒体(CD, DVD,记忆棒、外部硬盘驱动器),和一个文件夹用来存档(和寻找一个合适的的目标文件夹)在不久的将来。有时，我太忙或没有耐心的时候将文件妥善整理。是的，那就是我，我甚至有一个名为`现在不要整理我`的文件夹。这对你而言是否很怪？:-)
 
-The most important sub-hierarchy within my archive is `$HOME/archive/events_memories/` and its sub/folders `2014/`, `2013/`, `2012/`, and so forth. As you might have guessed already, there is one **sub-folder per year**. Within each of them, there are single files and folders. The files are named according to my file name convention described in the previous section. Folder names start with an [ISO 8601][7] datestamp in the form "YYYY-MM-DD" followed by a hopefully descriptive name like `$HOME/archive/events_memories/2014/2014-05-08 Business marathon with colleagues/`. Within those date-related folders I keep all kinds of files which are related to a certain event: photographs, (scanned) PDF-files, text files, and so forth.
+我的归档中最重要的子层次结构是 `$HOME/archive/events_memories/ `及其子文件夹` 2014/ `、` 2013/ `、` 2012/ `等等。正如你可能已经猜到的，每个年份有一个**子文件夹**。其中每个文件中都有单个文件和文件夹。这些文件是根据我在前一节中描述的文件名约定命名的。文件夹名称符合“YYYY-MM-DD”[ISO 8601][7] 日期标签开头，后面跟着一个具有描述性的名称，如`$HOME/archive/events_memories/2014/2014-05-08 Business marathon with /`。在这些与日期相关的文件夹中，我保存着各种与特定事件相关的文件:照片、(扫描的)pdf文件、文本文件等等。
 
-For **sharing data** , I maintain a `$HOME/share/` sub-hierarchy. There is my Dropbox folder, folders for important people I share data using all kinds of methods (like [unison][18]). I also share data among my set of devices: Mac Mini at home, GNU/Linux notebook at home, Android phone, root-server (my personal cloud), Windows-notebook at work. I don't want to elaborate on my synchronization set-up here. There might be another blog entry for this if you ask nicely. :-)
+对于**共享数据**，我设置一个`$HOME/share/`子层次结构。这是我的Dropbox文件夹，我用各种各样的方法(比如[unison][18])来分享数据。我也在我的设备之间共享数据:家里的Mac Mini，家里的GNU/Linux笔记本，Android手机，root-server(我的个人云)，工作时的windows笔记本。我不想在这里详细说明我的同步设置。如果你想了解相关的设置，可以参考另一篇相关的文章。:-)
 
-Within my `$HOME/templates_labels/` sub-hierarchy, I keep all kinds of **template files** ([LaTeX][19], scripts, ...), cliparts and **logos** , and so forth.
+在我的` $HOME/ templates_tags / `子层次结构中，我保存了各种**模板文件** ([LaTeX][19]， 脚本，…)，剪辑和**logos**，等等。
 
-My **Org-mode** files, I mostly keep within `$HOME/org/`. I practice retentiveness and do not explain how much I love [Emacs/Org-mode][20] and how much I get out of it this time. You probably have read or heard me elaborating the awesome things I do with it. Just look out for [my `emacs` tag][21] on my blog and its [hashtag `#orgmode`][22] on twitter.
+我的**Org-mode**文件,主要是保存在`$ HOME /org/`。我练习保持记忆，并没有解释我有多喜欢 [Emacs/Org-mode][20]以及这我从中获益多少。你可能读过或听过我详细描述我用它做的很棒的事情。具体可以在我的博客上查找[我的' emacs '标签][21]，在twitter上查找[hashtag ' #orgmode '][22]。
 
-So far about my most important folder sub-hierarchies.
+以上就是我最重要的文件夹子层次结构设置方式。
 
-### My workflows
+### 我的工作流程
 
-Tataaaa, after you learned about my folder structure and file name convention, here are my current workflows and tools I use for the requirements I described further up.
+Tataaaa，在你了解了我的文件夹结构和文件名约定之后，下面是我当前的工作流程和工具，我使用它们来满足我前面描述的需求。
+请注意，**你必须知道你在做什么**。我这里的示例及文件夹路径和更多只**适用我的机器或我的设置的文件夹路径。**你必须采用**相应的路径、文件名等**来满足你的需求!
 
-Please note that **you have to know, what you are doing**. My examples here contain folder paths and more that **only works on my machine or my set-up**. **You have to adopt stuff** like paths, file names, and so forth to meet your requirements!
+#### 工作流程:将文件从SD卡移动到笔记本电脑，旋转人像图像，并重命名文件
 
-#### Workflow: Moving files from my SD card to the laptop, rotating portrait images, and renaming files
+当我想把数据从我的数码相机移到我的GNU/Linux笔记本上时，我拿出它的mini sd存储卡，把它放在我的笔记本上。然后它会自动挂载在` /media/digicam `上。
 
-When I want to move data from my digital camera to my GNU/Linux notebook, I take out its Mini-SD storage card and put it in my notebook. Then it gets mounted on `/media/digicam` automatically.
+然后，调用[getdigicamdata]。它做了如下几件事:它将文件从SD卡移动到一个临时文件夹中进行处理。原始文件名会转换为小写字符。使用[jhead][24]旋转所有人像照片。同样使用jhead，我从Exif头时间戳生成文件名称时间戳。使用[date2name][25]，我将时间戳添加到电影文件中。处理完所有这些文件后，它们将被移动到新的digicam文件的目标文件夹:$HOME/tmp/digicam/tmp/~。
 
-Then, I invoke [getdigicamdata.sh][23] which does several things: it moves the files from the SD card to a temporary folder for processing. The original file names are being converted to lower-case characters. All portrait photographs are rotated using [jhead][24]. Also with jhead, I generate file-name time-stamps from the Exif header time-stamps. Using [date2name][25] I add time-stamps also to the movie files. After processing all those files, they get moved to the destination folder for new digicam files: $HOME/tmp/digicam/tmp/~.
+#### 工作流程:文件夹索引、查看、重命名、删除图像文件
 
-#### Workflow: Folder navigation, viewing, renaming, deleting image files
+为了快速浏览我的图像和电影文件，我更喜欢在GNU/Linux上使用[geeqie][26]。这是一个相当轻量级的图像浏览器，它具有其他文件浏览器所缺少的一大优势:我可以通过键盘快捷方式调用的外部脚本/工具。通过这种方式，我可以通过任意的外部命令扩展图像浏览器的特性。
 
-For skimming through my image and movie files, I prefer to use [geeqie][26] on GNU/Linux. It is a fairly lightweight image browser which has one big advantage other file browsers are missing: I can add external scripts/tools that can be invoked by a keyboard shortcut. This way, I am able to extend the feature-set of the image browser by arbitrary external commands.
+基本的图像管理功能是内置在geeqie:索引我的文件夹层次结构，在窗口模式或全屏查看图像(快捷键' f ')，重命名文件名，删除文件，显示Exif元数据(快捷键` Ctrl-e `)。
 
-Basic image management functionality is built-in to geeqie: navigating my folder hierarchy, viewing image files in window-mode and in full-screen more (shortcut `f`), renaming file names, deleting files, showing Exif meta-data (shortcut `Ctrl-e`).
+在OS X上，我使用[Xee][27]。与geeqie不同，它不能通过外部命令进行扩展。不过，基本的导航、查看和重命名功能也是可用的。
 
-On OS X, I use [Xee][27]. Unlike geeqie, it is not extendable by external commands. However, the basic navigation, viewing, and renaming functions are available as well.
+#### 工作流:添加和删除标签
 
-#### Workflow: Adding and removing tags
+我创建了一个名为[filetags][28]的Python脚本，用于向单个文件以及一组文件添加和删除标记。
 
-I created a Python script called [filetags][28] which I use for adding and removing tags to single files as well as a set of files.
+对于数码照片，我使用标签，例如，`specialL`用于我认为适合桌面背景的风景图片，`specialP`用于我想展示给其他人的人像照片，`sel`用于筛选，等等。
 
-For digital photographs, I use tags like, e.g., `specialL` for landscape images that I consider suitable for desktop backgrounds and so forth, `specialP` for portrait photographs I would like to show to others, `sel` for a selection, and many more.
+##### 使用geeqie初始设置文件标签
 
-##### Initial set-up of filetags with geeqie
-
-Adding filetags to geeqie is a manual step: `Edit > Preferences > Configure Editors ...`. Then create an additional entry with `New`. There, you can define a new desktop-file which looks like this:
+向geeqie添加文件标签是一个手动步骤:`编辑>首选项>配置编辑器…`然后创建一个带有`New`的附加条目。在这里，你可以定义一个新的桌面文件，如下所示:
 
 add-tags.desktop
 ```
@@ -133,7 +132,7 @@ Categories=X-Geeqie;
 
 ```
 
-The wrapper-script `vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh` is necessary because I want a new terminal window to pop-up in order to add tags to my files:
+包装器脚本的`vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh `是必须的，因为我想要弹出一个新的终端，以便添加标签到我的文件:
 
 vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh
 ```
@@ -149,9 +148,9 @@ vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh
 
 ```
 
-In geeqie, you can add a keyboard shortcut in `Edit > Preferences > Preferences ... > Keyboard`. I associated `t` with the `filetags` command.
+在geeqie中，你可以在` Edit > Preferences > Preferences…>键盘`。我将`t`与`filetags`命令相关联。
 
-The filetags script is also able to remove tags from a single file or a set of files. It basically uses the same method as described above. The only difference is the additional `--remove` parameter for the filetags script:
+标签脚本还能够从单个文件或一组文件中删除标记。它基本上使用与上面相同的方法。唯一的区别是文件标签脚本额外的`--remove`参数:
 
 remove-tags.desktop
 ```
@@ -184,33 +183,33 @@ vk-filetags-interactive-removing-wrapper-with-gnome-terminal.sh
 
 ```
 
-For removing tags, I created a keyboard shortcut for `T`.
+为了删除标签，我为`T`参数创建了一个键盘快捷方式。
 
-##### Using filetags within geeqie
+##### 在geeqie中使用文件标签
 
-When I skim though image files in the geeqie file browser, I select files I want to tag (one to many) and press `t`. Then, a small window pops up and asks me for one or more tags. After confirming with `Return`, these tags gets added to the file names.
+当我在geeqie文件浏览器中浏览图像文件时，我选择要标记的文件(一到多个)并按`t`。然后，一个小窗口弹出，要求我提供一个或多个标签。在与` Return `确认后，这些标签被添加到文件名中。
 
-The same goes for removing tags: selecting multiple files, pressing `T`, entering tags to be removed, and confirming with `Return`. That's it. There is [almost no simpler way to add or remove tags to files][29].
+删除标签也是一样:选择多个文件，按下`T`，输入要删除的标签，然后用`Return`确认。就是这样。几乎没有[更简单的方法来添加或删除标签到文件][29]。
 
-#### Workflow: Advanced file renaming with appendfilename
+#### 工作流:使用appendfilename重命名高级文件
 
-##### Without appendfilename
+##### 不使用 appendfilename
 
-Renaming a large set of files can be a tedious process. With original file names like `2014-04-20T17.09.11_p1100386.jpg`, the process to add a description to its file name is quite annoying. You are going to press `Ctrl-r` (rename) in geeqie which opens the file rename dialog. The base-name (file-name without the file extension) is marked by default. So if you do not want to delete/overwrite the file name (but append to it), you have to press the cursor key for `<right>`. Then, the cursor is placed between the base name and the extension. Type in your description (don't forget the initial space character) and confirm with `Return`.
+重命名一组大型文件可能是一个冗长乏味的过程。对于`2014-04-20T17.09.11_p1100386.jpg`这样的原始文件名，在文件名中添加描述的过程相当烦人。你将按`Ctrl-r`(重命名)在geeqie打开文件重命名对话框。默认情况下，原始名称(没有文件扩展名的文件名称)被标记。因此，如果不希望删除/覆盖文件名(但要追加)，则必须按下光标键` <right> `。然后，光标放在基本名称和扩展名之间。输入你的描述(不要忘记初始空格字符)，并用`Return`进行确认。
 
-##### Using appendfilename with geeqie
+##### 在geeqie使中用appendfilename
 
-With [appendfilename][30], my process is simplified to gain maximum user experience for appending text to file names: When I press `a` (append) in geeqie, a dialog window pops up, asking for a text. After confirming with `Return`, the entered text gets placed between the time-stamp and the optional tags.
+使用[appendfilename][30]，我的过程得到了简化，可以获得将文本附加到文件名的最佳用户体验:当我在geeqie中按下` a ` (append)时，会弹出一个对话框窗口，询问文本。在`Return`确认后，输入的文本将放置在时间戳和可选标记之间。
 
-For example when I press `a` on `2014-04-20T17.09.11_p1100386.jpg` and I type `Pick-nick in Graz`, the file name gets changed to `2014-04-20T17.09.11_p1100386 Pick-nick in Graz.jpg`. When I press `a` once again and enter `with Susan`, the file name gets changed to `2014-04-20T17.09.11_p1100386 Pick-nick in Graz with Susan.jpg`. When the file name got tags as well, the appended text gets appended before the tag-separator.
+例如，当我在`2014-04-20T17.09.11_p1100386.jpg`上按下`a`，然后在`Graz`中键入`Pick-nick in Graz`时，文件名变为`2014-04-20T17.09.11_p1100386 Pick-nick in Graz.jpg`。当我再次按下`a`并输入`with Susan`时，文件名变为`2014-04-20T17.09.11_p1100386 Pick-nick in Graz with Susan.jpg`。当文件名也获得标记时，附加的文本将附加在标记分隔符之前。
 
-This way, I do not have to be afraid to overwrite time-stamps or tags. The process for renaming gets much more enjoyable for me!
+这样，我就不必担心覆盖时间戳或标记。重命名的过程对我来说变得更加有趣!
 
-And the best part: when I want to add the same text to multiple selected files, this also works with appendfilename.
+最好的部分是:当我想要将相同的文本添加到多个选定的文件中时，也可以使用appendfilename。
 
-##### Initial set-up of appendfilename with geeqie
+##### 使用geeqie初始appendfilename
 
-Add an additional editor to geeqie: `Edit > Preferences > Configure Editors ... > New`. Then enter the desktop file definition:
+添加一个额外的编辑器到geeqie: ` Edit > Preferences > Configure editor…>New`。然后输入桌面文件定义:
 
 appendfilename.desktop
 ```
@@ -229,7 +228,7 @@ Categories=X-Geeqie;
 
 ```
 
-Once again, I do use a wrapper-script that provides me the terminal window:
+同样，我也使用了一个包装脚本，它将为我打开一个新的终端:
 
 vk-appendfilename-interactive-wrapper-with-gnome-terminal.sh
 ```
@@ -245,15 +244,15 @@ vk-appendfilename-interactive-wrapper-with-gnome-terminal.sh
 
 ```
 
-#### Workflow: Play movie files
+#### 工作流程:播放电影文件
 
-On GNU/Linux, I use [mplayer][31] to play-back video files. Since geeqie does not play movie files on itself, I have to create a set-up where I can open a movie file in mplayer.
+在GNU/Linux上，我使用[mplayer][31]回放视频文件。由于geeqie本身不播放电影文件，所以我必须创建一个设置，以便在mplayer中打开电影文件。
 
-##### Initial set-up of mplayer with geeqie
+##### 在geeqie中初始化mplayer的设置
 
-I did already associate movie file extensions to mplayer using [xdg-open][32]. Therefore, I only had to create a general "open" command to geeqie which uses xdg-open to open any file with its associated application.
+我已经使用[xdg-open][32]将电影文件扩展名关联到mplayer。因此，我只需要为geeqie创建一个通用的“open”命令，使用xdg-open打开任何文件及其关联的应用程序。
 
-Once again, visit `Edit > Preferences > Configure Editors ...` in geeqie and add an entry for `open`:
+再次访问` Edit > Preferences > Configure editor…`在geeqie中添加`open`的条目:
 
 open.desktop
 ```
@@ -272,31 +271,31 @@ Categories=X-Geeqie;
 
 ```
 
-When you also associate the shortcut `o` (see above) to geeqie, you are able to open video files (and other files) with their associated application.
+当你还将快捷方式`o`(见上文)与geeqie关联时，你就能够打开与其关联的应用程序的视频文件(和其他文件)。
 
-##### Opening movie files (and others) with xdg-open
+##### 使用xdg-open打开电影文件(和其他文件)
 
-After the set-up process from above, you just have to press `o` when your geeqie cursor is above the file. That's it.
+在上面的设置过程之后，当您的geeqie光标位于文件上方时，您只需按下`o`即可。就是如此简洁。
 
-#### Workflow: Open in an external image editor
+#### 工作流:在外部图像编辑器中打开
 
-I rarely want to be able to quickly edit image files in the GIMP. Therefore, I added a shortcut `g` and associated it with the external editor "GNU Image Manipulation Program" (GIMP) which was already created by default by geeqie.
+我不太希望能够在GIMP中快速编辑图像文件。因此，我添加了一个快捷方式`g`，并将其与外部编辑器“GNU图像处理程序”(GIMP)关联起来，geeqie已经默认创建了该程序
 
-This way, only pressing `g` opens the current image file in the GIMP.
+这样，只需按下`g`就可以打开GIMP中的当前图像。
 
-#### Workflow: Move to archive folder
+#### 工作流程:移动到存档文件夹
 
-Now that I have added comments to my file names, I want to move single files to `$HOME/archive/events_memories/2014/` or set of files to new folders within this folder like `$HOME/archive/events_memories/2014/2014-05-08 Business-Marathon After-Show-Party`.
+现在我已经在我的文件名中添加了注释，我想将单个文件移动到`$HOME/archive/events_memories/2014/`，或者将一组文件移动到这个文件夹中的新文件夹中，如`$HOME/archive/events_memories/2014/2014-05-08 business marathon after show - party`。
 
-The usual way is to select one or multiple files and move them to a folder with the shortcut `Ctrl-m`.
+通常的方法是选择一个或多个文件，并将它们移动到具有快捷方式`Ctrl-m`的文件夹中。
 
-So booooring.
+何等繁杂无趣之至！
 
-Therefore, I (again) wrote a Python script which does this job for me: [move2archive][33] (in short: `m2a`) expects one or more files as command line parameters. Then, a dialog appears where I am able to enter an optional folder name. When I do not enter anything at all but press `Return`, the files gets moved to the folder of the corresponding year. When I enter a folder name like `Business-Marathon After-Show-Party`, the date-stamp of the first image file is appended to the folder (`$HOME/archive/events_memories/2014/2014-05-08 Business-Marathon After-Show-Party`), the resulting folder gets created, and the files gets moved.
+因此，我(再次)编写了一个Python脚本，它为我完成了这项工作:[move2archive][33](简而言之:` m2a `需要一个或多个文件作为命令行参数。然后，出现一个对话框，我可以在其中输入一个可选文件夹名。当我不输入任何东西，但按`Return`，文件被移动到相应年份的文件夹。当我输入一个类似`business marathon after show - party`的文件夹名称时，第一个图像文件的日期戳被附加到该文件夹(`$HOME/archive/events_memories/2014/2014-05-08 business marathon after show - party`)，得到的文件夹是(`$HOME/archive/events_memories/2014/2014-05-08 Business-Marathon After-Show-Party`)，并移动文件。
 
-Once again: I am in geeqie, select one or more files, press `m` (move) and either press only `Return` (no special sub-folder) or enter a descriptive text which is the name of the sub-folder to be created (optionally without date-stamp).
+再一次:我在geeqie中，选择一个或多个文件，按`m`(移动)，或者只按`Return`(没有特殊的子文件夹)，或者输入一个描述性文本，这是要创建的子文件夹的名称(可选不带日期戳)。
 
-**No image managing tool is as quick and as fun to use as my geeqie with appendfilename and move2archive via shotcuts.**
+**没有一个图像管理工具像我的geeqie一样通过快捷键快速且有趣的使用 appendfilename和move2archive完成工作。**
 
 ##### Initial set-up of m2a with geeqie
 
@@ -503,28 +502,27 @@ After quitting this new geeqie instance, you see the old geeqie instance, from w
 
 #### 用一个真实的案例来总结
 
-Wow, this was a very long blog entry. No wonder that you might have lost the overview here and there. To sum up the things I am able to do within geeqie (that extends the standard feature set), I have this cool table below:
+Wow, 这是一篇很长的博客文章。难怪你可能已经忘了之前的概述。总结一下我在geeqie(扩展了标准功能集)中可以做的事情，我有一个很酷的总结:
 
-shortcut function `m` m2a `o` open (for non-images) `a` add text to file name `t` filetags (add) `T` filetags (remove) `s` filetags (filter) `g` gimp `G` show GPS position `[` lossless rotate counterclockwise `]` lossless rotate clockwise `Ctrl-e` EXIF `f` full-screen
+快捷功能 `m` m2a `o` 打开（针对非图像文件） `a` 在文件名里添加字段 `t` 文件标签（添加） `T` 文件标签（删除） `s` 文件标签（排序） `g` gimp `G` 显示GPS信息 `[` 无损的逆时针旋转 `]` 无损的顺时针旋转 `Ctrl-e` EXIF图像信息 `f` 全屏显示
 
-Parts of a file name (including its path) and tools I use to manipulate the components accordingly:
+一些针对文件名的(包括它的路径)及我用来操作组件的示例:
 ```
  /this/is/a/folder/2014-04-20T17.09 Pick-nick in Graz -- food graz.jpg
  [ m2a ] [ date2name ] [ appendfilename ] [filetags]
 
 ```
+在示例中，我按照以下步骤将照片从相机保存到存档:我将SD存储卡放入计算机的SD卡读卡器中。然后我运行[getdigicamdata.sh][23]。完成之后，我在geeqie中打开`$HOME/tmp/digicam/tmp/`。我浏览了一下照片，把那些不成功的删除了。如果有一个图像的方向错误，我用`[`or`]`纠正它。
 
-In practice, I do the following steps to get my photographs from the camera to my archive: I put the SD memory card into my SD card reader of my computer. Then I start [getdigicamdata.sh][23]. After it is finished, I open `$HOME/tmp/digicam/tmp/` within geeqie. I skim through the photographs and delete the ones that did not work out. If there is an image with the wrong orientation, I correct it by `[` or `]`.
+在第二步中，我向我认为值得评论的文件添加描述(` a `)。每当我想添加标签时，我也这样做:我快速地标记所有应该共享标签的文件(` Ctrl ` \+鼠标点击)，并使用[filetags][28] (` t `)进行标记。
 
-In a second run, I add descriptions to files I consider worth commenting on (`a`). Whenever I want to add tags I do so as well: I quickly mark all files that should share a tag (`Ctrl` \+ mouse-click) and tag them using [filetags][28] (`t`).
+要组合来自给定事件的文件，我选中相应的文件，将它们移动到年度归档文件夹中的“event-folder”,并通过在[move2archive][33] (`m `)中键入事件描述，其余的(非特殊的文件夹)由move2archive (`m `)直接移动到年度归档中，而不需要声明事件描述。
 
-To combine files from a given event, I select corresponding files and move them to their "event-folder" within the yearly archive folder by typing the event description in [move2archive][33] (`m`). The rest (no special event folder) is moved to the yearly archive directly by move2archive (`m`) without stating a event description.
+为了完成我的工作流程，我删除了SD卡上的所有文件，把它从操作系统上弹出，然后把它放回我的数码相机里。
 
-To finish my work-flow, I delete all files on my SD card, dismount it from the operating system, and put it back into my digital camera.
+以上。
 
-That's it.
-
-Because this work-flow requires almost no overhead at all, commenting, tagging, and filing photographs is not a tedious job any more.
+因为这种工作流程几乎不需要任何开销，所以评论、标记和归档照片不再是一项乏味的工作。
 
 ### 最后
 
@@ -536,7 +534,7 @@ Because this work-flow requires almost no overhead at all, commenting, tagging, 
 
 阅读关于[本文中关于 gThumb 的部分][43].
 
-当您觉得您以上文中所叙述的符合你的需求时，请根据相关的建议来选择对应的工具。
+当你觉得你以上文中所叙述的符合你的需求时，请根据相关的建议来选择对应的工具。
 
 ### 邮件回复
 
@@ -556,7 +554,7 @@ Because this work-flow requires almost no overhead at all, commenting, tagging, 
 是的，我有时使用Geeqie来可视化文件夹，这些文件夹不仅包含图像文件，还包含电影文件。在这些情况下，我没有看到任何视频的缩略图。你说得对，有很多文件浏览器可以显示视频的预览图像。
 坦白地说，我从来没有想过视频缩略图，我也不怀念它们。在我的首选项和搜索引擎上做了一个快速的研究，并没有发现在Geeqie中启用视频预览的相关方法。所以这里要说声抱歉。
 
-Quite frankly, I never thought of video thumbnails and I don't miss them. A quick research in the preferences and with my search engine did not suggest that there is a possible way to enable video previews in Geeqie. So no luck here.
+
 
 --------------------------------------------------------------------------------
 
