@@ -1,30 +1,32 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (5 ops tasks to do with Ansible)
 [#]: via: (https://opensource.com/article/19/8/ops-tasks-ansible)
 [#]: author: (Mark Phillips https://opensource.com/users/markphttps://opensource.com/users/adminhttps://opensource.com/users/alsweigarthttps://opensource.com/users/belljennifer43)
 
-5 个使用 Ansible 的运维任务
+5 个 Ansible 运维任务
 ======
-更少的 DevOps、更多的 OpsDev
+
+> 让 DevOps 少一点，OpsDev 多一点。
+
 ![gears and lightbulb to represent innovation][1]
 
-在这个 DevOps 世界中，有时看起来开发 （Dev） 开始成为关注的焦点，而运维 （Ops） 则是关系中被遗忘的一半。这几乎就好像领先的开发告诉尾随的运维做什么，几乎所有的“运维”都是开发说要做的。因此，运维被抛到后面，降级到了替补席上。
+在这个 DevOps 世界中，看起来开发（Dev）这一半成为了关注的焦点，而运维（Ops）则是这个关系中被遗忘的另一半。这几乎就好像是领头的开发告诉尾随的运维做什么，几乎所有的“运维”都是开发说要做的。因此，运维被抛到后面，降级到了替补席上。
 
 我想看到更多的 OpsDev。因此，让我们来看看 Ansible 在日常的运维中可以帮助你什么。
 
 ![Job templates][2]
 
-我选择在 [Ansible Tower][3] 中展示这些方案，因为我认为用户界面 （UI） 为大多数任务增加了价值。如果你想模仿，你可以在 Tower 的上游开源版本 [AWX][4] 中测试它。
+我选择在 [Ansible Tower][3] 中展示这些方案，因为我认为用户界面 （UI） 可以增色大多数的任务。如果你想模拟测试，你可以在 Tower 的上游开源版本 [AWX][4] 中测试它。
 
 ### 管理用户
 
-在大规模环境中，你的用户将集中在 Active Directory 或 LDAP 等系统中。但我敢打赌，仍然存在许多环境，其中包含大量的静态用户。Ansible 可以帮助你集中分散的问题。 _社区_ 已为我们解决了这个问题。看看 [Ansible Galaxy][5] 角色**[用户][6]**。
+在大规模环境中，你的用户将集中在活动目录或 LDAP 等系统中。但我敢打赌，仍然存在许多包含大量的静态用户的全负荷环境。Ansible 可以帮助你将这些分散的环境集中到一起。*社区*已为我们解决了这个问题。看看 [Ansible Galaxy][5] 中的 [users][6] 角色。
 
-这个角色的聪明之处在于它允许我们通过 *data* 管理用户，无需更改运行逻辑。
+这个角色的聪明之处在于它允许我们通过*数据*管理用户，而无需更改运行逻辑。
 
 ![User data][7]
 
@@ -32,7 +34,7 @@
 
 ### 管理 sudo
 
-有多种形式][8]可以升级特权，但最受欢迎的是 [sudo][9]。通过每个用户、组等的离散文件来管理 sudo 相对容易。但一些人对给予特权升级感到紧张，并倾向于有时限地给予特权升级。因此[下面是一种方案] [10]，使用简单的 **at** 命令对授权访问设置时间限制。
+提权有[多种形式][8]，但最流行的是 [sudo][9]。通过每个 `user`、`group` 等离散文件来管理 sudo 相对容易。但一些人对给予特权感到紧张，并倾向于有时限地给予提权。因此[下面是一种方案][10]，它使用简单的 `at` 命令对授权访问设置时间限制。
 
 ![Managing sudo][11]
 
@@ -44,13 +46,13 @@
 
 ### 管理磁盘空间
 
-这有[一个简单的角色][14]，可在特定目录中查找大小大于 _N_ 的文件。在 Tower 中这么做时，启用 [callbacks][15] 有额外的好处。想象一下，你的监控方案发现文件系统已超过 X％ 并触发 Tower 中的任务以找出是什么文件导致的。
+这有[一个简单的角色][14]，可在特定目录中查找字节大于某个大小的文件。在 Tower 中这么做时，启用[回调][15]有额外的好处。想象一下，你的监控方案发现文件系统已超过 X％ 并触发 Tower 中的任务以找出是什么文件导致的。
 
 ![Managing disk space][16]
 
 ### 调试系统性能问题
 
-[这个角色][17]相当简单：它运行一些命令并打印输出。细节在最后输出，让你、系统管理员快速浏览一眼。另外可以使用 [regexs][18] 在输出中找到某些条件（比如说 CPU 占用率超过 80％）。
+[这个角色][17]相当简单：它运行一些命令并打印输出。细节在最后输出，让你 —— 系统管理员快速浏览一眼。另外可以使用 [正则表达式][18] 在输出中找到某些条件（比如说 CPU 占用率超过 80％）。
 
 ![Debugging system performance][19]
 
@@ -65,7 +67,7 @@ via: https://opensource.com/article/19/8/ops-tasks-ansible
 作者：[Mark Phillips][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
