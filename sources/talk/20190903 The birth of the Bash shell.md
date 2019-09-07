@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (The birth of the Bash shell)
@@ -14,7 +14,7 @@ Bash shell 的诞生
 
 ![Listen to the Command Line Heroes Podcast][1]
 
-对于任何从事于系统管理员方面的人来说，Shell 脚本编程是一门必不可少的技能，而如今人们编写脚本的主要 shell 是 Bash。Bash 是几乎所有的 Linux 发行版和现代 MacOS 版本的默认环境，也很快就会成为 [Windows 终端][2]的原生部分。你可以说 Bash 无处不在。
+对于任何从事于系统管理员方面的人来说，Shell 脚本编程是一门必不可少的技能，而如今人们编写脚本的主要 shell 是 Bash。Bash 是几乎所有的 Linux 发行版和现代 MacOS 版本的默认配置，也很快就会成为 [Windows 终端][2]的原生部分。你可以说 Bash 无处不在。
 
 那么它是如何做到这一点的呢？本周的《[代码英雄][3]》播客将通过询问编写那些代码的人来深入研究这个问题。
 
@@ -60,7 +60,7 @@ Richard Stallman 和一群志同道合的开发人员那时正在编写所有的
 
 ### 重新打造 Bourne Shell
 
-自由软件的使命和竞争这两个催化剂使重制的 Bourne shell（Bash）具有了生命。和之前不同的是，Fox 并没有把 shell 放到自己的名字之后命名，他专注于从 Unix 到自由软件的演变。（虽然 Fox Shell 这个名字看起来要比 Fish shell 到 fsh 要更好 #missedopportunity）。这个命名选择似乎符合他的个性。正如 Fox 在剧集中所说，他甚至对个人的荣耀也不感兴趣；他只是试图帮助编程文化发展。然而，他并不是一个优秀的双关语。
+自由软件的使命和竞争这两个催化剂使重制的 Bourne shell（Bash）具有了生命。和之前不同的是，Fox 并没有把 shell 放到自己的名字之后命名，他专注于从 Unix 到自由软件的演变。（虽然 Fox Shell 这个名字看起来要比 Fish shell 更适合作为 fsh 命令 #missedopportunity）。这个命名选择似乎符合他的个性。正如 Fox 在剧集中所说，他甚至对个人的荣耀也不感兴趣；他只是试图帮助编程文化发展。然而，他并不是一个优秀的双关语。
 
 而 Bourne 也并没有因为他命名 shell 的文字游戏而感到被轻视。Bourne 讲述了一个故事，有人走到他面前，并在会议上给了他一件 Bash T 恤，而那个人是 Brian Fox。
 
@@ -77,7 +77,7 @@ Bourne-Again Shell | 1989 | Brian Fox
 shell 是一项技术，它是笔记本电脑日常使用中的一个组成部分，你很容易忘记它也需要发明出来。从 Thompson 到 Bourne 再到 Bash，shell 的故事为我们描绘了一些熟悉的结论：
 
 * 有动力的人可以在正确的使命中取得重大进展。
-* 我们今天所依赖的大部分内容都建立在我们行业中仍然活着的那些传奇人物的基础之上。
+* 我们今天所依赖的大部分内容都建立在我们行业中仍然活着的那些传奇人物打下的基础之上。
 * 能够生存下来的软件超越了其原始创作者的愿景。
    
 代码英雄在全部的第三季中讲述了编程语言，并且正在接近它的尾声。[请务必订阅，来了解你想知道的有关编程语言起源的各种内容][3]，我很乐意在下面的评论中听到你的 shell 故事。
@@ -89,7 +89,7 @@ via: https://opensource.com/19/9/command-line-heroes-bash
 作者：[Matthew Broberg][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
