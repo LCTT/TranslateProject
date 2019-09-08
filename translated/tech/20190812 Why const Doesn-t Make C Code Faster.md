@@ -224,12 +224,10 @@ y += x;
 printf("%d %d\n", x, y);
 ```
 
-TL;DR: `const` is almost useless for optimisation because
+总而言之，`const` 对优化而言几乎无用，因为：
 
-  1. Except for special cases, the compiler has to ignore it because other code might legally cast it away
-  2. In most of the exceptions to #1, the compiler can figure out a variable is constant, anyway
-
-
+  1. 除了特殊情况，编译器需要忽略它，因为其他代码可能合法地移除它
+  2. 在 #1 以外地大多数例外中，编译器无论如何都能推断出该变量是常量
 
 ### C++
 
