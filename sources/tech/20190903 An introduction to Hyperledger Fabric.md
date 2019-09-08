@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Morisun029)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,95 +7,81 @@
 [#]: via: (https://opensource.com/article/19/9/introduction-hyperledger-fabric)
 [#]: author: (Matt Zand https://opensource.com/users/mattzandhttps://opensource.com/users/ron-mcfarlandhttps://opensource.com/users/wonderchook)
 
-An introduction to Hyperledger Fabric
+Hyperledger Fabric 介绍
 ======
-Hyperledger is a set of open source tools aiming to build a robust,
-business-driven blockchain framework.
+Hyperledger （超级账本）是一组开源工具，旨在构建一个强大的，业务驱动的区块链框架。
 ![Chain image][1]
 
-One of the biggest projects in the blockchain industry, [Hyperledger][2], is comprised of a set of open source tools and subprojects. It's a global collaboration hosted by The Linux Foundation and includes leaders in different sectors who are aiming to build a robust, business-driven blockchain framework.
+[Hyperledger][2] 是区块链行业中最大的项目之一，它由一组开源工具和多个子项目组成。该项目是由 Linux 基金会主办的一个全球协作项目，其中包括一些不同领域的领导者们，这些领导者们的目标是建立一个强大的，业务驱动的区块链框架。
 
-There are three main types of blockchain networks: public blockchains, consortiums or federated blockchains, and private blockchains. Hyperledger is a blockchain framework that aims to help companies build private or consortium permissioned blockchain networks where multiple organizations can share the control and permission to operate a node within the network.
+区块链网络主要有三种类型：公共区块链，联盟或联合区块链，以及私有区块链。 Hyperledger 是一个区块链框架，旨在帮助公司建立私人或财团许可的区块链网络，在该网络中，多个组织可以共享控制和操作网络内节点的权限。
 
-Since a blockchain is a transparent, immutable, and secure decentralized system, it is considered a game-changing solution for traditional supply chain industries. It can support an effective supply chain system by:
+因为区块链是一个透明的，基于不可变模式的安全分散系统，所以它被认为是传统供应链行业改变游戏规则的一种解决方案。 它可以通过以下方式支持有效的供应链系统：
 
-  * Tracking the products in the entire chain
-  * Verifying and authenticating the products in the chain
-  * Sharing the entire chain's information between supply chain actors
-  * Providing auditability
+  * 跟踪整个区块链中的产品
+  * 校验和验证区块链中的产品
+  * 在供应链参与者之间共享整个区块链的信息
+  * 提供可审核性
 
+本文通过食品供应链的例子来解释 Hyperledger 区块链是如何改变传统供应链系统的。
 
+### 食品行业供应链
 
-This article uses the example of a food supply chain to explain how a Hyperledger blockchain can transform a traditional supply chain.
+传统供应链效率低下的主要原因是由于缺乏透明度而导致报告不可靠和竞争上的劣势。
 
-### Food industry supply chains
+在传统的供应链模式中，有关实体的信息对该区块链中的其他人来说并不完全透明，这就导致了报道不准确和缺乏互操作性问题。 电子邮件和印刷文档提供了一些信息，但它们不可能包含完整详细的可见性数据，因为很难在整个供应链中去追踪产品。 这也使消费者几乎不可能知道产品的真正价值和来源。
 
-The main reason for classic supply chain inefficiency is lack of transparency, leading to unreliable reporting and competitive disadvantage.
+食品行业的供应链环境复杂，多个参与者需要协作将货物运送到最终目的地 - 客户手中。 下图显示了食品供应链（多级）网络中的主要参与者。
+![典型的食品供应链][3]
 
-In traditional supply chain models, information about an entity is not fully transparent to others in the chain, which leads to inaccurate reports and a lack of interoperability. Emails and printed documents provide some information, but they can't contain fully detailed visibility data because the products are hard to trace across the entire supply chain. This also makes it nearly impossible for a consumer to know the true value and origin of a product.
+该区块链的每个阶段都会引入潜在的安全问题，整合问题和其他低效问题。 目前食品供应链中的主要威胁仍然是假冒食品和食品欺诈。
 
-The food industry's supply chain is a difficult landscape, where multiple actors need to coordinate to deliver goods to their final destination, the customers. The following diagram shows the key actors in a food supply chain (multi-echelon) network.
-
-![Typical food supply chain][3]
-
-Every stage of the chain introduces potential security vulnerabilities, integration problems, and other inefficiency issues. The main growing threat in current food supply chains remains counterfeit food and food fraud.
-
-A food-tracking system based on the Hyperledger blockchain enables full visibility, tracking, and traceability. More importantly, it ensures the authenticity of food by recording a product's details in an immutable and viable way. By sharing a product's details over an immutable framework, the end user can self-verify a product's authenticity.
+基于 Hyperledger 区块链的食品跟踪系统可实现对食品信息全面的可视性和和可追溯性。 更重要的是，它以一种不变但可行的方式来记录产品细节，确保食品信息的真实性。最终用户通过在不可变框架上共享产品的详细信息，可以自我验证产品的真实性。
 
 ### Hyperledger Fabric
 
-Hyperledger Fabric is the cornerstone of the Hyperledger project. It is a permission-based blockchain, or more accurately a distributed ledger technology (DLT), which was originally created by IBM and Digital Asset. It is designed as a modular framework with different components (outlined below). It is also a flexible solution offering a pluggable consensus model, although it currently only provides permissioned, voting-based consensus (with the assumption that today's Hyperledger networks operate in a partially trustworthy environment).
+Hyperledger Fabric 是 Hyperledger 项目的基石。它是基于权限的区块链，或者更准确地说是一种分布式分类帐技术（DLT），该技术最初由 IBM 公司和 Digital Asset 创建。分布式分类帐技术被设计为具有不同组件的模块化框架（概述如下）。 它也是提供可插入的共识模型的一种灵活的解决方案，尽管它目前仅提供基于投票的许可共识（假设今天的 Hyperledger 网络在部分可信赖的环境中运行）。
 
-Given this, there is no need for anonymous miners to validate transactions nor for an associated currency to act as an incentive. All participants must be authenticated to participate and transact on the blockchain. Like with Ethereum, Hyperledger Fabric supports smart contracts, called Chaincodes in Hyperledger, and these contracts describe and execute the system's application logic.
+鉴于此，匿名矿工无需验证交易，相关货币也无需用作激励措施。 所有的参与者必须经过身份验证才能参与到区块链，在区块链中进行交易。 与以太坊一样，Hyperledger Fabric 支持智能合约，在 Hyperledger 中称为 Chaincodes（链码），这些合同描述并执行系统的应用程序逻辑。
 
-Unlike Ethereum, however, Hyperledger Fabric doesn't require expensive mining computations to commit transactions, so it can help build blockchains that can scale up with less latency.
+然而，与以太坊不同，Hyperledger Fabric 不需要昂贵的挖掘计算来提交交易，因此它有助构建区块链，使其在更短的延迟内向上扩展。
 
-Hyperledger Fabric is different from blockchains such as Ethereum or Bitcoin, not only in its type or because it is currency-agnostic, but also in terms of its internal machinery. Following are the key elements of a typical Hyperledger network:
+Hyperledger Fabric 不同于以太坊或比特币这样的区块链，不仅在于它们类型不同，或者说是它与货币无关，而且它们在内部机制方面也不同。以下是典型的Hyperledger网络的关键要素：
 
-  * **Ledgers** store a chain of blocks that keep all immutable historical records of all state transitions.
-  * **Nodes** are the logical entities of the blockchain. There are three types:
-– **Clients** are applications that act on behalf of a user to submit transactions to the network.
-– **Peers** are entities that commit transactions and maintain the ledger state.
-– **Orderers** create a shared communication channel between clients and peers; they also package blockchain transactions into blocks and send them to committing peers
+  * **Ledgers** 存储了一系列块，这些块保留了所有状态交易的所有不可变历史记录。
+  * **Nodes** 区块链的逻辑实体。它有三种类型：
+– **Clients** 是代表用户向网络提交事务的应用程序。 
+– **Peers** 是提交交易并维护分类帐状态的实体。
+– **Orderers** 在 Clients 和 peers 之间创建共享通信渠道，还将区块链交易打包成块发送给 peers 节点。
 
+除了这些要素，Hyperledger Fabric 还有一下关键设计功能：
 
-
-Along with these elements, Hyperledger Fabric is based on the following key design features:
-
-  * **Chaincode** is similar to a smart contract in other networks, such as Ethereum. It is a program written in a higher-level language that executes against the ledger's current-state database.
-  * **Channels** are private communication subnets for sharing confidential information between multiple network members. Each transaction is executed on a channel that is visible only to the authenticated and authorized parties.
-  * **Endorsers** validate transactions, invoke Chaincode, and send the endorsed transaction results back to the calling applications.
-  * **Membership Services Providers** (MSPs) provide identity validation and authentication processes by issuing and validating certificates. An MSP identifies which certification authorities (CAs) are trusted to define the members of a trust domain and determines the specific roles an actor might play (member, admin, and so on).
+  * **Chaincode** （链码）类似于其他网络中的智能合约，如以太坊。它是用一种更高级的语言编写的程序，在分类帐当前状态的数据库执行完毕后执行。
+  * **Channels**（通道）是用于在多个网络成员之间共享机密信息的专用通信子网。每笔交易都在一个只有经过身份验证和授权的各方可见的通道上执行。
+  * **Endorsers** （背书人）验证建交易，调用 Chaincode，并将背书交易结果返回给调用应用程序。
+  * **Membership Services Providers** (MSPs)（会员服务提供商）通过颁发和验证证书来提供身份验证和身份验证过程。 MSP 确定信任哪些证书颁发机构（CA）去定义信任域的成员，并确定成员可能扮演的特定角色（成员，管理员等）。
 
 
 
-### How transactions are validated
+### 如何验证交易
 
-Exploring how a transaction gets validated is a good way to understand how Hyperledger Fabric works under the hood. This diagram shows the end-to-end system flow for processing a transaction in a typical Hyperledger network:
+探究一笔交易是如何通过验证的是理解 Hyperledger Fabric 如何在底层工作的好方法。此图显示了在典型的 Hyperledger 网络中处理交易的端到端系统流程：
+![Hyperledger 交易验证流程][4]
 
-![Hyperledger transaction validation flow][4]
+首先，客户端通过向基于 Hyperledger Fabric 的应用程序客户端发送请求来启动交易，该客户端将交易提议提交给 Peers 节点。 这些节点通过执行交易指定的 Chaincode（使用状态的本地副本）并将结果发送回应用程序来模拟交易。 此时，应用程序将交易与背书相结合，并将其广播给 Ordering Service 节点。 Ordering Service 检查背书并为每个通道创建一个交易块，然后将其广播给通道中的其它节点，peers 验证交易并进行提交。
 
-First, the client initiates a transaction by sending a request to a Hyperledger Fabric-based application client, which submits the transaction proposal to endorsing peers. These peers simulate the transaction by executing the Chaincode (using a local copy of the state) specified by the transaction and sending the results back to the application. At this point, the application combines the transaction with the endorsements and broadcasts it to the Ordering Service. The Ordering Service checks the endorsements and creates a block of transactions for each channel before broadcasting them to all peers in the channel. Peers then verify the transactions and commit them.
-
-The Hyperledger Fabric blockchain can connect food supply chain participants through a transparent, permanent, and shared record of food-origin data, processing data, shipping details, and more. The Chaincode is invoked by authorized participants in the food supply chain. All executed transaction records are permanently saved in the ledger, and all entities can look up this information.
+Hyperledger Fabric 区块链可以通过透明的、不变的、共享的食品来源数据记录，数据处理，及运输细节等信息将食品供应链中的参与者们连接起来。 Chaincode 由食品供应链中的授权参与者来调用。 所有执行的交易记录都永久保存在分类帐中，所有参与者都可以查看此信息。
 
 ### Hyperledger Composer
 
-Alongside blockchain frameworks such as Fabric or Iroha, the Hyperledger project provides tools such as Composer, Hyperledger Explorer, and Cello. Hyperledger Composer provides a toolset to help build blockchain applications more easily. It consists of:
+除了Fabric或Iroha等区块链框架外，Hyperledger项目还提供了Composer，Hyperledger Explorer和Cello等工具。 Hyperledger Composer提供了一个工具集，可帮助您更轻松地构建区块链应用程序。 它包括：
 
-  * CTO, a modeling language
-  * Playground, a browser-based development tool for rapid testing and deployment
-  * A command-line interface (CLI) tool
+  * CTO,  一种建模语言
+  * Playground, 一种基于浏览器的开发工具，用于快速测试和部署
+  * 命令行界面（CLI）工具
 
 
-
-Composer supports the Hyperledger Fabric runtime and infrastructure, and internally the composer's API utilizes the underlying Fabric API. Composer runs on Fabric, meaning the business networks generated by Composer can be deployed to Hyperledger Fabric for execution.
-
-To learn more about Hyperledger, visit the [project's website][2], where you can view the members, access training and tutorials, or find out how you can contribute.
-
-* * *
-
-_This article is adapted from [Coding Bootcamp's article Building A Blockchain Supply Chain Using Hyperledger Fabric and Composer][5] and is used with permission._
+Composer 支持 Hyperledger Fabric 的运行时和基础架构，在内部，Composer 的 API 使用底层 Fabric 的 API。 Composer 在 Fabric 上运行，这意味着 Composer 生成的业务网络可以部署到 Hyperledger Fabric 执行。
 
 --------------------------------------------------------------------------------
 
@@ -103,7 +89,7 @@ via: https://opensource.com/article/19/9/introduction-hyperledger-fabric
 
 作者：[Matt Zand][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Morisun029](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
