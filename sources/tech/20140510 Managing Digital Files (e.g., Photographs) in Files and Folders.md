@@ -12,15 +12,15 @@ qfzy1233 is translating
 
 更新   2017-08-28: geeqier 视频缩略图的邮件评论
 
-每当度假或去哪游玩时我就会化身为一个富有激情的摄影师。所以，过去的几年中我积累了许多的 [JPEG][1] 文件。这篇文章中我会介绍我是如何避免[vendor lock-in][2]（LCTT译注：vendor lock-in 供应商锁定，原为经济学术语，这里引申为避免服务平台突然倒闭得现象）造成受限于那些临时性的解决方案及数据丢失。相反，我更倾向于使用那些可以让我投入时间和精力打理并能长久使用的解决方案。
+每当度假或去哪游玩时我就会化身为一个富有激情的摄影师。所以，过去的几年中我积累了许多的 [JPEG][1] 文件。这篇文章中我会介绍我是如何避免[vendor lock-in][2]（LCTT译注：vendor lock-in 供应商锁定，原为经济学术语，这里引申为避免过于依赖某一服务平台）造成受限于那些临时性的解决方案及数据丢失。相反，我更倾向于使用那些可以让我投入时间和精力打理并能长久使用的解决方案。
 
 这一（相当长的）攻略 **并不仅仅适用于图像文件** ：我将进一步阐述像是文件夹结构，文件的命名规则，等等许多领域的事情。因此，这些规范适用于我所能接触到的所以类型的文件。
 
-在我开始传授我的方法之前，我们应该先就我将要介绍方法的达成一个共识，那就是我们是否有相同的需求。如果你对[raw 图像格式][3]十分推崇，将照片存储在云端或其他你信赖的地方（对我而言可能不会），那么你可能不会认同这篇文章将要描述的方式了。根据你的情况来灵活做出选择。
+在我开始传授我的方法之前，我们应该先就我将要介绍方法的达成一个共识，那就是我们是否有相同的需求。如果你对[raw 图像格式][3]十分推崇，将照片存储在云端或其他你信赖的地方（对我而言可能不会），那么你可能不会认同这篇文章将要描述的方式了。请根据你的情况来灵活做出选择。
 
 ### 我的需求
 
-对于 **将照片（或视频）从我的数码相机中导出到电脑里**，我只是想将 SD 卡茶道我的电脑里并调用 fetch-workflow 软件。这一步也完成了 **图像软件的预处理** 适用于我提出的文件命名规范（下文会具体论述）同时也可以将图片旋转至正常的方向（而不是横着）。
+对于 **将照片（或视频）从我的数码相机中导出到电脑里**，我仅仅将 SD 卡茶道我的电脑里并调用 fetch-workflow 软件。这一步也完成了 **图像软件的预处理** 适用于我提出的文件命名规范（下文会具体论述）同时也可以将图片旋转至正常的方向（而不是横着）。
 
 这些文件将会被存入到我的摄影收藏文件夹 `$HOME/tmp/digicam/`。 在这一文件夹中我希望能完成以下的操作 **浏览图像和视频文件** 以便于 **整理排序/删除，重命名，添加/移除标签，以及将一系列相关的文件移动到相应的文件夹中**。
 
@@ -275,7 +275,7 @@ Categories=X-Geeqie;
 
 ##### 使用xdg-open打开电影文件(和其他文件)
 
-在上面的设置过程之后，当您的geeqie光标位于文件上方时，您只需按下`o`即可。就是如此简洁。
+在上面的设置过程之后，当你的geeqie光标位于文件上方时，你只需按下`o`即可。就是如此简洁。
 
 #### 工作流:在外部图像编辑器中打开
 
@@ -289,7 +289,7 @@ Categories=X-Geeqie;
 
 通常的方法是选择一个或多个文件，并将它们移动到具有快捷方式`Ctrl-m`的文件夹中。
 
-何等繁杂无趣之至！
+何等反腐无趣之至！
 
 因此，我(再次)编写了一个Python脚本，它为我完成了这项工作:[move2archive][33](简而言之:` m2a `需要一个或多个文件作为命令行参数。然后，出现一个对话框，我可以在其中输入一个可选文件夹名。当我不输入任何东西，但按`Return`，文件被移动到相应年份的文件夹。当我输入一个类似`business marathon after show - party`的文件夹名称时，第一个图像文件的日期戳被附加到该文件夹(`$HOME/archive/events_memories/2014/2014-05-08 business marathon after show - party`)，得到的文件夹是(`$HOME/archive/events_memories/2014/2014-05-08 Business-Marathon After-Show-Party`)，并移动文件。
 
@@ -297,9 +297,9 @@ Categories=X-Geeqie;
 
 **没有一个图像管理工具像我的geeqie一样通过快捷键快速且有趣的使用 appendfilename和move2archive完成工作。**
 
-##### Initial set-up of m2a with geeqie
+##### 在geeqie里初始化m2a的相关设置
 
-Once again, adding `m2a` to geeqie is a manual step: `Edit > Preferences > Configure Editors ...`. Then create an additional entry with `New`. There, you can define a new desktop-file which looks like this:
+同样，向geeqie添加`m2a`是一个手动步骤:“编辑>首选项>配置编辑器……”然后创建一个带有“New”的附加条目。在这里，你可以定义一个新的桌面文件，如下所示:
 
 m2a.desktop
 ```
@@ -317,8 +317,7 @@ MimeType=image/*;video/*;image/mpo;image/thm
 Categories=X-Geeqie;
 
 ```
-
-The wrapper-script `vk-m2a-interactive-wrapper-with-gnome-terminal.sh` is necessary because I want a new terminal window to pop-up in order to enter my desired destination folder for my files:
+包装器脚本的`vk-m2a-interactive-wrapper-with-gnome-terminal.sh `是必要的，因为我想要弹出一个新的终端窗口，以便我的文件进入我指定的目标文件夹:
 
 vk-m2a-interactive-wrapper-with-gnome-terminal.sh
 ```
@@ -334,17 +333,17 @@ vk-m2a-interactive-wrapper-with-gnome-terminal.sh
 
 ```
 
-In geeqie, you can add a keyboard shortcut in `Edit > Preferences > Preferences ... > Keyboard`. I associated `m` with the `m2a` command.
+在geeqie中，你可以在`Edit > Preferences > Preferences ... > Keyboard`将`m`与`m2a`命令相关联。
 
-#### Workflow: Rotate images (loss-less)
+#### 工作流程:旋转图像(无损)
 
-Usually, portrait photographs are being marked automatically as portrait photographs by my digital camera. However, there are certain situations (like taking a photograph from above the motif) where my camera gets it wrong. In those **rare cases** , I have to manually fix the orientation.
+通常，我的数码相机会自动将人像照片标记为人像照片。然而，在某些特定的情况下(比如从主题上方拍照)，我的相机会出错。在那些**罕见的情况下**，我必须手动修正方向。
 
-You have to know that the JPEG file format is a lossy format which should be used only for photographs and not for computer-generated stuff like screen-shots or diagrams. Rotating a JPEG image file in the dumb way usually results in decompressing/visualizing the image file, rotating the resulting image, and re-encoding the result once again. This causes a resulting image with [much worse image quality than the original image][5].
+你必须知道，JPEG文件格式是一种有损格式，应该只用于照片，而不是计算机生成的东西，如屏幕截图或图表。以傻瓜方式旋转JPEG图像文件通常会解压/可视化图像文件，旋转生成新的图像，然后重新编码结果。这将导致生成的图像[比原始图像质量差得多][5]。
 
-Therefore, you should use a lossless method to rotate you JPEG image files.
+因此，你应该使用无损方法来旋转JPEG图像文件。
 
-Once again, I add an "external editor" to geeqie: `Edit > Preferences > Configure Editors ... > New`. There, I add two entries: one for rotating 270 degrees (which is 90 degrees counter-clock-wise) and one for rotating 90 degrees (clock-wise) using [exiftran][34]:
+再一次，我添加了一个“外部编辑器”到geeqie:`Edit > Preferences > Configure Editors ... > New`。在这里，我添加了两个条目:一个用于旋转270度(即逆时针旋转90度)，另一个用于使用[exiftran][34]旋转90度(逆时针旋转90度):
 
 rotate-270.desktop
 ```
@@ -393,11 +392,11 @@ MimeType=image/jpeg;
 
 ```
 
-I created geeqie keyboard shortcuts for `[` (counter-clock-wise) and `]` (clock-wise).
+我为“[”(逆时针方向)和“]”(逆时针方向)创建了geeqie快捷键。
 
-#### Workflow: Visualizing GPS coordinates
+#### 工作流程:可视化GPS坐标
 
-My digital camera has a GPS sensor which stores the current geographic location within the Exif meta-data of the JPEG files. The location data gets stored in [WGS 84][35] format like "47, 58, 26.73; 16, 23, 55.51" (latitude; longitude). This is not human-readable in the sense I would expect: either a map or a location name. Therefore, I added functionality to geeqie so, that I am able to see the location of a single image file on [OpenStreetMap][36]: `Edit > Preferences > Configure Editors ... > New`
+我的数码相机有一个GPS传感器，它在JPEG文件的Exif元数据中存储当前的地理位置。位置数据以[WGS 84][35]格式存储，如“47,58,26.73;16、23、55.51”(纬度;经度)。这一方式可读性较差，从我所期望的意义上讲:要么是地图，要么是位置名称。因此，我向geeqie添加了一些功能，这样我就可以在[OpenStreetMap][36]上看到单个图像文件的位置: `Edit > Preferences > Configure Editors ... > New`
 
 photolocation.desktop
 ```
@@ -415,7 +414,7 @@ MimeType=image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/ti
 
 ```
 
-This calls my wrapper-script named `vkphotolocation.sh` which uses [ExifTool][37] to extract the coordinates in a suitable format that [Marble][38] is able to read and visualize:
+这就调用了我的名为`vkphotolocation.sh`的包装脚本，它使用[ExifTool][37]让[Marble][38]能够读取和可视化的适当格式并提取坐标:
 
 vkphotolocation.sh
 ```
@@ -436,33 +435,33 @@ fi
 
 ```
 
-Mapped to the keyboard shortcut `G`, I can quickly get to the **map position of its location of a single image file**.
+映射到键盘快捷键“G”，我可以快速地得到**单个图像文件的映射位置位置**。
 
-When I want to visualize the **positions of multiple JPEG image files as a path** , I am using [GpsPrune][39]. I was not able to derive a method where GpsPrune takes a set of files as command line parameters. And because of this, I have to manually start GpsPrune, select a set of files or a folder with `File > Add photos`.
+当我想将多个JPEG图像文件的**位置可视化为路径**时，我使用[GpsPrune][39]。我无法派生出GpsPrune将一组文件作为命令行参数的方法。正因为如此，我必须手动启动GpsPrune，`选择一组文件或一个文件夹>添加照片`。
 
-This way, I get a dot for each JPEG location on a map of OpenStreetMap (if configured so). By clicking on such a dot, I get details of the corresponding image.
+通过这种方式，我可以为OpenStreetMap地图上的每个JPEG位置获得一个点(如果配置为这样)。通过单击这样一个点，我可以得到相应图像的详细信息。
 
-If you happen to be abroad while taking photographs, visualizing the GPS positions is a **great help for adding descriptions** to the file name!
+如果你恰好在国外拍摄照片，可视化GPS位置对**在文件名中添加描述**大有帮助!
 
-#### Workflow: Filtering photographs according to their GPS coordinates
+#### 工作流程:根据GPS坐标过滤照片
 
-This is no workflow of mine. For the sake of completeness, I list features of tools that make this workflow possible. What I would like to do is looking for only those photographs out of a big pile of images, that are within a certain area (rectangle or point + distance).
+这并非我的工作流程。为了完整起见，我列出该工作流对应工具的特性。我想做的就是从一大堆图片中寻找那些在一定区域内(范围或点+距离)的照片。
 
-So far, I found only [DigiKam][40] which is able to [filter according to a rectangle][41]. If you know another tool, please add it to the comments below or write an email.
+到目前为止，我只找到了[DigiKam][40]，它能够[根据矩形区域进行过滤][41]。如果你知道其他工具，请将其添加到下面的评论或写一封电子邮件。
 
-#### Workflow: Showing a sub-set of a given set
+#### 工作流:显示给定集合的子集
 
-As described in the requirements above, I want to be able to define a sub-set of files within a folder in order to present this small collection to other people.
+如上面的需求所述，我希望能够在一个文件夹中定义一组子文件，以便将这个小集合呈现给其他人。
 
-The work-flow is pretty simple: I add a tag (via `t`/filetags) to the files of the selection. For this, I use the tag `sel` which is short for "selection". After I tagged the set of files, I can press `s` which I associated with a script that shows only the files tagged with `sel`.
+工作流程非常简单:我向选择的文件添加一个标记(通过` t ` /filetags)。为此，我使用标记`sel`，它是“selection”的缩写。在标记了一组文件之后，我可以按下` s `，它与一个脚本相关联，该脚本只显示标记为` sel `的文件。
 
-Of course, this also works with any tag or tag combination. Therefore, with the same method, you are able to get a decent overview on all photos of your wedding that are tagged with "church" and "rings".
+当然，这也适用于任何标签或标签组合。因此，用同样的方法，你可以得到一个适当的概述，你的婚礼上的所有照片都标记着“教堂”和“戒指”。
 
-Nifty feature, isn't it? :-)
+很棒的功能，不是吗?:-)
 
-##### Initial set-up of filetags for filtering according to tags + geeqie
+##### 根据标签和geeqie初始设置文件标签
 
-You have to define an additional "external editor": `Edit > Preferences > Configure Editors ... > New`:
+你必须定义一个额外的“外部编辑器”:`Edit > Preferences > Configure Editors ... > New`:
 
 filter-tags.desktop
 ```
@@ -481,7 +480,7 @@ Categories=X-Geeqie;
 
 ```
 
-This once again calls a wrapper-script I wrote:
+再次调用我编写的包装脚本:
 
 vk-filetag-filter-wrapper-with-gnome-terminal.sh
 ```
@@ -496,9 +495,9 @@ vk-filetag-filter-wrapper-with-gnome-terminal.sh
 
 ```
 
-What `filetags` with parameter `--filter` does is basically the following: the user gets asked to enter one or more tags. Then, all matching files of the current folder are linked to `$HOME/.filetags_tagfilter/` using [symbolic links][42]. Then, a new geeqie instance is started which shows the linked files.
+带参数`--filter`的`filetags`基本上完成的是:用户被要求输入一个或多个标签。然后，当前文件夹中所有匹配的文件都能使用[符号链接][42]都链接到` $HOME/.filetags_tagfilter/ `。然后，启动一个新的geeqie实例，显示链接的文件。
 
-After quitting this new geeqie instance, you see the old geeqie instance, from where you invoked the selection process.
+在退出这个新的geeqie实例之后，你将从该实例调用了选择过程中看到旧的geeqie实例。
 
 #### 用一个真实的案例来总结
 
