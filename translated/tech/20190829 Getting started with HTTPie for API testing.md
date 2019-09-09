@@ -7,25 +7,24 @@
 [#]: via: (https://opensource.com/article/19/8/getting-started-httpie)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshezhttps://opensource.com/users/mkalindepauleduhttps://opensource.com/users/jamesf)
 
-Getting started with HTTPie for API testing
+使用 HTTPie 进行 API 测试
 ======
-Debug API clients with HTTPie, an easy-to-use command-line tool written
-in Python.
+使用 HTTPie 调试 API，一个用 Python 写的简易命令行工具。
 ![Raspberry pie with slice missing][1]
 
-[HTTPie][2] is a delightfully easy to use and easy to upgrade HTTP client. Pronounced "aitch-tee-tee-pie" and run as **http**, it is a command-line tool written in Python to access the web.
+[HTTPie][2] 是一个非常易于使用且易于升级的 HTTP 客户端。它的发音为 “aitch-tee-tee-pie” 并以 **http** 运行，它是一个用 Python 编写的命令行工具来用于访问 Web。
 
-Since this how-to is about an HTTP client, you need an HTTP server to try it out; in this case, [httpbin.org][3], a simple, open source HTTP request-and-response service. The httpbin.org site is a powerful way to test to test web API clients and carefully manage and show details in requests and responses, but for now we will focus on the power of HTTPie.
+由于这篇是关于 HTTP 客户端的，因此你需要一个 HTTP 服务器来试用它。在这里，访问 [httpbin.org] [3]，它是一个简单的开源 HTTP 请求和响应服务。httpbin.org 网站是一种测试 Web API 的强大方式，并能仔细管理并显示请求和相应内容，但现在我们将专注于 HTTPie 的强大功能。
 
-### An alternative to Wget and cURL
+### Wget 和 cURL 的替代品
 
-You might have heard of the venerable [Wget][4] or the slightly newer [cURL][5] tools that allow you to access the web from the command line. They were written to access websites, whereas HTTPie is for accessing _web APIs_.
+你可能听说过古老的 [Wget][4] 或稍微更新的 [cURL][5] 工具，它们允许你从命令行访问 Web。它们是为访问网站而编写的，而 HTTPie 则用于访问 _Web API_。
 
-Website requests are designed to be between a computer and an end user who is reading and responding to what they see. This doesn't depend much on structured responses. However, API requests make _structured_ calls between two computers. The human is not part of the picture, and the parameters of a command-line tool like HTTPie handle this effectively.
+网站请求设计介于计算机和正在阅读并响应他们所看到的内容的最终用户之间。这并不太依赖于结构化的响应。但是，API 请求会在两台计算机之间进行_结构化_调用。人类不是图片的一部分，像 HTTPie 这样的命令行工具的参数可以有效地处理这个问题。
 
-### Install HTTPie
+### 安装 HTTPie
 
-There are several ways to install HTTPie. You can probably get it as a package for your package manager, whether you use **brew**, **apt**, **yum**, or **dnf**. However, if you have configured [virtualenvwrapper][6], you can own your own installation:
+有几种方法可以安装 HTTPie。你可以通过包管理器安装，无论你使用的是  **brew**、**apt**、**yum** 还是 **dnf**。但是，如果你已配置 [virtualenvwrapper] [6]，那么你可以用自己的方式安装：
 
 
 ```
@@ -49,16 +48,16 @@ $ http -b GET <https://httpbin.org/get>
 }
 ```
 
-By aliasing **http** directly to the command inside the virtual environment, you can run it even when the virtual environment is not active. You can put the **alias** command in **.bash_profile** or **.bashrc** so you can upgrade HTTPie with the command:
+通过直接将 **http** 设置为虚拟环境中的命令别名，即使虚拟环境在非活动状态，你也可以运行它。 你可以将 **alias** 命令放在 **.bash_profile** 或 **.bashrc** 中，这样你就可以使用以下命令升级 HTTPie：
 
 
 ```
 `$ ~/.virtualenvs/httpie/bin/pip install -U pip`
 ```
 
-### Query a website with HTTPie
+### 使用 HTTPie 查询网站
 
-HTTPie can simplify querying and testing an API. One option for running it, **-b** (also known as **\--body**), was used above. Without it, HTTPie will print the entire response, including the headers, by default:
+HTTPie 可以简化查询和测试 API。 这里使用了一个选项， **-b**（也可以是 **\--body**）。 没有它，HTTPie 将默认打印整个响应，包括头：
 
 
 ```
@@ -90,7 +89,7 @@ X-XSS-Protection: 1; mode=block
 }
 ```
 
-This is crucial when debugging an API service because a lot of information is sent in the headers. For example, it is often important to see which cookies are being sent. Httpbin.org provides options to set cookies (for testing purposes) through the URL path. The following sets a cookie titled **opensource** to the value **awesome**:
+这在调试 API 服务时非常重要，因为大量信息在 HTTP 头中发送。 例如，查看发送的 cookie 通常很重要。Httpbin.org 提供了通过 URL 路径设置 cookie（用于测试目的）的选项。 以下设置一个标题为 **opensource**， 值为 **awesome** 的 cookie：
 
 
 ```
@@ -110,14 +109,14 @@ X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
 
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
-&lt;title&gt;Redirecting...&lt;/title&gt;
-&lt;h1&gt;Redirecting...&lt;/h1&gt;
-&lt;p&gt;You should be redirected automatically to target URL:
-&lt;a href="/cookies"&gt;/cookies&lt;/a&gt;.  If not click the link.
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL:
+<a href="/cookies">/cookies</a>.  If not click the link.
 ```
 
-Notice the **Set-Cookie: opensource=awesome; Path=/** header. This shows the cookie you expected to be set is set correctly and with a **/** path. Also notice that, even though you got a **302** redirect, **http** did not follow it. If you want to follow redirects, you need to ask for it explicitly with the **\--follow** flag:
+注意  **Set-Cookie: opensource=awesome; Path=/** 的 HTTP 头。 这表明你预期设置的 cookie 已正确设置，路径为 **/**。 另请注意，即使你有 **302**重定向，**http** 也不会遵循它。 如果你想要遵循重定向，则需要使用 **\--follow** 标志请求：
 
 
 ```
@@ -143,7 +142,7 @@ X-XSS-Protection: 1; mode=block
 }
 ```
 
-But now you cannot see the original **Set-Cookie** header. In order to see intermediate replies, you need to use **\--all**:
+但此时你无法看到原来的 **Set-Cookie** 头。为了看到中间响应，你需要使用 **\--all**：
 
 
 ```
@@ -179,7 +178,7 @@ Content-Length: 66
 Connection: keep-alive
 ```
 
-Printing the body is uninteresting because you are mostly interested in the cookies. If you want to see the headers from the intermediate request but the body from the final request, you can do that with:
+打印 body 并不有趣，因为你大多数关心 cookie。如果你像看到中间请求的头，而不是最终请求中的 body，你可以使用：
 
 
 ```
@@ -221,11 +220,11 @@ Connection: keep-alive
 }
 ```
 
-You can control exactly what is being printed with **\--print** and override what is printed for intermediate requests with **\--history-print**.
+你可以使用 **\--print** 精确控制打印，并使用 **\--history-print** 覆盖中间请求的打印。
 
-### Download binary files with HTTPie
+### 使用 HTTPie 下载二进制文件
 
-Sometimes the body is non-textual and needs to be sent to a file that can be opened by a different application:
+有时 body 并不是文本形式，它需要发送到可被不同应用打开的文件：
 
 
 ```
@@ -248,7 +247,7 @@ X-XSS-Protection: 1; mode=block
 +-----------------------------------------+
 ```
 
-To get the right image, you need to save it to a file:
+要得到正确的图片，你需要保存到文件：
 
 
 ```
@@ -270,11 +269,11 @@ Downloading 34.75 kB to "jpeg.jpe"
 Done. 34.75 kB in 0.00068s (50.05 MB/s)
 ```
 
-Try it! The picture is adorable.
+试一下！图片很可爱。
 
-### Sending custom requests with HTTPie
+### 使用 HTTPie 发送自定义请求
 
-You can also send specific headers. This is useful for custom web APIs that require a non-standard header:
+你可以发送指定头。这对于需要非标准头的自定义 Web API 很有用：
 
 
 ```
@@ -290,7 +289,7 @@ $ http GET <https://httpbin.org/headers> X-Open-Source-Com:Awesome
 }
 ```
 
-Finally, if you want to send JSON fields (although it is possible to specify exact content), for many less-nested inputs, you can use a shortcut:
+最后，如果要发送 JSON 字段（尽管可以指定确切的内容），对于许多嵌套较少的输入，你可以使用快捷方式：
 
 
 ```
@@ -318,7 +317,7 @@ $ http --body PUT <https://httpbin.org/anything> open-source=awesome author=mosh
 }
 ```
 
-The next time you are debugging a web API, whether your own or someone else's, put down your cURL and reach for HTTPie, the command-line client for web APIs.
+下次在调试 Web API 时，无论时你自己还是别人，记得放下 cURL，试试 HTTPie 这个命令行工具。
 
 --------------------------------------------------------------------------------
 
@@ -326,7 +325,7 @@ via: https://opensource.com/article/19/8/getting-started-httpie
 
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
