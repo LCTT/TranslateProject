@@ -213,9 +213,9 @@ void doubleIt(int *x)
 
 但是为什么不一致呢？如果编译器能够推断出 `constLocalVar()` 中调用的 `constFunc()` 不会修改它的参数，那么肯定也能继续在其他 `constFunc()` 的调用上实施相同的优化，对吧？不。编译器不能假设 `constLocalVar()` 根本没有运行。 If it isn’t (say, because it’s just some unused extra output of a code generator or macro), `constFunc()` can sneakily modify data without ever triggering UB.
 
-You might want to read the above explanation and examples a few times, but don’t worry if it sounds absurd: it is. Unfortunately, writing to `const` variables is the worst kind of UB: most of the time the compiler can’t know if it even would be UB. So most of the time the compiler sees `const`, it has to assume that someone, somewhere could cast it away, which means the compiler can’t use it for optimisation. This is true in practice because enough real-world C code has “I know what I’m doing” casting away of `const`.
+你可能需要重复阅读上述说明和示例，但不要担心它听起来很荒谬，它确实是的。不幸的是，对 `const` 变量进行写入是最糟糕的未定义行为：大多数情况下，编译器不知道它是否将会是未定义行为。所以，大多数情况下，编译器看见 `const` 时必须假设它未来可能会被移除掉，这意味着编译器不能使用它进行优化。这在实践中是正确的，因为真实的 C 代码会在“明确知道后果”下移除 `const`。
 
-In short, a whole lot of things can prevent the compiler from using `const` for optimisation, including receiving data from another scope using a pointer, or allocating data on the heap. Even worse, in most cases where `const` can be used by the compiler, it’s not even necessary. For example, any decent compiler can figure out that `x` is constant in the following code, even without `const`:
+简而言之，很多事情都可以阻止编译器使用 `const` 进行优化，包括使用指针从另一内存空间接受数据，或者在堆空间上分配数据。更糟糕的是，在大部分编译器能够使用 `const` 的情况，它都不是必须的。例如，任何像样的编译器都能推断出下面代码中的 `x` 是一个常量，甚至都不需要 `const`：
 
 ```
 int x = 42, y = 0;
@@ -224,61 +224,61 @@ y += x;
 printf("%d %d\n", x, y);
 ```
 
-总而言之，`const` 对优化而言几乎无用，因为：
+TL；DR，`const` 对优化而言几乎无用，因为：
 
   1. 除了特殊情况，编译器需要忽略它，因为其他代码可能合法地移除它
   2. 在 #1 以外地大多数例外中，编译器无论如何都能推断出该变量是常量
 
 ### C++
 
-There’s another way `const` can affect code generation if you’re using C++: function overloads. You can have `const` and non-`const` overloads of the same function, and maybe the non-`const` can be optimised (by the programmer, not the compiler) to do less copying or something.
+如果你在使用 C++ 那么有另外一个方法让 `const` 能够影响到代码的生成。你可以用 `const` 和非 `const` 的参数重载同一个函数，而非 `const` 版本的代码可能可以优化（由程序员优化而不是编译器）掉某些拷贝或者其他事情。
 
 ```
 void foo(int *p)
 {
-  // Needs to do more copying of data
+  // 需要坐更多的数据拷贝
 }
 
 void foo(const int *p)
 {
-  // Doesn't need defensive copies
+  // 不需要保护性的拷贝副本
 }
 
 int main()
 {
   const int x = 42;
-  // const-ness affects which overload gets called
+  // const 影响被调用的是哪一个版本的重载
   foo(&x);
   return 0;
 }
 ```
 
-On the one hand, I don’t think this is exploited much in practical C++ code. On the other hand, to make a real difference, the programmer has to make assumptions that the compiler can’t make because they’re not guaranteed by the language.
+一方面，我不认为这会在实际的 C++ 代码中大量使用。另一方面，为了导致差异，程序员需要做出编译器无法做出的假设，因为它们不受语言保护。
 
-### An experiment with Sqlite3
+### 用 Sqlite3 进行实验
 
-That’s enough theory and contrived examples. How much effect does `const` have on a real codebase? I thought I’d do a test on the Sqlite database (version 3.30.0) because
+有了足够的理论和例子。那么 `const` 在一个真正的代码库中有多大的影响呢？我将会在 Sqlite (version 3.30.0) 的代码库上做一个测试，因为：
 
-  * It actually uses `const`
-  * It’s a non-trivial codebase (over 200KLOC)
-  * As a database, it includes a range of things from string processing to arithmetic to date handling
-  * It can be tested with CPU-bound loads
+  * 它真正地使用了 `const`
+  * 它不是一个简单的代码库（超过 20 万行代码）
+  * 作为一个代码库，它包括了字符串处理、数学计算、日期处理等一系列内容
+  * 它能够在绑定 CPU 下进行负载测试
 
 
 
-Also, the author and contributors have put years of effort into performance optimisation already, so I can assume they haven’t missed anything obvious.
+此外，作者和贡献者们已经进行了多年的性能优化工作，因此我能断言他们没有错过任何明显的优化。
 
-#### The setup
+#### 配置
 
-I made two copies of [the source code][2] and compiled one normally. For the other copy, I used this hacky preprocessor snippet to turn `const` into a no-op:
+我做了两份[源码]][2]拷贝，并且正常编译其中一份。而对于另一份拷贝，我插入了这个预处理代码段，将 `const` 变成一个空操作：
 
 ```
 #define const
 ```
 
-(GNU) `sed` can add that to the top of each file with something like `sed -i '1i#define const' *.c *.h`.
+(GNU) `sed` 可以将一些东西添加到每个文件的顶端，比如 `sed -i '1i#define const' *.c *.h`。
 
-Sqlite makes things slightly more complicated by generating code using scripts at build time. Fortunately, compilers make a lot of noise when `const` and non-`const` code are mixed, so it was easy to detect when this happened, and tweak the scripts to include my anti-`const` snippet.
+在编译期间使用脚本生成 Sqlite 代码稍微有点复杂。幸运的是当 `const` 代码和非 `const` 代码混合时，编译器会产生了大量的提醒，因此很容易发现它并调整脚本来包含我的反 `const` 代码段。
 
 Directly diffing the compiled results is a bit pointless because a tiny change can affect the whole memory layout, which can change pointers and function calls throughout the code. Instead I took a fingerprint of the disassembly (`objdump -d libsqlite3.so.0.8.6`), using the binary size and mnemonic for each instruction. For example, this function:
 
