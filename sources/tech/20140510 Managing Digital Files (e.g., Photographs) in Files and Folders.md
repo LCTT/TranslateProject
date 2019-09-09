@@ -289,7 +289,7 @@ Categories=X-Geeqie;
 
 通常的方法是选择一个或多个文件，并将它们移动到具有快捷方式`Ctrl-m`的文件夹中。
 
-何等反腐无趣之至！
+何等繁复无趣之至！
 
 因此，我(再次)编写了一个Python脚本，它为我完成了这项工作:[move2archive][33](简而言之:` m2a `需要一个或多个文件作为命令行参数。然后，出现一个对话框，我可以在其中输入一个可选文件夹名。当我不输入任何东西，但按`Return`，文件被移动到相应年份的文件夹。当我输入一个类似`business marathon after show - party`的文件夹名称时，第一个图像文件的日期戳被附加到该文件夹(`$HOME/archive/events_memories/2014/2014-05-08 business marathon after show - party`)，得到的文件夹是(`$HOME/archive/events_memories/2014/2014-05-08 Business-Marathon After-Show-Party`)，并移动文件。
 
