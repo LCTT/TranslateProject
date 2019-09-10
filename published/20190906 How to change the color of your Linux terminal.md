@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11324-1.html)
 [#]: subject: (How to change the color of your Linux terminal)
 [#]: via: (https://opensource.com/article/19/9/linux-terminal-colors)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > 使 Linux 变得丰富多彩（或单色）。
 
-![4 different color terminal windows with code][1]
+![](https://img.linux.net.cn/data/attachment/album/201909/10/111118bnvvcy6sntcs1s3t.jpg)
 
 你可以使用特殊的 ANSI 编码设置为 Linux 终端添加颜色，可以在终端命令或配置文件中动态添加，也可以在终端仿真器中使用现成的主题。无论哪种方式，你都可以黑色屏幕上找回怀旧的绿色或琥珀色文本。本文演示了如何使 Linux 变得丰富多彩（或单色）的方法。
 
