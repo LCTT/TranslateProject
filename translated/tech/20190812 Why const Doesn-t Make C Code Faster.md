@@ -106,7 +106,7 @@ define dso_local void @constByArg(i32*) local_unnamed_addr #0 {
 }
 ```
 
-### 一些有效的代码
+### 某些有作用的东西
 
 接下来是一组 `const` 能够真正产生作用的代码：
 
@@ -280,7 +280,7 @@ int main()
 
 在编译期间使用脚本生成 `Sqlite` 代码稍微有点复杂。幸运的是当 `const` 代码和非 `const` 代码混合时，编译器会产生了大量的提醒，因此很容易发现它并调整脚本来包含我的反 `const` 代码段。
 
-直接比较编译结果毫无意义，因为任意微小的改变就会影响整个内存布局，这可能会改变整个代码中的指针和函数调用。因此，我用每个指令的二进制大小和汇编代码作为反汇编代码（`objdump -d libsqlite3.so.0.8.6`）。举个例子，这个函数：
+直接比较编译结果毫无意义，因为任意微小的改变就会影响整个内存布局，这可能会改变整个代码中的指针和函数调用。因此，我用每个指令的二进制大小和汇编代码作为识别码（`objdump -d libsqlite3.so.0.8.6`）。举个例子，这个函数：
 
 ```
 000000000005d570 <sqlite3_blob_read>:
@@ -297,11 +297,11 @@ sqlite3_blob_read   7lea 5jmpq 4nopl
 
 在编译时，我保留了所有 `Sqlite` 的编译设置。
 
-#### 分析编译后的代码
+#### 分析编译结果
 
-The `const` version of `libsqlite3.so` was 4,740,704 bytes, about 0.1% larger than the 4,736,712 bytes of the non-`const` version. Both had 1374 exported functions (not including low-level helpers like stuff in the PLT), and a total of 13 had any difference in fingerprint.
+`const` 版本的 `libsqlite3.so` 的大小是 4,740,704 byte，大约比 4,736,712 byte 的非 `const` 版本大了 0.1% 。在全部 1374 个导出函数（不包括类似 PLT 里的底层辅助函数）中，一共有 13 个函数的识别码不一致。
 
-A few of the changes were because of the dumb preprocessor hack. For example, here’s one of the changed functions (with some Sqlite-specific definitions edited out):
+其中的一些改变是由于插入的预处理代码。举个例子，这里有一个发生了更改的函数（已经删去一些 `Sqlite` 特有的定义）：
 
 ```
 #define LARGEST_INT64  (0xffffffff|(((int64_t)0x7fffffff)<<32))
@@ -328,9 +328,9 @@ static int64_t doubleToInt64(double r){
 }
 ```
 
-Removing `const` makes those constants into `static` variables. I don’t see why anyone who didn’t care about `const` would make those variables `static`. Removing both `static` and `const` makes GCC recognise them as constants again, and we get the same output. Three of the 13 functions had spurious changes because of local `static const` variables like this, but I didn’t bother fixing any of them.
+删去 `const` 使得这些常量变成了 `static` 变量。我不明白为什么会有不了解 `const` 的人让这些变量加上 `static`。同时删去 `static` 和 `const` 会让 GCC 再次认为它们是常量，而我们将得到同样的编译输出。由于像这样子的局部的 `static const` 变量，使得 13 个函数中有 3 个函数产生假的变化，但我一个都不打算修复它们。
 
-`Sqlite` uses a lot of global variables, and that’s where most of the real `const` optimisations came from. Typically they were things like a comparison with a variable being replaced with a constant comparison, or a loop being partially unrolled a step. (The [Radare toolkit][3] was handy for figuring out what the optimisations did.) A few changes were underwhelming. `sqlite3ParseUri()` is 487 instructions, but the only difference `const` made was taking this pair of comparisons:
+`Sqlite` 使用了很多全局变量，而这正是大多数真正的 `const` 优化产生的地方。通常情况下，它们类似于将一个变量比较代替成一个常量比较，或者一个循环在部分展开的一步。（[Radare toolkit][3] 可以很方便的找出这些优化措施。）一些变化则令人失望。`sqlite3ParseUri()` 有 487 指令，但 `const` 产生的唯一区别是进行了这个比较：
 
 ```
 test %al, %al
@@ -339,7 +339,7 @@ cmp $0x23, %al
 je <sqlite3ParseUri+0x717>
 ```
 
-And swapping their order:
+并交换了它们的顺序：
 
 ```
 cmp $0x23, %al
@@ -348,9 +348,9 @@ test %al, %al
 je <sqlite3ParseUri+0x717>
 ```
 
-#### Benchmarking
+#### 基准测试
 
-`Sqlite` comes with a performance regression test, so I tried running it a hundred times for each version of the code, still using the default `Sqlite` build settings. Here are the timing results in seconds:
+`Sqlite` 自带了一个性能回归测试，因此我尝试每个版本的代码执行一百次，仍然使用默认的 `Sqlite` 编译设置。以秒为单位的测试结果如下：
 
 | const | No const
 ---|---|---
@@ -359,7 +359,7 @@ Median | 11.571s | 11.519s
 Maximum | 11.832s | 11.658s
 Mean | 11.531s | 11.492s
 
-Personally, I’m not seeing enough evidence of a difference worth caring about. I mean, I removed `const` from the entire program, so if it made a significant difference, I’d expect it to be easy to see. But maybe you care about any tiny difference because you’re doing something absolutely performance critical. Let’s try some statistical analysis.
+就我个人看来，我没有发现足够的证据说明这个差异值得关注。我是说，我从整个程序中删去 `const`，所以如果它有明显的差别，那么我希望它是显而易见的。但也许你关心任何微小的差异，因为你正在做一些绝对性能非常重要的事。那让我们试一下统计分析。
 
 I like using the Mann-Whitney U test for stuff like this. It’s similar to the more-famous t test for detecting differences in groups, but it’s more robust to the kind of complex random variation you get when timing things on computers (thanks to unpredictable context switches, page faults, etc). Here’s the result:
 
