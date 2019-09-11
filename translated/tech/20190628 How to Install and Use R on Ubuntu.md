@@ -1,41 +1,42 @@
 [#]: collector: (lujun9972)
 [#]: translator: (guevaraya)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Install and Use R on Ubuntu)
 [#]: via: (https://itsfoss.com/install-r-ubuntu/)
 [#]: author: (Sergiu https://itsfoss.com/author/sergiu/)
 
-如何在Ubuntu上安装和使用R语言
+如何在 Ubuntu 上安装和使用 R 语言
 ======
 
-_**简介: 这个教程是指导如何在Ubuntu上安装R语言。同时可以学习到如何在Ubuntu上用不同方法运行简单的R语言程序**_
+> 这个教程指导你如何在 Ubuntu 上安装 R 语言。你也将同时学习到如何在 Ubuntu 上用不同方法运行简单的 R 语言程序。
 
-[R][1] ，和Python一样，他是在统计计算和图形处理上最常用的编程语言，易于处理数据。随着数据分析，数据可视化，数据科学(机器学习热）的火热化，对于想深入这一领域的人来说，它是一个很好的工具。
+[R][1]，和 Python 一样，它是在统计计算和图形处理上最常用的编程语言，易于处理数据。随着数据分析、数据可视化、数据科学（机器学习热）的火热化，对于想深入这一领域的人来说，它是一个很好的工具。
 
-R语言的优点是他的语法非常简练，你可以结合现实生活找到它的很多教程或指南。
+R 语言的优点是它的语法非常简练，你可以找到它的很多实际使用的教程或指南。
 
-本文将介绍包含如何在Ubuntu下安装R语言，也会介绍在Linux下如何运行第一个R程序。
+本文将介绍包含如何在 Ubuntu 下安装 R 语言，也会介绍在 Linux 下如何运行第一个 R 程序。
 
 ![][2]
 
-### 如何在Ubuntu上安装R语言
+### 如何在 Ubuntu 上安装 R 语言
 
-**R** 默认在Ubuntu的软件库里。用以下命令很容易安装：
+R 默认在 Ubuntu 的软件库里。用以下命令很容易安装：
 
 ```
 sudo apt install r-base
 ```
 
-请注意可能会安装一个老版本。在我写这篇文字的时候，Ubuntu已经提供的3.4的，但是最新的是3.6.
+请注意这可能会安装一个较老的版本。在我写这篇文字的时候，Ubuntu 提供的是 3.4，但是最新的是3.6。
 
-_我建议如果不是万不得已就直接使用Ubuntu的配套版本。_
-如果想安装最新的版本（或特殊情况指定版本），你必须用**[CRAN][3]** （Comprehensive R Archive Network）。这个是R最新版本的镜像，点击进入页面学习如何在Ubuntu上安装R语言。
+*我建议除非你必须使用最新版本，否则直接使用 Ubuntu 的配套版本。*
 
-**如何在Ubuntu上安装最新3.6版本的R环境 (单击展开)**
+#### 如何在 Ubuntu 上安装最新 3.6 版本的 R 环境
 
-如需获取3.6的版本，需要添加镜像到你的源索引里。我已经简化其命令如下：
+如果想安装最新的版本（或特殊情况指定版本），你必须用 [CRAN][3]（Comprehensive R Archive Network）。这个是 R 最新版本的镜像列表。
+
+如需获取 3.6 的版本，需要添加镜像到你的源索引里。我已经简化其命令如下：
 
 ```
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran35/"
@@ -56,17 +57,13 @@ sudo apt install r-base
 
 就这样安装完成。
 
-[][4]
+### 如何在 Ubuntu 下使用 R 语言编程
 
-建议阅读在Linux下如何制作可启动 Windows 10的U盘的文章
+R 的用法多样，我将介绍运行多个运行 R 语言的方式。
 
-### 如何在Ubuntu下使用R语言编程
+#### R 语言的交互模式
 
-R的用法多样，我将介绍运行多个运行R语言的方式。
-
-#### R语言的交互模式
-
-安装了R语言后，你可以在控制台上直接运行：
+安装了 R 语言后，你可以在控制台上直接运行：
 
 ```
 R
@@ -76,7 +73,7 @@ R
 
 ![R Interactive Mode][5]
 
-R语言的控制与 **Python** 和 **Haskell** 的交互模式很类似. 你可以输入 **R** 命令做一些基本的数学运算，例如：
+R 语言的控制台与 Python 和 Haskell 的交互模式很类似。你可以输入 R 命令做一些基本的数学运算，例如：
 
 ```
 > 20+40
@@ -90,17 +87,15 @@ R语言的控制与 **Python** 和 **Haskell** 的交互模式很类似. 你可�
 
 ![R Plotting][6]
 
-如果想 **退出** 可以用 **q()** 或  按下 **CTRL+c** 键. 接着你会被提示是否保存工程 ****镜像; 一个工程 **** 创建变量的环境。
+如果想退出可以用 `q()`或按下 `CTRL+c`键。接着你会被提示是否保存工作空间镜像；工作空间是创建变量的环境。
 
-#### 用R脚本运行程序
+#### 用 R 脚本运行程序
 
+第二种运行 R 程序的方式是直接在 Linux 命令行下运行。你可以用 `RScript` 执行，它是一个包含 `r-base` 软件包的工具。
 
-第二种运行R程序的方式是直接在Linux命令行下运行。你可以用**RScript**执行，它是一个包含**r-base**的工具。
+首先，你需要用你在 [Linux 下常用的编辑器][7]保存 R 程序到文件。文件的扩展名必须是 `.r`。
 
-
-首先，你需要用[Linux下常用的编辑器][7]保存R程序到文件。文件的扩展名必须是.r。
-
-下面是一个打印 "Hello World" 的R程序。你可以保存其为hello.r。
+下面是一个打印 “Hello World” 的 R 程序。你可以保存其为 `hello.r`。
 
 ```
 print("Hello World!")
@@ -108,7 +103,7 @@ a <- rnorm(100)
 plot(a)
 ```
 
-运行R程序，用下面命令：
+用下面命令运行 R 程序：
 
 ```
 Rscript hello.r
@@ -120,59 +115,49 @@ Rscript hello.r
 [1] "Hello World!"
 ```
 
-结果将会保存到当前工作目录，文件名为**Rplots.pdf**:
+结果将会保存到当前工作目录，文件名为 `Rplots.pdf`：
 
 ![Rplots.pdf][8]
 
-**小提示: **_**Rscript**_ 默认不会加载_**methods**_包。确保在脚本中显式加载它。
+小提示：`Rscript` 默认不会加载 `methods` 包。确保在脚本中[显式加载][9]它。
 
-#### 在Ubuntu下用RStudio运行R语言
+#### 在 Ubuntu 下用 RStudio 运行 R 语言
 
-最常见的 **R** 环境是[RStudio][10]，一个强大的跨平台开源IDE。你可以用deb文件在Ubuntu上安装它。下载deb文件的链接如下。你需要向下滚动找到Ubuntu下的DEB文件。
+最常见的 R 环境是 [RStudio][10]，这是一个强大的跨平台的开源 IDE。你可以用 deb 文件在 Ubuntu 上安装它。下载 deb 文件的链接如下。你需要向下滚动找到 Ubuntu 下的 DEB 文件。
 
-[下载 Ubuntu 的 Rstudio][12]
+- [下载 Ubuntu 的 Rstudio][12]
 
-下载了DEB文件后，直接点击安装。
+下载了 DEB 文件后，直接点击安装。
 
 下载后从菜单搜索启动它。程序主界面会弹出如下：
 
 ![RStudio 主界面][13]
 
-现在可以看到和 **R** 命令终端一样的工作台.
+现在可以看到和 R 命令终端一样的工作台。
 
-[][14]
-
-建议阅读 Linux和类Unix系统下的Python 环境的配置
-
-创建一个文件：点击顶栏 **File** 然后选择 **New File &gt; Rscript**(或 **CTRL+Shift+n)**:
+创建一个文件：点击顶栏 “File” 然后选择 “New File > Rscript”（或 `CTRL+Shift+n`）：
 
 ![RStudio 新建文件][15]
 
-按下 **CTRL+s** 保存文件选择路径和命名：
+按下 `CTRL+s` 保存文件选择路径和命名：
 
-![RStudio 保存文件[16]
+![RStudio 保存文件][16]
 
-这样做了后，点击 **Session &gt; Set Working Directory &gt; To Source File Location** 修改工作目录为你的脚本路径：
+这样做了后，点击 “Session > Set Working Directory > To Source File Location” 修改工作目录为你的脚本路径：
 
 ![RStudio 工作目录][17]
 
-现在一切准备就绪!敲写代码然后点击运行。你可以在控制台和图形窗口看到结果：
+现在一切准备就绪！编写代码然后点击运行。你可以在控制台和图形窗口看到结果：
 
 ![RStudio 运行][18]
 
-**结束语**
+### 结束语
 
-这篇文章，作者展示了如何在Ubuntu下使用**R**语言。包含了一下几个方面：**R 控制台** - 很有用处的常见测试，**Rscript** - 终端达人操作，**RStudio** -你想要的IDE
+这篇文章中展示了如何在 Ubuntu 下使用 R 语言。包含了以下几个方面：R 控制台 —— 可用于测试，Rscript —— 终端达人操作，RStudio —— 你想要的 IDE。
 
-无论你正在从事数据科学或仅仅的热爱数据统计，作为一个数据分析工具，**R** 是一个比较好的编程辅助。
+无论你正在从事数据科学或只是热爱数据统计，作为一个数据分析的完美工具，R 都是一个比较好的编程装备。
 
-如果你完全是一个新手，我推荐这边书可以教你一些R的基础知识。它在亚马逊Kindle也可以找到。
-
-预览 | 产品 | 价格 |
----|---|---|---
-![一天学会R语言][19] ![一天学会R语言][19] | [一天学会R语言][20] |  | [亚马逊购买][21]
-
-你想使用 **R**吗？你入门了吗？让我们一起学习如何学习以及为什么要用学习**R**!
+你想使用 R 吗？你入门了吗？让我们了解你是如何学习 R 的以及为什么要学习 R!
 
 --------------------------------------------------------------------------------
 
@@ -180,8 +165,8 @@ via: https://itsfoss.com/install-r-ubuntu/
 
 作者：[Sergiu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/guevara.ya)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[guevaraya](https://github.com/guevaraya)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
