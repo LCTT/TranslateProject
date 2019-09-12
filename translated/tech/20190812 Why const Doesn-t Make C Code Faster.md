@@ -7,10 +7,10 @@
 [#]: via: (https://theartofmachinery.com/2019/08/12/c_const_isnt_for_performance.html)
 [#]: author: (Simon Arneaud https://theartofmachinery.com)
 
-为什么 `const` 不能让 `C` 代码跑得更快？
+为什么 `const` 无法让 `C` 代码跑得更快？
 ======
 
-在几个月前的一篇文章里，我曾说过“[有个一个流行的传言，`const` 有助于编译器优化 `C` 和 `C++` 代码][1]”。我觉得我需要解释一下，尤其是曾经我自己也以为这是显然对的。我将会用一些理论和人工构造的例子论证，然后在一个真正的代码库 `Sqlite` 上做一些实验和基准测试。
+在几个月前的一篇文章里，我曾说过“[有个一个流行的传言，`const` 有助于编译器优化 `C` 和 `C++` 代码][1]”。我觉得我需要解释一下，尤其是曾经我自己也以为这是显然对的。我将会用一些理论并构造一些例子来论证，然后在一个真正的代码库，`Sqlite`，上做一些实验和基准测试。
 
 ### 一个简单的测试
 
@@ -39,7 +39,7 @@ void constByArg(const int *x)
 }
 ```
 
-调用 `printf()` 时，CPU 会通过指针从 RAM 中取得 `*x` 的值。很显然，`constByArg()` 会稍微快一点，因为编译器知道 `*x` 是常量，因此不需要在调用 `constFunc()` 之后再次获取它的值。它仅是打印相同的东西。对吧？让我们来看下 `GCC` 在如下编译选项下生成的汇编代码：
+调用 `printf()` 时，CPU 会通过指针从 RAM 中取得 `*x` 的值。很显然，`constByArg()` 会稍微快一点，因为编译器知道 `*x` 是常量，因此不需要在调用 `constFunc()` 之后再次获取它的值。它仅是打印相同的东西。没问题吧？让我们来看下 `GCC` 在如下编译选项下生成的汇编代码：
 
 ```
 $ gcc -S -Wall -O3 test.c
@@ -209,13 +209,13 @@ void doubleIt(int *x)
 
 `localVar()` 传递给 `constFunc()` 一个指向非 `const` 变量的 `const` 指针。因为这个变量并非常量，`constFunc()` 可以撒个谎并强行修改它而不触发而不触发未定义行为。所以，编译器不能断定变量在调用 `constFunc()` 后仍是同样的值。在 `constLocalVar()` 中的变量是真正的常量，因此，编译器可以断定它不会改变——因为在 `constFunc()` 去除变量的 `const` 属性并写入它*将*会是一个未定义行为。
 
-第一个例子中的函数 `byArg()` 和 `constByArg()` 是没有可能的，因为编译器没有任何方法可以知道 `*x` 是否真的是 `const` 常量。
+第一个例子中的函数 `byArg()` 和 `constByArg()` 是没有可能优化的，因为编译器没有任何方法能够知道 `*x` 是否真的是 `const` 常量。
 
-但是为什么不一致呢？如果编译器能够推断出 `constLocalVar()` 中调用的 `constFunc()` 不会修改它的参数，那么肯定也能继续在其他 `constFunc()` 的调用上实施相同的优化，对吧？不。编译器不能假设 `constLocalVar()` 根本没有运行。 If it isn’t (say, because it’s just some unused extra output of a code generator or macro), `constFunc()` can sneakily modify data without ever triggering UB.
+但是为什么不一致呢？如果编译器能够推断出 `constLocalVar()` 中调用的 `constFunc()` 不会修改它的参数，那么肯定也能继续在其他 `constFunc()` 的调用上实施相同的优化，是吗？并不。编译器不能假设 `constLocalVar()` 根本没有运行。 如果不是这样（例如，它只是代码生成器或者宏的一些未使用的额外输出），`constFunc()` 就能偷偷地修改数据而不触发未定义行为。
 
-你可能需要重复阅读上述说明和示例，但不要担心它听起来很荒谬，它确实是的。不幸的是，对 `const` 变量进行写入是最糟糕的未定义行为：大多数情况下，编译器不知道它是否将会是未定义行为。所以，大多数情况下，编译器看见 `const` 时必须假设它未来可能会被移除掉，这意味着编译器不能使用它进行优化。这在实践中是正确的，因为真实的 `C` 代码会在“明确知道后果”下移除 `const`。
+你可能需要重复阅读上述说明和示例，但不要担心它听起来很荒谬，它确实是正确的。不幸的是，对 `const` 变量进行写入是最糟糕的未定义行为：大多数情况下，编译器不知道它是否将会是未定义行为。所以，大多数情况下，编译器看见 `const` 时必须假设它未来可能会被移除掉，这意味着编译器不能使用它进行优化。这在实践中是正确的，因为真实的 `C` 代码会在“深思熟虑”后移除 `const`。
 
-简而言之，很多事情都可以阻止编译器使用 `const` 进行优化，包括使用指针从另一内存空间接受数据，或者在堆空间上分配数据。更糟糕的是，在大部分编译器能够使用 `const` 的情况，它都不是必须的。例如，任何像样的编译器都能推断出下面代码中的 `x` 是一个常量，甚至都不需要 `const`：
+简而言之，很多事情都可以阻止编译器使用 `const` 进行优化，包括使用指针从另一内存空间接受数据，或者在堆空间上分配数据。更糟糕的是，在大部分编译器能够使用 `const` 进行优化的情况，它都不是必须的。例如，任何像样的编译器都能推断出下面代码中的 `x` 是一个常量，甚至都不需要 `const`：
 
 ```
 int x = 42, y = 0;
@@ -247,7 +247,7 @@ void foo(const int *p)
 int main()
 {
   const int x = 42;
-  // const 影响被调用的是哪一个版本的重载
+  // const 影响被调用的是哪一个版本的重载函数
   foo(&x);
   return 0;
 }
@@ -257,7 +257,7 @@ int main()
 
 ### 用 `Sqlite3` 进行实验
 
-有了足够的理论和例子。那么 `const` 在一个真正的代码库中有多大的影响呢？我将会在 `Sqlite`（版本：3.30.0）的代码库上做一个测试，因为：
+有了足够的理论和例子。那么 `const` 在一个真正的代码库中有多大的影响呢？我将会在代码库 `Sqlite`（版本：3.30.0）上做一个测试，因为：
 
   * 它真正地使用了 `const`
   * 它不是一个简单的代码库（超过 20 万行代码）
@@ -328,7 +328,7 @@ static int64_t doubleToInt64(double r){
 }
 ```
 
-删去 `const` 使得这些常量变成了 `static` 变量。我不明白为什么会有不了解 `const` 的人让这些变量加上 `static`。同时删去 `static` 和 `const` 会让 GCC 再次认为它们是常量，而我们将得到同样的编译输出。由于像这样子的局部的 `static const` 变量，使得 13 个函数中有 3 个函数产生假的变化，但我一个都不打算修复它们。
+删去 `const` 使得这些常量变成了 `static` 变量。我不明白为什么会有不了解 `const` 的人让这些变量加上 `static`。同时删去 `static` 和 `const` 会让 GCC 再次认为它们是常量，而我们将得到同样的编译输出。由于类似这样的局部的 `static const` 变量，使得 13 个函数中有 3 个函数产生假的变化，但我一个都不打算修复它们。
 
 `Sqlite` 使用了很多全局变量，而这正是大多数真正的 `const` 优化产生的地方。通常情况下，它们类似于将一个变量比较代替成一个常量比较，或者一个循环在部分展开的一步。（[Radare toolkit][3] 可以很方便的找出这些优化措施。）一些变化则令人失望。`sqlite3ParseUri()` 有 487 指令，但 `const` 产生的唯一区别是进行了这个比较：
 
@@ -361,26 +361,28 @@ Mean | 11.531s | 11.492s
 
 就我个人看来，我没有发现足够的证据说明这个差异值得关注。我是说，我从整个程序中删去 `const`，所以如果它有明显的差别，那么我希望它是显而易见的。但也许你关心任何微小的差异，因为你正在做一些绝对性能非常重要的事。那让我们试一下统计分析。
 
-I like using the Mann-Whitney U test for stuff like this. It’s similar to the more-famous t test for detecting differences in groups, but it’s more robust to the kind of complex random variation you get when timing things on computers (thanks to unpredictable context switches, page faults, etc). Here’s the result:
+我喜欢使用类似 Mann-Whitney U 检验这样的东西。它类似于更著名的 T 检验，但对你在机器上计时时产生的复杂随机变量（由于不可预测的上下文切换，页错误等）更加鲁棒。以下是结果：
 
-| const | No const
+|| const | No const|
 ---|---|---
 N | 100 | 100
 Mean rank | 121.38 | 79.62
-Mann-Whitney U | 2912
+
+|||
 ---|---
+Mann-Whitney U | 2912
 Z | -5.10
-2-sided p value | &lt;10-6
-HL median difference | -.056s
-95% confidence interval | -.077s – -0.038s
+2-sided p value | <10-6
+HL median difference | -0.056s
+95% confidence interval | -0.077s – -0.038s
 
-The U test has detected a statistically significant difference in performance. But, surprise, it’s actually the non-`const` version that’s faster — by about 60ms, or 0.5%. It seems like the small number of “optimisations” that `const` enabled weren’t worth the cost of extra code. It’s not like `const` enabled any major optimisations like auto-vectorisation. Of course, your mileage may vary with different compiler flags, or compiler versions, or codebases, or whatever, but I think it’s fair to say that if `const` were effective at improving C performance, we’d have seen it by now.
+U 检验已经发现统计意义上具有显著的性能差异。但是，令人惊讶的是，实际上是非 `const` 版本更快——大约 60ms，0.5%。似乎 `const` 启用的少量“优化”不值得额外代码的开销。这不像是 `const` 启用了任何类似于自动矢量化的重要的优化。当然，你的结果可能因为编译器配置、编译器版本或者代码库等等而有所不同，但是我觉得这已经说明了 `const` 是否能够有效地提高 `C` 的性能，我们现在已经看到答案了。
 
-### So, what’s `const` for?
+### 那么，`const` 有什么用呢？
 
-For all its flaws, C/C++ `const` is still useful for type safety. In particular, combined with C++ move semantics and `std::unique_pointer`s, `const` can make pointer ownership explicit. Pointer ownership ambiguity was a huge pain in old C++ codebases over ~100KLOC, so personally I’m grateful for that alone.
+尽管存在缺陷，`C/C++` 的 `const` 仍有助于类型安全。特别是，结合 `C++` 的移动语义和 `std::unique_pointer`，`const` 可以使指针所有权显式化。在超过十万行代码的 `C++` 旧代码库里，指针所有权模糊是一个大难题，我对此深有感触。
 
-However, I used to go beyond using `const` for meaningful type safety. I’d heard it was best practices to use `const` literally as much as possible for performance reasons. I’d heard that when performance really mattered, it was important to refactor code to add more `const`, even in ways that made it less readable. That made sense at the time, but I’ve since learned that it’s just not true.
+但是，我以前常常使用 `const` 来实现有意义的类型安全。我曾听说过基于性能上的原因，最好是尽可能多地使用 `const`。我曾听说过当性能很重要时，重构代码并添加更多的 `const` 非常重要，即使以降低代码可读性的方式。当时觉得这没问题，但后来我才知道这并不对。
 
 --------------------------------------------------------------------------------
 
