@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Getting started with HTTPie for API testing)
@@ -9,22 +9,24 @@
 
 使用 HTTPie 进行 API 测试
 ======
-使用 HTTPie 调试 API，一个用 Python 写的简易命令行工具。
-![Raspberry pie with slice missing][1]
 
-[HTTPie][2] 是一个非常易于使用且易于升级的 HTTP 客户端。它的发音为 “aitch-tee-tee-pie” 并以 **http** 运行，它是一个用 Python 编写的命令行工具来用于访问 Web。
+> 使用 HTTPie 调试 API，这是一个用 Python 写的易用的命令行工具。
 
-由于这篇是关于 HTTP 客户端的，因此你需要一个 HTTP 服务器来试用它。在这里，访问 [httpbin.org] [3]，它是一个简单的开源 HTTP 请求和响应服务。httpbin.org 网站是一种测试 Web API 的强大方式，并能仔细管理并显示请求和相应内容，但现在我们将专注于 HTTPie 的强大功能。
+![](https://img.linux.net.cn/data/attachment/album/201909/12/102919ry1ute1y9h991ftz.jpg)
+
+[HTTPie][2] 是一个非常易用、易于升级的 HTTP 客户端。它的发音为 “aitch-tee-tee-pie” 并以 `http` 命令运行，它是一个用 Python 编写的来用于访问 Web 的命令行工具。
+
+由于这是一篇关于 HTTP 客户端的指导文章，因此你需要一个 HTTP 服务器来试用它。在这里，访问 [httpbin.org][3]，它是一个简单的开源 HTTP 请求和响应服务。httpbin.org 网站是一种测试 Web API 的强大方式，并能仔细管理并显示请求和响应内容，不过现在让我们专注于 HTTPie 的强大功能。
 
 ### Wget 和 cURL 的替代品
 
-你可能听说过古老的 [Wget][4] 或稍微更新的 [cURL][5] 工具，它们允许你从命令行访问 Web。它们是为访问网站而编写的，而 HTTPie 则用于访问 _Web API_。
+你可能听说过古老的 [Wget][4] 或稍微新一些的 [cURL][5] 工具，它们允许你从命令行访问 Web。它们是为访问网站而编写的，而 HTTPie 则用于访问 Web API。
 
-网站请求设计介于计算机和正在阅读并响应他们所看到的内容的最终用户之间。这并不太依赖于结构化的响应。但是，API 请求会在两台计算机之间进行_结构化_调用。人类不是图片的一部分，像 HTTPie 这样的命令行工具的参数可以有效地处理这个问题。
+网站请求发生在计算机和正在阅读并响应它所看到的内容的最终用户之间，这并不太依赖于结构化的响应。但是，API 请求会在两台计算机之间进行*结构化*调用，人并不是该流程内的一部分，像 HTTPie 这样的命令行工具的参数可以有效地处理这个问题。
 
 ### 安装 HTTPie
 
-有几种方法可以安装 HTTPie。你可以通过包管理器安装，无论你使用的是  **brew**、**apt**、**yum** 还是 **dnf**。但是，如果你已配置 [virtualenvwrapper] [6]，那么你可以用自己的方式安装：
+有几种方法可以安装 HTTPie。你可以通过包管理器安装，无论你使用的是 `brew`、`apt`、`yum` 还是 `dnf`。但是，如果你已配置 [virtualenvwrapper][6]，那么你可以用自己的方式安装：
 
 
 ```
@@ -34,34 +36,33 @@ $ mkvirtualenv httpie
 ...
 (httpie) $ deactivate
 $ alias http=~/.virtualenvs/httpie/bin/http
-$ http -b GET <https://httpbin.org/get>
+$ http -b GET https://httpbin.org/get
 {
-    "args": {},
-    "headers": {
-        "Accept": "*/*",
-        "Accept-Encoding": "gzip, deflate",
-        "Host": "httpbin.org",
-        "User-Agent": "HTTPie/1.0.2"
-    },
-    "origin": "104.220.242.210, 104.220.242.210",
-    "url": "<https://httpbin.org/get>"
+    "args": {},
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate",
+        "Host": "httpbin.org",
+        "User-Agent": "HTTPie/1.0.2"
+    },
+    "origin": "104.220.242.210, 104.220.242.210",
+    "url": "https://httpbin.org/get"
 }
 ```
 
-通过直接将 **http** 设置为虚拟环境中的命令别名，即使虚拟环境在非活动状态，你也可以运行它。 你可以将 **alias** 命令放在 **.bash_profile** 或 **.bashrc** 中，这样你就可以使用以下命令升级 HTTPie：
+通过将 `http` 别名指向为虚拟环境中的命令，即使虚拟环境在非活动状态，你也可以运行它。你可以将 `alias` 命令放在 `.bash_profile` 或 `.bashrc` 中，这样你就可以使用以下命令升级 HTTPie：
 
 
 ```
-`$ ~/.virtualenvs/httpie/bin/pip install -U pip`
+$ ~/.virtualenvs/httpie/bin/pip install -U pip
 ```
 
 ### 使用 HTTPie 查询网站
 
-HTTPie 可以简化查询和测试 API。 这里使用了一个选项， **-b**（也可以是 **\--body**）。 没有它，HTTPie 将默认打印整个响应，包括头：
-
+HTTPie 可以简化查询和测试 API。上面使用了一个选项，`-b`（即 `--body`）。没有它，HTTPie 将默认打印整个响应，包括响应头：
 
 ```
-$ http GET <https://httpbin.org/get>
+$ http GET https://httpbin.org/get
 HTTP/1.1 200 OK
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
@@ -77,23 +78,22 @@ X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
 
 {
-    "args": {},
-    "headers": {
-        "Accept": "*/*",
-        "Accept-Encoding": "gzip, deflate",
-        "Host": "httpbin.org",
-        "User-Agent": "HTTPie/1.0.2"
-    },
-    "origin": "104.220.242.210, 104.220.242.210",
-    "url": "<https://httpbin.org/get>"
+    "args": {},
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate",
+        "Host": "httpbin.org",
+        "User-Agent": "HTTPie/1.0.2"
+    },
+    "origin": "104.220.242.210, 104.220.242.210",
+    "url": "https://httpbin.org/get"
 }
 ```
 
-这在调试 API 服务时非常重要，因为大量信息在 HTTP 头中发送。 例如，查看发送的 cookie 通常很重要。Httpbin.org 提供了通过 URL 路径设置 cookie（用于测试目的）的选项。 以下设置一个标题为 **opensource**， 值为 **awesome** 的 cookie：
-
+这在调试 API 服务时非常重要，因为大量信息在响应头中发送。例如，查看发送的 cookie 通常很重要。httpbin.org 提供了通过 URL 路径设置 cookie（用于测试目的）的方式。以下设置一个标题为 `opensource`， 值为 `awesome` 的 cookie：
 
 ```
-$ http GET <https://httpbin.org/cookies/set/opensource/awesome>
+$ http GET https://httpbin.org/cookies/set/opensource/awesome
 HTTP/1.1 302 FOUND
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
@@ -116,11 +116,10 @@ X-XSS-Protection: 1; mode=block
 <a href="/cookies">/cookies</a>.  If not click the link.
 ```
 
-注意  **Set-Cookie: opensource=awesome; Path=/** 的 HTTP 头。 这表明你预期设置的 cookie 已正确设置，路径为 **/**。 另请注意，即使你有 **302**重定向，**http** 也不会遵循它。 如果你想要遵循重定向，则需要使用 **\--follow** 标志请求：
-
+注意 `Set-Cookie: opensource=awesome; Path=/` 的响应头。这表明你预期设置的 cookie 已正确设置，路径为 `/`。另请注意，即使你得到了 `302` 重定向，`http` 也不会遵循它。如果你想要遵循重定向，则需要明确使用 `--follow` 标志请求：
 
 ```
-$ http --follow GET <https://httpbin.org/cookies/set/opensource/awesome>
+$ http --follow GET https://httpbin.org/cookies/set/opensource/awesome
 HTTP/1.1 200 OK
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
@@ -136,18 +135,17 @@ X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
 
 {
-    "cookies": {
-        "opensource": "awesome"
-    }
+    "cookies": {
+        "opensource": "awesome"
+    }
 }
 ```
 
-但此时你无法看到原来的 **Set-Cookie** 头。为了看到中间响应，你需要使用 **\--all**：
+但此时你无法看到原来的 `Set-Cookie` 头。为了看到中间响应，你需要使用 `--all`：
 
 
 ```
-$ http --headers --all --follow \
-GET <https://httpbin.org/cookies/set/opensource/awesome>
+$ http --headers --all --follow GET https://httpbin.org/cookies/set/opensource/awesome
 HTTP/1.1 302 FOUND
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
@@ -178,12 +176,10 @@ Content-Length: 66
 Connection: keep-alive
 ```
 
-打印 body 并不有趣，因为你大多数关心 cookie。如果你像看到中间请求的头，而不是最终请求中的 body，你可以使用：
-
+打印响应体并不有趣，因为你大多数时候只关心 cookie。如果你想看到中间请求的响应头，而不是最终请求中的响应体，你可以使用：
 
 ```
-$ http --print hb --history-print h --all --follow \
-GET <https://httpbin.org/cookies/set/opensource/awesome>
+$ http --print hb --history-print h --all --follow GET https://httpbin.org/cookies/set/opensource/awesome
 HTTP/1.1 302 FOUND
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
@@ -214,21 +210,20 @@ Content-Length: 66
 Connection: keep-alive
 
 {
-  "cookies": {
-    "opensource": "awesome"
-  }
+  "cookies": {
+    "opensource": "awesome"
+  }
 }
 ```
 
-你可以使用 **\--print** 精确控制打印，并使用 **\--history-print** 覆盖中间请求的打印。
+你可以使用 `--print` 精确控制打印的内容（`h`：响应头；`b`：响应体），并使用 `--history-print` 覆盖中间请求的打印内容设置。
 
 ### 使用 HTTPie 下载二进制文件
 
-有时 body 并不是文本形式，它需要发送到可被不同应用打开的文件：
-
+有时响应体并不是文本形式，它需要发送到可被不同应用打开的文件：
 
 ```
-$ http GET <https://httpbin.org/image/jpeg>
+$ http GET https://httpbin.org/image/jpeg
 HTTP/1.1 200 OK
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
@@ -242,6 +237,7 @@ X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 X-XSS-Protection: 1; mode=block
 
+
 +-----------------------------------------+
 | NOTE: binary data not shown in terminal |
 +-----------------------------------------+
@@ -249,9 +245,8 @@ X-XSS-Protection: 1; mode=block
 
 要得到正确的图片，你需要保存到文件：
 
-
 ```
-$ http --download GET <https://httpbin.org/image/jpeg>
+$ http --download GET https://httpbin.org/image/jpeg
 HTTP/1.1 200 OK
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: *
@@ -273,19 +268,18 @@ Done. 34.75 kB in 0.00068s (50.05 MB/s)
 
 ### 使用 HTTPie 发送自定义请求
 
-你可以发送指定头。这对于需要非标准头的自定义 Web API 很有用：
-
+你可以发送指定的请求头。这对于需要非标准头的自定义 Web API 很有用：
 
 ```
-$ http GET <https://httpbin.org/headers> X-Open-Source-Com:Awesome
+$ http GET https://httpbin.org/headers X-Open-Source-Com:Awesome
 {
-  "headers": {
-    "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate",
-    "Host": "httpbin.org",
-    "User-Agent": "HTTPie/1.0.2",
-    "X-Open-Source-Com": "Awesome"
-  }
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Host": "httpbin.org",
+    "User-Agent": "HTTPie/1.0.2",
+    "X-Open-Source-Com": "Awesome"
+  }
 }
 ```
 
@@ -293,31 +287,31 @@ $ http GET <https://httpbin.org/headers> X-Open-Source-Com:Awesome
 
 
 ```
-$ http --body PUT <https://httpbin.org/anything> open-source=awesome author=moshez
+$ http --body PUT https://httpbin.org/anything open-source=awesome author=moshez
 {
-  "args": {},
-  "data": "{\"open-source\": \"awesome\", \"author\": \"moshez\"}",
-  "files": {},
-  "form": {},
-  "headers": {
-    "Accept": "application/json, */*",
-    "Accept-Encoding": "gzip, deflate",
-    "Content-Length": "46",
-    "Content-Type": "application/json",
-    "Host": "httpbin.org",
-    "User-Agent": "HTTPie/1.0.2"
-  },
-  "json": {
-    "author": "moshez",
-    "open-source": "awesome"
-  },
-  "method": "PUT",
-  "origin": "73.162.254.113, 73.162.254.113",
-  "url": "<https://httpbin.org/anything>"
+  "args": {},
+  "data": "{\"open-source\": \"awesome\", \"author\": \"moshez\"}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "application/json, */*",
+    "Accept-Encoding": "gzip, deflate",
+    "Content-Length": "46",
+    "Content-Type": "application/json",
+    "Host": "httpbin.org",
+    "User-Agent": "HTTPie/1.0.2"
+  },
+  "json": {
+    "author": "moshez",
+    "open-source": "awesome"
+  },
+  "method": "PUT",
+  "origin": "73.162.254.113, 73.162.254.113",
+  "url": "https://httpbin.org/anything"
 }
 ```
 
-下次在调试 Web API 时，无论时你自己还是别人，记得放下 cURL，试试 HTTPie 这个命令行工具。
+下次在调试 Web API 时，无论是你自己的还是别人的，记得放下 cURL，试试 HTTPie 这个命令行工具。
 
 --------------------------------------------------------------------------------
 
@@ -326,7 +320,7 @@ via: https://opensource.com/article/19/8/getting-started-httpie
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
