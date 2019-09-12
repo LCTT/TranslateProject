@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Lessons in Vendor Lock-in: Google and Huawei)
-[#]: via: (https://www.linuxjournal.com/content/lessons-vendor-lock-google-and-huawei)
-[#]: author: (Kyle Rankin https://www.linuxjournal.com/users/kyle-rankin)
+[#]: collector: "lujun9972"
+[#]: translator: "acyanbird "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Lessons in Vendor Lock-in: Google and Huawei"
+[#]: via: "https://www.linuxjournal.com/content/lessons-vendor-lock-google-and-huawei"
+[#]: author: "Kyle Rankin https://www.linuxjournal.com/users/kyle-rankin"
 
 Lessons in Vendor Lock-in: Google and Huawei
 ======
@@ -42,7 +42,6 @@ What's more, the Google Apps suite isn't just a convenient way to load Gmail or 
 ### Conclusion
 
 Without access to these OS updates, Huawei now will have to decide whether to create its own LineageOS-style Android fork or a whole new phone OS of its own. In either case, it will have to abandon the Google Play Store ecosystem and use F-Droid-style app repositories, or if it goes 100% alone, it will need to create a completely new app ecosystem. If its engineers planned for this situation, then they likely are working on this plan right now; otherwise, they are all presumably scrambling to address an event that "should never happen". Here's hoping that if you find yourself in a similar case of vendor lock-in with an overseas company that's too big to fail, you never get caught in the middle of a trade war.
-
 
 --------------------------------------------------------------------------------
 
