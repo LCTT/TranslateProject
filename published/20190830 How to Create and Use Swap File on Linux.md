@@ -150,7 +150,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 ### 调整 swappiness 参数
 
-`swappiness` 参数决定了交换空间的使用频率。`s`wappiness` 值的范围从 0 到 100。较高的值意味着交换空间将被更频繁地使用。
+`swappiness` 参数决定了交换空间的使用频率。`swappiness` 值的范围从 0 到 100。较高的值意味着交换空间将被更频繁地使用。
 
 Ubuntu 桌面的默认的 `swappiness` 是 60，而服务器的默认 `swappiness` 是 1。你可以使用以下命令检查 `swappiness`：
 
