@@ -52,7 +52,7 @@ $ sudo dnf install git nodejs
 因此，GIC 没有安装过程。每个用户（在此示例中为 Alice 和 Bob）必须将存储库克隆到其硬盘驱动器：
 
 ```
-$ git cone https://github.com/ephigabay/GIC GIC
+$ git clone https://github.com/ephigabay/GIC GIC
 ```
 
 将目录更改为 GIC 目录并使用 `npm` 安装 Node.js 依赖项：
