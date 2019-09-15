@@ -1,18 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11344-1.html)
 [#]: subject: (Working with variables on Linux)
 [#]: via: (https://www.networkworld.com/article/3387154/working-with-variables-on-linux.html#tk.rss_all)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
 在 Linux 中使用变量
 ======
-变量通常看起来像 $var，但它们也有 $1、$*、$? 和 $$ 这种形式。让我们来看看所有这些 $ 值可以告诉你什么。
-![Mike Lawrence \(CC BY 2.0\)][1]
 
-我们称为“变量”的许多重要的值都存储在 Linux 系统中，但实际上有几种类型的变量和一些有趣的命令可以帮助你使用它们。在上一篇文章中，我们研究了[环境变量][2]以及它们在哪定义。在本文中，我们来看一看在命令行和脚本中使用的变量。
+> 变量通常看起来像 `$var` 这样，但它们也有 `$1`、`$*`、`$?` 和 `$$` 这种形式。让我们来看看所有这些 `$` 值可以告诉你什么。
+
+![](https://img.linux.net.cn/data/attachment/album/201909/15/105140faf2jzyybubu1d0c.jpg)
+
+有许多重要的值都存储在 Linux 系统中，我们称为“变量”，但实际上变量有几种类型，并且一些有趣的命令可以帮助你使用它们。在上一篇文章中，我们研究了[环境变量][2]以及它们定义在何处。在本文中，我们来看一看在命令行和脚本中使用的变量。
 
 ### 用户变量
 
@@ -70,9 +72,9 @@ $ echo $myvar0
 11
 ```
 
-通过这些选项，你可能会发现至少有一个是容易记忆且使用方便的。
+通过这些选项，你可能会发现它们是容易记忆、使用方便的。
 
-你也可以 _删除_ 一个变量 -- 这意味着没有定义它。
+你也可以*删除*一个变量 -- 这意味着没有定义它。
 
 ```
 $ unset myvar
@@ -91,25 +93,25 @@ $ unset myvar3
 -bash: unset: myvar3: cannot unset: readonly variable
 ```
 
-你可以使用这些设置和递增选项中的任何一个来赋值和操作脚本中的变量，但也有一些非常有用的 _内部变量_ 用于在脚本中工作。注意，你无法重新赋值或增加它们的值。
+你可以使用这些设置和递增选项中来赋值和操作脚本中的变量，但也有一些非常有用的*内部变量*可以用于在脚本中。注意，你无法重新赋值或增加它们的值。
 
 ### 内部变量
 
 在脚本中可以使用很多变量来计算参数并显示有关脚本本身的信息。
 
-  * $1、$2、$3 等表示脚本的第一个、第二个、第三个等参数。
-  * $# 表示参数的数量。
-  * $* 表示所有参数。
-  * $0 表示脚本的名称。
-  * $? 表示先前运行的命令的返回码（0 代表成功）。
-  * $$ 显示脚本的进程 ID。
-  * $PPID 显示 shell 的进程 ID（脚本的父进程）。
+* `$1`、`$2`、`$3` 等表示脚本的第一个、第二个、第三个等参数。
+* `$#` 表示参数的数量。
+* `$*` 表示所有参数。
+* `$0` 表示脚本的名称。
+* `$?` 表示先前运行的命令的返回码（0 代表成功）。
+* `$$` 显示脚本的进程 ID。
+* `$PPID` 显示 shell 的进程 ID（脚本的父进程）。
 
 其中一些变量也适用于命令行，但显示相关信息：
 
-  * $0 显示你正在使用的 shell 的名称（例如，-bash）。
-  * $$ 显示 shell 的进程 ID。
-  * $PPID 显示 shell 的父进程的进程 ID（对我来说，是 sshd）。
+* `$0` 显示你正在使用的 shell 的名称（例如，-bash）。
+* `$$` 显示 shell 的进程 ID。
+* `$PPID` 显示 shell 的父进程的进程 ID（对我来说，是 sshd）。
 
 为了查看它们的结果，如果我们将所有这些变量都放入一个脚本中，比如：
 
@@ -127,26 +129,27 @@ echo $PPID
 ```
 
 当我们调用这个脚本时，我们会看到如下内容：
+
 ```
 $ tryme one two three
 /home/shs/bin/tryme     <== 脚本名称
-one             <== 第一个参数
-two             <== 第二个参数
-3               <== 参数的个数
+one                     <== 第一个参数
+two                     <== 第二个参数
+3                       <== 参数的个数
 one two three           <== 所有的参数
-0               <== 上一条 echo 命令的返回码
-10410               <== 脚本的进程 ID
-10109               <== 父进程 ID
+0                       <== 上一条 echo 命令的返回码
+10410                   <== 脚本的进程 ID
+10109                   <== 父进程 ID
 ```
 
 如果我们在脚本运行完毕后检查 shell 的进程 ID，我们可以看到它与脚本中显示的 PPID 相匹配：
 
 ```
 $ echo $$
-10109               <== shell 的进程 ID
+10109                   <== shell 的进程 ID
 ```
 
-当然，比起简单地显示它们的值，我们更多的是在需要它们的时候来使用它们。我们来看一看它们可能的用处。
+当然，比起简单地显示它们的值，更有用的方式是使用它们。我们来看一看它们可能的用处。
 
 检查是否已提供参数：
 
@@ -209,7 +212,7 @@ fi
 
 ### 重命名变量
 
-在编写复杂的脚本时，为脚本的参数指定名称通常很有用，而不是继续将它们称为 $1, $2 等。等到第 35 行，阅读你脚本的人可能已经忘了 $2 表示什么。如果你将一个重要参数的值赋给 $filename 或 $numlines，那么他就不容易忘记。
+在编写复杂的脚本时，为脚本的参数指定名称通常很有用，而不是继续将它们称为 `$1`、`$2` 等。等到第 35 行，阅读你脚本的人可能已经忘了 `$2` 表示什么。如果你将一个重要参数的值赋给 `$filename` 或 `$numlines`，那么他就不容易忘记。
 
 ```
 #!/bin/bash
@@ -236,27 +239,23 @@ else
 fi
 ```
 
-当然，这个示例脚本只是运行 head 命令来显示文件中的前 x 行，但它的目的是显示如何在脚本中使用内部参数来帮助确保脚本运行良好，或在失败时清晰地知道失败原因。
-
-**观看 Sandra Henry-Stocker 的两分钟 Linux 技巧：[学习如何掌握大量 Linux 命令][3]。**
-
-加入 [Facebook][4] 和 [Linkedln][5] 上的网络社区，评论最热的主题。
+当然，这个示例脚本只是运行 `head` 命令来显示文件中的前 x 行，但它的目的是显示如何在脚本中使用内部参数来帮助确保脚本运行良好，或在失败时清晰地知道失败原因。
 
 --------------------------------------------------------------------------------
 
-via: https://www.networkworld.com/article/3387154/working-with-variables-on-linux.html#tk.rss_all
+via: https://www.networkworld.com/article/3387154/working-with-variables-on-linux.html
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.networkworld.com/author/Sandra-Henry_Stocker/
 [b]: https://github.com/lujun9972
 [1]: https://images.idgesg.net/images/article/2019/04/variable-key-keyboard-100793080-large.jpg
-[2]: https://www.networkworld.com/article/3385516/how-to-manage-your-linux-environment.html
+[2]: https://linux.cn/article-10916-1.html
 [3]: https://www.youtube.com/playlist?list=PL7D2RMSmRO9J8OTpjFECi8DJiTQdd4hua
 [4]: https://www.facebook.com/NetworkWorld/
 [5]: https://www.linkedin.com/company/network-world
