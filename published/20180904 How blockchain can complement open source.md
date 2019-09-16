@@ -3,7 +3,7 @@
 
 > 了解区块链如何成为去中心化的开源补贴模型。
 
-![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/block-quilt-chain.png?itok=mECoDbrc)
+![](https://img.linux.net.cn/data/attachment/album/201909/16/111521od1yn9r1nr1eii9o.jpg)
 
 《<ruby>[大教堂与集市][1]<rt>The Cathedral and The Bazaar</rt></ruby>》是 20 年前由<ruby>埃里克·史蒂文·雷蒙德<rt>Eric Steven Raymond<rt></ruby>（ESR）撰写的经典开源故事。在这个故事中，ESR 描述了一种新的革命性的软件开发模型，其中复杂的软件项目是在没有（或者很少的）集中管理的情况下构建的。这个新模型就是<ruby>开源<rt>open source</rt></ruby>。
 
