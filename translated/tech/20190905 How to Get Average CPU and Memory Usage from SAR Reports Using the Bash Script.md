@@ -7,36 +7,37 @@
 [#]: via: (https://www.2daygeek.com/linux-get-average-cpu-memory-utilization-from-sar-data-report/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Get Average CPU and Memory Usage from SAR Reports Using the Bash Script
+如何使用 Bash 脚本从 SAR 报告中获取 CPU 和内存的平均使用情况
 ======
 
-Most Linux administrator monitor system performance with **[SAR report][1]** because it collect performance data for a week.
-
-But you can easily extend this to four weeks by making changes to the “/etc/sysconfig/sysstat” file.
-
-Also, this period can be extended beyond one month. If the value exceeds 28, the log files are placed in multiple directories, one for each month.
-
-To extend the coverage period to 28 days, make the following change to the “/etc/sysconfig/sysstat” file.
-
-Edit the sysstat file and change HISTORY=7 to HISTORY=28.
-
-In this article we have added three bash scripts that will help you to easily view each data file averages in one place.
-
-We have added many useful shell scripts in the past. If you want to check out that collection, go to the link below.
-
-  * **[How to automate daily operations using shell script][2]**
+大多数 Linux 管理员使用 **[SAR 报告][1]**监控系统性能，因为它会收集一周的性能数据。
 
 
+但是，你可以通过更改 “/etc/sysconfig/sysstat” 文件轻松地将其延长到四周。
 
-These scripts are simple and straightforward. For testing purposes, we have included only two performance metrics, namely CPU and memory.
+同样，这段时间可以延长一个月以上。如果超过 28，那么日志文件将放在多个目录中，每月一个。
 
-You can modify other performance metrics in the script to suit your needs.
+要将覆盖期延长至 28 天，请对 “/etc/sysconfig/sysstat” 文件做以下更改。
 
-### Script-1: Bash Script to Get Average CPU Utilization from SAR Reports
+编辑 sysstat 文件并将 HISTORY=7 更改为 HISTORY=28.。
 
-This bash script collects the CPU average from each data file and display it on one page.
+在本文中，我们添加了三个 bash 脚本，它们可以帮助你在一个地方轻松查看每个数据文件的平均值。
 
-Since this is a month end, it shows 28 days data for August 2019.
+我们过去加过许多有用的 shell 脚本。如果你想查看它们，请进入下面的链接。
+
+  * **[如何使用 shell 脚本自动化日常操作][2]**
+
+
+
+这些脚本简单明了。出于测试目的，我们仅包括两个性能指标，即 CPU 和内存。
+
+你可以修改脚本中的其他性能指标以满足你的需求。
+
+### 脚本 1：从 SAR 报告中获取平均 CPU 利用率的 Bash 脚本
+
+该 bash 脚本从每个数据文件中收集 CPU 平均值并将其显示在一个页面上。
+
+由于是月末，它显示了 2019 年 8 月的 28 天数据。
 
 ```
 # vi /opt/scripts/sar-cpu-avg.sh
@@ -62,7 +63,7 @@ done
 echo "+----------------------------------------------------------------------------------+"
 ```
 
-Once you run the script, you will get an output like the one below.
+运行脚本后，你将看到如下输出。
 
 ```
 # sh /opt/scripts/sar-cpu-avg.sh
@@ -88,11 +89,11 @@ Once you run the script, you will get an output like the one below.
 +----------------------------------------------------------------------------------+
 ```
 
-### Script-2: Bash Script to Get Average Memory Utilization from SAR Reports
+### 脚本 2：从 SAR 报告中获取平均内存利用率的 Bash 脚本
 
-This bash script will collect memory averages from each data file and display it on one page.
+该 bash 脚本从每个数据文件中收集内存平均值并将其显示在一个页面上。
 
-Since this is a month end, it shows 28 days data for August 2019.
+由于是月末，它显示了 2019 年 8 月的 28 天数据。
 
 ```
 # vi /opt/scripts/sar-memory-avg.sh
@@ -118,7 +119,7 @@ done
 echo "+-------------------------------------------------------------------------------------------------------------------+"
 ```
 
-Once you run the script, you will get an output like the one below.
+运行脚本后，你将看到如下输出。
 
 ```
 # sh /opt/scripts/sar-memory-avg.sh
@@ -144,11 +145,11 @@ Once you run the script, you will get an output like the one below.
 +-------------------------------------------------------------------------------------------------------------------+
 ```
 
-### Script-3: Bash Script to Get Average CPU &amp; Memory Utilization from SAR Reports
+### 脚本 3：从 SAR 报告中获取 CPU 和内存平均利用率的 Bash 脚本
 
-This bash script collects the CPU &amp; memory averages from each data file and displays them on a page.
+该 bash 脚本从每个数据文件中收集 CPU 和内存平均值并将其显示在一个页面上。
 
-This bash script is slightly different compared to the above script. It shows the average of both (CPU &amp; Memory) in one location, not the other data.
+该脚本与上面相比稍微不同。它在同一位置同时显示两者（CPU 和内存）平均值，而不是其他数据。
 
 ```
 # vi /opt/scripts/sar-cpu-mem-avg.sh
@@ -172,7 +173,7 @@ do
 done
 ```
 
-Once you run the script, you will get an output like the one below.
+运行脚本后，你将看到如下输出。
 
 ```
 # sh /opt/scripts/sar-cpu-mem-avg.sh
@@ -221,7 +222,7 @@ via: https://www.2daygeek.com/linux-get-average-cpu-memory-utilization-from-sar-
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
