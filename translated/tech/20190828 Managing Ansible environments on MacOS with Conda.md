@@ -11,16 +11,14 @@
 使用 Conda 管理 MacOS 上的 Ansible 环境
 =====
 
-Conda 将 Ansible 所需的一切都收集到虚拟环境中并将它与其他项目分开。
+Conda 将 Ansible 所需的一切都收集到虚拟环境中并将其与其他项目分开。
 ![CICD with gears][1]
 
-如果您是一名使用 MacOS 并参与 Ansible 管理的 Python 开发人员，您可能希望使用 Conda 包管理器将 Ansible 的工作与核心操作系统和其他本地项目分开。
+如果您是一名使用 MacOS 并参与 Ansible 管理的 Python 开发人员，您可能希望使用 Conda 包管理器将 Ansible 的工作内容与核心操作系统和其他本地项目分开。
 
-Ansible 基于 Python的。让 Ansible 在 MacOS 上工作 Conda 并不是必须要的，但是它确实让管理 Python 版本和包依赖变得更加容易。这允许您在 MacOS 上使用升级的 Python 版本，并在您的系统、Ansible 和其他编程项目之间保持 Python 包的依赖性是独立的。
+Ansible 基于 Python的。让 Ansible 在 MacOS 上工作 Conda 并不是必须要的，但是它确实让您管理 Python 版本和包依赖变得更加容易。这允许您在 MacOS 上使用升级的 Python 版本，并在您的系统中、Ansible 和其他编程项目之间保持 Python 包的依赖性是相互独立的。
 
-还有其他方法在 MacOS 上安装 Ansible 。您可以使用[Homebrew][2]，但是如果您对 Python 开发(或 Ansible 开发)感兴趣，您可能会发现在一个 Python 虚拟环境中管理 Ansible 可以减少一些混乱。我觉得这更简单；与其试图将 Pythn版本和依赖项加载到系统或在 **/usr/local** 目录中 ，Conda 还能帮助我将 Ansibl e所需的一切都收集到一个虚拟环境中，并将其与其他项目完全分开。
-
-This article focuses on using Conda to manage Ansible as a Python project to keep it clean and separated from other projects. Read on to learn how to install Conda, create a new virtual environment, install Ansible, and test it.
+在 MacOS 上安装 Ansible 还有其他方法。您可以使用[Homebrew][2]，但是如果您对 Python 开发(或 Ansible 开发)感兴趣，您可能会发现在一个独立 Python 虚拟环境中管理 Ansible 可以减少一些混乱。我觉得这更简单；与其试图将 Python 版本和依赖项加载到系统或在 **/usr/local** 目录中 ，还不如使用 Conda 帮助我将 Ansible 所需的一切都收集到一个虚拟环境中，并将其与其他项目完全分开。
 
 本文着重于使用 Conda 作为 Python 项目来管理 Ansible ，以保持它的干净并与其他项目分开。请继续阅读，并了解如何安装 Conda、创建新的虚拟环境、安装 Ansible 并对其进行测试。
 
@@ -28,17 +26,17 @@ This article focuses on using Conda to manage Ansible as a Python project to kee
 
 最近，我想学习[Ansible][3]，所以我需要找到安装它的最佳方法。
 
-我通常对在我的日常工作站上安装东西很谨慎。我尤其不喜欢对供应商的默认操作系统安装应用手动更新(这是我多年作为 Unix 系统管理的首选)。我真的很想使用 Python 3.7，但是 MacOS 包是旧的2.7，我不会安装任何可能干扰核心 MacOS 系统的全局Python包。
+我通常对在我的日常工作站上安装东西很谨慎。我尤其不喜欢对供应商的默认操作系统安装应用手动更新(这是我多年作为 Unix 系统管理的首选)。我真的很想使用 Python 3.7，但是 MacOS 包是旧的2.7，我不会安装任何可能干扰核心 MacOS 系统的全局 Python 包。
 
-所以，我使用本地 Ubuntu 18.04 虚拟机上开始了我的 Ansible 工作。这提供了真正程度的安全隔离，但我很快发现管理它是非常乏味的。所以我着手研究如何在本机 MacOS 上获得一个灵活但独立的 Ansible 系统。
+所以，我使用本地 Ubuntu 18.04 虚拟机上开始了我的 Ansible 工作。这提供了真正意义上的的安全隔离，但我很快发现管理它是非常乏味的。所以我着手研究如何在本机 MacOS 上获得一个灵活但独立的 Ansible 系统。
 
 由于 Ansible 基于 Python，Conda 似乎是理想的解决方案。
 
-### 安装Conda
+### 安装 Conda
 
-Conda 是一个开源软件，它提供方便的包和环境管理功能。它可以帮助您管理多个版本的 Python 、安装软件包依赖关系、执行升级和维护项目隔离。如果您手动管理 Python 虚拟环境，Conda 将有助于简化和管理您的工作。浏览[ Conda 文档][4]可以了解更多细节。
+Conda 是一个开源软件，它提供方便的包和环境管理功能。它可以帮助您管理多个版本的 Python 、安装软件包依赖关系、执行升级和维护项目隔离。如果您手动管理 Python 虚拟环境，Conda 将有助于简化和管理您的工作。浏览 [Conda 文档][4]可以了解更多细节。
 
-我选择了 [Miniconda][5] Python 3.7 安装在我的工作站中，因为我想要最新的 Pytho n版本。无论选择哪个版本，您都可以使用其他版本的 Python 安装新的虚拟环境。
+我选择了 [Miniconda][5] Python 3.7 安装在我的工作站中，因为我想要最新的 Python 版本。无论选择哪个版本，您都可以使用其他版本的 Python 安装新的虚拟环境。
 
 要安装 Conda，请下载 PKG 格式的文件，进行通常的双击，并选择 “Install for me only” 选项。安装在我的系统上占用了大约158兆的空间。
 
@@ -77,7 +75,7 @@ Python 3.7.1
 
 第三个命令不是必须的；它列出了安装了哪些 Python 模块及其版本和其他数据。
 
-您可以随时使用 Conda 的 **activate** 命令切换到另一个虚拟环境。这将带您回到基本的: **conda 基本的**。
+您可以随时使用 Conda 的 **activate** 命令切换到另一个虚拟环境。这将带您回到基本的: **conda base**。
 
 ###  安装 Ansible 
 
@@ -95,8 +93,6 @@ Python 3.7.1
 
 
 ### 使用 Ansible
-
-Now that you have installed a Conda virtual environment, you're ready to use it. First, make sure the node you want to control has your workstation's SSH key installed to the right user account.
 
 既然您已经安装了 Conda 虚拟环境，就可以使用它了。首先，确保要控制的节点已将工作站的 SSH 密钥安装到正确的用户帐户。
 
@@ -124,7 +120,7 @@ ansible 2.8.1
 
 现在 Ansible 正在工作了，您可以在控制台中抽身，并从您的 MacOS 工作站中使用它们。
 
-### 克隆新的Ansible进行Ansible开发
+### 克隆新的 Ansible 进行 Ansible 开发
 
 这部分完全是可选的；只有当您想要额外的虚拟环境来修改 Ansible 或者安全地使用有问题的 Python 模块时，才需要它。您可以通过以下方式将主 Ansible 环境克隆到开发副本中:
 
@@ -136,8 +132,6 @@ ansible 2.8.1
 
 ### 需要注意的问题
 
-Occasionally you may get into trouble with Conda. You can usually delete a bad environment with:
-
 偶尔您可能遇到使用 Conda 的麻烦。您通常可以通过以下方式删除不良环境:
 
 ```
@@ -146,11 +140,10 @@ $ conda remove --name ansible-dev --all
 ```
 如果出现无法解决的错误，通常可以通过在 **~/miniconda3/envs** 中找到环境并删除整个目录来直接删除环境。如果基础损坏了，您可以删除整个 **~/miniconda3**，然后从 PKG 文件中重新安装。只要确保保留 **~/miniconda3/envs** ，或使用 Conda 工具导出环境配置并在以后重新创建即可。
 
-MacOS 上不包括 **sshpass** 程序。只有当您的 Ansible工 作要求您向 Ansible 提供SSH登录密码时，才需要它。您可以在 SourceForge 上找到当前的[sshpass source][6]。
+MacOS 上不包括 **sshpass** 程序。只有当您的 Ansible 工作要求您向 Ansible 提供SSH登录密码时，才需要它。您可以在 SourceForge 上找到当前的[sshpass source][6]。
 
-Finally, the base Conda Python module list may lack some Python modules you need for your work. If you need to install one, the **conda install &lt;package&gt;** command is preferred, but **pip** can be used where needed, and Conda will recognize the install modules.
 
-最后，基础 Conda Python 模块列表可能缺少您工作所需的一些Python模块。如果您需要安装一个模块，**conda install &lt;package&gt;** 命令是首选的，但是 **pip** 可以在需要的地方使用，Conda会识别安装模块。
+最后，基础 Conda Python 模块列表可能缺少您工作所需的一些 Python 模块。如果您需要安装一个模块，**conda install &lt;package&gt;** 命令是首选的，但是 **pip** 可以在需要的地方使用，Conda会识别安装模块。
 
 ### 结论
 
