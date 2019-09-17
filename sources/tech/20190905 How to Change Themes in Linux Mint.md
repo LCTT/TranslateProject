@@ -7,74 +7,74 @@
 [#]: via: (https://itsfoss.com/install-themes-linux-mint/)
 [#]: author: (It's FOSS Community https://itsfoss.com/author/itsfoss/)
 
-How to Change Themes in Linux Mint
+如何在 Linux Mint 中更换主题
 ======
 
-Using Linux Mint is, from the start, a unique experience for its main Desktop Environment: Cinnamon. This is one of the main [features why I love Linux Mint][1].
+自始至终，使用 Cinnamon 桌面环境的 Linux Mint 都是一种卓越的体验。这也是[为何我喜爱 Linux Mint ][1]的主要原因之一。
 
-Since Mint’s dev team [started to take design more serious][2], “Themes” applet became an important way not only to choose new themes, icons, buttons, window borders and mouse pointers, but also to install new themes directly from it. Interested? Let’s jump into it.
+自从 Mint 的开发团队 [开始更为严肃的对待设计][2], “桌面主题” 应用便成为了更换新主题，图标，按钮样式，窗口边框以及鼠标指针的重要方式，当然你也可以直接通过它安装新的主题。感兴趣么？ 让我们开始吧。
 
-### How to change themes in Linux Mint
+### 如何在 Linux Mint 中更换主题
 
-Search for themes in the Menu and open the Themes applet.
+在菜单中搜索主题并打开主题应用。
 
 ![Theme Applet provides an easy way of installing and changing themes][3]
 
-At the applet there’s a “Add/Remove” button, pretty simple, huh? And, clicking on it, you and I can see Cinnamon Spices (Cinnamon’s official addons repository) themes ordered first by popularity.
+在应用中中有一个“添加/删除”按钮，非常简单，不是么?而且，点击它，我们可以看到Cinnamon Spices( Cinnamon 的官方插件库)的主题按流行程度排序。
 
 ![Installing new themes in Linux Mint Cinnamon][4]
 
-To install one, all it’s needed to do is click on yours preferred one and wait for it to download. After that, the theme will be available at the “Desktop” option on the first page of the applet. Just double click on one of the installed themes to start using it.
+要安装主题，你所要做的就是点击你喜欢的一个，然后等待它下载。之后，主题将在应用第一页的“Desktop”选项中显示可用。只需双击已安装的主题之一就可以开始使用它。
 
 ![Changing themes in Linux Mint Cinnamon][5]
 
-Here’s the default Linux Mint look:
+下面是默认的 Linux Mint 外观:
 
 ![Linux Mint Default Theme][6]
 
-And here’s after I change the theme:
+这是在我更换主题之后:
 
 ![Linux Mint with Carta Theme][7]
 
-All the themes are also available at the Cinnamon Spices site for more information and bigger screenshots so you can take a better look on how your system will look.
+所有的主题都可以在 Cinnamon Spices 网站上获得更多的信息和更大的截图，这样你就可以更好地了解你的系统的外观。
 
-[Browse Cinnamon Themes][8]
+[浏览 Cinnamon 主题][8]
 
-### Installing third party themes in Linux Mint
+### 在 Linux Mint 中安装第三方主题
 
-_“I saw this amazing theme on another site and it is not available at Cinnamon Spices…”_
+_“我在另一个网站上看到了这个优异的主题，但 Cinnamon Spices 网站上没有……”_
 
-Cinnamon Spices has a good collection of themes but you’ll still find that the theme you saw some place else is not available on the official Cinnamon website.
+Cinnamon Spices 集成了许多优秀的主题，但你仍然会发现，你看到的主题并没有被 Cinnamon Spices 官方网站收录。 
 
-Well, it would be nice if there was another way, huh? You might imagine that there is (I’m mean…obviously there is). So, first things first, there are other websites where you and I can find new cool themes.
+这时你可能会想：如果有别的办法就好了，对么?你可能会认为有(我的意思是……当然啦)。首先，我们可以在其他网站上找到一些很酷的主题。
 
-I’ll recommend going to Cinnamon Look and browse themes there. If you like something download it.
+我推荐你去 Cinnamon 浏览主题。如果你喜欢什么，就下载吧。
 
-[Get more themes at Cinnamon Look][9]
+[在 Cinnamon 外观中获取更多主题][9]
 
-After the preferred theme is downloaded, you will have a compressed file now with all you need for the installation. Extract it and save at ~/.themes. Confused? The “~” file path is actually your home folder: /home/{YOURUSER}/.themes.
+下载了首选主题之后，你现在将得到一个压缩文件，其中包含安装所需的所有内容。提取它并保存到 ~/.themes. 迷糊么?  “~” 代表了你的 home 文件夹的对应路径: /home/{YOURUSER}/.themes.
 
 [][10]
 
-Suggested read  Fix "Failed To Start Session" At Login In Ubuntu 16.04
+建议在登录 Ubuntu 16.04 时读取“启动会话失败”的修复程序。
 
-So go to the your Home directory. Press Ctrl+H to [show hidden files in Linux][11]. If you don’t see a .themes folder, create a new folder and name .themes. Remember that the dot at the beginning of the folder name is important.
+然后跳转到你的主目录。按Ctrl+H[显示Linux中的隐藏文件][11]。如果没有看到.themes文件夹，创建一个新文件夹并命名为.themes。记住，文件夹名称开头的点很重要。
 
-Copy the extracted theme folder from your Downloads directory to the .themes folder in your Home.
+将提取的主题文件夹从下载目录复制到你的 home 中的.themes文件夹。
 
-After that, look for the installed theme at the applet above mentioned.
+最后，在上面提到的应用中查找已安装的主题。
 
-Note
+注记
 
-Remember that the themes must be made to work on Cinnamon, even though it is a fork from GNOME, not all themes made for GNOME works at Cinnamon.
+请记住，主题必须是 Cinnamon 相对应的，即使它是一个从 GNOME 复刻的系统也不行，并不是所有的 GNOME 主题都适用于 Cinnamon 。
 
-Changing theme is one part of Cinnamon customization. You can also [change the looks of Linux Mint by changing the icons][12].
+改变主题是 Cinnamon 定制的一部分。你还可以[通过更改图标来更改 Linux Mint 的外观][12]。
 
-I hope you now you know how to change themes in Linux Mint. Which theme are you going to use?
+我希望你现在已经知道如何在 Linux Mint 中更改主题了。快去选取你喜欢的主题吧?
 
 ### João Gondim
 
-Linux enthusiast from Brasil.
+来自巴西的Linux爱好者。
 
 --------------------------------------------------------------------------------
 
