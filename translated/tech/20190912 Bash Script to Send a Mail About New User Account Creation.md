@@ -7,40 +7,40 @@
 [#]: via: (https://www.2daygeek.com/linux-shell-script-to-monitor-user-creation-send-email/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Bash Script to Send a Mail About New User Account Creation
+用 Bash 脚本发送新用户帐户创建的邮件
 ======
 
-For some purposes you may need to keep track of new user creation details on Linux.
+出于某些原因，你可能需要跟踪 Linux 上的新用户创建信息。
 
-Also, you may need to send the details by mail.
+同时，你可能需要通过邮件发送详细信息。
 
-This may be part of the audit objective or the security team may wish to monitor this for the tracking purposes.
+这或许是审计目标的一部分，或者安全团队出于跟踪目的可能希望对此进行监控。
 
-We can do this in other way, as we have already described in the previous article.
+我们可以通过其他方式进行此操作，正如我们在上一篇文章中已经描述的那样。
 
-  * **[Bash script to send a mail when new user account is created in system][1]**
-
-
-
-There are many open source monitoring tools are available for Linux.
-
-But I don’t think they have a way to track the new user creation process and alert the administrator when that happens.
-
-So how can we achieve this?
-
-We can write our own Bash script to achieve this.
-
-We have added many useful shell scripts in the past. If you want to check them out, go to the link below.
-
-  * **[How to automate day to day activities using shell scripts?][2]**
+  * **[在系统中创建新用户帐户时发送邮件的 Bash 脚本][1]**
 
 
 
-### What does this script really do?
+Linux 有许多开源监控工具可以使用。
 
-This will take a backup of the “/etc/passwd” file twice a day (beginning of the day and end of the day), which will enable you to get new user creation details for the specified date.
+但我不认为他们有办法跟踪新用户创建过程，并在发生时提醒管理员。
 
-We need to add the below two cronjobs to copy the “/etc/passwd” file.
+那么我们怎样才能做到这一点？
+
+我们可以编写自己的 Bash 脚本来实现这一目标。
+
+我们过去写过许多有用的 shell 脚本。如果你想了解，请进入下面的链接。
+
+  * **[如何使用 shell 脚本自动化日常活动？][2]**
+
+
+
+### 这个脚本做了什么？
+
+这将每天两次（一天的开始和结束）备份 “/etc/passwd” 文件，这将使你能够获取指定日期的新用户创建详细信息。
+
+我们需要添加以下两个 cron 任务来复制 “/etc/passwd” 文件。
 
 ```
 # crontab -e
@@ -49,13 +49,13 @@ We need to add the below two cronjobs to copy the “/etc/passwd” file.
 59 23 * * * cp /etc/passwd /opt/scripts/passwd-end-$(date +"%Y-%m-%d")
 ```
 
-It uses the “difference” command to detect the difference between files, and if any difference is found to yesterday’s date, the script will send an email alert to the email id given with new user details.
+它使用 “difference” 命令来检测文件之间的差异，如果发现与昨日有任何差异，脚本将向指定 email 发送新用户详细信息。
 
-We can’t run this script often because user creation is not happening frequently. However, we plan to run this script once a day.
+我们不用经常运行此脚本，因为用户创建不经常发生。但是，我们计划每天运行一次此脚本。
 
-Therefore, you can get a consolidated report on new user creation.
+这样，你可以获得有关新用户创建的综合报告。
 
-**Note:** We used our email id in the script for demonstration purpose. So we ask you to use your email id instead.
+**注意：**我们在脚本中使用了我们的电子邮件地址进行演示。因此，我们要求你用自己的电子邮件地址。
 
 ```
 # vi /opt/scripts/new-user-detail.sh
@@ -80,13 +80,13 @@ rm $MESSAGE
 fi
 ```
 
-Set an executable permission to "new-user-detail.sh" file.
+给 “new-user-detail.sh” 文件添加可执行权限。
 
 ```
 $ chmod +x /opt/scripts/new-user-detail.sh
 ```
 
-Finally add a cronjob to automate this. It runs daily at 7AM.
+最后添加一个 cron 任务来自动执行此操作。它在每天早上 7 点运行。
 
 ```
 # crontab -e
@@ -94,9 +94,9 @@ Finally add a cronjob to automate this. It runs daily at 7AM.
 0 7 * * * /bin/bash /opt/scripts/new-user.sh
 ```
 
-**Note:** You will receive an email alert at 7AM every day, which is for yesterday's date details.
+**注意：**你会在每天早上 7 点都会收到一封关于昨日详情的邮件提醒。
 
-**Output:** The output will be the same as the one below.
+**输出：**输出与下面的输出相同。
 
 ```
 # cat /tmp/new-user-logs.txt
@@ -115,7 +115,7 @@ via: https://www.2daygeek.com/linux-shell-script-to-monitor-user-creation-send-e
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
