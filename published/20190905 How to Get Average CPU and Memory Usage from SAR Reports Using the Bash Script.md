@@ -1,37 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11352-1.html)
 [#]: subject: (How to Get Average CPU and Memory Usage from SAR Reports Using the Bash Script)
 [#]: via: (https://www.2daygeek.com/linux-get-average-cpu-memory-utilization-from-sar-data-report/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-如何使用 Bash 脚本从 SAR 报告中获取 CPU 和内存的平均使用情况
+如何使用 Bash 脚本从 SAR 报告中获取 CPU 和内存使用情况
 ======
 
-大多数 Linux 管理员使用 **[SAR 报告][1]**监控系统性能，因为它会收集一周的性能数据。
+大多数 Linux 管理员使用 [SAR 报告][1]监控系统性能，因为它会收集一周的性能数据。但是，你可以通过更改 `/etc/sysconfig/sysstat` 文件轻松地将其延长到四周。同样，这段时间可以延长一个月以上。如果超过 28，那么日志文件将放在多个目录中，每月一个。
 
+要将覆盖期延长至 28 天，请对 `/etc/sysconfig/sysstat` 文件做以下更改。
 
-但是，你可以通过更改 “/etc/sysconfig/sysstat” 文件轻松地将其延长到四周。
-
-同样，这段时间可以延长一个月以上。如果超过 28，那么日志文件将放在多个目录中，每月一个。
-
-要将覆盖期延长至 28 天，请对 “/etc/sysconfig/sysstat” 文件做以下更改。
-
-编辑 sysstat 文件并将 HISTORY=7 更改为 HISTORY=28.。
+编辑 `sysstat` 文件并将 `HISTORY=7` 更改为 `HISTORY=28`。
 
 在本文中，我们添加了三个 bash 脚本，它们可以帮助你在一个地方轻松查看每个数据文件的平均值。
 
 我们过去加过许多有用的 shell 脚本。如果你想查看它们，请进入下面的链接。
 
-  * **[如何使用 shell 脚本自动化日常操作][2]**
+* [如何使用 shell 脚本自动化日常操作][2]
 
-
-
-这些脚本简单明了。出于测试目的，我们仅包括两个性能指标，即 CPU 和内存。
-
-你可以修改脚本中的其他性能指标以满足你的需求。
+这些脚本简单明了。出于测试目的，我们仅包括两个性能指标，即 CPU 和内存。你可以修改脚本中的其他性能指标以满足你的需求。
 
 ### 脚本 1：从 SAR 报告中获取平均 CPU 利用率的 Bash 脚本
 
@@ -49,15 +40,10 @@ echo "|Average:         CPU     %user     %nice   %system   %iowait    %steal   
 echo "+----------------------------------------------------------------------------------+"
 
 for file in `ls -tr /var/log/sa/sa* | grep -v sar`
-
 do
-
-dat=`sar -f $file | head -n 1 | awk '{print $4}'`
-
-echo -n $dat
-
-sar -f $file  | grep -i Average | sed "s/Average://"
-
+    dat=`sar -f $file | head -n 1 | awk '{print $4}'`
+    echo -n $dat
+    sar -f $file  | grep -i Average | sed "s/Average://"
 done
 
 echo "+----------------------------------------------------------------------------------+"
@@ -105,15 +91,10 @@ echo "|Average:       kbmemfree kbmemused  %memused kbbuffers kbcached  kbcommit
 echo "+-------------------------------------------------------------------------------------------------------------------+"
 
 for file in `ls -tr /var/log/sa/sa* | grep -v sar`
-
 do
-
-dat=`sar -f $file | head -n 1 | awk '{print $4}'`
-
-echo -n $dat
-
-sar -r -f $file  | grep -i Average | sed "s/Average://"
-
+    dat=`sar -f $file | head -n 1 | awk '{print $4}'`
+    echo -n $dat
+    sar -r -f $file  | grep -i Average | sed "s/Average://"
 done
 
 echo "+-------------------------------------------------------------------------------------------------------------------+"
@@ -157,19 +138,12 @@ echo "+-------------------------------------------------------------------------
 #!/bin/bash
 
 for file in `ls -tr /var/log/sa/sa* | grep -v sar`
-
 do
-
-        sar -f $file | head -n 1 | awk '{print $4}'
-
-        echo "-----------"
-
-        sar -u -f $file | awk '/Average:/{printf("CPU Average: %.2f%\n"), 100 - $8}'
-
-        sar -r -f $file | awk '/Average:/{printf("Memory Average: %.2f%\n"),(($3-$5-$6)/($2+$3)) * 100 }'
-
-        printf "\n"
-
+    sar -f $file | head -n 1 | awk '{print $4}'
+    echo "-----------"
+    sar -u -f $file | awk '/Average:/{printf("CPU Average: %.2f%\n"), 100 - $8}'
+    sar -r -f $file | awk '/Average:/{printf("Memory Average: %.2f%\n"),(($3-$5-$6)/($2+$3)) * 100 }'
+    printf "\n"
 done
 ```
 
@@ -223,7 +197,7 @@ via: https://www.2daygeek.com/linux-get-average-cpu-memory-utilization-from-sar-
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
