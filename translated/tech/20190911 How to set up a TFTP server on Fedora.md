@@ -7,31 +7,29 @@
 [#]: via: (https://fedoramagazine.org/how-to-set-up-a-tftp-server-on-fedora/)
 [#]: author: (Curt Warfield https://fedoramagazine.org/author/rcurtiswarfield/)
 
-How to set up a TFTP server on Fedora
+如何在 Fedora 上建立一个 TFTP 服务器
 ======
 
 ![][1]
 
-**TFTP**, or Trivial File Transfer Protocol, allows users to transfer files between systems using the [UDP protocol][2]. By default, it uses UDP port 69. The TFTP protocol is extensively used to support remote booting of diskless devices. So, setting up a TFTP server on your own local network can be an interesting way to do [Fedora installations][3], or other diskless operations.
+**TFTP** 即简单文本传输协议，允许用户通过 [UDP][2] 协议在系统之间传输文件。默认情况下，协议使用的是 UDP 的 69 号端口。TFTP 协议广泛用于无盘设备的远程启动。因此，在你的本地网络建立一个 TFTP 服务器，这样你就可以进行 [Fedora 的安装][3]和其他无盘设备的一些操作，这将非常有趣。
 
-TFTP can only read and write files to or from a remote system. It doesn’t have the capability to list files or make any changes on the remote server. There are also no provisions for user authentication. Because of security implications and the lack of advanced features, TFTP is generally only used on a local area network (LAN).
+TFTP 仅仅能够从远端系统读取数据或者向远端系统写入数据。但它并没有列出远端服务器上文件的能力，同时也没有修改远端服务器的能力（译者注：感觉和前一句话矛盾）。用户身份验证也没有规定。 由于安全隐患和缺乏高级功能，TFTP 通常仅用于局域网（LAN）。
 
-### TFTP server installation
+### 安装 TFTP 服务器
 
-The first thing you will need to do is install the TFTP client and server packages:
+首先你要做的事就是安装 TFTP 客户端和 TFTP 服务器：
 
 ```
 dnf install tftp-server tftp -y
 ```
-
-This creates a _tftp_ service and socket file for [systemd][4] under _/usr/lib/systemd/system_.
-
+上述的这条命令会为 [systemd][4] 在 _/usr/lib/systemd/system_ 目录下创建 _tftp.service_ 和 _tftp.socket_ 文件。
 ```
 /usr/lib/systemd/system/tftp.service
 /usr/lib/systemd/system/tftp.socket
 ```
 
-Next, copy and rename these files to _/etc/systemd/system_:
+接下来，将这两个文件复制到 _/etc/systemd/system_ 目录下，并重新命名。
 
 ```
 cp /usr/lib/systemd/system/tftp.service /etc/systemd/system/tftp-server.service
@@ -39,9 +37,9 @@ cp /usr/lib/systemd/system/tftp.service /etc/systemd/system/tftp-server.service
 cp /usr/lib/systemd/system/tftp.socket /etc/systemd/system/tftp-server.socket
 ```
 
-### Making local changes
+### 修改文件
 
-You need to edit these files from the new location after you’ve copied and renamed them, to add some additional parameters. Here is what the _tftp-server.service_ file initially looks like:
+当你把这些文件复制和重命名后，你就可以去添加一些额外的参数，下面是 _tftp-server.service_  刚开始的样子：
 
 ```
 [Unit]
@@ -57,40 +55,36 @@ StandardInput=socket
 Also=tftp.socket
 ```
 
-Make the following changes to the _[Unit]_ section:
+在 _[Unit]_  部分添加如下内容：
 
 ```
 Requires=tftp-server.socket
 ```
 
-Make the following changes to the _ExecStart_ line:
+修改 _[ExecStart]_   行：
 
 ```
 ExecStart=/usr/sbin/in.tftpd -c -p -s /var/lib/tftpboot
 ```
 
-Here are what the options mean:
+下面是这些选项的意思：
 
-  * The _**-c**_ option allows new files to be created.
-  * The _**-p**_ option is used to have no additional permissions checks performed above the normal system-provided access controls.
-  * The _**-s**_ option is recommended for security as well as compatibility with some boot ROMs which cannot be easily made to include a directory name in its request.
+  *  _**-c**_  选项允许创建新的文件
+  *  _**-p**_  选项用于指明在正常系统提供的权限检查之上没有其他额外的权限检查
+  *  _**-s**_  建议使用该选项以确保安全性以及与某些引导 ROM 的兼容性，这些引导 ROM 在其请求中不容易包含目录名。
 
+默认的上传和下载位置位于 _/var/lib/tftpboot_。
 
-
-The default upload/download location for transferring the files is _/var/lib/tftpboot_.
-
-Next, make the following changes to the _[Install]_ section:
-
+下一步，修改 _[Install}_ 部分的内容
 ```
 [Install]
 WantedBy=multi-user.target
 Also=tftp-server.socket
 ```
 
-Don’t forget to save your changes!
+不要忘记保存你的修改。
 
-Here is the completed _/etc/systemd/system/tftp-server.service_ file:
-
+下面是 _/etc/systemd/system/tftp-server.service_ 文件的完整内容：
 ```
 [Unit]
 Description=Tftp Server
@@ -106,42 +100,41 @@ WantedBy=multi-user.target
 Also=tftp-server.socket
 ```
 
-### Starting the TFTP server
+### 启动 TFTP 服务器
 
-Reload the systemd daemon:
+重新启动 systemd 守护进程：
 
 ```
 systemctl daemon-reload
 ```
 
-Now start and enable the server:
-
+启动服务器：
 ```
 systemctl enable --now tftp-server
 ```
 
-To change the permissions of the TFTP server to allow upload and download functionality, use this command. Note TFTP is an inherently insecure protocol, so this may not be advised on a network you share with other people.
-
+要更改 TFTP 服务器允许上传和下载的权限，请使用此命令。注意 TFTP 是一种固有的不安全协议，因此不建议你在于其他人共享的网络上这样做。
 ```
 chmod 777 /var/lib/tftpboot
 ```
 
-Configure your firewall to allow TFTP traffic:
+配置防火墙让 TFTP 能够使用：
 
 ```
 firewall-cmd --add-service=tftp --perm
 firewall-cmd --reload
 ```
 
-### Client Configuration
+### 客户端配置
 
-Install the TFTP client:
+
+安装 TFTP 客户端
 
 ```
 yum install tftp -y
 ```
 
-Run the _tftp_ command to connect to the TFTP server. Here is an example that enables the verbose option:
+运行 _tftp_ 命令连接服务器。下面是一个启用详细信息选项的例子：
 
 ```
 [client@thinclient:~ ]$ tftp 192.168.1.164
@@ -154,7 +147,7 @@ tftp> quit
 [client@thinclient:~ ]$
 ```
 
-Remember, TFTP does not have the ability to list file names. So you’ll need to know the file name before running the _get_ command to download any files.
+记住，因为 TFTP 没有列出服务器上文件的能力，因此，在你使用 _get_  命令之前需要知道文件的具体名称。
 
 * * *
 
@@ -166,7 +159,7 @@ via: https://fedoramagazine.org/how-to-set-up-a-tftp-server-on-fedora/
 
 作者：[Curt Warfield][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[amwps290](https://github.com/amwps290)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
