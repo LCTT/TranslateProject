@@ -55,9 +55,9 @@
 
 我也可以确认我设置的内存量。
 
-当虚拟机作为服务器运行时，我通常会禁用或删除声卡。为此，请选择 “<ruby>声卡<rt>Sound</rt></ruby>” 并单击 “<ruyb>移除<rt>Remove</rt></ruby>” 或右键单击 “<ruby>声卡<rt>Sound</rt></ruby>” 并选择 “<ruyb>移除硬件<rt>Remove Hardware</rt></ruby>”。
+当虚拟机作为服务器运行时，我通常会禁用或删除声卡。为此，请选择 “<ruby>声卡<rt>Sound</rt></ruby>” 并单击 “<ruby>移除<rt>Remove</rt></ruby>” 或右键单击 “<ruby>声卡<rt>Sound</rt></ruby>” 并选择 “<ruby>移除硬件<rt>Remove Hardware</rt></ruby>”。
 
-你还可以使用底部的 “<ruyb>添加硬件<rt>Add Hardware</rt></ruby>” 按钮添加硬件。这会打开 “<ruyb>添加新的虚拟硬件<rt>Add New Virtual Hardware</rt></ruby>” 页面，你可以在其中添加其他存储设备、内存、声卡等。这就像可以访问一个库存充足（如果虚拟）的计算机硬件仓库。
+你还可以使用底部的 “<ruby>添加硬件<rt>Add Hardware</rt></ruby>” 按钮添加硬件。这会打开 “<ruby>添加新的虚拟硬件<rt>Add New Virtual Hardware</rt></ruby>” 页面，你可以在其中添加其他存储设备、内存、声卡等。这就像可以访问一个库存充足的（虚拟）计算机硬件仓库。
 
 ![The Add New Hardware screen][11]
 
