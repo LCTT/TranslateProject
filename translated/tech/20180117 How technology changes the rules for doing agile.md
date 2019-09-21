@@ -7,9 +7,9 @@
 
 但那样的时代已经结束了。如果你已经尝试过，但是没有成功，那么现在是时候重新开始了。
 
-Until now, DevOps required customized answers for many organizations - lots of tweaks and elbow grease. But today, [Linux containers ][2]and Kubernetes are fueling standardization of DevOps tools and processes. That standardization will only accelerate. The technology we are using to practice the DevOps way of working has finally caught up with our desire to move faster.
+直到现在，DevOps需要为许多组织提供个性化的解决方案，因此往往需要进行大量的调整以及额外的工作。但在今天，[Linux容器][2]和Kubernetes正在推动DevOps工具和过程的标准化。而这样的标准化将会加速整个软件开发过程。因此，我们用来实践DevOps工作方式的技术最终能够满足我们加快软件开发速度的愿望。
 
-Linux containers and [Kubernetes][3] are changing the way teams interact. Moreover, on the Kubernetes platform, you can run any application you now run on Linux. What does that mean? You can run a tremendous number of enterprise apps (and handle even previously vexing coordination issues between Windows and Linux.) Finally, containers and Kubernetes will handle almost all of what you'll run tomorrow. They're being future-proofed to handle machine learning, AI, and analytics workloads - the next wave of problem-solving tools.
+Linux容器和[Kubernetes][3]正在改变团队交互的方式。此外，你可以在Kubernetes平台上运行任何能够在Linux运行的应用程序。这意味着什么呢？你可以运行大量的企业及应用程序(甚至可以解决以前令人烦恼的Windows和Linux之间的协调问题)。最后，容器和Kubernetes将能够满足未来所有运行内容的需求。它们正在经受着未来的考验，以应对机器学习、人工智能和分析工作等下一代解决问题工具。
 
 **[ See our related article,[4 container adoption patterns: What you need to know. ] ][4]**
 
@@ -76,7 +76,7 @@ This all adds up to this being the right time to build something great. Given th
 via: https://enterprisersproject.com/article/2018/1/how-technology-changes-rules-doing-agile
 
 作者：[Matt Hicks][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[JayFrank](https://github.com/JayFrank)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
