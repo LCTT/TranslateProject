@@ -11,11 +11,11 @@
 
 Linux容器和[Kubernetes][3]正在改变团队交互的方式。此外，你可以在Kubernetes平台上运行任何能够在Linux运行的应用程序。这意味着什么呢？你可以运行大量的企业及应用程序(甚至可以解决以前令人烦恼的Windows和Linux之间的协调问题)。最后，容器和Kubernetes将能够满足未来所有运行内容的需求。它们正在经受着未来的考验，以应对机器学习、人工智能和分析工作等下一代解决问题工具。
 
-**[ See our related article,[4 container adoption patterns: What you need to know. ] ][4]**
+**[ 参考相关文章,[4 container adoption patterns: What you need to know. ] ][4]**
 
-Think about machine learning, for example. Today, people still find the patterns in much of an enterprise's data. When machines find the patterns (think machine learning), your people will be able to act on them faster. With the addition of AI, machines can not only find but also act on patterns. Today, with people doing everything, three weeks is an aggressive software development sprint cycle. With AI, machines can change code multiple times per second. Startups will use that capability - to disrupt you.
+让我们以机器学习为例来思考一下。今天，人们可以在大量的企业数据中找到一些模式。当机器发现这些模式时(想想机器学习)，你的员工就能更快地采取行动。随着人工智能的加入，机器不仅可以发现模式，还可以对模式进行操作。如今，三个星期已经成为了一个积极的软件开发冲刺周期。有了人工智能，机器每秒可以多次修改代码。创业公司会利用这种能力来“打扰你”。
 
-Consider how fast you have to be to compete. If you can't make a leap of faith now to DevOps and a one week cycle, think of what will happen when that startup points its AI-fueled process at you. It's time to move to the DevOps way of working now, or get left behind as your competitors do.
+考虑一下你需要多快才能参与到竞争当中。如果你对于无法对于DevOps和每周一个迭代周期充满信心，那么考虑一下当那个创业公司将AI驱动的过程指向你时会发生什么？现在是时候转向DevOps的工作方式了，否认就会像你的竞争对手一样被甩在后面。
 
 ### How are containers changing how teams work?
 
