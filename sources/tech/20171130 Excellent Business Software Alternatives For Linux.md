@@ -1,4 +1,3 @@
-Yoliver istranslating.
 Excellent Business Software Alternatives For Linux
 -------
 
