@@ -1,11 +1,11 @@
-How technology changes the rules for doing agile
+技术如何改变敏捷的规则
 ======
 
 ![](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/CIO%20Containers%20Ecosystem.png?itok=lDTaYXzk)
 
-More companies are trying agile and [DevOps][1] for a clear reason: Businesses want more speed and more experiments - which lead to innovations and competitive advantage. DevOps helps you gain that speed. But doing DevOps in a small group or startup and doing it at scale are two very different things. Any of us who've worked in a cross-functional group of 10 people, come up with a great solution to a problem, and then tried to apply the same patterns across a team of 100 people know the truth: It often doesn't work. This path has been so hard, in fact, that it has been easy for IT leaders to put off agile methodology for another year.
+越来越多的公司正因为一个非常明显的原因开始尝试敏捷和[DevOps][1]: 企业需要借助更快的速度和更多的实验来提供创新和竞争性优势。而DevOps将帮助我们得到所想要达到的创新速度。但是，在小团队或初创企业中实践DevOps和进行大规模实践完全是两码事。我们都明白这样的一个事实，那就是在10人的跨职能团队中能够很好地解决问题的方案，当将同样的模式应用到100人的团队中时就可能无法奏效。这条道路是如此艰难，以至于IT领导者很容易将敏捷方法的推行再推迟一年。
 
-But that time is over. If you've tried and stalled, it's time to jump back in.
+但那样的时代已经结束了。如果你已经尝试过，但是没有成功，那么现在是时候重新开始了。
 
 Until now, DevOps required customized answers for many organizations - lots of tweaks and elbow grease. But today, [Linux containers ][2]and Kubernetes are fueling standardization of DevOps tools and processes. That standardization will only accelerate. The technology we are using to practice the DevOps way of working has finally caught up with our desire to move faster.
 
