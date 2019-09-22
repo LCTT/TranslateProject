@@ -63,17 +63,17 @@ Linux容器就是为扩容而生的。一旦你开始这样做，[Kubernetes之�
 
 一旦你每天都推出软件，它就会改变你计划的每一个方面，并且会[加速业务的变化速度][8]。Macquarie银行和金融服务集团的CDO，Luis Uguina表示：“创意可以在一天内触达客户。”(参见[9]对Red Hat与Macquarie银行合作的案例研究)。
 
-### The right time to build something great
+### 是时候去创造一些伟大的东西了
 
-The Macquarie example demonstrates the power of velocity. How would that change your approach to your business? Remember, Macquarie is not a startup. This is the type of disruptive power that CIOs face, not only from new market entrants but also from established peers.
+Macquarie的例子说明了速度的力量。这将如何改变你的经营方式？记住，Macquarie不是一家初创企业。这是CIO们所面临的颠覆性力量，它不仅来自新的市场进入者，也来自老牌同行。
 
-The developer freedom also changes the talent equation for CIOs running agile shops. Suddenly, individuals within huge companies (even those not in the hottest industries or geographies) can have great impact. Macquarie uses this dynamic as a recruiting tool, promising developers that all new hires will push something live within the first week.
+开发人员的自由还改变了运营敏捷商店的CIO们的人才方程式。突然之间，大公司里的个体(即使不是在最热门的行业或地区)也可以产生巨大的影响。Macquarie利用这一变动作为招聘工具，并向开发人员承诺，所有新招聘的员工将会在第一周内推出新产品。
 
-At the same time, in this day of cloud-based compute and storage power, we have more infrastructure available than ever. That's fortunate, considering the [leaps that machine learning and AI tools will soon enable][10].
+与此同时，在这个基于云的计算和存储能力的时代，我们比以往任何时候都拥有更多可用的基础设施。考虑到[机器学习和人工智能工具将很快实现的飞跃][10]，这是幸运的。
 
-This all adds up to this being the right time to build something great. Given the pace of innovation in the market, you need to keep building great things to keep customers loyal. So if you've been waiting to place your bet on DevOps, now is the right time. Containers and Kubernetes have changed the rules - in your favor.
+所有这些都说明现在正是打造伟大事业的好时机。考虑到市场创新的速度，你需要不断地创造伟大的东西来保持客户的忠诚度。因此，如果你一直在等待将赌注押在DevOps上，那么现在就是正确的时机。容器技术和Kubernetes改变了规则，并且对你有利。
 
-**Want more wisdom like this, IT leaders? [Sign up for our weekly email newsletter][11].**
+**想要获取更多这样的智慧吗, IT领导者? [订阅每周邮件][11].**
 
 --------------------------------------------------------------------------------
 
