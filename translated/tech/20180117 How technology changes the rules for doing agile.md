@@ -43,16 +43,13 @@ Linux容器能够真正地解决这样的问题，这是因为容器缩小了开
 
 首先，这意味着你现在可以和团队一起实践DevOps了。没错，只需要让团队专注于他们已经拥有的专业知识，而对于容器，只需让团队了解所需集成依赖关系的必要知识即可。
 
-如果你想要重新训练每个人，往往会收效甚微。
+如果你想要重新训练每个人，往往会收效甚微。容器技术允许团队之间进行交互，但同时也会为每个团队提供一个围绕该团队优势而构建的强大边界。开发人员会知道需要消耗什么，但不需要知道如何使其大规模运行。运维团队了解核心基础设施，但不需要了解应用程序的细节。此外，运维团队也可以通过更新应用程序来解决新的安全问题，以免你成为下一个数据泄露的热门话题。
 
+想要为一个大型IT组织，比如30000人的团队教授运维和开发技能？那或许需要花费你十年的时间，而你可能并没有那么多时间。
 
-容器技术允许团队之间进行交互，但同时也会为每个团队提供一个围绕该团队优势而构建的强大边界。开发人员会知道需要消耗什么，但不需要知道如何使其大规模运行。运维团队了解核心基础设施，但不需要了解应用程序的细节。此外，运维团队也可以通过更新应用程序来解决新的安全问题，以免你成为下一个数据泄露的热门话题。
+当人们谈论“构建新的云原生应用程序将帮助我们摆脱这个问题”时，请批判性地进行思考。你可以在10个人的团队中构建云原生应用程序，但这对《财富》杂志前1000强的企业而言或许并不适用。除非你不再需要依赖现有的团队，否则你无法一个接一个地构建新的微服务：你最终将得到一个竖井式的组织。这是一个诱人的想法，但你不能指望这些应用程序来重新定义你的业务。我还没见过哪家公司能在如此大规模的并行开发中获得成功。IT预算已经受到限制；在很长一段时间内将预算翻倍甚至三倍是不现实的。
 
-Teaching a large IT organization of say 30,000 people both ops and devs skills? It would take you a decade. You don't have that kind of time.
-
-When people talk about "building new, cloud-native apps will get us out of this problem," think critically. You can build cloud-native apps in 10-person teams, but that doesn't scale for a Fortune 1000 company. You can't just build new microservices one by one until you're somehow not reliant on your existing team: You'll end up with a siloed organization. It's an alluring idea, but you can't count on these apps to redefine your business. I haven't met a company that could fund parallel development at this scale and succeed. IT budgets are already constrained; doubling or tripling them for an extended period of time just isn't realistic.
-
-### When the remarkable happens: Hello, velocity
+### 当奇迹发生时: 你好, 速度
 
 Linux containers were made to scale. Once you start to do so, [orchestration tools like Kubernetes come into play][6] - because you'll need to run thousands of containers. Applications won't consist of just a single container, they will depend on many different pieces, all running on containers, all running as a unit. If they don't, your apps won't run well in production.
 
