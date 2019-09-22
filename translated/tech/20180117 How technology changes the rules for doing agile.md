@@ -23,17 +23,23 @@ DevOps使得许多试图将这种工作方式扩展到更大范围的团队感�
 
 **[ 想要获取来自其他CIO们的建议吗？不放参考下我们的综述性资源, [DevOps: The IT Leader's Guide][5]. ]**
 
-向你的涉众“推销”快速开发冲刺也不是一件容易的事情。
+向你的涉众“推销”快速开发冲刺也不是一件容易的事情。想象一下，如果你以这种方式买了一栋房子：
 
-想象一下，如果你以这种方式买了一栋房子。你不再需要向建造者支付固定的金额。相反，你会得到这样的信息:“我们将在4周内倒好粉底，它的成本是x。然后我们将构建框架。”然后我们要做电学。但我们现在只知道基金会成立的时间。”人们已经习惯了买房子的时候有一个预先的价格和时间表。
+你将不再需要向开发商支付固定的金额，而是会得到这样的信息：“我们将在4周内浇筑完地基，其成本是X，之后再搭建房屋框架和铺设电路，但是我们现在只能够知道地基完成的时间表。”人们已经习惯了买房子的时候有一个预先的价格和交付时间表。
 
-Imagine if you bought a house this way. You're not going to pay a fixed amount to your builder anymore. Instead, you get something like: "We'll pour the foundation in 4 weeks and it will cost x. Then we'll frame. Then we'll do electrical. But we only know the timing on the foundation right now." People are used to buying homes with a price up front and a schedule.
+挑战在于构建软件与构建房屋不同。同一个建筑商建造了成千上万个完全相同的房子，而软件项目从来都各不相同。这是你要克服的第一个障碍。
 
-The challenge is that building software is not like building a house. The same builder builds thousands of houses that are all the same. Software projects are never the same. This is your first hurdle to get past.
+开发和运维团队的工作方式确实不同：我之所以知道这一点是因为我曾经从事过这两方面的工作。我们往往会用不同的方式来激励他们，开发人员会因为更改和创建而获得奖励，而运维专家则会因降低成本和确保安全性而获得奖励。我们会把他们分成不同的小组，并且尽量减少互动。而这些角色通常会吸引那些想法完全不同的技术人员。但是这样的解决方案注定会失败，你必须打破横亘在开发和运维之间的藩篱。
 
-Dev and operations teams really do work differently: I know because I've worked on both sides. We incent them differently. Developers are rewarded for changing and creating, while operations pros are rewarded for reducing cost and ensuring security. We put them in different groups and generally minimize interaction. And the roles typically attract technical people who think quite differently. This situation sets IT up to fail. You have to be willing to break down these barriers.
+想想传统情况下会发生什么。业务会把需求扔过墙，这是因为他们在“买房”模式下运作：“我们9个月后见。”开发人员根据这些需求进行开发，并根据技术约束的需要进行更改。然后，他们把它扔过墙传递给运维人员，并说一句“搞清楚如何运行这个软件”。
 
-Think of what has traditionally happened. You throw pieces over the wall, then the business throws requirements over the wall because they are operating in "house-buying" mode: "We'll see you in 9 months." Developers build to those requirements and make changes as needed for technical constraints. Then they throw it over the wall to operations to "figure out how to run this." Operations then works diligently to make a slew of changes to align the software with their infrastructure. And what's the end result?
+“找出如何运行这个。”然后，操作人员勤奋地进行大量更改，使软件与其基础设施保持一致。最终的结果是什么?
+
+
+
+ Then they throw it over the wall to operations to "figure out how to run this." Operations then works diligently to make a slew of changes to align the software with their infrastructure. And what's the end result?
+
+
 
 More often than not, the end result isn't even recognizable to the business when they see it in its final glory.  We've watched this pattern play out time and time again in our industry for the better part of two decades. It's time for a change.
 
