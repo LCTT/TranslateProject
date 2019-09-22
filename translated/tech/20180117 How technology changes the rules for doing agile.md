@@ -51,17 +51,17 @@ Linux容器能够真正地解决这样的问题，这是因为容器缩小了开
 
 ### 当奇迹发生时: 你好, 速度
 
-Linux containers were made to scale. Once you start to do so, [orchestration tools like Kubernetes come into play][6] - because you'll need to run thousands of containers. Applications won't consist of just a single container, they will depend on many different pieces, all running on containers, all running as a unit. If they don't, your apps won't run well in production.
+Linux容器就是为扩容而生的。一旦你开始这样做，[Kubernetes之类的编制工具就会发挥作用][6]，这是因为你将需要运行数千个容器。应用程序将不仅仅由一个容器组成，它们将依赖于许多不同的部分，所有的部分都会作为一个单元运行在容器上。如果不这样做，你的应用程序将无法在生产环境中很好地运行。
 
-Think of how many small gears and levers come together to run your business: The same is true for any application. Developers are responsible for all the pulleys and levers in the application. (You could have an integration nightmare if developers don't own those pieces.) At the same time, your operations team is responsible for all the pulleys and levers that make up your infrastructure, whether on-premises or in the cloud.  With Kubernetes as an abstraction, your operations team can give the application the fuel it needs to run - without being experts on all those pieces.
+思考一下有多少小滑轮和杠杆组合在一起来支撑你的业务，对于任何应用程序都是如此。开发人员负责应用程序中的所有滑轮和杠杆。(如果开发人员没有这些组件，您可能会在集成时做噩梦。)与此同时，无论是在线下还是在云上，运维团队都会负责构成基础设施的所有滑轮和杠杆。做一个较为抽象的比喻，使用Kubernetes，你的运维团队就可以为应用程序提供运行所需的燃料，但又不必成为所有方面的专家。
 
-Developers get to experiment. The operations team keeps infrastructure secure and reliable. This combination opens up the business to take small risks that lead to innovation. Instead of having to make only a couple of bet-the-farm size bets, real experimentation happens inside the company, incrementally and quickly.
+开发人员可以进行实验，运维团队则保持基础设施的安全和可靠。这样的组合使得企业敢于承担小风险，从而实现创新。不同于打几个孤注一掷的赌，公司中真正的实验往往是循序渐进的和快速的。
 
-In my experience, this is where the remarkable happens inside organizations: Because people say "How do we change planning to actually take advantage of this ability to experiment?" It forces agile planning.
+从个人经验来看，这就是组织内部发生的显著变化：因为人们说：“我们如何通过改变计划来真正地利用这种能力进行实验？”它强制执行敏捷计划。
 
-For example, KeyBank, which uses a DevOps model, containers, and Kubernetes, now deploys code every day. (Watch this [video][7] in which John Rzeszotarski, director of Continuous Delivery and Feedback at KeyBank, explains the change.) Similarly, Macquarie Bank uses DevOps and containers to put something in production every day.
+举个例子，使用DevOps模型、容器和Kubernetes的KeyBank如今每天都会部署代码。(观看视频[7]，其中主导了KeyBank持续交付和反馈的John Rzeszotarski将解释这一变化。)类似地，Macquarie银行也借助DevOps和容器技术每天将一些东西投入生产环境。
 
-Once you push software every day, it changes every aspect of how you plan - and [accelerates the rate of change to the business][8]. "An idea can get to a customer in a day," says Luis Uguina, CDO of Macquarie's banking and financial services group. (See this [case study][9] on Red Hat's work with Macquarie Bank).
+一旦你每天都推出软件，它就会改变你计划的每一个方面，并且会[加速业务的变化速度][8]。Macquarie银行和金融服务集团的CDO，Luis Uguina表示：“创意可以在一天内触达客户。”(参见[9]对Red Hat与Macquarie银行合作的案例研究)。
 
 ### The right time to build something great
 
