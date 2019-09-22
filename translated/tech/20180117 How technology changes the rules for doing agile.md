@@ -31,25 +31,22 @@ DevOps使得许多试图将这种工作方式扩展到更大范围的团队感�
 
 开发和运维团队的工作方式确实不同：我之所以知道这一点是因为我曾经从事过这两方面的工作。我们往往会用不同的方式来激励他们，开发人员会因为更改和创建而获得奖励，而运维专家则会因降低成本和确保安全性而获得奖励。我们会把他们分成不同的小组，并且尽量减少互动。而这些角色通常会吸引那些想法完全不同的技术人员。但是这样的解决方案注定会失败，你必须打破横亘在开发和运维之间的藩篱。
 
-想想传统情况下会发生什么。业务会把需求扔过墙，这是因为他们在“买房”模式下运作：“我们9个月后见。”开发人员根据这些需求进行开发，并根据技术约束的需要进行更改。然后，他们把它扔过墙传递给运维人员，并说一句“搞清楚如何运行这个软件”。
+想想传统情况下会发生什么。业务会把需求扔过墙，这是因为他们在“买房”模式下运作：“我们9个月后见。”开发人员根据这些需求进行开发，并根据技术约束的需要进行更改。然后，他们把它扔过墙传递给运维人员，并说一句“搞清楚如何运行这个软件”。然后，运维人员勤就会奋地进行大量更改，使软件与基础设施保持一致。然而，最终的结果是什么呢？
 
-“找出如何运行这个。”然后，操作人员勤奋地进行大量更改，使软件与其基础设施保持一致。最终的结果是什么?
+通常情况下，当业务人员看到需求实现的最终结果时甚至根本辨认不出。在过去20年的大部分时间里，我们一次又一次地目睹了这种模式在软件行业中上演。而现在，是时候改变了。
+
+Linux容器能够真正地解决这样的问题，这是因为容器缩小了开发和运维之间的间隙。容器技术允许两个团队共同理解和设计所有的关键需求，但仍然独立地履行各自团队的职责。基本上，我们去掉了开发人员和运维人员之间的电话游戏。
+
+因为容器技术，我们可以使得运维团队的规模更小，但依旧能够承担起数百万应用程序的运维工作，并且能够使得开发团队可以更加快速地根据需要更改软件。(在较大的组织中，所需的速度可能比运维人员的响应速度更快。)
+
+使用容器，您可以将所需要交付的内容与它运行的位置分开。你的运维团队只需要负责运行容器的主机和安全的内存占用，仅此而已。这意味着什么呢？
+
+首先，这意味着你现在可以和团队一起实践DevOps了。没错，只需要让团队专注于他们已经拥有的专业知识，而对于容器，只需让团队了解所需集成依赖关系的必要知识即可。
+
+如果你想要重新训练每个人，往往会收效甚微。
 
 
-
- Then they throw it over the wall to operations to "figure out how to run this." Operations then works diligently to make a slew of changes to align the software with their infrastructure. And what's the end result?
-
-
-
-More often than not, the end result isn't even recognizable to the business when they see it in its final glory.  We've watched this pattern play out time and time again in our industry for the better part of two decades. It's time for a change.
-
-It's Linux containers that truly crack the problem - because containers close the gap between development and operations. They allow both teams to understand and design to all of the critical requirements, but still uniquely fulfill their team's responsibilities. Basically, we take out the telephone game between developers and operations. With containers, we can have smaller operations teams, even teams responsible for millions of applications, but development teams that can change software as quickly as needed. (In larger organizations, the desired pace may be faster than humans can respond on the operations side.)
-
-With containers, you're separating what is delivered from where it runs. Your operations teams are responsible for the host that will run the containers and the security footprint, and that's all. What does this mean?
-
-First, it means you can get going on DevOps now, with the team you have. That's right. Keep teams focused on the expertise they already have: With containers, just teach them the bare minimum of the required integration dependencies.
-
-If you try and retrain everyone, no one will be that good at anything. Containers let teams interact, but alongside a strong boundary, built around each team's strengths. Your devs know what needs to be consumed, but don't need to know how to make it run at scale. Ops teams know the core infrastructure, but don't need to know the minutiae of the app. Also, Ops teams can update apps to address new security implications, before you become the next trending data breach story.
+容器技术允许团队之间进行交互，但同时也会为每个团队提供一个围绕该团队优势而构建的强大边界。开发人员会知道需要消耗什么，但不需要知道如何使其大规模运行。运维团队了解核心基础设施，但不需要了解应用程序的细节。此外，运维团队也可以通过更新应用程序来解决新的安全问题，以免你成为下一个数据泄露的热门话题。
 
 Teaching a large IT organization of say 30,000 people both ops and devs skills? It would take you a decade. You don't have that kind of time.
 
