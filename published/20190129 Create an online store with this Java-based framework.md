@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (laingke)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11373-1.html)
 [#]: subject: (Create an online store with this Java-based framework)
 [#]: via: (https://opensource.com/article/19/1/scipio-erp)
 [#]: author: (Paul Piper https://opensource.com/users/madppiper)
@@ -12,7 +12,7 @@
 
 > Scipio ERP 具有包罗万象的应用程序和功能。
 
-![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc_whitehurst_money.png?itok=ls-SOzM0)
+![](https://img.linux.net.cn/data/attachment/album/201909/22/133258hqvwax5w1zvq5ffa.jpg)
 
 如果，你想在网上销售产品或服务，但要么找不到合适的软件，要么觉得定制成本太高？那么，[Scipio ERP][1] 也许正是你想要的。
 
