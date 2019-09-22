@@ -7,16 +7,16 @@
 [#]: via: (https://www.networkworld.com/article/3330497/linux/linux-commands-for-measuring-disk-activity.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Linux commands for measuring disk activity
+用于测量磁盘活动的 Linux 命令
 ======
 ![](https://images.idgesg.net/images/article/2018/12/tape-measure-100782593-large.jpg)
-Linux systems provide a handy suite of commands for helping you see how busy your disks are, not just how full. In this post, we examine five very useful commands for looking into disk activity. Two of the commands (iostat and ioping) may have to be added to your system, and these same two commands require you to use sudo privileges, but all five commands provide useful ways to view disk activity.
+Linux 系统提供了一套方便的命令，帮助您查看磁盘有多忙，而不仅仅是磁盘有多满。在本文中，我们将研究五个非常有用的命令，用于查看磁盘活动。其中两个命令（iostat 和 ioping）可能必须添加到您的系统中，这两个相同的命令要求您使用 sudo 特权，但是这五个命令都提供了查看磁盘活动的有用方法。
 
-Probably one of the easiest and most obvious of these commands is **dstat**.
+这些命令中最简单、最明显的一个可能是 **dstat** 了。
 
 ### dtstat
 
-In spite of the fact that the **dstat** command begins with the letter "d", it provides stats on a lot more than just disk activity. If you want to view just disk activity, you can use the **-d** option. As shown below, you’ll get a continuous list of disk read/write measurements until you stop the display with a ^c. Note that after the first report, each subsequent row in the display will report disk activity in the following time interval, and the default is only one second.
+尽管 **dstat** 命令以字母 "d" 开头，但它提供的统计信息远远不止磁盘活动。如果您只想查看磁盘活动，可以使用 **-d** 选项。如下所示，您将得到一个磁盘读/写测量值的连续列表，直到使用 a ^c 停止显示为止。注意，在第一个报告之后，显示中的每个后续行将在接下来的时间间隔内报告磁盘活动，缺省值仅为一秒。
 
 ```
 $ dstat -d
@@ -29,7 +29,7 @@ $ dstat -d
  0  0 ^C
 ```
 
-Including a number after the -d option will set the interval to that number of seconds.
+在 -d 选项后面包含一个数字将把间隔设置为其秒数。
 
 ```
 $ dstat -d 10
@@ -41,9 +41,9 @@ $ dstat -d 10
  0 9011B ^C
 ```
 
-Notice that the reported data may be shown in a number of different units — e.g., M (megabytes), k (kilobytes), and B (bytes).
+请注意，报告的数据可能以许多不同的单位显示——例如，M (megabytes), k (kilobytes), and B (bytes).
 
-Without options, the dstat command is going to show you a lot of other information as well — indicating how the CPU is spending its time, displaying network and paging activity, and reporting on interrupts and context switches.
+如果没有选项，dstat 命令还将显示许多其他信息——指示 CPU 如何使用时间、显示网络和分页活动、报告中断和上下文切换。
 
 ```
 $ dstat
@@ -55,11 +55,11 @@ usr sys idl wai stl| read writ| recv send| in out | int csw
  0 1 99 0 0| 0 16k| 64B 468B| 0 0 | 64 81 ^C
 ```
 
-The dstat command provides valuable insights into overall Linux system performance, pretty much replacing a collection of older tools, such as vmstat, netstat, iostat, and ifstat, with a flexible and powerful command that combines their features. For more insight into the other information that the dstat command can provide, refer to this post on the [dstat][1] command.
+dstat 命令提供了关于整个 Linux 系统性能的有价值的见解，几乎可以用它灵活而功能强大的命令来代替 vmstat，netstat，iostat 和 ifstat 等较旧的工具集合，该命令结合了这些旧工具的功能。要深入了解 dstat 命令可以提供的其它信息，请参阅这篇关于 [dstat][1] 命令的文章。
 
 ### iostat
 
-The iostat command helps monitor system input/output device loading by observing the time the devices are active in relation to their average transfer rates. It's sometimes used to evaluate the balance of activity between disks.
+iostat 命令通过观察设备活动的时间与其平均传输速率之间的关系，帮助监视系统输入/输出设备的加载情况。它有时用于评估磁盘之间的活动平衡。
 
 ```
 $ iostat
@@ -90,7 +90,7 @@ loop15 0.01 0.01 0.00 20026 0
 loop16 0.00 0.00 0.00 24 0
 ```
 
-Of course, all the stats provided on Linux loop devices can clutter the display when you want to focus solely on your disks. The command, however, does provide the **-p** option, which allows you to just look at your disks — as shown in the commands below.
+当然，当您只想关注磁盘时，Linux loop 设备上提供的所有统计信息都会使结果显得杂乱无章。但是，该命令也确实提供了 **-p** 选项，该选项使您可以仅查看磁盘——如以下命令所示。
 
 ```
 $ iostat -p sda
@@ -104,9 +104,9 @@ sda 1.06 0.89 72.54 2843737 232815784
 sda1 1.04 0.88 72.54 2821733 232815784
 ```
 
-Note that **tps** refers to transfers per second.
+请注意 **tps** 是指每秒的传输量。
 
-You can also get iostat to provide repeated reports. In the example below, we're getting measurements every five seconds by using the **-d** option.
+您还可以让 iostat 提供重复的报告。在下面的示例中，我们使用 **-d** 选项每五秒钟进行一次测量。
 
 ```
 $ iostat -p sda -d 5
@@ -121,7 +121,7 @@ sda 0.80 0.00 11.20 0 56
 sda1 0.80 0.00 11.20 0 56
 ```
 
-If you prefer to omit the first (stats since boot) report, add a **-y** to your command.
+如果您希望省略第一个（自启动以来的统计信息）报告，请在命令中添加 **-y**。
 
 ```
 $ iostat -p sda -d 5 -y
@@ -132,7 +132,7 @@ sda 0.80 0.00 11.20 0 56
 sda1 0.80 0.00 11.20 0 56
 ```
 
-Next, we look at our second disk drive.
+接下来，我们看第二个磁盘驱动器。
 
 ```
 $ iostat -p sdb
@@ -149,7 +149,7 @@ sdb1 0.00 0.01 0.00 35344 0
 
 ### iotop
 
-The **iotop** command is top-like utility for looking at disk I/O. It gathers I/O usage information provided by the Linux kernel so that you can get an idea which processes are most demanding in terms in disk I/O. In the example below, the loop time has been set to 5 seconds. The display will update itself, overwriting the previous output.
+**iotop** 命令是类似 top 的实用程序，用于查看磁盘 I/O。它收集 Linux 内核提供的 I/O 使用信息，以便您了解哪些进程在磁盘 I/O 方面的要求最高。在下面的示例中，循环时间被设置为5秒。显示将自动更新，覆盖前面的输出。
 
 ```
 $ sudo iotop -d 5
@@ -167,7 +167,7 @@ Current DISK READ: 0.00 B/s | Current DISK WRITE: 12.39 K/s
 
 ### ioping
 
-The **ioping** command is an altogether different type of tool, but it can report disk latency — how long it takes a disk to respond to requests — and can be helpful in diagnosing disk problems.
+**ioping** 命令是一种完全不同的工具，但是它可以报告磁盘延迟——也就是磁盘响应请求需要多长时间，而这有助于诊断磁盘问题。
 
 ```
 $ sudo ioping /dev/sda1
@@ -184,7 +184,7 @@ min/avg/max/mdev = 831.0 us / 947.9 us / 1.17 ms / 158.0 us
 
 ### atop
 
-The **atop** command, like **top** provides a lot of information on system performance, including some stats on disk activity.
+**atop** 命令，像 **top** 一样提供了大量有关系统性能的信息，包括有关磁盘活动的一些统计信息。
 
 ```
 ATOP - butterfly 2018/12/26 17:24:19 37d3h13m------ 10ed
@@ -212,7 +212,7 @@ NET | enp0s25 0% | pcki 10 | pcko 8 | si 1 Kbps | so 3 Kbp0.73 ms |
  3362 0.00s 0.00s 0K 0K NE 0 0 E - 0% <sleep>
 ```
 
-If you want to look at _just_ the disk stats, you can easily manage that with a command like this:
+如果您 _只_ 想查看磁盘统计信息，则可以使用以下命令轻松进行管理：
 
 ```
 $ atop | grep DSK
@@ -228,11 +228,11 @@ DSK |          sda | busy 2% | read 0 | write 92 | avio 2.43 ms |
 ^C
 ```
 
-### Being in the know with disk I/O
+### 了解磁盘 I/O
 
-Linux provides enough commands to give you good insights into how hard your disks are working and help you focus on potential problems or slowdowns. Hopefully, one of these commands will tell you just what you need to know when it's time to question disk performance. Occasional use of these commands will help ensure that especially busy or slow disks will be obvious when you need to check them.
+Linux 提供了足够的命令，可以让您很好地了解磁盘的工作强度，并帮助您关注潜在的问题或慢速。希望这些命令中的一个可以告诉您何时需要质疑磁盘性能。偶尔使用这些命令将有助于确保当您需要检查磁盘，特别是忙碌或缓慢的磁盘时可以显而易见地发现它们。
 
-Join the Network World communities on [Facebook][2] and [LinkedIn][3] to comment on topics that are top of mind.
+加入 [Facebook][2] 和 [LinkedIn][3] 上的 Network World 社区，对最重要的话题发表评论。
 
 --------------------------------------------------------------------------------
 
