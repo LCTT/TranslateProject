@@ -17,13 +17,17 @@ Linux容器和[Kubernetes][3]正在改变团队交互的方式。此外，你可
 
 考虑一下你需要多快才能参与到竞争当中。如果你对于无法对于DevOps和每周一个迭代周期充满信心，那么考虑一下当那个创业公司将AI驱动的过程指向你时会发生什么？现在是时候转向DevOps的工作方式了，否认就会像你的竞争对手一样被甩在后面。
 
-### How are containers changing how teams work?
+### 容器技术如何改变团队的工作？
 
-DevOps has frustrated many groups trying to scale this way of working to a bigger group. Many IT (and business) people are suspicious of agile: They've heard it all before - languages, frameworks, and now models (like DevOps), all promising to revolutionize application development and IT process.
+DevOps使得许多试图将这种工作方式扩展到更大范围的团队感到沮丧。即使许多IT(和业务)人员之前都听说过语言、框架、模型(如DevOps)等承诺将会彻底应用程序开发和IT过程的全部相关内容，但他们还是对于敏捷持怀疑态度。
 
-**[ Want DevOps advice from other CIOs? See our comprehensive resource, [DevOps: The IT Leader's Guide][5]. ]**
+**[ 想要获取来自其他CIO们的建议吗？不放参考下我们的综述性资源, [DevOps: The IT Leader's Guide][5]. ]**
 
-It's not easy to "sell" quick development sprints to your stakeholders, either. Imagine if you bought a house this way. You're not going to pay a fixed amount to your builder anymore. Instead, you get something like: "We'll pour the foundation in 4 weeks and it will cost x. Then we'll frame. Then we'll do electrical. But we only know the timing on the foundation right now." People are used to buying homes with a price up front and a schedule.
+向你的涉众“推销”快速开发冲刺也不是一件容易的事情。
+
+想象一下，如果你以这种方式买了一栋房子。你不再需要向建造者支付固定的金额。相反，你会得到这样的信息:“我们将在4周内倒好粉底，它的成本是x。然后我们将构建框架。”然后我们要做电学。但我们现在只知道基金会成立的时间。”人们已经习惯了买房子的时候有一个预先的价格和时间表。
+
+Imagine if you bought a house this way. You're not going to pay a fixed amount to your builder anymore. Instead, you get something like: "We'll pour the foundation in 4 weeks and it will cost x. Then we'll frame. Then we'll do electrical. But we only know the timing on the foundation right now." People are used to buying homes with a price up front and a schedule.
 
 The challenge is that building software is not like building a house. The same builder builds thousands of houses that are all the same. Software projects are never the same. This is your first hurdle to get past.
 
