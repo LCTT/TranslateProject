@@ -1,39 +1,48 @@
 wenwensnow is translating
-Go on very small hardware (Part 1)
+
+Go on very small hardware (Part 1) Go语言在极小硬件上的运用（第一部分）
 ============================================================
 
 
-How low we can  _Go_  and still do something useful?
-
+How low we can  _Go_  and still do something useful?
+_Go_ 语言，能在多低下的配置上运行并发挥作用呢？
 I recently bought this ridiculously cheap board:
+我最近购买了一个特别便宜的开发板：
 
  [![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/board.jpg)][2] 
 
+
 I bought it for three reasons. First, I have never dealt (as a programmer) with STM32F0 series. Second, the STM32F10x series is getting old. MCUs belonging to the STM32F0 family are just as cheap if not cheaper and has newer peripherals, with many improvements and bugs fixed. Thirdly, I chose the smallest member of the family for the purpose of this article, to make the whole thing a little more intriguing.
+我购买它的理由有三个。首先，我（作为程序员）从未接触过STM320系列的开发板。其次， STM32F10x系列使用的频率也在降低。STM320系列的MCU很便宜，有更新的外设，对系列产品进行了改进，问题修复也做得更好了。最后，我为了这篇文章，选用了这一系列中最低配置的开发板，整件事情就变得有趣起来了。
 
-### The Hardware
 
-The [STM32F030F4P6][3] is impresive piece of hardware:
+### 硬件部分
 
-*   CPU: [Cortex M0][1] 48 MHz (only 12000 logic gates, in minimal configuration),
+[STM32F030F4P6][3] 给人留下了很深的印象：
+
+*   CPU: [Cortex M0][1] 48 MHz (最低配置，只有12000个逻辑门电路),
 
 *   RAM: 4 KB,
 
 *   Flash: 16 KB,
 
-*   ADC, SPI, I2C, USART and a couple of timers,
+*   ADC, SPI, I2C, USART 和几个定时器,
 
 all enclosed in TSSOP20 package. As you can see, it is very small 32-bit system.
+以上这些采用了TSSOP20封装。正如你所见，这是一个很小的32位系统。
 
-### The software
+### 软件部分
 
-If you hoped to see how to use [genuine Go][4] to program this board, you need to read the hardware specification one more time. You must face the truth: there is a negligible chance that someone will ever add support for Cortex-M0 to the Go compiler and this is just the beginning of work.
+If you hoped to see how to use [Go][4] to program this board, you need to read the hardware specification one more time. You must face the truth: there is a negligible chance that someone will ever add support for Cortex-M0 to the Go compiler and this is just the beginning of work.
+如果你想知道如何在这块开发板上使用 [Go][4] 编程，你需要反复阅读硬件手册。你必须明白：有人在Go 编译器中给Cortex-M0提供支持，可能性很小。而且，这还仅仅只是第一个要解决的问题。
 
-I’ll use [Emgo][5], but don’t worry, you will see that it gives you as much Go as it can on such small system.
+I’ll use [Emgo][5], but don’t worry, you will see that it gives you as much Go as it can on such small system.
+我会使用[Emgo][5]，但别担心，你会在之后看到，它如何让Go在如此小的系统上尽可能发挥作用。
 
-There was no support for any F0 MCU in [stm32/hal][6] before this board arrived to me. After brief study of [RM][7], the STM32F0 series appeared to be striped down STM32F3 series, which made work on new port easier.
+There was no support for any F0 MCU in [stm32/hal][6] before this board arrived to me. After brief study of [RM][7], the STM32F0 series appeared to be striped down STM32F3 series, which made work on new port easier.
+在我拿到这块开发板之前，对 [stm32/hal][6] 系列下的F0 MCU 没有任何支持。在简单研究 [参考手册][7]后，我发现 STM32F0系列是STM32F3的一个基础，这让
 
-If you want to follow subsequent steps of this post, you need to install Emgo
+如果你想接着本文的步骤做下去，需要先安装Emgo 
 
 ```
 cd $HOME
@@ -43,7 +52,7 @@ go install
 
 ```
 
-and set a couple environment variables
+然后设置一下环境变量
 
 ```
 export EGCC=path_to_arm_gcc      # eg. /usr/local/arm/bin/arm-none-eabi-gcc
@@ -59,11 +68,13 @@ export EGTARGET=f030x6
 
 ```
 
-A more detailed description can be found on the [Emgo website][8].
+更详细的说明可以在 [Emgo][8]网站上找到。
 
 Ensure that egc is on your PATH. You can use `go build` instead of `go install` and copy egc to your  _$HOME/bin_  or  _/usr/local/bin_ .
 
-Now create new directory for your first Emgo program and copy example linker script there:
+要确保 egc 在你的PATH 中。 你可以使用 `go build` 来代替 `go install`,然后把 egc 复制到你的 _$HOME/bin_ 或  _/usr/local/bin_ 中。
+
+现在为你的第一个Emgo程序创建一个新文件夹，随后把示例中链接器脚本复制过来：
 
 ```
 mkdir $HOME/firstemgo
@@ -72,9 +83,9 @@ cp $EGPATH/src/stm32/examples/f030-demo-board/blinky/script.ld .
 
 ```
 
-### Minimal program
+### 最基本程序
 
-Lets create minimal program in  _main.go_  file:
+在 _main.go_ 文件中创建一个最基本的程序：
 
 ```
 package main
@@ -84,7 +95,7 @@ func main() {
 
 ```
 
-It’s actually minimal and compiles witout any problem:
+文件编译没有出现任何问题：
 
 ```
 $ egc
@@ -94,9 +105,10 @@ $ arm-none-eabi-size cortexm0.elf
 
 ```
 
+第一次编译可能会花点时间。编译后产生的二进制占用了7624个字节的Flash空间（文本+数据）。对于一个什么都没做的程序来说，所占用的空间有些大。还剩下8760字节，可以用来做些有用的事。 
 The first compilation can take some time. The resulting binary takes 7624 bytes of Flash (text+data), quite a lot for a program that does nothing. There are 8760 free bytes left to do something useful.
 
-What about traditional  _Hello, World!_  code:
+不妨试试传统的 _Hello, World!_  程序：
 
 ```
 package main
@@ -109,7 +121,7 @@ func main() {
 
 ```
 
-Unfortunately, this time it went worse:
+不幸的是，这次结果有些糟糕：
 
 ```
 $ egc
@@ -119,13 +131,15 @@ exit status 1
 
 ```
 
- _Hello, World!_  requires at last STM32F030x6, with its 32 KB of Flash.
+ _Hello, World!_   需要 STM32F030x6 上的 至少32KB 的Flash空间.
 
-The  _fmt_  package forces to include whole  _strconv_  and  _reflect_  packages. All three are pretty big, even a slimmed-down versions in Emgo. We must forget about it. There are many applications that don’t require fancy formatted text output. Often one or more LEDs or seven segment display are enough. However, in Part 2, I’ll try to use  _strconv_  package to format and print some numbers and text over UART.
+The  _fmt_  package forces to include whole  _strconv_  and  _reflect_  packages. All three are pretty big, even a slimmed-down versions in Emgo. We must forget about it. There are many applications that don’t require fancy formatted text output. Often one or more LEDs or seven segment display are enough. However, in Part 2, I’ll try to use  _strconv_  package to format and print some numbers and text over UART.
+_fmt_ 包强制包含整个 _strconv_ 和  _reflect_ 包。这三个包，即使在精简版本中的Emgo中，占用空间也很大。我们不能使用这个例子了。有很多的应用不需要好看的文本输出。通常，一个或多个LED，或者七段数码管显示就足够了。不过，在第二部分，我会尝试使用 _strconv_ 包来格式化，并在UART 上显示一些数字和文本。
 
-### Blinky
 
-Our board has one LED connected between PA4 pin and VCC. This time we need a bit more code:
+### 闪烁
+
+我们的开发板上有一个与PA4引脚和 VCC 相连的LED。这次我们的代码稍稍长了一些： 
 
 ```
 package main
@@ -162,21 +176,24 @@ func main() {
 
 ```
 
-By convention, the  _init_  function is used to initialize the basic things and configure peripherals.
+By convention, the  _init_  function is used to initialize the basic things and configure peripherals.
+按照惯例， _init_ 函数用来初始化和配置外设。 
 
-`system.SetupPLL(8, 1, 48/8)` configures RCC to use PLL with external 8 MHz oscilator as system clock source. PLL divider is set to 1, multipler to 48/8 = 6 which gives 48 MHz system clock.
+`system.SetupPLL(8, 1, 48/8)` 用来配置RCC，将外部的8 MHz振荡器的PLL作为系统时钟源。PLL 分频器设置为1，倍频数 设置为 48/8 =6，这样系统时钟频率为48MHz.
 
-`systick.Setup(2e6)` setups Cortex-M SYSTICK timer as system timer, which runs the scheduler every 2e6 nanoseconds (500 times per second).
+`systick.Setup(2e6)` 将 Cortex-M SYSTICK 时钟作为系统时钟，每隔 2e6次纳秒运行一次（每秒钟500次）。 
 
-`gpio.A.EnableClock(false)` enables clock for GPIO port A.  _False_  means that this clock should be disabled in low-power mode, but this is not implemented int STM32F0 series.
+`gpio.A.EnableClock(false)` 
+enables clock for GPIO port A.  _False_  means that this clock should be disabled in low-power mode, but this is not implemented int STM32F0 series.
+开启了 GPIO A 口的时钟。 _False_ 意味着这一时钟在低功耗模式下会被禁用，但在STM32F0系列中没有实现这一模式。
 
-`led.Setup(cfg)` setups PA4 pin as open-drain output.
+`led.Setup(cfg)` 设置 PA4 引脚为开漏输出.
 
-`led.Clear()` sets PA4 pin low, which in open-drain configuration turns the LED on.
+`led.Clear()` 将 PA4 引脚设为低, 在开漏设置中，打开LED.
 
-`led.Set()` sets PA4 to high-impedance state, which turns the LED off.
+`led.Set()` 将 PA4 设为高电平状态 , 意为关掉LED.
 
-Lets compile this code:
+ 编译这个代码：
 
 ```
 $ egc
@@ -187,8 +204,10 @@ $ arm-none-eabi-size cortexm0.elf
 ```
 
 As you can see, blinky takes 2320 bytes more than minimal program. There are still 6440 bytes left for more code.
+正如你所看到的，闪烁占用了2320 字节，比最小程序占用空间要大。还有6440字节的剩余空间。
 
-Let’s see if it works:
+
+看看代码是否能运行：
 
 ```
 $ openocd -d0 -f interface/stlink.cfg -f target/stm32f0x.cfg -c 'init; program cortexm0.elf; reset run; exit'
@@ -214,15 +233,18 @@ adapter speed: 950 kHz
 
 ```
 
-For this article, the first time in my life, I converted short video to [animated PNG][9] sequence. I’m impressed, goodbye YouTube and sorry IE users. See [apngasm][10] for more info. I should study HTML5 based alternative, but for now, APNG is my preffered way for short looped videos.
+For this article, the first time in my life, I converted short video to [animated PNG][9] sequence. I’m impressed, goodbye YouTube and sorry IE users. See [apngasm][10] for more info. I should study HTML5 based alternative, but for now, APNG is my preffered way for short looped videos.
+在这篇文章中，这是我第一次，将一个短视频转换成[动画PNG][9]。我对此印象很深，再见了 YouTube. 对于IE用户，我很抱歉，更多信息请看[apngasm][10].我本应该学习 HTML5，但现在，APNG是我最喜欢的用来展现循环短视频的方法了。 
 
 ![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/blinky.png)
 
-### More Go
+### 更多的Go语言编程
 
-If you aren’t a Go programmer but you’ve heard something about Go language, you can say: “This syntax is nice, but not a significant improvement over C. Show me  _Go language_ , give mi  _channels_  and  _goroutines!_ ”.
+If you aren’t a Go programmer but you’ve heard something about Go language, you can say: “This syntax is nice, but not a significant improvement over C. Show me  _Go language_ , give mi  _channels_  and  _goroutines!_ ”.
+如果你不是一个Go 程序员，但是你已经听说过一些关于Go 语言的事情，你可能会说：“这语法很好，但跟C比起来，没有明显的提升.给我看看 _Go 语言_ 的  _channels_ 和  _goroutines!”
 
-Here you are:
+
+接下来我会一一展示:
 
 ```
 import (
@@ -264,9 +286,10 @@ func main() {
 
 ```
 
-Code changes are minor: the second LED was added and the previous  _main_  function was renamed to  _blinky_  and now requires two parameters.  _Main_  starts first  _blinky_  in new goroutine, so both LEDs are handled  _concurrently_ . It is worth mentioning that  _gpio.Pin_  type supports concurrent access to different pins of the same GPIO port.
+Code changes are minor: the second LED was added and the previous  _main_  function was renamed to  _blinky_  and now requires two parameters.  _Main_  starts first  _blinky_  in new goroutine, so both LEDs are handled  _concurrently_ . It is worth mentioning that  _gpio.Pin_  type supports concurrent access to different pins of the same GPIO port.
+代码改动很小: 添加了第二个LED，上一个例子中的 _main_ 函数被重命名为 _blinky_ 并且需要提供两个参数. _Main_ 在新的goroutine 中先调用 _blinky_, 所以两个LED灯在并行使用. 值得一提的是，  _gpio.Pin_  可以同时访问同一GPIO口的不同引脚。 
 
-Emgo still has several shortcomings. One of them is that you have to specify a maximum number of goroutines (tasks) in advance. It’s time to edit  _script.ld_ :
+Emgo 还有很多不足。其中之一就是你需要提前规定goroutines(tasks)的最大执行数量.是时候修改 _script.ld_ 了:
 
 ```
 ISRStack = 1024;
@@ -282,6 +305,9 @@ INCLUDE noos-cortexm
 
 The size of the stacks are set by guess, and we’ll not care about them at the moment.
 
+栈的大小需要靠猜，现在还不用关心这一点。
+
+
 ```
 $ egc
 $ arm-none-eabi-size cortexm0.elf
@@ -289,14 +315,15 @@ $ arm-none-eabi-size cortexm0.elf
   10020     172     172   10364    287c cortexm0.elf
 
 ```
+另一个LED 和 goroutine 一共占用了248字节的Flash空间.
 
-Another LED and goroutine costs 248 bytes of Flash.
 
 ![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/goroutines.png)
 
 ### Channels
 
-Channels are the [preffered way][11] in Go to communicate between goroutines. Emgo goes even further and allows to use  _buffered_  channels by  _interrupt handlers_ . The next example actually shows such case.
+Channels 是Go语言中goroutines之间相互通信的一种[推荐方式][11]. Emgo goes even further and allows to use  _buffered_  channels by  _interrupt handlers_ . The next example actually shows such case.
+Emgo 甚至能允许通过 _中断处理_ 来使用缓冲channel. 下一个例子就展示了这种情况.
 
 ```
 package main
@@ -380,31 +407,33 @@ var ISRs = [...]func(){
 
 ```
 
-Changes compared to the previous example:
+Changes compared to the previous example: 与之前例子相比较之下的不同:
 
 1.  Thrid LED was added and connected to PA9 pin (TXD pin on UART header).
+1. 添加了第三个LED，并连接到 PA9 引脚.（UART头的TXD引脚）
 
-2.  The timer (TIM3) has been introduced as a source of interrupts.
+2. 时钟（TIM3）作为中断源.
 
-3.  The new  _timerISR_  function handles  _irq.TIM3_  interrupt.
+3. 新函数 _timerISR_  用来处理  _irq.TIM3_ 的中断.
 
-4.  The new buffered channel with capacity 1 is intended for communication between  _timerISR_  and  _blinky_  goroutines.
+4. 新增容量为1 的缓冲channel 是为了 _timerISR_ 和  _blinky_  goroutines 之间的通信.
 
-5.  The  _ISRs_  array acts as  _interrupt vector table_ , a part of bigger  _exception vector table_ .
+5. _ISRs_ 数组作为 _中断向量表_，是 _异常向量表_ 的一部分. 
 
-6.  The  _blinky’s for statement_  was replaced with a  _range statement_ .
+6.   _blinky中的for语句_  被替换成  _range语句_ .
 
-For convenience, all LEDs, or rather their pins, have been collected in the  _leds_  array. Additionally, all pins have been set to a known initial state (high), just before they were configured as outputs.
+For convenience, all LEDs, or rather their pins, have been collected in the  _leds_  array. Additionally, all pins have been set to a known initial state (high), just before they were configured as outputs.
+为了方便，所有的LED，或者说他们的引脚，都被放在 _leds_ 这个数组里. 另外， 所有引脚在被配置为输出之前，都设置为一种已知的初始状态（高电平状态）.
 
-In this case, we want the timer to tick at 1 kHz. To configure TIM3 prescaler, we need to known its input clock frequency. According to RM the input clock frequency is equal to APBCLK when APBCLK = AHBCLK, otherwise it is equal to 2 x APBCLK.
+在这个例子里，我们想让时钟以1 kHz的频率运行。为了配置预分频器，我们需要知道它的输入时钟频率。 通过参考手册我们知道，输入时钟频率在  APBCLK = AHBCLK时,与APBCLK 相同，反之等于2倍的APBCLK。
 
-If the CNT register is incremented at 1 kHz, then the value of ARR register corresponds to the period of counter  _update event_  (reload event) expressed in milliseconds. To make update event to generate interrupts, the UIE bit in DIER register must be set. The CEN bit enables the timer.
+如果CNT寄存器增加 1kHz,那么ARR寄存器的值等于 _更新事件_ （重载事件）在毫秒中的计数周期。 为了让更新事件产生中断，必须要设置DIER 寄存器中的UIE位。CEN位能启动时钟。 
 
-Timer peripheral should stay enabled in low-power mode, to keep ticking when the CPU is put to sleep: `timer.EnableClock(true)`. It doesn’t matter in case of STM32F0 but it’s important for code portability.
+时钟外设在低功耗模式下必须启用，为了自身能在CPU处于休眠时保持运行: `timer.EnableClock(true)`。在STM32F0中无所谓，但是对代码可移植性却十分重要。
 
-The  _timerISR_  function handles  _irq.TIM3_  interrupt requests. `timer.SR.Store(0)` clears all event flags in SR register to deassert the IRQ to [NVIC][12]. The rule of thumb is to clear the interrupt flags immedaitely at begining of their handler, because of the IRQ deassert latency. This prevents unjustified re-call the handler again. For absolute certainty, the clear-read sequence should be performed, but in our case, just clearing is enough.
+_timerISR_ 函数处理 _irq.TIM3_ 的中断请求。  `timer.SR.Store(0)` 会清除 SR寄存器里的所有事件标志，无效化 向[NVIC][12]发出的所有中断请求。凭借经验，由于中断请求无效的延时性，需要在程序一开始马上清除所有的中断标志。这避免了无意间再次调用处理。为了确保万无一失，需要先清除标志，再读取，但是在我们的例子中，清除标志就已经足够了。
 
-The following code:
+下面的这几行代码：
 
 ```
 select {
