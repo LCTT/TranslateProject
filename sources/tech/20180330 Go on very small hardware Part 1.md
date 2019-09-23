@@ -8,7 +8,7 @@ _Go_ 语言，能在多低下的配置上运行并发挥作用呢？
 
  [![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/board.jpg)][2] 
 
-我购买它的理由有三个。首先，我（作为程序员）从未接触过STM320系列的开发板。其次， STM32F10x系列使用频率也在降低。STM320系列的MCU很便宜，有更新的外设，对系列产品进行了改进，问题修复也做得更好了。最后，我为了这篇文章，选用了这一系列中最低配置的开发板，整件事情就变得有趣起来了。
+我购买它的理由有三个。首先，我（作为程序员）从未接触过STM320系列的开发板。其次， STM32F10x系列使用频率也在降低。STM320系列的MCU很便宜，有更新的外设，对系列产品进行了改进，问题修复也做得更好了。最后，为了这篇文章，我选用了这一系列中最低配置的开发板，整件事情就变得有趣起来了。
 
 
 ### 硬件部分
@@ -220,7 +220,6 @@ adapter speed: 950 kHz
 
 ### 更多的Go语言编程
 
-If you aren’t a Go programmer but you’ve heard something about Go language, you can say: “This syntax is nice, but not a significant improvement over C. Show me  _Go language_ , give mi  _channels_  and  _goroutines!_ ”.
 如果你不是一个Go 程序员，但你已经听说过一些关于Go 语言的事情，你可能会说：“Go语法很好，但跟C比起来，并没有明显的提升.让我看看 _Go 语言_ 的  _channels_ 和  _goroutines!”
 
 
