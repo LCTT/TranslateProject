@@ -28,7 +28,6 @@ Before I started writing any code, I outlined the ingredients I needed to create
   5. Create the endgame logic
 
 
-
 ### Print a minefield
 
 In Minesweeper, the game world is a 2D array (columns and rows) of concealed cells. Each cell may or may not contain an explosive mine. The player's objective is to reveal cells that contain no mine, and to never reveal a mine. Bash version of the game uses a 10x10 matrix, implemented using simple bash arrays.
