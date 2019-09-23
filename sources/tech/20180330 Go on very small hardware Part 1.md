@@ -446,10 +446,12 @@ default:
 ```
 
 is a Go way to non-blocking sending on a channel. No one interrupt handler can afford to wait for a free space in the channel. If the channel is full, the default case is taken, and the onboard LED is set on, until the next interrupt.
+这是Go 语言中，如何在channel 中非阻塞的发送消息。 中断处理程序无法一直等待channel 中的空余空间。如果channel已满，则执行default,开发板上的LED就会开启，直到下一次中断。
 
-The  _ISRs_  array contains interrupt vectors. The `//c:__attribute__((section(".ISRs")))` causes that the linker will inserted it into .ISRs section.
+The  _ISRs_  array contains interrupt vectors. The `//c:__attribute__((section(".ISRs")))` causes that the linker will inserted it into .ISRs section.
+_ISRs_ 数组包含了中断向量表。 `//c:__attribute__((section(".ISRs")))` 会导致链接器将数组插入到 .ISRs section 中。
 
-The new form of  _blinky’s for_  loop:
+_blinky’s for_  循环的新写法：
 
 ```
 for range ch {
@@ -461,7 +463,7 @@ for range ch {
 
 ```
 
-is the equivalent of:
+等价于:
 
 ```
 for {
@@ -479,7 +481,10 @@ for {
 
 Note that in this case we aren’t interested in the value received from the channel. We’re interested only in the fact that there is something to receive. We can give it expression by declaring the channel’s element type as empty struct `struct{}` instead of  _int_  and send `struct{}{}` values instead of 0, but it can be strange for newcomer’s eyes.
 
-Lets compile this code:
+注意，在这个例子中，我们不在意channel中收到的值，我们只对其接受到的消息感兴趣。我们可以在声明时，将channel元素类型 中的 _int_ 用空的结构体来代替，发送消息时， 用`struct{}{}` 结构体的值代替0，但这一部分对新手来说可能会有些奇怪。 
+
+
+让我们来编译一下代码:
 
 ```
 $ egc
@@ -489,7 +494,7 @@ $ arm-none-eabi-size cortexm0.elf
 
 ```
 
-This new example takes 11324 bytes of Flash, 1132 bytes more than the previous one.
+新的例子占用了11324字节的Flash 空间，比上一个例子多占用了1132字节。
 
 With the current timings, both  _blinky_  goroutines consume from the channel much faster than the  _timerISR_  sends to it. So they both wait for new data simultaneously and you can observe the randomness of  _select_ , required by the [Go specification][13].
 
