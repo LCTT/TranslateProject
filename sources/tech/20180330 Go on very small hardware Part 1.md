@@ -467,7 +467,6 @@ $ arm-none-eabi-size cortexm0.elf
 
 采用现在的时序，两个 _blinky_ goroutines 从channel 中获取数据的速度，比 _timerISR_ 发送数据的速度要快。所以它们在同时等待新数据，你还能观察到 _select_ 的随机性，这也是[Go 规范][13]所要求的.
 
-
 ![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/channels1.png)
 
 开发板上的LED一直没有亮起，说明channel 从未出现过溢出。
