@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wenwensnow)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -26,7 +26,6 @@ Before I started writing any code, I outlined the ingredients I needed to create
   3. Create logic to determine the available minefield
   4. Keep count of available and discovered (extracted) mines
   5. Create the endgame logic
-
 
 
 ### Print a minefield
