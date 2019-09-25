@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (heguangzhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,26 +7,26 @@
 [#]: via: (https://www.linuxtechi.com/configure-static-ip-address-rhel8/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-Different Ways to Configure Static IP Address in RHEL 8
-======
+在 RHEL8 配置静态 IP 地址的不同方法
 
-While Working on **Linux Servers**, assigning Static IP address on NIC / Ethernet cards is one of the common tasks that every Linux engineer do. If one configures the **Static IP address** correctly on a Linux server then he/she can access it remotely over network. In this article we will demonstrate what are different ways to assign Static IP address on RHEL 8 Server’s NIC.
+======
+在 **Linux服务器** 上工作时，在网卡/以太网卡上分配静态 IP 地址是每个 Linux 工程师的常见任务之一。如果一个人在Linux 服务器上正确配置了静态地址，那么他/她就可以通过网络远程访问它。在本文中，我们将演示在 RHEL 8 服务器网卡上配置静态 IP 地址的不同方法。
+
 
 [![Configure-Static-IP-RHEL8][1]][2]
 
-Following are the ways to configure Static IP on a NIC,
+以下是在网卡上配置静态IP的方法：
+  
+  * nmcli (命令行工具)
+  * 网络脚本文件(ifcfg-*)
+  * nmtui  (基于文本的用户界面)
 
-  * nmcli (command line tool)
-  * Network Scripts files(ifcfg-*)
-  * nmtui  (text based user interface)
 
+### 使用 nmcli 命令行工具配置静态 IP 地址
 
+每当我们安装 RHEL 8 服务器时，就会自动安装命令行工具 ‘**nmcli**’ ，网络管理器使用 nmcli，并允许我们在以太网卡上配置静态 IP 地址。
 
-### Configure Static IP Address using nmcli command line tool
-
-Whenever we install RHEL 8 server then ‘**nmcli**’, a command line tool is installed automatically, nmcli is used by network manager and allows us to configure static ip address on Ethernet cards.
-
-Run the below ip addr command to list Ethernet cards on your RHEL 8 server
+运行下面的 ip addr 命令，列出 RHEL 8 服务器上的以太网卡 
 
 ```
 [root@linuxtechi ~]# ip addr
@@ -34,9 +34,10 @@ Run the below ip addr command to list Ethernet cards on your RHEL 8 server
 
 ![ip-addr-command-rhel8][1]
 
-As we can see in above command output, we have two NICs enp0s3 &amp; enp0s8. Currently ip address assigned to the NIC is via dhcp server.
 
-Let’s assume we want to assign the static IP address on first NIC (enp0s3) with the following details,
+正如我们在上面的命令输出中看到的，我们有两个网卡 enp0s3 &amp; ampenp0s8。当前分配给网卡的 IP 地址是通过 DHCP 服务器获得的 。 
+
+假设我们希望在第一个网卡 (enp0s3) 上分配静态IP地址，具体内容如下: 
 
   * IP address = 192.168.1.4
   * Netmask = 255.255.255.0
@@ -44,10 +45,9 @@ Let’s assume we want to assign the static IP address on first NIC (enp0s3) wit
   * DNS = 8.8.8.8
 
 
+依次运行以下 nmcli 命令来配置静态 IP，
 
-Run the following nmcli commands one after the another to configure static ip,
-
-List currently active Ethernet cards using “**nmcli connection**” command,
+使用“**nmcli connection **”命令列出当前活动的以太网卡， 
 
 ```
 [root@linuxtechi ~]# nmcli connection
@@ -56,44 +56,46 @@ enp0s3  7c1b8444-cb65-440d-9bf6-ea0ad5e60bae  ethernet  enp0s3
 virbr0  3020c41f-6b21-4d80-a1a6-7c1bd5867e6c  bridge    virbr0
 [root@linuxtechi ~]#
 ```
+在 nmcli 命令下使用，在 enp0s3 上分配静态 IP。
 
-Use beneath nmcli command to assign static ip on enp0s3,
 
-**Syntax:**
 
-# nmcli connection modify &lt;interface_name&gt; ipv4.address  &lt;ip/prefix&gt;
+**句法:**
 
-**Note:** In short form, we usually replace connection with ‘con’ keyword and modify with ‘mod’ keyword in nmcli command.
+nmcli connection modify &lt;interface_name&gt; ipv4.address  &lt;ip/prefix&gt;
 
-Assign ipv4 (192.168.1.4) to enp0s3 interface,
+
+**注意:** 简化语句，在 nmcli 命令中，我们通常用 “con” 关键字替换连接，并用 “mod”关 键字进行修改。 
+
+将 ipv4 (192.168.1.4) 分配给 enp0s3 网卡上。
 
 ```
 [root@linuxtechi ~]# nmcli con mod enp0s3 ipv4.addresses 192.168.1.4/24
 [root@linuxtechi ~]#
 ```
 
-Set the gateway using below nmcli command,
+使用下面的 nmcli 命令设置网关， 
 
 ```
 [root@linuxtechi ~]# nmcli con mod enp0s3 ipv4.gateway 192.168.1.1
 [root@linuxtechi ~]#
 ```
 
-Set the manual configuration (from dhcp to static),
+设置手动配置(从dhcp到static)，
 
 ```
 [root@linuxtechi ~]# nmcli con mod enp0s3 ipv4.method manual
 [root@linuxtechi ~]#
 ```
 
-Set DNS value as “8.8.8.8”,
+设置 DNS 值为 “8.8.8.8”,
 
 ```
 [root@linuxtechi ~]# nmcli con mod enp0s3 ipv4.dns "8.8.8.8"
 [root@linuxtechi ~]#
 ```
 
-To save the above changes and to reload the interface execute the beneath nmcli command,
+要保存上述更改并重新加载，请执行 nmcli 如下命令，
 
 ```
 [root@linuxtechi ~]# nmcli con up enp0s3
@@ -101,7 +103,7 @@ Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkMa
 [root@linuxtechi ~]#
 ```
 
-Above command output confirms that interface enp0s3 has been configured successfully.Whatever the changes we have made using above nmcli commands, those changes is saved permanently under the file “etc/sysconfig/network-scripts/ifcfg-enp0s3”
+以上命令显示网卡 enp0s3 已成功配置。 我们使用 nmcli 命令进行了那些更改都将永久保存在文件“etc/sysconfig/network-scripts/ifcfg-enp0s3” 里。
 
 ```
 [root@linuxtechi ~]# cat /etc/sysconfig/network-scripts/ifcfg-enp0s3
@@ -109,15 +111,16 @@ Above command output confirms that interface enp0s3 has been configured successf
 
 ![ifcfg-enp0s3-file-rhel8][1]
 
-To Confirm whether IP address has been to enp0s3 interface use the below ip command,
+要确认 IP 地址是否分配给了 enp0s3 网卡了，请使用以下 IP 命令查看，
+
 
 ```
 [root@linuxtechi ~]#ip addr show enp0s3
 ```
 
-### Configure Static IP Address manually using network-scripts (ifcfg-) files
+### 使用网络脚本文件(ifcfg-)手动配置静态 IP 地址
 
-We can configure the static ip address to an ethernet card using its network-script or ‘ifcfg-‘ files. Let’s assume we want to assign the static ip address on our second Ethernet card ‘enp0s8’.
+我们可以使用配置以太网卡的网络脚本或“ifcfg-”文件来配置以太网卡的静态 IP 地址。假设我们想在第二个以太网卡 “enp0s8” 上分配静态IP 地址：
 
   * IP= 192.168.1.91
   * Netmask / Prefix = 24
@@ -125,8 +128,7 @@ We can configure the static ip address to an ethernet card using its network-scr
   * DNS1=4.2.2.2
 
 
-
-Go to the directory “/etc/sysconfig/network-scripts” and look for the file ‘ifcfg- enp0s8’, if it does not exist then create it with following content,
+转到目录 "/etc/sysconfig/network-scripts "，查找文件 'ifcfg- enp0s8'，如果它不存在，则使用以下内容创建它，
 
 ```
 [root@linuxtechi ~]# cd /etc/sysconfig/network-scripts/
@@ -142,14 +144,16 @@ GATEWAY="192.168.1.1"
 DNS1="4.2.2.2"
 ```
 
-Save and exit the file and then restart network manager service to make above changes into effect,
+
+保存并退出文件，然后重新启动网络管理器服务以使上述更改生效，
 
 ```
 [root@linuxtechi network-scripts]# systemctl restart NetworkManager
 [root@linuxtechi network-scripts]#
 ```
 
-Now use below ip command to verify whether ip address is assigned to nic or not,
+现在使用下面的 IP 命令来验证 IP 地址是否分配给网卡，
+
 
 ```
 [root@linuxtechi ~]# ip add show enp0s8
@@ -162,13 +166,14 @@ Now use below ip command to verify whether ip address is assigned to nic or not,
 [root@linuxtechi ~]#
 ```
 
-Above output confirms that static ip address has been configured successfully on the NIC ‘enp0s8’
 
-### Configure Static IP Address using ‘nmtui’ utility
+以上输出内容确认静态 IP 地址已在网卡“enp0s8”上成功配置了
 
-nmtui is a text based user interface for controlling network manager, when we execute nmtui, it will open a text base user interface through which we can add, modify and delete connections. Apart from this nmtui can also be used to set hostname of your system.
+### 使用 “nmtui” 实用程序配置静态 IP 地址 
 
-Let’s assume we want to assign static ip address to interface enp0s3 with following details,
+nmtui 是一个基于文本用户界面的，用于控制网络的管理器，当我们执行 nmtui 时，它将打开一个基于文本的用户界面，通过它我们可以添加、修改和删除连接。除此之外，nmtui 还可以用来设置系统的主机名。 
+
+假设我们希望通过以下细节将静态 IP 地址分配给网卡 enp0s3 ，
 
   * IP address = 10.20.0.72
   * Prefix = 24
@@ -176,8 +181,7 @@ Let’s assume we want to assign static ip address to interface enp0s3 with foll
   * DNS1=4.2.2.2
 
 
-
-Run nmtui and follow the screen instructions, example is show
+运行 nmtui 并按照屏幕说明操作，示例如下所示
 
 ```
 [root@linuxtechi ~]# nmtui
@@ -185,31 +189,33 @@ Run nmtui and follow the screen instructions, example is show
 
 [![nmtui-rhel8][1]][3]
 
-Select the first option ‘**Edit a connection**‘ and then choose the interface as ‘enp0s3’
+
+选择第一个选项 “**Edit a connection**”，然后选择接口为“enp0s3”
 
 [![Choose-interface-nmtui-rhel8][1]][4]
 
-Choose Edit and then specify the IP address, Prefix, Gateway and DNS Server ip,
+选择编辑，然后指定 IP 地址、前缀、网关和域名系统服务器IP，
 
 [![set-ip-nmtui-rhel8][1]][5]
 
-Choose OK and hit enter. In the next window Choose ‘**Activate a connection**’
+选择确定，然后点击回车。在下一个窗口中，选择 “**Activate a connection**”
+
 
 [![Activate-option-nmtui-rhel8][1]][6]
 
-Select **enp0s3**,  Choose **Deactivate** &amp; hit enter
+选择 **enp0s3**，选择 **Deactivate** &amp; 点击回车
 
 [![Deactivate-interface-nmtui-rhel8][1]][7]
 
-Now choose **Activate** &amp; hit enter,
+现在选择 **Activate** &amp;点击回车，
 
 [![Activate-interface-nmtui-rhel8][1]][8]
 
-Select Back and then select Quit,
+选择“上一步”，然后选择“退出”，
 
 [![Quit-Option-nmtui-rhel8][1]][9]
 
-Use below IP command to verify whether ip address has been assigned to interface enp0s3
+使用下面的 IP 命令验证 IP 地址是否已分配给接口 enp0s3
 
 ```
 [root@linuxtechi ~]# ip add show enp0s3
@@ -222,9 +228,10 @@ Use below IP command to verify whether ip address has been assigned to interface
 [root@linuxtechi ~]#
 ```
 
-Above output confirms that we have successfully assign the static IP address to interface enp0s3 using nmtui utility.
 
-That’s all from this tutorial, we have covered three different ways to configure ipv4 address to an Ethernet card on RHEL 8 system. Please do not hesitate to share feedback and comments in comments section below.
+以上输出内容显示我们已经使用 nmtui 实用程序成功地将静态 IP 地址分配给接口 enp0s3。
+
+以上就是本教程的全部内容，我们已经介绍了在 RHEL 8 系统上为以太网卡配置 ipv4 地址的三种不同方法。请不要犹豫，在下面的评论部分分享反馈和评论。
 
 --------------------------------------------------------------------------------
 
@@ -232,7 +239,7 @@ via: https://www.linuxtechi.com/configure-static-ip-address-rhel8/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[heguangzhi](https://github.com/heguangzhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
