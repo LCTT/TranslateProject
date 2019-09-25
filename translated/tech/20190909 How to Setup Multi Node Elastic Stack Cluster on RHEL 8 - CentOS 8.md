@@ -7,51 +7,53 @@
 [#]: via: (https://www.linuxtechi.com/setup-multinode-elastic-stack-cluster-rhel8-centos8/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-How to Setup Multi Node Elastic Stack Cluster on RHEL 8 / CentOS 8
+如何在 RHEL 8 /CentOS 8 上建立多节点 Elastic stack 集群
 ======
 
-Elastic stack widely known as **ELK stack**, it is a group of opensource products like **Elasticsearch**, **Logstash** and **Kibana**. Elastic Stack is developed and maintained by Elastic company. Using elastic stack, one can feed system’s logs to Logstash, it is a data collection engine which accept the logs or data from all the sources and normalize logs and then it forwards the logs to Elasticsearch for **analyzing**, **indexing**, **searching** and **storing** and finally using Kibana one can represent the visualize data, using Kibana we can also create interactive graphs and diagram based on user’s queries.
+
+Elastic stack 俗称 **ELK stack**，是一组开源产品，如 **Elasticsearch**、**Logstash**和**Kibana**。Elastic Stack 由 Elastic 公司开发和维护。使用 Elastic stack，可以将系统日志发送到 Logstash，它是一个数据收集引擎，接受来自可能任何来源的日志或数据，并对日志进行格式化，然后将日志转发到 Elasticsearch ，用于 **分析**、**索引**、**搜索**和**存储**，最后使用 Kibana 表示为可视化数据，使用 Kibana，我们还可以基于用户的查询创建交互式图表。
+
 
 [![Elastic-Stack-Cluster-RHEL8-CentOS8][1]][2]
 
-In this article we will demonstrate how to setup multi node elastic stack cluster on RHEL 8 / CentOS 8 servers. Following are details for my Elastic Stack Cluster:
+
+在本文中，我们将演示如何在 RHEL 8 / CentOS 8 服务器上设置多节点 elastic stack 集群。以下是我的 Elastic Stack 集群的详细信息: 
 
 ### Elasticsearch:
-
-  * Three Servers with Minimal RHEL 8 / CentOS 8
-  * IPs &amp; Hostname – 192.168.56.40 (elasticsearch1.linuxtechi. local), 192.168.56.50 (elasticsearch2.linuxtechi. local), 192.168.56.60 (elasticsearch3.linuxtechi. local)
-
+  
+  * 三台服务器，最小化安装 RHEL 8 / CentOS 8
+  * IPs &amp; 主机名 – 192.168.56.40 (elasticsearch1.linuxtechi. local), 192.168.56.50 (elasticsearch2.linuxtechi. local), 192.168.56.60 (elasticsearch3.linuxtechi. local)
 
 
 ### Logstash:
 
-  * Two Servers with minimal RHEL 8 / CentOS 8
-  * IPs &amp; Hostname – 192.168.56.20 (logstash1.linuxtechi. local) , 192.168.56.30 (logstash2.linuxtechi. local)
+  * 两台服务器，最小化安装 RHEL 8 / CentOS 8
+  * IPs &amp; 主机 – 192.168.56.20 (logstash1.linuxtechi. local) , 192.168.56.30 (logstash2.linuxtechi. local)
 
 
 
 ### Kibana:
 
-  * One Server with minimal RHEL 8 / CentOS 8
-  * Hostname – kibana.linuxtechi.local
+  * 一台服务器，最小化安装 RHEL 8 / CentOS 8
+  * 主机名 – kibana.linuxtechi.local
   * IP – 192.168.56.10
 
 
 
 ### Filebeat:
 
-  * One Server with minimal CentOS 7
-  * IP &amp; hostname – 192.168.56.70 (web-server)
+  * 一台服务器，最小化安装 CentOS 7
+  * IP &amp;主机名 – 192.168.56.70 (web-server)
 
 
 
-Let’s start with Elasticsearch cluster setup,
+让我们从设置 Elasticsearch 集群开始，
 
-#### Setup 3 node Elasticsearch cluster
+#### 设置3个节点 Elasticsearch 集群
 
-As I have already stated that I have kept nodes for Elasticsearch cluster, login to each node, set the hostname and configure yum/dnf repositories.
+正如我已经说过的，设置 Elasticsearch 集群的节点，登录到每个节点，设置主机名并配置 yum/dnf 库。
 
-Use the below hostnamectl command to set the hostname on respective nodes,
+使用命令 hostnamectl 设置各个节点上的主机名，
 
 ```
 [root@linuxtechi ~]# hostnamectl set-hostname "elasticsearch1.linuxtechi. local"
@@ -65,11 +67,11 @@ Use the below hostnamectl command to set the hostname on respective nodes,
 [root@linuxtechi ~]#
 ```
 
-For CentOS 8 System we don’t need to configure any OS package repository and for RHEL 8 Server, if you have valid subscription and then subscribed it with Red Hat for getting package repository.  In Case you want to configure local yum/dnf repository for OS packages then refer the below url:
+对于 CentOS 8 系统，我们不需要配置任何操作系统包库，对于 RHEL 8服务器，如果您订阅了，然后用红帽订阅以获得包存储库就可以了。如果您想为操作系统包配置本地 yum/dnf 存储库，请参考以下网址:
 
 [How to Setup Local Yum/DNF Repository on RHEL 8 Server Using DVD or ISO File][3]
 
-Configure Elasticsearch package repository on all the nodes, create a file elastic.repo  file under /etc/yum.repos.d/ folder with the following content
+在所有节点上配置 Elasticsearch 包存储库，在 /etc/yum.repo.d/ 文件夹下创建一个包含以下内容的 elastic.repo 文件
 
 ```
 ~]# vi /etc/yum.repos.d/elastic.repo
@@ -83,15 +85,15 @@ autorefresh=1
 type=rpm-md
 ```
 
-save &amp; exit the file
+保存  &amp; 退出文件
 
-Use below rpm command on all three nodes to import Elastic’s public signing key
+在所有三个节点上使用 rpm 命令导入 Elastic 公共签名密钥  
 
 ```
 ~]# rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 ```
 
-Add the following lines in /etc/hosts file on all three nodes,
+在所有三个节点的 /etc/hosts 文件中添加以下行: 
 
 ```
 192.168.56.40             elasticsearch1.linuxtechi.local
@@ -99,7 +101,7 @@ Add the following lines in /etc/hosts file on all three nodes,
 192.168.56.60             elasticsearch3.linuxtechi.local
 ```
 
-Install Java on all three Nodes using yum / dnf command,
+使用 yum/dnf 命令在所有三个节点上安装 Java， 
 
 ```
 [root@linuxtechi ~]# dnf install java-openjdk -y
@@ -107,7 +109,7 @@ Install Java on all three Nodes using yum / dnf command,
 [root@linuxtechi ~]# dnf install java-openjdk -y
 ```
 
-Install Elasticsearch using beneath dnf command on all three nodes,
+使用 dnf 命令在所有三个节点上安装 Elasticsearch， 
 
 ```
 [root@linuxtechi ~]# dnf install elasticsearch -y
@@ -115,7 +117,7 @@ Install Elasticsearch using beneath dnf command on all three nodes,
 [root@linuxtechi ~]# dnf install elasticsearch -y
 ```
 
-**Note:** In case OS firewall is enabled and running in each Elasticsearch node then allow following ports using beneath firewall-cmd command,
+**注意:** 如果操作系统防火墙已启用并在每个 Elasticsearch 节点中运行，则使用 firewall-cmd 命令允许以下端口开放，
 
 ```
 ~]# firewall-cmd --permanent --add-port=9300/tcp
@@ -123,7 +125,7 @@ Install Elasticsearch using beneath dnf command on all three nodes,
 ~]# firewall-cmd --reload
 ```
 
-Configure Elasticsearch, edit the file “**/etc/elasticsearch/elasticsearch.yml**” on all the three nodes and add the followings,
+配置 Elasticsearch, 在所有节点上编辑文件 **/etc/elasticsearch/elasticsearch.yml** 并加入以下内容,
 
 ```
 ~]# vim /etc/elasticsearch/elasticsearch.yml
@@ -137,9 +139,9 @@ cluster.initial_master_nodes: ["elasticsearch1.linuxtechi.local", "elasticsearch
 ……………………………………………
 ```
 
-**Note:** on Each node, add the correct hostname in node.name parameter and ip address in network.host parameter and other parameters will remain the same.
+**注意:** 在每个节点上，在 node.name 中填写正确的主机名，在 network.host 中填写正确的 IP 地址，其他参数将保持不变。 
 
-Now Start and enable the Elasticsearch service on all three nodes using following systemctl command,
+现在使用 systemctl 命令在所有三个节点上启动并启用 Elasticsearch 服务，
 
 ```
 ~]# systemctl daemon-reload
@@ -147,7 +149,7 @@ Now Start and enable the Elasticsearch service on all three nodes using followin
 ~]# systemctl start elasticsearch.service
 ```
 
-Use below ‘ss’ command to verify whether elasticsearch node is start listening on 9200 port,
+使用下面 'ss' 命令验证 elasticsearch 节点是否开始监听9200端口，
 
 ```
 [root@linuxtechi ~]# ss -tunlp | grep 9200
@@ -155,33 +157,33 @@ tcp   LISTEN  0       128       [::ffff:192.168.56.40]:9200              *:*    
 [root@linuxtechi ~]#
 ```
 
-Use following curl commands to verify the Elasticsearch cluster status
+使用以下 curl 命令验证 Elasticsearch 群集状态
 
 ```
 [root@linuxtechi ~]# curl  http://elasticsearch1.linuxtechi.local:9200
 [root@linuxtechi ~]# curl -X GET  http://elasticsearch2.linuxtechi.local:9200/_cluster/health?pretty
 ```
 
-Output above command would be something like below,
+命令的输出如下所示，
 
 ![Elasticsearch-cluster-status-rhel8][1]
 
-Above output confirms that we have successfully created 3 node Elasticsearch cluster and status of cluster is also green.
+以上输出表明我们已经成功创建了3节点的 Elasticsearch 集群，集群的状态也是绿色的。
 
-**Note:** If you want to modify JVM heap size then you have edit the file “**/etc/elasticsearch/jvm.options**” and change the below parameters that suits to your environment,
+**注意:**  如果您想修改 JVM 堆大小，那么您已经编辑了文件 “**/etc/elasticsearch/jvm.options**”，并根据您的环境更改以下参数，
 
   * -Xms1g
   * -Xmx1g
 
 
 
-Now let’s move to Logstash nodes,
+现在让我们转到 Logstash 节点，
 
-#### Install and Configure Logstash
+#### 安装和配置 Logstash
 
-Perform the following steps on both Logstash nodes,
+在两个 Logstash 节点上执行以下步骤， 
 
-Login to both the nodes set the hostname using following hostnamectl command,
+登录到两个节点使用 hostnamectl 命令设置主机名，
 
 ```
 [root@linuxtechi ~]# hostnamectl set-hostname "logstash1.linuxtechi.local"
@@ -192,7 +194,7 @@ Login to both the nodes set the hostname using following hostnamectl command,
 [root@linuxtechi ~]#
 ```
 
-Add the following entries in /etc/hosts file in both logstash nodes
+在两个 logstash 节点的 /etc/hosts 文件中添加以下条目
 
 ```
 ~]# vi /etc/hosts
@@ -201,9 +203,10 @@ Add the following entries in /etc/hosts file in both logstash nodes
 192.168.56.60             elasticsearch3.linuxtechi.local
 ```
 
-Save and exit the file
+保存并退出文件
 
-Configure Logstash repository on both the nodes, create a file **logstash.repo** under the folder /ete/yum.repos.d/ with following content,
+
+在两个节点上配置 Logstash 存储库，在文件夹/ete/yum.repo.d/下创建一个包含以下内容的文件 **logstash.repo**,
 
 ```
 ~]# vi /etc/yum.repos.d/logstash.repo
@@ -217,35 +220,35 @@ autorefresh=1
 type=rpm-md
 ```
 
-Save and exit the file, run the following rpm command to import the signing key
+保存并退出文件，运行 rpm 命令导入签名密钥
 
 ```
 ~]# rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 ```
 
-Install Java OpenJDK on both the nodes using following dnf command,
+使用 dnf 命令在两个节点上安装 Java OpenJDK，
 
 ```
 ~]# dnf install java-openjdk -y
 ```
 
-Run the following dnf command from both the nodes to install logstash,
+从两个节点运行 dnf 命令来安装 logstash，
 
 ```
 [root@linuxtechi ~]# dnf install logstash -y
 [root@linuxtechi ~]# dnf install logstash -y
 ```
 
-Now configure logstash, perform below steps on both logstash nodes,
+现在配置logstash，在两个 logstash 节点上执行以下步骤，
 
-Create a logstash conf file, for that first we have copy sample logstash file under ‘/etc/logstash/conf.d/’
+创建一个 logstash conf 文件，首先我们在 “/etc/logstash/conf.d/” 下复制 logstash 示例文件
 
 ```
 # cd /etc/logstash/
 # cp logstash-sample.conf conf.d/logstash.conf
 ```
 
-Edit conf file and update the following content,
+编辑 conf 文件并更新以下内容，
 
 ```
 # vi conf.d/logstash.conf
@@ -266,23 +269,22 @@ output {
 }
 ```
 
-Under output section, in hosts parameter specify FQDN of all three Elasticsearch nodes, other parameters leave as it is.
+输出部分，在主机参数中指定所有三个 Elasticsearch 节点的 FQDN，其他参数保持不变。
 
-Allow logstash port “5044” in OS firewall using following firewall-cmd command,
+使用 firewall-cmd 命令在操作系统防火墙中允许 logstash 端口 “5044”，
 
 ```
 ~ # firewall-cmd --permanent --add-port=5044/tcp
 ~ # firewall-cmd –reload
 ```
 
-Now start and enable Logstash service, run the following systemctl commands on both the nodes
+现在，在每个节点上运行以下 systemctl 命令，启动并启用 Logstash 服务
 
 ```
 ~]# systemctl start logstash
 ~]# systemctl eanble logstash
 ```
-
-Use below ss command to verify whether logstash service start listening on 5044,
+使用 ss 命令验证 logstash 服务是否开始监听 5044 端口，
 
 ```
 [root@linuxtechi ~]# ss -tunlp | grep 5044
@@ -290,11 +292,11 @@ tcp   LISTEN  0       128                         *:5044                *:*     
 [root@linuxtechi ~]#
 ```
 
-Above output confirms that logstash has been installed and configured successfully. Let’s move to Kibana installation.
+以上输出表明 logstash 已成功安装和配置。让我们转到 Kibana 安装。
 
-#### Install and Configure Kibana
+#### 安装和配置 Kibana
 
-Login to Kibana node, set the hostname with **hostnamectl** command,
+登录 Kibana 节点，使用 **hostnamectl** 命令设置主机名， 
 
 ```
 [root@linuxtechi ~]# hostnamectl set-hostname "kibana.linuxtechi.local"
@@ -302,7 +304,8 @@ Login to Kibana node, set the hostname with **hostnamectl** command,
 [root@linuxtechi ~]#
 ```
 
-Edit /etc/hosts file and add the following lines
+编辑 /etc/hosts 文件并添加以下行
+
 
 ```
 192.168.56.40             elasticsearch1.linuxtechi.local
@@ -310,7 +313,7 @@ Edit /etc/hosts file and add the following lines
 192.168.56.60             elasticsearch3.linuxtechi.local
 ```
 
-Setup the Kibana repository using following,
+使用以下命令设置 Kibana 存储库，
 
 ```
 [root@linuxtechi ~]# vi /etc/yum.repos.d/kibana.repo
@@ -326,13 +329,13 @@ type=rpm-md
 [root@linuxtechi ~]# rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 ```
 
-Execute below dnf command to install kibana,
+执行 dnf 命令安装kibana，
 
 ```
 [root@linuxtechi ~]# yum install kibana -y
 ```
 
-Configure Kibana by editing the file “**/etc/kibana/kibana.yml**”
+通过编辑  “**/etc/kibana/kibana.yml**” 文件，配置 Kibana
 
 ```
 [root@linuxtechi ~]# vim /etc/kibana/kibana.yml
@@ -343,14 +346,15 @@ elasticsearch.hosts: ["http://elasticsearch1.linuxtechi.local:9200", "http://ela
 …………
 ```
 
-Start and enable kibana service
+启动并且启用 kibana 服务
+
 
 ```
 [root@linuxtechi ~]# systemctl start kibana
 [root@linuxtechi ~]# systemctl enable kibana
 ```
 
-Allow Kibana port ‘5601’ in OS firewall,
+在系统防火墙上允许 Kibana 端口 ‘5601‘
 
 ```
 [root@linuxtechi ~]# firewall-cmd --permanent --add-port=5601/tcp
@@ -359,22 +363,25 @@ success
 success
 [root@linuxtechi ~]#
 ```
-
-Access Kibana portal / GUI using the following URL:
+使用以下 URL 访问 Kibana 界面
 
 <http://kibana.linuxtechi.local:5601>
 
 [![Kibana-Dashboard-rhel8][1]][4]
 
-From dashboard, we can also check our Elastic Stack cluster status
+从 面板上，我们可以检查 Elastic Stack 集群的状态
 
 [![Stack-Monitoring-Overview-RHEL8][1]][5]
 
-This confirms that we have successfully setup multi node Elastic Stack cluster on RHEL 8 / CentOS 8.
 
-Now let’s send some logs to logstash nodes via filebeat from other Linux servers, In my case I have one CentOS 7 Server, I will push all important logs of this server to logstash via filebeat.
+这证明我们已经在 RHEL 8 /CentOS 8 上成功地安装并设置了多节点 Elastic Stack 集群。
 
-Login to CentOS 7 server and install filebeat package using following rpm command,
+
+
+现在让我们通过 filebeat 从其他 Linux 服务器发送一些日志到 logstash 节点中，在我的例子中，我有一个 CentOS 7服务器，我将通过 filebeat 将该服务器的所有重要日志推送到 logstash 。
+
+
+登录到 CentOS 7 服务器使用 rpm 命令安装 filebeat 包， 
 
 ```
 [root@linuxtechi ~]# rpm -ivh https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.3.1-x86_64.rpm
@@ -385,16 +392,18 @@ Updating / installing...
 [root@linuxtechi ~]#
 ```
 
-Edit the /etc/hosts file and add the following entries,
+编辑 /etc/hosts 文件并添加以下内容，
 
 ```
 192.168.56.20             logstash1.linuxtechi.local
 192.168.56.30             logstash2.linuxtechi.local
 ```
 
-Now configure the filebeat so that it can send logs to logstash nodes using load balancing technique, edit the file “**/etc/filebeat/filebeat.yml**” and add the following parameters,
 
-Under the ‘**filebeat.inputs:**’ section change ‘**enabled: false**‘ to ‘**enabled: true**‘ and under the “**paths**” parameter specify the location log files that we can send to logstash, In output Elasticsearch section comment out “**output.elasticsearch**” and **host** parameter. In Logstash output section, remove the comments for “**output.logstash:**” and “**hosts:**” and add the both logstash nodes in hosts parameters and also “**loadbalance: true**”.
+现在配置 filebeat，以便它可以使用负载平衡技术向 logstash 节点发送日志，编辑文件 **/etc/filebeat/filebeat.yml**，并添加以下参数，
+
+
+在 “**filebeat.inputs:**”部分将“**enabled: false**”更改为“**enabled: true**”，并在“**paths**”参数下指定我们可以发送到 logstash 的日志文件的位置，在 Elasticsearch 输出部分注释掉“**output.elasticsearch**”和**host**参数。在 Logstash 输出部分，删除“**output.logstash:**” 和 “**hosts:**” 的注释，并在 hosts 参数和 “**loadbalance: true**” 中添加 logstash 节点。
 
 ```
 [root@linuxtechi ~]# vi /etc/filebeat/filebeat.yml
@@ -416,40 +425,43 @@ output.logstash:
 ………………………………………
 ```
 
-Start and enable filebeat service using beneath systemctl commands,
+使用下面的2个 systemctl 命令 启动并启用 filebeat 服务 
 
 ```
 [root@linuxtechi ~]# systemctl start filebeat
 [root@linuxtechi ~]# systemctl enable  filebeat
 ```
 
-Now go to Kibana GUI, verify whether new indices are visible or not,
+现在转到 Kibana 用户界面，验证新索引是否可见， 
 
-Choose Management option from Left side bar and then click on Index Management under Elasticsearch,
+从左侧栏中选择管理选项，然后单击 Elasticsearch 下的索引管理，
 
 [![Elasticsearch-index-management-Kibana][1]][6]
 
-As we can see above, indices are visible now, let’s create index pattern,
+正如我们上面看到的，索引现在是可见的，让我们创建索引模型，
 
-Click on “Index Patterns” from Kibana Section, it will prompt us to create a new pattern, click on “**Create Index Pattern**” and specify the pattern name as “**filebeat**”
+
+点击 Kibana 部分的 “索引模型”，它将提示我们创建一个新模型，点击 **Create Index Pattern** ，并将模式名称指定为 **filebeat**
 
 [![Define-Index-Pattern-Kibana-RHEL8][1]][7]
 
-Click on Next Step
 
-Choose “**Timestamp**” as time filter for index pattern and then click on “Create index pattern”
+点击下一步
+
+选择 **Timestamp** 作为索引模型的时间过滤器，然后单击 “Create index pattern”
 
 [![Time-Filter-Index-Pattern-Kibana-RHEL8][1]][8]
 
 [![filebeat-index-pattern-overview-Kibana][1]][9]
 
-Now Click on Discover to see real time filebeat index pattern,
+现在单击查看实时 filebeat 索引模型， 
 
 [![Discover-Kibana-REHL8][1]][10]
 
-This confirms that Filebeat agent has been configured successfully and we are able to see real time logs on Kibana dashboard.
 
-That’s all from this article, please don’t hesitate to share your feedback and comments in case these steps help you to setup multi node Elastic Stack Cluster on RHEL 8 / CentOS 8 system.
+这表明 Filebeat 代理已配置成功，我们能够在 Kibana 仪表盘上看到实时日志。
+
+以上就是本文的全部内容，对这些帮助您在 RHEL 8 / CentOS 8 系统上设置 Elastic Stack集群的步骤，请不要犹豫分享您的反馈和意见，
 
 --------------------------------------------------------------------------------
 
