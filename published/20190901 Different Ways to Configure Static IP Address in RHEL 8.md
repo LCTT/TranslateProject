@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (heguangzhi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11390-1.html)
 [#]: subject: (Different Ways to Configure Static IP Address in RHEL 8)
 [#]: via: (https://www.linuxtechi.com/configure-static-ip-address-rhel8/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
@@ -51,7 +51,7 @@ virbr0  3020c41f-6b21-4d80-a1a6-7c1bd5867e6c  bridge    virbr0
 [root@linuxtechi ~]#
 ```
 
-使用下面的 `nmcli` 给 enp0s3 分配静态 IP。
+使用下面的 `nmcli` 给 `enp0s3` 分配静态 IP。
 
 **命令语法：**
 
@@ -83,7 +83,6 @@ virbr0  3020c41f-6b21-4d80-a1a6-7c1bd5867e6c  bridge    virbr0
 
 ```
 [root@linuxtechi ~]# nmcli con mod enp0s3 ipv4.dns "8.8.8.8"
-[root@linuxtechi ~]#
 ```
 
 要保存上述更改并重新加载，请执行如下 `nmcli` 命令，
@@ -163,7 +162,7 @@ DNS1="4.2.2.2"
 * IP 地址 = 10.20.0.72
 * 前缀 = 24
 * 网关 = 10.20.0.1
-* DNS1 =4.2.2.2
+* DNS1 = 4.2.2.2
 
 运行 `nmtui` 并按照屏幕说明操作，示例如下所示，
 
@@ -185,7 +184,7 @@ DNS1="4.2.2.2"
 
 ![Activate-option-nmtui-rhel8][6]
 
-选择 “enp0s3”，选择 “Deactivate** 并点击回车，
+选择 “enp0s3”，选择 “Deactivate” 并点击回车，
 
 ![Deactivate-interface-nmtui-rhel8][7]
 
