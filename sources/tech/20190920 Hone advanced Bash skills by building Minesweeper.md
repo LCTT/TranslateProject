@@ -7,13 +7,14 @@
 [#]: via: (https://opensource.com/article/19/9/advanced-bash-building-minesweeper)
 [#]: author: (Abhishek Tamrakar https://opensource.com/users/tamrakarhttps://opensource.com/users/dnearyhttps://opensource.com/users/sethhttps://opensource.com/users/sethhttps://opensource.com/users/marcobravo)
 
-Hone advanced Bash skills by building Minesweeper
+Hone advanced Bash skills by building Minesweeper   通过编写扫雷游戏提高你的bash技巧
 ======
-The nostalgia of classic games can be a great source for mastering
+The nostalgia of classic games can be a great source for mastering 那些令人怀念的经典游戏可是提高编程能力的好素材。今天就让我们仔细探索一番，怎么用Bash编写一个扫雷程序。
 programming. Deep dive into Bash with Minesweeper.
 ![bash logo on green background][1]
 
 I am no expert on teaching programming, but when I want to get better at something, I try to find a way to have fun with it. For example, when I wanted to get better at shell scripting, I decided to practice by programming a version of the [Minesweeper][2] game in Bash.
+
 
 If you are an experienced Bash programmer and want to hone your skills while having fun, follow along to write your own version of Minesweeper in the terminal. The complete source code is found in this [GitHub repository][3].
 
