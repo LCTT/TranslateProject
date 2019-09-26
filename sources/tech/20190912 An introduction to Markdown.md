@@ -7,25 +7,24 @@
 [#]: via: (https://opensource.com/article/19/9/introduction-markdown)
 [#]: author: (Juan Islas https://opensource.com/users/xislashttps://opensource.com/users/mbbroberghttps://opensource.com/users/scottnesbitthttps://opensource.com/users/scottnesbitthttps://opensource.com/users/f%C3%A1bio-emilio-costahttps://opensource.com/users/don-watkinshttps://opensource.com/users/greg-phttps://opensource.com/users/marcobravohttps://opensource.com/users/alanfdosshttps://opensource.com/users/scottnesbitthttps://opensource.com/users/jamesf)
 
-An introduction to Markdown
+一份 Markdown 简介
 ======
-Write once and convert your text into multiple formats. Here's how to
-get started with Markdown.
+一次编辑并将文本转换为多种格式。下面是如何开始使用 Markdown.
 ![Woman programming][1]
 
-For a long time, I thought all the files I saw on GitLab and GitHub with an **.md** extension were written in a file type exclusively for developers. That changed a few weeks ago when I started using Markdown. It quickly became the most important tool in my daily work.
+在很长一段时间里，我发现我在 GitLab 和 GitHub 上看到的所有文件都带有**.md**扩展名是专门为开发人员编写的文件类型。几周前，当我开始使用Markdown时，我的观念发生了变化。它很快成为我日常工作中最重要的工具。
 
-Markdown makes my life easier. I just need to add a few symbols to what I'm already writing and, with the help of a browser extension or an open source program, I can transform my text into a variety of commonly used formats such as ODT, email (more on that later), PDF, and EPUB.
+Markdown 使我的生活更简易。我只需要在已经编写的代码中添加一些符号，并且在浏览器扩展或开源程序的帮助下，我可以将文本转换为各种常用格式，如ODT、电子邮件(稍后将详细介绍)、PDF和EPUB。
 
-### What is Markdown?
+### 什么是 Markdown?
 
-A friendly reminder from [Wikipedia][2]:
+来自 [维基百科][2]的友情提示:
 
-> Markdown is a lightweight markup language with plain text formatting syntax.
+> Markdown是一种轻量级标记语言，具有纯文本格式语法。
 
-What this means to you is that by using just a few extra symbols in your text, Markdown helps you create a document with an explicit structure. When you take notes in plain text (in a notepad application, for example), there's nothing to indicate which text is meant to be bold or italic. In ordinary text, you might write a link as **<http://example.com>** one time, then as just **example.com**, and later **go to the website (example.com)**. There's no internal consistency.
+这意味着通过在文本中使用一些额外的符号，Markdown 可以帮助您创建具有特定结构和格式的文档。当您以纯文本(例如，在记事本应用程序中)做笔记时，没有任何东西表明哪个文本应该是粗体或斜体。在普通文本中，你在编写链接时需要将一个链接编写为**<http://example.com>**，或者编写为**example.com**，又或**访问网站(example.com)**。这样没有内在的一致性。
 
-But if you write the way Markdown prescribes, your text has internal consistency. Computers like consistency because it enables them to follow strict instructions without worrying about exceptions.
+：但是如果你按照Markdown的方式编写，你的文本就有了内在的一致性。计算机喜欢一致性，因为这使得它们能够遵循严格的指令而不用担心异常。
 
 Trust me; once you learn to use Markdown, every writing task will be, in some way, easier and better than before. So let's learn it.
 
