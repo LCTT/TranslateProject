@@ -7,33 +7,32 @@
 [#]: via: (https://opensource.com/article/19/9/linux-chgrp-and-newgrp-commands)
 [#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdosshttps://opensource.com/users/sethhttps://opensource.com/users/alanfdosshttps://opensource.com/users/seth)
 
-Introduction to the Linux chgrp and newgrp commands
+Linux chgrp 和 newgrp 命令简介
 ======
-The chgrp and newgrp commands help you manage files that need to
-maintain group ownership.
+chgrp 和 newgrp 命令可帮助你管理需要维护组所有权的文件。
 ![Penguins walking on the beach ][1]
 
-In a recent article, I introduced the [**chown** command][2], which is used for modifying ownership of files on systems. Recall that ownership is the combination of the user and group assigned to an object. The **chgrp** and **newgrp** commands provide additional help for managing files that need to maintain group ownership.
+在最近的一篇文章中，我介绍了 [chown][2] 命令，它用于修改系统上的文件所有权。回想一下，所有权是分配一个对象的用户和组的组合。**chgrp** 和 **newgrp** 命令为管理需要维护组所有权的文件提供了帮助。
 
-### Using chgrp
+### 使用 chgrp
 
-The **chgrp** command simply changes the group ownership of a file. It is the same as the **chown :&lt;group&gt;** command. You can use:
+**chgrp** 只是更改文件的组所有权。这与 **chown :&lt;group&gt;** 命令相同。你可以使用：
 
 
 ```
 `$chown :alan mynotes`
 ```
 
-or:
+或者：
 
 
 ```
 `$chgrp alan mynotes`
 ```
 
-#### Recursive
+#### 递归
 
-A few additional arguments to chgrp can be useful at both the command line and in a script. Just like many other Linux commands, chgrp has a recursive argument, **-R**. You will need this to operate on a directory and its contents recursively, as I'll demonstrate below. I added the **-v** (**verbose**) argument so chgrp tells me what it is doing:
+chgrp 的一些其他参数在命令行和脚本中都可能有用。就像许多其他 Linux 命令一样，chgrp 有一个递归参数 **-R**。如下所示，你需要它来对文件夹及其内容进行递归操作。我加了 **-v**（**verbose**）参数，因此 chgrp 会告诉我它在做什么：
 
 
 ```
@@ -48,24 +47,23 @@ changed group of 'conf/conf.xml' from alan to delta
 changed group of 'conf' from alan to delta
 ```
 
-#### Reference
+#### 引用
 
-A reference file (**\--reference=RFILE**) can be used when changing the group on files to match a certain configuration or when you don't know the group, as might be the case when running a script. You can duplicate another file's group (**RFILE**), referred to as a reference file. For example, to undo the changes made above (recall that a dot [**.**] refers to the present working directory):
-
+引用文件 （**\--reference=RFILE**） 可用于更改匹配特定配置的文件的组，或者当你不知道组，比如你运行一个脚本时。你可以复制另外一个文件的组 （**RFILE**）。比如，为了撤销上面的更改 （请注意，点 [**.**] 指向当前工作目录）：
 
 ```
 `$ chgrp -vR --reference=. conf`
 ```
 
-#### Report changes
+#### 报告更改
 
-Most commands have arguments for controlling their output. The most common is **-v** to enable verbose, and the chgrp command has a verbose mode. It also has a **-c** (**\--changes**) argument, which instructs chgrp to report only when a change is made. Chgrp will still report other things, such as if an operation is not permitted.
+大多数命令都有用于控制其输出的参数。最常见的是 **-v** 来启用详细信息，并且 chgrp 命令拥有详细模式。它还具有 **-c**（**\--changes**）参数，表示 chgrp 仅在进行更改时报告。chgrp 还能报告其他内容，例如是否有不允许的操作。
 
-The argument **-f** (**\--silent**, **\--quiet**) is used to suppress most error messages. I will use this argument and **-c** in the next section so it will show only actual changes.
+参数 **-f**（**\--silent**、**\--quiet**）用于禁止显示大部分错误消息。我将在下一节中使用此参数和 **-c** 来显示实际更改。
 
-#### Preserve root
+#### 保留根目录
 
-The root (**/**) of the Linux filesystem should be treated with great respect. If a command mistake is made at this level, the consequences can be terrible and leave a system completely useless. Particularly when you are running a recursive command that will make any kind of change—or worse, deletions. The chgrp command has an argument that can be used to protect and preserve the root. The argument is **\--preserve-root**. If this argument is used with a recursive chgrp command on the root, nothing will happen and a message will appear instead:
+Linux 文件系统的根目录 （** / **） 应该受到高度重视。如果命令在此犯了一个错误，那么后果可能是可怕的，并会让系统无法使用。尤其是在运行一个会递归修改甚至删除的命令时。chgrp 命令有一个可用于保护和保留根目录的参数。它是 **\--preserve-root**。如果在根目录中将此参数和递归一起使用，那么什么也不会发生，而是会出现一条消息：
 
 
 ```
@@ -74,7 +72,7 @@ chgrp: it is dangerous to operate recursively on '/'
 chgrp: use --no-preserve-root to override this failsafe
 ```
 
-The option has no effect when it's not used in conjunction with recursive. However, if the command is run by the root user, the permissions of **/** will change, but not those of other files or directories within it:
+不与递归结合使用时，该选项无效。但是，如果该命令由 root 用户运行，那么 **/** 的权限将会更改，但其中的其他文件或目录的权限则不会被更改：
 
 
 ```
@@ -84,7 +82,7 @@ chgrp: changing group of '/': Operation not permitted
 changed group of '/' from root to alan
 ```
 
-Surprisingly, it seems, this is not the default argument. The option **\--no-preserve-root** is the default. If you run the command above without the "preserve" option, it will default to "no preserve" mode and possibly change permissions on files that shouldn't be changed:
+令人惊讶的是，它似乎不是默认参数。选项 **\--no-preserve-root** 是默认的。如果你在不带 “preserve” 选项的情况下运行上述命令，那么它将默认为“无保留”模式，并可能会更改不应更改的文件的权限：
 
 
 ```
@@ -94,9 +92,9 @@ changed group of '/dev/tty2' from tty to alan
 changed group of '/var/spool/mail/alan' from mail to alan
 ```
 
-### About newgrp
+### 关于 newgrp
 
-The **newgrp** command allows a user to override the current primary group. newgrp can be handy when you are working in a directory where all files must have the same group ownership. Suppose you have a directory called _share_ on your intranet server where different teams store marketing photos. The group is **share**. As different users place files into the directory, the files' primary groups might become mixed up. Whenever new files are added, you can run **chgrp** to correct any mix-ups by setting the group to **share**:
+**newgrp** 命令允许用户覆盖当前的主要组。当你在所有文件必须有相同组所有权的目录中操作时，newgrp 会很方便。假设你的内网服务器上有一个名为 _share_ 的目录，不同的团队在其中存储营销照片。组名为 “share”。当不同的用户将文件放入目录时，文件的主要组可能会变得混乱。每当添加新文件时，你都可以运行 **chgrp**  将错乱的组纠正为 **share**：
 
 
 ```
@@ -109,16 +107,16 @@ ls -l
 -rw-rw-r--. 1 bill contract  0 Aug  7 15:36 pic4
 ```
 
-I covered **setgid** mode in my article on the [**chmod** command][3]. This would be one way to solve this problem. But, suppose the setgid bit was not set for some reason. The newgrp command is useful in this situation. Before any users put files into the _share_ directory, they can run the command **newgrp share**. This switches their primary group to **share** so all files they put into the directory will automatically have the group **share**, rather than the user's primary group. Once they are finished, users can switch back to their regular primary group with (for example):
+我在 [**chmod** 命令][3]的文章中介绍了 **setgid**模式。它是解决此问题的一种方法。但是，假设由于某种原因未设置 setgid 位。newgrp 命令在此时很有用。在任何用户将文件放入 _share_ 目录之前，他们可以运行命令 **newgrp share**。这会将其主要组切换为 “share”，因此他们放入目录中的所有文件都将有 “share” 组，而不是用户的主要组。完成后，用户可以使用以下命令切换回常规主要组：
 
 
 ```
 `newgrp alan`
 ```
 
-### Conclusion
+### 总结
 
-It is important to understand how to manage users, groups, and permissions. It is also good to know a few alternative ways to work around problems you might encounter since not all environments are set up the same way.
+了解如何管理用户、组和权限非常重要。最好知道一些替代方法来解决可能遇到的问题，因为并非所有环境都以相同的方式设置。
 
 --------------------------------------------------------------------------------
 
@@ -126,7 +124,7 @@ via: https://opensource.com/article/19/9/linux-chgrp-and-newgrp-commands
 
 作者：[Alan Formy-Duval][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
