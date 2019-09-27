@@ -7,54 +7,54 @@
 [#]: via: (https://opensource.com/article/19/8/cloud-native-java-and-more)
 [#]: author: (Tim Hildred https://opensource.com/users/thildred)
 
-Cloud-native Java, open source security, and more industry trends
+云原生 Java、开源安全以及更多行业趋势
 ======
-A weekly look at open source community and industry trends.
+开放源码社区和行业趋势的每周总览。
 ![Person standing in front of a giant computer screen with numbers, data][1]
 
-As part of my role as a senior product marketing manager at an enterprise software company with an open source development model, I publish a regular update about open source community, market, and industry trends for product marketers, managers, and other influencers. Here are five of my and their favorite articles from that update.
+作为我在具有开放源代码开发模型的企业软件公司担任高级产品营销经理的角色的一部分，我为产品营销人员、经理和其他影响者定期发布有关开源社区，市场和行业趋势的定期更新。 以下是该更新中我和他们最喜欢的五篇文章。
 
-## [Why is modern web development so complicated?][2]
+## [为什么现代 web 开发如此复杂？][2]
 
-> Modern frontend web development is a polarizing experience: many love it, others despise it.
+> 现代前端 web 开发带来了一种两极分化的体验：许多人喜欢它，其他人则鄙视它。
 >
-> I am a huge fan of modern web development, though I would describe it as "magical"—and magic has its upsides and downsides... Recently I’ve been needing to explain “modern web development workflows” to folks who only have a cursory of vanilla web development workflows and… It is a LOT to explain! Even a hasty explanation ends up being pretty long. So in the effort of writing more of my explanations down, here is the beginning of a long yet hasty explanation of the evolution of web development..
+> 我是现代Web开发的忠实拥护者，尽管我将其描述为“魔法”——而魔法也有其优点和缺点……。最近，我一直在向那些只具有粗略的原始 web 开发工作流程的人们讲解“现代 web 开发工作流程”……，但我发现需要解释的内容实在是太多了！甚至笼统的解释最终都会变得冗长。因此，在我努力写下更多解释的过程中，这里是对 web 开发演变的一个长期而笼统的解释的开始……
 
-**The impact:** Specific enough to be useful to (especially new) frontend developers, but simple and well explained enough to help non-developers understand better some of the frontend developer problems. By the end, you'll (kinda) know the difference between Javascript and WebAPIs and how 2019 Javascript is different than 2006 Javascript.
+**影响**：足够具体，对前端开发人员非常有用(特别是对新开发人员)，而足够简单，解释得足够好，可以帮助非开发人员更好地理解前端开发人员的一些问题。到最后，您将（有点）了解 Javascript 和 WebAPIs 之间的区别，以及 2019 年的 Javascript 与 2006 年的 Javascript 有何不同。
 
-## [Open sourcing the Kubernetes security audit][3]
+## [开源 Kubernetes 安全审核][3]
 
-> Last year, the Cloud Native Computing Foundation (CNCF) began the process of performing and open sourcing third-party security audits for its projects in order to improve the overall security of our ecosystem. The idea was to start with a handful of projects and gather feedback from the CNCF community as to whether or not this pilot program was useful. The first projects to undergo this process were [CoreDNS][4], [Envoy][5] and [Prometheus][6]. These first public audits identified security issues from general weaknesses to critical vulnerabilities. With these results, project maintainers for CoreDNS, Envoy and Prometheus have been able to address the identified vulnerabilities and add documentation to help users.
+> 去年，云原生计算基金会（CNCF）开始为其项目执行并开源第三方安全审核，以提高我们生态系统的整体安全性。这个想法是从一些项目开始，从 CNCF 社区收集关于这个试点项目是否有用的反馈。第一批经历这个过程的项目是 [CoreDNS][4]、[Envoy][5] 和 [Prometheus][6]。这些首次公开审核发现了从一般漏洞到严重漏洞的安全问题。有了这些结果，CoreDNS、Envoy 和 Prometheus 的项目维护者就能够解决已发现的漏洞，并添加文档来帮助用户。
 >
-> The main takeaway from these initial audits is that a public security audit is a great way to test the quality of an open source project along with its vulnerability management process and more importantly, how resilient the open source project’s security practices are. With CNCF [graduated projects][7] especially, which are used widely in production by some of the largest companies in the world, it is imperative that they adhere to the highest levels of security best practices.
+> 从这些初始审核中得出的主要结论是，公共安全审核是测试开放源码项目的质量及其漏洞管理过程的一个很好的方法，更重要的是，测试开放源码项目的安全实践有多大的弹性。特别是 CNCF 的[毕业项目][7]，它被世界上一些最大的公司广泛应用于生产中，它们必须坚持最高级别的安全最佳实践。
 
-**The impact:** A lot of companies are placing big bets on Kubernetes being to the cloud what Linux is to that data center. Seeing 4 of those companies working together to make sure the project is doing what it should be from a security perspective inspires confidence. Sharing that research shows that open source is so much more than code in a repository; it is the capturing and sharing of expert opinions in a way that benefits the community at large rather than the interests of a few.
+**影响**：很多公司都把宝押在 Kubernetes 之于云计算，就像 Linux 之于数据中心一样。从安全的角度来看，看到其中 4 家公司以确保项目正在做应该做的事情，这激发了人们的信心。共享这项研究表明，开源远远不止是仓库中的代码；它是以一种有益于整个社区而不是少数人利益的方式获取和分享专家意见。
 
-## [Quarkus—what's next for the lightweight Java framework?][8]
+## [Quarkus——轻量级 Java 框架的下一步是什么？][8]
 
-> What does “container first” mean? What are the strengths of Quarkus? What’s new in 0.20.0? What features can we look forward to in the future? When will version 1.0.0 be released? We have so many questions about Quarkus and Alex Soto was kind enough to answer them all. _With the release of Quarkus 0.20.0, we decided to get in touch with [JAX London speaker][9], Java Champion, and Director of Developer Experience at Red Hat – Alex Soto. He was kind enough to answer all our questions about the past, present, and future of Quarkus. It seems like we have a lot to look forward to with this exciting lightweight framework!_
+> “容器优先”是什么意思？Quarkus 有哪些优势？0.20.0 版本有什么新功能？未来我们可以期待哪些功能？1.0.0 版什么时候发布？我们对 Quarkus 有很多问题，而 Alex Soto 也很耐心地回答了所有问题。 _随着 Quarkus 0.20.0 的发布，我们决定与 [JAX 伦敦演讲者][9]，Java 拥护者和红帽的开发人员体验总监 Alex Soto 保持联系。他很好地回答了我们关于 Quarkus 的过去、现在和未来的所有问题。看起来我们对这个令人兴奋的轻量级框架有很多期待！
 
-**The impact**: Someone clever recently told me that Quarkus has the potential to make Java "possibly one of the best languages for containers and serverless environments". That made me do a double-take; while Java is one of the most popular programming languages ([if not the most popular][10]) it probably isn't the first one that jumps to mind when you hear the words "cloud native." Quarkus could extend and grow the value of the skills held by a huge chunk of the developer workforce by allowing them to apply their experience to new challenges.
+**影响**：最近有个聪明的人告诉我，Quarkus 有潜力使 Java “可能成为容器和无服务器环境的最佳语言之一”。那使我做了双重决定。 尽管 Java 是最流行的编程语言之一（[如果不是最流行的][10]），但当您听到“云原生”一词时，它可能并不是第一个想到的语言。Quarkus 可以通过让开发人员将他们的经验应用到新的挑战中，从而扩展和提高他们所拥有的技能的价值。
 
-## [Julia programming language: Users reveal what they love and hate the most about it][11]
+## [Julia 编程语言:用户可以透露他们最喜欢和最讨厌它的地方][11]
 
-> The most popular technical feature of Julia is speed and performance followed by ease of use, while the most popular non-technical feature is that users don't have to pay to use it. 
+> Julia 最受欢迎的技术特性是速度和性能，其次是易用性，而最受欢迎的非技术特性是使用者无需付费即可使用它。
 >
-> Users also report their biggest gripes with the language. The top one is that packages for add-on features aren't sufficiently mature or well maintained to meet their needs. 
+> 用户还报告了他们对该语言最大的不满。排在首位的是使用者附加功能的包不够成熟，或者维护得不够好，无法满足他们的需求。
 
-**The impact:** The Julia 1.0 release has been out for a year now, and has seen impressive growth in a bunch of relevant metrics (downloads, GitHub stars, etc). It is a language aimed squarely at some of our biggest current and future challenges ("scientific computing, machine learning, data mining, large-scale linear algebra, distributed and parallel computing") so finding out how it's users are feeling about it gives an indirect read on how well those challenges are being addressed.
+**影响**：Julia 1.0 版本已经发布了一年，并且在一系列相关指标（下载，GitHub 星级等）中取得了令人瞩目的增长。 它是一种直接针对我们当前和未来最大挑战（“科学计算，机器学习，数据挖掘，大规模线性代数，分布式和并行计算”）的语言，因此，了解用户对它的感受，就可以间接阅读有关这些挑战的应对情况。
 
-## [Multi-cloud by the numbers: 11 interesting stats][12]
+## [多云数据解读：11 个有趣的统计数据][12]
 
-> If you boil our recent dive into [interesting stats about Kubernetes][13] down to its bottom line, it looks something like this: [Kubernetes'][14] popularity will continue for the foreseeable future.
+> 如果你把我们最近对 [Kubernetes 的有趣数据][13]的深入研究归结为它的底线，它看起来是这样的： [Kubernetes][14] 的受欢迎程度在可预见的未来将持续下去。
 >
-> Spoiler alert: When you dig up recent numbers about [multi-cloud][15] usage, they tell a similar story: Adoption is soaring.
+> 剧透警报：当您挖掘有关[多云][15]使用情况的最新数据时，他们告诉您一个类似的描述：使用率正在飙升。
 >
-> This congruity makes sense. Perhaps not every organization will use Kubernetes to manage its multi-cloud and/or [hybrid cloud][16] infrastructure, but the two increasingly go hand-in-hand. Even when they don’t, they both reflect a general shift toward more distributed and heterogeneous IT environments, as well as [cloud-native development][17] and other overlapping trends.
+> 这种一致性是有道理的。 也许不是每个组织都将使用 Kubernetes 来管理其多云和/或[混合云][16]基础架构，但是两者越来越紧密地联系在一起。 即使不这样做，它们都反映了向更分散和异构 IT 环境的普遍转变，以及[云原生开发][17]和其他重叠趋势。
 
-**The impact**: Another explanation of increasing adoption of "multi-cloud strategies" is they retroactively legitimize decisions taken in separate parts of an organization without consultation as "strategic." "Wait, so you bought hours from who? And you bought hours from the other one? Why wasn't that in the meeting minutes? I guess we're a multi-cloud company now!" Of course I'm joking, I'm sure most big companies are a lot better coordinated than that, right?
+**影响**：越来越多地采用“多云战略”的另一种解释是，它们将组织中单独部分未经协商而作出的决策追溯为“战略”，从而使决策合法化。“等等，所以您从谁那里买了几个小时？又从另一个人那里买了几个小时？为什么在会议纪要中没有呢？我想我们现在是一家多云公司！”。当然，我在开玩笑，我敢肯定大多数大公司的协调能力远胜于此，对吗？
 
-_I hope you enjoyed this list of what stood out to me from last week and come back next Monday for more open source community, market, and industry trends._
+_我希望您喜欢这张上周让我印象深刻的列表，并在下周一回来了解更多的开放源码社区、市场和行业趋势。_
 
 --------------------------------------------------------------------------------
 
