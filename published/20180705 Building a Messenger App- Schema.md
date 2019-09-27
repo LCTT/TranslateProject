@@ -1,15 +1,18 @@
 [#]: collector: "lujun9972"
 [#]: translator: "PsiACE"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-11396-1.html"
 [#]: subject: "Building a Messenger App: Schema"
 [#]: via: "https://nicolasparada.netlify.com/posts/go-messenger-schema/"
 [#]: author: "Nicolás Parada https://nicolasparada.netlify.com/"
 
-# 构建一个即时消息应用：模式
+构建一个即时消息应用（一）：模式
+========
 
-这是一系列关于构建「即时消息」应用的新帖子。你应该对这类应用并不陌生。有了它们的帮助，我们才可以与朋友畅聊无忌。[Facebook Messenger][1], [WhatsApp][2] 和 [Skype][3] 就是其中的几个例子。正如你所看到的那样，这些应用允许我们发送图片、传输视频、录制音频、以及和一大帮子人聊天等等。当然，我们的教程应用将会尽量保持简单，只在两个用户之间发送文本消息。
+![](https://img.linux.net.cn/data/attachment/album/201909/27/211458n44f7jvp77lfxxm0.jpg)
+
+这是一系列关于构建“即时消息”应用的新帖子。你应该对这类应用并不陌生。有了它们的帮助，我们才可以与朋友畅聊无忌。[Facebook Messenger][1]、[WhatsApp][2] 和 [Skype][3] 就是其中的几个例子。正如你所看到的那样，这些应用允许我们发送图片、传输视频、录制音频、以及和一大帮子人聊天等等。当然，我们的教程应用将会尽量保持简单，只在两个用户之间发送文本消息。
 
 我们将会用 [CockroachDB][4] 作为 SQL 数据库，用 [Go][5] 作为后端语言，并且用 JavaScript 来制作 web 应用。
 
@@ -49,7 +52,7 @@ CREATE TABLE participants (
 
 尽管之前我提到过对话只会在两个用户之间进行，但我们还是采用了允许向对话中添加多个参与者的设计。因此，在对话和用户之间有一个参与者表。
 
-为了知道用户是否有未读消息，我们在消息表中添加了「读取时间」`messages_read_at` 字段。每当用户在对话中读取消息时，我们都会更新它的值，这样一来，我们就可以将它与对话中最后一条消息的「创建时间」`created_at` 字段进行比较。
+为了知道用户是否有未读消息，我们在消息表中添加了“读取时间”（`messages_read_at`）字段。每当用户在对话中读取消息时，我们都会更新它的值，这样一来，我们就可以将它与对话中最后一条消息的“创建时间”（`created_at`）字段进行比较。
 
 ```
 CREATE TABLE messages (
@@ -62,7 +65,7 @@ CREATE TABLE messages (
 );
 ```
 
-尽管我们将消息表放在最后，但它在应用中相当重要。我们用它来保存对创建它的用户以及它所出现的对话的引用。而且还可以根据「创建时间」`created_at` 来创建索引以完成对消息的排序。
+尽管我们将消息表放在最后，但它在应用中相当重要。我们用它来保存对创建它的用户以及它所出现的对话的引用。而且还可以根据“创建时间”（`created_at`）来创建索引以完成对消息的排序。
 
 ```
 ALTER TABLE conversations
@@ -87,11 +90,9 @@ cockroach sql --insecure -e "CREATE DATABASE messenger"
 cat schema.sql | cockroach sql --insecure -d messenger
 ```
 
----
-
 这篇帖子就到这里。在接下来的部分中，我们将会介绍「登录」，敬请期待。
 
-[Souce Code][7]
+- [源代码][7]
 
 ---
 
@@ -100,7 +101,7 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-schema/
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
 译者：[PsiACE](https://github.com/PsiACE)
-校对：[校对者 ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux 中国](https://linux.cn/) 荣誉推出
 
