@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (laingke)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -50,7 +50,7 @@ via: https://opensource.com/article/19/9/java-relevant-and-more-industry-trends
 
 作者：[Tim Hildred][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[laingke](https://github.com/laingke)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

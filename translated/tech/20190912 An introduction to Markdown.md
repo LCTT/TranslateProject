@@ -7,39 +7,38 @@
 [#]: via: (https://opensource.com/article/19/9/introduction-markdown)
 [#]: author: (Juan Islas https://opensource.com/users/xislashttps://opensource.com/users/mbbroberghttps://opensource.com/users/scottnesbitthttps://opensource.com/users/scottnesbitthttps://opensource.com/users/f%C3%A1bio-emilio-costahttps://opensource.com/users/don-watkinshttps://opensource.com/users/greg-phttps://opensource.com/users/marcobravohttps://opensource.com/users/alanfdosshttps://opensource.com/users/scottnesbitthttps://opensource.com/users/jamesf)
 
-An introduction to Markdown
+一份 Markdown 简介
 ======
-Write once and convert your text into multiple formats. Here's how to
-get started with Markdown.
+一次编辑便可将文本转换为多种格式。下面是如何开始使用 Markdown。
 ![Woman programming][1]
 
-For a long time, I thought all the files I saw on GitLab and GitHub with an **.md** extension were written in a file type exclusively for developers. That changed a few weeks ago when I started using Markdown. It quickly became the most important tool in my daily work.
+在很长一段时间里，我发现我在 GitLab 和 GitHub 上看到的所有文件都带有**.md**扩展名，这是是专门为开发人员编写的文件类型。几周前，当我开始使用Markdown时，我的观念发生了变化。它很快成为我日常工作中最重要的工具。
 
-Markdown makes my life easier. I just need to add a few symbols to what I'm already writing and, with the help of a browser extension or an open source program, I can transform my text into a variety of commonly used formats such as ODT, email (more on that later), PDF, and EPUB.
+Markdown 使我的生活更简易。我只需要在已经编写的代码中添加一些符号，并且在浏览器扩展或开源程序的帮助下，即可将文本转换为各种常用格式，如 ODT、电子邮件(稍后将详细介绍)、PDF 和 EPUB。
 
-### What is Markdown?
+### 什么是 Markdown?
 
-A friendly reminder from [Wikipedia][2]:
+来自 [维基百科][2]的友情提示:
 
-> Markdown is a lightweight markup language with plain text formatting syntax.
+> Markdown是一种轻量级标记语言，具有纯文本格式语法。
 
-What this means to you is that by using just a few extra symbols in your text, Markdown helps you create a document with an explicit structure. When you take notes in plain text (in a notepad application, for example), there's nothing to indicate which text is meant to be bold or italic. In ordinary text, you might write a link as **<http://example.com>** one time, then as just **example.com**, and later **go to the website (example.com)**. There's no internal consistency.
+这意味着通过在文本中使用一些额外的符号，Markdown 可以帮助您创建具有特定结构和格式的文档。当您以纯文本(例如，在记事本应用程序中)做笔记时，没有任何东西表明哪个文本应该是粗体或斜体。在普通文本中，你在编写链接时需要将一个链接编写为**<http://example.com>**，或者编写为**example.com**，又或**访问网站(example.com)**。这样没有内在的一致性。
 
-But if you write the way Markdown prescribes, your text has internal consistency. Computers like consistency because it enables them to follow strict instructions without worrying about exceptions.
+但是如果你按照Markdown的方式编写，你的文本就有了内在的一致性。计算机喜欢一致性，因为这使得它们能够遵循严格的指令而不用担心异常。
 
-Trust me; once you learn to use Markdown, every writing task will be, in some way, easier and better than before. So let's learn it.
+相信我;一旦你学会使用Markdown，每一项写作任务在某种程度上都会比以前更容易、更好。让我们开始吧。
 
-### Markdown basics
+### Markdown 基础
 
-The following rules are the basics for writing in Markdown.
+以下是使用 Markdown 的基础语法。
 
-  1. Create a text file with an **.md** extension (for example, **example.md**.) You can use any text editor (even a word processor like LibreOffice or Microsoft Word), as long as you remember to save it as a _text_ file.
+  1. 创建一个以 **.md**扩展名结尾的文本文件(例如，**example.md**)。你可以使用任何文本编辑器(甚至像 LibreOffice 或 Microsoft word 这样的文字处理程序亦可)，只要记住将其保存为_text_文件。
 
 
 
 ![Names of Markdown files][3]
 
-  2. Write whatever you want, just as you usually do:
+  2. 想写什么就写什么，就像往常一样:
 
 
 ```
@@ -57,9 +56,9 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
   Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
 ```
 
-  3. Make sure to place an empty line between paragraphs. That might feel unnatural if you're used to writing business letters or traditional prose, where paragraphs have only one new line and maybe even an indentation before the first word. For Markdown, an empty line (some word processors mark this with **¶**, called a Pilcrow symbol) guarantees a new paragraph is created when you convert it to another format like HTML.
+  3. 确保在段落之间留有空行。如果你习惯写商务信函或传统散文，这可能会觉得不自然，因为段落只有一行，甚至在第一个单词前还有一个缩进。对于Markdown，空行(一些文字处理程序使用 **¶**，称为Pilcrow符号)保证在创建一个新段落应用另一种格式(如HTML)。
 
-  4. Designate titles and subtitles. For the document's title, add a pound or hash (**#**) symbol and a space before the text (e.g., **# Lorem ipsum**). The first subtitle level uses two (**## De Finibus Bonorum et Malorum**), the next level gets three (**### Third Subtitle**), and so on. Note that there is a space between the pound sign and the first word.
+  4. 指定标题和副标题。对于文档的标题，在文本前面添加一个 # 或散列符号(**#**)和一个空格(例如**# Lorem ipsum**)。第一个副标题级别使用两个(**## De Finibus Bonorum et Malorum**)，下一个级别使用三个(**### #第三个副标题**)，以此类推。注意，在磅号和第一个单词之间有一个空格。
 
 
 ```
@@ -77,63 +76,67 @@ Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed 
   Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
 ```
 
-  5. If you want **bold** letters, just place the letters between two asterisks (stars) with no spaces: ****This will be in bold****.
+  5. 如果你想使用**粗体**字符，只需将字母放在两个星号之间，没有空格:****对应的文本将以粗体****显示。
 
 
 
 
 ![Bold text in Markdown][4]
 
-  6. For _italics_, put the text between underline symbols with no spaces: **_I want this text to be in italics_**.
+  6. 对于 _斜体_, 将文本放在没有空格的下划线符号之间:
+   **_I want this text to be in italics_**.
 
 
 
 ![Italics text in Markdown][5]
 
-  7. To insert a link (like [Markdown Tutorial][6]), put the text you want to link in brackets and the URL in parentheses with no spaces between them:
+  7. 要插入一个链接(像[Markdown Tutorial][6])，把你想链接的文本放在括号里，URL放在括号里，中间没有空格:
+
 **[Markdown Tutorial](<https://www.markdowntutorial.com/>)**.
 
 
 
 ![Hyperlinks in Markdown][7]
 
-  8. Blockquotes are written with a greater-than (**&gt;**) symbol and a space before the text you want to quote: **&gt; A famous quote**.
+  8. 块引用是用大于号编写的 (**&gt;**) 在你要引用的文本前加上符号和空格: **&gt; A famous quote**.
 
 
 
 ![Blockquote text in Markdown][8]
 
-### Markdown tutorials and tip sheets
+### Markdown 教程和技巧
 
-These tips will get you started writing in Markdown, but it has a lot more functions than just bold and italics and links. The best way to learn Markdown is to use it, but I recommend investing 15 minutes stepping through the simple [Markdown Tutorial][6] to practice these rules and learn a couple more.
+这些技巧可以帮助你上手 Markdown ，但它涵盖了很多功能，不仅仅是粗体、斜体和链接。学习 Markdown 的最好方法是使用它，但是我建议你花15分钟来学习简单的[Markdown教程][6]，学以致用，勤加练习。
 
-Because modern Markdown is an amalgamation of many different interpretations of the idea of structured text, the [CommonMark][9] project defines a spec with a rigid set of rules to bring clarity to Markdown. It might be helpful to keep a [CommonMark-compliant cheatsheet][10] on hand when writing.
+由于现代 Markdown 是对结构化文本概念的许多不同解释的融合，[CommonMark][9]项目定义了一个规范，其中包含一组严格的规则，以使 Markdown 更加清晰。在编辑时手边准备一份[符合公共标记的快捷键列表][10]可能会有帮助。
 
-### What you can do with Markdown
+### 你能用 Markdown 做什么
 
-Markdown lets you write anything you want—once—and transform it into almost any kind of format you want to use. The following examples show how to turn simple text written in MD into different formats. You don't need multiple formats of your text—you can start from a single source and then… rule the world!
+Markdown 可以让你写任何你想写的东西，仅需一次编辑，就可以把它转换成几乎任何你想使用的格式。下面的示例演示如何将用 MD 编写简单的文本并转换为不同的格式。你不需要多种格式的文档-你可以仅仅编辑一次…然后拥有无限可能。
 
-  1. **Simple note-taking:** You can write your notes in Markdown and, the moment you save them, the open source note application [Turtl][11] interprets your text file and shows you the formatted result. You can have your notes anywhere!
+  1. **简单的笔记:** 你可以用 Markdown 编写你的笔记，并且在保存笔记时，开源笔记应用程序[Turtl][11]将解释您的文本文件并显示为对应的格式。你可以把笔记存储在任何地方!
 
 
 
 ![Turtl application][12]
 
-  2. **PDF files:** With the [Pandoc][13] application, you can convert your Markdown into a PDF with one simple command: **pandoc &lt;file.md&gt; -o &lt;file.pdf&gt;**.
+  2. **PDF 文件:** 使用[Pandoc][13]应用程序，你可以使用一个简单的命令将 Markdown 文件转换为PDF:
+
+   **pandoc &lt;file.md&gt; -o &lt;file.pdf&gt;**.
 
 
 
 ![Markdown text converted to PDF with Pandoc][14]
 
-  3. **Email:** You can also convert Markdown text into an HTML-formatted email by installing the browser extension [Markdown Here][15]. To use it, just select your Markdown text, use Markdown Here to translate it into HTML, and send your message using your favorite email client.
+  3. **Email:** 你还可以通过安装浏览器扩展[Markdown Here][15]将Markdown 文本转换为 html 格式的电子邮件。要使用它，只需选择您的Markdown 文本，在这里使用 Markdown 将其转换为HTML，并使用你喜欢的电子邮件客户端发送消息。
 
 
 
 ![Markdown text converted to email with Markdown Here][16]
 
-### Start using it
+### 现在就开始上手吧
 
-You don't need a special application to use Markdown—you just need a text editor and the tips above. It's compatible with how you already write; all you need to do is use it, so give it a try.
+你不需要一个特殊的应用程序来使用 Markdown—你只需要一个文本编辑器和上面的技巧。它与你已有的写作方式兼容;你所需要做的就是使用它，所以试试吧。
 
 --------------------------------------------------------------------------------
 
