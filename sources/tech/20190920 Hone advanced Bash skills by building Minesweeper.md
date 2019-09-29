@@ -7,41 +7,43 @@
 [#]: via: (https://opensource.com/article/19/9/advanced-bash-building-minesweeper)
 [#]: author: (Abhishek Tamrakar https://opensource.com/users/tamrakarhttps://opensource.com/users/dnearyhttps://opensource.com/users/sethhttps://opensource.com/users/sethhttps://opensource.com/users/marcobravo)
 
-Hone advanced Bash skills by building Minesweeper   通过编写扫雷游戏提高你的bash技巧
+通过编写扫雷游戏提高你的bash技巧
 ======
-The nostalgia of classic games can be a great source for mastering 那些令人怀念的经典游戏可是提高编程能力的好素材。今天就让我们仔细探索一番，怎么用Bash编写一个扫雷程序。
-programming. Deep dive into Bash with Minesweeper.
+那些令人怀念的经典游戏可是提高编程能力的好素材。今天就让我们仔细探索一番，怎么用Bash编写一个扫雷程序。
 ![bash logo on green background][1]
 
-I am no expert on teaching programming, but when I want to get better at something, I try to find a way to have fun with it. For example, when I wanted to get better at shell scripting, I decided to practice by programming a version of the [Minesweeper][2] game in Bash.
+我在编程教学方面不是专家，但当我想更好掌握某一样东西时，会试着找出让自己乐在其中的方法。比方说，当我想在shell编程方面更进一步时，我决定用Bash编写一个[扫雷][2]游戏来加以练习。
+
+如果你是一个有经验的Bash程序员，并且在提高技巧的同时乐在其中，你可以在终端中编写个人版本的扫雷。完整代码可以在这个 [GitHub 库]中找到[3].
+
+### 做好准备
+
+在我编写任何代码之前，我列出了游戏所必须的几个部分：
+
+  1. 显示雷区
+  2. 创建游戏逻辑
+  3. 创建逻辑以确定有效雷区
+  4. 记录当前还有多少个未被发现以及已标记的雷
+  5. 创建游戏结束逻辑
 
 
-If you are an experienced Bash programmer and want to hone your skills while having fun, follow along to write your own version of Minesweeper in the terminal. The complete source code is found in this [GitHub repository][3].
+### 显示雷区
 
-### Getting ready
+In Minesweeper, the game world is a 2D array (columns and rows) of concealed cells. Each cell may or may not contain an explosive mine. The player's objective is to reveal cells that contain no mine, and to never reveal a mine. Bash version of the game uses a 10x10 matrix, implemented using simple bash arrays.
 
-Before I started writing any code, I outlined the ingredients I needed to create my game:
+在扫雷中，游戏界面是一个由2D数组（列和行）组成的不透明小方格。每一格下都有可能藏有地雷。玩家的任务就是找到那些不含雷的方格，并且在这一过程中，不能点到地雷。Bash版本的扫雷使用10x10的矩阵，实际逻辑则由一个简单的Bash数组来完成。
 
-  1. Print a minefield
-  2. Create the gameplay logic
-  3. Create logic to determine the available minefield
-  4. Keep count of available and discovered (extracted) mines
-  5. Create the endgame logic
-
-
-### Print a minefield
-
-In Minesweeper, the game world is a 2D array (columns and rows) of concealed cells. Each cell may or may not contain an explosive mine. The player's objective is to reveal cells that contain no mine, and to never reveal a mine. Bash version of the game uses a 10x10 matrix, implemented using simple bash arrays.
-
-First, I assign some random variables. These are the locations that mines could be placed on the board. By limiting the number of locations, it will be easy to build on top of this. The logic could be better, but I wanted to keep the game looking simple and a bit immature. (I wrote this for fun, but I would happily welcome your contributions to make it look better.)
+First, I assign some random variables. These are the locations that mines could be placed on the board. By limiting the number of locations, it will be easy to build on top of this. The logic could be better, but I wanted to keep the game looking simple and a bit immature. (I wrote this for fun, but I would happily welcome your contributions to make it look better.)
+首先，我先生成了一些随机数字。这将是地雷在雷区里的位置。为了控制地雷的数量，在开始编写代码之前，这么做会容易一些。实现这一功能的逻辑可以更好，但我这么做，是为了让游戏实现保持简洁，并有改进空间。（我编写这个游戏纯属娱乐，但如果你能将它修改的更好，我也是很乐意的。）
 
 The variables below are some default variables, declared to call randomly for field placement, like the variables a-g, we will use them to calculate our extractable mines:
+下面这些变量有一些是默认的，像
 
 
 ```
-# variables
-score=0 # will be used to store the score of the game
-# variables below will be used to randomly get the extract-able cells/fields from our mine.
+# 变量
+score=0 # 会用来存放游戏分数
+# variables below will be used to randomly get the extract-able cells/fields from our mine. 下面这些变量用来随机生成
 a="1 10 -10 -1"
 b="-1 0 1"
 c="0 1"
@@ -50,13 +52,14 @@ e="1 2 20 21 10 0 -10 -20 -23 -2 -1"
 f="1 2 3 35 30 20 22 10 0 -10 -20 -25 -30 -35 -3 -2 -1"
 g="1 4 6 9 10 15 20 25 30 -30 -24 -11 -10 -9 -8 -7"
 #
-# declarations
-declare -a room  # declare an array room, it will represent each cell/field of our mine.
+# 声明
+declare -a room  # 声明一个room 数组，它用来表示雷区的每一格。
 ```
 
-Next, I print my board with columns (0-9) and rows (a-j), forming a 10x10 matrix to serve as the minefield for the game. (M[10][10] is a 100-value array with indexes 0-99.) If you want to know more about Bash arrays, read [_You don't know Bash: An introduction to Bash arrays_][4].
+接下来，我会用列（0-9）和行（a-j）显示出游戏界面,并且使用一个10x10矩阵作为雷区。（M[10][10] 是一个索引从0-99，有100个值的数组。） 如想了解更多关于Bash 数组的内容，请阅读这本书[_那些关于Bash你所不了解的事: Bash数组简介_][4]。
 
-Lets call it a function, **plough,**  we print the header first: two blank lines, the column headings, and a line to outline the top of the playing field:
+
+创建一个叫 **plough**的函数，我们先将标题显示出来：两个空行，列头，和一行 “-”，以示意往下是游戏界面: 
 
 
 ```
@@ -65,7 +68,8 @@ printf '%s' "     a   b   c   d   e   f   g   h   i   j"
 printf '\n   %s\n' "-----------------------------------------"
 ```
 
-Next, I establish a counter variable, called **r**, to keep track of how many horizontal rows have been populated. Note that, we will use the same counter variable '**r**' as our array index later in the game code. In a [Bash **for** loop][5], using the **seq** command to increment from 0 to 9, I print a digit (**d%**) to represent the row number ($row, which is defined by **seq**):
+然后,我初始化一个计数器变量，叫 **r**，它会用来记录已显示多少横行。 注意，稍后在游戏代码中，我们会用同一个变量**r**，作为我们的数组索引。 在 [Bash **for** 循环][5]中，用 **seq**命令从0增加到9。我用 (**d%**)占位，来显示示行号（$row,被**seq**定义的变量） 
+Next, I establish a counter variable, called **r**, to keep track of how many horizontal rows have been populated. Note that, we will use the same counter variable '**r**' as our array index later in the game code. In a [Bash **for** loop][5], using the **seq** command to increment from 0 to 9, I print a digit (**d%**) to represent the row number ($row, which is defined by **seq**):
 
 
 ```
@@ -74,10 +78,12 @@ for row in $(seq 0 9); do
   printf '%d  ' "$row" # print the row numbers from 0-9
 ```
 
-Before we move ahead from here, lets check what we have made till now. We printed sequence **[a-j] **horizontally first and then we printed row numbers in a range **[0-9]**, we will be using these two ranges to act as our users input coordinates to locate the mine to extract.** **
+Before we move ahead from here, lets check what we have made till now. We printed sequence **[a-j] **horizontally first and then we printed row numbers in a range **[0-9]**, we will be using these two ranges to act as our users input coordinates to locate the mine to extract.** **
+在我们接着往下做之前，让我们看看到现在都做了什么。我们先横着显示 **[a-j]** 然后再将 **[0-9]** 的行号显示出来，我们会用这两个范围，来确定用户所点击地雷的确切位置。 
 
 Next,** **Within each row, there is a column intersection, so it's time to open a new **for** loop. This one manages each column, so it essentially generates each cell in the playing field. I have added some helper functions that you can see the full definition of in the source code. For each cell,  we need something to make the field look like a mine, so we initialize the empty ones with a dot (.), using a custom function called [**is_null_field**][6]. Also, we need an array variable to store the value for each cell, we will use the predefined global array variable **[room][7]** along with an index [variable **r**][8]. As **r** increments, we iterate over the cells, dropping mines along the way.
 
+接着，在每行中，插入列，所以是时候写一个新的 **for** 循环了。 这一循环管理着每一列，也就是说，实际上是生成游戏界面的每一格。我添加了一些说明函数，这样，你能在源码中看到它的完整定义。 对每一格来说，我们需要一些让它看起来像地雷的东西，所以我们先用一个点（.）来初始化空格。实现这一想法，我们用的是一个叫[**is_null_field**][6] 的自定义函数。 同时，我们需要一个存储每一格具体值的数组，这儿我们会用到之前已定义的全局数组 **[room][7]** , 并且用 [变量 **r**][8]作为索引。 随着  **r** 的增加，我们会遍历所有单元格，并随机部署地雷。
 
 ```
   for col in $(seq 0 9); do
@@ -88,19 +94,17 @@ Next,** **Within each row, there is a column intersection, so it's time to open
   done
 ```
 
-Finally, I keep the board well-defined by enclosing the bottom of each row with a line, and then close the row loop:
-
+最后，为了保持游戏界面整齐好看，我会在每行用一个竖线作为结尾，并在最后结束行循环：
 
 ```
-printf '%s\n' "|"   # print the line end separator
-printf '   %s\n' "-----------------------------------------"
-# close row for loop
+printf '%s\n' "|"   #显示出行分隔符
+printf '   %s\n' "-----------------------------------------"
+# 结束行循环
 done
 printf '\n\n'
 ```
 
-The full **plough** function looks like: 
-
+完整的 **plough** 代码如下：
 
 ```
 plough()
@@ -125,34 +129,34 @@ plough()
 
 It took me some time to decide on needing the **is_null_field**, so let's take a closer look at what it does. We need a dependable state from the beginning of the game. That choice is arbitrary–it could have been a number or any character. I decided to assume everything was declared as a dot (.) because I believe it makes the gameboard look pretty. Here's what that looks like:
 
+我花了点时间来思考，**is_null_field** 的具体功能是什么。让我们来看看它到底能做些什么。在开始之初，我们需要游戏有一个固定的状态。你可以随便选择，最初所有格子的初始值，可以是一个数字或者任意字符。 我最终决定，所有单元格的初始值为一个点（.），以文我觉得这样会让游戏界面更好看。下面就是这一函数的完整代码：
 
 ```
 is_null_field()
 {
-  local e=$1 # we used index 'r' for array room already, let's call it 'e'
-    if [[ -z "${room[$e]}" ]];then
-      room[$r]="."  # this is where we put the dot(.) to initialize the cell/minefield
-    fi
+  local e=$1 # 在数组room中，我们已经用过循环变量 'r'了，这次我们用'e'
+    if [[ -z "${room[$e]}" ]];then
+      room[$r]="."  #这里用点（.）来初始化每一个单元格
+    fi
 }
 ```
 
-Now that, I have all the cells in our mine initialized, I get a count of all available mines by declaring and later calling a simple function shown below:
-
+Now that, I have all the cells in our mine initialized, I get a count of all available mines by declaring and later calling a simple function shown below:
+现在，我已经初始化了所有的格子，现在只要用一个很简单的函数，就能得出，当前游戏中还有多少单元格可以操作：
 
 ```
 get_free_fields()
 {
-  free_fields=0    # initialize the variable
-  for n in $(seq 1 ${#room[@]}); do
-    if [[ "${room[$n]}" = "." ]]; then  # check if the cells has initial value dot(.), then count it as a free field.
-      ((free_fields+=1))
+  free_fields=0    # 初始化变量 
+  for n in $(seq 1 ${#room[@]}); do
+    if [[ "${room[$n]}" = "." ]]; then  # free field. 检查当前单元格是否等于初始值（.），如果判断结果为真，则记为空余格子。 
+      ((free_fields+=1))
     fi
   done
 }
 ```
 
-Here is the printed minefield, where [**a-j]** are columns, and [**0-9**] are rows.
-
+这是显示出来的游戏界面，[**a-j]** 为列， [**0-9**] 为行。
 ![Minefield][9]
 
 ### Create the logic to drive the player
