@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (qfzy1233)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11402-1.html)
 [#]: subject: (An introduction to Markdown)
 [#]: via: (https://opensource.com/article/19/9/introduction-markdown)
 [#]: author: (Juan Islas https://opensource.com/users/xislas)
@@ -24,7 +24,7 @@ Markdown 使我的生活更简易。我只需要在已经编写的代码中添�
 
 > Markdown 是一种轻量级标记语言，具有纯文本格式语法。
 
-这意味着通过在文本中使用一些额外的符号，Markdown 可以帮助你创建具有特定结构和格式的文档。当你以纯文本（例如，在记事本应用程序中）做笔记时，没有任何东西表明哪个文本应该是粗体或斜体。在普通文本中，你在写链接时需要将一个链接写为 “http://example.com ”，或者写为 “example.com”，又或“访问网站（example.com）”。这样没有内在的一致性。
+这意味着通过在文本中使用一些额外的符号，Markdown 可以帮助你创建具有特定结构和格式的文档。当你以纯文本（例如，在记事本应用程序中）做笔记时，没有任何东西表明哪个文本应该是粗体或斜体。在普通文本中，你在写链接时需要将一个链接写为 “http://example.com”，或者写为 “example.com”，又或“访问网站（example.com）”。这样没有内在的一致性。
 
 但是如果你按照 Markdown 的方式编写，你的文本就有了内在的一致性。计算机喜欢一致性，因为这使得它们能够遵循严格的指令而不用担心异常。
 
