@@ -159,17 +159,16 @@ get_free_fields()
 这是显示出来的游戏界面，[**a-j]** 为列， [**0-9**] 为行。
 ![Minefield][9]
 
-### Create the logic to drive the player
+### 创建玩家逻辑
 
-The player logic reads an option from [stdin][10] as a coordinate to the mines and extracts the exact field on the minefield. It uses Bash's [parameter expansion][11] to extract the column and row inputs, then feeds the column to a switch that points to its equivalent integer notation on the board, to understand this, see the values getting assigned to variable '**o'** in the switch case statement below. For instance, a player might enter **c3**, which Bash splits into two characters: **c** and **3**. For simplicity, I'm skipping over how invalid entry is handled.
-
+玩家操作背后的逻辑在于，先从[stdin][10] 中读取数据作为坐标，然后再找出对应位置实际包含的值。这里用到了Bash的[参数扩展][11]，来设法得到行列数。然后将代表列数的字母传给switch,从而得到其对应的列数。为了更好地理解这一过程，可以看看下面这段代码中，变量 '**o'** 所对应的值。 举个例子，玩家输入了 **c3** ，这时 Bash 将其分成两个字符： **c** and **3** 。 为了简单起见，我跳过了如何处理无效输入的部分。
 
 ```
-  colm=${opt:0:1}  # get the first char, the alphabet
-  ro=${opt:1:1}    # get the second char, the digit
-  case $colm in
-    a ) o=1;;      # finally, convert the alphabet to its equivalent integer notation.
-    b ) o=2;;
+  colm=${opt:0:1}  # 得到第一个字符，一个字母
+  ro=${opt:1:1}    # 得到第二个字符，一个整数
+  case $colm in
+    a ) o=1;;      # 最后，通过字母得到对应列数。
+    b ) o=2;;
     c ) o=3;;
     d ) o=4;;
     e ) o=5;;
@@ -181,11 +180,13 @@ The player logic reads an option from [stdin][10] as a coordinate to the mines a
   esac
 ```
 
-Then it calculates the exact index and assigns the index of the input coordinates to that field.
+下面的代码会计算，用户所选单元格实际对应的数字，然后将结果储存在变量中。
 
-There is also a lot of use of **shuf** command here, **shuf** is a [Linux utility][12] designed to provide a random permutation of information where the **-i** option denotes indexes or possible ranges to shuffle and **-n** denotes the maximum number or output given back. Double parentheses allow for [mathematical evaluation][13] in Bash, and we will use them heavily here.
+There is also a lot of use of **shuf** command here, **shuf** is a [Linux utility][12] designed to provide a random permutation of information where the **-i** option denotes indexes or possible ranges to shuffle and **-n** denotes the maximum number or output given back. Double parentheses allow for [mathematical evaluation][13] in Bash, and we will use them heavily here.
 
-Let's assume our previous example received **c3** via stdin. Then, **ro=3** and **o=3** from above switch case statement converted **c** to its equivalent integer, put it into our formula to calculate final index '**i'.**
+这里也用到了很多的 **shuf** 命令，**shuf** 是一个专门用来生成随机序列的[Linux命令][12]。 **-i**  选项，后面需要提供需要打乱的数或者范围， **-n** 选择则规定，输出结果最多需要返回几个值。两个圆括号，在Bash中可以进行[数学计算]，这里我们会多次用到。
+
+还是沿用之前的例子，玩家输入了  **c3** 。 接着，它被转化成了**ro=3** 和 **o=3**。 之后，通过上面的switch 代码， 将**c** 转化为对应的整数，带进公式，以得到最终结果 '**i'.** 的值。   
 
 
 ```
@@ -193,22 +194,20 @@ Let's assume our previous example received **c3** via stdin. Then, **ro=3** and
   is_free_field $i $(shuf -i 0-5 -n 1)   # call a custom function that checks if the final index value points to a an empty/free cell/field.
 ```
 
-Walking through this math to understand how the final index '**i**' is calculated:
-
+仔细观察这个计算过程，看看最终结果 '**i**'  是如何计算出来的：
 
 ```
 i=$(((ro*10)+o))
 i=$(((3*10)+3))=$((30+3))=33
 ```
 
-The final index value is 33. On our board, printed above, the final index points to 33rd cell and that should be 3rd (starting from 0, otherwise 4th) row and 3rd (C) column.
+最后结果是33。在我们的游戏界面显示出来，玩家输入坐标指向了第33个单元格，也就是在第3行（从0开始，否则这里变成4），第3列。
 
-### Create the logic to determine the available minefield
+### Create the logic to determine the available minefield 创建
 
-To extract a mine, after the coordinates are decoded and the index is found, the program checks whether that field is available. If it's not, the program displays a warning, and the player chooses another coordinate.
+为了找到地雷，在将坐标转化，并找到实际位置之后，程序会检查这一单元格是否可选。如不可选，程序会显示一条警告信息，并要求玩家重新输入坐标。
 
-In this code, a cell is available if it contains a dot (**.**) character. Assuming it's available, the value in the cell is reset and the score is updated. If a cell is unavailable because it does not contain a dot, then a variable **not_allowed** is set. For brevity, I leave it to you to look at the source code of the game for the contents of [the warning statement][14] in the game logic.
-
+在这段代码中，单元格是否可选，是由数组里对应的值是否为点(**.**)决定的。 如果可选，则重置单元格对应的值，并更新分数。反之，因为其对应值不为点，则设置 变量 **not_allowed**。 为简单起见，游戏中[警告消息][14]这部分源码，我会留给读者们自己去探索。
 
 ```
 is_free_field()
@@ -226,12 +225,15 @@ is_free_field()
 ```
 
 ![Extracting mines][15]
+ 
+如输入坐标有效，且对应位置为地雷，如下图所示。 玩家输入 **h6**，游戏界面会出现一些随机生成的值。在发现地雷后，这些值会被加入用户得分。
 
-If the coordinate entered is available, the mine is discovered, as shown below. When **h6** is provided as input, some values at random populated on our minefields, these values are added to users score after the mins are extracted. 
 
 ![Extracting mines][16]
 
 Now remember the variables we declared at the start, [a-g], I will now use them here to extract random mines assigning their value to the variable **m** using Bash indirection. So, depending upon the input coordinates, the program picks a random set of additional numbers (**m**) to calculate the additional fields to be populated (as shown above) by adding them to the original input coordinates, represented here by **i (**calculated above**)**.
+
+
 
 Please note the character **X** in below code snippet, is our sole GAME-OVER trigger, we added it to our shuffle list to appear at random, with the beauty of **shuf** command, it can appear after any number of chances or may not even appear for our lucky winning user.
 
@@ -250,9 +252,10 @@ I want all revealed cells to be contiguous to the cell selected by the player.
 
 ![Extracting mines][17]
 
-### Keep a count of available and extracted mines
+### 记录已显示和可用单元格的个数
 
-The program needs to keep track of available cells in the minefield; otherwise, it keeps asking the player for input even after all the cells have been revealed. To implement this, I create a variable called **free_fields**, initially setting it to 0. In a **for** loop defined by the remaining number of available cells/fields in our minefields. ****If a cell contains a dot (**.**), then the count of **free_fields** is incremented.
+这个程序需要记录，游戏界面中哪些单元格是可选择的。否则，程序会一直让用户输入数据，即使所有单元格都被选中过。为了实现这一功能，我创建了一个叫 **free_fields** 的变量，初始值为0。 用一个 **for**  循环，记录下游戏界面中可选择单元格的数量。 ****如果单元格所对应的值为点 (**.**), 则 **free_fields** 加一。
+
 
 
 ```
@@ -267,36 +270,36 @@ get_free_fields()
 }
 ```
 
-Wait, what if, the **free_fields=0**? That means, our user had extracted all the mines. Please feel free to look at [the exact code][18] to understand better.
+等下，如果 **free_fields=0** 呢？ 这意味着，玩家已选择过所有单元格。如果想更好理解这一部分，可以看看这里的[源代码][18] 。
 
 
 ```
-if [[ $free_fields -eq 0 ]]; then   # well that means you extracted all the mines.
-      printf '\n\n\t%s: %s %d\n\n' "You Win" "you scored" "$score"
+if [[ $free_fields -eq 0 ]]; then   # 这意味着你已选择过所有格子
+      printf '\n\n\t%s: %s %d\n\n' "You Win" "you scored" "$score"
       exit 0
 fi
 ```
 
-### Create the logic for Gameover
+### 创建游戏结束逻辑
 
-For the Gameover situation, we print to the middle of the terminal using some [nifty logic][19] that I leave it to the reader to explore how it works.
+对于游戏结束这种情况，我们这里使用了一些很巧妙的技巧，将结果在屏幕中央显示出来。我把这部分留给读者朋友们自己去探索。
+
 
 
 ```
 if [[ "$m" = "X" ]]; then
-    g=0                      # to use it in parameter expansion
-    room[$i]=X               # override the index and print X
-    for j in {42..49}; do    # in the middle of the minefields,
-      out="gameover"
-      k=${out:$g:1}          # print one alphabet in each cell
-      room[$j]=${k^^}
+    g=0                      #  为了在参数扩展中使用它
+    room[$i]=X               # 覆盖此位置原有的值，并将其赋值为X
+    for j in {42..49}; do    # 在游戏界面中央，
+      out="gameover"
+      k=${out:$g:1}          # 在每一格中显示一个字母
+      room[$j]=${k^^}
       ((g+=1))
     done
 fi
 ```
 
- Finally, we can print the two lines which are most awaited.
-
+ 最后，我们显示出玩家最关心的两行。
 
 ```
 if [[ "$m" = "X" ]]; then
@@ -308,7 +311,7 @@ fi
 
 ![Minecraft Gameover][20]
 
-That's it, folks! If you want to know more, access the source code for this Minesweeper game and other games in Bash from my [GitHub repo][3]. I hope it gives you some inspiration to learn more Bash and to have fun while doing so.
+文章到这里就结束了，朋友们！ 如果你想了解更多，具体可以查看我的[GitHub 库][3]，那儿有这个扫雷游戏的源代码，并且你还能找到更多用Bash 编写的游戏。 我希望，这篇文章能激起你学习Bash的兴趣，并乐在其中。
 
 --------------------------------------------------------------------------------
 
