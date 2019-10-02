@@ -1,24 +1,26 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (A Raspberry Pi Based Open Source Tablet is in Making and it’s Called CutiePi)
 [#]: via: (https://itsfoss.com/cutiepi-open-source-tab/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-基于树莓派的开源平板正在制造，它名叫 CutiePi
+CutiePi：正在开发中的基于树莓派的开源平板
 ======
 
-CutiePi 是一款 8 英寸的构建在树莓派上的开源平板。官方人员在[树莓派论坛][1]上宣布：现在，它只是一台原型机。
+![](https://img.linux.net.cn/data/attachment/album/201910/02/125301wkbvgz1n7zv7j55e.jpg)
+
+CutiePi 是一款 8 英寸的构建在树莓派上的开源平板。他们在[树莓派论坛][1]上宣布：现在，它只是一台原型机。
 
 在本文中，你将了解有关 CutiePi 的规格、价格和可用性的更多详细信息。
 
-它们使用一款定制的计算模块版（CM3）来制造平板。[官网][2]提到使用定制 CM3 板的目的是：
+它们使用一款定制的计算模块载版（CM3）来制造平板。[官网][2]提到使用定制 CM3 载板的目的是：
 
-> 定制 CM3/CM3+板是专为便携使用而设计，拥有增强的电源管理和锂电池电量监控功能。还可与指定的 HDMI 或 MIPI DSI 显示器配合使用。
+> 定制 CM3/CM3+ 载板是专为便携使用而设计，拥有增强的电源管理和锂聚合物电池电量监控功能。还可与指定的 HDMI 或 MIPI DSI 显示器配合使用。
 
-因此，这使得平板足够薄而且便携。
+因此，这使得该平板足够薄而且便携。
 
 ### CutiePi 规格
 
@@ -36,19 +38,17 @@ CutiePi 是一款 8 英寸的构建在树莓派上的开源平板。官方人员
 
 ### CutiePi 源码
 
-你可以通过分析所用材料的清单来猜测此平板的定价。CutiePi 遵循 100% 的开源硬件设计。因此，如果你觉得好奇，可以查看它的 GitHub 页面，了解有关硬件设计和内容的详细信息。
-
-[CutiePi on GitHub][7]
+你可以通过分析所用材料的清单来猜测此平板的定价。CutiePi 遵循 100% 的开源硬件设计。因此，如果你觉得好奇，可以查看它的 [GitHub 页面][7]，了解有关硬件设计和内容的详细信息。
 
 ### CutiePi 价格、发布日期和可用性
 
-CutiePi 计划在 8 月处理进行[设计验证测试][8]批量的 PCB。他们的目标是在 2019 年底推出最终产品。
+CutiePi 计划在 8 月进行[设计验证测试][8]批量 PCB。他们的目标是在 2019 年底推出最终产品。
 
 官方预计，发售价大约在 $150-$250 左右。这只是一个近似的范围，还应该保有怀疑。
 
 显然，即使产品听上去挺有希望，但价格将是它成功的一个主要因素。
 
-**总结**
+### 总结
 
 CutiePi 并不是第一个使用[像树莓派这样的单板计算机][9]来制作平板的项目。我们有即将推出的 [PineTab][10]，它基于 Pine64 单板电脑。Pine 还有一种笔记本电脑，名为 [Pinebook][11]。
 
@@ -63,7 +63,7 @@ via: https://itsfoss.com/cutiepi-open-source-tab/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
