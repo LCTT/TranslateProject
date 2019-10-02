@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11416-1.html)
 [#]: subject: (Introduction to the Linux chown command)
 [#]: via: (https://opensource.com/article/19/8/linux-chown-command)
-[#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdosshttps://opensource.com/users/sethhttps://opensource.com/users/alanfdosshttps://opensource.com/users/sethhttps://opensource.com/users/greg-phttps://opensource.com/users/alanfdoss)
+[#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
 
 chown 命令简介
 ======
 
 > 学习如何使用 chown 命令更改文件或目录的所有权。
 
-![Hand putting a Linux file folder into a drawer][1]
+![](https://img.linux.net.cn/data/attachment/album/201910/03/000014mfrxrxi5rej75mjs.jpg)
 
 Linux 系统上的每个文件和目录均由某个人拥有，拥有者可以完全控制更改或删除他们拥有的文件。除了有一个*拥有用户*外，文件还有一个*拥有组*。
 
@@ -125,7 +125,7 @@ via: https://opensource.com/article/19/8/linux-chown-command
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: https://opensource.com/users/alanfdosshttps://opensource.com/users/sethhttps://opensource.com/users/alanfdosshttps://opensource.com/users/sethhttps://opensource.com/users/greg-phttps://opensource.com/users/alanfdoss
+[a]: https://opensource.com/users/alanfdoss
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/yearbook-haff-rx-linux-file-lead_0.png?itok=-i0NNfDC (Hand putting a Linux file folder into a drawer)
 [2]: https://opensource.com/article/19/8/introduction-linux-chmod-command
