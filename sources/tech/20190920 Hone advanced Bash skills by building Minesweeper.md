@@ -21,29 +21,25 @@
 在我编写任何代码之前，我列出了游戏所必须的几个部分：
 
   1. 显示雷区
-  2. 创建游戏逻辑
-  3. 创建逻辑以确定有效雷区
-  4. 记录当前还有多少个未被发现以及已标记的雷
+  2. 创建玩家逻辑
+  3. 创建判断单元格是否可选的逻辑
+  4. 记录已选择和可用单元格的个数
   5. 创建游戏结束逻辑
 
 
 ### 显示雷区
 
-In Minesweeper, the game world is a 2D array (columns and rows) of concealed cells. Each cell may or may not contain an explosive mine. The player's objective is to reveal cells that contain no mine, and to never reveal a mine. Bash version of the game uses a 10x10 matrix, implemented using simple bash arrays.
-
 在扫雷中，游戏界面是一个由2D数组（列和行）组成的不透明小方格。每一格下都有可能藏有地雷。玩家的任务就是找到那些不含雷的方格，并且在这一过程中，不能点到地雷。Bash版本的扫雷使用10x10的矩阵，实际逻辑则由一个简单的Bash数组来完成。
 
-First, I assign some random variables. These are the locations that mines could be placed on the board. By limiting the number of locations, it will be easy to build on top of this. The logic could be better, but I wanted to keep the game looking simple and a bit immature. (I wrote this for fun, but I would happily welcome your contributions to make it look better.)
 首先，我先生成了一些随机数字。这将是地雷在雷区里的位置。为了控制地雷的数量，在开始编写代码之前，这么做会容易一些。实现这一功能的逻辑可以更好，但我这么做，是为了让游戏实现保持简洁，并有改进空间。（我编写这个游戏纯属娱乐，但如果你能将它修改的更好，我也是很乐意的。）
 
-The variables below are some default variables, declared to call randomly for field placement, like the variables a-g, we will use them to calculate our extractable mines:
-下面这些变量有一些是默认的，像
-
+下面这些变量是整个过程中是不变的，声明它们是为了随机生成数字。就像下面的变量a-g，它们会被用来计算可选择的地雷
+的值：
 
 ```
 # 变量
 score=0 # 会用来存放游戏分数
-# variables below will be used to randomly get the extract-able cells/fields from our mine. 下面这些变量用来随机生成
+#下面这些变量，用来随机生成可选择地雷的实际值
 a="1 10 -10 -1"
 b="-1 0 1"
 c="0 1"
@@ -68,30 +64,26 @@ printf '%s' "     a   b   c   d   e   f   g   h   i   j"
 printf '\n   %s\n' "-----------------------------------------"
 ```
 
-然后,我初始化一个计数器变量，叫 **r**，它会用来记录已显示多少横行。 注意，稍后在游戏代码中，我们会用同一个变量**r**，作为我们的数组索引。 在 [Bash **for** 循环][5]中，用 **seq**命令从0增加到9。我用 (**d%**)占位，来显示示行号（$row,被**seq**定义的变量） 
-Next, I establish a counter variable, called **r**, to keep track of how many horizontal rows have been populated. Note that, we will use the same counter variable '**r**' as our array index later in the game code. In a [Bash **for** loop][5], using the **seq** command to increment from 0 to 9, I print a digit (**d%**) to represent the row number ($row, which is defined by **seq**):
+然后,我初始化一个计数器变量，叫 **r**，它会用来记录已显示多少横行。 注意，稍后在游戏代码中，我们会用同一个变量**r**，作为我们的数组索引。 在 [Bash **for** 循环][5]中，用 **seq**命令从0增加到9。我用 (**d%**)占位，来显示行号（$row,被**seq**定义的变量） 
 
 
 ```
 r=0 # our counter
 for row in $(seq 0 9); do
-  printf '%d  ' "$row" # print the row numbers from 0-9
+  printf '%d  ' "$row" # 显示 行数 0-9 
 ```
 
-Before we move ahead from here, lets check what we have made till now. We printed sequence **[a-j] **horizontally first and then we printed row numbers in a range **[0-9]**, we will be using these two ranges to act as our users input coordinates to locate the mine to extract.** **
-在我们接着往下做之前，让我们看看到现在都做了什么。我们先横着显示 **[a-j]** 然后再将 **[0-9]** 的行号显示出来，我们会用这两个范围，来确定用户所点击地雷的确切位置。 
+在我们接着往下做之前，让我们看看到现在都做了什么。我们先横着显示 **[a-j]** 然后再将 **[0-9]** 的行号显示出来，我们会用这两个范围，来确定用户选择的确切位置。 
 
-Next,** **Within each row, there is a column intersection, so it's time to open a new **for** loop. This one manages each column, so it essentially generates each cell in the playing field. I have added some helper functions that you can see the full definition of in the source code. For each cell,  we need something to make the field look like a mine, so we initialize the empty ones with a dot (.), using a custom function called [**is_null_field**][6]. Also, we need an array variable to store the value for each cell, we will use the predefined global array variable **[room][7]** along with an index [variable **r**][8]. As **r** increments, we iterate over the cells, dropping mines along the way.
-
-接着，在每行中，插入列，所以是时候写一个新的 **for** 循环了。 这一循环管理着每一列，也就是说，实际上是生成游戏界面的每一格。我添加了一些说明函数，这样，你能在源码中看到它的完整定义。 对每一格来说，我们需要一些让它看起来像地雷的东西，所以我们先用一个点（.）来初始化空格。实现这一想法，我们用的是一个叫[**is_null_field**][6] 的自定义函数。 同时，我们需要一个存储每一格具体值的数组，这儿我们会用到之前已定义的全局数组 **[room][7]** , 并且用 [变量 **r**][8]作为索引。 随着  **r** 的增加，我们会遍历所有单元格，并随机部署地雷。
+接着，在每行中，插入列，所以是时候写一个新的 **for** 循环了。 这一循环管理着每一列，也就是说，实际上是生成游戏界面的每一格。我添加了一些说明函数，你能在源码中看到它的完整实现。 对每一格来说，我们需要一些让它看起来像地雷的东西，所以我们先用一个点（.）来初始化空格。实现这一想法，我们用的是一个叫[**is_null_field**][6] 的自定义函数。 同时，我们需要一个存储每一格具体值的数组，这儿会用到之前已定义的全局数组 **[room][7]** , 并用 [变量 **r**][8]作为索引。 随着  **r** 的增加，遍历所有单元格，并随机部署地雷。
 
 ```
   for col in $(seq 0 9); do
-    ((r+=1))  # increment the counter as we move forward in column sequence
-    is_null_field $r  # assume a function which will check, if the field is empty, if so, initialize it with a dot(.)
-    printf '%s \e[33m%s\e[0m ' "|" "${room[$r]}" # finally print the separator, note that, the first value of ${room[$r]} will be '.', as it is just initialized.
-  #close col loop
-  done
+    ((r+=1))  # 循环完一列行数加一
+    is_null_field $r  #  假设这里有个函数，它会检查单元格是否为空，为真，则此单元格初始值为点（.）
+    printf '%s \e[33m%s\e[0m ' "|" "${room[$r]}" #  最后显示分隔符，注意，${room[$r]} 的第一个值为 '.',等于其初始值。
+  #结束 col 循环
+  done
 ```
 
 最后，为了保持游戏界面整齐好看，我会在每行用一个竖线作为结尾，并在最后结束行循环：
@@ -127,9 +119,7 @@ plough()
 }
 ```
 
-It took me some time to decide on needing the **is_null_field**, so let's take a closer look at what it does. We need a dependable state from the beginning of the game. That choice is arbitrary–it could have been a number or any character. I decided to assume everything was declared as a dot (.) because I believe it makes the gameboard look pretty. Here's what that looks like:
-
-我花了点时间来思考，**is_null_field** 的具体功能是什么。让我们来看看它到底能做些什么。在开始之初，我们需要游戏有一个固定的状态。你可以随便选择，最初所有格子的初始值，可以是一个数字或者任意字符。 我最终决定，所有单元格的初始值为一个点（.），以文我觉得这样会让游戏界面更好看。下面就是这一函数的完整代码：
+我花了点时间来思考，**is_null_field** 的具体功能是什么。让我们来看看，它到底能做些什么。在最开始，我们需要游戏有一个固定的状态。你可以随便选择所有格子的初始值，可以是一个数字或者任意字符。 我最后决定，所有单元格的初始值为一个点（.），因为我觉得，这样会让游戏界面更好看。下面就是这一函数的完整代码：
 
 ```
 is_null_field()
@@ -141,7 +131,6 @@ is_null_field()
 }
 ```
 
-Now that, I have all the cells in our mine initialized, I get a count of all available mines by declaring and later calling a simple function shown below:
 现在，我已经初始化了所有的格子，现在只要用一个很简单的函数，就能得出，当前游戏中还有多少单元格可以操作：
 
 ```
@@ -149,7 +138,7 @@ get_free_fields()
 {
   free_fields=0    # 初始化变量 
   for n in $(seq 1 ${#room[@]}); do
-    if [[ "${room[$n]}" = "." ]]; then  # free field. 检查当前单元格是否等于初始值（.），如果判断结果为真，则记为空余格子。 
+    if [[ "${room[$n]}" = "." ]]; then  # 检查当前单元格是否等于初始值（.），结果为真，则记为空余格子。 
       ((free_fields+=1))
     fi
   done
@@ -182,16 +171,14 @@ get_free_fields()
 
 下面的代码会计算，用户所选单元格实际对应的数字，然后将结果储存在变量中。
 
-There is also a lot of use of **shuf** command here, **shuf** is a [Linux utility][12] designed to provide a random permutation of information where the **-i** option denotes indexes or possible ranges to shuffle and **-n** denotes the maximum number or output given back. Double parentheses allow for [mathematical evaluation][13] in Bash, and we will use them heavily here.
-
-这里也用到了很多的 **shuf** 命令，**shuf** 是一个专门用来生成随机序列的[Linux命令][12]。 **-i**  选项，后面需要提供需要打乱的数或者范围， **-n** 选择则规定，输出结果最多需要返回几个值。两个圆括号，在Bash中可以进行[数学计算]，这里我们会多次用到。
+这里也用到了很多的 **shuf** 命令，**shuf** 是一个专门用来生成随机序列的[Linux命令][12]。 **-i**  选项，后面需要提供需要打乱的数或者范围， **-n** 选择则规定，输出结果最多需要返回几个值。Bash中，可以在两个圆括号内进行[数学计算]，这里我们会多次用到。
 
 还是沿用之前的例子，玩家输入了  **c3** 。 接着，它被转化成了**ro=3** 和 **o=3**。 之后，通过上面的switch 代码， 将**c** 转化为对应的整数，带进公式，以得到最终结果 '**i'.** 的值。   
 
 
 ```
-  i=$(((ro*10)+o))   # Follow BODMAS rule, to calculate final index.
-  is_free_field $i $(shuf -i 0-5 -n 1)   # call a custom function that checks if the final index value points to a an empty/free cell/field.
+  i=$(((ro*10)+o))   # 遵循运算规则，算出最终值
+  is_free_field $i $(shuf -i 0-5 -n 1)   #  调用自定义函数，判断其指向空/可选择单元格。
 ```
 
 仔细观察这个计算过程，看看最终结果 '**i**'  是如何计算出来的：
@@ -203,7 +190,7 @@ i=$(((3*10)+3))=$((30+3))=33
 
 最后结果是33。在我们的游戏界面显示出来，玩家输入坐标指向了第33个单元格，也就是在第3行（从0开始，否则这里变成4），第3列。
 
-### Create the logic to determine the available minefield 创建
+### 创建判断单元格是否可选的逻辑
 
 为了找到地雷，在将坐标转化，并找到实际位置之后，程序会检查这一单元格是否可选。如不可选，程序会显示一条警告信息，并要求玩家重新输入坐标。
 
@@ -231,28 +218,27 @@ is_free_field()
 
 ![Extracting mines][16]
 
-Now remember the variables we declared at the start, [a-g], I will now use them here to extract random mines assigning their value to the variable **m** using Bash indirection. So, depending upon the input coordinates, the program picks a random set of additional numbers (**m**) to calculate the additional fields to be populated (as shown above) by adding them to the original input coordinates, represented here by **i (**calculated above**)**.
+还记得我们开头定义的变量，[a-g]吗，我会用它们来确定，随机生成地雷的具体值。 所以，根据玩家输入坐标，程序会根据 (**m**) 中随机生成的数，来生成周围其他单元格的值。（如上图所示） 。之后将所有值和初始输入坐标相加，最后结果放在**i (**计算结果如上**)**中.
 
 
 
-Please note the character **X** in below code snippet, is our sole GAME-OVER trigger, we added it to our shuffle list to appear at random, with the beauty of **shuf** command, it can appear after any number of chances or may not even appear for our lucky winning user.
-
+请注意下面代码中的 **X**，它是我们唯一的游戏结束标志。我们将它添加到随机列表中。在 **shuf** 命令的魔力下，X可以在任意情况下出现，但如果你足够幸运的话，也可能一直不会出现。
 
 ```
-m=$(shuf -e a b c d e f g X -n 1)   # add an extra char X to the shuffle, when m=X, its GAMEOVER
-  if [[ "$m" != "X" ]]; then        # X will be our explosive mine(GAME-OVER) trigger
-    for limit in ${!m}; do          # !m represents the value of value of m
-      field=$(shuf -i 0-5 -n 1)     # again get a random number and
-      index=$((i+limit))            # add values of m to our index and calculate a new index till m reaches its last element.
-      is_free_field $index $field
+m=$(shuf -e a b c d e f g X -n 1)   # 将 X 添加到随机列表中，当 m=X,游戏结束
+  if [[ "$m" != "X" ]]; then        # X将会是我们爆炸地雷（游戏结束）的触发标志
+    for limit in ${!m}; do          # !m 代表m变量的值
+      field=$(shuf -i 0-5 -n 1)     # 然后再次获得一个随机数字
+      index=$((i+limit))            # 将m中的每一个值和index加起来，直到列表结尾
+      is_free_field $index $field
     done
 ```
 
-I want all revealed cells to be contiguous to the cell selected by the player.
+我想要游戏界面中，所有随机显示出来的单元格，都靠近玩家选择的单元格。
 
 ![Extracting mines][17]
 
-### 记录已显示和可用单元格的个数
+### 记录已选择和可用单元格的个数
 
 这个程序需要记录，游戏界面中哪些单元格是可选择的。否则，程序会一直让用户输入数据，即使所有单元格都被选中过。为了实现这一功能，我创建了一个叫 **free_fields** 的变量，初始值为0。 用一个 **for**  循环，记录下游戏界面中可选择单元格的数量。 ****如果单元格所对应的值为点 (**.**), 则 **free_fields** 加一。
 
