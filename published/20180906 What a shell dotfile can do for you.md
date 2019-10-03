@@ -3,7 +3,7 @@ Shell 点文件可以为你做点什么
 
 > 了解如何使用配置文件来改善你的工作环境。
 
-![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/coffee_cafe_brew_laptop_desktop.jpg?itok=G-n1o1-o)
+![](https://img.linux.net.cn/data/attachment/album/201910/03/123528x3skwqwb8sz8qo8s.jpg)
 
 不要问你可以为你的 shell <ruby>点文件<rt>dotfile</rt></ruby>做什么，而是要问一个 shell 点文件可以为你做什么！
 
