@@ -5,7 +5,7 @@
 
 - 更新   2014-05-14：增加了一些具体实例
 - 更新   2015-03-16：根据照片的 GPS 坐标过滤图片
-- 更新   2016-08-29：以新的 `filetags --filter` （LCTT 译注：文件标签过滤器）替换已经过时的 `show-sel.sh` 脚本（LCTT 译注：“show-sel” 为 “show firmware System Event Log records”，即显示固件系统事件及日志）
+- 更新   2016-08-29：以新的 `filetags --filter` 替换已经过时的 `show-sel.sh` 脚本
 - 更新   2017-08-28: geeqier 视频缩略图的邮件评论
 - 更新   2018-03-06：增加了 Julian Kahnert 的链接
 - 更新   2018-05-06：增加了作者在 2018 Linuxtage Graz 大会上 45 分钟演讲的视频
