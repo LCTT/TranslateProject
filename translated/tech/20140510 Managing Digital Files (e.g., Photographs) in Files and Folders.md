@@ -1,13 +1,16 @@
 数码文件与文件夹收纳术（以照片为例）
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/201910/05/000950xsxopomsrs55rrb5.jpg)
+
 - 更新   2014-05-14：增加了一些具体实例
 - 更新   2015-03-16：根据照片的 GPS 坐标过滤图片
 - 更新   2016-08-29：以新的 `filetags --filter` （LCTT 译注：文件标签过滤器）替换已经过时的 `show-sel.sh` 脚本（LCTT 译注：“show-sel” 为 “show firmware System Event Log records”，即显示固件系统事件及日志）
 - 更新   2017-08-28: geeqier 视频缩略图的邮件评论
-- 更新   2018-03-06：增加了 zum Konzept von Julian Kahnert 的链接
-- 更新   2018-05-06：增加了作者在 2018 Linuxtage Graz 大会上演讲的视频
+- 更新   2018-03-06：增加了 Julian Kahnert 的链接
+- 更新   2018-05-06：增加了作者在 2018 Linuxtage Graz 大会上 45 分钟演讲的视频
 - 更新   2018-06-05：关于 metadata 的邮件回复
+- 更新   2018-07-22：移动文件夹结构的解释到一篇它自己的文章中
 - 更新   2019-07-09：关于在文件名中避免使用系谱和字符的邮件回复
 
 每当度假或去哪游玩时我就会化身为一个富有激情的摄影师。所以，过去的几年中我积累了许多的 [JPEG][1] 文件。这篇文章中我会介绍我是如何避免 [供应商锁定][2]（LCTT 译注：<ruby>供应商锁定<rt>vendor lock-in</rt></ruby>，原为经济学术语，这里引申为避免过于依赖某一服务平台）造成受限于那些临时性的解决方案及数据丢失。相反，我更倾向于使用那些可以让我**投入时间和精力打理，并能长久使用**的解决方案。
@@ -117,11 +120,10 @@
 
 对于数码照片，我使用标签，例如，`specialL` 用于我认为适合桌面背景的风景图片，`specialP` 用于我想展示给其他人的人像照片，`sel` 用于筛选，等等。
 
-##### 使用 geeqie 初始设置文件标签
+##### 使用 geeqie 初始设置 filetags
 
-向geeqie添加文件标签是一个手动步骤:`编辑>首选项>配置编辑器…`然后创建一个带有`New`的附加条目。在这里，你可以定义一个新的桌面文件，如下所示:
+向 geeqie 添加 `filetags` 是一个手动步骤：“Edit > Preferences > Configure Editors ...”，然后创建一个附加条目 `New`。在这里，你可以定义一个新的桌面文件，如下所示:
 
-add-tags.desktop
 ```
 [Desktop Entry]
 Name=filetags
@@ -135,12 +137,12 @@ Categories=Application;Graphics;
 hidden=false
 MimeType=image/*;video/*;image/mpo;image/thm
 Categories=X-Geeqie;
-
 ```
 
-包装器脚本的`vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh `是必须的，因为我想要弹出一个新的终端，以便添加标签到我的文件:
+*add-tags.desktop*
 
-vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh
+封装脚本 `vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh` 是必须的，因为我想要弹出一个新的终端，以便添加标签到我的文件:
+
 ```
 #!/bin/sh
 
@@ -151,14 +153,14 @@ vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh
  -x /home/vk/src/filetags/filetags.py --interactive "${@}"
 
 #end
-
 ```
 
-在geeqie中，你可以在` Edit > Preferences > Preferences…>键盘`。我将`t`与`filetags`命令相关联。
+*vk-filetags-interactive-adding-wrapper-with-gnome-terminal.sh*
 
-标签脚本还能够从单个文件或一组文件中删除标记。它基本上使用与上面相同的方法。唯一的区别是文件标签脚本额外的`--remove`参数:
+在 geeqie 中，你可以在 “Edit > Preferences > Preferences ... > Keyboard”。我将 `t` 与 `filetags` 命令相关联。
 
-remove-tags.desktop
+这个 `filetags` 脚本还能够从单个文件或一组文件中删除标记。它基本上使用与上面相同的方法。唯一的区别是 `filetags` 脚本额外的 `--remove` 参数：
+
 ```
 [Desktop Entry]
 Name=filetags-remove
@@ -172,10 +174,10 @@ Categories=Application;Graphics;
 hidden=false
 MimeType=image/*;video/*;image/mpo;image/thm
 Categories=X-Geeqie;
-
 ```
 
-vk-filetags-interactive-removing-wrapper-with-gnome-terminal.sh
+*remove-tags.desktop*
+
 ```
 #!/bin/sh
 
@@ -186,38 +188,38 @@ vk-filetags-interactive-removing-wrapper-with-gnome-terminal.sh
  -x /home/vk/src/filetags/filetags.py --interactive --remove "${@}"
 
 #end
-
 ```
 
-为了删除标签，我为`T`参数创建了一个键盘快捷方式。
+*vk-filetags-interactive-removing-wrapper-with-gnome-terminal.sh*
 
-##### 在geeqie中使用文件标签
+为了删除标签，我创建了一个键盘快捷方式 `T`。
 
-当我在geeqie文件浏览器中浏览图像文件时，我选择要标记的文件(一到多个)并按`t`。然后，一个小窗口弹出，要求我提供一个或多个标签。在 ` Return ` 命令确认后，这些标签被添加到文件名中。
+##### 在 geeqie 中使用 filetags
 
-删除标签也是一样:选择多个文件，按下`T`，输入要删除的标签，然后用`Return`确认。就是这样。几乎没有[更简单的方法来添加或删除标签到文件][29]。
+当我在 geeqie 文件浏览器中浏览图像文件时，我选择要标记的文件（一到多个）并按 `t`。然后，一个小窗口弹出，要求我提供一个或多个标签。用回车确认后，这些标签被添加到文件名中。
 
-#### 工作流:使用appendfilename重命名高级文件
+删除标签也是一样：选择多个文件，按下 `T`，输入要删除的标签，然后按回车确认。就是这样。几乎没有[给文件添加或删除标签的更简单的方法了][29]。
+
+#### 工作流程：改进的使用 appendfilename 重命名文件
 
 ##### 不使用 appendfilename
 
-重命名一组大型文件可能是一个冗长乏味的过程。对于`2014-04-20T17.09.11_p1100386.jpg`这样的原始文件名，在文件名中添加描述的过程相当烦人。你将按`Ctrl-r`(重命名)在geeqie打开文件重命名对话框。默认情况下，原始名称(没有文件扩展名的文件名称)被标记。因此，如果不希望删除/覆盖文件名(但要追加)，则必须按下光标键` <right> `。然后，光标放在基本名称和扩展名之间。输入你的描述(不要忘记初始空格字符)，并用`Return`进行确认。
+重命名一组大型文件可能是一个冗长乏味的过程。对于 `2014-04-20T17.09.11_p1100386.jpg` 这样的原始文件名，在文件名中添加描述的过程相当烦人。你将按 `Ctrl-r` （重命名）在 geeqie 中打开文件重命名对话框。默认情况下，原始名称（没有文件扩展名的文件名称）被标记。因此，如果不希望删除/覆盖文件名（但要追加），则必须按下光标键 `→`。然后，光标放在基本名称和扩展名之间。输入你的描述（不要忘记以空格字符开始），并用回车进行确认。
 
 ##### 在 geeqie 使中用 appendfilename
 
-使用[appendfilename][30]，我的过程得到了简化，可以获得将文本附加到文件名的最佳用户体验:当我在geeqie中按下` a ` (append)时，会弹出一个对话框窗口，询问文本。在`Return`确认后，输入的文本将放置在时间戳和可选标记之间。
+使用 [appendfilename][30]，我的过程得到了简化，可以获得将文本附加到文件名的最佳用户体验：当我在 geeqie 中按下 `a`（附加）时，会弹出一个对话框窗口，询问文本。在回车确认后，输入的文本将放置在时间戳和可选标记之间。
 
-例如，当我在`2014-04-20T17.09.11_p1100386.jpg`上按下`a`，然后在`Graz`中键入`Pick-nick in Graz`时，文件名变为`2014-04-20T17.09.11_p1100386 Pick-nick in Graz.jpg`。当我再次按下`a`并输入`with Susan`时，文件名变为`2014-04-20T17.09.11_p1100386 Pick-nick in Graz with Susan.jpg`。当文件名也获得标记时，附加的文本将附加在标记分隔符之前。
+例如，当我在 `2014-04-20T17.09.11_p1100386.jpg` 上按下 `a`，然后键入`Pick-nick in Graz` 时，文件名变为 `2014-04-20T17.09.11_p1100386 Pick-nick in Graz.jpg`。当我再次按下 `a` 并输入 `with Susan` 时，文件名变为 `2014-04-20T17.09.11_p1100386 Pick-nick in Graz with Susan.jpg`。当文件名添加标记时，附加的文本前将附加标记分隔符。
 
 这样，我就不必担心覆盖时间戳或标记。重命名的过程对我来说变得更加有趣!
 
-最好的部分是:当我想要将相同的文本添加到多个选定的文件中时，也可以使用appendfilename。
+最好的部分是：当我想要将相同的文本添加到多个选定的文件中时，也可以使用 `appendfilename`。
 
-##### 使用 geeqie 初始 appendfilename
+##### 在 geeqie 中初始设置 appendfilename
 
-添加一个额外的编辑器到geeqie: ` Edit > Preferences > Configure editor…>New`。然后输入桌面文件定义:
+添加一个额外的编辑器到 geeqie: “Edit > Preferences > Configure Editors ... > New”。然后输入桌面文件定义：
 
-appendfilename.desktop
 ```
 [Desktop Entry]
 Name=appendfilename
@@ -231,12 +233,12 @@ Categories=Application;Graphics;
 hidden=false
 MimeType=image/*;video/*;image/mpo;image/thm
 Categories=X-Geeqie;
-
 ```
 
-同样，我也使用了一个包装脚本，它将为我打开一个新的终端:
+*appendfilename.desktop*
 
-vk-appendfilename-interactive-wrapper-with-gnome-terminal.sh
+同样，我也使用了一个封装脚本，它将为我打开一个新的终端：
+
 ```
 #!/bin/sh
 
@@ -247,20 +249,20 @@ vk-appendfilename-interactive-wrapper-with-gnome-terminal.sh
  -x /home/vk/src/appendfilename/appendfilename.py "${@}"
 
 #end
-
 ```
 
-#### 工作流程:播放电影文件
+*vk-appendfilename-interactive-wrapper-with-gnome-terminal.sh*
 
-在GNU/Linux上，我使用[mplayer][31]回放视频文件。由于geeqie本身不播放电影文件，所以我必须创建一个设置，以便在mplayer中打开电影文件。
+#### 工作流程：播放电影文件
 
-##### 在geeqie中初始化mplayer的设置
+在 GNU/Linux 上，我使用 [mplayer][31] 回放视频文件。由于 geeqie 本身不播放电影文件，所以我必须创建一个设置，以便在 mplayer 中打开电影文件。
 
-我已经使用[xdg-open][32]将电影文件扩展名关联到mplayer。因此，我只需要为geeqie创建一个通用的“open”命令，使用xdg-open打开任何文件及其关联的应用程序。
+##### 在 geeqie 中初始设置 mplayer
 
-再次访问` Edit > Preferences > Configure editor…`在geeqie中添加`open`的条目:
+我已经使用 [xdg-open][32] 将电影文件扩展名关联到 mplayer。因此，我只需要为 geeqie 创建一个通用的“open”命令，让它使用 `xdg-open` 打开任何文件及其关联的应用程序。
 
-open.desktop
+在 geeqie 中，再次访问 “Edit > Preferences > Configure Editors ...” 添加“open”的条目：
+
 ```
 [Desktop Entry]
 Name=open
@@ -274,40 +276,40 @@ hidden=false
 NOMimeType=*;
 MimeType=image/*;video/*
 Categories=X-Geeqie;
-
 ```
 
-当你将快捷方式`o`(见上文)与geeqie关联时，你就能够打开与其关联的应用程序的视频文件(和其他文件)。
+*open.desktop*
 
-##### 使用xdg-open打开电影文件(和其他文件)
+当你也将快捷方式 `o` （见上文）与 geeqie 关联时，你就能够打开与其关联的应用程序的视频文件（和其他文件）。
 
-在上面的设置过程之后，当你的geeqie光标位于文件上方时，你只需按下`o`即可。就是如此简洁。
+##### 使用 xdg-open 打开电影文件（和其他文件）
 
-#### 工作流:在外部图像编辑器中打开
+在上面的设置过程之后，当你的 geeqie 光标位于文件上方时，你只需按下 `o` 即可。就是如此简洁。
 
-我不太希望能够在GIMP中快速编辑图像文件。因此，我添加了一个快捷方式`g`，并将其与外部编辑器“GNU图像处理程序”(GIMP)关联起来，geeqie已经默认创建了该程序
+#### 工作流程：在外部图像编辑器中打开
 
-这样，只需按下`g`就可以打开GIMP中的当前图像。
+我不太希望能够在 GIMP 中快速编辑图像文件。因此，我添加了一个快捷方式 `g`，并将其与外部编辑器 “"GNU Image Manipulation Program" (GIMP)” 关联起来，geeqie 已经默认创建了该外部编辑器。
 
-#### 工作流程:移动到存档文件夹
+这样，只需按下 `g` 就可以在 GIMP 中打开当前图像。
 
-现在我已经在我的文件名中添加了注释，我想将单个文件移动到`$HOME/archive/events_memories/2014/`，或者将一组文件移动到这个文件夹中的新文件夹中，如`$HOME/archive/events_memories/2014/2014-05-08 business marathon after show - party`。
+#### 工作流程：移动到存档文件夹
 
-通常的方法是选择一个或多个文件，并将它们移动到具有快捷方式`Ctrl-m`的文件夹中。
+现在我已经在我的文件名中添加了注释，我想将单个文件移动到 `$HOME/archive/events_memories/2014/`，或者将一组文件移动到这个文件夹中的新文件夹中，如 `$HOME/archive/events_memories/2014/2014-05-08 business marathon after show - party`。
+
+通常的方法是选择一个或多个文件，并用快捷方式 `Ctrl-m` 将它们移动到文件夹中。
 
 何等繁复无趣之至！
 
-因此，我(再次)编写了一个Python脚本，它为我完成了这项工作:[move2archive][33](简而言之:` m2a `需要一个或多个文件作为命令行参数。然后，出现一个对话框，我可以在其中输入一个可选文件夹名。当我不输入任何东西，但按`Return`，文件被移动到相应年份的文件夹。当我输入一个类似`business marathon after show - party`的文件夹名称时，第一个图像文件的日期戳被附加到该文件夹(`$HOME/archive/events_memories/2014/2014-05-08 business marathon after show - party`)，得到的文件夹是(`$HOME/archive/events_memories/2014/2014-05-08 Business-Marathon After-Show-Party`)，并移动文件。
+因此，我（再次）编写了一个 Python 脚本，它为我完成了这项工作：[move2archive][33]（简写为：` m2a `），需要一个或多个文件作为命令行参数。然后，出现一个对话框，我可以在其中输入一个可选文件夹名。当我不输入任何东西而是按回车，文件被移动到相应年份的文件夹。当我输入一个类似 `Business-Marathon After-Show-Party` 的文件夹名称时，第一个图像文件的日期戳被附加到该文件夹（`$HOME/archive/events_memories/2014/2014-05-08 Business-Marathon After-Show-Party`），然后创建该文件夹，并移动文件。
 
-我在geeqie中再一次选择一个或多个文件，按`m`(移动)，或者只按`Return`(没有特殊的子文件夹)，或者输入一个描述性文本，这是要创建的子文件夹的名称(可选不带日期戳)。
+再一次，我在 geeqie 中选择一个或多个文件，按 `m`（移动），或者只按回车（没有特殊的子文件夹），或者输入一个描述性文本，这是要创建的子文件夹的名称（可选不带日期戳）。
 
-**没有一个图像管理工具像我的geeqie一样通过快捷键快速且有趣的使用 appendfilename和move2archive完成工作。**
+**没有一个图像管理工具像我的带有 appendfilename 和 move2archive 的 geeqie 一样可以通过快捷键快速且有趣的完成工作。**
 
 ##### 在 geeqie 里初始化 m2a 的相关设置
 
-同样，向geeqie添加`m2a`是一个手动步骤:“编辑>首选项>配置编辑器……”然后创建一个带有“New”的附加条目。在这里，你可以定义一个新的桌面文件，如下所示:
+同样，向 geeqie 添加 `m2a` 是一个手动步骤：“Edit > Preferences > Configure Editors ...”，然后创建一个附加条目“New”。在这里，你可以定义一个新的桌面文件，如下所示:
 
-m2a.desktop
 ```
 [Desktop Entry]
 Name=move2archive
@@ -321,11 +323,12 @@ Categories=Application;Graphics;
 hidden=false
 MimeType=image/*;video/*;image/mpo;image/thm
 Categories=X-Geeqie;
-
 ```
-包装器脚本的`vk-m2a-interactive-wrapper-with-gnome-terminal.sh `是必要的，因为我想要弹出一个新的终端窗口，以便我的文件进入我指定的目标文件夹:
 
-vk-m2a-interactive-wrapper-with-gnome-terminal.sh
+*m2a.desktop*
+
+封装脚本 `vk-m2a-interactive-wrapper-with-gnome-terminal.sh` 是必要的，因为我想要弹出一个新的终端窗口，以便我的文件进入我指定的目标文件夹：
+
 ```
 #!/bin/sh
 
@@ -336,22 +339,22 @@ vk-m2a-interactive-wrapper-with-gnome-terminal.sh
  -x /home/vk/src/m2a/m2a.py --pauseonexit "${@}"
 
 #end
-
 ```
 
-在geeqie中，你可以在`Edit > Preferences > Preferences ... > Keyboard`将`m`与`m2a`命令相关联。
+*vk-m2a-interactive-wrapper-with-gnome-terminal.sh*
 
-#### 工作流程:旋转图像(无损)
+在 geeqie 中，你可以在 “Edit > Preferences > Preferences ... > Keyboard” 将 `m` 与 `m2a` 命令相关联。
 
-通常，我的数码相机会自动将人像照片标记为人像照片。然而，在某些特定的情况下(比如从主题上方拍照)，我的相机会出错。在那些**罕见的情况下**，我必须手动修正方向。
+#### 工作流程：旋转图像（无损）
 
-你必须知道，JPEG文件格式是一种有损格式，应该只用于照片，而不是计算机生成的东西，如屏幕截图或图表。以傻瓜方式旋转JPEG图像文件通常会解压/可视化图像文件，旋转生成新的图像，然后重新编码结果。这将导致生成的图像[比原始图像质量差得多][5]。
+通常，我的数码相机会自动将人像照片标记为人像照片。然而，在某些特定的情况下（比如从装饰图案上方拍照），我的相机会出错。在那些**罕见的情况下**，我必须手动修正方向。
 
-因此，你应该使用无损方法来旋转JPEG图像文件。
+你必须知道，JPEG 文件格式是一种有损格式，应该只用于照片，而不是计算机生成的东西，如屏幕截图或图表。以傻瓜方式旋转 JPEG 图像文件通常会解压/可视化图像文件、旋转生成新的图像，然后重新编码结果。这将导致生成的图像[比原始图像质量差得多][5]。
 
-再一次，我添加了一个“外部编辑器”到geeqie:`Edit > Preferences > Configure Editors ... > New`。在这里，我添加了两个条目:一个用于旋转270度(即逆时针旋转90度)，另一个用于使用[exiftran][34]旋转90度(逆时针旋转90度):
+因此，你应该使用无损方法来旋转 JPEG 图像文件。
 
-rotate-270.desktop
+再一次，我添加了一个“外部编辑器”到 geeqie：“Edit > Preferences > Configure Editors ... > New”。在这里，我添加了两个条目：使用 [exiftran][34]，一个用于旋转 270 度（即逆时针旋转 90 度），另一个用于旋转 90 度（顺时针旋转 90 度）：
+
 ```
 [Desktop Entry]
 Version=1.0
@@ -370,10 +373,10 @@ OnlyShowIn=X-Geeqie;
 X-Geeqie-Menu-Path=EditMenu/OrientationMenu
 
 MimeType=image/jpeg;
-
 ```
 
-rotate-90.desktop
+*rotate-270.desktop*
+
 ```
 [Desktop Entry]
 Version=1.0
@@ -395,16 +398,16 @@ X-Geeqie-Menu-Path=EditMenu/OrientationMenu
 # X-Geeqie-Verbose=true
 
 MimeType=image/jpeg;
-
 ```
 
-我为“[”(逆时针方向)和“]”(逆时针方向)创建了geeqie快捷键。
+*rotate-90.desktop*
 
-#### 工作流程:可视化GPS坐标
+我创建了 geeqie 快捷键 `[`（逆时针方向）和 `]`（顺时针方向）。
 
-我的数码相机有一个GPS传感器，它在JPEG文件的Exif元数据中存储当前的地理位置。位置数据以[WGS 84][35]格式存储，如“47,58,26.73;16、23、55.51”(纬度;经度)。这一方式可读性较差，从我所期望的意义上讲:要么是地图，要么是位置名称。因此，我向geeqie添加了一些功能，这样我就可以在[OpenStreetMap][36]上看到单个图像文件的位置: `Edit > Preferences > Configure Editors ... > New`
+#### 工作流程：可视化 GPS 坐标
 
-photolocation.desktop
+我的数码相机有一个 GPS 传感器，它在 JPEG 文件的 Exif 元数据中存储当前的地理位置。位置数据以 [WGS 84][35] 格式存储，如 `47, 58, 26.73; 16, 23, 55.51`（纬度；经度）。这一方式可读性较差，我期望：要么是地图，要么是位置名称。因此，我向 geeqie 添加了一些功能，这样我就可以在 [OpenStreetMap][36] 上看到单个图像文件的位置: `Edit > Preferences > Configure Editors ... > New`。
+
 ```
 [Desktop Entry]
 Name=vkphotolocation
@@ -417,12 +420,12 @@ Type=Application
 Categories=Application;Graphics;
 hidden=false
 MimeType=image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/tiff;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/svg+xml;image/svg+xml-compressed;image/vnd.wap.wbmp;
-
 ```
 
-这就调用了我的名为`vkphotolocation.sh`的包装脚本，它使用[ExifTool][37]让[Marble][38]能够读取和可视化的适当格式并提取坐标:
+*photolocation.desktop*
 
-vkphotolocation.sh
+这调用了我的名为 `vkphotolocation.sh` 的封装脚本，它使用 [ExifTool][37] 以 [Marble][38] 能够读取和可视化的适当格式提取该坐标:
+
 ```
 #!/bin/sh
 
@@ -438,38 +441,38 @@ else
 fi
 
 #end
-
 ```
 
-映射到键盘快捷键“G”，我可以快速地得到**单个图像文件的映射位置位置**。
+*vkphotolocation.sh*
 
-当我想将多个JPEG图像文件的**位置可视化为路径**时，我使用[GpsPrune][39]。我无法派生出GpsPrune将一组文件作为命令行参数的方法。正因为如此，我必须手动启动GpsPrune，`选择一组文件或一个文件夹>添加照片`。
+映射到键盘快捷键 `G`，我可以快速地得到**单个图像文件的位置的地图定位**。
 
-通过这种方式，我可以为OpenStreetMap地图上的每个JPEG位置获得一个点(如果配置为这样)。通过单击这样一个点，我可以得到相应图像的详细信息。
+当我想将多个 JPEG 图像文件的**位置可视化为路径**时，我使用 [GpsPrune][39]。我无法挖掘出 GpsPrune 将一组文件作为命令行参数的方法。正因为如此，我必须手动启动 GpsPrune，用 “File > Add photos”选择一组文件或一个文件夹。
 
-如果你恰好在国外拍摄照片，可视化GPS位置对**在文件名中添加描述**大有帮助!
+通过这种方式，我可以为每个 JPEG 位置在 OpenStreetMap 地图上获得一个点（如果配置为这样）。通过单击这样一个点，我可以得到相应图像的详细信息。
 
-#### 工作流程:根据GPS坐标过滤照片
+如果你恰好在国外拍摄照片，可视化 GPS 位置对**在文件名中添加描述**大有帮助!
 
-这并非我的工作流程。为了完整起见，我列出该工作流对应工具的特性。我想做的就是从一大堆图片中寻找那些在一定区域内(范围或点+距离)的照片。
+#### 工作流程：根据 GPS 坐标过滤照片
 
-到目前为止，我只找到了[DigiKam][40]，它能够[根据矩形区域进行过滤][41]。如果你知道其他工具，请将其添加到下面的评论或写一封电子邮件。
+这并非我的工作流程。为了完整起见，我列出该工作流对应工具的特性。我想做的就是从一大堆图片中寻找那些在一定区域内（范围或点 + 距离）的照片。
 
-#### 工作流:显示给定集合的子集
+到目前为止，我只找到了 [DigiKam][40]，它能够[根据矩形区域进行过滤][41]。如果你知道其他工具，请将其添加到下面的评论或给我写一封电子邮件。
 
-如上面的需求所述，我希望能够在一个文件夹中定义一组子文件，以便将这个小集合呈现给其他人。
+#### 工作流程：显示给定集合的子集
 
-工作流程非常简单:我向选择的文件添加一个标记(通过` t ` /filetags)。为此，我使用标记`sel`，它是“selection”的缩写。在标记了一组文件之后，我可以按下` s `，它与一个脚本相关联，该脚本只显示标记为` sel `的文件。
+如上面的需求所述，我希望能够对一个文件夹中的文件定义一个子集，以便将这个小集合呈现给其他人。
+
+工作流程非常简单：我向选择的文件添加一个标记（通过 `t`/`filetags`）。为此，我使用标记 `sel`，它是 “selection” 的缩写。在标记了一组文件之后，我可以按下 `s`，它与一个脚本相关联，该脚本只显示标记为 `sel` 的文件。
 
 当然，这也适用于任何标签或标签组合。因此，用同样的方法，你可以得到一个适当的概述，你的婚礼上的所有照片都标记着“教堂”和“戒指”。
 
 很棒的功能，不是吗?:-)
 
-##### 根据标签和geeqie初始设置文件标签
+##### 初始设置 filetags 以根据标签和 geeqie 过滤
 
-你必须定义一个额外的“外部编辑器”:`Edit > Preferences > Configure Editors ... > New`:
+你必须定义一个额外的“外部编辑器”，“ Edit > Preferences > Configure Editors ... > New”：
 
-filter-tags.desktop
 ```
 [Desktop Entry]
 Name=filetag-filter
@@ -483,12 +486,12 @@ Categories=Application;Graphics;
 hidden=false
 MimeType=image/*;video/*;image/mpo;image/thm
 Categories=X-Geeqie;
-
 ```
 
-再次调用我编写的包装脚本:
+*filter-tags.desktop*
 
-vk-filetag-filter-wrapper-with-gnome-terminal.sh
+再次调用我编写的封装脚本：
+
 ```
 #!/bin/sh
 
@@ -498,32 +501,47 @@ vk-filetag-filter-wrapper-with-gnome-terminal.sh
  -x /home/vk/src/filetags/filetags.py --filter
 
 #end
-
 ```
 
-带参数`--filter`的`filetags`基本上完成的是:用户被要求输入一个或多个标签。然后，当前文件夹中所有匹配的文件都能使用[符号链接][42]都链接到` $HOME/.filetags_tagfilter/ `。然后，启动一个新的geeqie实例，显示链接的文件。
+*vk-filetag-filter-wrapper-with-gnome-terminal.sh*
 
-在退出这个新的geeqie实例之后，你将从该实例调用了选择过程中看到旧的geeqie实例。
+带有参数 `--filter` 的 `filetags` 基本上完成的是：用户被要求输入一个或多个标签。然后，当前文件夹中所有匹配的文件都使用[符号链接][42]链接到 `$HOME/.filetags_tagfilter/`。然后，启动了一个新的 geeqie 实例，显示链接的文件。
+
+在退出这个新的 geeqie 实例之后，你会看到进行选择的旧的 geeqie 实例。
 
 #### 用一个真实的案例来总结
 
-Wow, 这是一篇很长的博客文章。难怪你可能已经忘了之前的概述。总结一下我在geeqie(扩展了标准功能集)中可以做的事情，我有一个很酷的总结:
+哇哦, 这是一篇很长的博客文章。你可能已经忘了之前的概述。总结一下我在（扩展了标准功能集的） geeqie 中可以做的事情，我有一个很酷的总结：
 
-快捷功能 `m` m2a `o` 打开（针对非图像文件） `a` 在文件名里添加字段 `t` 文件标签（添加） `T` 文件标签（删除） `s` 文件标签（排序） `g` gimp `G` 显示GPS信息 `[` 无损的逆时针旋转 `]` 无损的顺时针旋转 `Ctrl-e` EXIF图像信息 `f` 全屏显示
+快捷键 | 功能
+--- | ---
+`m` | 移到归档（m2a） 
+`o` | 打开（针对非图像文件）
+`a` | 在文件名里添加字段
+`t` | 文件标签（添加） 
+`T` | 文件标签（删除） 
+`s` | 文件标签（排序） 
+`g` | gimp 
+`G` | 显示 GPS 信息 
+`[` | 无损的逆时针旋转 
+`]` | 无损的顺时针旋转 
+`Ctrl-e` | EXIF 图像信息 
+`f` | 全屏显示
 
-一些针对文件名的(包括它的路径)及我用来操作组件的示例:
+文件名（包括它的路径）的部分及我用来操作该部分的相应工具：
+
 ```
- /this/is/a/folder/2014-04-20T17.09 Pick-nick in Graz -- food graz.jpg
- [ m2a ] [ date2name ] [ appendfilename ] [filetags]
-
+ /this/is/a/folder/2014-04-20T17.09 Picknick in Graz -- food graz.jpg
+ [ move2archive  ] [  date2name   ] [appendfilename] [ filetags ]
 ```
-在示例中，我按照以下步骤将照片从相机保存到存档:我将SD存储卡放入计算机的SD卡读卡器中。然后我运行[getdigicamdata.sh][23]。完成之后，我在geeqie中打开`$HOME/tmp/digicam/tmp/`。我浏览了一下照片，把那些不成功的删除了。如果有一个图像的方向错误，我用`[`or`]`纠正它。
 
-在第二步中，我向我认为值得评论的文件添加描述(` a `)。每当我想添加标签时，我也这样做:我快速地标记所有应该共享标签的文件(` Ctrl ` \+鼠标点击)，并使用[filetags][28] (` t `)进行标记。
+在实践中，我按照以下步骤将照片从相机保存到存档：我将 SD 存储卡放入计算机的 SD 读卡器中。然后我运行 [getdigicamdata.sh][23]。完成之后，我在 geeqie 中打开 `$HOME/tmp/digicam/tmp/`。我浏览了一下照片，把那些不成功的删除了。如果有一个图像的方向错误，我用 `[` 或 `]` 纠正它。
 
-要组合来自给定事件的文件，我选中相应的文件，将它们移动到年度归档文件夹中的“event-folder”,并通过在[move2archive][33] (`m `)中键入事件描述，其余的(非特殊的文件夹)由move2archive (`m `)直接移动到年度归档中，而不需要声明事件描述。
+在第二步中，我向我认为值得评论的文件添加描述 （`a`）。每当我想添加标签时，我也这样做：我快速地标记所有应该共享相同标签的文件（`Ctrl + 鼠标点击`），并使用 [filetags][28]（`t`）进行标记。
 
-为了完成我的工作流程，我删除了SD卡上的所有文件，把它从操作系统上弹出，然后把它放回我的数码相机里。
+要合并来自给定事件的文件，我选中相应的文件，将它们移动到年度归档文件夹中的 `event-folder`，并通过在 [move2archive][33]（`m`）中键入事件描述，其余的（非特殊的文件夹）无需声明事件描述由 `move2archive` （`m`）直接移动到年度归档中。
+
+结束我的工作流程，我删除了 SD 卡上的所有文件，把它从操作系统上弹出，然后把它放回我的数码相机里。
 
 以上。
 
@@ -533,26 +551,23 @@ Wow, 这是一篇很长的博客文章。难怪你可能已经忘了之前的概
 
 所以，这是一个详细描述我关于照片和电影的工作流程的叙述。你可能已经发现了我可能感兴趣的其他东西。所以请不要犹豫，请使用下面的链接留下评论或电子邮件。
 
-我也希望得到反馈，如果我的工作流程适用于你。并且:如果你已经发布了你的工作流程或者找到了其他人工作流程的描述，也请留下评论!
+我也希望得到反馈，如果我的工作流程适用于你。并且，如果你已经发布了你的工作流程或者找到了其他人工作流程的描述，也请留下评论!
 
-及时行乐，莫让错误的工具或低效的方法浪费了我们的人生!
+及时行乐，莫让错误的工具或低效的方法浪费了我们的人生！
 
 ### 其他工具
 
-阅读关于[本文中关于 gThumb 的部分][43].
+阅读关于[本文中关于 gThumb 的部分][43]。
 
 当你觉得你以上文中所叙述的符合你的需求时，请根据相关的建议来选择对应的工具。
-
-
-
 
 --------------------------------------------------------------------------------
 
 via: http://karl-voit.at/managing-digital-photographs/
 
 作者：[Karl Voit][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[qfzy1233](https://github.com/qfzy1233)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
