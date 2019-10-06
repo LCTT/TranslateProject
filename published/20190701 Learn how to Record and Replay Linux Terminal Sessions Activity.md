@@ -1,48 +1,50 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: translator: (wxy)
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11429-1.html)
 [#]: subject: (Learn how to Record and Replay Linux Terminal Sessions Activity)
 [#]: via: (https://www.linuxtechi.com/record-replay-linux-terminal-sessions-activity/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-Learn how to Record and Replay Linux Terminal Sessions Activity
+在 Linux 上记录和重放终端会话活动
 ======
 
-Generally, all Linux administrators use **history** command to track which commands were executed in previous sessions, but there is one limitation of history command is that it doesn’t store the command’s output. There can be some scenarios where we want to check commands output of previous session and want to compare it with current session. Apart from this, there are some situations where we are troubleshooting the issues on Linux production boxes and want to save all terminal session activities for future reference, so in such cases script command become handy.
+通常，Linux 管理员们都使用 `history` 命令来跟踪在先前的会话中执行过哪些命令，但是 `history` 命令的局限性在于它不存储命令的输出。在某些情况下，我们要检查上一个会话的命令输出，并希望将其与当前会话进行比较。除此之外，在某些情况下，我们正在对 Linux 生产环境中的问题进行故障排除，并希望保存所有终端会话活动以供将来参考，因此在这种情况下，`script` 命令就变得很方便。
 
-<https://www.linuxtechi.com/wp-content/uploads/2019/06/Record-linux-terminal-session-activity.jpg>
+![](https://img.linux.net.cn/data/attachment/album/201910/06/122659mmi64z8ryr4z2n8a.jpg)
 
-Script is a command line tool which is used to capture or record your Linux server terminal sessions activity and later the recorded session can be replayed using scriptreplay command. In this article we will demonstrate how to install script command line tool and how to record Linux server terminal session activity and then later we will see how the recorded session can be replayed using **scriptreplay** command.
+`script` 是一个命令行工具，用于捕获/记录你的 Linux 服务器终端会话活动，以后可以使用 `scriptreplay` 命令重放记录的会话。在本文中，我们将演示如何安装 `script` 命令行工具以及如何记录 Linux 服务器终端会话活动，然后，我们将看到如何使用 `scriptreplay` 命令来重放记录的会话。
 
-### Installation of Script tool on RHEL 7/ CentOS 7
+### 安装 script 工具
 
-Script command is provided by the rpm package “**util-linux**”, in case it is not installed on your CentOS 7 / RHEL 7 system , run the following yum command,
+#### 在 RHEL 7/ CentOS 7 上安装 script 工具
+
+`script` 命令由 RPM 包 `util-linux` 提供，如果你没有在你的 CentOS 7 / RHEL 7 系统上安装它，运行下面的 `yum` 安装它：
 
 ```
 [root@linuxtechi ~]# yum install util-linux -y
 ```
 
-**On RHEL 8 / CentOS 8**
+#### 在 RHEL 8 / CentOS 8 上安装 script 工具
 
-Run the following dnf command to install script utility on RHEL 8 and CentOS 8 system,
+运行下面的 `dnf` 命令来在 RHEL 8 / CentOS 8 上安装 `script` 工具：
 
 ```
 [root@linuxtechi ~]# dnf install util-linux -y
 ```
 
-**Installation of Script tool on Debian based systems (Ubuntu / Linux Mint)**
+#### 在基于 Debian 的系统（Ubuntu / Linux Mint）上安装 script 工具
 
-Execute the beneath apt-get command to install script utility
+运行下面的 `apt-get` 命令来安装 `script` 工具：
 
 ```
 root@linuxtechi ~]# apt-get install util-linux -y
 ```
 
-### How to Use script utility
+### 如何使用 script 工具
 
-Use of script command is straight forward, type script command on terminal then hit enter, it will start capturing your current terminal session activities inside a file called “**typescript**”
+直接使用 `script` 命令，在终端上键入 `script` 命令，然后按回车，它将开始在名为 `typescript` 的文件中捕获当前的终端会话活动。
 
 ```
 [root@linuxtechi ~]# script
@@ -50,7 +52,7 @@ Script started, file is typescript
 [root@linuxtechi ~]#
 ```
 
-To stop recording the session activities, type exit command and hit enter.
+要停止记录会话活动，请键入 `exit` 命令，然后按回车：
 
 ```
 [root@linuxtechi ~]# exit
@@ -59,23 +61,23 @@ Script done, file is typescript
 [root@linuxtechi ~]#
 ```
 
-Syntax of Script command:
+`script` 命令的语法格式：
 
 ```
-~ ] # script {options}  {file_name}
+~] # script {options}  {file_name}
 ```
 
-Different options used in script command,
+能在 `script` 命令中使用的不同选项：
 
 ![options-script-command][1]
 
-Let’s start recording of your Linux terminal session by executing script command and then execute couple of command like ‘**w**’, ‘**route -n**’ , ‘[**df -h**][2]’ and ‘**free-h**’, example is shown below
+让我们开始通过执行 `script` 命令来记录 Linux 终端会话，然后执行诸如 `w`，`route -n`，`df -h` 和 `free -h`，示例如下所示：
 
 ![script-examples-linux-server][3]
 
-As we can see above, terminal session logs are saved in the file “typescript”
+正如我们在上面看到的，终端会话日志保存在文件 `typescript` 中：
 
-Now view the contents of typescript file using [cat][4] / vi command,
+现在使用 `cat` / `vi` 命令查看 `typescript` 文件的内容，
 
 ```
 [root@linuxtechi ~]# ls -l typescript
@@ -85,11 +87,11 @@ Now view the contents of typescript file using [cat][4] / vi command,
 
 ![typescript-file-content-linux][5]
 
-Above confirms that whatever commands we execute on terminal that have been saved inside the file “typescript”
+以上内容确认了我们在终端上执行的所有命令都已保存在 `typescript` 文件中。
 
-### Use Custom File name in script command
+### 在 script 命令中使用定制文件名
 
-Let’s assume we want to use our customize file name to script command, so specify the file name after script command, in the below example we are using a file name “session-log-(current-date-time).txt”
+假设我们要使用自定义文件名来执行 `script` 命令，可以在 `script` 命令后指定文件名。在下面的示例中，我们使用的文件名为 `session-log-(当前日期时间).txt`。
 
 ```
 [root@linuxtechi ~]# script sessions-log-$(date +%d-%m-%Y-%T).txt
@@ -97,7 +99,7 @@ Script started, file is sessions-log-21-06-2019-01:37:39.txt
 [root@linuxtechi ~]#
 ```
 
-Now run the commands and then type exit,
+现在运行该命令并输入 `exit`：
 
 ```
 [root@linuxtechi ~]# exit
@@ -106,9 +108,9 @@ Script done, file is sessions-log-21-06-2019-01:37:39.txt
 [root@linuxtechi ~]#
 ```
 
-### Append the commands output to script file
+### 附加命令输出到 script 记录文件
 
-Let assume script command had already recorded the commands output to a file called session-log.txt file and now we want to append output of new sessions commands output to this file, then use “**-a**” command in script command
+假设 `script` 命令已经将命令输出记录到名为 `session-log.txt` 的文件中，现在我们想将新会话命令的输出附加到该文件中，那么可以在 `script` 命令中使用 `-a` 选项。
 
 ```
 [root@linuxtechi ~]# script -a sessions-log.txt
@@ -129,11 +131,11 @@ Script done, file is sessions-log.txt
 [root@linuxtechi ~]#
 ```
 
-To view updated session’s logs, use “cat session-log.txt ”
+要查看更新的会话记录，使用 `cat session-log.txt` 命令。
 
-### Capture commands output to script file without interactive shell
+### 无需 shell 交互而捕获命令输出到 script 记录文件
 
-Let’s assume we want to capture commands output to a script file, then use **-c** option, example is shown below,
+假设我们要捕获命令的输出到会话记录文件，那么使用 `-c` 选项，示例如下所示：
 
 ```
 [root@linuxtechi ~]# script -c "uptime && hostname && date" root-session.txt
@@ -145,9 +147,9 @@ Script done, file is root-session.txt
 [root@linuxtechi ~]#
 ```
 
-### Run script command in quiet mode
+### 以静默模式运行 script 命令
 
-To run script command in quiet mode use **-q** option, this option will suppress the script started and script done message, example is shown below,
+要以静默模式运行 `script` 命令，请使用 `-q` 选项，该选项将禁止 `script` 的启动和完成消息，示例如下所示：
 
 ```
 [root@linuxtechi ~]# script -c "uptime && date" -q root-session.txt
@@ -156,11 +158,13 @@ Fri Jun 21 02:01:10 EDT 2019
 [root@linuxtechi ~]#
 ```
 
-Record Timing information to a file and capture commands output to a separate file, this can be achieved in script command by passing timing file (**–timing**) , example is shown below,
+要将时序信息记录到文件中并捕获命令输出到单独的文件中，这可以通过在 `script` 命令中传递时序文件（`-timing`）实现，示例如下所示：
 
-Syntax:
+语法格式：
 
-~ ]# script -t &lt;timing-file-name&gt;  {file_name}
+```
+~ ]# script -t <timing-file-name>  {file_name}
+```
 
 ```
 [root@linuxtechi ~]# script --timing=timing.txt session.log
@@ -185,23 +189,23 @@ Script done, file is session.log
 [root@linuxtechi ~]#
 ```
 
-### Replay recorded Linux terminal session activity
+### 重放记录的 Linux 终端会话活动
 
-Now replay the recorded terminal session activities using scriptreplay command,
+现在，使用 `scriptreplay` 命令重放录制的终端会话活动。
 
-**Note:** Scriptreplay is also provided by rpm package “**util-linux**”. Scriptreplay command requires timing file to work.
+注意：`scriptreplay` 也由 RPM 包 `util-linux` 提供。`scriptreplay` 命令需要时序文件才能工作。
 
 ```
 [root@linuxtechi ~]# scriptreplay --timing=timing.txt session.log
 ```
 
-Output of above command would be something like below,
+上面命令的输出将如下所示，
 
-<https://www.linuxtechi.com/wp-content/uploads/2019/06/scriptreplay-linux.gif>
+![](https://www.linuxtechi.com/wp-content/uploads/2019/06/scriptreplay-linux.gif)
 
-### Record all User’s Linux terminal session activities
+### 记录所有用户的 Linux 终端会话活动
 
-There are some business critical Linux servers where we want keep track on all users activity, so this can be accomplished using script command, place the following content in /etc/profile file ,
+在某些关键业务的 Linux 服务器上，我们希望跟踪所有用户的活动，这可以使用 `script` 命令来完成，将以下内容放在 `/etc/profile` 文件中，
 
 ```
 [root@linuxtechi ~]# vi /etc/profile
@@ -218,22 +222,22 @@ fi
 ……………………………………………………
 ```
 
-Save &amp; exit the file.
+保存文件并退出。
 
-Create the session directory under /var/log folder,
+在 `/var/log` 文件夹下创建 `session` 目录：
 
 ```
 [root@linuxtechi ~]# mkdir /var/log/session
 ```
 
-Assign the permissions to session folder,
+给该文件夹指定权限：
 
 ```
 [root@linuxtechi ~]# chmod 777 /var/log/session/
 [root@linuxtechi ~]#
 ```
 
-Now verify whether above code is working or not. Login to ordinary user to linux server, in my I am using pkumar user,
+现在，验证以上代码是否有效。在我正在使用 `pkumar` 用户的情况下，登录普通用户到 Linux 服务器：
 
 ```
 ~ ] # ssh root@linuxtechi
@@ -263,13 +267,13 @@ Login as root and view user’s linux terminal session activity
 
 ![Session-output-file-linux][6]
 
-We can also use scriptreplay command to replay user’s terminal session activities,
+我们还可以使用 `scriptreplay` 命令来重放用户的终端会话活动：
 
 ```
 [root@linuxtechi session]# scriptreplay --timing session.pkumar.19785.21-06-2019-04\:34\:05.timing session.pkumar.19785.21-06-2019-04\:34\:05
 ```
 
-That’s all from this tutorial, please do share your feedback and comments in the comments section below.
+以上就是本教程的全部内容，请在下面的评论部分中分享你的反馈和评论。
 
 --------------------------------------------------------------------------------
 
@@ -277,8 +281,8 @@ via: https://www.linuxtechi.com/record-replay-linux-terminal-sessions-activity/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
