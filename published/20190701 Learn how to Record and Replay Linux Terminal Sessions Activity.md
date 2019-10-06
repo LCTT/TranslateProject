@@ -71,7 +71,7 @@ Script done, file is typescript
 
 ![options-script-command][1]
 
-让我们开始通过执行 `script` 命令来记录 Linux 终端会话，然后执行诸如 `w`，`route -n`，`df -h` 和 `free- h`，示例如下所示：
+让我们开始通过执行 `script` 命令来记录 Linux 终端会话，然后执行诸如 `w`，`route -n`，`df -h` 和 `free -h`，示例如下所示：
 
 ![script-examples-linux-server][3]
 
