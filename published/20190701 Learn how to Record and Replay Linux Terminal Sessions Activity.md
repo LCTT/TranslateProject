@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11429-1.html)
 [#]: subject: (Learn how to Record and Replay Linux Terminal Sessions Activity)
 [#]: via: (https://www.linuxtechi.com/record-replay-linux-terminal-sessions-activity/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
@@ -12,15 +12,13 @@
 
 通常，Linux 管理员们都使用 `history` 命令来跟踪在先前的会话中执行过哪些命令，但是 `history` 命令的局限性在于它不存储命令的输出。在某些情况下，我们要检查上一个会话的命令输出，并希望将其与当前会话进行比较。除此之外，在某些情况下，我们正在对 Linux 生产环境中的问题进行故障排除，并希望保存所有终端会话活动以供将来参考，因此在这种情况下，`script` 命令就变得很方便。
 
-![](https://www.linuxtechi.com/wp-content/uploads/2019/06/Record-linux-terminal-session-activity.jpg)
+![](https://img.linux.net.cn/data/attachment/album/201910/06/122659mmi64z8ryr4z2n8a.jpg)
 
 `script` 是一个命令行工具，用于捕获/记录你的 Linux 服务器终端会话活动，以后可以使用 `scriptreplay` 命令重放记录的会话。在本文中，我们将演示如何安装 `script` 命令行工具以及如何记录 Linux 服务器终端会话活动，然后，我们将看到如何使用 `scriptreplay` 命令来重放记录的会话。
 
 ### 安装 script 工具
 
 #### 在 RHEL 7/ CentOS 7 上安装 script 工具
-
-如果未在 CentOS 7 / RHEL 7系统上安装rpm软件包“`-util-linux”，则提供脚本命令，请运行以下yum命令，
 
 `script` 命令由 RPM 包 `util-linux` 提供，如果你没有在你的 CentOS 7 / RHEL 7 系统上安装它，运行下面的 `yum` 安装它：
 
@@ -54,7 +52,7 @@ Script started, file is typescript
 [root@linuxtechi ~]#
 ```
 
-要停止记录会话活动，请键入 `exit` 命令，然后按回车
+要停止记录会话活动，请键入 `exit` 命令，然后按回车：
 
 ```
 [root@linuxtechi ~]# exit
@@ -73,7 +71,7 @@ Script done, file is typescript
 
 ![options-script-command][1]
 
-让我们开始通过执行 `script` 命令来记录 Linux 终端会话，然后执行诸如 `w`，`route -n`，`df -h` 和 `free- h`，示例如下所示：
+让我们开始通过执行 `script` 命令来记录 Linux 终端会话，然后执行诸如 `w`，`route -n`，`df -h` 和 `free -h`，示例如下所示：
 
 ![script-examples-linux-server][3]
 
@@ -91,10 +89,9 @@ Script done, file is typescript
 
 以上内容确认了我们在终端上执行的所有命令都已保存在 `typescript` 文件中。
 
-
 ### 在 script 命令中使用定制文件名
 
-假设我们要使用自定义文件名来执行脚本命令，可以在脚本命令后指定文件名。在下面的示例中，我们使用的文件名为 `session-log-(当前日期时间).txt`。
+假设我们要使用自定义文件名来执行 `script` 命令，可以在 `script` 命令后指定文件名。在下面的示例中，我们使用的文件名为 `session-log-(当前日期时间).txt`。
 
 ```
 [root@linuxtechi ~]# script sessions-log-$(date +%d-%m-%Y-%T).txt
@@ -113,7 +110,7 @@ Script done, file is sessions-log-21-06-2019-01:37:39.txt
 
 ### 附加命令输出到 script 记录文件
 
-假设 `script` 命令已经将命令输出记录到名为 `session-log.txt` 的文件中，现在我们想将新会话命令的输出附加到该文件中，那么可以在脚本命令中使用 `-a` 选项。
+假设 `script` 命令已经将命令输出记录到名为 `session-log.txt` 的文件中，现在我们想将新会话命令的输出附加到该文件中，那么可以在 `script` 命令中使用 `-a` 选项。
 
 ```
 [root@linuxtechi ~]# script -a sessions-log.txt
@@ -138,7 +135,7 @@ Script done, file is sessions-log.txt
 
 ### 无需 shell 交互而捕获命令输出到 script 记录文件
 
-假设我们要捕获命令的输出到 script 记录文件，那么使用 `-c` 选项，示例如下所示：
+假设我们要捕获命令的输出到会话记录文件，那么使用 `-c` 选项，示例如下所示：
 
 ```
 [root@linuxtechi ~]# script -c "uptime && hostname && date" root-session.txt
@@ -285,7 +282,7 @@ via: https://www.linuxtechi.com/record-replay-linux-terminal-sessions-activity/
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
