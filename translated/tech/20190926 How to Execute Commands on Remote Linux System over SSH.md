@@ -7,35 +7,35 @@
 [#]: via: (https://www.2daygeek.com/execute-run-linux-commands-remote-system-over-ssh/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Execute Commands on Remote Linux System over SSH
+如何通过 SSH 在远程 Linux 系统上运行命令
 ======
 
-We may need to perform some commands on the remote machine.
+我们有时可能需要在远程机器上运行一些命令。
 
-To do so, log in to a remote system and do it, if it’s once in a while.
+如果只是偶尔进行的操作，要实现这个目的，可以登录到远程系统上直接执行命令。
 
-But every time you do this, it can irritate you
+但是每次都这么做的话，就有点烦人了。
 
-If so, what is the better way to get out of it.
+既然如此，有没有摆脱这种麻烦操作的更佳方案？
 
-Yes, you can do this from your local system instead of logging in to the remote system.
+是的，你可以从你本地系统上执行这些操作，而不用登陆到远程系统上。
 
-Will it benefit me? Yeah definitely. This will save you good time.
+这有什么好处吗？毫无疑问。这会为你节省很多好时光。
 
-How’s that happening? Yes, SSH allows you to run a command on a remote machine without logging in to a computer.
+这是怎么实现的？SSH 允许你无需登录到远程计算机就可以在它上面运行命令。
 
-**The general syntax is as follow:**
-
-```
-$ ssh [User_Name]@[Rremote_Host_Name or IP] [Command or Script]
-```
-
-### 1) How to Run the Command on a Remote Linux System Over SSH
-
-The following example allows users to run the **[df command][1]** via ssh on a remote Linux machine
+**通用语法如下所示：**
 
 ```
-$ ssh [email protected] df -h
+$ ssh [用户名]@[远程主机名或 IP] [命令或脚本]
+```
+
+### 1) 如何通过 SSH 在远程 Linux 系统上运行命令
+
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行 **[df 命令][1]**。
+
+```
+$ ssh [邮件地址隐去] df -h
 
  Filesystem               Size  Used Avail Use% Mounted on
  /dev/mapper/centos-root   27G  4.4G   23G  17% /
@@ -48,14 +48,14 @@ $ ssh [email protected] df -h
  tmpfs                    184M     0  184M   0% /run/user/1000
 ```
 
-### 2) How to Run Multiple Commands on a Remote Linux System Over SSH
+### 2) 如何通过 SSH 在远程 Linux 系统上运行多条命令
 
-The following example allows users to run multiple commands at once over ssh on the remote Linux system.
+下面的例子允许用户通过 ssh 在远程 Linux 机器上一次运行多条命令。
 
-It’s running uptime command and free command on the remote Linux system simultaneously.
+下面的命令同时在远程 Linux 系统上运行 uptime 命令和 free 命令。
 
 ```
-$ ssh [email protected] "uptime && free -m"
+$ ssh [邮件地址隐去] "uptime && free -m"
 
  23:05:10 up 10 min,  0 users,  load average: 0.00, 0.03, 0.03
 
@@ -65,15 +65,15 @@ $ ssh [email protected] "uptime && free -m"
  Swap:         3071          0       3071
 ```
 
-### 3) How to Run the Command with sudo Privilege on a Remote Linux System Over SSH
+### 3) 如何通过 SSH 在远程 Linux 系统上运行带 sudo 权限的命令
 
-The following example allows users to run the **fdisk** command with **[sudo][2]** [][2]**[privilege][2]** on the remote Linux system via ssh.
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行带有 **[sudo 权限][2]** 的 **fdisk** 命令。
 
-Normal users are not allowed to execute commands available under the system binary **(/usr/sbin/)** directory. Users need root privileges to run it.
+普通用户不允许执行系统二进制 **（/usr/sbin/）** 目录下提供的命令。用户需要 root 权限来运行它。
 
-So to run the **[fdisk command][3]** on a Linux system, you need root privileges.
+所以你需要 root 权限，好在 Linux 系统上运行 **[fdisk 命令][3]**。
 
-The which command returns the full path of the executable of the given command.
+which 命令返回给定命令的完整可执行路径。
 
 ```
 $ which fdisk
@@ -81,7 +81,7 @@ $ which fdisk
 ```
 
 ```
-$ ssh -t [email protected] "sudo fdisk -l"
+$ ssh -t [邮件地址隐去] "sudo fdisk -l"
  [sudo] password for daygeek:
 
  Disk /dev/sda: 32.2 GB, 32212254720 bytes, 62914560 sectors
@@ -113,23 +113,23 @@ $ ssh -t [email protected] "sudo fdisk -l"
  Connection to centos7.2daygeek.com closed.
 ```
 
-### 4) How to Run the Service Command with sudo Privilege on a Remote Linux System Over SSH
+### 4) 如何通过 SSH 在远程 Linux 系统上运行带 sudo 权限的服务控制命令
 
-The following example allows users to run the service command with sudo privilege on the remote Linux system via ssh.
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行带有 sudo 权限的服务控制命令。
 
 ```
-$ ssh -t [email protected] "sudo systemctl restart httpd"
+$ ssh -t [邮件地址隐去] "sudo systemctl restart httpd"
 
  [sudo] password for daygeek:
  Connection to centos7.2daygeek.com closed.
 ```
 
-### 5) How to Run the Command on a Remote Linux System Over SSH With Non-Standard Port
+### 5) 如何通过非标准端口 SSH 在远程 Linux 系统上运行命令
 
-The following example allows users to run the **[hostnamectl command][4]** via ssh on a remote Linux machine with non-standard port.
+下面的例子允许用户通过 ssh 在使用了非标准端口的远程 Linux 机器上运行 **[hostnamectl 命令][4]**。
 
 ```
-$ ssh -p 2200 [email protected] hostnamectl
+$ ssh -p 2200 [邮件地址隐去] hostnamectl
 
     Static hostname: Ubuntu18.2daygeek.com
           Icon name: computer-vm
@@ -142,12 +142,12 @@ $ ssh -p 2200 [email protected] hostnamectl
        Architecture: x86-64
 ```
 
-### 6) How to Save Output from Remote System to Local System
+### 6) 如何将远程系统的输出保存到本地系统
 
-The following example allows users to remotely execute the **[top command][5]** on a Linux system via ssh and save the output to the local system.
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行 **[top 命令][5]**，并将输出保存到本地系统。
 
 ```
-$ ssh [email protected] "top -bc | head -n 35" > /tmp/top-output.txt
+$ ssh [邮件地址隐去] "top -bc | head -n 35" > /tmp/top-output.txt
 ```
 
 ```
@@ -180,17 +180,17 @@ cat /tmp/top-output.txt
     20 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 [bioset]
 ```
 
-Alternatively, you can use the following format to run multiple commands on a remote system.
+或者你也可以使用以下格式在远程系统上运行多条命令。
 
 ```
-$ ssh [email protected] << EOF
+$ ssh [邮件地址隐去] << EOF
 hostnamectl
 free -m
 grep daygeek /etc/passwd
 EOF
 ```
 
-Output of the above command.
+上面命令的输出如下。
 
 ```
 Pseudo-terminal will not be allocated because stdin is not a terminal.
@@ -212,11 +212,11 @@ Pseudo-terminal will not be allocated because stdin is not a terminal.
  daygeek:x:1000:1000:2daygeek:/home/daygeek:/bin/bash
 ```
 
-### 7) How to Execute Local Bash Scripts on Remote System
+### 7) 如何在远程系统上运行本地 Bash 脚本
 
-The following example allows users to run local **[bash script][6]** “remote-test.sh” via ssh on a remote Linux machine.
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行本地 **[bash 脚本][5]** “remote-test.sh”。
 
-Create a shell script and execute it.
+创建一个 shell 脚本并执行它。
 
 ```
 $ vi /tmp/remote-test.sh
@@ -231,10 +231,10 @@ $ vi /tmp/remote-test.sh
  hostnamectl
 ```
 
-Output for the above command.
+上面命令的输出如下。
 
 ```
-$ ssh [email protected] 'bash -s' < /tmp/remote-test.sh
+$ ssh [邮件地址隐去] 'bash -s' < /tmp/remote-test.sh
 
   01:17:09 up 22 min,  1 user,  load average: 0.00, 0.02, 0.08
 
@@ -266,7 +266,7 @@ $ ssh [email protected] 'bash -s' < /tmp/remote-test.sh
        Architecture: x86-64
 ```
 
-Alternatively, the pipe can be used. If you think the output is not good, add few changes to make it more elegant.
+或者也可以使用 pipe。如果你觉得输出不太好看，再做点修改让它更优雅些。
 
 ```
 $ vi /tmp/remote-test-1.sh
@@ -290,10 +290,10 @@ $ vi /tmp/remote-test-1.sh
  echo "------------------------------------------------------------------"
 ```
 
-Output for the above script.
+上面脚本的输出如下。
 
 ```
-$ cat /tmp/remote-test.sh  | ssh [email protected]
+$ cat /tmp/remote-test.sh  | ssh [邮件地址隐去]
  Pseudo-terminal will not be allocated because stdin is not a terminal.
  ---------System Uptime--------------------------------------------
   03:14:09 up  2:19,  1 user,  load average: 0.00, 0.01, 0.05
@@ -331,22 +331,22 @@ $ cat /tmp/remote-test.sh  | ssh [email protected]
        Architecture: x86-64
 ```
 
-### 8) How to Run Multiple Commands on Multiple Remote Systems Simultaneously
+### 8) 如何同时在多个远程系统上运行多条指令
 
-The following bash script allows users to run multiple commands on multiple remote systems simultaneously. Use simple for loop to achieve it.
+下面的 bash 脚本允许用户同时在多个远程系统上运行多条指令。使用简单的 for 循环实现。
 
-For this purpose, you can try with with the **[PSSH command][7]** or **[ClusterShell command][8]** or **[DSH command][9]**
+为了实现这个目的，你可以尝试 **[PSSH 命令][7]** 或 **[ClusterShell 命令][8]** 或 **[DSH 命令][9]**。
 
 ```
 $ vi /tmp/multiple-host.sh
 
  for host in CentOS7.2daygeek.com CentOS6.2daygeek.com
  do
-    ssh [email protected]${host} "uname -a;uptime;date;w"
+    ssh [邮件地址隐去]${host} "uname -a;uptime;date;w"
  done
 ```
 
-Output for the above script:
+上面脚本的输出如下：
 
 ```
 $ sh multiple-host.sh
@@ -358,7 +358,7 @@ $ sh multiple-host.sh
  Wed Sep 25 01:33:57 CDT 2019
 
   01:33:57 up 39 min,  1 user,  load average: 0.07, 0.06, 0.06
- USER     TTY      FROM             [email protected]   IDLE   JCPU   PCPU WHAT
+ USER     TTY      FROM             [邮件地址隐去]   IDLE   JCPU   PCPU WHAT
  daygeek  pts/0    192.168.1.6      01:08   23:25   0.06s  0.06s -bash
 
  Linux CentOS6.2daygeek.com 2.6.32-754.el6.x86_64 #1 SMP Tue Jun 19 21:26:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
@@ -368,21 +368,21 @@ $ sh multiple-host.sh
  Tue Sep 24 23:33:58 MST 2019
 
   23:33:58 up 39 min,  0 users,  load average: 0.00, 0.00, 0.00
- USER     TTY      FROM             [email protected]   IDLE   JCPU   PCPU WHAT
+ USER     TTY      FROM             [邮件地址隐去]   IDLE   JCPU   PCPU WHAT
 ```
 
-### 9) How to Add a Password Using the sshpass Command
+### 9) 如何使用 sshpass 命令添加一个密码
 
-If you are having trouble entering your password each time, I advise you to go with any one of the methods below as per your requirement.
+如果你觉得每次输入密码很麻烦，我建议你视你的需求选择以下方法中的一项来解决这个问题。
 
-If you are going to perform this type of activity frequently, I advise you to set up **[password-less authentication][10]** since it’s a standard and permanent solution.
+如果你经常进行类似的操作，我建议你设置 **[免密码认证][10]**，因为它是标准且永久的解决方案。
 
-If you only do these tasks a few times a month. I recommend you to use the **“sshpass”** utility.
+如果你一个月只是执行几次这些任务，我推荐你使用 **“sshpass”** 工具。
 
-Just provide a password as an argument using the **“-p”** option.
+只需要使用 **“-p”** 参数选项提供你的密码即可。
 
 ```
-$ sshpass -p 'Your_Password_Here' ssh -p 2200 [email protected] ip a
+$ sshpass -p '在这里输入你的密码' ssh -p 2200 [邮件地址隐去] ip a
 
  1: lo:  mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
      link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -404,7 +404,7 @@ via: https://www.2daygeek.com/execute-run-linux-commands-remote-system-over-ssh/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[alim0x](https://github.com/alim0x)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
