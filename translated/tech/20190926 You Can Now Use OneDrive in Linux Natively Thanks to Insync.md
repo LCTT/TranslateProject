@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (You Can Now Use OneDrive in Linux Natively Thanks to Insync)
@@ -10,33 +10,33 @@
 现在你可以借助 Insync 在 Linux 中原生使用 OneDrive
 ======
 
-[OneDrive][1] 是 Microsoft 的一项云存储服务，它为每个用户提供 5GB 的免费存储空间。它已与 Microsoft 帐户集成，如果你使用 Windows，那么已在其中预安装了 OneDrive。
+[OneDrive][1] 是微软的一项云存储服务，它为每个用户提供 5GB 的免费存储空间。它已与微软帐户集成，如果你使用 Windows，那么已在其中预安装了 OneDrive。
 
 OneDrive 无法在 Linux 中作为桌面应用使用。你可以通过网页访问已存储的文件，但无法像在文件管理器中那样使用云存储。
 
 好消息是，你现在可以使用一个非官方工具，它可让你在 Ubuntu 或其他 Linux 发行版中使用 OneDrive。
 
-当 [Insync][2] 在 Linux 上支持  Google Drive 时，它变成了 Linux 上非常流行的高级第三方同步工具。我们有篇详细回顾 [Insync 支持 Google Drive][3] 的文章。
+当 [Insync][2] 在 Linux 上支持 Google Drive 时，它变成了 Linux 上非常流行的高级第三方同步工具。我们有篇对 [Insync 支持 Google Drive][3] 的详细点评文章。
 
-但是，最近[发布的 Insync 3][4] 支持 OneDrive。因此在本文中，我们将看下如何在 Insync 中使用 OneDrive 以及它的新功能。
+而最近[发布的 Insync 3][4] 支持了 OneDrive。因此在本文中，我们将看下如何在 Insync 中使用 OneDrive 以及它的新功能。
 
-非 FOSS 警告
+> 非 FOSS 警告
 
-_少数开发者会对非 FOSS 软件引入 LInux 感到痛苦。作为专注于桌面 Linux 的门户，即使不是 FOSS，我们也会在此介绍此类软件。_
+> 少数开发者会对非 FOSS 软件引入 Linux 感到痛苦。作为专注于桌面 Linux 的门户，即使不是 FOSS，我们也会在此介绍此类软件。
 
-_Insync 3 既不是开源软件，也不免费使用。你只有 15 天的试用期进行测试。如果你喜欢它，那么可以按每个帐户终生 29.99 美元的费用购买_。
+> Insync 3 既不是开源软件，也不免费使用。你只有 15 天的试用期进行测试。如果你喜欢它，那么可以按每个帐户终生 29.99 美元的费用购买。
 
-_我们不会拿钱来推广它们（以防你这么想）。我们不会在这里这么做_
+> 我们不会拿钱来推广它们（以防你这么想）。我们不会在这里这么做。
 
 ### 在 Linux 中通过 Insync 获得原生 OneDrive 体验
 
 ![][5]
 
-尽管它是一个高级工具，但依赖 OneDrive 的用户或许希望在他们的 LInux系统中获得同步 OneDrive  的无缝体验。
+尽管它是一个付费工具，但依赖 OneDrive 的用户或许希望在他们的 Linux 系统中获得同步 OneDrive  的无缝体验。
 
 首先，你需要从[官方页面][6]下载适合你 Linux 发行版的软件包。
 
-[下载 Insync][7]
+- [下载 Insync][7]
 
 你也可以选择添加仓库并进行安装。你将在 Insync 的[官方网站][7]看到说明。
 
@@ -46,7 +46,7 @@ _我们不会拿钱来推广它们（以防你这么想）。我们不会在这�
 
 另外，要注意的是，你添加的每个 OneDrive 或 Google Drive 帐户都需要单独的许可证。
 
-现在，在授权 OneDrive 帐户后，你必须选择一个用于同步所有内容的文件夹，这是 Insync 3 中的一项新功能。
+现在，在授权 OneDrive 帐户后，你必须选择一个用于同步所有内容的基础文件夹，这是 Insync 3 中的一项新功能。
 
 ![Insync 3 Base Folder][9]
 
@@ -62,13 +62,13 @@ _我们不会拿钱来推广它们（以防你这么想）。我们不会在这�
 
 ![Insync 3][12]
 
-你现在可以在包括有 Insync 的 Linux 桌面的多个平台使用 OneDrive 开始同步文件/文件夹。除了上面所有新功能/更改之外，你还可以在 Insync 上获得更快/更流畅的体验。
+你现在可以在包括带有 Insync 的 Linux 桌面在内的多个平台使用 OneDrive 开始同步文件/文件夹。除了上面所有新功能/更改之外，你还可以在 Insync 上获得更快/更流畅的体验。
 
 此外，借助 Insync 3，你可以查看同步进度：
 
 ![][13]
 
-**总结**
+### 总结
 
 总的来说，对于希望在 Linux 系统上同步 OneDrive 的用户而言，Insync 3 是令人印象深刻的升级。如果你不想付款，你可以尝试其他 [Linux 的免费云服务][14]。
 
@@ -81,7 +81,7 @@ via: https://itsfoss.com/use-onedrive-on-linux/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
