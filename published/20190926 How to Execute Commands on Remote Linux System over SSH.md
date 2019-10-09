@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (alim0x)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11440-1.html)
 [#]: subject: (How to Execute Commands on Remote Linux System over SSH)
 [#]: via: (https://www.2daygeek.com/execute-run-linux-commands-remote-system-over-ssh/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -10,17 +10,9 @@
 如何通过 SSH 在远程 Linux 系统上运行命令
 ======
 
-我们有时可能需要在远程机器上运行一些命令。
+我们有时可能需要在远程机器上运行一些命令。如果只是偶尔进行的操作，要实现这个目的，可以登录到远程系统上直接执行命令。但是每次都这么做的话，就有点烦人了。既然如此，有没有摆脱这种麻烦操作的更佳方案？
 
-如果只是偶尔进行的操作，要实现这个目的，可以登录到远程系统上直接执行命令。
-
-但是每次都这么做的话，就有点烦人了。
-
-既然如此，有没有摆脱这种麻烦操作的更佳方案？
-
-是的，你可以从你本地系统上执行这些操作，而不用登陆到远程系统上。
-
-这有什么好处吗？毫无疑问。这会为你节省很多好时光。
+是的，你可以从你本地系统上执行这些操作，而不用登录到远程系统上。这有什么好处吗？毫无疑问。这会为你节省很多好时光。
 
 这是怎么实现的？SSH 允许你无需登录到远程计算机就可以在它上面运行命令。
 
@@ -32,10 +24,10 @@ $ ssh [用户名]@[远程主机名或 IP] [命令或脚本]
 
 ### 1) 如何通过 SSH 在远程 Linux 系统上运行命令
 
-下面的例子允许用户通过 ssh 在远程 Linux 机器上运行 **[df 命令][1]**。
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行 [df 命令][1]。
 
 ```
-$ ssh [邮件地址隐去] df -h
+$ ssh daygeek@CentOS7.2daygeek.com df -h
 
  Filesystem               Size  Used Avail Use% Mounted on
  /dev/mapper/centos-root   27G  4.4G   23G  17% /
@@ -52,10 +44,10 @@ $ ssh [邮件地址隐去] df -h
 
 下面的例子允许用户通过 ssh 在远程 Linux 机器上一次运行多条命令。
 
-下面的命令同时在远程 Linux 系统上运行 uptime 命令和 free 命令。
+同时在远程 Linux 系统上运行 `uptime` 命令和 `free` 命令。
 
 ```
-$ ssh [邮件地址隐去] "uptime && free -m"
+$ ssh daygeek@CentOS7.2daygeek.com "uptime && free -m"
 
  23:05:10 up 10 min,  0 users,  load average: 0.00, 0.03, 0.03
 
@@ -67,13 +59,11 @@ $ ssh [邮件地址隐去] "uptime && free -m"
 
 ### 3) 如何通过 SSH 在远程 Linux 系统上运行带 sudo 权限的命令
 
-下面的例子允许用户通过 ssh 在远程 Linux 机器上运行带有 **[sudo 权限][2]** 的 **fdisk** 命令。
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行带有 [sudo 权限][2] 的 `fdisk` 命令。
 
-普通用户不允许执行系统二进制 **（/usr/sbin/）** 目录下提供的命令。用户需要 root 权限来运行它。
+普通用户不允许执行系统二进制（`/usr/sbin/`）目录下提供的命令。用户需要 root 权限来运行它。
 
-所以你需要 root 权限，好在 Linux 系统上运行 **[fdisk 命令][3]**。
-
-which 命令返回给定命令的完整可执行路径。
+所以你需要 root 权限，好在 Linux 系统上运行 [fdisk 命令][3]。`which` 命令返回给定命令的完整可执行路径。
 
 ```
 $ which fdisk
@@ -81,7 +71,7 @@ $ which fdisk
 ```
 
 ```
-$ ssh -t [邮件地址隐去] "sudo fdisk -l"
+$ ssh -t daygeek@CentOS7.2daygeek.com "sudo fdisk -l"
  [sudo] password for daygeek:
 
  Disk /dev/sda: 32.2 GB, 32212254720 bytes, 62914560 sectors
@@ -118,7 +108,7 @@ $ ssh -t [邮件地址隐去] "sudo fdisk -l"
 下面的例子允许用户通过 ssh 在远程 Linux 机器上运行带有 sudo 权限的服务控制命令。
 
 ```
-$ ssh -t [邮件地址隐去] "sudo systemctl restart httpd"
+$ ssh -t daygeek@CentOS7.2daygeek.com "sudo systemctl restart httpd"
 
  [sudo] password for daygeek:
  Connection to centos7.2daygeek.com closed.
@@ -126,10 +116,10 @@ $ ssh -t [邮件地址隐去] "sudo systemctl restart httpd"
 
 ### 5) 如何通过非标准端口 SSH 在远程 Linux 系统上运行命令
 
-下面的例子允许用户通过 ssh 在使用了非标准端口的远程 Linux 机器上运行 **[hostnamectl 命令][4]**。
+下面的例子允许用户通过 ssh 在使用了非标准端口的远程 Linux 机器上运行 [hostnamectl 命令][4]。
 
 ```
-$ ssh -p 2200 [邮件地址隐去] hostnamectl
+$ ssh -p 2200 daygeek@CentOS7.2daygeek.com hostnamectl
 
     Static hostname: Ubuntu18.2daygeek.com
           Icon name: computer-vm
@@ -144,10 +134,10 @@ $ ssh -p 2200 [邮件地址隐去] hostnamectl
 
 ### 6) 如何将远程系统的输出保存到本地系统
 
-下面的例子允许用户通过 ssh 在远程 Linux 机器上运行 **[top 命令][5]**，并将输出保存到本地系统。
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行 [top 命令][5]，并将输出保存到本地系统。
 
 ```
-$ ssh [邮件地址隐去] "top -bc | head -n 35" > /tmp/top-output.txt
+$ ssh daygeek@CentOS7.2daygeek.com "top -bc | head -n 35" > /tmp/top-output.txt
 ```
 
 ```
@@ -180,17 +170,17 @@ cat /tmp/top-output.txt
     20 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 [bioset]
 ```
 
-或者你也可以使用以下格式在远程系统上运行多条命令。
+或者你也可以使用以下格式在远程系统上运行多条命令：
 
 ```
-$ ssh [邮件地址隐去] << EOF
+$ ssh daygeek@CentOS7.2daygeek.com << EOF
 hostnamectl
 free -m
 grep daygeek /etc/passwd
 EOF
 ```
 
-上面命令的输出如下。
+上面命令的输出如下：
 
 ```
 Pseudo-terminal will not be allocated because stdin is not a terminal.
@@ -214,7 +204,7 @@ Pseudo-terminal will not be allocated because stdin is not a terminal.
 
 ### 7) 如何在远程系统上运行本地 Bash 脚本
 
-下面的例子允许用户通过 ssh 在远程 Linux 机器上运行本地 **[bash 脚本][5]** “remote-test.sh”。
+下面的例子允许用户通过 ssh 在远程 Linux 机器上运行本地 [bash 脚本][5] `remote-test.sh`。
 
 创建一个 shell 脚本并执行它。
 
@@ -231,10 +221,10 @@ $ vi /tmp/remote-test.sh
  hostnamectl
 ```
 
-上面命令的输出如下。
+上面命令的输出如下：
 
 ```
-$ ssh [邮件地址隐去] 'bash -s' < /tmp/remote-test.sh
+$ ssh daygeek@CentOS7.2daygeek.com 'bash -s' < /tmp/remote-test.sh
 
   01:17:09 up 22 min,  1 user,  load average: 0.00, 0.02, 0.08
 
@@ -266,7 +256,7 @@ $ ssh [邮件地址隐去] 'bash -s' < /tmp/remote-test.sh
        Architecture: x86-64
 ```
 
-或者也可以使用 pipe。如果你觉得输出不太好看，再做点修改让它更优雅些。
+或者也可以使用管道。如果你觉得输出不太好看，再做点修改让它更优雅些。
 
 ```
 $ vi /tmp/remote-test-1.sh
@@ -290,10 +280,10 @@ $ vi /tmp/remote-test-1.sh
  echo "------------------------------------------------------------------"
 ```
 
-上面脚本的输出如下。
+上面脚本的输出如下：
 
 ```
-$ cat /tmp/remote-test.sh  | ssh [邮件地址隐去]
+$ cat /tmp/remote-test.sh  | ssh daygeek@CentOS7.2daygeek.com
  Pseudo-terminal will not be allocated because stdin is not a terminal.
  ---------System Uptime--------------------------------------------
   03:14:09 up  2:19,  1 user,  load average: 0.00, 0.01, 0.05
@@ -333,16 +323,16 @@ $ cat /tmp/remote-test.sh  | ssh [邮件地址隐去]
 
 ### 8) 如何同时在多个远程系统上运行多条指令
 
-下面的 bash 脚本允许用户同时在多个远程系统上运行多条指令。使用简单的 for 循环实现。
+下面的 bash 脚本允许用户同时在多个远程系统上运行多条指令。使用简单的 `for` 循环实现。
 
-为了实现这个目的，你可以尝试 **[PSSH 命令][7]** 或 **[ClusterShell 命令][8]** 或 **[DSH 命令][9]**。
+为了实现这个目的，你可以尝试 [PSSH 命令][7] 或 [ClusterShell 命令][8] 或 [DSH 命令][9]。
 
 ```
 $ vi /tmp/multiple-host.sh
 
  for host in CentOS7.2daygeek.com CentOS6.2daygeek.com
  do
-    ssh [邮件地址隐去]${host} "uname -a;uptime;date;w"
+    ssh daygeek@CentOS7.2daygeek.com${host} "uname -a;uptime;date;w"
  done
 ```
 
@@ -358,7 +348,7 @@ $ sh multiple-host.sh
  Wed Sep 25 01:33:57 CDT 2019
 
   01:33:57 up 39 min,  1 user,  load average: 0.07, 0.06, 0.06
- USER     TTY      FROM             [邮件地址隐去]   IDLE   JCPU   PCPU WHAT
+ USER     TTY      FROM             daygeek@CentOS7.2daygeek.com   IDLE   JCPU   PCPU WHAT
  daygeek  pts/0    192.168.1.6      01:08   23:25   0.06s  0.06s -bash
 
  Linux CentOS6.2daygeek.com 2.6.32-754.el6.x86_64 #1 SMP Tue Jun 19 21:26:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
@@ -368,21 +358,19 @@ $ sh multiple-host.sh
  Tue Sep 24 23:33:58 MST 2019
 
   23:33:58 up 39 min,  0 users,  load average: 0.00, 0.00, 0.00
- USER     TTY      FROM             [邮件地址隐去]   IDLE   JCPU   PCPU WHAT
+ USER     TTY      FROM             daygeek@CentOS7.2daygeek.com   IDLE   JCPU   PCPU WHAT
 ```
 
 ### 9) 如何使用 sshpass 命令添加一个密码
 
 如果你觉得每次输入密码很麻烦，我建议你视你的需求选择以下方法中的一项来解决这个问题。
 
-如果你经常进行类似的操作，我建议你设置 **[免密码认证][10]**，因为它是标准且永久的解决方案。
+如果你经常进行类似的操作，我建议你设置 [免密码认证][10]，因为它是标准且永久的解决方案。
 
-如果你一个月只是执行几次这些任务，我推荐你使用 **“sshpass”** 工具。
-
-只需要使用 **“-p”** 参数选项提供你的密码即可。
+如果你一个月只是执行几次这些任务，我推荐你使用 `sshpass` 工具。只需要使用 `-p` 参数选项提供你的密码即可。
 
 ```
-$ sshpass -p '在这里输入你的密码' ssh -p 2200 [邮件地址隐去] ip a
+$ sshpass -p '在这里输入你的密码' ssh -p 2200 daygeek@CentOS7.2daygeek.com ip a
 
  1: lo:  mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
      link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -405,7 +393,7 @@ via: https://www.2daygeek.com/execute-run-linux-commands-remote-system-over-ssh/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
