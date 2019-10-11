@@ -7,40 +7,40 @@
 [#]: via: (https://www.2daygeek.com/bash-script-generate-linux-system-uptime-reports/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Bash Script to Generate System Uptime Reports on Linux
+生成 Linux 运行时间报告的 Bash 脚本
 ======
 
-For some purposes you may need to collect the **[Linux system uptime][1]** report once a month.
+出于一些原因，你可能需要每月收集一次**[Linux 系统运行时间][1]**报告。
 
-If so, you can use one of the following **[bash scripts][2]** based on your requirements.
+如果没错，你可以根据需要使用以下 **[bash 脚本][2]**之一。
 
-Why should we collect this report?
+我们为什么要收集这份报告？
 
-Restarting the Linux server after a certain period of time is a good practice to fix some pending issues.
+在一段时间后重启 Linux 服务器是解决某些未解决问题的好方法。
 
-It is advisable to restart once in 180 days. But this period may vary depending on your company’s policy.
+建议每 180 天重新启动一次。但时间段也许取决于你公司的政策。
 
-If you have been running the server for a long time without restarting.
+如果你已经长时间运行服务器而没有重启。
 
-This can lead to some performance issues or memory problems on the server, which I have noticed on many servers.
+这可能导致服务器上出现一些性能或内存问题，我在许多服务器上都注意到了这一点。
 
-These scripts provide all system uptime reports in one place.
+这些脚本一次性提供了所有系统运行报告。
 
-### What is Uptime Command
+### 什么是 uptime 命令
 
-uptime command will tell how long the system has been running. It gives a one line display of the following information.
+uptime 命令将告诉你系统已经运行了多长时间。它在一行中显示以下信息。
 
-The current time, how long the system has been running, how many users are currently logged on, and the system load averages for the past 1, 5, and 15 minutes.
+当前时间、系统运行了多长时间、当前登录了多少用户以及过去 1、5 和 15 分钟的平均系统负载。
 
-### What Is tuptime?
+### 什么是 tuptime?
 
-[Tuptime][3] is a tool for report the historical and statistical running time of the system, keeping it between restarts. Like uptime command but with more interesting output.
+[tuptime][3] 是用于报告系统的历史和统计运行时间的工具，可在重启之间保存。它类似于 uptime 命令，但输出更有趣。
 
-### 1) Bash Script to Check Linux System Uptime
+### 1）检查 Linux 系统运行时间的 Bash 脚本
 
-This bash script will collect all the server uptime and send the report to the given email id.
+该 bash 脚本将收集所有服务器正常运行时间，并将报告发送到给定的电子邮箱地址。
 
-Please replace your email id instead of ours, otherwise you will not receive mails.
+请替换为你的电子邮箱地址，而不是用我们的，否则你将不会收到邮件。
 
 ```
 # vi /opt/scripts/system-uptime-script.sh
@@ -55,19 +55,19 @@ done | column -t >> /tmp/uptime-report.out
 cat /tmp/uptime-report.out | mail -s "Linux Servers Uptime Report" "[email protected]"
 ```
 
-Set an executable permission to **“system-uptime-script.sh”** file.
+给 **“system-uptime-script.sh”** 设置可执行权限。
 
 ```
 $ chmod +x /opt/scripts/system-uptime-script.sh
 ```
 
-Finally run the bash script to get the output.
+最后运行 bash 脚本获取输出。
 
 ```
 # sh /opt/scripts/system-uptime-script.sh
 ```
 
-You will receive a report like the one below.
+你将收到类似以下的报告。
 
 ```
 # cat /tmp/uptime-report.out
@@ -81,9 +81,9 @@ You will receive a report like the one below.
 192.168.1.11:         23     days
 ```
 
-### 2) Bash Script to Check If Linux System is Running Over 30 Days
+### 2）检查 Linux 系统是否运行了 30 天以上的 Bash 脚本
 
-This bash script collects server running over 30 days and sends the report to the given email id. You can change the days according to your needs.
+此 bash 脚本会收集运行 30 天以上的服务器，并将报告发送到指定的邮箱地址。你可以根据需要更改天数。
 
 ```
 # vi /opt/scripts/system-uptime-script-1.sh
@@ -99,13 +99,13 @@ cat /tmp/uptime-report-1.out | awk ' $2 >= 30' > /tmp/uptime-report-2.out
 cat /tmp/uptime-report-2.out | mail -s "Linux Servers Uptime Report" "[email protected]"
 ```
 
-Set an executable permission to **“system-uptime-script-1.sh”** file.
+给 **“system-uptime-script-1.sh”** 设置可执行权限。
 
 ```
 $ chmod +x /opt/scripts/system-uptime-script-1.sh
 ```
 
-Finally add a **[cronjob][4]** to automate this. It runs daily at 7AM.
+最后添加一条 **[cronjob][4]** 来自动执行。它会在每天早上 7 点运行。
 
 ```
 # crontab -e
@@ -113,9 +113,9 @@ Finally add a **[cronjob][4]** to automate this. It runs daily at 7AM.
 0 7 * * * /bin/bash /opt/scripts/system-uptime-script-1.sh
 ```
 
-**Note:** You will receive an email alert at 7AM every day, which is for yesterday’s date details.
+**注意：** 你会在每天早上 7 点会收到一封电子邮件提醒，它是昨天的详情。
 
-You will receive a report like the one below.
+你将收到类似下面的报告。
 
 ```
 # cat /tmp/uptime-report-2.out
@@ -131,7 +131,7 @@ via: https://www.2daygeek.com/bash-script-generate-linux-system-uptime-reports/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
