@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11444-1.html)
 [#]: subject: (7 steps to securing your Linux server)
 [#]: via: (https://opensource.com/article/19/10/linux-server-security)
 [#]: author: (Patrick H. Mullins https://opensource.com/users/pmullins)
@@ -12,7 +12,7 @@
 
 > 通过七个简单的步骤来加固你的 Linux 服务器。
 
-![computer servers processing data][1]
+![](https://img.linux.net.cn/data/attachment/album/201910/11/094107k8skl8wwxq62pzld.jpg)
 
 这篇入门文章将向你介绍基本的 Linux 服务器安全知识。虽然主要针对 Debian/Ubuntu，但是你可以将此处介绍的所有内容应用于其他 Linux 发行版。我也鼓励你研究这份材料，并在适用的情况下进行扩展。
 
@@ -86,7 +86,7 @@ PermitRootLogin no
 AddressFamily inet
 ```
 
-重新启动 SSH 服务以启用你的更改。请注意，在重新启动 SSH 服务器之前，与服务器建立两个活动连接是一个好主意。有了这些额外的连接，你可以在重新启动出错的情况下修复所有问题。
+重新启动 SSH 服务以启用你的更改。请注意，在重新启动 SSH 服务之前，与服务器建立两个活动连接是一个好主意。有了这些额外的连接，你可以在重新启动 SSH 服务出错的情况下修复所有问题。
 
 在 Ubuntu 上：
 
@@ -102,7 +102,7 @@ $ sudo systemctl restart sshd
 
 ### 5、启用防火墙
 
-现在，你需要安装防火墙、启用防火墙并对其进行配置，以仅允许你指定的网络流量。（Ubuntu 上的）[简单的防火墙][3]（UFW）是一个易用的 iptables 界面，可大大简化防火墙的配置过程。
+现在，你需要安装防火墙、启用防火墙并对其进行配置，以仅允许你指定的网络流量通过。（Ubuntu 上的）[简单的防火墙][3]（UFW）是一个易用的 iptables 界面，可大大简化防火墙的配置过程。
 
 你可以通过以下方式安装 UFW：
 
@@ -140,7 +140,7 @@ $ sudo ufw disable
 
 你还可以（在 RHEL/CentOS 上）使用 [firewall-cmd][4]，它已经安装并集成到某些发行版中。
 
-### 6、安全 Fail2ban
+### 6、安装 Fail2ban
 
 [Fail2ban][5] 是一种用于检查服务器日志以查找重复或自动攻击的应用程序。如果找到任何攻击，它会更改防火墙以永久地或在指定的时间内阻止攻击者的 IP 地址。
 
@@ -170,13 +170,13 @@ $ sudo fail2ban-client status ssh
 
 ### 7、移除无用的网络服务
 
-几乎所有 Linux 服务器操作系统都启用了一些面向网络的服务。你可能希望保留其中大多数，然而，有一些你或许希望删除。你可以使用 `ss` 命令查看所有正在运行的网络服务：（LCTT 译注：应该是只保留少部分，而所有可用确认无关的、无用的服务都应该停用或删除。）
+几乎所有 Linux 服务器操作系统都启用了一些面向网络的服务。你可能希望保留其中大多数，然而，有一些你或许希望删除。你可以使用 `ss` 命令查看所有正在运行的网络服务：（LCTT 译注：应该是只保留少部分，而所有确认无关的、无用的服务都应该停用或删除。）
 
 ```
 $ sudo ss -atpu
 ```
 
-`ss` 的输出将取决于你的操作系统。这是一个可能的示例。它显示 SSH（`sshd`）和 Ngnix（`nginx`）服务正在侦听网络并准备连接：
+`ss` 的输出取决于你的操作系统。下面是一个示例，它显示 SSH（`sshd`）和 Ngnix（`nginx`）服务正在侦听网络并准备连接：
 
 ```
 tcp LISTEN 0 128 *:http *:* users:(("nginx",pid=22563,fd=7))
@@ -185,7 +185,7 @@ tcp LISTEN 0 128 *:ssh *:* users:(("sshd",pid=685,fd=3))
 
 删除未使用的服务的方式因你的操作系统及其使用的程序包管理器而异。
 
-要删除 Debian / Ubuntu 上未使用的服务：
+要在 Debian / Ubuntu 上删除未使用的服务：
 
 ```
 $ sudo apt purge <service_name>
@@ -201,7 +201,7 @@ $ sudo yum remove <service_name>
 
 ### 总结
 
-本教程介绍了加固 Linux 服务器所需的最起码的措施。可以并且应该根据服务器的使用方式启用其他安全层。这些安全层可以包括诸如各个应用程序配置、入侵检测软件（IDS）以及启用访问控制（例如，双因素身份验证）之类的东西。
+本教程介绍了加固 Linux 服务器所需的最起码的措施。你应该根据服务器的使用方式启用其他安全层。这些安全层可以包括诸如各个应用程序配置、入侵检测软件（IDS）以及启用访问控制（例如，双因素身份验证）之类的东西。
 
 --------------------------------------------------------------------------------
 
@@ -210,7 +210,7 @@ via: https://opensource.com/article/19/10/linux-server-security
 作者：[Patrick H. Mullins][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
