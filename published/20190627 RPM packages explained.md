@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11452-1.html)
 [#]: subject: (RPM packages explained)
 [#]: via: (https://fedoramagazine.org/rpm-packages-explained/)
 [#]: author: (Ankur Sinha "FranciscoD" https://fedoramagazine.org/author/ankursinha/)
@@ -12,11 +12,11 @@ RPM 包初窥
 
 ![][1]
 
-也许，Fedora 社区追求其[促进自由和开源的软件和内容的使命][2]的最著名方法就是开发 [Fedora 软件发行版][3]了。因此，我们将很大一部分的社区资源用于此任务也就不足为奇了。这篇文章总结了这些软件是如何“打包”的，以及使之成为可能的基础工具，如 `rpm` 之类。
+也许，Fedora 社区追求其[促进自由和开源的软件及内容的使命][2]的最著名的方式就是开发 [Fedora 软件发行版][3]了。因此，我们将很大一部分的社区资源用于此任务也就不足为奇了。这篇文章总结了这些软件是如何“打包”的，以及使之成为可能的基础工具，如 `rpm` 之类。
 
 ### RPM：最小的软件单元
 
-用户可以选择的“版本”和“风味版”（[spins][4] / [labs][5] / [silverblue][6]）其实非常相似。它们都是由各种软件组成的，这些软件经过混合和搭配，可以很好地协同工作。它们之间的不同之处在于放入其中的具体工具不同。这种选择取决于它们所针对的用例。所有这些的“版本”和“风味版”基本组成单位是 RPM 软件包文件。
+可供用户选择的“版本”和“风味版”（[spins][4] / [labs][5] / [silverblue][6]）其实非常相似。它们都是由各种软件组成的，这些软件经过混合和搭配，可以很好地协同工作。它们之间的不同之处在于放入其中的具体工具不同。这种选择取决于它们所针对的用例。所有这些的“版本”和“风味版”基本组成单位都是 RPM 软件包文件。
 
 RPM 文件是类似于 ZIP 文件或 tarball 的存档文件。实际上，它们使用了压缩来减小存档文件的大小。但是，除了文件之外，RPM 存档中还包含有关软件包的元数据。可以使用 `rpm` 工具查询：
 
@@ -276,7 +276,7 @@ Complete!
 
 从上面可以看到，dnfdragora 似乎提供了 `dnf` 的所有主要功能。
 
-Fedora 中还有其他工具也可以管理软件包，GNOME 的“软件”和“发现”就是其中两个。GNOME “软件”仅专注于图形应用程序。你无法使用这个图形化前端来安装命令行或终端工具，例如 `htop` 或 `weechat`。但是，GNOME “软件”支持安装 `dnf` 所不支持的 [Flatpak][12] 和 Snap 应用程序。它们是针对不同目标受众的不同工具，因此提供了不同的功能。
+Fedora 中还有其他工具也可以管理软件包，GNOME 的“<ruby>软件<rt>Software</rt></ruby>”和“<ruby>发现<rt>Discover</rt></ruby>”就是其中两个。GNOME “软件”仅专注于图形应用程序。你无法使用这个图形化前端来安装命令行或终端工具，例如 `htop` 或 `weechat`。但是，GNOME “软件”支持安装 `dnf` 所不支持的 [Flatpak][12] 和 Snap 应用程序。它们是针对不同目标受众的不同工具，因此提供了不同的功能。
 
 这篇文章仅触及到了 Fedora 软件的生命周期的冰山一角。本文介绍了什么是 RPM 软件包，以及使用 `rpm` 和 `dnf` 的主要区别。
 
@@ -293,7 +293,7 @@ via: https://fedoramagazine.org/rpm-packages-explained/
 作者：[Ankur Sinha "FranciscoD"][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
