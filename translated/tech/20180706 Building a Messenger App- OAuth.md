@@ -1,28 +1,28 @@
-[#]: collector: (lujun9972)
-[#]: translator: (PsiACE)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Building a Messenger App: OAuth)
-[#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-oauth/)
-[#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
+[#]: collector: "lujun9972"
+[#]: translator: "PsiACE"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Building a Messenger App: OAuth"
+[#]: via: "https://nicolasparada.netlify.com/posts/go-messenger-oauth/"
+[#]: author: "Nicolás Parada https://nicolasparada.netlify.com/"
 
-Building a Messenger App: OAuth
+构建一个即时消息应用（二）：OAuth
 ======
 
-[Previous part: Schema][1].
+[上一篇：模式](https://linux.cn/article-11396-1.html)，[原文][1]。
 
-In this post we start the backend by adding social login.
+在这篇帖子中，我们将会通过为应用添加社交登录功能进入后端开发。
 
-This is how it works: the user click on a link that redirects him to the GitHub authorization page. The user grant access to his info and get redirected back logged in. The next time he tries to login, he won’t be asked to grant permission, it is remembered so the login flow is as fast as a single click.
+它的工作方式十分简单：用户点击链接，然后重定向到 GitHub 授权页面。当用户授予我们对他的个人信息的访问权限之后，就会重定向回登录页面。下一次尝试登录时，系统将不会再次请求授权，也就是说，我们的应用已经记住了他。这使得登录流程看起来就像单击一样快。
 
-Internally, the history is more complex tho. First we need the register a new [OAuth app on GitHub][2].
+如果考虑内部实现的话，过程将会比较复杂。首先，我们需要注册一个新的 [GitHub OAuth 应用][2]。
 
-The important part is the callback URL. Set it to `http://localhost:3000/api/oauth/github/callback`. On development we are on localhost, so when you ship the app to production, register a new app with the correct callback URL.
+比较重要的是回调 URL。我们将它设置为 `http://localhost:3000/api/oauth/github/callback`。这是因为，在开发过程中，我们总是在本地主机上工作。一旦你要将应用交付生产，请使用正确的回调 URL 注册一个新的应用。
 
-This will give you a client id and a secret key. Don’t share them with anyone 👀
+注册以后，你将会收到客户端 id 和安全密钥。安全起见，请不要与任何人分享他们 👀
 
-With that off of the way, lets start to write some code. Create a `main.go` file:
+顺便让我们开始写一些代码吧。现在，创建一个 `main.go` 文件：
 
 ```
 package main
@@ -139,7 +139,7 @@ func intEnv(key string, fallbackValue int) int {
 }
 ```
 
-Install dependencies:
+安装依赖项：
 
 ```
 go get -u github.com/gorilla/securecookie
@@ -151,28 +151,26 @@ go get -u github.com/matryer/way
 go get -u golang.org/x/oauth2
 ```
 
-We use a `.env` file to save secret keys and other configurations. Create it with at least this content:
+我们将会使用 `.env` 文件来保存密钥和其他配置。请创建这个文件，并保证里面至少包含以下内容：
 
 ```
 GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
 ```
 
-The other enviroment variables we use are:
+我们还要用到的其他环境变量有：
 
-  * `PORT`: The port in which the server runs. Defaults to `3000`.
-  * `ORIGIN`: Your domain. Defaults to `http://localhost:3000/`. The port can also be extracted from this.
-  * `DATABASE_URL`: The Cockroach address. Defaults to `postgresql://root@127.0.0.1:26257/messenger?sslmode=disable`.
-  * `HASH_KEY`: Key to sign cookies. Yeah, we’ll use signed cookies for security.
-  * `JWT_KEY`: Key to sign JSON web tokens.
+  * `PORT`：服务器运行的端口，默认值是 `3000`。
+  * `ORIGIN`：你的域名，默认值是 `http://localhost:3000/`。端口也可以在这里指定。
+  * `DATABASE_URL`：Cockroach 数据库的地址。默认值是 `postgresql://root@127.0.0.1:26257/messenger?sslmode=disable`。
+  * `HASH_KEY`：用于为 cookies 签名的密钥。没错，我们会使用已签名的 cookies 来确保安全。
+  * `JWT_KEY`：用于签署 JSON 网络令牌的密钥。
 
+因为代码中已经设定了默认值，所以你也不用把它们写到 `.env` 文件中。
 
+在读取配置并连接到数据库之后，我们会创建一个 OAuth 配置。我们会使用 origin 来构建回调 URL（就和我们在 GitHub 页面上注册的一样）。我们的范围设置为 “read:user”。这会允许我们读取公开的用户信息，我们只是需要他的用户名和头像。然后我们会初始化 cookie 和 JWT 签名器。定义一些端点并启动服务器。
 
-Because they have default values, your don’t need to write them on the `.env` file.
-
-After reading the configuration and connecting to the database, we create an OAuth config. We use the origin to build the callback URL (the same we registered on the github page). And we set the scope to “read:user”. This will give us permission to read the public user info. That’s because we just need his username and avatar. Then we initialize the cookie and JWT signers. Define some endpoints and start the server.
-
-Before implementing those HTTP handlers lets write a couple functions to send HTTP responses.
+在实现 HTTP 处理程序之前，让我们编写一些函数来发送 HTTP 响应。
 
 ```
 func respond(w http.ResponseWriter, v interface{}, statusCode int) {
@@ -192,11 +190,11 @@ func respondError(w http.ResponseWriter, err error) {
 }
 ```
 
-The first one is to send JSON and the second one logs the error to the console and return a `500 Internal Server Error` error.
+第一个用来发送 JSON，而第二个将错误记录到控制台并返回一个 `500 Internal Server Error` 错误信息。
 
-### OAuth Start
+### OAuth 开始
 
-So, the user clicks on a link that says “Access with GitHub”… That link points the this endpoint `/api/oauth/github` that will redirect the user to github.
+所以，用户点击写着 “Access with GitHub” 的链接。该链接指向 `/api/oauth/github`，这将会把用户重定向到 github。
 
 ```
 func githubOAuthStart(w http.ResponseWriter, r *http.Request) {
@@ -222,11 +220,11 @@ func githubOAuthStart(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-OAuth2 uses a mechanism to prevent CSRF attacks so it requires a “state”. We use nanoid to create a random string and use that as state. We save it as a cookie too.
+OAuth2 使用一种机制来防止 CSRF 攻击，因此它需要一个「状态」 "state"。我们使用 nanoid 来创建一个随机字符串并用它作为状态。我们也把它保存为一个 cookie。
 
-### OAuth Callback
+### OAuth 回调
 
-Once the user grant access to his info on the GitHub page, he will be redirected to this endpoint. The URL will come with the state and a code on the query string `/api/oauth/github/callback?state=&code=`
+一旦用户授权我们访问他的个人信息，他将会被重定向到这个端点。这个 URL 将会在查询字符串上包含状态（state）和授权码（code） `/api/oauth/github/callback?state=&code=`
 
 ```
 const jwtLifetime = time.Hour * 24 * 14
@@ -341,19 +339,19 @@ func githubOAuthCallback(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-First we try to decode the cookie with the state we saved before. And compare it with the state that comes in the query string. In case they don’t match, we return a `418 I'm teapot` error.
+首先，我们会尝试使用之前保存的状态对 cookie 进行解码。并将其与查询字符串中的状态进行比较。如果它们不匹配，我们会返回一个 `418 I'm teapot`（未知来源）错误。
 
-Then we exchange the code for a token. This token is used to create an HTTP client to make requests to the GitHub API. So we do a GET request to `https://api.github.com/user`. This endpoint will give us the current authenticated user info in JSON format. We decode it to get the user ID, login (username) and avatar URL.
+接着，我们使用授权码生成一个令牌。这个令牌被用于创建 HTTP 客户端来向 GitHub API 发出请求。所以最终我们向 `https://api.github.com/user` 发送了一个 GET 请求。这个端点将会以 JSON 格式向我们提供当前经过身份验证的用户信息。我们将会解码这些内容，来获取用户 ID，登录名（用户名）和头像 URL。
 
-Then we try to find a user with that GitHub ID on the database. If none is found, we create one using that data.
+然后我们将会尝试在数据库上找到具有该 GitHub ID 的用户。如果没有找到，那么我们就会使用该数据创建一个新的。
 
-Then, with the newly created user, we issue a JSON web token with the user ID as Subject and redirect to the frontend with the token, along side the expiration date in the query string.
+之后，对于新创建的用户，我们会发出一个用户 ID 为主题的 JSON 网络令牌，并使用该令牌重定向到前端，查询字符串中一并包含该令牌的到期日（the expiration date）。
 
-The web app will be for another post, but the URL you are being redirected is `/callback?token=&expires_at=`. There we’ll have some JavaScript to extract the token and expiration date from the URL and do a GET request to `/api/auth_user` with the token in the `Authorization` header in the form of `Bearer token_here` to get the authenticated user and save it to localStorage.
+这一 Web 应用也会被用在其他帖子，但是重定向的链接会是 `/callback?token=&expires_at=`。在那里，我们将会利用 JavaScript 从 URL 中获取令牌和到期日，并通过 `Authorization` 标头中的令牌以`Bearer token_here` 的形式对 `/ api / auth_user` 进行GET请求，来获取已认证的身份用户并将其保存到 localStorage。
 
-### Guard Middleware
+### 保护中间件
 
-To get the current authenticated user we use a middleware. That’s because in future posts we’ll have more endpoints that requires authentication, and a middleware allow us to share functionality.
+为了获取当前已经过身份验证的用户，我们使用了中间件。这是因为在接下来的文章中，我们会有很多需要身份认证的端点，而中间件将会允许我们共享这一功能。
 
 ```
 type ContextKey struct {
@@ -388,9 +386,9 @@ func guard(handler http.HandlerFunc) http.HandlerFunc {
 }
 ```
 
-First we try to read the token from the `Authorization` header or a `token` in the URL query string. If none found, we return a `401 Unauthorized` error. Then we decode the claims in the token and use the Subject as the current authenticated user ID.
+首先，我们尝试从 `Authorization` 标头或者是 URL 查询字符串中的 `token` 字段中读取令牌。如果没有找到，我们需要返回 `401 Unauthorized`（未授权）错误。然后我们将会对令牌中的申明进行解码，并使用该主题作为当前已经过身份验证的用户 ID。
 
-Now, we can wrap any `http.handlerFunc` that needs authentication with this middleware and we’ll have the authenticated user ID in the context.
+现在，我们可以用这一中间件来封装任何需要授权的 `http.handlerFunc`，并且在处理函数的上下文中具有已经过身份验证的用户 ID。
 
 ```
 var guarded = guard(func(w http.ResponseWriter, r *http.Request) {
@@ -398,7 +396,7 @@ var guarded = guard(func(w http.ResponseWriter, r *http.Request) {
 })
 ```
 
-### Get Authenticated User
+### 获取认证用户
 
 ```
 func getAuthUser(w http.ResponseWriter, r *http.Request) {
@@ -422,13 +420,13 @@ func getAuthUser(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-We use the guard middleware to get the current authenticated user id and do a query to the database.
+我们使用保护中间件来获取当前经过身份认证的用户 ID 并查询数据库。
 
 * * *
 
-That will cover the OAuth process on the backend. In the next part we’ll see how to start conversations with other users.
+这一部分涵盖了后端的 OAuth 流程。在下一篇帖子中，我们将会看到如何开始与其他用户的对话。
 
-[Souce Code][3]
+[源代码][3]
 
 --------------------------------------------------------------------------------
 
