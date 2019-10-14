@@ -7,16 +7,15 @@
 [#]: via: (https://www.networkworld.com/article/3444589/viewing-files-and-processes-as-trees-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Viewing files and processes as trees on Linux
+在 Linux 上以树状查看文件和进程
 ======
-A look at three Linux commands - ps, pstree and tree - for viewing files and processes in a tree-like format.
-[Melissa McMasters][1] [(CC BY 2.0)][2]
+介绍三个 Linux 命令：ps、pstree 和 tree 以类似树的格式查看文件和进程。
 
-[Linux][3] provides several handy commands for viewing both files and processes in a branching, tree-like format that makes it easy to view how they are related. In this post, we'll look at the **ps**, **pstree** and **tree** commands along with some options they provide to help focus your view on what you want to see.
+[Linux][3] 提供了一些方便的命令，用于以树状分支形式查看文件和进程，从而易于查看它们之间的关系。在本文中，我们将介绍 **ps**，**pstree** 和 **tree** 命令以及它们提供的一些选项，这些选项可帮助您将焦点集中在要查看的内容上。
 
 ### ps
 
-The **ps** command that we all use to list processes has some interesting options that many of us never take advantage of. While the commonly used **ps -ef** provides a complete listing of running processes, the **ps -ejH** command adds a nice effect. It indents related processes to make the relationship between these processes visually more clear  – as in this excerpt:
+我们用来列出进程的 **ps** 命令有一些有趣的选项，但是很多人从来没有利用过。虽然常用的 **ps -ef** 提供了正在运行的进程的完整列表，但是 **ps -ejH** 命令增加了一个不错的效果。它缩进了相关的进程以使这些进程之间的关系在视觉上更加清晰——就像这个片段：
 
 ```
 $ ps -ejH
@@ -29,17 +28,9 @@ $ ps -ejH
 30968 30968 28410 pts/0    00:00:00           ps
 ```
 
-As you can see, the ps process is being run is run within bash and bash within an ssh session.
+可以看到，正在运行的 ps 进程是在 bash 中运行的，而 bash 是在 ssh 会话中运行的。
 
-[][4]
-
-BrandPost Sponsored by HPE
-
-[Take the Intelligent Route with Consumption-Based Storage][4]
-
-Combine the agility and economics of HPE storage with HPE GreenLake and run your IT department with efficiency.
-
-The **-exjf** option string provides a similar view, but with some additional details and symbols to highlight the hierarchical nature of the processes:
+**-exjf** 选项字符串提供了类似的视图，但是带有一些其它细节和符号以突出显示进程的层次结构性质：
 
 ```
 $ ps -exjf
@@ -52,9 +43,7 @@ PPID   PID  PGID   SID TTY      TPGID STAT   UID   TIME COMMAND
 28410 31028 31028 28410 pts/0    31028 R+    1000   0:00              \_ ps axjf
 ```
 
-The options used in these commands represent:
-
-Advertisement
+命令中使用的这些选项表示：
 
 ```
 -e  select all processes
@@ -64,7 +53,7 @@ Advertisement
 -x  lift the "must be associated with a tty" restriction
 ```
 
-There's also a **\--forest** option that provides a similar view.
+命令同时也有一个 **\--forest** 选项提供了类似的视图。
 
 ```
 $ ps -ef --forest
@@ -77,13 +66,11 @@ shs      28410 28409  0 12:56 pts/0    00:00:00          \_ -bash
 shs      32351 28410  0 14:39 pts/0    00:00:00              \_ ps -ef --forest
 ```
 
-Note that these examples are only a sampling of how these commands can be used. You can select whichever options that give you the view of processes that works best for you.
-
-[MORE ON NETWORK WORLD: Linux: Best desktop distros for newbies][5]
+注意，这些示例只是这些命令如何使用的示例。您可以选择最适合您的流程视图的任何选项组合。
 
 ### pstree
 
-A similar view of processes is available using the **pstree** command. While even **pstree** offers many options, the command provides a very useful display on its own. Notice that many parent-child process relationships are displayed on single lines rather than subsequent lines.
+使用 **pstree** 命令可以获得类似的进程视图。尽管 **pstree** 具备了许多选项，但是该命令本身就提供了非常有用的显示。注意，许多父子进程关系显示在单行而不是后续行上。
 
 ```
 $ pstree
@@ -99,7 +86,7 @@ $ pstree
         │         └─xdg-permission-───2*[{xdg-permission-}]
 ```
 
-With the **-n** option, **pstree** displays the process in numerical (by process ID) order:
+通过 **-n** 选项，**pstree** 以数值（按进程 ID）顺序显示进程：
 
 ```
 $ pstree -n
@@ -130,17 +117,17 @@ systemd─┬─systemd-journal
         ├─sshd───sshd───sshd───bash───pstree
 ```
 
-Some options to consider when using **pstree** include **-a** (include command line arguments) and **-g** (include process groups).
+使用 **pstree** 时要考虑的一些选项包括 **-a**（包括命令行参数）和 **-g**（包括进程组）。
 
-Here are some quick (truncated) examples.
+以下是一些简单的示例（片段）。
 
-Output from **pstree -a**
+命令 **pstree -a** 的输出内容：
 
 ```
 └─wpa_supplicant -u -s -O /run/wpa_supplicant
 ```
 
-Output from **pstree -g**:
+命令 **pstree -g** 的输出内容：
 
 ```
 ├─sshd(1396)───sshd(28281)───sshd(28281)───bash(28410)───pstree(1115)
@@ -148,10 +135,9 @@ Output from **pstree -g**:
 
 ### tree
 
-While the **tree** command sounds like it would be very similar to **pstree**, it's a command for looking at files rather than processes. It provides a nice tree-like view of directories and files.
+虽然 **tree** 命令听起来与 **pstree** 非常相似，但这是用于查看文件而非进程的命令。它提供了一个漂亮的树状目录和文件视图。
 
-If you use the **tree** command to look at **/proc**, your display would begin similar to this one:
-
+如果你使用 **tree** 命令查看 **/proc** 目录，你显示的开头将类似于这个：
 ```
 $ tree /proc
 /proc
@@ -178,9 +164,9 @@ $ tree /proc
 ...
 ```
 
-You will see a lot more detail if you run a command like this as root (**sudo tree /proc)** since much of the contents of **/proc** is inaccessible to regular users.
+如果以 root 权限运行这条命令（**sudo tree /proc**），你将会看到更多详细信息，因为 **/proc** 目录的许多内容对于普通用户而言是无法访问的。
 
-The **tree -d** command will limit your display to directories.
+命令 **tree -d** 将会限制仅显示目录。
 
 ```
 $ tree -d /proc
@@ -205,7 +191,7 @@ $ tree -d /proc
 ...
 ```
 
-With the **-f** option, **tree** will show full pathnames.
+使用 **-f** 选项，**tree** 命令会显示完整的路径。
 
 ```
 $ tree -f /proc
@@ -228,9 +214,7 @@ $ tree -f /proc
 ...
 ```
 
-Hierarchical displays can often make the relationship between processes and files easier to understand. While the number of options available is rather broad, you'll probably find some views that help you see just what you're looking for.
-
-Join the Network World communities on [Facebook][6] and [LinkedIn][7] to comment on topics that are top of mind.
+分层显示通常可以使进程和文件之间的关系更容易理解。可用选项的数量很多，而你总可能会找到一些视图，帮助你查看所需的内容。
 
 --------------------------------------------------------------------------------
 
