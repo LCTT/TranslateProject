@@ -1,21 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (laingke)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11462-1.html)
 [#]: subject: (Viewing files and processes as trees on Linux)
 [#]: via: (https://www.networkworld.com/article/3444589/viewing-files-and-processes-as-trees-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
 在 Linux 上以树状查看文件和进程
 ======
-介绍三个 Linux 命令：ps、pstree 和 tree 以类似树的格式查看文件和进程。
 
-[Linux][3] 提供了一些方便的命令，用于以树状分支形式查看文件和进程，从而易于查看它们之间的关系。在本文中，我们将介绍 **ps**，**pstree** 和 **tree** 命令以及它们提供的一些选项，这些选项可帮助您将焦点集中在要查看的内容上。
+> 介绍三个 Linux 命令：ps、pstree 和 tree 以类似树的格式查看文件和进程。
+
+![](https://img.linux.net.cn/data/attachment/album/201910/15/093202rwm5k9pnpntgbtpr.jpg)
+
+[Linux][3] 提供了一些方便的命令，用于以树状分支形式查看文件和进程，从而易于查看它们之间的关系。在本文中，我们将介绍 `ps`、`pstree` 和 `tree` 命令以及它们提供的一些选项，这些选项可帮助你将注意力集中在要查看的内容上。
 
 ### ps
 
-我们用来列出进程的 **ps** 命令有一些有趣的选项，但是很多人从来没有利用过。虽然常用的 **ps -ef** 提供了正在运行的进程的完整列表，但是 **ps -ejH** 命令增加了一个不错的效果。它缩进了相关的进程以使这些进程之间的关系在视觉上更加清晰——就像这个片段：
+我们用来列出进程的 `ps` 命令有一些有趣的选项，但是很多人从来没有利用过。虽然常用的 `ps -ef` 提供了正在运行的进程的完整列表，但是 `ps -ejH` 命令增加了一个不错的效果。它缩进了相关的进程以使这些进程之间的关系在视觉上更加清晰——就像这个片段：
 
 ```
 $ ps -ejH
@@ -28,9 +31,9 @@ $ ps -ejH
 30968 30968 28410 pts/0    00:00:00           ps
 ```
 
-可以看到，正在运行的 ps 进程是在 bash 中运行的，而 bash 是在 ssh 会话中运行的。
+可以看到，正在运行的 `ps` 进程是在 `bash` 中运行的，而 `bash` 是在 ssh 会话中运行的。
 
-**-exjf** 选项字符串提供了类似的视图，但是带有一些其它细节和符号以突出显示进程的层次结构性质：
+`-exjf` 选项字符串提供了类似的视图，但是带有一些其它细节和符号以突出显示进程的层次结构性质：
 
 ```
 $ ps -exjf
@@ -46,14 +49,14 @@ PPID   PID  PGID   SID TTY      TPGID STAT   UID   TIME COMMAND
 命令中使用的这些选项表示：
 
 ```
--e  select all processes
--j  use the jobs format
--f  provide a full format listing
--H  show the process hierarchy (i.e., the "forest format")
--x  lift the "must be associated with a tty" restriction
+-e  选择所有进程
+-j  使用工作格式
+-f  提供完整格式列表
+-H  分层显示进程（如，树状格式）
+-x  取消“必须与 tty 相关联”的限制
 ```
 
-命令同时也有一个 **\--forest** 选项提供了类似的视图。
+同时，该命令也有一个 `--forest` 选项提供了类似的视图。
 
 ```
 $ ps -ef --forest
@@ -66,11 +69,11 @@ shs      28410 28409  0 12:56 pts/0    00:00:00          \_ -bash
 shs      32351 28410  0 14:39 pts/0    00:00:00              \_ ps -ef --forest
 ```
 
-注意，这些示例只是这些命令如何使用的示例。您可以选择最适合您的流程视图的任何选项组合。
+注意，这些示例只是这些命令如何使用的示例。你可以选择最适合你的进程视图的任何选项组合。
 
 ### pstree
 
-使用 **pstree** 命令可以获得类似的进程视图。尽管 **pstree** 具备了许多选项，但是该命令本身就提供了非常有用的显示。注意，许多父子进程关系显示在单行而不是后续行上。
+使用 `pstree` 命令可以获得类似的进程视图。尽管 `pstree` 具备了许多选项，但是该命令本身就提供了非常有用的显示。注意，许多父子进程关系显示在单行而不是后续行上。
 
 ```
 $ pstree
@@ -86,7 +89,7 @@ $ pstree
         │         └─xdg-permission-───2*[{xdg-permission-}]
 ```
 
-通过 **-n** 选项，**pstree** 以数值（按进程 ID）顺序显示进程：
+通过 `-n` 选项，`pstree` 以数值（按进程 ID）顺序显示进程：
 
 ```
 $ pstree -n
@@ -117,17 +120,17 @@ systemd─┬─systemd-journal
         ├─sshd───sshd───sshd───bash───pstree
 ```
 
-使用 **pstree** 时要考虑的一些选项包括 **-a**（包括命令行参数）和 **-g**（包括进程组）。
+使用 `pstree` 时可以考虑的一些选项包括 `-a`（包括命令行参数）和 `-g`（包括进程组）。
 
 以下是一些简单的示例（片段）。
 
-命令 **pstree -a** 的输出内容：
+命令 `pstree -a` 的输出内容：
 
 ```
 └─wpa_supplicant -u -s -O /run/wpa_supplicant
 ```
 
-命令 **pstree -g** 的输出内容：
+命令 `pstree -g` 的输出内容：
 
 ```
 ├─sshd(1396)───sshd(28281)───sshd(28281)───bash(28410)───pstree(1115)
@@ -135,9 +138,10 @@ systemd─┬─systemd-journal
 
 ### tree
 
-虽然 **tree** 命令听起来与 **pstree** 非常相似，但这是用于查看文件而非进程的命令。它提供了一个漂亮的树状目录和文件视图。
+虽然 `tree` 命令听起来与 `pstree` 非常相似，但这是用于查看文件而非进程的命令。它提供了一个漂亮的树状目录和文件视图。
 
-如果你使用 **tree** 命令查看 **/proc** 目录，你显示的开头将类似于这个：
+如果你使用 `tree` 命令查看 `/proc` 目录，你显示的开头部分将类似于这个：
+
 ```
 $ tree /proc
 /proc
@@ -164,9 +168,9 @@ $ tree /proc
 ...
 ```
 
-如果以 root 权限运行这条命令（**sudo tree /proc**），你将会看到更多详细信息，因为 **/proc** 目录的许多内容对于普通用户而言是无法访问的。
+如果以 root 权限运行这条命令（`sudo tree /proc`），你将会看到更多详细信息，因为 `/proc` 目录的许多内容对于普通用户而言是无法访问的。
 
-命令 **tree -d** 将会限制仅显示目录。
+命令 `tree -d` 将会限制仅显示目录。
 
 ```
 $ tree -d /proc
@@ -191,7 +195,7 @@ $ tree -d /proc
 ...
 ```
 
-使用 **-f** 选项，**tree** 命令会显示完整的路径。
+使用 `-f` 选项，`tree` 命令会显示完整的路径。
 
 ```
 $ tree -f /proc
@@ -214,7 +218,7 @@ $ tree -f /proc
 ...
 ```
 
-分层显示通常可以使进程和文件之间的关系更容易理解。可用选项的数量很多，而你总可能会找到一些视图，帮助你查看所需的内容。
+分层显示通常可以使进程和文件之间的关系更容易理解。可用选项的数量很多，而你总可以找到一些视图，帮助你查看所需的内容。
 
 --------------------------------------------------------------------------------
 
@@ -223,7 +227,7 @@ via: https://www.networkworld.com/article/3444589/viewing-files-and-processes-as
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[laingke](https://github.com/laingke)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
