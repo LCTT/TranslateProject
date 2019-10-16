@@ -119,43 +119,47 @@ Atom 具有 “Markdown 预览” 插件，该插件可以向你显示正在编�
 
 #### 主题
 
-If you're a visual person, you might be very particular about the way your writing environment looks. Even if you are writing in plain Markdown, it doesn't mean you have to write in a programmer's font or in a dark window that makes you look like a coder. The simplest way to modify what Atom looks like is to use [theme packages][12]. It's conventional for theme designers to differentiate dark themes from light themes, so you can search with the keyword Dark or Light, depending on what you want.
+如果你是一个在意视觉形象的人，那么你可能会非常注重自己的写作环境。即使你使用普通的 Markdown 进行编写，也并不意味着你必须使用程序员的字体或在使你看起来像码农的黑窗口中进行书写。修改 Atom 外观的最简单方法是使用[主题包][12]。主题设计人员通常将深色主题与浅色主题区分开，因此你可以根据需要使用关键字“Dark”或“Light”进行搜索。
 
-To install a theme, select **Edit > Preferences**. This opens a new tab in the Atom interface. Yes, tabs are used for your working documents _and_ for configuration and control panels. In the **Settings** tab, click on the **Install** category.
+要安装主题，请选择“编辑 > 首选项”。这将在 Atom 界面中打开一个新标签页。是的，标签页可以用于处理文档*和*用于配置及控制面板。在“设置”标签页中，单击“安装”类别。
 
-In the **Install** panel, search for the name of the theme you want to install. Click the **Themes** button on the right of the search field to search only for themes. Once you've found your theme, click its **Install** button.
+在“安装”面板中，搜索要安装的主题的名称。单击搜索字段右侧的“主题”按钮，以仅搜索主题。找到主题后，单击其“安装”按钮。
 
 ![Atom's themes][13]
 
-To use a theme you've installed or to customize a theme to your preference, navigate to the **Themes** category in your **Settings** tab. Pick the theme you want to use from the drop-down menu. The changes take place immediately, so you can see exactly how the theme affects your environment.
+要使用已安装的主题或根据喜好自定义主题，请导航至“设置”标签页中的“主题”类别中。从下拉菜单中选择要使用的主题。更改会立即进行，因此你可以准确了解主题如何影响您的环境。
 
-You can also change your working font in the **Editor** category of the **Settings** tab. Atom defaults to monospace fonts, which are generally preferred by programmers. But you can use any font on your system, whether it's serif or sans or gothic or cursive. Whatever you want to spend your day staring at, it's entirely up to you.
+你也可以在“设置”标签的“编辑器”类别中更改工作字体。Atom 默认采用等宽字体，程序员通常首选这种字体。但是你可以使用系统上的任何字体，无论是衬线字体、无衬线字体、哥特式字体还是草书字体。无论你想整天盯着什么字体都行。
 
-On a related note, by default Atom draws a vertical marker down its screen as a guide for people writing code. Programmers often don't want to write long lines of code, so this vertical line is a reminder to them to simplify things. The vertical line is meaningless to writers, though, and you can remove it by disabling the **wrap-guide** package.
+作为相关说明，默认情况下，Atom 会在其屏幕上绘制一条垂直线，以提示编写代码的人员。程序员通常不想编写太长的代码行，因此这条垂直线会提醒他们不要写太长的代码行。不过，这条竖线对写作者而言毫无意义，你可以通过禁用 “wrap-guide” 包将其删除。
 
-To disable the **wrap-guide** package, select the **Packages** category in the **Settings** tab and search for **wrap-guide**. When you've found the package, click its **Disable** button.
+要禁用 “wrap-guide” 软件包，请在“设置”标签中选择“折行”类别，然后搜索 “wrap-guide”。找到该程序包后，单击其“禁用”按钮。
 
-#### Dynamic structure
+#### 动态结构
 
-When creating a long document, I find that writing one chapter per file makes more sense than writing an entire book in a single file. Furthermore, I don't name my chapters in the obvious syntax **chapter-1.md** or **1.example.md** , but by chapter titles or keywords, such as **example.md**. To provide myself guidance in the future about how the book is meant to be assembled, I maintain a file called **toc.md** (for "Table of Contents") where I list the (current) order of my chapters.
+创建长文档时，我发现每个文件写一个章节比在一个文件中写整本书更有意义。此外，我不会以明显的语法 ` chapter-1.md` 或 `1.example.md` 来命名我的章节，而是以章节标题或关键词（例如 `example.md`）命名。为了将来为自己提供有关如何编写本书的指导，我维护了一个名为 `toc.md` （用于“目录”）的文件，其中列出了各章的（当前）顺序。
 
-I do this because, no matter how convinced I am that chapter 6 just couldn't possibly happen before chapter 1, there's rarely a time that I don't swap the order of one or two chapters or sections before I'm finished with a book. I find that keeping it dynamic from the start helps me avoid renaming confusion, and it also helps me treat the material less rigidly.
+我这样做是因为，无论我多么相信第 6 章都不可能出现在第 1 章之前，但在我完成整本书之前，几乎不大可能出现我不会交换一两个章节的顺序。我发现从一开始就保持动态变化可以帮助我避免重命名混乱，也可以帮助我避免僵化的结构。
 
-### Git in Atom
+### 在 Atom 中使用 Git
 
-Two things every writer has in common is that they're writing for keeps and their writing is a journey. You don't sit down to write and finish with a final draft; by definition, you have a first draft. And that draft goes through revisions, each of which you carefully save in duplicate and triplicate just in case one of your files turns up corrupted. Eventually, you get to what you call a final draft, but more than likely you'll be going back to it one day, either to resurrect the good parts or to fix the bad.
+每位写作者的共同点是两件事：他们为流传而写作，而他们的写作是一段旅程。你无需坐下来写作就完成最终稿件。顾名思义，你有一个初稿。该草稿会经过修订，你会仔细地将每个修订保存一式两份或三份，以防万一你的文件损坏了。最终，你得到了所谓的最终草案，但很有可能你有一天还会回到这份最终草案，要么恢复好的部分要么修改坏的部分。
 
-The most exciting feature in Atom is its strong Git integration. Without ever leaving Atom, you can interact with all of the major features of Git, tracking and updating your project, rolling back changes you don't like, integrating changes from a collaborator, and more. The best way to learn it is to step through it, so here's how to use Git within the Atom interface from the beginning to the end of a writing project.
+Atom 最令人兴奋的功能是其强大的 Git 集成。无需离开 Atom，你就可以与 Git 的所有主要功能进行交互，跟踪和更新项目、回滚你不喜欢的更改、集成来自协作者的更改等等。最好的学习方法就是逐步学习，因此这是从写作项目开始到结束在 Atom 界面中使用 Git 的方法。
 
-First thing first: Reveal the Git panel by selecting **View > Toggle Git Tab**. This causes a new tab to open on the right side of Atom's interface. There's not much to see yet, so just keep it open for now.
+第一件事：通过选择 “视图 > 切换 Git 标签页” 来显示 Git 面板。这将在 Atom 界面的右侧打开一个新标签页。现在没什么可看的，所以暂时保持打开状态就行。
 
-#### Starting a Git project
+#### 建立一个 Git 项目
 
-You can think of Git as being bound to a folder. Any folder outside a Git directory doesn't know about Git, and Git doesn't know about it. Folders and files within a Git directory are ignored until you grant Git permission to keep track of them.
+你可以将 Git 视为它被绑定到文件夹。Git 目录之外的任何文件夹都不知道 Git，而 Git 也不知道外面。Git 目录中的文件夹和文件将被忽略，直到你授予 Git 权限来跟踪它们为止。
 
-You can create a Git project by creating a new project folder in Atom. Select **File > Add Project Folder** and create a new folder on your system. The folder you create appears in the left **Project Panel** of your Atom window.
+你可以通过在 Atom 中创建新的项目文件夹来创建 Git 项目。选择 “文件 > 添加项目文件夹”，然后在系统上创建一个新文件夹。你创建的文件夹将出现在 Atom 窗口的左侧“项目面板”中。
 
-#### Git add
+#### Git 添加文件
+
+右键单击你的新项目文件夹，然后选择“新建文件”以在项目文件夹中创建一个新文件。如果你要导入文件到新项目中，请右键单击该文件夹，然后选择“在文件管理器中显示”，以在系统的文件查看器中打开该文件夹（Linux 上为 Dolphin 或 Nautilus，Mac 上为 Finder，在 Windows 上是 Explorer），然后拖放文件到你的项目文件夹。
+
+在Atom中打开一个项目文件（您创建的空文件或导入的文件）后，单击** Git **标签中的** Create Repository **按钮。在弹出的对话框中，单击** Init **以将您的项目目录初始化为本地Git存储库。 Git将**。git **目录（在系统的文件管理器中不可见，但在Atom中对您可见）添加到项目文件夹中。不要被这个愚弄了：**。git **目录是Git管理的，而不是您管理的，因此您通常会远离它。但是在Atom中看到它可以很好地提醒您您正在Git积极管理的项目中工作。换句话说，当您看到**。git **目录时，修订历史记录可用。
 
 Right-click on your new project folder and select **New File** to create a new file in your project folder. If you have files you want to import into your new project, right-click on the folder and select **Show in File Manager** to open the folder in your system's file viewer (Dolphin or Nautilus on Linux, Finder on Mac, Explorer on Windows), and then drag-and-drop your files.
 
