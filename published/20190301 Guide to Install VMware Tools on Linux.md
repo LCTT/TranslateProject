@@ -67,7 +67,7 @@ VMware 工具以一种高效的形式在提升了其性能的同时，也可以�
 
 大部分时候，当你安装了访客机系统时，如果操作系统支持 [Easy Install][7] 的话你会收到软件更新或弹窗告诉你要安装 VMware 工具。
 
-Windows 和 Ubuntu 不支持 Esay Install。因此即使你使用 Windows 作为你的宿主机或尝试在 Ubuntu 上安装 VMware 工具，你应该会看到一个和弹窗消息差不多的选项来轻松安装 VMware 工具。这是它应该看起来的样子：
+Windows 和 Ubuntu 都支持 Easy Install。因此如果你使用 Windows 作为你的宿主机或尝试在 Ubuntu 上安装 VMware 工具，你应该会看到一个和弹窗消息差不多的选项来轻松安装 VMware 工具。这是它应该看起来的样子：
 
 ![安装 VMware 工具的弹窗][8]
 
