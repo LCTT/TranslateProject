@@ -159,85 +159,76 @@ Atom 最令人兴奋的功能是其强大的 Git 集成。无需离开 Atom，�
 
 右键单击你的新项目文件夹，然后选择“新建文件”以在项目文件夹中创建一个新文件。如果你要导入文件到新项目中，请右键单击该文件夹，然后选择“在文件管理器中显示”，以在系统的文件查看器中打开该文件夹（Linux 上为 Dolphin 或 Nautilus，Mac 上为 Finder，在 Windows 上是 Explorer），然后拖放文件到你的项目文件夹。
 
-在Atom中打开一个项目文件（您创建的空文件或导入的文件）后，单击** Git **标签中的** Create Repository **按钮。在弹出的对话框中，单击** Init **以将您的项目目录初始化为本地Git存储库。 Git将**。git **目录（在系统的文件管理器中不可见，但在Atom中对您可见）添加到项目文件夹中。不要被这个愚弄了：**。git **目录是Git管理的，而不是您管理的，因此您通常会远离它。但是在Atom中看到它可以很好地提醒您您正在Git积极管理的项目中工作。换句话说，当您看到**。git **目录时，修订历史记录可用。
+在 Atom 中打开一个项目文件（你创建的空文件或导入的文件）后，单击 Git 标签中的 “<ruby>创建存储库<rt>Create Repository</rt></ruby>” 按钮。在弹出的对话框中，单击 “<ruby>初始化<rt>Init</rt></ruby>” 以将你的项目目录初始化为本地 Git 存储库。 Git 会将 `.git` 目录（在系统的文件管理器中不可见，但在 Atom 中可见）添加到项目文件夹中。不要被这个愚弄了：`.git` 目录是 Git 管理的，而不是由你管理的，因此你一般不要动它。但是在 Atom 中看到它可以很好地提醒你正在由 Git 管理的项目中工作。换句话说，当你看到 `.git` 目录时，就有了修订历史记录。
 
-Right-click on your new project folder and select **New File** to create a new file in your project folder. If you have files you want to import into your new project, right-click on the folder and select **Show in File Manager** to open the folder in your system's file viewer (Dolphin or Nautilus on Linux, Finder on Mac, Explorer on Windows), and then drag-and-drop your files.
+在你的空文件中，写一些东西。你是写作者，所以输入一些单词就行。你可以随意输入任何一组单词，但要记住上面的写作技巧。
 
-With a project file (either the empty one you created or one you've imported) open in Atom, click the **Create Repository** button in the **Git** tab. In the pop-up dialog box, click **Init** to initialize your project directory as a local Git repository. Git adds a **.git** directory (invisible in your system's file manager, but visible to you in Atom) to your project folder. Don't be fooled by this: The **.git** directory is for Git to manage, not you, so you'll generally stay out of it. But seeing it in Atom is a good reminder that you're working in a project actively managed by Git; in other words, revision history is available when you see a **.git** directory.
+按 `Ctrl + S` 保存文件，该文件将显示在 Git 标签的 “<ruby>未暂存的改变<rt>Unstaged Changes</rt></ruby>” 部分中。这意味着该文件存在于你的项目文件夹中，但尚未提交给 Git 管理。通过单击 Git 选项卡右上方的 “<ruby>暂存全部<rt>Stage All</rt></ruby>” 按钮，允许 Git 跟踪这些文件。如果你使用过带有修订历史记录的文字处理器，则可以将此步骤视为允许 Git记录更改。
 
-In your empty file, write some stuff. You're a writer, so type some words. It can be any set of words you please, but remember the writing tips above.
+#### Git 提交
 
-Press **Ctrl+S** to save your file and it will appear in the **Unstaged Changes** section of the **Git** tab. That means the file exists in your project folder but has not yet been committed over to Git's purview. Allow Git to keep track of your file by clicking on the **Stage All** button in the top-right of the **Git** tab. If you've used a word processor with revision history, you can think of this step as permitting Git to record changes.
+你的文件现在已暂存。这意味着 Git 知道该文件存在，并且知道自上次 Git 知道该文件以来，该文件已被更改。
 
-#### Git commit
+Git 的<ruby>提交<rt>commit</rt></ruby>会将你的文件发送到 Git 的内部和永久存档中。如果你习惯于文字处理程序，这就类似于给一个修订版命名。要创建一个提交，请在 Git 选项卡底部的“<ruby>提交<rt>Commit</rt></ruby>”消息框中输入一些描述性文本。你可能会感到含糊不清或随意写点什么，但如果你想在将来知道进行修订的原因，那么输入一些有用的信息会更有用。
 
-Your file is now staged. All that means is Git is aware that the file exists and is aware that it has been changed since the last time Git was made aware of it.
+第一次提交时，必须创建一个<ruby>分支<rt>branch</rt></ruby>。Git 分支有点像另外一个空间，它允许你从一个时间轴切换到另一个时间轴，以进行你可能想要或可能不想要永久保留的更改。如果最终喜欢该更改，则可以将一个实验分支合并到另一个实验分支，从而统一项目的不同版本。这是一个高级过程，不需要先学会，但是你仍然需要一个活动分支，因此你必须为首次提交创建一个分支。
 
-A Git commit sends your file into Git's internal and eternal archives. If you're used to word processors, this is similar to naming a revision. To create a commit, enter some descriptive text in the **Commit** message box at the bottom of the **Git** tab. You can be vague or cheeky, but it's more useful if you enter useful information for your future self so that you know why the revision was made.
-
-The first time you make a commit, you must create a branch. Git branches are a little like alternate realities, allowing you to switch from one timeline to another to make changes that you may or may not want to keep forever. If you end up liking the changes, you can merge one experimental branch into another, thereby unifying different versions of your project. It's an advanced process that's not worth learning upfront, but you still need an active branch, so you have to create one for your first commit.
-
-Click on the **Branch** icon at the very bottom of the **Git** tab to create a new branch.
+单击 Git 选项卡最底部的“<ruby>分支<rt>Branch</rt></ruby>”图标，以创建新的分支。
 
 ![Creating a branch][14]
 
-It's customary to name your first branch **master**. You don't have to; you can name it **firstdraft** or whatever you like, but adhering to the local customs can sometimes make talking about Git (and looking up answers to questions) a little easier because you'll know that when someone mentions **master** , they really mean **master** and not **firstdraft** or whatever you called your branch.
+通常将第一个分支命名为 `master`，但不是必须如此；你可以将其命名为 `firstdraft` 或任何你喜欢的名称，但是遵守当地习俗有时会使谈论 Git（和查找问题的答案）变得容易一些，因为你会知道有人提到 “master” 时，它们的真正意思是“主干”而不是“初稿”或你给分支起的什么名字。
 
-On some versions of Atom, the UI may not update to reflect that you've created a new branch. Don't worry; the branch will be created (and the UI updated) once you make your commit. Press the **Commit** button, whether it reads **Create detached commit** or **Commit to master**.
+在某些版本的 Atom 上，UI 也许不会更新以反映你已经创建的新分支。不用担心，做了提交之后，它会创建分支（并更新 UI）。按下 “<ruby>提交<rt>Commit</rt></ruby>” 按钮，无论它显示的是 “<ruby>创建脱离的提交<rt>Create detached commit</rt></ruby>” 还是 “<ruby>提交到主干<rt>Commit to master</rt></ruby>。
 
-Once you've made a commit, the state of your file is preserved forever in Git's memory.
+提交后，文件的状态将永久保留在 Git 的记忆之中。
 
-#### History and Git diff
+#### 历史记录和 Git 差异
 
-A natural question is how often you should make a commit. There's no one right answer to that. Saving a file with **Ctrl+S** and committing to Git are two separate processes, so you will continue to do both. You'll probably want to make commits whenever you feel like you've done something significant or are about to try out a crazy new idea that you may want to back out of.
+一个自然而然的问题是你应该多久做一次提交。这并没有正确的答案。使用 `Ctrl + S` 保存文件并提交到 Git 是两个单独的过程，因此你会一直做这两个过程。每当你觉得自己已经做了重要的事情或打算尝试一个可能要被干掉的疯狂的新想法时，你可能都会想要做个提交。
 
-To get a feel for what impact a commit has on your workflow, remove some text from your test document and add some text to the top and bottom. Make another commit. Do this a few times until you have a small history at the bottom of your **Git** tab, then click on a commit to view it in Atom.
+要了解提交对工作流程的影响，请从测试文档中删除一些文本，然后在顶部和底部添加一些文本。再次提交。 这样做几次，直到你在 Git 标签的底部有了一小段历史记录，然后单击其中一个提交以在 Atom 中查看它。
 
 ![Viewing differences][15]
 
-When viewing a past commit, you see three elements:
+查看过去的提交时，你会看到三种元素：
 
-  1. Text in green was added to a document when the commit was made.
-  2. Text in red was removed from the document when the commit was made.
-  3. All other text was untouched.
+1. 绿色文本是该提交中已被添加到文档中的内容。
+2. 红色文本是该提交中已从文档中删除的内容。
+3. 其他所有文字均未做更改。
 
+#### 远程备份
 
+使用 Git 的优点之一是，按照设计，它是分布式的，这意味着你可以将工作提交到本地存储库，并将所做的更改推送到任意数量的服务器上进行备份。你还可以从这些服务器中拉取更改，以便你碰巧正在使用的任何设备始终具有最新更改。
 
-#### Remote backup
+为此，你必须在 Git 服务器上拥有一个帐户。有几种免费的托管服务，其中包括 GitHub，这个公司开发了 Atom，但奇怪的是 GitHub 不是开源的；而 GitLab 是开源的。相比私有的，我更喜欢开源，在本示例中，我将使用 GitLab。
 
-One of the advantages of using Git is that, by design, it is distributed, meaning you can commit your work to your local repository and push your changes out to any number of servers for backup. You can also pull changes in from those servers so that whatever device you happen to be working on always has the latest changes.
+如果你还没有 GitLab 帐户，请注册一个帐户并开始一个新项目。项目名称不必与 Atom 中的项目文件夹匹配，但是如果匹配，则可能更有意义。你可以将项目保留为私有，在这种情况下，只有你和任何一个你给予了明确权限的人可以访问它，或者，如果你希望该项目可供任何互联网上偶然发现它的人使用，则可以将其公开。
 
-For this to work, you must have an account on a Git server. There are several free hosting services out there, including GitHub, the company that produces Atom but oddly is not open source, and GitLab, which is open source. Preferring open source to proprietary, I'll use GitLab in this example.
+不要将 README 文件添加到项目中。
 
-If you don't already have a GitLab account, sign up for one and start a new project. The project name doesn't have to match your project folder in Atom, but it probably makes sense if it does. You can leave your project private, in which case only you and anyone you give explicit permissions to can access it, or you can make it public if you want it to be available to anyone on the internet who stumbles upon it.
+创建项目后，这个文件将为你提供有关如何设置存储库的说明。如果你决定在终端中或通过单独的 GUI 使用 Git，这是非常有用的信息，但是 Atom 的工作流程则有所不同。
 
-Do not add a README to the project.
+单击 GitLab 界面右上方的 “<ruby>克隆<rt>Clone</rt></ruby>” 按钮。这显示了访问 Git 存储库必须使用的地址。复制 “SSH” 地址（而不是 “https” 地址）。
 
-Once the project is created, it provides you with instructions on how to set up the repository. This is great information if you decide to use Git in a terminal or with a separate GUI, but Atom's workflow is different.
-
-Click the **Clone** button in the top-right of the GitLab interface. This reveals the address you must use to access the Git repository. Copy the **SSH** address (not the **https** address).
-
-In Atom, click on your project's **.git** directory and open the **config**. Add these configuration lines to the file, adjusting the **seth/example.git** part of the **url** value to match your unique address.
-
-* * *
-
+在 Atom 中，点击项目的 `.git` 目录，然后打开 `config` 文件。将下面这些配置行添加到该文件中，调整 `url` 值的 `seth/example.git` 部分以匹配你自己独有的地址。
 
 ```
 [remote "origin"]
-url = [git@gitlab.com][16]:seth/example.git
-fetch = +refs/heads/*:refs/remotes/origin/*
+  url = git@gitlab.com:seth/example.git
+  fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
-remote = origin
-merge = refs/heads/master
+  remote = origin
+  merge = refs/heads/master
 ```
 
-At the bottom of the **Git** tab, a new button has appeared, labeled **Fetch**. Since your server is brand new and therefore has no data for you to fetch, right-click on the button and select **Push**. This pushes your changes to your Gitlab account, and now your project is backed up on a Git server.
+在 Git 标签的底部，出现了一个新按钮，标记为 “<ruby>提取<rt>Fetch</rt></ruby>”。由于你的服务器是全新的服务器，因此没有可供你提取的数据，因此请右键单击该按钮，然后选择“<ruby>推送<rt>Push</rt></ruby>”。这会将你的更改推送到你的 GitLab 帐户，现在你的项目已备份到 Git 服务器上。
 
-Pushing changes to a server is something you can do after each commit. It provides immediate offsite backup and, since the amount of data is usually minimal, it's practically as fast as a local save.
+你可以在每次提交后将更改推送到服务器。它提供了立即的异地备份，并且由于数据量通常很少，因此它几乎与本地保存一样快。
 
-### Writing and Git
+### 撰写而 Git
 
-Git is a complex system, useful for more than just revision tracking and backups. It enables asynchronous collaboration and encourages experimentation. This article has covered the basics, but there are many more articles—and entire books—on Git and how to use it to make your work more efficient, more resilient, and more dynamic. It all starts with using Git for small tasks. The more you use it, the more questions you'll find yourself asking, and eventually the more tricks you'll learn.
+Git 是一个复杂的系统，不仅对修订跟踪和备份有用。它还支持异步协作并鼓励实验。本文介绍了一些基础知识，但还有更多关于 Git 的文章和整本的书，以及如何使用它使你的工作更高效、更具弹性和更具活力。 从使用 Git 完成小任务开始，使用的次数越多，你会发现自己提出的问题就越多，最终你将学到的技巧越多。
 
 --------------------------------------------------------------------------------
 
@@ -245,7 +236,7 @@ via: https://opensource.com/article/19/4/write-git
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
