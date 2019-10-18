@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (amwps290)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11477-1.html)
 [#]: subject: "How to Install Linux on Intel NUC"
 [#]: via: "https://itsfoss.com/install-linux-on-intel-nuc/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
