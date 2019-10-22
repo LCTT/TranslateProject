@@ -1,34 +1,34 @@
 [#]: collector: "lujun9972"
 [#]: translator: "way-ww"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 [#]: subject: "How to Run the Top Command in Batch Mode"
 [#]: via: "https://www.2daygeek.com/linux-run-execute-top-command-in-batch-mode/"
 [#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
-如何在批处理模式下运行 Top 命令
+如何在批处理模式下运行 top 命令
 ======
 
-**[Top 命令][1]** 是每个人都在使用的用于 **[监控 Linux 系统性能][2]** 的最好的命令。
+![](https://img.linux.net.cn/data/attachment/album/201910/22/235420ylswdescv5ddffit.jpg)
 
-除了很少的几个操作， 你可能已经知道 top 命令的绝大部分操作， 如果我没错的话， 批处理模式就是其中之一。
+[top 命令][1] 是每个人都在使用的用于 [监控 Linux 系统性能][2] 的最好的命令。你可能已经知道 `top` 命令的绝大部分操作，除了很少的几个操作，如果我没错的话，批处理模式就是其中之一。
 
-大部分的脚本编写者和开发人员都知道这个， 因为这个操作主要就是用来编写脚本。
+大部分的脚本编写者和开发人员都知道这个，因为这个操作主要就是用来编写脚本。
 
-如果你不了解这个， 不用担心，我们将在这里介绍它。
+如果你不了解这个，不用担心，我们将在这里介绍它。
 
-### 什么是 Top 命令的批处理模式
+### 什么是 top 命令的批处理模式
 
-批处理模式允许你将 top 命令的输出发送至其他程序或者文件中。
+批处理模式允许你将 `top` 命令的输出发送至其他程序或者文件中。
 
-在这个模式中， top 命令将不会接收输入并且持续运行直到迭代次数达到你用 “-n” 选项指定的次数为止。
+在这个模式中，`top` 命令将不会接收输入并且持续运行，直到迭代次数达到你用 `-n` 选项指定的次数为止。
 
-如果你想解决 Linux 服务器上的任何性能问题， 你需要正确的 **[理解 top 命令的输出][3]** 。
+如果你想解决 Linux 服务器上的任何性能问题，你需要正确的 [理解 top 命令的输出][3]。
 
 ### 1) 如何在批处理模式下运行 top 命令
 
-默认地， top 命令按照 CPU 的使用率来排序输出结果， 所以当你在批处理模式中运行以下命令时， 它会执行同样的操作并打印前 35 行。
+默认地，`top` 命令按照 CPU 的使用率来排序输出结果，所以当你在批处理模式中运行以下命令时，它会执行同样的操作并打印前 35 行：
 
 ```
 # top -bc | head -35
@@ -72,7 +72,7 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
 
 ### 2) 如何在批处理模式下运行 top 命令并按内存使用率排序结果
 
-在批处理模式中运行以下命令按内存使用率对结果进行排序 
+在批处理模式中运行以下命令按内存使用率对结果进行排序：
 
 ```
 # top -bc -o +%MEM | head -n 20
@@ -99,19 +99,17 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2475984 avail Mem
   8632 nobody    20   0  256844  25744   2216 S   0.0  0.7   0:00.03 /usr/sbin/httpd -k start
 ```
 
-**上面命令的详细信息:**
+上面命令的详细信息：
 
-  * **-b :** 批处理模式选项
-  * **-c :** 打印运行中的进程的绝对路径
-  * **-o :** 指定进行排序的字段
-  * **head :** 输出文件的第一部分
-  * **-n :** 打印前 n 行
-
-
+  * `-b`：批处理模式选项
+  * `-c`：打印运行中的进程的绝对路径
+  * `-o`：指定进行排序的字段
+  * `head`：输出文件的第一部分
+  * `-n`：打印前 n 行
 
 ### 3) 如何在批处理模式下运行 top 命令并按照指定的用户进程对结果进行排序
 
-如果你想要按照指定用户进程对结果进行排序请运行以下命令
+如果你想要按照指定用户进程对结果进行排序请运行以下命令：
 
 ```
 # top -bc -u mysql | head -n 10
@@ -128,13 +126,11 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2649412 avail Mem
 
 ### 4) 如何在批处理模式下运行 top 命令并按照处理时间进行排序
 
-在批处理模式中使用以下 top 命令按照处理时间对结果进行排序。 这展示了任务从启动以来已使用的总 CPU 时间
+在批处理模式中使用以下 `top` 命令按照处理时间对结果进行排序。这展示了任务从启动以来已使用的总 CPU 时间。
 
-但是如果你想要检查一个进程在 Linux 上运行了多长时间请看接下来的文章。
+但是如果你想要检查一个进程在 Linux 上运行了多长时间请看接下来的文章：
 
-  * **[检查 Linux 中进程运行时间的五种方法][4]**
-
-
+  * [检查 Linux 中进程运行时间的五种方法][4]
 
 ```
 # top -bc -o TIME+ | head -n 20
@@ -163,7 +159,7 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2440332 avail Mem
 
 ### 5) 如何在批处理模式下运行 top 命令并将结果保存到文件中
 
-如果出于解决问题的目的， 你想要和别人分享 top 命令的输出， 请使用以下命令重定向输出到文件中
+如果出于解决问题的目的，你想要和别人分享 `top` 命令的输出，请使用以下命令重定向输出到文件中：
 
 ```
 # top -bc | head -35 > top-report.txt
@@ -209,9 +205,9 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2659084 avail Mem
 
 ### 如何按照指定字段对结果进行排序
 
-在 top 命令的最新版本中， 按下 **“f”** 键进入字段管理界面。
+在 `top` 命令的最新版本中， 按下 `f` 键进入字段管理界面。
 
-要使用新字段进行排序， 请使用 **“up/down”** 箭头选择正确的选项， 然后再按下 **“s”** 键进行排序。 最后按 **“q”** 键退出此窗口。
+要使用新字段进行排序， 请使用 `up`/`down` 箭头选择正确的选项，然后再按下 `s` 键进行排序。最后按 `q` 键退出此窗口。
 
 ```
 Fields Management for window 1:Def, whose current sort field is %CPU
@@ -269,9 +265,9 @@ Fields Management for window 1:Def, whose current sort field is %CPU
  nsUSER  = USER namespace Inode
 ```
 
-对 top 命令的旧版本， 请按 **“shift+f”** 或 **“shift+o”** 键进入字段管理界面进行排序。
+对 `top` 命令的旧版本，请按 `shift+f` 或 `shift+o` 键进入字段管理界面进行排序。
 
-要使用新字段进行排序， 请选择相应的排序字段字母， 然后按下 **“Enter”** 排序。
+要使用新字段进行排序，请选择相应的排序字段字母， 然后按下回车键排序。
 
 ```
 Current Sort Field:  N  for window 1:Def
@@ -323,7 +319,7 @@ via: https://www.2daygeek.com/linux-run-execute-top-command-in-batch-mode/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[way-ww](https://github.com/way-ww)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
