@@ -7,39 +7,46 @@
 [#]: via: (https://itsfoss.com/gamehub/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Use GameHub to Manage All Your Linux Games in One Place
+Use GameHub to Manage All Your Linux Games in One Place 用GameHub集中管理Linux上你的所有游戏
 ======
 
 How do you [play games on Linux][1]? Let me guess. Either you install games from the software center or from Steam or from GOG or Humble Bundle etc, right? But, how do you plan to manage all your games from multiple launchers and clients? Well, that sounds like a hassle to me – which is why I was delighted when I come across [GameHub][2].
+你在Linux 上怎么[玩游戏呢][1]? 让我猜猜， 要不就是从软件中心安装游戏，要不就是选Steam,GOG, Humble Bundle 等平台，对吧？但是，你对多个游戏启动器和客户打算如何管理呢？好吧，对我来说这简直令人头疼 —— 这也是我发现[GameHub][2]之后，感到高兴的原因。
 
 GameHub is a desktop application for Linux distributions that lets you manage “All your games in one place”. That sounds interesting, isn’t it? Let me share more details about it.
 
-![][3]
+GameHub是为Linux发行版设计的一个桌面应用，它能“集中管理你的所有游戏”。这听起来很有趣，是不是？让我来具体说明一下。
 
+![][3]
 ### GameHub Features to manage Linux games from different sources at one place
 
 Let’s see all the features that make GameHub one of the [essential Linux applications][4], specially for gamers.
+让我们来看看，尤其对玩家来说，让GameHub成为一个[不可或缺的Linux应用][4]的功能，都有哪些。
 
-#### Steam, GOG &amp; Humble Bundle Support
-
+#### Steam, GOG &amp; Humble Bundle 支持
 ![][5]
 
 It supports Steam, [GOG][6], and [Humble Bundle][7] account integration. You can sign in to your account to see manager your library from within GameHub.
 
+它支持Steam, [GOG][6], 和 [Humble Bundle][7] 账户整合。你可以登录你的GameHub账号，从而在库管理器中管理所有游戏。
+
 For my usage, I have a lot of games on Steam and a couple on Humble Bundle. I can’t speak for all – but it is safe to assume that these are the major platforms one would want to have.
+对我来说，我在Steam上有很多游戏，Humble Bundle上也有一些。我不能确保它能支持所有平台。但确信的是，主流平台是可以保证支持的。
 
-#### Native Game Support
-
+#### Native Game Support 本地游戏支持
 ![][8]
 
 There are several [websites where you can find and download Linux games][9]. You can also add native Linux games by downloading their installers or add the executable file.
+很多网站都有专门推荐Linux游戏，并[支持下载][9]。你可以通过下载安装包，或者添加可执行文件加入本地游戏。
 
 Unfortunately, there’s no easy way of finding out games for Linux from within GameHub at the moment. So, you will have to download them separately and add it to the GameHub as shown in the image above.
 
-#### Emulator Support
+可惜的是，在GameHub上，无法在线搜索Linux游戏。如上图所示，你需要将各平台游戏分开下载，随后添加到自己的GameHub账号中。
+
+#### 模拟器支持
 
 With emulators, you can [play retro games on Linux][10]. As you can observe in the image above, you also get the ability to add emulators (and import emulated images).
-
+在模拟器方面，你可以玩[Linux上的retro game][10]。正如上图所示，你可以添加模拟器（或者导入）
 You can see [RetroArch][11] listed already but you can also add custom emulators as per your requirements.
 
 #### User Interface
