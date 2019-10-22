@@ -14,13 +14,13 @@
 
 在这篇帖子中，我们将会通过为应用添加社交登录功能进入后端开发。
 
-它的工作方式十分简单：用户点击链接，然后重定向到 GitHub 授权页面。当用户授予我们对他的个人信息的访问权限之后，就会重定向回登录页面。下一次尝试登录时，系统将不会再次请求授权，也就是说，我们的应用已经记住了他。这使得登录流程看起来就像单击一样快。
+社交登录的工作方式十分简单：用户点击链接，然后重定向到 GitHub 授权页面。当用户授予我们对他的个人信息的访问权限之后，就会重定向回登录页面。下一次尝试登录时，系统将不会再次请求授权，也就是说，我们的应用已经记住了这个用户。这使得整个登录流程看起来就和你用鼠标单击一样快。
 
-如果考虑内部实现的话，过程将会比较复杂。首先，我们需要注册一个新的 [GitHub OAuth 应用][2]。
+如果进一步考虑其内部实现的话，过程就会变得复杂起来。首先，我们需要注册一个新的 [GitHub OAuth 应用][2]。
 
-比较重要的是回调 URL。我们将它设置为 `http://localhost:3000/api/oauth/github/callback`。这是因为，在开发过程中，我们总是在本地主机上工作。一旦你要将应用交付生产，请使用正确的回调 URL 注册一个新的应用。
+这一步中，比较重要的是回调 URL。我们将它设置为 `http://localhost:3000/api/oauth/github/callback`。这是因为，在开发过程中，我们总是在本地主机上工作。一旦你要将应用交付生产，请使用正确的回调 URL 注册一个新的应用。
 
-注册以后，你将会收到客户端 id 和安全密钥。安全起见，请不要与任何人分享他们 👀
+注册以后，你将会收到「客户端 id」和「安全密钥」。安全起见，请不要与任何人分享他们 👀
 
 顺便让我们开始写一些代码吧。现在，创建一个 `main.go` 文件：
 
@@ -161,14 +161,14 @@ GITHUB_CLIENT_SECRET=your_github_client_secret
 我们还要用到的其他环境变量有：
 
   * `PORT`：服务器运行的端口，默认值是 `3000`。
-  * `ORIGIN`：你的域名，默认值是 `http://localhost:3000/`。端口也可以在这里指定。
+  * `ORIGIN`：你的域名，默认值是 `http://localhost:3000/`。我们也可以在这里指定端口。
   * `DATABASE_URL`：Cockroach 数据库的地址。默认值是 `postgresql://root@127.0.0.1:26257/messenger?sslmode=disable`。
   * `HASH_KEY`：用于为 cookies 签名的密钥。没错，我们会使用已签名的 cookies 来确保安全。
-  * `JWT_KEY`：用于签署 JSON 网络令牌的密钥。
+  * `JWT_KEY`：用于签署 JSON 网络令牌（Json Web Token）的密钥。
 
 因为代码中已经设定了默认值，所以你也不用把它们写到 `.env` 文件中。
 
-在读取配置并连接到数据库之后，我们会创建一个 OAuth 配置。我们会使用 origin 来构建回调 URL（就和我们在 GitHub 页面上注册的一样）。我们的范围设置为 “read:user”。这会允许我们读取公开的用户信息，我们只是需要他的用户名和头像。然后我们会初始化 cookie 和 JWT 签名器。定义一些端点并启动服务器。
+在读取配置并连接到数据库之后，我们会创建一个 OAuth 配置。我们会使用 `ORIGIN` 来构建回调 URL（就和我们在 GitHub 页面上注册的一样）。我们的数据范围设置为 “read:user”。这会允许我们读取公开的用户信息，这里我们只需要他的用户名和头像就够了。然后我们会初始化 cookie 和 JWT 签名器。定义一些端点并启动服务器。
 
 在实现 HTTP 处理程序之前，让我们编写一些函数来发送 HTTP 响应。
 
@@ -190,7 +190,7 @@ func respondError(w http.ResponseWriter, err error) {
 }
 ```
 
-第一个用来发送 JSON，而第二个将错误记录到控制台并返回一个 `500 Internal Server Error` 错误信息。
+第一个函数用来发送 JSON，而第二个将错误记录到控制台并返回一个 `500 Internal Server Error` 错误信息。
 
 ### OAuth 开始
 
@@ -220,11 +220,11 @@ func githubOAuthStart(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-OAuth2 使用一种机制来防止 CSRF 攻击，因此它需要一个「状态」 "state"。我们使用 nanoid 来创建一个随机字符串并用它作为状态。我们也把它保存为一个 cookie。
+OAuth2 使用一种机制来防止 CSRF 攻击，因此它需要一个「状态」 "state"。我们使用 `Nanoid()` 来创建一个随机字符串，并用这个字符串作为状态。我们也把它保存为一个 cookie。
 
 ### OAuth 回调
 
-一旦用户授权我们访问他的个人信息，他将会被重定向到这个端点。这个 URL 将会在查询字符串上包含状态（state）和授权码（code） `/api/oauth/github/callback?state=&code=`
+一旦用户授权我们访问他的个人信息，他将会被重定向到这个端点。这个 URL 的查询字符串上将会包含状态（state）和授权码（code） `/api/oauth/github/callback?state=&code=`
 
 ```
 const jwtLifetime = time.Hour * 24 * 14
@@ -341,17 +341,17 @@ func githubOAuthCallback(w http.ResponseWriter, r *http.Request) {
 
 首先，我们会尝试使用之前保存的状态对 cookie 进行解码。并将其与查询字符串中的状态进行比较。如果它们不匹配，我们会返回一个 `418 I'm teapot`（未知来源）错误。
 
-接着，我们使用授权码生成一个令牌。这个令牌被用于创建 HTTP 客户端来向 GitHub API 发出请求。所以最终我们向 `https://api.github.com/user` 发送了一个 GET 请求。这个端点将会以 JSON 格式向我们提供当前经过身份验证的用户信息。我们将会解码这些内容，来获取用户 ID，登录名（用户名）和头像 URL。
+接着，我们使用授权码生成一个令牌。这个令牌被用于创建 HTTP 客户端来向 GitHub API 发出请求。所以最终我们会向 `https://api.github.com/user` 发送一个 GET 请求。这个端点将会以 JSON 格式向我们提供当前经过身份验证的用户信息。我们将会解码这些内容，一并获取用户的 ID，登录名（用户名）和头像 URL。
 
-然后我们将会尝试在数据库上找到具有该 GitHub ID 的用户。如果没有找到，那么我们就会使用该数据创建一个新的。
+然后我们将会尝试在数据库上找到具有该 GitHub ID 的用户。如果没有找到，就使用该数据创建一个新的。
 
-之后，对于新创建的用户，我们会发出一个用户 ID 为主题的 JSON 网络令牌，并使用该令牌重定向到前端，查询字符串中一并包含该令牌的到期日（the expiration date）。
+之后，对于新创建的用户，我们会发出一个用户 ID 为主题（subject）的 JSON 网络令牌，并使用该令牌重定向到前端，查询字符串中一并包含该令牌的到期日（the expiration date）。
 
 这一 Web 应用也会被用在其他帖子，但是重定向的链接会是 `/callback?token=&expires_at=`。在那里，我们将会利用 JavaScript 从 URL 中获取令牌和到期日，并通过 `Authorization` 标头中的令牌以`Bearer token_here` 的形式对 `/ api / auth_user` 进行GET请求，来获取已认证的身份用户并将其保存到 localStorage。
 
-### 保护中间件
+### Guard 中间件
 
-为了获取当前已经过身份验证的用户，我们使用了中间件。这是因为在接下来的文章中，我们会有很多需要身份认证的端点，而中间件将会允许我们共享这一功能。
+为了获取当前已经过身份验证的用户，我们设计了 Guard 中间件。这是因为在接下来的文章中，我们会有很多需要进行身份认证的端点，而中间件将会允许我们共享这一功能。
 
 ```
 type ContextKey struct {
@@ -388,7 +388,7 @@ func guard(handler http.HandlerFunc) http.HandlerFunc {
 
 首先，我们尝试从 `Authorization` 标头或者是 URL 查询字符串中的 `token` 字段中读取令牌。如果没有找到，我们需要返回 `401 Unauthorized`（未授权）错误。然后我们将会对令牌中的申明进行解码，并使用该主题作为当前已经过身份验证的用户 ID。
 
-现在，我们可以用这一中间件来封装任何需要授权的 `http.handlerFunc`，并且在处理函数的上下文中具有已经过身份验证的用户 ID。
+现在，我们可以用这一中间件来封装任何需要授权的 `http.handlerFunc`，并且在处理函数的上下文中保有已经过身份验证的用户 ID。
 
 ```
 var guarded = guard(func(w http.ResponseWriter, r *http.Request) {
@@ -420,7 +420,7 @@ func getAuthUser(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-我们使用保护中间件来获取当前经过身份认证的用户 ID 并查询数据库。
+我们使用 Guard 中间件来获取当前经过身份认证的用户 ID 并查询数据库。
 
 * * *
 
