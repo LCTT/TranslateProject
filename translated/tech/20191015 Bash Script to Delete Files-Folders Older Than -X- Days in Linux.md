@@ -7,32 +7,32 @@
 [#]: via: (https://www.2daygeek.com/bash-script-to-delete-files-folders-older-than-x-days-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Bash Script to Delete Files/Folders Older Than “X” Days in Linux
+在 Linux 中使用 Bash 脚本删除早于 “X” 天的文件/文件夹
 ======
 
-**[Disk Usage][1]** Monitoring tools are capable of alerting us when a given threshold is reached.
+**[磁盘使用率][1]**监控工具能够在达到给定阈值时提醒我们。
 
-But they don’t have the ingenuity to fix the **[disk usage][2]** problem on their own.
+但它们无法自行解决**[磁盘使用率][2]**问题。
 
-Manual intervention is needed to solve the problem.
+需要手动干预才能解决该问题。
 
-But if you want to fully automate this kind of activity, what you will do.
+如果你想完全自动化此类操作，你会做什么。
 
-Yes, it can be done using the bash script.
+是的，可以使用 bash 脚本来完成。
 
-This script prevents alerts from **[monitoring tool][3]** because we delete old log files before filling the disk space.
+该脚本可防止来自**[监控工具][3]**的警报，因为我们会在填满磁盘空间之前删除旧的日志文件。
 
-We have added many useful shell scripts in the past. If you want to check them out, go to the link below.
+我们过去做了很多 shell 脚本。如果要查看，请进入下面的链接。
 
-  * **[How to automate day to day activities using shell scripts?][4]**
+  * **[如何使用 shell 脚本自动化日常活动？][4]**
 
 
 
-I’ve added two bash scripts to this article, which helps clear up old logs.
+我在本文中添加了两个 bash 脚本，它们有助于清除旧日志。
 
-### 1) Bash Script to Delete a Folders Older Than “X” Days in Linux
+### 1）在 Linux 中删除早于 “X” 天的文件夹的 Bash 脚本
 
-We have a folder named **“/var/log/app/”** that contains 15 days of logs and we are going to delete 10 days old folders.
+我们有一个名为 **“/var/log/app/”** 的文件夹，其中包含 15 天的日志，我们将删除早于 10 天的文件夹。
 
 ```
 $ ls -lh /var/log/app/
@@ -54,9 +54,9 @@ drwxrw-rw- 3 root root  24K Oct 14 23:52 app_log.14
 drwxrw-rw- 3 root root  24K Oct 15 23:52 app_log.15
 ```
 
-This script will delete 10 days old folders and send folder list via mail.
+该脚本将删除早于 10 天的文件夹，并通过邮件发送文件夹列表。
 
-You can change the value **“-mtime X”** depending on your requirement. Also, replace your email id instead of us.
+你可以根据需要修改 **“-mtime X”** 的值。另外，请替换你的电子邮箱，而不是用我们的。
 
 ```
 # /opt/script/delete-old-folders.sh
@@ -81,13 +81,13 @@ rm $MESSAGE /tmp/folder.out
 fi
 ```
 
-Set an executable permission to **“delete-old-folders.sh”** file.
+给 **“delete-old-folders.sh”** 设置可执行权限。
 
 ```
 # chmod +x /opt/script/delete-old-folders.sh
 ```
 
-Finally add a **[cronjob][5]** to automate this. It runs daily at 7AM.
+最后添加一个 [cronjob][5] 自动化此任务。它于每天早上 7 点运行。
 
 ```
 # crontab -e
@@ -95,7 +95,7 @@ Finally add a **[cronjob][5]** to automate this. It runs daily at 7AM.
 0 7 * * * /bin/bash /opt/script/delete-old-folders.sh
 ```
 
-You will get an output like the one below.
+你将看到类似下面的输出。
 
 ```
 Application log folders are deleted  older than 20 days
@@ -107,15 +107,15 @@ Oct 14 /var/log/app/app_log.14
 Oct 15 /var/log/app/app_log.15
 ```
 
-### 2) Bash Script to Delete a Files Older Than “X” Days in Linux
+### 2）在 Linux 中删除早于 “X” 天的文件的 Bash 脚本
 
-We have a folder named **“/var/log/apache/”** that contains 15 days of logs and we are going to delete 10 days old files.
+我们有一个名为 **“/var/log/apache/”** 的文件夹，其中包含15天的日志，我们将删除 10 天前的文件。
 
-The articles below are related to this topic, so you may be interested to read.
+以下文章与该主题相关，因此你可能有兴趣阅读。
 
-  * **[How To Find And Delete Files Older Than “X” Days And “X” Hours In Linux?][6]**
-  * **[How to Find Recently Modified Files/Folders in Linux][7]**
-  * **[How To Automatically Delete Or Clean Up /tmp Folder Contents In Linux?][8]**
+  * **[如何在 Linux 中查找和删除早于 “X” 天和 “X” 小时的文件？][6]**
+  * **[如何在 Linux 中查找最近修改的文件/文件夹][7]**
+  * **[如何在 Linux 中自动删除或清理 /tmp 文件夹内容？][8]**
 
 
 
@@ -139,9 +139,9 @@ The articles below are related to this topic, so you may be interested to read.
 -rw-rw-rw- 3 root root  24K Oct 15 23:52 2daygeek_access.15
 ```
 
-This script will delete 10 days old files and send folder list via mail.
+该脚本将删除 10 天前的文件并通过邮件发送文件夹列表。
 
-You can change the value **“-mtime X”** depending on your requirement. Also, replace your email id instead of us.
+你可以根据需要修改 **“-mtime X”** 的值。另外，请替换你的电子邮箱，而不是用我们的。
 
 ```
 # /opt/script/delete-old-files.sh
@@ -166,13 +166,13 @@ rm $MESSAGE /tmp/file.out
 fi
 ```
 
-Set an executable permission to **“delete-old-files.sh”** file.
+给 **“delete-old-files.sh”** 设置可执行权限。
 
 ```
 # chmod +x /opt/script/delete-old-files.sh
 ```
 
-Finally add a **[cronjob][5]** to automate this. It runs daily at 7AM.
+最后添加一个 [cronjob][5] 自动化此任务。它于每天早上 7 点运行。
 
 ```
 # crontab -e
@@ -180,7 +180,7 @@ Finally add a **[cronjob][5]** to automate this. It runs daily at 7AM.
 0 7 * * * /bin/bash /opt/script/delete-old-folders.sh
 ```
 
-You will get an output like the one below.
+你将看到类似下面的输出。
 
 ```
 Apache Access log files are deleted older than 20 days
@@ -198,7 +198,7 @@ via: https://www.2daygeek.com/bash-script-to-delete-files-folders-older-than-x-d
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

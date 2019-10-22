@@ -1,34 +1,34 @@
-[#]: collector: (lujun9972)
-[#]: translator: (way-ww)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How to Run the Top Command in Batch Mode)
-[#]: via: (https://www.2daygeek.com/linux-run-execute-top-command-in-batch-mode/)
-[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
+[#]: collector: "lujun9972"
+[#]: translator: "way-ww"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "How to Run the Top Command in Batch Mode"
+[#]: via: "https://www.2daygeek.com/linux-run-execute-top-command-in-batch-mode/"
+[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
-How to Run the Top Command in Batch Mode
+如何在批处理模式下运行 Top 命令
 ======
 
-The **[Linux Top command][1]** is the best and most well known command that everyone uses to **[monitor Linux system performance][2]**.
+**[Top 命令][1]** 是每个人都在使用的用于 **[监控 Linux 系统性能][2]** 的最好的命令。
 
-You probably already know most of the options available, except for a few options, and if I’m not wrong, “batch more” is one of the options.
+除了很少的几个操作， 你可能已经知道 top 命令的绝大部分操作， 如果我没错的话， 批处理模式就是其中之一。
 
-Most script writer and developers know this because this option is mainly used when writing the script.
+大部分的脚本编写者和开发人员都知道这个， 因为这个操作主要就是用来编写脚本。
 
-If you’re not sure about this, don’t worry we’re here to explain this.
+如果你不了解这个， 不用担心，我们将在这里介绍它。
 
-### What is “Batch Mode” in the Top Command
+### 什么是 Top 命令的批处理模式
 
-The “Batch Mode” option allows you to send top command output to other programs or to a file.
+批处理模式允许你将 top 命令的输出发送至其他程序或者文件中。
 
-In this mode, top will not accept input and runs until the iterations limit you’ve set with the “-n” command-line option.
+在这个模式中， top 命令将不会接收输入并且持续运行直到迭代次数达到你用 “-n” 选项指定的次数为止。
 
-If you want to fix any performance issues on the Linux server, you need to **[understand the top command output][3]** correctly.
+如果你想解决 Linux 服务器上的任何性能问题， 你需要正确的 **[理解 top 命令的输出][3]** 。
 
-### 1) How to Run the Top Command in Batch Mode
+### 1) 如何在批处理模式下运行 top 命令
 
-By default, the top command sort the results based on CPU usage, so when you run the below top command in batch mode, it does the same and prints the first 35 lines.
+默认地， top 命令按照 CPU 的使用率来排序输出结果， 所以当你在批处理模式中运行以下命令时， 它会执行同样的操作并打印前 35 行。
 
 ```
 # top -bc | head -35
@@ -70,9 +70,9 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
     46 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 [kmpath_rdacd]
 ```
 
-### 2) How to Run the Top Command in Batch Mode and Sort the Output Based on Memory Usage
+### 2) 如何在批处理模式下运行 top 命令并按内存使用率排序结果
 
-Run the below top command to sort the results based on memory usage in batch mode.
+在批处理模式中运行以下命令按内存使用率对结果进行排序 
 
 ```
 # top -bc -o +%MEM | head -n 20
@@ -99,19 +99,19 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2475984 avail Mem
   8632 nobody    20   0  256844  25744   2216 S   0.0  0.7   0:00.03 /usr/sbin/httpd -k start
 ```
 
-**Details of the above command:**
+**上面命令的详细信息:**
 
-  * **-b :** Batch mode operation
-  * **-c :** To print the absolute path of the running process
-  * **-o :** To specify fields for sorting processes
-  * **head :** Output the first part of files
-  * **-n :** To print the first “n” lines
+  * **-b :** 批处理模式选项
+  * **-c :** 打印运行中的进程的绝对路径
+  * **-o :** 指定进行排序的字段
+  * **head :** 输出文件的第一部分
+  * **-n :** 打印前 n 行
 
 
 
-### 3) How to Run the Top Command in Batch Mode and Sort the Output Based on a Specific User Process
+### 3) 如何在批处理模式下运行 top 命令并按照指定的用户进程对结果进行排序
 
-If you want to sort results based on a specific user, run the below top command.
+如果你想要按照指定用户进程对结果进行排序请运行以下命令
 
 ```
 # top -bc -u mysql | head -n 10
@@ -126,13 +126,13 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2649412 avail Mem
  18105 mysql     20   0 1453900 156888   8816 S   0.0  4.0   2:16.42 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid
 ```
 
-### 4) How to Run the Top Command in Batch Mode and Sort the Output Based on the Process Age
+### 4) 如何在批处理模式下运行 top 命令并按照处理时间进行排序
 
-Use the below top command to sort the results based on the age of the process in batch mode. It shows the total CPU time the task has used since it started.
+在批处理模式中使用以下 top 命令按照处理时间对结果进行排序。 这展示了任务从启动以来已使用的总 CPU 时间
 
-But if you want to check how long a process has been running on Linux, go to the following article.
+但是如果你想要检查一个进程在 Linux 上运行了多长时间请看接下来的文章。
 
-  * **[Five Ways to Check How Long a Process Has Been Running in Linux][4]**
+  * **[检查 Linux 中进程运行时间的五种方法][4]**
 
 
 
@@ -161,9 +161,9 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2440332 avail Mem
    342 root      20   0   39472   2940   2752 S   0.0  0.1   1:18.17 /usr/lib/systemd/systemd-journald
 ```
 
-### 5) How to Run the Top Command in Batch Mode and Save the Output to a File
+### 5) 如何在批处理模式下运行 top 命令并将结果保存到文件中
 
-If you want to share the output of the top command to someone for troubleshooting purposes, redirect the output to a file using the following command.
+如果出于解决问题的目的， 你想要和别人分享 top 命令的输出， 请使用以下命令重定向输出到文件中
 
 ```
 # top -bc | head -35 > top-report.txt
@@ -207,11 +207,11 @@ KiB Swap:  1048572 total,   514640 free,   533932 used.  2659084 avail Mem
     36 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 [crypto]
 ```
 
-### How to Sort Output Based on Specific Fields
+### 如何按照指定字段对结果进行排序
 
-In the latest version of the top command release, press the **“f”** key to sort the fields via the field letter.
+在 top 命令的最新版本中， 按下 **“f”** 键进入字段管理界面。
 
-To sort with a new field, use the **“up/down”** arrow to select the correct selection, and then press **“s”** to sort it. Finally press **“q”** to exit from this window.
+要使用新字段进行排序， 请使用 **“up/down”** 箭头选择正确的选项， 然后再按下 **“s”** 键进行排序。 最后按 **“q”** 键退出此窗口。
 
 ```
 Fields Management for window 1:Def, whose current sort field is %CPU
@@ -269,9 +269,9 @@ Fields Management for window 1:Def, whose current sort field is %CPU
  nsUSER  = USER namespace Inode
 ```
 
-For older version of the top command, press the **“shift+f”** or **“shift+o”** key to sort the fields via the field letter.
+对 top 命令的旧版本， 请按 **“shift+f”** 或 **“shift+o”** 键进入字段管理界面进行排序。
 
-To sort with a new field, select the corresponding sort **field letter**, and then press **“Enter”** to sort it.
+要使用新字段进行排序， 请选择相应的排序字段字母， 然后按下 **“Enter”** 排序。
 
 ```
 Current Sort Field:  N  for window 1:Def
@@ -322,7 +322,7 @@ via: https://www.2daygeek.com/linux-run-execute-top-command-in-batch-mode/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[way-ww](https://github.com/way-ww)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
