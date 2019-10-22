@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "PsiACE"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "Building a Messenger App: OAuth"
-[#]: via: "https://nicolasparada.netlify.com/posts/go-messenger-oauth/"
-[#]: author: "Nicolás Parada https://nicolasparada.netlify.com/"
+[#]: collector: (lujun9972)
+[#]: translator: (PsiACE)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Building a Messenger App: OAuth)
+[#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-oauth/)
+[#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
 构建一个即时消息应用（二）：OAuth
 ======
