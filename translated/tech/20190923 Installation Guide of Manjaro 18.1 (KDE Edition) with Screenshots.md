@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Installation Guide of Manjaro 18.1 (KDE Edition) with Screenshots)
@@ -35,15 +35,15 @@ Manjaro 18.1（KDE）安装图解
 
 #### 步骤 1) 下载 Manjaro 18.1 ISO
 
-在安装之前，你需要从位于 [这里] [1] 的官方下载页面下载 Manjaro 18.1 的最新副本。由于我们这里介绍的是 KDE 版本，因此我们选择 KDE 版本。但是对于所有桌面环境（包括 Xfce、KDE 和 Gnome 版本），安装过程都是相同的。
+在安装之前，你需要从位于 [这里][1] 的官方下载页面下载 Manjaro 18.1 的最新副本。由于我们这里介绍的是 KDE 版本，因此我们选择 KDE 版本。但是对于所有桌面环境（包括 Xfce、KDE 和 Gnome 版本），安装过程都是相同的。
 
 #### 步骤 2) 创建 USB 启动盘
 
-从 Manjaro 下载页面成功下载 ISO 文件后，就可以创建 USB 磁盘了。将下载的 ISO 文件复制到 USB 磁盘中，然后创建可引导磁盘。确保将你的引导设置更改为使用 USB 引导并重新启动系统。
+从 Manjaro 下载页面成功下载 ISO 文件后，就可以创建 USB 磁盘了。将下载的 ISO 文件复制到 USB 磁盘中，然后创建可引导磁盘。确保将你的引导设置更改为使用 USB 引导，并重新启动系统。
 
 #### 步骤 3) Manjaro Live 版安装环境
 
-系统重新启动时，它将自动检测到 USB 驱动器并开始启动进入 Manjaro Live 版安装屏幕。
+系统重新启动时，它将自动检测到 USB 驱动器，并开始启动进入 Manjaro Live 版安装屏幕。
 
 ![Boot-Manjaro-18-1-kde-installation][3]
 
@@ -77,14 +77,14 @@ Manjaro 18.1（KDE）安装图解
 
 #### 步骤 8) 选择分区类型
 
-这是安装过程中非常关键的一步。 它将允许你选择：
+这是安装过程中非常关键的一步。 它将允许你选择分区方式：
 
 * 擦除磁盘
 * 手动分区
 * 并存安装
 * 替换分区
 
-如果要在 VM（虚拟机）中安装 Manjaro 18.1，则将看不到最后两个选项。
+如果在 VM（虚拟机）中安装 Manjaro 18.1，则将看不到最后两个选项。
 
 如果你不熟悉 Manjaro Linux，那么我建议你使用第一个选项（<ruby>擦除磁盘<rt>Erase Disk</rt></ruby>），它将为你自动创建所需的分区。如果要创建自定义分区，则选择第二个选项“<ruby>手动分区<rt>Manual Partitioning</rt></ruby>”，顾名思义，它将允许我们创建自己的自定义分区。
 
@@ -102,17 +102,13 @@ Manjaro 18.1（KDE）安装图解
 * `/opt`        –  4 GB（ext4）
 * <ruby>交换分区<rt>Swap</rt></ruby>       –  2 GB
 
-当我们在上方窗口中单击“<ruby>下一步<rt>Next</rt></ruby>”时，将显示以下屏幕，选择创建“<ruby>新分区表<rt>new partition table</rt></ruby>”：
+当我们在上方窗口中单击“<ruby>下一步<rt>Next</rt></ruby>”时，将显示以下屏幕，选择“<ruby>新建分区表<rt>new partition table</rt></ruby>”：
 
 ![Create-Partition-Table-Manjaro18-1-Installation][9]
 
 点击“<ruby>确定<rt>OK</rt></ruby>”。
 
 现在选择可用空间，然后单击“<ruby>创建<rt>create</rt></ruby>”以将第一个分区设置为大小为 2 GB 的 `/boot`，
-
-点击“<ruby>确定<rt>OK</rt></ruby>”。
-
-现在选择可用空间，然后单击“<ruby>创建<rt>create</rt></ruby>”以将第一个分区设置为大小为 2 GB 的 `/boot`：
 
 ![boot-partition-manjaro-18-1-installation][10]
 
@@ -174,7 +170,7 @@ Manjaro 18.1（KDE）安装图解
 
 ![Login-screen-after-manjaro-18-1-installation][22]
 
-点击“<ruby>登录<rt>Login</rt></ruby>。
+点击“<ruby>登录<rt>Login</rt></ruby>”。
 
 ![KDE-Desktop-Screen-Manjaro-18-1][23]
 
@@ -187,7 +183,7 @@ via: https://www.linuxtechi.com/install-manjaro-18-1-kde-edition-screenshots/
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
