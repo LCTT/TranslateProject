@@ -31,7 +31,7 @@ It supports Steam, [GOG][6], and [Humble Bundle][7] account integration. You can
 它支持Steam, [GOG][6], 和 [Humble Bundle][7] 账户整合。你可以登录你的GameHub账号，从而在库管理器中管理所有游戏。
 
 For my usage, I have a lot of games on Steam and a couple on Humble Bundle. I can’t speak for all – but it is safe to assume that these are the major platforms one would want to have.
-对我来说，我在Steam上有很多游戏，Humble Bundle上也有一些。我不能确保它能支持所有平台。但确信的是，主流平台是可以保证支持的。
+对我来说，我在Steam上有很多游戏，Humble Bundle上也有一些。我不能确保它能支持所有平台。但确信的是，主流平台是可以保证的。
 
 #### Native Game Support 本地游戏支持
 ![][8]
@@ -46,39 +46,50 @@ Unfortunately, there’s no easy way of finding out games for Linux from within 
 #### 模拟器支持
 
 With emulators, you can [play retro games on Linux][10]. As you can observe in the image above, you also get the ability to add emulators (and import emulated images).
-在模拟器方面，你可以玩[Linux上的retro game][10]。正如上图所示，你可以添加模拟器（或者导入）
+在模拟器方面，你可以玩[Linux上的retro game][10]。正如上图所示，你可以添加模拟器（或者导入模拟器游戏）。
+
 You can see [RetroArch][11] listed already but you can also add custom emulators as per your requirements.
+你可以在[RetroArch][11]查看可添加的模拟器，但也能根据需求，自行添加模拟器。
 
-#### User Interface
+#### 用户界面
 
-![Gamehub Appearance Option][12]
+![Gamehub 界面选项][12]
 
 Of course, the user experience matters. Hence, it is important to take a look at its user interface and what it offers.
+当然，用户体验很重要。因此，探究下用户界面都有什么，是很重要的。
 
 To me, I felt it very easy to use and the presence of a dark theme is a bonus.
+我个人觉得，这一应用很容易使用，并且黑色主题是一个加分点。
 
-#### Controller Support
+#### 手柄支持
 
 If you are comfortable using a controller with your Linux system to play games – you can easily add it, enable or disable it from the settings.
+如果你习惯了在Linux系统上用手柄玩游戏 —— 你可以在设置中很轻松地添加，启用或禁用它。 
 
-#### Multiple Data Providers
+#### 多个数据提供商
 
 Just because it fetches the information (or metadata) of your games, it needs a source for that. You can see all the sources listed in the image below.
+因为它需要获取你游戏的信息（或元数据），也就意味着需要数据源。你可以看到上图列表中显示的所有数据源。
 
 ![Data Providers Gamehub][13]
 
+
 You don’t have to do anything here – but if you are using anything else other than steam as your platform, you can generate an [API key for IDGB.][14]
 
-I shall recommend you to do that only if you observe a prompt/notice within GameHub or if you have some games that do not have any description/pictures/stats on GameHub.
+这里你什么也不用做 —— 但如果你需要使用其他平台，而不是steam的话，你需要为[IDGB生成一个API密钥][14]。
 
-#### Compatibility Layer
+I shall recommend you to do that only if you observe a prompt/notice within GameHub or if you have some games that do not have any description/pictures/stats on GameHub.
+我建议你，只有在你看到GameHub上出现提示/或者通知时，或者你发现在GameHub上，有些游戏没有任何描述/图片/状态时，再这么做。
+
+#### 兼容性选项
 
 ![][15]
 
 Do you have a game that does not support Linux?
+你有不支持在Linux上运行的游戏吗？
 
 You do not have to worry. GameHub offers multiple compatibility layers like Wine/Proton which you can use to get the game installed in order to make it playable.
-
+你不需要太担心。GameHub上提供了
 We can’t be really sure on what works for you – so you have to test it yourself for that matter. Nevertheless, it is an important feature that could come handy for a lot of gamers.
 
 ### How Do You Manage Your Games in GameHub?
