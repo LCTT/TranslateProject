@@ -15,7 +15,7 @@
 GameHub是为Linux发行版设计的一个桌面应用，它能让你“集中管理你的所有游戏”。这听起来很有趣，是不是？下面让我来具体说明一下。
 
 ![][3]
-### GameHub Features to manage Linux games from different sources at one place 
+### 集中管理不同平台Linux游戏的GameHub功能
 
 让我们看看，对玩家来说，让GameHub成为一个[不可或缺的Linux应用][4]的功能，都有哪些。
 
@@ -60,7 +60,7 @@ GameHub是为Linux发行版设计的一个桌面应用，它能让你“集中�
 
 这里你什么也不用做 —— 但如果你使用的是其他平台，而不是steam的话，你需要为[IDGB生成一个API密钥][14]。
 
-我建议你，只有在你看到GameHub上出现提示/通知时，或你发现在GameHub上，有些游戏没有任何描述/图片/状态时，再这么做。
+我建议只有出现提示/通知，或有些游戏在GameHub上没有任何描述/图片/状态时，再这么做。
 
 #### 兼容性选项
 
