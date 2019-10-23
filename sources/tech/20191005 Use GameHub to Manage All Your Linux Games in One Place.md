@@ -7,120 +7,102 @@
 [#]: via: (https://itsfoss.com/gamehub/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Use GameHub to Manage All Your Linux Games in One Place 用GameHub集中管理Linux上你的所有游戏
+用GameHub集中管理你Linux上的所有游戏
 ======
 
-How do you [play games on Linux][1]? Let me guess. Either you install games from the software center or from Steam or from GOG or Humble Bundle etc, right? But, how do you plan to manage all your games from multiple launchers and clients? Well, that sounds like a hassle to me – which is why I was delighted when I come across [GameHub][2].
-你在Linux 上怎么[玩游戏呢][1]? 让我猜猜， 要不就是从软件中心安装游戏，要不就是选Steam,GOG, Humble Bundle 等平台，对吧？但是，你对多个游戏启动器和客户打算如何管理呢？好吧，对我来说这简直令人头疼 —— 这也是我发现[GameHub][2]之后，感到高兴的原因。
+你在Linux 上打算怎么[玩游戏呢][1]? 让我猜猜， 要不就是从软件中心直接安装，要不就选Steam,GOG, Humble Bundle 等平台，对吧？但是，如果你有多个游戏启动器和客户端，又要如何管理呢？好吧，对我来说这简直令人头疼 —— 这也是我发现[GameHub][2]这个应用之后，感到非常高兴的原因。
 
-GameHub is a desktop application for Linux distributions that lets you manage “All your games in one place”. That sounds interesting, isn’t it? Let me share more details about it.
-
-GameHub是为Linux发行版设计的一个桌面应用，它能“集中管理你的所有游戏”。这听起来很有趣，是不是？让我来具体说明一下。
+GameHub是为Linux发行版设计的一个桌面应用，它能让你“集中管理你的所有游戏”。这听起来很有趣，是不是？下面让我来具体说明一下。
 
 ![][3]
-### GameHub Features to manage Linux games from different sources at one place
+### GameHub Features to manage Linux games from different sources at one place 
 
-Let’s see all the features that make GameHub one of the [essential Linux applications][4], specially for gamers.
-让我们来看看，尤其对玩家来说，让GameHub成为一个[不可或缺的Linux应用][4]的功能，都有哪些。
+让我们看看，对玩家来说，让GameHub成为一个[不可或缺的Linux应用][4]的功能，都有哪些。
 
 #### Steam, GOG &amp; Humble Bundle 支持
 ![][5]
 
-It supports Steam, [GOG][6], and [Humble Bundle][7] account integration. You can sign in to your account to see manager your library from within GameHub.
-
 它支持Steam, [GOG][6], 和 [Humble Bundle][7] 账户整合。你可以登录你的GameHub账号，从而在库管理器中管理所有游戏。
 
-For my usage, I have a lot of games on Steam and a couple on Humble Bundle. I can’t speak for all – but it is safe to assume that these are the major platforms one would want to have.
-对我来说，我在Steam上有很多游戏，Humble Bundle上也有一些。我不能确保它能支持所有平台。但确信的是，主流平台是可以保证的。
+对我来说，我在Steam上有很多游戏，Humble Bundle上也有一些。我不能确保它支持所有平台。但可以确信的是，主流平台游戏是没有问题的。
 
-#### Native Game Support 本地游戏支持
+#### 本地游戏支持
 ![][8]
 
-There are several [websites where you can find and download Linux games][9]. You can also add native Linux games by downloading their installers or add the executable file.
-很多网站都有专门推荐Linux游戏，并[支持下载][9]。你可以通过下载安装包，或者添加可执行文件加入本地游戏。
+有很多网站专门推荐Linux游戏，并[支持下载][9]。你可以通过下载安装包，或者添加可执行文件，从而管理本地游戏。
 
-Unfortunately, there’s no easy way of finding out games for Linux from within GameHub at the moment. So, you will have to download them separately and add it to the GameHub as shown in the image above.
-
-可惜的是，在GameHub上，无法在线搜索Linux游戏。如上图所示，你需要将各平台游戏分开下载，随后添加到自己的GameHub账号中。
+可惜的是，在GameHub内，无法在线搜索Linux游戏。如上图所示，你需要将各平台游戏分开下载，随后再添加到自己的GameHub账号中。
 
 #### 模拟器支持
 
-With emulators, you can [play retro games on Linux][10]. As you can observe in the image above, you also get the ability to add emulators (and import emulated images).
-在模拟器方面，你可以玩[Linux上的retro game][10]。正如上图所示，你可以添加模拟器（或者导入模拟器游戏）。
+在模拟器方面，你可以玩[Linux上的retro game][10]。正如上图所示，你可以添加模拟器（或导入模拟器镜像）。
 
-You can see [RetroArch][11] listed already but you can also add custom emulators as per your requirements.
-你可以在[RetroArch][11]查看可添加的模拟器，但也能根据需求，自行添加模拟器。
+你可以在[RetroArch][11]查看可添加的模拟器，但也能根据需求，添加自定义模拟器。
 
 #### 用户界面
 
 ![Gamehub 界面选项][12]
 
-Of course, the user experience matters. Hence, it is important to take a look at its user interface and what it offers.
-当然，用户体验很重要。因此，探究下用户界面都有什么，是很重要的。
+当然，用户体验很重要。因此，探究下用户界面都有些什么，也很有必要。
 
-To me, I felt it very easy to use and the presence of a dark theme is a bonus.
-我个人觉得，这一应用很容易使用，并且黑色主题是一个加分点。
+我个人觉得，这一应用很容易使用，并且黑色主题是一个加分项。
 
 #### 手柄支持
 
-If you are comfortable using a controller with your Linux system to play games – you can easily add it, enable or disable it from the settings.
-如果你习惯了在Linux系统上用手柄玩游戏 —— 你可以在设置中很轻松地添加，启用或禁用它。 
+如果你习惯在Linux系统上用手柄玩游戏 —— 你可以轻松在设置里添加，启用或禁用它。 
 
 #### 多个数据提供商
 
-Just because it fetches the information (or metadata) of your games, it needs a source for that. You can see all the sources listed in the image below.
-因为它需要获取你游戏的信息（或元数据），也就意味着需要数据源。你可以看到上图列表中显示的所有数据源。
+
+因为它需要获取你的游戏信息（或元数据），也意味着它需要一个数据源。你可以看到上图列出的所有数据源。
 
 ![Data Providers Gamehub][13]
 
+这里你什么也不用做 —— 但如果你使用的是其他平台，而不是steam的话，你需要为[IDGB生成一个API密钥][14]。
 
-You don’t have to do anything here – but if you are using anything else other than steam as your platform, you can generate an [API key for IDGB.][14]
-
-这里你什么也不用做 —— 但如果你需要使用其他平台，而不是steam的话，你需要为[IDGB生成一个API密钥][14]。
-
-I shall recommend you to do that only if you observe a prompt/notice within GameHub or if you have some games that do not have any description/pictures/stats on GameHub.
-我建议你，只有在你看到GameHub上出现提示/或者通知时，或者你发现在GameHub上，有些游戏没有任何描述/图片/状态时，再这么做。
+我建议你，只有在你看到GameHub上出现提示/通知时，或你发现在GameHub上，有些游戏没有任何描述/图片/状态时，再这么做。
 
 #### 兼容性选项
 
 ![][15]
 
-Do you have a game that does not support Linux?
 你有不支持在Linux上运行的游戏吗？
 
-You do not have to worry. GameHub offers multiple compatibility layers like Wine/Proton which you can use to get the game installed in order to make it playable.
-你不需要太担心。GameHub上提供了
-We can’t be really sure on what works for you – so you have to test it yourself for that matter. Nevertheless, it is an important feature that could come handy for a lot of gamers.
+你不需要担心。GameHub上提供了多种兼容工具，如 Wine/Proton,你可以利用它们让游戏得以运行。
 
-### How Do You Manage Your Games in GameHub?
+我们无法确定具体哪个兼容工具适用于你 ——  所以你需要自己亲自测试。 然而，对许多游戏玩家来说，这的确是个很有用的功能。
 
-You get the option to add Steam/GOG/Humble Bundle account right after you launch it.
+### 如何在GameHub上管理你的游戏？
 
-For Steam, you need to have the Steam client installed on your Linux distro. Once, you have it, you can easily link the games to GameHub.
+在启动程序后，你可以将自己的Steam/GOG/Humble Bundle 账号添加进来。
+
+对于Steam, 你需要在Linux 发行版上安装Steam 客户端。一旦安装完成，你可以轻松将账号中的游戏导入GameHub.
+
 
 ![][16]
 
-For GOG &amp; Humble Bundle, you can directly sign in using your credentials to get your games organized in GameHub.
+对于GOG &amp; Humble Bundle, 只要登录就能直接在GameHub上管理你的游戏了。
 
-If you are adding an emulated image or a native installer, you can always do that by clicking on the “**+**” button that you observe in the top-right corner of the window.
+如果你想添加模拟器或者本地安装文件，只要点击窗口右上角的 “**+**” 按钮就可以了。 
 
-### How Do You Install Games?
 
-For Steam games, it automatically launches the Steam client to download/install (I wish if this was possible without launching Steam!)
+### 如何安装游戏？
+
+对于Steam游戏，它会自动启动Steam 客户端，从而下载/安装游戏（我希望之后安装游戏，可以不用启动Steam！）
 
 ![][17]
 
-But, for GOG/Humble Bundle, you can directly start downloading to install the games after signing in. If necessary, you can utilize the compatibility layer for non-native Linux games.
+但是，对于GOG/Humble Bundle, 登录后就能直接下载安装游戏了。必要的话，对于那些不支持在Linux运行的游戏，你可以使用兼容工具。
 
-In either case, if you want to install an emulated game or a native game – just add the installer or import the emulated image. There’s nothing more to it.
+无论是安装模拟器游戏或者本地游戏，你只要添加安装包或者导入模拟器镜像就可以了。这里没什么其他步骤要做。
 
-### GameHub: How do you install it?
+### GameHub: 如何安装它呢？
 
 ![][18]
 
-To start with, you can just search for it in your software center or app center. It is available in the **Pop!_Shop**. So, it can be found in most of the official repositories.
+首先，你可以直接在你的软件中心或者应用商店内搜索。 它在 **Pop!_Shop** 分类下可见。所以，它在绝大多数官方源中都能找到。
 
-If you don’t find it there, you can always add the repository and install it via terminal by typing these commands:
+如果你在这些地方都没有找到，你可以手动添加源，并从终端上安装它，你需要输入以下命令：
 
 ```
 sudo add-apt-repository ppa:tkashkin/gamehub
@@ -128,21 +110,21 @@ sudo apt update
 sudo apt install com.github.tkashkin.gamehub
 ```
 
-In case you encounter “**add-apt-repository command not found**” error, you can take a look at our article to help fix [add-apt-repository not found error.][19]
+如果你遇到了 “**add-apt-repository command not found**” 这个错误，你可以看看我们这篇文章，[add-apt-repository not found error.][19] 来帮你解决问题。
 
-There are also AppImage and Flatpak versions available. You can find installation instructions for other Linux distros on its [official webpage][2].
+这里还提供AppImage 和 FlatPak版本。 在[官网][2] 上，你可以针对找到其他Linux发行版的安装手册。
 
-Also, you have the option to download pre-release packages from its [GitHub page][20].
+同时，你还可以从它的 [GitHub页面][20]下载之前版本的安装包.
 
 [GameHub][2]
 
-**Wrapping Up**
+**注意**
 
-GameHub is a pretty neat application as a unified library for all your games. The user interface is intuitive and so are the options.
+GameHub 是相当灵活的一个集中游戏管理应用。 用户界面和选项设置也相当直观。
 
-Have you had the chance it test it out before? If yes, let us know your experience in the comments down below.
+你之前有没有使用过这一应用呢？如果有，在下面的评论里写下你的体验。
 
-Also, feel free to tell us about some of your favorite tools/applications similar to this which you would want us to try.
+而且，如果你想让尝试一些与此功能相似的工具/应用，请务必告诉我们。
 
 --------------------------------------------------------------------------------
 
