@@ -7,28 +7,28 @@
 [#]: via: (https://www.2daygeek.com/find-get-size-of-directory-folder-linux-disk-usage-du-command/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Get the Size of a Directory in Linux
+如何获取 Linux 中的目录大小
 ======
 
-You may have noticed that the size of a directory is showing only 4KB when you use the **[ls command][1]** to list the directory content in Linux.
+你应该已经注意用到，在 Linux 中使用 **[ls 命令][1]** 列出的目录内容中，目录的大小仅显示 4KB。
 
-Is this the right size? If not, what is it, and how to get a directory or folder size in Linux?
+这个大小正确吗？如果不正确，那它代表什么，又该如何获取 Linux 中的目录或文件夹大小？
 
-This is the default size, which is used to store the meta information of the directory on the disk.
+这是一个默认的大小，用来存储磁盘上存储目录的元数据。
 
-There are some applications on Linux to **[get the actual size of a directory][2]**.
+Linux 上有一些应用程序可以 **[获取目录的实际大小][2]**.
 
-But the disk usage (du) command is widely used by the Linux administrator.
+但是，磁盘使用率（du）命令已被 Linux 管理员广泛使用。
 
-I will show you how to get folder size with various options.
+我将向您展示如何使用各种选项获取文件夹大小。
 
-### What’s du Command?
+### 什么是 du 命令?
 
-**[du command][3]** stands for `Disk Usage`. It’s a standard Unix program which used to estimate file space usage in present working directory.
+**[du 命令][3]** 表示 <ruby>Disk Usage<rt>磁盘使用率</rt></ruby>。这是一个标准的 Unix 程序，用于估计当前工作目录中的文件空间使用情况。
 
-It summarize disk usage recursively to get a directory and its sub-directory size.
+它使用递归方式总结磁盘使用情况，以获取目录及其子目录的大小。
 
-As I said, the directory size only shows 4KB when you use the ls command. See the below output.
+如同我说的那样, 使用 ls 命令时，目录大小仅显示 4KB。参见下面的输出。
 
 ```
 $ ls -lh | grep ^d
@@ -40,9 +40,9 @@ drwxr-xr-x 13 daygeek daygeek 4.0K Jan  6  2019 drive-mageshm
 drwxr-xr-x 15 daygeek daygeek 4.0K Sep 29 21:32 Thanu_Photos
 ```
 
-### 1) How to Check Only the Size of the Parent Directory on Linux
+### 1) 在 Linux 上如何只获取父目录的大小
 
-Use the below du command format to get the total size of a given directory. In this example, we are going to get the total size of the **“/home/daygeek/Documents”** directory.
+使用以下 du 命令格式获取给定目录的总大小。在该示例中，我们将得到 **“/home/daygeek/Documents”** 目录的总大小
 
 ```
 $ du -hs /home/daygeek/Documents
@@ -52,20 +52,19 @@ $ du -h --max-depth=0 /home/daygeek/Documents/
 20G    /home/daygeek/Documents
 ```
 
-**Details**:
+**详细说明**:
 
-  * du – It is a command
-  * h – Print sizes in human readable format (e.g., 1K 234M 2G)
-  * s – Display only a total for each argument
-  * –max-depth=N – Print levels of directory
+  * du – 这是一个命令
+  * h – 以人类可读的格式显示大小 (例如 1K 234M 2G)
+  * s – 仅显示每个参数的总数
+  * –max-depth=N – 目录的打印级别
 
 
+### 2) 在 Linux 上如何获取每个目录的大小
 
-### 2) How to Get the Size of Each Directory on Linux
+使用以下 du 命令格式获取每个目录（包括子目录）的总大小。
 
-Use the below du command format to get the total size of each directory, including sub-directories.
-
-In this example, we are going to get the total size of each **“/home/daygeek/Documents”** directory and it’s sub-directories.
+在该示例中，我们将获得每个 **“/home/daygeek/Documents”** 目录及其子目录的总大小。
 
 ```
 $ du -h /home/daygeek/Documents/ | sort -rh | head -20
@@ -92,9 +91,9 @@ $ du -h /home/daygeek/Documents/ | sort -rh | head -20
 150M    /home/daygeek/Documents/drive-2daygeek/Thanu-photos-by-month/Nov-2016
 ```
 
-### 3) How to Get a Summary of Each Directory on Linux
+### 3) 在 Linux 上如何获取每个目录的摘要
 
-Use the below du command format to get only the summary for each directory.
+使用如下 du 命令格式仅获取每个目录的摘要。
 
 ```
 $ du -hs /home/daygeek/Documents/* | sort -rh | head -10
@@ -111,9 +110,9 @@ $ du -hs /home/daygeek/Documents/* | sort -rh | head -10
 96K    /home/daygeek/Documents/distro-info.xlsx
 ```
 
-### 4) How to Display the Size of Each Directory and Exclude Sub-Directories on Linux
+### 4) 在 Linux 上如何获取每个目录的不含子目录的大小
 
-Use the below du command format to display the total size of each directory, excluding subdirectories.
+使用如下 du 命令格式来展示每个目录的总大小，不包括子目录。
 
 ```
 $ du -hS /home/daygeek/Documents/ | sort -rh | head -20
@@ -140,9 +139,9 @@ $ du -hS /home/daygeek/Documents/ | sort -rh | head -20
 90M    /home/daygeek/Documents/drive-2daygeek/Thanu-photos-by-month/Dec-2017
 ```
 
-### 5) How to Get Only the Size of First-Level Sub-Directories on Linux
+### 5) 在 Linux 上如何仅获取一级子目录的大小
 
-If you want to get the size of the first-level sub-directories, including their subdirectories, for a given directory on Linux, use the command format below.
+如果要获取 Linux 上给定目录的一级子目录（包括其子目录）的大小，请使用以下命令格式。
 
 ```
 $ du -h --max-depth=1 /home/daygeek/Documents/
@@ -155,9 +154,9 @@ $ du -h --max-depth=1 /home/daygeek/Documents/
 20G    /home/daygeek/Documents/
 ```
 
-### 6) How to Get Grand Total in the du Command Output
+### 6) 如何在 du 命令输出中获得总计
 
-If you want to get the grand total in the du Command output, use the below du command format.
+如果要在 du 命令输出中获得总计，请使用以下 du 命令格式。
 
 ```
 $ du -hsc /home/daygeek/Documents/* | sort -rh | head -10
