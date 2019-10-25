@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Pylint: Making your Python code consistent)
@@ -9,21 +9,22 @@
 
 Pylint：让你的 Python 代码保持一致
 ======
-当你想要争论代码复杂性时，Pylint 是你的朋友。
+
+> 当你想要争论代码复杂性时，Pylint 是你的朋友。
+
 ![OpenStack source code \(Python\) in VIM][1]
 
 Pylint 是更高层级的 Python 样式强制程序。而 [flake8][2] 和 [black][3] 检查的是“本地”样式：换行位置、注释的格式、发现注释掉的代码或日志格式中的错误做法之类的问题。
 
-默认情况下，Pylint 非常激进。它将对一切提供强有力的意见，从检查是否实际实现声明的接口到重构重复代码，这对新用户来说可能会很多。一种温和地将其引入项目或团对的方法是先关闭_所有_检查器，然后逐个启用检查器。如果你已经在使用 flake8、black 和 [mypy][4]，这尤其有用：Pylint 有相当多的检查器在功能上重叠。
+默认情况下，Pylint 非常激进。它将对每样东西都提供严厉的意见，从检查是否实际实现声明的接口到重构重复代码的可能性，这对新用户来说可能会很多。一种温和地将其引入项目或团队的方法是先关闭*所有*检查器，然后逐个启用检查器。如果你已经在使用 flake8、black 和 [mypy][4]，这尤其有用：Pylint 有相当多的检查器和它们在功能上重叠。
 
 但是，Pylint 独有之处之一是能够强制执行更高级别的问题：例如，函数的行数或者类中方法的数量。
 
-这些数字可能因项目而异，并且可能取决于开发团队的偏好。但是，一旦团队就参数达成一致，使用自动工具_强制化_这些参数非常有用。这是 Pylint 闪耀的地方。
+这些数字可能因项目而异，并且可能取决于开发团队的偏好。但是，一旦团队就参数达成一致，使用自动工具*强制化*这些参数非常有用。这是 Pylint 闪耀的地方。
 
 ### 配置 Pylint
 
 要以空配置开始，请将 `.pylintrc` 设置为
-
 
 ```
 [MESSAGES CONTROL]
@@ -31,52 +32,45 @@ Pylint 是更高层级的 Python 样式强制程序。而 [flake8][2] 和 [black
 disable=all
 ```
 
-这将禁用所有 Pylint 消息。由于其中许多是冗余的，这是有道理的。在 Pylint 中， `message` 是一种特定的警告。
+这将禁用所有 Pylint 消息。由于其中许多是冗余的，这是有道理的。在 Pylint 中，`message` 是一种特定的警告。
 
-你可以通过运行 `pylint` 来检查所有消息都已关闭：
-
-
-```
-`$ pylint <my package>`
-```
-
-通常，向 `pylint` 命令行添加参数并不是一个好主意：配置 `pylint` 的最佳位置是 `.pylintrc`。为了使它做_一些_有用的事，我们需要启用一些消息。
-
-要启用消息，在  `.pylintrc` 中的 `[MESSAGES CONTROL]` 下添加
-
+你可以通过运行 `pylint` 来确认所有消息都已关闭：
 
 ```
-enable=&lt;message&gt;,
-
-       ...
+$ pylint <my package>
 ```
 
-对于看起来有用的“消息”（Pylint 称之为不同类型的警告）。我最喜欢的包括 `too-many-lines`、`too-many-arguments` 和 `too-many-branches`。所有这些限制模块或函数的复杂性，并且无需进行人工操作即可客观地进行代码复杂度测量。。
+通常，向 `pylint` 命令行添加参数并不是一个好主意：配置 `pylint` 的最佳位置是 `.pylintrc`。为了使它做*一些*有用的事，我们需要启用一些消息。
 
-_检查器_是_消息_的来源：每条消息只属于一个检查器。许多最有用的消息都在[设计检查器][5]下。 默认数字通常都不错，但要调整最大值也很简单：我们可以在 `.pylintrc` 中添加一个名为 `DESIGN` 的一段。
+要启用消息，在 `.pylintrc` 中的 `[MESSAGES CONTROL]` 下添加
 
+```
+enable=<message>,
+       ...
+```
+
+对于看起来有用的“消息”（Pylint 称之为不同类型的警告）。我最喜欢的包括 `too-many-lines`、`too-many-arguments` 和 `too-many-branches`。所有这些会限制模块或函数的复杂性，并且无需进行人工操作即可客观地进行代码复杂度测量。
+
+*检查器*是*消息*的来源：每条消息只属于一个检查器。许多最有用的消息都在[设计检查器][5]下。默认数字通常都不错，但要调整最大值也很简单：我们可以在 `.pylintrc` 中添加一个名为 `DESIGN` 的段。
 
 ```
 [DESIGN]
-
 max-args=7
-
 max-locals=15
 ```
 
-另一个有用的消息来源是`重构`检查器。我已启用一些最喜欢的消息有 `consider-using-dict-comprehension`、`stop-iteration-return`（它会查找使用当 `return` 是正确的停止迭代的方式，而使用 `raise StopIteration` 的迭代器）和 `chained-comparison`，它将建议使用如 `1 <= x < 5`，而不是不太明显的  `1 <= x && 5 > 5` 的语法
+另一个有用的消息来源是“重构”检查器。我已启用一些最喜欢的消息有 `consider-using-dict-comprehension`、`stop-iteration-return`（它会查找正确的停止迭代的方式是 `return` 而使用了 `raise StopIteration` 的迭代器）和 `chained-comparison`，它将建议使用如 `1 <= x < 5`，而不是不太明显的  `1 <= x && 5 > 5` 的语法。
 
-最后是一个在性能方面昂贵的检查器，但它非常有用，是 `similarities`。它会查找不同部分代码之间的复制粘贴来强制执行“不要重复自己”（DRY 原则）。它只启用一条消息：`duplicate-code`。默认的 “minimum similarity lines” 设置为 “4”。可以使用 `.pylintrc` 将其设置为不同的值。
+最后是一个在性能方面消耗很大的检查器，但它非常有用，就是 `similarities`。它会查找不同部分代码之间的复制粘贴来强制执行“不要重复自己”（DRY 原则）。它只启用一条消息：`duplicate-code`。默认的 “最小相似行数” 设置为 4。可以使用 `.pylintrc` 将其设置为不同的值。
 
 ```
 [SIMILARITIES]
-
 min-similarity-lines=3
 ```
 
 ### Pylint 使代码评审变得简单
 
-如果你厌倦了需要指出一个类太复杂，或者两个不同的函数基本相同的代码评审，请将 Pylint 添加到你的[持续集成][6]配置中，只需_一次性_设置你项目的复杂性指导参数。
+如果你厌倦了需要指出一个类太复杂，或者两个不同的函数基本相同的代码评审，请将 Pylint 添加到你的[持续集成][6]配置中，并且只需要对项目复杂性准则的争论一次就行。
 
 --------------------------------------------------------------------------------
 
@@ -85,7 +79,7 @@ via: https://opensource.com/article/19/10/python-pylint-introduction
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
