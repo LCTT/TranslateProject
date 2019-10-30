@@ -1,26 +1,27 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11518-1.html)
 [#]: subject: (Building container images with the ansible-bender tool)
 [#]: via: (https://opensource.com/article/19/10/building-container-images-ansible)
 [#]: author: (Tomas Tomecek https://opensource.com/users/tomastomecek)
 
 使用 ansible-bender 构建容器镜像
 ======
-了解如何使用 Ansible 在容器中执行命令。
-![Blocks for building][1]
 
-容器和 [Ansible][2] 很好地融合在一起-从管理和编排到供应和构建。在本文中，我们将重点介绍构建部分。
+> 了解如何使用 Ansible 在容器中执行命令。
 
-如果你熟悉 Ansible，就会知道你可以编写一系列任务，**ansible-playbook** 命令将为你执行这些任务。你知道吗，你还可以在容器环境中执行此类命令，并获得与编写 Dockerfile 并运行 **podman build** 相同​​的结果。
+![](https://img.linux.net.cn/data/attachment/album/201910/30/090738vzbifzfpa6qz9bij.jpg)
+
+容器和 [Ansible][2] 可以很好地融合在一起：从管理和编排到供应和构建。在本文中，我们将重点介绍构建部分。
+
+如果你熟悉 Ansible，就会知道你可以编写一系列任务，`ansible-playbook` 命令将为你执行这些任务。你知道吗，如果你编写 Dockerfile 并运行 `podman build`，你还可以在容器环境中执行此类命令，并获得相同​​的结果。
 
 这是一个例子：
 
-
 ```
-\- name: Serve our file using httpd
+- name: Serve our file using httpd
   hosts: all
   tasks:
   - name: Install httpd
@@ -33,24 +34,22 @@
       dest: /var/www/html/
 ```
 
-你可以在 Web 服务器上或容器中本地执行这个 playbook，并且只要你记得先创建 **our-file.txt**，它就可以工作。
+你可以在 Web 服务器本地或容器中执行这个剧本，并且只要你记得先创建 `our-file.txt`，它就可以工作。
 
-但是缺少了一些东西。你需要启动（并配置）httpd 以便提供文件。这是容器构建和基础架构供应之间的区别：构建镜像时，你只需准备内容；运行容器是另一项任务。另一方面，你可以将元数据附加到容器镜像，它会默认运行命令。
+但是这里缺少了一些东西。你需要启动（并配置）httpd 以便提供文件。这是容器构建和基础架构供应之间的区别：构建镜像时，你只需准备内容；而运行容器是另一项任务。另一方面，你可以将元数据附加到容器镜像，它会默认运行命令。
 
-这有个工具可以帮助。试试看 **ansible-bender** 怎么样？
-
-
-```
-`$ ansible-bender build the-playbook.yaml fedora:30 our-httpd`
-```
-
-该脚本使用 ansible-bender 对 Fedora 30 容器镜像执行 playbook，并将生成的容器镜像命名为 “our-httpd”。
-
-但是，当你运行该容器时，它不会启动 httpd，因为它不知道如何操作。你可以通过向 playbook 添加一些元数据来解决此问题：
-
+这有个工具可以帮助。试试看 `ansible-bender` 怎么样？
 
 ```
-\- name: Serve our file using httpd
+$ ansible-bender build the-playbook.yaml fedora:30 our-httpd
+```
+
+该脚本使用 `ansible-bender` 对 Fedora 30 容器镜像执行该剧本，并将生成的容器镜像命名为 `our-httpd`。
+
+但是，当你运行该容器时，它不会启动 httpd，因为它不知道如何操作。你可以通过向该剧本添加一些元数据来解决此问题：
+
+```
+- name: Serve our file using httpd
   hosts: all
   vars:
     ansible_bender:
@@ -74,8 +73,7 @@
       dest: /var/www/html
 ```
 
-现在你可以构建镜像（从这里开始，请以 root 用户身份运行所有命令。目前，Buildah 和 Podman 不会为无根容器创建专用网络）：
-
+现在你可以构建镜像（从这里开始，请以 root 用户身份运行所有命令。目前，Buildah 和 Podman 不会为无 root 容器创建专用网络）：
 
 ```
 # ansible-bender build the-playbook.yaml
@@ -117,7 +115,6 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 
 是否提供文件了？首先，找出你容器的 IP：
 
-
 ```
 # podman inspect -f '{{ .NetworkSettings.IPAddress }}' 7418570ba5a0
 10.88.2.106
@@ -125,15 +122,14 @@ AH00558: httpd: Could not reliably determine the server's fully qualified domain
 
 你现在可以检查了：
 
-
 ```
-$ curl <http://10.88.2.106/our-file.txt>
+$ curl http://10.88.2.106/our-file.txt
 Ansible is ❤
 ```
 
 你文件内容是什么？
 
-这只是使用 Ansible 构建容器镜像的介绍。如果你想了解有关 ansible-bender 可以做什么的更多信息，请查看它的 [GitHub][3] 页面。构建快乐！
+这只是使用 Ansible 构建容器镜像的介绍。如果你想了解有关 `ansible-bender` 可以做什么的更多信息，请查看它的 [GitHub][3] 页面。构建快乐！
 
 --------------------------------------------------------------------------------
 
@@ -142,7 +138,7 @@ via: https://opensource.com/article/19/10/building-container-images-ansible
 作者：[Tomas Tomecek][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
