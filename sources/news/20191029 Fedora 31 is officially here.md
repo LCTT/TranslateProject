@@ -7,50 +7,50 @@
 [#]: via: (https://fedoramagazine.org/announcing-fedora-31/)
 [#]: author: (Matthew Miller https://fedoramagazine.org/author/mattdm/)
 
-Fedora 31 is officially here!
+Fedora 31 正式发布
 ======
 
 ![][1]
 
-It’s here! We’re proud to announce the release of Fedora 31. Thanks to the hard work of thousands of Fedora community members and contributors, we’re celebrating yet another on-time release. This is getting to be a habit!
+这里，我们很荣幸地宣布 Fedora 31 的发布。感谢成千上万的 Fedora 社区成员和贡献者的辛勤工作，我们现在正在庆祝又一次的准时发布。这已成为一种惯例！
 
-If you just want to get to the bits without delay, go to <https://getfedora.org/> right now. For details, read on!
+如果你只想立即获取它，请立即访问 <https://getfedora.org/>。要了解详细信息，请继续阅读！
 
-### Toolbox
+### 工具箱
 
-If you haven’t used the [Fedora Toolbox][2], this is a great time to try it out. This is a simple tool for launching and managing personal workspace containers, so you can do development or experiment in an isolated experience. It’s as simple as running “toolbox enter” from the command line.
+如果你还没有使用过 [Fedora 工具箱][2]，那么现在是尝试一下的好时机。这是用于启动和管理个人工作区容器的简单工具，你可以在一个单独的环境中进行开发或试验。它只需要在命令行运行 `toolbox enter` 就行。
 
-This containerized workflow is vital for users of the ostree-based Fedora variants like CoreOS, IoT, and Silverblue, but is also extremely useful on any workstation or even server system. Look for many more enhancements to this tool and the user experience around it in the next few months — your feedback is very welcome.
+这种容器化的工作流程对于基于 ostree 的 Fedora 变体（如 CoreOS、IoT 和 Silverblue）的用户至关重要，但在任何工作站甚至服务器系统上也非常有用。在接下来的几个月中，希望对该工具及其相关的用户体验进行更多增强，非常欢迎你提供反馈。
 
-### All of Fedora’s Flavors
+### Fedora 风味版
 
-Fedora Editions are targeted outputs geared toward specific “showcase” uses.
+Fedora 的“版本”是针对特定的“展示柜”用途输出的。
 
-Fedora Workstation focuses on the desktop, and particular software developers who want a “just works” Linux operating system experience. This release features GNOME 3.34, which brings significant performance enhancements which will be especially noticeable on lower-powered hardware.
+Fedora 工作站版本专注于台式机，以及希望获得“可以工作的” Linux 操作系统体验的特定软件开发人员。此版本具有 GNOME 3.34，它带来了显著的性能增强，在功耗较低的硬件上尤其明显。
 
-Fedora Server brings the latest in cutting-edge open source server software to systems administrators in an easy-to-deploy fashion.
+Fedora 服务器版本以易于部署的方式为系统管理员带来了最新的、最先进的开源服务器软件。
 
-And, in preview state, we have Fedora CoreOS, a category-defining operating system made for the modern container world, and [Fedora IoT][3] for “edge computing” use cases. (Stay tuned for a planned contest to find a shiny name for the IoT edition!)
+而且，我们还有处于预览状态下的 Fedora CoreOS（一个定义了现代容器世界分类的操作系统）和[Fedora IoT][3]（用于“边缘计算”用例）。（敬请期待计划中的给该物联网版本的征集名称的活动！）
 
-Of course, we produce more than just the editions. [Fedora Spins][4] and [Labs][5] target a variety of audiences and use cases, including the [Fedora Astronomy][6], which brings a complete open source toolchain to both amateur and professional astronomers, and desktop environments like [KDE Plasma][7] and [Xfce][8].
+当然，我们不仅仅提供的是各种版本。还有面向各种受众和用例的 [Fedora Spins][4] 和 [Labs][5]，包括 [Fedora 天文学][6] 版本，为业余和专业的天文学家带来了完整的开源工具链，以及支持各种桌面环境（例如 [KDE Plasma][7] 和 [Xfce][8]）。
 
-And, don’t forget our alternate architectures, [ARM AArch64, Power, and S390x][9]. Of particular note, we have improved support for the Rockchip system-on-a-chip devices including the Rock960, RockPro64,  and Rock64, plus initial support for “[panfrost][10]”, an open source 3D accelerated graphics driver for newer Arm Mali “midgard” GPUs.
+而且，请不要忘记我们的替代架构 [ARM AArch64、Power 和 S390x][9]。特别要注意的是，我们对包括 Rock960、RockPro64 和 Rock64 在内的 Rockchip 片上系统设备的支持得到了改善，并初步支持了 “[panfrost][10]”，这是一种较新的开源 3D 加速图形驱动程序 Arm Mali "midgard" GPU。
 
-If you’re using an older 32-bit only i686 system, though, it’s time to find an alternative — [we bid farewell to 32-bit Intel architecture as a base system][11] this release.
+不过，如果你使用的是只支持 32 位的 i686 旧系统，那么该找个替代方案了，[我们的基本系统告别了 32 位 Intel 架构][11]。
 
-### General improvements
+### 常规改进
 
-No matter what variant of Fedora you use, you’re getting the latest the open source world has to offer. Following our “[First][12]” foundation, we’re enabling CgroupsV2 (if you’re using Docker, [make sure to check this out][13]). Glibc 2.30  and NodeJS 12 are among the many updated packages in Fedora 31. And, we’ve switched the “python” command to by Python 3 — remember, Python 2 is end-of-life at the [end of this year][14].
+无论你使用哪种 Fedora 版本，你都将获得开源世界所提供的最新版本。遵循 “[First][12]” 准则，我们启用了 CgroupsV2（如果你使用的是 Docker，[请确保检查一下][13]）。Glibc 2.30 和 NodeJS 12 是 Fedora 31 中许多更新的软件包之一。而且，我们已经将 `python` 命令切换为 Python 3，请记住，Python 2 在[今年年底][14]生命期就终止了。
 
-We’re excited for you to try out the new release! Go to <https://getfedora.org/> and download it now. Or if you’re already running a Fedora operating system, follow the easy [upgrade instructions][15].
+我们很高兴你能试用新版本！转到 <https://getfedora.org/> 并立即下载吧。或者，如果你已经在运行 Fedora 操作系统，请遵循简单的[升级说明][15]就行。
 
-### In the unlikely event of a problem….
+### 万一出现问题……
 
-If you run into a problem, check out the [Fedora 31 Common Bugs][16] page, and if you have questions, visit our [Ask Fedora][17] user-support platform.
+如果遇到问题，请查看 [Fedora 31 常见错误][16]页面，如果有疑问，请访问我们的 [Ask Fedora][17] 用户支持平台。
 
-### Thank you everyone
+### 谢谢大家
 
-Thanks to the thousands of people who contributed to the Fedora Project in this release cycle, and especially to those of you who worked extra hard to make this another on-time release. And if you’re in Portland for [USENIX LISA][18] this week, stop by the expo floor and visit me at the Red Hat, Fedora, and CentOS booth.
+感谢在此发行周期中成千上万为 Fedora 项目做出贡献的人们，尤其是那些为使该发行版再次按时发行而付出更多努力的人。而且，如果你本周在波特兰参加 [USENIX LISA][18]，请在博览会大厅，在 Red Hat、Fedora 和 CentOS 展位找到我。
 
 --------------------------------------------------------------------------------
 
@@ -58,8 +58,8 @@ via: https://fedoramagazine.org/announcing-fedora-31/
 
 作者：[Matthew Miller][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
