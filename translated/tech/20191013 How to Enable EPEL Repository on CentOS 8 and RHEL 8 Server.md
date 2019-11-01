@@ -7,59 +7,59 @@
 [#]: via: (https://www.linuxtechi.com/enable-epel-repo-centos8-rhel8-server/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-How to Enable EPEL Repository on CentOS 8 and RHEL 8 Server
+如何在 CentOS 8 和 RHEL 8 服务器上启用 EPEL 仓库
 ======
 
-**EPEL** Stands for Extra Packages for Enterprise Linux, it is a free and opensource additional packages repository available for **CentOS** and **RHEL** servers. As the name suggests, EPEL repository provides extra and additional packages which are not available in the default package repositories of [CentOS 8][1] and [RHEL 8][2].
+**EPEL** 代表 “Extra Packages for Enterprise Linux”，它是一个免费的开源附加软件包仓库，可用于 **CentOS** 和 **RHEL** 服务器。顾名思义，EPEL 仓库提供了额外的软件包，它们在 [CentOS 8][1]和 [RHEL 8][2] 的默认软件包仓库中不可用。
 
-In this article we will demonstrate how to enable and use epel repository on CentOS 8 and RHEL 8 Server.
+在本文中，我们将演示如何在 CentOS 8 和 RHEL 8 服务器上启用和使用 epel 存储库。
 
 [![EPEL-Repo-CentOS8-RHEL8][3]][4]
 
-### Prerequisites of EPEL Repository
+### EPEL 仓库的先决条件
 
-  * Minimal CentOS 8 and RHEL 8 Server
-  * Root or sudo admin privileges
-  * Internet Connection
+  * Minimal CentOS 8 和 RHEL 8 服务器
+  * root 或 sudo 管理员权限
+  * 网络连接
 
 
 
-### Install and Enable EPEL Repository on RHEL 8.x Server
+### 在 RHEL 8.x 服务器上安装并启用 EPEL 仓库
 
-Login or ssh to your RHEL 8.x server and execute the following dnf command to install EPEL rpm package,
+登录或 SSH 到你的 RHEL 8.x 服务器并执行以下 dnf 命令来安装 EPEL rpm 包，
 
 ```
 [root@linuxtechi ~]# dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 ```
 
-Output of above command would be something like below,
+上面命令的输出将如下所示，
 
 ![dnf-install-epel-repo-rehl8][3]
 
-Once epel rpm package is installed successfully then it will automatically enable and configure its yum / dnf repository.  Run following dnf or yum command to verify whether EPEL repository is enabled or not,
+epel rpm 包成功安装后，它将自动启用并配置其 yum/dnf 仓库。运行以下 dnf 或 yum 命令，以验证是否启用了 EPEL 仓库，
 
 ```
 [root@linuxtechi ~]# dnf repolist epel
-Or
+或者
 [root@linuxtechi ~]# dnf repolist epel -v
 ```
 
 ![epel-repolist-rhel8][3]
 
-### Install and Enable EPEL Repository on CentOS 8.x Server
+### 在 CentOS 8.x 服务器上安装并启用 EPEL 仓库
 
-Login or ssh to your CentOS 8 server and execute following dnf or yum command to install ‘**epel-release**‘ rpm package. In CentOS 8 server, epel rpm package is available in its default package repository.
+登录或 SSH 到你的 CentOS 8 服务器，并执行以下 dnf 或 yum 命令来安装 “**epel-release**” rpm 软件包。在 CentOS 8 服务器中，epel rpm 在其默认软件包仓库中。
 
 ```
 [root@linuxtechi ~]# dnf install epel-release -y
-Or
+或者
 [root@linuxtechi ~]# yum install epel-release -y
 ```
 
-Execute the following commands to verify the status of epel repository on CentOS 8 server,
+执行以下命令来验证 CentOS 8 服务器上 epel 仓库的状态，
 
 ```
- [root@linuxtechi ~]# dnf repolist epel
+[root@linuxtechi ~]# dnf repolist epel
 Last metadata expiration check: 0:00:03 ago on Sun 13 Oct 2019 04:18:05 AM BST.
 repo id              repo name                                               status
 *epel                Extra Packages for Enterprise Linux 8 - x86_64          1,977
@@ -82,11 +82,11 @@ Total packages: 1,977
 [root@linuxtechi ~]#
 ```
 
-Above command’s output confirms that we have successfully enabled epel repo. Let’s perform some basic operations on EPEL repo.
+以上命令的输出说明我们已经成功启用了epel 仓库。 让我们在 EPEL 仓库上执行一些基本操作。
 
-### List all available packages from epel repository
+### 列出 epel 仓库种所有可用包
 
-If you want to list all the packages from epel repository then run the following dnf command,
+如果要列出 epel 仓库中的所有的软件包，请运行以下 dnf 命令，
 
 ```
 [root@linuxtechi ~]# dnf repository-packages epel list
@@ -116,23 +116,23 @@ zvbi-fonts.noarch                     0.2.35-9.el8           epel
 [root@linuxtechi ~]#
 ```
 
-### Search a package from epel repository
+### 从 epel 仓库中搜索软件包
 
-Let’s assume if we want to search Zabbix package in epel repository, execute the following dnf command,
+假设我们要搜索 epel 仓库中的 Zabbix 包，请执行以下 dnf 命令，
 
 ```
 [root@linuxtechi ~]# dnf repository-packages epel list | grep -i zabbix
 ```
 
-Output of above command would be something like below,
+上面命令的输出类似下面这样，
 
 ![epel-repo-search-package-centos8][3]
 
-### Install a package from epel repository
+### 从 epel 仓库安装软件包
 
-Let’s assume we want to install htop package from epel repo, then issue the following dnf command,
+假设我们要从 epel 仓库安装 htop 包，运行以下 dnf 命令，
 
-Syntax:
+语法：
 
 # dnf –enablerepo=”epel” install &lt;pkg_name&gt;
 
@@ -140,9 +140,9 @@ Syntax:
 [root@linuxtechi ~]# dnf --enablerepo="epel" install htop -y
 ```
 
-**Note:** If we don’t specify the “**–enablerepo=epel**” in above command then it will look for htop package in all available package repositories.
+**注意：**如果我们在上面的命令中未指定 “**–enablerepo=epel**”，那么它将在所有可用的软件包仓库中查找 htop 包。
 
-That’s all from this article, I hope above steps helps you to enable and configure EPEL repository on CentOS 8 and RHEL 8 Server, please don’t hesitate to share your comments and feedback in below comments section.
+本文就是这些内容了，我希望上面的步骤能帮助你在 CentOS 8 和 RHEL 8 服务器上启用并配置 EPEL 仓库，请在下面的评论栏分享你的评论和反馈。
 
 --------------------------------------------------------------------------------
 
@@ -150,7 +150,7 @@ via: https://www.linuxtechi.com/enable-epel-repo-centos8-rhel8-server/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
