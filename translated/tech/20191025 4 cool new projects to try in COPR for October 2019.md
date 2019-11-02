@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (4 cool new projects to try in COPR for October 2019)
@@ -18,8 +18,7 @@ COPR 是个人软件仓库[集合][2]，它不在 Fedora 中。这是因为某�
 
 ### Nu
 
-[Nu][4] 或称为 Nushell 是受 PowerShell 和现代 CLI 工具启发的 shell。通过使用基于结构化数据的方法，Nu 可轻松处理命令的输出，并通过管道传输其他命令。然后将结果显示在可以轻松排序或过滤的表中，并可以用作其他命令的输入。最后，Nu 提供了几个内置命令、多 shell 和对插件的支持。
-
+[Nu][4] 也被称为 Nushell，是受 PowerShell 和现代 CLI 工具启发的 shell。通过使用基于结构化数据的方法，Nu 可轻松处理命令的输出，并通过管道传输其他命令。然后将结果显示在可以轻松排序或过滤的表中，并可以用作其他命令的输入。最后，Nu 提供了几个内置命令、多 shell 和对插件的支持。
 
 #### 安装说明
 
@@ -58,7 +57,7 @@ sudo dnf install crow-translate
 
 ### dnsmeter
 
-[dnsmeter][10] 是用于测试域名服务器及其基础设施性能的命令行工具。为此，它发送 DNS 查询并计算答复数，从而测量各种统计数据。除此之外，dnsmeter 可以使用不同的加载步骤，使用 PCAP 文件中的 payload 和欺骗发送者地址。
+[dnsmeter][10] 是用于测试域名服务器及其基础设施性能的命令行工具。为此，它发送 DNS 查询并计算答复数，从而测量各种统计数据。除此之外，dnsmeter 可以使用不同的加载步骤，使用 PCAP 文件中的载荷和欺骗发送者地址。
 
 #### 安装说明
 
@@ -76,7 +75,7 @@ via: https://fedoramagazine.org/4-cool-new-projects-to-try-in-copr-for-october-2
 作者：[Dominik Turecek][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
