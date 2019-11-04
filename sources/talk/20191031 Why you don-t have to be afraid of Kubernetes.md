@@ -7,81 +7,80 @@
 [#]: via: (https://opensource.com/article/19/10/kubernetes-complex-business-problem)
 [#]: author: (Scott McCarty https://opensource.com/users/fatherlinux)
 
-Why you don't have to be afraid of Kubernetes
+为什么你不必害怕 Kubernetes
 ======
-Kubernetes is absolutely the simplest, easiest way to meet the needs of
-complex web applications.
+Kubernetes 绝对是满足复杂 web 应用程序需求的最简单，最容易的方法。
 ![Digital creative of a browser on the internet][1]
 
-It was fun to work at a large web property in the late 1990s and early 2000s. My experience takes me back to American Greetings Interactive, where on Valentine's Day, we had one of the top 10 sites on the internet (measured by web traffic). We delivered e-cards for [AmericanGreetings.com][2], [BlueMountain.com][3], and others, as well as providing e-cards for partners like MSN and AOL. Veterans of the organization fondly remember epic stories of doing great battle with other e-card sites like Hallmark. As an aside, I also ran large web properties for Holly Hobbie, Care Bears, and Strawberry Shortcake.
+在 90 年代末和 00 年代初，在大型网络媒体资源上工作很有趣。我的经历让我想起了 American Greetings Interactive，在情人节那天，我们拥有互联网上排名前 10 位之一的网站（以网络访问量衡量）。我们为 [AmericanGreetings.com][2]，[BlueMountain.com][3] 等公司提供了电子贺卡，并为 MSN 和 AOL 等合作伙伴提供了电子贺卡。该组织的老员工仍然深切地记得与 Hallmark 等其它电子贺卡网站进行大战的史诗般的故事。 顺便说一句，我还为 Holly Hobbie，Care Bears 和 Strawberry Shortcake 经营大型网站。
 
-I remember like it was yesterday the first time we had a real problem. Normally, we had about 200Mbps of traffic coming in our front doors (routers, firewalls, and load balancers). But, suddenly, out of nowhere, the Multi Router Traffic Grapher (MRTG) graphs spiked to 2Gbps in a few minutes. I was running around, scrambling like crazy. I understood our entire technology stack, from the routers, switches, firewalls, and load balancers, to the Linux/Apache web servers, to our Python stack (a meta version of FastCGI), and the Network File System (NFS) servers. I knew where all of the config files were, I had access to all of the admin interfaces, and I was a seasoned, battle-hardened sysadmin with years of experience troubleshooting complex problems.
+我记得就像那是昨天发生的一样，这是我们第一次遇到真正的问题。通常，我们的前门（路由器，防火墙和负载均衡器）有大约 200Mbps 的流量进入。但是，突然之间，Multi Router Traffic Grapher（MRTG）图示突然在几分钟内飙升至 2Gbps。我疯了似地东奔西跑。我了解了我们的整个技术堆栈，从路由器，交换机，防火墙和负载平衡器，到 Linux/Apache web 服务器，到我们的 Python 堆栈（FastCGI 的元版本），以及网络文件系统（NFS）服务器。我知道所有配置文件在哪里，我可以访问所有管理界面，并且我是一位经验丰富的，经验丰富的系统管理员，具有多年解决复杂问题的经验。
 
-But, I couldn't figure out what was happening...
+但是，我无法弄清楚发生了什么……
 
-Five minutes feels like an eternity when you are frantically typing commands across a thousand Linux servers. I knew the site was going to go down any second because it's fairly easy to overwhelm a thousand-node cluster when it's divided up and compartmentalized into smaller clusters.
+当你在一千个 Linux 服务器上疯狂地键入命令时，五分钟的感觉就像是永恒。我知道站点可能会在任何时候崩溃，因为当它被划分成更小的集群时，压垮上千个节点的集群是那么的容易。
 
-I quickly _ran_ over to my boss's desk and explained the situation. He barely looked up from his email, which frustrated me. He glanced up, smiled, and said, "Yeah, marketing probably ran an ad campaign. This happens sometimes." He told me to set a special flag in the application that would offload traffic to Akamai. I ran back to my desk, set the flag on a thousand web servers, and within minutes, the site was back to normal. Disaster averted.
+我迅速 _跑到_ 老板的办公桌前，解释了情况。他几乎没有从电子邮件中抬头，这使我感到沮丧。他抬头看了看，笑了笑，说道：“是的，市场营销可能会开展广告活动。有时会发生这种情况。”他告诉我在应用程序中设置一个特殊标志，以减轻 Akamai 的访问量。 我跑回我的办公桌，在上千台 web 服务器上设置了标志，几分钟后，该站点恢复正常。灾难也就被避免了。
 
-I could share 50 more stories similar to this one, but the curious part of your mind is probably asking, "Where this is going?"
+我可以再分享 50 个类似的故事，但你脑海中可能会有一点好奇：“这种运维方式将走向何方?”
 
-The point is, we had a business problem. Technical problems become business problems when they stop you from being able to do business. Stated another way, you can't handle customer transactions if your website isn't accessible.
+关键是，我们遇到了业务问题。当技术问题使你无法开展业务时，它们就变成了业务问题。换句话说，如果你的网站无法访问，你就不能处理客户交易。
 
-So, what does all of this have to do with Kubernetes? Everything. The world has changed. Back in the late 1990s and early 2000s, only large web properties had large, web-scale problems. Now, with microservices and digital transformation, every business has a large, web-scale problem—likely multiple large, web-scale problems.
+那么，所有这些与 Kubernetes 有什么关系？一切。世界已经改变。早在 90 年代末和 00 年代初，只有大型网站才出现大型网络规模级的问题。现在，有了微服务和数字化转型，每个企业都面临着一个大型的网络规模级的问题——可能是多个大型的网络规模级的问题。
 
-Your business needs to be able to manage a complex web-scale property with many different, often sophisticated services built by many different people. Your web properties need to handle traffic dynamically, and they need to be secure. These properties need to be API-driven at all layers, from the infrastructure to the application layer.
+你的企业需要能够通过许多不同的人构建的许多不同的，通常是复杂的服务来管理复杂的网络规模的资产。你的网站需要动态地处理流量，并且它们必须是安全的。这些属性需要在所有层（从基础结构到应用程序层）上由 API 驱动。
 
-### Enter Kubernetes
+### 进入 Kubernetes
 
-Kubernetes isn't complex; your business problems are. When you want to run applications in production, there is a minimum level of complexity required to meet the performance (scaling, jitter, etc.) and security requirements. Things like high availability (HA), capacity requirements (N+1, N+2, N+100), and eventually consistent data technologies become a requirement. These are production requirements for every company that has digitally transformed, not just the large web properties like Google, Facebook, and Twitter.
+Kubernetes 并不复杂；你的业务问题才是。当你想在生产环境中运行应用程序时，要满足性能（伸缩性，抖动等）和安全性要求，就需要最低程度的复杂性。诸如高可用性（HA），容量要求（N+1，N+2，N+100）以及保证最终一致性的数据技术等就会成为必需。这些是每家进行数字化转型的公司的生产要求，而不仅仅是 Google，Facebook 和 Twitter 这样的大型网站。
 
-In the old world, I lived at American Greetings, every time we onboarded a new service, it looked something like this. All of this was handled by the web operations team, and none of it was offloaded to other teams using ticket systems, etc. This was DevOps before there was DevOps:
+在旧时代，我还在 American Greetings 任职时，每次我们加入一个新的服务，它看起来像这样：所有这些都是由网络运营团队来处理的，没有一个是通过标签系统转移给其他团队来处理的。这是在 DevOps 出现之前的 DevOps：
 
-  1. Configure DNS (often internal service layers and external public-facing)
-  2. Configure load balancers (often internal services and public-facing)
-  3. Configure shared access to files (large NFS servers, clustered file systems, etc.)
-  4. Configure clustering software (databases, service layers, etc.)
-  5. Configure webserver cluster (could be 10 or 50 servers)
-
-
-
-Most of this was automated with configuration management, but configuration was still complex because every one of these systems and services had different configuration files with completely different formats. We investigated tools like [Augeas][4] to simplify this but determined that it was an anti-pattern to try and normalize a bunch of different configuration files with a translator.
-
-Today with Kubernetes, onboarding a new service essentially looks like:
-
-  1. Configure Kubernetes YAML/JSON.
-  2. Submit it to the Kubernetes API (**kubectl create -f service.yaml**).
+  1. 配置DNS（通常是内部服务层和面向外部的公众）
+  2. 配置负载均衡器（通常是内部服务和面向公众的）
+  3. 配置对文件的共享访问（大型 NFS 服务器，群集文件系统等）
+  4. 配置集群软件（数据库，服务层等）
+  5. 配置 web 服务器群集（可以是 10 或 50 个服务器）
 
 
 
-Kubernetes vastly simplifies onboarding and management of services. The service owner, be it a sysadmin, developer, or architect, can create a YAML/JSON file in the Kubernetes format. With Kubernetes, every system and every user speaks the same language. All users can commit these files in the same Git repository, enabling GitOps.
+大多数配置是通过配置管理自动完成的，但是配置仍然很复杂，因为每个系统和服务都有不同的配置文件，而且格式完全不同。我们研究了像 [Augeas][4] 这样的工具来简化它，但是我们认为使用转换器来尝试和标准化一堆不同的配置文件是一种反模式。
 
-Moreover, deprecating and removing a service is possible. Historically, it was terrifying to remove DNS entries, load-balancer entries, web-server configurations, etc. because you would almost certainly break something. With Kubernetes, everything is namespaced, so an entire service can be removed with a single command. You can be much more confident that removing your service won't break the infrastructure environment, although you still need to make sure other applications don't use it (a downside with microservices and function-as-a-service [FaaS]).
+如今，借助Kubernetes，启动一项新服务本质上看起来如下：
 
-### Building, managing, and using Kubernetes
-
-Too many people focus on building and managing Kubernetes instead of using it (see [_Kubernetes is a_ _dump truck_][5]).
-
-Building a simple Kubernetes environment on a single node isn't markedly more complex than installing a LAMP stack, yet we endlessly debate the build-versus-buy question. It's not Kubernetes that's hard; it's running applications at scale with high availability. Building a complex, highly available Kubernetes cluster is hard because building any cluster at this scale is hard. It takes planning and a lot of software. Building a simple dump truck isn't that complex, but building one that can carry [10 tons of dirt and handle pretty well at 200mph][6] is complex.
-
-Managing Kubernetes can be complex because managing large, web-scale clusters can be complex. Sometimes it makes sense to manage this infrastructure; sometimes it doesn't. Since Kubernetes is a community-driven, open source project, it gives the industry the ability to manage it in many different ways. Vendors can sell hosted versions, while users can decide to manage it themselves if they need to. (But you should question whether you actually need to.)
-
-Using Kubernetes is the easiest way to run a large-scale web property that has ever been invented. Kubernetes is democratizing the ability to run a set of large, complex web services—like Linux did with Web 1.0.
-
-Since time and money is a zero-sum game, I recommend focusing on using Kubernetes. Spend your very limited time and money on [mastering Kubernetes primitives][7] or the best way to handle [liveness and readiness probes][8] (another example demonstrating that large, complex services are hard). Don't focus on building and managing Kubernetes. A lot of vendors can help you with that.
-
-### Conclusion
-
-I remember troubleshooting countless problems like the one I described at the beginning of this article—NFS in the Linux kernel at that time, our homegrown CFEngine, redirect problems that only surfaced on certain web servers, etc. There was no way a developer could help me troubleshoot any of these problems. In fact, there was no way a developer could even get into the system and help as a second set of eyes unless they had the skills of a senior sysadmin. There was no console with graphics or "observability"—observability was in my brain and the brains of the other sysadmins. Today, with Kubernetes, Prometheus, Grafana, and others, that's all changed.
-
-The point is:
-
-  1. The world is different. All web applications are now large, distributed systems. As complex as AmericanGreetings.com was back in the day, the scaling and HA requirements of that site are now expected for every website.
-  2. Running large, distributed systems is hard. Period. This is the business requirement, not Kubernetes. Using a simpler orchestrator isn't the answer.
+  1. 配置 Kubernetes YAML/JSON。
+  2. 提交给 Kubernetes API（```kubectl create -f service.yaml```）。
 
 
 
-Kubernetes is absolutely the simplest, easiest way to meet the needs of complex web applications. This is the world we live in and where Kubernetes excels. You can debate whether you should build or manage Kubernetes yourself. There are plenty of vendors that can help you with building and managing it, but it's pretty difficult to deny that it's the easiest way to run complex web applications at scale.
+Kubernetes 大大简化了服务的启动和管理。服务所有者（无论是系统管理员，开发人员还是架构师）都可以创建 Kubernetes 格式的 YAML/JSON 文件。使用 Kubernetes，每个系统和每个用户都说相同的语言。所有用户都可以在同一 Git 存储库中提交这些文件，从而启用 GitOps。
+
+而且，可以弃用和删除服务。从历史上看，删除 DNS 条目，负载平衡器条目，web 服务器配置等是非常可怕的，因为你几乎肯定会破坏某些东西。使用 Kubernetes，所有内容都被命名为名称空间，因此可以通过单个命令删除整个服务。尽管你仍然需要确保其它应用程序不使用它（微服务和功能即服务（FaaS）的缺点），但你可以更加确信：删除服务不会破坏基础架构环境。
+
+### 构建，管理和使用 Kubernetes
+
+太多的人专注于构建和管理 Kubernetes 而不是使用它（详见 [_Kubernetes 是一辆翻斗车_][5]）.
+
+在单个节点上构建一个简单的 Kubernetes 环境并不比安装 LAMP 堆栈复杂得多，但是我们无休止地争论着构建与购买的问题。不是Kubernetes很难；它以高可用性大规模运行应用程序。建立一个复杂的，高可用性的 Kubernetes 集群很困难，因为要建立如此规模的任何集群都是很困难的。它需要规划和大量软件。建造一辆简单的翻斗车并不复杂，但是建造一辆可以运载 [10 吨灰尘并能以 200mph 的速度稳定行驶的卡车][6]则很复杂。
+
+管理 Kubernetes 可能很复杂，因为管理大型网络规模的集群可能很复杂。有时，管理此基础架构很有意义；而有时不是。由于 Kubernetes 是一个社区驱动的开源项目，它使行业能够以多种不同方式对其进行管理。供应商可以出售托管版本，而用户可以根据需要自行决定对其进行管理。（但是你应该质疑是否确实需要。）
+
+使用 Kubernetes 是迄今为止运行大规模网络资源的最简单方法。Kubernetes 正在普及运行一组大型、复杂的 Web 服务的能力——就像当年 Linux 在 Web 1.0 中所做的那样。
+
+由于时间和金钱是一个零和游戏，因此我建议将重点放在使用 Kubernetes 上。将你的时间和金钱花费在[掌握 Kubernetes 原语][7]或处理[活跃度和就绪性探针][8]的最佳方法上（另一个例子表明大型、复杂的服务很难）。不要专注于构建和管理 Kubernetes。（在构建和管理上）许多供应商可以为你提供帮助。
+
+### 结论
+
+我记得对无数的问题进行了故障排除，比如我在这篇文章的开头所描述的问题——当时 Linux 内核中的 NFS，我们自产的 CFEngine，仅在某些 web 服务器上出现的重定向问题等）。开发人员无法帮助我解决所有这些问题。实际上，除非开发人员具备高级系统管理员的技能，否则他们甚至不可能进入系统并作为第二组眼睛提供帮助。没有带有图形或“可观察性”的控制台——可观察性在我和其他系统管理员的大脑中。如今，有了 Kubernetes，Prometheus，Grafana 等，一切都改变了。
+
+关键是：
+
+  1. 时代不一样了。现在，所有 web 应用程序都是大型的分布式系统。就像 AmericanGreetings.com 过去一样复杂，现在每个网站都需要该站点的扩展性和 HA 要求。
+  2. 运行大型的分布式系统是很困难的。（维护）周期，这是业务需求，不是 Kubernetes 的。使用更简单的协调器并不是解决方案。
+
+
+
+Kubernetes绝对是满足复杂Web应用程序需求的最简单，最简单的方法。这是我们生活的时代，而 Kubernetes 擅长于此。你可以讨论是否应该自己构建或管理 Kubernetes。有很多供应商可以帮助你构建和管理它，但是很难否认这是大规模运行复杂 web 应用程序的最简单方法。
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +99,7 @@ via: https://opensource.com/article/19/10/kubernetes-complex-business-problem
 [2]: http://AmericanGreetings.com
 [3]: http://BlueMountain.com
 [4]: http://augeas.net/
-[5]: https://opensource.com/article/19/6/kubernetes-dump-truck
+[5]: https://linux.cn/article-11011-1.html
 [6]: http://crunchtools.com/kubernetes-10-ton-dump-truck-handles-pretty-well-200-mph/
-[7]: https://opensource.com/article/19/6/kubernetes-basics
+[7]: https://linux.cn/article-11036-1.html
 [8]: https://srcco.de/posts/kubernetes-liveness-probes-are-dangerous.html
