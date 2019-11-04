@@ -124,7 +124,7 @@ zvbi-fonts.noarch                     0.2.35-9.el8           epel
 
 上面命令的输出类似下面这样，
 
-![epel-repo-search-package-centos8][3]
+![epel-repo-search-package-centos8][7]
 
 ### 从 EPEL 仓库安装软件包
 
@@ -163,3 +163,4 @@ via: https://www.linuxtechi.com/enable-epel-repo-centos8-rhel8-server/
 [4]: https://www.linuxtechi.com/wp-content/uploads/2019/10/EPEL-Repo-CentOS8-RHEL8.jpg
 [5]: https://www.linuxtechi.com/wp-content/uploads/2019/10/dnf-install-epel-repo-rehl8.jpg
 [6]: https://www.linuxtechi.com/wp-content/uploads/2019/10/epel-repolist-rhel8.jpg
+[7]: https://www.linuxtechi.com/wp-content/uploads/2019/10/epel-repo-search-package-centos8.jpg
