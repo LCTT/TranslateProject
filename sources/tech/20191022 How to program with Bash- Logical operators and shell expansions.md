@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to program with Bash: Logical operators and shell expansions)
-[#]: via: (https://opensource.com/article/19/10/programming-bash-part-2)
+[#]: via: (https://opensource.com/article/19/10/programming-bash-logical-operators-shell-expansions)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
 How to program with Bash: Logical operators and shell expansions
@@ -482,7 +482,7 @@ The third article in this series will explore the use of loops for performing va
 
 --------------------------------------------------------------------------------
 
-via: https://opensource.com/article/19/10/programming-bash-part-2
+via: https://opensource.com/article/19/10/programming-bash-logical-operators-shell-expansions
 
 作者：[David Both][a]
 选题：[lujun9972][b]

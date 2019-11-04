@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to program with Bash: Loops)
-[#]: via: (https://opensource.com/article/19/10/programming-bash-part-3)
+[#]: via: (https://opensource.com/article/19/10/programming-bash-loops)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
 How to program with Bash: Loops
@@ -334,7 +334,7 @@ Many years ago, despite being familiar with other shell languages and Perl, I ma
 
 --------------------------------------------------------------------------------
 
-via: https://opensource.com/article/19/10/programming-bash-part-3
+via: https://opensource.com/article/19/10/programming-bash-loops
 
 作者：[David Both][a]
 选题：[lujun9972][b]
