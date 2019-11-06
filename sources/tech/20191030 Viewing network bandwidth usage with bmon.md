@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,14 +7,15 @@
 [#]: via: (https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Viewing network bandwidth usage with bmon
+用 bmon 查看带宽使用情况
 ======
+
 Introducing bmon, a monitoring and debugging tool that captures network statistics and makes them easily digestible.
 Sandra Henry-Stocker
 
 Bmon is a monitoring and debugging tool that runs in a terminal window and captures network statistics, offering options on how and how much data will be displayed and displayed in a form that is easy to understand.
 
-To check if **bmon** is installed on your system, use the **which** command:
+To check if `bmon` is installed on your system, use the `which` command:
 
 ```
 $ which bmon
@@ -23,7 +24,7 @@ $ which bmon
 
 ### Getting bmon
 
-On Debian systems, use **sudo apt-get install bmon** to install the tool.
+On Debian systems, use `sudo apt-get install bmon` to install the tool.
 
 [][1]
 
@@ -33,7 +34,7 @@ BrandPost Sponsored by HPE
 
 Combine the agility and economics of HPE storage with HPE GreenLake and run your IT department with efficiency.
 
-For Red Hat and related distributions, you might be able to install with **yum install bmon** or **sudo dnf install bmon**. Alternately, you may have to resort to a more complex install with commands like these that first set up the required **libconfuse** using the root account or sudo:
+For Red Hat and related distributions, you might be able to install with `yum install bmon` or `sudo dnf install bmon`. Alternately, you may have to resort to a more complex install with commands like these that first set up the required `libconfuse` using the root account or sudo:
 
 ```
 # wget https://github.com/martinh/libconfuse/releases/download/v3.2.2/confuse-3.2.2.zip
@@ -48,11 +49,11 @@ For Red Hat and related distributions, you might be able to install with **yum i
 # sudo make install
 ```
 
-The first five lines will install **libconfuse** and the second five will grab and install **bmon** itself.
+The first five lines will install `libconfuse` and the second five will grab and install `bmon` itself.
 
 ### Using bmon
 
-The simplest way to start **bmon** is simply to type **bmon** on the command line. Depending on the size of the window you are using, you will be able to see and bring up a variety of data.
+The simplest way to start `bmon` is simply to type `bmon` on the command line. Depending on the size of the window you are using, you will be able to see and bring up a variety of data.
 
 The top portion of your display will display stats on your network interfaces – the loopback (lo) and network-accessible (e.g., eth0). If you terminal window has few lines, this is all you may see, and it will look something like this:
 
@@ -100,7 +101,7 @@ qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqqq
          1   5   10   15   20   25   30   35   40   45   50   55   60
 ```
 
-Notice, however, that the graphs are not showing values. This is because it is displaying the loopback **&gt;lo** interface. Arrow your way down to the public network interface and you will see some traffic.
+Notice, however, that the graphs are not showing values. This is because it is displaying the loopback `&gt;lo` interface. Arrow your way down to the public network interface and you will see some traffic.
 
 ```
 Interfaces                     x RX bps       pps     %x TX bps       pps     %
@@ -132,9 +133,9 @@ q Press i to enable additional information qq
  Wed Oct 23 16:42:06 2019 Press ? for help
 ```
 
-The change allows you to view a graph displaying network traffic. Note, however, that the default is to display bytes per second. To display bits per second instead, you would start the tool using **bmon -b**
+The change allows you to view a graph displaying network traffic. Note, however, that the default is to display bytes per second. To display bits per second instead, you would start the tool using `bmon -b`
 
-Detailed statistics on network traffic can be displayed if your window is large enough and you press **d**. An example of the stats you will see is displayed below. This display was split into left and right portions because of its width.
+Detailed statistics on network traffic can be displayed if your window is large enough and you press `d`. An example of the stats you will see is displayed below. This display was split into left and right portions because of its width.
 
 ##### left side:
 
@@ -171,7 +172,7 @@ RX        TX   │                  RX      TX   │
 │ No Handler        0       -   │ Over Error        0       -
 ```
 
-Additional information on the network interface will be displayed if you press **i**
+Additional information on the network interface will be displayed if you press `i`
 
 ##### left side:
 
@@ -189,15 +190,15 @@ Family                   unspec | Alias                           |
 | Qdisc               fq_codel |
 ```
 
-A help menu will appear if you press **?** with brief descriptions of how to move around the screen, select data to be displayed and control the graphs.
+A help menu will appear if you press `?` with brief descriptions of how to move around the screen, select data to be displayed and control the graphs.
 
-To quit **bmon**, you would type **q** and then **y** in response to the prompt to confirm your choice to exit.
+To quit `bmon`, you would type `q` and then `y` in response to the prompt to confirm your choice to exit.
 
 Some of the important things to note are that:
 
-  * **bmon** adjusts its display to the size of the terminal window
+  * `bmon` adjusts its display to the size of the terminal window
   * some of the choices shown at the bottom of the display will only function if the window is large enough to accomodate the data
-  * the display is updated every second unless you slow this down using the **-R** (e.g., **bmon -R 5)** option
+  * the display is updated every second unless you slow this down using the `-R` (e.g., `bmon -R 5)` option
 
 
 
