@@ -1,40 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lnrCoder)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11542-1.html)
 [#]: subject: (How to Find Out Top Memory Consuming Processes in Linux)
 [#]: via: (https://www.2daygeek.com/linux-find-top-memory-consuming-processes/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-如何在 Linux 中找出内存消耗最高的进程
+如何在 Linux 中找出内存消耗最大的进程
 ======
 
-你可能已经见过系统多次消耗过多的内存。
+![](https://img.linux.net.cn/data/attachment/album/201911/06/110149r81efjx12afjat7f.jpg)
 
-如果是这种情况，那么最好的办法是识别出 Linux 机器上消耗过多内存的进程。
+很多次，你可能遇见过系统消耗了过多的内存。如果是这种情况，那么最好的办法是识别出 Linux 机器上消耗过多内存的进程。我相信，你可能已经运行了下文中的命令以进行检查。如果没有，那你尝试过哪些其他的命令？我希望你可以在评论中更新这篇文章，它可能会帮助其他用户。
 
-我相信，你可能已经运行了以下命令以进行检查。
-
-如果没有，那你尝试过哪些其他的命令？
-
-我请求你更新它在评论中进行更新，它可能会帮助其他用户。
-
-使用 **[top 命令][1]** 和 **[ps 命令][2]** 可以轻松的识别。
-
-我过去经常同时使用这两个命令，两个命令得到的结果是相同的。
-
-所以我建议你从中选择一个喜欢的使用就可以。
+使用 [top 命令][1] 和 [ps 命令][2] 可以轻松的识别这种情况。我过去经常同时使用这两个命令，两个命令得到的结果是相同的。所以我建议你从中选择一个喜欢的使用就可以。
 
 ### 1) 如何使用 ps 命令在 Linux 中查找内存消耗最大的进程
 
-ps 命令用于报告当前进程的快照。ps 命令代表进程状态。
+`ps` 命令用于报告当前进程的快照。`ps` 命令的意思是“进程状态”。这是一个标准的 Linux 应用程序，用于查找有关在 Linux 系统上运行进程的信息。
 
-这是一个标准的 Linux 应用程序，用于查找有关在 Linux 系统上运行进程的信息。
+它用于列出当前正在运行的进程及其进程 ID（PID）、进程所有者名称、进程优先级（PR）以及正在运行的命令的绝对路径等。
 
-它用于列出当前正在运行的进程及其进程 ID（PID），进程所有者名称，进程优先级（PR）以及正在运行的命令的绝对路径等。
-
-下面的 ps 命令格式为你提供有关内存消耗最大进程的更多信息。
+下面的 `ps` 命令格式为你提供有关内存消耗最大进程的更多信息。
 
 ```
 # ps aux --sort -rss | head
@@ -51,7 +39,7 @@ root      1135  0.0  0.9  86708 37572 ?        S    05:37   0:20 cwpsrv: worker 
 root      1133  0.0  0.9  86708 37544 ?        S    05:37   0:05 cwpsrv: worker process
 ```
 
-使用以下 ps 命令格式可在输出中仅展示有关内存消耗过程的特定信息。
+使用以下 `ps` 命令格式可在输出中仅展示有关内存消耗过程的特定信息。
 
 ```
 # ps -eo pid,ppid,%mem,%cpu,cmd --sort=-%mem | head
@@ -68,7 +56,7 @@ root      1133  0.0  0.9  86708 37544 ?        S    05:37   0:05 cwpsrv: worker 
  1135  3034  0.9  0.0 cwpsrv: worker process
 ```
 
-如果你只想查看命令名称而不是命令的绝对路径，请使用下面的 ps 命令格式。
+如果你只想查看命令名称而不是命令的绝对路径，请使用下面的 `ps` 命令格式。
 
 ```
 # ps -eo pid,ppid,%mem,%cpu,comm --sort=-%mem | head
@@ -87,13 +75,9 @@ root      1133  0.0  0.9  86708 37544 ?        S    05:37   0:05 cwpsrv: worker 
 
 ### 2) 如何使用 top 命令在 Linux 中查找内存消耗最大的进程
 
-Linux 的 top 命令是用来监视 Linux 系统性能的最好和最知名的命令。
+Linux 的 `top` 命令是用来监视 Linux 系统性能的最好和最知名的命令。它在交互界面上显示运行的系统进程的实时视图。但是，如果要查找内存消耗最大的进程，请 [在批处理模式下使用 top 命令][3]。
 
-它在交互界面上显示运行的系统进程的实时视图。
-
-但是，如果要查找内存消耗最大的进程，请 **[在批处理模式下使用 top 命令][3]**。
-
-你应该正确地 **[了解 top 命令输出][4]** 以解决系统中的性能问题。
+你应该正确地 [了解 top 命令输出][4] 以解决系统中的性能问题。
 
 ```
 # top -c -b -o +%MEM | head -n 20 | tail -15
@@ -114,7 +98,7 @@ Linux 的 top 命令是用来监视 Linux 系统性能的最好和最知名的�
   968 nobody    20   0 1356216  30544   2348 S   0.0  0.8   0:19.95 /usr/local/apache/bin/httpd -k start
 ```
 
-如果你只想查看命令名称而不是命令的绝对路径，请使用下面的 top 命令格式。
+如果你只想查看命令名称而不是命令的绝对路径，请使用下面的 `top` 命令格式。
 
 ```
 # top -b -o +%MEM | head -n 20 | tail -15
@@ -135,15 +119,11 @@ Linux 的 top 命令是用来监视 Linux 系统性能的最好和最知名的�
   968 nobody    20   0 1356216  30544   2348 S   0.0  0.8   0:19.95 httpd
 ```
 
-### 3) 温馨提示：如何使用 ps_mem 命令在 Linux 中查找内存消耗最大的进程
+### 3) 奖励技巧：如何使用 ps_mem 命令在 Linux 中查找内存消耗最大的进程
 
-**[ps_mem 程序][5]** 用于显示每个程序（而不是每个进程）使用的核心内存。
+[ps_mem 程序][5] 用于显示每个程序（而不是每个进程）使用的核心内存。该程序允许你检查每个程序使用了多少内存。它根据程序计算私有和共享内存的数量，并以最合适的方式返回已使用的总内存。
 
-该程序允许你检查每个程序使用了多少内存。
-
-它根据程序计算私有和共享内存的数量，并以最合适的方式返回已使用的总内存。
-
-它使用以下逻辑来计算内存使用量。 总内存使用量 = 用于程序处理的专用内存使用量 + 用于程序处理的共享内存使用量
+它使用以下逻辑来计算内存使用量。总内存使用量 = sum(用于程序进程的专用内存使用量) + sum(用于程序进程的共享内存使用量)。
 
 ```
 # ps_mem
@@ -205,7 +185,7 @@ via: https://www.2daygeek.com/linux-find-top-memory-consuming-processes/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[lnrCoder](https://github.com/lnrCoder)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -213,6 +193,6 @@ via: https://www.2daygeek.com/linux-find-top-memory-consuming-processes/
 [b]: https://github.com/lujun9972
 [1]: https://www.2daygeek.com/linux-top-command-linux-system-performance-monitoring-tool/
 [2]: https://www.2daygeek.com/linux-ps-command-find-running-process-monitoring/
-[3]: https://www.2daygeek.com/linux-run-execute-top-command-in-batch-mode/
+[3]: https://linux.cn/article-11491-1.html
 [4]: https://www.2daygeek.com/understanding-linux-top-command-output-usage/
 [5]: https://www.2daygeek.com/ps_mem-report-core-memory-usage-accurately-in-linux/
