@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11546-1.html)
 [#]: subject: (Building CI/CD pipelines with Jenkins)
 [#]: via: (https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
 [#]: author: (Bryant Son https://opensource.com/users/brson)
@@ -12,7 +12,7 @@
 
 > 通过这份 Jenkins 分步教程，构建持续集成和持续交付（CI/CD）流水线。
 
-![pipelines][1]
+![](https://img.linux.net.cn/data/attachment/album/201911/07/001349rbbbswpeqnnteeee.jpg)
 
 在我的文章《[使用开源工具构建 DevOps 流水线的初学者指南][2]》中，我分享了一个从头开始构建 DevOps 流水线的故事。推动该计划的核心技术是 [Jenkins][3]，这是一个用于建立持续集成和持续交付（CI/CD）流水线的开源工具。
 
@@ -79,7 +79,7 @@ pipeline {
 
 为了便于遵循本教程的步骤，我创建了一个示例 [GitHub 存储库][6]和一个视频教程。
 
-- [视频](https://youtu.be/jDPwYgDVKlg)
+- [视频](https://img.linux.net.cn/static/video/_-jDPwYgDVKlg.mp4)
 
 开始本教程之前，你需要：
 
