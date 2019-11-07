@@ -1,39 +1,33 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
+[#]: translator: (wxy)
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Viewing network bandwidth usage with bmon)
 [#]: via: (https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usage-with-bmon.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Viewing network bandwidth usage with bmon
+用 bmon 查看网络带宽使用情况
 ======
-Introducing bmon, a monitoring and debugging tool that captures network statistics and makes them easily digestible.
-Sandra Henry-Stocker
 
-Bmon is a monitoring and debugging tool that runs in a terminal window and captures network statistics, offering options on how and how much data will be displayed and displayed in a form that is easy to understand.
+> 介绍一下 bmon，这是一个监视和调试工具，可捕获网络统计信息并使它们易于理解。
 
-To check if **bmon** is installed on your system, use the **which** command:
+![](https://img.linux.net.cn/data/attachment/album/201911/07/010237a8gb5oqddvl3bnd0.jpg)
+
+`bmon` 是一种监视和调试工具，可在终端窗口中捕获网络统计信息，并提供了如何以易于理解的形式显示以及显示多少数据的选项。
+
+要检查系统上是否安装了 `bmon`，请使用 `which` 命令：
 
 ```
 $ which bmon
 /usr/bin/bmon
 ```
 
-### Getting bmon
+### 获取 bmon
 
-On Debian systems, use **sudo apt-get install bmon** to install the tool.
+在 Debian 系统上，使用 `sudo apt-get install bmon` 安装该工具。
 
-[][1]
-
-BrandPost Sponsored by HPE
-
-[Take the Intelligent Route with Consumption-Based Storage][1]
-
-Combine the agility and economics of HPE storage with HPE GreenLake and run your IT department with efficiency.
-
-For Red Hat and related distributions, you might be able to install with **yum install bmon** or **sudo dnf install bmon**. Alternately, you may have to resort to a more complex install with commands like these that first set up the required **libconfuse** using the root account or sudo:
+对于 Red Hat 和相关发行版，你可以使用 `yum install bmon` 或 `sudo dnf install bmon` 进行安装。或者，你可能必须使用更复杂的安装方式，例如使用以下命令，这些命令首先使用 root 帐户或 sudo 来设置所需的 `libconfuse`：
 
 ```
 # wget https://github.com/martinh/libconfuse/releases/download/v3.2.2/confuse-3.2.2.zip
@@ -48,15 +42,13 @@ For Red Hat and related distributions, you might be able to install with **yum i
 # sudo make install
 ```
 
-The first five lines will install **libconfuse** and the second five will grab and install **bmon** itself.
+前面五行会安装 `libconfuse`，而后面五行会获取并安装 `bmon` 本身。
 
-### Using bmon
+### 使用 bmon
 
-The simplest way to start **bmon** is simply to type **bmon** on the command line. Depending on the size of the window you are using, you will be able to see and bring up a variety of data.
+启动 `bmon` 的最简单方法是在命令行中键入 `bmon`。根据你正在使用的窗口的大小，你能够查看并显示各种数据。
 
-The top portion of your display will display stats on your network interfaces – the loopback (lo) and network-accessible (e.g., eth0). If you terminal window has few lines, this is all you may see, and it will look something like this:
-
-[RELATED: 11 pointless but awesome Linux terminal tricks][2]
+显示区域的顶部将显示你的网络接口的统计信息：环回接口（lo）和可通过网络访问的接口（例如 eth0）。如果你的终端窗口只有区区几行高，下面这就是你可能会看到的所有内容，它将看起来像这样：
 
 ```
 lo bmon 4.0
@@ -73,7 +65,7 @@ q Press i to enable additional information qq
  Wed Oct 23 14:36:27 2019 Press ? for help
 ```
 
-In this example, the network interface is enp0s25. Notice the helpful "Increase screen height" hint below the listed interfaces. Stretch your screen to add sufficient lines (no need to restart bmon) and you will see some graphs:
+在此示例中，网络接口是 enp0s25。请注意列出的接口下方的有用的 “Increase screen height” 提示。拉伸屏幕以增加足够的行（无需重新启动 bmon），你将看到一些图形：
 
 ```
 Interfaces                     x RX bps       pps     %x TX bps       pps     %
@@ -100,7 +92,7 @@ qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqqq
          1   5   10   15   20   25   30   35   40   45   50   55   60
 ```
 
-Notice, however, that the graphs are not showing values. This is because it is displaying the loopback **&gt;lo** interface. Arrow your way down to the public network interface and you will see some traffic.
+但是请注意，该图形未显示值。这是因为它正在显示环回 “>lo” 接口。按下箭头键指向公共网络接口，你将看到一些流量。
 
 ```
 Interfaces                     x RX bps       pps     %x TX bps       pps     %
@@ -132,11 +124,11 @@ q Press i to enable additional information qq
  Wed Oct 23 16:42:06 2019 Press ? for help
 ```
 
-The change allows you to view a graph displaying network traffic. Note, however, that the default is to display bytes per second. To display bits per second instead, you would start the tool using **bmon -b**
+通过更改接口，你可以查看显示了网络流量的图表。但是请注意，默认值是按每秒字节数显示的。要按每秒位数来显示，你可以使用 `bmon -b` 启动该工具。
 
-Detailed statistics on network traffic can be displayed if your window is large enough and you press **d**. An example of the stats you will see is displayed below. This display was split into left and right portions because of its width.
+如果你的窗口足够大并按下 `d` 键，则可以显示有关网络流量的详细统计信息。你看到的统计信息示例如下所示。由于其宽度太宽，该显示分为左右两部分。
 
-##### left side:
+左侧：
 
 ```
 RX        TX   │                  RX      TX   │
@@ -154,7 +146,7 @@ RX        TX   │                  RX      TX   │
  Window Error       -         0   │                               │
 ```
 
-##### right side
+右侧：
 
 ```
 │                  RX      TX   │                  RX      TX
@@ -171,9 +163,9 @@ RX        TX   │                  RX      TX   │
 │ No Handler        0       -   │ Over Error        0       -
 ```
 
-Additional information on the network interface will be displayed if you press **i**
+如果按下 `i` 键，将显示网络接口上的其他信息。
 
-##### left side:
+左侧：
 
 ```
 MTU                        1500 | Flags    broadcast,multicast,up |
@@ -181,7 +173,7 @@ Address       00:1d:09:77:9d:08 | Broadcast ff:ff:ff:ff:ff:ff     |
 Family                   unspec | Alias                           |
 ```
 
-##### right side:
+右侧：
 
 ```
 | Operstate                 up | IfIndex                   2 |
@@ -189,19 +181,15 @@ Family                   unspec | Alias                           |
 | Qdisc               fq_codel |
 ```
 
-A help menu will appear if you press **?** with brief descriptions of how to move around the screen, select data to be displayed and control the graphs.
+如果你按下 `?` 键，将会出现一个帮助菜单，其中简要介绍了如何在屏幕上移动光标、选择要显示的数据以及控制图形如何显示。
 
-To quit **bmon**, you would type **q** and then **y** in response to the prompt to confirm your choice to exit.
+要退出 `bmon`，输入 `q`，然后输入 `y` 以响应提示来确认退出。
 
-Some of the important things to note are that:
+需要注意的一些重要事项是：
 
-  * **bmon** adjusts its display to the size of the terminal window
-  * some of the choices shown at the bottom of the display will only function if the window is large enough to accomodate the data
-  * the display is updated every second unless you slow this down using the **-R** (e.g., **bmon -R 5)** option
-
-
-
-Join the Network World communities on [Facebook][3] and [LinkedIn][4] to comment on topics that are top of mind.
+* `bmon` 会将其显示调整为终端窗口的大小
+* 显示区域底部显示的某些选项仅在窗口足够大可以容纳数据时才起作用
+* 除非你使用 `-R`（例如 `bmon -R 5`）来减慢显示速度，否则每秒更新一次显示
 
 --------------------------------------------------------------------------------
 
@@ -209,8 +197,8 @@ via: https://www.networkworld.com/article/3447936/viewing-network-bandwidth-usag
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
