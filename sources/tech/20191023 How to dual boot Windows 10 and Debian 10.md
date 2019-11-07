@@ -7,51 +7,54 @@
 [#]: via: (https://www.linuxtechi.com/dual-boot-windows-10-debian-10/)
 [#]: author: (James Kiarie https://www.linuxtechi.com/author/james/)
 
-How to dual boot Windows 10 and Debian 10
+How to dual boot Windows 10 and Debian 10   如何拥有一个Windows 10 和 Debian 10 的双系统
 ======
 
-So, you finally made the bold decision to try out **Linux** after much convincing. However, you do not want to let go of your Windows 10 operating system yet as you will still be needing it before you learn the ropes on Linux. Thankfully, you can easily have a dual boot setup that allows you to switch to either of the operating systems upon booting your system. In this guide, you will learn how to **dual boot  Windows 10 alongside Debian 10**.
+So, you finally made the bold decision to try out **Linux** after much convincing. However, you do not want to let go of your Windows 10 operating system yet as you will still be needing it before you learn the ropes on Linux. Thankfully, you can easily have a dual boot setup that allows you to switch to either of the operating systems upon booting your system. In this guide, you will learn how to **dual boot Windows 10 alongside Debian 10**.
+所以，在无数次劝说自己后，你终于做出了一个大胆的决定，试试**Linux** 。 不过，在你完全熟悉Linux之前，依旧需要使用Windows 10 系统。幸运的是，通过一个双系统引导设置，能让你在启动时，选择自己想要进入的系统。在这个帮助手册中，你会看到如何 **如何双重引导Windows 10 和 Debian 10**.
 
-[![How-to-dual-boot-Windows-and-Debian10][1]][2]
+[![如何拥有一个Windows 10 和 Debian 10 的双系统][1]][2]
 
-### Prerequisites
+###  前提条件
 
-Before you get started, ensure you have the following:
+在开始之前，确保你满足下列条件:   
 
-  * A bootable USB  or DVD of Debian 10
-  * A fast and stable internet connection ( For installation updates &amp; third party applications)
-
-
+  * 一个Debian10 的可引导的USB 或DVD
+  * 一个快速且稳定的网络 (为了安装更新 &amp; 以及第三方软件)
 
 Additionally, it worth paying attention to how your system boots (UEFI or Legacy) and ensure both the operating systems boot using the same boot mode.
+另外，记得注意你系统的引导策略（UEFI 或Legacy）, 需要确保两个系统使用同一种引导模式。
 
-### Step 1: Create a free partition on your hard drive
+### 第一步：在硬盘上创建一个空余分区
 
-To start off, you need to create a free partition on your hard drive. This is the partition where Debian will be installed during the installation process. To achieve this, you will invoke the disk management utility as shown:
+To achieve this, you will invoke the disk management utility as shown:
+第一步，你需要在你的硬盘上创建一个空余分区。 之后，这将是我们安装Debian系统的位置。为了实现这一目的，需要使用下图所示的磁盘管理器：
 
-Press **Windows Key + R** to launch the Run dialogue. Next, type **diskmgmt.msc** and hit **ENTER**
+同时按下 **Windows + R键**，启动运行程序。接下来，输入  **diskmgmt.msc** ，按  **回车键**
 
 [![Launch-Run-dialogue][1]][3]
 
-This launches the **disk management** window displaying all the drives existing on your Windows system.
+这会启动 **磁盘管理器**窗口，并显示你Windows 上所有已有磁盘。
 
 [![Disk-management][1]][4]
 
 Next, you need to create a free space for Debian installation. To do this, you need to shrink a partition from one of the volumes and create a new unallocated partition. In this case, I will create a **30 GB** partition from Volume D.
 
-To shrink a volume, right-click on it and select the ‘**shrink**’ option
+接下来，你需要为Debian安装创建空余空间。为此，你需要压缩其中一个磁盘的空间，从而创建一个未分配的新分区。在这个例子里，我会从 D 盘中创建一个 **30 GB** 的新分区。 
 
-[![Shrink-volume][1]][5]
+为了压缩一个卷，右键点击它，然后选中选项 ‘**压缩**’ 
 
-In the pop-up dialogue, define the size that you want to shrink your space. Remember, this will be the disk space on which Debian 10 will be installed. In my case, I selected **30000MB  ( Approximately 30 GB)**. Once done, click on ‘**Shrink**’.
+[![压缩卷][1]][5]
+
+在弹出窗口中，定义你想压缩的空间大小。记住，这是将来要安装Debian 10的磁盘空间。我选择了  **30000MB  ( 大约 30 GB)** 。 压缩完成后，点击‘**压缩**’.
 
 [![Shrink-space][1]][6]
 
-After the shrinking operation completes, you should have an unallocated partition as shown:
+在压缩操作结束后，你会看到一个如下图所示的未分配分区：
 
-[![Unallocated-partition][1]][7]
+[![未分配分区][1]][7]
 
-Perfect! We are now good to go and ready to begin the installation process.
+完美！ 现在可以准备开始安装了。
 
 ### Step 2: Begin the installation of Debian 10
 
