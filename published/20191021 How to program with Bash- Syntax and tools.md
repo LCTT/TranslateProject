@@ -37,7 +37,7 @@ Bash 是 Bourne Again Shell 的缩写，因为 Bash shell 是 [基于][4] 更早
 
 所有这些 shell 既是编程语言又是命令解释器。下面我们来快速浏览一下 Bash 中集成的编程结构和工具。
 
-### 做为编程语言的 Bash
+### 作为编程语言的 Bash
 
 大多数场景下，系统管理员都会使用 Bash 来发送简单明了的命令。但 Bash 不仅可以输入单条命令，很多系统管理员可以编写简单的命令行程序来执行一系列任务，这些程序可以作为通用工具，能节省时间和精力。
 
@@ -150,7 +150,7 @@ command1 && command2
 现在，让我们用命令来创建一个新的目录，如果成功的话，就把它切换为当前目录。确保你的家目录（`~`）是当前目录，先尝试在 `/root` 目录下创建，你应该没有权限：
 
 ```
-[student@studentvm1 ~]$ Dir=/root/testdir ; mkdir $Dir/ &&; cd $Dir
+[student@studentvm1 ~]$ Dir=/root/testdir ; mkdir $Dir/ && cd $Dir
 mkdir: cannot create directory '/root/testdir/': Permission denied
 [student@studentvm1 ~]$
 ```
