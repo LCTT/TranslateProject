@@ -73,7 +73,7 @@
 
 接下来，设置系统的主机名，点击 “<ruby>继续<rt>Continue</rt></ruby>”。
 
-![Set-hostname-Debian10][12]
+![设置主机名-Debian10][12]
 
 下一步，确定域名。如果你的电脑不在域中，直接点击 “<ruby>继续<rt>Continue</rt></ruby>”按钮。 
 
@@ -89,7 +89,7 @@
 
 接着，设置与此账户相关联的用户名。
 
-![Specify-username-Debian10][16]
+![指定用户名-Debian10][16]
 
 下一步，设置用户密码，点击“<ruby>继续<rt>Continue</rt></ruby>”。
 
@@ -143,7 +143,7 @@
 
 ![自动为空余空间分区-Debain10][29]
 
-接着点击 “<ruby>将所有文件存储在同一分区（新手用户推荐）<rt>All files in one partition (recommended for new users)</rt></ruby>”
+接着点击 “<ruby>将所有文件存储在同一分区（新手用户推荐）<rt>All files in one partition (recommended for new users)</rt></ruby>”。
 
 ![将所有文件存储在同一分区-debian10][30]
 
