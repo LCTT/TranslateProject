@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (11 Essential Keyboard Shortcuts Google Chrome/Chromium Users Should Know)
@@ -12,6 +12,8 @@ Chrome/Chromium 用户必知必会的 11 个基本快捷键
 
 > 掌握这些 Google Chrome 键盘快捷键，以获得更好、更流畅、更高效的 Web 浏览体验。还包括可下载的备忘单。
 
+![](https://img.linux.net.cn/data/attachment/album/201911/09/214207wh96q76ejacnn5as.png)
+
 无可否认，Google Chrome 是[最受欢迎的网络浏览器][1]。它的开源版本 [Chromium][2] 也越来越受欢迎，现在一些 Linux 发行版将其作为默认的网络浏览器。
 
 如果你经常在台式机上使用它，则可以使用 Google Chrome 键盘快捷键来改善浏览体验。没有必要用你的鼠标移来移去、点来点去。只要掌握这些快捷方式，你可以节省一些时间并提高工作效率。
@@ -20,7 +22,7 @@ Chrome/Chromium 用户必知必会的 11 个基本快捷键
 
 ### 你应该使用的 11 个酷炫的 Chrome 键盘快捷键
 
-如果你是专业人士，则可能已经知道其中一些 Chrome 快捷方式，但是有可能你仍然可以在这里找到一些隐藏的宝石。让我们来看看。
+如果你是专业人士，可能已经知道其中一些 Chrome 快捷方式，但是有可能你仍然可以在这里找到一些隐藏的宝石。让我们来看看。
 
 **键盘快捷键** | **动作**
 ---|---
@@ -41,7 +43,7 @@ Chrome/Chromium 用户必知必会的 11 个基本快捷键
 
 #### 1、用 `Ctrl+T` 打开一个新标签页
 
-需要打开一个新标签页吗？只需同时按 `Ctrl 和 `T`键，你就会打开一个新标签。
+需要打开一个新标签页吗？只需同时按 `Ctrl` 和 `T` 键，你就会打开一个新标签。
 
 #### 2、使用 `Ctrl+N` 打开一个新窗口
 
@@ -49,7 +51,7 @@ Chrome/Chromium 用户必知必会的 11 个基本快捷键
 
 #### 3、使用 `Ctrl+Shift+N` 隐身
 
-在线查询航班或酒店价格？隐身可能会有所帮助。使用 `Ctrl+Shift+N`在 Chrome 中打开一个隐身窗口。
+在线查询航班或酒店价格？隐身可能会有所帮助。使用 `Ctrl+Shift+N` 在 Chrome 中打开一个隐身窗口。
 
 #### 4、使用 `Ctrl+W` 关闭标签页
 
@@ -65,13 +67,13 @@ Chrome/Chromium 用户必知必会的 11 个基本快捷键
 
 #### 7、使用 `Ctrl+Tab` 在标签之间切换
 
-打开的标签页太多了吗？你可以使用 `Ctrl+Tab` 移至右侧标签页。想左移吗？使用 `Ctrl+Shift+Tab`。 重复按这些键，你可以在当前浏览器窗口的所有打开的标签页之间移动。
+打开的标签页太多了吗？你可以使用 `Ctrl+Tab` 移至右侧标签页。想左移吗？使用 `Ctrl+Shift+Tab`。重复按这些键，你可以在当前浏览器窗口的所有打开的标签页之间移动。
 
 你也可以使用 `Ctrl+0` 直到 `Ctrl+9` 转到前 10 个标签页之一。但是此 Chrome 键盘快捷键不适用于第 11 个及更多标签页。
 
 #### 8、使用 `Ctrl+L` 转到搜索/地址栏
 
-想要输入新的 URL 或快速搜索一些内容。你可以使用 `Ctrl+L，它将在顶部突出显示地址栏。
+想要输入新的 URL 或快速搜索一些内容。你可以使用 `Ctrl+L`，它将在顶部突出显示地址栏。
 
 #### 9、用 `Ctrl+D` 收藏当前网站
 
@@ -112,7 +114,7 @@ via: https://itsfoss.com/google-chrome-shortcuts/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
