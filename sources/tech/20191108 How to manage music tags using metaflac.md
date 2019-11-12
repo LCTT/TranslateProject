@@ -7,27 +7,26 @@
 [#]: via: (https://opensource.com/article/19/11/metaflac-fix-music-tags)
 [#]: author: (Chris Hermansen https://opensource.com/users/clhermansen)
 
-How to manage music tags using metaflac
+如何使用 metaflac 管理音乐标签
 ======
-Correct music tagging errors from the command line with this powerful
-open source utility.
+使用这个强大的开源工具可以在命令行中纠正音乐标签错误。
 ![website design image][1]
 
-I've been ripping CDs to my computer for a long time now. Over that time, I've used several different tools for ripping, and I have observed that each tool seems to have a different take on tagging, specifically, what metadata to save with the music data. By "observed," I mean that music players seem to sort albums in a funny order, they split tracks in one physical directory into two albums, or they create other sorts of frustrating irritations.
+我将 CD 翻录到电脑已经有很长一段时间了。在此期间，我用过几种不同的翻录工具，观察到每种工具在标记上似乎有不同的做法，特别是在保存哪些音乐元数据上。所谓“观察”，是指音乐播放器似乎按照有趣的顺序对专辑进行排序，他们将一个目录中的曲目分为两张专辑，或者产生了其他令人沮丧的烦恼。
 
-I've also learned that some of the tags are pretty obscure, and many music players and tag editors don't show them. Even so, they may use them for sorting or displaying music in some edge cases, like where the player separates all the music files containing tag XYZ into a different album from all the files not containing that tag.
+我还看到有些标签非常模糊，许多音乐播放器和标签编辑器没有显示它们。即使这样，在某些极端情况下，它们仍可以使用这些标签来分类或显示音乐，例如播放器将所有包含 XYZ 标签的音乐文件与不包含该标签的所有文件分离到不同的专辑中。
 
-So if the tagging applications and music players don't show the "weirdo" tags—but are somehow affected by them—what can you do?
+那么，如果标记应用和音乐播放器没有显示“奇怪”的标记，但是它们受到了某种影响，你该怎么办？
 
-### Metaflac to the rescue!
+### Metaflac 来拯救！
 
-I have been meaning to get familiar with **[metaflac][2]**, the open source command-line metadata editor for [FLAC files][3], which is my open source music file format of choice. Not that there is anything wrong with great tag-editing software like [EasyTAG][4], but the old saying "if all you have is a hammer…" comes to mind. Also, from a practical perspective, my home and office stereo music needs are met by small, dedicated servers running [Armbian][5] and [MPD][6], with the music files stored locally, running a very stripped-down, music-only headless environment, so a command-line metadata management tool would be quite useful.
+我一直想要熟悉 **[metaflac][2]**，它是一款开源命令行 [FLAC文件][3] 元数据编辑器，这是我选择的开源音乐文件格式。并不是说 [EasyTAG][4] 这样的出色标签编辑软件有什么问题，但我想起“如果你手上有个锤子。。”这句老话（译注：原文是如果你手上有个锤子， 那么所有的东西看起来都像钉子。意指人们惯于用熟悉的方式解决问题，而不管合不合适）。另外，从实际的角度来看，运行 [Armbian][5] 和 [MPD][6]、音乐存储在本地、运行精简、仅限音乐的无头环境的小型专用服务器可以满足我的家庭和办公室立体音乐的需求，因此命令行元数据管理工具将非常有用。
 
-The screenshot below shows the typical problem created by my long-term ripping program: Putumayo's wonderful compilation of Colombian music appears as two separate albums, one containing a single track, the other containing the remaining 11:
+下面的截图显示了我的长期翻录程序产生的典型问题：Putumayo 的哥伦比亚音乐汇编显示为两张单独的专辑，一张包含单首曲目，另一张包含其余 11 首：
 
 ![Album with incorrect tags][7]
 
-I used metaflac to generate a list of all the tags for all of the FLAC files in the directory containing those tracks:
+我使用 metaflac 为目录中包含这些曲目的所有 FLAC 文件生成了所有标签的列表：
 
 
 ```
@@ -40,7 +39,7 @@ for f in *.flac; do
 done
 ```
 
-I saved this as an executable shell script (see my colleague [David Both][8]'s wonderful series of columns on Bash shell scripting, [particularly the one on loops][9]). Basically, what I'm doing here is creating a file, _tags.txt_, containing the filename (the **echo** command) followed by all its flags, followed by the next filename, and so forth. Here are the first few lines of the result:
+我将其保存为可执行的 shell 脚本（请参阅我的同事 [David Both][8] 关于 Bash shell 脚本的精彩系列专栏文章，[特别是关于循环这章][9]）。基本上，我在这做的是创建一个文件 _tags.txt_，包含文件名（**echo** 命令），后面是它的所有标签，然后是下一个文件名，依此类推。 这是结果的前几行：
 
 
 ```
@@ -64,16 +63,16 @@ ALBUMARTISTSORT=50 de Joselito, Los
 Cumbia Del Caribe.flac
 ```
 
-After a bit of investigation, it turns out I ripped a number of my Putumayo CDs at the same time, and whatever software I was using at the time seems to have put the MUSICBRAINZ_ tags on all but one of the files. (A bug? Probably; I see this on a half-dozen albums.) Also, with respect to the sometimes unusual sorting, note the ALBUMARTISTSORT tag moved the Spanish article "Los" to the end of the artist name, after a comma.
+经过一番调查，结果发现我同时翻录了很多 Putumayo CD，并且当时我所使用的所有软件似乎给除了一个之外的所有文件加上了 MUSICBRAINZ_ 标签。 （是 bug 么？大概吧。我在六张专辑中都看到了。）此外，关于有时不寻常的排序，注意到，ALBUMARTISTSORT 标签将西班牙语标题 “Los” 移到了标题的最后面（逗号之后）。
 
-I used a simple **awk** script to list all the tags reported in the _tags.txt_ file:
+我使用了一个简单的 **awk** 脚本来列出 _tags.txt_ 中报告的所有标签：
 
 
 ```
 `awk -F= 'index($0,"=") > 0 {print $1}' tags.txt | sort -u`
 ```
 
-This split all lines into fields using **=** as the field separator and prints the first field of lines containing an equals sign. The results are passed through sort with the **-u** flag, which eliminates all duplication in the output (see my colleague Seth Kenlon's great [article on the **sort** utility][10]). For this specific _tags.txt_ file, the output is:
+这会使用 **=** 作为字段分隔符将所有行拆分为字段，并打印包含等号的行的第一个字段。结果通过使用 sort 带上 **-u** 标志来传递，从而消除了输出中的所有重复项（请参阅我的同事 Seth Kenlon 的[关于 **sort** 程序的文章][10]）。对于这个 _tags.txt_ 文件，输出为：
 
 
 ```
@@ -95,7 +94,7 @@ TITLE
 TRACKTOTAL
 ```
 
-Sleuthing around a bit, I found that the MUSICBRAINZ_ flags appear on all but one FLAC file, so I used the metaflac command to delete those flags:
+研究一会后，我发现 MUSICBRAINZ_ 标签出现在除了一个 FLAC 文件之外的所有文件上，因此我使用 metaflac 命令删除了这些标签：
 
 
 ```
@@ -106,19 +105,19 @@ for f in *.flac; do metaflac --remove-tag MUSICBRAINZ_DISCID "$f"; done
 for f in *.flac; do metaflac --remove-tag MUSICBRAINZ_TRACKID "$f"; done
 ```
 
-Once that's done, I can rebuild the MPD database with my music player. Here are the results:
+完成后，我可以使用音乐播放器重建 MPD 数据库。结果如下：
 
 ![Album with correct tags][11]
 
-And, there we are—all 12 tracks together in one album.
+完成了，12 首曲目出现在了一张专辑中。
 
-So, yeah, I'm lovin' metaflac a whole bunch. I expect I'll be using it more often as I try to wrangle the last bits of weirdness in my music collection's music tags. It's highly recommended!
+太好了，我很喜欢 metaflac。我希望我会更频繁地使用它，因为我会试图去纠正最后一些我弄乱的音乐收藏标签。强烈推荐！
 
-### And the music
+### 关于音乐
 
-I've been spending a few evenings listening to Odario Williams' program _After Dark_ on CBC Music. (CBC is Canada's public broadcasting corporation.) Thanks to Odario, one of the albums I've really come to enjoy is [_Songs for Cello and Voice_ by Kevin Fox][12]. Here he is, covering the Eurythmics tune "[Sweet Dreams (Are Made of This)][13]."
+我花了几个晚上在 CBC 音乐（CBC 是加拿大的公共广播公司）上收听 Odario Williams 的节目 _After Dark_。感谢 Odario，我听到了让我非常享受的 [Kevin Fox 的 _Songs for Cello and Voice_] [12]。在这里，他演唱了 Eurythmics 的歌曲 “[Sweet Dreams（Are Made of This）][13]”。
 
-I bought this on CD, and now it's on my music server with its tags properly organized!
+我购买了这张 CD，现在它在我的音乐服务器上，还有组织正确的标签！
 
 --------------------------------------------------------------------------------
 
@@ -126,7 +125,7 @@ via: https://opensource.com/article/19/11/metaflac-fix-music-tags
 
 作者：[Chris Hermansen][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
