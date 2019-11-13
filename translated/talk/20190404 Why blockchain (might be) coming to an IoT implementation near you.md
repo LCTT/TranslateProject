@@ -1,64 +1,56 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Why blockchain (might be) coming to an IoT implementation near you)
 [#]: via: (https://www.networkworld.com/article/3386881/why-blockchain-might-be-coming-to-an-iot-implementation-near-you.html#tk.rss_all)
 [#]: author: (Jon Gold https://www.networkworld.com/author/Jon-Gold/)
 
-为什么区块链（可能会）来的你身边 IoT 设备
+为什么区块链（可能会）来到你身边的物联网
 ======
 
 ![MF3D / Getty Images][1]
 
-各个公司发现，物联网与最近其他许多流行的企业计算技术有着良好的合作伙伴关系，区块链（以支持加密货币而闻名的分布式信任创新系统）也不例外。然而，尽管这两种现象在某些情况下可以互补，但是那些期待支持区块链的物联网技术爆发的人们可能不应该屏住呼吸。
+各个公司发现，物联网与最近其他许多流行的企业计算技术有着良好的合作关系，以支持加密货币而闻名的分布式信任创新系统的区块链也不例外。然而，在物联网应用中实施区块链可能具有挑战性，并且需要对技术有深入的了解。
 
-从根本上理解区块链技术可能会违背直觉，但最好将其视为一种跟踪各种交易的分布式分类帐。链上的每个“块”都包含要防止篡改的交易记录或其他数据，并通过加密散列链接到前一个，这意味着对块的任何篡改都将使该链接无效。节点（几乎可以是其中装有 CPU 的任何节点）通过分布式的对等网络进行通信，以共享数据并确保链中数据的有效性。
+区块链是一个跟踪各种交易的分布式账本。链上的每个“块”都包含要防止篡改的交易记录或其他数据，并通过加密散列链接到前一个，这意味着对块的任何篡改都将使该链接无效。节点（几乎可以是其中装有 CPU 的任何节点）通过分布式的对等网络进行通信，以共享数据并确保链中数据的有效性。
 
-北卡罗来纳大学格林波若分校的管理学教授尼尔·谢特里（Nir Kshetri）表示，该系统之所以有效，是因为所有的块都必须就它们所保护的数据的细节达成一致。 如果有人尝试更改给定节点上的先前事务，则网络上的其余数据将向后推送。 “数据的旧记录仍然存在，” Kshetri说。
+北卡罗来纳大学格林波若分校的管理学教授 Nir Kshetri 表示，该系统之所以有效，是因为所有的块都必须就它们所保护的数据的细节达成一致。如果有人尝试更改给定节点上的先前事务，则网络上的其余数据将会被回推回来。“数据的旧记录仍然存在，” Kshetri 说。
 
-这是一项强大的安全技术–如果没有坏人成功控制给定区块链上的所有节点（[著名的“ 51％攻击] [4]”），则该区块链保护的数据不能被伪造或以其他方式弄乱。 。 因此，对于在物联网世界某些角落的公司来说，使用区块链是一种有吸引力的选择也就不足为奇了。
+这是一项强大的安全技术 —— 如果没有坏人成功控制给定区块链上的所有（LCTT 译注：应为“大部分”）节点（[著名的“51％ 攻击”][4]），那么该区块链保护的数据就不会被伪造或以其他方式弄乱。因此，对于在物联网世界某些角落的公司来说，使用区块链是一种有吸引力的选择也就不足为奇了。
 
-The system works because all the blocks have to agree with each other on the specifics of the data that they’re safeguarding, according to Nir Kshetri, a professor of management at the University of North Carolina – Greensboro. If someone attempts to alter a previous transaction on a given node, the rest of the data on the network pushes back. “The old record of the data is still there,” said Kshetri.
+物联网安全初创企业 NXMLabs 的首席技术官兼联合创始人 Jay Fallah 认为，除了区块链能够在网络上安全分发可信信息的能力这一事实之外，部分原因还在于区块链在技术堆栈中的地位。
 
-That’s a powerful security technique – absent a bad actor successfully controlling all of the nodes on a given blockchain (the [famous “51% attack][4]”), the data protected by that blockchain can’t be falsified or otherwise fiddled with. So it should be no surprise that the use of blockchain is an attractive option to companies in some corners of the IoT world.
+“区块链站在一个非常有趣的交叉点。在过去的 15 年中，在存储、CPU 等方面，计算技术一直在加速发展，但是直到最近，网络技术并没有发生太大变化。”他说，“ 区块链不是网络技术、不是数据技术，而是二者兼具。”
 
-Part of the reason for that, over and above the bare fact of blockchain’s ability to securely distribute trusted information across a network, is its place in the technology stack, according to Jay Fallah, CTO and co-founder of NXMLabs, an IoT security startup.
+### 区块链和物联网
 
-“Blockchain stands at a very interesting intersection. Computing has accelerated in the last 15 years [in terms of] storage, CPU, etc, but networking hasn’t changed that much until recently,” he said. “[Blockchain]’s not a network technology, it’s not a data technology, it’s both.”
+区块链作为物联网世界的一部分的意义取决于你在和谁交谈以及他们在出售什么，但是最接近的概括可能来自企业区块链供应商 Filament 的首席执行官 Allison Clift-Jenning。
 
-### Blockchain and IoT**
+她说：“在任何地方，人们都想互相信任，并用的是非常古老的方式，这通常是用例入手的好地方。”
 
-**
+直接从 Filament 自己的客户群中挑选出来的一个例子是二手车销售。Filament 与“一家主要的底特律汽车制造商”合作，创建了一个受信任的车辆历史平台，该平台基于一种设备，该设备可插入二手车的诊断端口，从那里获取信息，并将该数据写入区块链。像这样，二手车的历史记录就是不可变的，包括它的安全气囊是否曾经打开过，是否被水淹过等等。任何不道德的二手车或不诚实的前车主都无法更改数据，甚至拔掉设备也将意味着记录中存在可疑的空白期。
 
-Where blockchain makes sense as a part of the IoT world depends on who you speak to and what they are selling, but the closest thing to a general summation may have come from Allison Clift-Jenning, CEO of enterprise blockchain vendor Filament.
+SAP 物联网高级副总裁兼全球负责人 Elvira Wallis 表示，当今大多数区块链物联网方案都与信任和数据验证有关。
 
-“Anywhere where you've got people who are kind of wanting to trust each other, and have very archaic ways of doing it, that is usually a good place to start with use cases,” she said.
+她说：“我们遇到的大多数用例都在项目的跟踪和溯源领域，”她举例说明了高端食品的农场到餐桌跟踪系统，该系统使用安装在板条箱和卡车上的区块链节点，这样就可以为物品在运输基础设施中的通过创建无懈可击的记录。（例如，该牛排在这样的温度下冷藏了多长时间，今天运输了多长时间，等等。）
 
-One example, culled directly from Filament’s own customer base, is used car sales. Filament’s working with “a major Detroit automaker” to create a trusted-vehicle history platform, based on a device that plugs into the diagnostic port of a used car, pulls information from there, and writes that data to a blockchain. Just like that, there’s an immutable record of a used car’s history, including whether its airbags have ever been deployed, whether it’s been flooded, and so on. No unscrupulous used car lot or duplicitous former owner could change the data, and even unplugging the device would mean that there’s a suspicious blank period in the records.
+### 将区块链与物联网一起使用是个好主意吗？
 
-Most of present-day blockchain IoT implementation is about trust and the validation of data, according to Elvira Wallis, senior vice president and global head of IoT at SAP.
+不同的供应商针对不同的用例出售不同的基于区块链的产品，这些产品使用不同的区块链技术实现，其中一些与加密货币中使用的经典的、线性的、挖矿式交易区块链不太一样。
 
-“Most of the use cases that we have come across are in the realm of tracking and tracing items,” she said, giving the example of a farm-to-fork tracking system for high-end foodstuffs, using blockchain nodes mounted on crates and trucks, allowing for the creation of an un-fudgeable record of an item’s passage through transport infrastructure. (e.g., how long has this steak been refrigerated at such-and-such a temperature, how far has it traveled today, and so on.)
+这意味着你目前需要从供应商那里购买特定功能。451 Research 高级分析师 Csilla Zsigri 表示，很少有客户组织拥有可以实施区块链安全系统的内部专家。
 
-### **Is using blockchain with IoT a good idea?**
+她说，区块链技术的任何智能应用的想法都是发挥其优势，为关键信息创建可信赖的平台。
 
-Different vendors sell different blockchain-based products for different use cases, which use different implementations of blockchain technology, some of which don’t bear much resemblance to the classic, linear, mined-transaction blockchain used in cryptocurrency.
+Zsigri 说：“这就是我真正看到增值的地方，只是增加了一层信任和验证。”
 
-That means it’s a capability that you’d buy from a vendor for a specific use case, at this point. Few client organizations have the in-house expertise to implement a blockchain security system, according to 451 Research senior analyst Csilla Zsigri.
+专家们一致认为，尽管相当了解基于区块链的物联网应用程序的基本概念，但它并不适用于每个物联网用例。 将区块链应用于非交易系统（尽管有例外，包括 NXM Labs 的用于物联网设备的基于区块链配置的产品）通常不是正确的举动。
 
-The idea with any intelligent application of blockchain technology is to play to its strengths, she said, creating a trusted platform for critical information.
+如果不需要在两个不同的参与方之间共享数据，而是简单地将数据从传感器移到后端，那么区块链通常就没有意义，因为它实际上并没有为当前大多数物联网实现中的数据分析增加任何关键的增值。
 
-“That’s where I see it really adding value, just in adding a layer of trust and validation,” said Zsigri.
-
-Yet while the basic idea of blockchain-enabled IoT applications is fairly well understood, it’s not applicable to every IoT use case, experts agree. Applying blockchain to non-transactional systems – although there are exceptions, including NXM Labs’ blockchain-based configuration product for IoT devices – isn’t usually the right move.
-
-If there isn’t a need to share data between two different parties – as opposed to simply moving data from sensor to back-end – blockchain doesn’t generally make sense, since it doesn’t really do anything for the key value-add present in most IoT implementations today: data analysis.
-
-“We’re still in kind of the early dial-up era of blockchain today,” said Clift-Jennings. “It’s slower than a typical database, it often isn't even readable, it often doesn't have a query engine tied to it. You don't really get privacy, by nature of it.”
-
-Join the Network World communities on [Facebook][5] and [LinkedIn][6] to comment on topics that are top of mind.
+“今天，我们仍处于区块链的早期拨号时代。”Clift-Jennings 说，“它比典型的数据库要慢，它甚至无法读取，也常常没有查询引擎。从本质上讲，你并没有真正获得隐私。”
 
 --------------------------------------------------------------------------------
 
@@ -66,8 +58,8 @@ via: https://www.networkworld.com/article/3386881/why-blockchain-might-be-coming
 
 作者：[Jon Gold][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
