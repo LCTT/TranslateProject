@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Schedule and Automate tasks in Linux using Cron Jobs)
@@ -10,17 +10,17 @@
 如何使用 cron 任务在 Linux 中计划和自动化任务
 ======
 
-有时，你可能需要定期执行任务或以预定的时间间隔执行任务。这些任务包括备份数据库、更新系统、执行定期重新引导等。这些任务称为 “cron 任务”。cron 任务用于“自动执行的任务”，它有助于简化重复的、有时是乏味的任务的执行。cron 是一个守护进程，可让你调度这些任务，然后按指定的时间间隔执行这些任务。在本教程中，你将学习如何使用 cron 来调度任务。
+有时，你可能需要定期或以预定的时间间隔执行任务。这些任务包括备份数据库、更新系统、执行定期重新引导等。这些任务称为 “cron 任务”。cron 任务用于“自动执行的任务”，它有助于简化重复的、有时是乏味的任务的执行。cron 是一个守护进程，可让你安排这些任务，然后按指定的时间间隔执行这些任务。在本教程中，你将学习如何使用 cron 来安排任务。
 
 ![Schedule -tasks-in-Linux-using cron][2]
 
 ### crontab 文件
 
-crontab 即 “cron table”，是一个简单的文本文件，其中包含指定任务执行时间间隔的规则或命令。 crontab 文件分为两类：
+crontab 即 “cron table”，是一个简单的文本文件，其中包含指定任务执行时间间隔的规则和命令。 crontab 文件分为两类：
 
 1）系统范围的 crontab 文件
 
-这些通常由需要 root 特权的 Linux 服务及关键应用程序使用。系统 crontab 文件位于 `/etc/crontab` 中，并且只能由 root 用户访问和编辑。通常用于配置系统范围的守护程序。`crontab` 文件的看起来类似如下所示：
+这些通常由需要 root 特权的 Linux 服务及关键应用程序使用。系统 crontab 文件位于 `/etc/crontab` 中，并且只能由 root 用户访问和编辑。通常用于配置系统范围的守护进程。`crontab` 文件的看起来类似如下所示：
 
 ![etc-crontab-linux][3]
 
@@ -61,7 +61,7 @@ m h d moy dow /path/to/script
 * `d`：代表一个月中的某天，范围是 1 到 31
 * `moy`：这是一年中的月份。范围是 1 到 12
 * `doy`：这是星期几。范围是 0 到 6，其中 0 代表星期日
-* `Command`：这是要执行的命令，例如备份命令、重新启动和复制命令等
+* `command`：这是要执行的命令，例如备份命令、重新启动和复制命令等
 
 ### 管理 cron 任务
 
@@ -87,7 +87,7 @@ m h d moy dow /path/to/script
 # crontab -u Pradeep -e
 ```
 
-如果该 crontab 文件尚不存在，那么你将打开一个空白文本文档。如果该 crontab 文件已经存在，则 `-e` 选项会让你编辑该文件，
+如果该 crontab 文件尚不存在，那么你将打开一个空白文本文件。如果该 crontab 文件已经存在，则 `-e` 选项会让你编辑该文件，
 
 #### 列出 crontab 文件
 
@@ -109,9 +109,9 @@ m h d moy dow /path/to/script
 
 然后，让我们看一下安排任务的不同方式。
 
-### crontab 安排任务示例
+### 使用 crontab 安排任务示例
 
-如图所示，所有 cron 任务文件都带有释伴标头。
+如图所示，所有 cron 任务文件都带有<ruby>释伴<rt>shebang</rt></ruby>标头。
 
 ```
 #!/bin/bash
@@ -121,7 +121,7 @@ m h d moy dow /path/to/script
 
 接下来，使用我们之前指定的 cron 任务条目指定要安排任务的时间间隔。
 
-要每天下午 12:30 重新引导系统，请使用以下语法：
+要每天下午 12:30 重启系统，请使用以下语法：
 
 ```
 30  12 *  *  * /sbin/reboot
@@ -199,7 +199,7 @@ m h d moy dow /path/to/script
 
 3）`@weekly` 时间戳等效于 `0 0 1 * mon`
 
-它在每周的第一分钟执行 cron 任务，一周是从星期一开始的。
+它在每周的第一分钟执行 cron 任务，一周第一天是从星期一开始的。
 
 ```
 @weekly /path/to/script
@@ -215,7 +215,7 @@ m h d moy dow /path/to/script
 
 4）`@yearly` 时间戳等效于 `0 0 1 1 *`
 
-它在每年的第一分钟执行任务，并且对发送新年问候很有用。
+它在每年的第一分钟执行任务，可以用于发送新年问候。
 
 ```
 @yearly /path/to/script
@@ -223,7 +223,7 @@ m h d moy dow /path/to/script
 
 ### 限制 crontab 
 
-作为 Linux 用户，你可以控制谁有权使用 `crontab` 命令。可以使用 `/etc/cron.deny` 和 `/etc/cron.allow` 文件来控制。默认情况下，只有一个 `/etc/cron.deny` 文件，并且不包含任何条目。要限制用户使用 `crontab` 实用程序，只需将用户的用户名添加到文件中即可。当用户添加到该文件中，并且该用户尝试运行 `crontab` 命令时，他/她将遇到以下错误。
+作为 Linux 用户，你可以控制谁有权使用 `crontab` 命令。可以使用 `/etc/cron.deny` 和 `/etc/cron.allow` 文件来控制。默认情况下，只有一个 `/etc/cron.deny` 文件，并且不包含任何条目。要限制用户使用 `crontab` 实用程序，只需将用户的用户名添加到该文件中即可。当用户添加到该文件中，并且该用户尝试运行 `crontab` 命令时，他/她将遇到以下错误。
 
 ![restricted-cron-user][4]
 
@@ -235,7 +235,7 @@ m h d moy dow /path/to/script
 
 ### 备份 crontab 条目
 
-始终建议你备份 crontab 条目。为此，请使用语法
+始终建议你备份 crontab 条目。为此，请使用语法：
 
 ```
 # crontab -l > /path/to/file.txt
@@ -276,7 +276,7 @@ via: https://www.linuxtechi.com/schedule-automate-tasks-linux-cron-jobs/
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
