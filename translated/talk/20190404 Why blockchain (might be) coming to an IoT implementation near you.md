@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,16 +7,18 @@
 [#]: via: (https://www.networkworld.com/article/3386881/why-blockchain-might-be-coming-to-an-iot-implementation-near-you.html#tk.rss_all)
 [#]: author: (Jon Gold https://www.networkworld.com/author/Jon-Gold/)
 
-Why blockchain (might be) coming to an IoT implementation near you
+为什么区块链（可能会）来的你身边 IoT 设备
 ======
 
 ![MF3D / Getty Images][1]
 
-Companies have found that IoT partners well with a host of other popular enterprise computing technologies of late, and blockchain – the innovative system of distributed trust most famous for underpinning cryptocurrencies – is no exception. Yet while the two phenomena can be complementary in certain circumstances, those expecting an explosion of blockchain-enabled IoT technologies probably shouldn’t hold their breath.
+各个公司发现，物联网与最近其他许多流行的企业计算技术有着良好的合作伙伴关系，区块链（以支持加密货币而闻名的分布式信任创新系统）也不例外。然而，尽管这两种现象在某些情况下可以互补，但是那些期待支持区块链的物联网技术爆发的人们可能不应该屏住呼吸。
 
-Blockchain technology can be counter-intuitive to understand at a basic level, but it’s probably best thought of as a sort of distributed ledger keeping track of various transactions. Every “block” on the chain contains transactional records or other data to be secured against tampering, and is linked to the previous one by a cryptographic hash, which means that any tampering with the block will invalidate that connection. The nodes – which can be largely anything with a CPU in it – communicate via a decentralized, peer-to-peer network to share data and ensure the validity of the data in the chain.
+从根本上理解区块链技术可能会违背直觉，但最好将其视为一种跟踪各种交易的分布式分类帐。链上的每个“块”都包含要防止篡改的交易记录或其他数据，并通过加密散列链接到前一个，这意味着对块的任何篡改都将使该链接无效。节点（几乎可以是其中装有 CPU 的任何节点）通过分布式的对等网络进行通信，以共享数据并确保链中数据的有效性。
 
-**[ Also see[What is edge computing?][2] and [How edge networking and IoT will reshape data centers][3].]**
+北卡罗来纳大学格林波若分校的管理学教授尼尔·谢特里（Nir Kshetri）表示，该系统之所以有效，是因为所有的块都必须就它们所保护的数据的细节达成一致。 如果有人尝试更改给定节点上的先前事务，则网络上的其余数据将向后推送。 “数据的旧记录仍然存在，” Kshetri说。
+
+这是一项强大的安全技术–如果没有坏人成功控制给定区块链上的所有节点（[著名的“ 51％攻击] [4]”），则该区块链保护的数据不能被伪造或以其他方式弄乱。 。 因此，对于在物联网世界某些角落的公司来说，使用区块链是一种有吸引力的选择也就不足为奇了。
 
 The system works because all the blocks have to agree with each other on the specifics of the data that they’re safeguarding, according to Nir Kshetri, a professor of management at the University of North Carolina – Greensboro. If someone attempts to alter a previous transaction on a given node, the rest of the data on the network pushes back. “The old record of the data is still there,” said Kshetri.
 
