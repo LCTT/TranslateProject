@@ -7,36 +7,36 @@
 [#]: via: (https://www.2daygeek.com/bash-script-to-generate-patching-compliance-report-on-centos-rhel-systems/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Bash Script to Generate Patching Compliance Report on CentOS/RHEL Systems
+在 CentOS/RHEL 系统上生成补丁合规报告的 Bash 脚本
 ======
 
-If you are running a large Linux environment you may have already integrated your Red Hat systems with the Satellite.
+如果你运行的是大型 Linux 环境，那么你可能已经将 Red Hat 与 Satellite 集成了。
 
-If yes, there is a way to export this from the Satellite Server so you don’t have to worry about patching compliance reports.
+如果是的话，有一种方法可以从 Satellite 服务器导出它，因此不必担心补丁合规性报告。
 
-But if you are running a small Red Hat environment without satellite integration, or if it is CentOS systems, this script will help you to create a report.
+但是，如果你运行的是没有 Satellite 集成的小型 Red Hat 环境，或者它是 CentOS 系统，那么此脚本将帮助你创建报告。
 
-The patching compliance report is usually created monthly once or three months once, depending on the company’s needs.
+补丁合规性报告通常每月创建一次或三个月一次，具体取决于公司的需求。
 
-Add a cronjob based on your needs to automate this.
+根据你的需要添加 cronjob 来自动执行此功能。
 
-This **[bash script][1]** is generally good to run with less than 50 systems, but there is no limit.
+此 [bash 脚本][1] 通常适合于少于 50 个系统运行，但没有限制。
 
-Keeping the system up-to-date is an important task for Linux administrators, keeping your computer very stable and secure.
+保持系统最新是 Linux 管理员的一项重要任务，它使你的计算机非常稳定和安全。
 
-The following articles may help you to learn more about installing security patches on Red Hat (RHEL) and CentOS systems.
+以下文章可以帮助你了解有关在红帽 （RHEL） 和 CentOS 系统上安装安全修补程序的更多详细信息。
 
-  * **[How to check available security updates on Red Hat (RHEL) and CentOS system][2]**
-  * **[Four ways to install security updates on Red Hat (RHEL) &amp; CentOS systems][3]**
-  * **[Two methods to check or list out installed security updates on Red Hat (RHEL) &amp; CentOS system][4]**
+  * **[如何检查红帽 （RHEL） 和 CentOS 系统上的可用安全更新][2]**
+  * **[在红帽 （RHEL） 和 CentOS 系统上安装安全更新的四种方法][3]**
+  * **[两种用来检查或列出红帽 （RHEL） 和 CentOS 系统上已安装的安全更新的方法][4]**
 
 
 
-Four **[shell scripts][5]** are included in this tutorial and pick the suitable one for you.
+此教程中包含四个 [shell 脚本][5]，选择适合你的脚本。
 
-### Method-1: Bash Script to Generate Patching Compliance Report for Security Errata on CentOS/RHEL Systems
+### 方法 1：为 CentOS / RHEL 系统上的安全修补生成补丁合规性报告的 Bash 脚本
 
-This script allows you to create a security errata patch compliance report only. It sends the output via a mail in a plain text.
+此脚本只会生成安全修补合规性报告。它会通过纯文本发送邮件。
 
 ```
 # vi /opt/scripts/small-scripts/sec-errata.sh
@@ -58,13 +58,13 @@ echo "+---------------------------------------------+" >> $MESSAGE
 mail -s "$SUBJECT" "$TO" < $MESSAGE
 ```
 
-Run the script file once you have added the above script.
+添加完上面的脚本后运行它。
 
 ```
 # sh /opt/scripts/small-scripts/sec-errata.sh
 ```
 
-You get an output like the one below.
+你会看到下面的输出。
 
 ```
 # cat /tmp/sec-up.txt
@@ -79,7 +79,7 @@ server4
 +-----------------------------------+
 ```
 
-Add the following cronjob to get the patching compliance report once a month.
+现价下面的 cronjob 来每个月得到一份补丁合规性报告。
 
 ```
 # crontab -e
@@ -87,9 +87,9 @@ Add the following cronjob to get the patching compliance report once a month.
 @monthly /bin/bash /opt/scripts/system-uptime-script-1.sh
 ```
 
-### Method-1a: Bash Script to Generate Patching Compliance Report for Security Errata on CentOS/RHEL Systems
+### 方法 1a：为 CentOS / RHEL 系统上的安全修补生成补丁合规性报告的 Bash 脚本
 
-This script allows you to generate a security errata patch compliance report. It sends the output through a mail with the CSV file.
+脚本会为你生成安全修补合规性报告。它会通过 CSV 文件发送邮件。
 
 ```
 # vi /opt/scripts/small-scripts/sec-errata-1.sh
@@ -105,19 +105,19 @@ echo "Patching Report for `date +"%B %Y"`" | mailx -s "Patching Report on `date`
 rm /tmp/sec-up.csv
 ```
 
-Run the script file once you have added the above script.
+添加完上面的脚本后运行它。
 
 ```
 # sh /opt/scripts/small-scripts/sec-errata-1.sh
 ```
 
-You get an output like the one below.
+你会看到下面的输出。
 
 ![][6]
 
-### Method-2: Bash Script to Generate Patching Compliance Report for Security Errata, Bugfix, and Enhancement on CentOS/RHEL Systems
+### 方法 2：为 CentOS / RHEL 系统上的安全修补、bugfix、增强生成补丁合规性报告的 Bash 脚本
 
-This script allows you to generate patching compliance reports for Security Errata, Bugfix, and Enhancement. It sends the output via a mail in a plain text.
+脚本会为你生成安全修补、bugfix、增强的补丁合规性报告。它会通过纯文本发送邮件。
 
 ```
 # vi /opt/scripts/small-scripts/sec-errata-bugfix-enhancement.sh
@@ -141,13 +141,13 @@ echo "+------------------------------------------------------------------+" >> $
 mail -s "$SUBJECT" "$TO" < $MESSAGE
 ```
 
-Run the script file once you have added the above script.
+添加完上面的脚本后运行它。
 
 ```
 # sh /opt/scripts/small-scripts/sec-errata-bugfix-enhancement.sh
 ```
 
-You get an output like the one below.
+你会看到下面的输出。
 
 ```
 # cat /tmp/sec-up.txt
@@ -162,7 +162,7 @@ server04                                16
 +------------------------------------------------------------------+
 ```
 
-Add the following cronjob to get the patching compliance report once every three months. This script is scheduled to run on the 1’st of January, April, July and October months.
+添加下面的 cronjob 来每三个月得到补丁合规性报告。该脚本计划在一月、四月、七月、十月的 1 号运行。
 
 ```
 # crontab -e
@@ -170,9 +170,9 @@ Add the following cronjob to get the patching compliance report once every three
 0 0 01 */3 * /bin/bash /opt/scripts/system-uptime-script-1.sh
 ```
 
-### Method-2a: Bash Script to Generate Patching Compliance Report for Security Errata, Bugfix, and Enhancement on CentOS/RHEL Systems
+### 方法 2a：为 CentOS / RHEL 系统上的安全修补、bugfix、增强生成补丁合规性报告的 Bash 脚本
 
-This script allows you to generate patching compliance reports for Security Errata, Bugfix, and Enhancement. It sends the output through a mail with the CSV file.
+脚本会为你生成安全修补、bugfix、增强的补丁合规性报告。它会通过 CSV 文件发送邮件。
 
 ```
 # vi /opt/scripts/small-scripts/sec-errata-bugfix-enhancement-1.sh
@@ -190,13 +190,13 @@ echo "Patching Report for `date +"%B %Y"`" | mailx -s "Patching Report on `date`
 rm /tmp/sec-up.csv
 ```
 
-Run the script file once you have added the above script.
+添加完上面的脚本后运行它。
 
 ```
 # sh /opt/scripts/small-scripts/sec-errata-bugfix-enhancement-1.sh
 ```
 
-You get an output like the one below.
+你会看到下面的输出。
 
 ![][6]
 
@@ -206,7 +206,7 @@ via: https://www.2daygeek.com/bash-script-to-generate-patching-compliance-report
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
