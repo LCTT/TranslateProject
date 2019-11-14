@@ -1,10 +1,10 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11575-1.html)
 [#]: subject: (Why blockchain (might be) coming to an IoT implementation near you)
-[#]: via: (https://www.networkworld.com/article/3386881/why-blockchain-might-be-coming-to-an-iot-implementation-near-you.html#tk.rss_all)
+[#]: via: (https://www.networkworld.com/article/3386881/why-blockchain-might-be-coming-to-an-iot-implementation-near-you.html)
 [#]: author: (Jon Gold https://www.networkworld.com/author/Jon-Gold/)
 
 为什么区块链（可能会）来到你身边的物联网
