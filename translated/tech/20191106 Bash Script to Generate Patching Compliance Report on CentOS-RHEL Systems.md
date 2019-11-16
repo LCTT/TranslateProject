@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Bash Script to Generate Patching Compliance Report on CentOS/RHEL Systems)
@@ -10,15 +10,13 @@
 在 CentOS/RHEL 系统上生成补丁合规报告的 Bash 脚本
 ======
 
-如果你运行的是大型 Linux 环境，那么你可能已经将 Red Hat 与 Satellite 集成了。
+![](https://img.linux.net.cn/data/attachment/album/201911/16/101428n1nsj74wifp4k1dz.jpg)
 
-如果是的话，有一种方法可以从 Satellite 服务器导出它，因此不必担心补丁合规性报告。
+如果你运行的是大型 Linux 环境，那么你可能已经将 Red Hat 与 Satellite 集成了。如果是的话，你不必担心补丁合规性报告，因为有一种方法可以从 Satellite 服务器导出它。
 
-但是，如果你运行的是没有 Satellite 集成的小型 Red Hat 环境，或者它是 CentOS 系统，那么此脚本将帮助你创建报告。
+但是，如果你运行的是没有 Satellite 集成的小型 Red Hat 环境，或者它是 CentOS 系统，那么此脚本将帮助你创建该报告。
 
-补丁合规性报告通常每月创建一次或三个月一次，具体取决于公司的需求。
-
-根据你的需要添加 cronjob 来自动执行此功能。
+补丁合规性报告通常每月创建一次或三个月一次，具体取决于公司的需求。根据你的需要添加 cronjob 来自动执行此功能。
 
 此 [bash 脚本][1] 通常适合于少于 50 个系统运行，但没有限制。
 
@@ -26,13 +24,11 @@
 
 以下文章可以帮助你了解有关在红帽 （RHEL） 和 CentOS 系统上安装安全修补程序的更多详细信息。
 
-  * **[如何检查红帽 （RHEL） 和 CentOS 系统上的可用安全更新][2]**
-  * **[在红帽 （RHEL） 和 CentOS 系统上安装安全更新的四种方法][3]**
-  * **[两种用来检查或列出红帽 （RHEL） 和 CentOS 系统上已安装的安全更新的方法][4]**
+  * [如何在 CentOS 或 RHEL 系统上检查可用的安全更新？][2]
+  * [在 RHEL 和 CentOS 系统上安装安全更新的四种方法][3]
+  * [在 RHEL 和 CentOS 上检查或列出已安装的安全更新的两种方法][4]
 
-
-
-此教程中包含四个 [shell 脚本][5]，选择适合你的脚本。
+此教程中包含四个 [shell 脚本][5]，请选择适合你的脚本。
 
 ### 方法 1：为 CentOS / RHEL 系统上的安全修补生成补丁合规性报告的 Bash 脚本
 
@@ -79,7 +75,7 @@ server4
 +-----------------------------------+
 ```
 
-现价下面的 cronjob 来每个月得到一份补丁合规性报告。
+添加下面的 cronjob 来每个月得到一份补丁合规性报告。
 
 ```
 # crontab -e
@@ -198,7 +194,7 @@ rm /tmp/sec-up.csv
 
 你会看到下面的输出。
 
-![][6]
+![][7]
 
 --------------------------------------------------------------------------------
 
@@ -207,15 +203,16 @@ via: https://www.2daygeek.com/bash-script-to-generate-patching-compliance-report
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
 [1]: https://www.2daygeek.com/category/bash-script/
-[2]: https://www.2daygeek.com/check-list-view-find-available-security-updates-on-redhat-rhel-centos-system/
+[2]: https://linux.cn/article-10938-1.html
 [3]: https://www.2daygeek.com/install-security-updates-on-redhat-rhel-centos-system/
-[4]: https://www.2daygeek.com/check-installed-security-updates-on-redhat-rhel-and-centos-system/
+[4]: https://linux.cn/article-10960-1.html
 [5]: https://www.2daygeek.com/category/shell-script/
-[6]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+[6]: https://www.2daygeek.com/wp-content/uploads/2019/11/bash-script-to-generate-patching-compliance-report-on-centos-rhel-systems-2.png
+[7]: https://www.2daygeek.com/wp-content/uploads/2019/11/bash-script-to-generate-patching-compliance-report-on-centos-rhel-systems-3.png
