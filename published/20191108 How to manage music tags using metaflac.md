@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11579-1.html)
 [#]: subject: (How to manage music tags using metaflac)
 [#]: via: (https://opensource.com/article/19/11/metaflac-fix-music-tags)
 [#]: author: (Chris Hermansen https://opensource.com/users/clhermansen)
@@ -14,7 +14,7 @@
 
 ![](https://img.linux.net.cn/data/attachment/album/201911/16/093629njth88bej8ttekh2.jpg)
 
-很早我就会将 CD 翻录到电脑。在此期间，我用过几种不同的翻录工具，观察到每种工具在标记上似乎有不同的做法，特别是在保存哪些音乐元数据上。所谓“观察”，我是指音乐播放器似乎按照有趣的顺序对专辑进行排序，它们将一个目录中的曲目分为两张专辑，或者产生了其他令人沮丧的烦恼。
+很久以来我就将 CD 翻录到电脑。在此期间，我用过几种不同的翻录工具，观察到每种工具在标记上似乎有不同的做法，特别是在保存哪些音乐元数据上。所谓“观察”，我是指音乐播放器似乎按照有趣的顺序对专辑进行排序，它们将一个目录中的曲目分为两张专辑，或者产生了其他令人沮丧的烦恼。
 
 我还看到有些标签非常不明确，许多音乐播放器和标签编辑器没有显示它们。即使这样，在某些极端情况下，它们仍可以使用这些标签来分类或显示音乐，例如播放器将所有包含 XYZ 标签的音乐文件与不包含该标签的所有文件分离到不同的专辑中。
 
