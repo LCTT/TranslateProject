@@ -7,56 +7,56 @@
 [#]: via: (https://www.linuxtechi.com/install-configure-postfix-mailserver-centos-8/)
 [#]: author: (James Kiarie https://www.linuxtechi.com/author/james/)
 
-How to install and Configure Postfix Mail Server on CentOS 8
+如何在 CentOS 8 上安装和配置 Postfix 邮件服务器
 ======
 
-**Postfix** is a free and opensource **MTA** (Mail Transfer Agent) used for routing or delivering emails on a Linux system. In this guide, you will learn how to install and configure Postfix on CentOS 8.
+**Postfix** 是一个免费的开源 **MTA**（邮件传输代理），用于在 Linux 系统上路由或传递电子邮件。在本指南中，你将学习如何在 CentOS 8 上安装和配置 Postfix。
 
 [![Install-configure-Postfx-Server-CentOS8][1]][2]
 
-Lab set up:
+实验室设置：
 
-  * OS :                  CentOS 8 server
-  * IP Address :   192.168.1.13
-  * Hostname:     server1.crazytechgeek.info (Ensure the domain name is pointed to the server’s IP)
+  * 系统：CentOS 8 服务器
+  * IP 地址：192.168.1.13
+  * 主机名：server1.crazytechgeek.info（确保域名指向服务器的 IP）
 
 
 
-### Step 1) Update the system
+### 步骤 1）更新系统
 
-The first step is to ensure that the system packages are up to date. To do so, update the system as follows:
+第一步是确保系统软件包是最新的。为此，请按如下所示更新系统：
 
 ```
 # dnf update
 ```
 
-Before proceeding further, also ensure that no other **MTAs** such as **Sendmail** are existing as this will cause conflict with Postfix configuration. To remove Sendmail, for example, run the command:
+继续之前，还请确保不存在其他 **MTA**（如 **Sendmail**），因为这将导致与 Postfix 配置冲突。例如，要删除 Sendmail，请运行以下命令：
 
 ```
 # dnf remove sendmail
 ```
 
-### Step 2)  Set Hostname and update /etc/hosts file
+### 步骤 2）设置主机名并更新 /etc/hosts
 
-Use below hostnamectl command to set the hostname on your system,
+使用下面的 hostnamectl 命令在系统上设置主机名，
 
 ```
 # hostnamectl set-hostname server1.crazytechgeek.info
 # exec bash
 ```
 
-Additionally, you need to add the system’s hostname and IP entries in the /etc/hosts file
+此外，你需要在 /etc/hosts 中添加系统的主机名和 IP。
 
 ```
 # vim /etc/hosts
 192.168.1.13   server1.crazytechgeek.info
 ```
 
-Save and exit the file.
+保存并退出文件。
 
-### Step 3) Install Postfix Mail Server
+### 步骤 3）安装 Postfix 邮件服务器
 
-After verifying that no other MTA is running on the system install Postfix by executing the command:
+验证系统上没有其他 MTA 在运行后，运行以下命令安装 Postfix：
 
 ```
 # dnf install postfix
@@ -64,16 +64,16 @@ After verifying that no other MTA is running on the system install Postfix by ex
 
 [![Install-Postfix-Centos8][1]][3]
 
-### Step 4) Start and enable Postfix Service
+### 步骤 4）启动并启用 Postfix 服务
 
-Upon successful installation of Postfix, start and enable Postfix service by running:
+成功安装 Postfix 后，运行以下命令启动并启用 Postfix 服务：
 
 ```
 # systemctl start postfix
 # systemctl enable postfix
 ```
 
-To check Postfix status, run the following systemctl command
+要检查 Postfix 状态，请运行以下 systemctl 命令
 
 ```
 # systemctl status postfix
@@ -81,11 +81,11 @@ To check Postfix status, run the following systemctl command
 
 ![Start-Postfix-check-status-centos8][1]
 
-Great, we have verified that Postfix is up and running. Next, we are going to configure Postfix to send emails locally to our server.
+太好了，我们已经验证了 Postfix 已启动并正在运行。接下来，我们将配置 Postfix 从本地发送邮件到我们的服务器。
 
-### Step 5) Install mailx email client
+### 步骤 5）安装 mailx 邮件客户端
 
-Before configuring the Postfix server, we need to install mailx feature, To install mailx, run the command:
+在配置 Postfix 服务器之前，我们需要安装 mailx，要安装它，请运行以下命令：
 
 ```
 # dnf install mailx
@@ -93,64 +93,64 @@ Before configuring the Postfix server, we need to install mailx feature, To inst
 
 ![Install-Mailx-CentOS8][1]
 
-### Step 6)  Configure Postfix Mail Server
+### 步骤 6）配置 Postfix 邮件服务器
 
-Postfix’s configuration file is located in **/etc/postfix/main.cf**. We need to make a few changes in the configuration file, so open it using your favorite text editor.
+Postfix 的配置文件位于 **/etc/postfix/main.cf** 中。我们需要对配置文件进行一些修改，因此请使用你喜欢的文本编辑器将其打开。
 
 ```
 # vi /etc/postfix/main.cf
 ```
 
-Make changes to the following lines:
+更改以下几行：
 
 ```
 myhostname = server1.crazytechgeek.info
 mydomain = crazytechgeek.info
 myorigin = $mydomain
-## Uncomment and Set inet_interfaces to all ##
+## 取消注释并将 inet_interfaces 设置为 all##
 inet_interfaces = all
-## Change to all ##
+## 更改为 all ##
 inet_protocols = all
-## Comment ##
+## 注释 ##
 #mydestination = $myhostname, localhost.$mydomain, localhost
-##- Uncomment ##
+## 取消注释 ##
 mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
-## Uncomment and add IP range ##
+## 取消注释并添加 IP 范围 ##
 mynetworks = 192.168.1.0/24, 127.0.0.0/8
-## Uncomment ##
+## 取消注释 ##
 home_mailbox = Maildir/
 ```
 
-Once done, save and exit the configuration file. Restart postfix  service for the changes to take effect
+完成后，保存并退出配置文件。重新启动 postfix 服务以使更改生效。
 
 ```
 # systemctl restart postfix
 ```
 
-### Step 7) Testing  Postfix Mail Server
+### 步骤 7）测试 Postfix 邮件服务器
 
-Test whether our configuration is working, first, create a test user
+测试我们的配置是否有效，首先，创建一个测试用户。
 
 ```
 # useradd postfixuser
 # passwd postfixuser
 ```
 
-Next, run the command below to send email from **pkumar** local user to another user ‘**postfixuser**‘
+接下来，运行以下命令，从本地用户 **pkumar** 发送邮件到另一个用户 “**postfixuser**”。
 
 ```
 # telnet localhost smtp
-or
+或者
 # telnet localhost 25
 ```
 
-If telnet service is not installed, you can install it using the command:
+如果未安装 telnet 服务，那么可以使用以下命令进行安装：
 
 ```
 # dnf install telnet -y
 ```
 
-When you run the command as earlier indicated, you should get the output as shown
+如前所述运行命令时，应获得如下输出：
 
 ```
 [root@linuxtechi ~]# telnet localhost 25
@@ -160,13 +160,13 @@ Escape character is '^]'.
 220 server1.crazytechgeek.info ESMTP Postfix
 ```
 
-Above confirm that connectivity to postfix mail server is working fine. Next, type the command:
+上面的结果确认与 postfix 邮件服务器的连接正常。接下来，输入命令：
 
 ```
 # ehlo localhost
 ```
 
-Output will be something like this
+输出看上去像这样：
 
 ```
 250-server1.crazytechgeek.info
@@ -181,7 +181,7 @@ Output will be something like this
 250 SMTPUTF8
 ```
 
-Next, run the commands highlighted in orange, like “mail from”, “rcpt to”, data and then finally type quit,
+接下来，运行橙色高亮的命令，例如 “mail from”、“rcpt to”，“data”，最后输入 “quit”，
 
 ```
 mail from:<pkumar>
@@ -198,11 +198,11 @@ quit
 Connection closed by foreign host
 ```
 
-Complete telnet command to send email from local user “**pkumar**” to another local user “**postfixuser**” would be something like below
+完成 telnet 命令可从本地用户 “**pkumar**” 发送邮件到另一个本地用户 “**postfixuser**”，如下所示：
 
 ![Send-email-with-telnet-centos8][1]
 
-If everything went according to plan, you should be able to view the email sent at the new user’s home directory.
+如果一切都按计划进行，那么你应该可以在新用户的家目录中查看发送的邮件。
 
 ```
 # ls /home/postfixuser/Maildir/new
@@ -210,7 +210,7 @@ If everything went according to plan, you should be able to view the email sent 
 #
 ```
 
-To read the email, simply use the cat command as follows:
+要阅读邮件，只需使用 cat 命令，如下所示：
 
 ```
 # cat /home/postfixuser/Maildir/new/1573580091.Vfd02I20050b8M635437.server1.crazytechgeek.info
@@ -218,9 +218,9 @@ To read the email, simply use the cat command as follows:
 
 ![Read-postfix-email-linux][1]
 
-### Postfix mail server logs
+### Postfix 邮件服务器日志
 
-Postfix mail server mail logs are stored in the file “**/var/log/maillog**“, use below command to view the live logs,
+Postfix 邮件服务器邮件日志保存在文件 “**/var/log/maillog**” 中，使用以下命令查看实时日志，
 
 ```
 # tail -f /var/log/maillog
@@ -228,17 +228,17 @@ Postfix mail server mail logs are stored in the file “**/var/log/maillog**“,
 
 ![postfix-maillogs-centos8][1]
 
-### Securing Postfix Mail Server
+### 保护 Postfix 邮件服务器
 
-It is always recommended secure the communication of between clients and postfix server, this can be achieved using SSL certificates, these certificates can be either from trusted authority or Self Signed Certificates. In this tutorial we will generate Self Signed certificated for postfix using **openssl** command,
+建议始终确保客户端和 postfix 服务器之间的通信安全，这可以使用 SSL 证书来实现，它们可以来自受信任的权威机构或自签名证书。在本教程中，我们将使用 **openssl** 命令生成用于 postfix 的自签名证书，
 
-I am assuming openssl is already installed on your system, in case it is not installed then use following dnf command,
+我假设 openssl 已经安装在你的系统上，如果未安装，请使用以下 dnf 命令，
 
 ```
 # dnf install openssl -y
 ```
 
-Generate Private key and CSR (Certificate Signing Request) using beneath openssl command,
+使用下面的 openssl 命令生成私钥和 CSR（证书签名请求），
 
 ```
 # openssl req -nodes -newkey rsa:2048 -keyout mail.key -out mail.csr
@@ -246,7 +246,7 @@ Generate Private key and CSR (Certificate Signing Request) using beneath openssl
 
 ![Postfix-Key-CSR-CentOS8][1]
 
-Now Generate Self signed certificate using following openssl command,
+现在，使用以下 openssl 命令生成自签名证书，
 
 ```
 # openssl x509 -req -days 365 -in mail.csr -signkey mail.key -out mail.crt
@@ -256,13 +256,13 @@ Getting Private key
 #
 ```
 
-Now copy private key and certificate file to /etc/postfix directory
+现在将私钥和证书文件复制到 /etc/postfix 目录下。
 
 ```
 # cp mail.key mail.crt /etc/postfix
 ```
 
-Update Private key and Certificate file’s path in postfix configuration file,
+在 postfix 配置文件中更新私钥和证书文件的路径
 
 ```
 # vi /etc/postfix/main.cf
@@ -274,21 +274,21 @@ smtpd_tls_security_level = may
 ………
 ```
 
-Restart postfix service to make above changes into the effect.
+重启 postfix 服务以使上述更改生效。
 
 ```
 # systemctl restart postfix
 ```
 
-Let’s try to send email to internal local domain and external domain using mailx client.
+让我们尝试使用 mailx 客户端将邮件发送到内部本地域和外部域。
 
-**Sending local internal email from pkumar user to postfixuser**
+**从 pkumar 发送内部本地邮件到 postfixuser 中**
 
 ```
 # echo "test email" | mailx -s "Test email from Postfix MailServer" -r root@linuxtechi root@linuxtechi
 ```
 
-Check and read the email using the following,
+使用以下命令检查并阅读邮件，
 
 ```
 # cd /home/postfixuser/Maildir/new/
@@ -301,17 +301,17 @@ total 8
 
 ![Read-Postfixuser-Email-CentOS8][1]
 
-**Sending email from postfixuser to external domain ( [root@linuxtechi][4])**
+**从 postfixuser 发送邮件到外部域 （( [root@linuxtechi][4])）**
 
 ```
 # echo "External Test email" | mailx -s "Postfix MailServer" -r root@linuxtechi root@linuxtechi
 ```
 
-**Note:** If Your IP is not blacklisted anywhere then your email to external domain will be delivered otherwise it will be bounced saying that IP is blacklisted in so and so spamhaus database.
+**注意：** 如果你的 IP 没有被任何地方列入黑名单，那么你发送到外部域的邮件将被发送，否则它将被退回，并提示你的 IP 被 spamhaus 之类的数据库列入黑名单。
 
-### Check Postfix mail queue
+### 检查 Postfix 邮件队列
 
-Use mailq command to list mails which are in queue.
+使用mailq命令列出队列中的邮件。
 
 ```
 # mailq
@@ -319,7 +319,7 @@ Mail queue is empty
 #
 ```
 
-And that’s it! Our Postfix configuration is working! That’s all for now. We hope you found this tutorial insightful and that you can comfortably set up your local Postfix server.
+完成！我们的 Postfix 配置正常工作了！目前就这样了。我们希望你觉得本教程有见地，并且你可以轻松地设置本地 Postfix 服务器。
 
   * [Facebook][5]
   * [Twitter][6]
@@ -334,7 +334,7 @@ via: https://www.linuxtechi.com/install-configure-postfix-mailserver-centos-8/
 
 作者：[James Kiarie][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
