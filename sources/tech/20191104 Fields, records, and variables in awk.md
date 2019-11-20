@@ -9,7 +9,7 @@
 
 awk中的字段，记录和变量
 ======
-这个系列的第二篇，我们会学到 字段，记录和一些非常有用的awk变量。
+这个系列的第二篇，我们会学习 字段，记录和一些非常有用的awk变量。
 ![Man at laptop on a mountain][1]
 
 Awk 有好几个变种： 最早的 **awk**, 是1977 年 AT&amp;T Bell 实验室所创。它还有一些重构版本，例如 **mawk**, **nawk**。在大多数Linux 发行版中能见到的，是 GNU awk，也叫**gawk**。 在大多数 Linux 发行版中，awk 和 gawk 都是指向 GNU awk 的链接。 输入awk命令，也是同样的效果。 [GNU awk 用户手册][2]中，能看到 awk 和 gawk 的全部历史。
@@ -174,7 +174,6 @@ NR &gt; 1 {
 }
 ```
 
-Arguably, there's no advantage to having just one line in a script, but sometimes it's easier to execute a script than to remember and type even a single line. A script file also provides a good opportunity to document what a command does. Lines starting with the **#** symbol are comments, which awk ignores.
 可以说，脚本中只有一行，大多数情况下没什么用。 但在某些情况下，执行一个脚本，比记住，然后打一条命令要容易的多。 一个脚本文件，也提供了一个记录命令具体作用的好机会。 以  **#** 号开头的行是注释，awk 会忽略它们。
 
 给文件可执行权限：
@@ -200,8 +199,6 @@ $ ./example2.awk colours.txt
 将awk 命令放在脚本文件中，有一个好处就是，修改和格式化输出会更容易。在终端中，如果能用一行执行多条awk命令，那么输入多行，才能达到同样效果，就显得有些多余了。
 
 ### 试一试
-
-You now know enough about how awk processes your instructions to be able to write a complex awk program. Try writing an awk script with more than one rule and at least one conditional pattern. If you want to try more functions than just **print** and **printf**, refer to [the gawk manual][4] online.
 
 你现在已经足够了解， awk 是如何执行指令的了。现在你应该能编写复杂的awk 程序了。 试着编写一个awk 脚本，它需要: 至少包括一个条件模式，以及多个规则。如果你想使用除 **print** 和 **printf** 以外的函数，可以参考在线[ gawk 手册][4] .
 
