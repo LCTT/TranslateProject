@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11595-1.html)
 [#]: subject: (What you probably didn’t know about sudo)
 [#]: via: (https://opensource.com/article/19/10/know-about-sudo)
 [#]: author: (Peter Czanik https://opensource.com/users/czanik)
@@ -12,7 +12,7 @@
 
 > 觉得你已经了解了 sudo 的所有知识了吗？再想想。
 
-![Command line prompt][1]
+![](https://img.linux.net.cn/data/attachment/album/201911/20/091740ape5b74jppjj4q36.jpg)
 
 大家都知道 `sudo`，对吗？默认情况下，该工具已安装在大多数 Linux 系统上，并且可用于大多数 BSD 和商业 Unix 变体。不过，在与数百名 `sudo` 用户交谈之后，我得到的最常见的答案是 `sudo` 是一个使生活复杂化的工具。
 
@@ -161,7 +161,7 @@ Defaults log_output
 
 如果你想了解有关 `sudo` 的更多信息，请参考以下资源：
 
-* [sudo `网站][5]
+* [sudo 网站][5]
 * [sudo 博客][6]
 * [在 Twitter 上关注我们][7]
 
