@@ -63,24 +63,21 @@ Protobuf 可用于现代 RPC 系统，例如 [gRPC][5]；但是 Protobuf 本身�
 
 让我们看一下负十进制值 `-128`。在 2 的补码二进制表示形式（在系统和语言中占主导地位）中，此值可以存储在单个 8 位字节中：`10000000`。此整数值在 XML 或 JSON 中的文本编码需要多个字节。例如，UTF-8 编码需要四个字节的字符串，即 `-128`，即每个字符一个字节（十六进制，值为 `0x2d`、`0x31`、`0x32` 和 `0x38`）。XML 和 JSON 还添加了标记字符，例如尖括号和大括号。有关 Protobuf 编码的详细信息下面就会介绍，但现在的关注点是一个通用点：文本编码的压缩性明显低于二进制编码。
 
-### A code example in Go using Protobuf
+### 在 Go 中使用 Protobuf 的示例
 
-My code examples focus on Protobuf rather than RPC. Here is an overview of the first example:
+我的代码示例着重于 Protobuf 而不是RPC。以下是第一个示例的概述：
 
-  * The IDL file named _dataitem.proto_ defines a Protobuf `message` with six fields of different types: integer values with different ranges, floating-point values of a fixed size, and strings of two different lengths.
-  * The Protobuf compiler uses the IDL file to generate a Go-specific version (and, later, a Java-specific version) of the Protobuf `message` together with supporting functions.
-  * A Go app populates the native Go data structure with randomly generated values and then serializes the result to a local file. For comparison, XML and JSON encodings also are serialized to local files.
-  * As a test, the Go application reconstructs an instance of its native data structure by deserializing the contents of the Protobuf file.
-  * As a language-neutrality test, the Java application also deserializes the contents of the Protobuf file to get an instance of a native data structure.
+* 名为 `dataitem.proto` 的 IDL 文件定义了一个 Protobuf 消息，它具有六个不同类型的字段：具有不同范围的整数值、固定大小的浮点值以及两个不同长度的字符串。
+* Protobuf 编译器使用 IDL 文件生成 Protobuf 消息及支持函数的 Go 特定版本（以及后来的 Java 特定版本）。
+* Go 应用程序使用随机生成的值填充原生 Go 数据结构，然后将结果序列化为本地文件。为了进行比较， XML 和 JSON 编码也被序列化为本地文件。
+* 作为测试，Go 应用程序通过反序列化 Protobuf 文件的内容来重建其原生数据结构的实例。
+* 作为语言中立性测试，Java 应用程序还会对 Protobuf 文件的内容进行反序列化以获取原生数据结构的实例。
 
+[我的网站][6]上提供了该 IDL 文件以及两个 Go 和一个 Java 源文件，打包为 ZIP 文件。
 
+最重要的 Protobuf IDL 文档如下所示。该文档存储在文件 `dataitem.proto` 中，并具有常规的`.proto` 扩展名。
 
-This IDL file and two Go and one Java source files are available as a ZIP file on [my website][6].
-
-The all-important Protobuf IDL document is shown below. The document is stored in the file _dataitem.proto_, with the customary _.proto_ extension.
-
-#### Example 1. Protobuf IDL document
-
+#### 示例 1、Protobuf IDL 文档
 
 ```
 syntax = "proto3";
@@ -99,10 +96,9 @@ message DataItem {
 }
 ```
 
-The IDL uses the current proto3 rather than the earlier proto2 syntax. The package name (in this case, `main`) is optional but customary; it is used to avoid name conflicts. The structured `message` contains eight fields, each of which has a Protobuf data type (e.g., `int64`, `string`), a name (e.g., `oddA`, `short`), and a numeric tag (aka key) after the equals sign `=`. The tags, which are 1 through 8 in this example, are unique integer identifiers that determine the order in which the fields are serialized.
+该 IDL 使用当前的 proto3 而不是较早的 proto2 语法。软件包名称（在本例中为 `main`）是可选的，但是惯用的；它用于避免名称冲突。这个结构化的消息包含八个字段，每个字段都有一个 Protobuf 数据类型（例如，`int64`、`string`）、名称（例如，`oddA`、`short`）和一个等号 `=` 之后的数字标签（即键）。标签（在此示例中为 1 到 8）是唯一的整数标识符，用于确定字段序列化的顺序。
 
-Protobuf messages can be nested to arbitrary levels, and one message can be the field type in the other. Here's an example that uses the `DataItem` message as a field type:
-
+Protobuf 消息可以嵌套到任意级别，而一个消息可以是另外一个消息的字段类型。这是一个使用 `DataItem` 消息作为字段类型的示例：
 
 ```
 message DataItems {
@@ -110,10 +106,9 @@ message DataItems {
 }
 ```
 
-A single `DataItems` message consists of repeated (none or more) `DataItem` messages.
+单个 `DataItems` 消息由重复的（零个或多个）`DataItem` 消息组成。
 
-Protobuf also supports enumerated types for clarity:
-
+为了清晰起见，Protobuf 还支持枚举类型：
 
 ```
 enum PartnershipStatus {
@@ -121,71 +116,67 @@ enum PartnershipStatus {
 }
 ```
 
-The `reserved` qualifier ensures that the numeric values used to implement the three symbolic names cannot be reused.
+`reserved` 限定符确保用于实现这三个符号名的数值不能重复使用。
 
-To generate a language-specific version of one or more declared Protobuf `message` structures, the IDL file containing these is passed to the _protoc_ compiler (available in the [Protobuf GitHub repository][7]). For the Go code, the supporting Protobuf library can be installed in the usual way (with `%` as the command-line prompt):
-
-
-```
-`% go get github.com/golang/protobuf/proto`
-```
-
-The command to compile the Protobuf IDL file _dataitem.proto_ into Go source code is:
-
+为了生成一个或多个声明的 Protobuf 消息结构的特定于语言的版本，包含这些结构的 IDL 文件被传递到`protoc` 编译器（可在 [Protobuf GitHub 存储库][7]中找到）。对于 Go 代码，可以以通常的方式安装支持的 Protobuf 库（这里以 `％` 作为命令行提示符）：
 
 ```
-`% protoc --go_out=. dataitem.proto`
+% go get github.com/golang/protobuf/proto
 ```
 
-The flag `\--go_out` directs the compiler to generate Go source code; there are similar flags for other languages. The result, in this case, is a file named _dataitem.pb.go_, which is small enough that the essentials can be copied into a Go application. Here are the essentials from the generated code:
+将 Protobuf IDL 文件 `dataitem.proto` 编译为 Go 源代码的命令是：
 
+```
+% protoc --go_out=. dataitem.proto
+```
+
+标志 `--go_out` 指示编译器生成 Go 源代码。其他语言也有类似的标志。在这种情况下，结果是一个名为 `dataitem.pb.go` 的文件，该文件足够小，可以将基本内容复制到 Go 应用程序中。以下是生成的代码的主要部分：
 
 ```
 var _ = proto.Marshal
 
 type DataItem struct {
-   OddA  int64   `protobuf:"varint,1,opt,name=oddA" json:"oddA,omitempty"`
-   EvenA int64   `protobuf:"varint,2,opt,name=evenA" json:"evenA,omitempty"`
-   OddB  int32   `protobuf:"varint,3,opt,name=oddB" json:"oddB,omitempty"`
-   EvenB int32   `protobuf:"varint,4,opt,name=evenB" json:"evenB,omitempty"`
-   Small float32 `protobuf:"fixed32,5,opt,name=small" json:"small,omitempty"`
-   Big   float32 `protobuf:"fixed32,6,opt,name=big" json:"big,omitempty"`
-   Short string  `protobuf:"bytes,7,opt,name=short" json:"short,omitempty"`
-   Long  string  `protobuf:"bytes,8,opt,name=long" json:"long,omitempty"`
+   OddA  int64   `protobuf:"varint,1,opt,name=oddA" json:"oddA,omitempty"`
+   EvenA int64   `protobuf:"varint,2,opt,name=evenA" json:"evenA,omitempty"`
+   OddB  int32   `protobuf:"varint,3,opt,name=oddB" json:"oddB,omitempty"`
+   EvenB int32   `protobuf:"varint,4,opt,name=evenB" json:"evenB,omitempty"`
+   Small float32 `protobuf:"fixed32,5,opt,name=small" json:"small,omitempty"`
+   Big   float32 `protobuf:"fixed32,6,opt,name=big" json:"big,omitempty"`
+   Short string  `protobuf:"bytes,7,opt,name=short" json:"short,omitempty"`
+   Long  string  `protobuf:"bytes,8,opt,name=long" json:"long,omitempty"`
 }
 
-func (m *DataItem) Reset()         { *m = DataItem{} }
+func (m *DataItem) Reset()         { *m = DataItem{} }
 func (m *DataItem) String() string { return proto.CompactTextString(m) }
-func (*DataItem) ProtoMessage()    {}
+func (*DataItem) ProtoMessage()    {}
 func init() {}
 ```
 
-The compiler-generated code has a Go structure `DataItem`, which exports the Go fields—the names are now capitalized—that match the names declared in the Protobuf IDL. The structure fields have standard Go data types: `int32`, `int64`, `float32`, and `string`. At the end of each field line, as a string, is metadata that describes the Protobuf types, gives the numeric tags from the Protobuf IDL document, and provides information about JSON, which is discussed later.
+编译器生成的代码具有 Go 结构 `DataItem`，该结构导出 Go 字段（名称现已大写开头），该字段与 Protobuf IDL 中声明的名称匹配。该结构字段具有标准的 Go 数据类型：`int32`、`int64`、`float32` 和 `string`。在每个字段行的末尾，是描述 Protobuf 类型的字符串，提供 Protobuf  IDL 文档中的数字标签并提供有关 JSON 信息的元数据，这将在后面讨论。
 
-There are also functions; the most important is `proto.Marshal` for serializing an instance of the `DataItem` structure into Protobuf format. The helper functions include `Reset`, which clears a `DataItem` structure, and `String`, which produces a one-line string representation of a `DataItem`.
+此外也有函数；最重要的是 `Proto.Marshal`，用于将 `DataItem` 结构的实例序列化为 Protobuf格式。辅助函数包括：清除 `DataItem` 结构的 `Reset`，生成 `DataItem` 的单行字符串表示的 `String`。
 
-The metadata that describes Protobuf encoding deserves a closer look before analyzing the Go program in more detail.
+描述 Protobuf 编码的元数据应在更详细地分析 Go 程序之前进行仔细研究。
 
-### Protobuf encoding
+### Protobuf 编码
 
-A Protobuf message is structured as a collection of key/value pairs, with the numeric tag as the key and the corresponding field as the value. The field names, such as `oddA` and `small`, are for human readability, but the _protoc_ compiler does use the field names in generating language-specific counterparts. For example, the `oddA` and `small` names in the Protobuf IDL become the fields `OddA` and `Small`, respectively, in the Go structure.
+Protobuf 消息的结构为键/值对的集合，其中数字标签为键，相应的字段为值。字段名称（例如，`oddA` 和 `small`）是供人类阅读的，但是 `protoc` 编译器的确使用了字段名称来生成特定于语言的对应名称。例如，Protobuf IDL 中的 `oddA` 和 `small` 名称在 Go 结构中分别成为字段 `OddA` 和 `Small`。
 
-The keys and their values both get encoded, but with an important difference: some numeric values have a fixed-size encoding of 32 or 64 bits, whereas others (including the `message` tags) are _varint_ encoded—the number of bits depends on the integer's absolute value. For example, the integer values 1 through 15 require 8 bits to encode in _varint_, whereas the values 16 through 2047 require 16 bits. The _varint_ encoding, similar in spirit (but not in detail) to UTF-8 encoding, favors small integer values over large ones. (For a detailed analysis, see the Protobuf [encoding guide][8].) The upshot is that a Protobuf `message` should have small integer values in fields, if possible, and as few keys as possible, but one key per field is unavoidable.
+键和它们的值都被编码，但是有一个重要的区别：一些数字值具有固定大小的 32 或 64 位的编码，而其他数字（包括消息标签）则是 `varint` 编码的，位数取决于整数的绝对值。例如，整数值 1 到 15 需要 8 位 `varint` 编码，而值 16 到 2047 需要 16 位。`varint` 编码在本质上与 UTF-8 编码类似（但细节不同），它偏爱较小的整数值而不是较大的整数值。（有关详细分析，请参见 Protobuf [编码指南][8]）结果是，Protobuf 消息应该在字段中具有较小的整数值（如果可能），并且键数应尽可能少，但每个字段只有一个键是必不可少的。
 
-Table 1 below gives the gist of Protobuf encoding:
+下表 1 列出了 Protobuf 编码的要点：
 
-`Table 1. Protobuf data types`
-
-Encoding | Sample types | Length
+编码 | 示例类型 | 长度
 ---|---|---
-varint | int32, uint32, int64 | Variable length
-fixed | fixed32, float, double | Fixed 32-bit or 64-bit length
-byte sequence | string, bytes | Sequence length
+`varint` | `int32`、`uint32`、`int64` | 可变长度
+`fixed` | `fixed32`、`float`、`double` | 固定的 32 位或 64 位长度
+字节序列 | `string`、`bytes` | 序列长度
 
-Integer types that are not explicitly `fixed` are _varint_ encoded; hence, in a _varint_ type such as `uint32` (`u` for unsigned), the number 32 describes the integer's range (in this case, 0 to 232 \- 1) rather than its bit size, which differs depending on the value. For fixed types such as `fixed32` or `double`, by contrast, the Protobuf encoding requires 32 and 64 bits, respectively. Strings in Protobuf are byte sequences; hence, the size of the field encoding is the length of the byte sequence.
+*表 1. Protobuf 数据类型*
 
-Another efficiency deserves mention. Recall the earlier example in which a `DataItems` message consists of repeated `DataItem` instances:
+未明确固定长度的整数类型是 `varint` 编码的；因此，在 `varint` 类型中，例如 `uint32`（`u` 代表无符号），数字 32 描述了整数的范围（在这种情况下为 0 到 2^32 - 1），而不是其位的大小，该位大小取决于值。相比之下，对于固定长度类型（例如 `fixed32` 或 `double`），Protobuf 编码分别需要 32 位和 64 位。Protobuf 中的字符串是字节序列；因此，字段编码的大小就是字节序列的长度。
 
+另一个高效的方法值得一提。回想一下前面的示例，其中的 `DataItems` 消息由重复的 `DataItem` 实例组成：
 
 ```
 message DataItems {
@@ -193,22 +184,21 @@ message DataItems {
 }
 ```
 
-The `repeated` means that the `DataItem` instances are _packed_: the collection has a single tag, in this case, 1. A `DataItems` message with repeated `DataItem` instances is thus more efficient than a message with multiple but separate `DataItem` fields, each of which would require a tag of its own.
+`repeated` 表示 `DataItem` 实例是*打包的*：集合具有单个标签，在这种情况下为 1。因此，具有重复的 `DataItem` 实例的 `DataItems` 消息比具有多个但单独的 `DataItem` 字段，每个字段都需要自己的标签的消息的效率更高。
 
-With this background in mind, let's return to the Go program.
+考虑到这一背景，让我们回到 Go 程序。
 
-### The dataItem program in detail
+### dataItem 程序的细节
 
-The _dataItem_ program creates a `DataItem` instance and populates the fields with randomly generated values of the appropriate types. Go has a `rand` package with functions for generating pseudo-random integer and floating-point values, and my `randString` function generates pseudo-random strings of specified lengths from a character set. The design goal is to have a `DataItem` instance with field values of different types and bit sizes. For example, the `OddA` and `EvenA` values are 64-bit non-negative integer values of odd and even parity, respectively; but the `OddB` and `EvenB` variants are 32 bits in size and hold small integer values between 0 and 2047. The random floating-point values are 32 bits in size, and the strings are 16 (`Short`) and 32 (`Long`) characters in length. Here is the code segment that populates the `DataItem` structure with random values:
-
+`dataItem` 程序创建一个 `DataItem` 实例，并使用适当类型的随机生成的值填充字段。Go 有一个 `rand` 包，带有用于生成伪随机整数和浮点值的函数，而我的 `randString` 函数可以从字符集中生成指定长度的伪随机字符串。设计目标是要有一个具有不同类型和位大小的字段值的 `DataItem` 实例。例如，`OddA` 和 `EvenA` 值分别是奇偶校验的 64 位非负整数值；但是 `OddB` 和 `EvenB` 变体的大小为 32 位，并存放 0 到 2047 之间的小整数值。随机浮点值的大小为 32 位，字符串为 16（`Short`）和 32（`Long`）字符的长度。这是用随机值填充 `DataItem` 结构的代码段：
 
 ```
 // variable-length integers
-n1 := rand.Int63()        // bigger integer
-if (n1 &amp; 1) == 0 { n1++ } // ensure it's odd
+n1 := rand.Int63()        // bigger integer
+if (n1 & 1) == 0 { n1++ } // ensure it's odd
 ...
 n3 := rand.Int31() % UpperBound // smaller integer
-if (n3 &amp; 1) == 0 { n3++ }       // ensure it's odd
+if (n3 & 1) == 0 { n3++ }       // ensure it's odd
 
 // fixed-length floats
 ...
@@ -220,36 +210,34 @@ str1 := randString(StrShort)
 str2 := randString(StrLong)
 
 // the message
-dataItem := &amp;DataItem {
-   OddA:  n1,
-   EvenA: n2,
-   OddB:  n3,
-   EvenB: n4,
-   Big:   f1,
-   Small: f2,
-   Short: str1,
-   Long:  str2,
+dataItem := &DataItem {
+   OddA:  n1,
+   EvenA: n2,
+   OddB:  n3,
+   EvenB: n4,
+   Big:   f1,
+   Small: f2,
+   Short: str1,
+   Long:  str2,
 }
 ```
 
-Once created and populated with values, the `DataItem` instance is encoded in XML, JSON, and Protobuf, with each encoding written to a local file:
-
+创建并填充值后，`DataItem` 实例将以 XML、JSON 和 Protobuf 进行编码，每种编码均写入本地文件：
 
 ```
 func encodeAndserialize(dataItem *DataItem) {
-   bytes, _ := xml.MarshalIndent(dataItem, "", " ")  // Xml to dataitem.xml
-   ioutil.WriteFile(XmlFile, bytes, 0644)            // 0644 is file access permissions
+   bytes, _ := xml.MarshalIndent(dataItem, "", " ")  // Xml to dataitem.xml
+   ioutil.WriteFile(XmlFile, bytes, 0644)            // 0644 is file access permissions
 
-   bytes, _ = json.MarshalIndent(dataItem, "", " ")  // Json to dataitem.json
-   ioutil.WriteFile(JsonFile, bytes, 0644)
+   bytes, _ = json.MarshalIndent(dataItem, "", " ")  // Json to dataitem.json
+   ioutil.WriteFile(JsonFile, bytes, 0644)
 
-   bytes, _ = proto.Marshal(dataItem)                // Protobuf to dataitem.pbuf
-   ioutil.WriteFile(PbufFile, bytes, 0644)
+   bytes, _ = proto.Marshal(dataItem)                // Protobuf to dataitem.pbuf
+   ioutil.WriteFile(PbufFile, bytes, 0644)
 }
 ```
 
-The three serializing functions use the term _marshal_, which is roughly synonymous with _serialize_. As the code indicates, each of the three `Marshal` functions returns an array of bytes, which then are written to a file. (Possible errors are ignored for simplicity.) On a sample run, the file sizes were:
-
+这三个序列化函数使用术语 `marshal`，它与 `serialize` 意思大致相同。如代码所示，三个 `Marshal` 函数均返回一个字节数组，然后将其写入文件。（为简单起见，可能的错误将被忽略处理。）在示例运行中，文件大小为：
 
 ```
 dataitem.xml:  262 bytes
@@ -257,57 +245,53 @@ dataitem.json: 212 bytes
 dataitem.pbuf:  88 bytes
 ```
 
-The Protobuf encoding is significantly smaller than the other two. The XML and JSON serializations could be reduced slightly in size by eliminating indentation characters, in this case, blanks and newlines.
+Protobuf 编码明显小于其他两个编码方案。通过消除缩进字符（在这种情况下为空白和换行符），可以稍微减小 XML 和 JSON 序列化的大小。
 
-Below is the _dataitem.json_ file resulting eventually from the `json.MarshalIndent` call, with added comments starting with `##`:
-
+以下是 `dataitem.json` 文件，该文件最终是由 `json.MarshalIndent` 调用产生的，并添加了以 `##` 开头的注释：
 
 ```
 {
- "oddA":  4744002665212642479,                ## 64-bit &gt;= 0
- "evenA": 2395006495604861128,                ## ditto
- "oddB":  57,                                 ## 32-bit &gt;= 0 but &lt; 2048
- "evenB": 468,                                ## ditto
- "small": 0.7562016,                          ## 32-bit floating-point
- "big":   0.85202795,                         ## ditto
- "short": "ClH1oDaTtoX$HBN5",                 ## 16 random chars
- "long":  "xId0rD3Cri%3Wt%^QjcFLJgyXBu9^DZI"  ## 32 random chars
+ "oddA":  4744002665212642479,                ## 64-bit >= 0
+ "evenA": 2395006495604861128,                ## ditto
+ "oddB":  57,                                 ## 32-bit >= 0 but < 2048
+ "evenB": 468,                                ## ditto
+ "small": 0.7562016,                          ## 32-bit floating-point
+ "big":   0.85202795,                         ## ditto
+ "short": "ClH1oDaTtoX$HBN5",                 ## 16 random chars
+ "long":  "xId0rD3Cri%3Wt%^QjcFLJgyXBu9^DZI"  ## 32 random chars
 }
 ```
 
-Although the serialized data goes into local files, the same approach would be used to write the data to the output stream of a network connection.
+尽管这些序列化的数据写入到本地文件中，但是也可以使用相同的方法将数据写入网络连接的输出流。
 
-### Testing serialization/deserialization
+### 测试序列化和反序列化
 
-The Go program next runs an elementary test by deserializing the bytes, which were written earlier to the _dataitem.pbuf_ file, into a `DataItem` instance. Here is the code segment, with the error-checking parts removed:
-
+Go 程序接下来通过将先前写入 `dataitem.pbuf` 文件的字节反序列化为 `DataItem` 实例来运行基本测试。这是代码段，其中除去了错误检查部分：
 
 ```
 filebytes, err := ioutil.ReadFile(PbufFile) // get the bytes from the file
 ...
-testItem.Reset()                            // clear the DataItem structure
-err = proto.Unmarshal(filebytes, testItem)  // deserialize into a DataItem instance
+testItem.Reset()                            // clear the DataItem structure
+err = proto.Unmarshal(filebytes, testItem)  // deserialize into a DataItem instance
 ```
 
-The `proto.Unmarshal` function for deserializing Protbuf is the inverse of the `proto.Marshal` function. The original `DataItem` and the deserialized clone are printed to confirm an exact match:
-
+用于 Protbuf 反序列化的 `proto.Unmarshal` 函数与 `proto.Marshal` 函数相反。原始的 `DataItem` 和反序列化的副本将被打印出来以确认完全匹配：
 
 ```
 Original:
 2041519981506242154 3041486079683013705 1192 1879
 0.572123 0.326855
-boPb#T0O8Xd&amp;Ps5EnSZqDg4Qztvo7IIs 9vH66AiGSQgCDxk&amp;
+boPb#T0O8Xd&Ps5EnSZqDg4Qztvo7IIs 9vH66AiGSQgCDxk&
 
 Deserialized:
 2041519981506242154 3041486079683013705 1192 1879
 0.572123 0.326855
-boPb#T0O8Xd&amp;Ps5EnSZqDg4Qztvo7IIs 9vH66AiGSQgCDxk&amp;
+boPb#T0O8Xd&Ps5EnSZqDg4Qztvo7IIs 9vH66AiGSQgCDxk&
 ```
 
-### A Protobuf client in Java
+### 一个 Java Protobuf 客户端
 
-The example in Java is to confirm Protobuf's language neutrality. The original IDL file could be used to generate the Java support code, which involves nested classes. To suppress warnings, however, a slight addition can be made. Here is the revision, which specifies a `DataMsg` as the name for the outer class, with the inner class automatically named `DataItem` after the Protobuf message:
-
+Java 中的示例是为了确认 Protobuf 的语言中立性。原始 IDL 文件可用于生成 Java 支持代码，其中涉及嵌套类。但是，为了抑制警告信息，可以进行一些补充。这是修订版，它指定了一个 `DataMsg` 作为外部类的名称，内部类在 Protobuf 消息后自动命名为 `DataItem`：
 
 ```
 syntax = "proto3";
@@ -320,175 +304,172 @@ message DataItem {
 ...
 ```
 
-With this change in place, the _protoc_ compilation is the same as before, except the desired output is now Java rather than Go:
-
+进行此更改后，`protoc` 编译与以前相同，只是所预期的输出现在是 Java 而不是 Go：
 
 ```
-`% protoc --java_out=. dataitem.proto`
+% protoc --java_out=. dataitem.proto
 ```
 
-The resulting source file (in a subdirectory named _main_) is _DataMsg.java_ and about 1,120 lines in length: Java is not terse. Compiling and then running the Java code requires a JAR file with the library support for Protobuf. This file is available in the [Maven repository][9].
+生成的源文件（在名为 `main` 的子目录中）为 `DataMsg.java`，长度约为 1,120 行：Java 并不简洁。编译然后运行 Java 代码需要具有 Protobuf 库支持的 JAR 文件。该文件位于 [Maven 存储库][9]中。
 
-With the pieces in place, my test code is relatively short (and available in the ZIP file as _Main.java_):
-
+放置好这些片段后，我的测试代码相对较短（并且在 ZIP 文件中以 `Main.java` 形式提供）：
 
 ```
 package main;
 import java.io.FileInputStream;
 
 public class Main {
-   public static void main(String[] args) {
-      String path = "dataitem.pbuf";  // from the Go program's serialization
-      try {
-         DataMsg.DataItem deserial =
-           DataMsg.DataItem.newBuilder().mergeFrom(new FileInputStream(path)).build();
+   public static void main(String[] args) {
+      String path = "dataitem.pbuf";  // from the Go program's serialization
+      try {
+         DataMsg.DataItem deserial =
+           DataMsg.DataItem.newBuilder().mergeFrom(new FileInputStream(path)).build();
 
-         System.out.println(deserial.getOddA()); // 64-bit odd
-         System.out.println(deserial.getLong()); // 32-character string
-      }
-      catch(Exception e) { System.err.println(e); }
-    }
+         System.out.println(deserial.getOddA()); // 64-bit odd
+         System.out.println(deserial.getLong()); // 32-character string
+      }
+      catch(Exception e) { System.err.println(e); }
+    }
 }
 ```
 
-Production-grade testing would be far more thorough, of course, but even this preliminary test confirms the language-neutrality of Protobuf: the _dataitem.pbuf_ file results from the Go program's serialization of a Go `DataItem`, and the bytes in this file are deserialized to produce a `DataItem` instance in Java. The output from the Java test is the same as that from the Go test.
+当然，生产级的测试将更加彻底，但是即使是该初步测试也可以证明 Protobuf 的语言中立性：`dataitem.pbuf` 文件是 Go 程序对 Go `DataItem` 进行序列化的结果，并且该文件中的字节被反序列化以在 Java 中产生一个 `DataItem` 实例。Java 测试的输出与 Go 测试的输出相同。
 
-### Wrapping up with the numPairs program
+### 用 numPairs 程序来结束
 
-Let's end with an example that highlights Protobuf efficiency but also underscores the cost involved in any encoding technology. Consider this Protobuf IDL file:
-
+让我们以一个突出 Protobuf 效率但又强调在任何编码技术中都会涉及到的成本的示例作为结尾。考虑以下 Protobuf IDL 文件：
 
 ```
 syntax = "proto3";
 package main;
 
 message NumPairs {
-  repeated NumPair pair = 1;
+  repeated NumPair pair = 1;
 }
 
 message NumPair {
-  int32 odd = 1;
-  int32 even = 2;
+  int32 odd = 1;
+  int32 even = 2;
 }
 ```
 
-A `NumPair` message consists of two `int32` values together with an integer tag for each field. A `NumPairs` message is a sequence of embedded `NumPair` messages.
+`NumPair` 消息由两个 `int32` 值以及每个字段的整数标签组成。`NumPairs` 消息是嵌入的 `NumPair` 消息的序列。
 
-The _numPairs_ program in Go (below) creates 2 million `NumPair` instances, with each appended to the `NumPairs` message. This message can be serialized and deserialized in the usual way.
+Go 语言的 `numPairs` 程序（如下）创建了 200 万个 `NumPair` 实例，每个实例都附加到 `NumPairs` 消息中。该消息可以按常规方式进行序列化和反序列化。
 
-#### Example 2. The numPairs program
-
+#### 示例 2、numPairs 程序
 
 ```
 package main
 
 import (
-   "math/rand"
-   "time"
-   "encoding/xml"
-   "encoding/json"
-   "io/ioutil"
-   "github.com/golang/protobuf/proto"
+   "math/rand"
+   "time"
+   "encoding/xml"
+   "encoding/json"
+   "io/ioutil"
+   "github.com/golang/protobuf/proto"
 )
 
 // protoc-generated code: start
 var _ = proto.Marshal
 type NumPairs struct {
-   Pair []*NumPair `protobuf:"bytes,1,rep,name=pair" json:"pair,omitempty"`
+   Pair []*NumPair `protobuf:"bytes,1,rep,name=pair" json:"pair,omitempty"`
 }
 
-func (m *NumPairs) Reset()         { *m = NumPairs{} }
+func (m *NumPairs) Reset()         { *m = NumPairs{} }
 func (m *NumPairs) String() string { return proto.CompactTextString(m) }
-func (*NumPairs) ProtoMessage()    {}
+func (*NumPairs) ProtoMessage()    {}
 func (m *NumPairs) GetPair() []*NumPair {
-   if m != nil { return m.Pair }
-   return nil
+   if m != nil { return m.Pair }
+   return nil
 }
 
 type NumPair struct {
-   Odd  int32 `protobuf:"varint,1,opt,name=odd" json:"odd,omitempty"`
-   Even int32 `protobuf:"varint,2,opt,name=even" json:"even,omitempty"`
+   Odd  int32 `protobuf:"varint,1,opt,name=odd" json:"odd,omitempty"`
+   Even int32 `protobuf:"varint,2,opt,name=even" json:"even,omitempty"`
 }
 
-func (m *NumPair) Reset()         { *m = NumPair{} }
+func (m *NumPair) Reset()         { *m = NumPair{} }
 func (m *NumPair) String() string { return proto.CompactTextString(m) }
-func (*NumPair) ProtoMessage()    {}
+func (*NumPair) ProtoMessage()    {}
 func init() {}
 // protoc-generated code: finish
 
 var numPairsStruct NumPairs
-var numPairs = &amp;numPairsStruct
+var numPairs = &numPairsStruct
 
 func encodeAndserialize() {
-   // XML encoding
-   filename := "./pairs.xml"
-   bytes, _ := xml.MarshalIndent(numPairs, "", " ")
-   ioutil.WriteFile(filename, bytes, 0644)
+   // XML encoding
+   filename := "./pairs.xml"
+   bytes, _ := xml.MarshalIndent(numPairs, "", " ")
+   ioutil.WriteFile(filename, bytes, 0644)
 
-   // JSON encoding
-   filename = "./pairs.json"
-   bytes, _ = json.MarshalIndent(numPairs, "", " ")
-   ioutil.WriteFile(filename, bytes, 0644)
+   // JSON encoding
+   filename = "./pairs.json"
+   bytes, _ = json.MarshalIndent(numPairs, "", " ")
+   ioutil.WriteFile(filename, bytes, 0644)
 
-   // ProtoBuf encoding
-   filename = "./pairs.pbuf"
-   bytes, _ = proto.Marshal(numPairs)
-   ioutil.WriteFile(filename, bytes, 0644)
+   // ProtoBuf encoding
+   filename = "./pairs.pbuf"
+   bytes, _ = proto.Marshal(numPairs)
+   ioutil.WriteFile(filename, bytes, 0644)
 }
 
-const HowMany = 200 * 100  * 100 // two million
+const HowMany = 200 * 100  * 100 // two million
 
 func main() {
-   rand.Seed(time.Now().UnixNano())
+   rand.Seed(time.Now().UnixNano())
 
-   // uncomment the modulus operations to get the more efficient version
-   for i := 0; i &lt; HowMany; i++ {
-      n1 := rand.Int31() // % 2047
-      if (n1 &amp; 1) == 0 { n1++ } // ensure it's odd
-      n2 := rand.Int31() // % 2047
-      if (n2 &amp; 1) == 1 { n2++ } // ensure it's even
+   // uncomment the modulus operations to get the more efficient version
+   for i := 0; i < HowMany; i++ {
+      n1 := rand.Int31() // % 2047
+      if (n1 & 1) == 0 { n1++ } // ensure it's odd
+      n2 := rand.Int31() // % 2047
+      if (n2 & 1) == 1 { n2++ } // ensure it's even
 
-      next := &amp;NumPair {
-                 Odd:  n1,
-                 Even: n2,
-              }
-      numPairs.Pair = append(numPairs.Pair, next)
-   }
-   encodeAndserialize()
+      next := &NumPair {
+                 Odd:  n1,
+                 Even: n2,
+              }
+      numPairs.Pair = append(numPairs.Pair, next)
+   }
+   encodeAndserialize()
 }
 ```
 
-The randomly generated odd and even values in each `NumPair` range from zero to 2 billion and change. In terms of raw rather than encoded data, the integers generated in the Go program add up to 16MB: two integers per `NumPair` for a total of 4 million integers in all, and each value is four bytes in size.
+每个 `NumPair` 中随机生成的奇数和偶数值的范围在 0 到 20 亿之间变化。就原始数据（而非编码数据）而言，Go 程序中生成的整数加起来为 16MB：每个 `NumPair` 为两个整数，总计为 400 万个整数，每个值的大小为四个字节。
 
-For comparison, the table below has entries for the XML, JSON, and Protobuf encodings of the 2 million `NumPair` instances in the sample `NumsPairs` message. The raw data is included, as well. Because the _numPairs_ program generates random values, output differs across sample runs but is close to the sizes shown in the table.
+为了进行比较，下表列出了 XML、JSON 和 Protobuf 编码的示例 `NumsPairs` 消息的 200 万个 `NumPair` 实例。原始数据也包括在内。由于 `numPairs` 程序生成随机值，因此样本运行的输出有所不同，但接近表中显示的大小。
 
-`Table 2. Encoding overhead for 16MB of integers`
 
-Encoding | File | Byte size | Pbuf/other ratio
+编码 | 文件 | 字节大小 | Pbuf/其它 比例
 ---|---|---|---
-None | pairs.raw | 16MB | 169%
+无 | pairs.raw | 16MB | 169%
 Protobuf | pairs.pbuf | 27MB | —
 JSON | pairs.json | 100MB | 27%
 XML | pairs.xml | 126MB | 21%
 
-As expected, Protobuf shines next to XML and JSON. The Protobuf encoding is about a quarter of the JSON one and about a fifth of the XML one. But the raw data make clear that Protobuf incurs the overhead of encoding: the serialized Protobuf message is 11MB larger than the raw data. Any encoding, including Protobuf, involves structuring the data, which unavoidably adds bytes.
+*表 2. 16MB 整数的编码开销*
 
-Each of the serialized 2 million `NumPair` instances involves _four_ integer values: one apiece for the `Even` and `Odd` fields in the Go structure, and one tag per each field in the Protobuf encoding. As raw rather than encoded data, this would come to 16 bytes per instance, and there are 2 million instances in the sample `NumPairs` message. But the Protobuf tags, like the `int32` values in the `NumPair` fields, use _varint_ encoding and, therefore, vary in byte length; in particular, small integer values (which include the tags, in this case) require fewer than four bytes to encode.
+不出所料，Protobuf 和之后的 XML 和 JSON 差别明显。Protobuf 编码大约是 JSON 的四分之一，而是 XML 的五分之一。但是原始数据清楚地表明 Protobuf 会产生编码开销：序列化的 Protobuf 消息比原始数据大 11MB。包括 Protobuf 在内的任何编码都涉及结构化数据，这不可避免地会增加字节。
 
-If the _numPairs_ program is revised so that the two `NumPair` fields hold values less than 2048, which have encodings of either one or two bytes, then the Protobuf encoding drops from 27MB to 16MB—the very size of the raw data. The table below summarizes the new encoding sizes from a sample run.
+序列化的 200 万个 `NumPair` 实例中的每个实例都包含**四**个整数值：Go 结构中的 `Even` 和 `Odd` 字段分别一个，而 Protobuf 编码中的每个字段每个标签一个。作为原始数据而不是编码数据，每个实例将达到 16 个字节，样本 `NumPairs` 消息中有 200 万个实例。但是 Protobuf 标记（如 `NumPair` 字段中的 `int32` 值）使用 `varint` 编码，因此字节长度有所不同。特别是，小的整数值（在这种情况下，包括标签在内）需要不到四个字节进行编码。
 
-`Table 3. Encoding with 16MB of integers &lt; 2048`
+如果对 `numPairs` 程序进行了修改，以使两个 `NumPair` 字段的值小于 2048，且其编码为一或两个字节，则 Protobuf 编码将从 27MB 下降到 16MB，这正是原始数据的大小。下表总结了样本运行中的新编码大小。
 
-Encoding | File | Byte size | Pbuf/other ratio
+编码 | 文件 | 字节大小 | Pbuf/其它 比例
 ---|---|---|---
 None | pairs.raw | 16MB | 100%
 Protobuf | pairs.pbuf | 16MB | —
 JSON | pairs.json | 77MB | 21%
 XML | pairs.xml | 103MB | 15%
 
-In summary, the modified _numPairs_ program, with field values less than 2048, reduces the four-byte size for each integer value in the raw data. But the Protobuf encoding still requires tags, which add bytes to the Protobuf message. Protobuf encoding does have a cost in message size, but this cost can be reduced by the _varint_ factor if relatively small integer values, whether in fields or keys, are being encoded.
+*表 3. 编码 16MB 的小于 2048 的整数*
 
-For moderately sized messages consisting of structured data with mixed types—and relatively small integer values—Protobuf has a clear advantage over options such as XML and JSON. In other cases, the data may not be suited for Protobuf encoding. For example, if two applications need to share a huge set of text records or large integer values, then compression rather than encoding technology may be the way to go.
+总之，修改后的 `numPairs` 程序的字段值小于 2048，可减少原始数据中每个整数值的四字节大小。但是 Protobuf 编码仍然需要标签，这些标签会在 Protobuf 消息中添加字节。Protobuf 编码确实会增加消息大小，但是如果要编码相对较小的整数值（无论是字段还是键），则可以通过 `varint` 因子来减少此开销。
+
+对于包含混合类型的结构化数据（且整数值相对较小）的中等大小的消息，Protobuf 明显优于 XML 和 JSON 等选项。在其他情况下，数据可能不适合 Protobuf 编码。例如，如果两个应用程序需要共享大量文本记录或大整数值，则可以采用压缩而不是编码技术。
 
 --------------------------------------------------------------------------------
 
@@ -496,7 +477,7 @@ via: https://opensource.com/article/19/10/protobuf-data-interchange
 
 作者：[Marty Kalin][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
