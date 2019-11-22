@@ -7,21 +7,21 @@
 [#]: via: (https://opensourceforu.com/2019/11/developing-a-simple-web-application-using/)
 [#]: author: (Jis Joe Mathew https://opensourceforu.com/author/jis-joe/)
 
-Developing a Simple Web Application Using Flutter
+使用 Flutter 开发简单的 Web 应用
 ======
 
 [![][1]][2]
 
-_This article guides readers on how to run and deploy their first Web application using Flutter._
+_本文指导读者如何使用 Flutter 运行和部署第一个 Web 应用。_
 
-Flutter has moved to a new stage, the Web, after having travelled a long way in Android and iOS development. Flutter 1.5 has been released by Google, along with support for Web application development.
+Flutter 在 Android 和 iOS 开发方面走了很长一段路之后，已经迈入了一个新的阶段，即 Web。Google 发布了 Flutter 1.5，同时支持 Web 应用开发。
 
-**Configuring Flutter for the Web**
-In order to use the Web package, enter the _flutter upgrade_ command to update to Flutter version 1.5.4.
+**为 Web 配置 Flutter**
+为了使用 Web 包，输入命令 _flutter upgrade_ 更新到 Flutter 1.5.4。
 
-  * Open a terminal
-  * Type flutter upgrade
-  * Check the version by typing _flutter –version_
+  * 打开终端
+  * 输入 flutter upgrade
+  * 输入 _flutter –version_ 检查版本
 
 
 
@@ -29,12 +29,12 @@ In order to use the Web package, enter the _flutter upgrade_ command to update t
 
 ![Figure 2: Starting a new Flutter Web project in VSC][4]
 
-One can also use Android Studio 3.0 or later versions for Flutter Web development, but we will use Visual Studio Code for this tutorial.
+也可以将 Android Studio 3.0 或更高版本用于 Flutter Web 开发，但在本教程中，我们使用 Visual Studio Code。
 
-**Creating a new project with Flutter Web**
-Open Visual Studio Code and press _Shift+Ctrl+P_ to start a new project. Type flutter and select _New Web Project_.
-Now, name the project. I have named it _open_source_for_you_.
-Open the terminal window in VSC, and type in the following commands:
+**使用 Flutter Web 创建新项目**
+打开 Visual Studio Code，然后按 _Shift+Ctrl+P_ 开始一个新项目。输入 flutter 并选择 _New Web Project_。
+现在，为项目命名。我将其命名为 _open_source_for_you_。
+在 VSC 中打开终端窗口，然后输入以下命令：
 
 ```
 flutter packages pub global activate webdev
@@ -42,23 +42,23 @@ flutter packages pub global activate webdev
 flutter packages upgrade
 ```
 
-Now use the following command to run the website, on localhost, with the IP address 127.0.0.1
+现在，使用以下命令在 localhost 上运行网站，IP 地址是 127.0.0.1。
 
 ```
 flutter packages pub global run webdev serve
 ```
 
-Open any browser and type, _<http://127.0.0.1:8080/>_
-There is a Web folder inside the project directory which contains an _index.html_ file. The _dart_ file is compiled into a JavaScript file and is included in the HTML file using the following code:
+打开任何浏览器，然后输入 _<http://127.0.0.1:8080/>_。
+在项目目录中有个 Web 文件夹，其中包含了 _index.html_。 _dart_ 文件被编译成 JavaScript 文件，并使用以下代码包含在 HTML 文件中：
 
 ```
 <script defer src="main.dart.js" type="application/javascript"></script>
 ```
 
-**Coding and making changes to the demo page**
-Let’s create a simple application, which will print ‘Welcome to OSFY’ on the Web page.
-Let’s now open the Dart file, which is located in the _lib_ folder _main.dart_ (the default name) (see Figure 5).
-We can now remove the debug tag using the property of _MaterialApp_, as follows:
+**编码和修改演示页面**
+让我们创建一个简单的应用，它会在网页上打印 “ Welcome to OSFY”。
+现在打开 Dart 文件，它位于 _lib_ 文件夹 _main.dart_（默认名）中（参见图 5）。
+现在，我们可以在 _MaterialApp_ 的属性中删除调试标记，如下所示：
 
 ```
 debugShowCheckedModeBanner: false
@@ -70,8 +70,8 @@ debugShowCheckedModeBanner: false
 
 ![Figure 5: Location of main.dart file][7]
 
-Now, adding more into the Dart file is very similar to writing code in Flutter in Dart. For that, we can declare a class titled _MyClass_, which extends the _StatelessWidget_.
-We use a _Center_ widget to position elements to the centre. We can also add a _Padding_ widget to add padding. Use the following code to obtain the output shown in Figure 5. Use the Refresh button to view the changes.
+现在，向 Dart 中添加更多内容与在 Dart 中编写 Flutter 类似。为此，我们可以声明一个名为 _MyClass_ 的类，它继承了 _StatelessWidget_。
+我们使用 _Center_ 部件将元素定位到中心。我们还可以添加 _Padding_ 部件来添加填充。使用以下代码获得图 5 所示的输出。使用刷新按钮查看更改。
 
 ```
 class MyClass extends StatelessWidget {
@@ -101,7 +101,7 @@ style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
 
 ![Figure 7: Final output][9]
 
-Let’s add an image from the Internet – I’ve chosen the ‘Open Source for You’ logo from the magazine’s website. We use _Image.network_.
+让我们从互联网中添加一张图片，我已经从一个杂志网站选择了一张 “Open Source for You” 的 logo。我们使用 _Image.network_。
 
 ```
 Image.network(
@@ -111,13 +111,13 @@ width: 150
 ),
 ```
 
-The final output is shown in Figure 7.
+最终输出如图 7 所示。
 
 ![Avatar][10]
 
 [Jis Joe Mathew][11]
 
-The author is assistant professor of computer science and engineering at Amal Jyoti College, Kanirapally, Kerala. He can be contacted at [jisjoemathew@gmail.com][12].
+作者是喀拉拉邦卡尼拉帕利阿玛尔·乔蒂学院的计算机科学与工程助理教授。可以通过 [jisjoemathew@gmail.com][12] 与他联系。
 
 [![][13]][14]
 
@@ -127,7 +127,7 @@ via: https://opensourceforu.com/2019/11/developing-a-simple-web-application-usin
 
 作者：[Jis Joe Mathew][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
