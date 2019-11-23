@@ -1,5 +1,5 @@
 [#]: collector: "lujun9972"
-[#]: translator: "acyanbird "
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
