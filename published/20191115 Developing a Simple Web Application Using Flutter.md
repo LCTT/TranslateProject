@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11604-1.html)
 [#]: subject: (Developing a Simple Web Application Using Flutter)
 [#]: via: (https://opensourceforu.com/2019/11/developing-a-simple-web-application-using/)
 [#]: author: (Jis Joe Mathew https://opensourceforu.com/author/jis-joe/)
@@ -134,15 +134,15 @@ via: https://opensourceforu.com/2019/11/developing-a-simple-web-application-usin
 
 [a]: https://opensourceforu.com/author/jis-joe/
 [b]: https://github.com/lujun9972
-[1]: https://i1.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Screenshot-from-2019-11-15-16-20-30.png?resize=696%2C495&ssl=1 (Screenshot from 2019-11-15 16-20-30)
-[2]: https://i1.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Screenshot-from-2019-11-15-16-20-30.png?fit=900%2C640&ssl=1
-[3]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-1-Upgrading-Flutter-to-the-latest-version.jpg?resize=350%2C230&ssl=1
-[4]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-2-Starting-a-new-Flutter-Web-project-in-VSC.jpg?resize=350%2C93&ssl=1
-[5]: https://i2.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-3-Naming-the-project.jpg?resize=350%2C147&ssl=1
-[6]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-4-The-Flutter-demo-application-running-on-port-8080.jpg?resize=350%2C111&ssl=1
-[7]: https://i2.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-5-Location-of-main.dart-file.jpg?resize=350%2C173&ssl=1
-[8]: https://i2.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-6-Output-of-MyClass.jpg?resize=350%2C173&ssl=1
-[9]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-7-Final-output.jpg?resize=350%2C167&ssl=1
+[1]: https://i1.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Screenshot-from-2019-11-15-16-20-30.png
+[2]: https://i1.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Screenshot-from-2019-11-15-16-20-30.png
+[3]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-1-Upgrading-Flutter-to-the-latest-version.jpg
+[4]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-2-Starting-a-new-Flutter-Web-project-in-VSC.jpg
+[5]: https://i2.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-3-Naming-the-project.jpg
+[6]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-4-The-Flutter-demo-application-running-on-port-8080.jpg
+[7]: https://i2.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-5-Location-of-main.dart-file.jpg
+[8]: https://i2.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-6-Output-of-MyClass.jpg
+[9]: https://i0.wp.com/opensourceforu.com/wp-content/uploads/2019/11/Figure-7-Final-output.jpg
 [10]: https://secure.gravatar.com/avatar/64db0e07799ae14fd1b51d0633db6593?s=100&r=g
 [11]: https://opensourceforu.com/author/jis-joe/
 [12]: mailto:jisjoemathew@gmail.com
