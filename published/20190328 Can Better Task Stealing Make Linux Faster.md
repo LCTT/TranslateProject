@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11607-1.html)
 [#]: subject: (Can Better Task Stealing Make Linux Faster?)
 [#]: via: (https://www.linux.com/blog/can-better-task-stealing-make-linux-faster)
 [#]: author: (Oracle )
 
 更好的任务窃取可以使 Linux 更快吗？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201911/23/235729l71755he6e4mpvkq.jpg)
 
 > Oracle Linux 内核开发人员 Steve Sistare 参与了这场有关内核调度程序改进的讨论。
 
