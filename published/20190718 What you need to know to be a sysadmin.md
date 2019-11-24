@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11608-1.html)
 [#]: subject: (What you need to know to be a sysadmin)
 [#]: via: (https://opensource.com/article/19/7/be-a-sysadmin)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > 通过获得这些起码的能力，开始你的系统管理员职业。
 
-![People work on a computer server with devices][1]
+![](https://img.linux.net.cn/data/attachment/album/201911/24/103900w5m09jyyyeyrnovu.jpg)
 
 昔日的系统管理员整天都在调教用户和摆弄服务器，一天的时间都奔波在几百米长的电缆之间。随着云计算、容器和虚拟机的复杂性的增加，而今依然如此。
 
