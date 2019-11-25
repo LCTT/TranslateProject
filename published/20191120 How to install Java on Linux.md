@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11614-1.html)
 [#]: subject: (How to install Java on Linux)
 [#]: via: (https://opensource.com/article/19/11/install-java-linux)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > 在桌面上拥抱 Java 应用程序，然后在所有桌面上运行它们。
 
-![Coffee beans][1]
+![](https://img.linux.net.cn/data/attachment/album/201911/26/065307hk22caubakkos0u0.jpg)
 
 无论你运行的是哪种操作系统，通常都有几种安装应用程序的方法。有时你可能会在应用程序商店中找到一个应用程序，或者使用 Fedora 上的 DNF 或 Mac 上的 Brew 这样的软件包管理器进行安装，而有时你可能会从网站上下载可执行文件或安装程序。因为 Java 是这么多流行的应用程序的后端，所以最好了解安装它的不同方法。好消息是你有很多选择，本文涵盖了所有这些内容。
 
