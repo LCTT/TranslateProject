@@ -28,6 +28,12 @@ bauh：在一个界面中管理 Snap、Flatpak 和 AppImage
 
 你也可以搜索应用程序。bauh 提供了有关已安装和已搜索软件包的详细信息。如果你对一种（或多种）软件包类型不感兴趣，则可以在设置中取消选择它们。
 
+![Bauh Search][22]
+
+![Bauh Package Info][13]
+
+![Bauh Updating][19]
+
 ### 在你的 Linux 发行版上安装 bauh
 
 让我们看看如何安装 bauh。
@@ -39,8 +45,6 @@ bauh：在一个界面中管理 Snap、Flatpak 和 AppImage
 ```
 sudo pacman -S bauh
 ```
-
-![Bauh Package Info][13]
 
 #### 基于 Debian/Ubuntu 的发行版
 
@@ -78,8 +82,6 @@ env/bin/pip install .
 env/bin/bauh
 ```
 
-![Bauh Updating][19]
-
 一旦完成了 bauh 的安装，就可以通过更改环境设置和参数来对其进行[微调][20]。
 
 ### bauh 的未来之路
@@ -90,8 +92,6 @@ bauh 在短短的几个月中增长了很多。它有计划继续增长。当前
 * 每种打包技术一个单独模块
 * 内存和性能改进
 * 改善用户体验
-   
-![Bauh Search][22]
 
 ### 结语
 
