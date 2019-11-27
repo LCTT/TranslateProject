@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11617-1.html)
 [#]: subject: (Bauh – Manage Snaps, Flatpaks and AppImages from One Interface)
 [#]: via: (https://itsfoss.com/bauh-package-manager/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
@@ -10,21 +10,29 @@
 bauh：在一个界面中管理 Snap、Flatpak 和 AppImage
 ======
 
-[Snap][1]、[Flatpak][2] 和 [AppImage][3] 等通用软件包的最大问题之一就是管理它们。大多数内置的软件包管理器不能全部支持这些新格式。
+![](https://img.linux.net.cn/data/attachment/album/201911/27/092926pzzdtytda80yaany.jpg)
 
-幸运的是，我偶然发现了一个支持几种通用包格式的应用程序。
+[Snap][1]、[Flatpak][2] 和 [AppImage][3] 等通用软件包的最大问题之一就是管理它们。大多数内置的软件包管理器都不能全部支持这些新格式。
 
-### Bauh：多包装需求的管理器
+幸运的是，我偶然发现了一个支持这几种通用包格式的应用程序。
 
-[bauh][4]（LCTT：给该软件建议一个中文名：“包豪”）最初名为 fpakman，旨在处理 Flatpak、Snap、[AppImage][5] 和 [AUR][6] 软件包。创建者 [vinifmor][7] 在 2019 年 6 月启动了该项目，[意图][8]“为 Manjaro 用户提供管理 Flatpak 的图形界面”。此后，他扩展了该应用程序，以添加对基于 Debian 的系统的支持。
+### bauh：多包装需求的管理器
+
+[bauh][4]（LCTT：我给该软件建议一个中文名：“包豪”）最初名为 fpakman，旨在处理 Flatpak、Snap、[AppImage][5] 和 [AUR][6] 软件包。创建者 [vinifmor][7] 在 2019 年 6 月启动了该项目，[意图][8]“为 Manjaro 用户提供管理 Flatpak 的图形界面”。此后，他扩展了该应用程序，以添加对基于 Debian 的系统的支持。
 
 ![Bauh About][9]
 
-首次打开 bauh 时，它将扫描已安装的应用程序并检查更新。如果有任何需要更新的内容，它们将列在前面并居中。更新所有软件包后，你将看到已安装的软件包列表。你可以取消选择需要更新的软件包，以防止其被更新。你也可以选择安装该应用程序的早期版本。
+首次打开 bauh 时，它将扫描已安装的应用程序并检查更新。如果有任何需要更新的内容，它们将列在前面并居中。更新所有软件包后，你将看到已安装的软件包列表。你可以取消选择不需要更新的软件包，以防止其被更新。你也可以选择安装该应用程序的早期版本。
 
 ![With Bauh you can manage various types of packages from one application][10]
 
-你也可以搜索应用程序。bauh 提供了有关已安装和已搜索软件包的详细信息。如果你对一种（或多种）打包类型不感兴趣，则可以在设置中取消选择它们。
+你也可以搜索应用程序。bauh 提供了有关已安装和已搜索软件包的详细信息。如果你对一种（或多种）软件包类型不感兴趣，则可以在设置中取消选择它们。
+
+![Bauh Search][22]
+
+![Bauh Package Info][13]
+
+![Bauh Updating][19]
 
 ### 在你的 Linux 发行版上安装 bauh
 
@@ -37,8 +45,6 @@ bauh：在一个界面中管理 Snap、Flatpak 和 AppImage
 ```
 sudo pacman -S bauh
 ```
-
-![Bauh Package Info][13]
 
 #### 基于 Debian/Ubuntu 的发行版
 
@@ -76,8 +82,6 @@ env/bin/pip install .
 env/bin/bauh
 ```
 
-![Bauh Updating][19]
-
 一旦完成了 bauh 的安装，就可以通过更改环境设置和参数来对其进行[微调][20]。
 
 ### bauh 的未来之路
@@ -88,8 +92,6 @@ bauh 在短短的几个月中增长了很多。它有计划继续增长。当前
 * 每种打包技术一个单独模块
 * 内存和性能改进
 * 改善用户体验
-   
-![Bauh Search][22]
 
 ### 结语
 
