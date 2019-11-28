@@ -7,41 +7,42 @@
 [#]: via: (https://www.linuxtechi.com/install-ansible-centos-8-rhel-8/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-How to Install Ansible (Automation Tool) on CentOS 8/RHEL 8
+如何在 CentOS 8/RHEL 8 上安装 Ansible（自动化工具）
 ======
 
-**Ansible** is an awesome automation tool for Linux sysadmins. It is an open source configuration tool which allows sysadmins to manage hundreds of servers from one centralize node i.e **Ansible Server**. Ansible is the preferred configuration tool when it is compared with similar tools like **Puppet**, **Chef** and **Salt** because it doesn’t need any agent and it works on SSH and python.
+**Ansible** 是给 Linux 系统管理员使用的出色自动化工具。它是一种开源配置工具，能让系统管理员可以从一个中心节点（即 **Ansible 服务器**）管理数百台服务器。将 Ansible 与 **Puppet**、**Chef** 和 **Salt**等类似工具进行比较时，它是首选的配置工具，因为它不需要任何代理，并且可以工作在 SSH 和 python 上。
 
 [![Install-Ansible-CentOS8-RHEL8][1]][2]
 
-In this tutorial we will learn how to install and use Ansible on CentOS 8 and RHEL 8 system
+在本教程中，我们将学习如何在 CentOS 8 和 RHEL 8 系统上安装和使用 Ansble
 
-Ansible Lab Details:
+Ansible 实验环境信息：
 
-  * Minimal CentOS 8 / RHEL 8 Server (192.168.1.10) with Internet Connectivity
-  * Two Ansible Nodes – Ubuntu 18.04 LTS (192.168.1.20) &amp; CentOS 7 (192.168.1.30)
+  * Minimal CentOS 8 / RHEL 8 服务器（192.168.1.10），且有互联网连接
+  * 两个 Ansible 节点 - Ubuntu 18.04 LTS （192.168.1.20） 和 CentOS 7 （192.168.1.30）
 
 
 
-### Ansible Installation steps on CentOS 8 
+### CentOS 8 上的 Ansible 安装步骤
 
-Ansible package is not available in default CentOS 8 package repository. so we need to enable [EPEL Repository][3] by executing the following command,
+
+Ansible 包不在 CentOS 8 默认的软件包仓库中。因此，我们需要执行以下命令启用 [EPEL 仓库][3]，
 
 ```
 [root@linuxtechi ~]$ sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 ```
 
-Once the epel repository is enabled, execute the following dnf command to install Ansible
+启用 epel 仓库后，执行以下 dnf 命令安装 Ansble。
 
 ```
 [root@linuxtechi ~]$ sudo dnf install ansible
 ```
 
-Output of above command :
+上面命令的输出：
 
 ![dnf-install-ansible-centos8][1]
 
-Once the ansible is installed successfully, verify its version by running the following command
+成功安装 ansible 后，运行以下命令验证它的版本。
 
 ```
 [root@linuxtechi ~]$ sudo ansible --version
@@ -49,39 +50,39 @@ Once the ansible is installed successfully, verify its version by running the fo
 
 ![Ansible-version-CentOS8][1]
 
-Above output confirms that Installation is completed successfully on CentOS 8.
+上面的输出确认在 CentOS 8 上安装完成。
 
-Let’s move to RHEL 8 system
+让我们看下 RHEL 8 系统。
 
-### Ansible Installation steps on RHEL 8
+### RHEL 8 上的 Ansible 安装步骤
 
-If you have a valid RHEL 8 subscription then use following subscription-manager command to enable Ansible Repo,
+如果你有有效的 RHEL 8 订阅，请使用以下订阅管理器命令启用 Ansble 仓库，
 
 ```
 [root@linuxtechi ~]$ sudo subscription-manager repos --enable ansible-2.8-for-rhel-8-x86_64-rpms
 ```
 
-Once the repo is enabled then execute the following dnf command to install Ansible,
+启用仓库后，执行以下 dnf 命令安装 Ansible，
 
 ```
 [root@linuxtechi ~]$ sudo dnf install ansible -y
 ```
 
-Once the ansible and its dependent packages are installed then verify ansible version by executing the following command,
+安装 ansible 及其依赖包后，执行以下命令来验证它的版本，
 
 ```
 [root@linuxtechi ~]$ sudo ansible --version
 ```
 
-### Alternate Way to Install Ansible via pip3 on CentOS 8 / RHEL 8
+### 在 CentOS 8 / RHEL 8 上通过 pip3 安装 Ansible 的可选方法
 
-If you wish to install Ansible using **pip** (**python’s package manager**) then first install pyhton3 and python3-pip packages using following command,
+如果你希望使用 **pip**（python 的包管理器）安装 Ansible，请首先使用以下命令安装 pyhton3 和 python3-pip 包，
 
 ```
 [root@linuxtechi ~]$ sudo dnf install python3 python3-pip -y
 ```
 
-After pyhthon3 installation, verify its version by running
+安装 python3 后，运行以下命令来验证它的版本。
 
 ```
 [root@linuxtechi ~]$ python3 -V
@@ -89,23 +90,23 @@ Python 3.6.8
 [root@linuxtechi ~]$
 ```
 
-Now run below pip3 command to install Ansible,
+命令下面的 pip3 命令安装 Ansible，
 
 ```
 [root@linuxtechi ~]$ pip3 install ansible --user
 ```
 
-Output,
+输出，
 
 ![Ansible-Install-pip3-centos8][1]
 
-Above output confirms that Ansible has been installed successfully using pip3. Let’s see how we can use Ansible
+上面的输出确认 Ansible 已成功使用 pip3 安装。让我们看下如何使用 Ansible。
 
-### How to Use Ansible Automation Tool?
+### 如何使用 Ansible 自动化工具？
 
-When we install Ansible using yum or dnf command then its configuration file, inventory file and roles directory created automatically under /etc/ansible folder.
+当我们使用 yum 或 dnf 命令安装 Ansible 时，它的配置文件、清单文件和角色目录会自动在 /etc/ansible 文件夹下创建。
 
-So, let’s add a group with name “**labservers**” and under this group add ubuntu 18.04 and CentOS 7 System’s ip address in **/etc/ansible/hosts** file
+让我们添加一个名称为 “**labservers**” 的组，并在 **/etc/ansible/hosts** 文件中给该组添加 Ubuntu 18.04 和 CentOS 7 的系统 IP 地址。
 
 ```
 [root@linuxtechi ~]$ sudo vi /etc/ansible/hosts
@@ -116,9 +117,10 @@ So, let’s add a group with name “**labservers**” and under this group add 
 …
 ```
 
-Save &amp; exit file.
+保存并退出文件。
 
 Once the inventory file (/etc/ansible/hosts) is updated then exchange your user’s ssh public keys with remote systems which are part of “labservers” group.
+更新清单文件（/etc/ansible/hosts）后，将用户的 ssh 公钥与作为 “”组一部分的远程系统交换。
 
 Let’s first generate your local user’s public and private key using ssh-keygen command,
 
