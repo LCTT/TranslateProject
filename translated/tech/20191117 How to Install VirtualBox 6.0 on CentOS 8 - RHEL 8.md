@@ -7,48 +7,48 @@
 [#]: via: (https://www.linuxtechi.com/install-virtualbox-6-centos-8-rhel-8/)
 [#]: author: (Pradeep Kumar https://www.linuxtechi.com/author/pradeep/)
 
-How to Install VirtualBox 6.0 on CentOS 8 / RHEL 8
+如何在 CentOS 8 / RHEL 8 上安装 VirtualBox 6.0
 ======
 
-**VirtualBox** is a free and open source **virtualization tool** which allows techies to run multiple virtual machines of different flavor at the same time. It is generally used at desktop level (Linux and Windows), it becomes very handy when someone try to explore the features of new Linux distribution or want to install software like **OpenStack**, **Ansible** and **Puppet** in one VM, so in such scenarios one can launch a VM using VirtualBox.
+**VirtualBox** 是一款免费的开源**虚拟化工具**，它允许技术人员同时运行多个不同风格的虚拟机。它通常用于运行桌面（Linux 和 Windows），当人们尝试探索新的 Linux 发行版的功能或希望在 VM 中安装 **OpenStack**、**Ansible** 和  **Puppet** 等软件时，它会非常方便，在这种情况下，我们可以使用 VirtualBox 启动 VM。
 
-VirtualBox is categorized as **type 2 hypervisor** which means it requires an existing operating system, on top of which VirtualBox software will be installed. VirtualBox provides features to create our own custom host only network and NAT network. In this article we will demonstrate how to install latest version of VirtualBox 6.0 on CentOS 8 and RHEL 8 System and will also demonstrate on how to install VirtualBox Extensions.
+VirtualBox 被分类为**2 类虚拟机管理程序**，这意味着它需要一个现有的操作系统，在上面安装 VirtualBox 软件。VirtualBox 提供功能来创建本机网络或 NAT 网络。在本文中，我们将演示如何在 CentOS 8 和 RHEL 8 系统上安装最新版本的 VirtualBox 6.0，并演示如何安装 VirtualBox 扩展。
 
-### Installation steps of VirtualBox 6.0 on CentOS 8 / RHEL 8
+### 在 CentOS 8 / RHEL 8 上安装 VirtualBox 6.0 的安装步骤
 
-#### Step:1) Enable VirtualBox and EPEL Repository
+#### 步骤 1： 启用 VirtualBox 和 EPEL 仓库
 
-Login to your CentOS 8 or RHEL 8 system and open terminal and execute the following commands to enable VirtualBox and EPEL package repository.
+登录到你的 CentOS 8 或 RHEL 8 系统并打开终端，执行以下命令并启用 VirtualBox 和 EPEL 包仓库。
 
 ```
 [root@linuxtechi ~]# dnf config-manager --add-repo=https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
 ```
 
-Use below rpm command to import Oracle VirtualBox Public Key
+使用以下 rpm 命令导入 Oracle VirtualBox 公钥
 
 ```
 [root@linuxtechi ~]# rpm --import https://www.virtualbox.org/download/oracle_vbox.asc
 ```
 
-Enable EPEL repo using following dnf command,
+使用以下 dnf 命令启用 EPEL 仓库，
 
 ```
 [root@linuxtechi ~]# dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 ```
 
-#### Step:2) Install VirtualBox Build tools and dependencies
+#### 步骤 2： 安装 VirtualBox 构建工具和依赖项
 
-Run the following command to install all VirtualBox build tools and dependencies,
+运行以下命令来安装所有 VirtualBox 构建工具和依赖项，
 
 ```
 [root@linuxtechi ~]# dnf install binutils kernel-devel kernel-headers libgomp make patch gcc glibc-headers glibc-devel dkms -y
 ```
 
-Once above dependencies and build tools are installed successfully then proceed with VirtualBox installation using dnf command,
+成功安装上面的依赖项和构建工具后，使用 dnf 命令继续安装 VirtualBox，
 
-#### Step:3) Install VirtualBox 6.0 on CentOS 8 / RHEL 8
+#### 步骤 3： 在 CentOS 8 / RHEL 8 上安装 VirtualBox 6.0
 
-If wish to list available versions of VirtualBox before installing it , then execute the following [dnf command][1],
+如果希望在安装之前列出 VirtualBox 的可用版本，请执行以下 [dnf 命令][1]，
 
 ```
 [root@linuxtechi ~]# dnf search virtualbox
@@ -59,72 +59,71 @@ VirtualBox-6.0.x86_64 : Oracle VM VirtualBox
 [root@linuxtechi ~]#
 ```
 
-Let’s install latest version of VirtualBox 6.0 using following dnf command,
+让我们使用以下 dnf 命令安装最新版本的 VirtualBox 6.0，
 
 ```
 [root@linuxtechi ~]# dnf install VirtualBox-6.0 -y
 ```
 
-If any local user want to attach usb device to VirtualBox VMs then he/she should be part “**vboxuser**s ” group, use the beneath usermod command to add local user to “vboxusers” group.
+如果有本地用户希望将 usb 设备连接到 VirtualBox VM，那么他/她应该是 “**vboxusers**” 组的一员，请使用下面的 usermod 命令将本地用户添加到 “vboxusers” 组。
+
 
 ```
 [root@linuxtechi ~]# usermod -aG vboxusers pkumar
 ```
 
-#### Step:4) Access VirtualBox on CentOS 8 / RHEL 8
+#### 步骤 4： 访问 CentOS 8 / RHEL 8 上的 VirtualBox
 
-There are two ways to access VirtualBox, from the command line type “**virtualbox**” then hit enter
+有两种方法可以访问 VirtualBox，在命令行输入 “**virtualbox**” 然后回车：
 
 ```
 [root@linuxtechi ~]# virtualbox
 ```
 
-From Desktop environment, Search “VirtualBox” from Search Dash.
+在桌面环境中，在搜索框中搜索 “VirtualBox”。
 
 [![Access-VirtualBox-CentOS8][2]][3]
 
-Click on VirtualBox icon,
+单击 VirtualBox 图标，
 
 [![VirtualBox-CentOS8][2]][4]
 
-This confirms that VirtualBox 6.0 has been installed successfully, let’s install its extension pack.
+这确认 VirtualBox 6.0 已成功安装，让我们安装它的扩展包。
 
-#### Step:5) Install VirtualBox 6.0 Extension Pack
+#### 步骤 5： 安装 VirtualBox 6.0 扩展包
 
-As the name suggests, VirtualBox extension pack is used to extend the functionality of VirtualBox. It adds the following features:
+顾名思义，VirtualBox 扩展包用于扩展 VirtualBox 的功能。它添加了以下功能：
 
-  * USB 2.0 &amp; USB 3.0 support
-  * Virtual RDP (VRDP)
-  * Disk Image Encryption
-  * Intel PXE Boot
-  * Host WebCam
+  * USB 2.0 和 USB 3.0 支持
+  * 虚拟 RDP（VRDP）
+  * 磁盘镜像加密
+  * Intel PXE 启动
+  * 主机网络摄像头
 
 
 
-Use below wget command to download virtualbox extension pack under download folder,
+使用下面的 wget 命令下载 Virtualbox 扩展包到下载文件夹中，
 
 ```
 [root@linuxtechi ~]$ cd Downloads/
 [root@linuxtechi Downloads]$ wget https://download.virtualbox.org/virtualbox/6.0.14/Oracle_VM_VirtualBox_Extension_Pack-6.0.14.vbox-extpack
 ```
 
-Once it is downloaded, access VirtualBox and navigate **File** –&gt;**Preferences** –&gt; **Extension** then click on + icon to add downloaded extension pack,
+下载后，打开 VirtualBox 并依次点击 **File** –&gt;**Preferences** –&gt; **Extension**，然后点击 “+” 号图标添加下载的扩展包，
 
 [![Install-VirtualBox-Extension-Pack-CentOS8][2]][5]
 
-Click on “Install” to start the installation of extension pack.
+单击 “Install” 开始安装扩展包。
 
 [![Accept-VirtualBox-Extension-Pack-License-CentOS8][2]][6]
 
-Click on “I Agree” to accept VirtualBox Extension Pack License.
+单击 "I Agree" 接受 VirtualBox 扩展包许可证。
 
-After successful installation of VirtualBox extension pack, we will get following screen, Click on Ok and start using VirtualBox.
+成功安装 VirtualBox 扩展包后，我们将看到下面的页面，单击 OK 并开始使用 VirtualBox。
 
 [![VirtualBox-Extension-Pack-Install-Message-CentOS8][2]][7]
 
-That’s all from this article, I hope these steps help you install VirtualBox 6.0 on your CentOS 8 and RHEL 8 system. Please do share your valuable feedback and comments.
-
-**Also Read**: **[How to Manage Oracle VirtualBox Virtual Machines from Command Line][8]**
+本文就是这些了，我希望这些步骤可以帮助你在 CentOS 8 和 RHEL 8 系统上安装 VirtualBox 6.0。请分享你的宝贵反馈和意见。
 
   * [Facebook][9]
   * [Twitter][10]
@@ -139,7 +138,7 @@ via: https://www.linuxtechi.com/install-virtualbox-6-centos-8-rhel-8/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -153,7 +152,6 @@ via: https://www.linuxtechi.com/install-virtualbox-6-centos-8-rhel-8/
 [5]: https://www.linuxtechi.com/wp-content/uploads/2019/11/Install-VirtualBox-Extension-Pack-CentOS8.jpg
 [6]: https://www.linuxtechi.com/wp-content/uploads/2019/11/Accept-VirtualBox-Extension-Pack-License-CentOS8.jpg
 [7]: https://www.linuxtechi.com/wp-content/uploads/2019/11/VirtualBox-Extension-Pack-Install-Message-CentOS8.jpg
-[8]: https://www.linuxtechi.com/manage-virtualbox-virtual-machines-command-line/
 [9]: http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.linuxtechi.com%2Finstall-virtualbox-6-centos-8-rhel-8%2F&t=How%20to%20Install%20VirtualBox%206.0%20on%20CentOS%208%20%2F%20RHEL%208
 [10]: http://twitter.com/share?text=How%20to%20Install%20VirtualBox%206.0%20on%20CentOS%208%20%2F%20RHEL%208&url=https%3A%2F%2Fwww.linuxtechi.com%2Finstall-virtualbox-6-centos-8-rhel-8%2F&via=Linuxtechi
 [11]: http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.linuxtechi.com%2Finstall-virtualbox-6-centos-8-rhel-8%2F&title=How%20to%20Install%20VirtualBox%206.0%20on%20CentOS%208%20%2F%20RHEL%208
