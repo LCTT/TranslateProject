@@ -119,35 +119,34 @@ Python 3.6.8
 
 保存并退出文件。
 
-Once the inventory file (/etc/ansible/hosts) is updated then exchange your user’s ssh public keys with remote systems which are part of “labservers” group.
-更新清单文件（/etc/ansible/hosts）后，将用户的 ssh 公钥与作为 “”组一部分的远程系统交换。
+更新清单文件（/etc/ansible/hosts）后，将用户的 ssh 公钥与作为 “labservers” 组一部分的远程系统交换。
 
-Let’s first generate your local user’s public and private key using ssh-keygen command,
+让我们首先使用 ssh-keygen 命令生成本地用户的公钥和私钥，
 
 ```
 [root@linuxtechi ~]$ ssh-keygen
 ```
 
-Now exchange public key between the ansible server and its clients using the following command,
+现在使用以下命令在 ansible 服务器及其客户端之间交换公钥，
 
 ```
 [root@linuxtechi ~]$ ssh-copy-id root@linuxtechi
 [root@linuxtechi ~]$ ssh-copy-id root@linuxtechi
 ```
 
-Now let’s try couple of Ansible commands, first verify the connectivity from Ansible server to its clients using ping module,
+现在，让我们尝试几个 Ansible 命令，首先使用 ping 模块验证 Ansible 服务器与客户端的连接，
 
 ```
 [root@linuxtechi ~]$ ansible -m ping "labservers"
 ```
 
-**Note:** If we don’t specify the inventory file in above command then it will refer the default hosts file (i.e /etc/ansible/hosts)
+**注意：** 如果我们没有在上面的命令中指定清单文件，那么它将引用默认主机文件（即 /etc/ansible/hosts）
 
-Output,
+输出：
 
 ![ansible-ping-module-centos8][1]
 
-Let’s check kernel version of each client using Ansible shell command,
+让我们使用 Ansible shell 命令检查每个客户端的内核版本，
 
 ```
 [root@linuxtechi ~]$ ansible -m command -a "uname -r" "labservers"
@@ -158,7 +157,7 @@ Let’s check kernel version of each client using Ansible shell command,
 [root@linuxtechi ~]$
 ```
 
-Use the following ansible command to list all hosts from the inventory file,
+使用以下命令列出清单文件中的所有主机，
 
 ```
 [root@linuxtechi ~]$ ansible all -i /etc/ansible/hosts --list-hosts
@@ -170,7 +169,7 @@ Use the following ansible command to list all hosts from the inventory file,
 [root@linuxtechi ~]$
 ```
 
-Use the following ansible command to list only hosts from “labservers” group
+使用以下 ansible 命令仅列出 “labservers” 组中的主机。
 
 ```
 root@linuxtechi ~]$ ansible labservers -i /etc/ansible/hosts --list-hosts
@@ -180,7 +179,7 @@ root@linuxtechi ~]$ ansible labservers -i /etc/ansible/hosts --list-hosts
 [root@linuxtechi ~]$
 ```
 
-That’s all from this article, we have successfully demonstrated on how to install and use Ansible on CentOS 8 and RHEL 8 System. Please do you share your feedback and comments.
+本文就是这些了，我们成功演示了如何在 CentOS 8 和 RHEL 8 系统中安装和使用 Ansible。请分享你的反馈和意见。
 
   * [Facebook][4]
   * [Twitter][5]
@@ -195,7 +194,7 @@ via: https://www.linuxtechi.com/install-ansible-centos-8-rhel-8/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
