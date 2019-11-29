@@ -12,7 +12,7 @@
 
 > Linux 的 date 命令提供了很多显示日期和时间的选项，要比你想的还要多。这是一些有用的选择。
 
-![](https://img.linux.net.cn/data/attachment/album/201911/29/143832hnn6gr2fdfb2qw2g.jpg)
+![](https://img.linux.net.cn/data/attachment/album/201911/29/144555a8mq82mcc9cfttt9.jpg)
 
 在 Linux 系统上，`date` 命令非常简单。你键入 `date`，日期和时间将以一种有用的方式显示。它包括星期几、日期、时间和时区：
 
