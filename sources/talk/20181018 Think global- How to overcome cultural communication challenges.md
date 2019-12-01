@@ -1,3 +1,5 @@
+translating
+
 Think global: How to overcome cultural communication challenges
 ======
 Use these tips to ensure that every member of your global development team feels involved and understood.
