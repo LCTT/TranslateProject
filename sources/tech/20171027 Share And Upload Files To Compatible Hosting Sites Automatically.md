@@ -1,14 +1,11 @@
-lixin555 is translating
-Share And Upload Files To Compatible Hosting Sites Automatically
+自动共享和上传文件到兼容的托管站点
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/10/Upload-720x340.png)
-A while ago, we have written a guide about [**Transfer.sh**][1] which allows you to share files over Internet from command-line. Today, we will see yet another file sharing utility called **Anypaste**. It is a simple script to share and upload files to compatible hosting sites depending upon the type of the files, automatically. You don 't need to manually log in to the hosting sites and upload or share your files. Anypaste will **pick the right hosting sites depends upon the type of the file** you want to upload. To put this simply, photos will get uploaded to image hosting sites, videos to video sites, code to pastebins. Cool, yeah? Anypaste is completely free, open source and light-weight script and you can do everything from command line. You don't need to depend on any heavy, memory-consuming GUI apps to upload and share files.
+前阵子我们写了一个关于[**Transfer.sh**][1]的指南，它允许你使用命令行通过互联网来分享文件。今天，我们来看看另一种文件分享实用工具**Anypaste**。这是一个基于文件类型自动共享和上传文件到兼容托管站点的简单脚本。你不需要去手动登录到托管站点来上传或分享你的文件。Anypaste将会根据你想上传的文件的类型来**自动挑选合适的托管站点**。简单地说，照片将被上传到图像托管站点，视频被传到视频站点，代码被传到pastebins。难道不是很酷的吗？Anypaste是一个完全开源、免费、轻量的脚本，你可以通过命令行完成所有操作。因此，你不需要依靠那些臃肿的，需要消耗大量内存的GUI应用来上传和共享文件。
 
-### Anypaste - Share And Upload Files To Compatible Hosting Sites Automatically
-
-#### Installation
-
-Like I already said, it's just a script. So, there won't be any complex installation steps. Just download it somewhere where you can run it, for example /usr/bin/anypaste, make it as executable and start using it in no time. Alternatively, you can run the following two commands to quickly install Anypaste.
+### Anypaste-自动共享和上传文件到兼容的托管站点
+#### 安装
+正如我所说，这仅仅是一个脚本。所以不存在任何复杂的安装步骤。只需要将脚本下载后放置在你想要运行的位置(例如/usr/bin/anypaste)，并将其设置为可执行文件后就可以直接使用了。此外，你也可以通过下面的这两条命令来快速安装Anypaste。
 ```
 sudo curl -o /usr/bin/anypaste https://anypaste.xyz/sh
 ```
@@ -16,15 +13,15 @@ sudo curl -o /usr/bin/anypaste https://anypaste.xyz/sh
 sudo chmod +x /usr/bin/anypaste
 ```
 
-That's it. To update the old Anypaste version, just overwrite the old executable file with new one.
+就是这样简单。如果需要更新老的Anypaste版本，只需要用新的可执行文件覆写旧的即可。
 
-Now, let us see some practical examples.
+现在，让我们看看一些实例。
 
-#### Configuration
+#### 配置
+Anypaste开箱即用，并不需要特别的配置。默认的配置文件是 **~/.config/anypaste.conf** ，这个文件在你第一次运行Anypaste时会自动创建。
 
-Anypaste will work just out of the box. No special configuration is required! The default configuration file is **~/.config/anypaste.conf** and it will be automatically created when you run Anypaste for the first time.
+需要配置的选项只有**ap_plugins**。Anypaste使用插件系统去上传文件。每个站点(上传)都由一个特定的插件表示。你可以在anypaste.conf文件中的**ap-plugins directive**位置浏览可用的插件列表。
 
-The only required configuration option is **ap_plugins**. Anypaste uses plugin system to upload files. Each hosting (upload) site is represented by a specific plugin. You can view the list of enabled plugins under **ap-plugins directive** in anypaste.conf file.
 ```
 # List of plugins
 # If there are multiple compatible plugins, precedence is determined
@@ -45,17 +42,13 @@ ap_plugins=(
 )
 [...]
 ```
-
-If you install a new plugin, add it to this list. If you want to disable a default plugin, just remove it! If multiple plugins are compatible, the first one in the array is selected, so **order matters**.
-
-#### Usage
-
-To upload a single file, for example test.png, run:
+如果你要安装一个新的插件，将它添加进这个列表中就可以了。如果你想禁用一个默认插件，只需要将它从列表中移除即可。如果多个插件是相互依存的关系，排列中的第一个会被选择，因此**顺序很重要**。
+#### 用法
+上传一个简单的文件，例如test.png，可以运行以下命令：
 ```
 anypaste test.png
 ```
-
-Sample output would be:
+**输出示例：**
 ```
 Current file: test.png
 Attempting to upload with plugin 'tinyimg'
@@ -66,10 +59,10 @@ Direct Link: https://tinyimg.io/i/Sa1zsjj.png
 Upload complete.
 All files processed. Have a nice day!
 ```
+正如输出结果中所看到的，Anypaste通过自动匹配图像文件**test.png**发现了兼容的托管站点(https://tinyimg.io)，并将文件上传到了该站点。此外，Anypaste也为我们提供了用于直接浏览/下载该文件的链接。
 
-As you can see in the above output, Anypaste has automatically found the compatible hosting site (https://tinyimg.io) to the given image file **test.png** and uploaded into it. Also, it gave us the direct link to view/download the uploaded file.
+不仅png格式文件，你还可以上传任何其他图片格式的文件。例如，下面的命令将会上传gif格式文件：
 
-Not just .png files, you can upload any other image file types. For example, the following command will upload file.gif:
 ```
 $ anypaste file.gif
 Current file: file.gif
@@ -85,19 +78,17 @@ Direct(ish) Link: https://thumbs.gfycat.com/MisguidedQuaintBergerpicard-size_res
 Upload complete.
 All files processed. Have a nice day!
 ```
-
-You can share the link to your family, friends and colleagues. Here is the screenshot of an image that I just uploaded it to **gfycat** website.
+你可以将链接分享给你的家庭，朋友和同事们。下图是我刚刚将图片上传到**gfycat**网站的截图。
 
 [![][2]][3]
 
-It also possible to multiple files (same file type or different) at once.
+也可以一次同时上传多个（相同格式或不同格式）文件。
 
-Have a look at the following example. In this example, I am uploading two different files, an image and a video file:
+下面的例子提供参考，这里我会上传两个不同的文件，包含一个图片文件和一个视频文件：
 ```
 anypaste image.png video.mp4
 ```
-
-**Sample output:**
+**输出示例：**
 ```
 Current file: image.png
 Attempting to upload with plugin 'tinyimg'
@@ -118,15 +109,14 @@ Delete/Edit: http://sendvid.com/wwy7w96h?secret=39c0af2d-d8bf-4d3d-bad3-ad37432a
 Upload complete.
 All files processed. Have a nice day!
 ```
+Anypaste针对两个文件自动发现了与之相兼容的托管站点并成功上传。
 
-Anypaste has automatically found the compatible hosting sites to both files and uploaded them successfully.
-
-As you may noticed in above examples in the usage section, Anypaste has picked the "best" plugin automatically. Also, you can upload files with a specific plugin. For instance, to upload files to **gfycat** site, run:
+正如你在上述用法介绍部分的例子中注意到的，Anypaste会自动挑选最佳的插件。此外，你可以指定插件进行文件上传，这里提供一个上传**gfycat**类型文件的案例，运行以下命令：
 ```
 anypaste -p gfycat file.gif
 ```
+**输出示例：**
 
-Sample output:
 ```
 Current file: file.gif
 Plugin 'streamable' is compatible, but missing config parameters: 'streamable_email' 'streamable_password'
@@ -141,18 +131,15 @@ Direct(ish) Link: https://thumbs.gfycat.com/GrayDifferentCollie-size_restricted.
 Upload complete.
 All files processed. Have a nice day!
 ```
-
-To upload with a specific plugin, bypassing compatibility checks, run:
+如果要使用特定插件进行文件上传，可以通过以下命令绕过兼容性检查：
 ```
 anypaste -fp gfycat file.gif
 ```
-
-If you find a specific plugin is missing in the config file, you still can force Anypaste to use that specific plugin with '-xp' parameter.
+如果你发现在配置文件中忽略了特定的插件，你仍然可以强制Anypaste去使用特定的插件，只不过需要加上'-xp'参数。
 ```
 anypaste -xp gfycat file.gif
 ```
-
-To upload files with interactive mode, run it with "-i" flag:
+如果想要以交互模式上传文件，可以在命令后加上'-i'标签：
 ```
 $ anypaste -i file.gif
 Current file: file.gif
@@ -172,73 +159,53 @@ Direct(ish) Link: https://thumbs.gfycat.com/WaryAshamedBlackbear-size_restricted
 Upload complete.
 All files processed. Have a nice day!
 ```
+正如你所见，Anypaste首先询问了我是否需要自动确定插件。因为我不想自动寻找插件，所以我回复了'No'。之后，Anypaste列出了所有可选择的插件，并要求我从列表中选择一个。同样的，你可以上传和共享不同类型的文件，相关文件会被上传到相兼容的站点。
 
-As you see, Anypaste first asked me to determine plugins automatically. I don't want it to find plugins automatically, so I answered "No". Then, it listed the available plugins and asked me to pick one from the list. Similarly, you can upload and share files of different types. The given files will uploaded to the compatible sites.
-
-Whenever you try to upload a video file, it will uploaded to the any one of following sites:
+无论你何时上传一个视频文件，Anypaste都会将其上传到以下站点中的一个：
 
   1. sendvid
   2. streamable
   3. gfycat
 
+这里注意列表顺序，Anypaste将首先将文件上传到sendvid站点，如果没有sendvid的插件可供使用，Anypaste将会尝试顺序中的另外两个站点。当然你也可以通过更改配置文件来修改顺序。
 
-
-Here note the order. Anypaste will first try to upload the file to sendvid site. If there is no plugin for sendvid, it will try the other two sites in the given order. Of course, you can change this in the config file.
-
-Images will be uploaded to:
+图像文件上传站点：
 
   1. tinyimg.io
   2. vgy.me
 
-
-
-Audio files will uploaded to:
+音频文件上传站点：
 
   1. instaud
 
-
-
-Text files will uploaded to:
+文本文件上传站点：
 
   1. hastebin
   2. ix.io
   3. sprunge.us
 
-
-
-Documents will be uploaded to:
+文档上传站点：
 
   1. docdroid
 
-
-
-Any other files will uploaded to:
+其他任意类型的文件上传站点：
 
   1. jirafeau
   2. file.io
 
+上面列出来的部分站点一段特定的时间后会删除上传的内容，所以在上传和分享内容时应先明确这些站点的条款和条件。
 
+#### 结论
+在我看来，识别文件并决定将其上传到何处的想法非常棒，而且开发者也以恰当的方式完美地实现了它。毫无疑问，Anypaste对那些在互联网上需要频繁分享文件的人们非常有用，我希望你也能这么觉得。
 
-Some of the above listed sites will delete the contents after a particular period of time. So, check the those website's terms and conditions before uploading and sharing contents.
-
-Recommended Read:
-
-#### Conclusion
-
-In my opinion, the idea of file identification to determine where to upload the files is really brilliant, and the developer has perfectly used it in the right way. Anypaste will definitely be useful to everyone who share files frequently over Internet. I hope you will find it useful too.
-
-And, that's all for now. More good stuffs to come.
-
-Cheers!
-
-
+这就是今天的全部内容，后面会有越来越多的好东西分享给大家。再见啦！
 
 --------------------------------------------------------------------------------
 
 via: https://www.ostechnix.com/anypaste-share-upload-files-compatible-hosting-sites-automatically/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lixin555](https://github.com/lixin555)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -246,4 +213,4 @@ via: https://www.ostechnix.com/anypaste-share-upload-files-compatible-hosting-si
 [a]:https://www.ostechnix.com/author/sk/
 [1]:https://www.ostechnix.com/easy-fast-way-share-files-internet-command-line/
 [2]:data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
-[3]:http://www.ostechnix.com/wp-content/uploads/2017/10/gfycat.png ()
+[3]:http://www.ostechnix.com/wp-content/uploads/2017/10/gfycat.png
