@@ -1,43 +1,43 @@
-[#]: collector: (lujun9972)
-[#]: translator: (lxbwolf)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Bash Script to View System Information on Linux Every Time You Log into Shell)
-[#]: via: (https://www.2daygeek.com/bash-shell-script-view-linux-system-information/)
-[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
+[#]: collector: "lujun9972"
+[#]: translator: "lxbwolf"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Bash Script to View System Information on Linux Every Time You Log into Shell"
+[#]: via: "https://www.2daygeek.com/bash-shell-script-view-linux-system-information/"
+[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
-Bash Script to View System Information on Linux Every Time You Log into Shell
+Bash 脚本实现每次登录到 Shell 时可以查看 Linux 系统信息
 ======
 
-There are several commands in Linux to obtain system information such as processor information, manufacturer name, and serial number, etc,.
+Linux 中有很多可以查看系统信息如处理器信息，生产商名字，序列号等的命令。
 
-You may need to run several commands to collect this information.
+你可能需要执行多个命令来收集这些信息。
 
-Also, it is very difficult to remember all the commands and their options.
+同时，记住所有的命令和他们的选项也是有难度。 
 
-Instead you can write a **[shell script][1]** to customize the output based on your needs.
+你可以写一个 [shell 脚本](https://www.2daygeek.com/category/shell-script/) 基于你的需求来自定义显示的信息。
 
-In the past we have written many **[bash scripts][2]** for a variety of purposes.
+以前我们出于不同的目的需要写很多个 [bash 脚本](https://www.2daygeek.com/category/bash-script/)。
 
-Today, we came up with a new shell script, which shows you the required system information every time you log into the shell.
+现在我们写一个新的 shell 脚本，在每次登录到 shell 时显示需要的系统信息。
 
-There are six parts to this script, and more details below.
+这个j脚本有 6 部分，细节如下：
 
-  * **Part-1:** General System Information
-  * **Part-2:** CPU/Memory Current Usage
-  * **Part-3:** Disk Usage &gt;80%
-  * **Part-4:** List System WWN Details
-  * **Part-5:** Oracle DB Instances
-  * **Part-6:** Available Package Updates
+  * **Part-1:** 通用系统信息
+  * **Part-2:** CPU/内存当前使用情况
+  * **Part-3:** 硬盘使用率超过 80%
+  * **Part-4:** 列出系统 WWN 详情
+  * **Part-5:** Oracle DB 实例
+  * **Part-6:** 可更新的包
 
 
 
-We’ve added potential information to each area based on our needs. You can further customize this script to your needs if you wish.
+我们已经基于我们的需求把可能需要到的信息加到了每个部分。之后你可以基于自己的意愿修改这个脚本。
 
-There are many tools for this, most of which we have already covered.
+这个j脚本需要用到很多工具，其中大部分我们之前已经涉及到了。
 
-To read them, go to the following articles.
+你可以参照以前文章，了解工具详情。
 
   * **[inxi – A Great Tool to Check Hardware Information on Linux][3]**
   * **[Dmidecode – Easy Way To Get Linux System Hardware Information][3]**
@@ -55,11 +55,11 @@ To read them, go to the following articles.
 
 
 
-If anyone wants to add any other information in the script, please let us know your requirements in the comment section so that we can help you.
+如果你想为这个脚本增加其他的信息，请在评论去留下你的需求，以便我们帮助你。
 
-### Bash Script to View System Information on Linux Every Time You Log into the Shell
+### Bash 脚本实现每次登录到 Shell 时可以查看 Linux 系统信息
 
-This basic script will bring the system information to your terminal whenever you log into the shell.
+这个脚本会在你每次登录 shell 时把系统信息打印到 terminal。
 
 ```
 #vi /opt/scripts/system-info.sh
@@ -120,41 +120,37 @@ echo -e "-----------------------------------------------------------------------
 fi
 ```
 
-Once the above script is added to a file. Set the executable permission for the “system-info.sh” file.
+把上面脚本内容保存到一个文件 "system-info.sh"，之后添加可执行权限
 
 ```
 # chmod +x ~root/system-info.sh
 ```
 
-When the script is ready, add the file path at the end of the “.bash_profile” file in RHEL-based systems CentOS, Oracle Linux and Fedora.
+当脚本准备好后，把脚本文件的路径加到 ".bash_profile" 文件末尾（红帽系列的系统：CentOS，Oracle Linux 和 Fedora）。
 
 ```
 # echo "/root/system-info.sh" >> ~root/.bash_profile
 ```
 
-To take this change effect, run the following command.
+执行以下命令，来让修改的内容生效。
 
 ```
 # source ~root/.bash_profile
 ```
 
-For Debian-based systems, you may need to add a file path to the “.profile” file.
+对于 Debian 系统的系统，你可能需要把文件路径加到 ".profile" 文件中。
 
 ```
 # echo "/root/system-info.sh" >> ~root/.profile
 ```
 
-Run the following command to take this change effect.
+运行以下命令使修改生效。
 
 ```
 # source ~root/.profile
 ```
 
-You may have seen an output like the one below when running the above “source” command.
-
-From next time on-wards, you will get this information every time you log into the shell.
-
-Alternatively, you can manually run this script at any time if you need to.
+你以前运行上面 "source" 命令时可能见过类似下面的输出。从下次开始，你在每次登录 shell 时会看到这些信息。当然，如果有必要你也可以随时手动执行这个脚本。
 
 ```
 -------------------------------System Information---------------------------
@@ -206,7 +202,7 @@ via: https://www.2daygeek.com/bash-shell-script-view-linux-system-information/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
