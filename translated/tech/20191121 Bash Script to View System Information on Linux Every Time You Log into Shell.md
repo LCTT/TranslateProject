@@ -1,6 +1,6 @@
 [#]: collector: "lujun9972"
 [#]: translator: "lxbwolf"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 [#]: subject: "Bash Script to View System Information on Linux Every Time You Log into Shell"
@@ -10,11 +10,7 @@
 Bash 脚本实现每次登录到 Shell 时可以查看 Linux 系统信息
 ======
 
-Linux 中有很多可以查看系统信息如处理器信息，生产商名字，序列号等的命令。
-
-你可能需要执行多个命令来收集这些信息。
-
-同时，记住所有的命令和他们的选项也是有难度。 
+Linux 中有很多可以查看系统信息如处理器信息、生产商名字、序列号等的命令。你可能需要执行多个命令来收集这些信息。同时，记住所有的命令和他们的选项也是有难度。 
 
 你可以写一个 [shell 脚本](https://www.2daygeek.com/category/shell-script/) 基于你的需求来自定义显示的信息。
 
@@ -24,14 +20,12 @@ Linux 中有很多可以查看系统信息如处理器信息，生产商名字�
 
 这个j脚本有 6 部分，细节如下：
 
-  * **Part-1:** 通用系统信息
-  * **Part-2:** CPU/内存当前使用情况
-  * **Part-3:** 硬盘使用率超过 80%
-  * **Part-4:** 列出系统 WWN 详情
-  * **Part-5:** Oracle DB 实例
-  * **Part-6:** 可更新的包
-
-
+1. 通用系统信息
+2. CPU/内存当前使用情况
+3. 硬盘使用率超过 80%
+4. 列出系统 WWN 详情
+5. Oracle DB 实例
+6. 可更新的包
 
 我们已经基于我们的需求把可能需要到的信息加到了每个部分。之后你可以基于自己的意愿修改这个脚本。
 
@@ -39,21 +33,19 @@ Linux 中有很多可以查看系统信息如处理器信息，生产商名字�
 
 你可以参照以前文章，了解工具详情。
 
-  * **[inxi – A Great Tool to Check Hardware Information on Linux][3]**
-  * **[Dmidecode – Easy Way To Get Linux System Hardware Information][3]**
-  * **[LSHW (Hardware Lister) – A Nifty Tool To Get A Hardware Information On Linux][3]**
-  * **[hwinfo (Hardware Info) – A Nifty Tool To Detect System Hardware Information On Linux][3]**
-  * **[python-hwinfo : Display Summary Of Hardware Information Using Standard Linux Utilities][3]**
-  * **[How To Use lspci, lsscsi, lsusb, And lsblk To Get Linux System Devices Information][3]**
-  * **[How To Check System Hardware Manufacturer, Model And Serial Number In Linux][3]**
-  * **[How To Find WWN, WWNN and WWPN Number Of HBA Card In Linux][3]**
-  * **[How to check HP iLO Firmware version from Linux command line][3]**
-  * **[How to check Wireless network card and WiFi information from Linux Command Line][3]**
-  * **[How to check CPU &amp; Hard Disk temperature on Linux][3]**
-  * **[Hegemon – A modular System &amp; Hardware monitoring tool for Linux][3]**
-  * **[How to Check System Configuration and Hardware Information on Linux][3]**
-
-
+* [inxi – 在 Linux 上检查硬件信息的绝佳工具][3]
+* [Dmidecode – 获取 Linux 系统硬件信息的简便方法][4]
+* [LSHW（硬件列表程序）– 在 Linux 上获取硬件信息的漂亮工具][5]
+* [hwinfo（硬件信息）– 在 Linux 上检测系统硬件信息的漂亮工具][6]
+* [python-hwinfo：使用标准 Linux 实用工具显示硬件信息摘要][7]
+* [如何使用 lspci、lsscsi、lsusb 和 lsblk 获取 Linux 系统设备信息][8]
+* [如何在 Linux 中检查系统硬件制造商、型号和序列号][9]
+* [如何在 Linux 中查找 HBA 卡的 WWN、WWNN 和 WWPN 号][10]
+* [如何从 Linux 命令行检查 HP iLO 固件版本][11]
+* [如何从 Linux 命令行检查无线网卡和 WiFi 信息][12]
+* [如何在 Linux 上检查 CPU 和硬盘温度][13]
+* [Hegemon – Linux 的模块化系统和硬件监视工具][14]
+* [如何在 Linux 上检查系统配置和硬件信息][15]
 
 如果你想为这个脚本增加其他的信息，请在评论去留下你的需求，以便我们帮助你。
 
@@ -62,8 +54,10 @@ Linux 中有很多可以查看系统信息如处理器信息，生产商名字�
 这个脚本会在你每次登录 shell 时把系统信息打印到 terminal。
 
 ```
-#vi /opt/scripts/system-info.sh
+# vi /opt/scripts/system-info.sh
+```
 
+```
 #!/bin/bash
 echo -e "-------------------------------System Information----------------------------"
 echo -e "Hostname:\t\t"`hostname`
@@ -90,12 +84,12 @@ df -Ph | sed s/%//g | awk '{ if($5 > 80) print $0;}'
 echo ""
 
 echo -e "-------------------------------For WWN Details-------------------------------"
-vserver=$(lscpu | grep vendor | wc -l)
+vserver=$(lscpu | grep Hypervisor | wc -l)
 if [ $vserver -gt 0 ]
 then
 echo "$(hostname) is a VM"
 else
-systool -c fc_host -v | egrep "(Class Device path | port_name |port_state)" > systool.out
+cat /sys/class/fc_host/host?/port_name
 fi
 echo ""
 
@@ -120,37 +114,37 @@ echo -e "-----------------------------------------------------------------------
 fi
 ```
 
-把上面脚本内容保存到一个文件 "system-info.sh"，之后添加可执行权限
+把上面脚本内容保存到一个文件 `system-info.sh`，之后添加可执行权限：
 
 ```
 # chmod +x ~root/system-info.sh
 ```
 
-当脚本准备好后，把脚本文件的路径加到 ".bash_profile" 文件末尾（红帽系列的系统：CentOS，Oracle Linux 和 Fedora）。
+当脚本准备好后，把脚本文件的路径加到 `.bash_profile` 文件末尾（红帽系列的系统：CentOS、Oracle Linux 和 Fedora）：
 
 ```
 # echo "/root/system-info.sh" >> ~root/.bash_profile
 ```
 
-执行以下命令，来让修改的内容生效。
+执行以下命令，来让修改的内容生效：
 
 ```
 # source ~root/.bash_profile
 ```
 
-对于 Debian 系统的系统，你可能需要把文件路径加到 ".profile" 文件中。
+对于 Debian 系统的系统，你可能需要把文件路径加到 `.profile` 文件中：
 
 ```
 # echo "/root/system-info.sh" >> ~root/.profile
 ```
 
-运行以下命令使修改生效。
+运行以下命令使修改生效：
 
 ```
 # source ~root/.profile
 ```
 
-你以前运行上面 "source" 命令时可能见过类似下面的输出。从下次开始，你在每次登录 shell 时会看到这些信息。当然，如果有必要你也可以随时手动执行这个脚本。
+你以前运行上面 `source` 命令时可能见过类似下面的输出。从下次开始，你在每次登录 shell 时会看到这些信息。当然，如果有必要你也可以随时手动执行这个脚本。
 
 ```
 -------------------------------System Information---------------------------
@@ -203,7 +197,7 @@ via: https://www.2daygeek.com/bash-shell-script-view-linux-system-information/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[lxbwolf](https://github.com/lxbwolf)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -212,3 +206,15 @@ via: https://www.2daygeek.com/bash-shell-script-view-linux-system-information/
 [1]: https://www.2daygeek.com/category/shell-script/
 [2]: https://www.2daygeek.com/category/bash-script/
 [3]: https://www.2daygeek.com/inxi-system-hardware-information-on-linux/
+[4]: https://www.2daygeek.com/dmidecode-get-print-display-check-linux-system-hardware-information/
+[5]: https://www.2daygeek.com/lshw-find-check-system-hardware-information-details-linux/
+[6]: https://www.2daygeek.com/hwinfo-check-display-detect-system-hardware-information-linux/
+[7]: https://www.2daygeek.com/python-hwinfo-check-display-system-hardware-configuration-information-linux/
+[8]: https://www.2daygeek.com/check-system-hardware-devices-bus-information-lspci-lsscsi-lsusb-lsblk-linux/
+[9]: https://www.2daygeek.com/how-to-check-system-hardware-manufacturer-model-and-serial-number-in-linux/
+[10]: https://www.2daygeek.com/how-to-find-wwn-wwnn-and-wwpn-number-of-hba-card-in-linux/
+[11]: https://www.2daygeek.com/how-to-check-hp-ilo-firmware-version-from-linux-command-line/
+[12]: https://www.2daygeek.com/linux-find-out-wireless-network-wifi-speed-signal-strength-quality/
+[13]: https://www.2daygeek.com/view-check-cpu-hard-disk-temperature-linux/
+[14]: https://www.2daygeek.com/hegemon-a-modular-system-and-hardware-monitoring-tool-for-linux/
+[15]: https://www.2daygeek.com/check-linux-hardware-information-system-configuration/
