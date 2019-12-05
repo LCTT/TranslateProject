@@ -7,20 +7,20 @@
 [#]: via: (https://fedoramagazine.org/a-quick-introduction-to-toolbox-on-fedora/)
 [#]: author: (Ryan Walter https://fedoramagazine.org/author/rwaltr/)
 
-A quick introduction to Toolbox on Fedora
+快速介绍 Fedora 中的 Toolbox
 ======
 
 ![][1]
 
-Toolbox allows you to [sort and manage your development environments in containers][2] without requiring root privileges or manually attaching volumes. It creates a container where you can install your own CLI tools, without installing them on the base system itself. You can also utilize it when you do not have root access or cannot install programs directly. This article gives you an introduction to toolbox and what it does.
+Toolbox 使你可以[在容器中分类和管理开发环境][2]，而无需 root 权限或手动添加卷。它创建一个容器，你可以在其中安装自己的命令行工具，而无需在基础系统中安装它们。当你没有root 权限或无法直接安装程序时，也可以使用它。本文会介绍 Toolbox 及其功能。
 
-### Installing Toolbox
+### 安装 Toolbox
 
-[Silverblue][3] includes Toolbox by default. For the Workstation and Server editions, you can grab it from the default repositories using _dnf install toolbox_.
+[Silverblue][3] 默认包含 Toolbox。对于 Workstation 和 Server 版本，你可以使用 _dnf install toolbox_ 从默认仓库中获取它。
 
-### Creating Toolboxes
+### 创建 Toolbox
 
-Open your terminal and run _toolbox enter_. The utility will automatically request permission to download the latest image, create your first container, and place your shell inside this container.
+打开终端并运行 _toolbox enter_。程序将自动请求许可来下载最新的镜像，创建第一个容器并将你的 shell 放在该容器中。
 
 ```
 $ toolbox enter
@@ -29,7 +29,7 @@ Image required to create toolbox container.
 Download registry.fedoraproject.org/f30/fedora-toolbox:30 (500MB)? [y/N]: y
 ```
 
-Currently there is no difference between the toolbox and your base system. Your filesystems and packages appear unchanged. Here is an example using a repository that contains documentation source for a resume under a _~/src/resume_ folder. The resume is built using the _pandoc_ tool.
+当前，toolbox 和你的基本系统之间没有区别。你的文件系统和软件包未更改。这是一个使用仓库的示例，它包含 _~/src/resume_ 文件夹下的简历的文档源。简历是使用 _pandoc_ 工具构建的。
 
 ```
 $ pwd
@@ -47,7 +47,7 @@ $ pandoc -v
 bash: pandoc: command not found
 ```
 
-This toolbox does not have the programs required to build the resume. You can remedy this by installing the tools with _dnf_. You will not be prompted for the root password, because you are running in a container.
+这个 toolbox 没有构建简历所需的程序。你可以通过使用 _dnf_ 安装工具来解决此问题。由于正在容器中运行，因此不会提示你输入 root 密码。
 
 ```
 $ sudo dnf groupinstall "Authoring and Publishing" -y && sudo dnf install pandoc make -y
@@ -63,7 +63,7 @@ $ ls BUILDS/
 resume.docx  resume.html  resume.pdf  resume.rtf  resume.txt
 ```
 
-Run _exit_ at any time to exit the toolbox.
+运行 _exit_ 退出 toolbox。
 
 ```
 $ cd BUILDS/
@@ -80,21 +80,20 @@ bash: pandoc: command not found...
 resume.docx  resume.html  resume.pdf  resume.rtf  resume.txt
 ```
 
-You retain the files created by your toolbox in your home directory. None of the programs installed in your toolbox will be available outside of it.
+你会在主目录中得到由 toolbox 创建的文件。toolbox 中安装的程序无法在外部访问。
 
-### Tips and tricks
+### 提示和技巧
 
-This introduction to toolbox only scratches the surface. Here are some additional tips, but you can also check out [the official documentation][2].
+本介绍仅涉及 toolbox 的表明。还有一些其他提示，但是你也可以查看[官方文档][2]。
 
-  * _Toolbox –help_ will show you the man page for Toolbox
-  * You can have multiple toolboxes at once. Use _toolbox create -c Toolboxname_ and _toolbox enter -c Toolboxname_
-  * Toolbox uses [Podman][4] to do the heavy lifting. Use _toolbox list_ to find the IDs of the containers Toolbox creates. Podman can use these IDs to perform actions such as _rm_ and _stop_. (You can also read more about Podman [in this Magazine article][5].)
-
+  * _Toolbox –help_ 会显示 Toolbox 的手册页
+  * 你可以一次有多个 toolbox。使用 _toolbox create -c Toolboxname_ 和 _toolbox enter -c Toolboxname_。
+  * Toolbox 使用 [Podman][4] 来完成繁重的工作。使用 _toolbox list_ 查找 Toolbox 创建的容器的 ID。Podman 可以使用这些 ID 来执行 _rm_ 和 _stop_ 之类的操作。 （你也可以在[此文章][5]中阅读有关 Podman 的更多信息。）
 
 
 * * *
 
-_Photo courtesy of [Florian Richter][6] from [Flickr][7]._
+_照片出自 [Flickr][7] 的 [Florian Richter][6]。_
 
 --------------------------------------------------------------------------------
 
@@ -102,7 +101,7 @@ via: https://fedoramagazine.org/a-quick-introduction-to-toolbox-on-fedora/
 
 作者：[Ryan Walter][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
