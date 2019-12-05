@@ -4,7 +4,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to write a security integration module for Ansible)
-[#]: via: (https://opensource.com/article/19/12/how-write-security-integration-module-ansible)
+[#]: via: (https://opensource.com/article/19/12/security-ansible-module)
 [#]: author: (Adam Miller https://opensource.com/users/maxamillion)
 
 How to write a security integration module for Ansible
@@ -149,7 +149,7 @@ If you have questions about Ansible module development models, feel free to reac
 
 --------------------------------------------------------------------------------
 
-via: https://opensource.com/article/19/12/how-write-security-integration-module-ansible
+via: https://opensource.com/article/19/12/security-ansible-module
 
 作者：[Adam Miller][a]
 选题：[lujun9972][b]
