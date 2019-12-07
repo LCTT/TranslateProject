@@ -7,34 +7,31 @@
 [#]: via: (https://opensource.com/article/19/10/programming-bash-loops)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-How to program with Bash: Loops
+Bash 编程教程之循环
 ======
-Learn how to use loops for performing iterative operations, in the final
-article in this three-part series on programming with Bash.
+本文是 bash 编程系列（3 部分）的最后一篇，来学习使用循环执行迭代的操作。
 ![arrows cycle symbol for failing faster][1]
 
-Bash is a powerful programming language, one perfectly designed for use on the command line and in shell scripts. This three-part series, based on my [three-volume Linux self-study course][2], explores using Bash as a programming language on the command-line interface (CLI).
+Bash 是一种强大的用于命令行和 shell 脚本里的编程语言。本系列的三部分都是基于我的 [Linux 自学课程三卷][2] 写的，探索怎么用 CLI（command-line interface）进行 bash 编程。本系列的 [第一篇文章][3] 讨论了 bash 编程的一些简单命令行操作，如使用变量和控制操作符。[第二篇文章][4] 探讨了文件、字符串、数字等类型和各种各样在执行流中提供控制逻辑的的逻辑运算符，还有 bash 中不同种类的扩展。本文是第三篇（也是最后一篇），意在考察在各种迭代的操作中使用循环以及怎么合理控制循环。
 
-The [first article][3] in this series explored some simple command-line programming with Bash, including using variables and control operators. The [second article][4] looked into the types of file, string, numeric, and miscellaneous logical operators that provide execution-flow control logic and different types of shell expansions in Bash. This third (and final) article examines the use of loops for performing various types of iterative operations and ways to control those loops.
+### 循环
 
-### Loops
+我使用过的所有编程语言都有很多种循环结构来用来执行重复的操作。我经常使用 for 循环，然而我发现 while 和 until 循环也很有用处。
 
-Every programming language I have ever used has at least a couple types of loop structures that provide various capabilities to perform repetitive operations. I use the for loop quite often but I also find the while and until loops useful.
+#### for 循环
 
-#### for loops
+我的理解是，**for** 命令在 bash 中的实现比大部分语言灵活，因为它可以处理非数字的值；与之形成对比的是，诸如标准 C 语言的 **for** 循环只能处理数字类型的值。
 
-Bash's implementation of the **for** command is, in my opinion, a bit more flexible than most because it can handle non-numeric values; in contrast, for example, the standard C language **for** loop can deal only with numeric values.
-
-The basic structure of the Bash version of the **for** command is simple:
+Bash 版的 **for** 命令基本的结构很简单：
 
 
 ```
 `for Var in list1 ; do list2 ; done`
 ```
 
-This translates to: "For each value in list1, set the **$Var** to that value and then perform the program statements in list2 using that value; when all of the values in list1 have been used, it is finished, so exit the loop." The values in list1 can be a simple, explicit string of values, or they can be the result of a command substitution (described in the second article in the series). I use this construct frequently.
+解释一下：“对于 list1 中的每一个值，把 **$Var** 设置为那个值，使用该值执行 list2 中的程序语句；list1 中的值都执行完后，整个循环结束，退出循环。” list1 中的值可以是一个简单的显式字符串值，也可以是一个命令执行后的结果（译注：**\` \`**  包含的命令执行的结果，本系列第二篇文章中有描述）。我经常使用这种结构。
 
-To try it, ensure that **~/testdir** is still the present working directory (PWD). Clean up the directory, then look at a trivial example of the **for** loop starting with an explicit list of values. This list is a mix of alphanumeric values—but do not forget that all variables are strings and can be treated as such.
+确认 **~/testdir** 仍然是当前的工作目录（PWD）。删除目录下所有东西，来看下这个显式写出值列表的 **for** 循环的简单的示例。这个列表中的值是字母值 — 但是不要忘了，在 bash 中所有的变量都是 string 或者可以被当成 string 来处理。
 
 
 ```
@@ -50,7 +47,7 @@ d
 4
 ```
 
-Here is a bit more useful version with a more meaningful variable name:
+给变量赋予更有意义的名字，变成前面版本的进阶版：
 
 
 ```
@@ -64,7 +61,7 @@ Department Administration
 Department Research
 ```
 
-Make some directories (and show some progress information while doing so):
+创建几个目录（创建时显示一些处理信息）：
 
 
 ```
@@ -87,9 +84,9 @@ drwxrwxr-x 2 student student 4096 Apr  8 15:45  Research
 drwxrwxr-x 2 student student 4096 Apr  8 15:45  Sales
 ```
 
-The **$Dept** variable must be enclosed in quotes in the **mkdir** statement; otherwise, two-part department names (such as "Information Technology") will be treated as two separate departments. That highlights a best practice I like to follow: all file and directory names should be a single word. Although most modern operating systems can deal with spaces in names, it takes extra work for sysadmins to ensure that those special cases are considered in scripts and CLI programs. (They almost certainly should be considered, even if they're annoying because you never know what files you will have.)
+在 **mkdir** 语句中 **$Dept** 变量必须用引号包裹起来；否则名字中间有空格（如 `Information Technology`）会被当做两个独立的目录处理。我一直信奉的一条实践规则：所有的文件和目录都应该为一个单词（中间没有空格）。虽然大部分现代的操作系统可以处理名字中间有空格的情况，但是系统管理员需要花费额外的精力去确保脚本和 CLI 程序能正确处理这些特例。（尽管你因为不知道将要处理什么样的文件而烦恼，但是脚本和 CLI 应该已经把这些特例考虑在内了。）
 
-So, delete everything in **~/testdir**—again—and do this one more time:
+再次删除 **~/testdir** 下的所有东西 — 再运行一次下面的命令：
 
 
 ```
@@ -114,11 +111,9 @@ drwxrwxr-x 2 student student 4096 Apr  8 15:52 Research
 drwxrwxr-x 2 student student 4096 Apr  8 15:52 Sales
 ```
 
-Suppose someone asks for a list of all RPMs on a particular Linux computer and a short description of each. This happened to me when I worked for the State of North Carolina. Since open source was not "approved" for use by state agencies at that time, and I only used Linux on my desktop computer, the pointy-haired bosses (PHBs) needed a list of each piece of software that was installed on my computer so that they could "approve" an exception.
+假设现在有个需求，需要列出一台 Linux 机器上所有的 RPM 包并对每个包附上简短的描述。我为North Carolina 州工作的时候，曾经遇到过这种需求。由于当时州代理处不允许使用开源的工具，而且我对 Linux 不够熟悉，对技术一窍不通的老板（PHB）需要我列出我计算机上安装的所有软件，这样他们就可以“查看“计算机上有没有安装异常的软件了。
 
-How would you approach that? Here is one way, starting with the knowledge that the **rpm –qa** command provides a complete description of an RPM, including the two items the PHBs want: the software name and a brief summary.
-
-Build up to the final result one step at a time. First, list all RPMs:
+你怎么实现它？有一种方法是，已知 **rpm –qa** 命令提供了 RPM 包的完整描述，包括 PHB 想要的东西：软件名称和概要描述。一步步执行出最后的结果。首先，列出所有的 RPM 包：
 
 
 ```
@@ -136,7 +131,7 @@ libfontenc-1.1.3-9.fc29.x86_64
 &lt;snip&gt;
 ```
 
-Add the **sort** and **uniq** commands to sort the list and print the unique ones (since it's possible that some RPMs with identical names are installed):
+用 **sort** 和 **uniq** 命令对列表进行排序和打印去重后的结果（有些已安装的 RPM 包具有相同的名字：）
 
 
 ```
@@ -154,14 +149,14 @@ abrt-addon-vmcore-2.11.0-1.fc29.x86_64
 &lt;snip&gt;
 ```
 
-Since this gives the correct list of RPMs you want to look at, you can use this as the input list to a loop that will print all the details of each RPM:
+以上命令得到了想要的 RPM 列表，因此你可以把这个列表作为一个循环的输入信息，循环最终会打印每个 RPM 包的详细信息：
 
 
 ```
-`[student@studentvm1 testdir]$ for RPM in `rpm -qa | sort | uniq` ; do rpm -qi $RPM ; done`
+[student@studentvm1 testdir]$ for RPM in `rpm -qa | sort | uniq` ; do rpm -qi $RPM ; done
 ```
 
-This code produces way more data than you want. Note that the loop is complete. The next step is to extract only the information the PHBs requested. So, add an **egrep** command, which is used to select **^Name** or **^Summary**. The carat (**^**) specifies the beginning of the line; thus, any line with Name or Summary at the beginning of the line is displayed.
+这段代码产出了多余的信息。当循环结束后， 下一步就是提取出 PHB 需要的信息。因此，添加一个 **egrep** 命令用来搜索匹配 **^Name** 或 **^Summary** 的行。脱字符（^）表示行首，整个命令表示显示所有以 Name 或 Summary 开头的行。
 
 
 ```
@@ -179,42 +174,38 @@ Summary     : Automatic bug detection and reporting tool
 &lt;snip&gt;
 ```
 
-You can try **grep** instead of **egrep** in the command above, but it will not work. You could also pipe the output of this command through the **less** filter to explore the results. The final command sequence looks like this:
+在上面的命令中你可以试试用 **grep** 代替 **egrep** ，你会发现用 **grep** 不能得到正确的结果。你可以通过管道把命令结果用 **less** 过滤下。最终命令像这样：
 
 
 ```
-`[student@studentvm1 testdir]$ for RPM in `rpm -qa | sort | uniq` ; do rpm -qi $RPM ; done | egrep -i "^Name|^Summary" > RPM-summary.txt`
+[student@studentvm1 testdir]$ for RPM in `rpm -qa | sort | uniq` ; do rpm -qi $RPM ; done | egrep -i "^Name|^Summary" > RPM-summary.txt
 ```
 
-This command-line program uses pipelines, redirection, and a **for** loop—all on a single line. It redirects the output of your little CLI program to a file that can be used in an email or as input for other purposes.
+这个命令行程序在同一行中用到了管道、重定向和 **for** 循环。它把你 CLI 程序的结果重定向到了一个文件，这个文件可以在邮件中使用或在其他地方作为输入使用。这个一次一步构建程序的过程让你能看到每步的结果，以此来确保整个程序以你期望的流程进行且输出你想要的结果。
 
-This process of building up the program one step at a time allows you to see the results of each step and ensure that it is working as you expect and provides the desired results.
+PHB 最终收到了超过 1900 个独立 RPM 包的清单，我严重怀疑根本就没人去读它。我给了他们想要的东西，没有从他们嘴里听到过任何关于 RPM 包的信息。
 
-From this exercise, the PHBs received a list of over 1,900 separate RPM packages. I seriously doubt that anyone read that list. But I gave them exactly what they asked for, and I never heard another word from them about it.
+### 其他循环
 
-### Other loops
-
-There are two more types of loop structures available in Bash: the **while** and **until** structures, which are very similar to each other in both syntax and function. The basic syntax of these loop structures is simple:
+Bash 中还有两种其他类型的循环结构：**while** 和 **until** 结构，两者在语法和功能上都类似。这些循环结构的基础语法很简单：
 
 
 ```
-`while [ expression ] ; do list ; done`
+while [ expression ] ; do list ; done
 ```
 
-and
+逻辑解释：表达式（expression）结果为 true 时，执行程序语句 `list`。表达式结果为 false 时，退出循环。
 
 
 ```
-`until [ expression ] ; do list ; done`
+until [ expression ] ; do list ; done
 ```
 
-The logic of the first reads: "While the expression evaluates as true, execute the list of program statements. When the expression evaluates as false, exit from the loop." And the second: "Until the expression evaluates as true, execute the list of program statements. When the expression evaluates as true, exit from the loop."
+逻辑解释：直到表达式的结果为 true，执行程序语句 `list`。当表达式结果为 true 时，退出循环。
 
-#### While loop
+#### While 循环
 
-The **while** loop is used to execute a series of program statements while (so long as) the logical expression evaluates as true. Your PWD should still be **~/testdir**.
-
-The simplest form of the **while** loop is one that runs forever. The following form uses the true statement to always generate a "true" return code. You could also use a simple "1"—and that would work just the same—but this illustrates the use of the true statement:
+**while** 循环用于当逻辑表达式结果为 true 时执行一系列程序语句。假设你的 PWD 仍是 **~/testdir** 。最简单的 **while** 循环会一直运行下去。下面格式的条件语句永远以 `true` 作为返回。你也可以用简单的 `1` 代替 `true` — 结果一样 — 但是这解释了 true 表达式的用法。
 
 
 ```
@@ -232,9 +223,9 @@ The simplest form of the **while** loop is one that runs forever. The following 
 [student@studentvm1 testdir]$
 ```
 
-This CLI program should make more sense now that you have studied its parts. First, it sets **$X** to zero in case it has a value left over from a previous program or CLI command. Then, since the logical expression **[ true ]** always evaluates to 1, which is true, the list of program instructions between **do** and **done** is executed forever—or until you press **Ctrl+C** or otherwise send a signal 2 to the program. Those instructions are an arithmetic expansion that prints the current value of **$X** and then increments it by one.
+既然你已经学了 CLI 的各部分知识，那就让它变得更有用处。首先，为了防止变量 **$X** 在前面的程序或 CLI 命令执行后有遗留的值，设置 **$X** 的值为 0。然后，因为逻辑表达式 **[ true ]** 的结果永远是 1，即 true，在 **do** 和 **done** 中间的程序指令列表会一直执行 — 或者直到你按下 **Ctrl+C** 抑或发送一个 `signal 2` 给程序。那些程序指令是算法扩展，用来打印变量 **$X** 当前的值并加 1.
 
-One of the tenets of [_The Linux Philosophy for Sysadmins_][5] is to strive for elegance, and one way to achieve elegance is simplicity. You can simplify this program by using the variable increment operator, **++**. In the first instance, the current value of the variable is printed, and then the variable is incremented. This is indicated by placing the **++** operator after the variable:
+[系统管理员的 Linux 哲学][5] 的信条之一是追求优雅，实现优雅的一种方式就是简化。你可以用操作符 **++** 来简化这个程序。在第一个例子中，变量当前的值被打印出来，然后变量的值增加了。可以在变量后加一个 **++** 来表示这个逻辑：
 
 
 ```
@@ -251,9 +242,7 @@ One of the tenets of [_The Linux Philosophy for Sysadmins_][5] is to strive for 
 9
 ```
 
-Now delete **| head** from the end of the program and run it again.
-
-In this version, the variable is incremented before its value is printed. This is specified by placing the **++** operator before the variable. Can you see the difference?
+现在删掉程序最后的 **| head** 再运行一次。在这个版本中，变量在值被打印之前就自增了。这是通过在变量之前添加 **++** 操作符实现的。你能看出区别吗？
 
 
 ```
@@ -269,9 +258,7 @@ In this version, the variable is incremented before its value is printed. This i
 9
 ```
 
-You have reduced two statements into a single one that prints the value of the variable and increments that value. There is also a decrement operator, **\--**.
-
-You need a method for stopping the loop at a specific number. To accomplish that, change the true expression to an actual numeric evaluation expression. Have the program loop to 5 and stop. In the example code below, you can see that **-le** is the logical numeric operator for "less than or equal to." This means: "So long as **$X** is less than or equal to 5, the loop will continue. When **$X** increments to 6, the loop terminates."
+你已经把打印变量的值和自增简化到了一条语句。类似 **++** 操作符， 也有 **--** 操作符。你需要一个在循环到某个特定数字时终止循环的方法。把 true 表达式换成一个数字比较表达式来实现它。写一个循环到 5 终止的程序。在下面的示例代码中，你可以看到 **-le** 是 ”小于或等于“ 的数字逻辑操作符。整个语句的意思：只要 **$X** 的值小于或等于 5，循环就一直运行。当 **$X** 增加到 6时，循环终止。
 
 
 ```
@@ -285,9 +272,11 @@ You need a method for stopping the loop at a specific number. To accomplish that
 [student@studentvm1 ~]$
 ```
 
-#### Until loop
+#### Until 循环
 
-The **until** command is very much like the **while** command. The difference is that it will continue to loop until the logical expression evaluates to "true." Look at the simplest form of this construct:
+
+
+*until** 命令非常像 **while** 命令。不同之处是，它直到逻辑表达式的值是 `true` 之前，会一直循环。看一下这种结构最简单的格式：
 
 
 ```
@@ -305,7 +294,7 @@ The **until** command is very much like the **while** command. The difference is
 [student@studentvm1 ~]$
 ```
 
-It uses a logical comparison to count to a specific value:
+它用一个逻辑比较表达式来数到一个特定的值：
 
 
 ```
@@ -324,13 +313,9 @@ It uses a logical comparison to count to a specific value:
 [student@studentvm1 ~]$
 ```
 
-### Summary
+### 总结：
 
-This series has explored many powerful tools for building Bash command-line programs and shell scripts. But it has barely scratched the surface on the many interesting things you can do with Bash; the rest is up to you.
-
-I have discovered that the best way to learn Bash programming is to do it. Find a simple project that requires multiple Bash commands and make a CLI program out of them. Sysadmins do many tasks that lend themselves to CLI programming, so I am sure that you will easily find tasks to automate.
-
-Many years ago, despite being familiar with other shell languages and Perl, I made the decision to use Bash for all of my sysadmin automation tasks. I have discovered that—sometimes with a bit of searching—I have been able to use Bash to accomplish everything I need.
+本系列探讨了构建 bash 命令行程序和 shell 脚本的很多强大的工具。但是这仅仅是你能用 Bash 做的很多有意思的事中的冰山一角，接下来就看你的了。我发现学习 Bash 编程最好的方法就是实践。找一个需要多个 Bash 命令的简单项目然后写一个 CLI 程序。系统管理员们做了很多工作让任务变成 CLI 编程，因此我确信你很容易能找到自动化的任务。很多年前，尽管我对其他的 Shell 语言和 Perl 很熟悉，但还是决定用 Bash 做所有系统管理员的自动化任务。我发现 — 有时稍微搜索一下 — 我可以用 Bash 实现我需要的所有事情。
 
 --------------------------------------------------------------------------------
 
@@ -338,7 +323,7 @@ via: https://opensource.com/article/19/10/programming-bash-loops
 
 作者：[David Both][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
