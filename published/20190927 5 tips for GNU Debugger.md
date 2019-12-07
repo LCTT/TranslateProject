@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11647-1.html)
 [#]: subject: (5 tips for GNU Debugger)
 [#]: via: (https://opensource.com/article/19/9/tips-gnu-debugger)
 [#]: author: (Tim Waugh https://opensource.com/users/twaugh)
@@ -12,7 +12,7 @@
 
 > 了解如何使用 gdb 的一些鲜为人知的功能来检查和修复代码。
 
-![Bug tracking magnifying glass on computer screen][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/05/203701ss8onfvpsnvnsnn5.jpg)
 
 [GNU 调试器][2]（`gdb`）是一种宝贵的工具，可用于在开发程序时检查正在运行的进程并解决问题。
 
@@ -54,7 +54,7 @@ Breakpoint 1, sometimes_crashes (f=0x0) at prog.c:5
 (gdb)
 ```
 
-条件断点使你不必让 `gdb` 每次调用该函数时都去问你要做什么，而是让条件断点仅在特定表达式的值为 `true` 时才使 `gdb` 停止在该位置。如果执行到达条件断点的位置，但表达式的计算结果为 `false` ，调试器会自动使程序继续运行，而无需询问用户该怎么做。
+条件断点使你不必让 `gdb` 每次调用该函数时都去问你要做什么，而是让条件断点仅在特定表达式的值为 `true` 时才使 `gdb` 停止在该位置。如果执行到达条件断点的位置，但表达式的计算结果为 `false`，调试器会自动使程序继续运行，而无需询问用户该怎么做。
 
 ### 断点命令
 
@@ -101,14 +101,14 @@ GNU 调试器内置支持使用 `x` 命令以各种格式检查内存，包括�
 
 ```
 (gdb) x/33xb mydata
-0x404040 <mydata>:    0x02    0x01    0x00    0x02    0x00    0x00    0x00    0x01
-0x404048 <mydata+8>:    0x01    0x47    0x00    0x12    0x61    0x74    0x74    0x72
+0x404040 <mydata>   :    0x02    0x01    0x00    0x02    0x00    0x00    0x00    0x01
+0x404048 <mydata+8> :    0x01    0x47    0x00    0x12    0x61    0x74    0x74    0x72
 0x404050 <mydata+16>:    0x69    0x62    0x75    0x74    0x65    0x73    0x2d    0x63
 0x404058 <mydata+24>:    0x68    0x61    0x72    0x73    0x65    0x75    0x00    0x05
 0x404060 <mydata+32>:    0x00
 ```
 
-如果你想让 `gdb` 像 `hexdump` 一样显示内存怎么办？这是可以的， 实际上，你可以将这种方法用于你喜欢的任何格式。
+如果你想让 `gdb` 像 `hexdump` 一样显示内存怎么办？这是可以的，实际上，你可以将这种方法用于你喜欢的任何格式。
 
 通过使用 `dump` 命令以将字节存储在文件中，结合 `shell` 命令以在文件上运行 `hexdump` 以及`define` 命令，我们可以创建自己的新的 `hexdump` 命令来使用 `hexdump` 显示内存内容。
 
@@ -162,7 +162,7 @@ prog.c:
 
 有时，你希望自己可以逆转时间。想象一下，你已经达到了变量的监视点。监视点像是一个断点，但不是在程序中的某个位置设置，而是在表达式上设置（使用 `watch` 命令）。每当表达式的值更改时，执行就会停止，并且调试器将获得控制权。
 
-想象一下你已经达到了这个监视点，并且由该变量使用的内存已更改了值。事实证明，这可能是由更早发生的事情引起的。例如，内存已释放，现在正在重新使用。但是是何时何地被释放的呢？
+想象一下你已经达到了这个监视点，并且由该变量使用的内存已更改了值。事实证明，这可能是由更早发生的事情引起的。例如，内存已释放，现在正在重新使用。但是它是何时何地被释放的呢？
 
 GNU 调试器甚至可以解决此问题，因为你可以反向运行程序！
 
@@ -209,7 +209,7 @@ via: https://opensource.com/article/19/9/tips-gnu-debugger
 作者：[Tim Waugh][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

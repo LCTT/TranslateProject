@@ -7,34 +7,18 @@
 [#]: via: (https://www.2daygeek.com/linux-command-check-website-is-up-down-alive/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-6 Methods to Quickly Check if a Website is up or down from the Linux Terminal
+在 Linux Terminal 快速检测网站是否宕机的 6 个方法
 ======
 
-This tutorial shows you how to quickly check whether a given website is up (alive) or down from a Linux terminal.
+本教程教你怎样在 Linux terminal 快速检测一个网站是否宕机。
 
-You may already know some of these commands to verify about this, namely ping, curl, and wget.
+你可能已经了解了一些类似的命令，像 ping，curl 和 wget。我们在本教程中又加入了一些其他命令。同时，对于要检测单个和多个主机的信息我们也加入了不同的选项。
 
-But we have added some other commands as well in this tutorial.
+本文将帮助你检测网站是否宕机。但是如果你在维护一个网站，希望网站宕掉时得到实时的报警，我推荐你去使用实时网站监控工具。这种工具有很多，有些是免费的，大部分收费。根据你的需求，选择合适的工具。在后续的文章中我们会涉及这个主题。
 
-Also, we have added various options to check this information for single host and multiple hosts.
+### 方法 1：使用 fping 命令检测一个网站是否宕机
 
-This article will help you to check whether the website is up or down.
-
-But if you maintain some websites and want to get real-time alerts when the website is down.
-
-I recommend you to use real-time website monitoring tools. There are many tools for this, and some are free and most of them are paid.
-
-So choose the preferred one based on your needs. We will cover this topic in our upcoming article.
-
-### Method-1: How to Check if a Website is up or down Using the fping Command
-
-**[fping command][1]** is a program such as ping, which uses the Internet Control Message Protocol (ICMP) echo request to determine whether a target host is responding.
-
-fping differs from ping because it allows users to ping any number of host in parallel. Also, hosts can be entered from a text file.
-
-fping sends an ICMP echo request, moves the next target in a round-robin fashion, and does not wait until the target host responds.
-
-If a target host replies, it is noted as active and removed from the list of targets to check; if a target does not respond within a certain time limit and/or retry limit it is designated as unreachable.
+**[fping 命令][1]** 是一个类似 ping 的程序，使用互联网控制消息协议回应请求报文（ICMP echo request）来判断目标主机是否能回应。fping 与 ping 的不同之处在于它可以并行地 ping 任意数量的主机，也可以从一个文本文件读入主机。fping 发送一个 ICMP echo request 后不等待目标主机响应，就以 round-robin 模式向下一个目标主机发请求。如果一个目标主机有响应，那么它就被标记为存活的（active）然后从检查目标列表里去掉。如果一个目标主机在限定的时间和（或）重试次数内没有响应，则被指定为网站无法到达（unreachable）。
 
 ```
 # fping 2daygeek.com linuxtechnews.com magesh.co.in
@@ -44,15 +28,9 @@ linuxtechnews.com is alive
 magesh.co.in is alive
 ```
 
-### Method-2: How to Quickly Check Whether a Website is up or down Using the http Command
+### 方法 2：使用 http 命令检测一个网站是否宕机
 
-HTTPie (pronounced aitch-tee-tee-pie) is a command line HTTP client.
-
-The **[httpie tool][2]** is a modern command line http client which makes CLI interaction with web services.
-
-It provides a simple http command that allows for sending arbitrary HTTP requests using a simple and natural syntax, and displays colorized output.
-
-HTTPie can be used for testing, debugging, and generally interacting with HTTP servers.
+HTTPie（读作 aitch-tee-tee-pie）是一个命令行 HTTP 客户端。**[httpie tool][2]** 是一个可以与 web 服务通过 CLI（command-line interface）进行交互的现代工具。httpie tool 提供了简单的 http 命令，可以通过发送简单的、自然语言语法的任意 HTTP 请求得到多彩的结果输出。HTTPie 可以用来对 HTTP 服务器进行测试、调试和基本的交互。
 
 ```
 # http 2daygeek.com
@@ -69,15 +47,9 @@ Transfer-Encoding: chunked
 Vary: Accept-Encoding
 ```
 
-### Method-3: How to Check if a Website is up or down Using the curl Command
+### 方法 3：使用 curl 命令检测一个网站是否宕机
 
-**[curl command][3]** is a tool to transfer data from a server or to server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP).
-
-The command is designed to work without user interaction.
-
-Also curl support proxy support, user authentication, FTP upload, HTTP post, SSL connections, cookies, file transfer resume, Metalink, and more.
-
-curl is powered by libcurl for all transfer-related features.
+**[curl 命令](https://www.2daygeek.com/curl-linux-command-line-download-manager/)** 是一个用于在服务器间通过支持的协议（DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET 和 TFTP）传输数据的工具。这个工具不支持用户交互。curl 也支持使用代理、用户认证、FTP 上传、HTTP post、SSL 连接、cookies、断点续传、Metalink等等。curl 由 libcurl 库提供所有与传输有关的能力。
 
 ```
 # curl -I https://www.magesh.co.in
@@ -95,14 +67,14 @@ server: cloudflare
 cf-ray: 535b74123ca4dbf3-LHR
 ```
 
-Use the following curl command if you want to see only the HTTP status code instead of entire output.
+如果你只想看 HTTP 状态码而不是返回的全部信息，用下面的 curl 命令：
 
 ```
 # curl -I "www.magesh.co.in" 2>&1 | awk '/HTTP\// {print $2}'
  200
 ```
 
-If you want to see if a given website is up or down, use the following Bash script.
+如果你想看一个网站是否宕机，用下面的 bash 脚本：
 
 ```
 # vi curl-url-check.sh
@@ -115,7 +87,7 @@ else
 fi
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把脚本内容添加到一个文件后，执行文件，查看结果
 
 ```
 # sh curl-url-check.sh
@@ -124,7 +96,7 @@ HTTP/2 200
 magesh.co.in is up
 ```
 
-Use the following shell script if you want to see the status of multiple websites.
+如果你想看多个网站的状态，使用下面的 shell 脚本：
 
 ```
 # vi curl-url-check-1.sh
@@ -141,7 +113,7 @@ echo "----------------------------------"
 done
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把上面脚本内容添加到一个文件后，执行文件，查看结果
 
 ```
 # sh curl-url-check-1.sh
@@ -156,13 +128,9 @@ www.xyzzz.com is down
 ----------------------------------
 ```
 
-### Method-4: How to Quickly Check Whether a Website is up or down Using the wget Command
+### 方法 4：使用 wget 命令检测一个网站是否宕机
 
-**[wget command][4]** (formerly known as Geturl) is a Free, open source, command line download tool which is retrieving files using HTTP, HTTPS and FTP, the most widely-used Internet protocols.
-
-It is a non-interactive command line tool and Its name is derived from World Wide Web and get.
-
-wget handle download pretty much good compared with other tools, futures included working in background, recursive download, multiple file downloads, resume downloads, non-interactive downloads &amp; large file downloads.
+**[wget 命令][4]** （前身是 Geturl）是一个免费的开源命令行下载工具，通过 HTTP、HTTPS、FTP和其他广泛使用的互联网协议检索文件。wget 是非交互式的命令行工具，由 World Wide Web 和 get 得名。wget 相对于其他工具来说更优秀，功能包括后台运行、递归下载、多文件下载、断点续传、非交互式下载和大文件下载。
 
 ```
 # wget -S --spider https://www.magesh.co.in
@@ -190,14 +158,14 @@ Remote file exists and could contain further links,
 but recursion is disabled -- not retrieving.
 ```
 
-Use the following wget command if you want to see only the HTTP status code instead of entire output.
+如果你只想看 HTTP 状态码而不是返回的全部结果，用下面的 wget 命令：
 
 ```
 # wget --spider -S "www.magesh.co.in" 2>&1 | awk '/HTTP\// {print $2}'
  200
 ```
 
-If you want to see if a given website is up or down, use the following Bash script.
+如果你想看一个网站是否宕机，用下面的 bash 脚本：
 
 ```
 # vi wget-url-check.sh
@@ -210,7 +178,7 @@ else
 fi
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把脚本内容添加到一个文件后，执行文件，查看结果
 
 ```
 # wget-url-check.sh
@@ -219,7 +187,7 @@ HTTP/1.1 200 OK
 Google.com is up
 ```
 
-Use the following shell script if you want to see the status of multiple websites.
+如果你想看多个网站的状态，使用下面的 shell 脚本：
 
 ```
 # vi curl-url-check-1.sh
@@ -236,7 +204,7 @@ echo "----------------------------------"
 done
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把上面脚本内容添加到一个文件后，执行文件，查看结果：
 
 ```
 # sh wget-url-check-1.sh
@@ -251,9 +219,9 @@ www.xyzzz.com is down
 ----------------------------------
 ```
 
-### Method-5: How to Quickly Check Whether a Website is up or down Using the lynx Command
+### 方法 5：使用 lynx 命令检测一个网站是否宕机
 
-**[lynx][5]** is a highly configurable text-based web browser for use on cursor-addressable character cell terminals. It’s the oldest web browser and it’s still in active development.
+**[lynx][5]** 是一个在可寻址光标字符单元终端上使用的基于文本的高度可配的 web 浏览器，它是最古老的 web 浏览器并且现在仍在开发。
 
 ```
 # lynx -head -dump http://www.magesh.co.in
@@ -272,14 +240,14 @@ Server: cloudflare
 CF-RAY: 535fc5704a43e694-LHR
 ```
 
-Use the following lynx command if you want to see only the HTTP status code instead of entire output.
+如果你只想看 HTTP 状态码而不是返回的全部结果，用下面的 lynx 命令：
 
 ```
 # lynx -head -dump https://www.magesh.co.in 2>&1 | awk '/HTTP\// {print $2}'
  200
 ```
 
-If you want to see if a given website is up or down, use the following Bash script.
+如果你想看一个网站是否宕机，用下面的 bash 脚本：
 
 ```
 # vi lynx-url-check.sh
@@ -292,7 +260,7 @@ else
 fi
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把脚本内容添加到一个文件后，执行文件，查看结果
 
 ```
 # sh lynx-url-check.sh
@@ -301,7 +269,7 @@ HTTP/1.1 200 OK
 magesh.co.in is up
 ```
 
-Use the following shell script if you want to see the status of multiple websites.
+如果你想看多个网站的状态，使用下面的 shell 脚本：
 
 ```
 # vi lynx-url-check-1.sh
@@ -318,7 +286,7 @@ echo "----------------------------------"
 done
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把上面脚本内容添加到一个文件后，执行文件，查看结果：
 
 ```
 # sh lynx-url-check-1.sh
@@ -333,13 +301,9 @@ www.xyzzz.com is down
 ----------------------------------
 ```
 
-### Method-6: How to Check if a Website is up or down Using the ping Command
+### 方法 6：使用 ping 命令检测一个网站是否宕机
 
-**[ping command][1]** stands for (Packet Internet Groper) command is a networking utility that used to test the target of a host availability/connectivity on an Internet Protocol (IP) network.
-
-It’s verify a host availability by sending Internet Control Message Protocol (ICMP) Echo Request packets to the target host and waiting for an ICMP Echo Reply.
-
-It summarize statistical results based on the packets transmitted, packets received, packet loss, typically including the min/avg/max times.
+**[ping 命令][1]** （Packet Internet Groper）是网络工具的代表，用于在互联网协议（IP）的网络中测试一个目标主机是否可用/可连接。通过向目标主机发送 ICMP 回应请求报文包并等待 ICMP 回应响应报文来检测主机的可用性。它基于已发送的包、接收到的包和丢失了的包来统计结果数据，通常包含最小/平均/最大响应时间。
 
 ```
 # ping -c 5 2daygeek.com
@@ -356,15 +320,9 @@ PING 2daygeek.com (104.27.157.177) 56(84) bytes of data.
 rtt min/avg/max/mdev = 170.668/213.824/250.295/28.320 ms
 ```
 
-### Method-7: How to Quickly Check Whether a Website is up or down Using the telnet Command
+### 方法 7：使用 telnet 命令检测一个网站是否宕机
 
-The Telnet command is an old network protocol used to communicate with another host over a TCP/IP network using the TELNET protocol.
-
-It uses port 23 to connect to other devices, such as computer and network equipment.
-
-Telnet is not a secure protocol and is now not recommended to use because the data sent to the protocol is not encrypted and can be intercepted by hackers.
-
-Everyone uses SSH protocol instead of telnet, which is encrypted and very secure.
+telnet 命令是一个使用 TELNET 协议用于 TCP/IP 网络中多个主机相互通信的古老的网络协议。它通过 23 端口连接其他设备如计算机和网络设备。telnet 是不安全的协议，现在由于用这个协议发送的数据没有经过加密可能被黑客拦截，所以不推荐使用。大家都使用经过加密且非常安全的 SSH 协议来代替 telnet。
 
 ```
 # telnet google.com 80
@@ -377,13 +335,11 @@ telnet> quit
 Connection closed.
 ```
 
-### Method-8: How to Check if a Website is up or down Using the Bash Script
+### 方法 8：使用 bash 脚本检测一个网站是否宕机
 
-In simple words, a **[shell script][6]** is a file that contains a series of commands. The shell reads this file and executes the commands one by one as they are entered directly on the command line.
+简而言之，一个 **[shell 脚本][6]** 就是一个包含一系列命令的文件。shell 从文件读取内容按输入顺序逐行在命令行执行。为了让它更有效，我们添加一些条件。这也减轻了 Linux 管理员的负担。
 
-To make this more useful we can add some conditions. This reduces the Linux admin task.
-
-If you want to see the status of multiple websites using the wget command, use the following shell script.
+如果你想想用 wget 命令看多个网站的状态，使用下面的 shell 脚本：
 
 ```
 # vi wget-url-check-2.sh
@@ -399,7 +355,7 @@ fi
 done
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把上面脚本内容添加到一个文件后，执行文件，查看结果：
 
 ```
 # sh wget-url-check-2.sh
@@ -409,7 +365,7 @@ google.co.in is up
 www.xyzzz.com is down
 ```
 
-If you want to see the status of multiple websites using the curl command, use the following **[bash script][7]**.
+如果你想想用 wget 命令看多个网站的状态，使用下面的 **[shell 脚本][7]**：
 
 ```
 # vi curl-url-check-2.sh
@@ -425,7 +381,7 @@ fi
 done
 ```
 
-Once you have added the above script to a file, run the file to see the output.
+当你把上面脚本内容添加到一个文件后，执行文件，查看结果：
 
 ```
 # sh curl-url-check-2.sh
@@ -441,7 +397,7 @@ via: https://www.2daygeek.com/linux-command-check-website-is-up-down-alive/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
