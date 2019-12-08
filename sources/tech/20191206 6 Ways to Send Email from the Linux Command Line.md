@@ -7,18 +7,10 @@
 [#]: via: (https://www.2daygeek.com/6-ways-to-send-email-from-the-linux-command-line/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-6 Ways to Send Email from the Linux Command Line
+Linux 命令行发送邮件的 6 种方法
 ======
 
-Sending email from the command line is required when you need to create emails from a shell script.
-
-There are several commands on Linux to send emails from the Linux command line.
-
-I’ve included the Top 6 Command Line Mail Clients in this tutorial.
-
-You can use any one of the following to send email from the Linux command line.
-
-This can be done using the following six commands.
+当你需要在 shell 脚本中创建邮件时，就需要用到命令行发送邮件的知识。Linux 中有很多命令可以实现发送邮件。本教程中包含了命令行邮件客户端的 Top 6，你可以选择其中一个。6 个命令分别是：
 
   * mail
   * mailx
@@ -29,53 +21,41 @@ This can be done using the following six commands.
 
 
 
-### How does it work?
+### 工作原理
 
-Let me give you an overall explanation of how the mail command delivers the mails to recipients on Linux.
+我先从整体上来解释下Linux中邮件命令怎么把邮件传递给收件人的。邮件命令（如 sendmail，postfix）生成邮件并发送给一个本地的邮件传输代理（MTA）。本质上发送和接收邮件时邮件服务器和远程邮件服务器之间的通信。下面的流程可以看得更详细。
 
-The mail command compose emails and sends them to a local mail transfer agent (MTA), such as sendmail, postfix, and so on.
+![](https://www.2daygeek.com/wp-content/uploads/2019/12/smtp-simple-mail-transfer-protocol.png)
 
-The mail server actually communicates with remote mail servers for sending and receiving emails.
+### 1) Linux 安装 mail 命令
 
-The flow chart below can explain more about that.
-
-[![][1]][2]
-
-### 1) How to Install mail Command on Linux
-
-The mail command is most popular command to send emails from Linux terminal.
-
-The mail command can be installed from the distribution official repository as follows.
-
-For **“Debian/Ubuntu”** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install mailutils.
+mail 命令是 Linux 终端发送邮件使用次数最多的命令。可以运行下面的命令从官方发行库安装 mail 命令。对于 **”Debian/Ubuntu“** 系统，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 安装 mailutils。 
 
 ```
 $ sudo apt-get install mailutils
 ```
 
- For **“RHEL/CentOS”** systems, use **[YUM Command][5]** to install mailx.
+ 对于 **“RHEL/CentOS”** 系统，使用 **[YUM 命令][5]** 安装 mailx。
 
 ```
 $ sudo yum install mailx
 ```
 
-For **“Fedora”** system, use the **[DNF Command][6]** to install mailx.
+对于 **“Fedora”** 系统，使用 **[DNF 命令][6]** 安装 mailx。
 
 ```
 $ sudo dnf install mailx
 ```
 
-### 1a) How to Use mail Command on Linux to Send a Mail
+### 1a) Linux 安装 mail 命令后发送邮件
 
-It’s straightforward and easy to use.
-
-Use the following format to send mail using the mail command without an attachment.
+mail 命令简单易用。如果你不需要发送附件，使用下面的 mail 命令格式就可以发送邮件了。
 
 ```
 $ echo "This is the mail body" | mail -s "Subject" [email protected]
 ```
 
-Use the following format to send mail using the mail command with attachment.
+如果你要发送附件，使用下面的 mail 命令格式。
 
 ```
 $ echo "This is the mail body" | mail -a test1.txt -s "Subject" [email protected]
@@ -91,165 +71,131 @@ $ echo "This is the mail body" | mail -a test1.txt -s "Subject" [email protected
 +--------------------------------------------------------------+
 ```
 
-### 2) How to Install mutt Command on Linux
+### 2) Linux 安装 mutt 命令
 
-The mutt is another popular command to send emails from Linux terminal.
-
-Mutt is a small but very powerful text based program for reading and sending electronic mail under unix operating systems, including support for color terminals, MIME, OpenPGP, and a threaded sorting mode.
-
-The mail command can be installed from the distribution official repository as follows.
-
-For **“Debian/Ubuntu”** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install mutt.
+mutt 是另一个 Linux 终端发送邮件很受欢迎的命令。mutt 是一个小而强大的基于文本的程序，用来阅读和发送 unix 操作系统的电子邮件，功能支持多彩终端、MIME、OpenPGP和按邮件线索排序的模式。可以运行下面的命令从官方发行库安装 mutt 命令。对于 **”Debian/Ubuntu“** 系统，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 安装 mutt。 
 
 ```
 $ sudo apt-get install mutt
 ```
 
- For **“RHEL/CentOS”** systems, use **[YUM Command][5]** to install mutt.
+对于 **“RHEL/CentOS”** 系统，使用 **[YUM 命令][5]** 安装 mutt。
 
 ```
 $ sudo yum install mutt
 ```
 
-For **“Fedora”** system, use the **[DNF Command][6]** to install mutt.
+对于 **“Fedora”** 系统，使用 **[DNF 命令][6]** 安装 mutt。
 
 ```
 $ sudo dnf install mutt
 ```
 
-### 2b) How to Use mutt Command on Linux to Send a Mail
+### 2b) Linux 使用 mutt 命令发送邮件
 
-This is also straightforward and easy to use.
-
-Use the following format to send mail using the mutt command without an attachment.
+mutt 也是简单易用的。如果你不需要发送附件，使用下面的 mutt 命令格式就可以发送邮件了。
 
 ```
 $ echo "This is the mail body" | mutt -s "Subject" [email protected]
 ```
 
-Use the following format to send mail using the mutt command with attachment.
+如果你要发送附件，使用下面的 mutt 命令格式。
 
 ```
 $ echo "This is the mail body" | mutt -s "Subject" [email protected] -a test1.txt
 ```
 
-### 3) How to Install mpack Command on Linux
+### 3) Linux 安装 mpack 命令
 
-The mpack is another popular command to send emails from Linux terminal.
-
-The mpack program encodes the the named file in one or more MIME messages. The resulting messages are mailed to one or more recipients.
-
-The mpack command can be installed from the distribution official repository as follows.
-
-For **“Debian/Ubuntu”** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install mpack.
+mpack 是另一个 Linux 终端发送邮件很受欢迎的命令。mpack 程序会对 MIME 消息中文件进行编码。编码后的消息被发送到一个或多个收件人。可以运行下面的命令从官方发行库安装 mpack 命令。对于 **”Debian/Ubuntu“** 系统，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 安装 mpack。 
 
 ```
 $ sudo apt-get install mpack
 ```
 
- For **“RHEL/CentOS”** systems, use **[YUM Command][5]** to install mpack.
+对于 **“RHEL/CentOS”** 系统，使用 **[YUM 命令][5]** 安装 mpack。
 
 ```
 $ sudo yum install mpack
 ```
 
-For **“Fedora”** system, use the **[DNF Command][6]** to install mpack.
+对于 **“Fedora”** 系统，使用 **[DNF 命令][6]** 安装 mpack。
 
 ```
 $ sudo dnf install mpack
 ```
 
-### 3a) How to Use mpack Command on Linux to Send a Mail
+### 3a) Linux 使用 mpack 命令发送邮件
 
-This is also straight forward and easy to use.
-
-Use the following format to send mail using the mpack command without an attachment.
+mpack 也是简单易用的。如果你不需要发送附件，使用下面的 mpack 命令格式就可以发送邮件了。
 
 ```
 $ echo "This is the mail body" | mpack -s "Subject" [email protected]
 ```
 
-Use the following format to send mail using the mpack command with attachment.
+如果你要发送附件，使用下面的 mpack 命令格式。
 
 ```
 $ echo "This is the mail body" | mpack -s "Subject" [email protected] -a test1.txt
 ```
 
-### 4) How to Install mail Command on Linux
+### 4) Linux 安装 mailx 命令
 
-Mailx is the newer version of mail command.
-
-It is based on Berkeley Mail 8.1, is intended to provide the functionality of the POSIX mailx command, and offers extensions for MIME, IMAP, POP3, SMTP, and S/MIME.
-
-Mailx provides enhanced features for interactive use, such as caching message threading, scoring, and filtering.
-
-The mailx command can be installed from the distribution official repository as follows.
-
-For **“Debian/Ubuntu”** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install mailutils.
+mailx 是 mail 命令的更新版本，基于 Berkeley Mail 8.1，意在提供 POSIX mailx 命令的功能和支持MIME、IMAP、POP3、SMTP和S/MIME 的扩展。mailx 在某些交互特性上更加强大，如缓冲邮件消息、排序和过滤等。可以运行下面的命令从官方发行库安装 mailx 命令。对于 **”Debian/Ubuntu“** 系统，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 安装 mailutils。
 
 ```
 $ sudo apt-get install mailutils
 ```
 
- For **“RHEL/CentOS”** systems, use **[YUM Command][5]** to install mailx.
+ 对于 **“RHEL/CentOS”** 系统，使用 **[YUM 命令][5]** 安装 mailx。
 
 ```
 $ sudo yum install mailx
 ```
 
-For **“Fedora”** system, use the **[DNF Command][6]** to install mailx.
+对于 **“Fedora”** 系统，使用 **[DNF 命令][6]** 安装 mailx。
 
 ```
 $ sudo dnf install mailx
 ```
 
-### 4a) How to Use mailx Command on Linux to Send a Mail
+### 4a) Linux 使用 mailx 命令发送邮件
 
-It’s straight forward and easy to use.
-
-Use the following format to send mail using the mailx command without an attachment.
+mailx 也是简单易用的。如果你不需要发送附件，使用下面的 mail 命令格式就可以发送邮件了。
 
 ```
 $ echo "This is the mail body" | mail -s "Subject" [email protected]
 ```
 
-Use the following format to send mail using the mailx command with attachment.
+如果你要发送附件，使用下面的 mail 命令格式。
 
 ```
 $ echo "This is the mail body" | mail -a test1.txt -s "Subject" [email protected]
 ```
 
-### 5) How to Install sendmail Command on Linux
+### 5) Linux 安装 sendmail 命令
 
-Sendmail is a most popular and general purpose SMTP server used in most of Linux distribution.
-
-Also, it allows you to sending email from command line.
-
-The sendmail command can be installed from the distribution official repository as follows.
-
-For **“Debian/Ubuntu”** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install sendmail.
+sendmail 是一个 Linux 上广泛使用的 SMTP 服务器，你也可以从命令行用 sendmail 发邮件。可以运行下面的命令从官方发行库安装 sendmail 命令。对于 **”Debian/Ubuntu“** 系统，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 安装 sendmail。
 
 ```
 $ sudo apt-get install sendmail
 ```
 
- For **“RHEL/CentOS”** systems, use **[YUM Command][5]** to install sendmail.
+对于 **“RHEL/CentOS”** 系统，使用 **[YUM 命令][5]** 安装 sendmail。
 
 ```
 $ sudo yum install sendmail
 ```
 
-For **“Fedora”** system, use the **[DNF Command][6]** to install sendmail.
+对于 **“Fedora”** 系统，使用 **[DNF 命令][6]** 安装 sendmail。
 
 ```
 $ sudo dnf install sendmail
 ```
 
-### 5a) How to Use sendmail Command on Linux to Send a Mail
+### 5a) Linux 使用 sendmail 命令发送邮件
 
-It’s straight forward and easy to use.
-
-Use the following format to send mail using the sendmail command.
+sendmail 也是简单易用的。使用下面的 sendmail 命令格式发送邮件。
 
 ```
 $ echo -e "Subject: Test Mail\nThis is the mail body" > /tmp/send-mail.txt
@@ -259,37 +205,29 @@ $ echo -e "Subject: Test Mail\nThis is the mail body" > /tmp/send-mail.txt
 $ sendmail [email protected] < send-mail.txt
 ```
 
-### 6) How to Install ssmtp Command on Linux
+### 6) Linux 安装 ssmtp 命令
 
-ssmtp is a send-only sendmail emulator for machines which delivers email from a local computer to a configured mailhost (mailhub).
-
-SSMTP allows users to transfer emails through an SMTP server from the Linux command line.
-
-The sendmail command can be installed from the distribution official repository as follows.
-
-For **“Debian/Ubuntu”** systems, use **[APT-GET Command][3]** or **[APT Command][4]** to install ssmtp.
+ssmtp 是类似 sendmail 的一个只发送不接收的工具，可以把邮件从本地计算机传递到配置好的 mailhost（mailhub）。用户可以在 Linux 命令行用 SSMTP 把邮件发送到 SMTP 服务器。可以运行下面的命令从官方发行库安装 ssmtp 命令。对于 **”Debian/Ubuntu“** 系统，使用 **[APT-GET 命令][3]** 或 **[APT 命令][4]** 安装 ssmtp。
 
 ```
 $ sudo apt-get install ssmtp
 ```
 
- For **“RHEL/CentOS”** systems, use **[YUM Command][5]** to install ssmtp.
+对于 **“RHEL/CentOS”** 系统，使用 **[YUM 命令][5]** 安装 ssmtp。
 
 ```
 $ sudo yum install ssmtp
 ```
 
-For **“Fedora”** system, use the **[DNF Command][6]** to install ssmtp.
+对于 **“Fedora”** 系统，使用 **[DNF 命令][6]** 安装 ssmtp。
 
 ```
 $ sudo dnf install ssmtp
 ```
 
-### 6a) How to Use ssmtp Command on Linux to Send a Mail
+### 6a) Linux 使用 ssmtp 命令发送邮件
 
-It’s straight forward and easy to use.
-
-Use the following format to send mail using the ssmtp command.
+ssmtp 也是简单易用的。使用下面的 sendmail 命令格式发送邮件。
 
 ```
 $ echo -e "Subject: Test Mail\nThis is the mail body" > /tmp/ssmtp-mail.txt
@@ -305,7 +243,7 @@ via: https://www.2daygeek.com/6-ways-to-send-email-from-the-linux-command-line/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
