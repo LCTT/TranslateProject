@@ -7,13 +7,17 @@
 [#]: via: (https://opensource.com/article/19/11/python-web-api-flask)
 [#]: author: (Rachel Waston https://opensource.com/users/rachelwaston)
 
-How to write a Python web API with Flask
+如何使用Flask编写Python Web API
 ======
 Use Flask, one of the fastest-growing Python frameworks, to fetch data
 from a server, in this quick tutorial.
+
+这是一个快速教程，用来展示如何通过Flask（目前发展最迅速的Python框架之一）来从服务器获取数据。
 ![spiderweb diagram][1]
 
 [Python][2] is a high-level, object-oriented programming language known for its simple syntax. It is consistently among the top-rated programming languages for building RESTful APIs.
+
+[Python][2]是一个以语法简洁著称的高级的，面向对象的程序语言。它一直都是一个用来构建RESTful API的顶级编程语言。
 
 [Flask][3] is a customizable Python framework that gives developers complete control over how users access data. Flask is a "micro-framework" based on Werkzeug's [WSGI][4] toolkit and Jinja 2's templating engine. It is designed as a web framework for RESTful API development.
 
