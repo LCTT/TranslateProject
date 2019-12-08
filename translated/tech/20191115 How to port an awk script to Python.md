@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to port an awk script to Python)
@@ -12,13 +12,13 @@
 
 > 将一个 awk 脚本移植到 Python 主要在于代码风格而不是转译。
 
-![Woman sitting in front of her laptop][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/08/095256ko6xdfwooe8zctfz.jpg)
 
 脚本是解决问题的有效方法，而 awk 是编写脚本的出色语言。它特别擅长于简单的文本处理，它可以带你完成配置文件的某些复杂重写或目录中文件名的重新格式化。
 
 ### 何时从 awk 转向 Python
 
-但是在某写方面，awk 的限制开始显现出来。它没有将文件分解为模块的真正概念，它缺乏质量错误报告，并且缺少了现在被认为是编程语言工作原理的其他内容。当编程语言的这些丰富功能有助于维护关键脚本时，移植将是一个不错的选择。
+但是在某些方面，awk 的限制开始显现出来。它没有将文件分解为模块的真正概念，它缺乏质量错误报告，并且缺少了现在被认为是编程语言工作原理的其他内容。当编程语言的这些丰富功能有助于维护关键脚本时，移植将是一个不错的选择。
 
 我最喜欢的完美移植 awk 的现代编程语言是 Python。
 
@@ -75,7 +75,7 @@ def awk_like_lines(list_of_file_names):
 
 ### 更复杂的 FNR、NR 和行数的 awk 行为
 
-如果 `FNR`、`NR` 和行数这三个你全部需要，仍然会有问题。如果确实如此，则使用三元组（其中两个项目是数字）会导致混淆。命名参数可使该代码更易于阅读，因此最好使用 `dataclass：
+如果 `FNR`、`NR` 和行数这三个你全都需要，仍然会有一些问题。如果确实如此，则使用三元组（其中两个项目是数字）会导致混淆。命名参数可使该代码更易于阅读，因此最好使用 `dataclass`：
 
 ```
 import dataclass
@@ -95,7 +95,7 @@ def awk_like_lines(list_of_file_names):
         yield AwkLikeLine(nr=nr, fnr=fnr, line=line)
 ```
 
-你可能想知道，为什么不总用这种方法呢？用其它方式的的原因是这总是太复杂了。如果你的目标是把一个通用库更容易地从 awk 移植到 Python，请考虑这样做。但是编写一个可以使你确切地了解特定情况所需的循环的方法通常更容易实现，也更容易理解（因而易于维护）。
+你可能想知道，为什么不一直用这种方法呢？使用其它方式的的原因是总用这种方法太复杂了。如果你的目标是把一个通用库更容易地从 awk 移植到 Python，请考虑这样做。但是编写一个可以使你确切地了解特定情况所需的循环的方法通常更容易实现，也更容易理解（因而易于维护）。
 
 ### 理解 awk 字段
 
@@ -181,7 +181,7 @@ for line in unique_generator(open("your_file")):
 
 将 awk 脚本移植到 Python 时，通常是在考虑适当的 Python 代码风格时重新实现核心需求，而不是按条件/操作进行笨拙的音译。考虑原始上下文并产生高质量的 Python 解决方案。虽然有时候使用 awk 的 Bash 单行代码可以完成这项工作，但 Python 编码是通往更易于维护的代码的途径。
 
-另外，如果你正在编写awk脚本，我相信您也可以学习 Python！如果你有任何疑问，请告诉我。
+另外，如果你正在编写 awk 脚本，我相信您也可以学习 Python！如果你有任何疑问，请告诉我。
 
 --------------------------------------------------------------------------------
 
@@ -190,7 +190,7 @@ via: https://opensource.com/article/19/11/awk-to-python
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
