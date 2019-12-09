@@ -1,15 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (luuming)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11658-1.html)
 [#]: subject: (The many faces of awk)
 [#]: via: (https://www.networkworld.com/article/3454979/the-many-faces-of-awk.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
 千面 awk
 ======
-`awk` 命令不仅提供了简单的输入字符串筛选功能，还包含提取数据列，打印简单文本，筛选内容——甚至做一些数学计算。
+
+> `awk` 命令不仅提供了简单的输入字符串筛选功能，还包含提取数据列、打印简单文本、筛选内容——甚至做一些数学计算。
 
 ![Thinkstock][6]
 
@@ -18,6 +19,7 @@
 ### 提取数据列
 
 `awk` 所提供的最简单与最常用的功能便是从文件或管道传输的数据中选取特定的内容。默认使用空格当做分隔符，这非常简单。
+
 ```
 $ echo one two three four five | awk ‘{print $4}’
 four
@@ -26,26 +28,30 @@ jdoe
 fhenry
 ```
 
-空格指的是一系列的 `space` 或 `tab`。在下面所展示的命令里，`awk` 从提供的数据中筛选第一和第四项。
+空格指的是一系列的 `space` 或 `tab` 字符。在下面所展示的命令里，`awk` 从提供的数据中筛选第一和第四项。
 
-`awk` 命令也可以通过在其后增加文件名的方式从文本文件中获取数据。
+`awk` 命令也可以通过在其后增加文件名参数的方式从文本文件中获取数据。
 
 ```
 $ awk '{print $1,$5,$NF}' HelenKellerQuote
 The beautiful heart.
-（LCTT 译注：“The best and most beautiful things in the world can not be seen or even touched , they must be felt with heart.” ——海伦凯勒）
 ```
+
+（LCTT 译注：“The best and most beautiful things in the world can not be seen or even touched , they must be felt with heart.” ——海伦凯勒）
+
 在这个例子中，`awk` 挑选了一行中的第一个、第五个和最后一个字段。
 
-命令中的`$NF` 指定选取每行的最后一个字段。这是因为`NF`代表一行中的<ruby>字段数量<rt>Number of Field</rt></ruby>，也就是 23，而 `$NF` 就代表着那个字段的值，也就是`heart`。最后的句号也包含进去了，因为它是最后一个字符串的一部分。
+命令中的 `$NF` 指定选取每行的最后一个字段。这是因为 `NF` 代表一行中的<ruby>字段数量<rt>Number of Field</rt></ruby>，也就是 23，而 `$NF` 就代表着那个字段的值，也就是`heart`。最后的句号也包含进去了，因为它是最后一个字符串的一部分。
 
 字段能以任何有用的形式打印。在这个例子中，我们将字段以日期的格式进行打印输出。
+
 ```
 $ date | awk '{print $4,$3,$2}'
 2019 Nov 22
 ```
 
 如果你省略了 `awk` 命令中字段指示符之间的逗号，输出将会挤成一个字符串。
+
 ```
 $ date | awk '{print $4 $3 $2}'
 2019Nov21
@@ -58,7 +64,7 @@ $ date | awk '{print $4-$3-$2}'
 1997
 ```
 
-在这个例子中，它将年“2019”和日期“22”相减，并忽略了中间的“Nov”。
+在这个例子中，它将年 “2019” 和日期 “22” 相减，并忽略了中间的 “Nov”。
 
 如果你想要空格之外的字符作为输出分隔符，你可以通过 `OFS`（<ruby>输出分隔符<rt>output field separator</rt></ruby>）指定分隔符，就像这样：
 
@@ -153,7 +159,7 @@ dory:x:1002:1002:Dory,,,:/home/dory:/bin/bash
 
 `awk` 提供了惊人的数学计算能力，并且可以开平方，算 `log`，算 `tan` 等等。
 
-这里有一对例子:
+这里有一对例子：
 
 ```
 $ awk 'BEGIN {print sqrt(2019)}'
@@ -205,7 +211,7 @@ via: https://www.networkworld.com/article/3454979/the-many-faces-of-awk.html
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[LuuMing](https://github.com/LuuMing)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
