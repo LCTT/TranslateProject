@@ -1,29 +1,29 @@
-[#]: collector: (lujun9972)
-[#]: translator: (lxbwolf)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How to program with Bash: Logical operators and shell expansions)
-[#]: via: (https://opensource.com/article/19/10/programming-bash-logical-operators-shell-expansions)
-[#]: author: (David Both https://opensource.com/users/dboth)
+[#]: collector: "lujun9972"
+[#]: translator: "lxbwolf"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "How to program with Bash: Logical operators and shell expansions"
+[#]: via: "https://opensource.com/article/19/10/programming-bash-logical-operators-shell-expansions"
+[#]: author: "David Both https://opensource.com/users/dboth"
 
-How to program with Bash: Logical operators and shell expansions
+Bash 编程教程：逻辑操作符和 shell 扩展
 ======
-Learn about logical operators and shell expansions, in the second
-article in this three-part series on programming with Bash.
+
+学习逻辑操作符和 shell 扩展，本文是Bash 编程系列（三篇文章）的第二篇。
 ![Women in computing and open source v5][1]
 
-Bash is a powerful programming language, one perfectly designed for use on the command line and in shell scripts. This three-part series (which is based on my [three-volume Linux self-study course][2]) explores using Bash as a programming language on the command-line interface (CLI).
+Bash 是一种强大的编程语言，完美契合命令行和 shell 脚本。本系列（三篇文章，基于我的 [Linux 自学课程三卷][2]）讲解如何在 CLI 使用 Bash 编程。
 
-The [first article][3] explored some simple command-line programming with Bash, including using variables and control operators. This second article looks into the types of file, string, numeric, and miscellaneous logical operators that provide execution-flow control logic and different types of shell expansions in Bash. The third and final article in the series will explore the **for**, **while**, and **until** loops that enable repetitive operations.
+[第一篇文章][3] 讲解了 Bash 的一些简单命令行操作，包括如何使用变量和控制操作符。第二篇文章探讨文件、字符串、数字等类型和各种各样在执行流中提供控制逻辑的的逻辑运算符，还有 Bash 中的各类 shell 扩展。本系列第三篇也是最后一篇文章，将会探索能重复执行操作的 **for** 、**while** 和 **until** 循环。
 
-Logical operators are the basis for making decisions in a program and executing different sets of instructions based on those decisions. This is sometimes called flow control.
+逻辑操作符是程序中判断的根本要素，也是执行不同的语句组合的依据。有时这也被称为流控制。
 
-### Logical operators
+### 逻辑操作符
 
-Bash has a large set of logical operators that can be used in conditional expressions. The most basic form of the **if** control structure tests for a condition and then executes a list of program statements if the condition is true. There are three types of operators: file, numeric, and non-numeric operators. Each operator returns true (0) if the condition is met and false (1) if the condition is not met.
+Bash 中有大量的用于不同条件表达式的逻辑操作符。最基本的是 **if** 控制结构，它判断一个条件，如果条件为真，就执行一些了程序语句。操作符共有三类：文件，数字和非数字操作符。如果条件为真，所有的操作符返回 true（0），如果条件为假，返回 false （1）。
 
-The functional syntax of these comparison operators is one or two arguments with an operator that are placed within square braces, followed by a list of program statements that are executed if the condition is true, and an optional list of program statements if the condition is false:
+这些比较操作符的函数语法是，一个操作符加一个或两个参数放在中括号内，后面跟一系列程序语句，如果条件为真，程序语句执行，可能会有另一个程序语句 list，该 list 在条件为假时执行：
 
 
 ```
@@ -32,54 +32,54 @@ or
 if [ arg1 operator arg2 ] ; then list ; else list ; fi
 ```
 
-The spaces in the comparison are required as shown. The single square braces, **[** and **]**, are the traditional Bash symbols that are equivalent to the **test** command:
+像例子中那样，在比较表达式中，空格不能省略。中括号的每部分，**[** 和 **]**，是跟 **test** 命令一样的传统的 Bash 符号：
 
 
 ```
 `if test arg1 operator arg2 ; then list`
 ```
 
-There is also a more recent syntax that offers a few advantages and that some sysadmins prefer. This format is a bit less compatible with different versions of Bash and other shells, such as ksh (the Korn shell). It looks like:
+还有一个更新的语法能提供一点点便利，一些系统管理员比较喜欢用。这种格式对于不同版本的 Bash 和一些 shell 如 ksh（the Korn shell）兼容性稍差。格式如下：
 
 
 ```
 `if [[ arg1 operator arg2 ]] ; then list`
 ```
 
-#### File operators
+#### 文件操作符
 
-File operators are a powerful set of logical operators within Bash. Figure 1 lists more than 20 different operators that Bash can perform on files. I use them quite frequently in my scripts.
+文件操作符是 Bash 中一系列强大的逻辑操作符。图表1列出了 20 多种不同的 Bash 处理文件的操作符。在我的脚本中使用频率很高。
 
 Operator | Description
 ---|---
--a filename | True if the file exists; it can be empty or have some content but, so long as it exists, this will be true
--b filename | True if the file exists and is a block special file such as a hard drive like **/dev/sda** or **/dev/sda1**
--c filename | True if the file exists and is a character special file such as a TTY device like **/dev/TTY1**
--d filename | True if the file exists and is a directory
--e filename | True if the file exists; this is the same as **-a** above
--f filename | True if the file exists and is a regular file, as opposed to a directory, a device special file, or a link, among others
--g filename | True if the file exists and is **set-group-id**, **SETGID**
+-a filename | 如果文件存在，返回 true；文件可以为空也可以有内容，但是只要它存在，就返回 true 
+-b filename | 如果文件存在且是一个块设备如**/dev/sda** or **/dev/sda1**，则返回 true 
+-c filename | 如果文件存在且是一个字符设备如**/dev/TTY1**，则返回 true 
+-d filename | 文件存在且是一个目录，返回 true 
+-e filename | 文件存在，返回 true；与上面的 **-a** 相同 
+-f filename | 文件存在且是一个一般文件，不是目录、设备文件或链接等的其他的文件，则返回 true 
+-g filename | 文件存在且 **SETGID** 标记被设置在其上，返回 true 
 -h filename | True if the file exists and is a symbolic link
 -k filename | True if the file exists and its "sticky'" bit is set
--p filename | True if the file exists and is a named pipe (FIFO)
--r filename | True if the file exists and is readable, i.e., has its read bit set
--s filename | True if the file exists and has a size greater than zero; a file that exists but that has a size of zero will return false
--t fd | True if the file descriptor **fd** is open and refers to a terminal
--u filename | True if the file exists and its **set-user-id** bit is set
--w filename | True if the file exists and is writable
--x filename | True if the file exists and is executable
--G filename | True if the file exists and is owned by the effective group ID
--L filename | True if the file exists and is a symbolic link
--N filename | True if the file exists and has been modified since it was last read
--O filename | True if the file exists and is owned by the effective user ID
+-p filename | 文件存在且是一个命名的管道（FIFO），返回 true 
+-r filename | 文件存在且有可读权限，如它的可读位被设置，返回 true 
+-s filename | 文件存在且大小大于 0，返回 true；如果一个文件存在但大小为 0，则返回 false 
+-t fd | 文件描述符 **fd** 被打开且被关联到一个终端设备上，返回 true 
+-u filename | 文件存在且它的**set-user-id** 位被设置，返回 true 
+-w filename | 文件存在且有可写权限，返回 true 
+-x filename | 文件存在且有可执行权限，返回 true 
+-G filename | 文件存在且文件的 group ID 与当前用户相同，返回 true 
+-L filename | 文件存在且是一个符号链接，返回 true 
+-N filename | 文件存在且从文件上一次被读取到现在为止, 文件被修改过，返回 true 
+-O filename | 文件存在且你是文件的拥有者，返回 true 
 -S filename | True if the file exists and is a socket
-file1 -ef file2 | True if file1 and file2 refer to the same device and iNode numbers
-file1 -nt file2 | True if file1 is newer (according to modification date) than file2, or if file1 exists and file2 does not
-file1 -ot file2 | True if file1 is older than file2, or if file2 exists and file1 does not
+file1 -ef file2 | 文件`file1`和 文件`file2`是相同文件的硬链接，返回 true 
+file1 -nt file2 | 文件 file1 比 file2 新（根据修改日期），或 file1 存在而 file2 不存在 
+file1 -ot file2 | 文件 file1 比 file2 旧（根据修改日期），或 file1 不存在而 file2 存在 
 
-_**Fig. 1: The Bash file operators**_
+_**Fig.1：Bash 文件操作符**_
 
-As an example, start by testing for the existence of a file:
+以测试一个文件存在与否来举例：
 
 
 ```
@@ -88,14 +88,14 @@ The file TestFile1 does not exist.
 [student@studentvm1 testdir]$
 ```
 
-Next, create a file for testing named **TestFile1**. For now, it does not need to contain any data:
+创建一个用来测试的文件，命名为  **TestFile1**。目前它不需要包含任何数据：
 
 
 ```
 `[student@studentvm1 testdir]$ touch TestFile1`
 ```
 
-It is easy to change the value of the **$File** variable rather than a text string for the file name in multiple locations in this short CLI program:
+在这个简短的 CLI 程序中， 修改 **$File** 变量的值相比于在多个地方修改表示文件名的字符串的值要容易：
 
 
 ```
@@ -104,7 +104,7 @@ The file TestFile1 exists.
 [student@studentvm1 testdir]$
 ```
 
-Now, run a test to determine whether a file exists and has a non-zero length, which means it contains data. You want to test for three conditions: 1. the file does not exist; 2. the file exists and is empty; and 3. the file exists and contains data. Therefore, you need a more complex set of tests—use the **elif** stanza in the **if-elif-else** construct to test for all of the conditions:
+现在，运行一个测试来判断一个文件是否存在且长度不为 0（表示它包含数据）。假设你想判断三种情况：1. 文件不存在；2. 文件存在且为空；3. 文件存在且包含数据。因此，你需要一组更负责的测试代码 — 为了测试所有的情况在 **if-elif-else** 结构中使用 **elif** 语句：
 
 
 ```
@@ -112,16 +112,16 @@ Now, run a test to determine whether a file exists and has a non-zero length, wh
 [student@studentvm1 testdir]$
 ```
 
-In this case, the file exists but does not contain any data. Add some data and try again:
+在本案例中，文件存在但不包含任何数据。向文件添加一些数据再运行一次：
 
 
 ```
-[student@studentvm1 testdir]$ File="TestFile1" ; echo "This is file $File" &gt; $File ; if [ -s $File ] ; then echo "$File exists and contains data." ; fi
+[student@studentvm1 testdir]$ File="TestFile1" ; echo "This is file $File" > $File ; if [ -s $File ] ; then echo "$File exists and contains data." ; fi
 TestFile1 exists and contains data.
 [student@studentvm1 testdir]$
 ```
 
-That works, but it is only truly accurate for one specific condition out of the three possible ones. Add an **else** stanza so you can be somewhat more accurate, and delete the file so you can fully test this new code:
+这组语句能返回正常的结果，但是仅仅是在我们已知三种可能的情况下测试某种确切的条件。添加一段 **else** 语句，这样你就可以更精确地测试。把文件删掉，你就可以完整地测试这段新代码：
 
 
 ```
@@ -129,7 +129,7 @@ That works, but it is only truly accurate for one specific condition out of the 
 TestFile1 does not exist or is empty.
 ```
 
-Now create an empty file to test:
+现在创建一个空文件用来测试：
 
 
 ```
@@ -137,7 +137,7 @@ Now create an empty file to test:
 TestFile1 does not exist or is empty.
 ```
 
-Add some content to the file and test again:
+向文件添加一些内容，然后再测试一次：
 
 
 ```
@@ -145,7 +145,7 @@ Add some content to the file and test again:
 TestFile1 exists and contains data.
 ```
 
-Now, add the **elif** stanza to discriminate between a file that does not exist and one that is empty:
+现在加入 **elif** 语句来辨别是文件不存在还是文件为空：
 
 
 ```
@@ -159,6 +159,10 @@ TestFile1 exists and contains data.
 Now you have a Bash CLI program that can test for these three different conditions… but the possibilities are endless.
 
 It is easier to see the logic structure of the more complex compound commands if you arrange the program statements more like you would in a script that you can save in a file. Figure 2 shows how this would look. The indents of the program statements in each stanza of the **if-elif-else** structure help to clarify the logic.
+
+现在你有一个可以测试这三种情况的 Bash CLI 程序，但是可能的情况是无限的。
+
+如果你能像保存在文件中的脚本那样书写程序语句，那么对于即使更复杂的命令组合也会很容易看出它们的逻辑结构。图表 2 就是一个示例。 **if-elif-else** 结构中每一部分的程序语句的缩进让逻辑更变得清晰。
 
 
 ```
@@ -175,9 +179,9 @@ else
 fi
 ```
 
-_**Fig. 2: The command line program rewritten as it would appear in a script**_
+_**Fig. 2: 像在脚本里一样重写书写命令行程序**_
 
-Logic this complex is too lengthy for most CLI programs. Although any Linux or Bash built-in commands may be used in CLI programs, as the CLI programs get longer and more complex, it makes more sense to create a script that is stored in a file and can be executed at any time, now or in the future.
+对于大多数 CLI 程序来说，让这些复杂的命令变得有逻辑需要写很长的代码。虽然 CLI 可能是用 Linux 或 Bash 内置的命令，但是当 CLI 程序很长或很复杂时，创建一个脚本保存在一个文件中将更有效，保存到文件中后，可以随时运行。
 
 #### String comparison operators
 
@@ -493,6 +497,6 @@ via: https://opensource.com/article/19/10/programming-bash-logical-operators-she
 
 [a]: https://opensource.com/users/dboth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_women_computing_5.png?itok=YHpNs_ss (Women in computing and open source v5)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_women_computing_5.png?itok=YHpNs_ss "Women in computing and open source v5"
 [2]: http://www.both.org/?page_id=1183
 [3]: https://opensource.com/article/19/10/programming-bash-part-1
