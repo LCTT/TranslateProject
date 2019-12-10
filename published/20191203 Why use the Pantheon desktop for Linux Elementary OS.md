@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11660-1.html)
 [#]: subject: (Why use the Pantheon desktop for Linux Elementary OS)
 [#]: via: (https://opensource.com/article/19/12/pantheon-linux-desktop)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-为何在 Elementary OS 中使用 Pantheon 桌面
+为何 Elementary OS 中使用 Pantheon 桌面
 ======
 
 > 本文是 Linux 桌面特别系列的一部分。通过在 Elementary OS 上运行 Pantheon 桌面获得广受喜爱的 Mac OS 特性。
 
-![A person programming][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/10/085342dfgngrpt6sgzl3af.jpg)
 
 你愿意为 Linux 桌面支付 20 美元吗？事实上，我会在下载自由软件时选择支付更多的钱！我这样做的原因是开源是值得的。对于 [Elementary OS][2] 的拷贝，默认价格是 20 美元（你可以选择 1 美元，如果你无法负担，你甚至可以用 0 美元下载）。作为回报，你将获得一个出色且精心制作的发行版，同时拥有它自己的 Pantheon 桌面设计。
 
