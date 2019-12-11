@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "lxbwolf"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "How to program with Bash: Logical operators and shell expansions"
-[#]: via: "https://opensource.com/article/19/10/programming-bash-logical-operators-shell-expansions"
-[#]: author: "David Both https://opensource.com/users/dboth"
+[#]: collector: (lujun9972)
+[#]: translator: (lxbwolf)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (How to program with Bash: Logical operators and shell expansions)
+[#]: via: (https://opensource.com/article/19/10/programming-bash-logical-operators-shell-expansions)
+[#]: author: (David Both https://opensource.com/users/dboth)
 
 Bash 编程教程：逻辑操作符和 shell 扩展
 ======
@@ -490,6 +490,6 @@ via: https://opensource.com/article/19/10/programming-bash-logical-operators-she
 
 [a]: https://opensource.com/users/dboth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_women_computing_5.png?itok=YHpNs_ss "Women in computing and open source v5"
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_women_computing_5.png?itok=YHpNs_ss (Women in computing and open source v5)
 [2]: http://www.both.org/?page_id=1183
 [3]: https://opensource.com/article/19/10/programming-bash-part-1
