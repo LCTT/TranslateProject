@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (hanwckf)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11667-1.html)
 [#]: subject: (Debugging Software Deployments with strace)
 [#]: via: (https://theartofmachinery.com/2019/11/14/deployment_debugging_strace.html)
 [#]: author: (Simon Arneaud https://theartofmachinery.com)
 
 在软件部署中使用 strace 进行调试
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/201912/12/130413poennny2pbrgy9ot.jpg)
 
 我的大部分工作都涉及到部署软件系统，这意味着我需要花费很多时间来解决以下问题：
 
