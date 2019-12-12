@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lxbwolf)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11666-1.html)
 [#]: subject: (How to remove duplicate lines from files with awk)
 [#]: via: (https://opensource.com/article/19/10/remove-duplicate-lines-files-awk)
 [#]: author: (Lazarus Lazaridis https://opensource.com/users/iridakos)
@@ -12,7 +12,7 @@
 
 > 学习怎样使用 awk 的 `!visited[$0]++` 在不重新排序或改变原排列顺序的前提下删掉重复的行。 
 
-![Coding on a computer][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/12/124322vwe3tq3wlw33tw1f.jpg)
 
 假设你有一个文本文件，你需要删掉所有重复的行。
 
@@ -26,7 +26,7 @@ awk '!visited[$0]++' your_file > deduplicated_file
 
 ### 工作原理
 
-这个脚本维持一个关联数组，索引为文件中去重后的行，每个索引对应的值为该行出现的次数。对于文件的每一行，如果这行出现的次数为 0，则值加 1，并打印这行，否则值加 1，不打印这行。
+这个脚本维护一个关联数组，索引（键）为文件中去重后的行，每个索引对应的值为该行出现的次数。对于文件的每一行，如果这行（之前）出现的次数为 0，则值加 1，并打印这行，否则值加 1，不打印这行。
 
 我之前不熟悉 `awk`，我想弄清楚这么短小的一个脚本是怎么实现的。我调研了下，下面是调研心得：
 
@@ -35,12 +35,12 @@ awk '!visited[$0]++' your_file > deduplicated_file
 * `$0` 变量的值是当前正在被处理的行的内容。
 * `visited[$0]` 通过与 `$0`（正在被处理的行）相等的键来访问该映射中的值，即出现次数（我们在下面设置的）。
 * `!` 对表示出现次数的值取反：
-    * 在 `awk` 中，[任意非零的数或任意非空的字符串的值是 true][4]。
+    * 在 `awk` 中，[任意非零的数或任意非空的字符串的值是 `true`][4]。
     * [变量默认的初始值为空字符串][5]，如果被转换为数字，则为 0。
     * 也就是说：
         * 如果 `visited[$0]` 的值是一个比 0 大的数，取反后被解析成 `false`。
         * 如果 `visited[$0]` 的值为等于 0 的数字或空字符串，取反后被解析成 `true` 。
-    * `++` 表示变量（`visited[$0]`）的值加 1。
+    * `++` 表示变量 `visited[$0]` 的值加 1。
         * 如果该值为空，`awk` 自动把它转换为 `0`（数字） 后加 1。 
         * 注意：加 1 操作是在我们取到了变量的值之后执行的。
 
@@ -49,13 +49,13 @@ awk '!visited[$0]++' your_file > deduplicated_file
   * `true`：如果表示出现次数为 0 或空字符串
   * `false`：如果出现的次数大于 0
 
-`awk` 由 [模式或表达式和一个与之关联的动作][6] 组成
+`awk` 由 [模式或表达式和一个与之关联的动作][6] 组成：
 
 ```
 <模式/表达式> { <动作> }
 ```
 
-如果匹配到了模式，就会执行后面的动作。如果没有动作，`awk` 默认会打印（`print`）输入。
+如果匹配到了模式，就会执行后面的动作。如果省略动作，`awk` 默认会打印（`print`）输入。
 
 > 省略动作等价于 `{print $0}`。
 
