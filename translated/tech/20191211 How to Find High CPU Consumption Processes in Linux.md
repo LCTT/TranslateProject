@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "lxbwolf"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "How to Find High CPU Consumption Processes in Linux"
-[#]: via: "https://www.2daygeek.com/how-to-find-high-cpu-consumption-processes-in-linux/"
-[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
+[#]: collector: (lujun9972)
+[#]: translator: (lxbwolf)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (How to Find High CPU Consumption Processes in Linux)
+[#]: via: (https://www.2daygeek.com/how-to-find-high-cpu-consumption-processes-in-linux/)
+[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
 Linux 中怎么找出 CPU 占用高的进程
 ======
