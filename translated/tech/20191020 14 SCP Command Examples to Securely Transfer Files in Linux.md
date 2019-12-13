@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (14 SCP Command Examples to Securely Transfer Files in Linux)
@@ -10,7 +10,9 @@
 在 Linux 上安全传输文件的 14 SCP 命令示例
 ======
 
-SCP（Secure Copy）是 Linux 和 Unix 之类的系统中的命令行工具，用于通过网络安全地跨系统传输文件和目录。当我们使用 `scp` 命令将文件和目录从本地系统复制到远程系统时，则在后端与远程系统建立 ssh 连接。换句话说，我们可以说 `scp` 在后端使用了相同的 SSH 安全机制，它需要密码或密钥进行身份验证。
+![](https://img.linux.net.cn/data/attachment/album/201912/13/100239f31is1ios31vvoo3.jpg)
+
+SCP（<ruby>安全复制<rt>Secure Copy</rt></ruby>）是 Linux 和 Unix 之类的系统中的命令行工具，用于通过网络安全地跨系统传输文件和目录。当我们使用 `scp` 命令将文件和目录从本地系统复制到远程系统时，则在后端与远程系统建立了 ssh 连接。换句话说，我们可以说 `scp` 在后端使用了相同的 SSH 安全机制，它需要密码或密钥进行身份验证。
 
 ![scp-command-examples-linux][2]
 
@@ -33,13 +35,13 @@ SCP（Secure Copy）是 Linux 和 Unix 之类的系统中的命令行工具，�
 * `-C` 启用压缩
 * `-i` 指定识别文件或私钥
 * `-l` 复制时限制带宽
-* `-P` 目标主机的 ssh 端口号
+* `-P` 指定目标主机的 ssh 端口号
 * `-p` 复制时保留文件的权限、模式和访问时间
 * `-q` 禁止 SSH 警告消息
 * `-r` 递归复制文件和目录
 * `-v` 详细输出
 
-现在让我们跳入示例！！！！
+现在让我们跳入示例！
 
 ### 示例：1）使用 scp 将文件从本地系统复制到远程系统
 
@@ -56,7 +58,7 @@ jdk-linux-x64_bin.rpm                          100%   10MB  27.1MB/s   00:00
 
 ### 示例：2）使用 scp 将文件从远程系统复制到本地系统
 
-假设我们想将文件从远程系统复制到 `/tmp` 文件夹下的本地系统，执行以下 `scp` 命令，
+假设我们想将文件从远程系统复制到本地系统下的 `/tmp` 文件夹，执行以下 `scp` 命令，
 
 ```
 [root@linuxtechi ~]$ scp root@linuxtechi:/root/Technical-Doc-RHS.odt /tmp
@@ -69,7 +71,7 @@ Technical-Doc-RHS.odt                         100% 1109KB  31.8MB/s   00:00
 
 ### 示例：3）使用 scp 传输文件时的详细输出（-v）
 
-在 `scp` 命令中，我们可以使用 `-v` 选项启用详细输出，使用详细输出，我们可以轻松地发现后台确切发生了什么。这对于调试连接、认证和配置问题非常有用。
+在 `scp` 命令中，我们可以使用 `-v` 选项启用详细输出。使用详细输出，我们可以轻松地发现后台确切发生了什么。这对于调试连接、认证和配置等问题非常有用。
 
 ```
 root@linuxtechi ~]$ scp -v jdk-linux-x64_bin.rpm root@linuxtechi:/opt
@@ -119,7 +121,7 @@ jdk-linux-x64_bin.rpm                            100%   10MB  25.3MB/s   00:00
 
 ### 示例：6）递归复制文件和目录（-r）
 
-在 `scp` 命令中使用 `-r` 选项将整个目录从一个系统递归复制到另一个系统，示例如下所示：
+在 `scp` 命令中使用 `-r` 选项将整个目录从一个系统递归地复制到另一个系统，示例如下所示：
 
 ```
 [root@linuxtechi ~]$ scp -r Downloads root@linuxtechi:/opt
@@ -135,7 +137,7 @@ drwxr-xr-x. 2 root root 75 Oct 19 12:10 /opt/Downloads
 
 ### 示例：7）通过启用压缩来提高传输速度（-C）
 
-在 `scp` 命令中，我们可以通过使用 `-C` 选项启用压缩来提高传输速度，它将自动在源上启用压缩并在目标主机上启用解压缩。
+在 `scp` 命令中，我们可以通过使用 `-C` 选项启用压缩来提高传输速度，它将自动在源主机上启用压缩并在目标主机上解压缩。
 
 ```
 root@linuxtechi ~]$ scp -r -C Downloads root@linuxtechi:/mnt
@@ -145,7 +147,7 @@ root@linuxtechi ~]$ scp -r -C Downloads root@linuxtechi:/mnt
 
 ### 示例：8）复制时限制带宽（-l）
 
-在 `scp` 命令中使用 `-l` 选项设置复制时对带宽使用的限制。带宽以 Kbit/s 为单位指定，示例如下所示，
+在 `scp` 命令中使用 `-l` 选项设置复制时对带宽使用的限制。带宽以 Kbit/s 为单位指定，示例如下所示：
 
 ```
 [root@linuxtechi ~]$ scp -l 500 jdk-linux-x64_bin.rpm  root@linuxtechi:/var
@@ -159,7 +161,7 @@ root@linuxtechi ~]$ scp -r -C Downloads root@linuxtechi:/mnt
 [root@linuxtechi ~]$ scp -P 2022 jdk-linux-x64_bin.rpm  root@linuxtechi:/var
 ```
 
-在上面的示例中，远程主机的 ssh 端口为 “2022”
+在上面的示例中，远程主机的 ssh 端口为 “2022”。
 
 ### 示例：10）复制时保留文件的权限、模式和访问时间（-p）
 
@@ -182,7 +184,7 @@ jdk-linux-x64_bin.rpm                            100%   10MB  13.5MB/s   00:00
 
 ### 示例：12）在传输时使用 scp 中的识别文件（-i）
 
-在大多数 Linux 环境中，首选基于密钥的身份验证。在 scp 命令中，我们使用 `-i` 选项指定识别文件（私钥文件），示例如下所示：
+在大多数 Linux 环境中，首选基于密钥的身份验证。在 `scp` 命令中，我们使用 `-i` 选项指定识别文件（私钥文件），示例如下所示：
 
 ```
 [root@linuxtechi ~]$ scp -i my_key.pem -r Downloads root@linuxtechi:/root
@@ -207,15 +209,15 @@ index.html                                100%   85KB   6.6MB/s   00:00
 
 ### 示例：14）在 scp 命令中使用其他加密方式（-c）
 
-默认情况下，`scp` 使用 AES-128 加密方式来加密文件。如果你想在 `scp` 命令中使用其他加密方式，请使用 `-c` 选项，后接加密方式名称，
+默认情况下，`scp` 使用 AES-128 加密方式来加密文件。如果你想在 `scp` 命令中使用其他加密方式，请使用 `-c` 选项，后接加密方式名称。
 
-假设我们要在用 `scp`命令传输文件时使用 3des-cbc 加密方式，请运行以下 `scp` 命令：
+假设我们要在用 `scp` 命令传输文件时使用 3des-cbc 加密方式，请运行以下 `scp` 命令：
 
 ```
 [root@linuxtechi ~]# scp -c 3des-cbc -r Downloads root@linuxtechi:/root
 ```
 
-使用以下命令列出 `ssh` 和 `scp` 加密方式：
+使用以下命令列出 `ssh` 和 `scp` 支持的加密方式：
 
 ```
 [root@linuxtechi ~]# ssh -Q cipher localhost | paste -d , -s -
@@ -232,7 +234,7 @@ via: https://www.linuxtechi.com/scp-command-examples-in-linux/
 作者：[Pradeep Kumar][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
