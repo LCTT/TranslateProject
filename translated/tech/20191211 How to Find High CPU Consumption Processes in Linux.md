@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (lxbwolf)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,43 +7,17 @@
 [#]: via: (https://www.2daygeek.com/how-to-find-high-cpu-consumption-processes-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Find High CPU Consumption Processes in Linux
+Linux 中怎么找出 CPU 占用高的进程
 ======
 
-We have already described in our previous article **[how to find high memory consumption processes in Linux][1]**.
+在之前的文章中我们已经讨论过 [Linux 中怎么找出消耗内存高的进程][1] 。你可能也会遇到在 Linux 系统中找出 CPU 占用高的进程的情形。如果是这样，那么你需要列出系统中 CPU 占用高的进程的列表来确定。我认为只有两种方法能实现：使用 [top 命令][2] 和 [ps 命令][3]。出于一些理由，我更倾向于用 top 命令而不是 ps 命令。但是两个工具都能达到你要的目的，所以你可以根据需求决定使用哪个。这两个工具都被 Linux 系统管理员广泛使用。
 
-There are situations where you might see more CPU usage on a Linux system.
+### 1) 怎样使用 top 命令找出 Linux 中 CPU 占用高的进程
 
-If so, you should identify a list of processes that consume more CPU on the system.
-
-I believe there are only two ways for you to check this.
-
-This can be done using the **[top command][2]** and the **[ps command][3]**.
-
-I’d like to go with the top command for most reasons instead of ps.
-
-But both will give you the same results, so you can choose the one you like.
-
-Both of these options are widely used by Linux administrators.
-
-### 1) How to Find High CPU Consumption Process in Linux Using the top Command
-
-The Linux top command is the best and most well known command that everyone uses to monitor Linux system performance.
-
-The top command provides a dynamic real-time view of the running process on a Linux system.
-
-It display system summary information, the list of processes currently being managed by the Linux kernel.
-
-It displays various system information such as CPU usage, Memory usage, Swap Memory, Number of running processes, system uptime, system load, Buffer Size, Cache Size, Process PID, etc.
-
-By default, it sorts the top output with the CPU usage and updates the top command data every 5 seconds.
-
-If you want to see a clear view of the top command output for further analysis, this is a best way to **[run the top command in the batch mode][4]**.
-
-Also, you need to **[understand the top command output][5]** to fix the performance problem on the system.
+在所有监控 Linux 系统性能的工具中，Linux 的 top 命令是最好的也是最知名的。top 命令提供了 Linux 系统运行中的进程的动态实时视图。它能显示系统的概览信息，和 Linux 内核当前管理的进程列表。它显示了大量的系统信息，如 CPU 使用，内存使用，交换内存，运行的进程数，目前系统开机时间，系统负载，缓冲区大小，缓存大小，进程 PID等等。默认情况下，top 命令的输出结果按 CPU 占用进行排序，每 5 秒中更新一次结果。如果你想要一个更清晰的视图来更深入的分析结果，[以批次档模式运行 top 命令][4] 是最好的方法。同时，你需要 [理解 top 命令输出结果的含义][5] ，这样才能解决系统的性能问题。
 
 ```
-# top -c -b | head -50
+# top -b | head -50
 
 top - 00:19:17 up 14:23,  1 user,  load average: 2.46, 2.18, 1.97
 Tasks: 306 total,   1 running, 305 sleeping,   0 stopped,   0 zombie
@@ -71,30 +45,30 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
  3286 daygeek   20     3089736 404088 184968 S   1.0   2.5  41:57.44 Web Content
 ```
 
-Details of the above command:
+上面的命令的各部分解释：
 
-  * **top :** This is a command.
-  * **-b :** Batch mode.
-  * **head -50:** Display first 50 lines in the output.
-  * **PID :** Unique ID of the process.
-  * **USER :** Owner of the process.
-  * **PR :** priority of the process.
-  * **NI :** The NICE value of the process.
-  * **VIRT :** How much virtual memory used by the process.
-  * **RES :** How much physical memory used by the process.
-  * **SHR :** How much shared memory used by the process.
-  * **S :** This indicates the status of the process: S=sleep R=running Z=zombie.
-  * **%CPU :** The percentage of CPU used by the process.
-  * **%MEM :** The percentage of RAM used by the process.
-  * **TIME+ :** How long the process being running.
-  * **COMMAND :** Name of the process.
+  * **top :** 命令
+  * **-b :** 批次档模式
+  * **head -50:** 显示输出结果的前 50 个
+  * **PID :** 进程的 ID
+  * **USER :** 进程的归属者
+  * **PR :** 进程的等级
+  * **NI :** 进程的 NICE 值
+  * **VIRT :** 进程使用的虚拟内存
+  * **RES :** 进程使用的物理内存
+  * **SHR :** 进程使用的共享内存
+  * **S :** 这个值表示进程的状态: S=睡眠 R=运行 Z=僵尸进程
+  * **%CPU :** 进程占用的 CPU 比例
+  * **%MEM :** 进程使用的 RAM 比例
+  * **TIME+ :** 进程运行了多长时间
+  * **COMMAND :** 进程名字
 
 
 
-If you want to see the full path of the command instead of the command name, run the following top command format.
+如果你想看命令的完整路径而不是命令名字，以运行下面的格式 top 命令：
 
 ```
-# top -b | head -50
+# top -c -b | head -50
 
 top - 00:28:49 up 14:33,  1 user,  load average: 2.43, 2.49, 2.23
 Tasks: 305 total,   1 running, 304 sleeping,   0 stopped,   0 zombie
@@ -123,11 +97,9 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
  2179 daygeek   20     2945348 429644 172940 S   1.0   2.6  15:20.90 /usr/lib/firefox/firefox -contentproc -childID 6 -isForBrowser -prefsLen 7821 -prefMapSize 213431 -parentBuildID 20191031132559 -greomni /us+
 ```
 
-### 2) How to Find High CPU Consumption Process in Linux Using the ps Command
+### 2) 怎样使用 ps 命令找出 Linux 中 CPU 占用高的进程
 
-ps stands for processes status, it display the information about the active/running processes on the system.
-
-It provides a snapshot of the current processes along with detailed information like username, user id, cpu usage, memory usage, process start date and time command name etc.
+ps 是 `process status`（进程状态）的缩写，它能显示系统中活跃的/运行中的进程的信息。它提供了当前进程及其详细信息，诸如用户名、用户 ID、CPU 使用率、内存使用、进程启动日期时间、命令名等等的快照。
 
 ```
 # ps -eo pid,ppid,%mem,%cpu,cmd --sort=-%cpu | head
@@ -144,22 +116,22 @@ It provides a snapshot of the current processes along with detailed information 
  2179  1714  2.7  1.8 /usr/lib/firefox/firefox -contentproc -childID 6 -isForBrowser -prefsLen 7821 -prefMapSize 213431 -parentBuildID 20191031132559 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 1714 true tab
 ```
 
-Details of the above command:
+上面的命令的各部分解释：
 
-  * **ps :** This is a command.
-  * **-e :** Select all processes.
-  * **-o :** To customize a output format.
-  * **–sort=-%cpu :** Sort the ouput based on CPU usage.
-  * **head :** To display first 10 lines of the output
-  * **PID :** Unique ID of the process.
-  * **PPID :** Unique ID of the parent process.
-  * **%MEM :** The percentage of RAM used by the process.
-  * **%CPU :** The percentage of CPU used by the process.
-  * **Command :** Name of the process.
+  * **ps :** 命令名字
+  * **-e :** 选择所有进程
+  * **-o :** 自定义输出格式
+  * **–sort=-%cpu :** 基于 CPU 使用率对输出结果排序
+  * **head :** 显示结果的前 10 行
+  * **PID :** 进程的 ID
+  * **PPID :** 父进程的 ID 
+  * **%MEM :** 进程使用的 RAM 比例
+  * **%CPU :** 进程占用的 CPU 比例
+  * **Command :** 进程名字
 
 
 
-If you only want to see the command name instead of the absolute path of the command, use the ps command format below.
+如果你只想看命令名字而不是命令的绝对路径，以运行下面的格式 ps 命令：
 
 ```
 # ps -eo pid,ppid,%mem,%cpu,comm --sort=-%cpu | head
@@ -182,7 +154,7 @@ via: https://www.2daygeek.com/how-to-find-high-cpu-consumption-processes-in-linu
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
