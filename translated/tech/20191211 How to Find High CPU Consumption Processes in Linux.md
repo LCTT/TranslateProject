@@ -1,20 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lxbwolf)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Find High CPU Consumption Processes in Linux)
 [#]: via: (https://www.2daygeek.com/how-to-find-high-cpu-consumption-processes-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Linux 中怎么找出 CPU 占用高的进程
+如何在 Linux 中找出 CPU 占用高的进程
 ======
 
-在之前的文章中我们已经讨论过 [Linux 中怎么找出消耗内存高的进程][1] 。你可能也会遇到在 Linux 系统中找出 CPU 占用高的进程的情形。如果是这样，那么你需要列出系统中 CPU 占用高的进程的列表来确定。我认为只有两种方法能实现：使用 [top 命令][2] 和 [ps 命令][3]。出于一些理由，我更倾向于用 top 命令而不是 ps 命令。但是两个工具都能达到你要的目的，所以你可以根据需求决定使用哪个。这两个工具都被 Linux 系统管理员广泛使用。
+![](https://img.linux.net.cn/data/attachment/album/201912/15/152614cp9bjmfwpofwvsx1.jpg)
+
+在之前的文章中我们已经讨论过 [如何在 Linux 中找出内存消耗最大的进程][1]。你可能也会遇到在 Linux 系统中找出 CPU 占用高的进程的情形。如果是这样，那么你需要列出系统中 CPU 占用高的进程列表来确定。我认为只有两种方法能实现：使用 [top 命令][2] 和 [ps 命令][3]。出于一些理由，我更倾向于用 `top` 命令而不是 `ps` 命令。但是两个工具都能达到你要的目的，所以你可以根据需求决定使用哪个。这两个工具都被 Linux 系统管理员广泛使用。
 
 ### 1) 怎样使用 top 命令找出 Linux 中 CPU 占用高的进程
 
-在所有监控 Linux 系统性能的工具中，Linux 的 top 命令是最好的也是最知名的。top 命令提供了 Linux 系统运行中的进程的动态实时视图。它能显示系统的概览信息，和 Linux 内核当前管理的进程列表。它显示了大量的系统信息，如 CPU 使用，内存使用，交换内存，运行的进程数，目前系统开机时间，系统负载，缓冲区大小，缓存大小，进程 PID等等。默认情况下，top 命令的输出结果按 CPU 占用进行排序，每 5 秒中更新一次结果。如果你想要一个更清晰的视图来更深入的分析结果，[以批次档模式运行 top 命令][4] 是最好的方法。同时，你需要 [理解 top 命令输出结果的含义][5] ，这样才能解决系统的性能问题。
+在所有监控 Linux 系统性能的工具中，Linux 的 `top` 命令是最好的也是最知名的一个。`top` 命令提供了 Linux 系统运行中的进程的动态实时视图。它能显示系统的概览信息和 Linux 内核当前管理的进程列表。它显示了大量的系统信息，如 CPU 使用、内存使用、交换内存、运行的进程数、目前系统开机时间、系统负载、缓冲区大小、缓存大小、进程 PID 等等。默认情况下，`top` 命令的输出结果按 CPU 占用进行排序，每 5 秒中更新一次结果。如果你想要一个更清晰的视图来更深入的分析结果，[以批处理模式运行 top 命令][4] 是最好的方法。同时，你需要 [理解 top 命令输出结果的含义][5] ，这样才能解决系统的性能问题。
 
 ```
 # top -b | head -50
@@ -47,25 +49,23 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
 
 上面的命令的各部分解释：
 
-  * **top :** 命令
-  * **-b :** 批次档模式
-  * **head -50:** 显示输出结果的前 50 个
-  * **PID :** 进程的 ID
-  * **USER :** 进程的归属者
-  * **PR :** 进程的等级
-  * **NI :** 进程的 NICE 值
-  * **VIRT :** 进程使用的虚拟内存
-  * **RES :** 进程使用的物理内存
-  * **SHR :** 进程使用的共享内存
-  * **S :** 这个值表示进程的状态: S=睡眠 R=运行 Z=僵尸进程
-  * **%CPU :** 进程占用的 CPU 比例
-  * **%MEM :** 进程使用的 RAM 比例
-  * **TIME+ :** 进程运行了多长时间
-  * **COMMAND :** 进程名字
+  * `top`：命令
+  * `-b`：批次档模式
+  * `head -50`：显示输出结果的前 50 个
+  * `PID`：进程的 ID
+  * `USER`：进程的归属者
+  * `PR`：进程的等级
+  * `NI`：进程的 NICE 值
+  * `VIRT`：进程使用的虚拟内存
+  * `RES`：进程使用的物理内存
+  * `SHR`：进程使用的共享内存
+  * `S`：这个值表示进程的状态: `S` = 睡眠，`R` = 运行，`Z` = 僵尸进程
+  * `%CPU`：进程占用的 CPU 比例
+  * `%MEM`：进程使用的 RAM 比例
+  * `TIME+`：进程运行了多长时间
+  * `COMMAND`：进程名字
 
-
-
-如果你想看命令的完整路径而不是命令名字，以运行下面的格式 top 命令：
+如果你想看命令的完整路径而不是命令名字，以运行下面的格式 `top` 命令：
 
 ```
 # top -c -b | head -50
@@ -99,7 +99,7 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
 
 ### 2) 怎样使用 ps 命令找出 Linux 中 CPU 占用高的进程
 
-ps 是 `process status`（进程状态）的缩写，它能显示系统中活跃的/运行中的进程的信息。它提供了当前进程及其详细信息，诸如用户名、用户 ID、CPU 使用率、内存使用、进程启动日期时间、命令名等等的快照。
+`ps` 是<ruby>进程状态<rt>process status</rt></ruby>的缩写，它能显示系统中活跃的/运行中的进程的信息。它提供了当前进程及其详细信息，诸如用户名、用户 ID、CPU 使用率、内存使用、进程启动日期时间、命令名等等的快照。
 
 ```
 # ps -eo pid,ppid,%mem,%cpu,cmd --sort=-%cpu | head
@@ -118,20 +118,18 @@ ps 是 `process status`（进程状态）的缩写，它能显示系统中活跃
 
 上面的命令的各部分解释：
 
-  * **ps :** 命令名字
-  * **-e :** 选择所有进程
-  * **-o :** 自定义输出格式
-  * **–sort=-%cpu :** 基于 CPU 使用率对输出结果排序
-  * **head :** 显示结果的前 10 行
-  * **PID :** 进程的 ID
-  * **PPID :** 父进程的 ID 
-  * **%MEM :** 进程使用的 RAM 比例
-  * **%CPU :** 进程占用的 CPU 比例
-  * **Command :** 进程名字
+  * `ps`：命令名字
+  * `-e`：选择所有进程
+  * `-o`：自定义输出格式
+  * `–sort=-%cpu`：基于 CPU 使用率对输出结果排序
+  * `head`：显示结果的前 10 行
+  * `PID`：进程的 ID
+  * `PPID`：父进程的 ID 
+  * `%MEM`：进程使用的 RAM 比例
+  * `%CPU`：进程占用的 CPU 比例
+  * `Command`：进程名字
 
-
-
-如果你只想看命令名字而不是命令的绝对路径，以运行下面的格式 ps 命令：
+如果你只想看命令名字而不是命令的绝对路径，以运行下面的格式 `ps` 命令：
 
 ```
 # ps -eo pid,ppid,%mem,%cpu,comm --sort=-%cpu | head
@@ -155,13 +153,13 @@ via: https://www.2daygeek.com/how-to-find-high-cpu-consumption-processes-in-linu
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[lxbwolf](https://github.com/lxbwolf)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/linux-find-top-memory-consuming-processes/
+[1]: https://linux.cn/article-11542-1.html
 [2]: https://www.2daygeek.com/linux-top-command-linux-system-performance-monitoring-tool/
 [3]: https://www.2daygeek.com/linux-ps-command-find-running-process-monitoring/
 [4]: https://www.2daygeek.com/linux-run-execute-top-command-in-batch-mode/
