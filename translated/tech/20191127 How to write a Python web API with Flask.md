@@ -7,21 +7,21 @@
 [#]: via: (https://opensource.com/article/19/11/python-web-api-flask)
 [#]: author: (Rachel Waston https://opensource.com/users/rachelwaston)
 
-How to write a Python web API with Flask
+如何使用Flask编写Python Web API
 ======
-Use Flask, one of the fastest-growing Python frameworks, to fetch data
-from a server, in this quick tutorial.
+
+这是一个快速教程，用来展示如何通过Flask（目前发展最迅速的Python框架之一）来从服务器获取数据。
 ![spiderweb diagram][1]
 
-[Python][2] is a high-level, object-oriented programming language known for its simple syntax. It is consistently among the top-rated programming languages for building RESTful APIs.
+[Python][2]是一个以语法简洁著称的高级的，面向对象的程序语言。它一直都是一个用来构建RESTful API的顶级编程语言。
 
-[Flask][3] is a customizable Python framework that gives developers complete control over how users access data. Flask is a "micro-framework" based on Werkzeug's [WSGI][4] toolkit and Jinja 2's templating engine. It is designed as a web framework for RESTful API development.
+[Flask][3]是一个高度可定制化的Python框架，可以为开发人员提供用户访问数据方式的完全控制。Flask是一个基于Werkzeug的[WSGI][4]工具包和Jinja 2模板引擎的”微框架“。它是一个被设计来开发RESTful API的web框架。
 
-Flask is one of the fastest-growing Python frameworks, and popular websites, including Netflix, Pinterest, and LinkedIn, have incorporated Flask into their development stacks. Here's an example of how Flask can permit users to fetch data from a server using the HTTP GET method.
+Flask是Python发展最迅速的框架之一，很多知名网站如：Netflix, Pinterest, 和LinkedIn都将Flask纳入了它们的开发技术栈。下面是一个简单的示例，展示了Flask是如何允许用户通过HTTP GET请求来从服务器获取数据的。
 
-### Set up a Flask application
+### 初始化一个Flask应用
 
-First, create a structure for your Flask application. You can do this at any location on your system.
+首先，创建一个你的Flask项目的目录结构。你可以在你系统的任何地方来做这件事。
 
 
 ```
@@ -37,9 +37,11 @@ Collecting Flask&gt;=0.8 (from flask-restful)
 [...]
 ```
 
-### Import the Flask modules
+### 导入Flask模块
 
 Next, import the **flask** module and its **flask_restful** library into your **main.py** code:
+
+然后，在你的**main.py**代码中导入**flask**模块和它的**flask_restful**库：
 
 
 ```
@@ -67,9 +69,11 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-### Run the app
+### 运行app
 
 Flask includes a built-in HTTP server for testing. Test the simple API you built:
+
+Flask包含一个内建的用于测试的HTTP服务器。来测试一下这个你创建的简单的API：
 
 
 ```
@@ -82,7 +86,7 @@ Flask includes a built-in HTTP server for testing. Test the simple API you bui
  * Running on <http://127.0.0.1:5000/> (Press CTRL+C to quit)
 ```
 
-Starting the development server starts your Flask application, which contains a method named **get** to respond to a simple HTTP GET request. You can test it using **wget** or **curl** or any web browser. The URL to use is provided in Flask's output after you start the server.
+启动开发服务器时将启动Flask应用程序，该应用程序包含一个名为 **get** 的方法来响应简单的HTTP GET请求。你可以通过 **wget**、**curl** 命令或者任意的web浏览器来测试它。
 
 
 ```
@@ -102,29 +106,26 @@ $ curl <http://localhost:5000>
 }
 ```
 
-To see a more complex version of a similar web API using Python and Flask, navigate to the Library of Congress' [Chronicling America][5] website, which provides access to information about historic newspapers and digitized newspaper pages.
+要查看使用Python和Flask的类似Web API的更复杂版本，请导航至美国国会图书馆的[Chronicling America] [5]网站，该网站可提供有关这些信息的历史报纸和数字化报纸。
 
-### Why use Flask?
+### 为什么使用 Flask?
 
-Flask has several major benefits:
+Flask有以下几个主要的优点：
 
-  1. Python is popular and widely used, so anyone who knows Python can develop for Flask.
-  2. It's lightweight and minimalistic.
-  3. Built with security in mind.
-  4. Great documentation with plenty of clear, working example code.
+  1. Python很流行并且广泛被应用，所以任何熟悉Python的人都可以使用Flask来开发。
+  2. 它轻巧而简约。
+  3. 考虑安全性而构建。
+  4. 出色的文档，其中包含大量清晰，有效的示例代码。
 
+还有一些潜在的缺点:
 
-
-There are also some potential drawbacks:
-
-  1. It's lightweight and minimalistic. If you're looking for a framework with lots of bundled libraries and prefabricated components, this may not be your best option.
-  2. If you have to build your own framework around Flask, you might find that the cost of maintaining your customization negates the benefit of using Flask.
+  1. 它轻巧而简约。但如果您正在寻找具有大量捆绑库和预制组件的框架，那么这可能不是最佳选择。
+  2. 如果必须围绕Flask构建自己的框架，则你可能会发现维护自定义项的成本可能会抵消使用Flask的好处。
 
 
+如果您要构建Web程序或API，可以考虑选择Flask。它功能强大且健壮，并且其优秀的项目文档使入门变得容易。试用一下，评估一下，看看它是否适合您的项目。
 
-If you're looking to build a web app or API, Flask is a good option to consider. It's powerful and robust, and the project documentation makes it easy to get started. Try it out, evaluate it, and see if it's right for your project.
-
-Learn more in this lesson in Python exception handling and how to do it in a secure manner.
+在本课中了解更多信息关于Python异常处理以及如何以安全的方式进行操作。
 
 --------------------------------------------------------------------------------
 
@@ -132,7 +133,7 @@ via: https://opensource.com/article/19/11/python-web-api-flask
 
 作者：[Rachel Waston][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hj24](https://github.com/hj24)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
