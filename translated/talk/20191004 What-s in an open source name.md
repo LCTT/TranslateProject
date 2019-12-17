@@ -10,15 +10,15 @@
 开源软件名称中的故事
 ======
 
-> 有没有想过你喜欢的开源项目或编程语言的名称来自何处？按字母顺序了解流行技术术语背后的起源故事。
+> 有没有想过你喜欢的开源项目或编程语言的名称来自何处？让我们按字母顺序了解一下流行的技术术语背后的起源故事。
 
-![A person writing.][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/17/225902ogkk85zm4gqlim9h.jpg)
 
-GNOME、Java、Jupyter、Python。如果你的朋友或家人曾留意过你的工作对话，他们可能会认为你从事文艺复兴时期的民间文学艺术、咖啡烘焙、天文学或动物学工作。这些开源技术的名称从何而来？我们请我们的作者社区提供意见，并汇总了一些我们最喜欢的技术名称的起源故事。
+GNOME、Java、Jupyter、Python……如果你的朋友或家人曾留意过你的工作对话，他们可能会认为你从事文艺复兴时期的民间文学艺术、咖啡烘焙、天文学或动物学工作。这些开源技术的名称从何而来？我们请我们的作者社区提供意见，并汇总了一些我们最喜欢的技术名称的起源故事。
 
 ### Ansible
 
-“Ansible”这个名称直接来自科幻小说。Ursula Le Guin 的《<ruby>鲁康农的世界<rt>Rocannon's World</rt></ruby>一书中能进行即时（比光速更快）通信的设备被称为 ansibles（显然来自 “ answerable” 一词）。Ansibles 开始流行于科幻小说，Orson Scott Card 的《<ruby>安德的游戏<rt>Ender's Game</rt></ruby>（后来成为受欢迎的电影）中，该设备控制了许多远程太空飞船。对于控制分布式机器的软件来说，这似乎是一个很好的模型，因此 Michael DeHaan（Ansible 的创建者和创始人）借用了这个名称。
+“Ansible”这个名称直接来自科幻小说。Ursula Le Guin 的《Rocannon's World》一书中能进行即时（比光速更快）通信的设备被称为 ansibles（显然来自 “answerable” 一词）。Ansibles 开始流行于科幻小说之中，Orson Scott Card 的《Ender's Game》（后来成为受欢迎的电影）中，该设备控制了许多远程太空飞船。对于控制分布式机器的软件来说，这似乎是一个很好的模型，因此 Michael DeHaan（Ansible 的创建者和创始人）借用了这个名称。
 
 ### Apache
 
@@ -30,35 +30,35 @@ GNOME、Java、Jupyter、Python。如果你的朋友或家人曾留意过你的�
 
 ### Bash
 
-“最初的 Unix shell，即 Bourne shell，是以其创建者的名字命名的。在开发 Bash 时，csh（发音为 ‘seashell’）实际上更受交互登录用户的欢迎。Bash 项目旨在赋予 Bourne shell 新的生命，使其更适合于交互式使用，因此它被命名为 ‘Bourne again shell’，是‘<ruby>重生<rt>born again</rt></ruby>’的双关语。”——Ken Gaillot
+“最初的 Unix shell，即 Bourne shell，是以其创造者的名字命名的。在开发出来 Bash 时，csh（发音为 ‘seashell’）实际上更受交互登录用户的欢迎。Bash 项目旨在赋予 Bourne shell 新的生命，使其更适合于交互式使用，因此它被命名为 ‘Bourne again shell’，是‘<ruby>重生<rt>born again</rt></ruby>’的双关语。”——Ken Gaillot
 
 ### C
 
-在早期，AT&T 的 Ken Thompson 和 Dennis Ritchie 发现可以使用更高级的编程语言（而不是低级的、可移植性更低的汇编编程）来编写操作系统和工具是很有趣的。早期有一个叫做 BCPL（<ruby>基本组合编程语言<rt>Basic Combined programming Language</rt></ruby>）的编程系统，Thompson 创建了一个名为 B 的简化版 BCPL，但 B 的灵活性和速度都不高。然后，Ritchie 把 B 的思想扩展成一种叫做 C 的编译语言。”——Jim Hall
+在早期，AT&T 的 Ken Thompson 和 Dennis Ritchie 发现可以使用更高级的编程语言（而不是低级的、可移植性更低的汇编编程）来编写操作系统和工具。早期有一个叫做 BCPL（<ruby>基本组合编程语言<rt>Basic Combined programming Language</rt></ruby>）的编程系统，Thompson 创建了一个名为 B 的简化版 BCPL，但 B 的灵活性和速度都不高。然后，Ritchie 把 B 的思想扩展成一种叫做 C 的编译语言。”——Jim Hall
 
 ### dd
 
-“我想你发表这样一篇文章不能不提到 dd。我的外号叫 Didi。正确的发音它听起来像‘dd’。我开始学的是 Unix，然后是 Linux，那是在 1993 年，当时我还是个学生。然后我去了军队，来到了我的部队中少数几个使用 Unix（Ultrix）的部门之一（其它部门主要是 VMS），那里的一个人说：‘这么说，你是一个黑客，对吗？你以为你了解 Unix 吗？好的，那么 dd 这个名字的是怎么来的呢？’我不知道，试着猜道：‘<ruby>数据复印机<rt>Data duplicator</rt></ruby>？’所以他说，‘我要告诉你 dd 的故事。dd 是<ruby>转换<rt>convert</rt></ruby>和<ruby>复制<rt>copy</rt></ruby>的缩写（如今任何人仍然可以在参考页中看到），但由于 cc 这个缩写已经被 C 的编译器占用，所以它被命名为 dd。’就在几年后，我听闻了关于 JCL 的数据定义和非统一、半开玩笑的 Unix dd 命令语法的纪实故事中某种程度都是基于这个说法的。”——Yedidyah Bar David
+“我想你发表这样一篇文章不能不提到 dd。我的外号叫 Didi。发音正确的话听起来像 ‘dd’。我开始学的是 Unix，然后是 Linux，那是在 1993 年，当时我还是个学生。然后我去了军队，来到了我的部队中少数几个使用 Unix（Ultrix）的部门之一（其它部门主要是 VMS），那里的一个人说：‘这么说，你是一个黑客，对吗？你以为你了解 Unix 吗？好的，那么 dd 这个名字的是怎么来的呢？’我不知道，试着猜道：‘<ruby>数据复印机<rt>Data duplicator</rt></ruby>？’所以他说，‘我要告诉你 dd 的故事。dd 是<ruby>转换<rt>convert</rt></ruby>和<ruby>复制<rt>copy</rt></ruby>的缩写（如今人们仍然可以在手册页中看到），但由于 cc 这个缩写已经被 C 编译器占用，所以它被命名为 dd。’就在几年后，我听闻了关于 JCL 的数据定义和 Unix dd 命令不统一的、半开玩笑的语法的真实故事，某种程度是基于此的。”——Yedidyah Bar David
 
 ### Emacs
 
-经典的<ruby>反 vi<rt>anti-vi</rt></ruby>编辑器，其名称的真正词源并不明显，因为它源自“<ruby>编辑宏<rt>Editing MACroS</rt></ruby>”。但是，它作为一个伟大的宗教亵渎和崇拜的对象，吸引了许多恶作剧般的缩写，例如“<ruby>避开 Meta Alt Control Shift 键<rt>Escape Meta Alt Control Shift</rt></ruby>”（以调侃其对键盘的大量依赖），“<ruby>8MB 并经常发生内存交换<rt>Eight Megabytes And Constantly Swapping</rt></ruby>”（从那时起就有很多内存了），“<ruby>最终分配了所有的计算机存储<rt>Eventually malloc()s All Computer Storage</rt></ruby>”和 “<ruby>EMACS 使一台计算机慢<rt>EMACS Makes A Computer Slow</rt></ruby>”——改编自 Jargon File/Hacker's Dictionary
+经典的<ruby>反 vi<rt>anti-vi</rt></ruby>编辑器，其名称的真正词源并不明显，因为它源自“<ruby>编辑宏<rt>Editing MACroS</rt></ruby>”。但是，它作为一个伟大的宗教亵渎和崇拜的对象，吸引了许多恶作剧般的缩写，例如“Escape Meta Alt Control Shift”（以调侃其对键盘的大量依赖），“<ruby>8MB 并经常发生内存交换<rt>Eight Megabytes And Constantly Swapping</rt></ruby>”（从那时起就很吃内存了），“<ruby>最终分配了所有的计算机存储空间<rt>Eventually malloc()s All Computer Storage</rt></ruby>”和 “<ruby>EMACS 使一台计算机慢<rt>EMACS Makes A Computer Slow</rt></ruby>”——改编自 Jargon File/Hacker's Dictionary
 
 ### Enarx
 
-[Enarx][3] 是机密计算领域的一个新项目。该项目的设计原则之一是它应该是“可替代的”。因此最初的名字是“psilocybin”（著名的魔术蘑菇）。一般情况下，经理级别的人可能会对这个名称有所抵触，因此考虑使用新名称。该项目的两位创始人 Mike Bursell 和 Nathaniel McCallum 都是古老语言极客，因此他们考虑了许多不同的想法，包括 тайна（Tayna——俄语中代表秘密或神秘——虽然公认的俄语并不是一门古老的语言，但你就不要在乎这些细节了），crypticon（希腊语的意思是完全庶生的），cryptidion（希腊中表示小密室），arconus（拉丁语中表示秘密的褒义形容词），arcanum（拉丁语中表示秘密的中性形容词）和 ærn（盎格鲁撒克逊人表示地方、秘密的地方、壁橱、住所、房子，或小屋的词汇）。最后，由于各种原因，包括域名和 GitHub 项目名称的可用性，他们选择了 enarx，这是两个拉丁词根的组合：en-（表示内部）和 -arx（表示城堡、要塞或堡垒）。
+[Enarx][3] 是机密计算领域的一个新项目。该项目的设计原则之一是它应该是“可替代的”。因此最初的名字是“psilocybin”（著名的魔术蘑菇）。一般情况下，经理级别的人可能会对这个名称有所抵触，因此考虑使用新名称。该项目的两位创始人 Mike Bursell 和 Nathaniel McCallum 都是古老语言极客，因此他们考虑了许多不同的想法，包括 тайна（Tayna——俄语中代表秘密或神秘——虽然俄语并不是一门古老的语言，但你就不要在乎这些细节了），crypticon（希腊语的意思是完全私生的），cryptidion（希腊中表示小密室），arconus（拉丁语中表示秘密的褒义形容词），arcanum（拉丁语中表示秘密的中性形容词）和 ærn（盎格鲁撒克逊人表示地方、秘密的地方、壁橱、住所、房子，或小屋的词汇）。最后，由于各种原因，包括域名和 GitHub 项目名称的可用性，他们选择了 enarx，这是两个拉丁词根的组合：en-（表示内部）和 -arx（表示城堡、要塞或堡垒）。
 
 ### GIMP
 
-没有 [GIMP][4] 我们会怎么样？<ruby>GNU 图像处理项目<rt>GNU Image Manipulation Project</rt></ruby>多年来一直是开源的主要内容。[维基百科][5]指出，“1995 年，[Spencer Kimball][6] 和 [Peter Mattis][7] 开始开发 GIMP，作为加州大学伯克利分校的一个为期一个学期的实验计算设施项目。”
+没有 [GIMP][4] 我们会怎么样？<ruby>GNU 图像处理项目<rt>GNU Image Manipulation Project</rt></ruby>多年来一直是开源的重要基础。[维基百科][5]指出，“1995 年，[Spencer Kimball][6] 和 [Peter Mattis][7] 在加州大学伯克利分校开始为<ruby>实验计算设施<rt>eXperimental Computing Facility</rt></ruby>开发 GIMP，这是一个为期一个学期的项目。”
 
 ### GNOME
 
-你有没有想过为什么 GNOME 被称为 GNOME？根据[维基百科][8]，GNOME 最初是一个表示“<ruby>GNU 网络对象模型环境<rt>GNU Network Object Model Environment</rt></ruby>”的缩写词。现在，该名称不再表示该项目，并且该项目已被删除，但这个名称仍然保留。[GNOME 3][9] 是 Fedora、红帽企业版、Ubuntu、Debian、SUSE Linux 企业版等发行版的默认桌面环境。
+你有没有想过为什么 GNOME 被称为 GNOME？根据[维基百科][8]，GNOME 最初是一个表示“<ruby>GNU 网络对象模型环境<rt>GNU Network Object Model Environment</rt></ruby>”的缩写词。现在，该名称不再表示该项目，并且该项目已被放弃，但这个名称仍然保留了下来。[GNOME 3][9] 是 Fedora、红帽企业版、Ubuntu、Debian、SUSE Linux 企业版等发行版的默认桌面环境。
 
 ### Java
 
-你能想象这种编程语言还有其它名称吗？Java 最初被称为 Oak，但是遗憾的是，Sun Microsystems 的法律团队因现有商标而否决了该名称。所以开发团队又重新给它命名。[据说][10]该语言的工作组在 1995 年 1 月举行了一次大规模的头脑风暴。许多其它名称也被扔掉了，包括 Silk、DNA、WebDancer 等。该团队不希望新名称与过度使用的术语“web”或“net”有任何关系。取而代之的是，他们在寻找更有活力、更有趣、更容易记住的东西。Java 满足了这些要求，并且奇迹般地，团队同意通过了！
+你能想象这种编程语言还有其它名称吗？Java 最初被称为 Oak，但是遗憾的是，Sun Microsystems 的法律团队由于已有该商标而否决了它。所以开发团队又重新给它命名。[据说][10]该语言的工作组在 1995 年 1 月举行了一次大规模的头脑风暴。许多其它名称也被扔掉了，包括 Silk、DNA、WebDancer 等。该团队不希望新名称与过度使用的术语“web”或“net”有任何关系。取而代之的是，他们在寻找更有活力、更有趣、更容易记住的东西。Java 满足了这些要求，并且奇迹般地，团队同意通过了！
 
 ### Jupyter
 
@@ -66,21 +66,21 @@ GNOME、Java、Jupyter、Python。如果你的朋友或家人曾留意过你的�
 
 ### Kubernetes
 
-Kubernetes 源自希腊语中的舵手。Kubernetes 项目创始人 Craig McLuckie 在 [2015 Hacker News][15] 回应中证实了这种词源。为了坚持航海主题，他解释说，这项技术驱动集装箱，就像舵手或驾驶员驾驶集装箱船一样。因此，选择了 Kubernetes 这个名字。我们中的许多人仍然在尝试正确的发音（koo-bur-NET-eez），因此 K8s 是可以接受的替代发音。有趣的是，它与英语单词“<ruby>governor<rt>governor</rt></ruby>”具有相同的词源，也与蒸汽机上的机械负反馈装置相同。
+Kubernetes 源自希腊语中的舵手。Kubernetes 项目创始人 Craig McLuckie 在 [2015 Hacker News][15] 回应中证实了这种词源。他坚持航海主题，解释说，这项技术可以驱动集装箱，就像舵手或驾驶员驾驶集装箱船一样，因此，他选择了 Kubernetes 这个名字。我们中的许多人仍然在尝试正确的发音（koo-bur-NET-eez），因此 替代使用 K8s 也是可以接受的。有趣的是，它与英语单词“<ruby>governor<rt>governor</rt></ruby>”具有相同的词源，也与蒸汽机上的机械负反馈装置相同。
 
 ### KDE
 
-那 K 桌面呢？KDE 最初代表“<ruby>酷桌面环境<rt>Kool Desktop Environment</rt></ruby>”。 它由 [Matthias Ettrich][16] 于 1996 年创立。根据[维基百科][17]上的说法，该名称是 Unix 上 <ruby>[通用桌面环境][18]<rt>Common Desktop Environment</rt></ruby>（CDE）一词的调侃。
+那 K 桌面呢？KDE 最初代表“<ruby>酷桌面环境<rt>Kool Desktop Environment</rt></ruby>”。 它由 [Matthias Ettrich][16] 于 1996 年创立。根据[维基百科][17]上的说法，该名称是对 Unix 上 <ruby>[通用桌面环境][18]<rt>Common Desktop Environment</rt></ruby>（CDE）一词的调侃。
 
 ### Linux
 
-[Linux][19] 因其发明者 Linus Torvalds 的名字命名的。Linus 最初想将他的作品命名为“Freax”，因为他认为以他自己的名字命名太自负了。根据[维基百科][19]的说法，“赫尔辛基科技大学 Torvalds 的同事 Ari Lemmke 当时是 FTP 服务器的志愿管理员之一，他并不认为‘Freax’是个好名字。因此，他在没有咨询 Torvalds 的情况下，将服务器上的这个项目命名为‘Linux’。”
+[Linux][19] 因其发明者 Linus Torvalds 的名字命名的。Linus 最初想将他的作品命名为“Freax”，因为他认为以他自己的名字命名太自负了。根据[维基百科][19]的说法，“赫尔辛基科技大学 Torvalds 的同事 Ari Lemmke 当时是 FTP 服务器的志愿管理员之一，他并不认为‘Freax’是个好名字。因此，他没有征询 Torvalds 就将服务器上的这个项目命名为‘Linux’。”
 
-以下是一些最受欢迎的Linux发行版。
+以下是一些最受欢迎的 Linux 发行版。
 
 #### CentOS
 
-[CentOS][20] 是<ruby>社区企业操作系统<rt>Community Enterprise Operating System</rt></ruby>的缩写。它包含 Red Hat Enterprise Linux 的上游软件包。
+[CentOS][20] 是<ruby>社区企业操作系统<rt>Community Enterprise Operating System</rt></ruby>的缩写。它包含来自 Red Hat Enterprise Linux 的上游软件包。
 
 #### Debian
 
@@ -88,7 +88,7 @@ Kubernetes 源自希腊语中的舵手。Kubernetes 项目创始人 Craig McLuck
 
 #### RHEL
 
-[Red Hat Linux][22] 的名字来自它的创始人 Marc Ewing，他戴着一顶祖父送给他的康奈尔大学红色软呢帽。红帽公司成立于 1993 年 3 月 26 日。[Fedora Linux][23] 作为一个志愿者项目而启动，旨在为红帽发行版提供额外的软件，它的名字来自红帽的“Shadowman”徽标。
+[Red Hat Linux][22] 得名于它的创始人 Marc Ewing，他戴着一顶祖父送给他的康奈尔大学红色<ruby>软呢帽<rt>fedora</rt></ruby>。红帽公司成立于 1993 年 3 月 26 日。[Fedora Linux][23] 最初是一个志愿者项目，旨在为红帽发行版提供额外的软件，它的名字来自红帽的“Shadowman”徽标。
 
 #### Ubuntu
 
@@ -98,11 +98,11 @@ Kubernetes 源自希腊语中的舵手。Kubernetes 项目创始人 Craig McLuck
 
 开源学习平台 [Moodle][25] 是“<ruby>模块化面向对象动态学习环境<rt>modular object-oriented dynamic learning environment</rt></ruby>”的首字母缩写。Moodle 仍然是领先的线上学习平台。全球有近 10.4 万个注册的 Moodle 网站。
 
-另外两个流行的开源内容管理系统是 Drupal 和 Joomla。Drupal 的名字来自荷兰语 “druppel”，意思是“放弃”。根据维基百科，Joomla 是斯瓦希里语单词“jumla”的[英式拼写][26]，在阿拉伯语、乌尔都语和其他语言中是“一起”的意思。
+另外两个流行的开源内容管理系统是 Drupal 和 Joomla。Drupal 的名字来自荷兰语 “druppel”，意思是“掉落”。根据维基百科，Joomla 是斯瓦希里语单词“jumla”的[英式拼写][26]，在阿拉伯语、乌尔都语和其他语言中是“在一起”的意思。
 
 ### Mozilla
 
-[Mozilla][27] 是一个成立于 1998 年的开源软件社区。根据其网站，“Mozilla 项目创建于 1998 年，发布了 Netscape 浏览器套件源代码。它旨在利用互联网上成千上万的程序员的创造力，并推动浏览器市场上前所未有的创新水平。” 这个名字是 [Mosaic] [28] 和 Godzilla 的混成词。
+[Mozilla][27] 是一个成立于 1998 年的开源软件社区。根据其网站，“Mozilla 项目创建于 1998 年，发布了 Netscape 浏览器套件源代码。其旨在利用互联网上成千上万的程序员的创造力，并推动浏览器市场上前所未有的创新水平。” 这个名字是 [Mosaic] [28] 和 Godzilla 的混成词。
 
 ### Nginx
 
@@ -118,11 +118,11 @@ Perl 的创始人 Larry Wall 最初将他的项目命名为“Pearl”。根据�
 
 ### Python
 
-Python 编程语言的独特名称来自其创建者 Guido Van Rossum，他是喜剧团体 Monty Python 的粉丝。
+Python 编程语言的独特名称来自其创建者 Guido Van Rossum，他是英国六人喜剧团体 Monty Python 的粉丝。
 
 ### Raspberry Pi
 
-Raspberry Pi 以其微小但强大的功能和对钱包友好的价格标签而闻名，在开源社区中是最受欢迎的。但是它可爱（和好吃）的名字是从哪里来的呢？在 70 年代和 80 年代，以水果命名的计算机是一种流行的趋势。苹果、橘子、杏……有人饿了吗？根据创始人 Eben Upton 的 [2012 采访] [31]，“Raspberry Pi”这个名称是对这种趋势的致敬。树莓也很小，但味道却很浓。名称中的“Pi”暗示着这样的事实：最初，计算机只能运行 Python。
+Raspberry Pi 以其微小但强大的功能和对低廉的价格而闻名，在开源社区中是最受欢迎的。但是它可爱（和好吃）的名字是从哪里来的呢？在 70 年代和 80 年代，以水果命名的计算机是一种流行的趋势。苹果、橘子、杏……有人饿了吗？根据创始人 Eben Upton 的 [2012 采访] [31]，“<ruby>树莓派<rt>Raspberry Pi</rt></ruby>”这个名称是对这种趋势的致敬。树莓也很小，但却很有味道。名称中的“Pi”暗示着这样的事实：最初，该计算机只能运行 Python。
 
 ### Samba
 
@@ -130,11 +130,13 @@ Raspberry Pi 以其微小但强大的功能和对钱包友好的价格标签而�
 
 ### ScummVM
 
-[ScummVM][33]（《疯狂大楼》虚拟机的脚本创建实用程序）是一个程序，可以在现代计算机上运行一些经典的计算机冒险游戏。最初，它旨在玩用 SCUMM 构建的 LucasArts 冒险游戏，该游戏最初用于开发《疯狂大楼》，后来又被用来开发 LucasArts 的其它大多数冒险游戏。目前，ScummVM 支持大量游戏引擎，包括 Sierra Online 的 AGI 和 SCI，但仍保留名称 ScummVM。一个相关的项目 [ResidualVM][34] 之所以得名，是因为它涵盖了 ScummVM 未涵盖的“剩余” LucasArts 冒险游戏。 ResidualVM 涵盖的 LucasArts 游戏是使用 GrimE（Grim Engine）开发的，该引擎最初用于开发 Grim Fandango，因此 ResidualVM 的名称是双关语。
+[ScummVM][33]（《疯狂大楼》虚拟机的脚本创建实用程序）是一个程序，可以在现代计算机上运行一些经典的计算机冒险游戏。最初，它旨在玩用 SCUMM 构建的 LucasArts 的冒险游戏，该游戏最初用于开发《疯狂大楼》，后来又被用来开发 LucasArts 的其它大多数冒险游戏。目前，ScummVM 支持大量游戏引擎，包括 Sierra Online 的 AGI 和 SCI，但仍保留着名称 ScummVM。
+
+有一个相关的项目 [ResidualVM][34] 之所以得名，是因为它涵盖了 ScummVM 未涵盖的“<ruby>剩余的<rt>residual</rt></ruby>” LucasArts 冒险游戏。 ResidualVM 涵盖的 LucasArts 游戏是使用 GrimE（Grim Engine）开发的，该引擎最初用于开发 Grim Fandango，因此 ResidualVM 的名称是双关语。
 
 ### SQL
 
-“你可能知道 [SQL] 代表<ruby>结构化查询语言<rt>Structured Query Language</rt></ruby>，但你知道为什么它经常被读作‘sequel’吗？”它是作为原本的‘QUEL’（<ruby>查询语言<rt>QUEry Language</rt></ruby>）的后续（即续集）而创建的。”——Ken Gaillot
+“你可能知道 SQL 代表<ruby>结构化查询语言<rt>Structured Query Language</rt></ruby>，但你知道为什么它经常被读作‘sequel’吗？它是作为原本的‘QUEL’（<ruby>查询语言<rt>QUEry Language</rt></ruby>）的后续（如<ruby>结局<rt>sequel</rt></ruby>）而创建的。”——Ken Gaillot
 
 ### XFCE
 
@@ -142,7 +144,7 @@ Raspberry Pi 以其微小但强大的功能和对钱包友好的价格标签而�
 
 ### Zsh
 
-Zsh 是一个交互式登录 shell。1990 年，普林斯顿大学的学生 Paul Falstad 写了该 shell 的第一个版本。他在看到当时在普林斯顿大学担任助教的 Zhong Sha（缩写为 zsh）的登录 ID 后，他觉得这个名字听起来像 [shell 的好名字][37]，给它起了这个名字。
+Zsh 是一个交互式登录 shell。1990 年，普林斯顿大学的学生 Paul Falstad 写了该 shell 的第一个版本。他在看到当时在普林斯顿大学担任助教的 Zhong Sha 的登录 ID（zsh）后，觉得这个名字听起来像 [shell 的好名字][37]，给它起了这个名字。
 
 还有更多的项目和名称还没有包括在这个列表中。请一定要在评论中分享你的收藏。
 
