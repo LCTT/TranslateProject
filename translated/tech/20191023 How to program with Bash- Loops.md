@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lxbwolf)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to program with Bash: Loops)
@@ -324,7 +324,7 @@ via: https://opensource.com/article/19/10/programming-bash-loops
 作者：[David Both][a]
 选题：[lujun9972][b]
 译者：[lxbwolf](https://github.com/lxbwolf)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
