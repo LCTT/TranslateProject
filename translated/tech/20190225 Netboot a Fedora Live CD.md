@@ -7,23 +7,23 @@
 [#]: via: (https://fedoramagazine.org/netboot-a-fedora-live-cd/)
 [#]: author: (Gregory Bartholomew https://fedoramagazine.org/author/glb/)
 
-Netboot a Fedora Live CD
+网络启动一个 Fedora Live CD
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2019/02/netboot-livecd-816x345.jpg)
 
-[Live CDs][1] are useful for many tasks such as:
+[Live CD][1] 对于很多任务是很有用的,例如:
 
-  * installing the operating system to a hard drive
-  * repairing a boot loader or performing other rescue-mode operations
-  * providing a consistent and minimal environment for web browsing
-  * …and [much more][2].
+  * 将操作系统安装到一个硬盘驱动器
+  * 修复一个启动加载程序或执行其它救援模式操作
+  * 为网络浏览提供一个相适应的最小环境
+  * …以及[更多的东西][2]。
 
 
 
-As an alternative to using DVDs and USB drives to store your Live CD images, you can upload them to an [iSCSI][3] server where they will be less likely to get lost or damaged. This guide shows you how to load your Live CD images onto an iSCSI server and access them with the [iPXE][4] boot loader.
+因为使用 DVD 和 USB 驱动器来存储你的 Live CD 镜像是一个替代方案，你可以上传它们到一个不太可能丢失或损坏的 [iSCSI][3] 服务器中。这个指南向你展示如何加载你的 Live CD 镜像到一个 ISCSI 服务器上，并使用 [iPXE][4] 启动加载程序来访问它们。
 
-### Download a Live CD Image
+### 下载一个 Live CD 镜像
 
 ```
 $ MY_RLSE=27
@@ -32,11 +32,11 @@ $ MY_NAME=fc$MY_RLSE
 $ wget -O $MY_NAME.iso https://dl.fedoraproject.org/pub/archive/fedora/linux/releases/$MY_RLSE/Workstation/x86_64/iso/$MY_LIVE
 ```
 
-The above commands download the Fedora-Workstation-Live-x86_64-27-1.6.iso Fedora Live image and save it as fc27.iso. Change the value of MY_RLSE to download other archived versions. Or you can browse to <https://getfedora.org/> to download the latest Fedora live image. Versions prior to 21 used different naming conventions, and must be [downloaded manually here][5]. If you download a Live CD image manually, set the MY_NAME variable to the basename of the file without the extension. That way the commands in the following sections will reference the correct file.
+上面的命令下载 Fedora-Workstation-Live-x86_64-27-1.6.iso Fedora Live 镜像，并保存为 fc27.iso 。更改 MY_RLSE 的值来下载其它档案版本。或者，你可以浏览 <https://getfedora.org/> 来下载最新的 Fedora live 镜像。在21之前的版本使用不同的命名约定，必需[在这里手动下载][5]。如果你手动下载一个 Live CD 镜像，设置 MY_NAME 变量为不带有扩展名的文件的基本名称。用此方法，下面部分中命令将引用正确的文件。
 
-### Convert the Live CD Image
+### 转换 Live CD 镜像
 
-Use the livecd-iso-to-disk tool to convert the ISO file to a disk image and add the netroot parameter to the embedded kernel command line:
+使用 livecd-iso-to-disk 工具来转换 ISO 文件为一个磁盘镜像，并添加 netroot 参数到嵌入的内核命令行：
 
 ```
 $ sudo dnf install -y livecd-tools
@@ -49,18 +49,18 @@ $ sudo livecd-iso-to-disk --format --extra-kernel-args netroot=iscsi:$MY_SRVR:::
 $ sudo losetup -d $MY_LOOP
 ```
 
-### Upload the Live Image to your Server
+### 上传 Live 镜像到你的服务器
 
-Create a directory on your iSCSI server to store your live images and then upload your modified image to it.
+在你的 ISCSI 服务器上创建一个目录来存储你的 live 镜像，随后上传你修改的镜像到其中。
 
-**For releases 21 and greater:**
+**对于 21 及更高发布版本：**
 
 ```
 $ MY_FLDR=/images
 $ scp $MY_NAME.img $MY_SRVR:$MY_FLDR/
 ```
 
-**For releases prior to 21:**
+**对于 21 以前发布版本：**
 
 ```
 $ MY_FLDR=/images
@@ -71,9 +71,9 @@ $ sudo dd status=none if=${MY_LOOP}p1 | ssh $MY_SRVR "dd of=$MY_FLDR/$MY_NAME.im
 $ sudo losetup -d $MY_LOOP
 ```
 
-### Define the iSCSI Target
+### 定义 iSCSI 目标
 
-Run the following commands on your iSCSI server:
+在你的 iSCSI 服务器上运行下面的命令：
 
 ```
 $ sudo -i
@@ -91,11 +91,11 @@ END
 # tgt-admin --update ALL
 ```
 
-### Create a Bootable USB Drive
+### 创建一个可启动 USB 驱动器
 
-The [iPXE][4] boot loader has a [sanboot][6] command you can use to connect to and start the live images hosted on your iSCSI server. It can be compiled in many different [formats][7]. The format that works best depends on the type of hardware you’re running. As an example, the following instructions show how to [chain load][8] iPXE from [syslinux][9] on a USB drive.
+[iPXE][4] 启动加载程序有一个 [sanboot][6] 命令，你可以使用它来连接，并启动你 ISCSI 服务器上运行的live 镜像。它可以用很多不同的[格式][7]编译。最好的工作格式依赖于你正在运行的硬件。例如，下面的说明向你展示如何在一个 USB 驱动器上从 [syslinux][9] 中 [链式加载][8] iPXE。
 
-First, download iPXE and build it in its lkrn format. This should be done as a normal user on a workstation:
+首先，下载 iPXE ，并以它的 lkrn 格式构建。这应该作为一个工作站上的普通用户完成：
 
 ```
 $ sudo dnf install -y git
@@ -107,7 +107,7 @@ $ make bin/ipxe.lkrn
 $ cp bin/ipxe.lkrn /tmp
 ```
 
-Next, prepare a USB drive with a MSDOS partition table and a FAT32 file system. The below commands assume that you have already connected the USB drive to be formatted. **Be careful that you do not format the wrong drive!**
+接下来，准备一个带有一个 MSDOS 分区表和一个 FAT32 文件系统的 USB 驱动器。下面的命令假设你已经连接将要格式化的 USB 驱动器。**注意：你要格式正确的驱动器！**
 
 ```
 $ sudo -i
@@ -119,7 +119,7 @@ $ sudo -i
 # mkfs -t vfat -F 32 ${MY_USB}1
 ```
 
-Finally, install syslinux on the USB drive and configure it to chain load iPXE:
+最后，在 USB 驱动器上安装并配置 syslinux ，来链式加载 iPXE ：
 
 ```
 # dnf install -y syslinux-nonlinux
@@ -146,16 +146,16 @@ END
 # umount ${MY_USB}1
 ```
 
-You should be able to use this same USB drive to netboot additional iSCSI targets simply by editing the syslinux.cfg file and adding additional menu entries.
+通过简单地编辑 syslinux.cfg 文件，并添加附加的菜单入口，你应该能够使用这同一个 USB 驱动器来网络启动附加的 ISCSI 目标。
 
-This is just one method of loading iPXE. You could install syslinux directly on your workstation. Another option is to compile iPXE as an EFI executable and place it directly in your [ESP][10]. Yet another is to compile iPXE as a PXE loader and place it on your TFTP server to be referenced by DHCP. The best option depends on your environment.
+这仅是加载 IPXE 的一种方法。你可以直接在你的工作站上安装 syslinux 。再一种选项是编译 iPXE 为一个 EFI 可执行文件，并直接放置它到你的 [ESP][10]中。又一种选项是编译 iPXE 为一个 PXE 加载器，并放置它到你的能够被 DHCP 引用的 TFTP 服务器。最佳的选项依赖于的环境
 
-### Final Notes
+### 最后说明
 
-  * You may want to add the –filename \EFI\BOOT\grubx64.efi parameter to the sanboot command if you compile iPXE in its EFI format.
-  * It is possible to create custom live images. Refer to [Creating and using live CD][11] for more information.
-  * It is possible to add the –overlay-size-mb and –home-size-mb parameters to the livecd-iso-to-disk command to create live images with persistent storage. However, if you have multiple concurrent users, you’ll need to set up your iSCSI server to manage separate per-user writeable overlays. This is similar to what was shown in the “[How to Build a Netboot Server, Part 4][12]” article.
-  * The live images support a persistenthome option on their kernel command line (e.g. persistenthome=LABEL=HOME). Used together with CHAP-authenticated iSCSI targets, the persistenthome option provides an interesting alternative to NFS for centralized home directories.
+  * 如果你以 IPXE 的 EFI 格式编译 IPXE ，你可能想添加 –filename \EFI\BOOT\grubx64.efi 参数到 sanboot 命令。
+  * 能够创建自定义 live 镜像。更多信息参考[创建和使用 live CD][11] 。
+  * 有可能添加 –overlay-size-mb 和 –home-size-mb 参数到 livecd-iso-to-disk 命令来创建永久存储的 live 镜像。然而，如果你有多个并发用户，你将需要设置你的 ISCSI 服务器来管理独立的每个用户可写覆盖。这与 “[如何构建一个网络启动服务器，部分 4][12]” 一文所示类似。
+  * Live 镜像在它们的内核命令行中支持一个 persistenthome 选项(例如， persistenthome=LABEL=HOME)。与经过 CHAP 身份验证的 iSCSI 目标一起使用，对于集权控制主目录，persistenthome 选项为 NFS 提供一个有趣的替代方案。
 
 
 
@@ -166,7 +166,7 @@ via: https://fedoramagazine.org/netboot-a-fedora-live-cd/
 
 作者：[Gregory Bartholomew][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -185,3 +185,4 @@ via: https://fedoramagazine.org/netboot-a-fedora-live-cd/
 [10]: https://en.wikipedia.org/wiki/EFI_system_partition
 [11]: https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/#proc_creating-and-using-live-cd
 [12]: https://fedoramagazine.org/how-to-build-a-netboot-server-part-4/
+
