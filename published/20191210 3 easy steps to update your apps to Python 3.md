@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11696-1.html)
 [#]: subject: (3 easy steps to update your apps to Python 3)
 [#]: via: (https://opensource.com/article/19/12/update-apps-python-3)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > Python 2 气数将尽，是时候将你的项目从 Python 2 迁移到 Python 3 了。
 
-![Hands on a keyboard with a Python book ][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/20/095224r0kp79s0cnc0z77p.jpg)
 
 Python 2.x 很快就要[失去官方支持][2]了，尽管如此，从 Python 2 迁移到 Python 3 却并没有想象中那么难。我在上周用了一个晚上的时间将一个 3D 渲染器的前端代码及其对应的 [PySide][3] 迁移到 Python 3，回想起来，尽管在迁移过程中无可避免地会遇到一些牵一发而动全身的修改，但整个过程相比起痛苦的重构来说简直是出奇地简单。
 
