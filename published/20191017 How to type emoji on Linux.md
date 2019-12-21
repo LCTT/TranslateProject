@@ -1,17 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11702-1.html)
 [#]: subject: (How to type emoji on Linux)
 [#]: via: (https://opensource.com/article/19/10/how-type-emoji-linux)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
 如何在 Linux 系统中输入 emoji
 ======
-使用 GNOME 桌面可以让你在文字中轻松加入 emoji。
 
-![A cat under a keyboard.][1]
+> 使用 GNOME 桌面可以让你在文字中轻松加入 emoji。
+
+![](https://img.linux.net.cn/data/attachment/album/201912/22/003829tsuogoonoxunn33o.jpg)
 
 emoji 是潜藏在 Unicode 字符空间里的有趣表情图，它们已经风靡于整个互联网。emoji 可以用来在社交媒体上表示自己的心情状态，也可以作为重要文件名的视觉标签，总之它们的各种用法层出不穷。在 Linux 系统中有很多种方式可以输入 Unicode 字符，但 GNOME 桌面能让你更轻松地查找和输入 emoji。
 
@@ -24,7 +25,6 @@ emoji 是潜藏在 Unicode 字符空间里的有趣表情图，它们已经风�
 同时还需要安装一款支持 emoji 的字体。符合这个要求的字体有很多，使用你喜欢的软件包管理器直接搜索 `emoji` 并选择一款安装就可以了。
 
 例如在 Fedora 上：
-
 
 ```
 $ sudo dnf search emoji
@@ -46,35 +46,29 @@ google-noto-emoji-color-fonts.noarch : Google “Noto Color Emoji” colored emo
 
 要开始设置，首先打开 GNOME 的设置面板。
 
-  1. 在左边侧栏中，选择“<ruby>地区与语言<rt>Region & Language</rt></ruby>”类别
-  2. 点击“<ruby>输入源<rt>Input Sources</rt></ruby>”选项下方的加号（+）打开“<ruby>添加输入源<rt>Add an Input Source</rt></ruby>”面板
+1、在左边侧栏中，选择“<ruby>地区与语言<rt>Region & Language</rt></ruby>”类别。
 
-
+2、点击“<ruby>输入源<rt>Input Sources</rt></ruby>”选项下方的加号（+）打开“<ruby>添加输入源<rt>Add an Input Source</rt></ruby>”面板。
 
 ![Add a new input source][5]
 
-  3. 在“<ruby>添加输入源<rt>Add an Input Source</rt></ruby>”面板中，点击底部的菜单按钮
-
-
+3、在“<ruby>添加输入源<rt>Add an Input Source</rt></ruby>”面板中，点击底部的菜单按钮。
 
 ![Add an Input Source panel][6]
 
-  4. 滑动到列表底部并选择“<ruby>其它<rt>Other</rt></ruby>”
-  5. 在“<ruby>其它<rt>Other</rt></ruby>”列表中，找到“<ruby>其它<rt>Other</rt></ruby>（<ruby>快速输入<rt>Typing Booster</rt></ruby>）”
+4、滑动到列表底部并选择“<ruby>其它<rt>Other</rt></ruby>”。
 
-
+5、在“<ruby>其它<rt>Other</rt></ruby>”列表中，找到“<ruby>其它<rt>Other</rt></ruby>（<ruby>快速输入<rt>Typing Booster</rt></ruby>）”。
 
 ![Find Other \(Typing Booster\) in inputs][7]
 
-  6. 点击右上角的“<ruby>添加<rt>Add</rt></ruby>”按钮，将输入源添加到 GNOME 桌面
-
-
+6、点击右上角的“<ruby>添加<rt>Add</rt></ruby>”按钮，将输入源添加到 GNOME 桌面。
 
 以上操作完成之后，就可以关闭设置面板了。
 
 #### 切换到快速输入
 
-现在 GNOME 桌面的右上角会出现一个新的图标，一般情况下是当前语言的双字母缩写（例如英语是 en，世界语是 eo，西班牙语是 es，等等）。如果你按下了<ruby>超级键<rt>Super key</rt></ruby>（也就是键盘上带有 Linux 企鹅/Windows 徽标/Mac Command 标志的键）+空格键的组合键，就会切换到输入列表中的下一个输入源。在这里，我们只有两个输入源，也就是默认语言和快速输入。
+现在 GNOME 桌面的右上角会出现一个新的图标，一般情况下是当前语言的双字母缩写（例如英语是 en，世界语是 eo，西班牙语是 es，等等）。如果你按下了<ruby>超级键<rt>Super key</rt></ruby>（也就是键盘上带有 Linux 企鹅/Windows 徽标/Mac Command 标志的键）+ 空格键的组合键，就会切换到输入列表中的下一个输入源。在这里，我们只有两个输入源，也就是默认语言和快速输入。
 
 你可以尝试使用一下这个组合键，观察图标的变化。
 
@@ -96,7 +90,7 @@ google-noto-emoji-color-fonts.noarch : Google “Noto Color Emoji” colored emo
 
 ### 使用其它切换方式
 
-如果你觉得超级键+空格键这个组合用起来不顺手，你也可以换成其它键的组合。在 GNOME 设置面板中选择“<ruby>设备<rt>Device</rt></ruby>”→“<ruby>键盘<rt>Keyboard</rt></ruby>”。
+如果你觉得“超级键+空格键”这个组合用起来不顺手，你也可以换成其它键的组合。在 GNOME 设置面板中选择“<ruby>设备<rt>Device</rt></ruby>”→“<ruby>键盘<rt>Keyboard</rt></ruby>”。
 
 在“<ruby>键盘<rt>Keyboard</rt></ruby>”页面中，将“<ruby>切换到下一个输入源<rt>Switch to next input source</rt></ruby>”更改为你喜欢的组合键。
 
@@ -106,11 +100,9 @@ google-noto-emoji-color-fonts.noarch : Google “Noto Color Emoji” colored emo
 
 实际上，现代键盘的设计只是为了输入 26 个字母以及尽可能多的数字和符号。但 ASCII 字符的数量已经比键盘上能看到的字符多得多了，遑论上百万个 Unicode 字符。因此，如果你想要在 Linux 应用程序中输入 Unicode，但又不想使用快速输入，你可以尝试一下 Unicode 输入。
 
-  1. 打开任意一种支持输入 Unicode 字符的软件，但仍然使用你的默认输入语言
-  2. 使用 ctrl+shift+U 组合键进入 Unicode 输入模式
-  3. 在 Unicode 输入模式下，只需要输入某个 Unicode 字符的对应序号，就实现了对这个 Unicode 字符的输入。例如 `1F44D` 对应的是 👍，而 `2620` 则对应了 ☠。想要查看所有 Unicode 字符的对应序号，可以参考 [Unicode 规范][11]。
-
-
+1. 打开任意一种支持输入 Unicode 字符的软件，但仍然使用你的默认输入语言
+2. 使用 `Ctrl+Shift+U` 组合键进入 Unicode 输入模式
+3. 在 Unicode 输入模式下，只需要输入某个 Unicode 字符的对应序号，就实现了对这个 Unicode 字符的输入。例如 `1F44D` 对应的是 👍，而 `2620` 则对应了 ☠。想要查看所有 Unicode 字符的对应序号，可以参考 [Unicode 规范][11]。
 
 ### emoji 的实用性
 
@@ -127,7 +119,7 @@ via: https://opensource.com/article/19/10/how-type-emoji-linux
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
