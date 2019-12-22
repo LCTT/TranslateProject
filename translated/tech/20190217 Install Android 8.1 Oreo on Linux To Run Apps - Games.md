@@ -7,144 +7,144 @@
 [#]: via: (https://fosspost.org/tutorials/install-android-8-1-oreo-on-linux)
 [#]: author: (Python Programmer;Open Source Software Enthusiast. Worked On Developing A Lot Of Free Software. The Founder Of Foss Post;Foss Project. Computer Science Major. )
 
-Install Android 8.1 Oreo on Linux To Run Apps & Games
+在 Linux 上安装 Android 8.1 Oreo 来运行应用程序和游戏
 ======
 
 ![](https://i2.wp.com/fosspost.org/wp-content/uploads/2019/02/android-8.1-oreo-x86-on-linux.png?resize=1237%2C527&ssl=1)
 
-[android x86][1] is a free and an open source project to port the android system made by Google from the ARM architecture to the x86 architecture, which allow users to run the android system on their desktop machines to enjoy all android functionalities + Apps & games.
+[android x86][1] 是一个自由开放源码的项目，将谷歌制作的android系统从 ARM 架构移植到 x86 架构， 运行用户在他们的桌面机器上运行 android 系统来享受所有的 android 功能和应用程序及游戏。
 
-The android x86 project finished porting the android 8.1 Oreo system to the x86 architecture few weeks ago. In this post, we’ll explain how to install it on your Linux system so that you can use your android apps and games any time you want.
+几周前，android x86 项目完成 android 8.1 Oreo 系统到 x86 架构的移植。在这篇文章中，我们将解释如何在你的 Linux 系统上安装它，以便你能够随时使用你的 android 应用程序和游戏。
 
-### Installing Android x86 8.1 Oreo on Linux
+### 在 Linux 上安装 Android x86 8.1 Oreo
 
-#### Preparing the Environment
+#### 准备环境
 
-First, let’s download the android x86 8.1 Oreo system image. You can download it from [this page][2], just click on the “View” button under the android-x86_64-8.1-r1.iso file.
+首先，让我们下载 android x86 8.1 Oreo 系统镜像。你可以从[这个页面][2]下载它，只需单击 android-x86_64-8.1-r1.iso 文件下 “View” 按钮。
 
-We are going to use QEMU to run android x86 on our Linux system. QEMU is a very good emulator software, which is also free and open source, and is available in all the major Linux distributions repositories.
+我们将在我们的 Linux 系统上使用 QEMU 来运行 android x86 。QEMU 是一个非常好的模拟器软件，它也是自由和开放源码的，并且在所有主要的 Linux 发行版存储库中都是可用的。
 
-To install QEMU on Ubuntu/Linux Mint/Debian:
+在 Ubuntu/Linux Mint/Debian 上安装 QEMU：
 
 ```
 sudo apt-get install qemu qemu-kvm libvirt-bin
 ```
 
-To install QEMU on Fedora:
+在 Fedora 上安装 QEMU：
 
 ```
 sudo dnf install qemu qemu-kvm
 ```
 
-For other distributions, just search for the qemu and qemu-kvm packages and install them.
+对于其它发行版，只需要搜索 qemu 和 qemu-kvm 软件包，并安装它们。
 
-After you have installed QEMU, we’ll need to run the following command to create the android.img file, which will be like some sort of an allocated disk space just for the android system. All android files and system will be inside that image file:
+在你安装 QEMU 后，我们将需要运行下面的命令来创建 android.img 文件，它就像某种分配给 android 系统的磁盘空间。所有 android 文件和系统都将位于该镜像文件中：
 
 ```
 qemu-img create -f qcow2 android.img 15G
 ```
 
-Here we are saying that we want to allocate a maximum of 15GB for android, but you can change it to any size you want (make sure it’s at least bigger than 5GB).
+我们在这里说，我们想为 android 分配一个最大 15GB 的磁盘空间，但是，你可以更改它到你想要的任意大小(确保它至少大于5GB)。
 
-Now, to start running the android system for the first time, run:
+现在，首次启动运行 android 系统，运行：
 
 ```
 sudo qemu-system-x86_64 -m 2048 -boot d -enable-kvm -smp 3 -net nic -net user -hda android.img -cdrom /home/mhsabbagh/android-x86_64-8.1-r1.iso
 ```
 
-Replace /home/mhsabbagh/android-x86_64-8.1-r1.iso with the path of the file that you downloaded from the android x86 website. For explaination of other options we are using here, you may refer to [this article][3].
+将 /home/mhsabbagh/android-x86_64-8.1-r1.iso 替换为你从 android x86 网站下载的文件的路径。我们在这里正在使用的其它选项的解释，你可以参考[这篇文章][3]。
 
-After you run the above command, the android system will start:
+在你运行上面的命令后，android 系统将启动：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 39 android 8.1 oreo on linux][4]
 
-#### Installing the System
+#### 安装系统
 
-From this window, choose “Advanced options”, which should lead to the following menu, from which you should choose “Auto_installation” as follows:
+从这个窗口中，选择 “Advanced options”, 它将引导到下面的菜单，你应如下在其中选择 “Auto_installation” ：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 41 android 8.1 oreo on linux][5]
 
-After that, the installer will just tell you about whether you want to continue or not, choose Yes:
+在这以后，安装器将告知你是否想要继续，选择 Yes ：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 43 android 8.1 oreo on linux][6]
 
-And the installation will carry on without any further instructions from you:
+接下来，安装器将无需你的指示而继续进行：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 45 android 8.1 oreo on linux][7]
 
-Finally you’ll receive this message, which indicates that you have successfully installed android 8.1:
+最后，你将收到这个信息，它表示你已经成功安装 android 8.1 ：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 47 android 8.1 oreo on linux][8]
 
-For now, just close the QEMU window completely.
+现在，完全关闭 QEMU 窗口。
 
-#### Booting and Using Android 8.1 Oreo
+#### 启动和使用 Android 8.1 Oreo
 
-Now that the android system is fully installed in your android.img file, you should use the following QEMU command to start it instead of the previous one:
+现在，android 系统已经完全安装在你的 android.img 文件中，你应该使用下面的 QEMU 命令来启动它，而不是前面的命令：
 
 ```
 sudo qemu-system-x86_64 -m 2048 -boot d -enable-kvm -smp 3 -net nic -net user -hda android.img
 ```
 
-Notice that all we did was that we just removed the -cdrom option and its argument. This is to tell QEMU that we no longer want to boot from the ISO file that we downloaded, but from the installed android system.
+注意，我们所做的只是移除 -cdrom 选项和它的参数。这是告诉 QEMU ，我们不再想从我们下载的 ISO 文件启动，相反，从安装的 android 系统启动。
 
-You should see the android booting menu now:
+你现在能够看到 android 启动菜单：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 49 android 8.1 oreo on linux][9]
 
-Then you’ll be taken to the first preparation wizard, choose your language and continue:
+然后，你将带去第一个准备向导，选择你的语言并继续：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 51 android 8.1 oreo on linux][10]
 
-From here, choose the “Set up as new” option:
+从这里，选择 “Set up as new” 选项：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 53 android 8.1 oreo on linux][11]
 
-Then android will ask you about if you want to login to your current Google account. This step is optional, but important so that you can use the Play Store later:
+然后，android 将询问你是否想登陆到你当前的谷歌账号。这步骤是可选的，但是这很重要，以便你随后可以使用 Play Store ：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 55 android 8.1 oreo on linux][12]
 
-Then you’ll need to accept the terms and conditions:
+然后，你将需要接受条款：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 57 android 8.1 oreo on linux][13]
 
-Now you can choose your current timezone:
+现在，你可以选择你当前的时区：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 59 android 8.1 oreo on linux][14]
 
-The system will ask you now if you want to enable any data collection features. If I were you, I’d simply turn them all off like that:
+系统将询问你是否想启动一些数据收集功能。如果我是你的话，我将简单地关闭它们，像这样：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 61 android 8.1 oreo on linux][15]
 
-Finally, you’ll have 2 launcher types to choose from, I recommend that you choose the Launcher3 option and make it the default:
+最后，你将有两种启动类型可供选择，我建议你选择 Launcher3 选项，并使其成为默认项：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 63 android 8.1 oreo on linux][16]
 
-Then you’ll see your fully-working android system home screen:
+然后，你将看到完整工作的 android 系统主屏幕：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 65 android 8.1 oreo on linux][17]
 
-From here now, you can do all the tasks you want; You can use the built-in android apps, or you may browse the settings of your system to adjust it however you like. You may change look and feeling of your system, or you can run Chrome for example:
+从现在起，你可以做你想做的任何事情；你可以使用内置的 android 应用程序，或者你可以浏览你是系统设置来根据你的喜好进行调整。你可以更改你的系统的外观和体验，或者你可以像示例一样运行 Chrome ：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 67 android 8.1 oreo on linux][18]
 
-You may start installing some apps like WhatsApp and others from the Google Play store for your own use:
+你可以从 Google Play store 开始安装一些应用程序程序，像 WhatsApp 和其它的应用程序，以供你自己使用：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 69 android 8.1 oreo on linux][19]
 
-You can now do whatever you want with your system. Congratulations!
+你现在可以用你的系统做任何你想做的事。恭喜！
 
-### How to Easily Run Android 8.1 Oreo Later
+### 以后如何轻松地运行 Android 8.1 Oreo
 
-We don’t want to always have to open the terminal window and write that long QEMU command to run the android system, but we want to run it in just 1 click whenever we need that.
+我们不想总是不得不打开终端窗口，并写那些长长的 QEMU 命令来运行 android 系统，相反，我们想在我们需要时一次单击就运行它。
 
-To do this, we’ll create a new file under /usr/share/applications called android.desktop with the following command:
+为此，我们将使用下面的命令在 /usr/share/applications 下创建一个名为 android.desktop 的新文件：
 
 ```
 sudo nano /usr/share/applications/android.desktop
 ```
 
-And paste the following contents inside it (Right click and then paste):
+并在其中粘贴下面的内容(右键单击然后粘贴)：
 
 ```
 [Desktop Entry]
@@ -158,19 +158,19 @@ StartupNotify=true
 Categories=GTK;
 ```
 
-Again, you have to replace /home/mhsabbagh/android.img with the path to the local image on your system. Then save the file (Ctrl + X, then press Y, then Enter).
+再强调一次，你必需使用你系统上的本地镜像路径来替换 /home/mhsabbagh/android.img 。然后保存文件 (Ctrl + X ，然后按 Y ，然后按 Enter)。
 
-Notice that we needed to use “pkexec” to run QEMU with root privileges because starting from newer versions, accessing to the KVM technology via libvirt is not allowed for normal users; That’s why it will ask you for the root password each time.
+注意，我们需要使用 “pkexec” 来使用 root 权限运行 QEMU ，因为从较新的版本开始，普通用户不允许通过 libvirt 访问 KVM 技术；这就是为什么它将每次要求你输入 root 密码的原因。
 
-Now, you’ll see the android icon in the applications menu all the time, you can simply click it any time you want to use android and the QEMU program will start:
+现在，你将在应用程序菜单中看到 android 图标，你可以在你想使用 android 的任何时间来简单地单击图标，QEMU 程序将启动：
 
 ![Install Android 8.1 Oreo on Linux To Run Apps & Games 71 android 8.1 oreo on linux][20]
 
-### Conclusion
+### 总结
 
-We showed you how install and run android 8.1 Oreo on your Linux system. From now on, it should be much easier on you to do your android-based tasks without some other software like Blutsticks and similar methods. Here, you have a fully-working and functional android system that you can manipulate however you like, and if anything goes wrong, you can simply nuke the image file and run the installation all over again any time you want.
+我们向你展示如何你的 Linux 系统上安装和运行 android 8.1 Oreo 。从现在起，在没有其它一些软件的（像 Blutsticks 和类似的方法）的情况下，你应该更容易地完成基于 android 的任务。在这里，你有一个完整工作和功能的 android 系统，你可以随心所欲地操作它，如果一些东西出差，你可以简单地核弹攻击镜像文件，然后随时再一次重新运行安装程序。
 
-Have you tried android x86 before? How was your experience with it?
+你之前尝试过 android x86 吗？你的经验如何？
 
 
 --------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ via: https://fosspost.org/tutorials/install-android-8-1-oreo-on-linux
 
 作者：[Python Programmer;Open Source Software Enthusiast. Worked On Developing A Lot Of Free Software. The Founder Of Foss Post;Foss Project. Computer Science Major.][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
