@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11691-1.html)
 [#]: subject: (Easily Upload Text Snippets To Pastebin-like Services From Commandline)
 [#]: via: (https://www.ostechnix.com/how-to-easily-upload-text-snippets-to-pastebin-like-services-from-commandline/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
@@ -12,7 +12,7 @@
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/12/wgetpaste-720x340.png)
 
-每当需要在线共享代码片段时，我们想到的第一个便是 Pastebin.com，这是 Paul Dixon 于 2002 年推出的在线文本共享网站。现在，有几种可供选择的文本共享服务可以上传和共享文本片段、错误日志、配置文件、命令输出或任何类型的文本文件。如果你碰巧经常使用各种类似于 Pastebin 的服务来共享代码，那么这对你来说确实是个好消息。向 Wgetpaste 打个招呼吧，它是一个命令行 BASH 实用程序，可轻松地将文本摘要上传到类似 pastebin 的服务中。使用 Wgetpaste 脚本，任何人都可以与自己的朋友、同事或想在类似 Unix 的系统中的命令行中查看/使用/查看代码的人快速共享文本片段。
+每当需要在线共享代码片段时，我们想到的第一个便是 Pastebin.com，这是 Paul Dixon 于 2002 年推出的在线文本共享网站。现在，有几种可供选择的文本共享服务可以上传和共享文本片段、错误日志、配置文件、命令输出或任何类型的文本文件。如果你碰巧经常使用各种类似于 Pastebin 的服务来共享代码，那么这对你来说确实是个好消息。向 Wgetpaste 打个招呼吧，它是一个命令行 BASH 实用程序，可轻松地将文本摘要上传到类似 Pastebin 的服务中。使用 Wgetpaste 脚本，任何人都可以与自己的朋友、同事或想在类似 Unix 的系统中的命令行中查看/使用/审查代码的人快速共享文本片段。
 
 ### 安装 Wgetpaste
 
@@ -84,7 +84,7 @@ Your paste can be seen here: https://paste.pound-python.org/show/eO0aQjTgExP0wT5
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/12/wgetpaste-2.png)
 
-你也可以使用 `tee`  命令显示粘贴的内容，而不是盲目地上传它们。
+你也可以使用 `tee` 命令显示粘贴的内容，而不是盲目地上传它们。
 
 为此，请使用如下的 `-t` 选项。
 
@@ -233,7 +233,7 @@ via: https://www.ostechnix.com/how-to-easily-upload-text-snippets-to-pastebin-li
 作者：[SK][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
