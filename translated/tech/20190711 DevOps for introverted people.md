@@ -9,7 +9,7 @@
 
 内向者的 DevOps 
 ======
-我们请求 Opensource.com 的 DevOps 团队，希望他们能够谈一谈作为 DevOps 内向者的休验，同时给 DevOps 外向者一些建议。下面是他们的回答。
+我们邀请 Opensource.com 的 DevOps 团队，希望他们能够谈一谈作为 DevOps 内向者的休验，同时给 DevOps 外向者一些建议。下面是他们的回答。
 
 ![问答][1]
 
