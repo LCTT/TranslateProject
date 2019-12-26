@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lxbwolf)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11714-1.html)
 [#]: subject: (How to program with Bash: Loops)
 [#]: via: (https://opensource.com/article/19/10/programming-bash-loops)
 [#]: author: (David Both https://opensource.com/users/dboth)
@@ -12,7 +12,7 @@
 
 > 本文是 Bash 编程系列三篇中的最后一篇，来学习使用循环执行迭代的操作。
 
-![arrows cycle symbol for failing faster][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/26/111437f9pa3zqqwcc9wwg1.jpg)
 
 Bash 是一种强大的用于命令行和 shell 脚本的编程语言。本系列的三部分都是基于我的三集 [Linux 自学课程][2] 写的，探索怎么用 CLI 进行 bash 编程。
 
