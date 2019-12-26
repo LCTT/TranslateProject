@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (runningwater)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11717-1.html)
 [#]: subject: (Using the Java Persistence API)
 [#]: via: (https://opensource.com/article/19/10/using-java-persistence-api)
 [#]: author: (Stephon Brown https://opensource.com/users/stephb)
@@ -12,7 +12,7 @@
 
 > 我们通过为自行车商店构建示例应用程序来学习如何使用 JPA。
 
-![Coffee beans][1]
+![](https://img.linux.net.cn/data/attachment/album/201912/27/000705dymv92hnba2a2322.jpg)
 
 对应用开发者来说，<ruby>Java 持久化 API<rt>Java Persistence API</rt></ruby>（JPA）是一项重要的 java 功能，需要透彻理解。它为 Java 开发人员定义了如何将对象的方法调用转换为访问、持久化及管理存储在 NoSQL 和关系型数据库中的数据的方案。
 
