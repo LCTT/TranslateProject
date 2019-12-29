@@ -7,136 +7,124 @@
 [#]: via: (https://opensource.com/article/19/7/how-make-old-computer-useful-again)
 [#]: author: (Howard Fosdick https://opensource.com/users/howtechhttps://opensource.com/users/don-watkinshttps://opensource.com/users/suehlehttps://opensource.com/users/aseem-sharmahttps://opensource.com/users/sethhttps://opensource.com/users/marcobravohttps://opensource.com/users/dragonbitehttps://opensource.com/users/don-watkinshttps://opensource.com/users/jamesfhttps://opensource.com/users/seth)
 
-How to make an old computer useful again
+如何把你的老爷机重新利用起来
 ======
-Refurbish an old machine with these step-by-step instructions.
+按照下面各个步骤，让你的老爷机焕然一新
 ![Person typing on a 1980's computer][1]
 
-Have an old computer gathering dust in your basement? Why not put it to use? A backup machine could come in handy if your primary computer fails and you want to be online with a larger screen than your smartphone. Or it could act as a cheap secondary computer shared by the family. You could even make it into a retro gaming box.
+你的地下室里有一台用来落灰的旧电脑？为什么不把它利用起来呢？如果你常用的电脑坏了，又想用一个比手机更大的屏幕上网，这时候一台备用电脑可能就派上用场了。或者，它也可以充当一台全家人共用的廉价辅助电脑，甚至还可以改造为一台复古游戏机。
 
-You can take any computer up to a dozen years old and—with the right software—perform many of the same tasks you can with new machines. Open source software is the key.
+哪怕是一台有十余年历史的老爷机，只要选对了软件，也可以胜任很多新电脑能够完成的任务。其中的关键在于，要使用开源软件。
 
-I've refurbished computers for two decades, and in this article, I'll share how I do it. We're talking about dual-core laptops and desktops between five and 12 years old.
+我进行电脑翻新已经有二十年了。在这篇文章里，我会分享一下电脑翻新的技巧。此处讨论的范围包括双核笔记本，以及机龄在 5 到 12 年之间的台式机。
 
-### Verify the hardware
+### 检查硬件
 
-Step one is to verify that your hardware all works. Overlooking a problem here could cause you big headaches later.
+第一步是检查硬件是否运转正常。如果在这个环节忽略了一个问题，后面可能会让你非常头疼。
 
-Dust kills electronics, so open up the box and clean out the dirt. [Compressed air][2] comes in handy. Be careful that you're [grounded][3] whenever you touch the machine. And _don't_ rub anything with a cleaning cloth. Even a static shock so small you won't feel it can destroy circuitry.
+灰尘是电子器件的天敌，所以第一件事应该是打开机箱，清除灰尘。[压缩空气设备][2]这时候可能会派上用场。请注意，进行任何接触电脑的操作时，都应该确保你是[触地][3]的。此外，_避免_ 清洁布与任何物体发生摩擦。即使是一次小到你无法察觉的静电放电，也可能会导致电路损毁。
 
-Then close the clean computer and verify that all the hardware works. Test:
+清洁工作完成之后，关闭机箱，检查是否所有硬件都可以正常工作。需要测试的项目包括：
 
-  * Memory
-  * Disk
-  * Motherboard
-  * Peripherals (DVD drive, USB ports, sound, etc.)
+  * 内存
+  * 硬盘
+  * 主板
+  * 外围设备（DVD 驱动器、USB 接口、声卡，等等）
 
+首先，将计算机启动面板（[UEFI][4] 或者是 [BIOS][5]面板）上的诊断测试依次运行一遍。如果不知道按哪个程序功能按键进入你电脑的启动面板，可以参考 [这份列表][6]。
 
+此外，也可以使用诸如 [Hirens BootCD][7] 和 [Ultimate Boot CD][8] 之类的免费资源工具包，进行启动面板覆盖不到的测试。这些资源工具包涵盖了数百个测试程序，它们都是免费的，尽管不都开源。运行这些工具包无需安装任何软件，因为它们都是从 U 盘或者 DVD 驱动器启动的。
 
-Run any diagnostic tests in the computer's boot panels (the [UEFI][4] or [BIOS][5] panels). [This list][6] tells you which program function (PF) key to press to access those panels for your computer.
+测试一定要彻底！对于内存和硬盘来说，基础测试还不够，应该运行深度测试，哪怕是运行一整夜也无妨。只有这样，才能够查出那些不易发现的瞬时故障。
 
-Free resource kits like [Hirens BootCD][7] or [Ultimate Boot CD][8] enable you to test what your boot panels don't. They contain hundreds of testing programs; all are free, but not all are open source. You don't have to install anything to run these kits because they'll boot from a USB thumb drive or DVD drive.
+如果发现了问题，可以参考我的[硬件故障排除快速指南][9]，帮你解决最常见的硬件问题。
 
-Be thorough! Run the extended tests for memory and disk—not just the short tests. Let them run overnight. That's the only way to catch transient (sporadic) errors.
+### 选择软件
 
-If you find problems, my [Quick guide to fixing hardware][9] will help you solve the most common hardware issues.
+电脑翻新的关键在于，根据手头的硬件资源，恰如其分地安装软件。最核心的三种硬件资源分别是：
 
-### Select the software
+  1. 处理器（核数、速度）
+  2. 内存
+  3. 显存
 
-The key to refurbishing is to install software appropriate for the hardware resources you have. The three essential hardware resources are:
+可以在启动时的 UEFI/BIOS 面板上，弄清楚你电脑的硬件资源。记得抄下数据，以免遗忘。接下来，可以在 [CPU Benchmark][10] 网站上查看你的处理器，该网站除了提供 CPU 的背景资料，还提供 CPU 的一个性能分数。
 
-  1. Processor (number of cores and speed)
-  2. Memory
-  3. Video memory
+了解了硬件性能之后，就可以选择能够在硬件上高效运行的软件了。软件的选择涉及四个重要的层面：
 
+  1. 操作系统（OS）
+  2. 桌面环境（DE）
+  3. 浏览器
+  4. 应用
 
+一个优秀的 Linux 发行版可以满足全部四个层面。不要试图使用已经停止维护的 Windows 版本，例如 Windows 8、Vista 或者 XP，哪怕已经安装在电脑上了。恶意软件的 [风险][11] 你是承受不起的。明智的做法是，使用一个更抗病毒的最新版本操作系统。
 
-You can identify your computer's resources in its boot-time UEFI/BIOS panels. Write down your findings so that you don't forget them. Then, look up your processor at [CPU Benchmark][10]. That website gives you background on your CPU plus a CPU Mark that indicates its performance.
+那 Windows 7 呢？[维护宽限期][12] 至 2020 年 1 月 14 日结束，也就是说，在此日期之前你还可以获得安全补丁，之后就想都别想了。现在正是迁出 Windows 7 的绝佳时机。
 
-Now that you know your hardware's power, you're ready to select software that it can efficiently run. Your software choices are divided into four critical areas:
+Linux 的巨大优势在于，有许多专门为过时硬件设计的[发行版][13]。此外，[桌面环境][14]和操作系统在 Linux 的设计中是分开的，你可以自行选择搭配。这一点非常重要，因为桌面环境对低端系统的性能有很大影响。（对于 Windows 和 MacOS 来说，你选择的操作系统版本决定了桌面环境，没得可选。）
 
-  1. Operating system (OS)
-  2. Desktop environment (DE)
-  3. Browser
-  4. Applications
+Linux 的另一个好处是，拥有数以千计免费且开源的应用，不需要担心激活或者许可的问题。此外，Linux 是可移植的，可以在不同的分区、硬盘、设备或计算机之间，对操作系统和应用进行复制、移动或克隆。（Windows 则不然，使用注册表将系统捆绑在了所安装的计算机上。）
 
+### 翻新后的电脑能够做什么？
 
+这里讨论的是大约在 2006 年和 2013 年之间生产的双核计算机，尤其是装载了 [Intel 酷睿 2][15] CPU 或者 [AMD 速龙 64 X2][16] 系列处理器的计算机。它们的 [CPU 分数][10] 大多在 1000 到 4000 分之间。这种电脑卖不了几个钱，但用在运行轻量级 Linux 软件上，性能还是足够的。
 
-A good Linux distribution covers all four. Don't be tempted to run an unsupported version of Windows like 8, Vista, or XP just because it's already on the computer! The [risk][11] of malware is too great. You're much better off with a more virus-resistant, up-to-date operating system.
+有一点需要注意：你的电脑应该至少拥有 2GB 内存，如果不够就进行升级。就我翻新过的电脑来说，使用者用到的内存（不包括数据缓存）一般在 0.5 到 2 GB 之间，很少超过 2 GB。如果将内存升级到 2GB，系统就不至于进行 _swap_，即将硬盘当做内存使用。如果想要获得良好性能，这一点十分关键。
 
-How about Windows 7? [Extended support][12] ends January 14, 2020, meaning you get security fixes only until that date. After that, zilch. Now is the perfect time to migrate off Windows 7.
+以我自己为例，我用来写作这篇文章的是一台有十年机龄的翻新电脑。取下 1 GB 内存条之后，它只剩下了 1 GB 内存，然后就慢得像一只乌龟。用它浏览网页，或者是做类似的事情，都让人感到灰心，甚至痛苦。一旦把内存条重新装回去，有了 2 GB 内存，它就立马回到了可以使用的状态。
 
-Linux's big benefit is that it offers [many distros][13] specifically designed for older hardware. Plus, its design decouples [DEs][14] from the OS, so you can mix and match the two. This is important because DEs heavily impact low-end system performance. (With Windows and MacOS, the OS version you run dictates the DE.)
+一台 2 GB 的双核计算机可以满足大多数人的需求，只要安装的是轻量级发行版和浏览器。你可以用它浏览网页、发送电子邮件、编辑文档和电子表格、观看 YouTube 视频、参与 eBay 拍卖竞标、在社交网络上发帖、听播客、查看相簿、管理家庭收支和个人日程、玩游戏，等等。
 
-Other Linux advantages: Its thousands of apps are free and open source, so you don't have to worry about activation and licensing. And Linux is portable. You can copy, move, or clone the OS and applications across partitions, disks, devices, or computers. (Windows binds itself to the computer it's installed on via its Registry.)
+### 翻新电脑的局限
 
-### What can your refurbished computer do?
+那么，这些老爷机又有什么局限呢？由于它们的并发比不上最先进的计算机，所以应该使用轻量级浏览器，同时拦截广告（广告正是让网页加载变慢的罪魁祸首）。如果可以使用虚拟专用网络（VPN）拦截广告，为处理器免除广告加载的负荷，那就再好不过了。此外，还需要禁用视频自动播放、Flash 以及网页动效；将浏览器上的标签页控制在少数几个，不要同时打开 20 个；以及下载可以开启/禁用 JavaScript 的浏览器扩展。
 
-We're talking dual-core machines dating from about 2006 to 2013, especially [Intel Core 2][15] CPUs and [AMD Athlon 64 X2][16] family processors. Most have a [CPU Mark][10] of between 1,000 and 4,000. You can often pick up these machines for a song, yet they're still powerful enough to run lightweight Linux software.
+让处理器专注于你目前正在做的事情吧，不要同时打开一堆应用，也不要在后台运行很多程序。此外，图像编辑和视频编辑的高级工具可能会很慢。至于运行虚拟机，还是别想了吧。
 
-One caution: be sure your computer has at least 2GB of memory. Upgrade the RAM if you have to. End users on my refurbished machines typically use between 0.5 and 2GB of RAM (exclusive of data buffering); rarely do they go over 2 gig. So if you can bump memory to 2GB, your system won't be forced to _swap_, or substitute disk for memory. That's critical for good performance.
+那游戏呢？开源软件仓库提供了数以千计的游戏。这就是我为什么将显存列为三种核心硬件资源之一。如果你的电脑没有显卡，那很可能只有 32 或者 64 MB 的显存。可以增加一张显卡，将显存提升到 256 或者 512 MB，这样一来，处理器密集型的游戏就会顺畅很多了。如果不确定你的电脑有多少显存，可以参考[这里][17]。请注意，需要确保显卡与电脑的[显卡插槽][18]（AGP、PCI-Express 或者 PCI）相匹配，同时使用正确的[连接线][19]（VGA、DVI 或者 HDMI）。
 
-For example, I removed 1GB RAM from the decade-old rebuild I'm writing this article on, which dropped memory down to 1GB. The machine slowed to a crawl. Web surfing and other tasks became frustrating, even painful. I popped the memory stick back in and, with 2GB RAM, the desktop instantly reverted to its usable self.
+#### 与 Windows 系统的兼容性如何？
 
-With a 2 gig dual-core computer, most people can do whatever they want, so long as they run a lightweight distro and browser. You can web surf, email, edit documents, do spreadsheets, watch YouTube videos, bid on eBay auctions, post on social media, listen to podcasts, view photo collections, manage home finance and personal scheduling, play games, and more.
+很多人都会问，Linux 与 Windows 系统的兼容性如何。首先，对于任何一个 Windows 程序，都有一个 [Linux 的替代版本][20]。
 
-### Limitations
+退一步说，即使你真的必须要运行某个特定的 Windows 程序，通常也可以使用 [Wine][21] 在 Linux 上运行。可以在 [Wine 数据库][22] 里查找一下你的应用，看看是否可以在 Wine 上运行，顺便学一些特殊安装技巧。[Winetricks][23] 和 [PlayOnLinux][24] 这两个辅助工具可以帮助你进行安装和配置。
 
-What can't these older computers do? Their concurrency is less than state-of-the-art machines. So run a fast browser and block ads, because that's what slows down web surfing. If your virtual private network (VPN) can block ads for you and offload that work from your processor, that's ideal. Disable autoplay of videos, Flash, and animation. Surf with a couple of tabs open rather than 20. Install a browser extension so you can toggle JavaScript.
+Wine 的另一个优势是可以运行 Windows 的老版本，例如 Vista、XP、ME/98/95 和 3.1。我认识一个家伙，搭建了一台特别赞的游戏电脑，然后用来玩 XP 上的老游戏。使用 [DOSBox][26]，你甚至还可以运行数以千计的[免费 DOS 程序][25]。但是有一点需要注意，如果 Windows 程序可以运行，那么 Windows [病毒][27]也同样可以。你需要保护 Linux 上的 Wine 环境，正如保护任何其他 Windows 环境一样。
 
-Direct the processors to what you're working on; don't keep a ton of apps open or run lots of stuff in the background. High-end graphics and video editing may be slow. Virtual machine hosting is out.
+对了，与 Microsoft Office 的兼容性怎么样？我使用的是 LibreOffice，经常编辑并交换 Word 和 Excel 文件，完全没有问题。不过，你应该避免使用隐晦的或者过于专业的功能。  
 
-How about games? The open source software repositories offer literally thousands of games. That's why I listed video memory as one of the three essential hardware resources. If your box doesn't have a video card, it likely has only 32 or 64MB of VRAM. Bump that to 256 or 512MB by adding a video card, and you'll find that processor-intensive games run much better. [Here's how][17] to see how much VRAM your computer has. Be sure to get a card that fits your computer's [video slot][18] (AGP, PCI-Express, or PCI) and has the right [cable connector][19] (VGA, DVI, or HDMI).
+### 如何选择发行版？
 
-#### What about Windows compatibility?
+假设选择了 Linux 作为操作系统，那么你还需要选择桌面环境、浏览器和各种应用。最简单的方法是，安装一个包含了你所需要的一切的发行版。
 
-People often ask about Windows compatibility. First, there's a [Linux equivalent][20] for every Windows program.
+通过从 [live USB][28] U 盘或者 DVD 启动，你无需安装任何程序，就可以尝试不同的发行版。关于在 Linux 或 Windows 上创建可启动的 Linux 的方法，可以参考 [这里][29]。
 
-Second, if you really must run a specific Windows program, you can usually do that on Linux using [Wine][21]. Look up your application in the [Wine database][22] to verify it runs under Wine and learn any special install tricks. Then the auxiliary tools [Winetricks][23] or [PlayOnLinux][24] will help you with installation and setup.
+我进行电脑翻新的目的是做慈善，所以无法指望电脑使用者具备任何相应知识。我需要的发行版应该具有以下特性：
 
-Wine's other benefit is that it runs programs from old Windows versions like Vista, XP, ME/98/95, and 3.1. I know a guy who set up a fantastic game box running his old XP games. You can even run thousands of [free DOS programs][25] using [DOSBox.][26] One caution: if Windows programs can run, so can Windows [viruses][27]. You must protect your Wine environment inside Linux just as you would any other Windows environment.
+  * 用户友好
+  * 具有轻量级界面
+  * 自带各种轻量级应用
+  * 拥有足够大的软件仓库
+  * 历史表现良好
+  * 拥有庞大的用户社区和活跃的论坛
+  * 通过长期维护版本（而不是滚动发布版本）确保稳定性
+  * 更重视可靠性，而不是尖端功能
+  * 可以通过图形化用户界面进行设置，而不是只能通过文本文件进行设置
 
-How about compatibility with Microsoft Office? I use LibreOffice and routinely edit and exchange Word and Excel files without problems. You must, however, avoid using obscure or specialized features.
+许多发行版都能够满足上面的要求。我曾经尝试成功的有 [Mint/Xfce][30]、[Xubuntu,][31] 和 [Lubuntu][32]。前两个发行版使用 Xfce 桌面环境，第三个使用 LXQt。相比 GNOME、Unity、KDE、MATE 和 Cinnamon 这些桌面环境，运行上面这两种桌面环境只需要[更少][33]的处理器和内存资源。
 
-### Which distro?
+Xfce 和 LXQt 用起来非常简单，我的客户们之前从未见过 Linux，但是都可以自如使用这些简单的、菜单驱动的用户界面。
 
-Assuming Linux is the OS, you need to select a DE, browser, and applications. The easy way to do this is to install a distribution that bundles everything you need.
+对于旧电脑来说，运行最快速、最高效的浏览器是一件非常重要的事情。[很多人觉得][34] Chromium 是最好的浏览器；此外，我还安装了 Firefox Quantum，因为大家都比较熟悉它，并且[它的性能][35]可以和 [Chromium 的性能][36]媲美。我还加上了 Opera，因为它速度快，而且有一些独特功能，比如内置的广告拦截，以及免费的 [虚拟专用网络][37]。Opera 是免费的，但并非开源。
 
-Remember that you can try out different distros without installing anything by booting from a [live USB][28] thumb drive or DVD. [Here's how to create a bootable Linux][29] from within Linux or Windows.
+无论你使用什么浏览器，一定要拦截广告和追踪器，尽量降低浏览器的负荷。此外，除非得到你的明确批准，否则视频和 Flash 都不应该被允许运行。
 
-I rebuild computers for charity, so I can't assume any knowledge on the part of my users. I need a distro with these traits:
+至于应用，我使用的是 Mint/Xfce、Xubuntu 和 Lubuntu 自带的轻量级应用，它们可以满足一切需求。
 
-  * User-friendly
-  * Lightweight interface
-  * Bundles lightweight apps
-  * Big repository
-  * Solid track record
-  * Large user community with an active forum
-  * Stability through long-term support releases (not rolling releases)
-  * Prioritizes reliability over cutting-edge features
-  * Configurable by a GUI rather than by text files
+### 行动起来吧
 
+你是否会对翻新后的电脑感到满意呢？就我来说，我所使用的两台电脑的机龄都已经超过十年了，其中一个装载的是 Intel 双核处理器（[eMachines T5274a][38]），另一个装载的是 AMD 速龙 64 x2 处理器（[HP dc5750][39]），两台电脑都有 2 GB 内存。它们和我的另一台具备四核 i5 处理器和 16 GB 内存 的电脑一样，完全能够胜任我的办公工作。如果说有什么功能是这两台电脑缺失的，那就是运行虚拟机了。
 
-
-Many distros fulfill these criteria. The three I've successfully deployed are [Mint/Xfce][30], [Xubuntu,][31] and [Lubuntu][32]. The first two use the Xfce desktop environment, while the latter runs LXQt. These DEs [use less][33] processor and memory resources than alternatives like GNOME, Unity, KDE, MATE, and Cinnamon.
-
-Xfce and LXQt are very easy to use. My clients have never seen Linux before, yet they have no trouble using these simple, menu-driven interfaces.
-
-It's vital to run the fastest, most efficient browser on older equipment. [Many feel][34] Chromium wins the browser race. I also install Firefox Quantum because people are familiar with it and [its performance][35] rivals [that of Chromium][36]. I toss in Opera because it's speedy and has some unique features, like integrated ad-blocking and a free [virtual private network][37]. Opera is free but not open source.
-
-Whatever browser you use, block ads and trackers! Minimize browser overhead. And don't allow videos or Flash to run without your explicit say-so.
-
-For applications, I rely on the lightweight apps bundled with Mint/Xfce, Xubuntu, and Lubuntu. They address every possible need.
-
-### Go for it
-
-Will you be happy with your rebuild? The computers I've been using lately are both over a decade old. One has an Intel dual-core processor ([eMachines T5274a][38]) while the other features an AMD Athlon 64 x2 processor ([HP dc5750][39]). Both have 2 gig memory. They're as effective for my office workload as my quad-core i5 with 16GB RAM. The only function I miss when using them is the ability to host virtual machines.
-
-We live in an amazing era. You can take a five- to 12-year-old computer and, with a little effort, restore it to practical use. What could be more fun?
-
-Having recently co-authored a book about building things with the Raspberry Pi ( Raspberry Pi Hacks...
-
-I can see the brightness of curiosity in my six year old niece Shuchi's eyes when she explores a...
+我们生活在一个非常神奇的年代。只需要付出一点努力，就可以将一台机龄在 5 到 12 年之间的旧电脑，翻新为一台具备实用价值的机器。还有什么比这更有趣吗？
 
 --------------------------------------------------------------------------------
 
@@ -144,7 +132,7 @@ via: https://opensource.com/article/19/7/how-make-old-computer-useful-again
 
 作者：[Howard Fosdick][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/chen-ni)
+译者：[chen-ni](https://github.com/chen-ni)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
