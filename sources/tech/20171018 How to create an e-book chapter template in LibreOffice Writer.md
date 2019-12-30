@@ -1,3 +1,4 @@
+Translating by robsean
 How to create an e-book chapter template in LibreOffice Writer
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/EDUCATION_colorbooks.png?itok=vNhsYYyC)
