@@ -12,6 +12,8 @@
 
 > Falkon 是基于 QtWebEngine 的 Web 浏览器，它以前称为 Qupzilla。在本周的“应用推荐”中，我们来看看这个开源软件。
 
+![](https://img.linux.net.cn/data/attachment/album/201912/31/105027tblfjlzn9xx8keud.png)
+
 ### Falkon：适用于 Linux（和 Windows）的开源 Web 浏览器
 
 ![][1]
