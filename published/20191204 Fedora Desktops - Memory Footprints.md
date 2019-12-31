@@ -44,7 +44,7 @@ Fedora 中有 40 多种桌面环境（DE）。每种桌面环境都有自己的�
     * gnome-shell 6.9% / gnome-software 1.8% / ibus-x11 1.5%
   * KDE
     * 使用了 733 MB
-    * plasmashell 6.2% / kwin_x11 3.6% / akonadi_mailfil 2.9%
+    * plasmashell 6.2% / kwin\_x11 3.6% / akonadi\_mailfil 2.9%
   * LXDE
     * 使用了 318 MB
     * Xorg 1.9% / nm-applet 1.8% / dnfdragora 1.8%
