@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11733-1.html)
 [#]: subject: (Fedora Desktops – Memory Footprints)
 [#]: via: (https://fedoramagazine.org/fedora-desktops-memory-footprints/)
 [#]: author: (Troy Dawson https://fedoramagazine.org/author/tdawson/)
@@ -12,7 +12,7 @@ Fedora 上的桌面环境内存占用测试
 
 ![][1]
 
-Fedora 中有 40 多中桌面环境。每种桌面环境都有自己的优点和缺点。通常，根据功能、外观和其他品质，选择桌面是非常个人的偏爱。但有时，你选择的桌面环境还会受到硬件限制。
+Fedora 中有 40 多种桌面环境（DE）。每种桌面环境都有自己的优点和缺点。通常，根据功能、外观和其它品质，选择桌面是一件非常个人的偏好。但有时，你选择的桌面环境还会受到硬件限制。
 
 本文旨在帮助人们根据桌面环境占用的基准内存来比较 Fedora 桌面环境。为了缩小范围，我们仅查看具有正式 Fedora Live 镜像的桌面环境。
 
@@ -20,11 +20,11 @@ Fedora 中有 40 多中桌面环境。每种桌面环境都有自己的优点和
 
 每个桌面环境都安装在自己的 KVM 虚拟机上。每个虚拟机都有 1 个 CPU、4GB 内存、15GB virtio 固态磁盘，以及 RHEL 8.0 kvm 上所有其他标准配置。
 
-用于安装的镜像是标准的 Fedora 31 Live 镜像。对于 GNOME，该镜像是 Fedora 工作站。对于其他桌面，使用了相应的 Spin 版本。未对“<ruby>糖葫芦<rt>Sugar On A Stick</rt></ruby>”（SOAS）进行测试，因为它不容易安装到本地驱动器上。
+用于安装的镜像是标准的 Fedora 31 Live 镜像。对于 GNOME，该镜像是 “Fedora 工作站”。对于其它桌面，使用了相应的 Spin 版本。未对“<ruby>糖葫芦<rt>Sugar On A Stick</rt></ruby>”（SOAS）进行测试，因为它不容易安装到本地驱动器上。
 
-用 Live CD 启动虚拟机，然后选择“安装到硬盘”。在安装过程中，仅使用默认值。创建一个 root 用户和一个普通用户。安装并重新启动后，live 镜像已确认不在虚拟 CDROM 中。
+用 Live CD 启动虚拟机，然后选择“安装到硬盘”。在安装过程中，仅使用默认值。创建了一个 root 用户和一个普通用户。安装并重新启动后，live 镜像已确认不在虚拟 CDROM 中。
 
-每个桌面环境的设置都没有改动。它们每个都以 Live CD 安装中默认的设置运行。每个桌面环境都是通过普通用户登录的。打开了一个终端，在每台虚拟机中都使用 `sudo` 运行了 `dnf -y update`。在更新后，在该 sudo 终端中，每台虚拟机都运行 `/sbin/shutdown -h now` 以关闭。
+每个桌面环境的设置都没有改动。它们每个都以 Live CD 环境中默认的设置运行。每个桌面环境都是通过普通用户登录的。打开了一个终端，在每台虚拟机中都使用 `sudo` 运行了 `dnf -y update`。在更新后，在该 sudo 终端中，每台虚拟机都运行 `/sbin/shutdown -h now` 以关闭。
 
 ### 测试方式
 
@@ -44,7 +44,7 @@ Fedora 中有 40 多中桌面环境。每种桌面环境都有自己的优点和
     * gnome-shell 6.9% / gnome-software 1.8% / ibus-x11 1.5%
   * KDE
     * 使用了 733 MB
-    * plasmashell 6.2% / kwin_x11 3.6% / akonadi_mailfil 2.9%
+    * plasmashell 6.2% / kwin\_x11 3.6% / akonadi\_mailfil 2.9%
   * LXDE
     * 使用了 318 MB
     * Xorg 1.9% / nm-applet 1.8% / dnfdragora 1.8%
@@ -73,7 +73,7 @@ via: https://fedoramagazine.org/fedora-desktops-memory-footprints/
 作者：[Troy Dawson][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
