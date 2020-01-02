@@ -1,20 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Darktable 3 Released With GUI Rework and New Features)
 [#]: via: (https://itsfoss.com/darktable-3-release/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Darktable 3 发布，带来重做的 GUI 及新的功能
+Darktable 3 发布，带来重新打造的 UI 及新的功能
 ======
 
-这是给摄影爱好者的圣诞节礼物。Darktable 3.0 刚刚发布了。
+> 这是给摄影爱好者的圣诞节礼物。Darktable 3.0 刚刚发布了。
 
-[Darktable][1] 是[在 Linux 上编辑 RAW 图像的最佳应用之一] [2]。你可以将其视为 [Adobe Lightroom 的免费开源替代品][3]。
+[Darktable][1] 是[在 Linux 上编辑 RAW 图像的最佳应用之一][2]。你可以将其视为 [Adobe Lightroom 的自由开源替代品][3]。
 
-Darktable 3 是一个主版本更新，它有许多功能改进和对用户界面的重做。现在，GUI 完全由 GTK+ CSS 规则控制，这使得整个 GUI 都可定制主题。默认它有八个主题。
+Darktable 3 是一个主版本更新，它带来了大量的功能改进和重新打造的用户界面。现在，GUI 完全由 GTK+ CSS 规则所控制，这使得整个 GUI 都可定制主题。它默认有八个主题。
 
 借助 3000 多个提交和 553 个拉取请求，新版本修复了 66 个 bug 并添加了许多新功能。
 
@@ -26,19 +26,18 @@ Darktable 3 是一个主版本更新，它有许多功能改进和对用户界�
 
 以下是重要的新功能：
 
-   *重做的 UI
-  * 用于处理 3D RGB Lut 变换的新模块
-  * 对“降噪（轮廓化）”模块进行了许多改进
-  * 添加了新的“剔除”模式和时间轴视图
-  * 对“降噪（轮廓化）”模块进行了许多改进
-  * 新色调均衡器的基本和电影 RGB 模块
-  * 更好的 4K/5K 显示支持
-  * 撤消/重做支持更多操作
-  * 针对 CPU 和 SSE 路径的许多代码优化
-  * 支持导出到 Google 相册
-  * 更多的相机支持，白平衡预设和噪点配置
-  * 大量的 bug 修复和功能改进
-
+* 重新打造的 UI
+* 用于处理 3D RGB Lut 变换的新模块
+* 对“降噪（轮廓化）”模块进行了许多改进
+* 添加了新的“剔除”模式和时间轴视图
+* 对“降噪（轮廓化）”模块进行了许多改进
+* 新色调均衡器的基本和电影 RGB 模块
+* 更好的 4K/5K 显示支持
+* 撤消/重做支持更多操作
+* 针对 CPU 和 SSE 路径的许多代码优化
+* 支持导出到 Google 相册
+* 支持更多的相机，白平衡预设和噪点配置
+* 大量的 bug 修复和功能改进
 
 你可以在 [GitHub 发行说明][5]中了解所有更改。
 
@@ -48,9 +47,9 @@ Darktable 3 是一个主版本更新，它有许多功能改进和对用户界�
 
 #### 在基于 Ubuntu 的发行版上安装 Darktable 3.0
 
-Ubuntu 仓库中有 Darktable，但你不能得到最新的版本。对于 LTS 版本，它的更新可能需要几个月的时间。
+Ubuntu 仓库中有 Darktable，但你不能得到马上最新的版本。对于 LTS 版本，它的更新可能需要几个月的时间。
 
-不用担心！Darktable 提供了[自己的 PPA][6]，来在基于 Ubuntu 的发行版上安装最新版本。
+不用担心！Darktable 提供了[自己的 PPA][6] 来在基于 Ubuntu 的发行版上安装最新版本。
 
 不幸的是，此 Darktable PPA 尚未随新版本更新。
 
@@ -84,7 +83,7 @@ sudo add-apt-repository -r ppa:ubuntuhandbook1/darktable
 
 你也可以从 GitHub 发布页面（位于页面底部）下载 tarball 或所有源代码。
 
-[Download Darktable 3.0][5]
+- [下载 Darktable 3.0][5]
 
 使用 Darktable 3，你可以更好地编辑自己的假期照片：）
 
@@ -95,7 +94,7 @@ via: https://itsfoss.com/darktable-3-release/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
