@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Pop!_OS vs Ubuntu: Which One is Better?)
@@ -12,7 +12,7 @@ Pop!_OS 与 Ubuntu：哪个更棒？
 
 好吧，你可能会发现从[最佳 Linux 发行版][1]列表中选择一个发行版很容易，但是，将两个类似的 Linux 发行版进行比较通常会令人困惑，就像 Pop!_OS 与 Ubuntu 一样。
 
-有趣的是，Pop!\_OS 基于 [Ubuntu][2]。那么，Pop!\_OS 和 Ubuntu 之间有什么区别呢？为什么要从中选择一个呢？
+有趣的是，Pop!\_OS 是基于 [Ubuntu][2] 的。那么，Pop!\_OS 和 Ubuntu 之间有什么区别呢？为什么要从中选择一个呢？
 
 在本文中，我将比较 Pop!_OS 和 Ubuntu（两者都是我的最爱）。
 
@@ -24,7 +24,7 @@ Pop!_OS 与 Ubuntu：哪个更棒？
 
 发现相似之处可帮助你区分其他差异之处。因此，让我们从一些明显的相似之处开始。
 
-就像我提到的，Pop!\_OS 是基于 Ubuntu 之上的 Linux 发行版。因此，当你使用 Pop!_OS 时，你将获得使用 Ubuntu 的所有好处（从技术上说，其核心是一样的）。
+就像我提到的，Pop!\_OS 是基于 Ubuntu 之上的 Linux 发行版。因此，当你使用 Pop!\_OS 时，你将获得使用 Ubuntu 的所有好处（从技术上说，其核心是一样的）。
 
 它们都默认带有 [GNOME 桌面环境][4]，因此它们具有相似的用户界面（UI）。
 
@@ -42,7 +42,7 @@ Pop!_OS 与 Ubuntu：哪个更棒？
 
 除了外观之外，[Ubuntu 还通过添加程序坞和其他一些小花巧来定制了 GNOME 的体验][6]。如果你喜欢定制的 GNOME 体验，可能会发现它更好。
 
-但是，如果你更喜欢纯粹的 GNOME 体验，默认情况下 Pop!_OS 会为你提供。
+但是，如果你更喜欢纯粹的 GNOME 体验，Pop!_OS 默认情况下为你提供的就是这样。
 
 在你亲自尝试之前，我无法说服你。但是，Pop!_OS 中的总体配色方案、图标和主题可以说是令人愉悦的高级用户体验。
 
@@ -60,7 +60,7 @@ Ubuntu 非常重视 Snap 软件包。这增加了它提供的应用程序的数�
 
 我为什么要说这个呢？
 
-因为 Pop!_OS 具有其[自己的官方 PPA][8]，并在默认情况下已启用。你会在此处找到一些有用的应用程序，例如 Android Studio、TensorFlow。无需下载 Android Studio 的 1GB 大的 Snap 程序包。只需使用 [apt-get install][9]就可以了。
+因为 Pop!_OS 具有其[自己的官方 PPA][8]，并已默认启用。你会在此处找到一些有用的应用程序，例如 Android Studio、TensorFlow。无需下载 Android Studio 的 1GB 大的 Snap 程序包。只需使用 [apt-get install][9]就可以了。
 
 #### 预装应用
 
@@ -76,13 +76,13 @@ Ubuntu 非常重视 Snap 软件包。这增加了它提供的应用程序的数�
 
 ![][11]
 
-对于熟悉 Snap 程序包的用户来说，Ubuntu 的软件中心是比 Pop!_OS 商店更好的解决方案，因为你可以在软件中心中列出快照程序包。
+对于熟悉 Snap 程序包的用户来说，Ubuntu 的软件中心是比 Pop!_OS 商店更好的解决方案，因为你可以在软件中心中列出 Snap 程序包。
 
-你无法在软件中心中过滤快照包，但是当你在软件中心中发现一个 Snap 包（查看应用程序来源的详细信息为“ Snap store ”/“Snapcraft”）时安装它就更容易了。
+你无法在软件中心中过滤 Snap 软件包，但是当你在软件中心中发现一个 Snap 软件包（查看应用程序来源的详细信息为 “Snap store”/“Snapcraft”）时安装它就更容易了。
 
-如果你感到困惑，Pop!\_OS 也确实支持快照包。但是，你不会在 Pop!_OS 商店中找到它们，这是唯一的区别。
+可能你会感到困惑，Pop!\_OS 也确实支持 Snap 软件包。但是，你不会在 Pop!\_OS 商店中找到它们，这是唯一的区别。
 
-如果不确定什么是 Snap 软件包及其功能，可以查看我们的文章[在 Linux 上安装 Snap 应用][12]。
+如果不确定什么是 Snap 软件包及其功能，可以查看我们的文章《[在 Linux 上安装 Snap 应用][12]》。
 
 #### 单独的 NVIDIA/AMD ISO 文件
 
@@ -96,9 +96,9 @@ Ubuntu 非常重视 Snap 软件包。这增加了它提供的应用程序的数�
 
 #### 可靠性与问题
 
-毫无疑问，这两个[发行版都适合初学者][14]，并且相当可靠。如果你想要更好的可靠性和更少的问题，则可能希望一直用长期支持（LTS）版本。
+毫无疑问，这两个[发行版都适合初学者][14]，并且相当可靠。如果你想要更好的可靠性和更少的问题，则可能希望一直使用长期支持（LTS）版本。
 
-当出现新版本的 Ubuntu 时，Pop!_OS 将在其上开发，并有可能解决用户在 Ubuntu 原始发行版上遇到的问题，然后再进行新的升级。这给他们带来了一点优势，但这没什么实质性的不同，因为这些修复最终都可以运用于 Ubuntu。
+当出现新版本的 Ubuntu 时，Pop!_OS 将在其上开发，并有可能解决用户在 Ubuntu 原始发行版上遇到的问题，然后再进行新的升级。这给它们带来了一点优势，但这没什么实质性的不同，因为这些修复最终都可以运用于 Ubuntu。
 
 #### 性能
 
@@ -110,7 +110,7 @@ Ubuntu 非常重视 Snap 软件包。这增加了它提供的应用程序的数�
 
 当然，你可以手动进行一些优化调整以满足要求——无论它们中的哪个不满足你的硬件配置。
 
-但是，如果你想使用 System76 笔记本电脑，那么 Pop!\_OS 将可以证明自己是 [Linux 领域的苹果][15]，因为 Pop!_OS 是针对其硬件量身定制的，与 Ubuntu 有所不同。
+但是，如果你想使用 System76 笔记本电脑，那么 Pop!\_OS 将可以证明自己是 [Linux 领域的苹果][15]，因为 Pop!\_OS 是针对其硬件量身定制的，与 Ubuntu 有所不同。
 
 #### 硬件兼容性
 
@@ -131,7 +131,7 @@ via: https://itsfoss.com/pop-os-vs-ubuntu/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
