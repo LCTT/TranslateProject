@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: "lxbwolf)
+[#]: translator: (lxbwolf)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
