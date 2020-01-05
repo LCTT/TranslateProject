@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11748-1.html)
 [#]: subject: (Fixing “VLC is Unable to Open the MRL” Error [Quick Tip])
 [#]: via: (https://itsfoss.com/vlc-is-unable-to-open-the-mrl/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -16,7 +16,7 @@
 
 但是事情并不总是这么简单，因为有时使用 VLC 打开 YouTube 视频时会遇到此错误：
 
-> Your input can’t be opened: VLC is unable to open the MRL ‘<https://youtubeurl.com’>. Check the log for details.
+> Your input can’t be opened: VLC is unable to open the MRL '<https://youtubeurl.com>'. Check the log for details.
 
 ![VLC error while playing YouTube videos][4]
 
