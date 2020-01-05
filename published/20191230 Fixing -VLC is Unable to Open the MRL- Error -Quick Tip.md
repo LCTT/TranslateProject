@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11748-1.html)
 [#]: subject: (Fixing “VLC is Unable to Open the MRL” Error [Quick Tip])
 [#]: via: (https://itsfoss.com/vlc-is-unable-to-open-the-mrl/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -10,11 +10,13 @@
 修复 “VLC is Unable to Open the MRL” 错误
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202001/05/084139mzlt1lfivilnnbkl.jpg)
+
 一个使用 [VLC 的技巧][1]是使用 [VLC] [2] 播放 YouTube 和其他在线视频。这可以帮助你[观看带有字幕的在线视频][3]。
 
 但是事情并不总是这么简单，因为有时使用 VLC 打开 YouTube 视频时会遇到此错误：
 
-**Your input can’t be opened: VLC is unable to open the MRL ‘<https://youtubeurl.com’>. Check the log for details.**
+> Your input can’t be opened: VLC is unable to open the MRL '<https://youtubeurl.com>'. Check the log for details.
 
 ![VLC error while playing YouTube videos][4]
 
@@ -26,19 +28,17 @@
 
 对于 VLC 也是如此。如果你[在 Ubuntu 或任何你用的系统中安装了最新的 VLC][7]，那么可能不会看到此错误。
 
-### 修复 ”VLC is unable to open the MRL“ 错误
+### 修复 “VLC is unable to open the MRL” 错误
 
 让我向你展示对于 YouTube 的修复步骤。
 
-进入 VLC 媒体播放器的官方 Github 仓库页面，并使用 Ctrl+S 保存文件：
+进入 VLC 媒体播放器的官方 Github 仓库页面的[这个页面][8]，并使用 `Ctrl+S` 保存文件：
 
-[Download youtube.lua file][8]
-
-现在，你需要做的是用此下载文件替换 lib/vlc/lua/playlist 目录中的 youtube.luac（注意 luac 中的 “c”）。
+现在，你需要做的是用此下载文件替换 `lib/vlc/lua/playlist` 目录中的 `youtube.luac`（注意 luac 中的 “c”）。
 
 #### Linux 中的步骤
 
-如果你使用的是 Linux，请打开终端并使用 [locate 命令][9]查找 youtube.luac 文件的确切位置：
+如果你使用的是 Linux，请打开终端并使用 [locate 命令][9]查找 `youtube.luac` 文件的确切位置：
 
 ```
 locate youtube.luac
@@ -49,7 +49,7 @@ locate youtube.luac
 对我而言，以下是文件路径：
 
 ```
-[email protected]:~$ locate youtube.lua
+abhishek@itsfoss:~$ locate youtube.lua
 /usr/lib/x86_64-linux-gnu/vlc/lua/playlist/youtube.luac
 ```
 
@@ -65,10 +65,8 @@ sudo cp ~/Downloads/youtube.lua /usr/lib/x86_64-linux-gnu/vlc/lua/playlist/youtu
 
 如果你使用的是 Windows，那么应遵循以下步骤：
 
-  * 将下载的 youtube.lua 文件重命名为 youtube.luac
-  * 复制此文件并将其粘贴到 C:\Program Files (x86)\VideoLAN\VLC\lua\playlist\
-
-
+  * 将下载的 `youtube.lua` 文件重命名为 `youtube.luac`
+  * 复制此文件并将其粘贴到 `C:\Program Files (x86)\VideoLAN\VLC\lua\playlist\`
 
 就是这些了。
 
@@ -83,7 +81,7 @@ via: https://itsfoss.com/vlc-is-unable-to-open-the-mrl/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
