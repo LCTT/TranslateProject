@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lxbwolf)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11758-1.html)
 [#]: subject: (5 predictions for Kubernetes in 2020)
 [#]: via: (https://opensource.com/article/20/1/kubernetes-2020)
 [#]: author: (Scott McCarty https://opensource.com/users/fatherlinux)
@@ -12,7 +12,7 @@
 
 > 以及，对 2019 年最受欢迎的 Kubernetes 文章的回顾。
 
-![Person drinking a hat drink at the computer][1]
+![](https://img.linux.net.cn/data/attachment/album/202001/07/094358qucr5o2lu2lo23od.jpg)
 
 你是怎么追踪一个广受欢迎的项目（如 Kubernetes）的发展轨迹？你是怎么了解它发展到什么程度了？如果你在为这个项目作贡献或加入了特殊兴趣组（SIG），可能你会在潜移默化中了解到它的发展轨迹，但如果你的全日工作不涉及到为 Kubernetes 作贡献，那么你可能需要一点关于未来的预测来帮助你了解。对于一个诸如 Kubernetes 的快速发展的项目，年末是回顾过去的一年和展望新的一年的最好时机。
 
