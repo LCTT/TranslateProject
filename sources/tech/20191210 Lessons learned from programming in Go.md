@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "lxbwolf"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "Lessons learned from programming in Go"
-[#]: via: "https://opensource.com/article/19/12/go-common-pitfalls"
-[#]: author: "Eduardo Ferreira https://opensource.com/users/edufgf"
+[#]: collector: (lujun9972)
+[#]: translator: (lxbwolf)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Lessons learned from programming in Go)
+[#]: via: (https://opensource.com/article/19/12/go-common-pitfalls)
+[#]: author: (Eduardo Ferreira https://opensource.com/users/edufgf)
 
 Go 编程中的经验教训
 ======
@@ -39,8 +39,6 @@ session ID 由握手的初始化程序生成。一个完整的交换顺序如下
   3. sender 接收到 **SYN-ACK (ID)** _并发送一个 **ACK (ID)**_。它还发送一个从序列号 0 开始的数据包。
   4. receiver 检查最后接收到的 **ID**，如果 ID 匹配，_则接受 **ACK (ID)**_。它还开始接受序列号为 0 的数据包。
 
-
-
 ### 处理状态超时
 
 基本上，每种状态下你都需要处理最多三种类型的事件：链接事件、数据包事件和超时事件。这些事件会并发地出现，因此你必须正确处理并发。
@@ -48,8 +46,6 @@ session ID 由握手的初始化程序生成。一个完整的交换顺序如下
   * 链接事件包括连接和断开，连接时会初始化一个链接 session，断开时会断开一个已建立的 seesion。
   * 数据包事件是控制数据包 **(SYN/SYN-ACK/ACK)** 或只是探测响应。
   * 超时事件在当前 session 状态的预定超时时间到期后触发。
-
-
 
 这里面临的最主要的问题是如何处理并发超时到期和其他事件。这里很容易陷入死锁和资源竞争的陷阱。
 
@@ -62,7 +58,6 @@ session ID 由握手的初始化程序生成。一个完整的交换顺序如下
 gopher 们聚众狂欢
 
 首先，你可以设计两个分别表示我们的 **Session** 和 **Timeout Handlers** 的结构体。
-
 
 ```go
 type Session struct {  
@@ -85,13 +80,11 @@ type TimeoutHandler struct {  
 
 每一个临近连接点的 session 都包含一个保存调度 `TimeoutHandler` 的全局 map。
 
-
 ```
 `SessionTimeout map[Session]*TimeoutHandler`
 ```
 
 下面方法注册和取消超时：
-
 
 ```go
 // schedules the timeout callback function.  
@@ -111,7 +104,6 @@ func (timeout* TimeoutHandler) Cancel() {  
 
 你可以使用类似下面的方法来创建和存储超时：
 
-
 ```go
 func CreateTimeoutHandler(callback func(Session), session Session, duration int) *TimeoutHandler {  
   if sessionTimeout[session] == nil {  
@@ -129,7 +121,6 @@ func CreateTimeoutHandler(callback func(Session), session Session, duration int)
 超时 handler 创建后，会在经过了设置的 _duration_ 时间（秒）后执行回调函数。然而，有些事件会使你重新调度一个超时 handler（与 **SYN** 状态时的处理一样 — 每 3 秒一次）。
 
 为此，你可以让回调函数重新调度一次超时：
-
 
 ```go
 func synCallback(session Session) {  
@@ -161,14 +152,11 @@ b）执行回调，它调度一次新的超时并更新全局 map。
   4. 线程 1:
 a）切换到新的 session 状态并注册新的超时，更新全局 map。
 
-
-
 两个线程同时更新超时 map。最终结果是你无法取消注册的超时，然后你也会丢失对线程 2 重新调度的超时的引用。这导致 handler 在一段时间内持续执行和重新调度，出现非预期行为。
 
 ### 锁也解决不了问题
 
 使用锁也不能完全解决问题。如果你在处理所有事件和执行回调之前加锁，它仍然不能阻止一个过期的回调运行：
-
 
 ```go
 func (timeout* TimeoutHandler) Register() {  
@@ -190,7 +178,6 @@ func (timeout* TimeoutHandler) Register() {  
 这是一个略有不同的方法。现在你可以不用再通过回调进行递归地重新调度；而是注册一个死循环，这个循环接收到取消信号或超时事件时终止。
 
 新的 **Register()** 产生一个新的 go 协程，这个协程在在超时后执行你的回调，并在前一个超时执行后调度新的超时。返回给调用方一个取消 channel，用来控制循环的终止。
-
 
 ```go
 func (timeout *TimeoutHandler) Register() chan struct{} {  
@@ -224,7 +211,6 @@ func (timeout* TimeoutHandler) Cancel() {  
 这个方法提供了你注册的所有超时的取消 channel。对 cancel 的一次调用向 channel 发送一个空结构体并触发取消操作。然而，这并不能解决前面的问题；可能在你通过 channel 调用 cancel 超时线程还没有拿到锁之前，超时时间就已经到了。
 
 这里的解决方案是，在拿到锁之后，检查一下超时范围内的取消 channel。
-
 
 ```go
   case _ = <- time.AfterFunc(time.Duration(timeout.duration) * time.Second):  
@@ -260,7 +246,6 @@ func (timeout* TimeoutHandler) Cancel() {  
 
 这里的解决方案是创建 channel 时指定大小至少为 1，这样向 channel 发送数据就不会阻塞，也显式地使发送变成非阻塞的，避免了并发调用。这样可以确保取消操作只发送一次，并且不会阻塞后续的取消调用。
 
-
 ```go
 func (timeout* TimeoutHandler) Cancel() {  
   if timeout.cancelChan == nil {  
@@ -282,8 +267,6 @@ func (timeout* TimeoutHandler) Cancel() {  
 #### 在非同步的情况下更新共享数据
 
 这似乎是个很明显的问题，但如果并发更新发生在不同的位置，就很难发现。结果就是数据竞争，由于一个更新会覆盖另一个，因此对同一数据的多次更新中会有某些更新丢失。在我们的案例中，我们是在同时更新同一个共享 map 里的调度超时引用。有趣的是，（如果 Go 检测到在同一个 map 对象上的并发读写，会抛出 fatal 错误 — 你可以尝试下运行 Go 的[数据竞争检测器](https://golang.org/doc/articles/race_detector.html)）。这最终会导致丢失超时引用，且无法取消给定的超时。当有必要时，永远不要忘记使用锁。
-
-
 
 ![gopher assembly line][13]
 
@@ -318,18 +301,18 @@ via: https://opensource.com/article/19/12/go-common-pitfalls
 
 [a]: https://opensource.com/users/edufgf
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/go-golang.png?itok=OAW9BXny "Goland gopher illustration"
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/go-golang.png?itok=OAW9BXny (Goland gopher illustration)
 [2]: http://mode.net
 [3]: https://en.wikipedia.org/wiki/Metrics_%28networking%29
 [4]: https://people.ece.cornell.edu/atang/pub/15/HALO_ToN.pdf
 [5]: https://en.wikipedia.org/wiki/Point_of_presence
-[6]: https://opensource.com/sites/default/files/uploads/image2_0_3.png "latency computation graph"
-[7]: https://opensource.com/sites/default/files/uploads/image3_0.png "finite state machine diagram"
+[6]: https://opensource.com/sites/default/files/uploads/image2_0_3.png (latency computation graph)
+[7]: https://opensource.com/sites/default/files/uploads/image3_0.png (finite state machine diagram)
 [8]: https://golang.org/
-[9]: https://opensource.com/sites/default/files/uploads/image4.png "gophers hacking together"
+[9]: https://opensource.com/sites/default/files/uploads/image4.png (gophers hacking together)
 [10]: https://en.wikipedia.org/wiki/Deadlock
-[11]: https://opensource.com/sites/default/files/uploads/image5_0_0.jpg "gophers on a wire, talking"
+[11]: https://opensource.com/sites/default/files/uploads/image5_0_0.jpg (gophers on a wire, talking)
 [12]: https://golang.org/doc/articles/race_detector.html
-[13]: https://opensource.com/sites/default/files/uploads/image6.jpeg "gopher assembly line"
+[13]: https://opensource.com/sites/default/files/uploads/image6.jpeg (gopher assembly line)
 [14]: https://en.wikipedia.org/wiki/Monitor_%28synchronization%29#Condition_variables
-[15]: https://opensource.com/sites/default/files/uploads/image7.png "gopher boot camp"
+[15]: https://opensource.com/sites/default/files/uploads/image7.png (gopher boot camp)
