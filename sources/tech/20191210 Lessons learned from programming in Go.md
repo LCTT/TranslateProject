@@ -7,28 +7,28 @@
 [#]: via: "https://opensource.com/article/19/12/go-common-pitfalls"
 [#]: author: "Eduardo Ferreira https://opensource.com/users/edufgf"
 
-用 Go 编程受到的启发
+Go 编程中的经验教训
 ======
 通过学习如何定位并发处理的陷阱来避免未来处理这些问题时的困境。
 ![Goland gopher illustration][1]
 
-在复杂的分布式系统进行任务处理时，你通常会需要进行并发的操作。[Mode.net][2] 公司系统每天要处理实时、快速和灵活的以毫秒为单位动态路由数据包的全球专用网络和数据，需要高度并发的系统。他们的动态路由是基于网络状态的，而这个过程需要考虑众多因素，我们只考虑关系链的监控。在我们的环境中，调用关系链监控可以是任何跟网络调用关系链有关的状态和当前属性（如连接延迟）。
+在复杂的分布式系统进行任务处理时，你通常会需要进行并发的操作。[Mode.net][2] 公司系统每天要处理实时、快速和灵活的以毫秒为单位动态路由数据包的全球专用网络和数据，需要高度并发的系统。这个动态路由是基于网络状态的，而这个过程需要考虑众多因素，我们只考虑关系链的监控。在我们的环境中，调用关系链监控可以是任何跟网络调用关系链有关的状态和当前属性（如链接延迟）。
 
-### 并发探测链接指标
+### 并发探测链接监控
 
-[H.A.L.O.][4] (Hop-by-Hop Adaptive Link-State Optimal Routing，译注：逐跳自适应链路状态最佳路由), 我们的动态路由算法部分依赖于链路度量来计算路由表。 这些指标由位于每个PoP（译注：存活节点）上的独立组件收集。PoP是表示我们的网络中单个路由实体的机器，通过链路连接并分布在我们的网络拓扑中的各个位置。某个组件使用网络数据包探测周围的机器，周围的机器回复数据包给前者。从接收到的探测包中可以获得链路延迟。由于每个 PoP 都有多个临近节点，所以这种探测任务实质上是并发的：我们需要实时测量每个临近连接点的延迟。我们不能串行地处理；为了计算这个指标，必须尽快处理每个探针。
+[H.A.L.O.][4] （Hop-by-Hop Adaptive Link-State Optimal Routing，译注：逐跳自适应链路状态最佳路由），我们的动态路由算法部分依赖于链路度量来计算路由表。 这些指标由位于每个PoP（译注：存活节点）上的独立组件收集。PoP是表示我们的网络中单个路由实体的机器，通过链路连接并分布在我们的网络拓扑中的各个位置。某个组件使用网络数据包探测周围的机器，周围的机器回复数据包给前者。从接收到的探测包中可以获得链路延迟。由于每个 PoP 都有不止一个临近节点，所以这种探测任务实质上是并发的：我们需要实时测量每个临近连接点的延迟。我们不能串行地处理；为了计算这个指标，必须尽快处理每个探针。
 
 ![latency computation graph][6]
 
 ### 序列号和重置：一个记录场景
 
-我们的探测组件互相发送和接收数据包并依靠序列号进行数据包处理。旨在避免处理重复的包或顺序被打乱的包。我们的第一个实现依靠特殊的序列号0来重置序列号。这个数字仅在组件初始化时使用。主要的问题是我们只考虑了始终从 0 开始递增的序列号。组件重启后，包的顺序可能会重新排列，某个包的序列号可能会轻易地被替换成重置之前使用过的值。这意味着，直到排到重置之前用到的值之前，它后面的包都会被忽略掉。
+我们的探测组件互相发送和接收数据包并依靠序列号进行数据包处理。旨在避免处理重复的包或顺序被打乱的包。我们的第一个实现依靠特殊的序列号 0 来重置序列号。这个数字仅在组件初始化时使用。主要的问题是我们只考虑了始终从 0 开始递增的序列号。组件重启后，包的顺序可能会重新排列，某个包的序列号可能会轻易地被替换成重置之前使用过的值。这意味着，直到排到重置之前用到的值之前，它后面的包都会被忽略掉。
 
 ### UDP 握手和有限状态机
 
 这里的问题是重启前后的序列号是否一致。有几种方法可以解决这个问题，经过讨论，我们选择了实现一个带有清晰状态定义的三向交握协议。这个握手过程在初始化时通过链接建立 session。这样可以确保节点通过同一个 session 进行通信且使用了适当的序列号。
 
-为了正确实现这个过程，我们必须顶一个一个有清晰状态和过渡的有限状态机。这样我们就可以正确管理握手过程中的所有极端情况。
+为了正确实现这个过程，我们必须定义一个有清晰状态和过渡的有限状态机。这样我们就可以正确管理握手过程中的所有极端情况。
 
 ![finite state machine diagram][7]
 
@@ -43,7 +43,7 @@ session ID 由握手的初始化程序生成。一个完整的交换顺序如下
 
 ### 处理状态超时
 
-Basically, at each state, you need to handle, at most, three types of events: link events, packet events, and timeout events. And those events show up concurrently, so here you have to handle concurrency properly.基本上，每种状态下你都需要处理最多三种类型的事件：链接事件、数据包事件和超时事件。这些事件会并发地出现，因此你必须正确处理并发。
+基本上，每种状态下你都需要处理最多三种类型的事件：链接事件、数据包事件和超时事件。这些事件会并发地出现，因此你必须正确处理并发。
 
   * 链接事件包括连接和断开，连接时会初始化一个链接 session，断开时会断开一个已建立的 seesion。
   * 数据包事件是控制数据包 **(SYN/SYN-ACK/ACK)** 或只是探测响应。
@@ -59,7 +59,7 @@ Basically, at each state, you need to handle, at most, three types of events: li
 
 ![gophers hacking together][9]
 
-gophers hacking together
+gopher 们聚众狂欢
 
 首先，你可以设计两个分别表示我们的 **Session** 和 **Timeout Handlers** 的结构体。
 
@@ -147,19 +147,19 @@ func synCallback(session Session) {  
 
 ### 数据竞争和引用
 
-你的解决方案已经有了。可以通过检查计时器到期后超时回调是否执行来进行一个简单的测试。为此，注册一个超时，在 *duration* 时间内 sleep，然后检查是否执行的回调的处理。执行这个测试后，最好取消预定的超时时间（因为它会重新调度），这样才不会在下次测试时产生副作用。
+你的解决方案已经有了。可以通过检查计时器到期后超时回调是否执行来进行一个简单的测试。为此，注册一个超时，在 *duration* 时间内 sleep，然后检查是否执行了回调的处理。执行这个测试后，最好取消预定的超时时间（因为它会重新调度），这样才不会在下次测试时产生副作用。
 
 令人惊讶的是，这个简单的测试发现了这个解决方案中的一个 bug。使用 cancel 方法来取消超时并没有正确处理。以下顺序的事件会导致数据资源竞争：
 
   1. 你有一个已调度的超时 handler。
   2. 线程 1:
-a) 你接收到一个控制数据包，现在你要取消已注册的超时并切换到下一个 session 状态（如 发送 **SYN** 后接收到一个 **SYN-ACK**）
-b) 你调用了 **timeout.Cancel()**，这个函数调用了 **timer.Stop()**。（请注意，Golang 计时器的 stop 不会终止一个已过期的计时器。）
+a）你接收到一个控制数据包，现在你要取消已注册的超时并切换到下一个 session 状态（如 发送 **SYN** 后接收到一个 **SYN-ACK**）
+b）你调用了 **timeout.Cancel()**，这个函数调用了 **timer.Stop()**。（请注意，Golang 计时器的 stop 不会终止一个已过期的计时器。）
   3. 线程 2:
-a) 在调用 cancel 之前，计时器已过期，回调即将执行。
-b) 执行回调，它调度一次新的超时并更新全局 map。
+a）在调用 cancel 之前，计时器已过期，回调即将执行。
+b）执行回调，它调度一次新的超时并更新全局 map。
   4. 线程 1:
-a) 切换到新的 session 状态并注册新的超时，更新全局 map。
+a）切换到新的 session 状态并注册新的超时，更新全局 map。
 
 
 
@@ -187,9 +187,9 @@ func (timeout* TimeoutHandler) Register() {  
 
 你可以使用取消 channel，而不必依赖不能阻止到期的计时器执行的 golang 函数 **timer.Stop()**。
 
-这是一个略有不同的方法。现在你可以不用再通过回调进行递归地重新调度；而是注册一个死循环，这个循环接收到取消信号或超时事件是终止。
+这是一个略有不同的方法。现在你可以不用再通过回调进行递归地重新调度；而是注册一个死循环，这个循环接收到取消信号或超时事件时终止。
 
-新的 **Register()** 产生一个新的 go 协程，这个协程在在超时后执行你的回调，并在前一个超时执行后调度新的超时。返回给调用发一个取消 channel，用来控制循环的终止。
+新的 **Register()** 产生一个新的 go 协程，这个协程在在超时后执行你的回调，并在前一个超时执行后调度新的超时。返回给调用方一个取消 channel，用来控制循环的终止。
 
 
 ```go
@@ -254,11 +254,11 @@ func (timeout* TimeoutHandler) Cancel() {  
 
 ![gophers on a wire, talking][11]
 
-还有人吗？
+有人在听吗？
 
 已获得 Trevor Forrey 授权。
 
-这里的解决方案是创建 channel 时指定大小至少为 1，这样向 channel 发送数据就不会阻塞，也显式地使发送变成非阻塞的，避免了并发调用。这样可以确保取消操作只发送一次，并且不会则色后续的取消调用。
+这里的解决方案是创建 channel 时指定大小至少为 1，这样向 channel 发送数据就不会阻塞，也显式地使发送变成非阻塞的，避免了并发调用。这样可以确保取消操作只发送一次，并且不会阻塞后续的取消调用。
 
 
 ```go
@@ -281,29 +281,29 @@ func (timeout* TimeoutHandler) Cancel() {  
 
 #### 在非同步的情况下更新共享数据
 
-This seems like an obvious one, but it’s actually hard to spot if your concurrent updates happen in different locations. The result is data race, where multiple updates to the same data can cause update loss, due to one update overriding another. In our case, we were updating the scheduled timeout reference on the same shared map. (Interestingly, if Go detects a concurrent read/write on the same Map object, it throws a fatal error —you can try to run Go’s [data race detector][12]). This eventually results in losing a timeout reference and making it impossible to cancel that given timeout. Always remember to use locks when they are needed.
+这似乎是个很明显的问题，但如果并发更新发生在不同的位置，就很难发现。结果就是数据竞争，由于一个更新会覆盖另一个，因此对同一数据的多次更新中会有某些更新丢失。在我们的案例中，我们是在同时更新同一个共享 map 里的调度超时引用。有趣的是，（如果 Go 检测到在同一个 map 对象上的并发读写，会抛出 fatal 错误 — 你可以尝试下运行 Go 的[数据竞争检测器](https://golang.org/doc/articles/race_detector.html)）。这最终会导致丢失超时引用，且无法取消给定的超时。当有必要时，永远不要忘记使用锁。
 
 
 
 ![gopher assembly line][13]
 
-don’t forget to synchronize gophers’ work
+不要忘记同步 gopher 们的工作
 
-#### Missing condition checks
+#### 缺少条件检查
 
-Condition checks are needed in situations where you can’t rely only on the lock exclusivity. Our situation is a bit different, but the core idea is the same as [condition variables][14]. Imagine a classic situation where you have one producer and multiple consumers working with a shared queue. A producer can add one item to the queue and wake up all consumers. The wake-up call means that some data is available at the queue, and because the queue is shared, access must be synchronized through a lock. Every consumer has a chance to grab the lock; however, you still need to check if there are items in the queue. A condition check is needed because you don’t know the queue status by the time you grab the lock.
+在不能仅依赖锁的独占性的情况下，就需要进行条件检查。我们遇到的场景稍微有点不一样，但是核心思想跟[条件变量][14]是一样的。假设有个经典的一个生产者和多个消费者使用一个共享队列的场景，生产者可以将一个元素添加到队列并唤醒所有消费者。这个唤醒调用意味着队列中的数据是可访问的，并且由于队列是共享的，消费者必须通过锁来进行同步访问。每个消费者都可能拿到锁；然而，你仍然需要检查队列中是否有元素。因为在你拿到锁的瞬间并不知道队列的状态，所以还是需要进行条件检查。
 
-In our example, the timeout handler got a ‘wake up’ call from a timer expiration, but it still needed to check if a cancel signal was sent to it before it could proceed with the callback execution.
+在我们的例子中，超时 handler 收到了计时器到期时发出的「唤醒」调用，但是它仍需要检查是否已向其发送了取消信号，然后才能继续执行回调。
 
 ![gopher boot camp][15]
 
-condition checks might be needed if you wake up multiple gophers
+如果你要唤醒多个 gopher，可能就需要进行条件检查
 
-#### Deadlocks
+#### 死锁
 
-This happens when one thread is stuck, waiting indefinitely for a signal to wake up, but this signal will never arrive. Those can completely kill your application by halting your entire program execution.
+当一个线程被卡住，无限期地等待一个唤醒信号，但是这个信号永远不会到达时，就会发生这种情况。死锁可以通过让你的整个程序 halt 来彻底杀死你的应用。
 
-In our case, this happened due to multiple send calls to a non-buffered and blocking channel. This meant that the send call would only return after a receive is done on the same channel. Our timeout thread loop was promptly receiving signals on the cancellation channel; however, after the first signal is received, it would break off the loop and never read from that channel again. The remaining callers are stuck forever. To avoid this situation, you need to carefully think through your code, handle blocking calls with care, and guarantee that thread starvation doesn’t happen. The fix in our example was to make the cancellation calls non-blocking—we didn’t need a blocking call for our needs.
+在我们的案例中，这种情况的发生是由于多次发送请求到一个非缓冲且阻塞的 channel。这意味着向 channel 发送数据只有在从这个 channel 接收完数据后才能 return。我们的超时线程循环迅速从取消 channel 接收信号；然而，在接收到第一个信号后，它将跳出循环，并且再也不会从这个 channel 读取数据。其他的调用会一直被卡住。为避免这种情况，你需要仔细检查代码，谨慎处理阻塞调用，并确保不会发生线程饥饿。我们例子中的解决方法是使取消调用成为非阻塞调用 — 我们不需要阻塞调用。
 
 --------------------------------------------------------------------------------
 
@@ -311,7 +311,7 @@ via: https://opensource.com/article/19/12/go-common-pitfalls
 
 作者：[Eduardo Ferreira][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
