@@ -9,7 +9,6 @@
 
 5 Minimal Web Browsers for Linux
 ======
-
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/minimal.jpg?itok=ifA0Y3pV)
 
 There are so many reasons to enjoy the Linux desktop. One reason I often state up front is the almost unlimited number of choices to be found at almost every conceivable level. From how you interact with the operating system (via a desktop interface), to how daemons run, to what tools you use, you have a multitude of options.
