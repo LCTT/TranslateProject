@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11762-1.html)
 [#]: subject: (7 maker gifts for kids and teens)
 [#]: via: (https://opensource.com/article/19/11/maker-gifts-kids)
 [#]: author: (Jess Weichler https://opensource.com/users/cyanide-cupcake)
@@ -12,7 +12,7 @@
 
 > 这份礼物指南使你轻松完成节日礼物的采购，它们可给婴儿、儿童、青少年及年龄更大的人们带来创造和创新能力。
 
-![Gift box opens with colors coming out][1]
+![](https://img.linux.net.cn/data/attachment/album/202001/08/140516t4ewey9ryu24tpz5.jpg)
 
 还在纠结这个假期给年轻人买什么礼物？这是我精选的开源礼物，这些礼物将激发未来的创意和灵感。
 
