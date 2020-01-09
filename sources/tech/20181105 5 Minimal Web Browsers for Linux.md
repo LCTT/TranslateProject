@@ -27,7 +27,7 @@ GNOME web (Epiphany 含义：[顿悟][5])是Elementary系统默认的web浏览�
 
 Epiphany 使用WebKit的渲染引擎，该引擎与Apple的Safari浏览器中使用的引擎相同。这个引擎和Epiphany非常契合，可以达到非常快的页面渲染速度。Epiphany严格遵守以下准则：
 
-  * Simplicity简单性 - Feature bloat and user interface clutter are considered evil功能复杂和用户界面混乱都是不被允许的.
+  * 简单性 - 功能复杂和用户界面混乱都是不被允许的.
 
   * 规范性 - 任何非标准特性都不会引入到代码库中。
 
@@ -77,58 +77,59 @@ Figure 3: QupZilla 首选项工具.
 
 ### Otter Browser
 
-Otter Browser is a free, open source attempt to recreate the closed-source offerings found in the Opera Browser. Otter Browser uses the WebKit rendering engine and has an interface that should be immediately familiar with any user. Although lightweight, Otter Browser does include full-blown features such as:
+Otter 浏览器是一种免费开源的，旨在重建Opera 12.x的浏览器。它使用WebKit渲染引擎，并且有用户的熟悉界面。虽然它轻量，但它有丰富的功能：
 
-  * Passwords manager
+  * 密码管理
 
-  * Add-on manager
+  * 插件管理
+  
+  * 内容拦截
 
-  * Content blocking
+  * 拼写检查
 
-  * Spell checking
+  * 自定义界面
 
-  * Customizable GUI
+  * 网址补全
 
-  * URL completion
+  * 快速访问 (Figure 4)
 
-  * Speed dial (Figure 4)
+  * 书签和其他相关功能
 
-  * Bookmarks and various related features
+  * 鼠标手势
 
-  * Mouse gestures
+  * 用户样式表
 
-  * User style sheets
-
-  * Built-in Note tool
+  * 内建笔记功能
 
 
 ![Otter][15]
 
-Figure 4: The Otter Browser Speed Dial tab.
+Figure 4: Otter 浏览器快起标签项.
 
-[Used with permission][9]
+[许可证书][9]
 
-Otter Browser can be run on nearly any Linux distribution from an [AppImage][16], so there’s no installation required. Just download the AppImage file, give the file executable permissions (with the command chmod u+x otter-browser-*.AppImage), and then launch the app with the command ./otter-browser*.AppImage.
+Otter浏览器可以在几乎所有Linux发行版上运行通过[AppImage][16]软件格式，因此无需安装。只需下载AppImage文件，授予文件可执行权限（使用命令 `chmod u+x otter-browser-.AppImage`），然后使用命令`./otter-browser.AppImage` 启动应用程序。
 
-Otter Browser does an outstanding job of rendering websites and could function as your go-to minimal browser with ease.
+Otter浏览器在网站展示方面做得非常出色，可以轻松地用作你的微型浏览器。
+
 
 ### Lynx
 
-Let’s get really minimal. When I first started using Linux, back in ‘97, one of the web browsers I often turned to was a text-only take on the app called [Lynx][17]. It should come as no surprise that Lynx is still around and available for installation from the standard repositories. As you might expect, Lynx works from the terminal window and doesn’t display pretty pictures or render much in the way of advanced features (Figure 5). In fact, Lynx is as bare-bones a browser as you will find available. Because of how bare-bones this web browser is, it’s not recommended for everyone. But if you happen to have a gui-less web server and you have a need to be able to read the occasional website, Lynx can be a real lifesaver.
+让我们见识真正的微型浏览器。早在97年，当我使用Linux时，就经常使用的[Lynx][17]纯文本模式的网页浏览器。
+Lynx的存在并且可以从标准存储库中进行安装。正如您可能期望的那样，Lynx在终端窗口中工作，并且不会显示漂亮的图片和高级功能的渲染方式（图5）。事实上，Lynx是你能找到的最简单的浏览器。由于这个网页浏览器是如此简陋，所以不建议每个人都使用它。但如果你碰巧有一个没有界面的服务器，你需要能够偶尔访问的网站，Lynx是一个真正的救星。
 
 ![Lynx][19]
 
-Figure 5: The Lynx browser rendering the Linux.com page.
+Figure 5: Lynx 浏览器展示 Linux.com 网址界面.
 
-[Used with permission][9]
+[许可证书][9]
 
-I have also found Lynx an invaluable tool when troubleshooting certain aspects of a website (or if some feature on a website is preventing me from viewing the content in a regular browser). Another good reason to use Lynx is when you only want to view the content (and not the extraneous elements).
+我还发现Lynx是一个非常有用的工具，它可以帮助我解决网站某些方面的故障（或者如果网站上的某些功能阻止我在常规浏览器中查看内容）。使用Lynx的另一个重要原因是它可以让我们更加专注内容（而不是其他无关的元素）。
 
 ### Plenty More Where This Came From 更多
 
-There are plenty more minimal browsers than this. But the list presented here should get you started down the path of minimalism. One (or more) of these browsers are sure to fill that need, whether you’re running it on a low-powered machine or not.微型浏览器还有很多。但是这里列出的清单应该使你开始走极简主义的道路。无论您是否在低功率计算机上运行，​​这些浏览器中的一个（或多个）都一定可以满足这一需求。
+微型浏览器还有很多。但是这里列出的清单应该使你开始走极简主义的道路。无论您是否在低功率计算机上运行，​​这些浏览器中的一个（或多个）都一定可以满足这一需求。
 
-Learn more about Linux through the free ["Introduction to Linux" ][20]course from The Linux Foundation and edX.
 了解linux 更多信息可以通过免费的["Linux 简洁" ][20]课程，该课程来源Linux基金和edX平台提供的。
 
 --------------------------------------------------------------------------------
