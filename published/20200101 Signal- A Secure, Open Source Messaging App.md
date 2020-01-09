@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11764-1.html)
 [#]: subject: (Signal: A Secure, Open Source Messaging App)
 [#]: via: (https://itsfoss.com/signal-messaging-app/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -10,7 +10,7 @@
 Signal：安全、开源的聊天应用
 ======
 
-** _简介：Signal 是一款智能手机上的安全开源聊天应用。它还提供了适用于 Linux、Windows 和 macOS 的独立桌面应用。在本文中，我们来看看它的功能和可用性。_**
+> Signal 是一款智能手机上的安全开源聊天应用。它还提供了适用于 Linux、Windows 和 macOS 的独立桌面应用。在本文中，我们来看看它的功能和可用性。
 
 ### 对于关注隐私的人来说，Signal 是 WhatsApp（和 Telegram）的绝佳替代品
 
@@ -20,11 +20,13 @@ Signal 是一款关注隐私的开源应用。像[爱德华·斯诺登][2]这样
 
 它可能没有 Telegram 或 WhatsApp 这么多的功能。但是，如果你想在交流时增强隐私，这是一个可靠的开源方案。
 
-你可以在智能手机（iOS][3]/[Android][4]）上安装，也可以在 Linux、Windows 和 macOS 上安装。
+你可以在智能手机（[iOS][3]/[Android][4]）上安装，也可以在 Linux、Windows 和 macOS 上安装。
 
 ### Signal 的功能
 
-**注意：** _某些功能是智能手机特有的。你可能无法在桌面应用上看到所有功能。_
+**注意：** 某些功能是智能手机特有的。你可能无法在桌面应用上看到所有功能。
+
+另请注意，目前，Signal 需要电话号码才能注册。如果你不想公开自己的私人电话号码，则可以使用 Google 语音或类似服务。
 
 正如我已经提到的，这是为增强你的隐私而量身定制的。因此，用户体验可能不是你见过“最佳”的。但是，从隐私/安全角度考虑，我认为这是一个不错的选择。
 
@@ -38,7 +40,7 @@ Signal 是一款关注隐私的开源应用。像[爱德华·斯诺登][2]这样
 
 #### 用作默认短信应用
 
-如果你想在短信中使用开源应用，那么只需口进入 Signal 的设置，并将其设置为短信和彩信的默认设置。
+如果你想在短信中使用开源应用，那么只需进入 Signal 的设置，并将其设置为短信和彩信的默认设置。
 
 #### 屏幕安全
 
@@ -64,15 +66,13 @@ Signal 是一款关注隐私的开源应用。像[爱德华·斯诺登][2]这样
 
 ![][6]
 
-如你所期待的聊天应用，你可以使用几个标签，并且可以根据需要创建一个组。
-
-但是，你无法管理你的组，你只能添加成员和更改群头像。
+如你所期待的聊天应用，你可以使用几个标签，并且可以根据需要创建一个组。但是，你无法管理你的组，你只能添加成员和更改群头像。
 
 此外，Signal 还为其应用支持生物识别。
 
 ### 在 Ubuntu/Linux 上安装 Signal
 
-不幸的是，你无法在你的 Linux 发行版上找到 .**deb** 或者 .**AppImage**。因此，你需要根据[官方安装说明][7]在终端上安装。
+不幸的是，你无法在你的 Linux 发行版上找到 .deb 或者 .AppImage。因此，你需要根据[官方安装说明][7]在终端上安装。
 
 在终端中输入以下内容：
 
@@ -105,7 +105,7 @@ via: https://itsfoss.com/signal-messaging-app/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
