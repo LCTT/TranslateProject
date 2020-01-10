@@ -7,29 +7,28 @@
 [#]: via: (https://opensource.com/article/19/11/simulate-gravity-python)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Simulate gravity in your Python game
+在你的 Python 游戏中模拟引力
 ======
-Learn how to program video games with Python's Pygame module and start
-manipulating gravity.
+学习如何使用 Python 的 Pygame 模块编程电脑游戏，并开始操作引力。
 ![Cosmic stars in outer space][1]
 
-The real world is full of movement and life. The thing that makes the real world so busy and dynamic is physics. Physics is the way matter moves through space. Since a video game world has no matter, it also has no physics, so game programmers have to _simulate_ physics.
+真实的世界充满了运动和生活。物理学使得真实的生活如此忙碌和动态。物理学是物质在空间中运动的方式。既然一个电脑游戏世界没有物质，它也就没有物理学规律，使用游戏程序员不得不 _模拟_ 物理学。
 
-In terms of most video games, there are basically only two aspects of physics that are important: gravity and collision.
+从大多数电脑游戏来说，这里基本上仅有物理学的两个方向是重要的：引力和碰撞。
 
-You implemented some collision detection when you [added an enemy][2] to your game, but this article adds more because gravity requires collision detection. Think about why gravity might involve collisions. If you can't think of any reasons, don't worry—it'll become apparent as you work through the sample code.
+当你[添加一个敌人][2]到你的游戏中时，你实现了一下碰撞检测，但是这篇文章添加更多的东西，因为引力需要碰撞检测。想想为什么引力可能涉及碰撞。如果你不能想到任何原因，不要担心—当你通过示例代码工作时，它将变得明显。
 
-Gravity in the real world is the tendency for objects with mass to be drawn toward one another. The larger the object, the more gravitational influence it exerts. In video game physics, you don't have to create objects with mass great enough to justify a gravitational pull; you can just program a tendency for objects to fall toward the presumed largest object in the video game world: the world itself.
+引力在真实世界中的是有质量的物体来相互吸引的趋势。物体（质量）越大，它施加越大的引力作用。在电脑游戏物理学中，你不必创建质量足够大的物体来证明引力的正确；你可以在电脑游戏世界本身中仅编程一个物体落向假设的最大的对象的倾向。
 
-### Adding a gravity function
+### 添加一个引力函数
 
-Remember that your player already has a property to determine motion. Use this property to pull the player sprite toward the bottom of the screen.
+记住你的玩家已经有一个属性来决定动作。使用这个属性来将玩家精灵拉向屏幕底部。
 
-In Pygame, higher numbers are closer to the bottom edge of the screen.
+在 Pygame 中，较高的数字更接近屏幕的底部边缘。
 
-In the real world, gravity affects everything. In platformers, however, gravity is selective—if you add gravity to your entire game world, all of your platforms would fall to the ground. Instead, you add gravity just to your player and enemy sprites.
+在真实的世界中，引力影响一切。然而，在平台中，引力是有选择性的—如果你添加引力到你的整个游戏世界，你所有平台都将掉到地上。作为替换，你仅添加引力到你的玩家和敌人精灵中。
 
-First, add a **gravity** function in your **Player** class:
+首先，在你的 **Player** 类中添加一个 **引力** 函数：
 
 
 ```
@@ -37,11 +36,11 @@ First, add a **gravity** function in your **Player** class:
         self.movey += 3.2 # how fast player falls
 ```
 
-This is a simple function. First, you set your player in vertical motion, whether your player wants to be in motion or not. In other words, you have programmed your player to always be falling. That's basically gravity.
+这是一个简单的函数。首先，不管你的玩家是否想运动，你设置你的玩家垂直运动。也就是说，你已经编程你的玩家总是在下降。这基本上就是引力。
 
-For the gravity function to have an effect, you must call it in your main loop. This way, Python applies the falling motion to your player once every clock tick.
+为使引力函数生效，你必需在你的主循环中调用它。这样，当每一个时钟滴答作响时，Python 应用下落运动到你玩家。
 
-In this code, add the first line to your loop:
+在这代码中，添加第一行到你的循环中：
 
 
 ```
@@ -49,49 +48,50 @@ In this code, add the first line to your loop:
     player.update()
 ```
 
-Launch your game to see what happens. Look sharp, because it happens fast: your player falls out of the sky, right off your game screen.
+启动你的游戏来看看会发生什么。注意，因为它快速地发生：你是玩家从天空上下落，恰好从你的游戏屏幕落下。
 
-Your gravity simulation is working, but maybe too well.
+你的引力模拟是工作的，但是，也许太好了。
 
-As an experiment, try changing the rate at which your player falls.
+作为一次试验，尝试更改你玩家下落的速度。
 
-### Adding a floor to gravity
+### 添加一个地板到引力
 
-The problem with your character falling off the world is that there's no way for your game to detect it. In some games, if a player falls off the world, the sprite is deleted and respawned somewhere new. In other games, the player loses points or a life. Whatever you want to happen when a player falls off the world, you have to be able to detect when the player disappears offscreen.
+你的游戏没有办法发现你的角色掉落出世界的问题。在一些游戏中，如果一个玩家掉落出世界，该精灵被删除，并在新的位置重生。在其它的游戏中，玩家丢失分数或一条生命。当一个玩家掉落出世界时，不管你想发生什么，你必需能够侦测出玩家何时消失在屏幕外。
 
-In Python, to check for a condition, you can use an **if** statement.
+在 Python 中，要检查一个条件，你可以使用一个 **if** 语句。
 
-You must check to see **if** your player is falling and how far your player has fallen. If your player falls so far that it reaches the bottom of the screen, then you can do _something_. To keep things simple, set the position of the player sprite to 20 pixels above the bottom edge.
+你必需查看你玩家**是否**正在掉落，以及你的玩家掉落到什么程度。如果你的玩家掉落到屏幕的底部，那么你可以做 _一些事情_ 。 为保持事情简单，设置玩家精灵的位置为底部边缘上方20像素。
 
-Make your **gravity** function look like this:
+使你的 **引力** 函数看起来像这样：
 
 
 ```
     def gravity(self):
         self.movey += 3.2 # how fast player falls
        
-        if self.rect.y &gt; worldy and self.movey &gt;= 0:
+        if self.rect.y > worldy and self.movey >= 0:
             self.movey = 0
             self.rect.y = worldy-ty
 ```
 
-Then launch your game. Your sprite still falls, but it stops at the bottom of the screen. You may not be able to _see_ your sprite behind the ground layer, though. An easy fix is to make your player sprite bounce higher by adding another **-ty** to its new Y position after it hits the bottom of the game world:
+然后，启动你的游戏。你的精灵仍然下落，但是它停在屏幕的底部。不过，你也许不能 _看到_ 你在地面层下的精灵。一个简单的解决方法是，在精灵碰撞游戏世界的底部后，通过添加另一个 **-ty** 到它的新 Y 位置，从而使你的精灵弹跳更高：
 
 
 ```
     def gravity(self):
         self.movey += 3.2 # how fast player falls
        
-        if self.rect.y &gt; worldy and self.movey &gt;= 0:
+        if self.rect.y > worldy and self.movey >= 0:
             self.movey = 0
             self.rect.y = worldy-ty-ty
 ```
 
-Now your player bounces at the bottom of the screen, just behind your ground sprites.
+现在你的玩家在屏幕底部弹跳，恰好在你地面层精灵的后面。
 
-What your player really needs is a way to fight gravity. The problem with gravity is, you can't fight it unless you have something to push off of. So, in the next article, you'll add ground and platform collision and the ability to jump. In the meantime, try applying gravity to the enemy sprite.
+你的玩家真正需要的是反抗引力的方法。引力问题是，你不能反抗它，除非你有一些东西来推开引力作用。因此，在接下来的文章中，你将添加地面和平台碰撞以及跳跃能力。在这期间，尝试应用引力到敌人精灵。
 
-Here's all the code so far:
+
+到目前为止，这里是全部的代码：
 
 
 ```
@@ -150,7 +150,7 @@ class Player(pygame.sprite.Sprite):
     def gravity(self):
         self.movey += 3.2 # how fast player falls
        
-        if self.rect.y &gt; worldy and self.movey &gt;= 0:
+        if self.rect.y > worldy and self.movey >= 0:
             self.movey = 0
             self.rect.y = worldy-ty-ty
        
@@ -170,16 +170,16 @@ class Player(pygame.sprite.Sprite):
         self.rect.y = self.rect.y + self.movey
 
         # moving left
-        if self.movex &lt; 0:
+        if self.movex < 0:
             self.frame += 1
-            if self.frame &gt; ani*3:
+            if self.frame > ani*3:
                 self.frame = 0
             self.image = self.images[self.frame//ani]
 
         # moving right
-        if self.movex &gt; 0:
+        if self.movex > 0:
             self.frame += 1
-            if self.frame &gt; ani*3:
+            if self.frame > ani*3:
                 self.frame = 0
             self.image = self.images[(self.frame//ani)+4]
 
@@ -215,9 +215,9 @@ class Enemy(pygame.sprite.Sprite):
         distance = 80
         speed = 8
 
-        if self.counter &gt;= 0 and self.counter &lt;= distance:
+        if self.counter >= 0 and self.counter <= distance:
             self.rect.x += speed
-        elif self.counter &gt;= distance and self.counter &lt;= distance*2:
+        elif self.counter >= distance and self.counter <= distance*2:
             self.rect.x -= speed
         else:
             self.counter = 0
@@ -243,7 +243,7 @@ class Level():
         ground_list = pygame.sprite.Group()
         i=0
         if lvl == 1:
-            while i &lt; len(gloc):
+            while i < len(gloc):
                 ground = Platform(gloc[i],worldy-ty,tx,ty,'ground.png')
                 ground_list.add(ground)
                 i=i+1
@@ -262,9 +262,9 @@ class Level():
             ploc.append((300,worldy-ty-256,3))
             ploc.append((500,worldy-ty-128,4))
 
-            while i &lt; len(ploc):
+            while i < len(ploc):
                 j=0
-                while j &lt;= ploc[i][2]:
+                while j <= ploc[i][2]:
                     plat = Platform((ploc[i][0]+(j*tx)),ploc[i][1],tx,ty,'ground.png')
                     plat_list.add(plat)
                     j=j+1
@@ -311,7 +311,7 @@ tx = 64 #tile size
 ty = 64 #tile size
 
 i=0
-while i &lt;= (worldx/tx)+tx:
+while i <= (worldx/tx)+tx:
     gloc.append(i*tx)
     i=i+1
 
@@ -366,13 +366,14 @@ while main == True:
 
 * * *
 
-This is part 6 in an ongoing series about creating video games in [Python 3][3] using the [Pygame][4] module. Previous articles are:
+这是仍在进行中的关于使用 [Pygame][4] 模块来在 [Python 3][3] 在创建电脑游戏的第七部分。先前的文章是：
 
-  * [Learn how to program in Python by building a simple dice game][5]
-  * [Build a game framework with Python using the Pygame module][6]
-  * [How to add a player to your Python game][7]
-  * [Using Pygame to move your game character around][8]
-  * [What's a hero without a villain? How to add one to your Python game][2]
+  * [通过构建一个简单的掷骰子游戏去学习怎么用 Python 编程][5]
+  * [使用 Python 和 Pygame 模块构建一个游戏框架][6]
+  * [如何在你的 Python 游戏中添加一个玩家][7]
+  * [用 Pygame 使你的游戏角色移动起来][8]
+  * [如何向你的 Python 游戏中添加一个敌人][2]
+  * [在 Pygame 游戏中放置平台][9]
 
 
 
@@ -382,7 +383,7 @@ via: https://opensource.com/article/19/11/simulate-gravity-python
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -397,3 +398,4 @@ via: https://opensource.com/article/19/11/simulate-gravity-python
 [6]: https://opensource.com/article/17/12/game-framework-python
 [7]: https://opensource.com/article/17/12/game-python-add-a-player
 [8]: https://opensource.com/article/17/12/game-python-moving-player
+[9]: https://opensource.com/article/18/7/put-platforms-python-game
