@@ -7,93 +7,93 @@
 [#]: via: (https://itsfoss.com/why-distros-use-old-kernel/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Explained! Why Your Distribution Still Using an ‘Outdated’ Linux Kernel?
+为什么你的发行版仍然在使用“过时的”Linux 内核？
 ======
 
-[Check your Linux kernel version][1]. Chances are that you’ll find that the kernel version your system is using has already reached end of life (EOL) as listed on Linux Kernel website.
+[检查一下你的系统所使用的 Linux 内核版本][1]，你十有八九会发现，按照 Linux 内核官网提供的信息，该内核版本已经达到使用寿命终期了。
 
-End of life means a software won’t get bug fixes and support anymore.
+如果一个软件达到了使用寿命终期，这就意味着它再也不会得到 bug 修复和维护了。
 
-That poses some valid questions. Why is my Linux distribution using a kernel that has reached end of life? Is this not a security risk? Is my system safe?
+这自然会引发一连串问题：为什么我的 Linux 发行版会使用一个已经达到使用寿命终期的内核呢？这样做有没有安全风险？我的系统还安全吗？
 
-Let me explain all these questions in this article.
+下面将逐一解答这些问题。	
 
-Summary
+总结
 
-The upstream kernel support and the your distribution’s kernel support are two different things.
+上游内核维护与你的发行版的内核维护是两个不同的概念。
 
-For example, Linux kernel 4.15 might have reached end of life (as per the official Linux kernel website) but Ubuntu 18.04 LTS release will use it and maintain it till April 2023 by backporting security patches and bug fixes.
+例如，根据 Linux 内核官网，Linux 内核 4.15 版本可能已经达到使用寿命终期了，但是在 2023 年 4 月之前，Ubuntu 18.04 长期维护版本将会继续使用这个版本，并通过向后移植安全补丁和修复 bug 来提供维护。
 
-### Checking Linux kernel version and finding its end of life status
+### 检查 Linux 内核版本，以及是否达到使用寿命终期
 
-Let’s first check the Linux kernel version on your system:
+首先，查看你的系统所使用的 Linux 内核版本：
 
 ```
 uname -r
 ```
 
-I am using Ubuntu 18.04 here and it shows the Linux kernel version like this:
+我使用的是 Ubuntu 18.04，输出的 Linux 内核版本如下：
 
 ```
 [email protected]:~$ uname -r
 5.0.0-37-generic
 ```
 
-Now, you may go to the official Linux kernel website and see what Linux kernels are still being supported. It’s displayed on the homepage itself.
+接下来，可以到 Linux 内核官网上看看哪些 Linux 内核版本仍然在维护状态。在网站主页上就可以看到相关信息。
 
-[Linux Kernel Official Website][2]
+[Linux 内核官网][2]
 
-You should see a status like this:
+你看到的内核版本状态应该类似于下图：
 
-![Linux Kernel Status][3]
+![Linux 内核状态][3]
 
-If you don’t see a kernel version listed on the homepage of kernel website, it means that specific version has reached end of life.
+如果你的内核版本没有列在内核官网主页上，那么就说明该版本已经达到了使用寿命终期。
 
-As you can see, kernel 5.0 is not listed here. It indicates that this kernel version is not being supported anymore. Actually, it [reached end of life in June 2019][4].
+可以看到，5.0 内核版本并不在列，这说明该内核版本已经不再得到维护。事实上，该版本在 [2019 年 6 月就已经达到使用寿命终期了][4]。
 
-The life cycle of a Linux kernel doesn’t follow a set pattern, unfortunately. It’s NOT like a regular kernel stable release will be supported for X months and a long term support(LTS) kernel will be supported for Y years.
+不幸的是，Linux 内核的生命周期没有任何规律可循。不是说常规的内核稳定发布版可以得到 X 月的维护、长期维护版本（LTS）可以得到 Y 年的维护。没有这回事。
 
-Based on the demand and requirements, there could be several LTS kernel versions with different EOL. You can find them along with their projected EOL on [this page][5].
+根据实际需求，可能会存在内核的多个 LTS 版本，其使用寿命终期各不相同。在[这个页面][5]上可以查到这些 LTS 版本的相关信息，包括推定的使用寿命终期。
 
-Now comes the big question. Why is Ubuntu providing kernel 5.0 if the Linux kernel website shows that it has reached its end of life?
+那么问题来了：既然 Linux 内核官网上明确表示 5.0 版本的内核已经达到了使用寿命终期，那 Ubuntu 为什么还在提供这个内核版本呢？
 
-### Your distribution uses an EOL Linux kernel but that’s Okay!
+### 你的发行版使用的 Linux 内核已经达到了使用寿命终期，但是没关系！
 
 ![][6]
 
-Have you ever wondered why Ubuntu/Debian/Fedora etc are called Linux distributions? It’s because they ‘distribute’ the Linux kernel.
+你是否想过，为什么 Ubuntu/Debian/Fedora 等发行版被称为 Linux “发行版”？这是因为，它们“发行” Linux 内核。
 
-They have their own modification of the Linux kernel, they add the GUI elements (desktop environment, display server etc) and software and they make it available to their users.
+这些发行版会对 Linux 内核进行不同的修改，并添加各种 GUI 元素（包括桌面环境，显示服务器等）以及软件，然后再呈现给用户。
 
-In the typical workflow, a Linux distribution will choose a kernel to provide to its users. And then it will hold on to this kernel for months or years even after the kernel has reached end of life.
+按照通常的工作流，Linux 发行版会选择一个内核，提供给其用户，然后在接下来的几个月、几年中，甚至是达到内核的使用寿命终期之后，仍然会继续使用该内核。
 
-How is it safe then? It’s because the _**distribution maintains the kernel by backporting all the important fixes to its kernel**_.
+这样能够保障安全吗？其实是可以的，因为 _**发行版会通过向后移植全部的重要修补来维护内核**_。
 
-In other words, your Linux distribution makes sure that your Linux kernel is patched well and has all the bug fixes and important new features backported to it. There will be thousands of changes on top of the ‘old outdated Linux kernel’.
+换句话说，你的 Linux 发行版会确保 Linux 内核没有漏洞和 bug，并且通过向后移植获得了重要的新特性。在“过时的旧版本 Linux 内核”上，其实有着数以千计的改动。
 
-When the Linux kernel website says that a certain kernel version has reached EOL, it means that the core Linux kernel maintainers are not going to update/patch that kernel version anymore.
+如果 Linux 内核网站上说某个内核版本已经达到了使用寿命终期，那么就意味着 Linux 内核的核心维护团队不会再对该内核版本进行升级和打补丁了。
 
-But at the same time, the developers at Debian/Ubuntu or other distributions work to keep the same old version alive by bringing the relevant changes from the newer kernel versions (being maintained by the core kernel team) to your distribution’s old kernel.
+但与此同时，Debian/Ubuntu 或者其他发行版的开发者们会继续工作，通过从（由内核核心团队维护的）更新的内核版本中迁移相关的修改，维持这个老版本的生命力。
 
-Bottom line is that even if it seems like your distribution is using an outdated Linux kernel, it is actually being well maintained and not really outdated.
+重点在于，即使你的发行版看上去是在使用一个已经过时的 Linux 内核，其实该内核也得到了良好的维护，并非是真的过时了。
 
-### Should you use the latest stable kernel version?
+### 是否应该使用最新的稳定内核版本？
 
 ![][7]
 
-A new stable Linux kernel version is released every 2-3 months. And this makes many users wonder who they can get their hands on that new shiny thing.
+新的 Linux 内核稳定版本每隔 2 到 3 个月发布一次，有不少用户跃跃欲试。
 
-To be frank, you should not do that unless you have a pretty good reason for it. Your distribution doesn’t provide it to you. You cannot just use ‘_sudo apt give-me-the-latest-stable-kernel_‘.
+实话说，除非有十分充分的理由，否则不应该使用最新版本的稳定内核。你使用的发行版并不会提供这个选项，你也不可能指望在键盘上敲出“_sudo apt give-me-the-latest-stable-kernel_”就解决问题。
 
-Now, manually [installing the mainline Linux kernel version][8] could be a challenge in itself. Even if you manage to install it, it is now up to you to make sure that this kernel is updated every time there is a bug fix. And when this new kernel reaches end of life, it becomes your responsibility to upgrade to the newer kernel version. It won’t be handled with apt upgrade like regular [Ubuntu updates][9].
+此外，手动[安装主流 Linux 内核版本][8]本身就是一个挑战。即使安装成功，之后每次发布 bug 修复的时候，负责更新内核的就会使你了。此外，当新内核达到使用寿命终期之后，你就有责任将它升级到更新的内核版本了。和常规的[Ubuntu 更新][9]不同，内核升级无法通过 apt upgrade 完成。
 
-You should also keep in mind that your distribution also has drivers and patches which you may not be able to use if you switch to the mainline kernel.
+同样需要记住的是，切换到主流内核之后，可能就无法使用你的发行版提供的一些驱动程序和补丁了。
 
-As [Greg Kroah-Hartman][10] puts it, “_**the best kernel you can use is one that someone else supports**_“. And who can be better at this job then your Linux distribution!
+正如 [Greg Kroah-Hartman][10]所言，“_**你能使用的最好的内核，就是别人在维护的内核。**_”除了你的 Linux 发行版之外，又有谁更胜任这份工作呢。
 
-I hope you have a better understanding on this topic and you won’t panic the next time you find out that the kernel version your system is using has reached end of life.
+希望你对这个主题已经有了更好的理解。下回发现你的系统正在使用的内核版本已经达到使用寿命终期的时候，希望你不会感到惊慌失措。
 
-I welcome your questions and suggestions. Please feel free to use the comment section.
+欢迎在下面的评论区中留下你的疑问或建议。
 
 --------------------------------------------------------------------------------
 
