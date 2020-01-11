@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (heguangzhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -8,40 +8,36 @@
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
 Put some loot in your Python platformer game
+在你的 Python 平台类游戏中放一些奖励
 ======
-Give your players some treasures to collect and boost their score in
-this installment on programming video games with Python's Pygame module.
+
+这部分是关于在使用 Python 的 Pygame 模块开发视频游戏给你的玩家提供收集的宝物和经验值的内容。
 ![Hearts, stars, and dollar signs][1]
 
-This is part 9 in an ongoing series about creating video games in [Python 3][2] using the [Pygame][3] module. Previous articles are:
+这是正在进行的关于使用 [Python 3][2]的[Pygame][3]模块创建视频游戏的系列文章的第9部分。以前的文章有:
 
-  * [Learn how to program in Python by building a simple dice game][4]
-  * [Build a game framework with Python using the Pygame module][5]
-  * [How to add a player to your Python game][6]
-  * [Using Pygame to move your game character around][7]
-  * [What's a hero without a villain? How to add one to your Python game][8]
-  * [Simulate gravity in your Python game][9]
-  * [Add jumping to your Python platformer game][10]
-  * [Enable your Python game player to run forward and backward][11]
+  * [通过构建一个简单的骰子游戏学习如何用 Python 编程][4]
+  * [使用 Pygame 模块用 Python 构建游戏框架][5]
+  * [如何在 Python 游戏中添加玩家][6]
+  * [使用 Pygame 移动你的游戏角色][7]
+  * [没有恶棍的哪里来的英雄？如何在您的 Python 游戏中添加一个][8]
+  * [在你的 Python 游戏中模拟重力][9]
+  * [将跳跃添加到您的 Python 平台游戏中][10]
+  * [使你的 Python 游戏玩家能够向前和向后跑][11]
 
+如果你已经阅读了本系列的前几篇文章，那么你已经了解了编写游戏的所有基础知识。现在你可以在这些基础上，创造一个全功能的游戏。当你第一次学习时，遵循本系列代码示例，这样的“用例”是有帮助的，但是，用例也会约束你。现在是时候运用你学到的知识，以新的方式应用它们了。
 
+如果说，说起来容易做起来难，这篇文章展示了一个如何将你已经了解的内容用于新目的的例子中。具体来说，就是它涵盖了如何使用你以前的课程中已经了解到的来实现奖励系统。
 
-If you've followed along with the previous articles in this series, then you know all the basics of programming video game mechanics. You can build upon these basics to create a fully functional video game all your own. Following a "recipe" like the code samples in this series is helpful when you're first learning, but eventually, the recipe becomes a constraint. It's time to use the principles you've learned and apply them in new ways.
+在大多数电子游戏中，你有机会在游戏世界中获得“奖励”或收集到宝物和其他物品。奖励通常会增加你的分数或者你的健康指数，或者为你的下一次任务提供信息。
 
-If that sounds easier said than done, this article demonstrates an example of how to leverage what you already know for new purposes. Specifically, it covers how to implement a looting system
+游戏中包含的奖励类似于编程平台。像平台一样，奖励没有用户控制，随着游戏世界的滚动进行，并且必须检查与玩家的碰撞。
 
-using what you have already learned about platforms from previous lessons.
+### 创建奖励函数
 
-In most video games, you have the opportunity to "loot," or collect treasures and other items within the game world. Loot usually increases your score or your health or provides information leading to your next quest.
+奖励和平台非常相似，你甚至不需要奖励类。您可以重用 **Platform** 类，并将结果称为奖励。
 
-Including loot in your game is similar to programming platforms. Like platforms, loot has no user controls, scrolls with the game world, and must check for collisions with the player sprite.
-
-### Creating the loot function
-
-Loot is so similar to platforms that you don't even need a Loot class. You can just reuse the **Platform** class and call the results loot.
-
-Since loot type and placement probably differ from level to level, create a new function called **loot** in your **Level** class, if you don't already have one. Since loot items are not platforms, you must also create a new **loot_list** group and then add loot objects to it. As with platforms, ground, and enemies, this group is used when checking for collisions:
-
+由于奖励类型和位置可能因关卡不同而不同，如果你还没有一个新的功能，请在你的 **Level** 中创建一个名为 **Level** 的新功能。因为奖励物品不是平台，你也必须创建一个新的 **loot_list** 组，然后添加奖励物品。与平台、地面和敌人一样，该组用于检查玩家碰撞:
 
 ```
     def loot(lvl,lloc):
@@ -56,10 +52,9 @@ Since loot type and placement probably differ from level to level, create a new 
         return loot_list
 ```
 
-You can add as many loot objects as you like; just remember to add each one to your loot list. The arguments for the **Platform** class are the X position, the Y position, the width and height of the loot sprite (it's usually easiest to keep your loot sprite the same size as all other tiles), and the image you want to use as loot. Placement of loot can be just as complex as mapping platforms, so use the level design document you created when creating the level.
+你可以随意添加任意数量的奖励对象；记住把每一个都加到你的奖励清单上。***Platform** 类的参数是奖励图标的X位置、Y位置、宽度和高度(通常最容易让你的奖励图标保持和所有其他方块一样的大小)，以及你想要用作的奖励图标。奖励的放置可以和贴图平台一样复杂，所以使用创建关卡时需要创建关卡设计文档。
 
-Call your new loot function in the **Setup** section of your script. In the following code, the first three lines are for context, so just add the fourth:
-
+在脚本的 **Setup** 部分调用新的奖励函数。在下面的代码中，前三行是上下文，所以只需添加第四行:
 
 ```
 enemy_list = Level.bad( 1, eloc )
@@ -68,8 +63,7 @@ plat_list = Level.platform( 1,tx,ty )
 loot_list = Level.loot(1,tx,ty)
 ```
 
-As you know by now, the loot won't get drawn to the screen unless you include it in your main loop. Add the final line from the following code sample to your loop:
-
+正如你现在所知道的，除非你把它包含在你的主循环中，否则奖励不会被显示到屏幕上。将下面代码示例的最后一行添加到循环中:
 
 ```
     enemy_list.draw(world)
@@ -78,16 +72,15 @@ As you know by now, the loot won't get drawn to the screen unless you include it
     loot_list.draw(world)
 ```
 
-Launch your game to see what happens.
+启动你的游戏看看会发生什么。
 
 ![Loot in Python platformer][12]
 
-Your loot objects are spawned, but they don't do anything when your player runs into them, nor do they scroll when your player runs past them. Fix these issues next.
+你的奖励将会显示出来，但是当你的玩家碰到它们时，它们不会做任何事情，当你的玩家经过它们时，它们也不会滚动。接下来解决这些问题。
 
-### Scrolling loot
+### 滚动奖励
 
-Like platforms, loot has to scroll when the player moves through the game world. The logic is identical to platform scrolling. To scroll the loot forward, add the last two lines:
-
+像平台一样，当玩家在游戏世界中移动时，奖励必须滚动。逻辑与平台滚动相同。要向前滚动奖励物品，添加最后两行:
 
 ```
         for e in enemy_list:
@@ -96,7 +89,7 @@ Like platforms, loot has to scroll when the player moves through the game world.
             l.rect.x -= scroll
 ```
 
-To scroll it backward, add the last two lines:
+要向后滚动，请添加最后两行：
 
 
 ```
@@ -106,16 +99,15 @@ To scroll it backward, add the last two lines:
             l.rect.x += scroll
 ```
 
-Launch your game again to see that your loot objects now act like they're _in_ the game world instead of just painted on top of it.
+再次启动你的游戏，看看你的奖励物品现在表现得像在游戏世界里一样了，而不是仅仅画在上面。
 
-### Detecting collisions
+### 检测碰撞
 
-As with platforms and enemies, you can check for collisions between loot and your player. The logic is the same as other collisions, except that a hit doesn't (necessarily) affect gravity or health. Instead, a hit causes the loot to disappear and increment the player's score.
+就像平台和敌人一样，你可以检查奖励物品和玩家之间的碰撞。逻辑与其他碰撞相同，除了撞击不会(必然)影响重力或健康。取而代之的是，命中会导致奖励物品会消失并增加玩家的分数。
 
-When your player touches a loot object, you can remove that object from the **loot_list**. This means that when your main loop redraws all loot items in **loot_list**, it won't redraw that particular object, so it will look like the player has grabbed the loot.
+当你的玩家触摸到一个奖励对象时，你可以从 **奖励列表** 中移除该对象。这意味着当你的主循环在 **loot_list** 中重绘所有奖励物品时，它不会重绘那个特定的对象，所以看起来玩家已经获得了奖励物品。
 
-Add the following code above the platform collision detection in the **update** function of your **Player** class (the last line is just for context):
-
+在 **Player** 类的 **update**  函数中的平台碰撞检测之上添加以下代码(最后一行仅用于上下文):
 
 ```
                 loot_hit_list = pygame.sprite.spritecollide(self, loot_list, False)
@@ -127,8 +119,7 @@ Add the following code above the platform collision detection in the **update** 
         plat_hit_list = pygame.sprite.spritecollide(self, plat_list, False)
 ```
 
-Not only do you remove the loot object from its group when a collision happens, but you also award your player a bump in score. You haven't created a score variable yet, so add that to your player's properties, created in the **__init__** function of the **Player** class. In the following code, the first two lines are for context, so just add the score variable:
-
+当碰撞发生时，你不仅要把奖励从它的组中移除，还要给你的玩家一个分数提升。你还没有创建分数变量，所以请将它添加到你的玩家属性中，该属性是在***Player** 类的**__init__**函数中创建的。在下面的代码中，前两行是上下文，所以只需添加分数变量:
 
 ```
         self.frame = 0
@@ -136,20 +127,18 @@ Not only do you remove the loot object from its group when a collision happens, 
         self.score = 0
 ```
 
-When calling the **update** function in your main loop, include the **loot_list**:
-
+当在主循环中调用**update**函数时，需要包括**loot_list**:
 
 ```
         player.gravity()
         player.update()
 ```
 
-As you can see, you've got all the basics. All you have to do now is use what you know in new ways.
+如你所见，你已经掌握了所有的基本知识。你现在要做的就是用新的方式使用你所知道的。
 
-There are a few more tips in the next article, but in the meantime, use what you've learned to make a few simple, single-level games. Limiting the scope of what you are trying to create is important so that you don't overwhelm yourself. It also makes it easier to end up with a finished product that looks and feels finished.
+在下一篇文章中还有一些提示，但是与此同时，用你学到的知识来制作一些简单的单层游戏。限制你试图创造的东西的范围是很重要的，这样你就不会埋没自己。这也使得最终的成品看起来和感觉上更容易完成。
 
-Here's all the code you've written for this Python platformer so far:
-
+以下是迄今为止你为这个 Python 平台编写的所有代码:
 
 ```
 #!/usr/bin/env python3
@@ -514,7 +503,7 @@ via: https://opensource.com/article/20/1/loot-python-platformer-game
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[heguangzhi](https://github.com/heguangzhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
