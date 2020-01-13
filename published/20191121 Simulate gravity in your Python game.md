@@ -385,11 +385,11 @@ via: https://opensource.com/article/19/11/simulate-gravity-python
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/space_stars_cosmic.jpg?itok=bE94WtN- (Cosmic stars in outer space)
-[2]: https://opensource.com/article/18/5/pygame-enemy
+[2]: https://linux.cn/article-10883-1.html
 [3]: https://www.python.org/
 [4]: https://www.pygame.org
 [5]: https://linux.cn/article-9071-1.html
 [6]: https://linux.cn/article-10850-1.html
 [7]: https://linux.cn/article-10858-1.html
 [8]: https://linux.cn/article-10874-1.html
-[9]: https://linux.cn/article-10883-1.html
+[9]: https://linux.cn/article-10902-1.html
