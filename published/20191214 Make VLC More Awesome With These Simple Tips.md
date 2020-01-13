@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11776-1.html)
 [#]: subject: (Make VLC More Awesome With These Simple Tips)
 [#]: via: (https://itsfoss.com/simple-vlc-tips/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
 这些简单的技巧使 VLC 更加出色
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202001/13/090635eu9va9999rr4ue92.jpeg)
 
 如果 [VLC][1] 不是最好的播放器，那它也是[最好的开源视频播放器][2]之一。大多数人不知道的是，它不仅仅是视频播放器。
 
