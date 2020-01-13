@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (qianmingtian)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,30 +7,30 @@
 [#]: via: (https://www.2daygeek.com/bash-script-to-check-user-account-password-expiry-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Bash Script to Send eMail With a List of User Accounts Expiring in “X” Days
+使用Bash 脚本发送包含 “X” 天内到期的用户账号列表的电子邮件
 ======
 
-The password enforcement policy is common to all operating systems and applications.
+密码强制策略对所有操作系统和应用程序都是通用的。
 
-If you want to **[implement a password enforcement policy on Linux][1]**, go to the following article.
+如果要 **[在Linux上实现密码强制策略][1]** ，请参阅以下文章。
 
-The password enforcement policy will be enforced by most companies by default, but the time period will be different depending on the company’s requirements.
+默认情况下，大多数公司都会强制执行密码强制策略，但根据公司的要求，密码的时间周期会有所不同。
 
-Usually everyone uses a 90-days password cycle.
+通常每个人都使用 90 天的密码周期。
 
-The user will only **[change the password][2]** on some of the servers they use, and they won’t change the password on the servers they don’t use often.
+用户只会在他们使用的一些服务器上 **[更改密码][2]**，而不会在他们不经常使用的服务器上更改密码。
 
-In particular, most team forget to change the service account password, which can lead to breaking regular jobs even if they are configured to work with **[SSH key-based authentication][3]**.
+特别地，大多数团队忘记更改服务帐户密码，这可能导致日常工作的中断，即使他们配置有 **[SSH基于密钥的身份验证][3]** 。
 
-SSH key-based authentication and **[cronjobs][4]** will not work if the user account password expires.
+如果用户帐户密码过期，基于SSH密钥的身份验证和 **[cronjobs][4]** 将不起作用。
 
-To avoid this situation, we have created a **[shell script][5]** that sends you a list of user accounts that expire within 10 days.
+为了避免这种情况，我们创建了一个 **[shell脚本][5]** 来向您发送 10 天内到期的用户帐户列表。
 
-There are two **[bash scripts][6]** included in this tutorial that will help you collect information about user expiration days on your system.
+本教程中包含两个 **[bash脚本][6]** 可以帮助您收集系统中用户到期日的信息。
 
-### 1) Bash Script to Check List of User Accounts Expiring in 10 Days
+### 1) 检查 10 天后到期的用户帐户列表
 
-This script will help you to check the list of user accounts that expire in 10 days on your terminal.
+此脚本将帮助您检查终端上 10 天内到期的用户帐户列表。
 
 ```
 # vi /opt/script/user-password-expiry.sh
@@ -54,13 +54,13 @@ cat /tmp/user-expiry.txt | awk '$2 <= 10' > /tmp/user-expiry-1.txt
 cat /tmp/user-expiry-1.txt | column -t
 ```
 
-Set an executable Linux file permission to **“user-password-expiry.sh”** file.
+将文件 **“user password expiry.sh”** 设置为 Linux 可执行文件权限。
 
 ```
 # chmod +x /opt/script/user-password-expiry.sh
 ```
 
-You will get an output like the one below. But the username and days may be different
+你将得到如下输出，但用户与天数可能不同。
 
 ```
 # sh /opt/script/user-password-expiry.sh
@@ -73,10 +73,9 @@ u2          9
 u3          3
 u4          5
 ```
+### 2) 发送包含 10 天内到期的用户帐户列表的电子邮件
 
-### 2) Bash Script to Send eMail With a List of User Accounts Expiring in 10 Days
-
-This script will send a mail with a list of user accounts expiring in 10 days.
+此脚本将发送一封包含 10 天内到期的用户帐户列表的邮件。
 
 ```
 # vi /opt/script/user-password-expiry-mail.sh
@@ -104,20 +103,20 @@ rm $MESSAGE
 rm $MESSAGE1
 ```
 
-Set an executable Linux file permission to **“user-password-expiry-mail.sh”** file.
+将文件 **“user-password-expiry-mail.sh”** 设置为 Linux 可执行文件权限。
 
 ```
 # chmod +x /opt/script/user-password-expiry-mail.sh
 ```
 
-Finally add a **[cronjob][4]** to automate this. It runs once in a day at 8AM.
+最后，添加一个 **[cronjob][4]** 去自动执行脚本。每天早上 8 点运行一次。
 
 ```
 # crontab -e
 0 8 * * * /bin/bash /opt/script/user-password-expiry-mail.sh
 ```
 
-You will receive a mail similar to the first shell script output.
+你将收到一封与第一个脚本输出类似的电子邮件。
 
 --------------------------------------------------------------------------------
 
@@ -125,13 +124,14 @@ via: https://www.2daygeek.com/bash-script-to-check-user-account-password-expiry-
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qianmingtian][c]
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
+[c]: https://github.com/qianmingtian
 [1]: https://www.2daygeek.com/how-to-set-password-complexity-policy-on-linux/
 [2]: https://www.2daygeek.com/linux-passwd-chpasswd-command-set-update-change-users-password-in-linux-using-shell-script/
 [3]: https://www.2daygeek.com/configure-setup-passwordless-ssh-key-based-authentication-linux/
