@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (qianmingtian)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,58 +7,59 @@
 [#]: via: (https://itsfoss.com/openeuler/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Huawei’s Linux Distribution openEuler is Available Now!
+华为的linux发行版 openEuler 可以使用了！
 ======
 
-Huawei offers a CentOS based enterprise Linux distribution called EulerOS. Recently, Huawei has released a community edition of EulerOS called [openEuler][1].
+华为提供了一个基于 CentOS 的企业 Linux 发行版 EulerOS 。最近，华为发布了一个名为 [openEuler][1] 的 EulerOS 社区版。
 
-The source code of openEuler is released as well. You won’t find it on Microsoft owned GitHub – the source code is available at [Gitee][2], a Chinese [alternative of GitHub][3].
+openEuler 的源代码也被发布了。你在微软旗下的 GitHub 上找不到它——源代码可以在 [Gitee][2] 找到，这是一个中文的 [GitHub 的替代品][3] 。
 
-There are two separate repositories, one for the [source code][2] and the other as a [package source][4] to store software packages that help to build the OS.
+它有两个独立的存储库，一个用于存储[源代码][2]，另一个作为[包源][4] 存储有助于构建操作系统的软件包。
 
-![][5]
+![][5]              
 
-The openEuler infrastructure team shared their experience to make the source code available:
+openuler 基础架构团队分享了他们使源代码可用的经验：              
 
-> We are very excited at this moment. It was hard to imagine that we will manage thousands of repositories. And to ensure that they can be compiled successfully, we would like to thank all those who participated in contributing
+>我们现在很兴奋。很难想象我们会管理成千上万的仓库。为了确保它们能被成功地编译，我们要感谢所有参与贡献的人。
 
-### openEuler is a Linux distribution based on CentOS
+### openEuler 是基于 CentOS 的 Linux 发行版
 
-Like EulerOS, openEuler OS is also based on [CentOS][6] but is further developed by Huawei Technologies for enterprise applications.
+与 EulerOS 一样，openEuler OS 也是基于 [CentOS][6]，但华为技术有限公司为企业应用进一步开发了该操作系统。
 
-It is tailored for ARM64 architecture servers and Huawei claims to have made changes to boost its performance. You can read more about it at [Huawei’s dev blog][7].
+它是为 ARM64 架构的服务器量身定做的，同时华为声称已经做了一些改变来提高其性能。你可以在[华为发展博客][7]上了解更多。
 
 ![][8]
 
-At the moment, as per the official openEuler announcement, there are more than 50 contributors with nearly 600 commits for openEuler.
 
-The contributors made it possible to make the source code available to the community.
+目前，根据 openEuler 的官方声明，有 50 多名贡献者为 openEuler 贡献了近 600 个提交。
 
-It is also worth noting that the repositories also include two new projects (or sub-projects) associated with it, [iSulad][9] **and A-Tune**.
+贡献者使源代码对社区可用成为可能。
 
-A-Tune is an AI-based OS tuning software and iSulad is a lightweight container runtime daemon that is designed for IoT and Cloud infrastructure, as mentioned on [Gitee][2].
+值得注意的是，存储库还包括两个与之相关的新项目（或子项目），[iSulad][9] 和 **A-Tune**。
 
-Also, the official [announcement post][10] mentioned that these systems are built on the Huawei Cloud through script automation. So, that is definitely something interesting.
+A-Tune 是一个基于 AI 的操作系统调优软件， iSulad 是一个轻量级的容器运行时守护进程，如[Gitee][2]中提到的那样，它是为物联网和云基础设施设计的。
 
-### Downloading openEuler
+另外，官方的[公告][10]提到，这些系统是在华为云上通过脚本自动化构建的。这确实十分有趣。
+
+### 下载 openEuler
 
 ![][11]
 
-As of now, you won’t find the documentation for it in English – so you will have to wait for it or choose to help them with the [documentation][12].
+到目前为止，你找不到它的英文文档，所以你必须等待或选择通过[文档][12]帮助他们。
 
-You can download the ISO directly from its [official website][13] to test it out:
+你可以直接从它的[官方网站][13]下载 ISO 来测试它:
 
-[Download openEuler][13]
+[下载 openEuler ][13]
 
-### What do you think of Huawei openEuler?
+### 你认为华为的 openEuler 怎么样?
 
-As per cnTechPost, Huawei had announced that EulerOS would become open source under the new name openEuler.
+据 cnTechPost 报道，华为曾宣布 EulerOS 将以新名字 openEuler 成为开源软件。
 
-At this point, it’s not clear if openEuler is replacing EulerOS or both will exist together like CentOS (community edition) and Red Hat (commercial edition).
+目前还不清楚 openEuler 是否会取代 EulerOS ，或者两者会像 CentOS （社区版）和 Red Hat （商业版）一样同时存在。
 
-I haven’t tested it yet so I cannot say if openEuler is suitable for English speaking users or not.
+我还没有测试过它，所以我不能说 openEuler 是否适合英文用户。
 
-Are you willing to give this a try? In case you’ve already tried it out, feel free to let me know your experience with it in the comments below.
+你愿意试一试吗？如果你已经尝试过了，欢迎在下面的评论中告诉我你的体验。
 
 --------------------------------------------------------------------------------
 
@@ -66,13 +67,14 @@ via: https://itsfoss.com/openeuler/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qianmingtian][c]
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://itsfoss.com/author/ankush/
 [b]: https://github.com/lujun9972
+[c]: (https://github.com/qianmingtian)
 [1]: https://openeuler.org/en/
 [2]: https://gitee.com/openeuler
 [3]: https://itsfoss.com/github-alternatives/
