@@ -7,21 +7,20 @@
 [#]: via: (https://opensource.com/article/20/1/python-web-api-pyramid-cornice)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-How to write a Python web API with Pyramid and Cornice
+如何使用 Pyramid 和 Cornice 编写 Python Web API
 ======
-Use Pyramid and Cornice to build and document scalable RESTful web
-services.
+使用 Pyramid 和 Cornice 构建可扩展的 RESTful Web 服务。
 ![Searching for code][1]
 
-[Python][2] is a high-level, object-oriented programming language known for its simple syntax. It is consistently among the top-rated programming languages for building RESTful APIs.
+[Python][2] 是一种高级的，面向对象的编程语言，它以其简单的语法而闻名。它一直是构建 RESTful API 的顶级编程语言之一。
 
-[Pyramid][3] is a Python web framework designed to scale up with an application: it's simple for simple applications but can grow for big, complex applications. Among other things, Pyramid powers PyPI, the Python package index. [Cornice][4] provides helpers to build and document REST-ish web services with Pyramid.
+[Pyramid][3] 是一个 Python Web 框架，旨在随着应用的扩展而扩展：这对于简单的应用来说很简单，对于大型、复杂的应用也可以做到。Pyramid 为 PyPI （Python 软件包索引）提供了强大的支持。[Cornice][4] 提供了使用 Pyramid 构建 RESTful Web 服务的助手。
 
-This article will use the example of a web service to get famous quotes to show how to use these tools.
+本文将使用 Web 服务的例子来获取名人名言，来展示如何使用这些工具。
 
-### Set up a Pyramid application
+### 建立 Pyramid 应用
 
-Start by creating a virtual environment for your application and a file to hold the code:
+首先为你的应用创建一个虚拟环境，并创建一个文件来保存代码：
 
 
 ```
@@ -33,9 +32,9 @@ $ source env/bin/activate
 (env) $ pip3 install cornice twisted
 ```
 
-### Import the Cornice and Pyramid modules
+### 导入 Cornice 和 Pyramid 模块
 
-Import these modules with:
+使用以下命令导入这些模块：
 
 
 ```
@@ -43,9 +42,9 @@ from pyramid.config import Configurator
 from cornice import Service
 ```
 
-### Define the service
+### 定义服务
 
-Define the quotes service as a **Service** object:
+将引用服务定义为 **Service** 对象：
 
 
 ```
@@ -54,9 +53,9 @@ QUOTES = Service(name='quotes',
                  description='Get quotes')
 ```
 
-### Write the quotes logic
+### 编写引用逻辑
 
-So far, this only supports **GET**ing quotes. Decorate the function with **QUOTES.get**; this is how you can tie in the logic to the REST service:
+到目前为止，这仅支持 **GET** 获取名言。用 **QUOTES.get** 装饰函数。这是将逻辑绑定到 REST 服务的方法：
 
 
 ```
@@ -73,13 +72,13 @@ def get_quote(request):
     }
 ```
 
-Note that unlike in other frameworks, the **get_quote** function is _not_ changed by the decorator. If you import this module, you can still call the function regularly and inspect the result.
+请注意，与其他框架不同，装饰器_不能_更改 **get_quote** 函数。如果导入此模块，你仍然可以定期调用该函数并检查结果。
 
-This is useful when writing unit tests for Pyramid RESTful services.
+在为 Pyramid RESTful 服务编写单元测试时，这很有用。
 
-### Define the application object
+### 定义应用对象
 
-Finally, use **scan** to find all decorated functions and add them to the configuration: 
+最后，使用 **scan** 查找所有修饰的函数并将其添加到配置中：
 
 
 ```
@@ -89,18 +88,18 @@ with Configurator() as config:
     application = config.make_wsgi_app()
 ```
 
-The default for scan is to scan the current module. You can also give the name of a package if you want to scan all modules in a package.
+默认扫描当前模块。如果要扫描软件包中的所有模块，你也可以提供软件包的名称。
 
-### Run the service
+### 运行服务
 
-I use Twisted's WSGI server to run the application, but you can use any other [WSGI][5] server, like Gunicorn or uWSGI, if you want:
+我使用 Twisted 的 WSGI 服务器运行该应用，但是如果需要，你可以使用任何其他 [WSGI][5] 服务器，例如 Gunicorn 或 uWSGI。
 
 
 ```
 `(env)$ python -m twisted web --wsgi=main.application`
 ```
 
-By default, Twisted's WSGI server runs on port 8080. You can test the service with [HTTPie][6]:
+默认情况下，Twisted 的 WSGI 服务器运行在端口 8080 上。你可以使用 [HTTPie][6] 测试该服务：
 
 
 ```
@@ -129,11 +128,11 @@ X-Content-Type-Options: nosniff
 }
 ```
 
-### Why use Pyramid?
+### 为什么要使用 Pyramid？
 
-Pyramid is not the most popular framework, but it is used in some high-profile projects like [PyPI][7]. I like Pyramid because it is one of the frameworks that took unit testing seriously: because the decorators do not modify the function and there are no thread-local variables, functions are callable directly from unit tests. For example, functions that need access to the database will get it from the **request** object passed in via **request.config**. This allows a unit tester to put a mock (or real) database object in the request, instead of carefully setting globals, thread-local variables, or other framework-specific things.
+Pyramid 不是最受欢迎的框架，但它已在 [PyPI][7] 等一些引人注目的项目中使用。我喜欢 Pyramid，因为它是认真对待单元测试的框架之一：因为装饰器不会修改函数并且没有线程局部变量，所以可以直接从单元测试中调用函数。例如，需要访问数据库的函数将从通过 **request.config** 传递的 **request.config** 对象中获取它。这允许单元测试人员将模拟（或真实）数据库对象放入请求中，而不用仔细设置全局变量，线程局部变量或其他特定于框架的东西。
 
-If you're looking for a well-tested library to build your next API, give Pyramid a try. You won't be disappointed.
+如果你正在寻找一个经过测试的库来构建你接下来的 API，请尝试使用 Pyramid。你不会失望的。
 
 --------------------------------------------------------------------------------
 
