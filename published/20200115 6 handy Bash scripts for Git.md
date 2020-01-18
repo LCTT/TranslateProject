@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11797-1.html)
 [#]: subject: (6 handy Bash scripts for Git)
 [#]: via: (https://opensource.com/article/20/1/bash-scripts-git)
 [#]: author: (Bob Peterson https://opensource.com/users/bobpeterson)
@@ -12,9 +12,9 @@
 
 > 当使用 Git 存储库时，这六个 Bash 脚本将使你的生活更轻松。
 
-![Digital hand surrounding by objects, bike, light bulb, graphs][1]
+![](https://img.linux.net.cn/data/attachment/album/202001/18/231713jegbk8fyek798gxb.jpg)
 
-我编写了许多 Bash 脚本，这些脚本使我在使用 Git 存储库时工作更加轻松。我的许多同事说没有必要；我所做的一切都可以用 Git 命令完成。虽然这可能是正确的，但我发现脚本远比尝试找出适当的 Git 命令来执行我想要的操作更加方便。
+我编写了许多 Bash 脚本，这些脚本使我在使用 Git 存储库时工作更加轻松。我的许多同事说没有必要：我所做的一切都可以用 Git 命令完成。虽然这可能是正确的，但我发现脚本远比尝试找出适当的 Git 命令来执行我想要的操作更加方便。
 
 ### 1、gitlog
 
@@ -126,7 +126,7 @@ Compare script generated at: /tmp/compare_mismatches.sh
 
 ### 6、gitlog.find
 
-最后，我有一个 `gitlog.find` 脚本，可以帮助我识别补丁程序的上游版本在哪里以及每个补丁程序的当前状态。它通过匹配补丁说明来实现。它还会生成一个比较脚本（再次使用了 Kompare），以将当前补丁与上游对应补丁进行比较：
+最后，我有一个 `gitlog.find` 脚本，可以帮助我识别补丁程序的上游版本在哪里以及每个补丁的当前状态。它通过匹配补丁说明来实现。它还会生成一个比较脚本（再次使用了 Kompare），以将当前补丁与上游对应补丁进行比较：
 
 ```
 $ gitlog.find
@@ -498,7 +498,7 @@ via: https://opensource.com/article/20/1/bash-scripts-git
 作者：[Bob Peterson][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
