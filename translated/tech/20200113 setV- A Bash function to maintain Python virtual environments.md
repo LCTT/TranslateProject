@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (setV: A Bash function to maintain Python virtual environments)
@@ -10,11 +10,11 @@
 setV：一个管理 Python 虚拟环境的 Bash 函数
 ======
 
-> 了解一下 setV，它是轻量级的 Python 虚拟环境管理器，是 virtualenvwrapper 的替代产品。
+> 了解一下 setV，它是一个轻量级的 Python 虚拟环境管理器，是 virtualenvwrapper 的替代产品。
 
-![Coding on a computer][1]
+![](https://img.linux.net.cn/data/attachment/album/202001/19/234306tvvg5ffwakrzr5vv.jpg)
 
-这一年多来，[setV] [2] 悄悄隐藏在我的 [bash_scripts][3] 项目中，但现在是时候该公开了。setV 是一个 Bash 函数，我可以用它代替 [virtualenvwrapper][4]。它提供了使你能够执行以下操作的基本功能：
+这一年多来，我的 [bash_scripts][3] 项目中悄悄隐藏这 [setV][2]，但现在是时候该公开了。setV 是一个 Bash 函数，我可以用它代替 [virtualenvwrapper][4]。它提供了使你能够执行以下操作的基本功能：
 
 * 默认使用 Python 3
 * 创建一个新的虚拟环境
@@ -37,7 +37,7 @@ curl https://gitlab.com/psachin/setV/raw/master/install.sh
 sh ./install.sh
 ```
 
-当安装 setV 时，安装脚本会询问你要嵌入到 `~/.bashrc` 还是 `~/.bash_profile`，根据你的喜好选择一个。
+当安装 setV 时，安装脚本会要求你引入（`source`）一下 `~/.bashrc` 或 `~/.bash_profile` 的配置，根据你的喜好选择一个。
 
 ### 用法
 
@@ -281,7 +281,7 @@ via: https://opensource.com/article/20/1/setv-bash-function
 作者：[Sachin Patil][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
