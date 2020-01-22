@@ -1,16 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11807-1.html)
 [#]: subject: (Organize your email with Notmuch)
 [#]: via: (https://opensource.com/article/20/1/organize-email-notmuch)
 [#]: author: (Kevin Sonney https://opensource.com/users/ksonney)
 
 使用 Notmuch 组织你的邮件
 ======
-Notmuch 索引、标记和排序电子邮件。在我们的 20 个使用开源提升生产力的系列的第四篇文章中了解该如何使用。
-![Filing cabinet for organization][1]
+
+> Notmuch 可以索引、标记和排序电子邮件。在我们的 20 个使用开源提升生产力的系列的第四篇文章中了解该如何使用它。
+
+![](https://img.linux.net.cn/data/attachment/album/202001/22/112231xg5dgv6f6g5a1iv1.jpg)
 
 去年，我在 19 天里给你介绍了 19 个新（对你而言）的生产力工具。今年，我换了一种方式：使用你在使用或者还没使用的工具，构建一个使你可以在新一年更加高效的环境。
 
@@ -26,12 +28,11 @@ Notmuch 索引、标记和排序电子邮件。在我们的 20 个使用开源�
 
 ![Notmuch's first run][7]
 
-Notmuch 首次运行时，它将询问你一些问题，并在家目录中创建 **.notmuch-config** 文件。接下来，运行 **notmuch new** 来索引并标记所有邮件。你可以使用 **notmuch search tag:new** 进行验证，它会找到所有带有 “new” 标签的消息。这可能会有很多邮件，因为 Notmuch 使用 “new” 标签来指示新邮件，因此你需要对其进行清理。
+Notmuch 首次运行时，它将询问你一些问题，并在家目录中创建 `.notmuch-config` 文件。接下来，运行 `notmuch new` 来索引并标记所有邮件。你可以使用 `notmuch search tag:new` 进行验证，它会找到所有带有 `new` 标签的消息。这可能会有很多邮件，因为 Notmuch 使用 `new` 标签来指示新邮件，因此你需要对其进行清理。
 
-运行 **notmuch search tag:unread** 来查找未读消息，这会减少很多邮件。要从你已阅读的消息中删除 “new” 标签，请运行 **notmuch tag -new not tag:unread**，它将搜索所有没有 “unread” 标签的消息，并从其中删除 “new” 标签。现在，当你运行 **notmuch search tag:new**时，它将仅显示未读邮件。
+运行 `notmuch search tag:unread` 来查找未读消息，这会减少很多邮件。要从你已阅读的消息中删除 `new` 标签，请运行 `notmuch tag -new not tag:unread`，它将搜索所有没有 `unread` 标签的消息，并从其中删除 `new` 标签。现在，当你运行 `notmuch search tag:new` 时，它将仅显示未读邮件。
 
-但是，批量标记消息可能更有用，因为在每次运行时手动更新标记可能非常繁琐。**\--batch** 命令行选项告诉 Notmuch 读取多行命令并执行它们。还有一个 **\--input=filename** 选项，该选项从文件中读取命令并应用它们。我有一个名为 **tagmail.notmuch** 的文件，用于给”新“邮件添加标签；它看起来像这样：
-
+但是，批量标记消息可能更有用，因为在每次运行时手动更新标记可能非常繁琐。`--batch` 命令行选项告诉 Notmuch 读取多行命令并执行它们。还有一个 `--input=filename` 选项，该选项从文件中读取命令并应用它们。我有一个名为 `tagmail.notmuch` 的文件，用于给“新”邮件添加标签；它看起来像这样：
 
 ```
 # Manage sent, spam, and trash folders
@@ -49,9 +50,9 @@ Notmuch 首次运行时，它将询问你一些问题，并在家目录中创建
 -new tag:new
 ```
 
-我可以在运行 **notmuch new** 后运行 **notmuch tag --input=tagmail.notmuch** 批量处理我的邮件，之后我也可以搜索这些标签。
+我可以在运行 `notmuch new` 后运行 `notmuch tag --input=tagmail.notmuch` 批量处理我的邮件，之后我也可以搜索这些标签。
 
-Notmuch 还支持 pre-new 和 post-new 钩子。这些脚本存放在 **Maildir/.notmuch/hooks** 中，它们定义了在使用 **notmuch new** 索引新邮件之前（pre-new）和之后（post-new）要做的操作。在昨天的文章中，我谈到了使用 [OfflineIMAP][8] 同步来自 IMAP 服务器的邮件。从 “pre-new” 钩子运行它非常容易：
+Notmuch 还支持 `pre-new` 和 `post-new` 钩子。这些脚本存放在 `Maildir/.notmuch/hooks` 中，它们定义了在使用 `notmuch new` 索引新邮件之前（`pre-new`）和之后（`post-new`）要做的操作。在昨天的文章中，我谈到了使用 [OfflineIMAP][8] 同步来自 IMAP 服务器的邮件。从 `pre-new` 钩子运行它非常容易：
 
 
 ```
@@ -63,8 +64,7 @@ notmuch tag -new tag:new
 offlineimap -a LocalSync -u quiet
 ```
 
-你还可以使用可以操作 Notmuch 数据库的 Python 应用 [afew][9]，来为你标记_邮件列表_和_垃圾邮件_。你可以用类似的方法在 post-new 钩子中使用 afew：
-
+你还可以使用可以操作 Notmuch 数据库的 Python 应用 [afew][9]，来为你标记*邮件列表*和*垃圾邮件*。你可以用类似的方法在 `post-new` 钩子中使用 `afew`：
 
 ```
 #!/bin/bash
@@ -75,7 +75,7 @@ notmuch tag --input=~/tagmail.notmuch
 afew -t -n
 ```
 
-我建议你在使用 afew 标记邮件时，不要使用 **[ListMailsFilter]**，因为某些邮件处理程序会在邮件中添加模糊或者完全的垃圾列表中的标头（我说的是你 Google）。
+我建议你在使用 `afew` 标记邮件时，不要使用 `[ListMailsFilter]`，因为某些邮件处理程序会在邮件中添加模糊或者彻头彻尾是垃圾的列表标头（我说的就是你 Google）。
 
 ![alot email client][10]
 
@@ -90,14 +90,14 @@ via: https://opensource.com/article/20/1/organize-email-notmuch
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/ksonney
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/files_documents_organize_letter.png?itok=GTtiiabr (Filing cabinet for organization)
-[2]: https://opensource.com/article/20/1/sync-email-offlineimap
+[2]: https://linux.cn/article-11804-1.html
 [3]: https://opensource.com/sites/default/files/uploads/productivity_4-1.png (Notmuch)
 [4]: https://en.wikipedia.org/wiki/Maildir
 [5]: https://notmuchmail.org/
