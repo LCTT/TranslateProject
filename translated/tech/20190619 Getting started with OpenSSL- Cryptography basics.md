@@ -185,69 +185,67 @@ BIO_do_connect(bio);
     如果最后一次调用不成功，则 `client` 程序终止；否则，该连接已准备就绪，可以支持 `client` 程序与Google Web 服务器之间的机密对话。
 
 
-During the handshake with the web server, the `client` program receives one or more digital certificates that authenticate the server’s identity. However, the `client` program does not send a certificate of its own, which means that the authentication is one-way. (Web servers typically are configured _not_ to expect a client certificate.) Despite the failed verification of the web server’s certificate, the `client` program continues by fetching the Google homepage through the secure channel to the web server.
+在与 Web 服务器握手期间，`client` 程序会接收一个或多个数字证书，以认证服务器的身份。 但是，`client` 程序不会发送自己的证书，这意味着身份验证是单向的。（通常将 Web 服务器配置为**不**需要客户端证书。）尽管对 Web 服务器证书的验证失败，但 `client` 程序仍通过到 Web 服务器的安全通道继续获取 Google 主页。
 
-Why does the attempt to verify a Google certificate fail? A typical OpenSSL installation has the directory `/etc/ssl/certs`, which includes the `ca-certificates.crt` file. The directory and the file together contain digital certificates that OpenSSL trusts out of the box and accordingly constitute a _truststore_. The truststore can be updated as needed, in particular, to include newly trusted certificates and to remove ones no longer trusted.
+为什么验证 Google 证书的尝试失败？典型的 OpenSSL 安装目录为 `/etc/ssl/certs`，其中包含 `ca-certificates.crt` 文件。该目录和文件包含着 OpenSSL 自带的数字证书，以此构成信任库。可以根据需要更新信任库，尤其是可以包括新信任的证书，并删除不再受信任的证书。
 
-The client program receives three certificates from the Google web server, but the OpenSSL truststore on my machine does not contain exact matches. As presently written, the `client` program does not pursue the matter by, for example, verifying the digital signature on a Google certificate (a signature that vouches for the certificate). If that signature were trusted, then the certificate containing it should be trusted as well. Nonetheless, the client program goes on to fetch and then to print Google’s homepage. The next section gets into more detail.
+`client` 程序从 Google Web 服务器接收了三个证书，但是我的计算机上的 OpenSSL 信任库不包含完全匹配项。如目前所写，`client` 程序不会通过例如验证 Google 证书上的数字签名（一个用来证明该证书的签名）来解决此问题。如果该签名是受信任的，则包含该签名的证书也应受信任。尽管如此，`client` 程序仍继续进行获取页面，然后打印 Google 的主页。下一节将更详细地介绍。
 
-### The hidden security pieces in the client program
+### 客户端程序中隐藏的安全性
 
-Let’s start with the visible security artifact in the client example—the digital certificate—and consider how other security artifacts relate to it. The dominant layout standard for a digital certificate is X509, and a production-grade certificate is issued by a certificate authority (CA) such as [Verisign][14].
+让我们从客户端示例中的可见安全工件（数字证书）开始，然后考虑其他安全工件如何与之相关。数字证书的主要布局标准是 X509，生产级证书由诸如 [Verisign][14] 的证书颁发机构（CA）颁发。
 
-A digital certificate contains various pieces of information (e.g., activation and expiration dates, and a domain name for the owner), including the issuer’s identity and _digital signature_, which is an encrypted _cryptographic hash_ value. A certificate also has an unencrypted hash value that serves as its identifying _fingerprint_.
+数字证书包含各种信息（例如，激活和有效日期以及所有者的域名），包括发行者的身份和*数字签名*（这是加密过的*加密哈希*值）。证书还具有未加密的哈希值，用作其标识*指纹*。
 
-A hash value results from mapping an arbitrary number of bits to a fixed-length digest. What the bits represent (an accounting report, a novel, or maybe a digital movie) is irrelevant. For example, the Message Digest version 5 (MD5) hash algorithm maps input bits of whatever length to a 128-bit hash value, whereas the SHA1 (Secure Hash Algorithm version 1) algorithm maps input bits to a 160-bit value. Different input bits result in different—indeed, statistically unique—hash values. The next article goes into further detail and focuses on what makes a hash function _cryptographic_.
+哈希值来自将任意数量的位映射到固定长度的摘要。这些位代表什么（会计报告、小说或数字电影）无关紧要。例如，<ruby>消息摘要版本 5<rt>Message Digest version 5</rt></ruby>（MD5）哈希算法将任意长度的输入位映射到 128 位哈希值，而 SHA1（<ruby>安全哈希算法版本 1<rt>Secure Hash Algorithm version 1</rt></ruby>）算法将输入位映射到 160 位值。不同的输入位会导致不同的（实际上是统计学上唯一的）哈希值。下一篇文章将进行更详细的介绍，并着重介绍什么使哈希函数具有加密功能。
 
-Digital certificates differ in type (e.g., _root_, _intermediate_, and _end-entity_ certificates) and form a hierarchy that reflects these types. As the name suggests, a _root_ certificate sits atop the hierarchy, and the certificates under it inherit whatever trust the root certificate has. The OpenSSL libraries and most modern programming languages have an X509 type together with functions that deal with such certificates. The certificate from Google has an X509 format, and the `client` program checks whether this certificate is `X509_V_OK`.
+数字证书的类型有所不同（例如根证书、中间证书和最终实体证书），并形成了反映这些类型的层次结构。 顾名思义，*根*证书位于层次结构的顶部，其下的证书继承了根证书所具有的信任。OpenSSL 库和大多数现代编程语言都具有 X509 类型以及处理此类证书的函数。来自 Google 的证书具有 X509 格式，`client`  程序会检查该证书是否为 `X509_V_OK`。
 
-X509 certificates are based upon public-key infrastructure (PKI), which includes algorithms—RSA is the dominant one—for generating _key pairs_: a public key and its paired private key. A public key is an identity: [Amazon’s][15] public key identifies it, and my public key identifies me. A private key is meant to be kept secret by its owner.
+X509 证书基于<ruby>公共密钥基础结构<rt>public-key infrastructure</rt></ruby>（PKI），其中包括的算法（RSA 是占主导地位的算法）用于生成*密钥对*：公共密钥及其配对的私有密钥。公钥是一种身份：[Amazon][15] 的公钥对其进行标识，而我的公钥对我进行标识。私钥应由其所有者保密。
 
-The keys in a pair have standard uses. A public key can be used to encrypt a message, and the private key from the same pair can then be used to decrypt the message. A private key also can be used to sign a document or other electronic artifact (e.g., a program or an email), and the public key from the pair can then be used to verify the signature. The following two examples fill in some details.
+成对出现的密钥具有标准用途。可以使用公钥对消息进行加密，然后可以使用同一个密钥对中的私钥对消息进行解密。私钥也可以用于对文档或其他电子产品（例如程序或电子邮件）进行签名，然后可以使用该对密钥中的公钥来验证签名。以下两个示例填充了一些细节。
 
-In the first example, Alice distributes her public key to the world, including Bob. Bob then encrypts a message with Alice’s public key, sending the encrypted message to Alice. The message encrypted with Alice’s public key is decrypted with her private key, which (by assumption) she alone has, like so:
-
-
-```
-             +------------------+ encrypted msg  +-------------------+
-Bob's msg---&gt;|Alice's public key|---------------&gt;|Alice's private key|---&gt; Bob's msg
-             +------------------+                +-------------------+
-```
-
-Decrypting the message without Alice’s private key is possible in principle, but infeasible in practice given a sound cryptographic key-pair system such as RSA.
-
-Now, for the second example, consider signing a document to certify its authenticity. The signature algorithm uses a private key from a pair to process a cryptographic hash of the document to be signed:
-
+在第一个示例中，Alice 将她的公钥分发给世界，包括 Bob。然后，Bob 用 Alice 的公钥加密邮件，然后将加密的邮件发送给 Alice。用 Alice 的公钥加密的邮件将用她的私钥解密（假设是她自己的私钥），如下所示：
 
 ```
-                    +-------------------+
-Hash of document---&gt;|Alice's private key|---&gt;Alice's digital signature of the document
-                    +-------------------+
+             +------------------+ encrypted msg  +-------------------+
+Bob's msg--->|Alice's public key|--------------->|Alice's private key|---> Bob's msg
+             +------------------+                +-------------------+
 ```
 
-Assume that Alice digitally signs a contract sent to Bob. Bob then can use Alice’s public key from the key pair to verify the signature:
+原则上可以在没有 Alice 的私钥的情况下解密消息，但在实际情况下，如果使用像 RSA 这样的加密密钥对系统，则无法实现。
 
+现在，对于第二个示例，请考虑对文档签名以证明其真实性。签名算法使用密钥对中的私钥来处理要签名的文档的加密哈希：
 
 ```
-                                             +------------------+
-Alice's digital signature of the document---&gt;|Alice's public key|---&gt;verified or not
-                                             +------------------+
+                    +-------------------+
+Hash of document--->|Alice's private key|--->Alice's digital signature of the document
+                    +-------------------+
 ```
 
-It is infeasible to forge Alice’s signature without Alice’s private key: hence, it is in Alice’s interest to keep her private key secret.
+假设 Alice 以数字方式签署了发送给 Bob 的合同。然后，Bob 可以使用密钥对中的 Alice 的公钥来验证签名：
 
-None of these security pieces, except for digital certificates, is explicit in the `client` program. The next article fills in the details with examples that use the OpenSSL utilities and library functions.
+```
+                                             +------------------+
+Alice's digital signature of the document--->|Alice's public key|--->verified or not
+                                             +------------------+
+```
 
-### OpenSSL from the command line
+假若没有 Alice 的私钥，就无法伪造 Alice 的签名：因此，Alice 有必要保密她的私钥。
 
-In the meantime, let’s take a look at OpenSSL command-line utilities: in particular, a utility to inspect the certificates from a web server during the TLS handshake. Invoking the OpenSSL utilities begins with the `openssl` command and then adds a combination of arguments and flags to specify the desired operation.
+在 `client` 程序中，除了数字证书以外，这些安全性都没有明确规定。下一篇文章使用使用 OpenSSL 实用程序和库函数的示例填充详细信息。
 
-Consider this command:
+### 命令行的 OpenSSL
 
-`openssl list-cipher-algorithms`
+同时，让我们看一下 OpenSSL 命令行实用程序：特别是在 TLS 握手期间检查来自 Web 服务器的证书的实用程序。调用 OpenSSL 实用程序从`openssl` 命令开始，然后添加参数和标志的组合以指定所需的操作。
 
-The output is a list of associated algorithms that make up a _cipher suite_. Here’s the start of the list, with comments to clarify the acronyms:
+看看以下命令：
 
+```
+openssl list-cipher-algorithms
+```
+
+该输出是组成<ruby>加密算法套件<rt>cipher suite<rt></ruby>的相关算法的列表。下面是列表的开头，注释以澄清首字母缩写词：
 
 ```
 AES-128-CBC ## Advanced Encryption Standard, Cipher Block Chaining
@@ -256,27 +254,28 @@ AES-128-CBC-HMAC-SHA256 ## ditto, but SHA256 rather than SHA1
 ...
 ```
 
-The next command, using the argument `s_client`, opens a secure connection to `[www.google.com][13]` and prints screens full of information about this connection:
+使用参数 `s_client` 的下一条命令将打开到 [www.google.com][13] 的安全连接，并在屏幕上显示有关此连接的所有信息：
 
-`openssl s_client -connect [www.google.com:443][16] -showcerts`
+```
+openssl s_client -connect www.google.com:443 -showcerts
+```
 
-The port number 443 is the standard one used by web servers for receiving HTTPS rather than HTTP connections. (For HTTP, the standard port is 80.) The network address `[www.google.com:443][16]` also occurs in the `client` program's code. If the attempted connection succeeds, the three digital certificates from Google are displayed together with information about the secure session, the cipher suite in play, and related items. For example, here is a slice of output from near the start, which announces that a _certificate chain_ is forthcoming. The encoding for the certificates is base64:
+端口号 443 是 Web 服务器用于接收 HTTPS 而不是 HTTP 连接的标准端口号。（对于 HTTP，标准端口为 80）网络地址 [www.google.com:443 也出现在 `client` 程序的代码中。如果尝试的连接成功，则将显示来自 Google 的三个数字证书以及有关安全会话、正在使用的加密算法套件以及相关项目的信息。例如，这是从头开始的一部分输出，它声明*证书链*即将到来。证书的编码为 base64：
 
 
 ```
 Certificate chain
- 0 s:/C=US/ST=California/L=Mountain View/O=Google LLC/CN=www.google.com
- i:/C=US/O=Google Trust Services/CN=Google Internet Authority G3
-\-----BEGIN CERTIFICATE-----
+ 0 s:/C=US/ST=California/L=Mountain View/O=Google LLC/CN=www.google.com
+ i:/C=US/O=Google Trust Services/CN=Google Internet Authority G3
+-----BEGIN CERTIFICATE-----
 MIIEijCCA3KgAwIBAgIQdCea9tmy/T6rK/dDD1isujANBgkqhkiG9w0BAQsFADBU
 MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMSUw
 ...
 ```
 
-A major web site such as Google usually sends multiple certificates for authentication.
+诸如 Google 之类的主要网站通常会发送多个证书进行身份验证。
 
-The output ends with summary information about the TLS session, including specifics on the cipher suite:
-
+输出以有关 TLS 会话的摘要信息结尾，包括加密算法套件的详细信息：
 
 ```
 SSL-Session:
@@ -286,28 +285,21 @@ SSL-Session:
 ...
 ```
 
-The protocol `TLS 1.2` is used in the `client` program, and the `Session-ID` uniquely identifies the connection between the `openssl` utility and the Google web server. The `Cipher` entry can be parsed as follows:
+`client` 程序中使用了协议 TLS 1.2，`Session-ID` 唯一地标识了 `openssl` 实用程序和 Google Web 服务器之间的连接。 `Cipher` 条目可以按以下方式进行解析：
 
-  * `ECDHE` (Elliptic Curve Diffie Hellman Ephemeral) is an effective and efficient algorithm for managing the TLS handshake. In particular, ECDHE solves the _key-distribution problem_ by ensuring that both parties in a connection (e.g., the client program and the Google web server) use the same encryption/decryption key, which is known as the _session key_. The follow-up article digs into the details.
+* `ECDHE`（<ruby>Elliptic Curve Diffie Hellman Ephemeral<rt>椭圆曲线 Diffie-Hellman（临时）</rt></ruby>）是一种用于管理 TLS 握手的有效而高效的算法。尤其是，ECDHE 通过确保连接双方（例如，`client` 程序和 Google Web 服务器）使用相同的加密/解密密钥（称为*会话密钥*）来解决“密钥分发问题”。后续文章会深入探讨该细节。
+* `RSA`（Rivest Shamir Adleman）是主要的公共密钥密码系统，并以 1970 年代后期首次描述该系统的三位学者的名字命名。这个正在使用的密钥对是使用 RSA 算法生成的。
+* `AES128`（<ruby>高级加密标准<rt>Advanced Encryption Standard</rt></ruby>）是一种<ruby>块式加密算法<rt>block cipher</rt></ruby>，用于加密和解密<ruby>位块<rt>blocks of bits</rt></ruby>。（另一种算法是<ruby>流式加密算法<rt>stream cipher</rt></ruby>，它一次加密和解密一个位。）该加密算法是对称加密算法，因为使用同一个密钥进行加密和解密，这首先引起了密钥分发问题。AES 支持 128（此处使用）、192 和 256 位的密钥大小：密钥越大，保护越好。
 
-  * `RSA` (Rivest Shamir Adleman) is the dominant public-key cryptosystem and named after the three academics who first described the system in the late 1970s. The key-pairs in play are generated with the RSA algorithm.
+    通常，像 AES 这样的对称加密系统的密钥大小要小于像 RSA 这样的非对称（基于密钥对）系统的密钥大小。例如，1024 位 RSA 密钥相对较小，而 256 位密钥当前是 AES 最大的密钥。
+* `GCM`（<ruby>伽罗瓦计数器模式<rt>Galois Counter Mode</rt></rubny>）处理在安全对话期间重复应用加密算法（在这种情况下为 AES128）。AES128 块的大小仅为 128 位，安全对话很可能包含从一侧到另一侧的多个 AES128 块。GCM 非常有效，通常与 AES128 搭配使用。
+* `SHA256` （<ruby>256 位安全哈希算法<rt>Secure Hash Algorithm 256 bits</rt></ruby>）是正在使用的加密哈希算法。生成的哈希值的大小为 256 位，尽管使用 SHA 甚至可以更大。
 
-  * `AES128` (Advanced Encryption Standard) is a _block cipher_ that encrypts and decrypts blocks of bits. (The alternative is a _stream cipher_, which encrypts and decrypts bits one at a time.) The cipher is _symmetric_ in that the same key is used to encrypt and to decrypt, which raises the key-distribution problem in the first place. AES supports key sizes of 128 (used here), 192, and 256 bits: the larger the key, the better the protection.
+加密算法套件正在不断发展中。例如，不久前，Google 使用 RC4 流加密算法（是 RSA 的 Ron Rivest 后来开发的 Ron's Cipher 版本 4）。 RC4 现在有已知的漏洞，这至少部分导致了 Google 转换为 AES128。
 
-Key sizes for symmetric cryptosystems such as AES are, in general, smaller than those for asymmetric (key-pair based) systems such as RSA. For example, a 1024-bit RSA key is relatively small, whereas a 256-bit key is currently the largest for AES.
+### 总结
 
-  * `GCM` (Galois Counter Mode) handles the repeated application of a cipher (in this case, AES128) during a secured conversation. AES128 blocks are only 128-bits in size, and a secure conversation is likely to consist of multiple AES128 blocks from one side to the other. GCM is efficient and commonly paired with AES128.
-
-  * `SHA256` (Secure Hash Algorithm 256 bits) is the cryptographic hash algorithm in play. The hash values produced are 256 bits in size, although even larger values are possible with SHA.
-
-
-
-
-Cipher suites are in continual development. Not so long ago, for example, Google used the RC4 stream cipher (Ron’s Cipher version 4 after Ron Rivest from RSA). RC4 now has known vulnerabilities, which presumably accounts, at least in part, for Google’s switch to AES128.
-
-### Wrapping up
-
-This first look at OpenSSL, through a secure C web client and various command-line examples, has brought to the fore a handful of topics in need of more clarification. [The next article gets into the details][17], starting with cryptographic hashes and ending with a fuller discussion of how digital certificates address the key distribution challenge.
+通过安全的 C Web 客户端和各种命令行示例对 OpenSSL 的首次了解，使一些需要进一步阐明的主题脱颖而出。[下一篇文章会详细介绍][17]，从加密散列开始，到结束时对数字证书如何应对密钥分发挑战的更全面讨论。
 
 --------------------------------------------------------------------------------
 
@@ -315,7 +307,7 @@ via: https://opensource.com/article/19/6/cryptography-basics-openssl-part-1
 
 作者：[Marty Kalin][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
