@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to setup multiple monitors in sway)
 [#]: via: (https://fedoramagazine.org/how-to-setup-multiple-monitors-in-sway/)
 [#]: author: (arte219 https://fedoramagazine.org/author/arte219/)
 
-如何在 sway 中设置多个显示器
+如何在 Sway 中设置多个显示器
 ======
 
 ![][1]
 
-Sway 是一种平铺式 Wayland 合成器，具有与 [i3 X11 窗口管理器][2]相同的功能、外观和工作流程。 由于 Sway 使用 Wayland 而不是 X11，因此就不能一如既往地使用设置 X11 的工具。这包括 `xrandr` 之类的工具，这些工具在 X11 窗口管理器或桌面中用于设置监视器。这就是为什么必须通过编辑 Sway 配置文件来设置显示器的原因，这就是本文的目的。
+Sway 是一种平铺式 Wayland 合成器，具有与 [i3 X11 窗口管理器][2]相同的功能、外观和工作流程。由于 Sway 使用 Wayland 而不是 X11，因此就不能一如既往地使用设置 X11 的工具。这包括 `xrandr` 之类的工具，这些工具在 X11 窗口管理器或桌面中用于设置显示器。这就是为什么必须通过编辑 Sway 配置文件来设置显示器的原因，这就是本文的目的。
 
 ### 获取你的显示器 ID
 
@@ -24,7 +24,7 @@ $ swaymsg -t get_outputs
 
 你将获得所有显示器的相关信息，每个显示器都用空行分隔。
 
-你必须查看每个部分的第一行，以及 “Output” 之后的内容。例如，当你看到 `Output DVI-D-1 'Philips Consumer Electronics Company'` 之类的行时，则该输出 ID 为 `DVI-D-1`。注意这些 ID 及其所属的物理监视器。
+你必须查看每个部分的第一行，以及 `Output` 之后的内容。例如，当你看到 `Output DVI-D-1 'Philips Consumer Electronics Company'` 之类的行时，则该输出 ID 为 `DVI-D-1`。注意这些 ID 及其所属的物理监视器。
 
 ### 编辑配置文件
 
@@ -54,7 +54,7 @@ output eDP1 pos 1920 0 res 1600x900
 
 ### 将工作空间绑定到显示器上
 
-与多个监视器一起使用 Sway 在工作区管理中可能会有些棘手。幸运的是，你可以将工作区绑定到特定的监视器，因此你可以轻松地切换到该显示器并更有效地使用它。只需通过配置文件中的工作区命令即可完成。例如，如果要绑定工作区 1 和 2 到显示器 “DVI-D-1”，绑定工作区 8 和 9 到显示器 “HDMI-A-1”，则可以使用以下方法：
+与多个监视器一起使用 Sway 在工作区管理中可能会有些棘手。幸运的是，你可以将工作区绑定到特定的显示器上，因此你可以轻松地切换到该显示器并更有效地使用它。只需通过配置文件中的 `workspace` 命令即可完成。例如，如果要绑定工作区 1 和 2 到显示器 “DVI-D-1”，绑定工作区 8 和 9 到显示器 “HDMI-A-1”，则可以使用以下方法：
 
 ```
 workspace 1 output DVI-D-1
@@ -75,7 +75,7 @@ via: https://fedoramagazine.org/how-to-setup-multiple-monitors-in-sway/
 作者：[arte219][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
