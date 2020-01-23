@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (runningwater)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Create and manage MacOS LaunchAgents using Go)
+[#]: via: (https://ieftimov.com/post/create-manage-macos-launchd-agents-golang/)
+[#]: author: (https://ieftimov.com/about)
+
 Create and manage MacOS LaunchAgents using Go
 ============================================================
 
@@ -287,7 +296,7 @@ This is where I write about software development, programming languages and ever
 via: https://ieftimov.com/create-manage-macos-launchd-agents-golang
 
 作者：[Ilija Eftimov ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
