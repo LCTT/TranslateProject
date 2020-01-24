@@ -17,7 +17,7 @@
 ### 学习和提高您的 CI / CD 技能
 
 
-我们最喜欢的一些文章集中在 CI / CD 的实操经验上，并涵盖了许多方面。通常以[Jenkins][2]管道开始，布莱恩特的文章[用 Jenkins 构建 CI/CD 管道][4]（Building CI/CD pipelines with Jenkins）将为您提供足够的经验，以开始构建您的第一个管道。丹尼尔在 [用DevOps 管道进行自动验收测试][4]（Automate user acceptance testing with your DevOps pipeline ）一文中，提供了有关验收测试的重要信息，包括可用于独立测试的各种 CI / CD 应用程序。我写的[安全扫描DevOps 管道][5]（Security scanning your DevOps pipeline ）非常简短，其中的关键点是关于如何使用 Jenkins 平台在管道中设置安全性的教程。
+我们最喜欢的一些文章集中在 CI / CD 的实操经验上，并涵盖了许多方面。通常以[Jenkins][2]管道开始，布莱恩特的文章[用 Jenkins 构建 CI/CD 管道][4]将为您提供足够的经验，以开始构建您的第一个管道。丹尼尔在 [用DevOps 管道进行自动验收测试][4]一文中，提供了有关验收测试的重要信息，包括可用于独立测试的各种 CI / CD 应用程序。我写的[安全扫描DevOps 管道][5]非常简短，其中的关键点是关于如何使用 Jenkins 平台在管道中设置安全性的教程。
 
 ### 交付工作流程
 
