@@ -7,56 +7,56 @@
 [#]: via: (https://opensource.com/article/20/1/add-scorekeeping-your-python-game)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Add scorekeeping to your Python game
+添加计分到你的 Python 游戏
 ======
-In the tenth article in this series on programming with Python's Pygame
-module, display your game player's score when they collect loot or take
-damage.
+In the tenth article in this series on programming with 在这一系列关于使用 Python 的 Pygame
+模块编程的第 11 篇文章中，当你的玩家收集战利品或受到伤害时，显示你的玩家的得分。
 ![connecting yellow dots in a maze][1]
 
-This is part 10 in an ongoing series about creating video games in [Python 3][2] using the [Pygame][3] module. Previous articles are:
+这是仍在进行中的关于使用 [Pygame][3] 模块来在 [Python 3][2] 在创建电脑游戏的第十一部分。先前的文章是：
 
-  * [Learn how to program in Python by building a simple dice game][4]
-  * [Build a game framework with Python using the Pygame module][5]
-  * [How to add a player to your Python game][6]
-  * [Using Pygame to move your game character around][7]
-  * [What's a hero without a villain? How to add one to your Python game][8]
-  * [Simulate gravity in your Python game][9]
-  * [Add jumping to your Python platformer game][10]
-  * [Enable your Python game player to run forward and backward][11]
-  * [Using Python to set up loot in Pygame][12]
+  * [通过构建一个简单的掷骰子游戏去学习怎么用 Python 编程][4]
+  * [使用 Python 和 Pygame 模块构建一个游戏框架][5]
+  * [如何在你的 Python 游戏中添加一个玩家][6]
+  * [用 Pygame 使你的游戏角色移动起来][7]
+  * [如何向你的 Python 游戏中添加一个敌人][8]
+  * [在 Pygame 游戏中放置平台][19]
+  * [在你的 Python 游戏中模拟引力][9]
+  * [为你的 Python 平台类游戏添加跳跃功能][10]
+  * [使你的 Python 游戏玩家能够向前和向后跑][11]
+  * [在你的 Python 平台类游戏中放一些奖励][12]
 
 
 
-If you've followed along with this series, you've learned all the essential syntax and patterns you need to create a video game with Python. However, it still lacks one vital component. This component isn't important just for programming games in Python; it's something you must master no matter what branch of computing you explore: Learning new tricks as a programmer by reading a language's or library's documentation.
+如果你已经跟随这一系列很久，那么你已经学习你需要使用 Python 创建一个电脑游戏的所有的基本语法和样本。然而，它仍然缺少一个至关重要的组成部分。这一组成部分不仅仅对用 Python 编程游戏重要；不管你探究哪个计算机分支，你都必需精通：作为一个程序员，通过阅读一种语言的或库的文档来学习新的技巧。
 
-Luckily, the fact that you're reading this article is a sign that you're comfortable with documentation. For the practical purpose of making your platform game more polished, in this article, you will add a score and health display to your game screen. But the not-so-secret agenda of this lesson is to teach you how to find out what a library offers and how you can use new features.
+幸运的是，事实上，你正在阅读的这篇文章是你适应阅读文档的一个标记。为了实现使你的平台类游戏更加优雅的实际目标，在这篇文章中，你将添加一个得分和健康状况显示到你游戏屏幕中。不过，教你如何找到一个库的功能以及如何使用这些新的功能的这节课程并不是如此神秘。
 
-### Displaying the score in Pygame
+### 在 Pygame 中显示得分
 
-Now that you have loot that your player can collect, there's every reason to keep score so that your player sees just how much loot they've collected. You can also track the player's health so that when they hit one of the enemies, it has a consequence.
+现在，你有你的玩家收集的奖励，这里有足够的正当理由来维持分数，以便你的玩家恰好看到他们收集了多少奖励。你也可以跟踪玩家的健康度，以便当他们击中一个敌人时，会有一个结果。
 
-You already have variables that track score and health, but it all happens in the background. This article teaches you to display these statistics in a font of your choice on the game screen during gameplay.
+你已经有了跟踪分数和健康度的变量，但是这一切都发生在后台。这篇文章教你在游戏过程期间在游戏屏幕上以你选择的一种字体来显示这些统计数字。
 
-### Read the docs
+### 阅读文档
 
-Most Python modules have documentation, and even those that do not can be minimally documented by Python's Help function. [Pygame's main page][13] links to its documentation. However, Pygame is a big module with a lot of documentation, and its docs aren't exactly written in the same approachable (and friendly and elucidating and helpful) narrative style as articles on Opensource.com. They're technical documents, and they list each class and function available in the module, what kind of inputs each expects, and so on. If you're not comfortable referring to descriptions of code components, this can be overwhelming.
+大多数 Python 模块都有文档，即使那些没有文档的模块，也能通过 Python 的帮助功能来进行最小化地文档化。[Pygame 的主页面][13] 链接到它的文档。不过，Pygame 是一个带有很多文档的大模块，并且它的文档不像在 Opensource.com 上的文章一样，以同样的易理解的(友好地，易解释地，有用地)叙述样式准确地编写。它们是技术文档，并且它们列出在模块中可用的每个类和函数，每个要求输入的类型等等。如果你不适应参考代码组件描述，这可能令人不知所措的。
 
-The first thing to do, before bothering with a library's documentation, is to think about what you are trying to achieve. In this case, you want to display the player's score and health on the screen.
+在烦恼一个库的文档前，第一件要做的事，就是来想想你正在尝试达到的目标。在这种情况下，你想在屏幕上显示玩家的得分和健康状况。
 
-Once you've determined your desired outcome, think about what components are required for it. You can think of this in terms of variables and functions or, if that doesn't come naturally to you yet, you can think generically. You probably recognize that displaying a score requires some text, which you want Pygame to draw on the screen. If you think it through, you might realize that it's not very different from rendering a player or loot or a platform on screen.
+在你确定你需要的结果后，想想它需要什么的组件。你可以从变量和函数的方面考虑这一点，或者，如果你还没有自然地想到这一点，你可以考虑一般情况。你可能意识到需要一些文本来显示一个分数，你希望 Pygame 在屏幕上绘制这些文本。如果你彻头彻尾地思考，你可能会意识到它与在屏幕上渲染一个玩家或奖励或一个平台并多么大的不同。
 
-Technically, you _could_ use graphics of numbers and have Pygame display those. It's not the easiest way to achieve your goal, but if it's the only way you know, then it's a valid way. However, if you refer to Pygame's docs, you see that one of the modules listed is **font**, which is Pygame's method for making printing text on the screen as easy as typing.
+从技术上讲，你 _可以_ 使用数字图形，并让 Pygame 显示这些数字图形。它不是达到你目标的最容易的方法，但是如果它是你唯一知道的方法，那么它是一个有效的方法。不过，如果你参考 Pygame 的文档，你看到列出的模块之一是 **font** ，这是 Pygame 使得在屏幕上来使打印文本像输入文字一样容易的方法。
 
-### Deciphering technical documentation
+### 解密技术文档
 
-The **font** documentation page starts with **pygame.font.init()**, which it lists as the function that is used to initialize the font module. It's called automatically by **pygame.init()**, which you already call in your code. Once again, you've reached a point that that's technically _good enough_. While you don't know _how_ yet, you know that you _can_ use the **pygame.font** functions to print text on the screen.
+**font** 文档页面以 **pygame.font.init()** 开始，它被列为用于初始化字体模块的函数。它由 **pygame.init()** 自动地调用，你已经在代码中调用了它。再强调一次，点，从技术上讲，你已经到达一个 _足够好_ 的点。虽然你尚不知道 _如何做_ ，你知道你 _能够_ 使用 **pygame.font** 函数来在屏幕上打印文本。
 
-If you read further, however, you find that there's yet an even better way to print fonts. The **pygame.freetype** module is described in the docs this way:
+然而，如果你阅读更多一些，你会找到这里还有一种更好的方法来打印字体。**pygame.freetype** 模块被以这种方式描述在文档中：
 
-> The pygame.freetype module is a replacement for pygame.fontpygame module for loading and rendering fonts. It has all of the functionality of the original, plus many new features.
+> pygame.freetype 模块是 pygame.fontpygame 模块的一个替代品，用于加载和渲染字体。它有原函数的所有功能，外加很多新的功能。
 
-Further down the **pygame.freetype** documentation page, there's some sample code:
+向下进一步到 **pygame.freetype** 文档页面，这里有一些样本代码：
 
 
 ```
@@ -64,7 +64,7 @@ import pygame
 import pygame.freetype
 ```
 
-Your code already imports Pygame, but modify your **import** statements to include the Freetype module:
+你的代码应该导入 Pygame ，尽管如此，修改你的 **import** 语句以包含 Freetype 模块：
 
 
 ```
@@ -74,34 +74,34 @@ import os
 import pygame.freetype
 ```
 
-### Using a font in Pygame
+### 在 Pygame 中使用一种字体
 
-From the description of the font modules, it's clear that Pygame uses a font, whether it's one you provide or a default font built into Pygame, to render text on the screen. Scroll through the **pygame.freetype** documentation to find the **pygame.freetype.Font** function:
+从字体模块的描述开始，使用一种字体是很明显是，不管它的你提供的或内置到 Pygame 的默认字体，我在屏幕上渲染字体。滚动 **pygame.freetype** 文档来找到 **pygame.freetype.Font** 函数：
 
 
 ```
 pygame.freetype.Font
-Create a new Font instance from a supported font file.
+从支持的字体文件中创建一个新的字体实例。
 
-Font(file, size=0, font_index=0, resolution=0, ucs4=False) -&gt; Font
+Font(file, size=0, font_index=0, resolution=0, ucs4=False) -> Font
 
 pygame.freetype.Font.name
-  Proper font name.
+  符合规则的字体名称。
 
 pygame.freetype.Font.path
-  Font file path
+  字体文件路径。
 
 pygame.freetype.Font.size
-  The default point size used in rendering
+  在渲染中使用的默认点大小
 ```
 
-This describes how to construct a font "object" in Pygame. It may not feel natural to you to think of a simple object onscreen as the combination of several code attributes, but it's very similar to how you built your hero and enemy sprites. Instead of an image file, you need a font file. Once you have a font file, you can create a font object in your code with the **pygame.freetype.Font** function and then use that object to render text on the screen.
+这描述了如何在 Pygame 中构建一个字体"对象"。你可能不太自然能把屏幕上的一个简单的对象考虑为一些代码属性的组合，但是它非常类似于你如何构建你的英雄和敌人精灵。你需要一个字体文件，而不是一个图像文件。在你有一个字体文件后，你可以在你的代码中使用 **pygame.freetype.Font** 函数来创建一个字体对象，然后使用该对象来在屏幕上渲染文本。
 
-Because not everyone in the world has the exact same fonts on their computers, it's important to bundle your chosen font with your game. To bundle a font, first create a new directory in your game folder, right along with the directory you created for your images. Call it **fonts**.
+因为并不是世界上的每个人的电脑上都有完全一样的字体，将你选择的字体与你的游戏绑定在一起是很重要的。为绑定一种字体，首先在你的游戏文件夹中创建一个新的目录，恰好跟你为图像而创建的文件目录在一起。 称其为 **fonts** 。
 
-Even though several fonts come with your computer, it's not legal to give those fonts away. It seems strange, but that's how the law works. If you want to ship a font with your game, you must find an open source or Creative Commons font that permits you to give the font away along with your game.
+虽然一些字体是随你的计算机操作系统一起提供，但是将这些字体给予其他人是非法的。这看起来很奇怪，但法律就是这样运作的。如果想与你的游戏一起随附一种字体，你必需找到一种开放源码或知识共享字体，它允许与你的游戏一起提供字体。
 
-Sites that specialize in free and legal fonts include:
+专门提供自由和合法字体的网站包括：
 
   * [Font Library][14]
   * [Font Squirrel][15]
@@ -109,20 +109,20 @@ Sites that specialize in free and legal fonts include:
 
 
 
-When you find a font that you like, download it. Extract the ZIP or [TAR][17] file and move the **.ttf** or **.otf** file into the **fonts** folder in your game project directory.
+当你找到你喜欢是字体后，下载下来。解压缩 ZIP 或 [TAR][17] 文件，并移动 **.ttf** 或 **.otf** 文件到你一下项目目录下的 **fonts** 文件夹中。
 
-You aren't installing the font on your computer. You're just placing it in your game's **fonts** folder so that Pygame can use it. You _can_ install the font on your computer if you want, but it's not necessary. The important thing is to have it in your game directory, so Pygame can "trace" it onto the screen.
+你没有安装字体到你的计算机上。你只是放置字体到你游戏的 **fonts** 文件夹中，以便 Pygame 可以使用它。如果你想，你 _可以_ 在你的计算机上安装字体，但是它是没有必要的。重要的是字体在你的游戏目录中，这样 Pygame 可以 "描绘" 字体到屏幕上。
 
-If the font file has a complicated name with spaces or special characters, just rename it. The filename is completely arbitrary, and the simpler it is, the easier it is for you to type into your code.
+如果字体有一个使用空格或特殊字符的复杂名称，只需要重新命名它。文件名称是完全任意的，并且对你来说，文件名称越简单，越任意将其键入你的代码中。
 
-Now tell Pygame about your font. From the documentation, you know that you'll get a font object in return when you provide at least the path to a font file to **pygame.freetype.Font** (the docs state explicitly that all remaining attributes are optional):
+现在告诉 Pygame 关于你的字体。从文档中，你知道，当你至少提供一种字体文件的路径到 **pygame.freetype.Font** 时，你将在返回中获得一个字体对象(文档讲明所有剩余的属性都是可选的)：
 
 
 ```
 `Font(file, size=0, font_index=0, resolution=0, ucs4=False) -> Font`
 ```
 
-Create a new variable called **myfont** to serve as your font in the game, and place the results of the **Font** function into that variable. This example uses the **amazdoom.ttf** font, but you can use whatever font you want. Place this code in your Setup section:
+创建一个称为 **myfont** 的新变量来充当你在游戏中字体，并放置 **Font** 函数的结果到这个变量中。这个示例使用 **amazdoom.ttf** 字体，但是你可以使用任何你想使用的字体。在你的 Setup 部分放置这些代码：
 
 
 ```
@@ -131,11 +131,11 @@ font_size = tx
 myfont = pygame.freetype.Font(font_path, font_size)
 ```
 
-### Displaying text in Pygame
+### 在 Pygame 中显示文本
 
-Now that you've created a font object, you need a function to draw the text you want onto the screen. This is the same principle you used to draw the background and platforms in your game.
+现在你已经创建一个字体对象，你需要一个函数来绘制你想绘制到屏幕上的文本。这和你在你的游戏中绘制背景和平台是相同的原理。
 
-First, create a function, and use the **myfont** object to create some text, setting the color to some RGB value. This must be a global function; it does not belong to any specific class:
+首先，创建一个函数，并使用 **myfont** 对象来创建一些文本，设置颜色到一些 RGB 值。这必需是一个全局函数；它不属于任何具体的类：
 
 
 ```
@@ -144,7 +144,7 @@ def stats(score,health):
     myfont.render_to(world, (4, 72), "Health:"+str(health), WHITE, None, size=64)
 ```
 
-Of course, you know by now that nothing happens in your game if it's not in the Main loop, so add a call to your **stats** function near the bottom of the file:
+当然，你此刻已经知道，如果它不在主循环中，你的游戏将不会发生任何事，所以在文件的底部房间添加一个调用到你的 **stats** 函数：
 
 
 ```
@@ -154,21 +154,21 @@ Of course, you know by now that nothing happens in your game if it's not in the 
     pygame.display.flip()
 ```
 
-Try your game.
+尝试你的游戏。
 
-When the player collects loot, the score goes up. When the player gets hit by an enemy, health goes down. Success!
+当玩家收集奖励品时，得分上升。当玩家被敌人击中时，健康值下降。成功！
 
 ![Keeping score in Pygame][18]
 
-There is one problem, though. When a player gets hit by an enemy, health goes _way_ down, and that's not fair. You have just discovered a non-fatal bug. Non-fatal bugs are those little problems in applications that don't keep the application from starting up or even from working (mostly), but they either don't make sense, or they annoy the user. Here's how to fix this one.
+不过，这里有一个问题。当一个玩家被敌人击中时，健康度会 _大量_ 下降，这是不公平的。你刚刚发现一个非致命的错误。非致命的错误是这些在应用程序中小问题，(通常)不要延迟应用程序启动，或者甚至停止工作,但是它们两者要么讲不通，要么惹恼用户。这里是如何解决这个问题的方法。
 
-### Fixing the health counter
+### 修复健康度计数
 
-The problem with the current health point system is that health is subtracted for every tick of the Pygame clock that the enemy is touching the player. That means that a slow-moving enemy can take a player down to –200 health in just one encounter, and that's not fair. You could, of course, just give your player a starting health score of 10,000 and not worry about it; that would work, and possibly no one would mind. But there is a better way.
+当前健康度点系统的问题是，敌人接触玩家时，Pygame 时钟的每一次滴答，健康度都会减少。这意味着一个缓慢移动的敌人可能在一次遭遇中将一个玩家降低健康度至 -200 ，这不公平。当然，你可以给你的玩家一个 10000 的起始健康度得分，而不用担心它；这可以工作，并且可能没有人会注意。但是这里有一个更好的方法。
 
-Currently, your code detects when a player and an enemy collide. The fix for the health-point problem is to detect _two_ separate events: when the player and enemy collide and, once they have collided, when they _stop_ colliding.
+当前，你的代码侦查出一个玩家和一个敌人碰撞的时候。健康度点问题的修复是侦查出 _两个_ 独立的事件：什么时候玩家和敌人碰撞，并且，在它们碰撞后，什么时候它们 _停止_ 碰撞。
 
-First, in your Player class, create a variable to represent when a player and enemy have collided:
+首先，在你的玩家类中，创建一个变量来显示一个玩家和敌人碰撞在一起的时间：
 
 
 ```
@@ -177,7 +177,7 @@ First, in your Player class, create a variable to represent when a player and en
         self.damage = 0
 ```
 
-In the update function of your Player class, _remove_ this block of code:
+在你的玩家类的更新函数中， _移除_ 这块代码块：
 
 
 ```
@@ -186,7 +186,7 @@ In the update function of your Player class, _remove_ this block of code:
             #print(self.health)
 ```
 
-And in its place, check for collision as long as the player is not currently being hit:
+并且在它的位置，只要玩家当前没有被击中，检查碰撞：
 
 
 ```
@@ -196,15 +196,15 @@ And in its place, check for collision as long as the player is not currently bei
                     self.damage = self.rect.colliderect(enemy)
 ```
 
-You might see similarities between the block you deleted and the one you just added. They're both doing the same job, but the new code is more complex. Most importantly, the new code runs only if the player is not _currently_ being hit. That means that this code runs once when a player and enemy collide and not constantly for as long as the collision happens, the way it used to.
+你可能会在你删除的语句块和你刚刚添加的语句块之间看到相似之处。它们都在做相同的工作，但是新的代码更复杂。最重要的是，只有当玩家 _当前_ 没有被击中时，新的代码运行。这意味着，当一个玩家和敌人碰撞时，这些代码运行一次，而不是像以前那样一直发生碰撞。
 
-The new code uses two new Pygame functions. The **self.rect.contains** function checks to see if an enemy is currently within the player's bounding box, and **self.rect.colliderect** sets your new **self.damage** variable to one when it is true, no matter how many times it is true.
+新的代码使用两个新的 Pygame 函数。**self.rect.contains** 函数检查一个敌人当前是否在玩家的边界框内，并且当它是 true 时， **self.rect.colliderect** 设置你的新的 **self.damage** 变量为 1 ，而不管它多少次是 true 。
 
-Now even three seconds of getting hit by an enemy still looks like one hit to Pygame.
+现在，即使被一个敌人击中 3 秒，对 Pygame 来说仍然看作一次击中。
 
-I discovered these functions by reading through Pygame's documentation. You don't have to read all the docs at once, and you don't have to read every word of each function. However, it's important to spend time with the documentation of a new library or module that you're using; otherwise, you run a high risk of reinventing the wheel. Don't spend an afternoon trying to hack together a solution to something that's already been solved by the framework you're using. Read the docs, find the functions, and benefit from the work of others!
+我通过通读 Pygame 的文档而发现这些函数。你没有必要一次阅读完全部的文档，并且你也没有必要阅读每个函数的每个单词。不过，花费时间在你正在使用的新的库或模块的文档上是很重要的；否则，你将面临重新发明轮子的高风险。不要花费一个下午的时间来尝试修改拼接一个解决方案到一些东西，这些东西已经被你正在使用的框架的所解决。阅读文档，知悉函数，并从别人的工作中获益！
 
-Finally, add another block of code to detect when the player and the enemy are no longer touching. Then and only then, subtract one point of health from the player.
+最后，添加另一个代码语句块来侦查出什么时候玩家和敌人不再接触。只要那时，从玩家减少一点健康度点。
 
 
 ```
@@ -215,19 +215,19 @@ Finally, add another block of code to detect when the player and the enemy are n
                 self.health -= 1  # subtract 1 hp
 ```
 
-Notice that this new code gets triggered _only_ if the player has been hit. That means this code doesn't run while your player is running around your game world exploring or collecting loot. It only runs when the **self.damage** variable gets activated.
+注意，_只有_ 当玩家被击中时，这个新的代码才会被触发。这意味着，在你的玩家在你的游戏世界正在探索或收集奖励时，这个代码不会运行。它仅当 **self.damage** 变量被激活时运行。
 
-When the code runs, it uses **self.rect.collidelist** to see whether or not the player is _still_ touching an enemy in your enemy list (**collidelist** returns negative one when it detects no collision). Once it is not touching an enemy, it's time to pay the **self.damage** debt: deactivate the **self.damage** variable by setting it back to zero and subtract one point of health.
+当代码运行时，它使用 **self.rect.collidelist** 来查看玩家是否 _仍然_ 接触在你敌人列表中的一个敌人(当其未侦查到碰撞时，**collidelist** 返回 -1 )。在它没有接触一个敌人时，是来偿还 **self.damage** 负债的时机：通过设置 **self.damage** 变量回到 0 来使其无效，并减少一点健康度点。
 
-Try your game now.
+现在尝试你的游戏。
 
-### Score reaction
+### 得分反应
 
-Now that you have a way for your player to know their score and health, you can make certain events occur when your player reaches certain milestones. For instance, maybe there's a special loot item that restores some health points. And maybe a player who reaches zero health points has to start back at the beginning of a level.
+现在，你有一个来让你的玩家知道它们分数和健康度的方法，当你的玩家达到某些里程碑时，你可以确保某些事件发生。例如，也许这里有一个特殊的恢复一些健康度点的奖励项目。也许一个到达 0 健康度点的玩家不得不从一个等级的起始位置重新开始。
 
-You can check for these events in your code and manipulate your game world accordingly. You already know how, so go skim the documentation for new tricks and try them out on your own.
+你可以在你的代码中检查这些事件，并且相应地控制你的游戏世界。你也知道怎么做，所以去浏览文档来寻找新的技巧，并且独立地尝试这些技巧。
 
-Here's all the code so far:
+这里是到目前为止所有的代码：
 
 
 ```
@@ -297,7 +297,7 @@ class Player(pygame.sprite.Sprite):
     def gravity(self):
         self.movey += 3.2 # how fast player falls
        
-        if self.rect.y &gt; worldy and self.movey &gt;= 0:
+        if self.rect.y > worldy and self.movey >= 0:
             self.movey = 0
             self.rect.y = worldy-ty
        
@@ -317,16 +317,16 @@ class Player(pygame.sprite.Sprite):
         self.rect.y = self.rect.y + self.movey
 
         # moving left
-        if self.movex &lt; 0:
+        if self.movex < 0:
             self.frame += 1
-            if self.frame &gt; ani*3:
+            if self.frame > ani*3:
                 self.frame = 0
             self.image = self.images[self.frame//ani]
 
         # moving right
-        if self.movex &gt; 0:
+        if self.movex > 0:
             self.frame += 1
-            if self.frame &gt; ani*3:
+            if self.frame > ani*3:
                 self.frame = 0
             self.image = self.images[(self.frame//ani)+4]
 
@@ -353,7 +353,7 @@ class Player(pygame.sprite.Sprite):
         for p in plat_hit_list:
             self.collide_delta = 0 # stop jumping
             self.movey = 0
-            if self.rect.y &gt; p.rect.y:
+            if self.rect.y > p.rect.y:
                 self.rect.y = p.rect.y+ty
             else:
                 self.rect.y = p.rect.y-ty
@@ -363,11 +363,11 @@ class Player(pygame.sprite.Sprite):
             self.movey = 0
             self.rect.y = worldy-ty-ty
             self.collide_delta = 0 # stop jumping
-            if self.rect.y &gt; g.rect.y:
+            if self.rect.y > g.rect.y:
                 self.health -=1
                 print(self.health)
                
-        if self.collide_delta &lt; 6 and self.jump_delta &lt; 6:
+        if self.collide_delta < 6 and self.jump_delta < 6:
             self.jump_delta = 6*2
             self.movey -= 33  # how high to jump
             self.collide_delta += 6
@@ -398,22 +398,22 @@ class Enemy(pygame.sprite.Sprite):
 
         self.movey += 3.2
        
-        if self.counter &gt;= 0 and self.counter &lt;= distance:
+        if self.counter >= 0 and self.counter <= distance:
             self.rect.x += speed
-        elif self.counter &gt;= distance and self.counter &lt;= distance*2:
+        elif self.counter >= distance and self.counter <= distance*2:
             self.rect.x -= speed
         else:
             self.counter = 0
        
         self.counter += 1
 
-        if not self.rect.y &gt;= worldy-ty-ty:
+        if not self.rect.y >= worldy-ty-ty:
             self.rect.y += self.movey
 
         plat_hit_list = pygame.sprite.spritecollide(self, plat_list, False)
         for p in plat_hit_list:
             self.movey = 0
-            if self.rect.y &gt; p.rect.y:
+            if self.rect.y > p.rect.y:
                 self.rect.y = p.rect.y+ty
             else:
                 self.rect.y = p.rect.y-ty
@@ -450,7 +450,7 @@ class Level():
         ground_list = pygame.sprite.Group()
         i=0
         if lvl == 1:
-            while i &lt; len(gloc):
+            while i < len(gloc):
                 ground = Platform(gloc[i],worldy-ty,tx,ty,'ground.png')
                 ground_list.add(ground)
                 i=i+1
@@ -469,9 +469,9 @@ class Level():
             ploc.append((300,worldy-ty-256,3))
             ploc.append((500,worldy-ty-128,4))
 
-            while i &lt; len(ploc):
+            while i < len(ploc):
                 j=0
-                while j &lt;= ploc[i][2]:
+                while j <= ploc[i][2]:
                     plat = Platform((ploc[i][0]+(j*tx)),ploc[i][1],tx,ty,'ground.png')
                     plat_list.add(plat)
                     j=j+1
@@ -528,7 +528,7 @@ font_size = tx
 myfont = pygame.freetype.Font(font_path, font_size)
    
 i=0
-while i &lt;= (worldx/tx)+tx:
+while i <= (worldx/tx)+tx:
     gloc.append(i*tx)
     i=i+1
 
@@ -570,7 +570,7 @@ while main == True:
                 main = False
 
     # scroll the world forward
-    if player.rect.x &gt;= forwardx:
+    if player.rect.x >= forwardx:
         scroll = player.rect.x - forwardx
         player.rect.x = forwardx
         for p in plat_list:
@@ -582,7 +582,7 @@ while main == True:
             l.rect.x -= scroll
                
     # scroll the world backward
-    if player.rect.x &lt;= backwardx:
+    if player.rect.x >= backwardx:
         scroll = backwardx - player.rect.x
         player.rect.x = backwardx
         for p in plat_list:
@@ -613,7 +613,7 @@ via: https://opensource.com/article/20/1/add-scorekeeping-your-python-game
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -638,3 +638,4 @@ via: https://opensource.com/article/20/1/add-scorekeeping-your-python-game
 [16]: https://www.theleagueofmoveabletype.com/
 [17]: https://opensource.com/article/17/7/how-unzip-targz-file
 [18]: https://opensource.com/sites/default/files/uploads/pygame-score.jpg (Keeping score in Pygame)
+[19]:https://opensource.com/article/18/7/put-platforms-python-game
