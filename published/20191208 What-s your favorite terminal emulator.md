@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11814-1.html)
 [#]: subject: (What's your favorite terminal emulator?)
 [#]: via: (https://opensource.com/article/19/12/favorite-terminal-emulator)
 [#]: author: (Opensource.com https://opensource.com/users/admin)
@@ -12,7 +12,7 @@
 
 > 我们让社区讲述他们在终端仿真器方面的经验。以下是我们收到的一些回复。
 
-![Terminal window with green text][1]
+![](https://img.linux.net.cn/data/attachment/album/202001/24/000846qsmpz7s7spig77qg.jpg)
 
 终端仿真器的偏好可以说明一个人的工作流程。无鼠标操作能力是否必须具备？你想要标签页还是窗口？对于终端仿真器你还有什么选择的原因？是否有酷的因素？欢迎参加调查或给我们留下评论，告诉我们你最喜欢的终端模拟器。你尝试过多少种终端仿真器呢？
 
@@ -63,7 +63,7 @@ via: https://opensource.com/article/19/12/favorite-terminal-emulator
 作者：[Opensource.com][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
