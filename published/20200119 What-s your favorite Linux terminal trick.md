@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11817-1.html)
 [#]: subject: (What's your favorite Linux terminal trick?)
 [#]: via: (https://opensource.com/article/20/1/linux-terminal-trick)
 [#]: author: (Opensource.com https://opensource.com/users/admin)
@@ -12,7 +12,7 @@
 
 > 告诉我们你最喜欢的终端技巧，无论是提高生产率的快捷方式还是有趣的彩蛋。
 
-![Terminal command prompt on orange background][1]
+![](https://img.linux.net.cn/data/attachment/album/202001/25/135858accxc70tfxuifxx1.jpg)
 
 新年伊始始终是评估提高效率的新方法的好时机。许多人尝试使用新的生产力工具，或者想找出如何优化其最常用的流程。终端是一个需要评估的领域，尤其是在开源世界中，有无数种方法可以通过快捷键和命令使终端上的生活更加高效（又有趣！）。
 
@@ -46,7 +46,7 @@ via: https://opensource.com/article/20/1/linux-terminal-trick
 作者：[Opensource.com][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
