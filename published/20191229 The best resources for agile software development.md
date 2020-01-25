@@ -1,22 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (algzjh)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11816-1.html)
 [#]: subject: (The best resources for agile software development)
 [#]: via: (https://opensource.com/article/19/12/agile-resources)
 [#]: author: (Leigh Griffin https://opensource.com/users/lgriffin)
 
 敏捷软件开发的最佳资源
 ======
-请阅读我们的热门文章，这些文章着重讨论了敏捷的过去、现在和未来。
-![Women programming][1]
 
-对于 Opensource.com 上的敏捷主题来说，今年是非常棒的一年。随着 2019 年的临近，我们回顾了我们读者所读的与敏捷相关的热门文章。
+> 请阅读我们的热门文章，这些文章着重讨论了敏捷的过去、现在和未来。
+
+![](https://img.linux.net.cn/data/attachment/album/202001/25/121308jrs4speu2y09u09e.jpg)
+
+对于 Opensource.com 上的敏捷主题来说，2019 年是非常棒的一年。随着 2020 年的到来，我们回顾了我们读者所读的与敏捷相关的热门文章。
 
 ### 小规模 Scrum 指南
 
-Opensource.com 关于[小规模 Scrum][2] 的指南（我曾参与合著）由六部分组成，为小型团队提供了关于如何将敏捷引入到他们的工作中的建议。在官方的 [Scrum 指南][3] 的概述中，传统的 Scrum 框架推荐至少三个人来实现，以充分发挥其潜力。但是，它并没有为一两个人的团队如何成功遵循 Scrum 提供指导。我们的六部分系列旨在规范化小规模的 Scrum，并检验我们在现实世界中使用它的经验。该系列受到了读者的热烈欢迎，以至于这六篇文章占据了前 10 名文章的 60%。因此，如果你还没有阅读的话，一定要从我们的[小规模 Scrum 介绍页面][2]下载。
+Opensource.com 关于[小规模 Scrum][2] 的指南（我曾参与合著）由六部分组成，为小型团队提供了关于如何将敏捷引入到他们的工作中的建议。在官方的 [Scrum 指南][3]的概述中，传统的 Scrum 框架推荐至少三个人来实现，以充分发挥其潜力。但是，它并没有为一两个人的团队如何成功遵循 Scrum 提供指导。我们的六部分系列旨在规范化小规模的 Scrum，并检验我们在现实世界中使用它的经验。该系列受到了读者的热烈欢迎，以至于这六篇文章占据了前 10 名文章的 60%。因此，如果你还没有阅读的话，一定要从我们的[小规模 Scrum 介绍页面][2]下载。
 
 ### 全面的敏捷项目管理指南
 
@@ -24,7 +26,7 @@ Opensource.com 关于[小规模 Scrum][2] 的指南（我曾参与合著）由�
 
 ### 成为出色的敏捷开发人员的 4 个步骤
 
-DevOps 文化已经出现在许多现代软件团队中，这些团队采用了敏捷软件开发原则，利用了最先进的工具和自动化技术。但是，这种机械的敏捷方法并不能保证开发人员在日常工作中遵循敏捷实践。Daniel Oh 在[《成为出色的敏捷开发人员的 4 个步骤》][5]中给出了一些很棒的技巧，通过关注设计思维，使用可预测的方法，以质量为中心并不断学习和探索来提高你的敏捷性。用你的敏捷工具补充这些方法将形成非常灵活和强大的敏捷开发人员。
+DevOps 文化已经出现在许多现代软件团队中，这些团队采用了敏捷软件开发原则，利用了最先进的工具和自动化技术。但是，这种机械的敏捷方法并不能保证开发人员在日常工作中遵循敏捷实践。Daniel Oh 在[成为出色的敏捷开发人员的 4 个步骤][5]中给出了一些很棒的技巧，通过关注设计思维，使用可预测的方法，以质量为中心并不断学习和探索来提高你的敏捷性。用你的敏捷工具补充这些方法将形成非常灵活和强大的敏捷开发人员。
 
 ### Scrum 和 kanban：哪种敏捷框架更好？
 
@@ -38,8 +40,6 @@ DevOps 文化已经出现在许多现代软件团队中，这些团队采用了�
 
 今年，Opensource.com 的作者围绕敏捷的过去、现在以及未来可能会是什么样子进行了大量的讨论。感谢他们所有人，请一定于 2020 年在这里分享[你自己的敏捷故事][9]。
 
-回顾一下 Opensource.com 在 2014 年和 2015 年报道的工具，以及新版本的更新，……
-
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/19/12/agile-resources
@@ -47,7 +47,7 @@ via: https://opensource.com/article/19/12/agile-resources
 作者：[Leigh Griffin][a]
 选题：[lujun9972][b]
 译者：[algzjh](https://github.com/algzjh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
