@@ -7,51 +7,40 @@
 [#]: via: (https://www.networkworld.com/article/3514607/setting-up-passwordless-linux-logins-using-publicprivate-keys.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Setting up passwordless Linux logins using public/private keys
+使用公钥/私钥对设定免密的 Linux 登录方式
 ======
-Using a set of public/private keys to allow you to log into a remote Linux system or run commands using ssh without a password can be very convenient, but setup is just tad tricky. Here's how and a script to help.
-Ivanastar / Getty Images
+使用一组公钥/私钥对让你不需要密码登录到远程 Linux 系统或使用 ssh 运行命令，这会非常方便，但是设置过程有点复杂。下面是帮助你的方法和脚本。
 
-Setting up an account on a [Linux][1] system that allows you to log in or run commands remotely without a password isn’t all that hard, but there are some tedious details that you need to get right if you want it to work. In this post, we’re going to run through the process and then show a script that can help manage the details.
+在 [Linux][1] 系统上设置一个允许你无需密码即可远程登录或运行命令的帐户并不难，但是要使它正常工作，你还需要掌握一些繁琐的细节。在本文，我们将完成整个过程，然后给出一个可以帮助处理琐碎细节的脚本。
 
-Once set up, passwordless access is especially useful if you want to run ssh commands within a script, especially one that you might want to schedule to run automatically.
+设置好之后，如果希望在脚本中运行 ssh 命令，尤其是希望配置自动运行的命令，那么免密访问特别有用。
 
-It’s important to note that you do not have to be using the same user account on both systems. In fact, you can use your public key for a number of accounts on a system or for different accounts on multiple systems.
+需要注意的是，你不需要在两个系统上使用相同的用户帐户。实际上，你可以把公用密钥用于系统上的多个帐户或多个系统上的不同帐户。
 
-[][2]
+设置方法如下。
 
-BrandPost Sponsored by HPE
+### which system to start on?在哪个系统上启动？
 
-[Take the Intelligent Route with Consumption-Based Storage][2]
+首先，你需要从要发出命令的系统上着手。那就是你用来创建 ssh 密钥的系统。你还需要访问远程系统上的帐户并在其上运行这些命令。
 
-Combine the agility and economics of HPE storage with HPE GreenLake and run your IT department with efficiency.
+为了使角色清晰明了，我们将场景中的第一个系统称为“boss”，因为它将发出要在另一个系统上运行的命令。
 
-Here’s how to set this up.
-
-### Which system to start on?
-
-First, you need to start on the system from which you want to issue commands. That's the system that you will use to create the ssh keys.  You also need to have access to the account on the remote system on which those commands will be run.
-
-To keep the roles clear, we’ll call that first system in our scenario the “boss” since it will issue commands to be run on the other system.
-
-Thus, the command prompt:
-
-[RELATED: Linux hardening: a 15-step checklist for a secure Linux server][3]
+因此，命令提示符如下：
 
 ```
 boss$
 ```
 
-If you do not already have a public/private key pair set up for your account on the boss system, create one using a command like that shown below. Note that you can choose between the various encryption algorithms. (Either RSA or DSA is generally used.) Note that to access the system without typing a password, you will need to enter no password for the two prompts shown in the dialog below.
+如果您还没有在 boss 系统上为你的帐户设置公钥/私钥对，请使用如下所示的命令创建一个密钥对。注意，你可以在各种加密算法之间进行选择。（一般使用RSA或DSA。）注意，要在不输入密码的情况下访问系统，您需要在下面的对话框中输入两个提示符的密码。
 
-If you already have a public/private key pair associated with this account, skip this step.
+如果你已经有一个与此帐户关联的公钥/私钥对，请跳过此步骤。
 
 ```
 boss$ ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/myself/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):            <== just press the enter key
-Enter same passphrase again:                           <== just press the enter key
+Enter passphrase (empty for no passphrase):            <== 按下回车键即可
+Enter same passphrase again:                           <== 按下回车键即可
 Your identification has been saved in /home/myself/.ssh/id_rsa.
 Your public key has been saved in /home/myself/.ssh/id_rsa.pub.
 The key fingerprint is:
@@ -70,18 +59,18 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-The command shown above will create both a public and a private key. What one encrypts, the other will decrypt. So, the relationship between these keys is critical and the private key should **never** be shared. Instead, it should stay in your .ssh folder on the boss system.
+上面显示的命令将创建公钥和私钥。其中公钥用于加密，私钥用于解密。因此，这些密钥之间的关系是关键的，私有密钥**绝不**应该被共享。相反，它应该保存在 boss 系统的 .ssh 文件夹中。
 
-Notice that your public and private keys, on creation, will be saved in your .ssh folder.
+注意，在创建时，你的公钥和私钥将会保存在 .ssh 文件夹中。
 
-The next step is to copy the **public** key to the system you want to access from the boss system without using a password. You can use **scp** to do this though, at this point, you’ll still need to enter your password. In this example, that system is called “target”.
+下一步是将**公钥**复制到你希望从 boss 系统免密访问的系统。你可以使用 **scp** 命令来完成此操作，但此时你仍然需要输入密码。在本例中，该系统称为“target”。
 
 ```
 boss$ scp .ssh/id_rsa.pub myacct@target:/home/myaccount
 myacct@target's password:
 ```
 
-On the target system (the one on which the commands will be run), you will need to install your public key. If you don’t have a .ssh directory (e.g., if you’ve never used ssh on that system), running a command like this will set one up for you:
+你需要安装公钥在 target 系统（将运行命令的系统）上。如果你没有 .ssh 目录（例如，你从未在该系统上使用过 ssh），运行这样的命令将为你设置一个目录：
 
 ```
 target$ ssh localhost date
@@ -92,33 +81,33 @@ drwxr-xr-x 6 myacct myacct 4096 Jan 19 11:49 ..
 -rw-r--r-- 1 myacct myacct  222 Jan 19 11:48 known_hosts
 ```
 
-Still on the target system, you then need to add the public key you transferred from the “boss” system to your .ssh/authorized_keys file. The command below will add the key to the end of the file if it exists already or create the file and add the key if the file does not exist.
+仍然在目标系统上，你需要将从“boss”系统传输的公钥添加到 .ssh/authorized_keys 文件中。如果密钥已经存在，使用下面的命令将把它添加到文件的末尾；如果文件不存在，则创建文件并添加密钥。
 
 ```
 target$ cat id_rsa.pub >> .ssh/authorized_keys
 ```
 
-Next, you need to make sure that the permissions on your authorized_keys file are set to 600. If not, run the **chmod 600 .ssh/authorized_keys** command.
+下一步，你需要确保你的 authorized_keys 文件权限为 600。如果还不是，执行命令 ```chmod 600 .ssh/authorized_keys```。
 
 ```
 target$ ls -l authorized_keys
 -rw------- 1 myself myself 569 Jan 19 12:10 authorized_keys
 ```
 
-Also check to be sure that permissions on your .ssh directory on the target system are set to 700. Fix the permissions with **chmod 700 .ssh** if needed.
+还要检查目标系统上 .ssh 目录的权限是否设置为 700。如果需要，执行 ```chmod 700 .ssh``` 命令修改权限。
 
 ```
 target$ ls -ld .ssh
 drwx------ 2 myacct myacct 4096 Jan 14 15:54 .ssh
 ```
 
-At this point, you should be able to run a command remotely from your boss system to your target system without entering a password. This should work unless the target user account on the target system has an old public key for the same user and host as the one you’re trying to connect from. If so, you should be able to remove the earlier (and conflicting) entry.
+此时，你应该能够从 boss 系统远程免密运行命令到目标系统。除非目标系统上的目标用户帐户拥有与你试图连接的用户和主机相同的旧公钥，否则这应该可以工作。如果是这样，你应该删除早期的（并冲突的）条目。
 
-### Using a script
+### 使用脚本
 
-Using a script can make some work a lot easier. In the example script below, however, the one annoying problem that you’ll run into is that you’ll have to enter the target user’s password numerous times before the password-free access is configured. One option would be to break the script into two parts – the commands that need to be run on the boss system and the commands that need to be run on the target system.
+使用脚本可以使某些工作变得更加容易。但是，在下面的示例脚本中，你会遇到的一个烦人的问题是，在配置免密访问权限之前，你必须多次输入目标用户的密码。一种选择是将脚本分为两部分——需要在 boss 系统上运行的命令和需要在 target 系统上运行的命令。
 
-Here’s the do-it-all version of the script:
+这是“一步到位”版本的脚本：
 
 ```
 #!/bin/bash
@@ -162,7 +151,7 @@ echo testing -- if no password is requested, you are all set
 ssh $user@$REM /bin/hostname
 ```
 
-The script has been configured to tell you what it is doing each time you will have to enter a password. Interaction will look something like this:
+脚本已经配置为在你每次必须输入密码时告诉你它正在做什么。交互看起来是这样的:
 
 ```
 $ ./rem_login_setup
@@ -181,16 +170,14 @@ testing -- if no password is requested, you are all set
 fruitfly
 ```
 
-After the scenario shown above, you'd be able to log into lola's account on fruitfly like this:
+在上面的场景之后，你就可以像这样登录到 lola 的帐户：
 
 ```
 $ ssh lola@fruitfly
 [lola@fruitfly ~]$
 ```
 
-Once passwordless login is set up, you’ll both be able to log in from the boss system to the target system without a password and run arbitrary ssh commands. Running without a password in this way does not imply that your account is less secure. However, protecting your password on the boss system could become considerably more important depending on the nature of the target.
-
-Join the Network World communities on [Facebook][4] and [LinkedIn][5] to comment on topics that are top of mind.
+一旦设置了免密登录，你就可以不需要键入密码从 boss 系统登录到 target 系统，并且运行任意的 ssh 命令。以这种免密的方式运行并不意味着你的帐户不安全。然而，根据target 系统的性质，保护您在 boss 系统上的密码可能变得更加重要。
 
 --------------------------------------------------------------------------------
 
