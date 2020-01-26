@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (laingke)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -198,7 +198,7 @@ via: https://www.networkworld.com/article/3514607/setting-up-passwordless-linux-
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[laingke](https://github.com/laingke)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
