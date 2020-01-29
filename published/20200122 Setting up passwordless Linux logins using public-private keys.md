@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (laingke)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11830-1.html)
 [#]: subject: (Setting up passwordless Linux logins using public/private keys)
 [#]: via: (https://www.networkworld.com/article/3514607/setting-up-passwordless-linux-logins-using-publicprivate-keys.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -12,7 +12,7 @@
 
 > 使用一组公钥/私钥对让你不需要密码登录到远程 Linux 系统或使用 ssh 运行命令，这会非常方便，但是设置过程有点复杂。下面是帮助你的方法和脚本。
 
-![](https://images.idgesg.net/images/article/2020/01/cso_lock_question_mark-shaped_keyhole_amid_binary_network_circuits_digital_transformation_by_ivanastar_getty_images_1200x800-100826595-large.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202001/29/141343ldps4muy4kp64k4l.jpg)
 
 在 [Linux][1] 系统上设置一个允许你无需密码即可远程登录或运行命令的帐户并不难，但是要使它正常工作，你还需要掌握一些繁琐的细节。在本文，我们将完成整个过程，然后给出一个可以帮助处理琐碎细节的脚本。
 
