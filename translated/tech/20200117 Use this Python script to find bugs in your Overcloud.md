@@ -41,7 +41,6 @@ LogTool 可以即时检测两种日志文件：标准和非标准。在标准文
 
   * **统计信息 - 每个非标准日志文件在任意时间的唯一消息:** 此部分包含非标准日志文件中的唯一消息。遗憾的是，LogTool 无法像标准日志文件那样的处理方式处理这些日志文件。因此，在你提取“特定时间”的日志信息时会被忽略，你会看到过去创建的所有唯一的错误/警告消息。因此，首先，向下滚动到结果文件底部的目录并查看其部分-使用目录中的行索引跳到相关部分，其中第3、4和5行的信息最重要。
 
-
 #### 2\. 从 Overcloud 节点下载所有日志
 
 所有 Overcloud 节点的日志将被压缩并下载到 Undercloud 主机上的本地目录。
@@ -169,6 +168,7 @@ via: https://opensource.com/article/20/1/logtool-root-cause-identification
 选题：[lujun9972][b]
 译者：[Morisun029](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
+
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
