@@ -1,4 +1,4 @@
-chenmu-kk is translating.
+chenmu-kk is translating .
 How the four components of a distributed tracing system work together
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/touch-tracing.jpg?itok=rOmsY-nU)
