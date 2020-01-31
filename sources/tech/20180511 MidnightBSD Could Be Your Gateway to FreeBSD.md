@@ -1,3 +1,4 @@
+Translating by robsean
 MidnightBSD Could Be Your Gateway to FreeBSD
 ======
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/midnight_4_0.jpg?itok=T2gpLVui)
