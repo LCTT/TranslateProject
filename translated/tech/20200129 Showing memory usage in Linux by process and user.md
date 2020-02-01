@@ -7,26 +7,26 @@
 [#]: via: (https://www.networkworld.com/article/3516319/showing-memory-usage-in-linux-by-process-and-user.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Showing memory usage in Linux by process and user
+按照进程和用户查看Linux系统中的内存使用情况
 ======
-There are several commands for checking up on memory usage in a Linux system, and here are some of the better ones.
+有一些命令可以用来检查 Linux 系统中的内存使用情况，下面是一些更好的命令
 [Fancycrave][1] [(CC0)][2]
 
-There are a lot of tools for looking at memory usage on Linux systems. Some are commonly used commands like **free** and **ps** while others are tools like **top** that allow you to display system performance stats in various ways. In this post, we’ll look at some commands that can be most helpful in identifying the users and processes that are using the most memory.
+有许多工具可以查看 Linux 系统中的内存使用情况。一些命令被广泛使用，比如 **free**, **ps** 。而另一些命令允许通过多种方式展示系统的性能统计信息，比如 **top** 。在这篇文章中，我们将介绍一些命令以帮助你确定当前占用着最多内存资源的用户或者进程。
 
-Here are some that address memory usage by process.
+下面是一些按照进程查看内存使用情况的命令：
 
-### Using top
+### 使用 top
 
-One of the best commands for looking at memory usage is **top**. One extremely easy way to see what processes are using the most memory is to start **top** and then press **shift+m** to switch the order of the processes shown to rank them by the percentage of memory each is using. Once you’ve entered **shift+m**, your top output should reorder the task entries to look something like this:
+**top** 是最好的查看内存使用情况的命令之一。为了查看哪个进程使用着最多的内存，一个简单的办法就是启动 **top** ,然后按下 **shift+m** ， 这样便可以查看按照内存占用百分比从高到底排列的进程。当你按下了 **shift+m** ，你的 top 应该会得到类似于下面这样的输出结果：
 
 [][3]
 
-BrandPost Sponsored by HPE
+HPE 赞助的 BrandPost
 
 [Take the Intelligent Route with Consumption-Based Storage][3]
 
-Combine the agility and economics of HPE storage with HPE GreenLake and run your IT department with efficiency.
+将 HPE 存储的易用性和经济性与 HPE GreenLake 结合起来，能帮助的你的 IT 部门更加高效
 
 ```
 $top
@@ -54,11 +54,11 @@ MiB Swap:   2048.0 total,   2045.7 free,      2.2 used.   3053.5 avail Mem
  2373 root      20   0  150408  57000   9924 S   0.3   0.9  10:15.35 nessusd
 ```
 
-Notice the **%MEM** ranking. The list will be limited by your window size, but the most significant processes with respect to memory usage will show up at the top of the process list.
+注意 **%MEM** 排序。 列表的大小取决于你的窗口大小，但是占据着最多的内存的进程将会显示在列表的顶端。
 
-### Using ps
+### 使用 ps
 
-The **ps** command includes a column that displays memory usage for each process. To get the most useful display for viewing the top memory users, however, you can pass the **ps** output from this command to the **sort** command. Here’s an example that provides a very useful display:
+**ps** 命令中的一列用来展示每个进程的内存使用情况。为了展示和查看哪个进程使用着最多的内存，你可以将 **ps** 命令的结果传递给 **sort** 命令。下面是一个有用的演示：
 
 ```
 $ ps aux | sort -rnk 4 | head -5
@@ -69,7 +69,7 @@ nemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 /usr/lib/firefo
 nemo      2389 39.5  3.8 1774412 236116 pts/1  Sl+  09:15  12:21 vlc videos/edge_computing.mp4
 ```
 
-In the example above (truncated for this post), sort is being used with the **-r** (reverse), the **-n** (numeric) and the **-k** (key) options which are telling the command to sort the output in reverse numeric order based on the fourth column (memory usage) in the output from **ps**. If we first display the heading for the **ps** output, this is a little easier to see.
+在上面的例子中（文中已截断），sort 命令使用了 **-r** 选项（反转），**-n** 选项（数字值），**-k** 选项（关键字），使 sort 命令对 ps 命令的结果按照第四列（内存使用情况）中的数字逆序进行排列并输出。如果我们首先显示 **ps** 命令的标题，那么将会便于查看。
 
 ```
 $ ps aux | head -1; ps aux | sort -rnk 4 | head -5
@@ -81,19 +81,19 @@ nemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 /usr/lib/firefo
 nemo      2389 39.5  3.8 1774412 236116 pts/1  Sl+  09:15  12:21 vlc videos/edge_computing.mp4
 ```
 
-If you like this command, you can set it up as an alias with a command like the one below. Don't forget to add it to your ~/.bashrc file if you want to make it permanent.
+如果你喜欢这个命令，你可以用下面的命令为他指定一个别名，如果你想一直使用它，不要忘记把该命令添加到你的 ~/.bashrc 文件中。
 
 ```
 $ alias mem-by-proc="ps aux | head -1; ps aux | sort -rnk 4"
 ```
 
-Here are some commands that reveal memory usage by user.
+下面是一些根据用户查看内存使用情况的命令：
 
-### Using top
+### 使用 top
 
-Examining memory usage by user is somewhat more complicated because you have to find a way to group all of a user’s processes into a single memory-usage total.
+按照用户检查内存使用情况会更复杂一些，因为你需要找到一种方法把用户所拥有的所有进程统计为单一的内存使用量。
 
-If you want to home in on a single user, **top** can be used much in the same way that it was used above. Just add a username with the -U option as shown below and press the **shift+m** keys to order by memory usage:
+如果你只想查看单个用户进程使用情况， **top** 命令可以采用与上文中同样的方法进行使用。只需要添加 -U 选项并在其后面指定你要查看的用户名，然后按下 **shift+m** 便可以按照内存使用有多到少进行查看。
 
 ```
 $ top -U nemo
@@ -115,9 +115,9 @@ MiB Swap:   2048.0 total,   2042.7 free,      5.2 used.   2812.0 avail Mem
 32533 nemo      20   0 2389088 102532  76808 S   0.0   1.7   0:01.79 WebExtensions
 ```
 
-### Using ps
+### 使用 ps
 
-You can also use a **ps** command to rank an individual user's processes by memory usage. In this example, we do this by selecting a single user's processes with a **grep** command:
+你依旧可以使用 **ps** 命令通过内存使用情况来排列某个用户的进程。在这个例子中，我们将使用 **grep** 命令来筛选得到某个用户的所有进程。
 
 ```
 $ ps aux | head -1; ps aux | grep ^nemo| sort -rnk 4 | more
@@ -129,10 +129,9 @@ nemo       342 10.8  7.0 2941056 426484 ?      Rl   08:59  10:45 /usr/lib/firefo
 nemo      2389 16.9  3.8 1762960 234644 pts/1  Sl+  09:15  13:57 vlc videos/edge_computing.mp4
 nemo     29527  3.9  3.7 2736924 227448 ?      Ssl  08:50   4:11 /usr/bin/gnome-shell
 ```
+### 使用 ps 和其他命令的搭配
 
-### Using ps along with other commands
-
-What gets complicated is when you want to compare users' memory usages with each other. In that case, creating a by-user total and ranking them is a good technique, but it requires a little more work and uses a number of commands. In the script below, we get a list of users with the **ps aux | grep -v COMMAND | awk '{print $1}' | sort -u** command. This includes system users like **syslog**. We then collect stats for each user and total the memory usage stat for each task with **awk**. As a last step, we display each user's memory usage sum in numerical (largest first) order.
+如果你想比较某个用户与其他用户内存使用情况将会比较复杂。在这种情况中，创建并排序一个按照用户总的内存使用量是一个不错的技术，但是它需要做一些更多的工作，并涉及到许多命令。在下面的脚本中，我们使用 **ps aux | grep -v COMMAND | awk '{print $1}' | sort -u** 命令得到了用户列表。其中包含了系统用户比如 **syslog** 。我们对每个任务使用 **awk** 命令以收集每个用户总的内存使用情况。在最后一步中，我们展示每个用户总的内存使用量（按照从大到小的顺序）。
 
 ```
 #!/bin/bash
@@ -152,7 +151,7 @@ done
 echo -e $stats | grep -v ^$ | sort -rn | head
 ```
 
-Output from this script might look like this:
+这个脚本的输出可能如下：
 
 ```
 $ ./show_user_mem_usage
@@ -170,9 +169,9 @@ $ ./show_user_mem_usage
 0 rtkit
 ```
 
-There are a lot of ways to report on memory usage on Linux. Focusing on which processes and users are consuming the most memory can benefit from a few carefully crafted tools and commands.
+在 Linux 有许多方法可以报告内存使用情况。可以通过一些用心设计的工具和命令，来查看并获得某个进程或者用户占用着最多的内存。
 
-Join the Network World communities on [Facebook][4] and [LinkedIn][5] to comment on topics that are top of mind.
+在 [Facebook][4] and [LinkedIn][5] 中加入 Network World 社区，来评论热门话题。
 
 --------------------------------------------------------------------------------
 
@@ -180,7 +179,7 @@ via: https://www.networkworld.com/article/3516319/showing-memory-usage-in-linux-
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[mengxinayan](https://github.com/mengxinayan)
+译者：[萌新阿岩](https://github.com/mengxinayan)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
