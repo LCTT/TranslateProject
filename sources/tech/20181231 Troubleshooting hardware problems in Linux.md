@@ -7,20 +7,22 @@
 [#]: via: (https://opensource.com/article/18/12/troubleshooting-hardware-problems-linux)
 [#]: author: (Daniel Oh https://opensource.com/users/daniel-oh)
 
-Troubleshooting hardware problems in Linux
+Linux 硬件故障排除指南
 ======
-Learn what's causing your Linux hardware to malfunction so you can get it back up and running quickly.
+
+> 了解是什么原因导致你的 Linux 硬件发生故障，以便你可以将其恢复并快速运行。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003499_01_other11x_cc.png?itok=I_kCDYj0)
 
-[Linux servers][1] run mission-critical business applications in many different types of infrastructures including physical machines, virtualization, private cloud, public cloud, and hybrid cloud. It's important for Linux sysadmins to understand how to manage Linux hardware infrastructure—including software-defined functionalities related to [networking][2], storage, Linux containers, and multiple tools on Linux servers.
+[Linux 服务器][1]在物理机、虚拟化、私有云、公共云和混合云等许多不同种类的基础设施中运行着关键的业务应用程序。对于 Linux 系统管理员来说，了解如何管理 Linux 硬件基础设施（包括与 [网络][2]、存储、Linux 容器相关的软件定义的功能）和 Linux 服务器上的多种工具非常重要。
 
-It can take some time to troubleshoot and solve hardware-related issues on Linux. Even highly experienced sysadmins sometimes spend hours working to solve mysterious hardware and software discrepancies.
+在 Linux 上进行故障排除和解决与硬件相关的问题可能需要一些时间。即使是经验丰富的系统管理员，有时也会花费数小时来解决神秘的硬件和软件差异。
 
-The following tips should make it quicker and easier to troubleshoot hardware in Linux. Many different things can cause problems with Linux hardware; before you start trying to diagnose them, it's smart to learn about the most common issues and where you're most likely to find them.
+以下提示可以使你更快、更轻松地对 Linux 中的硬件进行故障排除。许多不同的事情都可能导致 Linux 硬件出现问题。在开始诊断它们之前，明智的做法是了解最常见的问题以及最有可能找到问题的地方。
 
-### Quick-diagnosing devices, modules, and drivers
+### 快速诊断设备、模块和驱动程序
 
-The first step in troubleshooting usually is to display a list of the hardware installed on your Linux server. You can obtain detailed information on the hardware using **ls** commands such as **[lspci][3]** , **[lsblk][4]** , **[lscpu][5]** , and **[lsscsi][6]**. For example, here is output of the **lsblk** command:
+故障排除的第一步通常是显示 Linux 服务器上安装的硬件的列表。你可以使用诸如 [lspci][3]、[lsblk][4]、[lscpu][5] 和 [lsscsi][6] 之类的列出命令获取有关硬件的详细信息。例如，这是 `lsblk` 命令的输出：
 
 ```
 # lsblk
@@ -32,7 +34,7 @@ xvdb    202:16   0  20G  0 disk
 └─xvdb1 202:17   0  20G  0 part
 ```
 
-If the **ls** commands don't reveal any errors, use init processes (e.g., **systemd** ) to see how the Linux server is working. **systemd** is the most popular init process for bootstrapping user spaces and controlling multiple system processes. For example, here is output of the **systemctl status** command:
+如果这些列出命令没有显示任何错误，请使用初始化系统（例如 systemd）查看 Linux 服务器的工作方式。 systemd 是最流行的初始化系统，用于启动用户空间并控制多个系统进程。例如，这是 `systemctl status` 命令的输出：
 
 ```
 # systemctl status
@@ -52,9 +54,9 @@ If the **ls** commands don't reveal any errors, use init processes (e.g., **syst
 ....
 ```
 
-### Digging into multiple loggings
+### 深入到多个日志当中
 
-**Dmesg** allows you to figure out errors and warnings in the kernel's latest messages. For example, here is output of the **dmesg | more** command:
+使用 `dmesg` 可以找出内核最新消息中的错误和警告。例如，这是 `dmesg | more`  命令的输出：
 
 ```
 # dmesg | more
@@ -73,7 +75,7 @@ If the **ls** commands don't reveal any errors, use init processes (e.g., **syst
 ....
 ```
 
-You can also look at all Linux system logs in the **/var/log/messages** file, which is where you'll find errors related to specific issues. It's worthwhile to monitor the messages via the **tail** command in real time when you make modifications to your hardware, such as mounting an extra disk or adding an Ethernet network interface. For example, here is output of the **tail -f /var/log/messages** command:
+你还可以在 `/var/log/messages` 文件中查看所有 Linux 系统日志，在该文件中你可以找到与特定问题相关的错误。当你对硬件进行修改（例如安装额外的磁盘或添加以太网网卡）时，通过 `tail` 命令实时监视消息是值得的。例如，这是 `tail -f /var/log/messages` 命令的输出：
 
 ```
 # tail -f /var/log/messages
@@ -89,9 +91,9 @@ Dec  1 13:21:33 bastion dnsmasq[30201]: using nameserver 127.0.0.1#53 for domai
 Dec  1 13:21:33 bastion dnsmasq[30201]: using nameserver 127.0.0.1#53 for domain cluster.local
 ```
 
-### Analyzing networking functions
+### 分析网络功能
 
-You may have hundreds of thousands of cloud-native applications to serve business services in a complex networking environment; these may include virtualization, multiple cloud, and hybrid cloud. This means you should analyze whether networking connectivity is working correctly as part of your troubleshooting. Useful commands to figure out networking functions in the Linux server include **ip addr** , **traceroute** , **nslookup** , **dig** , and **ping** , among others. For example, here is output of the **ip addr show** command:
+你可能有成千上万的云原生应用程序在一个复杂的网络环境中为业务提供服务。其中可能包括虚拟化、多云和混合云。这意味着，作为故障排除的一部分，你应该分析网络连接是否正常工作。弄清 Linux 服务器中网络功能的有用命令包括：`ip addr`、`traceroute`、`nslookup`、`dig` 和 `ping` 等。例如，这是 `ip addr show` 命令的输出：
 
 ```
 # ip addr show
@@ -116,9 +118,9 @@ You may have hundreds of thousands of cloud-native applications to serve busines
 ....
 ```
 
-### In conclusion
+### 总结
 
-Troubleshooting Linux hardware requires considerable knowledge, including how to use powerful command-line tools and figure out system loggings. You should also know how to diagnose the kernel space, which is where you can find the root cause of many hardware problems. Keep in mind that hardware issues in Linux may come from many different sources, including devices, modules, drivers, BIOS, networking, and even plain old hardware malfunctions.
+对 Linux 硬件进行故障排除需要大量的知识，包括如何使用功能强大的命令行工具以及找出系统日志记录。 你还应该知道如何诊断内核空间，在那里你可以找到许多硬件问题的根本原因。请记住，Linux 中的硬件问题可能来自许多不同的来源，包括设备、模块、驱动程序、BIOS、网络，甚至是普通的旧硬件故障。
 
 --------------------------------------------------------------------------------
 
@@ -126,7 +128,7 @@ via: https://opensource.com/article/18/12/troubleshooting-hardware-problems-linu
 
 作者：[Daniel Oh][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
