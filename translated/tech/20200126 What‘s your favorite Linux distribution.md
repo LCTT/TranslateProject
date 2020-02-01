@@ -7,33 +7,33 @@
 [#]: via: (https://opensource.com/article/20/1/favorite-linux-distribution)
 [#]: author: (Opensource.com https://opensource.com/users/admin)
 
-你最喜欢哪一个 Linux 发行版？
+你最喜欢哪个 Linux 发行版？
 ======
 参与我们的第七届年度调查，让我们了解你对 Linux 发行版的偏好。
 
 ![Hand putting a Linux file folder into a drawer][1]
 
-What's your favorite Linux distribution? Take our 7th annual poll. Some have come and gone, but there are hundreds of [Linux distributions][2] alive and well today. The combination of distribution, package manager, and desktop creates an endless amount of customized environments for Linux users.
+你最喜欢哪个 Linux 发行版？参与我们的第七届年度调查。虽然有所变化，但现在仍有数百种 [Linux 发行版][2] 保持活跃且运作良好。发行版、包管理器和桌面一起为 Linux 用户创建了无数客制化环境。
 
-We asked the community of writers what their favorite is and why. While there were some commonalities (Fedora and Ubuntu were popular choices for a variety of reasons), we heard a few surprises as well. Here are a few of their responses:
+我们询问了社区的作者们，哪个是他们的最爱和原因。尽管存在一些共性（由于各种原因，Fedora 和 Ubuntu 是最受欢迎的选择），但我们也听到一些惊奇的回答。以下是他们的一些回答：
 
-"I use the Fedora distro! I love the community of people who work together to make an awesome operating system that showcases the greatest innovations in the free and open source software world." — Matthew Miller
+“我使用 Fedora 发行版！我喜欢这样的社区，社区成员共同创建一个令人敬畏的操作系统，展现了开源软件世界最伟大的造物。”——Matthew Miller
 
-"I use Arch at home. As a gamer, I want easy access to the latest Wine versions and GFX drivers, as well as large amounts of control over my OS. Give me a rolling-release distro with every package at bleeding-edge." —Aimi Hobson
+“我在家中使用 Arch。作为一名游戏玩家，我希望可以轻松使用最新版本的 Wine 和 GFX 驱动，同时尽量掌控我的系统。所以我选择一个滚动升级并且每个包都保持领先的发行版。”——Aimi Hobson
 
-"NixOS, with nothing coming close in the hobbyist niche." —Alexander Sosedkin
+“NixOS，在业余爱好者市场中没有比这更合适的。”——Alexander Sosedkin
 
-"I have used every Fedora version as my primary work OS. Meaning, I started with the first one. Early on, I asked myself if there would ever come a time when I couldn't remember which number I was on. That time has arrived. What year is it, anyway?" —Hugh Brock
+“我用过每个 Fedora 版本作为我的工作系统。这意味着我从第一个版本开始使用。从前，我问自己是否将有一天我会忘记我用的系统版本代码。而这一天已经到来了。所以，现在是什么时候呢？”——Hugh Brock
 
-"I usually have Ubuntu, CentOS, and Fedora boxes running around the house and the office. We depend on all of these distributions for various things. Fedora for speed and getting the latest versions of applications and libraries. Ubuntu for those that need easy of use with a large community of support. CentOS when we need a rock-solid server platform that just runs." —Steve Morris
+“通常，在我的房屋和办公室里都有运行 Ubuntu、CentOS 和 Fedora 的机器。我们依赖这些发行版来完成各种事情。Fedora 用于高性能和获取最新版本的应用和库。Ubuntu 用于那些需要大型支持社区。CentOS 则当我们需要稳如磐石的服务器平台时。”——Steve Morris
 
-"My favorite? For the community, and how packages are built for the distribution (from source, not binaries), I choose Fedora. For pure breadth of packages available and elegance in how packages are defined and developed, I choose Debian. For documentation, I choose Arch. For newbies that ask, I used to recommend Ubuntu but now recommend Fedora." —Al Stone
+“我最喜欢？考虑到社区以及如何为发行版构建软件包（从源码构建而非二进制文件），我选择 Fedora。考虑到可用包的范围和包的定义和开发，我选择 Debian。考虑到文档，我选择 Arch。对于新手的提问，我以前会推荐 Ubuntu，而现在会推荐 Fedora。”——Al Stone
 
 * * *
 
-We've been asking the community this question since 2014. With the exception of PCLinuxOS taking the lead in 2015, Ubuntu tends to be the fan-favorite from year to year. Other popular contenders have been Fedora, Debian, Mint, and Arch. Which distribution stands out to you in the new decade? If we didn't include your favorite in the list of choices, tell us about it in the comments. 
+自从 2014 以来，我们一直向社区提出这一问题。除了 2015 年 PCLinuxOS 出乎意料的领先，Ubuntu 往往每年都获得粉丝们的青睐。其他受欢迎的竞争者还包括 Fedora、Debian、Mint 和 Arch。在新的十年里，哪个发行版更吸引你？如果我们的列表中没有你最喜欢的选择，请在评论中告诉我们。
 
-Here's a look at your favorite Linux distributions throughout the last seven years. You can find this in our latest yearbook, [Best of a decade on Opensource.com][3]. To download the whole eBook, [click here][3]!
+下面是过去七年来你最喜欢的 Linux 发行版投票的总览。你可以在我们去年的年刊《[Opensource.com 上的十年最佳][3]》中看到它。[点击这里][3]下载完整版电子书！
 
 ![Poll results for favorite Linux distribution through the years][4]
 
