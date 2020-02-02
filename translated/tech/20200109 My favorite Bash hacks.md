@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (My favorite Bash hacks)
@@ -14,13 +14,13 @@
 
 ![bash logo on green background][1]
 
-要是你整天使用计算机，如果能找到可重复的命令并标记它们，以便以后轻松使用那就太棒了。它们全都在那里，藏在 `~/.bashrc` 中（或 [zsh 用户][2]的 `~/.zshrc` 中），等待着改善你的生活！
+要是你整天使用计算机，如果能找到需要重复执行的命令并记下它们以便以后轻松使用那就太棒了。它们全都呆在那里，藏在 `~/.bashrc` 中（或 [zsh 用户][2]的 `~/.zshrc` 中），等待着改善你的生活！
 
-在本文中，我分享了我最喜欢的这些辅助命令，它们可以帮助我避免一些遗忘的事情，也希望可以帮助到你，以及为你解决一些越来越头疼的问题。
+在本文中，我分享了我最喜欢的这些助手命令，对于我经常遗忘的事情，它们很有用，也希望这可以帮助到你，以及为你解决一些经常头疼的问题。
 
-### 完事说一声
+### 完事吱一声
 
-当我执行一个需要长时间运行的命令时，我经常采用多任务的方式，然后必须回过去检查该操作是否已完成。 然而通过有用的 `say`，现在就不用再这样了（这是在 MacOS 上；更改为本地环境等效的方式）：
+当我执行一个需要长时间运行的命令时，我经常采用多任务的方式，然后就必须回头去检查该操作是否已完成。然而通过有用的 `say` 命令，现在就不用再这样了（这是在 MacOS 上；请根据你的本地环境更改为等效的方式）：
 
 ```
 function looooooooong {
@@ -36,11 +36,11 @@ function looooooooong {
 }
 ```
 
-这个命令会标记命令的开始和结束时间，计算所需的分钟数，并说出调用的命令、花费的时间和退出码。当简单的控制台铃声无法使用时，我发现这个超级有用。
+这个命令会记录命令的开始和结束时间，计算所需的分钟数，并“说”出调用的命令、花费的时间和退出码。当简单的控制台铃声无法使用时，我发现这个超级有用。
 
 ### 安装小助手
 
-我在小的时候就开始使用 Ubuntu，而我需要学习的第一件事是如何安装软件包。我曾经添加的第一个别名之一是它的助手（根据当天的流行梗命名的）：
+我在小时候就开始使用 Ubuntu，而我需要学习的第一件事就是如何安装软件包。我曾经首先添加的别名之一是它的助手（根据当天的流行梗命名的）：
 
 ```
 alias canhas="sudo apt-get install -y"
@@ -48,7 +48,7 @@ alias canhas="sudo apt-get install -y"
 
 ### GPG 签名
 
-有时候，我必须在没有扩展程序或应用程序的情况下给电子邮件签署 [GPG][3] 签名，我会跳到命令行并使用以下令人讨厌的别名：
+有时候，我必须在没有 GPG 扩展程序或应用程序的情况下给电子邮件签署 [GPG][3] 签名，我会跳到命令行并使用以下令人讨厌的别名：
 
 ```
 alias gibson="gpg --encrypt --sign --armor"
@@ -57,7 +57,7 @@ alias ungibson="gpg --decrypt"
 
 ### Docker
 
-Docker 命令很多，但是  Docker compose 命令更多。我曾经使用这些别名来忘记 `--rm` 标志，但是现在不再使用这些有用的别名了：
+Docker 的子命令很多，但是 Docker compose 的更多。我曾经使用这些别名来将 `--rm` 标志丢到脑后，但是现在不再使用这些有用的别名了：
 
 ```
 alias dc="docker-compose"
@@ -65,15 +65,15 @@ alias dcr="docker-compose run --rm"
 alias dcb="docker-compose run --rm --build"
 ```
 
-### Google Cloud 的 gcurl 辅助程序
+### Google Cloud 的 gcurl 助手
 
-对于我来说，Google Cloud 是一个相对较新的东西，而它有[极多的文档][4]。gcurl 是一个别名，可确保在用带有身份验证标头的本地 curl 命令连接 Google Cloud API 时，可以获得所有正确的标头。
+对于我来说，Google Cloud 是一个相对较新的东西，而它有[极多的文档][4]。`gcurl` 是一个别名，可确保在用带有身份验证标头的本地 `curl` 命令连接 Google Cloud API 时，可以获得所有正确的标头。
 
 ### Git 和 ~/.gitignore
 
-我工作中用 Git 很多，因此我有一个专门的部分来介绍 Git 的辅助程序。
+我工作中用 Git 很多，因此我有一个专门的部分来介绍 Git 助手。
 
-我最有用的辅助程序之一是我用来克隆 GitHub 存储库的助手。你不必运行：
+我最有用的助手之一是我用来克隆 GitHub 存储库的。你不必运行：
 
 ```
 git clone git@github.com:org/repo /Users/glasnt/git/org/repo
@@ -90,14 +90,13 @@ clone(){
 }
 ```
 
-即使每次进入 `~/.bashrc` 文件时，我总是会忘记和傻笑，我也有一个“刷新上游”命令：
+即使每次进入 `~/.bashrc` 文件看到这个时，我总是会忘记和傻笑，我也有一个“刷新上游”命令：
 
 ```
 alias yoink="git checkout master && git fetch upstream master && git merge upstream/master"
 ```
 
-给 Git 人的另一个辅助程序是全局忽略文件。在你的 `git config --global --list` 中，你应该看到一个 `core.excludesfile`。如果没有，请[创建一个][6]，然后将你总是放到各个 `.gitignore` 文件中的内容填满它。作为 MacOS 上的 Python 开发人员，对我来说，这写内容是：
-
+给 Git 一族的另一个助手是全局忽略文件。在你的 `git config --global --list` 中，你应该看到一个 `core.excludesfile`。如果没有，请[创建一个][6]，然后将你总是放到各个 `.gitignore` 文件中的内容填满它。作为 MacOS 上的 Python 开发人员，对我来说，这些内容是：
 
 ```
 .DS_Store     # macOS clutter
@@ -107,11 +106,11 @@ __pycache__   # ... or source
 *.swp         # ... nor any files open in vim
 ```
 
-你可以在 [Gitignore.io][7] 或  GitHub 上的 [Gitignore 存储库][8]上找到其他建议。
+你可以在 [Gitignore.io][7] 或 GitHub 上的 [Gitignore 存储库][8]上找到其他建议。
 
 ### 轮到你了
 
-你最喜欢的辅助程序命令是什么？请在评论中分享。
+你最喜欢的助手命令是什么？请在评论中分享。
 
 --------------------------------------------------------------------------------
 
@@ -120,7 +119,7 @@ via: https://opensource.com/article/20/1/bash-scripts-aliases
 作者：[Katie McLaughlin][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
