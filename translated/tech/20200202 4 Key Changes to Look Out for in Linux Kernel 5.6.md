@@ -20,31 +20,31 @@
 
 ![][1]
 
-I’ll try to keep the list of features up-to-date whenever there’s a piece of new information on Linux 5.6. But, for now, let’s take a look at what we already know so far:
+当 Linux 5.6 有新消息时，我将努力更新这份功能列表。但现在让我们先看一下当前已知的内容：
 
 #### 1\. 支持 WireGuard
 
-WireGuard will be added to Linux 5.6 – potentially replacing [OpenVPN][2] for a variety of reasons.
+WireGuard 将被添加到 Linux 5.6，出于各种原因的考虑它可能将取代 [OpenVPN][2]。
 
-You can learn more about [WireGuard][3] on their official site to know the benefits. Of course, if you’ve used it, you might be aware of the reasons why it’s potentially better than OpenVPN.
+你可以在官网上进一步了解 [WireGuard][3] 的优点。当然，如果你使用过它，那你可能已经知道它比 OpenVPN 更好的原因。
 
-Also, [Ubuntu 20.04 LTS will be adding support for WireGuard][4].
+同样，[Ubuntu 20.04 LTS 将支持 WireGuard][4]。
 
 #### 2\. 支持 USB4
 
-Linux 5.6 will also include the support of **USB4**.
+Linux 5.6 也将支持 **USB4**。
 
-In case you didn’t know about USB 4.0 (USB4), you can read the [announcement post][5].
+如果你不了解 USB 4.0 (USB4)，你可以阅读这份[文档][5].
 
-As per the announcement – “_USB4 doubles the maximum aggregate bandwidth of USB and enables multiple simultaneous data and display protocols._“
+根据文档，“_USB4 将使 USB 的最大带宽增加一倍并支持同时多个数据传输和显示接口并行。_”
 
-Also, while we know that USB4 is based on the Thunderbolt protocol specification, it will be backward compatible with USB 2.0, USB 3.0, and Thunderbolt 3 – which is great news.
+另外，虽然我们都知道 USB4 基于 Thunderbolt 接口协议，但它将向后兼容 USB 2.0、USB 3.0 以及 Thunderbolt 3，这将是一个好消息。
 
 #### 3\. 使用 LZO/LZ4 压缩 F2FS 数据
 
-Linux 5.6 will also come with the support for F2FS data compression using LZO/LZ4 algorithms.
+Linux 5.6 也将支持使用LZO/LZ4 算法压缩 F2FS 数据。
 
-In other words, it is just a new compression technique for the Linux file-system where you will be able to select particular file extensions.
+换句话说，这只是 Linux 文件系统的一种新压缩技术，你可以选择待定的文件扩展名。
 
 #### 4\. 解决 32 位系统的 2038 年问题
 
