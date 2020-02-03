@@ -1,32 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (mengxinayan)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11849-1.html)
 [#]: subject: (Showing memory usage in Linux by process and user)
 [#]: via: (https://www.networkworld.com/article/3516319/showing-memory-usage-in-linux-by-process-and-user.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-按照进程和用户查看Linux系统中的内存使用情况
+查看 Linux 系统中进程和用户的内存使用情况
 ======
-有一些命令可以用来检查 Linux 系统中的内存使用情况，下面是一些更好的命令
-[Fancycrave][1] [(CC0)][2]
 
-有许多工具可以查看 Linux 系统中的内存使用情况。一些命令被广泛使用，比如 **free**, **ps** 。而另一些命令允许通过多种方式展示系统的性能统计信息，比如 **top** 。在这篇文章中，我们将介绍一些命令以帮助你确定当前占用着最多内存资源的用户或者进程。
+> 有一些命令可以用来检查 Linux 系统中的内存使用情况，下面是一些更好的命令。
+
+![Fancycrave][1]
+
+有许多工具可以查看 Linux 系统中的内存使用情况。一些命令被广泛使用，比如 `free`、`ps`。而另一些命令允许通过多种方式展示系统的性能统计信息，比如 `top`。在这篇文章中，我们将介绍一些命令以帮助你确定当前占用着最多内存资源的用户或者进程。
 
 下面是一些按照进程查看内存使用情况的命令：
 
-### 使用 top
+### 按照进程查看内存使用情况
 
-**top** 是最好的查看内存使用情况的命令之一。为了查看哪个进程使用着最多的内存，一个简单的办法就是启动 **top** ,然后按下 **shift+m** ， 这样便可以查看按照内存占用百分比从高到底排列的进程。当你按下了 **shift+m** ，你的 top 应该会得到类似于下面这样的输出结果：
+#### 使用 top
 
-[][3]
-
-HPE 赞助的 BrandPost
-
-[Take the Intelligent Route with Consumption-Based Storage][3]
-
-将 HPE 存储的易用性和经济性与 HPE GreenLake 结合起来，能帮助的你的 IT 部门更加高效
+`top` 是最好的查看内存使用情况的命令之一。为了查看哪个进程使用着最多的内存，一个简单的办法就是启动 `top`，然后按下 `shift+m`，这样便可以查看按照内存占用百分比从高到底排列的进程。当你按下了 `shift+m` ，你的 `top` 应该会得到类似于下面这样的输出结果：
 
 ```
 $top
@@ -54,11 +50,11 @@ MiB Swap:   2048.0 total,   2045.7 free,      2.2 used.   3053.5 avail Mem
  2373 root      20   0  150408  57000   9924 S   0.3   0.9  10:15.35 nessusd
 ```
 
-注意 **%MEM** 排序。 列表的大小取决于你的窗口大小，但是占据着最多的内存的进程将会显示在列表的顶端。
+注意 `%MEM` 排序。列表的大小取决于你的窗口大小，但是占据着最多的内存的进程将会显示在列表的顶端。
 
-### 使用 ps
+#### 使用 ps
 
-**ps** 命令中的一列用来展示每个进程的内存使用情况。为了展示和查看哪个进程使用着最多的内存，你可以将 **ps** 命令的结果传递给 **sort** 命令。下面是一个有用的演示：
+`ps` 命令中的一列用来展示每个进程的内存使用情况。为了展示和查看哪个进程使用着最多的内存，你可以将 `ps` 命令的结果传递给 `sort` 命令。下面是一个有用的示例：
 
 ```
 $ ps aux | sort -rnk 4 | head -5
@@ -69,7 +65,7 @@ nemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 /usr/lib/firefo
 nemo      2389 39.5  3.8 1774412 236116 pts/1  Sl+  09:15  12:21 vlc videos/edge_computing.mp4
 ```
 
-在上面的例子中（文中已截断），sort 命令使用了 **-r** 选项（反转），**-n** 选项（数字值），**-k** 选项（关键字），使 sort 命令对 ps 命令的结果按照第四列（内存使用情况）中的数字逆序进行排列并输出。如果我们首先显示 **ps** 命令的标题，那么将会便于查看。
+在上面的例子中（文中已截断），`sort` 命令使用了 `-r` 选项（反转）、`-n` 选项（数字值）、`-k` 选项（关键字），使 `sort` 命令对 `ps` 命令的结果按照第四列（内存使用情况）中的数字逆序进行排列并输出。如果我们首先显示 `ps` 命令的标题，那么将会便于查看。
 
 ```
 $ ps aux | head -1; ps aux | sort -rnk 4 | head -5
@@ -81,7 +77,7 @@ nemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 /usr/lib/firefo
 nemo      2389 39.5  3.8 1774412 236116 pts/1  Sl+  09:15  12:21 vlc videos/edge_computing.mp4
 ```
 
-如果你喜欢这个命令，你可以用下面的命令为他指定一个别名，如果你想一直使用它，不要忘记把该命令添加到你的 ~/.bashrc 文件中。
+如果你喜欢这个命令，你可以用下面的命令为他指定一个别名，如果你想一直使用它，不要忘记把该命令添加到你的 `~/.bashrc` 文件中。
 
 ```
 $ alias mem-by-proc="ps aux | head -1; ps aux | sort -rnk 4"
@@ -89,11 +85,13 @@ $ alias mem-by-proc="ps aux | head -1; ps aux | sort -rnk 4"
 
 下面是一些根据用户查看内存使用情况的命令：
 
-### 使用 top
+### 按用户查看内存使用情况
+
+#### 使用 top
 
 按照用户检查内存使用情况会更复杂一些，因为你需要找到一种方法把用户所拥有的所有进程统计为单一的内存使用量。
 
-如果你只想查看单个用户进程使用情况， **top** 命令可以采用与上文中同样的方法进行使用。只需要添加 -U 选项并在其后面指定你要查看的用户名，然后按下 **shift+m** 便可以按照内存使用有多到少进行查看。
+如果你只想查看单个用户进程使用情况，`top` 命令可以采用与上文中同样的方法进行使用。只需要添加 `-U` 选项并在其后面指定你要查看的用户名，然后按下 `shift+m` 便可以按照内存使用有多到少进行查看。
 
 ```
 $ top -U nemo
@@ -115,9 +113,9 @@ MiB Swap:   2048.0 total,   2042.7 free,      5.2 used.   2812.0 avail Mem
 32533 nemo      20   0 2389088 102532  76808 S   0.0   1.7   0:01.79 WebExtensions
 ```
 
-### 使用 ps
+#### 使用 ps
 
-你依旧可以使用 **ps** 命令通过内存使用情况来排列某个用户的进程。在这个例子中，我们将使用 **grep** 命令来筛选得到某个用户的所有进程。
+你依旧可以使用 `ps` 命令通过内存使用情况来排列某个用户的进程。在这个例子中，我们将使用 `grep` 命令来筛选得到某个用户的所有进程。
 
 ```
 $ ps aux | head -1; ps aux | grep ^nemo| sort -rnk 4 | more
@@ -131,7 +129,7 @@ nemo     29527  3.9  3.7 2736924 227448 ?      Ssl  08:50   4:11 /usr/bin/gnome-
 ```
 ### 使用 ps 和其他命令的搭配
 
-如果你想比较某个用户与其他用户内存使用情况将会比较复杂。在这种情况中，创建并排序一个按照用户总的内存使用量是一个不错的技术，但是它需要做一些更多的工作，并涉及到许多命令。在下面的脚本中，我们使用 **ps aux | grep -v COMMAND | awk '{print $1}' | sort -u** 命令得到了用户列表。其中包含了系统用户比如 **syslog** 。我们对每个任务使用 **awk** 命令以收集每个用户总的内存使用情况。在最后一步中，我们展示每个用户总的内存使用量（按照从大到小的顺序）。
+如果你想比较某个用户与其他用户内存使用情况将会比较复杂。在这种情况中，创建并排序一个按照用户总的内存使用量是一个不错的方法，但是它需要做一些更多的工作，并涉及到许多命令。在下面的脚本中，我们使用 `ps aux | grep -v COMMAND | awk '{print $1}' | sort -u` 命令得到了用户列表。其中包含了系统用户比如 `syslog`。我们对每个任务使用 `awk` 命令以收集每个用户总的内存使用情况。在最后一步中，我们展示每个用户总的内存使用量（按照从大到小的顺序）。
 
 ```
 #!/bin/bash
@@ -171,8 +169,6 @@ $ ./show_user_mem_usage
 
 在 Linux 有许多方法可以报告内存使用情况。可以通过一些用心设计的工具和命令，来查看并获得某个进程或者用户占用着最多的内存。
 
-在 [Facebook][4] and [LinkedIn][5] 中加入 Network World 社区，来评论热门话题。
-
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3516319/showing-memory-usage-in-linux-by-process-and-user.html
@@ -180,13 +176,13 @@ via: https://www.networkworld.com/article/3516319/showing-memory-usage-in-linux-
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[萌新阿岩](https://github.com/mengxinayan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.networkworld.com/author/Sandra-Henry_Stocker/
 [b]: https://github.com/lujun9972
-[1]: https://unsplash.com/photos/37LPYOkEE2o
+[1]: https://images.idgesg.net/images/article/2018/06/chips_processors_memory_cards_by_fancycrave_cc0_via_unsplash_1200x800-100760955-large.jpg
 [2]: https://creativecommons.org/publicdomain/zero/1.0/
 [3]: https://www.networkworld.com/article/3440100/take-the-intelligent-route-with-consumption-based-storage.html?utm_source=IDG&utm_medium=promotions&utm_campaign=HPE21620&utm_content=sidebar ( Take the Intelligent Route with Consumption-Based Storage)
 [4]: https://www.facebook.com/NetworkWorld/
