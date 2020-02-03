@@ -20,7 +20,7 @@
 
 ![][1]
 
-当 Linux 5.6 有新消息时，我将努力更新这份功能列表。但现在让我们先看一下当前已知的内容：
+当 Linux 5.6 有新消息时，我会努力更新这份功能列表。但现在让我们先看一下当前已知的内容：
 
 #### 1\. 支持 WireGuard
 
@@ -48,30 +48,28 @@ Linux 5.6 也将支持使用LZO/LZ4 算法压缩 F2FS 数据。
 
 #### 4\. 解决 32 位系统的 2038 年问题
 
-Unix and Linux store the time value in a 32-bit signed integer format which has the maximum value of 2147483647. Beyond this number, due to integer overflow, the values will be stored as a negative number.
+Unix 和 Linux 将时间值以 32 位有符号整数格式存储，其最大值为 2147483647。时间值如果超过这个数值则将由于整数溢出而存储为负数。
 
-This means that for a 32-bit system, the time value cannot go beyond 2147483647 seconds after Jan. 1, 1970. In simpler terms, after 03:14:07 UTC on Jan. 19, 2038, due to integer overflow, the time will read as Dec. 13, 1901 instead of Jan. 19, 2038.
+这意味着对于32位系统，时间值不能超过 1970 年 1 月 1 日后的 2147483647 秒。也就是说，在 UTC 时间 2038 年 1 月 19 日 03:14:07 时，由于整数溢出，时间将显示为 1901 年 12 月 13 日而不是 2038 年 1 月 19 日。
 
-Linux kernel 5.6 has a fix for this problem so that 32-bit systems can run beyond the year 2038.
+Linux kernel 5.6 解决了这个问题，因此 32 位系统可以运行到 2038 年以后。
 
 #### 5\. 改进硬件支持
 
-Obviously, with the next release, the hardware support will improve as well. The plan to support newer wireless peripherals will be a priority too.
+很显然，在下一次发布版中，硬件支持也将继续提升。而支持新式无线外设的计划也同样紧迫。
 
-The new kernel will also add the support for MX Master 3 mouse and other wireless Logitech products.
+新内核中将增加对 MX Master 3 鼠标以及罗技其他无线产品的支持。
 
-In addition to Logitech products, you can expect a lot of different hardware support as well (including the support for AMD GPUs, NVIDIA GPUs, and Intel Tiger Lake chipset support).
+除了罗技的产品外，你还可以期待获得许多不同硬件的支持（包括对 AMD GPUs、NVIDIA GPUs 和 Intel Tiger Lake 芯片组的支持）。
 
 #### 6\. 其他更新
 
-Also, in addition to all these major additions/support in Linux 5.6, there are several other changes that would be coming with the next kernel release:
+此外，Linux 5.6 中除了上述主要的新增功能或支持外，下一个内核版本也将进行其他一些改进：
 
-  * Improvements in AMD Zen temperature/power reporting
-  * A fix for AMD CPUs overheating in ASUS TUF laptops
-  * Open-source NVIDIA RTX 2000 “Turing” graphics support
-  * FSCRYPT inline encryption.
-
-
+  * 改进 AMD Zen 的温度/功率报告
+  * 修复华硕飞行堡垒系列笔记本中 AMD CPUs 过热
+  * 开源支持 NVIDIA RTX 2000 图灵系列显卡
+  * 内建 FSCRYPT 加密
 
 [Phoronix][6] 跟踪了 Linux 5.6 带来的许多技术性更改。因此，如果你好奇 Linux 5.6 所涉及的全部更改，则可以亲自了解一下。
 
