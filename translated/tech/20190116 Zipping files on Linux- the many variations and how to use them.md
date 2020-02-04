@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,15 +7,18 @@
 [#]: via: (https://www.networkworld.com/article/3333640/linux/zipping-files-on-linux-the-many-variations-and-how-to-use-them.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Zipping files on Linux: the many variations and how to use them
+在 Linux 上压缩文件：zip 命令的各种变体及用法
 ======
+
+> 除了压缩和解压缩文件外，你还可以使用 zip 命令执行许多有趣的操作。这是一些其他的 zip 选项以及它们如何提供帮助。
+
 ![](https://images.idgesg.net/images/article/2019/01/zipper-100785364-large.jpg)
 
-Some of us have been zipping files on Unix and Linux systems for many decades — to save some disk space and package files together for archiving. Even so, there are some interesting variations on zipping that not all of us have tried. So, in this post, we’re going to look at standard zipping and unzipping as well as some other interesting zipping options.
+为了节省一些磁盘空间并将文件打包在一起进行归档，我们中的一些人已经在 Unix 和 Linux 系统上压缩文件数十年了。即使这样，并不是所有人都尝试过一些有趣的压缩工具的变体。因此，在本文中，我们将介绍标准的压缩和解压缩以及其他一些有趣的压缩选项。
 
-### The basic zip command
+### 基本的 zip 命令
 
-First, let’s look at the basic **zip** command. It uses what is essentially the same compression algorithm as **gzip** , but there are a couple important differences. For one thing, the gzip command is used only for compressing a single file where zip can both compress files and join them together into an archive. For another, the gzip command zips “in place”. In other words, it leaves a compressed file — not the original file alongside the compressed copy. Here's an example of gzip at work:
+首先，让我们看一下基本的 `zip` 命令。它使用了与 `gzip` 基本上相同的压缩算法，但是有一些重要的区别。一方面，`gzip` 命令仅用于压缩单个文件，而 `zip` 既可以压缩文件，也可以将多个文件结合在一起成为归档文件。另外，`gzip` 命令是“就地”压缩。换句话说，它会留下一个压缩文件，而不是原始文件。 这是工作中的 `gzip` 示例：
 
 ```
 $ gzip onefile
@@ -23,7 +26,7 @@ $ ls -l
 -rw-rw-r-- 1 shs shs 10514 Jan 15 13:13 onefile.gz
 ```
 
-And here's zip. Notice how this command requires that a name be provided for the zipped archive where gzip simply uses the original file name and adds the .gz extension.
+而这是 `zip`。请注意，此命令要求为压缩存档提供名称，其中 `gzip`（执行压缩操作后）仅使用原始文件名并添加 `.gz` 扩展名。
 
 ```
 $ zip twofiles.zip file*
@@ -35,9 +38,9 @@ $ ls -l
 -rw-rw-r-- 1 shs shs 21289 Jan 15 13:35 twofiles.zip
 ```
 
-Notice also that the original files are still sitting there.
+请注意，原始文件仍位于原处。
 
-The amount of disk space that is saved (i.e., the degree of compression obtained) will depend on the content of each file. The variation in the example below is considerable.
+所节省的磁盘空间量（即获得的压缩程度）将取决于每个文件的内容。以下示例中的变化很大。
 
 ```
 $ zip mybin.zip ~/bin/*
@@ -56,9 +59,9 @@ $ zip mybin.zip ~/bin/*
  adding: bin/tt (deflated 6%)
 ```
 
-### The unzip command
+### unzip 命令
 
-The **unzip** command will recover the contents from a zip file and, as you'd likely suspect, leave the zip file intact, whereas a similar gunzip command would leave only the uncompressed file.
+`unzip` 命令将从一个 zip 文件中恢复内容，并且，如你所料，原来的 zip 文件还保留在那里，而类似的`gunzip` 命令将仅保留未压缩的文件。
 
 ```
 $ unzip twofiles.zip
@@ -71,9 +74,9 @@ $ ls -l
 -rw-rw-r-- 1 shs shs 21289 Jan 15 13:35 twofiles.zip
 ```
 
-### The zipcloak command
+### zipcloak 命令
 
-The **zipcloak** command encrypts a zip file, prompting you to enter a password twice (to help ensure you don't "fat finger" it) and leaves the file in place. You can expect the file size to vary a little from the original.
+`zipcloak` 命令对一个 zip 文件进行加密，提示你输入两次密码（以确保你不会“胖手指”），然后将该文件原位存储。你可以想到，文件大小与原始文件会有所不同。
 
 ```
 $ zipcloak twofiles.zip
@@ -89,11 +92,11 @@ total 204
  unencrypted version
 ```
 
-Keep in mind that the original files are still sitting there unencrypted.
+请记住，压缩包之外的原始文件仍处于未加密状态。
 
-### The zipdetails command
+### zipdetails 命令
 
-The **zipdetails** command is going to show you details — a _lot_ of details about a zipped file, likely a lot more than you care to absorb. Even though we're looking at an encrypted file, zipdetails does display the file names along with file modification dates, user and group information, file length data, etc. Keep in mind that this is all "metadata." We don't see the contents of the files.
+`zipdetails` 命令将向你显示详细信息：有关压缩文件的详细信息，可能比你想象的要多得多。即使我们正在查看一个加密的文件，`zipdetails` 也会显示文件名以及文件修改日期、用户和组信息、文件长度数据等。请记住，这都是“元数据”。我们看不到文件的内容。
 
 ```
 $ zipdetails twofiles.zip
@@ -233,9 +236,9 @@ $ zipdetails twofiles.zip
 Done
 ```
 
-### The zipgrep command
+### zipgrep命令
 
-The **zipgrep** command is going to use a grep-type feature to locate particular content in your zipped files. If the file is encrypted, you will need to enter the password provided for the encryption for each file you want to examine. If you only want to check the contents of a single file from the archive, add its name to the end of the zipgrep command as shown below.
+`zipgrep` 命令将使用 `grep` 类的功能来找到压缩文件中的特定内容。如果文件已加密，则需要为要检查的每个文件输入为加密所提供的密码。如果只想检查归档文件中单个文件的内容，请将其名称添加到 `zipgrep` 命令的末尾，如下所示。
 
 ```
 $ zipgrep hazard twofiles.zip file1
@@ -243,9 +246,9 @@ $ zipgrep hazard twofiles.zip file1
 Certain pesticides should be banned since they are hazardous to the environment.
 ```
 
-### The zipinfo command
+### zipinfo 命令
 
-The **zipinfo** command provides information on the contents of a zipped file whether encrypted or not. This includes the file names, sizes, dates and permissions.
+`zipinfo` 命令提供有关压缩文件内容的信息，无论是否加密。这包括文件名、大小、日期和权限。
 
 ```
 $ zipinfo twofiles.zip
@@ -256,9 +259,9 @@ Zip file size: 21313 bytes, number of entries: 2
 2 files, 116954 bytes uncompressed, 20991 bytes compressed: 82.1%
 ```
 
-### The zipnote command
+### zipnote 命令
 
-The **zipnote** command can be used to extract comments from zip archives or add them. To display comments, just preface the name of the archive with the command. If no comments have been added previously, you will see something like this:
+`zipnote` 命令可用于从 zip 归档中提取注释或添加注释。要显示注释，只需在命令前面加上归档名称即可。如果之前未添加任何注释，你将看到类似以下内容：
 
 ```
 $ zipnote twofiles.zip
@@ -269,21 +272,21 @@ $ zipnote twofiles.zip
 @ (zip file comment below this line)
 ```
 
-If you want to add comments, write the output from the zipnote command to a file:
+如果要添加注释，请先将 `zipnote` 命令的输出写入文件：
 
 ```
 $ zipnote twofiles.zip > comments
 ```
 
-Next, edit the file you've just created, inserting your comments above the **(comment above this line)** lines. Then add the comments using a zipnote command like this one:
+接下来，编辑你刚刚创建的文件，将注释插入到 `(comment above this line)` 行上方。然后使用像这样的`zipnote` 命令添加注释：
 
 ```
 $ zipnote -w twofiles.zip < comments
 ```
 
-### The zipsplit command
+### zipsplit 命令
 
-The **zipsplit** command can be used to break a zip archive into multiple zip archives when the original file is too large — maybe because you're trying to add one of the files to a small thumb drive. The easiest way to do this seems to be to specify the max size for each of the zipped file portions. This size must be large enough to accomodate the largest included file.
+当归档文件太大时，可以使用 `zipsplit` 命令将一个 zip 归档文件分解为多个 zip 归档文件，这样你就可以将其中某一个文件放到小型 U 盘中。最简单的方法似乎是为每个部分的压缩文件指定最大大小，此大小必须足够大以容纳最大的包含文件。
 
 ```
 $ zipsplit -n 12000 twofiles.zip
@@ -296,15 +299,11 @@ $ ls twofile*.zip
 -rw-rw-r-- 1 shs shs 21377 Jan 15 14:27 twofiles.zip
 ```
 
-Notice how the extracted files are sequentially named "twofile1" and "twofile2".
+请注意，提取的文件是如何依次命名为 `twofile1` 和 `twofile2` 的。
 
-### Wrap-up
+### 总结
 
-The **zip** command, along with some of its zipping compatriots, provide a lot of control over how you generate and work with compressed file archives.
-
-**[ Also see:[Invaluable tips and tricks for troubleshooting Linux][1] ]**
-
-Join the Network World communities on [Facebook][2] and [LinkedIn][3] to comment on topics that are top of mind.
+`zip` 命令及其一些压缩工具变体，对如何生成和使用压缩文件归档提供了很多控制。
 
 --------------------------------------------------------------------------------
 
@@ -312,7 +311,7 @@ via: https://www.networkworld.com/article/3333640/linux/zipping-files-on-linux-t
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
