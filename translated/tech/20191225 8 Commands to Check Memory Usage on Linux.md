@@ -7,43 +7,43 @@
 [#]: via: (https://www.2daygeek.com/linux-commands-check-memory-usage/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-8 Commands to Check Memory Usage on Linux
+检查 Linux 中内存使用情况的8条命令
 ======
 
-Linux is not like Windows and you will not get a GUI always, especially in a server environment.
+Linux 并不像 Windows，你经常不会有图形界面可供使用，特别是在服务器环境中。
 
-As a Linux administrator, it is important to know how to check your available and used resources, such as memory, CPU, disk space, etc.
+作为一名 Linux 管理员，知道如何获取当前可用的和已经使用的资源情况，比如内存、CPU、磁盘等，是相当重要的。
 
-If there are any applications that use too much resources on the system to run your system at the optimum level you need to find and fix.
+如果某一应用在你的系统上占用了太多的资源，导致你的系统无法达到最优状态，那么你需要找到并修正它。
 
-If you want to **[find out the top 10 memory (RAM) consumption processes in Linux][1]**, go to the following article.
+如果你想找到消耗内存前十名的进程，你需要去阅读这篇文章： **[在 Linux 系统中找到消耗内存最多的 10 个进程][1]** 。
 
-In Linux, there are commands for everything, so use the corresponding commands.
+在 Linux 中，命令能做任何事，所以使用相关命令吧。
 
-In this tutorial, we will show you eight powerful commands to check memory usage on a Linux system, including RAM and swap.
+在这篇教程中，我们将会给你展示 8 个有用的命令来即查看在 Linux 系统中内存的使用情况，包括 RAM 和交换分区。
 
-**[Creating swap space on a Linux system][2]** is very important.
+创建交换分区在 Linux 系统中是非常重要的，如果你想了解如何创建，可以去阅读这篇文章： **[在 Linux 系统上创建交换分区][2]** 。
 
-The following commands can help you check memory usage in Linux in different ways.
+下面的命令可以帮助你以不同的方式查看 Linux 内存使用情况。
 
-  * free Command
-  * /proc/meminfo File
-  * vmstat Command
-  * ps_mem Command
-  * smem Command
-  * top Command
-  * htop Command
-  * glances Command
+  * free 命令
+  * /proc/meminfo 文件
+  * vmstat 命令
+  * ps_mem 命令
+  * smem 命令
+  * top 命令
+  * htop 命令
+  * glances 命令
 
 
 
-### 1) How to Check Memory Usage on Linux Using the free Command
+### 1）如何使用 free 命令查看 Linux 内存使用情况
 
-**[Free command][3]** is the most powerful command widely used by the Linux administrator. But it provides very little information compared to the “/proc/meminfo” file.
+**[Free 命令][3]** 是被 Linux 管理员广泛使用地命令。但是它提供的信息比 “/proc/meminfo” 文件少。
 
-Free command displays the total amount of free and used physical and swap memory on the system, as well as buffers and caches used by the kernel.
+Free 命令会分别展示物理内存和交换分区内存中已使用的和未使用的数量，以及内核使用的缓冲区和缓存。
 
-These information is gathered from the “/proc/meminfo” file.
+这些信息都是从 “/proc/meminfo” 文件中获取的。
 
 ```
 # free -m
@@ -52,24 +52,24 @@ Mem:          15867        9199        1702        3315        4965        3039
 Swap:         17454         666       16788
 ```
 
-  * **total:** Total installed memory
-  * **used:** Memory is currently in use by running processes (used= total – free – buff/cache)
-  * **free:** Unused memory (free= total – used – buff/cache)
-  * **shared:** Memory shared between two or more processes (multiple processes)
-  * **buffers:** Memory reserved by the kernel to hold a process queue request.
-  * **cache:** Size of the page cache that holds recently used files in RAM
-  * **buff/cache:** Buffers + Cache
-  * **available:** Estimation of how much memory is available for starting new applications, without swapping.
+  * **total:** 总的内存量
+  * **used:** 当前正在被运行中的进程使用的内存量 (used = total – free – buff/cache)
+  * **free:** 未被使用的内存量 (free = total – used – buff/cache)
+  * **shared:** 在两个或多个进程之间共享的内存量 (多进程)
+  * **buffers:** 内核用于记录进程队列请求的内存量
+  * **cache:** 在 RAM 中最近使用的文件中的页缓冲大小
+  * **buff/cache:** 缓冲区和缓存总的使用内存量
+  * **available:** 启动新应用不含交换分区的可用内存量
 
 
 
-### 2) How to Check Memory Usage on Linux Using the /proc/meminfo File
+### 2) 如何使用 /proc/meminfo 文件查看 Linux 内存使用情况
 
-The “/proc/meminfo” file is a virtual file that contains various real-time information about memory usage.
+“/proc/meminfo” 文件是一个包含了多种内存使用的实时信息的虚拟文件。
 
-It shows memory stats in kilobytes, most of which are somewhat difficult to understand.
+它展示内存状态单位使用的是 kB，其中大部分属性都难以理解。
 
-However it contains useful information about memory usage.
+然而它也包含了内存使用情况的有用信息。
 
 ```
 # cat /proc/meminfo
@@ -124,13 +124,14 @@ DirectMap2M:    14493696 kB
 DirectMap1G:     2097152 kB
 ```
 
-### 3) How to Check Memory Usage on Linux Using the vmstat Command
+### 3) 如何使用 vmstat 命令查看 Linux 内存使用情况
 
-The **[vmstat command][4]** is another useful tool for reporting virtual memory statistics.
+**[vmstat 命令][4]** 是另一个报告虚拟内存统计信息的有用工具。
 
-vmstat reports information about processes, memory, paging, block IO, traps, disks, and cpu functionality.
+vmstat 报告的信息包括：进程、内存、页面映射、块 I/O、陷阱、磁盘和 cpu 功能信息。
 
-vmstat does not require special permissions, and it can help identify system bottlenecks.
+
+vmstat 不需要特殊的权限，并且它可以帮助诊断系统瓶颈。
 
 ```
 # vmstat
@@ -140,58 +141,58 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
  1  0 682060 1769324 234188 4853500  0    3    25    91   31   16 34 13 52  0  0
 ```
 
-If you want to understand this in detail, read the field description below.
+如果你想详细了解每一项的含义，阅读下面的描述。
 
 **Procs**
 
-  * **r:** The number of runnable processes (running or waiting for run time).
-  * **b:** The number of processes in uninterruptible sleep.
+  * **r:** 可以运行的进程数目（正在运行或等待运行）
+  * **b:** 不间断睡眠中的进程数目
 
 
 
 **Memory**
 
-  * **swpd:** the amount of virtual memory used.
-  * **free:** the amount of idle memory.
-  * **buff:** the amount of memory used as buffers.
-  * **cache:** the amount of memory used as cache.
-  * **inact:** the amount of inactive memory. (-a option)
-  * **active:** the amount of active memory. (-a option)
+  * **swpd:** 使用的虚拟内存数量
+  * **free:** 空闲的内存数量
+  * **buff:** 用作缓冲区内存的数量
+  * **cache:** 用作缓存内存的数量
+  * **inact:** 不活动的内存数量（-a 选项）
+  * **active:** 活动的内存数量（-a 选项）
 
 
-
+  
 **Swap**
 
-  * **si:** Amount of memory swapped in from disk (/s).
-  * **so:** Amount of memory swapped to disk (/s).
+  * **si:** 从磁盘交换的内存数量 (/s).
+  * **so:** 交换到磁盘的内存数量 (/s).
 
 
 
 **IO**
 
-  * **bi:** Blocks received from a block device (blocks/s).
-  * **bo:** Blocks sent to a block device (blocks/s).
+  * **bi:** 从一个块设备中收到的块 (blocks/s).
+  * **bo:** 发送到一个块设备的块 (blocks/s).
 
 
 
 **System**
 
-  * **in:** The number of interrupts per second, including the clock.
-  * **cs:** The number of context switches per second.
+  * **in:** 每秒的中断此数，包括时钟。
+  * **cs:** 每秒的上下文切换次数。
 
 
 
-**CPU : These are percentages of total CPU time.**
+**CPU : 下面这些是在总的 CPU 时间占的百分比 **
 
-  * **us:** Time spent running non-kernel code. (user time, including nice time)
-  * **sy:** Time spent running kernel code. (system time)
-  * **id:** Time spent idle. Prior to Linux 2.5.41, this includes IO-wait time.
-  * **wa:** Time spent waiting for IO. Prior to Linux 2.5.41, included in idle.
-  * **st:** Time stolen from a virtual machine. Prior to Linux 2.6.11, unknown.
+  * **us:** 花费在非内核上的时间占比（包括用户时间，调度）
+  * **sy:** 花费在内核上的时间占比 （系统时间）
+  * **id:** 花费在闲置的时间占比。在 Linux 2.5.41 之前，包括 I/O 等待时间
+  * **wa:** 花费在 I/O 等待上的时间占比。在 Linux 2.5.41 之前，包括空闲时间
+  * **st:** 被虚拟机偷走的时间占比。在 Linux 2.6.11 之前，这部分称为 unknow
 
 
 
-Run the following command for detailed information.
+运行下面的命令查看详细的信息。
 
 ```
 # vmstat -s
@@ -223,16 +224,15 @@ Run the following command for detailed information.
       1577163147 boot time
             3318 forks
 ```
+### 4) 如何使用 ps_mem 命令查看 Linux 内存使用情况
 
-### 4) How to Check Memory Usage on Linux Using the ps_mem Command
+**[ps_mem][5]** 是一个简单的 Python 脚本用来查看当前内存使用情况。
 
-**[ps_mem][5]** is a simple Python script that allows you to get core memory usage accurately for a program in Linux.
+该工具可以确定每个程序使用了多少内存（不是每个进程）。
 
-This can determine how much RAM is used per program (not per process).
+该工具采用如下的方法计算每个程序使用内存：总的使用 = 程序进程私有的内存 + 程序进程共享的内存。
 
-It calculates the total amount of memory used per program, total = sum (private RAM for program processes) + sum (shared RAM for program processes).
-
-The shared RAM is problematic to calculate, and the tool automatically selects the most accurate method available for the running kernel.
+计算共享内存是存在不足之处的，该工具可以为运行中的内核自动选择最准确的方法。
 
 ```
 # ps_mem
@@ -285,15 +285,15 @@ The shared RAM is problematic to calculate, and the tool automatically selects t
 ==================================
 ```
 
-### 5) How to Check Memory Usage on Linux Using the smem Command
+### 5）如何使用 smem 命令查看 Linux 内存使用情况
 
-**[smem][6]** is a tool that can provide numerous reports of memory usage on Linux systems. Unlike existing tools, smem can report Proportional Set Size (PSS), Unique Set Size (USS) and Resident Set Size (RSS).
+**[smem][6]** 是一个可以为 Linux 系统提供多种内存使用情况报告的工具。不同于现有的工具，smem 可以报告比例集大小（PSS）、唯一集大小（USS）和居住集大小（RSS）
 
-Proportional Set Size (PSS): refers to the amount of memory used by libraries and applications in the virtual memory system.
+比例集（PSS）：库和应用在虚拟内存系统中的使用量。
 
-Unique Set Size (USS) : Unshared memory is reported as USS (Unique Set Size).
+唯一集大小（USS）：其报告的是非共享内存。
 
-Resident Set Size (RSS) : The standard measure of physical memory (it typically shared among multiple applications) usage known as resident set size (RSS) will significantly overestimate memory usage.
+居住集大小（RSS）：物理内存（通常多进程共享）使用情况，其通常高于内存使用量。
 
 ```
 # smem -tk
@@ -336,13 +336,13 @@ Resident Set Size (RSS) : The standard measure of physical memory (it typically 
   90 1                                           0     4.8G     5.2G     8.0G
 ```
 
-### 6) How to Check Memory Usage on Linux Using the top Command
+### 6) 如何使用 top 命令查看 Linux 内存使用情况
 
-**[top command][7]** is one of the most frequently used commands by Linux administrators to understand and view the resource usage for a process on a Linux system.
+**[top 命令][7]** 是一个 Linux 系统的管理员最常使用的用于查看进程的资源使用情况的命令。
 
-It displays the total memory of the system, current memory usage, free memory and total memory used by the buffers.
+该命令会展示了系统总的内存量，当前内存使用量，空闲内存量和缓冲区使用的内存总量。
 
-In addition, it displays total swap memory, current swap usage, free swap memory, and total cached memory by the system.
+此外，该命令还会展示总的交换空间内存量，当前交换空间的内存使用量，空闲的交换空间内存量和缓存使用的内存总量。
 
 ```
 # top -b | head -10
@@ -368,25 +368,25 @@ KiB Swap: 17873388 total, 17873388 free,        0 used.  9179772 avail Mem
  2174 daygeek   20     2466680 122196  78604 S   0.8   0.8   0:17.75 WebExtensi+
 ```
 
-### 7) How to Check Memory Usage on Linux Using the htop Command
+### 7) 如何使用 htop 命令查看 Linux 内存使用情况
 
-The **[htop command][8]** is an interactive process viewer for Linux/Unix systems. It is a text-mode application and requires the ncurses library, it was developed by Hisham.
+**[htop 命令][8]** 是一个可交互的 Linux/Unix 系统进程查看器。它是一个文本模式应用，且使用它需要 Hisham 开发的 ncurses库。
 
-It is designed as an alternative to the top command.
+该名令的设计目的使用来代替 top 命令。
 
-This is similar to the top command, but allows you to scroll vertically and horizontally to see all the processes running the system.
+该命令与 top 命令很相似，但是其允许你可以垂直地或者水平地的滚动以便可以查看系统中所有的进程情况。
 
-htop comes with Visual Colors, which have added benefits and are very evident when it comes to tracking system performance.
+htop 命令拥有不同的颜色，这个额外的优点当你在追踪系统性能情况时十分有用。
 
-You are free to carry out any tasks related to processes, such as process killing and renicing without entering their PIDs.
+此外，你可以自由地执行与进程相关的任务，比如杀死进程或者改变进程的优先级而不需要其进程号（PID）。
 
 [![][9]][10]
 
-### 8) How to Check Memory Usage on Linux Using the glances Command
+### 8）如何使用 glances 命令查看 Linux 内存使用情况
 
-**[Glances][11]** is a cross-platform system monitoring tool written in Python.
+**[Glances][11]** 是一个 Python 编写的跨平台的系统监视工具。
 
-You can see all information in one place such as CPU usage, Memory usage, running process, Network interface, Disk I/O, Raid, Sensors, Filesystem info, Docker, System info, Uptime, etc,.
+你可以在一个其中查看所有信息，比如：CPU使用情况，内存使用情况，正在运行的进程，网络接口，磁盘 I/O，RAID，传感器，文件系统信息，Docker，系统信息，运行时间等等。
 
 ![][9]
 
