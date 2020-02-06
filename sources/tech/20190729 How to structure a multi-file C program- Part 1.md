@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (mengxinayan)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -180,7 +180,7 @@ via: https://opensource.com/article/19/7/structure-multi-file-c-part-1
 
 作者：[Erik O'Shaughnessy][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[萌新阿岩](https://github.com/mengxinayan)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
