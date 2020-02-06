@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (4 cool new projects to try in COPR for January 2020)
@@ -18,13 +18,13 @@ COPR 是个人软件仓库[集合][2]，它不在 Fedora 中。这是因为某�
 
 ### Contrast
 
-[Contrast][4]是一款小应用，用于检查两种颜色之间的对比度并确定其是否满足 [WCAG][5]中指定的要求。可以使用十六进制 RGB 代码或使用颜色选择器选择颜色。除了显示对比度之外，Contrast 还以选定的颜色为背景上显示短文本来显示比较。
+[Contrast][4] 是一款小应用，用于检查两种颜色之间的对比度并确定其是否满足 [WCAG][5] 中指定的要求。可以使用十六进制 RGB 代码或使用颜色选择器选择颜色。除了显示对比度之外，Contrast 还以选定的颜色为背景上显示短文本来显示比较。
 
 ![][6]
 
 #### 安装说明
 
-[仓库][7]当前为 Fedora 31 和 Rawhide 提供 Contrast。要安装 Contrast，请使用以下命令：
+[仓库][7]当前为 Fedora 31 和 Rawhide 提供了 Contrast。要安装 Contrast，请使用以下命令：
 
 ```
 sudo dnf copr enable atim/contrast
@@ -33,11 +33,11 @@ sudo dnf install contrast
 
 ### Pamixer
 
-[Pamixer][8]是一个使用 PulseAudio 调整和监控声音设备音量的命令行工具。你可以显示设备的当前音量并直接增加/减小它，或静音/取消静音。Pamixer 可以列出所有源和接收器。
+[Pamixer][8] 是一个使用 PulseAudio 调整和监控声音设备音量的命令行工具。你可以显示设备的当前音量并直接增加/减小它，或静音/取消静音。Pamixer 可以列出所有源和接收器。
 
 #### 安装说明
 
-[仓库][7]当前为 Fedora 31 和 Rawhide 提供 Pamixer。要安装 Pamixer，请使用以下命令：
+[仓库][7]当前为 Fedora 31 和 Rawhide 提供了 Pamixer。要安装 Pamixer，请使用以下命令：
 
 ```
 sudo dnf copr enable opuk/pamixer
@@ -52,7 +52,7 @@ sudo dnf install pamixer
 
 #### 安装说明
 
-[仓库][7]当前为 Fedora 31 提供 PhotoFlare。要安装 PhotoFlare，请使用以下命令：
+[仓库][7]当前为 Fedora 31 提供了 PhotoFlare。要安装 PhotoFlare，请使用以下命令：
 
 ```
 sudo dnf copr enable adriend/photoflare
@@ -65,7 +65,7 @@ sudo dnf install photoflare
 
 #### 安装说明
 
-[仓库][7]当前为 Fedora 29-31、Rawhide、EPEL 6-8 和其他发行版提供 tdiff。要安装 tdiff，请使用以下命令：
+[仓库][7]当前为 Fedora 29-31、Rawhide、EPEL 6-8 和其他发行版提供了 tdiff。要安装 tdiff，请使用以下命令：
 
 ```
 sudo dnf copr enable fif/tdiff
@@ -79,7 +79,7 @@ via: https://fedoramagazine.org/4-cool-new-projects-to-try-in-copr-for-january-2
 作者：[Dominik Turecek][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
