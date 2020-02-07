@@ -1,33 +1,32 @@
 [#]: collector: (lujun9972)
 [#]: translator: (LazyWolfLin)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11867-1.html)
 [#]: subject: (What's your favorite Linux distribution?)
 [#]: via: (https://opensource.com/article/20/1/favorite-linux-distribution)
 [#]: author: (Opensource.com https://opensource.com/users/admin)
 
 你最喜欢哪个 Linux 发行版？
 ======
-参与我们的第七届[年度调查][5]，让我们了解你对 Linux 发行版的偏好。
 
-![Hand putting a Linux file folder into a drawer][1]
+![](https://img.linux.net.cn/data/attachment/album/202002/08/004438ei1y4pp44pw4xy3w.jpg)
 
-你最喜欢哪个 Linux 发行版？参与我们的第七届[年度调查][5]。虽然有所变化，但现在仍有数百种 [Linux 发行版][2] 保持活跃且运作良好。发行版、包管理器和桌面的组合为 Linux 用户创建了无数客制化系统环境。
+你最喜欢哪个 Linux 发行版？虽然有所变化，但现在仍有数百种 [Linux 发行版][2]保持活跃且运作良好。发行版、包管理器和桌面的组合为 Linux 用户创建了无数客制化系统环境。
 
 我们询问了社区的作者们，哪个是他们的最爱以及原因。尽管回答中存在一些共性（由于各种原因，Fedora 和 Ubuntu 是最受欢迎的选择），但我们也听到一些惊奇的回答。以下是他们的一些回答：
 
-“我使用 Fedora 发行版！我喜欢这样的社区，成员们共同创建一个令人敬畏的操作系统，展现了开源软件世界最伟大的造物。”——Matthew Miller
+> “我使用 Fedora 发行版！我喜欢这样的社区，成员们共同创建一个令人惊叹的操作系统，展现了开源软件世界最伟大的造物。”——Matthew Miller
 
-“我在家中使用 Arch。作为一名游戏玩家，我希望可以轻松使用最新版本的 Wine 和 GFX 驱动，同时最大限度地掌控我的系统。所以我选择一个滚动升级并且每个包都保持领先的发行版。”——Aimi Hobson
+> “我在家中使用 Arch。作为一名游戏玩家，我希望可以轻松使用最新版本的 Wine 和 GFX 驱动，同时最大限度地掌控我的系统。所以我选择一个滚动升级并且每个包都保持领先的发行版。”——Aimi Hobson
 
-“NixOS，在业余爱好者市场中没有比这更合适的。”——Alexander Sosedkin
+> “NixOS，在业余爱好者市场中没有比这更合适的。”——Alexander Sosedkin
 
-“我用过每个 Fedora 版本作为我的工作系统。这意味着我从第一个版本开始使用。从前，我问自己是否将有一天我会忘记我用的系统版本号。而这一天已经到来了。所以，现在是什么时候呢？”——Hugh Brock
+> “我用过每个 Fedora 版本作为我的工作系统。这意味着我从第一个版本开始使用。从前，我问自己是否会忘记我使用的是哪一个版本。而这一天已经到来了，是从什么时候开始忘记了的呢？”——Hugh Brock
 
-“通常，在我的房屋和办公室里都有运行 Ubuntu、CentOS 和 Fedora 的机器。我依赖这些发行版来完成各种工作。Fedora 用于高性能和获取最新版本的应用和库。Ubuntu 用于那些需要大型支持社区。CentOS 则当我们需要稳如磐石的服务器平台时。”——Steve Morris
+> “通常，在我的家里和办公室里都有运行 Ubuntu、CentOS 和 Fedora 的机器。我依赖这些发行版来完成各种工作。Fedora 速度很快，而且可以获取最新版本的应用和库。Ubuntu 有大型社区支持，可以轻松使用。CentOS 则当我们需要稳如磐石的服务器平台时。”——Steve Morris
 
-“我最喜欢？对于社区以及如何为发行版构建软件包（从源码构建而非二进制文件），我选择 Fedora。对于可用包的范围和包的定义和开发，我选择 Debian。对于文档，我选择 Arch。对于新手的提问，我以前会推荐 Ubuntu，而现在会推荐 Fedora。”——Al Stone
+> “我最喜欢？对于社区以及如何为发行版构建软件包（从源码构建而非二进制文件），我选择 Fedora。对于可用包的范围和包的定义和开发，我选择 Debian。对于文档，我选择 Arch。对于新手的提问，我以前会推荐 Ubuntu，而现在会推荐 Fedora。”——Al Stone
 
 * * *
 
@@ -44,7 +43,7 @@ via: https://opensource.com/article/20/1/favorite-linux-distribution
 作者：[Opensource.com][a]
 选题：[lujun9972][b]
 译者：[LazyWolfLin](https://github.com/LazyWolfLin)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
