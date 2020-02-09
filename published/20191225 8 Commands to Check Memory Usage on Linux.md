@@ -1,49 +1,45 @@
 [#]: collector: (lujun9972)
 [#]: translator: (mengxinayan)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11870-1.html)
 [#]: subject: (8 Commands to Check Memory Usage on Linux)
 [#]: via: (https://www.2daygeek.com/linux-commands-check-memory-usage/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-检查 Linux 中内存使用情况的8条命令
+检查 Linux 中内存使用情况的 8 条命令
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202002/09/121112mg0jigxtcc5xr8or.jpg)
 
 Linux 并不像 Windows，你经常不会有图形界面可供使用，特别是在服务器环境中。
 
-作为一名 Linux 管理员，知道如何获取当前可用的和已经使用的资源情况，比如内存、CPU、磁盘等，是相当重要的。
+作为一名 Linux 管理员，知道如何获取当前可用的和已经使用的资源情况，比如内存、CPU、磁盘等，是相当重要的。如果某一应用在你的系统上占用了太多的资源，导致你的系统无法达到最优状态，那么你需要找到并修正它。
 
-如果某一应用在你的系统上占用了太多的资源，导致你的系统无法达到最优状态，那么你需要找到并修正它。
+如果你想找到消耗内存前十名的进程，你需要去阅读这篇文章：[如何在 Linux 中找出内存消耗最大的进程][1]。
 
-如果你想找到消耗内存前十名的进程，你需要去阅读这篇文章： **[在 Linux 系统中找到消耗内存最多的 10 个进程][1]** 。
+在 Linux 中，命令能做任何事，所以使用相关命令吧。在这篇教程中，我们将会给你展示 8 个有用的命令来即查看在 Linux 系统中内存的使用情况，包括 RAM 和交换分区。
 
-在 Linux 中，命令能做任何事，所以使用相关命令吧。
-
-在这篇教程中，我们将会给你展示 8 个有用的命令来即查看在 Linux 系统中内存的使用情况，包括 RAM 和交换分区。
-
-创建交换分区在 Linux 系统中是非常重要的，如果你想了解如何创建，可以去阅读这篇文章： **[在 Linux 系统上创建交换分区][2]** 。
+创建交换分区在 Linux 系统中是非常重要的，如果你想了解如何创建，可以去阅读这篇文章：[在 Linux 系统上创建交换分区][2]。
 
 下面的命令可以帮助你以不同的方式查看 Linux 内存使用情况。
 
-  * free 命令
-  * /proc/meminfo 文件
-  * vmstat 命令
-  * ps_mem 命令
-  * smem 命令
-  * top 命令
-  * htop 命令
-  * glances 命令
-
-
+  * `free` 命令
+  * `/proc/meminfo` 文件
+  * `vmstat` 命令
+  * `ps_mem` 命令
+  * `smem` 命令
+  * `top` 命令
+  * `htop` 命令
+  * `glances` 命令
 
 ### 1）如何使用 free 命令查看 Linux 内存使用情况
 
-**[Free 命令][3]** 是被 Linux 管理员广泛使用地命令。但是它提供的信息比 “/proc/meminfo” 文件少。
+[free 命令][3] 是被 Linux 管理员广泛使用的主要命令。但是它提供的信息比 `/proc/meminfo` 文件少。
 
-Free 命令会分别展示物理内存和交换分区内存中已使用的和未使用的数量，以及内核使用的缓冲区和缓存。
+`free` 命令会分别展示物理内存和交换分区内存中已使用的和未使用的数量，以及内核使用的缓冲区和缓存。
 
-这些信息都是从 “/proc/meminfo” 文件中获取的。
+这些信息都是从 `/proc/meminfo` 文件中获取的。
 
 ```
 # free -m
@@ -52,24 +48,18 @@ Mem:          15867        9199        1702        3315        4965        3039
 Swap:         17454         666       16788
 ```
 
-  * **total:** 总的内存量
-  * **used:** 当前正在被运行中的进程使用的内存量 (used = total – free – buff/cache)
-  * **free:** 未被使用的内存量 (free = total – used – buff/cache)
-  * **shared:** 在两个或多个进程之间共享的内存量 (多进程)
-  * **buffers:** 内核用于记录进程队列请求的内存量
-  * **cache:** 在 RAM 中最近使用的文件中的页缓冲大小
-  * **buff/cache:** 缓冲区和缓存总的使用内存量
-  * **available:** 启动新应用不含交换分区的可用内存量
-
-
+  * `total`：总的内存量
+  * `used`：被当前运行中的进程使用的内存量（`used` = `total` – `free` – `buff/cache`）
+  * `free`： 未被使用的内存量（`free` = `total` – `used` – `buff/cache`）
+  * `shared`： 在两个或多个进程之间共享的内存量
+  * `buffers`： 内存中保留用于内核记录进程队列请求的内存量
+  * `cache`： 在 RAM 中存储最近使用过的文件的页缓冲大小
+  * `buff/cache`： 缓冲区和缓存总的使用内存量
+  * `available`： 可用于启动新应用的可用内存量（不含交换分区）
 
 ### 2) 如何使用 /proc/meminfo 文件查看 Linux 内存使用情况
 
-“/proc/meminfo” 文件是一个包含了多种内存使用的实时信息的虚拟文件。
-
-它展示内存状态单位使用的是 kB，其中大部分属性都难以理解。
-
-然而它也包含了内存使用情况的有用信息。
+`/proc/meminfo` 文件是一个包含了多种内存使用的实时信息的虚拟文件。它展示内存状态单位使用的是 kB，其中大部分属性都难以理解。然而它也包含了内存使用情况的有用信息。
 
 ```
 # cat /proc/meminfo
@@ -126,12 +116,9 @@ DirectMap1G:     2097152 kB
 
 ### 3) 如何使用 vmstat 命令查看 Linux 内存使用情况
 
-**[vmstat 命令][4]** 是另一个报告虚拟内存统计信息的有用工具。
+[vmstat 命令][4] 是另一个报告虚拟内存统计信息的有用工具。
 
-vmstat 报告的信息包括：进程、内存、页面映射、块 I/O、陷阱、磁盘和 cpu 功能信息。
-
-
-vmstat 不需要特殊的权限，并且它可以帮助诊断系统瓶颈。
+`vmstat` 报告的信息包括：进程、内存、页面映射、块 I/O、陷阱、磁盘和 CPU 特性信息。`vmstat` 不需要特殊的权限，并且它可以帮助诊断系统瓶颈。
 
 ```
 # vmstat
@@ -143,54 +130,31 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 
 如果你想详细了解每一项的含义，阅读下面的描述。
 
-**Procs**
-
-  * **r:** 可以运行的进程数目（正在运行或等待运行）
-  * **b:** 不间断睡眠中的进程数目
-
-
-
-**Memory**
-
-  * **swpd:** 使用的虚拟内存数量
-  * **free:** 空闲的内存数量
-  * **buff:** 用作缓冲区内存的数量
-  * **cache:** 用作缓存内存的数量
-  * **inact:** 不活动的内存数量（-a 选项）
-  * **active:** 活动的内存数量（-a 选项）
-
-
-  
-**Swap**
-
-  * **si:** 从磁盘交换的内存数量 (/s).
-  * **so:** 交换到磁盘的内存数量 (/s).
-
-
-
-**IO**
-
-  * **bi:** 从一个块设备中收到的块 (blocks/s).
-  * **bo:** 发送到一个块设备的块 (blocks/s).
-
-
-
-**System**
-
-  * **in:** 每秒的中断此数，包括时钟。
-  * **cs:** 每秒的上下文切换次数。
-
-
-
-**CPU : 下面这些是在总的 CPU 时间占的百分比 **
-
-  * **us:** 花费在非内核上的时间占比（包括用户时间，调度）
-  * **sy:** 花费在内核上的时间占比 （系统时间）
-  * **id:** 花费在闲置的时间占比。在 Linux 2.5.41 之前，包括 I/O 等待时间
-  * **wa:** 花费在 I/O 等待上的时间占比。在 Linux 2.5.41 之前，包括空闲时间
-  * **st:** 被虚拟机偷走的时间占比。在 Linux 2.6.11 之前，这部分称为 unknow
-
-
+* `procs`：进程
+  * `r`： 可以运行的进程数目（正在运行或等待运行）
+  * `b`： 处于不可中断睡眠中的进程数目
+* `memory`：内存
+  * `swpd`： 使用的虚拟内存数量
+  * `free`： 空闲的内存数量
+  * `buff`： 用作缓冲区内存的数量
+  * `cache`： 用作缓存内存的数量
+  * `inact`： 不活动的内存数量（使用 `-a` 选项）
+  * `active`： 活动的内存数量（使用 `-a` 选项） 
+* `Swap`：交换分区
+  * `si`： 每秒从磁盘交换的内存数量
+  * `so`： 每秒交换到磁盘的内存数量
+* `IO`：输入输出
+  * `bi`： 从一个块设备中收到的块（块/秒）
+  * `bo`： 发送到一个块设备的块（块/秒）
+* `System`：系统
+  * `in`： 每秒的中断次数，包括时钟。
+  * `cs`： 每秒的上下文切换次数。
+* `CPU`：下面这些是在总的 CPU 时间占的百分比
+  * `us`： 花费在非内核代码上的时间占比（包括用户时间，调度时间）
+  * `sy`： 花费在内核代码上的时间占比 （系统时间）
+  * `id`： 花费在闲置的时间占比。在 Linux 2.5.41 之前，包括 I/O 等待时间
+  * `wa`： 花费在 I/O 等待上的时间占比。在 Linux 2.5.41 之前，包括在空闲时间中
+  * `st`： 被虚拟机偷走的时间占比。在 Linux 2.6.11 之前，这部分称为 unknown
 
 运行下面的命令查看详细的信息。
 
@@ -226,9 +190,7 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 ```
 ### 4) 如何使用 ps_mem 命令查看 Linux 内存使用情况
 
-**[ps_mem][5]** 是一个简单的 Python 脚本用来查看当前内存使用情况。
-
-该工具可以确定每个程序使用了多少内存（不是每个进程）。
+[ps_mem][5] 是一个用来查看当前内存使用情况的简单的 Python 脚本。该工具可以确定每个程序使用了多少内存（不是每个进程）。
 
 该工具采用如下的方法计算每个程序使用内存：总的使用 = 程序进程私有的内存 + 程序进程共享的内存。
 
@@ -287,13 +249,11 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 
 ### 5）如何使用 smem 命令查看 Linux 内存使用情况
 
-**[smem][6]** 是一个可以为 Linux 系统提供多种内存使用情况报告的工具。不同于现有的工具，smem 可以报告比例集大小（PSS）、唯一集大小（USS）和居住集大小（RSS）
+[smem][6] 是一个可以为 Linux 系统提供多种内存使用情况报告的工具。不同于现有的工具，`smem` 可以报告<ruby>比例集大小<rt>Proportional Set Size</rt></ruby>（PSS）、<ruby>唯一集大小<rt>Unique Set Size</rt></ruby>（USS）和<ruby>驻留集大小<rt>Resident Set Size</rt></ruby>（RSS）。
 
-比例集（PSS）：库和应用在虚拟内存系统中的使用量。
-
-唯一集大小（USS）：其报告的是非共享内存。
-
-居住集大小（RSS）：物理内存（通常多进程共享）使用情况，其通常高于内存使用量。
+- 比例集大小（PSS）：库和应用在虚拟内存系统中的使用量。
+- 唯一集大小（USS）：其报告的是非共享内存。
+- 驻留集大小（RSS）：物理内存（通常多进程共享）使用情况，其通常高于内存使用量。
 
 ```
 # smem -tk
@@ -338,11 +298,9 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 
 ### 6) 如何使用 top 命令查看 Linux 内存使用情况
 
-**[top 命令][7]** 是一个 Linux 系统的管理员最常使用的用于查看进程的资源使用情况的命令。
+[top 命令][7] 是一个 Linux 系统的管理员最常使用的用于查看进程的资源使用情况的命令。
 
-该命令会展示了系统总的内存量，当前内存使用量，空闲内存量和缓冲区使用的内存总量。
-
-此外，该命令还会展示总的交换空间内存量，当前交换空间的内存使用量，空闲的交换空间内存量和缓存使用的内存总量。
+该命令会展示了系统总的内存量、当前内存使用量、空闲内存量和缓冲区使用的内存总量。此外，该命令还会展示总的交换空间内存量、当前交换空间的内存使用量、空闲的交换空间内存量和缓存使用的内存总量。
 
 ```
 # top -b | head -10
@@ -370,25 +328,23 @@ KiB Swap: 17873388 total, 17873388 free,        0 used.  9179772 avail Mem
 
 ### 7) 如何使用 htop 命令查看 Linux 内存使用情况
 
-**[htop 命令][8]** 是一个可交互的 Linux/Unix 系统进程查看器。它是一个文本模式应用，且使用它需要 Hisham 开发的 ncurses库。
+[htop 命令][8] 是一个可交互的 Linux/Unix 系统进程查看器。它是一个文本模式应用，且使用它需要 Hisham 开发的 ncurses 库。
 
-该名令的设计目的使用来代替 top 命令。
+该名令的设计目的使用来代替 `top` 命令。该命令与 `top` 命令很相似，但是其允许你可以垂直地或者水平地的滚动以便可以查看系统中所有的进程情况。
 
-该命令与 top 命令很相似，但是其允许你可以垂直地或者水平地的滚动以便可以查看系统中所有的进程情况。
-
-htop 命令拥有不同的颜色，这个额外的优点当你在追踪系统性能情况时十分有用。
+`htop` 命令拥有不同的颜色，这个额外的优点当你在追踪系统性能情况时十分有用。
 
 此外，你可以自由地执行与进程相关的任务，比如杀死进程或者改变进程的优先级而不需要其进程号（PID）。
 
-[![][9]][10]
+![][10]
 
 ### 8）如何使用 glances 命令查看 Linux 内存使用情况
 
-**[Glances][11]** 是一个 Python 编写的跨平台的系统监视工具。
+[Glances][11] 是一个 Python 编写的跨平台的系统监视工具。
 
-你可以在一个其中查看所有信息，比如：CPU使用情况，内存使用情况，正在运行的进程，网络接口，磁盘 I/O，RAID，传感器，文件系统信息，Docker，系统信息，运行时间等等。
+你可以在一个地方查看所有信息，比如：CPU 使用情况、内存使用情况、正在运行的进程、网络接口、磁盘 I/O、RAID、传感器、文件系统信息、Docker、系统信息、运行时间等等。
 
-![][9]
+![][12]
 
 --------------------------------------------------------------------------------
 
@@ -397,20 +353,21 @@ via: https://www.2daygeek.com/linux-commands-check-memory-usage/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[萌新阿岩](https://github.com/mengxinayan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/how-to-find-high-cpu-consumption-processes-in-linux/
-[2]: https://www.2daygeek.com/add-extend-increase-swap-space-memory-file-partition-linux/
-[3]: https://www.2daygeek.com/free-command-to-check-memory-usage-statistics-in-linux/
-[4]: https://www.2daygeek.com/linux-vmstat-command-examples-tool-report-virtual-memory-statistics/
-[5]: https://www.2daygeek.com/ps_mem-report-core-memory-usage-accurately-in-linux/
-[6]: https://www.2daygeek.com/smem-linux-memory-usage-statistics-reporting-tool/
+[1]: https://linux.cn/article-11542-1.html
+[2]: https://linux.cn/article-9579-1.html
+[3]: https://linux.cn/article-8314-1.html
+[4]: https://linux.cn/article-8157-1.html
+[5]: https://linux.cn/article-8639-1.html
+[6]: https://linux.cn/article-7681-1.html
 [7]: https://www.2daygeek.com/linux-top-command-linux-system-performance-monitoring-tool/
 [8]: https://www.2daygeek.com/linux-htop-command-linux-system-performance-resource-monitoring-tool/
 [9]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
 [10]: https://www.2daygeek.com/wp-content/uploads/2019/12/linux-commands-check-memory-usage-2.jpg
 [11]: https://www.2daygeek.com/linux-glances-advanced-real-time-linux-system-performance-monitoring-tool/
+[12]: https://www.2daygeek.com/wp-content/uploads/2019/12/linux-commands-check-memory-usage-3.jpg
