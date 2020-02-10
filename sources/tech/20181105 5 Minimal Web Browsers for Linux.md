@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MonkeyDEcho )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: subject: (5 Minimal Web Browsers for Linux)
@@ -9,19 +9,27 @@
 
 5 Minimal Web Browsers for Linux
 ======
+linux上的五种微型浏览器
+======
+
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/minimal.jpg?itok=ifA0Y3pV)
 
 There are so many reasons to enjoy the Linux desktop. One reason I often state up front is the almost unlimited number of choices to be found at almost every conceivable level. From how you interact with the operating system (via a desktop interface), to how daemons run, to what tools you use, you have a multitude of options.
+有太多理由去选择使用linux系统。很重要的一个理由是，我们可以按照我们自己的想法去选择想要的。从操作系统的交互方式（桌面系统）到守护系统的运行方式，在到使用的工具，你用更多的选择。
 
 The same thing goes for web browsers. You can use anything from open source favorites, such as [Firefox][1] and [Chromium][2], or closed sourced industry darlings like [Vivaldi][3] and [Chrome][4]. Those options are full-fledged browsers with every possible bell and whistle you’ll ever need. For some, these feature-rich browsers are perfect for everyday needs.
+web浏览器也是如此。你可以使用开源的[火狐][1]，[Chromium][2];或者未开源的[Vivaldi][3]，[Chrome][4]。这些功能强大的浏览器有你需要的各种功能。对于某些人，这些功能完备的浏览器是日常必需的。
 
 There are those, however, who prefer using a web browser without all the frills. In fact, there are many reasons why you might prefer a minimal browser over a standard browser. For some, it’s about browser security, while others look at a web browser as a single-function tool (as opposed to a one-stop shop application). Still others might be running low-powered machines that cannot handle the requirements of, say, Firefox or Chrome. Regardless of the reason, Linux has you covered.
+但是，有些人更喜欢没有冗余功能的纯粹的浏览器。实际上，有很多原因导致你会选择微型的浏览器而不选择上述功能完备的浏览器。对于某些人来说，与浏览器的安全有关；而有些人则将浏览器当作一种简单的工具（而不是一站式商店应用程序）；还有一些可能运行在低功率的计算机上，这些计算机无法满足火狐，chrome浏览器的运行要求。无论出于何种原因，在linux系统上都可以满足你的要求。
 
 Let’s take a look at five of the minimal browsers that can be installed on Linux. I’ll be demonstrating these browsers on the Elementary OS platform, but each of these browsers are available to nearly every distribution in the known Linuxverse. Let’s dive in.
+让我们看一下可以在linux上安装运行的五种微型浏览器。我将在 Elementary 的操作系统平台上演示这些浏览器，在已知的linux发型版中几乎每个版本都可以使用这些浏览器。让我们一起来看一下吧！
 
 ### GNOME Web
 
 GNOME Web (codename Epiphany, which means [“a usually sudden manifestation or perception of the essential nature or meaning of something”][5]) is the default web browser for Elementary OS, but it can be installed from the standard repositories. (Note, however, that the recommended installation of Epiphany is via Flatpak or Snap). If you choose to install via the standard package manager, issue a command such as sudo apt-get install epiphany-browser -y for successful installation.
+GNOME web (Epiphany 含义：[顿悟][5])是Elementary系统默认的web浏览器，也可以从标准存储库中安装。(注意，建议通过使用 Flatpak 或者 Snap 工具安装)，如果你想选择标准软件包管理器进行安装，请执行 ```sudo apt-get install epiphany-browser -y``` 命令成功安装。
 
 Epiphany uses the WebKit rendering engine, which is the same engine used in Apple’s Safari browser. Couple that rendering engine with the fact that Epiphany has very little in terms of bloat to get in the way, you will enjoy very fast page-rendering speeds. Epiphany development follows strict adherence to the following guidelines:
 
