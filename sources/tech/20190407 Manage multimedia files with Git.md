@@ -183,9 +183,7 @@ origin [git@gitdawg.com][6]:seth/bigproject.git (fetch)
 origin [git@gitdawg.com][6]:seth/bigproject.git (push)
 ```
 
-**origin** 这个名字对你的主要 Git 仓库是一个流行的惯例，所以使用它来
-The name **origin** is a popular convention for your main Git repository, so it makes sense to use it for your Git data. Your Git-portal data, however, is stored separately, so you must create a second remote to tell Git-portal where to push to and pull from. Depending on your Git host, you may need a separate server because gigabytes of media assets are unlikely to be accepted by a Git host with limited space. Or maybe you're on a server that permits you to access only your Git repository and not external storage directories:
-
+**origin** 这个名字对你的主要 Git 仓库是一个流行的惯例，为 Git 数据使用它是有意义的。然而，你的 Git-portal 数据是分开存储的，所以你必须创建第二个远程机器来让 Git-portal 了解向哪里 push 和从哪里 pull。取决于你的 Git 主机。你可能需要一个分离的服务器，因为媒体资源可能有GB的大小，使得一个 Git 主机由于空间限制无法承担。或者，可能你的服务器仅允许你访问你的 Git 仓库而不允许一个额外的存储文件夹：
 
 ```
 $ git remote add _portal [seth@example.com][7]:/home/seth/git/bigproject_portal
@@ -196,9 +194,9 @@ _portal [seth@example.com][7]:/home/seth/git/bigproject_portal (fetch)
 _portal [seth@example.com][7]:/home/seth/git/bigproject_portal (push)
 ```
 
-You may not want to give all of your users individual accounts on your server, and you don't have to. To provide access to the server hosting a repository's large file assets, you can run a Git frontend like **[Gitolite][8]** , or you can use **rrsync** (i.e., restricted rsync).
+你可能不想把你的所有私人账户放在你的服务器上，而且你不需要这样做。为了提供服务器上仓库的大文件资源权限，你可以运行一个 Git 前端，比如 **[Gitolite][8]** 或者你可以使用 **rrsync** （restricted rsync)。
 
-Now you can push your Git data to your remote Git repository and your Git-portal data to your remote portal:
+现在你可以推送你的 Git 数据到你的远程 Git 仓库和你的 Git-portal 数据到你的远程 portal:
 
 
 ```
@@ -211,15 +209,15 @@ total size is 60,358,015 speedup is 6,474.10
 Syncing _portal content to example.com:/home/seth/git/bigproject_portal
 ```
 
-If you have Git-portal installed and a **_portal** remote configured, your **_portal** directory will be synchronized, getting new content from the server and sending fresh content with every push. While you don't have to do a Git commit and push to sync with the server (a user could just use rsync directly), I find it useful to require commits for artistic changes. It integrates artists and their digital assets into the rest of the workflow, and it provides useful metadata about project progress and velocity.
+如果你已经安装了 Git-portal，并且配置了一个远程的 **_portal**，你的 **_portal** 文件夹将会被同步，并且从服务器获取新的内容，以及在每一次 push 的时候发送新的内容。但是，你不需要进行 Git commit 或者 push 来和服务器同步（用户可以使用直接使用 rsync），我发现对于艺术性内容的改变，提交是有用的。这将会把艺术家及其数字资源集成到工作流的其余部分中，并提供有关项目进度和速度的有用元数据。 
 
-### Other options
+### 其他选项
 
-If Git-portal is too simple for you, there are other options for managing large files with Git. [Git Large File Storage][9] (LFS) is a fork of a defunct project called git-media and is maintained and supported by GitHub. It requires special commands (like **git lfs track** to protect large files from being tracked by Git) and requires the user to manage a .gitattributes file to update which files in the repository are tracked by LFS. It supports _only_ HTTP and HTTPS remotes for large files, so your LFS server must be configured so users can authenticate over HTTP rather than SSH or rsync.
+如果 Git-portal 对你而言太过简单，还有一些其他的选择用于 Git 管理大型文件。[Git Large File Storage][9] (LFS) 是一个失效项目的分支，称作 git-media。这个分支由 Github 维护和支持。它需要特殊的命令（例如 **git lfs track** 来保护大型文件不被 Git 追踪）并且需要用户维护一个 .gitattributes 文件来更新哪些仓库中的文件被 LFS 追踪。对于大文件而言，它 _仅_ 支持 HTTP 和 HTTPS 主机。所以你的 LFS 服务器必须进行配置，才能使得用户可以通过 HTTP 而不是 SSH 或 rsync 来进行鉴权。
 
-A more flexible option than LFS is [git-annex][10], which you can learn more about in my article about [managing binary blobs in Git][11] (ignore the parts about the deprecated git-media, as its former flexibility doesn't apply to its successor, Git LFS). Git-annex is a flexible and elegant solution with a detailed system for adding, removing, and moving large files within a repository. Because it's flexible and powerful, there are lots of new commands and rules to learn, so take a look at its [documentation][12].
+另一个相对 LFS 更灵活的选项是 [git-annex][10]。你可以在我的文章 [managing binary blobs in Git][11] （忽略 git-media 这个已经废弃的项目，它的继任者 Git LFS 没有将它延续下来）中了解更多。Git-annex 是一个灵活且优雅的解决方案。它拥有一个细腻的系统来用于添加，删除，移动仓库中的大型文件。因为它灵活且强大，有很多新的命令和规则需要进行学习，所以建议看一下它的 [文档][12]。
 
-If, however, your needs are simple and you like a solution that utilizes existing technology to do simple and obvious tasks, Git-portal might be the tool for the job.
+然而，如果你的需求很简单，你可能更加喜欢整合已有技术来进行简单且明显任务的解决方案，Git-portal 可能是对于工作而言比较合适的工具。
 
 --------------------------------------------------------------------------------
 
@@ -227,7 +225,7 @@ via: https://opensource.com/article/19/4/manage-multimedia-files-git
 
 作者：[Seth Kenlon (Red Hat, Community Moderator)][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[svtter](https://github.com/svtter)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
