@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (zxp)
+[#]: translator: (zhangxiangping)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -14,17 +14,16 @@
 
 ![Chat bubbles][1]
 
-Natural language processing (NLP), the technology that powers all the chatbots, voice assistants, predictive text, and other speech/text applications that permeate our lives, has evolved significantly in the last few years. There are a wide variety of open source NLP tools out there, so I decided to survey the landscape to help you plan your next voice- or text-based application.
+在过去的几年里，自然语言处理(NLP)推动了聊天机器人、语音助手、文本预测，这些在我们的日常生活中常用的语音或文本应用程技术的发展。目前有着各种各样开源的NLP工具，所以我决定调查一下当前开源的NLP工具来帮助您制定您开发下一个基于语音或文本的应用程序的计划。
 
-For this review, I focused on tools that use languages I'm familiar with, even though I'm not familiar with all the tools. (I didn't find a great selection of tools in the languages I'm not familiar with anyway.) That said, I excluded tools in three languages I am familiar with, for various reasons.
+我将从我所熟悉的编程语言出发来介绍这些工具，尽管我对这些工具不是很熟悉(我没有在我不熟悉的语言中找工具)。也就是说，出于各种原因，我排除了三种我熟悉的语言中的工具。
 
-The most obvious language I didn't include might be R, but most of the libraries I found hadn't been updated in over a year. That doesn't always mean they aren't being maintained well, but I think they should be getting updates more often to compete with other tools in the same space. I also chose languages and tools that are most likely to be used in production scenarios (rather than academia and research), and I have mostly used R as a research and discovery tool.
+R语言是没有被包含在内的，因为我发现的大多数库都有一年多没有更新了。这并不总是意味着他们没有得到很好的维护，但我认为他们应该得到更多的更新，以便和同一领域的其他工具竞争。我还选择了最有可能在生产场景中使用的语言和工具（而不是在学术界和研究中使用），虽然我主要是使用R作为研究和发现工具。
 
-I was also surprised to see that the Scala libraries are fairly stagnant. It has been a couple of years since I last used Scala, when it was pretty popular. Most of the libraries haven't been updated since that time—or they've only had a few updates.
+我发现Scala的很多库都没有更新了。我上次使用Scala已经有好几年了，当时它非常流行。但是大多数库从那个时候就再没有更新过，或者只有少数一些有更新。
 
-Finally, I excluded C++. This is mostly because it's been many years since I last wrote in C++, and the organizations I've worked in have not used C++ for NLP or any data science work.
+最后，我排除了C++。这主要是因为我在的公司很久没有使用C++来进行NLP或者任何数据科学的工作。
 
-### Python tools
 ### Python工具
 #### Natural Language Toolkit (NLTK)
 
@@ -46,7 +45,7 @@ Finally, I excluded C++. This is mostly because it's been many years since I las
 
 [PyTorch-NLP][7]才出现短短的一年，但它已经有一个庞大的社区了。它适用于快速原型开发。当公司或者研究人员推出很多其他工具去完成新奇的处理任务，比如图像转换，它就会被更新。PyTorch的目标用户是研究人员，但它也能用于原型开发，或在最开始的生产任务中使用最好的算法。基于此基础上的创建的库也是值得研究的。
 
-### Node tools
+### 节点工具
 
 #### Retext
 
@@ -62,26 +61,24 @@ Finally, I excluded C++. This is mostly because it's been many years since I las
 
 #### Nlp.js
 
-[Nlp.js][12]是在其他几个NLP库上开发的，包括Franc和Brain.js。
- is built on top of several other NLP libraries, including Franc and Brain.js. It provides a nice interface into many components of NLP, like classification, sentiment analysis, stemming, named entity recognition, and natural language generation. It also supports quite a few languages, which is helpful if you plan to work in something other than English. Overall, this is a great general tool with a simplified interface into several other great tools. This will likely take you a long way in your applications before you need something more powerful or more flexible.
+[Nlp.js][12]是在其他几个NLP库上开发的，包括Franc和Brain.js。它提供了一个能很好支持NLP组件的接口，比如分类，情感分析，词干化，命名实体识别和自然语言生成。它也支持一些其他语言，在你处理除了英语之外的语言时也能提供一些帮助。总之，它是一个不错的通用工具，能够提供简单的接口去调用其他工具。在你需要更强大或更灵活的工具之前，这个工具可能会在你的应用程序中用上很长一段时间。
 
-### Java tools
-
+### Java工具
 #### OpenNLP
 
-[OpenNLP][13] is hosted by the Apache Foundation, so it's easy to integrate it into other Apache projects, like Apache Flink, Apache NiFi, and Apache Spark. It is a general NLP tool that covers all the common processing components of NLP, and it can be used from the command line or within an application as a library. It also has wide support for multiple languages. Overall, OpenNLP is a powerful tool with a lot of features and ready for production workloads if you're using Java.
+[OpenNLP][13]是由Apache基金会维护的，所以它可以很方便地集成到其他Apache项目中，比如Apache Flink，Apache NiFi和Apache Spark。这是一个通用的NLP工具，包含了所有NLP组件中的通用功能，可以通过命令行或者以包的形式导入到应用中来使用它。它也支持很多种语言。OpenNLP是一个很高效的工具，包含了很多特性，如果你用Java开发生产的话，它是个很好的选择。
 
 #### StanfordNLP
 
-[Stanford CoreNLP][14] is a set of tools that provides statistical NLP, deep learning NLP, and rule-based NLP functionality. Many other programming language bindings have been created so this tool can be used outside of Java. It is a very powerful tool created by an elite research institution, but it may not be the best thing for production workloads. This tool is dual-licensed with a special license for commercial purposes. Overall, this is a great tool for research and experimentation, but it may incur additional costs in a production system. The Python implementation might also interest many readers more than the Java version. Also, one of the best Machine Learning courses is taught by a Stanford professor on Coursera. [Check it out][15] along with other great resources.
+[Stanford CoreNLP][14]是一个工具集，提供了基于统计的，基于深度学习和基于规则的NLP功能。这个工具也有许多其他编程语言的版本，所以可以脱离Java来使用。它是由高水平的研究机构创建的一个高效的工具，但在生产环境中可能不是最好的。此工具具有双重许可，并具有可以用于商业目的的特殊许可。总之，在研究和实验中它是一个很棒的工具，但在生产系统中可能会带来一些额外的开销。比起Java版本来说，读者可能对它的Python版本更感兴趣。斯坦福教授在Coursera上教的最好的机器学习课程之一，[点此][15]访问其他不错的资源。
 
 #### CogCompNLP
 
-[CogCompNLP][16], developed by the University of Illinois, also has a Python library with similar functionality. It can be used to process text, either locally or on remote systems, which can remove a tremendous burden from your local device. It provides processing functions such as tokenization, part-of-speech tagging, chunking, named-entity tagging, lemmatization, dependency and constituency parsing, and semantic role labeling. Overall, this is a great tool for research, and it has a lot of components that you can explore. I'm not sure it's great for production workloads, but it's worth trying if you plan to use Java.
+[CogCompNLP][16]由伊利诺斯大学开发的一个工具，它也有一个相似功能的Python版本事项。它可以用于处理文本，包括本地处理和远程处理，能够极大地缓解你本地设备的压力。它提供了很多处理函数，比如令牌化，词性分析，标注，断句，命名实体标注，词型还原，依存分析和语义角色标注。它是一个很好的研究工具，你可以自己探索它的不同功能。我不确定它是否适合生产环境，但如果你使用Java的话，它值得一试。
 
 * * *
 
-What are your favorite open source tools and libraries for NLP? Please share in the comments—especially if there's one I didn't include.
+你最喜欢的开源的NLP工具和库是什么？请在评论区分享文中没有提到的工具。
 
 --------------------------------------------------------------------------------
 
