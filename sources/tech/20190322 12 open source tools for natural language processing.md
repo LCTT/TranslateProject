@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (zxp)
+[#]: translator: (zhangxiangping)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -88,7 +88,7 @@ via: https://opensource.com/article/19/3/natural-language-processing-tools
 
 作者：[Dan Barker (Community Moderator)][a]
 选题：[lujun9972][b]
-译者：[zxp](https://github.com/zhangxiangping)
+译者：[zhangxiangping](https://github.com/zhangxiangping)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
