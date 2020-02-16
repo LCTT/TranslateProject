@@ -7,99 +7,99 @@
 [#]: via: (https://fedoramagazine.org/playing-music-on-your-fedora-terminal-with-mpd-and-ncmpcpp/)
 [#]: author: (Carmine Zaccagnino https://fedoramagazine.org/author/carzacc/)
 
-Playing Music on your Fedora Terminal with MPD and ncmpcpp
+使用MPD和ncmpcpp在你的Fedora终端上播放音乐 
 ======
 
 ![][1]
 
-MPD, as the name implies, is a Music Playing Daemon. It can play music but, being a daemon, any piece of software can interface with it and play sounds, including some CLI clients.
+MPD(Music Playing Daemon)，顾名思义，是一个音乐(Music)播放(Playing)程序(Daemon)。它可以播放音乐，并且作为一个守护进程，任何软件都可以与之交互并播放声音，包括一些CLI客户端。 
 
-One of them is called _ncmpcpp_, which is an improvement over the pre-existing _ncmpc_ tool. The name change doesn’t have much to do with the language they’re written in: they’re both C++, but _ncmpcpp_ is called that because it’s the _NCurses Music Playing Client_ _Plus Plus_.
+其中一个被称为 _ncmpcpp_ ，它是对之前NNCMPCI工具的改进。名字的变化与他们所写的语言没有太大关系：都是C++，但称为 _ncmpcpp_ ，因为它是 _NCurses Music Playing Client_ _Plus Plus_ . 
 
-### Installing MPD and ncmpcpp
+### 安装 MPD 和 ncmpcpp
 
-The _ncmpmpcc_ client can be installed from the official Fedora repositories with DNF directly with
+ _ncmpmpcc_ 的客户端可以从官方Fedora库中通过dnf命令直接安装.
 
 ```
 $ sudo dnf install ncmpcpp
 ```
 
-On the other hand, MPD has to be installed from the RPMFusion _free_ repositories, which you can enable, [as per the official installation instructions][2], by running
+另一方面，MPD必须从RPMFusion free库安装，你可以通过运行：
 
 ```
 $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-and then you can install MPD by running
+然后你可以运行下面的命令安装它：
 
 ```
 $ sudo dnf install mpd
 ```
 
-### Configuring and Starting MPD
+### 配置并启用 MPD
 
-The most painless way to set up MPD is to run it as a regular user. The default is to run it as the dedicated _mpd_ user, but that causes all sorts of issues with permissions.
+设置MPD最简单的方法是以普通用户的身份运行它。默认情况是以专用 _mpd_ 用户的身份运行它，但这会导致各种权限问题。
+ 
+在运行它之前，我们需要创建一个本地配置文件，允许我们作为普通用户运行。
 
-Before we can run it, we need to create a local config file that will allow it to run as a regular user.
-
-To do that, create a subdirectory called _mpd_ in _~/.config_:
+首先创建一个名叫 _mpd_ 的目录在 _~/.config_ 里:
 
 ```
 $ mkdir ~/.config/mpd
 ```
 
-copy the default config file into this directory:
+将配置文件拷贝到此目录下:
 
 ```
 $ cp /etc/mpd.conf ~/.config/mpd
 ```
 
-and then edit it with a text editor like _vim_, _nano_ or _gedit_:
+然后用 _vim_, _nano_ 或 _gedit_之类的软件编辑它:
 
 ```
 $ nano ~/.config/mpd/mpd.conf
 ```
 
-I recommend you read through all of it to check if there’s anything you need to do, but for most setups you can delete everything and just leave the following:
-
+我建议您通读所有内容，检查是否有任何需要做的事情，但对于大多数设置，您可以删除所有内容，只需保留以下内容：
+ 
 ```
 db_file "~/.config/mpd/mpd.db"
 log_file "syslog"
 ```
 
-At this point you should be able to just run
+现在你可以运行它了：
 
 ```
 $ mpd
 ```
 
-with no errors, which will start the MPD daemon in the background.
+没有报错，这将在后台启动MPD守护进程。 
 
-### Using ncmpcpp
+### 使用 ncmpcpp
 
-Simply run
+只需运行：
 
 ```
 $ ncmpcpp
 ```
 
-and you’ll see a ncurses-powered graphical user interface in your terminal.
+您将在终端中看到一个由ncurses所支持的图形用户界面。 
 
-Press _4_ and you should see your local music library, be able to change the selection using the arrow keys and press _Enter_ to play a song.
+按下 _4_ 键，然后就可以看到本地的音乐目录，用方向键进行选择并按下 _Enter_ 进行播放。
 
-Doing this multiple times will create a _playlist_, which allows you to move to the next track using the _&gt;_ button (not the right arrow, the _&gt;_ closing angle bracket character) and go back to the previous track with _&lt;_. The + and – buttons increase and decrease volume. The _Q_ button quits ncmpcpp but it doesn’t stop the music. You can play and pause with _P_.
+多播放几次就会创建一个 _playlist_, 让你可以使用 _&gt;_ 键(不是右箭头, _&gt;_ 是右尖括号) 移动到下一首，并使用 _&lt;_ 返回上一首. + 和 – 键可以调节音量.  _Q_ 键可以让你退出 ncmpcpp 但不停止播放音乐. 你可以按下 _P_ 来控制暂停和播放.
 
-You can see the current playlist by pressing the _1_ button (this is the default view). From this view you can press _i_ to look at the information (tags) about the current song. You can change the tags of the currently playing (or paused) song by pressing _6_.
+你可以按下 _1_ 键来查看当前播放列表 (这是默认的视图). 从这个视图中，您可以按 _i_ 查看有关当前歌曲的信息（标记）。按 _6_ 可更改当前歌曲的标记。
 
-Pressing the \ button will add (or remove) an informative panel at the top of the view. In the top left, you should see something that looks like this:
+按 _\_ 按钮将在视图顶部添加（或删除）信息面板。在左上角，你可以看到如下的内容： 
 
 ```
 [------]
 ```
 
-Pressing the _r_, _z_, _y_, _R_, _x_ buttons will respectively toggle the _repeat_, _random_, _single_, _consume_ and _crossfade_ playback modes and will replace one of the _–_ characters in that little indicator to the initial of the selected mode.
+按下 _r_, _z_, _y_, _R_, _x_ 将会分别切换到 _repeat_, _random_, _single_, _consume_ 和 _crossfade_ 播放模式并将小指示器中的 _–_ 字符替换为选定模式.
 
-Pressing the _F1_ button will display some help text, which contains a list of keybindings, so there’s no need to write a complete list here. So now go on, be geeky, and play all your music from your terminal!
+按下 _F1_ 键将会显示一些帮助文档,包含一系列的键绑定列表, 因此无需在此处编写完整列表。所以继续吧！做一个极客, 在你的终端上播放音乐!
 
 --------------------------------------------------------------------------------
 
@@ -107,7 +107,7 @@ via: https://fedoramagazine.org/playing-music-on-your-fedora-terminal-with-mpd-a
 
 作者：[Carmine Zaccagnino][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chai-yuan](https://github.com/chai-yuan)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
