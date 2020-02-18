@@ -22,7 +22,7 @@
 
 时间快进到 2019 年 12 月，当我在 [Linux4Everyone][7] 播客上听到有关 Elementary 最新版本 v.5.1（Hera） 使 MacBook 复活的评论时，我决定用 Hera 再试一次。我下载了 ISO ，创建了可启动驱动器，将其插入电脑，这次操作系统识别了我的无线网卡。我可以在上面工作了。
 
-![MacBook Air with Hera][8]
+![运行 Hera 的 MacBook Air][8]
 
 我非常高兴我轻巧又功能强大的 MacBook Air 通过 Linux 焕然一新。我一直在更详细地研究 Elementary OS，我可以告诉你我印象深刻的东西。
 
@@ -36,7 +36,7 @@
 
 按下 Mac 的 Command 键将弹出一个键盘快捷键列表，这对新用户非常有帮助。
 
-![Elementary OS' 的键盘快捷键][11]
+![Elementary OS 的键盘快捷键][11]
 
 Elementary OS 附带的 [Epiphany][12] Web 浏览器，我发现它非常易于使用。它与 Chrome、Chromium 或 Firefox 略有不同，但它已经绰绰有余。
 
