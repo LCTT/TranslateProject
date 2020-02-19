@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Install All Essential Media Codecs in Ubuntu With This Single Command [Beginner’s Tip])
 [#]: via: (https://itsfoss.com/install-media-codecs-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-使用此单条命令在 Ubuntu 中安装所有基本媒体编解码器（初学者技巧）
+一条命令在 Ubuntu 中安装所有基本的媒体编解码器
 ======
 
 如果你刚刚安装了 Ubuntu 或其他 [Ubuntu 特色版本][1] 如 Kubuntu、Lubuntu 等，你会注意到系统无法播放某些音频或视频文件。
 
-对于视频文件，你可以[在 Ubuntu 上安装 VLC][2]。 [VLC][3] 是 [Linux 上的最佳视频播放器][4]之一，它几乎可以播放任何视频文件格式。但你仍然会遇到无法播放音频和 flash 的麻烦。
+对于视频文件，你可以[在 Ubuntu 上安装 VLC][2]。[VLC][3] 是 [Linux 上的最佳视频播放器][4]之一，它几乎可以播放任何视频文件格式。但你仍然会遇到无法播放音频和 flash 的麻烦。
 
 好消息是 [Ubuntu][5] 提供了一个软件包来安装所有基本的媒体编解码器：ubuntu-restricted-extras。
 
@@ -44,7 +44,7 @@ sudo add-apt-repository multiverse
 sudo apt install ubuntu-restricted-extras
 ```
 
-输入回车后，你会被要求输入密码，_**当你输入密码时，屏幕不会有显示**_。这是正常的。输入你的密码并回车。
+输入回车后，你会被要求输入密码，**当你输入密码时，屏幕不会有显示**。这是正常的。输入你的密码并回车。
 
 它将显示大量要安装的包。按回车确认选择。
 
@@ -60,7 +60,7 @@ sudo apt install ubuntu-restricted-extras
 
 ##### 在 Kubuntu、Lubuntu、Xubuntu 上安装受限制的额外软件包
 
-请记住，Kubuntu、Lubuntu 和 Xubuntu 都有此软件包，并有各自的名称。它们本应使用相同的名字，但不幸的是并不是。
+请记住，Kubuntu、Lubuntu 和 Xubuntu 都有此软件包，并有各自不同的名称。它们本应使用相同的名字，但不幸的是并不是。
 
 在 Kubuntu 上，使用以下命令：
 
@@ -91,7 +91,7 @@ via: https://itsfoss.com/install-media-codecs-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
