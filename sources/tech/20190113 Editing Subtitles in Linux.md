@@ -115,12 +115,17 @@ $ mediainfo somefile.mkv | grep Frame
 ```
 
 Now you can see that framerate of the video file is 25.000 FPS. The other Frame-rate we see is for the audio. While I can share why particular fps are used in Video-encoding, Audio-encoding etc. it would be a different subject matter. There is a lot of history associated with it.
+现在你可以了解到视频文件的帧率是25.000 FPS。我们看到的另一个帧率则是音频文件的帧率。虽然我会分享为何在视频解码和音频解码等地方会使用特定的 fps ，但这将会是一个不同的主题。与它相关的历史有很多。
 
 Next is to find out the frame rate of the subtitle file and this is a slightly complicated.
+下一个问题是解决字幕文件的帧率，这个稍微有点复杂。
 
 Usually, most subtitles are in a zipped format. Unzipping the .zip archive along with the subtitle file which ends in something.srt. Along with it, there is usually also a .info file with the same name which sometime may have the frame rate of the subtitle.
+通常情况下，大多数字幕都是压缩格式的。//
 
 If not, then it usually is a good idea to go some site and download the subtitle from a site which has that frame rate information. For this specific German file, I will be using [Opensubtitle.org][11]
+如果不这样，
+
 
 As you can see in the link, the frame rate of the subtitle is 23.976 FPS. Quite obviously, it won’t play well with my video file with frame rate 25.000 FPS.
 
@@ -131,18 +136,24 @@ Select all the contents from the subtitle file by doing CTRL+A. Go to Timings ->
 ![synchronize frame rates of subtitles in Linux][12]
 
 #### Changing the Starting position of a subtitle file
+改变字幕文件的起始位置
 
 Sometimes the above method may be enough, sometimes though it will not be enough.
+有时以上的方法就足够了，但有时候以上方法并不足够。
 
 You might find some cases when the start of the subtitle file is different from that in the movie or a media file while the frame rate is the same.
+在帧率相同时，你可能会发现字幕文件的开头与电影或媒体文件中开头并不相同。
 
 In such cases, do the following:
+在这种情况下，请按以下步骤进行操作：
 
 Select all the contents from the subtitle file by doing CTRL+A. Go to Timings -> Select Move Subtitle.
+按下 CTRL+A 键选中字幕文件的全部内容。移动到 Timings -> 选择 Move Subtitle 。
 
 ![Move subtitles using Subtitle Editor on Linux][13]
 
 Change the new Starting position of the subtitle file. Save the changed file.
+设定字幕文件的新起始位置，保存已更改的文件。
 
 ![Move subtitles using Subtitle Editor in Linux][14]
 
@@ -159,9 +170,10 @@ In such a scenario, you may have to edit the duration manually and automation is
 ### Conclusion
 
 What I have shared in above is more or less on improving on existing subtitle files. If you were to start a scratch you need loads of time. I haven’t shared that at all because a movie or any video material of say an hour can easily take anywhere from 4-6 hours or even more depending upon skills of the subtitler, patience, context, jargon, accents, native English speaker, translator etc. all of which makes a difference to the quality of the subtitle.
+以上我分享的东西或多或少是对现有字幕的改进。如果从头开始，你将花费大量的时间。我一点都未分享是因为一部电影或者多段视频材料
 
 I hope you find this interesting and from now onward, you’ll handle your subtitles slightly better. If you have any suggestions to add, please leave a comment below.
-
+我希望自此以后你会觉得这件事很有趣，你可以将你的字幕处理的更好一点。如果你有其他想要补充的问题，请在下方留言。
 
 --------------------------------------------------------------------------------
 
