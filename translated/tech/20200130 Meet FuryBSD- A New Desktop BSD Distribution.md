@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Meet FuryBSD: A New Desktop BSD Distribution)
@@ -10,23 +10,23 @@
 认识 FuryBSD：一个新的桌面 BSD 发行版
 ======
 
-在过去的几个月中，出现了一些新的桌面 BSD。之前有 [HyperbolaBSD，它是 Hyperbola GNU/Linux][1]。[BSD][2] 世界中的另一个新入者是 [FuryBSD][3]。
+在过去的几个月中，出现了一些新的桌面 BSD。之前有 [HyperbolaBSD，它之前是 Hyperbola GNU/Linux][1]。[BSD][2] 世界中的另一个新入者是 [FuryBSD][3]。
 
-### FuryBSD：一个新的BSD发行版
+### FuryBSD：一个新的 BSD 发行版
 
 ![][4]
 
-从本质上讲，FuryBSD 是一个非常简单的发行版。根据[它的网站][5]：“FuryBSD 一个是基于 FreeBSD 的轻量级桌面发行版。” 它基本上是预配置了桌面环境，并预安装了多个应用的 FreeBSD。目标是在快速地你的计算机上运行基于 FreeBSD 的系统。
+从本质上讲，FuryBSD 是一个非常简单的小东西。根据[它的网站][5]：“FuryBSD 一个是基于 FreeBSD 的轻量级桌面发行版。” 它基本上是预配置了桌面环境，并预安装了多个应用的 FreeBSD。目地是快速地在你的计算机上运行基于 FreeBSD 的系统。
 
 你可能会认为这听起来很像其他几个已有的 BSD，例如 [NomadBSD][6] 和 [GhostBSD][7]。这些 BSD 与 FuryBSD 之间的主要区别在于 FuryBSD 与现有的 FreeBSD 更加接近。例如，FuryBSD 使用 FreeBSD 安装程序，而其他发行版则用了自己的安装程序和工具。
 
-正如[[它的网站][8]所说：“尽管 FuryBSD 可能类似于 PC-BSD 和 TrueOS 等图形化 BSD 项目，但 FuryBSD 是由不同的团队创建的，并且采用了与 FreeBSD 紧密集成的不同方法。这样可以降低开销，并保持与上游的兼容性。”开发领导还告诉我：“FuryBSD 的一个主要重点是使其成为一种小型 Live 媒体，并带有一些辅助工具来测试硬件驱动程序。”
+正如[它的网站][8]所说：“尽管 FuryBSD 可能类似于 PC-BSD 和 TrueOS 等图形化 BSD 项目，但 FuryBSD 是由不同的团队创建的，并且采用了不同与 FreeBSD 着重于紧密集成的方法。这样可以降低开销，并保持与上游的兼容性。”开发负责人还告诉我：“FuryBSD 的一个主要重点是使其成为一种小型现场版介质，并带有一些测试硬件驱动程序的辅助工具。”
 
-当前，你可以进入 [FuryBSD 主页][3]并下载 XFCE 或 KDE LiveCD。GNOME 版本正在开发中。
+当前，你可以进入 [FuryBSD 主页][3]并下载 XFCE 或 KDE 的 LiveCD。GNOME 版本正在开发中。
 
 ### FuryBSD 的背后是谁
 
-FuryBSD 的主要开发者是 [Joe Maloney][9]。Joe 多年来一直是 FreeBSD 的用户。他为 PC-BSD 等其他 BSD 项目做出了贡献。他还与 GhostBSD 的创建者 Eric Turgeon 一起重写了 GhostBSD LiveCD。在此过程中，他对 BSD 有了更好的了解，并开始形成自己如何进行发行的想法。
+FuryBSD 的主要开发者是 [Joe Maloney][9]。Joe 多年来一直是 FreeBSD 的用户。他为 PC-BSD 等其他 BSD 项目做过贡献。他还与 GhostBSD 的创建者 Eric Turgeon 一起重写了 GhostBSD LiveCD。在此过程中，他对 BSD 有了更好的了解，并开始形成自己如何做一个发行版的想法。
 
 Joe 与其他参与 BSD 世界多年的开发者一起加入了开发，例如 Jaron Parsons、Josh Smith 和 Damian Szidiropulosz。
 
@@ -34,7 +34,7 @@ Joe 与其他参与 BSD 世界多年的开发者一起加入了开发，例如 J
 
 目前，FuryBSD 仅仅是预配置的 FreeBSD。但是，开发者有一份[要改进的清单][5]。包括：
 
-* 可靠的加载框架、第三方专有图形驱动、无线
+* 可靠的加载框架、第三方专有图形驱动、无线网络
 * 进一步整理 LiveCD 体验，以使其更加友好
 * 开箱即用的打印支持
 * 包含更多默认应用，以提供完整的桌面体验
@@ -47,9 +47,7 @@ Joe 与其他参与 BSD 世界多年的开发者一起加入了开发，例如 J
 * 目录服务集成
 * 安全加固
 
-
-
-开发者非常清楚地表明，他们所做的任何更改都需要大量的思考和研究。他们不会赞美某个功能，只会在它破坏一些东西时删除或者修改它。
+开发者非常清楚地表明，他们所做的任何更改都需要大量的思考和研究。他们不会改进某个功能，只会在它破坏一些东西时删除或者修改它。
 
 ![FuryBSD desktop][11]
 
@@ -72,7 +70,7 @@ via: https://itsfoss.com/furybsd/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
