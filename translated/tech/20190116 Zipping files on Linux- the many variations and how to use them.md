@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Zipping files on Linux: the many variations and how to use them)
@@ -12,13 +12,13 @@
 
 > 除了压缩和解压缩文件外，你还可以使用 zip 命令执行许多有趣的操作。这是一些其他的 zip 选项以及它们如何提供帮助。
 
-![](https://images.idgesg.net/images/article/2019/01/zipper-100785364-large.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202002/21/120507ox11ak23f9x2hxaq.jpg)
 
 为了节省一些磁盘空间并将文件打包在一起进行归档，我们中的一些人已经在 Unix 和 Linux 系统上压缩文件数十年了。即使这样，并不是所有人都尝试过一些有趣的压缩工具的变体。因此，在本文中，我们将介绍标准的压缩和解压缩以及其他一些有趣的压缩选项。
 
 ### 基本的 zip 命令
 
-首先，让我们看一下基本的 `zip` 命令。它使用了与 `gzip` 基本上相同的压缩算法，但是有一些重要的区别。一方面，`gzip` 命令仅用于压缩单个文件，而 `zip` 既可以压缩文件，也可以将多个文件结合在一起成为归档文件。另外，`gzip` 命令是“就地”压缩。换句话说，它会留下一个压缩文件，而不是原始文件。 这是工作中的 `gzip` 示例：
+首先，让我们看一下基本的 `zip` 命令。它使用了与 `gzip` 基本上相同的压缩算法，但是有一些重要的区别。一方面，`gzip` 命令仅用于压缩单个文件，而 `zip` 既可以压缩文件，也可以将多个文件结合在一起成为归档文件。另外，`gzip` 命令是“就地”压缩。换句话说，它会只留下一个压缩文件，而原始文件则没有了。 这是工作中的 `gzip` 示例：
 
 ```
 $ gzip onefile
@@ -26,7 +26,7 @@ $ ls -l
 -rw-rw-r-- 1 shs shs 10514 Jan 15 13:13 onefile.gz
 ```
 
-而这是 `zip`。请注意，此命令要求为压缩存档提供名称，其中 `gzip`（执行压缩操作后）仅使用原始文件名并添加 `.gz` 扩展名。
+而下面是 `zip`。请注意，此命令要求为压缩存档提供名称，其中 `gzip`（执行压缩操作后）仅使用原始文件名并添加 `.gz` 扩展名。
 
 ```
 $ zip twofiles.zip file*
@@ -61,7 +61,7 @@ $ zip mybin.zip ~/bin/*
 
 ### unzip 命令
 
-`unzip` 命令将从一个 zip 文件中恢复内容，并且，如你所料，原来的 zip 文件还保留在那里，而类似的`gunzip` 命令将仅保留未压缩的文件。
+`unzip` 命令将从一个 zip 文件中恢复内容，并且，如你所料，原来的 zip 文件还保留在那里，而类似的 `gunzip` 命令将仅保留未压缩的文件。
 
 ```
 $ unzip twofiles.zip
@@ -272,13 +272,13 @@ $ zipnote twofiles.zip
 @ (zip file comment below this line)
 ```
 
-如果要添加注释，请先将 `zipnote` 命令的输出写入文件：
+如果要添加注释，请先将 `zipnote` 命令的输出写入到文件：
 
 ```
 $ zipnote twofiles.zip > comments
 ```
 
-接下来，编辑你刚刚创建的文件，将注释插入到 `(comment above this line)` 行上方。然后使用像这样的`zipnote` 命令添加注释：
+接下来，编辑你刚刚创建的文件，将注释插入到 `(comment above this line)` 行上方。然后使用像这样的 `zipnote` 命令添加注释：
 
 ```
 $ zipnote -w twofiles.zip < comments
@@ -286,7 +286,7 @@ $ zipnote -w twofiles.zip < comments
 
 ### zipsplit 命令
 
-当归档文件太大时，可以使用 `zipsplit` 命令将一个 zip 归档文件分解为多个 zip 归档文件，这样你就可以将其中某一个文件放到小型 U 盘中。最简单的方法似乎是为每个部分的压缩文件指定最大大小，此大小必须足够大以容纳最大的包含文件。
+当归档文件太大时，可以使用 `zipsplit` 命令将一个 zip 归档文件分解为多个 zip 归档文件，这样你就可以将其中某一个文件放到小型 U 盘中。最简单的方法似乎是为每个部分的压缩文件指定最大大小，此大小必须足够大以容纳最大的所包含的文件。
 
 ```
 $ zipsplit -n 12000 twofiles.zip
@@ -312,7 +312,7 @@ via: https://www.networkworld.com/article/3333640/linux/zipping-files-on-linux-t
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
