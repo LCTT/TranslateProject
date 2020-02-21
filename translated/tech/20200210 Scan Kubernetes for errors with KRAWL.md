@@ -7,23 +7,23 @@
 [#]: via: (https://opensource.com/article/20/2/kubernetes-scanner)
 [#]: author: (Abhishek Tamrakar https://opensource.com/users/tamrakar)
 
-Scan Kubernetes for errors with KRAWL
+使用 KRAWL 扫描 Kubernetes 错误
 ======
-The KRAWL script identifies errors in Kubernetes pods and containers.
+用 KRAWL 脚本来标识 Kubernetes pod 和容器中的错误。
 ![Ship captain sailing the Kubernetes seas][1]
 
-When you're running containers with Kubernetes, you often find that they pile up. This is by design. It's one of the advantages of containers: they're cheap to start whenever a new one is needed. You can use a front-end like OpenShift or OKD to manage pods and containers. Those make it easy to visualize what you have set up, and have a rich set of commands for quick interactions.
+当你使用 Kubernetes 运行容器时，你通常会发现它们堆积。这是设计使然。它是容器的优点之一：每当需要新的容器时，它们启动成本都很低。你可以使用前端（如 OpenShift 或 OKD）来管理 pod 和容器。这些工具使可视化设置变得容易，并且它具有一组丰富的用于快速交互的命令。
 
-If a platform to manage containers doesn't fit your requirements, though, you can also get that information using only a Kubernetes toolchain, but there are a lot of commands you need for a full overview of a complex environment. For that reason, I wrote [KRAWL][2], a simple script that scans pods and containers under the namespaces on Kubernetes clusters and displays the output of events, if any are found. It can also be used as Kubernetes plugin for the same purpose. It's a quick and easy way to get a lot of useful information.
+如果管理容器的平台不符合你的要求，你也可以仅使用 Kubernetes 工具链获取这些信息，但这需要大量命令才能全面了解复杂环境。出于这个原因，我编写了 [KRAWL][2]，这是一个简单的脚本，可用于扫描 Kubernetes 集群命名空间下的 pod 和容器，并在发现任何事件时，显示事件的输出。它也可用作为 Kubernetes 插件使用。这是获取大量有用信息的快速简便方法。
 
-### Prerequisites
+### 预先条件
 
-  * You must have kubectl installed.
-  * Your cluster's kubeconfig must be either in its default location ($HOME/.kube/config) or exported (KUBECONFIG=/path/to/kubeconfig).
+  * 必须安装 kubectl。
+  * 集群的 kubeconfig 配置必须在它的默认位置 （$HOME/.kube/config） 或已被导出。
 
 
 
-### Usage
+### 使用
 
 
 ```
@@ -32,7 +32,7 @@ If a platform to manage containers doesn't fit your requirements, though, you ca
 
 ![KRAWL script][3]
 
-### The script
+### 脚本
 
 
 ```
@@ -201,7 +201,7 @@ get_pod_events
 
 * * *
 
-_This was originally published as the README in [KRAWL's GitHub repository][2] and is reused with permission._
+_此文最初发布在 [KRAWL 的 GitHub 仓库][2]下的 README 中，并被或许重用。_
 
 --------------------------------------------------------------------------------
 
@@ -209,7 +209,7 @@ via: https://opensource.com/article/20/2/kubernetes-scanner
 
 作者：[Abhishek Tamrakar][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
