@@ -7,16 +7,16 @@
 [#]: via: (https://acidwords.com/posts/2019-12-04-handle-chromium-and-firefox-sessions-with-org-mode.html)
 [#]: author: (Sanel Z https://acidwords.com/)
 
-Handle Chromium & Firefox sessions with org-mode
+通过 org-mode 管理 Chromium 和 Firefox 会话
 ======
 
-I was big fan of [Session Manager][1], small addon for Chrome and Chromium that will save all open tabs, assign the name to session and, when is needed, restore it.
+我是 [Session Manager][1] 的大粉丝，它是 Chrome 和 Chromium 的小插件，可以保存所有打开的选项卡，为会话命名，并在需要时恢复会话。
 
-Very useful, especially if you are like me, switching between multiple "mind sessions" during the day - research, development or maybe news reading. Or simply, you'd like to remember workflow (and tabs) you had few days ago.
+它非常有用，特别是如果你像我一样，白天的时候需要在多个“思维活动”之间切换——研究、开发或者新闻阅读。或者您只是单纯地希望记住几天前的工作流(和选项卡)。
 
-After I decided to ditch all extensions from Chromium except [uBlock Origin][2], it was time to look for alternative. My main goal was it to be browser agnostic and session links had to be stored in text file, so I can enjoy all the goodies of plain text file. What would be better for that than good old [org-mode][3] ;)
+在我决定放弃 chromium 上除了 [uBlock Origin][2] 之外的所有扩展后，也到了寻找替代品的时候了。我的主要目标是使之与浏览器无关同时会话链接需要保存在文本文件中，这样我就可以享受所有纯文本的好处了。还有什么比 [org-mode][3] 更好呢 ;)
 
-Long time ago I found this trick: [Get the currently open tabs in Google Chrome via the command line][4] and with some elisp sugar and coffee, here is the code:
+很久以前我就发现了这个小诀窍：[通过命令行获取当前在谷歌 Chrome 中打开的标签 ][4] 再加上些 elisp 代码：
 
 ```
 (require 'cl-lib)
@@ -57,9 +57,9 @@ Make sure to put cursor on date heading that contains list of urls."
         (forward-line 1)))))
 ```
 
-So, how does it work?
+那么，它的工作原理是什么呢？
 
-Evaluate above code, open new org-mode file and call `M-x save-chromium-session`. It will create something like this:
+运行上述代码，打开一个新 org-mode 文件并调用 `M-x save-chromium-session`。它会创建类似这样的东西：
 
 ```
 * [2019-12-04 12:14:02]
@@ -68,9 +68,9 @@ Evaluate above code, open new org-mode file and call `M-x save-chromium-session`
   - https://news.ycombinator.com
 ```
 
-or whatever urls are running in Chromium instance. To restore it back, put cursor on desired date and run `M-x restore-chromium-session`. All tabs should be back.
+也就是任何在 chromium 实例中运行着的 URL。要还原的话，则将光标置于所需日期上然后运行 `M-x restore-chromium-session`。所有标签都应该恢复了。
 
-Here is how I use it, with randomly generated data for the purpose of this text:
+以下是我的使用案例，其中的数据是随机生成的：
 
 ```
 #+TITLE: Browser sessions
@@ -88,27 +88,28 @@ Here is how I use it, with randomly generated data for the purpose of this text:
   - https://news.ycombinator.com
 ```
 
-Note that hack for reading Chromium session isn't perfect: `strings` will read whatever looks like string and url from binary database and sometimes that will yield small artifacts in urls. But, you can easily edit those and keep session file lean and clean.
+请注意，用于读取 Chromium 会话的方法并不完美：`strings` 将从二进制数据库中读取任何类似 URL 字符串的内容，有时这将产生不完整的 url。不过，您可以很方便地地编辑它们，从而保持会话文件简洁。
 
-To actually open tabs, elisp code will use [browse-url][5] and it can be further customized to run Chromium, Firefox or any other browser with `browse-url-browser-function` variable. Make sure to read documentation for this variable.
+为了真正打开标签，elisp 代码中使用到了 [browse-url][5]，它可以通过 `browse-url-browser-function` 变量进一步定制成运行 Chromium，Firefox 或任何其他浏览器。请务必阅读该变量的相关文档。
 
-Don't forget to put session file in git, mercurial or svn and enjoy the fact that you will never loose your session history again :)
+别忘了把会话文件放在 git、mercurial 或 svn 中，这样你就再也不会丢失会话历史记录了 :)
 
-### What about Firefox?
+### 那么 Firefox 呢？
 
-If you are using Firefox (recent versions) and would like to pull session urls, here is how to do it.
+如果您正在使用 Firefox( 最近的版本)，并且想要获取会话 url，下面是操作方法。
 
-First, download and compile [lz4json][6], small tool that will decompress Mozilla lz4json format, where Firefox stores session data. Session data (at the time of writing this post) is stored in `$HOME/.mozilla/firefox/<unique-name>/sessionstore-backups/recovery.jsonlz4`.
+首先，下载并编译 [lz4json][6]，这是一个可以解压缩 Mozilla lz4json 格式的小工具，Firefox 以这种格式来存储会话数据。会话数据(在撰写本文时)存储在 `$HOME/.mozilla/firefox/<unique-name>/sessionstore-backup /recovery.jsonlz4` 中。
 
-If Firefox is not running, `recovery.jsonlz4` will not be present, but use `previous.jsonlz4` instead.
+如果 Firefox 没有运行，则没有 `recovery.jsonlz4`，这种情况下用 `previous.jsonlz4` 代替。
+=恢复。jsonlz4= 将不存在，但使用=先前。jsonlz4 =。
 
-To extract urls, try this in terminal:
+要提取网址，尝试在终端运行：
 
 ```
 $ lz4jsoncat recovery.jsonlz4 | grep -oP '"(http.+?)"' | sed 's/"//g' | sort | uniq
 ```
 
-and update `save-chromium-session` with:
+然后更新 `save-chromium-session` 为：
 
 ```
 (defun save-chromium-session ()
@@ -122,7 +123,7 @@ and update `save-chromium-session` with:
 ;; rest of the code is unchanged
 ```
 
-Updating documentation strings, function name and any further refactoring is left for exercise.
+更新本函数的文档字符串、函数名以及进一步的重构都留作练习。
 
 --------------------------------------------------------------------------------
 
