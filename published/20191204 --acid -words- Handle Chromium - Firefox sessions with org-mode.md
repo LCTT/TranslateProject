@@ -1,22 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lujun9972)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (#:acid 'words: Handle Chromium & Firefox sessions with org-mode)
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11926-1.html)
+[#]: subject: (Handle Chromium & Firefox sessions with org-mode)
 [#]: via: (https://acidwords.com/posts/2019-12-04-handle-chromium-and-firefox-sessions-with-org-mode.html)
 [#]: author: (Sanel Z https://acidwords.com/)
 
-通过 org-mode 管理 Chromium 和 Firefox 会话
+通过 Org 模式管理 Chromium 和 Firefox 会话
 ======
 
-我是 [Session Manager][1] 的大粉丝，它是 Chrome 和 Chromium 的小插件，可以保存所有打开的选项卡，为会话命名，并在需要时恢复会话。
+![](https://img.linux.net.cn/data/attachment/album/202002/24/113047w8jtoh2o5j085750.jpg)
 
-它非常有用，特别是如果你像我一样，白天的时候需要在多个“思维活动”之间切换——研究、开发或者新闻阅读。或者您只是单纯地希望记住几天前的工作流(和选项卡)。
+我是[会话管理器][1]的铁粉，它是 Chrome 和 Chromium 的小插件，可以保存所有打开的选项卡，为会话命名，并在需要时恢复会话。
 
-在我决定放弃 chromium 上除了 [uBlock Origin][2] 之外的所有扩展后，也到了寻找替代品的时候了。我的主要目标是使之与浏览器无关同时会话链接需要保存在文本文件中，这样我就可以享受所有纯文本的好处了。还有什么比 [org-mode][3] 更好呢 ;)
+它非常有用，特别是如果你像我一样，白天的时候需要在多个“思维活动”之间切换——研究、开发或者阅读新闻。或者你只是单纯地希望记住几天前的工作流（和选项卡）。
 
-很久以前我就发现了这个小诀窍：[通过命令行获取当前在谷歌 Chrome 中打开的标签 ][4] 再加上些 elisp 代码：
+在我决定放弃 chromium 上除了 [uBlock Origin][2] 之外的所有扩展后，就必须寻找一些替代品了。我的主要目标是使之与浏览器无关，同时会话链接必须保存在文本文件中，这样我就可以享受所有纯文本的好处了。还有什么比 [org 模式][3]更好呢 ;)
+
+很久以前我就发现了这个小诀窍：[通过命令行获取当前在谷歌 Chrome 中打开的标签][4] 再加上些 elisp 代码：
 
 ```
 (require 'cl-lib)
@@ -59,7 +61,7 @@ Make sure to put cursor on date heading that contains list of urls."
 
 那么，它的工作原理是什么呢？
 
-运行上述代码，打开一个新 org-mode 文件并调用 `M-x save-chromium-session`。它会创建类似这样的东西：
+运行上述代码，打开一个新 org 模式文件并调用 `M-x save-chromium-session`。它会创建类似这样的东西：
 
 ```
 * [2019-12-04 12:14:02]
@@ -88,20 +90,19 @@ Make sure to put cursor on date heading that contains list of urls."
   - https://news.ycombinator.com
 ```
 
-请注意，用于读取 Chromium 会话的方法并不完美：`strings` 将从二进制数据库中读取任何类似 URL 字符串的内容，有时这将产生不完整的 url。不过，您可以很方便地地编辑它们，从而保持会话文件简洁。
+请注意，用于读取 Chromium 会话的方法并不完美：`strings` 将从二进制数据库中读取任何类似 URL 字符串的内容，有时这将产生不完整的 URL。不过，你可以很方便地地编辑它们，从而保持会话文件简洁。
 
-为了真正打开标签，elisp 代码中使用到了 [browse-url][5]，它可以通过 `browse-url-browser-function` 变量进一步定制成运行 Chromium，Firefox 或任何其他浏览器。请务必阅读该变量的相关文档。
+为了真正打开标签，elisp 代码中使用到了 [browse-url][5]，它可以通过 `browse-url-browser-function` 变量进一步定制成运行 Chromium、Firefox 或任何其他浏览器。请务必阅读该变量的相关文档。
 
 别忘了把会话文件放在 git、mercurial 或 svn 中，这样你就再也不会丢失会话历史记录了 :)
 
 ### 那么 Firefox 呢？
 
-如果您正在使用 Firefox( 最近的版本)，并且想要获取会话 url，下面是操作方法。
+如果你正在使用 Firefox（最近的版本），并且想要获取会话 URL，下面是操作方法。
 
-首先，下载并编译 [lz4json][6]，这是一个可以解压缩 Mozilla lz4json 格式的小工具，Firefox 以这种格式来存储会话数据。会话数据(在撰写本文时)存储在 `$HOME/.mozilla/firefox/<unique-name>/sessionstore-backup /recovery.jsonlz4` 中。
+首先，下载并编译 [lz4json][6]，这是一个可以解压缩 Mozilla lz4json 格式的小工具，Firefox 以这种格式来存储会话数据。会话数据（在撰写本文时）存储在 `$HOME/.mozilla/firefox/<unique-name>/sessionstore-backup /recovery.jsonlz4` 中。
 
 如果 Firefox 没有运行，则没有 `recovery.jsonlz4`，这种情况下用 `previous.jsonlz4` 代替。
-=恢复。jsonlz4= 将不存在，但使用=先前。jsonlz4 =。
 
 要提取网址，尝试在终端运行：
 
@@ -132,7 +133,7 @@ via: https://acidwords.com/posts/2019-12-04-handle-chromium-and-firefox-sessions
 作者：[Sanel Z][a]
 选题：[lujun9972][b]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
