@@ -11,98 +11,71 @@ Editing Subtitles in Linux
 在Linux中编辑字幕
 ======
 
-I have been a world movie and regional movies lover for decades. Subtitles are the essential tool that have enabled me to enjoy the best movies in various languages and from various countries.
-我是一位世界电影和原电影爱好者已经几十年了。字母是我享受来自不同国家的各种语言最优秀电影的重要工具。
+我作为一位世界电影和地区电影爱好者已经几十年了。字幕是一个必不可少的工具，它可以使我享受来自不同国家不同语言的优秀电影。
 
-If you enjoy watching movies with subtitles, you might have noticed that sometimes the subtitles are not synced or not correct.
-如果你喜欢看带有字幕的电影，你可能会注意到有时字幕并不同步或者说并不正确。
+如果你喜欢观看带有字幕的电影，你可能会注意到有时字幕并不同步或者说并不正确。
 
-Did you know that you can edit subtitles and make them better? Let me show you some basic subtitle editing in Linux.
 你知道你可以自己编写字幕并使得它们更完美吗？让我们向你展示一些Linux中的基本字幕编辑吧。
 
 ![Editing subtitles in Linux][1]
 
-### Extracting subtitles from closed captions data
-从闭路字幕数据中提取字幕
+### 从闭路字幕数据中提取字幕
 
+大概在2012，2013年我开始了解到有一款叫做[CCEextractor]的工具。随着时间的推移，它已经成为我必不可少的工具之一 ，尤其是当我偶然发现一份内含有字幕的媒体文件。
 
-Around 2012, 2013 I came to know of a tool called [CCEextractor.][2] As time passed, it has become one of the vital tools for me, especially if I come across a media file which has the subtitle embedded in it.
-大概在2012，2013年我开始了解到有一款叫做[CCEextractor]的工具。随着时间的推移，它已经成为我必不可少的重要工具之一 ，尤其是当我偶然发现一份内含有字幕的媒体文件。
-
-CCExtractor analyzes video files and produces independent subtitle files from the closed captions data.
 CCExtractor负责解析视频文件以及从闭路字幕数据中产生独立的字幕文件。
 
-CCExtractor is a cross-platform, free and open source tool. The tool has matured quite a bit from its formative years and has been part of [GSOC][3] and Google Code-in now and [then.][4]
-CCExtractor是一个跨平台、免费且开源的工具。自它形成的那年起该工具已经成熟了不少并且如今成为[GSOC][3]和谷歌编码输入的一部分and then。
+CCExtractor是一个跨平台、免费且开源的工具。自它形成的那年起该工具已经成熟了不少而如今已成为[GSOC][3]和谷歌编码输入的一部分。
 
-The tool, to put it simply, is more or less a set of scripts which work one after another in a serialized order to give you an extracted subtitle.
-简单来说，这个工具是一系列或多或少的剧本，这个剧本一种连续的顺序一个接着一个给你提供提取到的字幕。
+简单来说，这个工具是一系列或多或少的脚本，这些脚本以一种连续的顺序一个接着一个地给你提供提取到的字幕。
 
-You can follow the installation instructions for CCExtractor on [this page][5].
-你可以跟着[本页][5]的 CCExtractor 安装指南。
+你可以按照[本页][5]的 CCExtractor 安装指南进行操作。
 
-After installing when you want to extract subtitles from a media file, do the following:
-安装之后你还想从媒体文件中提取字幕，请按以下步骤做：
+若安装后你想从媒体文件中提取字幕，请按以下步骤操作：
 
 ```
 ccextractor <path_to_video_file>
 ```
 
-The output of the command will be something like this:
-命令的输出将会成为以下的内容：
+该命令将会输出以下内容：
 
-It basically scans the media file. In this case, it found that the media file is in malyalam and that the media container is an [.mkv][6] container. It extracted the subtitle file with the same name as the video file adding _eng to it.
-最初它会浏览媒体文件。在这个时候，它会发现媒体文件是马拉雅拉姆语的并且多媒体容器是[.mkv]容器格式。它用同名作为视频文件//
+它会大致浏览媒体文件。在这个例子中，它发现媒体文件是马拉雅拉姆文并且格式是.mkv[6]。之后它将字幕文件提取出来，命名为源文件名并添加“_eng”后。缀
 
-CCExtractor is a wonderful tool which can be used to enhance subtitles along with Subtitle Edit which I will share in the next section.
 CCExtractor是一款用来增强字幕功能和字幕编辑的优秀工具，我将在下一部分对它进行介绍。
 
 ```
-Interesting Read: There is an interesting synopsis of subtitles at [vicaps][7] which tells and shares why subtitles are important to us. It goes into quite a bit of detail of movie-making as well for those interested in such topics.
 趣味阅读：在[vicaps][7]有一份有趣的字幕简介，会讲解和分享为何字幕对我们如此重要。对于那些对这类话题感兴趣的人来说，这里面也有许多电影制作的细节。
 ```
 
-### Editing subtitles with SubtitleEditor Tool
-用SubtitleEditor工具编辑字幕
+### 用SubtitleEditor工具编辑字幕
 
-You probably are aware that most subtitles are in [.srt format][8] . The beautiful thing about this format is and was you could load it in your text editor and do little fixes in it.
 你大概意识到大多数的字幕都是 [.srt 格式][8] 的。这种格式的优点在于你可以将它加载到文本编辑器中并对它进行少量的修改。
 
-A srt file looks something like this when launched into a simple text-editor:
 当进入一个简单的文本编辑器时，一个srt文件看起来会是这个样子：
 
-The excerpt subtitle I have shared is from a pretty Old German Movie called [The Cabinet of Dr. Caligari (1920)][9]
 我分享的节选字幕来自于一部非常老的德国电影[卡里加里博士的小屋 (1920)][9]。
 
-Subtitleeditor is a wonderful tool when it comes to editing subtitles. Subtitle Editor is and can be used to manipulate time duration, frame-rate of the subtitle file to be in sync with the media file, duration of breaks in-between and much more. I’ll share some of the basic subtitle editing here.
-Subtitleeditor是一款非常棒的字幕编辑软件。字幕编辑器可以用来控制持续时间、与多媒体文件同步的字幕的帧率以及中间的间隔时间等等。接下来我将分享一些基本的字幕编辑在这。
+Subtitleeditor是一款非常棒的字幕编辑软件。字幕编辑器可以用来设置字幕持续时间、与多媒体文件同步的字幕帧率以及字幕间隔时间等等。接下来我将在这分享一些基本的字幕编辑。
 
 ![][10]
 
-First install subtitleeditor the same way you installed ccextractor, using your favorite installation method. In Debian, you can use this command:
-首先，以安装ccextractor工具同样的方式安装subtitleeditor工具，使用你自己最喜欢的安装方式。在Debian中，你可以使用该命令：
+首先，以安装ccextractor工具同样的方式安装subtitleeditor工具，使用你自己喜爱的安装方式。在Debian中，你可以使用命令：
 
 ```
 sudo apt install subtitleeditor
 ```
 
-When you have it installed, let’s see some of the common scenarios where you need to edit a subtitle.
-当你安装完成后，让我们来看一下你编辑字幕时一些常见的场景。
+当你安装完成后，让我们来看一下在你编辑字幕时一些常见的场景。
 
-#### Manipulating Frame-rates to sync with Media file
-控制帧率使字幕与媒体文件同步
+#### 调整帧率使其媒体文件同步
 
-If you find that the subtitles are not synced with the video, one of the reasons could be the difference between the frame rates of the video file and the subtitle file.
 如果你发现字幕与视频不同步，一个原因可能是视频文件的帧率与字幕文件的帧率并不一致。
 
-How do you know the frame rates of these files, then?
 你如何得知这些文件的帧率呢，然后呢？
 
-To get the frame rate of a video file, you can use the mediainfo tool. You may need to install it first using your distribution’s package manager.
 为了获取视频文件的帧率，你可以使用 mediainfo 工具。首先你可能需要发行版的包管理器来安装它。
 
-Using mediainfo is simple:
-使用mediainfo 非常简单：
+使用mediainfo 非常得简单：
 
 ```
 $ mediainfo somefile.mkv | grep Frame
@@ -114,66 +87,55 @@ $ mediainfo somefile.mkv | grep Frame
  Frame rate : 46.875 FPS (1024 SPF)﻿
 ```
 
-Now you can see that framerate of the video file is 25.000 FPS. The other Frame-rate we see is for the audio. While I can share why particular fps are used in Video-encoding, Audio-encoding etc. it would be a different subject matter. There is a lot of history associated with it.
-现在你可以了解到视频文件的帧率是25.000 FPS。我们看到的另一个帧率则是音频文件的帧率。虽然我会分享为何在视频解码和音频解码等地方会使用特定的 fps ，但这将会是一个不同的主题。与它相关的历史有很多。
+现在你可以看到视频文件的帧率是 25.000 FPS 。我们看到的另一个帧率则是音频文件的帧率。虽然我会分享为何在视频解码和音频解码等地方会使用特定的 fps ，但这将会是一个不同的主题，与它相关的历史有很多。
 
-Next is to find out the frame rate of the subtitle file and this is a slightly complicated.
 下一个问题是解决字幕文件的帧率，这个稍微有点复杂。
 
-Usually, most subtitles are in a zipped format. Unzipping the .zip archive along with the subtitle file which ends in something.srt. Along with it, there is usually also a .info file with the same name which sometime may have the frame rate of the subtitle.
-通常情况下，大多数字幕都是压缩格式的。//
+通常情况下，大多数字幕都是压缩格式的。将.zip归档文件和字幕文件（以XXX.srt结尾）一起解压缩。除此之外，通常还会有一个同名的 .info 文件，该文件包含字幕的帧率。
 
-If not, then it usually is a good idea to go some site and download the subtitle from a site which has that frame rate information. For this specific German file, I will be using [Opensubtitle.org][11]
-如果不这样，
+如果不是，那么通常最好去某个站点并从具有该帧速率信息的站点下载字幕。对于这个特定的德语文件，我将使用 [Opensubtitle.org][11] 。
 
+正如你在链接中所看到的，字幕的帧率是 23.976 FPS 。将我的视频文件以 25.000 FPS 的帧率进行播放，显而易见结果并不好。
 
-As you can see in the link, the frame rate of the subtitle is 23.976 FPS. Quite obviously, it won’t play well with my video file with frame rate 25.000 FPS.
+在这种情况下，你可以使用字幕编辑工具来改变字幕文件的帧率：
 
-In such cases, you can change the frame rate of the subtitle file using the Subtitle Editor tool:
-
-Select all the contents from the subtitle file by doing CTRL+A. Go to Timings -> Change Framerate and change frame rates from 23.976 fps to 25.000 fps or whatever it is that is desired. Save the changed file.
+按下 CTRL+A 选择字幕文件中的全部内容。点击 Timings -> Change Framerate ，将 23.976 fps 改为 25.000 fps 或者你想要的其他帧率，保存已更改的文件。
 
 ![synchronize frame rates of subtitles in Linux][12]
 
-#### Changing the Starting position of a subtitle file
-改变字幕文件的起始位置
+#### 改变字幕文件的起点
 
-Sometimes the above method may be enough, sometimes though it will not be enough.
-有时以上的方法就足够了，但有时候以上方法并不足够。
+有时以上的方法就足够解决问题了，但有时候以上方法并不足够解决问题。
 
-You might find some cases when the start of the subtitle file is different from that in the movie or a media file while the frame rate is the same.
-在帧率相同时，你可能会发现字幕文件的开头与电影或媒体文件中开头并不相同。
+在帧率相同时，你可能会发现字幕文件的开头与电影或媒体文件中起点并不相同。
 
-In such cases, do the following:
 在这种情况下，请按以下步骤进行操作：
 
-Select all the contents from the subtitle file by doing CTRL+A. Go to Timings -> Select Move Subtitle.
-按下 CTRL+A 键选中字幕文件的全部内容。移动到 Timings -> 选择 Move Subtitle 。
+按下 CTRL+A 键选中字幕文件的全部内容。点击 Timings -> 选择 Move Subtitle 。
 
 ![Move subtitles using Subtitle Editor on Linux][13]
 
-Change the new Starting position of the subtitle file. Save the changed file.
-设定字幕文件的新起始位置，保存已更改的文件。
+设定字幕文件的新起点，保存已更改的文件。
 
 ![Move subtitles using Subtitle Editor in Linux][14]
 
-If you wanna be more accurate, then use [mpv][15] to see the movie or media file and click on the timing, if you click on the timing bar which shows how much the movie or the media file has elapsed, clicking on it will also reveal the microsecond.
+如果你想要时间更精确一点，那么可以使用 [mpv][15] 来查看电影或者媒体文件并点击 timing ，如果你点击了进度条（可以显示电影或者媒体文件的播放进度），它也会显示微秒。
 
-I usually like to be accurate so I try to be as precise as possible. It is very difficult in MPV as human reaction time is imprecise. If I wanna be super accurate then I use something like [Audacity][16] but then that is another ball-game altogether as you can do so much more with it. That may be something to explore in a future blog post as well.
+通常我喜欢精准无误的操作，因此我会试着尽可能地仔细调节。相较于人类的反应时间来说，MPV中的反应时间很精确。如果我想要极其精确的时间，那么我可以使用像 [Audacity][16] 之类的东西，但是那是另一种工具，你可以在上面做更多的事情。那也将会是未来博客中将要探讨的东西。
 
-#### Manipulating Duration
+#### 调整字幕间隔时间
 
-Sometimes even doing both is not enough and you even have to shrink or add the duration to make it sync with the media file. This is one of the more tedious works as you have to individually fix the duration of each sentence. This can happen especially if you have variable frame rates in the media file (nowadays rare but you still get such files).
+有时，两种方法都采用了还不够，甚至你可能需要缩短或曾加间隔时间以使其与媒体文件同步。这是较为繁琐的工作之一，因为你必须单独确定每个句子的间隔时间。尤其是在媒体文件中帧率可变的情况下（现已很少见，但你仍然会得到此类文件）
 
-In such a scenario, you may have to edit the duration manually and automation is not possible. The best way is either to fix the video file (not possible without degrading the video quality) or getting video from another source at a higher quality and then [transcode][17] it with the settings you prefer. This again, while a major undertaking I could shed some light on in some future blog post.
+在这种设想下，你可能因为无法实现自动编辑而不得不手动的修改间隔时间。最好的方式是修改视频文件（会降低视频质量）或者换另一个更高质量的片源，用你喜欢的设置对它进行[转码][17]。这又是一重大任务，以后我会在我的一些博客文章上阐明。
 
-### Conclusion
+### 结论
 
-What I have shared in above is more or less on improving on existing subtitle files. If you were to start a scratch you need loads of time. I haven’t shared that at all because a movie or any video material of say an hour can easily take anywhere from 4-6 hours or even more depending upon skills of the subtitler, patience, context, jargon, accents, native English speaker, translator etc. all of which makes a difference to the quality of the subtitle.
+以上我分享的内容或多或少是对现有字幕文件的改进。如果从头开始，你需要花费大量的时间。我完全没有分享这一点，因为一部电影或一个小时内的任何视频材料都可以轻易地花费4-6个小时，甚至更多的时间，这取决于字幕员的技巧、耐心、上下文、行话、口音、是否是以英语为母语的人、翻译等，所有的这些都会对字幕的质量产生影响。
+
 以上我分享的东西或多或少是对现有字幕的改进。如果从头开始，你将花费大量的时间。我一点都未分享是因为一部电影或者多段视频材料
 
-I hope you find this interesting and from now onward, you’ll handle your subtitles slightly better. If you have any suggestions to add, please leave a comment below.
-我希望自此以后你会觉得这件事很有趣，你可以将你的字幕处理的更好一点。如果你有其他想要补充的问题，请在下方留言。
+我希望自此以后你会觉得这件事很有趣，并将你的字幕处理的更好一点。如果你有其他想要补充的问题，请在下方留言。
 
 --------------------------------------------------------------------------------
 
