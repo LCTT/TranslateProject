@@ -14,7 +14,7 @@
 
 ![metrics and data shown on a computer screen][1]
 
-虽然 [Python][2] 和 [R][3] 之类的语言在数据科学中越来越受欢迎，但是 C 和 C++ 对于高效的数据科学来说是一个不错的选择。在本文中，我们将使用 [C99][4] 和 [C++ 11][5] 编写一个程序，该程序使用 [Anscombe 的四重奏][6]数据集，下面将对其进行解释。
+虽然 [Python][2] 和 [R][3] 之类的语言在数据科学中越来越受欢迎，但是 C 和 C++ 对于高效的数据科学来说是一个不错的选择。在本文中，我们将使用 [C99][4] 和 [C++11][5] 编写一个程序，该程序使用 [Anscombe 的四重奏][6]数据集，下面将对其进行解释。
 
 我在一篇涉及 [Python 和 GNU Octave][7] 的文章中写了我不断学习语言的动机，值得大家回顾。所有程序都应在[命令行][8]上运行，而不是在[图形用户界面（GUI）][9]上运行。完整的示例可在 [polyglot_fit 存储库][10]中找到。
 
@@ -291,145 +291,136 @@ Correlation coefficient: 0.816421
 
 ![Plot and fit of the dataset obtained with C99][52]
 
-### The C++11 way
+### C++11 方式
 
-[C++][53] is a general-purpose programming language that is also among the most popular languages in use today. It was created as a [successor of C][54] (in 1983) with an emphasis on [object-oriented programming][55] (OOP). C++ is commonly regarded as a superset of C, so a C program should be able to be compiled with a C++ compiler. This is not exactly true, as there are some corner cases where they behave differently. In my experience, C++ needs less boilerplate than C, but the syntax is more difficult if you want to develop objects. The C++11 standard is a recent revision that adds some nifty features and is more or less supported by compilers.
+[C++][53] 语言是一种通用编程语言，也是当今使用的最受欢迎的语言之一。它是作为 [C 的继承人][54]创建的（诞生于 1983 年），重点是[面向对象程序设计（OOP）][55]。C++ 通常被视为 C 的超集，因此 C 程序应该能够使用 C++ 编译器进行编译。这并非完全正确，因为在某些极端情况下它们的行为有所不同。 根据我的经验，C++ 比 C 需要更少的样板代码，但是如果要进行对象开发，语法会更困难。C++11 标准是最新版本，增加了一些漂亮的功能，并且或多或少得到了编译器的支持。
 
-Since C++ is largely compatible with C, I will just highlight the differences between the two. If I do not cover a section in this part, it means that it is the same as in C.
+由于 C++ 在很大程度上与 C 兼容，因此我将仅强调两者之间的区别。我在本部分中没有涵盖的任何部分，则意味着它与 C 中的相同。
 
-#### Installation
+#### 安装
 
-The dependencies for the C++ example are the same as the C example. On Fedora, run:
+这个 C++ 示例的依赖项与 C 示例相同。 在 Fedora 上，运行：
+
+```
+sudo dnf install clang gnuplot gsl gsl-devel
+```
+
+#### 必要的库
+
+库的工作方式与 C 语言相同，但是 `include` 指令略有不同：
 
 
 ```
-`sudo dnf install clang gnuplot gsl gsl-devel`
-```
-
-#### Necessary libraries
-
-Libraries work in the same way as in C, but the `include` directives are slightly different:
-
-
-```
-#include &lt;cstdlib&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;fstream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
 
 extern "C" {
-#include &lt;gsl/gsl_fit.h&gt;
-#include &lt;gsl/gsl_statistics_double.h&gt;
+#include <gsl/gsl_fit.h>
+#include <gsl/gsl_statistics_double.h>
 }
 ```
 
-Since the GSL libraries are written in C, you must inform the compiler about this peculiarity.
+由于 GSL 库是用 C 编写的，因此你必须将这种特殊性告知编译器。
 
-#### Defining variables
+#### 定义变量
 
-C++ supports more data types (classes) than C, such as a `string` type that has many more features than its C counterpart. Update the definition of the variables accordingly:
-
-
-```
-`const std::string input_file_name("anscombe.csv");`
-```
-
-For structured objects like strings, you can define the variable without using the `=` sign.
-
-#### Printing output
-
-You can use the `printf()` function, but the `cout` object is more idiomatic. Use the operator `&lt;&lt;` to indicate the string (or objects) that you want to print with `cout`:
-
+与 C 语言相比，C++ 支持更多的数据类型（类），例如，与其 C 语言版本相比，`string` 类型具有更多的功能。相应地更新变量的定义：
 
 ```
-std::cout &lt;&lt; "#### Anscombe's first set with C++11 ####" &lt;&lt; std::endl;
+const std::string input_file_name("anscombe.csv");
+```
+
+对于字符串之类的结构化对象，你可以定义变量而无需使用 `=` 符号。
+
+#### 打印输出
+
+你可以使用 `printf()` 函数，但是 `cout` 对象更惯用。使用运算符 `<<` 来指示要使用 `cout` 打印的字符串（或对象）：
+
+```
+std::cout << "#### Anscombe's first set with C++11 ####" << std::endl;
 
 ...
 
-std::cout &lt;&lt; "Slope: " &lt;&lt; slope &lt;&lt; std::endl;
-std::cout &lt;&lt; "Intercept: " &lt;&lt; intercept &lt;&lt; std::endl;
-std::cout &lt;&lt; "Correlation coefficient: " &lt;&lt; r_value &lt;&lt; std::endl;
+std::cout << "Slope: " << slope << std::endl;
+std::cout << "Intercept: " << intercept << std::endl;
+std::cout << "Correlation coefficient: " << r_value << std::endl;
 ```
 
-#### Reading data
+#### 读取数据
 
-The scheme is the same as before. The file is opened and read line-by-line, but with a different syntax:
-
+该方案与以前相同。将打开文件并逐行读取文件，但语法不同：
 
 ```
 std::ifstream input_file(input_file_name);
 
 while (input_file.good()) {
-    std::string line;
+    std::string line;
 
-    getline(input_file, line);
+    getline(input_file, line);
 
-    ...
+    ...
 }
 ```
 
-The line tokens are extracted with the same function as in the C99 example. Instead of using standard C arrays, use two [vectors][56]. Vectors are an extension of C arrays in the [C++ standard library][57] that allows dynamic management of memory without explicitly calling `malloc()`:
-
+使用与 C99 示例相同的功能提取行字元。代替使用标准的 C 数组，而是使用两个[向量][56]。向量是 [C++ 标准库][57]中对 C 数组的扩展，它允许动态管理内存而无需显式调用 `malloc()`：
 
 ```
-std::vector&lt;double&gt; x;
-std::vector&lt;double&gt; y;
+std::vector<double> x;
+std::vector<double> y;
 
 // Adding an element to x and y:
 x.emplace_back(value);
 y.emplace_back(value);
 ```
 
-#### Fitting data
+#### 拟合数据
 
-For fitting in C++, you do not have to loop over the list, as vectors are guaranteed to have contiguous memory. You can directly pass to the fitting function the pointers to the vectors buffers:
-
+要在 C++ 中拟合，你不必遍历列表，因为向量可以保证具有连续的内存。你可以将向量缓冲区的指针直接传递给拟合函数：
 
 ```
 gsl_fit_linear(x.data(), 1, y.data(), 1, entries_number,
-               &amp;intercept, &amp;slope,
-               &amp;cov00, &amp;cov01, &amp;cov11, &amp;chi_squared);
+               &intercept, &slope,
+               &cov00, &cov01, &cov11, &chi_squared);
 const double r_value = gsl_stats_correlation(x.data(), 1, y.data(), 1, entries_number);
 
-std::cout &lt;&lt; "Slope: " &lt;&lt; slope &lt;&lt; std::endl;
-std::cout &lt;&lt; "Intercept: " &lt;&lt; intercept &lt;&lt; std::endl;
-std::cout &lt;&lt; "Correlation coefficient: " &lt;&lt; r_value &lt;&lt; std::endl;
+std::cout << "Slope: " << slope << std::endl;
+std::cout << "Intercept: " << intercept << std::endl;
+std::cout << "Correlation coefficient: " << r_value << std::endl;
 ```
 
-#### Plotting
+#### 绘图
 
-Plotting is done with the same approach as before. Write to a file:
-
+使用与以前相同的方法进行绘图。 写入文件：
 
 ```
 const double step_x = ((max_x + 1) - (min_x - 1)) / N;
 
-for (unsigned int i = 0; i &lt; N; i += 1) {
-    const double current_x = (min_x - 1) + step_x * i;
-    const double current_y = intercept + slope * current_x;
+for (unsigned int i = 0; i < N; i += 1) {
+    const double current_x = (min_x - 1) + step_x * i;
+    const double current_y = intercept + slope * current_x;
 
-    output_file &lt;&lt; current_x &lt;&lt; "\t" &lt;&lt; current_y &lt;&lt; std::endl;
+    output_file << current_x << "\t" << current_y << std::endl;
 }
 
 output_file.close();
 ```
 
-And then use Gnuplot for the plotting.
+然后使用 Gnuplot 进行绘图。
 
-#### Results
+#### 结果
 
-Before running the program, it must be compiled with a similar command:
-
+在运行程序之前，必须使用类似的命令对其进行编译：
 
 ```
-`clang++ -std=c++11 -I/usr/include/ fitting_Cpp11.cpp -L/usr/lib/ -L/usr/lib64/ -lgsl -lgslcblas -o fitting_Cpp11`
+clang++ -std=c++11 -I/usr/include/ fitting_Cpp11.cpp -L/usr/lib/ -L/usr/lib64/ -lgsl -lgslcblas -o fitting_Cpp11
 ```
 
-The resulting output on the command line is:
-
+命令行上的结果输出为：
 
 ```
 #### Anscombe's first set with C++11 ####
@@ -438,17 +429,17 @@ Intercept: 3.00009
 Correlation coefficient: 0.816421
 ```
 
-And this is the resulting image generated with Gnuplot.
+这就是用 Gnuplot 生成的结果图像。
 
 ![Plot and fit of the dataset obtained with C++11][58]
 
-### Conclusion
+### 结论
 
-This article provides examples for a data fitting and plotting task in C99 and C++11. Since C++ is largely compatible with C, this article exploited their similarities for writing the second example. In some aspects, C++ is easier to use because it partially relieves the burden of explicitly managing memory. But the syntax is more complex because it introduces the possibility of writing classes for OOP. However, it is still possible to write software in C with the OOP approach. Since OOP is a style of programming, it can be used in any language. There are some great examples of OOP in C, such as the [GObject][59] and [Jansson][60] libraries.
+本文提供了用 C99 和 C++11 编写的数据拟合和绘图任务的示例。由于 C++ 在很大程度上与 C 兼容，因此本文利用了它们的相似性来编写了第二个示例。在某些方面，C++ 更易于使用，因为它部分减轻了显式管理内存的负担。但是其语法更加复杂，因为它引入了为 OOP 编写类的可能性。但是，仍然可以用 C 使用 OOP 方法编写软件。由于 OOP 是一种编程风格，因此可以以任何语言使用。在 C 中有一些很好的 OOP 示例，例如 [GObject][59] 和 [Jansson][60]库。
 
-For number crunching, I prefer working in C99 due to its simpler syntax and widespread support. Until recently, C++11 was not as widely supported, and I tended to avoid the rough edges in the previous versions. For more complex software, C++ could be a good choice.
+对于数字运算，我更喜欢在 C99 中进行，因为它的语法更简单并且得到了广泛的支持。直到最近，C++11 还没有得到广泛的支持，我倾向于避免使用先前版本中的粗糙不足之处。对于更复杂的软件，C++ 可能是一个不错的选择。
 
-Do you use C or C++ for data science as well? Share your experiences in the comments.
+你是否也将 C 或 C++ 用于数据科学？ 在评论中分享你的经验。
 
 --------------------------------------------------------------------------------
 
@@ -456,7 +447,7 @@ via: https://opensource.com/article/20/2/c-data-science
 
 作者：[Cristiano L. Fontana][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
