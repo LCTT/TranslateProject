@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (HankChow)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,27 +7,26 @@
 [#]: via: (https://www.networkworld.com/article/3527430/digging-up-ip-addresses-with-the-dig-command.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Digging up IP addresses with the Linux dig command
+使用 dig 命令查询 IP 地址
 ======
-The dig command is extremely versatile both for retrieving information from domain name servers and for troubleshooting.
-Thinkstock
+命令行工具 `dig` 是用于解析域名和故障排查的一个利器。
 
-Not unlike **nslookup** in function, but with a lot more options, the **dig** command provides information that name servers manage and can be very useful for troubleshooting problems. It’s both simple to use and has lots of useful options.
+从主要功能上来说，`dig` 和 `nslookup` 之间差异不大，但 `dig` 更像一个加强版的 `nslookup`，可以查询到一些由域名服务器管理的信息，这在排查某些问题的时候非常有用。总的来说，`dig` 是一个既简单易用又功能强大的命令行工具。
 
-The name “dig” stands for “domain information groper” since domain groping is basically what it does. The amount of information that it provides depends on a series of options that you can use to tailor its output to your needs. Dig can provide a lot of detail or be surprisingly terse.
+`dig` 最基本的功能就是查询域名信息，因此它的名称实际上是“<ruby>域名信息查询工具<rt>Domain Information Groper</rt></ruby>”的缩写。`dig` 向用户返回的内容可以非常详尽，也可以非常简洁，展现内容的多少完全由用户在查询时使用的选项来决定。
 
 [[Get regularly scheduled insights by signing up for Network World newsletters.]][1]
 
-### Just the IP, please
+### 我只需要查询 IP 地址
 
-To get _just_ the IP address for a system, add the **+short** option to your dig command like this:
+如果只需要查询某个域名指向的 IP 地址，可以使用 `+short` 选项：
 
 ```
 $ dig facebook.com +short
 31.13.66.35
 ```
 
-Don't be surprised, however, if some domains are tied to multiple IP addresses to make the sites they support more reliable.
+在查询的时候发现有的域名会指向多个 IP 地址？这其实是网站提高其可用性的一种措施。
 
 ```
 $ dig networkworld.com +short
@@ -37,7 +36,7 @@ $ dig networkworld.com +short
 151.101.194.165
 ```
 
-Also, don't be surprised if the order of the IP addresses changes from one query to the next. This is a side effect of load balancing.
+也正是由于这些网站通过负载均衡实现高可用，在下一次查询的时候，或许会发现这几个 IP 地址的排序有所不同。
 
 ```
 $ dig networkworld.com +short
@@ -47,9 +46,9 @@ $ dig networkworld.com +short
 151.101.66.165
 ```
 
-### Standard dig output
+### 标准返回
 
-The standard dig display provides details on dig itself along with the response from the name server.
+`dig` 的标准返回内容则包括这个工具本身的一些信息，以及请求域名服务器时返回的响应内容：
 
 ```
 $ dig networkworld.com
@@ -77,7 +76,7 @@ networkworld.com.       300     IN      A       151.101.2.165
 ;; MSG SIZE  rcvd: 109
 ```
 
-Since name servers generally cache collected data for a while, the query time shown at the bottom of dig output might sometimes might say "0 msec":
+由于域名服务器有缓存机制，返回的内容可能是之前缓存好的信息。在这种情况下，`dig` 最后显示的<ruby>查询时间<rt>Query time</rt></ruby>会是 0 毫秒（0 msec）：
 
 [][2]
 
@@ -88,11 +87,11 @@ Since name servers generally cache collected data for a while, the query time sh
 ;; MSG SIZE  rcvd: 109
 ```
 
-### Who you gonna ask?
+### 向谁查询？
 
-By default, dig will refer to your **/etc/resolv.conf** file to determine what name server to query, but you can refer queries to other DNS servers by adding an **@** option.
+在默认情况下，`dig` 会根据 `/etc/resolv.conf` 这个文件的内容决定向哪个域名服务器获取查询结果。你也可以使用 `@` 来指定 `dig` 请求的域名服务器。
 
-In the example below, for example, the query is being sent to Google's name server (i.e., 8.8.8.8).
+在下面的例子中，就指定了 `dig` 向 Google 的域名服务器 8.8.8.8 查询域名信息。
 
 ```
 $ dig @8.8.8.8 networkworld.com
@@ -121,21 +120,21 @@ networkworld.com.       299     IN      A       151.101.2.165
 ;; MSG SIZE  rcvd: 109
 ```
 
-To determine what version of dig you’re using, use the **-v** option. You should see something like this:
+想要知道正在使用的 `dig` 工具的版本，可以使用 `-v` 选项。你会看到类似这样：
 
 ```
 $ dig -v
 DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu
 ```
 
-or this:
+或者这样的返回信息：
 
 ```
 $ dig -v
 DiG 9.11.4-P2-RedHat-9.11.4-22.P2.el8
 ```
 
-To get just the answer portion of this response, you can omit name server details, but still get the answer you're looking for by using both a **+noall** (don't show everything) and a **+answer** (but show the answer section) like this:
+如果你觉得 `dig` 返回的内容过于详细，可以使用 `+noall`（不显示所有内容）和 `+answer`（仅显示域名服务器的响应内容）选项，域名服务器的详细信息就会被忽略，只保留域名解析结果。
 
 ```
 $ dig networkworld.com +noall +answer
@@ -148,9 +147,9 @@ networkworld.com.       300     IN      A       151.101.66.165
 networkworld.com.       300     IN      A       151.101.2.165
 ```
 
-### Looking up a batch of systems
+### 批量查询域名
 
-If you want to dig for a series of domain names, you can list the domain names in a file and then use a command like this one to have dig run through the list and provide the information.
+如果你要查询多个域名，可以把这些域名写入到一个文件内，然后使用下面的 `dig` 命令遍历整个文件并给出所有查询结果。
 
 ```
 $ dig +noall +answer -f domains
@@ -165,7 +164,7 @@ amazon.com.             18      IN      A       176.32.98.166
 amazon.com.             18      IN      A       205.251.242.103
 ```
 
-You could add +short to the command above but, with some sites having multiple IP addresses, this might not be very useful. To cut down on the detail but be sure that you can tell which IP belongs to which domain, you could instead pass the output to **awk** to display just the first and last columns of data:
+你也可以在上面的命令中使用 `+short` 选项，但如果其中有些域名指向多个 IP 地址，就无法看出哪些 IP 地址对应哪个域名了。在这种情况下，更好地做法应该是让 `awk` 对返回内容进行处理，只留下第一列和最后一列：
 
 ```
 $ dig +noall +answer -f domains | awk '{print $1,$NF}'
@@ -179,15 +178,13 @@ amazon.com. 205.251.242.103
 amazon.com. 176.32.103.205
 ```
 
-Join the Network World communities on [Facebook][3] and [LinkedIn][4] to comment on topics that are top of mind.
-
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3527430/digging-up-ip-addresses-with-the-dig-command.html
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[HankChow](https://github.com/HankChow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
