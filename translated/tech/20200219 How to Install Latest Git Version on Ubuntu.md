@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Install Latest Git Version on Ubuntu)
@@ -25,7 +25,7 @@ sudo apt install git
 这就是为什么当你检查 Git 版本时，会看到安装的版本会比 [Git 网站上当前最新 Git 版本][4]旧：
 
 ```
-[email protected]:~$ git --version
+$ git --version
 git version 2.17.1
 ```
 
@@ -43,35 +43,35 @@ sudo apt update
 sudo apt install git
 ```
 
-即使你以前使用 apt 安装了 Git，它也将更新为最新的稳定版本。
+即使你以前使用 `apt` 安装了 Git，它也将更新为最新的稳定版本。
 
 ```
-[email protected]:~$ git --version
+$ git --version
 git version 2.25.0
 ```
 
-[使用PPA][8] 的好处在于，如果发布了新的 Git 稳定版本，那么就可以通过系统更新获得它。[仅更新 Ubuntu][9]来获取最新的 Git 稳定版本。
+[使用PPA][8] 的好处在于，如果发布了新的 Git 稳定版本，那么就可以通过系统更新获得它。[仅更新 Ubuntu][9] 来获取最新的 Git 稳定版本。
 
-### 配置Git （推荐给开发者）
+### 配置 Git （推荐给开发者）
 
 如果你出于开发目的安装了 Git，你会很快开始克隆仓库，进行更改并提交更改。
 
 如果你尝试提交代码，那么你可能会看到 “Please tell me who you are” 这样的错误：
 
 ```
-[email protected]:~/compress-pdf$ git commit -m "update readme"
+$ git commit -m "update readme"
 
 *** Please tell me who you are.
 
 Run
 
-  git config --global user.email "[email protected]"
+  git config --global user.email "you@example.com"
   git config --global user.name "Your Name"
 
 to set your account's default identity.
 Omit --global to set the identity only in this repository.
 
-fatal: unable to auto-detect email address (got '[email protected](none)')
+fatal: unable to auto-detect email address (got 'abhishek@itsfoss.(none)')
 ```
 
 这是因为你还没配置必要的个人信息。
@@ -80,7 +80,7 @@ fatal: unable to auto-detect email address (got '[email protected](none)')
 
 ```
 git config --global user.name "Your Name"
-git config --global user.email "[email protected]"
+git config --global user.email "you@example.com"
 ```
 
 你可以使用以下命令检查 Git 配置：
@@ -92,15 +92,13 @@ git config --list
 它应该显示如下输出：
 
 ```
-[email protected]
-user.name=abhishek
+user.email=you@example.com
+user.name=Your Name
 ```
 
-配置保存在 \~/.gitconfig 中。你可以手动修改配置。
+配置保存在 `~/.gitconfig` 中。你可以手动修改配置。
 
-* * *
-
-**结尾**
+### 结尾
 
 我希望这个小教程可以帮助你在 Ubuntu 上安装 Git。使用 PPA，你可以轻松获得最新的 Git 版本。
 
@@ -113,7 +111,7 @@ via: https://itsfoss.com/install-git-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
