@@ -7,27 +7,27 @@
 [#]: via: (https://opensource.com/article/20/2/no-ide-script)
 [#]: author: (Yedidyah Bar David https://opensource.com/users/didib)
 
-Don't like IDEs? Try grepgitvi
+不喜欢 IDE 么？试试看 grepgitvi
 ======
-A simple and primitive script to open Vim with your file of choice.
+一个简单又原始的脚本来用 Vim 打开你选择的文件。
 ![Files in a folder][1]
 
-Like most developers, I search and read source code all day long. Personally, I've never gotten used to integrated development environments (IDEs), and for years, I mainly used **grep** and copy/pasted file names to open Vi(m).
+像大多数开发者一样，我整天都在搜索和阅读源码。就我个人而言，我从来没有习惯集成开发环境 （IDE），多年来，我主要使用 **grep** 并复制/粘贴的文件名来打开 Vi（m）。
 
-Eventually, I came up with this script, slowly refining it as needed.
+最终，我写了这个脚本，并根据需要缓慢地对其进行了完善。
 
-Its dependencies are [Vim][2] and [rlwrap][3], and it is open source under the Apache 2.0 license. To use the script, [put it in your PATH][4], and run it inside a directory of text files with:
+它依赖 [Vim][2] 和 [rlwrap][3]，并使用 Apache 2.0 许可开源。要使用该脚本，请[将它放到 PATH 中][4]，然后在文本目录下运行：
 
 
 ```
 `grepgitvi <grep options> <grep/vim search pattern>`
 ```
 
-It will return a numbered list of search results, prompt you for the number of the result you want to use, and open Vim with that result. After you exit Vim, it will show the list again in a loop until you enter anything other than a result number. You can also use the Up and Down arrow keys to select a file; this makes it easier (for me) to find which results I've already looked at.
+它将返回搜索结果的编号列表，并提示你输入结果编号并打开 Vim。退出 Vim 后，它将再次显示列表，直到你输入除结果编号以外的任何内容。你也可以使用向上和向下箭头键选择一个文件。（这对我来说）更容易找到我已经看过的结果。
 
-It's simple and primitive compared to modern IDEs, or even to more sophisticated uses of Vim, but that's what does the job for me.
+与现代 IDE 甚至与 Vim 的更复杂的用法相比，它简单而原始，但它对我有用。
 
-### The script
+### 脚本
 
 
 ```
@@ -90,7 +90,7 @@ via: https://opensource.com/article/20/2/no-ide-script
 
 作者：[Yedidyah Bar David][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
