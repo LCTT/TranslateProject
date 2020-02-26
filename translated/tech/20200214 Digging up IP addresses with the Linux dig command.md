@@ -1,21 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Digging up IP addresses with the Linux dig command)
 [#]: via: (https://www.networkworld.com/article/3527430/digging-up-ip-addresses-with-the-dig-command.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-使用 dig 命令查询 IP 地址
+使用 dig 命令挖掘域名解析信息
 ======
-命令行工具 `dig` 是用于解析域名和故障排查的一个利器。
 
-从主要功能上来说，`dig` 和 `nslookup` 之间差异不大，但 `dig` 更像一个加强版的 `nslookup`，可以查询到一些由域名服务器管理的信息，这在排查某些问题的时候非常有用。总的来说，`dig` 是一个既简单易用又功能强大的命令行工具。
+> 命令行工具 `dig` 是用于解析域名和故障排查的一个利器。
+
+![](https://img.linux.net.cn/data/attachment/album/202002/26/094028jgvzguau1pdgicpz.jpg)
+
+从主要功能上来说，`dig` 和 `nslookup` 之间差异不大，但 `dig` 更像一个加强版的 `nslookup`，可以查询到一些由域名服务器管理的信息，这在排查某些问题的时候非常有用。总的来说，`dig` 是一个既简单易用又功能强大的命令行工具。（LCTT 译注：`dig` 和 `nslookup` 行为的主要区别来自于 `dig`  使用是是操作系统本身的解析库，而 `nslookup` 使用的是该程序自带的解析库，这有时候会带来一些行为差异。此外，从表现形式上看，`dig` 返回是结果是以 BIND 配置信息的格式返回的，也带有更多的技术细节。）
 
 `dig` 最基本的功能就是查询域名信息，因此它的名称实际上是“<ruby>域名信息查询工具<rt>Domain Information Groper</rt></ruby>”的缩写。`dig` 向用户返回的内容可以非常详尽，也可以非常简洁，展现内容的多少完全由用户在查询时使用的选项来决定。
-
-[[Get regularly scheduled insights by signing up for Network World newsletters.]][1]
 
 ### 我只需要查询 IP 地址
 
@@ -36,7 +37,7 @@ $ dig networkworld.com +short
 151.101.194.165
 ```
 
-也正是由于这些网站通过负载均衡实现高可用，在下一次查询的时候，或许会发现这几个 IP 地址的排序有所不同。
+也正是由于这些网站通过负载均衡实现高可用，在下一次查询的时候，或许会发现这几个 IP 地址的排序有所不同。（LCTT 译注：浏览器等应用默认会使用返回的第一个 IP 地址，因此这样实现了一种简单的负载均衡。）
 
 ```
 $ dig networkworld.com +short
@@ -77,8 +78,6 @@ networkworld.com.       300     IN      A       151.101.2.165
 ```
 
 由于域名服务器有缓存机制，返回的内容可能是之前缓存好的信息。在这种情况下，`dig` 最后显示的<ruby>查询时间<rt>Query time</rt></ruby>会是 0 毫秒（0 msec）：
-
-[][2]
 
 ```
 ;; Query time: 0 msec        <==
@@ -149,7 +148,7 @@ networkworld.com.       300     IN      A       151.101.2.165
 
 ### 批量查询域名
 
-如果你要查询多个域名，可以把这些域名写入到一个文件内，然后使用下面的 `dig` 命令遍历整个文件并给出所有查询结果。
+如果你要查询多个域名，可以把这些域名写入到一个文件内（`domains`），然后使用下面的 `dig` 命令遍历整个文件并给出所有查询结果。
 
 ```
 $ dig +noall +answer -f domains
@@ -185,7 +184,7 @@ via: https://www.networkworld.com/article/3527430/digging-up-ip-addresses-with-t
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
