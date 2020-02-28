@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (heguangzhi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11940-1.html)
 [#]: subject: (How Kubernetes Became the Standard for Compute Resources)
 [#]: via: (https://www.linux.com/articles/how-kubernetes-became-the-standard-for-compute-resources/)
 [#]: author: (Swapnil Bhartiya https://www.linux.com/author/swapnil/)
@@ -10,7 +10,7 @@
 Kubernetes 如何成为计算资源的标准
 ======
 
-![](https://www.linux.com/wp-content/uploads/2019/08/elevator-1598431_1920.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202002/28/131634mwzyylmv93m4ccws.jpg)
 
 对于原生云生态系统来说，2019 年是改变游戏规则的一年。有大的[并购][1]，如 Red Hat Docker 和 Pivotal，并出现其他的玩家，如 Rancher Labs 和 Mirantis。
 
