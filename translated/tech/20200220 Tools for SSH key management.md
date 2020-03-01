@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Tools for SSH key management)
@@ -12,7 +12,7 @@ SSH 密钥管理工具
 
 > 常用开源工具的省时快捷方式。
 
-![collection of hardware on blue backround][1]
+![](https://img.linux.net.cn/data/attachment/album/202003/01/122336zyldgpse6eyrbymt.jpg)
 
 我经常使用 SSH。我发现自己每天都要登录多个服务器和树莓派（与我位于同一房间，并接入互联网）。我有许多设备需要访问，并且获得访问权限的要求也不同，因此，除了使用各种 `ssh` / `scp` 命令选项之外，我还必须维护一个包含所有连接详细信息的配置文件。
 
@@ -60,7 +60,7 @@ $ ssh-import-id gh:waveform80
 $ sudo pip3 install stormssh
 ```
 
-然后，你可以使用以下命令将 SSH 连接添加到配置中：
+然后，你可以使用以下命令将 SSH 连接信息添加到配置中：
 
 ```
 $ storm add pi3 pi@192.168.1.20
@@ -94,7 +94,7 @@ via: https://opensource.com/article/20/2/ssh-tools
 作者：[Ben Nuttall][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
