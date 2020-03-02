@@ -7,57 +7,57 @@
 [#]: via: (https://fedoramagazine.org/build-your-own-cloud-with-fedora-31-and-nextcloud-server/)
 [#]: author: (storyteller https://fedoramagazine.org/author/storyteller/)
 
-Build your own cloud with Fedora 31 and Nextcloud Server
+使用 Fedora 31 和 Nextcloud 服务器构建自己的云
 ======
 
 ![][1]
 
-[Nextcloud][2] is a software suite for storing and syncing your data across multiple devices. You can learn more about Nextcloud Server’s features from [https://github.com/nextcloud/server][3].
+[Nextcloud][2] 是用于跨多个设备存储和同步数据的软件套件。你可以从 [https://github.com/nextcloud/server][3] 了解有关 Nextcloud 服务器的更多特性信息。
 
-This article demonstrates how to build a personal cloud using Fedora and Nextcloud in a few simple steps. For this tutorial you will need a dedicated computer or a virtual machine running Fedora 31 server edition and an internet connection.
+本文通过几个简单的步骤演示了如何使用 Fedora 和 Nextcloud 构建个人云。对于本教程，你将需要一台独立计算机或运行 Fedora 31 服务器版的虚拟机，还需要互联网连接。
 
-### Step 1: Install the prerequisites
+### 步骤 1：预先安装条件
 
-Before installing and configuring Nextcloud, a few prerequisites must be satisfied.
+在安装和配置 Nextcloud 之前，必须满足一些预先条件。
 
-First, install Apache web server:
+首先，安装 Apache Web 服务器：
 
 ```
 # dnf install httpd
 ```
 
-Next, install PHP and some additional modules. Make sure that the PHP version being installed meets [Nextcloud’s requirements][4]:
+接下来，安装 PHP 和一些其他模块。确保所安装的 PHP 版本符合 [Nextcloud 的要求][4]：
 
 ```
 # dnf install php php-gd php-mbstring php-intl php-pecl-apcu php-mysqlnd php-pecl-redis php-opcache php-imagick php-zip php-process
 ```
 
-After PHP is installed enable and start the Apache web server:
+安装 PHP 后，启用并启动 Apache Web 服务器：
 
 ```
 # systemctl enable --now httpd
 ```
 
-Next, allow _HTTP_ traffic through the firewall:
+接下来，允许 _HTTP_ 流量穿过防火墙：
 
 ```
 # firewall-cmd --permanent --add-service=http
 # firewall-cmd --reload
 ```
 
-Next, install the MariaDB server and client:
+接下来，安装 MariaDB 服务器和客户端：
 
 ```
 # dnf install mariadb mariadb-server
 ```
 
-Then enable and start the MariaDB server:
+然后启用并启动 MariaDB 服务器
 
 ```
 # systemctl enable --now mariadb
 ```
 
-Now that MariaDB is running on your server, you can run the _mysql_secure_installation_ command to secure it:
+现在，MariaDB 正在运行，你可以运行 _mysql_secure_installation_ 命令来保护它：
 
 ```
 # mysql_secure_installation
@@ -128,7 +128,7 @@ MariaDB installation should now be secure.
 Thanks for using MariaDB!
 ```
 
-Next, create a dedicated user and database for your Nextcloud instance:
+接下来，为你的 Nextcloud 实例创建独立的用户和数据库：
 
 ```
 # mysql -p
@@ -139,23 +139,23 @@ Next, create a dedicated user and database for your Nextcloud instance:
 > exit;
 ```
 
-### Step 2: Install Nextcloud Server
+### 步骤 2：安装 Nextcloud 服务器
 
-Now that the prerequisites for your Nextcloud installation have been satisfied, download and unzip [the Nextcloud archive][5]:
+现在，你已满足 Nextcloud 安装的预先条件，请下载并解压 [Nextcloud 压缩包][5]：
 
 ```
 # wget https://download.nextcloud.com/server/releases/nextcloud-17.0.2.zip
 # unzip nextcloud-17.0.2.zip -d /var/www/html/
 ```
 
-Next, create a data folder and grant Apache read and write access to the _nextcloud_ directory tree:
+接下来，创建一个数据文件夹，并授予 Apache 对 _nextcloud_ 目录树的读写访问权限：
 
 ```
 # mkdir /var/www/html/nextcloud/data
 # chown -R apache:apache /var/www/html/nextcloud
 ```
 
-SELinux must be configured to work with Nextcloud. The basic commands are those bellow, but a lot more, by features used on nexcloud installation, are posted here: [Nextcloud SELinux configuration][6]
+SELinux 必须配置为可与 Nextcloud 一起使用。基本命令如下所示，但在 nexcloud 安装中还有很多其他的命令，发布在这里：[Nextcloud SELinux 配置][6]
 
 ```
 # semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/nextcloud/config(/.*)?'
@@ -166,30 +166,30 @@ SELinux must be configured to work with Nextcloud. The basic commands are those 
 # restorecon -Rv '/var/www/html/nextcloud/'
 ```
 
-### Step 3: Configure N**extclou**d
+### 步骤 3：配置 Nextcloud
 
-Nextcloud can be configured using its web interface or from the command line.
+可以使用它的 Web 界面或在命令行配置 Nextcloud。
 
-#### Using the web interface
+#### 使用 Web 界面
 
-From your favorite browser, access _<http://your\_server\_ip/nextcloud>_ and fill the fields:
+在你喜欢的浏览器中，访问 _<http://your\_server\_ip/nextcloud>_  并输入字段：
 
 ![][7]
 
-#### Using the command line
+#### 使用命令行
 
-From the command line, just enter the following, substituting the values you used when you created a dedicated Nextcloud user in MariaDB earlier:
+在命令行中，只需输入以下内容，使用你之前在 MariaDB 中创建的独立 Nextcloud 用户替换相应的值：
 
 ```
 # sudo -u apache php occ maintenance:install --data-dir /var/www/html/nextcloud/data/ --database "mysql" --database-name "nextcloud" --database-user "nc_admin" --database-pass "DB_SeCuRe_PaSsWoRd" --admin-user "admin" --admin-pass "Admin_SeCuRe_PaSsWoRd"
 ```
 
-### Final Notes
+### 最后几点
 
-  * I used the _http_ protocol, but Nextcloud also works over _https_. I might write a follow-up about securing Nextcloud in a future article.
-  * I disabled SELinux, but your server will be more secure if you configure it.
-  * The recommend PHP memory limit for Nextcloud is 512M. To change it, edit the _memory_limit_ variable in the _/etc/php.ini_ configuration file and restart your _httpd_ service.
-  * By default, the web interface can only be accessed using the _<http://localhost/>_ URL. If you want to allow access using other domain names, [you can do so by editing the _/var/www/html/nextcloud/config/config.php_ file][8]. The * character can be used to bypass the domain name restriction and allow the use of any URL that resolves to one of your server’s IP addresses.
+  * 我使用的是 _http_ 协议，但是 Nextcloud 也可以在 _https_ 上运行。我可能会在以后的文章中写一篇有关保护 Nextcloud 的文章。
+  * 我禁用了 SELinux，但是如果配置它，你的服务器将更加安全。
+  * Nextcloud 的建议 PHP 内存限制为 512M。要更改它，请编辑 _/etc/php.ini_ 配置文件中的 _memory_limit_ 变量，然后重新启动 _httpd_ 服务。
+  * 默认情况下，只能使用 _<http://localhost/>_ URL 访问 Web 界面。如果要允许使用其他域名访问，[你可编辑 _/var/www/html/nextcloud/config/config.php_ 来进行此操作][8]。\* 字符可用于绕过域名限制，并允许任何解析为服务器 IP 的 URL 访问。
 
 
 
@@ -201,15 +201,13 @@ From the command line, just enter the following, substituting the values you use
     ),
 ```
 
-_— Updated on January 28th, 2020 to include SELinux configuration —_
-
 --------------------------------------------------------------------------------
 
 via: https://fedoramagazine.org/build-your-own-cloud-with-fedora-31-and-nextcloud-server/
 
 作者：[storyteller][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
