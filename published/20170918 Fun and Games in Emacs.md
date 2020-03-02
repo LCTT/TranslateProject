@@ -78,9 +78,9 @@ Emacs 中汉诺塔的实现可以追溯到 20 世纪 80 年代中期——确实
 
 我喜欢 `fortune` 命令。每当我启动一个新 shell 时，这些与文学片段、谜语相结合的刻薄、无益、常常带有讽刺意味的“建议”就会点亮我的一天。
 
-令人困惑的是，Emacs 中有两个包或多或少地做着类似的事情：`fortune` 和 `cookie1`。前者主要用于在电子邮件签名中添加幸运饼干消息，而后者只是一个简单的 fortune 格式阅读器。
+令人困惑的是，Emacs 中有两个包或多或少地做着类似的事情：`fortune` 和 `cookie`。前者主要用于在电子邮件签名中添加幸运饼干消息，而后者只是一个简单的 fortune 格式阅读器。
 
-不管怎样，使用 Emacs 的 `cookie1` 包前，你首先需要通过 `customize-option RET cookie RET` 来自定义变量 `cookie-file` 告诉它从哪找到 fortune 文件。
+不管怎样，使用 Emacs 的 `cookie` 包前，你首先需要通过 `customize-option RET cookie RET` 来自定义变量 `cookie-file` 告诉它从哪找到 fortune 文件。
 
 如果你的操作系统是 Ubuntu，那么你先安装 `fortune` 软件包，然后就能在 `/usr/share/games/fortune/` 目录中找到这些文件了。
 
