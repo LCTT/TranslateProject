@@ -5,7 +5,13 @@ Exploring free and open web fonts
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc-lead-docdish-yellow-typewriter-keys.png?itok=0sPgIdMG)
 
-There is no question that the face of the web has been transformed in recent years by open source fonts. Prior to 2010, the only typefaces you were likely to see in a web browser were the generic "web safe" [core fonts][1] from Microsoft. But that year saw the start of several revolutions: the introduction of the Web Open Font Format ([WOFF][2]), which offered an open standard for efficiently delivering font files over HTTP, and the launch of web-font services like [Google Fonts][3] and the [Open Font Library][4]—both of which offered web publishers access to a large collection of fonts, for free, available under open licenses.
+There is no question that the face of the web has been transformed in recent years by open source fonts.Prior to 2010, the
+毫无疑问，近些年来互联网的面貌已经被开放免费的字体所改变。在早些的2010年，
+only typefaces you were likely to see in a web browser were the generic "web safe" [core fonts][1] from Microsoft. But that 
+你在网络浏览器上几乎只能看到微软制作的最普通的“网络安全字体”。
+year saw the start of several revolutions: the introduction of the Web Open Font Format ([WOFF][2]), which offered an open 
+但这一年正好是好几轮技术革新开始的见证之年。
+standard for efficiently delivering font files over HTTP, and the launch of web-font services like [Google Fonts][3] and the [Open Font Library][4]—both of which offered web publishers access to a large collection of fonts, for free, available under open licenses.
 
 It is hard to overstate the positive impact of these events on web typography. But it can be all too easy to equate the successes of open web fonts with open source typography as a whole and conclude that the challenges are behind us, the puzzles solved. That is not the case, so if you care about type, the good news is there are a lot of opportunities to get involved in improvement.
 
