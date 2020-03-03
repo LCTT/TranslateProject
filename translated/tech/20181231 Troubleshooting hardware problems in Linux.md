@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Troubleshooting hardware problems in Linux)
@@ -12,11 +12,11 @@ Linux 硬件故障排除指南
 
 > 了解是什么原因导致你的 Linux 硬件发生故障，以便你可以将其恢复并快速运行。
 
-![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003499_01_other11x_cc.png?itok=I_kCDYj0)
+![](https://img.linux.net.cn/data/attachment/album/202003/03/101312zcazy02wl2g8uhy1.jpg)
 
-[Linux 服务器][1]在物理机、虚拟化、私有云、公共云和混合云等许多不同种类的基础设施中运行着关键的业务应用程序。对于 Linux 系统管理员来说，了解如何管理 Linux 硬件基础设施（包括与 [网络][2]、存储、Linux 容器相关的软件定义的功能）和 Linux 服务器上的多种工具非常重要。
+[Linux 服务器][1]在物理机、虚拟化、私有云、公共云和混合云等许多不同种类的基础设施中运行着关键的业务应用程序。对于 Linux 系统管理员来说，了解如何管理 Linux 硬件基础设施（包括与 [网络][2]、存储、Linux 容器相关的软件定义功能）和 Linux 服务器上的多种工具非常重要。
 
-在 Linux 上进行故障排除和解决与硬件相关的问题可能需要一些时间。即使是经验丰富的系统管理员，有时也会花费数小时来解决神秘的硬件和软件差异。
+在 Linux 上进行排除和解决与硬件相关的问题可能需要一些时间。即使是经验丰富的系统管理员，有时也会花费数小时来解决神秘的硬件和软件差异。
 
 以下提示可以使你更快、更轻松地对 Linux 中的硬件进行故障排除。许多不同的事情都可能导致 Linux 硬件出现问题。在开始诊断它们之前，明智的做法是了解最常见的问题以及最有可能找到问题的地方。
 
@@ -54,7 +54,7 @@ xvdb    202:16   0  20G  0 disk
 ....
 ```
 
-### 深入到多个日志当中
+### 深入到各个日志当中
 
 使用 `dmesg` 可以找出内核最新消息中的错误和警告。例如，这是 `dmesg | more`  命令的输出：
 
@@ -93,7 +93,7 @@ Dec  1 13:21:33 bastion dnsmasq[30201]: using nameserver 127.0.0.1#53 for domai
 
 ### 分析网络功能
 
-你可能有成千上万的云原生应用程序在一个复杂的网络环境中为业务提供服务。其中可能包括虚拟化、多云和混合云。这意味着，作为故障排除的一部分，你应该分析网络连接是否正常工作。弄清 Linux 服务器中网络功能的有用命令包括：`ip addr`、`traceroute`、`nslookup`、`dig` 和 `ping` 等。例如，这是 `ip addr show` 命令的输出：
+你可能有成千上万的云原生应用程序在一个复杂的网络环境中为业务提供服务，其中可能包括虚拟化、多云和混合云。这意味着，作为故障排除的一部分，你应该分析网络连接是否正常工作。弄清 Linux 服务器中网络功能的有用命令包括：`ip addr`、`traceroute`、`nslookup`、`dig` 和 `ping` 等。例如，这是 `ip addr show` 命令的输出：
 
 ```
 # ip addr show
@@ -129,7 +129,7 @@ via: https://opensource.com/article/18/12/troubleshooting-hardware-problems-linu
 作者：[Daniel Oh][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
