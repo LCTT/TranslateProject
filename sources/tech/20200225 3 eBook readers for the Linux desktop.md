@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wenwensnow)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,10 +7,10 @@
 [#]: via: (https://opensource.com/article/20/2/linux-ebook-readers)
 [#]: author: (Scott Nesbitt https://opensource.com/users/scottnesbitt)
 
-3 eBook readers for the Linux desktop
+3 eBook readers for the Linux desktop  针对Linux桌面版的3个电子书阅读器
 ======
 Any of these open source eBook applications will make it easy to read
-your books on a larger screen.
+your books on a larger screen.      任意一个开源电子书应用都能使你在更大屏幕上的阅读体验得到提升。
 ![Computer browser with books on the screen][1]
 
 I usually read eBooks on my phone or with my Kobo eReader. I've never been comfortable reading books on larger screens. However, many people regularly read books on their laptops or desktops. If you are one of them (or think you might be), I'd like to introduce you to three eBook readers for the Linux desktop.
