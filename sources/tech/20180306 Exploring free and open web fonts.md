@@ -30,9 +30,16 @@ There are a number of problems to solve. Probably the most obvious example is th
 
 Most users learn quickly that the "right" step is to manually copy those font binaries into any one of a handful of special directories on their hard drive. But that just makes the files visible to the operating system; it doesn't offer much in the way of a user experience. Again, this is not a flaw with the web-font service; rather it's evidence of the point where the service stops and more work needs to be done on the other side.
 
+大部分用户很快学会了”正确“的步骤就是手动地复制这些字体二进制文件到他们硬件驱动里一大把的文件夹里的某个文件夹里。但是这样做只能使这个文件被操作系统检索到。它并不能为用户体验带来什么。再强调一遍，这不是网络字体服务的缺陷，然而它是对于关于服务到哪里停止和更多工作需要在其他方面做这个观点的证据。
+
 A big improvement from the user's perspective would be for the OS or the desktop environment to be smarter at this "just downloaded" stage. Not only would it install the font files to the right location but, more importantly, it could add important metadata that the user will want to access when selecting a font to use in a project.
 
+在用户视角来说，一个巨大的提升可能就是在直接下载“这个阶段系统或者桌面环境变得更智能。它（系统或桌面环境）不仅会把字体文件安装到正确的位置上，更重要的是，当用户选择在一个工程使用的字体时，它会自己添加用户所需要得到的重要的元数据。
+
 What this additional information consists of and how it is presented to the user is tied to another challenge: Managing a font collection on Linux is noticeably less pleasant than on other operating systems. Periodically, font manager applications appear (see [GTK+ Font Manager][5] for one of the most recent examples), but they rarely catch on. I've been thinking a lot about where I think they come up short; one core factor is they have limited themselves to displaying only the information embedded in the font binary: basic character-set coverage, weight/width/slope settings, embedded license and copyright statements, etc.
+
+附加信息的组成与它如何展示给用户连接着另一个挑战：在linux环境管理一个字体库明显不如任何其他操作系统愉快。字体管理软件总是时不时的出现一下（例如[GTK+ Font Manager][5] 这是最近的一个例子），但是他们（字体管理软件）很少能正确的时候出现。我一直在思考一大堆这些软件让人失望的方面。一个核心的原因是他们把自己限制只展示自己在二进制字体文件内嵌的信息：基本字符集的覆盖，粗细，宽度，和斜度的设定，内置的证书和版权说明等等。
+
 
 But a lot of decisions go into the process of selecting a font for a job besides what's in this embedded data. Serious font users—like information designers, journal article authors, or book designers—make their font-selection decisions in the context of each document's requirements and needs. That includes license information, naturally, but it includes much more, like information about the designer and the foundry, stylistic trends, or details about how the font works in use.
 
