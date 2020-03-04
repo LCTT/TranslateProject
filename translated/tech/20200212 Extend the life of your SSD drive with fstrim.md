@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Extend the life of your SSD drive with fstrim)
@@ -12,9 +12,9 @@
 
 > 这个新的系统服务可以使你的生活更轻松。
 
-![Linux keys on the keyboard for a desktop computer][1]
+![](https://img.linux.net.cn/data/attachment/album/202003/04/121625sl380ga10g56d33h.jpg)
 
-在过去的十年中，固态驱动器（SSD）带来了一种管理存储的新方法。与上一代的转盘产品相比，SSD 具有无声、更冷却的操作和更快的接口规格等优点。当然，新技术带来了新的维护和管理方法。SSD 具有称为 TRIM 的功能。从本质上讲，这是一种用于回收设备上未使用的块的方法，该块可能先前已被写入，但不再包含有效数据，因此可以返回到通用存储池以供重用。Opensource.com 的 Don Watkins 在首先其 2017 年的文章《[Linux 固态驱动器：为 SSD 启用 TRIM][2]》中介绍了 TRIM 的内容。
+在过去的十年中，固态驱动器（SSD）带来了一种管理存储的新方法。与上一代的转盘产品相比，SSD 具有无声、更冷却的操作和更快的接口规格等优点。当然，新技术带来了新的维护和管理方法。SSD 具有一种称为 TRIM 的功能。从本质上讲，这是一种用于回收设备上未使用的块的方法，该块可能先前已被写入，但不再包含有效数据，因此可以返回到通用存储池以供重用。Opensource.com 的 Don Watkins 首先在其 2017 年的文章《[Linux 固态驱动器：为 SSD 启用 TRIM][2]》中介绍过 TRIM 的内容。
 
 如果你一直在 Linux 系统上使用此功能，则你可能熟悉下面描述的两种方法。
 
@@ -29,7 +29,7 @@
 UUID=3453g54-6628-2346-8123435f  /home  xfs  defaults,discard   0 0
 ```
 
-丢弃选项可启用自动的在线 TRIM。由于可能会对性能造成负面影响，最近关于这是否是最佳方法一直存在争议。使用此选项会在每次将新数据写入驱动器时启动 TRIM。这可能会引入其他活动，从而影响存储性能。
+丢弃选项可启用自动的在线 TRIM。由于可能会对性能造成负面影响，最近关于这是否是最佳方法一直存在争议。使用此选项会在每次将新数据写入驱动器时启动 TRIM。这可能会引入其他磁盘活动，从而影响存储性能。
 
 #### Cron 作业
 
@@ -44,7 +44,7 @@ UUID=3453g54-6628-2346-8123435f  /home  xfs  defaults,discard   0 0
 
 ### 一个新的 TRIM 服务
 
-我最近发现有一个用于 TRIM 的 systemd 服务。Fedora 在版本 30 中将其[引入][3]，尽管默认情况下在版本 30 和 31 中未启用它，但计划在版本 32 中使用它。如果你使用的是 Fedora 工作站 31，并且你想要开始使用此功能，可以非常轻松地启用它。我还将在下面向你展示如何对其进行测试。该服务并非 Fedora 独有的服务。它是否存在和地位将因发行版而异。
+我最近发现有一个用于 TRIM 的 systemd 服务。Fedora 在版本 30 中将其[引入][3]，尽管默认情况下在版本 30 和 31 中未启用它，但计划在版本 32 中使用它。如果你使用的是 Fedora 工作站 31，并且你想要开始使用此功能，可以非常轻松地启用它。我还将在下面向你展示如何对其进行测试。该服务并非 Fedora 独有的服务。它是否存在及其地位将因发行版而异。
 
 #### 测试
 
@@ -78,7 +78,7 @@ Options:
  -V, --version       display version
 ```
 
-因此，现在我可以看到这个 systemd 服务已配置为在我的 `/etc/fstab` 文件中的所有受支持的挂载文件系统上运行该修剪操作（ `-fstab`），并打印出丢弃的字节数（`-verbose`），但是抑制了任何可能会发生的错误消息（`–quiet`）。了解这些选项对测试很有帮助。例如，我可以从最安全的方法开始，即空运行。 我还将去掉 `-quiet` 参数，以便确定驱动器设置是否发生任何错误。
+因此，现在我可以看到这个 systemd 服务已配置为在我的 `/etc/fstab` 文件中的所有受支持的挂载文件系统上运行该修剪操作（`-fstab`），并打印出所丢弃的字节数（`-verbose`），但是抑制了任何可能会发生的错误消息（`–quiet`）。了解这些选项对测试很有帮助。例如，我可以从最安全的方法开始，即空运行。我还将去掉 `-quiet` 参数，以便确定驱动器设置是否发生任何错误。
 
 ```
 $ sudo /usr/sbin/fstrim --fstab --verbose --dry-run
@@ -101,7 +101,7 @@ $ sudo /usr/sbin/fstrim --fstab --verbose
 
 #### 启用
 
-Fedora Linux 实现了一个计划每周运行它的 systemd 计时器服务。要检查其是否存在和当前状态，请运行 `systemctl status`。
+Fedora Linux 实现了一个计划每周运行它的 systemd 计时器服务。要检查其是否存在及当前状态，请运行 `systemctl status`。
 
 ```
 $ sudo systemctl status fstrim.timer
@@ -121,7 +121,7 @@ $ sudo systemctl enable fstrim.timer
 $ sudo systemctl list-timers --all
 ```
 
-会显示出下列表明 `fstrim.timer` 存在的行。注意，该计时器实际上激活了 `fstrim.service`。这是 `fstrim` 实际调用的地方。与时间相关的字段显示为 `n/a`，因为该服务已启用且尚未运行。
+会显示出下列行，表明 `fstrim.timer` 存在。注意，该计时器实际上激活了 `fstrim.service` 服务。这是实际调用 `fstrim` 的地方。与时间相关的字段显示为 `n/a`，因为该服务已启用且尚未运行。
 
 ```
 NEXT   LEFT    LAST   PASSED   UNIT           ACTIVATES
@@ -141,7 +141,7 @@ via: https://opensource.com/article/20/2/trim-solid-state-storage-linux
 作者：[Alan Formy-Duval][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
