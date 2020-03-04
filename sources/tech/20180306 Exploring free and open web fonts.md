@@ -1,23 +1,32 @@
 Fisherman110 translating
 
 Exploring free and open web fonts
+探索免费而开放的网络字体
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc-lead-docdish-yellow-typewriter-keys.png?itok=0sPgIdMG)
 
 There is no question that the face of the web has been transformed in recent years by open source fonts.Prior to 2010, the
-毫无疑问，近些年来互联网的面貌已经被开放免费的字体所改变。在早些的2010年，
 only typefaces you were likely to see in a web browser were the generic "web safe" [core fonts][1] from Microsoft. But that 
-你在网络浏览器上几乎只能看到微软制作的最普通的“网络安全字体”。
 year saw the start of several revolutions: the introduction of the Web Open Font Format ([WOFF][2]), which offered an open 
-但这一年正好是好几轮技术革新开始的见证之年。
-standard for efficiently delivering font files over HTTP, and the launch of web-font services like [Google Fonts][3] and the [Open Font Library][4]—both of which offered web publishers access to a large collection of fonts, for free, available under open licenses.
+standard for efficiently delivering font files over HTTP, and the launch of web-font services like [Google Fonts][3] and the
+[Open Font Library][4]—both of which offered web publishers access to a large collection of fonts, for free, available under open licenses.
+
+毫无疑问，近些年来互联网的面貌已经被开放免费的字体所改变。在早些的2010年，你在网络浏览器上几乎只能看到微软制作的最普通的“网络安全字体”[core fonts]
+[1]。但这一年（2010）正好是好几轮技术革新开始的见证之年：Web开放字体格式的应用给网络高效传输字体文件提供了一个开放的标准，像[Google Fonts]和
+[Open Font Library]这样的网络字体服务使网络内容发布者在开放证书证书下可以免费使用海量的字体库。
 
 It is hard to overstate the positive impact of these events on web typography. But it can be all too easy to equate the successes of open web fonts with open source typography as a whole and conclude that the challenges are behind us, the puzzles solved. That is not the case, so if you care about type, the good news is there are a lot of opportunities to get involved in improvement.
 
+要夸大这些网络排印领域大事件的积极影响是很难的。但是要将网络开放字体的成功与开源的网络排印划上等号作为一个整体却非常容易，而且得到的结论是挑战已经远离了我们，困难悉数被解决了。然而事实并非如此，如果你很关注网络字体，好消息是你会有非常多的机会参与到对这些字体的改进工作当中去。
+
 For starters, it's critical to understand that Google Fonts and Open Font Library offer a specialized service—delivering fonts in web pages—and they don't implement solutions for other use cases. That is not a shortcoming on the services' side; it simply means that we have to develop other solutions.
 
+对新手来说，必须要意识到谷歌字体和开源字体库为网页提供了特殊的”服务提供“（service—delivering）字体但是他们给其他使用情况制定字体解决方案。这不是服务方的短视，这是是意味这我们必须去建立其他的解决方案。
+
 There are a number of problems to solve. Probably the most obvious example is the awkwardness of installing fonts on a desktop Linux machine for use in other applications. You can download any of the web fonts offered by either service, but all you will get is a generic ZIP file with some TTF or OTF binaries inside and a plaintext license file. What happens next is up to you to guess.
+
+需要解决的问题还非常多。可能最明显的例子就是给linux桌面机器的其他软件安装字体使用所遇到的尴尬情况。你可以通过任何一种服务下载任何一种网络字体，但是你能得到的是一个最普通的压缩包文件，里面有一些TTF或OTF二进制文件和一个普通文本文件的证书。接下来会发生什么完完全全需要你去猜。
 
 Most users learn quickly that the "right" step is to manually copy those font binaries into any one of a handful of special directories on their hard drive. But that just makes the files visible to the operating system; it doesn't offer much in the way of a user experience. Again, this is not a flaw with the web-font service; rather it's evidence of the point where the service stops and more work needs to be done on the other side.
 
