@@ -66,6 +66,8 @@ There are some excellent examples of open fonts that do provide quality specimen
 
 There are some technical obstacles to offering a richer user experience for interacting with the fonts on your system. For one thing, the [AppStream][11] metadata standard defines a few [parameters][12] specific to font files, but so far includes nothing that would cover specimens, designer and foundry information, and other relevant details. For another, the [SPDX][13] (Software Package Data Exchange) format does not cover many of the software licenses (and license variants) used to distribute fonts.
 
+在和系统的字体交互方面提供更丰富的用户体验上面还有一些技术问题。比如说，[AppStream][11]的元数据标准定义了几项针对字体文件的参数，但是现在位置这些参数没有包含样本，设计师和厂商，和其他相关细节的任何信息。另外一个例子，[SPDX][13] （软件包信息交换）格式也没有包含很多软件证书（和证书参数），这些软件证书是用来分配指定字体的。
+
 Finally, as any audiophile will tell you, a music player that does not let you edit and augment the ID3 tags in your MP3 collection is going to get frustrating quickly. You want to fix errors in the tags, you want to add things like notes and album art—essentially, you want to polish your library. You would want to do the same to keep your local font library in a pleasant-to-use state.
 
 But editing the embedded data in a font file has been taboo because fonts tend to get embedded and attached to other documents. If you monkey with the fields in a font binary, then redistribute it with your presentation slides, anyone who downloads those slides can end up with bad metadata through no fault of their own. So anyone making improvements to the font-management experience will have to figure out how to strategically wrangle repeated changes to the embedded and external font metadata.
