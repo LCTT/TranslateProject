@@ -40,18 +40,29 @@ What this additional information consists of and how it is presented to the user
 
 附加信息的组成与它如何展示给用户连接着另一个挑战：在linux环境管理一个字体库明显不如任何其他操作系统愉快。字体管理软件总是时不时的出现一下（例如[GTK+ Font Manager][5] 这是最近的一个例子），但是他们（字体管理软件）很少能正确的时候出现。我一直在思考一大堆这些软件让人失望的方面。一个核心的原因是他们把自己限制只展示自己在二进制字体文件内嵌的信息：基本字符集的覆盖，粗细，宽度，和斜度的设定，内置的证书和版权说明等等。
 
-
 But a lot of decisions go into the process of selecting a font for a job besides what's in this embedded data. Serious font users—like information designers, journal article authors, or book designers—make their font-selection decisions in the context of each document's requirements and needs. That includes license information, naturally, but it includes much more, like information about the designer and the foundry, stylistic trends, or details about how the font works in use.
+
+但是在选择字体的过程中为了工作的选择（字体）都不能在内置数据中找到。正经的字体用户像信息设计者，杂志文章作者，或者书籍美工设计者，他们的字体选择是在每一份文件的需求上做出的。这些需求包含了证书信息，很自然的，它还包含了更多，像关于设计师和厂商的信息，潮流风格的趋势，或者字体在使用当中的细节。
 
 For example, if your document includes both English and Arabic text, you probably want a font where the Latin and Arabic glyphs were designed together by someone experienced with the two scripts. Otherwise, you'll waste a ton of time making tiny adjustments to the font sizes and line spacing trying to get the two languages to mix well. You may have learned from experience that certain designers or vendors are better at multi-script design than others. Or it might be relevant to your project that today's fashion magazines almost exclusively use "[Didone][6]"-style typefaces, a name that refers to super-high-contrast styles pioneered by [Firmin Didot][7] and [Giambattista Bodoni][8] around 200 years ago. It just happens to be the trend.
 
+举个例子，如果你的文档包含了英语和阿拉伯文，你多半想要一种某个很熟悉拉丁文和阿拉伯文设计师设计同时设计两种语言的字体。否则，你将浪费一大堆时间来微调字体大小和行间距来使两种语言良好地结合在一起。你可能从经验中学到，特定的设计师或服务商（字体）比其他人更善于多语言设计。或许和你职业相关的是今天的时尚杂志几乎无一例外的采用"[Didone][6]"风格的字体，"[Didone][6]"是指一种两百多年前最先被[Firmin Didot][7] 和 [Giambattista Bodoni][8]设计出来的反差超级大的字体风格。这种字体恰好就是现在的潮流。
+
 But none of those terms (Didone, Didot, or Bodoni) are likely to show up in the binary's embedded data, nor is easy to tell whether the Latin and Arabic fit together or anything else about the typeface's back history. That information might appear in supplementary material like a type specimen or font documentation—if any exists.
+
+但是这些字体（Didone, Didot, or Bodoni）中没有一种有可能会出现在内置的二进制文件中，你也不容易发现拉丁文和阿拉伯文是否相得益彰或其他关于字体的背后故事。这些信息有可能出现在补充的材料中，类似某种样本或字体文件中，如果这些东西存在的话。
 
 A specimen is a designed document (often a PDF) that shows the font in use and includes background information; it frequently serves a dual role as a marketing piece and a sample to look at when choosing a font. The considered design of a specimen showcases how the font functions in practice and in a manner that an automatically generated character table simply cannot. Documentation may include some other vital information, like how to activate the font's OpenType features, what mathematical or archaic forms it provides, or how it varies stylistically across supported languages. Making this sort of material available to the user in the font-management application would go a long way towards helping users find the fonts that fit their projects' needs.
 
+字体样本是一份设计好的文档（一般是PDF），它展示了这种字体在使用的情况而且包括了背景信息。字体样本经常起到两重作用，作为市场样本和在挑选字体时的样本。一份样品精心的设计展示了字体在实际应用中的情况和一种自动生产字符表所不能形成的风格。字体样本文件也有可能包含了一些其他重要信息，比如怎样激活字体的开放特色，它提供了什么样的数学表达式和古体字，或者它怎么在跨支持的语言上风格多样。要使这些资源能够被字体管理软件上的用户使用还要走过帮助用户找到合适他们工程的字体的漫长之路。
+
 Of course, if we're going to consider a font manager that can handle documentation and specimens, we also have to take a hard look at what comes with the font packages provided by distributions. Linux users start with a few fonts automatically installed, and repository-provided packages are the only font source most users have besides downloading the generic ZIP archive. Those packages tend to be pretty bare-bones. Commercial fonts generally include specimens, documentation, and other support items, whereas open source fonts usually do not.
 
+当然，如果我们要去考虑一个字体管理软件能够解决文件和样本问题，我们也必须仔细观察各种发行版提供的字体包伴随着什么。linux的用户刚开始只有自动安装的那几种字体，并且提供仓库的包是大部分用户除了下载最普通的压缩包档案之外的唯一字体来源。这些资源包往往非常的“骨感”。商业字体总的来说都包含了样本，文档，还有其他的支持项目，然而开源字体往往没有（这些配套文件）。
+
 There are some excellent examples of open fonts that do provide quality specimens and documentation (see [SIL Gentium][9] and [Bungee][10] for two distinctly different but valid approaches), but they rarely (if ever) make their way into the downstream packaging chain. We plainly can do better.
+
+也有一些很棒的开源字体提供了高质量的样本和文档的例子（例如 [SIL Gentium][9] 和 [Bungee][10] 是两种极度不一样但是有效的方案），但是他们几乎不涉足下端的整合包链条。我们肯定能做的（比他们）更好。
 
 There are some technical obstacles to offering a richer user experience for interacting with the fonts on your system. For one thing, the [AppStream][11] metadata standard defines a few [parameters][12] specific to font files, but so far includes nothing that would cover specimens, designer and foundry information, and other relevant details. For another, the [SPDX][13] (Software Package Data Exchange) format does not cover many of the software licenses (and license variants) used to distribute fonts.
 
