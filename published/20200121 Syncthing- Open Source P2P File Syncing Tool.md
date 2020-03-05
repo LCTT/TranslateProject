@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11960-1.html)
 [#]: subject: (Syncthing: Open Source P2P File Syncing Tool)
 [#]: via: (https://itsfoss.com/syncthing/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -10,11 +10,11 @@
 Syncthing：开源 P2P 文件同步工具
 ======
 
-_ **简介：Syncthing 是一个开源的 P2P 文件同步工具，可用于在多个设备（包括 Android 手机）之间同步文件。** _
+> Syncthing 是一个开源的 P2P 文件同步工具，可用于在多个设备（包括 Android 手机）之间同步文件。
 
-通常，我们有 [MEGA][1] 或 Dropbox 之类的云同步解决方案，以便在云上备份我们的文件，同时更易于共享。
+![](https://img.linux.net.cn/data/attachment/album/202003/05/094211oy2dosttvoaseovk.jpg)
 
-但是，如果要跨多个设备同步文件而不将其存储在云中怎么办？
+通常，我们有 [MEGA][1] 或 Dropbox 之类的云同步解决方案，以便在云上备份我们的文件，同时更易于共享。但是，如果要跨多个设备同步文件而不将其存储在云中怎么办？
 
 这就是 [Syncthing][2] 派上用场的地方了。
 
@@ -22,7 +22,7 @@ _ **简介：Syncthing 是一个开源的 P2P 文件同步工具，可用于在�
 
 ![][3]
 
-Syncthing 可让你跨多个设备同步文件（包括对 Android 智能手机的支持）。它主要通过 Linux上 的 Web UI 进行工作，但也提供了 GUI（需要单独安装）。
+Syncthing 可让你跨多个设备同步文件（包括对 Android 智能手机的支持）。它主要通过 Linux 上的 Web UI 进行工作，但也提供了 GUI（需要单独安装）。
 
 然而，Syncthing 完全没有利用云，它是 [P2P][4] 文件同步工具。你的数据不会被发送到中央服务器。而是会在所有设备之间同步。因此，它并不能真正取代 [Linux 上的典型云存储服务][5]。
 
@@ -36,7 +36,7 @@ Syncthing 可让你跨多个设备同步文件（包括对 Android 智能手机�
 
 例如，你可能不想在云上存储一些敏感文件，因此你可以添加其他受信任的设备来同步并保留这些文件的副本。
 
-即使我简单描述了它，但它并不像看到的那么简单。如果你感兴趣的话，我建议你阅读[官方 FAQ][7] 来了解它如何工作的。
+即使我对它的描述很简单，但它并不像看到的那么简单。如果你感兴趣的话，我建议你阅读[官方 FAQ][7] 来了解它如何工作的。
 
 ### Syncthing 的特性
 
@@ -90,15 +90,15 @@ Syncthing 确实非常简单且易于理解。即使这样，如果你想使用�
 
 你可能无法在软件中心找到它（如果你找到了，那它可能不是最新版本）。
 
-**注意：**_如果你需要一个 GUI 而不是浏览器来管理它，它还有一个 [Syncthing-GTK][16]。_
+**注意：**如果你需要一个 GUI 应用而不是浏览器来管理它，它还有一个 [Syncthing-GTK][16]。
 
-[Syncthing][2]
+- [Syncthing][2]
 
-如果你有基于 Debian 的发行版，你也可以利用终端来安装它，这些说明位于[官方下载页面][17] 上。
+如果你有基于 Debian 的发行版，你也可以利用终端来安装它，这些说明位于[官方下载页面][17]上。
 
 ### 我在 Syncthing 方面的体验
 
-就个人而言，我把它安装在 Pop!\_OS 19.10 上，并在写这篇文章之前用了一会儿。
+就个人而言，我把它安装在 Pop!_OS 19.10 上，并在写这篇文章之前用了一会儿。
 
 我尝试同步文件夹、删除它们、添加重复文件以查看文件版本控制是否工作，等等。它工作良好。
 
@@ -108,7 +108,7 @@ Syncthing 确实非常简单且易于理解。即使这样，如果你想使用�
 
 总体而言，它工作良好，但我必须说，你不应该依赖它作为唯一的数据备份方案。
 
-**总结**
+### 总结
 
 你试过 Syncthing 了吗？如果有的话，你的体验如何？欢迎在下面的评论中分享。
 
@@ -121,7 +121,7 @@ via: https://itsfoss.com/syncthing/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
