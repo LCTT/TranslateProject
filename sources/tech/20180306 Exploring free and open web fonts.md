@@ -1,94 +1,48 @@
-Fisherman110 translating
 
-Exploring free and open web fonts
 探索免费而开放的网络字体
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc-lead-docdish-yellow-typewriter-keys.png?itok=0sPgIdMG)
 
-There is no question that the face of the web has been transformed in recent years by open source fonts.Prior to 2010, the
-only typefaces you were likely to see in a web browser were the generic "web safe" [core fonts][1] from Microsoft. But that 
-year saw the start of several revolutions: the introduction of the Web Open Font Format ([WOFF][2]), which offered an open 
-standard for efficiently delivering font files over HTTP, and the launch of web-font services like [Google Fonts][3] and the
-[Open Font Library][4]—both of which offered web publishers access to a large collection of fonts, for free, available under open licenses.
-
 毫无疑问，近些年来互联网的面貌已经被开放免费的字体所改变。在早些的2010年，你在网络浏览器上几乎只能看到微软制作的最普通的“网络安全字体”[core fonts]
 [1]。但这一年（2010）正好是好几轮技术革新开始的见证之年：Web开放字体格式的应用给网络高效传输字体文件提供了一个开放的标准，像[Google Fonts]和
 [Open Font Library]这样的网络字体服务使网络内容发布者在开放证书证书下可以免费使用海量的字体库。
 
-It is hard to overstate the positive impact of these events on web typography. But it can be all too easy to equate the successes of open web fonts with open source typography as a whole and conclude that the challenges are behind us, the puzzles solved. That is not the case, so if you care about type, the good news is there are a lot of opportunities to get involved in improvement.
-
 要夸大这些网络排印领域大事件的积极影响是很难的。但是要将网络开放字体的成功与开源的网络排印划上等号作为一个整体却非常容易，而且得到的结论是挑战已经远离了我们，困难悉数被解决了。然而事实并非如此，如果你很关注网络字体，好消息是你会有非常多的机会参与到对这些字体的改进工作当中去。
-
-For starters, it's critical to understand that Google Fonts and Open Font Library offer a specialized service—delivering fonts in web pages—and they don't implement solutions for other use cases. That is not a shortcoming on the services' side; it simply means that we have to develop other solutions.
 
 对新手来说，必须要意识到谷歌字体和开源字体库为网页提供了特殊的”服务提供“（service—delivering）字体但是他们给其他使用情况制定字体解决方案。这不是服务方的短视，这是是意味这我们必须去建立其他的解决方案。
 
-There are a number of problems to solve. Probably the most obvious example is the awkwardness of installing fonts on a desktop Linux machine for use in other applications. You can download any of the web fonts offered by either service, but all you will get is a generic ZIP file with some TTF or OTF binaries inside and a plaintext license file. What happens next is up to you to guess.
-
 需要解决的问题还非常多。可能最明显的例子就是给linux桌面机器的其他软件安装字体使用所遇到的尴尬情况。你可以通过任何一种服务下载任何一种网络字体，但是你能得到的是一个最普通的压缩包文件，里面有一些TTF或OTF二进制文件和一个普通文本文件的证书。接下来会发生什么完完全全需要你去猜。
-
-Most users learn quickly that the "right" step is to manually copy those font binaries into any one of a handful of special directories on their hard drive. But that just makes the files visible to the operating system; it doesn't offer much in the way of a user experience. Again, this is not a flaw with the web-font service; rather it's evidence of the point where the service stops and more work needs to be done on the other side.
 
 大部分用户很快学会了”正确“的步骤就是手动地复制这些字体二进制文件到他们硬件驱动里一大把的文件夹里的某个文件夹里。但是这样做只能使这个文件被操作系统检索到。它并不能为用户体验带来什么。再强调一遍，这不是网络字体服务的缺陷，然而它是对于关于服务到哪里停止和更多工作需要在其他方面做这个观点的证据。
 
-A big improvement from the user's perspective would be for the OS or the desktop environment to be smarter at this "just downloaded" stage. Not only would it install the font files to the right location but, more importantly, it could add important metadata that the user will want to access when selecting a font to use in a project.
-
 在用户视角来说，一个巨大的提升可能就是在直接下载“这个阶段系统或者桌面环境变得更智能。它（系统或桌面环境）不仅会把字体文件安装到正确的位置上，更重要的是，当用户选择在一个工程使用的字体时，它会自己添加用户所需要得到的重要的元数据。
-
-What this additional information consists of and how it is presented to the user is tied to another challenge: Managing a font collection on Linux is noticeably less pleasant than on other operating systems. Periodically, font manager applications appear (see [GTK+ Font Manager][5] for one of the most recent examples), but they rarely catch on. I've been thinking a lot about where I think they come up short; one core factor is they have limited themselves to displaying only the information embedded in the font binary: basic character-set coverage, weight/width/slope settings, embedded license and copyright statements, etc.
 
 附加信息的组成与它如何展示给用户连接着另一个挑战：在linux环境管理一个字体库明显不如任何其他操作系统愉快。字体管理软件总是时不时的出现一下（例如[GTK+ Font Manager][5] 这是最近的一个例子），但是他们（字体管理软件）很少能正确的时候出现。我一直在思考一大堆这些软件让人失望的方面。一个核心的原因是他们把自己限制只展示自己在二进制字体文件内嵌的信息：基本字符集的覆盖，粗细，宽度，和斜度的设定，内置的证书和版权说明等等。
 
-But a lot of decisions go into the process of selecting a font for a job besides what's in this embedded data. Serious font users—like information designers, journal article authors, or book designers—make their font-selection decisions in the context of each document's requirements and needs. That includes license information, naturally, but it includes much more, like information about the designer and the foundry, stylistic trends, or details about how the font works in use.
-
 但是在选择字体的过程中为了工作的选择（字体）都不能在内置数据中找到。正经的字体用户像信息设计者，杂志文章作者，或者书籍美工设计者，他们的字体选择是在每一份文件的需求上做出的。这些需求包含了证书信息，很自然的，它还包含了更多，像关于设计师和厂商的信息，潮流风格的趋势，或者字体在使用当中的细节。
-
-For example, if your document includes both English and Arabic text, you probably want a font where the Latin and Arabic glyphs were designed together by someone experienced with the two scripts. Otherwise, you'll waste a ton of time making tiny adjustments to the font sizes and line spacing trying to get the two languages to mix well. You may have learned from experience that certain designers or vendors are better at multi-script design than others. Or it might be relevant to your project that today's fashion magazines almost exclusively use "[Didone][6]"-style typefaces, a name that refers to super-high-contrast styles pioneered by [Firmin Didot][7] and [Giambattista Bodoni][8] around 200 years ago. It just happens to be the trend.
 
 举个例子，如果你的文档包含了英语和阿拉伯文，你多半想要一种某个很熟悉拉丁文和阿拉伯文设计师设计同时设计两种语言的字体。否则，你将浪费一大堆时间来微调字体大小和行间距来使两种语言良好地结合在一起。你可能从经验中学到，特定的设计师或服务商（字体）比其他人更善于多语言设计。或许和你职业相关的是今天的时尚杂志几乎无一例外的采用"[Didone][6]"风格的字体，"[Didone][6]"是指一种两百多年前最先被[Firmin Didot][7] 和 [Giambattista Bodoni][8]设计出来的反差超级大的字体风格。这种字体恰好就是现在的潮流。
 
-But none of those terms (Didone, Didot, or Bodoni) are likely to show up in the binary's embedded data, nor is easy to tell whether the Latin and Arabic fit together or anything else about the typeface's back history. That information might appear in supplementary material like a type specimen or font documentation—if any exists.
-
 但是这些字体（Didone, Didot, or Bodoni）中没有一种有可能会出现在内置的二进制文件中，你也不容易发现拉丁文和阿拉伯文是否相得益彰或其他关于字体的背后故事。这些信息有可能出现在补充的材料中，类似某种样本或字体文件中，如果这些东西存在的话。
-
-A specimen is a designed document (often a PDF) that shows the font in use and includes background information; it frequently serves a dual role as a marketing piece and a sample to look at when choosing a font. The considered design of a specimen showcases how the font functions in practice and in a manner that an automatically generated character table simply cannot. Documentation may include some other vital information, like how to activate the font's OpenType features, what mathematical or archaic forms it provides, or how it varies stylistically across supported languages. Making this sort of material available to the user in the font-management application would go a long way towards helping users find the fonts that fit their projects' needs.
 
 字体样本是一份设计好的文档（一般是PDF），它展示了这种字体在使用的情况而且包括了背景信息。字体样本经常起到两重作用，作为市场样本和在挑选字体时的样本。一份样品精心的设计展示了字体在实际应用中的情况和一种自动生产字符表所不能形成的风格。字体样本文件也有可能包含了一些其他重要信息，比如怎样激活字体的开放特色，它提供了什么样的数学表达式和古体字，或者它怎么在跨支持的语言上风格多样。要使这些资源能够被字体管理软件上的用户使用还要走过帮助用户找到合适他们工程的字体的漫长之路。
 
-Of course, if we're going to consider a font manager that can handle documentation and specimens, we also have to take a hard look at what comes with the font packages provided by distributions. Linux users start with a few fonts automatically installed, and repository-provided packages are the only font source most users have besides downloading the generic ZIP archive. Those packages tend to be pretty bare-bones. Commercial fonts generally include specimens, documentation, and other support items, whereas open source fonts usually do not.
-
 当然，如果我们要去考虑一个字体管理软件能够解决文件和样本问题，我们也必须仔细观察各种发行版提供的字体包伴随着什么。linux的用户刚开始只有自动安装的那几种字体，并且提供仓库的包是大部分用户除了下载最普通的压缩包档案之外的唯一字体来源。这些资源包往往非常的“骨感”。商业字体总的来说都包含了样本，文档，还有其他的支持项目，然而开源字体往往没有（这些配套文件）。
-
-There are some excellent examples of open fonts that do provide quality specimens and documentation (see [SIL Gentium][9] and [Bungee][10] for two distinctly different but valid approaches), but they rarely (if ever) make their way into the downstream packaging chain. We plainly can do better.
 
 也有一些很棒的开源字体提供了高质量的样本和文档的例子（例如 [SIL Gentium][9] 和 [Bungee][10] 是两种极度不一样但是有效的方案），但是他们几乎不涉足下端的整合包链条。我们肯定能做的（比他们）更好。
 
-There are some technical obstacles to offering a richer user experience for interacting with the fonts on your system. For one thing, the [AppStream][11] metadata standard defines a few [parameters][12] specific to font files, but so far includes nothing that would cover specimens, designer and foundry information, and other relevant details. For another, the [SPDX][13] (Software Package Data Exchange) format does not cover many of the software licenses (and license variants) used to distribute fonts.
-
 在和系统的字体交互方面提供更丰富的用户体验上面还有一些技术问题。比如说，[AppStream][11]的元数据标准定义了几项针对字体文件的参数，但是现在位置这些参数没有包含样本，设计师和厂商，和其他相关细节的任何信息。另外一个例子，[SPDX][13] （软件包信息交换）格式也没有包含很多软件证书（和证书参数），这些软件证书是用来分配指定字体的。
-
-Finally, as any audiophile will tell you, a music player that does not let you edit and augment the ID3 tags in your MP3 collection is going to get frustrating quickly. You want to fix errors in the tags, you want to add things like notes and album art—essentially, you want to polish your library. You would want to do the same to keep your local font library in a pleasant-to-use state.
 
 最后，就像任何一个唱片爱好者都会告诉你，一个不允许你编辑和完善你的mp3库的ID3信息(mp3头部的一个字节，记录歌手信息）的音乐播放器很快就会变得让人失望。你想要处理标志里的错误，你想要添加像笔记和乐队，艺术家这样的基本信息，你想要提升你的音乐库。你可能想要做一样的事情来使你的本地字体仓库保持在一个方便使用的状态。
 
-But editing the embedded data in a font file has been taboo because fonts tend to get embedded and attached to other documents. If you monkey with the fields in a font binary, then redistribute it with your presentation slides, anyone who downloads those slides can end up with bad metadata through no fault of their own. So anyone making improvements to the font-management experience will have to figure out how to strategically wrangle repeated changes to the embedded and external font metadata.
-
 但是改动字体文件的内置数据已经被禁止了，因为字体往往是被内置或附加到其他文件里的。如果你拿字体二进制文件来胡闹的话，那么你需要重新为你的展示幻灯片分配字体，任何一个人下载这些幻灯片最终都会面对错误的元数据但他们自己并没有过失。所以任何一个要提升字体管理体验的人都要弄清楚如何来战略的讨论内置或外置的字体元数据里反反复复的变化。
-
-In addition to the technical angle, enriching the font-management experience is also a design challenge. As I said above, good specimens and well-written documentation exist for several open fonts. But there are many more packages missing both, and there are a lot of older font packages that are no longer being maintained. That probably means the only way that most open font packages are going to get specimens or documentation is for the community to create them.
 
 除了技术角度之外，丰富字体管理的体验也是一个设计的挑战。就像我前面说的一样，有几种开放的字体也带了良好的样本和精心写好的证明文件。但是有更多的字体包两者都没有，还有大量的更老的字体包已经没有人维护了。这很可能意味着大部分开放字体包想要获得样本和证明文件的唯一办法就是让（字体）社区去为它们创造。
 
-Perhaps that's a tall order. But the open source design community is bigger than it has ever been, and it is a highly motivated segment of the overall free and open source software movement. So who knows; maybe this time next year finding, downloading, and using fonts on a desktop Linux system will be an entirely different experience.
-
 可能那（前面说的）是一个很高的要求。但是开源设计社区现在比它以前任何时候都要庞大，并且它（社区）是全面免费开源软件运动中的一个高度活跃的组成部分。所以谁知道呢。可能明年这个时候会发现，在linux桌面系统下载和使用字体会变成一种完全不同的体验。
 
-One train of thought on the typography challenges of modern Linux users includes packaging, document design, and maybe even a few new software components for desktop environments. There are other trains to consider, too. The commonality is that where the web-font service ends, matters get more difficult.
-
 在关于现代Linux用户的文字设计上的挑战的一连串思考中包含了打包文件，证明文件设计，甚至有可能需要在桌面环境加入不少新的软件成分。还有其他一连串的东西也需要考虑。共通性就是在网络字体服务不及的地方，事情就变得更加困难。
-
-The best news, from my perspective, is that there are more people interested in this topic than ever before. For that, I think we have the higher profile that open fonts have received from big web-font services like Google Fonts and Open Font Library to thank.
 
 最好的消息是，从我的视角来看，就是现在比起以前有更多的人对这个议题感兴趣。我认为我们要感谢像谷歌字体和开放字体库这样的网络字体服务巨头让开放字体得到了更高的关注。
 
