@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Build your own cloud with Fedora 31 and Nextcloud Server)
@@ -38,7 +38,7 @@
 # systemctl enable --now httpd
 ```
 
-接下来，允许 _HTTP_ 流量穿过防火墙：
+接下来，允许 HTTP 流量穿过防火墙：
 
 ```
 # firewall-cmd --permanent --add-service=http
@@ -57,7 +57,7 @@
 # systemctl enable --now mariadb
 ```
 
-现在，MariaDB 正在运行，你可以运行 _mysql_secure_installation_ 命令来保护它：
+现在，MariaDB 正在运行，你可以运行 `mysql_secure_installation` 命令来保护它：
 
 ```
 # mysql_secure_installation
@@ -148,14 +148,14 @@ Thanks for using MariaDB!
 # unzip nextcloud-17.0.2.zip -d /var/www/html/
 ```
 
-接下来，创建一个数据文件夹，并授予 Apache 对 _nextcloud_ 目录树的读写访问权限：
+接下来，创建一个数据文件夹，并授予 Apache 对 `nextcloud` 目录树的读写访问权限：
 
 ```
 # mkdir /var/www/html/nextcloud/data
 # chown -R apache:apache /var/www/html/nextcloud
 ```
 
-SELinux 必须配置为可与 Nextcloud 一起使用。基本命令如下所示，但在 nexcloud 安装中还有很多其他的命令，发布在这里：[Nextcloud SELinux 配置][6]
+SELinux 必须配置为可与 Nextcloud 一起使用。基本命令如下所示，但在 nexcloud 安装中还有很多其他的命令，发布在这里：[Nextcloud SELinux 配置][6]。
 
 ```
 # semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/nextcloud/config(/.*)?'
@@ -172,7 +172,7 @@ SELinux 必须配置为可与 Nextcloud 一起使用。基本命令如下所示�
 
 #### 使用 Web 界面
 
-在你喜欢的浏览器中，访问 _<http://your\_server\_ip/nextcloud>_  并输入字段：
+在你喜欢的浏览器中，访问 <http://your\_server\_ip/nextcloud> 并输入字段：
 
 ![][7]
 
@@ -186,14 +186,12 @@ SELinux 必须配置为可与 Nextcloud 一起使用。基本命令如下所示�
 
 ### 最后几点
 
-  * 我使用的是 _http_ 协议，但是 Nextcloud 也可以在 _https_ 上运行。我可能会在以后的文章中写一篇有关保护 Nextcloud 的文章。
-  * 我禁用了 SELinux，但是如果配置它，你的服务器将更加安全。
-  * Nextcloud 的建议 PHP 内存限制为 512M。要更改它，请编辑 _/etc/php.ini_ 配置文件中的 _memory_limit_ 变量，然后重新启动 _httpd_ 服务。
-  * 默认情况下，只能使用 _<http://localhost/>_ URL 访问 Web 界面。如果要允许使用其他域名访问，[你可编辑 _/var/www/html/nextcloud/config/config.php_ 来进行此操作][8]。\* 字符可用于绕过域名限制，并允许任何解析为服务器 IP 的 URL 访问。
+* 我使用的是 http 协议，但是 Nextcloud 也可以在 https 上运行。我可能会在以后的文章中写一篇有关保护 Nextcloud 的文章。
+* 我禁用了 SELinux，但是如果配置它，你的服务器将更加安全。
+* Nextcloud 的建议 PHP 内存限制为 512M。要更改它，请编辑 `/etc/php.ini` 配置文件中的 `memory_limit` 变量，然后重新启动 httpd 服务。
+* 默认情况下，只能使用 <http://localhost/> URL 访问 Web 界面。如果要允许使用其他域名访问，[你可编辑 /var/www/html/nextcloud/config/config.php 来进行此操作][8]。`*` 字符可用于绕过域名限制，并允许任何解析为服务器 IP 的 URL 访问。
 
-
-
-```
+    ```
 'trusted_domains' =>
     array (
         0 => 'localhost',
@@ -208,7 +206,7 @@ via: https://fedoramagazine.org/build-your-own-cloud-with-fedora-31-and-nextclou
 作者：[storyteller][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
