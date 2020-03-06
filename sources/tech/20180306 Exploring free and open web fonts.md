@@ -70,15 +70,27 @@ There are some technical obstacles to offering a richer user experience for inte
 
 Finally, as any audiophile will tell you, a music player that does not let you edit and augment the ID3 tags in your MP3 collection is going to get frustrating quickly. You want to fix errors in the tags, you want to add things like notes and album art—essentially, you want to polish your library. You would want to do the same to keep your local font library in a pleasant-to-use state.
 
+最后，就像任何一个唱片爱好者都会告诉你，一个不允许你编辑和完善你的mp3库的ID3信息(mp3头部的一个字节，记录歌手信息）的音乐播放器很快就会变得让人失望。你想要处理标志里的错误，你想要添加像笔记和乐队，艺术家这样的基本信息，你想要提升你的音乐库。你可能想要做一样的事情来使你的本地字体仓库保持在一个方便使用的状态。
+
 But editing the embedded data in a font file has been taboo because fonts tend to get embedded and attached to other documents. If you monkey with the fields in a font binary, then redistribute it with your presentation slides, anyone who downloads those slides can end up with bad metadata through no fault of their own. So anyone making improvements to the font-management experience will have to figure out how to strategically wrangle repeated changes to the embedded and external font metadata.
+
+但是改动字体文件的内置数据已经被禁止了，因为字体往往是被内置或附加到其他文件里的。如果你拿字体二进制文件来胡闹的话，那么你需要重新为你的展示幻灯片分配字体，任何一个人下载这些幻灯片最终都会面对错误的元数据但他们自己并没有过失。所以任何一个要提升字体管理体验的人都要弄清楚如何来战略的讨论内置或外置的字体元数据里反反复复的变化。
 
 In addition to the technical angle, enriching the font-management experience is also a design challenge. As I said above, good specimens and well-written documentation exist for several open fonts. But there are many more packages missing both, and there are a lot of older font packages that are no longer being maintained. That probably means the only way that most open font packages are going to get specimens or documentation is for the community to create them.
 
+除了技术角度之外，丰富字体管理的体验也是一个设计的挑战。就像我前面说的一样，有几种开放的字体也带了良好的样本和精心写好的证明文件。但是有更多的字体包两者都没有，还有大量的更老的字体包已经没有人维护了。这很可能意味着大部分开放字体包想要获得样本和证明文件的唯一办法就是让（字体）社区去为它们创造。
+
 Perhaps that's a tall order. But the open source design community is bigger than it has ever been, and it is a highly motivated segment of the overall free and open source software movement. So who knows; maybe this time next year finding, downloading, and using fonts on a desktop Linux system will be an entirely different experience.
+
+可能那（前面说的）是一个很高的要求。但是开源设计社区现在比它以前任何时候都要庞大，并且它（社区）是全面免费开源软件运动中的一个高度活跃的组成部分。所以谁知道呢。可能明年这个时候会发现，在linux桌面系统下载和使用字体会变成一种完全不同的体验。
 
 One train of thought on the typography challenges of modern Linux users includes packaging, document design, and maybe even a few new software components for desktop environments. There are other trains to consider, too. The commonality is that where the web-font service ends, matters get more difficult.
 
+在关于现代Linux用户的文字设计上的挑战的一连串思考中包含了打包文件，证明文件设计，甚至有可能需要在桌面环境加入不少新的软件成分。还有其他一连串的东西也需要考虑。共通性就是在网络字体服务不及的地方，事情就变得更加困难。
+
 The best news, from my perspective, is that there are more people interested in this topic than ever before. For that, I think we have the higher profile that open fonts have received from big web-font services like Google Fonts and Open Font Library to thank.
+
+最好的消息是，从我的视角来看，就是现在比起以前有更多的人对这个议题感兴趣。我认为我们要感谢像谷歌字体和开放字体库这样的网络字体服务巨头让开放字体得到了更高的关注。
 
 
 --------------------------------------------------------------------------------
@@ -86,7 +98,7 @@ The best news, from my perspective, is that there are more people interested in 
 via: https://opensource.com/article/18/3/webfonts
 
 作者：[Nathan Willis][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/Fisherman110)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
