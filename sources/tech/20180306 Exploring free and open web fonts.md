@@ -98,7 +98,7 @@ The best news, from my perspective, is that there are more people interested in 
 via: https://opensource.com/article/18/3/webfonts
 
 作者：[Nathan Willis][a]
-译者：[译者ID](https://github.com/Fisherman110)
+译者：https://github.com/Fisherman110
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
