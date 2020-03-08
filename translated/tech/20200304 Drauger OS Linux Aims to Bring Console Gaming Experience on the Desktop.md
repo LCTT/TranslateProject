@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Drauger OS Linux Aims to Bring Console Gaming Experience on the Desktop)
@@ -10,7 +10,7 @@
 Drauger OS Linux 旨在为台式机带来主机游戏体验
 ======
 
-多年来（或数十年），人们抱怨不[使用Linux][1] 的原因之一是缺乏主流游戏。[Linux 上的游戏][2]在最近几年有了显著改进，特别是 [Steam Proton][3] 项目的引入使你可以[在 Linux 上玩很多 Windows 专用的游戏][4]。
+多年来（或数十年），人们抱怨不[使用Linux][1] 的原因之一是它缺乏主流游戏。[Linux 上的游戏][2]在最近几年有了显著改进，特别是 [Steam Proton][3] 项目的引入使你可以[在 Linux 上玩很多 Windows 专用的游戏][4]。
 
 这也鼓励了一些[以游戏为中心的 Linux发行版][5]。以 [Lakka][6] 为例，你可以[借助 Lakka Linux 将旧计算机变成复古的街机游戏机][7]。
 
@@ -34,9 +34,9 @@ Drauger OS 开箱即用地安装了多个应用程序和工具，以改善游戏
 * Steam
 * [DXVK][15]
 
-它还具有一组与游戏无关的有趣工具。[Drauger Installer][16] 是 .deb 安装程序，是 Gdebi 的替代品。[多软件库应用安装器][17]（mrai）是“用于基于 Debian 的 Linux 操作系统的类似于 AUR-helper 的脚本”。Mrai 旨在与 apt、snap、flatpaks 配合使用，并且可以从 GitHub 安装应用程序。
+它还具有一组与游戏无关的有趣工具。[Drauger 安装器][16]是 .deb 安装程序，是 Gdebi 的替代品。[多软件库应用安装器][17]（mrai）是“用于基于 Debian 的 Linux 操作系统的类似于 AUR-helper 的脚本”。Mrai 旨在与 apt、snap、flatpaks 配合使用，并且可以从 GitHub 安装应用程序。
 
-有趣的是，Drauger OS 的名称是一个错误。首席开发者 [Thomas Castleman][18]（即 batcastle）曾打算为其发行版命名为 Draugr，但是却打错了名字。在 Drauger OS 播客的[第 23 集][19]中，Castleman 说保持这个拼写错误的名称，因为要对其进行更正需要大量工作。根据 [Wikipedia][20] 的描述，Draugr 是“来自北欧神话中的不死生物”。
+有趣的是，Drauger OS 的名称是一个错误。开发负责人 [Thomas Castleman][18]（即 batcastle）曾打算为其发行版命名为 Draugr，但是却打错了名字。在 Drauger OS 播客的[第 23 集][19]中，Castleman 说会保留这个拼写错误的名称，因为要对其进行更正需要大量工作。根据 [Wikipedia][20] 的描述，Draugr 是“来自北欧神话中的不死生物”。
 
 是的，你没看错。Drauger OS 是仅有的几个具有自己的[播客][21]的发行版之一。当被问到这个问题时，Castleman 告诉我：“无论他们的情况如何，我都希望确保我们的社区拥有最大的透明度。”多数情况下，播客是 Drauger OS 博客的音频版本，但有时他们会在没有时间撰写博客文章时使用它来发布公告。
 
@@ -44,7 +44,7 @@ Drauger OS 开箱即用地安装了多个应用程序和工具，以改善游戏
 
 ![Drauger OS][22]
 
-Druager OS 背后的开发人员正在开发其下一个主要版本：7.5.1。此版本将基于 Ubuntu 19.10。将有三个主要变化。首先，将使用“我们内部构建的内核” [替换][23] Liquorix 内核。该内核将基于 Linux Kernel GitHub 存储库，“因此，它变得越来越原汁原味”。
+Druager OS 背后的开发人员正在开发其下一个主要版本：7.5.1。此版本将基于 Ubuntu 19.10。将有三个主要变化。首先，将使用“我们内部构建的内核” [替换][23] Liquorix 内核。该内核将基于 Linux 内核 GitHub 存储库，“因此，它会变得越来越原汁原味”。
 
 新版本的第二个主要变化将是为其桌面提供新布局。根据用户的反馈，他们决定将其更改为看起来更类似于 GNOME 的样子。
 
@@ -93,15 +93,15 @@ via: https://itsfoss.com/drauger-os/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://itsfoss.com/author/john/
 [b]: https://github.com/lujun9972
 [1]: https://itsfoss.com/why-use-linux/
-[2]: https://itsfoss.com/linux-gaming-guide/
-[3]: https://itsfoss.com/steam-play-proton/
+[2]: https://linux.cn/article-7316-1.html
+[3]: https://linux.cn/article-10054-1.html
 [4]: https://itsfoss.com/steam-play/
 [5]: https://itsfoss.com/linux-gaming-distributions/
 [6]: http://www.lakka.tv/
