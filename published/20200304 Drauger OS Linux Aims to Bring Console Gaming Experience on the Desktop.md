@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11972-1.html)
 [#]: subject: (Drauger OS Linux Aims to Bring Console Gaming Experience on the Desktop)
 [#]: via: (https://itsfoss.com/drauger-os/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
@@ -64,7 +64,7 @@ Drauger OS [系统要求][25]非常适中。请记住，Drauger OS 仅在 64 位
 * 图形处理器：集成
 * 屏幕分辨率：60Hz 时为 1024×768
 * 外部端口：1 个用于显示的端口（HDMI/DisplayPort/VGA/DVI），2 个用于安装 USB 驱动器和键盘的 USB 端口（鼠标可选，但建议使用）
-   
+
 #### 推荐系统要求
 
 * CPU：四核、2.2Ghz、64 位处理器
