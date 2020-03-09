@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11977-1.html)
 [#]: subject: (Getting started with the Rust package manager, Cargo)
 [#]: via: (https://opensource.com/article/20/3/rust-cargo)
 [#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
@@ -12,7 +12,7 @@ Rust 包管理器 Cargo 入门
 
 > 了解 Rust 的软件包管理器和构建工具。
 
-![Shipping containers stacked in a yard][1]
+![](https://img.linux.net.cn/data/attachment/album/202003/09/104906tdl21k977t8999qt.jpg)
 
 [Rust][2] 是一种现代编程语言，可提供高性能、可靠性和生产力。几年来，它一直被 StackOverflow 调查评为[最受欢迎的语言][3]。
 
@@ -20,21 +20,21 @@ Rust 包管理器 Cargo 入门
 
 ### 安装 Rust 和 Cargo
 
-在开始之前，你需要安装 Rust 和 Cargo。Rust 项目提供了一个可下载的脚本来处理安装。要获取该脚本，请打开浏览器以访问 [https://sh.rustup.rs][4] 并保存该文件。阅读脚本以确保你对它的具体行为有所了解，然后运行它：
+在开始之前，你需要安装 Rust 和 Cargo。Rust 项目提供了一个可下载的脚本来处理安装。要获取该脚本，请打开浏览器以访问 [https://sh.rustup.rs][4] 并保存该文件。阅读该脚本以确保你对它的具体行为有所了解，然后再运行它：
 
 ```
 $ sh ./rustup.rs
 ```
 
-你也可以参考这个[安装 Rust][5]网页以获取更多信息。
+你也可以参考这个[安装 Rust][5] 的网页以获取更多信息。
 
-安装 Rust 和 Cargo 之后，你必须<ruby>获取<rt>source</rt></ruby> `env` 文件：
+安装 Rust 和 Cargo 之后，你必须<ruby>获取<rt>source</rt></ruby> `env` 文件中的配置：
 
 ```
 $ source $HOME/.cargo/env
 ```
 
-更好的是，将所需目录添加到 `PATH` 环境变量中：
+更好的办法是，将所需目录添加到 `PATH` 环境变量中：
 
 ```
 export PATH=$PATH:~/.cargo/bin
@@ -91,11 +91,11 @@ $ ./hello
 Hello, world!
 ```
 
-这些步骤对于较小的程序或任何你想快速测试的东西就足够了。但是，在进行涉及多人的大型计划时，Cargo 是前进的最佳之路。
+这些步骤对于较小的程序或任何你想快速测试的东西就足够了。但是，在进行涉及到多人的大型程序时，Cargo 是前进的最佳之路。
 
 ### 使用 Cargo 创建新包
 
-Cargo 是 Rust 的构建系统和包管理器。它可以帮助开发人员下载和管理依赖项，并帮助创建 Rust 包。在Rust 社区中，Rust 中的“包”通常被称为“crate”（板条箱），但是在本文中，这两个词是可以互换的。请参阅 Rust 社区提供的 Cargo [FAQ][6] 来区分。
+Cargo 是 Rust 的构建系统和包管理器。它可以帮助开发人员下载和管理依赖项，并帮助创建 Rust 包。在 Rust 社区中，Rust 中的“包”通常被称为“crate”（板条箱），但是在本文中，这两个词是可以互换的。请参阅 Rust 社区提供的 Cargo [FAQ][6] 来区分。
 
 如果你需要有关 Cargo 命令行实用程序的任何帮助，请使用 `--help` 或 `-h` 命令行参数：
 
@@ -134,7 +134,7 @@ fn main() {
 
 下一个要处理的文件是 `Cargo.toml`，这是你的包的配置文件。它包含有关包的信息，例如其名称、版本、作者信息和 Rust 版本信息。
 
-程序通常依赖于外部库或依赖项来运行，这使你可以编写应用程序来执行不知道如何编码或不想花时间编码的任务。你所有的依赖项都将在此文件中列出。此时，对你的新程序你没有任何依赖关系。打开 `Cargo.toml` 文件并查看其内容：
+程序通常依赖于外部库或依赖项来运行，这使你可以编写应用程序来执行不知道如何编码或不想花时间编码的任务。你所有的依赖项都将在此文件中列出。此时，你的新程序还没有任何依赖关系。打开 `Cargo.toml` 文件并查看其内容：
 
 ```
 $ cat hello_opensource/Cargo.toml
@@ -250,7 +250,7 @@ fn main() {
 }
 ```
 
-现在，构建程序并再次运行它。这次，你会在屏幕上看到 `Hello, Opensource world!`：
+现在，构建该程序并再次运行它。这次，你会在屏幕上看到 `Hello, Opensource world!`：
 
 ```
 $ cargo build
@@ -293,9 +293,9 @@ $ cargo build
     Finished dev [unoptimized + debuginfo] target(s) in 4.48s
 ```
 
-现在，Cargo 会联系 [Crates.io][9]，这是 Rust 用于存储 crate（或包）的中央仓库，并下载和编译 `rand`。但是，等等 —— `libc` 包是怎么回事？你没有要要安装 libc 啊。是的，`rand` 包依赖于 `libc` 包；因此，Cargo 也会下载并编译 `libc`。
+现在，Cargo 会联系 [Crates.io][9]（这是 Rust 用于存储 crate（或包）的中央仓库），并下载和编译 `rand`。但是，等等 —— `libc` 包是怎么回事？你没有要安装 libc 啊。是的，`rand` 包依赖于 `libc` 包；因此，Cargo 也会下载并编译 `libc`。
 
-库的新版本不断涌现，而 Cargo 提供了一种使用 `update` 命令更新其所有依赖关系的简便方法：
+库的新版本会不断涌现，而 Cargo 提供了一种使用 `update` 命令更新其所有依赖关系的简便方法：
 
 ```
 cargo update
@@ -449,7 +449,7 @@ $ cargo build --release
 
 ### 使用 Cargo 创建库还是二进制文件
 
-任何软件程序都可以粗略地分类为独立二进制文件或库。一个独立二进制文件也许即使是当中外部库使用的，自身也是可以运行的。但是，作为一个库，是可以被另一个独立二进制文件所利用的。到目前为止，你在本教程中构建的所有程序都是独立二进制文件，因为这是 Cargo 的默认设置。 要创建一个**库**，请添加 `--lib` 选项：
+任何软件程序都可以粗略地分类为独立二进制文件或库。一个独立二进制文件也许即使是当做外部库使用的，自身也是可以运行的。但是，作为一个库，是可以被另一个独立二进制文件所利用的。到目前为止，你在本教程中构建的所有程序都是独立二进制文件，因为这是 Cargo 的默认设置。 要创建一个**库**，请添加 `--lib` 选项：
 
 ```
 $ cargo new --lib libhello
@@ -514,7 +514,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 这是使用 `-v` 选项运行 `build` 和 `clean` 的几个例子。
 
-在 `build` 命令中，你可以看到这些给定的命令行选项触发了底层的 `rustc`（Rust编译器）：
+在 `build` 命令中，你可以看到这些给定的命令行选项触发了底层的 `rustc`（Rust 编译器）：
 
 ```
 $ cargo build -v
@@ -523,7 +523,7 @@ $ cargo build -v
     Finished dev [unoptimized + debuginfo] target(s) in 0.36s
 ```
 
-而 `clean` 命令表明它只是删除包含中间文件和二进制文件的目录：
+而 `clean` 命令表明它只是删除了包含中间文件和二进制文件的目录：
 
 ```
 $ cargo clean -v
@@ -534,7 +534,7 @@ $ cargo clean -v
 
 要扩展你的技能，请尝试使用 Rust 和 Cargo 编写并运行一个稍微复杂的程序。很简单就可以做到：例如，尝试列出当前目录中的所有文件（可以用 9 行代码完成），或者尝试自己回显输入。小型的实践应用程序可帮助你熟悉语法以及编写和测试代码的过程。
 
-本文为刚起步的 Rust 程序员提供了大量信息，以使他们可以开始入门 Cargo。但是，当你开始处理更大、更复杂的程序时，你需要对 Cargo 有更深入的了解。当你准备好迎接更多内容时，请下载并阅读 Rust 团队编写的开源《[Cargo 手册][10]》，看看你可以创造什么！
+本文为刚起步的 Rust 程序员提供了大量信息，以使他们可以开始入门 Cargo。但是，当你开始处理更大、更复杂的程序时，你需要对 Cargo 有更深入的了解。当你准备好迎接更多内容时，请下载并阅读 Rust 团队编写的开源的《[Cargo 手册][10]》，看看你可以创造什么！
 
 --------------------------------------------------------------------------------
 
@@ -543,7 +543,7 @@ via: https://opensource.com/article/20/3/rust-cargo
 作者：[Gaurav Kamathe][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
