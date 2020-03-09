@@ -7,35 +7,33 @@
 [#]: via: (https://itsfoss.com/install-wireshark-ubuntu/)
 [#]: author: (Community https://itsfoss.com/author/itsfoss/)
 
-Install and Use Wireshark on Ubuntu Linux
+Ubuntu 上 Wireshark 的安装与使用
 ======
 
-_**Brief: You’ll learn to install the latest Wireshark on Ubuntu and other Ubuntu-based distribution in this tutorial. You’ll also learn how to run Wireshark without sudo and how to set it up for packet sniffing.**_
+_** 简介：在本指南中，你将学习如何在 Ubuntu 和其他基于 Ubuntu 的发行版上安装最新的 Wireshark。同时你也将学习如何在没有 sudo 的情况下来运行 Wireshark ，以及如何设置它来进行数据包嗅探。**_
 
-[Wireshark][1] is a free and open-source network protocol analyzer widely used around the globe.
+[Wireshark][1] 是一款免费开源网络协议分析器，它在全球被广泛使用。
 
-With Wireshark, you can capture incoming and outgoing packets of a network in real-time and use it for network troubleshooting, packet analysis, software and communication protocol development, and many more.
+通过使用 Wireshark ，你可以实时捕获网络的传入和传出数据包，并将其用于网络故障排除、数据包分析、软件和通信协议开发等。
 
-It is available on all major desktop operating systems like Windows, Linux, macOS, BSD and more.
+它适用于所有主流的桌面操作系统，如 Windows 、 Linux 、 macOS 、 BSD 等。
 
-In this tutorial, I will guide you to install Wireshark on Ubuntu and other Ubuntu-based distributions. I’ll also show a little about setting up and configuring Wireshark to capture packets.
+在本教程中，我将指导你在 Ubuntu 和其他基于 Ubuntu 的发行版上安装 Wireshark 。我还将介绍如何设置和配置 Wireshark 来捕获数据包。
 
-### Installing Wireshark on Ubuntu based Linux distributions
-
+### 在基于 Ubuntu 的 Linux 发行版上安装 Wireshark
 ![][2]
 
-Wireshark is available on all major Linux distributions. You should check out the [official installation instructions][3]. because in this tutorial, I’ll focus on installing the latest Wireshark version on Ubuntu-based distributions only.
+Wireshark 适用于所有主流 Linux 发行版。你应该查看[官方安装说明][3]。因为在本教程中，我将着重在仅基于 Ubuntu 的发行版上安装最新版本的 Wireshark 。
 
-Wireshark is available in the Universe repository of Ubuntu. You can [enable universe repository][4] and then install it like this:
-
+Wireshark 可以在 Ubuntu 的 Universe 存储库中找到。你可以[启用 universe 存储库][4]，然后按如下方式安装：
 ```
 sudo add-apt-repository universe
 sudo apt install wireshark
 ```
 
-One slight problem in this approach is that you might not always get the latest version of Wireshark.
+这种方法的一个小问题是，你可能并不总是得到最新版本的 Wireshark 。
 
-For example, in Ubuntu 18.04, if you [use the apt command][5] to check the available version of Wireshark, it is 2.6.
+例如，在 Ubuntu 18.04 中，如果你使用 [apt][5] 命令检查 Wireshark 的可用版本，可用版本会显示是 2.6 。
 
 ```
 [email protected]:~$ apt show wireshark
@@ -47,138 +45,133 @@ Origin: Ubuntu
 Maintainer: Balint Reczey <[email protected]>
 ```
 
-However, [Wireshark 3.2 stable version][6] has been released months ago. New release brings new features, of course.
+然而， [Wireshark 3.2 稳定版][6]已经在几个月前发布了。当然，新版本拥有新的特性。
 
-So, what do you do in such case? Thankfully, Wiresshark developers provide an official PPA that you can use to install the latest stable version of Wireshark on Ubuntu and other Ubuntu-based distributions.
+那么在这种情况下，你应该怎么办呢？谢天谢地， Wireshark 开发者提供了一种官方 PPA 方式，你可以使用它在 Ubuntu 和其它基于 Ubuntu 的发行版上安装最新稳定版本的 Wireshark.
 
-I hope you are acquainted with PPA. If not, please [read our excellent guide on PPA to understand it completely][7].
+我希望你熟悉 PPA 。如果没有，请[阅读我们关于 PPA 的优秀指南，以便完全理解它][7]。              
 
-Open a terminal and use the following commands one by one:
+打开终端并逐个使用以下命令：
 
 ```
 sudo add-apt-repository ppa:wireshark-dev/stable
 sudo apt update
 sudo apt install wireshark
 ```
+即使安装了旧版本的 Wireshark ，它也将更新为新版本。
 
-Even if you have an older version of Wireshark installed, it will be updated to the newer version.
+安装时，系统将询问你是否允许非超级用户捕获数据包。选择“是”允许，选择“否”限制非超级用户捕获数据包，最后完成安装。
 
-While installing, you will be asked whether to allow non-superusers to capture packets. Select Yes to allow and No to restrict non-superusers to capture packets &amp; finish the installation.
+### 不使用 sudo 运行 Wireshark
 
-### Running Wireshark without sudo
-
-If you have selected **No** in the previous installation, then run the following command as root:
-
+如果在上一次安装中选择了**否**，则以root用户身份运行以下命令：
 ```
 sudo dpkg-reconfigure wireshark-common
 ```
 
-And select **Yes** by pressing the tab key and then using enter key:
-
+然后按 tab 键并使用回车键选择**是**：
 ![][8]
 
-Since you have allowed the non-superuser to capture packets, you have to add the user to wireshark group. Use the [usermod command][9] to add yourself to the wireshark group.
+由于你允许非超级用户捕获数据包，因此你必须将该用户添加到 wireshark 组。使用[ usermod ][9]命令将自己添加到 wireshark 组。 
 
 ```
 sudo usermod -aG wireshark $(whoami)
 ```
 
-Finally, [restart your Ubuntu system][10] to make the necessary changes to your system.
+最后，[重启你的 Ubuntu 系统][10]对你的系统进行必要的修改。
 
-Trivia
+冷知识
 
-First released in 1998, Wireshark was initially known as Ethereal. Developers had to change its name to Wireshark in 2006 due to trademark issues.
+Wireshark 于 1998 年首次发布，最初被称为 Ethereal 。2006 年，由于商标问题，开发商不得不将其名称改为 Wireshark 。
 
-### Starting Wireshark
+### 启动 Wireshark 
 
-Launching Wireshark application can be done from the application launcher or the CLI.
+你可以从应用程序启动器或者命令行启动 Wireshark 应用。
 
-To start from CLI, just type **wireshark** on your console:
+如果从命令行启动，只需要在你的控制台中输入 **wireshark** ：
 
 ```
 wireshark
 ```
-
-From **GUI**, search for Wireshark application on the search bar and hit enter.
+要是从**图形化界面**启动，需要在搜索栏搜索 Wireshark 应用，并按回车键。
 
 ![][11]
 
-Now let’s play with Wireshark.
+现在，让我们来玩玩 Wireshark 吧。
 
-### Capturing packets using Wireshark
+### 使用 Wireshark 捕获数据包
 
-When you start Wireshark, you will see a list of interfaces that you can use to capture packets to and from.
+当你启动 Wireshark 的时候，你会看到一个接口列表，你可以使用它来捕获这个接口接收和发送的数据包。
 
-There are many types of interfaces available which you can monitor using Wireshark such as, Wired, External devices, etc. According to your preference, you can choose to show specific types of interfaces in the welcome screen from the marked area in the given image below.
+你可以使用 Wireshark 监视许多类型的接口，例如，有线、外部设备等。根据你的偏好，你可以从下图中的标记区域选择在欢迎屏幕中显示特定类型的接口。
 
 ![Select interface][12]
 
-For instance, I listed only the **Wired** network interfaces.
 
+例如，我只列出了**有线**网络接口。
 ![][13]
 
-Next, to start capturing packets, you have to select the interface (which in my case is ens33) and click on the **Start capturing packets** icon as marked in the image below.
-
+接下来，要开始捕获数据包，你必须选择接口（在我的示例中是 ens33 ），然后单击**开始捕获数据包**图标，如下图所示。
 ![Start capturing packets with Wireshark][14]
 
-You can also capture packets to and from multiple interfaces at the same time. Just press and hold the **CTRL** button while clicking on the interfaces that you want to capture to and from and then hit the **Start capturing packets** icon as marked in the image below.
 
+你还可以同时从多个接口捕获数据包。只需按住 **CTRL** 按钮，同时单击要捕获的接口，然后点击**开始捕获数据包**图标，如下图所示。
 ![][15]
 
-Next, I tried using **ping google.com** command in the terminal and as you can see, many packets were captured.
+接下来，我尝试在终端中使用 **ping google.com** 命令，如你所见，捕获了许多数据包。
 
 ![Captured packets][16]
 
-Now you can select on any packet to check that particular packet. After clicking on a particular packet you can see the information about different layers of TCP/IP Protocol associated with it.
+现在你可以选择任何数据包来检查该特定数据包。在点击一个特定的包之后，你可以看到与它相关的 TCP/IP 协议的不同层的信息。
 
 ![Packet info][17]
 
-You can also see the RAW data of that particular packet at the bottom as shown in the image below.
+你还可以在底部看到该特定数据包的原始数据，如下图所示。
 
 ![Check RAW data in the captured packets][18]
 
-This is why end-to-end encryption is important
+这就是为什么端到端加密很重要。
 
-Imagine you are logging into a website that doesn’t use HTTPS. Anyone on the same network as you can sniff the packets and see the user name and password in the RAW data.
-This is why most chat applications use end to end encryption and most websites these days use https (instead of http).
+假设你正在登录一个不使用 HTTPS 的网站。与你在同一网络上的任何人都可以嗅探数据包，并在原始数据中看到用户名和密码。
 
-#### Stopping packet capture in Wireshark
+这就是为什么现在大多数聊天应用程序使用端到端加密，而大多数网站使用 https （而不是 http ）。
 
-You can click on the red icon as marked in the given image to stop capturing Wireshark packets.
+#### 在 Wireshark 中停止数据包捕获
+
+你可以点击如图所示的红色图标停止捕获数据包。
 
 ![Stop packet capture in Wireshark][19]
 
-#### Save captured packets to a file
+#### 将捕获的数据包保存成文件
 
-You can click on the marked icon in the image below to save captured packets to a file for future use.
+你可以单击下图中标记的图标，将捕获的数据包保存到文件中以备将来使用。
 
 ![Save captured packets by Wireshark][20]
 
-**Note**: _Output can be exported to XML, PostScript®, CSV, or plain text._
 
-Next, select a destination folder, and type the file name and click on **Save**.
-Then select the file and click on **Open**.
+**注意**：_输出可以导出为 XML 、 PostScript 、 CSV 或纯文本_
+
+接下来，选择一个目标文件夹，键入文件名并单击**保存**。
+
+然后选择文件并单击**打开**。
 
 ![][21]
+现在你可以随时打开和分析保存的数据包。要打开文件，请按 **\+o**
+或从Wireshark转到**文件 &gt; 打开**。
 
-Now you can open and analyze the saved packets anytime. To open the file, press **\ + o**
-or go to **File &gt; Open** from Wireshark.
-
-The captured packets should be loaded from the file.
+捕获的数据包将从文件中加载。
 
 ![][22]
 
-### Conclusion
+### 结语
+Wireshark 支持许多不同的通信协议。有许多选项和功能，使你能够以独特的方式捕获和分析网络数据包。你可以从 Wireshark 的[官方文档][23]了解更多关于 Wireshark 的信息。
 
-Wireshark supports many different communication protocols. There are many options and features that provide you the power to capture and analyze the network packets in a unique way. You can learn more about Wireshark from their [official documentation][23].
-
-I hope this detailed helped you to install Wireshark on Ubuntu. Please let me know your questions and suggestions.
+我希望这个教程能帮助你在 Ubuntu 上安装 Wireshark 。请让我知道你的问题和建议。
 
 ![][24]
-
 ### Kushal Rai
 
-A computer science student &amp; Linux and open source lover. He likes sharing knowledge for he believes technology shapes the perception of modern world. Kushal also loves music and photography.
+计算机科学专业的学生、Linux 和开源爱好者。他喜欢分享知识，因为他相信技术塑造了对现代世界的感知。 Kushal 也喜欢音乐和摄影。
 
 --------------------------------------------------------------------------------
 
@@ -186,13 +179,14 @@ via: https://itsfoss.com/install-wireshark-ubuntu/
 
 作者：[Community][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qianmigntian][c]
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://itsfoss.com/author/itsfoss/
 [b]: https://github.com/lujun9972
+[c]: https://github.com/qianmigntian
 [1]: https://www.wireshark.org/
 [2]: https://i2.wp.com/itsfoss.com/wp-content/uploads/2020/03/wireshark_ubuntu.png?ssl=1
 [3]: https://www.wireshark.org/docs/wsug_html_chunked/ChBuildInstallUnixInstallBins.html
