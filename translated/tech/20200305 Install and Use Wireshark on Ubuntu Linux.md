@@ -10,7 +10,7 @@
 Ubuntu 上 Wireshark 的安装与使用
 ======
 
-_** 简介：在本指南中，你将学习如何在 Ubuntu 和其他基于 Ubuntu 的发行版上安装最新的 Wireshark。同时你也将学习如何在没有 sudo 的情况下来运行 Wireshark ，以及如何设置它来进行数据包嗅探。**_
+_** 简介：在本教程中，你将学习如何在 Ubuntu 和其他基于 Ubuntu 的发行版上安装最新的 Wireshark。同时你也将学习如何在没有 sudo 的情况下来运行 Wireshark ，以及如何设置它来进行数据包嗅探。**_
 
 [Wireshark][1] 是一款免费开源网络协议分析器，它在全球被广泛使用。
 
