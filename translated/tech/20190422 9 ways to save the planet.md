@@ -63,7 +63,7 @@ _由 Terry Hancock 推荐_
 
 **8\. 关掉你的灯**
 
-根据 [World Atlas of Artificial Night Sky Brightness][8] 的说法，光污染影响全世界超过80%的污染。这一结论在2016年被发表（遵循 Creative Commons Attribution-NonCommercial 4.0 协议）在公开权限的期刊 _Science Advances_ 上。关闭外部的灯是一个可以快速使野生生物、人类健康受益并让我们享受夜晚的天空的方法，而且可以减少能量消耗。访问 [darksky.org][9] 来查看更多减少你的外部灯光的影响的方法。
+根据 [World Atlas of Artificial Night Sky Brightness][8] 的说法，光污染影响了全世界超过80%的污染。这一结论在2016年被发表（遵循 Creative Commons Attribution-NonCommercial 4.0 协议）在公开权限的期刊 _Science Advances_ 上。关闭外部的灯是一个可以快速使野生生物、人类健康受益并让我们享受夜晚的天空的方法，而且可以减少能量消耗。访问 [darksky.org][9] 来查看更多减少你的外部灯光的影响的方法。
 
 _由 Michael Hrivnak 推荐_
 
