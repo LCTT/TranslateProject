@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Session: An Open Source Private Messenger That Doesn’t Need Your Phone Number)
@@ -18,7 +18,7 @@ Signal 作为一款私人通信应用，正在变得愈发流行。而我们下�
 
 对于私人通信服务来说，有没有既能保护通信安全性，又尊重用户跨平台隐私的集大成者呢？很多注重个人隐私的用户似乎都在寻找这个问题的答案。
 
-最近，我留意到 [Loki Foundation][3] 开发的一款叫做 [Session][2] 的开源通信应用。从技术上来说，Session 是另一款[开源、加密的通信应用 Signal][4] 的一个复刻。
+最近，我留意到 [Loki 基金会][3]开发的一款叫做 [Session][2] 的开源通信应用。从技术上来说，Session 是另一款[开源、加密的通信应用 Signal][4] 的一个复刻。
 
 在本文中，我会讲述我自己使用 Session 的体验，以及 Session 的一些主要功能。
 
@@ -34,7 +34,7 @@ Session 在这个领域中算是一款比较新的应用了，因此我还会在
 
 在 Signal 或者其它类似的通信应用中，用户都需要提供手机号码才得以成功注册。注重隐私的用户们都认为这样的做法会潜藏着巨大的安全隐患。
 
-而使用 Session 则简单得多。在 PC 或手机上安装应用之后，只需要点击“<ruby>创建账号<rt>Create Account</rt></ruby>”，无须提供手机号码，它就会生成一个类似 **05652245af9a8bfee4f5a8138fd5c……..** 这样的随机且唯一的 Session ID。
+而使用 Session 则简单得多。在 PC 或手机上安装应用之后，只需要点击“<ruby>创建账号<rt>Create Account</rt></ruby>”，无须提供手机号码，它就会生成一个类似 05652245af9a8bfee4f5a8138fd5c..... 这样的随机且唯一的 Session ID。
 
 此后，把 Session ID 分享给想要添加的联系人就可以了。Session 还支持二维码，其他人可以通过扫描二维码添加你的 Session ID 为好友。
 
@@ -62,14 +62,12 @@ Session 在这个领域中算是一款比较新的应用了，因此我还会在
 
 最基本的选项包括：
 
-  * **消息有效期**：你可以控制一条消息在接收者阅读前的保留时长
-  * **已读回执**：消息发送者可以知晓你已经阅读该消息
-
-
+* **消息有效期**：你可以控制一条消息在接收者阅读前的保留时长
+* **已读回执**：消息发送者可以知晓你已经阅读该消息
 
 #### Session 使用去中心化网络保护你的元数据
 
-尽管 Session 不使用<ruby>端对端<rt>peer-to-peer</rt></ruby>技术，但它也不适用中心化的服务器。
+尽管 Session 不使用<ruby>端对端<rt>peer-to-peer</rt></ruby>技术，但它也不使用中心化的服务器。
 
 Session 采用了去中心化的架构实现消息的传输和路由。如果你不熟悉这方面的内容，可以关注 Session 的官方博客，尝试了解[中心化网络和去中心化网络的区别][11]，以及它的实际工作原理。
 
@@ -85,11 +83,11 @@ Session 采用了去中心化的架构实现消息的传输和路由。如果你
 
 另外，你也可以在它的 [Github 发布页面][14] 获取到对应的 .deb 安装文件。
 
-[下载 Session][12]
+- [下载 Session][12]
 
 ### 我使用 Session 的体验
 
-我在各种平台上都试用过 Session，其中在 PC 上我使用了 Pop!_OS 19.10 的 .AppImage 文件运行这个应用。
+我在各种平台上都试用过 Session，其中在 PC 上我使用了 Pop!\_OS 19.10 的 .AppImage 文件运行这个应用。
 
 总的来说，使用的体验很不错，用户界面也没有出现问题。
 
@@ -99,11 +97,9 @@ Session 采用了去中心化的架构实现消息的传输和路由。如果你
 
 当然，我也发现了一些需要改进的地方：
 
-  * 在接受好友请求时会出现延迟
-  * 设备间连接的方式不太直观
-  * 当你在不同的设备上使用同一个 Session ID 向同一个人回复消息时，对方会收到两个不同的对话
-
-
+* 在接受好友请求时会出现延迟
+* 设备间连接的方式不太直观
+* 当你在不同的设备上使用同一个 Session ID 向同一个人回复消息时，对方会收到两个不同的对话
 
 ### 总结
 
@@ -119,7 +115,7 @@ via: https://itsfoss.com/session-messenger/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -128,7 +124,7 @@ via: https://itsfoss.com/session-messenger/
 [1]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/02/session-app.jpg?ssl=1
 [2]: https://getsession.org/
 [3]: https://loki.foundation/
-[4]: https://itsfoss.com/signal-messaging-app/
+[4]: https://linux.cn/article-11764-1.html
 [5]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/session-create.jpg?ssl=1
 [6]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/03/session-application-id.jpg?ssl=1
 [7]: https://en.wikipedia.org/wiki/Blockchain
