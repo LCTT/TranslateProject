@@ -7,69 +7,69 @@
 [#]: via: (https://fedoramagazine.org/how-to-setup-a-dns-server-with-bind/)
 [#]: author: (Curt Warfield https://fedoramagazine.org/author/rcurtiswarfield/)
 
-How to setup a DNS server with bind
+如何使用 bind 设置 DNS 服务器
 ======
 
 ![][1]
 
-The Domain Name System, or DNS, as it’s more commonly known, translates or converts domain names into the IP addresses associated with that domain. DNS is the reason you are able to find your favorite website by name instead of typing an IP address into your browser. This guide shows you how to configure a Master DNS system and one client.
+域名系统或 DNS（通常称为 DNS）将域名翻译或转换为与该域关联的 IP 地址。DNS 是能够让你通过名称找到自己喜欢的网站而不是在浏览器中输入 IP 地址的原因。本指南将向你展示如何配置一个主 DNS 系统以及客户端。
 
-Here are system details for the example used in this article:
+以下是本文示例中使用的系统细节：
 
 ```
-dns01.fedora.local     (192.168.1.160 ) - Master DNS server
-client.fedora.local    (192.168.1.136 ) - Client
+dns01.fedora.local    （192.168.1.160）- 主 DNS 服务器
+client.fedora.local     （192.168.1.136）- 客户端
 ```
 
-### DNS server configuration
+### DNS 服务器配置
 
-Install the bind packages using sudo:
+使用 sudo 安装 bind 包：
 
 ```
 $ sudo dnf install bind bind-utils -y
 ```
 
-The _/etc/named.conf_ configuration file is provided by the _bind_ package to allow you to configure the DNS server.
+_bind_ 包提供了_/etc/named.conf_ 配置文件，来供你配置 DNS 服务器。
 
-Edit the _/etc/named.conf_ file:
+编辑 _/etc/named.conf_ 文件：
 
 ```
 sudo vi /etc/named.conf
 ```
 
-Look for the following line:
+查找以下行：
 
 ```
 listen-on port 53 { 127.0.0.1; };
 ```
 
-Add the IP address of your Master DNS server as follows:
+添加主 DNS 服务器的 IP 地址，如下所示：
 
 ```
 listen-on port 53 { 127.0.0.1; 192.168.1.160; };
 ```
 
-Look for the next line:
+查找以下行：
 
 ```
 allow-query  { localhost; };
 ```
 
-Add your local network range. The example system uses IP addresses in the 192.168.1.X range. This is specified as follows:
+添加本地网络范围。该示例系统使用的 IP 地址在 192.168.1.X 的范围内。指定如下：
 
 ```
 allow-query  { localhost; 192.168.1.0/24; };
 ```
 
-Specify a forward and reverse zone. Zone files are simply text files that have the DNS information, such as IP addresses and host-names, on your system. The forward zone file makes it possible for the translation of a host-name to its IP address. The reverse zone file does the opposite. It allows a remote system to translate an IP address to the host name.
+指定转发和反向区域。区域文件只是具有系统上 DNS 信息（例如 IP 地址和主机名）的文本文件。转发区域文件使得将主机名转换为 IP 地址成为可能。反向区域文件则相反。它允许远程系统将 IP 地址转换为主机名。
 
-Look for the following line at the bottom of the /etc/named.conf file:
+在 /etc/named.conf 文件的底部查找以下行：
 
 ```
 include "/etc/named.rfc1912.zones";
 ```
 
-Here, you’ll specify the zone file information _**directly above that line**_ as follows:
+在此处，你将在_**该行的正上方**_指定区域文件信息，如下所示：
 
 ```
 zone "dns01.fedora.local" IN {
@@ -85,19 +85,19 @@ allow-update { none; };
 };
 ```
 
-The _forward.fedora.local_ and the file _reverse.fedora.local_ are just the names of the zone files you will be creating. They can be called anything you like.
+_forward.fedora.local_  和 _reverse.fedora.local_ 文件是要创建的区域文件的名称。它们可以是任意名字。
 
-Save and exit.
+保存并退出。
 
-#### Create the zone files
+#### 创建区域文件
 
-Create the forward and reverse zone files you specified in the /etc/named.conf file:
+创建你在 /etc/named.conf 文件中指定的转发和反向区域文件：
 
 ```
 $ sudo vi /var/named/forward.fedora.local
 ```
 
-Add the following lines:
+添加以下行：
 
 ```
 $TTL 86400
@@ -114,13 +114,13 @@ dns01           IN  A   192.168.1.160
 client          IN  A   192.168.1.136
 ```
 
-Everything in _**bold**_ is specific to your environment. Save the file and exit. Next, edit the _reverse.fedora.local_ file:
+所有_**粗体**_内容都特定于你的环境。保存文件并退出。接下来，编辑 _reverse.fedora.local_ 文件：
 
 ```
 $ sudo vi /var/named/reverse.fedora.local
 ```
 
-Add the following lines:
+添加以下行：
 
 ```
 $TTL 86400
@@ -139,9 +139,10 @@ client          IN  A   192.168.1.136
 136     IN  PTR         client.fedora.local.
 ```
 
-Everything in _**bold**_ is also specific to your environment. Save the file and exit.
+所有_**粗体**_内容都特定于你的环境。保存文件并退出。
 
-You’ll also need to configure SELinux and add the correct ownership for the configuration files.
+你还需要配置 SELinux 并为配置文件添加正确的所有权。
+
 
 ```
 sudo chgrp named -R /var/named
@@ -150,22 +151,22 @@ sudo restorecon -rv /var/named
 sudo restorecon /etc/named.conf
 ```
 
-Configure the firewall:
+配置防火墙：
 
 ```
 sudo firewall-cmd --add-service=dns --perm
 sudo firewall-cmd --reload
 ```
 
-#### Check the configuration for any syntax errors
+#### 检查配置是否存在语法错误
 
 ```
 sudo named-checkconf /etc/named.conf
 ```
 
-Your configuration is valid if no output or errors are returned.
+如果没有输出或返回错误，那么你的配置有效。
 
-Check the forward and reverse zone files.
+检查转发和反向区域文件。
 
 ```
 $ sudo named-checkzone forward.fedora.local /var/named/forward.fedora.local
@@ -173,7 +174,7 @@ $ sudo named-checkzone forward.fedora.local /var/named/forward.fedora.local
 $ sudo named-checkzone reverse.fedora.local /var/named/reverse.fedora.local
 ```
 
-You should see a response of OK:
+你应该看到 OK 的响应：
 
 ```
 zone forward.fedora.local/IN: loaded serial 2011071001
@@ -183,50 +184,50 @@ zone reverse.fedora.local/IN: loaded serial 2011071001
 OK
 ```
 
-#### Enable and start the DNS service
+#### 启用并启动 DNS 服务
 
 ```
 $ sudo systemctl enable named
 $ sudo systemctl start named
 ```
 
-#### Configuring the resolv.conf file
+#### 配置 resolv.conf 文件
 
-Edit the _/etc/resolv.conf_ file:
+编辑 _/etc/resolv.conf_ 文件：
 
 ```
 $ sudo vi /etc/resolv.conf
 ```
 
-Look for your current name server line or lines. On the example system, a cable modem/router is serving as the name server and so it currently looks like this:
+查找你当前的 nameserver 行。在示例系统上，调制解调器/路由器充当名称服务器，因此当前看起来像这样：
 
 ```
 nameserver 192.168.1.1
 ```
 
-This needs to be changed to the IP address of the Master DNS server:
+这需要更改为主 DNS 服务器的 IP 地址：
 
 ```
 nameserver 192.168.1.160
 ```
 
-Save your changes and exit.
+保存更改并退出。
 
-Unfortunately there is one caveat to be aware of. NetworkManager overwrites the _/etc/resolv.conf_ file if the system is rebooted or networking gets restarted. This means you will lose all of the changes that you made.
+不幸的是需要注意一点。如果系统重启或网络重启，那么 NetworkManager 会覆盖 _/etc/resolv.conf_ 文件。这意味着你将丢失所做的所有更改。
 
-To prevent this from happening, make _/etc/resolv.conf_ immutable:
+为了防止这种情况发生，请将 _/etc/resolv.conf_ 设为不可变：
 
 ```
 $ sudo chattr +i /etc/resolv.conf
 ```
 
-If you want to set it back and allow it to be overwritten again:
+如果要重新设置并允许其再次被覆盖：
 
 ```
 $ sudo chattr -i /etc/resolv.conf
 ```
 
-#### Testing the DNS server
+#### 测试 DNS 服务器
 
 ```
 $ dig fedoramagazine.org
@@ -266,27 +267,27 @@ $ dig fedoramagazine.org
  ;; MSG SIZE  rcvd: 266
 ```
 
-There are a few things to look at to verify that the DNS server is working correctly. Obviously getting the results back are important, but that by itself doesn’t mean the DNS server is actually doing the work.
+有几件事需要检查以验证 DNS 服务器是否正常运行。显然，取得结果很重要，但这本身并不意味着 DNS 服务器实际上正常工作。
 
-The QUERY, ANSWER, and AUTHORITY fields at the top should show non-zero as it in does in our example:
+顶部的 QUERY、ANSWER 和 AUTHORITY 字段应显示为非零，如我们的示例所示：
 
 ```
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 6
 ```
 
-And the SERVER field should have the IP address of your DNS server:
+并且 SERVER 字段应有你的 DNS 服务器的 IP 地址：
 
 ```
 ;; SERVER: 192.168.1.160#53(192.168.1.160)
 ```
 
-In case this is the first time you’ve run the _dig_ command, notice how it took 830 milliseconds for the query to complete:
+如果这是你第一次运行 _dig_ 命令，请注意完成查询要花费 830 毫秒的时间：
 
 ```
 ;; Query time: 830 msec
 ```
 
-If you run it again, the query will run much quicker:
+如果再次运行它，查询将会更快：
 
 ```
 $ dig fedoramagazine.org
@@ -297,37 +298,37 @@ $ dig fedoramagazine.org
 ;; SERVER: 192.168.1.160#53(192.168.1.160)
 ```
 
-### Client configuration
+### 客户端配置
 
-The client configuration will be a lot simpler.
+客户端配置将简单得多。
 
-Install the bind utilities:
+安装 bind 程序：
 
 ```
 $ sudo dnf install bind-utils -y
 ```
 
-Edit the /etc/resolv.conf file and configure the Master DNS as the only name server:
+编辑 /etc/resolv.conf 文件，并将主 DNS 配置为唯一的名称服务器：
 
 ```
 $ sudo vi /etc/resolv.conf
 ```
 
-This is how it should look:
+它看起来像这样：
 
 ```
 nameserver 192.168.1.160
 ```
 
-Save your changes and exit. Then, make the _/etc/resolv.conf_ file immutable to prevent it from be overwritten and going back to its default settings:
+保存更改并退出。然后，使 _/etc/resolv.conf_ 文件不可变，防止其被覆盖并变回默认设置：
 
 ```
 $ sudo chattr +i /etc/resolv.conf
 ```
 
-#### Testing the client
+#### 测试客户端
 
-You should get the same results as you did from the DNS server:
+你应该获得与 DNS 服务器相同的结果：
 
 ```
 $ dig fedoramagazine.org
@@ -367,9 +368,9 @@ $ dig fedoramagazine.org
  ;; MSG SIZE  rcvd: 266
 ```
 
-Make sure the SERVER output has the IP Address of your DNS server.
+确保 SERVER 输出的是你 DNS 服务器的 IP 地址。
 
-Your DNS server is now ready to use and all requests from the client should be going through your DNS server now!
+你的 DNS 服务器设置完成了，现在所有来自客户端的请求都会经过你的 DNS 服务器了！
 
 --------------------------------------------------------------------------------
 
@@ -377,7 +378,7 @@ via: https://fedoramagazine.org/how-to-setup-a-dns-server-with-bind/
 
 作者：[Curt Warfield][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
