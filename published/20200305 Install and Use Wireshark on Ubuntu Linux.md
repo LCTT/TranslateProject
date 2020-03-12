@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (qianmingtian)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-11987-1.html)
 [#]: subject: (Install and Use Wireshark on Ubuntu Linux)
 [#]: via: (https://itsfoss.com/install-wireshark-ubuntu/)
 [#]: author: (Community https://itsfoss.com/author/itsfoss/)
@@ -182,14 +182,14 @@ via: https://itsfoss.com/install-wireshark-ubuntu/
 
 作者：[Kushal Rai][a]
 选题：[lujun9972][b]
-译者：[qianmigntian][c]
+译者：[qianmingtian][c]
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://itsfoss.com/author/itsfoss/
 [b]: https://github.com/lujun9972
-[c]: https://github.com/qianmigntian
+[c]: https://github.com/qianmingtian
 [1]: https://www.wireshark.org/
 [2]: https://i2.wp.com/itsfoss.com/wp-content/uploads/2020/03/wireshark_ubuntu.png?ssl=1
 [3]: https://www.wireshark.org/docs/wsug_html_chunked/ChBuildInstallUnixInstallBins.html
