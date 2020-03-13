@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (sndnvaps)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,63 +7,63 @@
 [#]: via: (https://opensource.com/article/20/2/linux-love-language)
 [#]: author: (Christopher Cherry https://opensource.com/users/chcherry)
 
-Linux is our love language
+Linux 是我们最喜爱的语言
 ======
-When a wife teaches a husband some new tech skills, they both learn a
-lot more than they expect.
-![Red heart with text "you are not alone"][1]
+当一个妻子教丈夫一些新技能的时候，他们会学到比他们期待更多的知识。
+![红心 "你不是孤单的"][1]
 
-2019 was a year of learning in the Cherry household. I am a senior software engineer who set out to learn new skills and, along the way, I taught my husband, Chris. By teaching him some of the things I learned and asking him to work through my technology walkthrough articles, I helped Chris learn new skills that enabled him to pivot his career deeper into the technology field. And I learned new ways to make my walkthroughs and training materials more accessible for readers to digest.
+2019年是樱桃家族学习的一年。我是一个喜欢学习新技术的高级软件工程师，并把学到的内容教给我的丈夫 Chris。通过教他一些我学到的东西并让他完成我的技术演练文章，我帮助Chris学习到了新技术，使他能够将自己的职业生涯更深入地转向技术领域。我学习到了新的方法，使我的演练和培训材料更易于让读者理解。
 
-In this article, we talk about what we learned individually and from each other, then we explore what it means for their future.
+通过这篇文章，我们来讨论一下我们从双方中各自学习到了什么东西，这学习到的内容对于我们的未来有何影响。
 
-### Questions for the student
+### 对于学生的问题
 
-**Jess:** Chris, what made you want to learn more about my field?
+**Jess:** Chris, 是什么导致你想深入都学习我所学领域的技能呢？
 
-**Chris:** It was primarily to further my career. Being in network engineering has shown me that being an expert only on networks is not as valuable as it once was, and I have to know a little bit of everything. Since the network is often blamed for outages or application challenges these days, I wanted to understand more from a developer's perspective on writing applications so I could see how they depend on the network as a resource.
+**Chris:** 主要目的是为了让我事业更进一步。作为一个网络工程师的经历告诉我，现在的网络专家已经不像以前一样有价值了，我必须掌握更多的知识。由于网络经常被认为是造成这些天程序中断或程序出错的原因，我想从开发人员的角度了解更多关于编写应用程序的知识，以便于了解它们如何依赖网络资源。
 
-**Jess:** What did I teach you first, and what did you learn from it?
+**Jess:** 你想让我先教你什么内容呢，你想从中学到什么东西？
 
-**Chris:** It all started with installing Linux for the first time, then adding [Ansible][2]. Each Linux distribution I worked with was easy enough to install, as long as the hardware was compatible, but compatibility wasn't always clear. That meant sometimes I learned first-hand how to troubleshoot Linux within the first five minutes of running an installation (and I liked it). Ansible gave me a reason to learn Linux package managers to install the software. Once it was installed, I quickly learned how package management handles dependencies as I looked at the files that yum installed, so Ansible, which is written in Python, can run on my system. From there, I started to install all kinds of applications with Ansible.
+**Chris:** 首先要学习怎样安装Linux系统，之后再安装Ansible程序。只要硬件能配对得上，每一个Linux发生版都很容易安装上，但可能会出现个别不兼容的情况。这就需要我学习如何解决系统安装前5分钟出现的问题了（这个我最喜欢了）。Ansible 给了一个我使用软件管理器安装程序的理由。当程序安装完成后，我快速学习到程序管理器如何处理程序的依赖项目，通过查看yum已经安装的程序，我发现Ansible是用Python写的，所以能在我的系统运行。自此之后，我都通过Ansible来安装各种各样的程序。
 
-**Jessica:** Do you like the way I taught you?
+**Jessica:** 你喜欢我这种教学方式不？
 
-**Chris:** We had our struggles at first, until we ironed out how I like to learn and how you should present the best way for me to learn. In the beginning, it was hard to follow what you meant. For instance, when you said things like "a Docker container," I had no reference to what you were talking about. Early on, the response was, "well, it's a container," which meant nothing to me at the time. Once I got you to explain it in more detail, it became a lot more fun to learn.
+**Chris:** 我们一开始有过争吵，直到我们弄清楚了我喜欢的学习方式，你应该怎样为我提供最好的学习方式。在一开始的时候，我很难跟上你讲的内容。例如，当你说"a Docker container,"的时候，我完全不知道你在讲什么。比较早的时候，我的回答就是”这是一个容器",然而这对我来说，完全没有意义。我比较喜欢你对这些内容进行一些更深入的讲解，这让学习更有趣。
 
-**Jess:** To be fair, this was a big lesson for me as well. I hadn't trained anyone with less knowledge on this technology than me before you, so you helped me realize that I needed to be clearer with my explanations. Thanks for that.
+**Jess:** 老实说，这对我来说也是一堂大的课程。我从来没有教过在这个技术领域知识比我少的人在你之前，所以你帮助我认识到更多细节内容在解释的时候。我也得说声谢谢。
 
-How did you feel about testing my articles, the ones where I had you run through the steps?
+当你通过这几个学习步骤的时候，你觉得我的这篇测试文章怎样呢？
 
-**Chris:** Personally, I thought it would be easy, and boy, was I wrong. One of the main things I learned from these, like your [introduction to Vagrant][3], was how each Linux distribution varies more than I realized. The operating system (OS) changes how you set it up, the requirements to run, and the specific commands. It seems like a lot more variability than there is with the network gear I've worked on. So I started to pay a lot more attention to the instructions and whether they were written for my OS or another one (and how difficult it can be to know sometimes). I seemed to break a lot of things along the way.
 
-**Jess:** I break stuff all day, so different paths for different problems are daily occurrences for me.
+**Chris:**  就个人而已，对于男生来说这很容易，但我错了。在我主要学习的内容中，像你[介绍的Vagrant][3]程序,它在不同的Linux发生版本的变化比我想像的要多。操作系统（OS）会按你的要求更改设置方式、运行要求和特定命令。这看起来比我用的网络设备变化更大。这让我花费更多的精力去查看对应我的系统或其它系统（在某此时候，这个比较难以理解）。在这学习路上，我似乎碰到了很多不懂的事情。
 
-### Questions for the teacher
+**Jess:** 我每天都会遇到各种各样的问题，所以不同的方法处理不同的问题这就是日常生活。
 
-**Chris:** Jess, would you change anything with the way you taught me so far?
+### 对于老师的问题
 
-**Jess:** I'd have liked to make you read more, as I do. Learning new technology has me churning through books. I read a book and a half, if not two books, a week, and that's with spending one hour in the morning and one hour before bed every day. I also pick one project to run through for two weeks for about an hour a day to reinforce the book skills. And that's in addition to the tech articles I read for the first hour of my day while taking in an immense amount of coffee. When I think about your goal to grow your career, I think books are an important element alongside the great blog posts and articles we talk about. I feel my reading regiment has kept me up to speed, and if you did the same, you would catch up to me pretty quickly.
+**Chris:** Jess, 你现在教我的方式有什么改变呢？
 
-**Chris:** So did the student teach the teacher in any way?
+**Jess:** 我会让你读多一些书，我也是。通过翻译书籍来学习新技术。每天起床后一小时和睡觉前一小时我都会看书，花费一个星期左右我就能看一到两本书。我也会创建为期两周的任务计划来实践我从书本中学习到的技能。这是除了我一天中第一个小时在喝大量咖啡时读到的科技文章之外的。当我在想如何让你增长职业技能的目标的时候，我认为书籍是一个重要的元素除了厉害博客文章和我们谈论的文章。我觉得我的阅读量使我理解增加了速度，如果你也这么做了，你也会很快赶上我的。
 
-**Jess:** I learned a great deal about being patient from you. For instance, after walking through an installation of Ansible, I asked what you wanted to do next. Your first answer was, "I don't know," which was hard for me because I want you to learn what you want to learn. So I changed my approach, and now we talk more about what you want to achieve before walking through installing anything. When we moved on to the Vagrant article we worked on together, I created it with an end goal in mind, so we had something to achieve right away.
+**Chris:** 那么学生有没有教过老师呢？
 
-This actually made a massive change in how I do training at work. Now I ask more questions on how people learn and work hand-in-hand more often than I did before. I am more likely to sit and go through and make sure someone understands what I'm saying and what we're doing. I wasn't really before.
+**Jess:** 我在你那里学习到耐心。举个例子，当你完成了安装Ansible的时候，我问你，下一步要怎样操作的时候。你直接回复我，“不知道”，这不是我想让你学习到的内容。所以我改变了策略，我们来说一说，你想在安装程序的过程前需要学习到什么东西。当我们在写Vagrant文章的时候，我们一起进行相应的演示操作，我以创建它为目标，所以我们在最后都有所获得。
 
-### What we learned together
+这实际上对我在工作中的培训方式产生了巨大的改变。现在我讲更多问题在大家学习的过程中，并手把手进行讲解，这比我之前要做的多。我更愿意坐下来仔细检查，确保有人明白我在说什么和我们在做什么。这是我之前从来没有做过的。
 
-As a couple, we both grew from collaborating on technology over the last year.
+### 我们在一直学到的东西
 
-**Chris:** I'm blown away at how much I learned. Over the course of a year, I understand new operating systems, how to use an API, web application deployment with Ansible, and standing up virtual machines with Vagrant. I also learned how documentation makes life better, so it's worth the time it takes to write some. In this field of work, however, behavior isn't always documented, so I've learned to be ready to work through tough issues and document how I fix them.
+做为一对夫妇，我们的技术都有所增长在这一年的技术合作中。
 
-**Jess:** Beyond what I learned from teaching you, I've focused on learning a good deal about Kubernetes in cloud environments. That includes deployment strategies, the complexity of the Kubernetes API, building my own containers, and securing these environments. I've also saved time to dabble: toying around with serverless code, AI models, Python, and graphically displaying heat maps. It's been a good year.
+**Chris:** 我对自己学到的东西感到震惊。通过一年课程学习，我认识了新操作系统，如何使用API，使用Ansible开发网络程序，和使用Vagrant启动虚拟机器。我还学习到了文档如何让生活变得更好，所以我也会尝试去写一写。然而，在这个工作领域，行为并不总是被记录在案，所以我学会了准备好处理棘手的问题，并记录如何解决它们。
 
-What's next for us? It's yet to be seen, but I can assure you that we're going to share it here on Opensource.com.
+**Jess:** 除了我在教你中学到的知识外，我还专注于学习Kubernetes在云环境中的应用知识。这包括开发阶段，Kubernetes API的复杂度，创建我自己的容器，并对环境进行加密处理。我还节省了部分时间来学习更有趣的东西，研究无服务终端的代码、人工知识模型、Python和以图形方式显示热成像。对于我来说，这一年也很充足。
 
-**Who did you mentor in 2019, or who are you mentoring in 2020? Tell us about it in the comments.**
+我们下一个目标是什么？现在还不知道，但我可以向您保证，我们将会在Opensoruce.com上面进行分享它。
 
-I can see the brightness of curiosity in my six year old niece Shuchi's eyes when she explores a...
+** 2019年你辅导了谁，或2020年又准备辅导谁。在评论中告诉我们。 **
+
+我能从我六岁的侄女舒淇身上看到好奇的光辉，当她发现探索的时候。。。
 
 --------------------------------------------------------------------------------
 
@@ -71,13 +71,13 @@ via: https://opensource.com/article/20/2/linux-love-language
 
 作者：[Christopher Cherry][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[sndnvaps](https://github.com/sndnvaps)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/chcherry
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/red-love-heart-alone-stone-path.jpg?itok=O3q1nEVz (Red heart with text "you are not alone")
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/red-love-heart-alone-stone-path.jpg?itok=O3q1nEVz (红心 "你不是孤单的")
 [2]: https://opensource.com/resources/what-ansible
 [3]: https://opensource.com/resources/vagrant
