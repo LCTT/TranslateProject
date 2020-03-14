@@ -7,7 +7,7 @@
 [#]: via: (https://opensourceforu.com/2019/09/debugging-in-emacs-the-grand-unified-debugger/)
 [#]: author: (Vineeth Kartha https://opensourceforu.com/author/vineeth-kartha/)
 
-Emacs 调试秘籍之：GUD 调试器
+Emacs 调试秘籍之 GUD 调试器
 ======
 
 ![][2]
