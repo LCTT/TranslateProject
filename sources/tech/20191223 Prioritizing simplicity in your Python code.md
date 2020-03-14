@@ -7,38 +7,39 @@
 [#]: via: (https://opensource.com/article/19/12/zen-python-simplicity-complexity)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-Prioritizing simplicity in your Python code
+简单是Python编程的第一要则
 ======
-This is the second part of a special series about the Zen of Python
-focusing on the third and fourth principles: simplicity and complexity.
+本文是 Python 之禅特别系列的第二篇，我们将要关注其中第三与第四条原则：简单与复杂。
+
 ![Person reading a book and digital copy][1]
 
-> "Il semble que la perfection soit atteinte non quand il n'y a plus rien à ajouter, mais quand il n'y plus rien à retrancher."
->
 > "It seems that perfection is finally attained not when there is no longer anything to add, but when there is no longer anything to take away."
+>
+> “完美并非无可增，而是不可减。”
+>
 >  —Antoine de Saint-Exupéry, _[Terre des Hommes][2]_, 1939
 
-A common concern in programming is the struggle with complexity. It is easy for any programmer to make a program so complicated no expert can debug it or modify it. The [Zen of Python][3] would not be complete if it did not touch on this.
+编程时最常有的考量是与复杂性的斗争，只想写出让旁人无从下手的繁杂代码，对每个程序员来讲都算不上难事。倘若未能触及代码的简繁取舍，那么 [Python 之禅][3] 就有了一角残缺。
 
-### Simple is better than complex.
+### 简单胜过复杂 Simple is better than complex
 
-When it is possible to choose at all, choose the simple solution. Python is rarely in the business of _disallowing_ things. This means it is possible, and even straightforward, to design baroque programs to solve straightforward problems.
+尚有选择余地时，应该选简单的方案。Python 少有不可为之事，这意味着设计出巴洛克风格（即夸张和不理性）的程序只为解决浅显的问题不仅有可能，甚至会频繁发生。
 
-It is worthwhile to remember at each point that simplicity is one of the easiest things to lose and the hardest to regain when writing code.
+正因如此，编程时应当谨记，代码的简单性是最易丢失，却最难复得的。
 
-This can mean choosing to write something as a function, rather than introducing an extraneous class. This can mean avoiding a robust third-party library in favor of writing a two-line function that is perfect for the immediate use-case. Most often, it means avoiding predicting the future in favor of solving the problem at hand.
+这意味着，在可以选用函数来表达时不要去引入额外的类；避免使用第三方库往往有助于你针对问题场景设计更妥当的简短函数。不过其根本的意图，旨在让你减少对将来的盘算，而去着重解决手头的问题。
 
-It is much easier to change the program later, especially if simplicity and beauty were among its guiding principles than to load the code down with all possible future variations.
+以简单和优美作为指导原则的代码相比那些想要囊括将来一切变数的，在日后要容易修改得多。
 
-### Complex is better than complicated.
+### 复杂胜过错综复杂 Complex is better than complicated
 
-This is possibly the most misunderstood principle because understanding the precise meanings of the words is crucial. Something is _complex_ when it is composed of multiple parts. Something is _complicated_ when it has a lot of different, often hard to predict, behaviors.
+把握用词的精确含义对于理解这条令人费解的原则是至关重要的。形容某事复杂 (_complex_)，是说它由许多部分组成，着重组成成分之多；而形容某事错综复杂 (_complicated_)，则是指其包含着差异巨大、难以预料的行为，强调的是各组成部分之间的杂乱联系。 
 
-When solving a hard problem, it is often the case that no simple solution will do. In that case, the most Pythonic strategy is to go "bottom-up." Build simple tools and combine them to solve the problem.
+解决困难问题时，往往没有可行的简单方案。此时，最 Python 化的策略是“自底向上”地构建出简单的工具，之后将其组合用以解决该问题。
 
-This is where techniques like _object composition_ shine. Instead of having a complicated inheritance hierarchy, have objects that forward some method calls to a separate object. Each of those can be tested and developed separately and then finally put together.
+这正是对象组合 (_object composition_) 这类技术的闪耀之处，它避免了错综复杂的继承体系，转而由独立的对象把一些方法调用传递给别的独立对象。这些对象都能独立地测试与部署，最终却可以组成一体。
 
-Another example of "building up" is using [singledispatch][4], so that instead of one complicated object, we have a simple, mostly behavior-less object and separate behaviors.
+“自底建造” 的另一例即是 [单分派泛函数 (singledispatch)][4] 的使用，抛弃了错综复杂的对象之后，我们得到是简单、几乎无行为的对象以及独立的行为。
 
 --------------------------------------------------------------------------------
 
@@ -46,7 +47,7 @@ via: https://opensource.com/article/19/12/zen-python-simplicity-complexity
 
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[caiichenr](https://github.com/caiichenr)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
