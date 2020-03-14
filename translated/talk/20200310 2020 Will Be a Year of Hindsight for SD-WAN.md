@@ -7,38 +7,40 @@
 [#]: via: (https://www.networkworld.com/article/3531315/2020-will-be-a-year-of-hindsight-for-sd-wan.html)
 [#]: author: (Zeus Kerravala https://www.networkworld.com/author/Zeus-Kerravala/)
 
-2020 Will Be a Year of Hindsight for SD-WAN
+2020年将会着眼于SD-WAN
 ======
 
-metamorworks
+对于软件定义的广域网（SD-WAN），“过去看起来困难的选择，知道了这些选择的结果后，现在看起来就很清晰了” 这一说法再合适不过了。总结过去的几年：云计算和数字化转型促使公司重新评估传统的WAN技术，该技术不再能够满足其不断增长的业务需求。从那时起，SD-WAN成为一种有前途的新技术。
 
-The expression “hindsight is 20/20” couldn’t be truer for software-defined wide-area networking (SD-WAN). To summarize the past few years: Cloud computing and digital transformation drove companies to re-evaluate traditional WAN technology, which no longer met their growing business needs. That’s when SD-WAN emerged as a promising new technology.
+SD-WAN旨在解决物理设备的流量管理问题，并支持从云进行基于软件的配置。替换昂贵的多协议标签交换（MPLS）的愿望推动了许多最初的SD-WAN部署。公司希望它可以神奇地解决他们所有的网络问题。但是在实践中，基本的SD-WAN解决方案远没有实现这一愿景。
 
-SD-WAN was designed to address the problem of traffic management from physical devices and to enable software-based provisioning from the cloud. Many initial SD-WAN deployments were fueled by the desire to replace expensive multi-protocol label switching (MPLS). Companies were hopeful that it could magically solve all their networking problems. But in practice, basic SD-WAN solutions fell well short on this promise.
+快速发展到现在，围绕SD-WAN的炒作已经尘埃落定，并且早期的实施工作已经过去。现在是时候回顾一下我们在2019年学到的东西以及在2020年要改进的地方。所以，让我们开始吧。
 
-Fast forward to the present, and much of the hype surrounding SD-WAN has settled, and early implementations are behind us. Now it’s time to look back on what we learned in 2019 and what to improve upon in 2020. So, let’s dive in.
 
-### **1\. It’s not about cost savings.**
+### **1\. 这与节省成本无关**
 
-Most companies choose SD-WAN as an MPLS replacement because it can lower WAN costs. However, [cost savings][1] can vary with SD-WAN, so it shouldn’t be used as a primary driver for deploying the technology. Companies should instead focus on improving network agility—such as enabling faster site deployment and reducing configuration times—whatever their needs may be. The main driver for SD-WAN is to make networks more efficient; if done successfully, the cost savings will follow. 
+大多数公司选择SD-WAN作为MPLS的替代品，因为它可以降低WAN成本。但是，[节省的成本] [1]会随SD-WAN的不同而异，因此不应将其用作部署该技术的主要驱动力。无论公司需要什么，公司都应该专注于提高网络敏捷性，例如实现更快的站点部署和减少配置时间。 SD-WAN的主要驱动力是使网络更高效。如果成功实现那么成本也会随之降低。
 
-### **2\. WAN optimization is necessary.**
 
-Speaking of efficiency, [WAN optimization][2] improves the performance of application and data traffic. By applying techniques like protocol acceleration, deduplication, compression, and caching, WAN optimization can increase bandwidth, reduce latency, and mitigate packet loss. The initial notion was that SD-WAN could eliminate the requirement for WAN optimization altogether, but we now know that some applications need additional performance. The technologies complement—not replace—each other. And they should be used to address different problems.
+### **2\. WAN优化是必要的**
 
-### **3\. Security can’t be an afterthought.**
+说到效率，[WAN优化] [2]提高了应用程序和数据流量的性能。通过应用协议加速，重复数据删除，压缩和缓存等技术，WAN优化可以增加带宽，减少等待时间并减轻数据包丢失。最初的想法是SD-WAN可以完成对WAN优化的需求，但是我们现在知道某些应用程序需要额外的性能。这些技术相互补充，而不是相互替代。它们应该用来解决不同的问题。
 
-SD-WAN has many benefits, one of which is using broadband internet to quickly send enterprise application traffic. But this approach also poses security risks since it exposes users and their local networks to the untrusted public internet. Security should be part of SD-WAN implementation from the beginning, as opposed to an afterthought. Companies can achieve the desired application performance and protection by positioning security close to branch locations using services like [cloud-hosted security][3].
 
-### **4\. Visibility is critical to SD-WAN success.**
+### **3\. 安全性不应该事后考虑。**
 
-Having [visibility][4] into application and data traffic takes the guesswork out of network management. The best place to start is at the pre-deployment phase, where companies can assess their existing capabilities and what’s missing before SD-WAN is implemented. Visibility, in the form of day-to-day monitoring and alerts, continues to play an important role after deployment. Companies that understand what’s going on in their network are better prepared to respond to performance issues and can use that knowledge to avoid future problems.
+SD-WAN具有许多优点，其中之一就是使用宽带互联网快速发送企业应用程序流量。但是这种方法也带来了安全风险，因为它使用户及其本地网络暴露于不受信任的公共互联网中。从一开始，安全性就应该成为SD-WAN实施的一部分，而不是在事后。公司可以通过使用[安全的云托管] [3]之类的服务，将安全性放在分支机构附近，从而实现所需的应用程序性能和保护。
 
-### **5\. Wireless WAN isn’t ready for prime time.**
 
-SD-WAN connects users to applications via any transport, including broadband and 4G/LTE (Long Term Evolution) wireless. That’s why [mobile connectivity][5] is increasingly being integrated into SD-WAN solutions. While companies are eager to use 4G as a potential transport alternative—especially in remote locations—the resulting costs of pay-per-use 4G services are high. Additionally, 4G can be problematic due to latency and bandwidth limitations. The best approach is to wait for service providers to deploy 5G with better pricing options. This will be the year when we see 5G rollouts and more focus on wireless SD-WAN. 
+### **4\. 可见性对于SD-WAN成功至关重要**
 
-Be sure to watch this SD-WAN video series: [Everything you should know about SD-WAN][6].
+在应用程序和数据流量中具有[可见性] [4]，这使网络管理不再需要猜测。最好的起点是部署前阶段，在此阶段，公司可以评估其现有功能以及在实施SD-WAN之前缺少的功能。可见的日常监视和警报形式显示在部署后继续发挥重要作用。了解网络中正在发生什么情况的公司会更好地准备应对性能问题，并可以利用这些知识来避免将来出现问题。
+
+### **5\. 无线广域网尚未准备就绪**
+
+SD-WAN可通过任何传输将用户连接到应用程序，包括宽带和4G / LTE（Long Term Evolution）无线。这就是[移动互联] [5]越来越多地集成到SD-WAN解决方案中的原因。尽管公司渴望将4G用作潜在的传输替代方案（尤其是在偏远地区），但按使用付费4G服务所产生的成本却很高。此外，由于延迟和带宽限制，4G可能会出现问题。最好的方法是等待服务提供商以更好的价格选择部署5G。今年将是我们看到5G推出并更加关注无线SD-WAN的一年。
+
+请务必观看以下SD-WAN视频系列：[你应该知道的所有关于SD-WAN的知识] [6]。
 
 --------------------------------------------------------------------------------
 
@@ -46,7 +48,7 @@ via: https://www.networkworld.com/article/3531315/2020-will-be-a-year-of-hindsig
 
 作者：[Zeus Kerravala][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/hkurj)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
