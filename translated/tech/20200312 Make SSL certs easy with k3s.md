@@ -64,45 +64,44 @@ kubectl apply -f cert-manager-arm.yaml
 
 这实际上就完成了 cert-manager 的安装！
 
-### A quick overview of Let's Encrypt
+### Let's Encrypt 概述
 
-The nice thing about Let's Encrypt is that they provide us with publicly validated TLS certificates for free! This means that we can have a completely valid TLS encrypted website that anyone can visit for our home or hobby things that do not make money to support themselves without paying out of our own pocket for TLS certificates! Also, when using Let's Encrypt certificates with cert-manager, the entire process of procuring the certificates is automated. Certificate renewal is also automated!
+Let's Encrypt 的好处是，它们免费为我们提供了经过公共验证的 TLS 证书！这意味着我们可以拥有一个完全有效的、可供任何人访问的 TLS 加密网站，这些家庭或业余的爱好活动挣不到钱，也无需自己掏腰包购买 TLS 证书！以及，当通过 cert-manager 使用 Let's Encrypt 的证书时，获得证书的整个过程是自动化的，证书的续订也是自动的！
 
-But how does this work? Here is a simplified explanation of the process. We (or cert-manager on our behalf) issue a request for a certificate to Let's Encrypt for a domain name that we own. Let's Encrypt verifies that we own that domain by using an ACME DNS or HTTP validation mechanism. If the verification is successful, Let's Encrypt provides us with certificates, which cert-manager installs in our website (or other TLS encrypted endpoint). These certificates are good for 90 days before the process needs to be repeated. Cert-manager, however, will automatically keep the certificates up-to-date for us.
+但它是如何工作的？下面是该过程的简化说明。我们（或代表我们的 cert-manager）向 Let's Encrypt 发出我们拥有的域名的证书请求。Let's Encrypt 通过使用 ACME DNS 或 HTTP 验证机制来验证我们是否拥有该域。如果验证成功，则 Let's Encrypt 将向我们提供证书，这些证书将由 cert-manager 安装在我们的网站（或其他 TLS 加密的终结点）中。在需要重复此过程之前，这些证书可以使用 90 天。但是，cert-manager 会自动为我们更新证书。
+ 
+在本文中，我们将使用 HTTP 验证方法，因为它更易于设置并且适用于大多数情况。以下是幕后将发生的基本过程。cert-manager 将向 Let's Encrypt 发出证书请求。作为回应，Let's Encrypt 将发出所有权验证的<ruby>质询<rt>challenges</rt></ruby>。这个质询是将一个 HTTP 资源放在请求证书的域名下的一个特定 URL 上。从理论上讲，如果我们可以将该资源放在该 URL 上，并且让 Let's Encrypt 可以远程获取它，那么我们实际上必须是该域的所有者。否则，要么我们无法将资源放置在正确的位置，要么我们无法操纵 DNS 以使 Let's Encrypt 访问它。在这种情况下，cert-manager 会将资源放在正确的位置，并自动创建一个临时的 `Ingress` 记录，以将流量路由到正确的位置。如果 Let's Encrypt 可以读到该质询要求的资源并正确无误，它将把证书发回给 cert-manager。然后，cert-manager 将证书存储为“机密信息”，然后我们的网站（或其他任何网站）将使用这些证书通过 TLS 保护我们的流量。
 
-In this article, we will use the HTTP validation method as it is simpler to set up and works for the majority of use cases. Here is the basic process that will happen behind the scenes. Cert-manager will issue a certificate request to Let's Encrypt. Let's Encrypt will issue an ownership verification challenge in response. The challenge will be to put an HTTP resource at a specific URL under the domain name that the certificate is being requested for. The theory is that if we can put that resource at that URL and Let's Encrypt can retrieve it remotely, then we must really be the owners of the domain. Otherwise, either we could not have placed the resource in the correct place, or we could not have manipulated DNS to allow Let's Encrypt to get to it. In this case, cert-manager puts the resource in the right place and automatically creates a temporary `Ingress` record that will route traffic to the correct place. If Let's Encrypt can read the challenge and it is correct, it will issue the certificates back to cert-manager. Cert-manager will then store the certificates as secrets, and our website (or whatever) will use those certificates for securing our traffic with TLS.
+### 为该质询设置网络
 
-### Preparing our network for the challenges
+我假设你要在家庭网络上进行设置，并拥有一个以某种方式连接到更广泛的互联网的路由器/接入点。如果不是这种情况，则可能不需要以下过程。
 
-I'm assuming that you are wanting to set this up on your home network and have a router/access point that is connected in some fashion to the broader internet. If that is not the case, the following process may not be what you need.
+为了使质询过程正常运行，我们需要一个我们要申请证书的域名，以将其路由到端口 80 上的 k3s 集群。为此，我们需要告诉世界上的 DNS 系统它的位置。因此，我们需要将域名映射到我们的公共 IP 地址。如果你不知道你的公共 IP 地址是什么，可以访问 [WhatsMyIP][9] 之类的地方，它会告诉你。接下来，我们需要输入 DNS 的 A 记录，该记录将我们的域名映射到我们的公共 IP 地址。为了使此功能可靠地工作，你需要一个静态的公共 IP 地址，或者你可以使用动态 DNS 提供商。一些动态 DNS 提供商会向你颁发一个域名，你可以按照以下说明使用它。我没有尝试过，所以不能肯定地说它适用于所有提供商。
 
-To make the challenge process work, we need the domain that we are requesting a certificate for to route to our k3s cluster on port 80. To do that, we need to tell the world's DNS system where that is. So, we'll need to map the domain name to our public IP address. If you do not know what your public IP address is, you can go to somewhere like [WhatsMyIP][9], and it will tell you. Next, we need to enter a DNS "A" record that maps our domain name to our public IP address. For this to work reliably, you need a static public IP address, or you may be able to use a dynamic DNS provider. Some dynamic DNS providers will issue you a domain name that you may be able to use with these instructions. I have not tried this, so I cannot say for sure it works with all providers.
+对于本文，我们将假设有一个静态公共 IP 并使用 CloudFlare 来设置 DNS 的 A 记录。如果愿意，可以使用自己的 DNS 提供程序。重要的是你可以设置 A 记录。
 
-For this article, we are going to assume a static public IP and use CloudFlare to set the DNS "A" records. You may use your own DNS provider if you wish. The important part is that you are able to set the "A" records.
+在本文的其余部分中，我将使用  [k3s.carpie.net][10] 作为示例域，因为这是我拥有的域。你显然会用自己拥有的任何域替换它。
 
-For this rest of the article, I am going to use `[k3s.carpie.net][10]` as the example domain since this is a domain I own. You would obviously replace that with whatever domain you own.
-
-Ok, for the sake of example, assume our public IP address is 198.51.100.42. We would go to our DNS provider's DNS record section and add a record of type "A," with a name of `[k3s.carpie.net][10]` (CloudFlare assumes the domain, so there we could just enter `k3s`) and enter 198.51.100.42 as the IPv4 address.
+为示例起见，假设我们的公共 IP 地址是 198.51.100.42。我们将转到我们的 DNS 提供商的 DNS 记录部分，并添加一个名为 [k3s.carpie.net][10] 的类型为 `A` 的记录（CloudFlare 已经假定了域的部分，因此我们只需输入 `k3s`），然后输入 `198.51.100.42` 作为 IPv4 地址。
 
 ![][11]
 
-Be aware that sometimes it takes a while for the DNS updates to propagate. It may be several hours before you can resolve the name. It is imperative that the name resolves before moving on. Otherwise, all our certificate requests will fail.
+请注意，有时 DNS 更新要传播一段时间。你可能需要几个小时才能解析该名称。在继续之前该名称必须可以解析。否则，我们所有的证书请求都将失败。
 
-We can check that the name resolves using the `dig` command:
-
+我们可以使用 `dig` 命令检查名称是否解析：
 
 ```
 $ dig +short k3s.carpie.net
 198.51.100.42
 ```
 
-Keep running the above command until an IP is returned. Just a note about CloudFlare: ClouldFlare provides a service that hides your actual IP by proxying the traffic. In this case, we'll get back a CloudFlare IP instead of our IP. This should work fine for our purposes.
+继续运行以上命令，直到可以返回 IP 才行。关于 CloudFlare 有个小注释：ClouldFlare 提供了通过代理流量来隐藏你的实际 IP 的服务。在这种情况下，我们取回的是 CloudFlare 的 IP，而不是我们的 IP。 但对于我们的目的，这应该可以正常工作。
 
-The final step for network configuration is configuring our router to route incoming traffic on ports 80 and 443 to our k3s cluster. Sadly, router configuration screens vary widely, so I can't tell you exactly what yours will look like. Most of the time, the admin page we need is under "Port forwarding" or something similar. I have even seen it listed under "Gaming" (which is apparently what port forwarding is mostly used for)! Let's see what the configuration looks like for my router.
+网络配置的最后一步是配置路由器，以将端口 80 和 443 上的传入流量路由到我们的 k3s 集群。可悲的是，路由器配置页面的差异很大，因此我无法确切地说明你的外观是什么样子。大多数时候，我们需要的管理页面位于“端口转发”或类似内容下。我甚至看到过它列在“游戏”之下（显然是端口转发主要用于的游戏）！让我们看看我的路由器的配置如何。
 
 ![][12]
 
-If you had my setup, you would go to 192.168.0.1 to log in to the router administration application. For this router, it's under `NAT / QoS` -&gt; `Port Forwarding`. Here we set port `80`, `TCP` protocol to forward to 192.168.0.50 (the IP of `kmaster` our master node) port `80`. We also set port `443` to map to `kmaster` as well. This is technically not needed for the challenges, but at the end of the article, we are going to deploy a TLS enabled website, and we will need `443` mapped to get to it. So it's convenient to go ahead and map it now. We save and apply the changes, and we should be good to go!
+如果你和我的设置一样，则转到 192.168.0.1 登录到路由器管理应用程序。对于此路由器，它位于 “ NAT / QoS” -> “端口转发”。在这里，我们将端口 80/TCP 协议设置为转发到 192.168.0.50（主节点 `kmaster` 的 IP）的端口 80。我们还将端口 443 设置为也映射到 `kmaster`。从技术上讲，这对于质询来说并不是必需的，但是在本文的结尾，我们将部署一个启用 TLS 的网站，并且需要映射 443 来进行访问。因此，现在进行映射很方便。我们保存并应用更改，应该一切顺利！
 
 ### Configuring cert-manager to use Lets Encrypt (staging)
 
