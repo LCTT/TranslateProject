@@ -103,149 +103,137 @@ $ dig +short k3s.carpie.net
 
 如果你和我的设置一样，则转到 192.168.0.1 登录到路由器管理应用程序。对于此路由器，它位于 “ NAT / QoS” -> “端口转发”。在这里，我们将端口 80/TCP 协议设置为转发到 192.168.0.50（主节点 `kmaster` 的 IP）的端口 80。我们还将端口 443 设置为也映射到 `kmaster`。从技术上讲，这对于质询来说并不是必需的，但是在本文的结尾，我们将部署一个启用 TLS 的网站，并且需要映射 443 来进行访问。因此，现在进行映射很方便。我们保存并应用更改，应该一切顺利！
 
-### Configuring cert-manager to use Lets Encrypt (staging)
+### 配置 cert-manager 来使用 Let's Encrypt（暂存环境）
 
-Now we need to configure cert-manager to issue certificates through Let's Encrypt. Let's Encrypt provides a staging (e.g., test) environment for us to sort out our configurations on. It is much more tolerant of mistakes and frequency of requests. If we bumble around on the production environment, we'll very quickly find ourselves temporarily banned! As such, we'll manually test requests using the staging environment.
+现在，我们需要配置 cert-manager 来通过 Let's Encrypt 颁发证书。Let's Encrypt 为我们提供了一个暂存（例如用于测试）环境，以便审视我们的配置。这样它更能容忍错误和请求的频率。如果我们对生产环境做了错误的操作，我们很快就好发现自己被暂时禁止访问了！因此，我们将使用暂存环境手动测试请求。
 
-Create a file, `letsencrypt-issuer-staging.yaml` with the contents:
-
+创建一个文件 `letsencrypt-issuer-staging.yaml`，内容如下：
 
 ```
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-staging
+  name: letsencrypt-staging
 spec:
-  acme:
-   # The ACME server URL
-    server: <https://acme-staging-v02.api.letsencrypt.org/directory>
-    # Email address used for ACME registration
-    email: &lt;your_email&gt;@example.com
-    # Name of a secret used to store the ACME account private key
-    privateKeySecretRef:
-      name: letsencrypt-staging
-    # Enable the HTTP-01 challenge provider
-    solvers:
-    - http01:
-        ingress:
-          class: traefik
+  acme:
+    # The ACME server URL
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    # Email address used for ACME registration
+    email: <your_email>@example.com
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: letsencrypt-staging
+    # Enable the HTTP-01 challenge provider
+    solvers:
+    - http01:
+        ingress:
+          class: traefik
 ```
 
-Make sure to update the email address to your address. This is how Let's Encrypt contacts us if something is wrong or we are doing bad things!
+请确保将电子邮件地址更新为你的地址。如果出现问题或我们弄坏了一些东西，这就是 Let's Encrypt 与我们联系的方式！
 
-Now we create the issuer with:
-
-
-```
-`kubectl apply -f letsencrypt-issuer-staging.yaml`
-```
-
-We can check that the issuer was created successfully with:
-
+现在，我们使用以下方法创建发行者：
 
 ```
-`kubectl get clusterissuers`
+kubectl apply -f letsencrypt-issuer-staging.yaml
 ```
 
-`Clusterissuers` is a new Kubernetes resource type created by cert-manager.
+我们可以使用以下方法检查发行者是否已成功创建：
 
-Let's now request a test certificate manually. For our sites, we will not need to do this; we are just testing out the process to make sure our configuration is correct.
+```
+kubectl get clusterissuers
+```
 
-Create a certificate request file, `le-test-certificate.yaml` with the contents:
+`clusterissuers` 是由 cert-manager 创建的一种新的 Kubernetes 资源类型。
+
+现在让我们手动请求一个测试证书。对于我们的网站，我们不需要这样做；我们只是在测试这个过程，以确保我们的配置正确。
+
+创建一个包含以下内容的证书请求文件 `le-test-certificate.yaml`：
 
 
 ```
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: k3s-carpie-net
-  namespace: default
+  name: k3s-carpie-net
+  namespace: default
 spec:
-  secretName: k3s-carpie-net-tls
-  issuerRef:
-    name: letsencrypt-staging
-    kind: ClusterIssuer
-  commonName: k3s.carpie.net
-  dnsNames:
- - k3s.carpie.net
+  secretName: k3s-carpie-net-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: k3s.carpie.net
+  dnsNames:
+  - k3s.carpie.net
 ```
 
-This record just says we want to request a certificate for the domain `[k3s.carpie.net][10]`, using a `ClusterIssuer` named `letsencrypt-staging` (which we created in the previous step) and store the certificate files in the Kubernetes secret named `k3s-carpie-net-tls`.
+该记录仅表示我们要使用名为 `letsencrypt-staging`（我们在上一步中创建的）的 `ClusterIssuer` 来请求域 [k3s.carpie.net][10] 的证书，并在 Kubernetes 的机密信息中名为 `k3s-carpie-net-tls` 文件中存储该证书。
 
-Apply it like normal:
-
-
-```
-`kubectl apply -f le-test-certificate.yaml`
-```
-
-We can check the status with:
-
+像平常一样应用它：
 
 ```
-`kubectl get certificates`
+kubectl apply -f le-test-certificate.yaml
 ```
 
-If we see something like:
+我们可以通过以下方式查看状态：
 
+```
+kubectl get certificates
+```
+
+如果我们看到类似以下内容：
 
 ```
 NAME                    READY   SECRET                  AGE
 k3s-carpie-net          True    k3s-carpie-net-tls      30s
 ```
 
-We are good to go! (The key here is `READY` being `True`).
+我们走在幸福之路！（这里的关键是`READY` 是 `True`）。
 
-### Troubleshooting certificate request issues
+### 解决证书颁发问题
 
-That's the happy path. If `READY` is `False`, we could give it some time and check the status again in case it takes a bit. If it stays `False,` then we have an issue we need to troubleshoot. At this point, we can walk the chain of Kubernetes resources until we find a status message that tells us the problem.
+上面是幸福的道路。如果 `READY` 为 `False`，我们可以等等它，然后再次花点时间检查状态。如果它一直是 `False`，那么我们就有一个需要解决的问题。此时，我们可以遍历 Kubernetes 资源链，直到找到一条告诉我们问题的状态消息。
 
-Let's say that we did the request above, and `READY` was `False`. We start the troubleshooting with:
-
-
-```
-`kubectl describe certificates k3s-carpie-net`
-```
-
-This will return a lot of information. Usually, the helpful things are in the `Events:` section, which is typically at the bottom. Let's say the last event was `Created new CertificateRequest resource "k3s-carpie-net-1256631848`. We would then describe that request:
-
+假设我们执行了上面的请求，而 `READY` 为 `False`。我们可以从以下方面开始故障排除：
 
 ```
-`kubectl describe certificaterequest k3s-carpie-net-1256631848`
+kubectl describe certificates k3s-carpie-net
 ```
 
-Now let's say the last event there was `Waiting on certificate issuance from order default/k3s-carpie-net-1256631848-2342473830`.
+这将返回很多信息。通常，有用的内容位于 `Events:` 部分，该部分通常位于底部。假设最后一个事件是 `Created new CertificateRequest resource "k3s-carpie-net-1256631848`。然后我们<ruby>描述<rt> describe</rt></ruby>一些该请求：
 
-Ok, we can describe the order:
+```
+kubectl describe certificaterequest k3s-carpie-net-1256631848
+```
 
+现在比如说最后一个事件是 `Waiting on certificate issuance from order default/k3s-carpie-net-1256631848-2342473830`。
+
+那么，我们可以描述该顺序：
 
 ```
 `kubectl describe orders default/k3s-carpie-net-1256631848-2342473830`
 ```
 
-Let's say that has an event that says `Created Challenge resource "k3s-carpie-net-1256631848-2342473830-1892150396" for domain "[k3s.carpie.net][10]"`. Let's describe the challenge:
-
+假设有一个事件，事件为 `Created Challenge resource "k3s-carpie-net-1256631848-2342473830-1892150396" for domain "k3s.carpie.net"`。让我们描述一下该质询：
 
 ```
-`kubectl describe challenges k3s-carpie-net-1256631848-2342473830-1892150396`
+kubectl describe challenges k3s-carpie-net-1256631848-2342473830-1892150396
 ```
 
-The last event returned from here is `Presented challenge using http-01 challenge mechanism`. That looks ok, so we scan up the describe output and see a message `Waiting for http-01 challenge propagation: failed to perform self check GET request … no such host`. Finally! We have found the problem! In this case, `no such host` means that the DNS lookup failed, so then we would go back and manually check our DNS settings and that our domain's DNS resolves correctly for us and make any changes needed.
+从这里返回的最后一个事件是 `Presented challenge using http-01 challenge mechanism`。看起来没问题，因此我们浏览一下描述的输出，并看到一条消息 `Waiting for http-01 challenge propagation: failed to perform self check GET request … no such host`。终于！我们发现了问题！在这种情况下，`no such host` 意味着 DNS 查找失败，因此我们需要返回并手动检查我们的 DNS 设置，正确解析域的 DNS，并进行所需的任何更改。
 
-### Clean up our test certificates
+### 清理我们的测试证书
 
-We actually want a real certificate for the domain name we used, so let's go ahead and clean up both the certificate and the secret we just created:
-
+我们实际上想要使用的是域名的真实证书，所以让我们继续清理证书和我们刚刚创建的机密信息：
 
 ```
 kubectl delete certificates k3s-carpie-net
 kubectl delete secrets k3s-carpie-net-tls
 ```
 
-### Configuring cert-manager to use Let's Encrypt (production)
+### 配置 cert-manager 以使用  Let's Encrypt（生产环境）
 
-Now that we have test certificates working, it's time to move up to production. Just like we configured cert-manager for Let's Encrypt staging environment, we need to do the same for production now. Create a file (you can copy and modify staging if desired) named `letsencrypt-issuer-production.yaml` with the contents:
-
+现在我们已经有了测试证书，是时候移动到生产环境了。就像我们在  Let's Encrypt 暂存环境中配置 cert-manager 一样，我们现在也需要对生产环境进行同样的操作。创建一个名为 `letsencrypt-issuer-production.yaml` 的文件（如果需要，可以复制和修改暂存环境的文件），其内容如下：
 
 ```
 apiVersion: cert-manager.io/v1alpha2
@@ -254,69 +242,67 @@ metadata:
 name: letsencrypt-prod
 spec:
 acme:
- # The ACME server URL
-  server: <https://acme-v02.api.letsencrypt.org/directory>
-  # Email address used for ACME registration
-  email: &lt;your_email&gt;@example.com
-  # Name of a secret used to store the ACME account private key
-  privateKeySecretRef:
-    name: letsencrypt-prod
-  # Enable the HTTP-01 challenge provider
-  solvers:
-  - http01:
-      ingress:
-        class: traefik
+ # The ACME server URL
+  server: https://acme-v02.api.letsencrypt.org/directory
+  # Email address used for ACME registration
+  email: <your_email>@example.com
+  # Name of a secret used to store the ACME account private key
+  privateKeySecretRef:
+    name: letsencrypt-prod
+  # Enable the HTTP-01 challenge provider
+  solvers:
+  - http01:
+      ingress:
+        class: traefik
 ```
 
-(If you are copying from the staging, the only that changes is the `server:` URL. Don't forget the email)!
+（如果要从暂存环境进行复制，则唯一的更改是 `server:` URL。也请不要忘记修改电子邮件！）
 
-Apply with:
-
-
-```
-`kubectl apply -f letsencrypt-issuer-production.yaml`
-```
-
-### Request a certificate for our website
-
-It's important to note that all the steps we have completed to this point are one time set up! For any additional requests in the future, we can start at this point in the instructions!
-
-Let's deploy that same site we deployed in the [previous article][13]. (If you still have it around, you can just modify the YAML file. If not, you may want to recreate it and re-deploy it).
-
-We just need to modify `mysite .yaml's` `Ingress` section to be:
-
+应用它：
 
 ```
-\---
+kubectl apply -f letsencrypt-issuer-production.yaml
+```
+
+### 申请我们网站的证书
+
+重要的是要注意，我们到目前为止完成的所有步骤都是一次性设置的！对于将来的任何其他申请，我们可以从这个说明开始！
+
+让我们部署在[上一篇文章][13]中部署的同样站点。（如果仍然可用，则可以修改 YAML 文件。如果没有，则可能需要重新创建并重新部署它）。
+
+我们只需要将 `mysite.yaml` 的 `Ingress` 部分修改为：
+
+```
+---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: mysite-nginx-ingress
-  annotations:
-    kubernetes.io/ingress.class: "traefik"
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: mysite-nginx-ingress
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
-  rules:
-  - host: k3s.carpie.net
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: mysite-nginx-service
-          servicePort: 80
-  tls:
-  - hosts:
-   - k3s.carpie.net
-    secretName: k3s-carpie-net-tls
+  rules:
+  - host: k3s.carpie.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: mysite-nginx-service
+          servicePort: 80
+  tls:
+  - hosts:
+    - k3s.carpie.net
+    secretName: k3s-carpie-net-tls
 ```
 
-Please note that just the `Ingress` section of `mysite.yaml` is shown above. The changes are the addition of the `annotation [cert-manager.io/cluster-issuer][14]: letsencrypt-prod`. This tells traefik which issuer to use when creating certificates. The only other addition is the `tls:` block. This tells traefik that we expect to have TLS on host `[k3s.carpie.net][10],` and we expect the TLS certificate files to be stored in the secret `k3s-carpie-net-tls`.
+请注意，上面仅显示了 `mysite.yaml` 的 `Ingress` 部分。所做的更改是添加了注释 `cert-manager.io/cluster-issuer: letsencrypt-prod`。这告诉 traefik 创建证书时使用哪个发行者。 唯一的其他增加是 `tls:` 块。这告诉 traefik 我们希望在主机 [k3s.carpie.net][10] 上具有 TLS 功能，并且我们希望 TLS 证书文件存储在机密信息 `k3s-carpie-net-tls` 中。
 
-Please remember that we did not create these certificates! (Well, we created test certificates similarly named, but we deleted those.) Traefik will read this and go looking for the secret. When it does not find it, it sees the annotation saying we want to use `letsencrypt-prod` issuer to procure one. From there, it will make the request and install the certificate in the secret for us!
+请记住，我们没有创建这些证书！（好吧，我们创建了名称相似的测试证书，但我们删除了这些证书。）Traefik 将读取这些配置并继续寻找机密信息。当找不到时，它会看到注释说我们想使用 `letsencrypt-prod` 发行者来获取它。由此，它将提出请求并为我们安装证书到机密信息之中！
 
-We're done! Let's try it out.
+大功告成！ 让我们尝试一下。
 
-There it is in all its encrypted TLS beauty! Congratulations!
+它现在具有了加密 TLS 所有优点！恭喜你！
 
 --------------------------------------------------------------------------------
 
@@ -324,7 +310,7 @@ via: https://opensource.com/article/20/3/ssl-letsencrypt-k3s
 
 作者：[Lee Carpenter][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
