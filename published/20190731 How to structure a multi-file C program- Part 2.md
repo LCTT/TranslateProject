@@ -32,12 +32,12 @@
 int main(int argc, char *argv[])
 {
   /* 07 变量声明 */
-  /* 08 check argv[0] to see how the program was invoked */
-  /* 09 process the command line options from the user */
-  /* 10 do the needful */
+  /* 08 检查 argv[0] 以查看该程序是被如何调用的 */
+  /* 09 处理来自用户的命令行选项 */
+  /* 10 做点有用的事情 */
 }
    
-/* 11 ancillary functions if any */
+/* 11 其它辅助函数 */
 ```
 
 ### 包含项目头文件
