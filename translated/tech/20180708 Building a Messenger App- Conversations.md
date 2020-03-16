@@ -7,35 +7,33 @@
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-conversations/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
-Building a Messenger App: Conversations
+构建一个即时消息应用（三）：对话
 ======
 
-This post is the 3rd in a series:
+本文是该系列的第三篇。
 
-  * [Part 1: Schema][1]
-  * [Part 2: OAuth][2]
+* [第一篇：模式][1]
+* [第二篇：OAuth][2]
 
+在我们的即时消息应用中，消息表现为两个参与者对话的堆叠。如果你想要开始异常对话，就应该向应用提供你想要交谈的用户，而当对话创建后（如果该对话此前并不存在），就可以向该对话发送消息。
 
+就前端而言，我们可能想要显示一份近期对话列表。并在此处显示对话的最后一条消息以及另一个参与者的姓名和头像。
 
-In our messenger app, messages are stacked by conversations between two participants. You start a conversation providing the user you want to chat with, the conversations is created (if not exists already) and you can start sending messages to that conversations.
+在这篇帖子中，我们将会编写一些端点（endpoints）来完成像「创建对话」、「获取对话列表」以及「找到单个对话」这样的任务。
 
-On the front-end we’re interested in showing a list of the lastest conversations. There we’ll show the last message of it and the name and avatar of the other participant.
+首先，要在主函数 `main()` 中添加下面的路由。
 
-In this post, we’ll code the endpoints to start a conversation, list the latest and find a single one.
-
-Inside the `main()` function add this routes.
-
-```
+```go
 router.HandleFunc("POST", "/api/conversations", requireJSON(guard(createConversation)))
 router.HandleFunc("GET", "/api/conversations", guard(getConversations))
 router.HandleFunc("GET", "/api/conversations/:conversationID", guard(getConversation))
 ```
 
-These three endpoints require authentication so we use the `guard()` middleware. There is a new middleware that checks for the request content type JSON.
+这三个端点都需要进行身份验证，所以我们将会使用 `guard()` 中间件。我们也会构建一个新的中间件，用于检查请求内容是否为 JSON 格式。
 
-### Require JSON Middleware
+### JSON 请求检查中间件
 
-```
+```go
 func requireJSON(handler http.HandlerFunc) http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
         if ct := r.Header.Get("Content-Type"); !strings.HasPrefix(ct, "application/json") {
@@ -47,11 +45,11 @@ func requireJSON(handler http.HandlerFunc) http.HandlerFunc {
 }
 ```
 
-If the request isn’t JSON, it responds with a `415 Unsupported Media Type` error.
+如果请求（request）不是 JSON 格式，那么它会返回 `415 Unsupported Media Type`（不支持的媒体类型）错误。
 
-### Create Conversation
+### 创建对话
 
-```
+```go
 type Conversation struct {
     ID                string   `json:"id"`
     OtherParticipant  *User    `json:"otherParticipant"`
@@ -60,9 +58,9 @@ type Conversation struct {
 }
 ```
 
-So, a conversation holds a reference to the other participant and the last message. Also has a bool field to tell if it has unread messages.
+就像上面的代码那样，对话中保持对另一个参与者和最后一条消息的引用，还有一个 bool 类型的字段，用来告知是否有未读消息。
 
-```
+```go
 type Message struct {
     ID             string    `json:"id"`
     Content        string    `json:"content"`
@@ -74,11 +72,11 @@ type Message struct {
 }
 ```
 
-Messages are for the next post, but I define the struct now since we are using it. Most of the fields are the same as the database table. We have `Mine` to tell if the message is owned by the current authenticated user and `ReceiverID` will be used to filter messanges once we add realtime capabilities.
+我们会在下一篇文章介绍与消息相关的内容，但由于我们这里也需要用到它，所以先定义了 `Message` 结构体。其中大多数字段与数据库表一致。我们需要使用 `Mine` 来断定消息是否属于当前已验证用户所有。一旦加入实时功能，`ReceiverID` 可以帮助我们过滤消息。
 
-Lets write the HTTP handler then. It’s quite long but don’t be scared.
+接下来让我们编写 HTTP 处理程序。尽管它有些长，但也没什么好怕的。
 
-```
+```go
 func createConversation(w http.ResponseWriter, r *http.Request) {
     var input struct {
         Username string `json:"username"`
@@ -170,19 +168,19 @@ func createConversation(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-For this endpoint you do a POST request to `/api/conversations` with a JSON body containing the username of the user you want to chat with.
+在此端点，你会向 `/api/conversations` 发送 POST 请求，请求的 JSON 主体中包含要对话的用户的用户名。
 
-So first it decodes the request body into an struct with the username. Then it validates that the username is not empty.
+因此，首先需要将请求主体解析成包含用户名的结构。然后，校验用户名不能为空。
 
-```
+```go
 type Errors struct {
     Errors map[string]string `json:"errors"`
 }
 ```
 
-This is the `Errors` struct. It’s just a map. If you enter an empty username you get this JSON with a `422 Unprocessable Entity` error.
+这是错误消息的结构体 `Errors`，它仅仅是一个映射。如果输入空用户名，你就会得到一段带有 `422 Unprocessable Entity`（无法处理的实体）错误消息的 JSON 。
 
-```
+```json
 {
     "errors": {
         "username": "Username required"
@@ -190,17 +188,17 @@ This is the `Errors` struct. It’s just a map. If you enter an empty username y
 }
 ```
 
-Then, we begin an SQL transaction. We only received an username, but we need the actual user ID. So the first part of the transaction is to query for the id and avatar of that user (the other participant). If the user is not found, we respond with a `404 Not Found` error. Also, if the user happens to be the same as the current authenticated user, we respond with `403 Forbidden`. There should be two different users, not the same.
+然后，我们开始执行 SQL 事务。收到的仅仅是用户名，但事实上，我们需要知道实际的用户 ID 。因此，事务的第一项内容是查询另一个参与者的 ID 和头像。如果找不到该用户，我们将会返回 `404 Not Found`（未找到） 错误。另外，如果找到的用户恰好和「当前已验证用户」相同，我们应该返回 `403 Forbidden`（拒绝处理）错误。这是由于对话只应当在两个不同的用户之间发起，而不能是同一个。
 
-Then, we try to find a conversation those two users have in common. We use `INTERSECT` for that. If there is one, we redirect to that conversation `/api/conversations/{conversationID}` and return there.
+然后，我们试图找到这两个用户所共有的对话，所以需要使用 `INTERSECT` 语句。如果存在，只需要通过 `/api/conversations/{conversationID}` 重定向到该对话并将其返回。
 
-If no common conversation was found, we continue by creating a new one and adding the two participants. Finally, we `COMMIT` the transaction and respond with the newly created conversation.
+如果未找到共有的对话，我们需要创建一个新的对话并添加指定的两个参与者。最后，我们 `COMMIT` 该事务并使用新创建的对话进行响应。
 
-### Get Conversations
+### 获取对话列表
 
-This endpoint `/api/conversations` is to get all the conversations of the current authenticated user.
+端点 `/api/conversations` 将获取当前已验证用户的所有对话。
 
-```
+```go
 func getConversations(w http.ResponseWriter, r *http.Request) {
     ctx := r.Context()
     authUserID := ctx.Value(keyAuthUserID).(string)
@@ -267,17 +265,17 @@ func getConversations(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-This handler just does a query to the database. It queries to the conversations table with some joins… First, to the messages table to get the last message. Then to the participants, but it adds a condition to a participant whose ID is not the one of the current authenticated user; this is the other participant. Then it joins to the users table to get his username and avatar. And finally joins with the participants again but with the contrary condition, so this participant is the current authenticated user. We compare `messages_read_at` with the message `created_at` to know whether the conversation has unread messages. And we use the message `user_id` to check if it’s “mine” or not.
+该处理程序仅对数据库进行查询。它通过一些联接来查询对话表……首先，从消息表中获取最后一条消息。然后依据「ID 与当前已验证用户不同」的条件，从参与者表找到对话的另一个参与者。然后联接到用户表以获取该用户的用户名和头像。最后，再次联接参与者表，并以相反的条件从该表中找出参与对话的另一个用户，其实就是当前已验证用户。我们会对比消息中的 `messages_read_at` 和 `created_at` 两个字段，以确定对话中是否存在未读消息。然后，我们通过 `user_id` 字段来判定该消息是否属于「我」（指当前已验证用户）。
 
-Note that this query assumes that a conversation has just two users. It only works for that scenario. Also, if you want to show a count of the unread messages, this design isn’t good. I think you could add a `unread_messages_count` `INT` field on the `participants` table and increment it each time a new message is created and reset it when the user read them.
+注意，此查询过程假定对话中只有两个用户参与，它也仅仅适用于这种情况。另外,该设计也不很适用于需要显示未读消息数量的情况。如果需要显示未读消息的数量，我认为可以在 `participants` 表上添加一个`unread_messages_count` `INT` 字段，并在每次创建新消息的时候递增它，如果用户已读则重置该字段。
 
-Then it iterates over the rows, scan each one to make an slice of conversations and respond with those at the end.
+接下来需要遍历每一条记录，通过扫描每一个存在的对话来建立一个对话切片（an slice of conversations）并在最后进行响应。
 
-### Get Conversation
+### 找到单个对话
 
-This endpoint `/api/conversations/{conversationID}` respond with a single conversation by its ID.
+端点 `/api/conversations/{conversationID}` 会根据 ID 对单个对话进行响应。
 
-```
+```go
 func getConversation(w http.ResponseWriter, r *http.Request) {
     ctx := r.Context()
     authUserID := ctx.Value(keyAuthUserID).(string)
@@ -321,15 +319,15 @@ func getConversation(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-The query is quite similar. We’re not interested in showing the last message, so we omit those fields, but we need the message to know whether the conversation has unread messages. This time we do a `LEFT JOIN` instead of an `INNER JOIN` because the `last_message_id` is `NULLABLE`; in other case we won’t get any rows. We use an `IFNULL` in the `has_unread_messages` comparison for that reason too. Lastly, we filter by ID.
+这里的查询与之前有点类似。尽管我们并不关心最后一条消息的显示问题，并因此忽略了与之相关的一些字段，但是我们需要根据这条消息来判断对话中是否存在未读消息。此时，我们使用 `LEFT JOIN` 来代替 `INNER JOIN`，因为 `last_message_id` 字段是 `NULLABLE`（可以为空）的；而其他情况下，我们无法得到任何记录。基于同样的理由，我们在 `has_unread_messages` 的比较中使用了 `IFNULL` 语句。最后，我们按 ID 进行过滤。
 
-If the query returns no rows, we respond with a `404 Not Found` error, otherwise `200 OK` with the found conversation.
+如果查询没有返回任何记录，我们的响应会返回 `404 Not Found` 错误，否则响应将会返回 `200 OK` 以及找到的对话。
 
 * * *
 
-Yeah, that concludes with the conversation endpoints.
+本篇帖子以创建了一些对话端点结束。
 
-Wait for the next post to create and list messages 👋
+在下一篇帖子中，我们将会看到如何创建并列出消息。
 
 [Souce Code][3]
 
@@ -346,6 +344,6 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-conversations/
 
 [a]: https://nicolasparada.netlify.com/
 [b]: https://github.com/lujun9972
-[1]: https://nicolasparada.netlify.com/posts/go-messenger-schema/
-[2]: https://nicolasparada.netlify.com/posts/go-messenger-oauth/
+[1]: https://linux.cn/article-11396-1.html
+[2]: https://linux.cn/article-11510-1.html
 [3]: https://github.com/nicolasparada/go-messenger-demo
