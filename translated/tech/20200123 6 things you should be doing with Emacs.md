@@ -100,3 +100,33 @@ Emacs 许多重要功能都不是只能通过 Emacs 来实现的; Org mode 是 E
 我们汇聚了最常用的 Emacs 快捷键成为一份 Emacs 备忘录以便你查询。将它挂在屏幕附近或办公室墙上，把它作为鼠标垫也行。让它触手可及经常翻阅一下。每次翻两下可以让你获得十倍的学习效率。而且一旦开始编写自己的函数，你一定不会后悔获取了这个免费的备忘录副本的！
 
 [这里下载 Emacs 备忘录 ](https://opensource.com/downloads/emacs-cheat-sheet)
+
+--------------------------------------------------------------------------------
+via: https://opensource.com/article/20/1/emacs-cheat-sheet
+
+作者：[Seth Kenlon][a]
+选题：[lujun9972][b]
+译者：[lujun9972](https://github.com/lujun9972)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://opensource.com/users/seth
+[b]: https://github.com/lujun9972
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/browser_blue_text_editor_web.png
+[2]: https://www.gnu.org/software/emacs/
+[3]: https://en.wikipedia.org/wiki/Lisp_(programming_language)
+[4]: https://www.gnu.org/software/tramp/
+[5]: https://www.openssh.com/
+[6]: https://orgmode.org/
+[7]: https://f-droid.org/en/packages/com.orgzly/
+[8]: https://opensource.com/sites/default/files/uploads/orgzly-agenda.jpg
+[9]: https://opensource.com/article/19/4/calendar-git
+[10]: https://opensource.com/article/19/12/favorite-terminal-emulator
+[11]: http://racket-lang.org/
+[12]: https://en.wikipedia.org/wiki/Logo_(programming_language)#Turtle_and_graphics
+[13]: https://opensource.com/sites/default/files/racket-mode.jpg
+[14]: https://www.racket-mode.com/
+[15]: https://docs.racket-lang.org/quick/index.html
+[16]: https://www.gnu.org/software/guile/
+[17]: https://en.wikipedia.org/wiki/Scheme_(programming_language)
