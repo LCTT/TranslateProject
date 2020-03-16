@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12001-1.html)
 [#]: subject: (Basilisk: A Firefox Fork For The Classic Looks and Classic Extensions)
 [#]: via: (https://itsfoss.com/basilisk-browser/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -11,6 +11,8 @@ Basilisk：一个有着经典的外观和扩展的 Firefox 复刻
 ======
 
 > Basilisk 是一个 Firefox 复刻，它支持旧版的扩展等更多功能。在这里，我们看一下它的功能并尝试一下。
+
+![](https://img.linux.net.cn/data/attachment/album/202003/16/130319lvls6fvsaslzllrv.jpg)
 
 ### Basilisk：基于 XUL 的开源 Web 浏览器
 
