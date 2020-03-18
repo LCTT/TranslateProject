@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12008-1.html)
 [#]: subject: (How to Change MAC Address in Linux)
 [#]: via: (https://itsfoss.com/change-mac-address-linux/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/itsfoss/)
@@ -16,7 +16,7 @@
 
 一个实用的“好处”是某些公共网络（例如机场 WiFi）允许在有限的时间内免费上网。如果你还想继续使用，那么伪造 Mac 地址可能会欺骗网络，让它认为是一台新设备。这也是一个有名的原因。
 
-![Airport WiFi Meme][2]
+![](https://img.linux.net.cn/data/attachment/album/202003/18/120702qdjyb7hvyj7bsrj7.jpg)
 
 我将展示更改 MAC 地址（也称为欺骗/伪造 MAC 地址）的步骤。
 
