@@ -1,22 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12008-1.html)
 [#]: subject: (How to Change MAC Address in Linux)
 [#]: via: (https://itsfoss.com/change-mac-address-linux/)
-[#]: author: (Community https://itsfoss.com/author/itsfoss/)
+[#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/itsfoss/)
 
 如何在 Linux 中更改 MAC 地址
 ======
 
-在向你展示如何在 Linux 中更改 Mac 地址之前，让我们首先讨论为什么要更改它。
+在向你展示如何在 Linux 中更改 MAC 地址之前，让我们首先讨论为什么要更改它。
 
 可能有几个原因。也许你不希望在公共网络上公开你的实际 [MAC 地址][1]（也称为物理地址）？还有可能是网络管理员可能已在路由器或防火墙中阻止了特定的 MAC 地址。
 
 一个实用的“好处”是某些公共网络（例如机场 WiFi）允许在有限的时间内免费上网。如果你还想继续使用，那么伪造 Mac 地址可能会欺骗网络，让它认为是一台新设备。这也是一个有名的原因。
 
-![Airport WiFi Meme][2]
+![](https://img.linux.net.cn/data/attachment/album/202003/18/120702qdjyb7hvyj7bsrj7.jpg)
 
 我将展示更改 MAC 地址（也称为欺骗/伪造 MAC 地址）的步骤。
 
@@ -24,7 +24,7 @@
 
 让我们一步步来：
 
-#### 步骤 1：查找你的 MAC 地址和网络接口
+#### 查找你的 MAC 地址和网络接口
 
 让我们找出一些[关于 Linux 中网卡的细节][3]。使用此命令获取网络接口详细信息：
 
@@ -45,11 +45,11 @@ ip link show
     link/ether 42:02:07:8f:a7:38 brd ff:ff:ff:ff:ff:ff
 ```
 
-如你所见，在这里，我的网络接口称为 **enp0s31f6**，MAC 地址为 **38:42:f8:8b:a7:68**。
+如你所见，在这里，我的网络接口称为 `enp0s31f6`，MAC 地址为 `38:42:f8:8b:a7:68`。
 
 你可能需要在安全的地方记录下来，以便稍后还原到该原始 MAC 地址。
 
-现在你可以继续更改MAC地址。
+现在你可以继续更改 MAC 地址。
 
 注意！
 
@@ -79,15 +79,15 @@ sudo dnf install macchanger
 sudo apt install macchanger
 ```
 
-**重要！**系统会要求你选择是否应将 macchanger 设置为在每次启动或关闭网络设备时自动运行。每当你接到网线或重启 WiFi 时，它都会提供一个新的 MAC 地址。
+**重要！**系统会要求你选择是否应将 `macchanger` 设置为在每次启动或关闭网络设备时自动运行。每当你接到网线或重启 WiFi 时，它都会提供一个新的 MAC 地址。
 
 ![Not a good idea to run it automatically][6]
 
-我建议不要自动运行它，除非你确实需要每次更改 MAC 地址。因此，选择 No（按 Tab 键），然后按回车键继续。
+我建议不要自动运行它，除非你确实需要每次更改 MAC 地址。因此，选择“No”（按 `Tab` 键），然后按回车键继续。
 
-##### 如何使用 Macchanger 更改 MAC 地址
+**如何使用 Macchanger 更改 MAC 地址**
 
-你还记得网络接口名称吗？你在前面的步骤 1 中获得了它。
+你还记得网络接口名称吗？你在前面的步骤中获得了它。
 
 现在，要将随机 MAC 地址分配给该网卡，请使用：
 
@@ -123,7 +123,7 @@ macchanger -p enp0s31f6
 
 #### 方法 2：使用 iproute2 更改 Mac 地址（中级知识）
 
-我建议你使用 Macchanger，但如果你不想使用它，那么可以使用另一种方法在 Linux 中更改 MAC 地址。
+我建议你使用 macchanger，但如果你不想使用它，那么可以使用另一种方法在 Linux 中更改 MAC 地址。
 
 首先，使用以下命令关闭网卡：
 
@@ -151,20 +151,14 @@ ip link show enp0s31f6
 
 就是这些了。你已经成功地在 Linux 中修改了 MAC 地址。敬请期待 FOSS 更多有关 Linux 教程和技巧的文章。
 
-![][7]
-
-### Dimitrios Savvopoulos
-
-Dimitrios 是一名机械工程硕士，但对 Linux 十分热爱。他一直使用 Solus OS，但在好奇心驱使他不断地测试其他发行版。挑战是他个性的一部分，他的业余爱好是 5 公里到马拉松距离的比赛。
-
 --------------------------------------------------------------------------------
 
 via: https://itsfoss.com/change-mac-address-linux/
 
-作者：[Community][a]
+作者：[Dimitrios Savvopoulos][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
