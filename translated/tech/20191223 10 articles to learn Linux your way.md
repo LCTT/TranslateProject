@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [#]: collector: "lujun9972"
 [#]: translator: "messon007"
 [#]: reviewer: " "
@@ -10,18 +9,7 @@
 
 2019年关于Linux的10大好文
 =======
-[#]: collector: (lujun9972)
-[#]: translator: (messon007)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (10 articles to learn Linux your way)
-[#]: via: (https://opensource.com/article/19/12/learn-linux)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-10 articles to learn Linux your way
->>>>>>> origin/patch-2
-======
 2019年对于Linux来说是个好年份，一起来回顾一下2019年opensource.com上关于Linux的十大好文。
 ![Penguins gathered together in the Artic][1]
 
