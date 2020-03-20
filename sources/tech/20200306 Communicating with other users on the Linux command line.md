@@ -7,24 +7,22 @@
 [#]: via: (https://www.networkworld.com/article/3530343/communicating-with-other-users-on-the-linux-command-line.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Communicating with other users on the Linux command line
+使用Linux命令行与其他用户进行通信
 ======
 
-Thinkstock / Linux
-
-Sending messages to other users on the Linux command line can be very easy, but there are a number of commands that you might want to consider. In this post, we’ll look at four commands and see how each of them works.
+使用Linux命令行向其他用户发送消息或许非常容易，但你可能会对一些相关的命令感兴趣。在这篇文章中，我们会考察4个这样的命令，看看它们是怎么工作的。
 
 ### wall
 
-The **wall** command (as in "write all") allows you to send a message to all users who are currently logged into the system. This implies that the system is likely a server and that users are working on the command line. While the wall command is generally used by sysadmins to send out notices to users to let send out information (e.g., that the server is going down for maintenance), it can be used by any user.
+**wall**("write all"的简称)命令允许你向所有系统中已登录的用户发送一条信息。这里我们假设用户都使用命令行在一台服务器上工作。虽然wall命令最常被系统管理员用于向用户发布公告和传递信息（比如说，服务器即将因维护而关闭)，但它可以被任何用户使用。
 
-A sysadmin might send out a message like this:
+一个系统管理员可能会用类似下面的方式发送信息：
 
 ```
 $ wall The system will be going down in 15 minutes to address a serious problem
 ```
 
-Everyone logged into the system will see something like this:
+而所有登录的用户都将看到类似这样的信息：
 
 ```
 Broadcast message from admin@dragonfly (pts/0) (Thu Mar  5 08:56:42 2020):
@@ -32,17 +30,17 @@ Broadcast message from admin@dragonfly (pts/0) (Thu Mar  5 08:56:42 2020):
 The system is going down in 15 minutes to address a serious problem
 ```
 
-If you want to use single quote marks in your message, enclose the message in double quote marks like this:
+如果希望在消息中使用单引号，你可以像这样将信息用双引号括起来：
 
 ```
 $ wall “Don’t forget to save your work before logging off”
 ```
 
-The outside quote marks will not show up in the transmitted message, but, without them, the command sits and waits for a closing single quote.
+最外层的双引号不会出现在发出的消息中，但是如果没有它们，wall会停下并等待输入一个配对的单引号。
 
 ### mesg
 
-If, for some reason, you don’t want to accept messages from another user, you can stop them from arriving with the **mesg** command. This command can be used with a “n” argument to refuse mail from the user or a “y” argument to allow the messages to arrive.
+如果出于某种理由你不想接收来自另一个用户的消息，你可以使用**mesg**命令来屏蔽这些消息。这个命令可以接受一个“n”作为参数来拒绝某用户的消息，或者接收一个“y”作为参数来接收用户发来的消息。
 
 [][1]
 
@@ -51,7 +49,7 @@ $ mesg n doug
 $ mesg y doug
 ```
 
-The blocked user will not be notified that their messages have been blocked. You can also block or allow all messages with a **mesg** command like one of these:
+被屏蔽的用户不会被告知这一事实。你也可以像这样使用**mesg**来屏蔽或者接收所有消息：
 
 ```
 $ mesg y
@@ -60,7 +58,7 @@ $ mesg n
 
 ### write
 
-Another command for sending text without reverting to email is **write**. This command can be used to communicate with a specific user.
+另一个用于在不使用电子邮件的情况下发送文本的命令是**write**，这个命令可以用来和一个特定的用户通信。
 
 ```
 $ write nemo
@@ -69,13 +67,13 @@ I need to talk with you right away.
 ^C
 ```
 
-Enter your text and use **^C** to exit when you’re done. The command allows you to send text, but doesn’t start a two-way conversation. It just sends the text. If the user is logged in on more than one terminal, you can specify which terminal you want to send the message to or you can rely on the system to choose the one with the shortest idle time.
+输入你的信息后用**ctrl-c**退出，这样就完成了通信。这个命令允许你发送文本，但并不建立一个双向的通话。它只是将文本发送过去而已。如果目标用户在多于一个终端上登录，你可以指定你想将消息发送到哪一个终端，否则系统会选择空闲时间最短的那个终端。
 
 ```
 $ write nemo#1
 ```
 
-If the user you are trying to write to has messages blocked, you should see something like this:
+如果你试图向一个将消息屏蔽了的用户发送信息，你应该会看到这样的输出：
 
 ```
 $ write nemo
@@ -84,7 +82,7 @@ write: nemo has messages disabled
 
 ### talk/ytalk
 
-The **talk** or **ytalk** command gives you a chance to have an interactive chat with one or more other users. The command will bring up a double-pane (top and bottom) window. Each individual will type into the top portion of the display on their screen and see the responses in the bottom section(s). The respondents can respond to a talk request by typing "talk" followed by the username of the person addressing them.
+**talk**和**ytalk**命令让你可以和一个或多个用户进行交互式的聊天。它们会展示一个有上下两个子窗口的界面，每个用户向他们屏幕上显示在上方的窗口输入内容，并在下方的窗口看到回复信息。要回复一个talk请求，接收方可以输入“talk”，在后面加上请求方的用户名。
 
 ```
 Message from Talk_Daemon@dragonfly at 10:10 ...
@@ -94,7 +92,7 @@ talk: respond with:  talk dory@127.0.0.1
 $ talk dory
 ```
 
-The window can involve more than two participants if **ytalk** is used. As you can see in the example below (the result of the "talk dory" command shown above), talk is often ytalk.
+如果使用的是**ytalk**，那么窗口中可以包含多于两个参与者。正如下面的例子所展示的（这是上面“talk dory”命令的结果），talk通常指向ytalk。
 
 ```
 ----------------------------= YTalk version 3.3.0 =--------------------------
@@ -104,7 +102,7 @@ Is the report ready?
 Just finished it
 ```
 
-As explained above, on the other side of the conversation, the talk session window panes are reversed:
+如上所述，在通话的另一侧，talk会话界面的窗口是相反的：
 
 ```
 ----------------------------= YTalk version 3.3.0 =--------------------------
@@ -114,21 +112,21 @@ Just finished it
 Is the report ready?
 ```
 
-Again, use **^C** to exit.
+同样的，使用**ctrl-c**来退出。
 
-To talk with someone on another system, you just need to add a **-h** option and the hostname or IP address with a command like this:
+如果要和非本机的用户通讯，你需要加上**-h**选项和目标主机名或IP地址，就像这样：
 
 ```
 $ talk -h 192.168.0.11 nemo
 ```
 
-### Wrap-Up
+### 总结
 
-There are a number of basic commands for sending messages to other logged-in users on Linux systems, and they can be especially useful when you need to send out a quick message to all of the users, prefer a quick exchange to a phone call or want to easily involve more than two people in a quick messaging session.
+Linux上有若干基本的命令可以用来向其他登录的用户发送消息。如果你需要向所有用户快速发送信息或是需要便捷的电话替代品，又或是希望能简单地开始一个多用户快速通讯会话，这些命令会十分实用。
 
-Some commands, like **wall**, allow a message to be broadcast, but are not interactive. Others, like **talk**, allow both lengthy and multi-user chats, avoiding the need to set up a conference call when a fairly quick exchange of information is all that's required.
+一些命令如**wall**允许广播消息但却不是交互式的。另外的一些命令如**talk**允许多用户进行长时间通讯，当你只需要非常快速地交换一些信息，它们可以你你避免建立一个电话会议。
 
-Join the Network World communities on [Facebook][2] and [LinkedIn][3] to comment on topics that are top of mind.
+加入在[Facebook][2]和[LinkedIn][3]上的Network World社区来评论你感兴趣的话题。
 
 --------------------------------------------------------------------------------
 
@@ -136,7 +134,7 @@ via: https://www.networkworld.com/article/3530343/communicating-with-other-users
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[linusboyle](https://github.com/linusboyle)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
