@@ -1,59 +1,59 @@
-[#]: collector: (lujun9972)
-[#]: translator: (way-ww)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How To Enable Or Disable SSH Access For A Particular User Or Group In Linux?)
-[#]: via: (https://www.2daygeek.com/allow-deny-enable-disable-ssh-access-user-group-in-linux/)
-[#]: author: (2daygeek http://www.2daygeek.com/author/2daygeek/)
+[#]: collector: "lujun9972"
+[#]: translator: "way-ww"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "How To Enable Or Disable SSH Access For A Particular User Or Group In Linux?"
+[#]: via: "https://www.2daygeek.com/allow-deny-enable-disable-ssh-access-user-group-in-linux/"
+[#]: author: "2daygeek http://www.2daygeek.com/author/2daygeek/"
 
-How To Enable Or Disable SSH Access For A Particular User Or Group In Linux?
+如何在 Linux 上为特定的用户或用户组启用或禁用 SSH ?
 ======
 
-As per your organization standard policy, you may need to allow only the list of users that are allowed to access the Linux system.
+由于你的公司标准规定， 你可能只能允许部分人访问 Linux 系统。
 
-Or you may need to allow only few groups, which are allowed to access the Linux system.
+或者你可能只能够允许几个用户组中的用户访问 Linux 系统。
 
-How to achieve this? What is the best way? How to achieve this in a simple way?
+那么如何实现这样的要求呢？ 最好的方法是什么呢？ 如何使用一个简单的方法去实现呢？
 
-Yes, there are many ways are available to perform this.
+是的， 我们会有很多种方法去实现它。
 
-However, we need to go with simple and easy method.
+但是我们应该使用简单轻松的方法。
 
-If so, it can be done by making the necessary changes in `/etc/ssh/sshd_config` file.
+为了简单轻松的完成目的， 我们可以通过对 `/etc/ssh/sshd_config` 文件做必要的修改来实现。
 
-In this article we will show you, how to perform this in details.
+在这篇文章中我们将会向你展示实现要求的详细步骤。
 
-Why are we doing this? due to security reason. Navigate to the following URL to know more about **[openSSH][1]** usage.
+为什么我们要这样做呢？ 仅仅是出于安全的原因。你可以访问这个链接来获取更多关于 **[openSSH][1]** 的使用方法。
 
-### What Is SSH?
+### 什么是 SSH ？
 
-openssh stands for OpenBSD Secure Shell. Secure Shell (ssh) is a free open source networking tool which allow us to access remote system over an unsecured network using Secure Shell (SSH) protocol.
+openssh 全称为 OpenBSD Secure Shell. Secure Shell (ssh) 是一个开源免费的网络工具， 它能让我们在一个不安全的网络中通过使用 Secure Shell (SSH) 协议来安全访问远程主机。
 
-It’s a client-server architecture. It handles user authentication, encryption, transferring files between computers and tunneling.
+它采用了 client-server 架构， 拥有用户身份认证， 加密， 在计算机和隧道之间传输文件等功能。
 
-These can be accomplished via traditional tools such as telnet or rcp, these are insecure and use transfer password in cleartext format while performing any action.
+我们也可以用 telnet 或 rcp 等传统工具来完成， 但是这些工具都不安全，因为它们在执行任何动作时都会使用明文来传输密码。
 
-### How To Allow A User To Access SSH In Linux?
+### 如何在 Linux 中允许用户使用 SSH？
 
-We can allow/enable the ssh access for a particular user or list of the users using the following method.
+通过以下内容， 我们可以为指定的用户或用户列表启用 ssh 访问。
 
-If you would like to allow more than one user then you have to add the users with space in the same line.
+如果你想要允许多个用户， 那么你可以在添加用户时在同一行中用空格来隔开他们。
 
-To do so, just append the following value into `/etc/ssh/sshd_config` file. In this example, we are going to allow ssh access for `user3`.
+为了达到目的只需要将下面的值追加到 `/etc/ssh/sshd_config` 文件中去。 在这个例子中， 我们将会允许用户 `user3` 使用 ssh。
 
 ```
 # echo "AllowUsers user3" >> /etc/ssh/sshd_config
 ```
 
-You can double check this by running the following command.
+你可以运行下列命令再次检查是否添加成功。
 
 ```
 # cat /etc/ssh/sshd_config | grep -i allowusers
 AllowUsers user3
 ```
 
-That’s it. Just bounce the ssh service and see the magic.
+这样就行了， 现在只需要重启 ssh 服务和见证奇迹了。(下面这两条命令效果相同， 请根据你的服务管理方式选择一条执行即可)
 
 ```
 # systemctl restart sshd
@@ -61,7 +61,7 @@ That’s it. Just bounce the ssh service and see the magic.
 # service restart sshd
 ```
 
-Simple open a new terminal or session and try to access the Linux system with different user. Yes, `user2` isn’t allowed for SSH login and will be getting an error message as shown below.
+接下来很简单， 只需打开一个新的终端或者会话尝试用不同的用户身份访问 Linux 系统。 是的，这里 `user2` 用户是不被允许使用 SSH 登录的并且会得到如下所示的错误信息。
 
 ```
 # ssh [email protected]
@@ -69,7 +69,7 @@ Simple open a new terminal or session and try to access the Linux system with di
 Permission denied, please try again.
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 02:00:35 CentOS7 sshd[4900]: User user2 from 192.168.1.6 not allowed because not listed in AllowUsers
@@ -79,7 +79,7 @@ Mar 29 02:00:40 CentOS7 sshd[4900]: pam_unix(sshd:auth): authentication failure;
 Mar 29 02:00:43 CentOS7 sshd[4900]: Failed password for invalid user user2 from 192.168.1.6 port 42568 ssh2
 ```
 
-At the same time `user3` is allowed to login into the system because it’s in allowed users list.
+与此同时用户 `user3` 被允许登入系统因为他在被允许的用户列表中。
 
 ```
 # ssh [email protected]
@@ -87,33 +87,33 @@ At the same time `user3` is allowed to login into the system because it’s in a
 [[email protected] ~]$
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 02:01:13 CentOS7 sshd[4939]: Accepted password for user3 from 192.168.1.6 port 42590 ssh2
 Mar 29 02:01:13 CentOS7 sshd[4939]: pam_unix(sshd:session): session opened for user user3 by (uid=0)
 ```
 
-### How To Deny Users To Access SSH In Linux?
+### 如何在 Linux 中阻止用户使用 SSH ？
 
-We can deny/disable the ssh access for a particular user or list of the users using the following method.
+通过以下内容， 我们可以配置指定的用户或用户列表禁用 ssh 。
 
-If you would like to disable more than one user then you have to add the users with space in the same line.
+如果你想要禁用多个用户， 那么你可以在添加用户时在同一行中用空格来隔开他们。
 
-To do so, just append the following value into `/etc/ssh/sshd_config` file. In this example, we are going to disable ssh access for `user1`.
+为了达到目的只需要将以下值追加到 `/etc/ssh/sshd_config` 文件中去。 在这个例子中， 我们将禁用用户 `user1` 使用 ssh
 
 ```
 # echo "DenyUsers user1" >> /etc/ssh/sshd_config
 ```
 
-You can double check this by running the following command.
+你可以运行下列命令再次检查是否添加成功。
 
 ```
 # cat /etc/ssh/sshd_config | grep -i denyusers
 DenyUsers user1
 ```
 
-That’s it. Just bounce the ssh service and see the magic.
+这样就行了， 现在只需要重启 ssh 服务和见证奇迹了。
 
 ```
 # systemctl restart sshd
@@ -121,7 +121,7 @@ That’s it. Just bounce the ssh service and see the magic.
 # service restart sshd
 ```
 
-Simple open a new terminal or session and try to access the Linux system with Deny user. Yes, `user1` is in denyusers list. So, you will be getting an error message as shown below when you are try to login.
+接下来很简单， 只需打开一个新的终端或者会话尝试使用被禁用的用户身份被访问 Linux 系统。 是的，这里 `user1` 用户在禁用名单中。 所以， 当你尝试登录时， 你将会得到如下所示的错误信息。
 
 ```
 # ssh [email protected]
@@ -129,7 +129,7 @@ Simple open a new terminal or session and try to access the Linux system with De
 Permission denied, please try again.
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 01:53:42 CentOS7 sshd[4753]: User user1 from 192.168.1.6 not allowed because listed in DenyUsers
@@ -139,33 +139,33 @@ Mar 29 01:53:46 CentOS7 sshd[4753]: pam_unix(sshd:auth): authentication failure;
 Mar 29 01:53:48 CentOS7 sshd[4753]: Failed password for invalid user user1 from 192.168.1.6 port 42522 ssh2
 ```
 
-### How To Allow Groups To Access SSH In Linux?
+### 如何在 Linux 中允许用户组使用 SSH?
 
-We can allow/enable the ssh access for a particular group or groups using the following method.
+通过以下内容， 我们可以允许一个指定的组或多个组使用 ssh。
 
-If you would like to allow more than one group then you have to add the groups with space in the same line.
+如果你想要允许多个组使用 ssh 那么你在添加用户组时需要在同一行中使用空格来隔开他们。
 
-To do so, just append the following value into `/etc/ssh/sshd_config` file. In this example, we are going to disable ssh access for `2g-admin` group.
+为了达到目的只需将以下值追加到 `/etc/ssh/sshd_config` 文件中去。 在这个例子中， 我们将允许 `2g-admin` 组使用 ssh。
 
 ```
 # echo "AllowGroups 2g-admin" >> /etc/ssh/sshd_config
 ```
 
-You can double check this by running the following command.
+你可以运行下列命令再次检查是否添加成功。
 
 ```
 # cat /etc/ssh/sshd_config | grep -i allowgroups
 AllowGroups 2g-admin
 ```
 
-Run the following command to know the list of the users are belongs to this group.
+运行下列命令查看属于该用户组的用户有哪些。
 
 ```
 # getent group 2g-admin
 2g-admin:x:1005:user1,user2,user3
 ```
 
-That’s it. Just bounce the ssh service and see the magic.
+这样就行了， 现在只需要重启 ssh 服务和见证奇迹了。
 
 ```
 # systemctl restart sshd
@@ -173,22 +173,21 @@ That’s it. Just bounce the ssh service and see the magic.
 # service restart sshd
 ```
 
-Yes, `user3` is allowed to login into the system because user3 is belongs to `2g-admin` group.
-
+是的， `user1` 被允许登入系统因为用户 user1 属于 `2g-admin` 组。
 ```
 # ssh [email protected]
 [email protected]'s password:
 [[email protected] ~]$
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 02:10:21 CentOS7 sshd[5165]: Accepted password for user1 from 192.168.1.6 port 42640 ssh2
 Mar 29 02:10:22 CentOS7 sshd[5165]: pam_unix(sshd:session): session opened for user user1 by (uid=0)
 ```
 
-Yes, `user2` is allowed to login into the system because user2 is belongs to `2g-admin` group.
+是的， `user2` 被允许登入系统因为用户 user2 同样属于 `2g-admin` 组。
 
 ```
 # ssh [email protected]
@@ -196,14 +195,14 @@ Yes, `user2` is allowed to login into the system because user2 is belongs to `2g
 [[email protected] ~]$
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 02:10:38 CentOS7 sshd[5225]: Accepted password for user2 from 192.168.1.6 port 42642 ssh2
 Mar 29 02:10:38 CentOS7 sshd[5225]: pam_unix(sshd:session): session opened for user user2 by (uid=0)
 ```
 
-When you are try to login into the system with other users which are not part of this group then you will be getting an error message as shown below.
+当你尝试使用其他不在被允许的组中的用户去登入系统时， 你将会得到如下所示的错误信息。
 
 ```
 # ssh [email protected]
@@ -211,7 +210,7 @@ When you are try to login into the system with other users which are not part of
 Permission denied, please try again.
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 02:12:36 CentOS7 sshd[5306]: User ladmin from 192.168.1.6 not allowed because none of user's groups are listed in AllowGroups
@@ -221,19 +220,19 @@ Mar 29 02:12:56 CentOS7 sshd[5306]: pam_unix(sshd:auth): authentication failure;
 Mar 29 02:12:58 CentOS7 sshd[5306]: Failed password for invalid user ladmin from 192.168.1.6 port 42674 ssh2
 ```
 
-### How To Deny Group To Access SSH In Linux?
+### 如何在 Linux 中阻止用户组使用 SSH？
 
-We can deny/disable the ssh access for a particular group or groups using the following method.
+通过以下内容， 我们可以禁用指定的组或多个组使用 ssh。
 
-If you would like to disable more than one group then you need to add the group with space in the same line.
+如果你想要禁用多个用户组使用 ssh ， 那么你需要在添加用户组时在同一行中使用空格来隔开他们。
 
-To do so, just append the following value into `/etc/ssh/sshd_config` file.
+为了达到目的只需要将下面的值追加到 `/etc/ssh/sshd_config` 文件中去。
 
 ```
 # echo "DenyGroups 2g-admin" >> /etc/ssh/sshd_config
 ```
 
-You can double check this by running the following command.
+你可以运行下列命令再次检查是否添加成功。
 
 ```
 # # cat /etc/ssh/sshd_config | grep -i denygroups
@@ -243,7 +242,7 @@ DenyGroups 2g-admin
 2g-admin:x:1005:user1,user2,user3
 ```
 
-That’s it. Just bounce the ssh service and see the magic.
+这样就行了， 现在只需要重启 ssh 服务和见证奇迹了。
 
 ```
 # systemctl restart sshd
@@ -251,7 +250,7 @@ That’s it. Just bounce the ssh service and see the magic.
 # service restart sshd
 ```
 
-Yes `user3` isn’t allowed to login into the system because it’s not part of `2g-admin` group. It’s in Denygroups.
+是的 `user1` 不被允许登入系统， 因为他是 `2g-admin` 用户组中的一员。 他属于被禁用 ssh 的组中。
 
 ```
 # ssh [email protected]
@@ -259,7 +258,7 @@ Yes `user3` isn’t allowed to login into the system because it’s not part of 
 Permission denied, please try again.
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 02:17:32 CentOS7 sshd[5400]: User user1 from 192.168.1.6 not allowed because a group is listed in DenyGroups
@@ -269,15 +268,14 @@ Mar 29 02:17:38 CentOS7 sshd[5400]: pam_unix(sshd:auth): authentication failure;
 Mar 29 02:17:41 CentOS7 sshd[5400]: Failed password for invalid user user1 from 192.168.1.6 port 42710 ssh2
 ```
 
-Anyone can login into the system except `2g-admin` group. Hence, `ladmin` user is allowed to login into the system.
-
+除了 `2g-admin` 用户组之外的用户都可以使用 ssh 登入系统。 例如 Hence, `ladmin` 等用户就允许登入系统。
 ```
 # ssh [email protected]
 [email protected]'s password:
 [[email protected] ~]$
 ```
 
-Output:
+输出:
 
 ```
 Mar 29 02:19:13 CentOS7 sshd[5432]: Accepted password for ladmin from 192.168.1.6 port 42716 ssh2
@@ -290,7 +288,7 @@ via: https://www.2daygeek.com/allow-deny-enable-disable-ssh-access-user-group-in
 
 作者：[2daygeek][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[way-ww](https://github.com/way-ww)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
