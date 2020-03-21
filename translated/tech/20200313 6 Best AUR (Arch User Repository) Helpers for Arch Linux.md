@@ -1,54 +1,51 @@
 [#]: collector: (lujun9972)
 [#]: translator: (hkurj)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (6 Best AUR (Arch User Repository) Helpers for Arch Linux)
 [#]: via: (https://www.2daygeek.com/best-aur-arch-user-repository-helpers-arch-linux-manjaro/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-6个用于Arch Linux的最佳AUR（Arch用户软件仓库）助手
+6 个用于 Arch Linux 的最佳 AUR 助手
 ======
 
-Arch Linux是Linux发行版，主要基于面向x86-64微处理器计算机的二进制软件包。
+![](https://img.linux.net.cn/data/attachment/album/202003/21/082920kxdmlwkk7xx7llpw.jpeg)
 
-Arch Linux使用的是滚动发布模型，该模型频繁的将更新交付给应用程序。
+Arch Linux 是一款 Linux 发行版，主要由针对 x86-64 微处理器计算机的二进制软件包组成。Arch Linux 使用的是滚动发布模型，这种模式会频繁的给应用程序交付更新。它使用名为 [pacman][1] 的软件包管理器，可以用来安装、删除和更新软件包。
 
-它使用名为 **[pacman][1]** 的软件包管理器，它允许安装，删除和更新软件包。
+由于 Arch Linux 是为有经验的用户构建的，建议新手在使用过其他 Linux 后再来尝试。
 
-由于Arch Linux是为有经验的用户构建的，建议新手在使用其他Linux后再来尝试。
+### 什么是 AUR（Arch 用户软件仓库）？
 
-### 什么是AUR（Arch用户软件仓库）？
+[Arch 用户软件仓库][2] 通常称为 AUR，是给 Arch 用户的基于社区的软件存储库。
 
-[Arch用户软件仓库][2]通常称为AUR，是Arch用户基于社区的软件存储库。
+根据软件包在  AUR 社区的流行程度，用户编译的软件包会进入到 Arch 的官方存储库。
 
-AUR社区用户根据软件包流行程度编译进入Arch官方存储库。
+### 什么是 AUR 助手？
 
-### 什么是AUR助手？
+[AUR 助手][3]是一个包装程序，允许用户从 AUR 存储库安装软件包，而无需手动干预。
 
-[AUR助手][3]是一个包装程序，允许用户从AUR存储库安装软件包，而无需手动干预。
+很多用例实现了自动化，比如包搜索、解决依赖关系、检索和构建 AUR 包、Web 内容检索和 AUR 包提交之类。
 
-很多用法实现了自动化，比如包搜索，解决依赖关系，检索和构建AUR包，Web内容检索和AUR包提交之类。
+以下列出了 6 种最佳的 AUR 助手：
 
-**以下列出了6种最佳的AUR助手：**
+* Yay（Yet another Yogurt）
+* Pakku
+* Pacaur
+* Pikaur
+* Trizen
+* Aura
 
-  * Yay (Yet another Yogurt)
-  * Pakku
-  * Pacaur
-  * Pikaur
-  * Trizen
-  * Aura
+### 1）Yay（Yet another Yogurt）
 
+[Yay][4] 是 Arch Linux 下基于 CLI 的最佳 AUR 助手，使用 Go 语言编写。Yay 是基于 yaourt、apacman 和 pacaur 设计的。
 
-### 1) Yay (Yet another Yogurt)
+这是最合适推荐给新手的 AUR 助手。类似于 Pacman，其使用方法和 `pacman` 中的命令和选项很相似，可以让用户在搜索过程中找到匹配的软件包提供程序，并进行选择。
 
-[Yay][4]是Arch Linux下基于CLI的最佳AUR助手，使用GO语言编写。 Yay基于yaourt，apacman和pacaur设计。
+#### 如何安装 yay
 
-这是给推荐新手最合适的AUR助手。使用方法和pacman使用的命令选项很相似，允许用户在搜索过程中找到匹配的软件包提供程序并可供选择。
-
-### 如何安装yay
-
-依次运行以下命令以在Arch Linux的系统上安装。
+依次运行以下命令以在 Arch Linux 系统上安装。
 
 ```
 $ sudo pacman -S git go base-devel
@@ -56,23 +53,24 @@ $ git clone https://aur.archlinux.org/yay.git
 $ cd yay
 $ makepkg -si
 ```
-### 如何使用yay
 
-yay语法与pacman相同，使用以下命令安装软件包。
+#### 如何使用 yay
+
+`yay` 语法与 `pacman` 相同，使用以下命令安装软件包。
 
 ```
 $ yay -s arch-wiki-man
 ```
 
-### 2) Pakku
+### 2）Pakku
 
-[Pakku][5]可以被视为一个初始阶段的Pacman。 它是一个包装程序，允许用户从AUR搜索或安装软件包。
+[Pakku][5] 可以被视为一个初始阶段的 Pacman。它是一个包装程序，可以让用户从 AUR 中搜索或安装软件包。
 
-它在删除依赖项方面做得不错，并且还允许通过克隆PKGBUILD来安装软件包。
+它在删除依赖项方面做得不错，并且还允许通过克隆 PKGBUILD 来安装软件包。
 
-### 如何安装Pakku
+#### 如何安装 Pakku
 
-要在Arch Linux的系统上安装pakku，请一一运行以下命令。
+要在 Arch Linux 的系统上安装 Pakku，请依次运行以下命令。
 
 ```
 $ sudo pacman -S git base-devel
@@ -81,23 +79,23 @@ $ cd pakku
 $ makepkg -si
 ```
 
-### 如何使用Pakku
+#### 如何使用 Pakku
 
-pakku语法与pacman相同，使用以下命令安装软件包。
+`pakku` 语法与 `pacman` 相同，使用以下命令安装软件包。
 
 ```
 $ pakku -s dropbox
 ```
 
-### 3) Pacaur
+### 3）Pacaur
 
-另一个基于CLI的AUR助手，可帮助减少用户提示交互。
+另一个基于 CLI 的 AUR 助手，可帮助减少用户与提示符的交互。
 
-[Pacaur][6]专为倾向于自动化重复任务的高级用户而设计。 用户需要熟悉makepkg及其配置的AUR手动构建过程。
+[Pacaur][6] 专为倾向于自动化重复任务的高级用户而设计。用户需要熟悉 `makepkg` 及其配置的 AUR 手动构建过程。
 
-### 如何安装Pacaur
+#### 如何安装 Pacaur
 
-要在Arch Linux的系统上安装pakku，请一一运行以下命令。
+要在 Arch Linux 的系统上安装 Pakku，请依次运行以下命令。
 
 ```
 $ sudo pacman -S git base-devel
@@ -106,22 +104,23 @@ $ cd pacaur
 $ makepkg -si
 ```
 
-### 如何使用Pacaur
+#### 如何使用 Pacaur
 
-Pacaur语法与pacman相同，使用以下命令安装软件包。
+`pacaur` 语法与 `pacman` 相同，使用以下命令安装软件包。
+
 ```
 $ pacaur -s spotify
 ```
 
-### 4) Pikaur
+### 4）Pikaur
 
-[Pikaur][7]是具有最小依赖性的AUR助手，可以一次查看所有PKGBUILD，无需用户交互即可全部构建。
+[Pikaur][7] 是具有最小依赖性的 AUR 助手，可以一次查看所有 PKGBUILD，无需用户交互即可全部构建。
 
-Pikaur将通过控制pacman来告知Pacman下一个步骤。
+Pikaur 将通过控制 `pacman` 命令来告知 Pacman 要执行的下一个步骤。
 
-### 如何安装Pikaur
+#### 如何安装 Pikaur
 
-要在Arch Linux的系统上安装pakku，请一一运行以下命令。
+要在 Arch Linux 的系统上安装 Pakku，请依次运行以下命令。
 
 ```
 $ sudo pacman -S git base-devel
@@ -129,23 +128,24 @@ $ git clone https://aur.archlinux.org/pikaur.git
 $ cd pikaur
 $ makepkg -fsri
 ```
-### 如何使用Pikaur
 
-Pikaur语法与pacman相同，使用以下命令安装软件包。
+#### 如何使用 Pikaur
+
+`pikaur` 语法与 `pacman` 相同，使用以下命令安装软件包。
 
 ```
 $ pacaur -s spotify
 ```
 
-### 5) Trizen
+### 5）Trizen
 
-[Trizen][8]是用Perl编写的基于命令行的AUR轻量级包装器。 面向速度的AUR助手，它允许用户搜索，安装软件包，还允许阅读AUR软件包注释。
+[Trizen][8] 是用 Perl 编写的基于命令行的 AUR 轻量级包装器。这个面向速度的 AUR 助手，它允许用户搜索、安装软件包，还允许阅读 AUR 软件包注释。
 
-支持编辑文本文件，并且输入/输出使用UTF-8。 内置与pacman的交互功能。
+支持编辑文本文件，并且输入/输出使用 UTF-8。内置与 `pacman` 的交互功能。
 
-### 如何安装Trizen
+#### 如何安装 Trizen
 
-要在Arch Linux的系统上安装pakku，请一一运行以下命令。
+要在 Arch Linux 的系统上安装 Trizen，请依次运行以下命令。
 
 ```
 $ sudo pacman -S git base-devel
@@ -153,24 +153,24 @@ $ git clone https://aur.archlinux.org/trizen.git
 $ cd trizen
 $ makepkg -si
 ```
-### 如何使用Trizen
-### How to Use Trizen
 
-Trizen语法与pacman相同，使用以下命令安装软件包。
+#### 如何使用 Trizen
+
+`trizen` 语法与 `pacman` 相同，使用以下命令安装软件包。
 
 ```
 $ pacaur -s google-chrome
 ```
 
-### 6) Aura
+### 6）Aura
 
-[Aura][9]是用Haskell编写的，用于Arch Linux和AUR的安全，多语言包管理器。 它支持许多Pacman操作和子选项，可轻松进行开发并编写精美的代码。
+[Aura][9] 是用 Haskell 编写的，是用于 Arch Linux 和 AUR 的安全的多语言包管理器。它支持许多Pacman 操作和子选项，可轻松进行开发并编写精美的代码。
 
-它可以自动从Arch用户软件仓库安装软件包。使用Aura时，用户通常会在系统升级方面遇到困难。
+它可以自动从 AUR 安装软件包。使用 Aura 时，用户通常会在系统升级方面遇到一些困难。
 
-### 如何安装Aura
+#### 如何安装 Aura
 
-要在Arch Linux的系统上安装pakku，请一一运行以下命令。
+要在 Arch Linux 的系统上安装 Pakku，请依次运行以下命令。
 
 ```
 $ sudo pacman -S git base-devel
@@ -179,9 +179,9 @@ $ cd aura
 $ makepkg -si
 ```
 
-### 如何使用Aura
+#### 如何使用 Aura
 
-Aura语法与pacman相同，使用以下命令安装软件包。
+`aura` 语法与 `pacman` 相同，使用以下命令安装软件包。
 
 ```
 $ pacaur -s android-sdk
@@ -189,7 +189,7 @@ $ pacaur -s android-sdk
 
 ### 结论
 
-用户可以凭借这些分析在上述6个AUR助手中进行选择。
+用户可以凭借这些分析在上述 6 个 AUR 助手中进行选择。
 
 --------------------------------------------------------------------------------
 
@@ -198,7 +198,7 @@ via: https://www.2daygeek.com/best-aur-arch-user-repository-helpers-arch-linux-m
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[hkurj](https://github.com/hkurj)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
