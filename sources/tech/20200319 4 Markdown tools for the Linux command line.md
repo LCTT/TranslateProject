@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: (wxy)
+[#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (4 Markdown tools for the Linux command line)
