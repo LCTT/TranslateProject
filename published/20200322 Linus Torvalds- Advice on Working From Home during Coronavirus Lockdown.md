@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12029-1.html)
 [#]: subject: (Linus Torvalds’ Advice on Working From Home during Coronavirus Lockdown)
 [#]: via: (https://itsfoss.com/torvalds-remote-work-advice/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -14,7 +14,7 @@ Linus Torvalds 关于在冠状病毒禁足期间在家工作的建议
 
 如果你还不知道（怎么可能不知道），[Linus Torvalds][2] 是 Linux 的创建者，也是 [Git][3] 的创建者，而所有这一切都是他在家里工作时做的。这是 2016 年的视频，Torvalds 展示了他的家庭办公室：
 
-- [video](https://youtu.be/SOXeXauRAm0)
+- [video](https://img.linux.net.cn/static/video/Linus%20Torvalds%20Guided%20Tour%20of%20His%20Home%20Office-SOXeXauRAm0.mp4)
 
 因此，在本文中，我将分享我关注的一些主要要点，以及来自 Linus Torvalds 接受 ZDNet [Steven J. Vaughan-Nichols][4] 采访互动时的回应。
 
