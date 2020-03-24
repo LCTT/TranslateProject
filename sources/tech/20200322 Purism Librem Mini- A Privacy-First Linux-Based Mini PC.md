@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Purism Librem Mini: A Privacy-First Linux-Based Mini PC)
-[#]: via: (https://itsfoss.com/purism-librem-mini/)
-[#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
+[#]: collector: "lujun9972"
+[#]: translator: "wxy "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Purism Librem Mini: A Privacy-First Linux-Based Mini PC"
+[#]: via: "https://itsfoss.com/purism-librem-mini/"
+[#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 
 Purism Librem Mini: A Privacy-First Linux-Based Mini PC
 ======
