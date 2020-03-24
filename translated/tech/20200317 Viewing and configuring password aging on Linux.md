@@ -7,20 +7,19 @@
 [#]: via: (https://www.networkworld.com/article/3532815/viewing-and-configuring-password-aging-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Viewing and configuring password aging on Linux
+在 Linux 上查看和配置密码时效
 ======
-With proper settings, Linux users can be forced to periodically change their passwords. Here's how to view password aging settings and how to configure some of the settings.
-BlueBay2014 / Getty Images
+使用正确的设置，可以强制 Linux 用户定期更改密码。以下是查看密码时效以及如何更改其中设置的方法。。
 
-User passwords on Linux systems can be configured to be permanent or can be set to expire so that individuals must reset them periodically. Periodic password changing is generally considered good practice for security reasons, but is not configured by default.
+可以将 Linux 系统上的用户密码配置为永久或设置过期，以让人们必须定期重置它们。出于安全原因，通常认为定期更改密码是一种好习惯，但默认未配置。
 
-To view and modify password-aging settings, you need to be familiar with a couple important commands – the **chage** command along with its **-l** option and the **passwd** command with its **-S**. These commands, along with a few other **chage** commands that are used to configure password aging are described in this post.
+要查看和修改密码时效，你需要熟悉几个重要的命令：**chage** 命令及其 **-l ** 选项，以及 **passwd**命令及其 **-S** 选项。本文会介绍这些命令，还有其他一些 **chage** 命令来配置密码时效。
 
 [[Get regularly scheduled insights by signing up for Network World newsletters.]][1]
 
-### Viewing password aging settings
+### 查看密码时效设置
 
-The way to determine if password aging is in place for some particular account is to use the **chage** command as shown below. Note that root authority is needed to check any account other than your own. Notice the password expiration date below.
+确定某个特定帐户是否已设置密码时效的方法是使用如下 **chage** 命令。请注意，除了你自己的帐户以外，其他任何帐户都需要 root 权限。请注意下面的密码到期日期。
 
 ```
 $ sudo chage -l dory
@@ -33,7 +32,7 @@ Maximum number of days between password change          : 90
 Number of days of warning before password expires       : 14
 ```
 
-If password aging is _not_ being applied, the account information would look like this:
+如果未应用密码时效，那么帐户信息将如下所示：
 
 ```
 $ sudo chage -l nemo
@@ -46,26 +45,26 @@ Maximum number of days between password change          : 99999
 Number of days of warning before password expires       : 7
 ```
 
-You can also view some of this information using the **passwd -S** command, but you'll need to know what each of the fields in the output represents:
+你也可以使用 **passwd -S** 命令查看某些信息，但是你需要知道输出中的每个字段代表什么：
 
 ```
 dory$ passwd -S
 dory P 03/15/2020 10 90 14 -1
 ```
 
-The seven fields here represent:
+这里的七个字段代表：
 
-  * 1 –  username
-  * 2 – account status (L=locked, NP=no password, P=usable password)
-  * 3 – date of the last password change
-  * 4 – minimum age for a change (password cannot be changed if it isn’t this many days old)
-  * 5 – maximum age (password must be changed by the time it gets this many days old)
-  * 6 – number of days before a required change that warnings will be provided
-  * 7 – number of days after password expires before it is locked (made inactive)
+  * 1 – 用户名
+  * 2 - 帐户状态（L=锁定，NP=无密码，P=可用密码）
+  * 3 –上次密码更改的日期
+  * 4 – 可更改最低时效（如果没有这么多天，则不能更改密码）
+  * 5 – 最长时效（这些天后，密码必须更改）
+  * 6 – 密码过期前提前警告的天数
+  * 7 – 密码过期后锁定之前的天数（设为无效）
 
 
 
-One interesting thing to note is that the **chage** command doesn’t show you if an account is locked; it only shows the password aging settings. The **passwd -S** command, on the other hand, will tell you when a password is locked. In this example, note that the account status is “L”:
+需要注意的一件事是，**chage** 命令不会显示帐户是否被锁定；它仅显示密码时效设置。另一方面，**passwd -S** 命令将告诉你密码被锁定的时间。在此例中，请注意帐户状态为 “L”：
 
 [][2]
 
@@ -74,14 +73,14 @@ $ sudo passwd -S dorothy
 dorothy L 07/09/2019 0 99999 7 10
 ```
 
-This locking takes effect in the **/etc/shadow** file with the field that normally contains the password "hash" field becoming just a "!".
+该锁定在 **/etc/shadow** 文件中生效，通常会将包含密码的“哈希”字段变为 “！”。
 
 ```
 $ sudo grep dorothy /etc/shadow
 dorothy:!:18086:0:99999:7:10::    <==
 ```
 
-That fact that an account is locked is not obvious in the **chage** output:
+帐户被锁定的事实在 **chage** 输出中并不明显：
 
 ```
 $ sudo chage -l dorothy
@@ -94,9 +93,9 @@ Maximum number of days between password change          : 99999
 Number of days of warning before password expires       : 7
 ```
 
-### Some options for password aging
+### 密码时效的一些选项
 
-The most commonly used settings are for the minimum and maximum days. These are often used in combination. For example, you might configure a password so that it cannot be used for more than 90 days (maximum) and then add that it cannot be changed before it has been in effect for a week or 10 days (minimum days). This ensures that users won’t change a password when required and then immediately change it back to what it was previously.
+最常用的设置是最短和最长的天数。它们经常结合使用。例如，你可以配置一个密码，使其最长不能使用超过 90 天（最大），然后添加一个有效期为一周或 10 天（最小）的密码。这样可以确保用户不会在需要更改密码后马上改回以前的密码。
 
 ```
 $ sudo chage -M 90 -m 10 shark
@@ -110,7 +109,8 @@ Maximum number of days between password change          : 90    <==
 Number of days of warning before password expires       : 7
 ```
 
-You can also set a specific expiration date for an account using the **-E** option.
+你还可以使用 **-E** 选项为帐户设置特定的到期日期。
+
 
 ```
 $ sudo chage -E 2020-11-11 tadpole
@@ -124,9 +124,9 @@ Maximum number of days between password change          : 99999
 Number of days of warning before password expires       : 7
 ```
 
-Password aging can be an important option as long as it doesn't encourage users to use passwords that are way too simple or write them down in insecure ways. For more information on controlling the character of passwords (e.g., combinations of uppercase and lowercase letters, digits, etc.), check out this post on [password complexity][3].
+密码时效可能是一个重要的选择，只要它不鼓励用户使用过于简单的密码或以不安全的方式写下来即可。有关控制密码字符（例如，大小写字母、数字等的组合）的更多信息，请参考这篇关于[密码复杂度][3]的文章。
 
-Join the Network World communities on [Facebook][4] and [LinkedIn][5] to comment on topics that are top of mind.
+加入 [Facebook][4] 和 [LinkedIn][5] 上的 Network World 社区，评论热门主题。
 
 --------------------------------------------------------------------------------
 
@@ -134,7 +134,7 @@ via: https://www.networkworld.com/article/3532815/viewing-and-configuring-passwo
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
