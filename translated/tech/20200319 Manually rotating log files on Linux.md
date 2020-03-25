@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Manually rotating log files on Linux)
@@ -10,29 +10,25 @@
 在 Linux 系统中手动滚动日志
 ======
 
-[deovolenti][1] [(CC BY 2.0)][2]
+![](https://img.linux.net.cn/data/attachment/album/202003/25/223932xqibwq5fafx5ao3f.jpg)
 
-<ruby>日志滚动<rt>log rotation</rt></ruby>在 Linux 系统上是在常见不过的一个功能了，它为系统监控和故障排查保留必要的日志内容，同时又防止过多日志堆积在单个日志文件当中。
+<ruby>日志滚动<rt>log rotation</rt></ruby>在 Linux 系统上是再常见不过的一个功能了，它为系统监控和故障排查保留必要的日志内容，同时又防止过多的日志造成单个日志文件太大。
 
-日志滚动的过程是这样的：在一组日志文件之中，编号最大的一个日志文件会被删除，其余的日志文件编号则依次增大并取代较旧的日志文件。这一个过程很容易就可以实现自动化，在细节上还能按需作出微调。
-
-[[Get regularly scheduled insights by signing up for Network World newsletters.]][3]
+日志滚动的过程是这样的：在一组日志文件之中，编号最大的（最旧的）一个日志文件会被删除，其余的日志文件编号则依次增大并取代较旧的日志文件，而较新的文件则取代它作为当前的日志文件。这一个过程很容易就可以实现自动化，在细节上还能按需作出微调。
 
 使用 `logrotate` 命令可以手动执行日志滚动的操作。本文将要介绍的就是手动进行日志滚动的方法，以及预期产生的结果。
 
 文中出现的示例适用于 Ubuntu 等 Linux 系统，对于其它类型的系统，日志文件和配置文件可能会有所不同，但日志滚动的过程是大同小异的。
 
-### 为什么需要日志滚动
+### 为什么需要滚动日志
 
-一般情况下，Linux 系统会每隔一天（或间隔更长的时间）就自动进行一次日志滚动，因此需要手动执行日志滚动的场景并不多，除非有些日志的体积确实比较大。如果你需要释放存储空间，又或者将某一部分日志文件从活动的日志中分割出来，得当的日志滚动就是很方便的解决方法。
+一般情况下，无需手动旋转日志文件。Linux 系统会每隔一天（或间隔更长的时间）或根据日志文件的大小自动进行一次日志滚动。如果你需要滚动日志以释放存储空间，又或者将某一部分日志从当前的活动中分割出来，这很容易做到，具体要取决于文件滚动规则。
 
 ### 一点背景介绍
 
-在 Linux 系统安装完成后就已经有很多日志文件被纳入到日志滚动的范围内了，另外，一些应用程序在安装时也会为自己产生的日志文件设置滚动规则。一般来说，日志滚动的配置文件会放置在 `/etc/logrotate.d`。如果你想了解日志滚动的详细实现，可以参考[这篇以前的文章][4]。
+在 Linux 系统安装完成后就已经有很多日志文件被纳入到日志滚动的范围内了。另外，一些应用程序在安装时也会为自己产生的日志文件设置滚动规则。一般来说，日志滚动的配置文件会放置在 `/etc/logrotate.d`。如果你想了解日志滚动的详细实现，可以参考[这篇以前的文章][4]。
 
-在日志滚动的过程中，活动日志会以一个新名称命名，例如 `log.1`，之前被命名为 `log.1` 的文件则会被重命名为 `log.2`，以此类推。在这一组文件中，最旧的日志文件（假如名为 `log.7`）会从系统中删除。日志滚动时文件的命名方式、保留日志文件的数量等参数是由 `/etc/logrotate.d` 目录中的配置文件决定的，因此你可能会看到有些日志文件只有少数几次滚动，而有些日志文件的滚动次数远大于 7 次。
-
-[][5]
+在日志滚动的过程中，活动日志会以一个新名称命名，例如 `log.1`，之前被命名为 `log.1` 的文件则会被重命名为 `log.2`，依此类推。在这一组文件中，最旧的日志文件（假如名为 `log.7`）会从系统中删除。日志滚动时文件的命名方式、保留日志文件的数量等参数是由 `/etc/logrotate.d` 目录中的配置文件决定的，因此你可能会看到有些日志文件只保留少数几次滚动，而有些日志文件的滚动次数会到 7 次或更多。
 
 例如 `syslog` 在经过日志滚动之后可能会如下所示（注意，行尾的注释部分只是说明滚动过程是如何对文件名产生影响的）：
 
@@ -48,7 +44,7 @@ $ ls -l /var/log/syslog*
 -rw-r----- 1 syslog adm  211074 Mar  4 00:00 /var/log/syslog.7.gz <== 之前的 syslog.6.gz
 ```
 
-你可能会发现，除了活动日志和最新一次滚动的日志文件之外，其余的文件都已经被压缩以节省存储空间。这样设计的原因是大部分系统管理员都只需要查阅最新的日志文件，其余的日志文件压缩起来，需要的时候可以解压查阅，这是一个很好的折中方案。
+你可能会发现，除了当前活动的日志和最新一次滚动的日志文件之外，其余的文件都已经被压缩以节省存储空间。这样设计的原因是大部分系统管理员都只需要查阅最新的日志文件，其余的日志文件压缩起来，需要的时候可以解压查阅，这是一个很好的折中方案。
 
 ### 手动日志滚动
 
@@ -58,7 +54,18 @@ $ ls -l /var/log/syslog*
 $ sudo logrotate -f /etc/logrotate.d/rsyslog
 ```
 
-值得一提的是，`logrotate` 命令使用 `/etc/logrotate.d/rsyslog` 这个配置文件，并通过了 `-f` 参数实行“强制滚动”。因此，整个过程将会是：删除 `syslog.7.gz`，将原来的 `syslog.6.gz` 命名为 `syslog.7.gz`，将原来的 `syslog.5.gz` 命名为 `syslog.6.gz`，将原来的 `syslog.4.gz` 命名为 `syslog.5.gz`，将原来的 `syslog.3.gz` 命名为 `syslog.4.gz`，将原来的 `syslog.2.gz` 命名为 `syslog.3.gz`，将原来的 `syslog.1.gz` 命名为 `syslog.2.gz`，但新的 `syslog` 文件不一定会创建。你可以按照下面的几条命令执行操作，以确保文件的属主和权限正确：
+值得一提的是，`logrotate` 命令使用 `/etc/logrotate.d/rsyslog` 这个配置文件，并通过了 `-f` 参数实行“强制滚动”。因此，整个过程将会是：
+
+- 删除 `syslog.7.gz`，
+- 将原来的 `syslog.6.gz` 命名为 `syslog.7.gz`，
+- 将原来的 `syslog.5.gz` 命名为 `syslog.6.gz`，
+- 将原来的 `syslog.4.gz` 命名为 `syslog.5.gz`，
+- 将原来的 `syslog.3.gz` 命名为 `syslog.4.gz`，
+- 将原来的 `syslog.2.gz` 命名为 `syslog.3.gz`，
+- 将原来的 `syslog.1.gz` 命名为 `syslog.2.gz`，
+- 但新的 `syslog` 文件不一定必须创建。
+
+你可以按照下面的几条命令执行操作，以确保文件的属主和权限正确：
 
 ```
 $ sudo touch /var/log/syslog
@@ -90,7 +97,7 @@ endscript
 }
 ```
 
-下面是用户登录日志文件 `wtmp` 手动日志滚动的示例。由于 `/etc/logrotate.d/wtmp` 中有 `rotate 2` 的配置，因此系统中只保留了两份 `wtmp` 日志文件。
+下面是手动滚动记录用户登录信息的 `wtmp` 日志的示例。由于 `/etc/logrotate.d/wtmp` 中有 `rotate 2` 的配置，因此系统中只保留了两份 `wtmp` 日志文件。
 
 滚动前：
 
@@ -122,9 +129,6 @@ $ grep wtmp /var/lib/logrotate/status
 "/var/log/wtmp" 2020-3-12-11:52:57
 ```
 
-欢迎加入 [Facebook][6] 和 [LinkedIn][7] 上的 Network World 社区参与话题评论。
-
-
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3531969/manually-rotating-log-files-on-linux.html
@@ -132,7 +136,7 @@ via: https://www.networkworld.com/article/3531969/manually-rotating-log-files-on
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
