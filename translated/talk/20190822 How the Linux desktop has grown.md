@@ -5,70 +5,69 @@
 [#]: url: ( )
 [#]: subject: (How the Linux desktop has grown)
 [#]: via: (https://opensource.com/article/19/8/how-linux-desktop-grown)
-[#]: author: (Jim Hall https://opensource.com/users/jim-hallhttps://opensource.com/users/jason-bakerhttps://opensource.com/users/jlacroixhttps://opensource.com/users/doni08521059https://opensource.com/users/etc-eterahttps://opensource.com/users/marcobravohttps://opensource.com/users/alanfdoss)
+[#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 
-How the Linux desktop has grown
+Linux 桌面成长之旅
 ======
-Since the early 1990s, the Linux desktop has matured from a simple
-window manager to a full desktop. Join us on a journey through the
-history of the Linux desktop.
+> 自 1990 年代初以来，Linux 桌面已从简单的窗口管理器发展为完整的桌面。与我们一起来探索 Linux  桌面的历史。
+
 ![Person typing on a 1980's computer][1]
 
-I first installed Linux in 1993. At that time, you really didn't have many options for installing the operating system. In those early days, many people simply copied a running image from someone else. Then someone had the neat idea to create a "distribution" of Linux that let you customize what software you wanted to install. That was the Softlanding Linux System (SLS) and my first introduction to Linux.
+我首次安装 Linux 是 1993 年。那时，安装这种操作系统没有太多的选择。早期，许多人只是从别人那里复制一个正在运行的镜像。然后有人想到了一个精巧的主意，创建一个 Linux 的“发行版”，使你可以自定义要安装的软件。那就是 Softlanding Linux 系统（SLS），也是我首次见到了 Linux。
 
-My '386 PC didn't have much memory, but it was enough. SLS 1.03 required 2MB of memory to run, or 4MB if you wanted to compile programs. If you wanted to run the X Window System, you needed a whopping 8MB of memory. And my PC had just enough memory to run X.
+我的 386 PC 虽然内存不多，但也足够了。SLS 1.03 需要 2MB 的内存才能运行，如果要编译程序，则需要 4MB 的内存。如果要运行 X Window 系统，则需要多达 8MB 的内存！而我的电脑正好有足够的内存来运行 X Window 系统。
 
-As I'd grown up with the command line, a graphical user interface wasn't essential to me. But it sure was convenient. I could run applications in different windows and easily switch between tasks.
+因为我是在命令行中成长的，图形用户界面对我来说并不是必不可少的。但它确实很方便。我可以在不同的窗口中运行应用程序，并轻松地在任务之间切换。
 
-From my first experiment with Linux, I was hooked. I've stuck with Linux on my desktop ever since. Like many people, I ran Linux in a dual-boot configuration for a while so I could jump back to MS-DOS and Windows to run certain programs. Until 1998, when I finally took the plunge and went all-in with Linux.
+从我首次体验 Linux 开始，我就迷上了它。从那以后，我一直在台式机上使用 Linux。和许多人一样，我在双引导配置下运行 Linux 已有一段时间，因此我可以跳回到 MS-DOS 和 Windows 来运行某些程序。直到 1998 年，我终于冒了个险，全面投身于 Linux 之中。
 
-Over the last 26 years, I have watched the Linux desktop mature. I've also tried an interesting combination of desktop environments over that time, which I'll share by taking a journey through the history of the Linux desktop.
+在过去的 26 年中，我目睹了 Linux 桌面的成熟。在那段时间里，我还尝试了一种有趣的桌面环境组合，我会在下面通过 Linux 桌面的历史之旅分享它。
 
-### X and window managers
+### X 和窗口管理器
 
-The first "desktops" on Linux weren't yet desktops. Instead, they were _window managers_ running on the X Window System. X provided the basic building blocks for a graphical user interface, such as creating windows on the screen and providing keyboard and mouse input. By itself, X didn't do much. To make the X graphical environment useful, you needed a way to manage all the windows in your session. That's where the _window manager_ came in. Running an X program like xterm or xclock opens that program in a window. The window manager keeps track of windows and does basic housekeeping, such as letting you move windows around and minimize them. The rest is up to you. You could launch programs when X started by listing them in the **~/.xinitrc** file, but usually, you'd run new programs from an xterm.
+Linux 上的第一个“桌面”其实不是桌面。相反，它们是运行在 X Window 系统上的“<ruby>窗口管理器<rt>window manager</rt></ruby>”（WM）。X 提供了图形用户界面的基本组件，如在屏幕上创建窗口以及提供键盘和鼠标输入。就其本身而言，X 并没有做太多事情。为了使 X 图形环境能够用起来，你需要一种方法来管理会话中的所有窗口。这就出现了<ruby>窗口管理器<rt>window manager</rt></ruby>。运行 xterm 或 xclock 之类的 X 程序会在一个窗口中打开该程序。窗口管理器会跟踪窗口并进行基本的内部管理，例如让你可以来回移动窗口并将其最小化。其余的事情取决于你自己。你可以通过将程序名列在 `~/ .xinitrc` 文件中以在 X 开始时启动这些程序，但是通常，你会从 xterm 中运行新程序。
 
-The most common window manager in 1993 was TWM, which dates back to 1988. TWM was quite simple and provided only basic window management.
+在 1993 年，最常见的窗口管理器是 TWM，它的历史可以追溯到 1988 年。TWM 极其简单，仅仅提供了基本的窗口管理功能。
 
 ![TWM on SLS 1.05][2]
 
-TWM on SLS 1.05 showing xterm, xclock, and the Emacs editor
+*SLS 1.05 上的 TWM，显示了 xterm、xclock 和 Emacs 编辑器*
 
-Yet another early window manager was the OpenLook Virtual Window Manager (OLVWM). OpenLook was a graphical user interface developed by Sun Microsystems in the 1980s and later ported to other Unix platforms. As a _virtual_ window manager, OLVWM supported multiple workspaces.
+另一个早期的窗口管理器是 OpenLook 虚拟窗口管理器（OLVWM）。OpenLook 是 Sun 微系统公司在 1980 年代开发的图形用户界面，后来又移植到其他 Unix 平台。作为一个*虚拟*窗口管理器，OLVWM 支持多个工作区。
 
 ![OLVWM on SLS 1.05][3]
 
-OLVWM on SLS 1.05 showing xterm and the Virtual Workspaces selector
+*SLS 1.05 上的 OLVWM，显示了 xterm 和虚拟工作区选择器*
 
-When Linux began to grow in popularity, it didn't take long for others to create new window managers with smoother performance and improved interfaces. The first of these new window managers was FVWM, a virtual window manager. FVWM sported a more modern look than TWM or OLVWM. But we didn't yet have a desktop.
+当 Linux 开始流行时，没多久就有人创建出具有更流畅性能和改进界面的新的窗口管理器。这些新的窗口管理器中首先出现的是虚拟窗口管理器 FVWM。FVWM 比 TWM 或 OLVWM 更具现代感。但是，我们仍然没有桌面。
 
 ![FVWM on SLS 1.05][4]
 
-FVWM on SLS 1.05 showing xterm and a file manager
+*SLS 1.05 上的 FVWM，显示了 xterm 和文件管理器*
 
-To modern eyes, TWM and FVWM may look pretty plain. But it's important to remember what other graphical environments looked like at the time. The then-current version of Windows looked rather simple. Windows versions 1 through 3 used a plain launcher called the Program Manager.
+以现代的眼光来看，TWM 和 FVWM 可能看起来很普通。但重要的是要想想当时其它图形环境的外观。 Windows 当时的版本看起来也相当简单。Windows 版本 1 到版本 3 使用了一个称为“程序管理器”的普通启动器。
 
 ![Windows 3.11][5]
 
-Windows 3.11 showing the Program Manager and the Notepad editor
+*Windows 3.11，显示程序管理器和记事本编辑器*
 
-In August 1995, Microsoft released Windows 95 and changed the modern PC desktop landscape. Certainly, I was impressed. I thought Windows 3.x was ungainly and ugly, but Windows 95 was smooth and pretty. More importantly, Windows 95 was what we now consider a _desktop_. The new desktop metaphor was a huge step forward. You could put icons on the desktop—and in fact, Windows 95 presented two default desktop icons, for My Computer (to open a file manager) and the Recycle Bin (where you put files to be deleted later).
+1995 年 8 月，微软发布了 Windows 95，改变了现代 PC 桌面的格局。当然，我对此印象深刻。我觉得 Windows 3.x 笨拙而丑陋，但 Windows 95 却流畅而漂亮。更重要的是，我们现在将 Windows 95 视为“ **桌面**”。新的“桌面”隐喻是向前迈出的一大步。你可以在桌面上放置图标——实际上，Windows 95 提供了两个默认的桌面图标，分别是“我的电脑”（用于打开文件管理器）和“回收站”（用于放置以后要删除的文件）。
 
-But more importantly, the Windows 95 desktop meant _integration_. The Program Manager was gone, replaced by a Taskbar at the bottom of the screen that let you launch new programs using a simpler Start menu. The Taskbar was multifunctional and also showed your running programs via a series of buttons and a dock showing the time, speaker volume, and other simple controls. You could right-click on any object on the new desktop, and Windows 95 would present you with a context-sensitive menu with actions you could perform.
+但是，更重要的是，Windows 95 桌面的意味着*集成*。程序管理器不见了，取而代之的是屏幕底部的任务栏，可让你使用更简单的“开始”菜单启动新程序。任务栏是多功能的，还通过一系列的按钮显示了你正在运行的程序，而托盘显示了时间、扬声器音量和其它简单的控件。你可以在这个新桌面上右键单击任何对象， Windows 95 会为你提供一个上下文相关的菜单，其中包含你可以执行的操作。
 
 ![Windows 95][6]
 
-Windows 95 showing the Notepad editor
+*Windows 95，显示了记事本编辑器*
 
-The Windows 95 interface was slick and much easier to use than previous versions of Windows—and even other Linux window managers. Not to be outdone, Linux developers created a new version of FVWM that mimicked the Windows 95 interface. Called FVWM95, the new window manager still wasn't a desktop, but it looked very nice. The new taskbar let you start new X programs using the Start menu. The taskbar also showed your running programs using buttons similar to Windows 95's.
+与以前版本的 Windows 甚至其它 Linux 窗口管理器相比，Windows 95 的界面更加流畅并且易于使用。值得一提的是，Linux 开发人员创建了一个模仿 Windows 95 界面的 FVWM 的新版本。名为 FVWM95 的新窗口管理器仍然不是桌面，但看起来非常漂亮。新的任务栏使你可以使用“开始”菜单启动新的 X 程序。任务栏还使用类似于 Windows 95 的按钮显示了正在运行的程序。
 
 ![FVWM95 on Red Hat Linux 5.2][7]
 
-FVWM95 on Red Hat Linux 5.2 showing xterm and a quick-access program launcher with icons for xterm, the file manager, and other programs
+*在 Red Hat Linux 5.2 上的 FVWM95，显示了 xterm 和一个带有 xterm 图标、文件管理器和其他程序的快速访问程序启动器*
 
-While FVWM95 and other window managers were improving, the core problem remained: Linux didn't really have a desktop. It had a collection of window managers, and that was about it. Linux applications that used a graphical user interface (GUI, pretty much meaning they were X applications) all looked different and worked differently. You couldn't copy and paste from one application to another, except the simple text-only copy/paste provided by the X Window System. What Linux really needed was a complete redo in its GUI to create the first desktop.
+在 FVWM95 和其他窗口管理器还在改进的同时，核心问题仍然存在：Linux 并没有真正的桌面。它具有一堆窗口管理器，仅此而已。使用图形用户界面的 Linux 应用程序（基本上意味着它们是 X 应用程序）看起来形态各异且工作方式也不同。除了 X Window 系统提供的简单的纯文本复制/粘贴功能外，你无法从一个应用程序复制和粘贴到另一个应用程序里。Linux 真正需要的是在其图形用户界面中完全重新打造以创建它的第一个桌面。
 
-### The first Linux desktop
+### Linux 桌面之初啼
 
 In 1996, Matthias Ettrich was troubled by the inconsistency of Linux applications under X. He wanted to make the graphical environment easy to use. And more importantly, he wanted to make everything _integrated_—like an actual desktop.
 
