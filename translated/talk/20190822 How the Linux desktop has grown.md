@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/19/8/how-linux-desktop-grown)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 
-Linux 桌面成长之旅
+Linux 桌面史话
 ======
 > 自 1990 年代初以来，Linux 桌面已从简单的窗口管理器发展为完整的桌面。与我们一起来探索 Linux  桌面的历史。
 
@@ -69,29 +69,25 @@ Linux 上的第一个“桌面”其实不是桌面。相反，它们是运行�
 
 ### Linux 桌面之初啼
 
-In 1996, Matthias Ettrich was troubled by the inconsistency of Linux applications under X. He wanted to make the graphical environment easy to use. And more importantly, he wanted to make everything _integrated_—like an actual desktop.
+在 1996 年，Matthias Ettrich 感于 X 之下 Linux 应用程序体验不一致的困扰。他想使找个图形环境更易于使用，而且更重要的是，他想使所有东西都像实际的桌面一样“集成”在一起。
 
-Matthias started work on the K Desktop Environment. That's K for "Kool." But the name KDE was also meant to be a play on the Common Desktop Environment (CDE) that was the standard in the "Big Unix" world. Although by 1996, CDE was looking pretty dated. CDE was based on the Motif widget set, which is the same design that FVWM mimicked. Finalized in July 1998, KDE 1.0 was a definite improvement over plain window managers like FVWM95.
-
+Matthias 开始研究<ruby>K 桌面环境<rt>K Desktop Environment</rt></ruby>（KDE）。那个 K 代表着 “Kool”（LCTT 译注：即 Cool）。但是 KDE 这个名字也意味着可以在<ruby>通用桌面环境<rt>Common Desktop Environment</rt></ruby>（CDE）上发挥作用，而通用桌面环境是“大 Unix”世界的标准。尽管到了 1996 年，CDE 看起来已经有点过时了。CDE 基于 Motif 部件集，这与 FVWM 模仿的设计相同。KDE  1.0 于 1998 年 7 月完成，是对 FVWM95 等普通窗口管理器的绝对改进。
+ 
 ![KDE 1.0][8]
 
-K Desktop Environment (KDE) version 1.0
+*K 桌面环境（KDE）版本 1.0 图片来源：Paul Brown / KDE*
 
-Image credit: Paul Brown / KDE
+KDE 是 Linux 向前迈出的一大步。最终，Linux 有了一个具有应用程序集成和更现代的桌面图标的真正的桌面。KDE 的设计与 Windows 95 并无不同。屏幕底部有一个任务栏，它提供与 Windows 95 的“开始”菜单等效的功能以及一些应用程序快捷方式。KDE 还支持虚拟桌面，它们被巧妙地标记为 “One”、“ Two”、“Three” 和 “Four”。而正在运行的应用程序则通过屏幕顶部单独的任务栏中的按钮表示。
 
-KDE was a big step forward for Linux. Finally, Linux had a true desktop with application integration and more modern desktop icons. KDE's design was not dissimilar from Windows 95. You had a kind-of taskbar along the bottom of the screen that provided the equivalent of Windows 95's Start menu as well as several application shortcuts. KDE also supported virtual desktops, which were cleverly labeled One, Two, Three, and Four. Running applications were represented via buttons in a separate taskbar at the top of the screen.
+但是并不是每个人都对 KDE 感到满意。为了从系统中抽象出 GUI 来，KDE 使用了 Trolltech 的 Qt 工具套件库。不幸的是，Qt 并不是以自由软件的许可证进行分发的。Trolltech 允许 Qt 免费在自由软件应用程序中使用，但在商业或专有应用程序中要收取使用费。而且这种二分法与自由软件不符。这给 Linux 发行版带来了问题：它们应该包括 KDE 吗？还是默认使用较旧而属于自由软件的图形用户界面（例如 FVWM）？
 
-But not everyone was happy with KDE. To abstract the GUI from the system, KDE used Trolltech's Qt toolkit library. Unfortunately, Qt was not distributed under a free software license. Trolltech allowed Qt to be used at no charge in free software applications but charged a fee to use it in commercial or proprietary applications. And that dichotomy is not aligned with free software. This caused problems for Linux distributions: Should they include KDE? Or default to an older but free software graphical user interface like FVWM?
-
-In response, Miguel de Icaza and Federico Mena started work in 1997 on a new Linux desktop. The new project was dubbed GNOME, for GNU Network Object Model Environment. GNOME aimed to be completely free software and used a different toolkit, called GTK, from the GIMP image editor. GTK literally stood for GIMP Tool Kit. When GNOME 1.0 was finally released in 1999, Linux had another modern desktop environment.
+面对这种情况，Miguel de Icaza 和 Federico Mena 于 1997 年开始开发新的 Linux 桌面上。这个新项目被称为 GNOME，即<ruby>GNU 网络对象模型环境<rt>GNU Network Object Model Environment</rt></ruby>的缩写。GNOME 旨在成为完全自由的软件，并使用了来自 GIMP 图像编辑器中的另一种工具套件（称为 GTK）。 GTK 从字面上代表 <ruby>GIMP 工具套件<rt>GIMP Tool Kit</rt></ruby>。当 GNOME  1.0 最终于 1999 年发布时，Linux 有了另一个现代化的桌面环境。
 
 ![GNOME 1.0][9]
 
-GNOME version 1.0
+*GNOME 1.0 版 图片来源：GNOME 文档项目*
 
-Image credit: GNOME Documentation Project
-
-While it was great to have two desktop environments for Linux, the "KDE versus GNOME" rivalry continued for some time. By 1999, Trolltech re-released the Qt library under a new public license, the Q Public License (QPL). But the new license carried its own baggage—the QPL only applied to Qt's use in open source software projects, not commercial projects. Thus the Free Software Foundation deemed the QPL [not compatible][10] with the GNU General Public License (GNU GPL). This licensing issue would remain until Trolltech re-re-released the Qt library under the GNU GPL version 2 in 2000.
+有两个 Linux 桌面环境固然很棒，但“KDE 与 GNOME”之争仍持续了一段时间。到 1999 年，Trolltech 以新的公共许可证 <ruby>Q 公共许可证<rt>Q Public License</rt></ruby>（QPL）重新发布了 Qt 库。但是，新许可证有其自己的包袱—-QPL 仅适用于 Qt 在开源软件项目中的使用，而不适用于商业项目。因此，<ruby>自由软件基金会<rt>Free Software Foundation</rt></ruby>（FSF）认为 QPL 与 <ruby>GNU 通用公共许可证<rt>GNU General Public License</rt></ruby>（GNU GPL）[不兼容][10]。在 Trolltech 在 2000 年根据 GNU GPL v2 重新发布 Qt 库之前，这个许可证问题一直存在。
 
 ### Development over time
 
