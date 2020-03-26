@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (robsean)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,34 +7,34 @@
 [#]: via: (https://itsfoss.com/beautiful-linux-distributions/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Here Are The Most Beautiful Linux Distributions in 2020
+2020 年最漂亮的 Linux 发行版
 ======
 
-It’s a no-brainer that there’s a Linux distribution for every user – no matter what they prefer or what they want to do.
+每个 Linux 用户都有一个 Linux 发行版是不需要考虑的 – 不管他们喜欢什么，或者想做什么
 
-Starting out with Linux? You can go with the [Linux distributions for beginners][1]. Switching from Windows? You have [Windows-like Linux distributions][2]. Have an old computer? You can [use lightweight Linux distros][3].
+刚开始使用 Linux ？你可以使用 [面向初学者的 Linux 发行版][1] 。来自 Windows ？你可以拥有[像 Windows 一样的 Linux发行版][2]。你拥有一台旧电脑？你可以 [使用轻量级 Linux 发行版][3] 。
 
-In this list, I’m going to focus only on the most beautiful Linux distros out there.
+在这个列表中，我只关注最漂亮的 Linux 发行版。
 
-### Top 7 Most Beautiful Linux Distributions
+### 7 款最漂亮的 Linux 发行版
 
 ![][4]
 
-Wait! Is there a thing called a beautiful Linux distribution? Is it not redundant considering the fact that you can customize the looks of any distribution and make it look better with [themes][5] and [icons][6]?
+等一下！有一个可以称为最漂亮的 Linux 发行版的东西存在吗？不需要考虑的事实是，你可以自定义容易发行版的外观，并使用 [主题][5] 和 [图标]][6] 来使其看起来更漂亮。
 
-You are right about that. But here, I am talking about the distributions that look great without any tweaks and customization effort from the user’s end. These distros provide a seamless, pleasant desktop experience right out of the box.
+你说得对。但是在这里，我所说的发行版看起来好极了，不需要用户端的任何调整和自定义工作。这些发行版提供友好的无缝转换的开箱即用的桌面体验。
 
-**Note:** _The list is in no particular order of ranking._
+**注意：** _列表排名不分前后。_
 
 #### 1\. elementary OS
 
 ![][7]
 
-elementary OS is one of the most beautiful Linux distros out there. It leans on a macOS-ish look while providing a great user experience for Linux users. If you’re already comfortable macOS – you will have no problem using the elementary OS.
+这里的 elementary OS 是一个最漂亮的 Linux 发行版。在为 Linux 用户提供一种极好的体验的同时，它倾向于一种 macOS 的外观。如果你已经适应了 macOS – 那么你在使用 elementary OS 时，将没有任何问题。
 
-Also, elementary OS is based on Ubuntu – so you can easily find plenty of applications to get things done.
+此外，elementary OS 也同样基于 Ubuntu – 因此你可以很容易地找到大量的应用程序来把事情做好。
 
-Not just limited to the look and feel – but the elementary OS is always hard at work to introduce meaningful changes. So, you can expect the user experience to improve with every update you get.
+不紧紧局限于外观和感觉 – elementary OS 也努力地引入重要的更改。因此，你可以期待每次更新后所带来的用户体验。
 
 [elementary OS][8]
 
@@ -42,11 +42,11 @@ Not just limited to the look and feel – but the elementary OS is always hard a
 
 ![][9]
 
-Deepin is yet another beautiful Linux distro originally based on Debian’s stable branch. The animations (look and feel) could be too overwhelming for some – but it looks pretty.
+Deepin 是另一个漂亮的 Linux 发行版，起初基于 Debian 的稳定版本分支。对于一些人来说，动画效果(外观和感觉)可能太过令人不知所措 – 但是它看起来很漂亮。
 
-It features its own Deepin Desktop Environment that involves a mix of essential features for the best user experience possible. It may not exactly resemble the UI of any other distribution but it’s quite easy to get used to.
+它以拥有自己的 Deepin 桌面环境为特色，涉及到一些基本功能的组合，以获得尽可能好的用户体验。它可能与任何其它的发行版的用户界面都不相似，但是它很容易习惯的。
 
-My personal attention would go to the control center and the color scheme featured in Deepin OS. You can give it a try – it’s worth taking a look.
+我个人的注意力将转向 Deepin OS 中的控制中心和特色配色方案。你也尝试一下 – 它是值得一看的。
 
 [Deepin][10]
 
@@ -54,11 +54,11 @@ My personal attention would go to the control center and the color scheme featur
 
 ![][11]
 
-Pop!_OS manages to offer a great UI on top of Ubuntu while offering a pure [GNOME][12] experience.
+Pop!_OS 成功地在 Ubuntu 的上层提供一个的极好用户界面，与此同时也提供一种纯净的 [GNOME][12] 体验。
 
-It also happens to be my personal favorite which I utilize as my primary desktop OS. Pop!_OS isn’t flashy – nor involves any fancy animations. However, they’ve managed to get things right by having a perfect combo of icon/themes – while polishing the user experience from a technical point of view.
+它也碰巧也是我个人的最爱，我使用它作为我的主要桌面系统。Pop!_OS 既不浮华，也不是涉及一些花哨的动画。不过，它们通过图标和主题的完美组合成来解决问题 – 在此期间从技术角度提升用户体验。
 
-I don’t want to initiate a [Ubuntu vs Pop OS][13] debate but if you’re used to Ubuntu, Pop!_OS can be a great alternative for potentially better user experience.
+我不想发起一场 [Ubuntu 和 Pop OS][13] 的争论，但是如果你已经习惯了 Ubuntu ，为获取更好的潜在的用户体验，Pop!_OS 可能是一个极好的可供选择的系统。
 
 [Pop!_OS][14]
 
@@ -66,11 +66,11 @@ I don’t want to initiate a [Ubuntu vs Pop OS][13] debate but if you’re used 
 
 ![][15]
 
-Manjaro Linux is an [Arch][16]-based Linux distribution. While [installing Arch Linux][17] is a slightly complicated job, Manjaro provides an easier and smoother Arch experience.
+Manjaro Linux 是一个基于 [Arch][16] 的 Linux 发行版。然而 [安装 Arch Linux][17] 是一件稍微复杂的工作，Manjaro 提供了一种更舒适、更流畅的 Arch 体验。
 
-It offers a variety of [desktop environment editions][18] to choose from while downloading. No matter what you choose, you still get enough options to customize the look and feel or the layout.
+它提供各种各样的 [桌面环境版本][18] 来供下载时选择。不管你选择哪一个，你都仍然有足够的选择权来自定义外观和感觉或布局。
 
-To me, it looks quite fantastic for an Arch-based distribution that works out of the box – you can give it a try!
+对我来说，一个开箱即用的基于 Arch 的发行版看起来极好。 – 你可以试一试！
 
 [Manjaro Linux][19]
 
@@ -78,13 +78,13 @@ To me, it looks quite fantastic for an Arch-based distribution that works out of
 
 ![][20]
 
-[KDE Neon][21] is for the users who want a simplified approach to the design language but still get a great user experience.
+[KDE Neon][21] 是为那些想简单接近设计语言的用户所准备的，the design language 但是仍能获得良好的用户体验。
 
-It is a lightweight Linux distro which is based on Ubuntu. As the name suggests, it features the KDE Plasma desktop and looks absolutely beautiful.
+它是一个基于 Ubuntu 的轻量级 Linux 发行版。顾名思义，它以 KDE Plasma 桌面和精美绝伦为特色。
 
-KDE Neon gives you the latest and greatest KDE Plasma desktop and KDE applications. Unlike [Kubuntu][22] or other KDE-based distributions, you don’t have to wait for months to get the new [KDE software][23].
+KDE Neon 给予你最新的、最好的 KDE Plasma 桌面及KDE 应用程序。不像 [Kubuntu][22] 或其它基于 KDE 的发行版，你不需要等待数月来获取新的 [KDE 软件][23] 。
 
-You get a lot of customization options built-in with the KDE desktop – so feel free to try it out!
+你可以在 KDE 桌面中获取很多内置的自定义选项 – 所以你可以随意使用！
 
 [KDE Neon][24]
 
@@ -92,11 +92,11 @@ You get a lot of customization options built-in with the KDE desktop – so feel
 
 ![][25]
 
-Without a doubt, Zorin OS is an impressive Linux distro that manages to provide a good user experience – even with its lite edition.
+毫无疑问，Zorin OS 是一个令人印象深刻的 Linux 发行版，它设法提供一个良好的用户体验 – 即使使用它的精简版本。
 
-You can try either the full version or the lite edition (with [Xfce desktop][26]). The UI is tailored for Windows and macOS users to get used to. While based on Ubuntu, it provides a great user experience with what it has to offer.
+你可以尝试完整版本或精简版本(使用 [Xfce 桌面][26]) 。该用户界面专门为习惯于 Windows 和 macOS 的用户定制。虽然基于 Ubuntu ，它仍然能提供一种极好的用户体验。
 
-If you start like its user interface – you can also try [Zorin Grid][27] to manage multiple computers running Zorin OS at your workplace/home. With the ultimate edition, you can also control the layout of your desktop (as shown in the image above).
+如果你开始喜欢它的用户界面 – 在你也可以尝试 [Zorin Grid][27] 来管理在工作区/家庭中运行的 Zorin OS的 计算机。使用终极版本，你也可以控制你的桌面布局 (如上图所示)。
 
 [Zorin OS][28]
 
@@ -104,33 +104,33 @@ If you start like its user interface – you can also try [Zorin Grid][27] to ma
 
 ![][29]
 
-[Nitrux OS][30] is a unique take on a Linux distribution which is somewhat based on Ubuntu – but not completely.
+[Nitrux OS][30] 是一个独特的 Linux 发行版，它某种程度上基于 Ubuntu – 但是不完全基于 Ubuntu 。
 
-It focuses on providing a good user experience to the users who are looking for a unique design language with a fresh take on a Linux distro. It uses Nomad desktop which is based on KDE.
+对于正在寻找在 Linux 发行版上使用全新方式的独特设计语言的用户来说，它专注于提供一种良好的用户体验。它使用基于 KDE 的 Nomad 桌面。
 
-Nitrux encourages to use of [AppImage][31] for applications. But you can also use Arch Linux’s pacman package manager in Nitrux which is based on Ubuntu. Awesome, isn’t it?
+Nitrux 鼓励使用 [AppImage][31] 应用程序。但是在 基于 Ubuntu 的 Nitrux 中你也可以使用 Arch Linux 的 pacman 软件包管理器。令人惊叹，不是吗？
 
-Even if it’s not the perfect OS to have installed (yet), it sure looks pretty and good enough for most of the basic tasks. You can also know more about it when you read our [interview with Nitrux’s founder][32].
+尽管它尚不是用来安装的完美的操作系统，它确实看起来很漂亮，并且对大多数基本任务来说已经足够了。当你阅读我们的 [ Nitrux 创始人的采访][32] 时，你可以了解更多。
 
-Here’s a slightly old video of Nitrux but it still looks good:
+这是一个稍微过时的 Nitrux 视频，但是它仍然看起来很好：
 
 [Nitrux OS][33]
 
-#### Bonus: eXtern OS (in ‘stagnated’ development)
+#### 意外：eXtern OS (处于‘停滞’ 开发阶段)
 
 ![][34]
 
-If you want to try an experimental Linux distro, extern OS is going to be beautiful.
+如果你想尝试一个实验性的 Linux 发行版，extern OS 将会非常出色。
 
-It isn’t actively maintained and should not be used for production systems. Yet, it provides unique user experience (thought not polished enough).
+它并没有被积极地维护，因此不应该用于生产系统。但是，它提供独特的用户体验(尽管还不够完美无缺)。
 
-Just for the sake of trying a good-looking Linux distro, you can give it a try to experience it.
+只为尝试一个好看的 Linux 发行版，你可以尝试体验一下。
 
 [eXtern OS][35]
 
-**Wrapping Up**
+**总结**
 
-Now, as the saying goes, beauty lies in the eyes of the beholder. So this list of beautiful Linux distributions is from my point of view. Feel free to disagree (politely of course) and mention your favorites.
+现在，俗话说，情人眼里出西施。所以这份来自我眼中的最漂亮 Linux 发行版列表。你可以随意提出不同的意见 (当然要礼貌一点)，并提及你最喜欢的 Linux 发行版。
 
 --------------------------------------------------------------------------------
 
@@ -138,7 +138,7 @@ via: https://itsfoss.com/beautiful-linux-distributions/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
