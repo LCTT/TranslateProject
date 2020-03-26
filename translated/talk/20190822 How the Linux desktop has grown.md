@@ -75,7 +75,7 @@ Matthias 开始研究<ruby>K 桌面环境<rt>K Desktop Environment</rt></ruby>�
  
 ![KDE 1.0][8]
 
-*K 桌面环境（KDE）版本 1.0 图片来源：Paul Brown / KDE*
+*K 桌面环境（KDE）版本 1.0。图片来源：Paul Brown / KDE*
 
 KDE 是 Linux 向前迈出的一大步。最终，Linux 有了一个具有应用程序集成和更现代的桌面图标的真正的桌面。KDE 的设计与 Windows 95 并无不同。屏幕底部有一个任务栏，它提供与 Windows 95 的“开始”菜单等效的功能以及一些应用程序快捷方式。KDE 还支持虚拟桌面，它们被巧妙地标记为 “One”、“ Two”、“Three” 和 “Four”。而正在运行的应用程序则通过屏幕顶部单独的任务栏中的按钮表示。
 
@@ -85,81 +85,69 @@ KDE 是 Linux 向前迈出的一大步。最终，Linux 有了一个具有应用
 
 ![GNOME 1.0][9]
 
-*GNOME 1.0 版 图片来源：GNOME 文档项目*
+*GNOME 1.0 版。图片来源：GNOME 文档项目*
 
 有两个 Linux 桌面环境固然很棒，但“KDE 与 GNOME”之争仍持续了一段时间。到 1999 年，Trolltech 以新的公共许可证 <ruby>Q 公共许可证<rt>Q Public License</rt></ruby>（QPL）重新发布了 Qt 库。但是，新许可证有其自己的包袱—-QPL 仅适用于 Qt 在开源软件项目中的使用，而不适用于商业项目。因此，<ruby>自由软件基金会<rt>Free Software Foundation</rt></ruby>（FSF）认为 QPL 与 <ruby>GNU 通用公共许可证<rt>GNU General Public License</rt></ruby>（GNU GPL）[不兼容][10]。在 Trolltech 在 2000 年根据 GNU GPL v2 重新发布 Qt 库之前，这个许可证问题一直存在。
 
-### Development over time
+### 随着时间的发展
 
-The Linux desktop continued to mature. KDE and GNOME settled into a friendly competition that pushed both to add new features and to exchange ideas and concepts. By 2004, both GNOME and KDE had made significant strides, yet brought only incremental changes to the user interface.
+Linux 桌面继续成熟。KDE 和 GNOME 进行了一场友好的竞争，不仅增加了新功能，还互相交流了思想和观念。到 2004 年，GNOME 和 KDE 都取得了长足的进步，但用户界面只是在原有基础上添加了一些变化。
 
-KDE 2 and 3 continued to rely on a taskbar concept at the bottom of the screen but incorporated the buttons for running applications. One of KDE's most visible changes was the addition of the Konqueror browser, which first appeared in KDE 2.
+KDE 2 和 3 继续依赖屏幕底部的任务栏概念，但并入了用于运行应用程序的按钮。KDE 最明显的变化之一是添加了 Konqueror 浏览器，该浏览器首次出现在 KDE 2 中。
 
 ![KDE 2.2.2 \(2001\) showing the Konqueror browser][11]
 
-KDE 2.2.2 (2001) showing the Konqueror browser
-
-Image credit: Paul Brown / KDE
+*KDE 2.2.2（2001），显示了 Konqueror 浏览器。图片来源：Paul Brown / KDE*
 
 ![KDE 3.2.2][12]
 
-KDE 3.2.2 (2004) on Fedora Core 2 showing the Konqueror file manager (using a Fedora Core 2 theme)
+*Fedora Core 2 上的 KDE 3.2.2（2004），显示了 Konqueror 文件管理器（使用 Fedora Core 2 主题）*
 
-GNOME 2 also used a taskbar concept but split the bar into two: a taskbar at the top of the screen to launch applications and respond to desktop alerts, and a taskbar at the bottom of the page to show running applications. On my own, I referred to the two taskbars as "things you can do" (top) and "things are you doing" (bottom). In addition to the streamlined user interface, GNOME also added an updated file manager called Nautilus, developed by Eazel.
+GNOME 2 还使用了任务栏概念，但将其分为两个部分：位于屏幕顶部的任务栏以启动应用程序并响应桌面警报，以及位于页面底部的任务栏以显示正在运行的应用程序。我自己将这两个任务栏称之为“你可以做的事情”（顶部）和“你正在做的事情”（底部）。除了精简的用户界面外，GNOME 还添加了由 Eazel 开发的名为 Nautilus 的更新文件管理器。
 
 ![GNOME 2.6.0][13]
 
-GNOME 2.6.0 (2004) on Fedora Core 2 showing the Nautilus file manager (using a Fedora Core 2 theme)
+*Fedora Core 2 上的 GNOME 2.6.0（2004），显示了 Nautilus 文件管理器（使用 Fedora Core 2 主题）*
 
-Over time, KDE and GNOME have taken different paths. Both provide a feature-rich, robust, and modern desktop environment—but with different user interface goals. In 2011, there was a major deviation between how GNOME and KDE approached the desktop interface. KDE 4.6 (January 2011) and KDE 4.7 (July 2011) provided a more traditional desktop metaphor while continuing to rely on the taskbar concept familiar to many users. Of course, KDE saw lots of changes under the hood, but the familiar look and feel remained.
+随着时间的流逝，KDE 和 GNOME 走了不同的路径。两者都提供了功能丰富、健壮且现代化的桌面环境，但是却具有不同的用户界面目标。2011 年，GNOME 和 KDE 处理桌面界面的方式之间存在重大偏差。KDE 4.6（2011 年 1 月）和 KDE 4.7（2011 年 7 月）提供了更传统的桌面感受，同时继续根植于许多用户熟悉的任务栏概念。当然，可以看到 KDE 发生很多变化，但是它仍然保留了熟悉的外观。
 
 ![KDE 4.6][14]
 
-KDE 4.6 showing the Gwenview image viewer
+*KDE 4.6，显示 Gwenview 图像查看器。图片来源：KDE*
 
-Image credit: KDE
+2011 年，GNOME 通过新的桌面概念彻底改变了走向。GNOME 3 旨在创建一个更简单、更精简的桌面体验，使用户可以专注于自己的工作。任务栏消失了，取而代之的是屏幕顶部的黑色状态栏，其中包括音量和网络控件，显示了时间和电池状态，并允许用户通过重新设计过的菜单启动新程序。
 
-In 2011, GNOME completely changed gears with a new desktop concept. GNOME 3 aimed to create a simpler, more streamlined desktop experience, allowing users to focus on what they were working on. The taskbar disappeared, replaced by a black status bar at the top of the screen that included volume and network controls, displayed the time and battery status, and allowed users to launch new programs via a redesigned menu.
-
-The menu was the most dramatic change. Clicking the Activities menu or moving the mouse into the Activities "hot corner" showed all open applications as separate windows. Users could also click an Applications tab from the Overview to start a new program. The Overview also provided an integrated search function.
+菜单的变化最具最戏剧性。单击“活动”菜单或将鼠标移到“活动”的“热角”，会将所有打开的应用程序显示为单独的窗口。用户还可以从概述中单击“应用程序”选项卡以启动新程序。“概述”还提供了内部集成的搜索功能。
 
 ![GNOME 3.0][15]
 
-GNOME 3.0 showing the GNOME Pictures application
-
-Image credit: GNOME
+*GNOME 3.0，显示 GNOME 图片应用程序。图片来源：GNOME*
 
 ![GNOME 3.0][16]
 
-GNOME 3.0 showing the Activities Overview
+*GNOME 3.0，显示活动概述。图片来源：GNOME*
 
-Image credit: GNOME
+### 你的桌面之选
 
-### Your choice of desktop
+拥有两个 Linux 桌面意味着用户有很多选择。有些人喜欢 KDE，而另一些人喜欢 GNOME。没关系，选择最适合你的桌面就行。
 
-Having two desktops for Linux means users have great choice. Some prefer KDE and others like GNOME. That's fine. Pick the desktop that best suits you.
+可以肯定的是，KDE 和 GNOME 都有拥护者和批评者。例如，GNOME 放弃任务栏以支持“活动概述”而受到了很多批评。也许最著名的批评家是 Linus Torvalds，他在 2011 年[大声斥责并抛弃了][17]新的 GNOME，将其视为“邪恶的烂摊子”，然后在两年后[回到了][18] GNOME。
 
-To be sure, both KDE and GNOME have fans and detractors. For example, GNOME received a fair bit of criticism for dropping the taskbar in favor of the Activities Overview. Perhaps the most well-known critic was Linus Torvalds, who [loudly denounced and abandoned][17] the new GNOME as an "unholy mess" in 2011—before [moving back][18] to GNOME two years later.
+其他人也对 GNOME 3 提出了类似的批评，以至于一些开发人员复刻 GNOME 2 的源代码来创建 MATE 桌面。MATE（是<ruby>MATE 高级传统环境<rt>MATE Advanced Traditional Environment</rt></ruby>的递归缩写）延续了 GNOME 2 的传统任务栏界面。
 
-Others have made similar criticisms of GNOME 3, to the point that some developers forked the GNOME 2 source code to create the MATE desktop. MATE (which stands for MATE Advanced Traditional Environment) continues the traditional taskbar interface from GNOME 2.
-
-Regardless, there's no doubt that the two most popular Linux desktops today are KDE and GNOME. Their current versions are both very mature and packed with features. Both KDE 5.16 (2019) and GNOME 3.32 (2019) try to simplify and streamline the Linux desktop experience—but in different ways. GNOME 3.32 continues to aim for a minimal appearance, removing all distracting user interface elements so users can focus on their applications and work. KDE 5.16 takes a more familiar approach with the taskbar but has added other visual improvements and flair, especially around improved widget handling and icons.
+无论如何，毫无疑问当今两个最受欢迎的 Linux 桌面是 KDE 和 GNOME。它们的当前版本非常成熟，并且具有很多功能。 KDE 5.16（2019）和 GNOME 3.32（2019）都试图简化和精简 Linux 桌面体验，但是方式有所不同。GNOME 3.32 继续致力于极简外观，删除所有分散用户注意力的用户界面元素，以便用户可以专注于其应用程序和工作。 KDE 5.16 在任务栏上采用了更为熟悉的方法，但是增加了其他视觉上的改进和特质，尤其是围绕改进的小部件处理和图标。
 
 ![KDE 5.16 Plasma][19]
 
-KDE 5.16 Plasma
-
-Image credit: KDE
+*KDE 5.16 Plasma。图片来源：KDE*
 
 ![GNOME 3.32][20]
 
-GNOME 3.32
+*GNOME 3.32。图片来源：GNOME*
 
-Image credit: GNOME
+同时，你也不会完全失去它们之间的兼容性。每个主要的 Linux 发行版都提供兼容性库，因此你可以在运行 GNOME 时从 KDE 运行应用程序。在当你实际要使用的应用程序是为其他桌面环境编写的时候，这非常有用。 你可以在 GNOME 上运行 KDE 应用程序，反之亦然。
 
-At the same time, you don't completely lose out on compatibility. Every major Linux distribution provides compatibility libraries, so you can run applications from, say, KDE while running GNOME. This is immensely useful when an application you really want to use is written for the other desktop environment—not a problem; you can run KDE applications on GNOME and vice versa.
-
-I don't see this changing anytime soon. And I think that's a good thing. Healthy competition between KDE and GNOME has allowed developers in both camps to push the envelope. Whether you use KDE or GNOME, you have a modern desktop with great integration. And above all, this means Linux has the best feature in free software: choice.
+我认为这种态势不会很快改变，这是一件好事。KDE 和 GNOME 之间的良性竞争使这两个阵营的开发人员都可以避免故步自封。无论你使用 KDE 还是 GNOME，你都将拥有一个集成度很高的现代化桌面。最重要的是，这意味着 Linux 拥有自由软件的最佳特性：选择。
 
 --------------------------------------------------------------------------------
 
@@ -167,7 +155,7 @@ via: https://opensource.com/article/19/8/how-linux-desktop-grown
 
 作者：[Jim Hall][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
