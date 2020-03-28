@@ -49,92 +49,90 @@ Tyson 明白情况的紧迫性和严重性。使用合同的这种选择并不�
 
 综上所述，让我们探索正在使用或正在开发中的项目（可能很快就可以部署）。
 
-### 7 open hardware projects fighting COVID-19
+### 7 个与新冠病毒对抗的开放硬件项目
 
 #### Opentrons
 
-[Opentrons][16]' open source lab automation platform is comprised of a suite of open source hardware, verified labware, consumables, reagents, and workstations. Opentrons says its products can help dramatically [scale-up COVID-19 testing][17] with systems that can "automate up to 2,400 tests per day within days of an order being placed." It plans to ramp up to 1 million tested samples by July 1.
+[Opentrons][16] 的开源实验室自动化平台由一套开源硬件、经过验证的实验室器具、消耗品、试剂和工作站组成。Opentrons 表示，其产品可以“在下订单后几天内每天自动进行多达 2400 个测试”的系统，可以极大地帮助提高[新冠病毒测试规模][17]。它计划在 7 月 1 日之前提升多达 100 万个测试样本。
 
 ![Opentrons roadmap graphic][18]
 
-From the Opentrons [website][17], Copyright
+*来自 Opentrons [网站][17]，版权所有*
 
-The company is already working with federal and local government agencies to determine if its systems can be used for clinical diagnosis under an [emergency use authorization][19]. Opentrons is shared under an [Apache 2.0 license][20]. I first learned of it from biologist Kristin Ellis, who is affiliated with the project.
+该公司已经在与联邦和地方政府机构合作，以确定其系统是否可以在[紧急使用授权][19]下用于临床诊断。 Opentrons 在 [Apache 2.0 许可证][20]下共享。我最初是从与该项目有联系的生物学家 Kristin Ellis 斯那里得知它的。
 
-#### Chai Open qPCR
+#### Chai 的 Open qPCR
 
-Chai's [Open qPCR][21] device uses [polymerase chain reaction][22] (PCR) to rapidly test swabs from surfaces (e.g., door handles and elevator buttons) to see if the novel coronavirus is present. This open source hardware shared under an [Apache 2.0 license][23] uses a [BeagleBone][24] low-power Linux computer. Data from the Chai Open qPCR can enable public health, civic, and business leaders to make more informed decisions about cleaning, mitigation, facility closures, contract tracing, and testing.
+Chai 的 [Open qPCR][21] 设备使用[聚合酶链反应][22]（PCR）快速检测物品表面（例如，门把手和电梯按钮）上的拭子，以查看是否存在新型冠状病毒。这种在 [Apache 2.0 许可证][23]下共享的开源硬件使用 [BeagleBone][24] 低功耗 Linux 计算机。Chai 的 Open qPCR 提供的数据可以使公共卫生、公民和企业领导者做出有关清洁、缓解、关闭设施、接触追踪和测试的更明智的决策。
 
 #### OpenPCR
 
-[OpenPCR][25] is a PCR testing device kit from Josh Perfetto and Jessie Ho, the creators behind the Chai Open qPCR. This is more of a DIY open source device than their previous project, but it has the same use case: using environmental testing to identify the coronavirus in the field. As the project page states, "traditional real-time PCR machines capable of detecting these pathogens typically cost upwards of $30,000 US dollars and are not suitable for field usage." Because OpenPCR is a kit users build and is shared under a [GPLv3.0 license][26], the device aims to democratize access to molecular diagnostics.
+[OpenPCR][25] 是 Chai Open qPCR 的创建者 Josh Perfetto 和 Jessie Ho 的 PCR 测试设备套件。与以前的项目相比，这更像是一种 DIY 开源设备，但它具有相同的使用场景：使用环境测试来识别野外冠状病毒。正如该项目页面所指出的那样，“能够检测这些病原体的传统实时 PCR 机通常花费超过 30,000 美元，而且不适合在现场使用。”由于 OpenPCR 是用户构建的工具包，并且在 [GPLv3.0 许可证][26]下共享，因此该设备旨在使分子诊断的访问大众化。
 
 ![OpenPCR][27]
 
-From the OpenPCR [website][25], Copyright
+*来自 OpenPCR [网站][25]，版权所有*
 
-And, like any good open source project, there is a derivative! [WildOpenPCR][28] by [GaudiLabs][29] in Switzerland is also shared under a [GPLv3.0 license][30].
+而且，就像任何优秀的开源项目一样，它也有一个衍生产品！瑞士的 [GaudiLabs][29] 推出的  [WildOpenPCR][28] 也以 [GPLv3.0 许可证][30]共享。
 
 #### PocketPCR
 
-Gaudi Labs' [PocketPCR][31] thermocycler is used to activate biological reactions by raising and lowering the temperature of a liquid in small test tubes. It can be powered with a simple USB power adapter, either tethered to a device or on its own, with preset parameters that don't require a computer or smartphone.
+Gaudi Labs 的 [PocketPCR][31] 热循环仪可通过升高和降低小试管中液体的温度来激活生物反应。它可以通过简单的 USB 电源适配器供电，该适配器可以绑定到设备上，也可以单独使用，不需要计算机或智能手机时可使用预设参数。
 
 ![PocketPCR][32]
 
-From the PocketPCR [website][31], Copyright
+*来自 PocketPCR [网站][31]，版权所有*
 
-Like the other PCR options described in this article, this device may facilitate environmental testing for coronavirus, although its project page does not explicitly state so. PocketPCR is shared under a [GPLv3.0 license][33].
+与本文所述的其他 PCR 产品一样，此设备可能有助于对冠状病毒进行环境测试，尽管其项目页面并未明确说明。PocketPCR 在 [GPLv3.0 许可证][33]下共享。
 
-#### Open Lung Low Resource Ventilator
+#### Open Lung 低资源呼吸机
 
-The [Open Lung Low Resource Ventilator][34] is a quick-deployment ventilator that utilizes a [bag valve mask][35] (BVM), also known as an Ambu-bag, as a core component. Ambu-bags are mass-produced, certified, small, mechanically simple, and adaptable to both invasive tubing and masks. The OPEN LUNG ventilator will use micro-electronics to sense and control air pressure and flow, with the goal to enable semi-autonomous operation.
+[Open Lung 低资源呼吸机][34]是一种快速部署的呼吸机，它以[气囊阀罩][35]（BVM）（也称为 Ambu 气囊）为核心组件。Ambu 气囊已批量生产，经过认证，体积小，机械简单，并且适用于侵入性导管和口罩。 OPEN LUNG 呼吸机使用微电子技术来感测和控制气压和流量，以实现半自主运行。
 
 ![Open Lung ventilator][36]
 
-Open Lung [on GitLab][37]
+*Open Lung，[GitLab][37]*
 
-This early-stage project boasts a large team with hundreds of contributors, led by: Colin Keogh, David Pollard, Connall Laverty, and Gui Calavanti. It is shared under a [GPLv3.0 license][38].
+这个早期项目拥有一支由数百名贡献者组成的大型团队，领导者包括：Colin Keogh、David Pollard、Connall Laverty 和 Gui Calavanti。它是以 [GPLv3.0 许可证][38]共享的。
 
-#### Pandemic Ventilator
+#### Pandemic 呼吸机
 
-The [Pandemic Ventilator][39] is a DIY ventilator prototype. Like the RepRap project, it uses commonly available hardware components in its design. The project was uploaded by user Panvent to Instructables more than 10 years ago, and there are six major steps to producing it. The project is shared under a [CC BY-NC-SA license][39]. This video shows the system in action:
+[Pandemic 呼吸机][39]是 DIY 呼吸机的原型。像 RepRap 项目一样，它在设计中使用了常用的硬件组件。该项目已由用户 Panvent 于 10 多年前上传到 Instructables，并且有六个主要的生产步骤。该项目是以 [CC BY-NC-SA 许可证][39]共享的。
 
 #### Folding at Home
 
-[Folding at Home][40] is a distributed computing project for simulating protein dynamics, including the process of protein folding and the movements of proteins implicated in a variety of diseases. It is a call-to-action for citizen scientists, researchers, and volunteers to use their computers at home to help run simulations, similar to the decommissioned [SETI@Home project][41]. If you're a technologist with capable computer hardware, Folding at Home is for you.
+[Folding at Home][40] 是一个分布式计算项目，用于模拟蛋白质动力学，包括蛋白质折叠的过程以及与多种疾病有关的蛋白质运动。这是一个面向公民科学家、研究人员和志愿者的行动呼吁，类似于退役的 [SETI@Home 项目][41]中在家中使用计算机来运行解码计算。如果你是具备强大计算机硬件功能的技术人员，那么这个项目适合你。
 
 ![Markov state model][42]
 
-Vincent Voelz, CC BY-SA 3.0
+*Vincent Voelz，CC BY-SA 3.0*
 
-Folding at Home uses Markov state models (shown above) to model the possible shapes and folding pathways a protein can take in order to look for new therapeutic opportunities. You can find out more about the project in Washington University biophysicist Greg Bowman's post on [how it works and how you can help][43].
+Folding at Home 项目使用马尔可夫状态模型（如上所示）来建模蛋白质可能采取的形状和折叠途径，以寻找新的治疗机会。你可以在华盛顿大学生物物理学家 Greg Bowman 的帖子“[它是如何运作的以及如何提供帮助][43]”中找到有关该项目的更多信息。
 
-The project involves a consortium of academic laboratories, contributors, and corporate sponsors from many countries, including Hong Kong, Croatia, Sweden, and the United States. Folding at Home is shared under a [mix of GPL and proprietary licenses][44] on [GitHub][45] and is multi-platform for Windows, macOS, and GNU/Linux (e.g., Debian, Ubuntu, Mint, RHEL, CentOS, Fedora).
+该项目涉及来自许多国家（包括香港、克罗地亚、瑞典和美国）的财团的学术实验室、贡献者和公司赞助者。 在 [GitHub][45] 上，[在混合了 GPL 和专有许可证][44]下可以共享，并且可以在 Windows、macOS 和 GNU/Linux（例如 Debian、Ubuntu、Mint、RHEL、CentOS、Fedora）。
 
-### Many other interesting projects
+### 许多其他有趣的项目
 
-These projects are just a fraction of the activity happening in the open hardware space to solve or treat COVID-19. In researching this article, I discovered other projects worth exploring, such as:
+这些项目只是在开放硬件领域中解决或治疗新冠病毒活动中的一小部分。在研究本文时，我发现了其他值得探索的项目，例如：
 
-  * [Open source ventilators, oxygen concentrators, etc.][46] by Coronavirus Tech Handbook
-  * [Helpful engineering][47] by ProjectOpenAir
-  * [Open source ventilator hackathon][48] on Hackaday
-  * [Specifications for simple open source mechanical ventilator][49] by Johns Hopkins emergency medicine resident Julian Botta
-  * [Coronavirus-related phishing, malware, and randomware on the rise][50] by Shannon Morse
-  * [Converting a low-cost CPAP blower into a rudimentary ventilator][51] by jcl5m1
-  * [Forum A.I.R.E. discussion on open respirators and fans][52] (Spanish/español)
-  * [Special Issue on Open-Source COVID19 Medical Hardware][53] by Elsevier HardwareX
+* Coronavirus Tech Handbook 提供的[开源呼吸机、氧气浓缩器等][46]
+* 来自 ProjectOpenAir 的 [有用的工程][47]
+* Hackaday 上的[开源呼吸机黑客马拉松][48]
+* 约翰·霍普金斯急诊医学住院医师 Julian Botta 的[简单开源机械呼吸机规范][49]
+* [与冠状病毒有关的网络钓鱼、恶意软件和随机软件正在增加][50]，作者：Shannon Morse
+* [将低成本的 CPAP 鼓风机转换为基本通风机][51]，作者： jcl5m1
+* [A.I.R.E. 论坛上关于开放呼吸器和风扇的讨论][52]（西班牙语）
+* [关于新冠病毒的开源医疗硬件的特殊问题][53]，作者：Elsevier HardwareX
 
+这些项目遍布全球，而这种全球合作正是我们所需要的，因为病毒无视国界。新冠病毒大流行在不同时期以不同方式影响国家，因此我们需要一种分布式方法。
 
-
-These projects are based all over the world, and this type of global cooperation is exactly what we need, as the virus ignores borders. The novel coronavirus pandemic affects countries at different times and in different ways, so we need a distributed approach.
-
-As my colleague Steven Abadie and I write in the [OSHdata 2020 Report][54], the open source hardware movement is a global movement. Participating individuals and organizations with certified projects are located in over 35 countries around the world and in every hemisphere.
+正如我和同事 Steven Abadie 在 [OSHdata 2020 报告][54]中所写的那样，开源硬件运动是全球性运动。参与该认证项目的个人和组织遍布全球 35 个国家和每个半球。
 
 ![Open source hardware map][55]
 
-OSHdata, CC BY-SA 4.0 International
+*OSHdata，CC BY-SA 4.0 国际版*
 
-If you are interested in joining this conversation with open source hardware developers around the world, join the [Open Hardware Summit Discord][56] server with a dedicated channel for conversations about COVID-19. You can find roboticists, designers, artists, firmware and mechanical engineers, students, researchers, and others who are fighting this war together. We hope to see you there.
+如果你有兴趣加入这场与全球开源硬件开发人员的对话，请加入[Open Hardware Summit Discord][56]服 务器，并通过专用渠道进行有关新冠病毒的讨论。你在这里可以找到机器人专家、设计师、艺术家、固件和机械工程师、学生、研究人员以及其他共同为这场战争而战的人。希望可以看到你。
 
 --------------------------------------------------------------------------------
 
@@ -142,7 +140,7 @@ via: https://opensource.com/article/20/3/open-hardware-covid19
 
 作者：[Harris Kenny][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
