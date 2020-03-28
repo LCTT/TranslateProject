@@ -7,47 +7,47 @@
 [#]: via: (https://opensource.com/article/20/3/open-hardware-covid19)
 [#]: author: (Harris Kenny https://opensource.com/users/harriskenny)
 
-7 open hardware projects working to solve COVID-19
+应对新冠病毒事件的 7 个开放硬件项目
 ======
-Open hardware solutions can prevent the spread and suffering of the
-novel coronavirus.
+> 开放硬件解决方案可以为抵御新型冠状病毒的传播和痛苦做出贡献。
+
 ![open on blue background with heartbeat symbol][1]
 
-The open source [hardware][2] movement has long championed the importance of the right to repair, fully own the technology you buy, and be able to remix and reproduce gadgets, just like you can with music. And so, during this challenging time, open hardware is providing some answers to some of the problems created by the coronavirus pandemic.
+开源[硬件][2]运动长期以来一直主张维修权的重要性，完全拥有所购买的技术，并能够像音乐一样重新组合和复制组件。因此，在这个充满挑战的时期内，开放硬件为由冠状病毒大流行引起的一些问题提供了一些答案。
 
-### An overview of what's happening
+### 背景概述
 
-For one, hardware developers around the world are working to resolve supply chain weaknesses using open source, the same philosophy that has driven a proliferation of new software technologies over the last 30 years. The hardware movement's past successes include the [RepRap Project][3], [Open Source Ecology][4], and [Open Source Beehives][5], proving this can be done.
+首先，全球的硬件开发人员正在努力使用开源解决供应链中的弱点，在过去 30 年中，这种理念推动了新软件技术的大量涌现。过去在硬件运动方面的成功，如 [RepRap Project][3]，[Open Source Ecology][4] 和 [Open Source Beehives][5]，证明了这一点是可以做到的。
 
-There has been increasing interest in creators using 3D printing and other technologies to create replacement parts for and manufacturing of safety equipment on demand. For example, the Polytechnic University lab in Hong Kong [3D printed face shields][6] for hospital workers. And Italian startup Isinnova partnered with the FabLab in Milan to [3D-print replacement valves][7] for reanimation devices in hard-hit Northern Italy. Companies are also releasing designs to adapt our physical interactions, like this [3D printed hands-free door opener][8] from Materialise. These examples of replacing parts and solving problems are an excellent start and appear to be saving lives.
+对使用 3D 打印和其他技术按需制造安全设备的替换零件和按需生产的创作者的兴趣日益增加。例如，香港理工大学实验室为医院工作人员提供 [3D 打印面罩][6]。意大利初创公司 Isinnova 与米兰 FabLab 合作，为受重灾的意大利北部提供用于呼吸机的 [3D 打印替换阀][7]。公司们还发布了设计以适应我们的物理接触，例如 Materialise 的 [3D 打印免提开门器] [8]。这些更换零件和解决问题的示例是一个很好的起点，为挽救生命做出了努力。
 
-Another traditional hardware technique is picking up steam: sewing. The AFP reports that there is an acute need for face masks around the world and guidance from the World Health Organization about their importance. With single-use, disposable masks being prioritized for healthcare workers, in the Czech Republic people are [taking to sewing to make their own masks][9]. (Repeat-use masks do introduce sterility concerns.) The Facebook group "Czechia sews face masks" started to address this problem in their country, with tens of thousands of members using their at-home sewing machines.
+另一种传统的硬件技术正在加速发展：缝纫。法新社报道说，全球急需口罩，来自世界卫生组织的指导也指明了其重要性。随着一次性口罩要优先供给于医护人员，捷克共和国的人们[开始缝制自己的口罩][9]。（重复使用的口罩确实会带来细菌问题。）Facebook 小组“捷克缝制口罩”开始在他们的国家解决这个问题，成千上万的成员开始用起了他们的家用缝纫机。
 
-Open source hardware equipment and machinery projects are also gaining traction. First, there is testing equipment that is sophisticated and highly capable. Next, there is medical equipment that can be categorized as field-grade (at best) for scenarios with no other option. These projects are outlined in detail below.
+开源硬件设备和机械项目也越来越受欢迎。首先，有一些测试性设备具备高精度且功能强大。其次，在没有其他选择方案的情况下，有一些医疗设备可以归类为现场级（最好）。这些项目将在下面详细概述。
 
-To learn more, I spoke with Jason Huggins, founder and CEO of Chicago-based [Tapster Robotics][10]. Tapster Robotics designs and manufactures desktop robots using 3D printing, computer numerical control (CNC) machining, and open electronics like [Arduino][11]. He has both the technical know-how and the industrial capacity to make an impact. And he wants to commit his company's resources to help in this fight.
+为了解更多信息，我与总部位于芝加哥的 [Tapster Robotics][10] 的创始人兼首席执行官 Jason Huggins 进行了交谈。Tapster Robotics 使用 3 D打印、计算机数控（CNC）加工和 [Arduino][11] 等开放式电子产品设计和制造台式机器人。他兼具技术知识和工业能力，具有很高的影响力。他想投入自己公司的资源来帮助这场斗争。
 
-"Basically, we're in a World War II mobilization moment right now. Even though I'm not a doctor, we should still all follow the Hippocratic Oath. Whatever I do, I don't want to make the problem worse," Huggins explains. "As a counterpoint, there is WHO executive director Dr. Michael Ryan's comment: 'Speed trumps perfection,'" Huggins argues.
+“基本上，我们现在正处于第二次世界大战的动员时刻。即使我不是医生，我们仍然应该遵循希波克拉底誓言。无论我做什么，我都不想让问题变得更糟，” Huggins 解释。他认为：“作为对策，世卫组织执行主任 Michael Ryan 博士发表了这样的评论：‘速度胜过完美’。”
 
-> Wow.
+> 哇
 >
-> This man is the global authority on the spread of disease. If you are a leader (in any capacity) watch this. If you are not, watch it too. [pic.twitter.com/bFogaekehM][12]
+> 这个人是疾病传播的全球权威。如果您是领导者（无论以何种身份），请注意。如果不是，也请注意。 [pic.twitter.com/bFogaekehM][12]
 >
-> — Jim Richards Sh🎙wgram (@JIMrichards1010) [March 15, 2020][13]
+> — Jim RichardsSh🎙wgram（@JIMrichards1010）[2020 年 3 月 15 日][13]
 
-Huggins has extensive experience with delivering during times of need. His efforts were instrumental in helping [Healthcare.gov][14] scale after its challenging initial launch. He also created the software industry-standard testing frameworks Selenium and Appium. With this experience, his advice is well worth considering.
+Huggins 在应需提供方面具有丰富的经验。他的努力有助于 [Healthcare.gov][14] 在挑战性的最初启动后得以扩展。他还创建了软件行业标准的测试框架 Selenium 和 Appium。有了这一经验，他的建议非常值得考虑。
 
-I also spoke with Seattle-based attorney Mark Tyson of [Tyson Law][15], who works with startups and small businesses. He has direct experience working with nimble companies in rapidly evolving industries. In framing the overall question, Tyson begins:
+我还与 [Tyson Law][15] 的西雅图律师 Mark Tyson 进行了交谈，他与初创公司和小型企业合作。他在快速发展的行业中与敏捷公司合作有着直接的经验。在阐述整个问题时，Tyson 说到：
 
-> Good Samaritan laws protect volunteers—i.e., “Good Samaritans”—from being held liable as a result of their decision to give aid during an emergency. While the specifics of these laws vary by state, they share a common public policy rationale: namely, encouraging bystanders to help others facing an emergency. Conceivably, this rationale could justify application of these types of laws in less traditional settings than, say, pulling the victim of a car accident out of harm’s way.
+> 《<ruby>善良的撒玛利亚人法<rt>Good Samaritan law</rt></ruby>》保护志愿者（即“好撒玛利亚人”）免于因其决定在紧急情况下提供援助而承担责任。尽管这些法律的具体内容因州而异，但它们具有共同的公共政策依据：即鼓励旁观者帮助遇到紧急情况的其他人。可以想象，除了传统的把车祸的受害者从伤害中拉出来之外，这种理论依据可以证明在不太传统的环境中应用这类法律的合理性。
 
-Applying this specific situation, Tyson notes:
+对于这种特定情况，Tyson 指出：
 
-> "Before taking action, creators would be wise to speak with an attorney to conduct a state-specific risk assessment. It would also be prudent to ask larger institutions, like hospitals or insurers, to accept potential liability exposure via contract—for instance, through the use of indemnification agreements, whereby the hospital or its insurer agrees to indemnify the creator for liability."
+> “在采取行动之前，创客们明智的做法是与律师沟通一下，以针对特定的州进行风险评估。还应谨慎地要求大型机构（例如医院或保险公司）通过合同接受潜在的责任风险，例如，通过使用赔偿协议，使医院或其保险人同意赔偿创客们的责任。”
 
-Tyson understands the urgency and gravity of the situation. This option to use contracts is not meant to be a roadblock; instead, it may be a way to help adoption happen at scale to make a bigger difference faster. It is up to you or your organization to make this determination.
+Tyson 明白情况的紧迫性和严重性。使用合同的这种选择并不意味着障碍。相反，这可能是一种帮助其大规模采用的方法，以更快地产生更大的变化。这取决于你或你的机构。
 
-With all that said, let's explore the projects that are in use or in development (and may be available for deployment soon).
+综上所述，让我们探索正在使用或正在开发中的项目（可能很快就可以部署）。
 
 ### 7 open hardware projects fighting COVID-19
 
