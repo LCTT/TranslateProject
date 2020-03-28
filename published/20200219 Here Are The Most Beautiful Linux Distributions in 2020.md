@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12046-1.html)
 [#]: subject: (Here Are The Most Beautiful Linux Distributions in 2020)
 [#]: via: (https://itsfoss.com/beautiful-linux-distributions/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-2020 年 Linux 发行版选美大赛
+我眼中的 2020 年最漂亮的 Linux 发行版
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202003/28/103619o7gog737dg7fi9ii.jpg)
 
 以我的观点，每个人都该有一个 Linux 发行版，不管他们喜欢的是哪种，或者想用来做什么。
 
