@@ -8,15 +8,20 @@
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
 Linux firewall basics with ufw
+Linux 防火墙 ufw 简介
 ======
 We take a look at ufw - the uncomplicated firewall - on Linux, providing some insights and commands for making changes.
 Vertigo3D / Getty Images
+我们来看看 ufw - linux 上一个简单的防火墙，它提供了一些见解和进行更改的命令。
 
 The **ufw** (uncomplicated firewall) represents a serious simplification to [iptables][1] and, in the years that it’s been available, has become the default firewall on systems such as Ubuntu and Debian. And, yes, **ufw** is surprisingly uncomplicated – a boon for newer admins who might otherwise have to invest a lot of time to get up to speed on firewall management.
+**ufw** 可以说是 [iptables][1] 的简化版，在未来几年，它已经成为 Ubuntu 和 Debian 等系统上的默认防火墙。而且它并不复杂，这对新管理员来说是一个福音，否则他们可能不得不投入大量时间来加快防火墙管理的速度。
 
 GUIs are available for **ufw** (like **gufw**), but **ufw** commands are generally issued on the command line. This post examines some commands for using **ufw** and looks into how it works.
+**ufw** 也有 GUI（例如 **gufw**），但是 **ufw** 命令通常在命令行上发布。这篇文章检查了一些使用 **ufw** 的命令，并研究了它的工作方式。
 
 First, one quick way to see how **ufw** is configured is to look at its configuration file – **/etc/default/ufw**. In the command below, we display the settings, using **grep** to suppress the display of both blank lines and comments (line starting with #).
+首先，查看 **ufw** 配置方式的一种快速方法是查看其配置文件 **/etc/default/ufw**。在下面的命令中，我们显示设置，使用 **grep** 禁止显示空白行和注释（以 # 开头的行），
 
 [RELATED: Linux hardening: a 15-step checklist for a secure Linux server][2]
 
@@ -33,8 +38,10 @@ IPT_MODULES="nf_conntrack_ftp nf_nat_ftp nf_conntrack_netbios_ns"
 ```
 
 As you can see, the default policy is to drop input and allow output. Additional rules that allow the connections that you specifically want to be accept are configured separately.
+正如你所看到的，默认策略是删除输入并允许输入。允许你专门接受的连接的其它规则是单独配置的。
 
 The basic syntax for ufw commands might look like thee below, though this synopsis is not meant to imply that typing only “ufw” will get you further than a quick error telling you that arguments are required.
+ufw 命令的基本语法如下所示，尽管该提要并不意味着仅输入 ufw 将使你走的更远，而不是一个快速的错误提示你需要参数。
 
 ```
 ufw [--dry-run] [options] [rule syntax]
