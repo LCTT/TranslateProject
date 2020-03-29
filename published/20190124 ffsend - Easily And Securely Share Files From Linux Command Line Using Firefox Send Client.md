@@ -1,18 +1,20 @@
 [#]: collector: "lujun9972"
 [#]: translator: "FSSlc"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-12051-1.html"
 [#]: subject: "ffsend – Easily And Securely Share Files From Linux Command Line Using Firefox Send Client"
 [#]: via: "https://www.2daygeek.com/ffsend-securely-share-files-folders-from-linux-command-line-using-firefox-send-client/"
 [#]: author: "Vinoth Kumar https://www.2daygeek.com/author/vinoth/"
 
-ffsend - 在 Linux 命令行中通过 FireFox Send 服务来简单安全地分享文件
+ffsend：在命令行中通过 FireFox Send 分享文件
 ======
 
-Linux 用户更偏爱使用 `scp` 或 `rsync` 来进行文件或目录的复制拷贝。很多新的可选方式正发生在 Linux 上，因为 Linux 是开源的，所以任何人都可以为 Linux 开发一个安全软件。
+![](https://img.linux.net.cn/data/attachment/album/202003/29/202308w7ormrouomij2dzq.jpg)
 
-在过去我们已经写了多篇有关安全分享这个话题的文章，它们分别是 **[OnionShare][1]** , **[Magic Wormhole][2]** , **[Transfer.sh][3]** 和 **[Dcp – Dat Copy][4]**.
+Linux 用户偏爱使用 `scp` 或 `rsync` 来进行文件或目录的复制拷贝。不过在 Linux 上正出现了许多新的可选方式，因为 Linux 是开源的，所以任何人都可以为 Linux 开发一个安全软件。
+
+在过去我们已经写了多篇有关安全分享这个话题的文章，它们分别是 [OnionShare][1]、[Magic Wormhole][2]、[Transfer.sh][3] 和 [Dcp – Dat Copy][4]。
 
 今天我们甚至还将继续讨论这个话题，我们将介绍名为 `ffsend` 的工具。
 
@@ -22,33 +24,33 @@ Linux 用户更偏爱使用 `scp` 或 `rsync` 来进行文件或目录的复制�
 
 它允许我们通过一个安全、私密、加密的链接，使用一个简单的命令来轻易安全地分享文件和目录。
 
-使用 Firefox 的 Send 服务，文件可以被共享，最大允许的文件大小为 2GB（译者注：现在官网上写的是最大 1GB，登录后最大 2.5GB）。其他人可以通过这个工具或者网页浏览器来下载这些被分享的文件。
+通过 Firefox 的 Send 服务共享的文件最大大小为 2GB（LCTT 译注：现在官网上写的是最大 1GB，登录后最大 2.5GB）。其他人可以通过这个工具或者网页浏览器来下载这些分享的文件。
 
-所有的文件总是在客户端被加密，并且秘钥将不会被远程主机所分享。另外，你还可以为上传的文件设置密码。
+所有的文件都是在客户端加密的，并且秘钥将不会被共享到远程主机。另外，你还可以为上传的文件额外设置一个密码。
 
-被上传的文件在被下载（默认被下载 1 次，最多可被下载 10 次）后或者 24 小时后，它们将被自动删除。这将确保你的文件不会永远的保留在网络上。
+上传的文件在下载（默认被下载 1 次，最多可被下载 10 次）后或者 24 小时后，就会自动删除。这将确保你的文件不会一直保留在网络上。
 
-该工具当前处于 alpha 阶段，使用时请自担风险。而且，当前只有有限个安装选项可用。
+该工具当前处于 alpha 阶段，使用时请自担风险。而且，当前只有有限的安装方式可用。
 
 ### ffsend 的特点：
 
-  * 全功能且友好的命令行工具
-  * 安全地上传和下载文件与目录
-  * 在客户端总是被加密
-  * 额外的密码保护，密码生成和可配置下载次数限制
-  * 内置文件或目录的打包和解压
-  * 可以简单地管理你的历史分享记录
-  * 能够使用你自己的发送主机
-  * 查看或者删除共享文件
+  * 全功能且使用友好的命令行工具
+  * 可以安全地上传和下载文件与目录
+  * 总是在客户端加密
+  * 可用额外的密码进行保护、密码生成和可配置下载次数限制
+  * 内置的文件或目录的打包和解压
+  * 可以轻松地管理你的历史分享记录
+  * 能够使用你自己的 Send 主机
+  * 审查或者删除共享文件
   * 精准的错误报告
-  * 由加密或上传下载导致的低内存消耗
-  * 无需集成就可被用在脚本中
+  * 低内存消耗，用于加密或上传下载
+  * 无需交互，可以集成在脚本中
 
 ### 如何在 LInux 中安装 ffsend 呢？
 
-当前除了 Debian 和 Arch Linux 系统，其他发行版还没有相应的安装包（译者注：这个信息已过时，最新内容请看[这里](https://github.com/timvisee/ffsend#install)）。然而，我们可以轻易地根据我们自己的操作系统和架构下载到相应的预编译二进制文件。
+当前除了 Debian 和 Arch Linux 系统，其他发行版还没有相应的安装包（LCTT 译注：这个信息已过时，最新内容请看[这里](https://github.com/timvisee/ffsend#install)）。然而，我们可以轻易地根据我们自己的操作系统和架构下载到相应的预编译二进制文件。
 
-运行下面的命令来为你的操作系统下载 `ffsend` 最新可用的版本（译者注：当前最新版本为 v0.2.58）：
+运行下面的命令来为你的操作系统下载 `ffsend` 最新可用的版本（LCTT 译注：当前最新版本为 v0.2.58）：
 
 ```
 $ wget https://github.com/timvisee/ffsend/releases/download/v0.1.2/ffsend-v0.1.2-linux-x64.tar.gz
@@ -91,20 +93,20 @@ To show all subcommands, features and other help:
  ffsend help [SUBCOMMAND]
 ```
 
-对于使用基于 Arch Linux 系统的用户可以简单地借助 **[AUR Helper][6]** 来安装它，因为这个包已经在 AUR 软件仓库中了。
+对于使用基于 Arch Linux 系统的用户可以简单地借助 [AUR 助手][6]来安装它，因为这个包已经在 AUR 软件仓库中了。
 
 ```
 $ yay -S ffsend
 ```
 
-对于使用 **`Debian/Ubuntu`** 系统的用户，使用 **[DPKG 命令][7]** 来安装 `ffsend`。
+对于使用 Debian/Ubuntu 系统的用户，使用 [DPKG 命令][7]来安装 `ffsend`。
 
 ```
 $ wget https://github.com/timvisee/ffsend/releases/download/v0.1.2/ffsend_0.1.2_amd64.deb
 $ sudo dpkg -i ffsend_0.1.2_amd64.deb
 ```
 
-### 如何使用 ffsend 来发送文件？
+### 如何使用 ffsend
 
 这并不复杂，我们可以简单地通过下面的语法来发送文件。
 
@@ -240,56 +242,19 @@ $ ffsend delete https://send.firefox.com/download/69afaab1f9/#5z51_94jtxcUCJNNvf
 File deleted
 ```
 
-另外，你还可以通过使用 firefox 浏览其打开 https://send.firefox.com/ 来完成相应的分享。
+### 如何在浏览器中使用 Send
+
+另外，你还可以通过使用 firefox 浏览器打开 https://send.firefox.com/ 来完成相应的分享。
 
 只需要拖拽该文件就可以上传它：
+
 ![][11]
 
 一旦该文件被下载，它将展示 100% 的下载状态。
+
 ![][12]
 
-想查看其他的可能选项，请浏览它对应的 man 信息或者帮助页：
-
-```
-$ ffsend --help
-ffsend 0.1.2
-Tim Visee
-Easily and securely share files from the command line.
-A fully featured Firefox Send client.
-
-USAGE:
- ffsend [FLAGS] [OPTIONS] [SUBCOMMAND]
-
-FLAGS:
- -f, --force Force the action, ignore warnings
- -h, --help Prints help information
- -i, --incognito Don't update local history for actions
- -I, --no-interact Not interactive, do not prompt
- -q, --quiet Produce output suitable for logging and automation
- -V, --version Prints version information
- -v, --verbose Enable verbose information and logging
- -y, --yes Assume yes for prompts
-
-OPTIONS:
- -H, --history Use the specified history file [env: FFSEND_HISTORY]
- -t, --timeout Request timeout (0 to disable) [env: FFSEND_TIMEOUT]
- -T, --transfer-timeout Transfer timeout (0 to disable) [env: FFSEND_TRANSFER_TIMEOUT]
-
-SUBCOMMANDS:
- upload Upload files [aliases: u, up]
- download Download files [aliases: d, down]
- debug View debug information [aliases: dbg]
- delete Delete a shared file [aliases: del]
- exists Check whether a remote file exists [aliases: e]
- help Prints this message or the help of the given subcommand(s)
- history View file history [aliases: h]
- info Fetch info about a shared file [aliases: i]
- parameters Change parameters of a shared file [aliases: params]
- password Change the password of a shared file [aliases: pass, p]
-
-The public Send service that is used as default host is provided by Mozilla.
-This application is not affiliated with Mozilla, Firefox or Firefox Send.
-```
+想查看其他的可能选项，请浏览它对应的 man 信息或者帮助页。
 
 --------------------------------------------------------------------------------
 
@@ -298,16 +263,16 @@ via: https://www.2daygeek.com/ffsend-securely-share-files-folders-from-linux-com
 作者：[Vinoth Kumar][a]
 选题：[lujun9972][b]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/vinoth/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/onionshare-secure-way-to-share-files-sharing-tool-linux/
+[1]: https://linux.cn/article-9177-1.html
 [2]: https://www.2daygeek.com/wormhole-securely-share-files-from-linux-command-line/
 [3]: https://www.2daygeek.com/transfer-sh-easy-fast-way-share-files-over-internet-from-command-line/
-[4]: https://www.2daygeek.com/dcp-dat-copy-secure-way-to-transfer-files-between-linux-systems/
+[4]: https://linux.cn/article-10516-1.html
 [5]: https://github.com/timvisee/ffsend
 [6]: https://www.2daygeek.com/category/aur-helper/
 [7]: https://www.2daygeek.com/dpkg-command-to-manage-packages-on-debian-ubuntu-linux-mint-systems/
