@@ -1,8 +1,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "FSSlc"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-12051-1.html"
 [#]: subject: "ffsend – Easily And Securely Share Files From Linux Command Line Using Firefox Send Client"
 [#]: via: "https://www.2daygeek.com/ffsend-securely-share-files-folders-from-linux-command-line-using-firefox-send-client/"
 [#]: author: "Vinoth Kumar https://www.2daygeek.com/author/vinoth/"
@@ -254,48 +254,7 @@ File deleted
 
 ![][12]
 
-想查看其他的可能选项，请浏览它对应的 man 信息或者帮助页：
-
-```
-$ ffsend --help
-ffsend 0.1.2
-Tim Visee
-Easily and securely share files from the command line.
-A fully featured Firefox Send client.
-
-USAGE:
- ffsend [FLAGS] [OPTIONS] [SUBCOMMAND]
-
-FLAGS:
- -f, --force Force the action, ignore warnings
- -h, --help Prints help information
- -i, --incognito Don't update local history for actions
- -I, --no-interact Not interactive, do not prompt
- -q, --quiet Produce output suitable for logging and automation
- -V, --version Prints version information
- -v, --verbose Enable verbose information and logging
- -y, --yes Assume yes for prompts
-
-OPTIONS:
- -H, --history Use the specified history file [env: FFSEND_HISTORY]
- -t, --timeout Request timeout (0 to disable) [env: FFSEND_TIMEOUT]
- -T, --transfer-timeout Transfer timeout (0 to disable) [env: FFSEND_TRANSFER_TIMEOUT]
-
-SUBCOMMANDS:
- upload Upload files [aliases: u, up]
- download Download files [aliases: d, down]
- debug View debug information [aliases: dbg]
- delete Delete a shared file [aliases: del]
- exists Check whether a remote file exists [aliases: e]
- help Prints this message or the help of the given subcommand(s)
- history View file history [aliases: h]
- info Fetch info about a shared file [aliases: i]
- parameters Change parameters of a shared file [aliases: params]
- password Change the password of a shared file [aliases: pass, p]
-
-The public Send service that is used as default host is provided by Mozilla.
-This application is not affiliated with Mozilla, Firefox or Firefox Send.
-```
+想查看其他的可能选项，请浏览它对应的 man 信息或者帮助页。
 
 --------------------------------------------------------------------------------
 
