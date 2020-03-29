@@ -161,7 +161,7 @@ and I would probably have been burned at the stake.
 
 😆
 
-[my_sweet_photo]: {filename}/images/HotPhotoOfMe.jpg
+[my_sweet_photo]: {static}/images/HotPhotoOfMe.jpg
 ```
 
 现在，content 目录中将包含三个新的 Web 内容，在 content 分支中还有很多内容。
