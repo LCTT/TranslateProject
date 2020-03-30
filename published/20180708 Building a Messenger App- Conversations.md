@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (PsiACE)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12056-1.html)
 [#]: subject: (Building a Messenger App: Conversations)
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-conversations/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
@@ -10,16 +10,18 @@
 构建一个即时消息应用（三）：对话
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202003/30/193824w7xsj2ixs8frsal8.jpg)
+
 本文是该系列的第三篇。
 
 * [第一篇：模式][1]
 * [第二篇：OAuth][2]
 
-在我们的即时消息应用中，消息表现为两个参与者对话的堆叠。如果你想要开始异常对话，就应该向应用提供你想要交谈的用户，而当对话创建后（如果该对话此前并不存在），就可以向该对话发送消息。
+在我们的即时消息应用中，消息表现为两个参与者对话的堆叠。如果你想要开始一场对话，就应该向应用提供你想要交谈的用户，而当对话创建后（如果该对话此前并不存在），就可以向该对话发送消息。
 
 就前端而言，我们可能想要显示一份近期对话列表。并在此处显示对话的最后一条消息以及另一个参与者的姓名和头像。
 
-在这篇帖子中，我们将会编写一些端点（endpoints）来完成像「创建对话」、「获取对话列表」以及「找到单个对话」这样的任务。
+在这篇帖子中，我们将会编写一些<ruby>端点<rt>endpoint</rt></ruby>来完成像“创建对话”、“获取对话列表”以及“找到单个对话”这样的任务。
 
 首先，要在主函数 `main()` 中添加下面的路由。
 
@@ -45,7 +47,7 @@ func requireJSON(handler http.HandlerFunc) http.HandlerFunc {
 }
 ```
 
-如果请求（request）不是 JSON 格式，那么它会返回 `415 Unsupported Media Type`（不支持的媒体类型）错误。
+如果<ruby>请求<rt>request</rt></ruby>不是 JSON 格式，那么它会返回 `415 Unsupported Media Type`（不支持的媒体类型）错误。
 
 ### 创建对话
 
@@ -58,7 +60,7 @@ type Conversation struct {
 }
 ```
 
-就像上面的代码那样，对话中保持对另一个参与者和最后一条消息的引用，还有一个 bool 类型的字段，用来告知是否有未读消息。
+就像上面的代码那样，对话中保持对另一个参与者和最后一条消息的引用，还有一个 `bool` 类型的字段，用来告知是否有未读消息。
 
 ```go
 type Message struct {
@@ -188,7 +190,7 @@ type Errors struct {
 }
 ```
 
-然后，我们开始执行 SQL 事务。收到的仅仅是用户名，但事实上，我们需要知道实际的用户 ID 。因此，事务的第一项内容是查询另一个参与者的 ID 和头像。如果找不到该用户，我们将会返回 `404 Not Found`（未找到） 错误。另外，如果找到的用户恰好和「当前已验证用户」相同，我们应该返回 `403 Forbidden`（拒绝处理）错误。这是由于对话只应当在两个不同的用户之间发起，而不能是同一个。
+然后，我们开始执行 SQL 事务。收到的仅仅是用户名，但事实上，我们需要知道实际的用户 ID 。因此，事务的第一项内容是查询另一个参与者的 ID 和头像。如果找不到该用户，我们将会返回 `404 Not Found`（未找到） 错误。另外，如果找到的用户恰好和“当前已验证用户”相同，我们应该返回 `403 Forbidden`（拒绝处理）错误。这是由于对话只应当在两个不同的用户之间发起，而不能是同一个。
 
 然后，我们试图找到这两个用户所共有的对话，所以需要使用 `INTERSECT` 语句。如果存在，只需要通过 `/api/conversations/{conversationID}` 重定向到该对话并将其返回。
 
@@ -265,11 +267,11 @@ func getConversations(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-该处理程序仅对数据库进行查询。它通过一些联接来查询对话表……首先，从消息表中获取最后一条消息。然后依据「ID 与当前已验证用户不同」的条件，从参与者表找到对话的另一个参与者。然后联接到用户表以获取该用户的用户名和头像。最后，再次联接参与者表，并以相反的条件从该表中找出参与对话的另一个用户，其实就是当前已验证用户。我们会对比消息中的 `messages_read_at` 和 `created_at` 两个字段，以确定对话中是否存在未读消息。然后，我们通过 `user_id` 字段来判定该消息是否属于「我」（指当前已验证用户）。
+该处理程序仅对数据库进行查询。它通过一些联接来查询对话表……首先，从消息表中获取最后一条消息。然后依据“ID 与当前已验证用户不同”的条件，从参与者表找到对话的另一个参与者。然后联接到用户表以获取该用户的用户名和头像。最后，再次联接参与者表，并以相反的条件从该表中找出参与对话的另一个用户，其实就是当前已验证用户。我们会对比消息中的 `messages_read_at` 和 `created_at` 两个字段，以确定对话中是否存在未读消息。然后，我们通过 `user_id` 字段来判定该消息是否属于“我”（指当前已验证用户）。
 
 注意，此查询过程假定对话中只有两个用户参与，它也仅仅适用于这种情况。另外,该设计也不很适用于需要显示未读消息数量的情况。如果需要显示未读消息的数量，我认为可以在 `participants` 表上添加一个`unread_messages_count` `INT` 字段，并在每次创建新消息的时候递增它，如果用户已读则重置该字段。
 
-接下来需要遍历每一条记录，通过扫描每一个存在的对话来建立一个对话切片（an slice of conversations）并在最后进行响应。
+接下来需要遍历每一条记录，通过扫描每一个存在的对话来建立一个<ruby>对话切片<rt>slice of conversations</rt></ruby>并在最后进行响应。
 
 ### 找到单个对话
 
@@ -329,7 +331,7 @@ func getConversation(w http.ResponseWriter, r *http.Request) {
 
 在下一篇帖子中，我们将会看到如何创建并列出消息。
 
-[Souce Code][3]
+- [源代码][3]
 
 --------------------------------------------------------------------------------
 
@@ -338,7 +340,7 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-conversations/
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
 译者：[PsiACE](https://github.com/PsiACE)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
