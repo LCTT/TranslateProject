@@ -7,72 +7,72 @@
 [#]: via: (https://itsfoss.com/debiandog/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
 
-Meet DebianDog – Puppy sized Debian Linux
+体验 DebianDog– Puppy 大小的 Debian Linux
 ======
 
-Recently I stumbled upon an intriguing Linux project. This project aims to create small live CDs for Debian and Debian-based systems, similar to the [Puppy Linux project][1]. Let’s take a look at DebianDog.
+不久前，我偶然发现了一个有趣的 Linux 项目。这个项目旨在为 Debian 和基于 Debian 的系统创建一个小型的 live cd，类似于 [Puppy Linux 项目][1] 。让我们看看 DebianDog 。
 
-### What is DebianDog?
+### DebianDog 是什么？
 
-As it says on the tin, [DebianDog][2] “is a small Debian Live CD shaped to look like Puppy and act like Puppy. Debian structure and Debian behaviour are untouched and Debian documentation is 100% valid for DebianDog. You have access to all Debian repositories using apt-get or synaptic.”
+正如字面所述，[DebianDog][2] “是一个被塑造成一个外观和动作都像 Puppy 的小型 Debian Live CD ，Debian 结构和 Debian 活动方式是不受影响的， Debian 文档对 DebianDog 来说是100%有效的。你可以使用 apt-get 或 synaptic 来访问所有的 Debian 存储库。”
 
 ![DebianDog Jessie][3]
 
-For those of you who are not familiar with [Puppy Linux][1], the project is “a collection of multiple Linux distributions, built on the same shared principles”. Those principles are to be fast, small (300 MB or less), and easy to use. There are versions of Puppy Linux built to support Ubuntu, Slackware, and Raspbian packages.
+对于那些不熟悉 [Puppy Linux][1] 的人来说，该项目是 “多个 Linux 发行版的一个集合，建立在相同的共享法则之上”。这些法则能够实现快速、小型(300 MB 或更少)，和易于使用。这里有为支持 Ubuntu, Slackware 和 Raspbian 软件包构建的 Puppy linux 变种。
 
-The major difference between DebianDog and Puppy Linux is that Puppy Linux has its own package manager [the [Puppy Package Manager][4]]. As stated above, DebianDog using the Debian package manager and packages. Even the DebianDog website tries to make that clear: “It is not Puppy Linux and it has nothing to do with Puppy based on Debian.”
+DebianDog 和 Puppy Linux 之间最大的不同是，Puppy Linux 有其自己的软件包管理器 [Puppy 软件包管理器][4] 。如上所述，DebianDog 使用 Debian 软件包管理器及其软件包。甚至 DebianDog 网站也试图澄清这一点：“它不是 Puppy Linux ，并且也与基于 Debian 的 Puppy 无关。”
 
-### Why should anyone use DebianDog?
+### 为什么一些人使用 DebianDog ？
 
-The main reason to install DebianDog (or any of its derivatives) would be to restore an older system to operability. Every entry on DebianDog has a 32-bit option. They also have lighter desktop environments/window managers, such as [Openbox][5] or the [Trinity Desktop][6] environment. Most of those also have an alternative to systemd. They also come with lighter applications installed, such as [PCManFM][7].
+安装 DebianDog (或其任何衍生产品) 的主要原因是恢复一台较旧电脑的可操作性。在 DebianDog 上的每个条目都有一个32位选项。它们还有更轻量级的桌面环境/窗口管理器，例如 [Openbox][5] 或 [Trinity Desktop][6] 环境。它们中大多数也都有一个 systemd 的可替代版本。它们也安装更轻的应用程序，例如 [PCManFM][7] 。
 
-### What versions of DebianDog are available?
+### DebianDog 有哪些可用的变体版本？
 
-Though DebianDog was the first in the series, the project is called ‘Dog Linux’ and provides various ‘Dog variants’ on popular distributions based on Debian and Ubuntu.
+尽管 DebianDog 在本系列中是第一个，但是该项目被称为 ‘Dog Linux’ ，提供各种基于Debian 和 Ubuntu的流行发行版的 ‘Dog 变体’。
 
 #### DebianDog Jessie
 
-The first (and original) version of DebianDog is DebianDog Jessie. There are two [32-bit versions][8] of it. One uses [Joe’s Window Manager (JWM)][9] as default and the other uses XFCE. Both systemd and sysvinit are available. There is also a [64-bit version][10]. DebianDog Jessie is based on Debian 8.0 (codename Jessie). Support for Debian 8.0 ends on June 30th, 2020, so install with caution.
+DebianDog 的第一个(也是最初的) 版本是 DebianDog Jessie。它有两个 [32位版本][8] ，一个使用 [Joe’s Window Manager (JWM)][9] 作为默认桌面环境，另一个使用 XFCE 作为默认桌面环境。systemd 和 sysvinit 都是可用的。它还有一个 [64位版本][10]。DebianDog Jessie 基于 Debian 8.0 (代号 Jessie)。Debian 8.0 的支持将于2020年6月30日结束，因此安装需谨慎。
 
 ![TrinityDog][11]
 
 #### StretchDog
 
-[Stret][12][c][12][hDog][12] is based on Debian 9.0 (codename Stretch). It is available in 32 and 64-bit. Openbox is the default window manager, but we can also switch to JWM. Support for Debian 9.0 ends on June 30th, 2022.
+[StretchDog][12] 基于 Debian 9.0 (代号 Stretch) 。它有32位和64位两种可用。Openbox是默认的窗口管理器，但是我们可以切换到 JWM 。Debian 9.0 的支持将于2022年6月30日结束。
 
 #### BusterDog
 
-[BusterDog][13] is interesting. It is based on [Debian 10][14] (codename Buster). It does not use systemd, instead, it uses [elogind][15] just like [AntiX][16]. Support for Debian 10.0 ends on June 2024.
+[BusterDog][13] 是很有趣的。它基于 [Debian 10][14] (代号 Buster) 。它不使用 systemd ，反而像 [AntiX][16] 一样使用 [elogind][15] 。Debian 10.0 的支持将于2024年6月结束。
 
 #### MintPup
 
-[MintPup][17] is based on [Linux Mint][18] 17.1. This LiveCD is 32-bit only. You can also access all of the “Ubuntu/Mint repositories using apt-get or synaptic”. Considering that Mint 17 has reached end of life, this version must be avoided.
+[MintPup][17] 基于 [Linux Mint][18] 17.1 。LiveCD 仅有32位版本。你也可以使用 “apt-get 或 synaptic 访问 Ubuntu/Mint 的存储库”。考虑到 Mint 17 已经到了生命的尽头，这一版本必须避免使用。
 
 #### XenialDog
 
-There are both [32-bit][19] and [64-bit versions][20] of this spin based on the Ubuntu 16.04 LTS. Both versions come with Openbox as default with JWM as an option. Support for Ubuntu 16.04 LTS ends in April of 2021, so install with caution.
+XenialDog 有[32位][19]和[64位][20] 两种变种，基于 Ubuntu 16.04 LTS 。两个变种都使用 Openbox 作为默认版本，JWM 是一种选项。Ubuntu 16.04 LTS 的支持将于2021年4月结束, 因此安装需谨慎。
 
 #### TrinityDog
 
-There are two versions of the [TrintyDog][21] spin. One is based on Debian 8 and the other is based on Debian 9. Both are 32-bit and both use the [Trinity Desktop Environment][6], thus the name.
+[TrintyDog][21] 有两种变体。一个基于 Debian 8 ，另一个基于 Debian 9 。两种变体都有32位版本，并且都使用 [Trinity Desktop Environment][6] ，依以此得名。
 
 ![BionicDog][22]
 
 #### BionicDog
 
-As you should be able to guess by the name. [BionicDog][23] is based on [Ubuntu 18.04 LTS][24]. The main version of this spin has both 32 and 64-bit with Openbox as the default window manager. There is also a version that uses the [Cinnamon desktop][25] and is only 64-bit.
+你应该能够从名称猜到。[BionicDog][23] 基于 [Ubuntu 18.04 LTS][24] 。主要版本有32位和64位两个版本，Openbox 是默认的窗口管理器。这里也有一个使用 [Cinnamon desktop][25] 的版本，并且只有64位。
 
-### Final Thoughts
+### 结束语
 
-I like any [Linux project that wants to make older systems usable][26]. However, most of the operating systems available through DebianDog are no longer supported or nearing the end of their life span. This makes it less than useful for the long run.
+我喜欢任何 [想让较旧电脑系统有用的 Linux 项目][26]。但是，通过 DebianDog 项目提供的大多数操作系统不再受支持，或者接近它们的生命尽头。从长远来看，这就不那么有用了。
 
-**I wouldn’t really advise to use it on your main computer.** Try it in live USB or on a spare system. Also, [you can create][27] your own LiveCD spin if you want to take advantage of a newer base system.
+**我不建议在你的主计算机上使用它。** 在 live USB 中或一台闲置的系统上尝试它。此外，如果你想使用较新的基础系统，[你可以创建][27]你自己的 LiveCD 。
 
-Somehow I keep on stumbling across obscure Linux distributions like [FatDog64][28], [4M Linux][29] and [Vipper Linux][30]. Even though I may not always recommend them to use, it’s still good to know about the existence of such projects.
+似乎冥冥中自有天意，我总是在探索鲜为人知的 Linux 发行版的路上艰难地前行，像 [FatDog64][28] ，[4M Linux][29] 以及 [Vipper Linux][30] 。虽然我不建议使用它们，但是知晓这些项目的存在的意义总是好的。
 
-What are your thoughts on the DebianDog? What is your favorite Puppy-syle OS? Please let us know in the comments below.
+你对 DebianDog 有什么看法？你最最喜欢的 Puppy 样式的操作系统是什么？请在下面的评论区中告诉我们。
 
-If you found this article interesting, please take a minute to share it on social media, Hacker News or [Reddit][31].
+如果你觉得这篇文章很有趣，请花点时间在社交媒体、黑客新闻或 [Reddit][31] 上分享。
 
 --------------------------------------------------------------------------------
 
@@ -80,7 +80,7 @@ via: https://itsfoss.com/debiandog/
 
 作者：[John Paul][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[robsean](https://github.com/robsean)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
