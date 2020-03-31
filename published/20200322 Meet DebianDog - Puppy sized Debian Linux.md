@@ -16,7 +16,7 @@
 
 正如字面所述，[DebianDog][2] “是一个被塑造成一个外观和动作都像 Puppy Linux 的小型 Debian 现场版 CD。没有改动 Debian 结构和方式，Debian 的文档对 DebianDog 来说是完全有效的。你可以使用 `apt-get` 或 synaptic 来访问所有的 Debian 存储库。”
 
-![DebianDog Jessie][3]
+![DebianDog][3]
 
 对于那些不熟悉 [Puppy Linux][1] 的人来说，该项目是 “多个 Linux 发行版的一个集合，建立在相同的共享准则之上”。这些准则能够实现快速、小型（300 MB 或更少）、易于使用。这里有为支持 Ubuntu, Slackware 和 Raspbian 软件包构建的 Puppy Linux 变种。
 
@@ -33,8 +33,6 @@ DebianDog 和 Puppy Linux 之间最大的不同是，Puppy Linux 有其自己的
 #### DebianDog Jessie
 
 DebianDog 的第一个（也是最初的）版本是 DebianDog Jessie。它有两个 [32 位版本][8] ，一个使用 [Joe’s Window Manager (JWM)][9] 作为默认桌面环境，另一个使用 XFCE 作为默认桌面环境。systemd 和 sysvinit 都是可用的。它还有一个 [64 位版本][10]。DebianDog Jessie 基于 Debian 8.0（Jessie）。Debian 8.0 的支持将于 2020 年 6 月 30 日结束，因此安装需谨慎。
-
-![TrinityDog][11]
 
 #### StretchDog
 
@@ -56,11 +54,13 @@ XenialDog 有 [32 位][19]和 [64 位][20] 两种变种，基于 Ubuntu 16.04 LT
 
 [TrintyDog][21] 有两种变体。一个基于 Debian 8 ，另一个基于 Debian 9 。两种变体都有 32 位版本，并且都使用 [Trinity Desktop Environment][6] ，以此得名。
 
-![BionicDog][22]
+![TrinityDog][11]
 
 #### BionicDog
 
 你应该能够从名称猜到。[BionicDog][23] 基于 [Ubuntu 18.04 LTS][24]。主要版本有 32 位和 64 位两个版本，Openbox 是默认的窗口管理器。这里也有一个使用 [Cinnamon desktop][25] 的版本，并且只有 64 位版本。
+
+![BionicDog][22]
 
 ### 结束语
 
