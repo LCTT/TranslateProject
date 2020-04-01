@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Turn Your Regular TV into a Smart TV With KDE Plasma Bigscreen)
@@ -16,17 +16,17 @@
 
 这些所谓的“智能电视”的一个主要问题是它们可能正在[监视你][1]。你的数据在你或许知道或许不知道的情况下被收集。
 
-这就是 KDE 的“[等离子大屏幕项目][2]”旨在解决的问题。（LCTT 译注： <ruby>等离子<rt>Plasma<rt>恰是  KDE 桌面环境的名称。）
+这就是 KDE 的“[等离子大屏幕项目][2]”旨在解决的问题。（LCTT 译注： <ruby>等离子<rt>Plasma</rt></ruby>恰是  KDE 桌面环境的名称，和<ruby>大屏幕<rt>Bigscreen</rt></ruby>很搭，因此这个惯常不翻译的名称这里翻译出来。）
 
-### 等离子大屏幕：通过开源技术使电视更智能
+### “等离子大屏幕”：通过开源技术使电视更智能
 
 ![][3]
 
-你可能了解 [KDE][4] 项目。它开始是一个 Linux 桌面环境项目，发展了 20 多年后，KDE 项目变得越来越大，这就是为什么他们创建了 Plasma 桌面环境的原因，以明确表明 KDE 不再仅仅是“<ruby>K 桌面环境<rt>K Desktop Environment</rt></ruby>（KDE）”了。
+你可能了解 [KDE][4] 项目。它开始是一个 Linux 桌面环境项目，而在发展了 20 多年后，KDE 项目变得越来越大，这就是为什么他们创建了 Plasma 桌面环境的原因，以明确表明 KDE 不再仅仅是“<ruby>K 桌面环境<rt>K Desktop Environment</rt></ruby>（KDE）”了。
 
 Plasma 项目本身具有多种用途，当然，你可以在台式机 Linux 计算机上使用它，而 [Plasma 也具有移动版本][5]，你可以在基于 Linux 的智能手机上运行它，例如 [Librem5][6] 和 [PinePhone][7]。
 
-“等离子大屏幕”是 KDE 的一个新项目，旨在提供类似于智能电视所提供的界面和功能。
+“<ruby>等离子大屏幕<rt>Plasma Bigscreen</rt></ruby>”是 KDE 的一个新项目，旨在提供类似于智能电视所提供的界面和功能。
 
 你需要的是一台[树莓派之类的单板计算机][8]和一台带 HDMI 端口的电视，然后在你的树莓派设备上安装“等离子大屏幕”，将其连接到电视就行。
 
@@ -34,19 +34,19 @@ Plasma 项目本身具有多种用途，当然，你可以在台式机 Linux 计
 
 ![YouTube In Plasma Bigscreen][9]
 
-乍一看，它看起来很像是一个媒体服务器，但“等离子大屏幕”却与 Kodi 和其它 [Linux 媒体服务器][10] 不同，它不止于此。
+乍一看，它看起来很像是一个媒体服务器，但“等离子大屏幕”却和 Kodi 及其它 [Linux 媒体服务器][10] 不同，它不止于此。
 
 #### 使用常规遥控器进行控制
 
 你不需要新的专用遥控器。多亏了 [CEC][11]，你可以使用常规的电视遥控器。
 
-####带有开源 Mycroft AI 的语音控制
+#### 带有开源 Mycroft AI 的语音控制
 
 “等离子大屏幕”利用了开源 Mycroft AI 项目。借助“等离子大屏幕”内置的 Mycroft AI，你可以使用语音命令播放内容、检查天气并控制智能电视的其他方面。你可以通过教它新技能来进一步训练它。
 
 #### 传统的桌面应用程序
 
-“等离子大屏幕”不仅提供丰富的媒体应用程序，还提供经过重新设计以适合它的体验的传统桌面应用程序。
+“等离子大屏幕”不仅提供丰富的媒体应用程序，还提供经过重新设计，适合它的体验的传统桌面应用程序。
 
 #### 自由开源软件
 
@@ -73,7 +73,7 @@ via: https://itsfoss.com/kde-plasma-bigscreen/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
