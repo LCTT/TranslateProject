@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12060-1.html)
 [#]: subject: (10 moments that shaped Linux history)
 [#]: via: (https://opensource.com/article/19/4/top-moments-linux-history)
 [#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
@@ -12,7 +12,7 @@
 
 > 自 1991 年诞生以来，Linux 已经走了漫长的一段路，而这些事件标志着它的发展。
 
-![Penguin with green background][1]
+![](https://img.linux.net.cn/data/attachment/album/202004/01/093243wukmsiwdkkwfrg00.jpg)
 
 在 2018 年 8 月，Opensource.com 发布了一项包含七个选项的民意测验，询问读者：[Linux 历史上最重要的时刻是什么？][2]我觉得我需要扩大这个清单，并提出我认为的 10 个在塑造 Linux 历史上发挥了重要作用的时刻。
 
