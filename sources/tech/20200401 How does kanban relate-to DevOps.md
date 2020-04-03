@@ -1,5 +1,5 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
+collector: (lujun9972)
+[#]: translator: (Cain-Iriving )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
