@@ -1,6 +1,6 @@
 Cain-Iriving is translating
 collector: (lujun9972)
-[#]: translator: (Cain-Iriving )
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
