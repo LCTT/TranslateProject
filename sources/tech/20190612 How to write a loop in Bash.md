@@ -78,6 +78,7 @@ waterfall.png: PNG image data, 4608 x 2592, 8-bit/color RGB, non-interlaced
 ```
 
 You can also write it this way:
+你也可以这样书写命令：
 
 ```
 $ for f in *; do file $f; done
@@ -88,42 +89,52 @@ waterfall.png: PNG image data, 4608 x 2592, 8-bit/color RGB, non-interlaced
 ```
 
 Both the multi-line and single-line formats are the same to your shell and produce the exact same results.
+对你的 shell 来说，多行和单行的格式没有什么区别，并且会输出完全一样的结果。
 
-### A practical example
+### A practical example 一个实用的例子
 
 Here's a practical example of how a loop can be useful for everyday computing. Assume you have a collection of vacation photos you want to send to friends. Your photo files are huge, making them too large to email and inconvenient to upload to your [photo-sharing service][2]. You want to create smaller web-versions of your photos, but you have 100 photos and don't want to spend the time reducing each photo, one by one.
+下面是一个循环在日常使用中的实用案例。假如你拥有一堆假期拍的照片想要发给你的朋友。它们对于 email 来说太大了，上传到 [photo-sharing service][2] 也不方便。你希望创建小型的 web 版本的照片，但是你不希望花费时间在一个接一个的压缩图片体积上。
 
 First, install the **ImageMagick** command using your package manager on Linux, BSD, or Mac. For instance, on Fedora and RHEL:
+首先，在你的 Linux，BSD 或者 Mac 上使用包管理器安装 **ImageMagick** 命令。例如，在 Fedora 和 RHEL 上：
 
 ```
 `$ sudo dnf install ImageMagick`
 ```
 
 On Ubuntu or Debian:
+在 Ubuntu 和 Debian 上：
 
 ```
 `$ sudo apt install ImageMagick`
 ```
 
 On BSD, use **ports** or [pkgsrc][3]. On Mac, use [Homebrew][4] or [MacPorts][5].
+在 BSD 上，使用 **ports** 或者 [pkgsrc][3]。在 Mac 上，使用 [Homebrew][4] 或者 [MacPorts][5]。
 
 Once you install ImageMagick, you have a set of new commands to operate on photos.
+在你安装了 ImageMagick 之后，你就用有一系列命令可以用来操作图片了。
 
 Create a destination directory for the files you're about to create:
+为你将要创建的文件建立一个目标文件夹：
 
 ```
 `$ mkdir tmp`
 ```
 
 To reduce each photo to 33% of its original size, try this loop:
+使用下面的循环将每张图片减小到原来大小的 33%。
 
 ```
 `$ for f in * ; do convert $f -scale 33% tmp/$f ; done`
 ```
 
 Then look in the **tmp** folder to see your scaled photos.
+然后就可以在 **tmp** 文件夹中看到自己已经缩小了的照片了。
 
 You can use any number of commands within a loop, so if you need to perform complex actions on a batch of files, you can place your whole workflow between the **do** and **done** statements of a **for** loop. For example, suppose you want to copy each processed photo straight to a shared photo directory on your web host and remove the photo file from your local system:
+你可以在循环体中使用任意数量的命令。所以如果你需要对一批文件进行复杂的操作，你可以将你的一系列命令放在一个 **for** 循环的 **do** 和 **done** 声明间。
 
 ```
 $ for f in * ; do
@@ -134,10 +145,12 @@ done
 ```
 
 For each file processed by the **for** loop, your computer automatically runs three commands. This means if you process just 10 photos this way, you save yourself 30 commands and probably at least as many minutes.
+你的计算机会对 **for** 循环中处理的每一个文件自动的执行 3 条命令。这意味着加入你仅仅处理 10 张图片，也会省下 30 条指令和更多时间。
 
-### Limiting your loop
+### Limiting your loop 限制你的循环
 
 A loop doesn't always have to look at every file. You might want to process only the JPEG files in your example directory:
+一个循环常常不需要处理所有文件。在示例文件夹中，你或许只需要处理 JPEG 文件。
 
 ```
 $ for f in *.jpg ; do convert $f -scale 33% tmp/$f ; done
@@ -146,6 +159,7 @@ cat.jpg, otago.jpg
 ```
 
 Or, instead of processing files, you may need to repeat an action a specific number of times. A **for** loop's variable is defined by whatever data you provide it, so you can create a loop that iterates over numbers instead of files:
+或者，你希望重复特定次数的某个操作而不是处理文件。**for** 循环的变量被定义为你赋给它的无论什么数据，所以你可以创建一个循环遍历数字而不是文件：
 
 ```
 $ for n in {0..4}; do echo $n ; done
@@ -156,15 +170,18 @@ $ for n in {0..4}; do echo $n ; done
 4
 ```
 
-### More looping
+### More looping 更多循环
 
 You now know enough to create your own loops. Until you're comfortable with looping, use them on _copies_ of the files you want to process and, as often as possible, use commands with built-in safeguards to prevent you from clobbering your data and making irreparable mistakes, like accidentally renaming an entire directory of files to the same name, each overwriting the other.
+现在你了解的知识已经足够用来创建自己的循环体了。直到你对循环熟悉前，尽可能的在需要处理的文件的复制上进行操作。使用固有的保护措施预防损坏自己的数据和制造不可复现的错误，例如偶然将一个文件夹下的所有文件重命名为同一个名字，导致了他们的互相覆盖。
 
 For advanced **for** loop topics, read on.
+更多的 **for** 循环话题，请继续阅读。
 
-### Not all shells are Bash
+### Not all shells are Bash 不是所有的 shell 都是 Bash
 
 The **for** keyword is built into the Bash shell. Many similar shells use the same keyword and syntax, but some shells, like [tcsh][7], use a different keyword, like **foreach** , instead.
+关键字 **for** 是内置在 Bash shell 中的。许多类似的 shell 使用和 Bash 同样的关键字和语法，但是也有某些 shell ，比如 [tcsh][7]，使用不同的关键字，例如 **foreach**。
 
 In tcsh, the syntax is similar in spirit but more strict than Bash. In the following code sample, do not type the string **foreach?** in lines 2 and 3. It is a secondary prompt alerting you that you are still in the process of building your loop.
 
