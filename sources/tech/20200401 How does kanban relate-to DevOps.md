@@ -1,6 +1,5 @@
-Cain-Iriving is translating
-collector: (lujun9972)
-[#]: translator: ( )
+[#]:collector: (lujun9972)
+[#]: translator: (Harvey Zhang )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
