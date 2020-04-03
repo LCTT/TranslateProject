@@ -72,67 +72,63 @@ Vim 很像终端仿真器外壳，它使用点文件来设置个人偏好。如�
 set nocp
 ```
 
-### Understand modes
+### 理解模式
 
-The notion of Vim's "modes" is very important to learn about, especially the difference between the very distinct `Normal` and `Insert` modes. Confusion about modes is what trips up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command mode is so old that it predates the invention of [copy and paste][7] functionality in the 1970s.
+Vim的 “模式”概念是非常重要的，尤其是“正常模式”和“插入模式”之间的区别。对模式的混淆是大多数新用户的困扰。模式并不是 Vim 所独有的，甚至也不是 Vi 所引入的。命令模式是如此的古老，以至于它比 70 年代的[复制和粘贴][7]功能的发明还要早。
 
-#### Important modes
+#### 重要的模式
 
-Vim depends on different modes to define keyboard-stroke behavior. The important modes to know are:
+Vim 依赖于不同的模式来定义键盘的敲击行为。需要了解的重要模式有
 
-  * `Normal mode`: Default mode used primarily for navigation and opening files
-  * `Insert mode` (includes Replace): Where Vim allows for text input to an open file
-  * `Visual mode`: Where Vim acts similar to mouse-based input, such as copying, editing, replacing, and more
-  * `Command mode` (including Line, Ex command, and Last-line mode): A powerful way to do more in Vim
+* 正常模式：默认模式，主要用于导航和打开文件。
+* 插入模式（包括替换）：这种模式下 Vim 允许将文本输入到打开的文件中。
+* 可视模式：Vim 的行为类似于基于鼠标的输入方式，如复制、编辑、替换等。
+* 命令模式（包括行模式、Ex 命令模式和末行模式）：在 Vim 中做更多事情的强大方法。
 
+每种模式都有很多值得探索的地方。使用 [Vimtutor][8]（`vimtutor`）可以交互式地学习移动光标、模式和在末行模式下运行 Ex 命令。一些不可缺少的生产力操作符包括：
 
+`:E` | 打开资源管理器，用于定位文件和目录。
+--- | ---
+`.` | 重复上次的编辑操作。
+`;` | 向前重复上一次的动作或移动
+`,` | 向后重复上一次的动作或移动。
+`/` | 向前搜索文档。
+`?` | 向后搜索文档。
+`*` | 查找光标所在处的单词的下一个出现的地方。
+`#` | 查找光标所在处的单词的上一次出现的地方。
+`~` | 切换大小写。
+`%` | 在打开和关闭的 `()`、`[]` 和 `{}` 之间切换；对编码非常有用。
+`z=` | 提出拼写建议。
 
-Each mode has a great deal to explore. Use [Vimtutor][8] (`$ vimtutor`) to interactively learn about movement, modes, and running Ex commands in "Last Line" mode. Some indispensable productivity operators include:
+### 像钢琴一样弹奏 Vim
 
-`:E` | Opens explorer for locating files and directories
----|---
-`.` | Repeats the last edit action
-`;` | Repeats the last motion or movement forward
-`,` | Repeats the last motion or movement backward
-`/` | Searches document forward
-`?` | Searches document backward
-``* | Finds next occurrence of the word under the cursor
-`#` | Finds the previous occurrence of the word under the cursor
-`~` | Toggles case
-`%` | Toggles between opening and closing `()`, `[]`, and `{}`; highly useful for coding
-`z=` | Makes spelling suggestions
+把 Vim 的操作符“语言”记在记忆中是很重要的，但要想掌握它，难点在于学会像音乐家一样思考，把操作符和动作组合成“和声和弦”，这样你就可以像弹钢琴一样弹奏 Vim。这就是 Vim 的文本操作能力可以与另一个著名的命令行编辑器 Emacs 相媲美的地方。（虽然其中一个编辑器会让磨损掉你的 `Esc` 键，而另一个编辑器会让你的 `Ctrl` 键磨损掉。）
 
-### Play Vim like a piano
+在描述和弦时，Vim 中的传统做法是用大写字母 `C` 来指代 `Ctrl` 键，后面加上一个连字符（`C-`）。这并不是通用的，但我将从这里开始遵循这一惯例，并在有可能引起混淆的时候加以说明。
 
-While it's important to commit Vim's operator "language" to memory, the challenge to gaining mastery is to learn to think like a musician and combine operators and movements into "key chords in harmony" so that you can play Vim like a piano. That's where the power of text manipulation with Vim rivals that of the other notable command-line editor, Emacs. (While one of these editors will wear down your `Esc` key, using the other will wear down your `Ctrl` key.)
+如果你在 Vim 中键入长行，你会想把它设置成可以换行你的文字。想要根据你的工作方式对 Vim 进行个性化设置，请考虑一下这个设置：当 Vim 启动时，你希望 Vim 默认情况下如何处理文本换行？开着还是关着？我喜欢将其关闭，并在运行时用命令打开它。当我想让文本换行时，我只需在命令行模式下用 `:set wrap` 设置即可。
 
-When describing key chords, it's conventional in Vim to designate the `Ctrl` key using the capital letter C, followed by a hyphen (`C-`). It's not universal, but I will follow that convention from here onward and clarify when there is any potential for confusion.
+让 Vim 设置为默认文字换行并没有什么问题。这只是一个偏好的问题 —— 它可能随着时间的推移而改变。同样你也可以控制粘贴、代码语言缩进语法和 `Tab` 键的设置（制表符还是空格？多少个空格？可也在[这里][9]深入研究这些选项）。所有这些默认行为的选项都是完全可配置的，并且在你使用命令行模式操作时可以实时更改。
 
-If you type long lines in Vim, you'll want to set it to wrap your text. To start personalizing Vim for the way you work, think about that setting: How would you like Vim to handle text wrapping by default when it starts? On or off? I like it turned off and leave it out of the runtime commands file. When I want text to wrap, I simply set it in command-line mode with `:set wrap`.
+你会在社区论坛、Vim 维基和文章中找到很多关于设置 Vim 默认设置的建议（比如这篇文章）。为你的个人计算环境设置首选项对你来说应该相当熟悉，Vim 也不例外。我强烈建议你从对你的设置进行非常小的更改开始，慢慢地进行更多的更改，这样你就可以轻松地恢复设置。这样一来，你就可以避免使用插件好多年或完全不用。
 
-There's nothing wrong with having Vim set to wrap text by default. It's simply a matter of preference—which can change over time. The same goes for handling paste, code language indent syntax, and the `Tab` key (tabs or spaces? and how many spaces then? Dive into these options [here][9]). All these options for default behavior are entirely configurable and changeable in real time as you work with command-line mode operations.
+### Vim 8.2中的分割、标签和终端
 
-You will find many suggestions for setting Vim defaults in community forums, on Vim wikis, and in articles (like this one). Setting preferences for your personal computing environment should be fairly familiar to you, and Vim is no different. I highly recommend that you start by making very small changes to your settings, and make additional changes slowly so that you can easily revert settings. This way, you might avoid the use of plugins for years—or entirely.
+有两种方法可以将你正在处理的文件分割成不同的视图：它们可以并排显示，也可以使用应用程序标签页在全屏（窗口）中切换。这些对应用程序窗口的更改是从命令模式启动的，这需要使用冒号（`:`）来调起提示符。
 
-### Splits, tabs, and terminals in Vim 8.2
+每个分割的窗口可以容纳一个文件进行编辑，你可以通过标签页在更多的文件之间随意切换。分割的屏幕空间是有限的，所以当你想分割更多的屏幕时，标签页是很方便的。想要如何设置，纯属个人喜好的问题。要横向分割一个窗口，使用 `:sp`，垂直分割时使用 `:vs`。
 
-There are two ways to split your working files into different views: they can appear side-by-side, or you can switch between them with full (window) screens using application tabs. These changes to your application window are initiated from command-line mode, which requires a colon (`:`) to call up the prompt.
+从 [Vim 8.2][10] 开始，你可以用 `:vert term` 打开一个垂直分割的终端 shell 子进程，来在你的代码旁边在命令行进行操作。你需要键入 `exit` 来关闭你的终端进程，就像你结束一个 shell 会话一样，但你关闭这个分割的窗口和标签页的方式和关闭任何普通的 Vim 窗口一样，用 `:q` 来关闭。
 
-Each window split can host a file for editing, and you can arrange tabs to switch between additional files as much as you like. There is limited screen space for splits, so tabs are handy when you want to split more screens. How you decide to work is purely a matter of preference. To split a window horizontally, use `:sp`, and use `:vs` for vertical splits.
+要初始化一个标签页，请使用一个特殊的编辑命令：`:tabedit`，它会自动切换到新打开的标签页。如果你给该命令一个文件名作为参数，将会打开该文件并进行编辑。如果你忽略了给它一个文件名作为参数，可以在命令行模式下的使用编辑命令 `:e filename.txt`，就像在任何一个普通的 Vim 窗口中一样。可以使用下一个（`:tabn`）和上一个（`:tabp`）命令在标签页间导航。
 
-As of [Vim 8.2][10], you can open a terminal shell sub-process in a vertical split with `:vert term` to run operations on the command line right alongside your code. You need to type `exit` to close your terminal process, just like you would end a shell session, but you close splits and tabs the same way you would close any ordinary Vim window, with `:q`.
+要使用分割，你需要知道如何使用组合键 `C-w` 和你想要移动的方向的移动键，例如左（`h`）、下（`j`）、左（`k`）、右（`l`）。如果你想学习更多的组合键，请阅读 Vim 手册中的 `:help split` 和 `:help tabpage`。
 
-To initialize a tab, use a special edit command: `:tabedit`, which automatically switches you to the new open tab. If you give the command a file name as an argument, that file will open for editing. If you neglect to give it a file name as an argument, the command-line mode edit `:e filename.txt` works just like it would in any ordinary Vim window. Navigate tabs with the next (`:tabn`) and previous (`:tabp`) commands.
+### 获取帮助
 
-To use splits, you need to know how to navigate among them using the key-chord combination `C-w` plus a movement key in the direction you want to move, such as left (`h`), down (`j`), up (`k`), or right (`l`). When you want to learn more key chords specific to splits and tabs, read the `:help split` and `:help tabpage` for the Vim manual entries.
+虽然可以在 Vimtutor 中打开参考 Vim 手册，但用 `:help` 打开 Vim 帮助，可以让你自己把时间花在编辑器上，不用完全依赖像这样的文章，就能获得更多的成果。经验是掌握 Vim 的关键。经验有助于提高你的整体计算直觉，因为 Vim 中的很多东西都是从 Unix 宇宙中汲取的。
 
-### Get help
-
-While the Vim manual is referenced in Vimtutor, opening Vim help with `:help` will let you spend time with the editor on your own and get more productive without wholly relying on articles like this one. Experience is key to Vim mastery. The experience contributes to your overall computing intuition since so much of what has gone into Vim is drawn from the Unix universe.
-
-Have fun exploring the beauty of Vim, and share any questions you have in the comments.
-
-Want to become a master of text editing in the terminal, and beyond? These tips for getting started...
+祝你在探索 Vim 之美的过程中玩得开心，有什么问题可以在评论中分享。
 
 --------------------------------------------------------------------------------
 
@@ -140,7 +136,7 @@ via: https://opensource.com/article/20/3/vim-skills
 
 作者：[Detlef Johnson][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
