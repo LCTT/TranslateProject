@@ -8,36 +8,48 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
 The Keyring Concept in Ubuntu: What is It and How to Use it?
+认识Ubuntu里的密钥环
 ======
 
 If you use [automatic login in Ubuntu][1] or other Linux distributions, you might have come across a pop-up message of this sort:
+如果你使用ubuntu里的自动登录功能或者其他的Linux发行版, 你可能遇到过这种弹出消息：
 
-**Enter password to unlock your login keyring
-The login keyring did not get unlocked when you logged into your computer.**
+**Enter password to unlock your login keyring 请输入密码解锁你的登录密钥环
+The login keyring did not get unlocked when you logged into your computer. 当你登录时登录密钥环未被解锁**
 
 ![Enter Password To Unlock Your Login Keyring Ubuntu][2]
 
 It keeps on popping up several times before disappearing if you keep on clicking cancel. You may wonder why do you keep seeing this keyring message all the time?
+你需要点击多次取消才能让它消失。你可能想知道为什么系统会一直提示这个密钥环消息框?
 
 Let me tell you something. It’s not an error. It’s a security feature.
+让我来告诉你答案。它其实并没有出错，它只是一个安全特性。
 
 Surprised? Let me explain the keyring concept in Linux.
+奇怪吗？下面就让我来解释下Linux里的密钥环概念。
 
 ### What is keyring in Linux and why is it used?
+Linux里的密钥环是什么以及为什么需要它?
 
 ![][3]
 
 Why do you use a keyring (also called [keychain][4]) in the real life? You use it to keep one or more keys grouped together so that they are easy to find and carry.
+在现实生活中你为什么要用一个钥匙环(也叫钥匙链)? 你用它把一把或多把钥匙挂到一起, 以便于携带和寻找。
 
 It’s the same concept in Linux. The keyring feature allows your system to group various passwords together and keep it one place.
+Linux里也是类似的。密钥环功能使您的系统可以将各种密码放在一起，并将其保存在一个地方。
 
 Most desktop environments like GNOME, KDE, Xfce etc use an implementation of [gnome-keyring][5] to provide this keyring feature in Linux.
+大多数Linux桌面环境像GNOME, KDE, Xfce等采用gnome的密钥环实现来提供这个功能。
 
 This keyring keeps your ssh keys, GPG keys and keys from applications that use this feature, like Chromium browser. By default, the **keyring is locked with a master password** which is often the login password of the account.
+该密钥环保存了ssh密钥，GPG密钥以及使用此功能的应用程序（例如Chromium浏览器）的密钥。 默认情况下，**“密钥环”通过主密码来保护**，该密码通常是帐户的登录密码。
 
 Every user on your system has its own keyring with (usually) the same password as that of the user account itself. When you login to your system with your password, your keyring is unlocked automatically with your account’s password.
+系统上的每个用户都有自己的密钥环，（通常）密码与用户帐户本身的密码相同。 当您使用密码登录系统时，您的密匙环将使用您帐户的密码自动解锁。
 
 The problem comes when you [switch to auto-login in Ubuntu][1]. This means that you login to the system without entering the password. In such case, your keyring is not unlocked automatically.
+当您[启用Ubuntu中的自动登录功能时][1]时，就有问题了。这意味着您无需输入密码即可登录系统。 在这种情况下，您的密钥环不会自动解锁。
 
 #### Keyring is a security feature
 
