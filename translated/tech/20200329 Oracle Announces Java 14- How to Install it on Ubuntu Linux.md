@@ -1,38 +1,36 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Oracle Announces Java 14! How to Install it on Ubuntu Linux)
 [#]: via: (https://itsfoss.com/java-14-ubuntu/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Oracle 发布 Java 14！如何在 Ubuntu Linux 上安装
+如何在 Ubuntu Linux 上安装 Oracle Java 14
 ======
 
-最近，Oracle 宣布 Java 14（或 Oracle JDK 14）正式开放。如果你想进行最新的实验或者开发的话，那么你可以试试在 Linux 系统上安装 Java 14。
+![](https://img.linux.net.cn/data/attachment/album/202004/05/205313e188lsbrbgz9932d.jpg)
 
-Oracle JDK 14（或简称 Java 14）[发行版][1]包含几个新功能，如果你想预览它们的话。我已添加了链接：
+最近，Oracle 宣布 Java 14（或 Oracle JDK 14）公开可用。如果你想进行最新的实验或者开发的话，那么你可以试试在 Linux 系统上安装 Java 14。
+
+Oracle JDK 14（或简称 Java 14）[发布版][1]包含几个新功能，如果你想预览它们的话。我已添加了链接：
 
   * [instanceof 的模式匹配][2]
   * [Records][3]
   * [Text Blocks][4]
 
-
-
 除预览功能外，它还包含一些改进和补充。在新闻中，他们还提到了其他改进：
 
->此外，最新的 Java 版本增加了 Java 语言对 switch 表达式的支持，新增了用于持续监控 JDK Flight Recorder 数据的新 API，将低延迟 zgc 扩展到了 macOS 和 Windows，并添加在 incubator 模块中，独立的 Java 应用打包和为了安全的新的外部内存访问 API 来有效地访问 Java 堆外部的内存。
+> 此外，最新的 Java 版本增加了 Java 语言对 switch 表达式的支持，新增了用于持续监控 JDK Flight Recorder 数据的新 API，将低延迟 zgc 扩展到了 macOS 和 Windows，并添加在 incubator 模块中，独立的 Java 应用打包，以及为了安全、有效地访问 Java 堆外部内存的新的外部内存访问 API。
 
-当然，如果你想详细了解细节，那么你应查看[官方公告][1]。
+当然，如果你想深入了解细节，那么你应查看[官方公告][1]。
 
-在本教程中，我将向你展示在 Ubuntu 系统上安装 Java 14 的简便方法。继续阅读。
+在本教程中，我将向你展示在 Ubuntu 系统上安装 Java 14 的简便方法。请继续阅读。
 
-**注意：**如果你选择 Oracle Java 11 或更高版本，那么应该了解新的 [Oracle 技术网络许可协议][5]，以了解它如何影响个人用户、开发人员和商业组织。通常，它们可以免费用于开发和测试，但不能用于生产。
+**注意：**如果你选择使用 Oracle Java 11 或更高版本，那么应该了解新的 [Oracle 技术网络许可协议][5]，以了解它如何影响个人用户、开发人员和商业组织。通常，它们可以免费用于开发和测试，但不能用于生产环境。
 
 ### 如何在 Ubuntu Linux 上安装 Java 14？
-
-![][6]
 
 作为参考，我已成功在默认安装 **OpenJDK 11** 的 **Pop!_OS 19.10** 上成功安装了它。
 
@@ -56,7 +54,7 @@ sudo apt install oracle-java14-set-default
 
 ### 总结
 
-当然，这些是最新的特性，如果你不想破环环境，你或许会希望继续使用 Java11。如果你想在了解风险的情况下进行试验，请继续尝试！
+当然，这些会带来最新的特性，如果你不想破环原有环境，你或许会希望继续使用 Java 11。如果你想在了解风险的情况下进行试验，请继续尝试！
 
 欢迎在下面的评论中让我知道你对 Java 14 的想法。
 
@@ -67,7 +65,7 @@ via: https://itsfoss.com/java-14-ubuntu/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
