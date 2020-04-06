@@ -10,7 +10,7 @@
 使用 at 命令在 Linu 上安排任务
 ======
 at 命令可以很容易地安排 Linux 任务在你选择的任何时间或日期运行，让我们来看看它能为你做什么。
-
+![][0]
 romkaz / Getty Images
 
 当你希望命令或脚本在某个特定时间运行时，你不需要将手指放在键盘上盘旋等待按下回车键，或者是在特定时间坐在办公桌前。相反，你可以通过 **at** 命令来设置任务。在本文中，我们将研究如何使用 **at** 来安排任务，如何精确地选择任务希望运行的时间以及如何使用 **at** 来查看安排运行的任务。
@@ -23,14 +23,14 @@ romkaz / Getty Images
 
 ### 使用 at
 
-**at** 命令很容易使用，只需记住几件事。一个简单的使用 **at** 类似于这样：
+**at** 命令很容易使用，只需记住几件事。一个简单使用 **at** 的例子类似于这样：
 ```
 $ at 5:00PM
 at> date >> thisfile
 at> <EOT>
 ```
 
-在输入 "at" 和应该运行命令的时间，**at** 会提示你在设定时间会运行该命令（此例中是 **`date`** 命令）。输入 **^D** 来完成请求。
+在输入 "at" 和应该运行命令的时间，**at** 会提示你在设定时间会运行该命令（此例中是 **`date`** 命令）。输入 **^D**(Ctrl + d) 来完成请求。
 
 假设我们在下午 5 点之前设置这个 **at** 命令，那么日期和时间将在当天下午 5 点添加到名为 "thisfile" 文件的末尾。否则，该命令将在第二天下午 5 点运行。
 
@@ -132,9 +132,7 @@ at> <EOT>
 
 **总结**
 
-当你要安排一项一次性任务时，即使你希望在今天下午或几年后运行，**at** 命令是通用且易于使用的。
-
-加入 [Facebook][2] 和 [LinkedIn][3] 上的网络世界社区，评论最火的主题。
+当你要安排一项一次性任务时，无论你是希望在今天下午或几年后运行，**at** 命令都是通用且易于使用的。
 
 --------------------------------------------------------------------------------
 
@@ -149,6 +147,7 @@ via: https://www.networkworld.com/article/3535808/scheduling-tasks-on-linux-usin
 
 [a]: https://www.networkworld.com/author/Sandra-Henry_Stocker/
 [b]: https://github.com/lujun9972
+[0]: https://images.idgesg.net/images/article/2019/08/gettyimages-140389307-100808283-large.jpg
 [1]: https://www.networkworld.com/blog/itaas-and-the-corporate-storage-technology/?utm_source=IDG&utm_medium=promotions&utm_campaign=HPE22140&utm_content=sidebar (ITAAS and Corporate Storage Strategy)
 [2]: https://www.facebook.com/NetworkWorld/
 [3]: https://www.linkedin.com/company/network-world
