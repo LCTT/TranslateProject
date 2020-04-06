@@ -184,6 +184,7 @@ The **for** keyword is built into the Bash shell. Many similar shells use the sa
 关键字 **for** 是内置在 Bash shell 中的。许多类似的 shell 使用和 Bash 同样的关键字和语法，但是也有某些 shell ，比如 [tcsh][7]，使用不同的关键字，例如 **foreach**。
 
 In tcsh, the syntax is similar in spirit but more strict than Bash. In the following code sample, do not type the string **foreach?** in lines 2 and 3. It is a secondary prompt alerting you that you are still in the process of building your loop.
+tcsh 的语法在精神上与 Bash 类似，但是它更为严格。在下面的例子中，不要在你的终端的第 2，3 行键入 **foreach?** 。这只是一个告诉你，你仍处在构建循环的过程中的辅助提示。
 
 ```
 $ foreach f (*)
@@ -196,14 +197,18 @@ waterfall.png: PNG image data, 4608 x 2592, 8-bit/color RGB, non-interlaced
 ```
 
 In tcsh, both **foreach** and **end** must appear alone on separate lines, so you cannot create a **for** loop on one line as you can with Bash and similar shells.
+在 tcsh 中，**foreach** 和 **end** 都必须单独的在一行中出现。因此你不能像 Bash 或者其他类似的 shell 一样只使用一行命令创建一个 **for** 循环。
 
-### For loops with the find command
+### For loops with the find command for 循环与 find 命令
 
 In theory, you could find a shell that doesn't provide a **for** loop function, or you may just prefer to use a different command with added features.
+理论上，你可能使用不支持 **for** 循环的 shell，或者你只是更想使用其他命令的新特性。
 
 The **find** command is another way to implement the functionality of a **for** loop, as it offers several ways to define the scope of which files to include in your loop as well as options for [Parallel][8] processing.
+使用**find** 命令是另一个实现 **for** 循环功能的途径。这个命令通过并行处理提供了几种方法来定义你的循环中需要包括的文件的范围。
 
 The **find** command is meant to help you find files on your hard drives. Its syntax is simple: you provide the path of the location you want to search, and **find** finds all files and directories:
+**find** 命令顾名思义是帮助你查询存储在硬盘里的文件。他的用法很简单：提供一个你希望它查询的位置的路径，然后 **find** 就会查询这个路径下面的所有文件和文件夹。
 
 ```
 $ find .
@@ -215,6 +220,7 @@ $ find .
 ```
 
 You can filter the search results by adding some portion of the name:
+你可以通过添加名称的某些部分来过滤搜索结果。
 
 ```
 $ find . -name "*jpg"
@@ -223,6 +229,7 @@ $ find . -name "*jpg"
 ```
 
 The great thing about **find** is that each file it finds can be fed into a loop using the **-exec** flag. For instance, to scale down only the PNG photos in your example directory:
+**find** 命令最好的事情是你可以通过 **-exec** 参数标志将它查询到的每一个文件放入循环中。例如，只对存放在你的 example 文件夹下的 PNG 图片进行体积压缩操作。
 
 ```
 $ find . -name "*png" -exec convert {} -scale 33% tmp/{} \;
