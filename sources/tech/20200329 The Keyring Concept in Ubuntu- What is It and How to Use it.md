@@ -12,10 +12,10 @@ The Keyring Concept in Ubuntu: What is It and How to Use it?
 ======
 
 If you use [automatic login in Ubuntu][1] or other Linux distributions, you might have come across a pop-up message of this sort:
-如果你使用ubuntu里的自动登录功能或者其他的Linux发行版, 你可能遇到过这种弹出消息：
+如果您用过[ubuntu里的自动登录功能][1]或者其他的Linux发行版, 您可能遇到过这种弹出消息：
 
-**Enter password to unlock your login keyring 请输入密码解锁你的登录密钥环
-The login keyring did not get unlocked when you logged into your computer. 当你登录时登录密钥环未被解锁**
+**Enter password to unlock your login keyring 请输入密码解锁您的登录密钥环
+The login keyring did not get unlocked when you logged into your computer. 当您登录时登录密钥环未被解锁**
 
 ![Enter Password To Unlock Your Login Keyring Ubuntu][2]
 
@@ -34,13 +34,13 @@ Linux里的密钥环是什么以及为什么需要它?
 ![][3]
 
 Why do you use a keyring (also called [keychain][4]) in the real life? You use it to keep one or more keys grouped together so that they are easy to find and carry.
-在现实生活中你为什么要用一个钥匙环(也叫钥匙链)? 你用它把一把或多把钥匙挂到一起, 以便于携带和寻找。
+在现实生活中你为什么要用一个钥匙环(也叫[钥匙链][4])? 你用它把一把或多把钥匙挂到一起, 以便于携带和寻找。
 
 It’s the same concept in Linux. The keyring feature allows your system to group various passwords together and keep it one place.
 Linux里也是类似的。密钥环功能使您的系统可以将各种密码放在一起，并将其保存在一个地方。
 
 Most desktop environments like GNOME, KDE, Xfce etc use an implementation of [gnome-keyring][5] to provide this keyring feature in Linux.
-大多数Linux桌面环境像GNOME, KDE, Xfce等采用gnome的密钥环实现来提供这个功能。
+大多数Linux桌面环境像GNOME, KDE, Xfce等采用[gnome的密钥环][5]实现来提供这个功能。
 
 This keyring keeps your ssh keys, GPG keys and keys from applications that use this feature, like Chromium browser. By default, the **keyring is locked with a master password** which is often the login password of the account.
 该密钥环保存了ssh密钥，GPG密钥以及使用此功能的应用程序（例如Chromium浏览器）的密钥。 默认情况下，**“密钥环”通过主密码来保护**，该密码通常是帐户的登录密码。
@@ -51,49 +51,64 @@ Every user on your system has its own keyring with (usually) the same password a
 The problem comes when you [switch to auto-login in Ubuntu][1]. This means that you login to the system without entering the password. In such case, your keyring is not unlocked automatically.
 当您[启用Ubuntu中的自动登录功能时][1]时，就有问题了。这意味着您无需输入密码即可登录系统。 在这种情况下，您的密钥环不会自动解锁。
 
-#### Keyring is a security feature
+#### Keyring is a security feature 密钥环是一个安全特性
 
 Remember I told you that the keyring was a security feature? Now imagine that on your Linux desktop, you are using auto-login. Anyone with access to your desktop can enter the system without password but you have no issues with that perhaps because you use it to browse internet only.
+记得我说过密钥环是一个安全特性吗？现在想象一下您在您的Linux电脑上开启了自动登录功能。有权访问您电脑的任何人无需密码就能进入您的系统。但是您可能不会在意，因为您只是用它来访问互联网。
 
 But if you use a browser like Chromium or [Google Chrome in Ubuntu][6], and use it to save your login-password for various websites, you have an issue on your hand. Anyone can use the browser and login to the websites for which you have saved password in your browser. That’s risky, isn’t it?
+但是，如果您使用Chromium或[Ubuntu中的Google Chrome][6]之类的浏览器，并使用它来保存各种网站的登录密码，那么您将遇到麻烦。任何人都可以使用浏览器并利用您在浏览器中保存的密码登录网站。那不就是风险吗？
 
 This is why when you try to use Chrome, it will ask you to unlock the keyring repeatedly. This ensures that only the person who knows the keyring’s password (i.e. the account password) can use the saved password in browser for logging in to their respective websites.
+这就是为什么当您使用Chrome时，它将重复地提示您先解锁密钥环。这确保了只有知道密钥环密码的人才能使用在浏览器中保存的密码来登录它们相关联的网站。
 
 If you keep on cancelling the prompt for keyring unlock, it will eventually go away and let you use the browser. However, the saved password won’t be unlocked and you’ll see ‘sync paused’ in Chromium/Chrome browsers.
+如果您继续取消解锁密钥环的提示，它最终将消失并允许您使用浏览器。但是，保存的密码将不会被解锁，您在Chromium/Chome浏览器上将会看到'同步暂停'的提示。
 
 ![Sync paused in Google Chrome][7]
 
-#### If this keyring always exited, why you never saw it?
+#### If this keyring always exited, why you never saw it? 如果密钥环总是存在的，为什么您从来没有见过它呢?
 
 That’s a valid question if you have never seen this keyring thing in your Linux system.
+如果您在您的Linux系统上从没见过它的话，这就是一个有效的问题。
 
 If you never used automatic login (or changed your account’s password), you might not even have realized that this feature exists.
+如果您从没有用过自动登录功能(或者修改您的账户密码)，您可能都没有意识到这个特性的存在。
 
 This is because when you login to your system with your password, your keyring is unlocked automatically with your account’s password.
+这是因为当您通过您的密码登录系统时，您的密钥环被您的账户密码自动解锁了。
 
 Ubuntu (and other distributions) asks for password for common admin tasks like modifying users, installing new software etc irrespective of whether you auto login or not. But for regular tasks like using a browser, it doesn’t ask for password because keyring is already unlocked.
+Ubuntu(和其他发行版)对于通用的管理任务像修改用户, 安装新软件等需要输入密码，无论您是否是自动登录的。但是对于日常任务像使用浏览器，它不需要输入密码因为密钥环已经被解锁了。
 
 When you switch to automatic login, you don’t enter the password for login anymore. This means that the keyring is not unlocked and hence when you try to use a browser which uses the keyring feature, it will ask to unlock the keyring.
+当您切换到自动登录时，您不再需要输入登录密码。这意味着密钥环没有被自动解锁，因此当您使用利用了密钥环特性的浏览器时，它将提示您来解锁密钥环。
 
-#### You can easily manage the keyring and passwords
+#### You can easily manage the keyring and passwords 您可以容易地管理密钥环和密码
 
 Where is this keyring located? At the core, it’s a daemon (a program that runs automatically in the background).
+这个密钥环放在哪里？它的核心是一个守护任务(一个后台自动运行的程序)。
 
 Don’t worry. You don’t have to ‘fight the daemon’ in the terminal. Most desktop environments come with a graphical application that interacts with this daemon. On KDE, there is KDE Wallet, on GNOME and others, it’s called Password and Keys (originally known as [Seahorse][8]).
+别担心。您不必通过终端来操作守护任务。大多数桌面环境都自带有图形化的应用程序可以和守护进程进行交互。KDE上有KDE钱包，GNOME和其他桌面上叫做密码和密钥(原来叫[海马][8])。
 
-![Password And Keys App in Ubuntu][9]
+![Password And Keys App in Ubuntu][9] Ubuntu上的密码和密钥App
 
 You can use this GUI application to see what application use the keyring to manage/lock passwords.
+您可以用这个GUI程序来查看什么应用程序在用密钥环来管理/保护密码。
 
 As you can see, my system has the login keyring which is automatically created. There is also a keyrings for storing GPG and SSH keys. The [Certificates][10] is for keeping the certificates (like HTTPS certificates) issued by a certificate authority.
+您可以看到，我的系统有自动创建的登录密钥环。也有一个存储GPG和SSH密钥的密钥环。那个[证书][10]是用来保存证书机构颁发的证书(像HTTPS证书)的。
 
-![Password and Keys application in Ubuntu][11]
+![Password and Keys application in Ubuntu][11] Ubuntu上的密码和密钥应用程序
 
 You can also use this application to manually store passwords for website. For example, I created a new password-protected keyring called ‘Test’ and stored a password in this keyring manually.
+您也可以使用这个应用程序来手动保存网站的密码。例如，我创建了一个新的叫做'Test'的被密码保护的密钥环，并手动存储了一个密码。
 
 This is slightly better than keeping a list of passwords in a text file. At least in this case your passwords can be viewed only when you unlock the keyring with password.
+这比保存一批密码在一个文本文件中要好一些。至少在这种情况下，您的密码只有在您通过密码解锁了密钥环时才允许被看到。
 
-![Saving New Password Seahorse][12]
+![Saving New Password Seahorse][12] 保存新密码
 
 One potential problem here is that if you format your system, the manually saved passwords are definitely lost. Normally, you make backup of personal files, not of all the user specific data such as keyring files.
 
