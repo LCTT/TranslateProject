@@ -238,8 +238,10 @@ design_maori.png, waterfall.png
 ```
 
 In the **-exec** clause, the bracket characters **{}** stand in for whatever item **find** is processing (in other words, any file ending in PNG that has been located, one at a time). The **-exec** clause must be terminated with a semicolon, but Bash usually tries to use the semicolon for itself. You "escape" the semicolon with a backslash ( **\;** ) so that **find** knows to treat that semicolon as its terminating character.
+在 **-exec** 短语中，括号 **{}** 表示的是 **find** 正在处理的条目（换句话说，一次一个所有被找到的以 PNG 结尾的文件）。**-exec** 短语必须使用分号结尾，但是 Bash 中常常也会使用分号。你的 **结束符** 可以使用反斜杠加上一个分号（**\;**），使得 **find** 命令可以知道这个结束符是用来指示它的。
 
 The **find** command is very good at what it does, and it can be too good sometimes. For instance, if you reuse it to find PNG files for another photo process, you will get a few errors:
+**find** 命令的操作非常棒，某些情况下它可以表现得更棒。比如说，在新的一个进程中使用同一个命令查找 PNG 文件，你可能会得到一些错误反馈：
 
 ```
 $ find . -name "*png" -exec convert {} -flip -flop tmp/{} \;
@@ -248,27 +250,33 @@ No such file or directory @ error/blob.c/OpenBlob/2643.
 ...
 ```
 
-It seems that **find** has located all the PNG files—not only the ones in your current directory ( **.** ) but also those that you processed before and placed in your **tmp** subdirectory. In some cases, you may want **find** to search the current directory plus all other directories within it (and all directories in _those_ ). It can be a powerful recursive processing tool, especially in complex file structures (like directories of music artists containing directories of albums filled with music files), but you can limit this with the **-maxdepth** option.
+It seems that **find** has located all the PNG files—not only the ochunes in your current directory ( **.** ) but also those that you processed before and placed in your **tmp** subdirectory. In some cases, you may want **find** to search the current directory plus all other directories within it (and all directories in _those_ ). It can be a powerful recursive processing tool, especially in complex file structures (like directories of music artists containing directories of albums filled with music files), but you can limit this with the **-maxdepth** option.
+在一些情况下，你可能希望 **find** 查询当前文件夹下再加上其子文件夹下的所有文件。**find** 命令是一个功能强大的递归工具，特别是在处理一些文件结构复杂的情境下（比如用来放置音乐人的被存满了音乐的专辑文件夹），同时你也可以使用 **-maxdepth** 选项来限制最大的递归深度。
 
 To find only PNG files in the current directory (excluding subdirectories):
+只在当前文件夹下查找 PNG 文件（不包括子文件夹）
 
 ```
 `$ find . -maxdepth 1 -name "*png"`
 ```
 
 To find and process files in the current directory plus an additional level of subdirectories, increment the maximum depth by 1:
+最大深度加 1 可以查找和处理当前文件夹及下一级子文件夹的文件
 
 ```
 `$ find . -maxdepth 2 -name "*png"`
 ```
 
 Its default is to descend into all subdirectories.
+默认是查找每一级子文件夹。
 
-### Looping for fun and profit
+### Looping for fun and profit 循环的乐趣与收益
 
 The more you use loops, the more time and effort you save, and the bigger the tasks you can tackle. You're just one user, but with a well-thought-out loop, you can make your computer do the hard work.
+你使用的循环越多，你就可以省下更多的时间和力气，并且可以应对庞大的任务。虽然你只是一个用户，但是通过使用循环，你可以使你的计算机完成困难的任务。
 
 You can and should treat looping like any other command, keeping it close at hand for when you need to repeat a single action or two on several files. However, it's also a legitimate gateway to serious programming, so if you have to accomplish a complex task on any number of files, take a moment out of your day to plan out your workflow. If you can achieve your goal on one file, then wrapping that repeatable process in a **for** loop is relatively simple, and the only "programming" required is an understanding of how variables work and enough organization to separate unprocessed from processed files. With a little practice, you can move from a Linux user to a Linux user who knows how to write a loop, so get out there and make your computer work for you!
+你可以并且应该使用循环就像使用其他的命令一样。在你需要重复的处理单个或多个文件时，尽可能的使用这个命令。（。。。。。），因此如果你需要在一些文件上完成复杂的任务，你应该多花点时间在计划自己的工作流上面。如果你可以在一份文件上完成你的工作，接下来将操作包装进 **for** 循环里就相对简单了，唯一的“编程”的需求是理解变量是如何工作的和足够的组织工作将已处理过的文件和未处理过的文件分开。经过一段时间的练习，你就可以从一名 Linux 用户升级成一位知道如何使用循环的 Linux 用户，所以开始动手让计算机为你工作吧！
 
 ---
 
@@ -276,7 +284,7 @@ via: https://opensource.com/article/19/6/how-write-loop-bash
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者 ID](https://github.com/chunibyo-wly)
+译者：[chunibyo-wly](https://github.com/chunibyo-wly)
 校对：[校对者 ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux 中国](https://linux.cn/) 荣誉推出
