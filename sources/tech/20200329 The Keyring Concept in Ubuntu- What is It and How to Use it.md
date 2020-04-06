@@ -108,74 +108,92 @@ You can also use this application to manually store passwords for website. For e
 This is slightly better than keeping a list of passwords in a text file. At least in this case your passwords can be viewed only when you unlock the keyring with password.
 这比保存一批密码在一个文本文件中要好一些。至少在这种情况下，您的密码只有在您通过密码解锁了密钥环时才允许被看到。
 
-![Saving New Password Seahorse][12] 保存新密码
+![Saving New Password Seahorse][12] 
 
 One potential problem here is that if you format your system, the manually saved passwords are definitely lost. Normally, you make backup of personal files, not of all the user specific data such as keyring files.
+一个潜在的问题是如果您格式化您的系统，手动保存的密码必然会丢失。通常，您会备份您的个人文件，但并不是所有的用户特定数据如密钥环文件。
 
 There is way to handle that. The keyring data is usually stored in ~/.local/share/keyrings directory. You can see all the keyrings here but you cannot see its content directly. If you remove the password of the keyring (I’ll show the steps in later section of this article), you can read the content of the keyring like a regular text file. You can copy this unlocked keyring file entirely and import it in the Password and Keys application on some other Linux computer (running this application).
+有一种办法能解决它。密钥环数据通常保存在~/.local/share/keyrings目录。在这里您可以看到所有的密钥环但是您不能直接看到它们的内容。如果您移除密钥环的密码(我会在这篇文章的后面描述操作步骤)，您可以像一个普通的文本文件一样读取密钥环的内容。您可以完整地拷贝这个解锁后的密钥环文件并在其他的Linux机器(安装了密码和密钥应用)上导入到密码和密钥应用程序。
 
 So, let me summarize what you have learned so far:
+来总结一下目前为止所学的内容：
+  * Most Linux has this ‘keyring feature’ installed and activated by default 大多数Linux缺省已经安装并激活了密钥环特性
+  * Each user on a system has its own keyring 系统上的每个用户都拥有他自己的密钥环
+  * The keyring is normally locked with the account’s password 密钥环通常被账户密码锁定(保护)
+  * Keyring is unlocked automatically when you login with your password 当您通过密码登录时密钥环会被自动解锁
+  * For auto-login, the keyring is not unlocked and hence you are asked to unlock it when you try to use an application that uses keyring 对于自动登录，密钥环不会自动解锁，因此当您试图使用依赖密钥环的应用程序时会被提示先解锁它
+  * Not all browsers or application use the keyring feature 并不是所有的浏览器或应用程序利用了密钥环特性
+  * There is a GUI application installed to interact with keyring (Linux上)安装了一个GUI程序可以和密钥环交互
+  * You can use the keyring to manually store passwords in encrypted format 您可以用密钥环来手动以加密格式来存储密码
+  * You can change the keyring password on your own 您可以自己修改密钥环密码
+  * You can export (by unlocking the keyring first) and import it on some other computer to get your manually saved passwords 您可以通过导出(需要先解锁密钥环)并导入(到其他计算机上)的方式来获取手工保存的密码。
 
-  * Most Linux has this ‘keyring feature’ installed and activated by default
-  * Each user on a system has its own keyring
-  * The keyring is normally locked with the account’s password
-  * Keyring is unlocked automatically when you login with your password
-  * For auto-login, the keyring is not unlocked and hence you are asked to unlock it when you try to use an application that uses keyring
-  * Not all browsers or application use the keyring feature
-  * There is a GUI application installed to interact with keyring
-  * You can use the keyring to manually store passwords in encrypted format
-  * You can change the keyring password on your own
-  * You can export (by unlocking the keyring first) and import it on some other computer to get your manually saved passwords
 
 
-
-### Change keyring password
+### Change keyring password 修改密钥环密码
 
 Suppose you changed your account password. Now when you login, your system tries to unlock the keyring automatically using the new login password. But the keyring still uses the old login password.
+假设您修改了您的账户密码。当您登录时，您的系统试图通过新的登录密码来自动解锁密钥环。但是密钥环还在使用老的登录密码。
 
 In such a case, you can change the keyring password to the new login password so that the keyring gets unlocked automatically as soon as you login to your system.
+这种情况下，您可以修改密钥环密码为新的登录密码，这样密码环才能在您登录系统时自动解锁。
 
 Open the Password and Keys application from the menu:
+从菜单中打开密码和密钥应用程序：
 
 ![Look for Password and Keys app in the menu][9]
 
 Now, right click on the Login keyring and click on Change Password:
+在登录密钥环上右击并点击修改密码：
 
 ![Change Keyring Password][13]
 
 What if you don’t remember the old login password?
+如果您不记得老的登录密码怎么办？
 
 You probably know that it is [easy to reset forgotten password in Ubuntu][14]. The problem comes with the keyring in such cases. You changed the account password but you don’t remember the old account password that is still used by the keyring.
+您可能知道[Ubuntu上复位忘记的密码是很容易的][14]。但是密钥环在这种场景下还是有问题。您修改了账户密码但是您不记得仍然被密钥环使用的老的账户密码。
 
 Now you cannot change it because you don’t know the old password. What to do now?
+您不能修改它因为您不知道老的密码。怎么办？
 
 In such a case, you’ll have to remove the entire keyring itself. You can do that from the Passwords and Keys application:
+这种情况下，您将不得不移除整个密钥环。您可以通过密码和密钥应用程序来操作：
 
 ![Delete Keyring Ubuntu][15]
 
 It will ask for your confirmation:
+它会提示您进行确认：
 
 ![Delete Keyring][16]
 
 Alternatively, you may also manually delete the keyring files in ~/.local/share/keyrings directory.
+另外，您也可以手动删除~/.local/share/keyrings目录下的密钥环文件。
 
 When the old keyring is removed and you try to use Chrome/Chromium, it will ask you to create new keyring.
+老的密钥环文件被移除后，您再打开Chrome/Chromium时，它会提示您创建一个新的密钥环。
 
 ![New Keyring Password][17]
 
 You can use the new login password so that the keyring gets unlocked automatically.
+您可以用新的登录密码，密钥环就会被自动解锁了。
 
-### Disable keyring password
+### Disable keyring password 禁用密钥环密码
 
 In cases where you want to use automatic login but don’t want to unlockk keyring manually, you may choose to disable the keyring with a workaround. Keep in mind that you are disabling a security feature so think twice before doing so.
+在您想用自动登录但又不想手动解锁密钥环时，您可以把禁用密钥环密码作为一个规避方法。记住您正在禁用一个安全特性，因此请三思。
 
 The process is similar to changing keyring password. Open Password and Keys application and go on to change the keyring password.
+操作步骤和修改密钥环相似。打开密码和密钥应用程序，然后修改密钥环密码。
 
 The trick is that when it asks to change the password, don’t enter a new password and hit Continue instead. This will remove any password from the keyring.
+技巧在于当它提示修改密码时，不要输入新密码，而是点击继续按钮。这将移除密钥环的密码。
 
 ![Disable Keyring password by not setting any password at all][18]
 
 This way, the keyring will have no password and it remains unlocked all the time.
+这种方法，密钥环没有密码保护并将一直处于解锁状态。
 
 --------------------------------------------------------------------------------
 
@@ -183,7 +201,7 @@ via: https://itsfoss.com/ubuntu-keyring/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[messon007](https://github.com/messon007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
