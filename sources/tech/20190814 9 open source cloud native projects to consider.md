@@ -7,48 +7,58 @@
 [#]: via: (https://opensource.com/article/19/8/cloud-native-projects)
 [#]: author: (Bryant Son https://opensource.com/users/brsonhttps://opensource.com/users/marcobravo)
 
-9 open source cloud native projects to consider
+9 open source cloud native projects to consider 值得考虑的9个开源的云原生项目
 ======
 Work with containers? Get familiar with these projects from the Cloud
 Native Computing Foundation
+工作中使用了容器？熟悉来自云原生计算基金会的这些项目
 ![clouds in the sky with blue pattern][1]
 
-As the practice of developing applications with containers is getting more popular, [cloud-native applications][2] are also on the rise. By [definition][3]:
+As the practice of developing applications with containers is getting more popular, [cloud-native applications][2] are also on the rise. By [definition][3]:
+随着通过容器开发应用的实践变得流行，[云原生应用][2]也在上升。其定义：
+云原生技术被用于开发应用程序，这些程序通过将服务打包在容器中来完成构建，部署为微服务，通过敏捷的DevOps流程和持续集成工作流在弹性基础设施上管理。
 
 > "Cloud-native technologies are used to develop applications built with services packaged in containers, deployed as microservices, and managed on elastic infrastructure through agile DevOps processes and continuous delivery workflows."
 
-This description includes four elements that are integral to cloud-native applications:
+This description includes four elements that are integral to cloud-native applications:
+这个描述包括构成云原生应用的4个元素：
 
-  1. Container
-  2. Microservice
-  3. DevOps
-  4. Continuous integration and continuous delivery (CI/CD)
+  1. Container 容器
+  2. Microservice 微服务
+  3. DevOps DevOps
+  4. Continuous integration and continuous delivery (CI/CD) 持续集成和持续交付
 
 
 
-Although these technologies have very distinct histories, they complement each other well and have led to surprisingly exponential growth of cloud-native applications and toolsets in a short time. This [Cloud Native Computing Foundation][4] (CNCF) infographic shows the size and breadth of the cloud-native application ecosystem today.
+Although these technologies have very distinct histories, they complement each other well and have led to surprisingly exponential growth of cloud-native applications and toolsets in a short time. This [Cloud Native Computing Foundation][4] (CNCF) infographic shows the size and breadth of the cloud-native application ecosystem today.
+尽管这些技术有非常独特的历史，它们互相补充，共同导致了短时间内的云原生应用和工具的惊人的指数级增长。这个[云原生计算基金会][4]信息图现实了今天的云原生应用生态的规模和广度。
 
 ![Cloud-Native Computing Foundation applications ecosystem][5]
 
 Cloud-Native Computing Foundation projects
+云原生计算基金会项目
 
 I mean, just look at that! And this is just a start. Just as NodeJS’s creation sparked the explosion of endless JavaScript tools, the popularity of container technology started the exponential growth of cloud-native applications.
+我的意思是，看看那！ 这仅仅是一个开始。 正如NodeJS的出现引发了无休止的JavaScript工具的爆炸式增长一样，容器技术的普及也推动了云原生应用程序的指数增长。
 
 The good news is that there are several organizations that oversee and connect these dots together. One is the [**Open Containers Initiative (OCI)**][6], which is a lightweight, open governance structure (or project), "formed under the auspices of the Linux Foundation for the express purpose of creating open industry standards around container formats and runtime." The other is the **CNCF**, "an open source software foundation dedicated to making cloud native computing universal and sustainable."
+好消息是，有几个组织负责监管这些技术并将它们融合在一起。 其中之一是[** Open Containers Initiative（OCI）**][6]，它是一种轻量级的，开放的治理结构（或项目），“是在Linux基金会的主持下形成的，其明确目的是创建开放的行业标准容器格式和运行时。” 另一个是** CNCF **，“致力于使云原生计算具有通用性和可持续性的开源软件基金会”。
 
 In addition to building a community around cloud-native applications generally, CNCF also helps projects set up structured governance around their cloud-native applications. CNCF created the concept of maturity levels—Sandbox, Incubating, or Graduated—which correspond to the Innovators, Early Adopters, and Early Majority tiers on the diagram below.
-
+除了通常围绕云原生应用建立社区之外，CNCF还帮助项目围绕其云原生应用建立结构化的管理。CNCF创建了成熟度级别的概念（沙箱，孵化或毕业），与下图中的“创新者”，“早期采用者”和“早期多数”层相对应。
 ![CNCF project maturity levels][7]
 
-CNCF project maturity levels
+CNCF project maturity levels CNCF项目成熟度级别
 
 The CNCF has detailed [criteria][8] for each maturity level (included below for readers’ convenience). A two-thirds supermajority of the Technical Oversight Committee (TOC) is required for a project to be Incubating or Graduated.
+CNCF为每个成熟度级别制定了详细的[标准][8]（为方便读者而列在下面）。 获得技术监督委员会（TOC）的三分之二的同意才能转为孵化或毕业项目。
 
-### Sandbox stage
+### Sandbox stage 沙箱级
 
-> To be accepted in the sandbox, a project must have at least two TOC sponsors. See the CNCF Sandbox Guidelines v1.0 for the detailed process.
+> To be accepted in the sandbox, a project must have at least two TOC sponsors. See the CNCF Sandbox Guidelines v1.0 for the detailed process. 要成为沙箱级，一个项目必须至少有两个TOC赞助商。 有关详细过程，请参见《 CNCF沙箱指南v1.0》。
 
-### Incubating stage
+
+### Incubating stage 孵化级
 
 > Note: The incubation level is the point at which we expect to perform full due diligence on projects.
 >
@@ -59,9 +69,18 @@ The CNCF has detailed [criteria][8] for each maturity level (included below for 
 >   * Demonstrate a substantial ongoing flow of commits and merged contributions.
 >   * Since these metrics can vary significantly depending on the type, scope, and size of a project, the TOC has final judgement over the level of activity that is adequate to meet these criteria
 >
+>注意：孵化级是我们期望对项目进行全面尽职调查的起点。
+>
+>要进入孵化阶段，项目除了满足沙箱阶段的要求之外还要满足：
+>
+> *证明至少有三个独立的最终用户已成功将其用于生产，且TOC判断这些最终用户具有足够的质量和范围。
+> *合入者的数量要合理。合入者定义为具有合入权的人。即可以接受对部分或全部项目贡献的人。
+> *演示有大量正在进行的提交和合并的贡献。
+> *由于这些指标可能会根据项目的类型，范围和大小而有很大差异，因此TOC对足以满足这些标准的活动级别拥有最终决策权
 
 
-### Graduated stage
+
+### Graduated stage 毕业级
 
 > To graduate from sandbox or incubating status, or for a new project to join as a graduated project, a project must meet the incubating stage criteria plus:
 >
@@ -73,13 +92,23 @@ The CNCF has detailed [criteria][8] for each maturity level (included below for 
 >   * Have a public list of project adopters for at least the primary repo (e.g., ADOPTERS.md or logos on the project website).
 >   * Receive a supermajority vote from the TOC to move to graduation stage. Projects can attempt to move directly from sandbox to graduation, if they can demonstrate sufficient maturity. Projects can remain in an incubating state indefinitely, but they are normally expected to graduate within two years.
 >
+>要从沙箱或孵化状态毕业，或者要使一个新项目作为已毕业项目加入，项目除了必须满足孵化阶段标准外还要满足：
+>
+> *至少有两个组织的提交者。
+> *已获得并维护了“核心基础设施计划最佳实践徽章”。
+> *已完成独立和第三方安全审核，并发布了具有与以下示例类似的范围和质量的结果（包括已解决的关键漏洞）：<https://github.com/envoyproxy/envoy#security-audit>和所有关键毕业之前需要解决漏洞。
+> *采用CNCF行为准则。
+> *明确定义项目治理和提交流程。最好将其排布在GOVERNANCE.md文件中，并引用显示当前提交者和荣誉提交者的OWNERS.md文件。
+> *至少有主仓的项目采用者的公开列表（例如，ADOPTERS.md或项目网站上的徽标）。
+> *获得TOC的多数票，进入毕业阶段。如果项目能够证明足够的成熟度，则可以尝试直接从沙箱过渡到毕业。项目可以无限期保持孵化状态，但是通常预计它们会在两年内毕业。
 
-
-## 9 projects to consider
+## 9 projects to consider 值得考虑的9个项目
 
 While it’s impossible to cover all of the CNCF projects in this article, I’ll describe are nine of most interesting Graduated and Incubating open source projects.
+本文不可能涵盖所有的CNCF项目，我将介绍最有趣的9个“毕业和孵化中”的开源项目。
 
 Name | License | What It Is
+名称|授权类型|简要描述
 ---|---|---
 [Kubernetes][9] | Apache 2.0 | Orchestration platform for containers
 [Prometheus][10] | Apache 2.0 | Systems and service monitoring tool
