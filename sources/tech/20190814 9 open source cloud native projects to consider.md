@@ -12,6 +12,7 @@
 Work with containers? Get familiar with these projects from the Cloud
 Native Computing Foundation
 工作中使用了容器？熟悉来自云原生计算基金会的这些项目
+
 ![clouds in the sky with blue pattern][1]
 
 As the practice of developing applications with containers is getting more popular, [cloud-native applications][2] are also on the rise. By [definition][3]:
@@ -39,7 +40,7 @@ Cloud-Native Computing Foundation projects
 云原生计算基金会项目
 
 I mean, just look at that! And this is just a start. Just as NodeJS’s creation sparked the explosion of endless JavaScript tools, the popularity of container technology started the exponential growth of cloud-native applications.
-我的意思是，看看那！ 这仅仅是一个开始。 正如NodeJS的出现引发了无休止的JavaScript工具的爆炸式增长一样，容器技术的普及也推动了云原生应用程序的指数增长。
+我的意思是，留意吧！这仅仅是一个开始。 正如NodeJS的出现引发了无休止的JavaScript工具的爆炸式增长一样，容器技术的普及也推动了云原生应用程序的指数增长。
 
 The good news is that there are several organizations that oversee and connect these dots together. One is the [**Open Containers Initiative (OCI)**][6], which is a lightweight, open governance structure (or project), "formed under the auspices of the Linux Foundation for the express purpose of creating open industry standards around container formats and runtime." The other is the **CNCF**, "an open source software foundation dedicated to making cloud native computing universal and sustainable."
 好消息是，有几个组织负责监管这些技术并将它们融合在一起。 其中之一是[** Open Containers Initiative（OCI）**][6]，它是一种轻量级的，开放的治理结构（或项目），“是在Linux基金会的主持下形成的，其明确目的是创建开放的行业标准容器格式和运行时。” 另一个是** CNCF **，“致力于使云原生计算具有通用性和可持续性的开源软件基金会”。
@@ -110,31 +111,37 @@ While it’s impossible to cover all of the CNCF projects in this article, I’l
 Name | License | What It Is
 名称|授权类型|简要描述
 ---|---|---
-[Kubernetes][9] | Apache 2.0 | Orchestration platform for containers
-[Prometheus][10] | Apache 2.0 | Systems and service monitoring tool
-[Envoy][11] | Apache 2.0 | Edge and service proxy
-[rkt][12] | Apache 2.0 | Pod-native container engine
-[Jaeger][13] | Apache 2.0 | Distributed tracing system
-[Linkerd][14] | Apache 2.0 | Transparent service mesh
-[Helm][15] | Apache 2.0 | Kubernetes package manager
-[Etcd][16] | Apache 2.0 | Distributed key-value store
-[CRI-O][17] | Apache 2.0 | Lightweight runtime for Kubernetes
+[Kubernetes][9] | Apache 2.0 | Orchestration platform for containers 容器编排平台
+[Prometheus][10] | Apache 2.0 | Systems and service monitoring tool 系统和服务监控工具
+[Envoy][11] | Apache 2.0 | Edge and service proxy 边缘和服务代理
+[rkt][12] | Apache 2.0 | Pod-native container engine Pod原生的容器引擎
+[Jaeger][13] | Apache 2.0 | Distributed tracing system 分布式跟踪系统
+[Linkerd][14] | Apache 2.0 | Transparent service mesh 无感服务网格
+[Helm][15] | Apache 2.0 | Kubernetes package manager K8s包管理器
+[Etcd][16] | Apache 2.0 | Distributed key-value store 分布式键值存储
+[CRI-O][17] | Apache 2.0 | Lightweight runtime for Kubernetes 专门用于K8s的轻量级运行时环境
 
 I also created this video tutorial to walk through these projects.
+我也创建了这个视频材料来介绍这些项目。
 
-## Graduated projects
+## Graduated projects 毕业项目
 
 Graduated projects are considered mature—adopted by many organizations—and must adhere to the CNCF’s guidelines. Following are three of the most popular open source CNCF Graduated projects. (Note that some of these descriptions are adapted and reused from the projects' websites.)
+已毕业的项目被认为是成熟的，已被许多组织采用的，并且严格遵守了CNCF的准则。 以下是三个最受欢迎的开源CNCF毕业项目。 （请注意，其中一些描述来源于项目的网站并被做了改编。）
 
-### Kubernetes
+### Kubernetes K8S
 
 Ah, Kubernetes. How can we talk about cloud-native applications without mentioning Kubernetes? Invented by Google, Kubernetes is undoubtedly the most famous container-orchestration platform for container-based applications, and it is also an open source tool.
+Kubernetes。我们如何在不提及Kubernetes的情况下谈论云原生应用程序？ Google发明的Kubernetes无疑是最著名的基于容器的应用程序的容器编排平台，而且它还是一个开源工具。
 
 What is a container orchestration platform? Basically, a container engine on its own may be okay for managing a few containers. However, when you are talking about thousands of containers and hundreds of services, managing those containers becomes super complicated. This is where the container engine comes in. The container-orchestration engine helps scale containers by automating the deployment, management, networking, and availability of containers.
+什么是容器编排平台？ 通常，一个容器引擎本身可以管理几个容器。 但是，当您谈论数千个容器和数百个服务时，管理这些容器变得非常复杂。 这就是容器编排引擎的用武之地。容器编排引擎通过自动化容器的部署，管理，网络和可用性来帮助管理大量的容器。
 
 Docker Swarm and Mesosphere Marathon are other container-orchestration engines, but it is safe to say that Kubernetes has won the race (at least for now). Kubernetes also gave birth to Container-as-a-Service (CaaS) platforms like [OKD][18], the Origin community distribution of Kubernetes that powers [Red Hat OpenShift][19].
+Docker Swarm和Mesosphere Marathon也是容器编排引擎，但是可以肯定地说Kubernetes在竞争中胜出（至少现在是这样）。Kubernetes还诞生了容器即服务（CaaS）平台如[OKD][18]，它是Origin社区针对Kubernetes的发行版，并成了[Red Hat OpenShift][19]的一部分。
 
 To get started, visit the [Kubernetes GitHub repository][9], and access its documentation and learning resources from the [Kubernetes documentation][20] page.
+想开始学习请访问[Kubernetes GitHub仓库][9]，并从[Kubernetes文档][20]页面访问其文档和学习资源。
 
 ### Prometheus
 
