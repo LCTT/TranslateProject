@@ -1,16 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Find Which Graphics Card do You Have in Linux?)
 [#]: via: (https://itsfoss.com/check-graphics-card-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何找出 Linux 中的显卡？
+如何知道你的 Linux 用的哪种显卡？
 ======
 
-无论是 [Nvidia][1] 还是 [Radeon][2] 或者 Intel，它们都可能在 Linux 中有问题。当你要对图形问题进行故障排除时，首先要了解系统中装有哪种显卡。
+无论是 [Nvidia][1] 还是 [Radeon][2] 或者 Intel，它们的显卡都可能在 Linux 中有问题。当你要对图形问题进行故障排除时，首先要了解系统中装有哪种显卡。
 
 Linux 有几个命令可以检查硬件信息。你可以使用它们来检查你有哪些显卡（也称为视频卡）。让我向你展示一些命令来获取 Linux 中的 GPU 信息。
 
@@ -20,9 +20,9 @@ Linux 有几个命令可以检查硬件信息。你可以使用它们来检查�
 
 #### 使用 lspci 命令查找显卡
 
-lspci 命令显示通过 [PCI][4]（外设组件互连）总线连接的设备的信息。基本上，此命令提供有关系统所有外设的详细信息，从键盘和鼠标到声卡、网卡和显卡。
+`lspci` 命令显示通过 [PCI][4]（<ruby>外设组件互连<rt>Peripheral Component Interconnect</rt></ruby>）总线连接的设备的信息。基本上，此命令提供有关系统从键盘和鼠标到声卡、网卡和显卡的所有外设的详细信息。
 
-默认情况下，你会有大量的此类外设列表。这就是为什么你需要用 grep 命令过滤显卡的原因：
+默认情况下，你会有大量的此类外设列表。这就是为什么你需要用 `grep` 命令过滤出显卡的原因：
 
 ```
 lspci | grep VGA
@@ -31,7 +31,7 @@ lspci | grep VGA
 这应该会显示一行有关你显卡的信息：
 
 ```
-[email protected]:~$ lspci | grep VGA
+abhishek@itsfoss:~$ lspci | grep VGA
 00:02.0 VGA compatible controller: Intel Corporation HD Graphics 620 (rev 02)
 ```
 
@@ -39,7 +39,7 @@ lspci | grep VGA
 
 #### 在 Linux 中使用 lshw 命令获取显卡详细信息
 
-lspci 命令足以查看你的显卡，但是并不能告诉你很多信息。你可以使用 lshw 命令获取有关它的更多信息。
+`lspci` 命令足以查看你的显卡，但是并不能告诉你很多信息。你可以使用 `lshw` 命令获取有关它的更多信息。
 
 此命令要求你有 root 用户权限。你需要以这种方式查找视频卡（显卡）信息：
 
@@ -50,7 +50,7 @@ sudo lshw -C video
 正如你在下面的输出中看到的那样，此命令提供了有关显卡的更多信息，例如时钟频率、位宽、驱动等。
 
 ```
-[email protected]:~$ sudo lshw -C video
+abhishek@itsfoss:~$ sudo lshw -C video
 [sudo] password for abhishek:
   *-display
        description: VGA compatible controller
@@ -66,7 +66,7 @@ sudo lshw -C video
        resources: irq:139 memory:db000000-dbffffff memory:90000000-9fffffff ioport:f000(size=64) memory:c0000-dffff
 ```
 
-#### 额外的技巧：以图形方式检查显卡详细信息
+#### 附赠技巧：以图形方式检查显卡详细信息
 
 并非必须使用命令行在 Linux 中查找显卡详细信息。大多数 Linux 发行版（或者应该说是桌面环境）在设置中提供了必要的详细信息。
 
@@ -85,7 +85,7 @@ via: https://itsfoss.com/check-graphics-card-linux/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
