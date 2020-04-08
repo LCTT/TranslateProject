@@ -1,26 +1,30 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12085-1.html)
 [#]: subject: (How to Upgrade to Ubuntu 20.04 Beta from 18.04 & 19.10)
 [#]: via: (https://itsfoss.com/upgrade-ubuntu-beta/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何将 Ubuntu 18.04/19.10 升级到 Ubuntu 20.04 beta
+如何将 Ubuntu 18.04 LTS/19.10 升级到 Ubuntu 20.04 beta
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202004/08/125043m1qyy7gzvkjazx41.jpg)
 
 [Ubuntu 20.04 LTS 版本][1]还有不到一个月就发布了，Ubuntu 在这一个版本中对视觉效果作出了大变动，同时在性能方面也有所提高。
 
 如果你还在使用 Ubuntu 18.04 LTS 版本，你会发现 Ubuntu 20.04 配合深色 Yaru 主题非常惊艳，看过 [Ubuntu 20.04 的展示视频][2]你就知道了。
 
-[订阅我们的 YouTube 频道观看更多 Linux 视频][3]
+- [video](https://img.linux.net.cn/static/video/Ubuntu%2020.04%20Desktop%20Tour%20-%20Check%20Out%20New%20Features-9u5B0njRgOw.mp4)
 
-感觉确实不错。如果你想在 4 月 23 日最终稳定版正式发布前率先使用 Ubuntu 20.04，也可以在官方网站上下载 beta 版本。尽管如此，它的稳定性并不差，同时你也可以在使用这个版本的过程中帮助 Ubuntu 团队进行测试。
+感觉确实不错。如果你想在 4 月 23 日最终稳定版正式发布前率先使用 Ubuntu 20.04，也可以在官方网站上下载 beta 版本。尽管是测试版本，但它的稳定性并不差，同时你也可以在使用这个版本的过程中帮助 Ubuntu 团队进行测试。
 
 你可以下载<ruby>每日构建<rt>daily build</rt></ruby>版并进行重新安装，如果你正在使用的是 Ubuntu 18.04 或 Ubuntu 19.10，也可以在现有系统的基础上直接升级到 Ubuntu 20.04 beta 版本。
 
-如果你需要确认正在使用的 Ubuntu 版本，可以参考[这篇文章][4]。
+从现有系统中升级是很方便的，因为你不会丢失系统设置和其他文件。与重新安装不同的是，你不需要从头开始重新安装所有的软件。当你切换到新版本时，你的主目录、应用程序（大部分）、文件都会保持原样。
+
+> 如果你需要确认正在使用的 Ubuntu 版本，可以参考[这篇文章][4]。
 
 在本文中，我将会介绍如何升级到 Ubuntu 20.04 beta 版本。
 
@@ -31,9 +35,9 @@
 在你阅读后面的内容之前，我首先说明一些关于升级到 Ubuntu beta 版本的常见问题。
 
   * 版本升级的过程并不复杂，但在整个过程中需要有良好的网络连接，以便下载高达好几 GB 的数据。
-  * 版本升级的过程中，第三方存储库（比如你自行添加的 [PPA][6]）会被禁用，有些 PPA 可能也和新版本不兼容，在版本升级完毕后，你可以手动启用 PPA。
+  * 版本升级的过程中，第三方存储库（比如你自行添加的 [PPA][6]）会被禁用，有些 PPA 可能也和新版本不兼容，在版本升级完毕后，你可以手动启用这些 PPA。
   * 强烈建议将重要数据备份到外部的 USB 硬盘上。你只需要将各个目录下的重要文件直接复制到外部 USB 硬盘上保存即可。
-  * 升级到新版本之后，就无法再回滚到之前的旧版本了，只能重新安装旧版本系统。
+  * 升级到新版本之后，就无法再回滚到之前的旧版本了，如果需要旧版本的系统，只能重新安装。
   * 如果你选择升级到 Ubuntu 20.04 beta 版本，那么在 Ubuntu 20.04 最终稳定版发布之后，你也不需要重新安装。只需要保持定期更新 Ubuntu 系统，届时你就可以直接用上最终稳定版了。
   * Ubuntu 16.04/17/18/19.04 都无法直接升级到 Ubuntu 20.04。
 
@@ -83,7 +87,7 @@ update-manager -d
 
 #### 步骤 4：开始升级到 Ubuntu 20.04 beta
 
-接下来只要等待下载更新就可以了，遇到对话框直接点击 OK 即可。
+接下来只要等待下载更新就可以了，遇到对话框直接点击 “OK” 即可。
 
 ![][13]
 
@@ -99,6 +103,8 @@ update-manager -d
 
 下面的视频展示了所有相关步骤。
 
+- [video](https://img.linux.net.cn/static/video/How%20to%20Upgrade%20to%20Ubuntu%2020.04%20Beta%20from%2018.04%20&%2019.10%20Right%20Now-RkxxEtaTVkA.mp4)
+
 由此可见，这个升级流程并不复杂。欢迎体验 Ubuntu 20.04 带来的新特性。
 
 如果你有疑问或建议，欢迎在评论区留言。
@@ -111,7 +117,7 @@ via: https://itsfoss.com/upgrade-ubuntu-beta/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -120,7 +126,7 @@ via: https://itsfoss.com/upgrade-ubuntu-beta/
 [1]: https://itsfoss.com/ubuntu-20-04-release-features/
 [2]: https://www.youtube.com/watch?v=9u5B0njRgOw
 [3]: https://www.youtube.com/c/itsfoss?sub_confirmation=1
-[4]: https://itsfoss.com/how-to-know-ubuntu-unity-version/
+[4]: https://linux.cn/article-9872-1.html
 [5]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/03/upgrade-ubuntu-20-04-beta.jpg?ssl=1
 [6]: https://itsfoss.com/ppa-guide/
 [7]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/03/software-updates-app-ubuntu.jpg?ssl=1
