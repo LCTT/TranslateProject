@@ -1,47 +1,47 @@
-[#]: collector: (lujun9972)
-[#]: translator: (tinyeyeser )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Control the firewall at the command line)
-[#]: via: (https://fedoramagazine.org/control-the-firewall-at-the-command-line/)
-[#]: author: (Paul W. Frields https://fedoramagazine.org/author/pfrields/)
+[#]: collector: "lujun9972"
+[#]: translator: "tinyeyeser "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Control the firewall at the command line"
+[#]: via: "https://fedoramagazine.org/control-the-firewall-at-the-command-line/"
+[#]: author: "Paul W. Frields https://fedoramagazine.org/author/pfrields/"
 
-Control the firewall at the command line
+命令行下玩转防火墙（Fedora）
 ======
 
 ![][1]
 
-A network _firewall_ is more or less what it sounds like: a protective barrier that prevents unwanted network transmissions. They are most frequently used to prevent outsiders from contacting or using network services on a system. For instance, if you’re running a laptop at school or in a coffee shop, you probably don’t want strangers poking around on it.
+网络防火墙，顾名思义：为了阻止不需要的网络连接而设置的防护性屏障。在与外界建立连接或是提供网络服务时常常会用到。例如，在学校或是咖啡厅里使用笔记本电脑时，你一定不想某个陌生人窥探你的电脑。
 
-Every Fedora system has a firewall built in. It’s part of the network functions in the Linux kernel inside. This article shows you how to change its settings using _firewall-cmd_.
+每个 Fedora 系统都内置了一款防火墙。这是 Linux 内核网络功能的一部分。本文介绍如何通过 *firewall-cmd* 命令修改防火墙的配置。
 
-### Network basics
+### 网络基础
 
-This article can’t teach you [everything][2] about computer networks. But a few basics suffice to get you started.
+本文并不教授计算机网络的[所有知识][2]，但还是会简单介绍一些网络基础。
 
-Any computer on a network has an _IP address_. Think of this just like a mailing address that allows correct routing of data. Each computer also has a set of _ports_, numbered 0-65535. These are not physical ports; instead, you can think of them as a set of connection points at the address.
+网络中的所有计算机都有一个 *IP 地址*，可以把它想象成一个邮箱地址，有了邮箱地址，邮件才知道发往何处。每台计算机还会拥有一组*端口*，端口号范围从0到65535。同样的，你可以把这些端口想象成用来连接邮箱地址的连接点。
 
-In many cases, the port is a [standard number][3] or range depending on the application expected to answer. For instance, a web server typically reserves port 80 for non-secure HTTP communications, and/or 443 for secure HTTPS. The port numbers under 1024 are reserved for system and well-known purposes, ports 1024-49151 are registered, and ports 49152 and above are usually ephemeral (used only for a short time).
+通常情况下，端口会是一个标准端口号或是根据应用程序的应答要求选定的一个端口范围。例如，一台 web server 通常会保留 80 端口用于 HTTP 通信，443 端口用于 HTTPS。小于1024的端口主要用于系统或常见用途，1024-49151端口用于注册，49152及以上端口多为临时使用（只短时间启用）。
 
-Each of the two most common protocols for Internet data transfer, [TCP][4] and [UDP][5], have this set of ports. TCP is used when it’s important that all data be received and, if it arrives out of order, reassembled in the right order. UDP is used for more time-sensitive services that can withstand losing some data.
+互联网传输中最常见的两个协议，[TCP][4] 和 [UDP][5]。当要传输的数据很重要，不能有丢包时，就使用TCP协议，如果数据包没有按顺序到达，还需要重组为正确的顺序。UDP协议则更多用于对时间敏感的服务，为了保证时效性，有时允许丢失部分数据。
 
-An application running on the system, such as a web server, reserves one or more ports (as seen above, 80 and 443 for example). Then during network communication, a host establishes a connection between a source address and port, and the destination address and port.
+系统中运行的应用，例如 web server，会保留一些端口（例如上文提到的80和443）。在网络传输过程中，主机会为传输的两端建立一个链接，一端是源地址和源端口，另一端是目的地址和目的端口。
 
-A network firewall can block or permit transmissions of network data based on rules like address, port, or other criteria. The _firewall-cmd_ utility lets you interact with the rule set to view or change how the firewall works.
+网络防火墙就是基于地址、端口及其他标准的一组规则集，来对网络数据的传输进行屏蔽或阻断的。通过 *fire-cmd* 命令，我们就可以查看或修改防火墙的工作配置。
 
-### Firewall zones
+### 防火墙域（zone）
 
-To verify the firewall is running, use this command with [sudo][6]. (In fairness, you can run _firewall-cmd_ without the _sudo_ command in environments where [PolicyKit][7] is running.)
+为了验证防火墙是否开启，使用 *firewall-cmd* 命令，输入时要加上[sudo](https://fedoramagazine.org/howto-use-sudo/)。（通常，在运行了[PolicyKit](https://en.wikipedia.org/wiki/Polkit)的环境中，你也可以不加 *sudo*）
 
 ```
 $ sudo firewall-cmd --state
 running
 ```
 
-The firewalld service supports any number of _zones_. Each zone can have its own settings and rules for protection. In addition, each network interface can be placed in any zone individually The default zone for an external facing interface (like the wifi or wired network card) on a Fedora Workstation is the _FedoraWorkstation_ zone.
+firewalld 服务支持任意数量的域。每个域都可以拥有独立的配置和防护规则。一台 Fedora 工作站的外部接口（例如 WIFI 或有线网卡）其默认域为 *FedoraWorkstation*。
 
-To see what zones are active, use the _–get-active-zones_ flag. On this system, there are two network interfaces, a wired Ethernet card _wlp2s0_ and a virtualization (libvirt) bridge interface _virbr0_:
+要看有哪些域是激活状态，可以使用 *–get-active-zones* 选项。在本示例中，有两个网卡，有线以太网卡 *wlp2s0* 和虚拟（ libvirt ）桥接网卡 *virbr0* ：
 
 ```
 $ sudo firewall-cmd --get-active-zones
@@ -51,7 +51,7 @@ libvirt
   interfaces: virbr0
 ```
 
-To see the default zone, or all the defined zones:
+如果想看看默认域是什么，或是直接查询所有域：
 
 ```
 $ sudo firewall-cmd --get-default-zone
@@ -60,58 +60,58 @@ $ sudo firewall-cmd --get-zones
 FedoraServer FedoraWorkstation block dmz drop external home internal libvirt public trusted work
 ```
 
-To see the services the firewall is allowing other systems to access in the default zone, use the _–list-services_ flag. Here is an example from a customized system; you may see something different.
+查询默认域中防火墙放行了哪些系统，使用 *–list-services* 选项。下例给出了一个定制系统的查询结果，你可以看到与常见的结果有些不同。
 
 ```
 $ sudo firewall-cmd --list-services
 dhcpv6-client mdns samba-client ssh
 ```
 
-This system has four services exposed. Each of these has a well-known port number. The firewall recognizes them by name. For instance, the _ssh_ service is associated with port 22.
+该系统对外开启了四个服务。每个服务都对应一个常见端口。例如 *ssh* 服务对应 22 端口。
 
-To see other port settings for the firewall in the current zone, use the _–list-ports_ flag. By the way, you can always declare the zone you want to check:
+如果要查看当前域中防火墙还开启了哪些端口，可以使用 *list-ports* 选项。当然，你也可以随时对其他域进行查询：
 
 ```
 $ sudo firewall-cmd --list-ports --zone=FedoraWorkstation
 1025-65535/udp 1025-65535/tcp
 ```
 
-This shows that ports 1025 and above (both UDP and TCP) are open by default.
+结果表明，从 1025 到 65535 端口（包含UDP和TCP）默认都是开启的。
 
-### Changing zones, ports, and services
+### 修改域、端口及服务
 
-The above setting is a design decision.* It ensures novice users can use network facing applications they install. If you know what you’re doing and want a more protective default, you can move the interface to the _FedoraServer_ zone, which prohibits any ports not explicitly allowed. _(**Warning:** if you’re using the host via the network, you may break your connection — meaning you’ll have to go to that box physically to make further changes!)_
+以上的配置都是预先设计好的防火墙策略（design decision*）。是为了确保新手用户安装的应用都能够正常访问网络。如果你确定自己心里有数，想要一个保护性更强的策略，可以将接口放入 _FedoraServer_ 域，明确禁止所有端口的访问。_（**警告**：如果你的服务器之前是联网状态，这么做可能会导致连接中断，那你就得到机房里去修改更多的配置项！)_
 
 ```
 $ sudo firewall-cmd --change-interface=<ifname> --zone=FedoraServer
 success
 ```
 
-* _This article is not the place to discuss that decision, which went through many rounds of review and debate in the Fedora community. You are welcome to change settings as needed._
+* _*本文并不讨论如何制定防火墙策略，Fedora社区里已经有很多讨论了。你大可以按照自身需要来修改配置。_
 
-If you want to open a well-known port that belongs to a service, you can add that service to the default zone (or use _–zone_ to adjust a different zone). You can add more than one at once. This example opens up the well-known ports for your web server for both HTTP and HTTPS traffic, on ports 80 and 443:
+如果你想要开放某个服务的常见端口，可以将该服务加入默认域（或使用 _-zone_ 指定一个不同的域）。还可以一次性将其加入多个域。下例开放了 HTTP 和 HTTPS 的常见端口80、443：
 
 ```
 $ sudo firewall-cmd --add-service=http --add-service=https
 success
 ```
 
-Not all services are defined, but many are. To see the whole list, use the _–get-services_ flag.
+并非所有的服务都有默认端口，不过大部分都是有的。使用  _–get-services_ 选项可以查看完整列表。
 
-If you want to add specific ports, you can do that by number and protocol as well. (You can also combine _–add-service_ and _–add-port_ flags, as many as necessary.) This example opens up the UDP service for a network boot service:
+如果你想指定某个特定端口号，可以直接用数字和协议进行配置。（多数情况下，_–add-service_ 和 _–add-port_ 这两个选项是合在一起使用的）下例开启的是UDP协议的网络启动服务：
 
 ```
 $ sudo firewall-cmd --add-port=67/udp
 success
 ```
 
-**Important:** If you want your changes to be effective after you reboot your system or restart the firewalld service, you **must** add the _–permanent_ flag to your commands. The examples here only change the firewall until one of those events next happens.
+**重要**：如果想要在系统重启或是 firewalld 服务重启后，配置仍然生效，**必须**在命令中加上 _–permanent_ 选项。本文中的例子只是临时修改了配置，下次遇到系统重启或是 firewalld 服务重启，这些配置就失效了。
 
-These are just some of the many functions of the _firewall-cmd_ utility and the firewalld service. There is much more information on firewalld at the project’s [home page][8] that’s worth reading and trying out.
+以上只是 _firewall-cmd_ 和 firewalld 服务诸多功能中的一小部分。firewalld 项目的[主页][8]还有更多信息值得你去探索和尝试。
 
 * * *
 
-_Photo by [Jakob Braun][9] on [Unsplash][10]._
+_Photo by [Jakob Braun][9] on [Unsplash][10]._
 
 --------------------------------------------------------------------------------
 
@@ -119,7 +119,7 @@ via: https://fedoramagazine.org/control-the-firewall-at-the-command-line/
 
 作者：[Paul W. Frields][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tinyeyeser](https://github.com/tinyeyeser)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
