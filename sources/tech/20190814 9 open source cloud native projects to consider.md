@@ -146,14 +146,16 @@ To get started, visit the [Kubernetes GitHub repository][9], and access its docu
 ### Prometheus
 
 Prometheus is an open source system monitoring and alerting toolkit built at SoundCloud in 2012. Since then, many companies and organizations have adopted Prometheus, and the project has a very active developer and user community. It is now a standalone open source project that is maintained independently of the company.
+Prometheus是2012年在SoundCloud上构建的一个开源系统监控和告警工具。之后，许多公司和组织都使用了Prometheus，并且该项目拥有非常活跃的开发者和用户群体。 现在，它是一个独立于公司的独立维护的开源项目。
 
 ![Prometheus’ architecture][21]
 
-Prometheus’ architecture
+Prometheus’ architecture Prometheus的架构
 
 The easiest way to think about Prometheus is to visualize a production system that needs to be up 24 hours a day and 365 days a year. No system is perfect, and there are techniques to reduce failures (called fault-tolerant systems). However, if an issue occurs, the most important thing is to identify it as soon as possible. That is where a monitoring tool like Prometheus comes in handy. Prometheus is more than a container-monitoring tool, but it is most popular among cloud-native application companies. In addition, other open source monitoring tools, including [Grafana][22], leverage Prometheus.
-
+理解Prometheus的最简单方法是可视化一个生产系统，该系统需要24(小时)x365天都可以正常运行。 没有哪个系统是完美的，也有减少故障的技术（称为容错系统）。 但是，如果出现问题，最重要的是尽快识别它。 这就是像Prometheus这样的监控工具的用武之地。Prometheus不仅是容器监控工具，它在云原生应用公司中也最受欢迎。 此外，其他开源监视工具，包括[Grafana][22]，都借鉴了Prometheus。
 The best way to get started with Prometheus is to check out its [GitHub repo][10]. Running Prometheus locally is easy, but you need to have a container engine installed. You can access detailed documentation on [Prometheus’ website][23].
+开始使用Prometheus的最佳方法是下载其[GitHub仓库][10]。 在本地运行Prometheus很容易，但是您需要安装一个容器引擎。 您可以在[Prometheus网站][23]上查看详细的文档。
 
 ### Envoy
 
