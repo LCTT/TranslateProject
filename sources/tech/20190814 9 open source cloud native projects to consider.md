@@ -160,8 +160,10 @@ The best way to get started with Prometheus is to check out its [GitHub repo][10
 ### Envoy
 
 Envoy (or Envoy Proxy) is an open source edge and service proxy designed for cloud-native applications. Created at Lyft, Envoy is a high-performance, C++, distributed proxy designed for single services and applications, as well as a communications bus and a universal data plane designed for large microservice service mesh architectures. Built on the learnings of solutions such as Nginx, HAProxy, hardware load balancers, and cloud load balancers, Envoy runs alongside every application and abstracts the network by providing common features in a platform-agnostic manner.
+Envoy（或Envoy代理）是专为云原生应用设计的开源的边缘和服务代理。 由Lyft创建的Envoy是为单一服务和应用而设计的高性能的C++分布式代理，同时也是为由大量微服务组成的服务网格架构而设计的通信总线和通用数据平面。 基于对Nginx，HAProxy，硬件负载均衡器和云负载均衡器等方案了解的基础上，Envoy与每个应用相伴运行，并对网络进行了高度抽象，最终以平台无关的方式来提供通用功能。
 
 When all service traffic in an infrastructure flows through an Envoy mesh, it becomes easy to visualize problem areas via consistent observability, tune overall performance, and add substrate features in a single place. Basically, Envoy Proxy is a service mesh tool that helps organizations build a fault-tolerant system for production environments.
+当基础设施中的所有服务流量都经过一个Envoy网格时，很容易就可以通过连贯的监测来可视化问题域，调整整体性能，并在单个位置添加基础功能。基本上，Envoy代理是一个可帮助组织为生产环境构建容错系统的服务网格工具。
 
 There are numerous alternatives for service mesh applications, such as Uber’s [Linkerd][24] (discussed below) and [Istio][25]. Istio extends Envoy Proxy by deploying as a [Sidecar][26] and leveraging the [Mixer][27] configuration model. Notable Envoy features are:
 
@@ -172,9 +174,18 @@ There are numerous alternatives for service mesh applications, such as Uber’s 
   * It’s API-driven and supports dynamic configuration and hot reloads
   * Has a strong focus on metric collection, tracing, and overall observability
 
+服务网格应用程序有很多替代方案，例如Uber的[Linkerd][24]（下面会讨论）和[Istio][25]。 Istio通过将其部署为[Sidecar][26]并利用了[Mixer][27]的配置模型，实现了对Envoy的扩展。 Envoy的显著特性有：
+
+   *所有的“桌面赌注”特性（与控制平面（例如Istio）配对时）
+   *带载运行时的低延时, 延迟率低至99％
+   *将L3/L4过滤器作为核心，许多L7过滤器被考虑在外
+   *支持gRPC和HTTP / 2（上行/下行）
+   *由API驱动，并支持动态配置和热重载
+   *重点关注指标收集，跟踪和整体可监测性
 
 
 Understanding Envoy, proving its capabilities, and realizing its full benefits require extensive experience with running production-level environments. You can learn more in its [detailed documentation][28] and by accessing its [GitHub][11] repository.
+要想了解Envoy，证实其能力并意识到其全部优势，需要丰富的在生产级环境运行的经验。 您可以在[详细文档][28]或访问其[GitHub][11]仓库了解更多信息。
 
 ## Incubating projects
 
