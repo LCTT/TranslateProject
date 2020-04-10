@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12096-1.html)
 [#]: subject: (IEEE Standards Association Launches an Open Source Collaboration Platform)
 [#]: via: (https://itsfoss.com/ieee-open-source-collaboration-platform/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -11,6 +11,8 @@ IEEE 标准协会推出开源协作平台
 ======
 
 > IEEE 标准协会宣布了一个基于 GitLab 的开源协作平台。
+
+![](https://img.linux.net.cn/data/attachment/album/202004/10/222910vjpiqd6lqqm6riqp.jpg)
 
 [IEEE][1] 是世界上最大的技术专业组织，致力于推动技术的发展。<ruby>IEEE 标准协会<rt>the IEEE Standards Association</rt></ruby>（IEEE SA）是 IEEE 内部的一个组织，负责制定全球各行业的标准。
 
