@@ -160,7 +160,7 @@ The best way to get started with Prometheus is to check out its [GitHub repo][10
 ### Envoy
 
 Envoy (or Envoy Proxy) is an open source edge and service proxy designed for cloud-native applications. Created at Lyft, Envoy is a high-performance, C++, distributed proxy designed for single services and applications, as well as a communications bus and a universal data plane designed for large microservice service mesh architectures. Built on the learnings of solutions such as Nginx, HAProxy, hardware load balancers, and cloud load balancers, Envoy runs alongside every application and abstracts the network by providing common features in a platform-agnostic manner.
-Envoy（或Envoy代理）是专为云原生应用设计的开源的边缘和服务代理。 由Lyft创建的Envoy是为单一服务和应用而设计的高性能的C++分布式代理，同时也是为由大量微服务组成的服务网格架构而设计的通信总线和通用数据平面。 基于对Nginx，HAProxy，硬件负载均衡器和云负载均衡器等方案了解的基础上，Envoy与每个应用相伴运行，并对网络进行了高度抽象，最终以平台无关的方式来提供通用功能。
+Envoy（或Envoy代理）是专为云原生应用设计的开源的边缘代理和服务代理。 由Lyft创建的Envoy是为单一服务和应用而设计的高性能的C++分布式代理，同时也是为由大量微服务组成的服务网格架构而设计的通信总线和通用数据平面。 基于对Nginx，HAProxy，硬件负载均衡器和云负载均衡器等方案了解的基础上，Envoy与每个应用相伴(并行)运行，并对网络进行了高度抽象，最终以平台无关的方式来提供通用功能。
 
 When all service traffic in an infrastructure flows through an Envoy mesh, it becomes easy to visualize problem areas via consistent observability, tune overall performance, and add substrate features in a single place. Basically, Envoy Proxy is a service mesh tool that helps organizations build a fault-tolerant system for production environments.
 当基础设施中的所有服务流量都经过一个Envoy网格时，很容易就可以通过连贯的监测来可视化问题域，调整整体性能，并在单个位置添加基础功能。基本上，Envoy代理是一个可帮助组织为生产环境构建容错系统的服务网格工具。
@@ -176,9 +176,9 @@ There are numerous alternatives for service mesh applications, such as Uber’s 
 
 服务网格应用程序有很多替代方案，例如Uber的[Linkerd][24]（下面会讨论）和[Istio][25]。 Istio通过将其部署为[Sidecar][26]并利用了[Mixer][27]的配置模型，实现了对Envoy的扩展。 Envoy的显著特性有：
 
-   *所有的“桌面赌注”特性（与控制平面（例如Istio）配对时）
-   *带载运行时的低延时, 延迟率低至99％
-   *将L3/L4过滤器作为核心，许多L7过滤器被考虑在外
+   *所有的“table stakes(入场筹码,引申为基础必备特性)”特性（与控制平面（例如Istio）组合时）
+   *带载运行时99%数据可达到低延时
+   *将L3/L4过滤器作为核心，支持额外的L7过滤器
    *支持gRPC和HTTP / 2（上行/下行）
    *由API驱动，并支持动态配置和热重载
    *重点关注指标收集，跟踪和整体可监测性
@@ -187,29 +187,34 @@ There are numerous alternatives for service mesh applications, such as Uber’s 
 Understanding Envoy, proving its capabilities, and realizing its full benefits require extensive experience with running production-level environments. You can learn more in its [detailed documentation][28] and by accessing its [GitHub][11] repository.
 要想了解Envoy，证实其能力并意识到其全部优势，需要丰富的在生产级环境运行的经验。 您可以在[详细文档][28]或访问其[GitHub][11]仓库了解更多信息。
 
-## Incubating projects
+## Incubating projects 孵化项目
 
-Following are six of the most popular open source CNCF Incubating projects.
+Following are six of the most popular open source CNCF Incubating projects. 
+下面是最流行的开源的CNCF孵化项目中的六个。
 
 ### rkt
 
 rkt, pronounced "rocket," is a pod-native container engine. It has a command-line interface (CLI) for running containers on Linux. In a sense, it is similar to other containers, like [Podman][29], Docker, and CRI-O.
+rkt, 拼为"rocket", 是一个pod原生的容器引擎。它有一个命令行接口用来在Linux上运行容器。从某种意义上讲，它和其他容器如[Podman][29], Docker和CRI-O相似。
 
 rkt was originally developed by CoreOS (later acquired by Red Hat), and you can find detailed [documentation][30] on its website and access the source code on [GitHub][12].
+rkt最初由CoreOS开发（后来被Red Hat收购），您可以在其网站上找到详细的[文档][30]，以及在[GitHub][12]上访问其源代码。
 
-### Jaeger
+### Jaeger 
 
 Jaeger is an open source, end-to-end distributed tracing system for cloud-native applications. In one way, it is a monitoring solution like Prometheus. Yet it is different because its use cases extend into:
+Jaeger是面向云原生应用的开源的端到端的分布式跟踪系统。 在某种程度上，它是像Prometheus这样的监控解决方案。但它有所不同，因为其使用场景有所扩展：
 
-  * Distributed transaction monitoring
-  * Performance and latency optimization
-  * Root-cause analysis
-  * Service dependency analysis
-  * Distributed context propagation
+  * Distributed transaction monitoring 分布式事务监控
+  * Performance and latency optimization 性能和延时优化
+  * Root-cause analysis 根因分析
+  * Service dependency analysis 服务的依赖分析
+  * Distributed context propagation 分布式上下文传播
 
 
 
 Jaeger is an open source technology built by Uber. You can find [detailed documentation][31] on its website and its [source code][13] on GitHub.
+Jaeger是Uber建立的开源的技术。 您可以在其网站上找到[详细文档][31]，以及在GitHub上找到其[源码][13]。
 
 ### Linkerd
 
@@ -221,15 +226,27 @@ However, there are some subtle differences between the two. While Envoy and Link
   * Built-in service discovery abstractions to unite multiple systems
   * Support for gRPC, HTTP/2, and HTTP/1.x requests plus all TCP traffic
 
+像创建Envoy代理的Lyft一样，Uber开发了Linkerd开源解决方案用于生产级别上的服务维护。 在某些方面，Linkerd就像Envoy一样，因为两者都是服务网格工具，旨在提供平台级的可观测性，可靠性和安全性，而无需进行配置或代码更改。
+
+但是，两者之间存在一些细微的差异。 尽管Envoy和Linkerd充当代理并可以通过所连接的服务进行上报，但是Envoy并不像Linkerd那样被设计为Kubernetes Ingress控制器。 Linkerd的显著功能包括：
+
+   *支持多种平台（Docker，Kubernetes，DC / OS，Amazon ECS或单机）
+   *内置服务发现抽象将多个系统集成在一起
+   *支持gRPC，HTTP / 2和HTTP / 1.x请求和所有的TCP流量
 
 
 You can read more about it on [Linkerd’s website][32] and access its source code on [GitHub][14].
+您可以在[Linkerd网站][32]上阅读有关它的更多信息，并在[GitHub][14]上访问其源码。
 
 ### Helm
 
 Helm is basically the package manager for Kubernetes. If you’ve used Apache Maven, Maven Nexus, or a similar service, you will understand Helm’s purpose. Helm helps you manage your Kubernetes application. It uses "Helm Charts" to define, install, and upgrade even the most complex Kubernetes applications. Helm isn’t the only method for this; another concept becoming popular is [Kubernetes Operators][33], which are used by Red Hat OpenShift 4.
 
 You can try Helm by following the [quickstart guide][34] in its documentation or its [GitHub guide][15].
+
+Helm基本上是Kubernetes的软件包管理器。 如果您使用过Apache Maven，Maven Nexus或类似的服务，您就会理解Helm的作用。 Helm可帮助您管理Kubernetes应用程序。 它使用“Helm图”来定义，安装和升级最复杂的Kubernetes应用程序。 Helm并不是实现此功能的唯一方法； 另一个流行的概念是[Kubernetes Operators][33]，它被Red Hat OpenShift 4所使用。
+
+您可以按照其文档中的[快速开始指南][34]或[GitHub指南][15]来试用Helm。
 
 ### Etcd
 
