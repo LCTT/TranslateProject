@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12098-1.html)
 [#]: subject: (How to Go Full Dark Mode in Ubuntu 20.04)
 [#]: via: (https://itsfoss.com/dark-mode-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -12,15 +12,19 @@
 
 > 深色模式是 Ubuntu 20.04 最受瞩目的[新功能][1]之一了。任何版本的 Ubuntu 都可以通过[安装深色主题][2]让用户界面拥有一个深色的外观，但在 Ubuntu 20.04 中，这个过程变得更简单。
 
+![](https://img.linux.net.cn/data/attachment/album/202004/11/200841gvvaja25jaz5z7hv.jpg)
+
 在 Ubuntu 20.04 中，无需额外安装主题，默认主题（称为 Yaru）本身就带有三种模式，其中就包括深色模式。
 
 下面我会展示如何将 Ubuntu 系统完全设置为深色模式。
 
 ### 在 Ubuntu 20.04 打开深色模式
 
-这个步骤将会在 GNOME 桌面上完成，如果你[使用的是其它桌面][4]，你看到的可能会和下面的截图不一样。
+- [video](https://player.vimeo.com/video/405726943)
 
-按下 super 键（或 Windows 键），然后输入“settings”，就可以找到系统设置。
+这个步骤是在 GNOME 桌面上进行的，如果你[使用的是其它桌面][4]，你看到的可能会和下面的截图不一样。
+
+按下 super 键（或 Windows 键），然后输入 “settings”，就可以找到系统设置。
 
 ![Search for Settings][5]
 
@@ -82,7 +86,7 @@ via: https://itsfoss.com/dark-mode-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
