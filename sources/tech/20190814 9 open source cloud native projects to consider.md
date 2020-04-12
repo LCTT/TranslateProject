@@ -257,11 +257,18 @@ Etcd is a distributed, reliable key-value store for the most critical data in a 
   * Speed (benchmarked at 10,000 writes per second)
   * Reliability (distributed using Raft)
 
+Etcd是用于分布式系统中最关键数据的分布式的，可靠的键值存储。 其主要特性有：
 
+   *定义明确的，面向用户的API（gRPC）
+   *客户端证书验证可选的自动TLS
+   *速度（可达每秒10,000次写入）
+   *可靠性（使用Raft实现分布式）
 
 Etcd is used as a built-in default data storage for Kubernetes and many other technologies. That said, it is rarely run independently or as a separate service; instead, it utilizes the one integrated into Kubernetes, OKD/OpenShift, or another service. There is also an [etcd Operator][35] to manage its lifecycle and unlock its API management capabilities:
 
+Etcd是Kubernetes和许多其他技术的默认的内置数据存储方案。也就是说，它很少独立运行或作为单独的服务运行； 相反，它利用了集成到Kubernetes，OKD / OpenShift或其他服务中的一个。 还有[etcd Operator][35]来管理其生命周期并解锁其API管理功能：
 You can learn more in [etcd’s documentation][36] and access its [source code][16] on GitHub.
+您可以在[etcd文档][36]中了解更多信息，并在GitHub上访问其[源码][16]。
 
 ### CRI-O
 
@@ -272,21 +279,27 @@ CRI-O is an Open Container Initiative (OCI)-compliant implementation of the Kube
   * Storage and management of image layers using containers/storage
   * Networking support through the Container Network Interface (CNI)
 
+CRI-O是Kubernetes运行时接口的兼容开放容器倡议（OCI）实现。 CRI-O用于各种功能，包括：
 
+   *使用runc（或遵从OCI运行时规范的任何实现）和OCI运行时工具运行
+   *使用容器/镜像进行镜像管理
+   *使用容器/存储来存储和管理镜像层
+   *通过容器网络接口（CNI）来提供网络支持
 
 CRI-O provides plenty of [documentation][37], including guides, tutorials, articles, and even podcasts, and you can also access its [GitHub page][17].
+CRI-O提供了大量的[文档][37]，包括指南，教程，文章，甚至播客，您还可以访问其[GitHub页面][17]。
 
 * * *
 
 Did I miss an interesting open source cloud-native project? Please let me know in the comments.
-
+我错过了其他有趣且开源的云原生项目吗？ 请在评论中提醒我。
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/19/8/cloud-native-projects
 
 作者：[Bryant Son][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[messon007](https://github.com/messon007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
