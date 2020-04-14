@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12109-1.html)
 [#]: subject: (Take back your dotfiles with Chezmoi)
 [#]: via: (https://fedoramagazine.org/take-back-your-dotfiles-with-chezmoi/)
 [#]: author: (Ryan Walter https://fedoramagazine.org/author/rwaltr/)
@@ -10,19 +10,19 @@
 用 Chezmoi 取回你的点文件
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202004/14/183618dwkhe4ehx1kthxvw.jpg)
 
-在 Linux 中，点文件是隐藏的文本文件，用于存储从 Bash、Git 到 i3 或 VSCode 等更复杂的许多应用程序的配置设置。
+在 Linux 中，点文件是隐藏的文本文件，从 Bash、Git 到 i3 或 VSCode 等更复杂的许多应用程序，都用它存储配置设置。
 
-这些文件大多数都放在 `~/.config` 目录中或用户主目录中。编辑这些文件使你可以自定义也许没有提供设置菜单的应用程序，并且它们可以跨设备甚至是跨其他 Linux 发行版移植。但是，Linux 发烧友社区中讨论的一个话题是如何管理这些点文件以及如何共享它们。
+这些文件大多数都放在 `~/.config` 目录中或用户主目录中。编辑这些文件使你可以自定义也许没有提供设置菜单的应用程序，并且它们可以跨设备甚至是跨其它 Linux 发行版移植。但是，整个 Linux 发烧友社区的讨论焦点是如何管理这些点文件以及如何共享它们。
 
-我们将展示一个名为 [Chezmoi][2] 的工具，该工具与其他工具略有不同。
+我们将展示一个名为 [Chezmoi][2] 的工具，该工具与其它工具略有不同。
 
 ### 点文件管理的历史
 
-如果你在 [GitHub 上搜索“dotfile”][3]，那么你将看到有超过 10 万个存储库在解决一个目标：将人们的点文件存储在可共享且可重复的领地中。但是，除了都在使用 Git 之外，它们存储文件的方式各有不同。
+如果你在 [GitHub 上搜索“dotfiles”][3]，那么你将看到有超过 10 万个存储库在解决一个目标：将人们的点文件存储在可共享且可重复的领地中。但是，除了都在使用 Git 之外，它们存储文件的方式各有不同。
 
-虽然 Git 解决了代码管理问题，也将其转换为配置文件管理，但它并没有解决如何区分发行版、角色（例如家用计算机与工作计算机）、机密管理以及按设备配置的问题。
+虽然 Git 解决了代码管理问题，也将其转换为配置文件管理，但它并没有解决如何区分发行版、角色（例如家用计算机与工作计算机）、机密信息管理以及按设备配置的问题。
 
 因此，许多用户决定制定自己的解决方案，多年来，社区已经做出了许多成果。本文将简要介绍已有的一些解决方案。
 
@@ -38,27 +38,27 @@ $ podman run --rm -it fedora
 
 #### 安装问题
 
-如果将点文件存储在 Git 存储库中，你肯定希望可以使更改轻松地自动应用到主目录之中，乍一看，最简单的方法是使用符号链接，例如 `ln -s ~/.dotfies/bashrc ~/.bashrc`。这将使你的更改在更新存储库时立即就绪。
+如果将点文件存储在 Git 存储库中，你肯定希望可以让更改轻松地自动应用到主目录之中，乍一看，最简单的方法是使用符号链接，例如 `ln -s ~/.dotfies/bashrc ~/.bashrc`。这可以使你的更改在更新存储库时立即就绪。
 
-符号链接的问题在于管理符号链接可能很麻烦。Stow 和 [RCM（在 Fedora 杂志上介绍过）][4]可以帮助你管理这些，但是这些并不是非常舒服的解决方案。下载后，需要对私有文件进行适当的修改和设置访问模式。如果你在一个系统上修改了点文件，然后将存储库下载到另一个系统，则可能会发生冲突并需要进行故障排除。
+符号链接的问题在于管理符号链接可能很麻烦。Stow 和 [RCM][4]（在 Fedora 杂志上介绍过）可以帮助你管理这些，但是这些并不是非常舒服的解决方案。下载后，需要对私有文件进行适当的修改和设置访问模式。如果你在一个系统上修改了点文件，然后将存储库下载到另一个系统，则可能会发生冲突并需要进行故障排除。
 
-解决此问题的另一种方法是编写自己的安装脚本。这是最灵活的选项，但要权衡需要花费更多时间来构建自定义解决方案是否值得。
+解决此问题的另一种方法是编写自己的安装脚本。这是最灵活的选项，但要权衡花费更多时间来构建自定义解决方案是否值得。
 
-#### 机密问题
+#### 机密信息问题
 
-Git 旨在跟踪更改。如果你在 Git 存储库中存储密码或 API 密钥之类的机密信息，则会比较麻烦，并且需要重写 Git 历史记录以删除该机密信息。如果你的存储库是公开的，那么如果其他人下载了你的存储库，你的机密信息将不再保密。仅这个问题就会阻止许多人与公共世界共享其 dotfile。
+Git 旨在跟踪更改。如果你在 Git 存储库中存储密码或 API 密钥之类的机密信息，则会比较麻烦，并且需要重写 Git 历史记录以删除该机密信息。如果你的存储库是公开的，那么如果其他人下载了你的存储库，你的机密信息将不再保密。仅这个问题就会阻止许多人与公共世界共享其点文件。
 
 #### 多设备配置问题
 
-问题不在于将配置拉到多个设备，而是当你有多个需要不同配置的设备时的问题。大多数人通过使用不同的文件夹或使用不同的复刻来处理此问题。这使得难以在不同设备和角色集之间共享配置。
+问题不在于如何将配置拉到多个设备，而是当你有多个需要不同配置的设备的问题。大多数人通过使用不同的文件夹或使用不同的<ruby>复刻<rt>fork</rt></ruby>来处理此问题。这使得难以在不同设备和角色集之间共享配置。
 
 ### Chezmoi 是如何干的
 
-Chezmoi 是一种考虑了以上问题的用于管理点文件的工具，它不会盲目地从存储库复制或符号链接文件。 Chezmoi 更像是模板引擎，可以根据系统变量、模板、机密管理器和 Chezmoi 自己的配置文件来生成你的点文件。
+Chezmoi 是一种考虑了以上问题的用于管理点文件的工具，它不会盲目地从存储库复制或符号链接文件。 Chezmoi 更像是模板引擎，可以根据系统变量、模板、机密信息管理器和 Chezmoi 自己的配置文件来生成你的点文件。
 
 #### Chezmoi 入门
 
-目前，Chezmoi 不在 Fedora 的默认软件库中。你可以使用以下命令下载 Chezmoi 的当前版本。
+目前，Chezmoi 并不在 Fedora 的默认软件库中。你可以使用以下命令下载 Chezmoi 的当前版本。
 
 ```
 $ sudo dnf install https://github.com/twpayne/chezmoi/releases/download/v1.7.17/chezmoi-1.7.17-x86_64.rpm
@@ -72,7 +72,7 @@ $ sudo dnf install https://github.com/twpayne/chezmoi/releases/download/v1.7.17/
 $ chezmoi init
 ```
 
-它将在 `~/.local/share/chezmoi/` 中创建你的新存储库。你可以使用以下命令轻松地切换该目录：
+它将在 `~/.local/share/chezmoi/` 中创建你的新存储库。你可以使用以下命令轻松地切换到该目录：
 
 ```
 $ chezmoi cd
@@ -86,7 +86,7 @@ chezmoi add ~/.bashrc
 
 这将你的 `.bashrc` 文件添加到 chezmoi 存储库。
 
-注意：如果你的 `.bashrc` 文件实际上是一个符号链接，则需要添加 `-f` 标志以跟随它并读取实际文件的内容。
+注意：如果你的 `.bashrc` 文件实际上是一个符号链接，则需要添加 `-f` 标志以跟随它来读取实际文件的内容。
 
 现在，你可以使用以下命令编辑该文件：
 
@@ -106,7 +106,7 @@ Chezmoi 使用特殊的前缀来跟踪隐藏文件和私有文件，以解决 Gi
 $ chezmoi cd
 ```
 
-**请注意，标记为私有的文件实际上并不是私有的，它们仍会以纯文本格式保存在你的 Git 存储库中。稍后会解释更多。**
+**请注意，标记为私有的文件实际上并不是私有的，它们仍会以纯文本格式保存在你的 Git 存储库中。稍后会进一步解释。**
 
 你可以使用以下方法应用任何更改：
 
@@ -144,7 +144,7 @@ $ chezmoi edit-config
          name = "Fedora Mcdora"
 ```
 
-保存文件，然后再次运行 `chezmoi data`。你将在底部看到你的电子邮件和姓名现已添加。现在，你可以将这些与 Chezmoi 的模板一起使用。运行：
+保存文件，然后再次运行 `chezmoi data`。你将在底部看到你的电子邮件和姓名已经添加成功。现在，你可以将这些与 Chezmoi 的模板一起使用。运行：
 
 ```
 $ chezmoi add  -T --autotemplate ~/.gitconfig
@@ -166,7 +166,7 @@ $ chezmoi add  -T --autotemplate ~/.gitconfig
 $ chezmoi edit ~/.gitconfig
 ```
 
-然后使用
+然后使用：
 
 ```
 $ chezmoi cat ~/.gitconfig
@@ -176,17 +176,17 @@ $ chezmoi cat ~/.gitconfig
 
 ```
 [root@a6e273a8d010 ~]# chezmoi cat ~/.gitconfig
- [user]
-     email = "fedorauser@example.com"
-     name = "Fedora Mcdora"
- [root@a6e273a8d010 ~]#
+[user]
+    email = "fedorauser@example.com"
+    name = "Fedora Mcdora"
+[root@a6e273a8d010 ~]#
 ```
 
 它将在我们的 Chezmoi 配置中生成一个充满变量的文件。你也可以使用变量执行简单的逻辑语句。一个例子是：
 
 ```
 {{- if eq .chezmoi.hostname "fsteel" }}
-# this will only be included if the host name is equal to "fsteel"
+# 如果主机名为 "fsteel" 才包括此部分
 {{- end }}
 ```
 
@@ -224,7 +224,7 @@ $ chezmoi doctor
  [root@a6e273a8d010 ~]#
 ```
 
-您可以使用这些客户端，也可以使用[通用客户端][6]，也可以使用系统的[密钥环][7]。
+你可以使用这些客户端，也可以使用[通用客户端][6]，也可以使用系统的[密钥环][7]。
 
 对于 GPG，你需要使用以下命令将以下内容添加到配置中：
 
@@ -243,9 +243,9 @@ $ chezmoi edit-config
 $ chezmoi add --encrypt
 ```
 
-来添加任何文件，这些文件将在你的源存储库中加密，并且不会以纯文本格式公开。Chezmoi 会在申请时自动将其解密。
+来添加任何文件，这些文件将在你的源存储库中加密，并且不会以纯文本格式公开。Chezmoi 会在应用时自动将其解密。
 
-我们也可以在模板中使用它们。例如，存储在 [Pass（已在 Fedora 杂志上介绍）][8]中的机密令牌。继续，生成你的机密信息。
+我们也可以在模板中使用它们。例如，存储在 [Pass][8]（已在 Fedora 杂志上介绍）中的机密令牌。继续，生成你的机密信息。
 
 在此示例中，它称为 `githubtoken`：
 
@@ -291,7 +291,7 @@ via: https://fedoramagazine.org/take-back-your-dotfiles-with-chezmoi/
 作者：[Ryan Walter][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
