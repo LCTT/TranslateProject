@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (bingzxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,6 +7,7 @@
 [#]: via: (https://opensource.com/article/20/4/linux-story)
 [#]: author: (James Farrell https://opensource.com/users/jamesf)
 
+bingzxy is translating
 My Linux Story: From 8-bit enthusiast to Unix sysadmin
 ======
 How my early interest in computers got me hooked on a career as a
