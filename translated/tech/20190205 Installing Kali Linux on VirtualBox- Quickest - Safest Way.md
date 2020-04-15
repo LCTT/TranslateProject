@@ -1,118 +1,128 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Installing Kali Linux on VirtualBox: Quickest & Safest Way)
 [#]: via: (https://itsfoss.com/install-kali-linux-virtualbox/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-在 VirtualBox 上安装 Kali Linux : 最快速和最安全的方法
+在 VirtualBox 上安装 Kali Linux：最快速和最安全的方法
 ======
 
-_**这篇教程向你展示如何以最快的方式在 Windows 和 Linux 中的 Virtual Box 虚拟机上安装 Kali Linux 。**_
+> 这篇教程向你展示如何在 Windows 和 Linux 中以最快的方式在 VirtualBox 上安装 Kali Linux。
 
-[Kali Linux][1] 是 [最适合黑客攻击和安全爱好者的 Linux 发行版][2] 之一。
+[Kali Linux][1] 是 [最适合脆弱性测试和安全爱好者的 Linux 发行版][2] 之一。
 
-因为它涉及一个像黑客之类的敏感话题，就像一把双刃剑。我们过去在详细的 Kali Linux 评论中讨论过，所以我不会使用同样的东西来烦你。
+因为它涉及一个像黑客之类的敏感话题，就像一把双刃剑。我们过去在详细的 Kali Linux 评论中讨论过，所以我不会再次赘述。
 
-尽管你可以通过以替换现有的操作系统的形式安装 Kali Linux 。但是通过一台虚拟机来使用它可能会是更好更安全的选择。
+虽然你可以通过替换现有的操作系统的形式安装 Kali Linux，但是通过虚拟机来使用它可能会是更好、更安全的选择。
 
-使用 Virtual Box ，你可以在 Windows/Linux 系统中将 Kail Linux 作为常规应用程序使用。它几乎与在系统中运行 VLC 或游戏是一样的。
+使用 VirtualBox，你可以在 Windows/Linux 系统中将 Kail Linux 作为常规应用程序使用。这和在系统中运行 VLC 或游戏几乎是一样的。
 
-在一台虚拟机中使用 Kali Linux 是安全的。不管你在 Kali Linux 做什么都不会影响你的 ‘宿主系统’ (例如，你的原始的 Windows 或 Linux 操作系统)。你的实际操作系统将不会受到影响，并且在你的宿主系统中数据也将是安全的。
+在虚拟机中使用 Kali Linux 是安全的。不管你在 Kali Linux 做什么都不会影响你的 ‘宿主系统’（即你原来的 Windows 或 Linux 操作系统）。你的实际操作系统将不会受到影响，并且在你的宿主系统中数据也是安全的。
 
 ![][3]
 
 ### 如何在 VirtualBox 中安装 Kali Linux 
 
-在这里我将使用 [VirtualBox][4] 。它是一个非常好的开源虚拟化解决方案，几乎适合于任何人（专业使用或个人使用）。它是免费提供的。
+在这里我会使用 [VirtualBox][4]。它是一个非常好的开源虚拟化解决方案，几乎适合于任何人，无论是专业使用或个人使用。它是免费提供的。
 
-在这篇文章中，我们将特别讨论 Kali Linux ，但是你也可以安装其它任何存在的 ISO 文件，或者一个可用的预先构建的虚拟机保存文件。
+在这篇文章中，我们将特别讨论 Kali Linux，但你也可以安装几乎任何其他的操作系统，只要有 ISO 文件或预建的虚拟机保存文件就可以安装。
 
-**注意：** _同样的步骤也适用于运行 VirtualBox 的 Windows/Linux 。_
+**注意：**同样的步骤适用于运行 VirtualBox 的 Windows 或 Linux。
 
-如上所述，你可以安装 Windows 或 Linux 作为你的宿主系统。但是，在我已安装 Windows 10 的情况下(别仇恨我!)，我将尝试在 VirtualBox 中一步一步地安装 Kali Linux 。
+如上所述 ，你可以安装 Windows 或 Linux 作为你的宿主系统。但是，在我已安装 Windows 10 的情况下（别仇恨我！），我会尝试着在其上的 VirtualBox 中一步步地安装 Kali Linux 。
 
-并且，最好的部分是，– 即使你碰巧使用一个 Linux 发行版作为你的主要操作系统，也将使用同样的步骤!
+并且，最棒的是，即使你碰巧使用一个 Linux 发行版作为你的主要操作系统，也将使用同样的步骤!
 
-很疑惑，如何做？让我们来看看…
+想知道如何做？让我们来看看…
 
-[更多 Linux 视频，订阅我们的 YouTube 频道][5]
+- [video](https://youtu.be/TGOiAsSdADs)
 
-### 图解在 VirtualBox 上安装 Kali Linux
+### 在 VirtualBox 上安装 Kali Linux 的分步指南
 
-_我们将使用专门为 VirtualBox 定制的 Kali Linux 镜像。你也可以下载 Kali Linux 的 ISO 文件，并创建一个新的虚拟机 – 但是为什么当你有一个简单的选择时还这样做呢？_
+我们将使用一个专门为 VirtualBox 定制的 Kali Linux 镜像。你也可以下载 Kali Linux 的 ISO 文件，并创建一个新的虚拟机，但是当你有一个简单的选择时，为什么还这样做呢？
 
-#### 1\. 下载和安装 VirtualBox
+#### 1、下载并安装 VirtualBox
 
-第一件要做的事是从甲骨文的官方网站下载和安装 VirtualBox 。
+第一件要做的事是从甲骨文的官方网站下载和安装 VirtualBox。
 
-[下载VirtualBox][6]
+- [下载 VirtualBox][6]
 
-在你下载安装器后，只需要双击它来安装 VirtualBox 。在 [Ubuntu][7] / Fedora Linux 安装 VirtualBox 也是一样的。
+在你下载了安装器之后，只需要双击它来安装 VirtualBox。在 [Ubuntu][7]/Fedora Linux 安装 VirtualBox 也是一样的方式。
 
-#### 2\. 下载 Kali Linux 的即时可用的虚拟镜像
+#### 2、下载即用型的 Kali Linux 虚拟镜像
 
-在安装成功后，前往 [攻击性安全的下载页面][8] 来下载适用于 VirtualBox 的虚拟机镜像。如果您改变主意使用 [VMware][9] ，那也是可行的。
+在安装成功后，前往 [Offensive Security 的下载页面][8] 来下载适用于 VirtualBox 的虚拟机镜像。如果你改变主意使用 [VMware][9]，那里也有适用的。
 
 ![][10]
 
-如你所见，文件大小大约 3 GB ，你应该使用一个 torrent 选项，或者使用一个 [下载管理器][11] 来下载它。
+如你所见，文件大小大约 3 GB，你应该使用 torrent 方式，或者使用一个[下载管理器][11]来下载它。
 
-[Kali Linux 虚拟镜像][8]
+- [下载 Kali Linux 虚拟镜像][8]
 
-#### 3\. 在 Virtual Box 上安装 Kali Linux
+#### 3、在 Virtual Box 上安装 Kali Linux
 
-在你安装 VirtualBox 和下载 Kali Linux 镜像后，你只需要导入它到 VirtualBox 中以便使它工作。
+当你安装 VirtualBox 并下载 Kali Linux 镜像后，你只需要将其导入到 VirtualBox 中就可以使其正常工作。
 
 这里是如何导入 Kali Linux 的 VirtualBox 镜像：
 
-**步骤 1** : 启动 VirtualBox 。你将注意到一个 **导入** 按钮 – 在它上面鼠标左键单击
+##### 步骤 1
 
-![在 导入 按钮上鼠标左键单击][12]
+启动 VirtualBox。你会看到一个<ruby>导入<rt>Import</rt></ruby> 按钮，点击它。
 
-**步骤 2:** 接下来，浏览到你更改下载的文件，并选择它来导入 (如你在下面的图像中所见)。文件名称一个以 'kali linux' 开始并以 . **ova** 拓展名结束。
+![点击导入按钮][12]
+
+##### 步骤 2
+
+接下来，浏览刚刚下载的文件，选择要导入的文件（如下图所示）。文件名应该以“kali linux”开始，以 .ova 扩展名结束。
 
 ![导入 Kali Linux 镜像][13]
 
- 在选择后，通过在 **接下来** 上鼠标左键单击以继续。
+选择后，单击<ruby>下一步<er>Next</rt></.ruby>继续进行。
 
-**步骤 3** : 现在，将向你显示将要导入虚拟机的设置。所以，你可以自定义它们或者不自定义它们 – 这取决于你的选择。如果你使用默认设置也是可以的。
+##### 步骤 3
 
-你需要选择一个有足够可用存储空间的路径。在 Windows 上，我从不建议使用 **C:** 盘。
+现在，你会看到要导入的虚拟机的设置。所以，你可以自定义它们或者不自定义，这是你的选择。采用默认设置也是可以的。
 
-![导入硬盘驱动器为 VDI][14]
+你需要选择一个有足够可用存储空间的路径。在 Windows 上，我绝不建议使用 C: 盘。
 
-在这里，硬盘驱动器如同 VDI 一样通过分配存储器空间集来虚拟挂载硬盘驱动器。
+![将硬盘驱动器导入为  VDI][14]
 
-在你完成设置后，单击 **导入** 并等待一段时间。
+在这里，“将硬盘驱动器导入为  VDI”指的是通过分配存储器空间集来虚拟挂载硬盘驱动器。
 
-**步骤 4:** 你现在将看到它的列表。所以，只需点击 **开始** 来启动它。
+在你完成设置后，单击<ruby>导入<rt>Import</rt></ruby>，等待一段时间。
 
-在最开始的时候，你可能会得到一个 USB 2.0 端口控制器的错误，你可以禁用它来解决问题，或者只需按照屏幕上的指南来安装一个附加软件包修复问题。与此同时，你完成所有工作！
+##### 步骤 4
+
+你现在将看到它被列在虚拟机列表中。所以，只需点击<ruby>开始<rt>Start</rt></ruby>来启动它。
+
+你可能会在开始时得到一个 USB 2.0 端口控制器的错误，你可以禁用它来解决问题，或者只需按照屏幕上的指示来安装一个附加软件包修复问题。然后就大功告成了！
 
 ![Kali Linux 运行在 VirtualBox 中][15]
 
-在 Kali Linux 中默认用户名是 root ，默认密码是 toor 。你可以使用用户名和密码来登录到系统中。
+以前 Kali Linux 中的默认用户名是 root，默认密码是 toor。但从 2020 年 1 月起，Kali Linux 就不使用 root 账号了。现在，默认账号和密码都是 kali。
 
-请注意，在尝试安装一个新的应用程序或尝试侵入你邻居家的 WiFi 之前，你应该 [更新Kali Linux][16] 。
+你应该可以用它来登录系统了。
 
-我希望这篇指南能帮助您在 Virtual Box 上很容易地安装 Kali Linux 。当然，Kali Linux 有很多有用的渗透测试工具 – 祝你好运！
+请注意，在尝试安装一个新的应用程序或尝试破解 WiFi 密码之前，请先[更新 Kali Linux][16] 。
 
-**提示** : Kali Linux 和 Ubuntu 都是基于 Debian 的，如果你在使用 Kali Linux 时遇到一些问题或错误，你可以按照互联网上的 Ubuntu 和 Debian 的教程解决。
+我希望这篇指南能帮助您在 VirtualBox 上很容易地安装 Kali Linux。当然，Kali Linux 有很多有用的渗透测试工具 – 祝你好运！
 
-### 额外的好处: 免费的 Kali Linux 指南书
+**提示** : Kali Linux 和 Ubuntu 都是基于 Debian 的，如果你在使用 Kali Linux 时遇到任何问题或错误，你可以按照互联网上的 Ubuntu 和 Debian 的教程解决。
 
-如果你刚刚开始使用 Kali Linux, 那么知晓如何使用Kali Linux 将是一个好主意。
+### 奖励: 免费的 Kali Linux 指南书
 
-Kali Linux 背后的公司 Offensive Security 创建了一本解释 Linux 基础知识，Kali Linux 基础知识，配置和设置的指南书，也有一些关于渗透测试和安全工具的章节。
+如果你刚刚开始使用 Kali Linux, 那么了解如何使用 Kali Linux 就很有必要了。
 
-基本上，它拥有你开始使用 Kali Linux 所需的一切东西。最好的事情是这本书可以免费下载。
+Kali Linux 背后的公司 Offensive Security 制作了一本指南书，讲解了 Linux 的基础知识、Kali Linux 的基础知识、配置和设置，书中还有一些关于渗透测试和安全工具的章节。
 
-[免费下载 Kali Linux 解密][17]
+基本上，它包含你上手 Kali Linux 所需要的一切东西。更重要的是，这本书可以免费下载。
 
-如果你遇到问题或只是想分项在 VirtualBox 使用 Kali Linux 的经验，请在下面的评论中告诉我们。
+- [免费下载《揭秘 Kali Linux》][17]
+
+如果你在 VirtualBox 上使用 Kali Linux 时遇到问题，请在下面的评论中告诉我们，或者直接分享你的经验。
 
 --------------------------------------------------------------------------------
 
@@ -121,7 +131,7 @@ via: https://itsfoss.com/install-kali-linux-virtualbox/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[robsean](https://github.com/robsean)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
