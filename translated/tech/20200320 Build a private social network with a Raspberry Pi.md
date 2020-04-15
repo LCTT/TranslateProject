@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "lxbwolf"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "Build a private social network with a Raspberry Pi"
-[#]: via: "https://opensource.com/article/20/3/raspberry-pi-open-source-social"
-[#]: author: "Giuseppe Cassibba https://opensource.com/users/peppe8o"
+[#]: collector: (lujun9972)
+[#]: translator: (lxbwolf)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Build a private social network with a Raspberry Pi)
+[#]: via: (https://opensource.com/article/20/3/raspberry-pi-open-source-social)
+[#]: author: (Giuseppe Cassibba https://opensource.com/users/peppe8o)
 
 用树莓派搭建一个私人社交网络
 ======
@@ -352,7 +352,7 @@ via: https://opensource.com/article/20/3/raspberry-pi-open-source-social
 
 [a]: https://opensource.com/users/peppe8o
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/team_global_people_gis_location.png?itok=Rl2IKo12 "Team of people around the world"
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/team_global_people_gis_location.png?itok=Rl2IKo12 (Team of people around the world)
 [2]: https://peppe8o.com/2019/04/best-raspberry-pi-projects-with-open-source-software/
 [3]: https://www.opensource-socialnetwork.org/
 [4]: https://filezilla-project.org/
