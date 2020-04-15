@@ -7,13 +7,12 @@
 [#]: via: (https://opensource.com/article/20/3/raspberry-pi-open-source-social)
 [#]: author: (Giuseppe Cassibba https://opensource.com/users/peppe8o)
 
-Build a private social network with a Raspberry Pi
+用树莓派搭建一个私人社交网络
 ======
-Step-by-step instructions on how to create your own social network with
-low-cost hardware and simple setup.
+手把手教你怎样以低硬件成本和简易步骤搭建自己的社交网络。
 ![Team of people around the world][1]
 
-Social networks have revolutionized people's lives in the last several years. People use social channels every day to stay connected with friends and family. But a common question remains regarding privacy and data security. Even if social networks have created complex privacy policies to protect users, maintaining your data in your own server is always the best option if you don't want to make them available to the public.
+近年来，社交网络已经革新了人们的生活习惯。为了维持与朋友和加人的联系，人们每天都会使用社交频道。但是涉及到隐私和数据安全时，仍有一些普遍问题。尽管社交网络创建了复杂的隐私策略来保护用户的信息，但如果你不想自己的信息公之于众，最好的办法还是把数据保存在自己的服务器上。
 
 Again, a Raspberry Pi—Raspbian Lite version can be very versatile to help you put a number of useful home services (see also my [Raspberry Pi projects][2] article) in place. Some addictive features can be achieved by searching for open source software and testing it with this fantastic device. An interesting example to try is installing OpenSource Social Network in your Raspberry Pi.
 
