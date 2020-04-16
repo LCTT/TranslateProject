@@ -7,64 +7,65 @@
 [#]: via: (https://itsfoss.com/create-templates-libreoffice/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
-How to Create Templates in LibreOffice to Save Time and Increase Productivity
+如何在 LibreOffice 中创建模板以实现省时高效
 ======
 
-Creating a template in [LibreOffice][1] can save you some time for the documents that you use often. It can be a letter, a financial spreadsheet or even a presentation.
+在 [LibreOffice][1] 中为你经常使用的文档创建模板可以为你节省一些时间。它可以是信件，是财务表格抑或是简报。
 
-Time is one factor that a template can save and on the other hand it provides consistency where a group of people in an organization work together at the same project.
+模板不仅可以为你节省时间，另一方面它可以保证在同一机构内参与统一项目的小组成员文档的一致性。
 
-For example, if you are a small organization that has to often issue certificates of experience, instead of copy-pasting from a saved document somewhere, you can create a template. When you need to issue a new certificate of experience, you create a new one from the template, edit it slightly and you are good to go.
+举例而言，如果你是一家需要经常开具工作经验证明的企业，你可以创建一个模板，而不再需要从某个地方复制粘贴已保存的文档。当你需要开具一个新的经验证明时，你可以从模板中创建，稍微编辑一下就可以了。
 
-LibreOffice comes with a few templates by default but you are not restricted to use just them. You are free to create your own as per your requirements.
+LibreOffice 默认情况下提供了一些模板，但并不仅仅局限于使用这些，你可以根据自己的需求自由定制。
 
-I think templates are one of the [essential LibreOffice tips][2] that every user should know. Let me show you how to do it.
+我认为模板是每个用户都应该了解的 [LibreOffice 基础技巧之一][2]。下面我将为你演示如何使用。 
 
-### How to create a template in LibreOffice
+###如何在 LibreOffice 中创建一个模板
 
-First, create the document that you want to reuse with minimal editing. It could be a document, spreadsheet or presentation. I am using a word document in the example but the steps are the same for all of them.
+首先，创建你希望通过最少的编辑就可以重复使用的文档。它可以是文档、电子表格或演示文稿。我在示例中使用的是 word 文档，但是所有步骤都是相同的。
 
-Now go to file and select Save as Template. You will be prompted to give a name and a category from the menu, the press save.
+然后转到文件选项卡并选择存储为模板。你将被提示输入名称及选择类别，再单击保存。
 
 ![Creating a new template in LibreOffice][3]
 
-This file will be saved in the LibreOffice template folder in .ots format. You can use these .ots files on other systems that have LibreOffice installed and use the same templates on those systems as well.
+此文件将以 .ots 格式保存在 LibreOffice 的模板文件夹中。你可以在其他安装了 LibreOffice 的系统上使用这些 .ots 文件，并在这些系统上使用相同的模板。
 
-### How to use templates in LibreOffice
+### 如何在 LibreOffice 中使用模板
 
-To use a template, select File and then Templates.
+要使用模板，请选择 “文件选项卡”，然后选择 “模板”。
 
-Don’t worry! Opening a template LibreOffice creates a copy without affecting the original template. You can edit the document without worrying about your template getting changed.
+不要担心! LibreOffice 在打开一个模板时会在不影响原始模板的情况下创建一个副本。你可以随意编辑文档而不必担心模板发生改动。
 
 ![Using templates][4]
 
-Once you choose your template, click open. You can edit it as you like.
+选择模板后，单击打开。你就可以随意编辑了。
 
-### How to change a template in LibreOffice
+### 如何在LibreOffice中更改模板
 
-Needs may change from time to time and adjustments to your templates can be necessary.
+我们需求可能会不时变化，所以需要对模板进行相应。
 
-To edit an existing template go to File -&gt; Templates and then right click on the desired template and click edit.
+编辑一个现有的模板，单击文件>然后右键单击所需的模板，然后单击编辑。
 
 ![edit Template][5]
 
-When you finish editing the template, click on save to make the changes permanent.
+当您完成对模板的编辑时，单保存以使更改生效。
 
-**Recommended Read:**
+**推荐阅读:**
 
 ![][6]
 
-#### [7 LibreOffice Tips To Get More Out of It][2]
+#### [7 个高效使用 LibreOffice 的小技巧][2]
 
-LibreOffice is an excellent office suite. These LibreOffice tips will enable you to use it more effectively.
+LibreOffice 是一个优秀的办公套件。这些 LibreOffice 技巧将帮助你使用时更为高效。
 
-All in all templates are great not only at reducing the workload on repetitive tasks but also for user mistake proofing. You can take advantage of your computer’s ability to handle a repetitive task but with flexibility. It increases your efficiency.
+总之，模板不仅可以减少重复任务的工作量，还可以防止用户出错。你可以利用电脑优势来灵活的处理重复性的任务，并以此提高你的效率。
 
-Bonus Tip!
+福利小贴士
 
-You can find tons of additional templates on the [LibreOffice website][7]. You can search for the ones you need, download them and use them. Be advised that these are from third-party, unverified users. So use them at your risk.
+你可以在[LibreOffice网站][7]上找到大量的附加模板。你可以搜索你需要的，下载并使用它们。请注意，这些模板来自第三方和未经验证的用户。所以使用它们的风险需要自己承担。
 
-I’ll keep on sharing more such tips in future. Meanwhile, you may also learn about creating templates to [add the “create new document” option in the right click menu context in GNOME][8].
+之后我会继续分享更多这样的技巧。同时，您还可以学习如何创建模板[在GNOME的右键菜单上下文中添加“创建新文档”选项][8]。
+
 
 --------------------------------------------------------------------------------
 
