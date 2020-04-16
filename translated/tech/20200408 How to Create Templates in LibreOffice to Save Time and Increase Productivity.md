@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
-[#]: translator: (qfzy1233 )
-[#]: reviewer: ( )
+[#]: translator: (qfzy1233)
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Create Templates in LibreOffice to Save Time and Increase Productivity)
@@ -10,7 +10,9 @@
 如何在 LibreOffice 中创建模板以实现省时高效
 ======
 
-在 [LibreOffice][1] 中为你经常使用的文档创建模板可以为你节省一些时间。它可以是信件，是财务表格抑或是简报。
+![](https://img.linux.net.cn/data/attachment/album/202004/16/214314y17oww0ymfylyn1m.jpg)
+
+在 [LibreOffice][1] 中为你经常使用的文档创建模板可以为你节省一些时间。它可以是信件、财务表格抑或是简报。
 
 模板不仅可以为你节省时间，另一方面它可以保证在同一机构内参与统一项目的小组成员文档的一致性。
 
@@ -20,11 +22,11 @@ LibreOffice 默认情况下提供了一些模板，但并不仅仅局限于使�
 
 我认为模板是每个用户都应该了解的 [LibreOffice 基础技巧之一][2]。下面我将为你演示如何使用。 
 
-###如何在 LibreOffice 中创建一个模板
+### 如何在 LibreOffice 中创建一个模板
 
 首先，创建你希望通过最少的编辑就可以重复使用的文档。它可以是文档、电子表格或演示文稿。我在示例中使用的是 word 文档，但是所有步骤都是相同的。
 
-然后转到文件选项卡并选择存储为模板。你将被提示输入名称及选择类别，再单击保存。
+然后转到“文件”选项卡并选择“存储为模板”。你将被提示输入“名称”及选择“类别”，再单击“保存”。
 
 ![Creating a new template in LibreOffice][3]
 
@@ -40,31 +42,23 @@ LibreOffice 默认情况下提供了一些模板，但并不仅仅局限于使�
 
 选择模板后，单击打开。你就可以随意编辑了。
 
-### 如何在LibreOffice中更改模板
+### 如何在 LibreOffice 中更改模板
 
 我们需求可能会不时变化，所以需要对模板进行相应。
 
-编辑一个现有的模板，单击文件>然后右键单击所需的模板，然后单击编辑。
+编辑一个现有的模板，单击“文件” -> “模板”，然后右键单击所需的模板，然后单击“编辑”。
 
 ![edit Template][5]
 
-当您完成对模板的编辑时，单保存以使更改生效。
-
-**推荐阅读:**
-
-![][6]
-
-#### [7 个高效使用 LibreOffice 的小技巧][2]
-
-LibreOffice 是一个优秀的办公套件。这些 LibreOffice 技巧将帮助你使用时更为高效。
+当你完成对模板的编辑时，单击“保存”以使更改生效。
 
 总之，模板不仅可以减少重复任务的工作量，还可以防止用户出错。你可以利用电脑优势来灵活的处理重复性的任务，并以此提高你的效率。
 
-福利小贴士
+> 福利小贴士
 
-你可以在[LibreOffice网站][7]上找到大量的附加模板。你可以搜索你需要的，下载并使用它们。请注意，这些模板来自第三方和未经验证的用户。所以使用它们的风险需要自己承担。
+你可以在 [LibreOffice 网站][7]上找到大量的附加模板。你可以搜索你需要的，下载并使用它们。请注意，这些模板来自第三方和未经验证的用户。所以使用它们的风险需要自己承担。
 
-之后我会继续分享更多这样的技巧。同时，您还可以学习如何创建模板[在GNOME的右键菜单上下文中添加“创建新文档”选项][8]。
+之后我会继续分享更多这样的技巧。同时，你还可以学习一下如何创建模板[在 GNOME 的右键菜单上下文中添加“创建新文档”选项][8]。
 
 
 --------------------------------------------------------------------------------
@@ -73,8 +67,8 @@ via: https://itsfoss.com/create-templates-libreoffice/
 
 作者：[Dimitrios Savvopoulos][a]
 选题：[lujun9972][b]
-译者：[qfzy1233](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[qfzy1233](https://github.com/qfzy1233)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
