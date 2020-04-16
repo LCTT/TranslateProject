@@ -11,18 +11,18 @@
 ======
 Work with containers? Get familiar with these projects from the Cloud
 Native Computing Foundation
-工作中使用了容器？熟悉来自云原生计算基金会的这些项目
+工作中用了容器？熟悉这些出自云原生计算基金会的项目？
 
 ![clouds in the sky with blue pattern][1]
 
 As the practice of developing applications with containers is getting more popular, [cloud-native applications][2] are also on the rise. By [definition][3]:
-随着通过容器开发应用的实践变得流行，[云原生应用][2]也在上升。其定义：
-云原生技术被用于开发应用程序，这些程序通过将服务打包在容器中来完成构建，部署为微服务，通过敏捷的DevOps流程和持续集成工作流在弹性基础设施上管理。
+随着用容器来开发应用的实践变得流行，[云原生应用][2]也在增长。云原生应用的定义为：
+> "云原生技术被用于开发应用程序，这些应用通过将服务打包在容器中来完成构建，被部署为微服务，并通过敏捷的DevOps流程和持续集成工作流在弹性基础设施上管理。"
 
 > "Cloud-native technologies are used to develop applications built with services packaged in containers, deployed as microservices, and managed on elastic infrastructure through agile DevOps processes and continuous delivery workflows."
 
 This description includes four elements that are integral to cloud-native applications:
-这个描述包括构成云原生应用的4个元素：
+这个定义提到了构成云原生应用的4个元素：
 
   1. Container 容器
   2. Microservice 微服务
@@ -32,7 +32,7 @@ This description includes four elements that are integral to cloud-native applic
 
 
 Although these technologies have very distinct histories, they complement each other well and have led to surprisingly exponential growth of cloud-native applications and toolsets in a short time. This [Cloud Native Computing Foundation][4] (CNCF) infographic shows the size and breadth of the cloud-native application ecosystem today.
-尽管这些技术有非常独特的历史，它们互相补充，共同导致了短时间内的云原生应用和工具的惊人的指数级增长。这个[云原生计算基金会][4]信息图现实了今天的云原生应用生态的规模和广度。
+尽管这些技术各有各自独特的历史，但它们相互补充，共同导致了云原生应用和工具在短时间内惊人的指数级增长。这个[云原生计算基金会][4]信息图呈现了当今云原生应用生态的规模和广度。
 
 ![Cloud-Native Computing Foundation applications ecosystem][5]
 
@@ -40,23 +40,23 @@ Cloud-Native Computing Foundation projects
 云原生计算基金会项目
 
 I mean, just look at that! And this is just a start. Just as NodeJS’s creation sparked the explosion of endless JavaScript tools, the popularity of container technology started the exponential growth of cloud-native applications.
-我的意思是，留意吧！这仅仅是一个开始。 正如NodeJS的出现引发了无休止的JavaScript工具的爆炸式增长一样，容器技术的普及也推动了云原生应用程序的指数增长。
+我想说，瞧着吧！这仅仅是一个开始。正如NodeJS的出现引发了无休止的JavaScript工具的爆炸式增长一样，容器技术的普及也推动了云原生应用的指数增长。
 
 The good news is that there are several organizations that oversee and connect these dots together. One is the [**Open Containers Initiative (OCI)**][6], which is a lightweight, open governance structure (or project), "formed under the auspices of the Linux Foundation for the express purpose of creating open industry standards around container formats and runtime." The other is the **CNCF**, "an open source software foundation dedicated to making cloud native computing universal and sustainable."
-好消息是，有几个组织负责监管这些技术并将它们融合在一起。 其中之一是[** Open Containers Initiative（OCI）**][6]，它是一种轻量级的，开放的治理结构（或项目），“是在Linux基金会的主持下形成的，其明确目的是创建开放的行业标准容器格式和运行时。” 另一个是** CNCF **，“致力于使云原生计算具有通用性和可持续性的开源软件基金会”。
+好消息是，有几个组织负责监管这些技术并将它们融合在一起。 其中之一是[** Open Containers Initiative（OCI）**][6]，它是一个轻量级的，开放的治理机构（或项目），“它是在Linux基金会的主持下形成的，其明确目的是创建开放的行业标准的容器格式和运行时。” 另一个是** CNCF **，“它是一个致力于使云原生计算具有通用性和可持续性的开源软件基金会”。
 
 In addition to building a community around cloud-native applications generally, CNCF also helps projects set up structured governance around their cloud-native applications. CNCF created the concept of maturity levels—Sandbox, Incubating, or Graduated—which correspond to the Innovators, Early Adopters, and Early Majority tiers on the diagram below.
-除了通常围绕云原生应用建立社区之外，CNCF还帮助项目围绕其云原生应用建立结构化的管理。CNCF创建了成熟度级别的概念（沙箱，孵化或毕业），与下图中的“创新者”，“早期采用者”和“早期多数”层相对应。
+除了常见的围绕云原生应用建立社区之外，CNCF还帮助项目基于其云原生应用建立结构化的管理。CNCF创建了成熟等级的概念（沙箱级，孵化级或毕业级），分别与下图中的“创新者”，“早期采用者”和“早期大量应用”相对应。
 ![CNCF project maturity levels][7]
 
-CNCF project maturity levels CNCF项目成熟度级别
+CNCF project maturity levels CNCF项目成熟等级
 
 The CNCF has detailed [criteria][8] for each maturity level (included below for readers’ convenience). A two-thirds supermajority of the Technical Oversight Committee (TOC) is required for a project to be Incubating or Graduated.
-CNCF为每个成熟度级别制定了详细的[标准][8]（为方便读者而列在下面）。 获得技术监督委员会（TOC）的三分之二的同意才能转为孵化或毕业项目。
+CNCF为每个成熟等级制定了详细的[标准][8]（为方便读者而列在下面）。 获得技术监督委员会（TOC）三分之二的同意才能转为孵化或毕业级。
 
 ### Sandbox stage 沙箱级
 
-> To be accepted in the sandbox, a project must have at least two TOC sponsors. See the CNCF Sandbox Guidelines v1.0 for the detailed process. 要成为沙箱级，一个项目必须至少有两个TOC赞助商。 有关详细过程，请参见《 CNCF沙箱指南v1.0》。
+> To be accepted in the sandbox, a project must have at least two TOC sponsors. See the CNCF Sandbox Guidelines v1.0 for the detailed process. 要想成为沙箱级，一个项目必须至少有两个TOC赞助商。 有关详细过程，请参见《 CNCF沙箱指南v1.0》。
 
 
 ### Incubating stage 孵化级
@@ -93,7 +93,7 @@ CNCF为每个成熟度级别制定了详细的[标准][8]（为方便读者而�
 >   * Have a public list of project adopters for at least the primary repo (e.g., ADOPTERS.md or logos on the project website).
 >   * Receive a supermajority vote from the TOC to move to graduation stage. Projects can attempt to move directly from sandbox to graduation, if they can demonstrate sufficient maturity. Projects can remain in an incubating state indefinitely, but they are normally expected to graduate within two years.
 >
->要从沙箱或孵化状态毕业，或者要使一个新项目作为已毕业项目加入，项目除了必须满足孵化阶段标准外还要满足：
+>要从沙箱或孵化级毕业，或者要使一个新项目作为已毕业项目加入，项目除了必须满足孵化级的标准外还要满足：
 >
 > *至少有两个组织的提交者。
 > *已获得并维护了“核心基础设施计划最佳实践徽章”。
@@ -106,7 +106,7 @@ CNCF为每个成熟度级别制定了详细的[标准][8]（为方便读者而�
 ## 9 projects to consider 值得考虑的9个项目
 
 While it’s impossible to cover all of the CNCF projects in this article, I’ll describe are nine of most interesting Graduated and Incubating open source projects.
-本文不可能涵盖所有的CNCF项目，我将介绍最有趣的9个“毕业和孵化中”的开源项目。
+本文不可能涵盖所有的CNCF项目，我将介绍最有趣的9个“已毕业和孵化中”的开源项目。
 
 Name | License | What It Is
 名称|授权类型|简要描述
@@ -122,14 +122,14 @@ Name | License | What It Is
 [CRI-O][17] | Apache 2.0 | Lightweight runtime for Kubernetes 专门用于K8s的轻量级运行时环境
 
 I also created this video tutorial to walk through these projects.
-我也创建了这个视频材料来介绍这些项目。
+我也创建了视频材料来介绍这些项目。
 
 ## Graduated projects 毕业项目
 
 Graduated projects are considered mature—adopted by many organizations—and must adhere to the CNCF’s guidelines. Following are three of the most popular open source CNCF Graduated projects. (Note that some of these descriptions are adapted and reused from the projects' websites.)
 已毕业的项目被认为是成熟的，已被许多组织采用的，并且严格遵守了CNCF的准则。 以下是三个最受欢迎的开源CNCF毕业项目。 （请注意，其中一些描述来源于项目的网站并被做了改编。）
 
-### Kubernetes K8S
+### Kubernetes
 
 Ah, Kubernetes. How can we talk about cloud-native applications without mentioning Kubernetes? Invented by Google, Kubernetes is undoubtedly the most famous container-orchestration platform for container-based applications, and it is also an open source tool.
 Kubernetes。我们如何在不提及Kubernetes的情况下谈论云原生应用程序？ Google发明的Kubernetes无疑是最著名的基于容器的应用程序的容器编排平台，而且它还是一个开源工具。
@@ -174,7 +174,7 @@ There are numerous alternatives for service mesh applications, such as Uber’s 
   * It’s API-driven and supports dynamic configuration and hot reloads
   * Has a strong focus on metric collection, tracing, and overall observability
 
-服务网格应用程序有很多替代方案，例如Uber的[Linkerd][24]（下面会讨论）和[Istio][25]。 Istio通过将其部署为[Sidecar][26]并利用了[Mixer][27]的配置模型，实现了对Envoy的扩展。 Envoy的显著特性有：
+服务网格应用有很多替代方案，例如Uber的[Linkerd][24]（下面会讨论）和[Istio][25]。 Istio通过将其部署为[Sidecar][26]并利用了[Mixer][27]的配置模型，实现了对Envoy的扩展。 Envoy的显著特性有：
 
    *所有的“table stakes(入场筹码,引申为基础必备特性)”特性（与控制平面（例如Istio）组合时）
    *带载运行时99%数据可达到低延时
@@ -226,7 +226,7 @@ However, there are some subtle differences between the two. While Envoy and Link
   * Built-in service discovery abstractions to unite multiple systems
   * Support for gRPC, HTTP/2, and HTTP/1.x requests plus all TCP traffic
 
-像创建Envoy代理的Lyft一样，Uber开发了Linkerd开源解决方案用于生产级别上的服务维护。 在某些方面，Linkerd就像Envoy一样，因为两者都是服务网格工具，旨在提供平台级的可观测性，可靠性和安全性，而无需进行配置或代码更改。
+像创建Envoy代理的Lyft一样，Uber开发了Linkerd开源解决方案用于生产级的服务维护。在某些方面，Linkerd就像Envoy一样，因为两者都是服务网格工具，旨在提供平台级的可观测性，可靠性和安全性，而无需进行配置或代码更改。
 
 但是，两者之间存在一些细微的差异。 尽管Envoy和Linkerd充当代理并可以通过所连接的服务进行上报，但是Envoy并不像Linkerd那样被设计为Kubernetes Ingress控制器。 Linkerd的显著功能包括：
 
@@ -279,7 +279,7 @@ CRI-O is an Open Container Initiative (OCI)-compliant implementation of the Kube
   * Storage and management of image layers using containers/storage
   * Networking support through the Container Network Interface (CNI)
 
-CRI-O是Kubernetes运行时接口的兼容开放容器倡议（OCI）实现。 CRI-O用于各种功能，包括：
+CRI-O是Kubernetes运行时接口的OCI兼容实现。CRI-O用于各种功能，包括：
 
    *使用runc（或遵从OCI运行时规范的任何实现）和OCI运行时工具运行
    *使用容器/镜像进行镜像管理
