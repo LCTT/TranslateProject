@@ -1,25 +1,24 @@
-[#]: collector: (lujun9972)
-[#]: translator: (lxbwolf)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Getting started with Linux firewalls)
-[#]: via: (https://opensource.com/article/20/2/firewall-cheat-sheet)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
+[#]: collector: "lujun9972"
+[#]: translator: "lxbwolf"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Getting started with Linux firewalls"
+[#]: via: "https://opensource.com/article/20/2/firewall-cheat-sheet"
+[#]: author: "Seth Kenlon https://opensource.com/users/seth"
 
-Getting started with Linux firewalls
+Linux 防火墙入门教程
 ======
-A firewall is your computer's first line of defense against network
-intrusion. Download our cheat sheet to make sure you're secure.
+防火墙是你的计算机防止网络入侵的第一道屏障。为确保你的安全，请下载我们的备忘单。
 ![Cheat Sheet cover image][1]
 
-A sensible firewall is your computer's first line of defense against network intrusion. When you're at home, you're probably behind a firewall built into the router supplied by your internet service provider. When you're away from home, though, the only firewall you have is the one running on your computer, so it's important to configure and control the firewall on your Linux computer. If you run a Linux server, it's just as important to know how to manage your firewall so that you can protect it from unwanted traffic both locally and remotely.
+合理的防火墙是你的计算机防止网络入侵的第一道屏障。你在家里上网，通常互联网服务提供会在路由中搭建了一层防火墙。如果不在家里上网，那么你计算机上的那层防火墙就是仅有的一层，因为配置和控制好你 Linux 电脑上的防火墙很重要。如果你维护一台 Linux 服务器，知道怎么去管理你的防火墙同样重要，只要掌握了这些知识你才能保护你的服务器免于本地或远程非法流量的入侵。
 
-### Install a firewall
+### 安装防火墙
 
-Many Linux distributions ship with a firewall already installed, and traditionally that was **iptables**. It is extremely effective and customizable, but it can be complex to configure. Luckily, developers have produced several frontends to help users control their firewall without writing lengthy iptables rules.
+很多 Linux 发行版本已经自带了防火墙，通常是 `iptables`。它很有效并可以自定义，但配置起来有点复杂。幸运的是，有开发者写出了一些前端界面来帮助用户不需要写冗长的 iptables 规则就可以控制防火墙。
 
-On Fedora, CentOS, Red Hat, and similar distributions, the firewall software installed by default is **firewalld**, which is configured and controlled with the **firewall-cmd** command. On Debian and most other distributions, firewalld is available to install from your software repository. Ubuntu ships with the Uncomplicated Firewall (ufw), so to use firewalld, you must enable the **universe** repository:
+在 Fedora，CentOS，Red Hat 和一些类似的发行版本上，默认安装的防火墙软件是 `firewalld`，是用 **firewall-cmd** 命令来配置和控制的。在 Debian 和大部分其他发行版上，可以从你的软件仓库安装 firewalld。Ubuntu 自带的是 Uncomplicated Firewall（ufw），所以你必须打开 **universe** 库才能使用 firewalld：
 
 
 ```
@@ -27,25 +26,25 @@ $ sudo add-apt-repository universe
 $ sudo apt install firewalld
 ```
 
-You must also deactivate ufw:
+你还需要停用 ufw：
 
 
 ```
 `$ sudo systemctl disable ufw`
 ```
 
-There's no reason _not_ to use ufw. It's an excellent firewall frontend. However, this article focuses on firewalld because of its wide availability and integration into systemd, which is shipped with nearly every distribution.
+没有理由*不*用 ufw。它是一个强大的防火墙前端。然而，本文重点讲 firewalld，因为大部分发行版都支持它而且它集成到了 systemd，systemd 是几乎所有发行版都自带的。
 
-Regardless of your distribution, for a firewall to be effective, it must be active, and it should be loaded at boot time:
+不管你的发行版是哪个，都要先激活防火墙才能让它生效，激活需要在启动时加载：
 
 
 ```
 `$ sudo systemctl enable --now firewalld`
 ```
 
-### Understanding firewall zones
+### 理解防火墙的 zone
 
-Firewalld aims to make firewall configuration as simple as possible. It does this by establishing _zones_. A zone is a set of sensible, common rules that suit the everyday needs of most users. There are nine by default:
+Firewalld 旨在让防火墙的配置工作尽可能简单。它通过建立 *zone* 来实现这个目标。一个 zone 是一类型的合理、通用的规则，这些规则适配大部分用户的日常需求。
 
   * **trusted:** All network connections are accepted. This is the least paranoid firewall setting and should only be used in a trusted environment, such as a test lab or in a family home where everyone on the local network is known to be friendly.
   * **home, work, internal:** In these three zones, most incoming connections are accepted. They each exclude traffic on ports that usually expect no activity. Any of them is a reasonable setting for use in a home setting where there is no reason to expect network traffic to obscure ports, and you generally trust the other users on the network.
@@ -124,5 +123,5 @@ via: https://opensource.com/article/20/2/firewall-cheat-sheet
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/coverimage_cheat_sheet.png?itok=lYkNKieP (Cheat Sheet cover image)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/coverimage_cheat_sheet.png?itok=lYkNKieP "Cheat Sheet cover image"
 [2]: https://opensource.com/downloads/firewall-cmd-cheat-sheet
