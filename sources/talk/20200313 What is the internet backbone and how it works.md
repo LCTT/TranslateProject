@@ -8,23 +8,30 @@
 [#]: author: (Tim Greene https://www.networkworld.com/author/Tim-Greene/)
 
 What is the internet backbone and how it works
+互联网的骨干网是什么以及它是怎样工作的
 ======
 Tier 1 internet service providers (ISP) mesh their high-speed fiber-optic networks together to create the internet backbone, which moves traffic efficiently among geographic regions.
 [Gerd Altmann][1] [(CC0)][2]
+一级互联网服务提供商（ISP）将其高速光纤网络连接在一起，形成互联网的骨干网，实现在地理区域之间高效地传输流量。[Gerd Altmann][1] [(CC0)][2]
 
 The internet generates massive amounts of computer-to-computer traffic, and insuring all that traffic can be delivered anywhere in the world requires the aggregation of a vast array of high-speed networks collectively known as the internet backbone, but how does that work?
+互联网会产生大量的计算机到计算机的流量，要确保所有流量都可以在世界上任何地方之间送达，就需要大量汇聚的高速网络，这些网络统称为互联网骨干网，但是它是如何工作的呢？
 
 ### What is the internet backbone?
-
+互联网的骨干网是什么?
 Like any other network, the internet consists of access links that move traffic to high-bandwidth routers that move traffic from its source over the best available path toward its destination. This core is made up of individual high-speed fiber-optic networks that peer with each other to create the internet backbone.
+像任何其他网络一样，Internet由接入链路组成，这些接入链路将流量传输到高带宽路由器，路由器又将流量从源地址通过最佳可用路径传输到目的地址。其核心是由相互连接的各个高速光纤网络而构成的Internet骨干网。
 
 The individual core networks are privately owned by Tier 1 internet service providers (ISP), giant carriers whose networks are tied together. These providers include AT&amp;T, CenturyLink, Cogent Communications, Deutsche Telekom, Global Telecom and Technology (GTT), NTT Communications, Sprint, Tata Communications, Telecom Italia Sparkle, Telia Carrier, and Verizon.
+各个独立的核心网络由一级互联网服务提供商（ISP）所拥有，这些大型运营商的网络连接在一起。这些运营商包括AT＆T，CenturyLink，Cogent Communications，德国电信，全球电信和技术（GTT），NTT Communications，Sprint，Tata Communications，意大利Sparkle电信，Telia Carrier和Verizon。
 
 [[Get regularly scheduled insights by signing up for Network World newsletters.]][3]
 
 By joining these long-haul networks together, Tier 1 ISPs create a single worldwide network that gives all of them access to the entire internet routing table so they can efficiently deliver traffic to its destination through a hierarchy of progressively more local ISPs.
+通过将这些远程网络连接在一起，一级ISP们创建了一个他们都可以访问整个路由表的单一的全球性网络，因此他们可以通过逐步层次化地增加本地ISP网络来有效地将流量传输到其目的地。
 
 In addition to being physically connected, these backbone providers are held together by a shared network protocol, TCP/IP. They are actually two protocols, transport control protocol and internet protocol that set up connections between computers, insuring that the connections are reliable and formating messages into packets.
+除了物理连接之外，这些骨干运营商还通过一致的网络协议TCP/IP融合在一起。它们实际上是两个协议，传输控制协议和Internet协议，它们在计算机之间建立连接，以确保连接可靠并将消息格式化为数据包。
 
 ### Internet exchange points (IXP) tie the backbone together
 
