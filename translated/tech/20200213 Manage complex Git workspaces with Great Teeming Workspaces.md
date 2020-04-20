@@ -7,155 +7,136 @@
 [#]: via: (https://opensource.com/article/20/2/git-great-teeming-workspaces)
 [#]: author: (Daniel Gryniewicz https://opensource.com/users/dang)
 
-Manage complex Git workspaces with Great Teeming Workspaces
+使用 Great Teeming Workspaces 管理复杂的 Git 工作空间
 ======
-GTWS is a set of scripts that make it easy to have development
-environments for different projects and different versions of a project.
+GTWS 是一系列脚本，这些脚本能让我们在开发环境中管理一个有不同项目和不同版本的工程时变得更简单。
 ![Coding on a computer][1]
 
-Great Teeming Workspaces ([GTWS][2]) is a complex workspace management package for Git that makes it easy to have development environments for different projects and different versions of a project.
+[GTWS][2] 是一个 Git 的复杂工作空间管理工具包，可以让我们在开发环境中管理一个有不同项目和不同版本的工程时变得更简单。
 
-Somewhat like Python [venv][3], but for languages other than Python, GTWS handles workspaces for multiple versions of multiple projects. You can create, update, enter, and leave workspaces easily, and each project or version combination has (at most) one local origin that syncs to and from the upstream—all other workspaces update from the local origin.
+有点像 Python 的 [venv][3]，但不是为 Python 语言准备的。GTWS 用来处理多项目的多个版本的工作空间。你可以很容易地创建、更新、进入和离开工作空间，每个项目或版本的组合（最多）有一个本地的 origin，用来与 upstream 同步 — 其余的所有工作空间都从本地的 origin 更新。
 
-### Layout
-
+### 部署
 
 ```
 ${GTWS_ORIGIN}/&lt;project&gt;/&lt;repo&gt;[/&lt;version&gt;]
 ${GTWS_BASE_SRCDIR}/&lt;project&gt;/&lt;version&gt;/&lt;workspacename&gt;/{&lt;repo&gt;[,&lt;repo&gt;...]}
 ```
 
-Each level in the source tree (plus the homedir for globals) can contain a **.gtwsrc** file that maintains settings and Bash code relevant to that level. Each more specific level overrides the higher levels.
+源目录的每一级（包括全局的 home 目录）可以包含一个 **.gtwsrc** 文件，这个文件中维护与当前级相关的设置和 bash 代码。每一级的配置会覆盖上一级。
 
-### Setup
+### 安装
 
-Check out GTWS with:
-
+用下面的命令检出 GTWS：
 
 ```
 `git clone https://github.com/dang/gtws.git`
 ```
 
-Set up your **${HOME}/.gtwsrc**. It should include **GTWS_ORIGIN** and optionally **GTWS_SETPROMPT**.
+配置你的 **${HOME}/.gtwsrc**。它应该包含 **GTWS_ORIGIN**，也可以再包含 **GTWS_SETPROMPT**。
 
-Add the repo directory to your path:
-
+把仓库目录加到环境变量中：
 
 ```
 `export PATH="${PATH}:/path/to/gtws`
 ```
 
-### Configuration
+### 配置
 
-Configuration is via cascading **.gtwsrc** files. It walks the real path down from the root, and each **.gtwsrc** file it finds is sourced in turn. More specific files override less specific files.
+通过级联 **.gtwsrc** 文件来进行配置。它从根目录向下遍历，会执行在每级目录中找到的 **.gtwsrc** 文件。下级目录的文件会覆盖上一级。
 
-Set the following in your top-level **~/.gtws/.gtwsrc**:
+在你最上层的文件 **~/.gtws/.gtwsrc** 中进行如下设置：
 
-  * **GTWS_BASE_SRCDIR:** This is the base of all the projects' source trees. It defaults to **$HOME/src**.
-  * **GTWS_ORIGIN:** This sets the location of the origin Git trees. It defaults to **$HOME/origin**.
-  * **GTWS_SETPROMPT:** This is optional. If it's set, the shell prompt will have the workspace name in it.
-  * **GTWS_DEFAULT_PROJECT:** This is the project used when no project is given or known. If it is not given, projects must be specified on the command line.
-  * **GTWS_DEFAULT_PROJECT_VERSION:** This is the default version to check out. It defaults to **master**.
+  * **GTWS_BASE_SRCDIR:** 所有项目源文件目录树的 base。默认为 **$HOME/src**。
+  * **GTWS_ORIGIN:** 指定 origin git 目录树的路径。默认为 **$HOME/origin**。
+  * **GTWS_SETPROMPT:** 可选配置。如果配置了这个参数，shell 提示符会有工作空间的名字。
+  * **GTWS_DEFAULT_PROJECT:** 不指定项目或项目未知时默认的项目名。如果不指定，使用命令行时必须指明项目。
+  * **GTWS_DEFAULT_PROJECT_VERSION:** 检出的默认版本。默认为 **master**。
 
+在每个项目的根目录进行以下设置：
 
+  * **GTWS_PROJECT:** 项目的名字（和 base 目录）。
+  * **gtws_project_clone:** 这个函数用于克隆一个项目的指定版本。如果未定义，它会假定项目的 origin 对每一个版本都有一个单独的目录，这样会导致克隆一堆 Git 仓库。
+  * **gtws_project_setup:** 在克隆完所有的仓库后，可以选择是否调用这个函数，调用后可以对项目进行必要的配置，如在 IDE 中配置工作空间。
 
-Set the following at the project level of each project:
+在项目版本级进行以下设置：
 
-  * **GTWS_PROJECT:** The name (and base directory) of the project.
-  * **gtws_project_clone:** This function is used to clone a specific version of a project. If it is not defined, then it is assumed that the origin for the project contains a single directory per version, and that contains a set of Git repos to clone.
-  * **gtws_project_setup:** This optional function is called after all cloning is done and allows any additional setup necessary for the project, such as setting up workspaces in an IDE.
+  * **GTWS_PROJECT_VERSION:** 项目的版本。用于正确地从 origin 拉取代码。类似 Git 中的分支名字。
 
+下面这些参数可以在目录树的任意地方进行配置，如果能生效，它们可以被重写多次：
 
+  * **GTWS_PATH_EXTRA:** 这些是工作空间中加到路径后的额外的路径元素。
+  * **GTWS_FILES_EXTRA:** 这些是不在版本控制内，但应该在工作空间中被检出的额外的文件。这些文件包括 **.git/info/exclude**，每个文件都与仓库的 base 相关联。
 
-Set this at the project version level:
+### origin 目录
 
-  * **GTWS_PROJECT_VERSION:** This is the version of the project. It's used to pull from the origin correctly. In Git, this is likely the branch name.
+**GTWS_ORIGIN** （大部分脚本中）指向拉取和推送的原始 Git 检出目录。
 
-
-
-These things can go anywhere in the tree and can be overridden multiple times, if it makes sense:
-
-  * **GTWS_PATH_EXTRA:** These are extra path elements to be added to the path inside the workspace.
-  * **GTWS_FILES_EXTRA:** These are extra files not under version control that should be copied into each checkout in the workspace. This includes things like **.git/info/exclude**, and each file is relative to the base of its repo.
-
-
-
-### Origin directories
-
-**GTWS_ORIGIN** (in most scripts) points to the pristine Git checkouts to pull from and push to.
-
-Layout of **${GTWS_ORIGIN}**:
+**${GTWS_ORIGIN}** 部署：
 
   * **/&lt;project&gt;**
-    * This is the base for repos for a project.
-    * If **gtws_project_clone** is given, this can have any layout you desire.
-    * If **gtws_project_clone** is not given, this must contain a single subdirectory named **git** that contains a set of bare Git repos to clone.
+    * 这是一个项目的仓库 base。
+    * 如果指定了 **gtws_project_clone**，你可以配置任意的部署路径。
+    * 如果没有指定 **gtws_project_clone**，这个路径下必须有个名为 **git** 的子目录，且 **git** 目录下有一系列用来克隆的裸 Git 仓库。
 
+### 工作流示例
 
+假设你有一个项目名为 **Foo**，它的 upstream 为 **github.com/foo/foo.git**。这个仓库有个名为 **bar** 的子模块，它的 upstream 是 **github.com/bar/bar.git**。Foo 项目在 master 分支开发，使用稳定版本的分支。
 
-### Workflow example
+为了能在 Foo 中使用 GTWS，你首先要配置目录结构。本例中假设你使用默认的目录结构。
 
-Suppose you have a project named **Foo** that has an upstream repository at **github.com/foo/foo.git**. This repo has a submodule named **bar** with an upstream at **github.com/bar/bar.git**. The Foo project does development in the master branch and uses stable version branches.
-
-Before you can use GTWS with Foo, first you must set up the directory structure. These examples assume you are using the default directory structure.
-
-  * Set up your top level **.gtwsrc**:
+  * 配置你最上层的 **.gtwsrc**：
     * **cp ${GTWS_LOC}/examples/gtwsrc.top ~/.gtwsrc**
-    * Edit **~/.gtwsrc** and change as necessary.
-  * Create top-level directories:
+    * 根据需要修改 **~/.gtwsrc**。
+  * 创建顶级目录：
     * **mkdir -p ~/origin ~/src**
-  * Create and set up the project directory:
+  * 创建并配置项目目录：
     * **mkdir -p ~/src/foo**
 **cp ${GTWS_LOC}/examples/gtwsrc.project ~/src/foo/.gtwsrc**
-    * Edit **~/src/foo/.gtwsrc** and change as necessary.
-  * Create and set up the master version directory:
+    * 根据需要修改 **~/src/foo/.gtwsrc**。
+  * 创建并配置 master 版本目录：
     * **mkdir -p ~/src/foo/master**
 **cp ${GTWS_LOC}/examples/gtwsrc.version ~/src/foo/master/.gtwsrc**
-    * Edit **~/src/foo/master/.gtwsrc** and change as necessary.
-  * Go to the version directory and create a temporary workspace to set up the mirrors:
+    * 根据需要修改 **~/src/foo/master/.gtwsrc**。
+  * 进入版本目录并创建一个临时工作空间来配置镜像：
     * **mkdir -p ~/src/foo/master/tmp**
 **cd ~/src/foo/master/tmp
 git clone --recurse-submodules git://github.com/foo/foo.git
 cd foo
-gtws-mirror -o ~/origin -p foo**
-    * This will create **~/origin/foo/git/foo.git** and **~/origin/foo/submodule/bar.git**.
-    * Future clones will clone from these origins rather than from upstream.
-    * This workspace can be deleted now.
+gtws-mirror -o ~/origin -p foo**（译注：这个地方原文有误，不加 `-s` 参数会报错）
+    * 上面命令会创建 **~/origin/foo/git/foo.git** 和 **~/origin/foo/submodule/bar.git**。
+    * 以后的克隆操作会从这些 origin 而不是 upstream 克隆。
+    * 现在可以删除工作空间了。
 
+到现在为止，Foo 的 master 分支的工作可以结束了。假设你现在想修复一个 bug，名为 **bug1234**。你可以脱离你当前的工作空间为修复这个 bug 单独创建一个工作空间，之后在新创建的工作空间中开发。
 
-
-At this point, work can be done on the master branch of Foo. Suppose you want to fix a bug named **bug1234**. You can create a workspace for this work to keep it isolated from anything else you're working on, and then work within this workspace.
-
-  * Go to the version directory, and create a new workspace:
+  * 进入版本目录，创建一个新的工作空间：
     * **cd ~/src/foo/master
 mkws bug1234**
-    * This creates **bug1234/**, and inside it checks out Foo (and its submodule **bar**) and makes **build/foo** for building it.
-  * Enter the workspace. There are two ways to do this:
+    * 上面的命令创建了 **bug1234/**，在这个目录下检出了 Foo（和它的子模块 **bar**），并创建了 **build/foo** 来构建它。
+  * 有两种方式进入工作空间：
     * **cd ~/src/foo/master/bug1234
 startws**
-or
+或者
 **cd ~/src/foo/master/**
 **startws bug1234**
-    * This starts a subshell within the bug1234 workspace. This shell has the GTWS environment plus any environment you set up in your stacked **.gtwsrc** files. It also adds the base of the workspace to your CD path, so you can **cd** into relative paths from that base.
-    * At this point, you can do work on bug1234, build it, test it, and commit your changes. When you're ready to push to upstream, do this: 
+    * 上面的命令在 bug1234 工作空间中开启了一个子 shell。这个 shell 有 GTWS 的环境和你在各级 **.gtwsrc** 文件中设置的环境。它也把你工作空间的 base 路径加入到了 CD，因此你可以从 base 路径 **cd** 到相关的目录中。
+    * 现在你可以修复 bug1234了，构建、测试、提交你的修改。当你可以把代码推送到 upstream 时，执行下面的命令：
 **cd foo
 wspush** 
-    * **wspush** will push the branch associated with your workspace—first to your local origin and then to the upstream.
-    * If upstream changes. you can sync your local checkout using: 
+    * **wspush** 会把代码推送到与你工作空间相关的分支 — 先推送到本地的 origin，再推送到 upstream。
+    * 当 upstream 有修改时，你可以用下面的命令同步到本地：
 **git sync**
-    * This envokes the **git-sync** script in GTWS, which will update your checkout from the local origin. To update the local origin, use: 
+    * 上面的命令调用了 GTWS 的 **git-sync** 脚本，会从本地 origin 更新代码。使用下面的命令来更新本地的 origin：
 **git sync -o** 
-    * This will update your local origin and submodules' mirrors, then use those to update your checkout. **git-sync** has other nice features.
-    * When you're done using the workspace, just exit the shell:
+    * 上面的命令会更新你本地的 origin 和子模块的镜像，然后用那些命令来更新你的检出仓库的代码。**git-sync** 也有一些其他的很好的工鞥。
+    * 当要结束工作空间中的工作时，直接退出 shell：
 **exit**
-    * You can re-enter the workspace at any time and have multiple shells in the same workspace at the same time.
-  * When you're done with a workspace, you can remove it using the **rmws** command or just remove its directory tree. 
-  * There is a script named **tmws** that enters a workspace within tmux, creating a set of windows/panes that are fairly specific to my workflow.  Feel free to modify it to suit your needs.
+    * 你可以在任何时间重复进入工作空间，也可以在同一时间在相同的工作空间中开多个 shell。
+  * 当你不需要某个工作空间时，你可以使用 **rmws** 来删除它，或者直接删除它的目录树。
+  * 还有一个脚本 **tmws** 使用 tmux 进入工作空间，能创建一系列的窗口/窗格，这完美契合我的工作流。你可以根据你自己的需求来修改它。
 
-
-
-### The script
-
+### 脚本内容
 
 ```
 #!/bin/bash
@@ -1157,7 +1138,7 @@ via: https://opensource.com/article/20/2/git-great-teeming-workspaces
 
 作者：[Daniel Gryniewicz][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
