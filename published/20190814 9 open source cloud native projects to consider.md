@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (messon007)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12135-1.html)
 [#]: subject: (9 open source cloud native projects to consider)
 [#]: via: (https://opensource.com/article/19/8/cloud-native-projects)
 [#]: author: (Bryant Son https://opensource.com/users/brsonhttps://opensource.com/users/marcobravo)
@@ -116,7 +116,7 @@ Prometheus 是 2012 年在 SoundCloud 上构建的一个开源的系统监控和
 
 开始使用 Prometheus 的最佳方法是下载其 [GitHub 仓库][10]。在本地运行 Prometheus 很容易，但是你需要安装一个容器引擎。你可以在 [Prometheus 网站][23]上查看详细的文档。
 
-### Envoy（使者）
+#### Envoy（使者）
 
 Envoy（或 Envoy 代理）是专为云原生应用设计的开源的边缘代理和服务代理。由 Lyft 创建的 Envoy 是为单一服务和应用而设计的高性能的 C++ 开发的分布式代理，同时也是为由大量微服务组成的服务网格架构而设计的通信总线和通用数据平面。Envoy 建立在 Nginx、HAProxy、硬件负载均衡器和云负载均衡器等解决方案的基础上，Envoy 与每个应用相伴（并行）运行，并通过提供平台无关的方式提供通用特性来抽象网络。
 
@@ -196,8 +196,6 @@ CRI-O 是 Kubernetes 运行时接口的 OCI 兼容实现。CRI-O 用于各种功
 * 通过容器网络接口（CNI）来提供网络支持
 
 CRI-O 提供了大量的[文档][37]，包括指南、教程、文章，甚至播客，你还可以访问其 [GitHub 页面][17]。
-
-* * *
 
 我错过了其他有趣且开源的云原生项目吗？请在评论中提醒我。
 
