@@ -20,13 +20,11 @@
 
 ### Why containerize a build system?
 
-Creating a repeatable, container-based build system can provide a number of benefits to a software team:
+搭建基于容器的可复用构建系统可以为软件团队带来诸多好处：
 
-  * **Focus:** I want to focus on writing my application. When I call a tool to "build," I want the toolset to deliver a ready-to-use binary. I don't want to spend time troubleshooting the build system. In fact, I'd rather not know or care about the build system.
-  * **Identical build behavior:** Whatever the use case, I want to ensure that the entire team uses the same versions of the toolset and gets the same results when building. Otherwise, I am constantly dealing with the case of "it works on my PC but not yours." Using the same toolset version and getting identical output for a given input source file set is critical in a team project.
-  * **Easy setup and future migration:** Even if a detailed set of instructions is given to everyone to install a toolset for a project, chances are someone will get it wrong. Or there could be issues due to how each person has customized their Linux environment. This can be further compounded by the use of different Linux distributions across the team (or other operating systems). The issues can get uglier quickly when it comes time for moving to the next version of the toolset. Using containers and the guidelines in this article will make migration to newer versions much easier.
-
-
+  * **专注**：我希望专注于编写我的应用。当我调用一个名为“构建”的工具时，我希望这个工具集能提供一个随时可用的二进制文件。我不想浪费时间在构建系统的查错上。事实上，我宁愿不了解也不关心构建系统。
+  * **一致的构建行为**：无论哪种使用情况下，我都想确保整个团队使用相同版本的工具集并在构建时获得相同的结果。否则，我就得不断地处理“我这咋就是好的”的情况。在团队项目中，使用相同版本的工具集并对给定的输入源文件集产生一致的输出是非常重要。
+  * **易于部署和未来升级**：即使向每个人都提供一套详细说明来为项目安装工具集，也可能有人会翻车。问题可能是由于每个人对自己的 Linux 环境定制导致的。在团队中使用不同的 Linux 发行版（或者其他操作系统），情况还会变得更复杂。当需要将工具集升级到下一版本时，问题很快就会变得更糟糕。使用容器和本指南将使得新版本升级非常简单。
 
 Containerizing the build systems that I use on my projects has certainly been valuable in my experience, as it has alleviated the problems above. I tend to use Docker for my container tooling, but there can still be issues due to the installation and network configuration being unique environment to environment, especially if you work in a corporate environment involving some complex proxy settings. But at least now I have fewer build system problems to deal with.
 
