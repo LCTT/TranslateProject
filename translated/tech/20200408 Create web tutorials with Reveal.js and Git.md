@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Create web tutorials with Reveal.js and Git)
@@ -10,9 +10,9 @@
 使用 Reveal.js 和 Git 创建网页教程
 ======
 
-> 通过这个简单的工作流程创建的研讨会幻灯片，可以在任何浏览器、设备和平台上一致地查看。
+> 通过这个简单的工作流程创建的研讨会幻灯片，可以在任何浏览器、设备和平台上获得一致的查看效果。
 
-![Person reading a book and digital copy][1]
+![](https://img.linux.net.cn/data/attachment/album/202004/23/094800ohkpbjd3zbj0dj0d.jpg)
 
 无论你是学习者还是教师，你可能都会认识到采用幻灯片放映来传播知识的在线<ruby>研讨会<rt>workshop</rt></ruby>的价值。如果你曾经偶然看到过这样一个逐页、逐章设置的井井有条的教程，你可能会想知道创建这样的一个网站有多难。
 
@@ -20,9 +20,9 @@
 
 ### 介绍
 
-当我开始将学习内容放到网上置时，体验并不是很好。我想要的是一种可重复的、一致的、易于维护的东西，因为我的内容会随着我的教学技术而进步。
+当我开始将学习内容放到网上置时，体验并不是很好。我想要的是一种可重复的、一致的、易于维护的东西，因为我的内容会随着我教学的技术发展而变化。
 
-我尝试了许多交付模型，从 [Asciidoctor][2] 这样的低级代码生成器到在单个 PDF 文件中放置教程。全都不能让我满意。当我举办现场的在座研讨会时，我喜欢使用幻灯片放映，因此我想知道我是否可以为自己的在线的，自定进度的研讨会体验做同样的事情。
+我尝试了许多交付模型，从 [Asciidoctor][2] 这样的低级代码生成器到在单个 PDF 文件中放置教程。全都不能让我满意。当我举办现场的在座研讨会时，我喜欢使用幻灯片放映，因此我想知道我是否可以为我自己的在线的，自定进度的研讨会体验做同样的事情。
 
 经过一番挖掘，我为创建无痛的研讨会网站打下了基础。当时我已经在使用一个演示文稿生成框架，这对我来说是很有帮助的，因为这个框架可以产生对网站友好的格式（HTML）。
 
@@ -33,13 +33,13 @@
   * 研讨会的想法（这是你的问题，我帮不了你）
   * 用于研讨会幻灯片的 Reveal.js
   * GitLab 项目仓库
-  * 你最喜欢的 HTML 代码编辑器
+  * 你常用的 HTML 代码编辑器
   * Web 浏览器
   * 在你的机器上安装好 Git
 
 如果这个列表看起来令人望而生畏，那么有一个快速入门的方法，不需要把所有的东西一个个都拉到一起。你可以用我的模板项目来给你提供幻灯片和项目设置的入门教程。
 
-本文假设你熟悉 Git 和托管在 Git 平台（如 GitLab）上的项目。如果你需要指导或教程，请查看我们的[Git 入门系列][3]。
+本文假设你熟悉 Git 和在 Git 平台（如 GitLab）上托管项目。如果你需要指导或教程，请查看我们的[Git 入门系列][3]。
 
 首先，将模板项目克隆到本地机器上。
 
@@ -49,7 +49,7 @@ $ git clone https://gitlab.com/eschabell/beginners-guide-automated-workshops.git
 
 为此设置一个新的 GitLab 项目，导入模板项目作为初始导入。
 
-研讨会网站有一些重要的文件。在**根目录**下，你会发现一个名为 `.gitlab-ci.yml` 的文件，当你向主分支提交修改时（即合并拉取请求到 `master` 分支），这个文件会作为触发器。它可以触发将 `slides` 目录的全部内容复制到 GitLab 项目的 `website` 文件夹中。
+研讨会网站有一些重要的文件。在**根目录**下，你会发现一个名为 `.gitlab-ci.yml` 的文件，当你向主分支提交修改时（即将拉取请求合并到 `master` 分支），这个文件会作为触发器。它可以触发将 `slides` 目录的全部内容复制到 GitLab 项目的 `website` 文件夹中。
 
 我把它托管在我的 GitLab 账户中，名为 `beginners-guide-automated-workshops`。当它部署完毕后，你可以在浏览器中通过导航到下列地址查看 `slides` 目录的内容:
 
@@ -79,7 +79,7 @@ https://[YOUR_USERNAME].gitlab.io/[YOUR_PROJECT_NAME]
   * `images` 目录
   * `index.html`文件
 
-在你喜欢的 HTML/CSS 编辑器中打开每一个文件，然后进行下面描述的修改。你用哪个编辑器并不重要，我更喜欢 [RubyMine IDE][5]，因为它能在本地浏览器中提供页面预览。这对我在将内容推送到研讨会网站之前测试内容时很有帮助。
+在你常用的 HTML/CSS 编辑器中打开每一个文件，然后进行下面描述的修改。你用哪个编辑器并不重要，我更喜欢 [RubyMine IDE][5]，因为它能在本地浏览器中提供页面预览。这对我在将内容推送到研讨会网站之前测试内容时很有帮助。
 
 #### default.css 文件
 
@@ -91,7 +91,7 @@ https://[YOUR_USERNAME].gitlab.io/[YOUR_PROJECT_NAME]
 font-family: "Red Hat Display", "Overpass", san-serif;
 ```
 
-如果你使用的是非标准字体类型，则必须在以下行中将其导入（与 Overpass 字体类型相同）：
+如果你使用的是非标准字体类型，则必须在以下行中将其导入（Overpass 字体类型就是这样做的）：
 
 ```
 @import url('SOME_URL');
@@ -105,7 +105,7 @@ background: url("…/…/images/backgrounds/basic.png")
 
 要设置一个默认背景，只需将这一行指向你要使用的图片。
 
-####  images 目录
+#### images 目录
 
 顾名思义，`images` 目录是用来存储你想在研讨会幻灯片上使用的图片。例如，我通常会把展示研讨会主题进展的截图放在我的个人幻灯片上。
 
@@ -131,7 +131,6 @@ background: url("…/…/images/backgrounds/basic.png")
 
 现在继续到 `body` 部分。你会注意到它被分成了许多 `section` 标签。`body` 的开头包含了一个注释，说明你正在为每个标有 `section` 的打开和关闭的标签创建幻灯片。
 
-
 ```
 <body>
         <div class="reveal">
@@ -156,9 +155,9 @@ background: url("…/…/images/backgrounds/basic.png")
 </section>
 ```
 
-这张幻灯片有两个区域，用 `div` 标签划分。用空格隔开了标题和作者。
+这张幻灯片有两个区域，用 `div` 标签分隔。用空格隔开了标题和作者。
 
-如果你有一定的 HTML 使用知识，可以尝试各种东西来开发你的研讨会。你使用浏览器预览结果的时候真的很方便。有些 IDE 提供了本地查看修改，但你也可以打开 `index.html` 文件查看你的修改，然后再推送到资源库中。
+如果你有一定的 HTML 使用知识，可以尝试各种东西来开发你的研讨会。使用浏览器预览结果的时候真的很方便。有些 IDE 提供了本地查看修改，但你也可以打开 `index.html` 文件查看你的修改，然后再推送到资源库中。
 
 一旦你对你的研讨会感到满意，推送你的修改，然后等待它们通过持续集成管道。它们将像模板项目一样被托管在 <https://eschabell.gitlab.io/beginners-guide-automated-workshops>。
 
@@ -166,7 +165,7 @@ background: url("…/…/images/backgrounds/basic.png")
 
 要了解更多关于这个工作流程可以做什么，请查看下面的示例研讨会和托管了研讨会集合的网站。所有这些都是基于本文中描述的工作流程。
 
-研讨会的例子：
+研讨会例子：
 
   * [Red Hat Process Automation Manage workshop][6]
   * [JBoss Travel Agency BPM Suite online workshop][7]
@@ -177,7 +176,7 @@ background: url("…/…/images/backgrounds/basic.png")
   * [Application development in the cloud workshop][9]
   * [Portfolio architecture: Workshops for creating impactful architectural diagrams][10]
 
-我希望这本新手指南和模板研讨会项目能让你看到，在开发和维护工作室网站的过程中，可以轻松、无痛地完成。我也希望这个工作流程能让你的研讨会受众几乎在任何设备上都能完全访问你的内容，这样他们就能从你分享的知识中学习到你的知识。
+我希望这本新手指南和模板研讨会项目能让你看到，在开发和维护研讨会网站的过程中，可以轻松、无痛地完成。我也希望这个工作流程能让你的研讨会受众几乎在任何设备上都能完全访问你的内容，这样他们就能从你分享的知识中学习到你的知识。
 
 --------------------------------------------------------------------------------
 
@@ -186,7 +185,7 @@ via: https://opensource.com/article/20/4/create-web-tutorial-git
 作者：[Eric D. Schabell][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
