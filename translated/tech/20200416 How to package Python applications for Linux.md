@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to package Python applications for Linux)
@@ -9,146 +9,138 @@
 
 如何为 Linux 打包 Python 应用
 ======
-了解如何使用 dh_virtualenv 来让你的 Python 应用可作为 .deb 包安装。
-![Python in a tree][1]
 
-一种让 Python 应用可在基于 Debian 的操作系统（例如 Debian 或 [Elementary OS][2]）上安装的方法是使用 [dh_virtualenv][3] 工具。它会构建一个封装了 Python 虚拟环境的 **.deb** 包，并在安装时进行部署。
+> 了解如何使用 dh_virtualenv 来让你的 Python 应用可作为 .deb 包安装。
 
-在本文中，我将以构建包含 [HTTPie][4] 工具的包为例，说明如何无需激活虚拟环境即可从命令行测试 HTTP API。
+![](https://img.linux.net.cn/data/attachment/album/202004/23/235547iztz5d955t9s9b5t.jpg)
+
+在基于 Debian 的操作系统（例如 Debian 或 [Elementary OS][2]）上安装 Python 应用的一种方法是使用 [dh_virtualenv][3] 工具。它可以构建一个 `.deb` 包，在应用之外封装了一个 Python 虚拟环境，并在安装时进行部署。
+
+在本文中，我将以构建一个包含 [HTTPie][4] 工具的包为例来解释如何使用它，以便在无需激活虚拟环境的情况下从命令行测试 HTTP API。
 
 ### 使用 dh_virtualenv 打包
 
-首先，你需要安装 dh_virtualenv 所需的工具。dh_virtualenv 的[文档][5]提供了所有安装选项。在基于 Debian 的系统上，我输入：
+首先，你需要安装 `dh_virtualenv` 所需的工具。`dh_virtualenv` 的[文档][5]提供了所有安装选项。在基于 Debian 的系统上，我输入：
 
 ```
-`apt-get install dh-virtualenv devscripts`
+apt-get install dh-virtualenv devscripts
 ```
 
-尽管不需要 [devscripts][6] 包，但它将简化后续操作。
+尽管不需要 [devscripts][6] 包，但它可以简化后续操作。
 
-现在，创建一个目录来保存源码。由于这是 HTTPie 的本地非官方打包，因此我将其称为 **myhttp**。 接下来，让我们在 **myhttp** 内创建一些文件以向 Debian 构建系统提供元数据。
+现在，创建一个目录来保存源码。由于这是一个本地的、非官方的  HTTPie  打包，因此我将其称为 `myhttp`。接下来，让我们在 `myhttp` 内创建一些文件，向 Debian 构建系统提供元数据。
 
-首先，创建 **debian/control** 文件：
-
+首先，创建 `debian/control` 文件：
 
 ```
 Source: myhttp
 Section: python
 Priority: extra
-Maintainer: Jan Doe &lt;[jandoe@example.org][7]&gt;
-Build-Depends: debhelper (&gt;= 9), python3.7, dh-virtualenv (&gt;= 0.8)
+Maintainer: Jan Doe <jandoe@example.org>
+Build-Depends: debhelper (>= 9), python3.7, dh-virtualenv (>= 0.8)
 Standards-Version: 3.9.5
 
 Package: myhttp
 Architecture: any
-Pre-Depends: dpkg (&gt;= 1.16.1), python3.7, ${misc:Pre-Depends}
+Pre-Depends: dpkg (>= 1.16.1), python3.7, ${misc:Pre-Depends}
 Depends: ${misc:Depends}
 Description: http client
- Useful for doing stuff
+ Useful for doing stuff
 ```
 
-那么这些是什么信息呢？ [Debian 文档][8]指出：
+那么这些是什么信息呢？正如 [Debian 文档][8]指出的：
 
 >“第 1–7 行是源码包的控制信息。第 9–13 行是二进制包的控制信息。”
 
 以下是我使用的：
 
-  * **section** 的值对于我们来说大多没有意义，但需要存在。它对提供 UI 安装程序信息是有意义的，这与此包无关。
-  * 额外的 **Priority** 值是像这样的第三方包的正确优先级。
-  * 强烈建议在 **Maintainer** 字段中填写正确的联系人信息。但是，如果包由团队维护，并且你希望将问题发送到团队的邮件别名，例如 “Infrastructure Team &lt;[infra-team-list@company.example.com][9]&gt;”，那这不一定是你的个人邮箱。
-  * **build-depends** 字段标识你需要 debhelper、python 和 dh-virtualenv 来构建包：包生成过程将确保这些依赖项在包构建时安装。
-  * **standards version** 字段主要给人看。它表明你遵循的指南。本指南基于 dh-virtualenv 的官方文档，它是基于 Debian 的 3.9.5 指南。最好一直将源码包和二进制包命名相同。
-  * **Architecture** 字段应为  **Any**，因为除非虚拟环境可能包含一些特定于体系结构的文件。否则，最好选择该字段为 **any**。
-  * 保持 Pre-Depends 列表为当前的样式：预依赖是一种非常严格的依赖关系形式，你很少会需要比建议的最小依赖更多的依赖项。依赖项通常由构建系统准确计算，因此没有理由手动指定它们。
-  * 如果你的包主要用于内部，那么 **Description** 字段只需要最少的信息或者指向公司 wiki 的链接，不然详细信息更有用。
+* `Section` 的值对于我们来说大多没有意义，但需要存在。它对给引导式 UI 安装程序提供信息是有意义的，但对于这个包来说，没有意义。
+* `Priority` 对像这样的第三方包的正确值是  `extra`。
+* 强烈建议在 `Maintainer` 字段中填写正确的联系人信息。但不一定非得是你的个人电子邮件，如果包由团队维护，并且你希望将问题发送到团队的邮件别名，例如 `Infrastructure Team <infra-team-list@company.example.com>`。
+* `Build-Depends` 字段标识你需要 `debhelper`、`python` 和 `dh-virtualenv` 来构建包：包构建过程中将确保这些依赖项在包构建时已安装。
+* `Standards-Version` 字段主要给人看。它表明你遵循的指南。本指南基于 `dh-virtualenv` 的官方文档，它是基于 Debian 的 3.9.5 指南。最好一直将源码包和二进制包命名相同。
+* `Architecture` 字段应为 `Any`，因为除非虚拟环境可能包含一些特定于体系结构的文件。否则，最好选择该字段为 `any`。
+* 保持 `Pre-Depends` 列表不变：它是一种非常严格的依赖关系形式，你很少会需要比这里建议的最小依赖更多的依赖项。依赖项通常由构建系统准确计算，因此没有理由手动指定它们。
+* 如果你的包主要用于内部，那么 `Description` 字段可能只需要最少的信息或者指向公司 wiki 的链接，不然更多的信息会更有用。
 
-
-
-然后创建 **debian/compat** 文件，它[主要出于历史目的而存在][10]：
-
+然后创建 `debian/compat` 文件，它[主要出于历史目的而存在][10]：
 
 ```
-`$ echo "9" > debian/compat`
+$ echo "9" > debian/compat
 ```
 
-接下来，创建更新日志以告知包用户自上一发行版以来发生了什么变化。最简单的方法是使用 **dch --create** 创建模板，然后填写值。
+接下来，创建更新日志以告知包用户自上次发布以来发生了什么变化。最简单的方法是使用 `dch --create` 创建模板，然后填写值。
 
 填写后，它看起来像：
-
 
 ```
 myhttp (2.0.0-1) stable; urgency=medium
 
-  * Initial release.
+  * Initial release.
 
- -- Jan Doe &lt;[jandoe@example.org][7]&gt;  Fri, 27 Mar 2020 01:09:22 +0000
+ -- Jan Doe <jandoe@example.org>  Fri, 27 Mar 2020 01:09:22 +0000
 ```
 
 现在你需要告诉工具安装 HTTPie，但是哪个版本？
 
-创建一个宽松版本的 **requirements.in** 文件：
-
-
-```
-`httpie`
-```
-
-通常，宽松的需求文件将仅包含项目的直接依赖项，并在需要时指定最低版本。 不一定总是需要指定最低版本：这些工具通常偏向于将依赖关系转化为“可能的最新版本”。如果你的 Debian 包与一个内部 Python 包相对应，这是内部应用中的一种常见情况，那么宽松的需求文件看起来将很相似：仅包含包名的一行。
-
-然后使用 **pip-compile**（可通过安装 PyPI 包 **pip-tools** 获得）：
-
+创建一个宽松版本的 `requirements.in` 文件：
 
 ```
-`$ pip-compile requirements.in > requirements.txt`
+httpie
 ```
 
-这会生成一个严格的依赖文件，名为 **requirements.txt**：
+通常，宽松的需求文件将仅包含项目的直接依赖项，并在需要时指定最低版本。不一定总是需要指定最低版本：这些工具通常偏向于将依赖关系转化为“可能的最新版本”。如果你的 Debian 包与一个内部 Python 包相对应，这是内部应用中的一种常见情况，那么宽松的需求文件看起来将很相似：仅包含包名的一行。
 
+然后使用 `pip-compile`（可通过安装 PyPI 包 `pip-tools` 获得）：
+
+```
+$ pip-compile requirements.in > requirements.txt
+```
+
+这会生成一个严格的依赖文件，名为 `requirements.txt`：
 
 ```
 #
 # This file is autogenerated by pip-compile
 # To update, run:
 #
-#    pip-compile requirements.in
+#    pip-compile requirements.in
 #
-certifi==2019.11.28       # via requests
-chardet==3.0.4            # via requests
-httpie==2.0.0             # via -r requirements.in
-idna==2.9                 # via requests
-pygments==2.6.1           # via httpie
-requests==2.23.0          # via httpie
-urllib3==1.25.8           # via requests
+certifi==2019.11.28       # via requests
+chardet==3.0.4            # via requests
+httpie==2.0.0             # via -r requirements.in
+idna==2.9                 # via requests
+pygments==2.6.1           # via httpie
+requests==2.23.0          # via httpie
+urllib3==1.25.8           # via requests
 ```
 
-最后，写一个 **debian/rules** 文件来创建包。因为 dh_virtualenv 会处理所有困难的事，因此规则文件很简单：
-
+最后，写一个 `debian/rules` 文件来创建包。因为 `dh_virtualenv` 会处理所有困难的事，因此规则文件很简单：
 
 ```
 #!/usr/bin/make -f
 
 %:
-        dh $@ --with python-virtualenv --python /usr/bin/python3.7
+        dh $@ --with python-virtualenv --python /usr/bin/python3.7
 ```
 
-确保指定 Python 解释器。默认它会使用 **/usr/bin/python**，这是 Python2，但是你应该使用一个[受支持的 Python 版本][11]
+确保指定 Python 解释器。默认它会使用 `/usr/bin/python`，这是 Python2，但是你应该使用一个[受支持的 Python 版本][11]。
 
 完成了，接下来就是构建包：
 
-
 ```
-`$ debuild -b -us -uc`
+$ debuild -b -us -uc
 ```
 
-这会在父目录生成一个类似 **myhttp_2.0.0-1_amd64.deb** 的文件。该文件可在任何兼容的系统上安装。
+这会在父目录生成一个类似 `myhttp_2.0.0-1_amd64.deb` 的文件。该文件可在任何兼容的系统上安装。
 
 通常，最好在同一平台上构建用于特定平台（例如 Debian 10.0）的 Debian 包。
 
-你可以将此 Debian 包保存在存仓库中，并使用例如 [Ansible][12] 的工具将其安装在所有相关系统上。
+你可以将此 Debian 包保存在软件仓库中，并使用例如 [Ansible][12] 的工具将其安装在所有相关系统上。
 
 ### 总结
 
-给基于 Debian 的系统的打包应用是一个有多个步骤的过程。使用 dh_virtualenv 将使过程变得简单。
+给基于 Debian 的系统的打包应用是一个有着多个步骤的过程。使用 `dh_virtualenv` 将使过程变得简单明了。
 
 --------------------------------------------------------------------------------
 
@@ -157,7 +149,7 @@ via: https://opensource.com/article/20/4/package-python-applications-linux
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
