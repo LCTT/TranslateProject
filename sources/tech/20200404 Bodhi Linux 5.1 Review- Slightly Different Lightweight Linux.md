@@ -12,7 +12,7 @@ Bodhi Linux 5.1 一览: 略有不同的轻量化 Linux
 
 Bodhi Linux 是一个基于 Ubuntu 的[轻量级Linux发行版][1]。与其他大多数发行版不同，Bodhi 使用自己的 Moksha 桌面，并专注于为你提供在旧计算机上运行的最简设置。
 
-### 什么是菩提 Linux?
+### 什么是 Bodhi Linux?
 
 ![Bodhi Start Page][2]
 
