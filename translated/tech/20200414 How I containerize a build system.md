@@ -26,15 +26,15 @@
   * **一致的构建行为**：无论哪种使用情况下，我都想确保整个团队使用相同版本的工具集并在构建时获得相同的结果。否则，我就得不断地处理“我这咋就是好的”的情况。在团队项目中，使用相同版本的工具集并对给定的输入源文件集产生一致的输出是非常重要。
   * **易于部署和未来升级**：即使向每个人都提供一套详细说明来为项目安装工具集，也可能有人会翻车。问题可能是由于每个人对自己的 Linux 环境定制导致的。在团队中使用不同的 Linux 发行版（或者其他操作系统），情况还会变得更复杂。当需要将工具集升级到下一版本时，问题很快就会变得更糟糕。使用容器和本指南将使得新版本升级非常简单。
 
-Containerizing the build systems that I use on my projects has certainly been valuable in my experience, as it has alleviated the problems above. I tend to use Docker for my container tooling, but there can still be issues due to the installation and network configuration being unique environment to environment, especially if you work in a corporate environment involving some complex proxy settings. But at least now I have fewer build system problems to deal with.
+我在项目中容器化构建系统的经验显然很有价值，因为它可以缓解上述问题。我倾向于使用 Docker 作为容器工具，虽然在相对特殊的环境中安装和网络配置仍可能出现问题，尤其是当你在一个使用复杂代理的企业环境中工作时。但至少现在我需要解决的构建系统问题已经很少了。
 
-### Walking through a containerized build system
+### 漫步容器化的构建系统
 
-I created a [tutorial repository][2] you can clone and examine at a later time or follow along through this article. I'll be walking through all the files in the repository. The build system is deliberately trivial (it runs **gcc**) to keep the focus on the build system architecture.
+我创建了一个[教程代码库][2]，随后你可以 clone 并检查它，或者按照本文内容进行操作。我将介绍代码库中的所有文件。这个构建系统非常简单（它使用**gcc**）从而可以专注于构建系统结构上。
 
-### Build system requirements
+### 构建系统需求
 
-Two key aspects that I think are desirable in a build system are:
+我认为构建系统中有两个关键点：
 
   * **Standard build invocation:** I want to be able to build code by pointing to some work directory whose path is **/path/to/workdir**. I want to invoke the build as: [code]`./build.sh /path/to/workdir`[/code] To keep the example architecture simple (for the sake of explanation), I'll assume that the output is also generated somewhere within **/path/to/workdir**. (Otherwise, it would increase the number of volumes exposed to the container, which is not difficult, but more cumbersome to explain.)
   * **Custom build invocation via shell:** Sometimes, the toolset needs to be used in unforeseen ways. In addition to the standard **build.sh** to invoke the toolset, some of these could be added as options to **build.sh**, if needed. But I always want to be able to get to a shell where I can invoke toolset commands directly. In this trivial example, say I sometimes want to try out different **gcc** optimization options to see the effects. To achieve this, I want to invoke: [code]`./shell.sh /path/to/workdir`[/code] This should get me to a Bash shell inside the container with access to the toolset and to my **workdir**, so I can experiment as I please with the toolset.
