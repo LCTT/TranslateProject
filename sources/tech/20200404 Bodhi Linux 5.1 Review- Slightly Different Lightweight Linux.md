@@ -7,87 +7,87 @@
 [#]: via: (https://itsfoss.com/bodhi-linux-review/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
 
-Bodhi Linux 5.1 Review: Slightly Different Lightweight Linux
+Bodhi Linux 5.1 一览: 略有不同的轻量化 Linux
 ======
 
-Bodhi Linux is a [lightweight Linux distribution][1] based on Ubuntu. Unlike most other distributions, Bodhi uses its own Moksha desktop and focuses on providing you a minimal setup to run on older computers.
+Bodhi Linux 是一个基于 Ubuntu 的[轻量级Linux发行版][1]。与其他大多数发行版不同，Bodhi 使用自己的 Moksha 桌面，并专注于为你提供在旧计算机上运行的最简设置。
 
-### What is Bodhi Linux?
+### 什么是菩提 Linux?
 
 ![Bodhi Start Page][2]
 
-[Bodhi Linux][3] was first introduced in 2011. It is designed with “[minimalism, resource efficiency, and user choice][4]” in mind. The devs strove to provide a “[system that is functional but not bloated][5]“. As such, it uses the lightweight Moksha Desktop and has only the basic applications preinstalled. The idea is to give the user a stable platform to build the system that they want. It is based on the latest Ubuntu LTS.
+[Bodhi Linux][3] 最早于2011年推出。它以“[简约、高效和用户自定义][4]”为设计理念。开发人员旨在提供一个“[功能正常但不臃肿的系统][5]”。因此，它使用轻量级的Moksha 桌面，只预装了基本的应用程序。这一做法是为了给用户一个稳定的平台来构建他们想要的系统。它基于最新版的 Ubuntu 长期支持版本。
 
-### Moksha Desktop
+### Moksha 桌面
 
 ![Bodhi Desktop][6]
 
-Originally Bodhi shipped with the [Enlightenment desktop environment][7]. Bodhi Linux has long been known as the “Enlightened” Linux distro. In fact, the word ‘bodhi’ is based on the Sanskrit word for “enlightenment”.
+起初菩提是随着[ Enlightenment 桌面环境][7]一起发布的。Bodhi Linux 一直被认为是“开明的”Linux发行版。事实上，“Bodhi”这个词是基于梵文的“开悟”。
 
-However, that changed when Enlightenment 18 was released. The release was in such bad shape that it was not included in Bodhi. Enlightenment 19 was released and fixed some of the problems, but still had issues.
+然而，当 Enlightenment 18版本发布以后，这一切都改变了。该版本是如此的糟糕，它并没有集成 Bodhi 。Enlightenment 19 被发布并修复了一些问题，但仍然存在一些问题。
 
-After trying to work with the Enlightenment dev team and getting nowhere, the Bodhi devs [forked][8] Enlightenment 17 in 2015. The new desktop environment would be named [Moksha][9], which is based on the Sanskrit word for “emancipation, liberation, or release”. You can find the code for it on [GitHub][10].
+在尝试与 Enlightenment 开发团队合作却毫无进展之后，Bodhi 开发者在2015年复刻了[8]Enlightenment 17。新的桌面环境被命名为[Moksha][9]，它是基于梵文单词“解脱、解放或释放”。你可以在[GitHub][10]上找到它的代码。
 
-### What is new in 5.1.0?
+### 5.1.0有什么新特性？
 
-[Subscribe to our YouTube channel for more Linux videos][11]
+[订阅我们的YouTube频道来观看更多的Linux视频][11]
 
-[Bodhi 5.1.0][12] is the first release in two years and the second release to be based on Ubuntu 18.04. Besides updating packages, it also has new default icons and theme. This release makes several changes to the default applications. Leafpad comes preinstalled instead of epad and [GNOME Web][13] (also known as Epiphany) replaces [Midori][14]). The eepDater system updater was removed.
+[Bodhi 5.1.0][12] 是两年内的第一个版本，也是基于 Ubuntu 18.04 的第二个版本。除了更新包，它还有新的默认图标和主题。该版本对默认应用程序做了几处更改。预装版 Leafpad 取代了 epad 并且 [GNOME Web][13] (也被称为Epiphany)代替了[Midori][14])。删除了eepDater系统更新器。
 
-There are currently [four different versions][15] of Bodhi 5.1.0 available to [download][16]: Standard, Hwe, Legacy, and AppPack.
+目前有[四个不同的版本][15]的菩提5.1.0提供[下载][16]: 标准版（Standard）,硬件支持版（Hwe）, 兼容版（Legacy）, 和软件包版（AppPack）.
 
-  * Standard will work for systems made in the last decade. It does not push kernel updates.
-  * Hwe (Hardware Enablement) edition is new to the Bodhi family and is designed to include support for newer hardware and will received kernel updates. The 5.1 release features the 5.3.0-42 kernel.
-  * Legacy is the only edition that is 32-bit. It uses the “older 4.9.0-6-686 Linux kernel that is optimized for old (15+ years old) hardware. This kernel also does not include the PAE extension which is not supported on many older systems.”
-  * The AppPack edition is for those who want a fully-loaded system out of the box and comes with many applications preinstalled.
-
-
-
-### System Requirements for Bodhi Linux
-
-Minimum system requirement
-
-  * 500 MHz processor
-  * 256 MB of RAM
-  * 5 GB of drive space
+  * 标准适用于过去十年内电脑配置。它不推送内核更新。
+  * 硬件支持版Hwe (Hardware Enablement)是 Bodhi 新的家族设计包括支持更新的硬件和将收到内核更新。5.1版本的使用的是5.3.0-42内核。 
+  * 兼容版是唯一的32位版本。它使用“较旧的4.9.0-6-686 Linux内核，该内核针对旧的(15年以上)硬件进行了优化”。这个内核也不包括PAE扩展，这是许多老系统不支持的。”
+  * 软件包版是为那些想要一个开箱即用并预装了许多应用程序的全负载系统的人准备的。
 
 
 
-Recommended system requirement
+### Bodhi Linux 的系统要求
 
-  * 1.0 GHz processor
-  * 512 MB of RAM
-  * 10 GB of drive space
+最低系统要求
+
+  * 500 MHz 处理器
+  * 256 MB 内存
+  * 5 GB 的硬盘存储空间
 
 
 
-### Experiencing Bodhi Linux
+推荐系统要求
+
+  * 1.0 GHz 处理器
+  * 512 MB 内存
+  * 10 GB 的硬盘存储空间
+
+
+
+### Bodhi Linux 的体验
 
 ![Old Bodhi Linux][17]
 
-Since it is based on Ubuntu, installing Bodhi was very simple. After I signed into Bodhi, I was surprised by the new theme and icon set. The last time I installed Bodhi (including 5.0 a couple of months ago) I thought that it needed a new look. There was nothing really wrong with the previous theme, but it looked like something from the early 2000. The new theme gives it a more modern look.
+由于它是基于 Ubuntu 的，安装 Bodhi 非常简单。当我登录到 Bodhi 后，我对新的主题和图标设置感到惊讶。上次我安装 Bodhi (包括几个月前的5.0)时，我认为它需要一个新的外观。之前的主题并没有什么问题，但看起来像是2000年初的东西。新的主题使它看起来更具现代感。
 
 ![Bodhi Linux 5.1][18]
 
-I was also glad to see that Midori had been replaced by GNOME Web. I’m not a fan of [Midori browser][19]. It always seemed too minimal for me. (However, that might change in the future with [Midori Next][20].) Web felt more like the web browser I need. Most importantly it comes with Firefox Sync, so I can keep all of my bookmarks and passwords synced.
+我也很高兴看到 Midori 浏览器被 GNOME Web 所取代。我不是[Midori 浏览器][19]的粉丝。对我来说，它总是显得功能太少了。(不过，随着[Midori Next][20]的推出，这种情况可能会改变。)Web更像是我需要的Web浏览器。最重要的是它带有Firefox同步功能，这样我就可以同步我所有的书签和密码了。
 
-Unlike many Linux distros, Bodhi doesn’t really come with a stand-alone software center. Instead, if you click the AppCenter icon it opens the browser and navigates to the [AppCenter p][21][a][21][ge][21] of the Bodhi website. Here apps are sorted by category. Most of them are [lightweight applications][22].
+与许多 Linux 发行版不同，Bodhi 并没有一个独立的软件中心。相反，如果你点击 AppCenter 图标，它会打开浏览器，并导航到 Bodhi 网站的软件中心页面[AppCenter page][21]。这里的应用程序是按类别排序的。它们中的大多数是[轻量级应用程序][22]。
 
 ![Bodhi Linux Appcenter][23]
 
-If you click on one of the pages and click “Install”, Bodhi will install it (after to type in your passwords). This is achieved using a neat little program named [apturl][24] that “is a very simple way to install a software package from a web browser”. It’s pretty slick and I wish more Ubuntu-based distros would use it.
+如果你点击其中一个页面并点击“安装”，Bodhi 会开始它的安装(在你输入密码之后)。这是通过一个名为[apturl][24]的小程序实现的，它是“源自web浏览器安装软件包的一种非常简单的方法”。它非常灵巧，我希望更多基于ubuntu的发行版使用它。
 
-Overall, I like the Moksha desktop. It adheres to the desktop metaphor we have seen for decades (and which I am most comfortable with). It stays out of your way but is very easy to change and modify. The only thing I miss is that the application menu doesn’t open when I hit the super key. But I guess you can’t have everything in life.
+总的来说，我喜欢 Moksha 桌面。它坚持我们几十年来看到的桌面风格(这是我最喜欢的)。它不干涉你，却很容易改变和定制。我唯一怀念的是，当我点击超级键时，应用程序菜单不打开。但我猜你不可能拥有生活中的一切。
 
-### Final Thoughts
+### 结语
 
-I was pleasantly surprised by this recent release of Bodhi Linux. In the past, I’ve played with it from time to time. I always liked it, but this last release has been the best so far. In a way, they have broken free of the idea that Bodhi is only for older system by adding support for newer kernels.
+我对最近发布的 Bodhi Linux 感到十分惊喜。过去，我经常折腾它。并且我一直很喜欢它，但最近的这个版本是迄今为止最好的。在某种程度上，他们通过增加对新内核的支持，打破了Bodhi只适用于旧系统的想法。
 
-If you are looking for a change of scenery while staying close to the world of Ubuntu give [Bodhi Linux][3] a try.
+如果你想在拥有 Ubuntu 体验的同时改善一下视觉体验，那就试试[Bodhi Linux][3]吧。
 
-Have you ever used Bodhi Linux? What is your favorite Ubuntu-based distro? Please let us know in the comments below.
+你用过 Bodhi Linux 吗?你最喜欢的基于ubuntu的发行版是什么?请在下面的评论中告诉我们。
 
-If you found this article interesting, please take a minute to share it on social media, Hacker News or [Reddit][25].
+如果你觉得这篇文章很有趣，请花点时间在社交媒体、Hacker News或其他网站上分享 [Reddit][25].
 
 --------------------------------------------------------------------------------
 
