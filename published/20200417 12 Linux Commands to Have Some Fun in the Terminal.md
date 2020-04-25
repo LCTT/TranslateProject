@@ -98,7 +98,7 @@ sudo apt install libaa-bin
 aafire
 ```
 
-按下 `Ctril+C` 来停止它。
+按下 `Ctrl+C` 来停止它。
 
 #### 4、幸运饼干命令
 
