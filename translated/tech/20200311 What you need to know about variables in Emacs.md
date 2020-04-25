@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (cycoe)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (What you need to know about variables in Emacs)
@@ -9,50 +9,48 @@
 
 关于 Emacs 中的变量你需要知道的事情
 ======
-学习 Elisp 是如何处理变量的，以及如何在你的脚本与配置中使用它们。
-![编程键盘][1]
+
+> 学习 Elisp 是如何处理变量的，以及如何在你的脚本与配置中使用它们。
+
+![](https://img.linux.net.cn/data/attachment/album/202004/25/190905pq1qfk1f8f9qs9v8.jpg)
 
 GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）写成，它是一个编辑器的同时，又碰巧是 Elisp 的沙盒。因此，理解 Elisp 中的一些基本编程概念会对你有一些帮助。
 
-如果你是 [Emacs][2] 新手，请先访问 Sacha Chua 的[《给 Emacs 新手的资源》][3]精品帖。本篇文章假定你熟悉常见的 Emacs 术语，并且能够阅读 Elisp 代码的简单片段并对其进行求值。最好你也听说过变量作用域的概念，知道它在其它编程语言中的作用。本篇文章中的示例假定你使用的是相对较新的 Emacs 版本（[v.25 之后的版本][4]）。
+如果你是 [Emacs][2] 新手，请先阅读 Sacha Chua 的《[给 Emacs 新手的资源][3]》精品帖。本篇文章假定你熟悉常见的 Emacs 术语，并且能够阅读并求值 Elisp 代码的简单片段。最好你也听说过变量作用域的概念，知道它在其它编程语言中的作用。本篇文章中的示例假定你使用的是相对较新的 Emacs 版本（[v.25 之后的版本][4]）。
 
-[Elisp 手册][5] 包含了 Elisp 的方方面面，但它是写给那些有明确查找目标的人们的，并且它在这方面也做得相当棒。但是很多人希望这些资源能够在更高的层次上解释 Elisp 的概念，同时将信息压缩成最精华的部分。本篇文章也正是我回应这种呼声的一次尝试，为读者描绘基础的大体轮廓。使他们能在配置中用上这些技巧，也让他们在手册中查询细节变得更容易。
+[Elisp 手册][5] 包含了 Elisp 的方方面面，但它是写给那些有明确查找目标的人们的（它在这方面也做得相当棒）。但是很多人想要能够在更高的层次上解释 Elisp 概念的材料，同时将信息压缩成最精华的部分。本篇文章也正是我回应这种呼声的一次尝试，为读者描绘基础的大体轮廓。使他们能在配置中用上这些技巧，也让他们在手册中查询细节变得更容易。
 
 ### 全局变量
 
 用 `defcustom` 定义的用户设置和用 `defvar` 或 `defconst` 定义的变量是全局的。使用 `defcustom` 或 `defvar` 声明变量的一个非常重要的原因是，当一个变量已经被<ruby>绑定<rt>bind</rt></ruby>，对它们进行重新求值不会覆盖掉已有的值。举个栗子，如果你在初始化文件中对 `my-var` 进行如下绑定：
 
-
 ```
-`(setq my-var nil)`
+(setq my-var nil)
 ```
 
 对如下表达式求值不会将变量覆盖为 `t`：
-
 
 ```
 `(defvar my-var t)`
 ```
 
-注意此处有_一个例外_：如果你用 `C-M-x` 快捷键对上述声明求值，它将调用 `eval-defun` 函数，并将变量覆盖为 `t`。通过此方式，你可以按需将变量强制覆盖。这种行为是刻意而为之的：你可能知道，Emacs 中的许多特性是按需加载的，也可以称为自动加载。如果那些文件中的声明将变量覆盖为它们的默认值，那它也就覆盖了你初始化文件中的设置。
+注意此处有*一个例外*：如果你用 `C-M-x` 快捷键对上述声明求值，它将调用 `eval-defun` 函数，并将变量覆盖为 `t`。通过此方式，你可以按需将变量强制覆盖。这种行为是刻意而为之的：你可能知道，Emacs 中的许多特性是按需加载的，也可以称为自动加载。如果那些文件中的声明将变量覆盖为它们的默认值，那它也就覆盖了你初始化文件中的设置。
 
 ### 用户选项
 
-用户选项就是使用 `defcustom` 声明的全局变量。与使用 `defvar` 声明的变量不同，这些变量可以用 `M-x customize` 界面来配置。据我所知，大部分人因为觉得它开销较大而不经常使用。一旦你知道如何在你的初始化文件中设置变量，也就没有理由一定要去使用它了。许多用户没有意识到的一个细节是，通过 **customize** 的方式设置用户选项能够执行代码，有的时间可用来运行一些附加的配置说明：
-
+用户选项就是使用 `defcustom` 声明的全局变量。与使用 `defvar` 声明的变量不同，这些变量可以用 `M-x customize` 界面来配置。据我所知，大部分人因为觉得它开销较大而不经常使用。一旦你知道如何在你的初始化文件中设置变量，也就没有理由一定要去使用它了。许多用户没有意识到的一个细节是，通过 `customize` 的方式设置用户选项能够执行代码，有的时间可用来运行一些附加的配置说明：
 
 ```
 (defcustom my-option t
-  "我的用户选项"
+  "My user option."
   :set (lambda (sym val)
          (set-default sym val)
          (message "Set %s to %s" sym val)))
 ```
 
-若你对这段代码求值，并键入 `M-x customize-option RET my-option RET` 运行 **customize** 界面，lambda 匿名函数就会被调用，回显区域就会显示出该选项的符号名与值。
+若你对这段代码求值，并键入 `M-x customize-option RET my-option RET` 运行 `customize` 界面，lambda 匿名函数就会被调用，回显区域就会显示出该选项的符号名与值。
 
 如果你在初始化文件中使用 `setq` 改变该选项的值，那么匿名函数不会运行。要想在 Elisp 中正确设置一个选项，你需要使用函数 `customize-set-variable`。或者，人们在他们的配置文件中使用了各种版本的 `csetq` 宏来自动处理（如你所愿，你可以通过 GitHub 的代码搜索发现更复杂的变体）。
-
 
 ```
 (defmacro csetq (sym val)
@@ -63,20 +61,18 @@ GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）�
 
 在你将以上代码放入到你的初始化文件中之后，你便可以使用 `csetq` 宏在设置变量的同时运行任何现存的 `setter` 函数。要证明这点，你可以使用此宏来改变上面定义的选项，并观察回显区域的消息输出。
 
-
 ```
-`(csetq my-option nil)`
+(csetq my-option nil)
 ```
 
 ### 动态绑定与词法绑定
 
 当你在使用其它编程语言时，你可能不会意识到动态绑定与词法绑定的区别。当今的大部分编程语言使用词法绑定，并且在学习变量作用域与变量查找时也没有必要去了解它们之间的区别。
 
-如此看来，Emacs Lisp 比较特殊因为动态绑定是默认选项，词法绑定需要显式启用。这里有一些历史遗留原因，但在实际使用中，你应该_时刻_启用词法绑定，因为它更快并且不容易出错。要启用词法绑定，只需将如下的注释行作为你的 Emacs Lisp 文件的第一行：
-
+如此看来，Emacs Lisp 比较特殊因为动态绑定是默认选项，词法绑定需要显式启用。这里有一些历史遗留原因，但在实际使用中，你应该*时刻*启用词法绑定，因为它更快并且不容易出错。要启用词法绑定，只需将如下的注释行作为你的 Emacs Lisp 文件的第一行：
 
 ```
-`;;; -*- lexical-binding: t; -*-`
+;;; -*- lexical-binding: t; -*-
 ```
 
 另一种方式，你可以调用 `add-file-local-variable-prop-line`，在你选择将变量 `lexical-binding` 置为 `t` 后，会自动插入如上的注释行。
@@ -105,15 +101,13 @@ GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）�
 
 如你所知，`let` 用于临时建立局部绑定：
 
-
 ```
 (let ((a "I'm a")
       (b "I'm b"))
   (message "Hello, %s. Hello %s" a b))
 ```
 
-接下来有趣的是——使用 `defcustom`、`defvar` 以及 `defconst` 定义的变量被称为_特殊变量_，不论词法绑定是否启用，它们都将使用动态绑定：
-
+接下来有趣的是——使用 `defcustom`、`defvar` 以及 `defconst` 定义的变量被称为*特殊变量*，不论词法绑定是否启用，它们都将使用动态绑定：
 
 ```
 ;;; -*- lexical-binding: t; -*-
@@ -142,7 +136,6 @@ GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）�
 
 这是另一个常见的示例，如何进行大小写敏感的搜索：
 
-
 ```
 (let ((case-fold-search nil))
   (some-function-which-uses-search ...))
@@ -154,25 +147,24 @@ GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）�
 
 ```
 (let ((vars ()))
-  (mapatoms
-   (lambda (cand)
-     (when (and (boundp cand)
-                (not (keywordp cand))
-                (special-variable-p cand)
-                (not (string-match "-"
-                                   (symbol-name cand))))
-       (push cand vars))))
-  vars) ;; =&gt; (t obarray noninteractive debugger nil)
+  (mapatoms
+   (lambda (cand)
+     (when (and (boundp cand)
+                (not (keywordp cand))
+                (special-variable-p cand)
+                (not (string-match "-"
+                                   (symbol-name cand))))
+       (push cand vars))))
+  vars) ;; => (t obarray noninteractive debugger nil)
 ```
 
 ### 缓冲区局部变量
 
 每个缓冲区都能够拥有变量的一个局部绑定。这就意味着对于任何变量，都会首先在当前缓冲区中查找缓冲区局部变量取代默认值。局部变量是 Emacs 中一个非常重要的特性，比如它们被主模式用来建立缓冲区范围内的行为与设置。
 
-事实上你已经在本文中见过_缓冲区局部变量_——也就是将 `lexical-binding` 在缓冲区范围内设置为 `t` 的特殊注释行。在 Emacs 中，在特殊注释行中定义的缓冲区局部变量也被称为`文件局部变量`。
+事实上你已经在本文中见过*缓冲区局部变量*——也就是将 `lexical-binding` 在缓冲区范围内设置为 `t` 的特殊注释行。在 Emacs 中，在特殊注释行中定义的缓冲区局部变量也被称为*文件局部变量*。
 
 任何的全局变量都可以用缓冲区局部变量来遮掩，比如上面定义的变量 `my-var`，你可用如下方式设置局部变量：
-
 
 ```
 (setq-local my-var t)
@@ -184,7 +176,6 @@ GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）�
 另一个需要注意的重要性质就是，一旦一个变量成为缓冲区局部变量，后续在该缓冲区中使用的 `setq` 都将只能设置局部的值。要想设置默认值，你需要使用 `setq-default`。
 
 因为局部变量意味着对缓冲区的定制，它们也就经常被用于模式钩子中。一个典型的例子如下所示：
-
 
 ```
 (add-hook 'go-mode-hook
@@ -199,8 +190,7 @@ GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）�
 
 这将设置 `go-mode` 缓冲区中 `M-x compile` 使用的编译命令。
 
-另一个重要的方面就是一些变量会_自动_成为缓冲区局部变量。这也就意味着当你使用 `setq` 设置这样一个变量时，它会针对当前缓冲区设置局部绑定。这个特性不应该被经常使用，因为这种隐式的行为并不好。不过如果你想的话，你可以使用如下方法创建自动局部变量：
-
+另一个重要的方面就是一些变量会*自动*成为缓冲区局部变量。这也就意味着当你使用 `setq` 设置这样一个变量时，它会针对当前缓冲区设置局部绑定。这个特性不应该被经常使用，因为这种隐式的行为并不好。不过如果你想的话，你可以使用如下方法创建自动局部变量：
 
 ```
 (defvar-local my-automatical-local-var t)
@@ -213,9 +203,7 @@ GNU Emacs 是由 C 和 Emacs Lisp（Elisp，Lisp 编程语言的一种方言）�
 
 Emacs 是一个强大的编辑器，并且随着你的定制它将变得更加强大。现在，你知道了 Elisp 是如何处理变量的，以及你应如何在你自己的脚本与配置中使用它们。
 
-* * *
-
-_本篇文章此前采用 CC BY-NC-SA 4.0 许可证发布在 [With-Emacs][7] 上，经过修改（带有合并请求）并在作者允许的情况下重新发布。_
+*本篇文章此前采用 CC BY-NC-SA 4.0 许可证发布在 [With-Emacs][7] 上，经过修改（带有合并请求）并在作者允许的情况下重新发布。*
 
 --------------------------------------------------------------------------------
 
@@ -224,7 +212,7 @@ via: https://opensource.com/article/20/3/variables-emacs
 作者：[Clemens Radermacher][a]
 选题：[lujun9972][b]
 译者：[cycoe](https://github.com/cycoe)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
