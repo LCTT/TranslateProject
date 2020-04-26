@@ -7,28 +7,28 @@
 [#]: via: (https://www.2daygeek.com/linux-unix-check-network-interfaces-names-nic-speed-ip-mac-address/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Check the Available Network Interfaces, Associated IP Addresses, MAC Addresses, and Interface Speed on Linux
+如何在 Linux 上检查可用的网络接口、关联的 IP 地址、MAC 地址和接口速度
 ======
 
-By default when you set up the server you will configure the primary network interface.
+默认在设置服务器时，你将配置主网络接口。
 
-This is part of the build work that everyone does.
+这是每个人所做的构建工作的一部分。
 
-Sometimes you may need to configure an additional network interface for several reasons.
+有时出于各种原因，你可能需要配置额外的网络接口。
 
-This could be a network bonding/teaming or high availability or a separate interface for application requirements or backups.
+这可以是网络绑定/团队合作或高可用性，也可以是用于应用需求或备份的单独接口。
 
-To do so, you need to know how many interfaces your computer has and their speed to configure it.
+为此，你需要知道计算机有多少接口以及它们的配置速度。
 
-There are many commands to check for available network interfaces, but we only use the IP command.
+有许多命令可检查可用的网络接口，但是我们仅使用 IP 命令。
 
-Later we will write a separate article with all these tools.
+稍后，我们将使用所有这些工具编写单独的文章。
 
-In this tutorial, we will show you the Available Network Interface Card (NIC) information, such as the interface name, associated IP address, MAC address, and interface speed.
+在本教程中，我们将向你显示可用网络网卡（NIC）信息，例如接口名称、关联的 IP 地址、MAC 地址和接口速度。
 
-### What’s IP Command
+### 什么是 IP 命令
 
-**[IP command][1]** is similar to ifconfig, which is used to for assigning Static IP Address, Route &amp; Default Gateway, etc.,
+**[IP 命令][1]**类似于 ifconfig, 用于分配静态 IP 地址、路由和默认网关等。
 
 ```
 # ip a
@@ -45,17 +45,17 @@ In this tutorial, we will show you the Available Network Interface Card (NIC) in
        valid_lft forever preferred_lft forever
 ```
 
-### What’s ethtool Command
+### 什么是 ethtool 命令
 
-The ethtool is used to query or control network driver and hardware settings.
+ethtool 用于查询或控制网络驱动或硬件设置。
 
 ```
 # ethtool eth0
 ```
 
-### 1) How to Check the Available Network Interfaces on Linux Using the IP Command
+### 1）如何在 Linux 上使用 IP 命令检查可用的网络接口
 
-When you run the IP command without any arguments, it gives you plenty of information, but if you only need the available network interfaces, use the following customized IP command.
+在不带任何参数的情况下运行 IP 命令时，它会提供大量信息，但是，如果仅需要可用的网络接口，请使用以下定制的 IP 命令。
 
 ```
 # ip a |awk '/state UP/{print $2}'
@@ -64,9 +64,9 @@ eth0:
 eth1:
 ```
 
-### 2) How to Check the IP Address of a Network Interface on Linux Using the IP Command
+### 2）如何在 Linux 上使用 IP 命令检查网络接口的 IP 地址
 
-If you only want to see which IP address is assigned to which interface, use the following customized IP command.
+如果只想查看 IP 地址分配给了哪个接口，请使用以下定制的 IP 命令。
 
 ```
 # ip -o a show | cut -d ' ' -f 2,7
@@ -78,18 +78,18 @@ lo 127.0.0.1/8
 192.168.1.102/24
 ```
 
-### 3) How to Check the Network Interface Card MAC Address on Linux Using the IP Command
+### 3）如何在 Linux 上使用 IP 命令检查网卡的 MAC 地址
 
-If you only want to see the network interface name and the corresponding MAC address, use the following format.
+如果只想查看网络接口名称和相应的 MAC 地址，请使用以下格式。
 
-To check a specific network interface MAC address.
+检查特定的网络接口的 MAC 地址。
 
 ```
 # ip link show dev eth0 |awk '/link/{print $2}'
 00:00:00:55:43:5c
 ```
 
-To check MAC address for all network interface.
+检查所有网络接口的 MAC 地址。
 
 ```
 # vi /opt/scripts/mac-addresses.sh
@@ -102,7 +102,7 @@ ethtool -P $output
 done
 ```
 
-Run the below shell script to get the MAC address for multiple network interfaces.
+运行下面的 shell 脚本获取多个网络接口的 MAC 地址。
 
 ```
 # sh /opt/scripts/mac-addresses.sh
@@ -113,11 +113,11 @@ eth1:
 Permanent address: 00:00:00:55:43:5d
 ```
 
-### 4) How to Check the Network Interface Port Speed on Linux Using the ethtool Command
+### 4）如何在 Linux 上使用 ethtool 命令检查网络接口速度
 
-If you want to check the network interface port speed on Linux, use the ethtool command.
+如果要在 Linux 上检查网络接口速度，请使用 ethtool 命令。
 
-To check the speed of a particular network interface port.
+检查特定网络接口的速度。
 
 ```
 # ethtool eth0 |grep "Speed:"
@@ -125,7 +125,7 @@ To check the speed of a particular network interface port.
 Speed: 10000Mb/s
 ```
 
-To check the port speed for all network interfaces.
+检查所有网络接口速度。
 
 ```
 # vi /opt/scripts/port-speed.sh
@@ -138,7 +138,7 @@ ethtool $output |grep "Speed:"
 done
 ```
 
-Run the below shell script to get the port speed for multiple network interfaces.
+运行以下 shell 脚本获取多个网络接口速度。
 
 ```
 # sh /opt/scripts/port-speed.sh
@@ -149,9 +149,9 @@ eth1:
 Speed: 10000Mb/s
 ```
 
-### 5) Shell Script to Verify Network Interface Card Information
+### 5）验证网卡信息的 Shell 脚本
 
-This **[shell script][2]** allows you to gather all of the above information, such as network interface names, IP addresses of network interfaces, MAC addresses of network interfaces, and the speed of a network interface port.
+通过此 **[shell 脚本][2]**，你可以收集上述所有信息，例如网络接口名称、网络接口的 IP 地址，网络接口的 MAC 地址以及网络接口的速度。
 
 ```
 # vi /opt/scripts/nic-info.sh
@@ -168,7 +168,7 @@ ethtool $iname |grep "Speed:"
 done
 ```
 
-Run the below shell script to check network card information.
+运行以下 shell 脚本检查网卡信息。
 
 ```
 # sh /opt/scripts/nic-info.sh
@@ -191,7 +191,7 @@ via: https://www.2daygeek.com/linux-unix-check-network-interfaces-names-nic-spee
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
