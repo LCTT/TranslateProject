@@ -36,10 +36,16 @@
 
 我认为构建系统中有两个关键点：
 
-  * **Standard build invocation:** I want to be able to build code by pointing to some work directory whose path is **/path/to/workdir**. I want to invoke the build as: [code]`./build.sh /path/to/workdir`[/code] To keep the example architecture simple (for the sake of explanation), I'll assume that the output is also generated somewhere within **/path/to/workdir**. (Otherwise, it would increase the number of volumes exposed to the container, which is not difficult, but more cumbersome to explain.)
-  * **Custom build invocation via shell:** Sometimes, the toolset needs to be used in unforeseen ways. In addition to the standard **build.sh** to invoke the toolset, some of these could be added as options to **build.sh**, if needed. But I always want to be able to get to a shell where I can invoke toolset commands directly. In this trivial example, say I sometimes want to try out different **gcc** optimization options to see the effects. To achieve this, I want to invoke: [code]`./shell.sh /path/to/workdir`[/code] This should get me to a Bash shell inside the container with access to the toolset and to my **workdir**, so I can experiment as I please with the toolset.
+  * **标准化构建调用**：我希望能够指定一些形如 **/path/to/workdir** 的工作目录来构建代码。我希望以如下形式调用构建：
 
+        ./build.sh /path/to/workdir
 
+    为了使得示例的结构简单（以便说明），我将假定输出也在 **/path/to/workdir** 路径下的某处生成。（否则，将增加容器中显示的卷的数量，虽然这并不困难，但解释起来比较麻烦。）
+  * **通过 shell 自定义构建调用**：有时，工具集会以出乎意料的方式被使用。除了标准的工具集调用 **build.sh** 之外，如果需要还可以添加一些作为 **build.sh** 的选项。但我一直希望能够有一个可以直接调用工具集命令的 shell。在这个简单的示例中，有时我想尝试不同的 **gcc** 优化选项并查看效果。为此，我希望调用：
+
+        ./shell.sh /path/to/workdir
+
+    这将让我能够进入容器内部的 Bash shell，并且可以调用工具集和访问我的工作目录 **workdir**，从而我可以根据需要尝试使用这个工具集。
 
 ### Build system architecture
 
