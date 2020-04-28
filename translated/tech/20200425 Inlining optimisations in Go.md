@@ -66,7 +66,7 @@ func BenchmarkMax(b *testing.B) {
 }
 ```
 
-运行这个基准，会得到如下结果：[3](https://github.com/LCTT/TranslateProject/blob/master/sources/tech/tmp.gBQ2tEtMHc#easy-footnote-bottom-3-4053)
+运行这个基准，会得到如下结果：[3][4]
 
 ```bash
 % go test -bench=. 
@@ -90,7 +90,7 @@ Max-4  2.21ns ± 1%  0.49ns ± 6%  -77.96%  (p=0.000 n=18+19)
 
 这个提升是从哪儿来的呢？
 
-首先，移除掉函数调用以及与之关联的前置处理 [4](https://github.com/LCTT/TranslateProject/blob/master/sources/tech/tmp.gBQ2tEtMHc#easy-footnote-bottom-4-4053) 是主要因素。把 `max` 函数的函数体在调用处展开，减少了处理器执行的指令数量并且消除了一些分支。
+首先，移除掉函数调用以及与之关联的前置处理 [4][5] 是主要因素。把 `max` 函数的函数体在调用处展开，减少了处理器执行的指令数量并且消除了一些分支。
 
 现在由于编译器优化了 `BenchmarkMax`，因此它可以看到 `max` 函数的内容，进而可以做更多的提升。当 `max` 被内联后，`BenchmarkMax` 呈现给编译器的样子，看起来是这样的：
 
@@ -116,7 +116,7 @@ name   old time/op  new time/op  delta
 Max-4  2.21ns ± 1%  0.48ns ± 3%  -78.14%  (p=0.000 n=18+18)
 ```
 
-现在编译器能看到在 `BenchmarkMax` 里内联 `max` 的结果，可以执行以前不能执行的优化措施。例如，编译器注意到 `i` 初始值为 `0`，仅做自增操作，因此所有与 `i` 的比较都可以假定 `i` 不是负值。这样条件表达式 `-1 > i` 永远不是 true。[5](https://github.com/LCTT/TranslateProject/blob/master/sources/tech/tmp.gBQ2tEtMHc#easy-footnote-bottom-5-4053)
+现在编译器能看到在 `BenchmarkMax` 里内联 `max` 的结果，可以执行以前不能执行的优化措施。例如，编译器注意到 `i` 初始值为 `0`，仅做自增操作，因此所有与 `i` 的比较都可以假定 `i` 不是负值。这样条件表达式 `-1 > i` 永远不是 true。[5][6]
 
 证明了 `-1 > i` 永远不为 true 后，编译器可以把代码简化为：
 
@@ -166,11 +166,11 @@ func BenchmarkMaxMaxMax(b *testing.B) {
 
 下一篇文章中，我会论述当 Go 编译器想要内联函数调用栈中间的某个函数时选用的另一种内联策略。最后我会论述编译器为了内联代码准备好要达到的极限，这个极限 Go 现在的能力还达不到。
 
-1. 在 Go 中，一个方法就是一个有预先定义的形参和接受者的函数。假设这个方法不是通过接口调用的，调用一个无消耗的函数所消耗的代价与引入一个方法是相同的。
-2. 在 Go 1.14 以前，栈检查的前置处理也被 gc 用于 STW，通过把所有活跃的 goroutine 栈空间设为 0，来强制它们切换为下一次函数调用时的运行时状态。这个机制[最近被替换](https://github.com/golang/proposal/blob/master/design/24543-non-cooperative-preemption.md)为一种新机制，新机制下运行时可以不用等 goroutine 进行函数调用就可以暂停 goroutine。
-3. 我用 `//go:noinline` 编译指令来阻止编译器内联 `max`。这是因为我想把内联 `max` 的影响与其他影响隔离开，而不是用 `-gcflags='-l -N'` 选项在全局范围内禁止优化。
-4. 你可以自己通过比较 `go test -bench=. -gcflags=-S`有无 `//go:noinline` 注释时的不同结果来验证一下。
-5. 你可以用 `-gcflags=-d=ssa/prove/debug=on` 选项来自己验证一下。
+1. 在 Go 中，一个方法就是一个有预先定义的形参和接受者的函数。假设这个方法不是通过接口调用的，调用一个无消耗的函数所消耗的代价与引入一个方法是相同的。[][7]
+2. 在 Go 1.14 以前，栈检查的前置处理也被 gc 用于 STW，通过把所有活跃的 goroutine 栈空间设为 0，来强制它们切换为下一次函数调用时的运行时状态。这个机制[最近被替换][8]为一种新机制，新机制下运行时可以不用等 goroutine 进行函数调用就可以暂停 goroutine。[][9]
+3. 我用 `//go:noinline` 编译指令来阻止编译器内联 `max`。这是因为我想把内联 `max` 的影响与其他影响隔离开，而不是用 `-gcflags='-l -N'` 选项在全局范围内禁止优化。关于 `//go:` 注释在[这篇文章][10]中详细论述。[][11]
+4. 你可以自己通过比较 `go test -bench=. -gcflags=-S`有无 `//go:noinline` 注释时的不同结果来验证一下。[][12]
+5. 你可以用 `-gcflags=-d=ssa/prove/debug=on` 选项来自己验证一下。[][13]
 
 #### 相关文章：
 
