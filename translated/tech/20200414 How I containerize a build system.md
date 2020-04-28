@@ -30,7 +30,7 @@
 
 ### 漫步容器化的构建系统
 
-我创建了一个[教程代码库][2]，随后你可以 clone 并检查它，或者按照本文内容进行操作。我将介绍代码库中的所有文件。这个构建系统非常简单（它使用**gcc**）从而可以专注于构建系统结构上。
+我创建了一个[教程仓库][2]，随后你可以 clone 并检查它，或者按照本文内容进行操作。我将介绍代码库中的所有文件。这个构建系统非常简单（它使用**gcc**）从而可以专注于构建系统结构上。
 
 ### 构建系统需求
 
@@ -45,21 +45,21 @@
 
         ./shell.sh /path/to/workdir
 
-    这将让我能够进入容器内部的 Bash shell，并且可以调用工具集和访问我的工作目录 **workdir**，从而我可以根据需要尝试使用这个工具集。
+    这将让我能够进入容器内部的 Bash shell，并且可以调用工具集和访问我的**工作目录 workdir**，从而我可以根据需要尝试使用这个工具集。
 
-### Build system architecture
+### 构建系统架构
 
-To comply with the basic requirements above, here is how I architect the build system:
+为了满足上述基本需求，这是我的构架系统架构：
 
 ![Container build system architecture][3]
 
-At the bottom, the **workdir** represents any software source code that needs to be built by the software developer end users. Typically, this **workdir** will be a source-code repository. The end users can manipulate this source code repository in any way they want before invoking a build. For example, if they're using **git** for version control, they could **git checkout** the feature branch they are working on and add or modify files. This keeps the build system independent of the **workdir**.
+在底部的**工作目录**代表软件开发者用于构建的任意软件源码。通常，这个**工作目录**是一个源码库。在构建之前，最终用户可以通过任何方式来操纵这个源码库。例如，如果他们使用 **git** 作为版本控制工具时，可以使用 **git checkout** 切换到他们正在工作的功能分支上并添加或修改文件。这样可以使得构建系统独立于**工作目录**之外。
 
-The three blocks at the top collectively represent the containerized build system. The left-most (yellow) block at the top represents the scripts (**build.sh** and **shell.sh**) that the end user will use to interact with the build system.
+顶部的三个模块共同代表了容器化的构建系统。最左边的黄色模块代表最终用户与构建系统交互的脚本（**build.sh** 和 **shell.sh**）。
 
-In the middle (the red block) is the Dockerfile and the associated script **build_docker_image.sh**. The development operations people (me, in this case) will typically execute this script and generate the container image. (In fact, I'll execute this many, many times until I get everything working right, but that's another story.) And then I would distribute the image to the end users, such as through a container trusted registry. The end users will need this image. In addition, they will clone the build system repository (i.e., one that is equivalent to the [tutorial repository][2]).
+在中间的红色模块是 Dockerfile 和相关的脚本 **build_docker_image.sh**。开发者（在这个例子中指我）通常将执行这个脚本并生成容器镜像（事实上我多次执行它直到一切正常为止，但这是另一个故事）。然后我将镜像分发给最终用户，例如通过 container trusted registry 进行分发。最终用户将需要这个镜像。另外，他们将 clone 构建系统仓库（即一个与[教程仓库][2]等效的仓库）。
 
-The **run_build.sh** script on the right is executed inside the container when the end user invokes either **build.sh** or **shell.sh**. I'll explain these scripts in detail next. The key here is that the end user does not need to know anything about the red or blue blocks or how a container works in order to use any of this.
+当最终用户调用 **build.sh** 或者 **shell.sh** 时，容器内将执行右边的 **run_build.sh** 脚本。接下来我将详细解释这些脚本。这里的关键是最终用户不需要为了使用而去了解任何关于红色或者蓝色模块或者容器工作原理的知识。
 
 ### Build system details
 
