@@ -30,7 +30,7 @@
 
 ### 漫步容器化的构建系统
 
-我创建了一个[教程仓库][2]，随后你可以 clone 并检查它，或者按照本文内容进行操作。我将介绍代码库中的所有文件。这个构建系统非常简单（它使用**gcc**）从而可以专注于构建系统结构上。
+我创建了一个[教程存储库][2]，随后你可以 clone 并检查它，或者按照本文内容进行操作。我将介绍存储库中的所有文件。这个构建系统非常简单（它使用**gcc**）从而可以专注于构建系统结构上。
 
 ### 构建系统需求
 
@@ -53,18 +53,17 @@
 
 ![Container build system architecture][3]
 
-在底部的**工作目录**代表软件开发者用于构建的任意软件源码。通常，这个**工作目录**是一个源码库。在构建之前，最终用户可以通过任何方式来操纵这个源码库。例如，如果他们使用 **git** 作为版本控制工具时，可以使用 **git checkout** 切换到他们正在工作的功能分支上并添加或修改文件。这样可以使得构建系统独立于**工作目录**之外。
+在底部的**工作目录**代表软件开发者用于构建的任意软件源码。通常，这个**工作目录**是一个存储库。在构建之前，最终用户可以通过任何方式来操纵这个存储库。例如，如果他们使用 **git** 作为版本控制工具时，可以使用 **git checkout** 切换到他们正在工作的功能分支上并添加或修改文件。这样可以使得构建系统独立于**工作目录**之外。
 
 顶部的三个模块共同代表了容器化的构建系统。最左边的黄色模块代表最终用户与构建系统交互的脚本（**build.sh** 和 **shell.sh**）。
 
-在中间的红色模块是 Dockerfile 和相关的脚本 **build_docker_image.sh**。开发者（在这个例子中指我）通常将执行这个脚本并生成容器镜像（事实上我多次执行它直到一切正常为止，但这是另一个故事）。然后我将镜像分发给最终用户，例如通过 container trusted registry 进行分发。最终用户将需要这个镜像。另外，他们将 clone 构建系统仓库（即一个与[教程仓库][2]等效的仓库）。
+在中间的红色模块是 Dockerfile 和相关的脚本 **build_docker_image.sh**。开发者（在这个例子中指我）通常将执行这个脚本并生成容器镜像（事实上我多次执行它直到一切正常为止，但这是另一个故事）。然后我将镜像分发给最终用户，例如通过 container trusted registry 进行分发。最终用户将需要这个镜像。另外，他们将 clone 构建系统存储库（即一个与[教程存储库][2]等效的存储库）。
 
 当最终用户调用 **build.sh** 或者 **shell.sh** 时，容器内将执行右边的 **run_build.sh** 脚本。接下来我将详细解释这些脚本。这里的关键是最终用户不需要为了使用而去了解任何关于红色或者蓝色模块或者容器工作原理的知识。
 
-### Build system details
+### 构建系统细节
 
-The tutorial repository's file structure maps to this architecture. I've used this prototype structure for relatively complex build systems, so its simplicity is not a limitation in any way. Below, I've listed the tree structure of the relevant files from the repository. The **dockerize-tutorial** folder could be replaced with any other name corresponding to a build system. From within this folder, I invoke either **build.sh** or **shell.sh** with the one argument that is the path to the **workdir**.
-
+把教程存储库的文件结构映射到这个系统结构上。我曾将这个原型结构用于相对复杂构建系统，因此它的简单并不会造成任何限制。下面我列出存储库中相关文件的树结构。文件夹 **dockerize-tutorial** 能用构建系统的其他任何名称代替。在这个文件夹下，我用 **workdir** 的路径作参数调用 **build.sh** 或 **shell.sh**。
 
 ```
 dockerize-tutorial/
@@ -77,9 +76,9 @@ dockerize-tutorial/
         └── run_build.sh
 ```
 
-Note that I've deliberately excluded the **example_workdir** above, which you'll find in the tutorial repository. Actual source code would typically reside in a separate repository and not be part of the build tool repository; I included it in this repository, so I didn't have to deal with two repositories in the tutorial.
+请注意，我上面特意没列出 **example_workdir**，你能在教程存储库中找到。实际的源码通常存放在单独的存储库中，而不是构建工具库中的一部分；本教程为了不必处理两个存储库，所以我将它包含在这个存储库中。 
 
-Doing the tutorial is not necessary if you're only interested in the concepts, as I'll explain all the files. But if you want to follow along (and have Docker installed), first build the container image **swbuilder:v1** with:
+如果你只对概念感兴趣，本教程并非必须的，因为我将解释所有文件。但是如果你继续本教程（并且已经安装 Docker），首先使用以下命令来构建容器镜像 **swbuilder:v1**：
 
 
 ```
@@ -88,7 +87,7 @@ cd dockerize-tutorial/swbuilder/
 docker image ls  # resulting image will be swbuilder:v1
 ```
 
-Then invoke **build.sh** as:
+然后调用 **build.sh**：
 
 
 ```
