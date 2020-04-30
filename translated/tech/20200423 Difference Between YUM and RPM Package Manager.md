@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Difference Between YUM and RPM Package Manager)
@@ -10,6 +10,8 @@
 YUM 和 RPM 包管理器的不同之处
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202004/30/215525o4e88nen85d8dzd7.jpg)
+
 软件包管理器在 Linux 系统中扮演着重要的角色。它允许你安装、更新、查看、搜索和删除软件包，以满足你的需求。
 
 每个发行版都有自己的一套包管理器，依据你的 Linux 发行版来分别使用它们。
@@ -18,7 +20,7 @@ RPM 是最古老的传统软件包管理器之一，它是为基于 Red Hat 的�
 
 > 如果你想知道 [YUM 和 DNF 包管理器的区别][1]请参考该文章。
 
-这意味着 yum 可以自动下载并安装所有需要的依赖项，但 rpm 会告诉你安装一个依赖项列表，然后你必须手动安装。
+这意味着 `yum` 可以自动下载并安装所有需要的依赖项，但 `rpm` 会告诉你安装一个依赖项列表，然后你必须手动安装。
 
 当你想用 [rpm 命令][2] 安装一组包时，这实际上是不可能的，而且很费时间。
 
@@ -76,13 +78,13 @@ via: https://www.2daygeek.com/comparison-difference-between-yum-vs-rpm/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/comparison-difference-between-dnf-vs-yum/
+[1]: https://linux.cn/article-12161-1.html
 [2]: https://www.2daygeek.com/linux-rpm-command-examples-manage-packages-fedora-centos-rhel-systems/
 [3]: https://www.2daygeek.com/linux-yum-command-examples-manage-packages-rhel-centos-systems/
 [4]: https://www.2daygeek.com/list-of-command-line-package-manager-for-linux/
