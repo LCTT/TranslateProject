@@ -11,22 +11,24 @@ The ins and outs of high-performance computing as a service 高性能计算即�
 ======
 HPC services can be a way to meet expanding supercomputing needs, but depending on the use case, they’re not necessarily better than on-premises supercomputers.
 Dell EMC
-HPC服务可以满足不断扩展的超级计算需求，但根据使用情况，它们不一定比本地超级计算机更好。 戴尔EMC
+高性能计算(HPC)服务可能是一种满足不断增长的超级计算需求的方式，但依赖于使用场景，它们不一定比使用本地超级计算机好。 
 Electronics on missiles and military helicopters need to survive extreme conditions. Before any of that physical hardware can be deployed, defense contractor McCormick Stevenson Corp. simulates the real-world conditions it will endure, relying on finite element analysis software like Ansys, which requires significant computing power.
-导弹和军用直升机上的电子设备需要在极端条件下生存。 在部署任何物理硬件之前，国防承包商麦考密克·史蒂文森公司（McCormick Stevenson Corp.）都依赖于像Ansys这样的有限元素分析软件来模拟它会承受的现实条件，该软件需要强大的计算能力。
+戴尔EMC
+导弹和军用直升机上的电子设备需要工作在极端条件下。国防承包商麦考密克·史蒂文森公司（McCormick Stevenson Corp.）在部署任何物理设备之前都会事先模拟它所能承受的真实条件。模拟依赖于像Ansys这样的有限元素分析软件，该软件需要强大的算力。
 
 Then one day a few years ago, it unexpectedly ran up against its computing limits.
 几年前的一天，它出乎意料地超出了计算极限。
 [10 of the world's fastest supercomputers][1]
+[世界上最快的10个超级计算机][1]
 
 "We had some jobs that would have overwhelmed the computers that we had in office," says Mike Krawczyk, principal engineer at McCormick Stevenson. "It did not make economic or schedule sense to buy a machine and install software." Instead, the company contracted with Rescale, which could sell them cycles on a supercomputer-class system for a tiny fraction of what they would've spent on new hardware.
-麦考密克·史蒂文森（McCormick Stevenson）的首席工程师迈克·克劳奇奇（Mike Krawczyk）说：“我们从事的某些工作会使我们在办公室使用的计算机不堪重负。” “购买机器并安装软件在经济上或计划上都不合理。”取而代之的是，该公司与Rescale签约，可以在超级计算机级系统上向他们出售自行车的周期，而这只花费了他们在新硬件上花费的一小部分。
+麦考密克·史蒂文森（McCormick Stevenson）的首席工程师迈克·克劳奇奇（Mike Krawczyk）说：“我们的一些工作会使办公室的计算机不堪重负。” “购买机器并安装软件在经济上或计划上都不划算。” 相反，该公司与Rescale签约，从其购买在超级计算机系统上运行的周期(cycles)，而这只花费了他们购买新硬件上所需的一小部分。
 
 McCormick Stevenson had become an early adopter in a market known as supercomputing as a service or high-performance computing (HPC) as a service – two terms that are closely related. HPC is the application of supercomputers to computationally complex problems, while supercomputers are those computers at the cutting edge of processing capacity, according to the National Institute for Computational Sciences.
-麦考密克·史蒂文森（McCormick Stevenson）已成为市场上的早期采用者，该市场被称为超级计算即服务或高性能计算（HPC）即服务–这两个紧密相关的术语。根据国家计算科学研究所的说法，HPC是超级计算机在计算复杂问题上的应用，而超级计算机是处理能力最先进的那些计算机。
+麦考密克·史蒂文森（McCormick Stevenson）已成为被称为超级计算即服务或高性能计算（HPC）即服务(两个紧密相关的术语)市场的早期采用者之一。根据国家计算科学研究所(的定义)，HPC是超级计算机在计算复杂问题上的应用，而超级计算机是处理能力最先进的那些计算机。
 
 Whatever it's called, these services are upending the traditional supercomputing market and bringing HPC power to customers who could never afford it before. But it's no panacea, and it's definitely not plug-and-play – at least not yet.
-无论以何种方式称呼，这些服务都在颠覆传统的超级计算市场，并将HPC功能带给以前买不起的客户。但这不是万能药，而且绝对不是即插即用的，至少现在还没有。
+无论叫它什么，这些服务都在颠覆传统的超级计算市场，并将HPC能力带给以前买不起的客户。但这不是万能的，而且绝对不是即插即用的，至少现在还不是。
 
 ### HPC services in practice HPC服务实践
 
