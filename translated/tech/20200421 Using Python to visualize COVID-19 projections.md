@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Using Python to visualize COVID-19 projections)
@@ -10,11 +10,11 @@
 使用 Python 来可视化 COVID-19 预测
 ======
 
-> 我将演示如何使用开源库利用提供的全球病毒传播的开放数据来创建两个可视效果。
+> 我将演示如何利用提供的全球病毒传播的开放数据，使用开源库来创建两个可视效果。
 
-![Colorful sound wave graph][1]
+![](https://img.linux.net.cn/data/attachment/album/202005/01/193624a2p2osojyf0yg4go.jpg)
 
-使用 [Python][2] 和一些图形库，你可以预测出 COVID-19 确诊病例的总数，也可以显示一个国家（本文以印度为例）在给定日期的死亡总数。人们有时需要帮助解释和处理数据的意义，所以本文还演示了如何为五个国家创建一个动画横条形图，以显示按日期显示病例的变化。
+使用 [Python][2] 和一些图形库，你可以预测 COVID-19 确诊病例总数，也可以显示一个国家（本文以印度为例）在给定日期的死亡总数。人们有时需要帮助解释和处理数据的意义，所以本文还演示了如何为五个国家创建一个动画横条形图，以显示按日期显示病例的变化。
 
 ### 印度的确诊病例和死亡人数预测
 
@@ -27,7 +27,6 @@
 要解析这些数据，首先必须先下载。 <https://raw.githubusercontent.com/datasets/covid-19/master/data/countries-aggregated.csv>。
 
 直接将数据加载到 Pandas `DataFrame` 中。Pandas 提供了一个函数 `read_csv()`，它可以获取一个 URL 并返回一个 `DataFrame` 对象，如下所示。
-
 
 ```
 import pycountry
@@ -87,8 +86,8 @@ print(df_india.head(3))
 
 在这里，我们创建一个条形图。我们将把日期放在 X 轴上，把确诊的病例数和死亡人数放在 Y 轴上。这一部分的脚本有以下几个值得注意的地方。
 
-  * `plt.rcParams["_figure.figure.figsize"_]=20,20` 这一行代码只适用于 Jupyter。所以如果你使用其他 IDE，请删除它。
-  * 注意这行代码：`ax1 = plt.gca()`。为了确保两个图，即确诊病例和死亡病例的图都被绘制在同一个图上，我们需要给第二个图的 `ax` 对象。所以我们使用 `gca()` 来完成这个任务。（顺便说一下，`gca` 代表“get current axis”）
+  * `plt.rcParams["figure.figsize"]=20,20` 这一行代码只适用于 Jupyter。所以如果你使用其他 IDE，请删除它。
+  * 注意这行代码：`ax1 = plt.gca()`。为了确保两个图，即确诊病例和死亡病例的图都被绘制在同一个图上，我们需要给第二个图的 `ax` 对象。所以我们使用 `gca()` 来完成这个任务。（顺便说一下，`gca` 代表 “<ruby>获取当前坐标轴<rt>get current axis</rt></ruby>”）
 
 完整的脚本如下所示。
 
@@ -120,9 +119,9 @@ plt.show()
 
 整个脚本[可在 GitHub 上找到][4]。
 
-#### 为五个国家创建一个动画水平条形图
+### 为五个国家创建一个动画水平条形图
 
-关于 Jupyter 的注意事项：要在 Jupyter 中以动态动画的形式运行，而不是静态 png 的形式，你需要在单元格的开头添加一个神奇的命令，即: `%matplotlib notebook`。这将使图形保持动态，而不是显示静态的 png 文件，因此也可以显示动画。如果你在其他 IDE 上，请删除这一行。
+关于 Jupyter 的注意事项：要在 Jupyter 中以动态动画的形式运行，而不是静态 png 的形式，你需要在单元格的开头添加一个神奇的命令，即: `%matplotlib notebook`。这将使图形保持动态，而不是显示为静态的 png 文件，因此也可以显示动画。如果你在其他 IDE 上，请删除这一行。
 
 #### 1、下载数据
 
@@ -130,11 +129,11 @@ plt.show()
 
 #### 2、创建一个所有日期的列表
 
-如果你检查你下载的数据，你会发现它有一列 `Date`。现在，这一列对每个国家都有一个日期值。因此，同一个日期会出现多次。我们需要创建一个只具有唯一值的日期列表。这会用在我们条形图的 X 轴上。我们有一行代码，如 `list_dates = df[_'Date'_].unique()`。`unique()` 方法将只提取每个日期的唯一值。
+如果你检查你下载的数据，你会发现它有一列 `Date`。现在，这一列对每个国家都有一个日期值。因此，同一个日期会出现多次。我们需要创建一个只具有唯一值的日期列表。这会用在我们条形图的 X 轴上。我们有一行代码，如 `list_dates = df[‘Date’].unique()`。`unique()` 方法将只提取每个日期的唯一值。
 
 #### 3、挑选五个国家并创建一个 `ax` 对象。
 
-做一个五个国家的名单。（你可以选择你喜欢的国家，甚至可以增加或减少国家的数量。）我也做了一个五个颜色的列表，每个国家的条形图的颜色对应一种。（如果你喜欢的话，也可以改一下。）这里有一行重要的代码是：`fig, ax = plt.subplots(figsize=(15, 8))`。这是创建一个 `ax` 对象所需要的。
+做一个五个国家的名单。（你可以选择你喜欢的国家，也可以增加或减少国家的数量。）我也做了一个五个颜色的列表，每个国家的条形图的颜色对应一种。（如果你喜欢的话，也可以改一下。）这里有一行重要的代码是：`fig, ax = plt.subplots(figsize=(15, 8))`。这是创建一个 `ax` 对象所需要的。
 
 #### 4、编写回调函数
 
@@ -148,7 +147,7 @@ plt.show()
 
 ```
 my_anim = animation.FuncAnimation(fig = fig, func = plot_bar,
-                    frames= list_dates, blit=True,
+                    frames = list_dates, blit = True,
                     interval=20)
 ```
 
@@ -226,7 +225,7 @@ via: https://opensource.com/article/20/4/python-data-covid-19
 作者：[AnuragGupta][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
