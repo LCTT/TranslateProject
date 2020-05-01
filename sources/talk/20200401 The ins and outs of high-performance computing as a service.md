@@ -33,52 +33,52 @@ Whatever it's called, these services are upending the traditional supercomputing
 ### HPC services in practice HPC服务实践
 
 From the end user's perspective, HPC as a service resembles the batch-processing model that dates back to the early mainframe era. "We create an Ansys batch file and send that up, and after it runs, we pull down the result files and import them locally here," Krawczyk says.
-从最终用户的角度来看，HPC即服务类似于可追溯到大型机早期的批处理模型。 “我们创建一个Ansys批处理文件并将其发送出去，然后运行它，我们将结果文件下拉并在此处本地导入，” Krawczyk说。
+从最终用户的角度来看，HPC即服务类似于早期大型机时代的批处理模型。 “我们创建一个Ansys批处理文件并将其发送过去，运行它，然后将结果文件取下来并在本地导入它们，” Krawczyk说。
 
 Behind the scenes, cloud providers are running the supercomputing infrastructure in their own data centers – though that doesn't necessarily imply the sort of cutting-edge hardware you might be visualizing when you hear "supercomputer." As Dave Turek, Vice President of Technical Computing at IBM OpenPOWER, explains it, HPC services at their core are "a collection of servers that are strung together with an interconnect. You have the ability to invoke this virtual computing infrastructure that allows you to bring a lot of different servers to work together in a parallel construct to solve the problem when you present it."
-在幕后，云提供商正在其自己的数据中心中运行超级计算基础结构，尽管这不一定意味着您在听到“超级计算机”时可能会看到的最先进的硬件。正如IBM OpenPOWER技术计算副总裁Dave Turek解释说的那样，HPC服务的核心是“由互连串在一起的服务器的集合。您可以调用此虚拟计算基础结构，使您能够当您提出问题时，许多不同的服务器可以并行构造在一起以解决问题。”
+在HPC服务背后，云提供商在其自己的数据中心中运行超级计算基础设施，尽管这不一定意味着当您听到“超级计算机”时你就会看到最先进的硬件。正如IBM OpenPOWER计算技术副总裁Dave Turek解释的那样，HPC服务的核心是“相互互连的服务器集合。您可以调用该虚拟计算基础设施，它能够在您提出问题时，使得许多不同的服务器并行工作来解决问题。”
 [][2]
 
 Sounds simple in theory. But making it viable in practice required some chipping away at technical problems, according to Theo Lynn, Professor of Digital Business at Dublin City University. What differentiates ordinary computing from HPC is those interconnects – high-speed, low-latency, and expensive – so those needed to be brought to the world of cloud infrastructure. Storage performance and data transport also needed to be brought up to a level at least in the same ballpark as on-prem HPC before HPC services could be viable.
-理论上听起来很简单。都柏林城市大学数字业务教授西奥·林恩（Theo Lynn）表示，但要使其在实践中可行，需要解决一些技术问题。普通计算与HPC的区别在于那些互连-高速，低延迟和昂贵-因此需要将这些互连引入云基础架构领域。在HPC服务可行之前，还至少需要将存储性能和数据传输提升到与本地HPC相同的水平。
+理论上听起来很简单。但都柏林城市大学数字业务教授西奥·林恩（Theo Lynn）表示，要使其在实践中可行，需要解决一些技术问题。普通计算与HPC的区别在于那些互连-高速的，低延时的而且昂贵的-因此需要将这些互连引入云基础设施领域。在HPC服务可行之前，至少需要将存储性能和数据传输也提升到与本地HPC相同的水平。
 
 But Lynn says that some of the innovations that have helped HPC services take off have been more institutional than technological. In particular, "we are now seeing more and more traditional HPC applications adopting cloud-friendly licensing models – a barrier to adoption in the past."
-但是林恩说，一些帮助高性能计算服务起飞的创新比技术更具有制度性。特别是，“我们现在看到越来越多的传统HPC应用程序采用云友好型许可模式-过去是采用这种模式的障碍。”
+但是林恩说，一些制度创新相比技术更好的帮助了HPC服务的起飞。特别是，“我们现在看到越来越多的传统HPC应用采用云友好的许可模式-过去是采用这种模式的障碍。”
 
 And the economics have also shifted the potential customer base, he says. "Cloud service providers have opened up the market more by targeting low-end HPC buyers who couldn’t afford the capex associated with traditional HPC and opening up the market to new users. As the markets open up, the hyperscale economic model becomes more and more feasible, costs start coming down."
-他说，经济也改变了潜在的客户群。 “云服务提供商通过针对那些负担不起与传统HPC相关的资本支出的低端HPC买家，并向新用户开放市场，进一步开放了市场。随着市场的开放，超大规模经济模型变得越来越多，更可行，成本开始下降。”
+他说，经济也改变了潜在的客户群。 “云服务提供商通过向那些负担不起传统HPC所需的投资成本的低端HPC买家开放，进一步开放了市场。随着市场的开放，超大规模经济模型变得越来越多，更可行，成本开始下降。”
 
-Avoid on-premises CAPEX** 避免内部资本支出**
+Avoid on-premises CAPEX** 避免本地资本支出**
 **
 
 HPC services are attractive to private-sector customers in the same fields where traditional supercomputing has long held sway. These include sectors that rely heavily on complex mathematical modeling, including defense contractors like McCormick Stevenson, along with oil and gas companies, financial services firms, and biotech companies. Dublin City University's Lynn adds that loosely coupled workloads are a particularly good use case, which meant that many early adopters used it for 3D image rendering and related applications.
-在传统超级计算长期占据主导地位的相同领域，HPC服务对私营部门客户具有吸引力。这些行业包括严重依赖复杂数学模型的行业，包括麦考密克·史蒂文森（McCormick Stevenson）等国防承包商，以及石油和天然气公司，金融服务公司和生物技术公司。都柏林城市大学的Lynn补充说，松散耦合的工作负载是一个特别好的用例，这意味着许多早期采用者将其用于3D图像渲染和相关应用程序。
+HPC服务对有志于传统超级计算长期把持的领域的私营行业客户具有吸引力。这些客户包括严重依赖复杂数学模型的行业，包括麦考密克·史蒂文森（McCormick Stevenson）等国防承包商，以及油气公司，金融服务公司和生物技术公司。都柏林城市大学的Lynn补充说，松耦合的工作负载是一个特别好的用例，这意味着许多早期采用者将其用于3D图像渲染和相关应用。
 
 But when does it make sense to consider HPC services over on-premises HPC? For hhpberlin, a German company that simulates smoke propagation in and fire damage to structural components of buildings, the move came as it outgrew its current resources.
-但是，何时在本地HPC上考虑HPC服务才有意义？对于德国的hhpberlin公司，该公司模拟烟雾在建筑物中的传播和火灾对建筑物结构部件的破坏，此举是因为它超出了其现有资源。
+但是，何时考虑HPC服务而不是本地HPC才有意义？对于德国的模拟烟雾在建筑物中的蔓延和火灾对建筑物结构部件的破坏的hhpberlin公司来说，答案是在它超出了其现有资源时。
 
 "For several years, we had run our own small cluster with up to 80 processor cores," says Susanne Kilian, hhpberlin's scientific head of numerical simulation. "With the rise in application complexity, however, this constellation has increasingly proven to be inadequate; the available capacity was not always sufficient to handle projects promptly."
-hhpberlin数值模拟的科学负责人Susanne Kilian说：“几年来，我们一直在运行自己的小型集群，该集群具有多达80个处理器内核。” “但是，随着应用程序复杂性的提高，这种架构已经越来越不足够；可用容​​量并不总是足够迅速地处理项目。”
+Hpberlin公司数值模拟的科学负责人Susanne Kilian说：“几年来，我们一直在运行自己的小型集群，该集群具有多达80个处理器核。” “但是，随着应用复杂性的提高，这种架构(constellation)已经越来越不足以支撑；可用容量并不总是够快速地处理项目。”
 
 But just spending money on a new cluster wasn't an ideal solution, she says: "In view of the size and administrative environment of our company, the necessity of constant maintenance of this cluster (regular software and hardware upgrades) turned out to be impractical. Plus, the number of required simulation projects is subject to significant fluctuations, such that the utilization of the cluster was not really predictable. Typically, phases with very intensive use alternate with phases with little to no use." By moving to an HPC service model, hhpberlin shed that excess capacity and the need to pay up front for upgrades.
-她说：“但是，仅仅花钱买一个新的集群并不是一个理想的解决方案：鉴于我们公司的规模和管理环境，持续维护该集群（定期进行软件和硬件升级）的必要性非常明显。另外，所需的模拟项目的数量会出现很大的波动，因此群集的使用情况并不是真正可预测的。通常，使用率很高的阶段与很少使用或不使用的阶段交替出现。”通过转换为HPC服务模式，hhpberlin消除了过剩的容量，无需支付升级费用。
+她说：“但是，仅仅花钱买一个新的集群并不是一个理想的解决方案：鉴于我们公司的规模和管理环境，强制持续维护该集群（定期进行软件和硬件升级）是不现实的。另外，需要模拟的项目数量会出现很大的波动，因此集群的利用率并不是真正可预测的。通常，使用率很高的阶段与很少使用或不使用的阶段交替出现。”通过转换为HPC服务模式，hhpberlin释放了过剩的容量，并无需支付升级费用。
 
 IBM's Turek explains the calculus that different companies go through while assessing their needs. For a biosciences startup with 30 people, "you need computing, but you really can't afford to have 15% of your staff dedicated to it. It's just like you might also say you don't want to have on-staff legal representation, so you'll get that as a service as well." For a bigger company, though, it comes down to weighing the operational expense of an HPC service against the capacity expense of buying an in-house supercomputer or HPC cluster.
-IBM的Turek解释了不同公司在评估其需求时所经历的计算过程。对于拥有30名员工的生物科学初创公司来说，“您需要计算，但您实在负担不起15％的员工专心致志。这就像您可能还说过，您不想拥有在职法律代表，因此您也可以将其作为服务获得。”但是，对于一家较大的公司而言，归结为权衡HPC服务的运营费用与购买内部超级计算机或HPC集群的容量费用。
+IBM的Turek解释了不同公司在评估其需求时所经历的计算过程。对于拥有30名员工的生物科学初创公司来说，“您需要计算，但您实在负担不起15％的员工专门从事它。这就像您可能也说过，您不想拥有在职法律代表，因此您也可以通过服务获得它。”但是，对于一家较大的公司而言，最终归结为权衡HPC服务的运营费用与购买内部超级计算机或HPC集群的费用。
 
 So far, those are the same sorts of arguments you'd have over adopting any cloud service. But the opex vs. capex dilemma can be weighted towards the former by some of the specifics of the HPC market. Supercomputers aren't commodity hardware like storage or x86 servers; they're very expensive, and technological advances can swiftly render them obsolete. As McCormick Stevenson's Krawczyk puts it, "It's like buying a car: as soon as you drive off the lot it starts to depreciate." And for many companies –especially larger and less nimble ones – the process of buying a supercomputer can get hopelessly bogged down. "You're caught up in planning issues, building issues, construction issues, training issues, and then you have to execute an RFP," says IBM's Turek. "You have to work through the CIO. You have to work with your internal customers to make sure there's continuity of service. It's a very, very complex process and not something that a lot of institutions are really excellent at executing."
-到目前为止，这些都是您采用任何云服务时都会遇到的相同类型的争论。但是，可以通过HPC市场的某些细节将运营支出与资本支出的困境加权为前者。超级计算机不是诸如存储或x86服务器之类的商用硬件；它们非常昂贵，技术进步会很快使其过时。正如麦考密克·史蒂文森（McCormick Stevenson）的克拉维奇（Krawczyk）所说，“这就像在买车：开车一走，它就会开始贬值。”对于许多公司，尤其是规模较大，灵活性较差的公司，购买超级计算机的过程可能会陷入无望的泥潭。 IBM的Turek说：“您陷入了计划问题，建筑问题，施工问题，培训问题，然后必须执行RFP。” “您必须通过CIO进行工作。您必须与内部客户合作以确保服务的连续性。这是一个非常非常复杂的过程，并不是很多机构在执行方面都非常出色。”
+到目前为止，这些都是您采用任何云服务时都会遇到的类似的争论。但是，可以HPC市场的某些特点将使得衡量运营支出与资本支出时选择前者。超级计算机不是诸如存储或x86服务器之类的商用硬件；它们非常昂贵，技术进步很快会使其过时。正如麦考密克·史蒂文森（McCormick Stevenson）的克拉维奇（Krawczyk）所说，“这就像买车：只要车一开走，它就会开始贬值。”对于许多公司，尤其是规模较大，灵活性较差的公司，购买超级计算机的过程可能会陷入无望的泥潭。 IBM的Turek说：“您陷入了计划问题，建筑问题，施工问题，培训问题，然后必须执行RFP。” “您必须得到CIO的支持。您必须与内部客户合作以确保服务的连续性。这是一个非常非常复杂的过程，并没有很多机构有非常出色的执行力。”
 
-Once you choose to go down the services route for HPC, you'll find you get many of the advantages you expect from cloud services, particularly the ability to pay only for HPC power when you need it, which results in an efficient use of resources. Chirag Dekate, Senior Director and Analyst at Gartner, says bursty workloads, when you have short-term needs for high-performance computing, are a key use case driving adoption of HPC  services.
-选择了HPC的服务路线后，您会发现您将从云服务中获得了许多期望，特别是仅在需要时才需要为HPC功能付费的能力，从而可以有效利用资源。 Gartner高级总监兼分析师Chirag Dekate表示，当您对高性能计算有短期需求时，突发性工作负载是推动HPC服务采用的关键用例。
+Once you choose to go down the services route for HPC, you'll find you get many of the advantages you expect from cloud services, particularly the ability to pay only for HPC power when you need it, which results in an efficient use of resources. Chirag Dekate, Senior Director and Analyst at Gartner, says bursty workloads, when you have short-term needs for high-performance computing, are a key use case driving adoption of HPC  services.
+一旦您选择了HPC服务的路线后，您会发现您会得到您期望从云服务中得到的许多好处，特别是仅在业务需要时才需付费的能力，从而可以带来资源的高效利用。 Gartner高级总监兼分析师Chirag Dekate表示，当您对高性能计算有短期需求时的突发性负载是推动选择HPC服务的关键用例。
 
 "In the manufacturing industry, you tend to have a high peak of HPC activity around the product design stage," he says. "But once the product is designed, HPC resources are less utilized during the rest of the product-development cycle." In contrast, he says, "when you have large, long-running jobs, the economics of the cloud wear down."
 他说：“在制造业中，在产品设计阶段，HPC活动往往会达到很高的峰值。” “但是，一旦产品设计完成，在其余产品开发周期中，HPC资源的利用率就会降低。” 相比之下，他说：“当您拥有大量长期运行的工作时，云的经济就会逐渐减弱。”
 
 With clever system design, you can integrate those HPC-services bursts of activity with your own in-house conventional computing. Teresa Tung, managing director in Accenture Labs, gives an example: "Accessing HPC via APIs makes it seamless to mix with traditional computing. A traditional AI pipeline might have its training done on a high-end supercomputer at the stage when the model is being developed, but then the resulting trained model that runs predictions over and over would be deployed on other services in the cloud or even devices at the edge."
-通过巧妙的系统设计，您可以将这些HPC服务突发事件与您自己的内部常规计算集成在一起。 埃森哲实验室常务董事董德丽举了一个例子：“通过API访问HPC可以无缝地与传统计算混合。在模型构建阶段，传统的AI管道可能会在高端超级计算机上进行培训。 开发出来的软件，但是最终生成的经过反复训练的模型将部署在云中的其他服务上，甚至部署在边缘设备上。”
+通过巧妙的系统设计，您可以将这些HPC服务突发活动与您自己的内部常规计算集成在一起。 埃森哲(Accenture)实验室常务董事Teresa Tung举了一个例子：“通过API访问HPC可以无缝地与传统计算混合。在模型构建阶段，传统的AI流水线可能会在高端超级计算机上进行训练，但是最终经过反复按预期运行的训练好的模型将部署在云中的其他服务上，甚至部署在边缘设备上。”
 
-### It's not for all use cases**
+### It's not for all use cases** 它并不适合所有的应用场景
 
 **
 
