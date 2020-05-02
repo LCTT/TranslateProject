@@ -83,42 +83,42 @@ With clever system design, you can integrate those HPC-services bursts of activi
 **
 
 Use of HPC services lends itself to batch-processing and loosely-coupled use cases. That ties into a common HPC downside: data transfer issues. High-performance computing by its very nature often involves huge data sets, and sending all that information over the internet to a cloud service provider is no simple thing. "We have clients I talk to in the biotech industry who spend $10 million a month on just the data charges," says IBM's Turek.
-HPC服务的使用适合批处理和松散耦合的用例。这与HPC的常见缺点有关：数据传输问题。从本质上讲，高性能计算通常涉及庞大的数据集，而将所有这些信息通过Internet发送到云服务提供商并不是一件容易的事。 IBM的Turek说：“我们与生物技术行业的客户交流，他们每月仅在数据费用上就花费1000万美元。”
+HPC服务适合批处理和松耦合的场景。这与HPC的普遍缺点有关：数据传输问题。高性能计算本身通常涉及庞大的数据集，而将所有这些信息通过Internet发送到云服务提供商并不容易。IBM的Turek说：“我们与生物技术行业的客户交流，他们每月仅在数据费用上就花费1000万美元。”
 
 And money isn't the only potential problem. Building a workflow that makes use of your data can challenge you to work around the long times required for data transfer. "When we had our own HPC cluster, local access to the simulation results already produced – and thus an interactive interim evaluation — was of course possible at any time," says hhpberlin's Kilian. "We're currently working on being able to access and evaluate the data produced in the cloud even more efficiently and interactively at any desired time of the simulation without the need to download large amounts of simulation data."
-金钱并不是唯一的潜在问题。建立一个利用您的数据的工作流程可能会挑战您在数据传输所需的长时间内工作。 hhpberlin的Kilian说：“当我们拥有自己的HPC集群时，当然可以随时本地访问已经产生的仿真结果，从而进行交互式的临时评估。” “我们目前正在努力，能够在任何所需的模拟时间更高效，交互地访问和评估云中生成的数据，而无需下载大量的模拟数据。”
+钱并不是唯一的潜在问题。已制定的需要使用数据的工作流可能会使您在数据传输所需的时间内无法工作。hhpberlin的Kilian说：“当我们拥有自己的HPC集群时，当然可以随时访问已经产生的仿真结果，从而进行交互式的临时评估。” “我们目前正努力达到在仿真的任意时刻都可以更高效地，交互地访问和评估云中生成的数据，而无需下载大量的模拟数据。”
 
 Mike Krawczyk cites another stumbling block: compliance issues. Any service a defense contractor uses needs to be complaint with the International Traffic in Arms Regulations (ITAR), and McCormick Stevenson went with Rescale in part because it was the only vendor they found that checked that box. While more do today, any company looking to use cloud services should be aware of the legal and data-protection issues involved in living on someone else's infrastructure, and the sensitive nature of many of HPC's use cases makes this doubly true for HPC as a service.
-Mike Krawczyk提到了另一个绊脚石：合规性问题。国防承包商使用的任何服务都需要向《国际武器交易条例》（ITAR）进行投诉，麦考密克·史蒂文森（McCormick Stevenson）之所以选择Rescale，部分原因是这是他们发现该复选框的唯一供应商。如今，尽管有更多的公司这样做，但任何希望使用云服务的公司都应该意识到生活在其他人的基础架构上所涉及的法律和数据保护问题，而且许多HPC用例的敏感性质使得这对于HPC即服务而言是双重事实。 。
+Mike Krawczyk提到了另一个绊脚石：合规性问题。国防承包商使用的任何服务都需要遵从(原文是complaint, 应该是笔误)《国际武器交易条例》（ITAR），麦考密克·史蒂文森（McCormick Stevenson）之所以选择Rescale，部分原因是因为这是他们发现的唯一符合的供应商。如今，尽管有更多的公司(使用云服务)，但任何希望使用云服务的公司都应该意识到使用其他人的基础设施时所涉及的法律和数据保护问题，而且许多HPC场景的敏感性使得更HPC即服务的这个问题更加突出。
 
 In addition, the IT governance that HPC services require goes beyond regulatory needs. For instance, you'll need to keep track of whether your software licenses permit cloud use ­– especially with specialized software packages written to run on an on-premises HPC cluster. And in general, you need to keep track of how you use HPC services, which can be a tempting resource, especially if you've transitioned from in-house systems where staff was used to having idle HPC capabilities available. For instance, Ron Gilpin, senior director and Azure Platform Services global lead at Avanade, suggests dialing back how many processing cores you use for tasks that aren't time sensitive. "If a job only needs to be completed in an hour instead of ten minutes," he says, "that might use 165 processors instead of 1,000, a savings of thousands of dollars."
-此外，HPC服务所需的IT治理超出了监管需求。例如，您需要跟踪您的软件许可证是否允许云使用­ –尤其是针对专门编写在本地HPC群集上运行的软件包。通常，您需要跟踪HPC服务的使用方式，这可能是一个诱人的资源，尤其是当您从习惯于工作人员的内部系统过渡到具有可用的空闲HPC功能时。例如，Avanade全球平台高级主管兼Azure平台服务全球负责人Ron Gilpin建议，回拨您用于非时间敏感任务的处理核心数量。他说：“如果一项工作只需要一个小时而不是十分钟就可以完成，那么它可以使用165个处理器而不是1,000个，从而节省了数千美元。”
+此外，HPC服务所需的IT治理超出了目前的监管范围。例如，您需要跟踪您的软件许可证是否允许云使用­ –尤其是专门为本地HPC群集上运行而编写的软件包。通常，您需要跟踪HPC服务的使用方式，它可能是一个诱人的资源，尤其是当您从员工习惯的内部系统过渡到有可用的空闲的HPC能力时。例如，Avanade全球平台高级主管兼Azure平台服务全球负责人Ron Gilpin建议，回调您用于时间不敏感任务的处理核心数量。他说：“如果一项工作只需要用一小时来完成而不需要在十分钟内就完成，那么它可以使用165个处理器而不是1,000个，从而节省了数千美元。”
 
-### A premium on HPC skills**
+### A premium on HPC skills** 独特的HPC技能
 
 **
 
 One of the biggest barriers to HPC adoption has always been the unique in-house skills it requires, and HPC services don't magically make that barrier vanish. "Many CIOs have migrated a lot of their workloads into the cloud and they have seen cost savings and increased agility and efficiency, and believe that they can achieve similar results in HPC ecosystems," says Gartner's Dekate. "And a common misperception is that they can somehow optimize human resource cost by essentially moving away from system admins and hiring new cloud experts who can solve their HPC workloads."
-一直以来，采用HPC的最大障碍之一就是其所需的独特内部技能，而HPC服务并不能使这种障碍消失。 Gartner的Dekate表示：“许多CIO将许多工作负载迁移到了云中，他们看到了节省成本，提高敏捷性和效率的信念，并且相信他们可以在HPC生态系统中实现类似的结果。” “一个普遍的误解是，他们可以从本质上远离系统管理员，并聘用可以解决其HPC工作负载的新云专家，从而以某种方式优化人力资源成本。”
+一直以来，采用HPC的最大障碍之一就是其所需的独特的内部技能，而HPC服务并不能使这种障碍消失。Gartner的Dekate表示：“许多CIO将许多工作负载迁移到了云上，他们看到了成本的节约，敏捷性和效率的提升，因此相信在HPC生态中也可以达成类似的效果。” “一个普遍的误解是，他们可以通过彻底地免去系统管理员，并聘用能解决其HPC工作负载的新的云专家，从而以某种方式优化人力成本。”
 
 "But HPC is not one of the main enterprise environments," he says. "You're dealing with high-end compute nodes interconnected with high-bandwidth, low-latency networking stacks, along with incredibly complicated application and middleware stacks. Even the filesystem layers in many cases are unique to HPC environments. Not having the right skills can be destabilizing."
-他说：“但是HPC并不是主要的企业环境之一。” “您正在处理与高带宽，低延迟网络堆栈以及难以置信的复杂应用程序和中间件堆栈互连的高端计算节点。在许多情况下，甚至文件系统层也是HPC环境所独有的。没有适当的技能 可能会破坏稳定。”
+“但是HPC并不是主流的企业环境之一。” 他说。“您正在处理通过高带宽，低延迟的网络互联的高端计算节点，以及相当复杂的应用和中间件技术栈。许多情况下，甚至连文件系统层也是HPC环境所独有的。没有对应的技能可能会破坏稳定性。”
 
 But supercomputing skills are in shortening supply, something Dekate refers to as the workforce "greying," in the wake of a generation of developers going to splashy startups rather than academia or the more staid firms where HPC is in use. As a result, vendors of HPC services are doing what they can to bridge the gap. IBM's Turek says that many HPC vets will always want to roll their own exquisitely fine-tuned code and will need specialized debuggers and other tools to help them do that for the cloud. But even HPC newbies can make calls to code libraries built by vendors to exploit supercomputing's parallel processing. And third-party software providers sell turnkey software packages that abstract away much of HPC's complication.
-但是超级计算技术却在缩短供应，Dekate将其称为劳动力“灰色”，这是因为一代开发人员将目光投向了新兴的初创公司，而不是学术界或使用HPC的更老套的公司。结果，HPC服务的供应商正在尽其所能弥合差距。 IBM的Turek表示，许多HPC兽医将始终希望推出他们自己精心调整过的代码，并且将需要专门的调试器和其他工具来帮助他们在云中实现这一目标。但是，即使是HPC新手也可以调用供应商构建的代码库，以利用超级计算的并行处理。第三方软件提供商出售的交钥匙软件包可以消除许多HPC复杂性。
+但是超级计算技能的供给却在减少，Dekate将其称为劳动力“灰化”，这是因为一代开发人员将目光投向了新兴的初创公司，而不是学术界或使用HPC的更老套的公司。因此，HPC服务供应商正在尽其所能地弥补差距。 IBM的Turek表示，许多HPC老手将总是想运行他们自己精心调整过的代码，将需要专门的调试器和其他工具来帮助他们在云上实现这一目标。但是，即使是HPC新手也可以调用供应商构建的代码库，以利用超级计算的并行处理能力。第三方软件提供商出售的交钥匙软件包可以减少HPC的许多复杂性。
 
 Accenture's Tung says the sector needs to lean further into this in order to truly prosper. "HPCaaS has created dramatically impactful new capability, but what needs to happen is making this easy to apply for the data scientist, the enterprise architect, or the software developer," she says. "This includes easy to use APIs, documentation, and sample code. It includes user support to answer questions. It’s not enough to provide an API; that API needs to be fit-for-purpose. For a data scientist this should likely be in Python and easily change out for the frameworks she is already using. The value comes from enabling these users who ultimately will have their jobs improved through new efficiencies and performance, if only they can access the new capabilities." If vendors can pull that off, HPC services might truly bring supercomputing to the masses.
-埃森哲的董先生表示，该行业需要进一步倾斜才能真正繁荣。她说：“ ​​HPCaaS已经创建了具有重大影响力的新功能，但是需要做的是使它易于应用于数据科学家，企业架构师或软件开发人员。” “这包括易于使用的API，文档和示例代码。它包含用户回答问题的支持。仅提供API是不够的； API需要适合特定用途。对于数据科学家而言，这可能应该包含在其中。使用Python并轻松地更改她已经在使用的框架。其价值来自使这些用户能够获得新的效率和性能，只要他们能够使用新功能，他们最终将通过新的效率和性能来改善他们的工作。”如果供应商能够做到这一点，那么HPC服务可能真正将超级计算带入大众。
+埃森哲的Tung表示，该行业需要进一步加大投入才能真正繁荣。她说：“HPCaaS已经创建了具有重大影响力的新功能，但还需要做的是使它易于被数据科学家，企业架构师或软件开发人员使用。这包括易用的API，文档和示例代码。它包括用户支持来解答问题。仅仅提供API是不够的，API需要适合特定的用途。对于数据科学家而言，这可能是以python形式提供,并容易更换她已经在使用的框架。其价值来自使这些用户最综只有在使用新功能时才能够改进效率和性能。” 如果供应商能够做到这一点，那么HPC服务才能真正将超级计算带给大众。
 
 Join the Network World communities on [Facebook][3] and [LinkedIn][4] to comment on topics that are top of mind.
-加入[Facebook] [3]和[LinkedIn] [4]上的Network World社区，以评论最重要的主题。
+加入[Facebook][3]和[LinkedIn][4]上的Network World社区，探讨最前沿的话题。
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3534725/the-ins-and-outs-of-high-performance-computing-as-a-service.html
 
 作者：[Josh Fruhlinger][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[messon007](https://github.com/messon007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
