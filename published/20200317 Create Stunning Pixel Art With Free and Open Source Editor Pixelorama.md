@@ -1,51 +1,49 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12173-1.html)
 [#]: subject: (Create Stunning Pixel Art With Free and Open Source Editor Pixelorama)
 [#]: via: (https://itsfoss.com/pixelorama/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-使用免费和开源编辑器 Pixelorama 创建令人惊叹的像素艺术
+使用 Pixelorama 创建令人惊叹的像素艺术
 ======
 
-_**简介：Pixelorama 是一个跨平台、免费和开源的 2D Sprite 编辑器。它在干净的用户界面中提供了创建像素艺术所有必要工具。**_
+> Pixelorama 是一个跨平台、自由开源的 2D 精灵编辑器。它在一个整洁的用户界面中提供了创建像素艺术所有必要工具。
 
 ### Pixelorama：开源 Sprite 编辑器
 
-[Pixelorama][1] 是年轻游戏开发人员在 [Orama 互动][2]创建的工具。他们已经开发了一些 2D 游戏，其中一些使用了像素艺术。
+[Pixelorama][1] 是 [Orama 互动][2]公司的年轻游戏开发人员创建的一个工具。他们已经开发了一些 2D 游戏，其中一些使用了像素艺术。
 
-虽然 Orama 主要投入游戏开发，但开发人员也在创建实用工具，帮助他们（和其他人）创建这些游戏。
+虽然 Orama 主要从事于游戏开发，但开发人员也创建实用工具，帮助他们（和其他人）创建这些游戏。
 
-免费开源的 Sprite 编辑器，Pixelorama 是这样一个实用工具。它构建在 [Godot 引擎][3]之上，非常适合创作像素艺术。
+自由开源的<ruby>精灵<rt>Sprite</rt></ruby>编辑器 Pixelorama 就是这样一个实用工具。它构建在 [Godot 引擎][3]之上，非常适合创作像素艺术。
 
 ![Pixelorama screenshot][4]
 
-你在上面的截图中看到像素艺术了吗？它是使用 Pixelorama 创建的。此视频显示创建上面图像的延时视频。
+你看到上面截图中的像素艺术了吗？它是使用 Pixelorama 创建的。这段视频展示了制作上述图片的时间推移视频。
 
 ### Pixelorama 的功能
 
 以下是 Pixelorama 提供的主要功能：
 
-  * 多种工具，如铅笔，擦除，填充桶颜色选择器等
-  * 多层系统，你可以根据需要添加、删除、上下移动、克隆和合并尽可能多的层
+  * 多种工具，如铅笔、橡皮擦、填充桶、取色器等
+  * 多层系统，你可以根据需要添加、删除、上下移动、克隆和合并多个层
   * 支持 Spritesheets
   * 导入图像并在 Pixelorama 中编辑它们
   * 带有 [Onion Skinning][5] 的动画时间线
   * 自定义画笔
   * 以 Pixelorama 的自定义文件格式 .pxo 保存并打开你的项目
   * 水平和垂直镜像绘图
-  * 用于图样创建的磁贴模式
+  * 用于创建图样的磁贴模式
   * 拆分屏幕模式和迷你画布预览
   * 使用鼠标滚轮缩放
-  * 无限撤消和重做
+  * 无限次撤消和重做
   * 缩放、裁剪、翻转、旋转、颜色反转和去饱和图像
   * 键盘快捷键
   * 提供多种语言
   * 支持 Linux、Windows 和 macOS
-
-
 
 ### 在 Linux 上安装 Pixelorama
 
@@ -59,33 +57,33 @@ Pixelorama 提供 Snap 应用，如果你使用的是 Ubuntu，那么可以在�
 sudo snap install pixelorama
 ```
 
-如果你不想使用 Snap，不用担心。你可以从[他们的 GitHub 仓库]下载最新版本的 Pixelorama，[解压 zip 文件][9]，你会看到一个可执行文件。授予此文件执行权限，并双击它运行应用。
+如果你不想使用 Snap，不用担心。你可以从[他们的 GitHub 仓库][8]下载最新版本的 Pixelorama，[解压 zip 文件][9]，你会看到一个可执行文件。授予此文件执行权限，并双击它运行应用。
 
-[下载 Pixelorama][10]
+- [下载 Pixelorama][10]
 
-**总结**
+### 总结
 
 ![Pixelorama Welcome Screen][11]
 
 在 Pixeloaram 的功能中，它说你可以导入图像并对其进行编辑。我想，这只是对某些类型的文件，因为当我尝试导入 PNG 或 JPEG 文件，程序崩溃了。
 
-然而，我可以像一个 3 岁的孩子那样随意涂鸦并制作像素艺术。我并没有深入艺术，但我认为这是一个[在 Linux 上对数字艺术家有用的工具][12]。
+然而，我可以像一个 3 岁的孩子那样随意涂鸦并制作像素艺术。我对艺术不是很感兴趣，但我认为这[对 Linux 上的数字艺术家是个有用的工具][12]。
 
 我喜欢这样的想法：尽管是游戏开发人员，但他们创建的工具，可以帮助其他游戏开发人员和艺术家。这就是开源的精神。
 
-如果你喜欢这个项目，并且会使用它，请考虑通过捐赠来支持他们。[FOSS 捐赠了][13] 25 美元，以感谢他们的努力。
+如果你喜欢这个项目，并且会使用它，请考虑通过捐赠来支持他们。[It’s FOSS 捐赠了][13] 25 美元，以感谢他们的努力。
 
-[向 Pixelorama 捐赠（主要开发者的个人 Paypal 账户）][14]
+- [向 Pixelorama 捐赠（主要开发者的个人 Paypal 账户）][14]
 
-你喜欢 Pixelorama 吗？你是否使用其他开源 Sprite 编辑器？请随时在评论栏分享你的观点。
+你喜欢 Pixelorama 吗？你是否使用其他开源精灵编辑器？请随时在评论栏分享你的观点。
 
 --------------------------------------------------------------------------------
-
+via: https://itsfoss.com/pixelorama/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
