@@ -228,11 +228,11 @@ Each target has a set of dependencies described in its configuration file. syste
 systemd also looks at the legacy SystemV init directories to see if any startup files exist there. If so, systemd uses them as configuration files to start the services described by the files. The deprecated network service is a good example of one that still uses SystemV startup files in Fedora.
 
 Figure 3 (below) is copied directly from the bootup man page. It shows a map of the general sequence of events during systemd startup and the basic ordering requirements to ensure a successful startup.
-每个目标在其配置文件中都有一组依赖性。 systemd启动所需的依赖关系，这些依赖关系是在特定功能级别上运行Linux主机所需的服务。 加载并运行目标配置文件中列出的所有依赖项后，系统将在该目标级别运行。 在图2中，功能最多的目标位于表的顶部，功能朝表的底部递减。
+每个目标在其配置文件中都描述了一个依赖集。systemd启动必须的依赖，这些依赖是运行Linux主机到特定功能级别所需的服务。当目标配置文件中列出的所有依赖项被加载并运行后，系统就在该目标级别运行了。 在图2中，功能最多的目标位于表的顶部，从顶向下，功能逐步递减。
 
-systemd还会查看旧版SystemV初始化目录，以查看是否存在任何启动文件。 如果是这样，systemd会将它们用作配置文件以启动文件描述的服务。 不推荐使用的网络服务是一个很好的例子，它仍然在Fedora中使用SystemV启动文件。
+systemd还会检查老的SystemV init目录，以确认是否存在任何启动文件。如果有，systemd会将它们作为配置文件以启动它们描述的服务。网络服务是一个很好的例子，在Fedora中它仍然使用SystemV启动文件。
 
-图3（如下）直接从启动手册页复制而来。 它显示了systemd启动期间事件的一般顺序以及确保成功启动的基本顺序要求的映射。
+图3（如下）是直接从启动手册页复制来的。它显示了systemd启动期间普遍的事件顺序以及确保成功启动的基本顺序要求。
 
 ```
                                          cryptsetup-pre.target
@@ -295,11 +295,12 @@ The **sysinit.target** and **basic.target** targets can be considered checkpoint
 The **sysinit.target** is reached when all of the units it depends on are completed. All of those units, mounting filesystems, setting up swap files, starting udev, setting the random generator seed, initiating low-level services, and setting up cryptographic services (if one or more filesystems are encrypted), must be completed but, within the **sysinit.target**, those tasks can be performed in parallel.
 
 The **sysinit.target** starts up all of the low-level services and units required for the system to be marginally functional and that are required to enable moving onto the **basic.target**.
-sysinit.target **和basic.target **目标可以视为启动过程中的检查点。尽管systemd的设计目标之一是并行启动系统服务，但是必须先启动某些服务和功能目标，然后才能启动其他服务和目标。在满足该检查点所需的所有服务和目标之前，无法通过这些检查点。
 
-当它依赖的所有单元都完成时，将达到sysinit.target **。所有这些单元，装入文件系统，设置交换文件，启动udev，设置随机生成器种子，启动低级服务以及设置加密服务（如果已加密一个或多个文件系统）都必须完成，但是必须在** sysinit.target **，这些任务可以并行执行。
+**sysinit.target** 和 **basic.target** 目标可以看作启动过程中的检查点。尽管systemd的设计目标之一是并行启动系统服务，但是某些服务和功能目标必须先启动，然后才能启动其他服务和目标。直到该检查点所需的所有服务和目标被满足后才能通过这些检查点。
 
-sysinit.target **将启动系统仅能正常运行所需的所有低层服务和单元，并且这些必需的低端服务和单元必须能够转移到basic.target **上。
+当它依赖的所有单元都完成时，将到达 **sysinit.target**。所有这些单元，挂载文件系统，设置交换文件，启动udev，设置随机数生成器种子，启动低层服务以及配置安全服务（如果一个或多个文件系统是加密的）都必须被完成，但 **sysinit.target** 的这些任务可以并行执行。
+
+**sysinit.target** 将启动系统接近正常运行所需的所有低层服务和单元，以及转移到 **basic.target** 所需的服务和单元。
 
 After the **sysinit.target** is fulfilled, systemd then starts all the units required to fulfill the next target. The basic target provides some additional functionality by starting units that are required for all of the next targets. These include setting up things like paths to various executable directories, communication sockets, and timers.
 
@@ -308,20 +309,21 @@ Finally, the user-level targets, **multi-user.target** or **graphical.target**, 
 The bootup man page also describes and provides maps of the boot into the initial RAM disk and the systemd shutdown process.
 
 systemd also provides a tool that lists dependencies of a complete startup or for a specified unit. A unit is a controllable systemd resource entity that can range from a specific service, such as httpd or sshd, to timers, mounts, sockets, and more. Try the following command and scroll through the results.
-在完成sysinit.target **之后，systemd然后启动实现下一个目标所需的所有单元。基本目标通过启动所有下一个目标所需的单元来提供一些其他功能。其中包括设置诸如各种可执行目录的路径，通信套接字和计时器之类的内容。
 
-最后，可以初始化用户级目标** multi-user.target **或** graphical.target **。必须满足** multi-user.target **才能满足图形目标的依赖关系。图3中带下划线的目标是通常的启动目标。当达到这些目标之一时，启动已完成。如果默认为“ multi-user.target”，那么您应该在控制台上看到文本模式登录。如果** graphical.target **是默认设置，则应该看到图形登录名。您看到的特定GUI登录屏幕取决于您的默认显示管理器。
+在完成 **sysinit.target** 目标之后，systemd会启动实现下一个目标所需的所有单元。基本目标通过启动所有下一目标所需的单元来提供一些其他功能。包括设置如PATHs为各种可执行程序的路径，设置通信套接字和计时器之类。
 
-引导手册页还描述并提供了引导到初始RAM磁盘和systemd关机过程的映射。
+最后，用户级目标 **multi-user.target** 或 **graphical.target** 被初始化。要满足图形目标的依赖必须先达到**multi-user.target**。图3中带下划线的目标是通常的启动目标。当达到这些目标之一时，启动就完成了。如果 **multi-user.target** 是默认设置，那么您应该在控制台上看到文本模式的登录界面。如果 **graphical.target** 是默认设置，那么您应该看到图形的登录界面。您看到的特定的GUI登录界面取决于您默认的显示管理器。
 
-systemd还提供了一个工具，该工具列出了完整启动或指定单位的依赖性。单元是可控的systemd资源实体，其范围可以从特定服务（例如httpd或sshd）到计时器，安装，套接字等。尝试以下命令并在结果中滚动。
+引导手册页还描述并提供了引导到初始RAM磁盘和systemd关机过程的地图。
+
+systemd还提供了一个工具，该工具列出了完整启动或指定单元的依赖。单元是可控制的systemd资源实体，其范围从特定服务（例如httpd或sshd）到计时器，挂载，套接字等。尝试以下命令并滚动查看结果。
 
 ```
 `systemctl list-dependencies graphical.target`
 ```
 
 Notice that this fully expands the top-level target units list required to bring the system up to the graphical target run mode. Use the **\--all** option to expand all of the other units as well.
-
+注意，这完全展开了使系统进入图形目标运行模式所需的顶层目标单元列表。 也可以使用 **\-all** 选项来展开所有其他单元。
 
 ```
 `systemctl list-dependencies --all graphical.target`
@@ -331,26 +333,29 @@ You can search for strings such as "target," "slice," and "socket" using the sea
 
 So now, try the following.
 
+您可以使用 **less** 命令来搜索诸如“target”，“slice”和“ socket”之类的字符串。
+
+现在尝试下面的方法。
 
 ```
 `systemctl list-dependencies multi-user.target`
 ```
 
-and
+and 和
 
 
 ```
 `systemctl list-dependencies rescue.target`
 ```
 
-and
+and 和
 
 
 ```
 `systemctl list-dependencies local-fs.target`
 ```
 
-and
+and 和
 
 
 ```
@@ -360,16 +365,11 @@ and
 `systemctl list-dependencies graphic.target`
 ```
 
-注意，这完全扩展了使系统进入图形目标运行模式所需的顶级目标单元列表。 也可以使用** \-all **选项来扩展所有其他单位。
 
 
 ```
 `systemctl list-dependencies --all graphic.target`
 ```
-
-您可以使用** less **命令的搜索工具来搜索诸如“ target”，“ slice”和“ socket”之类的字符串。
-
-因此，现在尝试以下方法。
 
 
 ```
@@ -398,22 +398,23 @@ and
 ```
 
 This tool helps me visualize the specifics of the startup dependencies for the host I am working on. Go ahead and spend some time exploring the startup tree for one or more of your Linux hosts. But be careful because the systemctl man page contains this note:
+这个工具帮助我可视化我正用的主机的启动依赖细节。继续花一些时间探索一个或多个Linux主机的启动树。但是要小心，因为systemctl手册页包含以下注释：
 
 > _"Note that this command only lists units currently loaded into memory by the service manager. In particular, this command is not suitable to get a comprehensive list at all reverse dependencies on a specific unit, as it won't list the dependencies declared by units currently not loaded."_
-这个工具可以帮助我可视化我正在处理的主机的启动依赖项的细节。 继续并花一些时间探索一个或多个Linux主机的启动树。 但是要小心，因为systemctl手册页包含以下注释：
 
-> _“，请注意，此命令仅列出服务管理器当前加载到内存中的单元。特别地，此命令不适用于获取特定单元上所有反向依赖项的全面列表，因为它不会列出已声明的依赖项 按当前未加载的单位。” _
+> _“请注意，此命令仅列出当前被服务管理器加载到内存的单元。尤其是，此命令根本不适合用于获取特定单元的全部反向依赖列表，因为它不会列出被单元声明了但是未加载的依赖项。” _
 
-### Final thoughts
+### Final thoughts 结尾语
 
 Even before getting very deep into systemd, it's obvious that it is both powerful and complex. It is also apparent that systemd is not a single, huge, monolithic, and unknowable binary file. Rather, it is composed of a number of smaller components and subcommands that are designed to perform specific tasks.
 
 The next article in this series will explore systemd startup in more detail, as well as systemd configuration files, changing the default target, and how to create a simple service unit.
-甚至在深入研究systemd之前，很明显它既强大又复杂。 显然，systemd不是单个，巨大，整体且不可知的二进制文件。 而是由许多较小的组件和旨在执行特定任务的子命令组成。
 
-本系列的下一篇文章将更详细地探讨systemd启动，以及systemd配置文件，更改默认目标以及如何创建简单服务单元。
+即使在深入研究systemd之前，很明显能看出它既强大又复杂。显然，systemd不是单一，庞大，整体且不可知的二进制文件。相反，它是由许多较小的组件和旨在执行特定任务的子命令组成。
 
-### Resources
+本系列的下一篇文章将更详细地探讨systemd的启动，以及systemd的配置文件，更改默认的目标以及如何创建简单服务单元。
+
+### Resources 资源
 
 There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup.
 
@@ -422,18 +423,17 @@ There is a great deal of information about systemd available on the internet, bu
   * For detailed technical information about systemd and the reasons for creating it, check out [Freedesktop.org][9]'s [description of systemd][10].
   * [Linux.com][11]'s "More systemd fun" offers more advanced systemd [information and tips][12].
 
-互联网上有大量有关systemd的信息，但是很多信息简明扼要，晦涩甚至是误导。除了本文提到的资源外，以下网页还提供了有关systemd启动的更详细和可靠的信息。
+互联网上有大量关于systemd的信息，但是很多都简短，晦涩甚至是误导。除了本文提到的资源外，以下网页还提供了有关systemd启动的更详细和可靠的信息。
 
-  * Fedora项目有一个很好的，实用的[guide] [7] [to systemd] [7]。它具有使用systemd配置，管理和维护Fedora计算机所需的几乎所有知识。
-  * Fedora项目还有一个不错的[备忘单] [8]，可以将旧的SystemV命令与可比的systemd命令交叉引用。
-  *有关systemd及其创建原因的详细技术信息，请查看[Freedesktop.org] [9]的[systemd描述] [10]。
-  * [Linux.com] [11]的“更多系统乐趣”提供了更高级的systemd [信息和提示] [12]。
-
+  * Fedora项目有一个很好的，实用的[guide][7][to systemd][7]。它有你需要知道的通过systemd来配置，管理和维护Fedora主机所需的几乎所有知识。
+  * Fedora项目还有一个不错的[cheat sheet][8]，将老的SystemV命令与对比的systemd命令相互关联。
+  * 有关systemd及其创建原因的详细技术信息，请查看[Freedesktop.org][9]的[systemd描述][10]。
+  * [Linux.com][11]的“systemd的更多乐趣”提供了更高级的systemd [信息和技巧][12]。
 
 
 
 There is also a series of deeply technical articles for Linux sysadmins by Lennart Poettering, the designer and primary developer of systemd. These articles were written between April 2010 and September 2011, but they are just as relevant now as they were then. Much of everything else good that has been written about systemd and its ecosystem is based on these papers.
-还有systemd的设计师和主要开发者Lennart Poettering撰写的一系列针对Linux sysadmin的技术性文章。这些文章是在2010年4月至2011年9月之间撰写的，但它们现在和那时一样具有相关性。关于systemd及其生态系统的许多其他优点都基于这些论文。
+还有systemd的设计师和主要开发者Lennart Poettering撰写的针对Linux系统管理员的一系列技术文章。这些文章是在2010年4月至2011年9月之间撰写的，但它们现在和那时一样有用。关于systemd及其生态的其他许多好文都基于这些论文。
 
   * [Rethinking PID 1][13]
   * [systemd for Administrators, Part I][14]
@@ -451,14 +451,14 @@ There is also a series of deeply technical articles for Linux sysadmins by Lenna
 
 
 Alison Chiaken, a Linux kernel and systems programmer at Mentor Graphics, offers a preview of her...
-Mentor Graphics的Linux内核和系统程序员Alison Chiaken预览了她的...
+Mentor Graphics的Linux内核和系统程序员Alison Chiaken预览了此文...
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/20/4/systemd
 
 作者：[David Both][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[messon007](https://github.com/messon007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
