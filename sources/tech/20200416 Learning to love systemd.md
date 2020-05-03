@@ -23,7 +23,7 @@ Like most sysadmins, when I think of the init program and SystemV, I think of Li
 This series of articles, which is based in part on excerpts from my three-volume Linux training course, [_Using and administering Linux: zero to sysadmin_][2], explores systemd's functions both at startup and beginning after startup finishes.
 systemd(是的，全小写，即使在句子开头也是小写)，是init和SystemV init脚本的现代替代者。它还有更多功能。
 
-当我想到init和SystemV时，像大多数系统管理员一样，我想到的是Linux的启动和关闭，而没有太多其他的，例如在服务启动和运行后对其进行管理。像init一样，systemd是所有进程的源头，它负责使Linux主机启动到可以做生产性任务的状态。 systemd设定的一些功能比旧的init要广泛得多，它要管理正在运行的Linux主机的许多方面，包括挂载文件系统，管理硬件，处理定时器以及启动和管理生产性主机所需的系统服务。
+当我想到init和SystemV时，像大多数系统管理员一样，我想到的是Linux的启动和关闭，而没有太多其他的，例如在服务启动和运行后对其进行管理。像init一样，systemd是所有进程的源头，它负责使Linux主机启动到可以做生产性任务的状态。 systemd设定的一些功能比老的init要广泛得多，它要管理正在运行的Linux主机的许多方面，包括挂载文件系统，管理硬件，处理定时器以及启动和管理生产性主机所需的系统服务。
 
 本系列文章是基于我的部分三期Linux培训课程[_使用和管理Linux：从零开始进行学习系统管理_][2]的摘录，探讨了systemd在启动和启动完成后的功能。 
 
@@ -36,45 +36,47 @@ The complete process that takes a Linux host from an off state to a running stat
   * **Linux startup:** Where systemd prepares the host for productive work
 
 Linux主机从关机状态到运行状态的完整启动过程很复杂，但它是开放的并且是可知的。在详细介绍之前，我将简要介绍一下从主机硬件被上电到系统准备好用户登录(的过程)。大多数时候，“启动过程”被作为单个概念来讨论，但这是不准确的。实际上，完整的引导和启动过程包含三个主要部分：
+
    * **硬件引导** 初始化系统硬件
    * **Linux引导:** 加载Linux内核和systemd
    * **Linux启动:** systemd启动, 为生产工作做准备
-   -------------------Here-------------
+   
 
 The Linux startup sequence begins after the kernel has loaded either init or systemd, depending upon whether the distribution uses the old or new startup, respectively. The init and systemd programs start and manage all the other processes and are both known as the "mother of all processes" on their respective systems.
 
 It is important to separate the hardware boot from the Linux boot from the Linux startup and to explicitly define the demarcation points between them. Understanding these differences and what part each plays in getting a Linux system to a state where it can be productive makes it possible to manage these processes and better determine where a problem is occurring during what most people refer to as "boot."
 
 The startup process follows the three-step boot process and brings the Linux computer up to an operational state in which it is usable for productive work. The startup process begins when the kernel transfers control of the host to systemd.
-Linux启动序列在内核加载init或systemd之后开始，这取决于发行版分别使用旧启动还是新启动。 init和systemd程序启动和管理所有其他进程，并且在各自的系统上都被称为“所有进程之母”。
+Linux启动阶段在内核加载了init或systemd(取决于具体发行版使用的是旧的方式还是还是新的方式)之后开始。init和systemd程序启动并管理所有其他进程，他们在各自的系统上都被称为“所有进程之母”。
 
-重要的是将硬件引导与Linux引导与Linux引导分开，并明确定义它们之间的分界点。 了解这些差异以及使Linux系统达到可以生产的状态所起的作用，可以管理这些进程并更好地确定大多数人称为“引导”的问题出在哪里。
+将硬件引导与Linux引导及Linux启动区分开，并明确定义它们之间的分界点是很重要的。理解他们的差异以及他们每一个在使Linux系统进入生产准备状态所起的作用，才能够管理这些进程并更好地确定大部分人所谓的“启动”问题出在哪里。
 
-启动过程遵循三步引导过程，使Linux计算机进入可用于生产性工作的操作状态。 当内核将主机的控制权转移到systemd时，启动过程开始。
+启动过程按照三步引导流程使Linux计算机进入可进行生产工作的状态。当内核将主机的控制权转移到systemd时，启动环节开始。
 
-### systemd controversy
+### systemd controversy systemd之争
 
 systemd can evoke a wide range of reactions from sysadmins and others responsible for keeping Linux systems up and running. The fact that systemd is taking over so many tasks in many Linux systems has engendered pushback and discord among certain groups of developers and sysadmins.
 
 SystemV and systemd are two different methods of performing the Linux startup sequence. SystemV start scripts and the init program are the old methods, and systemd using targets is the new method. Although most modern Linux distributions use the newer systemd for startup, shutdown, and process management, there are still some that do not. One reason is that some distribution maintainers and some sysadmins prefer the older SystemV method over the newer systemd.
 
 I think both have advantages.
-systemd可以引起sysadmin以及负责保持Linux系统正常运行的其他人员的广泛反应。 systemd在许多Linux系统中接管了许多任务，这一事实在某些开发人员和sysadmins组之间引起了压抑和矛盾。
 
-SystemV和systemd是执行Linux启动序列的两种不同方法。 SystemV启动脚本和init程序是旧方法，而使用target的systemd是新方法。 尽管大多数现代Linux发行版都使用较新的systemd进行启动，关闭和进程管理，但仍有一些不是。 原因之一是某些发行版维护者和某些系统管理员喜欢较旧的SystemV方法，而不是较新的systemd。
+systemd引起了系统管理员和其他负责维护Linux系统正常运行人员的广泛回应。systemd正在许多Linux系统中接管大量任务的事实造成了某些开发人群和系统管理员群组之间的阻挠和争议。
 
-我认为两者都有优势。
+SystemV和systemd是执行Linux启动环节的两种不同的方法。 SystemV启动脚本和init程序是老的方法，而使用目标(targets)的systemd是新方法。尽管大多数现代Linux发行版都使用较新的systemd进行启动，关机和进程管理，但仍有一些发行版未采用。原因之一是某些发行版维护者和系统管理员喜欢老的SystemV方法，而不是新的systemd。
 
-#### Why I prefer SystemV
+我认为两者都有其优势。
+
+#### Why I prefer SystemV 为什么我更喜欢SystemV
 
 I prefer SystemV because it is more open. Startup is accomplished using Bash scripts. After the kernel starts the init program, which is a compiled binary, init launches the **rc.sysinit** script, which performs many system initialization tasks. After **rc.sysinit** completes, init launches the **/etc/rc.d/rc** script, which in turn starts the various services defined by the SystemV start scripts in the **/etc/rc.d/rcX.d**, where "X" is the number of the runlevel being started.
 
 Except for the init program itself, all these programs are open and easily knowable scripts. It is possible to read through these scripts and learn exactly what is taking place during the entire startup process, but I don't think many sysadmins actually do that. Each start script is numbered so that it starts its intended service in a specific sequence. Services are started serially, and only one service starts at a time.
 
 systemd, developed by Red Hat's Lennart Poettering and Kay Sievers, is a complex system of large, compiled binary executables that are not understandable without access to the source code. It is open source, so "access to the source code" isn't hard, just less convenient. systemd appears to represent a significant refutation of multiple tenets of the Linux philosophy. As a binary, systemd is not directly open for the sysadmin to view or make easy changes. systemd tries to do everything, such as managing running services, while providing significantly more status information than SystemV. It also manages hardware, processes, and groups of processes, filesystem mounts, and much more. systemd is present in almost every aspect of the modern Linux host, making it the one-stop tool for system management. All of this is a clear violation of the tenets that programs should be small and that each program should do one thing and do it well.
-我更喜欢SystemV，因为它更开放。使用Bash脚本完成启动。内核启动init程序（已编译的二进制文件）后，init启动** rc.sysinit **脚本，该脚本执行许多系统初始化任务。 ** rc.sysinit **完成后，init启动** / etc / rc.d / rc **脚本，该脚本反过来启动** / etc / rc.d中由SystemV启动脚本定义的各种服务。 /rcX.d**，其中“ X”是正在启动的运行级别的编号。
+我更喜欢SystemV，因为它更开放。使用Bash脚本来完成启动。内核启动init程序（编译后的二进制）后，init启动 **rc.sysinit** 脚本，该脚本执行许多系统初始化任务。 **rc.sysinit** 执行完后，init启动 **/etc/rc.d/rc** 脚本，该脚本依次启动 **/etc/rc.d/rcX.d** 中由SystemV启动脚本定义的各种服务。 其中“ X”是待启动的运行级别号。
 
-除了init程序本身外，所有这些程序都是开放的且易于理解的脚本。可以通读这些脚本并确切了解整个启动过程中发生的事情，但是我认为没有很多系统管理员可以这样做。每个启动脚本都有编号，以便按特定顺序启动其预期的服务。服务是顺序启动的，一次只能启动一个服务。
+除了init程序本身外，所有这些程序都是开放且易于理解的脚本。可以通读这些脚本并确切了解整个启动过程中发生的事情，但是我认为没有很多系统管理员可以这样做。每个启动脚本都有编号，以便按特定顺序启动其预期的服务。服务是顺序启动的，一次只能启动一个服务。
 
 由Red Hat的Lennart Poettering和Kay Sievers开发的systemd是一个复杂的系统，包含大型，已编译的二进制可执行文件，如果不访问源代码就无法理解。它是开源的，因此“访问源代码”并不难，只是不太方便。 systemd似乎代表了对Linux哲学多个原则的重大驳斥。作为二进制文件，systemd不会直接打开供sysadmin查看或进行简单更改。 systemd尝试做所有事情，例如管理正在运行的服务，同时提供比SystemV显着更多的状态信息。它还管理硬件，进程，进程组，文件系统挂载等。 systemd几乎存在于现代Linux主机的各个方面，使其成为系统管理的一站式工具。所有这些都明显违反了原则，即程序应该小，每个程序都应该做一件事并且做好。
 
