@@ -37,7 +37,7 @@ The complete process that takes a Linux host from an off state to a running stat
 
 Linux主机从关机状态到运行状态的完整启动过程很复杂，但它是开放的并且是可知的。在详细介绍之前，我将简要介绍一下从主机硬件被上电到系统准备好用户登录(的过程)。大多数时候，“启动过程”被作为单个概念来讨论，但这是不准确的。实际上，完整的引导和启动过程包含三个主要部分：
 
-   * **硬件引导** 初始化系统硬件
+   * **硬件引导:** 初始化系统硬件
    * **Linux引导:** 加载Linux内核和systemd
    * **Linux启动:** systemd启动, 为生产工作做准备
    
@@ -133,7 +133,7 @@ In 2013, Poettering wrote a long blog post in which he debunks the [myths about 
 
 如果您对Linus不太了解，我可以告诉您，如果他不喜欢某事，那么他非常直率，坦率，并且非常清楚这种不喜欢。他解决自己对事物不满的方式已经被社会更好地接受了。
 
-2013年，Poettering写了一篇很长的博客，其中他在揭穿[systemd的神话][5]的同时揭露了创建它的一些原因。这是一本很好的读物，我强烈建议您阅读。
+2013年，Poettering写了一篇很长的博客，其中他在揭穿[systemd的神话][5]的同时透露了创建它的一些原因。这是一本很好的读物，我强烈建议您阅读。
 
 ### systemd tasks systemd任务
 
@@ -155,46 +155,47 @@ Depending upon the options used during the compile process (which are not consid
   
 根据编译过程中使用的选项（不在本系列中介绍），systemd可以有多达69个二进制可执行文件用于执行任务，其中包括：
 
-  * systemd程序以PID 1运行，并提供尽可能多的并行服务的系统启动，其副作用是，可以加快总体启动时间。它还管理关机顺序。
-  * systemctl程序提供了用于服务管理的用户界面。
-  *提供对SystemV和LSB启动脚本的支持，以实现向后兼容。
-  *服务管理和报告提供了比SystemV更多的服务状态数据。
-  *它包括用于基本系统配置的工具，例如主机名，日期，语言环境，已登录用户的列表，正在运行的容器和虚拟机，系统帐户，运行时目录和设置，用于管理简单网络配置的守护程序，网络时间同步，日志记录转发和名称解析。
-  *提供套接字管理。
-  * systemd计时器提供类似cron的高级功能，包括在相对于系统启动，systemd启动，计时器的最后一次启动等时间运行脚本。
-  *它提供了一种工具来分析计时器规格中使用的日期和时间。
-  *具有分层意识的文件系统的挂载和卸载可以更安全地级联已挂载的文件系统。
-  *它可以积极创建和管理临时文件，包括删除文件。
-  * D-Bus的接口可在插入或卸下设备时运行脚本。这允许将所有设备（无论是否可插拔）都视为即插即用，从而大大简化了设备处理。
-  *它的分析启动顺序的工具可用于查找花费时间最多的服务。
-  *它包括用于存储系统日志消息的日志以及用于管理日志的工具。
+  * systemd程序以1号进程(PID 1)运行，并提供使尽可能多服务并行启动的系统启动能力，它额外加快了总体启动时间。它还管理关机顺序。
+  * systemctl程序提供了服务管理的用户接口。
+  * 支持SystemV和LSB启动脚本，以便向后兼容。
+  * 服务管理和报告提供了比SystemV更多的服务状态数据。
+  * 提供基本的系统配置工具，例如主机名，日期，语言环境，已登录用户的列表，正在运行的容器和虚拟机，系统帐户，运行时目录和设置；用于简易网络配置，网络时间同步，日志转发和名称解析的守护程序。
+  * 提供套接字管理。
+  * systemd定时器提供类似cron的高级功能，包括在相对于系统启动，systemd启动，定时器上次启动时刻的某个时间点运行脚本。
+  * 提供了一个工具来分析定时器规格中使用的日期和时间。
+  * 能感知层次的文件系统挂载和卸载可以更安全地级联挂载的文件系统。
+  * 允许主动的创建和管理临时文件，包括删除文件。
+  * D-Bus的接口提供在插入或移除设备时运行脚本的能力。这允许将所有设备（无论是否可插拔）都被视为即插即用，从而大大简化了设备的处理。
+  * 分析启动顺序的工具可用于查找耗时最多的服务。
+  * 包括用于存储系统消息的日志以及管理日志的工具。
 
 
-### Architecture
+### Architecture 架构
 
 Those tasks and more are supported by a number of daemons, control programs, and configuration files. Figure 1 shows many of the components that belong to systemd. This is a simplified diagram designed to provide a high-level overview, so it does not include all of the individual programs or files. Nor does it provide any insight into data flow, which is so complex that it would be a useless exercise in the context of this series of articles.
 
 ![systemd architecture][6]
 
 A full exposition of systemd would take a book on its own. You do not need to understand the details of how the systemd components in Figure 1 fit together; it's enough to know about the programs and components that enable managing various Linux services and deal with log files and journals. But it's clear that systemd is not the monolithic monstrosity it is purported to be by some of its critics.
-这些任务和更多任务由许多守护程序，控制程序和配置文件支持。 图1显示了许多属于systemd的组件。 这是一个简化的图，旨在提供高级概述，因此它不包括所有单个程序或文件。 它也无法提供对数据流的任何见解，因为数据流是如此复杂，以至于在本系列文章的上下文中这将是无用的练习。
+这些和更多的任务通过许多守护程序，控制程序和配置文件来支持。图1显示了许多属于systemd的组件。这是一个简化的图，旨在提供概要描述，因此它并不包括所有独立的程序或文件。它也不提供数据流的视角，数据流是如此复杂，因此在本系列文章的背景下没用。
 
 ！[系统架构] [6]
 
-完整的systemd展览将自己拿一本书。 您不需要了解图1中的systemd组件如何组合在一起的详细信息。 足以了解可以管理各种Linux服务以及处理日志文件和日志的程序和组件。 但是很明显，systemd并不是它的某些批评家所声称的那样的庞然大物。
+完整的systemd讲解就需要一本书。您不需要了解图1中的systemd组件是如何组合在一起的细节。了解支持各种Linux服务管理以及日志文件和日志处理的程序和组件就够了。 但是很明显，systemd并不是某些批评者所说的那样的庞然大物。
 
-### systemd as PID 1
+### systemd as PID 1 作为1号进程的systemd
 
 systemd is PID 1. Some of its functions, which are far more extensive than the old SystemV3 init program, are to manage many aspects of a running Linux host, including mounting filesystems and starting and managing system services required to have a productive Linux host. Any of systemd's tasks that are not related to the startup sequence are outside the scope of this article (but some will be explored later in this series).
 
 First, systemd mounts the filesystems defined by **/etc/fstab**, including any swap files or partitions. At this point, it can access the configuration files located in **/etc**, including its own. It uses its configuration link, **/etc/systemd/system/default.target**, to determine which state or target it should boot the host into. The **default.target** file is a symbolic link to the true target file. For a desktop workstation, this is typically going to be the **graphical.target**, which is equivalent to runlevel 5 in SystemV. For a server, the default is more likely to be the **multi-user.target**, which is like runlevel 3 in SystemV. The **emergency.target** is similar to single-user mode. Targets and services are systemd units.
 
 The table below (Figure 2) compares the systemd targets with the old SystemV startup runlevels. systemd provides the systemd target aliases for backward compatibility. The target aliases allow scripts—and many sysadmins—to use SystemV commands like **init 3** to change runlevels. Of course, the SystemV commands are forwarded to systemd for interpretation and execution.
-systemd是PID1。它的某些功能（比旧的SystemV3 init程序要广泛得多）用于管理正在运行的Linux主机的许多方面，包括挂载文件系统以及启动和管理生产Linux主机所需的系统服务。与启动顺序无关的任何systemd任务都不在本文讨论范围之内（但本系列后面将探讨其中的一些任务）。
 
-首先，systemd挂载** / etc / fstab **定义的文件系统，包括所有交换文件或分区。此时，它可以访问位于** / etc **中的配置文件，包括它自己的配置文件。它使用其配置链接** / etc / systemd / system / default.target **来确定将主机引导至哪个状态或目标。 ** default.target **文件是指向真实目标文件的符号链接。对于台式机工作站，通常是** graphical.target **，它等效于SystemV中的运行级别5。对于服务器，默认值更可能是** multi-user.target **，类似于SystemV中的运行级别3。 ** emergency.target **类似于单用户模式。目标和服务是系统单位。
+systemd是1号进程(PID 1)。它的一些功能(比老的SystemV3 init要广泛得多)用于管理正在运行的Linux主机的许多方面，包括挂载文件系统以及启动和管理Linux生产主机所需的系统服务。与启动顺序无关的任何systemd任务都不在本文讨论范围之内（但本系列后面的一些文章将探讨其中的一些任务）。
 
-下表（图2）将systemd目标与旧的SystemV启动运行级别进行了比较。 systemd提供systemd目标别名以实现向后兼容。目标别名允许脚本（以及许多系统管理员）使用SystemV命令（如** init 3 **）更改运行级别。当然，SystemV命令将转发给systemd进行解释和执行。
+首先，systemd挂载 **/etc/fstab** 所定义的文件系统，包括所有交换文件或分区。此时，它可以访问位于 **/etc** 中的配置文件，包括它自己的配置文件。它使用其配置链接 **/etc/systemd/system/default.target** 来确定将主机引导至哪个状态或目标。 **default.target** 文件是指向真实目标文件的符号链接。对于桌面工作站，通常是 **graphical.target**，它相当于SystemV中的运行级别5。对于服务器，默认值更可能是 **multi-user.target**，相当于SystemV中的运行级别3。 **emergency.target** 类似于单用户模式。目标(targets)和服务(services)是systemd的单位。
+
+下表（图2）将systemd目标与老的SystemV启动运行级别进行了比较。systemd提供systemd目标别名以便向后兼容。目标别名允许脚本（以及许多系统管理员）使用SystemV命令（如**init 3**）更改运行级别。当然，SystemV命令被转发给systemd进行解释和执行。
 
 **systemd targets** | **SystemV runlevel** | **target aliases** | **Description**
 ---|---|---|---
@@ -208,6 +209,7 @@ emergency.target | S |  | Single-user mode—no services are running; filesystem
 halt.target |  |  | Halts the system without powering it down
 reboot.target | 6 | runlevel6.target | Reboot
 poweroff.target | 0 | runlevel0.target | Halts the system and turns the power off
+
 **系统目标** | ** SystemV运行级别** | **目标别名** | **描述**
 --- | --- | ---- |-
 default.target | | |此目标始终使用指向“多用户目标”或“图形目标”的符号链接进行别名。 systemd始终使用** default.target **来启动系统。 ** default.target **绝不应别名为halt.target **，poweroff.target **或reboot.target **。
