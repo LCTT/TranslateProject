@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "lxbwolf"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "Mid-stack inlining in Go"
-[#]: via: "https://dave.cheney.net/2020/05/02/mid-stack-inlining-in-go"
-[#]: author: "Dave Cheney https://dave.cheney.net/author/davecheney"
+[#]: collector: (lujun9972)
+[#]: translator: (lxbwolf)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Mid-stack inlining in Go)
+[#]: via: (https://dave.cheney.net/2020/05/02/mid-stack-inlining-in-go)
+[#]: author: (Dave Cheney https://dave.cheney.net/author/davecheney)
 
 Go 中对栈中函数进行内联
 ======
@@ -184,7 +184,7 @@ via: https://dave.cheney.net/2020/05/02/mid-stack-inlining-in-go
 
 作者：[Dave Cheney][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -193,19 +193,19 @@ via: https://dave.cheney.net/2020/05/02/mid-stack-inlining-in-go
 [b]: https://github.com/lujun9972
 [1]: https://dave.cheney.net/2020/04/25/inlining-optimisations-in-go
 [2]: https://medium.com/@joshsaintjacque/small-functions-considered-awesome-c95b3fd1812f
-[3]: tmp.FyRthF1bbF#easy-footnote-bottom-1-4076 "The budget the Go compiler applies to each function when considering if it is eligible for inlining changes release to release."
-[4]: tmp.FyRthF1bbF#easy-footnote-bottom-2-4076 "Keep in mind that the compiler authors warn that “<a href="https://github.com/golang/go/blob/be08e10b3bc07f3a4e7b27f44d53d582e15fd6c7/src/cmd/compile/internal/gc/inl.go#L11">Additional levels of inlining (beyond -l) may be buggy and are not supported”</a>. Caveat emptor."
+[3]: tmp.FyRthF1bbF#easy-footnote-bottom-1-4076 (The budget the Go compiler applies to each function when considering if it is eligible for inlining changes release to release.)
+[4]: tmp.FyRthF1bbF#easy-footnote-bottom-2-4076 (Keep in mind that the compiler authors warn that “<a href="https://github.com/golang/go/blob/be08e10b3bc07f3a4e7b27f44d53d582e15fd6c7/src/cmd/compile/internal/gc/inl.go#L11">Additional levels of inlining (beyond -l) may be buggy and are not supported”</a>. Caveat emptor.)
 [5]: https://docs.google.com/presentation/d/1Wcblp3jpfeKwA0Y4FOmj63PW52M_qmNqlQkNaLj0P5o/edit#slide=id.p
-[6]: tmp.FyRthF1bbF#easy-footnote-bottom-3-4076 "The compiler is powerful enough that it can inline complex functions like <code>strconv.ParseInt</code>. As a experiment, try removing the <code>//go:noinline</code> annotation and observe the result with <code>-gcflags=-m=2</code>."
+[6]: tmp.FyRthF1bbF#easy-footnote-bottom-3-4076 (The compiler is powerful enough that it can inline complex functions like <code>strconv.ParseInt</code>. As a experiment, try removing the <code>//go:noinline</code> annotation and observe the result with <code>-gcflags=-m=2</code>.)
 [7]: https://go-review.googlesource.com/c/go/+/148959
-[8]: tmp.FyRthF1bbF#easy-footnote-bottom-4-4076 "The expression <code>race.Enable</code> is a constant controlled by the <code>-race</code> flag passed to the <code>go</code> tool. It is <code>false</code> for normal builds which allows the compiler to elide those code paths entirely."
+[8]: tmp.FyRthF1bbF#easy-footnote-bottom-4-4076 (The expression <code>race.Enable</code> is a constant controlled by the <code>-race</code> flag passed to the <code>go</code> tool. It is <code>false</code> for normal builds which allows the compiler to elide those code paths entirely.)
 [9]: https://dave.cheney.net/2019/08/20/go-compiler-intrinsics
 [10]: tmp.FyRthF1bbF#easy-footnote-1-4076
 [11]: https://github.com/golang/go/blob/be08e10b3bc07f3a4e7b27f44d53d582e15fd6c7/src/cmd/compile/internal/gc/inl.go#L11
 [12]: tmp.FyRthF1bbF#easy-footnote-2-4076
 [13]: tmp.FyRthF1bbF#easy-footnote-3-4076
 [14]: tmp.FyRthF1bbF#easy-footnote-4-4076
-[15]: https://dave.cheney.net/2020/04/25/inlining-optimisations-in-go "Inlining optimisations in Go"
-[16]: https://dave.cheney.net/2013/06/02/why-is-a-goroutines-stack-infinite "Why is a Goroutine’s stack infinite ?"
-[17]: https://dave.cheney.net/2016/06/12/stack-traces-and-the-errors-package "Stack traces and the errors package"
-[18]: https://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful "What is the zero value, and why is it useful?"
+[15]: https://dave.cheney.net/2020/04/25/inlining-optimisations-in-go (Inlining optimisations in Go)
+[16]: https://dave.cheney.net/2013/06/02/why-is-a-goroutines-stack-infinite (Why is a Goroutine’s stack infinite ?)
+[17]: https://dave.cheney.net/2016/06/12/stack-traces-and-the-errors-package (Stack traces and the errors package)
+[18]: https://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful (What is the zero value, and why is it useful?)
