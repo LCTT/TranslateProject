@@ -67,33 +67,35 @@ SystemV和systemd是执行Linux启动环节的两种不同的方法。 SystemV�
 
 我认为两者都有其优势。
 
-#### Why I prefer SystemV 为什么我更喜欢SystemV
+#### Why I prefer SystemV 为何我更喜欢SystemV
 
 I prefer SystemV because it is more open. Startup is accomplished using Bash scripts. After the kernel starts the init program, which is a compiled binary, init launches the **rc.sysinit** script, which performs many system initialization tasks. After **rc.sysinit** completes, init launches the **/etc/rc.d/rc** script, which in turn starts the various services defined by the SystemV start scripts in the **/etc/rc.d/rcX.d**, where "X" is the number of the runlevel being started.
 
 Except for the init program itself, all these programs are open and easily knowable scripts. It is possible to read through these scripts and learn exactly what is taking place during the entire startup process, but I don't think many sysadmins actually do that. Each start script is numbered so that it starts its intended service in a specific sequence. Services are started serially, and only one service starts at a time.
 
 systemd, developed by Red Hat's Lennart Poettering and Kay Sievers, is a complex system of large, compiled binary executables that are not understandable without access to the source code. It is open source, so "access to the source code" isn't hard, just less convenient. systemd appears to represent a significant refutation of multiple tenets of the Linux philosophy. As a binary, systemd is not directly open for the sysadmin to view or make easy changes. systemd tries to do everything, such as managing running services, while providing significantly more status information than SystemV. It also manages hardware, processes, and groups of processes, filesystem mounts, and much more. systemd is present in almost every aspect of the modern Linux host, making it the one-stop tool for system management. All of this is a clear violation of the tenets that programs should be small and that each program should do one thing and do it well.
+
 我更喜欢SystemV，因为它更开放。使用Bash脚本来完成启动。内核启动init程序（编译后的二进制）后，init启动 **rc.sysinit** 脚本，该脚本执行许多系统初始化任务。 **rc.sysinit** 执行完后，init启动 **/etc/rc.d/rc** 脚本，该脚本依次启动 **/etc/rc.d/rcX.d** 中由SystemV启动脚本定义的各种服务。 其中“ X”是待启动的运行级别号。
 
-除了init程序本身外，所有这些程序都是开放且易于理解的脚本。可以通读这些脚本并确切了解整个启动过程中发生的事情，但是我认为没有很多系统管理员可以这样做。每个启动脚本都有编号，以便按特定顺序启动其预期的服务。服务是顺序启动的，一次只能启动一个服务。
+除了init程序本身之外，所有这些程序都是开放且易于理解的脚本。可以通读这些脚本并确切了解整个启动过程中发生的事情，但是我不认为有太多系统管理员会实际这样做。每个启动脚本都被编了号，以便按特定顺序启动预期的服务。服务是串行启动的，一次只能启动一个服务。
 
-由Red Hat的Lennart Poettering和Kay Sievers开发的systemd是一个复杂的系统，包含大型，已编译的二进制可执行文件，如果不访问源代码就无法理解。它是开源的，因此“访问源代码”并不难，只是不太方便。 systemd似乎代表了对Linux哲学多个原则的重大驳斥。作为二进制文件，systemd不会直接打开供sysadmin查看或进行简单更改。 systemd尝试做所有事情，例如管理正在运行的服务，同时提供比SystemV显着更多的状态信息。它还管理硬件，进程，进程组，文件系统挂载等。 systemd几乎存在于现代Linux主机的各个方面，使其成为系统管理的一站式工具。所有这些都明显违反了原则，即程序应该小，每个程序都应该做一件事并且做好。
+由Red Hat的Lennart Poettering和Kay Sievers开发的systemd是一个由大的已编译的二进制可执行文件构成的复杂系统，不访问其源码就无法理解。它是开源的，因此“访问其源代码”并不难，只是不太方便。systemd似乎表现出对Linux哲学多个原则的重大驳斥。作为二进制文件，systemd无法被直接打开供系统管理员查看或进行简单更改。systemd试图做所有事情，例如管理正在运行的服务，同时提供比SystemV更多的状态信息。它还管理硬件，进程，进程组，文件系统挂载等。 systemd几乎涉足于现代Linux主机的每方面，使它成为系统管理的一站式工具。所有这些都明显违反了"程序应该小且每个程序都应该只做一件事并且做好"的原则。
 
-#### Why I prefer systemd
+#### Why I prefer systemd 为何我更喜欢systemd
 
 I prefer systemd as my startup mechanism because it starts as many services as possible in parallel, depending upon the current stage in the startup process. This speeds the overall startup and gets the host system to a login screen faster than SystemV.
 
 systemd manages almost every aspect of a running Linux system. It can manage running services while providing significantly more status information than SystemV. It also manages hardware, processes and groups of processes, filesystem mounts, and much more. systemd is present in almost every aspect of the modern Linux operating system, making it the one-stop tool for system management. (Does this sound familiar?)
 
 The systemd tools are compiled binaries, but the tool suite is open because all the configuration files are ASCII text files. Startup configuration can be modified through various GUI and command-line tools, as well as adding or modifying various configuration files to suit the needs of the specific local computing environment.
-我更喜欢使用systemd作为启动机制，因为它会根据启动过程的当前阶段并行启动尽可能多的服务。这样可以加快整体启动速度，并使主机系统比SystemV更快地进入登录屏幕。
 
-systemd可以管理正在运行的Linux系统的几乎所有方面。它可以管理正在运行的服务，同时提供比SystemV多得多的状态信息。它还管理硬件，进程和进程组，文件系统挂载等。 systemd几乎存在于现代Linux操作系统的各个方面，使其成为系统管理的一站式工具。 （听起来熟悉吗？）
+我更喜欢用systemd作为启动机制，因为它会根据启动阶段并行地启动尽可能多的服务。这样可以加快整个的启动速度，使得主机系统比SystemV更快地到达登录屏幕。
 
-systemd工具是已编译的二进制文件，但由于所有配置文件均为ASCII文本文件，因此工具套件已打开。可以通过各种GUI和命令行工具以及添加或修改各种配置文件来适应特定本地计算环境的需求来修改启动配置。
+systemd几乎可以管理正在运行的Linux系统的各个方面。它可以管理正在运行的服务，同时提供比SystemV多得多的状态信息。它还管理硬件，进程和进程组，文件系统挂载等。 systemd几乎涉足于现代Linux操作系统的每方面，使其成为系统管理的一站式工具。（听起来熟悉吧？）
 
-#### The real issue
+systemd工具是编译后的二进制文件，但该工具包是开放的，因为所有配置文件都是ASCII文本文件。可以通过各种GUI和命令行工具来修改启动配置，也可以添加或修改各种配置文件来满足特定的本地计算环境的需求。
+
+#### The real issue 真正的问题
 
 Did you think I could not like both startup systems? I do, and I can work with either one.
 
@@ -102,15 +104,16 @@ In my opinion, the real issue and the root cause of most of the controversy betw
 Despite the fact that this choice is made for me, my Linux hosts boot up and work, which is what I usually care the most about. As an end user and even as a sysadmin, my primary concern is whether I can get my work done, work such as writing my books and this article, installing updates, and writing scripts to automate everything. So long as I can do my work, I don't really care about the start sequence used on my distro.
 
 I do care when there is a problem during startup or service management. Regardless of which startup system is used on a host, I know enough to follow the sequence of events to find the failure and fix it.
-您认为我不喜欢两个启动系统吗？我愿意，我可以和任何一个一起工作。
 
-我认为，SystemV和systemd之间大多数争议的真正问题和根本原因在于，在sysadmin级别上没有[没有选择] [3]。各种发行版的开发人员，维护人员和打包人员已经选择了使用SystemV还是systemd，但这是有充分理由的。挖出并替换一个初始化系统，由于其极端的侵入性，会带来很多后果，这些后果很难在发行版设计过程之外解决。
+您认为我不能喜欢两种启动系统吗？我能，我会用它们中的任何一个。
 
-尽管事实上是我自己选择的，但我的Linux主机仍然可以启动并正常工作，这是我通常最关心的问题。作为最终用户，甚至是系统管理员，我主要关心的是我是否可以完成工作，写书和本文，安装更新以及编写脚本来自动完成所有工作。只要我能做我的工作，我就不会真正在意发行版中使用的开始顺序。
+我认为，SystemV和systemd之间大多数争议的真正问题和根本原因在于，系统管理阶段[没有选择权][3]。使用SystemV还是systemd已经由各种发行版的开发人员，维护人员和打包人员选择了(但有充分的理由)。由于init极端的侵入性, 挖出(scooping out)并替换init系统会带来很多影响，发行版设计过程之外(的环节)很难处理这些影响。
 
-在启动或服务管理期间出现问题时，我会在意。无论主机上使用哪种启动系统，我都足够了解事件顺序来查找故障并进行修复。
+尽管该选择实际上是为我而选的，我通常最关心的是我的Linux主机仍然可以启动并正常工作。作为最终用户，甚至是系统管理员，我主要关心的是我是否可以完成我的工作，例如写我的书和这篇文章，安装更新以及编写脚本来自动化所有事情。只要我能做我的工作，我就不会真正在意发行版中使用的启动系统。
 
-#### Replacing SystemV
+在启动或服务管理出现问题时，我会在意。无论主机上使用哪种启动系统，我都足够了解如何沿着事件顺序来查找故障并进行修复。
+
+#### Replacing SystemV 替换SystemV
 
 There have been previous attempts at replacing SystemV with something a bit more modern. For about two releases, Fedora used a thing called Upstart to replace the aging SystemV, but it did not replace init and provided no changes that I noticed. Because Upstart provided no significant changes to the issues surrounding SystemV, efforts in this direction were quickly dropped in favor of systemd.
 
@@ -121,17 +124,18 @@ Despite the fact that most Linux developers agree that replacing the old SystemV
 In case you don't know much about Linus, I can tell you that if he does not like something, he is very outspoken, explicit, and quite clear about that dislike. He has become more socially acceptable in his manner of addressing his dislike about things.
 
 In 2013, Poettering wrote a long blog post in which he debunks the [myths about systemd][5] while providing insight into some of the reasons for creating it. This is a very good read, and I highly recommend it.
-以前曾尝试用更现代的东西替代SystemV。在大约两个版本中，Fedora使用了一个叫做Upstart的东西来替换老化的SystemV，但是它没有替换init并且没有提供我注意到的更改。由于Upstart并未对围绕SystemV的问题进行任何重大更改，因此朝这个方向的努力很快就被Systemd放弃了。
 
-尽管大多数Linux开发人员都同意替换旧的SystemV启动是个好主意，但许多开发人员和sysadmin对此并不喜欢systemd。与其重新讨论人们在systemd中曾经遇到过或曾经遇到过的所有所谓问题，我不带您去看两篇好文章，尽管有些陈旧，但它们涵盖了大多数内容。 Linux内核的创建者Linus Torvalds似乎没有兴趣。在2014年ZDNet的文章_ [Linus Torvalds和Linux系统上的其他人] [4] _中，Linus清楚地表达了他的感受。
+以前曾有过用更现代的东西替代SystemV的尝试。在大约两个版本中，Fedora使用了一个叫作Upstart的东西来替换老化的SystemV，但是它没有替换init并且没有我能感知到的变化。由于Upstart并未对SystemV的问题进行任何重大更改，因此这个方向的努力很快就被systemd放弃了。
 
->“我实际上对systemd本身没有任何特别强烈的意见。我与一些核心开发人员有一些问题，我认为它们在错误和兼容性方面过于轻率，而且我认为某些设计细节是疯狂的（例如，我不喜欢二进制日志，但这只是细节，不是大问题。”
+尽管大部分Linux开发人员都认可替换旧的SystemV启动系统是个好主意，但许多开发人员和系统管理员并不喜欢systemd。与其重新讨论人们在systemd中遇到的或曾经遇到过的所有所谓的问题，不如带您去看两篇好文章，尽管有些陈旧，但它们涵盖了大多数内容。Linux内核的创建者Linus Torvalds对systemd似乎不感兴趣。在2014年ZDNet的文章_[Linus Torvalds和其他人对Linux上的systemd的看法][4]_中，Linus清楚地表达了他的感受。
 
-如果您对Linus不太了解，我可以告诉您，如果他不喜欢某事，那么他非常直率，坦率，并且非常清楚这种不喜欢。在解决自己对事物的不满时，他已在社会上更容易被接受。
+>“实际上我对systemd本身没有任何特别强烈的意见。我对一些核心开发人员有一些意见，我认为它们在对待bugs和兼容性方面过于轻率，而且我认为某些设计细节是疯狂的（例如，我不喜欢二进制日志），但这只是细节，不是大问题。”
 
-2013年，Poettering写了一篇很长的博客文章，他在揭穿[有关systemd的神话] [5]的同时揭露了创建它的一些原因。这是一本很好的读物，我强烈建议您阅读。
+如果您对Linus不太了解，我可以告诉您，如果他不喜欢某事，那么他非常直率，坦率，并且非常清楚这种不喜欢。他解决自己对事物不满的方式已经被社会更好地接受了。
 
-### systemd tasks
+2013年，Poettering写了一篇很长的博客，其中他在揭穿[systemd的神话][5]的同时揭露了创建它的一些原因。这是一本很好的读物，我强烈建议您阅读。
+
+### systemd tasks systemd任务
 
 Depending upon the options used during the compile process (which are not considered in this series), systemd can have as many as 69 binary executables that perform the following tasks, among others:
 
@@ -148,7 +152,8 @@ Depending upon the options used during the compile process (which are not consid
   * An interface to D-Bus provides the ability to run scripts when devices are plugged in or removed. This allows all devices, whether pluggable or not, to be treated as plug-and-play, which considerably simplifies device handling.
   * Its tool to analyze the startup sequence can be used to locate the services that take the most time.
   * It includes journals for storing system log messages and tools for managing the journals.
-根据编译过程中使用的选项（本系列中未介绍的选项），systemd可以具有多达69个二进制可执行文件，这些可执行文件可以执行以下任务，其中包括：
+  
+根据编译过程中使用的选项（不在本系列中介绍），systemd可以有多达69个二进制可执行文件用于执行任务，其中包括：
 
   * systemd程序以PID 1运行，并提供尽可能多的并行服务的系统启动，其副作用是，可以加快总体启动时间。它还管理关机顺序。
   * systemctl程序提供了用于服务管理的用户界面。
