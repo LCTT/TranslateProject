@@ -9,31 +9,17 @@
 
 Learning to love systemd 学会爱上systemd
 ======
-systemd is the mother of all processes, responsible for bringing the
-Linux host up to a state where productive work can be done.
-![Penguin driving a car with a yellow background][1]
 
 systemd是所有进程的源头，负责将Linux主机启动到可以做生产性任务的状态。
 ![Penguin driving a car with a yellow background][1]
 
-systemd—yes, all lower-case, even at the beginning of a sentence—is the modern replacement for init and SystemV init scripts. It is also much more.
-
-Like most sysadmins, when I think of the init program and SystemV, I think of Linux startup and shutdown and not really much else, like managing services once they are up and running. Like init, systemd is the mother of all processes, and it is responsible for bringing the Linux host up to a state in which productive work can be done. Some of the functions assumed by systemd, which is far more extensive than the old init program, are to manage many aspects of a running Linux host, including mounting filesystems, managing hardware, handling timers, and starting and managing the system services that are required to have a productive Linux host.
-
-This series of articles, which is based in part on excerpts from my three-volume Linux training course, [_Using and administering Linux: zero to sysadmin_][2], explores systemd's functions both at startup and beginning after startup finishes.
 systemd(是的，全小写，即使在句子开头也是小写)，是init和SystemV init脚本的现代替代者。它还有更多功能。
 
 当我想到init和SystemV时，像大多数系统管理员一样，我想到的是Linux的启动和关闭，而没有太多其他的，例如在服务启动和运行后对其进行管理。像init一样，systemd是所有进程的源头，它负责使Linux主机启动到可以做生产性任务的状态。 systemd设定的一些功能比老的init要广泛得多，它要管理正在运行的Linux主机的许多方面，包括挂载文件系统，管理硬件，处理定时器以及启动和管理生产性主机所需的系统服务。
 
 本系列文章是基于我的部分三期Linux培训课程[_使用和管理Linux：从零开始进行学习系统管理_][2]的摘录，探讨了systemd在启动和启动完成后的功能。 
 
-### Linux boot Linux启动
-
-The complete process that takes a Linux host from an off state to a running state is complex, but it is open and knowable. Before getting into the details, I'll give a quick overview from when the host hardware is turned on until the system is ready for a user to log in. Most of the time, "the boot process" is discussed as a single entity, but that is not accurate. There are, in fact, three major parts to the full boot and startup process:
-
-  * **Hardware boot:** Initializes the system hardware
-  * **Linux boot:** Loads the Linux kernel and then systemd
-  * **Linux startup:** Where systemd prepares the host for productive work
+### Linux启动
 
 Linux主机从关机状态到运行状态的完整启动过程很复杂，但它是开放的并且是可知的。在详细介绍之前，我将简要介绍一下从主机硬件被上电到系统准备好用户登录(的过程)。大多数时候，“启动过程”被作为单个概念来讨论，但这是不准确的。实际上，完整的引导和启动过程包含三个主要部分：
 
@@ -42,24 +28,13 @@ Linux主机从关机状态到运行状态的完整启动过程很复杂，但它
    * **Linux启动:** systemd启动, 为生产工作做准备
    
 
-The Linux startup sequence begins after the kernel has loaded either init or systemd, depending upon whether the distribution uses the old or new startup, respectively. The init and systemd programs start and manage all the other processes and are both known as the "mother of all processes" on their respective systems.
-
-It is important to separate the hardware boot from the Linux boot from the Linux startup and to explicitly define the demarcation points between them. Understanding these differences and what part each plays in getting a Linux system to a state where it can be productive makes it possible to manage these processes and better determine where a problem is occurring during what most people refer to as "boot."
-
-The startup process follows the three-step boot process and brings the Linux computer up to an operational state in which it is usable for productive work. The startup process begins when the kernel transfers control of the host to systemd.
 Linux启动阶段在内核加载了init或systemd(取决于具体发行版使用的是旧的方式还是还是新的方式)之后开始。init和systemd程序启动并管理所有其他进程，他们在各自的系统上都被称为“所有进程之母”。
 
 将硬件引导与Linux引导及Linux启动区分开，并明确定义它们之间的分界点是很重要的。理解他们的差异以及他们每一个在使Linux系统进入生产准备状态所起的作用，才能够管理这些进程并更好地确定大部分人所谓的“启动”问题出在哪里。
 
 启动过程按照三步引导流程使Linux计算机进入可进行生产工作的状态。当内核将主机的控制权转移到systemd时，启动环节开始。
 
-### systemd controversy systemd之争
-
-systemd can evoke a wide range of reactions from sysadmins and others responsible for keeping Linux systems up and running. The fact that systemd is taking over so many tasks in many Linux systems has engendered pushback and discord among certain groups of developers and sysadmins.
-
-SystemV and systemd are two different methods of performing the Linux startup sequence. SystemV start scripts and the init program are the old methods, and systemd using targets is the new method. Although most modern Linux distributions use the newer systemd for startup, shutdown, and process management, there are still some that do not. One reason is that some distribution maintainers and some sysadmins prefer the older SystemV method over the newer systemd.
-
-I think both have advantages.
+### systemd之争
 
 systemd引起了系统管理员和其他负责维护Linux系统正常运行人员的广泛回应。systemd正在许多Linux系统中接管大量任务的事实造成了某些开发人群和系统管理员群组之间的阻挠和争议。
 
@@ -67,13 +42,7 @@ SystemV和systemd是执行Linux启动环节的两种不同的方法。 SystemV�
 
 我认为两者都有其优势。
 
-#### Why I prefer SystemV 为何我更喜欢SystemV
-
-I prefer SystemV because it is more open. Startup is accomplished using Bash scripts. After the kernel starts the init program, which is a compiled binary, init launches the **rc.sysinit** script, which performs many system initialization tasks. After **rc.sysinit** completes, init launches the **/etc/rc.d/rc** script, which in turn starts the various services defined by the SystemV start scripts in the **/etc/rc.d/rcX.d**, where "X" is the number of the runlevel being started.
-
-Except for the init program itself, all these programs are open and easily knowable scripts. It is possible to read through these scripts and learn exactly what is taking place during the entire startup process, but I don't think many sysadmins actually do that. Each start script is numbered so that it starts its intended service in a specific sequence. Services are started serially, and only one service starts at a time.
-
-systemd, developed by Red Hat's Lennart Poettering and Kay Sievers, is a complex system of large, compiled binary executables that are not understandable without access to the source code. It is open source, so "access to the source code" isn't hard, just less convenient. systemd appears to represent a significant refutation of multiple tenets of the Linux philosophy. As a binary, systemd is not directly open for the sysadmin to view or make easy changes. systemd tries to do everything, such as managing running services, while providing significantly more status information than SystemV. It also manages hardware, processes, and groups of processes, filesystem mounts, and much more. systemd is present in almost every aspect of the modern Linux host, making it the one-stop tool for system management. All of this is a clear violation of the tenets that programs should be small and that each program should do one thing and do it well.
+#### 为何我更喜欢SystemV
 
 我更喜欢SystemV，因为它更开放。使用Bash脚本来完成启动。内核启动init程序（编译后的二进制）后，init启动 **rc.sysinit** 脚本，该脚本执行许多系统初始化任务。 **rc.sysinit** 执行完后，init启动 **/etc/rc.d/rc** 脚本，该脚本依次启动 **/etc/rc.d/rcX.d** 中由SystemV启动脚本定义的各种服务。 其中“ X”是待启动的运行级别号。
 
@@ -81,13 +50,7 @@ systemd, developed by Red Hat's Lennart Poettering and Kay Sievers, is a complex
 
 由Red Hat的Lennart Poettering和Kay Sievers开发的systemd是一个由大的已编译的二进制可执行文件构成的复杂系统，不访问其源码就无法理解。它是开源的，因此“访问其源代码”并不难，只是不太方便。systemd似乎表现出对Linux哲学多个原则的重大驳斥。作为二进制文件，systemd无法被直接打开供系统管理员查看或进行简单更改。systemd试图做所有事情，例如管理正在运行的服务，同时提供比SystemV更多的状态信息。它还管理硬件，进程，进程组，文件系统挂载等。 systemd几乎涉足于现代Linux主机的每方面，使它成为系统管理的一站式工具。所有这些都明显违反了"程序应该小且每个程序都应该只做一件事并且做好"的原则。
 
-#### Why I prefer systemd 为何我更喜欢systemd
-
-I prefer systemd as my startup mechanism because it starts as many services as possible in parallel, depending upon the current stage in the startup process. This speeds the overall startup and gets the host system to a login screen faster than SystemV.
-
-systemd manages almost every aspect of a running Linux system. It can manage running services while providing significantly more status information than SystemV. It also manages hardware, processes and groups of processes, filesystem mounts, and much more. systemd is present in almost every aspect of the modern Linux operating system, making it the one-stop tool for system management. (Does this sound familiar?)
-
-The systemd tools are compiled binaries, but the tool suite is open because all the configuration files are ASCII text files. Startup configuration can be modified through various GUI and command-line tools, as well as adding or modifying various configuration files to suit the needs of the specific local computing environment.
+#### 为何我更喜欢systemd
 
 我更喜欢用systemd作为启动机制，因为它会根据启动阶段并行地启动尽可能多的服务。这样可以加快整个的启动速度，使得主机系统比SystemV更快地到达登录屏幕。
 
@@ -95,15 +58,7 @@ systemd几乎可以管理正在运行的Linux系统的各个方面。它可以�
 
 systemd工具是编译后的二进制文件，但该工具包是开放的，因为所有配置文件都是ASCII文本文件。可以通过各种GUI和命令行工具来修改启动配置，也可以添加或修改各种配置文件来满足特定的本地计算环境的需求。
 
-#### The real issue 真正的问题
-
-Did you think I could not like both startup systems? I do, and I can work with either one.
-
-In my opinion, the real issue and the root cause of most of the controversy between SystemV and systemd is that there is [no choice][3] on the sysadmin level. The choice of whether to use SystemV or systemd has already been made by the developers, maintainers, and packagers of the various distributions—but with good reason. Scooping out and replacing an init system, by its extreme, invasive nature, has a lot of consequences that would be hard to tackle outside the distribution design process.
-
-Despite the fact that this choice is made for me, my Linux hosts boot up and work, which is what I usually care the most about. As an end user and even as a sysadmin, my primary concern is whether I can get my work done, work such as writing my books and this article, installing updates, and writing scripts to automate everything. So long as I can do my work, I don't really care about the start sequence used on my distro.
-
-I do care when there is a problem during startup or service management. Regardless of which startup system is used on a host, I know enough to follow the sequence of events to find the failure and fix it.
+#### 真正的问题
 
 您认为我不能喜欢两种启动系统吗？我能，我会用它们中的任何一个。
 
@@ -113,17 +68,7 @@ I do care when there is a problem during startup or service management. Regardle
 
 在启动或服务管理出现问题时，我会在意。无论主机上使用哪种启动系统，我都足够了解如何沿着事件顺序来查找故障并进行修复。
 
-#### Replacing SystemV 替换SystemV
-
-There have been previous attempts at replacing SystemV with something a bit more modern. For about two releases, Fedora used a thing called Upstart to replace the aging SystemV, but it did not replace init and provided no changes that I noticed. Because Upstart provided no significant changes to the issues surrounding SystemV, efforts in this direction were quickly dropped in favor of systemd.
-
-Despite the fact that most Linux developers agree that replacing the old SystemV startup is a good idea, many developers and sysadmins dislike systemd for that. Rather than rehash all the so-called issues that people have—or had—with systemd, I will refer you to two good, if somewhat old, articles that should cover most everything. Linus Torvalds, the creator of the Linux kernel, seems disinterested. In a 2014 ZDNet article, _[Linus Torvalds and others on Linux's systemd][4]_, Linus is clear about his feelings.
-
-> "I don't actually have any particularly strong opinions on systemd itself. I've had issues with some of the core developers that I think are much too cavalier about bugs and compatibility, and I think some of the design details are insane (I dislike the binary logs, for example), but those are details, not big issues."
-
-In case you don't know much about Linus, I can tell you that if he does not like something, he is very outspoken, explicit, and quite clear about that dislike. He has become more socially acceptable in his manner of addressing his dislike about things.
-
-In 2013, Poettering wrote a long blog post in which he debunks the [myths about systemd][5] while providing insight into some of the reasons for creating it. This is a very good read, and I highly recommend it.
+#### 替换SystemV
 
 以前曾有过用更现代的东西替代SystemV的尝试。在大约两个版本中，Fedora使用了一个叫作Upstart的东西来替换老化的SystemV，但是它没有替换init并且没有我能感知到的变化。由于Upstart并未对SystemV的问题进行任何重大更改，因此这个方向的努力很快就被systemd放弃了。
 
@@ -135,24 +80,8 @@ In 2013, Poettering wrote a long blog post in which he debunks the [myths about 
 
 2013年，Poettering写了一篇很长的博客，其中他在揭穿[systemd的神话][5]的同时透露了创建它的一些原因。这是一本很好的读物，我强烈建议您阅读。
 
-### systemd tasks systemd任务
+### systemd任务
 
-Depending upon the options used during the compile process (which are not considered in this series), systemd can have as many as 69 binary executables that perform the following tasks, among others:
-
-  * The systemd program runs as PID 1 and provides system startup of as many services in parallel as possible, which, as a side effect, speeds overall startup times. It also manages the shutdown sequence.
-  * The systemctl program provides a user interface for service management.
-  * Support for SystemV and LSB start scripts is offered for backward compatibility.
-  * Service management and reporting provide more service status data than SystemV.
-  * It includes tools for basic system configuration, such as hostname, date, locale, lists of logged-in users, running containers and virtual machines, system accounts, runtime directories and settings, daemons to manage simple network configuration, network time synchronization, log forwarding, and name resolution.
-  * It offers socket management.
-  * systemd timers provide advanced cron-like capabilities to include running a script at times relative to system boot, systemd startup, the last time the timer was started, and more.
-  * It provides a tool to analyze dates and times used in timer specifications.
-  * Mounting and unmounting of filesystems with hierarchical awareness allows safer cascading of mounted filesystems.
-  * It enables the positive creation and management of temporary files, including deletion.
-  * An interface to D-Bus provides the ability to run scripts when devices are plugged in or removed. This allows all devices, whether pluggable or not, to be treated as plug-and-play, which considerably simplifies device handling.
-  * Its tool to analyze the startup sequence can be used to locate the services that take the most time.
-  * It includes journals for storing system log messages and tools for managing the journals.
-  
 根据编译过程中使用的选项（不在本系列中介绍），systemd可以有多达69个二进制可执行文件用于执行任务，其中包括：
 
   * systemd程序以1号进程(PID 1)运行，并提供使尽可能多服务并行启动的系统启动能力，它额外加快了总体启动时间。它还管理关机顺序。
@@ -170,45 +99,21 @@ Depending upon the options used during the compile process (which are not consid
   * 包括用于存储系统消息的日志以及管理日志的工具。
 
 
-### Architecture 架构
+### 架构
 
-Those tasks and more are supported by a number of daemons, control programs, and configuration files. Figure 1 shows many of the components that belong to systemd. This is a simplified diagram designed to provide a high-level overview, so it does not include all of the individual programs or files. Nor does it provide any insight into data flow, which is so complex that it would be a useless exercise in the context of this series of articles.
-
-![systemd architecture][6]
-
-A full exposition of systemd would take a book on its own. You do not need to understand the details of how the systemd components in Figure 1 fit together; it's enough to know about the programs and components that enable managing various Linux services and deal with log files and journals. But it's clear that systemd is not the monolithic monstrosity it is purported to be by some of its critics.
 这些和更多的任务通过许多守护程序，控制程序和配置文件来支持。图1显示了许多属于systemd的组件。这是一个简化的图，旨在提供概要描述，因此它并不包括所有独立的程序或文件。它也不提供数据流的视角，数据流是如此复杂，因此在本系列文章的背景下没用。
 
 ！[系统架构] [6]
 
 完整的systemd讲解就需要一本书。您不需要了解图1中的systemd组件是如何组合在一起的细节。了解支持各种Linux服务管理以及日志文件和日志处理的程序和组件就够了。 但是很明显，systemd并不是某些批评者所说的那样的庞然大物。
 
-### systemd as PID 1 作为1号进程的systemd
-
-systemd is PID 1. Some of its functions, which are far more extensive than the old SystemV3 init program, are to manage many aspects of a running Linux host, including mounting filesystems and starting and managing system services required to have a productive Linux host. Any of systemd's tasks that are not related to the startup sequence are outside the scope of this article (but some will be explored later in this series).
-
-First, systemd mounts the filesystems defined by **/etc/fstab**, including any swap files or partitions. At this point, it can access the configuration files located in **/etc**, including its own. It uses its configuration link, **/etc/systemd/system/default.target**, to determine which state or target it should boot the host into. The **default.target** file is a symbolic link to the true target file. For a desktop workstation, this is typically going to be the **graphical.target**, which is equivalent to runlevel 5 in SystemV. For a server, the default is more likely to be the **multi-user.target**, which is like runlevel 3 in SystemV. The **emergency.target** is similar to single-user mode. Targets and services are systemd units.
-
-The table below (Figure 2) compares the systemd targets with the old SystemV startup runlevels. systemd provides the systemd target aliases for backward compatibility. The target aliases allow scripts—and many sysadmins—to use SystemV commands like **init 3** to change runlevels. Of course, the SystemV commands are forwarded to systemd for interpretation and execution.
+### 作为1号进程的systemd
 
 systemd是1号进程(PID 1)。它的一些功能(比老的SystemV3 init要广泛得多)用于管理正在运行的Linux主机的许多方面，包括挂载文件系统以及启动和管理Linux生产主机所需的系统服务。与启动顺序无关的任何systemd任务都不在本文讨论范围之内（但本系列后面的一些文章将探讨其中的一些任务）。
 
 首先，systemd挂载 **/etc/fstab** 所定义的文件系统，包括所有交换文件或分区。此时，它可以访问位于 **/etc** 中的配置文件，包括它自己的配置文件。它使用其配置链接 **/etc/systemd/system/default.target** 来确定将主机引导至哪个状态或目标。 **default.target** 文件是指向真实目标文件的符号链接。对于桌面工作站，通常是 **graphical.target**，它相当于SystemV中的运行级别5。对于服务器，默认值更可能是 **multi-user.target**，相当于SystemV中的运行级别3。 **emergency.target** 类似于单用户模式。目标(targets)和服务(services)是systemd的单位。
 
 下表（图2）将systemd目标与老的SystemV启动运行级别进行了比较。systemd提供systemd目标别名以便向后兼容。目标别名允许脚本（以及许多系统管理员）使用SystemV命令（如**init 3**）更改运行级别。当然，SystemV命令被转发给systemd进行解释和执行。
-
-**systemd targets** | **SystemV runlevel** | **target aliases** | **Description**
----|---|---|---
-default.target |  |  | This target is always aliased with a symbolic link to either **multi-user.target** or **graphical.target**. systemd always uses the **default.target** to start the system. The **default.target** should never be aliased to **halt.target**, **poweroff.target**, or **reboot.target**.
-graphical.target | 5 | runlevel5.target | **Multi-user.target** with a GUI
-| 4 | runlevel4.target | Unused. Runlevel 4 was identical to runlevel 3 in the SystemV world. This target could be created and customized to start local services without changing the default **multi-user.target**.
-multi-user.target | 3 | runlevel3.target | All services running, but command-line interface (CLI) only
-| 2 | runlevel2.target | Multi-user, without NFS, but all other non-GUI services running
-rescue.target | 1 | runlevel1.target | A basic system, including mounting the filesystems with only the most basic services running and a rescue shell on the main console
-emergency.target | S |  | Single-user mode—no services are running; filesystems are not mounted. This is the most basic level of operation with only an emergency shell running on the main console for the user to interact with the system.
-halt.target |  |  | Halts the system without powering it down
-reboot.target | 6 | runlevel6.target | Reboot
-poweroff.target | 0 | runlevel0.target | Halts the system and turns the power off
 
 **systemd目标** | ** SystemV运行级别** | **目标别名** | **描述**
 --- | --- | ---- |-
@@ -223,11 +128,6 @@ halt.target | | |在不关电源的情况下停止系统
 reboot.target | 6 | runlevel6.target |重启
 poweroff.target | 0 | runlevel0.target |停止系统并关闭电源
 
-Each target has a set of dependencies described in its configuration file. systemd starts the required dependencies, which are the services required to run the Linux host at a specific level of functionality. When all the dependencies listed in the target configuration files are loaded and running, the system is running at that target level. In Figure 2, the targets with the most functionality are at the top of the table, with functionality declining towards the bottom of the table.
-
-systemd also looks at the legacy SystemV init directories to see if any startup files exist there. If so, systemd uses them as configuration files to start the services described by the files. The deprecated network service is a good example of one that still uses SystemV startup files in Fedora.
-
-Figure 3 (below) is copied directly from the bootup man page. It shows a map of the general sequence of events during systemd startup and the basic ordering requirements to ensure a successful startup.
 每个目标在其配置文件中都描述了一个依赖集。systemd启动必须的依赖，这些依赖是运行Linux主机到特定功能级别所需的服务。当目标配置文件中列出的所有依赖项被加载并运行后，系统就在该目标级别运行了。 在图2中，功能最多的目标位于表的顶部，从顶向下，功能逐步递减。
 
 systemd还会检查老的SystemV init目录，以确认是否存在任何启动文件。如果有，systemd会将它们作为配置文件以启动它们描述的服务。网络服务是一个很好的例子，在Fedora中它仍然使用SystemV启动文件。
@@ -290,25 +190,11 @@ systemd还会检查老的SystemV init目录，以确认是否存在任何启动�
                               graphical.target
 ```
 
-The **sysinit.target** and **basic.target** targets can be considered checkpoints in the startup process. Although one of systemd's design goals is to start system services in parallel, certain services and functional targets must be started before other services and targets can start. These checkpoints cannot be passed until all of the services and targets required by that checkpoint are fulfilled.
-
-The **sysinit.target** is reached when all of the units it depends on are completed. All of those units, mounting filesystems, setting up swap files, starting udev, setting the random generator seed, initiating low-level services, and setting up cryptographic services (if one or more filesystems are encrypted), must be completed but, within the **sysinit.target**, those tasks can be performed in parallel.
-
-The **sysinit.target** starts up all of the low-level services and units required for the system to be marginally functional and that are required to enable moving onto the **basic.target**.
-
 **sysinit.target** 和 **basic.target** 目标可以看作启动过程中的检查点。尽管systemd的设计目标之一是并行启动系统服务，但是某些服务和功能目标必须先启动，然后才能启动其他服务和目标。直到该检查点所需的所有服务和目标被满足后才能通过这些检查点。
 
 当它依赖的所有单元都完成时，将到达 **sysinit.target**。所有这些单元，挂载文件系统，设置交换文件，启动udev，设置随机数生成器种子，启动低层服务以及配置安全服务（如果一个或多个文件系统是加密的）都必须被完成，但 **sysinit.target** 的这些任务可以并行执行。
 
 **sysinit.target** 将启动系统接近正常运行所需的所有低层服务和单元，以及转移到 **basic.target** 所需的服务和单元。
-
-After the **sysinit.target** is fulfilled, systemd then starts all the units required to fulfill the next target. The basic target provides some additional functionality by starting units that are required for all of the next targets. These include setting up things like paths to various executable directories, communication sockets, and timers.
-
-Finally, the user-level targets, **multi-user.target** or **graphical.target**, can be initialized. The **multi-user.target** must be reached before the graphical target dependencies can be met. The underlined targets in Figure 3 are the usual startup targets. When one of these targets is reached, startup has completed. If the **multi-user.target** is the default, then you should see a text-mode login on the console. If **graphical.target** is the default, then you should see a graphical login; the specific GUI login screen you see depends on your default display manager.
-
-The bootup man page also describes and provides maps of the boot into the initial RAM disk and the systemd shutdown process.
-
-systemd also provides a tool that lists dependencies of a complete startup or for a specified unit. A unit is a controllable systemd resource entity that can range from a specific service, such as httpd or sshd, to timers, mounts, sockets, and more. Try the following command and scroll through the results.
 
 在完成 **sysinit.target** 目标之后，systemd会启动实现下一个目标所需的所有单元。基本目标通过启动所有下一目标所需的单元来提供一些其他功能。包括设置如PATHs为各种可执行程序的路径，设置通信套接字和计时器之类。
 
@@ -322,16 +208,11 @@ systemd还提供了一个工具，该工具列出了完整启动或指定单元�
 `systemctl list-dependencies graphical.target`
 ```
 
-Notice that this fully expands the top-level target units list required to bring the system up to the graphical target run mode. Use the **\--all** option to expand all of the other units as well.
 注意，这完全展开了使系统进入图形目标运行模式所需的顶层目标单元列表。 也可以使用 **\-all** 选项来展开所有其他单元。
 
 ```
 `systemctl list-dependencies --all graphical.target`
 ```
-
-You can search for strings such as "target," "slice," and "socket" using the search tools of the **less** command.
-
-So now, try the following.
 
 您可以使用 **less** 命令来搜索诸如“target”，“slice”和“ socket”之类的字符串。
 
@@ -341,21 +222,21 @@ So now, try the following.
 `systemctl list-dependencies multi-user.target`
 ```
 
-and 和
+和
 
 
 ```
 `systemctl list-dependencies rescue.target`
 ```
 
-and 和
+和
 
 
 ```
 `systemctl list-dependencies local-fs.target`
 ```
 
-and 和
+和
 
 
 ```
@@ -367,61 +248,17 @@ and 和
 
 
 
-```
-`systemctl list-dependencies --all graphic.target`
-```
-
-
-```
-`systemctl list-dependencies multi-user.target`
-```
-
-和
-
-
-```
-`systemctl列表依赖resurance.target`
-```
-
-和
-
-
-```
-`systemctl list-dependencies local-fs.target`
-```
-
-和
-
-
-```
-`systemctl list-dependencies dbus.service`
-```
-
-This tool helps me visualize the specifics of the startup dependencies for the host I am working on. Go ahead and spend some time exploring the startup tree for one or more of your Linux hosts. But be careful because the systemctl man page contains this note:
 这个工具帮助我可视化我正用的主机的启动依赖细节。继续花一些时间探索一个或多个Linux主机的启动树。但是要小心，因为systemctl手册页包含以下注释：
-
-> _"Note that this command only lists units currently loaded into memory by the service manager. In particular, this command is not suitable to get a comprehensive list at all reverse dependencies on a specific unit, as it won't list the dependencies declared by units currently not loaded."_
 
 > _“请注意，此命令仅列出当前被服务管理器加载到内存的单元。尤其是，此命令根本不适合用于获取特定单元的全部反向依赖列表，因为它不会列出被单元声明了但是未加载的依赖项。” _
 
-### Final thoughts 结尾语
-
-Even before getting very deep into systemd, it's obvious that it is both powerful and complex. It is also apparent that systemd is not a single, huge, monolithic, and unknowable binary file. Rather, it is composed of a number of smaller components and subcommands that are designed to perform specific tasks.
-
-The next article in this series will explore systemd startup in more detail, as well as systemd configuration files, changing the default target, and how to create a simple service unit.
+### 结尾语
 
 即使在深入研究systemd之前，很明显能看出它既强大又复杂。显然，systemd不是单一，庞大，整体且不可知的二进制文件。相反，它是由许多较小的组件和旨在执行特定任务的子命令组成。
 
 本系列的下一篇文章将更详细地探讨systemd的启动，以及systemd的配置文件，更改默认的目标以及如何创建简单服务单元。
 
-### Resources 资源
-
-There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup.
-
-  * The Fedora Project has a good, practical [guide][7] [to systemd][7]. It has pretty much everything you need to know in order to configure, manage, and maintain a Fedora computer using systemd.
-  * The Fedora Project also has a good [cheat sheet][8] that cross-references the old SystemV commands to comparable systemd ones.
-  * For detailed technical information about systemd and the reasons for creating it, check out [Freedesktop.org][9]'s [description of systemd][10].
-  * [Linux.com][11]'s "More systemd fun" offers more advanced systemd [information and tips][12].
+### 资源
 
 互联网上有大量关于systemd的信息，但是很多都简短，晦涩甚至是误导。除了本文提到的资源外，以下网页还提供了有关systemd启动的更详细和可靠的信息。
 
@@ -431,26 +268,23 @@ There is a great deal of information about systemd available on the internet, bu
   * [Linux.com][11]的“systemd的更多乐趣”提供了更高级的systemd [信息和技巧][12]。
 
 
-
-There is also a series of deeply technical articles for Linux sysadmins by Lennart Poettering, the designer and primary developer of systemd. These articles were written between April 2010 and September 2011, but they are just as relevant now as they were then. Much of everything else good that has been written about systemd and its ecosystem is based on these papers.
 还有systemd的设计师和主要开发者Lennart Poettering撰写的针对Linux系统管理员的一系列技术文章。这些文章是在2010年4月至2011年9月之间撰写的，但它们现在和那时一样有用。关于systemd及其生态的其他许多好文都基于这些论文。
 
-  * [Rethinking PID 1][13]
-  * [systemd for Administrators, Part I][14]
-  * [systemd for Administrators, Part II][15]
-  * [systemd for Administrators, Part III][16]
-  * [systemd for Administrators, Part IV][17]
-  * [systemd for Administrators, Part V][18]
-  * [systemd for Administrators, Part VI][19]
-  * [systemd for Administrators, Part VII][20]
-  * [systemd for Administrators, Part VIII][21]
-  * [systemd for Administrators, Part IX][22]
-  * [systemd for Administrators, Part X][23]
-  * [systemd for Administrators, Part XI][24]
+  * [重新思考1号进程][13]
+  * [systemd之系统管理员, I][14]
+  * [systemd之系统管理员, II][15]
+  * [systemd之系统管理员, III][16]
+  * [systemd之系统管理员, IV][17]
+  * [systemd之系统管理员, V][18]
+  * [systemd之系统管理员, VI][19]
+  * [systemd之系统管理员, VII][20]
+  * [systemd之系统管理员, VIII][21]
+  * [systemd之系统管理员, IX][22]
+  * [systemd之系统管理员, X][23]
+  * [systemd之系统管理员, XI][24]
 
 
 
-Alison Chiaken, a Linux kernel and systems programmer at Mentor Graphics, offers a preview of her...
 Mentor Graphics的Linux内核和系统程序员Alison Chiaken预览了此文...
 --------------------------------------------------------------------------------
 
