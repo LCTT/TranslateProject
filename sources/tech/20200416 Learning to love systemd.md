@@ -210,16 +210,16 @@ halt.target |  |  | Halts the system without powering it down
 reboot.target | 6 | runlevel6.target | Reboot
 poweroff.target | 0 | runlevel0.target | Halts the system and turns the power off
 
-**系统目标** | ** SystemV运行级别** | **目标别名** | **描述**
+**systemd目标** | ** SystemV运行级别** | **目标别名** | **描述**
 --- | --- | ---- |-
-default.target | | |此目标始终使用指向“多用户目标”或“图形目标”的符号链接进行别名。 systemd始终使用** default.target **来启动系统。 ** default.target **绝不应别名为halt.target **，poweroff.target **或reboot.target **。
-graphic.target | 5 | runlevel5.target |带有GUI的``Multi-user.target''
-| 4 | runlevel4.target |没用过。运行级别4与SystemV世界中的运行级别3相同。可以创建并自定义此目标以启动本地服务，而无需更改默认的“ multi-user.target”。
-多用户目标| 3 | runlevel3.target |所有服务正在运行，但仅命令行界面（CLI）
-| 2 | runlevel2.target |多用户，没有NFS，但所有其他非GUI服务正在运行
-rescue.target | 1 | runlevel1.target |基本系统，包括仅在运行最基本服务的情况下挂载文件系统，并在主控制台上安装急救外壳
-Emergency.target | S | |单用户模式-没有服务正在运行；文件系统未挂载。这是最基本的操作级别，只有在主控制台上运行的紧急外壳供用户与系统交互。
-halt.target | | |在不关闭电源的情况下暂停系统
+default.target | | |此目标总是通过符号连接的方式成为“多用户目标”或“图形化目标”的别名。systemd始终使用 **default.target** 来启动系统。 ** default.target** 绝不应该设为 **halt.target**，**poweroff.target** 或 **reboot.target** 的别名
+graphic.target | 5 | runlevel5.target |带有GUI的 **Multi-user.target**
+| 4 | runlevel4.target |未用。在SystemV中运行级别4与运行级别3相同。可以创建并自定义此目标以启动本地服务，而无需更改默认的 **multi-user.target**
+multi-user.target | 3 | runlevel3.target |所有服务在运行，但仅有命令行界面（CLI）
+| 2 | runlevel2.target |多用户，没有NFS，其他所有非GUI服务在运行
+rescue.target | 1 | runlevel1.target |基本系统，包括挂载文件系统，运行最基本的服务和主控制台的恢复shell
+Emergency.target | S | |单用户模式-没有服务运行；不挂载文件系统。这是最基本的工作级别，只有主控制台上运行的一个紧急Shell供用户与系统交互
+halt.target | | |在不关电源的情况下停止系统
 reboot.target | 6 | runlevel6.target |重启
 poweroff.target | 0 | runlevel0.target |停止系统并关闭电源
 
