@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/20/4/systemd)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-Learning to love systemd 学会爱上systemd
+学会爱上systemd
 ======
 
 systemd是所有进程的源头，负责将Linux主机启动到可以做生产性任务的状态。
@@ -103,7 +103,7 @@ systemd工具是编译后的二进制文件，但该工具包是开放的，因�
 
 这些和更多的任务通过许多守护程序，控制程序和配置文件来支持。图1显示了许多属于systemd的组件。这是一个简化的图，旨在提供概要描述，因此它并不包括所有独立的程序或文件。它也不提供数据流的视角，数据流是如此复杂，因此在本系列文章的背景下没用。
 
-！[系统架构] [6]
+！[系统架构][6]
 
 完整的systemd讲解就需要一本书。您不需要了解图1中的systemd组件是如何组合在一起的细节。了解支持各种Linux服务管理以及日志文件和日志处理的程序和组件就够了。 但是很明显，systemd并不是某些批评者所说的那样的庞然大物。
 
@@ -115,7 +115,7 @@ systemd是1号进程(PID 1)。它的一些功能(比老的SystemV3 init要广泛
 
 下表（图2）将systemd目标与老的SystemV启动运行级别进行了比较。systemd提供systemd目标别名以便向后兼容。目标别名允许脚本（以及许多系统管理员）使用SystemV命令（如**init 3**）更改运行级别。当然，SystemV命令被转发给systemd进行解释和执行。
 
-**systemd目标** | ** SystemV运行级别** | **目标别名** | **描述**
+**systemd目标** | **SystemV运行级别** | **目标别名** | **描述**
 --- | --- | ---- |-
 default.target | | |此目标总是通过符号连接的方式成为“多用户目标”或“图形化目标”的别名。systemd始终使用 **default.target** 来启动系统。 ** default.target** 绝不应该设为 **halt.target**，**poweroff.target** 或 **reboot.target** 的别名
 graphic.target | 5 | runlevel5.target |带有GUI的 **Multi-user.target**
@@ -262,7 +262,7 @@ systemd还提供了一个工具，该工具列出了完整启动或指定单元�
 
 互联网上有大量关于systemd的信息，但是很多都简短，晦涩甚至是误导。除了本文提到的资源外，以下网页还提供了有关systemd启动的更详细和可靠的信息。
 
-  * Fedora项目有一个很好的，实用的[guide][7][to systemd][7]。它有你需要知道的通过systemd来配置，管理和维护Fedora主机所需的几乎所有知识。
+  * Fedora项目有一个很好的，实用的[guide to systemd][7]。它有你需要知道的通过systemd来配置，管理和维护Fedora主机所需的几乎所有知识。
   * Fedora项目还有一个不错的[cheat sheet][8]，将老的SystemV命令与对比的systemd命令相互关联。
   * 有关systemd及其创建原因的详细技术信息，请查看[Freedesktop.org][9]的[systemd描述][10]。
   * [Linux.com][11]的“systemd的更多乐趣”提供了更高级的systemd [信息和技巧][12]。
