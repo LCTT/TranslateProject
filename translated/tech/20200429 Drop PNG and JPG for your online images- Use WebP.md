@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "lxbwolf"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "Drop PNG and JPG for your online images: Use WebP"
-[#]: via: "https://opensource.com/article/20/4/webp-image-compression"
-[#]: author: "Jeff Macharyas https://opensource.com/users/jeffmacharyas"
+[#]: collector: (lujun9972)
+[#]: translator: (lxbwolf)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Drop PNG and JPG for your online images: Use WebP)
+[#]: via: (https://opensource.com/article/20/4/webp-image-compression)
+[#]: author: (Jeff Macharyas https://opensource.com/users/jeffmacharyas)
 
 线上图片请抛弃 PNG 和 JPG 后缀：使用 WebP
 ======
@@ -130,13 +130,13 @@ via: https://opensource.com/article/20/4/webp-image-compression
 
 [a]: https://opensource.com/users/jeffmacharyas
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/painting_computer_screen_art_design_creative.png?itok=LVAeQx3_ "Painting art on a computer screen"
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/painting_computer_screen_art_design_creative.png?itok=LVAeQx3_ (Painting art on a computer screen)
 [2]: https://opensource.com/article/19/8/dig-binary-files-hexdump
 [3]: https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html
-[4]: https://opensource.com/sites/default/files/uploads/webp-vs-jpg-app-graphic.png "WebP vs JPG comparison"
+[4]: https://opensource.com/sites/default/files/uploads/webp-vs-jpg-app-graphic.png (WebP vs JPG comparison)
 [5]: http://gimp.org
-[6]: https://opensource.com/sites/default/files/webp-gimp.webp "GIMP dialog for exporting webp, as a webp"
-[7]: https://opensource.com/sites/default/files/uploads/xcompare-png-left-webp-right.png "WebP vs PNG comparison"
+[6]: https://opensource.com/sites/default/files/webp-gimp.webp (GIMP dialog for exporting webp, as a webp)
+[7]: https://opensource.com/sites/default/files/uploads/xcompare-png-left-webp-right.png (WebP vs PNG comparison)
 [8]: https://imagemagick.org
 [9]: https://en.wikipedia.org/wiki/GIMP
 [10]: https://mariushosting.com/how-to-upload-webp-files-on-wordpress/
