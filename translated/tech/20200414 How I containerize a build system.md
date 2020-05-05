@@ -95,8 +95,7 @@ cd dockerize-tutorial
 ./build.sh ~/repos/dockerize-tutorial/example_workdir
 ```
 
-The code for [build.sh][4] is below. This script instantiates a container from the container image **swbuilder:v1**. It performs two volume mappings: one from the **example_workdir** folder to a volume inside the container at path **/workdir**, and the second from **dockerize-tutorial/swbuilder/scripts** outside the container to **/scripts** inside the container.
-
+下面是 [build.sh][4] 的代码。这个脚本从容器镜像 **swbuilder:v1** 实例化一个容器。而这个容器实例映射了两个卷：一个将文件夹 **example_workdir** 挂载到容器内部路径 **/workdir** 上，第二个则将容器外的文件夹 **dockerize-tutorial/swbuilder/scripts** 挂载到容器内部路径 **/scripts** 上。
 
 ```
 docker container run                              \
@@ -107,20 +106,18 @@ docker container run                              \
     build
 ```
 
-In addition, the **build.sh** also invokes the container to run with your username (and group, which the tutorial assumes to be the same) so that you will not have issues with file permissions when accessing the generated build output.
+另外，**build.sh** 还会用你的用户名（以及组，本教程假设两者一致）去运行容器，以便在访问构建输出时不出现文件权限问题。
 
-Note that [**shell.sh**][5] is identical except for two things: **build.sh** creates a container named **build_swbuilder** while **shell.sh** creates one named **shell_swbuilder**. This is so that there are no conflicts if either script is invoked while the other one is running.
+请注意，[**shell.sh**][5] 和 **build.sh** 大体上是一致的，除了两点不同：**build.sh** 会创建一个名为 **build_swbuilder** 的容器，而 **shell.sh** 则会创建一个名为 **shell_swbuilder** 的容器。这样一来，当其中一个脚本运行时另一个脚本被调用也不会产生冲突。
 
-The other key difference between the two scripts is the last argument: **build.sh** passes in the argument **build** while **shell.sh** passes in the argument **shell**. If you look at the [Dockerfile][6] that is used to create the container image, the last line contains the following **ENTRYPOINT**. This means that the **docker container run** invocation above will result in executing the **run_build.sh** script with either **build** or **shell** as the sole input argument.
-
+两个脚本之间的另一处关键不同则在于最后一个参数：**build.sh** 传入参数 **build** 而 **shell.sh** 则传入 **shell**。如果你看了用于构建容器镜像的 [Dockerfile][6]，就会发现最后一行包含了下面的 **ENTRYPOINT** 语句。这意味着上面的 **docker container run** 调用将使用 **build** 或 **shell** 作为唯一的输入参数来执行 **run_build.sh** 脚本。
 
 ```
 # run bash script and process the input command
 ENTRYPOINT [ "/bin/bash", "/scripts/run_build.sh"]
 ```
 
-[**run_build.sh**][7] uses this input argument to either start the Bash shell or invoke **gcc** to perform the build of the trivial **helloworld.c** project. A real build system would typically invoke a Makefile and not run **gcc** directly.
-
+[**run_build.sh**][7] 使用这个输入参数来选择启动 Bash shell 还是调用 **gcc** 来构建 **helloworld.c** 项目。一个真正的构建系统通常会调用 Makefile 而非直接运行 **gcc**。
 
 ```
 cd /workdir
@@ -134,7 +131,7 @@ elif [ $1 = "build" ]; then
 fi
 ```
 
-You could certainly pass more than one argument if your use case demands it. For the build systems I've dealt with, the build is usually for a given project with a specific **make** invocation. In the case of a build system where the build invocation is complex, you can have **run_build.sh** call a specific script inside **workdir** that the end user has to write.
+你在使用时如果需要传入多个参数，当然也是可以的。我处理过的构建系统，构建通常是对给定的项目调用 **make**。如果一个构建系统有非常复杂的构建调用，则你可以让 **run_build.sh** 调用 **workdir** 下最终用户编写的特定脚本。
 
 ### A note about the scripts folder
 
