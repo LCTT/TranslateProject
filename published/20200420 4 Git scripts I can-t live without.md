@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12180-1.html)
 [#]: subject: (4 Git scripts I can't live without)
 [#]: via: (https://opensource.com/article/20/4/git-extras)
 [#]: author: (Vince Power https://opensource.com/users/vincepower)
@@ -12,11 +12,11 @@
 
 > Git Extras 版本库包含了 60 多个脚本，它们是 Git 基本功能的补充。以下是如何安装、使用和贡献的方法。
 
-![Person using a laptop][1]
+![](https://img.linux.net.cn/data/attachment/album/202005/03/211446dshwbzoh235b3gre.jpg)
 
-2005 年，[Linus Torvalds][2] 创建了 [Git][3]，以取代他之前用于维护 Linux 内核的专有的分布式源码控制管理解决方案。从那时起，Git 已经成为开源和云原生开发团队的主流版本控制解决方案。
+2005 年，[Linus Torvalds][2] 创建了 [Git][3]，以取代他之前用于维护 Linux 内核的分布式源码控制管理的专有解决方案。从那时起，Git 已经成为开源和云原生开发团队的主流版本控制解决方案。
 
-但即使是像 Git 这样功能丰富的应用程序，也没有人们想要或需要的每个功能，所以人们会花大力气去创建这些功能。就 Git 而言，这个人就是 [TJ Holowaychuk][4]。他的 [Git Extras][5] 项目承载了 60 多个“附加功能”，这些功能扩展了 Git 的基本功能。
+但即使是像 Git 这样功能丰富的应用程序，也没有人们想要或需要的每个功能，所以会有人花大力气去创建这些缺少的功能。就 Git 而言，这个人就是 [TJ Holowaychuk][4]。他的 [Git Extras][5] 项目承载了 60 多个“附加功能”，这些功能扩展了 Git 的基本功能。
 
 ### 使用 Git 附加功能
 
@@ -24,9 +24,9 @@
 
 #### git-ignore
 
-`git ignore` 是一个方便的附加功能，它可以让你手动添加文件类型和注释到 `.git-ignore` 文件中，而不需要打开文本编辑器。它可以操作你的个人用户帐户的全局忽略文件和单独用于你正在工作的版本库的忽略文件。
+`git ignore` 是一个方便的附加功能，它可以让你手动添加文件类型和注释到 `.git-ignore` 文件中，而不需要打开文本编辑器。它可以操作你的个人用户帐户的全局忽略文件和单独用于你正在工作的版本库中的忽略文件。
 
-在没有参数的情况下执行 `git ignore` 会先列出全局忽略文件，然后是本地的忽略文件。
+在不提供参数的情况下执行 `git ignore` 会先列出全局忽略文件，然后是本地的忽略文件。
 
 ```
 $ git ignore
@@ -105,7 +105,7 @@ branch.master.merge=refs/heads/master
 * `git mr` 检出来自 GitLab 的合并请求。
 * `git pr` 检出来自 GitHub 的拉取请求。
 
-无论是哪种情况，你只需要合并请求号、拉取请求号或完整的 URL，它就会抓取远程引用，检出分支，并调整配置，这样 Git 就知道要替换哪个分支了。
+无论是哪种情况，你只需要合并请求号/拉取请求号或完整的 URL，它就会抓取远程引用，检出分支，并调整配置，这样 Git 就知道要替换哪个分支了。
 
 ```
 $ git mr 51
@@ -142,7 +142,7 @@ $ git extras --help
 $ brew install git-extras
 ```
 
-在 Linux 上，每个平台的原生包管理器中都有 Git Extras。有时，你需要启用一个额外的仓库，比如在 CentOS 上的 [EPEL][10]，然后运行一条命令。
+在 Linux 上，每个平台原生的包管理器中都包含有 Git Extras。有时，你需要启用额外的仓库，比如在 CentOS 上的 [EPEL][10]，然后运行一条命令。
 
 ```
 $ sudo yum install git-extras
@@ -152,9 +152,9 @@ $ sudo yum install git-extras
 
 ### 贡献
 
-你是否你认为 Git 中有缺少的功能，并且已经构建了一个脚本来处理它？为什么不把它作为 Git Extras 发布版的一部分，与全世界分享呢？
+你是否认为 Git 中有缺少的功能，并且已经构建了一个脚本来处理它？为什么不把它作为 Git Extras 发布版的一部分，与全世界分享呢？
 
-要做到这一点，请将该功能贡献到 Git Extras 仓库中。更多具体细节请参见仓库中的  [CONTRIBUTING.md][12] 文件，但基本的操作方法很简单。
+要做到这一点，请将该功能贡献到 Git Extras 仓库中。更多具体细节请参见仓库中的  [CONTRIBUTING.md][12] 文件，但基本的操作方法很简单：
 
 1. 创建一个处理该功能的 Bash 脚本。
 2. 创建一个基本的 man 文件，让大家知道如何使用它。
@@ -171,7 +171,7 @@ via: https://opensource.com/article/20/4/git-extras
 作者：[Vince Power][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

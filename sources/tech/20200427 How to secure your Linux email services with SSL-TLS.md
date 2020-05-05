@@ -1,11 +1,12 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Acceleratorrrr)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to secure your Linux email services with SSL/TLS)
 [#]: via: (https://opensource.com/article/20/4/securing-linux-email)
 [#]: author: (Marc Skinner https://opensource.com/users/marc-skinner)
+
 
 How to secure your Linux email services with SSL/TLS
 ======
