@@ -133,15 +133,15 @@ fi
 
 你在使用时如果需要传入多个参数，当然也是可以的。我处理过的构建系统，构建通常是对给定的项目调用 **make**。如果一个构建系统有非常复杂的构建调用，则你可以让 **run_build.sh** 调用 **workdir** 下最终用户编写的特定脚本。
 
-### A note about the scripts folder
+### 关于 scripts 文件夹的说明
 
-You may be wondering why the **scripts** folder is located deep in the tree structure rather than at the top level of the repository. Either approach would work, but I didn't want to encourage the end user to poke around and change things there. Placing it deeper is a way to make it more difficult to poke around. Also, I could have added a **.dockerignore** file to ignore the **scripts** folder, as it doesn't need to be part of the container context. But since it's tiny, I didn't bother.
+你可能想知道为什么 **scripts** 文件夹位于目录树深处而不是位于存储库的顶层。两种方法都是可行的，但我不想鼓励最终用户到处乱翻并修改里面的脚本。将它放到更深的地方是一个让他们更难乱翻的方法。另外，我也可以添加一个 **.dockerignore** 文件去忽略 **scripts** 文件夹，因为它不是容器必需的部分。但因为它很小，所以我没有这样做。
 
-### Simple yet flexible
+### 简单而灵活
 
-While the approach is simple, I've used it for a few rather different build systems and found it to be quite flexible. The aspects that are going to be relatively stable (e.g., a given toolset that changes only a few times a year) are fixed inside the container image. The aspects that are more fluid are kept outside the container image as scripts. This allows me to easily modify how the toolset is invoked by updating the script and pushing the changes to the build system repository. All the user needs to do is to pull the changes to their local build system repository, which is typically quite fast (unlike updating a Docker image). The structure lends itself to having as many volumes and scripts as are needed while abstracting the complexity away from the end user.
+尽管这一方法很简单，但我将其用于某些非常特殊的构建系统时，发现它其实非常灵活。相对稳定的部分（例如，一年仅修改数次的给定工具集）被固定在容器镜像内。较为灵活的部分则以脚本的形式放在镜像外。这使我能够简单地通过修改脚本并将更改推送到构建系统存储库来修改调用工具集的方式。用户所需要做的是将更改拉到本地的构建系统存储库中，这通常是非常快的（与更新 Docker 镜像不同）。这种结构使其能够拥有尽可能多的卷和脚本，同时使最终用户摆脱复杂性。
 
-How will you need to modify your application to optimize it for a containerized environment?
+你将如何修改你的应用来针对容器化环境进行优化呢？
 
 --------------------------------------------------------------------------------
 
