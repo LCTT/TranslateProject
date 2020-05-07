@@ -99,20 +99,41 @@ Mac：`Applications/Adobe Photoshop/Plug-ins/WebPShop.plugin`
 
 在 [Marius Hosting][11] 有下面的[说明][10]：
 
-> “直接向 Wordpress 上传 WebP 图片会怎样？这很简单。向你的主题 `functions.php` 文件添加几行内容就可以了。Wordpress 默认不支持展示和上传 WebP 文件，但是我会向你介绍一下怎么通过几个简单的步骤来让它支持。登录进你的 Wordpress 管理员界面，进入‘外观/主题编辑器’找到 `functions.php`。复制下面的代码粘贴到该文件最后并保存：
+“直接向 Wordpress 上传 WebP 图片会怎样？这很简单。向你的主题 `functions.php` 文件添加几行内容就可以了。Wordpress 默认不支持展示和上传 WebP 文件，但是我会向你介绍一下怎么通过几个简单的步骤来让它支持。登录进你的 Wordpress 管理员界面，进入‘外观/主题编辑器’找到 `functions.php`。复制下面的代码粘贴到该文件最后并保存：
 
-> ```
-//** *Enable upload for webp image files.*/ function webp_upload_mimes($existing_mimes) { $existing_mimes['webp'] = 'image/webp'; return $existing_mimes; } add_filter('mime_types', 'webp_upload_mimes');
+```
+//** *Enable upload for webp image files.*/
+function webp_upload_mimes($existing_mimes) {
+    $existing_mimes['webp'] = 'image/webp';
+    return $existing_mimes;
+}
+add_filter('mime_types', 'webp_upload_mimes');
 ```
 
-> 如果你想在‘媒体/媒体库’时看到缩略图预览，那么你需要把下面的代码也添加到 `functions.php` 文件。为了找到 `functions.php` 文件，进入‘外观/主题编辑器’并搜索 `functions.php`，然后复制下面的代码粘贴到文件最后并保存：
+如果你想在‘媒体/媒体库’时看到缩略图预览，那么你需要把下面的代码也添加到 `functions.php` 文件。为了找到 `functions.php` 文件，进入‘外观/主题编辑器’并搜索 `functions.php`，然后复制下面的代码粘贴到文件最后并保存：
 
+```
+//** * Enable preview / thumbnail for webp image files.*/
+function webp_is_displayable($result, $path) {
+    if ($result === false) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
 
-> ```
-//** * Enable preview / thumbnail for webp image files.*/ function webp_is_displayable($result, $path) { if ($result === false) { $displayable_image_types = array( IMAGETYPE_WEBP ); $info = @getimagesize( $path ); if (empty($info)) { $result = false; } elseif (!in_array($info[2], $displayable_image_types)) { $result = false; } else { $result = true; } } return $result; } add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
+        if (empty($info)) {
+            $result = false;
+        } elseif (!in_array($info[2], $displayable_image_types)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+
+    return $result;
+}
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
 ```
 
-> ”
+”
 
 ### WebP 和未来
 
