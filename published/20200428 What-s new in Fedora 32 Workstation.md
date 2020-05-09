@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12201-1.html)
 [#]: subject: (What’s new in Fedora 32 Workstation)
 [#]: via: (https://fedoramagazine.org/whats-new-fedora-32-workstation/)
 [#]: author: (Ryan Lerch https://fedoramagazine.org/author/ryanlerch/)
@@ -76,7 +76,7 @@ via: https://fedoramagazine.org/whats-new-fedora-32-workstation/
 [a]: https://fedoramagazine.org/author/ryanlerch/
 [b]: https://github.com/lujun9972
 [1]: https://fedoramagazine.org/wp-content/uploads/2020/04/fedora32workstation-816x345.jpg
-[2]: https://fedoramagazine.org/announcing-fedora-32/
+[2]: https://linux.cn/article-12164-1.html
 [3]: https://getfedora.org/workstation
 [4]: https://fedoramagazine.org/wp-content/uploads/2020/04/unlock.gif
 [5]: https://fedoramagazine.org/wp-content/uploads/2020/04/extensions.png
