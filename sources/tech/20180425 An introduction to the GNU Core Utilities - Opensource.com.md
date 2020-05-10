@@ -1,3 +1,4 @@
+wxy
 An introduction to the GNU Core Utilities
 ======
 
@@ -117,7 +118,7 @@ David Both \- David Both is a Linux and Open Source advocate who resides in Rale
 
 via: [https://opensource.com/article/18/4/gnu-core-utilities][17]
 
-作者: [David Both][18] 选题者: [@lujun9972][19] 译者: [译者ID][20] 校对: [校对者ID][21]
+作者: [David Both][18] 选题者: [lujun9972][19] 译者: [译者ID][20] 校对: [校对者ID][21]
 
 本文由 [LCTT][22] 原创编译，[Linux中国][23] 荣誉推出
 
