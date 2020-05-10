@@ -53,7 +53,7 @@
 
 ![Container build system architecture][3]
 
-在底部的**工作目录**代表软件开发者用于构建的任意软件源码。通常，这个**工作目录**是一个存储库。在构建之前，最终用户可以通过任何方式来操纵这个存储库。例如，如果他们使用 **git** 作为版本控制工具时，可以使用 **git checkout** 切换到他们正在工作的功能分支上并添加或修改文件。这样可以使得构建系统独立于**工作目录**之外。
+在底部的 **workdir** 代表软件开发者用于构建的任意软件源码。通常，这个 **workdir** 是一个源代码的存储库。在构建之前，最终用户可以通过任何方式来操纵这个存储库。例如，如果他们使用 **git** 作为版本控制工具的话，可以使用 **git checkout** 切换到他们正在工作的功能分支上并添加或修改文件。这样可以使得构建系统独立于 **workdir** 之外。
 
 顶部的三个模块共同代表了容器化的构建系统。最左边的黄色模块代表最终用户与构建系统交互的脚本（**build.sh** 和 **shell.sh**）。
 
@@ -80,7 +80,6 @@ dockerize-tutorial/
 
 如果你只对概念感兴趣，本教程并非必须的，因为我将解释所有文件。但是如果你继续本教程（并且已经安装 Docker），首先使用以下命令来构建容器镜像 **swbuilder:v1**：
 
-
 ```
 cd dockerize-tutorial/swbuilder/
 ./build_docker_image.sh
@@ -88,7 +87,6 @@ docker image ls  # resulting image will be swbuilder:v1
 ```
 
 然后调用 **build.sh**：
-
 
 ```
 cd dockerize-tutorial
@@ -117,7 +115,7 @@ docker container run                              \
 ENTRYPOINT [ "/bin/bash", "/scripts/run_build.sh"]
 ```
 
-[**run_build.sh**][7] 使用这个输入参数来选择启动 Bash shell 还是调用 **gcc** 来构建 **helloworld.c** 项目。一个真正的构建系统通常会调用 Makefile 而非直接运行 **gcc**。
+[**run_build.sh**][7] 使用这个输入参数来选择启动 Bash shell 还是调用 **gcc** 来构建 **helloworld.c** 项目。一个真正的构建系统通常会使用 Makefile 而非直接运行 **gcc**。
 
 ```
 cd /workdir
@@ -131,7 +129,7 @@ elif [ $1 = "build" ]; then
 fi
 ```
 
-你在使用时如果需要传入多个参数，当然也是可以的。我处理过的构建系统，构建通常是对给定的项目调用 **make**。如果一个构建系统有非常复杂的构建调用，则你可以让 **run_build.sh** 调用 **workdir** 下最终用户编写的特定脚本。
+在使用时，如果你需要传入多个参数，当然也是可以的。我处理过的构建系统，构建通常是对给定的项目调用 **make**。如果一个构建系统有非常复杂的构建调用，则你可以让 **run_build.sh** 调用 **workdir** 下最终用户编写的特定脚本。
 
 ### 关于 scripts 文件夹的说明
 
@@ -149,7 +147,7 @@ via: https://opensource.com/article/20/4/how-containerize-build-system
 
 作者：[Ravi Chandran][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/LazyWolfLin)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
