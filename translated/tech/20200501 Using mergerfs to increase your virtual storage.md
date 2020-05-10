@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Using mergerfs to increase your virtual storage)
@@ -12,17 +12,15 @@
 
 ![][1]
 
-如果你想在一个媒体项目中用上多个磁盘或分区，而又不想丢失任何现有数据，但又想将所有文件都存放在一个驱动器下，该怎么办？这就是 mergefs 派上用场的地方！
+如果你想在一个媒体项目中用到了多个磁盘或分区，不想丢失任何现有数据，但又想将所有文件都存放在一个驱动器下，该怎么办？这时，mergefs 就能派上用场！
 
-[mergerfs][2] 是旨在简化跨多个商业存储设备文件的存储和管理的联合文件系统。
+[mergerfs][2] 是一个联合文件系统，旨在简化存储和管理众多商业存储设备上的文件。
 
-你需要从[这个][3] github 页面获取最新的 RPM。Fedora 的版本名称中带有 _**fc**_ 和版本号。例如，以下是 Fedora 31 的版本：
-
-[mergerfs-2.29.0-1.fc31.x86_64.rpm][4]
+你需要从他们的 [GitHub][3] 页面获取最新的 RPM。Fedora 的版本名称中带有 “fc” 和版本号。例如，这是 Fedora 31 的版本： [mergerfs-2.29.0-1.fc31.x86_64.rpm][4]。
 
 ### 安装和配置 mergefs
 
-使用 sudo 安装已下载的 mergefs 软件包：
+使用 `sudo` 安装已下载的 mergefs 软件包：
 
 ```
 $ sudo dnf install mergerfs-2.29.0-1.fc31.x86_64.rpm
@@ -47,7 +45,7 @@ total 2
 -rw-rw-r--. 1 curt curt 0 Mar 8 17:21 Halloween hijinks.mkv
 ```
 
-在此例中挂载了两块磁盘，分别为 _disk1_ 和 _disk2_。两个驱动器都有一个包含文件的 _**Videos**_ 目录。
+在此例中挂载了两块磁盘，分别为 `disk1` 和 `disk2`。两个驱动器都有一个包含文件的 `Videos` 目录。
 
 现在，我们将使用 mergefs 挂载这些驱动器，使它们看起来像一个更大的驱动器。
 
@@ -55,19 +53,17 @@ total 2
 $ sudo mergerfs -o defaults,allow_other,use_ino,category.create=mfs,moveonenospc=true,minfreespace=1M /disk1:/disk2 /media
 ```
 
-mergefs 手册页非常广泛且复杂，因此我们将说明上面提到的选项。
+mergefs 手册页非常庞杂，因此我们将说明上面提到的选项。
 
-  * _defaults_：除非指定，否则将使用默认设置。
-  * _allow_other_：允许 sudo 或 root 以外的用户查看文件系统。
-  * _use_ino_：让 mergefs 提供文件/目录 inode 而不是 libfuse。虽然不是默认值，但建议你启用它，以便链接的文件共享相同的 inode 值。
-  * _category.create=mfs_：根据可用空间在驱动器间传播文件。
-  * _moveonenospc=true_：如果启用，那么如果写入失败，将进行扫描以查找具有最大可用空间的驱动器。
-  * _minfreespace=1M_：最小使用空间值。
-  * _disk1_：第一块硬盘。
-  * _disk2_：第二块硬盘。
-  * _/media_：挂载驱动器的目录。
-
-
+  * `defaults`：除非指定，否则将使用默认设置。
+  * `allow_other`：允许 `sudo` 或 `root` 以外的用户查看文件系统。
+  * `use_ino`：让 mergefs 提供文件/目录 inode 而不是 libfuse。虽然不是默认值，但建议你启用它，以便链接的文件共享相同的 inode 值。
+  * `category.create=mfs`：根据可用空间在驱动器间传播文件。
+  * `moveonenospc=true`：如果启用，那么如果写入失败，将进行扫描以查找具有最大可用空间的驱动器。
+  * `minfreespace=1M`：最小使用空间值。
+  * `disk1`：第一块硬盘。
+  * `disk2`：第二块硬盘。
+  * `/media`：挂载驱动器的目录。
 
 看起来是这样的：
 
@@ -84,7 +80,7 @@ $ df -hT | grep media
 
 继续示例：
 
-有一个叫 _Baby’s second Xmas.mkv_ 的 30M 视频。让我们将其复制到用 mergerfs 挂载的 _/media_ 文件夹中。
+有一个叫 `Baby's second Xmas.mkv` 的 30M 视频。让我们将其复制到用 mergerfs 挂载的 `/media` 文件夹中。
 
 ```
 $ ls -lh "Baby's second Xmas.mkv"
@@ -103,7 +99,7 @@ $ df -hT | grep media
 1:2        fuse.mergerfs 66M 31M 30M 51% /media
 ```
 
-从磁盘空间利用率中可以看到，因为 disk1 没有足够的可用空间，所以 mergefs 自动将文件复制到 disk2。
+从磁盘空间利用率中可以看到，因为 `disk1` 没有足够的可用空间，所以 mergefs 自动将文件复制到 `disk2`。
 
 这是所有文件详情：
 
@@ -135,7 +131,7 @@ via: https://fedoramagazine.org/using-mergerfs-to-increase-your-virtual-storage/
 作者：[Curt Warfield][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
