@@ -24,9 +24,9 @@ systemd（是的，全小写，即使在句子开头也是小写），是初始�
 
 Linux 主机从关机状态到运行状态的完整启动过程很复杂，但它是开放的并且是可知的。在详细介绍之前，我将简要介绍一下从主机硬件被上电到系统准备好用户登录的过程。大多数时候，“引导过程”被作为一个整体来讨论，但这是不准确的。实际上，完整的引导和启动过程包含三个主要部分：
 
-* `硬件引导`：初始化系统硬件
-* `Linux <ruby>引导<rt>boot</rt></ruby>`：加载 Linux 内核和 systemd
-* `Linux <ruby>启动<rt>startup</rt></ruby>`：systemd 为主机的生产性工作做准备
+* 硬件引导：初始化系统硬件
+* Linux <ruby>引导<rt>boot</rt></ruby>：加载 Linux 内核和 systemd
+* Linux <ruby>启动<rt>startup</rt></ruby>：systemd 为主机的生产性工作做准备
 
 Linux 启动阶段始于内核加载了 `init` 或 systemd（取决于具体发行版使用的是旧的方式还是还是新的方式）之后。`init` 和 systemd 程序启动并管理所有其它进程，它们在各自的系统上都被称为“所有进程之母”。
 
