@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12216-1.html)
 [#]: subject: (Fixing “Unable to parse package file /var/lib/apt/lists” Error in Ubuntu and Other Linux Distributions)
 [#]: via: (https://itsfoss.com/unable-to-parse-package-file/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-修复 Ubuntu 和其他 Linux 发行版中的 “Unable to parse package file /var/lib/apt/lists” 错误
+修复 Ubuntu 中的 “Unable to parse package file” 错误
 ======
 
 过去，我已经讨论了许多 [Ubuntu 更新错误][1]。如果你[使用命令行更新 Ubuntu][2]，那可能会遇到一些“错误”。
@@ -16,15 +16,19 @@
 
 在本文中，我将向你展示如何解决在更新系统或安装新软件时可能遇到的以下错误：
 
-**Reading package lists… Error!
+```
+Reading package lists… Error!
 E: Unable to parse package file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease
-E: The package lists or status file could not be parsed or opened.**
+E: The package lists or status file could not be parsed or opened.
+```
 
 在 Debian 中可能会遇到类似的错误：
 
-**E: Unable to parse package file /var/lib/apt/extended_states (1)**
+```
+E: Unable to parse package file /var/lib/apt/extended_states (1)
+```
 
-即使遇到 “**The package cache file is corrupted**” 也完全不必惊慌。这真的很容易“修复”。
+即使遇到 `The package cache file is corrupted` 也完全不必惊慌。这真的很容易“修复”。
 
 ### 在基于 Ubuntu 和 Debian 的 Linux 发行版中处理 “Unable to parse package file” 错误
 
@@ -32,11 +36,13 @@ E: The package lists or status file could not be parsed or opened.**
 
 以下是你需要做的。仔细查看 [Ubuntu][4] 报错文件的名称和路径。
 
+```
 Reading package lists… Error!
-**E: Unable to parse package file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease**
+E: Unable to parse package file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease
 E: The package lists or status file could not be parsed or opened.
+```
 
-例如，上面的错误是在报 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease 文件错误。
+例如，上面的错误是在报 `/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease` 文件错误。
 
 这让你想到这个文件不正确。现在，你需要做的就是删除该文件并重新生成缓存。
 
@@ -44,7 +50,7 @@ E: The package lists or status file could not be parsed or opened.
 sudo rm <file_that_is_not_parsed>
 ```
 
-因此，这里我可以使用以下命令：**sudo rm /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease**，然后使用 sudo apt update 命令重建缓存。
+因此，这里我可以使用以下命令：`sudo rm /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease`，然后使用 `sudo apt update` 命令重建缓存。
 
 #### 给初学者的分步指导
 
@@ -81,13 +87,13 @@ sudo apt update
 
 #### 解释这为何能解决问题
 
-/var/lib/apt 是与 apt 软件包管理器相关的文件和数据的存储目录。/var/lib/apt/lists 是用于保存系统 source.list 中指定的每个软件包资源信息的目录。
+`/var/lib/apt` 是与 apt 软件包管理器相关的文件和数据的存储目录。`/var/lib/apt/lists` 是用于保存系统 `source.list` 中指定的每个软件包资源信息的目录。
 
-简单点来说，/var/lib/apt/lists 保存软件包信息缓存。当你要安装或更新程序时，系统会在此目录中检查该软件包中的信息。如果找到了该包的详细信息，那么它将进入远程仓库并实际下载程序或其更新。
+简单点来说，`/var/lib/apt/lists` 保存软件包信息缓存。当你要安装或更新程序时，系统会在此目录中检查该软件包中的信息。如果找到了该包的详细信息，那么它将进入远程仓库并实际下载程序或其更新。
 
-当你运行 “sudo apt update” 时，它将构建缓存。这就是为什么即使删除 /var/lib/apt/lists 目录中的所有内容，运行更新也会建立新的缓存的原因。
+当你运行 `sudo apt update` 时，它将构建缓存。这就是为什么即使删除 `/var/lib/apt/lists` 目录中的所有内容，运行更新也会建立新的缓存的原因。
 
-这就是处理文件无法解析问题的方式。你的系统报某个软件包或仓库信息以某种方式损坏（下载失败或手动更改 sources.list）。删除该文件（或所有文件）并重建缓存即可解决此问题。
+这就是处理文件无法解析问题的方式。你的系统报某个软件包或仓库信息以某种方式损坏（下载失败或手动更改 `sources.list`）。删除该文件（或所有文件）并重建缓存即可解决此问题。
 
 #### 仍然有错误？
 
@@ -100,7 +106,7 @@ via: https://itsfoss.com/unable-to-parse-package-file/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
