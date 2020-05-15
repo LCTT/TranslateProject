@@ -8,6 +8,7 @@
 [#]: author: (Jay Barber https://opensource.com/users/jaybarber)
 
 Open source has room for everyone
+开源代码广阔天地
 ======
 Learn how Megan Byrd-Sanicki, 2020 Women in Open Source Community Award
 winner, brings people together.
