@@ -1,19 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12227-1.html)
 [#]: subject: (9 open source CSS frameworks for frontend web development)
 [#]: via: (https://opensource.com/article/20/4/open-source-css-frameworks)
 [#]: author: (Bryant Son https://opensource.com/users/brson)
 
 9 个用于前端 Web 开发的开源 CSS 框架
 ======
+
 > 探索开源 CSS 框架，找到适合你的项目的框架。
 
-![Digital creative of a browser on the internet][1]
+![](https://img.linux.net.cn/data/attachment/album/202005/18/094922of81rqfiei8x78xi.jpg)
 
-当大多数人想到 Web 开发时，通常会想到 HTML 或 JavaScript。他们通常会忘记对网站的欣赏能力有更大影响的技术：<ruby>[级联样式表][2]<rt>cascading style sheets</rt></ruby>（简称CSS）。据维基百科的说法，CSS 既是任何网页中最重要的部分，也是最常被遗忘的部分，尽管它是万维网的三大基石技术之一。
+当大多数人想到 Web 开发时，通常会想到 HTML 或 JavaScript。他们通常会忘记对网站的欣赏能力有更大影响的技术：<ruby>[级联样式表][2]<rt>cascading style sheets</rt></ruby>（简称 CSS）。据维基百科的说法，CSS 既是网页中最重要的部分，也是最常被遗忘的部分，尽管它是万维网的三大基石技术之一。
 
 本文将探讨九种流行的、强大的、开源的框架，是这些框架让构建漂亮的网站前端的 CSS 开发变得简单明了。
 
@@ -21,15 +22,13 @@
 ---|---|---
 [Bootstrap][3] | 最流行的 CSS 框架，来自 Twitter | MIT
 [PatternFly][4] | 开源框架，来自 Red Hat | MIT
-[MDC Web][5] | 开源框架；来自 Google | MIT
-[Pure][6] | 开源框架；来自 Yahoo | BSD
-[Foundation][7] | 前端框架了；来自 Zurb 基金会 | MIT
+[MDC Web][5] | Material Design 组件开源框架，来自 Google | MIT
+[Pure][6] | 开源框架，来自 Yahoo | BSD
+[Foundation][7] | 前端框架，来自 Zurb 基金会 | MIT
 [Bulma][8] | 现代 CSS 框架，基于 Flexbox | MIT
 [Skeleton][9] | 轻量级 CSS 框架 | MIT
 [Materialize][10] | 基于 Material Design 的 CSS 框架 | MIT
 [Bootflat][11] | 开源 Flat UI 工具，基于 Bootstrap 3.3.0 | MIT
-
-如果你更愿意跟着我一起探索这段直播，你可以看我的视频。 
 
 ### Bootstrap
 
@@ -41,11 +40,11 @@ Bootstrap 还提供了大量的[例子][14]来帮助你入门。
 
 ![Bootstrap examples][15]
 
-使用 Bootstrap，你可以将不同的组件和布局拼接在一起，创造出一个有趣的页面设计。它还提供了大量详细的文档。
+使用 Bootstrap，你可以将不同的组件和布局拼接在一起，创造出有趣的页面设计。它还提供了大量详细的文档。
 
 ![Bootstrap documentation][16]
 
-Bootstrap 的 [GitHub][3] 仓库列出了超过 19000 个提交和 1100 个贡献者。它基于 MIT 许可证，所以（和这个列表中的所有框架一样）你也可以加入并贡献。
+Bootstrap 的 [GitHub][3] 仓库有超过 19000 个提交和 1100 个贡献者。它基于 MIT 许可证，所以（和这个列表中的所有框架一样）你也可以加入并贡献。
 
 ![Bootstrap GitHub][17]
 
@@ -63,13 +62,13 @@ PatternFly 有许多高级组件，如条形图、图表、[模态窗口][21]和
 
 ![PatternFly chart component][22]
 
-PatternFly 的 [GitHub][4] 页面列出了超过 1050 个提交者和 44 个贡献者。PatternFly 得到了很多人的关注，欢迎大家踊跃贡献。
+PatternFly 的 [GitHub][4] 页面列出了超过 1050 个提交和 44 个贡献者。PatternFly 得到了很多人的关注，欢迎大家踊跃贡献。
 
 ![PatternFly GitHub][23]
 
 ### MDC Web
 
-凭借其大获成功的 Android 平台，谷歌以一个名为 [Material Design][24] 的概念制定了自己的标准设计准则。Material Design 标准旨在体现在所有谷歌的产品中，并且在 MIT 许可证下，这些标准也可以向大众和开放源代码。
+凭借其大获成功的安卓平台，谷歌以一个名为 [Material Design][24] 的概念制定了自己的标准设计准则。Material Design 标准旨在体现在所有谷歌的产品中，这些标准也可以面向大众，并且在 MIT 许可证下开源。
 
 ![Material Design homepage][25]
 
@@ -85,7 +84,7 @@ Material Design 有许多“用于创建用户界面的交互式构建块”的[
 
 ![Material Design tutorial][29]
 
-Material 组件的 GitHub 页面承载了不同平台的版本库，包括用于网站开发的 [Material Web 组件（MDC Web）][5]。MDC Web 有超过 5700 个提交和 349 个贡献者。
+Material 组件的 GitHub 页面承载了面向不同平台的存储库，包括用于网站开发的 [Material Web 组件（MDC Web）][5]。MDC Web 有超过 5700 个提交和 349 个贡献者。
 
 ![MDC Web GitHub][30]
 
@@ -123,7 +122,7 @@ Foundation 的 [GitHub][7] 页面显示有近 17000 个提交和 1000 个贡献�
 
 ![Bulma homepage][41]
 
-Bulma 有简洁明快的文档，让你可以很容易地选择你想要探索的主题。它也有很多的网页组件，你可以直接拿起来在设计中使用。
+Bulma 有简洁明快的文档，让你可以很容易地选择你想要探索的主题。它也有很多网页组件，你可以直接拿起来在设计中使用。
 
 ![Bulma documentation][42]
 
@@ -133,15 +132,15 @@ Bulma 的 [GitHub][8] 页面列出了 1400 多个提交和 300 多个贡献者�
 
 ### Skeleton
 
-如果连 Pure 都觉得太重了，那么还有一个更轻量级的框架叫 [Skeleton][44]。Skeleton 库只有 400 行左右的长度，而且这个框架只提供了开始你的 CSS 框架之旅的基本组件。
+如果连 Pure 都觉得太重了，那么还有一个叫 [Skeleton][44] 的更轻量级框架。Skeleton 库只有 400 行左右的长度，而且这个框架只提供了开始你的 CSS 框架之旅的基本组件。
 
 ![Skeleton homepage][45]
 
-尽管它很简单，但Skeleton提供了详细的文档，可以帮助你马上上手。
+尽管它很简单，但 Skeleton 提供了详细的文档，可以帮助你马上上手。
 
 ![Skeleton documentation][46]
 
-Skeleton 的 [GitHub][9] 列出了 167 个提交者和 22 个贡献者。然而，它不是很活跃，它的最后一次更新是在 2014 年，所以在使用之前可能需要一些维护。由于它是在 MIT 许可证下发布的，你可以自行维护。
+Skeleton 的 [GitHub][9] 列出了 167 个提交和 22 个贡献者。然而，它不是很活跃，它的最后一次更新是在 2014 年，所以在使用之前可能需要一些维护。由于它是在 MIT 许可证下发布的，你可以自行维护。
 
 ![Skeleton GitHub][47]
 
@@ -169,13 +168,13 @@ Bootflat 的[文档][54]几乎像是受到了宜家的启发 —— 它显示的
 
 ![Bootflat docs][55]
 
-Bootflat 是在 MIT 许可下提供的，其 [GitHub][11] 页面包括 159 个提交和 8 个贡献者。
+Bootflat 是在 MIT 许可证下提供的，其 [GitHub][11] 页面包括 159 个提交和 8 个贡献者。
 
 ![Bootflat GitHub][56]
 
 ### 你应该选择哪个 CSS 框架？
 
-对于开源的 CSS 框架，你有很多选择，这取决于你想要的工具功能有多丰富或简单。就像所有的技术决定一样，没有任何一个正确的答案，只有在给定的时间和项目中才有正确的选择。
+对于开源的 CSS 框架，你有很多选择，这取决于你想要的工具功能有多丰富或简单。就像所有的技术决定一样，没有一个正确的答案，只有在给定的时间和项目中才有正确的选择。
 
 尝试一下其中的一些，看看要在下一个项目中使用哪个。另外，我有没有错过任何有趣的开源 CSS 框架？请在下面的评论中分享你的反馈和想法。
 
@@ -186,7 +185,7 @@ via: https://opensource.com/article/20/4/open-source-css-frameworks
 作者：[Bryant Son][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
