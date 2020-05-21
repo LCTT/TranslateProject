@@ -8,10 +8,12 @@
 [#]: author: (Jay Barber https://opensource.com/users/jaybarber)
 
 Open source has room for everyone
-开源代码广阔天地
+开源代码广阔天地为大家
 ======
 Learn how Megan Byrd-Sanicki, 2020 Women in Open Source Community Award
 winner, brings people together.
+学习 2020 开源社区最佳女性获得者 Megan Byrd-Sanicki 是如何让大家走到一起的
+
 ![Dandelion held out over water][1]
 
 "Growing up, I was a bit of a field marshal," Megan Byrd-Sanicki, 2020 [Women in Open Source Community Award][2] winner, says with a smile. "I was always the one pulling classmates together. 'We're going to play a game. Come on, everyone, I'll teach you the rules.' I'd also have an eye to the sidelines, trying to identify who wasn't being included and how I could draw them in."
