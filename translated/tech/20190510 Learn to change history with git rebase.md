@@ -7,19 +7,18 @@
 [#]: via: (https://git-rebase.io/)
 [#]: author: (git-rebase https://git-rebase.io/)
 
-Learn to change history with git rebase!
+学习用 git 变基来改变历史！
 ======
-One of Git 's core value-adds is the ability to edit history. Unlike version control systems that treat the history as a sacred record, in git we can change history to suit our needs. This gives us a lot of powerful tools and allows us to curate a good commit history in the same way we use refactoring to uphold good software design practices. These tools can be a little bit intimidating to the novice or even intermediate git user, but this guide will help to demystify the powerful git-rebase .
 
-```
-A word of caution : changing the history of public, shared, or stable branches is generally advised against. Editing the history of feature branches and personal forks is fine, and editing commits that you haven't pushed yet is always okay. Use git push -f to force push your changes to a personal fork or feature branch after editing your commits.
-```
+[Git][1] 的核心的附加价值之一就是编辑历史记录的能力。不同于将历史记录视为神圣的记录的版本控制系统，在 Git 中，我们可以根据自己的需要修改历史记录。这为我们提供了很多强大的工具，让我们可以像使用重构来维护良好的软件设计实践一样，编织良好的提交历史。这些工具对于新手甚至是有经验的 Git 用户来说可能会有些生畏，但本指南将帮助我们揭秘强大的 git-rebase。
 
-Despite the scary warning, it's worth mentioning that everything mentioned in this guide is a non-destructive operation. It's actually pretty difficult to permanently lose data in git. Fixing things when you make mistakes is covered at the end of this guide.
+> 值得注意的是：一般建议不要修改公共分支、共享分支或稳定分支的历史记录。编辑特性分支和个人分支的历史记录是可以的，编辑还没有推送的提交也是可以的。在编辑完提交后，使用 `git push -f` 来强制推送你的修改到个人分支或特性分支。
 
-### Setting up a sandbox
+尽管有这么可怕的警告，但值得一提的是，本指南中提到的一切都是非破坏性操作。实际上，在 Git 中永久丢失数据是相当困难的。当你犯错时的修复方法在本指南的最后会涉及到。
 
-We don't want to mess up any of your actual repositories, so throughout this guide we'll be working with a sandbox repo. Run these commands to get started:
+### 设置沙盒
+
+我们不想破坏你的实际版本库，所以在整个指南中，我们将使用一个沙盒版本库。运行这些命令来开始工作。[^1]
 
 ```
 git init /tmp/rebase-sandbox
@@ -27,31 +26,30 @@ cd /tmp/rebase-sandbox
 git commit --allow-empty -m"Initial commit"
 ```
 
-If you run into trouble, just run rm -rf /tmp/rebase-sandbox and run these steps again to start over. Each step of this guide can be run on a fresh sandbox, so it's not necessary to re-do every task.
+如果你遇到麻烦，只需运行 `rm -rf /tmp/rebase-sandbox`，然后重新运行这些步骤重新开始。本指南的每一步都可以在一个新的沙箱上运行，所以没有必要重做每个任务。
 
+### 修正最新的提交
 
-### Amending your last commit
-
-Let's start with something simple: fixing your most recent commit. Let's add a file to our sandbox - and make a mistake:
+让我们从简单的事情开始：修复你最近的提交。让我们将一个文件添加到我们的沙盒中，并犯个错误。
 
 ```
 echo "Hello wrold!" >greeting.txt
- git add greeting.txt
- git commit -m"Add greeting.txt"
+git add greeting.txt
+git commit -m"Add greeting.txt"
 ```
 
-Fixing this mistake is pretty easy. We can just edit the file and commit with `--amend`, like so:
+修复这个错误是非常容易的。我们只需要编辑文件，然后用 `--amend` 提交就可以了，就像这样：
 
 ```
 echo "Hello world!" >greeting.txt
- git commit -a --amend
+git commit -a --amend
 ```
 
-Specifying `-a` automatically stages (i.e. `git add`'s) all files that git already knows about, and `--amend` will squash the changes into the most recent commit. Save and quit your editor (you have a chance to change the commit message now if you'd like). You can see the fixed commit by running `git show`:
+指定 `-a` 会自动将所有 Git 已经知道的文件进行暂存（即 `--amend`），而 `--amend` 会将更改的内容压制到最近的提交中。保存并退出你的编辑器（如果你愿意的话，现在你有机会修改提交信息）。你可以通过运行 `--git show` 看到修复的提交。
 
 ```
 commit f5f19fbf6d35b2db37dcac3a55289ff9602e4d00 (HEAD -> master)
-Author: Drew DeVault
+Author: Drew DeVault 
 Date:   Sun Apr 28 11:09:47 2019 -0400
 
     Add greeting.txt
@@ -592,3 +590,5 @@ via: https://git-rebase.io/
 
 [a]: https://git-rebase.io/
 [b]: https://github.com/lujun9972
+[1]: https://git-scm.com/
+[2]: https://git-scm.com/docs/git-rebase
