@@ -7,26 +7,26 @@
 [#]: via: (https://www.2daygeek.com/check-mysql-mariadb-database-server-uptime-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-Three Methods to Check Uptime of MySQL/MariaDB Database Server on Linux
+在 Linux 上检查 MySQL/MariaDB 数据库正常运行时间的三种方法
 ======
 
-We all know the purpose of the uptime command in Linux.
+我们都知道在 Linux 中使用 uptime 命令的目的。
 
-This is used to check the **[uptime of the Linux system][1]** and how long the system runs without restarting.
+它用于检查 **[Linux 系统的正常运行时间][1]**以及系统未重启运行的时间。
 
-The Linux admin job is to keep the system up and running.
+Linux 管理员的工作是保持系统正常运行。
 
-If you want to check how long other services like **[Apache][2]**, MySQL, MariaDB, sftp, etc., are running on Linux, how do you do that?
+如果要检查 Linux 上的其他服务（例如 **[Apache][2]**、MySQL、MariaDB、sftp 等）运行了多长时间，该怎么做？
 
-Each service has their own command to check the uptime of service.
+每个服务都有自己的命令来检查服务的正常运行时间。
 
-But you can also use other commands for this purpose.
+但是你也可以为此使用其他命令。
 
-### Method-1: How to Check the Uptime of a MySQL/MariaDB Database Server on Linux Using the ps Command
+### 方法 1：如何使用 ps 命令在 Linux 上检查 MySQL/MariaDB 数据库的正常运行时间
 
-The **[ps command][3]** stands for process status. This is one of the most basic commands that shows the system running processes with details.
+**[ps命令][3]**代表进程状态。这是最基本的命令之一，它显示了系统正在运行的进程的详细信息。
 
-To do so, you first need to find the PID of **[MySQL][4]**/MariaDB using the **[pidof command][5]**.
+为此，你首先需要使用 **[pidof 命令][5]查找 **[MySQL][4]**/MariaDB的 PID。
 
 ```
 # pidof mysqld | cut -d" " -f1
@@ -34,9 +34,9 @@ To do so, you first need to find the PID of **[MySQL][4]**/MariaDB using the **[
 2412
 ```
 
-Once you have the MySQL/[**MariaDB**][6] PID, use the “etime” option with the ps command and get the uptime.
+获取 MySQL/[**MariaDB**][6] 的 PID 后，请在 ps 命令中使用 “etime” 选项获得正常运行时间。
 
-  * **etime:** elapsed time since the process was started, in the form of [[DD-]hh:]mm:ss.
+ * **etime：**自进程启动以来经过的时间，形式为 [[DD-]hh:]mm:ss。
 
 
 
@@ -47,7 +47,7 @@ Once you have the MySQL/[**MariaDB**][6] PID, use the “etime” option with th
 2-08:49:30
 ```
 
-Alternatively, use the “lstart” option with the ps command to get the uptime of a given PID.
+或者，在 ps 命令中使用 “lstart” 选项来获取指定 PID 的正常运行时间。
 
 ```
 # ps -p 2412 -o lstart
@@ -56,17 +56,17 @@ Alternatively, use the “lstart” option with the ps command to get the uptime
 Sat May 2 03:02:15 2020
 ```
 
-The MySQL/MariaDB process has been running for 2 days, 03 hours, 02 minutes and 15 seconds.
+MySQL/MariaDB 进程已经运行了 2 天 03 小时 02 分 15 秒。
 
-### Method-2: How to Check the Uptime of a MySQL/MariaDB Database Server on Linux Using the Systemctl Command
+### 方法 2：如何使用 Systemctl 命令在 Linux 上检查 MySQL/MariaDB 数据库的正常运行时间
 
-The **[systemctl command][7]** is used to control the systemd system and service manager.
+**[systemctl 命令][7]** 用于控制 systemd 系统和服务管理器。
 
-systemd is a new init system and system manager, that was adopted by most of Linux distributions now over the traditional SysVinit manager.
+systemd 是新的 init 系统和系统管理器，现在大多数 Linux 发行版都淘汰了传统的 SysVinit 管理器而采用了systemd。
 
 ```
 # systemctl status mariadb
-or
+或者
 # systemctl status mysql
 
 ● mariadb.service - MariaDB 10.1.44 database server
@@ -95,13 +95,13 @@ Warning: Journal has been rotated since unit was started. Log output is incomple
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
-### Method-3: How to Check the Uptime of a MySQL/MariaDB Database Server on Linux Using the MySQLAdmin Command
+### 方法 3：如何使用 MySQLAdmin 命令在 Linux 上检查 MySQL/MariaDB 数据库的正常运行时间
 
-**[MySQLAdmin][8]** is a command-line utility for MySQL Server that is installed when installing the MySQL package.
+**[MySQLAdmin][8]** 是安装 MySQL 软件包时安装的 MySQL 服务器命令行程序。
 
-The MySQLAdmin client allows you to perform some basic administrative functions on the MySQL server.
+MySQLAdmin 客户端允许你在 MySQL 服务器上执行一些基本的管理功能。
 
-It is used to create a database, drop a database, set a root password, change the root password, check MySQL status, verify MySQL functionality, monitor mysql processes, and verify the configuration of the server.
+它用于创建数据库、删除数据库、设置 root 密码、更改 root 密码、检查 MySQL 状态、验证 MySQL 功能、监视 mysql 进程以及验证服务器的配置。
 
 ```
 # mysqladmin -u root -pPassword version
@@ -126,7 +126,7 @@ via: https://www.2daygeek.com/check-mysql-mariadb-database-server-uptime-linux/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
