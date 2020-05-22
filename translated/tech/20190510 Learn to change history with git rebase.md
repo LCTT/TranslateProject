@@ -28,7 +28,7 @@ git commit --allow-empty -m"Initial commit"
 
 如果你遇到麻烦，只需运行 `rm -rf /tmp/rebase-sandbox`，然后重新运行这些步骤重新开始。本指南的每一步都可以在一个新的沙箱上运行，所以没有必要重做每个任务。
 
-### 修正最新的提交
+### 修正最近的提交
 
 让我们从简单的事情开始：修复你最近的提交。让我们将一个文件添加到我们的沙盒中，并犯个错误。
 
@@ -63,9 +63,9 @@ index 0000000..cd08755
 +Hello world!
 ```
 
-### Fixing up older commits
+### 修复更旧的提交
 
-Amending only works for the most recent commit. What happens if you need to correct an older commit? Let's start by setting up our sandbox accordingly:
+`--amend` 只对最近的提交有效。如果你需要修正一个较旧的提交，会发生什么？让我们相应地从设置沙盒开始：
 
 ```
 echo "Hello!" >greeting.txt
@@ -77,14 +77,14 @@ git add farewell.txt
 git commit -m"Add farewell.txt"
 ```
 
-Looks like `greeting.txt` is missing "world". Let's write a commit normally which fixes that:
+看起来 `greeting.txt ` 像是丢失了 `"world"`。让我们正常地写个提交来解决这个问题：
 
 ```
 echo "Hello world!" >greeting.txt
 git commit -a -m"fixup greeting.txt"
 ```
 
-So now the files look correct, but our history could be better - let's use the new commit to "fixup" the last one. For this, we need to introduce a new tool: the interactive rebase. We're going to edit the last three commits this way, so we'll run `git rebase -i HEAD~3` (`-i` for interactive). This'll open your text editor with something like this:
+现在文件看起来正确，但是我们的历史记录可以会更好一点 —— 让我们使用新的提交来“修复”（`fixup`）最后一个提交。为此，我们需要引入一个新工具：交互式变基。我们将以这种方式编辑最后三个提交，因此我们将运行`git rebase -i HEAD~3`（`-i` 代表交互式）。这样会打开文本编辑器，如下所示：
 
 ```
 pick 8d3fc77 Add greeting.txt
@@ -98,9 +98,9 @@ pick 0b9d0bb fixup greeting.txt
 # f, fixup <commit> = like "squash", but discard this commit's log message
 ```
 
-This is the rebase plan, and by editing this file you can instruct git on how to edit history. I've trimmed the summary to just the details relevant to this part of the rebase guide, but feel free to skim the full summary in your text editor.
+这是变基计划，通过编辑此文件，你可以指导 Git 如何编辑历史记录。我已经将该摘要删节为仅与变基计划这一部分相关的细节，但是你可以在文本编辑器中浏览完整的摘要。
 
-When we save and close our editor, git is going to remove all of these commits from its history, then execute each line one at a time. By default, it's going to pick each commit, summoning it from the heap and adding it to the branch. If we don't edit this file at all, we'll end up right back where we started, picking every commit as-is. We're going to use one of my favorite features now: fixup. Edit the third line to change the operation from "pick" to "fixup" and move it to immediately after the commit we want to "fix up":
+当我们保存并关闭编辑器时，Git 将从其历史记录中删除所有这些提交，然后一次执行每一行。默认情况下，它将选取（`pick`）每个提交，将其从堆中召唤出来并将其添加到分支中。如果我们对此文件根本没有做任何编辑，则将直接回到起点，按原样选取每个提交。现在，我们将使用我最喜欢的功能之一：修复（`fixup`）。编辑第三行，将操作从 `pick` 更改为 `fixup`，并将其立即移至我们要“修复”的提交之后：
 
 ```
 pick 8d3fc77 Add greeting.txt
@@ -108,9 +108,9 @@ fixup 0b9d0bb fixup greeting.txt
 pick 2a73a77 Add farewell.txt
 ```
 
-**Tip** : We can also abbreviate this with just "f" to speed things up next time.
+**技巧**：我们也可以只用 `f` 来缩写它，以加快下次的速度。
 
-Save and quit your editor - git will run these commands. We can check the log to verify the result:
+保存并退出编辑器，Git 将运行这些命令。我们可以检查日志以验证结果：
 
 ```
 $ git log -2 --oneline
@@ -118,9 +118,9 @@ fcff6ae (HEAD -> master) Add farewell.txt
 a479e94 Add greeting.txt
 ```
 
-### Squashing several commits into one
+### 将多个提交压扁为一个
 
-As you work, you may find it useful to write lots of commits as you reach small milestones or fix bugs in previous commits. However, it may be useful to "squash" these commits together, to make a cleaner history before merging your work into master. For this, we'll use the "squash" operation. Let's start by writing a bunch of commits - just copy and paste this if you want to speed it up:
+在工作时，当你达到较小的里程碑或修复以前的提交中的错误时，你可能会发现写很多提交很有用。但是，在将你的工作合并到 `master` 分支之前，将这些提交“压扁”（`squash`）在一起以使历史记录更清晰可能很有用。为此，我们将使用“压扁”（`squash `）操作。让我们从编写一堆提交开始，如果要加快速度，只需复制并粘贴这些：
 
 ```
 git checkout -b squash
@@ -131,7 +131,7 @@ for c in H e l l o , ' ' w o r l d; do
 done
 ```
 
-That's a lot of commits to make a file that says "Hello, world"! Let's start another interactive rebase to squash them together. Note that we checked out a branch to try this on, first. Because of that, we can quickly rebase all of the commits since we branched by using `git rebase -i master`. The result:
+要做出一个写着 “Hello，world”的文件，要做很多事情！让我们开始另一个交互式变基，将它们压扁在一起。请注意，我们首先签出了一个分支来进行尝试。因此，因为我们使用 `git rebase -i master` 进行的分支，我们可以快速变基所有提交。结果：
 
 ```
 pick 1e85199 Add 'H' to squash.txt
@@ -154,9 +154,9 @@ pick 6b608ae Add 'd' to squash.txt
 # s, squash <commit> = use commit, but meld into previous commit
 ```
 
-**Tip** : your local master branch evolves independently of the remote master branch, and git stores the remote branch as `origin/master`. Combined with this trick, `git rebase -i origin/master` is often a very convenient way to rebase all of the commits which haven't been merged upstream yet!
+**技巧**：你的本地 `master` 分支独立于远程 `master` 分支而发展，并且 Git 将远程分支存储为 `origin/master`。结合这种技巧，`git rebase -i origin/master` 通常是一种非常方便的方法，可以变基所有尚未合并到上游的提交！
 
-We're going to squash all of these changes into the first commit. To do this, change every "pick" operation to "squash", except for the first line, like so:
+我们将把所有这些更改压扁到第一个提交中。为此，将第一行除外的每个“选取”（`pick`）操作都更改为“压扁”（`squash `），如下所示：
 
 ```
 pick 1e85199 Add 'H' to squash.txt
@@ -173,7 +173,7 @@ squash a513fd1 Add 'l' to squash.txt
 squash 6b608ae Add 'd' to squash.txt
 ```
 
-When you save and close your editor, git will think about this for a moment, then open your editor again to revise the final commit message. You'll see something like this:
+保存并关闭编辑器时，Git 会考虑片刻，然后再次打开编辑器以修改最终的提交消息。你会看到以下内容：
 
 ```
 # This is a combination of 12 commits.
@@ -242,11 +242,11 @@ Add 'd' to squash.txt
 #
 ```
 
-This defaults to a combination of all of the commit messages which were squashed, but leaving it like this is almost always not what you want. The old commit messages may be useful for reference when writing the new one, though.
+默认情况下，这是所有要压扁的提交的消息的组合，但是像这样将其保留肯定不是你想要的。不过，旧的提交消息在编写新的提交消息时可能很有用，所以放在这里以供参考。
 
-**Tip** : the "fixup" command you learned about in the previous section can be used for this purpose, too - but it discards the messages of the squashed commits.
+**提示**：你在上一节中了解的“修复”（`fixup`）命令也可以用于此目的，但它会丢弃压缩的提交消息。
 
-Let's delete everything and replace it with a better commit message, like this:
+让我们删除所有内容，并用更好的提交消息替换它，如下所示：
 
 ```
 Add squash.txt with contents "Hello, world"
@@ -268,7 +268,7 @@ Add squash.txt with contents "Hello, world"
 #
 ```
 
-Save and quit your editor, then examine your git log - success!
+保存并退出编辑器，然后检查你的 Git 日志，成功！
 
 ```
 commit c785f476c7dff76f21ce2cad7c51cf2af00a44b6 (HEAD -> squash)
@@ -278,7 +278,7 @@ Date:   Sun Apr 28 14:21:56 2019 -0400
     Add squash.txt with contents "Hello, world"
 ```
 
-Before we move on, let's pull our changes into the master branch and get rid of this scratch one. We can use `git rebase` like we use `git merge`, but it avoids making a merge commit:
+在继续之前，让我们将所做的更改拉入 `master` 分支中，并摆脱掉这一草稿。我们可以像使用 `git merge` 一样使用 `git rebase`，但是它避免了创建合并提交：
 
 ```
 git checkout master
@@ -286,11 +286,11 @@ git rebase squash
 git branch -D squash
 ```
 
-We generally prefer to avoid using git merge unless we're actually merging unrelated histories. If you have two divergent branches, a git merge is useful to have a record of when they were... merged. In the course of your normal work, rebase is often more appropriate.
+除非我们实际上正在合并无关的历史记录，否则我们通常希望避免使用 `git merge`。如果你有两个不同的分支，则 `git merge` 对于记录合并它们的时间非常有用。在正常工作过程中，变基通常更为合适。
 
-### Splitting one commit into several
+### 将一个提交拆分为多个
 
-Sometimes the opposite problem happens - one commit is just too big. Let's look into splitting it up. This time, let's write some actual code. Start with a simple C program2 (you can still copy+paste this snippet into your shell to do this quickly):
+有时会发生相反的问题：一个提交太大了。让我们来看一看拆分它们。这次，让我们写一些实际的代码。从一个简单的 C 程序 `program2 ` 开始（你仍然可以将此代码段复制并粘贴到你的 shell 中以快速执行此操作）：
 
 ```
 cat <<EOF >main.c
@@ -300,14 +300,14 @@ int main(int argc, char *argv[]) {
 EOF
 ```
 
-We'll commit this first.
+首先提交它：
 
 ```
 git add main.c
 git commit -m"Add C program skeleton"
 ```
 
-Next, let's extend the program a bit:
+然后把这个程序扩展一些：
 
 ```
 cat <<EOF >main.c
@@ -328,13 +328,13 @@ int main(int argc, char *argv[]) {
 EOF
 ```
 
-After we commit this, we'll be ready to learn how to split it up.
+提交之后，我们就可以准备学习如何将其拆分：
 
 ```
 git commit -a -m"Flesh out C program"
 ```
 
-The first step is to start an interactive rebase. Let's rebase both commits with `git rebase -i HEAD~2`, giving us this rebase plan:
+第一步是启动交互式变基。让我们用 `git rebase -i HEAD~2` 来变基这两个提交，变基计划如下：
 
 ```
 pick 237b246 Add C program skeleton
@@ -347,7 +347,7 @@ pick b3f188b Flesh out C program
 # e, edit <commit> = use commit, but stop for amending
 ```
 
-Change the second commit's command from "pick" to "edit", then save and close your editor. Git will think about this for a second, then present you with this:
+将第二个提交的命令从 `pick` 更改为 `edit`，然后保存并关闭编辑器。Git 会考虑一秒钟，然后向你建议：
 
 ```
 Stopped at b3f188b...  Flesh out C program
@@ -360,7 +360,7 @@ Once you are satisfied with your changes, run
   git rebase --continue
 ```
 
-We could follow these instructions to add new changes to the commit, but instead let's do a "soft reset"3 by running `git reset HEAD^`. If you run `git status` after this, you'll see that it un-commits the latest commit and adds its changes to the working tree:
+我们可以按照以下说明为提交添加新的更改，但我们可以通过运行 `git reset HEAD^` 来进行“软重置” [^3]。如果在此之后运行 `git status`，你将看到它取消提交最新的提交，并将其更改添加到工作树中：
 
 ```
 Last commands done (2 commands done):
@@ -379,7 +379,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-To split this up, we're going to do an interactive commit. This allows us to selectively commit only specific changes from the working tree. Run `git commit -p` to start this process, and you'll be presented with the following prompt:
+为了对此进行拆分，我们将进行交互式提交。这使我们能够选择性地仅提交工作树中的特定更改。运行 `git commit -p` 开始这个过程，将出现以下提示：
 
 ```
 diff --git a/main.c b/main.c
@@ -404,7 +404,7 @@ index b1d9c2c..3463610 100644
 Stage this hunk [y,n,q,a,d,s,e,?]?
 ```
 
-Git has presented you with just one "hunk" (i.e. a single change) to consider committing. This one is too big, though - let's use the "s" command to "split" up the hunk into smaller parts.
+Git 仅向你提供了一个“大块”（即单个更改）以进行提交。不过，这太大了，让我们使用 `s` 命令将这个“大块”拆分成较小的部分。
 
 ```
 Split into 2 hunks.
@@ -421,9 +421,9 @@ Split into 2 hunks.
 Stage this hunk [y,n,q,a,d,j,J,g,/,e,?]?
 ```
 
-**Tip** : If you're curious about the other options, press "?" to summarize them.
+**提示**：如果你对其他选项感到好奇，请按 `?` 汇总显示。
 
-This hunk looks better - a single, self-contained change. Let's hit "y" to answer the question (and stage that "hunk"), then "q" to "quit" the interactive session and proceed with the commit. Your editor will pop up to ask you to enter a suitable commit message.
+这个大块看起来更好：单一、独立的更改。让我们按 `y` 来回答问题（并暂存那个“大块”），然后按 `q` 以“退出”交互式会话并继续进行提交。会弹出编辑器，要求输入合适的提交消息。
 
 ```
 Add get_name function to C program
@@ -446,14 +446,14 @@ Add get_name function to C program
 #
 ```
 
-Save and close your editor, then we'll make the second commit. We could do another interactive commit, but since we just want to include the rest of the changes in this commit we'll just do this:
+保存并关闭编辑器，然后我们进行第二次提交。我们可以执行另一个交互式提交，但是由于我们只想在此提交中包括其余更改，因此我们将执行以下操作：
 
 ```
 git commit -a -m"Prompt user for their name"
 git rebase --continue
 ```
 
-That last command tells git that we're done editing this commit, and to continue to the next rebase command. That's it! Run `git log` to see the fruits of your labor:
+最后一条命令告诉 Git 我们已经完成了此提交的编辑，并继续执行下一个变基命令。就是这样！运行 `git log` 来查看你的劳动成果：
 
 ```
 $ git log -3 --oneline
