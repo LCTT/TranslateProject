@@ -290,7 +290,7 @@ git branch -D squash
 
 ### 将一个提交拆分为多个
 
-有时会发生相反的问题：一个提交太大了。让我们来看一看拆分它们。这次，让我们写一些实际的代码。从一个简单的 C 程序 `program2 ` 开始（你仍然可以将此代码段复制并粘贴到你的 shell 中以快速执行此操作）：
+有时会发生相反的问题：一个提交太大了。让我们来看一看拆分它们。这次，让我们写一些实际的代码。从一个简单的 C 程序 [^2] 开始（你仍然可以将此代码段复制并粘贴到你的 shell 中以快速执行此操作）：
 
 ```
 cat <<EOF >main.c
@@ -462,9 +462,9 @@ fe19cc3 (HEAD -> master) Prompt user for their name
 237b246 Add C program skeleton
 ```
 
-### Reordering commits
+### 重新排序提交
 
-This one is pretty easy. Let's start by setting up our sandbox:
+这很简单。 让我们从设置沙箱开始：
 
 ```
 echo "Goodbye now!" >farewell.txt
@@ -480,7 +480,7 @@ git add inquiry.txt
 git commit -m"Add inquiry.txt"
 ```
 
-The git log should now look like this:
+Git 日志现在应如下所示：
 
 ```
 f03baa5 (HEAD -> master) Add inquiry.txt
@@ -488,7 +488,7 @@ a4cebf7 Add greeting.txt
 90bb015 Add farewell.txt
 ```
 
-Clearly, this is all out of order. Let's do an interactive rebase of the past 3 commits to resolve this. Run `git rebase -i HEAD~3` and this rebase plan will appear:
+显然，这都是乱序。让我们对过去的 3 个提交进行交互式变基来解决此问题。运行 `git rebase -i HEAD~3`，这个变基规划将出现：
 
 ```
 pick 90bb015 Add farewell.txt
@@ -503,7 +503,7 @@ pick f03baa5 Add inquiry.txt
 # These lines can be re-ordered; they are executed from top to bottom.
 ```
 
-The fix is now straightforward: just reorder these lines in the order you wish for the commits to appear. Should look something like this:
+现在，解决方法很简单：只需按照你希望提交出现的顺序重新排列这些行。应该看起来像这样：
 
 ```
 pick a4cebf7 Add greeting.txt
@@ -511,35 +511,35 @@ pick f03baa5 Add inquiry.txt
 pick 90bb015 Add farewell.txt
 ```
 
-Save and close your editor and git will do the rest for you. Note that it's possible to end up with conflicts when you do this in practice - click here for help resolving conflicts.
+保存并关闭你的编辑器，而 Git 将为你完成其余工作。请注意，在实践中这样做可能会导致冲突，参看下面章节以获取解决冲突的帮助。
 
 ### git pull --rebase
 
-If you've been writing some commits on a branch which has been updated upstream, normally `git pull` will create a merge commit. In this respect, `git pull`'s behavior by default is equivalent to:
+如果你一直在上游更新的分支上编写一些提交，通常 `git pull` 将创建一个合并提交。在这方面，`git pull` 的默认行为等同于：
 
 ```
 git fetch origin
 git merge origin/master
 ```
 
-There's another option, which is often more useful and leads to a much cleaner history: `git pull --rebase`. Unlike the merge approach, this is equivalent to the following:
+还有另一种选择，它通常更有用，并且导致更清晰的历史记录：`git pull --rebase`。与合并方式不同，这基本上 [^4] 等效于以下内容：
 
 ```
 git fetch origin
 git rebase origin/master
 ```
 
-The merge approach is simpler and easier to understand, but the rebase approach is almost always what you want to do if you understand how to use git rebase. If you like, you can set it as the default behavior like so:
+合并方式更简单易懂，但是如果你了解如何使用 `git rebase`，那么变基方式几乎可以做到你想要做的任何事情。如果愿意，可以将其设置为默认行为，如下所示：
 
 ```
 git config --global pull.rebase true
 ```
 
-When you do this, technically you're applying the procedure we discuss in the next section... so let's explain what it means to do that deliberately, too.
+当你执行此操作时，从技术上讲，你将应用我们在下一节中讨论的过程...因此，让我们也解释一下故意执行此操作的含义。
 
-### Using git rebase to... rebase
+### 使用 git rebase 来变基
 
-Ironically, the feature of git rebase that I use the least is the one it's named for: rebasing branches. Say you have the following branches:
+具有讽刺意味的是，我最少使用的 Git 变基功能是它以之命名的功能：变基分支。假设你有以下分支：
 
 ```
 o--o--o--o--> master
@@ -547,14 +547,14 @@ o--o--o--o--> master
       \--o--> feature-2
 ```
 
-It turns out feature-2 doesn't depend on any of the changes in feature-1, so you can just base it off of master. The fix is thus:
+事实证明，`feature-2` 不依赖于 `feature-` 的任何更改，因此你可以将其作为基础。因此，解决方法是：
 
 ```
 git checkout feature-2
 git rebase master
 ```
 
-The non-interactive rebase does the default operation for all implicated commits ("pick")4, which simply rolls your history back to the last common anscestor and replays the commits from both branches. Your history now looks like this:
+非交互式变基对所有牵连的提交（`pick`）[^5] 都执行默认操作，它简单地将你的历史回滚到最后一个共同的祖先，并从两个分支中重放提交。你的历史记录现在看起来像这样：
 
 ```
 o--o--o--o--> master
@@ -562,20 +562,23 @@ o--o--o--o--> master
    \--o--o--> feature-1
 ```
 
-### Resolving conflicts
+### 解决冲突
 
-The details on resolving merge conflicts are beyond the scope of this guide - keep your eye out for another guide for this in the future. Assuming you're familiar with resolving conflicts in general, here are the specifics that apply to rebasing.
+解决合并冲突的详细信息不在本指南的范围内，将来请你注意另一篇指南。假设你熟悉通常的解决冲突的方法，那么这里是专门适用于变基的部分。
 
-The details on resolving merge conflicts are beyond the scope of this guide - keep your eye out for another guide for this in the future. Assuming you're familiar with resolving conflicts in general, here are the specifics that apply to rebasing.
+有时，在进行变基时会遇到合并冲突，你可以像处理其他任何合并冲突一样处理该冲突。Git 将在受影响的文件中设置冲突标记，`git status` 将显示你需要解决的问题，并且你可以使用 `git add` 或 `git rm` 将文件标记为已解决。但是，在 `git rebase` 的上下文中，你应该注意两个选项。
 
-Sometimes you'll get a merge conflict when doing a rebase, which you can handle just like any other merge conflict. Git will set up the conflict markers in the affected files, `git status` will show you what you need to resolve, and you can mark files as resolved with `git add` or `git rm`. However, in the context of a git rebase, there are two options you should be aware of.
+首先是如何完成冲突解决。解决由于 `git merge` 引起的冲突时，你将不会像使用 `git commit` 那样，适当的变基命令是 `git rebase --continue`。但是，还有一个可用的选项：`git rebase --skip`。 这将跳过你正在处理的提交，它不会包含在变基中。这在执行非交互性变基时最常见，这时 Git 不意识到它从“其他”分支中提取的提交是与“我们”分支上冲突的提交的更新版本。
 
-The first is how you complete the conflict resolution. Rather than `git commit` like you'll use when addressing conflicts that arise from `git merge`, the appropriate command for rebasing is `git rebase --continue`. However, there's another option available to you: `git rebase --skip`. This will skip the commit you're working on, and it won't be included in the rebase. This is most common when doing a non-interactive rebase, when git doesn't realize that a commit it's pulled from the "other" branch is an updated version of the commit that it conflicts with on "our" branch.
+### 帮帮我！ 我把它弄坏了！
 
-### Help! I broke it!
+毫无疑问，变基有时会很难。如果你犯了一个错误，并因此而丢失了所需的提交，那么可以使用 `git reflog` 来节省下一天的时间。运行此命令将向你显示更改一个引用（即分支和标记）的每个操作。每行显示你旧的引用所指的内容，你可对你认为丢失的 Git 提交执行 `git cherry-pick`、`git checkout`、`git show` 或任何其他操作。
 
-No doubt about it - rebasing can be hard sometimes. If you've made a mistake and in so doing lost commits which you needed, then `git reflog` is here to save the day. Running this command will show you every operation which changed a ref, or reference - that is, branches and tags. Each line shows you what the old reference pointed to, and you can `git cherry-pick`, `git checkout`, `git show`, or use any other operation on git commits once thought lost.
-
+[^1]: 我们添加了一个空的初始提交以简化本教程的其余部分，因为要对版本库的初始提交进行变基需要特殊的命令（即` git rebase --root`）。 
+[^2]: 如果要编译此程序，请运行 `cc -o main main.c`，然后运行 `./main` 查看结果。
+[^3]: 实际上，这是“混合重置”。“软重置”（使用 `git reset --soft` 完成）将暂存更改，因此你无需再次 `git add` 添加它们，并且可以一次性提交所有更改。这不是我们想要的。我们希望选择性地暂存部分更改，以拆分提交。
+[^4]: 实际上，这取决于上游分支本身是否已变基或删除/压扁了某些提交。`git pull --rebase` 尝试通过在 `git rebase` 和 `git merge-base` 中使用 “fork-point” 机制来从这种情况中恢复，以避免变基非本地提交。
+[^5]: 实际上，这取决于 Git 的版本。从 2.26.0 版开始，默认的非交互行为以前与交互行为稍有不同，这种方式通常并不重要。 
 
 --------------------------------------------------------------------------------
 
@@ -583,7 +586,7 @@ via: https://git-rebase.io/
 
 作者：[git-rebase][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -592,3 +595,4 @@ via: https://git-rebase.io/
 [b]: https://github.com/lujun9972
 [1]: https://git-scm.com/
 [2]: https://git-scm.com/docs/git-rebase
+
