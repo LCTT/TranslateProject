@@ -15,9 +15,10 @@
 
 “再成长的过程中，我曾经是一个小小的战地执法官，” Megan Byrd-Sanicki 2020年[开源社区最佳女性获得者][2]，笑着说。“我以前经常把同学们聚在一起玩游戏。大家来吧，我们告诉你们规则。我也会注意旁听，尝试去设别被包含的人们并如何把他们拉进圈子。”
 
-![Photo by Megan Sanicki, Used with permission][3]
+![Megan Sanicki 的照片, 已经许可使用][3]
 
 That drive to bring people together and set up a structure for them to excel carries through much of her career and community work. "I look back on who I was in second-grade gym class and have to admit that it's still who I am today."
+它驱使大家都走到一起并建立一个有吸引力的组织贯穿其职业生涯和社区工作。“我回顾曾经二年级体育课的我，必须要承认我还是曾经的我”。
 
 Megan has been active in open source for a decade, first as Executive Director of the [Drupal Association][4], and now as the Manager of Research and Operations for Google's Open Source Program Office. "I'm fortunate in my current position because it offers a view into Google's more than 2000 open source projects with different objectives, different governance structures, and different strategies. It's been just a phenomenal learning opportunity." Megan was also recently elected to the [Open Source Initiative][5] Board of Directors, where she strives to strengthen the leadership in open source that the organization offers to projects and businesses around the globe.
 
