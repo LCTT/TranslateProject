@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12251-1.html)
 [#]: subject: (Why strace doesn't work in Docker)
 [#]: via: (https://jvns.ca/blog/2020/04/29/why-strace-doesnt-work-in-docker/)
 [#]: author: (Julia Evans https://jvns.ca/)
@@ -10,7 +10,7 @@
 为什么 strace 在 Docker 中不起作用？
 ======
 
-在编辑“容器如何工作”杂志的能力页面时，我想试着解释一下为什么 `strace` 在 Docker 容器中无法工作。
+在编辑“容器如何工作”爱好者杂志的能力页面时，我想试着解释一下为什么 `strace` 在 Docker 容器中无法工作。
 
 这里的问题是 —— 如果我在笔记本上的 Docker 容器中运行 `strace`，就会出现这种情况：
 
@@ -27,7 +27,7 @@ strace: ptrace(PTRACE_TRACEME, ...): Operation not permitted
 docker run --cap-add=SYS_PTRACE  -it ubuntu:18.04 /bin/bash
 ```
 
-但我对如何修复它不感兴趣，我想知道为什么会出现这种情况。那么，为什么 `strace` 不能工作，为什么`--cap-add=SYS_PTRACE` 可以解决这个问题？
+但我对如何修复它不感兴趣，我想知道为什么会出现这种情况。为什么 `strace` 不能工作，为什么`--cap-add=SYS_PTRACE` 可以解决这个问题？
 
 ### 假设 1：容器进程缺少 `CAP_SYS_PTRACE` 能力。
 
@@ -49,13 +49,13 @@ CAP_SYS_PTRACE
        * Trace arbitrary processes using ptrace(2);
 ```
 
-所以，`CAP_SYS_PTRACE` 的作用是让你像 root 一样，可以对任何用户拥有的**任意**进程进行  `ptrace` 。你不需要用它来只是对一个由你的用户拥有的普通进程进行 `ptrace ` 。
+所以，`CAP_SYS_PTRACE` 的作用是让你像 root 一样，可以对任何用户拥有的**任意**进程进行  `ptrace`。你不需要用它来对一个只是由你的用户拥有的普通进程进行 `ptrace` 。
 
-我用第三种方法测试了一下 —— 我用 `docker run --cap-add=SYS_PTRACE -it ubuntu:18.04 /bin/bash` 运行了一个 Docker 容器，去掉了 `CAP_SYS_PTRACE` 能力，但我仍然可以跟踪进程，虽然我已经没有这个能力了。什么？为什么？
+我用第三种方法测试了一下（LCTT 译注：此处可能原文有误） —— 我用 `docker run --cap-add=SYS_PTRACE -it ubuntu:18.04 /bin/bash` 运行了一个 Docker 容器，去掉了 `CAP_SYS_PTRACE` 能力，但我仍然可以跟踪进程，虽然我已经没有这个能力了。什么？为什么？！
 
 ### 假设 2：关于用户命名空间的事情？
 
-我的下一个（没有那么充分的依据的）假设是“嗯，也许这个过程是在不同的用户命名空间里，而 `strace` 不能工作，因为某种原因而行不通？”这个问题其实并不连贯，但这是我观察时想到的。
+我的下一个（没有那么充分的依据的）假设是“嗯，也许这个过程是在不同的用户命名空间里，而 `strace` 不能工作，因为某种原因而行不通？”这个问题其实并不相关，但这是我观察时想到的。
 
 容器进程是否在不同的用户命名空间中？嗯，在容器中：
 
@@ -111,7 +111,7 @@ execve("/bin/ls", ["ls"], 0x7ffc69a65580 /* 8 vars */) = 0
 
 Go 语言的好处是，因为依赖关系通常是在一个 Go 仓库里，你可以通过 `grep` 来找出做某件事的代码在哪里。所以我克隆了 `github.com/moby/moby`，然后对一些东西进行 `grep`，比如 `rg CAP_SYS_PTRACE`。
 
-我认为是这样的。在 `containerd` 的 seccomp 实现中，在 [contrib/seccomp/seccomp/seccomp_default.go][3] 中，有一堆代码确保如果一个进程有一个能力，那么它也会（通过 seccomp 规则）获得访问权限，以使用与该能力相关的系统调用。
+我认为是这样的。在 `containerd` 的 seccomp 实现中，在 [contrib/seccomp/seccomp/seccomp_default.go][3] 中，有一堆代码来确保如果一个进程有一个能力，那么它也会（通过 seccomp 规则）获得访问权限，以使用与该能力相关的系统调用。
 
 ```
 case "CAP_SYS_PTRACE":
