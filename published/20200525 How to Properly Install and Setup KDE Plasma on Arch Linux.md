@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12258-1.html)
 [#]: subject: (How to Properly Install and Setup KDE Plasma on Arch Linux)
 [#]: via: (https://itsfoss.com/install-kde-arch-linux/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
@@ -119,7 +119,7 @@ via: https://itsfoss.com/install-kde-arch-linux/
 
 [a]: https://itsfoss.com/author/dimitrios/
 [b]: https://github.com/lujun9972
-[1]: https://itsfoss.com/install-arch-linux/
+[1]: https://linux.cn/article-9170-1.html
 [2]: https://www.gnome.org/
 [3]: https://kde.org/plasma-desktop
 [4]: https://www.archlinux.org/
@@ -133,5 +133,5 @@ via: https://itsfoss.com/install-kde-arch-linux/
 [12]: https://www.archlinux.org/groups/x86_64/kde-applications/
 [13]: https://i2.wp.com/itsfoss.com/wp-content/uploads/2020/05/Arch-Plasma-desktop.jpg?fit=800%2C450&ssl=1
 [14]: https://itsfoss.com/pacman-command/
-[15]: https://itsfoss.com/aur-arch-linux/
-[16]: https://itsfoss.com/best-aur-helpers/
+[15]: https://linux.cn/article-12107-1.html
+[16]: https://linux.cn/article-12019-1.html
