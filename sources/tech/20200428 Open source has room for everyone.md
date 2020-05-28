@@ -20,9 +20,10 @@
 That drive to bring people together and set up a structure for them to excel carries through much of her career and community work. "I look back on who I was in second-grade gym class and have to admit that it's still who I am today."
 它驱使大家都走到一起并建立一个有吸引力的组织贯穿其职业生涯和社区工作。“我回顾曾经二年级体育课的我，必须要承认我还是曾经的我”。
 
-Megan has been active in open source for a decade, first as Executive Director of the [Drupal Association][4], and now as the Manager of Research and Operations for Google's Open Source Program Office. "I'm fortunate in my current position because it offers a view into Google's more than 2000 open source projects with different objectives, different governance structures, and different strategies. It's been just a phenomenal learning opportunity." Megan was also recently elected to the [Open Source Initiative][5] Board of Directors, where she strives to strengthen the leadership in open source that the organization offers to projects and businesses around the globe.
-
+Megan has been active in open source for a decade, first as Executive Director of the [Drupal Association][4], and now as the Manager of Research and Operations for Google's Open Source Program Office. "I'm fortunate in my current position because it offers a view into Google's more than 2000 open source projects with different objectives, different governance structures, and different strategies. It's been just a phenomenal learning opportunity." Megan was also recently elected to the [Open Source Initiative][5] Board of Directors, where she strives to strengthen the leadership in open source that the organization offers to projects and businesses around the globe.
+Megan 作为第一任 [Drupal 协会][4]执行主任，十年来活跃于开源社区，现在是谷歌开源项目办公室的研发和运营主管。“我很幸运在这个职位上为谷歌的 2000 多个不同的项目目标，不同的组织架构，不同的战略的开源项目提供服务。这个要给难得的学习的机会。” Megan 最近被推选为 [开源代码促进会][5]的理事会成员，她竭力领导开源社区在全球范围内的项目和企业之间的加强协作。
 ### Lessons from the basement steps
+### 
 
 Far from being set on technology, Megan originally thought she'd go into business. Sitting on the basement steps, listening to her father make sales calls, she knew his entire product line by age 16, but she also internalized other lessons.
 
