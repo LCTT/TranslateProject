@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Three Methods to Check Uptime of MySQL/MariaDB Database Server on Linux)
@@ -10,23 +10,21 @@
 在 Linux 上检查 MySQL/MariaDB 数据库正常运行时间的三种方法
 ======
 
-我们都知道在 Linux 中使用 uptime 命令的目的。
+![](https://img.linux.net.cn/data/attachment/album/202005/29/211031hqb8qlyddtlrt2fl.jpg)
 
-它用于检查 **[Linux 系统的正常运行时间][1]**以及系统未重启运行的时间。
+我们都知道在 Linux 中使用 `uptime` 命令的目的。它用于检查 [Linux 系统的正常运行时间][1]以及系统上次启动以来运行的时间。
 
-Linux 管理员的工作是保持系统正常运行。
+而 Linux 管理员的工作是保持系统正常运行。
 
-如果要检查 Linux 上的其他服务（例如 **[Apache][2]**、MySQL、MariaDB、sftp 等）运行了多长时间，该怎么做？
+如果要检查 Linux 上的其他服务（例如 [Apache][2]、MySQL、MariaDB、sftp 等）运行了多长时间，该怎么做？
 
-每个服务都有自己的命令来检查服务的正常运行时间。
-
-但是你也可以为此使用其他命令。
+每个服务都有自己的命令来检查服务的正常运行时间。但是你也可以为此使用其他命令。
 
 ### 方法 1：如何使用 ps 命令在 Linux 上检查 MySQL/MariaDB 数据库的正常运行时间
 
-**[ps命令][3]**代表进程状态。这是最基本的命令之一，它显示了系统正在运行的进程的详细信息。
+[ps 命令][3]的意思是<ruby>进程状态<rt>process status</rt></ruby>。这是最基本的命令之一，它显示了系统正在运行的进程的详细信息。
 
-为此，你首先需要使用 **[pidof 命令][5]查找 **[MySQL][4]**/MariaDB的 PID。
+为此，你首先需要使用 [pidof 命令][5]查找 [MySQL][4]/[MariaDB][6] 的 PID。
 
 ```
 # pidof mysqld | cut -d" " -f1
@@ -34,11 +32,9 @@ Linux 管理员的工作是保持系统正常运行。
 2412
 ```
 
-获取 MySQL/[**MariaDB**][6] 的 PID 后，请在 ps 命令中使用 “etime” 选项获得正常运行时间。
+获取 MySQL/MariaDB 的 PID 后，请在 `ps` 命令中使用 `--etime` 选项获得正常运行时间。
 
- * **etime：**自进程启动以来经过的时间，形式为 [[DD-]hh:]mm:ss。
-
-
+* `--etime`：自进程启动以来经过的时间，形式为 `[[DD-]hh:]mm:ss`。
 
 ```
 # ps -p 2412 -o etime
@@ -47,7 +43,7 @@ Linux 管理员的工作是保持系统正常运行。
 2-08:49:30
 ```
 
-或者，在 ps 命令中使用 “lstart” 选项来获取指定 PID 的正常运行时间。
+或者，在 `ps` 命令中使用 `--lstart` 选项来获取指定 PID 的正常运行时间。
 
 ```
 # ps -p 2412 -o lstart
@@ -58,11 +54,11 @@ Sat May 2 03:02:15 2020
 
 MySQL/MariaDB 进程已经运行了 2 天 03 小时 02 分 15 秒。
 
-### 方法 2：如何使用 Systemctl 命令在 Linux 上检查 MySQL/MariaDB 数据库的正常运行时间
+### 方法 2：如何使用 systemctl 命令在 Linux 上检查 MySQL/MariaDB 数据库的正常运行时间
 
-**[systemctl 命令][7]** 用于控制 systemd 系统和服务管理器。
+[systemctl 命令][7]用于控制 systemd 系统和服务管理器。
 
-systemd 是新的 init 系统和系统管理器，现在大多数 Linux 发行版都淘汰了传统的 SysVinit 管理器而采用了systemd。
+systemd 是新的初始化系统和系统管理器，现在大多数 Linux 发行版都淘汰了传统的 SysVinit 管理器而采用了 systemd。
 
 ```
 # systemctl status mariadb
@@ -97,7 +93,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 ### 方法 3：如何使用 MySQLAdmin 命令在 Linux 上检查 MySQL/MariaDB 数据库的正常运行时间
 
-**[MySQLAdmin][8]** 是安装 MySQL 软件包时安装的 MySQL 服务器命令行程序。
+[MySQLAdmin][8] 是安装 MySQL 软件包时安装的 MySQL 服务器命令行程序。
 
 MySQLAdmin 客户端允许你在 MySQL 服务器上执行一些基本的管理功能。
 
@@ -127,7 +123,7 @@ via: https://www.2daygeek.com/check-mysql-mariadb-database-server-uptime-linux/
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
