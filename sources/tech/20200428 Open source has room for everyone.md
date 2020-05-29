@@ -23,13 +23,16 @@ That drive to bring people together and set up a structure for them to excel car
 Megan has been active in open source for a decade, first as Executive Director of the [Drupal Association][4], and now as the Manager of Research and Operations for Google's Open Source Program Office. "I'm fortunate in my current position because it offers a view into Google's more than 2000 open source projects with different objectives, different governance structures, and different strategies. It's been just a phenomenal learning opportunity." Megan was also recently elected to the [Open Source Initiative][5] Board of Directors, where she strives to strengthen the leadership in open source that the organization offers to projects and businesses around the globe.
 Megan 作为第一任 [Drupal 协会][4]执行主任，十年来活跃于开源社区，现在是谷歌开源项目办公室的研发和运营主管。“我很幸运在这个职位上为谷歌的 2000 多个不同的项目目标，不同的组织架构，不同的战略的开源项目提供服务。这个要给难得的学习的机会。” Megan 最近被推选为 [开源代码促进会][5]的理事会成员，她竭力领导开源社区在全球范围内的项目和企业之间的加强协作。
 ### Lessons from the basement steps
-### 
+### 地下室台阶上学到的知识
 
 Far from being set on technology, Megan originally thought she'd go into business. Sitting on the basement steps, listening to her father make sales calls, she knew his entire product line by age 16, but she also internalized other lessons.
+Megan 原以为她会从商，远离固守的技术。坐在地下室台阶上，耳濡目染父亲的销售电话，到16的时候就知道他的所有产品系列，也熟悉了其他知识。
 
 "I learned from him that doing business means solving problems and helping people," Megan says. "And I've kept that front-of-mind throughout my career. In some ways, I'm not surprised by this path; it's a natural extension of who I am, but it's also taken me places I would never have dreamed possible."
+“我从父亲学到了做生意就是解决问题和帮助别人” Megan 说。“在我的职业生涯这个信念我始终放在第一位。在某些角度看选择这条路我并不觉得奇怪；这是我个人选择的自然延伸，并且这带给我去做梦都想不到的体验”
 
-Open source isn't just a career for Megan; she also uses the same strategies in her community involvement. "Right now, I'm working with a great group of engineers, data scientists, and epidemiologists at [Covid Act Now][6]. The team members are volunteering their expertise, collaborating openly to provide data modeling to public officials so that they can make informed decisions as quickly as possible."
+Open source isn't just a career for Megan; she also uses the same strategies in her community involvement. "Right now, I'm working with a great group of engineers, data scientists, and epidemiologists at [Covid Act Now][6]. The team members are volunteering their expertise, collaborating openly to provide data modeling to public officials so that they can make informed decisions as quickly as possible."
+开源事业对 Megan 不仅仅是一个职业；她在她的社区活动中也使用同样的理念。“现在，我与一大群优秀的工程师，数据科学家以及流行病科学家工作在[冠状病毒在行动][6]。团队成员是义务提供他们的专业知识，开发合作的为政府公共人员提供数据建模，以便他们快速的做出有效的决策。”
 
 She's also active in [FOSS Responders][7], a group focused on shining a light on open source projects and community members affected by COVID-19-related event cancellations. "In times of turmoil, it can be difficult for projects to find the help they need. We help organizations and individuals who need assistance aggregate and amplify their requests." An important component of the organization is administering the [FOSS Responders Fund][7], a mechanism to capture some of the open source funding requests that may fall through the cracks otherwise.
 
