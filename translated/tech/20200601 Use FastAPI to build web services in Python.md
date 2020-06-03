@@ -7,16 +7,17 @@
 [#]: via: (https://fedoramagazine.org/use-fastapi-to-build-web-services-in-python/)
 [#]: author: (Clément Verna https://fedoramagazine.org/author/cverna/)
 
-Use FastAPI to build web services in Python
+
+使用 Python FastAPI 构建 Web 服务
 ======
 
 ![][1]
 
-_[FastAPI][2]_ is a modern Python web framework that leverage the latest Python improvement in asyncio. In this article you will see how to set up a container based development environment and implement a small web service with FastAPI.
+[FastAPI][2] 是一个使用 Python 编写的 Web 框架，还应用了 Python asyncio 库中最新的优化。本文将会介绍如何搭建基于容器的开发环境，还会展示如何使用 FastAPI 实现一个小型 Web 服务。
 
-### Getting Started
+### 起步
 
-The development environment can be set up using the Fedora container image. The following Dockerfile prepares the container image with FastAPI, [Uvicorn][3] and [aiofiles][4].
+我们将使用 Fedora 作为基础镜像来搭建开发环境，并使用 Dockerfile 为镜像注入 FastAPI、[Uvicorn][3] 和 [aiofiles][4] 这几个包。
 
 ```
 FROM fedora:32
@@ -27,7 +28,7 @@ WORKDIR /srv
 CMD ["uvicorn", "main:app", "--reload"]
 ```
 
-After saving this Dockerfile in your working directory, build the container image using podman.
+在工作目录下保存 Dockerfile 之后，执行 `podman` 命令构建容器镜像。
 
 ```
 $ podman build -t fastapi .
@@ -36,7 +37,7 @@ REPOSITORY TAG IMAGE ID CREATED SIZE
 localhost/fastapi latest 01e974cabe8b 18 seconds ago 326 MB
 ```
 
-Now let’s create a basic FastAPI program and run it using that container image.
+下面我们可以开始创建一个简单的 FastAPI 应用程序，并通过容器镜像运行。
 
 ```
 from fastapi import FastAPI
@@ -48,7 +49,7 @@ async def root():
     return {"message": "Hello Fedora Magazine!"}
 ```
 
-Save that source code in a _main.py_ file and then run the following command to execute it:
+将上面的代码保存到 `main.py` 文件中，然后执行以下命令开始运行：
 
 ```
 $ podman run --rm -v $PWD:/srv:z -p 8000:8000 --name fastapi -d fastapi
@@ -56,33 +57,31 @@ $ curl http://127.0.0.1:8000
 {"message":"Hello Fedora Magazine!"
 ```
 
-You now have a running web service using FastAPI. Any changes to _main.py_ will be automatically reloaded. For example, try changing the “Hello Fedora Magazine!” message.
+这样，一个基于 FastAPI 的 Web 服务就跑起来了。由于指定了 `--reload` 参数，一旦 `main.py` 文件发生了改变，整个应用都会自动重新加载。你可以尝试将返回信息 `"Hello Fedora Magazine!"` 修改为其它内容，然后观察效果。
 
-To stop the application, run the following command.
+可以使用以下命令停止应用程序：
 
 ```
 $ podman stop fastapi
 ```
 
-### Building a small web service
+### 构建一个小型 Web 服务
 
-To really see the benefits of FastAPI and the performance improvement it brings ([see comparison][5] with other Python web frameworks), let’s build an application that manipulates some I/O. You can use the output of the _dnf history_ command as data for that application.
+接下来我们会构建一个需要 I/O 操作的应用程序，通过这个应用程序，我们可以看到 FastAPI 自身的特点，以及它在性能上有什么优势（可以在[这里][5]参考 FastAPI 和其它 Python Web 框架的对比）。为简单起见，我们直接使用 `dnf history` 命令的输出来作为这个应用程序使用的数据。
 
-First, save the output of that command in a file.
+首先将 `dnf history` 命令的输出保存到文件。
 
 ```
 $ dnf history | tail --lines=+3 > history.txt
 ```
 
-The command is using _tail_ to remove the headers of _dnf history_ which are not needed by the application. Each dnf transaction can be represented with the following information:
+在上面的命令中，我们使用 `tail` 去除了 `dnf history` 输出内容中无用的表头信息。剩余的每一条 `dnf` 事务都包括了以下信息：
 
-  * id : number of the transaction (increments every time a new transaction is run)
-  * command : the dnf command run during the transaction
-  * date: the date and time the transaction happened
+  * id：事务编号（每次运行一条新事务时该编号都会递增）
+  * command：事务中运行的 `dnf` 命令
+  * date：执行事务的日期和时间
 
-
-
-Next, modify the _main.py_ file to add that data structure to the application.
+然后修改 `main.py` 文件将相关的数据结构添加进去。
 
 ```
 from fastapi import FastAPI
@@ -96,9 +95,9 @@ class DnfTransaction(BaseModel):
     date: str
 ```
 
-FastAPI comes with the [pydantic][6] library which allow you to easily build data classes and benefit from type annotation to validate your data.
+FastAPI 自带的 [pydantic][6] 库让你可以轻松定义一个数据类，其中的类型注释对数据的验证也提供了方便。
 
-Now, continue building the application by adding a function that will read the data from the _history.txt_ file.
+再增加一个函数，用于从 `history.txt` 文件中读取数据。
 
 ```
 import aiofiles
@@ -125,9 +124,9 @@ async def read_history():
     return transactions
 ```
 
-This function makes use of the _[aiofiles][4]_ library which provides an asyncio API to manipulate files in Python. This means that opening and reading the file will not block other requests made to the server.
+这个函数中使用了 `aiofiles` 库，这个库提供了一个异步 API 来处理 Python 中的文件，因此打开文件或读取文件的时候不会阻塞其它对服务器的请求。
 
-Finally, change the root function to return the data stored in the transactions list.
+最后，修改 `root` 函数，让它返回事务列表中的数据。
 
 ```
 @app.get("/")
@@ -135,7 +134,7 @@ async def read_root():
     return await read_history()
 ```
 
-To see the output of the application, run the following command
+执行以下命令就可以看到应用程序的输出内容了。
 
 ```
 $ curl http://127.0.0.1:8000 | python -m json.tool
@@ -159,15 +158,16 @@ $ curl http://127.0.0.1:8000 | python -m json.tool
 ]
 ```
 
-### Conclusion
+### 总结
 
-_FastAPI_ is gaining a lot a popularity in the Python web framework ecosystem because it offers a simple way to build web services using asyncio. You can find more information about _FastAPI_ in the [documentation][2].
+FastAPI 提供了一种使用 asyncio 构建 Web 服务的简单方法，因此它在 Python Web 框架的生态中日趋流行。要了解 FastAPI 的更多信息，欢迎查阅 [FastAPI 文档][2]。
 
-The code of this article is available in [this GitHub repository][7].
+本文中的代码可以在 [GitHub][7] 上找到。
 
 * * *
 
 _Photo by [Jan Kubita][8] on [Unsplash][9]._
+
 
 --------------------------------------------------------------------------------
 
@@ -175,7 +175,7 @@ via: https://fedoramagazine.org/use-fastapi-to-build-web-services-in-python/
 
 作者：[Clément Verna][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[HankChow](https://github.com/HankChow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
