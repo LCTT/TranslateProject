@@ -1,78 +1,68 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Manipulate an Ethernet Card Using the ethtool Command)
 [#]: via: (https://www.2daygeek.com/linux-ethtool-command-view-change-ethernet-adapter-settings-nic-card/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Manipulate an Ethernet Card Using the ethtool Command
+如何使用 ethtool 命令管理以太网卡？
 ======
 
-Ethtool is used to view and modify network device driver parameters and hardware settings, especially for wired ethernet devices.
+`ethtool` 用于查看和修改网络设备（尤其是有线以太网设备）的驱动参数和硬件设置。你可以根据需要更改以太网卡的参数，包括自动协商、速度、双工和局域网唤醒等参数。通过对以太网卡的配置，你的计算机可以通过网络有效地进行通信。该工具提供了许多关于接驳到你的 Linux 系统的以太网设备的信息。
 
-You can change ethernet card parameters as required, including auto-negotiation, Speed, Duplex and Wake-on LAN.
+在这篇文章中，我们将告诉你如何更改以下的参数以及如何查看这些参数。这篇文章将帮助你在 Linux 系统中排除与以太网卡相关的问题。
 
-The configuration of your Ethernet card allows your computer to communicate effectively over the network.
+下面的信息将帮助你了解以太网卡的工作原理。
 
-This tool provides many information about Ethernet devices connected to your Linux system.
+* **半双工**：半双工模式允许设备一次只能发送或接收数据包。
+* **全双工**：全双工模式允许设备可以同时发送和接收数据包。
+* **自动协商**：自动协商是一种机制，允许设备自动选择最佳网速和工作模式（全双工或半双工模式）。
+* **速度**：默认情况下，它会使用最大速度，你可以根据自己的需要改变它。
+* **链接检测**：链接检测可以显示网卡的状态。如果显示为 `no`，请尝试重启网卡。如果链路检测仍显示 `no`，则检查交换机与系统之间连接的线缆是否有问题。
 
-In this article, we will show you how to change the below parameters and how to view them.
+### 如何在 Linux 上安装 ethtool
 
-This article will help you troubleshoot Ethernet card related problems on a Linux system.
+默认情况下，大多数系统上应该已经安装了 `ethtool`。如果没有，你可以从发行版的官方版本库中安装。
 
-The following information will help you understand how Ethernet card works.
-
-  * **Half Duplex:** Half-duplex mode allows a device to either send or receive packets at a time.
-  * **Full Duplex:** Full-duplex mode allows a device to send and receive packets simultaneously.
-  * **Auto-Negotiation:** Auto-negotiation is a mechanism that allows a device to automatically choose the best network speed and mode of operation (full-duplex or half-dual mode).
-  * **Speed:** By default it uses maximum speed and you can change it according to your need.
-  * **Link detection:** Link detection shows the status of the network interface card. If it shows “no” then try restarting the interface. If the link detection still says “no”, check if there are any issues with the cables connected between the switch and the system.
-
-
-
-### How to Install ethtool on Linux
-
-By default ethtool should already be installed on most systems. If not, you can install it from the distribution official repository.
-
-For **RHEL/CentOS 6/7** systems, use the **[yum command][1]** to install ethtool.
+对于 RHEL/CentOS 6/7 系统，请使用 [yum 命令][1] 安装 `ethtool`：
 
 ```
 $ sudo yum install -y ethtool
 ```
 
-For **RHEL/CentOS 8** and **Fedora** systems, use the **[dnf command][2]** to install ethtool.
+对于 RHEL/CentOS 8 和 Fedora 系统，请使用 [dnf 命令][2] 安装 `ethtool`：
 
 ```
 $ sudo yum install -y ethtool
 ```
 
-For **Debian** based systems, use the **[apt command][3]** or **[apt-get command][4]** to install ethtool.
+对于基于 Debian 的系统，请使用 [apt 命令][3] 或 [apt-get 命令][4] 安装 `ethtool`：
 
 ```
 $ sudo apt-get install ethtool
 ```
 
-For **openSUSE** systems, use the **[zypper command][5]** to install ethtool.
+对于 openSUSE 系统，使用 [zypper 命令][5] 安装 `ethtool`：
 
 ```
 $ sudo zypper install -y ethtool
 ```
 
-For **Arch Linux** systems, use the **[pacman command][6]** to install ethtool.
+对于 Arch Linux 系统，使用 [pacman 命令][6] 安装 `ethtool`：
 
 ```
 $ sudo pacman -S ethtool
 ```
 
-### How to Check the Available Network Interface on Linux
+### 如何检查 Linux 上的可用网络接口
 
-You can use the **[ip command][7]** or the **ifconfig command** (deprecated in modern distribution) to verify the name and other details of the available and active network interfaces.
+你可以使用 [ip 命令][7]或 `ifconfig` 命令（在现代发行版中已被淘汰）来验证可用的、活动的网卡的名称和其他细节：
 
 ```
 # ip a
-or
+或
 # ifconfig
 
 1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -85,16 +75,14 @@ or
        valid_lft forever preferred_lft forever
 ```
 
-### How to Check Network Interface Card (NIC) Information on Linux
+### 如何检查 Linux 上的网卡（NIC）信息
 
-Once you have the Ethernet interface name, you can easily check the details of it using the ethtool command as shown below.
+掌握了以太网卡名称后，就可以使用 `ethtool` 命令轻松查看其详细信息，如下所示。
 
-On Linux, each network interface card (NIC) is assigned unique names, such as ethX, enpXXX, and so on.
+在 Linux 系统中，每个网卡（NIC）都被分配了唯一的名称，如 ethX、enpXXX 等。
 
-  * The older Linux distribution used the **eth[X]** format. For example, RHEL 6 and their older versions.
-  * Modern Linux distributions use **enp[XXX]** or **ens[XXX]** formats. For example, most of the modern Linux distribution uses this format, including RHEL 7, Debian 10, Ubuntu 16.04 LTS.
-
-
+* 旧的 Linux 发行版使用的是 `eth[X]` 格式。例如，RHEL 6 和它们的旧版本。
+* 现代的 Linux 发行版使用 `enp[XXX]` 或 `ens[XXX]` 格式。例如，大多数现代 Linux 发行版都使用这种格式，包括 RHEL 7、Debian 10、Ubuntu 16.04 LTS。
 
 ```
 # ethtool eth0
@@ -122,9 +110,9 @@ Settings for eth0:
         Link detected: yes
 ```
 
-### How to Check Ethernet Card Driver and Firmware Version on Linux
+### 如何检查以太网卡的驱动程序和固件版本
 
-You can check driver version, firmware version, and bus details using the ethtool command with the **“-i”** option as shown below.
+你可以使用 `ethtool` 命令的 `-i` 选项检查驱动程序版本、固件版本和总线的详细信息，如下所示：
 
 ```
 # ethtool -i eth0
@@ -141,9 +129,9 @@ supports-register-dump: yes
 supports-priv-flags: no
 ```
 
-### How to Check Network Usage Statistics on Linux
+### 如何检查网络使用情况统计
 
-You can view network usage statistics using the ethtool command with the **“-S”** option. It shows the bytes transferred, received, errors etc.
+你可以使用 `ethtool` 命令中的 `-S` 选项来查看网络使用情况统计。它可以显示传输的字节数、接收的字节数、错误数等。
 
 ```
 # ethtool -S eth0
@@ -222,27 +210,27 @@ NIC statistics:
      tx timeout count: 0
 ```
 
-### How to Change the Speed of Ethernet Device on Linux
+### 如何改变以太网设备的速度
 
-You can change the speed of the Ethernet as needed. When you make this change the interface will automatically go offline and you will need to bring it back online using the **[ifup command][8]** or the ip command or the nmcli command.
+你可以根据需要改变以太网的速度。当你进行此更改时，网卡将自动掉线，你需要使用 [ifup 命令][8] 或 `ip` 命令或 `nmcli` 命令将其重新上。
 
 ```
 # ethtool -s eth0 speed 100
 # ip link set eth0 up
 ```
 
-### How to Enable/Disable Auto-Negotiation for Ethernet Device on Linux
+### 如何在 Linux 上启用/禁用以太网卡的自动协商？
 
-You can enable or disable Auto-Negotiation using the ethtool command with the **“autoneg”** option as shown below.
+你可以使用 `ethtool` 命令中的 `autoneg` 选项启用或禁用自动协商，如下图所示：
 
 ```
 # ethtool -s eth0 autoneg off
 # ethtool -s eth0 autoneg on
 ```
 
-### How to Change Multiple Parameters at Once
+### 如何同时更改多个参数
 
-If you want to change multiple parameters of the Ethernet interface simultaneously using the ethtool command, use the format below.
+如果你想使用 `ethtool` 命令同时更改以太网卡的多个参数，请使用下面的格式：
 
 ```
 Syntax:
@@ -253,29 +241,29 @@ ethtool –s [device_name] speed [10/100/1000] duplex [half/full] autoneg [on/of
 # ethtool –s eth0 speed 1000 duplex full autoneg off
 ```
 
-### How to Check Auto-negotiation, RX and TX of a Particular Interface on Linux
+### 如何检查特定网卡的自动协商、RX 和 TX
 
-To view auto-negotiation details about a specific Ethernet device, use the below format.
-
+要查看关于特定以太网设备的自动协商等详细信息，请使用以下格式：
+ 
 ```
 # ethtool -a eth0
 ```
 
-### How to Identify a Specific NIC from Multiple Devices (Blink LED Port of NIC Card)
+### 如何从多个设备中识别出特定的网卡（闪烁网卡上的 LED）
 
-This option is very useful if you want to identify a specific physical interface port among others. The below ethtool command blink the LED of the eth0 port.
+如果你想识别一个特定的物理接口，这个选项非常有用。下面的 `ethtool` 命令会使 `eth0` 端口的 LED 灯闪烁：
 
 ```
 # ethtool -p eth0
 ```
 
-### How to Set These Parameters in Linux Permanently
+### 如何在 Linux 中永久设置这些参数
 
-After a system restarts the changes you made with ethtool will be reverted by default.
+在系统重启后，你使用 `ethtool` 所做的更改将被默认恢复。
 
-To make custom settings permanent, you need to update your value in the network configuration file. Depending on your Linux distribution you may need to update this value to the correct file.
+要使自定义设置永久化，你需要更新网络配置文件中的值。根据你的 Linux 发行版，你可能需要将此值更新到正确的文件中。
 
-For RHEL based systems. You must use the ETHTOOL_OPTS variables.
+对于基于 RHEL 的系统。你必须使用 `ETHTOOL_OPTS` 变量：
 
 ```
 # vi /etc/sysconfig/network-scripts/ifcfg-eth0
@@ -283,7 +271,7 @@ For RHEL based systems. You must use the ETHTOOL_OPTS variables.
 ETHTOOL_OPTS="speed 1000 duplex full autoneg off"
 ```
 
-For **Debian** based systems.
+对于基于 Debian 的系统：
 
 ```
 # vi /etc/network/interfaces
@@ -297,8 +285,8 @@ via: https://www.2daygeek.com/linux-ethtool-command-view-change-ethernet-adapter
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
