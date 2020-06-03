@@ -1,3 +1,12 @@
+[#]: collector: (lujun9972)
+[#]: translator: (plutoid)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (50 Best Ubuntu Apps You Should Be Using Right Now)
+[#]: via: (https://itsfoss.com/best-ubuntu-apps/)
+[#]: author: (Abhishek Prakash)
+
 50 Best Ubuntu Apps You Should Be Using Right Now
 ======
 **Brief: A comprehensive list of best Ubuntu apps for all kind of users. These software will help you in getting a better experience with your Linux desktop.**
