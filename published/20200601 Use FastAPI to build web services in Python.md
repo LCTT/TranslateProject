@@ -1,17 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12280-1.html)
 [#]: subject: (Use FastAPI to build web services in Python)
 [#]: via: (https://fedoramagazine.org/use-fastapi-to-build-web-services-in-python/)
 [#]: author: (Clément Verna https://fedoramagazine.org/author/cverna/)
 
-
 使用 Python FastAPI 构建 Web 服务
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202006/04/105930wr333sx3erz3k2ur.jpg)
 
 [FastAPI][2] 是一个使用 Python 编写的 Web 框架，还应用了 Python asyncio 库中最新的优化。本文将会介绍如何搭建基于容器的开发环境，还会展示如何使用 FastAPI 实现一个小型 Web 服务。
 
@@ -28,7 +27,7 @@ WORKDIR /srv
 CMD ["uvicorn", "main:app", "--reload"]
 ```
 
-在工作目录下保存 Dockerfile 之后，执行 `podman` 命令构建容器镜像。
+在工作目录下保存 `Dockerfile` 之后，执行 `podman` 命令构建容器镜像。
 
 ```
 $ podman build -t fastapi .
@@ -77,9 +76,9 @@ $ dnf history | tail --lines=+3 > history.txt
 
 在上面的命令中，我们使用 `tail` 去除了 `dnf history` 输出内容中无用的表头信息。剩余的每一条 `dnf` 事务都包括了以下信息：
 
-  * id：事务编号（每次运行一条新事务时该编号都会递增）
-  * command：事务中运行的 `dnf` 命令
-  * date：执行事务的日期和时间
+  * `id`：事务编号（每次运行一条新事务时该编号都会递增）
+  * `command`：事务中运行的 `dnf` 命令
+  * `date`：执行事务的日期和时间
 
 然后修改 `main.py` 文件将相关的数据结构添加进去。
 
@@ -164,10 +163,6 @@ FastAPI 提供了一种使用 asyncio 构建 Web 服务的简单方法，因此�
 
 本文中的代码可以在 [GitHub][7] 上找到。
 
-* * *
-
-_Photo by [Jan Kubita][8] on [Unsplash][9]._
-
 
 --------------------------------------------------------------------------------
 
@@ -176,7 +171,7 @@ via: https://fedoramagazine.org/use-fastapi-to-build-web-services-in-python/
 作者：[Clément Verna][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
