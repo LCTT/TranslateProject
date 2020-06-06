@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12290-1.html)
 [#]: subject: (How to Manipulate an Ethernet Card Using the ethtool Command)
 [#]: via: (https://www.2daygeek.com/linux-ethtool-command-view-change-ethernet-adapter-settings-nic-card/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-如何使用 ethtool 命令管理以太网卡？
+如何使用 ethtool 命令管理以太网卡
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202006/06/223359syh8n37luz8hhllh.jpg)
 
 `ethtool` 用于查看和修改网络设备（尤其是有线以太网设备）的驱动参数和硬件设置。你可以根据需要更改以太网卡的参数，包括自动协商、速度、双工和局域网唤醒等参数。通过对以太网卡的配置，你的计算机可以通过网络有效地进行通信。该工具提供了许多关于接驳到你的 Linux 系统的以太网设备的信息。
 
