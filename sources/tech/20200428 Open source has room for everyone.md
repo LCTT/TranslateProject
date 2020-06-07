@@ -38,8 +38,10 @@ She's also active in [FOSS Responders][7], a group focused on shining a light on
 她也活跃于 [FOSS 急救会][7],这是一个为受 COVID-19事件影响的开源项目和社区成员点亮温暖的组织。“在疫情期间，很难为项目提供所需的帮忙。我们可以帮忙在需要帮忙的组织和个人扩散他们的请求。”这个组织的一个重要的事务是管理 [FOSS 急救基金][7]， 其中一个功能是寻求一个开源项目基金的融资需求，否则社区会分裂。
 
 ### Engaging people in a changing world
+### 在这不断变化的世界中一群可爱的人
 
 The twin themes that influence Megan's community engagement are a clear commitment to the principles of open source and a drive to bring people together. "When people have dreams, things they're actively trying to accomplish, it creates a shared sense of purpose and a strong 'why.' People engage easily around why. I know I do," Megan says when asked what drives her in these efforts.
+影响 Megan 参与到社区的两个宗旨分别是对源码代码开放的明确承诺和把大家团结在一起的动力。“人们有梦想的时候，他们就积极的去实现它，这就造就了共同的信念和强烈的 ‘为什么’。人们由于为什么很容易的聚在了一起。我知道这就是我，” Megan 在被问到她这么努力的动力时说到。
 
 "Whether helping raise funds for Drupal's mission or enabling open source projects to become more sustainable, there's a real human impact. I get really passionate about the butterfly effect that results from helping people meet their goals and realize their dreams and visions."
 
