@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12297-1.html)
 [#]: subject: (Linux Mint 20: Release Date, Features and Everything Important Associated With it)
 [#]: via: (https://itsfoss.com/linux-mint-20/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -32,11 +32,11 @@ Nemo 文件管理器计划中的性能改进之一是它处理缩略图的方式
 
 默认情况下，Linux Mint 是绿色/薄荷色的风格。还有一些其它的颜色点缀。Linux Mint 20 新添加了两种可爱的的粉红色和青蓝色。
 
-这里是新的粉红色风格：
+以及新的青蓝色风格：
 
 ![Linux Mint Aqua][4]
 
-以及新的青蓝色风格：
+这里是新的粉红色风格：
 
 ![Linux Mint Pink][5]
 
