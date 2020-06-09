@@ -1,33 +1,32 @@
-[#]: collector: (lujun9972)
-[#]: translator: (lxbwolf)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (5 ways to boost your Kubernetes knowledge)
-[#]: via: (https://opensource.com/article/20/6/kubernetes-anniversary)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
+[#]: collector: "lujun9972"
+[#]: translator: "lxbwolf"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "5 ways to boost your Kubernetes knowledge"
+[#]: via: "https://opensource.com/article/20/6/kubernetes-anniversary"
+[#]: author: "Seth Kenlon https://opensource.com/users/seth"
 
-5 ways to boost your Kubernetes knowledge
+提升你 Kubernetes 技能的 5 种方式
 ======
-On its anniversary, get to know Kubernetes with these deep-dives and
-hands-on projects.
+值此周年纪念之际，来通过这些深耕的上手项目了解下 Kubernetes。
 ![Ship captain sailing the Kubernetes seas][1]
 
-When the cloud was still in its formative years, developers discovered that it was convenient to write applications in small, atomic, minimal Linux images that shared resources with the server they ran on. Technically based on kernel namespaces, these small environment definitions came to be called [containers][2]. As containers proliferated, sysadmins quickly realized it was becoming essential to develop a tool that could help them manage not only containers but also the virtualized infrastructure underneath. And that's when [Kubernetes][3] was born.
+在云原生的成长期，开发者们发现把应用程序封装到一个微小的、原子的、最小粒度的 Linux 镜像里很方便，服务器可以与运行其上的镜像共享资源。这些小环境的定义被称为[容器][2]，专门基于内核的命名空间。随着容器技术的发展，系统管理员们很快意识到，有必要开发一套工具来帮助他们管理容器及其底层的虚拟基础设施。[Kubernetes][3] 应运而生。
 
-Kubernetes is an extensible open source platform for wrangling containers. It helps administrators and developers manage workloads, services, and processes around containers. It facilitates declarative configuration and easy automation. In its relatively short lifespan, it has fostered a rapidly growing ecosystem with services, support, and tools from many companies and projects.
+Kubernetes 是一个用来管理容器的可扩展开源平台。它可以帮助管理员和开发者们管理工作负载、服务和容器间的处理。它促进了声明式配置，更容易实现自动化。在它相当短的生命周期中，它催生了大量公司和项目的涉及服务、支持和工具的迅速成长的生态系统。
 
-If you're looking to get better acquainted with this important cloud technology, here are a few articles to help you dive deep and five projects to help you try out what you learn.
+如果你想对这项重要的云技术有更多的了解，这里有一些能帮忙你更深入学习的文章。下面的 5 个项目可以帮忙你把学到的东西付诸实践。
 
-### Containing container chaos
+### 管理各个容器
 
-In 2016, we published [Containing the container chaos with Kubernetes][4], an introductory article by Terry Ryan about how Kubernetes is helping admins and architects grapple with containers. If you need a ground-level introduction to what containers do and how Kubernetes makes it easy, then this is the article to read first. It assumes no prior knowledge and explains all the most important concepts, so you can get up to speed fast.
+2016 年，我们发布了[使用 Kubernetes 管理各个容器][4]，一篇由 Terry Ryan 写的关于 Kubernetes 如何帮助管理员和架构师们合理地管理容器的介绍性文章。如果你想找一篇从底层介绍容器是做什么的以及 Kubernetes 是如何实现容器管理的，那么你应该先读下本文。本文适合零基础的读者，解释了所有重要的概念，因此你能迅速了解相关技术。
 
 For an advanced look into some of the magic happening at the kernel level, read Jessica Cherry's explanation of [Kubernetes namespaces][5].
 
-### Kubernetes: Why does it matter?
+### Kubernetes：你为什么需要它？
 
-Kubernetes provides the benefits of an Infrastructure-as-a-Service (IaaS) solution (like OpenStack) and a full Platform as a Service (PaaS). It gives you abstractions for managing infrastructure and the tools you need to troubleshoot at the base level of bare metal. If you have the impulse to cling to a single bare-metal server, you might want to read Tim Potter's take on [why Kubernetes matters][6]. His article compares IaaS and PaaS and gives his perspective on why Kubernetes has been so widely adopted. You don't always need Kubernetes or containers, but it's important to know when you do.
+Kubernetes provides the benefits of an Infrastructure-as-a-Service (IaaS) solution (like OpenStack) and a full Platform as a Service (PaaS). It gives you abstractions for managing infrastructure and the tools you need to troubleshoot at the base level of bare metal. If you have the impulse to cling to a single bare-metal server, you might want to read Tim Potter's take on [why Kubernetes matters][6]. His article compares IaaS and PaaS and gives his perspective on why Kubernetes has been so widely adopted. You don't always need Kubernetes or containers, but it's important to know when you do.Kubernetes 提供了<ruby>基础设施即服务<rt>Infrastructure-as-a-Service</rt></ruby>（IaaS）解决方案（类似 OpenStack）和完全的<ruby>平台即服务<rt>Platform as a Service</rt></ruby>带来的便利。它能提供给你管理基础设施的抽象能力和用来在裸金属的最底层进行问题追踪的工具。
 
 ### Run it on a Raspberry Pi
 
@@ -63,7 +62,7 @@ via: https://opensource.com/article/20/6/kubernetes-anniversary
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/ship_captain_devops_kubernetes_steer.png?itok=LAHfIpek (Ship captain sailing the Kubernetes seas)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/ship_captain_devops_kubernetes_steer.png?itok=LAHfIpek "Ship captain sailing the Kubernetes seas"
 [2]: https://opensource.com/article/18/11/behind-scenes-linux-containers
 [3]: https://opensource.com/resources/what-is-kubernetes
 [4]: https://opensource.com/life/16/9/containing-container-chaos-kubernetes
