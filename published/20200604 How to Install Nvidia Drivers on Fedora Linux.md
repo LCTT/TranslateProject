@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12301-1.html)
 [#]: subject: (How to Install Nvidia Drivers on Fedora Linux)
 [#]: via: (https://itsfoss.com/install-nvidia-drivers-fedora/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
@@ -98,7 +98,7 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 ```
 
-希望本教程对在 Fedora 上安装 Nvidia 驱动很有用。你还想在 It’s FOSS 上看到其他 Fedora 教程吗？
+希望本教程对在 Fedora 上安装 Nvidia 驱动很有用。
 
 --------------------------------------------------------------------------------
 
