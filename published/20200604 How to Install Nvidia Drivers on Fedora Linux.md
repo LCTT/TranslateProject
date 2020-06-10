@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12301-1.html)
 [#]: subject: (How to Install Nvidia Drivers on Fedora Linux)
 [#]: via: (https://itsfoss.com/install-nvidia-drivers-fedora/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
 
 如何在 Fedora Linux 中安装 Nvidia 驱动
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202006/10/094702c7of7scjyucmc5f1.jpg)
 
 与大多数 Linux 发行版一样，[Fedora][1] 并未默认安装专有的 [Nvidia][2] 驱动。
 
@@ -38,15 +40,15 @@ sudo dnf update
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-不喜欢终端么？那使用 GUI 的方法添加 RPMFusion 仓库。
-
-如果你使用 Firefox，那么还可以从浏览器添加 RPMFusion 仓库。进入[配置页面][7]，然后向下滚动到 “Graphical Setup via Firefox web browser”。单击自由和非自由仓库链接。这将下载 .rpm 文件，并安装仓库。
-
-![RPMFusion Browser Installation][8]
-
-你可以双击下载的 RPM 文件进行安装。
-
-![RPMFusion in the Software Center][9]
+> 不喜欢终端么？那使用 GUI 的方法添加 RPMFusion 仓库。
+> 
+> 如果你使用 Firefox，那么还可以从浏览器添加 RPMFusion 仓库。进入这个[配置页面][7]，然后向下滚动到 “Graphical Setup via Firefox web browser”。单击自由和非自由仓库的链接。这将下载 .rpm 文件，并安装仓库。
+> 
+> ![RPMFusion Browser Installation][8]
+>
+> 你可以双击下载的 RPM 文件进行安装。
+> 
+> ![RPMFusion in the Software Center][9]
 
 #### 步骤 3
 
@@ -64,7 +66,7 @@ lspci -vnn | grep VGA
 
 #### 步骤 4
 
-要安装所需的驱动，请在终端中输入以下一个命令。下面的命令是用于显卡的命令。根据你的系统进行更新。
+要安装所需的驱动，请在终端中输入以下一个命令。下面的命令是用于我的显卡的命令。根据你的系统相应调整。
 
 ```
 sudo dnf install akmod-nvidia sudo dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx sudo dnf install xorg-x11-drv-nvidia-340xx akmod-nvidia-340xx
@@ -74,13 +76,13 @@ sudo dnf install akmod-nvidia sudo dnf install xorg-x11-drv-nvidia-390xx akmod-n
 
 #### 步骤 5
 
-要使更改生效，请重启系统。你的系统重启可能需要更长的时间，因为它将 Nvidia 驱动注入到 Linux 内核中。
+要使更改生效，请重启系统。你的系统重启可能需要比较长的时间，因为它将 Nvidia 驱动注入到 Linux 内核中。
 
 重启并登录系统后，你会看到更好的视觉效果，并且不会出现屏幕撕裂的情况。
 
 ![Fedora with Nvidia drivers][15]
 
-#### 额外的提示：
+### 额外的提示
 
 这是可选步骤，但建议这样做。添加 RPMFusion 仓库时，你可以访问常规仓库中不可用的多媒体包。
 
@@ -96,7 +98,7 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 ```
 
-希望本教程对在 Fedora 上安装 Nvidia 驱动很有用。你还想在 It’s FOSS 上看到其他 Fedora 教程吗？
+希望本教程对在 Fedora 上安装 Nvidia 驱动很有用。
 
 --------------------------------------------------------------------------------
 
@@ -105,7 +107,7 @@ via: https://itsfoss.com/install-nvidia-drivers-fedora/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
