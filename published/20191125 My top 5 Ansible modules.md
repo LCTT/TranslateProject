@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12304-1.html)
 [#]: subject: (My top 5 Ansible modules)
 [#]: via: (https://opensource.com/article/19/11/ansible-modules)
 [#]: author: (Mark Phillips https://opensource.com/users/markp)
@@ -12,7 +12,7 @@
 
 > 了解如何通过这些 Ansible 模块实现几乎任何事情。
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202006/10/214614z2jv4zvet5kw322o.jpg)
 
 在我成长的时候，我爷爷在他的花园里有一个棚子。他经常会花几个小时在那里制作和修复东西。这是在我们有互联网之前的事情，所以我花了很多时间看他在那个棚子里创造东西。虽然棚子里有很多工具，从钻头到车床到电器配件，还有很多东西我至今都无法辨认，但他使用的只是他手头的一小部分。然而，他能做到的事情似乎永远没有极限。
 
@@ -38,7 +38,7 @@ SSH 是 Ansible 的核心，至少对于除了 Windows 以外的几乎所有其�
 
 当前发布版中的许多模块利用 Ansible 作为编排工具。它们与另一个服务对话，而不是做一些具体的事情，比如把一个文件放到一个地方。通常，这种对话也是通过 HTTP 进行的。在许多这样的模块出现之前，你*可以*直接使用 [uri][11] 模块对 API 进行编程。它是一个强大的访问工具，可以使你能够做很多事情。在我的 Ansible 虚拟棚子里，我不会少了它。
 
-### 1. [shell][12]
+### 1. shell
 
 这是我们工具包里的王牌、瑞士军刀。如果你为如何控制其他东西而非常苦恼，别说，说就是 [shell][12]。有人会说，我们这样说是让 Ansible 成为了 Bash 脚本 —— 但是，我想说的是，这还是有点好处的，因为可以在你的剧本和角色中使用 `name` 参数记录下每一步。对我来说，这就像一个很大的奖励一样。早在我还在做咨询的时候，我曾经帮助一个数据库管理员（DBA）迁移到 Ansible。这位 DBA 并不喜欢改变，对改变工作方法也是推三阻四。于是，为了简化迁移到 Ansible 方式，我们在 Ansible 中使用 [shell][12] 模块调用了一些现有的数据库管理脚本。并在任务中附带了翔实的 `name` 声明。
 
