@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12307-1.html)
 [#]: subject: (Looking for Some Good Note Taking Apps on Linux? Here are the Best Notes Apps we Found for You)
 [#]: via: (https://itsfoss.com/note-taking-apps-linux/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-最佳 Linux 笔记应用
+9 款 Linux 上的最佳笔记应用
 ======
 
 无论你做什么，做笔记总是一个好习惯。是的，有很多笔记应用可以帮助你实现这个目标。但是，Linux 上的开源笔记应用怎么样呢？
@@ -29,9 +29,9 @@
 * 支持加密
 * 跨平台，包括 Android 应用
 
-[Joplin][9] 是一款令人印象深刻的自由开源笔记应用，支持加密。凭借其提供的功能，它也是目前[最好的 Evernote 替代品][3]之一。事实上，我就是因为它提供的功能才从 Evernote 转移到 Joplin。
+[Joplin][9] 是一款令人印象深刻的自由开源笔记应用，支持加密。凭借其提供的出色的功能，它也是目前[最好的 Evernote 替代品][3]之一。事实上，我就是因为它提供的功能才从 Evernote 转移到 Joplin。
 
-你可以选择添加待办事项列表、普通笔记，或者把它作为一个 markdown 编辑器来写东西。它适用于 Linux、Windows、macOS、Android 和 iOS。你还可以选择使用 [Dropbox][4]、OneDrive、[NextCloud][5] 或 WebDAV 来同步你的笔记。
+你可以选择添加待办事项列表、普通笔记，或者把它作为一个 Markdown 编辑器来写东西。它适用于 Linux、Windows、macOS、Android 和 iOS。你还可以选择使用 [Dropbox][4]、OneDrive、[NextCloud][5] 或 WebDAV 来同步你的笔记。
 
 如果你好奇，可以阅读我们关于 [Joplin][6] 的详细文章来了解更多。
 
@@ -54,20 +54,20 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 主要功能：
 
 * 支持 Markdown
-* 简单的用户界面
-* 使用你的 Simplenote 帐户轻松地进行同步
+* 简约的用户界面
+* 通过你的 Simplenote 帐户轻松地进行同步
 * 有 32 位软件包
 * 跨平台，包括移动应用程序
 
-顾名思义，它是一款简单的自由开源笔记应用。
+顾名思义，它是一款简约的自由开源笔记应用。
 
 由 [Automattic][11]（WordPress 背后的公司）开发，[Simplenote][13] 可以让你在多个设备上无缝同步你的笔记。它支持 Android、iOS、Windows、Linux，以及 macOS。
 
-与其他一些不同的是，你会注意到它的界面非常简单，可能不会提供很多功能。但是，你可以为你的笔记添加标签。
+与其它一些笔记应用不同的是，你会注意到它的界面非常简单，可能不会提供很多功能。但是，你可以为你的笔记添加标签。
 
 #### 如何安装？
 
-它提供了 .deb/.rpm 包以及一个 AppImage 文件。你可以在它的 [GitHub 发布部分][12]中找到这些文件。
+它提供了 .deb / .rpm 软件包以及一个 AppImage 文件。你可以在它的 [GitHub 发布部分][12]中找到这些文件。
 
 ### 3、Laverna
 
@@ -85,11 +85,11 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 
 你可以把它作为一个基于 Web 的笔记应用，也可以作为电脑上的应用使用。它适用于 Linux、Mac 和 Windows。
 
-虽然它除了支持加密外，还具有记事本应用的所有基本功能，但你并没有一个可以使用的移动应用。所以，这是一个只有当你是一个桌面用户，并且在 Web 浏览器上完成大部分事情时才能使用的东西。
+虽然它除了支持加密外，还具有记事本应用的所有基本功能，但并没有一个可以使用的移动应用。所以，这是一个只有当你是一个桌面用户，并且在 Web 浏览器上完成大部分事情时才能使用的东西。
 
 #### 如何安装？
 
-它提供了一个压缩文件，可在其[官方网站][15]上获得。一旦你下载了它，你需要解压并启动可执行文件来开始。
+它提供了一个压缩文件，可在其[官方网站][15]上获得。下载之后，你需要解压并启动可执行文件来开始。
 
 ### 4、Standard Notes
 
@@ -107,9 +107,9 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 
 又一款开源笔记应用，为你的笔记和附件提供加密。
 
-与 Laverna 不同，[Standard Notes][18] 正在积极开发中。虽然它提供了大量的功能，但其中一些功能仅限于付费用户的“扩展功能”或扩展插件，这是偏昂贵的（每月订阅）。你也可以参考我们另外一篇关于[Standard Notes][17] 的文章来了解更多信息。
+与 Laverna 不同，[Standard Notes][18] 正在积极开发中。虽然它提供了大量的功能，但其中一些功能以“扩展功能”或扩展插件仅提供给付费用户，这是偏昂贵的（每月订阅）。你也可以参考我们另外一篇关于 [Standard Notes][17] 的文章来了解更多信息。
 
-总的来说，你会得到 Markdown 支持、加密附件和笔记的能力、版本历史、备份支持（到 OneDrive、Google Drive 等）以及更多这样有用的功能。
+总的来说，你会得到 Markdown 支持、加密附件和笔记的能力、版本历史、备份支持（OneDrive、Google Drive 等）以及更多这样有用的功能。
 
 #### 如何安装？
 
@@ -127,7 +127,7 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 * 适用于开发者
 * 跨平台
 
-[Boost Note][21] 是一款对使用 Linux 的程序员有用的笔记应用。你可以写你的代码，也可以用它来写笔记、文档等等。
+[Boost Note][21] 是一款对使用 Linux 的程序员有用的笔记应用。你可以用它写你的代码，也可以用来写笔记、文档等等。
 
 它提供了一个简洁直观的用户界面，并提供了 Linux 上笔记应用的所有基本功能。
 
@@ -137,7 +137,7 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 
 如果你好奇，也可以查看他们的 [GitHub 页面][23]来探索更多关于它的内容或复刻它。
 
-### 6、Tomboy Notes（下一代）
+### 6、Tomboy Notes（新一代）
 
 ![][24]
 
@@ -175,7 +175,7 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_insta
 
 #### 如何安装？
 
-如果你使用的是 Ubuntu（或者其他基于 Ubuntu 的发行版），你可以通过 PPA 来安装它。下面是你在终端中输入的安装方法。
+如果你使用的是 Ubuntu（或者其他基于 Ubuntu 的发行版），你可以通过 PPA 来安装它。下面是你在终端中输入的安装方法：
 
 ```
 sudo add-apt-repository ppa:rednotebook/stable
@@ -228,9 +228,9 @@ sudo apt-get install rednotebook
 
 ### 总结
 
-我对 Linux 上的笔记应用的推荐到此结束。我已经用过很多，目前决定用 Simplenote 来做快速笔记，用 Joplin 来收集章节中的笔记。
+我对 Linux 上的笔记应用的推荐到此结束。我已经用过很多个，目前决定用 Simplenote 来做快速笔记，用 Joplin 来收集章节中的笔记。
 
-你是否知道一些其他的应该包括在这个列表中的 Linux 笔记应用程序？为什么不在评论区告诉我们呢？
+你是否知道一些应该包括在这个列表中的其它 Linux 笔记应用程序？为什么不在评论区告诉我们呢？
 
 你更喜欢哪个笔记应用程序？我很想知道你通常在 Linux 上寻找的最好的笔记应用程序是什么。
 
@@ -243,7 +243,7 @@ via: https://itsfoss.com/note-taking-apps-linux/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
