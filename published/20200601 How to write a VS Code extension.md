@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12310-1.html)
 [#]: subject: (How to write a VS Code extension)
 [#]: via: (https://opensource.com/article/20/6/vs-code-extension)
 [#]: author: (Ashique Hussain Ansari https://opensource.com/users/uidoyen)
@@ -12,7 +12,7 @@
 
 > 通过为流行的代码编辑器编写自己的扩展来添加缺失的功能。
 
-![woman on laptop sitting at the window][1]
+![](https://img.linux.net.cn/data/attachment/album/202006/13/105415w5u1d0z5bdoneb82.jpg)
 
 Visual Studio Code（VS Code）是微软为 Linux、Windows 和 macOS 创建的跨平台代码编辑器。遗憾的是，微软版本的 [VS Code][2] 是在 [Microsoft Software License][3] 下发布的，这不是一个开源的许可证。然而，它的源代码是开源的，在 MIT 许可证下由 [VSCodium][4] 项目发布。
 
@@ -20,14 +20,14 @@ VSCodium 和 VS Code一样，支持扩展、内嵌式 Git 控制、GitHub 集成
 
 ### 什么是 VS Code 扩展？
 
-<ruby>扩展<rt>extension</rt></ruby>允许你为 VS Code 或 VSCodium 添加功能。你可以在 GUI 中或从终端安装扩展。
+<ruby>扩展<rt>extension</rt></ruby>可以让你为 VS Code 或 VSCodium 添加功能。你可以在 GUI 中或从终端安装扩展。
 
 你也可以构建自己的扩展。有几个你可能想学习如何构建扩展的原因：
 
-1. **想要添加一些功能：**如果缺失你想要的功能，你可以创建一个扩展来添加它。
-2. **为了乐趣和学习：**扩展 API 允许你探索 VSCodium 是如何工作的，这是一件有趣的事情。
-3. **为了提高您的技能：**创建扩展可以提高你的编程技能。
-4. **为了成名：**创建一个对他人有用的扩展可以提高你的公众形象。
+1. **想要添加一些功能：** 如果缺失你想要的功能，你可以创建一个扩展来添加它。
+2. **为了乐趣和学习：** 扩展 API 允许你探索 VSCodium 是如何工作的，这是一件有趣的事情。
+3. **为了提高您的技能：** 创建扩展可以提高你的编程技能。
+4. **为了成名：** 创建一个对他人有用的扩展可以提高你的公众形象。
 
 ### 安装工具
 
@@ -55,10 +55,10 @@ yo code
 
 根据提示，你必须回答一些关于你的扩展的问题：
 
-* **你想创建什么类型的扩展？**使用上下箭头选择其中一个选项。在本文中，我将只介绍第一个选项，`New Extension (TypeScript)`。
-* **你的扩展名称是什么？**输入你的扩展名称。我的叫 `initdockerapp`。（我相信你会有一个更好的名字。）
-* **你的扩展的标识符是什么？**请保持原样。
-* **你的扩展的描述是什么？**写一些关于你的扩展的内容（你可以现在填写或稍后编辑它）。
+* **你想创建什么类型的扩展？** 使用上下箭头选择其中一个选项。在本文中，我将只介绍第一个选项，`New Extension (TypeScript)`。
+* **你的扩展名称是什么？** 输入你的扩展名称。我的叫 `initdockerapp`。（我相信你会有一个更好的名字。）
+* **你的扩展的标识符是什么？** 请保持原样。
+* **你的扩展的描述是什么？** 写一些关于你的扩展的内容（你可以现在填写或稍后编辑它）。
 * **初始化 Git 仓库？** 这将初始化一个 Git 仓库，你可以稍后添加 `set-remote`。
 * **使用哪个包管理器？** 你可以选择 `yarn` 或 `npm`；我使用 `npm`。
 
@@ -247,7 +247,7 @@ export function deactivate() {}
 1. 要注册的命令名称
 2. 执行命令的功能
 
-另一个需要注意的函数是 `fs.writeFile`，这是你在 `vscode.command.registerCommand` 函数里面写的。这将在你的项目根目录下创建一个 Dockerfile，并附加代码来创建一个 Docker 镜像。
+另一个需要注意的函数是 `fs.writeFile`，这是你写在 `vscode.command.registerCommand` 函数里面的。这将在你的项目根目录下创建一个 Dockerfile，并在其中附加代码来创建一个 Docker 镜像。
 
 ### 调试扩展
 
