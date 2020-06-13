@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12310-1.html)
 [#]: subject: (How to write a VS Code extension)
 [#]: via: (https://opensource.com/article/20/6/vs-code-extension)
 [#]: author: (Ashique Hussain Ansari https://opensource.com/users/uidoyen)
@@ -12,7 +12,7 @@
 
 > 通过为流行的代码编辑器编写自己的扩展来添加缺失的功能。
 
-![woman on laptop sitting at the window][1]
+![](https://img.linux.net.cn/data/attachment/album/202006/13/105415w5u1d0z5bdoneb82.jpg)
 
 Visual Studio Code（VS Code）是微软为 Linux、Windows 和 macOS 创建的跨平台代码编辑器。遗憾的是，微软版本的 [VS Code][2] 是在 [Microsoft Software License][3] 下发布的，这不是一个开源的许可证。然而，它的源代码是开源的，在 MIT 许可证下由 [VSCodium][4] 项目发布。
 
