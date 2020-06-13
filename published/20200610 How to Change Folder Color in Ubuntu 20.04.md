@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12311-1.html)
 [#]: subject: (How to Change Folder Color in Ubuntu 20.04)
 [#]: via: (https://itsfoss.com/folder-color-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
 如何在 Ubuntu 20.04 中更改文件夹颜色
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202006/13/133146y1bjzb73jj141143.jpg)
 
 [Ubuntu 20.04][1] 中默认的 Yaru 主题赋予它优美、现代的外观。默认 Yaru 主题中的文件夹是紫色的外观，以与 Ubuntu 的品牌保持一致。
 
