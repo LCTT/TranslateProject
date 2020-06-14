@@ -22,32 +22,32 @@ Kubernetes 是一个用来管理容器的可扩展开源平台。它可以帮助
 
 2016 年，我们发布了[使用 Kubernetes 管理各个容器][4]，一篇由 Terry Ryan 写的关于 Kubernetes 如何帮助管理员和架构师们合理地管理容器的介绍性文章。如果你想找一篇从底层介绍容器是做什么的以及 Kubernetes 是如何实现容器管理的，那么你应该先读下本文。本文适合零基础的读者，解释了所有重要的概念，因此你能迅速了解相关技术。
 
-For an advanced look into some of the magic happening at the kernel level, read Jessica Cherry's explanation of [Kubernetes namespaces][5].
+阅读下 Jessica Cherry 写的 [Kubernetes 命令空间][5]，来从内核级别了解下发生了什么了。
 
 ### Kubernetes：你为什么需要它？
 
-Kubernetes provides the benefits of an Infrastructure-as-a-Service (IaaS) solution (like OpenStack) and a full Platform as a Service (PaaS). It gives you abstractions for managing infrastructure and the tools you need to troubleshoot at the base level of bare metal. If you have the impulse to cling to a single bare-metal server, you might want to read Tim Potter's take on [why Kubernetes matters][6]. His article compares IaaS and PaaS and gives his perspective on why Kubernetes has been so widely adopted. You don't always need Kubernetes or containers, but it's important to know when you do.Kubernetes 提供了<ruby>基础设施即服务<rt>Infrastructure-as-a-Service</rt></ruby>（IaaS）解决方案（类似 OpenStack）和完全的<ruby>平台即服务<rt>Platform as a Service</rt></ruby>带来的便利。它能提供给你管理基础设施的抽象能力和用来在裸金属的最底层进行问题追踪的工具。
+Kubernetes 提供了<ruby>基础设施即服务<rt>Infrastructure-as-a-Service</rt></ruby>（IaaS）解决方案（类似 OpenStack）和完全的<ruby>平台即服务<rt>Platform as a Service</rt></ruby>带来的便利。它能提供给你管理基础设施的抽象能力和用来在裸金属的最底层进行问题追踪的工具。如果你想使用单一的裸金属服务，你可能需要阅读下 Tim Potter 写的[你为什么需要 Kubernetes][6]。他的文章对比了 IaaS 和 PaaS，解释了为什么 Kubernetes 如此广泛地被使用。你可能并不是一定需要 Kubernetes 或容器，但是知道什么情况下需要它们是很重要的。
 
-### Run it on a Raspberry Pi
+### 在树莓派上运行
 
-There's no better way to get familiar with Kubernetes than to run it yourself. Unfortunately, not everyone has a cloud (nor the money to rent time on one) at their disposal. Luckily, Chris Collins has provided a guide for running [Kubernetes on a Pi][7]. Combined with his equally elucidating tutorials about [Cloud-init][8] and [Cloud-init services][9] (also on a Pi), you can build whatever kind of homelab you want so that you can learn how to manage your very own open hybrid cloud.
+自己动手去运行它，这样才是了解  Kubernetes 最好的方式。不幸的是，不是每个人都有自己能支配的云服务器（也没有足够的钱来租服务器）。而幸运的是，Chris Collins 提供了[在树莓派上运行 Kubernetes][7] 的教程。结合他的另外几篇关于 [Cloud-init][8] 和 [Cloud-init 服务][9]的教程（也是在树莓派上运行），你可以搭建喜欢的任何种类的家庭实验室，这样你就可以学习如何管理属于自己的开放混合云。
 
-### Kubernetes commands
+### Kubernetes 命令
 
-Once you have Kubernetes up and running, take a look at Jessica Cherry's article and accompanying cheat sheet that provides you with all the [essential Kubernetes commands][10]. In her article, she explains the syntax of `kubectl` commands and provides an overview of what each command and subcommand is meant to do.
+当你运行起 Kubernetes 后，可以查阅下 Jessica Cherry 的文章，跟随着她的备忘清单来做，这个清单列出了所有的[基本的 Kubernetes 命令][10]。在她的文章中，她解释了 `kubectl` 命令的语法，简单讲述了每个命令和子命令是用来做什么的。
 
-### Fun Kubernetes projects
+### 有趣的 Kubernetes 项目
 
-Nothing's more frustrating than having access to technology but not knowing what to do with it. For instance, it's one thing to have a Raspberry Pi on your desk, but it's an entirely different matter to decide what it ought to spend its CPU cycles doing. We've published plenty of articles to give some guidance to your Kubernetes explorations:
+掌握了某项技术但是不知道用来做什么是最令人沮丧的。例如，把你的树莓派放到桌面上是一回事，但是它的 CPU 应该用来做什么工作却完全是另一回事。我们发布了很多教程，来指导你完成你的 Kubernetes 之路的探索：
 
-  * [Helm][11] is a package manager for Kubernetes. Exploring it is an easy way to get comfortable with living in Kubernetes.
-  * Learn all about [Operator SDK][12] to get familiar with Kubernetes objects and operators.
-  * Provide a [network file system (NFS) on top of Kubernetes.][13]
-  * Learn how to route traffic with [Skipper][14] or [Traefik.][15]
+  * [Helm][11] 是一个 Kubernetes 的包管理器。你可以在它的帮助下，很快熟悉 Kubernetes 环境。
+  * 学习下 [Operator SDK][12] 的所有内容，来熟悉 Kubernetes 的 object 和 operator。
+  * [在 Kubernetes 之上搭建网络文件系统（NFS）][13]
+  * 学习如何使用 [Skipper][14] 或 [Traefik.][15] 进行流量调度。
 
 
 
-Most importantly, take the time to get comfortable with containers and Kubernetes. Whether you first embrace containerized apps on the server, cloud, or desktop, they're an important paradigm to understand, because they're a powerful construct that's made applications on Linux better, stronger, more robust, and easier. Invest time to learn more about them. You'll be glad you did.
+Most importantly, take the time to get comfortable with containers and Kubernetes. Whether you first embrace containerized apps on the server, cloud, or desktop, they're an important paradigm to understand, because they're a powerful construct that's made applications on Linux better, stronger, more robust, and easier. Invest time to learn more about them. You'll be glad you did.最重要的，花点时间来熟悉容器和 Kubernetes。不论你先把容器化的应用放到服务器、云上还是桌面，它们都是能帮助你理解的重要的范例，因为它们是让 Linux 的应用变得更好、更强壮、鲁棒性更好、更简单的一次强大的构建过程。一定要投入精力去学习它们，你不会后悔的。
 
 --------------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ via: https://opensource.com/article/20/6/kubernetes-anniversary
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
