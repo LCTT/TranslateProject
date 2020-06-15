@@ -44,6 +44,8 @@ The twin themes that influence Megan's community engagement are a clear commitme
 影响 Megan 参与到社区的两个宗旨分别是对源码代码开放的明确承诺和把大家团结在一起的动力。“人们有梦想的时候，他们就积极的去实现它，这就造就了共同的信念和强烈的 ‘为什么’。人们由于为什么很容易的聚在了一起。我知道这就是我，” Megan 在被问到她这么努力的动力时说到。
 
 "Whether helping raise funds for Drupal's mission or enabling open source projects to become more sustainable, there's a real human impact. I get really passionate about the butterfly effect that results from helping people meet their goals and realize their dreams and visions."
+“不管是帮助联盟基金会筹集资金的任务还是赋能开源项目可持续发展，这些影响着这人们。我也实实在在感受到帮助人们达到他们的目标，实现他们的梦想和愿景而自己这种蝴蝶效应般的热情。”
+
 
 As open source becomes a larger and larger part of the technology space, Megan is hopeful for the future. "The exciting thing is that the story isn't done. As a community, we're still figuring things out," she says. "There's so much we need to learn about open source, and it can evolve in so many ways, while the landscape changes around us. We need to have the right conversations and figure out how to evolve together, ensuring there's a place at the table for everyone."
 
