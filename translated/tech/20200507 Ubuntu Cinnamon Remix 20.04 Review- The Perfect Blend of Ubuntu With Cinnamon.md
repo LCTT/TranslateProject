@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Ubuntu Cinnamon Remix 20.04 Review: The Perfect Blend of Ubuntu With Cinnamon)
 [#]: via: (https://itsfoss.com/ubuntu-cinnamon-remix-review/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
-Ubuntu Remix Cinnamon 20.04 评测: Ubuntu与 Cinnamon 的完美融合
+Ubuntu Remix Cinnamon 20.04 评测：Ubuntu 与 Cinnamon 的完美融合
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202006/15/113226uq8ohzycrrc52q52.jpeg)
 
 推出于 2011 年的 GNOME 3，其 GNOME Shell 迎来了社区的赞扬的同时，也招致了一些人的反对。很多用户和开发者都很喜欢原来的 GNOME 界面，以至于有几个小组复刻了它，其中的一个小组 —— Linux Mint 团队创建了 [Cinnamon 桌面环境][1]。
 
@@ -18,15 +20,15 @@ Cinnamon 桌面成为了 Linux Mint 的标志型产品。多年来，Cinnamon �
 
 ### 为什么是 Ubuntu Cinnamon Remix 而不是 Linux Mint？
 
-的确，Linux Mint 是基于 Ubuntu 的，很多 Linux Mint 的用户都会有这样的疑问：既然 Linux Mint 是一个如此成熟的项目，而且用户体验也大致相同，那么换成 Ubuntu 有什么意义吗？
+的确，Linux Mint 是基于 Ubuntu 的，很多 Linux Mint 的用户都会有这样的疑问：既然 Linux Mint 已经如此成熟，而且用户体验也大致相同，那么换成 Ubuntu 有什么意义吗？
 
 Ubuntu Cinnamon Remix 与 Linux Mint 有很多小的区别，但有一个关键的区别是 Linux 爱好者不能忽视的。
 
 Linux Mint 是基于 “LTS”（长期支持）版本的 Ubuntu，这意味着它一直落后于 Canonical 的 6 个月的更新节奏。Ubuntu Cinnamon Remix 则可以得益于较新的内核以及其他 6 个月周期内的功能升级和较新的软件。
 
-另一个关键的区别是，Ubuntu Cinnamon Remix 将“继承” [Snap 支持][6]，而 Linux Mint 则拥抱 [FlatPak][7]。Ubuntu Cinnamon Remix 使用 Ubuntu 软件中心而不是 Mint 软件管理器。
+另一个关键的区别是，Ubuntu Cinnamon Remix 将 “继承” [Snap 支持][6]，而 Linux Mint 则拥抱 [FlatPak][7]。Ubuntu Cinnamon Remix 使用 Ubuntu 软件中心而不是 Mint 软件管理器。
 
-也就是说，我是 Cinnamon 的忠实粉丝，所以我选择了评测这款 Ubuntu 和 Cinnamon 的混合版，在这里我分享一下我的体验。
+我是 Cinnamon 的忠实粉丝，所以我选择了评测这款 Ubuntu 和 Cinnamon 的混合版，在这里我分享一下我的体验。
 
 ### 体验 Ubuntu Cinnamon Remix
 
@@ -44,7 +46,7 @@ Linux Mint 是基于 “LTS”（长期支持）版本的 Ubuntu，这意味着�
 
 #### 足够让你开始的工具
 
-和其他 Ubuntu 发行版一样，Ubuntu Cinnamon Remix 也包含了一些重要的生产力工具，下面是一些例子。
+和其他 Ubuntu 发行版一样，Ubuntu Cinnamon Remix 也包含了一些重要的生产力工具，下面是其中一些：
 
 * 火狐浏览器
 * Thunderbird - 电子邮件客户端
@@ -61,7 +63,7 @@ Linux Mint 是基于 “LTS”（长期支持）版本的 Ubuntu，这意味着�
 
 你是否热衷于 Ubuntu Cinnamon，却习惯了 Linux Mint 主题？点击下面的内容，看看如何获得一个完整的 Linux Mint 主题包，以及如何配置它来保持 Ubuntu 的传统。
 
-给 Ubuntu Cinnamon Remix 以真正的 Mint 触感。
+给 Ubuntu Cinnamon Remix 以真正的 Mint 感受：
 
 首先你必须下载并解压以下内容，通过终端很容易完成。
 
@@ -89,7 +91,7 @@ wget http://packages.linuxmint.com/pool/main/m/mint-themes/mint-themes_1.8.4_all
 sudo dpkg -i ./mint-x-icons_1.5.5_all.deb ./mint-y-icons_1.3.9_all.deb ./mint-themes_1.8.4_all.deb
 ```
 
-完成后，点击左下角的菜单按钮，输入“themes”。你也可以在系统设置中找到主题。
+完成后，点击左下角的菜单按钮，输入 “themes”。你也可以在系统设置中找到“主题”功能。
 
 ![Accessing Themes][15]
 
@@ -105,17 +107,17 @@ sudo dpkg -i ./mint-x-icons_1.5.5_all.deb ./mint-y-icons_1.3.9_all.deb ./mint-th
 
 桌面组件和小程序是一种小型的、单一用途的应用程序，可以分别添加到你的桌面或面板上。在众多的应用程序中，最常用的是 CPU 或资源监控器、天气小程序、便签和日历。
 
-Cinnamon 控制中心集中提供许多桌面配置选项。通过访问主题部分，你可以选择桌面基本方案和图标、窗口边框、鼠标指针和控件外观。字体对桌面的整体外观有很大的影响，而 Cinnamon 让改变字体比以往任何时候都要容易。
+Cinnamon 控制中心集中提供许多桌面配置选项。通过访问 “主题” 部分，你可以选择桌面基本方案和图标、窗口边框、鼠标指针和控件外观。字体对桌面的整体外观有很大的影响，而 Cinnamon 让改变字体比以往任何时候都要容易。
 
-Cinnamon 控制中心配置对新用户来说也变得足够简单，相比之下，KDE Plasma 会因为大量的配置选项而导致新用户感到困惑。
+Cinnamon 控制中心配置对新用户来说也足够简单，相比之下，KDE Plasma 会因为大量的配置选项而导致新用户感到困惑。
 
 ![][18]
 
-Cinnamon 面板包含用于启动程序的菜单、基本的系统托盘和应用程序选择器。面板的配置很简单，添加新的程序启动器只需在主菜单中找到你要添加的程序，右击图标，选择“添加到面板”即可。你也可以将启动程序图标添加到桌面，以及 Cinnamon 的“收藏夹”启动栏中。如果你不喜欢面板上图标的顺序，只需在面板栏上点击右键，进入面板的“编辑”模式，重新排列图标即可。
+Cinnamon 面板包含用于启动程序的菜单、基本的系统托盘和应用程序选择器。面板的配置很简单，添加新的程序启动器只需在主菜单中找到你要添加的程序，右击图标，选择 “添加到面板” 即可。你也可以将启动程序图标添加到桌面，以及 Cinnamon 的 “收藏夹” 启动栏中。如果你不喜欢面板上图标的顺序，只需在面板栏上点击右键，进入面板的 “编辑” 模式，重新排列图标即可。
 
 ### 结论
 
-无论你是决定给你的桌面“加点料”，还是考虑从 [Windows 迁移到 Linux][19]，Cinnamon 社区都为你制作了大量的香料。
+无论你是决定给你的桌面 “加点料”，还是考虑从 [Windows 迁移到 Linux][19]，Cinnamon 社区都为你制作了大量的香料。
 
 传统而又优雅，可定制而又简单，Ubuntu Cinnamon Remix 是一个有趣的项目，前途无量，对于喜欢 Ubuntu 的 Cinnamon 桌面爱好者来说，这可能是一个不二之选。
 
@@ -128,7 +130,7 @@ via: https://itsfoss.com/ubuntu-cinnamon-remix-review/
 作者：[Dimitrios Savvopoulos][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
