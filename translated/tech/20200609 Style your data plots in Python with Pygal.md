@@ -7,27 +7,27 @@
 [#]: via: (https://opensource.com/article/20/6/pygal-python)
 [#]: author: (Shaun Taylor-Morgan https://opensource.com/users/shaun-taylor-morgan)
 
-Style your data plots in Python with Pygal
+使用 Pygal 在 Python 中设置数据图的样式
 ======
-An introduction one of the more stylish Python plotting libraries.
+介绍一种更时尚的 Python 绘图库。
 ![Python in a coffee cup.][1]
 
-[Python][2] is full of libraries that can visualize data. One of the more interactive options comes from Pygal, which I consider the library for people who like things to look good. It generates beautiful SVG (Scalable Vector Graphics) files that users can interact with. SVG is a standard format for interactive graphics, and it can lead to rich user experiences with only a few lines of Python.
+[Python][2] 一个可以可视化数据的库。一个更具互动性的选择是 Pygal，我认为这个库适合喜欢好看的人。它生成用户可以与之交互的漂亮的 SVG（可缩放矢量图形）文件。SVG 是交互式图形的标准格式，仅使用几行 Python 就可以带来丰富的用户体验。
 
-### Using Pygal for stylish Python plots
+### 使用 Pygal 进行时尚的 Python 绘图
 
-In this introduction, we want to recreate this multi-bar plot, which represents the UK election results from 1966 to 2020:
+在本文中，我们要重新创建多柱状图，它代表了 1966 年至 2020 年英国大选的结果：
 
 ![Pygal plot][3]
 
-Before we go further, note that you may need to tune your Python environment to get this code to run, including the following. 
+在继续之前，请注意你可能需要调整 Python 环境以使此代码运行，包括：
 
-  * Running a recent version of Python (instructions for [Linux][4], [Mac][5], and [Windows][6])
-  * Verify you're running a version of Python that works with these libraries
+  * 运行最新版本的 Python（[Linux][4]、[Mac][5] 和 [Windows][6] 的说明）
+  * 确认你运行的是与这些库兼容的 Python 版本
 
 
 
-The data is available online and can be imported using pandas:
+数据可在线获得，并可使用 pandas 导入：
 
 
 ```
@@ -35,7 +35,7 @@ import pandas as pd
 df = pd.read_csv('<https://anvil.works/blog/img/plotting-in-python/uk-election-results.csv>')
 ```
 
-Now we're ready to go. The data looks like this:
+现在可以了。数据如下所示：
 
 
 ```
@@ -51,7 +51,7 @@ Now we're ready to go. The data looks like this:
 
  
 
-Plotting this in Pygal builds up in a way that I find easy to read. First, we define the style object in a way that will simplify our bar chart definition. Then we pass the custom style along with other metadata to a `Bar` object:
+在 Pygal 中进行绘制会以一种易于阅读的方式显示。首先，我们以简化柱状图定义的方式定义样式对象。然后我们将自定义样式以及其他元数据传递给 `Bar`  对象：
 
 
 ```
@@ -74,7 +74,7 @@ c = pygal.Bar(
 )
 ```
 
-Then, we `add` our data into the `Bar` object:
+然后，我们将数据`添加`到 `Bar` 对象中：
 
 
 ```
@@ -86,26 +86,27 @@ c.add('Others', df['others'])
 c.x_labels = df['year']
 ```
 
-Finally, we save the plot as an SVG file:
+最后，我们将图另存为 SVG 文件：
 
 
 ```
 `c.render_to_file('pygal.svg')`
 ```
 
-The result is an interactive SVG plot you can see in this gif:
+结果是一个交互式 SVG 图，你可以在此 gif 中看到：
 
 ![The Python pygal library can generate rich SVG files as seen here][7]
 
-Beautifully simple, and with beautiful results.
+精美简单，并且效果漂亮。
 
-### Conclusion
+### 总结
 
-Some plotting options in Python require building every object in great detail, and Pygal gives you that functionality from the start. Give Pygal a go if you have data on hand and you want to make a clean, beautiful, and simple plot for user interaction.
+、Python 中的某些绘图工具需要非常详细地构建每个对象，而 Pygal 从一开始就为你提供这些。如果你手边有数据并且想做一个干净、漂亮、简单的交互式图表，请尝试一下 Pygal。
+
 
 \---
 
-_This article was first shared [here][8] and is edited and republished with permission._
+_本文最初发表于[此][8]，并获得许可编辑并重新发布。_
 
 --------------------------------------------------------------------------------
 
@@ -113,7 +114,7 @@ via: https://opensource.com/article/20/6/pygal-python
 
 作者：[Shaun Taylor-Morgan][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
