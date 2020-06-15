@@ -7,7 +7,7 @@
 [#]: via: (https://fedoramagazine.org/cockpit-and-the-evolution-of-the-web-user-interface/)
 [#]: author: (Shaun Assam https://fedoramagazine.org/author/sassam/)
 
-Cockpit 和网页用户界面的演变过程
+Cockpit 及其网页用户界面的演变
 ======
 
 ![][1]
