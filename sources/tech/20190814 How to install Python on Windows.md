@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "011011100010110101101111"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "How to install Python on Windows"
-[#]: via: "https://opensource.com/article/19/8/how-install-python-windows"
-[#]: author: "Seth Kenlon https://opensource.com/users/sethhttps://opensource.com/users/greg-p"
+[#]: collector: (lujun9972)
+[#]: translator: (011011100010110101101111)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (How to install Python on Windows)
+[#]: via: (https://opensource.com/article/19/8/how-install-python-windows)
+[#]: author: (Seth Kenlon https://opensource.com/users/sethhttps://opensource.com/users/greg-p)
 
 How to install Python on Windows
 ======
@@ -178,7 +178,7 @@ via: https://opensource.com/article/19/8/how-install-python-windows
 
 [a]: https://opensource.com/users/sethhttps://opensource.com/users/greg-p
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/programming-code-keyboard-laptop.png?itok=pGfEfu2S "Hands programming"
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/programming-code-keyboard-laptop.png?itok=pGfEfu2S (Hands programming)
 [2]: https://www.python.org/
 [3]: https://opensource.com/article/19/7/get-modular-python-classes
 [4]: https://github.com/edniemeyer/weta_python_db
@@ -187,17 +187,17 @@ via: https://opensource.com/article/19/8/how-install-python-windows
 [7]: https://opensource.com/article/19/7/ways-get-started-linux
 [8]: https://opensource.com/article/17/10/python-101
 [9]: https://www.python.org/downloads/
-[10]: https://opensource.com/sites/default/files/uploads/win-python-install.jpg "Downloading Python on Windows"
-[11]: https://opensource.com/sites/default/files/uploads/win-python-path.jpg "Select "Add Python 3 to PATH""
-[12]: https://opensource.com/sites/default/files/uploads/win-python-publisher.jpg "Windows UAC"
+[10]: https://opensource.com/sites/default/files/uploads/win-python-install.jpg (Downloading Python on Windows)
+[11]: https://opensource.com/sites/default/files/uploads/win-python-path.jpg (Select "Add Python 3 to PATH")
+[12]: https://opensource.com/sites/default/files/uploads/win-python-publisher.jpg (Windows UAC)
 [13]: https://notepad-plus-plus.org/
-[14]: https://opensource.com/sites/default/files/uploads/idle3.png "IDLE 3 IDE"
+[14]: https://opensource.com/sites/default/files/uploads/idle3.png (IDLE 3 IDE)
 [15]: http://docs.python.org/3/using/windows.html
 [16]: http://ninja-ide.org/
-[17]: https://opensource.com/sites/default/files/uploads/win-python-ninja.jpg "Ninja-IDE"
+[17]: https://opensource.com/sites/default/files/uploads/win-python-ninja.jpg (Ninja-IDE)
 [18]: http://ninja-ide.org/downloads/
-[19]: https://opensource.com/sites/default/files/uploads/ninja_run.png "Running code in Ninja-IDE"
+[19]: https://opensource.com/sites/default/files/uploads/ninja_run.png (Running code in Ninja-IDE)
 [20]: https://opensource.com/life/15/8/python-turtle-graphics
-[21]: https://opensource.com/sites/default/files/uploads/win-python-idle-turtle.jpg "Example Python turtle output"
+[21]: https://opensource.com/sites/default/files/uploads/win-python-idle-turtle.jpg (Example Python turtle output)
 [22]: https://opensource.com/article/17/10/python-101#python-101-dice-game
 [23]: https://opensource.com/sitewide-search?search_api_views_fulltext=Python
