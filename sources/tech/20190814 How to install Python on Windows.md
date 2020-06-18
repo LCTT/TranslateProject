@@ -9,18 +9,18 @@
 
 如何在Windows上安装Python
 ======
-Install Python, run an IDE, and start coding right from your Microsoft
-Windows desktop.
 > 安装Python,启动IDE，然后你就可以在Windows系统下进行编程了。
 ![Hands programming][1]
-
-So you want to learn to program? One of the most common languages to start with is [Python][2], popular for its unique blend of [object-oriented][3] structure and simple syntax. Python is also an _interpreted_ _language_, meaning you don't need to learn how to compile code into machine language: Python does that for you, allowing you to test your programs sometimes instantly and, in a way, while you write your code.
-
-Just because Python is easy to learn doesn't mean you should underestimate its potential power. Python is used by [movie][4] [studios][5], financial institutions, IT houses, video game studios, makers, hobbyists, [artists][6], teachers, and many others.
 
 On the other hand, Python is also a serious programming language, and learning it takes dedication and practice. Then again, you don't have to commit to anything just yet. You can install and try Python on nearly any computing platform, so if you're on Windows, this article is for you.
 
 If you want to try Python on a completely open source operating system, you can [install Linux][7] and then [try Python][8].
+
+你是否想学习编程呢？可以从 [Python][2] 开始，它因为简洁的语法和面向对象的特性而非常受欢迎，是最常见的编程语言之一。而且 Python 是一门解释型语言，这意味着你无需知道如何把 Python 代码编译为机器语言 ———— Python 会帮你做到这一点，从而使你能够在编写代码的同时立即进行测试。
+
+但是你也不能仅仅因为 Python 学习起来简单而低谷了它强大的潜能，无论是在 [电影][4]、 [工作室][5]、视频游戏工作室，还是在金融机构、IT机构、制造业，都有 Python 的身影，甚至很多业余爱好者、[艺术家][6]、教师和许多其他人都使用Python。
+
+
 
 ### Get Python
 
