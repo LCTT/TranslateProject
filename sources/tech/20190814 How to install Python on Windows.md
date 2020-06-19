@@ -20,7 +20,7 @@ If you want to try Python on a completely open source operating system, you can 
 
 但是你也不能仅仅因为 Python 学习起来简单而低谷了它强大的潜能，无论是在 [电影][4]、 [工作室][5]、视频游戏工作室，还是在金融机构、IT机构、制造业，都有 Python 的身影，甚至很多业余爱好者、[艺术家][6]、教师和许多其他人都使用Python。
 
-
+另一方面，Python 也是一门严肃的编程语言，学习它需要付出和实践。还有，你不需要
 
 ### Get Python
 
