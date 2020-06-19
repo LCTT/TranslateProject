@@ -22,7 +22,7 @@
 
 ### 如何获取 Python
 
-你可以从 [Python 官方网站][9] 上去下载 Python。你Python官方网站下载页，可以将鼠标悬停在 **Downloads** 按钮上，待菜单展开后，再将鼠标悬停在 **Windows** 选项，最后点击按钮就可以下载最新版的Python了。
+你可以从 [Python 官方网站][9] 上去下载 Python。在Python官方网站下载页，可以将鼠标悬停在 **Downloads** 按钮上，待菜单展开后，再将鼠标悬停在 **Windows** 选项，最后点击按钮就可以下载最新版的Python了。
 
 ![Downloading Python on Windows][10]
 
