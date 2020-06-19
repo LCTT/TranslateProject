@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (011011100010110101101111)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,10 +7,11 @@
 [#]: via: (https://opensource.com/article/19/8/how-install-python-windows)
 [#]: author: (Seth Kenlon https://opensource.com/users/sethhttps://opensource.com/users/greg-p)
 
-How to install Python on Windows
+如何在Windows上安装Python
 ======
 Install Python, run an IDE, and start coding right from your Microsoft
 Windows desktop.
+> 安装Python,启动IDE，然后你就可以在Windows系统下进行编程了。
 ![Hands programming][1]
 
 So you want to learn to program? One of the most common languages to start with is [Python][2], popular for its unique blend of [object-oriented][3] structure and simple syntax. Python is also an _interpreted_ _language_, meaning you don't need to learn how to compile code into machine language: Python does that for you, allowing you to test your programs sometimes instantly and, in a way, while you write your code.
