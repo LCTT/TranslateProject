@@ -14,7 +14,7 @@
 
 你是否想学习编程呢？可以从 [Python][2] 开始，它因为简洁的语法和面向对象的特性而非常受欢迎，是最常见的编程语言之一。而且 Python 是一门解释型语言，这意味着你无需知道如何把 Python 代码编译为机器语言 ———— Python 会帮你做到这一点，从而使你能够在编写代码的同时立即进行测试。
 
-但是你也不能仅仅因为 Python 学习起来简单而低谷了它强大的潜能，无论是在 [电影][4]、 [工作室][5]、视频游戏工作室，还是在金融机构、IT机构、制造业，都有 Python 的身影，甚至很多业余爱好者、[艺术家][6]、教师和许多其他人都使用Python。
+但是你也不能仅仅因为 Python 学习起来简单而低估了它强大的潜能，无论是在 [电影][4]、 [工作室][5]、视频游戏工作室，还是在金融机构、IT机构、制造业，都有 Python 的身影，甚至很多业余爱好者、[艺术家][6]、教师和许多其他人都使用Python。
 
 另一方面，Python 也是一门严肃的编程语言，学习它需要付出和实践。还有，你什么都不需要马上做，就几乎可以在任何计算机平台上安装并尝试使用 Python ，因此，如果你使用的是 Windows 操作系统，那本文正适合你。
 
@@ -31,21 +31,19 @@
 
 下载好安装包后，直接打开就可以启动安装程序了。
 
-It is safe to accept the default install location, and it's vital to add Python to PATH. If you don't add Python to your PATH, then Python applications won't know where to find Python (which they require in order to run). This is _not_ selected by default, so activate it at the bottom of the install window before continuing!
+安装时，选择默认的安装路径比较好，最重要的是要将 Python 添加到 Path 中，否则 Python 应用程序不知道它该从哪里找到 Python 必须的运行时环境；默认认安装时并没有选中这一项，需要手动选中安装窗口的 **Add Python 3.7 to Path** ，然后点击继续。
 
 ![Select "Add Python 3 to PATH"][11]
 
-Before Windows allows you to install an application from a publisher other than Microsoft, you must give your approval. Click the **Yes** button when prompted by the **User Account Control** system.
+由于 Windows 需要经过你的批准才会允许非 Microsoft 官方发行的应用程序，因此你必须要在弹出 **User Account Control** 系统提示窗口的时候 点击 **Yes** 来继续完成安装。
 
 ![Windows UAC][12]
 
-Wait patiently for Windows to distribute the files from the Python package into the appropriate locations, and when it's finished, you're done installing Python.
-
-Time to play.
+这时候你就需要耐心等待，系统会自动将 Python 软件包分发到合适的位置，等待过后，也就意味着你已经成功的安装了 Python ，你就可以愉快的与 Python 玩耍了！ 
 
 ### Install an IDE
 
-To write programs in Python, all you really need is a text editor, but it's convenient to have an integrated development environment (IDE). An IDE integrates a text editor with some friendly and helpful Python features. IDLE 3 and NINJA-IDE are two options to consider.
+虽然说你仅需要一个文本编辑器，就可以开始编写 Python 代码了，但是我依然建议你使用 IDE （集成开发环境）来进行开发，这样开发起来就会变得方便很多。IDE 会将文本编辑器和一些好用的 Python 功能集成到一起，使用起来非常友好。你可以考虑选择 IDLE 3 或者 NINJA-IDE 来作为你的 IDE。
 
 #### IDLE 3
 
