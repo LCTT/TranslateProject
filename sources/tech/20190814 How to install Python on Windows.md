@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (011011100010110101101111)
+[#]: translator: (LiuWenlong)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -25,11 +25,11 @@
 你可以从 [Python 官方网站][9] 上去下载 Python。你Python官方网站下载页，可以将鼠标悬停在 **Downloads** 按钮上，待菜单展开后，再将鼠标悬停在 **Windows** 选项，最后点击按钮就可以下载最新版的Python了。
 ![Downloading Python on Windows][10]
 
-Alternatively, you can click the **Downloads** menu button and select a specific version from the downloads page.
+或者你也可以直接点击 **Downloads** 按钮，然后在下载页中选择特定的版本去下载。
 
-### Install Python
+### 安装 Python
 
-Once the package is downloaded, open it to start the installer.
+下载好安装包后，直接打开就可以启动安装程序了。
 
 It is safe to accept the default install location, and it's vital to add Python to PATH. If you don't add Python to your PATH, then Python applications won't know where to find Python (which they require in order to run). This is _not_ selected by default, so activate it at the bottom of the install window before continuing!
 
@@ -169,7 +169,7 @@ via: https://opensource.com/article/19/8/how-install-python-windows
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[LiuWenlong](https://github.com/011011100010110101101111)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
