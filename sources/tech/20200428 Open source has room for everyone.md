@@ -46,8 +46,8 @@ The twin themes that influence Megan's community engagement are a clear commitme
 "Whether helping raise funds for Drupal's mission or enabling open source projects to become more sustainable, there's a real human impact. I get really passionate about the butterfly effect that results from helping people meet their goals and realize their dreams and visions."
 “不管是帮助联盟基金会筹集资金的任务还是赋能开源项目可持续发展，这些影响着这人们。我也实实在在感受到帮助人们达到他们的目标，实现他们的梦想和愿景而自己这种蝴蝶效应般的热情。”
 
-
 As open source becomes a larger and larger part of the technology space, Megan is hopeful for the future. "The exciting thing is that the story isn't done. As a community, we're still figuring things out," she says. "There's so much we need to learn about open source, and it can evolve in so many ways, while the landscape changes around us. We need to have the right conversations and figure out how to evolve together, ensuring there's a place at the table for everyone."
+开源技术在技术领域占的比重越来越大，Megan 对未来抱有很大希望。“令人兴奋的是故事还没有结束。作为一个社区，我们仍然在努力解决问题，”她说：“还有很多东西关于开源技术需要我们学习，我们的外部环境不断发生变化，开源将用不同的方式进化着。我们需要正确的对话和找出如何共同进化。确保每个人都有一席之地。”
 
 In her words, it's possible to hear those same lessons learned from listening to her father's business calls—doing business is about solving problems and helping people. "Helping more people understand how to use and contribute to open source to solve problems is really rewarding. Whether it is to drive innovation, accelerate velocity, or achieve business goals, there are lots of ways to gain value from open source."
 
