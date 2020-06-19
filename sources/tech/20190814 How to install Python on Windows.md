@@ -74,7 +74,7 @@ Ninja-IDE 安装完成后，双击 Windows 桌面或开始菜单下的 Ninja-IDE
 
 ### 告诉 Python 怎么做
 
-Python 代码使用关键字作为开头。在 IDLE 或者 Ninja-IDE ，打开 **文件** 菜单，创建一个新文件。
+关键字能让 Python 知道你想要做什么。在 IDLE 或者 Ninja-IDE ，打开 **文件** 菜单，创建一个新文件。
 
 在 Ninja-IDE 中，不要创建一个新项目，而是单独创建一个新文件就可以了。
 
