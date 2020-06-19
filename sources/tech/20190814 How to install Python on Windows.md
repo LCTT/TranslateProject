@@ -68,27 +68,24 @@ Python 自带一款 IDE，名字叫 IDLE。虽然你可以使用任何文本编�
 
 ![Ninja-IDE][17]
 
-To install it, visit the Ninja-IDE website and [download the Windows installer][18]. The process is the same as with Python: start the installer, allow Windows to install a non-Microsoft application, and wait for the installer to finish.
+如果要安装 Ninja-IDE ，你可以访问 Ninja-IDE 的官网 [下载 Windows 安装程序][18] 。步骤跟安装 Python 大同小异：下载安装包、允许 Windows 安装非 Microsoft 官方的应用程序，然后等待完成安装即可。
 
-Once Ninja-IDE is installed, double-click the Ninja-IDE icon on your desktop or select it from the Start menu.
+Ninja-IDE 安装完成后，双击 Windows 桌面或开始菜单下的 Ninja-IDE 就可以启动了。
 
-### Tell Python what to do
+### 告诉 Python 怎么做
 
-Keywords tell Python what you want it to do. In either IDLE or Ninja-IDE, go to the File menu and create a new file.
+Python 代码使用关键字作为开头。在 IDLE 或者 Ninja-IDE ，打开 **文件** 菜单，创建一个新文件。
 
-Ninja users: Do not create a new project, just a new file.
+在 Ninja-IDE 中，不要创建一个新项目，而是单独创建一个新文件就可以了。
 
-In your new, empty file, type this into IDLE or Ninja-IDE:
-
+在你用 IDLE 或者 Ninja-IDE  新建的文件中，输入以下代码：
 
 ```
 `print("Hello world.")`
 ```
 
-  * If you are using IDLE, go to the Run menu and select the Run Module option.
-  * If you are using Ninja, click the Run File button in the left button bar.
-
-
+  * 如果你使用的是 IDLE ，请点击"运行"菜单，选择"运行模块"选项来运行你的程序。
+  * 如果你使用的是 Ninja ，请单击左侧按钮栏中的"运行文件"按钮。
 
 ![Running code in Ninja-IDE][19]
 
