@@ -12,7 +12,7 @@
 > 安装Python,启动IDE，然后你就可以在Windows系统下进行编程了。
 ![Hands programming][1]
 
-你是否想学习编程呢？可以从 [Python][2] 开始，它因为简洁的语法和面向对象的特性而非常受欢迎，是最常见的编程语言之一。而且 Python 是一门解释型语言，这意味着你无需知道如何把 Python 代码编译为机器语言 ———— Python 会帮你做到这一点，从而使你能够在编写代码的同时立即进行测试。
+你是否想学习编程呢？可以从 [Python][2] 开始，它因为简洁的语法和面向对象的特性而非常受欢迎，是最常见的编程语言之一。而且 Python 是一门解释型语言，这意味着你无需知道如何把 Python 代码编译为机器语言 —— Python 会帮你做到这一点，从而使你能够在编写代码的同时立即进行测试。
 
 但是你也不能仅仅因为 Python 学习起来简单而低估了它强大的潜能，无论是在 [电影][4]、 [工作室][5]、视频游戏工作室，还是在金融机构、IT机构、制造业，都有 Python 的身影，甚至很多业余爱好者、[艺术家][6]、教师和许多其他人都使用Python。
 
@@ -23,6 +23,7 @@
 ### 如何获取 Python
 
 你可以从 [Python 官方网站][9] 上去下载 Python。你Python官方网站下载页，可以将鼠标悬停在 **Downloads** 按钮上，待菜单展开后，再将鼠标悬停在 **Windows** 选项，最后点击按钮就可以下载最新版的Python了。
+
 ![Downloading Python on Windows][10]
 
 或者你也可以直接点击 **Downloads** 按钮，然后在下载页中选择特定的版本去下载。
@@ -35,36 +36,35 @@
 
 ![Select "Add Python 3 to PATH"][11]
 
-由于 Windows 需要经过你的批准才会允许非 Microsoft 官方发行的应用程序，因此你必须要在弹出 **User Account Control** 系统提示窗口的时候 点击 **Yes** 来继续完成安装。
+由于 Windows 需要经过你的批准才会允许安装非 Microsoft 官方发行的应用程序，因此你必须要在弹出 **User Account Control** 系统提示窗口的时候 点击 **Yes** 来继续完成安装。
 
 ![Windows UAC][12]
 
 这时候你就需要耐心等待，系统会自动将 Python 软件包分发到合适的位置，等待过后，也就意味着你已经成功的安装了 Python ，你就可以愉快的与 Python 玩耍了！ 
 
-### Install an IDE
+### 安装一个 IDE
 
 虽然说你仅需要一个文本编辑器，就可以开始编写 Python 代码了，但是我依然建议你使用 IDE （集成开发环境）来进行开发，这样开发起来就会变得方便很多。IDE 会将文本编辑器和一些好用的 Python 功能集成到一起，使用起来非常友好。你可以考虑选择 IDLE 3 或者 NINJA-IDE 来作为你的 IDE。
 
 #### IDLE 3
 
-Python comes with an IDE called IDLE. You can write code in any text editor, but using an IDE provides you with keyword highlighting to help detect typos, a **Run** button to test code quickly and easily, and other code-specific features that a plain text editor like [Notepad++][13] normally doesn't have.
+Python 自带一款 IDE，名字叫 IDLE。虽然你可以使用任何文本编辑器编写 Python 代码，但 IDE 通常会提供 [Notepad++][13] 之类的纯文本编辑器所没有的代码高亮、语法检测等功能，甚至在 IDE 里可以直接通过鼠标点击 **Run** 按钮就能快速运行 Python 代码。
 
-To start IDLE, click the **Start** (or **Window**) menu and type **python** for matches. You may find a few matches, since Python provides more than one interface, so make sure you launch IDLE.
+想要启动 IDLE ，可以点击 Windows 的 **开始** （或者 **Windows**）按钮，然后输入 **Python** 来进行搜索。这时候可能会搜索到多个选项，选择 IDLE 启动就好了。
 
 ![IDLE 3 IDE][14]
 
-If you don't see Python in the Start menu, launch the Windows command prompt by typing **cmd** in the Start menu, then type:
-
+如果在 **开始** 菜单中没有搜到，你也可以在 **开始** 菜单输入 **cmd** (或同时按下键盘 win + R 键) 来启动 Windows 命令提示符，然后输入下面命令来启动 IDLE ：
 
 ```
 `C:\Windows\py.exe`
 ```
 
-If that doesn't work, try reinstalling Python. Be sure to select **Add Python to PATH** in the install wizard. Refer to the [Python docs][15] for detailed instructions.
+如果还是无法启动的话，可是试着重新安装 Python ,安装时记得务必要在安装向导中选中 **Add Python to PATH** 。详细说明，可以参考 [Python 官方文档][15] 。
 
 #### Ninja-IDE
 
-If you already have some coding experience and IDLE seems too simple for you, try [Ninja-IDE][16]. Ninja-IDE is an excellent Python IDE. It has keyword highlighting to help detect typos, quotation and parenthesis completion to avoid syntax errors, line numbers (helpful when debugging), indentation markers, and a **Run** button to test code quickly and easily.
+如果你已经有一些编程经验而且你觉得 IDLE 对你来说有些简陋的话，你也可以试试 [Ninja-IDE][16]。 Ninja-IDE 是一款非常出色的 Python IDE,  它具有代码高亮功能，并且他会自动帮你检测诸如拼写错误、引号或括号缺失以及其他语法错误。而且它还可以显示行号（调试的时候会非常有用）、锁进标记甚至可以直接通过点击 **Run** 按钮来运行你的代码。
 
 ![Ninja-IDE][17]
 
