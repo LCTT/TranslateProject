@@ -12,20 +12,17 @@
 > 安装Python,启动IDE，然后你就可以在Windows系统下进行编程了。
 ![Hands programming][1]
 
-On the other hand, Python is also a serious programming language, and learning it takes dedication and practice. Then again, you don't have to commit to anything just yet. You can install and try Python on nearly any computing platform, so if you're on Windows, this article is for you.
-
-If you want to try Python on a completely open source operating system, you can [install Linux][7] and then [try Python][8].
-
 你是否想学习编程呢？可以从 [Python][2] 开始，它因为简洁的语法和面向对象的特性而非常受欢迎，是最常见的编程语言之一。而且 Python 是一门解释型语言，这意味着你无需知道如何把 Python 代码编译为机器语言 ———— Python 会帮你做到这一点，从而使你能够在编写代码的同时立即进行测试。
 
 但是你也不能仅仅因为 Python 学习起来简单而低谷了它强大的潜能，无论是在 [电影][4]、 [工作室][5]、视频游戏工作室，还是在金融机构、IT机构、制造业，都有 Python 的身影，甚至很多业余爱好者、[艺术家][6]、教师和许多其他人都使用Python。
 
-另一方面，Python 也是一门严肃的编程语言，学习它需要付出和实践。还有，你不需要
+另一方面，Python 也是一门严肃的编程语言，学习它需要付出和实践。还有，你什么都不需要马上做，就几乎可以在任何计算机平台上安装并尝试使用 Python ，因此，如果你使用的是 Windows 操作系统，那本文正适合你。
 
-### Get Python
+如果你使用的是开源的 Linux 操作系统，那你可以 [在 Linux 上安装][7] 并 [尝试使用Python][8]
 
-Python is available from its website, [Python.org][9]. Once there, hover your mouse over the **Downloads** menu, then over the **Windows** option, and then click the button to download the latest release.
+### 如何获取 Python
 
+你可以从 [Python 官方网站][9] 上去下载 Python。你Python官方网站下载页，可以将鼠标悬停在 **Downloads** 按钮上，待菜单展开后，再将鼠标悬停在 **Windows** 选项，最后点击按钮就可以下载最新版的Python了。
 ![Downloading Python on Windows][10]
 
 Alternatively, you can click the **Downloads** menu button and select a specific version from the downloads page.
