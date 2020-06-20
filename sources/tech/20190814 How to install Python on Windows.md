@@ -89,23 +89,11 @@ Ninja-IDE 安装完成后，双击 Windows 桌面或开始菜单下的 Ninja-IDE
 
 ![Running code in Ninja-IDE][19]
 
-Any time you run code, your IDE prompts you to save the file you're working on. Do that before continuing.
-
-The keyword **print** tells Python to print out whatever text you give it in parentheses and quotes.
-
-That's not very exciting, though. At its core, Python has access to only basic keywords like **print** and **help**, basic math functions, and so on.
-
-Use the **import** keyword to load more keywords. Start a new file in IDLE or Ninja and name it **pen.py**.
-
-**Warning**: Do not call your file **turtle.py**, because **turtle.py** is the name of the file that contains the turtle program you are controlling. Naming your file **turtle.py** confuses Python because it thinks you want to import your own file.
-
-Type this code into your file and run it:
-
 任何时间当你想要执行代码，IDE 都会提示你先保存当前正在处理的文件，然后再继续。
 
 **print** 关键字会告诉 Python 打印出你在括号和引号中输入的所有文本。
 
-但是别高兴地太早，Python 的核心库都只能访问 **print** 和 **help** 之类的基本关键字、函数等。
+但是别高兴地太早，Python 的核心库也就只能访问 **print** 和 **help** 之类的基本关键字、函数等。
 
 如果想要使用更多的关键字和函数，你就需要使用 **import** 关键字去加载它们。好了，先在你的 IDLE 或者 Ninja 中新建一个文件，命名为 **pen.py** 。
 
@@ -132,12 +120,11 @@ turtle.forward(100)
 turtle.end_fill()
 ```
 
-See what shapes you can draw with the turtle module.
+来看看你可以使用 turtle 模块来绘制出哪些图案。
 
-To clear your turtle drawing area, use the **turtle.clear()** keyword. What do you think the keyword **turtle.color("blue")** does?
+想要清空 turtle 绘制的区域的话，你可以使用 **turtle.clear()** 函数。那你知道 **turtle.color("blue")** 是用来做什么的吗？
 
-Try more complex code:
-
+我们来试一下更复杂点的程序：
 
 ```
 import turtle as t
@@ -157,17 +144,17 @@ t.end_fill()
 time.sleep(2)
 ```
 
-As a challenge, try changing your script to get this result:
+给你个挑战，试试修改代码，让它得到下图所示的结果：
 
 ![Example Python turtle output][21]
 
-Once you complete that script, you're ready to move on to more exciting modules. A good place to start is this [introductory dice game][22].
+当你完成这段代码后，你就可以继续学习更多有意思的模块了。这个 [入门级骰子游戏][] 就是个不错的开始。
 
-### Stay Pythonic
+### 保持 Pythonic
 
-Python is a fun language with modules for practically anything you can think to do with it. As you can see, it's easy to get started with Python, and as long as you're patient with yourself, you may find yourself understanding and writing Python code with the same fluidity as you write your native language. Work through some [Python articles][23] here on Opensource.com, try scripting some small tasks for yourself, and see where Python takes you. To really integrate Python with your daily workflow, you might even try Linux, which is natively scriptable in ways no other operating system is. You might find yourself, given enough time, using the applications you create!
+Python 是一门非常有趣的语言，它的模块几乎能实现所有你想要实现的功能。正如你所看到的，Python 入门很容易，只要你对自己有耐心，很快就会发现自己在理解和编写 Python 时能像写汉字一样流畅。你可以在 [Python articles][23] 多阅读关于 Python 的文章，试着为自己编写一些小片段，然后看看 Python 会执行出什么结果。如果想要把 Python 真正融合到你实际工作中，你可以试试 Linux ，Linux 具有在本地可编写脚本的功能，而其他系统却没有。
 
-Good luck, and stay Pythonic.
+祝你好运，记得保持 Pythonic
 
 --------------------------------------------------------------------------------
 
