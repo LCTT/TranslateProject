@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12329-1.html)
 [#]: subject: (Add interactivity to your Python plots with Bokeh)
 [#]: via: (https://opensource.com/article/20/5/bokeh-python)
 [#]: author: (Shaun Taylor-Morgan https://opensource.com/users/shaun-taylor-morgan)
@@ -10,13 +10,13 @@
 使用 Bokeh 为你的 Python 绘图添加交互性
 ======
 
-> Bokeh 中的绘图比其他一些绘图库要复杂一些，但付出额外的努力是有回报的。
+> 在 Bokeh 中绘图比其他一些绘图库要复杂一些，但付出额外的努力是有回报的。
 
-![Hands on a keyboard with a Python book ][1]
+![](https://img.linux.net.cn/data/attachment/album/202006/18/164708zz7tjxz7m7ax5lt3.jpg)
 
-在这一系列文章中，我通过在每个 Python 绘图库中制作相同的多条形绘图，来了解不同 Python 绘图库的特点。这次我重点介绍的是 [Bokeh][2]（读作“BOE-kay”）。
+在这一系列文章中，我通过在每个 Python 绘图库中制作相同的多条形绘图，来研究不同 Python 绘图库的特性。这次我重点介绍的是 [Bokeh][2]（读作 “BOE-kay”）。
 
-Bokeh 中的绘图比[其它一些绘图库][3]要复杂一些，但额外的努力是有回报的。Bokeh 的设计既允许你在网络上创建自己的交互式绘图，又能让你详细控制交互性如何工作。我将通过给我在这个系列中使用的多条形图添加一个工具提示来展示这一点。它绘制了 1966 年到 2020 年之间英国选举结果的数据。
+Bokeh 中的绘图比[其它一些绘图库][3]要复杂一些，但付出的额外努力是有回报的。Bokeh 的设计既允许你在 Web 上创建自己的交互式绘图，又能让你详细控制交互性如何工作。我将通过给我在这个系列中一直使用的多条形图添加工具提示来展示这一点。它绘制了 1966 年到 2020 年之间英国选举结果的数据。
 
 ![][4]
 
@@ -26,10 +26,10 @@ Bokeh 中的绘图比[其它一些绘图库][3]要复杂一些，但额外的努
 
 在我们继续之前，请注意你可能需要调整你的 Python 环境来让这段代码运行，包括以下：
 
-- 运行最新版本的 Python （[Linux][11]、[Mac][12] 和 [Windows][13] 的说明）
+- 运行最新版本的 Python （在 [Linux][11]、[Mac][12] 和 [Windows][13] 上的说明）
 - 确认你运行的 Python 版本能与这些库一起工作。
 
-网上有数据，可以用 pandas 导入。
+数据可在线获得，可以用 Pandas 导入。
 
 ```
 import pandas as pd
@@ -62,23 +62,20 @@ df = pd.read_csv('https://anvil.works/blog/img/plotting-in-python/uk-election-re
 
 你可以把数据看成是每一个可能的 `(year, party)` 组合的一系列 `seats` 值。这正是 Bokeh 处理的方式。你需要做一个 `(year, party)` 元组的列表：
 
-
 ```
-# Get a tuple for each possible (year, party) combination
+# 得到每种可能的 (year, party) 组合的元组
 x = [(str(r[1]['year']), r[1]['party']) for r in df.iterrows()]
    
 # This comes out as [('1922', 'Conservative'), ('1923', 'Conservative'), ... ('2019', 'Others')]
 ```
 
-这些将是 x 值。y 值是简单的席位。
-
+这些将是 `x` 值。`y` 值就是席位（`seats`）。
 
 ```
 y = df['seats']
 ```
 
-现在你的数据看起来像这样：
-
+现在你的数据看起来应该像这样：
 
 ```
 x                               y
@@ -95,8 +92,7 @@ x                               y
 ('2019', 'Others')              72
 ```
 
-Bokeh 需要你将数据封装在它提供的一些对象中，这样它就能给你提供交互功能。将你的 x 和 y 数据结构封装在一个 `ColumnDataSource` 对象中。
-
+Bokeh 需要你将数据封装在它提供的一些对象中，这样它就能给你提供交互功能。将你的 `x` 和 `y` 数据结构封装在一个 `ColumnDataSource` 对象中。
 
 ```
     from bokeh.models import ColumnDataSource
@@ -104,8 +100,7 @@ Bokeh 需要你将数据封装在它提供的一些对象中，这样它就能�
     source = ColumnDataSource(data={'x': x, 'y': y})
 ```
 
-然后构造一个 `Figure` 对象，并传入你的用 `FactorRange` 对象封装的 x 数据。
-
+然后构造一个 `Figure` 对象，并传入你用 `FactorRange` 对象封装的 `x` 数据。
 
 ```
     from bokeh.plotting import figure
@@ -114,7 +109,7 @@ Bokeh 需要你将数据封装在它提供的一些对象中，这样它就能�
     p = figure(x_range=FactorRange(*x), width=2000, title="Election results")
 ```
 
-你需要让 Bokeh 创建一个颜色表--这是一个特殊的 `DataSpec` 字典，它根据你给它的颜色映射生成。在这种情况下，颜色表是一个简单的党派名称和一个十六进制值之间的映射。
+你需要让 Bokeh 创建一个颜色表，这是一个特殊的 `DataSpec` 字典，它根据你给它的颜色映射生成。在这种情况下，颜色表是一个简单的党派名称和一个十六进制值之间的映射。
 
 ```
     from bokeh.transform import factor_cmap
@@ -130,15 +125,13 @@ Bokeh 需要你将数据封装在它提供的一些对象中，这样它就能�
 
 现在你可以创建条形图了：
 
-
 ```
     p.vbar(x='x', top='y', width=0.9, source=source, fill_color=fill_color, line_color=fill_color)
 ```
 
-Bokeh 图表上数据的可视化表示被称为“<ruby>字形<rt>glyphs</rt></ruby>”，因此你已经创建了一组条形字形。
+Bokeh 图表上数据的可视化形式被称为“<ruby>字形<rt>glyphs</rt></ruby>”，因此你已经创建了一组条形字形。
 
 调整图表的细节，让它看起来像你想要的样子。
-
 
 ```
     p.y_range.start = 0
@@ -149,7 +142,6 @@ Bokeh 图表上数据的可视化表示被称为“<ruby>字形<rt>glyphs</rt></
 ```
 
 最后，告诉 Bokeh 你现在想看你的绘图：
-
 
 ```
    from bokeh.io import show
@@ -163,18 +155,17 @@ Bokeh 图表上数据的可视化表示被称为“<ruby>字形<rt>glyphs</rt></
 
 *Bokeh 中的多条形绘图（©2019年[Anvil][5]）*
 
-这已经有了一些互动功能，比如方框缩放。
+它已经有了一些互动功能，比如盒子缩放。
 
 ![][7] 。
 
-*Bokeh 内置的方框缩放（©2019[Anvil][5]）*
+*Bokeh 内置的盒子缩放（©2019[Anvil][5]）*
 
 但 Bokeh 的厉害之处在于你可以添加自己的交互性。在下一节中，我们通过在条形图中添加工具提示来探索这个问题。
 
 ### 给条形图添加工具提示
 
-要在条形图上添加工具提示，你只需要创建一个 `HoverTool` 对象并将其添加到你的图中。
-
+要在条形图上添加工具提示，你只需要创建一个 `HoverTool` 对象并将其添加到你的绘图中。
 
 ```
     h = HoverTool(tooltips=[
@@ -192,20 +183,15 @@ Bokeh 图表上数据的可视化表示被称为“<ruby>字形<rt>glyphs</rt></
 
 *选举图，现在带有工具提示（© 2019 [Anvil][5]）*
 
-多亏了 Bokeh 的 HTML 输出，当你将绘图嵌入到 Web 应用中时，你可以获得完整的交互体验。你可以把这个例子复制为一个 Anvil 应用[这里][9]（注：Anvil 需要注册才能使用）。
+借助 Bokeh 的 HTML 输出，将绘图嵌入到 Web 应用中时，你可以获得完整的交互体验。你可以在[这里][9]把这个例子复制为 Anvil 应用（注：Anvil 需要注册才能使用）。
 
-现在，你可以看到在 Bokeh 中用 `ColumnDataSource` 等对象包装所有数据而付出额外努力的原因了。作为回报，你可以相对轻松地添加交互性。
+现在，你可以看到付出额外努力在 Bokeh 中将所有数据封装在 `ColumnDataSource` 等对象的原因了。作为回报，你可以相对轻松地添加交互性。
 
 ### 回归简单：Altair
 
 Bokeh 是四大最流行的绘图库之一，本系列将研究[它们各自的特别之处][3]。
 
-我也在研究几个因其有趣的方法而脱颖而出的库。接下来，我将看看 [Altair][10]，它的声明式 API  意味着它可以做出非常复杂的情节，而不会让你头疼。
-
-* * *
-
-*本文根据 Anvil 博客上的[如何使用 Bokeh 制作绘图][5]改编，经允许后转载。*
-
+我也在研究几个因其有趣的方法而脱颖而出的库。接下来，我将看看 [Altair][10]，它的声明式 API 意味着它可以做出非常复杂的绘图，而不会让你头疼。
 
 --------------------------------------------------------------------------------
 
@@ -214,7 +200,7 @@ via: https://opensource.com/article/20/5/bokeh-python
 作者：[Shaun Taylor-Morgan][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -222,7 +208,7 @@ via: https://opensource.com/article/20/5/bokeh-python
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/python-programming-code-keyboard.png?itok=fxiSpmnd (Hands on a keyboard with a Python book )
 [2]: https://bokeh.org/
-[3]: https://opensource.com/article/20/4/plot-data-python
+[3]: https://linux.cn/article-12327-1.html
 [4]: https://opensource.com/sites/default/files/uploads/bokeh-closeup.png (A zoomed-in view on the plot)
 [5]: https://anvil.works/blog/plotting-in-bokeh
 [6]: https://opensource.com/sites/default/files/uploads/bokeh_0.png (A multi-bar plot in Bokeh)
