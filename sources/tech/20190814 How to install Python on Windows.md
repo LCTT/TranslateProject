@@ -101,12 +101,23 @@ Use the **import** keyword to load more keywords. Start a new file in IDLE or Ni
 
 Type this code into your file and run it:
 
+任何时间当你想要执行代码，IDE 都会提示你先保存当前正在处理的文件，然后再继续。
+
+**print** 关键字会告诉 Python 打印出你在括号和引号中输入的所有文本。
+
+但是别高兴地太早，Python 的核心库都只能访问 **print** 和 **help** 之类的基本关键字、函数等。
+
+如果想要使用更多的关键字和函数，你就需要使用 **import** 关键字去加载它们。好了，先在你的 IDLE 或者 Ninja 中新建一个文件，命名为 **pen.py** 。
+
+**警告**：不要把你新建的文件命名为 **turtle.py** ，因为 **turtle.py** 是包含了你要控制的 turtle 程序的文件名称，使用 **turtle.py** 作为文件名会让 Python 感到困惑，因为它以为你想要引入你自己的文件。
+
+在你新建的文件中输入一下代码，并运行：
 
 ```
 `import turtle`
 ```
 
-[Turtle][20] is a fun module to use. Add this code to your file:
+[Turtle][20] 是一个用起来非常有意思的模块. 把这段代码添加到你的问价内:
 
 
 ```
