@@ -1,11 +1,12 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (jrglinux)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Trace code in Fedora with bpftrace)
 [#]: via: (https://fedoramagazine.org/trace-code-in-fedora-with-bpftrace/)
 [#]: author: (Augusto Caringi https://fedoramagazine.org/author/acaringi/)
+translating by jrglinux...
 
 Trace code in Fedora with bpftrace
 ======
