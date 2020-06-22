@@ -13,13 +13,15 @@ Homebrew ：在 Mac 上无痛安装软件
 
 > Homebrew 软件包管理器可以让你轻松地在 Mac 上安装和更新应用程序和实用程序。
 
-![Gift box opens with colors coming out][1]
+![](https://img.linux.net.cn/data/attachment/album/202006/22/102739xum6zqmoh6sso0n6.jpg)
 
 在我追求“万物自动化”的过程中，我一直坚持走在用代码来管理我的 Mac 笔记本电脑的路上。与其用鼠标或触控板手动管理我的应用程序和实用程序，我更喜欢使用软件包管理软件来安装、更新和删除不需要的软件。
 
 这对 Mac 用户来说是个挑战。Mac 的操作系统 macOS 始终落后于 Linux 的一个地方就是在包管理方面。Mac 用户没有默认的软件包管理器，而 Linux 用户则有很多选择 —— 从熟悉的 `yum` 和 `apt` 到现代的 [Flatpak][2]。但 Mac 呢？
 
 这就是 [Homebrew][3] 的作用。Homebrew（自酿）填补了 MacOS 事实上的软件包管理器的空白（它也是 Linux 上的又一个可选的包管理器）。它为任何熟悉命令行的人提供了令人难以置信的流畅而直接的体验，如果你是新手，它是学习命令行的好方法。
+
+（LCTT 译注：Homebrew 系统中采用了大量针对自酿啤酒相关的比喻，大家在使用过程中会发现这些有趣的形容。）
 
 如果你在 Mac 上还没有 Homebrew，你可以这样来安装：
 
