@@ -1,11 +1,12 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (jrglinux)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (An introduction to bpftrace for Linux)
 [#]: via: (https://opensource.com/article/19/8/introduction-bpftrace)
 [#]: author: (Brendan Gregg https://opensource.com/users/brendanghttps://opensource.com/users/marcobravo)
+translating by jrglinux...
 
 An introduction to bpftrace for Linux
 ======
