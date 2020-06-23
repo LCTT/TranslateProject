@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12340-1.html)
 [#]: subject: (5 ways to examine the content of files on Linux)
 [#]: via: (https://www.networkworld.com/article/3561490/5-ways-to-examine-the-content-of-files-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -218,7 +218,7 @@ MMMNkdd:,'ldXXO0xl;x0kx:;lKMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 ```
 
-#### 总结
+### 总结
 
 Linux 上有很多命令可以通过各种方式查看文件的内容。其中一些选项在你需要处理文件内容时可能会非常有用。其它的只是……有趣。
 
