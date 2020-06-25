@@ -10,7 +10,7 @@
 定制你的树莓派（Raspberry Pi）用于日常使用
 ======
 
-安装 Raspberry Pi OS Lite可以更加轻量化你的树莓派（Raspberry Pi）
+安装 Raspberry Pi OS Lite 可以更加轻量化你的树莓派（Raspberry Pi）
 ![Cartoon graphic of Raspberry Pi board][1]
 
 如果你有一个运行 [Raspberry Pi OS][2]（以前称为 Raspbian）操作系统的树莓派（Raspberry Pi）的话，你懂的，他就是一个运行了可以为初学者提供一切可能的伟大操作系统的小电脑，这个电脑简直太棒了。然而，一旦你开始熟悉他并且想开始用他干一些别的事情的时候，你可能不再想要那个默认包含了所有东西的操作系统。
