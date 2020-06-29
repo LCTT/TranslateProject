@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12361-1.html)
 [#]: subject: (How to Make Ubuntu Look Like macOS in 5 Easy Steps)
 [#]: via: (https://itsfoss.com/make-ubuntu-look-like-macos/)
 [#]: author: (Community https://itsfoss.com/author/itsfoss/)
@@ -151,7 +151,7 @@ macOS 外观改造的下一步骤是使用像 macOS 一样的图标。
 
 ![设置字体][37]
 
-#### 额外提示: Spotlight 式的应用程序启动器（如果你像更进一步的话）
+#### 额外提示：Spotlight 式的应用程序启动器（如果你像更进一步的话）
 
 如果你是 macOS Spotlight 启动器的粉丝，那么你在 Linux 上也能找到类似的东西。我最喜欢的这类启动器的软件包是 “[Albert][38]”。
 
