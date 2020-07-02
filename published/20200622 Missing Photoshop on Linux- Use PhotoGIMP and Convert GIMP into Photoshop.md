@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12373-1.html)
 [#]: subject: (Missing Photoshop on Linux? Use PhotoGIMP and Convert GIMP into Photoshop)
 [#]: via: (https://itsfoss.com/photogimp/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -18,7 +18,7 @@
 
 但是，习惯了 Photoshop 的人们发现在切换到 GIMP 的时很难忘记他们反复学习的肌肉记忆。这可能会使某些人感到沮丧，因为使用新的界面意味着要学习大量的键盘快捷键，并花时间在查找工具位于何处。
 
-为了帮助从 Photoshop 切换到 GIMP 的人，[Diolinux][4] 介绍了一个在 GIMP 中模仿 Adobe Photoshop 的工具。
+为了帮助从 Photoshop 切换到 GIMP 的人，[Diolinux][4] 推出了一个在 GIMP 中模仿 Adobe Photoshop 的工具。
 
 ### PhotoGIMP：在 Linux 中为 GIMP 提供 Adobe Photoshop 的外观
 
@@ -34,29 +34,25 @@
   * 添加新的默认设置以最大化画布空间
   * 添加类似于 Adobe Photoshop 的键盘快捷键
 
-
-
-PhotoGIMP 还在自定义 .desktop 文件中添加新的图标和名称。让我们看看如何使用它。
+PhotoGIMP 还在自定义 `.desktop` 文件中添加新的图标和名称。让我们看看如何使用它。
 
 ### 在 Linux 上安装 PhotoGIMP （适合中级到专业用户）
 
 PhotoGIMP 本质是一个补丁。在 Linux 中下载并[解压 zip 文件][7]。你将在解压的文件夹中找到以下隐藏的文件夹：
 
-  * icons：其中包含新的 PhotoGIMP 图标
-  * .local：包含个性化的 .desktop 文件，以便你在系统菜单中看到的是 PhotoGIMP 而不是 GIMP
-  * .var：包含 GIMP 补丁的主文件夹
-
-
+  * `.icons`：其中包含新的 PhotoGIMP 图标
+  * `.local`：包含个性化的 `.desktop` 文件，以便你在系统菜单中看到的是 PhotoGIMP 而不是 GIMP
+  * `.var`：包含 GIMP 补丁的主文件夹
 
 你应该[使用 Ctrl+H 快捷键在 Ubuntu 中显示隐藏文件][8]。
 
-警告：建议你备份 GIMP 配置文件，以便在不喜欢 PhotoGIMP 时可以还原。只需将 GIMP 配置文件复制到其他位置。
+警告：建议你备份 GIMP 配置文件，以便在不喜欢 PhotoGIMP 时可以还原。只需将 GIMP 配置文件复制到其他位置即可备份。
 
 目前，PhotoGIMP 主要与通过 [Flatpak][9] 安装的 GIMP 兼容。如果你使用 Flatpak 安装了 GIMP，那么只需将这些隐藏的文件夹复制粘贴到家目录中，它将 GIMP 转换为 Adobe Photoshop 类似的设置。
 
-但是，如果你通过 apt、snap 或发行版的包管理器安装了 GIMP，那么必须找到 GIMP 的配置文件夹，然后粘贴 PhotoGIMP 的 .var 目录的内容。当出现询问时，请选择合并选项并替换同名的现有文件。
+但是，如果你通过 apt、snap 或发行版的包管理器安装了 GIMP，那么必须找到 GIMP 的配置文件夹，然后粘贴 PhotoGIMP 的 `.var` 目录的内容。当出现询问时，请选择合并选项并替换同名的现有文件。
 
-我[使用 apt 在 Ubuntu 20.04 中安装了 GIMP][10]。对我来说，GIMP 配置文件在 \~/.config/GIMP/2.10。我复制了 .var/app/org.gimp.GIMP/config/GIMP/2.10 目录，并启动 GIMP 查看 PhotoGIMP 的启动页。
+我[使用 apt 在 Ubuntu 20.04 中安装了 GIMP][10]。对我来说，GIMP 配置文件在 `~/.config/GIMP/2.10`。我复制了 `.var/app/org.gimp.GIMP/config/GIMP/2.10` 目录，并启动 GIMP 查看 PhotoGIMP 的启动页。
 
 这是打了 PhotoGIMP 补丁后的 GIMP 界面：
 
@@ -64,15 +60,15 @@ PhotoGIMP 本质是一个补丁。在 Linux 中下载并[解压 zip 文件][7]�
 
 我尝试了几个 Photoshop 快捷键来检查它所做的更改，一切似乎可以正常工作。
 
-[下载 PhotoGIMP][12]
+- [下载 PhotoGIMP][12]
 
 我还找到了 [Snap 包形式的 PhotoGIMP][13]，但它是 2019 年的，我不确定它是否可以在所有地方使用，或者仅适用于 snap 安装。
 
-**总结**
+### 总结
 
 这不是类似的第一个项目。几年前，我们有一个类似的项目叫 Gimpshop。Gimpshop 项目在过去的几年中没有任何进展，可以肯定地认为该项目已经死亡。有一个名为 Gimpshop 的网站，但该网站来自冒名者试图以 Gimpshop 的名义获利。
 
-我不是 Adobe Photoshop 用户。我甚至不是 GIMP 专家，这就是为什么 It’s FOSS 上的 [GIMP 教程][14] 用 Dimitrios 的原因。
+我不是 Adobe Photoshop 用户。我甚至不是 GIMP 专家，这就是为什么我们的 [GIMP 教程][14] 用 Dimitrios 的原因。
 
 因此，我无法评论 PhotoGIMP 项目的实用性。如果你熟悉这两种软件，那么应该能够比我更好地进行判断。
 
@@ -85,7 +81,7 @@ via: https://itsfoss.com/photogimp/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
