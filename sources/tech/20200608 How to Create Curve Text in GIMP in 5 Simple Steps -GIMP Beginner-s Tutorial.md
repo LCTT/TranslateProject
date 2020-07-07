@@ -7,78 +7,78 @@
 [#]: via: (https://itsfoss.com/curve-text-gimp/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
-How to Create Curve Text in GIMP in 5 Simple Steps [GIMP Beginner’s Tutorial]
+如何用5个简单的步骤来在 GIMP 中创建曲线文本 [GIMP 初学者教程]
 ======
 
-When you are working on a badge, poster or any other composition in GIMP and you need to bend or curve some text. The versatile [GIMP][1] tool offers several ways to create curved text. Depending on how you will use it and the curvature you want to give to your text, some methods are better than others.
+当你在 GIMP 中制作一个徽章，海报或其它任何作品时，你需要弯曲一些文本。多功能的 [GIMP][1] 工具提供了一些创建弯曲文本的方法。取决于你将如何使用它和你想给予文本的曲率，有一些方法比其它的方法更好。
 
-In this GIMP tutorial, I’ll show you my preferred way of creating curve texts.
+在招聘教程中，我将向你展示我最喜欢的创建曲线文本的方法。
 
-### How to create curve text in GIMP
+### 如何在 GIMP 中创建曲线文本
 
 ![][2]
 
-Please make sure that you have GIMP installed on your system already.
+请确保你已经在你的系统上安装了 GIMP 。
 
-#### Step 1: Create a path that matches the type of curve you want
+#### 步骤 1: 创建一个你想要的匹配曲线的路径
 
-Create a new image or open an existing one. Select the paths tool and then having in mind roughly the position of the curved text, create your path by clicking once for the start and then for the end of path point.
+创建一个新的图像或打开一个现有的图像。选择 工具 -> 路径，然后大致考虑曲线文本的位置，通过分别单击路径点的开始点和结束点来创建路径。
 
-![Create a path][3]
+![创建一个路径][3]
 
-**Then give to your path a curvature.** First drag the line in the middle either up or down, and fine tune by moving the adjusting points. This will give it an arch.
+**然后给你的路径一个曲率。** 首先向上或向下拖动中间的直线，然后通过移动调整点进行微调。这将给予它一个拱形结构。
 
-![Curving the path][4]
+![弯曲路径][4]
 
-#### Step 2: Create the text you want to curve
+#### 步骤 2: 创建你想弯曲的文本
 
-When you are satisfied with your curved path, you can move to the next step and **create your text**.
+当你对自己的曲线路径满意时，你可以移动到接下来的步骤，并 **创建你的文本**.
 
-You may want to change the font and the font size. My selections are for demonstration purpose only.
+你可能想更改字体及其大小。我的选择只是为了演示用途。
 
-![Create a text][5]
+![创建一个文本][5]
 
-#### Step 3: Create a new layer
+#### 步骤 3: 创建一个新的图层
 
-I strongly suggest separating each different element of a GIMP image in different layers, in order to manipulate them easily like move, turn on/off an element etc.
+我强烈建议分割 GIMP 图像中的每个不同的元素到不同的图层中，以便很容易地控制它们，像移动，打开/关闭一个元素等等。
 
-Following this rule our curved text will be placed at a new layer. It is recommended to name your new layer like “Curved Text” or something similar to easily identify it.
+遵循这一规则，我们弯曲的文本将被放置到一个新的图层中。建议使用像“Curved Text”一样的名字来命名你的新的图层，或者一些类似的东西来很容易地识别它。
 
-![Create a new layer for the curved text][6]
+![为弯曲的文本创建一个新的图层][6]
 
-#### Step 4: Curve the text
+#### 步骤 4: 弯曲文本
 
-Now you need to click on the layer that your text is and right click on it and then click on “Text along path” to bend your text. The curved text will be placed at the newly created layer.
+现在你需要在你的文本图层上单击，接下来在其上右击，并单击“文字对齐路径”来折弯你的文本。弯曲的文本将被放置到新创建的图层。
 
-![Text Along Path][7]
+![文字对齐路径][7]
 
-You just curved the text! Let’s make the text more presentable by filling it with colour.
+你只弯曲了文本!让我们使用颜色填充文本来使其更令人满意。
 
-### Step 5: Final touches and export
+### 步骤 5: 最后的修饰和导出
 
-Click on the curved text layer and then go to the path tab to select the text boundaries.
+单击弯曲的文本图层，然后转到路径选项卡来选择文本边界。
 
-![Path To Selection][8]
+![路径选择][8]
 
-Finally, select the bucket tool, a colour of your choice and apply your selection as per below.
+最后，选择油漆桶工具，一种你选择的颜色，并如下应用你的选择区。
 
 ![][9]
 
-As the last step, turn the visibility of the layers that you don’t want and keep only the curved text. Then you are ready to export your file as your preferred image format.
+随着最后一步的到来，打开不需要的层的可见性，只保留曲线文本。接下来，需要导出你的文件为你喜欢的图像格式。
 
 ![][10]
 
-#### Bonus Tip: Create shade effect
+#### 额外提示：创建阴影效果
 
-I have an additional step as an exercise/challenge if you want to go the extra mile. Let’s create a shade effect to the curved text by [outlining the text in GIMP][11].
+我还有一个作为一次挑战的额外的步骤，如果你想更进一步的话。让我们在 [GIMP 中勾勒文本][11]以创建一个弯曲文本的阴影效果
 
-I will give you some hints:
+我将给予你一些提示:
 
-  * Turn all the layers back on
-  * Click on the curved text layer and the use the move tool to move the text away
-  * Create another layer and repeat the bucket fill procedure with a black colour
-  * Overlay the layers in a way that they mimic a shaded position (you may need to change the layers order)
-  * Turn off the auxiliary layers
+  * 重新启用所有图层
+  * 单击弯曲文本图层，并使用移动工具来到此移动文本
+  * 创建另一个图层，并使用黑色来重复油漆桶填充程序
+  * 以一种模拟一种阴影位置的方式覆盖图层(你可能需要更改图层顺序)
+  * 关闭辅助图层
 
 
 
@@ -86,9 +86,9 @@ I will give you some hints:
 
 ![][12]
 
-Let me know in the comments below your thoughts about this GIMP tutorial and how many of you tried the bonus step.
+让我在评论区知道你们对这篇 GIMP 教程的想法，以及有多少人尝试了这一额外的步骤。
 
-Don’t forget to [subscribe to the newsletter][13] as It’s FOSS team has much more for you in the near future!
+不要忘了 [订阅简讯][13] ，因为 FOSS 小组会在不久的将来给你更多的东西!
 
 --------------------------------------------------------------------------------
 
