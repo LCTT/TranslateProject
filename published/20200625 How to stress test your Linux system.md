@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12389-1.html)
 [#]: subject: (How to stress test your Linux system)
 [#]: via: (https://www.networkworld.com/article/3563334/how-to-stress-test-your-linux-system.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -10,11 +10,11 @@
 如何对你的 Linux 系统进行压力测试
 ======
 
-> 如果你想了解 Linux 服务器在重压之下的运行情况，那么给 Linux 服务器 施加压力是个不错的主意。在这篇文章中，我们将看一些工具，可以帮助你增加服务器压力并衡量结果。
+> 如果你想了解 Linux 服务器在重压之下的运行情况，那么给 Linux 服务器施加压力是个不错的主意。在这篇文章中，我们将看一些工具，可以帮助你增加服务器压力并衡量结果。
 
 ![](https://images.idgesg.net/images/article/2020/06/stress-test2_linux-penguin-stress-ball_hand-squeezing_by-digitalsoul-getty-images_1136841639-100850120-large.jpg)
 
-为什么你会想给你的 Linux 系统施加压力呢？因为有时你可能想知道，当一个系统由于大量运行的进程、繁重的网络流量、过多的内存使用等原因而承受很大的压力时，它的表现如何。这种压力测试可以帮助确保系统已经做好了 “上市” 的准备。
+为什么你会想给你的 Linux 系统施加压力呢？因为有时你可能想知道当一个系统由于大量运行的进程、繁重的网络流量、过多的内存使用等原因而承受很大的压力时，它的表现如何。这种压力测试可以帮助确保系统已经做好了 “上市” 的准备。
 
 如果你需要预测应用程序可能需要多长时间才能做出反应，以及哪些（如果有的话）进程可能会在重负载下失败或运行缓慢，那么在前期进行压力测试是一个非常好的主意。
 
