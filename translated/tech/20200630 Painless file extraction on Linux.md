@@ -1,20 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Painless file extraction on Linux)
 [#]: via: (https://www.networkworld.com/article/3564265/painless-file-extraction-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Linux 上无痛文件解压
+Linux 上无痛文件提取
 ======
 
-从 Linux 系统的存档中解压文件要比拔牙要麻烦得多，但有时看起来更麻烦。在本文中，我们将探讨如何轻松地从几乎任何可能在 Linux 系统中使用的存档中解压文件。
+![](https://img.linux.net.cn/data/attachment/album/202007/12/233401zickd110d2dl6u6f.jpg)
 
-它们有很多格式，从 .gz 到 .tbz2，这些文件的命名方式有一些变化。当然，你可以记住所有可用于从存档中解压文件的命令以及它们的选项，但是你也可以将所有经验保存到脚本中，而不必担心细节。
+从 Linux 系统的存档中提取文件没有拔牙那么痛苦，但有时看起来更复杂。在这篇文章中，我们将看看如何轻松地从 Linux 系统中可能遇到的几乎所有类型的存档中提取文件。
 
-在本文中，我们将一系列解压命令组合成一个脚本，它会调用适当的命令根据文档名解压文件的内容。该脚本以一些命令开头来验证文件名是否已经提供作为参数，或要求运行脚本的人提供文件名。
+它们有很多格式，从 .gz 到 .tbz2，这些文件的命名方式都各有一些不同。当然，你可以记住所有从存档中提取文件的各种命令以及它们的选项，但是你也可以将所有经验保存到脚本中，而不再担心细节。
+
+在本文中，我们将一系列提取命令组合成一个脚本，它会调用适当的命令根据文档名提取文件的内容。该脚本首先以一些命令来验证是否已经提供了一个文件名作为参数，或要求运行脚本的人提供文件名。
 
 ```
 #!/bin/bash
@@ -34,7 +36,7 @@ fi
 
 了解了么？如果未提供任何参数，脚本将提示输入文件名，如果存在则使用它。然后，它验证文件是否实际存在。如果不是，那么脚本退出。
 
-下一步是使用 bash case 语句根据存档文件的名称为存档文件调用适当的解压命令。对于其中某些文件类型（例如 .bz2），也可以使用除 tar 之外的其他命令，但是对于每种文件命名约定，我们仅包含一个解压命令。因此，这是带有各种存档文件名的 case 语句。
+下一步是使用 bash 的 `case` 语句根据存档文件的名称调用适当的提取命令。对于其中某些文件类型（例如 .bz2），也可以使用除 `tar` 之外的其它命令，但是对于每种文件命名约定，我们仅包含一个提取命令。因此，这是带有各种存档文件名的 `case` 语句：
 
 ```
  case $filename in
@@ -86,7 +88,7 @@ case $filename in
     *)
 ```
 
-如果你希望脚本在解压文件时显示内容，请将详细选项（-v）添加到每个命令参数字符串中：
+如果你希望脚本在提取文件时显示内容，请将详细选项（`-v`）添加到每个命令参数字符串中：
 
 ```
 #!/bin/bash
@@ -120,9 +122,7 @@ esac
 
 ### 总结
 
-虽然可以为每个可能用到的解压命令创建别名，但是让脚本为遇到的每种文件类型提供命令要比自己停下来编写每个命令和选项容易。
-
-加入 [Facebook][1] 和 [LinkedIn][2] 上的 Network World 社区，评论热门主题。
+虽然可以为每个可能用到的提取命令创建别名，但是让脚本为遇到的每种文件类型提供命令要比自己停下来编写每个命令和选项容易。
 
 --------------------------------------------------------------------------------
 
@@ -131,7 +131,7 @@ via: https://www.networkworld.com/article/3564265/painless-file-extraction-on-li
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
