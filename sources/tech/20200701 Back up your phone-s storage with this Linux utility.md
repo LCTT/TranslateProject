@@ -7,46 +7,48 @@
 [#]: via: (https://opensource.com/article/20/7/gphoto2-linux)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Back up your phone's storage with this Linux utility
+使用 Linux 实用程序备份手机存储
 ======
-Take as many shots as you want; gphoto2 makes transferring photos from
-your device to your Linux computer quick and easy.
+尽情地拍照吧，gphoto2 能够方便、快速地将照片从您的设备传输到 Linux 计算机上。
 ![A person looking at a phone][1]
 
-One of the great failings of mobile devices is how difficult it can be to transfer data from your device to your computer. Mobile devices have a long history of this. Early mobiles, like Pilot and Handspring PDA devices, required special synchronization software (which you had to do religiously for fear of your device running out of batteries and losing all of your data forever). Old iPods required a platform-specific interface. Modern mobile devices default to sending your data to an online account so you can download it again on your computer.
+移动设备的最大缺点之一就是其将数据从设备传输到计算机很困难。移动设备在这一缺点上有着悠久的历史。早期的移动设备，如 Pilot 和掌上电脑 PDA 设备，需要使用特殊的同步软件来传输数据（你必须小心翼翼地做这件事，因为你的设备可能会因为电池耗尽而导致数据永久丢失）；旧版 iPod 只提供特定平台的界面。现代移动设备默认将您的数据发送到在线帐户，以便您可以在计算机上再次下载。
 
-Good news—if you're running Linux, you can probably interface with your mobile device using the `gphoto2` command. Originally developed as a way to communicate with digital cameras back when a digital camera was just a camera, `gphoto2` can talk to many different kinds of mobile devices now. Don't let the name fool you, either. It can handle all types of files, not just photos. Better yet, it's scriptable, flexible, and a lot more powerful than most GUI interfaces.
+好消息——如果您正在运行 Linux，您可以使用 `gphoto2` 命令与移动设备进行连接。`gphoto2` 最初是为了实现与数码相机通讯而开发的，那时的数码相机只有传统的相机功能，现在的 `gphoto2` 可以和许多不同种类的移动设备通讯。别让这个名字骗了你，它可以处理所有类型的文件，而不仅仅是照片。更棒的是，它可以编写脚本、很灵活、并且比大多数 GUI 界面功能强大得多。
 
-If you've ever struggled with finding a comfortable way to sync your data between your computer and mobile, take a look at `gphoto2`.
+如果您曾经为在计算机和移动设备之间同步数据而苦恼，请了解一下 `gphoto2`。
 
+
+### 安装 gPhoto2
 ### Install gPhoto2
 
-Chances are your Linux system already has libgphoto2 installed, because it's a key library for interfacing with mobile devices. You may have to install the command `gphoto2`, however, which is probably available from your repository.
+很可能您的 Linux 系统已经安装了 libgphoto2，因为它是与移动设备连接的一个关键库，但您可能还需要安装命令 `gphoto2`，该命令可以在您的存储库中。
 
-On Fedora or RHEL:
+
+在 Fedora 或 RHEL 上：
 
 
 ```
 $ sudo dnf install gphoto2
 ```
 
-On Debian or Ubuntu:
+在 Debian 或 Ubuntu上：
 
 
 ```
 $ sudo apt install gphoto2
 ```
 
-### Verify compatibility
+### 验证兼容性
 
-To verify that your mobile device is supported, use the `--list-cameras` piped through `less`:
+若要确认您的移动设备是否受支持，请使用 `--list-cameras`，通过管道传输到 `less`：
 
 
 ```
 `$ gPhoto2 --list-cameras | less`
 ```
 
-Or you can pipe it through `grep` to search for a term. For example, if you have a Samsung Galaxy, then use `grep` with case sensitivity turned off with the `-i` switch:
+或者您可以通过管道把它传送到 `grep` 来搜索一个词。例如，如果您有三星 Galaxy，则使用 `grep`，并通过选项 `-i` 关闭区分大小写：
 
 
 ```
@@ -56,19 +58,19 @@ $ gphoto2 --list-cameras | grep -i galaxy
   "Samsung Galaxy models Kies mode"
 ```
 
-This confirms that Samsung Galaxy devices are supported through MTP and MTP with ADB.
+这证实了三星 Galaxy 设备支持通过 MTP 连接和同时连接 ADB、MTP。
 
-If you can't find your device listed, you can still try using `gphoto2` on the off chance that your device is actually something on the list masquerading as a different brand.
+如果您没有在列表中找到自己的移动设备，您仍然可以尝试使用 `gphoto2`，以防您的设备在列表中使用了不同的称呼。
 
-### Find your mobile device
+### 查找移动设备
 
-To use gPhoto2, you first have to have a mobile device plugged into your computer, set to MTP mode, and you probably need to give your computer permission to interact with it. This usually requires physical interaction with your device, specifically pressing a button in the UI to permit its filesystem to be accessed by the computer it's just been attached to.
+要使用 gPhoto2，首先必须将移动设备插入计算机，设置为 MTP 模式，并且授予计算机与它交互的权限。这通常需要在您的移动设备上操作，往往是在屏幕上按下一个按钮，以允许其文件系统被刚刚连接的计算机访问。
 
 ![Screenshot of allow access message][2]
 
-If you don't give your computer access to your mobile, then gPhoto2 detects your device, but it isn't unable to interact with it.
+如果您不授权电脑访问移动设备，那么 gPhoto2 可以检测到您的移动设备，但它不能与之交互。
 
-To ensure your computer detects the device you've attached, use the `--auto-detect` option:
+要确保计算机检测到您连接的移动设备，请使用 `--auto-detect` 选项：
 
 
 ```
@@ -78,11 +80,11 @@ Model                       Port
 Samsung Galaxy models (MTP) usb:002,010
 ```
 
-If your device isn't detected, check your cables first, and then check that your device is configured to interface over MTP or ADB, or whatever protocol gPhoto2 supports for your device, as shown in the output of `--list-cameras`.
+如果您的移动设备没有被检测到，请先检查数据线，然后检查您的设备是否配置为通过 MTP、ADB 或其它 gPhoto2 支持的协议连接，如 `--list-cameras` 所示。
 
-### Query your device for features
+### 查询您的设备支持的特性
 
-With modern devices, there's usually a plethora of potential features, but not all features are supported. You can find out for sure with the `--abilities` option, which I find rather intuitive.
+对于现代设备，通常有过多的潜在功能，但并非所有移动设备都支持这些功能。您可以用 `--abilities` 选项来确定自己的移动设备支持哪些功能。我觉得结果看起来直观。
 
 
 ```
@@ -98,25 +100,23 @@ File preview (thumbnail) support: no
 File upload support             : yes
 ```
 
-There's no need to specify what device you're querying as long as you only have one device attached. If you have attached more than one device that gPhoto2 can interact with, though, you can specify the device by port, camera model, or usbid.
+如果只连接一个设备，那么不需要指定查询的设备。但是，如果连接了多个 gPhoto2 可以与之交互的设备，则可以通过端口、相机型号或 usbid 指定设备。
 
-### Interacting with your device
+### 与您的移动设备交互
 
-If your device supports capture, then you can grab media through your camera from your computer. For instance, to capture an image:
+如果您的设备支持拍摄功能，则可以从计算机调用您的摄像头来获取媒体。例如，要拍摄照片：
 
 
 ```
 $ gphoto2 --capture-image
 ```
-
-To capture an image and immediately transfer it to the computer you're on:
-
+要拍摄照片并立即将其传输到连接的计算机：
 
 ```
 $ gphoto2 --capture-image-and-download
 ```
 
-You can also capture video and sound. If you have more than one camera attached, you can specify which device you want to use by port, camera model, or usbid:
+您也可以录制视频和声音。如果连接了多个拍摄设备，可以按端口、相机型号或 usbid 指定要使用的设备：
 
 
 ```
@@ -124,11 +124,11 @@ $ gphoto2 --camera "Samsung Galaxy models (MTP)" \
 \--capture-image-and-download
 ```
 
-### Files and folders
+### 文件和文件夹
 
-To interact with files on your device intelligently, you need to understand the structure of the filesystem being exposed to gPhoto2.
+要想更加智能地管理移动设备上的文件，您需要了解 gPhoto2 连接的文件系统的结构。
 
-You can view available folders with the `--get-folders` option:
+您可以使用 `--get-folders` 选项查看可用文件夹：
 
 
 ```
@@ -140,38 +140,38 @@ There are 0 folders in folder '/store_00010001'.
 There are 0 folders in folder '/store_00020002'.
 ```
 
-Each of these folders represents a storage destination on the device. In this example, `store_00010001` is the internal storage and `store_00020002` is an SD card. Your device may be structured differently.
+每个文件夹代表设备上的一个存储单元。在本例中，`store_00010001` 是内部存储器，`store_00020002` 是 SD 卡，这可能与您的设备的结构不同。
 
-### Getting files
+### 获取文件
 
-Now that you know the folder layout of your device, you can ingest photos from your device. There are many different options you can use, depending on what you want to take from the device.
+现在您知道了设备的文件夹布局，就可以从设备获取照片了。您可以使用许多不同的选项，具体取决于您想从设备中获取什么。
 
-You can get a specific file, providing you know the full path:
+如果您知道绝对路径，则可以获取指定的文件：
 
 
 ```
 `$ gphoto2 --get-file IMG_0001.jpg --folder /store_00010001/myphotos`
 ```
 
-You can get all files at once:
+您可以同时获得所有的文件：
 
 
 ```
 `$ gphoto2 --get-all-files --folder /store_00010001/myfiles`
 ```
 
-You can get just audio files:
+您可以只获取音频文件：
 
 
 ```
 `gphoto2 --get-all-audio-data --folder /store_00010001/mysounds`
 ```
 
-There are other options, too, and most of them depend on what your device, and the protocol you're using, support.
+gPhoto2 还有其他的选择，其中大多数取决于你连接的设备和使用协议是否支持。
 
-### Uploading files
+## 上传文件
 
-Now that you know your potential target folders, you can upload files from your computer to your device. For example, assuming there's a file called `example.epub` in your current directory, you can send the file to your device with the `--upload-file` option combined with the `--folder` option to specify which storage location you want to upload to:
+现在您知道了潜在的目标文件夹，就可以将文件从计算机上传到您的设备。例如，假设有一个名为 `example.epub` 的文件在当前目录中，您可以使用 `--upload-file` 选项和 `--folder` 选项将文件发送到设备并指定要上传到的目录：
 
 
 ```
@@ -179,7 +179,7 @@ $ gphoto2 --upload file example.epub \
 \--folder store_00010001
 ```
 
-You can make a directory on your device, should you prefer to upload several files to a consolidated location:
+如果您希望将多个文件上传到同一个位置，您可以在设备上创建一个目录：
 
 
 ```
@@ -189,10 +189,9 @@ $ gphoto2 --upload-file *.epub \
 \--folder store_00010001/books
 ```
 
-### Listing files
+### 列出文件
 
-To see files uploaded to your device, use the `--list-files` option:
-
+若要查看设备上的文件，请使用 `--list-files` 选项：
 
 ```
 $ gphoto2 --list-files --folder /store_00010001
@@ -205,11 +204,11 @@ There is 1 file in folder '/store_00010001'
 [...]
 ```
 
-### Exploring your options
+### 探索您的使用方式
 
-Much of gPhoto2's power depends on your device, so your experience will be different than anyone else's. There are many operations listed in `gphoto2 --help` for you to explore. Use gPhoto2 and never struggle with transferring files from your device to your computer ever again!
+gPhoto2 的大部分功能取决于您的设备，因此不同用户的体验可能不尽相同。在`gphoto2 --help` 中列出了许多操作供您探索。使用gPhoto2，再也不用费劲把文件从你的设备传输到电脑上了！
 
-These open source photo libraries help you stay organized while making your pictures look great.
+这些开源图片库能够帮助您组织文件，并让的图片看起来很棒。
 
 --------------------------------------------------------------------------------
 
@@ -217,7 +216,7 @@ via: https://opensource.com/article/20/7/gphoto2-linux
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[summer2233](https://github.com/summer2233)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
