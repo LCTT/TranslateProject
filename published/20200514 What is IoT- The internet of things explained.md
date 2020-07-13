@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Yufei-Yan)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12411-1.html)
 [#]: subject: (What is IoT? The internet of things explained)
 [#]: via: (https://www.networkworld.com/article/3207535/what-is-iot-the-internet-of-things-explained.html)
 [#]: author: (Josh Fruhlinger https://www.networkworld.com/author/Josh-Fruhlinger/)
@@ -148,7 +148,7 @@ via: https://www.networkworld.com/article/3207535/what-is-iot-the-internet-of-th
 [20]: https://www.softwareadvice.com/resources/iot-data-analytics-use-cases/
 [21]: https://www.cnn.com/2020/04/04/tech/location-tracking-florida-coronavirus/index.html
 [22]: https://www.networkworld.com/article/3311919/iot-analytics-guide-what-to-expect-from-internet-of-things-data.html
-[23]: https://www.networkworld.com/article/3396230/when-iot-systems-fail-the-risk-of-having-bad-iot-data.html
+[23]: https://images.idgesg.net/images/article/2017/09/nw_how_edge_computing_works_diagram_1400x1717-100736111-orig.jpg
 [24]: https://www.networkworld.com/article/3449243/watson-iot-chief-ai-can-broaden-iot-services.html
 [25]: https://www.networkworld.com/article/3532094/ai-everywhere-iot-chips-coming-from-arm.html
 [26]: https://www.iotforall.com/4-unlikely-industries-iot-changing/
