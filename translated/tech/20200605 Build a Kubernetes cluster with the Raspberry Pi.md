@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Build a Kubernetes cluster with the Raspberry Pi)
@@ -12,52 +12,51 @@
 
 > 将 Kubernetes 安装在多个树莓派上，实现自己的“家庭私有云”容器服务。
 
-![树莓派板的卡通图形][1]
+![](https://img.linux.net.cn/data/attachment/album/202007/15/234152ivw1y2wwhmhmpuvo.jpg)
 
-[Kubernetes][2] 是从一开始就被设计为云原生的企业级容器编排系统。它已经成长为事实上的云容器平台，并由于接受了容器原生虚拟化和无服务器计算等新技术而继续发展。
+[Kubernetes][2] 从一开始就被设计为云原生的企业级容器编排系统。它已经成长为事实上的云容器平台，并由于接受了容器原生虚拟化和无服务器计算等新技术而继续发展。
 
-从微型的边缘计算到大规模的容器环境，无论是公有云还是私有云环境，Kubernetes 都可以管理其中的容器。它是“家庭私有云”项目的理想选择，既提供了强大的容器编排，又有机会了解一项这样的技术 —— 它的需求如此之大，与云计算结合得如此彻底以至于它的名字几乎就是“云计算”的代名词。
+从微型的边缘计算到大规模的容器环境，无论是公有云还是私有云环境，Kubernetes 都可以管理其中的容器。它是“家庭私有云”项目的理想选择，既提供了强大的容器编排，又让你有机会了解一项这样的技术 —— 它的需求如此之大，与云计算结合得如此彻底，以至于它的名字几乎就是“云计算”的代名词。
 
-没有什么比 Kubernetes 更能说明“云”，也没有什么能比树莓派更合适“集群起来”！在廉价的树莓派硬件上运行本地的 Kubernetes 集群是获得在真正的云技术巨头上进行管理和开发的经验的好方法。
+没有什么比 Kubernetes 更懂“云”，也没有什么能比树莓派更合适“集群起来”！在廉价的树莓派硬件上运行本地的 Kubernetes 集群是获得在真正的云技术巨头上进行管理和开发的经验的好方法。
 
 ### 在树莓派上安装 Kubernetes 集群
 
-本练习将在三个及以上运行 Ubuntu 20.04 的树莓派 4 上安装一个 Kubernetes 1.18.2 集群。Ubuntu 20.04（Focal Fossa）提供了针对 64 位 ARM（ARM64）的树莓派镜像（64 位内核和用户空间）。由于目标是使用这些树莓派来运行 Kubernetes 集群，因此运行 AArch64 容器镜像的能力非常重要：很难找到 32 位的通用软件镜像乃至于标准基础镜像。Ubuntu 20.04 通过其 ARM64 镜像，允许你将 64 位容器镜像与 Kubernetes 一同使用。
-
+本练习将在三个或更多运行 Ubuntu 20.04 的树莓派 4 上安装 Kubernetes 1.18.2 集群。Ubuntu 20.04（Focal Fossa）提供了针对 64 位 ARM（ARM64）的树莓派镜像（64 位内核和用户空间）。由于目标是使用这些树莓派来运行 Kubernetes 集群，因此运行 AArch64 容器镜像的能力非常重要：很难找到 32 位的通用软件镜像乃至于标准基础镜像。借助 Ubuntu 20.04 的 ARM64 镜像，可以让你在 Kubernetes 上使用 64 位容器镜像。
 
 #### AArch64 vs. ARM64；32 位 vs. 64 位；ARM vs. x86
 
-请注意，AArch64 和 ARM64 实际上是同一种东西。不同的名称源于它们在不同社区中的使用。许多容器镜像都标为 AArch64，并能在标为 ARM64 的系统上正常运行。采用 AArch64/ARM64 架构的系统能够运行 32 位的 ARM 镜像，但反之则不然：32 位的 ARM 系统无法运行 64 位的容器镜像。这就是 Ubuntu 20.04 ARM64 镜像如此有用的原因。
+请注意，AArch64 和 ARM64 实际上是同一种东西。不同的名称源于它们在不同社区中的使用。许多容器镜像都标为 AArch64，并能在标为 ARM64 的系统上正常运行。采用 AArch64/ARM64 架构的系统也能够运行 32 位的 ARM 镜像，但反之则不然：32 位的 ARM 系统无法运行 64 位的容器镜像。这就是 Ubuntu 20.04 ARM64 镜像如此有用的原因。
 
-不需要太深入地解释不同的架构类型，值得注意的是，ARM64/AArch64 和 x86\_64 架构是不同的，运行在 64 位 ARM 架构上的 Kubernetes 节点无法运行为 x86\_64 构建的容器镜像。在实践中，你会发现有些镜像不是为两种架构构建的，这些镜像可能无法在你的集群中使用。你还需要在基于 Arch64 的系统上构建自己的镜像，或者跳过一些束缚以让你的常规的 x86\_64 系统构建 Arch64 镜像。在“家庭私有云”项目的后续文章中，我将介绍如何在常规系统上构建 AArch64 镜像。
+这里不会太深入地解释不同的架构类型，值得注意的是，ARM64/AArch64 和 x86\_64 架构是不同的，运行在 64 位 ARM 架构上的 Kubernetes 节点无法运行为 x86\_64 构建的容器镜像。在实践中，你会发现有些镜像没有为两种架构构建，这些镜像可能无法在你的集群中使用。你还需要在基于 Arch64 的系统上构建自己的镜像，或者跳过一些限制以让你的常规的 x86\_64 系统构建 Arch64 镜像。在“家庭私有云”项目的后续文章中，我将介绍如何在常规系统上构建 AArch64 镜像。
 
-为了达到两全其美的效果，在本教程中设置好 Kubernetes 集群后，你可以在以后向其中添加 x86\_64 节点。你可以通过使用 [Kubernetes 的<ruby>污点<rt>taint</rt></ruby> 和<ruby>容忍<rt>toleration</rt></ruby>][3]，由 Kubernetes 的调度器将给定架构的镜像调度到相应的节点上运行。
+为了达到两全其美的效果，在本教程中设置好 Kubernetes 集群后，你可以在以后向其中添加 x86\_64 节点。你可以通过使用 [Kubernetes 的<ruby>污点<rt>taint</rt></ruby> 和<ruby>容忍<rt>toleration</rt></ruby>][3] 能力，由 Kubernetes 的调度器将给定架构的镜像调度到相应的节点上运行。
 
-关于架构和镜像的内容就不多说了。是时候安装 Kubernetes 了，我们走!
+关于架构和镜像的内容就不多说了。是时候安装 Kubernetes 了，开始吧！
 
 #### 前置需求
 
-这个练习的要求很低。你将需要。
+这个练习的要求很低。你将需要：
 
 * 三台（或更多）树莓派 4（最好是 4GB 内存的型号）。
 * 在全部树莓派上安装 Ubuntu 20.04 ARM64。
 
-为了简化初始设置，请阅读《[修改磁盘镜像来创建基于树莓派的家庭实验室][4]》，在将 Ubuntu 镜像写入 SD 卡并安装在树莓派上之前，添加一个用户和 SSH 授权密钥。
+为了简化初始设置，请阅读《[修改磁盘镜像来创建基于树莓派的家庭实验室][4]》，在将 Ubuntu 镜像写入 SD 卡并安装在树莓派上之前，添加一个用户和 SSH 授权密钥（`authorized_keys`）。
 
 ### 配置主机
 
-在 Ubuntu 被安装在树莓派上，并且它们可以通过 SSH 访问后，你需要在安装 Kubernetes 之前做一些修改。
+在 Ubuntu 被安装在树莓派上，并且可以通过 SSH 访问后，你需要在安装 Kubernetes 之前做一些修改。
 
-#### 安装和配置 Docker。
+#### 安装和配置 Docker
 
-截至目前，Ubuntu 20.04 在基础软件库中提供了最新版本的 Docker，即 v19.03，可以直接使用 `apt` 命令安装它。请注意，包名是 `docker.io`。请在所有的树莓派上安装 Docker：
+截至目前，Ubuntu 20.04 在 base 软件库中提供了最新版本的 Docker，即 v19.03，可以直接使用 `apt` 命令安装它。请注意，包名是 `docker.io`。请在所有的树莓派上安装 Docker：
 
 ```
 # 安装 docker.io 软件包
 $ sudo apt install -y docker.io
 ```
 
-安装好软件包后，你需要做一些修改来启用 [cgroup][5]（控制组）。cgroup 允许 Linux 内核限制和隔离资源。实际上，这允许 Kubernetes 更好地管理其运行的容器所使用的资源，并通过让容器彼此隔离来增加安全性。
+安装好软件包后，你需要做一些修改来启用 [cgroup][5]（控制组）。cgroup 允许 Linux 内核限制和隔离资源。实际上，这可以让 Kubernetes 更好地管理其运行的容器所使用的资源，并通过让容器彼此隔离来增加安全性。
 
 在对所有树莓派进行以下修改之前，请检查 `docker info` 的输出：
 
@@ -77,7 +76,7 @@ WARNING: No oom kill disable support
 
 上面的输出突出显示了需要修改的部分：cgroup 驱动和限制支持。
 
-首先，将 Docker 使用的默认 cgroup 驱动从 `cgroups` 改为 `systemd`，让 systemd 充当 cgroup 管理器，确保只有一个 cgroup 管理器在使用。这有助于系统的稳定性，也是 Kubernetes 所推荐的。要做到这一点，请将 `/etc/docker/daemon.json` 文件创建或替换为：
+首先，将 Docker 使用的默认 cgroup 驱动从 `cgroups` 改为 `systemd`，让 systemd 充当 cgroup 管理器，确保只有一个 cgroup 管理器在使用。这有助于系统的稳定性，这也是 Kubernetes 所推荐的。要做到这一点，请创建 `/etc/docker/daemon.json` 文件或将内容替换为：
 
 ```
 # 创建或替换 /etc/docker/daemon.json 以启用 cgroup 的 systemd 驱动
@@ -132,17 +131,17 @@ $ sudo sysctl --system
 
 #### 安装 Ubuntu 的 Kubernetes 包
 
-由于你使用的是 Ubuntu，你可以从 Kubernetes.io 的 Apt 仓库中安装 Kubernetes软件包。目前没有 Ubuntu 20.04（Focal）的仓库，但最近的 Ubuntu LTS 仓库 Ubuntu 18.04（Xenial） 中有 Kubernetes 1.18.2。最新的 Kubernetes 软件包可以从那里安装。
+由于你使用的是 Ubuntu，你可以从 Kubernetes.io 的 apt 仓库中安装 Kubernetes 软件包。目前没有 Ubuntu 20.04（Focal）的仓库，但最近的 Ubuntu LTS 仓库 Ubuntu 18.04（Xenial） 中有 Kubernetes 1.18.2。最新的 Kubernetes 软件包可以从那里安装。
 
-将 Kubernetes 软件库添加到 Ubuntu 的源列表之中。
+将 Kubernetes 软件库添加到 Ubuntu 的源列表之中：
 
 ```
 # 添加 packages.cloud.google.com 的 atp 密钥
-$ curl -s <https://packages.cloud.google.com/apt/doc/apt-key.gpg> | sudo apt-key add -
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
 # 添加 Kubernetes 软件库
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
-deb <https://apt.kubernetes.io/> kubernetes-xenial main
+deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 ```
 
@@ -170,9 +169,9 @@ kubectl set on hold.
 
 ### 创建 Kubernetes 集群
 
-在安装了 Kubernetes 软件包之后，你现在可以继续创建集群了。在开始之前，你需要做一些决定。首先，其中一个树莓派需要被指定为控制平面（即主）节点。其余的节点将被指定为计算节点。
+在安装了 Kubernetes 软件包之后，你现在可以继续创建集群了。在开始之前，你需要做一些决定。首先，其中一个树莓派需要被指定为控制平面节点（即主节点）。其余的节点将被指定为计算节点。
 
-你还需要选择一个 [CIDR][6]（无类别域间路由）地址用于 Kubernetes 集群中的 Pod。在集群创建过程中设置`pod-network-cidr` 可以确保设置了 `podCIDR` 值，它以后可以被<ruby>容器网络接口<rt>Container Network Interface</rt></ruby>（CNI）加载项使用。本练习使用的是 [Flannel][7] CNI。你选择的 CIDR 不应该与你的家庭网络中当前使用的任何 CIDR 重叠，也不应该与你的路由器或 DHCP 服务器管理的 CIDR 重叠。确保使用一个比你预期需要的更大的子网：**总是**有比你最初计划的更多的 Pod！在这个例子中，我将使用  CIDR 地址 `10.244.0.0/16`，但你可以选择一个适合你的。
+你还需要选择一个 [CIDR][6]（无类别域间路由）地址用于 Kubernetes 集群中的 Pod。在集群创建过程中设置 `pod-network-cidr` 可以确保设置了 `podCIDR` 值，它以后可以被<ruby>容器网络接口<rt>Container Network Interface</rt></ruby>（CNI）加载项使用。本练习使用的是 [Flannel][7] CNI。你选择的 CIDR 不应该与你的家庭网络中当前使用的任何 CIDR 重叠，也不应该与你的路由器或 DHCP 服务器管理的 CIDR 重叠。确保使用一个比你预期需要的更大的子网：**总是**有比你最初计划的更多的 Pod！在这个例子中，我将使用 CIDR 地址 `10.244.0.0/16`，但你可以选择一个适合你的。
 
 有了这些决定，你就可以初始化控制平面节点了。用 SSH 或其他方式登录到你为控制平面指定的节点。
 
@@ -216,9 +215,9 @@ kubeadm join 192.168.2.114:6443 --token zqqoy7.9oi8dpkfmqkop2p5 \
     --discovery-token-ca-cert-hash sha256:71270ea137214422221319c1bdb9ba6d4b76abfa2506753703ed654a90c4982b
 ```
 
-注意两点：第一，Kubernetes 的 `kubectl` 连接信息已经写入到 `/etc/kubernetes/admin.conf`。这个 kubeconfig 文件可以复制到用户的 `~/.kube/config` 中，用户可以是主节点上的 root 用户或普通用户，也可以是远程机器。这样你就可以用 `kubectl` 命令来控制你的集群。
+注意两点：第一，Kubernetes 的 `kubectl` 连接信息已经写入到 `/etc/kubernetes/admin.conf`。这个 kubeconfig 文件可以复制到用户的 `~/.kube/config` 中，可以是主节点上的 root 用户或普通用户，也可以是远程机器。这样你就可以用 `kubectl` 命令来控制你的集群。
 
-其次，输出中以 `kubernetes join` 开头的最后一行是你可以运行的命令，以加入更多的节点到集群中。
+其次，输出中以 `kubernetes join` 开头的最后一行是你可以运行的命令，你可以运行这些命令加入更多的节点到集群中。
 
 将新的 kubeconfig 复制到你的用户可以使用的地方后，你可以用 `kubectl get nodes` 命令来验证控制平面是否已经安装：
 
@@ -232,14 +231,14 @@ elderberry   Ready    master   7m32s   v1.18.2
 
 #### 安装 CNI 加载项
 
-CNI 加载项负责 Pod 网络的配置和清理。如前所述，这个练习使用的是 Flannel CNI 插件，在已经设置好 `podCIDR` 值的情况下，你只需下载 Flannel YAML 并使用 `kubectl apply` 将其安装到集群中。这可以用 `kubectl apply -f -` 从标准输入中获取数据，用一行命令完成。这将创建管理 Pod 网络所需的 ClusterRoles、ServiceAccounts 和 DaemonSets 等。
+CNI 加载项负责 Pod 网络的配置和清理。如前所述，这个练习使用的是 Flannel CNI 加载项，在已经设置好 `podCIDR` 值的情况下，你只需下载 Flannel YAML 并使用 `kubectl apply` 将其安装到集群中。这可以用 `kubectl apply -f -` 从标准输入中获取数据，用一行命令完成。这将创建管理 Pod 网络所需的 ClusterRoles、ServiceAccounts 和 DaemonSets 等。
 
 下载并应用 Flannel YAML 数据到集群中：
 
 ```
 # 下载 Flannel YAML 数据并应用它
 # （输出略）
-$ curl -sSL <https://raw.githubusercontent.com/coreos/flannel/v0.12.0/Documentation/kube-flannel.yml> | kubectl apply -f -
+$ curl -sSL https://raw.githubusercontent.com/coreos/flannel/v0.12.0/Documentation/kube-flannel.yml | kubectl apply -f -
 ```
 
 #### 将计算节点加入到集群中
@@ -252,7 +251,7 @@ $ sudo kubeadm join 192.168.2.114:6443 --token zqqoy7.9oi8dpkfmqkop2p5 \
     --discovery-token-ca-cert-hash sha256:71270ea137214422221319c1bdb9ba6d4b76abfa2506753703ed654a90c4982b
 ```
 
-一旦你完成了每个节点的加入过程，你应该能够在 `kubectl get nodes` 的输出中看到新节点：
+一旦你完成了每个节点的加入，你应该能够在 `kubectl get nodes` 的输出中看到新节点：
 
 ```
 # 显示 Kubernetes 集群中的节点
@@ -268,7 +267,7 @@ huckleberry   Ready    &lt;none&gt;   17s     v1.18.2
 
 此时，你已经拥有了一个完全正常工作的 Kubernetes 集群。你可以运行 Pod、创建部署和作业等。你可以使用[服务][8]从集群中的任何一个节点访问集群中运行的应用程序。你可以通过 NodePort 服务或入口控制器实现外部访问。
 
-要验证集群正在运行，请创建一个新的命名空间、部署和服务，并检查在部署中运行的 Pod 是否按预期响应。此部署使用 `quay.io/clcollins/kube-verify:01` 镜像，这是一个监听请求的 Nginx 容器（实际上，与文章《[使用Cloud-init 添加节点到你的私有云][9]》中使用的镜像相同）。你可以在[这里][10]查看镜像的 Containerfile。
+要验证集群正在运行，请创建一个新的命名空间、部署和服务，并检查在部署中运行的 Pod 是否按预期响应。此部署使用 `quay.io/clcollins/kube-verify:01` 镜像，这是一个监听请求的 Nginx 容器（实际上，与文章《[使用 Cloud-init 将节点添加到你的私有云][9]》中使用的镜像相同）。你可以在[这里][10]查看镜像的容器文件。
 
 为部署创建一个名为 `kube-verify` 的命名空间：
 
@@ -386,15 +385,15 @@ $ curl 10.98.188.200
 
 ### 去吧，Kubernetes
 
-“Kubernetes”（κυβερνήτης）在希腊语中是飞行员的意思 —— 但这是否意味着驾驶船只的个人以及引导船只的动作？诶，不是。“Kubernan”（κυβερνάω）是希腊语“驾驶”或“引导”的意思，所以去吧，Kubernan，如果你看到我出去参加会议什么的，请试着给我一个动词或名词的通行证。以另一种语言，我不会说的语言。
+“Kubernetes”（κυβερνήτης）在希腊语中是飞行员的意思 —— 但这是否意味着驾驶船只以及引导船只的人？诶，不是。“Kubernan”（κυβερνάω）是希腊语“驾驶”或“引导”的意思，因此，去吧，Kubernan，如果你在会议上或其它什么活动上看到我，请试着给我一个动词或名词的通行证，以另一种语言 —— 我不会说的语言。
 
-免责声明：如前所述，我不会读也不会讲希腊语，尤其是古希腊语，所以我选择相信我在网上读到的东西。你知道那是怎么一回事。带着盐分，给我一点休息时间，因为我没有开“对我来说都是希腊语”的玩笑。然而，只是提一下，我，可以玩笑，但是实际没开，所以我要么偷偷摸摸，要么聪明，要么两者兼而有之。或者，两者都不是。我并没有说这是个好笑话。
+免责声明：如前所述，我不会读也不会讲希腊语，尤其是古希腊语，所以我选择相信我在网上读到的东西。你知道那是怎么一回事。我对此有所保留，放过我吧，因为我没有开“对我来说都是希腊语”这种玩笑。然而，只是提一下，虽然我可以开玩笑，但是实际上没有，所以我要么偷偷摸摸，要么聪明，要么两者兼而有之。或者，两者都不是。我并没有说这是个好笑话。
 
 所以，去吧，像专业人员一样在你的家庭私有云中用自己的 Kubernetes 容器服务来试运行你的容器吧！当你越来越得心应手时，你可以修改你的 Kubernetes 集群，尝试不同的选项，比如前面提到的入口控制器和用于持久卷的动态 StorageClasses。
 
-这种持续学习是 [DevOps][14] 的核心，新服务的持续集成和交付反映了敏捷方法论，我们已经接受了这两种方法，因为我们已经学会了处理云实现的大规模，并发现我们的传统做法无法跟上步伐。
+这种持续学习是 [DevOps][14] 的核心，持续集成和新服务交付反映了敏捷方法论，当我们学会了处理云实现的大规模扩容，并发现我们的传统做法无法跟上步伐时，我们就接受了这两种方法论。
 
-你看，那是什么？技术、政策、哲学、一小段希腊语和一个可怕的元笑话，都在一篇文章中。
+你看，技术、策略、哲学、一小段希腊语和一个可怕的原始笑话，都汇聚在一篇文章当中。
 
 --------------------------------------------------------------------------------
 
@@ -403,7 +402,7 @@ via: https://opensource.com/article/20/6/kubernetes-raspberry-pi
 作者：[Chris Collins][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -417,9 +416,9 @@ via: https://opensource.com/article/20/6/kubernetes-raspberry-pi
 [6]: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
 [7]: https://github.com/coreos/flannel
 [8]: https://kubernetes.io/docs/concepts/services-networking/service/
-[9]: https://opensource.com/article/20/5/create-simple-cloud-init-service-your-homelab
+[9]: https://linux.cn/article-12407-1.html
 [10]: https://github.com/clcollins/homelabCloudInit/blob/master/simpleCloudInitService/data/Containerfile
-[11]: http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"\>
+[11]: http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
 [12]: https://opensource.com/article/20/4/http-kubernetes-skipper
-[13]: https://opensource.com/article/20/5/nfs-raspberry-pi
+[13]: https://linux.cn/article-12413-1.html
 [14]: https://opensource.com/tags/devops
