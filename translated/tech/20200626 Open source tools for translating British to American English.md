@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Open source tools for translating British to American English)
@@ -9,40 +9,40 @@
 
 将英式英语翻译成美式英语的开源工具
 ======
-使用这些命令行翻译器将英式英语转换为美式英语（反之亦然）。
+
+> 使用这些命令行翻译器将英式英语转换为美式英语（或反之）。
+
 ![Red telephone booth on a street in England][1]
 
-去年圣诞节，我和我的妻子去了家乡佛罗里达的皮尔斯堡，并且经常光顾海滩上的一家当地人店。在那儿，我们遇到了一对来自英国米德兰的夫妇。音乐很响，啤酒也是，所以很难听清楚。另外，即使他们“似乎”在说英语，但有时理解他们在说什么仍然是一个挑战。我以为我在澳大利亚的时光会给我足够的语言能力，但是，可惜，忘记了很多。还有比通常的 “soccer 是 football” 或 “trunk是 boot” 更多的混乱。
+去年圣诞节，我和我的妻子去了家乡佛罗里达的皮尔斯堡，并且经常光顾海滩上的一家当地人场所。在那儿，我们遇到了一对来自英国中部地区的夫妇。音乐很响，喝酒也很闹，所以很难听清楚。另外，即使他们“似乎”在说英语，但有时理解他们在说什么仍然是一个挑战。我以为我在澳大利亚的时光会给我足够的语言能力，但是，可惜，很多东西都超出了我的想象。不止是一般的 “soccer 是 football” 或 “trunk是 boot” 之类的困惑。
 
-幸运的是，有开源方案可以将“英式”翻译成“美式”。我们可能使用相同的语言，但是我们共同的讲话比多塞特郡沙夫茨伯里的之字形山要曲折得多！
+幸运的是，有开源方案可以将“英式”翻译成“美式”。我们可能使用相同的语言，但是我们共同的言语却比多塞特郡沙夫茨伯里的之字形山要曲折得多！
 
-如果你碰巧在酒吧有 Linux 笔记本，那么你可以使用方便的开源命令行程序，它名为 [American British English Translator][2]（MIT 许可证）。
+如果你碰巧在酒吧有 Linux 笔记本，那么你可以使用方便的开源命令行程序，它就叫 [美英英语翻译器][2]（MIT 许可证）。
 
-我在运行 Linux 的改版 MacBook 上安装 Translator：
-
+我在我的改造运行 Linux 的 MacBook 上安装这个翻译器：
 
 ```
-`$ npm install -g american-british-english-translator`
+$ npm install -g american-british-english-translator
 ```
 
 这需要我首先[安装 Node.js][3]。
 
 ### 声明！
 
-除了翻译单词和短语，American British English Translator 还能分析文档。我给了它要给流行文档，名为_独立宣言_ 。它分析并返回了许多结果。其中一个比较有趣的是：
-
+除了翻译单词和短语，美英英语翻译器还能分析（嗯，剖析）文档。我用一个叫《独立宣言》的流行文件试了一下。它分析并返回了许多结果。其中一个比较有趣的是：
 
 ```
 fall:
-issue: Different meanings
+issue: Different meanings（意思不同）
 details:
-American English: autumn
+American English: autumn（秋天）
 British English:
 """
-to become pregnant. (Either as in 'I fell pregnant' or as in 'She fell for a baby.');
+to become pregnant. (Either as in 'I fell pregnant' or as in 'She fell for a baby.');（怀孕 —— 无论是“我怀孕了”还是“她怀孕了”）
 ```
 
-*宣言*的作者指责的并非完全是”在公海俘虏“（taken captive on the high seas）：
+并非如《宣言》作者所指控的“在公海俘虏”（taken captive on the high seas）：
 
 > ”他在公海上俘虏我们的同胞，强迫他们拿起武器来反对自己的国家，成为残杀自己亲人和朋友的刽子手，或是死于自己的亲人和朋友的手下。“（He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands.）
 
@@ -52,11 +52,9 @@ to become pregnant. (Either as in 'I fell pregnant' or as in 'She fell for a ba
 
 当然，要与同伴一起喝几杯，你也许需要实际交流，并能理解他们。这就是需要用到 MARY 了。
 
-[MaryTTS][5] 是一个使用 Java（GNU 许可）编写的开源多语言文本到语音合成平台。方便的[基于浏览器的界面][6]使你可以轻松地将美国酒吧谈话内容转换为正确的英语（或其他语言）的男性或女性声音。
+[MaryTTS][5] 是一个使用 Java（GNU 许可）编写的开源多语言文本到语音合成平台。方便的[基于浏览器的界面][6]使你可以轻松地将美国酒吧谈话内容转换为男声或女声的正确英语（或其他语言）。
 
-现在我可以和我的英国朋友们见面了（可以安全地再来一次），喝几杯，完成！像当地人一样讲英语！ 干杯！
-
-翻译文档需要时间和精力，但不及从头开始...
+现在我可以和我的英国朋友们见面了（可以安全地再来一次），喝几杯！像当地人一样讲英语！大家干杯！
 
 --------------------------------------------------------------------------------
 
@@ -65,7 +63,7 @@ via: https://opensource.com/article/20/6/british-american-cli-translator
 作者：[Jeff Macharyas][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
