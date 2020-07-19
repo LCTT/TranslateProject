@@ -7,21 +7,22 @@
 [#]: via: (https://opensource.com/article/19/6/cryptography-basics-openssl-part-2)
 [#]: author: (Marty Kalin https://opensource.com/users/mkalindepauledu)
 
-How to use OpenSSL: Hashes, digital signatures, and more
+如何使用 OpenSSL：哈希值、数字签名等
 ======
-Dig deeper into the details of cryptography with OpenSSL: Hashes,
-digital signatures, digital certificates, and more
+
+> 通过 OpenSSL 深入了解密码学的细节：哈希值、数字签名、数字证书等。
+
 ![A person working.][1]
 
-The [first article in this series][2] introduced hashes, encryption/decryption, digital signatures, and digital certificates through the OpenSSL libraries and command-line utilities. This second article drills down into the details. Let’s begin with hashes, which are ubiquitous in computing, and consider what makes a hash function _cryptographic_.
+[本系列的第一篇文章][2]通过 OpenSSL 库和命令行实用程序介绍了哈希、加密/解密、数字签名和数字证书。这第二篇文章将对细节进行深入探讨。让我们从计算中无处不在的哈希开始，并考虑是什么使哈希函数*加了密*。
 
-### Cryptographic hashes
+### 加密的哈希
 
-The download page for the OpenSSL source code (<https://www.openssl.org/source/>) contains a table with recent versions. Each version comes with two hash values: 160-bit SHA1 and 256-bit SHA256. These values can be used to verify that the downloaded file matches the original in the repository: The downloader recomputes the hash values locally on the downloaded file and then compares the results against the originals. Modern systems have utilities for computing such hashes. Linux, for instance, has **md5sum** and **sha256sum**. OpenSSL itself provides similar command-line utilities.
+The download page for the OpenSSL source code (<https://www.openssl.org/source/>) contains a table with recent versions. Each version comes with two hash values: 160-bit SHA1 and 256-bit SHA256. These values can be used to verify that the downloaded file matches the original in the repository: The downloader recomputes the hash values locally on the downloaded file and then compares the results against the originals. Modern systems have utilities for computing such hashes. Linux, for instance, has `md5sum` and `sha256sum`. OpenSSL itself provides similar command-line utilities.
 
 Hashes are used in many areas of computing. For example, the Bitcoin blockchain uses SHA256 hash values as block identifiers. To mine a Bitcoin is to generate a SHA256 hash value that falls below a specified threshold, which means a hash value with at least N leading zeroes. (The value of N can go up or down depending on how productive the mining is at a particular time.) As a point of interest, today’s miners are hardware clusters designed for generating SHA256 hashes in parallel. During a peak time in 2018, Bitcoin miners worldwide generated about 75 million terahashes per second—yet another incomprehensible number.
 
-Network protocols use hash values as well—often under the name **checksum**—to support message integrity; that is, to assure that a received message is the same as the one sent. The message sender computes the message’s checksum and sends the results along with the message. The receiver recomputes the checksum when the message arrives. If the sent and the recomputed checksum do not match, then something happened to the message in transit, or to the sent checksum, or to both. In this case, the message and its checksum should be sent again, or at least an error condition should be raised. (Low-level network protocols such as UDP do not bother with checksums.)
+Network protocols use hash values as well—often under the name `checksum`—to support message integrity; that is, to assure that a received message is the same as the one sent. The message sender computes the message’s checksum and sends the results along with the message. The receiver recomputes the checksum when the message arrives. If the sent and the recomputed checksum do not match, then something happened to the message in transit, or to the sent checksum, or to both. In this case, the message and its checksum should be sent again, or at least an error condition should be raised. (Low-level network protocols such as UDP do not bother with checksums.)
 
 Other examples of hashes are familiar. Consider a website that requires users to authenticate with a password, which the user enters in their browser. Their password is then sent, encrypted, from the browser to the server via an HTTPS connection to the server. Once the password arrives at the server, it's decrypted for a database table lookup.
 
@@ -29,7 +30,7 @@ What should be stored in this lookup table? Storing the passwords themselves is 
 
 Hash values also occur in various areas of security. For example, hash-based message authentication code ([HMAC][3]) uses a hash value and a secret cryptographic key to authenticate a message sent over a network. HMAC codes, which are lightweight and easy to use in programs, are popular in web services. An X509 digital certificate includes a hash value known as the _fingerprint_, which can facilitate certificate verification. An in-memory truststore could be implemented as a lookup table keyed on such fingerprints—as a _hash map_, which supports constant-time lookups. The fingerprint from an incoming certificate can be compared against the truststore keys for a match.
 
-What special property should a _cryptographic hash function_ have? It should be _one-way_, which means very difficult to invert. A cryptographic hash function should be relatively straightforward to compute, but computing its inverse—the function that maps the hash value back to the input bitstring—should be computationally intractable. Here is a depiction, with **chf** as a cryptographic hash function and my password **foobar** as the sample input:
+What special property should a _cryptographic hash function_ have? It should be _one-way_, which means very difficult to invert. A cryptographic hash function should be relatively straightforward to compute, but computing its inverse—the function that maps the hash value back to the input bitstring—should be computationally intractable. Here is a depiction, with `chf` as a cryptographic hash function and my password `foobar` as the sample input:
 
 
 ```
@@ -53,11 +54,11 @@ Now, a final review point is in order. Cryptographic hash values are statistical
 
 A good estimate of the breakdown in collision resistance for SHA256 is not yet in hand. This fact is not surprising. SHA256 has a range of 2256 distinct hash values, a number whose decimal representation has a whopping 78 digits! So, can collisions occur with SHA256 hashing? Of course, but they are extremely unlikely.
 
-In the command-line examples that follow, two input files are used as bitstring sources: **hashIn1.txt** and **hashIn2.txt**. The first file contains **abc** and the second contains **1a2b3c**.
+In the command-line examples that follow, two input files are used as bitstring sources: `hashIn1.txt` and `hashIn2.txt`. The first file contains `abc` and the second contains `1a2b3c`.
 
 These files contain text for readability, but binary files could be used instead.
 
-Using the Linux **sha256sum** utility on these two files at the command line—with the percent sign (**%**) as the prompt—produces the following hash values (in hex):
+Using the Linux `sha256sum` utility on these two files at the command line—with the percent sign (`%`) as the prompt—produces the following hash values (in hex):
 
 
 ```
@@ -95,11 +96,11 @@ Next, the pair’s private key is used to process a hash value for the target ar
 
 Now for an example. To begin, generate a 2048-bit RSA key pair with OpenSSL:
 
-**openssl genpkey -out privkey.pem -algorithm rsa 2048**
+`openssl genpkey -out privkey.pem -algorithm rsa 2048`
 
-We can drop the **-algorithm rsa** flag in this example because **genpkey** defaults to the type RSA. The file’s name (**privkey.pem**) is arbitrary, but the Privacy Enhanced Mail (PEM) extension **pem** is customary for the default PEM format. (OpenSSL has commands to convert among formats if needed.) If a larger key size (e.g., 4096) is in order, then the last argument of **2048** could be changed to **4096**. These sizes are always powers of two.
+We can drop the `-algorithm rsa` flag in this example because `genpkey` defaults to the type RSA. The file’s name (`privkey.pem`) is arbitrary, but the Privacy Enhanced Mail (PEM) extension `pem` is customary for the default PEM format. (OpenSSL has commands to convert among formats if needed.) If a larger key size (e.g., 4096) is in order, then the last argument of `2048` could be changed to `4096`. These sizes are always powers of two.
 
-Here’s a slice of the resulting **privkey.pem** file, which is in base64:
+Here’s a slice of the resulting `privkey.pem` file, which is in base64:
 
 
 ```
@@ -112,9 +113,9 @@ JF4J4WdhkljP2R+TXVGuKVRtPkGAiLWE4BDbgsyKVLfs2EdjKL1U+/qtfhYsqhkK
 
 The next command then extracts the pair’s public key from the private one:
 
-**openssl rsa -in privkey.pem -outform PEM -pubout -out pubkey.pem**
+`openssl rsa -in privkey.pem -outform PEM -pubout -out pubkey.pem`
 
-The resulting **pubkey.pem** file is small enough to show here in full:
+The resulting `pubkey.pem` file is small enough to show here in full:
 
 
 ```
@@ -126,15 +127,15 @@ O0xnAKpAvysMy7G7qQIDAQAB
 \-----END PUBLIC KEY-----
 ```
 
-Now, with the key pair at hand, the digital signing is easy—in this case with the source file **client.c** as the artifact to be signed:
+Now, with the key pair at hand, the digital signing is easy—in this case with the source file `client.c` as the artifact to be signed:
 
-**openssl dgst -sha256 -sign privkey.pem -out sign.sha256 client.c**
+`openssl dgst -sha256 -sign privkey.pem -out sign.sha256 client.c`
 
-The digest for the **client.c** source file is SHA256, and the private key resides in the **privkey.pem** file created earlier. The resulting binary signature file is **sign.sha256**, an arbitrary name. To get a readable (if base64) version of this file, the follow-up command is:
+The digest for the `client.c` source file is SHA256, and the private key resides in the `privkey.pem` file created earlier. The resulting binary signature file is `sign.sha256`, an arbitrary name. To get a readable (if base64) version of this file, the follow-up command is:
 
-**openssl enc -base64 -in sign.sha256 -out sign.sha256.base64**
+`openssl enc -base64 -in sign.sha256 -out sign.sha256.base64`
 
-The file **sign.sha256.base64** now contains:
+The file `sign.sha256.base64` now contains:
 
 
 ```
@@ -143,7 +144,7 @@ VNfFwysvqRGmL0jkp/TTdwnDTwt756Ej4X3OwAVeYM7i5DCcjVsQf5+h7JycHKlM
 o/Jd3kUIWUkZ8+Lk0ZwzNzhKJu6LM5KWtL+MhJ2DpVc=
 ```
 
-Or, the executable file **client** could be signed instead, and the resulting base64-encoded signature would differ as expected:
+Or, the executable file `client` could be signed instead, and the resulting base64-encoded signature would differ as expected:
 
 
 ```
@@ -152,15 +153,15 @@ xRAN7DoL4Q3uuVmWWi749Vampong/uT5qjgVNTnRt9jON112fzchgEoMb8CHNsCT
 XIMdyaPtnJZdLALw6rwMM55MoLamSc6M/MV1OrJnk/g=
 ```
 
-The final step in this process is to verify the digital signature with the public key. The hash used to sign the artifact (in this case, the executable **client** program) should be recomputed as an essential step in the verification since the verification process should indicate whether the artifact has changed since being signed.
+The final step in this process is to verify the digital signature with the public key. The hash used to sign the artifact (in this case, the executable `client` program) should be recomputed as an essential step in the verification since the verification process should indicate whether the artifact has changed since being signed.
 
 There are two OpenSSL commands used for this purpose. The first decodes the base64 signature:
 
-**openssl enc -base64 -d -in sign.sha256.base64 -out sign.sha256**
+`openssl enc -base64 -d -in sign.sha256.base64 -out sign.sha256`
 
 The second verifies the signature:
 
-**openssl dgst -sha256 -verify pubkey.pem -signature sign.sha256 client**
+`openssl dgst -sha256 -verify pubkey.pem -signature sign.sha256 client`
 
 The output from this second command is, as it should be:
 
@@ -169,19 +170,19 @@ The output from this second command is, as it should be:
 `Verified OK`
 ```
 
-To understand what happens when verification fails, a short but useful exercise is to replace the executable **client** file in the last OpenSSL command with the source file **client.c** and then try to verify. Another exercise is to change the **client** program, however slightly, and try again.
+To understand what happens when verification fails, a short but useful exercise is to replace the executable `client` file in the last OpenSSL command with the source file `client.c` and then try to verify. Another exercise is to change the `client` program, however slightly, and try again.
 
 ### Digital certificates
 
 A digital certificate brings together the pieces analyzed so far: hash values, key pairs, digital signatures, and encryption/decryption. The first step toward a production-grade certificate is to create a certificate signing request (CSR), which is then sent to a certificate authority (CA). To do this for the example with OpenSSL, run:
 
-**openssl req -out myserver.csr -new -newkey rsa:4096 -nodes -keyout myserverkey.pem**
+`openssl req -out myserver.csr -new -newkey rsa:4096 -nodes -keyout myserverkey.pem`
 
-This example generates a CSR document and stores the document in the file **myserver.csr** (base64 text). The purpose here is this: the CSR document requests that the CA vouch for the identity associated with the specified domain name—the common name (CN) in CA-speak.
+This example generates a CSR document and stores the document in the file `myserver.csr` (base64 text). The purpose here is this: the CSR document requests that the CA vouch for the identity associated with the specified domain name—the common name (CN) in CA-speak.
 
-A new key pair also is generated by this command, although an existing pair could be used. Note that the use of **server** in names such as **myserver.csr** and **myserverkey.pem** hints at the typical use of digital certificates: as vouchers for the identity of a web server associated with a domain such as [www.google.com][6].
+A new key pair also is generated by this command, although an existing pair could be used. Note that the use of `server` in names such as `myserver.csr` and `myserverkey.pem` hints at the typical use of digital certificates: as vouchers for the identity of a web server associated with a domain such as [www.google.com][6].
 
-The same command, however, creates a CSR regardless of how the digital certificate might be used. It also starts an interactive question/answer session that prompts for relevant information about the domain name to link with the requester’s digital certificate. This interactive session can be short-circuited by providing the essentials as part of the command, with backslashes as continuations across line breaks. The **-subj** flag introduces the required information:
+The same command, however, creates a CSR regardless of how the digital certificate might be used. It also starts an interactive question/answer session that prompts for relevant information about the domain name to link with the requester’s digital certificate. This interactive session can be short-circuited by providing the essentials as part of the command, with backslashes as continuations across line breaks. The `-subj` flag introduces the required information:
 
 
 ```
@@ -193,7 +194,7 @@ The same command, however, creates a CSR regardless of how the digital certifica
 
 The resulting CSR document can be inspected and verified before being sent to a CA. This process creates the digital certificate with the desired format (e.g., X509), signature, validity dates, and so on:
 
-**openssl req -text -in myserver.csr -noout -verify**
+`openssl req -text -in myserver.csr -noout -verify`
 
 Here’s a slice of the output:
 
@@ -221,11 +222,11 @@ Signature Algorithm: sha256WithRSAEncryption
 
 During the development of an HTTPS web site, it is convenient to have a digital certificate on hand without going through the CA process. A self-signed certificate fills the bill during the HTTPS handshake’s authentication phase, although any modern browser warns that such a certificate is worthless. Continuing the example, the OpenSSL command for a self-signed certificate—valid for a year and with an RSA public key—is:
 
-**openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout myserver.pem -out myserver.crt**
+`openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout myserver.pem -out myserver.crt`
 
 The OpenSSL command below presents a readable version of the generated certificate:
 
-**openssl x509 -in myserver.crt -text -noout**
+`openssl x509 -in myserver.crt -text -noout`
 
 Here’s part of the output for the self-signed certificate:
 
@@ -265,7 +266,7 @@ As mentioned earlier, an RSA private key contains values from which the public k
 
 There is an important correspondence between a digital certificate and the key pair used to generate the certificate, even if the certificate is only self-signed:
 
-  * The digital certificate contains the _exponent_ and _modulus_ values that make up the public key. These values are part of the key pair in the originally-generated PEM file, in this case, the file **myserver.pem**.
+  * The digital certificate contains the _exponent_ and _modulus_ values that make up the public key. These values are part of the key pair in the originally-generated PEM file, in this case, the file `myserver.pem`.
   * The exponent is almost always 65,537 (as in this case) and so can be ignored.
   * The modulus from the key pair should match the modulus from the digital certificate.
 
@@ -286,22 +287,22 @@ The resulting hash values match, thereby confirming that the digital certificate
 
 ### Back to the key distribution problem
 
-Let’s return to an issue raised at the end of Part 1: the TLS handshake between the **client** program and the Google web server. There are various handshake protocols, and even the Diffie-Hellman version at work in the **client** example offers wiggle room. Nonetheless, the **client** example follows a common pattern.
+Let’s return to an issue raised at the end of Part 1: the TLS handshake between the `client` program and the Google web server. There are various handshake protocols, and even the Diffie-Hellman version at work in the `client` example offers wiggle room. Nonetheless, the `client` example follows a common pattern.
 
-To start, during the TLS handshake, the **client** program and the web server agree on a cipher suite, which consists of the algorithms to use. In this case, the suite is **ECDHE-RSA-AES128-GCM-SHA256**.
+To start, during the TLS handshake, the `client` program and the web server agree on a cipher suite, which consists of the algorithms to use. In this case, the suite is `ECDHE-RSA-AES128-GCM-SHA256`.
 
 The two elements of interest now are the RSA key-pair algorithm and the AES128 block cipher used for encrypting and decrypting messages if the handshake succeeds. Regarding encryption/decryption, this process comes in two flavors: symmetric and asymmetric. In the symmetric flavor, the _same_ key is used to encrypt and decrypt, which raises the _key distribution problem_ in the first place: How is the key to be distributed securely to both parties? In the asymmetric flavor, one key is used to encrypt (in this case, the RSA public key) but a different key is used to decrypt (in this case, the RSA private key from the same pair).
 
-The **client** program has the Google web server’s public key from an authenticating certificate, and the web server has the private key from the same pair. Accordingly, the **client** program can send an encrypted message to the web server, which alone can readily decrypt this message.
+The `client` program has the Google web server’s public key from an authenticating certificate, and the web server has the private key from the same pair. Accordingly, the `client` program can send an encrypted message to the web server, which alone can readily decrypt this message.
 
 In the TLS situation, the symmetric approach has two significant advantages:
 
-  * In the interaction between the **client** program and the Google web server, the authentication is one-way. The Google web server sends three certificates to the **client** program, but the **client** program does not send a certificate to the web server; hence, the web server has no public key from the client and can’t encrypt messages to the client.
+  * In the interaction between the `client` program and the Google web server, the authentication is one-way. The Google web server sends three certificates to the `client` program, but the `client` program does not send a certificate to the web server; hence, the web server has no public key from the client and can’t encrypt messages to the client.
   * Symmetric encryption/decryption with AES128 is nearly a _thousand times faster_ than the asymmetric alternative using RSA keys.
 
 
 
-The TLS handshake combines the two flavors of encryption/decryption in a clever way. During the handshake, the **client** program generates random bits known as the pre-master secret (PMS). Then the **client** program encrypts the PMS with the server’s public key and sends the encrypted PMS to the server, which in turn decrypts the PMS message with its private key from the RSA pair:
+The TLS handshake combines the two flavors of encryption/decryption in a clever way. During the handshake, the `client` program generates random bits known as the pre-master secret (PMS). Then the `client` program encrypts the PMS with the server’s public key and sends the encrypted PMS to the server, which in turn decrypts the PMS message with its private key from the RSA pair:
 
 
 ```
@@ -310,7 +311,7 @@ client PMS---&gt;|server’s public key|---------------&gt;|server’s private k
               +-------------------+                +--------------------+
 ```
 
-At the end of this process, the **client** program and the Google web server now have the same PMS bits. Each side uses these bits to generate a _master secret_ and, in short order, a symmetric encryption/decryption key known as the _session key_. There are now two distinct but identical session keys, one on each side of the connection. In the **client** example, the session key is of the AES128 variety. Once generated on both the **client** program’s and Google web server’s sides, the session key on each side keeps the conversation between the two sides confidential. A handshake protocol such as Diffie-Hellman allows the entire PMS process to be repeated if either side (e.g., the **client** program) or the other (in this case, the Google web server) calls for a restart of the handshake.
+At the end of this process, the `client` program and the Google web server now have the same PMS bits. Each side uses these bits to generate a _master secret_ and, in short order, a symmetric encryption/decryption key known as the _session key_. There are now two distinct but identical session keys, one on each side of the connection. In the `client` example, the session key is of the AES128 variety. Once generated on both the `client` program’s and Google web server’s sides, the session key on each side keeps the conversation between the two sides confidential. A handshake protocol such as Diffie-Hellman allows the entire PMS process to be repeated if either side (e.g., the `client` program) or the other (in this case, the Google web server) calls for a restart of the handshake.
 
 ### Wrapping up
 
@@ -330,7 +331,7 @@ via: https://opensource.com/article/19/6/cryptography-basics-openssl-part-2
 [a]: https://opensource.com/users/mkalindepauledu
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003784_02_os.comcareers_os_rh2x.png?itok=jbRfXinl (A person working.)
-[2]: https://opensource.com/article/19/6/cryptography-basics-openssl-part-1
+[2]: https://linux.cn/article-11810-1.html
 [3]: https://en.wikipedia.org/wiki/HMAC
 [4]: https://en.wikipedia.org/wiki/Length_extension_attack
 [5]: https://en.wikipedia.org/wiki/Birthday_problem
