@@ -77,7 +77,7 @@ via: https://opensource.com/article/20/7/devsecops-vs-agile
 
 作者：[Sam Bocetta][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/windgeek)
+译者：[windgeek](https://github.com/windgeek)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
