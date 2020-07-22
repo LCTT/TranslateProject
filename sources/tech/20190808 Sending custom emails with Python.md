@@ -7,37 +7,36 @@
 [#]: via: (https://opensource.com/article/19/8/sending-custom-emails-python)
 [#]: author: (Brian "bex" Exelbierd https://opensource.com/users/bexelbie)
 
-Sending custom emails with Python
+使用Python发送定制邮件
 ======
-Customize your group emails with Mailmerge, a command-line program that
-can handle simple and complex emails.
+Mailmerge是一个可以处理简单邮件和复杂邮件的命令行程序，可以用它定制组邮件。
 ![Chat via email][1]
 
-Email remains a fact of life. Despite all its warts, it's still the best way to send information to most people, especially in automated ways that allow messages to queue for recipients.
+电子邮件还是生活的一部分，尽管有种种不足，它仍然是大多数人发送信息的最佳方式，尤其是在以自动化方式实现受众信息队列的场景。
 
-One of the highlights of my work as the [Fedora Community Action and Impact Coordinator][2] is giving people good news about travel funding. I often send this information over email. Here, I'll show you how I send custom messages to groups of people using [Mailmerge][3], a command-line Python program that can handle simple and complex emails.
+我作为[Fedora社区行动和影响协调员 ][2]的工作之一就是给人们发送旅行基金相关的好消息，我经常通过电子邮件做这些事。这里，我将给你展示如何使用[Mailmerge][3]，一个可以处理简单邮件及复杂邮件的命令行程序，向一组人发送定制信息。
 
-### Install Mailmerge
+### 安装 Mailmerge
 
-Mailmerge is packaged and available in Fedora, and you can install it from the command line with **sudo dnf install python3-mailmerge**. You can also install it from PyPI using **pip**, as the project's [README explains][4].
+在Fedora中，Mailmerge已经打包可用，你可以通过在命令行中运行**sudo dnf install python3-mailmerge**来安装它。你还可以使用**pip**命令从PyPi中安装，具体可以参阅该项目的[说明][4]。
 
-### Configure your Mailmerge files
+### 配置 Mailmerge
 
-Three files control how Mailmerge works. If you run **mailmerge --sample**, it will create template files for you. The files are:
+三个配置文件控制着Mailmerge的工作模式。运行**mailmerge --sample**，将生成配置文件模板。这些文件包括：
 
-  * **mailmerge_server.conf:** This contains the configuration details for your SMTP host to send emails. Your password is _not_ stored in this file.
-  * **mailmerge_database.csv:** This holds the custom data for each email, including the recipients' email addresses.
-  * **mailmerge_template.txt:** This is your email's text with placeholder fields that will be replaced using the data from **mailmerge_database.csv**.
+  * **mailmerge_server.conf:** 这里保存着SMTP服务端邮件发送相关详细配置，但你的密码 _不_ 在这里保存。
+  * **mailmerge_database.csv:** 这里保存每封邮件的个性数据，包括收件人电子邮件地址。
+  * **mailmerge_template.txt:** 这里保存电子邮件的文本，文本中包含占位符，这些占位符会使用**mailmerge_database.csv**中的数据替换。
 
 
 
 #### Server.conf
 
-The sample **mailmerge_server.conf** file includes several examples that should be familiar. If you've ever added email to your phone or set up a desktop email client, you've seen this data before. The big thing to remember is to update your username in the file, especially if you are using one of the example configurations.
+配置模板文件**mailmerge_server.conf**包含几个大家应该很熟悉的例子。如果你曾经往手机上添加过电子邮件或者设置过桌面电子邮件客户端，那你就应该看到过这些数据。需要提醒的是要记得把你的用户名更新到这个文件中，尤其是在你使用模板所提供的配置时。
 
 #### Database.csv
 
-The **mailmerge_database.csv** file is a bit more complicated. It must contain (at minimum) the recipients' email addresses and any other custom details necessary to replace the fields in your email. It is a good idea to write the **mailmerge_template.txt** file at the same time you create the fields list for this file. I find it helpful to use a spreadsheet to capture this data and export it as a CSV file when I am done. This sample file:
+**mailmerge_database.csv**这个配置文件稍微有点复杂。最起码要将邮件接收者的电子邮件地址保存在这里，其它在电子邮件中任何需要替换的定制信息也要保存在这里。推荐在创建本文件的占位符列表时，同步步编辑**mailmerge_template.txt**文件。我发现一个有效的做法是，使用电子表格软件录入这些数据，完成后导出为CSV文件。使用下面的示例文件:
 
 
 ```
@@ -46,9 +45,9 @@ email,name,number
 [bob@bobdomain.com][6],"Bob",42
 ```
 
-allows you to send emails to two people, using their first name and telling them a number. This file, while not terribly interesting, illustrates an important habit: Always make yourself the first recipient in the file. This enables you to send yourself a test email to verify everything works as expected before you email the entire list.
+你可以使用他们的名字，给这两个人发送邮件，并各告诉他们一个数字。这个示例文件虽然不是特别有趣，但应用了一个重要的原则，那就是：始终让自己处于邮件接收列表的首位。这样你可以在向列表全员发送邮件之前，先给自己发送一个测试邮件，以验证邮件的效果是否如你预期。
 
-If any of your values contain commas, you _**must**_ enclose the entire value in double-quotes (**"**). If you need to include a double-quote in a double-quoted field, use two double-quotes in a row. Quoting rules are fun, so read about [CSVs in Python 3][7] for specifics.
+任何包含半角逗号的值，都 _**必须**_ 以半角双引号(**"**)封闭。如果恰好在半角双引号封闭的区域需要有一个半角双引号，那就在同一行中使用两个半角双引号。引用的定义规则比较有趣，去[Python3中的CSV][7]一探究竟吧。
 
 #### Template.txt
 
@@ -221,13 +220,13 @@ Also note that I extended the database with two fields, **Hotel** and **File**. 
 
 Doing a dry-run and sending the emails is the same whether you're using a simple or a complex template. Give it a try!
 
-You can also experiment with using conditionals (**if** … **endif**) in the header. You can, for example, have an attachment only if one is in the database, or maybe you need to change the sender's name for some emails but not others.
+你还可以尝试在邮件头中使用条件判断(**if** … **endif**). You can, for example, have an attachment only if one is in the database, or maybe you need to change the sender's name for some emails but not others.
 
-### Mailmerge's advantages
+### Mailmerge的优点
 
-The Mailmerge program provides a powerful but simple method of sending lots of customized emails. Everyone gets only the information they need, and extraneous steps and details are omitted.
+Mailmerge是用来批量发送个性化邮件的简洁而高效的工具。每个人只接受到他需要的信息，其它额外的操作和细节都是透明的。
 
-Even for simple group emails, I have found this method much more effective than sending one email to a bunch of people using CC or BCC. A lot of people filter their email and delay reading anything not sent directly to them. Using Mailmerge ensures that every person gets their own email. Messages will filter properly for the recipient and no one can accidentally "reply all" to the entire group.
+我还发现，即使是在发送简单的集团邮件时，相对于使用CC或者BCC向一组受众发送一封邮件，采用Mailmerge也是非常高效的。很多人使用了邮件过滤，那些不是直接发给他们的邮件，他们一律不会立刻处理。使用Mailmerge保证了每名受众接收到的就是自己的邮件。所有的信息会对接收者进行正确过滤，再也不会有人无意间回复到整个邮件组。
 
 --------------------------------------------------------------------------------
 
@@ -235,7 +234,7 @@ via: https://opensource.com/article/19/8/sending-custom-emails-python
 
 作者：[Brian "bex" Exelbierd][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[silentdawn-zz](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
