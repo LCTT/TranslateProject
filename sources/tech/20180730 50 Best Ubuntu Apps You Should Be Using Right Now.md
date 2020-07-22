@@ -1,3 +1,5 @@
+LikChung is translating
+
 50 Best Ubuntu Apps You Should Be Using Right Now
 ======
 **Brief: A comprehensive list of best Ubuntu apps for all kind of users. These software will help you in getting a better experience with your Linux desktop.**
