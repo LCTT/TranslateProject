@@ -10,7 +10,9 @@
 DevSecOps和敏捷软件开发有什么不同
 ======
 你更专注于安全性还是软件发行，或者说你两者都很关注？
+
 ![Brick wall between two people, a developer and an operations manager][1]
+
 技术社区中存在一种趋势，经常互换地使用DevSecOps和敏捷软件开发这两个术语。尽管它们有一些相似性，例如都旨在更容易地检测风险，但在改变团队的工作方式层面有很大不同。
 
 DevSecOps建立在敏捷开发建立的一些原则上。但是，DevSecOps特别专注于[集成安全功能][3]，而敏捷开发则专注于交付软件。
