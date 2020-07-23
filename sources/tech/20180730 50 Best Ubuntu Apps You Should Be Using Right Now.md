@@ -200,65 +200,65 @@ Ubuntu 默认的 GNOME 视频播放器（从前名为 Totem）表现尚可但不
 
 ![LibreOffice logo][50]
 
-[LibreOffice][51] comes preinstalled on Ubuntu and it is undoubtedly the [best open source office software][52]. It’s a complete package comprising of a document editor, spreadsheet tool, presentation software, maths tool and a graphics tool. You can even edit some PDF files with LibreOffice.
+Ubuntu 预装了 [LibreOffice][51]，一款无疑是 [最佳的开源办公软件][52]。它是个组件完整的办公软件，包括文档编辑器、电子表格工具、演示软件、数学工具和作图工具。你甚至可以用它编辑部分 PDF 文件。
 
 ##### WPS Office
 
 ![WPS Office logo][53]
 
-[WPS Office][54] has gained popularity for being a Microsoft Office clone. It has an interface identical to Microsoft Office and it claims to be more compatible with MS Office. If you are looking for something similar to the Microsoft Office, WPS Office is a good choice.
+[WPS Office][54] 因酷似微软 Office 而广受欢迎。它的界面与微软 Office 几乎一样并且号称与微软 Office 更加兼容。如果你正在寻找类似微软 Office 的办公软件，WPS Office 是个好选择。
 
-#### Downloading tools
+#### 下载工具
 
 ![Downloading software Ubuntu][55]
 
-If you often download videos or other big files from the internet, these tools will help you.
+如果你经常从网上下载视频或其他大型文件，这些工具会帮助你。
 
 ##### youtube-dl
 
-This is one of the rare Ubuntu application on the list that is command line based. If you want to download videos from YouTube, DailyMotion or other video websites, youtube-dl is an excellent choice. It provides plenty of [advanced option for video downloading][56].
+这是本清单少有的基于命令行的 Ubuntu 应用之一。如果你想从 YouTube、DailyMotion 或其他视频网站下载视频，youtube-dl 是个绝好的选择。它提供了大量 [视频下载高级选项][56]。
 
 ##### uGet
 
-[uGet][57] is a feature rich [download manager for Linux][58]. It allows you to pause and resume your downloads, schedule your downloads, monitor clipboard for downloadable content. A perfect tool if you have a slow, inconsistent internet or daily data limit.
+[uGet][57] 是一款功能丰富的 [Linux 端下载管理器][58]。它允许你暂停和恢复下载、定时下载、监控剪贴板上的可下载内容。如果你的网络速度很慢、不稳定，或者每天的流量有限，这是一个完美的应对工具。
 
-#### Code Editors
+#### 代码编辑器
 
 ![Coding apps for Ubuntu][59]
 
-If you are into programming, the default Gedit text editor might not be sufficient for your coding needs. Here are some of the better code editors for you.
+如果你喜欢编程，默认的 Gedit 文本编辑器可能无法满足你的编程需求。下面就为你介绍一些比较好用的代码编辑器。
 
 ##### Atom
 
-[Atom][60] is a free and [open source code editor][61] from GitHub. Even before it was launched its first stable version, it became a hot favorite among coders for its UI, features and vast range of plugins.
+[Atom][60] 是一款由 GitHub 推出的免费 [开源代码编辑器][61]。早在它推出第一个稳定版之前，它就因其用户界面、功能和海量插件而成为程序员的至宠。
 
 ##### Visual Studio Code
 
-[VS Code][62] is an open source code editor from Microsoft. Don’t worry about Microsoft, VS Code is an awesome editor for web development. It also supports a number of other programming languages.
+[VS Code][62] 是一款微软出品的开源代码编辑器。别忌惮微软之名，VS Code 是款很棒的网络开发编辑器，它还支持许多其他编程语言。
 
-#### PDF and eBooks related applications
+#### PDF 和电子书相关应用
 
 ![eBook Management tools in Ubuntu][63]
 
-In this digital age, you cannot only rely on the real paper books especially when there are plenty of free eBooks available. Here are some Ubuntu apps for managing PDFs and eBooks.
+在这个数字时代，你很难只依靠真正的纸质书籍，特别是当有大量的免费电子书唾手可得。这里有一些 Ubuntu 应用以供管理 PDF 和电子书。
 
 ##### Calibre
 
-If you are a bibliophile and collect eBooks, you should use [Calibre][64]. It is an eBook manager with all the necessary software for [creating eBooks][65], converting eBook formats and managing an eBook library.
+如果你是个书虫，并收集电子书，你应该使用 [Calibre][64]。它是一个电子书管理器，拥有 [创建电子书][65]、转换电子书格式和管理电子书库的所有必要组件。
 
 ##### Okular
 
-Okular is mostly a PDF viewer with options for editing PDF files. You can do some basic [PDF editing on Linux][66] with Okular such as adding pop-ups notes, inline notes, freehand line drawing, highlighter, stamp etc.
+Okular 主要是一个 PDF 查看器，有编辑 PDF 文件的选项。你可以用 Okular 做一些基本的 [Linux 端的 PDF 编辑][66]，如添加弹出式备注、内联式备注、随手记、高亮标记、印章等。
 
-#### Messaging applications
+#### 通讯应用
 
 ![Messaging apps for Ubuntu][67]
 
-I believe you use at least one [messaging app on Linux][68]. Here are my recommendations.
+我相信你使用至少一款 [Linux 通讯应用][68]。以下是我的推荐。
 
 ##### Skype
 
-[Skype][69] is the most popular video chatting application. It is also used by many companies and businesses for interviews and meetings. This makes Skype one of the must-have applications for Ubuntu.
+[Skype][69] 是最流行的视频通讯应用。它也被许多公司和企业用于面试和会议。这使得 Skype 成为 Ubuntu 必备的应用程序之一。
 
 ##### Rambox
 
