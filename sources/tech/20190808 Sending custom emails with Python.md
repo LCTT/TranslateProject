@@ -51,7 +51,7 @@ email,name,number
 
 #### Template.txt
 
-As part of my work, I get to share news about travel-funding decisions for our Fedora contributor conference, [Flock][8]. A simple email tells people they've been selected for travel funding and their specific funding details. One user-specific detail is how much money we can allocate for their airfare. Here is an abbreviated version of my template file (I've snipped out a lot of the text for brevity):
+我的工作之一，就是向Fedora贡献者协会发送与旅行基金有关的信息，[Flock][8]。通过简单的邮件告诉有关的人，他被选中为旅行基金支持的幸运者，以及相应基金支持的详细信息。与接收者相关的具体信息之一就是我们可以为他的旅行提供多少资助。下面是一份我的节略后的模板文件（为了简洁，已经移除大量的文本）：
 
 
 ```
@@ -69,7 +69,7 @@ Travel Budget: {{Travel_Budget}}
 &lt;&lt;snip&gt;&gt;
 ```
 
-The top of the template specifies the recipient, sender, and subject. After the blank line, there's the body of the email. This email needs the recipients' **Email**, **Name**, and **Travel_Budget** from the **database.csv** file. Notice that those fields are surrounded by double curly braces (**{{** and **}}**). The corresponding **mailmerge_database.csv** looks like this:
+模板的起头定义了邮件的接收者、发送者和主题。在空行之后，是邮件的内容。该邮件需要从**database.csv**文件中获取接收者的**Email**、**Name**和**Travel_Budget**。注意，上述这些占位符是由双大括弧(**{{** **}}**)封闭的。相应的**mailmerge_database.csv**如下:
 
 
 ```
@@ -80,15 +80,15 @@ PersonA,[persona@fedoraproject.org][10],1500
 PèrsonB,[personb@fedoraproject.org][11],500
 ```
 
-Notice that I listed myself first (for testing) and there are two other people in the file. The second person, PèrsonB, has an accented character in their name; Mailmerge will automatically encode it.
+注意，我把自己放在了第一个，这是为了测试方便。除了我，还有另外两个人的信息在文档中。列表中的第二个人PèrsonB，他的名字中有一个包含变音符号的字母，Mailmerge会对这类字母自动编码。
 
-That's the whole template concept: Write your email and put placeholders in double curly braces. Then create a database that provides those values. Now let's test the email.
+以上包含了模板的全部知识点：写上你自己的电子邮件信息，并编写好以双大括弧封闭的占位符。接下来创建用来提供前述占位符具体值的数据文件。现在测试一下电子邮件的效果。
 
-### Test and send simple email merges
+### 测试并发送简单邮件
 
-#### Do a dry-run
+#### 试运行
 
-Start by doing a dry-run that prints the emails, with the placeholder fields completed, to the screen. By default, if you run the command **mailmerge**, it will do a dry-run of the first email:
+测试从邮件的试运行开始，试运行就是讲邮件内容显示出来，所有的占位符都会被具体值取代。默认情况下，如果你运行不带参数的命令**mailmerge**，它将对收件列表中的第一个人进行试运行:
 
 
 ```
@@ -117,7 +117,7 @@ Travel Budget: 1000
 &gt;&gt;&gt; This was a dry run.  To send messages, use the --no-dry-run option.
 ```
 
-Reviewing the first email (**message 0**, as counting starts from zero, like many things in computer science), you can see my name and travel budget are correct. If you want to review every email, enter **mailmerge --no-limit** to tell Mailmerge not to limit itself to the first email. Here's the dry-run of the third email, which shows the special character encoding:
+从试运行生成的邮件中(**第0条信息**，和计算机中很多计数场景一样，计数从0开始)，可以看到我的名字及旅行预算是正确的。如果你想检视所有的邮件，运行**mailmerge --no-limit**，告诉Mailmerge不要仅仅处理第一个收件人的信息。下面是第三个收件人邮件的试运行结果，用来测试特殊字符的编码：
 
 
 ```
@@ -133,11 +133,11 @@ Date: Sat, 20 Jul 2019 18:22:48 -0000
 Hi P=E8rsonB,
 ```
 
-That's not an error; **P=E8rsonB** is the encoded form of **PèrsonB**.
+没有问题，**P=E8rsonB**是**PèrsonB**的编码形式。
 
-#### Send a test message
+#### 发送测试信息
 
-Now, send a test email with the command **mailmerge --no-dry-run**, which tells Mailmerge to send a message to the first email on the list:
+现在，运行**mailmerge --no-dry-run**，Mailmerge将向收件人列表中的第一个人发送电子邮件:
 
 
 ```
@@ -171,13 +171,13 @@ Travel Budget: 1000
 &gt;&gt;&gt; Limit was 1 messages.  To remove the limit, use the --no-limit option.
 ```
 
-On the fourth to last line, you can see it prompts you for your password. If you're using two-factor authentication or domain-managed logins, you will need to create an application password that bypasses these controls. If you're using Gmail and similar systems, you can do it directly from the interface; otherwise, contact your email system administrator. This will not compromise the security of your email system, but you should still keep the password complex and secret.
+倒数第4行，它将要求你输入你的密码。如果你使用的是双因素认证或者域控制登录，那就需要创建应用密码来绕过这些控制。如果你使用的是Gmail或者类似的系统，可以直接在界面上完成密码验证。如果不行的话，联系你的邮件系统管理员。 虽然这些步骤不会影响邮件系统的安全性，但是仍然有必要使用复杂的安全性好的密码。
 
-When I checked my email account, I received a beautifully formatted test email. If your test email looks ready, send all the emails by entering **mailmerge --no-dry-run --no-limit**.
+我在我的邮件收件箱中，看到了这封格式美观的测试邮件。如果测试邮件看起来没有问题，那就可以运行**mailmerge --no-dry-run --no-limit**发送所有的邮件了。
 
-### Send complex emails
+### 发送复杂邮件
 
-You can really see the power of Mailmerge when you take advantage of [Jinja2 templating][12]. I've found it useful for including conditional text and sending attachments. Here is a complex template and the corresponding database:
+只有充分了解了[Jinja2 templating][12]，你才可能充分领略Mailmerge真正的威力。在邮件模板中使用条件语句及附带附件，是很有用的。下面就是一个复杂邮件的模板及对应的数据文件：
 
 
 ```
@@ -205,7 +205,7 @@ PersonA,[persona@fedoraproject.org][10],1500,No,visa_person_a.pdf
 PèrsonB,[personb@fedoraproject.org][11],500,Yes,visa_person_b.pdf
 ```
 
-There are two new things in this email. First, there's an attachment. I have to send visa invitation letters to international travelers to help them come to Flock, and the **ATTACHMENT** part of the header specifies which file to attach. To keep my directory clean, I put all of them in my Attachments subdirectory. Second, it includes conditional information about a hotel, because some people receive funding for their hotel stay, and I need to include those details for those who do. This is done with the **if** construction:
+在这个邮件中有两项新内容。首先是附件，我需要向参加国际旅行的人发送签证邀请信，帮助他们来Flock，文件头的**附件**部分说明了要包含什么文件；为了保持我的文档目录清晰，我将所以的所有需要作为附件的文档保存于附件子目录下。其次是包含了关于宾馆的条件信息，因为有些人的旅行资金包含了住宿费用，我需要对涉及住宿的人员诉及相关信息，而这是通过**if**判断实现的:
 
 
 ```
@@ -214,14 +214,13 @@ Lodging: Lodging in the hotel Wednesday-Sunday (4 nights)
 {%- endif %}
 ```
 
-This works just like an **if** in most programming languages. Jinja2 is very expressive and can do multi-level conditions. Experiment with making your life easier by including database elements that control the contents of the email. Using whitespace is important for email readability. The minus (**-**) symbols in **if** and **endif** are part of how Jinja2 controls [whitespace][13]. There are lots of options, so experiment to see what looks best for you.
+这和大多数编程语言中的**if**判断是一样的。Jinja2实力非凡，可以实现多级判断。通过包含数据元素控制邮件内容，能大大简化相关的日常工作。空格的正确使用对邮件的易读性很重要。**if**和**endif**语句中的短线(**-**)是Jinja2控制符的一部分[whitespace][13]。这里面选项很多，所以还是要通过试验找到最适合自己的方式。
 
-Also note that I extended the database with two fields, **Hotel** and **File**. These are the values that control the inclusion of the hotel text and provide the name of the attachment. In my example, PèrsonB and I got hotel funding, while PersonA didn't.
+在上面的例子中，我在数据文件扩充了**Hotel**和**File**两个字段，这些字段的值控制着宾馆信息和附件文件名。另外，在上例中，我和PèrsonB有住宿资助，但PersonA没有。
 
-Doing a dry-run and sending the emails is the same whether you're using a simple or a complex template. Give it a try!
+对于简单邮件和复杂邮件而言，试运行及正式发送邮件的操作都是相同的。快去试试吧！
 
-你还可以尝试在邮件头中使用条件判断(**if** … **endif**). You can, for example, have an attachment only if one is in the database, or maybe you need to change the sender's name for some emails but not others.
-
+你还可以尝试在邮件头中使用条件判断(**if** … **endif**)，比如你可以使发送给在数据库中的某人的邮件包含附件，或者改变对部分人改变发送人的信息。
 ### Mailmerge的优点
 
 Mailmerge是用来批量发送个性化邮件的简洁而高效的工具。每个人只接受到他需要的信息，其它额外的操作和细节都是透明的。
