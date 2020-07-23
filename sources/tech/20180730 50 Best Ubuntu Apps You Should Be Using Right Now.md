@@ -262,95 +262,95 @@ Okular 主要是一个 PDF 查看器，有编辑 PDF 文件的选项。你可以
 
 ##### Rambox
 
-[Rambox][70] is not a messaging application on its own. But it allows you to use Skype, Viber, Facebook Messanger, WhatsApp, Slack and a number of other messaging applications from a single application window.
+[Rambox][70] 本身不是一个通讯应用，但它允许你从单一窗口中使用 Skype、Viber、Facebook Messanger、WhatsApp、Slack 和其他一些通讯应用。
 
-#### Notes and To-do List applications
+#### 笔记和待办事项应用
 
-Need a to-do list app or simple an app for taking notes? Have a look at these:
+需要一个待办事项应用或简单的应用来做笔记吗？看看这些吧。
 
 ##### Simplenote
 
 ![Simplenote logo][71]
 
-[Simplenote][72] is a free and open source note taking application from WordPress creators [Automattic][73]. It is available for Windows, Linux, macOS, iOS and Android. Your notes are synced to a cloud server and you can access them on any device. You can download the DEB file from its website.
+[Simplenote][72] 是 WordPress 创建者 [Automattic][73] 推出的一款免费开源的笔记应用。它适用于 Windows、Linux、macOS、iOS 和 Android。你的笔记会同步到云服务器上，你可以在任何设备上访问它们。你可以从官网下载 DEB 文件。
 
 ##### Remember The Milk
 
 ![Remember The Milk logo][74]
 
-[Remember The Milk][75] is a popular to-do list application. It is available for Windows, Linux, macOS, iOS and Android. Your to-do list is accessible on all the devices you own. You can also access it from a web browser. It also has an official native application for Linux that you can download from its website.
+[Remember The Milk][75] 是一款流行的待办事项应用。它适用于 Windows、Linux、macOS、iOS 和 Android。你可以在拥有的所有设备上访问你的待办事项。你也可以从浏览器访问它。它还有一个官方的 Linux 版本，你可以从官网下载。
 
-#### Password protection and encryption
+#### 密码保护和加密
 
 ![Encryption software Ubuntu][76]
 
-If there are other people regularly using your computer perhaps you would like to add an extra layer of security by password protecting files and folders.
+如果有其他人经常使用你的电脑，也许你会考虑通过密码保护文件和文件夹来增加额外的安全。
 
 ##### EncryptPad
 
-[EncryptPad][77] is an open source text editor that allows you to lock your files with a password. You can choose the type of encryption. There is also a command line version of this tool.
+[EncryptPad][77] 是一个开源文本编辑器，它允许你用密码锁定你的文件。你可以选择加密的类型。这个工具也有一个命令行版本。
 
 ##### Gnome Encfs Manager
 
-Gnome Encfs Manager allows you to [lock folders with a password in Linux][78]. You can keep whatever files you want in a secret folder and then lock it with a password.
+Gnome Encfs Manager 允许你 [在 Linux 中用密码锁定文件夹][78]。你可以将任何您想要的文件保存在一个加密文件夹中，然后用密码锁定它。
 
-#### Gaming
+#### 游戏
 
 ![Gaming on Ubuntu][79]
 
-[Gaming on Linux][80] is a lot better than what it used to be a few years ago. You can enjoy plenty of games on Linux without going back to Windows.
+[Linux 端的游戏][80] 体验比几年前改进很多。你可以在 Linux 上畅玩大量游戏，而不用回到 Windows 了。
 
 ##### Steam
 
-[Steam][81] is a digital distribution platform that allows you to purchase (if required) games. Steam has over 1500 [games for Linux][82]. You can download the Steam client from the Software Center.
+[Steam][81] 是一个数字发行平台，允许你购买游戏（如果必要）。Steam 拥有超过 1500 款 [Linux 游戏][82]。你可以从软件中心下载 Steam 客户端。
 
 ##### PlayOnLinux
 
-[PlayOnLinux][83] allows you to run Windows games on Linux over WINE compatibility layer. Don’t expect too much out of it because not every game will run flawlessly with PlayOnLinux.
+[PlayOnLinux][83] 允许你在 Linux 上通过 WINE 兼容层运行 Windows 游戏。不要对它抱有太高的期望，因为并不是每个游戏都能在 PlayOnLinux 下完美运行。
 
-#### Package Managers [Intermediate to advanced users]
+#### 软件包管理工具 [中级到高级用户]
 
 ![Package Management tools Ubuntu][84]
 
-Ubuntu Software Center is more than enough for an average Ubuntu user’s software needs but you can have more control on it using these applications.
+Ubuntu 软件中心满足普通 Ubuntu 用户的软件需求，但你可以使用以下应用程序对其进行更多的深入操作。
 
 ##### Gdebi
 
-Gedbi is a tiny packagae manager that you can use for installing DEB files. It is faster than the Software Center and it also handles dependency issues.
+Gedbi 是一款小巧的软件包管理器，你可以用它来安装 DEB 文件。它比软件中心更快，而且还能处理依赖问题。
 
 ##### Synaptic
 
-Synaptic was the default GUI package manager for most Linux distributions a decade ago. It still is in some Linux distributions. This powerful package manager is particularly helpful in [finding installed applications and removing them][85].
+十年前，Synaptic 是大多数 Linux 发行版的默认 GUI 软件包管理器。在一些 Linux 发行版中，它仍然是默认的软件包管理器。这个强大的软件包管理器在 [查找已安装的应用程序并删除它们][85] 方面特别有用。
 
-#### Backup and Recovery tools
+#### 备份和恢复工具
 
 ![Backup and data recovery tools for Ubuntu][86]
 
-Backup and recovery tools are must-have software for any system. Let’s see what softwares you must have on Ubuntu.
+任何操作系统都应该有备份和恢复工具。让我们看看 Ubuntu 上有哪些软件。
 
 ##### Timeshift
 
-Timeshift is a tool that allows you to [take a snapshot of your system][87]. This allows you to restore your system to a previous state in case of an unfortunate incident when your system configuration is messed up. Note that it’s not the best tool for your personal data backup though. For that, you can use Ubuntu’s default Deja Dup (also known as Backups) tool.
+Timeshift 是一个帮助你 [对系统进行快照][87] 的工具。这可以让你在系统配置混乱的情况下，在发生麻烦事件时将系统恢复到以前的状态。不过要注意的是，它并不是你个人数据备份的最佳工具。对此，你可以使用Ubuntu 默认的 Deja Dup（也叫做「备份」）。
 
-##### TestDisk [Intermediate Users]
+##### TestDisk [中级用户]
 
-This is another command line tool on this list of best Ubuntu application. [TestDisk][88] allows you to [recover data on Linux][89]. If you accidentally deleted files, there are still chances that you can get it back using TestDisk.
+这是本清单里另一个命令行工具。[TestDisk][88] 可以让你 [恢复 Linux 上的数据][89]。如果你不小心删除了文件，使用 TestDisk 还有机会找回来。
 
-#### System Tweaking and Management Tools
+#### 系统调整和管理工具
 
 ![System Maintenance apps Ubuntu][90]
 
 ##### GNOME/Unity Tweak Tool
 
-These Tweak tools are a must for every Ubuntu user. They allow you to access some advanced system settings. Best of all, you can [change themes in Ubuntu][91] using these tweak tools.
+这些 Tweak 工具是每个 Ubuntu 用户必备的。它们允许你访问一些高级系统设置。最重要的是，你可以使用这些调整工具 [改变 Ubuntu 的主题][91]。
 
 ##### UFW Firewall
 
-[UFW][92] stands for Uncomplicated Firewall and rightly so. UFW has predefined firewall settings for Home, Work and Public networks.
+[UFW][92] 意指着「不复杂的防火墙」，这一点是贴切的。UFW 为家庭、工作和公共网络预先定义了防火墙设置。
 
 ##### Stacer
 
-If you want to free up space on Ubuntu, try Stacer. This graphical tool allows you to [optimize your Ubuntu system][93] by removing unnecessary files and completely uninstalling software. Download Stacer from [its website][94].
+如果你想释放 Ubuntu 的存储空间，可以试试 Stacer。这个图形化工具可以让你通过删除不必要的文件和完全卸载软件来 [优化你的 Ubuntu 系统][93]。可以从 [官网][94] 下载 Stacer。
 
 #### Other Utilities
 
