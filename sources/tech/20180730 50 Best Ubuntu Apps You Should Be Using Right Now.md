@@ -346,21 +346,21 @@ Timeshift 是一个帮助你 [对系统进行快照][87] 的工具。这可以�
 
 ##### UFW Firewall
 
-[UFW][92] 意指着「不复杂的防火墙」，这一点是贴切的。UFW 为家庭、工作和公共网络预先定义了防火墙设置。
+[UFW][92] 意指「不复杂的防火墙」，这一点是贴切的。UFW 为家庭、工作和公共网络预先定义了防火墙设置。
 
 ##### Stacer
 
 如果你想释放 Ubuntu 的存储空间，可以试试 Stacer。这个图形化工具可以让你通过删除不必要的文件和完全卸载软件来 [优化你的 Ubuntu 系统][93]。可以从 [官网][94] 下载 Stacer。
 
-#### Other Utilities
+#### 其他工具
 
 ![Utilities Ubuntu][95]
 
-In the end, I’ll list some of my other favorite Ubuntu apps that I could not put into a certain category.
+最后，我会列一些其他我很喜欢但无法归类的 Ubuntu 应用。
 
 ##### Neofetch
 
-One more command line tool! Neofetch displays your system information such as [Ubuntu version][96], desktop environment, theme, icons, RAM etc info along with [ASCII logo of the distribution][97]. Use this command for installing Neofetch.
+又一个命令行工具！Neofetch 显示你的系统信息，如 [Ubuntu 版本][96]、桌面环境、主题、图标、内存和其他信息，并附有 [发行版的 ASCII logo][97]。使用以下命令安装 Neofetch。
 ```
 sudo apt install neofetch
 
@@ -368,23 +368,23 @@ sudo apt install neofetch
 
 ##### Etcher
 
-Ubuntu has a live USB creator tool installed already but Etcher is a better application for this task. It is also available for Windows and macOS. You can download it [from its website][98].
+Ubuntu 已经带有一个 live USB 创建工具，但 Etcher 能更好地完成这项任务。它同样支持 Windows 和 macOS。你可以 [点击这里][98] 下载Etcher。
 
 ##### gscan2pdf
 
-I use this tiny tool for the sole purpose of [converting images into PDF][99]. You can use it for combining multiple images into one PDF file as well.
+我使用这个小工具的唯一目的是 [将图片转换为 PDF][99]。你也可以用它将多张图片合并成一个 PDF 文件。
 
 ##### Audio Recorder
 
-Another tiny yet essential Ubuntu application for [recording audio on Ubuntu][100]. You can use it to record sound from system microphone, from music player or from any other source.
+另一个小巧而又必不可少的 Ubuntu 应用，用于 [在 Ubuntu 上录制音频][100]。你可以用它来录制来自系统麦克风、音乐播放器或任何其他来源的声音。
 
-### Your suggestions for essential Ubuntu applications?
+### 你对 Ubuntu 关键应用的建议？
 
-I would like to conclude my list of best Ubuntu apps here. I know that you might not need or use all of them but I am certain that you would like most of the software listed here.
+我想在这里结束我的优秀 Ubuntu 应用清单。我知道你可能不需要或使用所有的应用，但我确信你会喜欢这里列出的大部分应用。
 
-Did you find some useful applications that you didn’t know about before? If you would have to suggest your favorite Ubuntu application, which one would it be?
+你是否找到几款以前从未知道的应用呢？如果要你推荐最爱的 Ubuntu 应用，你会选择哪个呢？
 
-In the end, if you find this article useful, please share it on social media, Reddit, Hacker News or other community or forums you visit regularly. This way you help us grow :)
+最后，如果你觉得这篇文章有用，请把它分享到社交媒体、Reddit、Hacker News 或其他你常访问的社区或论坛。这样，你也帮助了我们的成长 :)
 
 --------------------------------------------------------------------------------
 
