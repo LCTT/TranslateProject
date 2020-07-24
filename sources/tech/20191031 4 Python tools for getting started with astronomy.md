@@ -12,34 +12,34 @@
 使用 NumPy、SciPy、Scikit-Image 和 Astropy 探索宇宙
 ![Person looking up at the stars][1]
 
-NumFOCUS 是个非盈利组织，在科学计算与数据科学方面，支持着一套杰出的开源工具集。作为联系 Opensource.com 读者和 NumFOCUS 社区工作的一部分，我们对我们的 [博客][2] 中一些大家喜闻乐见的文章正在进行再版。we are republishing some of the most popular articles from . To learn more about our mission and programs, please visit [numfocus.org][3]. If you're interested in participating in the NumFOCUS community in person, check out a local [PyData event][4] happening near you.
+NumFOCUS 是个非盈利组织，维护着一套科学计算与数据科学方面的杰出开源工具集。作为联系 Opensource.com 读者和 NumFOCUS 社区工作的一部分，我们对我们的 [博客][2] 中一些大家喜闻乐见的文章正在进行再版。如果想了解我们的任务及代码，可以访问 [numfocus.org][3]。如果你有兴趣以个人身份加入 NumFOCUS 社区，可以关注你所在地区的 [PyData 活动][4]。
 
 * * *
 
-### Astronomy with Python
+### 天文学与 Python
 
-Python is a great language for science, and specifically for astronomy. The various packages such as [NumPy][5], [SciPy][6], [Scikit-Image][7] and [Astropy][8] (to name but a few) are all a great testament to the suitability of Python for astronomy, and there are plenty of use cases. [NumPy, Astropy, and SciPy are NumFOCUS fiscally sponsored projects; Scikit-Image is an affiliated project.] Since leaving the field of astronomical research behind more than 10 years ago to start a second career as software developer, I have always been interested in the evolution of these packages. Many of my former colleagues in astronomy used most if not all of these packages for their research work. I have since worked on implementing professional astronomy software packages for instruments for the Very Large Telescope (VLT) in Chile, for example.
+对科学界而言，尤其是对天文学界来说，Python 是一种伟大的语言工具。包括但不限于 [NumPy][5]、[SciPy][6]、[Scikit-Image][7] 和 [Astropy][8] 的很多工具包都是 Python 能很好适用于天文学界的有效验证，而且有大量的成功案例。 [NumPy、Astropy 和 SciPy 是 NumFOCUS 提供资金支持的项目；Scikit-Image 是个隶属项目。] 我在十几前脱离了天文研究领域，成为了软件开发者之后，对前述工具包的演进一直很感兴趣。我的很多前天文界同事在他们的研究中，使用着前面提到工具包中的大部分甚至是全部。以我为例，我也曾为位于智利的超大口径望远镜（ VLT ）上的仪器编写专业天文软件工具包。
 
-It struck me recently that the Python packages have evolved to such an extent that it is now fairly easy for anyone to build [data reduction][9] scripts that can provide high-quality data products. Astronomical data is ubiquitous, and what is more, it is almost all publicly available—you just need to look for it.
+最近令我吃惊的是，Python 工具包竟然演进到如此程度，任何人都可以轻松编写 [数据缩减][9] 脚本，并产生高质量的数据产品。 天文数据易于获取，而且大部分是可以公开使用的，你要做的只是去寻找相关数据。
 
-For example, ESO, which runs the VLT, offers the data for download on their site. Head over to [www.eso.org/UserPortal][10] and create a user name for their portal. If you look for data from the instrument SPHERE you can download a full dataset for any of the nearby stars that have exoplanet or proto-stellar discs. It is a fantastic and exciting project for any Pythonista to reduce that data and make the planets or discs that are deeply hidden in the noise visible.
+比如，负责 VLT 运行的 ESO，直接在他们的网站上提供数据下载服务，只要访问 [www.eso.org/UserPortal][10] 并在首页创建用户就可以享有数据下载服务。如果你需要 SPHERE 数据，可以下载附近任意包含系外行星或者原恒星盘的恒星的全部数据集。对任何 Python 高手而言，通过缩减数据发现深藏于噪声中的行星或者原恒星盘，实在是件欣喜若狂的事。
 
-I encourage you to download the ESO or any other astronomy imaging dataset and go on that adventure. Here are a few tips:
+我很乐于看到你下载 ESO 或其它天文影像数据，开启你的探索历程。这里提供几条建议：
 
-  1. Start off with a good dataset. Have a look at papers about nearby stars with discs or exoplanets and then search, for example: <http://archive.eso.org/wdb/wdb/eso/sphere/query>. Notice that some data on this site is marked as red and some as green. The red data is not publicly available yet — it will say under “release date” when it will be available.
-  2. Read something about the instrument you are using the data from. Try and get a basic understanding of how the data is obtained and what the standard data reduction should look like. All telescopes and instruments have publicly available documents about this.
-  3. You will need to consider the standard problems with astronomical data and correct for them:
-    1. Data comes in FITS files. You will need **pyfits** or **astropy** (which contains pyfits) to read them into **NumPy** arrays. In some cases the data comes in a cube and you should to use **numpy.median **along the z-axis to turn them into 2-D arrays. For some SPHERE data you get two copies of the same piece of sky on the same image (each has a different filter) which you will need to extract using **indexing and slicing.**
-    2. The master dark and bad pixel map. All instruments will have specific images taken as “dark frames” that contain images with the shutter closed (no light at all). Use these to extract a mask of bad pixels using **NumPy masked arrays** for this. This mask of bad pixels will be very important — you need to keep track of it as you process the data to get a clean combined image in the end. In some cases it also helps to subtract this master dark from all scientific raw images.
-    3. Instruments will typically also have a master flat frame. This is an image or series of images taken with a flat uniform light source. You will need to divide all scientific raw images by this (again, using numpy masked array makes this an easy division operation).
-    4. For planet imaging, the fundamental technique to make planets visible against a bright star rely on using a coronagraph and a technique known as angular differential imaging. To that end, you need to identify the optical centre on the images. This is one of the most tricky steps and requires finding some artificial helper images embedded in the images using **skimage.feature.blob_dog**.
-  4. Be patient. It can take a while to understand the data format and how to handle it. Making some plots and histograms of the pixel data can help you to understand it. It is well worth it to be persistent! You will learn a lot about imaging data and processing.
+  1. 起步于高质量的数据。看一些有关包含系外行星或者原恒星盘的较近恒星的论文，然后在 <http://archive.eso.org/wdb/wdb/eso/sphere/query> 之类的网站检索数据。需要注意的是，前述网站上的数据有的标注为红色，有的标注为绿色，标注为红色的数据是尚未公开的，在相应的"发布日期"处会注明数据将来公开的时间。
+  2. 了解一些用于获取你所用数据的仪器的信息。尽量对数据的获取有一个基本的理解，对标准的数据缩减之后应该是什么样子心中有数。所有的望远镜和仪器都有相关文档可公开获取。
+  3. 必须考虑天文数据的标准问题，并予以校正：
+    （ 1 ）数据以 FITS 格式文件保存。需要使用 **pyfits** 或者 **astropy** （包含 pyfits ）读取数据为 **NumPy** array。有些情况下，数据是三维的，需要沿 z 轴使用 **numpy.median** 将数据转换为二维 array。有些 SPHERE 数据在同一幅影像中包含了同一片天空的两份拷贝（各自使用了不同的滤波器），这时候需要使用 **索引** 和 **切片** 将它们分离出来。
+    （ 2 ）全黑图和坏点图。所有仪器都有快门全关（完全无光）状态拍摄的特殊图片，使用 **NumPy 掩膜数组** 从中分离出坏点图。坏点图非常重要，你在合成最终的清晰图像过程中，需要持续跟踪坏点。有些情况下，这还有助于你从原始科学数据中扣除暗背景的操作。
+    （ 3 ）一般情况下，天文仪器还要拍标准响应图。这是对均匀的单色标准光源拍摄的一张或者一组图片。你需要将所有的原始数据除以标准相应之后再做后续处理（同样，使用 Numpy 掩膜数组，这仅仅是一个简单的除法运算）。
+    （ 4 ）对行星影像，为了使行星在明亮恒星背景下变得可见，需要仰仗日冕仪和角差分成像技术。这一步需要识别影像的光学中心，这是比较棘手的环节之一，过程中要使用 **skimage.feature.blob_dog** 从原始影像中寻找一些人工辅助影像作为帮助。
+  4. 要有耐心。理解数据格式并弄清如何操作需要一些时间，绘出像素数据曲线图或者统计图有助于你的理解。贵在坚持，必有收获！你会从中学到很多关于图像数据及其处理的知识。
 
 
 
-Using the tools offered by NumPy, SciPy, Astropy, scikit-image and more in combination, with some patience and persistence, it is possible to analyse the vast amount of available astronomical data to produce some stunning results. And who knows, maybe you will be the first one to find a planet that was previously overlooked! Good luck!
+综合应用 NumPy、SciPy、Astropy、scikit-image 及其它工具，结合耐心和恒心，通过分析大量可用天文数据分析实现重大的发现是非常有可能的。说不定，你会成为某个系外行星的第一发现者呢。祝你好运！
 
-_This article was originally published on the NumFOCUS blog and is republished with permission. It is based on [a talk][11] by [Ole Moeller-Nilsson][12], CTO at Pivigo. If you want to support NumFOCUS, you can donate [here][13] or find your local [PyData event][4] happening around the world._
+_本文基于 Pivigo CTO [Ole Moeller-Nilsson][12] 的一次 [谈话][11]，最初发布于 NumFOCUS 的博客，蒙允再次发布。如果你有意支持 NumFOCUS，可以 [捐赠][13]，也可以参与遍布全球的 [PyData 活动][4] 中你身边的那个。_
 
 --------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ via: https://opensource.com/article/19/10/python-astronomy-open-data
 
 作者：[Gina Helfrich, Ph.D.][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[silentdawn-zz](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
