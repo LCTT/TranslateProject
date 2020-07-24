@@ -7,12 +7,12 @@
 [#]: via: (https://opensource.com/article/19/10/python-astronomy-open-data)
 [#]: author: (Gina Helfrich, Ph.D. https://opensource.com/users/ginahelfrich)
 
-4 Python tools for getting started with astronomy
+开启天文之路的 4 个 Python 工具
 ======
-Explore the universe with NumPy, SciPy, Scikit-Image, and Astropy.
+使用 NumPy、SciPy、Scikit-Image 和 Astropy 探索宇宙
 ![Person looking up at the stars][1]
 
-NumFOCUS is a nonprofit charity that supports amazing open source toolkits for scientific computing and data science. As part of the effort to connect Opensource.com readers with the NumFOCUS community, we are republishing some of the most popular articles from [our blog][2]. To learn more about our mission and programs, please visit [numfocus.org][3]. If you're interested in participating in the NumFOCUS community in person, check out a local [PyData event][4] happening near you.
+NumFOCUS 是个非盈利组织，在科学计算与数据科学方面，支持着一套杰出的开源工具集。作为联系 Opensource.com 读者和 NumFOCUS 社区工作的一部分，我们对我们的 [博客][2] 中一些大家喜闻乐见的文章正在进行再版。we are republishing some of the most popular articles from . To learn more about our mission and programs, please visit [numfocus.org][3]. If you're interested in participating in the NumFOCUS community in person, check out a local [PyData event][4] happening near you.
 
 * * *
 
