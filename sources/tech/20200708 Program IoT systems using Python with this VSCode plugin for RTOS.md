@@ -69,7 +69,7 @@ tux users
 
 
 ```
-`$ sudo usermod --append --groups dialout tux`
+$ sudo usermod --append --groups dialout tux
 ```
 
 Log out or reboot to load your new group permissions.
@@ -118,14 +118,14 @@ MicroPython 插件提供了许多例程和例库，供学习和调用。获取�
 
 
 ```
-`os.remove('file_to_delete')`
+os.remove('file_to_delete')
 ```
 
 删除目录的命令如下：
 
 
 ```
-`os.rmdir('folder_to_delete')`
+os.rmdir('folder_to_delete')
 ```
 
 ### 工程的同步
