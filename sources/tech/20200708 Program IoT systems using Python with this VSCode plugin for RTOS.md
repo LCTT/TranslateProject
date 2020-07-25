@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (silentdawn-zz)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,28 +7,28 @@
 [#]: via: (https://opensource.com/article/20/7/python-rt-thread)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Program IoT systems using Python with this VSCode plugin for RTOS
+使用 VSCode RTOS 插件为物联网系统编写 Python 程序
 ======
-A real-time embedded OS like RTOS makes programming embedded systems
-easier.
+RTOS 之类的实时嵌入式操作系统使嵌入式系统的编程更简单
+
 ![Parts, modules, containers for software][1]
 
-The pervasiveness of the Internet of Things (IoT) means nearly every product, from refrigerators to pocket watches, can connect to a network. For that to happen, all these products must have an embedded computer running a networking stack, and some of these products are almost impossibly small. That's where embedded software comes in: modern technology provides a tiny computer, hard-coded into a hardware chip, without any need for offboard CPU, RAM, or hard drive.
+物联网（ IoT ）无处不在，它意味着几乎所有的产品，从冰箱到口袋手表，都可以连网。为了实现这个目标，每个产品都需要拥有一个嵌入式计算机来运行网络栈，有些产品几乎是小的不可思议。这就是嵌入式软件出现的场景：现代科技打造的非常小的计算机，硬编码到硬件芯片，不需要任何板外处理器、内存或者存储盘。
 
-Traditionally, that meant there was no operating system (OS), but [for many reasons][2], developers find a real-time embedded OS like [RT-Thread][3] makes programming embedded systems much easier.
+就传统视角而言，这种场景意味着没有操作系统可用，但是因为种种 [原因][2]，开发者发现，类似于 RTOS 之类的实时嵌入式操作系统能让嵌入式系统的编程变得非常简单。
 
-The RT-Thread embedded operating system aims to encourage new programmers to get into IoT, but not everyone can hard-code a microchip in C. Luckily, MicroPython is filling that niche by enabling developers to create software in Python that runs on embedded systems. To make it even easier, RT-Thread has a plugin for VSCode and [VSCodium][4] that provides a development environment developers can use to get started with IoT. Some of its features include:
+虽然RT-Thread 嵌入式操作系统致力于鼓励程序员新手进入物联网领域，但并非所有的人都具备使用 C 语言硬编码微芯片的能力。幸运的是，MicroPython 通过让开发者创建运行于嵌入式系统的 Python 代码的方式，逐渐填补了这个鸿沟。为了让整个过程更简单，RT-Thread 有一个可以用于 VSCode 和 [VSCodium][4] 的插件，为开发者提供了物联网方面的开发环境。其部分特性包括：
 
-  * A convenient connection mode, so you can easily connect to your development board over a serial port, over the network, or over USB (if you've used an Arduino, you'll be familiar with the workflow)
-  * Support for uploading files or folders to your development board
-  * Support for MicroPython-based code, with intelligent code completion and linting (syntax checking)
-  * Support for the MicroPython REPL interactive environment
-  * Many code examples and demo programs
-  * Full project synchronization
-  * Fast-running code files stored in memory
-  * Code snippets to run functions
-  * Support for several major MicroPython development boards
-  * Support for and tested on Linux and Windows
+  * 方便的连接方式，可以很容易的通过串口、网络或者 USB 连接到开发板（如果你使用过 Arduino，肯定会很熟悉这个流程）。
+  * 支持上传文件或目录到开发板。
+  * 支持基于 MicroPython 的代码，而且具有智能的代码补充、语法检查功能。
+  * 支持 MicroPython REPL 交互式环境。
+  * 丰富的示例代码和演示程序。
+  * 完整的工程同步功能。
+  * 快速运行内存中的程序代码。
+  * 函数运行的代码片段。
+  * 支持主流的 MicroPython 开发板。
+  * 支持 Linux 和 Windows 操作系统，并经过充分测试。
 
 
 
