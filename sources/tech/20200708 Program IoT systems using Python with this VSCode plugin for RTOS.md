@@ -32,33 +32,32 @@ RTOS 之类的实时嵌入式操作系统使嵌入式系统的编程更简单
 
 
 
-### Requirements
+### 准备
 
-Before getting started, if you're using Windows, you must ensure that your default VSCode terminal is set to [PowerShell][5]. Launch VSCodium and start a terminal from the **Terminal** menu. In the terminal that appears at the bottom of your VSCodium window, select **PowerShell** from the drop-down menu in the top bar.
+在开始之前，如果你使用的是 Windows 操作系统，那么必须保证 VSCode 的默认终端是 [PowerShell][5]。运行 VSCodium，从 **Terminal** 菜单项启动一个终端. 在显示在 VSCodium 窗口底部的终端界面，从下拉菜单顶端选择 **PowerShell**。
+不论你是在 [Windows][6] 还是 Linux 系统下工作，必须保证安装了 Python 3（在 Linux 上，它可能已经安装了，否则可以通过软件库安装它）。
 
-Whether you're [on Windows][6] or Linux, you must have Python 3 installed. (On Linux, it's probably already installed or available in your software repository.)
-
-You should also install the general Python plugin for VSCode from Microsoft. To install it, click the **File** menu and find the **Preferences** submenu. Open the **Extensions** panel from the **Preferences** menu. In **Extensions**, search for Python, and install the Microsoft plugin.
+还要安装的是微软提供的 VSCode Python插件。安装方法是点击 **File** 菜单，找到 **Preferences** 子菜单，从中打开 **Extensions** 面板。在 **Extensions** 中，搜索 Python，找到来自微软的 Python 插件。
 
 ![VSCodium Python plugin][7]
 
 (Seth Kenlon, [CC BY-SA 4.0][8])
 
-Finally, you must have [VSCodium][9] or [VSCode][10] installed.
+当软，在上述操作之前，你要先正确安装 [VSCodium][9] 或 [VSCode][10]。
 
-### Install the plugin
+### 安装插件
 
-Installing the MicroPython development plugin follows the same process as installing the Python plugin. Click the **File** menu, find the **Preferences** submenu, and select **Extensions**.
+安装 MicroPython 开发插件的方法与安装 Python 插件一样，点击 **File** 菜单，找到 **Preferences** 子菜单，选择 **Extensions**。
 
-In **Extensions**, search for **MicroPython**, and install the RT-Thread plugin.
+在 **Extensions** 中，搜索 **MicroPython**，安装 RT-Thread 插件。
 
 ![MicroPython plugin for RT-Thread][11]
 
 (Seth Kenlon, [CC BY-SA 4.0][8])
 
-### Use the plugin
+### 使用插件
 
-Your board must have access to a serial port, which it gets through your group permissions. You probably need to add yourself to this group, because it's not usually set by default. First, verify that you're not already a member of `dialout`:
+你的开发板必须能访问串口，这需要组策略的允许。你可能需要将自己的账户加入该组，通常在默认情况下你的账户可能并不在该组。首先，确认你的账户不在 “dialout”组：
 
 
 ```
@@ -66,7 +65,7 @@ $ groups
 tux users
 ```
 
-In this example, the user `tux` is only a member of `tux` and `users`, so it needs to be added to `dialout`:
+本例中，用户“tux”只是“tux”组和“users”组的成员，所以需要将用户“tux”添加到“dialout”组：
 
 
 ```
@@ -75,69 +74,69 @@ In this example, the user `tux` is only a member of `tux` and `users`, so it nee
 
 Log out or reboot to load your new group permissions.
 
-### Create a MicroPython project
+### 创建 MicroPython 工程
 
-The first step in MicroPython development is to create a MicroPython project to write and run your code. To create a MicroPython project using the plugin, click the **Create MicroPython project** button in the bottom bar (on the left).
+MicroPython 开发的第一步是创建 MicroPython 工程用来编写和运行代码。使用 MicroPython 插件创建工程的方法是，点击左下方的 **Create MicroPython project** 按钮。
 
 ![Create MicroPython project][12]
 
 (Seth Kenlon, [CC BY-SA 4.0][8])
 
-This leads you through a few prompts, letting you choose either an empty project structure or a project containing example code.
+之后会有一些提示，让你选择创建空白工程还是包含例程的工程。
 
-### Connect your dev board
+### 连接到开发板
 
-You can connect from VSCodium to your physical development board by clicking the **Connection** button in the lower-left corner of VSCodium. Select the device you want to connect to in the pop-up list of devices.
+点击 VSCodium 左下方的 **Connection** 按钮，进行 VSCodium 与开发板的连接，在弹出的列表中，选择要连接的物理设备。
 
-### Review sample code
+### 查看例程
 
-The MicroPython plugin offers a lot of sample code and library files you can use and learn from. These are available from new icons, visible when the MicroPython plugin is active, in VSCodium's left button bar. The **Document** icon lists example code files, and the **Folder** icon lists example libraries.
+MicroPython 插件提供了许多例程和例库，供学习和调用。获取例程的过程是，激活 MicroPython 之后，VSCodium 左侧按钮条会出现“新建”快捷图标，点击该图标就可以了。点击 **Document** 快捷图标，会显示例程文件列表，点击 **Folder** 快捷图标，会显示例库列表。
 
 ![MicroPython examples][13]
 
 (Seth Kenlon, [CC BY-SA 4.0][8])
 
-### Run MicroPython files directly on your development board
+### 直接在开发板上运行 MicroPython 文件
 
-You can debug a single file quickly and easily by running code on your board within VSCodium. The shortcut **Alt**+**Q** triggers a special plugin function to upload your current Python file to the memory of your connected development board. Alternatively, you can right-click on your current Python file and select **Run the MicroPython file directly on the device**.
+在 VSCodium 中可以通过在开发板上运行单个程序文件，很方便快捷的进行程序调试。快捷键 **Alt**+**Q** 会触发一个特定的插件，该插件会将当前的 Python 文件上传到开发板内存中。你还可以在当前 Python 文档界面点击右键，然后选择 **Run the MicroPython file directly on the device** 实现同样的功能。
 
 ![Running code on your device][14]
 
 (Seth Kenlon, [CC BY-SA 4.0][8])
 
-If you want to debug a small amount of code without loading files to your board, you can use the code-snippet function. To run selected code in the MicroPython REPL environment, select the snippet you want to run in the editor, and select **Execute the selected MicroPython code on the device** option from the right-click menu (or just press **Alt**+**Q** on your keyboard).
+如果你需要以不上传代码的方式检查一组代码，可以使用“代码片段”功能。要运行 MicroPython REPL 环境中的代码片段，在编辑器中选中要运行的片段，右键菜单中点击 **Execute the selected MicroPython code on the device** （也可以使用 **Alt**+**Q** 快捷键）。
 
-### Load files and folders to your dev board
+### 加载文件和目录到开发板
 
-If you want to load individual files or folders to your development board, there's a handy function for that. First, select the file or folder you want to upload in the project. Next, right-click on one of your selections and choose **Download the file/folder to the device**.
+如果需要加载文件或目录到开发板，有现成的方法可用：选中工程中要加载到开发板的文件或目录，在选中的对象上右键，点击右键菜单中的 **Download the file/folder to the device**。
 
-Note that if there are files or folders with the same name on the development board, the download overwrites the existing ones.
+注意，如果开发板中已有与要加载的文件或目录同名者，加载操作将导致开发板原有的内容被覆盖。
 
-By entering the command `os.listdir()` in REPL, you can check whether the corresponding file or folder has been downloaded successfully. Similarly, you can also use the corresponding command to delete the file or folder in REPL.
+在 REPL 环境中运行“os.listdir()”命令，可以检查文件和目录是否成功加载。当然，也可以通过相应的命令删除 REPL 中的文件或目录。
 
-To remove a file:
+删除文件的命令如下：
 
 
 ```
 `os.remove('file_to_delete')`
 ```
 
-To remove a folder:
+删除目录的命令如下：
 
 
 ```
 `os.rmdir('folder_to_delete')`
 ```
 
-### Project synchronization
+### 工程的同步
 
-Click the **Synchronization** button in the lower-left corner to start the project synchronization function. This feature synchronizes all directory files in the local project to the development board's filesystem. This feature is recommended to be used after the code is debugged, without the need to synchronize the project frequently during debugging.
+点击左下角 **Synchronization** 按钮可以启动工程同步，该操作将把本地工程中所有的文件和目录同步到开发板的文件系统。建议在完成程序调试之后进行该操作，调试过程中不需要频繁进行同步操作。
 
-After the project synchronization completes, the list of files in the device can be seen in the **Device Files List** column.
+工程的同步操作完成后，开发板上的文件列表可以在 **Device Files List** 列看到。
 
-### Try it yourself
+### 放手尝试
 
-RT-Thread released the MicroPython plugin as an open source extension in hopes that it will be useful for new and experienced coders alike. It has many features and leverages others (like code completion and linting) from open source plugins. If you're interested in coding for embedded and IoT devices, there's no easier way to get started.
+RT-Thread 以开源的方式发布 MicroPython 插件，意在为新老开发者提供帮助，它的很多特性，如代码自动补全等，与开源插件之间互有影响和促进。你如果想为嵌入式系统或物联网系统编写软件，这就是最简单的方式，没有之一。
 
 --------------------------------------------------------------------------------
 
@@ -145,7 +144,7 @@ via: https://opensource.com/article/20/7/python-rt-thread
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[silentdawn-zz](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
