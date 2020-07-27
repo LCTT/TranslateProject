@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/20/6/python-passwords)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-有了这个 Python 加密算法，你再也不会忘记密码了
+有了这个 Python 加密算法，你再也不用担心忘记密码了
 ======
 本密码保护算法使用 Python 实现，基于 Shamir 秘密共享算法，可以有效避免黑客窃取和自己不经意忘记引发的风险和不便。
 ![Searching for code][1]
