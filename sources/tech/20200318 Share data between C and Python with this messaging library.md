@@ -25,7 +25,7 @@ ZeroMQ 提供了更简单的进程：
 
 
 
-[Pieter Hintjens][5] 是 ZeroMQ 项目发起者之一，他是个拥有 [有趣视角和作品][6] 非凡人物。
+[Pieter Hintjens][5] 是 ZeroMQ 项目发起者之一，他是个拥有 [有趣视角和作品][6] 的非凡人物。
 
 ### 准备
 
