@@ -14,7 +14,7 @@ ZeroMQ 是一个快速灵活的消息库，用于数据收集和不同语言间�
 
 作为软件工程师，我有多次在要求完成指定任务时感到毛骨悚然的经历。其中一次是要写个接口，用于控制一些新的底层硬件间的对接，接口实现形式分别是 C 和 云底层组件，而后者主要是 Python。
 
-实现的方式之一是 [用 C 写扩展模块][2], which Python supports by design. 快速浏览文档后发现，这需要编写大量的 C 代码。这种做的话，在有些情况下效果还不错，但不是我想要的方式。另一种方式就是将两个任务放在不同的进程中，以使用 [ZeroMQ 消息库][3] 在进程间交换信息的方式实现数据的共享。
+实现的方式之一是 [用 C 写扩展模块][2]，Python 支持 C 扩展的调用。快速浏览文档后发现，这需要编写大量的 C 代码。这样做的话，在有些情况下效果还不错，但不是我想要的方式。另一种方式就是将两个任务放在不同的进程中，以使用 [ZeroMQ 消息库][3] 在进程间交换信息的方式实现数据的共享。
 
 在引入 ZeroMQ 之前，我选择了编写扩展的方式，试图解决这个场景的需求。这种方式不算太差，但非常复杂和费时。现在为了避免那些问题，我细分出一个系统作为独立的进程运行，专门用于交换通过 [通信套接字][4] 发送的消息所承载的数据。这样，不同的编程语言可以共存，每个进程也变简单了，同时也容易调试。
 
@@ -42,23 +42,23 @@ Fedora 系统上的安装方法：
 
 
 ```
-`$ dnf install clang zeromq zeromq-devel python3 python3-zmq`
+$ dnf install clang zeromq zeromq-devel python3 python3-zmq
 ```
 
 Debian 和 Ubuntu 系统上的安装方法：
 
 
 ```
-`$ apt-get install clang libzmq5 libzmq3-dev python3 python3-zmq`
+$ apt-get install clang libzmq5 libzmq3-dev python3 python3-zmq
 ```
 
 如果有问题，参考对应项目的安装指南（上面附有链接）。
 
 ### 编写硬件接口库
 
-因为这里针对的是个假定的场景，本教程虚构了包含两个函数操作库：
+因为这里针对的是个设想的场景，本教程虚构了包含两个函数的操作库：
 
-  * **fancyhw_init()** 用来初始化（假定的）硬件
+  * **fancyhw_init()** 用来初始化（设想的）硬件
   * **fancyhw_read_val()** 用于返回从硬件读取的数据
 
 
@@ -88,7 +88,7 @@ int16_t fancyhw_read_val(void)
 #endif
 ```
 
-这个库可以模拟你要在不同语言实现的组件间交换的数据，有劳随机数发生器了。
+这个库可以模拟你要在不同语言实现的组件间交换的数据，中间有劳随机数发生器。
 
 ### 设计 C 接口
 
@@ -136,7 +136,7 @@ int main(void)
 
 
 ```
-`fancyhw_init(INIT_PARAM);`
+fancyhw_init(INIT_PARAM);
 ```
 
 ZeroMQ 库需要实打实的初始化。首先，定义对象 **context**，它是用来管理全部的套接字的：
@@ -157,7 +157,7 @@ if (!context)
 
 
 ```
-`void *data_socket = zmq_socket(context, ZMQ_PUB);`
+void *data_socket = zmq_socket(context, ZMQ_PUB);
 ```
 
 套接字需要绑定到一个具体的地址，这样客户端就知道要连接哪里了。本例中，使用了 [TCP 传输层][15]（当然也有 [其它选项][16]，但 TCP 是不错的默认选择）：
@@ -411,7 +411,7 @@ int main(void)
 
 
 ```
-`$ clang -std=c99 -I. hw_interface.c -lzmq -o hw_interface`
+$ clang -std=c99 -I. hw_interface.c -lzmq -o hw_interface
 ```
 
 如果没有编译错误，你就可以运行这个接口了。贴心的是，ZeroMQ **PUB** 套接字可以在没有任何应用发送或接受数据的状态下运行，这简化了使用复杂度，因为这样不限制进程启动的次序。
@@ -443,7 +443,7 @@ Read 16 data values
 
 
 ```
-`$ python3 -m pip install zmq`
+$ python3 -m pip install zmq
 ```
 
 另一个就是 [**struct** 库][21]，用于解码二进制数据。这个库是 Python 标准库的一部分，所以不需要使用 **pip** 命令安装。
@@ -506,7 +506,7 @@ with zmq.Context() as context:
 
 
 ```
-`binary_topic, data_buffer = socket.recv().split(b' ', 1)`
+binary_topic, data_buffer = socket.recv().split(b' ', 1)
 ```
 
 #### 解码消息
@@ -534,7 +534,7 @@ print("\tpacket size: {:d}".format(packet_size))
 
 
 ```
-`struct_format = "{:d}h".format(packet_size)`
+struct_format = "{:d}h".format(packet_size)
 ```
 
 将二进制数据串转换为可直接打印的一系列数字：
