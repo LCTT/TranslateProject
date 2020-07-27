@@ -7,64 +7,63 @@
 [#]: via: (https://opensource.com/article/20/3/zeromq-c-python)
 [#]: author: (Cristiano L. Fontana https://opensource.com/users/cristianofontana)
 
-Share data between C and Python with this messaging library
+使用 ZeroMQ 消息库在 C 和 Python 间共享数据
 ======
-ZeroMQ makes for a fast and resilient messaging library to gather data
-and share between multiple languages.
+ZeroMQ 是一个快速灵活的消息库，用于数据收集和不同语言间的数据共享。
 ![Chat via email][1]
 
-I've had moments as a software engineer when I'm asked to do a task that sends shivers down my spine. One such moment was when I had to write an interface between some new hardware infrastructure that requires C and a cloud infrastructure, which is primarily Python.
+作为软件工程师，我有多次在要求完成指定任务时感到毛骨悚然的经历。其中一次是要写个接口，用于控制一些新的底层硬件间的对接，接口实现形式分别是 C 和 云底层组件，而后者主要是 Python。
 
-One strategy could be to [write an extension in C][2], which Python supports by design. A quick glance at the documentation shows this would mean writing a good amount of C. That can be good in some cases, but it's not what I prefer to do. Another strategy is to put the two tasks in separate processes and exchange messages between the two with the [ZeroMQ messaging library][3].
+实现的方式之一是 [用 C 写扩展模块][2], which Python supports by design. 快速浏览文档后发现，这需要编写大量的 C 代码。这种做的话，在有些情况下效果还不错，但不是我想要的方式。另一种方式就是将两个任务放在不同的进程中，以使用 [ZeroMQ 消息库][3] 在进程间交换信息的方式实现数据的共享。
 
-When I experienced this type of scenario before discovering ZeroMQ, I went through the extension-writing path. It was not that bad, but it is very time-consuming and convoluted. Nowadays, to avoid that, I subdivide a system into independent processes that exchange information through messages sent over [communication sockets][4]. With this approach, several programming languages can coexist, and each process is simpler and thus easier to debug.
+在引入 ZeroMQ 之前，我选择了编写扩展的方式，试图解决这个场景的需求。这种方式不算太差，但非常复杂和费时。现在为了避免那些问题，我细分出一个系统作为独立的进程运行，专门用于交换通过 [通信套接字][4] 发送的消息所承载的数据。这样，不同的编程语言可以共存，每个进程也变简单了，同时也容易调试。
 
-ZeroMQ provides an even easier process:
+ZeroMQ 提供了更简单的进程：
 
-  1. Write a small shim in C that reads data from the hardware and sends whatever it finds as a message.
-  2. Write a Python interface between the new and existing infrastructure.
+  1. 编写一小组 C 代码，从硬件读取数据，发送到它能作用到的消息中。
+  2. 使用 Python 编写接口，实现新旧基础组件的对接。
 
 
 
-One of ZeroMQ's project's founders is [Pieter Hintjens][5], a remarkable person with [interesting views and writings][6].
+[Pieter Hintjens][5] 是 ZeroMQ 项目发起者之一，他是个拥有 [有趣视角和作品][6] 非凡人物。
 
-### Prerequisites
+### 准备
 
-For this tutorial, you will need:
+本教程中，需要：
 
-  * A C compiler (e.g., [GCC][7] or [Clang][8])
-  * The [**libzmq** library][9]
+  * 一个 C 编译器（例如 [GCC][7] 或 [Clang][8]）
+  * [**libzmq** 库][9]
   * [Python 3][10]
-  * [ZeroMQ bindings][11] for python
+  * [ZeroMQ 的 Python 封装][11]
 
 
 
-Install them on Fedora with:
+Fedora 系统上的安装方法：
 
 
 ```
 `$ dnf install clang zeromq zeromq-devel python3 python3-zmq`
 ```
 
-For Debian or Ubuntu:
+Debian 和 Ubuntu 系统上的安装方法：
 
 
 ```
 `$ apt-get install clang libzmq5 libzmq3-dev python3 python3-zmq`
 ```
 
-If you run into any issues, refer to each project's installation instructions (which are linked above).
+如果有问题，参考对应项目的安装指南（上面附有链接）。
 
-### Writing the hardware-interfacing library
+### 编写硬件接口库
 
-Since this is a hypothetical scenario, this tutorial will write a fictitious library with two functions:
+因为这里针对的是个假定的场景，本教程虚构了包含两个函数操作库：
 
-  * **fancyhw_init()** to initiate the (hypothetical) hardware
-  * **fancyhw_read_val()** to return a value read from the hardware
+  * **fancyhw_init()** 用来初始化（假定的）硬件
+  * **fancyhw_read_val()** 用于返回从硬件读取的数据
 
 
 
-Save the library's full source code to a file named **libfancyhw.h**:
+将库的完整代码保存到文件 **libfancyhw.h** 中:
 
 
 ```
@@ -89,15 +88,15 @@ int16_t fancyhw_read_val(void)
 #endif
 ```
 
-This library can simulate the data you want to pass between languages, thanks to the random number generator.
+这个库可以模拟你要在不同语言实现的组件间交换的数据，有劳随机数发生器了。
 
-### Designing a C interface
+### 设计 C 接口
 
-The following will go step-by-step through writing the C interface—from including the libraries to managing the data transfer.
+下面从包含管理数据传输的库开始，逐步实现 C 接口。
 
-#### Libraries
+#### 需要的库
 
-Begin by loading the necessary libraries (the purpose of each library is in a comment in the code):
+开始先加载必要的库（每个库的作用见代码注释）：
 
 
 ```
@@ -115,9 +114,9 @@ Begin by loading the necessary libraries (the purpose of each library is in a co
 #include "libfancyhw.h"
 ```
 
-#### Significant parameters
+#### 必要的参数
 
-Define the **main** function and the significant parameters needed for the rest of the program:
+定义 **main** 函数和后续过程中必要的参数：
 
 
 ```
@@ -131,16 +130,16 @@ int main(void)
     ...
 ```
 
-#### Initialization
+#### 初始化
 
-Both libraries need some initialization. The fictitious one needs just one parameter:
+所有的库都需要初始化。虚构的那个只需要一个参数：
 
 
 ```
 `fancyhw_init(INIT_PARAM);`
 ```
 
-The ZeroMQ library needs some real initialization. First, define a **context**—an object that manages all the sockets:
+ZeroMQ 库需要实打实的初始化。首先，定义对象 **context**，它是用来管理全部的套接字的：
 
 
 ```
@@ -154,14 +153,14 @@ if (!context)
 }
 ```
 
-Then define the socket used to deliver data. ZeroMQ supports several types of sockets, each with its application. Use a **publish** socket (also known as **PUB** socket), which can deliver copies of a message to multiple receivers. This approach enables you to attach several receivers that will all get the same messages. If there are no receivers, the messages will be discarded (i.e., they will not be queued). Do this with:
+之后定义用来发送数据的套接字。ZeroMQ 支持若干种套接字，各有其用。使用 **publish** 套接字（也叫 **PUB** 套接字），可以复制消息并分发到多个接收端。这使得你可以让多个接收端接收同一个消息。没有接收者的消息将被丢弃（即不会入消息队列）。用法如下：
 
 
 ```
 `void *data_socket = zmq_socket(context, ZMQ_PUB);`
 ```
 
-The socket must be bound to an address so that the clients know where to connect. In this case, use the [TCP transport layer][15] (there are [other options][16], but TCP is a good default choice):
+套接字需要绑定到一个具体的地址，这样客户端就知道要连接哪里了。本例中，使用了 [TCP 传输层][15]（当然也有 [其它选项][16]，但 TCP 是不错的默认选择）：
 
 
 ```
@@ -175,7 +174,7 @@ if (rb != 0)
 }
 ```
 
-Next, calculate some useful values that you will need later. Note **TOPIC** in the code below; **PUB** sockets need a topic to be associated with the messages they send. Topics can be used by the receivers to filter messages:
+下一步, 计算一些后续要用到的值。 注意下面代码中的 **TOPIC**，因为 **PUB** 套接字发送的消息需要绑定一个 topic。topic 用于供接收者过滤消息：
 
 
 ```
@@ -185,9 +184,9 @@ const size_t envelope_size = topic_size + 1 + PACKET_SIZE * sizeof(int16_t);
 [printf][14]("Topic: %s; topic size: %zu; Envelope size: %zu\n", TOPIC, topic_size, envelope_size);
 ```
 
-#### Sending messages
+#### 发送消息
 
-Start a loop that sends **REPETITIONS** messages:
+启动一个 **重复** 发送消息的循环：
 
 
 ```
@@ -196,7 +195,7 @@ for (unsigned int i = 0; i &lt; REPETITIONS; i++)
     ...
 ```
 
-Before sending a message, fill a buffer of **PACKET_SIZE** values. The library provides signed integers of 16 bits. Since the dimension of an **int** in C is not defined, use an **int** with a specific width:
+发送消息前，先填充一个长度为 **PACKET_SIZE** 的缓冲区。本库提供的是 16 bits 有符号整数。因为 C 语言中 **int** 类型占用空间大小与平台相关，不是确定的值，所以要使用指定宽度的 **int** 变量：
 
 
 ```
@@ -210,7 +209,7 @@ for (unsigned int j = 0; j &lt; PACKET_SIZE; j++)
 [printf][14]("Read %u data values\n", PACKET_SIZE);
 ```
 
-The first step in message preparation and delivery is creating a ZeroMQ message and allocating the memory necessary for your message. This empty message is an envelope to store the data you will ship:
+消息的准备和发送中，第一步是创建 ZeroMQ 消息，为消息分配必要的内存空间。空白的消息是用于封装要发送的数据的：
 
 
 ```
@@ -227,7 +226,7 @@ if (rmi != 0)
 }
 ```
 
-Now that the memory is allocated, store the data in the ZeroMQ message "envelope." The **zmq_msg_data()** function returns a pointer to the beginning of the buffer in the envelope. The first part is the topic, followed by a space, then the binary data. Add whitespace as a separator between the topic and the data. To move along the buffer, you have to play with casts and [pointer arithmetic][18]. (Thank you, C, for making things straightforward.) Do this with:
+现在内存空间已分配，数据保存在 ZeroMQ 消息“envelope”中。函数 **zmq_msg_data()** 返回一个指向封装数据缓存区顶端的指针。第一部分是 topic，之后是一个空格，最后是二进制数。topic 和二进制数据之间的分隔符采用空格字符。需要遍历缓存区的话，使用 cast 和 [指针算法][18]。（感谢 C 语言，让事情变得直截了当。）做法如下：
 
 
 ```
@@ -236,7 +235,7 @@ Now that the memory is allocated, store the data in the ZeroMQ message "envelope
 [memcpy][19]((void*)((char*)zmq_msg_data(&amp;envelope) + 1 + topic_size), buffer, PACKET_SIZE * sizeof(int16_t));
 ```
 
-Send the message through the **data_socket**:
+通过 **data_socket** 发送消息：
 
 
 ```
@@ -251,7 +250,7 @@ if (rs != envelope_size)
 }
 ```
 
-Make sure to dispose of the envelope after you use it:
+使用数据之前要先解取封装：
 
 
 ```
@@ -260,9 +259,9 @@ zmq_msg_close(&amp;envelope);
 [printf][14]("Message sent; i: %u, topic: %s\n", i, TOPIC);
 ```
 
-#### Clean it up
+#### 清场
 
-Because C does not provide [garbage collection][20], you have to tidy up. After you are done sending your messages, close the program with the clean-up needed to release the used memory:
+C 语言不提供 [垃圾收集][20] 功能，用完之后记得要自己扫尾。发送消息之后结束程序之前，需要运行扫尾代码，释放分配的内存:
 
 
 ```
@@ -287,9 +286,9 @@ if (rd != 0)
 return EXIT_SUCCESS;
 ```
 
-#### The entire C program
+#### 完整 C 代码
 
-Save the full interface library below to a local file called **hw_interface.c**:
+保存下面完整的接口代码到本地名为 **hw_interface.c** 的文件：
 
 
 ```
@@ -408,16 +407,16 @@ int main(void)
 }
 ```
 
-Compile using the command:
+用如下命令编译：
 
 
 ```
 `$ clang -std=c99 -I. hw_interface.c -lzmq -o hw_interface`
 ```
 
-If there are no compilation errors, you can run the interface. What's great is that ZeroMQ **PUB** sockets can run without any applications sending or retrieving data. That reduces complexity because there is no obligation in terms of which process needs to start first.
+如果没有编译错误，你就可以运行这个接口了。贴心的是，ZeroMQ **PUB** 套接字可以在没有任何应用发送或接受数据的状态下运行，这简化了使用复杂度，因为这样不限制进程启动的次序。
 
-Run the interface:
+运行该接口：
 
 
 ```
@@ -432,24 +431,24 @@ Read 16 data values
 ...
 ```
 
-The output shows the data being sent through ZeroMQ. Now you need an application to read the data.
+输出显示数据已经通过 ZeroMQ 完成发送，现在要做的是让一个程序去读数据。
 
-### Write a Python data processor
+### 编写 Python 数据处理器
 
-You are now ready to pass the data from C to a Python application.
+现在已经准备好从 C 程序向 Python 应用发送数据了。
 
-#### Libraries
+#### 库
 
-You need two libraries to help transfer data. First, you need ZeroMQ bindings in Python:
+需要两个库帮助实现数据传输。首先是 ZeroMQ 的 Python 封装：
 
 
 ```
 `$ python3 -m pip install zmq`
 ```
 
-The other is the [**struct** library][21], which decodes binary data. It's commonly available with the Python standard library, so there's no need to **pip install** it.
+另一个就是 [**struct** 库][21]，用于解码二进制数据。这个库是 Python 标准库的一部分，所以不需要使用 **pip** 命令安装。
 
-The first part of the Python program imports both of these libraries:
+Python 程序的第一部分是导入这些库：
 
 
 ```
@@ -457,9 +456,9 @@ import zmq
 import struct
 ```
 
-#### Significant parameters
+#### 重要参数
 
-To use ZeroMQ, you must subscribe to the same topic used in the constant **TOPIC** above:
+使用 ZeroMQ 时，只能向常量 **TOPIC** 定义相同的接收端发送消息：
 
 
 ```
@@ -468,9 +467,9 @@ topic = "fancyhw_data".encode('ascii')
 print("Reading messages with topic: {}".format(topic))
 ```
 
-#### Initialization
+#### 初始化
 
-Next, initialize the context and the socket. Use a **subscribe** socket (also known as a **SUB** socket), which is the natural partner of the **PUB** socket. The socket also needs to subscribe to the right topic:
+下一步，初始化上下文和套接字。使用 **subscribe** 套接字（也称为 **SUB** 套接字），它是 **PUB** 套接字的天生好友。这个套接字发送时也需要匹配 topic。
 
 
 ```
@@ -485,9 +484,9 @@ with zmq.Context() as context:
     ...
 ```
 
-#### Receiving messages
+#### 接收消息
 
-Start an infinite loop that waits for new messages to be delivered to the SUB socket. The loop will be closed if you press **Ctrl+C** or if an error occurs:
+启动一个无限循环，等待接收发送到 SUB 套接字的新消息。这个循环会在你按下 **Ctrl+C** 组合键或者内部发生错误时终止：
 
 
 ```
@@ -503,16 +502,16 @@ Start an infinite loop that waits for new messages to be delivered to the SUB so
         socket.close()
 ```
 
-The loop waits for new messages to arrive with the **recv()** method. Then it splits whatever is received at the first space to separate the topic from the content:
+这个循环等待 **recv()** 方法获取的新消息，然后将接收到的内容从第一个空格字符处分割开，从而得到 topic：
 
 
 ```
 `binary_topic, data_buffer = socket.recv().split(b' ', 1)`
 ```
 
-#### Decoding messages
+#### 解码消息
 
-Python does yet not know that the topic is a string, so decode it using the standard ASCII encoding:
+Python 此时尚不知道 topic 是个字符串，使用标准 ASCII 编解码器进行解码：
 
 
 ```
@@ -522,7 +521,7 @@ print("Message {:d}:".format(i))
 print("\ttopic: '{}'".format(topic))
 ```
 
-The next step is to read the binary data using the **struct** library, which can convert shapeless binary blobs to significant values. First, calculate the number of values stored in the packet. This example uses 16-bit signed integers that correspond to an "h" in the **struct** [format][22]:
+下一步就是使用 **struct** 库读取二进制数据，它可以将二进制数据段转换为明确的数值。首先，计算数据包中数值的组数。本例中使用的 16 bit 有符号整数对应的是 **struct** [格式字符][22] 中的“h”：
 
 
 ```
@@ -531,14 +530,14 @@ packet_size = len(data_buffer) // struct.calcsize("h")
 print("\tpacket size: {:d}".format(packet_size))
 ```
 
-By knowing how many values are in the packet, you can define the format by preparing a string with the number of values and their types (e.g., "**16h**"):
+知道数据包中有多少组数据后，就可以通过构建一个包含数据组数和数据类型的字符串，来定义格式了（比如“**16h**”）：
 
 
 ```
 `struct_format = "{:d}h".format(packet_size)`
 ```
 
-Convert that binary blob to a series of numbers that you can immediately print:
+将二进制数据串转换为可直接打印的一系列数字：
 
 
 ```
@@ -547,9 +546,9 @@ data = struct.unpack(struct_format, data_buffer)
 print("\tdata: {}".format(data))
 ```
 
-#### The full Python program
+#### 完整 Python 代码
 
-Here is the complete data receiver in Python:
+下面是 Python 实现的完整的接收器：
 
 
 ```
@@ -598,9 +597,9 @@ with zmq.Context() as context:
         socket.close()
 ```
 
-Save it to a file called **online_analysis.py**. Python does not need to be compiled, so you can run the program immediately.
+将上面的内容保存到名为 **online_analysis.py** 的文件。Python 代码不需要编译，你可以直接运行它。
 
-Here is the output:
+运行输出如下：
 
 
 ```
@@ -618,13 +617,13 @@ Message 1:
 ...
 ```
 
-### Conclusion
+### 小结
 
-This tutorial describes an alternative way of gathering data from C-based hardware interfaces and providing it to Python-based infrastructures. You can take this data and analyze it or pass it off in any number of directions. It employs a messaging library to deliver data between a "gatherer" and an "analyzer" instead of having a monolithic piece of software that does everything.
+本教程介绍了一种新方式，实现从基于 C 的硬件接口收集数据，并分发到基于 Python 的基础组件的功能。借此可以获取数据供后续分析，或者转送到任意数量的接收端去。它采用了一个消息库实现数据在发送者和处理者之间的传送，来取代同样功能规模庞大的软件。
 
-This tutorial also increases what I call "software granularity." In other words, it subdivides the software into smaller units. One of the benefits of this strategy is the possibility of using different programming languages at the same time with minimal interfaces acting as shims between them.
+本教程还引出了我称之为“软件粒度”的概念，换言之，就是将软件细分为更小的部分。这种做法的优点之一就是，使得同时采用不同的编程语言实现最简接口作为不同部分之间沟通的组件成为可能。
 
-In practice, this design allows software engineers to work both more collaboratively and independently. Different teams may work on different steps of the analysis, choosing the tool they prefer. Another benefit is the parallelism that comes for free since all the processes can run in parallel. The [ZeroMQ messaging library][3] is a remarkable piece of software that makes all of this much easier.
+实践中，这种设计使得软件工程师能以更独立、合作更高效的方式做事。不同的团队可以专注于数据分析的不同方面，可以选择自己中意的实现工具。这种做法的另一个优点是实现了零代价的并行，因为所有的进程都可以并行运行。[ZeroMQ 消息库][3] 是个令人赞叹的软件，使用它可以让工作大大简化。
 
 --------------------------------------------------------------------------------
 
@@ -632,7 +631,7 @@ via: https://opensource.com/article/20/3/zeromq-c-python
 
 作者：[Cristiano L. Fontana][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[silentdawn-zz](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
