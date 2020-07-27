@@ -7,23 +7,22 @@
 [#]: via: (https://opensource.com/article/20/6/python-passwords)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-Never forget your password with this Python encryption algorithm
+有了这个 Python 加密算法，你再也不会忘记密码了
 ======
-This unique algorithm using Python and Shamir's Secret Sharing protects
-your master password from hackers and your own forgetfulness.
+本密码保护算法使用 Python 实现，基于 Shamir 秘密共享算法，可以有效避免黑客窃取和自己忘记。
 ![Searching for code][1]
 
-Many of us use password managers to securely store our many unique passwords. A critical part of a password manager is the master password. This password protects all others, and in that way, it is a risk. Anyone who has it can pretend to be you… anywhere! Naturally, you keep your master password hard to guess, commit it to memory, and do all the other things you are [supposed to do][2].
+很多人使用密码管理器来保密存储自己再用的各种密码。密码管理器的关键环节之一是主密码。主密码保护者所有其它密码，这种情况下，主密码本身就是风险所在。任何知道你的主密码的人，都可以在你的密码保护范围内畅行无阻。自然而然的，为了保证主密码的安全性，你会选用很难猜到的密码，牢记在脑子里，还有很多其它你能想到的 [方法][2]。
 
-But what if something happens and you forget it? Maybe you took a vacation to a lovely, far-away island with no technology for a month. After frolicking in the water daily and eating pineapples, you cannot quite remember your password. Maybe it was "long legs travel fast"? Or was it something like "sharp spoons eat quick"? It was definitely clever when you thought of it.
+但是万一主密码泄露了或者忘记了，后果是什么？可能你会去个心仪的没有现代技术覆盖的岛上旅行个把月什么的，在开心戏水之后，想用美味菠萝的时刻，突然记不清自己的密码是什么了。是“山尖一寺一壶酒”？还是“一去二三里，烟村四五家”？反正当时选用的时候感觉精灵的很，现在没有那么精灵了。
 
 ![XKCD comic on password strength][3]
 
 ([XKCD][4], [CC BY-NC 2.5][5])
 
-Of course, you never told a single soul your password. Why, this is literally the first rule of password management. What could you have done differently?
+当然，你不会把自己的主密码告诉其它任何人，因为这是密码管理的首要原则。有没有其它变通的办法，免除这种难以承受的尴尬？
 
-Enter [Shamir's Secret Sharing][6]**,** an algorithm that allows users to divide a secret into parts that can be used only in combination with the other pieces.
+试试 **[Shamir 秘密共享算法][6]**, 一种可以将保密内容进行分块保存，且只能将所有片段拼合才能恢复保密内容的算法。
 
 Let's take a look at Shamir's Secret Sharing in action through a story of ancient times and modern times.
 
