@@ -23,30 +23,42 @@ So, developers aren't able to devote time to high-value work. This creates addit
 ### Baking in security and compliance workflows
 
 How can we solve this issue? One way is to integrate security and compliance workflows into the software development process in four easy steps:
+我们如何解决这个问题呢？一种方式是集安全性和合规性于一身的工作流程，在软件开发过程中分为四个简单的步骤：
 
 #### 1\. Gather your forces
+集合你的力量
 
 Get support from everyone involved. This is an often-forgotten but critical first step. Make sure to consider a wide range of stakeholders, including:
+从每个相关的人员处获取支持,这是经常被遗忘但却是至关重要的第一步。确保考虑到了所有范围内的相关人员，包括：
 
   * DevOps
   * Developers
   * InfoSec
   * Legal/compliance
   * IT security
+  *开发运维
+  *开发人员
+  *信息安全
+  *合法/合规
+  *IT安全
 
 
 
 Stakeholders want to understand the business benefits, so make a solid case for eliminating the security and compliance checkpoints after software builds. You can consider any (or all) of the following in building your business case: time savings, opportunity cost, and developer productivity. By integrating security and compliance workflows into the development process, you also avoid retrofitting of languages.
+利益相关者想要理解商业利益，为消除软件构建后的安全和合规的检查站，因此要做一个坚固的外壳。你可以在构建你的商业案例中考虑以下几点种的任何一个（或者全部）：节省时间，机会成本和开发人员生产力。在开发处理中，你也可以通过集中安全和和合规的工作流程避免语言的改造。
 
 #### 2\. Find trustworthy sources
+寻找值得信赖的资源
 
 Next, choose the trusted sources that can be used, along with their license and security requirements. Consider including information such as:
+接下来，选择可以使用的,有着他们自己许可证和安全要求的可靠资源。考虑到如下相关信息：
 
   * Restrictions on usage based on environment or application type and version controls per language
   * Which open source components are allowable, e.g., specific packages
   * Which licenses can be used in which types of environments (e.g., research vs. production)
   * The definition of security levels, acceptable vulnerability risk levels, what risk levels trigger an action, what that action would be, and who would be responsible for its implementation
 
+*限制用法基于环境或应用类型和版本
 
 
 #### 3\. Incorporate security and compliance from day one
