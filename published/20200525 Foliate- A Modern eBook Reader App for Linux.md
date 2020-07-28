@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12462-1.html)
 [#]: subject: (Foliate: A Modern eBook Reader App for Linux)
 [#]: via: (https://itsfoss.com/foliate-ebook-viewer/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -12,9 +12,11 @@ Foliate：适用于 Linux 的现代电子书阅读器应用
 
 > Foliate 是一款简洁、优雅的开源电子书阅读器，可在 Linux 桌面上提供类似 Kindle 的阅读体验。
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202007/28/230931vpsyu25yua8855u3.jpg)
 
 虽然我们已经有了一个 [Linux 最佳电子书阅读器][2]的列表，但最近我遇到了另一个 Linux 电子书阅读器。它叫 [Foliate][3]。
+
+![][1]
 
 Foliate 是一个现代的 GTK 电子书查看器，它有许多基本功能。如果你拥有亚马逊 Kindle 或其他电子书阅读器，那么你可能会想念那种在桌面上阅读的体验。
 
