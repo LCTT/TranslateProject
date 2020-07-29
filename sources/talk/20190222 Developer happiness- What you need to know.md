@@ -62,8 +62,10 @@ Next, choose the trusted sources that can be used, along with their license and 
 
 
 #### 3\. Incorporate security and compliance from day one
+从第一天开始合并安全和合规性
 
 The upshot of incorporating security and compliance workflows is that it ultimately bakes security and compliance into the first line of code. It eliminates the drag of corporate policy because you're coding to spec versus having to fix things after the fact. But to do this, consider mechanisms for automatically scanning code as it's being built, along with using agentless monitoring of your runtime code. You're freeing up your time, and you'll also be able to programmatically enforce policies to ensure compliance across your entire organization.
+合并安全和合规工作流程的结果是最终它被烤成代码中的第一行安全和合规。它消除了合并协议的拖拽因为你被编码成
 
 New vulnerabilities arise, and new patches and versions become available. Consequently, security and compliance need to be considered when deploying code into production and also when running code. You need to know what, if any, code is at risk and where that code is running. So, the process for deploying and running code should include monitoring, reporting, and updating code in production.
 
