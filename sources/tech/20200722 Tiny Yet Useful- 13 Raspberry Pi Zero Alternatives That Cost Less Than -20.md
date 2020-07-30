@@ -7,59 +7,59 @@
 [#]: via: (https://itsfoss.com/raspberry-pi-zero-alternatives/)
 [#]: author: (Chinmay https://itsfoss.com/author/chinmay/)
 
-Tiny Yet Useful: 13 Raspberry Pi Zero Alternatives That Cost Less Than $20
+个头小本事大：13 种 20 美元以下的树莓派 Zero 替代品
 ======
 
-The [Raspberry Pi Zero][1] and the [Raspberry Pi Zero W][2] were added to the line up of Raspberry Pi’s in the last few years. These ultra-small form-factor SBC’s have been a big hit and continue to be a part of [Raspberry Pi projects][3] from the maker and DIY communities.
+最近两年，[树莓派 Zero][1] 和 [树莓派 Zero W][2] 作为新成员出现在树莓派产品线中。从制造者和 DIY 社区的角度，这些超小型的单板计算机带来了巨大震撼，而且作为 [树莓派计划][3] 的一部分将持续相当一段时间。
 
-Due to the smaller form factor and the prices these boards are targeting, they have had to cut down on many features like a dedicated Ethernet port, slower processor (compared to their full-fledged cousins).
+为了实现更小尺寸和有效控制价位，他们不得不在许多特性上做出让步，如放弃专用网口、采用更慢的处理器等（与其对应的全功能版相比）。
 
-In an earlier article, we listed the [best alternatives to Raspberry Pi][4]. In this one, I’ll list some alternatives to Raspberry Pi Zero and Zero W.
+早先的一篇文章中，我们罗列了 [树莓派的最佳替代品][4]。这里，我将给出树莓派 Zero 和树莓派 Zero W 的一些替代选项。
 
-Preview | Product | Price |
+预览图 | 产品 | 价格 |
 ---|---|---|---
 ![CanaKit Raspberry Pi Zero W \(Wireless\) Complete Starter Kit - 16 GB Edition][5] ![CanaKit Raspberry Pi Zero W \(Wireless\) Complete Starter Kit - 16 GB Edition][5] | [CanaKit Raspberry Pi Zero W (Wireless) Complete Starter Kit - 16 GB Edition][6] | $34.99[][7] | [Buy on Amazon][8]
 
-### Alternative to Raspberry Pi Zero: Tiny single board computers for IoT and Embedded Projects
+### 树莓派 Zero 替代品：应用于物联网和嵌入式项目的超小单板计算机
 
 ![][9]
 
-We have great alternatives with variety of feature sets for different projects, thanks to open source designs and open source software stacks. All the boards in this round up run embedded Linux in various flavors.
+受益于开源设计和开源软件栈，在满足各式项目需求的过程中，我们都有大量的各样特性的现成产品可用。所有这些板子运行的都是嵌入式 Linux 的各种变体。
 
-Even though the Raspberry Pi Zero was released at $5 and the Zero W at $10, it’s often very hard to find them at those prices even in US. Outside US they usually cost around $12 – $20 .
+尽管树莓派 Zero 和树莓派 Zero W 发布价格分别是 5 美元和 10 美元，但即使是在美国境内，也很难以发布价买到成品。在美国之外，更是要花 12 和 20 美元才有可能买到。
 
-Keeping that in mind let’s take a look at some of the alternatives for the Raspberry Pi Zero boards for under $20.
+先记着这些，然后看看一些 20 美元以下的树莓派 Zero 替代品。
 
-#### 1\. Banana Pi BPI M2 Zero
+#### 1\. 香蕉派 BPI M2 Zero
 
 ![][10]
 
-The Banana Pi M2 Zero at **$18** is has the same layout as a Raspberry Pi Zero W. It looks like a clone of the Pi Zero W but other than the form factor it is anything but a clone. It has a faster Allwinner H2+ SOC at its heart and Ethernet can be added externally . It can also run a variety of Linux based operating systems.
+香蕉派 M2 Zero 售价 **$18**，与树莓派 Zero W 拥有相同的布局。它看起来像是树莓派 Zero W 的复制品，但也仅仅是外形像而已。它使用的是更快的全志 H2+ SOC 处理器，而且可以外挂网络模块。它还可以运行多种基于 Linux 的操作系统。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner H2+ Quad-core Cortex-A7 H265/HEVC 1080P with Mali400MP2 for the GPU
-  * 512M DDR3(shared with GPU)
-  * 40 Pins Header,compatible with Raspberry Pi 3
-  * WiFi (AP6212) &amp; Bluetooth onboard. Extra antenna connector
-  * A CSI input connector Camera
-  * Power and Reset Button
-  * Mini HDMI Output
+  * 全志 H2+ 四核 Cortex-A7 处理器，具有 H265/HEVC 1080P 能力的 Mali400MP2 GPU
+  * 512M DDR3 内存（与 GPU 共享）
+  * 40 针接口，与树莓派 3 兼容
+  * 板载 WiFi (AP6212) 、蓝牙和外部天线连接口
+  * CSI 摄像头接口
+  * 电源及复位按钮
+  * Mini HDMI 视频输出
 
 
 
-You can get more information from the [Banana Pi Wiki][11] and pick one up from [here][12].
+详情可参阅 [Banana Pi Wiki][11]，也可以从 [此处][12]选择。
 
-#### 2\. Banana Pi BPI-M2 Magic (BPi-M2M)
+#### 2\. 香蕉派 BPI-M2 Magic (BPi-M2M)
 
 ![][13]
 
-There are two variants of this board the one without the eMMC flash onboard costs **$20**. It is another tiny SBC with quite a lot of processing power for its size. Off the top of my head this board is a good fit for a touch control panel and dashboard for IoT and home automation. The on-board battery management system is quite attractive.
+这个型号有 2 个变体，无板载 eMMC 闪存的标价 **20美元**。这是相对其尺寸而言拥有更大处理能力的小型单板计算机。我觉得这毫无疑问是制作物联网和自动家居中作为触控面板和显示面板的很好的选择。其板载电源管理系统也很有吸引力。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner A33/R16 Quad Core ARM Cortex-A7, MALI 400 MP2 GPU
-  * WiFi 802.11 b/g/n 2.4GHz (AP6212) &amp; BT v4.0 with BLE
+  * 全志 A33/R16 四核 ARM Cortex-A7 处理器，MALI 400 MP2 GPU
+  * 板载 802.11 b/g/n 2.4GHz (AP6212) WiFi，蓝牙4.0 with BLE
   * 512MB DDR3 (shared with GPU)
   * MIPI Display Serial Interface (DSI) interface(4 data lanes)
   * A CSI input connector Camera, video capture up-to 1080p at 30fps
