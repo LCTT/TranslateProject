@@ -16,7 +16,7 @@
 
 早先的一篇文章中，我们罗列了 [树莓派的最佳替代品][4]。这里，我将给出树莓派 Zero 和树莓派 Zero W 的一些替代选项。
 
-预览图 | 产品 | 价格 |
+预览 | 产品 | 价格 |
 ---|---|---|---
 ![CanaKit Raspberry Pi Zero W \(Wireless\) Complete Starter Kit - 16 GB Edition][5] ![CanaKit Raspberry Pi Zero W \(Wireless\) Complete Starter Kit - 16 GB Edition][5] | [CanaKit Raspberry Pi Zero W (Wireless) Complete Starter Kit - 16 GB Edition][6] | $34.99[][7] | [Buy on Amazon][8]
 
@@ -48,7 +48,7 @@
 
 
 
-详情可参阅 [Banana Pi Wiki][11]，也可以从 [此处][12]选择。
+详情可参阅 [Banana Pi Wiki][11]，可从 [此处][12] 购买。
 
 #### 2\. 香蕉派 BPI-M2 Magic (BPi-M2M)
 
@@ -61,114 +61,114 @@
   * 全志 A33/R16 四核 ARM Cortex-A7 处理器，MALI 400 MP2 GPU
   * 板载 802.11 b/g/n 2.4GHz (AP6212) WiFi，蓝牙4.0 with BLE
   * 512MB DDR3 (shared with GPU)
-  * MIPI Display Serial Interface (DSI) interface(4 data lanes)
-  * A CSI input connector Camera, video capture up-to 1080p at 30fps
-  * Onboard microphone and battery management
-  * No HDMI output
+  * MIPI 串行显示接口 (DSI) (4 数据通道)
+  * CSI 摄像头输入接口，最大分辨率 1080p 时可达 30 帧/秒
+  * 板载麦克和电池管理
+  * 无 HDMI 输出
 
 
 
-You can get more information from the [Banana Pi Wiki][14] and pick one up from [here][15].
+详情可参阅 [Banana Pi Wiki][14]，可从 [此处][15] 购买。
 
-#### 3\. Banana Pi BPI-P2 Maker
+#### 3\. 香蕉派 BPI-P2 Maker
 
 ![][16]
 
-This board at **$13** (**$19** with POE module) is one of the smallest SBC’s with on board Ethernet and support for POE(power over ethernet). With the same Allwinner H2+ SOC as the M2 zero, this is quite an interesting board.It has an onboard eMMC storage of 8Gb and a camera interface, with POE you can convert this into a DIY security camera and also use the powerful processor for basic ML.
+此板售价 **13 美元**（带有 POE 模块的版本售价 **19 美元**），是带有板载网络模块及支持网口供电（POE）的最小的单板计算机之一。和香蕉派 M2 Zero 一样，使用的是全志 H2+ SOC 处理器，是块非常有趣的板子。它具有板载 8 GB eMMC 存储空间及摄像头接口，同时具有 POE 功能，可用于 DIY 监控摄像，也可以作为基本的机器学习处理器使用。
 
-**Key Specifications**
+**主要参数**
 
-  * CPU: Allwinner H2+, Quad-core Cortex-A7
-  * 512MB DDR 3 SDRAM.
-  * WiFi (AP6212) &amp; Bluetooth onboard.
-  * 8G eMMC flash onboard
-  * 100M LAN
+  * 处理器：全志 H2+，四核，Cortex-A7 架构
+  * 512MB DDR 3 同步动态随机存取内存
+  * 板载 WiFi (AP6212) 和蓝牙
+  * 板载 8G eMMC 闪存
+  * 100M 网络
   * Mini HDMI
-  * CSI Camera Interface
-  * IEEE 802.3af PoE standard PoE module support
+  * CSI 摄像头接口
+  * 具有 POE 模块，支持 IEEE 802.3af PoE 标准
 
 
 
-You can get more information from the [Banana Pi Wiki][17] and pick one up from [here][18].
+详情可参阅 [Banana Pi Wiki][17]，可从 [此处][18] 购买。
 
-#### 4\. Orange Pi Zero LTS
+#### 4\. 桔子派 Zero LTS
 
 ![][19]
 
-At **$11.49** (**$9.49** for the 256 MB version) this is the cheapest and the smallest board with onboard Ethernet and POE functionality. It has the ever common Alwinner H2+ at its heart and a solid expansion options via the GPIO and the 13 pin functional header.
+当前支持板载网络及 POE 的最小且最便宜的单板计算机，售价仅为 **11.49 美元**（ 256 MB 内存版本 售价 **9.49 美元**）。其采用非常常见的全志 H2+ 处理器，具有可通过通用输入输出端设定的硬扩展选项，还有一个 13 脚的外接功能端口。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner H2+ Quad-core Cortex-A7 H.265/HEVC 1080P
+  * 全志 H2+ 四核 Cortex-A7 架构处理器，视频支持 H.265/HEVC 1080P
   * Mali400MP2 GPU @600MHz
-  * 256MB/512MB DDR3 SDRAM(Share with GPU)(256MB version is Standard version)
-  * 10/100M Ethernet RJ45 POE is default off
-  * WiFi with XR819, IEEE 802.11 b/g/n
-  * 26 Pin GPIO Header
-  * 13 Pins Header, with 2x USB, IR pin, AUDIO(MIC, AV)
+  * 256MB/512MB DDR3 SDRAM（与 GPU 共用）（256 MB 版为标准版）
+  * 10/100M 自适应网络，RJ45 网口，POE 功能默认关闭
+  * WiFi 使用 XR819 方案，支持 IEEE 802.11 b/g/n
+  * 26 脚 GPIO 连接头
+  * 13 脚硬扩展功能连接头，包含 2 路 USB、红外线接口和声音端口（MIC、AV）
 
 
 
-You can get more information from their [official page][20] and pick one up from Amazon.
+详情可参阅 [官方网站][20]，可从亚马逊购买。
 
-Preview | Product | Price |
+预览 | 产品 | 价格 |
 ---|---|---|---
 ![Orange Pi Zero Single Board Computer Quad Core Open-Source Development Board 512MB with WiFi Antenna][21] ![Orange Pi Zero Single Board Computer Quad Core Open-Source Development Board 512MB with WiFi Antenna][21] | [Orange Pi Zero Single Board Computer Quad Core Open-Source Development Board 512MB with WiFi Antenna][22] | $11.99 | [Buy on Amazon][23]
 
-#### 5\. Orange Pi i96
+#### 5\. 桔子派 i96
 
 ![][24]
 
-At **$8.8** this board is smallest one yet at 6cm x 3cm. It uses the [RDA8810PL SOC][25] meant for a fairly advanced feature phone. The board is suited for camera applications(according to the manufacturer) can capture upto 1080p at 30fps. It has a fairy good IO for the price.
+尺寸仅有 6 cm × 3 cm，个头最小的型号之一，售价 **8.8 美元**。该板使用 [RDA8810PL 处理器][25]，可作为相当先进的功能手机，适合摄像应用（有处理器厂商背书），最高可以 30 帧/秒的速率采集 1080p 分辨率的图像。在同等价位产品中，输入输出功能出色。
 
-**Key Specifications**
+**主要参数**
 
-  * RDA8810PL ARM Cortex-A5 32bit single core processor
-  * Vivante’s GC860 GPU
-  * Integrated 256MB LPDDR2 SDRAM
-  * WiFi + BT using the RDA5991
-  * CSI Camera Input
-  * 40 pin GPIO header
+  * RDA8810PL ARM Cortex-A5 32 位单核处理器
+  * Vivante 出品 GC860 GPU
+  * 集成 256MB LPDDR2 SDRAM
+  * RDA5991 方案的 WiFi 和蓝牙
+  * CSI 摄像头输入接口
+  * 40 脚 GPIO 头
 
 
 
-You can get more information from their [official page][26] and pick one up from [here][27].
+详情可参阅 [官方网站][26]，可从 [此处][27] 购买。
 
-#### 6\. Orange Pi PC
+#### 6\. 桔子派 PC
 
 ![][28]
 
-This board packs in a lot of goodies for **$15**. It’s one of the very few boards which offer 1GB of RAM at such a price point. It uses the Allwinner H3 SOC and can decode 4K HEVC/H.265 video. It has an HDMI port with support for HDCP , CEC as well. This SBC can make a good media box with the right software. It even has onboard IR Receiver and a Microphone.
+该板售价 **15 美元**，继承了很多功能。在同等价位板子中少有的集成了 1 GB 内存的型号之一。采用全志 H3 处理器，可解码 4K HEVC/H.265 视频。具有 HDMI 输出口并支持 HDCP 和 CEC。该单板计算机可以通过安装软件成为一个很好用的媒体盒子。它竟然还配备了板载红外接收器和麦克。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner H3 Quad-core Cortex-A7 , 1.6GHz
-  * 1GB DDR3 (shared with GPU)
-  * HDMI with support for 4K video
-  * CSI Camera interface and onboard microphone
-  * SD Card slot
-  * IR Receiver
-  * 3.5mm Audio Jack
-  * Ethernet
-  * No WiFi/Bluetooth onboard
+  * 全志 H3 四核 Cortex-A7 架构处理器，主频 1.6 GHz
+  * 1GB DDR3 内存（ GPU 共享）
+  * 支持 4K 输出的 HDMI
+  * CSI 摄像头接口，板载麦克
+  * SD 卡槽
+  * IR 接收器
+  * 3.5mm 音频接口
+  * 网口
+  * 板上无 WiFi 和蓝牙
 
 
 
-There is also a cut down version of the Orange Pi PC powered by the same SOC but with less RAM.
+桔子派 PC 还有一种减配版，使用的是同样的处理器，只是内存容量要小。
 
-You can get more information from their [official page][29] and pick one up from [here][30].
+详情可参阅 [官方网站][29]，可从 [此处][30] 购买。
 
-#### 7\. Orange Pi One &amp; Orange Pi Lite
+#### 7\. 桔子派 One 和桔子派 Lite
 
-These two boards are also powered by the Alwinner H3 SoC used in the Orange Pi PC. But these come with 512MB of RAM instead of the 1GB offered by the Orange Pi PC.
+这两种板子与桔子派 PC 一样，使用的是全志 H3 处理器，但配备的是 512MB 内存。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner H3 Quad Core
-  * HDMI with 4K support
-  * SD Card slot
-  * 512 MB of DDR3 RAM
-  * CSI Camera Interface
+  * 全志 H3 四核处理器
+  * HDMI 输出，支持 4K 高清
+  * SD 卡槽
+  * 512 MB DDR3 内存
+  * CSI 摄像头接口
 
 
 
@@ -176,24 +176,24 @@ These two boards are also powered by the Alwinner H3 SoC used in the Orange Pi P
 
 ![Orange Pi One][32]
 
-The Orange Pi Lite comes in at **$12**, it does not feature an on-board Ethernet and offers WiFi instead. It also has onboard microphone and IR receiver. You can get more info from their [official page][33] and buy one from [here][34].
+桔子派 Lite 售价 **12 美元**，不支持板载有线网络，但提供了 WiFi 联网功能。其具有板载麦克和红外接收器。详情可参阅 [官方网站][33]，可从 [此处][34] 购买。
 
-The Orange Pi One on comes in at **$11** and features on-board Ethernet for wired networking and does not offer any WiFi support. You can get more info from their [official page][35] and buy one from [here][36].
+桔子派 One 售价 **11 美元**，具有板载有线网络，但不支持 WiFi。详情可参阅 [官方网站][35]，可从 [此处][36] 购买。
 
-Before we finish up with the Orange Pi boards, I do want to quickly mention a couple more boards they offer for custom applications.
+在桔子派相关内容的最后，我想简单提一下他们提供的几种适合自定义应用的板子。
 
-  * Orange Pi R1 – This is a tiny board with dual Ethernet ports, you can use it to build a network device.
-  * Orange Pi 2G IOT &amp; Orange Pi 3G IOT- These boards feature 2G &amp; 3G cellular connectivity for IoT Applications.
+  * 桔子派 R1 – 具有双有线网口的小板子，可用于构建网络设备。
+  * Orange Pi 2G IOT 和 Orange Pi 3G IOT - 这些板子分别提供了 2G 和 3G 蜂窝网络连接能力，适合作为物联网设备。
 
 
 
-These boards also cost less than **$20** and you can check them out on their [official website][37].
+这些板子都不超过 **20 美元**，详情可参阅 [官方网站][37]。
 
 #### 8\. NanoPi Neo LTS
 
 ![][38]
 
-Starting at **$9**.**99**, this board is very simple and tiny(4cm x 4cm), a similar form factor as the Orange Pi Zero. Unlike the Orange Pi Zero it is powered by the more powerful Allwinner H3 SoC and upto 512MB of RAM. It does not feature any onboard WiFi/BT chipset but you can add one via the USB port. This is a really good board to run headless Linux servers, DNS filters like Pi-Hole and it’ll make a really good edge device for any IoT Applications. Using the GPIO you can expand the functionality to match your needs.
+起步价 **9.99 美元**，该板非常袖珍（ 4 cm x 4 cm），与桔子派 Zero 规格相似。不同的是，它使用的是更为强悍的全志 H3 处理器和高达 512MB 的内存。虽然无任何板载 WiFi 和蓝牙芯片，但可以通过 USB 接口外接相关器件获得相应功能。该板非常适合作为类似 Pi-Hole 的无显示器的 Linux 服务器、DNS 过滤器运行，同时也很适合作为物联网应用的边缘器件使用。通过 GPIO 可以扩展出你需要的很多功能。
 
 **Key Specifications**
 
