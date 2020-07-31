@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12473-1.html)
 [#]: subject: (Defining cloud native, expanding the ecosystem, and more industry trends)
 [#]: via: (https://opensource.com/article/20/7/cloud-native-expanding-and-more-industry-trends)
 [#]: author: (Tim Hildred https://opensource.com/users/thildred)
@@ -12,7 +12,7 @@
 
 > 每周关注开源社区和行业趋势。
 
-![Person standing in front of a giant computer screen with numbers, data][1]
+![](https://img.linux.net.cn/data/attachment/album/202007/31/235751f5zd9l3rejd2tjss.jpg)
 
 我在一家采用开源软件开发模型的企业软件公司任高级产品营销经理，我的一部分职责是为产品营销人员、经理和其他相关人定期发布有关开源社区、市场和业界发展趋势的更新。以下是该更新中我和他们最喜欢的几篇文章。
 
