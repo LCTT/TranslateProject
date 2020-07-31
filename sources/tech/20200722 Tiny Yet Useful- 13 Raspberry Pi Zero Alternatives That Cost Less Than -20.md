@@ -195,17 +195,17 @@
 
 起步价 **9.99 美元**，该板非常袖珍（ 4 cm x 4 cm），与桔子派 Zero 规格相似。不同的是，它使用的是更为强悍的全志 H3 处理器和高达 512MB 的内存。虽然无任何板载 WiFi 和蓝牙芯片，但可以通过 USB 接口外接相关器件获得相应功能。该板非常适合作为类似 Pi-Hole 的无显示器的 Linux 服务器、DNS 过滤器运行，同时也很适合作为物联网应用的边缘器件使用。通过 GPIO 可以扩展出你需要的很多功能。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner H3 Quad Core Cortex A7 upto 1.2GHz
-  * Upto 512 MB of RAM
-  * Micro SD slot (upto 128GB)
-  * 10/100 Ethernet
-  * Additional interfaces via the abundant GPIO
+  * 全志 H3 四核处理器，Cortex A7 内核，主频 1.2 GHz
+  * 512 MB 内存
+  * Micro SD 卡槽（最高支持 128 GB）
+  * 10/100 Mbps 网口
+  * 冗余 GPIO 脚可实现其它所需功能
 
 
 
-You can get more information and also purchase them from their [official page][39] .
+可从 [官方网站][39] 了解详情及购买。
 
 ![][40]
 
@@ -296,28 +296,28 @@ You can pick one up as bare bones module for **$13** or various kits from their 
 
 ![][55]
 
-The VoCore2 is definitely the smallest of the bunch, the bare-bones module is only 1″x1″ in size and costs **$17.99**. The tiny size makes it easy to embed in different applications and allows selective expansion of features based on the need. It is powered by the MediaTek MT7628 which was specially designed for low to mid-range routers. The manufacturer claims that they’ll keep up the production till 2025 which is really good.
+VoCore2 肯定是类似产品中最小的一种，极简版尺寸只有 1 英寸见方，售价 **17.99 美元**。小巧的尺寸使得其能方便的嵌入到不同的应用场合，而且允许根据需要扩充不同的特性。该板使用过的是联发科针对中低端路由器的处理器 MT7628 处理器。生产商声明该型号板子将持续供应至 2025 年，这是个不错的消息。
 
-**Key Specifications**
+**主要参数**
 
-  * MediaTek MT7628, 580 MHz, MIPS 24K
-  * 128MB RAM, DDR2 166MHz
-  * Ethernet – 1 port/5 ports, up to 100Mbps
-  * Wireless – 802.11n, 2T2R, speed up to 300Mbps
-  * Storage – 16M NOR on board, support SDXC up to 2TB
-  * One on board U.FL slot (Antenna Connector)
+  * 联发科 MT7628 处理器，主频 580 MHz，MIPS 24K
+  * 128MB DDR2 内存, 内存刷新率 166 MHz
+  * 1 或 5 网口，100 Mbps 网络
+  * 无线网，支持 802.11n，双收双发，网速最高 300Mbps
+  * 板载 16M NOR 存储器，支持最大 2TB SDXC 卡
+  * 一个板载 U.FL 槽（天线接口）
 
 
 
-You can get more information about the board from [here][56] and pick one up from their [official website][57].
+你可以从 [此处][56] 了解更多细节，可以从 [官方网站][57] 下单购买。
 
-**W**r**apping up**
+**结束语**
 
-It’s undeniable that there are all kinds of SBC’s available in various form factors and feature sets for a wide variety of use cases. On top of that most of these are open source designs and run on open source software. An absolute wonderland for a hardcore tinkerer.
+无可否认，不同规格和特性的各种单板计算机可以满足千变万化的使用需求。另外，绝大部分此类产品都基于开源设计，运行着开源软件。这绝对是硬核玩家不可多得的乐园。
 
-With COVID-19 hanging around it might be a little tough to get your hands on these boards. Let’s hope things get better soon!
+由于新冠病毒的肆虐，要上手这些板子可能要稍费周折，期待情况能尽快好转！
 
-If you guys know of any other interesting alternatives for the Raspberry Pi Zero and Zero W put them in the comments below and we’ll check them out.
+如果各位知道树莓派 Zero 和树莓派 Zero W 的其它有趣的替代型号，请留言。我们根据情况检查充实。
 
 --------------------------------------------------------------------------------
 
