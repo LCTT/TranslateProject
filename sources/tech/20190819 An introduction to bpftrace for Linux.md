@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (jrglinux)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
