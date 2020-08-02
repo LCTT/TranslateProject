@@ -18,7 +18,6 @@
 
 结果是开发人员不得不投入更多的精力在非编码的活动上，例如在构建软件和语言之后检查软件的安全性和合规性标准。而且由于公司政策的原因，他们无法选择适合的开发工具或语言。他们的满意度会下降同时风险提高。
 
-So, developers aren't able to devote time to high-value work. This creates additional business risk because their time-to-market is slowed, and the organization increases tech debt by not empowering developers to decide on "the best" tech, unencumbered by corporate policy drag.
 因此，开发人员无法将时间投入在高价值的工作上。这会带来额外的商业风险，因为他们的上市时间变了慢，并且公司因为没有授权开发人员在不受公司政策影响的前提下决定最佳技术的能力而增加了技术债务。
 
 ### 固化安全性和合规性的工作流程
@@ -37,43 +36,31 @@ So, developers aren't able to devote time to high-value work. This creates addit
 
 
 
-Stakeholders want to understand the business benefits, so make a solid case for eliminating the security and compliance checkpoints after software builds. You can consider any (or all) of the following in building your business case: time savings, opportunity cost, and developer productivity. By integrating security and compliance workflows into the development process, you also avoid retrofitting of languages.
-利益相关者想要理解商业利益，为消除软件构建后的安全和合规的检查站，因此要做一个坚固的外壳。你可以在构建你的商业案例中考虑以下几点种的任何一个（或者全部）：节省时间，机会成本和开发人员生产力。在开发处理中，你也可以通过集中安全和和合规的工作流程避免语言的改造。
+利益相关者想要了解相关的商业利益，因此要做一个稳固的案例来消除软件构建后的安全性和合规性的检查点。你可以在构建你的商业案例中考虑以下任何一个（或者全部）因素：节省时间，机会成本和开发人员生产力。在开发处理过程中，你也可以通过集成安全性和合规性的工作流程来避免语言的改造。
 
-#### 2\. Find trustworthy sources
-寻找值得信赖的资源
+#### 2\. 寻找可信赖的资源
 
-Next, choose the trusted sources that can be used, along with their license and security requirements. Consider including information such as:
-接下来，选择可以使用的,有着他们自己许可证和安全要求的可靠资源。考虑到如下相关信息：
+接下来，选择可使用的可靠资源，以及他们的许可证和安全要求。考虑到如下相关信息：
 
-  * Restrictions on usage based on environment or application type and version controls per language
-  * Which open source components are allowable, e.g., specific packages
-  * Which licenses can be used in which types of environments (e.g., research vs. production)
-  * The definition of security levels, acceptable vulnerability risk levels, what risk levels trigger an action, what that action would be, and who would be responsible for its implementation
-
-*限制用法基于环境或应用类型和版本
+  * 基于环境或应用程序类型以及每种语言的版本控制的使用限制
+  * 允许哪些开源组件，例如，特定的程序包
+  * 哪种环境类型可以使用哪种许可证（例如，研究与生产）
+  * 安全级别的定义，可接受范围内的漏洞风险级别，什么样的风险级别会触发一个措施，这个措施是什么并且谁来负责它的执行呢
 
 
-#### 3\. Incorporate security and compliance from day one
-从第一天开始合并安全和合规性
 
-The upshot of incorporating security and compliance workflows is that it ultimately bakes security and compliance into the first line of code. It eliminates the drag of corporate policy because you're coding to spec versus having to fix things after the fact. But to do this, consider mechanisms for automatically scanning code as it's being built, along with using agentless monitoring of your runtime code. You're freeing up your time, and you'll also be able to programmatically enforce policies to ensure compliance across your entire organization.
-合并安全和合规工作流程的结果是最终它被烤成代码中的第一行安全和合规。它消除了公司政策的麻烦，因为您是按照规范进行编码，而不是事后必须解决问题。但为了实现这个，考虑到自动浏览代码的机制在它建立时，随着你的运行代码的使用的无代理监控。你解放你的时间，并且你也能以编程的方式执行政策来确保贯穿你整个组织的合规性。 
+#### 3\. 从第一天开始就融入安全性和合规性
 
-New vulnerabilities arise, and new patches and versions become available. Consequently, security and compliance need to be considered when deploying code into production and also when running code. You need to know what, if any, code is at risk and where that code is running. So, the process for deploying and running code should include monitoring, reporting, and updating code in production.
-新的脆弱性在提高，并且新的补丁和版本变得有用。所以，安全和合规性需要被考虑当在产品中部署代码时同时也包括在运行代码时。你需要知道的是，如果有的话，代码和它在哪运行都有一定的风险。所以，部署和运行代码的过程应该包括生产的监控，记录和更新。
+合并安全性和合规性的工作流程的结果是最终它将安全性和合规性固化成代码中的第一行。它消除了公司政策的麻烦，因为您是按照规范进行编码，而不是必须事后解决问题。但要做到这一点，请考虑在构建代码时采用自动扫描代码的机制，以及对运行时代码使用无代理监视。你可以节省时间，还可以通过编程实施策略来确保整个组织的合规性。 
 
-By integrating security and compliance into your software development process from the start, you can also benefit by tracking where your code is running once deployed and be alerted of new threats as they arise. You will be able to track when your applications were vulnerable and respond with automatic enforcement of your software policies.
-通过一开始在你的软件开发过程中集成安全和合规性，一旦你的代码被部署你就能追踪代码在哪运行并由此受益和注意新的威胁以他们出现。你也能追踪当你的应用程序很脆弱和回应自动强制执行你的软件政策
+出现新的漏洞，并且提供有效的新补丁和版本。所以，将代码部署到生产中以及运行代码时，需要考虑安全性和合规性。你需要知道哪些（如果有的话）代码存在风险以及该代码在何处运行。所以，部署和运行代码的过程应该包括监视，报告和更新生产中的代码。
 
-If your software development process has security and compliance workflows baked in, you will improve your productivity. And you'll be able to measure value through increased time spent coding; gains in security and stability; and cost- and time-savings in maintenance and discovery of security and compliance threats.
-如果你的软件开发过程中已经固化了安全和合规的工作流程，你将会提高你的生产率。你也能衡量价值 通过增加花费在编码上的时间；获得安全性和稳定性；在维护中的花销节省和时间节省以及安全性和合规性威胁的发现。
+通过一开始就在你的软件开发过程中集成安全性和合规性，你还可以在部署后跟踪代码的运行位置，并在新的威胁出现时获得警报。你也能追踪当你的应用程序何时受到攻击，并通过自动执行软件策略做出响应。
 
-### Happiness through integration
-集成所带来的幸福
+如果你的软件开发过程中已经引入了安全性和合规性的工作流程，你将会提高你的生产率。您将能够通过增加编码时间、提高安全性和稳定性、以及在维护和发现安全性和合规性的威胁方面节省的成本和时间来衡量价值。
+### 集成所带来的幸福
 
-If you don't develop and update software, your organization can't go forward. Developers are a linchpin in the success of your company, which means they need the tools and the freedom to code quickly. You can't let compliance and security needs—though they are critical—bog you down. Developers clearly worry about security, so the happy medium is to "shift left" and integrate security and compliance workflows from the start. You'll get more done, get it right the first time, and spend far less time retrofitting code.
-如果你不想开发和更新软件，你的组织无法前进。开发者是一个关键在你团体的成功中，这意味着他们需要工具和自由来快速地进行编码。尽管合规性和安全性至关重要，你不能让他们停滞下来。显而易见，开发人员担心安全问题，因此高兴的方法就是“左移”并且从一开始就集成安全性和合规性。你将完成更多，第一次正确地修正它，并且远远少于正常地时间去加装它。
+如果你不开发和更新软件，你的公司将无法前进。开发人员是公司成功的关键，这意味着他们需要快速编写代码的工具和自由。尽管合规性和安全性至关重要，但你不能让这个需求阻碍你的发展。开发人员显然很担心安全性，因此最好的办法就是“左移”，从一开始就集成安全性和合规性的工作流程。你将可以做更多的事情，在第一次就可以完成，而花费更少的时间进行代码更新。
 
 --------------------------------------------------------------------------------
 
@@ -81,7 +68,7 @@ via: https://opensource.com/article/19/2/developer-happiness
 
 作者：[Bart Copeland][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenmu-kk](https://github.com/chenmu-kk)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
