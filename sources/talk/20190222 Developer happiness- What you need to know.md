@@ -7,45 +7,33 @@
 [#]: via: (https://opensource.com/article/19/2/developer-happiness)
 [#]: author: (Bart Copeland https://opensource.com/users/bartcopeland)
 
-Developer happiness: What you need to know
-开发者的福音，你需要了解的东西
+开发者的福音：你必须知道的事
 ======
-Developers need the tools and the freedom to code quickly, without getting bogged down by compliance and security.
-开发者需要工具和自由进行快速编辑，通过遵守规则和安全事项使得它毫无停滞的进行下去。
+开发者需要工具和快速编程的自由，不会因为合规性和安全性使得它停滞而无法进行下去。
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/computer_happy_sad_developer_programming.png?itok=72nkfSQ_)
 
-A person needs the right tools for the job. There's nothing as frustrating as getting halfway through a car repair, for instance, only to discover you don't have the specialized tool you need to complete the job. The same concept applies to developers: you need the tools to do what you are best at, without disrupting your workflow with compliance and security needs, so you can produce code faster.
-对于工作个人都需要正确的工具。不像中途路过一个汽车修理站那般沮丧，例如，只发现你没有完成工作的特殊工具。同样的道理也应用在开发者身上：你需要工具来做一些你最擅长的事情，而不会被遵守规则和安全事项的需求打乱你的工作流程，因此你可以快速的写代码。
+个人需要合适的工具来完成工作。比如说没有比修车中途才发现 你没有完成工作的专业工具更沮丧的事情了。同样的道理也适用在开发者身上：你需要工具来发挥你的最大才能，而不会因为合规性和安全性的需求打断你的工作流程，因此你可以更快速地编码。
 
-Over half—51%, to be specific—of developers spend only one to four hours each day programming, according to ActiveState's recent [Developer Survey 2018: Open Source Runtime Pains][1]. In other words, the majority of developers spend less than half of their time coding. According to the survey, 50% of developers say security is one of their biggest concerns, but 67% of developers choose not to add a new language when coding because of the difficulties related to corporate policies.
-超过一半-51%，成为专项开发者每天只需要花费15分钟进行编程，根据
+根据ActiveState的最新研究显示，超过一半的开发人员（具体为51%），每天只需要花费1-4小时的时间进行编程[Developer Survey 2018: Open Source Runtime Pains][1]。换句话说，大多数开发人员花费不到一半的时间编程。根据调查，一半的开发人员认为安全是他们最大的担忧之一，但是由于公司政策方面的原因，67%的开发人员选择在编程时不添加新的语言。
 
-The result is developers have to devote time to non-coding activities like retrofitting software for security and compliance criteria checked after software and languages have been built. And they won't choose the best tool or language for the job because of corporate policies. Their satisfaction goes down and risk goes up.
+结果是开发人员不得不投入更多的精力在非编码的活动上，例如在构建软件和语言之后检查软件的安全性和合规性标准。而且由于公司政策的原因，他们无法选择适合的开发工具或语言。他们的满意度会下降同时风险提高。
 
 So, developers aren't able to devote time to high-value work. This creates additional business risk because their time-to-market is slowed, and the organization increases tech debt by not empowering developers to decide on "the best" tech, unencumbered by corporate policy drag.
+因此，开发人员无法将时间投入在高价值的工作上。这会带来额外的商业风险，因为他们的上市时间变了慢，并且公司因为没有授权开发人员在不受公司政策影响的前提下决定最佳技术的能力而增加了技术债务。
 
-### Baking in security and compliance workflows
-固化安全性和合规性地工作流程
+### 固化安全性和合规性的工作流程
 
-How can we solve this issue? One way is to integrate security and compliance workflows into the software development process in four easy steps:
-我们如何解决这个问题呢？一种方式是集安全性和合规性于一身的工作流程，在软件开发过程中分为四个简单的步骤：
+我们如何解决这个问题呢？一种方式是通过四个简单的步骤将有安全性和合规性的工作流程集成在软件开发中：
 
-#### 1\. Gather your forces
-集合你的力量
+#### 1\. 集中你的力量
 
-Get support from everyone involved. This is an often-forgotten but critical first step. Make sure to consider a wide range of stakeholders, including:
-从每个相关的人员处获取支持,这是经常被遗忘但却是至关重要的第一步。确保考虑到了所有范围内的相关人员，包括：
+获得所有相关人员的支持,这是一个经常被遗忘但却至关重要的第一步。确保考虑到了广泛的利益相关者，包括：
 
-  * DevOps
-  * Developers
-  * InfoSec
-  * Legal/compliance
-  * IT security
-  *开发运维
-  *开发人员
-  *信息安全
-  *合法/合规
-  *IT安全
+  * 开发运维
+  * 开发人员
+  * 信息安全
+  * 合法/合规
+  * IT安全
 
 
 
