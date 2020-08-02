@@ -7,15 +7,14 @@
 [#]: via: (https://opensource.com/article/20/6/altair-python)
 [#]: author: (Shaun Taylor-Morgan https://opensource.com/users/shaun-taylor-morgan)
 
-Concise data plotting in Python with Altair
+Python 下使用 Altair 数据制图简明教程
 ======
-Altair offers an elegant interface and its own plotting language in a
-Python libraries
+Altair 作为一个 Python 数据制图库，提供了优雅的接口及自有的绘图语言。
 ![metrics and data shown on a computer screen][1]
 
-The [plotting libraries][2] available in Python offer multiple ways to present data according to your preferences, whether you prize flexibility, design, ease-of-use, or a particular style.
+Python 中的 [制图库][2] 提供了呈现数据的多种方式，可以满足你不同的偏好，如灵活性、布局、易用性，或者特殊的类型。
 
-Plotting in Altair delivers a different solution than others which I find to be simpler as the amount of plotting done scales. It has an elegant interface, thanks to [Vega][3], the declarative plotting language that allows you to define what your plots should look like, rather than writing loops and conditionals to construct them.
+和其它方式相比，我发现，Altair 提供的是一种不同的解决方案，且总体而言使用起来更为简单。得益于声明式的绘图语言 [Vega][3]，Altair 拥有一套优雅的接口，可以直接定义要绘的图应该是什么样子，而不是通过写一大堆循环和条件判断去一步步构建。
 
 ### Fluent in plotting
 
