@@ -209,88 +209,88 @@
 
 ![][40]
 
-There is a bare bones version of the NanoPi NEO called the NanoPi NEO Core LTS which adds eMMC for industrial applications and lets go of the onboard USB and Ethernet ports. All features are available via the GPIO expansion. You can check it out [here][41] .
+NanoPi NEO 的极简版称为 NanoPi NEO Core LTS，该极简版为满足工业应用需求增加了 eMMC 存储，且通过扩展 GPIO 提供了板载 USB 接口和板载网络接口。详情参阅 [这里][41]。
 
 ![][42]
 
-There is also a WiFi/BT version of the NanoPi NEO called the NanoPi NEO Air which also adds eMMC and camera input and lets go of the onboard USB and Ethernet ports. You can check it out [here][43].
+Nano NEO Air 的 WiFi/蓝牙版称为 NanoPi NEO Air，提供了 eMMC 存储和摄像头输入接口，提供了板载 USB 接口和板载网络接口。详情参阅 [这里][43].
 
 #### 9\. Zero Pi
 
 ![][44]
 
-This is one of my favorite boards from this round up, it costs **$9.99** and has a fast 1Gbps Ethernet onboard. With the Allwinner H3 at its heart, this can be a very powerful and tiny machine on your network. It supports OpenWRT which is great considering the 1Gbps Ethernet. You can easily run multiple instances of Pi-Hole along with a DNS Server.
+这是所有这里提到的板子中，我最感兴趣的板子之一，售价 **9.99 美元**，具有板载千兆网口，使用全志 H3 处理器，小而强悍，适合应用于网络相关场景。它可以运行 OpenWRT，和其配备的千兆网络相得益彰。在作为 DNS 服务器运行的同时，还可以运行 Pi-Hole 的多个实例。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner H3 Quad Core Cortex A7 at upto 1.2GHz
-  * 512MB of RAM
-  * USB 2.0 Port
-  * Support for OpenWRT
+  * 全志 H3 四核处理器，Cortex A7 架构，主频最高 1.2GHz
+  * 512MB 内存
+  * USB 2.0 接口
+  * 可运行 OpenWRT
 
 
 
-You can get more information and also purchase them from their [official page][45] .
+可从 [官方网站][45] 了解详情及下单购买。
 
 #### 10\. NanoPi NEO 2
 
 ![][46]
 
-At **$19.99** , the NanoPi NEO 2 costs twice the NEO. It retains the same form factor and brings in the Allwinner H5 SoC and 1Gbps Ethernet. This makes the board a tiny power house.
+NanoPi NEO 2 售价 **19.99 美元**，是 NanoPi NEO 的 2 倍。其外形尺寸与 NanoPi Neo 相同，但使用的是全志 H5 处理器，并配备了千兆网功能。这使得该板子个头小而性能强。
 
-**Key Specifications**
+**主要参数**
 
-  * Allwinner H5, Quad-core 64-bit high-performance Cortex A53
+  * 全志 H5 处理器，四核 64 位，高性能 Cortex A53 架构 
   * Hexacore Mali450 GPU
-  * 512MB RAM
-  * 1Gbps onboard Ethernet
-  * 24 pin GPIO
-  * Functional headers for Audio and other interfaces like IR
+  * 512MB 内存
+  * 1Gbps 板载网络
+  * 24 脚 GPIO
+  * 包含音频及红外之类功能的外接口
 
 
 
-You can get more information and also purchase them from their [official page][47] .
+可从 [官方网站][47] 了解详情及下单购买。
 
-That’s about all the boards in the NanoPi series, they also have a few more interesting boards with dual 1Gbps ports and a couple focused around camera.
+上面的链接是关于 NanoPi 系列板子的。除此之外，还有一些其它有趣的板子，如配备双千兆网口的，以及针对摄像头应用的。
 
 #### 11\. La Frite
 
 ![][48]
 
-From the makers of the [Le Potato][49] , this board at **$20** is mainly geared towards applications involving media consumption or media streaming. It supports 1080p video playback with HDR metadata via the HDMI 2.0 port. It supports the latest Android 9/TV, upstream Linux, u-boot, Kodi, and more.
+出品商是 [Le Potato][49]，售价 **20 美元**，主要面向消费媒体及流媒体。它通过 HDMI 2.0 接口以 HDR 方式实现 1080p 视频播放，支持最新的安卓 9 /电视、Linux upstream、u-boot、Kodi等。
 
-**Key Specifications**
+**主要参数**
 
-  * Amlogic S805X SoC, Quad Core Cortex-A53 @ 1.2GHz
-  * Upto 1GB DDR4 SDRAM
-  * Amlogic Video Engine 10, support for H.264,H.265 and VP9 decoding upto 1080p 60fps
-  * 100Mbps Ethernet
-  * IR Receiver
-  * 40 pin GPIO
+  * 晶晨 S805X 处理器，四核，Cortex-A53 架构，主频 1.2GHz
+  * 最大 1GB DDR4 SDRAM
+  * 晶晨视频引擎 10，支持 H.264、H.265 和 VP9 解码，最高能以 60 帧/秒的速率实现 1080p 高清
+  * 百兆网
+  * 红外接收
+  * 40 脚 GPIO
 
 
 
-You can get more information from their [official page][50] .
+详情可参阅 [官方网站][50] .
 
 #### 12\. Onion Omega2+
 
 ![][51]
 
-If you’re looking for an IoT application the [Onion Omega][52] 2+ can be a good alternative to the Raspberry Pi Zero. It is an IoT centric development platfrom and runs on LEDE (Linux Embedded Development Environment) Linux OS – a distribution based on [OpenWRT][53].
+如果你需要的是应用于物联网场景的单板计算机，那么 [Onion Omega][52] 2+ 是替代树莓派 Zero 的很好选择。它是针对物联网的开发平台，运行的是基于 [OpenWRT][53] 的嵌入式 Linux 开发环境。
 
-**Key Specifications**
+**主要参数**
 
-  * MT7688 SoC
-  * 2.4 GHz IEEE 802.11 b/g/n WiFi
-  * 128 MB DDR2 RAM
-  * 32 MB on-board flash storage
-  * MicroSD slot
+  * MT7688 处理器
+  * 2.4 GHz WiFi，支持 IEEE 802.11 b/g/n
+  * 128 MB DDR2 内存
+  * 32 MB 板载闪存
+  * MicroSD 卡槽
   * USB 2.0
-  * 12 GPIO pins
+  * 12 个 GPIO 引脚
 
 
 
-You can pick one up as bare bones module for **$13** or various kits from their [website][54].
+你可以 **13 美元** 的单价从 [官方网站][54] 购买其极简版，并可以选配各种附件。
 
 #### 13\. VoCore2
 
@@ -325,7 +325,7 @@ via: https://itsfoss.com/raspberry-pi-zero-alternatives/
 
 作者：[Chinmay][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[silentdawn-zz](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
