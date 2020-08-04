@@ -1,16 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12484-1.html)
 [#]: subject: (Jitsi Meet: A Free & Open Source Video Conferencing Solution That is Also Free to Use Without Any Set Up)
 [#]: via: (https://itsfoss.com/jitsi-meet/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Jitsi Meet：免费且开源的视频会议解决方案，无需任何设置即可免费使用
+Jitsi Meet：自由开源的视频会议解决方案，无需设置即可免费使用
 ======
 
-_**简述：Jitsi Meet 是一个开源视频会议服务，你可以免费使用它来组织在线课程、会议和聚会。你也可以在自己的服务器上托管 Jitsi。**_
+> Jitsi Meet 是一个开源视频会议服务，你可以免费使用它来组织在线课程、会议和聚会。你也可以在自己的服务器上托管 Jitsi。
 
 在 COVID-19 大流行期间，远程工作趋势显著增长。无论你是否喜欢，视频会议对于个人和企业都是一个很好的解决方案。
 
@@ -24,13 +24,13 @@ _**简述：Jitsi Meet 是一个开源视频会议服务，你可以免费使用
 
 Jitsi Meet 是开源语音、视频会议和即时消息服务 [Jitsi][4] 集合的一部分。
 
-通过 Jitsi Meet，你可以立即主持群组视频通话，即视频会议。你甚至都不需要建立帐户。
+通过 Jitsi Meet，你可以即刻主持群组视频通话（即视频会议），你甚至都不需要建立帐户。
 
-对于桌面端，它是基于浏览器的，不提供原生桌面应用。我认为这不是问题，因为安装应用对某些人而言是额外的负担。
+对于桌面端，它是基于浏览器的，但它以 AppImage 的形式为 Linux 提供了一个基于 Electron 的桌面应用。它也可以用在 Windows 和 macOS 上。
 
 对于智能手机，它提供了 iOS 和 Android 应用，你可以分别从 App Store 和 Play Store 进行安装。除了这些，你还可以在开源 Android 应用商店 [F-Droid][5] 中找到它。
 
-如果你想更进一步，你可以在你的服务器上部署 Jitsi Meet。对于那些不想使用第三方服务器的企业来说，这是理想的选择，即使服务器来自软件开发商。
+如果你想更进一步，你可以在你的服务器上部署 Jitsi Meet。对于那些不想使用第三方服务器的企业来说，这是理想的选择，即使该服务器来自软件开发商。
 
 ### Jitsi Meet 的功能
 
@@ -43,24 +43,23 @@ Jitsi Meet 简单但功能丰富。这是你将获得的功能：
   * 能够自己部署
   * 支持集成 Slack 和 Rocket.chat
   * 如果需要，提供密码保护
-  * 端到端加密（beta）
-  * 背景模糊（beta）
+  * 端到端加密（beta 版）
+  * 背景模糊（beta 版）
   * 录音选项
   * 直播流支持
-  * YouTube 视频共享
+  * YouTube 视频分享
   * 查看用户的网络状态
-  * Google 和 Microsoft 日历集成
+  * 集成 Google 和 Microsoft 日历
   * 聊天功能
   * 屏幕共享
   * 支持国际连接拨入
   * 你可以稍后继续视频通话，而无需会议代码
   * 低带宽模式选项
-
-
+  * Jitsi 可选的桌面版本
 
 ![][7]
 
-出于明显的原因，你将在移动应用上找到较少的功能。
+出于显而易见的原因，你在移动应用上只能找到较少的功能。
 
 请注意，[端到端加密仍处于 beta 阶段][8]。但是，即使没有它，Jitsi Meet 也应该是一个隐私友好且安全的视频会议解决方案。
 
@@ -72,6 +71,10 @@ Jitsi Meet 简单但功能丰富。这是你将获得的功能：
 
 要使它在 Linux 上运行，你不需要做任何其他事情。你只需要前往它的[官方 Jitsi Meet 实例][2]，然后输入会议名称即可创建或加入。
 
+如果您使用的是基于 Electron的应用程序，则完全一样。 使用桌面应用程序时的外观如下：
+
+![](https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/06/jitsi-meet-electron.png?w=800&ssl=1)
+
 如你在上面的截图中所见，你还可以找到你最近使用的会议室的列表，这样就不必再次输入或创建会议室。
 
 ![][10]
@@ -82,15 +85,15 @@ Jitsi Meet 简单但功能丰富。这是你将获得的功能：
 
 如果你要参加其他人的会议，只需询问会议名称或会议链接即可使用台式机或智能手机轻松加入。
 
-减去一些功能后，桌面端的工作方式相同。我已经使用了一段时间，并且还鼓励和培训了我父亲的雇主（我们的附近学校）使用 Jitsi Meet 主持在线课程。
+除了少一些功能，它与桌面端的工作方式相同。我已经使用了一段时间，并且还鼓励和培训了我父亲的单位（我们的附近学校）使用 Jitsi Meet 主持在线课程。
 
 即使有最多 75 名参与者的限制，它的表现也很好，而且工作良好。
 
 [Jitsi Meet][12]
 
-**总结**
+### 总结
 
-如果你希望托管自己的 Jitsi 实例，建议你遵循它的[官方自我托管指南][13]来启动并运行它。你还可以在[它的 GitHub 页面中找到实例列表][14]。
+如果你希望托管自己的 Jitsi 实例，建议你遵循它的[官方自托管指南][13]来启动并运行它。你还可以在[它的 GitHub 页面中找到实例列表][14]。
 
 Jitsi Meet 是个了不起的开源视频会议应用。它是 Zoom 和其他此类视频通话服务的一种隐私保护替代方案。
 
@@ -105,7 +108,7 @@ via: https://itsfoss.com/jitsi-meet/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
