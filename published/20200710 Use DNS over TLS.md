@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12483-1.html)
 [#]: subject: (Use DNS over TLS)
 [#]: via: (https://fedoramagazine.org/use-dns-over-tls/)
 [#]: author: (Thomas Bianchi https://fedoramagazine.org/author/thobianchi/)
@@ -12,15 +12,15 @@
 
 ![][1]
 
-现代计算机用来在互联网种查找资源的[域名系统 （DNS）][2] 是在 [35 年前][3]设计的，而没有考虑用户隐私。它会面临安全风险和攻击，例如 [DNS 劫持][4]。它还能让 [ISP][5] 拦截查询。
+现代计算机用来在互联网种查找资源的[域名系统（DNS）][2] 是在 [35 年前][3]设计的，没有考虑用户隐私。它会面临安全风险和攻击，例如 [DNS 劫持][4]。它还能让 [ISP][5] 拦截查询。
 
-幸运的是，现在有 [DNS over TLS][6] 和 [DNSSEC][7] 可用。DNS over TLS 和 DNSSEC 允许创建从计算机到它配置的 DNS 服务器的安全且加密的端到端隧道。在 Fedora 上，部署这些技术的步骤很容易，并且所有必要的工具也很容易获得。
+幸运的是，现在有 [DNS over TLS][6] 和 [DNSSEC][7] 两种技术。DNS over TLS 和 DNSSEC 允许创建从计算机到它配置的 DNS 服务器之间的安全且加密的端到端隧道。在 Fedora 上，部署这些技术的步骤很容易，并且所有必要的工具也很容易获得。
 
-本指南将演示如何使用 systemd-resolved 在 Fedora 上配置 DNS over TLS。有关 systemd-resolved 服务的更多信息，请参见[文档][8]。
+本指南将演示如何使用 `systemd-resolved` 在 Fedora 上配置 DNS over TLS。有关 `systemd-resolved` 服务的更多信息，请参见[文档][8]。
 
-### 步骤 1：设置 Step 1 : Set-up systemd-resolved
+### 步骤 1：设置 systemd-resolved
 
-修改 _/etc/systemd/resolved.conf_，类似于下面所示。确保启用 DNS over TLS 并配置要使用的 DNS 服务器的 IP 地址。
+类似于下面所示修改 `/etc/systemd/resolved.conf`。确保启用 DNS over TLS 并配置要使用的 DNS 服务器的 IP 地址。
 
 ```
 $ cat /etc/systemd/resolved.conf
@@ -39,18 +39,16 @@ FallbackDNS=8.8.8.8 1.0.0.1 8.8.4.4
 
 关于选项的简要说明：
 
-  * **DNS**：以空格分隔的 IPv4 和 IPv6 地址列表，用作系统 DNS 服务器
-  * **FallbackDNS**：以空格分隔的 IPv4 和 IPv6 地址列表，用作后备 DNS 服务器。
-  * **Domains**：在解析单标签主机名时，这些域名用于搜索后缀。 _~._ 代表对于所有域名，优先使用 DNS= 定义的系统 DNS 服务器。
-  * **DNSOverTLS**：如果启用，那么将加密与服务器的所有连接。请注意，此模式要求 DNS 服务器支持 DNS-over-TLS，并具有其 IP 的有效证书。
+  * `DNS`：以空格分隔的 IPv4 和 IPv6 地址列表，用作系统 DNS 服务器。
+  * `FallbackDNS`：以空格分隔的 IPv4 和 IPv6 地址列表，用作后备 DNS 服务器。
+  * `Domains`：在解析单标签主机名时，这些域名用于搜索后缀。 `~.` 代表对于所有域名，优先使用 `DNS=` 定义的系统 DNS 服务器。
+  * `DNSOverTLS`：如果启用，那么将加密与服务器的所有连接。请注意，此模式要求 DNS 服务器支持 DNS-over-TLS，并具有其 IP 的有效证书。
 
-
-
-> _注意：上面示例中列出的 DNS 服务器是我个人的选择。你要确定要使用的 DNS 服务器。要注意你要向谁请求 IP_。
+> 注意：上面示例中列出的 DNS 服务器是我个人的选择。你要确定要使用的 DNS 服务器。要注意你要向谁请求 IP。
 
 ### 步骤 2：告诉 NetworkManager 将信息推给 systemd-resolved
 
-在 _/etc/NetworkManager/conf.d_ 中创建一个名为 _10-dns-systemd-resolved.conf_ 的文件。
+在 `/etc/NetworkManager/conf.d` 中创建一个名为 `10-dns-systemd-resolved.conf` 的文件。
 
 ```
 $ cat /etc/NetworkManager/conf.d/10-dns-systemd-resolved.conf
@@ -58,13 +56,13 @@ $ cat /etc/NetworkManager/conf.d/10-dns-systemd-resolved.conf
 dns=systemd-resolved
 ```
 
-上面的设置（_dns=systemd-resolved_）让 NetworkManager 将从 DHCP 获得的 DNS 信息推送到 systemd-resolved 服务。这将覆盖_步骤 1_ 中配置的 DNS 设置。这在受信任的网络中没问题，但是可以设置 _dns=none_  从而使用 _/etc/systemd/resolved.conf_ 中配置的 DNS 服务器。
+上面的设置（`dns=systemd-resolved`）让 `NetworkManager` 将从 DHCP 获得的 DNS 信息推送到 `systemd-resolved` 服务。这将覆盖*步骤 1* 中配置的 DNS 设置。这在受信任的网络中没问题，但是也可以设置为 `dns=none` 从而使用 `/etc/systemd/resolved.conf` 中配置的 DNS 服务器。
 
 ### 步骤 3： 启动和重启服务
 
-若要使上述步骤中的配置生效，请启动并启用 _systemd-resolved_。然后重启 _NetworkManager_。
+若要使上述步骤中的配置生效，请启动并启用 `systemd-resolved` 服务。然后重启 `NetworkManager` 服务。
 
-**注意**：在 NetworkManager 重启时，连接会中断几秒钟。
+注意：在 `NetworkManager` 重启时，连接会中断几秒钟。
 
 ```
 $ sudo systemctl start systemd-resolved
@@ -72,7 +70,7 @@ $ sudo systemctl enable systemd-resolved
 $ sudo systemctl restart NetworkManager
 ```
 
-> _注意：目前，systemd-resolved 服务默认处于禁用状态，并且是计划使用的。[这有个方案][33]可在 Fedora 33 中默认启用systemd-resolved。_
+> 注意：目前，systemd-resolved 服务默认处于禁用状态，是可选使用的。[有计划][33]在 Fedora 33 中默认启用systemd-resolved。
 
 ### 步骤 4：检查是否一切正常
 
@@ -92,7 +90,7 @@ Fallback DNS Servers: 8.8.8.8
                       8.8.4.4
 ```
 
-/etc/resolv.conf 应该指向 127.0.0.53
+`/etc/resolv.conf` 应该指向 `127.0.0.53`。
 
 ```
 $ cat /etc/resolv.conf
@@ -101,7 +99,7 @@ search lan
 nameserver 127.0.0.53
 ```
 
-若要查看 systemd-resolved 发送和接收安全查询的地址和端口，请运行：
+若要查看 `systemd-resolved` 发送和接收安全查询的地址和端口，请运行：
 
 ```
 $ sudo ss -lntp | grep '\(State\|:53 \)'
@@ -131,7 +129,7 @@ $ sudo dnf install wireshark
 $ sudo wireshark
 ```
 
-它会询问你在哪个设备上捕获数据包。在我这里，因为我使用无线接口，我用的是 _wlp58s0_。在 Wireshark 中设置筛选器，_tcp.port == 853_（853 是 DNS over TLS 协议端口）。在捕获 DNS 查询之前，你需要刷新本地 DNS 缓存：
+它会询问你在哪个设备上捕获数据包。在我这里，因为我使用无线接口，我用的是 `wlp58s0`。在 Wireshark 中设置筛选器，`tcp.port == 853`（853 是 DNS over TLS 协议端口）。在捕获 DNS 查询之前，你需要刷新本地 DNS 缓存：
 
 ```
 $ sudo resolvectl flush-caches
@@ -147,8 +145,6 @@ $ nslookup fedoramagazine.org
 
 ![][11]
 
-— _Poster in Cover Image Approved for Release by NSA on 04-17-2018, FOIA Case # 83661_ —
-
 --------------------------------------------------------------------------------
 
 via: https://fedoramagazine.org/use-dns-over-tls/
@@ -156,7 +152,7 @@ via: https://fedoramagazine.org/use-dns-over-tls/
 作者：[Thomas Bianchi][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
