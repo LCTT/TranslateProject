@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12490-1.html)
 [#]: subject: (10 cheat sheets for Linux sysadmins)
 [#]: via: (https://opensource.com/article/20/7/sysadmin-cheat-sheets)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@ Linux 系统管理员的 10 份速查表
 
 > 这些快速参考指南让系统管理员的生活和日常工作变得更轻松，而且它们都是免费提供的。
 
-![People work on a computer server with devices][1]
+![](https://img.linux.net.cn/data/attachment/album/202008/05/222202qildlyr1lnqwq0o4.jpg)
 
 作为一名系统管理员，你做所的不是一件工作，而是**全部**工作，而且往往每一件工作都是随时随地出现，毫无预兆。除非你每天都只做一项任务，否则当需要的时候，你可能并不总是都能将所有的命令和选项都记在脑海里。这就是为什么我喜欢速查表的原因。
 
