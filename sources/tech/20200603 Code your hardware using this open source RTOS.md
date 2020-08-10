@@ -7,93 +7,91 @@
 [#]: via: (https://opensource.com/article/20/6/open-source-rtos)
 [#]: author: (Zhu Tianlong https://opensource.com/users/zhu-tianlong)
 
-Code your hardware using this open source RTOS
+在这个开元实时操作系统下驱动你的硬件
 ======
-Programming a chip is hard, but RTOS solves many of the major issues on
-embedded systems
+编程驱动一个芯片是相当有难度的，但在嵌入式系统上，实时操作系统为你解决很多此类的困难
 ![Puzzle pieces coming together to form a computer screen][1]
 
-In general computing, an operating system is software that provides a computer's basic functions. It ensures that a computer detects and responds to peripherals (like keyboards, screens, mobile devices, printers, and so on), and it manages memory and drive space.
+在通用计算的角度，操作系统是提供计算机基本功能的一组软件。操作系统保证了计算机硬件可以探测并响应外围器件（如键盘、屏幕、移动设备、打印机等），并管理内存空间和外部存储空间。
 
-Even though modern operating systems make it seem that multiple programs are running at the same time, a CPU core can run only a single thread at a time. Each task is executed so quickly and in such rapid succession that the result appears to be massive multi-tasking. This is managed by a subroutine called a _scheduler_.
+虽然一个 CPU 核心同一时间只能运行单个线程，但现代操作系统可以使多个程序表现的像是在同时运行。每一个任务执行的如此之快，一系列任务切换的如此之快，以至于看起来多个任务像是在并行进行。这一切都是由叫做 _调度器_ 的子进程来控制的。
 
-Operating systems, usually, are for computers. The OS is installed to your hard drive, and manages the computer's tasks.
+操作系统通常是为计算机准备的，安装在硬盘上，管理计算机所要执行的任务。
 
-### Why RTOS is essential for embedded systems
+### 为什么实时操作系统对嵌入式系统而言不可或缺
 
-I discovered embedded software in 2008, when I was a student learning about programming on an [MCS-51][2] chip. Because I was majoring in computer science, all the programs I was doing in other courses were executed on a PC. But programming on a chip was a completely different experience. For the first time, I saw my programs running on a bare-metal board, and I can still remember the excitement when my first cycling lamp program ran successfully.
+我曾经在 2008 年接触过嵌入式软件，那时候我还是一名学生，正在学习 [MCS-51][2] 微处理器编程。因为我的主修专业是计算机科学，我在其它课程中的所有程序都是在 PC 上执行的，但为微处理器芯片编程是完全不同的体验。人生中第一次，我看到我的程序在电路板上运行，即使到现在我仍然记得，在我看到自己人生中第一个循环点灯程序成功运行时的那种兴奋和激动。
 
-The excitement was relatively short-lived, though. The more bare-metal programs I wrote, the more issues I encountered. I wasn't alone in this frustration. Programming a chip directly is hard, and there are good reasons PCs use an operating system. Unfortunately, computer chips (an embedded system) don't normally have an OS. They're "hard coded" with code with no OS to help manage how the code gets executed.
+但那种兴奋转瞬即逝。随着为电路板写出越来越多的程序，我遇到了越来越多的问题。我这种沮丧并不是我独有的。直接为芯片写程序很困难，这也是 PC 要运行操作系统的很重要的原因。不幸的是，微处理器芯片（或嵌入式系统）通常是没有操作系统的。它们只能采用”硬编码“的方式编程，没有操作系统帮助你管理代码的运行。
 
-Here are the problems you might encounter when hard coding a computer chip:
+在以”硬编码“的方式为处理芯片编写代码的时候，可能会遇到下列问题：
 
-#### Concurrency
+#### 并发
 
-You don't have daemons on a chip to manage execution. For bare-metal programs, there is inevitably a huge `while (1)` loop that contains almost all the transaction logic of the whole project. Each transaction invokes one or more delay functions. These are executed serially when the CPU is running a delay function. There's nothing to preempt an unnecessary delay, so the transaction reset has to wait. As a result, much of the CPU time is wasted on empty loops, which is bad for concurrency.
+在裸片上是没有管理程序运行的现成守护进程的。嵌入式系统软件中，无可避免的要把所有的逻辑功能放在一个巨大的 `while (1)` 循环中。每个功能包含一个或多个延时函数。CPU 在运行延时函数的时候是顺序执行的，没有任何办法跨越一个不必要的延时，所以运行事务的复位操作只能等待。最终就是很多的 CPU 处理时间浪费在空循环上，这对任务的并发非常不利。
 
-#### Modularity
+#### 模块化
 
-From the perspective of a software project, the principle of high cohesion and low coupling is always emphasized during the development process. However, modules in bare-metal software usually depend on each other heavily. As mentioned above, most functions are collected in a huge `while (1)` loop, which is hard to divide into modules. It's just not convenient to design software with low coupling, which makes it difficult to develop large projects on bare-metal boards.
+从软件工程的角度，高內聚低耦合原则在软件开发过程中被不厌其烦的频频强调，但是嵌入式软件的不同模块之间常常是重度耦合的，很多功能都集中在一个巨大的 `while (1)` 循环中，很难切分为模块。设计低耦合软件在编程上只是繁琐一些，但在嵌入式系统上，要低耦合就难以编写比较大型的软件。
 
-Also, developers must be careful to use delay functions when a watchdog timer is involved. If the delay time is too long, then the main function doesn't have an opportunity to reset the watchdog, so the watchdog is triggered during execution. For bare-metal development, there are too many things to consider, even when invoking a delay function. The more complex the project is, the more care you need to take. Imagine trying to decouple this series of delicately timed interactions into modules.
+与此同时，如果使用了看门狗定时器，程序员还得在调用延时函数时倍加小心。如果延时时间太长，主程序没有及时”喂狗“的时机，那么看门狗将在程序运行过程中被触发。嵌入式系统软件开发过程中，需要考虑的东西太多了，即便是个简单的延时函数，都不能掉以轻心。软件越复杂，就越需要细心，越需要想方设法将一系列具有精细时间关系的交互功能拆分为模块。
 
-#### Ecosystem
+#### 软件生态
 
-Many advanced software components depend on the implementation of the lower-level operating system. For example, I developed an open source project based on [FreeModbus][3] that I'd planned to transplant to various platforms, even to bare metal. But compared to the convenience of adapting it to different operating systems, some functions are too complex to implement on all bare-metal boards. Worse still, many implementations would have to be designed from scratch on different hardware platforms because of the lack of commonality.
+很多厉害的软件组件依赖于其所基于的底层操作系统的实现。举个自身的例子，我曾开发过一个基于 [FreeModbus][3] 的开源项目，原计划将它移植到多种平台上，包括裸板。相对于在各种操作系统上的移植，有些函数在裸板上实现的话实在是太复杂了，以至于无法完成。更糟糕的是，很多硬件平台因为缺乏一致性，只能各自从头做起。
 
-For now, my implementation of the Modbus stack still cannot run on bare-metal boards.
+直至现在，我的 Modbus 栈仍然不支持在裸板上运行。
 
-Many WiFi software-development kits provided by big companies such as Realtek, TI, and MediaTek can run only on the operating system. They don't publish their firmware's source code for the user to modify, so you can't use them within a bare-metal environment.
+很多像 Realtek、TI 和 MediaTek 的大厂，所提供的 WiFi 软件开发工具只能在操作系统上运行，且他们不公开固件源码，所以在裸板上根本没法使用这些工具。
 
-#### Real-time capability
+#### 实时性
 
-Real-time capability is necessary for some application fields. For some use cases, a critical software step must be triggered at a specific time. For industry control, for instance, mechanical devices must complete actions in a predetermined order and timing. Without ensuring real-time capability, there would be malfunctions that could endanger the lives of workers. On bare-metal platforms, when all the functions are jammed into one big `while (1)` loop, it's impossible to maintain the real-time capabilities.
+有些应用领域对实时性有要求，比如在有些场景，必须在特定的时间触发特定的软件操作。在工业控制场景，实体控制过程中，机械部件必须以确定的时间和确定的顺序执行动作。如果不能保证控制系统的实时性，整个机器可能出现功能异常，甚至危及工人性命。在裸板平台，所有的功能都塞在一个巨大的 `while (1)` 循环中，实时性无从保证。
 
-#### Reusability
+#### 重用性
 
-Reusability depends on modularity. Nobody wants to do the same job over and over, especially if that job is writing code. Not only is it a waste of time, but it makes code maintenance exponentially more complex. And yet, on various hardware platforms with different chips, the same function has to be adapted to different hardware because the implementation depends on low-level hardware. It's inevitable to reinvent the wheel.
+重用性依赖于模块化。没谁愿意翻来覆去做一成不变的事，对程序员而言更是如此。这不单单是浪费时间，要命的是这使得代码的维护异常复杂。尤其是，因为功能的实现依赖于底层的硬件，所以使用了不同芯片的不同种硬件平台上，同样的功能不得不针对每个硬件平台进行适配。这种情况下，重新早轮子是无可避免的。
 
-### Advantages of RTOS
+### 实时操作系统的优势
 
-Fortunately, there are operating systems written for chips: they're called a real-time operating system (RTOS), and like most operating systems, they have a scheduler to ensure a predictable order of code execution.
+幸运的是，有针对各种微处理器芯片的操作系统可用：它们被称为实时操作系统（RTOS），和大多数操作系统一样，它们拥有调度器，保证代码以可预见的顺序运行。
 
-I first used an RTOS for bare metal in 2010. The [STM32][4] series of microcontrollers (MCUs) was starting to become popular, and because they were so powerful and rich in features, many people were running operating systems on them. I used the [RT-Thread][5] operating system, which has many available, ready-to-use components built on it. It's available under the Apache 2.0 license, and I feel more comfortable with it compared to other operating systems. I have been developing on it for 10 years.
+我是在 2010 年初次在裸板上使用实时操作系统。那时候，[STM32][4] 系列微处理器（MCU）开始普及，因为这种微处理器性能强大、功能丰富，很多人在上面跑操作系统。我使用的是 [RT-Thread][5] 操作系统，有很多基于它的现成组建可用。它使用的是 Apache 2.0 许可，和其它操作系统的许可相比，我觉得这个很舒心。我已经使用它作为开发平台 10 年了。
+使用实时操作系统为裸板编程，操作系统为我们解决了需要处理的大部分问题。
 
-For bare-metal programming, an RTOS solves most of the biggest problems we face.
+#### 模块化
 
-#### Modularity
+在操作系统支持下，整个软件可以分割为多个任务（即所说的线程）。每个线程拥有自己独立的运行空间。线程之间互相独立，这促进了软件的模块化。
 
-With an operating system, the entire software can be split into several tasks (known as threads). Each thread has its own independent execution space. They're independent of each other, which improves modularity.
+#### 并发
 
-#### Concurrency
+如果一个线程有延时函数，它将自动给需要 CPU 的线程让度使用权，这提高了 CPU 的整体利用率，也提升了系统的并发性能。
 
-When a thread invokes the delay function, it automatically yields the CPU to other threads that need to run, which improves the utilization of the entire CPU and, ultimately, the concurrency.
+#### 实时性
 
-#### Real-time
+实时操作系统从设计上就具备实时性。每个线程都被指定了特定的优先级，重要的线程设置为更高的优先级，不重要的线程优先级也低。正是以这种方式，软件整体的实时性得到了保证。
 
-An RTOS is designed with real-time capabilities. Each thread is assigned a specified priority. More important threads are set to a higher priority, with less important threads set to lower ones. In this way, the real-time performance of the entire software is guaranteed.
+#### 开发效率
 
-#### Development efficiency
+操作系统提供了统一的抽象接口，这使得可重用组件得以不断积累，同时提升了开发效率。
 
-The operating system provides a unified layer of abstract interfaces. This facilitates the accumulation of reusable components and improves development efficiency.
+操作系统是软件极客集体智慧的结晶。很多通用的软件功能，如信号量、事件提醒、邮箱、环形缓冲、单向链表、双向链表等，被抽象出来并实现了封装，可随时调用。
 
-The operating system is a product of the wisdom of a group of software geeks. Many common software functions, such as semaphore, event notification, mailbox, ring buffer, one-way chain list, two-way list, and so on, are encapsulated and abstracted to make them ready to use.
+Linux、RT-Thread 等操作系统为五花八门的硬件实现了一致的硬件接口，也就是常说的设备驱动框架。正因如此，软件工程师可以专注于软件开发，而不用关心底层的硬件，也不用重复造轮子。
 
-Operating systems like Linux and RT-Thread implement a standard set of hardware interfaces for fragmented hardware. This is known as the device-driver framework. Because of this, a software engineer can focus on development with no concern about the underlying hardware or reinventing the wheel.
+#### 软件生态
 
-#### Software ecosystem
+RT-Thread 丰富的软件生态为大量的从业者带来了巨大的改变。操作系统带来的模块化和重用性，使得程序员可以基于 RT-Thread 封装出方便嵌入式系统开发使用的可重用组件。这些组件可以在其它项目中重用，也可以分享给其他的嵌入式应用开发者，以最大化软件的价值。
 
-The richness of the RT-Thread ecosystem brings the process of quantitative changes to qualitative ones. The improvement in modularity and reusability with an operating system allows programmers to encapsulate RTOS-based, embedded-friendly reusable components. These can be used in projects as well as be shared with other embedded-application developers who need to maximize the value of software.
-
-For example, the LkdGui project is an open source graphics library designed for monochrome displays. You might see it used in industrial settings for simple, beautiful graphical interfaces for control panels. LkdGui provides graphical functions, such as drawing points, lines, rectangles, text display, button widgets, and progress bars.
+比如，LkdGui 是个开源的单色显示图形库，你可能在工业控制面板上简单而美观的设置界面上见过它。LkdGui 提供了像描点、画线、绘矩形及显示文本、按钮组件、进度条等绘图功能。
 
 ![LkdGui][6]
 
-The ability to reuse a library as extensive and robust as LkdGui means programmers can build on top of their peers' work. Without an RTOS, this just wouldn't be possible.
+使用像 LkdGui 这样兼具扩展性和健壮性的功能库，程序员们可以在伙伴已有工作成果的基础上充分施展自己的才能。而这一切，没有实时操作系统这样一个统一的基础，是根本不可能的。
 
-### Try RT-Thread
+### 试用 RT-Thread
 
-I'm an open source geek, and I have open sourced some embedded software on GitHub. Before creating open source software, I rarely talked with others about my projects because people were inevitably using different chips or hardware platforms, so our code could hardly run on one another's hardware. An RTOS like RT-Thread greatly improves software reusability, so many diverse experts all over the world can communicate with each other about the same project. This is encouraging more and more people to share and talk about their projects. If you're doing bare-metal programming, try RT-Thread on your next project.
+作为开源极客，我已經在 GitHub 上开源了一些嵌入式软件。在发布开源软件之前，我很少对他人谈及自己曾经的项目，因为不同的人在使用各种不同的微处理器芯片和硬件平台，我的代码极可能无法在他人的板子上运行。 类似于 RT-Thread 的操作系统极大的提升了软件的可重用性，所以全世界的不同领域的专家得以就同一个项目展开探讨。这鼓励着越来越多的人分享和交流各自的项目。如果你在做裸板的软件开发，下次可以试试 TR-Thread。
 
 --------------------------------------------------------------------------------
 
@@ -101,7 +99,7 @@ via: https://opensource.com/article/20/6/open-source-rtos
 
 作者：[Zhu Tianlong][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[silentdawn-zz](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
