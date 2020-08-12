@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12509-1.html)
 [#]: subject: (Digging for DNS answers on Linux)
 [#]: via: (https://www.networkworld.com/article/3568488/digging-for-dns-answers-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -12,7 +12,7 @@
 
 > dig 是一个强大而灵活的工具，用于查询域名系统（DNS）服务器。在这篇文章中，我们将深入了解它的工作原理以及它能告诉你什么。
 
-![Laurie Avocado][1]
+![](https://img.linux.net.cn/data/attachment/album/202008/11/235200wlyytlaymlylfdff.jpg)
 
 `dig` 是一款强大而灵活的查询 DNS 名称服务器的工具。它执行 DNS 查询，并显示参与该过程的名称服务器返回的应答以及与搜索相关的细节。系统管理员和 [DNS][3] 管理员经常使用 `dig` 来帮助排除 DNS 问题。在这篇文章中，我们将深入了解它的工作原理，看看它能告诉我们什么。
 
@@ -53,7 +53,7 @@ idg.map.fastly.net.     30      IN      A       151.101.250.165
 
 - `SERVFAIL`：被查询的名称存在，但没有数据或现有数据无效。
 - `NXDOMAIN`：所查询的名称不存在。
-- `REFUSED`：该区域的数据不存在于所请求的权威服务器中，并且在这种情况下，基础设施没有设置为提供响应。
+- `REFUSED`：该区域的数据不存在于所请求的权威服务器中，并且在这种情况下，基础设施没有设置为提供响应服务。
 
 下面是一个例子，如果你要查找一个不存在的域名，你会看到什么？
 
@@ -68,6 +68,8 @@ $ dig cannotbe.org
 ```
 
 一般来说，`dig` 比 `ping` 会提供更多的细节，如果域名不存在，`ping` 会回复 “名称或服务未知”。当你查询一个合法的系统时，你可以看到域名系统对该系统知道些什么，这些记录是如何配置的，以及检索这些数据需要多长时间。
+
+（LCTT 译注：`dig` 也比 `nslookup` 提供的数据更多。此外，`dig` 采用的是操作系统的解析库，而 `nslookup` 采用的是自己提供的解析库，这有时候会带来不同的行为。最后，有趣的一点是，`dig` 的返回的格式是符合 BIND 区域文件格式的。）
 
 事实上，有时 `dig` 可以在 `ping` 完全不能响应的时候进行响应，当你试图确定一个连接问题时，这种信息是非常有用的。
 
