@@ -185,7 +185,7 @@ openssl req -out myserver.csr -new -newkey rsa:4096 -nodes -keyout myserverkey.p
 
 这个例子生成了一个 CSR 文档，并将该文档存储在文件 `myserver.csr`（base64 文本）中。这里的目的是：CSR 文档要求 CA 保证与指定域名相关联的身份，域名也就是 CA 所说的<ruby>通用名<rt>common name</rt></ruby>（CN）。
 
-尽管可以使用现有的密钥对，但这个命令也会生成一个新的密钥对。请注意，在诸如 `myserver.csr` 和 `myserverkey.pem` 等名称中使用 `server` 暗示了数字证书的典型用途：作为与www.google.com 等域名相关的 Web 服务器的身份担保。
+尽管可以使用现有的密钥对，但这个命令也会生成一个新的密钥对。请注意，在诸如 `myserver.csr` 和 `myserverkey.pem` 等名称中使用 `server` 暗示了数字证书的典型用途：作为与 www.google.com 等域名相关的 Web 服务器的身份担保。
 
 然而，无论数字证书如何使用，同样使用这个命令都会创建一个 CSR。它还会启动一个问题/回答的交互式会话，提示有关域名的相关信息，以便与请求者的数字证书相连接。这个交互式会话可以通过在命令中提供基本的信息，用反斜杠来续行一步完成。`-subj` 标志提供了所需的信息。
 
