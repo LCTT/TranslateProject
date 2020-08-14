@@ -1,26 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12515-1.html)
 [#]: subject: (How to Install the Latest Version of Handbrake on Ubuntu-based Linux Distributions [Quick Tip])
 [#]: via: (https://itsfoss.com/install-handbrake-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何在基于 Ubuntu 的 Linux 发行版上安装最新版本的 Handbrake （快速教程）
+如何在 Ubuntu 上安装最新版本的 Handbrake
 ======
 
-_**此快速教程介绍了如何使用在基于 Ubuntu 的发行版上使用官方 PPA 安装最新版本的 HandBrake。**_
+>  此快速教程介绍了如何使用在基于 Ubuntu 的发行版上使用官方 PPA 安装最新版本的 HandBrake。
+
+![](https://img.linux.net.cn/data/attachment/album/202008/13/223818yghmgmagqggm2pa0.jpg)
 
 [HandBrake][1] 是可用于 Linux、Windows 和 macOS 的最受欢迎的开源视频转换器之一。
 
 此 GUI 应用让你只需单击几下即可将视频从一种格式转换为另一种格式。你还可以根据需要自定义输出视频。
 
-[HandBrake][2] 存在于 [Ubuntu 的通用存储库][3]中，但它可能并不总是提供最新版本。让我向你展示如何在 Ubuntu 和其他基于 Ubuntu 的发行版（如 Linux Mint、Linux Lite、elementray OS 等）上获得最新的 HandBrake。
+[HandBrake][2] 存在于 [Ubuntu 的通用存储库][3]中，但它可能并不总是最新版本。让我向你展示如何在 Ubuntu 和其他基于 Ubuntu 的发行版（如 Linux Mint、Linux Lite、elementray OS 等）上获得最新的 HandBrake。
 
 ### 在基于 Ubuntu 的 Linux 发行版上安装最新的 HandBrake
 
-HandBrake 的开发人员维护着一个[官方的 PPA][4]。 [使用此 PPA][5]，你可以轻松地在基于 Ubuntu 的发行版中安装最新版本的 HandBrake。
+HandBrake 的开发人员维护着一个[官方的 PPA][4]。[使用此 PPA][5]，你可以轻松地在基于 Ubuntu 的发行版中安装最新版本的 HandBrake。
 
 打开终端，然后使用以下命令添加 PPA 仓库。需要时按下回车键：
 
@@ -62,7 +64,7 @@ sudo apt remove handbrake-gtk
 sudo add-apt-repository -r ppa:stebbins/handbrake-releases
 ```
 
-在要求时确认。
+在询问时确认。
 
 在这篇快速 Ubuntu 教程中，你学习了使用 PPA 安装最新的 HandBrake 的步骤。你还了解了正确删除它的步骤。
 
@@ -75,7 +77,7 @@ via: https://itsfoss.com/install-handbrake-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
