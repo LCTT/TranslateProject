@@ -12,7 +12,7 @@
 
 > 使用 .gitignore 文件是提高代码和 Git 仓库质量的最佳实践之一。
 
-![Business woman on laptop sitting in front of window][1]
+![](https://img.linux.net.cn/data/attachment/album/202008/16/211643mahzp0zthbh0z55w.jpg)
 
 我注意到很多开发者没有使用 `.gitignore` 文件，尽管使用 `.gitignore` 文件来指定你不希望 Git 在版本控制中跟踪的文件是[最佳实践][2]之一。`.gitignore` 可以提高代码质量，所以你不应该忽略版本库中的 [.gitignore][3]。
 
@@ -32,9 +32,9 @@ Git 仓库中的文件可以是：
   4. 含有临时信息的文件，如日志、缓存等。
   5. 生成的文件，如 `dist` 文件夹。
 
-如果你不想让 Git 跟踪版本库中的某些文件，这不是用 [Git 命令][4]做的。（虽然你可以用 `git rm` 命令停止跟踪一个文件，比如 `git rm --cached`。）相反，你需要使用 `.gitignore` 文件，这是一个告诉 Git 不要跟踪哪些文件的文本文件。
+如果你不想让 Git 跟踪版本库中的某些文件，不过这不能通过 [Git 命令][4]做到。（虽然你可以用 `git rm` 命令停止跟踪一个文件，比如 `git rm --cached`。）相反，你需要使用 `.gitignore` 文件，这是一个告诉 Git 不要跟踪哪些文件的文本文件。
 
-创建 `.gitignore` 文件很简单，只需创建一个文本文件并命名为 `.gitignore`。记得在文件名的开头有一个点（`.`）。就这样，就完成了。
+创建 `.gitignore` 文件很简单，只需创建一个文本文件并命名为 `.gitignore`。记得在文件名的开头有一个点（`.`）。就这样就完成了。
 
 ### 编写 .gitignore 文件的规则
 
