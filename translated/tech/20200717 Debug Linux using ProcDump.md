@@ -7,21 +7,22 @@
 [#]: via: (https://opensource.com/article/20/7/procdump-linux)
 [#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
 
-Debug Linux using ProcDump
+使用 ProcDump 调试 Linux
 ======
-Check out Microsoft's open source tool for getting process information.
-![Dump truck rounding a turn in the road][1]
 
-Microsoft's growing appreciation for Linux and open source is no secret. The company has steadily increased its contributions to open source in the last several years, including porting some of its software and tools to Linux. In late 2018, Microsoft [announced][2] it was porting some of its [Sysinternals][3] tools to Linux as open source, and [ProcDump for Linux][4] was the first such release.
+> 用这个微软的开源工具，获取进程信息。
 
-If you have worked on Windows in debugging or troubleshooting, you have probably heard of Sysinternals. It is a "Swiss Army knife" toolset that helps system administrators, developers, and IT security professionals monitor and troubleshoot Windows environments.
+![渣土车在路上转弯][1] 。
 
-One of Sysinternals' most popular tools is [ProcDump][5]. As its name suggests, it is used for dumping the memory of a running process into a core file on disk. This core file can then be analyzed using a debugger to understand the process' state when the dump was taken. Having used Sysinternals previously, I was curious to try out the Linux port of ProcDump.
+微软越来越心仪 Linux 和开放源码，这并不是什么秘密。在过去几年中，该公司稳步增加对开源的贡献，包括将其部分软件和工具移植到 Linux。2018 年底，微软[宣布][2]将其部分 [Sysinternals][3] 工具以开源的方式移植到 Linux，[Linux 版的 ProcDump][4]是第一个这样的版本。
 
-### Get started with ProcDump for Linux
+如果你在 Windows 上从事过调试或故障排除工作，你可能听说过 Sysinternals。它是一个“瑞士军刀”工具集，可以帮助系统管理员、开发人员和 IT 安全专家监控和排除 Windows 环境的故障。
 
-To try ProcDump for Linux, you need to download the tool and compile it. (I am using Red Hat Enterprise Linux, though these instructions should work the same on other Linux distros):
+Sysinternals 最受欢迎的工具之一是 [ProcDump][5]。顾名思义，它用于将正在运行的进程的内存转储到磁盘上的一个核心文件中。然后可以用调试器对这个核心文件进行分析，了解转储时进程的状态。因为之前用过 Sysinternals，所以我很想试试 ProcDump 的 Linux 移植版。
 
+### 开始使用 Linux 上的 ProcDump
+
+要试用 Linux 上的 ProcDump，你需要下载该工具并编译它。（我使用的是 Red Hat Enterprise Linux，尽管这些步骤在其他 Linux 发行版上应该是一样的）：
 
 ```
 $ cat /etc/redhat-release
@@ -32,11 +33,10 @@ $ uname -r
 $
 ```
 
-First, clone the ProcDump for Linux repository:
-
+首先，克隆 Linux 版 ProcDump 的版本库。
 
 ```
-$ git clone <https://github.com/microsoft/ProcDump-for-Linux.git>
+$ git clone https://github.com/microsoft/ProcDump-for-Linux.git
 Cloning into 'ProcDump-for-Linux'...
 remote: Enumerating objects: 40, done.
 remote: Counting objects: 100% (40/40), done.
@@ -53,8 +53,7 @@ CODE_OF_CONDUCT.md   dist             include  LICENSE     procdump.1 
 $
 ```
 
-Next, build the program using `make`. It prints out the exact [GCC][6] command-line interface needed to compile the source files:
-
+接下来，使用 `make` 构建程序。它能准确地输出编译源文件所需的 [GCC][6] 命令行参数。
 
 ```
 $ make
@@ -75,8 +74,7 @@ gcc -o bin/ProcDumpTestApplication obj/ProcDumpTestApplication.o -Wall -I ./incl
 $
 ```
 
-The compilation creates two new directories. First is an `obj/` directory, which holds the object files created during compilation. The second (and more important) directory is `bin/`, which is where the compiled `procdump` program is stored. It also compiles another test binary called `ProcDumpTestApplication`:
-
+编译过程中会创建两个新的目录。第一个是 `obj/` 目录，存放编译期间创建的对象文件。第二个（也是更重要的）目录是 `bin/`，它是存储编译出的 `procdump` 程序的地方。它还会编译另一个名为 `ProcDumpTestApplication` 的测试二进制文件：
 
 ```
 $ ls obj/
@@ -95,8 +93,7 @@ bin/ProcDumpTestApplication: ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
 $
 ```
 
-With this setup, every time you run the `procdump` utility, you must move into the `bin/` folder. To make it available from anywhere within the system, run `make install`. This copies the binary into the usual `bin/` directory, which is part of your shell's `$PATH`:
-
+在此情况下，每次运行 `procdump` 实用程序时，你都必须移动到 `bin/` 文件夹中。要使它在系统中的任何地方都可以使用，运行 `make install`。这将二进制文件复制到通常的 `bin/` 目录中，它是你的 shell `$PATH` 的一部分：
 
 ```
 $ which procdump
@@ -113,22 +110,20 @@ $ which procdump
 $
 ```
 
-With installation, ProcDump provides a man page, which you can access with `man procdump`:
-
+安装时，ProcDump 提供了一个手册页，你可以用 `man procdump` 访问：
 
 ```
 $ man procdump
 $
 ```
 
-### Run ProcDump
+### 运行 ProcDump
 
-To dump a process' memory, you need to provide its process ID (PID) to ProcDump. You can use any of the running programs or daemons on your machine. For this example, I will use a tiny C program that loops forever. Compile the program and run it (to exit the program, hit **Ctrl**+**C**, or if it's running in the background, use the `kill` command with the PID):
-
+要转储一个进程的内存，你需要向 ProcDump 提供它的进程 ID（PID）。你可以使用机器上任何正在运行的程序或守护进程。在这个例子中，我将使用一个永远循环的小 C 程序。编译程序并运行它（要退出程序，按 `Ctrl+C`，如果程序在后台运行，则使用 `kill` 命令并输入 PID）：
 
 ```
 $ cat progxyz.c
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main() {
         for (;;)
@@ -141,13 +136,12 @@ int main() {
 $
 $ gcc progxyz.c -o progxyz
 $
-$ ./progxyz &amp;
+$ ./progxyz &
 [1] 350498
 $
 ```
 
-By running the program, you can find its PID using either `pgrep` or `ps`. Make note of the PID:
-
+运行该程序，你可以使用 `pgrep` 或 `ps` 找到它的 PID。记下 PID：
 
 ```
 $ pgrep progxyz
@@ -159,8 +153,7 @@ root      350508  347350  0 03:29 pts/0    00:00:00 grep --color=auto pro
 $
 ```
 
-While the test process is running, invoke `procdump` and provide the PID. The output states the name of the process and the PID, reports that a `Core dump` was generated, and shows its file name:
-
+当测试进程正在运行时，调用 `procdump` 并提供 PID。输出表明了该进程的名称和 PID，并报告它生成了一个核心转储文件，并显示其文件名：
 
 ```
 $ procdump -p 350498
@@ -185,8 +178,7 @@ Press Ctrl-C to end monitoring without terminating the process.
 $
 ```
 
-List the contents of the current directory, and you should see the new core file. The file name matches the one shown by the `procdump` command, and the date, time, and PID are appended to it:
-
+列出当前目录的内容，你应该可以看到新的核心文件。文件名与 `procdump` 命令显示的文件名一致，日期、时间、PID 都会附加在文件名上：
 
 ```
 $ ls -l progxyz_time_2020-06-24_03\:30\:00.350498
@@ -197,10 +189,9 @@ progxyz_time_2020-06-24_03:30:00.350498: ELF 64-bit LSB core file, x86-64, versi
 $
 ```
 
-### Analyze the core file with the GNU Project Debugger
+### 用 GNU 项目调试器分析核心文件。
 
-To see if you can read the proc file, invoke the [GNU Project Debugger][7] (`gdb`). Remember to provide the test binary's path so you can see all the function names on the stack. Here, `bt` (backtrace) shows that the `sleep()` function was being executed when the dump was taken:
-
+要查看是否可以读取该转储文件，调用 [GNU 项目调试器][7]（`gdb`）。记得提供测试二进制文件的路径，这样你就可以看到堆栈上所有的函数名。在这里，`bt`（回溯）表明，当转储被采集时，`sleep()` 函数正在执行：
 
 ```
 $ gdb -q ./progxyz ./progxyz_time_2020-06-24_03\:30\:00.350498
@@ -216,13 +207,12 @@ Missing separate debuginfos, use: yum debuginfo-install glibc-2.28-101.el8.x86_6
 (gdb)
 ```
 
-### What about gcore?
+### gcore 怎么样？
 
-Linux users will be quick to point out that Linux already has a command called `gcore`, which ships with most Linux distros and does the exact same thing as ProcDump. This is a valid argument. If you have never used it, try the following to dump a process' core with `gcore`. Run the test program again, then run `gcore`, and provide the PID as an argument:
-
+Linux 用户会很快指出，Linux 已经有一个叫 `gcore` 的命令，大多数 Linux 发行版都有这个命令，它的作用和 ProcDump 完全一样。你说的对。如果你从来没有使用过它，可以尝试用 `gcore` 来转储一个进程的核心。再次运行测试程序，然后运行 `gcore`，并提供 PID 作为参数：
 
 ```
-$ ./progxyz &amp;
+$ ./progxyz &
 [1] 350664
 $
 $
@@ -237,8 +227,7 @@ Saved corefile core.350664
 $
 ```
 
-`gcore` prints a message saying it has saved the core to a specific file. Check the current directory to find this core file, and use `gdb` again to load it:
-
+`gcore` 打印一条消息，说它已将核心文件保存到一个特定的文件中。检查当前目录，找到这个核心文件，然后再次使用 `gdb` 加载它：
 
 ```
 $
@@ -263,8 +252,7 @@ Missing separate debuginfos, use: yum debuginfo-install glibc-2.28-101.el8.x86_6
 $
 ```
 
-For `gcore` to work, you need to make sure the following settings are in place. First, ensure the `ulimit` is set for core files; if it is set to `0`, core files won't be generated. Second, ensure that `/proc/sys/kernel/core_pattern` has the proper settings to specify the core pattern:
-
+为了使 `gcore` 可以工作，你需要确保以下设置到位。首先，确保为核心文件设置了 `ulimit`，如果设置为 `0`，核心文件将不会被生成。第二，确保 `/proc/sys/kernel/core_pattern` 有正确的设置来指定核心模式：
 
 ```
 $ ulimit -c
@@ -272,24 +260,22 @@ unlimited
 $
 ```
 
-### Should you use ProcDump or gcore?
+### 你应该使用 ProcDump 还是 gcore？
 
-There are several cases where you might prefer using ProcDump instead of gcore, and ProcDump has a few built-in features that might be useful in general.
+有几种情况下，你可能更喜欢使用 ProcDump 而不是 gcore，ProcDump 有一些内置的功能，在一般情况下可能很有用。
 
-#### Waiting for a test binary to execute
+#### 等待测试二进制文件的执行
 
-Whether you use ProcDump or gcore, the test process must be executed and in a running state so that you can provide a PID to generate a core file. But ProcDump has a feature that waits until a specific binary runs; once it finds a test binary running that matches that given name, it generates a core file for that test binary. It can be enabled using the `-w` argument and the program's name instead of a PID. This feature can be useful in instances where the test program exits quickly.
+无论是使用 ProcDump 还是 gcore，测试进程必须被执行并处于运行状态，这样才能提供一个 PID 来生成核心文件。但 ProcDump 有一个功能，就是等待特定的二进制文件运行，一旦发现运行的测试二进制文件与给定的名称相匹配，它就会为该测试二进制文件生成一个核心文件。它可以使用 `-w` 参数和程序名称而不是 PID 来启用。这个功能在测试程序快速退出的情况下很有用。
 
-Here's how it works. In this example, there is no process named `progxyz` running:
-
+下面是它的工作原理。在这个例子中，没有名为 `progxyz` 的进程在运行：
 
 ```
 $ pgrep progxyz
 $
 ```
 
-Invoke `procdump` with the `-w` command to keep it waiting. From another terminal, invoke the test binary `progxyz`:
-
+用 `-w` 参数调用 `procdump`，让它保持等待。在另一个终端，调用测试二进制 `progxyz`：
 
 ```
 $ procdump -w progxyz
@@ -312,17 +298,15 @@ Press Ctrl-C to end monitoring without terminating the process.
 [03:39:23 - INFO]: Waiting for process 'progxyz' to launch...
 ```
 
-Then, from another terminal, invoke the test binary `progxyz`: 
-
+然后，从另一个终端调用测试二进制 `progxyz`：
 
 ```
-$ ./progxyz &amp;
+$ ./progxyz &
 [1] 350951
 $
 ```
 
-ProcDump immediately detects that the binary is running and dumps the core file for this binary:
-
+ProcDump 立即检测到二进制正在运行，并转储这个二进制的核心文件：
 
 ```
 [03:39:23 - INFO]: Waiting for process 'progxyz' to launch...
@@ -339,13 +323,12 @@ progxyz_time_2020-06-24_03:43:22.350951: ELF 64-bit LSB core file, x86-64, versi
 $
 ```
 
-#### Multiple core dumps
+#### 多个核心转储
 
-Another important ProcDump feature is that you can specify how many core files to generate by using the command-line argument `-n <count>`. The default time gap between the core dumps is 10 seconds, but you can modify this using the `-s <sec>` argument. This example uses ProcDump to take three core dumps of the test binary:
-
+另一个重要的 ProcDump 功能是，你可以通过使用命令行参数 `-n <count>` 指定要生成多少个核心文件。核心转储之间的默认时间间隔是 `10` 秒，但你可以使用 `-s <sec>` 参数修改。这个例子使用 ProcDump 对测试二进制文件进行了三次核心转储：
 
 ```
-$ ./progxyz &amp;
+$ ./progxyz &
 [1] 351014
 $
 $ procdump -n 3 -p 351014
@@ -379,31 +362,27 @@ $ ls -l progxyz_time_2020-06-24_03\:45\:*
 $
 ```
 
-#### Core dump based on CPU and memory usage
+#### 基于 CPU 和内存使用情况的核心转储
 
-ProcDump also enables you to trigger a core dump when a test binary or process reaches a certain CPU or memory threshold. ProcDump's man page shows the command-line arguments to use when invoking ProcDump:
+ProcDump 还可以让你在测试二进制或进程达到一定的 CPU 或内存阈值时触发核心转储。ProcDump 的手册页显示了调用 ProcDump 时使用的命令行参数：
 
+- `-C`：当 CPU 超过或等于指定值时，触发核心转储生成（0 到 100 * nCPU）。
+- `-c`：当 CPU 小于指定值时，触发核心转储生成（0 到 100 * nCPU）。 
+- `-M`：当内存提交超过或等于指定值（MB）时，触发核心转储生成。
+- `-m`：当内存提交小于指定值（MB）时，触发核心转储生成。
+- `-T`：当线程数超过或等于指定值时触发。
+- `-F`：当文件描述符数量超过或等于指定值时触发。
+- `-I`：轮询频率，单位为毫秒（默认为 1000）。
 
-```
--C          Trigger core dump generation when CPU exceeds or equals specified value (0 to 100 * nCPU)
--c          Trigger core dump generation when CPU is less than specified value (0 to 100 * nCPU)
--M          Trigger core dump generation when memory commit exceeds or equals specified value (MB)
--m          Trigger core dump generation when when memory commit is less than specified value (MB)
--T          Trigger when thread count exceeds or equals specified value.
--F          Trigger when filedescriptor count exceeds or equals specified value.
--I          Polling frequency in milliseconds (default is 1000)
-```
-
-For example, you can ask ProcDump to dump the core when the given PID's CPU usage exceeds 70%:
-
+例如，当给定 PID 的 CPU 使用率超过 70% 时，可以要求 ProcDump 转储核心：
 
 ```
-`procdump -C 70 -n 3 -p 351014`
+procdump -C 70 -n 3 -p 351014
 ```
 
-### Conclusion
+### 结论
 
-ProcDump is an interesting addition to the long list of Windows programs being ported to Linux. Not only does it provide additional tooling options to Linux users, but it can also make Windows users feel more at home when working on Linux.
+ProcDump 是一长串被移植到 Linux 的 Windows 程序中的一个有趣的补充。它不仅为 Linux 用户提供了额外的工具选择，而且可以让 Windows 用户在 Linux 上工作时更有熟悉的感觉。
 
 --------------------------------------------------------------------------------
 
@@ -411,7 +390,7 @@ via: https://opensource.com/article/20/7/procdump-linux
 
 作者：[Gaurav Kamathe][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
