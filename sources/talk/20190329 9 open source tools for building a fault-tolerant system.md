@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (chenmu-kk )
+[#]: translator: (chenmu-kk)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -8,7 +8,6 @@
 [#]: author: (Bryant Son (Red Hat, Community Moderator) https://opensource.com/users/brson)
 
 9 open source tools for building a fault-tolerant system
-九个用来构建容错系统的开源工具
 ======
 
 Maximize uptime and minimize problems with these open source tools.
