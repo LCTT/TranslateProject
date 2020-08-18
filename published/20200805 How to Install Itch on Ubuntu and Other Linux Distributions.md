@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/install-itch-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何在 Ubuntu 和其它的 Linux 发现版上安装 Itch
+如何在 Ubuntu 和其它的 Linux 发行版上安装 Itch
 ======
 
 ![][7]
