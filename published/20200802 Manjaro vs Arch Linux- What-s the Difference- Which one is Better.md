@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12527-1.html)
 [#]: subject: (Manjaro vs Arch Linux: What’s the Difference? Which one is Better?)
 [#]: via: (https://itsfoss.com/manjaro-vs-arch-linux/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
@@ -12,9 +12,9 @@ Manjaro 和 Arch Linux 有何不同，哪个更好？
 
 > Manjaro 还是 Arch Linux？如果说 Manjaro 是基于 Arch 的，那么它和 Arch 又有什么不同呢？请在这篇比较文章中阅读 Arch 和 Manjaro 的不同之处吧。
 
-大多数[适合初学者的 Linux 发行版][1]都是基于 Ubuntu 的。随着 Linux 用户经验的增加，一些人开始尝试使用更高级的发行版，主要是在“Arch领域”。
+大多数[适合初学者的 Linux 发行版][1]都是基于 Ubuntu 的。随着 Linux 用户经验的增加，一些人开始尝试使用更高级的发行版，主要是在“Arch 领域”。
 
-这个 Arch 领域以两个发行版为主。[Arch Linux][2] 本身和 [Manjaro][3]。还有其他[基于 Arch 的 Linux 发行版][4]，但都没有这两个发行版受欢迎。
+这个所谓的 “Arch 领域”以两个发行版为主。[Arch Linux][2] 本身和 [Manjaro][3]。还有其他[基于 Arch 的 Linux 发行版][4]，但都没有这两个发行版受欢迎。
 
 如果你在 Arch 和 Manjaro 之间感到困惑，那么这个比较应该能帮助你。
 
@@ -32,19 +32,19 @@ Manjaro 和 Arch Linux 有何不同，哪个更好？
 
 但 Arch 和 Manjaro 的滚动发布模式是有区别的。
 
-除了社区维护的 Arch 用户软件库（AUR）之外，Manjaro 维护着自己独立的软件库。这些软件库也包含非 Arch 提供的软件包。那些由 Arch 官方软件库所提供的流行软件包将首先进行彻底的测试（必要时打上补丁），然后 Manjaro 再发布，通常比 Arch 晚两周左右，发布到 Manjaro 自己的稳定软件库供公众使用。
+除了社区维护的 <ruby>Arch 用户软件库<rt>Arch User Repository</rt></ruby>（AUR）之外，Manjaro 也维护着自己的独立软件库，这些软件库也包含了非 Arch 提供的软件包。那些原本由 Arch 官方软件库提供的流行软件包将首先进行彻底的测试（必要时打上补丁），然后 Manjaro 再次发布，这通常比 Arch 晚两周左右，发布到 Manjaro 自己的稳定软件库供公众使用。
 
 ![][7]
 
-适应这个测试过程的一个后果是，Manjaro 永远不会像 Arch 一样具有激进尝鲜。但这样一来，就使得 Manjaro 比 Arch 稍微稳定一些，也不容易破坏你的系统。
+适应这个测试过程的一个后果是，Manjaro 永远不会像 Arch 一样那么激进尝鲜。但这样一来，就使得 Manjaro 比 Arch 稍微稳定一些，也不容易破坏你的系统。
 
 #### 包管理 - Pacman 和 Pamac
 
-Arch 和 Manjaro 都提供了基于命令行的软件包管理工具 Pacman，它是用 C 语言编写的，使用 tar 来打包应用程序。换句话说，你可以[使用相同的 pacman 命令][8]来管理两个发行版的软件包。
+Arch 和 Manjaro 都提供了基于命令行的软件包管理工具 Pacman，它是用 C 语言编写的，使用 `tar` 来打包应用程序。换句话说，你可以[使用相同的 pacman 命令][8]来管理两个发行版的软件包。
 
 除了 Pacman，Manjaro 还开发了一个名为 Pamac 的 GUI 应用程序，用于在 Manjaro 上轻松安装软件。这使得使用 Manjaro 比使用 Arch 更容易。
 
-![Manjaro 的 Pamac GUI P包管理器][9]
+![Manjaro 的 Pamac GUI 包管理器][9]
 
 请注意，你也可以在 Arch Linux 中从 AUR 安装 Pamac，但该工具是 Manjaro 的组成部分。
 
@@ -52,9 +52,9 @@ Arch 和 Manjaro 都提供了基于命令行的软件包管理工具 Pacman，�
 
 Pamac 并不是 Manjaro 团队开发的唯一帮助用户的 GUI 工具。Manjaro 还有一个专门的工具，用于检测硬件并为其推荐驱动程序。
 
-![Manjaro 硬件配置 GUI 工具][10]。
+![Manjaro 硬件配置 GUI 工具][10]
 
-这个硬件检测工具非常有用，可以说是 [Manjaro 受到社区喜爱的主要原因][11]之一。它使得检测/安装/使用或从一个驱动切换到另一个驱动都非常简单，让硬件兼容性成为了过去的问题。
+这个硬件检测工具非常有用，可以说是 [Manjaro 受到社区喜爱的主要原因][11]之一。它使得检测、安装、使用或从一个驱动切换到另一个驱动都非常简单，让硬件兼容性成为了过去。
 
 #### 驱动程序支持
 
@@ -62,7 +62,7 @@ Manjaro 为 GPU 驱动提供了极大的支持。我们都知道多年来 Linux 
 
 当[安装 Manjaro][12] 时，它给出了从开源（自由）或非开源（非自由）图形驱动安装开始的选项。当你选择“非自由”时，它会自动检测你的显卡，并为其安装最合适的驱动程序，因此 GPU 可以开箱即用。
 
-由于有了上一节中看到的硬件检测工具，甚至安装 Manjaro 时，安装显卡驱动会更加容易。
+由于有了上一节中看到的硬件检测工具，甚至在安装 Manjaro 时，安装显卡驱动会更加容易。
 
 如果你有一个带有 Nvidia Optimus 卡（混合 GPU）的系统，它与 Manjaro 配合良好。你会有很多方式来让它工作。
 
@@ -80,9 +80,9 @@ Manjaro 为 GPU 驱动提供了极大的支持。我们都知道多年来 Linux 
 
 好吧！你可以在任何 Linux 发行版上使用几乎所有的桌面环境。Arch 和 Manjaro 也不例外。
 
-然而，一个专门的桌面风格或版本可以让用户更容易地对上述桌面环境进行无缝体验。
+然而，一个专门的桌面风格或版本可以让用户更容易地在桌面环境里获得顺畅的体验。
 
-默认的 Arch ISO 并不包含任何桌面环境。例如，你想[在 Arch Linux 上安装 KDE][15]，你必须在[安装 Arch Linux][16] 时或之后下载并安装它。
+默认的 Arch ISO 并不包含任何桌面环境。例如，你想[在 Arch Linux 上安装 KDE][15]，你必须在[安装 Arch Linux][16] 时或在之后下载安装它。
 
 而 Manjaro 则为 Xfce、KDE 和 GNOME 等桌面环境提供了不同的 ISO。Manjaro 社区还维护着 MATE、Cinnamon、LXDE、LXQt、OpenBox 等桌面环境的 ISO。
 
@@ -96,7 +96,7 @@ Manjaro 是基于 Arch Linux 的，它是兼容 Arch 的，但**它不是 Arch**
 
 Arch 和 Manjaro 都有自己的维基页面和支持论坛来帮助各自的用户。
 
-虽然 Manjaro 有一个不错的[维基][18]文档，但 [Arch 维基][19]则完全不同。你可以在 Arch 维基中找到关于 Arch Linux 各方面的详细信息。
+虽然 Manjaro 有一个不错的[维基][18]文档，但 [Arch 维基][19]则不可同日而语。你可以在 Arch 维基中找到关于 Arch Linux 各方面的详细信息。
 
 #### 目标受众
 
@@ -108,15 +108,15 @@ Arch 和 Manjaro 都有自己的维基页面和支持论坛来帮助各自的用
 
 有些人经常说 Manjaro 是给那些不会安装 Arch 的人用的。但我认为这是不对的。不是每个人都想从头配置 Arch，或者没有太多时间。
 
-Manjaro 绝对是一只野兽，但与 Arch 截然不同。**快速、强大，并总是保持更新**，Manjaro 提供了 Arch 操作系统的所有优点，但特别强调**稳定性、用户友好性和可访问性**，适合新手和有经验的用户。
+Manjaro 绝对是一只野兽，但与 Arch 截然不同。**快速、强大，并总是保持更新**，Manjaro 提供了 Arch 操作系统的所有优点，但特别强调**稳定性、用户友好性和可访问性**，既适合新手，也适合有经验的用户。
 
 Manjaro 并不像 Arch Linux 那样极简主义。在 Arch 中，你从一个空白的画布开始，手动调整每个设置。当默认的 Arch 安装完成后，你在命令行就有了一个正在运行的 Linux 实例。想要一个[图形化桌面环境][21]？那就自己来吧 —— 有很多选择。选择一个，安装，然后配置它。你可以从中学到很多东西，特别是如果你是 Linux 新手的话。你会对系统是如何组合在一起的，以及为什么要以这样的方式安装东西有很好的理解。
 
-我希望你现在对 Arch 和 Manjaro 有了更好的理解。你明白了它们的相似，却又不同。
+我希望你现在对 Arch 和 Manjaro 有了更好的理解。现在，你明白了它们是相似而不同的了吧。
 
 我已经发表了我的看法。不要犹豫，请在评论区分享你的观点。在 Arch 和 Manjaro 之间，你更喜欢哪一个，为什么。
 
-Abhishek Prakash 补充了更多内容。
+Abhishek Prakash 也此文补充了内容。
 
 --------------------------------------------------------------------------------
 
@@ -125,7 +125,7 @@ via: https://itsfoss.com/manjaro-vs-arch-linux/
 作者：[Dimitrios Savvopoulos][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -143,12 +143,12 @@ via: https://itsfoss.com/manjaro-vs-arch-linux/
 [10]: https://i2.wp.com/itsfoss.com/wp-content/uploads/2020/04/hardware-detection.png?ssl=1
 [11]: https://itsfoss.com/why-use-manjaro-linux/
 [12]: https://itsfoss.com/install-manjaro-linux/
-[13]: https://itsfoss.com/aur-arch-linux/
+[13]: https://linux.cn/article-12107-1.html
 [14]: https://wiki.archlinux.org/index.php/Community_repository
-[15]: https://itsfoss.com/install-kde-arch-linux/
+[15]: https://linux.cn/article-12258-1.html
 [16]: https://itsfoss.com/install-arch-linux/
 [17]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/05/Arch-live-boot.jpg?ssl=1
 [18]: https://wiki.manjaro.org/index.php?title=Main_Page
 [19]: https://wiki.archlinux.org/
-[20]: https://itsfoss.com/why-arch-linux/
+[20]: https://linux.cn/article-12445-1.html
 [21]: https://itsfoss.com/best-linux-desktop-environments/
