@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12526-1.html)
 [#]: subject: (How to Install Itch on Ubuntu and Other Linux Distributions)
 [#]: via: (https://itsfoss.com/install-itch-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
 如何在 Ubuntu 和其它的 Linux 发现版上安装 Itch
 ======
+
+![][7]
 
 [Itch][1] 是独立数字创造者的平台，主要专注于独立游戏。它最初是一个托管、销售和下载独立视频游戏的网站。但是现在，Itch 也提供书籍、漫画、工具、棋类游戏、原声带等来自独立创造者的数字内容。
 
@@ -46,8 +48,6 @@ Itch 提供一个名称为 itch-setup 的安装器。你可以从它的下载网
 ![][6]
 
 在你登录后，你可以浏览游戏和其它的内容，并下载/购买它们。
-
-![][7]
 
 整个安装过程类似于 [在 Ubuntu 上安装 Steam][8]。
 
