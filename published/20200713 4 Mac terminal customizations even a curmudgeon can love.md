@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12536-1.html)
 [#]: subject: (4 Mac terminal customizations even a curmudgeon can love)
 [#]: via: (https://opensource.com/article/20/7/mac-terminal)
 [#]: author: (Katie McLaughlin https://opensource.com/users/glasnt)
@@ -12,7 +12,7 @@
 
 > 开源意味着我可以在任何终端上找到熟悉的 Linux。
 
-!["咖啡和笔记本"][1]
+![](https://img.linux.net.cn/data/attachment/album/202008/21/002323xqslvqnnmdz487dq.jpg)
 
 十年前，我开始了我的第一份工作，它要求我使用 Linux 作为我的笔记本电脑的操作系统。如果我愿意的话，我可以使用各种 Linux 发行版，包括 Gentoo，但由于我过去曾短暂地使用过Ubuntu，所以我选择了 Ubuntu Lucid Lynx 10.04。
 
