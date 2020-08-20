@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: ( chenmu-kk )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -8,19 +8,25 @@
 [#]: author: (Bryant Son (Red Hat, Community Moderator) https://opensource.com/users/brson)
 
 9 open source tools for building a fault-tolerant system
+九个用来构建容错系统的开源工具
 ======
 
 Maximize uptime and minimize problems with these open source tools.
+这些开源工具可以最大化延长运行时间并且在最大程度上减少问题。
 
 ![magnifying glass on computer screen, finding a bug in the code][1]
 
 I've always been interested in web development and software architecture because I like to see the broader picture of a working system. Whether you are building a mobile app or a web application, it has to be connected to the internet to exchange data among different modules, which means you need a web service.
+我总是对web开发和软件体系结构很感兴趣，因为我喜欢看到一个工作系统的更广阔的前景。无论是构建一个移动应用程序还是一个web应用程序，都必须连接到internet才能在不同的模块中交换数据，这意味着你需要web服务。
 
 If you use a cloud system as your application's backend, you can take advantage of greater computing power, as the backend service will scale horizontally and vertically and orchestrate different services. But whether or not you use a cloud backend, it's important to build a _fault-tolerant system_ —one that is resilient, stable, fast, and safe.
+如果选择云系统作为应用程序的后端，则可以利用更优秀的计算能力，因为后端服务将会在水平和垂直方向上进行扩展并编排不同的服务。但无论你是否使用云后端，建造一个灵活、稳定、快速又安全的容错系统是必不可少的。
 
-To understand fault-tolerant systems, let's use Facebook, Amazon, Google, and Netflix as examples. Millions and billions of users access these platforms simultaneously while transmitting enormous amounts of data via peer-to-peer and user-to-server networks, and you can be sure there are also malicious users with bad intentions, like hacking or denial-of-service (DoS) attacks. Even so, these platforms can operate 24 hours a day and 365 days a year without downtime.
+To understand fault-tolerant systems, let's use Facebook, Amazon, Google, and Netflix as examples. Millions and billions of users access these platforms simultaneously while transmitting enormous amounts of data via peer-to-peer and user-to-server networks, and you can be sure there are also malicious users with bad intentions, like hacking or denial-of-service (DoS) attacks. Even so, these platforms can operate 24 hours a day and 365 days a year without downtime.  
+要了解容错系统，让我们以脸书、亚马逊、谷歌和奈飞为例。数以亿计的用户会同时接入这些平台并通过对等网络和用户-服务器网络传输大量数据，你可以肯定这其中还存在许多的带有不法目的的恶意用户，例如黑客攻击和拒绝服务（DoS）攻击。即使如此，这些平台无需停机也可以全年无休地运转。
 
 Although machine learning and smart algorithms are the backbones of these systems, the fact that they achieve consistent service without a single minute of downtime is praiseworthy. Their expensive hardware and gigantic datacenters certainly matter, but the elegant software designs supporting the services are equally important. And the fault-tolerant system is one of the principles to build such an elegant system.
+尽管机器学习和智能算法是这些系统的基础，但它们实现一致服务而不需要一分钟停机的事实值得称赞。它们昂贵的硬件设备和巨大的数据中心当然十分重要，但是支持服务的精密软件设计也同样重要。而且容错系统是一个构建如此精密系统的法则之一。
 
 ### Two behaviors that cause problems in production
 
