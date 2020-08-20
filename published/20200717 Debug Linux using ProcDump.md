@@ -1,22 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12533-1.html)
 [#]: subject: (Debug Linux using ProcDump)
 [#]: via: (https://opensource.com/article/20/7/procdump-linux)
 [#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
 
-使用 ProcDump 调试 Linux
+使用微软的 ProcDump 调试 Linux 进程
 ======
 
 > 用这个微软的开源工具，获取进程信息。
 
-![渣土车在路上转弯][1] 。
+![](https://img.linux.net.cn/data/attachment/album/202008/20/095646k5wz7cd11vyc7lhr.jpg)
 
-微软越来越心仪 Linux 和开放源码，这并不是什么秘密。在过去几年中，该公司稳步增加对开源的贡献，包括将其部分软件和工具移植到 Linux。2018 年底，微软[宣布][2]将其部分 [Sysinternals][3] 工具以开源的方式移植到 Linux，[Linux 版的 ProcDump][4]是第一个这样的版本。
+微软越来越心仪 Linux 和开源，这并不是什么秘密。在过去几年中，该公司稳步地增加了对开源的贡献，包括将其部分软件和工具移植到 Linux。2018 年底，微软[宣布][2]将其 [Sysinternals][3] 的部分工具以开源的方式移植到 Linux，[Linux 版的 ProcDump][4]是其中的第一个。
 
-如果你在 Windows 上从事过调试或故障排除工作，你可能听说过 Sysinternals。它是一个“瑞士军刀”工具集，可以帮助系统管理员、开发人员和 IT 安全专家监控和排除 Windows 环境的故障。
+如果你在 Windows 上从事过调试或故障排除工作，你可能听说过 Sysinternals，它是一个“瑞士军刀”工具集，可以帮助系统管理员、开发人员和 IT 安全专家监控和排除 Windows 环境的故障。
 
 Sysinternals 最受欢迎的工具之一是 [ProcDump][5]。顾名思义，它用于将正在运行的进程的内存转储到磁盘上的一个核心文件中。然后可以用调试器对这个核心文件进行分析，了解转储时进程的状态。因为之前用过 Sysinternals，所以我很想试试 ProcDump 的 Linux 移植版。
 
@@ -93,7 +93,7 @@ bin/ProcDumpTestApplication: ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
 $
 ```
 
-在此情况下，每次运行 `procdump` 实用程序时，你都必须移动到 `bin/` 文件夹中。要使它在系统中的任何地方都可以使用，运行 `make install`。这将二进制文件复制到通常的 `bin/` 目录中，它是你的 shell `$PATH` 的一部分：
+在此情况下，每次运行 `procdump` 实用程序时，你都必须移动到 `bin/` 文件夹中。要使它在系统中的任何地方都可以使用，运行 `make install`。这将这个二进制文件复制到通常的 `bin/` 目录中，它是你的 shell `$PATH` 的一部分：
 
 ```
 $ which procdump
@@ -153,7 +153,7 @@ root      350508  347350  0 03:29 pts/0    00:00:00 grep --color=auto pro
 $
 ```
 
-当测试进程正在运行时，调用 `procdump` 并提供 PID。输出表明了该进程的名称和 PID，并报告它生成了一个核心转储文件，并显示其文件名：
+当测试进程正在运行时，调用 `procdump` 并提供 PID。下面的输出表明了该进程的名称和 PID，并报告它生成了一个核心转储文件，并显示其文件名：
 
 ```
 $ procdump -p 350498
@@ -262,7 +262,7 @@ $
 
 ### 你应该使用 ProcDump 还是 gcore？
 
-有几种情况下，你可能更喜欢使用 ProcDump 而不是 gcore，ProcDump 有一些内置的功能，在一般情况下可能很有用。
+有几种情况下，你可能更喜欢使用 ProcDump 而不是 gcore，ProcDump 有一些内置的功能，在一些情况下可能很有用。
 
 #### 等待测试二进制文件的执行
 
@@ -306,7 +306,7 @@ $ ./progxyz &
 $
 ```
 
-ProcDump 立即检测到二进制正在运行，并转储这个二进制的核心文件：
+ProcDump 立即检测到该二进制正在运行，并转储这个二进制的核心文件：
 
 ```
 [03:39:23 - INFO]: Waiting for process 'progxyz' to launch...
@@ -391,7 +391,7 @@ via: https://opensource.com/article/20/7/procdump-linux
 作者：[Gaurav Kamathe][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
