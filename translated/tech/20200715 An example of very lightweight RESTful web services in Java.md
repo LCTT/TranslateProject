@@ -11,8 +11,6 @@ An example of very lightweight RESTful web services in Java
 
 一个用 Java 实现的超轻量级 RESTful web 服务示例
 ======
-Explore lightweight RESTful services in Java through a full code example
-to manage a book collection.
 
 通过完整的代码例子管理一套图书，来探索轻量级的 RESTful 服务。
 
