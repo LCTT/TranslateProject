@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Photoflare: An Open Source Image Editor for Simple Editing Needs)
@@ -10,7 +10,7 @@
 Photoflare：满足简单编辑需求的开源图像编辑器
 ======
 
-_**简介：Photoflare 是 Linux 和 Windows 上的图像编辑器。它有一个免费且开源的社区版本。**_
+> Photoflare 是一款可用于 Linux 和 Windows 上的图像编辑器。它有一个免费而开源的社区版本。
 
 在 Linux 上编辑图像时，GIMP 显然是首选。但是，如果你不需要高级编辑功能，GIMP 可能会让人不知所措。这是像 Photoflare 这样的应用立足的地方。
 
@@ -18,9 +18,9 @@ _**简介：Photoflare 是 Linux 和 Windows 上的图像编辑器。它有一�
 
 ![][1]
 
-Photoflare 是一个在简单易用的界面提供基本的图像编辑功能的编辑器。
+Photoflare 是一个在简单易用的界面里提供了基本的图像编辑功能的编辑器。
 
-它受流行的 Windows 应用 [PhotoFiltre][2] 的启发。这个程序不是仅仅克隆，它是从头开始用 C++ 编写的，并使用 Qt 框架作为界面。
+它受流行的 Windows 应用 [PhotoFiltre][2] 的启发。这个程序不是一个克隆品，它是用 C++ 从头开始编写的，并使用 Qt 框架作为界面。
 
 它的功能包括裁剪、翻转/旋转、调整图像大小。你还可以使用诸如油漆刷、油漆桶、喷雾罐、模糊工具和橡皮擦之类的工具。魔术棒工具可让你选择图像的特定区域。
 
@@ -43,18 +43,16 @@ Photoflare 是一个在简单易用的界面提供基本的图像编辑功能的
 * 使用画笔、油漆桶、喷涂、模糊工具和图像等工具编辑图像
 * 在图像上添加线条和文字
 * 更改图像的色调
-* 添加老照滤镜
+* 添加老照片滤镜
 * 批量调整大小、滤镜等
-
-
 
 ### 在 Linux 上安装 Photflare
 
 ![][5]
 
-在 Photoflare 的网站上，你可以找到定价以及每月订阅的选项。但是，应用是开源的，它的[源码可在 GitHub 上找到][6]。
+在 Photoflare 的网站上，你可以找到定价以及每月订阅的选项。但是，该应用是开源的，它的[源码可在 GitHub 上找到][6]。
 
-应用也是“免费”使用的。[定价/订购部分][7]用于项目的财务支持。你可以免费下载它，如果你喜欢该应用并且会继续使用，请考虑给它捐赠。
+应用也是“免费”使用的。[定价/订购部分][7]用于该项目的财务支持。你可以免费下载它，如果你喜欢该应用并且会继续使用，请考虑给它捐赠。
 
 Photoflare 有[官方 PPA][8]，适用于 Ubuntu 和基于 Ubuntu 的发行版。此 PPA 可用于 Ubuntu 18.04 和 20.04 版本。
 
@@ -78,17 +76,17 @@ sudo apt remove photoflare
 sudo add-apt-repository -r ppa:photoflare/photoflare-stable
 ```
 
-**Arch Linux** 和 Manjaro 用户可以[从 AUR 获取][9]。
+Arch Linux 和 Manjaro 用户可以[从 AUR 获取][9]。
 
 Fedora 没有现成的软件包，因此你需要获取源码：
 
-[Photoflare source code][6]
+- [Photoflare 源代码][6]
 
 ### Photoflare 的经验
 
-我发现它与 [Pinta][10] 有点相似，但功能更多。它是用于基本图像编辑的简单工具。批处理功能是加分。
+我发现它与 [Pinta][10] 有点相似，但功能更多。它是用于基本图像编辑的简单工具。批处理功能是加分项。
 
-我注意到图像在打开编辑时看起来不清晰。我打开一张截图进行编辑，字体看起来很模糊。但是，保存图像并在[图像查看器][11]中打开后，没有显示此问题。
+我注意到图像在打开编辑时看起来不够清晰。我打开一张截图进行编辑，字体看起来很模糊。但是，保存图像并在[图像查看器][11]中打开后，没有显示此问题。
 
 总之，如果你不需要专业级的图像编辑，它是一个不错的工具。
 
@@ -101,7 +99,7 @@ via: https://itsfoss.com/photoflare/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
