@@ -1,38 +1,37 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (FreeFileSync: Open Source File Synchronization Tool)
 [#]: via: (https://itsfoss.com/freefilesync/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-FreeFileSync：开源文件同步工具
+FreeFileSync：开源的文件同步工具
 ======
 
-_**简介：FreeFileSync 是一个开源文件夹比较和同步工具，你可以使用它将数据备份到外部磁盘、云服务（如 Google Drive）或任何其他存储路径。**_
+> FreeFileSync 是一个开源的文件夹比较和同步工具，你可以使用它将数据备份到外部磁盘、云服务（如 Google Drive）或任何其他存储路径。
 
-### FreeFileSync：一个免费和开源的同步工具
+### FreeFileSync：一个免费且开源的同步工具
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202008/23/060523ubx28vyi8qf8sv9d.jpg)
 
 [FreeFileSync][2] 是一个令人印象深刻的开源工具，可以帮助你将数据备份到其他位置。
 
 它们可以是外部 USB 磁盘、Google Drive 或使用 **SFTP 或 FTP** 连接到任何云存储。
 
-你可能之前读过我们的[如何在 Linux 上使用 Google Drive][3] 的教程。不幸的是， 没有合适的在 Linux 上原生使用 Google Drive 的 FOSS 方案。还有 [Insync][4]，但它是收费软件而非开源软件。
+你可能之前读过我们的[如何在 Linux 上使用 Google Drive][3] 的教程。不幸的是，没有合适的在 Linux 上原生使用 Google Drive 的 FOSS 方案。有个 [Insync][4]，但它是收费软件而非开源软件。
 
 FreeFileSync 可使用 Google Drive 帐户同步文件。事实上，我用它把我的文件同步到 Google Drive 和一个单独的硬盘上。
 
 ### FreeFileSync 的功能
 
-![][5]
+![][1]
 
 尽管 FreeFileSync 的 UI 看起来可能很老，但它为普通用户和高级用户提供了许多有用的功能。
 
-我将在此处重点介绍所有功能：
+我将在此处把所有能重点介绍的功能都介绍出来：
 
-  * Parallel file copy (paid)
   * 跨平台支持（Windows、macOS 和 Linux）
   * 同步前比较文件夹
   * 支持 Google Drive、[SFTP][6] 和 FTP 连接
@@ -46,8 +45,6 @@ FreeFileSync 可使用 Google Drive 帐户同步文件。事实上，我用它�
   * 便携式版（付费）
   * 并行文件复制（付费）
 
-
-
 如果你看一下它提供的功能，它不仅是普通的同步工具，而且还免费提供了更多功能。
 
 此外，为了让你了解，你还可以在同步文件之前先比较它们。例如，你可以比较文件内容/文件时间，或者简单地比较源文件夹和目标文件夹的文件大小。
@@ -58,7 +55,7 @@ FreeFileSync 可使用 Google Drive 帐户同步文件。事实上，我用它�
 
 ![][8]
 
-但是，它也为你提供了捐赠密钥的选项，它可解锁一些特殊功能，如在同步完成时通过电子邮件通知你等。
+但是，它也为你提供了捐赠密钥的可选选项，它可解锁一些特殊功能，如在同步完成时通过电子邮件通知你等。
 
 以下是免费版本和付费版本的不同：
 
@@ -66,21 +63,21 @@ FreeFileSync 可使用 Google Drive 帐户同步文件。事实上，我用它�
 
 因此，大多数基本功能是免费的。高级功能主要是针对高级用户，当然，如果你想支持他们也可以。（如果你觉得它有用，请这么做）。
 
-此外，请注意，捐赠版单用户最多可在 3 台设备上使用。所以，这绝对不坏！
+此外，请注意，捐赠版单用户最多可在 3 台设备上使用。所以，这绝对不差！
 
 ### 在 Linux 上安装 FreeFileSync
 
-你可以前往它的[官方下载页面][10]，并下载 Linux 的 **tar.gz**文件。如果你喜欢，你还可以下载源码。
+你可以前往它的[官方下载页面][10]，并下载 Linux 的 tar.gz 文件。如果你喜欢，你还可以下载源码。
 
 ![][11]
 
 接下来，你只需解压并运行可执行文件就可以了（如上图所示）
 
-[Download FreeFileSync][2]
+- [下载 FreeFileSync][2]
 
 ### 如何开始使用 FreeFileSync？
 
-虽然我还没有尝试成功创建自动同步作业，但它很容易使用。
+虽然我还没有成功地尝试过创建自动同步作业，但它很容易使用。
 
 [官方文档][12]应该足以让你获得想要的。
 
@@ -94,11 +91,11 @@ FreeFileSync 可使用 Google Drive 帐户同步文件。事实上，我用它�
 
 #### FreeFileSync 的同步类型
 
-当你选择**“更新”方式进行同步**时，它只需将新数据从源文件夹复制到目标文件夹。因此，即使你从源文件夹中删除了某些东西，它也不会在目标文件夹中被删除。
+当你选择 “更新” 的方式进行同步时，它只需将新数据从源文件夹复制到目标文件夹。因此，即使你从源文件夹中删除了某些东西，它也不会在目标文件夹中被删除。
 
-如果你希望目标文件夹有相同的文件副本，可以选择**“镜像”同步方式**。这样，如果你从源文件夹中删除内容，它就会从目标文件夹中删除。
+如果你希望目标文件夹有相同的文件副本，可以选择 “镜像”同步方式。这样，如果你从源文件夹中删除内容，它就会从目标文件夹中删除。
 
-还有一个**“双向”同步方式**，它检测源文件夹和目标文件夹的更改（而不是只监视源文件夹）。因此，如果对源/目标文件夹进行了任何更改，都将同步修改。
+还有一个 “双向” 同步方式，它检测源文件夹和目标文件夹的更改（而不是只监视源文件夹）。因此，如果对源/目标文件夹进行了任何更改，都将同步修改。
 
 有关更高级的用法，我建议你参考[文档][12]。
 
@@ -119,7 +116,7 @@ via: https://itsfoss.com/freefilesync/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
