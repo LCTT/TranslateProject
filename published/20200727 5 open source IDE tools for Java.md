@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12542-1.html)
 [#]: subject: (5 open source IDE tools for Java)
 [#]: via: (https://opensource.com/article/20/7/ide-java)
 [#]: author: (Daniel Oh https://opensource.com/users/daniel-oh)
@@ -12,7 +12,7 @@
 
 > Java IDE 工具提供了大量的方法来根据你的独特需求和偏好创建一个编程环境。
 
-![woman on laptop sitting at the window][1]
+![](https://img.linux.net.cn/data/attachment/album/202008/22/235441wnnorcvo4olasv8o.jpg)
 
 通过简化程序员的工作，[Java][2] 框架可以使他们的生活更加轻松。这些框架是为了在各种服务器环境上运行各种应用程序而设计开发的；这包括解析注解、扫描描述符、加载配置以及在 Java 虚拟机（JVM）上启动实际的服务等方面的动态行为。控制这么多的任务需要更多的代码，这就很难降低内存占用、加快新应用的启动时间。无论如何，据 [TIOBE 指数][3]，在当今使用的编程语言中 Java 一直排名前三，拥有着 700 万到 1000 万开发者的社区。
 
