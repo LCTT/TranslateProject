@@ -1,28 +1,27 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12523-1.html)
 [#]: subject: (Perform Common PDF Editing Tasks Like Merge, Split, Rotate With Free and Open Source PDF Mix Tool)
 [#]: via: (https://itsfoss.com/pdf-mix-tool/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-使用自由开源的 PDF Mix Tool 执行常见的 PDF 编辑任务如：合并、拆分、旋转
+使用 PDF Mix Tool 执行常见的 PDF 编辑任务
 ======
 
-_**简介：PDF Mix Tool 是一个简单、轻巧的开源 PDF 编辑应用，可让你从 PDF 中提取页面、合并两个 PDF、从 PDF 中删除页面等。**_
+> PDF Mix Tool 是一个简单、轻巧的开源 PDF 编辑应用，可让你从 PDF 中提取页面、合并两个 PDF、从 PDF 中删除页面等。
+
+![](https://img.linux.net.cn/data/attachment/album/202008/16/203411puozfr91f1pmzg9z.jpg)
 
 ### PDF Mix Tool：一个简单的开源 PDF 编辑工具
 
 ![][1]
 
-有[一些 Linux 中 PDF 编辑器][2]。我通常将它们分为两类：
-
+有[几个可以在 Linux 中使用的 PDF 编辑器][2]，我通常将它们分为两类：
 
   * 可让你编辑内容（注释、高亮、更改文本、添加/删除图像等）的 PDF 编辑器，
   * 可让你通过合并、分割、提取页面等来修改文件的 PDF 编辑器。
-
-
 
 [PDF Mix Tool][3] 属于第二类。它是用 C++ 和 Qt5 编写的开源软件。它可让你合并两个或更多 PDF 文件，并为每个文件指定页面，还有旋转页面、添加空白页、删除页面以及从 PDF 文件提取页面。
 
@@ -38,11 +37,11 @@ PDF Mix Tool 并没有很多功能，但是有一些非常重要的功能。
 
 ![][5]
 
-你可以轻松合并多个 PDF 文件，同时指定确切的页面。它让你能够调整页面数、旋转，还能使用 “**Alternate mix**” 反转页面顺序合并。
+你可以轻松合并多个 PDF 文件，同时指定确切的页面。它让你能够调整页面数、旋转，还能使用 “<ruby>交替混合<rt>Alternate mix</rt></ruby>” 反转页面顺序合并。
 
 ![][6]
 
-你只需要单击 “**Add PDF File**”添加文件，然后使用可用的选项对其进行编辑（如上图所示），最后生成编辑的 PDF。
+你只需要单击 “<ruby>添加 PDF 文件<rt>Add PDF File</rt></ruby>” 添加文件，然后使用可用的选项对其进行编辑（如上图所示），最后生成编辑的 PDF。
 
 #### 旋转页面
 
@@ -52,13 +51,13 @@ PDF Mix Tool 并没有很多功能，但是有一些非常重要的功能。
 
 ![][7]
 
-你有多种选择，但是要旋转页面，需要选择 “**Edit page layout**” 选项，如上截图所示。
+你有多种选择，但是要旋转页面，需要选择 “<ruby>编辑页面布局<rt>Edit page layout</rt></ruby>” 选项，如上截图所示。
 
 #### 添加或删除页面
 
 要从其他 PDF 文件添加新页面，最好利用此选项。
 
-但是，如果要添加空白页，你可以在选择一个文件时处理。不仅限于添加空白页面，还可以删除特定页面。下面的截图圈出了高亮选项：
+但是，如果要添加空白页，你可以选择一个文件进行添加。不只是添加空白页面，还可以删除特定页面。下面的截图圈出了高亮选项：
 
 ![][8]
 
@@ -80,7 +79,7 @@ PDF Mix Tool 并没有很多功能，但是有一些非常重要的功能。
 
 ![PDF Mix Tool in Ubuntu Software Center][11]
 
-PDF Mix Tool 存在于 Snap 和 [Flatpak 软件包][12]中。这意味着如果发行版支持任意一种软件包，_**你都可以在软件管理器中找到它**_。
+PDF Mix Tool 存在于 Snap 和 [Flatpak 软件包][12]中。这意味着如果发行版支持这任意一种，你都可以在软件管理器中找到它。
 
 或者，如果你[启用了 Snap 软件包支持][13]，那么可以使用以下命令进行安装：
 
@@ -102,9 +101,9 @@ sudo pacman -S pdfmixtool
 
 你也可以选择查看它的 [GitLab 页面][16]获取源码。
 
-[下载 PDF Mix Tool 源码][17]
+- [下载 PDF Mix Tool 源码][17]
 
-**总结**
+### 总结
 
 它可能不是功能最丰富的 PDF 编辑工具，但考虑到它是轻量级的开源工具，因此它是已安装的应用中非常有用的。过去我们也介绍过类似的工具 [PDF Arranger][18]。你可能会想了解一下。
 
@@ -117,7 +116,7 @@ via: https://itsfoss.com/pdf-mix-tool/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
