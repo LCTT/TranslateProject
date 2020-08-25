@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12552-1.html)
 [#]: subject: (Microsoft uses AI to boost its reuse, recycling of server parts)
 [#]: via: (https://www.networkworld.com/article/3570451/microsoft-uses-ai-to-boost-its-reuse-recycling-of-server-parts.html)
 [#]: author: (Andy Patrizio https://www.networkworld.com/author/Andy-Patrizio/)
@@ -12,7 +12,7 @@
 
 > 准备好在提到数据中心设备时，听到更多的“循环”一词。
 
-![](https://images.idgesg.net/images/article/2020/05/server_racks_close-up_perspective_shot_by_monsitj_gettyimages-918951042_cw_cio_2400x1600-100841601-large.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202008/25/234108f8yz3c3la8xw18mn.jpg)
 
 微软正在将人工智能引入到对数百万台服务器进行分类的任务中，以确定哪些部件可以回收，在哪里回收。
 
