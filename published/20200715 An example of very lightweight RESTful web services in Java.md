@@ -1,13 +1,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Yufei-Yan)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12555-1.html)
 [#]: subject: (An example of very lightweight RESTful web services in Java)
 [#]: via: (https://opensource.com/article/20/7/restful-services-java)
 [#]: author: (Marty Kalin https://opensource.com/users/mkalindepauledu)
 
-一个用 Java 实现的超轻量级 RESTful web 服务示例
+一个用 Java 实现的超轻量级 RESTful Web 服务示例
 ======
 
 > 通过管理一套图书的完整代码示例，来探索轻量级的 RESTful 服务。
