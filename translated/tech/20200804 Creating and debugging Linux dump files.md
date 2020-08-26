@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12554-1.html)
 [#]: subject: (Creating and debugging Linux dump files)
 [#]: via: (https://opensource.com/article/20/8/linux-dump)
 [#]: author: (Stephan Avenwedde https://opensource.com/users/hansic99)
@@ -12,11 +12,11 @@
 
 > 了解如何处理转储文件将帮你找到应用中难以重现的 bug。
 
-![Magnifying glass on code][1]
+![](https://img.linux.net.cn/data/attachment/album/202008/26/234535rhnwdc783swgsbqw.jpg)
 
-崩溃转储、内存转储、核心转储、系统转储……这些全都会产生同样的产物：一个包含了当应用崩溃时，在那个特定时刻的应用的内存状态的文件。
+崩溃转储、内存转储、核心转储、系统转储……这些全都会产生同样的产物：一个包含了当应用崩溃时，在那个特定时刻应用的内存状态的文件。
 
-这是一篇指导文章，你可以通过克隆示例应用仓库来跟随学习：
+这是一篇指导文章，你可以通过克隆示例的应用仓库来跟随学习：
 
 ```
 git clone https://github.com/hANSIc99/core_dump_example.git
@@ -24,7 +24,7 @@ git clone https://github.com/hANSIc99/core_dump_example.git
 
 ### 信号如何关联到转储
 
-信号是操作系统和用户应用之间的进程间通讯。Linux 使用 [POSIX 标准][2]中定义的信号。在你的系统上，你可以在 `/usr/include/bits/signum-generic.h` 找到标准信号的定义。如果你想知道更多关于在你的应用程序中使用信号的信息，还有一个信息丰富的 [signal 手册页][3]。简单地说，Linux基于预期的或意外的信号来触发进一步的活动。
+信号是操作系统和用户应用之间的进程间通讯。Linux 使用 [POSIX 标准][2]中定义的信号。在你的系统上，你可以在 `/usr/include/bits/signum-generic.h` 找到标准信号的定义。如果你想知道更多关于在你的应用程序中使用信号的信息，这有一个信息丰富的 [signal 手册页][3]。简单地说，Linux 基于预期的或意外的信号来触发进一步的活动。
 
 当你退出一个正在运行的应用程序时，应用程序通常会收到 `SIGTERM` 信号。因为这种类型的退出信号是预期的，所以这个操作不会创建一个内存转储。
 
@@ -35,7 +35,7 @@ git clone https://github.com/hANSIc99/core_dump_example.git
   * `SIGSEGV`：对存储的无效访问
   * `SIGBUS`：总线错误
   * `SIGABRT`：程序检测到的错误，并通过调用 `abort()` 来报告
-  * `SIGIOT`：在 Fedora 上已经过时，这个信号过去在 [PDP-11][5] 上用 `abort()` 时触发，现在映射到 SIGABRT
+  * `SIGIOT`：这个信号在 Fedora 上已经过时，过去在 [PDP-11][5] 上用 `abort()` 时触发，现在映射到 SIGABRT
 
 ### 创建转储文件
 
@@ -81,7 +81,7 @@ ulimit -c 0
 /proc/sys/kernel/core_pattern
 ```
 
-我运行的是 Fedora 31，在我的系统上，该文件包含：
+我运行的是 Fedora 31，在我的系统上，该文件包含的内容是：
 
 ```
 /usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h
@@ -135,7 +135,7 @@ Program terminated with signal SIGABRT, Aborted.
 #6  0x0000000000401401 in main ()
 ```
 
-内存地址：与后续帧相比，`main()` 和 `freeSomething()` 的内存地址相当低。由于共享对象被映射到虚拟地址空间末尾的区域，可以认为 `SIGABRT` 是由共享库中的调用引起的。共享对象的内存地址在多次调用之间并不是恒定不变的，所以当你看到多次调用之间的地址不同时，完全可以认为是共享对象。
+与后续帧相比，`main()` 和 `freeSomething()` 的内存地址相当低。由于共享对象被映射到虚拟地址空间末尾的区域，可以认为 `SIGABRT` 是由共享库中的调用引起的。共享对象的内存地址在多次调用之间并不是恒定不变的，所以当你看到多次调用之间的地址不同时，完全可以认为是共享对象。
 
 堆栈跟踪显示，后续的调用源于 `malloc.c`，这说明内存的（取消）分配可能出了问题。
 
@@ -168,7 +168,7 @@ CFLAGS =-Wall -Werror -std=c++11 -g
 ./coredump -c2
 ```
 
-你会得到一个浮点异常。在GDB中打开转储：
+你会得到一个浮点异常。在 GDB 中打开该转储文件：
 
 ```
 coredumpctl debug
@@ -226,7 +226,7 @@ via: https://opensource.com/article/20/8/linux-dump
 作者：[Stephan Avenwedde][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
