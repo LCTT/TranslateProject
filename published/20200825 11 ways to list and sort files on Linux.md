@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12560-1.html)
 [#]: subject: (11 ways to list and sort files on Linux)
 [#]: via: (https://www.networkworld.com/article/3572590/11-ways-to-list-and-sort-files-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
 把 Linux 上的文件列表和排序玩出花来
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202008/28/213742y8cxnbnjpopzd5j0.jpg)
 
 > Linux 命令可以提供文件的详细信息，也可以自定义显示的文件列表，甚至可以深入到文件系统的目录中，只要你愿意看。
 
