@@ -1,18 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12564-1.html)
 [#]: subject: (OnionShare: An Open-Source Tool to Share Files Securely Over Tor Network)
 [#]: via: (https://itsfoss.com/onionshare/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-OnionShare: 一个通过 Tor 网络安全共享文件的开源工具
+OnionShare：一个安全共享文件的开源工具
 ======
 
-_**简介：OnionShare 是一个免费开源工具，它利用 Tor 网络安全和匿名地共享文件。**_
+> OnionShare 是一个自由开源工具，它利用 Tor 网络安全和匿名地共享文件。
 
-你可能已经有很多在线服务来安全地共享文件，但它可能不是完全匿名的。
+![](https://img.linux.net.cn/data/attachment/album/202008/30/103623ty2r6sz03y32o99o.jpg)
+
+已经有很多在线服务可以安全地共享文件，但它可能不是完全匿名的。
 
 此外，你必须依靠一个集中式服务来共享文件，如果服务决定像 [Firefox Send][1] 那样关闭，那你不能真正依靠它来一直安全地共享文件。
 
@@ -41,16 +43,13 @@ _**简介：OnionShare 是一个免费开源工具，它利用 Tor 网络安全�
 * 接收文件
 * 命令行选项
 * 发布洋葱站点
-* 能够使用桥接(如果你的 Tor 连接不起作用)
+* 能够使用桥接（如果你的 Tor 连接不起作用）
 * 能够使用持久 URL 进行共享（高级用户）。
 * 隐身模式（更安全）
-
-
 
 你可以通过 GitHub 上的[官方用户指南][7]来了解更多关于它们的信息。
 
 ### 在 Linux 上安装 OnionShare
-
 
 你应该可以在你的软件中心找到 OnionShare 并安装它。如果没有，你可以在 Ubuntu 发行版上使用下面的命令添加 PPA：
 
@@ -62,7 +61,7 @@ sudo apt install -y onionshare
 
 如果你想把它安装在其他 Linux 发行版上，你可以访问[官方网站][4]获取 Fedora 上的安装说明以及构建说明。
 
-[下载 OnionShare][4]
+- [下载 OnionShare][4]
 
 ### OnionShare 如何工作？
 
@@ -83,7 +82,7 @@ sudo apt install -y onionshare
 现在接收方需要的是 OnionShare 的地址，它看上去是这样的。
 
 ```
-http://onionshare:[email protected]
+http://onionshare:xyz@jumbo2127k6nekzqpff2p2zcxcsrygbnxbitsgnjcfa6v47wvyd.onion
 ```
 
 接着 Tor 浏览器开始下载文件。
@@ -94,7 +93,7 @@ http://onionshare:[email protected]
 
 #### 允许接收文件
 
-如果你想生成一个 URL，让别人直接上传文件到你的电脑上（要注意谁与你分享），你可以在启动 OnionShare 后点击 **Receive Files** 标签即可。
+如果你想生成一个 URL，让别人直接上传文件到你的电脑上（要注意你与谁分享），你可以在启动 OnionShare 后点击 **Receive Files** 标签即可。
 
 ![][10]
 
@@ -124,7 +123,7 @@ http://onionshare:[email protected]
 
 我试着用[免费模板][15]测试了一下，效果很好（但很慢）。所以，这可能取决于你的网络连接。
 
-### **总结**
+### 总结
 
 除了上面提到的功能，如果需要的话，你还可以使用命令行进行一些高级的调整。
 
@@ -138,8 +137,8 @@ via: https://itsfoss.com/onionshare/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[geekpi](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
