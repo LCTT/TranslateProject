@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12567-1.html)
 [#]: subject: (Glances – A Versatile System Monitoring Tool for Linux Systems)
 [#]: via: (https://itsfoss.com/glances/)
 [#]: author: (Chinmay https://itsfoss.com/author/chinmay/)
 
 Glances：多功能 Linux 系统监控工具
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202008/30/212820tgdi7iou6dg6qqq2.jpg)
 
 Linux 上最常用的[命令行进程监控工具][1]是 `top` 和它那色彩斑斓、功能丰富的表弟 [htop][2]。
 
