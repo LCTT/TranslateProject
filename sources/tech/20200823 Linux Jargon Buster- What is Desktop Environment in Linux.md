@@ -1,70 +1,68 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
+[#]: translator: (wxy)
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Linux Jargon Buster: What is Desktop Environment in Linux?)
 [#]: via: (https://itsfoss.com/what-is-desktop-environment/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Linux Jargon Buster: What is Desktop Environment in Linux?
+Linux 黑话解释：什么是桌面环境？
 ======
 
-One of the most commonly used term in desktop Linux world is Desktop Environment (DE). If you are new to Linux, you should understand this frequently used term.
+在桌面 Linux 世界中，最常用的术语之一就是<ruby>桌面环境<rt>Desktop Environment</rt></ruby>（DE）。如果你是 Linux 的新手，你应该了解一下这个经常使用的术语。
 
-### What is Desktop Environment in Linux?
+### 什么是 Linux 中的桌面环境？
 
-A desktop environment is the bundle of components that provide you common graphical user interface (GUI) elements such as icons, toolbars, wallpapers, and desktop widgets. Thanks to the desktop environment, you can use Linux graphically using your mouse and keyboard like you do in Windows.
+桌面环境是一个组件的组合体，为你提供常见的<ruby>图形用户界面<rt>graphical user interface</rt></ruby>（GUI）元素组件，如图标、工具栏、壁纸和桌面小部件。借助桌面环境，你可以像在 Windows 中一样使用鼠标和键盘使用 Linux。
 
-There are several desktop environments and these desktop environments determines what your Linux system looks like and how you interact with it.
+有几种不同的桌面环境，这些桌面环境决定了你的 Linux 系统的样子以及你与它的交互方式。
 
-Most of the desktop environments have their own set of integrated applications and utilities so that users get a uniform feel while using the OS. So, you get a file explorer, desktop search, menu of applications, wallpaper and screensaver utilities, text editors and more.
+大多数桌面环境都有自己的一套集成的应用程序和实用程序，这样用户在使用操作系统时就能得到统一的感受。所以，你会得到一个文件资源管理器、桌面搜索、应用程序菜单、壁纸和屏保实用程序、文本编辑器等。
 
-Without a desktop environment, your Linux system will just have a terminal like utility and you’ll have to interact it using commands only.
+如果没有桌面环境，你的 Linux 系统就只有一个类似于终端的实用程序，你只能用命令与之交互。
 
 ![Screenshot of GNOME Desktop Environment][1]
 
-### Different desktop environments in Linux
+### Linux 中各种桌面环境
 
-Desktop environment is also referred as DE sometimes.
+桌面环境有时也被简称为 DE。
 
-As I mentioned earlier, there are [various desktop environments available for Linux][2]. Why so?
+如前所述，Linux 有[各种桌面环境可供选择][2]。为什么这么说呢？
 
-Think of the desktop environments as clothes. The clothes determine what you look like. If you wear skinny jeans and flat shoes, you would look good but running or hiking in those clothes won’t be comfortable.
+可以把桌面环境看成是衣服。衣服决定了你的样子。如果你穿紧身牛仔裤和平底鞋，你会很好看，但穿着这些衣服跑步或登山就不舒服了。
 
-Some desktop environments such as [GNOME][3] focus on a modern look and user experience while desktop like [Xfce][4] focus more on using fewer computing resources than on fancy graphics.
+[GNOME][3] 这样桌面环境注重现代的外观和用户体验，而像 [Xfce][4] 这样的桌面环境更注重使用更少的计算资源，而不是花哨的图形。
 
 ![Screenshot of Xfce Desktop Environment][5]
 
-Your clothes depend on your need and determine your looks, the same is the case with the desktop environments. You have to decide whether you want something that looks good or something that lets your system run faster.
+你的衣服取决于你的需要，决定了你的外观，桌面环境也是如此。你必须决定你是想要一些好看的东西，还是让你的系统运行得更快。
 
-Some of the [popular desktop environments][2] are:
+一些[流行的桌面环境][2]有：
 
-  * GNOME – Uses plenty of system resources but gives you a modern, polished system
-  * Xfce – Vintage look but light on resources
-  * KDE – Highly customizable desktop with moderate usage of system resources
-  * LXDE – The entire focus is on using as few resources as possible
-  * Budgie – Modern looks and moderate on system resources
+  * GNOME - 使用大量的系统资源，但给你一个现代的、精致的系统
+  * Xfce - 外观复古但占用资源很少
+  * KDE - 可高度定制的桌面，适度占用系统资源
+  * LXDE - 唯一的重点是尽可能少地使用资源
+  * Budgie - 现代的外观和适度占用系统资源
 
-
-
-### Linux distributions and their DE variants
+### Linux 发行版及其桌面环境变体
 
 ![][6]
 
-Same desktop environment can be available on several Linux distributions and a Linux distribution may offer several desktop environments.
+同样的桌面环境可以在多个 Linux 发行版上使用，一个 Linux 发行版也可能提供多个桌面环境。
 
-For example, Fedora and Ubuntu both use GNOME desktop by default. But both Fedora and Ubuntu offer other desktop environments.
+例如，Fedora 和 Ubuntu 都默认使用 GNOME 桌面，但 Fedora 和 Ubuntu 都提供了其他桌面环境。
 
-The beauty and flexibility of Linux is that you can install a desktop environment on any Linux distribution by yourself. But most Linux distributions save you this trouble and offer ready-to-install ISO image for different desktop environments.
+Linux 的优点和灵活性在于，你可以自己在任何 Linux 发行版上安装桌面环境。但大多数 Linux 发行版都为你省去了这个麻烦，并为不同的桌面环境提供了随时安装的 ISO 镜像。
 
-For example, [Manjaro Linux][7] uses Xfce by default but you can also download the ISO of GNOME version if you prefer using GNOME with Manjaro.
+例如 [Manjaro Linux][7] 默认使用 Xfce，但如果你喜欢在 Manjaro 上使用 GNOME，也可以下载 GNOME 版本的 ISO。
 
-### In the end…
+### 最后...
 
-Desktop environments are crucial part of Linux desktop while Linux servers usually rely on command line interface. It’s not that you cannot install desktop environment on Linux servers but it’s an overkill and waste of important system resources which can be utilized by the applications running on the server.
+桌面环境是 Linux 桌面计算机的重要组成部分，而 Linux 服务器通常依靠命令行界面。并不是说不能在 Linux 服务器上安装桌面环境，但这是画蛇添足，浪费了重要的系统资源，而这些资源可以被服务器上运行的应用程序所利用。
 
-I hope you have a slightly better understanding of desktop environments in Linux now. I highly recommend reading my [explainer article on what is Linux and why there are so many Linux distributions][8]. I have a good feeling that you’ll love the analogy I have used it.
+我希望你现在对 Linux 中的桌面环境有了一些了解。我强烈推荐你阅读我的[关于什么是 Linux 以及为什么有这么多 Linux 发行版][8]的解释文章。我很有预感，你会喜欢我用它做的比喻。
 
 --------------------------------------------------------------------------------
 
@@ -72,8 +70,8 @@ via: https://itsfoss.com/what-is-desktop-environment/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
