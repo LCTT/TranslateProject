@@ -10,25 +10,25 @@
 团队中使用 Git 的 6 个最佳实践
 ======
 
-> Work more effectively by using these Git collaboration strategies.
+> 采用这些 Git 协作策略，让团队工作更高效。
 
-![Women in tech boardroom][1]
+![技术会议上得女性们][1]
 
-Git is very useful for helping small teams manage their software development processes, but there are ways you can make it even more effective. I've found a number of best practices that help my team, especially as new team members join with varying levels of Git expertise.
+Git 非常有助于小团队管理自身的软件开发进度，但有些方法能让你把它变得更高效。我发现了许多有助于我的团队的最佳实践，尤其是当不同 Git 水平的新人加入时。
 
-### Formalize Git conventions for your team
+### 在你的团队中正式确立 Git 约定
 
 Everyone should follow standard conventions for branch naming, tagging, and coding. Every organization has standards or best practices, and many recommendations are freely available on the internet. What's important is to pick a suitable convention early on and follow it as a team.
 
 Also, different team members will have different levels of expertise with Git. You should create and maintain a basic set of instructions for performing common Git operations that follow the project's conventions.
 
-### Merge changes properly
+### 正确地合并变更
 
 Each team member should work on a separate feature branch. But even when separate branches are used, everyone eventually modifies some common files. When merging the changes back into the `master` branch, the merge typically will not be automatic. Human intervention may be needed to reconcile different changes made by two authors to the same file. This is where you have to learn to deal with Git merge techniques.
 
 Modern editors have features to help with [Git merge conflicts][2]. They indicate various options for a merge in each part of a file, such as whether to keep your changes, the other branch's changes, or both. It may be time to pick a different code editor if yours doesn't support such capabilities.
 
-### Rebase your feature branch often
+### 经常重整你的功能分支
 
 As you continue to develop your feature branch, rebase it against `master` often. This means executing the following steps regularly:
 
@@ -55,7 +55,7 @@ There are other merge philosophies (e.g., without rebasing and only using merge 
 
 With "pure merge" strategies (without rebasing regularly, as suggested above), the history in the `master` branch will be interspersed with the commits from all the features being developed concurrently. Such a mixed-up history is harder to review. The exact commit times are usually not that important. It's better to have a history that's easier to review.
 
-### Squash commits before merging
+### 在合并前整理提交
 
 When working on your feature branch, it's fine to add a commit for even minor changes. However, if every feature branch produced 50 commits, the resulting number of commits in the `master` branch could grow unnecessarily large as features are added. In general, there should only be one or a few commits added to `master` from each feature branch. To achieve this, _squash_ multiple commits into one or a handful of commits with more elaborate messages for each one. This is typically done using a command such as:
 
@@ -79,7 +79,7 @@ Finally, forcing an update to your remote feature branch is necessary, since t
 `git push -f`
 ```
 
-### Use tags
+### 使用标签
 
 After you have finished testing and are ready to deploy the software from the `master` branch, or if you want to preserve the current state as a significant milestone for any other reason, create a Git tag. While a branch accumulates a history of changes corresponding to commits, a tag is a snapshot of the branch's state at that instant. A tag can be thought of as a history-less branch or as a named pointer to a specific commit immediately before the tag was created.
 
@@ -99,13 +99,13 @@ git checkout -b new-branch-name  # create new branch to reproduce the bug
 
 Beyond this, consider using annotated tags and signed tags if they may be beneficial to your project.
 
-### Make the software executable print the tag
+### 让软件运行时打印标签
 
 In most embedded projects, the resulting binary file created from a software build has a fixed name. The Git tag corresponding to the software binary file cannot be inferred from its filename. It is useful to "embed the tag" into the software at build time to correlate any future issues precisely to a given build. Embedding the tag can be automated within the build process. Typically, the tag string `git describe` generates is inserted into the code before code compilation so that the resulting executable will print the tag string while booting up. When a customer reports an issue, they can be guided to send you a copy of the boot output.
 
-### Conclusion
+### 总结
 
-Git is a sophisticated tool that takes time to master. Using these practices can help teams successfully collaborate using Git, regardless of their expertise level.
+Git 是一个需要花时间去掌握的复杂工具。使用这些实践可以帮助团队成功地使用 Git 协作，无论他们的知识水平。
 
 --------------------------------------------------------------------------------
 
