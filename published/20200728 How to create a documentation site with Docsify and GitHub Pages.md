@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12572-1.html)
 [#]: subject: (How to create a documentation site with Docsify and GitHub Pages)
 [#]: via: (https://opensource.com/article/20/7/docsify-github-pages)
 [#]: author: (Bryant Son https://opensource.com/users/brson)
@@ -12,7 +12,7 @@
 
 > 使用 Docsify 创建文档网页并发布到 GitHub Pages 上。
 
-![Digital creative of a browser on the internet][1]
+![](https://img.linux.net.cn/data/attachment/album/202009/01/211718hws6rvvziks2zrkc.jpg)
 
 文档是帮助用户使用开源项目一个重要部分，但它并不总是开发人员的首要任务，因为他们可能更关注的是使他们的应用程序更好，而不是帮助人们使用它。对开发者来说，这就是为什么让发布文档变得更容易是如此有价值的原因。在本教程中，我将向你展示一个这样做的方式：将 [Docsify][2] 文档生成器与 [GitHub Pages][3] 结合起来。 
 
@@ -22,7 +22,7 @@
 
 默认情况下，GitHub Pages 会提示用户使用 [Jekyll][4]，这是一个支持 HTML、CSS 和其它网页技术的静态网站生成器。Jekyll 可以从以 Markdown 格式编码的文档文件中生成一个静态网站，GitHub 会自动识别它们的 `.md` 或 `.markdown` 扩展名。虽然这种设置很好，但我想尝试一下其他的东西。
 
-幸运的是，GitHub Pages 支持 HTML 文件，这意味着你可以使用其他网站生成工具（比如 Docsify）在这个平台上创建一个网站。Docsify 是一个采用 MIT 许可证的开源项目，其具有可以让你在 GitHub Pages 上轻松创建一个有吸引力的先进的文档网站的[功能][5]。
+幸运的是，GitHub Pages 支持 HTML 文件，这意味着你可以使用其他网站生成工具（比如 Docsify）在这个平台上创建一个网站。Docsify 是一个采用 MIT 许可证的开源项目，其具有可以让你在 GitHub Pages 上轻松创建一个有吸引力的、先进的文档网站的[功能][5]。
 
 ![Docsify][6]
 
@@ -45,7 +45,7 @@ git clone https://github.com/bryantson/OpensourceDotComDemos
 
 然后 `cd` 进入 `DocsifyDemo` 目录。
 
-我将在下面为你介绍克隆自我的示例存储库中的代码，这样你就可以理解如何修改 Docsify。如果你愿意，你可以从头开始创建一个新的 `index.html` 文件，就像 Docsify 文档中的的[示例][11]一样：
+我将在下面为你介绍这些代码，它们克隆自我的示例存储库中，这样你就可以理解如何修改 Docsify。如果你愿意，你也可以从头开始创建一个新的 `index.html` 文件，就像 Docsify 文档中的的[示例][11]一样：
 
 ```
 <!-- index.html -->
@@ -81,7 +81,7 @@ git clone https://github.com/bryantson/OpensourceDotComDemos
 `index.html` | 主要的 Docsify 初始化文件，也是最重要的文件
 `_sidebar.md` | 生成导航
 `README.md` | 你的文档根目录下的默认 Markdown 文件
-`images` | 包含 `README.md` 中的示例 .jpg 图片
+`images` | 包含了 `README.md` 中的示例 .jpg 图片
 其它目录和文件 | 包含可导航的 Markdown 文件
 
 `index.html` 是 Docsify 可以工作的唯一要求。打开该文件，你可以查看其内容：
@@ -120,7 +120,7 @@ git clone https://github.com/bryantson/OpensourceDotComDemos
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 ```
 
-这些行使用内容交付网络（CDN）URL 来提供 CSS 和 JavaScript 脚本，以将网站转化为 Docsify 网站。只要你包含这些行，你就可以把你的普通 GitHub 页面变成 Docsify 页面。
+这些行使用内容交付网络（CDN）的 URL 来提供 CSS 和 JavaScript 脚本，以将网站转化为 Docsify 网站。只要你包含这些行，你就可以把你的普通 GitHub 页面变成 Docsify 页面。
 
 `<body>` 标签后的第一行指定了要渲染的内容：
 
@@ -169,7 +169,7 @@ Docsify 使用[单页应用][21]（SPA）的方式来渲染请求的页面，而
 * [Contact](./contact/index)
 ```
 
-这会使用 Markdown 的链接格式来创建导航。请注意 Tomcat、Cloud 和 Java 链接是缩进的；这导致它们被渲染为父链接下的子链接。
+这会使用 Markdown 的链接格式来创建导航。请注意 “Tomcat”、“Cloud” 和 “Java” 等链接是缩进的；这意味着它们被渲染为父链接下的子链接。
 
 像 `README.md` 和 `images` 这样的文件与存储库的结构有关，但所有其它 Markdown 文件都与你的 Docsify 网页有关。
 
