@@ -18,15 +18,15 @@ Git 非常有助于小团队管理自身的软件开发进度，但有些方法�
 
 ### 在你的团队中正式确立 Git 约定
 
-Everyone should follow standard conventions for branch naming, tagging, and coding. Every organization has standards or best practices, and many recommendations are freely available on the internet. What's important is to pick a suitable convention early on and follow it as a team.
+每个人都应当遵循对于分支命名，标记和编码的规范。每个组织都有自己的规范或者最佳实践，并且很多建议都可以从网上免费获取。而重要的是尽早选择合适的规范并在团队中遵循。
 
-Also, different team members will have different levels of expertise with Git. You should create and maintain a basic set of instructions for performing common Git operations that follow the project's conventions.
+同时，不同的团队成员的 Git 水平参差不齐。你需要创建并维护一组符合团队规范的基础指令，用于执行通用 Git 操作。
 
 ### 正确地合并变更
 
-Each team member should work on a separate feature branch. But even when separate branches are used, everyone eventually modifies some common files. When merging the changes back into the `master` branch, the merge typically will not be automatic. Human intervention may be needed to reconcile different changes made by two authors to the same file. This is where you have to learn to deal with Git merge techniques.
+每个团队成员都需要在独立的功能分支上开发。但是尽管使用了独立的分支，每个人最终都会修改到一些通用文件。当把更改合并回 `master` 分支时，合并通常无法自动进行。可能需要手动解决不同作者对同一文件不同变更的冲突。这就是你必须学会如何处理 Git 合并技术的原因。
 
-Modern editors have features to help with [Git merge conflicts][2]. They indicate various options for a merge in each part of a file, such as whether to keep your changes, the other branch's changes, or both. It may be time to pick a different code editor if yours doesn't support such capabilities.
+现代编辑器具有协助解决 [Git 合并冲突][2]的功能。Modern editors have features to help with [Git merge conflicts][2]. 它们对同一文件合并的每一个部分提供多种选择，例如，是否保留你的更改，或者是保留另一分支的更改，亦或者是全部保留。如果你的编辑器不支持这些功能，那么可能是时候换一个代码编辑器了。
 
 ### 经常重整你的功能分支
 
