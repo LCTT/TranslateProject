@@ -51,7 +51,7 @@ $ git clone https://github.com/wireghoul/graudit
 现在，我们需要创建一个 Graudit 的符号链接，以便我们可以将其作为一个命令使用。
 
 ```
-$ cd ~/bin &amp;&amp; mkdir graudit
+$ cd ~/bin && mkdir graudit
 $ ln --symbolic ~/graudit/graudit ~/bin/graudit
 ```
 
