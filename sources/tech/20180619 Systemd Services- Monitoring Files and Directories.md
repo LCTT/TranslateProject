@@ -1,4 +1,3 @@
-//translating by messon007
 Systemd Services: Monitoring Files and Directories
 ======
 

@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (CrazyShipOne)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
