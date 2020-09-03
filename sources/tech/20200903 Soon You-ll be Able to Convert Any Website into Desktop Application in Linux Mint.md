@@ -7,66 +7,65 @@
 [#]: via: (https://itsfoss.com/web-app-manager-linux-mint/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Soon You’ll be Able to Convert Any Website into Desktop Application in Linux Mint
+很快你就能在 Linux Mint 上将任何网站转化为桌面应用程序了
 ======
 
-Imagine this situation. You are working on a certain topic and you have more than twenty tabs open in your web browser, mostly related to the work.
+设想一下，你正忙于一项任务且需要在浏览器中打开超过 20 个页面，大多数页面都和工作有关。
 
-Some of these tabs are for YouTube or some other music streaming website you are listening to.
+还有一些是 YouTube 或其他音乐流媒体网站。
 
-You finished the work on the topic and close the browser. Your intent was to close all the work related tabs but it also closed the tabs that you were using for listening to music or some other activities.
+完成任务后需要关闭浏览器，但这会将包括工作相关和听音乐的网页等所有网页一起关掉。
 
-Now you’ll have to log in to those websites again and find the track you were listening to or whatever you were doing.
+然后你需要再次打开这些网页并登录账号以回到原来的进度。
 
-Frustrating, isn’t it? Linux Mint understands your pain and they have an upcoming project to help you out in such scenario.
-
-### Linux Mint’s Web App Manager
+这看起来令人沮丧，对吧？Linux Mint 理解你的烦恼，因此有了下面这个新项目帮助你应对这些问题。
 
 ![][1]
 
-In a [recent post][2], Linux Mint team revealed that it is working on a new tool called Web App Manager.
+在[最近的文章][2]中，Linux Mint 团队揭示了正在开发一个名叫 「网页应用程序」（Web App Manager）的新工具。
 
-The Web App Manager tool will allow you to launch your favorite websites and have them run in their own window as if they were desktop applications.
+该工具让你能够像使用桌面程序那样以独立窗口运行你最喜爱的网页。
 
-While adding a website as a Web App, you can give it a custom name and icon. You can also give it a different category. This will help you search this app in the menu.
+在将网页添加为网页应用程序的时候，你可以给这个程序取名字并添加图标。也可以将它添加到不同的分类，以便在菜单中搜索这个应用。
 
-You may also specify which web browser you want the Web App to be opened in. Option for enabling/disabling navigation bar is also there.
+还可以指定用什么浏览器打开应用。启用/禁用导航栏的选项也有。
 
-![Adding a Web App In Linux Mint][3]
+![在 Linux Mint 中添加网页应用程序][3]
 
-Say, you add YouTube as a Web App:
+例如，将 YouTube 添加为网页应用程序：
 
-![Web Apps In Linux Mint][4]
+![Linux Mint 中的网页应用程序][4]
 
-If you run this YouTube Web App, YouTube will now run in its own window and in a browser of your choice.
+运行 YouTube 程序将通过你所使用的浏览器打开一个独立的页面。
 
-![YouTube Web App][5]
+![YouTube 网页应用程序][5]
 
-The Web App has most of the features you see in a regular desktop application. You can use it in Alt+Tab switcher:
+网页应用程序拥有常规桌面应用程序有的大多数功能特点，如使用 Alt+Tab 切换。
 
 ![Web App in Alt Tab Switcher][6]
 
-You can even pin the Web App to the panel/taskbar for quick access.
+甚至还能将应用固定到面板/任务栏方便打开。
 
 ![YouTube Web App added to the panel][7]
 
-The Web App Manager is in beta right now but it is fairly stable to use. It is not translation ready right now and this is why it is not released to the public.
+该管理器目前处于 beta 开发阶段，但已经使用起来已经相对比较稳定了。不过目前还没有面向大众发放，因为翻译工作还未完成。
 
-If you are using Linux Mint and want to try the Web App Manager, you can download the DEB file for the beta version of this app from the link below:
+如果你在使用 Linux Mint 并想尝试这个工具，可在下方下载 beta 版本的 deb 文件：
 
-[Download Web App Manager (beta) for Linux Mint][8]
+[下载 beta 版][8]
 
-### Web apps are not new to desktop Linux
 
-This is not something ground breaking from Linux Mint. Web apps have been on the scene for almost a decade now.
+### 网页应用程序在桌面环境的 Linux 中不是什么新事物
 
-If you remember, Ubuntu had added the web app feature to its Unity desktop in 2013-14.
+网页应用程序不是由 Linux Mint 独创的，而是早在大约 10 年前就有了。
 
-The lightweight Linux distribution PeppermintOS lists ICE (tool for web apps) as its main feature since 2010. In fact, Linux Mint’s Web App manager is based on Peppermint OS’s [ICE][9].
+你可能还记得 Ubuntu 在 2013-2014 年向 Unity 桌面中加入了网页应用程序这项特性。
 
-Personally, I like web apps feature. It has its usefulness.
+轻量级 Linux 发行版 PeppermintOS 自 2010 年起就将 ICE（网页应用程序工具）列为其主要特色之一。实际上，Linux Mint 的网页应用程序管理器也是基于 [ICE][9] 的。
 
-What do you think of Web Apps in Linux Mint? Is it something you look forward to use? Do share your views in the comment section.
+我个人喜欢网页应用程序，因为有用。
+
+你怎么看 Linux Mint 中的网页应用程序呢，这是你期待使用的吗？欢迎在下方评论。
 
 --------------------------------------------------------------------------------
 
