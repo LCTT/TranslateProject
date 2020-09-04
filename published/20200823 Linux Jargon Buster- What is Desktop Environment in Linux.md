@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12579-1.html)
 [#]: subject: (Linux Jargon Buster: What is Desktop Environment in Linux?)
 [#]: via: (https://itsfoss.com/what-is-desktop-environment/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
 Linux 黑话解释：什么是桌面环境？
 ======
+
+![][6]
 
 在桌面 Linux 世界中，最常用的术语之一就是<ruby>桌面环境<rt>Desktop Environment</rt></ruby>（DE）。如果你是 Linux 的新手，你应该了解一下这个经常使用的术语。
 
@@ -47,8 +49,6 @@ Linux 黑话解释：什么是桌面环境？
   * Budgie - 现代的外观和适度占用系统资源
 
 ### Linux 发行版及其桌面环境变体
-
-![][6]
 
 同样的桌面环境可以在多个 Linux 发行版上使用，一个 Linux 发行版也可能提供多个桌面环境。
 
