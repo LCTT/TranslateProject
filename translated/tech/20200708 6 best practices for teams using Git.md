@@ -30,18 +30,18 @@ Git 非常有助于小团队管理自身的软件开发进度，但有些方法�
 
 ### 经常重整你的功能分支
 
-As you continue to develop your feature branch, rebase it against `master` often. This means executing the following steps regularly:
+当你持续地开发你的功能分支时，请经常对它做 `rebase master`。这意味着要经常执行以下步骤：
 
 ```
 git checkout master
 git pull
-git checkout feature-xyz  # name of your hypothetical feature branch
-git rebase master  # may need to fix merge conflicts in feature-xyz
+git checkout feature-xyz  # 假设的功能分支名称
+git rebase master  # 可能需要解决  feature-xyz 上的合并冲突
 ```
 
-These steps [rewrite history][3] in your feature branch (and that's not a bad thing). First, it makes your feature branch look like `master` with all the updates made to `master` up to that point. Then all your commits to the feature branch are replayed on top, so they appear sequentially in the Git log. You may get merge conflicts that you'll need to resolve along the way, which can be a challenge. However, this is the best point to deal with merge conflicts because it only impacts your feature branch.
+这些步骤会在你的功能分支上[重写历史][3]（这并不是件坏事）。首先，它会使你的功能分支获得 `master` 分支上当前的所有更新。其次，你在功能分支上的所有提交都会在分支历史的顶部重写，因此它们会顺序地出现在日志中。你可能需要一路解决遇到地合并冲突，这也许是个挑战。但是，这是解决冲突最好的时间，因为它只影响你的功能分支。
 
-After you fix any conflicts and perform regression testing, if you're ready to merge your feature back into `master`, do the above rebase steps one more time, then perform the merge:
+在解决完所有冲突并进行回归测试后，如果你准备好将功能分支合并回 `master`，那么就可以在再次执行上述的 `rebase` 步骤后进行合并：
 
 ```
 git checkout master
@@ -49,11 +49,11 @@ git pull
 git merge feature-xyz
 ```
 
-In the interim, if someone else pushes changes to `master` that conflict with yours, the Git merge will have conflicts again. You'll need to resolve them and repeat the regression testing.
+在次期间，如果其他人也将和你有冲突的更改推送到 `master`，那么 Git 合并将再次发生冲突。你需要解决它们并重新进行回归测试。
 
-There are other merge philosophies (e.g., without rebasing and only using merge to avoid rewriting history), some of which may even be simpler to use. However, I've found the approach above to be a clean and reliable strategy. The commit history is stacked up as a meaningful sequence of features.
+还有一些其他的合并哲学（例如，只使用合并不使用 rebase 以防止重写历史），其中一些甚至可能更简单易用。但是，我发现上述方法是一个干净可靠的策略。提交历史日志将以有意义的功能序列进行排列。
 
-With "pure merge" strategies (without rebasing regularly, as suggested above), the history in the `master` branch will be interspersed with the commits from all the features being developed concurrently. Such a mixed-up history is harder to review. The exact commit times are usually not that important. It's better to have a history that's easier to review.
+如果使用“纯合并”策略（上面所说的，不定期 rebase），那么 `master` 分支的历史将穿插着所有同时开发的功能的提交。这样混乱的历史很难回顾。确切的提交时间通常并不是那么重要。最好是有一个易于查看的历史日志。
 
 ### 在合并前整理提交
 
