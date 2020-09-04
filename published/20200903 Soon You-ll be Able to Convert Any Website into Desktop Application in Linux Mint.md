@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (koolape)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12581-1.html)
 [#]: subject: (Soon You’ll be Able to Convert Any Website into Desktop Application in Linux Mint)
 [#]: via: (https://itsfoss.com/web-app-manager-linux-mint/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -22,13 +22,11 @@
 
 ![][1]
 
-在[最近的文章][2]中，Linux Mint 团队揭示了正在开发一个名叫 「网页应用程序」（Web App Manager）的新工具。
+在[最近的一篇文章][2]中，Linux Mint 团队披露了正在开发一个名叫“<ruby>网页应用管理器<rt>Web App Manager</rt></ruby>”的新工具。
 
 该工具让你能够像使用桌面程序那样以独立窗口运行你最喜爱的网页。
 
-在将网页添加为网页应用程序的时候，你可以给这个程序取名字并添加图标。也可以将它添加到不同的分类，以便在菜单中搜索这个应用。
-
-还可以指定用什么浏览器打开应用。启用/禁用导航栏的选项也有。
+在将网页添加为网页应用程序的时候，你可以给这个程序取名字并添加图标。也可以将它添加到不同的分类，以便在菜单中搜索这个应用。还可以指定用什么浏览器打开应用。启用/禁用导航栏的选项也有。
 
 ![在 Linux Mint 中添加网页应用程序][3]
 
@@ -40,20 +38,28 @@
 
 ![YouTube 网页应用程序][5]
 
-网页应用程序拥有常规桌面应用程序有的大多数功能特点，如使用 Alt+Tab 切换。
+网页应用程序拥有常规桌面应用程序有的大多数功能特点，如使用 `Alt+Tab` 切换。
 
-![Web App in Alt Tab Switcher][6]
+![使用 Alt+Tab 切换网页应用][6]
 
 甚至还能将应用固定到面板/任务栏方便打开。
 
-![YouTube Web App added to the panel][7]
+![添加到面板的 YouTube 网页应用][7]
 
 该管理器目前处于 beta 开发阶段，但已经使用起来已经相对比较稳定了。不过目前还没有面向大众发放，因为翻译工作还未完成。
 
 如果你在使用 Linux Mint 并想尝试这个工具，可在下方下载 beta 版本的 deb 文件：
 
-[下载 beta 版][8]
+- [下载 beta 版][8]
 
+### 网页应用的好处
+
+有读者问到这个网页应用管理器与 Chrome 和其他一些网页浏览器中已有的其他类似功能相比的好处。让我来展开一下这个话题。
+
+- 你可以使用 URL 的特定部分（example.com/tool 而不是 example.com）作为应用程序。
+- 添加自定义图标的可能性对于没有清晰的 favicon 的网站来说非常方便。
+- 你可以使用一个没有任何扩展的轻量级浏览器来打开网页应用，而不是像 Chrome/Chromium 这样的常规网页浏览器。它的速度应该更快。
+- 你的网页应用可以被整合到应用菜单中。你可以像其他应用程序一样搜索它。
 
 ### 网页应用程序在桌面环境的 Linux 中不是什么新事物
 
@@ -74,7 +80,7 @@ via: https://itsfoss.com/web-app-manager-linux-mint/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[koolape](https://github.com/koolape)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
