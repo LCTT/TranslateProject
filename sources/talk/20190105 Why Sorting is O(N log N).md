@@ -56,43 +56,43 @@
 
 包含 (N) 个元素的数组，元素次序随机且无偏时的熵最大，其值为 (\log_{2}{N!}) 二进制位。这证明 (O(N\log N)) 是基于比较的排序对任意输入所需的比较次数。
 
-以上都是理论说法，那么实际的排序算法如何做比较的哪？ Below is a plot of the average number of comparisons needed to sort an array. I’ve compared the theoretical optimum against naïve quicksort and the [Ford-Johnson merge-insertion sort][3], which was designed to minimise comparisons (though it’s rarely faster than quicksort overall because there’s more to life than minimising comparisons). Since it was developed in 1959, merge-insertion sort has been tweaked to squeeze a few more comparisons out, but the plot shows it’s already almost optimal.
+以上都是理论说法，那么实际的排序算法如何做比较的呢？下面是一个数组排序所需比较次数均值的图。我比较的是理论值与 quicksort 及 [Ford-Johnson 合并插入排序][3] 的表现。后者设计目的就是最小化比较次数（整体上没比 quicksort 快多少，因为生命中相对于最小化比较，还有更多其它的事情）。又因为合并插入排序是在 1959 年提出的，它又减少了一些比较次数，但图示说明，它基本上达到了最优状态。
 
-![Plot of average number of comparisons needed to sort randomly shuffled arrays of length up to 100. Bottom line is theoretical optimum. Within about 1% is merge-insertion sort. Naïve quicksort is within about 25% of optimum.][4]
+![随机排列 100 个元素所需的平均排序次数图。最下面的线是理论值，约 1% 处的是合并插入算法，原始 quicksort 大约在 25% 处。][4]
 
-It’s nice when a little theory gives such a tight practical result.
+一点点理论导出这么实用的结论，这感觉真棒！
 
-### Summary so far
+### 小结
 
-Here’s what’s been proven so far:
+证明了：
 
-  1. If the array could start in any order, at least (O(N\log N)) comparisons are needed in the worst case
-  2. The average number of comparisons must be at least the entropy of the array, which is (O(N\log N)) for random input
-
-
-
-Note that #2 allows comparison-based sorting algorithms to be faster than (O(N\log N)) if the input is low entropy (in other words, more predictable). Merge sort is close to (O(N)) if the input contains many sorted subarrays. Insertion sort is close to (O(N)) if the input is an array that was sorted before being perturbed a bit. None of them beat (O(N\log N)) in the worst case unless some array orderings are impossible as inputs.
-
-## General sorting algorithms
-
-Comparison-based sorts are an interesting special case in practice, but there’s nothing theoretically special about [`CMP`][5] as opposed to any other instruction on a computer. Both arguments above can be generalised to any sorting algorithm if you note a couple of things:
-
-  1. Most computer instructions have more than two possible outputs, but still have a limited number
-  2. The limited number of outputs means that one instruction can only process a limited amount of entropy
+  1. 如果数组可以是任意顺序，在最坏情况下至少需要 (O(N\log N)) 次比较。
+  2. 数组的平均比较次数最少是数组的熵，对随机输入而言，其值是 (O(N\log N)) 。
 
 
 
-That gives us the same (O(N\log N)) lower bound on the number of instructions. Any physically realisable computer can only process a limited number of instructions at a time, so that’s an (O(N\log N)) lower bound on the time required, as well.
+注意，第 2 个结论允许基于比较的算法优于 (O(N\log N))，前提是输入是低熵的（换言之，是部分可预测的）。如果输入包含很多有序的子序列，那么合并排序的性能接近 (O(N))。如果在确定一个位之前，其输入是有序的，插入排序性能接近 (O(N))。在最差情况下，以上算法的性能表现都不超出 (O(N\log N))。
 
-### But what about “faster” algorithms?
+## 一般排序算法
 
-The most useful practical implication of the general (O(N\log N)) bound is that if you hear about any asymptotically faster algorithm, you know it must be “cheating” somehow. There must be some catch that means it isn’t a general purpose sorting algorithm that scales to arbitrarily large arrays. It might still be a useful algorithm, but it’s a good idea to read the fine print closely.
+基于比较的排序在实践中是个有趣的特例，但计算机的 [`CMP`][5] 指令与其它指令相比，并没有任何理论上的区别。在下面两条的基础上，前面两种情形都可以扩展至任意排序算法：
 
-A well-known example is radix sort. It’s often called an (O(N)) sorting algorithm, but the catch is that it only works if all the numbers fit into (k) bits, and it’s really (O({kN})).
+  1. 大多数计算机指令有多于两个的输出，但输出的数量仍然是有限的。
+  2. 一条指令有限的输出意味着一条指令只能处理有限的熵。
 
-What does that mean in practice? Suppose you have an 8-bit machine. You can represent (2^{8} = 256) different numbers in 8 bits, so if you have an array of thousands of numbers, you’re going to have duplicates. That might be okay for some applications, but for others you need to upgrade to at least 16 bits, which can represent (2^{16} = 65,536) numbers distinctly. 32 bits will support (2^{32} = 4,294,967,296) different numbers. As the size of the array goes up, the number of bits needed will tend to go up, too. To represent (N) different numbers distinctly, you’ll need (k \geq \log_{2}N). So, unless you’re okay with lots of duplicates in your array, (O({kN})) is effectively (O(N\log N)).
 
-The need for (O(N\log N)) of input data in the general case actually proves the overall result by itself. That argument isn’t so interesting in practice because we rarely need to sort billions of integers on a 32-bit machine, and [if anyone’s hit the limits of a 64-bit machine, they haven’t told the rest of us][6].
+
+这给出了 (O(N\log N)) 对应的指令下限。任何物理可实现的计算机都只能在给定时间内执行有限数量的指令，所以算法的执行时间也有对应 (O(N\log N)) 的下限。
+
+### 什么是更快的算法？
+
+一般意义上的 (O(N\log N)) 下限，放在实践中来看，如果听人说到任何更快的算法，你要知道，它肯定以某种方式“作弊”了，其中肯定有圈套，即它不是一个可以处理任意大数组的通用排序算法。可能它是一个有用的算法，但最好看明白它字里行间隐含的东西。
+
+一个广为人知的例子是基数排序算法 radix sort，它经常被称为 (O(N)) 排序算法，但它只能处理所有数字都是 (k) 位的情况，所以实际上它的性能是 (O({kN}))。
+
+什么意思呢？假如你用的 8 位计算机，那么 8 个二进制位可以表示 (2^{8} = 256) 个不同的数字，如果数组有上千个数字，那么其中必有重复。对有些应用而言这是可以的，但对有些应用就必须用 16 个二进制位来表示，16 个二进制位可以表示 (2^{16} = 65,536) 个不同的数字。32 个二进制位可以表示 (2^{32} = 4,294,967,296) 不同的数字。随着数组长度的增长，所需要的二进制位数也在增长。要表示 (N) 个不同的数字，需要 (k \geq \log_{2}N) 个二进制位。所以，只有允许数组中存在重复的数字时，(O({kN})) 才优于 (O(N\log N))。
+
+一般意义上输入数据的 (O(N\log N)) 的性能已经说明了全部问题。这个讨论不那么有趣因为很少需要在 32 位计算机上对几十亿整数进行排序，[如果有谁的需求超出了 64 位计算机的极限，他一定没有说出他的全部][6]。
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ via: https://theartofmachinery.com/2019/01/05/sorting_is_nlogn.html
 
 作者：[Simon Arneaud][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[silentdawn-zz](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
