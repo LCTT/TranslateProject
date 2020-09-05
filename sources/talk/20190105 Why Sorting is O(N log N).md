@@ -7,56 +7,56 @@
 [#]: via: (https://theartofmachinery.com/2019/01/05/sorting_is_nlogn.html)
 [#]: author: (Simon Arneaud https://theartofmachinery.com)
 
-Why Sorting is O(N log N)
+为什么排序的复杂度为 O(N log N)
 ======
 
-Any decent algorithms textbook will explain how fast sorting algorithms like quicksort and heapsort are, but it doesn’t take crazy maths to prove that they’re as asymptotically fast as you can possibly get.
+基本上所有正而八经的算法教材都会解释什么是快速排序算法，比如 quicksort 和堆排序，但又都基本上不会动用复杂的数学来证明这些算法只能趋近你所能达到的速度。
 
-### A pedantic note about notation
+### 关于标记的说明
 
-Most computer scientists use big-O notation to mean “asymptotically equal, up to a constant scaling factor”, which isn’t quite what it means to other mathematicians. Sorry, I’ll use big-O like in CS textbooks, but at least I won’t mix it with other mathematical notation.
+大多数计算机专业的科学家使用大写字母 O 标记来指代“趋近与乘以一个常数比例因子”，这与数学专业所指代的意义是有所区别的。这里我使用的大 O 标记的含义与计算机教材所指相同，且不会混杂使用数学专业所指含义。
 
-## Comparison-based sorting
+## 基于比较的排序
 
-Let’s look at the special case of algorithms that compare values two at a time (like quicksort and heapsort, and most other popular algorithms). The ideas can be extended to all sorting algorithms later.
+先来看个特例，即每次比较两个值大小的算法（quicksort、堆排序及其它通用排序算法基本上都是这样的）。这种思想后续可以扩展至所有排序算法。
 
 ### A simple counting argument for the worst case
 
-Suppose you have an array of four elements, all different, in random order. Can you sort it by comparing just one pair of elements? Obviously not, but here’s one good reason that proves you can’t: By definition, to sort the array, you need to how to rearrange the elements to put them in order. In other words, you need to know which permutation is needed. How many possible permutations are there? The first element could be moved to one of four places, the second one could go to one of the remaining three, the third element has two options, and the last element has to take the one remaining place. So there are (4 \times 3 \times 2 \times 1 = 4! = 24) possible permutations to choose from, but there are only two possible results from comparing two different things: “BIGGER” and “SMALLER”. If you made a list of all the possible permutations, you might decide that “BIGGER” means you need permutation #8 and “SMALLER” means you need permutation #24, but there’s no way you could know when you need the other 22 permutations.
+假设有 4 个互不相等的数，且顺序随机，那么，可以通过比较一对数字完成排序吗？显然不能，证明如下：根据定义，对该数组排序，需要按照某种顺序重新排列数字。那么究竟有多少种可能的排列呢？第一个数字可以放在四个位置中的任意一个，第二个数字可以放在剩下三个位置中的任意一个，第三个数字可以放在剩下两个位置中的任意一个，最后一个数字只有剩下的一个位置可选。这样，共有 4×3×2×1 = 4! = 24 种排列可供选择。通过一次比较大小，只能产生两种可能的结果。如果列出所有的排列，那么“从小到大”排序对应的可能是第 8 种排列，按“从大到小”排序对应的可能是第 22 种排列，但无法知道什么时候需要的是其它 22 种排列。
 
-With two comparisons, you have (2 \times 2 = 4) possible outputs, which still isn’t enough. You can’t sort every possible shuffled array unless you do at least five comparisons ((2^{5} = 32)). If (W(N)) is the worst-case number of comparisons needed to sort (N) different elements using some algorithm, we can say
+通过 2 次比较，可以得到 2×2=4 种可能的结果，这仍然不够。只要比较的次数少于 5（对应 (2^{5} = 32) 种输出），就无法完成 4 个随机次序的数字的排序。如果 (W(N)) 是最差情况下对 (N) 个不同元素进行排序所需要的比较次数，那么
 
 [2^{W(N)} \geq N!]
 
-Taking a logarithm base 2,
+两边取以 2 为底的对数，得
 
 [W(N) \geq \log_{2}{N!}]
 
-Asymptotically, (N!) grows like (N^{N}) (see also [Stirling’s formula][1]), so
+(N!) 的增长近似于 (N^{N}) （参阅 [Stirling 公式][1]），那么
 
 [W(N) \succeq \log N^{N} = N\log N]
 
-And that’s an (O(N\log N)) limit on the worst case just from counting outputs.
+这就是最差情况下从输出计数的角度得出的 (O(N\log N)) 上限。
 
-### Average case from information theory
+### 信息论角度平均状态的例子
 
-We can get a stronger result if we extend that counting argument with a little information theory. Here’s how we could use a sorting algorithm as a code for transmitting information:
+使用一些信息论知识，就可以从上面的讨论中得到一个更有力的结论。下面，使用排序算法作为信息传输的编码器：
 
-  1. I think of a number — say, 15
-  2. I look up permutation #15 from the list of permutations of four elements
-  3. I run the sorting algorithm on this permutation and record all the “BIGGER” and “SMALLER” comparison results
-  4. I transmit the comparison results to you in binary code
-  5. You re-enact my sorting algorithm run, step by step, referring to my list of comparison results as needed
-  6. Now that you know how I rearranged my array to make it sorted, you can reverse the permutation to figure out my original array
-  7. You look up my original array in the permutation list to figure out I transmitted the number 15
+  1. 任取一个数，比如 15
+  2. 从 4 个数字的排列列表中查找第 15 种排列
+  3. 对这种排列运行排序算法，记录所有的“大”、“小”比较结果
+  4. 用二进制编码发送比较结果
+  5. 接收端重新逐步执行发送端的排序算法，需要的话可以引用发送端的比较结果
+  6. 现在接收端就可以知道发送端如何重新排列数字以按照需要排序，接收端可以对排列进行逆算，得到 4 个数字的初始顺序
+  7. 接收端在排列表中检索发送端的原始排列，指出发送端发送的是 15
 
 
 
-Okay, it’s a bit strange, but it could be done. That means that sorting algorithms are bound by the same laws as normal encoding schemes, including the theorem proving there’s no universal data compressor. I transmitted one bit per comparison the algorithm does, so, on average, the number of comparisons must be at least the number of bits needed to represent my data, according to information theory. More technically, [the average number of comparisons must be at least the Shannon entropy of my input data, measured in bits][2]. Entropy is a mathematical measure of the information content, or unpredictability, of something.
+确实，这有点奇怪，但确实可以。这意味着排序算法遵循着与编码方案相同的定律，包括理论所证明的通用数据压缩算法的不存在。算法中每次比较发送 1 bit 的比较结果编码数据，根据信息论，比较的次数至少是能表示所有数据的二进制位数。更技术语言点，[平均所需的最小比较次数是输入数据的香农熵以二进制的位数][2]。熵是信息等不可预测量的数学度量。
 
-If I have an array of (N) elements that could be in any possible order without bias, then entropy is maximised and is (\log_{2}{N!}) bits. That proves that (O(N\log N)) is an optimal average for a comparison-based sort with arbitrary input.
+包含 (N) 个元素的数组，元素次序随机且无偏时的熵最大，其值为 (\log_{2}{N!}) 二进制位。这证明 (O(N\log N)) 是基于比较的排序对任意输入所需的比较次数。
 
-That’s the theory, but how do real sorting algorithms compare? Below is a plot of the average number of comparisons needed to sort an array. I’ve compared the theoretical optimum against naïve quicksort and the [Ford-Johnson merge-insertion sort][3], which was designed to minimise comparisons (though it’s rarely faster than quicksort overall because there’s more to life than minimising comparisons). Since it was developed in 1959, merge-insertion sort has been tweaked to squeeze a few more comparisons out, but the plot shows it’s already almost optimal.
+以上都是理论说法，那么实际的排序算法如何做比较的哪？ Below is a plot of the average number of comparisons needed to sort an array. I’ve compared the theoretical optimum against naïve quicksort and the [Ford-Johnson merge-insertion sort][3], which was designed to minimise comparisons (though it’s rarely faster than quicksort overall because there’s more to life than minimising comparisons). Since it was developed in 1959, merge-insertion sort has been tweaked to squeeze a few more comparisons out, but the plot shows it’s already almost optimal.
 
 ![Plot of average number of comparisons needed to sort randomly shuffled arrays of length up to 100. Bottom line is theoretical optimum. Within about 1% is merge-insertion sort. Naïve quicksort is within about 25% of optimum.][4]
 
