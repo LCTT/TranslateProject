@@ -55,28 +55,28 @@ git merge feature-xyz
 
 如果使用“纯合并”策略（上面所说的，不定期 rebase），那么 `master` 分支的历史将穿插着所有同时开发的功能的提交。这样混乱的历史很难回顾。确切的提交时间通常并不是那么重要。最好是有一个易于查看的历史日志。
 
-### 在合并前整理提交
+### 在合并前压缩提交
 
-When working on your feature branch, it's fine to add a commit for even minor changes. However, if every feature branch produced 50 commits, the resulting number of commits in the `master` branch could grow unnecessarily large as features are added. In general, there should only be one or a few commits added to `master` from each feature branch. To achieve this, _squash_ multiple commits into one or a handful of commits with more elaborate messages for each one. This is typically done using a command such as:
-
-```
-`git rebase -i HEAD~20  # look at up to 20 commits to consider squashing`
-```
-
-When this is executed, an editor pops up with a list of commits that you can act upon in several ways, including _pick_ or _squash_. Picking a commit means keeping that commit message. Squashing implies combining that commit's message into the previous commit. Using these and other options, you can combine commit messages into one and do some editing and cleanup. It's also an opportunity to get rid of the commit messages that aren't important (e.g., a commit message about fixing a typo).
-
-In summary, keep all the actions associated with the commits, but combine and edit the associated message text for improved clarity before merging into `master`. Don't inadvertently drop a commit during the rebase process.
-
-After performing such a rebase, I like to look at the `git log` one last time to make final edits:
+当你在功能分支上开发时，即使再小的修改也可以作为一个 commit。但是，如果每个个功能分支都要产生五十个 commit，那么随着不断地增添新功能，`master` 分支的 commit 数终将无谓地膨胀。通常来说，每个功能分支只应该往 `master` 中增加一个或几个 commit。为此，你需要将多个 commit 压缩成一个或者几个带有更详细信息的提交中。通常使用以下命令来完成：
 
 ```
-`git commit --amend`
+git rebase -i HEAD~20  # 查看可进行压缩的二十个 commit
 ```
 
-Finally, forcing an update to your remote feature branch is necessary, since the Git commit history for the branch has been rewritten:
+当这条命令执行后，将弹出一个 commit 列表的编辑器，你可以通过包括 _pick_ 或 _squash_ 内的数种方式编辑它。_pick_ 一个 commit 即保留这个 commit。_squash_ 一个 commit 则是将这个 commit 合并到前一个中。使用这些方法，你就可以将多个 commit 合并到一个并做编辑和清理。这也是一个清理不重要的 commit 信息的机会（例如，带错字的提交）。
+
+总之，保留所有与 commit 相关的操作，但在合并到 `master` 分支前，合并并编辑相关信息以明确意图。注意，不要在 rebase 的过程中不小心删掉 commit。
+
+在执行完诸如 rebase 之类的操作后，我会再次看看 `git log` 并做最终的修改：
 
 ```
-`git push -f`
+git commit --amend
+```
+
+最后，由于重写了分支的 Git 提交历史，必需强制更新远程分支：
+
+```
+git push -f
 ```
 
 ### 使用标签
