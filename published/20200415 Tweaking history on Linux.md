@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12596-1.html)
 [#]: subject: (Tweaking history on Linux)
 [#]: via: (https://www.networkworld.com/article/3537214/tweaking-history-on-linux.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -12,7 +12,7 @@
 
 > 在 Linux 系统上，bash shell 的 history 命令可以方便地回顾和重用命令，但是你要控制它记住多少，忘记多少，有很多事情要做。
 
-![](https://images.idgesg.net/images/article/2019/08/uk_united_kingdom_england_london_natural_history_museum_by_claudio_testa_cc0_via_unsplash_2400x1600-100808449-large.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202009/08/232418c2121m2euw3aaw58.jpg)
 
 Linux 系统中的 bash `history` 命令有助于记住你以前运行过的命令，并重复这些命令，而不必重新输入。
 
