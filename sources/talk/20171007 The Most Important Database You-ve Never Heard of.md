@@ -1,5 +1,3 @@
-zs19940317翻译中
-
 The Most Important Database You've Never Heard of
 ======
 In 1962, JFK challenged Americans to send a man to the moon by the end of the decade, inspiring a heroic engineering effort that culminated in Neil Armstrong’s first steps on the lunar surface. Many of the fruits of this engineering effort were highly visible and sexy—there were new spacecraft, new spacesuits, and moon buggies. But the Apollo Program was so staggeringly complex that new technologies had to be invented even to do the mundane things. One of these technologies was IBM’s Information Management System (IMS).

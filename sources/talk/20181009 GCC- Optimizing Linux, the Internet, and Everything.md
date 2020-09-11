@@ -62,7 +62,6 @@ GCC was first released on March 22, 1987 by Richard Stallman, the founder of the
 
 There has been a lot of discussion about the licensing of GCC, most of which confuses rather than enlightens. GCC is distributed under the GNU General Public License version 3 or later with the Runtime Library Exception. This is a copyleft license, which means that derivative work can only be distributed under the same license terms. GPLv3 is intended to protect GCC from being made proprietary and requires that changes to GCC code are made available freely and openly. To the ‘end user’ the compiler is just the same as any other; using GCC makes no difference to any licensing choices you might make for your own code. [19]
 
-
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/blog/2018/10/gcc-optimizing-linux-internet-and-everything
@@ -78,5 +77,5 @@ via: https://www.linux.com/blog/2018/10/gcc-optimizing-linux-internet-and-everyt
 [b]: https://github.com/lujun9972
 [1]: https://www.openacc.org/tools
 [2]: /files/images/gccjpg-0
-[3]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/gcc_0.jpg?itok=HbGnRqWX (performance)
+[3]: https://www.linux.com/sites/lcom/files/styles/rendered_file/public/gcc_0.jpg?itok=HbGnRqWX "performance"
 [4]: https://www.linux.com/licenses/category/used-permission
