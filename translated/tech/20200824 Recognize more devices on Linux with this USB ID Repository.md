@@ -7,17 +7,16 @@
 [#]: via: (https://opensource.com/article/20/8/usb-id-repository)
 [#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
 
-Recognize more devices on Linux with this USB ID Repository
+利用这个 USB ID 仓库识别更多 Linux 上的设备
 ======
-An open source project contains a public repository of all known IDs
-used in USB devices.
+一个包含了所有已知 USB 设备 ID 的开源项目。
 ![Multiple USB plugs in different colors][1]
 
-There are thousands of USB devices on the market—keyboards, scanners, printers, mouses, and countless others that all work on Linux. Their vendor details are stored in the USB ID Repository.
+市场上有成千上万的 USB 设备：键盘、扫描仪、打印机、鼠标和其他无数的设备都能在 Linux 上工作。它们的供应商详情都存储在 USB ID 仓库中。
 
 ### lsusb
 
-The Linux `lsusb` command lists information about the USB devices connected to a system, but sometimes the information is incomplete. For example, I recently noticed that the brand of one of my USB devices was not recognized. the device was functional, but listing the details of my connected USB devices provided no identification information. Here is the output from my `lsusb` command:
+Linux `lsusb` 命令列出了连接到系统的 USB 设备的信息，但有时信息不完整。例如，我最近注意到我的一个 USB 设备的品牌没有被识别。设备是可以使用的，但是在列出我所连接的 USB 设备的详情中没有提供任何识别信息。以下是我的 `lsusb` 命令的输出：
 
 
 ```
@@ -30,11 +29,11 @@ Bus 001 Device 005: ID 051d:0002 American Power Conversion Uninterruptible Power
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
-As you can see in the last column, there is one device with no manufacturers description. To determine what the device is, I would have to do a deeper inspection of my USB device tree. Fortunately, the `lsusb` command has more options. One is `-D device`, to elicit per-device details, as the man page explains:
+正如你在最后一栏中看到的，有一个设备没有制造商描述。要确定这个设备是什么，我必须对我的 USB 设备树进行更深入的检查。幸运的是，`lsusb` 命令有更多的选项。其中一个选项是 `-D device`，来获取每个设备的详细信息，正如手册页面所解释的那样。
 
-> "Do not scan the /dev/bus/usb directory, instead display only information about the device whose device file is given. The device file should be something like /dev/bus/usb/001/001. This option displays detailed information like the **v** option; you must be root to do this."
+> “不会扫描 /dev/bus/usb 目录，而只显示给定设备文件所属设备的信息。设备文件应该是类似 /dev/bus/usb/001/001 这样的文件。这个选项会像 **v** 选项一样显示详细信息，但你必须是 root 用户才行。"
 
-I didn't think it was easily apparent how to pass the device path to the lsusb command, but after carefully reading the man page and the initial output I was able to determine how to construct it. USB devices reside in the UDEV filesystem. Their device path begins in the USB device directory `/dev/bus/usb/`. The rest of the path is made up of the device's Bus ID and Device ID. My non-descript device is Bus 001, Device 002, which translates to 001/002, and completes the path `/dev/bus/usb/001/002`. Now I can pass this path to `lsusb`. I'll also pipe to `more` since there is often quite a lot of information there:
+我认为如何将设备路径传递给 lsusb 命令并不容易，但在仔细阅读手册页和初始输出后，我能够确定如何构造它。USB 设备驻留在 UDEV 文件系统中。它们的设备路径始于 USB 设备目录 `/dev/bus/usb/`。路径的其余部分由设备的总线 ID 和设备 ID 组成。我的非描述设备是 Bus 001、Device 002，被翻译成了 001/002，完成路径 `/dev/bus/usb/001/002`。现在我可以把这个路径传给 `lsusb`。我还会用管道传给 `more`，因为这里往往有很多信息：
 
 
 ```
@@ -79,30 +78,30 @@ Device Descriptor:
         HID Device Descriptor:
 ```
 
-Unfortunately, this didn't provide the detail I was hoping to find. The two fields that appear in the initial output, `idVendor` and `idProduct`, are both empty. There is some help, as scanning down a bit reveals the word **Mouse**. A-HA! So, this device is my mouse.
+不幸的是，这里并没有提供我希望找到的细节。初始输出中出现的两个字段 `idVendor` 和 `idProduct` 都是空的。这里有些帮助，因为往下扫描一下，就会发现 **Mouse** 这个词。所以，这个设备就是我的鼠标。
 
-## The USB ID Repository
+## USB ID 仓库
 
-This made me wonder how I could populate these fields, not only for myself but also for other Linux users. It turns out there is already an open source project for this: the [USB ID Repository][2]. It is a public repository of all known IDs used in USB devices. It is also used in various programs, including the [USB Utilities][3], to display human-readable device names.
+这让我不禁想知道如何才能填充这些字段，不仅是为了自己，也是为了其他 Linux 用户。原来已经有了一个开源项目：[USB ID Repository][2]。它是一个公共仓库，它包含了 USB 设备中使用的所有已知 ID。它也被用于各种程序中，包括 [USB Utilities][3]，用于显示人类可读的设备名称。
 
 ![The USB ID Repository Site][4]
 
 (Alan Formy-Duval, [CC BY-SA 4.0][5])
 
-You can browse the repository for particular devices either from the website or by downloading the database. Users are also welcome to submit new data. This is what I did for my mouse, which was absent.
+你可以从网站上或通过下载数据库来浏览特定设备的仓库。也欢迎用户提交新的数据。这是我为我的鼠标做的，它是没有的。
 
-### Update your USB IDs
+### 更新你的 USB ID
 
-The USB ID database is stored in a file called `usb.ids`. This location may vary depending on the Linux distribution.
+USB ID 数据库存储在一个名为 `usb.ids` 的文件中。这个文件的位置可能会因 Linux 发行版的不同而不同。
 
-On Ubuntu 18.04, this file is located in `/var/lib/usbutils`. To update the database, use the command `update-usbids`, which you need to run with root privileges or with `sudo`:
+在 Ubuntu 18.04 中，这个文件位于 `/var/lib/usbutils`。要更新数据库，使用命令 `update-usbids`，你需要用 root 权限或 `sudo` 来运行。
 
 
 ```
 `$ sudo update-usbids`
 ```
 
-If a new file is available, it will be downloaded. The current file will be backed up and replaced by the new one:
+如果有新文件，它就会被下载。当前的文件将被备份，并被替换为新文件：
 
 
 ```
@@ -114,7 +113,7 @@ drwxr-xr-x 85 root root   4096 Nov  7 08:05 ..
 -rw-r--r--  1 root root 551472 Jan 15 00:34 usb.ids.old
 ```
 
-Recent versions of Fedora Linux store the database file in `/usr/share/hwdata`. Also, there is no update script. Instead, the database is maintained in a package named `hwdata`.
+最新版本的 Fedora Linux 将数据库文件保存在 `/usr/share/hwdata` 中。而且，没有更新脚本。相反，数据库被维护在一个名为 `hwdata` 的包中。
 
 
 ```
@@ -136,7 +135,7 @@ Description  : hwdata contains various hardware identification and configuratio
              : such as the pci.ids and usb.ids databases.
 ```
 
-Now my USB device list shows a name next to this previously unnamed device. Compare this to the output above:
+现在我的 USB 设备列表在这个之前未命名的设备旁边显示了一个名字。比较一下上面的输出：
 
 
 ```
@@ -149,13 +148,13 @@ Bus 001 Device 005: ID 051d:0002 American Power Conversion Uninterruptible Power
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
-You may notice that other device descriptions change as the repository is regularly updated with new devices and details about existing ones.
+你可能会注意到，随着仓库定期更新新设备和现有设备的详细信息，其他设备的描述也会发生变化。
 
-### Submit new data
+### 提交新数据
 
-There are two ways to submit new data: by using the web interface or by emailing a specially formatted patch file. Before I began, I read through the submission guidelines. First, I had to register an account, and then I needed to use the project's submission system to provide my mouse's ID and name. The process is the same for adding any USB device.
+提交新数据有两种方式：使用网站或通过电子邮件发送特殊格式的补丁文件。在开始之前，我阅读了提交指南。首先，我必须注册一个账户，然后我需要使用项目的提交系统提供我鼠标的 ID 和名称。添加任何 USB 设备的过程都是一样的。
 
-Have you used the USB ID Repository? If so, please share your reaction in the comments.
+你使用过 USB ID 仓库么？如果有，请在评论中分享你的反馈。
 
 --------------------------------------------------------------------------------
 
