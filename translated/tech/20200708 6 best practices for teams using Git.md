@@ -81,23 +81,23 @@ git push -f
 
 ### 使用标签
 
-After you have finished testing and are ready to deploy the software from the `master` branch, or if you want to preserve the current state as a significant milestone for any other reason, create a Git tag. While a branch accumulates a history of changes corresponding to commits, a tag is a snapshot of the branch's state at that instant. A tag can be thought of as a history-less branch or as a named pointer to a specific commit immediately before the tag was created.
+当你完成测试并准备从 `master` 分支部署软件到线上时，又或者当你出于某种原因想要保留当前状态作为一个里程碑时，那么可以创建一个 Git 的标签。对于一个积累了一些变更和相应提交的分支而言，标签就是该分支在那一时刻的快照。一个标签可以看作是没有历史记录的分支，也可以看作是直接指向标签创建前那个提交的命名指针。
 
-Configuration control is about preserving the state of code at various milestones. Being able to reproduce software source code for any milestone so that it can be rebuilt when necessary is a requirement in most projects. A Git tag provides a unique identifier for such a code milestone. Tagging is straightforward:
+配置控制是关于保留各个里程碑上代码的状态。大多数项目都有一个需求，允许重现任一里程碑上的软件源码，以便在需要时重新构建。Git 标签为每个代码的里程碑提供了一个唯一标识。打标签非常简单：
 
 ```
 git tag milestone-id -m "short message saying what this milestone is about"
-git push --tags   # don't forget to explicitly push the tag to the remote
+git push --tags   # 不要忘记将标签显式推送到远程
 ```
 
-Consider a scenario where software corresponding to a given Git tag is distributed to a customer, and the customer reports an issue. While the code in the repository may continue to evolve, it's often necessary to go back to the state of the code corresponding to the Git tag to reproduce the customer issue precisely to create a bug fix. Sometimes newer code may have already fixed the issue but not always. Typically, you'd check out the specific tag and create a branch from that tag:
+考虑一种情况，Git 标签对应的软件版本已经分发给客户，而且客户提了个问题。尽管代码库中的代码可能已经继续在开发，但通常情况下为了准确地重现客户问题以便做出修复，必须回退到 Git 标签对应的代码状态。偶尔，新代码已经修复了那个问题，但并非一直如此。通常你需要切换到特定的标签并从那个标签创建一个分支：
 
 ```
-git checkout milestone-id        # checkout the tag that was distributed to the customer
-git checkout -b new-branch-name  # create new branch to reproduce the bug
+git checkout milestone-id        # 切换到分发给客户的标签
+git checkout -b new-branch-name  # 创建新的分支用于重现 bug
 ```
 
-Beyond this, consider using annotated tags and signed tags if they may be beneficial to your project.
+此外，如果带注释的标记和带符号的标记有助于你的项目，可以考虑使用它们。
 
 ### 让软件运行时打印标签
 
