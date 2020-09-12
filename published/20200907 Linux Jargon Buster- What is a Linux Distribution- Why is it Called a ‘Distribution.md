@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12609-1.html)
 [#]: subject: (Linux Jargon Buster: What is a Linux Distribution? Why is it Called a ‘Distribution’?)
 [#]: via: (https://itsfoss.com/what-is-linux-distribution/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -11,6 +11,8 @@ Linux 黑话解释：什么是 Linux 发行版？为什么它被称为“发行�
 ======
 
 > 在这一章的 Linux 黑话解释中，我们来讨论一些基本的东西。
+
+![][8]
 
 让我们来讨论一下什么是 Linux 发行版，为什么它被称为<ruby>发行版<rt>distribution</rt></ruby>（或简称 distro），以及，它与 Linux 内核有什么不同。你还会了解到为什么有些人坚称 Linux 为 GNU/Linux。
 
@@ -59,8 +61,6 @@ Linux 发行版是一个由 Linux 内核、[GNU 工具][1]、附加软件和软�
 你无法想象没有 shell 和所有这些命令的 Linux。由于 Linux 与 GNU 工具集成得很深，几乎是完全依赖于 GNU 工具，所以纯粹主义者要求 GNU 应该得到应有的认可，这就是为什么他们坚称它为 GNU Linux（写成 GNU/Linux）。
 
 ### 总结
-
-![][8]
 
 那么，该用哪个术语？Linux、GNU/Linux、Linux 发行版，基于 Linux 的操作系统还是类 UNIX 操作系统？这取决于你的上下文。我已经为你提供了足够的细节，让你对这些相关的术语有更好的理解。
 
