@@ -5,85 +5,84 @@
 [#]: url: ( )
 [#]: subject: (What is IPv6, and why aren’t we there yet?)
 [#]: via: (https://www.networkworld.com/article/3254575/what-is-ipv6-and-why-aren-t-we-there-yet.html)
-[#]: author: (Keith Shaw and Josh Fruhlinger )
+[#]: author: (Keith Shaw, Josh Fruhlinger )
 
-What is IPv6, and why aren’t we there yet?
+什么是 IPv6，为什么我们还普及？
 ======
-IPv6 has been in the works since 1998 to address the shortfall of IP addresses available under Ipv4, yet despite its efficiency and security advantages, adoption is still slow.
-Thinkstock
 
-For the most part the dire warnings about running out of internet addresses have ceased because, slowly but surely, migration from the world of Internet Protocol Version 4 (IPv4) to IPv6 has begun, and software is in place to prevent the address apocalypse that many were predicting.
+自 1998 年以来，IPv6 一直在努力解决 IPv4 可用 IP 地址的不足的问题，然而尽管 IPv6 在效率和安全方面具有优势，但其采用速度仍然缓慢。
 
-But before we see where are and where we’re going with IPv6, let’s go back to the early days of internet addressing.
+![](https://images.idgesg.net/images/article/2017/11/ipv6newip-100740801-large.jpg)
 
-**[ Related: [IPv6 deployment guide][1] + [How to plan your migration to IPv6][2] ]**
+在大多数情况下，已经没人一再警告互联网地址耗尽的可怕境况，因为，虽然缓慢，但坚定地，从互联网协议版本 4（IPv4）的世界到 IPv6 的迁移已经开始，并且相关软件已经到位，以防止许多人预测的地址耗竭。
 
-### What is IPv6 and why is it important?
+但在我们看到 IPv6 的现状和发展方向之前，让我们先回到互联网寻址的早期。
 
-IPv6 is the latest version of the Internet Protocol, which identifies devices across the internet so they can be located. Every device that uses the internet is identified through its own IP address in order for internet communication to work. In that respect, it’s just like the street addresses and zip codes you need to know in order to mail a letter.
+### 什么是 IPv6，为什么它很重要？
 
-The previous version, IPv4, uses a 32-bit addressing scheme to support 4.3 billion devices, which was thought to be enough. However, the growth of the internet, personal computers, smartphones and now Internet of Things devices proves that the world needed more addresses.
+IPv6 是最新版本的<ruby>互联网协议<rt>Internet Protocol</rt></ruby>（IP），它可以识别互联网上的设备，从而确定它们的位置。每一个使用互联网的设备都要通过自己的 IP 地址来识别，以便互联网通信工作。在这方面，它就像你需要知道的街道地址和邮政编码一样，以便邮寄信件。
 
-Fortunately, the Internet Engineering Task Force (IETF) recognized this 20 years ago. In 1998 it created IPv6, which instead uses 128-bit addressing to support approximately 340 trillion trillion (or 2 to the 128th power, if you like). Instead of the IPv4 address method of four sets of one- to three-digit numbers, IPv6 uses eight groups of four hexadecimal digits, separated by colons.
+之前的版本 IPv4 采用 32 位寻址方案，可以支持 43 亿台设备，本以为已经足够。然而，互联网、个人电脑、智能手机以及现在物联网设备的发展证明，这个世界需要更多的地址。
 
-### What are the benefits of IPv6?
+幸运的是，<ruby>互联网工程任务组<rt>Internet Engineering Task Force</rt></ruby>（IETF）在 20 年前就认识到了这一点。1998 年，它创建了 IPv6，使用 128 位寻址方式来支持大约 340 <ruby>亿亿亿<rt>trillion trillion</rt></ruby>（或者 2 的 128 次幂，如果你喜欢的话）。IPv4 的地址可表示为四组一至三位十进制数，IPv6 则使用八组四位十六进制数字，用冒号隔开。
 
-In its work, the IETF included enhancements to IPv6 compared with IPv4. The IPv6 protocol can handle packets more efficiently, improve performance and increase security. It enables internet service providers to reduce the size of their routing tables by making them more hierarchical.
+### IPv6 的好处是什么？
 
-### Network address translation (NAT) and IPv6
+IETF 在其工作中加入了 IPv6 对 IPv4 增强的功能。IPv6 协议可以更有效地处理数据包，提高性能和增加安全性。它使互联网服务提供商（ISP）能够通过使他们的路由表更有层次性来减少其大小。
 
-Adoption of IPv6 has been delayed in part due to network address translation (NAT), which takes private IP addresses and turns them into public IP addresses. That way a corporate machine with a private IP address can send to and receive packets from machines located outside the private network that have public IP addresses.
+### 网络地址转换（NAT）和 IPv6
 
-Without NAT, large corporations with thousands or tens of thousands of computers would devour enormous quantities of public IPv4 addresses if they wanted to communicate with the outside world. But those IPv4 addresses are limited and nearing exhaustion to the point of having to be rationed.
+IPv6 的采用被推迟，部分原因是<ruby>网络地址转换<rt>network address translation</rt></ruby>（NAT）导致的，它将私有 IP 地址转化为公共 IP 地址。这样一来，拥有私也 IP 地址的企业的机器就可以向位于私人网络之外拥有公共 IP 地址的机器发送和接收数据包。
 
-NAT helps alleviate the problem. With NAT, thousands of privately addressed computers can be presented to the public internet by a NAT machine such as a firewall or router.
+如果没有 NAT，拥有数千台或数万台计算机的大公司如果要与外界通信，就会吞噬大量的公有 IPv4 地址。但是这些 IPv4 地址是有限的，而且接近枯竭，以至于不得不限制分配。
 
-The way NAT works is when a corporate computer with a private IP address sends a packet to a public IP address outside the corporate network, it first goes to the NAT device. The NAT notes the packet’s source and destination addresses in a translation table.
+NAT 有助于缓解这个问题。有了 NAT，成千上万的私有地址计算机可以通过防火墙或路由器等 NAT 机器呈现在公共互联网上。
 
-The NAT changes the source address of the packet to the public-facing address of the NAT device and sends it along to the external destination. When a packet replies, the NAT translates the destination address to the private IP address of the computer that initiated the communication. This can be done so that a single public IP address can represent multiple privately addressed computers.
+NAT 的工作方式是，当一台拥有私有 IP 地址的企业计算机向企业网络外的公共 IP 地址发送数据包时，首先会进入 NAT 设备。NAT 在翻译表中记下数据包的源地址和目的地址。
 
-### Who is deploying IPv6?
+NAT 将数据包的源地址改为 NAT 设备面向公众的地址，并将数据包一起发送到外部目的地。当数据包回复时，NAT 将目的地址翻译成发起通信的计算机的私有 IP 地址。这样一来，一个公网 IP 地址可以代表多台私有地址的计算机。
 
-Carrier networks and ISPs have been the first group to start deploying IPv6 on their networks, with mobile networks leading the charge. For example, T-Mobile USA has more than 90% of its traffic going over IPv6, with Verizon Wireless close behind at 82.25%. Comcast and AT&amp;T have its networks at 63% and 65%, respectively, according to the industry group [World Ipv6 Launch][3].
+### 谁在部署 IPv6？
 
-Major websites are following suit - just under 30% of the Alexa Top 1000 websites are currently reachable over IPv6, World IPv6 Launch says.
+运营商网络和互联网服务供应商是最早开始在其网络上部署 IPv6 的群体，其中移动网络处于领先地位。例如，T-Mobile USA 有超过 90% 的流量通过 IPv6，Verizon Wireless 紧随其后，占 82.25%。根据行业组织 [World Ipv6 Launch][3] 的数据，Comcast 和 AT&T 的网络分别为 63% 和 65%。
 
-Enterprises are trailing in deployment, with slightly under one-fourth of enterprises advertising IPv6 prefixes, according to the Internet Society’s [“State of IPv6 Deployment 2017” report][4]. Complexity, costs and time needed to complete are all reasons given. In addition, some projects have been delayed due to software compatibility. For example, a [January 2017 report][5] said a bug in Windows 10 was “undermining Microsoft’s efforts to roll out an IPv6-only network at its Seattle headquarters.”
+主要网站则排在其后 —— World IPv6 Launch 称，目前 Alexa 前 1000 的网站中只有不到 30% 可以通过 IPv6 到达。
 
-### When will more deployments occur?
+企业在部署方面比较落后，根据<ruby>互联网协会<rt>Internet Society</rt></ruby>的[《2017年 IPv6 部署状况》报告][4]，只有不到四分之一的企业宣传其 IPv6 前缀。复杂性、成本和完成迁移所需时间都是给出的理由。此外，一些项目由于软件兼容性的问题而被推迟。例如，一份 [2017 年 1 月的报告][5]称，Windows 10 中的一个 bug “破坏了微软在其西雅图总部推出纯 IPv6 网络的努力”。
 
-The Internet Society said the price of IPv4 addresses will peak in 2018, and then prices will drop after IPv6 deployment passes the 50% mark. Currently, [according to Google][6], the world has 20% to 22% IPv6 adoption, but in the U.S. it’s about 32%).
+### 何时会有更多部署？
 
-As the price of IPv4 addresses begin to drop, the Internet Society suggests that enterprises sell off their existing IPv4 addresses to help fund IPv6 deployment. The Massachusetts Institute of Technology has done this, according to [a note posted on GitHub][7]. The university concluded that 8 million of its IPv4 addresses were “excess” and could be sold without impacting current or future needs since it also holds 20 nonillion IPv6 addresses. (A nonillion is the numeral one followed by 30 zeroes.)
+互联网协会表示，IPv4 地址的价格将在 2018 年达到顶峰，然后在 IPv6 部署通过 50% 大关后，价格会下降。目前，[根据 Google][6]，全球的 IPv6 采用率为 20% 到 22%，但在美国约为 32%。
 
-In addition, as more deployments occur, more companies will start charging for the use of IPv4 addresses, while providing IPv6 services for free. [UK-based ISP Mythic Beasts][8] says “IPv6 connectivity comes as standard,” while “IPv4 connectivity is an optional extra.”
+随着 IPv4 地址的价格开始下降，互联网协会建议企业出售现有的 IPv4 地址，以帮助资助其 IPv6 的部署。根据[一个发布在 GitHub 上的说明][7]，麻省理工学院已经这样做了。这所大学得出的结论是，其 800 万个 IPv4 地址是“过剩”的，可以在不影响当前或未来需求的情况下出售，因为它还持有 20 个<ruby>非亿级<rt>nonillion</rt></ruby> IPv6 地址。（非亿级地址是指数字 1 后面跟着 30 个零）。
 
-### When will IPv4 be “shut off”?
+此外，随着部署的增多，更多的公司将开始对 IPv4 地址的使用收费，而免费提供 IPv6 服务。[英国的 ISP Mythic Beasts][8] 表示，“IPv6 连接是标配”，而 “IPv4 连接是可选的额外服务”。
 
-Most of the world [“ran out” of new IPv4 addresses][9] between 2011 and 2018 – but we won’t completely be out of them as IPv4 addresses get sold and re-used (as mentioned earlier), and any leftover addresses will be used for IPv6 transitions.
+### IPv4 何时会被“关闭”？
 
-There’s no official switch-off date, so people shouldn’t be worried that their internet access will suddenly go away one day. As more networks transition, more content sites support IPv6 and more end users upgrade their equipment for IPv6 capabilities, the world will slowly move away from IPv4.
+在 2011 年至 2018 年期间，世界上大部分地区[“用完”了新的 IPv4 地址][9] —— 但我们不会完全没有了这些地址，因为 IPv4 地址会被出售和重新使用（如前所述），而任何剩余的地址将用于 IPv6 过渡。
 
-### Why is there no IPv5?
+目前还没有正式的关闭日期，所以人们不应该担心有一天他们的互联网接入会突然消失。随着越来越多的网络过渡，越来越多的内容网站支持 IPv6，以及越来越多的终端用户为 IPv6 功能升级设备，世界将慢慢远离 IPv4。
 
-There was an IPv5 that was also known as Internet Stream Protocol, abbreviated simply as ST. It was designed for connection-oriented communications across IP networks with the intent of supporting voice and video.
+### 为什么没有 IPv5？
 
-It was successful at that task, and was used experimentally. One shortcoming that undermined  its popular use was its 32-bit address scheme – the same scheme used by IPv4. As a result, it had the same problem that IPv4 had – a limited number of possible IP addresses. That led to the development and eventual adoption of IPv6. Even though IPv5 was never adopted publicly, it had used up the name IPv5.
+曾经有一个 IPv5，也被称为<ruby>互联网流协议<rt>Internet Stream Protocol</rt></ruby>，简称 ST。它被设计用于跨 IP 网络的面向连接的通信，目的是支持语音和视频。
 
-Join the Network World communities on [Facebook][10] and [LinkedIn][11] to comment on topics that are top of mind.
+它在这个任务上是成功的，并被实验性地使用。它的一个缺点是它的 32 位地址方案 —— 与 IPv4 使用的方案相同，从而影响了它的普及。因此，它存在着与 IPv4 相同的问题 —— 可用的 IP 地址数量有限。这导致了 IPv6 的发展和最终采用。尽管 IPv5 从未被公开采用，但它已经用掉了 IPv5 这个名字。
 
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3254575/what-is-ipv6-and-why-aren-t-we-there-yet.html
 
-作者：[Keith Shaw and Josh Fruhlinger][a]
+作者：[Keith Shaw][a],[Josh Fruhlinger][c]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: 
+[a]: https://www.networkworld.com/author/Keith-Shaw/
+[c]: https://www.networkworld.com/author/Josh-Fruhlinger/
 [b]: https://github.com/lujun9972
 [1]: https://www.networkworld.com/article/3235805/lan-wan/ipv6-deployment-guide.html#tk.nww-fsb
 [2]: https://www.networkworld.com/article/3214388/lan-wan/how-to-plan-your-migration-to-ipv6.html#tk.nww-fsb
