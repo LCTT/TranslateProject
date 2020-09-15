@@ -7,7 +7,7 @@
 [#]: via: "https://www.linuxtechi.com/monitor-manage-docker-containers-portainer-part1/"
 [#]: author: "Shashidhar Soppin https://www.linuxtechi.com/author/shashidhar/"
 
-用 Portainer.io （图形界面工具）来监控和管理 Docker 容器 – 1 
+用 Portainer.io（图形界面工具）来监控和管理 Docker 容器 – 1 
 ======
 
 随着 **Docker** 的使用量越来越大，监控 **Docker** 容器正在变得更有挑战性。每天都有大量的 Docker 容器被创建，因此如何监控它们就变得非常重要。已经有一些用于监控容器的构建工具和技术，不过对它们进行配置有一些复杂。随着基于微服务的架构正在变成接下来事实上的标准，学会这种技术将为你的知识库再添一项新技能。
