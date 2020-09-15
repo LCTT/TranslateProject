@@ -1,44 +1,38 @@
 [#]: collector: (lujun9972)
 [#]: translator: (gxlct008)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12615-1.html)
 [#]: subject: (3 Methods to Install the Latest PHP 7 Package on CentOS/RHEL 7 and CentOS/RHEL 6)
 [#]: via: (https://www.2daygeek.com/install-php-7-on-centos-6-centos-7-rhel-7-redhat-7/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-3 Methods to Install the Latest PHP 7 Package on CentOS/RHEL 7 and CentOS/RHEL 6
+在 CentOS/RHEL 7/6 上安装最新 PHP 7 软件包的 3 种方法
 ======
 
-PHP is the most popular open-source general-purpose scripting language and is widely used for web development.
+![](https://img.linux.net.cn/data/attachment/album/202009/14/235431i92iqjj2we0vegyj.jpg)
 
-It’s part of the LAMP stack application suite and is used to create dynamic websites.
+PHP 是最流行的开源通用脚本语言，被广泛用于 Web 开发。它是 LAMP 栈应用程序套件的一部分，用于创建动态网站。流行的 CMS 应用程序 WordPress，Joomla 和 Drupal 都是用 PHP 语言开发的。这些应用程序的安装和配置都需要 PHP 7。PHP 7 可以更快地加载你的 Web 应用程序，并消耗更少的服务器资源。
 
-Popular CMS applications WordPress, Joomla and Drupal are developed in PHP language.
+在默认情况下，CentOS/RHEL 6 操作系统在其官方存储库中提供 PHP 5.3，而 CentOS/RHEL 7 则提供 PHP 5.4。
 
-These applications require PHP 7 for their installation and configuration.
+在本文中，我们将向你展示如何在 CentOS/RHEL 7 和 CentOS/RHEL 6 系统上安装最新版本的 PHP。
 
-PHP 7 loads your web application faster and consumes less server resources.
+这可以通过在系统中添加必要的 [附加第三方 RPM 存储库][1] 来完成。
 
-By default the CentOS/RHEL 6 operating system provides PHP 5.3 in their official repository and CentOS/RHEL 7 provides PHP 5.4.
+### 方法-1：如何使用软件集合存储库（SCL）在 CentOS 6/7 上安装 PHP 7
 
-In this article we will show you how to install the latest version of PHP on CentOS/RHEL 7 and CentOS/RHEL 6 systems.
+现在，SCL 存储库由 CentOS SIG 维护，该组织不仅重新构建了 Red Hat Software Collections，还提供了自己的一些其他软件包。
 
-This can be done by adding the necessary **[additional third-party RPM repository][1]** to the system.
+它包含各种程序的较新版本，这些程序可以与现有的旧软件包一起安装，并可以使用 `scl` 命令调用。
 
-### Method-1 : How to Install PHP 7 on CentOS 6/7 Using the Software Collections Repository (SCL)
-
-The SCL repository is now maintained by a CentOS SIG, which rebuilds the Red Hat Software Collections and also provides some additional packages of their own.
-
-It contains newer versions of various programs that can be installed alongside existing older packages and invoked by using the scl command.
-
-Run the following **[yum command][2]** to install Software Collections Repository (SCL) on CentOS
+要想在 CentOS 上安装软件集合存储库（SCL），请运行以下 [yum 命令][2]：
 
 ```
 # yum install centos-release-scl
 ```
 
-Run the following command to verify the PHP 7 version available in the scl repository.
+运行以下命令可以验证 SCL 存储库中可用的 PHP 7 版本：
 
 ```
 # yum --disablerepo="*" --enablerepo="centos-sclo-rh" list *php
@@ -54,21 +48,21 @@ rh-php71-php.x86_64                 7.1.30-2.el7                 centos-sclo-rh
 rh-php72-php.x86_64                 7.2.24-1.el7                 centos-sclo-rh
 ```
 
-Run the command below to install the PHP 7.2 on your system from scl.
+运行以下命令可以从 SCL 中安装 PHP 7.2 到你的系统中：
 
 ```
 # yum --disablerepo="*" --enablerepo="centos-sclo-rh" install rh-php72-php
 ```
 
-If you need to install additional modules for PHP 7.2, you can install them by running the command format below. For instance, you can install the **“gd”** and **“pdo”** packages by executing the command below.
+如果需要为 PHP 7.2 安装其他模块，则可以通过运行以下命令格式来安装它们。 例如，你可以通过执行以下命令来安装 `gd` 和 `pdo` 软件包：
 
 ```
 # yum --disablerepo="*" --enablerepo="centos-sclo-rh" install rh-php72-php-gd rh-php72-php-pdo
 ```
 
-### Method-1a : How to Install PHP 7 on RHEL 7 Using the Software Collections Repository (SCL)
+### 方法-1a：如何使用软件集合存储库（SCL）在 RHEL 7 上安装 PHP 7
 
-For Red Hat 7, enable the following repositories to install the latest PHP 7 package.
+对于 Red Hat 7，启用以下存储库以安装最新的 PHP 7 软件包：
 
 ```
 # sudo subscription-manager repos --enable rhel-7-server-extras-rpms
@@ -76,27 +70,27 @@ For Red Hat 7, enable the following repositories to install the latest PHP 7 pac
 # sudo subscription-manager repos --enable rhel-server-rhscl-7-rpms
 ```
 
-Run the command below to search the available PHP 7 version from the RHSCL repository.
+运行以下命令从 RHSCL 库中搜索可用的 PHP 7 版本：
 
 ```
 # yum search rh-php*
 ```
 
-You can easily install PHP 7.3 on the RHEL 7 machine by running the command below from the RHSCL repository.
+运行以下命令，你可以轻松地从 RHSCL 存储库中把 PHP7.3 安装到你的 RHEL 7 计算机上：
 
 ```
 # yum install rh-php73
 ```
 
-### Method-2 : How to Install PHP 7 on CentOS 6/7 Using the Remi Repository
+### 方法-2：如何使用 Remi 存储库在 CentOS 6/7 上安装 PHP 7
 
-The **[Remi repository][3]** stores and maintains the latest version of PHP packages with a large collection of libraries, extensions and tools. Some of them are back-ported from Fedora and EPEL.
+[Remi 存储库][3] 存储和维护着最新版本的 PHP 软件包，其中包含大量的库，扩展和工具。 有一些是从 Fedora 和 EPEL 反向移植的。
 
-This is a CentOS community-recognized repository and doesn’t modify or affect any underlying packages.
+这是 CentOS 社区认可的存储库，它不会修改或影响任何基础软件包。
 
-As a prerequisite, this installs the **[EPEL repository][4]** if it is not already installed on your system.
+作为前提条件，如果你的系统上尚未安装 [EPEL 存储库][4]，该操作会首先安装它。
 
-You can easily find the available version of the PHP 7 package from the Remy repository because it adds a separate repo to each version. You can view them using the **[ls command][5]**.
+你可以轻松地从 Remi 存储库中找到可用的 PHP 7 软件包版本，因为它会为每个版本添加一个单独的存储库。 你可以使用 [ls 命令][5] 查看它们：
 
 ```
 # ls -lh /etc/yum.repos.d/remi-php*
@@ -109,41 +103,41 @@ You can easily find the available version of the PHP 7 package from the Remy rep
 -rw-r--r--. 1 root root 1.3K Sep  6 01:31 /etc/yum.repos.d/remi-php74.repo
 ```
 
-You can easily install PHP 7.4 on the CentOS 6/7 systems by running the command below from the remi repository.
+运行以下命令，你可以轻松地从 Remi 存储库中把 PHP7.4 安装到你的 CentOS 6/7 计算机上：
 
 ```
 # yum --disablerepo="*" --enablerepo="remi-php74" install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
 ```
 
-### Method-2a : How to Install PHP 7 on RHEL 7 Using the Remi Reposiotry
+### 方法-2a：如何使用 Remi 存储库在 RHEL 7 上安装 PHP 7
 
-For Red Hat 7, install the following repositories to install the latest PHP 7 package.
+对于 Red Hat 7，请安装以下存储库以安装最新的 PHP 7 软件包。
 
-To install EPEL Repository on RHEL 7
+在 RHEL 7 上安装 EPEL 存储库：
 
 ```
 # yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
-To install Remi Repository on RHEL 7
+在 RHEL 7 上安装 Remi 存储库：
 
 ```
 # yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 ```
 
-To enable the optional RPMS repository.
+启用可选的 RPMS 存储库：
 
 ```
 # subscription-manager repos --enable=rhel-7-server-optional-rpms
 ```
 
-You can easily install PHP 7.4 on the RHEL 7 systems by running the below command from the remi repository.
+运行以下命令，可以轻松地从 remi 存储库中，把 PHP 7.4 安装在 RHEL 7 系统上：
 
 ```
 # yum --disablerepo="*" --enablerepo="remi-php74" install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
 ```
 
-To verify the PHP 7 installation, run the following command
+要验证 PHP 7 的安装版本，请运行以下命令：
 
 ```
 # php -v
@@ -153,19 +147,19 @@ Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
 ```
 
-### Method-3 : How to Install PHP 7 on CentOS 6/7 Using the IUS Community Repository
+### 方法-3：如何使用 IUS 社区存储库在 CentOS 6/7 上安装 PHP 7
 
-IUS Community is a CentOS Community Approved third-party RPM repository which contains latest upstream versions of PHP, Python, MySQL, etc.., packages for Enterprise Linux (RHEL &amp; CentOS) 5, 6 &amp; 7.
+IUS 社区存储库是 CentOS 社区批准的第三方 RPM 存储库，其中包含 PHP、Python、MySQL 等软件的最新上游版本，以及用于 Enterprise Linux（RHEL 和 CentOS）5、6 和 7 的软件包。
 
-**[IUS Community Repository][6]** have dependency with EPEL Repository so we have to install EPEL repository prior to IUS repository installation. Follow the below steps to install &amp; enable EPEL &amp; IUS Community Repository to RPM systems and install the packages.
+[IUS 社区存储库][6] 与 EPEL 存储库具有依赖性，因此我们必须在安装 IUS 存储库之前先安装 EPEL 存储库。 请按照以下步骤将 EPEL 和 IUS 社区存储库安装并启用到 RPM 系统，然后再安装软件包。
 
-EPEL package is included in the CentOS Extras repository and enabled by default so, we can install this by running below command.
+EPEL软件包包含在 CentOS Extras 存储库中，并默认启用，因此，我们可以通过运行以下命令来安装它：
 
 ```
 # yum install epel-release
 ```
 
-Download IUS Community Repository Shell script
+下载 IUS 社区存储库的 Shell 脚本如下：
 
 ```
 # curl 'https://setup.ius.io/' -o setup-ius.sh
@@ -174,13 +168,13 @@ Download IUS Community Repository Shell script
 100  1914  100  1914    0     0   6563      0 --:--:-- --:--:-- --:--:--  133k
 ```
 
-Install/Enable IUS Community Repository.
+安装/启用 IUS 社区存储库：
 
 ```
 # sh setup-ius.sh
 ```
 
-Run the following command to check available PHP 7 version in the IUS repository.
+运行如下命来检查 IUS 存储库中可用的 PHP 7 版本：
 
 ```
 # yum --disablerepo="*" --enablerepo="ius" list *php7*
@@ -200,7 +194,7 @@ php71u-devel.x86_64                                  7.1.33-1.el7.ius           
 php71u-embedded.x86_64                               7.1.33-1.el7.ius                       ius
 ```
 
-You can easily install PHP 7.3 on the CentOS 6/7 systems by running the command below from the IUS Community repository.
+运行以下命令你可以轻松地从 IUS 存储库中安装 PHP 7.3 到你 CentOS 6/7 系统上：
 
 ```
 # yum --disablerepo="*" --enablerepo="ius" install php73-common php73-cli php73-gd php73-gd php73-mysqlnd php73-ldap php73-soap php73-mbstring
@@ -212,8 +206,8 @@ via: https://www.2daygeek.com/install-php-7-on-centos-6-centos-7-rhel-7-redhat-7
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[gxlct008](https://github.com/gxlct008)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
