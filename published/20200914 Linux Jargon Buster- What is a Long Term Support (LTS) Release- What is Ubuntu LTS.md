@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12618-1.html)
 [#]: subject: (Linux Jargon Buster: What is a Long Term Support \(LTS\) Release? What is Ubuntu LTS?)
 [#]: via: (https://itsfoss.com/long-term-support-lts/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -26,7 +26,7 @@ LTS 版本被认为是最稳定的版本，它经历了广泛的测试，并且�
 
 LTS 版本被推荐给生产级的消费者、企业和商家，因为你可以获得多年的软件支持，而且软件更新不会破坏系统。
 
-如果你注意到任何软件的非 LTS 版本，它通常是具有新功能和较短支持时间跨度（例如 6-9 个月）的前沿版本，而 LTS 版本的支持时间为3-5年。
+如果你注意到任何软件的非 LTS 版本，它通常是具有新功能和较短支持时间跨度（例如 6-9 个月）的前沿版本，而 LTS 版本的支持时间为 3-5 年。
 
 ![][2]
 
