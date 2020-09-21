@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12630-1.html)
 [#]: subject: (The New YubiKey 5C NFC Security Key Lets You Use NFC to Easily Authenticate Your Secure Devices)
 [#]: via: (https://itsfoss.com/yubikey-5c-nfc/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -10,25 +10,25 @@
 全新的 YubiKey 5C NFC 安全密钥让你可以使用 NFC 轻松认证你的安全设备
 ======
 
-如果你对用最好的认证方法来保护你的在线帐户的安全格外谨慎，你可能知道 [Yubico][1]。他们制作的硬件认证安全密钥可以取代[双因素认证][2]，并摆脱在线账户的密码认证系统。
+如果你格外谨慎，会使用最好的认证方法来保护你的在线帐户的安全，你可能知道 [Yubico][1]。他们制作的硬件认证安全密钥可以取代[双因素认证][2]，并摆脱在线账户的密码认证系统。
 
 基本上，你只需将安全密钥插在电脑上，或者使用智能手机上的 NFC 来解锁访问账户。这样一来，你的认证方式就会完全保持离线状态。
 
-![][3]
+![](https://img.linux.net.cn/data/attachment/album/202009/18/174323ior6v6xp1y1or1ov.jpg)
 
-当然，你可以随时使用 [Linux 中好用的密码管理器][4]。但如果你拥有或为企业工作，或者只是对自己的隐私和安全格外谨慎，想增加一层额外的安全保护，这些硬件安全密钥可能值得一试。这些设备最近获得了一些人气。
+当然，你可以随时使用 [Linux 中好用的密码管理器][4]。但如果你拥有一家公司，或为公司工作，或者只是对自己的隐私和安全格外谨慎，想增加一层额外的安全保护，这些硬件安全密钥可能值得一试。这些设备最近得到的进一步普及。
 
-Yubico 的最新产品 ”[YubiKey 5C NFC][5]“ 可能是令人印象深刻的东西，因为它既可以作为 Type-C 的 USB 密钥使用，也可以作为 NFC 使用（只要用密钥碰触你的设备）。
+Yubico 的最新产品 [YubiKey 5C NFC][5] 可能令人印象深刻，因为它既可以作为 Type-C 的 USB 密钥使用，也可以作为 NFC 使用（只要用密钥碰触你的设备）。
 
 下面，让我们来看看这款安全密钥的概况。
 
-_请注意，It's FOSS 是 Yubico 的附属合作伙伴。请阅读我们的[联盟政策][6]_。
+（LCTT 译注：请注意本文中的购买连接是原文作者的受益链接，如果你对此担心，请阅读其[受益政策][6]。）
 
 ### Yubico 5C NFC：概述
 
 ![][7]
 
-YubiKey 5C NFC 是最新的产品，它同时使用 USB-C 和 NFC。因此，你可以轻松地将它插入 Windows、macOS 和 Linux 电脑。除了电脑，你也可以用你的 Android 或 iOS 智能手机或平板电脑来使用它。
+YubiKey 5C NFC 是最新的产品，它同时使用 USB-C 和 NFC。因此，你可以轻松地将它插入 Windows、macOS 和 Linux 电脑。除了电脑，你还可以将其与 Android 或 iOS 智能手机或平板电脑配合使用。
 
 不仅仅局限于 USB-C 和 NFC 的支持（这是件好事），它也恰好是世界上第一个支持智能卡的多协议安全密钥。
 
@@ -36,9 +36,9 @@ YubiKey 5C NFC 是最新的产品，它同时使用 USB-C 和 NFC。因此，你
 
 以下是 Yubico 在其新闻稿中提到的内容：
 
-> Yubico 首席产品官 Guido Appenzeller 表示：“如今人们工作和上网的方式与几年前大不相同，尤其是在过去几个月内。用户不再仅仅被一种设备或服务所束缚，他们也不希望如此。这就是为什么 YubiKey 5C NFC 是我们最受欢迎的安全密钥之一。它与大多数现代电脑和手机兼容，并在一系列传统和现代应用中运行良好。归根结底，我们的客户渴望的是无论如何都能”正常工作“的安全性。”
+> Yubico 首席产品官 Guido Appenzeller 表示：“如今人们工作和上网的方式与几年前大不相同，尤其是在过去几个月内。用户不再仅仅被一种设备或服务所束缚，也不再希望受限于此。这就是为什么 YubiKey 5C NFC 是我们最受欢迎的安全密钥之一。它与大多数现代电脑和手机兼容，并可以在一系列传统和现代应用中良好运行。归根结底，我们的客户渴望的是无论如何都能“正常工作”的安全性。”
 
-YubiKey 5C NFC 支持的协议有 FIDO2、WebAuthn、FIDO U2F、PIV （智能卡）、OATH-HOTP 和 OATH-TOTP （基于哈希和时间的一次性密码）、[OpenPGP][8]、YubiOTP 和挑战应答认证。
+YubiKey 5C NFC 支持的协议有 FIDO2、WebAuthn、FIDO U2F、PIV（智能卡）、OATH-HOTP 和 OATH-TOTP （基于哈希和时间的一次性密码）、[OpenPGP][8]、YubiOTP 和挑战应答认证。
 
 考虑到所有这些协议，你可以轻松地保护任何支持硬件认证的在线帐户，同时还可以访问身份访问管理 （IAM） 解决方案。因此，这对个人用户和企业来说都是一个很好的选择。
 
@@ -48,7 +48,7 @@ YubiKey 5C NFC 的价格为 55 美元。你可以直接从他们的[在线商店
 
 值得注意的是，如果你订购两个以上的 YubiKeys，你可以获得批量折扣。
 
-[Order YubiKey 5C NFC][5]
+- [订购 YubiKey 5C NFC][5]
 
 ### 总结
 
@@ -63,7 +63,7 @@ via: https://itsfoss.com/yubikey-5c-nfc/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
