@@ -7,54 +7,58 @@
 [#]: via: (https://www.networkworld.com/article/3563832/wi-fi-6e-when-its-coming-and-what-its-good-for.html)
 [#]: author: (Zeus Kerravala https://www.networkworld.com/author/Zeus-Kerravala/)
 
-Wi-Fi 6E: When it’s coming and what it’s good for
+Wi-Fi 6E：它何时到来，又有何作用？
 ======
-New wireless spectrum recently dedicated to Wi-Fi allows for more channels and higher density deployments, but gear to support it won’t be widely deployed until 2020, according to an Extreme Networks exec.
-Thinkstock
-
-This spring [the FCC opened up a new swath of unlicensed wireless spectrum][1] in the 6GHz band that’s intended for use with Wi-Fi and can provide lower latency and faster data rates. The new spectrum also has a shorter range and supports more channels than bands that were already dedicated to Wi-Fi, making it suitable for deployment in high-density areas like stadiums.
-
-To further understand what Wi-Fi 6E is and how it differs from Wi-Fi 6, I recently talked with Perry Correll, director of product management for networking solutions vendor Extreme Networks.
-
-**Learn more about 5G and WiFi 6**
-
-  * [What is 5G? How is it better than 4G?][2]
-  * [How to determine if WiFi 6 is right for you][3]
-  * [What is MU-MIMO? Why do you need it in your wireless routers?][4]
-  * [When to use 5G, when to use WiFi 6][5]
-  * [How enterprises can prep for 5G networks][6]
+Extreme Networks的一位高管表示，近来专用于Wi-Fi的新无线频谱可以提供更多的信道和更高的密度部署，但是要支持它的设备要到2020年才能得到广泛部署。
+智库
 
 
+今年开春 [FCC在6GHz频段内开辟了一系列新的未经许可的无线频谱][1] ，目的在于使用Wi-Fi的同时可以提供更低的延迟和更快的数据速率。与已经专用于Wi-Fi的频段相比，新频谱的范围更短，支持的频道更多，因此适合在体育场馆等高密度区域部署。
 
-**Kerravala:** **Wi-Fi 6 seems to be getting a lot of hype but not Wi-Fi 6E. Why?**
+为了进一步了解什么是Wi-Fi 6E以及它与Wi-Fi 6有何不同，我最近与网络解决方案提供商Extreme Networks的产品管理总监Perry Correll进行了交谈。
 
-**Correll:** There’s so much confusion around all the 666 numbers, it’ll scare you to death. You’ve got Wi-Fi 6, Wi-Fi 6E – and Wi-Fi 6 still has additional enhancements coming after that, with multi-user multiple input, multiple output (multi-user MIMO) functionalities. Then there’s the 6GHz spectrum, but that’s not where Wi-Fi 6 gets its name from: It’s the sixth generation of Wi-Fi. On top of all that, we are just getting a handle 5G and there already talking about 6G – seriously, look it up – it's going to get even more confusing.
+**了解更多关于5G和WiFi 6的信息**
 
-**Kerravala:** **Why do we need Wi-Fi 6E versus regular Wi-Fi 6?**
+  * [什么是5G？相较于4G它更好吗？][2]
+  * [如何确定WiFi 6是否适合你？][3]
+  * [什么是MU-MIMO？为什么它在你的无线路由器中不可或缺？][4]
+  * [何时使用5G？何时使用WiFi 6？][5]
+  * [企业如何为5G网络做准备呢？][6]
 
-**Correll:** The last time we got a boost in UNII-2 and UNII-2 Extended was 15 years ago and smartphones hadn’t even taken off yet. Now being able to get 1.2GHz is enormous. With Wi-Fi 6E, we’re not doubling the amount of Wi-Fi space, we're actually quadrupling the amount of usable space. That’s three, four, or five times more spectrum, depending on where you are in the world. Plus you don't have to worry about DFS [dynamic frequency selection], especially indoors.
 
-Wi-Fi 6E is not going to be faster than Wi-Fi 6 and it’s not adding enhanced technology features. The neat thing is operating the 6GHz will require Wi-Fi 6 or above clients. So, we’re not going to have any slow clients and we’re not going to have a lot of noise. We’re going to gain performance in a cleaner environment with faster devices.
 
-**Kerravala:** **Can you also run wider channels?**
+**Kerravala:** **Wi-Fi 6似乎得到了许多炒作而Wi-Fi 6E却没有。为什么？**
+
+**Correll:** 这666个号码中有太多混乱，会吓死您。 Wi-Fi 6，Wi-Fi 6E –之后，Wi-Fi 6仍具有其他增强功能，具有多用户多入多出（多用户MIMO）功能。 之后是6GHz频谱，但这并不是Wi-Fi 6的名称的由来：这是第六代Wi-Fi。 最重要的是，我们刚刚掌握了5G，并且已经在谈论6G-认真研究它将会变得更困惑。
+
+**Kerravala:** **为什么我们需要Wi-Fi 6E和常规Wi-Fi 6？**
+
+**Correll:** 上一次我们获得UNII-2和UNII-2 Extended的优势是15年前，而在当时智能手机甚至还没有起飞。 现在能够获得1.2GHz的频率已经非常大了。 使用Wi-Fi 6E，我们不会将Wi-Fi空间增加一倍，事实上，我们是将可用空间增加了三倍。 根据您所处的地点，频谱的数量要多三倍，四倍或五倍。此外，你不必担心DFS [动态频率选择] ，尤其是在室内。
+
+Wi-Fi 6E将不会拥有快于Wi-Fi 6的速度，并且不会添加增强的技术功能。 最妙的是运行6GHz需要Wi-Fi - 6或以上的客户端。所以，我们不会有任何速度慢的客户，也不会有很多噪声。我们将在更清洁的环境中使用更快的设备来提高性能。
+
+**Kerravala:** **你们还会运营更宽的频道吗**
 
 **Correll:** Exactly, that's the cool thing about it. If you’re in a typical enterprise environment, 20 and 40MHz is pretty much all you need. In high-density environments like stadiums, trying to do 80 or 160MHz just became tough. Wider channels are really going help things like [virtual reality], which can take advantage of those channels that are eating up the rest of the spectrum. That’s probably the biggest use case.
+确切地说，那是一件很酷的事情。如果你处于一个典型的企业环境中，20和40MHz已经在体育馆这种高密度环境中，仅使用80或160MHz资源也会，很紧张。更宽的通道将会真正有助于像虚拟现实这类可以利用这些频谱中剩余的通道。这可能是最大的使用情况了。
+没错，这才是最酷的地方。如果您在一个典型的企业环境中，20和40MHz几乎足够满足你的需求。在像体育场这样的高密度环境中，想要做到80或160MHz就变得很困难了。更宽的频道确实有助于[虚拟现实]这样的事情，它们可以利用那些使用过后剩余部分中的频道。这可能是最大的用例。
 
-Three or four years down the road, if you want to do digital signage or screen edge at stadiums then you can use 80 of the 160MHz without getting impacted by anything else. There’s already talk of Wi-Fi 7 and it’s going to have 320MHz-wide channels.
+在未来的三四年里，如果你想在体育场做频谱的数字标识牌或者屏幕边缘处理，则可以使用160MHz的80％带宽，而不会受到其他任何影响。已经有传言说Wi-Fi 7将会有320MHz宽的频道。
 
-**Kerravala:** **Will this be primarily an augmentation to most Wi-Fi strategies?**
+**Kerravala:** **这将主要是对大多数Wi-Fi策略的增强吗？**
 
-**Correll:** It's definitely going to be at the edges in the short term. The first products are probably going to launch at the end of this year, and they’re going to be consumer-grade. For the enterprise, 6GHz-capable products will start showing up next year. Not before 2022 will you actually start seeing any density – so, not any time soon. For smartphone companies, Wi-Fi is not a big deal and they’d rather focus on other features.
+**Correll:** 在短期内边缘上将会非常的明确。第一批产品大概会在今年底发布，并且他们将会是消费级的。对于企业来说，6GHz合格产品将会在下一年开始出现。直到2022年你才会实际的看到任何密度——所以，并不会很快。
+短期内肯定会处于边缘。首批产品大概会在今年底发布，它们将是消费类产品。对于企业来说，支持6GHz的产品将会在明年亮相。在2022年之前，你不会真正看到任何密集信息——所以，短期内不会。对于智能手机公司来说，Wi-Fi并不是什么大事，他们更愿意关注其他功能。
 
-Still, it’s a huge opportunity. The nicest thing about the 6GHz versus CBRS [Citizens Broadband Radio Service] or 5G is [that many] would rather stick with Wi-Fi than having to move to a different architecture. These are the users that are going to drive the manufacturers of the widgets to IoT devices or robots or whatever requires the 6GHz. It's a clean spectrum and might be cheaper than the regular Wi-Fi 6. There are also some power-saving benefits there, too.
+但它仍是一个巨大的机会。6GHz与CBRS [公民宽带无线电服务] 或5G相比，最棒的一点是 [许多人] 宁愿坚持使用Wi-Fi，也不愿迁移到不同的架构。这些用户将推动驱动部件制造商转向物联网设备或机器人或任何需要6GHz的设备。这是一个干净的频谱，可能比普通的Wi-Fi 6还要便宜也更节能。
 
-**Kerravala:** **There’s talk of 5G replacing Wi-Fi 6. But what’s the practicality of that?**
+**Kerravala:** **这是一场5G替代Wi-Fi 6的讨论。它的实用性在哪里？**
 
-**Correll:** Realistically, you can’t put a SIM in every device. But one of the big issues that come up is data ownership because the carrier is going to own your data, not you. If you want to use your data for any kind of business analytics, will the carrier release the data back to you at a certain price? That’s a frightening thought.
+**Correll:** 事实上，你不能将SIM插入所有的设备中。 但是出现的主要问题之一是数据所有权，因为运营商将拥有你的数据，而不是你。 如果你想使用你的数据进行任何类型的业务分析，运营商是否会以一定价格将数据返还给你？这是一个可怕的想法。
 
-There are just too many reasons why Wi-Fi is not going away. When Wi-Fi 6 and 5G-capable devices come out, what will happen to all the other laptops, tablets, and IoT devices that only have Wi-Fi? There will either be Wi-Fi-only or Wi-Fi and 5G devices, but 5G is not going to replace Wi-Fi altogether. If you look at the 5G radio network backbone, Wi-Fi is a component. It's one big happy family. The technologies are designed to coexist.
+Wi-Fi未被淘汰有太多的理由。当具备Wi-Fi 6和5g功能的设备问世时，其他只有Wi-Fi功能的笔记本电脑、平板电脑和物联网设备将会发生什么呢？将会有Wi-Fi或Wi-Fi和5G设备，但5G不会完全取代Wi-Fi。如果你看看5G无线网络的主干，Wi-Fi就是其中的一个组成部分。这是一个幸福的大家庭。这些技术是为了共存而设计的。
 
-Join the Network World communities on [Facebook][7] and [LinkedIn][8] to comment on topics that are top of mind.
+加入 [Facebook][7] 和 [LinkedIn][8] 上的网络世界社区，就你最关心的话题发表评论吧。
 
 --------------------------------------------------------------------------------
 
