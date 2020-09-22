@@ -2,7 +2,7 @@
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
 [#]: publisher: (wxy)
-[#]: url: (https://linux.cn/article-12638-1.html)
+[#]: url: (https://linux.cn/article-12639-1.html)
 [#]: subject: (Linux Jargon Buster: What is a Rolling Release Distribution?)
 [#]: via: (https://itsfoss.com/rolling-release/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
