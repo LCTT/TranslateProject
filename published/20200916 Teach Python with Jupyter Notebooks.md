@@ -1,20 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12646-1.html)
 [#]: subject: (Teach Python with Jupyter Notebooks)
 [#]: via: (https://opensource.com/article/20/9/teach-python-jupyter)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-用 Jupyter Notebooks 教 Python
+用 Jupyter Notebook 教 Python
 ======
 
-> 有了 Jupyter、PyHamcrest 和一点测试的代码把它们连在一起，你可以教任何可以进行单元测试的 Python 内容。
+> 有了 Jupyter、PyHamcrest，用一点测试的代码把它们连在一起，你就可以教任何适用于单元测试的 Python 内容。
 
-![Person reading a book and digital copy][1]
+![](https://img.linux.net.cn/data/attachment/album/202009/24/045721mubdfdx1tb11fibi.jpg)
 
-关于 Ruby 社区的一些事情一直让我印象深刻。其中两个例子是对测试的承诺和对易于上手的强调。这两方面最好的例子是 [Ruby Koans][2]，在这里你可以通过修复测试来学习 Ruby。
+关于 Ruby 社区的一些事情一直让我印象深刻，其中两个例子是对测试的承诺和对易于上手的强调。这两方面最好的例子是 [Ruby Koans][2]，在这里你可以通过修复测试来学习 Ruby。
 
 要是我们能把这些神奇的工具也用于 Python，我们应该可以做得更好。是的，使用 [Jupyter Notebook][3]、[PyHamcrest][4]，再加上一点类似于胶带的粘合代码，我们可以做出一个包括教学、可工作的代码和需要修复的代码的教程。
 
@@ -63,7 +63,7 @@ class TestNumbers(unittest.TestCase):
     FAILED (failures=1)
 ```
 
-“只改这一行” 对学生来说是一个有用的标记。它准确地表明了需要修改的内容。否则，学生可以通过将第一行改为 `return` 来修正测试。
+“只改这一行” 对学生来说是一个有用的标记。它准确地表明了需要修改的内容。否则，学生可以通过将第一行改为 `return` 来修复测试。
 
 在这种情况下，修复很容易：
 
@@ -85,7 +85,7 @@ class TestNumbers(unittest.TestCase):
     OK
 ```
 
-然而，很快，`unittest` 库的原生断言将被证明是不够的。在 `pytest` 中，通过重写 `assert`中的字节码来解决这个问题，使其具有神奇的属性和各种启发式方法。但这在 Jupyter notebook 中就不容易实现了。是时候挖出一个好的断言库了：PyHamcrest。
+然而，很快，`unittest` 库的原生断言将被证明是不够的。在 `pytest` 中，通过重写 `assert` 中的字节码来解决这个问题，使其具有神奇的属性和各种启发式方法。但这在 Jupyter notebook 中就不容易实现了。是时候挖出一个好的断言库了：PyHamcrest。
 
 ```
 from hamcrest import *
@@ -141,7 +141,7 @@ class TestList(unittest.TestCase):
     OK
 ```
 
-使用 Jupyter、PyHamcrest 和一点测试的粘合代码，你可以教授任何可以进行单元测试的 Python 主题。
+使用 Jupyter、PyHamcrest 和一点测试的粘合代码，你可以教授任何适用于单元测试的 Python 主题。
 
 例如，下面可以帮助展示 Python 从字符串中去掉空白的不同方法之间的差异。
 
@@ -259,7 +259,7 @@ class TestList(unittest.TestCase):
     FAILED (failures=2)
 ```
 
-他们会得到一个不同的错误信息，显示去除了太多的空白：
+他们会得到一个不同的错误信息，显示去除了过多的空白：
 
 ```
 source_string = "  hello world  "
@@ -267,7 +267,7 @@ source_string = "  hello world  "
 @run_test
 class TestList(unittest.TestCase):
    
-    # This one is a freebie: it already works!
+    # 这是个赠品：它可以工作！
     def test_complete_strip(self):
         result = source_string.strip()
         assert_that(result,
@@ -295,7 +295,7 @@ class TestList(unittest.TestCase):
     OK
 ```
 
-在一个比较真实的教程中，会有更多的例子和更多的解释。这种使用 Jupyter Notebooks 的技巧，有的例子可以用，有的例子需要修正，可以用于实时教学，可以用于视频课，甚至，可以用更多的其它零散用途，让学生自己完成一个教程。
+在一个比较真实的教程中，会有更多的例子和更多的解释。这种使用 Jupyter Notebook 的技巧，有的例子可以用，有的例子需要修正，可以用于实时教学，可以用于视频课，甚至，可以用更多的其它零散用途，让学生自己完成一个教程。
 
 现在就去分享你的知识吧!
 
