@@ -3,32 +3,32 @@
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-[#]: subject: ([email protected]: Help the Fight Against COVID-19 With Your Linux System)
+[#]: subject: (Rosetta@home: Help the Fight Against COVID-19 With Your Linux System)
 [#]: via: (https://itsfoss.com/boinc-setup/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
-[email protected]: Help the Fight Against COVID-19 With Your Linux System
+Rosetta@home: Help the Fight Against COVID-19 With Your Linux System
 ======
 
-Want to contribute to the research on coronavirus? You don’t necessarily have to be a scientist for this. You may contribute with part of your computer’s computing power thanks to [[email protected]][1] project.
+Want to contribute to the research on coronavirus? You don’t necessarily have to be a scientist for this. You may contribute with part of your computer’s computing power thanks to Rosetta@home project.
 
 Sounds interesting? Let me share more details on it.
 
-### What is [[email protected]][1]?
+### What is Rosetta@home?
 
-[[email protected]][1] is a [distributed computing][2] project for protein structure prediction, based at the Baker laboratory at the University of Washington and running on the Berkeley Open Infrastructure for Network Computing (BOINC) open source platform, which was originally developed to support the [[email protected]][3].
+Rosetta@home is a [distributed computing][2] project for protein structure prediction, based at the Baker laboratory at the University of Washington and running on the Berkeley Open Infrastructure for Network Computing (BOINC) open source platform, which was originally developed to support the [Rosetta@home][3].
 
 **Not enough computing power? Utilize the power of distributed computing**
 
 To predict and design the structures of naturally occurring proteins is very computationally intensive. To speed up the process, [Dr. David Becker][4] had filled the entire lab and the hallway with desktop computers. Then they started getting complaints of heating up the building, but still didn’t have enough computing power to accurately predict and design protein structures.
 
-**How does [[email protected]][1] work?**
+**How does Rosetta@home work?**
 
-[[email protected]][1] uses idle computer processing power from volunteers’ computers to perform calculations on individual work units. When a requested task is being completed, the client sends the results to a central project server where they are validated and incorporated into project databases.
+Rosetta@home uses idle computer processing power from volunteers’ computers to perform calculations on individual work units. When a requested task is being completed, the client sends the results to a central project server where they are validated and incorporated into project databases.
 
 ![][5]
 
-As of 28th March 2020 the computing power of [[email protected]][1] has been increased up to 1.7 PetaFlops, due to the recently joined users looking to participate in the fight against the COVID-19 pandemic. Thanks to that, **On 26th June 2020, [[email protected]][1] researchers announced they had created antiviral proteins that neutralized SARS-CoV-2 in the lab.**
+As of 28th March 2020 the computing power of Rosetta@home has been increased up to 1.7 PetaFlops, due to the recently joined users looking to participate in the fight against the COVID-19 pandemic. Thanks to that, **On 26th June 2020, Rosetta@home researchers announced they had created antiviral proteins that neutralized SARS-CoV-2 in the lab.**
 
 Is BOINC platform safe?
 
@@ -40,7 +40,7 @@ Projects are instructed to keep the private key only on a computer that is perma
 
 Most BOINC projects follow these practices. If you’re concerned about security, you should attach to a project only if you know it follows the code-signing procedure correctly. If in doubt, you may ask project administrators to describe how they do code signing.
 
-### Contributing to [[email protected]][1] with BOINC platform
+### Contributing to Rosetta@home with BOINC platform
 
 ![][6]
 
@@ -56,7 +56,7 @@ I’ll discuss the following:
 
 #### System Requirements of the BOINC platform
 
-The BOINC distributed computing platform with which you can access [[email protected]][1] is available on a 64bit operating system such as Windows, Linux, and macOS and FreeBSD.
+The BOINC distributed computing platform with which you can access Rosetta@home is available on a 64bit operating system such as Windows, Linux, and macOS and FreeBSD.
 
 You will need a CPU of at least 500 MHz, 200 megabytes of free disk space, 512 megabytes of RAM, and Internet connectivity.
 
@@ -132,9 +132,9 @@ You don’t need to worry if your system resources will be consumed when you wan
 
 If you want the application to be suspended at a lower or higher CPU usage, you can change your profile settings on the website where you created your account.
 
-### [[email protected]][1] on a Raspberry Pi 4
+### Rosetta@home on a Raspberry Pi 4
 
-An ideal device to run 24/7 the [[email protected]][1] application is a Raspberry Pi, which is powerful enough and with very low power consumption.
+An ideal device to run 24/7 the Rosetta@home application is a Raspberry Pi, which is powerful enough and with very low power consumption.
 
 To fight COVID-19 using a Raspberry Pi 4, you need a model with 2 GB RAM or more. My personal recommendation is the 4 GB RAM option, because with my 2 GB model one of the cores is idling as it is running out of memory.
 
@@ -172,7 +172,7 @@ sudo nano /var/lib/boinc-client/global_prefs_override.xml
 
 This setting will increase the default memory available to Rosetta to the maximum amount of memory on the board.
 
-#### Step 3: Add [[email protected]][1] project
+#### Step 3: Add Rosetta@home project
 
 On your Raspberry Pi command line type ‘boinctui’ and click enter to load the terminal GUI. 
 
@@ -196,7 +196,7 @@ _**If you want to stop using BOINC, simply delete the boinc packages you install
 
 One of the benefits of distributing computing is to allow user’s to donate their system resources for the common good. Despite the grief the pandemic has spread worldwide, it can make us also to realize the necessity of volunteering in one way or the other.
 
-If you ever wondered about a [good use of your Raspberry Pi][16], [[email protected]][1] can be included to the list.
+If you ever wondered about a [good use of your Raspberry Pi][16], Rosetta@home can be included to the list.
 
 Let us know at the comments below if you started “cruching” and which platform you chose. Stay safe!
 
