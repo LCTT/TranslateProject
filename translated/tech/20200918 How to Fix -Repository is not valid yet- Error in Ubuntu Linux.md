@@ -7,16 +7,16 @@
 [#]: via: (https://itsfoss.com/fix-repository-not-valid-yet-error-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-How to Fix “Repository is not valid yet” Error in Ubuntu Linux
+如何修复 Ubuntu Linux中 的 ”Repository is not valid yet“ 错误
 ======
 
-I recently [installed Ubuntu server on my Raspberry Pi][1]. I [connected it to the Wi-Fi from Ubuntu terminal][2] and went about doing what I do after installing any Linux system which is to update the system.
+我最近[在我的树莓派上安装了 Ubuntu 服务器][1]。我[在 Ubuntu 终端连接上了 Wi-Fi][2]，然后做了我在安装任何 Linux 系统后都会做的事情，那就是更新系统。
 
-When I used the ‘sudo apt update’ command, it gave me an error which was kind of unique to me. It complained that release file for the repository was invalid for a certain time period.
+当我使用 ”sudo apt update“ 命令时，它给了一个对我而言特别的错误。它报出仓库的发布文件在某个时间段内无效。
 
 **E: Release file for <http://ports.ubuntu.com/ubuntu-ports/dists/focal-security/InRelease> is not valid yet (invalid for another 159d 15h 20min 52s). Updates for this repository will not be applied.**
 
-Here’s the complete output:
+下面是完整输出：
 
 ```
 [email protected]:~$ sudo apt update
@@ -31,13 +31,13 @@ E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/focal-backports/I
 E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/focal-security/InRelease is not valid yet (invalid for another 159d 15h 20min 52s). Updates for this repository will not be applied.
 ```
 
-### Fixing “release file is not valid yet” error in Ubuntu and other Linux distributions
+### 修复 Ubuntu 和其他 Linux 发行版中 ”release file is not valid yet“ 的错误。
 
 ![][3]
 
-The reason for the error is the difference in the time on the system and the time in real world.
+错误的原因是系统上的时间和现实世界的时间不同。
 
-You see, every repository file is signed on some date and you can see this information by viewing the release file:
+你看，每个仓库文件都是在某个日期签名的，你可以通过查看发布文件信息了解：
 
 ```
 sudo head /var/lib/apt/lists/ports.ubuntu.com_ubuntu_dists_focal_InRelease
@@ -53,29 +53,29 @@ Date: Thu, 23 Apr 2020 17:33:17 UTC
 Architectures: amd64 arm64 armhf i386 ppc64el riscv64 s390x
 ```
 
-Now, for some reasons, the time on my Ubuntu server was in the past and this is why Ubuntu complained that the release file is not valid yet for X many days.
+现在，由于某些原因，我的 Ubuntu 服务器上的时间是过去时间，这也是为什么 Ubuntu 报出发布文件已经无效 X 天的原因。
 
-If you are connected to the internet, you may **wait a few minutes for your system to synchronize the time**.
+如果你连接到了互联网，你可以**等待几分钟让系统同步时间**。
 
-If it doesn’t work, you may force the system to use local time as real time clock (hardware clock):
+如果不行，你可以强制系统使用本地时间作为实时时钟（硬件时钟）：
 
 ```
 sudo timedatectl set-local-rtc 1
 ```
 
-The timedatectl command enables you to configure time, date and [change timezone on Linux][4].
+timedatectl 命令可以让你在 Linux 上配置时间、日期和[更改时区][4]。
 
-You shouldn’t need to restart. It works immediately and you can verify it by [updating your Ubuntu system][5] again.
+你应该不需要重新启动。它可以立即工作，你可以通过[更新你的 Ubuntu 系统][5]再次验证它。
 
-If the problem is solved, you may set the [real time clock][6] to use UTC (as recommended by Ubuntu).
+如果问题解决了，你可以将[实时时钟][6]设置为使用 UTC（Ubuntu 推荐的）。
 
 ```
 sudo timedatectl set-local-rtc 0
 ```
 
-**Did it fix the issue for you?**
+**是否为你解决了这个问题？**
 
-I hope this quick tip helped you to fix this error. If you are still facing the issue, let me know in the comment section and I’ll try to help you out.
+我希望这个提示能帮助你解决这个错误。如果你仍然遇到这个问题，请在评论栏告诉我，我会尽力帮助你。
 
 --------------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ via: https://itsfoss.com/fix-repository-not-valid-yet-error-ubuntu/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
