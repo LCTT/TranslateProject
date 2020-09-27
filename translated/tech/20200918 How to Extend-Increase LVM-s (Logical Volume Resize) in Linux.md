@@ -7,53 +7,54 @@
 [#]: via: (https://www.2daygeek.com/extend-increase-resize-lvm-logical-volume-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Extend/Increase LVM’s (Logical Volume Resize) in Linux
+如何在 Linux 中扩展/增加 LVM 大小（逻辑卷调整）？
 ======
 
-Expanding the logical volume is extremely easy, it takes very few steps and can be done online without unmounting a certain logical volume.
+扩展逻辑卷非常简单，只需要很少的步骤，而且不需要卸载某个逻辑卷就可以在线完成。
 
-The main purpose of LVM is flexible disk management, which allows you to easily resize, extend and reduce the logical volume size when you need it.
+LVM 的主要目的是灵活的磁盘管理，当你需要的时候，可以很方便地调整、扩展和缩小逻辑卷的大小。
 
-If you are new to Logical Volume Management (LVM), I suggest you start with our previous article.
+如果你是逻辑卷管理 （LVM） 新手，我建议你从我们之前的文章开始学习。
 
-  * **Part-1: [How to Create/Configure LVM (Logical Volume Management) in Linux][1]**
+  * **第一部分：[如何在 Linux 中创建/配 置LVM（逻辑卷管理）][1]**
 
 
 
 ![][2]
 
-Expanding the logical volume involves the below steps.
-
-  * Check if you have sufficient unallocated disk space in the volume group where the LV was residing.
-  * If yes, you can use that space to extend the logical volume.
-  * If not, add new disks or LUNs to your system.
-  * Convert a physical disk as a physical volume (PV).
-  * Extend the Volume Group
-  * Increase the logical Volume
-  * Grow the filesystem
-  * Check the extended filesystem size
+扩展逻辑卷涉及到以下步骤：
 
 
+  * 检查 LV 所在的卷组中是否有足够的未分配磁盘空间
+  * 如果有，你可以使用这些空间来扩展逻辑卷
+  * 如果没有，请向系统中添加新的磁盘或 LUN
+  * 将物理磁盘转换为物理卷（PV）
+  * 扩展卷组
+  * 增加逻辑卷大小
+  * 扩大文件系统
+  * 检查扩展的文件系统大小
 
-### How to Create LVM Physical Volumes
 
-Create LVM physical volumes with the pvcreate command.
 
-Once the disk is detected in the OS, use the pvcreate command to initialize the LVM PV (Physical Volumes).
+### 如何创建 LVM 物理卷？
+
+使用 pvcreate 命令创建 LVM 物理卷。
+
+当在操作系统中检测到磁盘，使用 pvcreate 命令初始化 LVM PV（物理卷）。
 
 ```
 # pvcreate /dev/sdc
 Physical volume "/dev/sdc" successfully created
 ```
 
-**Make a note:**
+**请注意：**
 
-  * The above command erases any data on the given disk /dev/sdc.
-  * Physical disk can be added directly into the LVM PV instead of the disk partition.
+  * 上面的命令将删除磁盘 /dev/sdc 上的所有数据。
+  * 物理磁盘可以直接添加到 LVM PV 中，而不是磁盘分区。
 
 
 
-Use the pvdisplay command to display the PVs you have created.
+使用 pvdisplay 命令来显示你所创建的 PV。
 
 ```
 # pvdisplay /dev/sdc
@@ -71,16 +72,16 @@ Allocated PE          0
 PV UUID               69d9dd18-36be-4631-9ebb-78f05fe3217f
 ```
 
-### How to Extend the Volume Group
+### 如何扩展卷组
 
-Use the following command to add a new physical volume to the existing volume group.
+使用以下命令在现有的卷组中添加一个新的物理卷。
 
 ```
 # vgextend vg01 /dev/sdc
 Volume group "vg01" successfully extended
 ```
 
-Use the vgdisplay command to display the PVs you have created.
+使用 vgdisplay 命令来显示你所创建的 PV。
 
 ```
 # vgdisplay vg01
@@ -106,17 +107,17 @@ Free PE / Size       2560 / 9.99 GiB
 VG UUID              d17e3c31-e2c9-4f11-809c-94a549bc43b7
 ```
 
-### How to Extend the Logical Volume
+### 如何扩展逻辑卷？
 
-Use the following command to increase the existing logical volume.
+使用以下命令增加现有逻辑卷大小。
 
-**Common syntax for logical volume extension (lvextend).**
+**逻辑卷扩展 （lvextend） 的常用语法。**
 
 ```
-lvextend [Additional space to be added] [Existing Logical Volume Name]
+lvextend [要增加的额外空间] [现有逻辑卷名称]
 ```
 
-Use the below command to increase the existing logical volume additionally to 10GB.
+使用下面的命令将现有的逻辑卷增加 10GB。
 
 ```
 # lvextend -L +10G /dev/mapper/vg01-lv002
@@ -125,33 +126,33 @@ Size of logical volume vg01/lv002 changed from 5.00 GiB (1280 extents) to 15.00 
 Logical volume var successfully resized
 ```
 
-To extend logical volume using PE size’s.
+使用 PE 大小来扩展逻辑卷。
 
 ```
 # lvextend -l +2560 /dev/mapper/vg01-lv002
 ```
 
-To extend the logical volume using percentage (%), use the following command.
+要使用百分比 （%） 扩展逻辑卷，请使用以下命令。
 
 ```
 # lvextend -l +40%FREE /dev/mapper/vg01-lv002
 ```
 
-Now, the logical volume is extended and you need to resize the file system to extend the space inside the logical volume.
+现在，逻辑卷已经扩展，你需要调整文件系统的大小以扩展逻辑卷内的空间。
 
-For an ext3 and ext4 based file system, run the following command.
+对于基于 ext3 和 ext4 的文件系统，运行以下命令。
 
 ```
 # resize2fs /dev/mapper/vg01-lv002
 ```
 
-For the xfs file system, use the following command.
+对于xfs文件系统，使用以下命令。
 
 ```
 # xfs_growfs /dev/mapper/vg01-lv002
 ```
 
-Use the **[df command][3]** to view the file system size.
+使用 **[df 命令][3]**查看文件系统大小。
 
 ```
 # df -h /lvmtest1
@@ -165,7 +166,7 @@ via: https://www.2daygeek.com/extend-increase-resize-lvm-logical-volume-in-linux
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

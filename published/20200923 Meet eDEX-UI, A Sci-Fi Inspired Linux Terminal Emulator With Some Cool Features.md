@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12655-1.html)
 [#]: subject: (Meet eDEX-UI, A Sci-Fi Inspired Linux Terminal Emulator With Some Cool Features)
 [#]: via: (https://itsfoss.com/edex-ui-sci-fi-terminal/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -21,8 +21,6 @@ eDEX-UI：一款科幻风格的酷炫 Linux 终端仿真器
 在本文中，让我们来看看一款神奇的跨平台终端模拟器，注意口水！
 
 ### eDEX-UI: 一个很酷的终端仿真器
-
-![][4]
 
 [eDEX-UI][5] 是一款开源的跨平台终端仿真器，它为你呈现了一个科幻风格的外观和一些有用的功能。
 
