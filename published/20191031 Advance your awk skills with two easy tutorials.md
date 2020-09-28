@@ -1,20 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12658-1.html)
 [#]: subject: (Advance your awk skills with two easy tutorials)
 [#]: via: (https://opensource.com/article/19/10/advanced-awk)
 [#]: author: (Dave Neary https://opensource.com/users/dneary)
 
-
 通过两个简单的教程来提高你的 awk 技能
 ======
 
-> 超越单行的awk脚本，邮件合并和字数统计。
-!["一个团队的检查表"[1]
+> 超越单行的 awk 脚本，学习如何做邮件合并和字数统计。
 
-`awk` 是 Unix 和 Linux 用户工具箱中最古老的工具之一。`awk` 由 Alfred Aho、Peter Weinberger 和 Brian Kernighan（工具名称中的 A、W 和 K）在 20 世纪 70 年代创建，用于复杂的文本流处理。它是流编辑器 `sed` 的配套工具，后者是为逐行处理文本文件而设计的。`awk` 支持更复杂的结构化程序，是一种完整的编程语言。
+![](https://img.linux.net.cn/data/attachment/album/202009/28/154624jk8w4ez6oujbur8j.jpg)
+
+`awk` 是 Unix 和 Linux 用户工具箱中最古老的工具之一。`awk` 由 Alfred Aho、Peter Weinberger 和 Brian Kernighan（即工具名称中的 A、W 和 K）在 20 世纪 70 年代创建，用于复杂的文本流处理。它是流编辑器 `sed` 的配套工具，后者是为逐行处理文本文件而设计的。`awk` 支持更复杂的结构化程序，是一门完整的编程语言。
 
 本文将介绍如何使用 `awk` 完成更多结构化的复杂任务，包括一个简单的邮件合并程序。
 
@@ -34,7 +34,7 @@
 function 函数名(参数列表) { 语句 }
 ```
 
-这种模式匹配块和函数的组合允许开发者结构化 `awk` 程序，以便重用和可读。
+这种模式匹配块和函数的组合允许开发者结构化的 `awk` 程序，以便重用和提高可读性。
 
 ### awk 如何处理文本流
 
@@ -42,12 +42,12 @@ function 函数名(参数列表) { 语句 }
 
   * `FS`（<ruby>字段分隔符<rt>field separator</rt></ruby>）。默认情况下，这是任何空格字符（空格或制表符）。
   * `RS`（<ruby>记录分隔符<rt>record separator</rt></ruby>）。默认情况下是一个新行（`n`）。
-  * `NF`（<ruby>字段数<rt>number of fields</rt></ruby>）。当 `awk` 解析一行时，这个变量被设置为已解析的字段数。
+  * `NF`（<ruby>字段数<rt>number of fields</rt></ruby>）。当 `awk` 解析一行时，这个变量被设置为被解析出字段数。
   * `$0:` 当前记录。
   * `$1`、`$2`、`$3` 等：当前记录的第一、第二、第三等字段。
   * `NR`（<ruby>记录数<rt>number of records</rt></ruby>）。迄今已被 `awk` 脚本解析的记录数。
 
-影响 `awk` 行为的变量还有很多，但这已经足够开始了。
+影响 `awk` 行为的变量还有很多，但知道这些已经足够开始了。
 
 ### 单行 awk 脚本
 
@@ -105,7 +105,7 @@ Mickey,Mouse,mmouse@disney.com,"Surviving public speaking with a squeaky voice"
 Santa,Claus,sclaus@northpole.org,"Efficient list-making"
 ```
 
-你要读取 CSV 文件，替换第一个文件中的相关字段（跳过第一行），然后把结果写到一个叫 `acceptanceN.txt` 的文件中，每解析一行就递增 `N`。
+你要读取 CSV 文件，替换第一个文件中的相关字段（跳过第一行），然后把结果写到一个叫 `acceptanceN.txt` 的文件中，每解析一行就递增文件名中的 `N`。
 
 把 `awk` 程序写在一个叫 `mail_merge.awk` 的文件中。在 `awk` 脚本中的语句用 `;` 分隔。第一个任务是设置字段分隔符变量和其他几个脚本需要的变量。你还需要读取并丢弃 CSV 中的第一行，否则会创建一个以 `Dear firstname` 开头的文件。要做到这一点，请使用特殊函数 `getline`，并在读取后将记录计数器重置为 0。
 
@@ -125,17 +125,17 @@ BEGIN {
 
 ```
 {
-        # Read relevant fields from input file
+        # 从输入文件中读取关联字段
         firstname=$1;
         lastname=$2;
         email=$3;
         title=$4;
 
-        # Set output filename
+        # 设置输出文件名
         outfile=(output NR ".txt");
 
-        # Read a line from template, replace special fields, and
-        # print result to output file
+        # 从模板中读取一行，替换特定字段，
+        # 并打印结果到输出文件。
         while ( (getline ln &lt; template) &gt; 0 )
         {
                 sub(/{firstname}/,firstname,ln);
@@ -145,14 +145,13 @@ BEGIN {
                 print(ln) &gt; outfile;
         }
 
-        # Close template and output file in advance of next record
+        # 关闭模板和输出文件，继续下一条记录
         close(outfile);
         close(template);
 }
 ```
 
 你已经完成了! 在命令行上运行该脚本：
-
 
 ```
 awk -f mail_merge.awk proposals.csv
@@ -164,7 +163,7 @@ awk -f mail_merge.awk proposals.csv
 awk -f mail_merge.awk < proposals.csv
 ```
 
-你会发现在当前目录下生成的文本文件。
+你会在当前目录下发现生成的文本文件。
 
 ### awk 进阶：字频计数
 
@@ -254,7 +253,7 @@ via: https://opensource.com/article/19/10/advanced-awk
 作者：[Dave Neary][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
