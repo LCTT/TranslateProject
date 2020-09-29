@@ -1,37 +1,38 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12666-1.html)
 [#]: subject: (How to Fix “Repository is not valid yet” Error in Ubuntu Linux)
 [#]: via: (https://itsfoss.com/fix-repository-not-valid-yet-error-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何修复 Ubuntu Linux中 的 ”Repository is not valid yet“ 错误
+如何修复 Ubuntu Linux 中的 “Release file is not valid yet” 错误
 ======
 
 我最近[在我的树莓派上安装了 Ubuntu 服务器][1]。我[在 Ubuntu 终端连接上了 Wi-Fi][2]，然后做了我在安装任何 Linux 系统后都会做的事情，那就是更新系统。
 
-当我使用 ”sudo apt update“ 命令时，它给了一个对我而言特别的错误。它报出仓库的发布文件在某个时间段内无效。
+当我使用 `sudo apt update` 命令时，它给了一个对我而言特别的错误。它报出仓库的发布文件在某个时间段内无效。
 
-**E: Release file for <http://ports.ubuntu.com/ubuntu-ports/dists/focal-security/InRelease> is not valid yet (invalid for another 159d 15h 20min 52s). Updates for this repository will not be applied.**
+> E: Release file for <http://ports.ubuntu.com/ubuntu-ports/dists/focal-security/InRelease> is not valid yet (invalid for another 159d 15h 20min 52s). Updates for this repository will not be applied.**
 
 下面是完整输出：
 
 ```
-[email protected]:~$ sudo apt update
-Hit:1 http://ports.ubuntu.com/ubuntu-ports focal InRelease
-Get:2 http://ports.ubuntu.com/ubuntu-ports focal-updates InRelease [111 kB]
-Get:3 http://ports.ubuntu.com/ubuntu-ports focal-backports InRelease [98.3 kB]
-Get:4 http://ports.ubuntu.com/ubuntu-ports focal-security InRelease [107 kB]
+ubuntu@ubuntu:~$ sudo apt update
+Hit:1 http://ports.ubuntu.com/ubuntu-ports focal InRelease    
+Get:2 http://ports.ubuntu.com/ubuntu-ports focal-updates InRelease [111 kB]                           
+Get:3 http://ports.ubuntu.com/ubuntu-ports focal-backports InRelease [98.3 kB]      
+Get:4 http://ports.ubuntu.com/ubuntu-ports focal-security InRelease [107 kB]                     
 Reading package lists... Done
 E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/focal/InRelease is not valid yet (invalid for another 21d 23h 17min 25s). Updates for this repository will not be applied.
 E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/focal-updates/InRelease is not valid yet (invalid for another 159d 15h 21min 2s). Updates for this repository will not be applied.
 E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/focal-backports/InRelease is not valid yet (invalid for another 159d 15h 21min 32s). Updates for this repository will not be applied.
 E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/focal-security/InRelease is not valid yet (invalid for another 159d 15h 20min 52s). Updates for this repository will not be applied.
+
 ```
 
-### 修复 Ubuntu 和其他 Linux 发行版中 ”release file is not valid yet“ 的错误。
+### 修复 Ubuntu 和其他 Linux 发行版中 “Release file is not valid yet” 的错误。
 
 ![][3]
 
@@ -63,7 +64,7 @@ Architectures: amd64 arm64 armhf i386 ppc64el riscv64 s390x
 sudo timedatectl set-local-rtc 1
 ```
 
-timedatectl 命令可以让你在 Linux 上配置时间、日期和[更改时区][4]。
+`timedatectl` 命令可以让你在 Linux 上配置时间、日期和[更改时区][4]。
 
 你应该不需要重新启动。它可以立即工作，你可以通过[更新你的 Ubuntu 系统][5]再次验证它。
 
@@ -84,7 +85,7 @@ via: https://itsfoss.com/fix-repository-not-valid-yet-error-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
