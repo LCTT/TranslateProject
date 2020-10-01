@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How to Extend/Increase LVM’s (Logical Volume Resize) in Linux)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12673-1.html)
+[#]: subject: (How to Extend/Increase LVM’s in Linux)
 [#]: via: (https://www.2daygeek.com/extend-increase-resize-lvm-logical-volume-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
 如何在 Linux 中扩展/增加 LVM 大小（逻辑卷调整）
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202010/01/234018qgnwilmmzom8xarb.jpg)
 
 扩展逻辑卷非常简单，只需要很少的步骤，而且不需要卸载某个逻辑卷就可以在线完成。
 
@@ -16,9 +18,9 @@ LVM 的主要目的是灵活的磁盘管理，当你需要的时候，可以很�
 
 如果你是逻辑卷管理（LVM） 新手，我建议你从我们之前的文章开始学习。
 
-  * **第一部分：[如何在 Linux 中创建/配 置LVM（逻辑卷管理）][1]**
+  * **第一部分：[如何在 Linux 中创建/配置 LVM（逻辑卷管理）][1]**
 
-  ![][2]
+![](https://img.linux.net.cn/data/attachment/album/202010/01/233946ybwbnw4zanjbn00e.jpeg)
 
 扩展逻辑卷涉及到以下步骤：
 
@@ -67,7 +69,7 @@ PV UUID               69d9dd18-36be-4631-9ebb-78f05fe3217f
 
 ### 如何扩展卷组
 
-使用以下命令在现有的卷组中添加一个新的物理卷：
+使用以下命令在现有的卷组（VG）中添加一个新的物理卷：
 
 ```
 # vgextend vg01 /dev/sdc
@@ -104,7 +106,7 @@ VG UUID              d17e3c31-e2c9-4f11-809c-94a549bc43b7
 
 使用以下命令增加现有逻辑卷大小。
 
-逻辑卷扩展（`lvextend`）的常用语法：
+**逻辑卷扩展（`lvextend`）的常用语法：**
 
 ```
 lvextend [要增加的额外空间] [现有逻辑卷名称]
@@ -166,6 +168,6 @@ via: https://www.2daygeek.com/extend-increase-resize-lvm-logical-volume-in-linux
 
 [a]: https://www.2daygeek.com/author/magesh/
 [b]: https://github.com/lujun9972
-[1]: https://www.2daygeek.com/create-lvm-storage-logical-volume-manager-in-linux/
+[1]: https://linux.cn/article-12670-1.html
 [2]: https://www.2daygeek.com/wp-content/uploads/2020/09/extend-increase-resize-lvm-logical-volume-in-linux-3.png
 [3]: https://www.2daygeek.com/linux-check-disk-space-usage-df-command/
