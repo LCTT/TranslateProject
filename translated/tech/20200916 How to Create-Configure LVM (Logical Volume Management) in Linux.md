@@ -7,26 +7,26 @@
 [#]: via: (https://www.2daygeek.com/create-lvm-storage-logical-volume-manager-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Create/Configure LVM (Logical Volume Management) in Linux
+如何在 Linux 中创建/配置 LVM（逻辑卷管理）？
 ======
 
-Logical Volume Manager (LVM) plays an important role in the Linux operating system by improving the availability, disk I/O, performance and capability of disk management.
+逻辑卷管理器 （LVM） 在 Linux 系统中扮演着重要的角色，它可以提高磁盘管理的可用性、磁盘 I/O、性能和能力。
 
-LVM is a widely used technique that is extremely flexible for disk management.
+LVM 是一种被广泛使用的技术，对于磁盘管理来说，它是非常灵活的。
 
-This adds an extra layer between the physical disks and the file system, allowing you to create a logical volume instead of a physical disk.
+它在物理磁盘和文件系统之间增加了一个额外的层，允许你创建一个逻辑卷而不是物理磁盘。
 
-LVM allows you to easily resize, extend and decrease the logical volume when you need it.
+LVM 允许你在需要的时候轻松地调整、扩展和减少逻辑卷的大小。
 
 ![][1]
 
-### How to Create LVM Physical Volumes
+### 如何创建 LVM 物理卷？
 
-You can use any disk, RAID array, SAN disk, or a partition as the LVM physical volume.
+你可以使用任何磁盘、RAID 阵列、SAN 磁盘或分区作为 LVM 物理卷。
 
-Let’s imagine, you have already added three disks, these disks are /dev/sdb, and /dev/sdc, /dev/sdd.
+让我们想象一下，你已经添加了三个磁盘，它们是 /dev/sdb、/dev/sdc 和 /dev/sdd。
 
-Run the following commands to **[discover newly added LUNs or disks in Linux][2]**.
+运行以下命令来**[发现 Linux 中新添加的 LUN 或磁盘][2]**：
 
 ```
 # ls /sys/class/scsi_host
@@ -41,13 +41,13 @@ host0
 # fdisk -l
 ```
 
-**General syntax for the creation of a physical volume (pvcreate).**
+**创建物理卷 （pvcreate） 的一般语法：**
 
 ```
-pvcreate [Physical Volume Name]
+pvcreate [物理卷名]
 ```
 
-Once the disk is detected in the OS, use the pvcreate command to initialize the LVM PV (Physical Volumes).
+当在系统中检测到磁盘，使用 pvcreate 命令初始化 LVM PV（物理卷）：
 
 ```
 # pvcreate /dev/sdb /dev/sdc /dev/sdd
@@ -56,14 +56,14 @@ Physical volume "/dev/sdc" successfully created
 Physical volume "/dev/sdd" successfully created
 ```
 
-**Make a note:**
+**请注意：**
 
-  * The above command erases any data on the given disks /dev/sdb, /dev/sdc and /dev/sdd.
-  * Physical disk can be added directly into the LVM PV instead of the disk partition.
+  * 上面的命令将删除给定磁盘 /dev/sdb、/dev/sdc 和 /dev/sdd 上的所有数据。
+  * 物理磁盘可以直接添加到 LVM PV 中，而不是磁盘分区。
 
 
 
-Use the pvdisplay and pvs commands to display the PVs you have created. The pvs command shows summarize output and the pvdisplay shows the detailed output of the PVs.
+使用 pvdisplay 和 pvs 命令来显示你创建的 PV。pvs 命令显示的是摘要输出，pvdisplay 显示的是 PV 的详细输出：
 
 ```
 # pvs
@@ -113,26 +113,26 @@ Allocated PE          0
 PV UUID               d92fa769-e00f-4fd7-b6ed-ecf7224af7faS
 ```
 
-### How to Create a Volume Group
+### 如何创建一个卷组
 
-Volume group is the another layer in LVM structure. Basically the volume group consists of the LVM physical volumes you created. You can add physical volume to an existing volume group or create a new volume group for physical volume as needed.
+卷组是 LVM 结构中的另一层。基本上，卷组由你创建的 LVM 物理卷组成，你可以将物理卷添加到现有的卷组中，或者根据需要为物理卷创建新的卷组。
 
-**General syntax for Volume Group creation (vgcreate).**
+**创建卷组 （vgcreate） 的一般语法：**
 
 ```
-vgcreate [Volume Group Name] [Physical Volume Name]
+vgcreate [卷组名] [物理卷名]
 ```
 
-Use the following command to add a new physical volume to the new volume group.
+使用以下命令将一个新的物理卷添加到新的卷组中：
 
 ```
 # vgcreate vg01 /dev/sdb /dev/sdc /dev/sdd
 Volume group "vg01" successfully created
 ```
 
-**Make a note:** By default, it uses 4MB for physical extent, but you can change it based on your need.
+**请注意：**默认情况下，它使用 4MB 的物理范围，但你可以根据你的需要改变它。
 
-Use the vgs and vgdisplay commands to display information about the VG you created.
+使用 vgs 和 vgdisplay 命令来显示你创建的 VG 的信息：
 
 ```
 # vgs vg01
@@ -164,14 +164,14 @@ Free PE / Size       11511 / 44.99 GiB
 VG UUID              d17e3c31-e2c9-4f11-809c-94a549bc43b7
 ```
 
-### How to Extent Volume Group
+### 如何扩展卷组
 
-If you do not have space in the VG, Use the following command to add a new physical volume to the existing volume group.
+如果 VG 没有空间，请使用以下命令将新的物理卷添加到现有卷组中。
 
-**Common syntax for Volume Group extension (vgextend).**
+**卷组扩展 （vgextend） 的一般语法：**
 
 ```
-vgextend [Existing Volume Group Name] [Physical Volume Name]
+vgextend [已有卷组名] [物理卷名]
 ```
 
 ```
@@ -179,26 +179,26 @@ vgextend [Existing Volume Group Name] [Physical Volume Name]
     Volume group "vg01" successfully extended
 ```
 
-### How to Create Logical Volume Using GB Size’s
+### 如何以 GB 为单位创建逻辑卷？
 
-Logical Volume is the top layer in LVM structure. Logical volumes are block devices created from the volume group. It acts as a virtual disk partition and can be easily managed using LVM commands.
+逻辑卷是 LVM 结构中的顶层。逻辑卷是由卷组创建的块设备。它作为一个虚拟磁盘分区，可以使用 LVM 命令轻松管理。
 
-You can use the lvcreate command to create a logical volume.
+你可以使用 lvcreate 命令创建一个新的逻辑卷。
 
-**General syntax for creating logical volume (lvcreate)**
+**创建逻辑卷 （lvcreate） 的一般语法：**
 
 ```
-lvcreate –n [Logical Volume Name] –L [Logical Volume Size] [Name of the Volume Group where the LV to be created]
+lvcreate –n [逻辑卷名] –L [逻辑卷大小] [要创建的 LV 所在的卷组名称]
 ```
 
-Run the below command to create a logical volume lv001 of size 10 GB.
+运行下面的命令，创建一个大小为 10GB 的逻辑卷 lv001：
 
 ```
 # lvcreate -n lv001 -L 10G vg01
 Logical volume "lv001" created
 ```
 
-Use the lvs and lvdisplay commands to display information about the LVs you have created.
+使用 lvs 和 lvdisplay 命令来显示你所创建的 LV 的信息：
 
 ```
 # lvs /dev/vg01/lvol01
@@ -226,78 +226,78 @@ Read ahead sectors     auto
 Block device           253:4
 ```
 
-### How to Create Logical Volume Using PE Size’s
+### 如何以 PE 大小创建逻辑卷？
 
-Alternatively, you can create Logical Volumes Using Physical Extends (PE) size.
+或者，你可以使用物理扩展 （PE） 大小创建逻辑卷。
 
-### How to Calculate PE Value?
+### 如何计算 PE 值？
 
-It’s very simple, for example, if you have a volume group of 10 GB, then what is the PE size?
+很简单，例如，如果你有一个 10GB 的卷组，那么 PE 大小是多少？
 
-By default, it uses 4MB for the physical extent, but check the correct PE size by running the vgdisplay command, as this can be changed based on requirements.
-
-```
-10GB = 10240MB / 4MB (PE Size) = 2560 PEs
-```
-
-**Common syntax for Logical Volume Creation with PE Size’s (lvcreate).**
+默认情况下，它使用 4MB 的物理扩展，但通过运行 vgdisplay 命令来检查正确的 PE 大小，因为这可以根据需求进行更改。
 
 ```
-lvcreate –n [Logical Volume Name] –l [Physical Extends (PE) Size] [Name of the Volume Group where the LV to be created]
+10GB = 10240MB / 4MB （PE 大小） = 2560 PEs
 ```
 
-To create 10GB of logical volume using the PE size the command would be:
+**用 PE 大小创建逻辑卷 （lvcreate） 的一般语法：**
+
+```
+lvcreate –n [逻辑卷名] –l [物理扩展 （PE） 大小] [要创建的 LV 所在的卷组名称]
+```
+
+要使用 PE 大小创建 10GB 的逻辑卷，命令如下：
 
 ```
 # lvcreate -n lv001 -l 2560 vg01
 ```
 
-### How to Create File system
+### 如何创建文件系统
 
-You cannot use a logical volume until you create a valid file system.
+在创建有效的文件系统之前，你不能使用逻辑卷。
 
-**General syntax to create a file system.**
+**创建文件系统的一般语法：**
 
 ```
-mkfs –t [File System Type] /dev/[Name of the Volume Group where LV resides]/[LV name]
+mkfs –t [文件系统类型] /dev/[LV 所在的卷组名称]/[LV 名称]
 ```
 
-Use the below command to format the logical volume lv001 with the ext4 file system.
+使用以下命令将逻辑卷 lv001 格式化为 ext4 文件系统：
 
 ```
 # mkfs -t ext4 /dev/vg01/lv001
 ```
 
-For xfs file system.
+对于 xfs 文件系统：
 
 ```
 # mkfs -t xfs /dev/vg01/lv001
 ```
 
-### Mounting Logical Volume
+### 挂载逻辑卷
 
-Finally, you need to mount the logical volume to use it. Make sure to add an entry to **/etc/fstab** so that it loads automatically when the system boots.
+最后，你需要挂载逻辑卷来使用它。确保在 **/etc/fstab** 中添加一个条目，以便系统启动时自动加载。
 
-Create a directory to mount the logical volume.
+创建一个目录来挂载逻辑卷：
 
 ```
 # mkdir /lvmtest
 ```
 
-Use the mount command to **[mount the logical volume][3]**.
+使用挂载命令 **[挂载逻辑卷][3]**：
 
 ```
 # mount /dev/vg01/lv001 /lvmtest
 ```
 
-Add new logical volume details to the **[/etc/fstab file][4]** to mount automatically when the system starts.
+在 **[/etc/fstab 文件][4]**中添加新的逻辑卷详细信息，以便系统启动时自动挂载：
 
 ```
 # vi /etc/fstab
 /dev/vg01/lv001 /lvmtest xfs defaults 0 0
 ```
 
-Check the newly mounted volume using the **[df command][5]**.
+使用 **[df 命令][5]**检查新挂载的卷：
 
 ```
 # df -h /lvmtest
@@ -311,7 +311,7 @@ via: https://www.2daygeek.com/create-lvm-storage-logical-volume-manager-in-linux
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
