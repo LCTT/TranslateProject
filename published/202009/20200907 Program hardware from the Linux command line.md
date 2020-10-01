@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12667-1.html)
 [#]: subject: (Program hardware from the Linux command line)
 [#]: via: (https://opensource.com/article/20/9/hardware-command-line)
 [#]: author: (Alan Smithee https://opensource.com/users/alansmithee)
@@ -12,7 +12,7 @@
 
 > 由于物联网（IoT）的兴起，对硬件进行编程变得越来越普遍。RT-Thread 可以让你可以用 FinSH 从 Linux 命令行与设备进行沟通、
  
-![命令行提示][1]
+![](https://img.linux.net.cn/data/attachment/album/202009/29/233059w523g55qzvo53h6i.jpg)
 
 RT-Thread 是一个开源的[实时操作系统][2]，用于对物联网（IoT）设备进行编程。FinSH 是 [RT-Thread][3] 的命令行组件，它提供了一套操作界面，使用户可以从命令行与设备进行沟通。它主要用于调试或查看系统信息。
 
