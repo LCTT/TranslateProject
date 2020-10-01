@@ -7,252 +7,225 @@
 [#]: via: (https://fedoramagazine.org/tcp-window-scaling-timestamps-and-sack/)
 [#]: author: (Florian Westphal https://fedoramagazine.org/author/strlen/)
 
-TCP window scaling, timestamps and SACK
+TCP 窗口缩放，时间戳和 SACK
 ======
 
 ![][1]
 
-The Linux TCP stack has a myriad of _sysctl_ knobs that allow to change its behavior.  This includes the amount of memory that can be used for receive or transmit operations, the maximum number of sockets and optional features and protocol extensions.
+Linux TCP 协议栈具有无数个 _sysctl_ 旋钮，允许更改其行为。 这包括可用于接收或发送操作的内存量，套接字的最大数量、可选特性和协议扩展。
 
-There are  multiple articles that recommend to disable TCP extensions, such as timestamps or selective acknowledgments (SACK) for various “performance tuning” or “security” reasons.
+有很多文章出于各种“性能调优”或“安全性”原因，建议禁用 TCP 扩展，比如时间戳或<ruby>选择性确认<rt>selective acknowledgments</rt></ruby> （SACK）。
 
-This article provides background on what these extensions do, why they
-are enabled by default, how they relate to one another and why it is normally a bad idea to turn them off.
+本文提供了这些扩展的功能背景，默认情况下处于启用状态的原因，它们之间是如何关联的，以及为什么通常情况下将它们关闭是个坏主意。
 
-### TCP Window scaling
+### TCP 窗口缩放
 
-The data transmission rate that TCP can sustain is limited by several factors. Some of these are:
+TCP 可以维持的数据传输速率受到几个因素的限制。其中包括：
 
-  * Round trip time (RTT).  This is the time it takes for a packet to get to the destination and a reply to come back. Lower is better.
-  * lowest link speed of the network paths involved
-  * frequency of packet loss
-  * the speed at which new data can be made available for transmission
-For example, the CPU needs to be able to pass data to the network adapter fast enough. If the CPU needs to encrypt the data first, the adapter might have to wait for new data. In similar fashion disk storage can be a bottleneck if it can’t read the data fast enough.
-  * The maximum possible size of the TCP receive window. The receive window determines how much data (in bytes) TCP can transmit before it has to wait for the receiver to report reception of that data. This is announced by the receiver. The receiver will constantly update this value as it reads and acknowledges reception of the incoming data. The receive windows current value is contained in the [TCP header][2] that is part of every segment sent by TCP. The sender is thus aware of the current receive window whenever it receives an acknowledgment from the peer. This means that the higher the round-trip time, the longer it takes for sender to get receive window updates.
+* 往返时间（RTT）。这是数据包到达目的地并返回回复所花费的时间。越低越好。
+* 所涉及的网络路径的最低链路速度
+* 丢包频率
+* 新数据可用于传输的速度。 例如，CPU 需要能够以足够快的速度将数据传递到网络适配器。如果 CPU 需要首先加密数据，则适配器可能必须等待新数据。同样地，如果磁盘存储不能足够快地读取数据，则磁盘存储可能会成为瓶颈。
+* TCP 接收窗口的最大可能大小。接收窗口决定 TCP 在必须等待接收方报告接收到该数据之前可以传输多少数据 (以字节为单位)。这是由接收方宣布的。接收方将在读取并确认接收到传入数据时不断更新此值。接收窗口当前值包含在 [TCP 报头][2] 中，它是 TCP 发送的每个数据段的一部分。因此，只要发送方接收到来自对等方的确认，它就知道当前的接收窗口。这意味着往返时间（RTT）越长，发送方获得接收窗口更新所需的时间就越长。
 
 
+TCP 被限制为最多 64KB 的未确认（正在传输）数据。在大多数网络场景中，这甚至还不足以维持一个像样的数据速率。让我们看看一些例子。
 
-TCP is limited to at most 64 kilobytes of unacknowledged (in-flight) data. This is not even close to what is needed to sustain a decent data rate in most networking scenarios. Let us look at some examples.
+##### 理论数据速率
 
-##### Theoretical data rate
+由于往返时间 (RTT) 为 100 毫秒，TCP 每秒最多可以传输 640KB。在延迟 1 秒的情况下，最大理论数据速率降至 64KB/s。
 
-With a round-trip-time of 100 milliseconds, TCP can transfer at most 640 kilobytes per second. With a 1 second delay, the maximum theoretical data rate drops down to only 64 kilobytes per second.
+这是因为接收窗口的原因。一旦发送了 64KB 的数据，接收窗口就已经满了。发送方必须等待，直到对等方通知它应用程序已经读取了至少一部分数据。
 
-This is because of the receive window. Once 64kbyte of data have been sent the receive window is already full.  The sender must wait until the peer informs it that at least some of the data has been read by the application. 
+发送的第一个段会把 TCP 窗口缩减一个自身的大小。在接收窗口值的更新可用之前，需要往返一次。当更新以 1 秒的延迟到达时，即使链路有足够的可用带宽，也会导致 64KB 的限制。
 
-The first segment sent reduces the TCP window by the size of that segment. It takes one round-trip before an update of the receive window value will become available. When updates arrive with a 1 second delay, this results in a 64 kilobyte limit even if the link has plenty of bandwidth available.
+为了充分利用一个具有几毫秒延迟的快速网络，必须有一个比传统 TCP 支持的窗口大的窗口。“64KB 限制”是协议规范的产物：TCP 头只为接收窗口大小保留 16 位。这允许接收窗口高达 64KB。在 TCP 协议最初设计时，这个大小并没有被视为一个限制。
 
-In order to fully utilize a fast network with several milliseconds of delay, a window size larger than what classic TCP supports is a must. The ’64 kilobyte limit’ is an artifact of the protocols specification: The TCP header reserves only 16bits for the receive window size. This allows receive windows of up to 64KByte. When the TCP protocol was originally designed, this size was not seen as a limit.
+不幸的是，想通过仅仅更改 TCP 头来支持更大的最大窗口值是不可能的。如果这样做就意味着 TCP 的所有实现都必须同时更新，否则它们将无法相互理解。为了解决这个问题，需要改变接收窗口值的解释。
 
-Unfortunately, its not possible to just change the TCP header to support a larger maximum window value. Doing so would mean all implementations of TCP would have to be updated simultaneously or they wouldn’t understand one another anymore. To solve this, the interpretation of the receive window value is changed instead.
+“窗口缩放选项”允许这样做，同时保持与现有实现的兼容性。
 
-The ‘window scaling option’ allows to do this while keeping compatibility to existing implementations.
+#### TCP 选项：向后兼容的协议扩展
 
-#### TCP Options: Backwards-compatible protocol extensions
+TCP 支持可选扩展。 这允许使用新特性增强协议，而无需立即更新所有实现。 当 TCP 启动器连接到对等方时，它还会发送一个支持的扩展列表。 所有扩展名都遵循相同的格式：一个唯一的选项号，后跟选项的长度以及选项数据本身。
 
-TCP supports optional extensions. This allows to enhance the protocol with new features without the need to update all implementations at once. When a TCP initiator connects to the peer, it also send a list of supported extensions. All extensions follow the same format: an unique option number followed by the length of the option and the option data itself.
+TCP 响应程序检查连接请求中包含的所有选项号。 如果它遇到一个不能理解的选项号，则会跳过
+该选项号附带的“长度”字节的数据，并检查下一个选项号。 响应者忽略了从答复中无法理解的内容。 这使发送方和接收方都够了解所支持的通用选项集。
 
-The TCP responder checks all the option numbers contained in the connection request. If it does not understand an option number it skips
-‘length’ bytes of data and checks the next option number. The responder omits those it did not understand from the reply. This allows both the sender and receiver to learn the common set of supported options.
+使用窗口缩放时，选项数据总是由单个数字组成。
 
-With window scaling, the option data always consist of a single number.
-
-### The window scaling option
-```
+### 窗口缩放选项
 
 ```
-
-Window Scale option (WSopt): Kind: 3, Length: 3
+窗口缩放选项 (WSopt): Kind: 3, Length: 3
     +---------+---------+---------+
     | Kind=3  |Length=3 |shift.cnt|
     +---------+---------+---------+
          1         1         1
 ```
 
-```
+[窗口缩放][3] 选项告诉对等点，应该使用给定的数字缩放 TCP 标头中的接收窗口值，以获取实际大小。
 
-The [window scaling][3] option tells the peer that the receive window value found in the TCP header should be scaled by the given number to get the real size.
+例如，一个宣告窗口缩放比例因子为 7 的 TCP 启动器试图指示响应程序，任何将来携带接收窗口值为 512 的数据包实际上都会宣告 65536 字节的窗口。 增加了 128 倍。这将允许最大为 8MB 的 TCP 窗口。
 
-For example, a TCP initiator that announces a window scaling factor of 7 tries to instruct the responder that any future packets that carry a receive window value of 512 really announce a window of 65536 byte. This is an increase by a factor of 128. This would allow a maximum TCP Window of 8 Megabytes.
+不能理解此选项的 TCP 响应程序将会忽略它。 为响应连接请求而发送的 TCP 数据包（SYN-ACK）不包含窗口缩放选项。在这种情况下，双方只能使用 64k 的窗口大小。幸运的是，默认情况下，几乎每个 TCP 堆栈都支持并启用此选项，包括 Linux。
 
-A TCP responder that does not understand this option ignores it. The TCP packet sent in reply to the connection request (the syn-ack) then does not contain the window scale option. In this case both sides can only use a 64k window size. Fortunately, almost every TCP stack supports and enables this option by default, including Linux.
+响应程序包括它自己所需的比例因子。两个对等点可以使用不同的号码。宣布比例因子为 0 也是合法的。这意味着对等点应该逐字处理它接收到的接收窗口值，但它允许应答方向上的缩放值，然后接收方可以使用更大的接收窗口。
 
-The responder includes its own desired scaling factor. Both peers can use a different number. Its also legitimate to announce a scaling factor of 0. This means the peer should treat the receive window value it receives verbatim, but it allows scaled values in the reply direction — the recipient can then use a larger receive window.
+与 SACK 或 TCP 时间戳不同，窗口缩放选项仅出现在 TCP 连接的前两个数据包中，之后无法更改。也不可能通过查看不包含初始连接三次握手的连接的数据包捕获来确定比例因子。
 
-Unlike SACK or TCP timestamps, the window scaling option only appears in the first two packets of a TCP connection, it cannot be changed afterwards. It is also not possible to determine the scaling factor by looking at a packet capture of a connection that does not contain the initial connection three-way handshake.
+支持的最大比例因子为 14。这将允许 TCP 窗口的大小高达 1GB。
 
-The largest supported scaling factor is 14. This allows TCP window sizes
-of up to one Gigabyte.
+##### 窗口缩放的缺点
 
-##### Window scaling downsides
+在非常特殊的情况下，它可能导致数据损坏。 在禁用该选项之前——通常情况下是不可能的。 还有一种解决方案可以防止这种情况。不幸的是，有些人在没有意识到与窗口缩放的关系的情况下禁用了该解决方案。 首先，让我们看一下需要解决的实际问题。 想象以下事件序列：
 
-It can cause data corruption in very special cases. Before you disable the option – it is impossible under normal circumstances. There is also a solution in place that prevents this. Unfortunately, some people disable this solution without realizing the relationship with window scaling. First, let’s have a look at the actual problem that needs to be addressed. Imagine the following sequence of events:
+  1. 发送方发送段：s_1，s_2，s_3，... s_n
+  2. 接收方看到：s_1，s_3，.. s_n，并发送对 s_1 的确认。
+  3. 发送方认为 s_2 丢失，然后再次发送。 它还发送段 s_n+1 中包含的新数据。
+  4. 接收方然后看到：s_2，s_n+1，s_2：数据包 s_2 被接收两次。
 
-  1. The sender transmits segments: s_1, s_2, s_3, … s_n
-  2.  The receiver sees: s_1, s_3, .. s_n and sends an acknowledgment for s_1.
-  3.  The sender considers s_2 lost and sends it a second time. It also sends new data contained in segment s_n+1.
-  4.  The receiver then sees: s_2, s_n+1, s_2: the packet s_2 is received twice.
+例如，当发送方过早触发重新传输时，可能会发生这种情况。 在正常情况下，即使使用窗口缩放，这种错误的重传也绝不会成为问题。 接收方将只丢弃重复项。
 
+#### 从旧数据到新数据
 
+TCP 序列号最多可以为 4GB。如果它变得大于此值，则序列会回绕到 0，然后再次增加。这本身不是问题，但是如果这种问题发生得足够快，则上述情况可能会造成歧义。
 
-This can happen for example when a sender triggers re-transmission too early. Such erroneous re-transmits are never a problem in normal cases, even with window scaling. The receiver will just discard the duplicate.
+如果在正确的时刻发生回绕，则序列号 s_2（重新发送的数据包）可能已经大于 s_n+1。 因此，在最后的步骤（4）中，接收器可以将其解释为：s_2，s_n+1，s_n+m，即它可以将 **“旧”** 数据包 s_2 视为包含新数据。
 
-#### Old data to new data
+通常，这不会发生，因为即使在高带宽链接上，“回绕”也只会每隔几秒钟或几分钟发生一次。原始和不需要的重传之间的间隔将小得多。
 
-The TCP sequence number can be at most 4 Gigabyte. If it becomes larger than this, the sequence wraps back to 0 and then increases again. This is not a problem in itself, but if this occur fast enough then the above scenario can create an ambiguity.
+例如，对于 50MB/s 的传输速度，副本要延迟到一分钟以上才会成为问题。序列号的包装速度不够快，小的延迟才会导致这个问题。
 
-If a wrap-around occurs at the right moment, the sequence number s_2 (the re-transmitted packet) can already be larger than s_n+1. Thus, in the last step (4), the receiver may interpret this as: s_2, s_n+1, s_n+m, i.e. it could view the ‘old’ packet s_2 as containing new data.
+一旦 TCP 达到 “GB/s” 的吞吐率，序列号的包装速度就会非常快，以至于即使只有几毫秒的延迟也可能会造成 TCP 无法再检测到的重复项。通过解决接收窗口太小的问题，TCP 现在可以用于以前无法实现的网络速度，这会产生一个新的，尽管很少见的问题。为了在 RTT 非常低的环境中安全使用 GB/s 的速度，接收方必须能够检测到这些旧副本，而不必仅依赖序列号。
 
-Normally, this won’t happen because a ‘wrap around’ occurs only every couple of seconds or minutes even on high bandwidth links. The interval between the original and a unneeded re-transmit will be a lot smaller.
+### TCP 时间戳
 
-For example,with a transmit speed of 50 Megabytes per second, a
-duplicate needs to arrive more than one minute late for this to become a problem. The sequence numbers do not wrap fast enough for small delays to induce this problem.
+#### 最佳使用日期。
 
-Once TCP approaches ‘Gigabyte per second’ throughput rates, the sequence numbers can wrap so fast that even a delay by only a few milliseconds can create duplicates that TCP cannot detect anymore. By solving the problem of the too small receive window, TCP can now be used for network speeds that were impossible before – and that creates a new, albeit rare problem. To safely use Gigabytes/s speed in environments with very low RTT receivers must be able to detect such old duplicates without relying on the sequence number alone.
+用最简单的术语来说，[TCP 时间戳][3]只是在数据包上添加时间戳，以解决由非常快速的序列号回绕引起的歧义。 如果一个段看起来包含新数据，但其时间戳早于最后一个在窗口内的数据包，则该序列号已被重新包装，而“新”数据包实际上是一个较旧的副本。 这解决了即使在极端情况下重传的歧义。
 
-### TCP time stamps
+但是，该扩展不仅仅是检测旧数据包。 TCP 时间戳的另一个主要功能是更精确的往返时间测量（RTTm）。
 
-#### A best-before date
+#### 需要准确的 RTT 估算
 
-In the most simple terms, [TCP timestamps][3] just add a time stamp to the packets to resolve the ambiguity caused by very fast sequence number wrap around. If a segment appears to contain new data, but its timestamp is older than the last in-window packet, then the sequence number has wrapped and the ”new” packet is actually an older duplicate. This resolves the ambiguity of re-transmits even for extreme corner cases.
-
-But this extension allows for more than just detection of old packets. The other major feature made possible by TCP timestamps are more precise round-trip time measurements (RTTm).
-
-#### A need for precise round-trip-time estimation
-
-When both peers support timestamps,  every TCP segment carries two additional numbers: a timestamp value and a timestamp echo.
-```
+当两个对等方都支持时间戳时，每个 TCP 段都携带两个附加数字：时间戳值和时间戳回显。
 
 ```
-
-TCP Timestamp option (TSopt): Kind: 8, Length: 10
+TCP 时间戳选项 (TSopt): Kind: 8, Length: 10
 +-------+----+----------------+-----------------+
 |Kind=8 | 10 |TS Value (TSval)|EchoReply (TSecr)|
 +-------+----+----------------+-----------------+
     1      1         4                4
 ```
 
-```
+准确的 RTT 估算对于 TCP 性能至关重要。 TCP 自动重新发送未确认的数据。 重传由计时器触发：如果超时，则 TCP 会将尚未收到确认的一个或多个数据包视为丢失。 然后再发送一次。
 
-An accurate RTT estimate is crucial for TCP performance. TCP automatically re-sends data that was not acknowledged. Re-transmission is triggered by a timer: If it expires, TCP considers one or more packets that it has not yet received an acknowledgment for to be lost. They are then sent again.
+但是，“尚未得到确认” 并不意味着该段已丢失。 也有可能是接收方到目前为止没有发送确认，或者确认仍在传输中。 这就造成了一个两难的困境：TCP 必须等待足够长的时间，才能让这种轻微的延迟变得无关紧要，但它也不能等待太久。
 
-But “has not been acknowledged” does not mean the segment was lost. It is also possible that the receiver did not send an acknowledgment so far or that the acknowledgment is still in flight. This creates a dilemma: TCP must wait long enough for such slight delays to not matter, but it can’t wait for too long either.
+##### 低网络延迟 VS 高网络延迟
 
-##### Low versus high network delay
+在延迟较高的网络中，如果计时器触发过快，TCP 经常会将时间和带宽浪费在不必要的重发上。
 
-In networks with a high delay, if the timer fires too fast, TCP frequently wastes time and bandwidth with unneeded re-sends.
+然而，在延迟较低的网络中，等待太长时间会导致真正发生数据包丢失时吞吐量降低。因此，在低延迟网络中，计时器应该比高延迟网络中更早到期。 所以，TCP 重传超时不能使用固定常量值作为超时。它需要根据其在网络中所经历的延迟来调整该值。
 
-In networks with a low delay however,  waiting for too long causes reduced throughput when a real packet loss occurs. Therefore, the timer should expire sooner in low-delay networks than in those with a high delay. The tcp retransmit timeout therefore cannot use a fixed constant value as a timeout. It needs to adapt the value based on the delay that it experiences in the network.
+##### RTT（往返时间）的测量
 
-##### Round-trip time measurement
+TCP 选择基于预期往返时间（RTT）的重传超时。 RTT 事先是未知的。它是通过测量发送段与 TCP 接收到该段所承载数据的确认之间的增量来估算的。
 
-TCP picks a retransmit timeout that is based on the expected round-trip time (RTT). The RTT is not known in advance. RTT is estimated by measuring the delta between the time a segment is sent and the time TCP receives an acknowledgment for the data carried by that segment.
+由于多种因素使其而变得复杂。
 
-This is complicated by several factors.
+  * 出于性能原因，TCP 不会为收到的每个数据包生成新的确认。它等待的时间非常短：如果有更多的数据段到达，则可以通过单个 ACK 数据包确认其接收。这称为<ruby>“累积确认”<rt>cumulative ACK</rt></ruby>。
+  * 往返时间并不恒定。 这是有多种因素造成的。例如，客户端可能是一部移动电话，随其移动而切换到不同的基站。也可能是当链路或 CPU 利用率提高时，数据包交换花费了更长的时间。
+  * 必须重新发送的数据包在计算过程中必须被忽略。
+    这是因为发送方无法判断重传数据段的 ACK 是在确认原始传输 (毕竟已到达) 还是在确认重传。
 
-  * For performance reasons, TCP does not generate a new acknowledgment for every packet it receives. It waits  for a very small amount of time: If more segments arrive, their reception can be acknowledged with a single ACK packet. This is called “cumulative ACK”.
-  *  The round-trip-time is not constant. This is because of a myriad of factors. For example, a client might be a mobile phone switching to different base stations as its moved around. Its also possible that packet switching takes longer when link or CPU utilization increases.
-  * a packet that had to be re-sent must be ignored during computation. This is because the sender cannot tell if the ACK for the re-transmitted segment is acknowledging the original transmission (that arrived after all) or the re-transmission.
+最后一点很重要：当 TCP 忙于从丢失中恢复时，它可能仅接收到重传段的 ACK。这样，它就无法在此恢复阶段测量（更新）RTT。所以，它无法调整重传超时，然后超时将以指数级增长。那是一种非常具体的情况（它假设其他机制，如快速重传或 SACK 不起作用）。但是，使用 TCP 时间戳，即使在这种情况下也会进行 RTT 评估。
 
+如果使用了扩展，则对等方将从 TCP 段扩展空间中读取时间戳值并将其存储在本地。然后，它将该值放入作为 “时间戳回显” 发回的所有数据段中。
 
+因此，该选项带有两个时间戳：它的发送方自己的时间戳和它从对等方收到的最新时间戳。原始发送方使用“回显时间戳”来计算 RTT。它是当前时间戳时钟与“时间戳回显”中所反映的值之间的增量。
 
-This last point is significant: When TCP is busy recovering from a loss, it may only receives ACKs for re-transmitted segments. It then can’t measure (update) the RTT during this recovery phase. As a consequence it can’t adjust the re-transmission timeout, which then keeps growing exponentially. That’s a pretty specific case (it assumes that other mechanisms such as fast retransmit or SACK did not help). Nevertheless, with TCP timestamps, RTT evaluation is done even in this case.
+##### 时间戳的其他用用途
 
-If the extension is used, the peer reads the timestamp value from the TCP segments extension space and stores it locally. It then places this value in all the segments it sends back as the “timestamp echo”.
+TCP 时间戳甚至还有除 PAWS 和 RTT 测量以外的其他用途。例如，可以检测是否不需要重发。如果该确认携带较旧的时间戳回显，则该确认针对的是初始数据包，而不是重新发送的数据包。
 
-Therefore the option carries two timestamps: Its senders own timestamp and the most recent timestamp it received from the peer. The “echo timestamp” is used by the original sender to compute the RTT. Its the delta between its current timestamp clock and what was reflected in the “timestamp echo”.
+TCP 时间戳的另一个更晦涩的用例与 TCP [syn cookie][4] 功能有关。
 
-##### Other timestamp uses
+##### 在服务器端建立 TCP 连接
 
-TCP timestamps even have other uses beyond PAWS and RTT measurements. For example it becomes possible to detect if a retransmission was unnecessary. If the acknowledgment carries an older timestamp echo, the acknowledgment was for the initial packet, not the re-transmitted one.
+当连接请求到达的速度快于服务器应用程序可以接受新的传入连接的速度时，连接积压最终将达到其极限。这可能是由于系统配置错误或应用程序中的错误引起的。当一个或多个客户端发送连接请求而不对 “SYN ACK” 响应做出反应时，也会发生这种情况。这将用不完整的连接填充连接队列。这些条目需要几秒钟才会超时。这被称为<ruby>“同步洪水攻击”<rt>syn flood attack</rt></ruby>。
 
-Another, more obscure use case for TCP timestamps is related to the TCP [syn cookie][4] feature.
+##### TCP 时间戳和 TCP Syn Cookie
 
-##### TCP connection establishment on server side
+即使队列已满，某些 TCP 协议栈也允许继续接受新连接。发生这种情况时，Linux 内核将在系统日志中打印一条突出的消息：
 
-When connection requests arrive faster than a server application can accept the new incoming connection, the connection backlog will eventually reach its limit. This can occur because of a mis-configuration of the system or a bug in the application. It also happens when one or more clients send connection requests without reacting to the ‘syn ack’ response. This fills the connection queue with incomplete connections. It takes several seconds for these entries to time out. This is called a “syn flood attack”.
+> P 端口上可能发生 SYN 泛洪。正在发送 Cookie。检查 SNMP 计数器。
 
-##### TCP timestamps and TCP syn cookies
+此机制将完全绕过连接队列。通常存储在连接队列中的信息被编码到 SYN/ACK 响应 TCP 序列号中。当 ACK 返回时，可以根据序列号重建队列条目。
 
-Some TCP stacks allow to accept new connections even if the queue is full. When this happens, the Linux kernel will print a prominent message to the system log:
+序列号只有有限的空间来存储信息。 因此，使用 “TCP Syn Cookie” 机制建立的连接不能支持 TCP 选项。
 
-> Possible SYN flooding on port P. Sending Cookies. Check SNMP counters.
+但是，对两个对等点都通用的 TCP 选项可以存储在时间戳中。 ACK 数据包在时间戳回显字段中反映了该值，这也允许恢复已达成共识的 TCP 选项。否则，cookie 连接受标准的 64KB 接收窗口限制。
 
-This mechanism bypasses the connection queue entirely. The information that is normally stored in the connection queue is encoded into the SYN/ACK responses TCP sequence number. When the ACK comes back, the queue entry can be rebuilt from the sequence number.
+##### 常见误区 —— 时间戳不利于性能
 
-The sequence number only has limited space to store information. Connections established using the ‘TCP syn cookie’ mechanism can not support TCP options for this reason.
+不幸的是，一些指南建议禁用 TCP 时间戳，以减少内核访问时间戳时钟来获取当前时间所需的次数。这是不正确的。如前所述，RTT 估算是 TCP 的必要部分。因此，内核在接收/发送数据包时总是采用微秒级的时间戳。
 
-The TCP options that are common to both peers can be stored in the timestamp, however. The ACK packet reflects the value back in the timestamp echo field which allows to recover the agreed-upon TCP options as well. Else, cookie-connections are restricted by the standard 64 kbyte receive window.
+在包处理步骤的其余部分中，Linux 会重用 RTT 估算所需的时钟时间戳。这还避免了将时间戳添加到传出 TCP 数据包的额外时钟访问。
 
-##### Common myths – timestamps are bad for performance
+整个时间戳选项在每个数据包中仅需要 10 个字节的 TCP 选项空间，这并没有显著减少可用于数据包有效负载的空间。
 
-Unfortunately some guides recommend disabling TCP timestamps to reduce the number of times the kernel needs to access the timestamp clock to get the current time. This is not correct. As explained before, RTT estimation is a necessary part of TCP. For this reason, the kernel always takes a microsecond-resolution time stamp when a packet is received/sent.
+##### 常见误区 —— 时间戳是个安全问题
 
-Linux re-uses the clock timestamp taken for the RTT estimation for the remainder of the packet processing step. This also avoids the extra clock access to add a timestamp to an outgoing TCP packet.
+一些安全审计工具和 (较旧的) 博客文章建议禁用 TCP 时间戳，因为据称它们泄露了系统正常运行时间：这样一来，便可以估算系统/内核的补丁级别。这在过去是正确的：时间戳时钟基于不断增加的值，该值在每次系统引导时都以固定值开始。时间戳值可以估计机器已经运行了多长时间 (正常运行时间)。
 
-The entire timestamp option only requires 10 bytes of TCP option space in each packet, this is not a significant decrease in space available for packet payload.
+从 Linux 4.12 开始，TCP 时间戳不再显示正常运行时间。发送的所有时间戳值都使用对等设备特定的偏移量。时间戳值也每 49 天换行一次。
 
-##### common myths – timestamps are a security problem
+换句话说，从地址 “A” 出发，或者终到地址 “A” 的连接看到的时间戳与到远程地址 “B” 的连接看到的时间戳不同。
 
-Some security audit tools and (older) blog posts recommend to disable TCP
-timestamps because they allegedly leak system uptime: This would then allow to estimate the patch level of the system/kernel. This was true in the past: The timestamp clock is based on a constantly increasing value that starts at a fixed value on each system boot. A timestamp value would give a estimate as to how long the machine has been running (uptime).
+运行 _sysctl net.ipv4.tcp_timeamp=2_ 以禁用随机化偏移。这使得分析由诸如 _Wireshark_ 或 _tcpdump_ 之类的工具记录的数据包跟踪变得更容易 —— 从主机发送的数据包在其 TCP 选项时间戳中都具有相同的时钟基准。因此，对于正常操作，默认设置应保持不变。
 
-As of Linux 4.12 TCP timestamps do not reveal the uptime anymore. All timestamp values sent use a peer-specific offset. Timestamp values also wrap every 49 days.
+### 选择性确认
 
-In other words, connections from or to address “A” see a different timestamp than connections to the remote address “B”.
+如果丢失同一数据窗口中的多个数据包，TCP 将会出现问题。 这是因为 TCP 确认是累积的，但仅适用于按顺序到达的数据包。例如：
 
-Run _sysctl net.ipv4.tcp_timestamps=2_ to disable the randomization offset. This makes analyzing packet traces recorded by tools like _wireshark_ or _tcpdump_ easier – packets sent from the host then all have the same clock base in their TCP option timestamp.  For normal operation the default setting should be left as-is.
+  * 发送方发送段 s_1，s_2，s_3，... s_n
+  * 发送方收到 s_2 的 ACK
+  * 这意味着 s_1 和 s_2 都已收到，并且发送方不再需要保留这些段。
+  * s_3 是否应该重新发送？ s_4呢？ s_n？
 
-### Selective Acknowledgments
+发送方等待 “重传超时” 或 “重复 ACK” 以使 s_2 到达。如果发生重传超时或到达 s_2 的多个重复 ACK，则发送方再次发送 s_3。
 
-TCP has problems if several packets in the same window of data are lost. This is because TCP Acknowledgments are cumulative, but only for packets
-that arrived in-sequence. Example:
+如果发送方收到对 s_n 的确认，则 s_3 是唯一丢失的数据包。这是理想的情况。仅发送单个丢失的数据包。
 
-  * Sender transmits segments s_1, s_2, s_3, … s_n
-  * Sender receives ACK for s_2
-  * This means that both s_1 and s_2 were received and the
-sender no longer needs to keep these segments around.
-  * Should s_3 be re-transmitted? What about s_4? s_n?
+如果发送方收到的确认段小于 s_n，例如 s_4，则意味着丢失了多个数据包。
+发送方也需要重传下一个数据段。
 
+##### 重传策略
 
+可能只是重复相同的序列：重新发送下一个数据包，直到接收方指示它已处理了直至 s_n 的所有数据包为止。这种方法的问题在于，它需要一个 RTT，直到发送方知道接下来必须重新发送的数据包为止。尽管这种策略可以避免不必要的重传，但要等到 TCP 重新发送整个数据窗口后，它可能要花几秒钟甚至更长的时间。
 
-The sender waits for a “retransmission timeout” or ‘duplicate ACKs’ for s_2 to arrive. If a retransmit timeout occurs or several duplicate ACKs for s_2 arrive, the sender transmits s_3 again.
+另一种方法是一次重新发送几个数据包。当丢失了几个数据包时，此方法可使 TCP 恢复更快。在上面的示例中，TCP 重新发送了 s_3，s_4，s_5，...，但是只能确保已丢失 s_3。
 
-If the sender receives an acknowledgment for s_n, s_3 was the only missing packet. This is the ideal case. Only the single lost packet was re-sent.
+从延迟的角度来看，这两种策略都不是最佳的。如果只有一个数据包需要重新发送，第一种策略是快速的，但是当多个数据包丢失时，它花费的时间太长。
 
-If the sender receives an acknowledged segment that is smaller than s_n, for example s_4, that means that more than one packet was lost. The
-sender needs to re-transmit the next segment as well.
+即使必须重新发送多个数据包，第二个也是快速的，但是以浪费带宽为代价。此外，这样的 TCP 发送方在进行不必要的重传时可能已经发送了新数据。
 
-##### Re-transmit strategies
+通过可用信息，TCP 无法知道丢失了哪些数据包。这就是 TCP [选择性确认][5]（SACK）的用武之地了。就像窗口缩放和时间戳一样，它是另一个可选的但非常有用的 TCP 特性。
 
-Its possible to just repeat the same sequence: re-send the next packet until the receiver indicates it has processed all packet up to s_n. The problem with this approach is that it requires one RTT until the sender knows which packet it has to re-send next. While such strategy avoids unnecessary re-transmissions, it can take several seconds and more until TCP has re-sent the entire window of data.
-
-The alternative is to re-send several packets at once. This approach allows TCP to recover more quickly when several packets have been lost. In the above example TCP re-send s_3, s_4, s_5, .. while it can only be sure that s_3 has been lost.
-
-From a latency point of view, neither strategy is optimal. The first strategy is fast if only a single packet has to be re-sent, but takes too long when multiple packets were lost.
-
-The second one is fast even if multiple packet have to be re-sent, but at the cost of wasting bandwidth. In addition, such a TCP sender could have transmitted new data already while it was doing the unneeded re-transmissions.
-
-With the available information TCP cannot know which packets were lost. This is where TCP [Selective Acknowledgments][5] (SACK) come in. Just like window scaling and timestamps, it is another optional, yet very useful TCP feature.
-
-##### The SACK option
-```
+##### SACK 选项
 
 ```
-
    TCP Sack-Permitted Option: Kind: 4, Length 2
    +---------+---------+
    | Kind=4  | Length=2|
    +---------+---------+
 ```
 
-```
-
-A sender that supports this extension includes the “Sack Permitted” option in the connection request. If both endpoints support the extension, then a peer that detects a packet is missing in the data stream can inform the sender about this.
-```
+支持此扩展的发送方在连接请求中包括 “允许 SACK” 选项。如果两个端点都支持扩展，则检测到数据流中丢失数据包的对等点可以将此信息通知发送方。
 
 ```
-
    TCP SACK Option: Kind: 5, Length: Variable
                      +--------+--------+
                      | Kind=5 | Length |
@@ -271,10 +244,7 @@ A sender that supports this extension includes the “Sack Permitted” option i
    +--------+--------+--------+--------+
 ```
 
-```
-
-A receiver that encounters segment_s2 followed by s_5…s_n, it will include a SACK block when it sends the acknowledgment for s_2:
-```
+接收方遇到 segment_s2 后跟 s_5 ... s_n，则在发送对 s_2 的确认时将包括一个 SACK 块：
 
 ```
 
@@ -287,35 +257,31 @@ A receiver that encounters segment_s2 followed by s_5…s_n, it will include a S
 +--------+-------+-------+-------+
 ```
 
-```
+这告诉发送方到 s_2 的段都是按顺序到达的，但也让发送方知道段 s_5 至 s_n 也已收到。 然后，发送方可以重新发送这两个数据包，并继续发送新数据。
 
-This tells the sender that segments up to s_2 arrived in-sequence, but it also lets the sender know that the segments s_5 to s_n were also received. The sender can then re-transmit these two packets and proceed to send new data.
+##### 神话般的无损网络
 
-##### The mythical lossless network
+从理论上讲，如果连接不会丢包，那么 SACK 就没有任何优势。或者连接具有如此低的延迟，甚至等待一个完整的 RTT 都无关紧要。
 
-In theory SACK provides no advantage if the connection cannot experience packet loss. Or the connection has such a low latency that even waiting one full RTT does not matter.
+在实践中，无损行为几乎是不可能保证的。
+即使网络及其所有交换机和路由器具有足够的带宽和缓冲区空间，数据包仍然可能丢失：
 
-In practice lossless behavior is virtually impossible to ensure.
-Even if the network and all its switches and routers have ample bandwidth and buffer space packets can still be lost:
+  * 主机操作系统可能面临内存压力并丢弃数据包。请记住，一台主机可能同时处理数万个数据包流。
+  * CPU 可能无法足够快地消耗掉来自网络接口的传入数据包。这会导致网络适配器本身中的数据包丢失。
+  * 如果 TCP 时间戳不可用，即使一个非常小的 RTT 的连接也可能在丢失恢复期间暂时停止。
 
-  * The host operating system might be under memory pressure and drop
-packets. Remember that a host might be handling tens of thousands of packet streams simultaneously.
-  * The CPU might not be able to drain incoming packets from the network interface fast enough. This causes packet drops in the network adapter itself.
-  * If TCP timestamps are not available even a connection with a very small RTT can stall momentarily during loss recovery.
+使用 SACK 不会增加 TCP 数据包的大小，除非连接遇到数据包丢失。因此，几乎没有理由禁用此功能。几乎所有的 TCP 协议栈都支持 SACK —— 它通常只在不进行 TCP 批量数据传输的低功耗 IOT 类似设备上才不存在。
 
+当 Linux 系统接受来自此类设备的连接时，TCP 会自动为受影响的连接禁用 SACK。
 
+### 总结
 
-Use of SACK does not increase the size of TCP packets unless a connection experiences packet loss. Because of this, there is hardly a reason to disable this feature. Almost all TCP stacks support SACK – it is typically only absent on low-power IOT-alike devices that are not doing TCP bulk data transfers.
+本文中研究的三个 TCP 扩展都与 TCP 性能有关，最好都保留其默认设置：enabled。
 
-When a Linux system accepts a connection from such a device, TCP automatically disables SACK for the affected connection.
+TCP 握手可确保仅使用双方都可以理解的扩展，因此，永远不需因为对等方可能不支持而全局禁用扩展。
 
-### Summary
-
-The three TCP extensions examined in this post are all related to TCP performance and should best be left to the default setting: enabled.
-
-The TCP handshake ensures that only extensions that are understood by both parties are used, so there is never a need to disable an extension globally just because a peer might not support it.
-
-Turning these extensions off results in severe performance penalties, especially in case of TCP Window Scaling and SACK. TCP timestamps can be disabled without an immediate disadvantage, however there is no compelling reason to do so anymore. Keeping them enabled also makes it possible to support TCP options even when SYN cookies come into effect.
+关闭这些扩展会导致严重的性能损失，尤其是在 TCP 窗口缩放和 SACK 的情况下。 可以禁用 TCP 时间戳而不会立即造成不利影响，但是现在没有令人信服的理由这样做了。
+启用它们还可以支持 TCP 选项，即使在 SYN cookie 生效时也是如此。
 
 --------------------------------------------------------------------------------
 
@@ -323,7 +289,7 @@ via: https://fedoramagazine.org/tcp-window-scaling-timestamps-and-sack/
 
 作者：[Florian Westphal][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
