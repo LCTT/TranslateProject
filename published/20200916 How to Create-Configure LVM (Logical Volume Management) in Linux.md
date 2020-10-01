@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12670-1.html)
 [#]: subject: (How to Create/Configure LVM in Linux)
 [#]: via: (https://www.2daygeek.com/create-lvm-storage-logical-volume-manager-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
 如何在 Linux 中创建/配置 LVM（逻辑卷管理）
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202010/01/111414m2y0mdhgvd9j1bgv.jpg)
 
 <ruby>逻辑卷管理<rt>Logical Volume Management</rt></ruby>（LVM）在 Linux 系统中扮演着重要的角色，它可以提高可用性、磁盘 I/O、性能和磁盘管理的能力。
 
@@ -18,7 +20,7 @@ LVM 是一种被广泛使用的技术，对于磁盘管理来说，它是非常�
 
 LVM 允许你在需要的时候轻松地调整、扩展和减少逻辑卷的大小。
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202010/01/111230el14fubc4ku55o3k.jpeg)
 
 ### 如何创建 LVM 物理卷？
 
