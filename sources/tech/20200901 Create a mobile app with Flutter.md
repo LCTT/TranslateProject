@@ -7,40 +7,37 @@
 [#]: via: (https://opensource.com/article/20/9/mobile-app-flutter)
 [#]: author: (Vitaly Kuprenko https://opensource.com/users/kooper)
 
-Create a mobile app with Flutter
+使用 Flutter 创建 App
 ======
-Start your journey toward cross-platform development with the popular
-Flutter framework.
+
+使用流行的 Flutter 框架开始您的跨平台开发之旅。
 ![A person looking at a phone][1]
 
-[Flutter][2] is a popular project among mobile developers around the world. The framework has a massive, friendly community of enthusiasts, which continues to grow as Flutter helps programmers take their projects into the mobile space.
+[Flutter][2] 是一个深受全球移动开发者欢迎的项目。该框架有一个庞大的、友好的发烧友社区，随着 Flutter 帮助程序员将他们的项目带入移动领域，这个社区还在继续增长。
 
-This tutorial is meant to help you start doing mobile development with Flutter. After reading it, you'll know how to quickly install and set up the framework to start coding for smartphones, tablets, and other platforms.
+本教程旨在帮助您开始使用 Flutter 进行移动开发。阅读之后，您将了解如何快速安装和设置框架，以便开始为智能手机、平板电脑和其他平台编码。
 
-This how-to assumes you have [Android Studio][3] installed on your computer and some experience working with it.
+本操作指南假定您已在计算机上安装了 [Android Studio][3]，并且具有一定的使用经验。
 
-### What is Flutter?
+### 什么是 Flutter ？
 
-Flutter enables developers to build apps for several platforms, including:
+Flutter 使得开发人员能够为多个平台构建应用程序，包括：
 
   * Android
   * iOS
-  * Web (in beta)
-  * macOS (in development)
-  * Linux (in development)
+  * Web (测试版)
+  * macOS (正在开发中)
+  * Linux (正在开发中)
 
+对 macOS 和 Linux 的支持还处于早期开发阶段，而 Web 支持预计很快就会发布。这意味着您可以立即试用其功能（如下所述）。
 
+### 安装 Flutter
 
-Support for macOS and Linux is in early development, while web support is expected to be released soon. This means that you can try out its capabilities now (as I'll describe below).
+我使用的是 Ubuntu18.04，但安装过程与其他 Linux 发行版类似，比如 Arch 或 Mint。
 
-### Install Flutter
+#### 使用 snapd 安装
 
-I'm using Ubuntu 18.04, but the installation process is similar with other Linux distributions, such as Arch or Mint.
-
-#### Install with snapd
-
-To install Flutter on Ubuntu or similar distributions using [snapd][4], enter this in a terminal:
-
+要使用 [Snapd][4] 在 Ubuntu 或类似发行版上安装 Flutter，请在终端中输入以下内容：
 
 ```
 $ sudo snap install flutter --classic
@@ -49,8 +46,7 @@ $ sudo snap install flutter –classic
 flutter 0+git.142868f from flutter Team/ installed
 ```
 
-Then launch it using the `flutter` command. Upon the first launch, the framework downloads to your computer:
-
+然后使用 `flutter` 命令启动它。 首次启动时，该框架会下载到您的计算机上：
 
 ```
 $ flutter
@@ -58,195 +54,184 @@ Initializing Flutter
 Downloading <https://storage.googleapis.com/flutter\_infra\[...\]>
 ```
 
-Once the download is finished, you'll see a message telling you that Flutter is initialized:
+下载完成后，您会看到一条消息，告诉您 Flutter 已初始化：
 
 ![Flutter initialized][5]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-#### Install manually
+#### 手动安装
 
-If you don't have snapd or your distribution isn't Ubuntu, the installation process will be a little bit different. In that case, [download][7] the version of Flutter recommended for your operating system.
+如果您没有安装 Snapd，或者您的发行版不是 Ubuntu，那么安装过程会略有不同。 在这种情况下，请[下载] [7] 为您的操作系统推荐的 Flutter 版本。
 
 ![Install Flutter manually][8]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-Then extract it to your home directory.
+然后将其解压缩到您的主目录。
 
-Open the `.bashrc` file in your home directory (or `.zshrc` if you use the [Z shell][9]) in your favorite text editor. Because it's a hidden file, you must first enable showing hidden files in your file manager or open it from a terminal with:
-
-
-```
-`$ gedit ~/.bashrc &`
-```
-
-Add the following line to the end of the file:
-
+在您喜欢的文本编辑器中打开主目录中的 `.bashrc` 文件 (如果您使用 [Z shell][9]，则打开 `.zshc`)。因为它是隐藏文件，所以您必须首先在文件管理器中启用显示隐藏文件，或者使用以下命令从终端打开它：
 
 ```
-`export PATH="$PATH:~/flutter/bin"`
+$ gedit ~/.bashrc &
 ```
 
-Save and close the file. Keep in mind that if you extracted Flutter somewhere other than your home directory, the [path to Flutter SDK][10] will be different.
-
-Close your terminal and then open it again so that your new configuration loads. Alternatively, you can source the configuration with:
-
+将以下行添加到文件末尾：
 
 ```
-`$ . ~/.bashrc`
+export PATH="$PATH:~/flutter/bin"
 ```
 
-If you don't see an error, then everything is fine.
+保存并关闭文件。 请记住，如果将 Flutter 提取到您的主目录之外的其他位置，则 [Flutter SDK 的路径][10] 将有所不同。
 
-This installation method is a little bit harder than using the `snap` command, but it's pretty versatile and lets you install the framework on almost any distribution.
-
-#### Check the installation
-
-To check the result, enter the following in the terminal:
-
+关闭您的终端，然后再次打开，以便加载新配置。 或者，您可以通过以下命令使配置立即生效：
 
 ```
-`flutter doctor -v`
+$ . ~/.bashrc
 ```
 
-You'll see information about installed components. Don't worry if you see errors. You haven't installed any IDE plugins for working with Flutter SDK yet.
+如果您没有看到错误，那说明一切都是正常的。
+
+这种安装方法比使用 `snap`命令稍微困难一些，但是它非常通用，可以让您在几乎所有的发行版上安装框架。
+
+
+#### 检查安装结果
+
+要检查结果，请在终端中输入以下内容：
+
+```
+flutter doctor -v
+```
+
+您将看到有关已安装组件的信息。 如果看到错误，请不要担心。 您尚未安装任何用于 Flutter SDK 的 IDE 插件。
 
 ![Checking Flutter installation with the doctor command][11]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-### Install IDE plugins
+### 安装 IDE 插件
 
-You should install plugins in your [integrated development environment (IDE)][12] to help it interface with the Flutter SDK, interact with devices, and build code.
+您应该在您的 [集成开发环境 (IDE)][12] 中安装插件，以帮助它与 Flutter SDK 接口、与设备交互并构建代码。
 
-The three main IDE tools that are commonly used for Flutter development are IntelliJ IDEA (Community Edition), Android Studio, and VS Code (or [VSCodium][13]). I'm using Android Studio in this tutorial, but the steps are similar to how they work on IntelliJ IDEA (Community Edition) since they're built on the same platform.
+Flutter 开发中常用的三个主要 IDE 工具是 IntelliJ IDEA (社区版)、Android Studio 和 VS Code (或 [VSCodium][13])。我在本教程中使用的是 Android Studio，但步骤与它们在 IntelliJ Idea (社区版)上的工作方式相似，因为它们构建在相同的平台上。
 
-First, launch **Android Studio**. Open **Settings** and go to the **Plugins** pane, and select the **Marketplace** tab. Enter **Flutter** in the search line and click **Install**.
+首先，启动 **Android Studio**。打开 **Settings**，进入 **Plugins** 窗格，选择 **Marketplace** 选项卡。在搜索行中输入 **Flutter**，然后单击 **Install**。
 
 ![Flutter plugins][14]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-You'll probably see an option to install the **Dart** plugin; agree to it. If you don't see the Dart option, then install it manually by repeating the steps above. I also recommend using the **Rainbow Brackets** plugin, which makes code navigation easier.
+您可能会看到一个安装 **Dart** 插件的选项；同意它。如果看不到 Dart 选项，请通过重复上述步骤手动安装。我还建议使用 **Rainbow Brackets** 插件，它可以让代码导航更简单。
 
-That's it! You've installed all the plugins you need. You can check by entering a familiar command in the terminal:
-
+就这样！您已经安装了所需的所有插件。您可以在终端中输入一个熟悉的命令进行检查：
 
 ```
-`flutter doctor -v`
+flutter doctor -v
 ```
 
 ![Checking Flutter plugins with the doctor command][15]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-### Build your "Hello World" application
+### 构建您的 “Hello World” 应用程序
 
-To start a new project, create a Flutter project:
+要启动新项目，请创建一个  Flutter 项目：
 
-  1. Select **New -&gt; New Flutter project**.
+  1. 选择 **New -&gt; New Flutter project**.
 
 ![Creating a new Flutter plugin][16]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-  2. In the window, choose the type of project you want. In this case, you need **Flutter Application**.
+  2. 在窗口中，选择所需的项目类型。 在这种情况下，您需要选择 **Flutter Application**。
 
-  3. Name your project **hello_world**. Note that you should use a merged name, so use an underscore instead of a space. You may also need to specify the path to the SDK.
+  3. 命名您的项目 **hello_world**。 请注意，您应该使用合并的名称，因此请使用下划线而不是空格。 您可能还需要指定 SDK 的路径。
 
 ![Naming a new Flutter plugin][17]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-  4. Enter the package name.
+  4. 输入软件包名称。
 
-
-
-
-You've created a project! Now you can launch it on a device or by using an emulator.
+您已经创建了一个项目！现在，您可以在设备上或使用模拟器启动它。
 
 ![Device options in Flutter][18]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-Select the device you want and press **Run**. In a moment, you will see the result.
+选择您想要的设备，然后按 **运行**。稍后，您将看到结果。
 
 ![Flutter demo on mobile device][19]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-Now you can start working on an [intermediate project][20].
+现在你可以在一个 [中间项目][20] 上开始工作了。
 
-### Try Flutter for web
+### 尝试 Flutter for web
 
-Before you install Flutter components for the web, you should know that Flutter's support for web apps is pretty raw at the moment. So it's not a good idea to use it for complicated projects yet.
+在安装 Flutter 的 Web 组件之前，您应该知道 Flutter 目前对 Web 应用程序的支持还很原始。 因此，将其用于复杂的项目并不是一个好主意。
 
-Flutter for web is not active in the basic SDK by default. To switch it on, go to the beta channel. To do this, enter the following command in the terminal:
-
+默认情况下，基本 SDK 中不启用 Flutter for web。 要打开它，请转到 beta 频道。 为此，请在终端中输入以下命令：
 
 ```
-`flutter channel beta`
+flutter channel beta
 ```
 
 ![flutter channel beta output][21]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-Next, upgrade Flutter according to the beta branch by using the command:
-
+接下来，使用以下命令根据 beta 分支升级 Flutter：
 
 ```
-`flutter upgrade`
+flutter upgrade
 ```
 
 ![flutter upgrade output][22]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-To make Flutter for web work, enter:
-
+要使 Flutter for web 工作，请输入：
 
 ```
-`flutter config --enable-web`
+flutter config --enable-web
 ```
 
-Restart your IDE; this helps Android Studio index the new IDE and reload the list of devices. You should see several new devices:
+重新启动 IDE；这有助于 Android Studio 索引新的 IDE 并重新加载设备列表。您应该会看到几个新设备：
 
 ![Flutter for web device options][23]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-Selecting **Chrome** launches an app in the browser, while **Web Server** gives you the link to your web app, which you can open in any browser.
+选择 **Chrome** 会在浏览器中启动一个应用程序， **Web Server** 会提供指向您的 Web 应用程序的链接，您可以在任何浏览器中打开它。
 
-Still, it's not time to rush into development because your current project doesn't support the web. To improve it, open the terminal in the project's root and enter:
-
+不过，现在还不是急于开发的时候，因为您当前的项目不支持Web。要改进它，请打开项目根目录下的终端，然后输入：
 
 ```
-`flutter create`
+flutter create
 ```
 
-This command recreates the project, adding web support. The existing code won't be deleted.
+此命令重新创建项目，并添加 Web 支持。 现有代码不会被删除。
 
-Note that the tree has changed and now has a "web" directory:
+请注意，目录树已更改，现在有了一个 "web" 目录：
 
 ![File tree with web directory][24]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-Now you can get to work. Select **Chrome** and press **Run**. In a moment, you'll see the browser window with your app.
+现在您可以开始工作了。 选择 **Chrome**，然后按 **Run**。 稍后，您会看到带有应用程序的浏览器窗口。
 
 ![Flutter web app demo][25]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][6])
 
-Congratulations! You've just launched a project for the browser and can continue working with it as with any other website.
+恭喜你！ 您刚刚为浏览器启动了一个项目，并且可以像其他任何网站一样继续使用它。
 
-All of this comes from the same codebase because Flutter makes it possible to write code for both mobile platforms and the web with little to no changes.
+所有这些都来自同一代码库，因为 Flutter 使得几乎无需更改就可以为移动平台和 Web 编写代码。
 
-### Do more with Flutter
+### 用 Flutter 做更多的事情
 
-Flutter is a powerful tool for mobile development, and moreover, it's an important evolutionary step toward cross-platform development. Learn it, use it, and deliver your apps to all the platforms!
+Flutter 是用于移动开发的强大工具，而且它也是迈向跨平台开发的重要一步。 了解它，使用它，并将您的应用程序交付到所有平台！
 
 --------------------------------------------------------------------------------
 
@@ -254,7 +239,7 @@ via: https://opensource.com/article/20/9/mobile-app-flutter
 
 作者：[Vitaly Kuprenko][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
