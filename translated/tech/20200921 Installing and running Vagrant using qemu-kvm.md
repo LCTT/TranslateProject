@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Installing and running Vagrant using qemu-kvm)
@@ -12,47 +12,50 @@
 
 ![][1]
 
-Vagrant 是一个出色的工具，被 DevOps 专业人员、程序员、系统管理员和普通极客来使用它来建立可复制的基础架构来进行开发和测试。来自它们的网站：
+Vagrant 是一个出色的工具，DevOps 专业人员、程序员、系统管理员和普通极客来使用它来建立可重复的基础架构来进行开发和测试。引用自它的网站：
 
-> Vagrant 是用于在单工作流程中构建和管理虚拟机环境的工具。凭借简单易用的工作流程和对自动化的关注，Vagrant 降低了开发环境的设置时间，提高了生产效率，并使”在我的机器上工作“的借口成为过去。
+> Vagrant 是用于在单工作流程中构建和管理虚拟机环境的工具。凭借简单易用的工作流程并专注于自动化，Vagrant 降低了开发环境的设置时间，提高了生产效率，并使“在我的机器上可以工作”的借口成为过去。
 >
-> 如果你已经熟悉 Vagrant 的基础知识，那么文档为所有的功能和内部结构提供了更好的参考。
+> 如果你已经熟悉 Vagrant 的基础知识，那么该文档为所有的功能和内部结构提供了更好的参考。
 >
-> Vagrant 提供了易于配置、可复制、可移植的工作环境，它建立在行业标准技术之上，并由一个统一的工作流程控制，帮助你和你的团队最大限度地提高生产力和灵活性。
+> Vagrant 提供了基于行业标准技术构建的、易于配置、可复制、可移植的工作环境，并由一个一致的工作流程控制，帮助你和你的团队最大限度地提高生产力和灵活性。
 >
 > <https://www.vagrantup.com/intro>
 
-本指南将通过必要的步骤，让 Vagrant 在基于 Fedora 的机器上工作。
+本指南将逐步介绍使 Vagrant 在基于 Fedora 的计算机上工作所需的步骤。
 
-我从最小化安装 Fedora Server 开始，因为这样可以减少主机操作系统的内存占用，但如果你已经有一台可以使用的 Fedora 机器，无论是服务器还是工作站，那么也没问题。
+我从最小化安装 Fedora 服务器开始，因为这样可以减少宿主机操作系统的内存占用，但如果你已经有一台可以使用的 Fedora 机器，无论是服务器还是工作站版本，那么也没问题。
 
-### 检查机器是否支持虚拟化：
+### 检查机器是否支持虚拟化
 
 ```
 $ sudo lscpu | grep Virtualization
+```
+
+```
 Virtualization:                  VT-x
 Virtualization type:             full
 ```
 
-### 安装 qemu-kvm：
+### 安装 qemu-kvm
 
 ```
 sudo dnf install qemu-kvm libvirt libguestfs-tools virt-install rsync
 ```
 
-### 启用并启动 libvirt 守护进程：
+### 启用并启动 libvirt 守护进程
 
 ```
 sudo systemctl enable --now libvirtd
 ```
 
-### 安装 Vagrant：
+### 安装 Vagrant
 
 ```
 sudo dnf install vagrant
 ```
 
-### 安装 Vagrant libvirtd 插件：
+### 安装 Vagrant libvirtd 插件
 
 ```
 sudo vagrant plugin install vagrant-libvirt
@@ -64,48 +67,58 @@ sudo vagrant plugin install vagrant-libvirt
 vagrant box add fedora/32-cloud-base --provider=libvirt
 ```
 
-### 创建一个最小的 Vagrantfile 来测试：
+（LCTT 译注：以防你不知道，box 是 Vagrant 中的一种包格式，Vagrant 支持的任何平台上的任何人都可以使用盒子来建立相同的工作环境。）
+
+### 创建一个最小化的 Vagrantfile 来测试
 
 ```
 $ mkdir vagrant-test
 $ cd vagrant-test
-$ vi VagrantfileVagrant.configure("2") do |config|
+$ vi Vagrantfile
+```
+
+```
+Vagrant.configure("2") do |config|
   config.vm.box = "fedora/32-cloud-base"
 end
 ```
 
-**注意文件名和文件内容的大写。**
+**注意文件名和文件内容的大小写。**
 
-### 检查文件：
+### 检查文件
 
 ```
-vagrant statusCurrent machine states:
+vagrant status
+```
+
+```
+Current machine states:
 
 default not created (libvirt)
 
 The Libvirt domain is not created. Run 'vagrant up' to create it.
 ```
 
-### 启动 box：
+### 启动 box
 
 ```
 vagrant up
 ```
 
-### 连接到你的新机器：
+### 连接到你的新机器
 
 ```
 vagrant ssh
 ```
 
-完成了。现在你的 Fedora 机器上有 Vagrant 在工作。
+完成了。现在你的 Fedora 机器上 Vagrant 可以工作了。
 
-要停止机器，请使用 _vagrant halt_。这只是简单地停止机器，但保留虚拟机和磁盘。
-要关闭并删除它，请使用 _vagrant destroy_。这将删除整个机器和你在其中所做的任何更改。
+要停止该机器，请使用 `vagrant halt`。这只是简单地停止机器，但保留虚拟机和磁盘。
+要关闭并删除它，请使用 `vagrant destroy`。这将删除整个机器和你在其中所做的任何更改。
 
 ### 接下来的步骤
 
-在运行 _vagrant up_ 命令之前，你不需要下载 box。你可以直接在 Vagrantfile 中指定 box 和提供者，如果还没有的话，Vagrant 会下载它。下面是一个例子，它还设置了内存量和 CPU 数量：
+在运行 `vagrant up` 命令之前，你不需要下载 box。你可以直接在 Vagrantfile 中指定 box 和提供者，如果还没有的话，Vagrant 会下载它。下面是一个例子，它还设置了内存量和 CPU 数量：
 
 ```
 # -*- mode: ruby -*-
@@ -131,7 +144,7 @@ via: https://fedoramagazine.org/vagrant-qemukvm-fedora-devops-sysadmin/
 作者：[Andy Mott][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
