@@ -7,25 +7,24 @@
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-realtime-messages/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
-Building a Messenger App: Realtime Messages
+构建一个即时消息应用（五）：实时消息
 ======
 
-This post is the 5th on a series:
+本文是该系列的第五篇。
 
-  * [Part 1: Schema][1]
-  * [Part 2: OAuth][2]
-  * [Part 3: Conversations][3]
-  * [Part 4: Messages][4]
+  * [第一篇: 模式][1]
+  * [第二篇: OAuth][2]
+  * [第三篇: 对话][3]
+  * [第四篇: 消息][4]
 
 
+对于实时消息，我们将使用 [服务器发送事件 (Server-Sent Events)][5]。这是一个开放的连接，我们可以在其中传输数据。我们将拥有用户订阅发送给他的所有消息的和端点。
 
-For realtime messages we’ll use [Server-Sent Events][5]. This is an open connection in which we can stream data. We’ll have and endpoint in which the user subscribes to all the messages sended to him.
+### 消息户端
 
-### Message Clients
+在 HTTP 部分之前，让我们先编写一个<ruby>映射<rt>map</rt></ruby> ，让所有客户端都监听消息。 像这样全局初始化：
 
-Before the HTTP part, let’s code a map to have all the clients listening for messages. Initialize this globally like so:
-
-```
+```go
 type MessageClient struct {
     Messages chan Message
     UserID   string
@@ -34,17 +33,17 @@ type MessageClient struct {
 var messageClients sync.Map
 ```
 
-### New Message Created
+### 已创建的新消息
 
-Remember in the [last post][4] when we created the message, we left a “TODO” comment. There we’ll dispatch a goroutine with this function.
+还记得在 [上一篇文章][4] 中，当我们创建这条消息时，我们留下了一个 “TODO” 注释。在那里，我们将使用这个函数来调度一个 goroutine。
 
-```
+```go
 go messageCreated(message)
 ```
 
-Insert that line just where we left the comment.
+把这行代码插入到我们留注释的位置。
 
-```
+```go
 func messageCreated(message Message) error {
     if err := db.QueryRow(`
         SELECT user_id FROM participants
@@ -70,19 +69,19 @@ func broadcastMessage(message Message) {
 }
 ```
 
-The function queries for the recipient ID (the other participant ID) and sends the message to all the clients.
+该函数查询收件人 ID (其他参与者 ID)，并将消息发送给所有客户端。
 
-### Subscribe to Messages
+### 订阅消息
 
-Lets go to the `main()` function and add this route:
+让我们转到 `main()` 函数并添加以下路由：
 
-```
+```go
 router.HandleFunc("GET", "/api/messages", guard(subscribeToMessages))
 ```
 
-This endpoint handles GET requests on `/api/messages`. The request should be an [EventSource][6] connection. It responds with an event stream in which the data is JSON formatted.
+此端点处理 `/api/messages` 上的 GET 请求。请求应该是一个 [EventSource][6] 连接。它用一个事件流响应，其中的数据是 JSON 格式的。
 
-```
+```go
 func subscribeToMessages(w http.ResponseWriter, r *http.Request) {
     if a := r.Header.Get("Accept"); !strings.Contains(a, "text/event-stream") {
         http.Error(w, "This endpoint requires an EventSource connection", http.StatusNotAcceptable)
@@ -127,29 +126,30 @@ func subscribeToMessages(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-First it checks for the correct request headers and checks the server supports streaming. We create a channel of messages to make a client and store it in the clients map. Each time a new message is created, it will go in this channel, so we can read from it with a `for-select` loop.
+首先，它检查请求头是否正确，并检查服务器是否支持流式传输。我们创建一个消息通道，用它来构建一个客户端，并将其存储在客户端 map 中。每当创建新消息时，它都会进入这个通道，因此我们可以通过 `for-select` 循环从中读取。
 
-Server-Sent Events uses this format to send data:
 
-```
+<ruby>服务器发送事件<rt>Server-Sent Events</rt></ruby>使用以下格式发送数据：
+
+```go
 data: some data here\n\n
 ```
 
-We are sending it in JSON format:
+我们以 JSON 格式发送：
 
-```
+```json
 data: {"foo":"bar"}\n\n
 ```
 
-We are using `fmt.Fprintf()` to write to the response writter in this format and flushing the data in each iteration of the loop.
+我们使用 `fmt.Fprintf()` 以这种格式写入响应写入器，并在循环的每次迭代中刷新数据。
 
-This will loop until the connection is closed using the request context. We defered the close of the channel and the delete of the client, so when the loop ends, the channel will be closed and the client won’t receive more messages.
+这个循环会一直运行，直到使用请求上下文关闭连接为止。我们延迟了通道的关闭和客户端的删除，因此，当循环结束时，频道将被关闭，客户端将不会收到更多的消息。
 
-Note aside, the JavaScript API to work with Server-Sent Events (EventSource) doesn’t support setting custom headers 😒 So we cannot set `Authorization: Bearer <token>`. And that’s the reason why the `guard()` middleware reads the token from the URL query string also.
+注意，<ruby>服务器发送事件<rt>Server-Sent Events</rt></ruby> (EventSource) 的 JavaScript API 不支持设置自定义头部😒，所以我们不能设置 `Authorization: Bearer <token>`。这就是为什么 `guard()` 中间件也会从 URL 查询字符串中读取令牌的原因。
 
 * * *
 
-That concludes the realtime messages. I’d like to say that’s everything in the backend, but to code the frontend I’ll add one more endpoint to login. A login that will be just for development.
+实时消息部分到此结束。我想说的是，这就是后端的全部内容。但是为了编写前端代码，我将再增加一个登录端点。一个仅用于开发的登录。
 
 [Souce Code][7]
 
@@ -159,7 +159,7 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-realtime-messages/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
