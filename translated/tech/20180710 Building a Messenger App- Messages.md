@@ -7,18 +7,17 @@
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-messages/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
-Building a Messenger App: Messages
+构建一个即时消息应用（四）：消息
 ======
 
-This post is the 4th on a series:
+本文是该系列的第四篇。
 
-  * [Part 1: Schema][1]
-  * [Part 2: OAuth][2]
-  * [Part 3: Conversations][3]
+  * [第一篇: 模式][1]
+  * [第二篇: OAuth][2]
+  * [第三篇: 对话Conversations][3]
 
 
-
-In this post we’ll code the endpoints to create a message and list them, also an endpoint to update the last time the participant read messages. Start by adding these routes in the `main()` function.
+在这篇文章中，我们将对端点进行编码以创建一条消息并列出它们，同时还将编写一个端点以更新参与者上次阅读消息的时间。 首先在 `main()` 函数中添加这些路由。
 
 ```
 router.HandleFunc("POST", "/api/conversations/:conversationID/messages", requireJSON(guard(createMessage)))
@@ -26,11 +25,11 @@ router.HandleFunc("GET", "/api/conversations/:conversationID/messages", guard(ge
 router.HandleFunc("POST", "/api/conversations/:conversationID/read_messages", guard(readMessages))
 ```
 
-Messages goes into conversations so the endpoint includes the conversation ID.
+消息进入对话，因此端点包含对话 ID。
 
-### Create Message
+### 创建消息
 
-This endpoint handles POST requests to `/api/conversations/{conversationID}/messages` with a JSON body with just the message content and return the newly created message. It has two side affects: it updates the conversation `last_message_id` and updates the participant `messages_read_at`.
+该端点使用仅包含消息内容的 JSON 主体处理对 `/api/conversations/{conversationID}/messages` 的 POST 请求，并返回新创建的消息。 它有两个副作用：更新对话 `last_message_id` 以及更新参与者 `messages_read_at`。
 
 ```
 func createMessage(w http.ResponseWriter, r *http.Request) {
@@ -119,7 +118,7 @@ func createMessage(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-First, it decodes the request body into an struct with the message content. Then, it validates the content is not empty and has less than 480 characters.
+首先，它将请求正文解码为具有消息内容的结构。然后，它验证内容不为空并且少于 480 个字符。
 
 ```
 var rxSpaces = regexp.MustCompile("\\s+")
@@ -141,9 +140,9 @@ func removeSpaces(s string) string {
 }
 ```
 
-This is the function to remove spaces. It iterates over each line, remove more than two consecutives spaces and returns with the non empty lines.
+这是删除空格的函数。它迭代每一行，删除两个以上的连续空格，然后回非空行。
 
-After the validation, it starts an SQL transaction. First, it queries for the participant existance in the conversation.
+验证之后，它将启动一个 SQL 事务。首先，它查询对话中的参与者是否存在。
 
 ```
 func queryParticipantExistance(ctx context.Context, tx *sql.Tx, userID, conversationID string) (bool, error) {
@@ -161,13 +160,13 @@ func queryParticipantExistance(ctx context.Context, tx *sql.Tx, userID, conversa
 }
 ```
 
-I extracted it into a function because it’s reused later.
+我将其提取到一个函数中，因为稍后可以重用。
 
-If the user isn’t participant of the conversation, we return with a `404 Not Found` error.
+如果用户不是对话参与者，我们将返回一个 `404 NOT Found` 错误。
 
-Then, it inserts the message and updates the conversation `last_message_id`. Since this point, `last_message_id` cannot by `NULL` because we don’t allow removing messages.
+然后，它插入消息并更新对话 `last_message_id`。从这时起，由于我们不允许删除消息，因此 `last_message_id` 不能为 `NULL`。
 
-Then it commits the transaction and we update the participant `messages_read_at` in a goroutine.
+接下来提交事务，并在 goroutine 中更新参与者 `messages_read_at`。
 
 ```
 func updateMessagesReadAt(ctx context.Context, userID, conversationID string) error {
@@ -185,11 +184,11 @@ func updateMessagesReadAt(ctx context.Context, userID, conversationID string) er
 }
 ```
 
-Before responding with the new message, we must notify about it. This is for the realtime part we’ll code in the next post so I left a comment there.
+在回复这条新消息之前，我们必须通知它。 这是我们将要在下一篇文章中编写的实时部分，因此我在那里留一个注释。
 
-### Get Messages
+### 获取消息
 
-This endpoint handles GET requests to `/api/conversations/{conversationID}/messages`. It responds with a JSON array with all the messages in the conversation. It also has the same side affect of updating the participant `messages_read_at`.
+这个端点处理对 `/api/conversations/{conversationID}/messages` 的 GET 请求。 它用一个包含会话中所有消息的 JSON 数组进行响应。 它还具有更新参与者 `messages_read_at` 的副作用。
 
 ```
 func getMessages(w http.ResponseWriter, r *http.Request) {
@@ -267,11 +266,11 @@ func getMessages(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-First, it begins an SQL transaction in readonly mode. Checks for the participant existance and queries all the messages. In each message, we use the current authenticated user ID to know whether the user owns the message (`mine`). Then it commits the transaction, updates the participant `messages_read_at` in a goroutine and respond with the messages.
+首先，它以只读模式开始一个 SQL 事务。 检查参与者是否存在并查询所有消息。 在每条消息中，我们使用当前经过身份验证的用户 ID 来了解用户是否拥有该消息（`我的`）。 然后，它提交事务，在 goroutine 中更新参与者 `messages_read_at` 并以消息响应。
 
-### Read Messages
+### 阅读消息
 
-This endpoint handles POST requests to `/api/conversations/{conversationID}/read_messages`. Without any request or response body. In the frontend we’ll make this request each time a new message arrive in the realtime stream.
+该端点处理对 `/api/conversations/{conversationID}/read_messages` 的 POST 请求。 没有任何请求或响应主体。 在前端，每次有新消息到达实时流时，我们都会发出此请求。
 
 ```
 func readMessages(w http.ResponseWriter, r *http.Request) {
@@ -288,11 +287,11 @@ func readMessages(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-It uses the same function we’ve been using to update the participant `messages_read_at`.
+它使用了与更新参与者 `messages_read_at` 相同的函数。
 
 * * *
 
-That concludes it. Realtime messages is the only part left in the backend. Wait for it in the next post.
+到此为止。实时消息是后台仅剩的部分了。请等待下一篇文章。
 
 [Souce Code][4]
 
@@ -302,7 +301,7 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-messages/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
