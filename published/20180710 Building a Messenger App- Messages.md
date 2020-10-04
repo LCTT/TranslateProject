@@ -10,6 +10,8 @@
 构建一个即时消息应用（四）：消息
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202010/04/114458z1p1188epequ686p.jpg)
+
 本文是该系列的第四篇。
 
   * [第一篇: 模式][1]
