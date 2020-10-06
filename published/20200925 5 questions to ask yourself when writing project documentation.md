@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12691-1.html)
 [#]: subject: (5 questions to ask yourself when writing project documentation)
 [#]: via: (https://opensource.com/article/20/9/project-documentation)
 [#]: author: (Alexei Leontief https://opensource.com/users/alexeileontief)
@@ -12,7 +12,7 @@
 
 > 使用有效沟通的一些基本原则可以帮助你创建与你的品牌一致的、编写良好、内容丰富的项目文档。
 
-![A person writing.][1]
+![](https://img.linux.net.cn/data/attachment/album/202010/06/223150omjnutjpml8inc9n.jpg)
 
 在开始实际撰写又一个开源项目的文档之前，甚至在采访专家之前，最好回答一些有关新文档的高级问题。
 
