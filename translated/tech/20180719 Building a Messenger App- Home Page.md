@@ -7,44 +7,43 @@
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-home-page/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
-Building a Messenger App: Home Page
+构建一个即时消息应用（八）：Home 页面
 ======
 
-This post is the 8th on a series:
+本文是该系列的第八篇。
 
-  * [Part 1: Schema][1]
-  * [Part 2: OAuth][2]
-  * [Part 3: Conversations][3]
-  * [Part 4: Messages][4]
-  * [Part 5: Realtime Messages][5]
-  * [Part 6: Development Login][6]
-  * [Part 7: Access Page][7]
+  * [第一篇: 模式][1]
+  * [第二篇: OAuth][2]
+  * [第三篇: 对话][3]
+  * [第四篇: 消息][4]
+  * [第五篇: 实时消息][5]
+  * [第六篇: 仅用于开发的登录][6]
+  * [第七篇: Access 页面][7]
 
 
+继续前端部分，让我们在本文中完成 Home 页面的开发。 我们将添加一个开始对话的表单和一个包含最新对话的列表。
 
-Continuing the frontend, let’s finish the home page in this post. We’ll add a form to start conversations and a list with the latest ones.
-
-### Conversation Form
+### 对话表单
 
 ![conversation form screenshot][8]
 
-In the `static/pages/home-page.js` file add some markup in the HTML view.
+转到 `static/ages/home-page.js` 文件，在 HTML 视图中添加一些标记。
 
-```
+```html
 <form id="conversation-form">
     <input type="search" placeholder="Start conversation with..." required>
 </form>
 ```
 
-Add that form just below the section in which we displayed the auth user and logout button.
+将该表单添加到我们显示 auth user 和 logout 按钮部分的下方。
 
-```
+```js
 page.getElementById('conversation-form').onsubmit = onConversationSubmit
 ```
 
-Now we can listen to the “submit” event to create the conversation.
+现在我们可以监听 “submit” 事件来创建对话了。
 
-```
+```js
 import http from '../http.js'
 import { navigate } from '../router.js'
 
@@ -79,15 +78,15 @@ function createConversation(username) {
 }
 ```
 
-On submit we do a POST request to `/api/conversations` with the username and redirect to the conversation page (for the next post).
+在提交时，我们使用用户名对 `/api/conversations` 进行 POST 请求，并重定向到 conversation 页面 (用于下一篇文章)。
 
-### Conversation List
+### 对话列表
 
 ![conversation list screenshot][9]
 
-In the same file, we are going to make the `homePage()` function async to load the conversations first.
+还是在这个文件中，我们将创建 `homePage()` 函数用来先异步加载对话。
 
-```
+```js
 export default async function homePage() {
     const conversations = await getConversations().catch(err => {
         console.error(err)
@@ -101,24 +100,24 @@ function getConversations() {
 }
 ```
 
-Then, add a list in the markup to render conversations there.
+然后，在标记中添加一个列表来渲染对话。
 
-```
+```html
 <ol id="conversations"></ol>
 ```
 
-Add it just below the current markup.
+将其添加到当前标记的正下方。
 
-```
+```js
 const conversationsOList = page.getElementById('conversations')
 for (const conversation of conversations) {
     conversationsOList.appendChild(renderConversation(conversation))
 }
 ```
 
-So we can append each conversation to the list.
+因此，我们可以将每个对话添加到这个列表中。
 
-```
+```js
 import { avatar, escapeHTML } from '../shared.js'
 
 function renderConversation(conversation) {
@@ -146,11 +145,11 @@ function renderConversation(conversation) {
 }
 ```
 
-Each conversation item contains a link to the conversation page and displays the other participant info and a preview of the last message. Also, you can use `.hasUnreadMessages` to add a class to the item and do some styling with CSS. Maybe a bolder font or accent the color.
+每个对话条目都包含一个指向对话页面的链接，并显示其他参与者信息和最后一条消息的预览。另外，您可以使用 `.hasUnreadMessages` 向该条目添加一个类，并使用 CSS 进行一些样式设置。也许是粗体字体或强调颜色。
 
-Note that we’re escaping the message content. That function comes from `static/shared.js`:
+请注意，我们需要转义信息的内容。该函数来自于 `static/shared.js` 文件：
 
-```
+```js
 export function escapeHTML(str) {
     return str
         .replace(/&/g, '&amp;')
@@ -161,35 +160,35 @@ export function escapeHTML(str) {
 }
 ```
 
-That prevents displaying as HTML the message the user wrote. If the user happens to write something like:
+这会阻止将用户编写的消息显示为 HTML。如果用户碰巧编写了类似以下内容的代码：
 
-```
+```js
 <script>alert('lololo')</script>
 ```
 
-It would be very annoying because that script will be executed 😅
-So yeah, always remember to escape content from untrusted sources.
+这将非常烦人，因为该脚本将被执行😅。
+所以，永远记住要转义来自不可信来源的内容。
 
-### Messages Subscription
+### 消息订阅
 
-Last but not least, I want to subscribe to the message stream here.
+最后但并非最不重要的一点，我想在这里订阅消息流。
 
-```
+```js
 const unsubscribe = subscribeToMessages(onMessageArrive)
 page.addEventListener('disconnect', unsubscribe)
 ```
 
-Add that line in the `homePage()` function.
+在 `homePage()` 函数中添加这一行。
 
-```
+```js
 function subscribeToMessages(cb) {
     return http.subscribe('/api/messages', cb)
 }
 ```
 
-The `subscribe()` function returns a function that once called it closes the underlying connection. That’s why I passed it to the “disconnect” event; so when the user leaves the page, the event stream will be closed.
+函数 `subscribe()` 返回一个函数，该函数一旦调用就会关闭底层连接。这就是为什么我把它传递给 <ruby>“断开连接”<rt>disconnect</rt></ruby>事件的原因；因此，当用户离开页面时，事件流将被关闭。
 
-```
+```js
 async function onMessageArrive(message) {
     const conversationLI = document.querySelector(`li[data-id="${message.conversationID}"]`)
     if (conversationLI !== null) {
@@ -221,12 +220,12 @@ function getConversation(id) {
 }
 ```
 
-Every time a new message arrives, we go and query for the conversation item in the DOM. If found, we add the `has-unread-messages` class to the item, and update the view. If not found, it means the message is from a new conversation created just now. We go and do a GET request to `/api/conversations/{conversationID}` to get the conversation in which the message was created and prepend it to the conversation list.
+每次有新消息到达时，我们都会在 DOM 中查询会话条目。如果找到，我们会将 `has-unread-messages` 类添加到该条目中，并更新视图。如果未找到，则表示该消息来自刚刚创建的新对话。我们去做一个对 `/api/conversations/{conversationID}` 的 GET 请求，以获取在其中创建消息的对话，并将其放在对话列表的前面。
 
 * * *
 
-That covers the home page 😊
-On the next post we’ll code the conversation page.
+以上这些涵盖了主页的所有内容 😊。
+在下一篇文章中，我们将对 conversation 页面进行编码。
 
 [Souce Code][10]
 
@@ -236,7 +235,7 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-home-page/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
