@@ -1,44 +1,42 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Scan your Linux security with Lynis)
 [#]: via: (https://opensource.com/article/20/5/linux-security-lynis)
 [#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
 
-Scan your Linux security with Lynis
+使用 Lynis 扫描 Linux 安全性
 ======
-Check the security of your Linux box with this comprehensive open source
-security auditing tool.
-![Hand putting a Linux file folder into a drawer][1]
 
-Have you ever thought about how secure your Linux machine really is? There are numerous Linux distros, each with its own default settings, on which you run dozens of software packages with different version numbers, and numerous services running in the background, which we hardly know or care about.
+> 使用这个全面的开源安全审计工具检查你的 Linux 机器的安全性。
 
-To find the security posture—the overall security status of the software, network, and services running on your Linux machine—you could run a few commands and get bits and pieces of relevant information, but the amount of data you need to parse is huge.
+!["手把一个Linux文件夹放进抽屉"][1]
 
-It would be so much better if you could just run a tool that generates a report on a machine's security posture. And luckily there is one: [Lynis][2]. It is an extremely popular open source security auditing tool that helps with hardening Linux- and Unix-based systems. According to the project:
+你有没有想过你的 Linux 机器到底安全不安全？Linux 发行版众多，每个发行版都有自己的默认设置，你在上面运行着几十个版本各异的软件包，还有众多的服务在后台运行，而我们几乎不知道或不关心这些。
 
-> "It performs an in-depth security scan and runs on the system itself. The primary goal is to test security defenses and provide tips for further system hardening. It will also scan for general system information, vulnerable software packages, and possible configuration issues. Lynis [is] commonly used by system administrators and auditors to assess the security defenses of their systems."
+要想确定安全态势（指你的 Linux 机器上运行的软件、网络和服务的整体安全状态），你可以运行几个命令，得到一些零碎的相关信息，但你需要解析的数据量是巨大的。
 
-### Install Lynis
+如果能运行一个工具，生成一份关于机器安全状况的报告，那就好得多了。而幸运的是，有一个这样的软件：[Lynis][2]。它是一个非常流行的开源安全审计工具，可以帮助强化基于 Linux 和 Unix 的系统。根据该项目的介绍：
 
-Lynis might be available in your Linux software repository. If so, you can install it using:
+> “它运行在系统本身，可以进行深入的安全扫描。主要目标是测试安全防御措施，并提供进一步强化系统的提示。它还将扫描一般系统信息、易受攻击的软件包和可能的配置问题。Lynis 常被系统管理员和审计人员用来评估其系统的安全防御。”
 
+### 安装 Lynis
 
-```
-`dnf install lynis`
-```
-
-or
-
+Lynis 可能在你的 Linux 软件仓库中可用。如果有的话，你可以用以下方法安装它：
 
 ```
-`apt install lynis`
+dnf install lynis
 ```
 
-However, if the version in your repo isn't the latest one, you are better off installing it from GitHub. (I am using a Red Hat Linux system, but you can run it on any Linux distribution.) As with all tools, it makes sense to try it out on a virtual machine first. To install it from GitHub:
+或
 
+```
+apt install lynis
+```
+
+然而，如果你的仓库中的版本不是最新的，你最好从 GitHub 上安装它。（我使用的是 Red Hat Linux 系统，但你可以在任何 Linux 发行版上运行它）。就像所有的工具一样，先在虚拟机上试一试是有意义的。要从 GitHub 上安装它：
 
 ```
 $ cat /etc/redhat-release
@@ -47,7 +45,7 @@ $
 $ uname  -r
 3.10.0-1127.el7.x86_64
 $
-$ git clone <https://github.com/CISOfy/lynis.git>
+$ git clone https://github.com/CISOfy/lynis.git
 Cloning into 'lynis'...
 remote: Enumerating objects: 30, done.
 remote: Counting objects: 100% (30/30), done.
@@ -58,8 +56,7 @@ Resolving deltas: 100% (9264/9264), done.
 $
 ```
 
-Once you have cloned the repository, move into it and see what is available. The main tool is in a file called **lynis**. It's actually a shell script, so you can open it and read what it is doing. In fact, Lynis is mainly implemented using shell scripts:
-
+一旦你克隆了这个版本库，就进入该目录，看看里面有什么可用的。主要的工具在一个叫 `lynis` 的文件里。它实际上是一个 shell 脚本，所以你可以打开它看看它在做什么。事实上，Lynis 主要是用 shell 脚本来实现的：
 
 ```
 $ cd lynis/
@@ -72,19 +69,17 @@ lynis: POSIX shell script, ASCII text executable, with very long lines
 $
 ```
 
-### Run Lynis
+### 运行 Lynis
 
-Take Lynis out for a spin by giving it a **-h** option to see the Help section:
-
+通过给 Lynis 一个 `-h` 选项来查看帮助部分来了解一下：
 
 ```
-`$ ./lynis -h`
+$ ./lynis -h
 ```
 
-You'll see a short information screen followed by all the commands that Lynis supports.
+你会看到一个简短的信息屏幕，然后是 Lynis 支持的所有子命令。
 
-Next, try out some test commands to get a feel for things and get comfortable. To see which version of Lynis you are working with, run:
-
+接下来，尝试一些测试命令以大致熟悉一下。要查看你正在使用的 Lynis 版本，请运行：
 
 ```
 $ ./lynis show version
@@ -92,8 +87,7 @@ $ ./lynis show version
 $
 ```
 
-To see all the commands available in Lynis:
-
+要查看 Lynis 中所有可用的命令：
 
 ```
 $ ./lynis show commands
@@ -109,19 +103,17 @@ lynis upload-only
 $
 ```
 
-### Audit a Linux system
+### 审计 Linux 系统
 
-To audit your system's security posture, run the following command:
-
+要审计你的系统的安全态势，运行以下命令：
 
 ```
-`$ ./lynis audit system`
+$ ./lynis audit system
 ```
 
-This runs quickly and returns a detailed report—the output might seem intimidating at first, but I'll walk you through it below. The command's output is also saved to a log file, so you can always go back later and check anything that might be of interest.
+这个命令运行得很快，并会返回一份详细的报告，输出结果可能一开始看起来很吓人，但我将在下面引导你来阅读它。这个命令的输出也会被保存到一个日志文件中，所以你可以随时回过头来检查任何可能感兴趣的东西。
 
-Lynis saves the logs here:
-
+Lynis 将日志保存在这里：
 
 ```
   Files:
@@ -129,8 +121,7 @@ Lynis saves the logs here:
   - Report data                     : /var/log/lynis-report.dat
 ```
 
-You can verify whether the log files were created, and indeed they were:
-
+你可以验证是否创建了日志文件。它确实创建了：
 
 ```
 $ ls -l /var/log/lynis.log
@@ -141,45 +132,43 @@ $ ls -l /var/log/lynis-report.dat
 $
 ```
 
-### Explore the reports
+### 探索报告
 
-Lynis provides pretty comprehensive reports, so I will cover some of the important sections. The very first thing that Lynis does as part of initialization is to find out complete information about the operating system running on the machine. This is followed by checks to see what system tools and plugins are installed:
-
+Lynis 提供了相当全面的报告，所以我将介绍一些重要的部分。作为初始化的一部分，Lynis 做的第一件事就是找出机器上运行的操作系统的完整信息。之后是检查是否安装了什么系统工具和插件：
 
 ```
 [+] Initializing program
-\------------------------------------
-  - Detecting OS...                                           [ DONE ]
-  - Checking profiles...                                      [ DONE ]
+------------------------------------
+  - Detecting OS...                                           [ DONE ]
+  - Checking profiles...                                      [ DONE ]
 
-  ---------------------------------------------------
-  Program version:           3.0.0
-  Operating system:          Linux
-  Operating system name:     Red Hat Enterprise Linux Server 7.8 (Maipo)
-  Operating system version:  7.8
-  Kernel version:            3.10.0
-  Hardware platform:         x86_64
-  Hostname:                  example
-  ---------------------------------------------------
-&lt;&lt;snip&gt;&gt;
+  ---------------------------------------------------
+  Program version:           3.0.0
+  Operating system:          Linux
+  Operating system name:     Red Hat Enterprise Linux Server 7.8 (Maipo)
+  Operating system version:  7.8
+  Kernel version:            3.10.0
+  Hardware platform:         x86_64
+  Hostname:                  example
+  ---------------------------------------------------
+<<截断>>
 
 [+] System Tools
-\------------------------------------
-  - Scanning available tools...
-  - Checking system binaries...
+------------------------------------
+  - Scanning available tools...
+  - Checking system binaries...
 
 [+] Plugins (phase 1)
-\------------------------------------
- Note: plugins have more extensive tests and may take several minutes to complete
- 
-  - Plugin: pam
-    [..]
-  - Plugin: systemd
-    [................]
+------------------------------------
+ Note: plugins have more extensive tests and may take several minutes to complete
+ 
+  - Plugin: pam
+    [..]
+  - Plugin: systemd
+    [................]
 ```
 
-Next, the report is divided into various sections, and each section starts with a **[+]** symbol. Some of the sections can be seen below. (Wow, there are so many areas to audit, and Lynis is the right tool for the job!)
-
+接下来，该报告被分为不同的部分，每个部分都以 `[+]` 符号开头。下面可以看到部分章节。（哇，要审核的地方有这么多，Lynis 是最合适的工具！）
 
 ```
 [+] Boot and services
@@ -224,20 +213,17 @@ Next, the report is divided into various sections, and each section starts with 
 [+] Custom tests
 ```
 
-Lynis uses color-coding to make the report easier to parse:
+Lynis 使用颜色编码使报告更容易解读。
 
-  * Green: All good
-  * Yellow: Skipped, not found, or it may have a suggestion
-  * Red: You might need to give this a closer look
+  * 绿色。一切正常
+  * 黄色。跳过、未找到，可能有个建议
+  * 红色。你可能需要仔细看看这个
 
-
-
-In my case, most of the red marks were found in the Kernel Hardening section. The kernel has various tunable settings that define how the kernel functions, and some of these tunables may have a security context. The distro may not be setting these by default for various reasons, but you should examine each and see if you need to change its value based on your security posture:
-
+在我的案例中，大部分的红色标记都是在 “Kernel Hardening” 部分找到的。内核有各种可调整的设置，它们定义了内核的功能，其中一些可调整的设置可能有其安全场景。发行版可能因为各种原因没有默认设置这些，但是你应该检查每一项，看看你是否需要根据你的安全态势来改变它的值：
 
 ```
 [+] Kernel Hardening
-\------------------------------------
+------------------------------------
   - Comparing sysctl key pairs with scan profile
     - fs.protected_hardlinks (exp: 1)                         [ OK ]
     - fs.protected_symlinks (exp: 1)                          [ OK ]
@@ -271,12 +257,11 @@ In my case, most of the red marks were found in the Kernel Hardening section. Th
     - net.ipv6.conf.default.accept_source_route (exp: 0)      [ OK ]
 ```
 
-Look at SSH, an example, since it is a key area and needs to be secured. There's nothing in red here, but Lynis has a lot of suggestions about hardening the SSH service on my setup:
-
+看看 SSH 这个例子，因为它是一个需要保证安全的关键领域。这里没有什么红色的东西，但是 Lynis 对我的环境给出了很多强化 SSH 服务的建议：
 
 ```
 [+] SSH Support
-\------------------------------------
+------------------------------------
   - Checking running SSH daemon                               [ FOUND ]
     - Searching SSH configuration                             [ FOUND ]
     - OpenSSH option: AllowTcpForwarding                      [ SUGGESTION ]
@@ -305,23 +290,21 @@ Look at SSH, an example, since it is a key area and needs to be secured. There's
     - OpenSSH option: AllowGroups                             [ NOT FOUND ]
 ```
 
-I do not have virtual machines or containers running on my system, so they show empty results:
-
+我的系统上没有运行虚拟机或容器，所以这些显示的结果是空的：
 
 ```
 [+] Virtualization
-\------------------------------------
+------------------------------------
 
 [+] Containers
-\------------------------------------
+------------------------------------
 ```
 
-Lynis checks file permissions on some files that are important from a security standpoint:
-
+Lynis 会检查一些从安全角度看很重要的文件的文件权限：
 
 ```
 [+] File Permissions
-\------------------------------------
+------------------------------------
   - Starting file permissions check
     File: /boot/grub2/grub.cfg                                [ SUGGESTION ]
     File: /etc/cron.deny                                      [ OK ]
@@ -344,28 +327,25 @@ Lynis checks file permissions on some files that are important from a security 
     Directory: /etc/cron.monthly                              [ SUGGESTION ]
 ```
 
-Towards the bottom of the report, Lynis offers suggestions based on the report's findings. Each suggestion is followed by a **TEST-ID** (keep this handy for the next part):
-
-
-```
- Suggestions (47):
-  ----------------------------
-  * If not required, consider explicit disabling of core dump in /etc/security/limits.conf file [KRNL-5820]
-      <https://cisofy.com/lynis/controls/KRNL-5820/>
-
-  * Check PAM configuration, add rounds if applicable and expire passwords to encrypt with new values [AUTH-9229]
-      <https://cisofy.com/lynis/controls/AUTH-9229/>
-```
-
-Lynis provides an option to find more information about each suggestion, which you can access using the **show details** command followed by the test ID number:
-
+在报告的底部，Lynis 根据报告的发现提出了建议。每项建议后面都有一个 “TEST-ID”（为了下一部分方便，请将其保存起来）。
 
 ```
-`./lynis show details TEST-ID`
+ Suggestions (47):
+  ----------------------------
+  * If not required, consider explicit disabling of core dump in /etc/security/limits.conf file [KRNL-5820]
+      https://cisofy.com/lynis/controls/KRNL-5820/
+
+  * Check PAM configuration, add rounds if applicable and expire passwords to encrypt with new values [AUTH-9229]
+      https://cisofy.com/lynis/controls/AUTH-9229/
 ```
 
-This will show additional information about that test. For example, I checked the details of SSH-7408:
+Lynis 提供了一个选项来查找关于每个建议的更多信息，你可以使用 `show details` 命令和 TEST-ID 号来访问：
 
+```
+./lynis show details TEST-ID
+```
+
+这将显示该测试的其他信息。例如，我检查了 SSH-7408 的详细信息：
 
 ```
 $ ./lynis show details SSH-7408
@@ -379,9 +359,9 @@ $ ./lynis show details SSH-7408
 2020-04-30 05:52:23 Suggestion: Consider hardening SSH configuration [test:SSH-7408] [details:AllowTcpForwarding (set YES to NO)] [solution:-]
 ```
 
-### Give it a try
+### 试试吧
 
-If you want to learn more about the security of your Linux machine, check out Lynis. And, if you want to learn how Lynis works, dig into its shell scripts to see how it gathers all this information.
+如果你想更多地了解你的 Linux 机器的安全性，请试试 Lynis。如果你想了解 Lynis 是如何工作的，可以研究一下它的 shell 脚本，看看它是如何收集这些信息的。
 
 --------------------------------------------------------------------------------
 
@@ -389,8 +369,8 @@ via: https://opensource.com/article/20/5/linux-security-lynis
 
 作者：[Gaurav Kamathe][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
