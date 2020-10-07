@@ -7,31 +7,31 @@
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-conversation-page/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
-Building a Messenger App: Conversation Page
+构建一个即时消息应用（九）：Conversation 页面
 ======
 
-This post is the 9th and last in a series:
+本文是该系列的第九篇，也是最后一篇。
 
-  * [Part 1: Schema][1]
-  * [Part 2: OAuth][2]
-  * [Part 3: Conversations][3]
-  * [Part 4: Messages][4]
-  * [Part 5: Realtime Messages][5]
-  * [Part 6: Development Login][6]
-  * [Part 7: Access Page][7]
-  * [Part 8: Home Page][8]
+  * [第一篇: 模式][1]
+  * [第二篇: OAuth][2]
+  * [第三篇: 对话][3]
+  * [第四篇: 消息][4]
+  * [第五篇: 实时消息][5]
+  * [第六篇: 仅用于开发的登录][6]
+  * [第七篇: Access 页面][7]
+  * [第八篇: Home 页面][8]
 
 
 
-In this post we’ll code the conversation page. This page is the chat between the two users. At the top we’ll show info about the other participant, below, a list of the latest messages and a message form at the bottom.
+在这篇文章中，我们将对<ruby>对话<rt>conversation</rt></ruby>页面进行编码。此页面是两个用户之间的聊天室。在顶部我们将显示其他参与者的信息，下面接着的是最新消息列表，以及底部的消息表单。
 
-### Chat heading
+### 聊天标题
 
 ![chat heading screenshot][9]
 
-Let’s start by creating the file `static/pages/conversation-page.js` with the following content:
+让我们从创建 `static/pages/conversation-page.js` 文件开始，它包含以下内容:
 
-```
+```js
 import http from '../http.js'
 import { navigate } from '../router.js'
 import { avatar, escapeHTML } from '../shared.js'
@@ -65,17 +65,17 @@ function getConversation(id) {
 }
 ```
 
-This page receives the conversation ID the router extracted from the URL.
+此页面接收路由从 URL 中提取的会话 ID。
 
-First it does a GET request to `/api/conversations/{conversationID}` to get info about the conversation. In case of error, we show it and redirect back to `/`. Then we render info about the other participant.
+首先，它向 `/api/ conversations/{conversationID}` 发起一个 GET 请求，以获取有关对话的信息。 如果出现错误，我们会将其显示，并重定向回 `/`。然后我们呈现有关其他参与者的信息。
 
-### Conversation List
+### 对话列表
 
 ![chat heading screenshot][10]
 
-We’ll fetch the latest messages too to display them.
+我们也会获取最新的消息并显示它们。
 
-```
+```js
 let conversation, messages
 try {
     [conversation, messages] = await Promise.all([
@@ -85,32 +85,32 @@ try {
 }
 ```
 
-Update the `conversationPage()` function to fetch the messages too. We use `Promise.all()` to do both request at the same time.
+更新 `conversationPage()` 函数以获取消息。我们使用 `Promise.all()` 同时执行这两个请求。
 
-```
+```js
 function getMessages(conversationID) {
     return http.get(`/api/conversations/${conversationID}/messages`)
 }
 ```
 
-A GET request to `/api/conversations/{conversationID}/messages` gets the latest messages of the conversation.
+发起对 `/api/conversations/{conversationID}/messages` 的 GET 请求可以获取对话中的最新消息。
 
-```
+```html
 <ol id="messages"></ol>
 ```
 
-Now, add that list to the markup.
+现在，将该列表添加到标记中。
 
-```
+```js
 const messagesOList = page.getElementById('messages')
 for (const message of messages.reverse()) {
     messagesOList.appendChild(renderMessage(message))
 }
 ```
 
-So we can append messages to the list. We show them in reverse order.
+这样我们就可以将消息附加到列表中了。我们以时间倒序来显示它们。
 
-```
+```js
 function renderMessage(message) {
     const messageContent = escapeHTML(message.content)
     const messageDate = new Date(message.createdAt).toLocaleString()
@@ -127,28 +127,28 @@ function renderMessage(message) {
 }
 ```
 
-Each message item displays the message content itself with its timestamp. Using `.mine` we can append a different class to the item so maybe you can show the message to the right.
+每个消息条目显示消息内容本身及其时间戳。使用 `.mine`，我们可以将不同的 css 类附加到条目，这样您就可以将消息显示在右侧。
 
-### Message Form
+### 消息表单
 
 ![chat heading screenshot][11]
 
-```
+```html
 <form id="message-form">
     <input type="text" placeholder="Type something" maxlength="480" required>
     <button>Send</button>
 </form>
 ```
 
-Add that form to the current markup.
+将该表单添加到当前标记中。
 
-```
+```js
 page.getElementById('message-form').onsubmit = messageSubmitter(conversationID)
 ```
 
-Attach an event listener to the “submit” event.
+将事件监听器附加到 “submit” 事件。
 
-```
+```js
 function messageSubmitter(conversationID) {
     return async ev => {
         ev.preventDefault()
@@ -191,19 +191,20 @@ function createMessage(content, conversationID) {
 }
 ```
 
-We make use of [partial application][12] to have the conversation ID in the “submit” event handler. It takes the message content from the input and does a POST request to `/api/conversations/{conversationID}/messages` with it. Then prepends the newly created message to the list.
 
-### Messages Subscription
+我们利用 [partial application][12] 在 “submit” 事件处理程序中获取对话 ID。它 从输入中获取消息内容，并用它对 `/api/conversations/{conversationID}/messages` 发出 POST 请求。 然后将新创建的消息添加到列表中。
 
-To make it realtime we’ll subscribe to the message stream in this page also.
+### 消息订阅
 
-```
+为了实现实时，我们还将订阅此页面中的消息流。
+
+```js
 page.addEventListener('disconnect', subscribeToMessages(messageArriver(conversationID)))
 ```
 
-Add that line in the `conversationPage()` function.
+将该行添加到 `conversationPage()` 函数中。
 
-```
+```js
 function subscribeToMessages(cb) {
     return http.subscribe('/api/messages', cb)
 }
@@ -229,14 +230,14 @@ function readMessages(conversationID) {
 }
 ```
 
-We also make use of partial application to have the conversation ID here.
-When a new message arrives, first we check if it’s from this conversation. If it is, we go a prepend a message item to the list and do a POST request to `/api/conversations/{conversationID}/read_messages` to updated the last time the participant read messages.
+在这里我们仍然使用 partial application 来获取会话 ID。
+当新消息到达时，我们首先检查它是否来自此对话。如果是，我们会将消息条目预先添加到列表中，并向`/api/conversations/{conversationID}/read_messages`发起 POST 一个请求，以更新参与者上次阅读消息的时间。
 
 * * *
 
-That concludes this series. The messenger app is now functional.
+本系列到此结束。 Messenger app 现在可以运行了。
 
-~~I’ll add pagination on the conversation and message list, also user searching before sharing the source code. I’ll updated once it’s ready along with a hosted demo 👨‍💻~~
+~~我将在对话和消息列表中添加分页功能，并在共享源代码之前添加用户搜索。我会在准备好的时候和<ruby>托管的演示<rt>a hosted demo</rt></ruby>👨‍💻一起更新它~~
 
 [Souce Code][13] • [Demo][14]
 
@@ -246,7 +247,7 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-conversation-page/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[gxlct008](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
