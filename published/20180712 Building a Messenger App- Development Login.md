@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (gxlct008)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12692-1.html)
 [#]: subject: (Building a Messenger App: Development Login)
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-dev-login/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
 构建一个即时消息应用（六）：仅用于开发的登录
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202010/07/101437garmhgi9aza9f9fz.jpg)
 
 本文是该系列的第六篇。
 
@@ -17,7 +19,6 @@
   * [第三篇: 对话][3]
   * [第四篇: 消息][4]
   * [第五篇: 实时消息][5]
-
 
 我们已经实现了通过 GitHub 登录，但是如果想把玩一下这个 app，我们需要几个用户来测试它。在这篇文章中，我们将添加一个为任何用户提供登录的端点，只需提供用户名即可。该端点仅用于开发。
 
@@ -101,7 +102,7 @@ func issueToken(subject string, exp time.Time) (string, error) {
 
 ### 种子用户
 
-现在，您可以将要操作的用户添加到数据库中。
+现在，你可以将要操作的用户添加到数据库中。
 
 ```sql
 INSERT INTO users (id, username) VALUES
@@ -109,7 +110,7 @@ INSERT INTO users (id, username) VALUES
     (2, 'jane');
 ```
 
-您可以将其保存到文件中，并通过管道将其传送到 Cockroach CLI。
+你可以将其保存到文件中，并通过管道将其传送到 Cockroach CLI。
 
 ```bash
 cat seed_users.sql | cockroach sql --insecure -d messenger
@@ -121,7 +122,7 @@ cat seed_users.sql | cockroach sql --insecure -d messenger
 
 本文也结束了所有的后端开发部分。
 
-[Souce Code][6]
+- [源代码][6]
 
 --------------------------------------------------------------------------------
 
@@ -129,16 +130,16 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-dev-login/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/gxlct008)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[gxlct008](https://github.com/gxlct008)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://nicolasparada.netlify.com/
 [b]: https://github.com/lujun9972
-[1]: https://nicolasparada.netlify.com/posts/go-messenger-schema/
-[2]: https://nicolasparada.netlify.com/posts/go-messenger-oauth/
-[3]: https://nicolasparada.netlify.com/posts/go-messenger-conversations/
-[4]: https://nicolasparada.netlify.com/posts/go-messenger-messages/
-[5]: https://nicolasparada.netlify.com/posts/go-messenger-realtime-messages/
+[1]: https://linux.cn/article-11396-1.html
+[2]: https://linux.cn/article-11510-1.html
+[3]: https://linux.cn/article-12056-1.html
+[4]: https://linux.cn/article-12680-1.html
+[5]: https://linux.cn/article-12685-1.html
 [6]: https://github.com/nicolasparada/go-messenger-demo
