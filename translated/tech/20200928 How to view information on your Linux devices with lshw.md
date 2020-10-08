@@ -7,16 +7,18 @@
 [#]: via: (https://www.networkworld.com/article/3583598/how-to-view-information-on-your-linux-devices-with-lshw.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-How to view information on your Linux devices with lshw
+如何使用 lshw 查看 Linux 设备信息
 ======
-The lshw (list hardware) command on Linux systems provides a lot more information on system devices than most of us might imagine is available.
-Kali Linux / nevarpp / Getty Images
+Linux 系统上的 lshw（<ruby>列出硬件<rt>list hardware</rt></ruby>）命令提供的系统设备信息比我们大多数人想象的要多得多。
 
-While far from being one of the first 50 Linux commands anyone learns, the **lshw** command (read as “ls hardware”) can provide a lot of useful details on your system’s hardware.
+![Kali Linux logo / gears / binary data][1]
+(Kali Linux / nevarpp / Getty Images)
 
-It extracts details—maybe quite a few more than you knew were available—in a format that is reasonably easy to digest. Given descriptions, logical (device) names, sizes, etc., you are likely to appreciate how much detail you can access.
+虽然 **lshw** 命令（读作 “ls hardware”）远不是每个人最先学会的 50 个 Linux 命令之一，但它可以提供很多系统硬件的有用信息。
 
-This post examines the information that **lshw** provides with a particular focus on disk and related hardware. Here is some sample **lshw** output:
+它以一种相当易于理解的格式提取出可能比你知道的更多的信息。在看到描述、（设备）逻辑名称、大小等以后，你可能会理解到自己能获得多少信息。
+
+这篇文章会研究 **lshw** 给出的信息，但侧重于磁盘及相关硬件。下面是 **lshw** 的输出示例：
 
 ```
 $ sudo lshw -C disk
@@ -35,11 +37,11 @@ $ sudo lshw -C disk
           logical name: /dev/sdc
 ```
 
-Note that you should run the **lshw** command with **sudo** to ensure that you get all of the available details.
+请注意，你需要使用 **sudo** 运行 **lshw** 命令以确保能得到所有可用的信息。
 
-While we asked for “disk” in the above command (the output included shows only the first of five entries displayed), this particular output shows not a hard disk, but a card reader—another member of the disk class. Note that the system knows this device as **/dev/sdc**.
+虽然我们在上面的命令中要求了“磁盘（disk）”（上面只包含了原始输出里五个条目中的一个），这里的输出却不是一个硬盘，而是读卡器——磁盘的一种。注意系统将这个设备命名为了 **/dev/sdc**。
 
-Similar details are provided on the primary disk on the system:
+系统的主磁盘上也有相似的信息：
 
 ```
 *-disk
@@ -47,7 +49,7 @@ Similar details are provided on the primary disk on the system:
         product: SSD2SC120G1CS175
         physical id: 0
         bus info: scsi@0:0.0.0
-         logical name: /dev/sda         <==
+         logical name: /dev/sda         <==这里
         version: 1101
         serial: PNY20150000778410606
         size: 111GiB (120GB)
@@ -56,9 +58,9 @@ Similar details are provided on the primary disk on the system:
            f63b5929
 ```
 
-This disk is **/dev/sda**. The hard disks on this system both show up as **ATA** disks. **ATA** is a disk-drive implementation that integrates the controller on the disk drive itself.
+这块硬盘是 **/dev/sda**。这个系统上的硬盘都显示为 **ATA** 磁盘，**ATA** 是一种把控制器与盘体集成在一起的磁盘驱动器实现。
 
-To get an abbreviated list of devices in the “disk” class, you can run a command like this one. Notice that two of the devices are listed twice, so we are still seeing five disk devices.
+要获得“磁盘”类设备的简略列表，可以运行下面这条命令。注意其中有两个设备被列出了两次，所以我们看到的仍然是五个磁盘设备。
 
 ```
 $ sudo lshw -short -C disk
@@ -73,7 +75,7 @@ H/W path               Device      Class          Description
 /0/100/1f.5/0.0.0      /dev/sdb    disk           500GB SAMSUNG HE502HJ
 ```
 
-Hold onto your seat if you decide you want to see _**all**_ of the devices on a system. You will get a list that includes a lot more things than you probably normally think of as “devices”. Here’s an example—and this is the “short” (few details) list:
+如果你决定要查看系统上的 _**所有**_ 设备，请坐稳了；你会得到一个包含的东西比你通常认为的“设备”要多得多的列表，下面是一个例子，这是一个“简短（short）”（信息很少）的列表：
 
 ```
 $ sudo lshw -short
@@ -152,7 +154,7 @@ H/W path               Device      Class          Description
 /0/9                               system         PnP device PNP0c01
 ```
 
-Run a command like this to list device classes and count how many devices are in each class.
+运行下面的命令来列出设备类别，并统计每个类别中的设备数量。
 
 ```
 $ sudo lshw -short | awk ‘{print substr($0,36,13)}’ | tail -n +3 | sort | uniq -c
@@ -172,16 +174,18 @@ $ sudo lshw -short | awk ‘{print substr($0,36,13)}’ | tail -n +3 | sort | un
       2 volume
 ```
 
-**NOTE:** The **awk** command selects the Class column from the **lshw** output using $0 (complete lines), but taking only the substrings that start in the correct place (column 36). None of the class entries have more than 13 letters so the substring ends there. The **tail -n +3** part of the command drops the heading and the “=====” line beneath it, so only the 14 device classes are included in the final listing.
+**注意：** 上面使用 **awk** 命令从 **lshw** 的输出中选择 Class（类别）栏是这样实现的：使用 $0（选取完整行），但只取从正确位置（第 36 个字符）开始的子串，而因为“类别”中并没有条目的长度超过 13 个字符，所以子串就在那里结束。命令中 **tail -n +3** 的部分移除了标题和下面的“=====”，所以最终的列表中只包含了那 14 种设备类型。
 
-One thing you’ll notice is that we get approximately 12 lines of output for each device in the disk class when we don’t use the **-short** option. We see the logical names, such as **/dev/sda**, disk sizes and types, etc.
+（译注：上面的命令中 awk 的部分在选取子串时是从第 36 个字符开始的，这个数字基本上取决于最长的设备逻辑名称的长度，因而在不同的系统环境中可能有所不同，一个例子是，当你的系统上有 NVMe SSD 时，可能需要将其改为 41。）
+
+你会发现在没有使用 **-short** 选项的时候，每一个磁盘类设备都会有大约 12 行的输出，包括像是 **/dev/sda** 这样的逻辑名称，磁盘大小和种类等等。
 
 ```
 $ sudo lshw -C disk
 [sudo] password for shs:
   *-disk:0
        description: SCSI Disk
-       product: Card Reader-1            card reader?
+       product: Card Reader-1            读卡器？ 
        vendor: JIE LI
        physical id: 0.0.0
        bus info: scsi@4:0.0.0
@@ -209,13 +213,13 @@ $ sudo lshw -C disk
        product: SSD2SC120G1CS175
        physical id: 0
        bus info: scsi@0:0.0.0
-       logical name: /dev/sda            main system disk
+       logical name: /dev/sda            主要磁盘
        version: 1101
        serial: PNY20150000778410606
        size: 111GiB (120GB)
        capabilities: partitioned partitioned:dos
        configuration: ansiversion=5 logicalsectorsize=512 sectorsize=512 signature=f63b5929
-  *-cdrom                                        aka /dev/sr0
+  *-cdrom                                        也叫 /dev/sr0
        description: DVD writer
        product: DVD+-RW GSA-H73N
        vendor: HL-DT-ST
@@ -235,7 +239,7 @@ $ sudo lshw -C disk
        product: SAMSUNG HE502HJ
        physical id: 0.0.0
        bus info: scsi@3:0.0.0
-       logical name: /dev/sdb            secondary disk
+       logical name: /dev/sdb            次要磁盘
        version: 0002
        serial: S2B6J90B501053
        size: 465GiB (500GB)
@@ -243,11 +247,11 @@ $ sudo lshw -C disk
        configuration: ansiversion=5 logicalsectorsize=512 sectorsize=512 signature=7e67ccf3
 ```
 
-### Wrap-up
+### 总结
 
-The **lshw** command provides details that many of us won’t normally deal with. Still, it’s nice to know how much information is available even if you only use a portion of it.
+**lshw** 命令提供了一些我们许多人通常不会处理的信息，不过即使你只用了其中的一部分，知道有多少信息可用还是很不错的。
 
-Join the Network World communities on [Facebook][1] and [LinkedIn][2] to comment on topics that are top of mind.
+加入 [Facebook][2] 和 [领英][3] 上的 Network World 社区，对最热门的话题发表评论。
 
 --------------------------------------------------------------------------------
 
@@ -255,12 +259,13 @@ via: https://www.networkworld.com/article/3583598/how-to-view-information-on-you
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[rakino](https://github.com/rakino)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.networkworld.com/author/Sandra-Henry_Stocker/
 [b]: https://github.com/lujun9972
-[1]: https://www.facebook.com/NetworkWorld/
-[2]: https://www.linkedin.com/company/network-world
+[1]: https://images.idgesg.net/images/article/2020/02/kali_linux_tools_abstract_gears_binary_data_by_nevarpp_gettyimages-688718788_2400x1600-100832674-large.jpg
+[2]: https://www.facebook.com/NetworkWorld/
+[3]: https://www.linkedin.com/company/network-world
