@@ -10,7 +10,7 @@
 如何使用 Ansible 安装软件
 ======
 
-使用 Ansible 剧本自动安装和更新你设备上的软件。
+使用 Ansible 剧本自动安装和更新设备上的软件。
 ![Puzzle pieces coming together to form a computer screen][1]
 
 Ansible 是系统管理员和开发人员用来保持计算机系统处于最佳状态的一种流行的自动化工具。与可扩展框架一样，[Ansible][2] 本身功能有限，它真正的功能体现在许多模块中。在某种程度上，Ansible 模块是 [Linux][3] 系统的命令。它们针对特定问题提供解决方案。维护计算机时的一项常见任务是使所有计算机的更新和一致。
