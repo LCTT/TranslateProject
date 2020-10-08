@@ -7,82 +7,82 @@
 [#]: via: (https://itsfoss.com/install-yarn-ubuntu)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Using Yarn on Ubuntu and Other Linux Distributions
+在 Ubuntu 和其他 Linux 发行版上使用 Yarn
 ======
 
-**This quick tutorial shows you the official way of installing Yarn package manager on Ubuntu and Debian Linux. You’ll also learn some basic Yarn commands and the steps to remove Yarn completely.**
+***本速成教程向您展示了在 Ubuntu 和 Debian Linux 上安装 Yarn 包管理器的官方方法。您还将学习到一些基本的 Yarn 命令以及彻底删除 Yarn 的步骤。***
 
-[Yarn][1] is an open source JavaScript package manager developed by Facebook. It is an alternative or should I say improvement to the popular npm package manager. [Facebook developers’ team][2] created Yarn to overcome the shortcomings of [npm][3]. Facebook claims that Yarn is faster, reliable and more secure than npm.
+[Yarn][1] 是 Facebook 开发的开源 JavaScript 包管理器。它是流行的 npm 包管理器的一个替代品，或者应该说是改进。 [Facebook 开发团队][2] 创建 Yarn 是为了克服 [npm][3] 的缺点。 Facebook 声称 Yarn 比 npm 更快、更可靠、更安全。
 
-Like npm, Yarn provides you a way to automate the process of installing, updating, configuring, and removing packages retrieved from a global registry.
+与 npm 一样，Yarn 为您提供一种自动安装、更新、配置和删除从全局注册表中检索到的程序包的方法。
 
-The advantage of Yarn is that it is faster as it caches every package it downloads so it doesn’t need to download it again. It also parallelizes operations to maximize resource utilization. Yarn also uses [checksums to verify the integrity][4] of every installed package before its code is executed. Yarn also guarantees that an install that worked on one system will work exactly the same way on any other system.
+Yarn 的优点是它更快，因为它缓存了已下载的每个包，所以无需再次下载。它还将操作并行化，以最大化资源利用率。在执行每个已安装的包代码之前，Yarn 还使用 [校验和来验证完整性][4]。 Yarn 还保证在一个系统上运行的安装，在任何其他系统上都会以完全相同地方式工作。
 
-If you are [using nodejs on Ubuntu][5], probably you already have npm installed on your system. In that case, you can use npm to install Yarn globally in the following manner:
+如果您正 [在 Ubuntu 上使用 nodejs][5]，那么您的系统上可能已经安装了 npm。在这种情况下，您可以通过以下方式使用 npm 全局安装 Yarn：
 
 ```
 sudo npm install yarn -g
 ```
 
-However, I would recommend using the official way to install Yarn on Ubuntu/Debian.
+不过，我推荐使用官方方式在 Ubuntu/Debian 上安装 Yarn。
 
-### Installing Yarn on Ubuntu and Debian [The Official Way]
+### 在 Ubuntu 和 Debian 上安装 Yarn [官方方式]
 
 ![Yarn JS][6]
 
-The instructions mentioned here should be applicable to all versions of Ubuntu such as Ubuntu 18.04, 16.04 etc. The same set of instructions are also valid for Debian and other Debian based distributions.
+这里提到的指令应该适用于所有版本的 Ubuntu，例如 Ubuntu 18.04、16.04 等。同样的指令集也适用于 Debian 和其他基于 Debian 的发行版。
 
-Since the tutorial uses Curl to add the GPG key of Yarn project, it would be a good idea to verify whether you have Curl installed already or not.
+由于本教程使用 curl 来添加 Yarn 项目的 GPG 密钥，所以最好验证一下您是否已经安装了 curl。
 
 ```
 sudo apt install curl
 ```
 
-The above command will install Curl if it wasn’t installed already. Now that you have curl, you can use it to add the GPG key of Yarn project in the following fashion:
+如果 curl 尚未安装，则上面的命令将安装它。既然有了 curl，您就可以使用它以如下方式添加 Yarn 项目的 GPG 密钥：
 
 ```
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 ```
 
-After that, add the repository to your sources list so that you can easily upgrade the Yarn package in future with the rest of the system updates:
+在此之后，将存储库添加到源列表中，以便将来可以轻松地升级 Yarn 包，并进行其余系统更新：
 
 ```
 sudo sh -c 'echo "deb https://dl.yarnpkg.com/debian/ stable main" >> /etc/apt/sources.list.d/yarn.list'
 ```
 
-You are set to go now. [Update Ubuntu][7] or Debian system to refresh the list of available packages and then install yarn:
+您现在可以继续了。[更新 Ubuntu][7] 或 Debian 系统，以刷新可用软件包列表，然后安装 Yarn：
 
 ```
 sudo apt update
 sudo apt install yarn
 ```
 
-This will install Yarn along with nodejs. Once the process completes, verify that Yarn has been installed successfully. You can do that by checking the Yarn version.
+这将一起安装 Yarn 和 nodejs。该过程完成后，请验证是否已成功安装 Yarn。 您可以通过检查 Yarn 版本来做到这一点。
 
 ```
 yarn --version
 ```
 
-For me, it showed an output like this:
+对我来说，它显示了这样的输出：
 
 ```
 yarn --version
 1.12.3
 ```
 
-This means that I have Yarn version 1.12.3 installed on my system.
+这意味着我的系统上安装了 Yarn 版本 1.12.3。
 
-### Using Yarn
+### 使用 Yarn
 
-I presume that you have some basic understandings of JavaScript programming and how dependencies work. I am not going to go in details here. I’ll show you some of the basic Yarn commands that will help you getting started with it.
+我假设您对 JavaScript 编程以及依赖项的工作原理有一些基本的了解。我在这里不做详细介绍。我将向您展示一些基本的 Yarn 命令，这些命令将帮助您入门。
 
-#### Creating a new project with Yarn
+#### 使用 Yarn 创建一个新项目
 
-Like npm, Yarn also works with a package.json file. This is where you add your dependencies. All the packages of the dependencies are cached in the node_modules directory in the root directory of your project.
+与 npm 一样，Yarn 也可以使用 package.json 文件。在这里添加依赖项。所有依赖包都缓存在项目根目录下的 node_modules 目录中。
 
-In the root directory of your project, run the following command to generate a fresh package.json file:
+在项目的根目录中，运行以下命令以生成新的 package.json 文件：
 
-It will ask you a number of questions. You can skip the questions r go with the defaults by pressing enter.
+它会问您一些问题。您可以按 Enter 跳过或使用默认值。
 
 ```
 yarn init
@@ -99,7 +99,7 @@ success Saved package.json
 Done in 82.42s.
 ```
 
-With this, you get a package.json file of this sort:
+这样，您就得到了一个如下的 package.json 文件：
 
 ```
 {
@@ -112,17 +112,17 @@ With this, you get a package.json file of this sort:
 }
 ```
 
-Now that you have the package.json, you can either manually edit it to add or remove package dependencies or use Yarn commands (preferred).
+现在您有了 package.json，您可以手动编辑它以添加或删除包依赖项，也可以使用 Yarn 命令(首选)。
 
-#### Adding dependencies with Yarn
+#### 使用 Yarn 添加依赖项
 
-You can add a dependency on a certain package in the following fashion:
+您可以通过以下方式添加对特定包的依赖关系：
 
 ```
 yarn add <package_name>
 ```
 
-For example, if you want to use [Lodash][8] in your project, you can add it using Yarn like this:
+例如，如果您想在项目中使用 [Lodash][8]，则可以使用 Yarn 添加它，如下所示：
 
 ```
 yarn add lodash
@@ -141,7 +141,7 @@ info All dependencies
 Done in 2.67s.
 ```
 
-And you can see that this dependency has been added automatically in the package.json file:
+您可以看到，此依赖项已自动添加到 package.json 文件中：
 
 ```
 {
@@ -157,89 +157,97 @@ And you can see that this dependency has been added automatically in the package
 }
 ```
 
-By default, Yarn will add the latest version of a package in the dependency. If you want to use a specific version, you may specify it while adding.
+默认情况下，Yarn 将在依赖项中添加最新版本的包。如果要使用特定版本，可以在添加时指定。
 
-As always, you can also update the package.json file manually.
+```
+yarn add package@version-or-tag
+```
 
-#### Upgrading dependencies with Yarn
+像往常一样，您也可以手动更新 package.json 文件。
 
-You can upgrade a particular dependency to its latest version with the following command:
+#### 使用 Yarn 升级依赖项
+
+您可以使用以下命令将特定依赖项升级到其最新版本：
 
 ```
 yarn upgrade <package_name>
 ```
 
-It will see if the package in question has a newer version and will update it accordingly.
+它将查看所​​涉及的包是否具有较新的版本，并且会相应地对其进行更新。
 
-You can also change the version of an already added dependency in the following manner:
+您还可以通过以下方式更改已添加的依赖项的版本：
 
-You can also upgrade all the dependencies of your project to their latest version with one single command:
+```
+yarn upgrade package_name@version_or_tag
+```
+
+您还可以使用一个命令将项目的所有依赖项升级到它们的最新版本：
 
 ```
 yarn upgrade
 ```
 
-It will check the versions of all the dependencies and will update them if there are any newer versions.
+它将检查所有依赖项的版本，如果有任何较新的版本，则会更新它们。
 
-#### Removing dependencies with Yarn
+#### 使用 Yarn 删除依赖项
 
-You can remove a package from the dependencies of your project in this way:
+您可以通过以下方式从项目的依赖项中删除包：
 
 ```
 yarn remove <package_name>
 ```
 
-#### Install all project dependencies
+#### 安装所有项目依赖项
 
-If you made any changes to the project.json file, you should run either
+如果对您 project.json 文件进行了任何更改，则应该运行
 
 ```
 yarn
 ```
 
-or
+或者
 
 ```
 yarn install
 ```
 
-to install all the dependencies at once.
+一次安装所有依赖项。
 
-### How to remove Yarn from Ubuntu or Debian
+### 如何从 Ubuntu 或 Debian 中删除 Yarn
 
-I’ll complete this tutorial by mentioning the steps to remove Yarn from your system if you used the above steps to install it. If you ever realized that you don’t need Yarn anymore, you will be able to remove it.
+我将通过介绍从系统中删除 Yarn 的步骤来完成本教程，如果您使用上述步骤安装 Yarn 的话。如果您意识到不再需要 Yarn 了，则可以将它删除。
 
-Use the following command to remove Yarn and its dependencies.
+使用以下命令删除 Yarn 及其依赖项。
 
 ```
 sudo apt purge yarn
 ```
 
-You should also remove the Yarn repository from the repository list:
+您也应该从源列表中把存储库信息一并删除掉：
 
 ```
 sudo rm /etc/apt/sources.list.d/yarn.list
 ```
 
-The optional next step is to remove the GPG key you had added to the trusted keys. But for that, you need to know the key. You can get that using the apt-key command:
+下一步删除已添加到受信任密钥的 GPG 密钥是可选的。但要做到这一点，您需要知道密钥。您可以使用 `apt-key` 命令获得它：
 
-Warning: apt-key output should not be parsed (stdout is not a terminal) pub rsa4096 2016-10-05 [SC] 72EC F46A 56B4 AD39 C907 BBB7 1646 B01B 86E5 0310 uid [ unknown] Yarn Packaging
-
+```
 Warning: apt-key output should not be parsed (stdout is not a terminal) pub rsa4096 2016-10-05 [SC] 72EC F46A 56B4 AD39 C907 BBB7 1646 B01B 86E5 0310 uid [ unknown] Yarn Packaging yarn@dan.cx sub rsa4096 2016-10-05 [E] sub rsa4096 2019-01-02 [S] [expires: 2020-02-02]
+```
 
-The key here is the last 8 characters of the GPG key’s fingerprint in the line starting with pub.
+这里的密钥是以 pub 开始的行中 GPG 密钥指纹的最后 8 个字符。
 
-So, in my case, the key is 86E50310 and I’ll remove it using this command:
+因此，对于我来说，密钥是 `86E50310`，我将使用以下命令将其删除：
 
 ```
 sudo apt-key del 86E50310
 ```
 
-You’ll see an OK in the output and the GPG key of Yarn package will be removed from the list of GPG keys your system trusts.
+您会在输出中看到 OK，并且 Yarn 包的 GPG 密钥将从系统信任的 GPG 密钥列表中删除。
 
-I hope this tutorial helped you to install Yarn on Ubuntu, Debian, Linux Mint, elementary OS etc. I provided some basic Yarn commands to get you started along with complete steps to remove Yarn from your system.
+我希望本教程可以帮助您在 Ubuntu、Debian、Linux Mint、 elementary OS 等操作系统上安装  Yarn。 我提供了一些基本的 Yarn 命令，以帮助您入门，并完成了从系统中删除 Yarn 的完整步骤。
 
-I hope you liked this tutorial and if you have any questions or suggestions, please feel free to leave a comment below.
+希望您喜欢本教程，如果有任何疑问或建议，请随时在下面留言。
 
 
 --------------------------------------------------------------------------------
@@ -248,7 +256,7 @@ via: https://itsfoss.com/install-yarn-ubuntu
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[gxlct008](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
