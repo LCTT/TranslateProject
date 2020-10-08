@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12697-1.html)
 [#]: subject: (How to read Lynis reports to improve Linux security)
 [#]: via: (https://opensource.com/article/20/8/linux-lynis-security)
 [#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
@@ -12,13 +12,13 @@
 
 > 使用 Lynis 的扫描和报告来发现和修复 Linux 安全问题。
 
-![锁定][1]
+![](https://img.linux.net.cn/data/attachment/album/202010/08/102355k7jakojhz9x8xamx.jpg)
 
-当我读到 Gaurav Kamathe 的文章《[用 Lynis 扫描你的 Linux 安全性][2]>时，让我想起了我在美国劳工部担任系统管理员的日子。我的职责之一是保证我们的 Unix 服务器的安全。每个季度，都会有一个独立的核查员来审查我们服务器的安全状态。每次在核查员预定到达的那一天，我都会运行 Security Readiness Review（SRR），这是一个扫描工具，它使用一大套脚本来识别和报告任何安全线索。SRR 是开源的，因此我可以查看所有源码脚本及其功能。这使我能够查看代码，确定具体是什么问题，并迅速修复它发现的每个问题。
+当我读到 Gaurav Kamathe 的文章《[使用 Lynis 扫描 Linux 安全性][2]》时，让我想起了我在美国劳工部担任系统管理员的日子。我那时的职责之一是保证我们的 Unix 服务器的安全。每个季度，都会有一个独立的核查员来审查我们服务器的安全状态。每次在核查员预定到达的那一天，我都会运行 Security Readiness Review（SRR），这是一个扫描工具，它使用一大套脚本来识别和报告任何安全线索。SRR 是开源的，因此我可以查看所有源码脚本及其功能。这使我能够查看其代码，确定具体是什么问题，并迅速修复它发现的每个问题。
 
 ### 什么是 Lynis？
 
-[Lynis][3] 是一个开源的安全审计工具，它的工作原理和 SRR 很像，它会扫描 Linux 系统，并提供关于它发现的任何弱点的详细报告。同样和 SRR 一样，它也是由一大套脚本组成的，每个脚本都会检查一个特定的项目，例如，最小和最大密码时间要求。
+[Lynis][3] 是一个开源的安全审计工具，它的工作原理和 SRR 很像，它会扫描 Linux 系统，并提供它发现的任何弱点的详细报告。同样和 SRR 一样，它也是由一大套脚本组成的，每个脚本都会检查一个特定的项目，例如，最小和最大密码时间要求。
 
 运行 Lynis 后，你可以使用它的报告来定位每个项目的脚本，并了解 Lynis 是如何检查和报告每个问题的。你也可以使用相同的脚本代码来创建新的代码来自动解决。
 
@@ -61,14 +61,14 @@
 2020-06-16 20:54:33 ====
 ```
 
-这些细节表明 Lynis 无法找到各种文件。这个情况非常清楚。我可以运行 `updatedb` 命令，重新检查这个测试。
+这些细节表明 Lynis 无法找到各种文件。这个情况描述的非常清楚。我可以运行 `updatedb` 命令，然后重新检查这个测试。
 
 ```
 # updatedb
 # lynis --tests FILE-6410
 ```
 
-然后，重新检查细节时，会显示它发现哪个文件满足了测试：
+重新检查细节时，会显示它发现哪个文件满足了测试：
 
 ```
 # lynis show details FILE-6410
@@ -89,8 +89,8 @@ Lynis 的许多建议并不像这个建议那样直接。如果你不确定某�
 
 ```
 * Consider hardening SSH configuration [SSH-7408]
-    - Details  : MaxAuthTries (6 --&gt; 3)
-      <https://cisofy.com/lynis/controls/SSH-7408/>
+    - Details  : MaxAuthTries (6 --> 3)
+      https://cisofy.com/lynis/controls/SSH-7408/
 ```
 
 要解决这个问题，你需要知道 SSH 配置文件的位置。一个经验丰富的 Linux 管理员可能已经知道在哪里找到它们，但如果你不知道，有一个方法可以看到 Lynis 在哪里找到它们。
@@ -112,7 +112,7 @@ Lynis 支持多种操作系统，因此你的安装位置可能有所不同。�
 
 #### 查找 SSH 问题
 
-名为 `tests_ssh` 的文件中包含了 TEST-ID，在这里可以找到与 SSH 相关的扫描函数。看看这个文件，就可以看到 Lynis 扫描器调用的各种函数。第一部分在一个名为 `SSH_DAEMON_CONFIG_LOCS` 的变量中定义了一个目录列表。下面几节负责检查 SSH 守护进程的状态、定位它的配置文件，并识别它的版本。我在 SSH-7404 测试中找到了查找配置文件的代码，描述为 “确定 SSH 守护进程配置文件位置”。这段代码包含一个 `for` 循环，在列表中的项目中搜索一个名为 `sshd_config` 的文件。我可以用这个逻辑来做自己的搜索：
+名为 `tests_ssh` 的文件中包含了 TEST-ID，在这里可以找到与 SSH 相关的扫描函数。看看这个文件，就可以看到 Lynis 扫描器调用的各种函数。第一部分在一个名为 `SSH_DAEMON_CONFIG_LOCS` 的变量中定义了一个目录列表。下面几节负责检查 SSH 守护进程的状态、定位它的配置文件，并识别它的版本。我在 SSH-7404 测试中找到了查找配置文件的代码，描述为 “确定 SSH 守护进程配置文件位置”。这段代码包含一个 `for` 循环，在列表中的项目中搜索一个名为 `sshd_config` 的文件。我可以用这个逻辑来自己进行搜索：
 
 ```
 # find /etc /etc/ssh /usr/local/etc/ssh /opt/csw/etc/ssh -name sshd_config
@@ -122,7 +122,7 @@ find: ‘/usr/local/etc/ssh’: No such file or directory
 find: ‘/opt/csw/etc/ssh’: No such file or directory
 ```
 
-进一步探索这个文件，就会发现寻找 SSH-7408 的相关代码。这个测试涵盖了 `MaxAuthTries` 和其他一些设置。现在我可以在 SSH 配置文件中找到该变量：
+进一步探索这个文件，就会看到寻找 SSH-7408 的相关代码。这个测试涵盖了 `MaxAuthTries` 和其他一些设置。现在我可以在 SSH 配置文件中找到该变量：
 
 ```
 # grep MaxAuthTries /etc/ssh/sshd_config
@@ -131,7 +131,7 @@ find: ‘/opt/csw/etc/ssh’: No such file or directory
 
 #### 修复法律横幅问题
 
-Lynis 还报告了一个与登录系统时显示的法律横幅有关的发现。在我的家庭桌面系统上（我不希望有很多其他人登录），我没有去改变默认的 `issue` 文件。企业或政府的系统很可能被要求包含一个法律横幅，以警告用户他们的登录和活动可能被记录和监控。Lynis 用 BANN-7126 测试和 BANN-7130 测试报告了这一点：
+Lynis 还报告了一个与登录系统时显示的法律横幅有关的发现。在我的家庭桌面系统上（我并不希望有很多其他人登录），我没有去改变默认的 `issue` 文件。企业或政府的系统很可能被要求包含一个法律横幅，以警告用户他们的登录和活动可能被记录和监控。Lynis 用 BANN-7126 测试和 BANN-7130 测试报告了这一点：
 
 ```
 * Add a legal banner to /etc/issue, to warn unauthorized users [BANN-7126]
@@ -168,7 +168,7 @@ Kernel \r on an \m (\l)
 for ITEM in ${LEGAL_BANNER_STRINGS}; do
 ```
 
-这些法律术语存储在文件顶部定义的变量 `LEGAL_BANNER_STRINGS` 中。向后滚动到顶部可以看到完整的清单：”
+这些法律术语存储在文件顶部定义的变量 `LEGAL_BANNER_STRINGS` 中。向后滚动到顶部可以看到完整的清单：
 
 ```
 LEGAL_BANNER_STRINGS="audit access authori condition connect consent continu criminal enforce evidence forbidden intrusion law legal legislat log monitor owner penal policy policies privacy private prohibited record restricted secure subject system terms warning"
@@ -205,12 +205,12 @@ via: https://opensource.com/article/20/8/linux-lynis-security
 作者：[Alan Formy-Duval][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/alanfdoss
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/security-lock-password.jpg?itok=KJMdkKum (Lock)
-[2]: https://opensource.com/article/20/5/linux-security-lynis
+[2]: https://linux.cn/article-12696-1.html
 [3]: https://github.com/CISOfy/lynis
