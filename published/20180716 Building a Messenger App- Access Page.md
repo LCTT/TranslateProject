@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (gxlct008)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12704-1.html)
 [#]: subject: (Building a Messenger App: Access Page)
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-access-page/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
 构建一个即时消息应用（七）：Access 页面
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202010/10/101345zj7gfybyee2g9x9e.jpg)
 
 本文是该系列的第七篇。
 
@@ -38,7 +40,7 @@
 </html>
 ```
 
-这个 HTML 文件必须为每个 URL 提供服务，并且将使用 JavaScript 负责呈现正确的页面。
+这个 HTML 文件必须为每个 URL 提供服务，并且使用 JavaScript 负责呈现正确的页面。
 
 因此，让我们将注意力转到 `main.go` 片刻，然后在 `main()` 函数中添加以下路由：
 
@@ -96,11 +98,9 @@ function view(pageName) {
 }
 ```
 
-如果您是这个博客的关注者，您已经知道它是如何工作的了。 该路由器就是在 [这里][7] 显示的那个。 只需从 [@nicolasparada/router][8] 下载并保存到 `static/router.js` 即可。
+如果你是这个博客的关注者，你已经知道它是如何工作的了。 该路由器就是在 [这里][7] 显示的那个。 只需从 [@nicolasparada/router][8] 下载并保存到 `static/router.js` 即可。
 
-We registered four routes. At the root `/` we show the home or access page whether the user is authenticated. At `/callback` we show the callback page. On `/conversations/{conversationID}` we show the conversation or access page whether the user is authenticated and for every other URL, we show a not found page.
-
-我们注册了四条路由。 在根路由 `/` 处，我们展示 home 或 access 页面，无论用户是否通过身份验证。 在 `/callback` 中，我们展示 callback 页面。 在 `/conversations/{conversationID}` 上，我们展示对话或 access 页面，无论用户是否通过验证，对于其他 URL，我们展示一个 not found 页面。
+我们注册了四条路由。 在根路由 `/` 处，我们展示 `home` 或 `access` 页面，无论用户是否通过身份验证。 在 `/callback` 中，我们展示 `callback` 页面。 在 `/conversations/{conversationID}` 上，我们展示对话或 `access` 页面，无论用户是否通过验证，对于其他 URL，我们展示一个 `not-found` 页面。
 
 我们告诉路由器将结果渲染为文档主体，并在离开之前向每个页面调度一个 `disconnect` 事件。
 
@@ -108,8 +108,7 @@ We registered four routes. At the root `/` we show the home or access page wheth
 
 ### 身份验证
 
-`guard()` 是一个函数，给它两个函数作为参数，如果用户通过了身份验证，则执行第一个函数，否则执行第二个。
-它来自 `auth.js`，所以我们创建一个包含以下内容的 `static/auth.js` 文件：
+`guard()` 是一个函数，给它两个函数作为参数，如果用户通过了身份验证，则执行第一个函数，否则执行第二个。它来自 `auth.js`，所以我们创建一个包含以下内容的 `static/auth.js` 文件：
 
 ```javascript
 export function isAuthenticated() {
@@ -151,15 +150,15 @@ export function getAuthUser() {
 }
 ```
 
-`isAuthenticated()` 检查 localStorage 中的 `token` 和 `expires_at`，以判断用户是否已通过身份验证。`getAuthUser()` 从 localStorage 中获取经过身份验证的用户。
+`isAuthenticated()` 检查 `localStorage` 中的 `token` 和 `expires_at`，以判断用户是否已通过身份验证。`getAuthUser()` 从 `localStorage` 中获取经过身份验证的用户。
 
-当我们登录时，我们会将所有的数据保存到 localStorage，这样才有意义。
+当我们登录时，我们会将所有的数据保存到 `localStorage`，这样才有意义。
 
 ### Access 页面
 
 ![access page screenshot][9]
 
-让我们从 access 页面开始。 创建一个包含以下内容的文件 `static/pages/access-page.js`：
+让我们从 `access` 页面开始。 创建一个包含以下内容的文件 `static/pages/access-page.js`：
 
 ```javascript
 const template = document.createElement('template')
@@ -175,7 +174,7 @@ export default function accessPage() {
 
 因为路由器会拦截所有链接点击来进行导航，所以我们必须特别阻止此链接的事件传播。
 
-单击该链接会将我们重定向到后端，然后重定向到 GitHub，再重定向到后端，然后再次重定向到前端； 到 callback 页面。
+单击该链接会将我们重定向到后端，然后重定向到 GitHub，再重定向到后端，然后再次重定向到前端； 到 `callback` 页面。
 
 ### Callback 页面
 
@@ -212,7 +211,7 @@ function getAuthUser(token) {
 }
 ```
 
-callback 页面不呈现任何内容。这是一个异步函数，它使用 URL 查询字符串中的 token 向 `/api/auth_user` 发出 GET 请求，并将所有数据保存到 localStorage。 然后重定向到 `/`。
+`callback` 页面不呈现任何内容。这是一个异步函数，它使用 URL 查询字符串中的 token 向 `/api/auth_user` 发出 GET 请求，并将所有数据保存到 `localStorage`。 然后重定向到 `/`。
 
 ### HTTP
 
@@ -304,7 +303,7 @@ export default {
 
 ![home page screenshot][12]
 
-因此，当用户登录时，将显示主页。 创建一个具有以下内容的 `static/pages/home-page.js` 文件：
+因此，当用户登录时，将显示 `home` 页。 创建一个具有以下内容的 `static/pages/home-page.js` 文件：
 
 ```javascript
 import { getAuthUser } from '../auth.js'
@@ -335,9 +334,9 @@ function onLogoutClick() {
 }
 ```
 
-对于这篇文章，这是我们在主页上呈现的唯一内容。我们显示当前经过身份验证的用户和注销按钮。
+对于这篇文章，这是我们在 `home` 页上呈现的唯一内容。我们显示当前经过身份验证的用户和注销按钮。
 
-当用户单击注销时，我们清除 localStorage 中的所有内容并重新加载页面。
+当用户单击注销时，我们清除 `localStorage` 中的所有内容并重新加载页面。
 
 ### Avatar
 
@@ -351,11 +350,9 @@ export function avatar(user) {
 }
 ```
 
-We use a small figure with the user’s initial in case the avatar URL is null.
-如果头像网址为 null，我们将使用用户的姓名首字母作为初始头像。
+如果头像网址为 `null`，我们将使用用户的姓名首字母作为初始头像。
 
-您可以使用 `attr()` 函数显示带有少量 CSS 样式的首字母。
-You can show the initial with a little of CSS using the `attr()` function.
+你可以使用 `attr()` 函数显示带有少量 CSS 样式的首字母。
 
 ```css
 .avatar[data-initial]::after {
@@ -367,7 +364,7 @@ You can show the initial with a little of CSS using the `attr()` function.
 
 ![access page with login form screenshot][13]
 
-在上一篇文章中，我们为编写了一个登录代码。让我们在 access 页面中为此添加一个表单。 进入 `static/ages/access-page.js`，稍微修改一下。
+在上一篇文章中，我们为编写了一个登录代码。让我们在 `access` 页面中为此添加一个表单。 进入 `static/ages/access-page.js`，稍微修改一下。
 
 ```javascript
 import http from '../http.js'
@@ -423,7 +420,7 @@ function login(username) {
 }
 ```
 
-我添加了一个登录表单。当用户提交表单时。它使用用户名对 `/api/login` 进行 POST 请求。将所有数据保存到 localStorage 并重新加载页面。
+我添加了一个登录表单。当用户提交表单时。它使用用户名对 `/api/login` 进行 POST 请求。将所有数据保存到 `localStorage` 并重新加载页面。
 
 记住在前端完成后删除此表单。
 
@@ -431,7 +428,7 @@ function login(username) {
 
 这就是这篇文章的全部内容。在下一篇文章中，我们将继续使用主页添加一个表单来开始对话，并显示包含最新对话的列表。
 
-[Souce Code][14]
+- [源代码][14]
 
 --------------------------------------------------------------------------------
 
@@ -439,19 +436,19 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-access-page/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/gxlct008)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[gxlct008](https://github.com/gxlct008)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://nicolasparada.netlify.com/
 [b]: https://github.com/lujun9972
-[1]: https://nicolasparada.netlify.com/posts/go-messenger-schema/
-[2]: https://nicolasparada.netlify.com/posts/go-messenger-oauth/
-[3]: https://nicolasparada.netlify.com/posts/go-messenger-conversations/
-[4]: https://nicolasparada.netlify.com/posts/go-messenger-messages/
-[5]: https://nicolasparada.netlify.com/posts/go-messenger-realtime-messages/
-[6]: https://nicolasparada.netlify.com/posts/go-messenger-dev-login/
+[1]: https://linux.cn/article-11396-1.html
+[2]: https://linux.cn/article-11510-1.html
+[3]: https://linux.cn/article-12056-1.html
+[4]: https://linux.cn/article-12680-1.html
+[5]: https://linux.cn/article-12685-1.html
+[6]: https://linux.cn/article-12692-1.html
 [7]: https://nicolasparada.netlify.com/posts/js-router/
 [8]: https://unpkg.com/@nicolasparada/router
 [9]: https://nicolasparada.netlify.com/img/go-messenger-access-page/access-page.png
