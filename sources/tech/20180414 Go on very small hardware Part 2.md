@@ -3,188 +3,186 @@
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-[#]: subject: (Go on very small hardware (Part 2))
+[#]: subject: (Go on very small hardware Part 2)
 [#]: via: (https://ziutek.github.io/2018/04/14/go_on_very_small_hardware2.html)
 [#]: author: (Michał Derkacz https://ziutek.github.io/)
 
-Go on very small hardware (Part 2)
+Go 语言在极小硬件上的运用（二）
 ============================================================
 
 
- [![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/board.jpg)][1] 
+ [![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/board.jpg)][1]
 
-At the end of the [first part][2] of this article I promised to write something about  _interfaces_ . I don’t want to write here a complete or even brief lecture about the interfaces. Instead, I’ll show a simple example how to define and use an interface, and then, how to take advantage of ubiquitous  _io.Writer_  interface. There will also be a few words about  _reflection_  and  _semihosting_ .
 
-Interfaces are a crucial part of Go language. If you want to learn more about them, I suggest to read [Effective Go][3] and [Russ Cox article][4].
+在本文的 [第一部分][2] 的结尾，我承诺要写关于 _interfaces_ 的内容。我不想在这里写有关接口的完整甚至简短的讲义。相反，我将展示一个简单的示例，来说明如何定义和使用接口，以及如何利用无处不在的 _io.Writer_ 接口。还有一些关于 _reflection_ 和 _semihosting_ 的内容。
 
-### Concurrent Blinky – revisited
+接口是 Go 语言的重要组成部分。如果您想了解更多有关它们的信息，我建议您阅读 [Effective Go][3] 和 [Russ Cox 的文章][4]。
 
-When you read the code of previous examples you probably noticed a counterintuitive way to turn the LED on or off. The  _Set_  method was used to turn the LED off and the  _Clear_  method was used to turn the LED on. This is due to driving the LEDs in open-drain configuration. What we can do to make the code less confusing? Let’s define the  _LED_  type with  _On_  and  _Off_  methods:
+### 并发 Blinky – 回顾
+
+当您阅读前面示例的代码时，您可能会注意到一个违反直觉的方式来打开或关闭 LED。 _Set_ 方法用于关闭 LED，_Clear_ 方法用于打开 LED。这是由于在 <ruby>漏极开路配置<rt>open-drain configuration</rt></ruby> 下驱动了 LED。我们可以做些什么来减少代码的混乱？ 让我们用 _On_ 和 _Off_ 方法来定义 _LED_ 类型：
 
 ```
 type LED struct {
-	pin gpio.Pin
+    pin gpio.Pin
 }
 
 func (led LED) On() {
-	led.pin.Clear()
+    led.pin.Clear()
 }
 
 func (led LED) Off() {
-	led.pin.Set()
+    led.pin.Set()
 }
 
 ```
 
-Now we can simply call `led.On()` and `led.Off()` which no longer raises any doubts.
+现在我们可以简单地调用 `led.On()` 和 `led.Off()`，这不会再引起任何疑惑了。
 
-In all previous examples I tried to use the same open-drain configuration to don’t complicate the code. But in the last example, it would be easier for me to connect the third LED between GND and PA3 pins and configure PA3 in push-pull mode. The next example will use a LED connected this way.
 
-But our new  _LED_  type doesn’t support the push-pull configuration. In fact, we should call it  _OpenDrainLED_  and define another  _PushPullLED_  type:
+在前面的所有示例中，我都尝试使用相同的 <ruby>漏极开路配置<rt>open-drain configuration</rt></ruby>来 避免代码复杂化。但是在最后一个示例中，对于我来说，将第三个 LED 连接到 GND 和 PA3 引脚之间并将 PA3 配置为<ruby>推挽模式<rt>push-pull mode</rt></ruby>会更容易。下一个示例将使用以此方式连接的 LED。
+
+但是我们的新 _LED_ 类型不支持推挽配置。实际上，我们应该将其称为 _OpenDrainLED_，并定义另一个类型 _PushPullLED_：
 
 ```
 type PushPullLED struct {
-	pin gpio.Pin
+    pin gpio.Pin
 }
 
 func (led PushPullLED) On() {
-	led.pin.Set()
+    led.pin.Set()
 }
 
 func (led PushPullLED) Off() {
-	led.pin.Clear()
+    led.pin.Clear()
 }
 
 ```
 
-Note, that both types have the same methods that work the same. It would be nice if the code that operates on LEDs could use both types, without paying attention to which one it uses at the moment. The  _interface type_  comes to help:
+请注意，这两种类型都具有相同的方法，它们的工作方式也相同。如果在 LED 上运行的代码可以同时使用这两种类型，而不必注意当前使用的是哪种类型，那就太好了。 _interface type_ 可以提供帮助：
 
 ```
 package main
 
 import (
-	"delay"
+    "delay"
 
-	"stm32/hal/gpio"
-	"stm32/hal/system"
-	"stm32/hal/system/timer/systick"
+    "stm32/hal/gpio"
+    "stm32/hal/system"
+    "stm32/hal/system/timer/systick"
 )
 
 type LED interface {
-	On()
-	Off()
+    On()
+    Off()
 }
 
 type PushPullLED struct{ pin gpio.Pin }
 
 func (led PushPullLED) On()  {
-	led.pin.Set()
+    led.pin.Set()
 }
 
 func (led PushPullLED) Off() {
-	led.pin.Clear()
+    led.pin.Clear()
 }
 
 func MakePushPullLED(pin gpio.Pin) PushPullLED {
-	pin.Setup(&gpio.Config{Mode: gpio.Out, Driver: gpio.PushPull})
-	return PushPullLED{pin}
+    pin.Setup(&gpio.Config{Mode: gpio.Out, Driver: gpio.PushPull})
+    return PushPullLED{pin}
 }
 
 type OpenDrainLED struct{ pin gpio.Pin }
 
 func (led OpenDrainLED) On()  {
-	led.pin.Clear()
+    led.pin.Clear()
 }
 
 func (led OpenDrainLED) Off() {
-	led.pin.Set()
+    led.pin.Set()
 }
 
 func MakeOpenDrainLED(pin gpio.Pin) OpenDrainLED {
-	pin.Setup(&gpio.Config{Mode: gpio.Out, Driver: gpio.OpenDrain})
-	return OpenDrainLED{pin}
+    pin.Setup(&gpio.Config{Mode: gpio.Out, Driver: gpio.OpenDrain})
+    return OpenDrainLED{pin}
 }
 
 var led1, led2 LED
 
 func init() {
-	system.SetupPLL(8, 1, 48/8)
-	systick.Setup(2e6)
+    system.SetupPLL(8, 1, 48/8)
+    systick.Setup(2e6)
 
-	gpio.A.EnableClock(false)
-	led1 = MakeOpenDrainLED(gpio.A.Pin(4))
-	led2 = MakePushPullLED(gpio.A.Pin(3))
+    gpio.A.EnableClock(false)
+    led1 = MakeOpenDrainLED(gpio.A.Pin(4))
+    led2 = MakePushPullLED(gpio.A.Pin(3))
 }
 
 func blinky(led LED, period int) {
-	for {
-		led.On()
-		delay.Millisec(100)
-		led.Off()
-		delay.Millisec(period - 100)
-	}
+    for {
+        led.On()
+        delay.Millisec(100)
+        led.Off()
+        delay.Millisec(period - 100)
+    }
 }
 
 func main() {
-	go blinky(led1, 500)
-	blinky(led2, 1000)
+    go blinky(led1, 500)
+    blinky(led2, 1000)
 }
 
 ```
 
-We’ve defined  _LED_  interface that has two methods:  _On_  and  _Off_ . The  _PushPullLED_  and  _OpenDrainLED_ types represent two ways of driving LEDs. We also defined two  _Make_  _*LED_  functions which act as constructors. Both types implement the  _LED_  interface, so the values of these types can be assigned to the variables of type  _LED_ :
+我们定义了 _LED_ 接口，它有两个方法： _On_ 和 _Off_。 _PushPullLED_ 和 _OpenDrainLED_ 类型代表两种驱动 LED 的方式。我们还定义了两个用作构造函数的 _Make_ _*LED_ 函数。这两种类型都实现了 _LED_ 接口，因此可以将这些类型的值赋给 _LED_ 类型的变量：
 
 ```
 led1 = MakeOpenDrainLED(gpio.A.Pin(4))
 led2 = MakePushPullLED(gpio.A.Pin(3))
-
 ```
 
-In this case the assignability is checked at compile time. After the assignment the  _led1_  variable contains `OpenDrainLED{gpio.A.Pin(4)}` and a pointer to the method set of the  _OpenDrainLED_  type. The `led1.On()` call roughly corresponds to the following C code:
+在这种情况下，可赋值性在编译时检查。赋值后，_led1_ 变量包含一个 `OpenDrainLED{gpio.A.Pin(4)}`，以及一个指向 _OpenDainLED_ 类型的方法集的指针。 `led1.On()` 调用大致对应于以下 C 代码：
 
 ```
 led1.methods->On(led1.value)
-
 ```
 
-As you can see, this is quite inexpensive abstraction if only consider the function call overhead.
+如您所见，如果仅考虑函数调用的开销，这是相当便宜的抽象。
 
-But any assigment to an interface causes to include a lot of information about the assigned type. There can be a lot information in case of complex type which consists of many other types:
+
+但是，对接口的任何赋值都会导致包含有关已赋值类型的大量信息。对于由许多其他类型组成的复杂类型，可能会有很多信息：
 
 ```
 $ egc
-$ arm-none-eabi-size cortexm0.elf 
+$ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   10356     196     212   10764    2a0c cortexm0.elf
-
 ```
 
-If we don’t use [reflection][5] we can save some bytes by avoid to include the names of types and struct fields:
+如果我们不使用 [反射][5]，可以通过避免包含类型和结构字段的名称来节省一些字节：
 
 ```
 $ egc -nf -nt
-$ arm-none-eabi-size cortexm0.elf 
+$ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   10312     196     212   10720    29e0 cortexm0.elf
-
 ```
 
-The resulted binary still contains some necessary information about types and full information about all exported methods (with names). This information is need for checking assignability at runtime, mainly when you assign one value stored in the interface variable to any other variable.
+生成的二进制文件仍然包含一些有关类型的必要信息和关于所有导出方法（带有名称）的完整信息。在运行时，主要是当您将存储在接口变量中的一个值赋值给任何其他变量时，需要此信息来检查可赋值性。
 
-We can also remove type and field names from imported packages by recompiling them all:
+我们还可以通过重新编译所导入的包来删除它们的类型和字段名称：
 
 ```
 $ cd $HOME/emgo
 $ ./clean.sh
 $ cd $HOME/firstemgo
 $ egc -nf -nt
-$ arm-none-eabi-size cortexm0.elf 
+$ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   10272     196     212   10680    29b8 cortexm0.elf
-
 ```
 
-Let’s load this program to see does it work as expected. This time we’ll use the [st-flash][6] command:
+让我们加载这个程序，看看它是否按预期工作。这一次我们将使用 [st-flash][6] 命令：
 
 ```
 $ arm-none-eabi-objcopy -O binary cortexm0.elf cortexm0.bin
@@ -205,106 +203,105 @@ Flash page at addr: 0x08002800 erased
 
 ```
 
-I didn’t connected the NRST signal to the programmer so the  _—reset_  option can’t be used and the reset button have to be pressed to run the program.
+我没有将 NRST 信号连接到编程器，因此无法使用 _-reset_ 选项，必须按下 reset 按钮才能运行程序。
 
 ![Interfaces](https://ziutek.github.io/images/mcu/f030-demo-board/interfaces.png)
 
-It seems that the  _st-flash_  works a bit unreliably with this board (often requires reseting the ST-LINK dongle). Additionally, the current version doesn’t issue the reset command over SWD (uses only NRST signal). The software reset isn’t realiable however it usually works and lack of it introduces inconvenience. For this board-programmer pair the  _OpenOCD_  works much better.
+看来，_st-flash_ 与此板配合使用有点不可靠 (通常需要重置 ST-LINK 加密狗)。此外，当前版本不会通过 SWD 发出 reset 命令 (仅使用 NRST 信号)。 软件重置是不现实的，但是它通常是有效的，缺少它会将会带来不便。对于<ruby>电路板-程序员<rt>board-programmer</rt></ruby> 组合 _OpenOCD_ 工作得更好。
 
 ### UART
 
-UART (Universal Aynchronous Receiver-Transmitter) is still one of the most important peripherals of today’s microcontrollers. Its advantage is unique combination of the following properties:
+UART（<ruby>通用异步收发传输器<rt>Universal Aynchronous Receiver-Transmitter</rt></ruby>）仍然是当今微控制器最重要的外设之一。它的优点是以下属性的独特组合：
 
-*   relatively high speed,
+* 相对较高的速度，
 
-*   only two signal lines (even one in case of half-duplex communication),
+* 仅两条信号线（在 <ruby>半双工<rt>half-duplex</rt></ruby> 通信的情况下甚至一条），
 
-*   symmetry of roles,
+* 角色对称，
 
-*   synchronous in-band signaling about new data (start bit),
+* 关于新数据的 <ruby>同步带内信令<rt>synchronous in-band signaling</rt></ruby>（起始位），
 
-*   accurate timing inside transmitted word.
+* 在传输 <ruby>字<rt>words</rt></ruby> 内的精确计时。
 
-This causes that UART, originally intedned to transmit asynchronous messages consisting of 7-9 bit words, is also used to efficiently implement various other phisical protocols such as used by [WS28xx LEDs][7] or [1-wire][8] devices.
 
-However, we will use the UART in its usual role: to printing text messages from our program.
+这使得最初用于传输由 7-9 位 words 组成的异步消息的 UART，也被用于有效地实现各种其他物理协议，例如被 [WS28xx LEDs][7] 或 [1-wire][8] 设备使用的协议。
+
+但是，我们将以其通常的角色使用 UART：从程序中打印文本消息。
 
 ```
 package main
 
 import (
-	"io"
-	"rtos"
+    "io"
+    "rtos"
 
-	"stm32/hal/dma"
-	"stm32/hal/gpio"
-	"stm32/hal/irq"
-	"stm32/hal/system"
-	"stm32/hal/system/timer/systick"
-	"stm32/hal/usart"
+    "stm32/hal/dma"
+    "stm32/hal/gpio"
+    "stm32/hal/irq"
+    "stm32/hal/system"
+    "stm32/hal/system/timer/systick"
+    "stm32/hal/usart"
 )
 
 var tts *usart.Driver
 
 func init() {
-	system.SetupPLL(8, 1, 48/8)
-	systick.Setup(2e6)
+    system.SetupPLL(8, 1, 48/8)
+    systick.Setup(2e6)
 
-	gpio.A.EnableClock(true)
-	tx := gpio.A.Pin(9)
+    gpio.A.EnableClock(true)
+    tx := gpio.A.Pin(9)
 
-	tx.Setup(&gpio.Config{Mode: gpio.Alt})
-	tx.SetAltFunc(gpio.USART1_AF1)
-	d := dma.DMA1
-	d.EnableClock(true)
-	tts = usart.NewDriver(usart.USART1, d.Channel(2, 0), nil, nil)
-	tts.Periph().EnableClock(true)
-	tts.Periph().SetBaudRate(115200)
-	tts.Periph().Enable()
-	tts.EnableTx()
+    tx.Setup(&gpio.Config{Mode: gpio.Alt})
+    tx.SetAltFunc(gpio.USART1_AF1)
+    d := dma.DMA1
+    d.EnableClock(true)
+    tts = usart.NewDriver(usart.USART1, d.Channel(2, 0), nil, nil)
+    tts.Periph().EnableClock(true)
+    tts.Periph().SetBaudRate(115200)
+    tts.Periph().Enable()
+    tts.EnableTx()
 
-	rtos.IRQ(irq.USART1).Enable()
-	rtos.IRQ(irq.DMA1_Channel2_3).Enable()
+    rtos.IRQ(irq.USART1).Enable()
+    rtos.IRQ(irq.DMA1_Channel2_3).Enable()
 }
 
 func main() {
-	io.WriteString(tts, "Hello, World!\r\n")
+    io.WriteString(tts, "Hello, World!\r\n")
 }
 
 func ttsISR() {
-	tts.ISR()
+    tts.ISR()
 }
 
 func ttsDMAISR() {
-	tts.TxDMAISR()
+    tts.TxDMAISR()
 }
 
 //c:__attribute__((section(".ISRs")))
 var ISRs = [...]func(){
-	irq.USART1:          ttsISR,
-	irq.DMA1_Channel2_3: ttsDMAISR,
+    irq.USART1:          ttsISR,
+    irq.DMA1_Channel2_3: ttsDMAISR,
 }
 
 ```
 
-You can find this code slightly complicated but for now there is no simpler UART driver in STM32 HAL (simple polling driver will be probably useful in some cases). The  _usart.Driver_  is efficient driver that uses DMA and interrupts to ofload the CPU.
+您会发现此代码可能有些复杂，但目前 STM32 HAL 中没有更简单的 UART 驱动程序（在某些情况下，简单的轮询驱动程序可能会很有用）。 _usart.Driver_ 是使用 DMA 和中断来卸载 CPU 的高效驱动程序。
 
-STM32 USART peripheral provides traditional UART and its synchronous version. To use it as output we have to connect its Tx signal to the right GPIO pin:
+STM32 USART 外设提供传统的 UART 及其同步版本。要将其用作输出，我们必须将其 Tx 信号连接到正确的 GPIO 引脚：
 
 ```
 tx.Setup(&gpio.Config{Mode: gpio.Alt})
 tx.SetAltFunc(gpio.USART1_AF1)
-
 ```
 
-The  _usart.Driver_  is configured in Tx-only mode (rxdma and rxbuf are set to nil):
+在 Tx-only 模式下配置 _usart.Driver_ （rxdma 和 rxbuf 设置为 nil）：
 
 ```
 tts = usart.NewDriver(usart.USART1, d.Channel(2, 0), nil, nil)
-
 ```
 
-We use its  _WriteString_  method to print the famous sentence. Let’s clean everything and compile this program:
+我们使用它的 _WriteString_ 方法来打印这句名句。让我们清理所有内容并编译该程序：
 
 ```
 $ cd $HOME/emgo
@@ -312,20 +309,19 @@ $ ./clean.sh
 $ cd $HOME/firstemgo
 $ egc
 $ arm-none-eabi-size cortexm0.elf
-  text	   data	    bss	    dec	    hex	filename
-  12728	    236	    176	  13140	   3354	cortexm0.elf
-
+  text       data        bss        dec        hex    filename
+  12728        236        176      13140       3354    cortexm0.elf
 ```
 
-To see something you need an UART peripheral in your PC.
+要查看某些内容，您需要在 PC 中使用 UART 外设。
 
-**Do not use RS232 port or USB to RS232 converter!**
+**请勿使用 RS232 端口或 USB 转 RS232 转换器！**
 
-The STM32 family uses 3.3 V logic but RS232 can produce from -15 V to +15 V which will probably demage your MCU. You need USB to UART converter that uses 3.3 V logic. Popular converters are based on FT232 or CP2102 chips.
+STM32 系列使用 3.3V 逻辑，但是 RS232 可以产生 -15 V ~ +15 V 的电压，这可能会损坏您的 MCU。您需要使用 3.3 V 逻辑的 USB 转 UART 转换器。流行的转换器基于 FT232 或 CP2102 芯片。
 
 ![UART](https://ziutek.github.io/images/mcu/f030-demo-board/uart.jpg)
 
-You also need some terminal emulator program (I prefer [picocom][9]). Flash the new image, run the terminal emulator and press the reset button a few times:
+您还需要一些终端仿真程序 (我更喜欢 [picocom][9])。刷新新图像，运行终端仿真器，然后按几次 reset 按钮：
 
 ```
 $ openocd -d0 -f interface/stlink.cfg -f target/stm32f0x.cfg -c 'init; program cortexm0.elf; reset run; exit'
@@ -338,18 +334,18 @@ adapter speed: 1000 kHz
 adapter_nsrst_delay: 100
 none separate
 adapter speed: 950 kHz
-target halted due to debug-request, current mode: Thread 
+target halted due to debug-request, current mode: Thread
 xPSR: 0xc1000000 pc: 0x080016f4 msp: 0x20000a20
 adapter speed: 4000 kHz
 ** Programming Started **
 auto erase enabled
-target halted due to breakpoint, current mode: Thread 
+target halted due to breakpoint, current mode: Thread
 xPSR: 0x61000000 pc: 0x2000003a msp: 0x20000a20
 wrote 13312 bytes from file cortexm0.elf in 1.020185s (12.743 KiB/s)
 ** Programming Finished **
 adapter speed: 950 kHz
 $
-$ picocom -b 115200 /dev/ttyUSB0 
+$ picocom -b 115200 /dev/ttyUSB0
 picocom v3.1
 
 port is        : /dev/ttyUSB0
@@ -366,8 +362,8 @@ hangup is      : no
 nolock is      : no
 send_cmd is    : sz -vv
 receive_cmd is : rz -vv -E
-imap is        : 
-omap is        : 
+imap is        :
+omap is        :
 emap is        : crcrlf,delbs,
 logfile is     : none
 initstring     : none
@@ -379,69 +375,62 @@ Terminal ready
 Hello, World!
 Hello, World!
 Hello, World!
-
 ```
 
-Every press of the reset button produces new “Hello, World!” line. Everything works as expected.
+每次按下 reset 按钮都会产生新的 “Hello，World！”行。一切都在按预期进行。
 
-To see bi-directional UART code for this MCU check out [this example][10].
+要查看此 MCU 的 <ruby>双向<rt>bi-directional</rt></ruby> UART 代码，请查看 [此示例][10]。
 
-### io.Writer
+### io.Writer 接口
 
-The  _io.Writer_  interface is probably the second most commonly used interface type in Go, right after the  _error_  interface. Its definition looks like this:
+_io.Writer_ 接口可能是 Go 中第二种最常用的接口类型，紧接在 _error_ 接口之后。其定义如下所示：
 
 ```
 type Writer interface {
-	Write(p []byte) (n int, err error)
+    Write(p []byte) (n int, err error)
 }
-
 ```
 
- _usart.Driver_  implements  _io.Writer_  so we can replace:
+ _usart.Driver_ 实现了 _io.Writer_ ，因此我们可以替换：
 
 ```
 tts.WriteString("Hello, World!\r\n")
-
 ```
 
-with
+为
 
 ```
 io.WriteString(tts, "Hello, World!\r\n")
-
 ```
 
-Additionally you need to add the  _io_  package to the  _import_  section.
+此外，您需要将 _io_ 包添加到 _import_ 部分。
 
-The declaration of  _io.WriteString_  function looks as follows:
+_io.WriteString_ 函数的声明如下所示：
 
 ```
 func WriteString(w Writer, s string) (n int, err error)
-
 ```
 
-As you can see, the  _io.WriteString_  allows to write strings using any type that implements  _io.Writer_ interface. Internally it check does the underlying type has  _WriteString_  method and uses it instead of  _Write_  if available.
+如您所见，_io.WriteString_ 允许使用实现了 _io.Writer_ 接口的任何类型来编写字符串。在内部，它检查基础类型是否具有 _WriteString_ 方法，并使用该方法代替 _Write_ (如果可用)。
 
-Let’s compile the modified program:
+让我们编译修改后的程序：
 
 ```
 $ egc
-$ arm-none-eabi-size cortexm0.elf 
+$ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   15456     320     248   16024    3e98 cortexm0.elf
-
 ```
 
-As you can see,  _io.WriteString_  causes a significant increase in the size of the binary: 15776 - 12964 = 2812 bytes. There isn’t too much space left on the Flash. What caused such a drastic increase in size?
+如您所见，_io.WriteString_ 导致二进制文件的大小显着增加：15776-12964 = 2812字节。 Flash 上没有太多空间了。是什么引起了这么大规模的增长？
 
-Using the command:
+使用这个命令：
 
 ```
 arm-none-eabi-nm --print-size --size-sort --radix=d cortexm0.elf
-
 ```
 
-we can print all symbols ordered by its size for both cases. By filtering and analyzing the obtained data (awk, diff) we can find about 80 new symbols. The ten largest are:
+我们可以打印两种情况下按其大小排序的所有符号。通过过滤和分析获得的数据（awk，diff），我们可以找到大约 80 个新符号。最大的十个如下所示：
 
 ```
 > 00000062 T stm32$hal$usart$Driver$DisableRx
@@ -453,46 +442,44 @@ we can print all symbols ordered by its size for both cases. By filtering and an
 > 00000100 T stm32$hal$usart$Error$Error
 > 00000360 T io$WriteString
 > 00000660 T stm32$hal$usart$Driver$Read
-
 ```
 
-So, even though we don’t use the  _usart.Driver.Read_  method it was compiled in, same as  _DisableRx_ ,  _RxDMAISR_ ,  _EnableRx_  and other not mentioned above. Unfortunately, if you assign something to the interface, its full method set is required (with all dependences). This isn’t a problem for a large programs that use most of the methods anyway. But for our simple one it’s a huge burden.
+因此，即使我们不使用 _usart.Driver.Read_ 方法进行编译，也与 _DisableRx_、_RxDMAISR_、_EnableRx_ 以及上面未提及的其他方法相同。不幸的是，如果您为接口赋值了一些内容，那么它的完整方法集是必需的（包含所有依赖项）。对于使用大多数方法的大型程序来说，这不是问题。但是对于我们这种极简的情况而言，这是一个巨大的负担。
 
-We’re already close to the limits of our MCU but let’s try to print some numbers (you need to replace  _io_ package with  _strconv_  in  _import_  section):
+我们已经接近 MCU 的极限，但让我们尝试打印一些数字（您需要在 _import_ 部分中用 _strconv_ 替换  _io_ 包）：
 
 ```
 func main() {
-	a := 12
-	b := -123
+    a := 12
+    b := -123
 
-	tts.WriteString("a = ")
-	strconv.WriteInt(tts, a, 10, 0, 0)
-	tts.WriteString("\r\n")
-	tts.WriteString("b = ")
-	strconv.WriteInt(tts, b, 10, 0, 0)
-	tts.WriteString("\r\n")
+    tts.WriteString("a = ")
+    strconv.WriteInt(tts, a, 10, 0, 0)
+    tts.WriteString("\r\n")
+    tts.WriteString("b = ")
+    strconv.WriteInt(tts, b, 10, 0, 0)
+    tts.WriteString("\r\n")
 
-	tts.WriteString("hex(a) = ")
-	strconv.WriteInt(tts, a, 16, 0, 0)
-	tts.WriteString("\r\n")
-	tts.WriteString("hex(b) = ")
-	strconv.WriteInt(tts, b, 16, 0, 0)
-	tts.WriteString("\r\n")
+    tts.WriteString("hex(a) = ")
+    strconv.WriteInt(tts, a, 16, 0, 0)
+    tts.WriteString("\r\n")
+    tts.WriteString("hex(b) = ")
+    strconv.WriteInt(tts, b, 16, 0, 0)
+    tts.WriteString("\r\n")
 }
-
 ```
 
-As in the case of  _io.WriteString_  function, the first argument of the  _strconv.WriteInt_  is of type  _io.Writer_ .
+与使用 _io.WriteString_ 函数的情况一样，_strconv.WriteInt_ 的第一个参数的类型为 _io.Writer_ 。
+
 
 ```
 $ egc
 /usr/local/arm/bin/arm-none-eabi-ld: /home/michal/firstemgo/cortexm0.elf section `.rodata' will not fit in region `Flash'
 /usr/local/arm/bin/arm-none-eabi-ld: region `Flash' overflowed by 692 bytes
 exit status 1
-
 ```
 
-This time we’ve run out of space. Let’s try to slim down the information about types:
+这一次我们的空间用完了。让我们试着精简一下有关类型的信息：
 
 ```
 $ cd $HOME/emgo
@@ -502,391 +489,376 @@ $ egc -nf -nt
 $ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   15876     316     320   16512    4080 cortexm0.elf
-
 ```
 
-It was close, but we fit. Let’s load and run this code:
+很接近，但很合适。让我们加载并运行此代码：
 
 ```
 a = 12
 b = -123
 hex(a) = c
 hex(b) = -7b
-
 ```
 
-The  _strconv_  package in Emgo is quite different from its archetype in Go. It is intended for direct use to write formatted numbers and in many cases can replace heavy  _fmt_  package. That’s why the function names start with  _Write_  instead of  _Format_  and have additional two parameters. Below is an example of their use:
+Emgo 中的 _strconv_ 包与 Go 中的原型有很大的不同。 它旨在直接用于写入格式化的数字，并且在许多情况下可以替换繁重的 _fmt_ 包。 这就是为什么函数名称以 _Write_ 而不是 _Format_ 开头，并具有额外的两个参数的原因。 以下是其用法示例：
 
 ```
 func main() {
-	b := -123
-	strconv.WriteInt(tts, b, 10, 0, 0)
-	tts.WriteString("\r\n")
-	strconv.WriteInt(tts, b, 10, 6, ' ')
-	tts.WriteString("\r\n")
-	strconv.WriteInt(tts, b, 10, 6, '0')
-	tts.WriteString("\r\n")
-	strconv.WriteInt(tts, b, 10, 6, '.')
-	tts.WriteString("\r\n")
-	strconv.WriteInt(tts, b, 10, -6, ' ')
-	tts.WriteString("\r\n")
-	strconv.WriteInt(tts, b, 10, -6, '0')
-	tts.WriteString("\r\n")
-	strconv.WriteInt(tts, b, 10, -6, '.')
-	tts.WriteString("\r\n")
+    b := -123
+    strconv.WriteInt(tts, b, 10, 0, 0)
+    tts.WriteString("\r\n")
+    strconv.WriteInt(tts, b, 10, 6, ' ')
+    tts.WriteString("\r\n")
+    strconv.WriteInt(tts, b, 10, 6, '0')
+    tts.WriteString("\r\n")
+    strconv.WriteInt(tts, b, 10, 6, '.')
+    tts.WriteString("\r\n")
+    strconv.WriteInt(tts, b, 10, -6, ' ')
+    tts.WriteString("\r\n")
+    strconv.WriteInt(tts, b, 10, -6, '0')
+    tts.WriteString("\r\n")
+    strconv.WriteInt(tts, b, 10, -6, '.')
+    tts.WriteString("\r\n")
 }
-
 ```
 
-There is its output:
+下面是它的输出：
 
 ```
 -123
   -123
 -00123
 ..-123
--123  
--123  
+-123
+-123
 -123..
-
 ```
 
-### Unix streams and Morse code
+### Unix 流 和 <ruby>莫尔斯电码<rt>Morse code</rt></ruby>
 
-Thanks to the fact that most of the functions that write something use  _io.Writer_  instead of concrete type (eg.  _FILE_  in C) we get a functionality similar to  _Unix streams_ . In Unix we can easily combine simple commands to perform larger tasks. For example, we can write text to the file this way:
+得益于事实上大多数写入功能的函数都使用 _io.Writer_ 而不是具体类型（例如 C 中的 _FILE_ ），因此我们获得了类似于 _Unix stream_ 的功能。在 Unix 中，我们可以轻松地组合简单的命令来执行更大的任务。例如，我们可以通过以下方式将文本写入文件：
 
 ```
 echo "Hello, World!" > file.txt
-
 ```
 
-The `>` operator writes the output stream of the preceding command to the file. There is also `|`operator that connects output and input streams of adjacent commands.
+`>` 操作符将前面命令的输出流写入文件。还有 `|` 操作符，用于连接相邻命令的输出流和输入流。
 
-Thanks to the streams we can easily convert/filter output of any command. For example, to convert all letters to uppercase we can filter the echo’s output through  _tr_  command:
 
+多亏了流，我们可以轻松地转换/过滤任何命令的输出。例如，要将所有字母转换为大写，我们可以通过 _tr_ 命令过滤 echo 的输出：
 ```
 echo "Hello, World!" | tr a-z A-Z > file.txt
-
 ```
 
-To show the analogy between  _io.Writer_  and Unix streams let’s write our:
+为了显示 _io.Writer_ 和 Unix 流之间的类比，让我们编写以下代码：
 
 ```
 io.WriteString(tts, "Hello, World!\r\n")
-
 ```
 
-in the following pseudo-unix form:
+采用以下伪 unix 形式：
 
 ```
 io.WriteString "Hello, World!" | usart.Driver usart.USART1
-
 ```
 
-The next example will show how to do this:
+下一个示例将显示如何执行此操作：
 
 ```
 io.WriteString "Hello, World!" | MorseWriter | usart.Driver usart.USART1
-
 ```
 
-Let’s create a simple encoder that encodes the text written to it using Morse coding:
+让我们来创建一个简单的编码器，它使用莫尔斯电码对写入的文本进行编码：
 
 ```
 type MorseWriter struct {
-	W io.Writer
+    W io.Writer
 }
 
 func (w *MorseWriter) Write(s []byte) (int, error) {
-	var buf [8]byte
-	for n, c := range s {
-		switch {
-		case c == '\n':
-			c = ' ' // Replace new lines with spaces.
-		case 'a' <= c && c <= 'z':
-			c -= 'a' - 'A' // Convert to upper case.
-		}
-		if c < ' ' || 'Z' < c {
-			continue // c is outside ASCII [' ', 'Z']
-		}
-		var symbol morseSymbol
-		if c == ' ' {
-			symbol.length = 1
-			buf[0] = ' '
-		} else {
-			symbol = morseSymbols[c-'!']
-			for i := uint(0); i < uint(symbol.length); i++ {
-				if (symbol.code>>i)&1 != 0 {
-					buf[i] = '-'
-				} else {
-					buf[i] = '.'
-				}
-			}
-		}
-		buf[symbol.length] = ' '
-		if _, err := w.W.Write(buf[:symbol.length+1]); err != nil {
-			return n, err
-		}
-	}
-	return len(s), nil
+    var buf [8]byte
+    for n, c := range s {
+        switch {
+        case c == '\n':
+            c = ' ' // Replace new lines with spaces.
+        case 'a' <= c && c <= 'z':
+            c -= 'a' - 'A' // Convert to upper case.
+        }
+        if c < ' ' || 'Z' < c {
+            continue // c is outside ASCII [' ', 'Z']
+        }
+        var symbol morseSymbol
+        if c == ' ' {
+            symbol.length = 1
+            buf[0] = ' '
+        } else {
+            symbol = morseSymbols[c-'!']
+            for i := uint(0); i < uint(symbol.length); i++ {
+                if (symbol.code>>i)&1 != 0 {
+                    buf[i] = '-'
+                } else {
+                    buf[i] = '.'
+                }
+            }
+        }
+        buf[symbol.length] = ' '
+        if _, err := w.W.Write(buf[:symbol.length+1]); err != nil {
+            return n, err
+        }
+    }
+    return len(s), nil
 }
 
 type morseSymbol struct {
-	code, length byte
+    code, length byte
 }
 
 //emgo:const
 var morseSymbols = [...]morseSymbol{
-	{1<<0 | 1<<1 | 1<<2, 4}, // ! ---.
-	{1<<1 | 1<<4, 6},        // " .-..-.
-	{},                      // #
-	{1<<3 | 1<<6, 7},        // $ ...-..-
+    {1<<0 | 1<<1 | 1<<2, 4}, // ! ---.
+    {1<<1 | 1<<4, 6},        // " .-..-.
+    {},                      // #
+    {1<<3 | 1<<6, 7},        // $ ...-..-
 
-	// Some code omitted...
+    // Some code omitted...
 
-	{1<<0 | 1<<3, 4},        // X -..-
-	{1<<0 | 1<<2 | 1<<3, 4}, // Y -.--
-	{1<<0 | 1<<1, 4},        // Z --..
+    {1<<0 | 1<<3, 4},        // X -..-
+    {1<<0 | 1<<2 | 1<<3, 4}, // Y -.--
+    {1<<0 | 1<<1, 4},        // Z --..
 }
-
 ```
 
-You can find the full  _morseSymbols_  array [here][11]. The `//emgo:const` directive ensures that  _morseSymbols_ array won’t be copied to the RAM.
+您可以在 [这里][11] 找到完整的 _morseSymbols_ 数组。 `//emgo:const` 指令确保 _morseSymbols_ 数组不会被复制到 RAM 中。
 
-Now we can print our sentence in two ways:
+现在我们可以通过两种方式打印句子：
 
 ```
 func main() {
-	s := "Hello, World!\r\n"
-	mw := &MorseWriter{tts}
+    s := "Hello, World!\r\n"
+    mw := &MorseWriter{tts}
 
-	io.WriteString(tts, s)
-	io.WriteString(mw, s)
+    io.WriteString(tts, s)
+    io.WriteString(mw, s)
 }
-
 ```
 
-We use the pointer to the  _MorseWriter_  `&MorseWriter{tts}` instead os simple `MorseWriter{tts}` value beacuse the  _MorseWriter_  is to big to fit into an interface variable.
+我们使用指向 _MorseWriter_ `&MorseWriter{tts}` 的指针而不是简单的 `MorseWriter{tts}` 值，因为 _MorseWriter_ 太大，不适合接口变量。
 
-Emgo, unlike Go, doesn’t dynamically allocate memory for value stored in interface variable. The interface type has limited size, equal to the size of three pointers (to fit  _slice_ ) or two  _float64_  (to fit  _complex128_ ), what is bigger. It can directly store values of all basic types and small structs/arrays but for bigger values you must use pointers.
 
-Let’s compile this code and see its output:
+与 Go 不同，Emgo 不会为存储在接口变量中的值动态分配内存。接口类型的大小受限制，等于三个指针（适合 _slice_ ）或两个 _float64_（适合 _complex128_ ）的大小，以较大者为准。它可以直接存储所有基本类型和小型 “结构体/数组” 的值，但是对于较大的值，您必须使用指针。
+
+让我们编译此代码并查看其输出：
 
 ```
 $ egc
 $ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   15152     324     248   15724    3d6c cortexm0.elf
-
 ```
 
 ```
 Hello, World!
 .... . .-.. .-.. --- --..--   .-- --- .-. .-.. -.. ---.
-
 ```
 
-### The Ultimate Blinky
+### 终极 Blinky
 
-The  _Blinky_  is hardware equivalent of  _Hello, World!_  program. Once we have a Morse encoder we can easly combine both to obtain the  _Ultimate Blinky_  program:
+_Blinky_ 等效于 _Hello，World！_ 程序的硬件。一旦有了 Morse 编码器，我们就可以轻松地将两者结合起来以获得 _Ultimate Blinky_ 程序：
 
 ```
 package main
 
 import (
-	"delay"
-	"io"
+    "delay"
+    "io"
 
-	"stm32/hal/gpio"
-	"stm32/hal/system"
-	"stm32/hal/system/timer/systick"
+    "stm32/hal/gpio"
+    "stm32/hal/system"
+    "stm32/hal/system/timer/systick"
 )
 
 var led gpio.Pin
 
 func init() {
-	system.SetupPLL(8, 1, 48/8)
-	systick.Setup(2e6)
+    system.SetupPLL(8, 1, 48/8)
+    systick.Setup(2e6)
 
-	gpio.A.EnableClock(false)
-	led = gpio.A.Pin(4)
+    gpio.A.EnableClock(false)
+    led = gpio.A.Pin(4)
 
-	cfg := gpio.Config{Mode: gpio.Out, Driver: gpio.OpenDrain, Speed: gpio.Low}
-	led.Setup(&cfg)
+    cfg := gpio.Config{Mode: gpio.Out, Driver: gpio.OpenDrain, Speed: gpio.Low}
+    led.Setup(&cfg)
 }
 
 type Telegraph struct {
-	Pin   gpio.Pin
-	Dotms int // Dot length [ms]
+    Pin   gpio.Pin
+    Dotms int // Dot length [ms]
 }
 
 func (t Telegraph) Write(s []byte) (int, error) {
-	for _, c := range s {
-		switch c {
-		case '.':
-			t.Pin.Clear()
-			delay.Millisec(t.Dotms)
-			t.Pin.Set()
-			delay.Millisec(t.Dotms)
-		case '-':
-			t.Pin.Clear()
-			delay.Millisec(3 * t.Dotms)
-			t.Pin.Set()
-			delay.Millisec(t.Dotms)
-		case ' ':
-			delay.Millisec(3 * t.Dotms)
-		}
-	}
-	return len(s), nil
+    for _, c := range s {
+        switch c {
+        case '.':
+            t.Pin.Clear()
+            delay.Millisec(t.Dotms)
+            t.Pin.Set()
+            delay.Millisec(t.Dotms)
+        case '-':
+            t.Pin.Clear()
+            delay.Millisec(3 * t.Dotms)
+            t.Pin.Set()
+            delay.Millisec(t.Dotms)
+        case ' ':
+            delay.Millisec(3 * t.Dotms)
+        }
+    }
+    return len(s), nil
 }
 
 func main() {
-	telegraph := &MorseWriter{Telegraph{led, 100}}
-	for {
-		io.WriteString(telegraph, "Hello, World! ")
-	}
+    telegraph := &MorseWriter{Telegraph{led, 100}}
+    for {
+        io.WriteString(telegraph, "Hello, World! ")
+    }
 }
 
 // Some code omitted...
 
 ```
 
-In the above example I omitted the definition of  _MorseWriter_  type because it was shown earlier. The full version is available [here][12]. Let’s compile it and run:
+在上面的示例中，我省略了 _MorseWriter_ 类型的定义，因为它已在前面展示过。完整版可通过 [这里][12] 获取。让我们编译它并运行：
 
 ```
 $ egc
 $ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   11772     244     244   12260    2fe4 cortexm0.elf
-
 ```
 
 ![Ultimate Blinky](https://ziutek.github.io/images/mcu/f030-demo-board/morse.png)
 
-### Reflection
+### 反射
 
-Yes, Emgo supports [reflection][13]. The  _reflect_  package isn’t complete yet but that what is done is enough to implement  _fmt.Print_  family of functions. Let’s see what can we do on our small MCU.
+是的，Emgo 支持 [反射][13]。 _reflect_ 包尚未完成，但是已完成的部分足以实现 _fmt.Print_ 函数族了。来看看我们可以在小型 MCU 上做什么。
 
-To reduce memory usage we will use [semihosting][14] as standard output. For convenience, we also write simple  _println_  function which to some extent mimics  _fmt.Println_ .
+为了减少内存使用，我们将使用 [semihosting][14] 作为标准输出。为了方便起见，我们还编写了简单的 _println_ 函数，它在某种程度上类似于 _fmt.Println_。
 
 ```
 package main
 
 import (
-	"debug/semihosting"
-	"reflect"
-	"strconv"
+    "debug/semihosting"
+    "reflect"
+    "strconv"
 
-	"stm32/hal/system"
-	"stm32/hal/system/timer/systick"
+    "stm32/hal/system"
+    "stm32/hal/system/timer/systick"
 )
 
 var stdout semihosting.File
 
 func init() {
-	system.SetupPLL(8, 1, 48/8)
-	systick.Setup(2e6)
+    system.SetupPLL(8, 1, 48/8)
+    systick.Setup(2e6)
 
-	var err error
-	stdout, err = semihosting.OpenFile(":tt", semihosting.W)
-	for err != nil {
-	}
+    var err error
+    stdout, err = semihosting.OpenFile(":tt", semihosting.W)
+    for err != nil {
+    }
 }
 
 type stringer interface {
-	String() string
+    String() string
 }
 
 func println(args ...interface{}) {
-	for i, a := range args {
-		if i > 0 {
-			stdout.WriteString(" ")
-		}
-		switch v := a.(type) {
-		case string:
-			stdout.WriteString(v)
-		case int:
-			strconv.WriteInt(stdout, v, 10, 0, 0)
-		case bool:
-			strconv.WriteBool(stdout, v, 't', 0, 0)
-		case stringer:
-			stdout.WriteString(v.String())
-		default:
-			stdout.WriteString("%unknown")
-		}
-	}
-	stdout.WriteString("\r\n")
+    for i, a := range args {
+        if i > 0 {
+            stdout.WriteString(" ")
+        }
+        switch v := a.(type) {
+        case string:
+            stdout.WriteString(v)
+        case int:
+            strconv.WriteInt(stdout, v, 10, 0, 0)
+        case bool:
+            strconv.WriteBool(stdout, v, 't', 0, 0)
+        case stringer:
+            stdout.WriteString(v.String())
+        default:
+            stdout.WriteString("%unknown")
+        }
+    }
+    stdout.WriteString("\r\n")
 }
 
 type S struct {
-	A int
-	B bool
+    A int
+    B bool
 }
 
 func main() {
-	p := &S{-123, true}
+    p := &S{-123, true}
 
-	v := reflect.ValueOf(p)
+    v := reflect.ValueOf(p)
 
-	println("kind(p) =", v.Kind())
-	println("kind(*p) =", v.Elem().Kind())
-	println("type(*p) =", v.Elem().Type())
+    println("kind(p) =", v.Kind())
+    println("kind(*p) =", v.Elem().Kind())
+    println("type(*p) =", v.Elem().Type())
 
-	v = v.Elem()
+    v = v.Elem()
 
-	println("*p = {")
-	for i := 0; i < v.NumField(); i++ {
-		ft := v.Type().Field(i)
-		fv := v.Field(i)
-		println("  ", ft.Name(), ":", fv.Interface())
-	}
-	println("}")
+    println("*p = {")
+    for i := 0; i < v.NumField(); i++ {
+        ft := v.Type().Field(i)
+        fv := v.Field(i)
+        println("  ", ft.Name(), ":", fv.Interface())
+    }
+    println("}")
 }
 
 ```
 
-The  _semihosting.OpenFile_  function allows to open/create file on the host side. The special path  _:tt_ corresponds to host’s standard output.
+_semihosting.OpenFile_ 函数允许在主机端 打开/创建 文件。特殊路径 _:tt_ 对应于主机的标准输出。
 
-The  _println_  function accepts arbitrary number of arguments, each of arbitrary type:
+_println_ 函数接受任意数量的参数，每个参数的类型都是任意的：
 
 ```
 func println(args ...interface{})
-
 ```
 
-It’s possible because any type implements the empty interface  _interface{}_ . The  _println_  uses [type switch][15] to print strings, integers and booleans:
+可能是因为任何类型都实现了空接口 _interface{}_。 _println_ 使用 [类型开关][15] 打印字符串，整数和布尔值：
 
 ```
 switch v := a.(type) {
 case string:
-	stdout.WriteString(v)
+    stdout.WriteString(v)
 case int:
-	strconv.WriteInt(stdout, v, 10, 0, 0)
+    strconv.WriteInt(stdout, v, 10, 0, 0)
 case bool:
-	strconv.WriteBool(stdout, v, 't', 0, 0)
+    strconv.WriteBool(stdout, v, 't', 0, 0)
 case stringer:
-	stdout.WriteString(v.String())
+    stdout.WriteString(v.String())
 default:
-	stdout.WriteString("%unknown")
+    stdout.WriteString("%unknown")
 }
-
 ```
 
-Additionally it supports any type that implements  _stringer_  interface, that is, any type that has  _String()_ method. In any  _case_  clause the  _v_  variable has the right type, same as listed after  _case_  keyword.
+此外，它还支持任何实现了 _stringer_ 接口的类型，即任何具有 _String()_ 方法的类型。在任何 _case_ 子句中，_v_ 变量具有正确的类型，与 _case_ 关键字后列出的类型相同。
 
-The `reflect.ValueOf(p)` returns  _p_  in the form that allows to analyze its type and content programmatically. As you can see, we can even dereference pointers using `v.Elem()` and print all struct fields with their names.
 
-Let’s try to compile this code. For now let’s see what will come out if compiled without type and field names:
+reflect.ValueOf(p) 函数以允许以编程方式分析其类型和内容的形式返回 _p_。如您所见，我们甚至可以使用 `v.Elem()` 取消引用指针，并打印所有结构体及其名称。
+
+让我们尝试编译这段代码。现在，让我们看看如果不使用类型和字段名进行编译会产生什么结果：
 
 ```
 $ egc -nt -nf
-$ arm-none-eabi-size cortexm0.elf 
+$ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   16028     216     312   16556    40ac cortexm0.elf
-
 ```
 
-Only 140 free bytes left on the Flash. Let’s load it using OpenOCD with semihosting enabled:
+闪存上只剩下 140 个可用字节。让我们使用启用了 semihosting 的 OpenOCD 加载它：
 
 ```
 $ openocd -d0 -f interface/stlink.cfg -f target/stm32f0x.cfg -c 'init; program cortexm0.elf; arm semihosting enable; reset run'
@@ -899,12 +871,12 @@ adapter speed: 1000 kHz
 adapter_nsrst_delay: 100
 none separate
 adapter speed: 950 kHz
-target halted due to debug-request, current mode: Thread 
+target halted due to debug-request, current mode: Thread
 xPSR: 0xc1000000 pc: 0x08002338 msp: 0x20000a20
 adapter speed: 4000 kHz
 ** Programming Started **
 auto erase enabled
-target halted due to breakpoint, current mode: Thread 
+target halted due to breakpoint, current mode: Thread
 xPSR: 0x61000000 pc: 0x2000003a msp: 0x20000a20
 wrote 16384 bytes from file cortexm0.elf in 0.700133s (22.853 KiB/s)
 ** Programming Finished **
@@ -912,27 +884,25 @@ semihosting is enabled
 adapter speed: 950 kHz
 kind(p) = ptr
 kind(*p) = struct
-type(*p) = 
+type(*p) =
 *p = {
    X. : -123
    X. : true
 }
-
 ```
 
-If you’ve actually run this code, you noticed that semihosting is slow, especially if you write a byte after byte (buffering helps).
+如果您实际运行过此代码，则会注意到 semihosting 运行缓慢，尤其是在逐字节写入时（缓冲很有用）。
 
-As you can see, there is no type name for `*p` and all struct fields have the same  _X._  name. Let’s compile this program again, this time without  _-nt -nf_  options:
+如您所见，`*p` 没有类型名称，并且所有结构字段都具有相同的 _X._ 名称。让我们再次编译该程序，这次不带 _-nt -nf_ 选项：
 
 ```
 $ egc
-$ arm-none-eabi-size cortexm0.elf 
+$ arm-none-eabi-size cortexm0.elf
    text    data     bss     dec     hex filename
   16052     216     312   16580    40c4 cortexm0.elf
-
 ```
 
-Now the type and field names have been included but only these defined in  ~~_main.go_  file~~  _main_  package. The output of our program looks as follows:
+现在已经包括了类型和字段名称，但仅在 ~~_main.go_ 文件中~~ _main_ 包中定义了它们。该程序的输出如下所示：
 
 ```
 kind(p) = ptr
@@ -942,12 +912,11 @@ type(*p) = S
    A : -123
    B : true
 }
-
 ```
 
-Reflection is a crucial part of any easy to use serialization library and serialization ~~algorithms~~ like [JSON][16]gain in importance in the IOT era.
+反射是任何易于使用的序列化库的关键部分，而像 [JSON][16] 这样的序列化 ~~算法~~ 在<ruby>物联网<rt>IoT</rt></ruby>时代也越来越重要。
 
-This is where I finish the second part of this article. I think there is a chance for the third part, more entertaining, where we connect to this board various interesting devices. If this board won’t carry them, we replace it with something a little bigger.
+这些就是我完成的本文的第二部分。我认为有机会进行第三部分，更具娱乐性的部分，在那里我们将各种有趣的设备连接到这块板上。如果这块板装不下，我们就换一块大一点的。
 
 --------------------------------------------------------------------------------
 
