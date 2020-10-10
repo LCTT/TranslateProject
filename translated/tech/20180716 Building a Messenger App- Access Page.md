@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (gxlct008)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,25 +7,23 @@
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-access-page/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
-Building a Messenger App: Access Page
+构建一个即时消息应用（七）：Access 页面
 ======
 
-This post is the 7th on a series:
+本文是该系列的第七篇。
 
-  * [Part 1: Schema][1]
-  * [Part 2: OAuth][2]
-  * [Part 3: Conversations][3]
-  * [Part 4: Messages][4]
-  * [Part 5: Realtime Messages][5]
-  * [Part 6: Development Login][6]
+  * [第一篇: 模式][1]
+  * [第二篇: OAuth][2]
+  * [第三篇: 对话][3]
+  * [第四篇: 消息][4]
+  * [第五篇: 实时消息][5]
+  * [第六篇: 仅用于开发的登录][6]
 
+现在我们已经完成了后端，让我们转到前端。 我将采用单页应用程序方案。
 
+首先，我们创建一个 `static/index.html` 文件，内容如下。
 
-Now that we’re done with the backend, lets move to the frontend. I will go with a single-page application.
-
-Lets start by creating a file `static/index.html` with the following content.
-
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,11 +38,11 @@ Lets start by creating a file `static/index.html` with the following content.
 </html>
 ```
 
-This HTML file must be server for every URL and JavaScript will take care of rendering the correct page.
+这个 HTML 文件必须为每个 URL 提供服务，并且将使用 JavaScript 负责呈现正确的页面。
 
-So lets go the the `main.go` for a moment and in the `main()` function add the following route:
+因此，让我们将注意力转到 `main.go` 片刻，然后在 `main()` 函数中添加以下路由：
 
-```
+```go
 router.Handle("GET", "/...", http.FileServer(SPAFileSystem{http.Dir("static")}))
 
 type SPAFileSystem struct {
@@ -60,15 +58,15 @@ func (spa SPAFileSystem) Open(name string) (http.File, error) {
 }
 ```
 
-We use a custom file system so instead of returning `404 Not Found` for unknown URLs, it serves the `index.html`.
+我们使用一个自定义的文件系统，因此它不是为未知的 URL 返回 `404 Not Found`，而是转到 `index.html`。
 
-### Router
+### 路由器
 
-In the `index.html` we loaded two files: `styles.css` and `main.js`. I leave styling to your taste.
+在 `index.html` 中我们加载了两个文件：`styles.css` 和 `main.js`。我把样式留给你自由发挥。
 
-Lets move to `main.js`. Create a `static/main.js` file with the following content:
+让我们移动到 `main.js`。 创建一个包含以下内容的 `static/main.js` 文件：
 
-```
+```javascript
 import { guard } from './auth.js'
 import Router from './router.js'
 
@@ -98,19 +96,22 @@ function view(pageName) {
 }
 ```
 
-If you are follower of this blog, you already know how this works. That router is the one showed [here][7]. Just download it from [@nicolasparada/router][8] and save it to `static/router.js`.
+如果您是这个博客的关注者，您已经知道它是如何工作的了。 该路由器就是在 [这里][7] 显示的那个。 只需从 [@nicolasparada/router][8] 下载并保存到 `static/router.js` 即可。
 
 We registered four routes. At the root `/` we show the home or access page whether the user is authenticated. At `/callback` we show the callback page. On `/conversations/{conversationID}` we show the conversation or access page whether the user is authenticated and for every other URL, we show a not found page.
 
-We tell the router to render the result to the document body and dispatch a `disconnect` event to each page before leaving.
+我们注册了四条路由。 在根路由 `/` 处，我们展示 home 或 access 页面，无论用户是否通过身份验证。 在 `/callback` 中，我们展示 callback 页面。 在 `/conversations/{conversationID}` 上，我们展示对话或 access 页面，无论用户是否通过验证，对于其他 URL，我们展示一个 not found 页面。
 
-We have each page in a different file and we import them with the new dynamic `import()`.
+我们告诉路由器将结果渲染为文档主体，并在离开之前向每个页面调度一个 `disconnect` 事件。
 
-### Auth
+我们将每个页面放在不同的文件中，并使用新的动态 `import()` 函数导入它们。
 
-`guard()` is a function that given two functions, executes the first one if the user is authenticated, or the sencond one if not. It comes from `auth.js` so lets create a `static/auth.js` file with the following content:
+### 身份验证
 
-```
+`guard()` 是一个函数，给它两个函数作为参数，如果用户通过了身份验证，则执行第一个函数，否则执行第二个。
+它来自 `auth.js`，所以我们创建一个包含以下内容的 `static/auth.js` 文件：
+
+```javascript
 export function isAuthenticated() {
     const token = localStorage.getItem('token')
     const expiresAtItem = localStorage.getItem('expires_at')
@@ -150,17 +151,17 @@ export function getAuthUser() {
 }
 ```
 
-`isAuthenticated()` checks for `token` and `expires_at` from localStorage to tell if the user is authenticated. `getAuthUser()` gets the authenticated user from localStorage.
+`isAuthenticated()` 检查 localStorage 中的 `token` 和 `expires_at`，以判断用户是否已通过身份验证。`getAuthUser()` 从 localStorage 中获取经过身份验证的用户。
 
-When we login, we’ll save all the data to localStorage so it will make sense.
+当我们登录时，我们会将所有的数据保存到 localStorage，这样才有意义。
 
-### Access Page
+### Access 页面
 
 ![access page screenshot][9]
 
-Lets start with the access page. Create a file `static/pages/access-page.js` with the following content:
+让我们从 access 页面开始。 创建一个包含以下内容的文件 `static/pages/access-page.js`：
 
-```
+```javascript
 const template = document.createElement('template')
 template.innerHTML = `
     <h1>Messenger</h1>
@@ -172,15 +173,15 @@ export default function accessPage() {
 }
 ```
 
-Because the router intercepts all the link clicks to do its navigation, we must prevent the event propagation for this link in particular.
+因为路由器会拦截所有链接点击来进行导航，所以我们必须特别阻止此链接的事件传播。
 
-Clicking on that link will redirect us to the backend, then to GitHub, then to the backend and then to the frontend again; to the callback page.
+单击该链接会将我们重定向到后端，然后重定向到 GitHub，再重定向到后端，然后再次重定向到前端； 到 callback 页面。
 
-### Callback Page
+### Callback 页面
 
-Create the file `static/pages/callback-page.js` with the following content:
+创建包括以下内容的 `static/pages/callback-page.js` 文件：
 
-```
+```javascript
 import http from '../http.js'
 import { navigate } from '../router.js'
 
@@ -211,13 +212,13 @@ function getAuthUser(token) {
 }
 ```
 
-The callback page doesn’t render anything. It’s an async function that does a GET request to `/api/auth_user` using the token from the URL query string and saves all the data to localStorage. Then it redirects to `/`.
+callback 页面不呈现任何内容。这是一个异步函数，它使用 URL 查询字符串中的 token 向 `/api/auth_user` 发出 GET 请求，并将所有数据保存到 localStorage。 然后重定向到 `/`。
 
 ### HTTP
 
-There is an HTTP module. Create a `static/http.js` file with the following content:
+这里是一个 HTTP 模块。 创建一个包含以下内容的 `static/http.js` 文件：
 
-```
+```javascript
 import { isAuthenticated } from './auth.js'
 
 async function handleResponse(res) {
@@ -297,15 +298,15 @@ export default {
 }
 ```
 
-This module is a wrapper around the [fetch][10] and [EventSource][11] APIs. The most important part is that it adds the JSON web token to the requests.
+这个模块是 [fetch][10] 和 [EventSource][11] API 的包装器。最重要的部分是它将 JSON web 令牌添加到请求中。
 
-### Home Page
+### Home 页面
 
 ![home page screenshot][12]
 
-So, when the user login, the home page will be shown. Create a `static/pages/home-page.js` file with the following content:
+因此，当用户登录时，将显示主页。 创建一个具有以下内容的 `static/pages/home-page.js` 文件：
 
-```
+```javascript
 import { getAuthUser } from '../auth.js'
 import { avatar } from '../shared.js'
 
@@ -334,15 +335,15 @@ function onLogoutClick() {
 }
 ```
 
-For this post, this is the only content we render on the home page. We show the current authenticated user and a logout button.
+对于这篇文章，这是我们在主页上呈现的唯一内容。我们显示当前经过身份验证的用户和注销按钮。
 
-When the user clicks to logout, we clear all inside localStorage and do a reload of the page.
+当用户单击注销时，我们清除 localStorage 中的所有内容并重新加载页面。
 
 ### Avatar
 
-That `avatar()` function is to show the user’s avatar. Because it’s used in more than one place, I moved it to a `shared.js` file. Create the file `static/shared.js` with the following content:
+那个 `avatar()` 函数用于显示用户的头像。 由于已在多个地方使用，因此我将它移到 `shared.js` 文件中。 创建具有以下内容的文件 `static/shared.js`：
 
-```
+```javascript
 export function avatar(user) {
     return user.avatarUrl === null
         ? `<figure class="avatar" data-initial="${user.username[0]}"></figure>`
@@ -351,22 +352,24 @@ export function avatar(user) {
 ```
 
 We use a small figure with the user’s initial in case the avatar URL is null.
+如果头像网址为 null，我们将使用用户的姓名首字母作为初始头像。
 
+您可以使用 `attr()` 函数显示带有少量 CSS 样式的首字母。
 You can show the initial with a little of CSS using the `attr()` function.
 
-```
+```css
 .avatar[data-initial]::after {
     content: attr(data-initial);
 }
 ```
 
-### Development Login
+### 仅开发使用的登录
 
 ![access page with login form screenshot][13]
 
-In the previous post we coded a login for development. Lets add a form for that in the access page. Go to `static/pages/access-page.js` and modify it a little.
+在上一篇文章中，我们为编写了一个登录代码。让我们在 access 页面中为此添加一个表单。 进入 `static/ages/access-page.js`，稍微修改一下。
 
-```
+```javascript
 import http from '../http.js'
 
 const template = document.createElement('template')
@@ -420,13 +423,13 @@ function login(username) {
 }
 ```
 
-I added a login form. When the user submits the form. It does a POST requets to `/api/login` with the username. Saves all the data to localStorage and reloads the page.
+我添加了一个登录表单。当用户提交表单时。它使用用户名对 `/api/login` 进行 POST 请求。将所有数据保存到 localStorage 并重新加载页面。
 
-Remember to remove this form once you are done with the frontend.
+记住在前端完成后删除此表单。
 
 * * *
 
-That’s all for this post. In the next one, we’ll continue with the home page to add a form to start conversations and display a list with the latest ones.
+这就是这篇文章的全部内容。在下一篇文章中，我们将继续使用主页添加一个表单来开始对话，并显示包含最新对话的列表。
 
 [Souce Code][14]
 
@@ -436,7 +439,7 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-access-page/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

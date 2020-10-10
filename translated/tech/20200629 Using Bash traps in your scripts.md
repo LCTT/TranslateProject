@@ -7,17 +7,17 @@
 [#]: via: (https://opensource.com/article/20/6/bash-trap)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Using Bash traps in your scripts
+在脚本中使用 Bash 信号捕获
 ======
-Traps help your scripts end cleanly, whether they run successfully or
-not.
+> 无论你的脚本是否成功运行，<ruby>信号捕获<rt>trap</rt></ruby>都能让它平稳结束。
+
 ![Hands programming][1]
 
-It's easy to detect when a shell script starts, but it's not always easy to know when it stops. A script might end normally, just as its author intends it to end, but it could also fail due to an unexpected fatal error. Sometimes it's beneficial to preserve the remnants of whatever was in progress when a script failed, and other times it's inconvenient. Either way, detecting the end of a script and reacting to it in some pre-calculated manner is why the [Bash][2] `trap` directive exists.
+Shell 脚本的启动并不难被检测到，但 Shell 脚本的终止检测却并不容易，因为我们无法确定脚本会按照预期地正常结束，还是由于意外的错误导致失败。当脚本执行失败时，将正在处理的内容记录下来是非常有用的做法，但有时候这样做起来并不方便。而 [Bash][2] 中 `trap` 命令的存在正是为了解决这个问题，它可以捕获到脚本的终止信号，并以某种预设的方式作出应对。
 
-### Responding to failure
+### 响应失败
 
-Here's an example of how one failure in a script can lead to future failures. Say you have written a program that creates a temporary directory in `/tmp` so that it can unarchive and process files before bundling them back together in a different format:
+如果出现了一个错误，可能导致发生一连串错误。下面示例脚本中，首先在 `/tmp` 中创建一个临时目录，这样可以在临时目录中执行解包、文件处理等操作，然后再以另一种压缩格式进行打包：
 
 
 ```
@@ -49,13 +49,13 @@ bzip2 --compress $TMP/"${1%.*}".tar \
 /usr/bin/rm -r /tmp/tmpdir
 ```
 
-Most of the time, the script works as expected. However, if you accidentally run it on an archive filled with PNG files instead of the expected JPEG files, it fails halfway through. One failure leads to another, and eventually, the script exits without reaching its final directive to remove the temporary directory. As long as you manually remove the directory, you can recover quickly, but if you aren't around to do that, then the next time the script runs, it has to deal with an existing temporary directory full of unpredictable leftover files.
+一般情况下，这个脚本都可以按照预期执行。但如果归档文件中的文件是 PNG 文件而不是期望的 JPEG 文件，脚本就会在中途失败，这时候另一个问题就出现了：最后一步删除临时目录的操作没有被正常执行。如果你手动把临时目录删掉，倒是不会造成什么影响，但是如果没有手动把临时目录删掉，在下一次执行这个脚本的时候，就会在一个残留着很多临时文件的临时目录里执行了。
 
-One way to combat this is to reverse and double-up on the logic by adding a precautionary removal to the start of the script. While valid, that relies on brute force instead of structure. A more elegant solution is `trap`.
+其中一个解决方案是在脚本开头增加一个预防性删除逻辑用来处理这种情况。但这种做法显得有些暴力，而我们更应该从结构上解决这个问题。使用 `trap` 是一个优雅的方法。
 
-### Catching signals with trap
+### 使用 `trap` 捕获信号
 
-The `trap` keyword catches _signals_ that may happen during execution. You've used one of these signals if you've ever used the `kill` or `killall` commands, which call `SIGTERM` by default. There are many other signals that shells respond to, and you can see most of them with `trap -l` (as in "list"):
+我们可以通过 `trap` 捕捉程序运行时的信号。如果你使用过 `kill` 或者 `killall` 命令，那你就已经使用过名为 `SIGTERM` 的信号了。除此以外，还可以执行 `trap -l` 或 `trap --list` 命令列出其它更多的信号：
 
 
 ```
@@ -75,24 +75,22 @@ $ trap --list
 63) SIGRTMAX-1  64) SIGRTMAX
 ```
 
-Any of these signals may be anticipated with `trap`. In addition to these, `trap` recognizes:
+可以被 `trap` 识别的信号除了以上这些，还包括：
 
-  * `EXIT`: Occurs when a process exits
-  * `ERR`: Occurs when a process exits with a non-zero status
-  * `DEBUG`: A Boolean representing debug mode
+  * `EXIT`：进程退出时发出的信号
+  * `ERR`：进程以非 0 状态码退出时发出的信号
+  * `DEBUG`：表示调试模式的布尔值
 
+如果要在 Bash 中实现信号捕获，只需要在 `trap` 后加上需要执行的命令，再加上需要捕获的信号列表就可以了。
 
-
-To set a trap in Bash, use `trap` followed by a list of commands you want to be executed, followed by a list of signals to trigger it.
-
-For instance, this trap detects a `SIGINT`, the signal sent when a user presses **Ctrl+C** while a process is running:
+例如，下面的这行语句可以捕获到在进程运行时用户按下 `Ctrl + C` 组合键发出的 `SIGINT` 信号：
 
 
 ```
 `trap "{ echo 'Terminated with Ctrl+C'; }" SIGINT`
 ```
 
-The example script with temporary directory problems can be fixed with a trap detecting `SIGINT`, errors, and successful exits:
+因此，上文中脚本的缺陷可以通过使用 `trap` 捕获 `SIGINT`、`SIGTERM`、进程错误退出、进程正常退出等信号，并正确处理临时目录的方式来修复：
 
 
 ```
@@ -123,11 +121,11 @@ bzip2 --compress $TMP/"${1%.*}".tar \
       --stdout &gt; "${1%.*}".tbz
 ```
 
-For complex actions, you can simplify `trap` statements with [Bash functions][3].
+对于更复杂的功能，还可以用 [Bash 函数][3]来简化 `trap` 语句。
 
-### Traps in Bash
+### Bash 中的信号捕获
 
-Traps are useful to ensure that your scripts end cleanly, whether they run successfully or not. It's never safe to rely completely on automated garbage collection, so this is a good habit to get into in general. Try using them in your scripts, and see what they can do!
+信号捕获可以让脚本在无论是否成功执行所有任务的情况下都能够正确完成清理工作，能让你的脚本更加可靠，这是一个很好的习惯。尽管尝试把信号捕获加入到你的脚本里看看能够起到什么作用吧。
 
 --------------------------------------------------------------------------------
 
@@ -135,7 +133,7 @@ via: https://opensource.com/article/20/6/bash-trap
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[HankChow](https://github.com/HankChow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

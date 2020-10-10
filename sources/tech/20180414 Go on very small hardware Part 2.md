@@ -1,3 +1,12 @@
+[#]: collector: (oska874)
+[#]: translator: (gxlct008)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (Go on very small hardware (Part 2))
+[#]: via: (https://ziutek.github.io/2018/04/14/go_on_very_small_hardware2.html)
+[#]: author: (Michał Derkacz https://ziutek.github.io/)
+
 Go on very small hardware (Part 2)
 ============================================================
 

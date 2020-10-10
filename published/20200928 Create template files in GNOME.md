@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (rakino)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12699-1.html)
 [#]: subject: (Create template files in GNOME)
 [#]: via: (https://opensource.com/article/20/9/gnome-templates)
 [#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
@@ -10,27 +10,23 @@
 在 GNOME 中创建文档模板
 ======
 
-![Digital images of a computer desktop][1]
+> 制作模板可以让你更快地开始写作新的文档。
 
-制作模板可以让你更快地开始写作新的文档。
+![](https://img.linux.net.cn/data/attachment/album/202010/08/215333mgqpiuqufhgidfpz.jpg)
 
-我偶然发现了 [GNOME][2] 的一个新功能（对我来说是的）：创建文档模版。模版（template）也被称作样版文件（boilerplate），一般是有着特定格式的空文档，例如律师事务所的信笺，在其顶部有着律所的名称和地址；另一个例子是银行以及保险公司的保函，在其底部页脚包含着某些免责声明。由于这类信息很少改变，你可以把它们添加到空文档中作为模板使用。
+我只是偶然发现了 [GNOME][2] 的一个新功能（对我来说是的）：创建文档模版。<ruby>模版<rt>template</rt></ruby>也被称作<ruby>样版文件<rt>boilerplate</rt></ruby>，一般是有着特定格式的空文档，例如律师事务所的信笺，在其顶部有着律所的名称和地址；另一个例子是银行以及保险公司的保函，在其底部页脚包含着某些免责声明。由于这类信息很少改变，你可以把它们添加到空文档中作为模板使用。
 
-一天，在浏览我的 Linux 系统文件的时候，我点击了**模板**（Templates）文件夹，然后刚好发现窗口的上方有一条消息写着：“将文件放入此文件夹并用作新文档的模板”，以及一个**获取详情……** 的链接，指向了 [GNOME 指南（GNOME help）][3]中的模板页面。
+一天，在浏览我的 Linux 系统文件的时候，我点击了<ruby>模板<rt>Templates</rt></ruby>文件夹，然后刚好发现窗口的上方有一条消息写着：“将文件放入此文件夹并用作新文档的模板”，以及一个“获取详情……” 的链接，打开了模板的 [GNOME 帮助页面][3]。
 
 ![Message at top of Templates folder in GNOME Desktop][4]
 
-(Alan Formy-Duval, [CC BY-SA 4.0][5])
-
 ### 创建模板
 
-在 GNOME 中创建模板非常简单。有几种方法可以把文件放进模板文件夹里：你既可以通过图形用户界面（GUI）或是命令行界面（CLI）从另一个位置复制或移动文件，也可以创建一个全新的文件；我选择了后者，实际上我也创建了两个文件。
+在 GNOME 中创建模板非常简单。有几种方法可以把文件放进模板文件夹里：你既可以通过图形用户界面（GUI）或是命令行界面（CLI）从另一个位置复制或移动文件，也可以创建一个全新的文件；我选择了后者，实际上，我创建了两个文件。
 
 ![My first two GNOME templates][6]
 
-(Alan Formy-Duval, [CC BY-SA 4.0][5])
-
-我的第一份模板是为 Opensource.com 的文章准备的，它有一个输入标题的位置以及关于我的名字和文章使用的许可证的几行。我的文章使用 Markdown 格式，所以我将模板创建为了一个新的 Markdown 文档——**Opensource.com Article.md**：
+我的第一份模板是为 Opensource.com 的文章准备的，它有一个输入标题的位置以及关于我的名字和文章使用的许可证的几行。我的文章使用 Markdown 格式，所以我将模板创建为了一个新的 Markdown 文档——`Opensource.com Article.md`：
 
 ````
 # Title    
@@ -46,11 +42,9 @@ Creative Commons BY-SA 4.0
 
 ### 使用模板
 
-每当我有了新文章的灵感的时候，我只需要在我计划用来组织内容的文件夹里单击右键，然后从**新建文档**（New Document）列表中选择我想要的模板就可以开始了。
+每当我有了新文章的灵感的时候，我只需要在我计划用来组织内容的文件夹里单击右键，然后从<ruby>新建文档<rt>New Document</rt></ruby>列表中选择我想要的模板就可以开始了。
 
 ![Select the template by name][7]
-
-(Alan Formy-Duval, [CC BY-SA 4.0][5])
 
 你可以为各种文档或文件制作模板。我写这篇文章时使用了我为 Opensource.com 的文章创建的模板。程序员可能会把模板用于软件代码，这样的话也许你想要只包含 `main()` 的模板。
 
@@ -63,7 +57,7 @@ via: https://opensource.com/article/20/9/gnome-templates
 作者：[Alan Formy-Duval][a]
 选题：[lujun9972][b]
 译者：[rakino](https://github.com/rakino)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

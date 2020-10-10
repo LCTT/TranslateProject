@@ -1,38 +1,38 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: translator: (gxlct008)
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12692-1.html)
 [#]: subject: (Building a Messenger App: Development Login)
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-dev-login/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
-Building a Messenger App: Development Login
+构建一个即时消息应用（六）：仅用于开发的登录
 ======
 
-This post is the 6th on a series:
+![](https://img.linux.net.cn/data/attachment/album/202010/07/101437garmhgi9aza9f9fz.jpg)
 
-  * [Part 1: Schema][1]
-  * [Part 2: OAuth][2]
-  * [Part 3: Conversations][3]
-  * [Part 4: Messages][4]
-  * [Part 5: Realtime Messages][5]
+本文是该系列的第六篇。
 
+  * [第一篇: 模式][1]
+  * [第二篇: OAuth][2]
+  * [第三篇: 对话][3]
+  * [第四篇: 消息][4]
+  * [第五篇: 实时消息][5]
 
+我们已经实现了通过 GitHub 登录，但是如果想把玩一下这个 app，我们需要几个用户来测试它。在这篇文章中，我们将添加一个为任何用户提供登录的端点，只需提供用户名即可。该端点仅用于开发。
 
-We already implemented login through GitHub, but if we want to play around with the app, we need a couple of users to test it. In this post we’ll add an endpoint to login as any user just giving an username. This endpoint will be just for development.
+首先在 `main()` 函数中添加此路由。
 
-Start by adding this route in the `main()` function.
-
-```
+```go
 router.HandleFunc("POST", "/api/login", requireJSON(login))
 ```
 
-### Login
+### 登录
 
-This function handles POST requests to `/api/login` with a JSON body with just an username and returns the authenticated user, a token and expiration date of it in JSON format.
+此函数处理对 `/api/login` 的 POST 请求，其中 JSON body 只包含用户名，并以 JSON 格式返回通过认证的用户、令牌和过期日期。
 
-```
+```go
 func login(w http.ResponseWriter, r *http.Request) {
     if origin.Hostname() != "localhost" {
         http.NotFound(w, r)
@@ -81,9 +81,9 @@ func login(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-First it checks we are on localhost or it responds with `404 Not Found`. It decodes the body skipping validation since this is just for development. Then it queries to the database for a user with the given username, if none is found, it returns with `404 Not Found`. Then it issues a new JSON web token using the user ID as Subject.
+首先，它检查我们是否在本地主机上，或者响应为 `404 Not Found`。它解码主体跳过验证，因为这只是为了开发。然后在数据库中查询给定用户名的用户，如果没有，则返回 `404 NOT Found`。然后，它使用用户 ID 作为主题发布一个新的 JSON Web 令牌。
 
-```
+```go
 func issueToken(subject string, exp time.Time) (string, error) {
     token, err := jwtSigner.Encode(jwt.Claims{
         Subject:    subject,
@@ -96,33 +96,33 @@ func issueToken(subject string, exp time.Time) (string, error) {
 }
 ```
 
-The function does the same we did [previously][2]. I just moved it to reuse code.
+该函数执行的操作与 [前文][2] 相同。我只是将其移过来以重用代码。
 
-After creating the token, it responds with the user, token and expiration date.
+创建令牌后，它将使用用户、令牌和到期日期进行响应。
 
-### Seed Users
+### 种子用户
 
-Now you can add users to play with to the database.
+现在，你可以将要操作的用户添加到数据库中。
 
-```
+```sql
 INSERT INTO users (id, username) VALUES
     (1, 'john'),
     (2, 'jane');
 ```
 
-You can save it to a file and pipe it to the Cockroach CLI.
+你可以将其保存到文件中，并通过管道将其传送到 Cockroach CLI。
 
-```
+```bash
 cat seed_users.sql | cockroach sql --insecure -d messenger
 ```
 
 * * *
 
-That’s it. Once you deploy the code to production and use your own domain this login function won’t be available.
+就是这样。一旦将代码部署到生产环境并使用自己的域后，该登录功能将不可用。
 
-This post concludes the backend.
+本文也结束了所有的后端开发部分。
 
-[Souce Code][6]
+- [源代码][6]
 
 --------------------------------------------------------------------------------
 
@@ -130,16 +130,16 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-dev-login/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[gxlct008](https://github.com/gxlct008)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://nicolasparada.netlify.com/
 [b]: https://github.com/lujun9972
-[1]: https://nicolasparada.netlify.com/posts/go-messenger-schema/
-[2]: https://nicolasparada.netlify.com/posts/go-messenger-oauth/
-[3]: https://nicolasparada.netlify.com/posts/go-messenger-conversations/
-[4]: https://nicolasparada.netlify.com/posts/go-messenger-messages/
-[5]: https://nicolasparada.netlify.com/posts/go-messenger-realtime-messages/
+[1]: https://linux.cn/article-11396-1.html
+[2]: https://linux.cn/article-11510-1.html
+[3]: https://linux.cn/article-12056-1.html
+[4]: https://linux.cn/article-12680-1.html
+[5]: https://linux.cn/article-12685-1.html
 [6]: https://github.com/nicolasparada/go-messenger-demo
