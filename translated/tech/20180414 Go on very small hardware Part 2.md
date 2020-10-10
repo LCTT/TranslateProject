@@ -923,7 +923,7 @@ type(*p) = S
 via: https://ziutek.github.io/2018/04/14/go_on_very_small_hardware2.html
 
 作者：[Michał Derkacz ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[gxlct008](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
