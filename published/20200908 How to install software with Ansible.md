@@ -97,7 +97,7 @@ $ sudo apt install yamllint ansible-lint
 $ ansible-lint ~/install_packages/site.yml
 ```
 
-成功则不返回任何内容，但如果文件中有错误，则必须先修复它们，然后再继续。复制和粘贴过程中的常见错误包括在最后一行的末尾省略换行符、使用制表符而不是空格来缩进。在文本编辑器中修复它们，重新运行 `ansible-llint`，重复这个过程，直到 `ansible-lint` 或 `yamllint` 没有返回为止。
+成功则不返回任何内容，但如果文件中有错误，则必须先修复它们，然后再继续。复制和粘贴过程中的常见错误包括在最后一行的末尾省略换行符、使用制表符而不是空格来缩进。在文本编辑器中修复它们，重新运行 `ansible-lint`，重复这个过程，直到 `ansible-lint` 或 `yamllint` 没有返回为止。
 
 ### 使用 Ansible 安装一个应用
 
