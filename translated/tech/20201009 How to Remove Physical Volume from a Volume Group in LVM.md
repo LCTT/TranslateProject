@@ -7,32 +7,32 @@
 [#]: via: (https://www.2daygeek.com/linux-remove-delete-physical-volume-pv-from-volume-group-vg-in-lvm/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Remove Physical Volume from a Volume Group in LVM
+如何从 LVM 的卷组中删除物理卷？
 ======
 
-If a device is no longer need for use by LVM, you can use the vgreduce command to remove physical volumes from a volume group.
+如果 LVM 不再需要使用某个设备，你可以使用 vgreduce 命令从卷组中删除物理卷。
 
-The Vgreduce command shrinks the capacity of a volume group by removing a physical volume.
+vgreduce 命令通过删除物理卷来缩小卷组的容量。
 
-But make sure that the physical volume is not used by any logical volumes using the pvdisplay command.
+但要确保物理卷没有被任何逻辑卷使用，请使用 pvdisplay 命令。
 
-If the physical volume is still being used, you must transfer the data to another physical volume using the pvmove command.
+如果物理卷仍在使用，你必须使用 pvmove 命令将数据转移到另一个物理卷。
 
-Once the data is moved, it can be removed from the volume group.
+数据转移后，它就可以从卷组中删除。
 
-Finally use the pvremove command to remove the LVM label and LVM metadata on the empty physical volume.
+最后使用 pvremove 命令删除空物理卷上的 LVM 标签和 LVM 元数据。
 
-  * **Part-1: [How to Create/Configure LVM (Logical Volume Management) in Linux][1]**
-  * **Part-2: [How to Extend/Increase LVM’s (Logical Volume Resize) in Linux][2]**
-  * **Part-3: [How to Reduce/Shrink LVM’s (Logical Volume Resize) in Linux][3]**
+  * **第一部分：[如何在 Linux 中创建/配置 LVM（逻辑卷管理）][1]**。
+  * **第二部分：[如何在 Linux 中扩展/增加 LVM 大小（逻辑卷调整）][2]**。
+  * **第三部分：[如何在 Linux 中减少/缩小 LVM 大小（逻辑卷调整）][3]**。
 
 
 
 ![][4]
 
-### 1) Moving Extents to Existing Physical Volumes
+### 1) 将扩展移动到现有物理卷上
 
-Use the pvs command to check if the desired physical volume (we plan to remove the **“/dev/sdb1”** disk in LVM) is used or not.
+使用 pvs 命令检查是否使用了所需的物理卷（我们计划删除 LVM 中的 **“/dev/sdb1”** 磁盘）。
 
 ```
 # pvs -o+pv_used
@@ -43,9 +43,9 @@ PV VG Fmt Attr PSize PFree Used
 /dev/sdc1 myvg lvm2 a- 17.15G 12.15G 5.00G
 ```
 
-If this is used, check to see if there are enough free extents on the other physics volumes in the volume group.
+如果使用了，请检查卷组中的其他物理卷是否有足够的空闲空间。
 
-If so, you can run the pvmove command on the device you want to remove. Extents will be distributed to other devices.
+如果有的话，你可以在需要删除的设备上运行 pvmove 命令。扩展将被分配到其他设备上。
 
 ```
 # pvmove /dev/sdb1
@@ -57,7 +57,7 @@ If so, you can run the pvmove command on the device you want to remove. Extents 
 /dev/sdb1: Moved: 100.0%
 ```
 
-When the pvmove command is complete. Re-use the pvs command to check whether the physics volume is free or not.
+当 pvmove 命令完成后。再次使用 pvs 命令检查物理卷是否有空闲。
 
 ```
 # pvs -o+pv_used
@@ -68,25 +68,25 @@ PV VG Fmt Attr PSize PFree Used
 /dev/sdc1 myvg lvm2 a- 17.15G 12.15G 5.00G
 ```
 
-If it’s free, use the vgreduce command to remove the physical volume /dev/sdb1 from the volume group.
+如果它是空闲的，使用 vgreduce 命令从卷组中删除物理卷 /dev/sdb1。
 
 ```
 # vgreduce myvg /dev/sdb1
 Removed "/dev/sdb1" from volume group "myvg"
 ```
 
-Finally, run the pvremove command to remove the disk from the LVM configuration. Now, the disk is completely removed from the LVM and can be used for other purposes.
+最后，运行 pvremove 命令从 LVM 配置中删除磁盘。现在，磁盘已经完全从 LVM 中移除，可以用于其他用途。
 
 ```
 # pvremove /dev/sdb1
 Labels on physical volume "/dev/sdb1" successfully wiped.
 ```
 
-### 2) Moving Extents to a New Disk
+### 2) 移动扩展到新磁盘
 
-If you don’t have enough free extents on the other physics volumes in the volume group. Add new physical volume using the steps below.
+如果你在卷组中的其他物理卷上没有足够的可用扩展。使用以下步骤添加新的物理卷。
 
-Request new LUNs from the storage team. Once this is allocated, run the following commands to **[discover newly added LUNs or disks in Linux][5]**.
+向存储组申请新的 LUN。分配完毕后，运行以下命令来**[在 Linux 中发现新添加的 LUN 或磁盘][5]**。
 
 ```
 # ls /sys/class/scsi_host
@@ -101,21 +101,21 @@ host0
 # fdisk -l
 ```
 
-Once the disk is detected in the OS, use the pvcreate command to create the physical volume.
+操作系统中检测到磁盘后，使用 pvcreate 命令创建物理卷。
 
 ```
 # pvcreate /dev/sdd1
 Physical volume "/dev/sdd1" successfully created
 ```
 
-Use the following command to add new physical volume /dev/sdd1 to the existing volume group vg01.
+使用以下命令将新的物理卷 /dev/sdd1 添加到现有卷组 vg01 中。
 
 ```
 # vgextend vg01 /dev/sdd1
 Volume group "vg01" successfully extended
 ```
 
-Now, use the pvs command to see the new disk **“/dev/sdd1”** that you have added.
+现在，使用 pvs 命令查看你添加的新磁盘 **“/dev/sdd1”**。
 
 ```
 # pvs -o+pv_used
@@ -127,7 +127,7 @@ PV VG Fmt Attr PSize PFree Used
 /dev/sdd1 myvg lvm2 a- 60.00G 60.00G 0
 ```
 
-Use the pvmove command to move the data from /dev/sdb1 to /dev/sdd1.
+使用 pvmove 命令将数据从 /dev/sdb1 移动到 /dev/sdd1。
 
 ```
 # pvmove /dev/sdb1 /dev/sdd1
@@ -139,7 +139,7 @@ Use the pvmove command to move the data from /dev/sdb1 to /dev/sdd1.
 /dev/sdb1: Moved: 100.0%
 ```
 
-After the data is moved to the new disk. Re-use the pvs command to check whether the physics volume is free.
+数据移动到新磁盘后。再次使用 pvs 命令检查物理卷是否空闲。
 
 ```
 # pvs -o+pv_used
@@ -151,14 +151,14 @@ PV VG Fmt Attr PSize PFree Used
 /dev/sdd1 myvg lvm2 a- 60.00G 10.00G 50.00G
 ```
 
-If it’s free, use the vgreduce command to remove the physical volume /dev/sdb1 from the volume group.
+如果空闲，使用 vgreduce 命令从卷组中删除物理卷 /dev/sdb1。
 
 ```
 # vgreduce myvg /dev/sdb1
 Removed "/dev/sdb1" from volume group "myvg"
 ```
 
-Finally, run the pvremove command to remove the disk from the LVM configuration. Now, the disk is completely removed from the LVM and can be used for other purposes.
+最后，运行 pvremove 命令从 LVM 配置中删除磁盘。现在，磁盘已经完全从 LVM 中移除，可以用于其他用途。
 
 ```
 # pvremove /dev/sdb1
@@ -171,7 +171,7 @@ via: https://www.2daygeek.com/linux-remove-delete-physical-volume-pv-from-volume
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
