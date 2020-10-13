@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12713-1.html)
 [#]: subject: (Linux Jargon Buster: What is a Package Manager in Linux? How Does it Work?)
 [#]: via: (https://itsfoss.com/package-manager/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -10,7 +10,9 @@
 Linux 黑话解释：什么是包管理器？它是如何工作的？
 ======
 
-[Linux 发行版之间有什么不同][1]的要点之一是包管理。在这篇 Linux 黑话解释中，你将了解 Linux 中的打包和包管理器。你将了解什么是包，什么是包管理器，它们是如何工作的，以及有什么样的包管理器可用。
+![](https://img.linux.net.cn/data/attachment/album/202010/13/094827peunhns3nn3qceno.jpg)
+
+[Linux 发行版之间有什么不同][1]的要点之一是包管理。在这篇 Linux 黑话解释中，你将了解 Linux 中的打包和包管理器。你将了解什么是包，什么是包管理器，它们是如何工作的，以及有什么包管理器。
 
 ### 什么是包管理器？
 
