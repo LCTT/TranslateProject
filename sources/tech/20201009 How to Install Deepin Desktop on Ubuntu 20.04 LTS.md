@@ -7,40 +7,41 @@
 [#]: via: (https://itsfoss.com/install-deepin-ubuntu/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-How to Install Deepin Desktop on Ubuntu 20.04 LTS
+如何在 Ubuntu 20.04 LTS 上安装 Deepin 桌面
 ======
 
-_**This tutorial shows you the proper steps to install the Deepin desktop environment on Ubuntu. Removal steps are also mentioned.**_
+_**本教程向您展示在 Ubuntu 上安装 Deepin 桌面环境的正确步骤。还提到了移除步骤。**_
 
-Deepin is undoubtedly a [beautiful Linux distribution][1]. The recently released [Deepin version 20][2] makes it even more beautiful.
+毫无疑问，Deepin 是一个 [漂亮的 Linux 发行版][1]。最近发布的 [Deepin version 20][2] 让它更加美观了。
 
-Now, [Deepin Linux][3] is based on [Debian][4] and the default repository mirrors are too slow. If you would rather stay with Ubuntu, you have the Deepin variant of Ubuntu in the form [UbuntuDDE Linux distribution][5]. It is not one of the [official Ubuntu flavors][6] yet.
+现在，[Deepin Linux][3] 是基于 [Debian][4] 的，默认的存储库镜像太慢了。如果您更愿意使用 Ubuntu，可以选择 [UbuntuDDE Linux 发行版][5] 形式的 Ubuntu 的 Deepin 变体。它还不是 [官方的 Ubuntu 风格][6] 之一。
 
-[Reinstalling a new distribution][7] is a bit of annoyances for you would lose the data and you’ll have to reinstall your applications on the newly installed UbuntuDDE.
+[重新安装新的发行版][7] 是一个麻烦，因为您会丢失数据，您将不得不在新安装的 UbuntuDDE 上重新安装您的应用程序。
 
-A simpler option is to install Deepin desktop environment on your existing Ubuntu system. After all you can easily install more than one [desktop environment][8] in one system.
+一个更简单的选择是在现有的 Ubuntu 系统上安装 Deepin 桌面环境。毕竟，您可以轻松地在一个系统中安装多个 [桌面环境][8]。
 
-Fret not, it is easy to do it and you can also revert the changes if you do not like it. Let me show you how to do that.
+不要烦恼，这很容易做到，如果您不喜欢，也可以恢复这些更改。让我来告诉你怎么做。
 
-### Installing Deepin Desktop on Ubuntu 20.04
+### 在 Ubuntu 20.04 上安装 Deepin 桌面
 
 ![][9]
 
-The UbuntuDDE team has created a PPA for their distribution and you can use the same PPA to install Deepin desktop on Ubuntu 20.04. Keep in mind that this PPA is only available for Ubuntu 20.04. Please read about [using PPA in Ubuntu][10].
 
-No Deepin version 20
+UbuntuDDE 团队已为他们的发行版创建了一个 PPA，您可以使用相同的 PPA 在 Ubuntu 20.04 上安装 Deepin 桌面。请记住，此 PPA 仅适用于 Ubuntu 20.04。请阅读有关 [在 Ubuntu 中使用 PPA][10]。
 
-The Deepin desktop you’ll be installing using the PPA here is NOT the new Deepin desktop version 20 yet. It will probably be there after Ubuntu 20.10 release but we cannot promise anything.
+没有 Deepin 版本 20
 
-Here are the steps that you need to follow:
+您将在此处使用 PPA 安装的 Deepin 桌面还不是新的 Deepin 桌面版本 20。它可能会在 Ubuntu 20.10 发布后出现，但是我们不能保证任何事情。
 
-**Step 1**: You need to first add the [official PPA by Ubuntu DDE Remix team][11] by typing this on the terminal:
+以下是您需要遵循的步骤：
+
+**步骤 1**：您需要首先在终端上输入以下内容，来添加 [Ubuntu DDE Remix 团队的官方 PPA][11]：
 
 ```
 sudo add-apt-repository ppa:ubuntudde-dev/stable
 ```
 
-**Step 2**: Once you have added the repository, proceed with installing the Deepin desktop.
+**步骤 2**：添加存储库以后，继而安装 Deepin 桌面。
 
 ```
 sudo apt install ubuntudde-dde
@@ -48,31 +49,32 @@ sudo apt install ubuntudde-dde
 
 ![][12]
 
-Now, the installation will start and after a while, you will be asked to choose the display manager.
+现在，安装将启动，一段时间后，将要求您选择<ruby>显示管理器<rt>display manager</rt></ruby>。
 
 ![][13]
 
-You need to select “**lightdm**” if you want Deepin desktop themed lock screen. If not, you can set it as “**gdm3**“.
+如果需要深度桌面主题的锁屏，则需要选择 “**lightdm**”。如果不需要，您可以将其设置为 “**gdm3**”。
 
-In case you don’t see this option, you can get it by typing the following command and then select your preferred display manager:
+如果您看不到此选项，可以通过键入以下命令来获得它，然后选择您首选的显示管理器：
 
 ```
 sudo dpkg-reconfigure lightdm
 ```
 
-**Step 3:** Once done, you have to log out and log in again by choosing the “**Deepin**” session or just reboot the system.
+**步骤 3**： 完成后，您必须退出并通过选择 “**Deepin**” 会话再次登录，或者重新启动系统。
 
 ![][14]
 
-And, that is it. Enjoy the Deepin experience on your Ubuntu 20.04 LTS system in no time!
+
+就是这样。马上在您的 Ubuntu 20.04 LTS 系统上享受深度体验吧！
 
 ![][15]
 
-### Removing Deepin desktop from Ubuntu 20.04
+### 从 Ubuntu 20.04 删除 Deepin 桌面
 
-In case, you don’t like the experience or of it is buggy for some reason, you can remove it by following the steps below.
+如果您不喜欢这种体验，或者由于某些原因它有 bug，可以按照以下步骤将其删除。
 
-**Step 1:** If you’ve set “lightdm” as your display manager, you need to set the display manager as “gdm3” before uninstalling Deepin. To do that, type in the following command:
+**步骤 1**： 如果您已将 “lightdm” 设置为显示管理器，则需要在卸载 Deepin 之前将显示管理器设置为 “gdm3”。为此，请键入以下命令：
 
 ```
 sudo dpkg-reconfigure lightdm
@@ -80,25 +82,26 @@ sudo dpkg-reconfigure lightdm
 
 ![Select gdm3 on this screen][13]
 
-And, select **gdm3** to proceed.
+然后，选择 **gdm3** 继续。
 
-Once you’re done with that, you can simply enter the following command to remove Deepin completely:
+完成此操作后，您只需输入以下命令即可完全删除 Deepin：
 
 ```
 sudo apt remove startdde ubuntudde-dde
 ```
 
-You can just reboot to get back to your original Ubuntu desktop. In case the icons become unresponsive, you just open the terminal (**CTRL + ALT + T**) and type in:
+您只需重启即可回到原来的 Ubuntu 桌面。如果图标没有响应，只需打开终端（**CTRL + ALT + T**）并输入：
+
 
 ```
 reboot
 ```
 
-**Wrapping Up**
+**总结**
 
-It is good to have different [choices of desktop environments][16]. If you really like Deepin desktop interface, this could be a way to experience Deepin on Ubuntu.
+有不同的 [桌面环境选择][16] 是件好事。如果您真的喜欢 Deepin 桌面界面，那么这可能是在 Ubuntu 上体验 Deepin 的一种方式。
 
-If you have questions or if you face any issues, please let me know in the comments.
+如果您有任何疑问或遇到任何问题，请在评论中告诉我。
 
 --------------------------------------------------------------------------------
 
@@ -106,7 +109,7 @@ via: https://itsfoss.com/install-deepin-ubuntu/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[gxlct008](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
