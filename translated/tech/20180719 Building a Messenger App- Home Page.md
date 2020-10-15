@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (gxlct008)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Building a Messenger App: Home Page)
@@ -9,6 +9,8 @@
 
 构建一个即时消息应用（八）：Home 页面
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202010/15/213116evlwzdwwv66kmldj.jpg)
 
 本文是该系列的第八篇。
 
@@ -20,8 +22,7 @@
   * [第六篇: 仅用于开发的登录][6]
   * [第七篇: Access 页面][7]
 
-
-继续前端部分，让我们在本文中完成 Home 页面的开发。 我们将添加一个开始对话的表单和一个包含最新对话的列表。
+继续前端部分，让我们在本文中完成 `home` 页面的开发。 我们将添加一个开始对话的表单和一个包含最新对话的列表。
 
 ### 对话表单
 
@@ -35,7 +36,7 @@
 </form>
 ```
 
-将该表单添加到我们显示 auth user 和 logout 按钮部分的下方。
+将该表单添加到我们显示 “auth user” 和 “logout” 按钮部分的下方。
 
 ```js
 page.getElementById('conversation-form').onsubmit = onConversationSubmit
@@ -78,7 +79,7 @@ function createConversation(username) {
 }
 ```
 
-在提交时，我们使用用户名对 `/api/conversations` 进行 POST 请求，并重定向到 conversation 页面 (用于下一篇文章)。
+在提交时，我们使用用户名对 `/api/conversations` 进行 POST 请求，并重定向到 `conversation` 页面（用于下一篇文章）。
 
 ### 对话列表
 
@@ -166,8 +167,7 @@ export function escapeHTML(str) {
 <script>alert('lololo')</script>
 ```
 
-这将非常烦人，因为该脚本将被执行😅。
-所以，永远记住要转义来自不可信来源的内容。
+这将非常烦人，因为该脚本将被执行😅。所以，永远记住要转义来自不可信来源的内容。
 
 ### 消息订阅
 
@@ -227,7 +227,7 @@ function getConversation(id) {
 以上这些涵盖了主页的所有内容 😊。
 在下一篇文章中，我们将对 conversation 页面进行编码。
 
-[Souce Code][10]
+- [源代码][10]
 
 --------------------------------------------------------------------------------
 
@@ -235,20 +235,20 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-home-page/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/gxlct008)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[gxlct008](https://github.com/gxlct008)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://nicolasparada.netlify.com/
 [b]: https://github.com/lujun9972
-[1]: https://nicolasparada.netlify.com/posts/go-messenger-schema/
-[2]: https://nicolasparada.netlify.com/posts/go-messenger-oauth/
-[3]: https://nicolasparada.netlify.com/posts/go-messenger-conversations/
-[4]: https://nicolasparada.netlify.com/posts/go-messenger-messages/
-[5]: https://nicolasparada.netlify.com/posts/go-messenger-realtime-messages/
-[6]: https://nicolasparada.netlify.com/posts/go-messenger-dev-login/
-[7]: https://nicolasparada.netlify.com/posts/go-messenger-access-page/
+[1]: https://linux.cn/article-11396-1.html
+[2]: https://linux.cn/article-11510-1.html
+[3]: https://linux.cn/article-12056-1.html
+[4]: https://linux.cn/article-12680-1.html
+[5]: https://linux.cn/article-12685-1.html
+[6]: https://linux.cn/article-12692-1.html
+[7]: https://linux.cn/article-12704-1.html
 [8]: https://nicolasparada.netlify.com/img/go-messenger-home-page/conversation-form.png
 [9]: https://nicolasparada.netlify.com/img/go-messenger-home-page/conversation-list.png
 [10]: https://github.com/nicolasparada/go-messenger-demo
