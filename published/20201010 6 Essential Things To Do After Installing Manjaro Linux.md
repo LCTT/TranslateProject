@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (rakino)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12721-1.html)
 [#]: subject: (6 Essential Things To Do After Installing Manjaro Linux)
 [#]: via: (https://itsfoss.com/things-to-do-after-installing-manjaro/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
@@ -80,7 +80,7 @@ sudo systemctl enable fstrim.timer
 mhwd-kernel -li
 ```
 
-**安装新内核**（以最新的 5.8 版本内核为例）
+安装新内核（以最新的 5.8 版本内核为例）：
 
 ```
 sudo mhwd-kernel -i linux58
