@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (rakino)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12721-1.html)
 [#]: subject: (6 Essential Things To Do After Installing Manjaro Linux)
 [#]: via: (https://itsfoss.com/things-to-do-after-installing-manjaro/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
-安装 Manjaro Linux 后要做的 6 件事
+安装 Manjaro Linux 后必做的 6 件事
 ======
 
-所以，你刚刚[全新安装了 Manjaro Linux][1]，那么现在该做什么呢？
+你刚刚[全新安装了 Manjaro Linux][1]，那么现在该做什么呢？
 
-下面是我推荐你在安装后进行的一些步骤。
+下面是我推荐你在安装后进行的一些必不可少的步骤。
 
 不过说实话，这些都是我在安装 Manjaro 后喜欢做的事，根据你的需求，步骤可能会有所不同。
 
@@ -24,7 +24,7 @@
 
 #### 1、设置最快的镜像
 
- 在更新系统之前，我建议先整理一下镜像列表。在刷新 Manjaro 系统和从软件仓库下载软件包的时候，优化后的镜像列表会对系统的性能产生明显的影响。
+在更新系统之前，我建议先整理一下镜像列表。在刷新 Manjaro 系统和从软件仓库下载软件包的时候，优化后的镜像列表会对系统的性能产生明显的影响。
 
 打开终端模拟器并输入以下命令：
 
@@ -36,7 +36,7 @@ sudo pacman-mirrors --fasttrack
 
 #### 2、更新系统
 
-保持系统更新可以降低安全漏洞的发生机率，在安装新的软件之前也建议刷新系统的软件仓库。
+保持系统更新可以降低安全漏洞的发生机率，在安装新的软件之前也建议刷新一下系统的软件仓库。
 
 你可以用下面的命令来[更新 Manjaro 系统][5]：
 
@@ -46,13 +46,13 @@ sudo pacman -Syu
 
 ![][6]
 
-#### 3、启用 AUR，Snap 以及 Flatpak 支持
+#### 3、启用 AUR、Snap 以及 Flatpak 支持
 
 [<ruby>Arch 用户仓库<rt>Arch User Repository</rt></ruby>（AUR）][7]是用户选择[基于 Arch Linux 的系统][8]的一个主要理由。你可以在 AUR 中访问到大量的附加软件。
 
-（译注：AUR 中的 PKGBUILD 均为用户上传且未经审核，使用者需要自负责任，在构建软件包前请注意检查其中内容是否合理。）
+（LCTT 译注：AUR 中的 PKGBUILD 均为用户上传且未经审核，使用者需要自负责任，在构建软件包前请注意检查其中内容是否合理。）
 
-作为可选项，你可以直接在 Pamac 图形化软件包管理器中启用对 [Snap][9] 以及 [Flatpak][10] 的支持。
+作为可选项，你可以直接在 Pacman 图形化软件包管理器中启用对 [Snap][9] 以及 [Flatpak][10] 的支持。
 
 ![][11]
 
@@ -80,7 +80,7 @@ sudo systemctl enable fstrim.timer
 mhwd-kernel -li
 ```
 
-**安装新内核**（以最新的 5.8 版本内核为例）**:**
+安装新内核（以最新的 5.8 版本内核为例）：
 
 ```
 sudo mhwd-kernel -i linux58
@@ -96,9 +96,9 @@ sudo mhwd-kernel -i linux58
 
 ![][18]
 
-#### 结论
+### 结论
 
-如果你想在一个预配置、为桌面优化的发行版上享受 Arch Linux 的优点，[Manjaro是一个很好的发行版][19]。虽然它预置了很多东西，但由于每个人设置和需求的不同，有几个步骤是不能提前完成的。
+如果你想在一个预配置、为桌面优化的发行版上享受 Arch Linux 的优点，[Manjaro 是一个很好的发行版][19]。虽然它预置了很多东西，但由于每个人设置和需求的不同，有几个步骤是不能提前完成的。
 
 除开已经提到的步骤，还有哪一步对你来说是必不可少的？请在下面的评论中告诉我们。
 
@@ -109,7 +109,7 @@ via: https://itsfoss.com/things-to-do-after-installing-manjaro/
 作者：[Dimitrios Savvopoulos][a]
 选题：[lujun9972][b]
 译者：[rakino](https://github.com/rakino)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
