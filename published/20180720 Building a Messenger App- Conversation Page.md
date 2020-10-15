@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (gxlct008)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12723-1.html)
 [#]: subject: (Building a Messenger App: Conversation Page)
 [#]: via: (https://nicolasparada.netlify.com/posts/go-messenger-conversation-page/)
 [#]: author: (Nicolás Parada https://nicolasparada.netlify.com/)
 
 构建一个即时消息应用（九）：Conversation 页面
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202010/15/220239arr978u7t7oulv73.jpg)
 
 本文是该系列的第九篇，也是最后一篇。
 
@@ -20,8 +22,6 @@
   * [第六篇: 仅用于开发的登录][6]
   * [第七篇: Access 页面][7]
   * [第八篇: Home 页面][8]
-
-
 
 在这篇文章中，我们将对<ruby>对话<rt>conversation</rt></ruby>页面进行编码。此页面是两个用户之间的聊天室。在顶部我们将显示其他参与者的信息，下面接着的是最新消息列表，以及底部的消息表单。
 
@@ -230,16 +230,15 @@ function readMessages(conversationID) {
 }
 ```
 
-在这里我们仍然使用 partial application 来获取会话 ID。
-当新消息到达时，我们首先检查它是否来自此对话。如果是，我们会将消息条目预先添加到列表中，并向`/api/conversations/{conversationID}/read_messages`发起 POST 一个请求，以更新参与者上次阅读消息的时间。
+在这里我们仍然使用这个应用的部分来获取会话 ID。
+当新消息到达时，我们首先检查它是否来自此对话。如果是，我们会将消息条目预先添加到列表中，并向 `/api/conversations/{conversationID}/read_messages` 发起 POST 一个请求，以更新参与者上次阅读消息的时间。
 
 * * *
 
-本系列到此结束。 Messenger app 现在可以运行了。
+本系列到此结束。 消息应用现在可以运行了。
 
-~~我将在对话和消息列表中添加分页功能，并在共享源代码之前添加用户搜索。我会在准备好的时候和<ruby>托管的演示<rt>a hosted demo</rt></ruby>👨‍💻一起更新它~~
-
-[Souce Code][13] • [Demo][14]
+- [源代码][13]
+- [演示][14]
 
 --------------------------------------------------------------------------------
 
@@ -248,20 +247,20 @@ via: https://nicolasparada.netlify.com/posts/go-messenger-conversation-page/
 作者：[Nicolás Parada][a]
 选题：[lujun9972][b]
 译者：[gxlct008](https://github.com/gxlct008)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://nicolasparada.netlify.com/
 [b]: https://github.com/lujun9972
-[1]: https://nicolasparada.netlify.com/posts/go-messenger-schema/
-[2]: https://nicolasparada.netlify.com/posts/go-messenger-oauth/
-[3]: https://nicolasparada.netlify.com/posts/go-messenger-conversations/
-[4]: https://nicolasparada.netlify.com/posts/go-messenger-messages/
-[5]: https://nicolasparada.netlify.com/posts/go-messenger-realtime-messages/
-[6]: https://nicolasparada.netlify.com/posts/go-messenger-dev-login/
-[7]: https://nicolasparada.netlify.com/posts/go-messenger-access-page/
-[8]: https://nicolasparada.netlify.com/posts/go-messenger-home-page/
+[1]: https://linux.cn/article-11396-1.html
+[2]: https://linux.cn/article-11510-1.html
+[3]: https://linux.cn/article-12056-1.html
+[4]: https://linux.cn/article-12680-1.html
+[5]: https://linux.cn/article-12685-1.html
+[6]: https://linux.cn/article-12692-1.html
+[7]: https://linux.cn/article-12704-1.html
+[8]: https://linux.cn/article-12722-1.html
 [9]: https://nicolasparada.netlify.com/img/go-messenger-conversation-page/heading.png
 [10]: https://nicolasparada.netlify.com/img/go-messenger-conversation-page/list.png
 [11]: https://nicolasparada.netlify.com/img/go-messenger-conversation-page/form.png
