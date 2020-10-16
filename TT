@@ -1,0 +1,49 @@
+Near-field communications and Bluetooth LE are low-power wireless technologies suited for different uses in enterprises. Metamorworks / Getty Images
+在企业中，近场通信和蓝牙LE是有着不同的适用范围低功率无线技术。
+Among many options for low-power, relatively short-ranged connectivity, two technologies stand out – near-field communication and Bluetooth low energy. Both have relatively low deployment costs and are simple to use.
+在低功率、短程相关连接的众多选择中，两种技术脱颖而出——近场通信和低能量蓝牙。两者都具有相对低廉的部署花费和简便使用的特点
+
+NFC is best known for being the technology behind many modern smart cards. NFC chips need to be very close – within a few centimeters – to a reader for a connection to be made, but that’s an upside in its primary enterprise use case, which is security and access control.
+NFC作为许多现代智能卡片的背后技术支持而为大众所熟知。NFC芯片需要十分靠近（只有几厘米）读卡器来实现连接，但在它的主要企业级使用情况下，它的上行空间非常的安全并具有访问控制。
+
+[Get regularly scheduled insights by signing up for Network World newsletters.]
+通过注册网络世界通信定期获取信息。
+
+Bluetooth LE is a low-power derivative of the main Bluetooth standard, offsetting lower potential throughput with substantially reduced energy consumption and the consequent ability to fit into a wider range of potential use cases.
+蓝牙LE是蓝牙主标准的低电量衍生物，它通过持续减少能量消耗来抵消低潜在性的输出和连续发射能力来适应更宽广的潜在用户的使用。
+
+Next, we’ll delve into more in-depth descriptions of each technology and their primary use cases.
+接下来，我们将钻研每个技术点更深入的细节内容和它们的主要应用环境。
+
+NFC features
+NFC的未来
+NFC operates at near-contact ranges – devices must be within several centimeters of each other in order to make contact. A readable passive NFC “tag” requires no independent power source at all, drawing energy from the initiator’s signal, which operates at around 13.5MHz and requires between 100 and 700 µA of power when actively reading a tag.
+NFC应用于近场范围（设备间必须靠近到厘米范围内来进行连接），一个被动可读的NFC“tag”不要求独立电源，它会从发起者的信号中汲取能量，这个信号工作在13.5MHz频段附近并且在主动读取tag时具有100-700µA不等的电源。
+
+“The short range is actually an advantage,” said Gartner research senior director and analyst Bill Ray. “The big thing about NFC is that it’s not just the radio, there’s a massive security protocol built-in.” That is, a potential bad actor would have to be very close – within a few meters, using specialized equipment – to even be able to detect an NFC connection taking place. NFC implementations can also layer on SSL technology for additional safety.
+“事实上短距离是它的优点。” Gartner研究高级总监兼分析师说。NFC最大的特点就是它不仅仅是无线电，它内置了庞大的安全协议。那样的话，一个潜在的不良因素将会逼近——使用特殊的装置，在几米的范围内甚至可以探测到正在发生NFC连接。 NFC的施行可以在SSL技术上分层来提供额外的安全性。
+
+That’s not a surprise, given NFC’s origins as a contactless payment technology. Its roots in that area create an appeal for retailers, which could use NFC to let customers get additional information about items before they buy, get coupons or ask for assistance from a clerk simply by touching their phones to an NFC hotspot.
+那不是惊喜，NFC本就是作为无线支付技术出世。它扎根于这一领域吸引着零售商，使用NFC来使客户在购买东西前获取相关的信息，通过简单地点触手机来连接NFC热点得到优惠券或者向店商寻求帮助。
+
+While the short range involved has limited the number of use cases that make sense for NFC technology, it’s not solely about opening doors and buying lattes. NFC can be used to bootstrap connections for quick and easy pairing between devices, so a user could simply tap their phone on a properly equipped projector in a conference room to create an NFC connection, validate that the smartphone is an approved device to connect to, and give a presentation. The presentation or video data itself wouldn’t be transferred via NFC, but the NFC handshake acts as a validation for a different wireless protocol, eliminating the need to sign into, for example, a Wi-Fi network, or any other higher-bandwidth network that could stream that data.
+使用NFC的情况限制在一个很窄的范围内，对于NFC技术这意味着，它不仅仅是打开门买一杯咖啡那么简单的事情。NFC用于快速引导程序连接和设备间的简易配对，因此一个用户可以通过轻点他们的手机在配备有投影仪的会议室中来创建一个NFC连接，验证智能手机是否是一个已获连接批准的设备并授予权限。权限和视频数据本身不会通过NFC来传输，但是NFC的握手动作作为不同无线协议间的一个验证，消除了登录用户的需求，举个例子，一个Wi-Fi网络或者任何其他更高带宽网络可以传输数据。
+
+Bluetooth LE characteristics
+Bluetooth LE, by contrast, operates over substantially longer distances – anywhere up to several dozen meters – and has about twice the maximum bandwidth of an NFC connection at 1 Mbit/second. It’s an outgrowth of the well-known Bluetooth technology, optimized for machine-to-machine connectivity, thanks to its lower power usage than the main-line standard. It uses less than 15 mA of power at either end of a connection, and has a practical range of about 10 meters, securing connections with AES encryption.
+Yet it’s far from a drop-in replacement for NFC, according to Forrester principal analyst Andre Kindness.
+根据Forrester首席分析师Andre Kindness的说法，它远非NFC的替代品
+“From an information transfer perspective [NFC is] a lot quicker than BLE,” he said. BLE usually takes an appreciable fraction of a second or longer to identify and secure a connection, while that process is more or less instantaneous with NFC.
+从信息传递角度来看，NFC比BLE快一点，他说。BLE通常需要不到一秒的时间或者更长时间的验证和安全连接，而NFC是或多或少会在这个瞬间连接。
+
+
+
+Bluetooth LE, however, is considerably more versatile than NFC, thanks to its greater range, according to IDC senior research analyst Patrick Filkins.
+然而根据IDC高级研究分析师Patrick Filkins的说法，相较于NFC，蓝牙LE由于拥有更大的范围而有着相当多的功能。 
+“I think Bluetooth [LE] is a little better suited for enterprise,” he said. Use cases like asset tracking, indoor navigation, and targeted advertisements are just the tip of the iceberg.
+我认为蓝牙LE比较适合企业，他说。使用情况类似于资产追踪，室内导航，并且针对性的广告只是冰山一角。
+For enterprises, then, the upshot is fairly straightforward – NFC use cases are mostly separate from those for which a company would use Bluetooth, but, for the rare overlap where a choice can be made, the relative advantages and disadvantages are clear. NFC is very short-ranged, cheap, connects instantly and has a lower data transfer rate. Bluetooth LE works over much longer distances and at higher speeds, costs somewhat more and takes a moment to “handshake” its connections.
+对于企业，结果是相当直截了当的——NFC使用情况大多数由那些使用蓝牙的公司分离出来的，但是，对于那些只有一个选择的罕见交叠，相关的优缺点就清晰了。NFC有着短距离，廉价，即时连接以及更低数据转换率的优点。蓝牙LE研究更远的传播距离和更高的传输速率，花销更多和花一点时间来握手连接。
+Join the Network World communities on Facebook and LinkedIn to comment on topics that are top of mind.
+加入Facebook和LinkedIn上的Network World社区，在最热门的话题下留下你的评论。
+
