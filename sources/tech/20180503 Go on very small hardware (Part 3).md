@@ -3,53 +3,54 @@
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-[#]: subject: (Go on very small hardware (Part 3))
+[#]: subject: (Go on very small hardware Part 3)
 [#]: via: (https://ziutek.github.io/2018/05/03/go_on_very_small_hardware3.html)
 [#]: author: (Michał Derkacz )
 
-Go on very small hardware (Part 3)
+Go 语言在极小硬件上的运用（三）
 ======
 [![STM32F030F4P6][1]][2]
 
-Most of the examples discussed in the [first][3] and [second][4] part of this series are blinking LEDs in one or another way. It may have been interesting at first, but after a while it has become a bit boring. Let’s do something more entertaining…
+在本系列的 [第一][3] 和 [第二][4] 部分中讨论的大多数示例都是以一种或另一种方式闪烁的 LED。起初它可能很有趣，但是一段时间后变得有些无聊。让我们做些更有趣的事情……
 
-…let’s light more LEDs!
+…让我们点亮更多的 LED！
 
 ### WS281x LEDs
 
-The [WS281x][5] RGB LEDs (and their clones) are very popular. You can buy them as single elements, chained into long strips or assembled into matrices, rings or other form-factors.
+[WS281x][5] RGB LED（及其克隆）非常受欢迎。您可以作为单个元素购买、链成长条或组装成矩阵、环或其他形状因子。
 
 ![WS2812B][6]
 
-They can be connected in series and thanks to this fact, you can control a long LED strip with only single pin of your MCU. Unfortunately, the phisical protocol used by their internal controller doesn’t fit straight into any peripheral you can find in a MCU. You have to use bit-banging or use available peripherals in unusual way.
+它们可以串联连接，基于这个事实，您可以只用 MCU 的单个引脚就可以控制一个很长的 LED 灯条。不幸的是，它们的内部控制器使用的物理协议不能直接适用于您在 MCU 中可以找到的任何外围设备。您必须使用 <ruby>位脉冲<rt>bit-banging</rt></ruby>或以特殊方式使用可用的外设。
 
-Which of the available solutions is the most efficient depends on the number of LED strips controlled at the same time. If you have to drive 4 to 16 strips the most efficient way is to [use timers and DMA][7] (don’t overlook the links at the end of Martin’s article).
+哪种可用的解决方案最有效取决于同时控制的 LED 灯条数量。如果您必须驱动 4 到 16 个条带，那么最有效的方法是 [使用定时器和 DMA][7]（请不要忽略 Martin 文章末尾的链接）。
 
-If you have to control only one or two strips, use the available SPI or UART peripherals. In case of SPI you can encode only two WS281x bits in one byte sent. UART allows more dense coding thanks to clever use of the start and stop bits: 3 bits per one byte sent.
+如果只需要控制一个或两个条带，请使用可用的 SPI 或 UART 外设。对于 SPI，您只能在发送的一个字节中编码两个 WS281x 位。由于巧妙地使用了起始位和停止位，UART 允许更密集的编码：每发送一个字节 3 位。
 
-The best explanation of how the UART protocol fits into WS281x protocol I found on [this site][8]. If you don’t know Polish, here is the [English translation][9].
+我在 [此站点][8] 上找到了有关 UART 协议如何适用于 WS281x 协议的最佳解释。如果您不懂波兰语，这里是 [英文翻译][9]。
 
-The WS281x based LEDs are still the most popular but there are also SPI controlled LEDs on the market: [APA102][10], [SK9822][11]. Three interesting articles about them: [1][12], [2][13], [3][14].
+基于 WS281x 的 LED 仍然是最受欢迎的，但市场上也有 SPI 控制的 LED：[APA102][10]，[SK9822][11]。关于它们的三篇有趣的文章在这里：[1][12]，[2][13]，[3][14]
 
-### LED ring
+### LED 环
 
-There are many WS2812 based rings on the marker. I have this one:
+市场上有许多基于 WS2812 的环。我有一个这样的：
 
 ![WS2812B][15]
 
-It has 24 individually addressable RGB LEDs (WS2812B) and exposes four terminals: GND, 5V, DI and DO. You can chain more rings or other WS2812 based things by connecting DI (data in) terminal to the DO (data out) terminal of the previous one.
+它具有 24 个可单独寻址的 RGB LED（WS2812B），并暴露出四个端子：GND、5V、DI 和 DO。通过将 DI（数据输入）端子连接到上一个的 DO（数据输出）端子，可以链接更多的环或其他基于 WS2812 的东西。
 
-Let’s connect this ring to our STM32F030 board. We will use the UART based driver so the DI should be connected to the TXD pin on the UART header. The WS2812B LED requires a power supply with at least 3.5V. 24 LEDs can consume quite a lot of current, so during the programming/debuggin it’s best to connect the GND and 5V terminals on the ring directly to the GND and 5V pins available on ST-LINK programmer:
+让我们将这个环连接到我们的 STM32F030 板上。我们将使用基于 UART 的驱动程序，因此 DI 应连接到 UART 接头连接器上的 TXD 引脚。 WS2812B LED 需要至少 3.5V 的电源。 24 个 LED 会消耗大量电流，因此在编程/调试期间，最好将环上的 GND 和 5V 端子直接连接到 ST-LINK 编程器上可用的 GND 和 5V 引脚：
 
 ![WS2812B][16]
 
-Our STM32F030F4P6 MCU and the whole STM32 F0, F3, F7, L4 families have one important thing that the F1, F4, L1 MCUs don’t have: it allows to invert the UART signals and therefore we can connect the ring directly to the UART TXD pin. If you don’t known that we need such inversion you probably didn’t read the [article][9] I mentioned above.
+我们的 STM32F030F4P6 MCU 和整个 STM32 F0、F3、F7、L4 系列具有 F1、F4、L1 MCU 不具备的一项重要功能：它可以反转 UART 信号，因此我们可以将环直接连接到 UART TXD 引脚。如果您不知道我们需要这种反转，那么您可能没有读过我上面提到的 [文章][9]。
 
-So you can’t use the popular [Blue Pill][17] or the [STM32F4-DISCOVERY][18] this way. Use their SPI peripheral or an external inverter. See the [Christmas Tree Lights][19] project as an example of UART+inverter or the [WS2812 example][20] for NUCLEO-F411RE that uses SPI.
+因此，您不能以这种方式使用流行的 [Blue Pill][17] 或 [STM32F4-DISCOVERY][18]。使用其 SPI 外设或外部反相器。有关使用 SPI 的 NUCLEO-F411RE，请参见 [圣诞树灯][19] 项目作为 UART + 逆变器的示例或 [WS2812示例][20]。
 
-By the way, probably the most of DISCOVERY boards have one more problem: they work with VDD = 3V instead of 3.3V. The WS281x requires at least the supply voltage * 0.7 for DI high. This is 3.5V in case of 5V supply and 3.3V in case of 4.7V you can find on the 5V pins of the DISCOVERY. As you can see, even in our case the first LED works 0.2V below spec. In case of DISCOVERY it will work 0.3V bellow spec if powered 4.7V and 0.5V bellow spec if powered 5V.
 
-Let’s finish this lengthy introduction and go to the code:
+顺便说一下，大多数 DISCOVERY 板可能还有一个问题：它们在 VDD = 3V 而不是 3.3V 的情况下工作。 对于高 DI，WS281x 至少要求电源电压 * 0.7。如果是 5V 电源，则为 3.5V；如果是 4.7V 电源，则为 3.3V；可在 DISCOVERY 的 5V 引脚上找到。如您所见，即使在我们的情况下，第一个 LED 的工作电压也低于规格 0.2V。对于 DISCOVERY 板，如果供电 4.7V，它将工作在低于规格的 0.3V 下；如果供电 5V，它将工作在低于规格 0.5V 下。
+
+让我们结束这段冗长的介绍并转到代码：
 
 ```
 package main
@@ -133,45 +134,45 @@ var ISRs = [...]func(){
 }
 ```
 
-##### The import section
+##### 导入部分
 
-The new things in the import section compared to the previous examples are the rand/math package and led package with its led/ws281x subtree. The led package itself contains definition of Color type. The led/ws281x/wsuart defines the ColorOrder, Pixel and Strip types.
+与前面的示例相比，导入部分中的新内容是 `rand/math` 包和带有 `led/ws281x` 子树的 led 包。 led 包本身包含 `Color` 类型的定义。 `led/ws281x/wsuart` 定义了 `ColorOrder`、`Pixel` 和 `Strip` 类型。
 
-I was wondering about using the Color or RGBA type from image/color and about defining the Strip in the way that it will implement image.Image interface but because of using a [gamma correction][21] and the big overhead of image/draw package I ended with simple:
+我想知道如何使用 `image/color` 中的 `Color` 或 `RGBA` 类型，以及如何以它将实现 `image.Image` 接口的方式定义 `Strip`。 但是由于使用了 [gamma 校正][21] 和 大开销的 `color/draw` 包，我以简单的方式结束：
 
 ```
 type Color uint32
 type Strip []Pixel
 ```
 
-with a few useful methods. However, this can change in the future.
+使用一些有用的方法。然而，这种情况在未来可能会改变。
 
-##### The init function
+##### init 函数
 
-There aren’t so much novelties in the init function. The UART baud rate was changed from 115200 to 3000000000/1390 ≈ 2158273 which corresponds to 1390 nanoseconds per WS2812 bit. The TxInv bit in CR2 register is set to invert TXD signal.
+`init` 函数没有太多新颖之处。 UART 波特率从 115200 更改为 3000000000/1390 ≈ 2158273，相当于每个 WS2812 位 1390 纳秒。 CR2 寄存器中的 TxInv 位设置为反转 TXD 信号。
 
-##### The main function
+##### main 函数
 
-The XorShift64 pseudorandom number generator is used to generate random colors. [XORSHIFT][22] is currently the only algorithm implemented by math/rand package. You have to explicitly initialize it using its Seed method with nonzero argument.
+`XorShift64` 伪随机数生成器用于生成随机颜色。 [XORSHIFT][22] 是目前由 `math/rand` 包实现的唯一算法。您必须使用带有非零参数的 `Seed` 方法显式初始化它。
 
-The rgb variable is of type wsuart.ColorOrder and is set to the GRB color order used by WS2812 (WS2811 uses RGB order). It’s then used to translate colors to pixels.
+`rgb` 变量的类型为 `wsuart.ColorOrder`，并设置为 WS2812 使用的 GRB 颜色顺序（WS2811 使用 RGB 顺序）。然后用于将颜色转换为像素。
 
-The `wsuart.Make(24)` creates initialized strip of 24 pixels. It is equivalent of:
+`wsuart.Make(24)` 创建 24 像素的初始化条带。它等效于：
 
 ```
 strip := make(wsuart.Strip, 24)
 strip.Clear()
 ```
 
-The rest of the code uses random colors to draw something similar to “Please Wait…” spinner.
+其余代码使用随机颜色绘制类似于 “Please Wait…” 微调器的内容。
 
-The strip slice acts as a framebuffer. The `tts.Write(strip.Bytes())` sends the content of the framebuffer to the ring.
+条带切片充当帧缓冲区。 `tts.Write(strip.Bytes()` 将帧缓冲区的内容发送到环。
 
-##### Interrupts
+##### 中断
 
-The program is ened with the code that handles interrupts, the same as in the previous [UART example][23].
+该程序由处理中断的代码组成，与先前的 [UART 示例][23] 中的代码相同。
 
-Let’s compile it and run:
+让我们编译并运行：
 
 ```
 $ egc
@@ -181,25 +182,29 @@ $ arm-none-eabi-size cortexm0.elf
 $ openocd -d0 -f interface/stlink.cfg -f target/stm32f0x.cfg -c 'init; program cortexm0.elf; reset run; exit'
 ```
 
-I’ve skipped the openocd output. The video bellow shows how this program works:
+我跳过了 openocd 输出。下面的视频显示了该程序的工作原理：
 
-Sorry, your browser doesn't support embedded videos.
+原文中插入视频的代码：
+<video width="576" height="324" controls="" preload="auto">
+    <source src="https://ziutek.github.io/videos/rgbspinner.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
 
-### Let’s do something useful…
+### 让我们做些有用的事情...
 
-At the beginning of the [first part][3] I’ve asked: “How low we can Go and still do something useful?”. Our MCU is actually a low-end device (8-bitters will probably disagree with me) but we haven’t done anything useful so far.
+在 [第一部分][3] 的开头，我曾问过：“我们能降到多低，还能做一些有用的事情？”。 我们的 MCU 实际上是一种低端设备（8 比特的人可能会不同意我的看法），但到目前为止，我们还没有做任何有用的事情。
 
-So… Let’s do something useful… Let’s make a Clock!
+所以... 让我们做些有用的事情... 让我们做个时钟！
 
-There are many examples of clocks built of RGB LEDs on the Internet. Let’s make our own using our little board and RGB ring. We change the previous code as described below.
+在互联网上有许多由 RGB LED 构成的时钟示例。让我们用小板子和 RGB 环制作自己的时钟。我们按照下面的描述更改先前的代码。
 
-##### The import section
+##### 导入部分
 
-Remove the math/rand package and add stm32/hal/exti.
+删除 `math/rand` 包，然后添加 `stm32/hal/exti`。
 
-##### Global variables
+##### 全局变量
 
-Add two new global variables: btn and btnev:
+添加两个新的全局变量：`btn` 和 `btnev`：
 
 ```
 var (
@@ -209,11 +214,11 @@ var (
 )
 ```
 
-They will be used to handle the “button” that will be used to set our clock. Our board has no button except reset, but somehow we can manage without it.
+它们将用来处理那些用于设置时钟的 “button”。我们的板子除了重置之外没有其他按钮，但是如果没有它，我们仍然可以通过某种方式进行管理。
 
-##### The init function
+##### init 函数
 
-Add this code to the init function:
+将这段代码添加到 `init` 函数：
 
 ```
 btn = gpio.A.Pin(4)
@@ -228,13 +233,13 @@ ei.EnableIRQ()
 rtos.IRQ(irq.EXTI4_15).Enable()
 ```
 
-The PA4 pin is configured as input with the internal pull-up resistor enabled. It’s connected to the onboard LED but that doesn’t hinder anything. More important is that it’s located next to the GND pin so we can use any metal object to simulate the button and set the clock. As a bonus we have additional feedback from the onboard LED.
+在内部<ruby>上拉电阻<rt>pull-up resistor</rt></ruby>启用的情况下，将 PA4 引脚配置为输入。它已连接至板载 LED，但这不会妨碍任何事情。更重要的是它位于 GND 引脚旁边，所以我们可以使用任何金属物体来模拟按钮并设置时钟。作为奖励，我们还有来自板载 LED 的其他反馈。
 
-We use the EXTI peripheral to track the PA4 state. It’s configured to generate an interrupt on any change.
+我们使用 EXTI 外设来跟踪 PA4 状态。它被配置为在发生任何更改时都会产生中断。
 
-##### The btnWait function
+##### btnWait 函数
 
-Define a new auxiliary function:
+定义一个新的辅助功能：
 
 ```
 func btnWait(state int, deadline int64) bool {
@@ -249,7 +254,7 @@ func btnWait(state int, deadline int64) bool {
 }
 ```
 
-It waits for the specified state on the “button” pin, but only until the deadline occurs. This is slightly improved polling code:
+它等待 “button” 引脚上的指定状态，但只等到最后期限出现。这是稍微改进的轮询代码：
 
 ```
 for btn.Load() != state {
@@ -259,11 +264,11 @@ for btn.Load() != state {
 }
 ```
 
-Our btnWait function, instead of busy waiting for state or deadline, uses the btnev variable of type rtos.EventFlag to sleep until something will happen. You can of course use a channel instead of rtos.EventFlag but the latter one is much cheaper.
+我们的 `btnWait` 函数不是忙于等待状态或截止日期，而是使用 `rtos.EventFlag` 类型的 `btnev` 变量休眠，直到有事情发生。您当然可以使用通道而不是 `rtos.EventFlag`，但是后者便宜得多。
 
-##### The main function
+##### main 函数
 
-We need completly new main function:
+我们需要全新的 `main` 函数：
 
 ```
 func main() {
@@ -326,25 +331,25 @@ func main() {
 }
 ```
 
-We use the rtos.Nanosec function instead of time.Now to obtain the current time. This saves much of Flash but also reduces our clock to antique device that has no idea about days, months and years and worst of all it doesn’t handle daylight saving changes.
+我们使用 `rtos.Nanosec` 函数代替 `time.Now` 来获取当前时间。这样可以节省大量的 Flash，但也使我们的时钟变成了不知道日、月、年的老式设备，最糟糕的是它无法处理夏令时的变化。
 
-Our ring has 24 LEDs, so the second hand can be presented with the accuracy of 2.5s. To don’t sacrifice this accuracy and get smooth operation we use quarter-second as base interval. Half-second would be enough but quarter-second is more accurate and works also well with 16 and 48 LEDs.
+我们的环有 24 个 LED，因此秒针的显示精度可以达到 2.5 秒。为了不牺牲这种精度并获得流畅的运行效果，我们使用 1/4 秒作为基准间隔。半秒就足够了，但四分之一秒更准确，而且与 16 和 48 个 LED 配合使用也很好。
 
-The red, green and blue colors are used respectively for hour, minute and second hands. This allows us to use simple logical or operation for color blending. We have the Color.Blend method that can blend arbitrary colors but we’re low of Flash so we prefer simplest possible solution.
+红色、绿色和蓝色分别用于时针、分针和秒针。这允许我们使用简单的 `逻辑或操作` 进行颜色混合。我们 `Color.Blend` 方法可以混合任意颜色，但是我们缺少 Flash，所以我们选择最简单的解决方案。
 
-We redraw the clock only when the second hand moved. The:
+我们只有在秒针移动时才重画时钟。
 
 ```
 btnWait(0, int64(qs+ds)*25e7)
 ```
 
-is waiting for exactly that moment or for the press of the button.
+上面的这行代码等待的正是那一刻，或者是按钮的按下。
 
-Every press of the button adjust the clock forward. There is an acceleration when the button is held down for some time.
+每按一下按钮就会把时钟向前调一调。按住按钮一段时间会产生加速度。
 
-##### Interrupts
+##### 中断
 
-Define new interrupt handler:
+定义新的中断处理程序：
 
 ```
 func exti4_15ISR() {
@@ -356,13 +361,14 @@ func exti4_15ISR() {
 }
 ```
 
-and add `irq.EXTI4_15: exti4_15ISR,` entry to the ISRs array.
+并将 `irq.EXTI4_15: exti4_15ISR` 条目添加到 ISR 数组。
 
-This handler (or Interrupt Service Routine) handles EXTI4_15 IRQ. The Cortex-M0 CPU supports significantly fewer IRQs than its bigger brothers, so you can often see that one IRQ is shared by multiple interrupt sources. In our case one IRQ is shared by 12 EXTI lines.
+该处理程序（或中断服务程序）处理 EXTI4_15 IRQ。 Cortex-M0 CPU 支持的 IRQ 明显少于其较大的同类兄弟处理器，因此您经常可以看到一个 IRQ 被多个中断源共享。在我们的例子中，一个 IRQ 由 12 个 EXTI 线共享。
 
-The exti4_15ISR reads all pending bits and selects 12 more significant of them. Next it clears the seleced bits in EXTI and starts to handle them. In our case only bit 4 is checked. The `btnev.Signal(1)` causes that the `btnev.Wait(1, deadline)` wakes up and returns true.
+exti4_15ISR 读取所有挂起的位，并从中选择 12 个更高的有效位。接下来，它清除 EXTI 中选中的位并开始处理它们。在我们的例子中，仅检查第 4 位。 `btnev.Signal(1)` 引发 `btnev.Wait(1, deadline)` 唤醒并返回 true。
 
-You can find the complete code on [Github][24]. Let’s compile it:
+
+您可以在 [Github][24] 上找到完整的代码。让我们来编译它：
 
 ```
 $ egc
@@ -371,7 +377,7 @@ $ arm-none-eabi-size cortexm0.elf
   15960     240     216   16416    4020 cortexm0.elf
 ```
 
-There are only 184 bytes for any iprovements. Let’s rebuild everything one more time but this time without any type and field names in typeinfo:
+这里所有的改进只有 184 个字节。让我们再次重新构建所有内容，但这次在 typeinfo 中不使用任何类型和字段名：
 
 ```
 $ cd $HOME/emgo
@@ -383,13 +389,17 @@ $ arm-none-eabi-size cortexm0.elf
   15120     240     216   15576    3cd8 cortexm0.elf
 ```
 
-Now, with a kilobyte of free space you can improve something. Let’s see how it works:
+现在，有了千字节的空闲空间，您可以改进一些东西。让我们看看它是如何工作的：
 
-Sorry, your browser doesn't support embedded videos.
+原文中插入视频的代码：
+<video width="576" height="324" controls="" preload="auto">
+    <source src="https://ziutek.github.io/videos/rgbclock.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
 
-I don’t know how I managed to hit exactly 3:00 !?
+我不知道我是怎么精确打到 3:00 的！？
 
-That’s all Folks! In the part 4 (ending this series) we’ll try to display something on a LCD.
+以上就是所有内容！在第 4 部分(本系列的结束)中，我们将尝试在 LCD 上显示一些内容。
 
 --------------------------------------------------------------------------------
 
@@ -397,7 +407,7 @@ via: https://ziutek.github.io/2018/05/03/go_on_very_small_hardware3.html
 
 作者：[-;Michał Derkacz][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[gxlct008](https://github.com/gxlct008)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
