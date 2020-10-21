@@ -7,41 +7,41 @@
 [#]: via: (https://www.2daygeek.com/reduce-shrink-decrease-resize-lvm-logical-volume-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
 
-How to Reduce/Shrink LVM’s (Logical Volume Resize) in Linux
+如何在 Linux 中减少/缩 LVM 大小（逻辑卷调整）？
 ======
 
-Reducing/Shrinking the logical volume is the highest risk of data corruption.
+减少/缩小逻辑卷是数据损坏的最高风险。
 
-So try to avoid this kind of situation if possible, but go ahead if you have no other options.
+所以，如果可能的话，尽量避免这种情况，但如果没有其他选择的话，那就继续。
 
-It is always recommended to make a backup before shrinking an LVM.
+缩减 LVM 之前，建议先做一个备份。
 
-When you are running out of disk space in LVM, you can make some free space on the volume group by reducing the exsisting LVM that no longer uses the full size, instead of adding a new physical disk.
+当你在 LVM 中的磁盘空间耗尽时，你可以通过缩小现有的没有使用全部空间的 LVM，而不是增加一个新的物理磁盘，在卷组上腾出一些空闲空间。
 
-**Make a note:** Shrinking is not supported on a `GFS2` or `XFS` file system.
+**需要注意的是：**在 `GFS2` 或者 `XFS` 文件系统上不支持收缩。
 
-If you are new to Logical Volume Management (LVM), I suggest you start with our previous article.
+如果你是逻辑卷管理 （LVM） 的新手，我建议你从我们之前的文章开始学习。
 
-  * **Part-1: [How to Create/Configure LVM (Logical Volume Management) in Linux][1]**
-  * **Part-2: [How to Extend/Increase LVM’s (Logical Volume Resize) in Linux][2]**
+  * **第一部分：[如何在 Linux 中创建/配置 LVM（逻辑卷管理）][1]**
+  * **第二部分：[如何在 Linux 中扩展/增加 LVM（逻辑卷调整）][2]**
 
 
 
 ![][3]
 
-Reducing the logical volume involves the below steps.
+减少逻辑卷涉及以下步骤。
 
-  * Unmount the file system.
-  * Check the file system for any errors.
-  * Shrink the file system size.
-  * Reduce the logical volume size.
-  * Re-check the file system for errors (Optional).
-  * Mount the file system
-  * Check the reduced file system size
+  * 卸载文件系统
+  * 检查文件系统是否有任何错误
+  * 缩小文件系统的大小
+  * 缩小逻辑卷的大小
+  * 重新检查文件系统是否存在错误（可选）
+  * 挂载文件系统
+  * 检查减少后的文件系统大小
 
 
 
-**For instance;** You have a **100GB** LVM that no longer uses the full size, you want to reduce it to **80GB** so **20GB** can be used for other purposes.
+**比如：**你有一个 **100GB** 的不再使用全部空间的 LVM，你想把它减少到 **80GB**，这样 **20GB** 可以用于其他用途。
 
 ```
 # df -h /testlvm1
@@ -50,17 +50,17 @@ Filesystem              Size Used Avail Use% Mounted on
 /dev/mapper/vg01-lv002  100G 15G  85G   12%  /testlvm1
 ```
 
-### 1) Unmount the file system
+### 1）卸载文件系统
 
-Use the umount command to unmount the file system.
+使用 umount 命令卸载文件系统。
 
 ```
 # umount /testlvm1
 ```
 
-### 2) Check the file system for any Errors
+### 2）检查文件系统是否有任何错误
 
-Check the file system for any errors using the e2fsck command.
+使用 e2fsck 命令检查文件系统是否有错误。
 
 ```
 # e2fsck -f /dev/mapper/vg01-lv002
@@ -74,17 +74,17 @@ Pass 5: Checking group summary information
 /dev/mapper/vg01-lv002: 13/6553600 files (0.0% non-contiguous), 12231854/26212352 blocks
 ```
 
-### 3) Shrink the file system.
+### 3）缩小文件系统
 
-The below command will reduce the **“testlvm1”** file system from **100GB** to **80GB**.
+下面的命令将把 **“testlvm1”** 文件系统从 **100GB** 缩小到 **80GB**。
 
-**Common syntax for file system resize (resize2fs).**
+**文件系统大小调整的常用语法（resize2fs）**。
 
 ```
-resize2fs [Existing Logical Volume Name] [New Size of File System]
+resize2fs [现有逻辑卷名] [新的文件系统大小]
 ```
 
-The actual command is as follows.
+实际命令如下：
 
 ```
 # resize2fs /dev/mapper/vg01-lv002 80G
@@ -94,17 +94,17 @@ Resizing the filesystem on /dev/mapper/vg01-lv002 to 28321400 (4k) blocks.
 The filesystem on /dev/mapper/vg01-lv002 is now 28321400 blocks long.
 ```
 
-### 4) Reduce the Logical Volume (LVM)
+### 4）减少逻辑卷 （LVM） 容量
 
-Now reduce the logical volume (LVM) size using the lvreduce command. The below command **“/dev/mapper/vg01-lv002”** will shrink the Logical volume (LVM) from 100GB to 80GB.
+现在使用 lvreduce 命令缩小逻辑卷 （LVM） 的大小。下面的命令 **”/dev/mapper/vg01-lv002”** 将把逻辑卷 （LVM） 从 100GB 缩小到 80GB。
 
-**Common syntax for LVM Reduce (lvreduce)**
+**LVM 缩减 （lvreduce） 的常用语法**。
 
 ```
-lvreduce [New Size of LVM] [Existing Logical Volume Name]
+lvreduce [新的 LVM 大小] [现有逻辑卷名称]
 ```
 
-The actual command is as follows.
+实际命令如下：
 
 ```
 # lvreduce -L 80G /dev/mapper/vg01-lv002
@@ -116,9 +116,9 @@ Reducing logical volume lv002 to 80.00 GiB
 Logical volume lv002 successfully resized
 ```
 
-### 5) Optional: Check the file system for any Errors
+### 5）可选：检查文件系统是否有错误
 
-Check the file system again if there are any errors after LVM has been reduced.
+缩减 LVM 后再次检查文件系统是否有错误。
 
 ```
 # e2fsck -f /dev/mapper/vg01-lv002
@@ -132,17 +132,17 @@ Pass 5: Checking group summary information
 /dev/mapper/vg01-lv002: 13/4853600 files (0.0% non-contiguous), 1023185/2021235 blocks
 ```
 
-### 6) Mount the file system and check the reduced size
+### 6）挂载文件系统并检查缩小后的大小
 
-Finally mount the file system and check the reduced file system size.
+最后挂载文件系统，并检查缩小后的文件系统大小。
 
-Use the mount command to **[mount the logical volume][4]**.
+使用挂载命令**[挂载逻辑卷][4]**。
 
 ```
 # mount /testlvm1
 ```
 
-Check the newly mounted volume using the **[df command][5]**.
+使用 **[df 命令][5]**检查挂载的卷。
 
 ```
 # df -h /testlvm1
@@ -157,7 +157,7 @@ via: https://www.2daygeek.com/reduce-shrink-decrease-resize-lvm-logical-volume-i
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
