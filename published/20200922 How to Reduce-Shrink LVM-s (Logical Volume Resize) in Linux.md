@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12740-1.html)
 [#]: subject: (How to Reduce/Shrink LVM’s \(Logical Volume Resize\) in Linux)
 [#]: via: (https://www.2daygeek.com/reduce-shrink-decrease-resize-lvm-logical-volume-in-linux/)
 [#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
@@ -48,7 +48,7 @@ Filesystem              Size Used Avail Use% Mounted on
 /dev/mapper/vg01-lv002  100G 15G  85G   12%  /testlvm1
 ```
 
-### 1）卸载文件系统
+### 卸载文件系统
 
 使用 `umount` 命令卸载文件系统：
 
@@ -56,7 +56,7 @@ Filesystem              Size Used Avail Use% Mounted on
 # umount /testlvm1
 ```
 
-### 2）检查文件系统是否有任何错误
+### 检查文件系统是否有任何错误
 
 使用 `e2fsck` 命令检查文件系统是否有错误：
 
@@ -72,7 +72,7 @@ Pass 5: Checking group summary information
 /dev/mapper/vg01-lv002: 13/6553600 files (0.0% non-contiguous), 12231854/26212352 blocks
 ```
 
-### 3）缩小文件系统
+### 缩小文件系统
 
 下面的命令将把 `testlvm1` 文件系统从 **100GB** 缩小到 **80GB**。
 
@@ -92,7 +92,7 @@ Resizing the filesystem on /dev/mapper/vg01-lv002 to 28321400 (4k) blocks.
 The filesystem on /dev/mapper/vg01-lv002 is now 28321400 blocks long.
 ```
 
-### 4）减少逻辑卷 （LVM） 容量
+### 减少逻辑卷 （LVM） 容量
 
 现在使用 `lvreduce` 命令缩小逻辑卷（LVM） 的大小。通过下面的命令， `/dev/mapper/vg01-lv002` 将把逻辑卷 （LVM） 从 100GB 缩小到 80GB。
 
@@ -114,7 +114,7 @@ Reducing logical volume lv002 to 80.00 GiB
 Logical volume lv002 successfully resized
 ```
 
-### 5）可选：检查文件系统是否有错误
+### 可选：检查文件系统是否有错误
 
 缩减 LVM 后再次检查文件系统是否有错误：
 
@@ -130,7 +130,7 @@ Pass 5: Checking group summary information
 /dev/mapper/vg01-lv002: 13/4853600 files (0.0% non-contiguous), 1023185/2021235 blocks
 ```
 
-### 6）挂载文件系统并检查缩小后的大小
+### 挂载文件系统并检查缩小后的大小
 
 最后挂载文件系统，并检查缩小后的文件系统大小。
 
