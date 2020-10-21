@@ -134,7 +134,7 @@ Pass 5: Checking group summary information
 
 最后挂载文件系统，并检查缩小后的文件系统大小。
 
-使用 `mount` 命令**[挂载逻辑卷][4]**：
+使用 `mount` 命令[挂载逻辑卷][4]：
 
 ```
 # mount /testlvm1
