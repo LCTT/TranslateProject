@@ -7,37 +7,34 @@
 [#]: via: (https://opensource.com/article/19/11/my-first-open-source-contribution-mistake-decisions)
 [#]: author: (Galen Corey https://opensource.com/users/galenemco)
 
-My first contribution to open source: Making a decision
+我的第一次开源贡献：做出决定
 ======
-A new open source contributor documents a series of five mistakes she
-made starting out in open source.
+一位新的开源贡献者记录了她加入到开源项目后开始犯得五个错误。
 ![Lightbulb][1]
 
-Previously, I put a lot of [blame on impostor syndrome][2] for delaying my first open source contribution. But there was another factor that I can’t ignore: I can’t make a decision to save my life. And with [millions][3] of open source projects to choose from, choosing one to contribute to is overwhelming. So overwhelming that I would often end up closing my laptop, thinking, "Maybe I’ll just do this another day."
+先前，我将大量的责任归咎于[冒充综合症][2]因为这延迟了我的第一个开源贡献。但还有一个我无法忽视的因素：我无法做决定来拯救我的生活。 在[成千上百万][3]的开源项目中抉择时，选择一个要做贡献的项目势不可挡。如此压迫以至于我常常不得不关掉我的笔记本去思考：“或许我可以改天再做一次”。
 
-Mistake number two was letting my fear of making a decision get in the way of making my first contribution. In an ideal world, perhaps I would have come into my open source journey with a specific project in mind that I genuinely cared about and wanted to work on, but all I had was a vague goal of contributing to open source somehow. For those of you in the same position, here are strategies that helped me pick out the right project (or at least a good one) for my contribution.
+错误二是让我对做决定的恐惧妨碍了我做出第一次贡献。在理想世界里，也许我会带着一个我真正关心和想去做的特定项目开始我的开源之旅，但我有的只是总得为开源项目做出的贡献的模糊目标。对于那些处于同一处境的人来说，这儿有一些策略可以为自己的贡献挑选合适的项目（或者至少是一个好的项目）。
 
-### Tools that I used frequently
+### 我经常使用的工具
 
-At first, I did not think it would be necessary to limit myself to tools or projects with which I was already familiar. There were projects that I had never used before but seemed like appealing candidates because of their active community, or the interesting problems that they solved.
+一开始，我不认为有必要将自己局限于已经熟悉的工具或项目。有一些我之前从未使用过，但由于他们活跃的社区，或者他们解决了有趣的问题，因此看起来很有吸引力。
 
-However, given that I had a limited amount of time to devote to this project, I decided to stick with a tool that I already knew. To understand what a tool needs, you need to be familiar with how it is supposed to work. If you want to contribute to a project that you are unfamiliar with, you need to complete an additional step of getting to know the functionality and goals of the code. This extra load can be fun and rewarding, but it can also double your work time. Since my goal was primarily to contribute, sticking to what I knew was a helpful way to narrow things down. It is also rewarding to give back to a project that you have found useful.
+但是，考虑我投入到这个项目中的时间有限，我决定继续使用我了解的工具。要了解工具需求，你需要熟悉它的工作方式。如果您想为自己不熟悉的项目做贡献，则需要完成一个额外的步骤来了解代码的功能和目标。这个额外的工作量是有趣且值得的，但也会使你的工作时间加倍。因为我的目标主要是贡献，坚持我所知道的是缩小范围一个很好的方式。回馈一个你认为有用的项目也是一种回报。
 
-### An active and friendly community
+### 我经常使用的工具
 
-When choosing my project, I wanted to feel confident that someone would be there to review the code that I wrote. And, of course, I wanted the person who reviewed my code to be a nice person. Putting your work out there for public scrutiny is scary, after all. While I was open to constructive feedback, there were toxic corners of the developer community that I hoped to avoid.
+一开始，我不认为有必要将自己局限于已经熟悉的工具或项目。有一些我之前从未使用过，但由于他们活跃的社区，或者他们解决了有趣的问题，因此看起来很有吸引力。
 
-To evaluate the community that I would be joining, I checked out the _issues_ sections of the repos that I was considering. I looked to see if someone from the core team responded regularly. More importantly, I tried to make sure that no one was talking down to each other in the comments (which is surprisingly common in issues discussions). I also looked out for projects that had a code of conduct, outlining what was appropriate vs. inappropriate behavior for online interaction.
+但是，考虑我投入到这个项目中的时间有限，我决定继续使用我了解的工具。要了解工具需求，你需要熟悉它的工作方式。如果您想为自己不熟悉的项目做贡献，则需要完成一个额外的步骤来了解代码的功能和目标。这个额外的工作量是有趣且值得的，但也会使你的工作时间加倍。因为我的目标主要是贡献，坚持我所知道的是缩小范围一个很好的方式。回馈一个你认为有用的项目也是一种回报。
 
-### Clear contribution guidelines
+因为这是我第一次为开源项目做出贡献，在此过程中我有很多问题。一些项目社区非常擅长记录选择问题和提出请求的程序。一些项目社区在记录流程方面很优秀，可以用来挑选其中的项目并提交请求。尽管那时我没有选择它们，因为在此之前我从未使用过该产品，[Gatsby][4]是该实践的一个范例。
 
-Because this was my first time contributing to open source, I had a lot of questions around the process. Some project communities are excellent about documenting the procedures for choosing an issue and making a pull request. Although I did not select them at the time because I had never worked with the product before, [Gatsby][4] is an exemplar of this practice.
+这种细致的文件帮助我们缓解一些不知如何去做的不安全感。它也给了我希望，项目是开放给新的贡献者，并将花时间来查看我的工作。除了贡献准则外，我还查看了问题部分，看看这个项目是否利用了“好的第一个问题”标志。这是该项目对初学者开放的另一个标志(并帮助你学会如何操作)。
 
-This type of clear documentation helped ease some of my insecurity about not knowing what to do. It also gave me hope that the project was open to new contributors and would take the time to look at my work. In addition to contribution guidelines, I looked in the issues section to see if the project was making use of the "good first issue" flag. This is another indication that the project is open to beginners (and helps you discover what to work on).
+### 总结
 
-### Conclusion
-
-If you don’t already have a project in mind, choosing the right place to make your first open source contribution can be overwhelming. Coming up with a list of standards helped me narrow down my choices and find a great project for my first pull request.
+如果你还没有计划好一个项目，那么选择合适的领域进行您的第一个开源贡献已势不可挡。列出一系列标准可以帮助自己缩减选择范围，并为自己的首次提交找到一个好的项目。
 
 --------------------------------------------------------------------------------
 
@@ -45,7 +42,7 @@ via: https://opensource.com/article/19/11/my-first-open-source-contribution-mist
 
 作者：[Galen Corey][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenmu-kk](https://github.com/chenmu-kk)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
