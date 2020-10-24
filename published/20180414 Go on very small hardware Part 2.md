@@ -1,8 +1,8 @@
 [#]: collector: (oska874)
 [#]: translator: (gxlct008)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12747-1.html)
 [#]: subject: (Go on very small hardware Part 2)
 [#]: via: (https://ziutek.github.io/2018/04/14/go_on_very_small_hardware2.html)
 [#]: author: (Michał Derkacz https://ziutek.github.io/)
@@ -14,7 +14,7 @@ Go 语言在极小硬件上的运用（二）
 
 在本文的 [第一部分][2] 的结尾，我承诺要写关于接口的内容。我不想在这里写有关接口或完整或简短的讲义。相反，我将展示一个简单的示例，来说明如何定义和使用接口，以及如何利用无处不在的 `io.Writer` 接口。还有一些关于<ruby>反射<rt>reflection</rt></ruby>和<ruby>半主机<rt>semihosting</rt></ruby>的内容。
 
-![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/board.jpg)]
+![STM32F030F4P6](https://ziutek.github.io/images/mcu/f030-demo-board/board.jpg)
 
 接口是 Go 语言的重要组成部分。如果你想了解更多有关它们的信息，我建议你阅读《[高效的 Go 编程][3]》 和 [Russ Cox 的文章][4]。
 
