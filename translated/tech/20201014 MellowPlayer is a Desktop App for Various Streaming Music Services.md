@@ -1,32 +1,34 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (MellowPlayer is a Desktop App for Various Streaming Music Services)
 [#]: via: (https://itsfoss.com/mellow-player/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-MellowPlayer 是一款用于各种流媒体音乐服务的桌面应用
+MellowPlayer：一款用于各种流媒体音乐服务的桌面应用
 ======
 
-_**简介：MellowPlayer 是一个免费开源的桌面应用，可以让你在 Linux 和 Windows 上整合基于网络的音乐流媒体服务。**_
+> MellowPlayer 是一个自由开源的桌面应用，可以让你在 Linux 和 Windows 上整合基于网络的音乐流媒体服务。
+
+![][8]
 
 毋庸置疑，很多用户都喜欢使用流媒体服务来收听自己喜欢的音乐，而不是从商店购买单首音乐或者下载收藏。
 
-当然，流媒体服务可以让你探索新的音乐，帮助艺术家轻松接触到更多的听众。但是，由于有许多的音乐流媒体服务（[Soundcloud][1]、[Spotify][2]、[YouTube Music][3]、[Amazon Music][4] 等），因此当在使用电脑时，要有效地使用它们往往会变得很麻烦。
+当然，流媒体服务可以让你探索新的音乐，帮助艺术家轻松传播到更多的听众。但是，由于有许多的音乐流媒体服务（[Soundcloud][1]、[Spotify][2]、[YouTube Music][3]、[Amazon Music][4] 等），因此当在使用电脑时，要有效地使用它们往往会变得很麻烦。
 
-你可以[在 Linux 上安装 Spotify][5]，但没有 Amazon Music 的桌面应用。所以，有可能你无法从单一门户管理流媒体服务。
+你可以[在 Linux 上安装 Spotify][5]，但没有 Amazon Music 的桌面应用，所以，有可能你无法从单一门户管理流媒体服务。
 
-如果一个桌面应用可以让你同时在 Windows 和 Linux 上免费整合流媒体服务呢？在本文中，我将介绍这样一款应用：“[MellowPlayer][6]”。
+如果一个桌面应用可以让你同时在 Windows 和 Linux 上免费整合流媒体服务呢？在本文中，我将介绍这样一款应用：[MellowPlayer][6]。
 
 ### MellowPlayer: 集成各种流媒体音乐服务的开源应用
 
 ![][7]
 
-MellowPlayer 是一款免费开源的跨平台桌面应用，它可以让你整合多个流媒体服务，并在一个界面上管理它们。
+MellowPlayer 是一款自由开源的跨平台桌面应用，它可以让你整合多个流媒体服务，并在一个界面上管理它们。
 
-你可以整合多个支持的流媒体服务。你还可以从每个单独的服务中获得一定程度的控制权来调整你的体验。例如，你可以设置自动跳过广告或在 YouTube 上静音。
+你可以整合多个支持的流媒体服务。你还可以从每个服务中获得一定程度的控制权，来调整你的体验。例如，你可以设置在 YouTube 上自动跳过或静音广告。
 
 对 Windows 和 Linux 的跨平台支持绝对是一个加分项。
 
@@ -36,25 +38,21 @@ MellowPlayer 是一款免费开源的跨平台桌面应用，它可以让你整�
 
 ### MellowPlayer 的特点
 
-![][8]
-
   * 跨平台 （Windows 和 Linux）
-  * 免费且开源
-  * 基于插件的应用，让你通过创建一个插件来添加新的服务
+  * 自由且开源
+  * 基于插件的应用，让你可以通过创建一个插件来添加新的服务
   * 将服务作为本地桌面应用与系统托盘整合
   * 支持热键
   * 支持通知
   * 收听历史
 
-
-
 ### 在 Linux 上安装 MellowPlayer
 
 ![][9]
 
-MellowPlayer 是以 [Flatpak 包][10]的形式提供的。我知道这让一些人很失望，但它在 Linux 中只有 Flaptak，WIndows 中只有一个可执行文件。如果你不知道，请按照我们的[在 Linux 上使用 Flatpak][11] 指南来开始使用。
+MellowPlayer 是以 [Flatpak 包][10]的形式提供的。我知道这让一些人很失望，但它在 Linux 中只有 Flaptak，Windows 中只有一个可执行文件。如果你不知道，请按照我们的[在 Linux 上使用 Flatpak][11] 指南来开始使用。
 
-[下载 MellowPlayer][12]
+- [下载 MellowPlayer][12]
 
 ### 总结
 
@@ -71,7 +69,7 @@ via: https://itsfoss.com/mellow-player/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
