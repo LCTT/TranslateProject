@@ -13,7 +13,6 @@
 
 ![cubes coming together to create a larger cube][1]
 
-People are often surprised when they find out that blockchain technology, which is known for its security, is built on open source software code. In fact, this openness is what creates its security and reliability.
 
 当人们发现以安全性而闻名的区块链技术居然是建立在开源软件代码之上时，通常会感到非常惊讶。事实上，正是这种开放性才赋予了区块链技术的安全性和可靠性。
 
