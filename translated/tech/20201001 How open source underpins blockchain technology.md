@@ -10,6 +10,7 @@
 开源是如何支撑区块链技术发展的
 ======
 创造出区块链安全性和可靠性的原因：是开放，而非监管。
+
 ![cubes coming together to create a larger cube][1]
 
 People are often surprised when they find out that blockchain technology, which is known for its security, is built on open source software code. In fact, this openness is what creates its security and reliability.
