@@ -1,35 +1,34 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Automate your container orchestration with Ansible modules for Kubernetes)
 [#]: via: (https://opensource.com/article/20/9/ansible-modules-kubernetes)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-
-使用 Ansible Kubernetes 模块实现容器编排自动化
+使用 Ansible 的 Kubernetes 模块实现容器编排自动化
 ======
-> 在云上的 Kubernetes 中结合 Ansible 实现自动化的同时，还可以参照我们的速记表熟悉 Ansible 的 k8s 模块。
 
-![Ship captain sailing the Kubernetes seas][1]
+> 将 Kubernetes 与 Ansible 结合实现云端自动化。此外，还可以参照我们的 Ansible 的 k8s 模块速查表。
+
+![](https://img.linux.net.cn/data/attachment/album/202010/28/211747jhlttlf3f81xrffi.jpg)
 
 [Ansible][2] 是实现自动化工作的优秀工具，而 [Kubernetes][3] 则是容器编排方面的利器，要是把两者结合起来，会有怎样的效果呢？正如你所猜测的，Ansible + Kubernetes 的确可以实现容器编排自动化。
 
 ### Ansible 模块
 
-实际上，Ansible 本身只是一个用于解释 YAML 文件的框架。它真正强大之处在于它[丰富的模块][4]，所谓<ruby>模块<rt>module</rt></ruby>，就是在 Ansible playbook 中让你得以通过简单配置就能调用外部应用程序的一些工具。
+实际上，Ansible 本身只是一个用于解释 YAML 文件的框架。它真正强大之处在于它[丰富的模块][4]，所谓<ruby>模块<rt>module</rt></ruby>，就是在 Ansible <ruby>剧本<rt>playbook</rt></ruby> 中让你得以通过简单配置就能调用外部应用程序的一些工具。
 
 Ansible 中有模块可以直接操作 Kubernetes，也有对一些相关组件（例如 [Docker][5] 和 [Podman][6]）实现操作的模块。学习使用一个新模块的过程和学习新的终端命令、API 一样，可以先从文档中了解这个模块在调用的时候需要接受哪些参数，以及这些参数在外部应用程序中产生的具体作用。
 
 ### 访问 Kubernetes 集群
 
-在使用 Ansible Kubernetes 模块之前，先要有能够访问 Kubernetes 集群的权限。在没有权限的情况下，可以尝试使用一个短期账号，但我们更推荐的是按照 Kubernetes 官网上的指引，或是参考 Braynt Son 《[入门 Kubernetes][8]》的教程安装 [Minikube][7]。Minikube 提供了一个单节点 Kubernetes 实例的安装过程，你可以像使用一个完整集群一样对其进行配置和交互。
+在使用 Ansible Kubernetes 模块之前，先要有能够访问 Kubernetes 集群的权限。在没有权限的情况下，可以尝试使用一个短期在线试用账号，但我们更推荐的是按照 Kubernetes 官网上的指引，或是参考 Braynt Son 《[入门 Kubernetes][8]》的教程安装 [Minikube][7]。Minikube 提供了一个单节点 Kubernetes 实例的安装过程，你可以像使用一个完整集群一样对其进行配置和交互。
 
-**[下载 [Ansible k8s 速记表][9]]**
+- 下载 [Ansible k8s 速记表][9]（需注册）
 
 在安装 Minikube 之前，你需要确保你的环境支持虚拟化并安装 `libvirt`，然后对 `libvirt` 用户组授权：
-
 
 ```
 $ sudo dnf install libvirt
@@ -42,7 +41,6 @@ $ newgrp libvirt
 
 为了能够在 Ansible 中使用 Kubernetes 相关的模块，你需要安装以下这些 Python 模块：
 
-
 ```
 $ pip3.6 install kubernetes --user
 $ pip3.6 install openshift --user
@@ -52,9 +50,8 @@ $ pip3.6 install openshift --user
 
 如果你使用的是 Minikube 而不是完整的 Kubernetes 集群，请使用 `minikube` 命令在本地创建一个最精简化的 Kubernetes 实例：
 
-
 ```
-`$ minikube start --driver=kvm2 --kvm-network default`
+$ minikube start --driver=kvm2 --kvm-network default
 ```
 
 然后等待 Minikube 完成初始化，这个过程所需的时间会因实际情况而异。
@@ -63,29 +60,26 @@ $ pip3.6 install openshift --user
 
 集群启动以后，通过 `cluster-info` 选项就可以获取到集群相关信息了：
 
-
 ```
 $ kubectl cluster-info
-Kubernetes master is running at <https://192.168.39.190:8443>
-KubeDNS is running at <https://192.168.39.190:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy>
+Kubernetes master is running at https://192.168.39.190:8443
+KubeDNS is running at https://192.168.39.190:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 
-### 使用 `k8s` 模块
+### 使用 k8s 模块
 
-Ansible 使用 `k8s` 这个模块来实现对 Kubernetes 的操作，在 playbook 中使用 `k8s` 模块就可以对 Kuvernetes 对象进行管理。这个模块描述了 `kubectl` 命令的最终状态，例如对于以下这个使用 `kubectl` 创建新的[命名空间][10]的操作：
-
+Ansible 使用 `k8s` 这个模块来实现对 Kubernetes 的操作，在剧本中使用 `k8s` 模块就可以对 Kuvernetes 对象进行管理。这个模块描述了 `kubectl` 命令的最终状态，例如对于以下这个使用 `kubectl` 创建新的[命名空间][10]的操作：
 
 ```
-`$ kubectl create namespace my-namespace`
+$ kubectl create namespace my-namespace
 ```
 
 这是一个很简单的操作，而对这个操作的最终状态用 YAML 文件来描述是这样的：
 
-
 ```
-\- hosts: localhost
+- hosts: localhost
   tasks:
     - name: create namespace
       k8s:
@@ -95,24 +89,21 @@ Ansible 使用 `k8s` 这个模块来实现对 Kubernetes 的操作，在 playboo
         state: present
 ```
 
-如果你使用的是 Minikube，那么主机名应该定义为 `localhost`。需要注意的是，模块中对其它可用参数也定义了对应的语法（例如 `api_version` 和 `kind` 参数）。
+如果你使用的是 Minikube，那么主机名（`hosts`）应该定义为 `localhost`。需要注意的是，所使用的模块也定义了可用参数的语法（例如 `api_version` 和 `kind` 参数）。
 
-在运行这个 playbook 之前，先通过 `yamllint` 命令验证是否有错误：
-
-
-```
-`$ yamllint example.yaml`
-```
-
-确保没有错误之后，运行 playbook：
-
+在运行这个剧本之前，先通过 `yamllint` 命令验证是否有错误：
 
 ```
-`$ ansible-playbook ./example.yaml`
+$ yamllint example.yaml
+```
+
+确保没有错误之后，运行剧本：
+
+```
+$ ansible-playbook ./example.yaml
 ```
 
 可以验证新的命名空间是否已经被创建出来：
-
 
 ```
 $ kubectl get namespaces
@@ -127,10 +118,9 @@ my-namespace      Active   3s
 
 ### 使用 Podman 拉取容器镜像
 
-容器是受 Kubernetes 管理的最小单位 Linux 系统，因此 [LXC 项目][11]和 Docker 对容器定义了很多规范。Podman 是一个最新的容器操作工具集，它不需要守护进程就可以运行，为此受到了很多用户的欢迎。
+容器是个 Linux 系统，几乎是最小化的，可以由 Kubernetes 管理。[LXC 项目][11]和 Docker 定义了大部分的容器规范。最近加入容器工具集的是 Podman，它不需要守护进程就可以运行，为此受到了很多用户的欢迎。
 
-通过 Podman 可以从 Docker Hub 或者 Quay.io 拉取到容器镜像。这一操作对应的 Ansible 语法也很简单，只需要将存储库网站提供的镜像路径写在 playbook 中的相应位置就可以了：
-
+通过 Podman 可以从 Docker Hub 或者 Quay.io 等存储库拉取容器镜像。这一操作对应的 Ansible 语法也很简单，只需要将存储库网站提供的镜像路径写在剧本中的相应位置就可以了：
 
 ```
    - name: pull an image
@@ -140,13 +130,11 @@ my-namespace      Active   3s
 
 使用 `yamllint` 验证：
 
-
 ```
-`$ yamllint example.yaml`
+$ yamllint example.yaml
 ```
 
-运行 playbook：
-
+运行剧本：
 
 ```
 $ ansible-playbook ./example.yaml
@@ -171,8 +159,7 @@ localhost: ok=3 changed=1 unreachable=0 failed=0
 
 ### 使用 Ansible 实现部署
 
-Ansible 除了可以执行小型维护任务以外，还可以通过 playbook 实现其它由 `kubectl` 实现的功能，因为两者的 YAML 文件之间只有少量的差异。 在 Kubernetes 中使用的 YAML 文件只需要稍加改动，就可以在 Ansible playbook 中使用。例如下面这个用于使用 `kubectl` 命令部署 Web 服务器的 YAML 文件：
-
+Ansible 除了可以执行小型维护任务以外，还可以通过剧本实现其它由 `kubectl` 实现的功能，因为两者的 YAML 文件之间只有少量的差异。在 Kubernetes 中使用的 YAML 文件只需要稍加改动，就可以在 Ansible 剧本中使用。例如下面这个用于使用 `kubectl` 命令部署 Web 服务器的 YAML 文件：
 
 ```
 apiVersion: apps/v1
@@ -196,8 +183,7 @@ spec:
         - containerPort: 80
 ```
 
-如果你对其中的参数比较熟悉，你只要把 YAML 文件中的大部分内容放到 playbook 中的 `definition` 部分，就可以在 Ansible 中使用了：
-
+如果你对其中的参数比较熟悉，你只要把 YAML 文件中的大部分内容放到剧本中的 `definition` 部分，就可以在 Ansible 中使用了：
 
 ```
    - name: deploy a web server
@@ -230,7 +216,6 @@ spec:
 
 执行完成后，使用 `kubectl` 命令可以看到预期中的的<ruby>部署<rt>deployment</rt></ruby>：
 
-
 ```
 $ kubectl -n my-namespace get pods
 NAME                      READY  STATUS
@@ -248,7 +233,7 @@ via: https://opensource.com/article/20/9/ansible-modules-kubernetes
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
 译者：[HankChow](https://github.com/HankChow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
