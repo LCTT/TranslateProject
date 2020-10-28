@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How open source underpins blockchain technology)
-[#]: via: (https://opensource.com/article/20/10/open-source-blockchain)
-[#]: author: (Matt Shealy https://opensource.com/users/mshealy)
+[#]: collector: "lujun9972"
+[#]: translator: "xiao-song-123"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "How open source underpins blockchain technology"
+[#]: via: "https://opensource.com/article/20/10/open-source-blockchain"
+[#]: author: "Matt Shealy https://opensource.com/users/mshealy"
 
 How open source underpins blockchain technology
 ======
@@ -79,7 +79,7 @@ via: https://opensource.com/article/20/10/open-source-blockchain
 
 [a]: https://opensource.com/users/mshealy
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cube_innovation_process_block_container.png?itok=vkPYmSRQ (cubes coming together to create a larger cube)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cube_innovation_process_block_container.png?itok=vkPYmSRQ "cubes coming together to create a larger cube"
 [2]: https://www.linuxfoundation.org/wp-content/uploads/2020/08/2020_kernel_history_report_082720.pdf
 [3]: https://www.freecodecamp.org/news/what-is-a-dapp-a-guide-to-ethereum-dapps/
 [4]: https://www.investopedia.com/ask/answers/063015/what-are-some-major-regulatory-agencies-responsible-overseeing-financial-institutions-us.asp
