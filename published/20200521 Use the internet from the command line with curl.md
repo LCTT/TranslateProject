@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MjSeven)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12772-1.html)
 [#]: subject: (Use the internet from the command line with curl)
 [#]: via: (https://opensource.com/article/20/5/curl-cheat-sheet)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > 下载我们整理的 curl 备忘录。要在不使用图形界面的情况下从互联网上获取所需的信息，curl 是一种快速有效的方法。
 
-![(https://img.linux.net.cn/data/attachment/album/202010/31/000543n032ud499yy4d94v.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202010/31/000543n032ud499yy4d94v.jpg)
 
 `curl` 通常被视作一款非交互式 Web 浏览器，这意味着它能够从互联网上获取信息，并在你的终端中显示，或将其保存到文件中。从表面看，这是 Web 浏览器，类似 Firefox 或 Chromium 所做的工作，只是它们默认情况下会*渲染*信息，而 `curl` 会下载并显示原始信息。实际上，`curl` 命令可以做更多的事情，并且能够使用多种协议与服务器进行双向传输数据，这些协议包括 HTTP、FTP、SFTP、IMAP、POP3、LDAP、SMB、SMTP 等。对于普通终端用户来说，这是一个有用的工具；而对于系统管理员，这非常便捷；对于微服务和云开发人员来说，它是一个质量保证工具。
 
