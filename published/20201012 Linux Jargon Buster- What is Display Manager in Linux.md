@@ -12,7 +12,7 @@ Linux 黑话解释：什么是显示管理器？
 
 > 在这篇 Linux 黑话解释中，你将了解 Linux 中的显示管理器。它是桌面环境的一部分吗？它的作用是什么？
 
-### 在 Linux 中什么是显示管理器？
+### 什么是 Linux 中的显示管理器？
 
 简单来说，<ruby>显示管理器<rt>display manager</rt></ruby>（DM）是一个为你的 Linux 发行版提供图形登录功能的程序。它控制用户会话并管理用户认证。显示管理器会在你输入用户名和密码后，立即启动[显示服务器][1]并加载[桌面环境][2]。
 
@@ -52,7 +52,7 @@ Linux 黑话解释：什么是显示管理器？
 
 例如，Mint 的 Cinnamon 桌面使用了 LightDM，但有自己的欢迎页来给它更多的 Mint 式（或者我应该说是 Cinnamon）的外观。
 
-![基于 LightDM 的 Linux Mint 登录屏幕][9]。
+![基于 LightDM 的 Linux Mint 登录屏幕][9]
 
 来看看 Kali Linux 的登录界面：
 
