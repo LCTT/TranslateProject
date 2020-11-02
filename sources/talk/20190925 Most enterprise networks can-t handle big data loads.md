@@ -7,7 +7,7 @@
 [#]: via: (https://www.networkworld.com/article/3440519/most-enterprise-networks-cant-handle-big-data-loads.html)
 [#]: author: (Andy Patrizio https://www.networkworld.com/author/Andy-Patrizio/)
 
-Most enterprise networks can't handle big data loads
+大多数企业网络无法处理大数据负载
 ======
 As more data moves through the network, efforts to keep up are lagging due to leadership and technology issues.
 Metamorworks / Getty Images
