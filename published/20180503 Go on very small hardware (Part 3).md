@@ -187,8 +187,6 @@ $ openocd -d0 -f interface/stlink.cfg -f target/stm32f0x.cfg -c 'init; program c
 
 我跳过了 `openocd` 的输出。下面的视频显示了该程序的工作原理：
 
-原文中插入视频的代码：
-
 ![video](https://ziutek.github.io/videos/rgbspinner.mp4)
 
 ### 让我们做些有用的事情...
