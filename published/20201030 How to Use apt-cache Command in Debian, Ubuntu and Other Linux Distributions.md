@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12786-1.html)
 [#]: subject: (How to Use apt-cache Command in Debian, Ubuntu and Other Linux Distributions)
 [#]: via: (https://itsfoss.com/apt-cache-command/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -52,7 +52,7 @@ apt-cache search package_name
 
 ![][5]
 
-你也可以缩小搜索范围，只在产品名称中查找搜索词。
+你也可以缩小搜索范围，只在软件包名称中查找搜索词。
 
 ```
 apt-cache search --names-only package_name
@@ -92,7 +92,7 @@ apt-cache showpkg package_name
 
 默认情况下，每个已安装的软件包版本的优先级为 100，未安装的软件包的优先级为 500。同一软件包可能有多个不同优先级的版本。APT 会安装优先级较高的版本，除非安装的版本较新。
 
-如果不理解这个部分，也没关系。对于一个普通的 Linux 用户来说，会极少纠结于这么深的软件包管理。
+如果不理解这个部分，也没关系。对于一个普通的 Linux 用户来说，会极少纠结于这么深的软件包管理知识。
 
 #### 检查软件包的依赖关系和反向依赖关系。
 
@@ -130,7 +130,7 @@ apt-cache pkgnames | wc -l
 
 你是否注意到你不需要成为 [root 用户][19]就可以使用 `apt-cache` 命令？
 
-较新的 [apt 命令][20]也有一些与 `apt-cache` 命令对应的功能选项。由于 `apt` 比较新，所以在脚本中还是首选 `apt-get` 及其相关的 `apt-cache` 等命令。
+较新的 [apt 命令][20]也有一些与 `apt-cache` 命令相对应的功能选项。由于 `apt` 比较新，所以在脚本中还是首选使用 `apt-get` 及其相关的 `apt-cache` 等命令。
 
 希望你觉得本教程对你有帮助。如果你对上面讨论的任何一点有疑问或者有改进的建议，请在评论中告诉我。
 
@@ -141,7 +141,7 @@ via: https://itsfoss.com/apt-cache-command/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
