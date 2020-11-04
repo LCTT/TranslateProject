@@ -10,11 +10,11 @@
 When Wi-Fi is mission-critical, a mixed-channel architecture is the best option
 ======
 
-### Multi-channel is the norm for Wi-Fi today, but it’s not always the best choice. Single-channel and hybrid APs offer compelling alternatives when reliable Wi-Fi is a must.
+### 当Wi-Fi 成为关键业务时，对于如今的它来说，混合信道架构是最好的多信道选择，但它并不总是最佳的选择。当需要可靠的Wi-Fi时，单信道和混合Aps提供了令人信服的替代方案。
 
 ![Getty Images][1]
 
-I’ve worked with a number of companies that have implemented digital projects only to see them fail. The ideation was correct, the implementation was sound, and the market opportunity was there. The weak link? The Wi-Fi network.
+I’ve worked with a number of companies that have implemented digital projects only to 我曾与许多实施数字项目的公司合作，结果却发现它们失败了。想法是正确的，施行是健全的，市场机遇也在那里。那薄弱的环节在哪里呢？是Wi-Fi网络。
 
 For example, a large hospital wanted to improve clinician response times to patient alarms by having telemetry information sent to mobile devices. Without the system, the only way a nurse would know about a patient alarm is from an audible alert. And with all the background noise, it’s often tough to discern where noises are coming from. The problem was the Wi-Fi network in the hospital had not been upgraded in years and caused messages to be significantly delayed in their delivery, often taking four to five minutes to deliver. The long delivery times caused a lack of confidence in the system, so many clinicians stopped using it and went back to manual alerting. As a result, the project was considered a failure.
 
