@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12773-1.html)
 [#]: subject: (Linux Jargon Buster: What is Display Manager in Linux?)
 [#]: via: (https://itsfoss.com/display-manager/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -12,7 +12,7 @@ Linux 黑话解释：什么是显示管理器？
 
 > 在这篇 Linux 黑话解释中，你将了解 Linux 中的显示管理器。它是桌面环境的一部分吗？它的作用是什么？
 
-### 在 Linux 中什么是显示管理器？
+### 什么是 Linux 中的显示管理器？
 
 简单来说，<ruby>显示管理器<rt>display manager</rt></ruby>（DM）是一个为你的 Linux 发行版提供图形登录功能的程序。它控制用户会话并管理用户认证。显示管理器会在你输入用户名和密码后，立即启动[显示服务器][1]并加载[桌面环境][2]。
 
@@ -46,13 +46,13 @@ Linux 黑话解释：什么是显示管理器？
 
 有这么多的桌面环境可供选择，它们都有自己的显示管理器吗？不，不是这样的。
 
-正如我之前提到的，可见的登录屏幕被称为欢迎页。这个欢迎页可以被自定义来改变登录屏幕的外观。
+正如我之前提到的，可见的登录屏幕被称为欢迎页。这个欢迎页可以进行自定义来改变登录屏幕的外观。
 
-事实上，许多发行版和/或桌面环境都编写了自己的欢迎页，以给用户提供一个类似于他们品牌的登录屏幕。
+事实上，许多发行版和/或桌面环境都制作了自己的欢迎页，以给用户提供一个类似于他们品牌的登录屏幕。
 
 例如，Mint 的 Cinnamon 桌面使用了 LightDM，但有自己的欢迎页来给它更多的 Mint 式（或者我应该说是 Cinnamon）的外观。
 
-![基于 LightDM 的 Linux Mint 登录屏幕][9]。
+![基于 LightDM 的 Linux Mint 登录屏幕][9]
 
 来看看 Kali Linux 的登录界面：
 
@@ -66,7 +66,7 @@ Linux 黑话解释：什么是显示管理器？
 
 ![][12]
 
-如果当时没有做切换，那么以后可以通过手动配置来改变显示管理器。不同的发行版重新配置显示管理器的方法略有不同，不在本文讨论范围内。
+如果当时没有做切换，那么以后可以通过手动配置来改变显示管理器。不同的发行版重新配置显示管理器的方法略有不同，这不在本文讨论范围内。
 
 ### 结语
 
@@ -81,7 +81,7 @@ via: https://itsfoss.com/display-manager/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
