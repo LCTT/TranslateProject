@@ -7,59 +7,59 @@
 [#]: via: (https://www.networkworld.com/article/3386376/when-wi-fi-is-mission-critical-a-mixed-channel-architecture-is-the-best-option.html#tk.rss_all)
 [#]: author: (Zeus Kerravala https://www.networkworld.com/author/Zeus-Kerravala/)
 
-When Wi-Fi is mission-critical, a mixed-channel architecture is the best option
+当Wi-Fi 成为关键业务时,混合信道架构是最好的多信道选择
 ======
 
 ### 当Wi-Fi 成为关键业务时，对于如今的它来说，混合信道架构是最好的多信道选择，但它并不总是最佳的选择。当需要可靠的Wi-Fi时，单信道和混合Aps提供了令人信服的替代方案。
 
 ![Getty Images][1]
 
-I’ve worked with a number of companies that have implemented digital projects only to 我曾与许多实施数字项目的公司合作，结果却发现它们失败了。想法是正确的，施行是健全的，市场机遇也在那里。那薄弱的环节在哪里呢？是Wi-Fi网络。
+我曾与许多实施数字项目的公司合作，结果却发现它们失败了。想法是正确的，施行是健全的，市场机遇也在那里。薄弱的环节在哪里呢？是Wi-Fi网络。
 
-For example, a large hospital wanted to improve clinician response times to patient alarms by having telemetry information sent to mobile devices. Without the system, the only way a nurse would know about a patient alarm is from an audible alert. And with all the background noise, it’s often tough to discern where noises are coming from. The problem was the Wi-Fi network in the hospital had not been upgraded in years and caused messages to be significantly delayed in their delivery, often taking four to five minutes to deliver. The long delivery times caused a lack of confidence in the system, so many clinicians stopped using it and went back to manual alerting. As a result, the project was considered a failure.
+例如，一家大型医院希望通过将遥测信息发送到移动设备，来提高临床医生对患者警报的响应时间。如果没有这个系统，护士了解病人警报的唯一途径就是通过声音警报。在所有嘈杂的背景音中，通常很难分辨噪音来自哪里。问题是这家医院中的Wi-Fi网络已经很多年未升级了，这导致信息传递严重延迟（通常需要4~5分钟）。过长的信息传递导致人们对该系统失去信心，因此许多临床医生停止使用该系统，转而使用手动警报。最终，人们认为这个项目是失败的。
 
-I’ve seen similar examples in manufacturing, K-12 education, entertainment, and other industries. Businesses are competing on the basis of customer experience, and that’s driven from the ever-expanding, ubiquitous wireless edge. Great Wi-Fi doesn’t necessarily mean market leadership, but bad Wi-Fi will have a negative impact on customers and employees. And in today’s competitive climate, that’s a recipe for disaster.
+我曾在制造业、K-12教育、娱乐和其他行业中见过类似的案例。企业竞争的基础是客户体验，而竞争的动力来自不断扩展又无处不在的无线优势。好的 Wi-Fi并不意味着市场领导地位，但是劣质的Wi-Fi将会对客户和员工产生负面影响。而在当今竞争激烈的环境下，这是灾难的根源。
 
 **[ Read also:[Wi-Fi site-survey tips: How to avoid interference, dead spots][2] ]**
 
-## Wi-Fi performance historically inconsistent
+## Wi-Fi性能历来不一致
 
-The problem with Wi-Fi is that it’s inherently flaky. I’m sure everyone reading this has experienced the typical flaws with failed downloads, dropped connections, inconsistent performance, and lengthy wait times to connect to public hot spots.
+Wi-Fi的问题在于它本身就很脆弱。我相信每个阅读这篇文章的人都经历过下载失败、连接中断、性能不一致以及连接公用热点的漫长等待时间等缺陷。
 
-Picture sitting in a conference prior to a keynote address and being able to tweet, send email, browse the web, and do other things with no problem. Then the keynote speaker comes on stage and the entire audiences start snapping pics, uploading those pictures, and streaming things – and the Wi-Fi stops working. I find this to be the norm more than the exception, underscoring the need for [no-compromise Wi-Fi][3].
+想象一下，你坐在一个会议上，在一个主题演讲之前，你可以随意地发推特、发电子邮件、浏览网页以及做其他事情。然后主讲人上台，所有观众开始拍照，上传并流传信息——然后网络崩溃了。我发现这不仅仅是一个例外，更是一种常态，强调了对[不妥协Wi-Fi][3]的需求。
 
-The question for network professionals is how to get to a place where the Wi-Fi is rock solid 100% of the time. Some say that just beefing up the existing network will do that, and it might, but in some cases, the type of Wi-Fi might not be appropriate.
+对于网络技术人员的问题是如何到达一个Wi-Fi一直不间断保持100%的地方。有人说只要加强现存的网络可以做到，这也许可以，但在某些情况下，Wi-Fi的类型可能并不合适。
 
-The most commonly deployed type of Wi-Fi is multi-channel, also known as micro-cell, where each client connects to the access point (AP) using a radio channel. A high-quality experience is based on two things: good signal strength and minimal interference. Several things can cause interference, such as APs being too close, layout issues, or interference from other equipment. To minimize interference, businesses invest a significant amount of time and money in [site surveys to plan the optimal channel map][2], but even with that’s done well, Wi-Fi glitches can still happen.
+最常见的Wi-Fi部署类型是多信道，也称为微蜂窝，每个客户端通过无线信道连接到接入点（AP）。高质量的通话体验基于两点：良好的信号强度和最小的干扰。有几个因素会导致干扰，例如接入点太靠近，布局问题或者来自其他设备的干扰。为了最大程度地减少干扰，企业需要在现场调查中投入大量的时间和资金来规划最佳的信道地图，但即使这些做得很好，Wi-Fi故障仍然可能发生。 [site surveys to plan the optimal channel map][2], but even with that’s done well, Wi-Fi glitches can still happen.
 
 **[[Take this mobile device management course from PluralSight and learn how to secure devices in your company without degrading the user experience.][4] ]**
 
-## Multi-channel Wi-Fi not always the best choice
+## 多通道Wi-Fi并非总是最佳选择
 
-For many carpeted offices, multi-channel Wi-Fi is likely to be solid, but there are some environments where external circumstances will impact performance. A good example of this is a multi-tenant building in which there are multiple Wi-Fi networks transmitting on the same channel and interfering with one another. Another example is a hospital where there are many campus workers moving between APs. The client will also try to connect to the best AP, causing the client to continually disconnect and reconnect resulting in dropped sessions. Then there are environments such as schools, airports, and conference facilities where there is a high number of transient devices and multi-channel can struggle to keep up.
+对于许多铺着地毯的办公室来说，多通道Wi-Fi可能是可靠的，但在某些环境中，外部环境会影响性能。一个很好的例子是多租户建筑，其中有多个Wi-Fi网络在同一信道上传输并相互干扰。另一个例子是医院，这里有许多工作人员在多个接入点间流动。有并联Wi-Fi网络传输在相同通道并相互干扰。客户端将试图连接到最佳接入点，导致客户端不断断开连接并重新连接，从而导致会话中断。还有一些环境，例如学校、机场和会议设施，那里存在大量的瞬态设备，而多通道则难以跟上。
 
-## Single channel Wi-Fi offers better reliability but with a performance hit
+## 单通道Wi-Fi提供更好的可靠性但与此同时性能会受到影响
 
-What’s a network manager to do? Is inconsistent Wi-Fi just a fait accompli? Multi-channel is the norm, but it isn’t designed for dynamic physical environments or those where reliable connectivity is a must.
+网络管理器要做什么？不一致的Wi-Fi只是一个既定事实吗？多信道是一种标准，但它并非是为动态物理环境或那些需要可靠的连接环境而设计的。
 
-Several years ago an alternative architecture was proposed that would solve these problems. As the name suggests, “single channel” Wi-Fi uses a single radio channel for all APs in the network. Think of this as being a single Wi-Fi fabric that operates on one channel. With this architecture, the placement of APs is irrelevant because they all utilize the same channel, so they won’t interfere with one another. This has an obvious simplicity advantage, such as if coverage is poor, there’s no reason to do another expensive site survey. Instead, just drop in APs where they are needed.
+几年前提出了一项解决这些问题的替代架构。顾名思义，“单信道”Wi-Fi在网络中为所有接入点使用单一的无线频道。可以把它想象成在一个信道上运行的单个Wi-Fi结构。这种架构中，接入点的位置无关紧要，因为他们都利用相同的通道，因此不会互相干扰。这有一个显而易见的简化优势，比如，如果覆盖率很低，那就没有理由再做一次昂贵的现场调查。相反，只需在需要的地方布置接入点就可以了。
 
-One of the disadvantages of single-channel is that aggregate network throughput was lower than multi-channel because only one channel can be used. This might be fine in environments where reliability trumps performance, but many organizations want both.
+单通道的缺点之一是总网络吞吐量低于多通道，因为只能使用一个通道。在可靠性高于性能的环境中，这可能会很好，但许多组织希望二者兼而有之。
 
-## Hybrid APs offer the best of both worlds
+## 混合接入点提供了两全其美的优势
 
-There has been recent innovation from the manufacturers of single-channel systems that mix channel architectures, creating a “best of both worlds” deployment that offers the throughput of multi-channel with the reliability of single-channel. For example, Allied Telesis offers Hybrid APs that can operate in multi-channel and single-channel mode simultaneously. That means some web clients can be assigned to the multi-channel to have maximum throughput, while others can use single-channel for seamless roaming experience.
+单信道系统制造商最近进行了创新，将信道架构混合在一起，创造了一种“两全其美”的部署，可提供多信道的吞吐量和单信道的可靠性。举个例子，安奈特提供了混合接入点，可以同时在多信道和单信道模式下运行。这意味着可以分配一些web客户端到多信道以获得最大的吞吐量，而其他的web客户端则可使用单信道来获得无缝漫游体验。
 
-A practical use-case of such a mix might be a logistics facility where the office staff uses multi-channel, but the fork-lift operators use single-channel for continuous connectivity as they move throughout the warehouse.
+这种混合的实际用例可能是物流设施，办公室工作人员使用多通道，但叉车操作员在整个仓库移动时使用单一通道持续连接。
 
-Wi-Fi was once a network of convenience, but now it is perhaps the most mission-critical of all networks. A traditional multi-channel system might work, but due diligence should be done to see how it functions under a heavy load. IT leaders need to understand how important Wi-Fi is to digital transformation initiatives and do the proper testing to ensure it’s not the weak link in the infrastructure chain and choose the best technology for today’s environment.
+Wi-Fi曾是一个便利的网络，但如今他或许是所有网络中最关键的任务。传统的多信道体系也许可以工作，但应该做一些尽职调查来看看它在重负下如何运转。IT领导者需要了解Wi-Fi对数字转型计划的重要性，并进行适当的测试，以确保它不是基础设施链中的薄弱环节，并为当今环境选择最佳技术。
 
-**Reviews: 4 free, open-source network monitoring tools:**
+**综述：4个免费的开源网络监控工具**
 
-  * [Icinga: Enterprise-grade, open-source network-monitoring that scales][5]
-  * [Nagios Core: Network-monitoring software with lots of plugins, steep learning curve][6]
-  * [Observium open-source network monitoring tool: Won’t run on Windows but has a great user interface][7]
-  * [Zabbix delivers effective no-frills network monitoring][8]
+  * [Icinga:可扩展的企业级开源网络监控][5]
+  * [Nagios Core: 包含大量插件、陡峭学习曲线的网络监控软件][6]
+  * [Observium 开源网络监控工具: 无法在Windows系统上运行，但有着出色的用户界面][7]
+  * [Zabbix 提供有效的网络监控][8]
 
 
 
@@ -71,7 +71,7 @@ via: https://www.networkworld.com/article/3386376/when-wi-fi-is-mission-critical
 
 作者：[Zeus Kerravala][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenmu-kk](https://github.com/chenmu-kk)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
