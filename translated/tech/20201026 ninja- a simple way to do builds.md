@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (ninja: a simple way to do builds)
@@ -27,15 +27,15 @@ done
 
 ### 构建系统是让人困惑的
 
-在过去，我对使用 make 或 bazel 这样的构建系统来做我的小项目一直很反感，因为 bazel 是个大而复杂的东西，而 `make` 对我来说感觉有点神秘。我真的不知道如何使用它们中的任何一个。
+在过去，我对使用 `make` 或 `bazel` 这样的构建系统来做我的小项目一直很反感，因为 `bazel` 是个大而复杂的东西，而 `make` 对我来说感觉有点神秘。我真的不想使用它们中的任何一个。
 
 所以很长时间以来，我只是写了一个 bash 脚本或者其他的东西来进行构建，然后就认命了，有时候只能等一分钟。
 
-### ninja 是一个非常简单的构建系统
+### ninja 是一个极其简单的构建系统
 
-但 ninja 并不复杂！以下是我所知道的关于 ninja 构建文件的语法：如何创建一个 `rule `和一个 `build`：
+但 `ninja` 并不复杂！以下是我所知道的关于 ninja 构建文件的语法：创建一个 `rule` 和一个 `build`：
 
-`rule` 有一个命令和描述（描述只是给人看的，所以你可以知道它在构建你的代码时在做什么）。
+`rule` 有一个命令（`command`）和描述（`description`）参数（描述只是给人看的，所以你可以知道它在构建你的代码时在做什么）。
 
 ```
 rule svg2pdf
@@ -55,7 +55,7 @@ Ninja 还有一些更多的功能（见[手册][2]），但我还没有用过。
 
 ### ninja 文件通常是自动生成的
 
-ninja 的神奇之处在于，你不必使用一些混乱的构建语言，它们很难记住（比如 make），因为你不经常使用它，相反，ninja 语言超级简单，如果你想做一些复杂的事情，那么你只需使用任意编程语言生成你想要的构建文件。
+ninja 的神奇之处在于，你不必使用一些混乱的构建语言，它们很难记住，因为你不经常使用它（比如 `make`），相反，ninja 语言超级简单，如果你想做一些复杂的事情，那么你只需使用任意编程语言生成你想要的构建文件。
 
 我喜欢写一个 `build.py` 文件，或者像这样的文件，创建 ninja 的构建文件，然后运行 `ninja`：
 
@@ -79,11 +79,11 @@ import subprocess
 subprocess.check_call(['ninja'])
 ```
 
-我相信有一堆 ninja 的最佳实践，但我不知道。对于我的小项目而言，我发现它很好用。
+我相信有一堆 `ninja` 的最佳实践，但我不知道。对于我的小项目而言，我发现它很好用。
 
 ### meson 是一个生成 ninja 文件的构建系统
 
-我对 [Meson][4] 还不太了解，但最近我在构建一个 C 程序 （[plocate][5]，一个比 `locate` 更快的替代方案)时，我注意到它有不同的构建说明，而不是通常的 `./configure; make; make install`：
+我对 [Meson][4] 还不太了解，但最近我在构建一个 C 程序 （[plocate][5]，一个比 `locate` 更快的替代方案）时，我注意到它有不同的构建说明，而不是通常的 `./configure; make; make install`：
 
 ```
 meson builddir
@@ -91,7 +91,7 @@ cd builddir
 ninja
 ```
 
-好像 Meson 是一个 C/C++/Java/Rust/Fortran 的构建系统，可以用 ninja 作为后端。
+看起来 Meson 是一个可以用 ninja 作为后端的 C/C++/Java/Rust/Fortran 构建系统。
 
 ### 就是这些！
 
@@ -104,7 +104,7 @@ via: https://jvns.ca/blog/2020/10/26/ninja--a-simple-way-to-do-builds/
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
