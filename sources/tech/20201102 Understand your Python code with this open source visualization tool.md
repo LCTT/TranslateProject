@@ -7,71 +7,70 @@
 [#]: via: "https://opensource.com/article/20/11/python-code-viztracer"
 [#]: author: "Tian Gao https://opensource.com/users/gaogaotiantian"
 
-使用此开源可视化工具来理解您的Python代码
+使用开源可视化工具来理解您的 Python 代码
 ======
-VizTracer visualizes and traces Python code to provide greater insight
-into how the code works.
+VizTracer 工具可以可视化并跟踪 Python 代码，让您可以更深入地了解其工作原理。
 ![Python programming language logo with question marks][1]
 
-It's challenging to understand your Python project as it gets larger and more complex. Even when you write the entire project, it's impossible to know how it works fully. Debugging and profiling your code is essential to better understanding it.
+随之 Python 项目变得越来越大、越复杂，理解起它来就变得充满挑战性。即使是您自己独自编写了整个项目，也不可能完全知道项目是如何工作的。为了能更好的理解您的代码，调试和分析代码变得至关重要。
 
-[VizTracer][2] is a tool to help you understand Python code by tracing and visualizing its execution. Without making any changes to your source code, VizTracer can log function entries/exits, function arguments/returns, and any arbitrary variables, then display the data using an intuitive front-end Google [Trace-Viewer][3].
+[VizTracer][2] 是一个这样的工具，它通过跟踪和可视化 Python 代码的执行过程，来帮助您对代码的理解。无需对源代码进行任何更改，VizTracer 即可记录函数的入口 / 出口，函数参数 / 返回值以及任意变量，然后通过 [Trace-Viewer][3] 使用直观的谷歌前端界面来显示数据。
 
-Here is an example of running a [Monte Carlo tree search][4]:
+下面是一个运行[蒙特卡洛树搜索][4]的例子：
 
 ![Monte Carlo tree search visualization][5]
 
 (Tian Gao, [CC BY-SA 4.0][6])
 
-Every function is logged and visualized in stack style on a timeline so that you can see what is happening when you run a program. You can zoom in to see the details at any specific point:
+每个函数都在时间线上以堆栈的形式记录和可视化，这样您就可以看到在运行程序时发生了什么。您可以放大查看任意特定点的详细信息：
 
 ![Zooming in on VizTracer visualization][7]
 
 (Tian Gao, [CC BY-SA 4.0][6])
 
-VizTracer can also automatically log function arguments and return value; you can click on the function entry and see the detail info:
+VizTracer 还可以自动记录函数参数和返回值。您可以单击功能条目并查看详细信息：
 
 ![Viewing VizTracer details][8]
 
 (Tian Gao, [CC BY-SA 4.0][6])
 
-Or you can create a whole new signal and use it to log variables. For example, this shows the cost value when you do a gradient descent:
+或者您可以创建一个全新的信号，并用它来记录变量。例如，这显示了执行梯度下降时的代价值：
 
 ![VizTracer gradient descent][9]
 
 (Tian Gao, [CC BY-SA 4.0][6])
 
-In contrast to other tools with complicated setups, VizTracer is super-easy to use and does not have any dependencies. You can install it from pip with:
+与其他设置复杂的工具相比，VizTracer 使用起来非常简单，并且没有任何依赖关系。您可以从 pip 安装它：
 
 
 ```
 `pip install viztracer`
 ```
 
-And trace your program by entering (where `<your_script.py>` is the name of your script):
+您也可以通过输入来跟踪你的程序 ( `<your_script.py>` 是您脚本的名称):
 
 
 ```
 `viztracer <your_script.py>`
 ```
 
-VizTracer will generate an HTML report in your working directory that you can open in Chrome.
+VizTracer 将在您的工作目录中生成一个 HTML 报告，您可以在 Chrome 浏览器中打开它。
 
-VizTracer offers other advanced features, such as filters, which you can use to filter out the functions that you do not want to trace so that you'll have a cleaner report. For example, to include only the functions in files, you are interested in:
+VizTracer 还提供了其他高级功能，比如过滤器功能，您可以使用它过滤掉不想跟踪的函数，获得更清晰的报告。例如，要仅包含文件中的函数，您需要：
 
 
 ```
 `viztracer include_files ./ --run <your_script.py>`
 ```
 
-To record the function arguments and return value:
+记录函数参数和返回值:
 
 
 ```
 `viztracer --log_function_args --log_return_value <your_script.py>`
 ```
 
-To log any arbitrary variables matching a certain regex:
+记录与某个正则表达式匹配的任意变量:
 
 
 ```
@@ -79,13 +78,13 @@ To log any arbitrary variables matching a certain regex:
 viztracer --log_var a.* --run &lt;your_script.py&gt;
 ```
 
-You can get other features, like custom events to log numeric values and objects, by making minor modifications to your source code.
+您可以通过对源代码进行较小的修改来获得其他功能，例如自定义事件来记录数值和对象。
 
-VizTracer also includes a virtual debugger (vdb) that can debug VizTracer's log file. vdb debugs your executed code (much like [pdb][10]) so that you can understand the code flow. Helpfully, it supports running back in time because it knows everything that happened.
+VizTracer 还包括一个虚拟调试器( vdb )，它可以调试 VizTracer 的日志文件。可以用 vdb 调试您运行中的代码 (与 [pdb][10] 非常相似 ) 以便您了解代码流。有用的是，它还支持时间回溯，因为它知道发生的一切。
 
-Unlike some prototypes, VizTracer implements its core in pure C, which significantly reduces the overhead to a level similar to [cProfile][11].
+与一些原型不同，VizTracer 使用纯 C 语言实现其核心，这将极大地减少开销，使其达到类似于 [cProfile][11] 的水平。
 
-VizTracer is open source, released under the Apache 2.0 License, and supports all common operating systems platforms (Linux, macOS, and Windows). You can learn more about its features and access its source code on [GitHub][2].
+VizTracer 是开源的，在 Apache 2.0 许可下发布，支持所有常见的操作系统平台(Linux、macOS和Windows)。你可以在 [GitHub][2] 上了解关于它的更多特性并访问源代码。
 
 --------------------------------------------------------------------------------
 
@@ -93,7 +92,7 @@ via: https://opensource.com/article/20/11/python-code-viztracer
 
 作者：[Tian Gao][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[xiao-song-123](https://github.com/xiao-song-123)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
