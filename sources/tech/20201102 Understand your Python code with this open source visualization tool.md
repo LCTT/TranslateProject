@@ -1,13 +1,13 @@
-[#]: collector: (lujun9972)
-[#]: translator: (xiao-song-123)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Understand your Python code with this open source visualization tool)
-[#]: via: (https://opensource.com/article/20/11/python-code-viztracer)
-[#]: author: (Tian Gao https://opensource.com/users/gaogaotiantian)
+[#]: collector: "lujun9972"
+[#]: translator: "xiao-song-123"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Understand your Python code with this open source visualization tool"
+[#]: via: "https://opensource.com/article/20/11/python-code-viztracer"
+[#]: author: "Tian Gao https://opensource.com/users/gaogaotiantian"
 
-Understand your Python code with this open source visualization tool
+使用此开源可视化工具来理解您的Python代码
 ======
 VizTracer visualizes and traces Python code to provide greater insight
 into how the code works.
@@ -100,14 +100,14 @@ via: https://opensource.com/article/20/11/python-code-viztracer
 
 [a]: https://opensource.com/users/gaogaotiantian
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/python_programming_question.png?itok=cOeJW-8r (Python programming language logo with question marks)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/python_programming_question.png?itok=cOeJW-8r "Python programming language logo with question marks"
 [2]: https://github.com/gaogaotiantian/viztracer
 [3]: http://google.github.io/trace-viewer/
 [4]: https://en.wikipedia.org/wiki/Monte_Carlo_tree_search
-[5]: https://opensource.com/sites/default/files/uploads/viztracer_mcts.png (Monte Carlo tree search visualization)
+[5]: https://opensource.com/sites/default/files/uploads/viztracer_mcts.png "Monte Carlo tree search visualization"
 [6]: https://creativecommons.org/licenses/by-sa/4.0/
-[7]: https://opensource.com/sites/default/files/uploads/viztracer_zoomin.png (Zooming in on VizTracer visualization)
-[8]: https://opensource.com/sites/default/files/uploads/viztracer_details.png (Viewing VizTracer details)
-[9]: https://opensource.com/sites/default/files/uploads/viztracer_gradient.png (VizTracer gradient descent)
+[7]: https://opensource.com/sites/default/files/uploads/viztracer_zoomin.png "Zooming in on VizTracer visualization"
+[8]: https://opensource.com/sites/default/files/uploads/viztracer_details.png "Viewing VizTracer details"
+[9]: https://opensource.com/sites/default/files/uploads/viztracer_gradient.png "VizTracer gradient descent"
 [10]: https://docs.python.org/3/library/pdb.html
 [11]: https://docs.python.org/2/library/profile.html#module-cProfile
