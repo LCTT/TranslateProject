@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (4 cool new projects to try in COPR from October 2020)
@@ -33,13 +33,13 @@ sudo dnf install dialect
 
 ### GitHub CLI
 
-[gh][7] 是一个官方的 GitHub 命令行客户端。它在终端提供了快速的访问，并完全控制你的项目问题、拉取请求和发布。问题（和其他东西）也可以在浏览器中轻松查看，以获得更标准的用户界面，或与他人分享。
+[gh][7] 是一个官方的 GitHub 命令行客户端。它在终端提供了快速的访问，并完全控制你的项目问题、拉取请求和发布。议题（和其他东西）也可以在浏览器中轻松查看，以获得更标准的用户界面，或与他人分享。
 
 ![][8]
 
 #### 安装说明
 
-目前[仓库][9]在 Fedora 33 和 Fedora Rawhide 中提供了 _gh_ 。要安装它，请使用下面的命令：
+目前[仓库][9]在 Fedora 33 和 Fedora Rawhide 中提供了 `gh` 。要安装它，请使用下面的命令：
 
 ```
 sudo dnf copr enable jdoss/github-cli
@@ -69,7 +69,7 @@ sudo dnf install glide-rs
 
 #### 安装说明
 
-目前[仓库][15]在 Fedora 31、32、33 和 Rawhide 还有 EPEL8 中提供了 _vim-ale_ 。要安装它，请使用下面的命令：
+目前[仓库][15]在 Fedora 31、32、33 和 Rawhide 还有 EPEL8 中提供了 `vim-ale` 。要安装它，请使用下面的命令：
 
 ```
 sudo dnf copr enable praiskup/vim-ale
@@ -85,7 +85,7 @@ via: https://fedoramagazine.org/4-cool-new-projects-to-try-in-copr-from-october-
 作者：[frostyx][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
