@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12809-1.html)
 [#]: subject: (Linux Jargon Buster: What are GUI, CLI and TUI in Linux?)
 [#]: via: (https://itsfoss.com/gui-cli-tui/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
 Linux 黑话解释：什么是 Linux 中的 GUI、CLI 和 TUI？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202011/10/092051zw3ofb365a63fahl.jpg)
 
 当你开始使用 Linux 并关注关于 Linux 的网站和论坛时，你会经常遇到诸如 GUI、CLI 等术语，有时还会遇到 TUI。
 
