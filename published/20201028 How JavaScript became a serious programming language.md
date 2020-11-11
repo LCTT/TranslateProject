@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12813-1.html)
 [#]: subject: (How JavaScript became a serious programming language)
 [#]: via: (https://opensource.com/article/20/10/history-javascript)
 [#]: author: (Nimisha Mukherjee https://opensource.com/users/nimisha)
@@ -12,7 +12,7 @@ JavaScript 是如何成为一门严肃的编程语言的
 
 > 从最开始作为一种使网站变得漂亮的方式，JavaScript 已转变为一种严肃的编程语言。
 
-![Javascript 代码特写与霓虹灯图形叠加][1]
+![](https://img.linux.net.cn/data/attachment/album/202011/12/010945vezib4p1b1ti6pjt.jpg)
 
 JavaScript 的卑微起步始于 1995 年，是由当时在 Netscape 通信公司工作的 Brendan Eich [在短短 10 天内创建的][2]。从那时起，JavaScript 已经走过了漫长的道路，从一个让网站变得漂亮的工具变成了一种严肃的编程语言。
 
