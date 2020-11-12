@@ -1,35 +1,34 @@
-[#]: collector: (lujun9972)
-[#]: translator: (xiao-song-123)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (5 steps to learn any programming language)
-[#]: via: (https://opensource.com/article/20/10/learn-any-programming-language)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
+[#]: collector: "lujun9972"
+[#]: translator: "xiao-song-123"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "5 steps to learn any programming language"
+[#]: via: "https://opensource.com/article/20/10/learn-any-programming-language"
+[#]: author: "Seth Kenlon https://opensource.com/users/seth"
 
-5 steps to learn any programming language
+学习任何编程语言的 5 个步骤
 ======
-With just a little programming experience, you can learn a new language
-in just a few days (sometimes less).
+只需一点编程经验，您就可以在几天内（有时更少）学习一种新语言。
 ![Learning to program][1]
 
-Some people love learning new programming languages. Other people can't imagine having to learn even one. In this article, I'm going to show you how to think like a coder so that you can confidently learn any programming language you want.
+有些人喜欢学习新的编程语言，也有一些人连学习一种都是可望不可即的事情。在本文中，我将向您展示如何像程序员一样思考，以便您可以自信地学习所需的任何编程语言。
 
-The truth is, once you've learned how to program, the language you use becomes less of a hurdle and more of a formality. In fact, that's just one of the many reasons educators say to [teach kids to code early][2]. Regardless of how simple their introductory language may be, the logic remains the same across everything else children (or adult learners) are likely to encounter later.
+事实上，一旦您学会了如何编程，您使用的语言就不再是一个障碍，而更像是一种形式。这只是教育家们倡导 [让孩子尽早学习编程][2] 的众多原因之一。不管他们的入门语言有多简单，这种编程的逻辑和儿童(或成人学习者)以后可能遇到的其他东西的逻辑有着相同之处。
 
-With just a little programming experience, which you can gain from any one of several introductory articles here on Opensource.com, you can go on to learn _any_ programming language in just a few days (sometimes less). Now, this isn't magic, and you do have to put some effort into it. And admittedly, it takes a lot longer than just a few days to learn every library available to a language or to learn the nuances of packaging your code for delivery. But getting started is easier than you might think, and the rest comes naturally with practice.
+只需有一点编程经验(您可以从 Opensource.com 上的任何一篇介绍性文章中获得)，您就可以在几天内(有时更短)学习任何编程语言。这并不是魔法，现在您也必须要为此付出一些努力。诚然，学习一种语言每个的可用库，或者学习打包代码以及进行交付的细微差别，需要的时间远远不止几天。但是，就入门来说，比您想像中的要容易许多，剩下的则要通过不断练习来完成。
 
-When experienced programmers sit down to learn a new language, they're looking for five things. Once you know those five things, you're ready to start coding.
+当有经验的程序员静下心来学习一门新的编程语言时，他们会寻找五样东西。只要您知道了这五件事，您就可以开始编码了。
 
-### 1\. Syntax
+### 1\. 语法
 
 ![Syntax][3]
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-The syntax of a language describes the structure of code. This encompasses both how the code is written on a line-by-line basis as well as the actual words used to construct code statements.
+语言的语法描述了代码的结构。这包括如何逐行编写代码，以及用于构造代码语句的实际单词。
 
-[Python][5], for instance, is known for using indentation to indicate where one block ends and another one starts:
+例如，[Python][5] 因使用缩进来指示一个代码块在哪里结束以及另一代码块在哪里开始而闻名：
 
 
 ```
@@ -42,7 +41,7 @@ while j &lt; rows:
     k = 0
 ```
 
-[Lua][6] just uses the keyword `end`:
+[Lua][6] 只是使用关键字 `end`:
 
 
 ```
@@ -53,7 +52,7 @@ for i,obj in ipairs(hit) do
 end
 ```
 
-[Java][7], [C][8], C++, and similar languages use braces:
+[Java][7], [C][8], C++, 和类似的编程语言使用花括号:
 
 
 ```
@@ -62,23 +61,23 @@ while (std::getline(e,r)) {
   }
 ```
 
-A language's syntax also involves things like including libraries, setting variables, and terminating lines. With practice, you'll learn to recognize syntactical requirements (and conventions) almost subliminally as you read sample code.
+编程语言的语法还包括包括库、设置变量和终止行等内容。通过练习，您将学会在阅读示例代码时下意识地识别语法需求(和惯例)。
 
-#### Take action
+#### 实践
 
-When learning a new programming language, strive to understand its syntax. You don't have to memorize it, just know where to look, should you forget. It also helps to use a good [IDE][9], because many of them alert you of syntax errors as they occur.
+当学习一门新的编程语言时，要努力理解它的语法。您不需要去记住它，只需要知道如果忘记了以后去哪里看。使用好的 [IDE][9] 也很有帮助，因为很多 IDE 在出现语法错误时会提醒您。
 
-### 2\. Built-ins and conditionals
+### 2\. 内置函数和条件
 
 ![built-in words][10]
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-A programming language, just like a natural language, has a finite number of words it recognizes as valid. This vocabulary can be expanded with additional libraries, but the core language knows a specific set of keywords. Most languages don't have as many keywords as you probably think. Even in a very low-level language like C, there are only 32 words, such as `for`, `do`, `while`, `int`, `float`, `char`, `break`, and so on.
+就像自然语言一样，编程语言可以识别的合法单词是有限的。这个词汇表可以使用其他库进行扩展，但是核心语言知道一组特定的关键字。大多数语言并没有您想的那么多关键字。即使在像 C 语言这样非常低级的语言中，也只有 32 个关键字，比如 `for`, `do`, `while`, `int`, `float`, `char`, `break` 等等。
 
-Knowing these keywords gives you the ability to write basic expressions, the building blocks of a program. Many of the built-in words help you construct conditional statements, which influence the flow of your program. For instance, if you want to write a program that lets you click and drag an icon, then your code must detect when the user's mouse cursor is positioned over an icon. The code that causes the mouse to grab the icon must execute only _if_ the mouse cursor is within the same coordinates as the icon's outer edges. That's a classic if/then statement, but different languages can express that differently.
+了解了这些关键字，您就可以编写基本的表达式，也就是构建程序的代码块。许多内置的关键字能帮助您构建条件语句，这些条件语句影响整个程序的流程。例如，如果您想编写一个允许单击和拖动图标的程序，那么您的代码就必须检测用户的鼠标指针何时位于图标上。只有当鼠标光标位于图标外部边缘相同的坐标时，才执行导致使鼠标抓取图标的代码。这是一个经典的 if / then 语句，不同的语言可以用不同的方式表达。
 
-Python uses a combination of `if`, `elif`, and `else` but doesn't explicitly close the statement:
+Python 使用 `if`, `elif `和 `else` 的组合来实现条件语句，但是并不显式的关闭语句：
 
 
 ```
@@ -90,7 +89,7 @@ else:
     # some other action
 ```
 
-[Bash][11] uses `if`, `elif`, `else`, and uses `fi` to end the statement:
+[Bash][11] 使用 `if`, `elif`, `else`, 并且使用 `fi` 来结束语句:
 
 
 ```
@@ -103,7 +102,7 @@ else
 fi
 ```
 
-C and Java, however, use `if`, `else`, and `else if`, enclosed by braces:
+然而 C 和 Java,  使用 `if`, `else` 和 `else if`, 用花括号把它们括起来:
 
 
 ```
@@ -116,27 +115,27 @@ if (boolean) {
 }
 ```
 
-While there are small variations in word choice and syntax, the basics are always the same. Learn the ways to define conditions in the programming language you're learning, including `if/then`, `do...while`, and `case` statements.
+各种编程语言虽然在关键字的选择和语法上有细微的变化，但基本是相同的。学习如何在所学的编程语言中定义条件语句，包括  `if/then`, `do...while` 和 `case` 语句。
 
-#### Take action
+#### 实践
 
-Get familiar with the core set of keywords a programming language understands. In practice, your code will contain more than just a language's core words, because there are almost certainly libraries containing lots of simple functions to help you do things like print output to the screen or display a window. The logic that drives those libraries, however, starts with a language's built-in keywords.
+要去熟悉编程语言能够理解的关键字集。在实践中，您的代码将不仅仅包含一种语言的关键字。可以肯定的是，有许多库中包含一些简单的函数，它们可以帮助您完成诸如将输出打印到屏幕或显示窗口之类的操作。然而，驱动这些库的逻辑始于编程语言的内置关键字。
 
-### 3\. Data types
+### 3\. 数据类型
 
 ![Data types][12]
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-Code deals with data, so you must learn how a programming language recognizes different kinds of data. All languages understand integers and most understand decimals and individual characters (a, b, c, and so on). These are often denoted as `int`, `float` and `double`, and `char`, but of course, the language's built-in vocabulary informs you of how to refer to these entities.
+代码是用来处理数据的，因此您必须学习编程语言如何识别不同类型的数据。所有编程语言都能理解整数，大多数的语言能理解小数和单个字符 (a, b, c 等等)。它们通常被表示为 `int` ,  `float`，`double` 和 `char`, 当然，语言的内置词汇表会告诉您如何引用这些实体。
 
-Sometimes a language has extra data types built into it, and other times complex data types are enabled with libraries. For instance, Python recognizes a string of characters with the keyword `str`, but C code must include the `string.h` header file for string features.
+有时候，在编程语言中内置了一些额外的数据类型，也有时是通过引用库来启用复杂的数据类型。例如，Python 可以识别关键字为 `str` 的字符串，但是 C 语言的代码中必须包含 `string.h`  头文件才能实现字符串特性。
 
-#### Take action
+#### 实践
 
-Libraries can unlock all manner of data types for your code, but learning the basic ones included with a language is a sensible starting point.
+库可以为您的代码解锁所有类型的数据，但是学习编程语言中包含的基本数据类型是一个明智的起点。
 
-### 4\. Operators and parsers
+### 4\. 运算符和解析器
 
 ![Operators][13]
 
@@ -183,17 +182,17 @@ via: https://opensource.com/article/20/10/learn-any-programming-language
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/learn-programming-code-keyboard.png?itok=xaLyptT4 (Learning to program)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/learn-programming-code-keyboard.png?itok=xaLyptT4 "Learning to program"
 [2]: https://opensource.com/article/20/9/scratch
-[3]: https://opensource.com/sites/default/files/uploads/syntax_0.png (Syntax)
+[3]: https://opensource.com/sites/default/files/uploads/syntax_0.png "Syntax"
 [4]: https://creativecommons.org/licenses/by-sa/4.0/
 [5]: https://opensource.com/downloads/cheat-sheet-python-37-beginners
 [6]: https://opensource.com/article/20/2/lua-cheat-sheet
 [7]: https://opensource.com/downloads/java-cheat-sheet
 [8]: https://opensource.com/downloads/c-programming-cheat-sheet
 [9]: https://opensource.com/resources/what-ide
-[10]: https://opensource.com/sites/default/files/uploads/builtin.png (built-in words)
+[10]: https://opensource.com/sites/default/files/uploads/builtin.png "built-in words"
 [11]: https://opensource.com/downloads/bash-cheat-sheet
-[12]: https://opensource.com/sites/default/files/uploads/type.png (Data types)
-[13]: https://opensource.com/sites/default/files/uploads/operator.png (Operators)
-[14]: https://opensource.com/sites/default/files/uploads/class.png (Class)
+[12]: https://opensource.com/sites/default/files/uploads/type.png "Data types"
+[13]: https://opensource.com/sites/default/files/uploads/operator.png "Operators"
+[14]: https://opensource.com/sites/default/files/uploads/class.png "Class"
