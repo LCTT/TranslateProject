@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12816-1.html)
 [#]: subject: (5 surprising ways I use Jupyter to improve my life)
 [#]: via: (https://opensource.com/article/20/11/surprising-jupyter)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
@@ -12,7 +12,7 @@
 
 > Jupyter 不仅仅是一个数据分析工具，让我们看看如何以最有创意的方式使用这个基于 Python 的软件。
 
-!["太空中的电脑笔记本"[1]
+![](https://img.linux.net.cn/data/attachment/album/202011/12/224138d99jlp3q5qjqv5v7.jpg)
 
 [Jupyter][2] 项目提供了用 JupyterLab 和 Jupyter Notebook 等交互式编写软件的技术方式。这个软件通常用于数据分析，但你可能不知道（Jupyter 社区也没有想到），你可以用它做多少事情。
 
