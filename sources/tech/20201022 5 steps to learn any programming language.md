@@ -115,7 +115,7 @@ if (boolean) {
 }
 ```
 
-各种编程语言虽然在关键字的选择和语法上有细微的变化，但基本是相同的。学习如何在所学的编程语言中定义条件语句，包括  `if/then`, `do...while` 和 `case` 语句。
+各种编程语言虽然在关键字的选择和语法上有细微的变化，但基本是相同的。学习如何在编程语言中定义条件语句，包括  `if/then`, `do...while` 和 `case` 语句。
 
 #### 实践
 
@@ -141,33 +141,33 @@ if (boolean) {
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-Once you understand the types of data a programming language deals in, you can learn how to analyze that data. Luckily, the discipline of mathematics is pretty stable, so math operators are often the same (or at least very similar) across many languages. For instance, adding two integers is usually done with a `+` symbol, and testing whether one integer is greater than another is usually done with the `>` symbol. Testing for equality is usually done with `==` (yes, that's two equal symbols, because a single equal symbol is usually reserved to _set_ a value).
+一旦您理解了编程语言可处理的数据类型，就可以学习如何分析这些数据了。幸运的是，数学这门学科是相当稳定的，所以算数运算符在许多语言中通常是相同的(或至少非常相似)。例如，两个整数相加通常用 `+` 符号完成，而测试一个整数是否大于另一个整数通常用 `>` 符号完成。测试是否相等通常使用 `==` 来完成(是的，是两个等号，因为通常一个等号用来赋值)。
 
-There are notable exceptions to the obvious in languages like Lisp and Bash, but as with everything else, it's just a matter of mental transliteration. Once you know _how_ the expression is different, it's trivial for you to adapt. A quick review of a language's math operators is usually enough to get a feel for how math is done.
+当然也有一些例外，比如像 Lisp 和 Bash 语言算数运算符就不是如此，但与其他语言一样，这只是一个音译的问题。一旦您了解了表达方式有何不同，很快就可以适应它。快速回顾一门编程语言的算数运算符通常足以让您了解算数操作是如何完成的。
 
-You also need to know how to compare and operate on non-numerical data, such as characters and strings. These are often done with a language's core libraries. For instance, Python features the `split()` method, while C requires `string.h` to provide the `strtok()` function.
+您还需要知道如何比较和操作非数值数据，比如字符和字符串。这些通常是通过编程语言的核心库来进行的的。例如，Python 提供了 `split()` 方法，而 C 语言需要引入头文件 `string.h` 来提供 `strtok()` 函数。
 
-#### Take action
+#### 实践
 
-Learn the basic functions and keywords for manipulating basic data types, and look for core libraries that help you accomplish complex actions.
+了解用于处理基本数据类型的基本函数和关键字，并寻找可帮助您完成复杂操作的核心库。
 
-### 5\. Functions
+### 5\. 函数
 
 ![Class][14]
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-Code usually isn't just a to-do list for a computer. Typically when you write code, you're looking to present a computer with a set of theoretical conditions and a set of instructions for actions that must be taken when each condition is met. While flow control with conditional statements and math and logic operators can do a lot, code is a lot more efficient once functions and classes are introduced because they let you define subroutines. For instance, should an application require a confirmation dialogue box very frequently, it's a lot easier to write that box _once_ as an instance of a class rather than re-writing it each time you need it to appear throughout your code.
+代码不只是计算机的待办清单。通常情况下，在编写代码时您往往希望向计算机提供一组理论条件和一组操作指令，当满足每个条件时计算机就会采取这些操作。尽管使用条件语句以及数学和逻辑运算符进行流控制可以做很多事情，但是引入了函数和类之后，代码会变得更加高效，因为它们使您可以定义子程序。 例如，如果应用程序需要非常频繁地确认一个对话框，那么将其作为类的实例编写一次要比每次需要它时重新编写实现起来要容易得多。
 
-You need to learn how classes and functions are defined in the programming language you're learning. More precisely, first, you need to learn whether classes and functions are available in the programming language. Most modern languages do support functions, but classes are specialized constructs common to object-oriented languages.
+您需要学习如何在编程语言中定义类和函数。更准确地说，您首先需要了解编程语言中是否支持类和函数。大多数现代语言都支持函数，但是类是面向对象的编程语言中所特有的。
 
-#### Take action
+#### 实践
 
-Learn the constructs available in a language that help you write and use code efficiently.
+学习语言中可用的结构，这些结构可以帮助您高效地编写和使用代码。
 
-### You can learn anything
+### 您可以学到任何东西
 
-Learning a programming language is, in itself, a sort of subroutine of the coding process. Once you understand the theory behind how code works, the language you use is just a medium for delivering logic. The process of learning a new language is almost always the same: learn syntax through simple exercises, learn vocabulary so you can build up to performing complex actions, and then practice, practice, practice.
+学习编程语言，就其本身而言，是一种编码过程中的子程序。一旦理解了代码如何工作，您所使用的语言就只是一种传递逻辑的媒介。学习一门新语言的过程几乎都是一样的:通过简单的练习来学习语法，通过学习词汇来积累进行复杂动作的能力，然后练习、练习、再练习。
 
 --------------------------------------------------------------------------------
 
@@ -175,7 +175,7 @@ via: https://opensource.com/article/20/10/learn-any-programming-language
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[xiao-song-123](https://github.com/xiao-song-123)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
