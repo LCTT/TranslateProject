@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (beamrolling)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
