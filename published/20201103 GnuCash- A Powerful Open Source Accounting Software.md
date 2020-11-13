@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12823-1.html)
 [#]: subject: (GnuCash: A Powerful Open Source Accounting Software)
 [#]: via: (https://itsfoss.com/gnucash/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -10,13 +10,15 @@
 GnuCash：一个强大的开源会计软件
 ======
 
-_**简介：GnuCash 是一款流行的免费开源会计软件，可用于管理个人财务和商业交易。**_
+> GnuCash 是一款流行的自由开源的会计软件，可用于管理个人财务和商业交易。
+
+![](https://img.linux.net.cn/data/attachment/album/202011/14/070431j1547hbh3v2j4vhh.jpg)
 
 考虑到管理个人财务和商业交易的复杂性，你会发现有很多旨在简化这些的在线服务或软件工具。有些工具只是让你添加支出和收入来跟踪你的储蓄，而其他一些工具则提供不同的功能。
 
 我在过去已经介绍过几个[开源会计软件][1]。在这里，我将重点介绍其中一个 — **GnuCash**，它是一款很流行的免费会计软件，为所有用户提供了很多功能。
 
-### GnuCash: 免费且开源的会计软件
+### GnuCash: 自由开源的会计软件
 
 ![][2]
 
@@ -32,7 +34,7 @@ GnuCash 是一款为专业需求量身定做的免费会计软件，可以追踪
 
   * 复式记账
   * 股票/债券/共同基金账户
-  * 有税务支持的小企业会计(如印度的商品和服务税)
+  * 有税务支持的小企业会计（如印度的商品和服务税）
   * 详细的分类报告
   * 便于分析的图表
   * 支持财务计算
@@ -49,8 +51,6 @@ GnuCash 是一款为专业需求量身定做的免费会计软件，可以追踪
   * 制定预算的能力
   * 配置账单生成器，以简化会计程序。
 
-
-
 我不是专家，但这只是冰山一角。你会发现有很多选项可以根据你的会计需求进行定制和设置。
 
 ![Gnucash Report][4]
@@ -63,7 +63,7 @@ GnuCash 是一款为专业需求量身定做的免费会计软件，可以追踪
 
 另外，你也可以从源码构建，或者你可以前往他们的[官方下载页面][8]来探索适合你的 Linux 发行版选项。
 
-[GnuCash][9]
+- [GnuCash][9]
 
 ### 总结
 
@@ -78,7 +78,7 @@ via: https://itsfoss.com/gnucash/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
