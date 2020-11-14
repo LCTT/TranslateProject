@@ -116,21 +116,22 @@ KOReader's source code is licensed under the GNU Affero General Public License v
 
 ### Booky McBookface
 
-Yes, that really is the name of [this eBook reader][21]. It's the most basic of the eBook readers in this article but don't let that (or the goofy name) put you off. Booky McBookface is easy to use and does the one thing it does quite well.
+Yes, that really is the name of [this eBook reader][21]. It's the most basic of the eBook readers in this article but don't let that (or the goofy name) put you off. Booky McBookface is easy to use and does the one thing it does quite well.
+是的，那真的是这个电子书阅读器的名字。它是这篇文章中最基础的电子书阅读器，但不要让它（或者说这个傻乎乎的名字）阻止你。Booky McBookface易于使用并且有一件事它做的很好。
 
 **Pros of Booky McBookface:**
 
-  * There are no frills. It's just you and your eBook.
-  * The interface is simple and clean.
-  * Long-tapping the app's icon in the Android Launcher pops up a menu from which you can open the last book you were reading, get a list of unread books, or find and open a book on your device.
+  * There are no frills. It's just you and your eBook.它没有虚假修饰。只有你和你的电子书。
+  * The interface is simple and clean.界面简洁干净。
+  * Long-tapping the app's icon in the Android Launcher pops up a menu from which you can open the last book you were reading, get a list of unread books, or find and open a book on your device.在安卓启动栏中的长期软件图标突然出现一个菜单，菜单包括上一次阅读的书、所有未读书单列表、或者发现并打开设备上的一本书。
 
 
 
 **Cons of Booky McBookface:**
 
-  * The app has few configuration options—you can change the size of the font and the brightness, and that's about it.
-  * You need to use the buttons at the bottom of the screen to navigate through an eBook. Tapping the edges of the screen doesn't work.
-  * You can't add bookmarks to an eBook.
+  * The app has few configuration options—you can change the size of the font and the brightness, and that's about it.app中只有少量的配置选项——你可以改变字体的大小和亮度，也只有这样。
+  * You need to use the buttons at the bottom of the screen to navigate through an eBook. Tapping the edges of the screen doesn't work.你需要使用屏幕底部的按钮来浏览电子书。滑动侧边栏无法操作。
+  * You can't add bookmarks to an eBook.不可以为电子书添加书签。
 
 
 
@@ -142,7 +143,7 @@ You can read eBooks in EPUB, HTML, or plain text formats with Booky McBookface.
 
 Booky McBookface's source code is available under the GNU General Public License version 3.0, and you can find it [on GitHub][23].
 
-Do you have a favorite open source eBook reader for Android? Share it with the community by leaving a comment.
+Do you have a favorite open source eBook reader for Android? Share it with the community by leaving a comment.你有最喜欢的安卓开源电子书阅读器吗？在社区中留言分享一下吧
 
 Have you ever downloaded an Android app only to find that it wants access to all your phone's...
 
@@ -156,7 +157,7 @@ via: https://opensource.com/article/19/10/open-source-ereaders-android
 
 作者：[Scott Nesbitt][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenmu-kk](https://github.com/chenmu-kk)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
