@@ -126,7 +126,7 @@ Cool Reader的源码已获得GNU Affero通用公共许可证版本3.0的许可�
 
 ![Booky McBookface Android app][22]
 
-Booky McBookface的源码已获得GNU通用公共许可证版本3.0的许可，你可以在[GitHub][23]中找到它。
+Booky McBookface的源码在GNU通用公共许可证版本3.0下可用，你可以在[GitHub][23]中找到它。
 
 你有最喜欢的安卓开源电子书阅读器吗？在社区中留言分享一下吧。
 
