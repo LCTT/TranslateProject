@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12830-1.html)
 [#]: subject: (4 reasons why JavaScript is so popular)
 [#]: via: (https://opensource.com/article/20/11/javascript-popular)
 [#]: author: (Nimisha Mukherjee https://opensource.com/users/nimisha)
@@ -12,7 +12,7 @@ JavaScript 如此受欢迎的 4 个原因
 
 > JavaScript 之所以能在编程语言中名列前茅，是有充分的理由的。
 
-![JavaScript in Vim][1]
+![](https://img.linux.net.cn/data/attachment/album/202011/17/102936u1hghm95bbu7xjxg.jpg)
 
 如 GitHub 的 [The State of the Octoverse][2] 报告的这张图所示，如果按 GitHub 上项目的贡献者数量统计，[JavaScript][3] 一直是最受欢迎的编程语言。
 
@@ -30,15 +30,15 @@ JavaScript 不需要任何环境设置，只要打开浏览器，比如 Chrome �
 console.log("Hello World");
 ```
 
-JavaScript 的灵活性最适合中级开发人员。该语言只是通过让开发人员专注于解决问题来帮助完成任务。开发者可以混合使用插件和自己的代码片段来让一个应用程序工作。
+JavaScript 的灵活性最适合中级开发人员。该语言通过让开发人员专注于解决问题来帮助你完成任务。开发者可以混合使用插件和自己的代码片段来让一个应用程序工作。
 
-虽然 JavaScript 比较容易上手，但它并不是一下子就能掌握的。如果你想达到高级水平，这里有一些你需要了解的概念：
+虽然 JavaScript 比较容易上手，但它也并不是一下子就能掌握的。如果你想达到高级水平，这里有一些你需要了解的概念：
 
   * **JavaScript 的[多范式][8]特性：** JavaScript 同时支持函数式编程和面向对象编程（OOP）。
   * **在 JavaScript 中应用[设计模式][9]：** 模型-视图-*（[MV*][10]）设计模式一直是最流行的模式之一，并促成了[多个现代框架][11]的发展。
   * **[带原型链的继承][12]：** JavaScript 由于其动态的特性，无法实现传统的 Java 基于类的模式下的 OOP。JavaScript 中的 OOP 是通过原型继承模型实现的。
   * **[闭包][13]：** 闭包可以从内部函数中访问外部函数的作用域。
-  * **[Currying][14]：** Currying 是函数的一种转换，它将函数从 `f(a, b, c)` 的调用形式转换为 `f(a)(b)(c)` 调用形式。
+  * **<ruby>[柯里化][14]<rt>Currying</rt></ruby>：** 柯里化是函数的一种转换，它将函数从 `f(a, b, c)` 的调用形式转换为 `f(a)(b)(c)` 调用形式。
   * **[Promises][15] 和 [Observables][16]：** 这些可以帮助你处理异步函数。
   * **[TypeScript][17]：** 在 JavaScript 中添加了静态类型。
 
@@ -63,7 +63,7 @@ JavaScript 已经存在了 25 年，背后有一个庞大的社区。开发者�
 
 ### 未来
 
-JavaScript 是永恒的。全栈开发和现代前端框架继续帮助 JavaScript 巩固其作为最受欢迎的编程语言之一的地位。
+JavaScript 将长期存在。全栈开发和现代前端框架继续帮助 JavaScript 巩固其作为最受欢迎的编程语言之一的地位。
 
 JavaScript 的[下一波][26]可能会将焦点放在。
 
@@ -88,7 +88,7 @@ via: https://opensource.com/article/20/11/javascript-popular
 [2]: https://octoverse.github.com/
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://opensource.com/sites/default/files/uploads/toplanguages-the_state_of_the_octoverse.png (Top Languages from The State of the Octoverse report)
-[5]: https://opensource.com/article/20/10/javascript-part-1
+[5]: https://linux.cn/article-12813-1.html
 [6]: https://medium.com/paul-heintzelman/so-why-is-javascript-so-popular-f35bd6cfeb39
 [7]: https://developers.google.com/web/tools/chrome-devtools
 [8]: https://medium.com/javascript-in-plain-english/what-are-javascript-programming-paradigms-3ef0f576dfdb
