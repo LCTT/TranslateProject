@@ -1,46 +1,40 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (What I love about the newest GNOME desktop)
 [#]: via: (https://opensource.com/article/20/11/new-gnome)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 
-我对最新的 GNOME 桌面的喜爱之处
+我喜欢最新的 GNOME 桌面
 ======
-看看 GNOME 3.38 桌面的最新功能。
-![Digital images of a computer desktop][1]
+
+> 看看 GNOME 3.38 桌面最重要的新功能。
+
+![](https://img.linux.net.cn/data/attachment/album/202011/18/225213tmv6aeev1x0t1p4k.jpg)
 
 Fedora 33 [刚出来][2]，我就马上安装了它。在这个新版 Linux 发行版的众多功能中，其中之一是最新的 GNOME 桌面。GNOME 3.38 于 2020 年 9 月发布，我很喜欢它。
 
 ### 我为什么喜欢 GNOME 3.38？
 
-GNOME 3.38 [发布说明][3]中列出了这次更新中的一些重大的新功能。其中，如果你是新用户的话，新用户的欢迎页面得到了重大的改版，现在更加容易使用，并且提供了更多有用的信息。
+GNOME 3.38 [发布说明][3]中列出了这次更新中的一些重大的新功能。其中，新用户的欢迎页面有了重大改版，现在更加容易使用，如果你是新用户的话，它提供了更多有用的信息。
 
 ![The new "Welcome GNOME"][4]
 
-([GNOME][5], [CC BY-SA 4.0][6])
-
-我还喜欢在 GNOME 应用概览中拖动来重新排列应用图标的功能。这让我在 GNOME 下组织我一直使用的应用变得轻而易举。你甚至可以将图标拖放在一起，并自动将它们放入文件夹。
+我还喜欢在 GNOME 应用概览中拖动来重新排列应用图标的功能。这让我在 GNOME 下组织我一直使用的应用变得轻而易举。你甚至可以将图标拖放到一起，并自动将它们放入一个文件夹。
 
 ![GNOME 3.38 Application Overview][7]
 
-([GNOME][5], [CC BY-SA 4.0][6])
-
-我的家人在不同的时区，更新后的 GNOME 时钟使得添加新的世界时钟变得更加容易，所以当我给家人打电话时，我不必弄清楚现在是什么时间。他们是提前一个小时还是晚了一个小时？我只需查看 GNOME 时钟，就能一目了然地看到每个人的当地时间。另外，虽然我并不经常使用闹钟功能，但我喜欢我可以自己设置铃声持续时间和每个闹钟的默认”打盹“时间。
+我的家人在不同的时区，更新后的 GNOME 时钟使得添加新的世界时钟变得更加容易，所以当我给家人打电话时，我不必弄清楚现在是什么时间，他们是早一个小时还是晚一个小时？我只需查看 GNOME 时钟，就能一目了然地看到每个人的当地时间。另外，虽然我并不经常使用闹钟功能，但我喜欢我可以自己设置铃声持续时间和每个闹钟的默认“打盹”时间。
 
 ![Adding a new world clock in GNOME Clocks][8]
 
-([GNOME][5], [CC BY-SA 4.0][6])
-
-除了所有的功能更新之外，GNOME 3.38 中最大的改进是性能。正如 GNOME 开发者 Emmanuele Bassi [今年早些时候的解释][9]：“GNOME 中的每个人都为使速度更快而做了很多工作，即使是在树莓派等更有限的系统上运行的人。为了让 GNOME 表现得更好，大家做了很多工作。因为人们真的很关心它”。而这一点在新版本中体现得淋漓尽致！GNOME 桌面感觉反应更灵敏。
+除了所有这些功能更新之外，GNOME 3.38 中最大的改进是性能。正如 GNOME 开发者 Emmanuele Bassi [今年早些时候的解释][9]：“GNOME 中的每个人都为使速度更快而做了很多工作，即使是在树莓派等这样受限的系统上运行的人也是如此。为了让 GNOME 表现得更好，大家做了很多工作。因为人们真的很关心它”。而这一点在新版本中体现得淋漓尽致！GNOME 桌面感觉反应更灵敏。
 
 ![Applications running on GNOME 3.38][10]
 
-([GNOME][5], [CC BY-SA 4.0][6])
-
-作为我的咨询和培训业务的一部分，我经常在几个开放的应用之间切换，包括 LibreOffice、GIMP、Inkscape、一个网络浏览器等。在 GNOME 3.38 中，启动一个新的应用或在开放应用之间切换感觉更快。
+作为我的咨询和培训业务的一部分，我经常在几个打开的应用之间切换，包括 LibreOffice、GIMP、Inkscape、Web 浏览器等。在 GNOME 3.38 中，启动一个新的应用或在打开的应用之间切换感觉更快。
 
 ### 除了一件事
 
@@ -48,13 +42,9 @@ GNOME 3.38 [发布说明][3]中列出了这次更新中的一些重大的新功�
 
 ![GNOME Screenshot tool][11]
 
-(Jim Hall, [CC BY-SA 4.0][6])
-
 当我浏览用户界面或电脑屏幕时，我自然会像阅读书籍或杂志那样浏览：从左到右，从上到下。当我使用新的屏幕截图工具进行屏幕截图时，我从左上角开始，然后进行选择。大多数时候，我只需要改变选区的捕捉区域，所以我点击那个按钮，然后寻找截图的按钮。但我总是要花点时间才能找到左上角的**截图**按钮。它并不在窗口的底部，也不是我希望找到它的地方。
 
 ![GNOME Screenshot tool][12]
-
-(Jim Hall, [CC BY-SA 4.0][6])
 
 到目前为止，这似乎是我在 GNOME 3.38 中唯一的烦恼。总的来说，我对新的 GNOME 感到非常兴奋。我希望你也是！
 
@@ -67,7 +57,7 @@ via: https://opensource.com/article/20/11/new-gnome
 作者：[Jim Hall][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
