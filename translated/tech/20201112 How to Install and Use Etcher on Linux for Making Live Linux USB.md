@@ -1,22 +1,24 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Install and Use Etcher on Linux for Making Live Linux USB)
 [#]: via: (https://itsfoss.com/install-etcher-linux/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-如何在 Linux 上安装和使用 Etcher 来制作 Live Linux USB
+如何在 Linux 上安装和使用 Etcher 来制作 Linux 临场 USB
 ======
 
-_**Etcher 是一款流行的 USB 烧录应用，可用于创建可启动的 Linux USB。让我来告诉你如何安装它，以及如何使用它来制作一个 Live Linux 盘。**_
+![](https://img.linux.net.cn/data/attachment/album/202011/21/214209xor9upp7jznd9djd.jpg)
+
+> Etcher 是一款流行的 USB 烧录应用，可用于创建可启动的 Linux USB。让我来告诉你如何安装它，以及如何使用它来制作一个 Linux 临场盘。
 
 ### Etcher：一个用于在 SD 卡和 USB 驱动器中烧录 Linux ISO 的开源工具
 
 Etcher 是一个由 [Balena][1] 开发的开源项目，来用于为树莓派烧录 SD 卡。事实上，我们在[如何在 SD 卡上安装 Raspbian OS][2] 的教程中就使用了它。
 
-它不仅仅局限于 SD 卡，你还可以使用 Etcher 来[制作一个可启动的 USB 驱动器][3]，就像我们在它的帮助下在 Linux 中制作了一个 [Manjaro 的 Live USB][4]。
+它不仅仅局限于 SD 卡，你还可以使用 Etcher 来[制作一个可启动的 USB 驱动器][3]，我们就通过它的帮助在 Linux 中制作了一个 [Manjaro 的临场 USB][4]。
 
 自首次发布以来，Etcher 就以其整洁的界面和简单的使用方式引起了人们的注意。
 
@@ -33,9 +35,7 @@ Etcher 是一个由 [Balena][1] 开发的开源项目，来用于为树莓派烧
   * 快速烧录
   * 简单的三步过程
 
-
-
-理论上，你已经有了在 SD 卡和 USB 驱动器上烧录操作系统镜像所需的一切。同样令人激动的是，他们计划根据他们的[路线图][6]，增加对多个设备的同步写入支持。
+理论上，你已经有了在 SD 卡和 USB 驱动器上烧录操作系统镜像所需的一切。同样令人激动的是，根据他们的[路线图][6]，他们计划增加对多个设备的同步写入支持。
 
 ### 在 Linux 上安装 Etcher
 
@@ -45,10 +45,9 @@ Etcher 是一个由 [Balena][1] 开发的开源项目，来用于为树莓派烧
 
 ![][8]
 
-
 在我的例子中，我下载了 Ubuntu 的 64 位 AppImage 文件。你可以通过我们的指南来了解[在 Linux 上使用 AppImage文件][9]，但我会让你先知道下一步需要做什么。
 
-你需要给文件执行权限，你可以右击**AppImage 文件 -&gt; 属性**来实现。
+你需要给文件执行权限，你可以右击**AppImage 文件 -> 属性**来实现。
 
 ![][10]
 
@@ -62,19 +61,19 @@ Etcher 是一个由 [Balena][1] 开发的开源项目，来用于为树莓派烧
 
 你也可以参考我们的[在 Ubuntu 中使用 deb 文件][13]来安装应用。
 
-注意！
-
-我们注意到，当你使用 Etcher 创建 Linux 发行版的 Live USB 时，它会使 USB 处于明显的不可使用状态，即它只有几 MB 的空闲空间，并且不能直接格式化。在 Linux 上，你可以[使用磁盘工具手动删除分区，然后格式化它][14]。
+> 注意！
+> 
+> 我们注意到，当你使用 Etcher 创建 Linux 发行版的临场 USB 时，它会使 USB 处于明显的不可使用状态，即它只有几 MB 的空闲空间，并且不能直接格式化。在 Linux 上，你可以[使用磁盘工具手动删除分区，然后格式化它][14]。
 
 ### 在 Linux 上使用 Etcher
 
 只需三步就可以开始使用 Etcher。在你启动它之后，根据屏幕上的提示应该是清晰的，但为了给你一个好的开始，以下是你要做的事情：
 
-**步骤 1：**选择合适的 ISO 镜像文件或你需要烧录的文件的 URL（如下图所示）。
+**步骤 1：** 选择合适的 ISO 镜像文件或你需要烧录的文件的 URL（如下图所示）。
 
 ![][15]
 
-**步骤 2：**接下来，你需要选择目标设备。它会自动检测并高亮显示可移动设备，以防止你选择任何内部存储位置。
+**步骤 2：** 接下来，你需要选择目标设备。它会自动检测并高亮显示可移动设备，以防止你选择任何内部存储位置。
 
 ![][16]
 
@@ -82,7 +81,7 @@ Etcher 是一个由 [Balena][1] 开发的开源项目，来用于为树莓派烧
 
 ![][17]
 
-**步骤 3：**现在，你所有需要做的就是烧录镜像并等待它成功完成。
+**步骤 3：** 现在，你所有需要做的就是烧录镜像并等待它成功完成。
 
 ![][18]
 
@@ -94,11 +93,11 @@ Etcher 是一个由 [Balena][1] 开发的开源项目，来用于为树莓派烧
 
 ![][20]
 
-[Download balenaEtcher][7]
+- [下载 balenaEtcher][7]
 
 ### 总结
 
-Etcher 是一个有用的工具，可以为 SD 卡和 USB 驱动器烧录操作系统镜像。我倾向于主要使用它来创建 Live USB 驱动器来测试 Linux 发行版，我对它很满意。
+Etcher 是一个有用的工具，可以为 SD 卡和 USB 驱动器烧录操作系统镜像。我倾向于主要使用它来创建临场 USB 驱动器来测试 Linux 发行版，我对它很满意。
 
 你更喜欢用什么来创建可启动驱动器？你是否已经尝试过 Etcher？请在下面的评论中告诉我你的想法。
 
@@ -109,7 +108,7 @@ via: https://itsfoss.com/install-etcher-linux/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
