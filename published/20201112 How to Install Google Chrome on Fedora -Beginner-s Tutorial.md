@@ -1,28 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12856-1.html)
 [#]: subject: (How to Install Google Chrome on Fedora [Beginner’s Tutorial])
 [#]: via: (https://itsfoss.com/install-google-chrome-fedora/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
-如何在 Fedora 上安装 Google Chrome 浏览器（入门教程）
+如何在 Fedora 上安装 Google Chrome 浏览器
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202011/25/094346ig44av4l4lzh1v7t.jpg)
 
 Fedora 的默认网页浏览器是 Firefox。尽管它是一个优秀的网络浏览器，你可能更喜欢流行的 Google Chrome 浏览器。
 
-如果你想知道如何在 Fedora 上安装 Google Chrome 浏览器，让我告诉你两种安装 Google Chrome 浏览器的方法：图形化法和命令行法。
+如果你想知道如何在 Fedora 上安装 Google Chrome 浏览器，让我告诉你两种安装 Google Chrome 浏览器的方式：图形化方式和命令行方式。
 
-* [图形化方法 1：通过启用 Fedora 第三方仓库从软件中心安装 Chrom e浏览器][1] 。
-* [图形化方法 2：从谷歌浏览器网站下载 RPM 文件][2]
-* [命令行方法：从 Fedora 第三方仓库安装 Chrome，一切使用命令（与 GUI 方法 1 相同）][3]。
+* [图形化方式 1：通过启用 Fedora 第三方仓库从软件中心安装 Chrome 浏览器][1]
+* [图形化方式 2：从谷歌浏览器网站下载 RPM 文件][2]
+* [命令行方式：从 Fedora 第三方仓库安装 Chrome，一切使用命令（与 GUI 方式 1 相同）][3]
 
+这全取决于你喜欢哪种方式。你在 [Fedora][4] 上的 Google Chrome 浏览器都将通过这三种方式的系统更新获取定期更新。
 
-
-这全取决于你喜欢哪种方法。你在 [Fedora][4] 上的 Google Chrome 浏览器都将通过这三种方法的系统更新获取定期更新。
-
-### 方法 1：在 Fedora 中从软件中心安装 Google Chrome
+### 方式 1：在 Fedora 中从软件中心安装 Google Chrome
 
 Fedora 提供了一个第三方仓库，其中包含了一些流行的专有软件、图形驱动程序。Google Chrome 就是其中之一。
 
@@ -38,16 +38,15 @@ Fedora 提供了一个第三方仓库，其中包含了一些流行的专有软�
 
 ![Step 3: Install Chrome Fedora][7]
 
-Can it be any easier than this? I don’t think either :)
-还有比这更简单的吗？我不这么认为 :)
+还有比这更简单的吗？我觉得没有。
 
-### 方法 2：在 Fedora 上从 Chrome 网站安装 Google Chrome
+### 方式 2：在 Fedora 上从 Chrome 网站安装 Google Chrome
 
 如果你不想启用第三方仓库，也没关系。你不必这样做。你可以从 Chrome 的网站上下载 RPM 文件，双击并安装它。
 
 访问 Google Chrome 的网站，点击下载按钮。
 
-[Get Google Chrome][8]
+- [获取 Google Chrome][8]
 
 ![][9]
 
@@ -59,11 +58,11 @@ Can it be any easier than this? I don’t think either :)
 
 ![][11]
 
-这是超级简单的，对吧？让我们来看看有点复杂的方法（如果你不是一个终端爱好者）。
+这是超级简单的，对吧？让我们来看看有点复杂的方式（如果你不是一个终端爱好者）。
 
-### 方法 3：使用命令行在 Fedora 上安装 Chrome
+### 方式 3：使用命令行在 Fedora 上安装 Chrome
 
-首先，你需要添加额外的 Fedora 仓库(你在方法 1 中看到的)：
+首先，你需要添加额外的 Fedora 仓库（你在方式 1 中看到的）：
 
 ```
 sudo dnf install fedora-workstation-repositories
@@ -83,19 +82,17 @@ sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install google-chrome-stable
 ```
 
-你会看到一个导入 GPG 密钥的警告，输入 y 继续。
+你会看到一个导入 GPG 密钥的警告，输入 `y` 继续。
 
 ![][13]
 
 你正在添加 Google Chrome 仓库。这个软件包来自这个仓库，它直接来自 Google。
 
-#### 总结
+### 总结
 
 即使你使用命令行，在 Fedora 上安装 Google chrome 也相当简单。除了第三方仓库的部分，这和[在 Ubuntu 上安装 Chrome][14] 差不多。
 
 现在你已经安装好了，你可能会想[查看我们的 Google Chrome 键盘快捷键列表][15]来更快地使用浏览器。
-
-不要忘记订阅，获取关于 Fedora 的最新消息和教程，如果你有任何问题，请在下方留言。
 
 --------------------------------------------------------------------------------
 
@@ -104,7 +101,7 @@ via: https://itsfoss.com/install-google-chrome-fedora/
 作者：[Dimitrios Savvopoulos][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
