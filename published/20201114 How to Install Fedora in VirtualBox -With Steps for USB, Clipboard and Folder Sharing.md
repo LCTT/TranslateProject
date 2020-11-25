@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/install-fedora-in-virtualbox/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
-如何在 Fedora 中安装 VirtualBox
+如何在 VirtualBox 中安装 Fedora
 ======
 
 如果你对 Fedora Linux 感兴趣，这有几种方式可以尝试它。
@@ -30,7 +30,7 @@
 
 你甚至可以复制你的虚拟环境，并在其他系统上重新安装它。听起来方便吗？让我来教你怎么做。
 
-### 在 Fedora 上安装 Fedora
+### 在 VirtualBox 上安装 Fedora
 
 ![][2]
 
