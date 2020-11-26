@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Secure NTP with NTS)
@@ -10,13 +10,13 @@
 用 NTS 保证 NTP 的安全
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202011/26/111649pt32v9j22x3ooa33.jpg)
 
-许多计算机使用<ruby>网络时间协议<rt>Network Time Protocol</rt></ruby>（NTP）通过互联网同步系统时钟。NTP 是少数几个仍在普遍使用的不安全的互联网协议之一。攻击者如果能够观察到客户端和服务器之间的网络流量，就可以向客户端提供虚假的数据，并根据客户端的实现和配置，强迫其将系统时钟设置为任何时间和日期。如果客户端的系统时钟不准确，一些程序和服务可能无法工作。例如，如果根据客户端的系统时钟，Web 服务器的证书似乎已经过期，Web 浏览器将无法正常工作。可以使用<ruby>网络时间安全<rt>Network Time Security</rt></ruby>（NTS）来保证 NTP 的安全。
+许多计算机使用<ruby>网络时间协议<rt>Network Time Protocol</rt></ruby>（NTP）通过互联网来同步系统时钟。NTP 是少数几个仍在普遍使用的不安全的互联网协议之一。攻击者如果能够观察到客户端和服务器之间的网络流量，就可以向客户端提供虚假的数据，并根据客户端的实现和配置，强迫其将系统时钟设置为任何时间和日期。如果客户端的系统时钟不准确，一些程序和服务就可能无法工作。例如，如果根据客户端的系统时钟，Web 服务器的证书似乎已经过期，Web 浏览器将无法正常工作。可以使用<ruby>网络时间安全<rt>Network Time Security</rt></ruby>（NTS）来保证 NTP 的安全。
 
-Fedora 33 [^1] 是第一个支持 NTS 的 Fedora 版本。NTS 是一种新的 NTP 验证机制。它使客户端能够验证他们从服务器接收的数据包在传输过程中有没有被修改。当 NTS 启用时，攻击者唯一能做的就是丢弃或延迟数据包。关于 NTS 的更多细节，请参见 [RFC8915][3]。
+Fedora 33 [^1] 是第一个支持 NTS 的 Fedora 版本。NTS 是一种新的 NTP 验证机制。它使客户端能够验证它们从服务器接收的数据包在传输过程中有没有被修改。当 NTS 启用时，攻击者唯一能做的就是丢弃或延迟数据包。关于 NTS 的更多细节，请参见 [RFC8915][3]。
 
-使用对称密钥可以很好地保证 NTP 的安全。遗憾的是，服务器必须为每个客户端配备不同的密钥，而且密钥必须安全地分发。这对于本地网络上的私有服务器来说可能是实用的，但它不能扩展到有着数百万客户端的公共服务器上。
+使用对称密钥可以很好地保证 NTP 的安全。遗憾的是，服务器必须为每个客户端配备不同的密钥，而且密钥必须安全地分发才行。这对于本地网络上的私有服务器来说可能是实用的，但它不能扩展到有着数百万客户端的公共服务器上。
 
 NTS 包括一个<ruby>密钥建立<rt>Key Establishment</rt></ruby>（NTS-KE）协议，它可以自动创建服务器与其客户端之间使用的加密密钥。它在 TCP 端口 4460 上使用<ruby>传输层安全<rt>Transport Layer Security</rt></ruby>（TLS）。它被设计成可以扩展到非常多的客户端，而对准确性的影响最小。服务器不需要保存任何客户端特定的状态。它为客户提供 cookie，cookie 是加密的，包含验证 NTP 数据包所需的密钥。隐私是 NTS 的目标之一。客户端在每次服务器响应时都会得到一个新的 cookie，所以它不必重复使用 cookie。这可以防止被动观察者跟踪在网络之间迁移的客户端。
 
@@ -30,7 +30,7 @@ Fedora 中默认的 NTP 客户端是 Chrony。Chrony 在 4.0 版本中增加了 
 
 ### 在安装程序中启用客户端 NTS
 
-安装 Fedora 33 时，你可以在“Network Time”配置的“Time & Date”对话框中启用 NTS。在点击“+”（添加）按钮之前，请输入服务器的名称并检查 NTS 支持情况。你可以添加一个或多个具有 NTS 的服务器或池。要删除默认的服务器池（`2.fedora.pool.ntp.org`），请取消选中“Use”列中的相应标记。
+安装 Fedora 33 时，你可以在“Time & Date”对话框的“Network Time”配置中启用 NTS。在点击“+”（添加）按钮之前，请输入服务器的名称并检查 NTS 支持情况。你可以添加一个或多个具有 NTS 的服务器或池。要删除默认的服务器池（`2.fedora.pool.ntp.org`），请取消选中“Use”列中的相应标记。
 
 ![Fedora 安装程序中的网络时间配置][7]
 
@@ -92,13 +92,13 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ^+ nts.sth2.ntp.se               1   6   377    44   -170us[ -170us] +/-   22ms
 ```
 
-`Reach` 列应该有一个非零值，最好是 377。上图所示的值 377 是一个八进制数，它表示最后八个请求都有有效的响应。如果启用了 NTS 的话，验证检查将包括 NTS 认证。如果该值一直很少或从未达到 377，则表明 NTP 请求或响应在网络中丢失了。众所周知，一些主要的网络运营商有中间机器，它可以阻止或限制大的 NTP 数据包的速率，以缓解利用 `ntpd` 的监控协议进行的放大攻击。不幸的是，这影响了受 NTS 保护的 NTP 数据包，尽管它们不会引起任何放大。NTP 工作组正在考虑为 NTP 提供一个替代端口，作为解决这个问题的办法。
+`Reach` 列应该有一个非零值，最好是 377。上图所示的值 377 是一个八进制数，它表示最后八个请求都有有效的响应。如果启用了 NTS 的话，验证检查将包括 NTS 认证。如果该值一直很少或从未达到 377，则表明 NTP 请求或响应在网络中丢失了。众所周知，一些主要的网络运营商有中间设备，它可以阻止或限制大的 NTP 数据包的速率，以缓解利用 `ntpd` 的监控协议进行的放大攻击。不幸的是，这影响了受 NTS 保护的 NTP 数据包，尽管它们不会引起任何放大。NTP 工作组正在考虑为 NTP 提供一个替代端口，作为解决这个问题的办法。
 
 ### 在服务器上启用 NTS
 
 如果你有自己的 NTP 服务器，运行着 `chronyd`，你可以启用服务器的 NTS 支持，让它的客户端安全同步。如果该服务器是其他服务器的客户端，它应该使用 NTS 或对称密钥与之同步。客户端假设同步链在所有服务器到主时间服务器之间是安全的。
 
-启用服务器 NTS 类似于在 Web 服务器上启用HTTPS。你只需要一个私钥和证书。例如，证书可以由 Let's Encrypt 权威机构使用 `certbot` 工具签署。当你有了密钥和证书文件（包括中间证书），在 `chrony.conf` 中用以下指令指定它们：
+启用服务器 NTS 类似于在 Web 服务器上启用 HTTPS。你只需要一个私钥和证书。例如，证书可以由 Let's Encrypt 权威机构使用 `certbot` 工具签署。当你有了密钥和证书文件（包括中间证书），在 `chrony.conf` 中用以下指令指定它们：
 
 ```
 ntsserverkey /etc/pki/tls/private/foo.example.net.key
@@ -152,7 +152,7 @@ via: https://fedoramagazine.org/secure-ntp-with-nts/
 作者：[Miroslav Lichvar][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
