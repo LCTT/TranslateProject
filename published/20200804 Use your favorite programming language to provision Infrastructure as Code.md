@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12862-1.html)
 [#]: subject: (Use your favorite programming language to provision Infrastructure as Code)
 [#]: via: (https://opensource.com/article/20/8/infrastructure-as-code-pulumi)
 [#]: author: (Lee Briggs https://opensource.com/users/lbriggs)
@@ -12,7 +12,7 @@
 
 > 用 Node.js 或其他编程语言为你提供启动基础设施所需的一切服务。
 
-![拼图拼成电脑屏幕][1]
+![](https://img.linux.net.cn/data/attachment/album/202011/27/151108bnnggmxegfzwog46.jpg)
 
 当你在 IT 和技术的世界里遨游时，你会反复遇到一些术语。其中有些术语很难量化，随着时间的推移，可能会有不同的含义。[“DevOps”][2] 就是一个例子，这个词似乎（在我看来）会根据使用它的人而改变；最初的 DevOps 先驱者可能甚至不认识我们今天所说的 DevOps。
 
