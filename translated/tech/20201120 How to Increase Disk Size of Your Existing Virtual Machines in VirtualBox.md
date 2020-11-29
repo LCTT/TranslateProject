@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to Increase Disk Size of Your Existing Virtual Machines in VirtualBox)
@@ -30,11 +30,11 @@
 
 VirtualBox 6 增加了一个调整虚拟磁盘大小的图形化选项。你可以在 VirtualBox 主页的文件选项卡中找到它。
 
-进入 _**File-&gt;Virtual Media Manager**_：
+进入 “File -> Virtual Media Manager”：
 
 ![][4]
 
-在列表中选择一个虚拟机，然后使用 ”Size“ 滑块或输入你需要的大小值。完成后点击 ”Apply“。
+在列表中选择一个虚拟机，然后使用 “Size” 滑块或输入你需要的大小值。完成后点击 “Apply”。
 
 ![][5]
 
@@ -42,7 +42,7 @@ VirtualBox 6 增加了一个调整虚拟磁盘大小的图形化选项。你可�
 
 #### 方法 2：使用 Linux 命令行增加 VirtualBox 磁盘空间
 
-如果你使用 Linux 操作系统作为宿主机，打开终端并输入以下命令来调整 VDI 的大小：
+如果你使用 Linux 操作系统作为宿主机，在宿主机中打开终端并输入以下命令来调整 VDI 的大小：
 
 ```
 VBoxManage modifymedium "/path_to_vdi_file" --resize <megabytes>
@@ -50,17 +50,17 @@ VBoxManage modifymedium "/path_to_vdi_file" --resize <megabytes>
 
 在你按下回车执行命令后，调整大小的过程应该马上结束。
 
-注意事项
-
-VirtualBox 早期版本命令中的 **modifyvdi** 和 **modifyhd** 命令也支持，并在内部映射到 **modifymedium** 命令。
+> 注意事项
+>
+> VirtualBox 早期版本命令中的 `*modifyvdi` 和 `modifyhd` 命令也支持，并在内部映射到 `modifymedium` 命令。
 
 ![][6]
 
-如果你不确定虚拟机的保存位置，可以在 VirtualBox 主页面点击 **Files -&gt; Preferences** 或使用键盘快捷键 **Ctrl+G** 找到默认位置。
+如果你不确定虚拟机的保存位置，可以在 VirtualBox 主页面点击 “Files -> Preferences” 或使用键盘快捷键 `Ctrl+G` 找到默认位置。
 
 ![][7]
 
-#### 总结
+### 总结
 
 就我个人而言，我更喜欢在每个 Linux 发行版上使用终端来扩展磁盘，图形化选项是最新的 VirtualBox 版本的一个非常方便的补充。
 
@@ -73,7 +73,7 @@ via: https://itsfoss.com/increase-disk-size-virtualbox/
 作者：[Dimitrios Savvopoulos][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
