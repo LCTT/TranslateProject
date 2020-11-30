@@ -112,7 +112,7 @@ Vim 的一个问题是你已经习惯了它的键映射，因此希望在任何�
 
 ### 邮件 & 同步
 
-On my home server I have a [fetchmail][42] daemon running for each email acccount that I have. Fetchmail just retrieves the incoming emails and invokes [procmail][43]:
+在我的 home server 服务器上，我为自己所有的邮箱账号运行了 [fetchmail][42] 守护进程。Fetchmail 只检索收到的邮件并调用 [procmail][43]:
 
 ```
 #!/bin/sh
@@ -121,13 +121,13 @@ for i in /home/deen/.fetchmail/*; do
 done
 ```
 
-The configuration is as simple as it could be and waits for the server to inform us of fresh emails:
+配置非常简单，然后等待服务器通知我们有新的邮件：
 
 ```
 poll imap.1und1.de protocol imap timeout 120 user "dennis@felsin9.de" password "XXX" folders INBOX keep ssl idle
 ```
 
-My `.procmailrc` config contains a few rules to backup all mails and sort them into the correct directories, for example based on the mailing list id or from field in the mail header:
+我的 `.procmailrc` 配置包含一些备份全部邮件的规则，并将邮件整理在对应的目录下面。例如，基于邮件列表名或者邮件标题：
 
 ```
 MAILDIR=/home/deen/shared/Maildir
@@ -157,7 +157,7 @@ $MAILDIR/.uni-ml/
 [...]
 ```
 
-To send emails I use [msmtp][44], which is also great to configure:
+我使用 [msmtp][44] 来发送邮件，它也很好配置：
 
 ```
 account default
@@ -172,11 +172,11 @@ password XXX
 [...]
 ```
 
-But so far the emails are still on the server. My documents are all stored in a directory that I synchronize between all computers using [Unison][45]. Think of Unison as a bidirectional interactive [rsync][46]. My emails are part of this documents directory and thus they end up on my desktop computers.
+但是到目前为止，邮件还在服务器上。 我的文档全部存储在一个目录中，我使用 [Unison][45] 在所有计算机之间进行同步。将 Unison 视为双向交互 [rsync][46]，我的邮件是这个文件目录下的一部分因此它们最终存储在我的电脑上。
 
-This also means that while the emails reach my server immediately, I only fetch them on deman instead of getting instant notifications when an email comes in.
+这也意味着，尽管邮件会立即到达我的邮箱，但我只是按需拿取，而不是邮件一到达时就立即收到通知。
 
-From there I read the mails with [mutt][47], using the sidebar plugin to display my mail directories. The `/etc/mailcap` file is essential to display non-plaintext mails containing HTML, Word or PDF:
+从此我使用 [mutt][47] 阅读邮件，使用侧边栏显示我的邮件目录。 `/etc/mailcap` 文件对于显示非纯文本邮件（ HTML, Word 或者 PDF）不可或缺：
 
 ```
 text/html;w3m -I %{charset} -T text/html; copiousoutput
@@ -184,15 +184,15 @@ application/msword; antiword %s; copiousoutput
 application/pdf; pdftotext -layout /dev/stdin -; copiousoutput
 ```
 
-### News & Communication
+### 新闻 & 通讯
 
-[Newsboat][48] is a nice little RSS/Atom feed reader in the terminal. I have it running on the server in a `tach` session with about 150 feeds. Filtering feeds locally is also possible, for example:
+[Newsboat][48] 是一个非常棒的终端 RSS/Atom 阅读器。我在一个有约 150 个提要的 `tach` 会话服务器上运行它。也可以在本地选择提要，例如：
 
 ```
 ignore-article "https://forum.ddnet.tw/feed.php" "title =~ \"Map Testing •\" or title =~ \"Old maps •\" or title =~ \"Map Bugs •\" or title =~ \"Archive •\" or title =~ \"Waiting for mapper •\" or title =~ \"Other mods •\" or title =~ \"Fixes •\""
 ```
 
-I use [Irssi][49] the same way for communication via IRC.
+我以同样的方式使用 [Irssi][49] 进行 IRC 通讯。
 
 ### Calendar
 
