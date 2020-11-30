@@ -318,23 +318,23 @@ Ich fordere Sie hiermit zu Bla Bla Bla auf.
 
 [Zathura][56] 读取 PDF 文件速度很快，支持 Vim 类控件，还支持两种不同的 PDF 后端： Poppler 和 MuPDF。另一方面，在偶尔遇到 Zathura 无法打开的文件时，[Evince][57] 则显得更全能一些。
 
-### Graphical Editing
+### 图片编辑
 
-[GIMP][58] and [Inkscape][59] are easy choices for photo editing and interactive vector graphics respectively.
+[GIMP][58] 和 [Inkscape][59] 分别是照片编辑和交互式向量图形是一个简便的选择。
 
-In some cases [Imagemagick][60] is good enough though and can be used straight from the command line and thus automated to edit images. Similarly [Graphviz][61] and [TikZ][62] can be used to draw graphs and other diagrams.
+有时 [Imagemagick][60] 已经足够好了，它可以从命令行直接使用，从而自动编辑图片。同样 [Graphviz][61] 和 [TikZ][62] 可以用来绘制曲线图和其他图表。
 
-### Web Browsing
+### 网络浏览器
 
-As a web browser I’ve always used [Firefox][63] for its extensibility and low resource usage compared to Chrome.
+对于网络浏览器，我一直在使用 [Firefox][63]。相较于 Chrome，它的可扩展性更好，资源使用率更低。
 
-Unfortunately the [Pentadactyl][64] extension development stopped after Firefox switched to Chrome-style extensions entirely, so I don’t have satisfying Vim-like controls in my browser anymore.
+不幸的是，在 Firefox 完全改用 Chrome 风格的扩展之后， [Pentadactyl][64] l扩展的开发就停止了，所以我的浏览器中再也没有令人满意的 Vim 类控件了。
 
-### Media Players
+### 媒体播放器
 
-[mpv][65] with hardware decoding allows watching videos at 5% CPU load using the `vo=gpu` and `hwdec=vaapi` config settings. `audio-channels=2` in mpv seems to give me clearer downmixing to my stereo speakers / headphones than what PulseAudio does by default. A great little feature is exiting with `Shift-Q` instead of just `Q` to save the playback location. When watching with someone with another native tongue you can use `--secondary-sid=` to show two subtitles at once, the primary at the bottom, the secondary at the top of the screen
+通过设置 `vo=gpu` 以及 `hwdec=vaapi`，具有硬件解码功能的 [mpv][65] 在播放期间 CPU 的占用率保持在 5%。相较于默认的t PulseAudio，mpv 中的 `audio-channels=2` 似乎可以使我的立体扬声器/耳机获得更清晰的降级混频。一个很棒的小功能是用 `Shift-Q` 退出，而不是只用 `Q` 来保存回放位置。当你与母语是其他语言的人一起看视频时，你可以使用 `--secondary-sid=` 同时显示两种字幕，主字幕位于底部，次字幕位于屏幕顶部。
 
-My wirelss mouse can easily be made into a remote control with mpv with a small `~/.config/mpv/input.conf`:
+我的无线鼠标可以简单地通过一个小的配置文件（ `~/.config/mpv/input.conf` ）实现远程控制 mpv ：
 
 ```
 MOUSE_BTN5 run "mixer" "pcm" "-2"
@@ -344,33 +344,33 @@ MOUSE_BTN7 add chapter -1
 MOUSE_BTN8 add chapter 1
 ```
 
-[youtube-dl][66] works great for watching videos hosted online, best quality can be achieved with `-f bestvideo+bestaudio/best --all-subs --embed-subs`.
+[youtube-dl][66] 非常适合观看在线托管的视频，使用 `-f bestvideo+bestaudio/best --all-subs --embed-subs` 命令可获得最高质量的视频。
 
-As a music player [MOC][67] hasn’t been actively developed for a while, but it’s still a simple player that plays every format conceivable, including the strangest Chiptune formats. In the AUR there is a [patch][68] adding PulseAudio support as well. Even with the CPU clocked down to 800 MHz MOC barely uses 1-2% of a single CPU core.
+作为音乐播放器， [MOC][67] 还未得到积极发展，但它仍是一个简易的播放器，可以播放各种可能的格式，包括最不常用的 Chiptune 格式。在 AUR 中有一个 [补丁][68] 增加了 PulseAudio 支持。即使在 CPU 时钟频率降到 800 MHz， MOC 也只使用了单核 CPU 的 1-2% 。
 
 ![moc][69]
 
-My music collection sits on my home server so that I can access it from anywhere. It is mounted using [SSHFS][70] and automount in the `/etc/fstab/`:
+我的音乐收藏夹保存在我的 home server 上，因此我可以从任何地方访问它。它使用 [SSHFS][70] 挂载并自动安装在 `/etc/fstab/` 目录下：
 
 ```
 root@server:/media/media /mnt/media fuse.sshfs noauto,x-systemd.automount,idmap=user,IdentityFile=/root/.ssh/id_rsa,allow_other,reconnect 0 0
 ```
 
-### Cross-Platform Building
+### 跨平台构建
 
-Linux is great to build packages for any major operating system except Linux itself! In the beginning I used [QEMU][71] to with an old Debian, Windows and Mac OS X VM to build for these platforms.
+除了系统本身，对于任何主流操作系统 Linux 在构建软件包方面都很优秀！ 一开始，我使用 [QEMU][71] 与旧版 Debian、 Windows 以及 Mac OS X VM 一起构建这些平台。
 
-Nowadays I switched to using chroot for the old Debian distribution (for maximum Linux compatibility), [MinGW][72] to cross-compile for Windows and [OSXCross][73] to cross-compile for Mac OS X.
+现在我在旧版 Debian distribution 上转而使用 chroot （以获得最大的 Linux 兼容性），在 Windows 上使用 [MinGW][72] 进行交叉编译，在 Mac OS X 上则使用 [OSXCross][73]。
 
-The script used to [build DDNet][74] as well as the [instructions for updating library builds][75] are based on this.
+用于 [build DDNet][74] 以及 [instructions for updating library builds][75] 的脚本都基于此。
 
-### Backups
+### 备份
 
-As usual, we nearly forgot about backups. Even if this is the last chapter, it should not be an afterthought.
+通常，我们都会忘记备份。即使这是终章，它也不应该成为事后诸葛。
 
-I wrote [rrb][76] (reverse rsync backup) 10 years ago to wrap rsync so that I only need to give the backup server root SSH rights to the computers that it is backing up. Surprisingly rrb needed 0 changes in the last 10 years, even though I kept using it the entire time.
+十年前我写了 [rrb][76] （反向rsync备份）重新包装了 rsync ，因此我只需要授予正在备份的计算机，备份服务器的 root SSH 权限。令人惊讶地是，尽管我一直在使用 rrb ，但它在过去十年里没有任何改变。
 
-The backups are stored straight on the filesystem. Incremental backups are implemented using hard links (`--link-dest`). A simple [config][77] defines how long backups are kept, which defaults to:
+备份文件直接存储在文件系统中。使用硬链接实现增量备份 (`--link-dest`) 。一个简单的 [配置][77] 定义了备份保存时间，默认为：
 
 ```
 KEEP_RULES=( \
@@ -381,7 +381,7 @@ KEEP_RULES=( \
 )
 ```
 
-Since some of my computers don’t have a static IP / DNS entry and I still want to back them up using rrb I use a reverse SSH tunnel (as a systemd service) for them:
+因为我的一些计算机没有静态 IP / DNS 但仍想使用 rrb 备份，那我会使用反向安全隧道（作为 systemd 服务）：
 
 ```
 [Unit]
@@ -397,7 +397,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-Now the server can reach the client through `ssh -p 27276 localhost` while the tunnel is running to perform the backup, or in `.ssh/config` format:
+现在，隧道运行备份时，服务器可以通过 `ssh -p 27276 localhost` 命令或者使用 `.ssh/config` 到达服务器端。
 
 ```
 Host cr-remote
@@ -405,7 +405,7 @@ Host cr-remote
  Port 27276
 ```
 
-While talking about SSH hacks, sometimes a server is not easily reachable thanks to some bad routing. In that case you can route the SSH connection through another server to get better routing, in this case going through the USA to reach my Chinese server which had not been reliably reachable from Germany for a few weeks:
+在谈论 SSH 攻击时，有时由于某些中断的路由会很难访问到服务器。在那种情况下你可以借道其他服务器的 SSH 连接，以获得更好的路由。在这种情况下，你可能通过美国连接访问到我的中国服务器，而来自德国的不可靠连接可能需要几个周：
 
 ```
 Host chn.ddnet.tw
@@ -413,11 +413,11 @@ Host chn.ddnet.tw
  Port 22
 ```
 
-### Final Remarks
+### 结语
 
-Thanks for reading my random collection of tools. I probably forgot many programs that I use so naturally every day that I don’t even think about them anymore. Let’s see how stable my software setup stays in the next years. If you have any questions, feel free to get in touch with me at [dennis@felsin9.de][78].
+感谢阅读我工具的收藏。这其中我也许遗漏了许多日常中自然成习惯的步骤。让我们来看看我的软件设置在下一年里能多稳定吧。如果你有任何问题，随时联系我 [dennis@felsin9.de][78] 。
 
-Comments on [Hacker News][79].
+在 [Hacker News][79] 下评论吧。
 
 --------------------------------------------------------------------------------
 
@@ -425,7 +425,7 @@ via: https://hookrace.net/blog/linux-desktop-setup/
 
 作者：[Dennis Felsing][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenmu-kk](https://github.com/chenmu-kk)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
