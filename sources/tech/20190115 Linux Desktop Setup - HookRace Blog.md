@@ -194,9 +194,9 @@ ignore-article "https://forum.ddnet.tw/feed.php" "title =~ \"Map Testing •\" o
 
 我以同样的方式使用 [Irssi][49] 进行 IRC 通讯。
 
-### Calendar
+### 日历
 
-[remind][50] is a calendar that can be used from the command line. Setting new reminders is done by editing the `rem` files:
+[remind][50] 是一个可以从命令行获取的日历。通过编辑 `rem` 文件可以设置新的提醒：
 
 ```
 # One time events
@@ -226,27 +226,26 @@ MSG Sun from [sunrise(trigdate())] to [sunset(trigdate())]
 [...]
 ```
 
-Unfortunately there is no Chinese Lunar calendar function in remind yet, so Chinese holidays can’t be calculated easily.
-
-I use two aliases for remind:
+遗憾的是，目前 remind 中还没有中国农历的提醒功能，因此中国的节日不易计算。
+我给提醒设置了两个名字：
 
 ```
 rem -m -b1 -q -g
 ```
 
-to see a list of the next events in chronological order and
+按时间顺序查看待办事项清单
 
 ```
 rem -m -b1 -q -cuc12 -w$(($(tput cols)+1)) | sed -e "s/\f//g" | less
 ```
 
-to show a calendar fitting just the width of my terminal:
+显示适应终端宽度的日历：
 
 ![remcal][51]
 
-### Dictionary
+### 字典
 
-[rdictcc][52] is a little known dictionary tool that uses the excellent dictionary files from [dict.cc][53] and turns them into a local database:
+[rdictcc][52] 是鲜为人知的字典工具，它可以从 [dict.cc][53] 使用高级词典并将他们转存在本地数据库中：
 
 ```
 $ rdictcc rasch
@@ -277,11 +276,11 @@ Rasch model:
  - Rasch-Modell {n}
 ```
 
-### Writing and Reading
+### 记录和阅读
 
-I have a simple todo file containing my tasks, that is basically always sitting open in a Vim session. For work I also use the todo file as a “done” file so that I can later check what tasks I finished on each day.
+我有一个简单记录任务的备忘录，在 Vim 会话中基本上一直处于打开状态。我也使用备忘录作为工作中已做工作的记录，这样就可以检查自己每天完成了哪些任务。
 
-For writing documents, letters and presentations I use [LaTeX][54] for its superior typesetting. A simple letter in German format can be set like this for example:
+对于写文件，信件和演示文稿，我会使用 [LaTeX][54] 进行高级排版。德式的简单信件可以这样设置，例如：
 
 ```
 \documentclass[paper = a4, fromalign = right]{scrlttr2}
@@ -315,9 +314,9 @@ Ich fordere Sie hiermit zu Bla Bla Bla auf.
 \end{document}
 ```
 
-Further example documents and presentations can be found over at [my private site][55].
+在 [我的私人网站][55] 上可以找到更多的示例文档和演示文稿。
 
-To read PDFs [Zathura][56] is fast, has Vim-like controls and even supports two different PDF backends: Poppler and MuPDF. [Evince][57] on the other hand is more full-featured for the cases where I encounter documents that Zathura doesn’t like.
+[Zathura][56] 读取 PDF 文件速度很快，支持 Vim 类控件，还支持两种不同的 PDF 后端： Poppler 和 MuPDF。另一方面，在偶尔遇到 Zathura 无法打开的文件时，[Evince][57] 则显得更全能一些。
 
 ### Graphical Editing
 
