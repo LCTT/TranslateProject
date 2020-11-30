@@ -7,33 +7,33 @@
 [#]: via: (https://hookrace.net/blog/linux-desktop-setup/)
 [#]: author: (Dennis Felsing http://felsin9.de/nnis/)
 
-Linux Desktop Setup
+Linux桌面设置
 ======
 
 
-My software setup has been surprisingly constant over the last decade, after a few years of experimentation since I initially switched to Linux in 2006. It might be interesting to look back in another 10 years and see what changed. A quick overview of what’s running as I’m writing this post:
+从 2006 年开始转战 Linux 系统后，经过几年的实践，我的软件设置在过去十年内出人意料的固定。再过十年回顾一下，看看发生了什么，也许会非常有趣。在写这篇推文时，我迅速回顾了正在运行的内容：
 
 [![htop overview][1]][2]
 
-### Motivation
+### 契机
 
-My software priorities are, in no specific order:
+我的软件介绍排序不分先后：
 
-  * Programs should run on my local system so that I’m in control of them, this excludes cloud solutions.
-  * Programs should run in the terminal, so that they can be used consistently from anywhere, including weak computers or a phone.
-  * Keyboard focused is nearly automatic by using terminal software. I prefer to use the mouse where it makes sense only, reaching for the mouse all the time during typing feels like a waste of time. Occasionally it took me an hour to notice that the mouse wasn’t even plugged in.
-  * Ideally use fast and efficient software, I don’t like hearing the fan and feeling the room heat up. I can also keep running older hardware for much longer, my 10 year old Thinkpad x200s is still fine for all the software I use.
-  * Be composable. I don’t want to do every step manually, instead automate more when it makes sense. This naturally favors the shell.
+  * 程序应该运行在本地系统中以便我可以控制它，这其中并不包括云解决方案。
+  * 程序应在终端中运行，以便于在任何地方连贯地使用它们，包括性能稍差的电脑或手机。
+  * 通过使用终端软件，可以实现自动聚焦键盘。只有在一些有意义的地方，我会更喜欢使用鼠标，因为在打字期间一直伸手去拿鼠标感觉像在浪费时间。有时候过了一个小时我才注意到甚至还没有插鼠标。
+  * 最好使用快速高效的软件，我不喜欢听到风扇的声音和感到房间在变热。我还可以继续长久地运行旧硬件，已经使用了 10 年的 Thinkpad x200s 还能很好地支持我所使用的软件。
+  * 组合。我不想手动执行每个步骤，而是在需要时自动执行更多操作，这时自然是支持 shell 。
 
 
 
-### Operating Systems
+### 操作系统
 
-I had a hard start with Linux 12 years ago by removing Windows, armed with just the [Gentoo Linux][3] installation CD and a printed manual to get a functioning Linux system. It took me a few days of compiling and tinkering, but in the end I felt like I had learnt a lot.
+十二年前移除 Windows 系统后，我在 Linux 系统上经历了一个艰难的开始，当时我手上只有 [Gentoo Linux][3] 系统的安装光盘和一本打印的说明书，要用它们来实现一个可运行的 Linux 系统。虽然花费了几天的时间去编辑和修整，但最终还是觉得自己受益颇多。
 
-I haven’t looked back to Windows since then, but I switched to [Arch Linux][4] on my laptop after having the fan fail from the constant compilation stress. Later I also switched all my other computers and private servers to Arch Linux. As a rolling release distribution you get package upgrades all the time, but the most important breakages are nicely reported in the [Arch Linux News][5].
+自此我再也没有转回 Windows s系统，但在持续的编译压力导致风扇失灵后，我将我的电脑系统切换到 [Arch Linux][4] 。之后我将其他的电脑和私人服务器也切换到了 Arch Linux 。作为一个滚动发布发行版，你可以随时升级软件包，但 [Arch Linux News][5] 已经详细报道了其中最主要的漏洞。
 
-One annoyance though is that Arch Linux removes the old kernel modules once you upgrade it. I usually notice that once I try plugging in a USB flash drive and the kernel fails to load the relevant module. Instead you’re supposed to reboot after each kernel upgrade. There are a few [hacks][6] around to get around the problem, but I haven’t been bothered enough to actually use them.
+不过，令人烦恼的事一旦你更新了旧的内核模组， Arch Linux 就会移除旧版的相关信息。我经常注意到一旦我试着插入一个 USB 闪存驱动，内核就无法加载相关组件。相反，每次内核升级后都应该进行重启。有一些 [方法][6] 可以解决这个问题，但我还没有实际地使用它们。
 
 Similar problems happen with other programs, commonly Firefox, cron or Samba requiring a restart after an upgrade, but annoyingly not warning you that that’s the case. [SUSE][7], which I use at work, nicely warns about such cases.
 
