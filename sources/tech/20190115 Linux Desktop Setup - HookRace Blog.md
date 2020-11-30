@@ -23,7 +23,7 @@ Linux桌面设置
   * 程序应在终端中运行，以便于在任何地方连贯地使用它们，包括性能稍差的电脑或手机。
   * 通过使用终端软件，可以实现自动聚焦键盘。只有在一些有意义的地方，我会更喜欢使用鼠标，因为在打字期间一直伸手去拿鼠标感觉像在浪费时间。有时候过了一个小时我才注意到甚至还没有插鼠标。
   * 最好使用快速高效的软件，我不喜欢听到风扇的声音和感到房间在变热。我还可以继续长久地运行旧硬件，已经使用了 10 年的 Thinkpad x200s 还能很好地支持我所使用的软件。
-  * 组合。我不想手动执行每个步骤，而是在需要时自动执行更多操作，这时自然是支持 shell 。
+  * 组合。我不想手动执行每个步骤，而是在需要时自动执行更多操作，这时自然是支持 shell。
 
 
 
@@ -31,21 +31,21 @@ Linux桌面设置
 
 十二年前移除 Windows 系统后，我在 Linux 系统上经历了一个艰难的开始，当时我手上只有 [Gentoo Linux][3] 系统的安装光盘和一本打印的说明书，要用它们来实现一个可运行的 Linux 系统。虽然花费了几天的时间去编辑和修整，但最终还是觉得自己受益颇多。
 
-自此我再也没有转回 Windows s系统，但在持续的编译压力导致风扇失灵后，我将我的电脑系统切换到 [Arch Linux][4] 。之后我将其他的电脑和私人服务器也切换到了 Arch Linux 。作为一个滚动发布发行版，你可以随时升级软件包，但 [Arch Linux News][5] 已经详细报道了其中最主要的漏洞。
+自此我再也没有转回 Windows 系统，但在持续的编译压力导致风扇失灵后，我将我的电脑系统切换到 [Arch Linux][4]。之后我将其他的电脑和私人服务器也切换到了 Arch Linux。作为一个滚动发布发行版，你可以随时升级软件包，但 [Arch Linux News][5] 已经详细报道了其中最主要的漏洞。
 
 不过，令人烦恼的事一旦你更新了旧的内核模组， Arch Linux 就会移除旧版的相关信息。我经常注意到一旦我试着插入一个 USB 闪存驱动，内核就无法加载相关组件。相反，每次内核升级后都应该进行重启。有一些 [方法][6] 可以解决这个问题，但我还没有实际地使用它们。
 
-Similar problems happen with other programs, commonly Firefox, cron or Samba requiring a restart after an upgrade, but annoyingly not warning you that that’s the case. [SUSE][7], which I use at work, nicely warns about such cases.
+其他程序也会出现类似的情况，通常 Firefox 、 cron 或者 Samba 在升级后都需要重启，但恼人的是，它们没有警告你存在这种情况不是提醒你这件事本身。我在工作中使用的 [SUSE][7] 很好地提醒了这种情况。
 
-For the [DDNet][8] production servers I prefer [Debian][9] over Arch Linux, so that I have a lower chance of breakage on each upgrade. For my firewall and router I used [OpenBSD][10] for its clean system, documentation and great [pf firewall][11], but right now I don’t have a need for a separate router anymore.
+对于 [DDNet][8] ，我更喜欢使用 Arch Linux 的 [Debian][9] 系统，这样在每次升级时出现故障的几率更低。我的防火墙和路由器使用了拥有干净系统、文件和强大的 [OpenBSD][10] 的 [pf firewall][11]。
 
-### Window Manager
+### 视窗管理
 
-Since I started out with Gentoo I quickly noticed the huge compile time of KDE, which made it a no-go for me. I looked around for more minimal solutions, and used [Openbox][12] and [Fluxbox][13] initially. At some point I jumped on the tiling window manager train in order to be more keyboard-focused and picked up [dwm][14] and [awesome][15] close to their initial releases.
+从我开始使用 Gentoo 后，我很快注意到 KDE 的编译时间非常长，这让我没办法继续使用它。我四处寻找更简单的解决方案，最初使用了 [Openbox][12] 和 [Fluxbox][13]。某次，为了能更多进行纯键盘操作，我开始转入平铺窗口管理器训练，并在研究其初始版本的时候学习了 [dwm][14] 和 [awesome][15]。
 
-In the end I settled on [xmonad][16] thanks to its flexibility, extendability and being written and configured in pure [Haskell][17], a great functional programming language. One example of this is that at home I run a single 40” 4K screen, but often split it up into four virtual screens, each displaying a workspace on which my windows are automatically arranged. Of course xmonad has a [module][18] for that.
+最终，由于 [xmonad][16]的灵活性，可扩展性以及使用纯 [Haskell][17] 一种出色的功能编程语言）编写和配置，最终选择了它。一个例子是，我在家中运行一个 40" 4K 的屏幕，但经常会将它分为四个虚拟屏幕，每个虚拟屏幕显示一个工作区，每个工作区自动排列在我的窗口上。 当然， xmonad 有一个对应的 [模块][18]。
 
-[dzen][19] and [conky][20] function as a simple enough status bar for me. My entire conky config looks like this:
+[dzen][19] 和 [conky][20] 对我来说是一个非常简单的状态栏。我的整体conky配置看起来是这样的：
 
 ```
 out_to_console yes
@@ -56,21 +56,21 @@ TEXT
 ${downspeed eth0} ${upspeed eth0} | $cpu% ${loadavg 1} ${loadavg 2} ${loadavg 3} $mem/$memmax | ${time %F %T}
 ```
 
-And gets piped straight into dzen2 with `conky | dzen2 -fn '-xos4-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*' -bg '#000000' -fg '#ffffff' -p -e '' -x 1000 -w 920 -xs 1 -ta r`.
+输入命令直接通过管道输入dzen2 `conky | dzen2 -fn '-xos4-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*' -bg '#000000' -fg '#ffffff' -p -e '' -x 1000 -w 920 -xs 1 -ta r`.
 
-One important feature for me is to make the terminal emit a beep sound once a job is done. This is done simply by adding a `\a` character to the `PR_TITLEBAR` variable in zsh, which is shown whenever a job is done. Of course I disable the actual beep sound by blacklisting the `pcspkr` kernel module with `echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf`. Instead the sound gets turned into an urgency by urxvt’s `URxvt.urgentOnBell: true` setting. Then xmonad has an urgency hook to capture this and I can automatically focus the currently urgent window with a key combination. In dzen I get the urgent windowspaces displayed with a nice and bright `#ff0000`.
+对我而言，一项重要功能是在完成工作后使终端发出蜂鸣声。只需要简单地在 zsh 中的 `PR_TITLEBAR` 变量中添加一个 `\a` 字符就可以做到，只要工作完成就可以发出蜂鸣声。当然，我使用了 `echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf` 命令，将 `pcspkr` 内核模块列入黑名单来禁用实际的蜂鸣声。相反 urxvt 的`URxvt.urgentOnBell: true` 设置会将声音变为尖锐。之后 xmonad 有一个 urgency hook 来捕捉这类信号，并且我可以使用组合键自动聚焦到当前紧急窗口。在 dzen 中我可以看到一个漂亮且明亮的 `#ff0000`紧急窗口。
 
-The final result in all its glory on my Laptop:
+在我笔记本上所得到的最终成品是：
 
 [![Laptop screenshot][21]][22]
 
-I hear that [i3][23] has become quite popular in the last years, but it requires more manual window alignment instead of specifying automated methods to do it.
+我听说前几年 [i3][23] 变得非常流行，但它要求更多的手动窗口对齐而不是自动对齐。
 
-I realize that there are also terminal multiplexers like [tmux][24], but I still require a few graphical applications, so in the end I never used them productively.
+我意识到也有像 [tmux][24] 那样的终端多路复用器，但我仍想要一些图形化应用程序，因此最终我没有有效地使用它们。
 
-### Terminal Persistency
+### 终端连续性
 
-In order to keep terminals alive I use [dtach][25], which is just the detach feature of screen. In order to make every terminal on my computer detachable I wrote a [small wrapper script][26]. This means that even if I had to restart my X server I could keep all my terminals running just fine, both local and remote.
+为了使终端保持活跃状态，我使用了 [dtach][25] ，它只是模拟屏幕分离功能。 为了使计算机上的每个终端都可连接和断开，我编写了一个小的封装脚本。 这意味着，即使必须重新启动 X 服务器，我也可以使所有终端都运行良好，包括本地和远程终端。
 
 ### Shell & Programming
 
