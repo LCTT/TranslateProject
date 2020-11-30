@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/20/9/add-throwing-python-game)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-在你的 Python 游戏中添加投掷技巧
+在你的 Python 游戏中添加投掷机制
 ======
 
 > 四处奔跑躲避敌人是一回事，反击敌人是另一回事。学习如何在这系列的第十二篇文章中在 Pygame 中创建平台游戏。
