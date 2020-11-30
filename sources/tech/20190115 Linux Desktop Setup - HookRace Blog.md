@@ -72,13 +72,13 @@ ${downspeed eth0} ${upspeed eth0} | $cpu% ${loadavg 1} ${loadavg 2} ${loadavg 3}
 
 为了使终端保持活跃状态，我使用了 [dtach][25] ，它只是模拟屏幕分离功能。 为了使计算机上的每个终端都可连接和断开，我编写了一个小的封装脚本。 这意味着，即使必须重新启动 X 服务器，我也可以使所有终端都运行良好，包括本地和远程终端。
 
-### Shell & Programming
+### Shell & 编程
 
-Instead of [bash][27] I use [zsh][28] as my shell for its huge number of features.
+对于 shell，我使用 [zsh][28] 而不是 [bash][27]，因为它有众多的功能。
 
-As a terminal emulator I found [urxvt][29] to be simple enough, support Unicode and 256 colors and has great performance. Another great feature is being able to run the urxvt client and daemon separately, so that even a large number of terminals barely takes up any memory (except for the scrollback buffer).
+作为终端模拟，我发现 [urxvt][29] 足够轻巧，支持 Unicode 编码和 256 色，具有出色的性能。另一个重要的功能是可以分别运行 urxvt client 客户端和守护进程。因此，即使大量终端也几乎不占用任何内存（ scrollback 除外）。
 
-There is only one font that looks absolutely clean and perfect to me: [Terminus][30]. Since i’s a bitmap font everything is pixel perfect and renders extremely fast and at low CPU usage. In order to switch fonts on-demand in each terminal with `CTRL-WIN-[1-7]` my ~/.Xdefaults contains:
+对我而言，只有一种字体看起来绝对干净和完美： [Terminus][30]。 由于我是位图字体，因此所有内容都是完美像素，渲染速度极快且 CPU 使用率低。为了能使用 `CTRL-WIN-[1-7]` 在每个终端按需切换字体，我的  ~/.Xdefaults 包含:
 
 ```
 URxvt.font: -xos4-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*
@@ -96,21 +96,21 @@ URxvt.keysym.C-M-n: command:\033]10;#ffffff\007\033]11;#000000\007\033]12;#fffff
 URxvt.keysym.C-M-b: command:\033]10;#000000\007\033]11;#ffffff\007\033]12;#000000\007\033]706;#0000ff\007\033]707;#ff0000\007
 ```
 
-For programming and writing I use [Vim][31] with syntax highlighting and [ctags][32] for indexing, as well as a few terminal windows with grep, sed and the other usual suspects for search and manipulation. This is probably not at the same level of comfort as an IDE, but allows me more automation.
+对于编程和书写，我使用 [Vim][31] 语法高亮显示和 [ctags][32] 进行索引，以及一些带有 grep 、sed 和其他用于搜索和操作的常用终端窗口。这可能不像 IDE 那样舒适，可以实现更多的自动化。
 
-One problem with Vim is that you get so used to its key mappings that you’ll want to use them everywhere.
+Vim 的一个问题是你已经习惯了它的键映射，因此希望在任何地方都使用它们。
 
-[Python][33] and [Nim][34] do well as scripting languages where the shell is not powerful enough.
+在 shell 功能不够强大时，[Python][33] 和 [Nim][34] 作为脚本语言也不错。
 
-### System Monitoring
+### 系统监控
 
-[htop][35] (look at the background of that site, it’s a live view of the server that’s hosting it) works great for getting a quick overview of what the software is currently doing. [lm_sensors][36] allows monitoring the hardware temperatures, fans and voltages. [powertop][37] is a great little tool by Intel to find power savings. [ncdu][38] lets you analyze disk usage interactively.
+[htop][35] （查看当前站点的后台运行，是托管服务器的实时视图）非常适合快速了解软件的当前运行状态。 [lm_sensors][36] 可以监控硬件温度、风扇和电压。 [powertop][37] 是一款由 Intel 发布的优秀省电小工具。 [ncdu][38] 可以交互式分析磁盘使用情况。
 
-[nmap][39], iptraf-ng, [tcpdump][40] and [Wireshark][41] are essential tools for analyzing network problems.
+[nmap][39]、 iptraf-ng、 [tcpdump][40] 和 [Wireshark][41] 都是分析网络问题的基本工具。
 
-There are of course many more great tools.
+当然还有很多更优秀的工具。
 
-### Mails & Synchronization
+### 邮件 & 同步
 
 On my home server I have a [fetchmail][42] daemon running for each email acccount that I have. Fetchmail just retrieves the incoming emails and invokes [procmail][43]:
 
