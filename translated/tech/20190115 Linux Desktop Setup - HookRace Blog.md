@@ -1,21 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (chenmu-kk)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Linux Desktop Setup · HookRace Blog)
 [#]: via: (https://hookrace.net/blog/linux-desktop-setup/)
 [#]: author: (Dennis Felsing http://felsin9.de/nnis/)
 
-Linux桌面设置
+十年 Linux 桌面生存指南
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202012/03/223817smrej5qwsbqjb3vs.jpg)
 
 从 2006 年开始转战 Linux 系统后，经过几年的实践，我的软件设置在过去十年内出人意料的固定。再过十年回顾一下，看看发生了什么，也许会非常有趣。在写这篇推文时，我迅速回顾了正在运行的内容：
 
-[![htop overview][1]][2]
+![htop overview][2]
 
-### 契机
+### 动机
 
 我的软件介绍排序不分先后：
 
@@ -25,27 +26,25 @@ Linux桌面设置
   * 最好使用快速高效的软件，我不喜欢听到风扇的声音和感到房间在变热。我还可以继续长久地运行旧硬件，已经使用了 10 年的 Thinkpad x200s 还能很好地支持我所使用的软件。
   * 组合。我不想手动执行每个步骤，而是在需要时自动执行更多操作，这时自然是支持 shell。
 
-
-
 ### 操作系统
 
-十二年前移除 Windows 系统后，我在 Linux 系统上经历了一个艰难的开始，当时我手上只有 [Gentoo Linux][3] 系统的安装光盘和一本打印的说明书，要用它们来实现一个可运行的 Linux 系统。虽然花费了几天的时间去编辑和修整，但最终还是觉得自己受益颇多。
+十二年前移除 Windows 系统后，我在 Linux 系统上经历了一个艰难的开始，当时我手上只有 [Gentoo Linux][3] 系统的安装光盘和一本打印的说明书，要用它们来实现一个可运行的 Linux 系统。虽然花费了几天的时间去编译和修整，但最终还是觉得自己受益颇多。
 
 自此我再也没有转回 Windows 系统，但在持续的编译压力导致风扇失灵后，我将我的电脑系统切换到 [Arch Linux][4]。之后我将其他的电脑和私人服务器也切换到了 Arch Linux。作为一个滚动发布发行版，你可以随时升级软件包，但 [Arch Linux News][5] 已经详细报道了其中最主要的漏洞。
 
-不过，令人烦恼的事一旦你更新了旧的内核模组， Arch Linux 就会移除旧版的相关信息。我经常注意到一旦我试着插入一个 USB 闪存驱动，内核就无法加载相关组件。相反，每次内核升级后都应该进行重启。有一些 [方法][6] 可以解决这个问题，但我还没有实际地使用它们。
+不过，令人烦恼的是一旦你更新了旧的内核模组，Arch Linux 就会移除旧版的相关信息。我经常注意到一旦我试着插入一个 USB 闪存盘，内核就无法加载相关组件。相反，每次内核升级后都应该进行重启。有一些 [方法][6] 可以解决这个问题，但我还没有实际地使用它们。
 
-其他程序也会出现类似的情况，通常 Firefox 、 cron 或者 Samba 在升级后都需要重启，但恼人的是，它们没有警告你存在这种情况不是提醒你这件事本身。我在工作中使用的 [SUSE][7] 很好地提醒了这种情况。
+其他程序也会出现类似的情况，通常 Firefox 、 cron 或者 Samba 在升级后都需要重启，但恼人的是，它们没有警告你存在这种情况。我在工作中使用的 [SUSE][7] 很好地提醒了这种情况。
 
-对于 [DDNet][8] ，我更喜欢使用 Arch Linux 的 [Debian][9] 系统，这样在每次升级时出现故障的几率更低。我的防火墙和路由器使用了拥有干净系统、文件和强大的 [OpenBSD][10] 的 [pf firewall][11]。
+对于 [DDNet][8] 产品服务器，我更喜欢使用 Arch Linux 的 [Debian][9] 系统，这样在每次升级时出现故障的几率更低。我的防火墙和路由器使用了 [OpenBSD][10] ，它拥有干净系统、文档和强大的 [pf 防火墙][11]，而我现在不需要一个单独的路由器。
 
-### 视窗管理
+### 窗口管理器
 
-从我开始使用 Gentoo 后，我很快注意到 KDE 的编译时间非常长，这让我没办法继续使用它。我四处寻找更简单的解决方案，最初使用了 [Openbox][12] 和 [Fluxbox][13]。某次，为了能更多进行纯键盘操作，我开始转入平铺窗口管理器训练，并在研究其初始版本的时候学习了 [dwm][14] 和 [awesome][15]。
+从我开始使用 Gentoo 后，我很快注意到 KDE 的编译时间非常长，这让我没办法继续使用它。我四处寻找更简单的解决方案，最初使用了 [Openbox][12] 和 [Fluxbox][13]。某次，为了能更多进行纯键盘操作，我开始尝试转入平铺窗口管理器，并在研究其初始版本的时候学习了 [dwm][14] 和 [awesome][15]。
 
-最终，由于 [xmonad][16]的灵活性，可扩展性以及使用纯 [Haskell][17] 一种出色的功能编程语言）编写和配置，最终选择了它。一个例子是，我在家中运行一个 40" 4K 的屏幕，但经常会将它分为四个虚拟屏幕，每个虚拟屏幕显示一个工作区，每个工作区自动排列在我的窗口上。 当然， xmonad 有一个对应的 [模块][18]。
+最终，由于 [xmonad][16]的灵活性、可扩展性以及使用纯 [Haskell][17]（一种出色的函数编程语言）编写和配置，最终选择了它。一个例子是，我在家中运行一个 40" 4K 的屏幕，但经常会将它分为四个虚拟屏幕，每个虚拟屏幕显示一个工作区，每个工作区自动排列在我的窗口上。当然， xmonad 有一个对应的 [模块][18]。
 
-[dzen][19] 和 [conky][20] 对我来说是一个非常简单的状态栏。我的整体conky配置看起来是这样的：
+[dzen][19] 和 [conky][20] 对我来说是一个非常简单的状态栏。我的整体 conky 配置看起来是这样的：
 
 ```
 out_to_console yes
@@ -56,13 +55,23 @@ TEXT
 ${downspeed eth0} ${upspeed eth0} | $cpu% ${loadavg 1} ${loadavg 2} ${loadavg 3} $mem/$memmax | ${time %F %T}
 ```
 
-输入命令直接通过管道输入dzen2 `conky | dzen2 -fn '-xos4-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*' -bg '#000000' -fg '#ffffff' -p -e '' -x 1000 -w 920 -xs 1 -ta r`.
+输入命令直接通过管道输入 dzen2：
 
-对我而言，一项重要功能是在完成工作后使终端发出蜂鸣声。只需要简单地在 zsh 中的 `PR_TITLEBAR` 变量中添加一个 `\a` 字符就可以做到，只要工作完成就可以发出蜂鸣声。当然，我使用了 `echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf` 命令，将 `pcspkr` 内核模块列入黑名单来禁用实际的蜂鸣声。相反 urxvt 的`URxvt.urgentOnBell: true` 设置会将声音变为尖锐。之后 xmonad 有一个 urgency hook 来捕捉这类信号，并且我可以使用组合键自动聚焦到当前紧急窗口。在 dzen 中我可以看到一个漂亮且明亮的 `#ff0000`紧急窗口。
+```
+conky | dzen2 -fn '-xos4-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*' -bg '#000000' -fg '#ffffff' -p -e '' -x 1000 -w 920 -xs 1 -ta r
+```
+
+对我而言，一项重要功能是在完成工作后使终端发出蜂鸣声。只需要简单地在 zsh 中的 `PR_TITLEBAR` 变量中添加一个 `\a` 字符就可以做到，只要工作完成就可以发出蜂鸣声。当然，我使用了命令： 
+
+```
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+```
+
+将 `pcspkr` 内核模块列入黑名单来禁用实际的蜂鸣声。相反 urxvt 的 `URxvt.urgentOnBell: true` 设置会将声音变为尖锐。之后 xmonad 有一个 urgency 钩子来捕捉这类信号，并且我可以使用组合键自动聚焦到当前的发出紧急信号的窗口。在 dzen 中我可以看到一个漂亮且明亮的 `#ff0000` 紧急窗口。
 
 在我笔记本上所得到的最终成品是：
 
-[![Laptop screenshot][21]][22]
+![Laptop screenshot][22]
 
 我听说前几年 [i3][23] 变得非常流行，但它要求更多的手动窗口对齐而不是自动对齐。
 
@@ -70,15 +79,15 @@ ${downspeed eth0} ${upspeed eth0} | $cpu% ${loadavg 1} ${loadavg 2} ${loadavg 3}
 
 ### 终端连续性
 
-为了使终端保持活跃状态，我使用了 [dtach][25] ，它只是模拟屏幕分离功能。 为了使计算机上的每个终端都可连接和断开，我编写了一个小的封装脚本。 这意味着，即使必须重新启动 X 服务器，我也可以使所有终端都运行良好，包括本地和远程终端。
+为了使终端保持活跃状态，我使用了 [dtach][25] ，它只是模拟屏幕分离功能。为了使计算机上的每个终端都可连接和断开，我编写了一个小的封装脚本。 这意味着，即使必须重新启动 X 服务器，我也可以使所有终端都运行良好，包括本地和远程终端。
 
 ### Shell & 编程
 
 对于 shell，我使用 [zsh][28] 而不是 [bash][27]，因为它有众多的功能。
 
-作为终端模拟，我发现 [urxvt][29] 足够轻巧，支持 Unicode 编码和 256 色，具有出色的性能。另一个重要的功能是可以分别运行 urxvt client 客户端和守护进程。因此，即使大量终端也几乎不占用任何内存（ scrollback 除外）。
+作为终端模拟，我发现 [urxvt][29] 足够轻巧，支持 Unicode 编码和 256 色，具有出色的性能。另一个重要的功能是可以分别运行 urxvt 客户端和守护进程。因此，即使大量终端也几乎不占用任何内存（回滚缓冲区除外）。
 
-对我而言，只有一种字体看起来绝对干净和完美： [Terminus][30]。 由于我是位图字体，因此所有内容都是完美像素，渲染速度极快且 CPU 使用率低。为了能使用 `CTRL-WIN-[1-7]` 在每个终端按需切换字体，我的  ~/.Xdefaults 包含:
+对我而言，只有一种字体看起来绝对干净和完美： [Terminus][30]。 由于它是位图字体，因此所有内容都是完美像素，渲染速度极快且 CPU 使用率低。为了能使用 `CTRL-WIN-[1-7]` 在每个终端按需切换字体，我的 `~/.Xdefaults` 包含:
 
 ```
 URxvt.font: -xos4-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*
@@ -96,7 +105,7 @@ URxvt.keysym.C-M-n: command:\033]10;#ffffff\007\033]11;#000000\007\033]12;#fffff
 URxvt.keysym.C-M-b: command:\033]10;#000000\007\033]11;#ffffff\007\033]12;#000000\007\033]706;#0000ff\007\033]707;#ff0000\007
 ```
 
-对于编程和书写，我使用 [Vim][31] 语法高亮显示和 [ctags][32] 进行索引，以及一些带有 grep 、sed 和其他用于搜索和操作的常用终端窗口。这可能不像 IDE 那样舒适，可以实现更多的自动化。
+对于编程和书写，我使用 [Vim][31] 语法高亮显示和 [ctags][32] 进行索引，以及一些带有 `grep` 、`sed` 和其他用于搜索和操作的常用终端窗口。这可能不像 IDE 那样舒适，但可以实现更多的自动化。
 
 Vim 的一个问题是你已经习惯了它的键映射，因此希望在任何地方都使用它们。
 
@@ -112,7 +121,7 @@ Vim 的一个问题是你已经习惯了它的键映射，因此希望在任何�
 
 ### 邮件 & 同步
 
-在我的 home server 服务器上，我为自己所有的邮箱账号运行了 [fetchmail][42] 守护进程。Fetchmail 只检索收到的邮件并调用 [procmail][43]:
+在我的家庭服务器上，我为自己所有的邮箱账号运行了 [fetchmail][42] 守护进程。fetchmail 只是检索收到的邮件并调用 [procmail][43]：
 
 ```
 #!/bin/sh
@@ -172,7 +181,7 @@ password XXX
 [...]
 ```
 
-但是到目前为止，邮件还在服务器上。 我的文档全部存储在一个目录中，我使用 [Unison][45] 在所有计算机之间进行同步。将 Unison 视为双向交互 [rsync][46]，我的邮件是这个文件目录下的一部分因此它们最终存储在我的电脑上。
+但是到目前为止，邮件还在服务器上。 我的文档全部存储在一个目录中，我使用 [Unison][45] 在所有计算机之间进行同步。Unison 可以视为双向交互式 [rsync][46]，我的邮件是这个文件目录下的一部分，因此它们最终存储在我的电脑上。
 
 这也意味着，尽管邮件会立即到达我的邮箱，但我只是按需拿取，而不是邮件一到达时就立即收到通知。
 
@@ -227,6 +236,7 @@ MSG Sun from [sunrise(trigdate())] to [sunset(trigdate())]
 ```
 
 遗憾的是，目前 remind 中还没有中国农历的提醒功能，因此中国的节日不易计算。
+
 我给提醒设置了两个名字：
 
 ```
@@ -245,7 +255,7 @@ rem -m -b1 -q -cuc12 -w$(($(tput cols)+1)) | sed -e "s/\f//g" | less
 
 ### 字典
 
-[rdictcc][52] 是鲜为人知的字典工具，它可以从 [dict.cc][53] 使用高级词典并将他们转存在本地数据库中：
+[rdictcc][52] 是鲜为人知的字典工具，它可以使用 [dict.cc][53] 很棒的词典并将他们转存在本地数据库中：
 
 ```
 $ rdictcc rasch
@@ -278,9 +288,9 @@ Rasch model:
 
 ### 记录和阅读
 
-我有一个简单记录任务的备忘录，在 Vim 会话中基本上一直处于打开状态。我也使用备忘录作为工作中已做工作的记录，这样就可以检查自己每天完成了哪些任务。
+我有一个简单记录任务的备忘录，在 Vim 会话中基本上一直处于打开状态。我也使用备忘录作为工作中“已完成”工作的记录，这样就可以检查自己每天完成了哪些任务。
 
-对于写文件，信件和演示文稿，我会使用 [LaTeX][54] 进行高级排版。德式的简单信件可以这样设置，例如：
+对于写文件、信件和演示文稿，我会使用 [LaTeX][54] 进行高级排版。德式的简单信件可以这样设置，例如：
 
 ```
 \documentclass[paper = a4, fromalign = right]{scrlttr2}
@@ -320,19 +330,19 @@ Ich fordere Sie hiermit zu Bla Bla Bla auf.
 
 ### 图片编辑
 
-[GIMP][58] 和 [Inkscape][59] 分别是照片编辑和交互式向量图形是一个简便的选择。
+简便的选择是，[GIMP][58] 和 [Inkscape][59] 分别用于照片编辑和交互式向量图形。
 
 有时 [Imagemagick][60] 已经足够好了，它可以从命令行直接使用，从而自动编辑图片。同样 [Graphviz][61] 和 [TikZ][62] 可以用来绘制曲线图和其他图表。
 
-### 网络浏览器
+### Web 浏览器
 
-对于网络浏览器，我一直在使用 [Firefox][63]。相较于 Chrome，它的可扩展性更好，资源使用率更低。
+对于 Web 浏览器，我一直在使用 [Firefox][63]。相较于 Chrome，它的可扩展性更好，资源使用率更低。
 
-不幸的是，在 Firefox 完全改用 Chrome 风格的扩展之后， [Pentadactyl][64] l扩展的开发就停止了，所以我的浏览器中再也没有令人满意的 Vim 类控件了。
+不幸的是，在 Firefox 完全改用 Chrome 风格的扩展之后， [Pentadactyl][64] 扩展的开发就停止了，所以我的浏览器中再也没有令人满意的 Vim 类控件了。
 
 ### 媒体播放器
 
-通过设置 `vo=gpu` 以及 `hwdec=vaapi`，具有硬件解码功能的 [mpv][65] 在播放期间 CPU 的占用率保持在 5%。相较于默认的t PulseAudio，mpv 中的 `audio-channels=2` 似乎可以使我的立体扬声器/耳机获得更清晰的降级混频。一个很棒的小功能是用 `Shift-Q` 退出，而不是只用 `Q` 来保存回放位置。当你与母语是其他语言的人一起看视频时，你可以使用 `--secondary-sid=` 同时显示两种字幕，主字幕位于底部，次字幕位于屏幕顶部。
+通过设置 `vo=gpu` 以及 `hwdec=vaapi`，具有硬件解码功能的 [mpv][65] 在播放期间 CPU 的占用率保持在 5%。相较于默认的 PulseAudio，mpv 中的 `audio-channels=2` 似乎可以使我的立体扬声器/耳机获得更清晰的降级混频。一个很棒的小功能是用 `Shift-Q` 退出，而不是只用 `Q` 来保存回放位置。当你与母语是其他语言的人一起看视频时，你可以使用 `--secondary-sid=` 同时显示两种字幕，主字幕位于底部，次字幕位于屏幕顶部。
 
 我的无线鼠标可以简单地通过一个小的配置文件（ `~/.config/mpv/input.conf` ）实现远程控制 mpv ：
 
@@ -346,11 +356,11 @@ MOUSE_BTN8 add chapter 1
 
 [youtube-dl][66] 非常适合观看在线托管的视频，使用 `-f bestvideo+bestaudio/best --all-subs --embed-subs` 命令可获得最高质量的视频。
 
-作为音乐播放器， [MOC][67] 还未得到积极发展，但它仍是一个简易的播放器，可以播放各种可能的格式，包括最不常用的 Chiptune 格式。在 AUR 中有一个 [补丁][68] 增加了 PulseAudio 支持。即使在 CPU 时钟频率降到 800 MHz， MOC 也只使用了单核 CPU 的 1-2% 。
+作为音乐播放器， [MOC][67] 不再活跃开发，但它仍是一个简易的播放器，可以播放各种可能的格式，包括最不常用的 Chiptune 格式。在 AUR 中有一个 [补丁][68] 增加了 PulseAudio 支持。即使在 CPU 时钟频率降到 800 MHz， MOC 也只使用了单核 CPU 的 1-2% 。
 
 ![moc][69]
 
-我的音乐收藏夹保存在我的 home server 上，因此我可以从任何地方访问它。它使用 [SSHFS][70] 挂载并自动安装在 `/etc/fstab/` 目录下：
+我的音乐收藏夹保存在我的家庭服务器上，因此我可以从任何地方访问它。它使用 [SSHFS][70] 挂载并自动安装在 `/etc/fstab/` 目录下：
 
 ```
 root@server:/media/media /mnt/media fuse.sshfs noauto,x-systemd.automount,idmap=user,IdentityFile=/root/.ssh/id_rsa,allow_other,reconnect 0 0
@@ -358,26 +368,26 @@ root@server:/media/media /mnt/media fuse.sshfs noauto,x-systemd.automount,idmap=
 
 ### 跨平台构建
 
-除了系统本身，对于任何主流操作系统 Linux 在构建软件包方面都很优秀！ 一开始，我使用 [QEMU][71] 与旧版 Debian、 Windows 以及 Mac OS X VM 一起构建这些平台。
+除了 Linux 本身，它对于构建任何主流操作系统的软件包都很优秀！ 一开始，我使用 [QEMU][71] 与旧版 Debian、 Windows 以及 Mac OS X VM 一起构建这些平台。
 
-现在我在旧版 Debian distribution 上转而使用 chroot （以获得最大的 Linux 兼容性），在 Windows 上使用 [MinGW][72] 进行交叉编译，在 Mac OS X 上则使用 [OSXCross][73]。
+现在我在旧版 Debian 发行版上转而使用 chroot （以获得最大的 Linux 兼容性），在 Windows 上使用 [MinGW][72] 进行交叉编译，在 Mac OS X 上则使用 [OSXCross][73]。
 
-用于 [build DDNet][74] 以及 [instructions for updating library builds][75] 的脚本都基于此。
+用于 [构建 DDNet][74] 的脚本以及 [更新库构建的说明][75] 的脚本都基于这个。
 
 ### 备份
 
-通常，我们都会忘记备份。即使这是终章，它也不应该成为事后诸葛。
+通常，我们都会忘记备份。即使这是最后一节，它也不应该成为事后诸葛。
 
-十年前我写了 [rrb][76] （反向rsync备份）重新包装了 rsync ，因此我只需要授予正在备份的计算机，备份服务器的 root SSH 权限。令人惊讶地是，尽管我一直在使用 rrb ，但它在过去十年里没有任何改变。
+十年前我写了 [rrb][76] （反向 rsync 备份）重新封装了 `rsync` ，因此我只需要将备份服务器的 root SSH 权限授予正在备份的计算机。令人惊讶地是，尽管我一直在使用 rrb ，但它在过去十年里没有任何改变。
 
-备份文件直接存储在文件系统中。使用硬链接实现增量备份 (`--link-dest`) 。一个简单的 [配置][77] 定义了备份保存时间，默认为：
+备份文件直接存储在文件系统中。使用硬链接实现增量备份（`--link-dest`）。一个简单的 [配置][77] 定义了备份保存时间，默认为：
 
 ```
 KEEP_RULES=( \
- 7 7 \ # One backup a day for the last 7 days
- 31 8 \ # 8 more backups for the last month
+   7  7 \ # One backup a day for the last 7 days
+  31  8 \ # 8 more backups for the last month
  365 11 \ # 11 more backups for the last year
-1825 4 \ # 4 more backups for the last 5 years
+1825  4 \ # 4 more backups for the last 5 years
 )
 ```
 
@@ -405,7 +415,7 @@ Host cr-remote
  Port 27276
 ```
 
-在谈论 SSH 攻击时，有时由于某些中断的路由会很难访问到服务器。在那种情况下你可以借道其他服务器的 SSH 连接，以获得更好的路由。在这种情况下，你可能通过美国连接访问到我的中国服务器，而来自德国的不可靠连接可能需要几个周：
+在谈及 SSH 技巧时，有时由于某些中断的路由会很难访问到服务器。在那种情况下你可以借道其他服务器的 SSH 连接，以获得更好的路由。在这种情况下，你可能通过美国连接访问到我的中国服务器，而来自德国的不可靠连接可能需要几个周：
 
 ```
 Host chn.ddnet.tw
@@ -426,7 +436,7 @@ via: https://hookrace.net/blog/linux-desktop-setup/
 作者：[Dennis Felsing][a]
 选题：[lujun9972][b]
 译者：[chenmu-kk](https://github.com/chenmu-kk)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
