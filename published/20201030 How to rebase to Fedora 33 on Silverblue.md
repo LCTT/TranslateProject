@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12880-1.html)
 [#]: subject: (How to rebase to Fedora 33 on Silverblue)
 [#]: via: (https://fedoramagazine.org/how-to-rebase-to-fedora-33-on-silverblue/)
 [#]: author: (Michal Konečný https://fedoramagazine.org/author/zlopez/)
@@ -10,9 +10,9 @@
 如何在 Silverblue 上变基到 Fedora 33？
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202012/02/232440exewdbwdhde4mqhv.jpg)
 
-Silverblue 是[一个建立在 Fedora 上的桌面操作系统][2]。它非常适合日常使用、开发和基于容器的工作流程。它提供了[众多的优势][3]，例如在出现任何问题时能够回滚。如果你想在你的 Silverblue 系统上更新到 Fedora 33，这篇文章会告诉你如何做。它不仅告诉你该怎么做，还告诉你如果发生了不可预见的事情时该如何回退。
+Silverblue 是[一个建立在 Fedora 之上的桌面操作系统][2]。它非常适合日常使用、开发和基于容器的工作流程。它提供了[众多的优势][3]，例如在出现任何问题时能够回滚。如果你想在你的 Silverblue 系统上更新到 Fedora 33，这篇文章会告诉你如何做。它不仅告诉你该怎么做，还告诉你如果发生了不可预见的事情时该如何回退。
 
 在实际做变基到 Fedora 33 之前，你应该应用任何挂起的更新。在终端中输入以下内容：
 
@@ -28,15 +28,15 @@ GNOME 软件中心会在更新界面显示有新版本的 Fedora 可用。
 
 ![Fedora 33 is available][4]
 
-首先你需要做的是下载新镜像，点击 _Download_ 按钮。这将需要一些时间，完成后你会看到更新已经准备好安装了。
+首先你需要做的是下载新镜像，点击 “Download” 按钮。这将需要一些时间，完成后你会看到更新已经准备好安装了。
 
 ![Fedora 33 is ready for installation][5]
 
-点击 _Install_ 按钮。这一步只需要几分钟，然后会提示你重启电脑。
+点击 “Install” 按钮。这一步只需要几分钟，然后会提示你重启电脑。
 
 ![Restart is needed to rebase to Fedora 33 Silverblue][6]
 
-点击 _Restart_ 按钮就可以了。重启后，你将进入新的 Fedora 33 版本。很简单，不是吗？
+点击 “Restart” 按钮就可以了。重启后，你将进入新的 Fedora 33 版本。很简单，不是吗？
 
 ### 使用终端变基
 
@@ -79,7 +79,7 @@ via: https://fedoramagazine.org/how-to-rebase-to-fedora-33-on-silverblue/
 作者：[Michal Konečný][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
