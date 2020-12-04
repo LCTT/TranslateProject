@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12884-1.html)
 [#]: subject: (Day 1: a confusing Rails error message)
 [#]: via: (https://jvns.ca/blog/2020/11/09/day-1--a-little-rails-/)
 [#]: author: (Julia Evans https://jvns.ca/)
@@ -10,7 +10,9 @@
 Rails 之旅第 1 天：一个令人困惑的 Rails 错误信息
 ======
 
-今天，我开始了一个 Recurse Center 的批次学习！我认识了一些人，并开始了一个小小的有趣的 Rails 项目。我想我今天不会谈太多关于这个项目的实际内容，但这里有一些关于 Rails 一天的快速笔记。
+![](https://img.linux.net.cn/data/attachment/album/202012/04/080957f0p4piqz52bypqb5.jpg)
+
+今天，我开始了一个 Recurse Center 的班次学习！我认识了一些人，并开始了一个小小的有趣的 Rails 项目。我想我今天不会谈太多关于这个项目的实际内容，但这里有一些关于 Rails 一天的快速笔记。
 
 ### 一些关于开始的笔记
 
