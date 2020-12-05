@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12889-1.html)
 [#]: subject: (Download the 2020 Linux Foundation Annual Report)
 [#]: via: (https://www.linux.com/news/download-the-2020-linux-foundation-annual-report/)
 [#]: author: (The Linux Foundation https://www.linuxfoundation.org/blog/2020/12/download-the-2020-linux-foundation-annual-report/)
@@ -40,7 +40,7 @@
 
 Jim Zemlin，Linux 基金会执行总监
 
-- [下载 Linux 基金会 2020 年度报告]][2]
+- [下载 Linux 基金会 2020 年度报告][2]
 
 这篇文章首先发布于 [Linux 基金会][14]。
 
