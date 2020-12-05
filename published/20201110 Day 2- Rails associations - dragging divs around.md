@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12890-1.html)
 [#]: subject: (Day 2: Rails associations & dragging divs around)
 [#]: via: (https://jvns.ca/blog/2020/11/10/day-2--rails-associations---dragging-divs-around/)
 [#]: author: (Julia Evans https://jvns.ca/)
 
 Rails 之旅第 2 天：Rails 关联和拖动 div
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202012/05/212345zz8jajhaj0hh8h2f.jpg)
 
 大家好！今天是我搭建这个玩具项目的第 2 天。下面再来记录一下关于 Rails 的一些有趣的事情吧！
 
