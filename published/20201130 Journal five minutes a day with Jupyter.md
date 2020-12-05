@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12887-1.html)
 [#]: subject: (Journal five minutes a day with Jupyter)
 [#]: via: (https://opensource.com/article/20/11/daily-journal-jupyter)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
@@ -12,7 +12,7 @@
 
 > 用 Jupyter 和 Python 在你的日常写作背后实现一些自动化。
 
-!["窗前有花和书的陶瓷茶杯或咖啡杯"][1] 。
+![](https://img.linux.net.cn/data/attachment/album/202012/05/131314woxpksatp2toe7tz.jpg)
 
 有些人会遵循传统，制定一年的计划。不过，一年的时间很长，所以我以季节性的主题或轨迹来规划。每个季度，我都会坐下来，看看即将到来的三个月的季节，并决定在这段时间里我将努力做什么。
 
