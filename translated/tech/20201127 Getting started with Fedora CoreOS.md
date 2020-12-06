@@ -1,32 +1,30 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Getting started with Fedora CoreOS)
 [#]: via: (https://fedoramagazine.org/getting-started-with-fedora-coreos/)
 [#]: author: (Clément Verna https://fedoramagazine.org/author/cverna/)
 
-Getting started with Fedora CoreOS
+Fedora CoreOS 入门
 ======
 
-![Getting started with Fedora CoreOS][1]
+[Fedora CoreOS入门][1]
 
-Photo by [Paweł Czerwiński][2] on [Unsplash][3]
+现在被称为 DevOps 时代，操作系统的关注度似乎比工具要低一些。然而，这并不意味着操作系统没有创新。（编辑注：基于 Linux 内核的众多发行版所提供的多样化产品就是一个很好的例子）。[Fedora CoreOS][4] 就对这个 DevOps 时代的操作系统应该是什么样有着独特的理念。
 
-This has been called the age of DevOps, and operating systems seem to be getting a little bit less attention than tools are. However, this doesn’t mean that there has been no innovation in operating systems. [Edit: The diversity of offerings from the plethora of distributions based on the Linux kernel is a fine example of this.] [Fedora CoreOS][4] has a specific philosophy of what an operating system should be in this age of DevOps.
+### Fedora CoreOS 的理念
 
-### Fedora CoreOS’ philosophy
+Fedora CoreOS（FCOS）是由 CoreOS Container Linux 和 Fedora Atomic Host 合并而来。它是一个专注于运行容器化应用程序的精简的独体操作系统。安全性是首要重点，FCOS 提供了自动更新，并带有 SELinux 强化。
 
-Fedora CoreOS (FCOS) came from the merging of CoreOS Container Linux and Fedora Atomic Host. It is a minimal and monolithic OS focused on running containerized applications. Security being a first class citizen, FCOS provides automatic updates and comes with SELinux hardening.
+为了使自动更新能够很好地工作，它们需要非常健壮，目标是运行 FCOS 的服务器在更新后不会崩溃。这是通过使用不同的发布流（stable、testing 和 next）来实现的。每个流每 2 周发布一次，更新内容会从一个流推广到另一个流（next -> testing -> stable）。这样落地在 stable 流中的更新就有机会经过长时间的测试。
+ 
+### 入门
 
-For automatic updates to work well they need to be very robust. The goal being that servers running FCOS won’t break after an update. This is achieved by using different release streams (stable, testing and next). Each stream is released every 2 weeks and content is promoted from one stream to the other (next -&gt; testing -&gt; stable). That way updates landing in the stable stream have had the opportunity to be tested over a long period of time.
-
-### Getting Started
-
-For this example let’s use the stable stream and a QEMU base image that we can run as a virtual machine. You can use [coreos-installer][5] to download that image.
-
-From your (Workstation) terminal, run the following commands after updating the link to the image. [Edit: On Silverblue the container based coreos tools are the simplest method to try. Instructions can be found at <https://docs.fedoraproject.org/en-US/fedora-coreos/tutorial-setup/> , in particular “Setup with Podman or Docker”.]
+对于这个例子，让我们使用 stable 流和一个 QEMU 基础镜像，我们可以作为一个虚拟机运行。你可以使用 [coreos-installer][5] 来下载该镜像。
+ 
+在你的（Workstation）终端上，更新镜像的链接后，运行以下命令（编辑注：在 Silverblue 上，基于容器的 coreos 工具是最简单的方法，可以尝试一下。说明可以在 <https://docs.fedoraproject.org/en-US/fedora-coreos/tutorial-setup/> 中找到，特别是 “Setup with Podman or Docker” 一节。）：
 
 ```
 $ sudo dnf install coreos-installer
@@ -36,11 +34,11 @@ $ ls
 fedora-coreos-32.20200907.3.0-qemu.x86_64.qcow2
 ```
 
-#### Create a configuration
+#### 创建一个配置
 
-To customize a FCOS system, you need to provide a configuration file that will be used by [Ignition][6] to provision the system. You may use this file to configure things like creating a user, adding a trusted SSH key, enabling systemd services, and more.
+要定制一个 FCOS 系统，你需要提供一个配置文件，[Ignition][6] 将使用这个文件来配置系统。你可以用这个文件来配置诸如创建用户、添加受信任的 SSH 密钥、启用 systemd 服务等等。
 
-The following configuration creates a _‘core’_ user and adds an SSH key to the authorized_keys file. It is also creating a systemd service that uses [podman][7] to run a simple hello world container.
+以下配置创建了一个 `core` 用户，并在 `authorized_keys` 文件中添加了一个 SSH 密钥。它还创建了一个 systemd 服务，使用 [podman][7] 来运行一个简单的 “hello world” 容器：
 
 ```
 version: "1.0.0"
@@ -67,24 +65,24 @@ systemd:
       name: hello.service
 ```
 
-After adding your SSH key in the configuration save it as _config.yaml_. Next use the Fedora CoreOS Config Transpiler (fcct) tool to convert this YAML configuration into a valid Ignition configuration (JSON format).
+在配置中加入你的 SSH 密钥后，将其保存为 `config.yaml`。接下来使用 Fedora CoreOS Config Transpiler（`fcct`）工具将这个 YAML 配置转换成有效的 Ignition 配置（JSON 格式）。
 
-Install _fcct_ directly from Fedora’s repositories or get the binary from [GitHub][8].
+直接从 Fedora 的资源库中安装 `fcct`，或者从 [GitHub][8] 中获取二进制文件：
 
 ```
 $ sudo dnf install fcct
 $ fcct -output config.ign config.yaml
 ```
 
-#### Install and run Fedora CoreOS
+#### 安装并运行 Fedora CoreOS
 
-To run the image, you can use the libvirt stack. To install it on a Fedora system using the dnf package manager
+要运行镜像，你可以使用 libvirt 堆栈。要在 Fedora 系统上使用 `dnf` 软件包管理器安装它：
 
 ```
 $ sudo dnf install @virtualization
 ```
 
-Now let’s create and run a Fedora CoreOS virtual machine
+现在让我们创建并运行一个 Fedora CoreOS 虚拟机：
 
 ```
 $ chcon --verbose unconfined_u:object_r:svirt_home_t:s0 config.ign
@@ -98,7 +96,7 @@ $ virt-install --name=fcos \
 --disk=size=20,backing_store=${PWD}/fedora-coreos-32.20200907.3.0-qemu.x86_64.qcow2
 ```
 
-Once the installation is successful, some information is displayed and a login prompt is provided.
+安装成功后，会显示一些信息并提供登录提示符：
 
 ```
 Fedora CoreOS 32.20200907.3.0
@@ -111,16 +109,16 @@ Ignition: user provided config was applied
 Ignition: wrote ssh authorized keys file for user: core
 ```
 
-The Ignition configuration file did not provide any password for the _core_ user, therefore it is not possible to login directly via the console. (Though, it is possible to configure a password for users via Ignition configuration.)
+Ignition 配置文件没有为 `core` 用户提供任何密码，因此无法通过控制台直接登录。（不过，也可以通过 Ignition 配置为用户配置密码。）
 
-Use Ctrl + ] key combination to exit the virtual machine’s console. Then check if the hello.service is running.
+使用 `Ctrl + ]` 组合键退出虚拟机的控制台。然后检查 `hello.service` 是否在运行：
 
 ```
 $ curl http://192.168.122.237:8080
 Hello from Fedora CoreOS!
 ```
 
-Using the preconfigured SSH key, you can also access the VM and inspect the services running on it.
+使用预先配置的 SSH 密钥，你还可以访问虚拟机并检查其上运行的服务：
 
 ```
 $ ssh core@192.168.122.237
@@ -130,10 +128,11 @@ Loaded: loaded (/etc/systemd/system/hello.service; enabled; vendor preset: enabl
 Active: active (running) since Wed 2020-10-28 10:10:26 UTC; 42s ago
 ```
 
-#### zincati, rpm-ostree and automatic updates
+#### zincati、rpm-ostree 和自动更新
 
-The zincati service drives rpm-ostreed with automatic updates.
-Check which version of Fedora CoreOS is currently running on the VM, and check if Zincati has found an update.
+zincati 服务使用自动更新驱动 rpm-ostreed。
+
+检查虚拟机上当前运行的 Fedora CoreOS 版本，并检查 zincati 是否找到了更新：
 
 ```
 $ ssh core@192.168.122.237
@@ -155,7 +154,7 @@ Oct 28 13:36:25 cosa-devsh zincati[1013]: [INFO ] target release '32.20201004.3.
 ... zincati reboot ...
 ```
 
-After the restart, let’s remote login once more to check the new version of Fedora CoreOS.
+重启后，我们再远程登录一次，检查新版的 Fedora CoreOS：
 
 ```
 $ ssh core@192.168.122.237
@@ -172,31 +171,31 @@ Commit: b53de8b03134c5e6b683b5ea471888e9e1b193781794f01b9ed5865b57f35d57
 GPGSignature: Valid signature by 97A1AE57C3A2372CCA3A4ABA6C13026D12C944D0
 ```
 
-_rpm-ostree status_ now shows 2 versions of Fedora CoreOS, the one that came in the QEMU image, and the latest one received from the update. By having these 2 versions available, it is possible to rollback to the previous version using the _rpm-ostree rollback_ command.
+`rpm-ostree status` 现在显示了两个版本的 Fedora CoreOS，一个是 QEMU 镜像中的版本，一个是更新后的最新版本。有了这两个版本，就可以使用 `rpm-ostree rollback` 命令回滚到之前的版本。
 
-Finally, you can make sure that the hello service is still running and serving content.
+最后，你可以确保 hello 服务仍在运行并提供内容：
 
 ```
 $ curl http://192.168.122.237:8080
 Hello from Fedora CoreOS!
 ```
 
-More information: [Fedora CoreOS updates][9]
+更多信息参见：[Fedora CoreOS 更新][9]。
 
-#### Deleting the Virtual Machine
+#### 删除虚拟机
 
-To clean up afterwards, the following commands will delete the VM and associated storage.
+要进行事后清理，使用以下命令删除虚拟机和相关存储：
 
 ```
 $ virsh destroy fcos
 $ virsh undefine --remove-all-storage fcos
 ```
 
-### Conclusion
+### 结论
 
-Fedora CoreOS provides a solid and secure operating system tailored to run applications in containers. It excels in a DevOps environment which encourages the hosts to be provisioned using declarative configuration files. Automatic updates and the ability to rollback to a previous version of the OS, bring a peace of mind during the operation of a service.
+Fedora CoreOS 为在容器中运行应用程序提供了一个坚实而安全的操作系统。它在推荐主机使用声明式配置文件进行配置的 DevOps 环境中表现出色。自动更新和回滚到以前版本的操作系统的能力，可以在服务的运行过程中带来安心的感觉。
 
-Learn more about Fedora CoreOS by following the tutorials available in the project’s [documentation][10].
+通过关注项目[文档][10]中的教程，了解更多关于 Fedora CoreOS 的信息。
 
 --------------------------------------------------------------------------------
 
@@ -204,8 +203,8 @@ via: https://fedoramagazine.org/getting-started-with-fedora-coreos/
 
 作者：[Clément Verna][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
