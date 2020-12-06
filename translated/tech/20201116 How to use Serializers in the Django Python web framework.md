@@ -7,19 +7,16 @@
 [#]: via: (https://opensource.com/article/20/11/django-rest-framework-serializers)
 [#]: author: (Renato Oliveira https://opensource.com/users/renato-oliveira)
 
-How to use Serializers in the Django Python web framework
+如何在 Python Web 框架 Django 中使用序列化器
 ======
-Serialization transforms data into a format that can be stored or
-transmitted and then reconstructs it for use. DRF has the best-known
-serializers.
+序列化将数据转换为方便存储或传输的格式，然后将其重构以供使用。DRF 具有最知名的序列化器。
 ![Net catching 1s and 0s or data in the clouds][1]
 
-Serialization is the process of transforming data into a format that can be stored or transmitted and then reconstructing it. It's used all the time when developing applications or storing data in databases, in memory, or converting it into files.
+序列化是将数据转换为可以存储或传输的格式，然后对其进行重构的过程。在开发应用程序或将数据存储在数据库、内存或将其转换为文件时，一直会用到它。
 
-I recently helped two junior developers at [Labcodes][2] understand serializers, and I thought it would be good to share my approach with Opensource.com readers.
+我最近帮助 [Labcodes][2] 的两名初级开发人员理解序列化器，同时我认为与 Opensource.com 的读者分享我的方法会更好。
 
-Suppose you're creating software for an e-commerce site and you have an Order that registers the purchase of a single product, by someone, at a price, on a date:
-
+假设你正在编写一个电子商务网站，你有一个订单，该订单记录了某人在某个日期以某种价格购买了一个产品：
 
 ```
 class Order:
@@ -30,8 +27,7 @@ class Order:
         self.date = date
 ```
 
-Now, imagine you want to store and retrieve order data from a key-value database. Luckily, its interface accepts and return dictionaries, so you need to convert your object into a dictionary:
-
+现在，假设你想从一个键值数据库中存储和检索订单数据。幸运的是，它的接口可以接受和返回字典，因此你需要将对象转换成字典：
 
 ```
 def serialize_order(order):
@@ -43,8 +39,7 @@ def serialize_order(order):
     }
 ```
 
-And if you want to get some data from that database, you can get the dict data and turn that into your Order object:
-
+如果你想从数据库中获取一些数据，你可以获取字典数据并将其转换为订单对象：
 
 ```
 def deserialize_order(order_data):
@@ -56,12 +51,11 @@ def deserialize_order(order_data):
     )
 ```
 
-This is pretty straightforward to do with simple data, but when you need to deal with complex objects made of complex attributes, this approach doesn't scale well. You also need to handle the validation of different types of fields, and that's a lot of work to do manually.
+这对于简单的数据非常直接了当，但是当你需要处理一些由复杂属性构成的复杂对象时，这种方法就无法很好地扩展。你还需要处理不同类型字段的验证，这需要手工完成大量工作。
 
-That's where frameworks' serializers are handy. They allow you to create serializers with little boilerplates that will work for your complex cases.
+此时序列化框架可以很方便的派上用场。它们使你可以创建带有少量模板的序列化器，这将适用于复杂的情况。
 
-[Django][3] comes with a serialization module that allows you to "translate" Models into other formats:
-
+[Django][3] 提供了一个序列化模块，允许你将模型“转换”为其它格式：
 
 ```
 from django.core import serializers
@@ -69,8 +63,7 @@ from django.core import serializers
 serializers.serialize('json', Order.objects.all())
 ```
 
-It covers the most-used cases for web applications, such as JSON, YAML, and XML. But you can also use third-party serializers or create your own. You just need to register it in your settings.py file:
-
+它涵盖了 Web 应用程序最常用的种类，例如 JSON、YAML 和 XML。但是你也可以使用第三方序列化器或创建自己的序列化器。你只需要在 settings.py 文件中注册它：
 
 ```
 # settings.py
@@ -79,8 +72,7 @@ SERIALIZATION_MODULES = {
 }
 ```
 
-To create your own `MyFormatSerializer`, you need to implement the `.serialize()` method and accept a queryset and extra options as params:
-
+要创建自己的 `MyFormatSerializer`，你需要实现 `.serialize()` 方法并接受一个 queryset 和其它选项作为参数：
 
 ```
 class MyFormatSerializer:
@@ -88,8 +80,7 @@ class MyFormatSerializer:
         # serious serialization happening
 ```
 
-Now you can serialize your queryset to your new format:
-
+现在，你可以将查询集序列化为新格式：
 
 ```
 from django.core import serializers
@@ -97,8 +88,7 @@ from django.core import serializers
 serializers.serialize('my_format', Order.objects.all())
 ```
 
-You can use the options parameters to define the behavior of your serializer. For example, if you want to define that you're going to work with nested serialization when dealing with `ForeignKeys` or you just want that data to return its primary keys, you can pass a `flat=True` param as an option and deal with that within your method:
-
+你可以使用 options 参数来定义序列化程序的行为。例如，如果要定义在处理 `ForeignKeys` 时要使用嵌套序列化，或者只希望数据返回其主键，你可以传递一个 `flat=True` 参数作为选项，并在方法中处理：
 
 ```
 class MyFormatSerializer:
@@ -108,14 +98,13 @@ class MyFormatSerializer:
         # recursively serialize relationships
 ```
 
-One way to use Django serialization is with the `loaddata` and `dumpdata` management commands.
+使用 Django 序列化的一种方法是使用 `loaddata` 和 `dumpdata` 管理命令。
 
-### DRF serializers
+### DRF 序列化
 
-In the Django community, the [Django REST framework][4] (DRF) offers the best-known serializers. Although you can use Django's serializers to build the JSON you'll respond to in your API, the one from the REST framework comes with nice features that help you deal with and easily validate complex data.
+在 Django 社区中，[Django REST framework][4](DRF) 提供了最著名的序列化器。尽管你可以使用 Django 的序列化器来构建将在 API 中响应的 JSON，但 REST 框架中的序列化器提供了更出色的功能，可以帮助你处理并轻松验证复杂的数据。
 
-In the Order example, you could create a serializer like this:
-
+在订单的例子中，你可以像这样创建一个序列化器：
 
 ```
 from restframework import serializers
@@ -127,8 +116,7 @@ class OrderSerializer(serializers.Serializer):
     date = serializers.DateField()
 ```
 
-And easily serialize its data:
-
+轻松序列化其数据：
 
 ```
 order = Order('pen', 'renato', 10.50, date.today())
@@ -138,8 +126,7 @@ serializer.data
 # {'product': 'pen', 'customer': 'renato', 'price': '10.50', 'date': '2020-08-16'}
 ```
 
-To be able to return an instance from data, you need to implement two methods—create and update:
-
+为了能够从数据返回实例，你需要实现两个方法：create 和 update:
 
 ```
 from rest_framework import serializers
@@ -151,28 +138,26 @@ class OrderSerializer(serializers.Serializer):
     date = serializers.DateField()
 
     def create(self, validated_data):
-        # perform order creation
+        # 执行订单创建
         return order
 
     def update(self, instance, validated_data):
-       # perform instance update
+       # 执行实例更新
        return instance
 ```
 
-After that, you can create or update instances by calling `is_valid()` to validate the data and `save()` to create or update an instance:
-
+之后，你可以通过调用 `is_valid()` 来验证数据，并通过调用 `save()` 来创建或更新实例：
 
 ```
 serializer = OrderSerializer(**data)
-## to validate data, mandatory before calling save
+## 若要验证数据，在调用 save 之前必须执行
 serializer.is_valid()
 serializer.save()
 ```
 
-### Model serializers
+### Model 序列化
 
-When serializing data, you often need to do it from a database, therefore, from your models. A ModelSerializer, like a ModelForm, provides an API to create serializers from your models. Suppose you have an Order model:
-
+序列化数据时，通常需要从数据库进行数据处理，即你创建的模型。ModelSerializer 与 ModelForm 一样，提供了一个 API，用于从模型创建序列化器。假设你有一个订单模型：
 
 ```
 from django.db import models
@@ -184,8 +169,7 @@ class Order(models.Model):
     date = models.DateField()    
 ```
 
-You can create a serializer for it like this:
-
+你可以像这样为它创建一个序列化器：
 
 ```
 from rest_framework import serializers
@@ -196,12 +180,11 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ```
 
-Django automatically includes all model fields in the serializer and creates the `create` and `update` methods.
+Django 会自动在序列化器中包含所有模型字段，并创建 `create` 和 `udpate` 方法。
 
-### Using serializers in class-based views (CBVs)
+### 在基于类的视图中使用序列化器 (CBVs)
 
-Like Forms with Django's CBVs, serializers integrate well with DRFs. You can set the `serializer_class` attribute so that the serializer will be available to the view:
-
+像 Django CBV 中的表单一样，序列化器可以很好地与 DRF 集成。你可以设置 `serializer_class` 属性，方便序列化器用于视图：
 
 ```
 from rest_framework import generics
@@ -211,8 +194,7 @@ class OrderListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = OrderSerializer
 ```
 
-You can also define the `get_serializer_class()` method:
-
+你也可以定义 `get_serializer_class()` 方法：
 
 ```
 from rest_framework import generics
@@ -226,11 +208,11 @@ class OrderListCreateAPIView(generics.ListCreateAPIView):
         return OrderSerializer
 ```
 
-There are other methods in CBVs that interact with serializers. For example, [get_serializer()][5] returns an already-instantiated serializer, while [get_serializer_context()][6] returns the arguments you'll pass to the serializer when creating its instance. For views that create or update data, there are `create` and `update` that validate the data with the `is_valid` method to be saved, and [perform_create][7] and [perform_update][8] that call the serializer's save method.
+在 CBV 中还有其它与序列化器交互的方法。例如，[get_serializer()][5] 返回一个已经实例化的序列化器，[get_serializer_context()][6] 返回创建实例时传递给序列化器的参数。对于创建或更新数据的视图，有 `create` 和 `update`，它们使用 `is_valid` 方法验证数据，还有 [perform_create][7] 和 [perform_update][8] 调用序列化的 `save` 方法。
 
-### Learn more
+### 了解更多
 
-For other resources, see my friend André Ericson's [Classy Django REST Framework][9] website. It is a [Classy Class-Based Views][10] REST Framework version that gives you an in-depth inspection of the classes that compose DRF. Of course, the official [documentation][11] is an awesome resource.
+要了解更多资源，参考我朋友 André Ericson 的[经典 Django REST Framework][9] 网站。它是一个[基于类的经典视图][10]的 REST Framework 版本，可让你深入查看组成 DRF 的类。当然，官方[文档][11]也是一个很棒的资源。
 
 --------------------------------------------------------------------------------
 
@@ -238,7 +220,7 @@ via: https://opensource.com/article/20/11/django-rest-framework-serializers
 
 作者：[Renato Oliveira][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
