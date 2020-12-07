@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12894-1.html)
 [#]: subject: (7 Git tricks that changed my life)
 [#]: via: (https://opensource.com/article/20/10/advanced-git-tips)
 [#]: author: (Rajeev Bera https://opensource.com/users/acompiler)
@@ -12,9 +12,9 @@
 
 > 这些有用的技巧将改变你使用这个流行的版本控制系统的工作方式。
 
-[打开文件或窗口的电脑屏幕][1]
+![](https://img.linux.net.cn/data/attachment/album/202012/07/092803d67fa7bttuuj98fb.jpg)
 
-Git 是目前最常见的版本控制系统之一，无论是私有系统还是公开托管的网站，都在使用它进行各种开发工作。无论我对 Git 的使用有多熟练，似乎总有一些功能还没有被发现，下面是改变我使用 Git 工作方式的七个技巧。
+Git 是目前最常见的版本控制系统之一，无论是私有系统还是公开托管的网站，都在使用它进行各种开发工作。但无论我对 Git 的使用有多熟练，似乎总有一些功能还没有被发现，下面是改变我使用 Git 工作方式的七个技巧。
 
 ### 1、Git 中的自动更正
 
@@ -53,9 +53,9 @@ Git 现在不会建议使用其他子命令，而是直接运行最上面的建�
 
 ### 2、计算你的提交量
 
-有很多原因让你需要计算提交次数。例如，许多开发者通过计算提交数量来判断何时增加构建版本号，或者只是为了了解项目的进展情况。
+你需要计算提交数量可能有很多原因。例如，许多开发者通过计算提交数量来判断何时该增加构建版本号，或者只是想了解项目的进展情况。
 
-要计算提交次数其实很简单直接，下面是 Git 的命令：
+要计算提交数量其实很简单直接，下面是 Git 的命令：
 
 ```
 $ git rev-list --count branch-name
@@ -86,7 +86,7 @@ $ git gc --prune=now --aggressive
 
 ### 4、备份未被跟踪的文件
 
-大多数时候，删除所有未被跟踪的文件是安全的。但很多时候，你不仅要删除，还要为你的未跟踪文件创建一个备份，以备以后需要。
+大多数时候，删除所有未被跟踪的文件是安全的。不过很多时候，你不仅要删除，还要为你的未跟踪文件创建一个备份，以备以后需要。
 
 通过 Git 和一些 Bash 命令管道，可以很容易地为你的未被跟踪的文件创建一个压缩包：
 
@@ -109,13 +109,13 @@ $ ls -a
 Git 的工作主要依赖于两个部分：
 
   1. 工作树（你当前签出的文件状态）。
-  2. 你的 Git 仓库的路径（特别是 `.git` 文件夹的位置，其中包含版本信息）。
+  2. 你的 Git 仓库的路径（即你的 `.git` 文件夹的位置，其中包含版本信息）。
 
 这个文件夹存储了所有的引用和其他重要的细节，比如配置、仓库数据、HEAD 状态、日志等等。
 
 如果你删除这个文件夹，你的源代码的当前状态不会被删除，但你的远程信息，如你的项目历史记录，会被删除。删除这个文件夹意味着你的项目（至少是本地副本）不再处于版本控制之下。这意味着你不能跟踪你的变化；你不能从远程拉取或推送。
 
-一般来说，没有什么需要在 `.git` 文件夹里做的，也没有什么应该做的。它是由 Git 管理的，被认为基本上是禁区。然而，这个目录里有一些有趣的工件，包括 HEAD 的当前状态。
+一般来说，不需要在 `.git` 文件夹里做什么，也没有什么应该做的。它是由 Git 管理的，基本上被认为是个禁区。然而，这个目录里有一些有趣的工件，包括 HEAD 的当前状态。
 
 ```
 $ cat .git/HEAD
@@ -128,9 +128,9 @@ ref: refs/heads/master
 $ cat .git/description
 ```
 
-这是一个未命名的仓库，编辑这个 `description` 文件来命名这个仓库。
+这是一个未命名的仓库，编辑这个 `description` 文件可以命名这个仓库。
 
-Git 钩子文件夹也在这里，里面有一些钩子示例文件。你可以阅读这些示例来了解通过 Git 钩子可以实现什么，你也可以 [阅读 Seth Kenlon 的 Git 钩子介绍][4]。
+Git 钩子文件夹（`hooks`）也在这里，里面有一些钩子示例文件。你可以阅读这些示例来了解通过 Git 钩子可以实现什么，你也可以 [阅读 Seth Kenlon 的 Git 钩子介绍][4]。
 
 ### 6、查看另一个分支的文件
 
@@ -157,7 +157,7 @@ $ git rev-list --all | xargs git grep -F 'string'
 例如，假设你想在你的版本库中搜索 `font-size: 52 px;` 这个字符串：
 
 ```
-$ git rev-list –all | xargs git grep -F ‘font-size: 52 px;’
+$ git rev-list –all | xargs git grep -F 'font-size: 52 px;'
 F3022…9e12:HtmlTemplate/style.css: font-size: 52 px;
 E9211…8244:RR.Web/Content/style/style.css: font-size: 52 px;
 ```
@@ -175,7 +175,7 @@ via: https://opensource.com/article/20/10/advanced-git-tips
 作者：[Rajeev Bera][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -183,7 +183,7 @@ via: https://opensource.com/article/20/10/advanced-git-tips
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/browser_screen_windows_files.png?itok=kLTeQUbY (Computer screen with files or windows open)
 [2]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_code_help_autocorrect_code
-[3]: https://opensource.com/article/20/8/dont-ignore-gitignore
+[3]: https://linux.cn/article-12524-1.html
 [4]: https://opensource.com/life/16/8/how-construct-your-own-git-server-part-6
 [5]: http://README.md
 [6]: https://acompiler.com/git-tips/
