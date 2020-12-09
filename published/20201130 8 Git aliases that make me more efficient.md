@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12904-1.html)
 [#]: subject: (8 Git aliases that make me more efficient)
 [#]: via: (https://opensource.com/article/20/11/git-aliases)
 [#]: author: (Ricardo Gerardi https://opensource.com/users/rgerardi)
@@ -12,9 +12,9 @@
 
 > 使用别名为你最常用或复杂的 Git 命令创建快捷方式。
 
-![橙色背景的终端命令提示][1]
+![](https://img.linux.net.cn/data/attachment/album/202012/09/202245q50ss5kncqc241sf.jpg)
 
-这篇出色的文章《[改变我生活的 7 个 Git 技巧][2]》启发了我写下另一个对我在命令行上使用 Git 的经验有重大影响的 Git 特性：别名。
+这篇出色的文章《[改变我使用 Git 工作方式的七个技巧][2]》启发了我写下另一个对我在命令行上使用 Git 的经验有重大影响的 Git 特性：别名。
 
 定义 Git 的别名来替代命令有两大好处。
 
@@ -241,14 +241,14 @@ via: https://opensource.com/article/20/11/git-aliases
 作者：[Ricardo Gerardi][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/rgerardi
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/terminal_command_linux_desktop_code.jpg?itok=p5sQ6ODE (Terminal command prompt on orange background)
-[2]: https://opensource.com/article/20/10/advanced-git-tips
+[2]: https://linux.cn/article-12894-1.html
 [3]: mailto:ricardo@example.com
 [4]: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
 [5]: https://opensource.com/sites/default/files/uploads/vimdiff.png (vim-diff results)
