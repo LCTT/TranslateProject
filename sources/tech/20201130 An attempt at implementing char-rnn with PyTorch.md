@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zhangxiangping)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -187,7 +187,7 @@ via: https://jvns.ca/blog/2020/11/30/implement-char-rnn-in-pytorch/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zhangxiangping](https://github.com/zxp93)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
