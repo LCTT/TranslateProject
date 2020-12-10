@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Learn how to Install LXD / LXC Containers in Ubuntu)
-[#]: via: (https://www.linuxtechi.com/install-lxd-lxc-containers-from-scratch/)
-[#]: author: (Shashidhar Soppin https://www.linuxtechi.com/author/shashidhar/)
+[#]: collector: "lujun9972"
+[#]: translator: "runningwater "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Learn how to Install LXD / LXC Containers in Ubuntu"
+[#]: via: "https://www.linuxtechi.com/install-lxd-lxc-containers-from-scratch/"
+[#]: author: "Shashidhar Soppin https://www.linuxtechi.com/author/shashidhar/"
 
 Learn how to Install LXD / LXC Containers in Ubuntu
 ======
@@ -497,7 +497,7 @@ via: https://www.linuxtechi.com/install-lxd-lxc-containers-from-scratch/
 
 作者：[Shashidhar Soppin][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
