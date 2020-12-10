@@ -108,8 +108,7 @@ class Trainer():
 ### 使用`nn.LSTM`沿着时间反向传播，不要自己写代码。
 
 
-
-Originally I wrote my own code to pass in 1 letter at a time to the LSTM and then periodically compute the derivative, kind of like this:
+开始的时候我自己写的代码，每次传一个字母到LSTM层中，之后定期计算导数，就像下面这样：
 
 ```
 for i in range(20):
@@ -122,19 +121,20 @@ loss.backward()
 self.optimizer.step()
 ```
 
-This passes in 20 letters (one at a time), and then takes a training step at the end. This is called [backpropagation through time][4] and Karpathy mentions using this method in his blog post.
+这段代码每次传入一个字母，并且在最后训练了一次。这个步骤就被称为反向传播[backpropagation through time][4]，Karpathy在他的博客中就是用这种方法。
 
-This kind of worked, but my loss would go down for a while and then kind of spike later in training. I still don’t understand why this happened, but when I switched to instead just passing in 20 characters at a time to the LSTM (as the `seq_len` dimension) and letting it do the backpropagation itself, things got a lot better.
+这个方法有些用处，我编写的损失函数开始能够下降一段时间，但之后就会出现峰值。我不知道为什么会出现这种现象，但之后我改为一次传入20个字符之后，再进行反向传播，情况就变好了。
 
 ### step 4: train the model!
+### 第四步：训练模型！
 
-I reran this training code over the same data maybe 300 times, until I got bored and it started outputting text that looked vaguely like English. This took about an hour or so.
+我在同样的数据上重复执行了这个训练代码大概300次，直到模型开始输出一些看起来像英文的文本。差不多花了一个多小时吧。
 
-In this case I didn’t really care too much about overfitting, but if you were doing this for a Real Reason it would be good to run it on a validation set.
+这种情况下我也不关注模型是不是过拟合了，但是如果你在真实场景中训练模型，应该要在验证集上验证你的模型。
 
-### step 5: generate some output!
+### 第五步：生成输出！
 
-The last thing we need to do is to generate some output from the model! I wrote some helper methods to generate text from the model (`make_preds` and `next_pred`). It’s mostly just trying to get the dimensions of things right, but here’s the main important bit:
+最后一件要做的事就是用这个模型生成一些输出。我写了一个helper方法从这个训练好的模型中生成文本（`make_preds`和`next_pred`）。这里主要是把向量的维度对齐，重要的一点是：
 
 ```
 output = rnn(input)
@@ -142,13 +142,11 @@ prediction_vector = F.softmax(output/temperature)
 letter = v.textify(torch.multinomial(prediction_vector, 1).flatten(), sep='').replace('_', ' ')
 ```
 
-Basically what’s going on here is that
-
-  1. the RNN outputs a vector of numbers (`output`), one for each letter/punctuation in our alphabet.
-  2. The `output` vector isn’t **yet** a vector of probabilities, so `F.softmax(output/temperature)` turns it into a bunch of probabilities (aka “numbers that add up to 1”). `temperature` kind of controls how much to weight higher probabilities – in the limit if you set temperature=0.0000001, it’ll always pick the letter with the highest probability.
-  3. `torch.multinomial(prediction_vector)` takes the vector of probabilities and uses those probabilites to pick an index in the vector (like 12)
-  4. `v.textify` turns “12” into a letter
-
+基本是做的事情就是这些：
+  1. RNN层为字母表中的每一个字母或者符号输出一个数值向量（`output`）。
+  2. 这个输出向量**并不是**一个概率的向量，所以需要`F.softmax(output/temperature)`操作，将其转换为概率值（也就是所有数值加起来和为1）。`temperature`某种程度上控制了对更高概率的权重，在限制范围内，如果设置temperature=0.0000001，它将始终选择概率最高的字母。
+  3. `torch.multinomial(prediction_vector）`用于获取概率向量，并使用这些概率在向量中选择一个索引（如12）。
+  4. `v.textify`把“12”转换为字母。
 
 
 If we want 300 characters worth of text, we just repeat this process 300 times.
