@@ -7,28 +7,29 @@
 [#]: via: (https://jvns.ca/blog/2020/11/30/implement-char-rnn-in-pytorch/)
 [#]: author: (Julia Evans https://jvns.ca/)
 
-An attempt at implementing char-rnn with PyTorch
+用PyTorch实现char-rnn
 ======
 
-Hello! I spent a bunch of time in the last couple of weeks implementing a version of [char-rnn][1] with PyTorch. I’d never trained a neural network before so this seemed like a fun way to start.
+你好！在过去的几周里，我花了很多时间用PyTorch实现了一个[char-rnn][1]的版本。我以前从未训练过神经网络，所以这可能是一个有趣的开始。
 
-The idea here (from [The Unreasonable Effectiveness of Recurrent Neural Networks][1]) is that you can train a character-based recurrent neural network on some text and get surprisingly good results.
+这个想法(来自[The Unreasonable Effectiveness of Recurrent Neural Networks][1])可以让你在文本上训练一个基于字符的循环神经网络，并得到一些出乎意料的结果。
 
-I didn’t quite get the results I was hoping for, but I wanted to share some example code &amp; results in case it’s useful to anyone else getting started with PyTorch and RNNs.
+不过，虽然没有得到我想要的结果，但是我还是想分享一些示例代码和结果，希望对其他开始尝试使用PyTorch和RNNs的人有帮助。
 
-Here’s the Jupyter notebook with the code: [char-rnn in PyTorch.ipynb][2]. If you click “Open in Colab” at the top, you can open it in Google’s Colab service where at least right now you can get a free GPU to do training on. The whole thing is maybe 75 lines of code, which I’ll attempt to somewhat explain in this blog post.
+这是Jupyter notebook格式的代码：[char-rnn in PyTorch.ipynb][2]。你可以点击这个网页最上面那个按钮Open in Colab，就可以在Google的Colab服务中打开，并使用免费的GPU进行训练。所有的东西加起来大概有75行代码，我将在这篇博文中尽可能地详细解释。
 
 ### step 1: prepare the data
+### 第一步：准备数据
 
-First up: we download the data! I used [Hans Christian Anderson’s fairy tales][3] from Project Gutenberg.
+首先，我们要下载数据。我使用的是古登堡项目中的这个数据：[Hans Christian Anderson’s fairy tales][3]。
 
 ```
 !wget -O fairy-tales.txt
 ```
 
-Here’s the code to prepare the data. I’m using the `Vocab` class from fastai, which can turn a bunch of letters into a “vocabulary” and then use that vocabulary to turn letters into numbers.
+这个是准备数据的代码。我使用fastai库中的Vocab类进行数据处理，它能将一堆字母转换成“词表”，然后用这个“词表”把字母变成数字。
 
-Then we’re left with a big array of numbers (`training_set`) that we can use to train a model.
+之后我们就得到了一大串数字（`训练集`），我们可以在这上面训练我们的模型。
 
 ```
 from fastai.text import *
@@ -39,14 +40,13 @@ num_letters = len(v.itos)
 ```
 
 ### step 2: define a model
+### 第二步：定义模型
 
-This is a wrapper around PyTorch’s LSTM class. It does 3 main things in addition to just wrapping the LSTM class:
+这个是Pytorch中LSTM类的封装。除了封装LSTM类以外，它还做了三件事：
 
-  1. one hot encode the input vectors, so that they’re the right dimension
-  2. add another linear transformation after the LSTM, because the LSTM outputs a vector with size `hidden_size`, and we need a vector that has size `input_size` so that we can turn it into a character
-  3. Save the LSTM hidden vector (which is actually 2 vectors) as an instance variable and run `.detach()` on it after every round. (I struggle to articulate what `.detach()` does, but my understanding is that it kind of “ends” the calculation of the derivative of the model)
-
-
+  1. 对输入向量进行one-hot编码，使得他们具有正确的维度。
+  2. 在LSTM层后一层添加一个线性变换，因为LSTM输出的是一个长度为`hidden_size`的向量，我们需要的是一个长度为`input_size`的向量这样才能把它变成一个字符。
+  3. 把LSTM隐藏层的输出向量（实际上有2个向量）保存成实例变量，然后在每轮运行结束后执行`.detach()`函数。（我很难解释清`.detach（）`的作用，但我的理解是，它在某种程度上“结束”了模型的求导计算（译者注：detach()函数是将该张量的requires_grad参数设置为False，即反向传播到该张量就结束。））
 
 ```
 class MyLSTM(nn.Module):
@@ -68,23 +68,21 @@ class MyLSTM(nn.Module):
         return self.h2o(l_output)
 ```
 
-This code also does something kind of magical that isn’t obvious at all – if you pass it in a vector of inputs (like [1,2,3,4,5,6]), corresponding to 6 letters, my understanding is that `nn.LSTM` will internally update the hidden vector 6 times using [backpropagation through time][4].
+这个代码还做了一些比较神奇但是不太明显的功能。如果你的输入是一个向量（比如[1,2,3,4,5,6]），对应六个字母，那么我的理解是`nn.LSTM`会在内部使用[backpropagation through time][4]更新隐藏向量6次
 
 ### step 3: write some training code
+### 第三步：编写训练代码
 
-This model won’t just train itself!
+模型不会自己训练自己的！
 
-I started out trying to use a training helper class from the `fastai` library (which is a wrapper around PyTorch). I found that kind of confusing because I didn’t understand what it was doing, so I ended up writing my own training code.
+我最开始的时候尝试用`fastai`库中的一个helper类（也是PyTorch中的封装）。我有点疑惑因为我不知道它在做什么，所以最后我自己编写了模型训练代码。
 
-Here’s some code to show basically what 1 round of training looks like (the `epoch()` method). Basically what this is doing is repeatedly:
-
-  1. Give the RNN a string like `and they ought not to teas` (as a vector of numbers, of course)
-  2. Get the prediction for the next letter
-  3. Compute the loss between what the RNN predicted, and the real next letter (`e`, because tease ends in `e`)
-  4. Calculate the gradient (`loss.backward()`)
-  5. Change the weights in the model in the direction of the gradient (`self.optimizer.step()`)
-
-
+下面这些代码（epoch()方法）就是有关于一轮训练过程的基本信息。基本上就是重复做下面这几件事情：
+  1. 往RNN模型中传入一个字符串，比如`and they ought not to teas`。（要以数字向量的形式传入）
+  2. 得到下一个字母的预测结果。
+  3. 计算RNN模型预测结果和真实的下一个字母之间的损失函数。（`e`，因为tease是以`e`结尾的）
+  4. 计算梯度。（用`loss.backward()`函数）
+  5. 沿着梯度下降的方向修改模型中参数的权重。（用`self.optimizer.step()`函数）
 
 ```
 class Trainer():
@@ -107,6 +105,9 @@ class Trainer():
 ```
 
 ### let `nn.LSTM` do backpropagation through time, don’t do it myself
+### 使用`nn.LSTM`沿着时间反向传播，不要自己写代码。
+
+
 
 Originally I wrote my own code to pass in 1 letter at a time to the LSTM and then periodically compute the derivative, kind of like this:
 
@@ -179,7 +180,8 @@ my results are nowhere near as good as Karpathy’s so far, maybe due to one of 
 
 
 
-But I got some vaguely coherent results! Hooray!
+但我得到了一些大致说得过去的结果！还不错！
+
 
 --------------------------------------------------------------------------------
 
