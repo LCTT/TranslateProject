@@ -7,8 +7,12 @@
 [#]: via: (https://opensource.com/article/20/4/python-map-covid-19)
 [#]: author: (AnuragGupta https://opensource.com/users/999anuraggupta)
 
-How I use Python to map the global spread of COVID-19
+我如何使用Python绘制COVID-19的全球扩散图
 ======
+使用这些开源框架创建一个彩色地图，显示病毒的可能的传播路径。![Globe up in the clouds][1]
+
+
+
 Create a color coded geographic map of the potential spread of the virus
 using these open source scripts.
 ![Globe up in the clouds][1]
