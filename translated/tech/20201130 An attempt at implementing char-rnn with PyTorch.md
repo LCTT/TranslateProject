@@ -18,7 +18,6 @@
 
 这是Jupyter notebook格式的代码：[char-rnn in PyTorch.ipynb][2]。你可以点击这个网页最上面那个按钮Open in Colab，就可以在Google的Colab服务中打开，并使用免费的GPU进行训练。所有的东西加起来大概有75行代码，我将在这篇博文中尽可能地详细解释。
 
-### step 1: prepare the data
 ### 第一步：准备数据
 
 首先，我们要下载数据。我使用的是古登堡项目中的这个数据：[Hans Christian Anderson’s fairy tales][3]。
@@ -39,7 +38,6 @@ training_set = torch.Tensor(v.numericalize([x for x in text])).type(torch.LongTe
 num_letters = len(v.itos)
 ```
 
-### step 2: define a model
 ### 第二步：定义模型
 
 这个是Pytorch中LSTM类的封装。除了封装LSTM类以外，它还做了三件事：
@@ -68,9 +66,8 @@ class MyLSTM(nn.Module):
         return self.h2o(l_output)
 ```
 
-这个代码还做了一些比较神奇但是不太明显的功能。如果你的输入是一个向量（比如[1,2,3,4,5,6]），对应六个字母，那么我的理解是`nn.LSTM`会在内部使用[backpropagation through time][4]更新隐藏向量6次
+这个代码还做了一些比较神奇但是不太明显的功能。如果你的输入是一个向量（比如[1,2,3,4,5,6]），对应六个字母，那么我的理解是`nn.LSTM`会在内部使用沿时间反向传播[backpropagation through time][4]更新隐藏向量6次。
 
-### step 3: write some training code
 ### 第三步：编写训练代码
 
 模型不会自己训练自己的！
@@ -104,9 +101,7 @@ class Trainer():
         self.optimizer.step()
 ```
 
-### let `nn.LSTM` do backpropagation through time, don’t do it myself
 ### 使用`nn.LSTM`沿着时间反向传播，不要自己写代码。
-
 
 开始的时候我自己写的代码，每次传一个字母到LSTM层中，之后定期计算导数，就像下面这样：
 
@@ -121,11 +116,10 @@ loss.backward()
 self.optimizer.step()
 ```
 
-这段代码每次传入一个字母，并且在最后训练了一次。这个步骤就被称为反向传播[backpropagation through time][4]，Karpathy在他的博客中就是用这种方法。
+这段代码每次传入一个字母，并且在最后训练了一次。这个步骤就被称为沿时间反向传播[backpropagation through time][4]，Karpathy在他的博客中就是用这种方法。
 
 这个方法有些用处，我编写的损失函数开始能够下降一段时间，但之后就会出现峰值。我不知道为什么会出现这种现象，但之后我改为一次传入20个字符之后，再进行反向传播，情况就变好了。
 
-### step 4: train the model!
 ### 第四步：训练模型！
 
 我在同样的数据上重复执行了这个训练代码大概300次，直到模型开始输出一些看起来像英文的文本。差不多花了一个多小时吧。
@@ -142,41 +136,38 @@ prediction_vector = F.softmax(output/temperature)
 letter = v.textify(torch.multinomial(prediction_vector, 1).flatten(), sep='').replace('_', ' ')
 ```
 
-基本是做的事情就是这些：
+基本上做的事情就是这些：
   1. RNN层为字母表中的每一个字母或者符号输出一个数值向量（`output`）。
   2. 这个输出向量**并不是**一个概率的向量，所以需要`F.softmax(output/temperature)`操作，将其转换为概率值（也就是所有数值加起来和为1）。`temperature`某种程度上控制了对更高概率的权重，在限制范围内，如果设置temperature=0.0000001，它将始终选择概率最高的字母。
   3. `torch.multinomial(prediction_vector）`用于获取概率向量，并使用这些概率在向量中选择一个索引（如12）。
   4. `v.textify`把“12”转换为字母。
 
-
+如果我们想要处理的文本长度为300，那么只需要重复这个过程300次就可以了。
 If we want 300 characters worth of text, we just repeat this process 300 times.
 
-### the results!
+### 结果！
 
-Here’s some generated output from the model where I set `temperature = 1` in the prediction function. It’s kind of like English, which is pretty impressive given that this model needed to “learn” English from scratch and is totally based on character sequences.
+我把预测函数中的参数设置为`temperature = 1`得到了下面的这些由模型生成的结果。看起来有点像英语，这个结果已经很不错了，因为这个模型要从头开始“学习”英语，并且是在字符序列的级别上进行学习的。
 
-It doesn’t make any _sense_, but what did we expect really.
+虽然这些话没有什么_含义_，但我们也不知道到底想要得到什么输出。
 
 > “An who was you colotal said that have to have been a little crimantable and beamed home the beetle. “I shall be in the head of the green for the sound of the wood. The pastor. “I child hand through the emperor’s sorthes, where the mother was a great deal down the conscious, which are all the gleam of the wood they saw the last great of the emperor’s forments, the house of a large gone there was nothing of the wonded the sound of which she saw in the converse of the beetle. “I shall know happy to him. This stories herself and the sound of the young mons feathery in the green safe.”
 >
 > “That was the pastor. The some and hand on the water sound of the beauty be and home to have been consider and tree and the face. The some to the froghesses and stringing to the sea, and the yellow was too intention, he was not a warm to the pastor. The pastor which are the faten to go and the world from the bell, why really the laborer’s back of most handsome that she was a caperven and the confectioned and thoughts were seated to have great made
 
-Here’s some more generated output at `temperature=0.1`, which weights its character choices closer to “just pick the highest probability character every time”. This makes the output a lot more repetitive:
+下面这些结果是当`temperature=0.1`时生成的，它选择字符的方式更接近于“每次都选择出现概率最高的字符”。这就使得输出结果有很多是重复的。
 
 > ole the sound of the beauty of the beetle. “She was a great emperor of the sea, and the sun was so warm to the confectioned the beetle. “I shall be so many for the beetle. “I shall be so many for the beetle. “I shall be so standen for the world, and the sun was so warm to the sea, and the sun was so warm to the sea, and the sound of the world from the bell, where the beetle was the sea, and the sound of the world from the bell, where the beetle was the sea, and the sound of the wood flowers and the sound of the wood, and the sound of the world from the bell, where the world from the wood, and the sound of the
 
-It’s weirdly obsessed with beetles and confectioners, and the sun, and the sea. Seems fine!
+这段输出对这几个单词beetles、confectioners、sun和sea有着奇怪的执念。
 
-### that’s all!
+### 总结！
 
-my results are nowhere near as good as Karpathy’s so far, maybe due to one of the following:
-
-  1. not enough training data
-  2. I got bored with training after an hour and didn’t have the patience to babysit the Colab notebook for longer
-  3. he used a 2-layer LSTM with more hidden parameters than me, I have 1 layer
-  4. something else entirely
-
-
+至此，我的结果远不及Karpathy的好，可能有一下几个原因：
+  1. 没有足够多的训练数据。
+  2. 训练了一个小时之后我就没有耐心去查看Colab notebook上的信息。
+  3. Karpathy使用了两层LSTM，包含了更多的参数，而我只使用了一层。
+  4. 完全是另一回事。
 
 但我得到了一些大致说得过去的结果！还不错！
 
