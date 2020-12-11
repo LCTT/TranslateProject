@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12877-1.html)
 [#]: subject: (Add sound to your Python game)
 [#]: via: (https://opensource.com/article/20/9/add-sound-python-game)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > 通过添加声音到你的游戏中，听听当你的英雄战斗、跳跃、收集战利品时会发生什么。学习如何在这个 Pygame 系列的第十三篇文章中，创建一个声音平台类精灵。
 
-![彩色声波图][1]
+![](https://img.linux.net.cn/data/attachment/album/202012/02/092244du74f14837zmo7fz.jpg)
 
 在 [Python 3][2] 中使用 [Pygame][3] 模块来创建电脑游戏的系列文章仍在进行中，这是第十三部分。先前的文章是:
 
@@ -27,7 +27,7 @@
   9. [使你的 Python 游戏玩家能够向前和向后跑][12]
   10. [在你的 Python 平台类游戏中放一些奖励][13]
   11. [添加计分到你的 Python 游戏][14]
-  12. [在你的 Python 游戏中加入投掷技巧][15]
+  12. [在你的 Python 游戏中加入投掷机制][15]
 
 Pygame 提供了一种简单的方法来集成声音到你的 Python 电脑游戏中。Pygame 的 [mixer 模块][16] 可以依据命令播放一个或多个声音，并且你也可以将这些声音混合在一起，例如，你能够在听到你的英雄收集奖励或跳过敌人声音的同时播放背景音乐。
 
@@ -144,7 +144,7 @@ via: https://opensource.com/article/20/9/add-sound-python-game
 [12]: https://linux.cn/article-11819-1.html
 [13]: https://linux.cn/article-11828-1.html
 [14]: https://linux.cn/article-11839-1.html
-[15]: https://opensource.com/article/20/9/add-throwing-python-game
+[15]: https://linux.cn/article-12872-1.html
 [16]: https://www.pygame.org/docs/ref/mixer.html
 [17]: https://opensource.com/article/20/1/what-creative-commons
 [18]: https://freesound.org
