@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12912-1.html)
 [#]: subject: (Getting started with Fedora CoreOS)
 [#]: via: (https://fedoramagazine.org/getting-started-with-fedora-coreos/)
 [#]: author: (Clément Verna https://fedoramagazine.org/author/cverna/)
@@ -10,7 +10,7 @@
 Fedora CoreOS 入门
 ======
 
-[Fedora CoreOS入门][1]
+![Fedora CoreOS入门][1]
 
 现在被称为 DevOps 时代，操作系统的关注度似乎比工具要低一些。然而，这并不意味着操作系统没有创新。（编辑注：基于 Linux 内核的众多发行版所提供的多样化产品就是一个很好的例子）。[Fedora CoreOS][4] 就对这个 DevOps 时代的操作系统应该是什么样有着独特的理念。
 
