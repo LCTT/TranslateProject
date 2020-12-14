@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12915-1.html)
 [#]: subject: (How to Pretty Print JSON File in Linux Terminal)
 [#]: via: (https://itsfoss.com/pretty-print-json-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -10,25 +10,27 @@
 如何在 Linux 终端上漂亮地打印 JSON 文件
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202012/13/122331h00a3hc63ttoc630.jpg)
+
 [JSON][1] 文件非常棒，因为它们以人类可读的格式存储数据集合。然而，如果 JSON 文件被最小化过，那么阅读 JSON 文件可能会很痛苦。
 
 以这个为例：
 
 ![Minified JSON is difficult to read][2]
 
-计算机可以很容易地读取它。即使是人也能读懂，但如果 JSON 文件以合适的格式显示，那么阅读就会简单很多。我的意思是 JSON 文件应该是这样读的：
+计算机可以很容易地读取它。即使是人也能读，但如果 JSON 文件以合适的格式显示，那么阅读就会简单很多。我的意思是 JSON 文件应该是这样读的：
 
 ![Pretty Printed JSON is easier to read][3]
 
 你可以使用大多数的文本编辑器和一些插件以合适的格式显示它。然而，如果你在终端中，或者你想在你的 shell 脚本中这么做，事情会有所不同。
 
-如果你有一个已最小化的文件，让我来告诉你如何在 Linux 终端中漂亮地打印 JSON 文件。
+如果你有一个已最小化过的 JSON 文件，让我来告诉你如何在 Linux 终端中漂亮地输出它。
 
 ### 在 Linux 中用 jq 命令漂亮地打印 JSON 文件
 
-[jq][4] 是一个命令行 JSON 处理器。你可以用它来切分、过滤、映射和转换结构化数据。我在这里不打算详细介绍 jq 命令行工具的使用。
+[jq][4] 是一个命令行 JSON 处理器。你可以用它来切分、过滤、映射和转换结构化数据。我在这里不打算详细介绍 `jq` 命令行工具的使用。
 
-要使用 jq，你需要先安装它。你可以使用你的[发行版的包管理器][5]来安装它。如果启用了 [universe 仓库][6]，你可以使用 apt 命令在 Ubuntu 上安装它：
+要使用 `jq`，你需要先安装它。你可以使用你的[发行版的包管理器][5]来安装它。如果启用了 [universe 仓库][6]，你可以使用 `apt` 命令在 Ubuntu 上安装它：
 
 ```
 sudo apt install jq
@@ -42,7 +44,7 @@ jq . sample.json
 
 ![Pretty printed JSON file][7]
 
-你可能也想用 cat，但我认为 cat 在这里没用。
+你可能也想用 `cat`，但我认为 `cat` 在这里没用。
 
 ```
 cat sample.json | jq
@@ -50,7 +52,7 @@ cat sample.json | jq
 
 请记住，上述命令不会影响原始 JSON 文件。不会向它写入任何更改。
 
-你可能已经知道[如何在 Linux 中把命令输出重定向到一个文件][8]。你可能也知道不能重定向到同一个文件，而且 tee 命令也不能保证一直有效。
+你可能已经知道[如何在 Linux 中把命令输出重定向到一个文件][8]。你可能也知道不能重定向到同一个文件，而且 `tee` 命令也不能保证一直有效。
 
 如果你想用漂亮的格式修改原来的 JSON 文件，可以把解析后的输出结果用管道传送到一个新的文件中，然后覆盖原来的 JSON 文件。
 
@@ -62,7 +64,7 @@ jq . sample.json > pretty.json
 
 #### 额外技巧：用 jq 命令对 JSON 文件最小化。
 
-让我们反过来，对一个格式良好的 JSON 文件进行最小化。要最小化 JSON 文件，你可以使用选项 -c。
+让我们反过来，对一个格式良好的 JSON 文件进行最小化。要最小化 JSON 文件，你可以使用选项 `-c`。
 
 ```
 jq -c < pretty.json
@@ -70,7 +72,7 @@ jq -c < pretty.json
 
 ![Minified JSON file display][10]
 
-如果你愿意，你也可以使用 cat 和重定向：
+如果你愿意，你也可以使用 `cat` 和重定向：
 
 ```
 cat pretty.json | jq -c
@@ -95,7 +97,7 @@ via: https://itsfoss.com/pretty-print-json-linux/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
