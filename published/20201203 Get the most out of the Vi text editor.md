@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12947-1.html)
 [#]: subject: (Get the most out of the Vi text editor)
 [#]: via: (https://opensource.com/article/20/12/vi-text-editor)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > Vi 是典型的 Unix 文本编辑器。来了解一下它或它的各种化身：Vim、Neovim、gVim、nvi 或 Elvis，它适用于 Linux、macOS、Windows 或 BSD。
 
-!["坐在窗前的商务女郎坐在笔记本电脑上"][1]
+![](https://img.linux.net.cn/data/attachment/album/202012/23/222122wc8resp5zpo2yrcm.jpg)
 
 不管你用的是 Vim、Neovim、gVim、nvi，甚至是 Elvis，其实都是这个典型的 Unix 编辑器 Vi。可能每一个 Linux 和 BSD 发行版中都包含了 Vi，Vi 是一个轻量级的简约型文本编辑器，由于其简单简洁的键盘快捷键和双模式设计，很多用户都喜欢它。
 
