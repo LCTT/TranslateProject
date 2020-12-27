@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12962-1.html)
 [#]: subject: (Learn Bash by writing an interactive game)
 [#]: via: (https://opensource.com/article/20/12/learn-bash)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
@@ -12,7 +12,7 @@
 
 > 编程一个简单的游戏是练习一门新语言并与其他你掌握的语言进行比较的好方法。
 
-![绿底 bash 标志][1]
+![](https://img.linux.net.cn/data/attachment/album/202012/28/010432yq3vgsqtiol9zzi6.jpg)
 
 学习一门新的编程语言是很有趣的。每当我尝试学习一门新的语言时，我都会专注于定义变量、编写语句和评估表达式。一旦我对这些概念有了大致的了解，我通常可以自己弄清楚其余的概念。大多数编程语言都有一些相似之处，所以一旦你了解了一种编程语言，学习下一种编程语言就是要弄清楚其独特的细节，认识到其中的差异。
 
