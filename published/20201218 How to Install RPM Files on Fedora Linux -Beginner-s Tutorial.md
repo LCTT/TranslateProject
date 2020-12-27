@@ -1,18 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12958-1.html)
 [#]: subject: (How to Install RPM Files on Fedora Linux [Beginner’s Tutorial])
 [#]: via: (https://itsfoss.com/install-rpm-files-fedora/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-如何在 Fedora Linux 上安装 RPM 文件 [初学者教程]
+如何在 Fedora Linux 上安装 RPM 文件
 ======
 
-_**这篇初学者文章介绍如何在 Fedora 和 Red Hat Linux 上安装 RPM 软件包。它也随后向你展示如何移除这些 RPM 软件包。**_
+![](https://img.linux.net.cn/data/attachment/album/202012/26/182851bxi1lstdz13siuif.jpg)
 
-当你开始使用 Red Hat 系的 Fedora Linux 时，你早晚会偶然发现 .rpm 文件。就像在 Windows 中的 .exe 文件，以及在 Ubuntu 和 Debian 中的 .deb 文件一样,一个 rpm 文件能够使你在 [Fedora][1] 上快速安装一个软件。
+> 这篇初学者文章介绍如何在 Fedora 和 Red Hat Linux 上安装 RPM 软件包。它也随后向你展示如何移除这些 RPM 软件包。
+
+当你开始使用 Red Hat 系的 Fedora Linux 时，你早晚会偶然发现 .rpm 文件。就像在 Windows 中的 .exe 文件，以及在 Ubuntu 和 Debian 中的 .deb 文件一样，一个 rpm 文件能够使你在 [Fedora][1] 上快速安装一个软件。
 
 你可以从软件中心中找到并安装大量的软件，特别是 [如果你在 Fedora 中启用附加的存储库的话][2]。但是有时你会在它们的网站上找到可用的 RPM 格式的软件包。
 
@@ -22,15 +24,13 @@ _**这篇初学者文章介绍如何在 Fedora 和 Red Hat Linux 上安装 RPM �
 
 我将向你展示安装 RPM 文件的三个方法：
 
-  * [使用软件中心安装 RPM 文件][3] (GUI 方法)
-  * [使用 DNF 命令安装 RPM 文件][4] (CLI 方法)
-  * [使用 Yum 命令安装 RPM 文件][5] (Red Hat 的 CLI 方法)
-
-
+  * [使用软件中心安装 RPM 文件][3]（GUI 方法）
+  * [使用 DNF 命令安装 RPM 文件][4]（CLI 方法）
+  * [使用 Yum 命令安装 RPM 文件][5]（Red Hat 的 CLI 方法）
 
 #### 方法 1: 使用软件中心
 
-在 Fedora 中使用默认的软件中心是最简单的方法。它真地很简单。转到你下载的 .rpm 文件的文件夹位置。它通常在 Downloads 文件夹。
+在 Fedora 中使用默认的软件中心是最简单的方法。它真地很简单。转到你下载的 .rpm 文件的文件夹位置。它通常在 “Downloads” 文件夹。
 
 只需要 **双击 RPM 文件，它将会在软件中心中打开**。
 
@@ -38,7 +38,7 @@ _**这篇初学者文章介绍如何在 Fedora 和 Red Hat Linux 上安装 RPM �
 
 ![或者双击或者右键并选择软件安装][6]
 
-当它在软件中心打开时，你应该会看到安装选项。只需要点击安装按钮并在提示时输入你的账号密码。
+当它在软件中心打开时，你应该会看到“安装”选项。只需要点击“安装”按钮并在提示时输入你的账号密码。
 
 ![通过 Fedora 软件中心安装 RPM][7]
 
@@ -46,9 +46,9 @@ _**这篇初学者文章介绍如何在 Fedora 和 Red Hat Linux 上安装 RPM �
 
 #### 方法 2: 使用 DNF 命令来安装 RPM 文件
 
-这是命令行方法。Fedora 使用新的 DNF [软件包管理器][8] ，你也可以使用它来安装下载的 RPM 文件。
+这是命令行方法。Fedora 使用新的 `dnf` [软件包管理器][8] ，你也可以使用它来安装下载的 RPM 文件。
 
-打开一个终端并切换到你下载 RPM 文件的目录下。你也可以通过到 RPM 文件的路径。像这样使用 DNF 命令：
+打开一个终端并切换到你下载 RPM 文件的目录下。你也可以通过到 RPM 文件的路径。像这样使用 `dnf` 命令：
 
 ```
 sudo dnf install rpm_file_name
@@ -60,9 +60,9 @@ sudo dnf install rpm_file_name
 
 #### 方法 3: 在 Red Hat 中使用 Yum 命令安装 RPM 文件
 
-不像 Fedora ，Red Hat 仍然使用很好的旧式的 Yum 软件包管理器。在这里你还不能找到 DNF 命令。
+不像 Fedora ，Red Hat 仍然使用很好的旧式的 Yum 软件包管理器。在这里你还不能找到 `dnf` 命令。
 
-这个过程与 DNF 命令相同。转到 RPM 文件所在的目录或提供它的路径。
+这个过程与 `dnf` 命令相同。转到 RPM 文件所在的目录或提供它的路径。
 
 ```
 sudo yum install path_to_RPM_file
@@ -78,21 +78,21 @@ sudo yum install path_to_RPM_file
 
 ![移除 RPM 软件包][11]
 
-或者，你可以使用带有 `remove` 选项的 DNF 或 YUM 命令。
+或者，你可以使用带有 `remove` 选项的 `dnf` 或 `yum` 命令。
 
-使用 DNF ，使用这个命令：
+使用 `dnf` ，使用这个命令：
 
 ```
 sudo dnf remove rpm_package_name
 ```
 
-使用 Yum ，使用这个命令：
+使用 `yum` ，使用这个命令：
 
 ```
 sudo yum remove rpm_package_name
 ```
 
-你可能不记得准确的软件包名称，没有关系。你可以做的是输入软件包的前几个字母，然后敲击 tab 按键。这是假设你已经启用 tab 按键补全，通常是这样的。
+你可能不记得准确的软件包名称，没有关系。你可以做的是输入软件包的前几个字母，然后敲击 `tab` 按键。这是假设你已经启用 `tab` 按键补全，通常是这样的。
 
 这就是你需要做的全部。相当简单，对吧？作为一个初学者，你可能会为这样一个简单的任务而挣扎，我希望像这样的快速教程会让你对 Fedora 更自信一些。
 
@@ -103,7 +103,7 @@ via: https://itsfoss.com/install-rpm-files-fedora/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[robsean](https://github.com/robsean)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
