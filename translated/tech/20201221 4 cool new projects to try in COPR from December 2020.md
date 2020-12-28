@@ -7,24 +7,24 @@
 [#]: via: (https://fedoramagazine.org/4-cool-new-projects-to-try-in-copr-from-december/)
 [#]: author: (Jakub Kadlčík https://fedoramagazine.org/author/frostyx/)
 
-4 cool new projects to try in COPR from December 2020
+COPR 仓库中 4 个很酷的新项目（2020.12）
 ======
 
 ![][1]
 
-COPR is a [collection][2] of personal repositories for software that isn’t carried in Fedora. Some software doesn’t conform to standards that allow easy packaging. Or it may not meet other Fedora standards, despite being free and open-source. COPR can offer these projects outside the Fedora set of packages. Software in COPR isn’t supported by Fedora infrastructure or signed by the project. However, it can be a neat way to try new or experimental software.
+COPR 是个人软件仓库[集合][2]，它不在 Fedora 中。这是因为某些软件不符合轻松打包的标准；或者它可能不符合其他 Fedora 标准，尽管它是自由而开源的。COPR 可以在 Fedora 套件之外提供这些项目。COPR 中的软件不受 Fedora 基础设施的支持，或者是由项目自己背书的。但是，这是一种尝试新的或实验性的软件的一种巧妙的方式。
 
-This article presents a few new and interesting projects in COPR. If you’re new to using COPR, see the [COPR User Documentation][3] for how to get started.
+本文介绍了 COPR 中一些有趣的新项目。如果你第一次使用 COPR，请参阅 [COPR 用户文档][3]。
 
 ## [][4] Blanket
 
-[Blanket][5] is an application for playing background sounds, which may potentially improve your focus and increase your productivity. Alternatively, it may help you relax and fall asleep in a noisy environment. No matter what time it is or where you are, Blanket allows you to wake up while birds are chirping, work surrounded by friendly coffee shop chatter or distant city traffic, and then sleep like a log next to a fireplace while it is raining outside. Other popular choices for background sounds such as pink and white noise are also available.
+[Blanket][5] 是一款播放背景声音的应用，它可能会提高你的注意力，提高你的工作效率。另外，它还可以帮助你在嘈杂的环境中放松和入睡。无论现在是什么时间或你在哪里，Blanket 都可以让你在鸟鸣时醒来，在友好的咖啡店聊天或遥远的城市交通的包围下工作，然后在外面下雨时像木头一样睡在壁炉旁边。还有其他流行的背景音选择，如粉色和白色噪音也可以选择。
 
 ![][6]
 
-### [][7] Installation instructions
+### [][7] 安装说明
 
-The [repo][8] currently provides Blanket for Fedora 32 and 33. To install it, use these commands:
+目前[仓库][8]为 Fedora 32 和 33 提供了 Blanket。要安装它，请使用以下命令：
 
 ```
 sudo dnf copr enable tuxino/blanket
@@ -33,15 +33,16 @@ sudo dnf install blanket
 
 ## [][9] k9s
 
-[k9s][10] is a command-line tool for managing Kubernetes clusters. It allows you to list and interact with running pods, read their logs, dig through used resources, and overall make the Kubernetes life easier. With its extensibility through plugins and customizable UI, _k9s_ is welcoming to power-users.
+[k9s][10] 是一个管理 Kubernetes 集群的命令行工具。它允许你列出正在运行的 pod 并与之交互，读取它们的日志，挖掘已使用的资源，并总体上使操作 Kubernetes 更轻松。凭借其通过插件和可定制的用户界面的可扩展性，_k9s_ 受到有经验用户的欢迎。
+
 
 ![][11]
 
-For [many more preview screenshots][12], please see the [project page][10].
+有关[更多预览截图][12]，请参见[项目页面][10]。
 
-### [][13] Installation instructions
+### [][13] 安装说明
 
-The [repo][14] currently provides _k9s_ for Fedora 32, 33, and Fedora Rawhide as well as EPEL 7, 8, Centos Stream, and others. To install it, use these commands:
+目前[仓库][14]为 Fedora 32、33、Fedora Rawhide 以及 EPEL 7、8、Centos Stream 等提供 _k9s_。要安装它，请使用以下命令：
 
 ```
 sudo dnf copr enable luminoso/k9s
@@ -50,13 +51,14 @@ sudo dnf install k9s
 
 ## [][15] rhbzquery
 
-[rhbzquery][16] is a simple tool for querying the Fedora Bugzilla instance. It provides an interface for specifying the search query but it doesn’t list results in the command-line. Instead, _rhbzquery_ generates a Bugzilla URL and opens it in a web browser.
+[rhbzquery][16] 是一个简单的查询 Fedora Bugzilla 的工具。它提供了一个指定搜索查询的接口，但它并不在命令行中列出结果，而是由 _rhbzquery_ 生成 Bugzilla 的 URL，并在浏览器中打开。
+
 
 ![][17]
 
-### [][18] Installation instructions
+### [][18] 安装说明
 
-The [repo][19] currently provides *rhbzquery *for Fedora 32, 33, and Fedora Rawhide. To install it, use these commands:
+目前[仓库][19]为 Fedora 32、33 和 Fedora Rawhide 提供 *rhbzquery*。要安装它，请使用以下命令：
 
 ```
 sudo dnf copr enable petersen/rhbzquery
@@ -65,13 +67,13 @@ sudo dnf install rhbzquery
 
 ## [][20] gping
 
-[gping][21] is a more visually intriguing alternative to the standard _ping_ command, as it shows results in a graph. It is also possible to ping multiple hosts at the same time to easily compare their response times.
+[gping][21] 是一个比标准的 _ping_ 命令更有视觉吸引力的选择，因为它以图表的形式显示结果。也可以同时 ping 多个主机，以方便比较它们的响应时间。
 
 ![][22]
 
-### [][23] Installation instructions
+### [][23] 安装说明
 
-The [repo][24] currently provides gping for Fedora 32, 33, and Fedora Rawhide as well as for EPEL 7 and 8. To install it, use these commands:
+目前[仓库][24]为 Fedora 32、33、Fedora Rawhide 以及 EPEL 7 和 8 提供了 gping。要安装它，请使用以下命令：
 
 ```
 sudo dnf copr enable atim/gping
@@ -84,7 +86,7 @@ via: https://fedoramagazine.org/4-cool-new-projects-to-try-in-copr-from-december
 
 作者：[Jakub Kadlčík][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
