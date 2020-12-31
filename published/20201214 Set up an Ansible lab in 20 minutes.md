@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12970-1.html)
 [#]: subject: (Set up an Ansible lab in 20 minutes)
 [#]: via: (https://opensource.com/article/20/12/ansible-lab)
 [#]: author: (Mike Calizo https://opensource.com/users/mcalizo)
@@ -12,7 +12,7 @@
 
 > 建立一个支持学习和实验新软件的环境。
 
-![Science lab with beakers][1]
+![](https://img.linux.net.cn/data/attachment/album/202012/31/112636h6ck5qd60d44t0mm.jpg)
 
 能够构建和拆解公有云环境是非常有用的，但我们大多数人都不能轻松访问公有云。退而求其次的最好办法就是在本地机器上建立一个实验室，但即使在本地机器上运行也会带来性能、灵活性和其他挑战。大多数时候，本地机器上额外的工作负载会干扰我们日常的工作，它们当然也会影响你提供一个现成的环境来玩耍和实验新软件。
 
