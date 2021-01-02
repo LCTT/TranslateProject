@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12976-1.html)
 [#]: subject: (Bring an old MacBook back to life with Linux)
 [#]: via: (https://opensource.com/article/20/12/linux-macbook)
 [#]: author: (Eric D. Schabell https://opensource.com/users/eschabell)
@@ -12,7 +12,7 @@
 
 > 花上一小时，用 Fedora 让一台过时的 Mac 重新有用。
 
-![电脑桌面的数字图像][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/02/102156tjj8g7r272j74huj.jpg)
 
 最近，我偶然找到了一台 2011 年底的老款 13 英寸 MacBook Pro，有 125GB SSD 和 8GB 内存。我曾带着这台机器去世界各地旅行，当年，我开了很多场会议、研讨会或演示，分享 JBoss 技术带来的各种 AppDev 优势。
 
