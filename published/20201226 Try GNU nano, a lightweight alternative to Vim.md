@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12982-1.html)
 [#]: subject: (Try GNU nano, a lightweight alternative to Vim)
 [#]: via: (https://opensource.com/article/20/12/gnu-nano)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > 轻巧而直接，nano 提供了一个简单、直观的编辑器，没有额外的麻烦。
 
-![粉色打字机][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/04/124300oklykg26z6wyhjey.jpg)
 
 许多 Linux 发行版都捆绑了 [Vim][2] 作为默认的文本编辑器。这吸引了很多长期使用 Linux 的用户，反正那些不喜欢它的用户也可以在安装后及时更换。不过 Vim 是一个很有趣的编辑器，因为它是少数几个打开时的模式不允许输入文字的编辑器之一。这对任何用户来说都是一个令人费解的选择，对一个新用户来说也是很困惑的。
 
