@@ -7,21 +7,20 @@
 [#]: via: (https://opensource.com/article/20/12/tqdm-python)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-Show progress in your Python apps with tqdm
+使用 tqdm 在 Python 应用中显示进度
 ======
-If your program takes a while to show results, avoid frustrating users
-by showing the progress it's making.
+如果你的程序需要一段时间才能显示结果，可通过显示它的进度来避免让用户感到沮丧。
 ![arrows cycle symbol for failing faster][1]
 
-The Semitic root _q-d-m_ in Aramaic, Hebrew, and Arabic is usually associated with moving forward or making progress. The Arabic word _taqaddum_ (تقدّم) means "progress." Progress is important. As every feel-good movie will tell you, the journey is as important as the destination.
+阿拉米语，希伯来语和阿拉伯语中的闪米特语根 _q-d-m_ 通常与前进或进度有关。阿拉伯语 _taqaddum_ （تقدّم）的意思是“进度”。进度是很重要的。正如每部感觉良好的电影都会告诉你，旅程和目的地同样重要。
 
-Most programs have a clear goal, a desired end state. Sometimes, calculating that end state can take a long time. While computers don't care, not having feelings, people do. Humans are not happy sitting around waiting without any visible sign of progress. Doubt creeps in. Has the program crashed? Is the disk thrashing? Did the operating system allocate all its computing resources to other tasks?
+大多数程序都有一个明确的目标，一个期望的最终状态。有时，计算这个最终状态可能需要很长的时间。虽然计算机没有感情不在乎，但人却在乎。人类并不乐意坐在原地等待，而看不到任何明显的进展迹象。疑问不断蔓延。程序崩溃了吗？磁盘是否抖动？操作系统是否把所有的计算资源都分配给了其他任务？
 
-Like justice, progress must be seen, not merely done. The [tqdm][2] Python library helps make progress explicit.
+就像正义一样，进度必须被看到，而不仅仅是完成。[tqdm][2] Python 库有助于使进度变得明确。
 
-The tqdm module works with the console, but it also has special support for one of my favorite environments: Jupyter. To use tqdm in Jupyter, you need to import the `notebook` submodule and have [ipywidgets][3] installed. The `notebook` submodule is interface-compatible with tqdm.
+tqdm 模块与控制台一起工作，但它也对我最喜欢的环境之一 （Jupyter） 有特殊支持。要在 Jupyter 中使用 tqdm，你需要导入 `notebook` 子模块并安装 [ipywidgets][3]。`notebook` 子模块与 tqdm 接口兼容。
 
-This means you can do some import-time shenanigans to import the correct module while keeping tqdm usage the same. The trick is to check if the `__main__` module has the global variable `get_ipython`. While this is a heuristic, it is a reasonably accurate one:
+这意味着你可以做一些导入时操作来导入正确的模块，同时保持 tqdm 的用法不变。诀窍是检查 `__main__` 模块是否有全局变量 `get_ipython`。虽然这只是一个启发式的方法，但却是一个相当准确的方法。
 
 
 ```
@@ -32,7 +31,7 @@ else:
     import tqdm
 ```
 
-The simplest case is when something needs to run for a certain number of iterations (known in advance), and each of those iterations takes about the same amount of time. For example, there is an algorithm to calculate the square root of any number by starting with 1 as a guess and then calculating an improved guess:
+最简单的情况是，某件事情需要运行一定的迭代次数（事先已知），而每一次迭代的时间都差不多。例如，有一种算法，通过从 1 开始猜测，然后计算一个改进的猜测，来计算任何数字的平方根：
 
 
 ```
@@ -40,7 +39,7 @@ def improve_guess(rt, n):
     return (rt + n/rt) / 2
 ```
 
-A small number of improvements gets you pretty close. For example, you can calculate the square root of two:
+少量改进就能让你很接近。例如，你可以计算 2 的平方根：
 
 
 ```
@@ -54,14 +53,14 @@ for i in tqdm.trange(10):
 
 (Moshe Zadke, [CC BY-SA 4.0][5])
 
-It's correct to 10 decimal places!
+精确到小数点后 10 位！
 
 
 ```
 `round(2 - guess*guess, 10)`[/code] [code]`0.0`
 ```
 
-A slightly more complicated example is when the number of elements is known, and processing each element takes a similar amount of time. As an example, you can calculate the product of some numbers. For that, you'll want some random numbers:
+一个稍微复杂一点的例子是，当元素的数量是已知的，而处理每个元素需要类似的时间。例子是，你可以计算一些数字的乘积。为此，你需要一些随机数：
 
 
 ```
@@ -78,7 +77,7 @@ numbers[:5]
 0.45192978568125486]
 ```
 
-Now that the numbers are in, it's time to multiply them. The easiest way to use tqdm is by wrapping a Python iterable. The values will be the same, but tqdm will also display a progress bar:
+现在有了数字，可以将它们相乘了。使用 tqdm 最简单的方法是包装一个 Python 迭代函数。数值是一样的，但是 tqdm 会显示一个进度条：
 
 
 ```
@@ -94,7 +93,7 @@ result
 
 (Moshe Zadke, [CC BY-SA 4.0][5])
 
-However, not all things are predictable. One of the least predictable things is network speed. When you download a big file, the only way to measure progress is to explicitly check how much has been downloaded:
+然而，并不是所有的事情都可以预测。最不容易预测的事情之一就是网络速度。当你下载一个大文件时，衡量进度的唯一方法就是检查已经下载了多少：
 
 
 ```
@@ -111,9 +110,9 @@ with httpx.stream("GET", url) as response:
 
 (Moshe Zadke, [CC BY-SA 4.0][5])
 
-Sometimes, it makes sense to "nest" progress bars. For example, if you are downloading a directory, you'll want a progress bar tracking the files and a progress bar per file.
+有时，“嵌套”进度条是有意义的。例如，如果你要下载一个目录，你就需要一个进度条来跟踪文件，并为每个文件设置一个进度条。
 
-Here is an example (but without actually downloading a directory):
+下面是一个例子（但没有实际下载一个目录）：
 
 
 ```
@@ -134,7 +133,7 @@ for fname in tqdm.tqdm(files, desc="files"):
 
 (Moshe Zadke, [CC BY-SA 4.0][5])
 
-So, if your program takes a while to show final results, avoid frustrating your users: Show the progress it's making!
+所以，如果你的程序需要一段时间才能显示最终结果，为避免让你的用户感到沮丧。请显示它的进度！
 
 --------------------------------------------------------------------------------
 
@@ -142,7 +141,7 @@ via: https://opensource.com/article/20/12/tqdm-python
 
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
