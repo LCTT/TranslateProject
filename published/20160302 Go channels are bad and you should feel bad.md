@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (gxlct008)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12984-1.html)
 [#]: subject: (Go channels are bad and you should feel bad)
 [#]: via: (https://www.jtolio.com/2016/03/go-channels-are-bad-and-you-should-feel-bad)
 [#]: author: (jtolio.com https://www.jtolio.com/)
 
 Go 通道是糟糕的，你应该也觉得很糟糕
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202101/05/101049y2995vz8l9mdg4bz.jpg)
 
 更新：如果你是从一篇题为 《[糟糕的 Go 语言](https://github.com/ksimka/go-is-not-good)》 的汇编文章看到这篇博文的话，那么我想表明的是，我很惭愧被列在这样的名单上。Go 绝对是我使用过的最不糟糕的的编程语言。在我写作本文时，我是想遏制我所看到的一种趋势，那就是过度使用 Go 的一些较复杂的部分。我仍然认为 <ruby>
 通道<rt>Channel</rt></ruby>可以更好，但是总体而言，Go 很棒。这就像你最喜欢的工具箱中有 [这个工具][1]；它可以有用途（甚至还可能有更多的用途），它仍然可以成为你最喜欢的工具箱！
