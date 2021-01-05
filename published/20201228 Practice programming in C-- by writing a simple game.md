@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12985-1.html)
 [#]: subject: (Practice programming in C++ by writing a simple game)
 [#]: via: (https://opensource.com/article/20/12/learn-c-game)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,13 +12,13 @@
 
 > C++ 语言很复杂，但它可以教会你很多关于数据类型、内存管理和代码链接的知识。
 
-![一堆问号][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/05/110821dwzztxchazhto8ko.jpg)
 
 学习一门编程语言有几种方法。如果你是编码新手，你通常会学习一些基本的计算机编码概念，并尝试应用它们。如果你已经知道如何用另一种语言进行编码，你可以重新学习编码概念在新语言中是如何表达的。
 
 不管是哪种情况，学习这些新原理的便捷方法是创建一个简单的猜谜游戏。这会迫使你了解一门语言如何接收输入和发送输出，如何比较数据，如何控制程序的流程，以及如何利用条件来影响结果。它还确保你知道一门语言是如何组织其代码的；例如，Lua 或 [Bash][2] 可以很容易地作为脚本运行，而 [Java][3] 则需要你创建一个类。
 
-在本文中，我将演示如何用 [C++][4] 实现终端上的猜谜游戏。
+在本文中，我将演示如何用 [C++][4] 在终端上实现猜谜游戏。
 
 ### 安装依赖关系
 
@@ -32,7 +32,7 @@
 $ sudo dnf install qt-creator
 ```
 
-在 Debian、Ubuntu、Chromebook 或类似的发行版上：
+在 Debian、Ubuntu、Chromebook 或类似的系统上：
 
 ```
 $ sudo apt install qtcreator
@@ -52,7 +52,7 @@ C++ 的核心语言是精简的。即使是一个简单的应用程序也需要�
 using namespace std;
 ```
 
-这并不是绝对必要，但如果不将命名空间设置为 `std`，所有来自 `iostream` 库的关键字都需要一个命名空间前缀。例如，我不能写 `cout`，而是要写 `std::cout`。
+这并不是绝对必要，但如果不将命名空间设置为 `std`，所有来自 `iostream` 库的关键字都需要一个命名空间前缀。例如，我不能写作 `cout`，而是要写作 `std::cout`。
 
 C++ 中的语句以分号结束。
 
@@ -79,7 +79,6 @@ int main() {
 
  cout << number << endl; //debug
 ```
-
 
 ### 增加 do-while 和 if 语句
 
@@ -153,7 +152,7 @@ via: https://opensource.com/article/20/12/learn-c-game
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
