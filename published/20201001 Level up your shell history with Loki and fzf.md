@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12988-1.html)
 [#]: subject: (Level up your shell history with Loki and fzf)
 [#]: via: (https://opensource.com/article/20/10/shell-history-loki-fzf)
 [#]: author: (Ed Welch https://opensource.com/users/ewelch)
@@ -12,7 +12,7 @@
 
 > Loki 扩展了 Prometheus 用于度量监测和日志聚合的模型。
 
-!["紫云之上的齿轮"][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/06/155012r4khll9zlqgx79fs.jpg)
 
 [Loki][2] 是一个 Apache 2.0 许可的开源日志聚合框架，由 Grafana 实验室设计，并在不断发展的社区的巨大支持之下建立。它也是我每天为之努力的项目。在这篇文章中，我将不只是谈论 Loki 如何工作，而是提供一个实际操作的介绍，以解决实际问题。
 
