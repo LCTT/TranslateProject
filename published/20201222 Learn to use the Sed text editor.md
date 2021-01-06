@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12992-1.html)
 [#]: subject: (Learn to use the Sed text editor)
 [#]: via: (https://opensource.com/article/20/12/sed)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -12,7 +12,7 @@
 
 > Sed 缺少通常的文本框，而是按照用户的命令直接写入到文件上。
 
-![命令行提示][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/07/002353st8vgivu78yzp77v.jpg)
 
 `sed` 命令是为 AT&T 最初的 Unix 操作系统第 7 版创建的，此后，可能每一个 Unix 和 Linux 操作系统都包含了它。`sed` 应用程序是一个 _流编辑器_，与文本编辑器不同的是，它不会打开一个视觉缓冲区，将文件的数据加载到其中进行处理。相反，它根据在终端输入的命令或脚本中的一系列命令，逐行对文件进行操作。
 
