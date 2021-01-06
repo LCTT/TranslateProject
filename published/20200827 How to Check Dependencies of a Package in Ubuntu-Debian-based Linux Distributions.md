@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (FSSlc)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12987-1.html)
 [#]: subject: (How to Check Dependencies of a Package in Ubuntu/Debian-based Linux Distributions)
 [#]: via: (https://itsfoss.com/check-dependencies-package-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
@@ -10,13 +10,15 @@
 如何在基于 Ubuntu 或 Debian 的 Linux 发行版中查看一个软件包的依赖
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202101/06/112738sv0dmjojmjokpxt0.jpg)
+
 在 Ubuntu 或 Debian 中通过命令行来安装应用是一件很简单的事，你只需要执行 `apt install package_name` 就可以了。
 
 但如果你想在安装一个软件包之前或之后知晓这个软件包的依赖，那该怎么办呢？
 
 在本教程中，我将向你展示多种方法来在 Ubuntu 或其他使用 [APT 包管理器][1] 的 Debian 系 Linux 发行版中查看一个软件包的依赖。
 
-### 在 Ubuntu 中什么是包依赖？
+### 什么是 Ubuntu 中的包依赖？
 
 当你在 Linux 中安装一个软件包，有时这个软件包还需要其他的软件包来使它工作正常。这些额外的软件包就叫作这个包的依赖。假如这些软件包之前没有在系统中被安装，那么这些依赖在安装这个软件包的同时会被自动安装上。
 
@@ -30,18 +32,18 @@
 
 #### 使用 apt show 来查看依赖
 
-你可以使用 [apt show 命令][6] 来展示一个包的详细信息。其中依赖信息就是其中一部分，你可以在以 Depends 打头的那些行中看到它们。 
+你可以使用 [apt show 命令][6] 来展示一个包的详细信息。其中依赖信息就是其中一部分，你可以在以 “Depends” 打头的那些行中看到它们。 
 
 例如，下面展示的是使用 `apt show` 展示 [ubuntu-restricted-extras][7] 这个包的详细信息：
 
 ```
-[email protected]:~$ apt show ubuntu-restricted-extras
+abhishek@itsfoss:~$ apt show ubuntu-restricted-extras 
 Package: ubuntu-restricted-extras
 Version: 67
 Priority: optional
 Section: multiverse/metapackages
 Origin: Ubuntu
-Maintainer: Ubuntu Developers <[email protected]>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 Bugs: https://bugs.launchpad.net/ubuntu/+filebug
 Installed-Size: 14.3 kB
 Depends: ubuntu-restricted-addons
@@ -72,15 +74,17 @@ Description: Commonly used media codecs and fonts for Ubuntu
 
 > **什么是推荐包？**
 >
-> 你注意到了上面结果输出中以 Recommends 开头的那些行了吗？
+> 你注意到了上面结果输出中以 “Recommends” 开头的那些行了吗？
 >
 > 推荐包不是软件包的直接依赖，但它们可以开启软件包的一些额外功能。
 >
-> 正如你上面看到的那样， `ubuntu-restricted-extras` 包有着 `ttf-mscorefonts-installer` 这个推荐包，用来在 Ubuntu 上安装 Microsoft 的字体。
+> 正如你上面看到的那样， `ubuntu-restricted-extras` 包有 `ttf-mscorefonts-installer` 这个推荐包，用来在 Ubuntu 上安装 Microsoft 的字体。
 >
 > 这些推荐包也会默认被一同安装上，假如你想显式地禁止这些推荐包的安装，你可以像下面这样使用 `–-no-install-recommends` 选项。
 >
-> `sudo apt install --no-install-recommends package_name`
+> ```
+> sudo apt install --no-install-recommends package_name
+> ```
 
 #### 使用 apt-cache 来直接获取依赖信息
 
@@ -96,7 +100,7 @@ apt-cache depends package_name
 
 #### 使用 dpkg 来查看一个 DEB 文件的依赖
 
-`apt` 和 `apt-cache` 都作用于一个软件仓库中的软件包，但假如你下载了一个 DEB 文件，那么这两个命令就不起作用了。
+`apt` 和 `apt-cache` 都作用于软件仓库中的软件包，但假如你下载了一个 DEB 文件，那么这两个命令就不起作用了。
 
 在这种情形下，你可以使用 `dpkg` 命令的 `-I` 或 `--info` 选项。 
 
@@ -104,7 +108,7 @@ apt-cache depends package_name
 dpkg -I path_to_deb_file
 ```
 
-依赖信息就可以在以 Depends 开头的那些行中找到。
+依赖信息就可以在以 “Depends” 开头的那些行中找到。
 
 ![][9]
 
@@ -112,7 +116,7 @@ dpkg -I path_to_deb_file
 
 假如你想查看更多关于依赖的信息，那么你可以使用 `apt-rdepends` 工具。这个工具可以创建完整的依赖树。这样你就可以得到一个软件包的依赖以及这些依赖的依赖。
 
-它不是一个常规的 apt 命令，所以你需要从 universe 软件仓库中安装上它：
+它不是一个常规的 `apt` 命令，所以你需要从 universe 软件仓库中安装上它：
 
 ```
 sudo apt install apt-rdepends
@@ -151,9 +155,9 @@ apt-rdepends -r package_name
 输出可能会非常多，因为它将打印出反向依赖树。
 
 ```
-[email protected]:~$ apt-rdepends -r ffmpeg
+abhishek@itsfoss:~$ apt-rdepends -r ffmpeg
 Reading package lists... Done
-Building dependency tree
+Building dependency tree       
 Reading state information... Done
 ffmpeg
   Reverse Depends: ardour-video-timeline (>= 1:5.12.0-3ubuntu4)
@@ -172,7 +176,7 @@ via: https://itsfoss.com/check-dependencies-package-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
