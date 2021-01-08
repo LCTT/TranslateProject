@@ -13,3 +13,8 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - run: echo "generate"
+      - run: sh ./scripts/status.sh;
+      - name: deploy status
+        uses: crazy-max/ghaction-github-pages@v2.2.0
+        with:
+          build_dir: build
