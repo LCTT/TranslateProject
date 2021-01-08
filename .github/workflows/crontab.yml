@@ -1,0 +1,13 @@
+name: crontab
+on:
+  schedule:
+    - cron:  '*/15 * * * *'
+jobs:
+  preinstall:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "start"
+  generate:
+    needs: preinstall
+    steps: 
+      - run: echo "generate"
