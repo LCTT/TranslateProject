@@ -2,6 +2,7 @@ name: crontab
 on:
   schedule:
     - cron:  '* * * * *'
+  workflow_dispatch:
 jobs:
   preinstall:
     runs-on: ubuntu-latest
