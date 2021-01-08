@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12994-1.html)
 [#]: subject: (Getting started with Git: Terminology 101)
 [#]: via: (https://opensource.com/article/19/2/git-terminology)
 [#]: author: (Matthew Broberg https://opensource.com/users/mbbroberg)
@@ -12,7 +12,7 @@ Git 入门：术语基础
 
 > 想学习 Git？看看这个最重要的术语和命令的快速总结。
 
-![被物体、自行车、灯泡、图形包围的数字手][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/08/171156gu9l8dvulxmxom6d.jpg)
 
 如今，对于任何希望跟踪他们的变化的人来说，版本控制是一个重要的工具。它对程序员、系统管理员和<ruby>网站可靠性工程师<rt>site reliability engineers</rt></ruby>（SRE）都特别有用。确保可以从错误中恢复到已知的良好状态是一个巨大的胜利，比以前给复制的文件添加 `.old` 后缀的策略更友好。
 
