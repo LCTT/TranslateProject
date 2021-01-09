@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-12996-1.html)
 [#]: subject: (8 open source software cheat sheets you'll need in 2021)
 [#]: via: (https://opensource.com/article/21/1/cheat-sheets)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
@@ -12,7 +12,7 @@
 
 > 当那个讨厌的命令就在你的指间，但是就是想不起来，一个方便的速查表就可以拯救你。这份速查表清单涵盖了从编程语言到协作工具的各种内容。
 
-![速查表封面图片][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/09/131938ktycoc99i2l6dlly.jpg)
 
 有时候，你需要一个简短的提示。你知道自己想做什么，但就是想不起具体怎么做。这时候速查表就派上用场了。在这篇文章中，我给大家提供了 MariaDB 和 MySQL 的速查表。这个速查表对于偶尔使用数据库的人来说是非常有用的。接下来，我列出了两个树莓派速查表。第一张可以让你入门这台单板计算机。一旦你有了一定的基础知识，就可以把它变成一个家庭实验室，可以开始使用 Kubernetes 进行容器管理。一定要同时看看下一张速查表，因为它涵盖了 `kubectl` 工具。接下来，有一个很棒的 Emacs 的速查表，以及还有一个 C 编程语言的速查表。最后，这个列表以两个非常实用的速查表结束：协作工具和开源替代品。
 
