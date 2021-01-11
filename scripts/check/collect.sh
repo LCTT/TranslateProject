@@ -11,11 +11,11 @@ set -e
 
 echo "[收集] 计算 PR 分支与目标分支的分叉点……"
 
-TARGET_BRANCH="${GITHUB_HEAD_REF:-master}"
+TARGET_BRANCH="${TRAVIS_BRANCH:-master}"
 echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
 
 MERGE_BASE='HEAD^'
-[ "$GITHUB_EVENT_NAME" != 'pull_request' ] \
+[ "$TRAVIS_PULL_REQUEST" != 'false' ] \
     && MERGE_BASE="$(git merge-base "$TARGET_BRANCH" HEAD)"
 echo "[收集] 找到分叉节点：${MERGE_BASE}"
 
