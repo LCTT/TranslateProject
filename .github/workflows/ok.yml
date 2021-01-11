@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TRAVIS_REPO_SLUG: ${{ github.repository }} 
-      TRAVIS_BRANCH: ${{ github.head_ref }} 
+      TRAVIS_BRANCH: ${{ github.ref }} 
       TRAVIS_PULL_REQUEST: ${{ github.event.number }} 
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
@@ -30,13 +30,14 @@ jobs:
           echo "TRAVIS_REPO_SLUG: ${TRAVIS_REPO_SLUG}"
           echo "TRAVIS_SECURE_ENV_VARS: ${TRAVIS_SECURE_ENV_VARS}"
       - uses: actions/checkout@v2
+      - run: git fetch origin ${{ github.ref }}
       - name: Install JQ
         run: sudo apt install jq -y
       - name: clone repo
         run: git clone --depth=1 -b gh-pages https://github.com/LCTT/TranslateProject/ build && rm -rf build/.git
       - name: run check
         if: ${{ github.event_name == 'pull_request' }}
-        run: sh ./scripts/check.sh;
+        run:  sh ./scripts/check.sh;
       - name: run badge
         if: ${{ github.event_name != 'pull_request' }}
         run: sh ./scripts/badge.sh;
