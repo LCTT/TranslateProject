@@ -1,0 +1,30 @@
+name: From-Travis-CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install JQ
+        run: apt install jq -y
+      - name: clone repo
+        run: git clone --depth=1 -b gh-pages https://github.com/LCTT/TranslateProject/ build && rm -rf build/.git
+      - name: run check
+        if: ${{ github.event_name == 'pull_request' }}
+        run: sh ./scripts/check.sh;
+      - name: run badge
+        if: ${{ github.event_name != 'pull_request' }}
+        run: sh ./scripts/badge.sh;
+      - name: run status
+        if: ${{ github.event_name == 'schedule' }}
+        run: sh ./scripts/status.sh;
