@@ -29,13 +29,14 @@ jobs:
           echo "TRAVIS_REPO_SLUG: ${TRAVIS_REPO_SLUG}"
           echo "TRAVIS_SECURE_ENV_VARS: ${TRAVIS_SECURE_ENV_VARS}"
       - uses: actions/checkout@v2
+      - run: git fetch ${{ github.ref }}
       - name: Install JQ
         run: sudo apt install jq -y
       - name: clone repo
         run: git clone --depth=1 -b gh-pages https://github.com/LCTT/TranslateProject/ build && rm -rf build/.git
       - name: run check
         if: ${{ github.event_name == 'pull_request' }}
-        run: sh ./scripts/check.sh;
+        run:  sh ./scripts/check.sh;
       - name: run badge
         if: ${{ github.event_name != 'pull_request' }}
         run: sh ./scripts/badge.sh;
