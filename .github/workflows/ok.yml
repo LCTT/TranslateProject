@@ -29,7 +29,7 @@ jobs:
           echo "TRAVIS_REPO_SLUG: ${TRAVIS_REPO_SLUG}"
           echo "TRAVIS_SECURE_ENV_VARS: ${TRAVIS_SECURE_ENV_VARS}"
       - uses: actions/checkout@v2
-      - run: git fetch ${{ github.ref }}
+      - run: git fetch origin ${{ github.ref }}
       - name: Install JQ
         run: sudo apt install jq -y
       - name: clone repo
