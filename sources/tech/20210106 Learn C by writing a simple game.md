@@ -7,23 +7,22 @@
 [#]: via: (https://opensource.com/article/21/1/learn-c)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 
-Learn C by writing a simple game
+通过编写一个简单的游戏学习C语言
 ======
-This "guess the number" game is a great introductory program when
-learning a new programming language. Here's how to write it in C.
+当你学习一门新的编程语言时，这个“猜数字”游戏是一个很好的入门程序。下面是如何用C语言来编写它。
 ![Business woman on laptop sitting in front of window][1]
 
-I [taught myself about programming][2] back in elementary school. My first programs were on the Apple II, but eventually, I learned C by reading books and practicing. And the best way to practice programming is to write sample programs that help exercise your new knowledge.
+我在小学时就开始 [自学编程][2] 。 我的第一个程序是在Apple II上编写的，但最终，我通过阅读和编程练习来学习C语言。练习编程的最佳方法是编写示例程序，他能帮助你练习新知识。
 
-One program I like to write in a new language is a simple "guess the number" game. The computer picks a random number from 1 to 100, and you have to figure it out by making guesses. In another article, I showed how to write this ["Guess the number" game in Bash][3], and my fellow Opensource.com authors have written articles about how to write it in [Java][4], [Julia][5], and other computer languages.
+在我学习一种新的编程语言时，我喜欢编写一个简单的“猜数字”游戏来练习。电脑从1到100中随机挑选一个数字，你必须通过猜测来算出来。在另一篇文章中，我展示了如何用 Bash 语言编写这个[“猜数字”游戏][3]，我的 Opensource.com 的同伴同事也写了一些文章，介绍如何用[Java][4]、[Julia][5]和其他计算机语言编写它。
 
-What's great about a "Guess the number" game is that it exercises several programming concepts: how to use variables, how to compare values, how to print output, and how to read input.
+“猜数字”游戏的伟大之处在于它践行了几个编程概念:如何使用变量、如何比较值、如何打印输出以及如何读取输入。
 
-Over the summer, I recorded [a video series][6] to teach people how to write programs in the [C programming language][7]. Since then, I've heard from many people who are learning C programming by following it. So, I thought I'd follow up by writing a "Guess the number" game in C.
+整个夏天，我录制了[一个系列视频][6]，教人们如何用[C语言][7]编写程序。从那以后，我收到了许多通过学习C语言的订阅观众的来信。所以，我想接着用 C 语言写一个“猜数字”的游戏。
 
-### Pick a random number
+### 去取一个随机数
 
-Start the "Guess the number" game by writing a function to pick a random number. When writing functions, good programmers try to make them flexible, so they can reuse them to solve slightly different problems. So, instead of hard-coding the function to pick a random number between 1 and 100, write the function to pick a random number between 1 and some integer value `maxval`:
+从写一个函数来选择一个随机数字来开始“猜数字”游戏。在编写函数时，优秀的程序员会尽量使它们具有灵活性，这样他们就可以重用它们来解决略有不同的问题。因此，与其硬编码函数来选择1到100之间的一个随机数，不如编写函数来选择1到某个整数' maxval '之间的一个随机数:开始“猜数字”游戏，写一个函数来选择一个随机数字。在编写函数时，优秀的程序员会尽量使它们具有灵活性，这样他们就可以重用它们来解决略有不同的问题。因此，与其硬编码函数来选择1到100之间的一个随机数，不如编写函数来选择1到某个整数' maxval '之间的一个随机数:
 
 
 ```
@@ -33,13 +32,13 @@ Start the "Guess the number" game by writing a function to pick a random number.
 int
 randnum(int maxval)
 {
-  /* pick a random number from 1 to maxval */
+  /* 从 1 到 maxval 之前取一个随机数 */
 
   int randval;
 
   getrandom(&amp;randval, sizeof(int), GRND_NONBLOCK);
 
-  /* could be negative, so ensure it's positive */
+  /* 可能是负值，所以要确保改数值为正值 */
 
   if (randval &lt; 0) {
     return (-1 * randval % maxval + 1);
@@ -50,11 +49,11 @@ randnum(int maxval)
 }
 ```
 
-The function uses the Linux system call `getrandom` to generate a series of random bits. You can learn more about this system call on the man page, but note that `getrandom` will fill the variable with random zeroes and ones. That means the final value could be positive or negative, so you need to do a test afterward to ensure the result of your `randnum` function is a positive value.
+该函数使用 Linux 系统调用 `getrandom` 来生成一系列随机数。你可以在 man 中了解关于这个系统调用的更多信息，但请注意，`getrandom` 将用随机的0和1填充变量。这意味着最终值可以是正的，也可以是负的，因此您需要在之后进行测试，以确保 `randnum` 函数的结果是正值。
 
-### Write the program
+### 编写程序
 
-You can use this function to write your "Guess the number" program:
+你可以用这个函数来写你的“猜数字”程序:
 
 
 ```
@@ -94,11 +93,11 @@ main(void)
 }
 ```
 
-The program starts by picking a random number between 1 and 100 using the `randnum` function. After printing a prompt to the user, the program enters a `do-while` loop so the user can guess the number.
+程序首先使用 `randnum` 函数从1到100之间选择一个随机数。在向用户输出一个提示后，程序进入一个 `do-while` 循环，以便用户可以猜测数字。
 
-In each iteration of the loop, the program tests the user's guess. If the user's guess is less than the random number, the program prints "Too low," and if the guess is greater than the random number, the program prints "Too high." The loop continues until the user's guess is the same as the random number.
+在循环的每次迭代中，程序测试用户的猜测的数值。如果用户的猜测小于随机数，程序将输出“太低”，如果猜测大于随机数，程序将输出“太高”。循环继续，直到用户的猜测与随机数相同。
 
-When the loop exits, the program prints "That's right!" and then immediately ends.
+当循环退出时，程序输出“That's right!”，然后立即结束。
 
 
 ```
@@ -122,11 +121,11 @@ Too low
 That's right!
 ```
 
-### Try it out
+### 尝试动手
 
-This "guess the number" game is a great introductory program when learning a new programming language because it exercises several common programming concepts in a pretty straightforward way. By implementing this simple game in different programming languages, you can demonstrate some core concepts and compare details in each language.
+在学习一门新的编程语言时，这个“猜数字”游戏是一个很好的入门程序，因为它以一种非常直接的方式练习了几个常见的编程概念。通过用不同的编程语言实现这个简单的游戏，您可以演示一些核心概念，并比较每种语言的细节。
 
-Do you have a favorite programming language? How would you write the "guess the number" game in it? Follow this article series to see examples of other programming languages that might interest you.
+你有最喜欢的编程语言吗?你怎么用该语言编写“猜数字”游戏?跟随本系列文章，查看您可能感兴趣的其他编程语言的示例。
 
 --------------------------------------------------------------------------------
 
