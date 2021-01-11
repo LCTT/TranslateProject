@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install JQ
-        run: apt install jq -y
+        run: sudo apt install jq -y
       - name: clone repo
         run: git clone --depth=1 -b gh-pages https://github.com/LCTT/TranslateProject/ build && rm -rf build/.git
       - name: run check
