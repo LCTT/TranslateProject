@@ -15,7 +15,6 @@ jobs:
         run: sudo apt-get install jq -y 
       - name: generate badge
         run: sh ./scripts/badge.sh;
-      - name: publishd
       - uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           keep_history: true
