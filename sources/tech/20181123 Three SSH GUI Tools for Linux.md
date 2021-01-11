@@ -8,6 +8,8 @@
 [#]: url: ( )
 
 Three SSH GUI Tools for Linux
+三种 Linux 系统的 SSH 图形用户工具
+
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ssh.jpg?itok=3UcXhJt7)
