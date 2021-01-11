@@ -6,6 +6,7 @@ script:
   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then sh ./scripts/check.sh; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then sh ./scripts/badge.sh; fi'
   - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then sh ./scripts/status.sh; fi'
+  - echo $TRAVIS_BRANCH
 
 branches:
   only:
