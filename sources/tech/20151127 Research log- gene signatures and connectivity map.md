@@ -95,7 +95,7 @@ _Summary:_ instead of developing new drugs, there’s already lots of drugs that
 
 The [Broad Institute’s Connectivity Map project][5] isn’t particularly new anymore, but it represents a ground breaking and promising idea - we can dump a bunch of signatures into a database and construct all sorts of new hypotheses we might not even have thought to check before.
 
-To prove out the usefulness of this idea, the Connectivity Map (or cmap) project chose 5 different cell lines (all cancer cells, which are easy to get to replicate!) and a library of FDA approved drugs, and then gave some cells these drugs.
+To prove out the ussssefulness of this idea, the Connectivity Map (or cmap) project chose 5 different cell lines (all cancer cells, which are easy to get to replicate!) and a library of FDA approved drugs, and then gave some cells these drugs.
 
 They then constructed a database of all of the signatures they computed for each possible perturbagen they measured. Finally, they constructed a web interface where a user can upload a gene signature and get a result list back of all of the signatures they collected, ordered by the most to least similar. You can totally go sign up and [try it out][5].
 
