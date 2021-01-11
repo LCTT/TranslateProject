@@ -15,7 +15,7 @@ TARGET_BRANCH="${GITHUB_HEAD_REF:-master}"
 echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
 
 MERGE_BASE='HEAD^'
-[ "$TRAVIS_PULL_REQUEST" != 'false' ] \
+[ "$GITHUB_EVENT_NAME" != 'pull_request' ] \
     && MERGE_BASE="$(git merge-base "$TARGET_BRANCH" HEAD)"
 echo "[收集] 找到分叉节点：${MERGE_BASE}"
 
