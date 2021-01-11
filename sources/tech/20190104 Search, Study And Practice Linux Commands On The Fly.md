@@ -7,20 +7,20 @@
 [#]: via: (https://www.ostechnix.com/search-study-and-practice-linux-commands-on-the-fly/)
 [#]: author: (SK https://www.ostechnix.com/author/sk/)
 
-Search, Study And Practice Linux Commands On The Fly!
+光速！搜索，学习和实践Linux命令!!
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/tldr-720x340.png)
 
-The title may look like sketchy and click bait. Allow me to explain what I am about to explain in this tutorial. Let us say you want to download an archive file, extract it and move the file from one location to another from command line. As per the above scenario, we may need at least three Linux commands, one for downloading the file, one for extracting the downloaded file and one for moving the file. If you’re intermediate or advanced Linux user, you could do this easily with an one-liner command or a script in few seconds/minutes. But, if you are a noob who don’t know much about Linux commands, you might need little help.
+这一标题可能看起来很粗略且吸睛。请允许我解释一下我在本教程中将要阐释的内容。假设你想下载一个压缩文件，将其解压缩，并从命令行中将文件从一个位置移动到另一个位置。根据上面的场景，我们可能需要至少三个Linux命令，一个用于下载文件，一个用于提取下载的文件，一个用于移动文件。如果你是中级或高级Linux用户，你可以通过一行命令或脚本在几秒钟/分钟内轻松完成这一任务。但是，如果你是一个不懂得太多 Linux 命令的菜鸟你可能就需要一些帮助了。
 
-Of course, a quick google search may yield many results. Or, you could use [**man pages**][1]. But some man pages are really long, comprehensive and lack in useful example. You might need to scroll down for quite a long time when you’re looking for a particular information on the specific flags/options. Thankfully, there are some [**good alternatives to man pages**][2], which are focused on mostly practical commands. One such good alternative is **TLDR pages**. Using TLDR pages, we can quickly and easily learn a Linux command with practical examples. To access the TLDR pages, we require a TLDR client. There are many clients available. Today, we are going to learn about one such client named **“Tldr++”**.
+当然，谷歌的快速搜索可能会找到很多结果。或者，你可以使用[**man 命令手册**][1]。但是有些手册页实在很长，很全面，但缺少有用的示例。当你在特定的标志/选项上寻找特定的信息时，你可能需要向下检索相当长的时间。值得庆幸的是，有一些[**man 手册更好的替代品**][2]，它们主要关注于实用的命令。一个很好的选择是**TLDR pages**。使用TLDR手册，我们可以通过实际示例快速轻松地学习一个Linux命令。要使用 TLDR 手册，我们需要 TLDR 客户端。有很多客户。今天我们就来了解一个这样的客户端，名为 **“Tldr++”**。
 
-Tldr++ is a fast and interactive tldr client written with **Go** programming language. Unlike the other Tldr clients, it is fully interactive. That means, you can pick a command, read all examples , and immediately run any command without having to retype or copy/paste each command in the Terminal. Still don’t get it? No problem. Read on to learn and practice Linux commands on the fly.
+Tldr++ 是一个快速和交互式的 Tldr 客户端，用**Go**编程语言编写。与其他 Tldr 客户端不同，它是完全交互式的。这意味着，你可以选择一个命令，读取所有示例，并立即运行任何命令，而不必在终端中重新键入或复制/粘贴每个命令。还是不明白?没有问题。请继续阅读，以便动态学习和实践Linux命令。
 
-### Install Tldr++
+### 安装 Tldr++
 
-Installing Tldr++ is very simple. Download tldr++ latest version from the [**releases page**][3]. Extract it and move the tldr++ binary to your $PATH.
+安装Tldr++非常简单。从[**版本页面**][3]下载tldr++最新版本。解压它并将tldr++二进制文件移动到你的$PATH中。
 
 ```
 $ wget https://github.com/isacikgoz/tldr/releases/download/v0.5.0/tldr_0.5.0_linux_amd64.tar.gz
@@ -32,13 +32,13 @@ $ sudo mv tldr /usr/local/bin
 $ sudo chmod +x /usr/local/bin/tldr
 ```
 
-Now, run ‘tldr’ binary to populate the tldr pages in your local system.
+现在，运行' tldr '二进制代码将 tldr 手册部署到本地系统中。
 
 ```
 $ tldr
 ```
 
-Sample output:
+示例输出：
 
 ```
 Enumerating objects: 6, done.
@@ -50,51 +50,51 @@ Successfully cloned into: /home/sk/.local/share/tldr
 
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/tldr-2.png)
 
-Tldr++ is available in AUR. If you’re on Arch Linux, you can install it using any AUR helper, for example [**YaY**][4]. Make sure you have removed any existing tldr client from your system and run the following command to install tldr++.
+Tldr++ 可以在 AUR 中使用。如果你使用 Arch Linux 上，你可以使用任何 AUR 助手来安装它，例如[**YaY**][4]。确保你已经从系统中删除了任何现有的 tldr 客户端，并运行以下命令安装 tldr++。
 
 ```
 $ yay -S tldr++
 ```
 
-Alternatively, you can build from source as described below. Since Tldr++ is written using Go language, make sure you have installed it on your Linux box. If it isn’t installed yet, refer the following guide.
+或者，你也可以像下面描述的那样从源代码进行编译。因为 Tldr++ 是用 Go 语言编写的，所以请确保你 Linux 系统中已经安装了 Go 语言。如果还没有安装，请参考下面的指南。
 
-+ [How To Install Go Language In Linux](https://www.ostechnix.com/install-go-language-linux/)
++ 如何在 Linux 系统中安装 Go 语言](https://www.ostechnix.com/install-go-language-linux/)
 
-After installing Go, run the following command to install Tldr++.
+在安装好 Go 语言之后, 运行以下的命令来安装 Tldr++.
 
 ```
 $ go get -u github.com/isacikgoz/tldr
 ```
 
-This command will download the contents of tldr repository in a folder named **‘go’** in the current working directory.
+该命令在当前工作目录中名下载tldr代码库中的内容并存储到 **‘go’** 文件夹中。 
 
-Now run the ‘tldr’ binary to populate all tldr pages in your local system using command:
+现在，运行' tldr '二进制代码将 tldr 手册部署到本地系统中。
 
 ```
 $ go/bin/tldr
 ```
 
-Sample output:
+示例输出：
 
 ![][6]
 
-Finally, copy the tldr binary to your PATH.
+最后，将 tldr 二进制文件复制到你的路径中。
 
 ```
 $ sudo mv tldr /usr/local/bin
 ```
 
-It is time to see some examples.
+现在是时候看一些例子了。
 
-### Tldr++ Usage
+### Tldr++ 用法
 
-Type ‘tldr’ command without any options to display all command examples in alphabetical order.
+输入不带任何选项的' tldr '命令，以字母顺序显示所有命令示例。
 
 ![][7]
 
-Use the **UP/DOWN arrows** to navigate through the commands, type any letters to search or type a command name to view the examples of that respective command. Press **?** for more and **Ctrl+c** to return/exit.
+使用**向上/向下箭头**来浏览命令，键入任何字母来搜索或键入命令名称来查看相应命令的示例。 **?** 以浏览更多消息，按 **Ctrl+c**返回/退出。
 
-To display the example commands of a specific command, for example **apt** , simply do:
+要显示特定命令的示例命令，例如**apt**，可以这样做:
 
 ```
 $ tldr apt
@@ -102,94 +102,94 @@ $ tldr apt
 
 ![][8]
 
-Choose any example command from the list and hit ENTER. You will see a *** symbol** before the selected command. For example, I choose the first command i.e ‘sudo apt update’. Now, it will ask you whether to continue or not. If the command is correct, just type ‘y’ to continue and type your sudo password to run the selected command.
+从列表中选择任意示例命令并按ENTER。在选定的命令前会看到一个**符号**。例如，我选择第一个命令即‘sudo apt update’。现在，它会问你是否继续。如果命令正确，只需键入‘y’ 继续，并输入 sudo 密码运行所选命令。
 
 ![][9]
 
-See? You don’t need to copy/paste or type the actual command in the Terminal. Just choose it from the list and run on the fly!
+看到了吗?你不需要在终端中复制/粘贴或键入实际的命令。只需从列表中选择它，并极速运行!
 
-There are hundreds of Linux command examples are available in Tldr pages. You can choose one or two commands per day and learn them thoroughly. And keep this practice everyday to learn as much as you can.
+Tldr 手册中有数百个 Linux 命令示例。你可以每天选择一个或两个命令，并彻底学习它们。每天坚持这样的练习，尽可能多的掌握。
 
-### Learn And Practice Linux Commands On The Fly Using Tldr++
+### 使用 Tldr++ 动态学习和实践 Linux 命令
 
-Now think of the scenario that I mentioned in the first paragraph. You want to download a file, extract it and move it to different location and make it executable. Let us see how to do it interactively using Tldr++ client.
+现在回到我在第一段中提到的场景。你需要下载一个文件，将其解压缩并将其移动到不同的位置，并使其可执行。让我们看看如何使用 Tldr++ 客户端进行交互。
 
-**Step 1 – Download a file from Internet**
+**第一步 – 从网上下载文件**
 
-To download a file from command line, we mostly use **‘curl’** or **‘wget’** commands. Let me use ‘wget’ to download the file. To open tldr page of wget command, just run:
+要使用命令行下载文件，我们主要使用 **‘curl’** or **‘wget’** 命令。让我使用 ‘wget’ 下载文件。要打开 wget 命令的 tldr 页面，只需执行以下命令：
 
 ```
 $ tldr wget
 ```
 
-Here is the examples of wget command.
+下面是wget命令的示例。
 
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/wget-tldr.png)
 
-You can use **UP/DOWN** arrows to go through the list of commands. Once you choose the command of your choice, press ENTER. Here I chose the first command.
+你可以使用**向上/向下**箭头来浏览命令列表。一旦你选择了你所选择的命令，按ENTER键。这里我选择了第一个命令。
 
-Now, enter the path of the file to download.
+现在，输入路径来下载文件。
 
 ![](https://www.ostechnix.com/wp-content/uploads/2019/01/tldr-3.png)
 
-You will then be asked to confirm if it is the correct command or not. If the command is correct, simply type ‘yes’ or ‘y’ to start downloading the file.
+然后将要求你确认该命令是否正确。如果命令正确，只需键入' yes '或' y '就可以开始下载文件。
 
 ![][10]
 
-We have downloaded the file. Let us go ahead and extract this file.
+我们已经下载了文件。让我们继续解压这个文件。
 
-**Step 2 – Extract downloaded archive**
+**第二部 – 解压已下载的文件**
 
-We downloaded the **tar.gz** file. So I am going to open the ‘tar’ tldr page.
+我们下载了 **tar.gz** 文件。所以我将打开 tldr 手册的‘tar’ 页面。
 
 ```
 $ tldr tar
 ```
 
-You will see the list of example commands. Go through the examples and find which command is suitable to extract tar.gz(gzipped archive) file and hit ENTER key. In our case, it is the third command.
+你将看到示例命令列表。浏览这些示例，找出哪个命令适合提取tar.gz(gzip格式)文件，按回车键。在我们的例子中，它是第三个命令。
 
 ![][11]
 
-Now, you will be prompted to enter the path of the tar.gz file. Just type the path and hit ENTER key. Tldr++ supports smart file suggestions. That means it will suggest the file name automatically as you type. Just press TAB key for auto-completion.
+现在，系统将提示你输入 tar.gz 文件的路径。只需输入路径并按回车键。Tldr++ 支持智能文件提示。这意味着它会在你键入时自动补全文件名。只需按TAB键自动完成。
 
 ![][12]
 
-If you downloaded the file to some other location, just type the full path, for example **/home/sk/Downloads/tldr_0.5.0_linux_amd64.tar.gz.**
+如果将文件下载到其他位置，只需键入完整路径，例如 **/home/sk/Downloads/tldr_0.5.0_linux_amd64.tar.gz.**
 
-Once you enter the path of the file to extract, press ENTER and then, type ‘y’ to confirm.
+输入要解压的文件的路径后，按 Enter，然后输入' y '进行确认。
 
 ![][13]
 
-**Step 3 – Move file from one location to another**
+**Step 3 – 将文件从一个目录移动到另一个目录**
 
-We extracted the archive. Now we need to move the file to another location. To move the files from one location to another, we use ‘mv’ command. So, let me open the tldr page for mv command.
+我们解压了文件。现在我们需要将文件移动到另一个位置。为了将文件从一个位置移动到另一个位置，我们使用 ‘mv’ 命令。所以，让我们打开 tldr 手册的 mv 命令。
 
 ```
 $ tldr mv
 ```
 
-Choose the correct command to move the files from one location to another. In our case, the first command will work, so let me choose it.
+选择正确的命令将文件从一个位置移动到另一个位置。在我们的例子中，第一个命令可以工作，所以让我们选中它。
 
 ![][14]
 
-Type the path of the file that you want to move and enter the destination path and hit ENTER key.
+输入要移动的文件路径，并输入目标路径并按 Enter 键。
 
 ![][15]
 
-**Note:** Type **y!** or **yes!** to run command with **sudo** privileges.
+**附注:** 输入 **y!** 或 **yes!** 来以 **sudo** 权限运行命令。
 
-As you see in the above screenshot, I moved the file named **‘tldr’** to **‘/usr/local/bin/’** location.
+正如你在上面的截图中看到的，我将名为 **‘tldr’**的文件移动到 **‘/usr/local/bin/’** 。
 
-For more details, refer the project’s GitHub page given at the end.
+要了解更多细节，请参考项目最后给出的GitHub页面。
 
 
-### Conclusion
+### 总结
 
-Don’t get me wrong. **Man pages are great!** There is no doubt about it. But, as I already said, many man pages are comprehensive and doesn’t have useful examples. There is no way I could memorize all lengthy commands with tricky flags. Some times I spent much time on man pages and remained clueless. The Tldr pages helped me to find what I need within few minutes. Also, we use some commands once in a while and then we forget them completely. Tldr pages on the other hand actually helps when it comes to using commands we rarely use. Tldr++ client makes this task much easier with smart user interaction. Give it a go and let us know what you think about this tool in the comment section below.
+别误会我。毫无疑问**Man 手册**是伟大的!但是，正如我已经说过的，许多手册页都很全面，缺少有用的示例。我不可能记住所有带有复杂标志的冗长命令。有时，我花了很多时间在手册上，却还是一窍不通。Tldr 手册帮助我在几分钟内找到了我需要的东西。而且，我们偶尔会使用一些命令，然后就会完全忘记它们。另一方面，Tldr 手册实际上在使用那些使用率很低的命令时很有帮助。Tldr++ 客户端通过智能的用户交互使这个任务变得更容易。试试吧，在下面的评论区告诉我们你对这个工具的看法。
 
-And, that’s all. More good stuffs to come. Stay tuned!
+以上，更多的好的分享将会陆续推出，请继续保持关注！
 
-Good luck!
+祝好!
 
 
 
