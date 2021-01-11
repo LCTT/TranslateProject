@@ -1,4 +1,4 @@
-The politics of the Linux desktop
+The politics of th行e Linux desktop
 ============================================================
 
 ### If you're working in open source, why would you use anything but Linux as your main desktop?
