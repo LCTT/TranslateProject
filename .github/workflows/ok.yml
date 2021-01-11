@@ -16,6 +16,7 @@ jobs:
       TRAVIS_REPO_SLUG: ${{ github.repository }} 
       TRAVIS_BRANCH: ${{ github.head_ref }} 
       TRAVIS_PULL_REQUEST: ${{ github.event.number }} 
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - name: Set ENV variables
         run: |
