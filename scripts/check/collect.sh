@@ -17,6 +17,7 @@ echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
 
 MERGE_BASE='HEAD^'
 [ "$TRAVIS_PULL_REQUEST" != 'false' ] \
+    && echo $TARGET_BRANCH  ${MERGE_BASE} \
     && MERGE_BASE="$(git merge-base "$TARGET_BRANCH" HEAD)"
 
 echo "[收集] 找到分叉节点：${MERGE_BASE}"
