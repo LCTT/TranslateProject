@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (stevenzdg988)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,27 +7,27 @@
 [#]: via: (https://www.networkworld.com/article/3373502/printing-from-the-linux-command-line.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
 
-Printing from the Linux command line
+Linux 命令行打印
 ======
 
-There's a lot more to printing from the Linux command line than the lp command. Check out some of the many available options.
+通过一些可用选项 Linux 命令行打印的内容比 `lp` 命令多得多。
 
 ![Sherry \(CC BY 2.0\)][1]
 
-Printing from the Linux command line is easy. You use the **lp** command to request a print, and **lpq** to see what print jobs are in the queue, but things get a little more complicated when you want to print double-sided or use portrait mode. And there are lots of other things you might want to do — such as printing multiple copies of a document or canceling a print job. Let's check out some options for getting your printouts to look just the way you want them to when you're printing from the command line.
+Linux 命令行打印很容易。您可以使用 **lp** 命令来请求打印，并使用 **lpq** 命令来查看队列中有哪些打印作业，但是当您要双面打印或使用纵向模式时，这些会变得有些复杂。 您可能还需要做很多其他事情，例如打印多份文档副本或取消打印作业。 让我们通过某些选项以使打印输出的内容看起来像从命令行打印时的方式一样。
 
-### Displaying printer settings
+### 显示打印机配置
 
-To view your printer settings from the command line, use the **lpoptions** command. The output should look something like this:
+要从命令行查看打印机设置，请使用 **lpoptions** 命令。 输出应如下所示：
 
 ```
 $ lpoptions
 copies=1 device-uri=dnssd://HP%20Color%20LaserJet%20CP2025dn%20(F47468)._pdl-datastream._tcp.local/ finishings=3 job-cancel-after=10800 job-hold-until=no-hold job-priority=50 job-sheets=none,none marker-change-time=1553023232 marker-colors=#000000,#00FFFF,#FF00FF,#FFFF00 marker-levels=18,62,62,63 marker-names='Black\ Cartridge\ HP\ CC530A,Cyan\ Cartridge\ HP\ CC531A,Magenta\ Cartridge\ HP\ CC533A,Yellow\ Cartridge\ HP\ CC532A' marker-types=toner,toner,toner,toner number-up=1 printer-commands=none printer-info='HP Color LaserJet CP2025dn (F47468)' printer-is-accepting-jobs=true printer-is-shared=true printer-is-temporary=false printer-location printer-make-and-model='HP Color LaserJet cp2025dn pcl3, hpcups 3.18.7' printer-state=3 printer-state-change-time=1553023232 printer-state-reasons=none printer-type=167964 printer-uri-supported=ipp://localhost/printers/Color-LaserJet-CP2025dn sides=one-sided
 ```
 
-This output is likely to be a little more human-friendly if you turn its blanks into carriage returns. Notice how many settings are listed.
+如果将其空格转换为回车符，输出可能会更人性化，请注意列出了多少设置选项。
 
-NOTE: In the output below, some lines have been reconnected to make this output more readable.
+注意：在下面的输出中，一些行被重新链接，以使输出更具可读性。
 
 ```
 $ lpoptions | tr " " '\n'
@@ -62,7 +62,7 @@ printer-uri-supported=ipp://localhost/printers/Color-LaserJet-CP2025dn
 sides=one-sided
 ```
 
-With the **-v** option, the **lpinfo** command will list drivers and related information.
+使用 **-v** 选项时，**lpinfo** 命令将列出驱动程序和相关信息。
 
 ```
 $ lpinfo -v
@@ -80,13 +80,13 @@ network dnssd://HP%20Color%20LaserJet%20CP2025dn%20(F47468)._pdl-datastream._tcp
 network socket://192.168.0.23 <== printer IP
 ```
 
-The lpoptions command will show the settings of your default printer. Use the **-p** option to specify one of a number of available printers.
+`lpoptions` 命令将显示默认打印机的设置。使用 **-p** 选项指定其中一个可用打印机代号。
 
 ```
 $ lpoptions -p LaserJet
 ```
 
-The **lpstat -p** command displays the status of a printer while **lpstat -p -d** also lists available printers.
+**lpstat -p** 命令显示打印机的状态，而 **lpstat -p -d** 列出可用打印机列表。
 
 ```
 $ lpstat -p -d
@@ -94,16 +94,16 @@ printer Color-LaserJet-CP2025dn is idle. enabled since Tue 19 Mar 2019 05:07:45 
 system default destination: Color-LaserJet-CP2025dn
 ```
 
-### Useful commands
+### 非常有用的命令
 
-To print a document on the default printer, just use the **lp** command followed by the name of the file you want to print. If the filename includes blanks (rare on Linux systems), either put the name in quotes or start entering the file name and press the tab key to invoke file completion (as shown in the second example below).
+要在默认打印机上打印文档，只需使用 **lp** 命令，后跟要打印的文件名即可。 如果文件名包含空格（在 Linux 系统上很少见），请将该名称放在引号中或开始输入文件名并按 Tab 键调用空格的转义标志（如下面的第二个示例所示）。
 
 ```
 $ lp "never leave home angry"
 $ lp never\ leave\ home\ angry
 ```
 
-The **lpq** command displays the print queue.
+**lpq** 命令显示打印队列。
 
 ```
 $ lpq
@@ -112,52 +112,52 @@ Rank Owner Job File(s) Total Size
 active shs 234 agenda 2048 bytes
 ```
 
-With the **-n** option, the lp command allows you to specify the number of copies of a printout you want.
+使用 **-n** 选项时，`lp` 命令可用来指定所需打印输出的份数。
 
 ```
 $ lp -n 11 agenda
 ```
 
-To cancel a print job, you can use the **cancel** or **lprm** command. If you don't act quickly, you might see this:
+要取消打印作业，可以使用 **cancel** 或 **lprm** 命令。 如果没来得及执行，则可能会看到以下信息：
 
 ```
 $ cancel 229
 cancel: cancel-job failed: Job #229 is already completed - can't cancel.
 ```
 
-### Two-sided printing
+### 双面打印
 
-To print in two-sided mode, you can issue your lp command with a **sides** option that says both to print on both sides of the paper and which edge to turn the paper on. This setting represents the normal way that you would expect two-sided portrait documents to look.
+要以双面模式打印，您可以在 **lp** 命令中使用 **sides** 选项，该选项表示既可以在纸张的正反面进行打印，又可以在纸张的其中一面进行打印。 通常此设置表示看起来像双面竖排格式文档方式。
 
 ```
 $ lp -o sides=two-sided-long-edge Notes.pdf
 ```
 
-If you want all of your documents to print in two-side mode, you can change your lp settings by using the **lpoptions** command to change the setting for **sides**.
+如果要所有文档以双面模式打印，则可以使用 **lpoptions** 命令更改 `lp` 设置进而更改 **sides** 的设置。
 
 ```
 $ lpoptions -o sides=two-sided-short-edge
 ```
 
-To revert to single-sided printing, you would use a command like this one:
+要恢复为单面打印，可以使用如下命令：
 
 ```
 $ lpoptions -o sides=one-sided
 ```
 
-#### Printing in landscape mode
+#### 横向打印
 
-To print in landscape mode, you would use the **landscape** option with the lp command.
+要以横向模式打印，可以在 `lp` 命令中使用 **landscape** 选项。
 
 ```
 $ lp -o landscape penguin.jpg
 ```
 
-### CUPS
+### CUPS（Unix 通用打印系统）
 
-The print system used on Linux systems is the standards-based, open source printing system called CUPS, originally standing for **Common Unix Printing System**. It allows a computer to act as a print server.
+Linux 系统上使用的打印系统是基于标准的开源打印系统，称为 **CUPS**，原本基于 **Unix 通用打印系统**。 它允许计算机充当打印服务器。
 
-Join the Network World communities on [Facebook][2] and [LinkedIn][3] to comment on topics that are top of mind.
+加入 Network World 社区的 [Facebook][2] 和 [LinkedIn][3]，以评论最感兴趣的主题。
 
 --------------------------------------------------------------------------------
 
@@ -165,7 +165,7 @@ via: https://www.networkworld.com/article/3373502/printing-from-the-linux-comman
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/stevenzdg988)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
