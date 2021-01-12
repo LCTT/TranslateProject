@@ -20,6 +20,8 @@ MERGE_BASE='HEAD^'
 echo "[收集] 找到分叉节点：${MERGE_BASE}"
 
 echo "merge base ${MERGE_BASE}"
+echo "TRAVIS_PULL_REQUEST ${TRAVIS_PULL_REQUEST}"
+echo "TARGET_BRANCH ${TARGET_BRANCH}"
 
 echo "[收集] 变更摘要："
 git --no-pager show --summary "${MERGE_BASE}..HEAD"
