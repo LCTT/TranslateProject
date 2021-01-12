@@ -1,0 +1,43 @@
+name: LCTT Article Checker
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TRAVIS_REPO_SLUG: ${{ github.repository }} 
+      TRAVIS_BRANCH: master
+      TRAVIS_PULL_REQUEST: ${{ github.event.number }} 
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    steps:
+      - name: Set ENV variables
+        run: |
+          echo "::set-env name=TRAVIS_BRANCH::${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}" 
+          echo "::set-env name=TRAVIS_EVENT_TYPE::$(if [ "schedule" == "${{ github.event_name }}" ]; then echo "cron"; else echo "${{ github.event_name }}"; fi)" 
+      - uses: actions/checkout@v2
+      - name: Install JQ
+        run: sudo apt install jq -y
+      - name: run check
+        if: ${{ github.event_name == 'pull_request' }}
+        run:  sh ./scripts/check.sh;
+      - name: run badge
+        if: ${{ github.event_name != 'pull_request' }}
+        run: sh ./scripts/badge.sh;
+      - name: run status
+        if: ${{ github.event_name == 'schedule' }}
+        run: sh ./scripts/status.sh;
+      - uses: crazy-max/ghaction-github-pages@v2.2.0
+        with:
+          keep_history: true
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
