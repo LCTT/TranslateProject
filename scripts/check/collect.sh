@@ -15,8 +15,6 @@ TARGET_BRANCH="${TRAVIS_BRANCH:-master}"
 echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
 
 echo "merge base ${MERGE_BASE}"
-echo "TRAVIS_PULL_REQUEST ${TRAVIS_PULL_REQUEST}"
-echo "TARGET_BRANCH ${TARGET_BRANCH}"
 
 MERGE_BASE='HEAD^'
 [ "$TRAVIS_PULL_REQUEST" != 'false' ] \
