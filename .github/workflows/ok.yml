@@ -14,14 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TRAVIS_REPO_SLUG: ${{ github.repository }} 
-      TRAVIS_BRANCH: ${{ github.ref }} 
+      TRAVIS_BRANCH: master
       TRAVIS_PULL_REQUEST: ${{ github.event.number }} 
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - name: Set ENV variables
         run: |
           echo "::set-env name=TRAVIS_BRANCH::${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}" 
-          echo "::set-env name=TRAVIS_SECURE_ENV_VARS::$(if [ -z "${{ secrets.something }}" ]; then echo "false"; else echo "true"; fi)" 
           echo "::set-env name=TRAVIS_EVENT_TYPE::$(if [ "schedule" == "${{ github.event_name }}" ]; then echo "cron"; else echo "${{ github.event_name }}"; fi)" 
       - name: Print Travis ENV vars 
         run: |
