@@ -109,3 +109,4 @@ via: https://opensource.com/article/17/11/politics-linux-desktop
 [18]:https://opensource.com/article/17/11/politics-linux-desktop#comments
 [19]:https://opensource.com/tags/linux
 1
+1
