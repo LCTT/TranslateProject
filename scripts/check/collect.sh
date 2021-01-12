@@ -19,6 +19,8 @@ MERGE_BASE='HEAD^'
     && MERGE_BASE="$(git merge-base "$TARGET_BRANCH" HEAD)"
 echo "[收集] 找到分叉节点：${MERGE_BASE}"
 
+echo "merge base ${MERGE_BASE}"
+
 echo "[收集] 变更摘要："
 git --no-pager show --summary "${MERGE_BASE}..HEAD"
 
