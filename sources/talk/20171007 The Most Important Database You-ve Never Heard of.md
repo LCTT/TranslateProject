@@ -45,6 +45,6 @@ via: https://twobithistory.org/2017/10/07/the-most-important-database.html
 [b]: https://github.com/lujun9972
 [1]: https://en.wikipedia.org/wiki/PL/I
 [2]: https://twobithistory.org/images/hierarchical-model.png
-[3]: https://twobithistory.org/images/hierarchical-db.png
+[3]: https://twobixthistory.org/images/hierarchical-db.png
 [4]: https://twitter.com/TwoBitHistory
 [5]: https://twobithistory.org/feed.xml
