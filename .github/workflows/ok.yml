@@ -1,4 +1,4 @@
-name: From-Travis-CI
+name: LCTT Article Checker
 
 on:
   push:
