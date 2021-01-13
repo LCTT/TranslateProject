@@ -1,17 +1,15 @@
-Chao-zhi is translating
-
-GCC: Optimizing Linux, the Internet, and Everything
+GCC：优化 Linux、互联网和一切
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/gcc-paper.jpg?itok=QFNUZWsV)
 
-Software is useless if computers can't run it. Even the most talented developer is at the mercy of the compiler when it comes to run-time performance - if you don’t have a reliable compiler toolchain you can’t build anything serious. The GNU Compiler Collection (GCC) provides a robust, mature and high performance partner to help you get the most out of your software. With decades of development by thousands of people GCC is one of the most respected compilers in the world. If you are building applications and not using GCC, you are missing out on the best possible solution.
+软件如果不能被电脑运行，那么它就是无用的。而在处理 run-time 性能的问题上，即使是最有才华的开发人员也会受编译器的支配——因为如果没有可靠的编译器工具链，就无法构建任何重要的东西。GNU Compiler Collection（GCC）提供了一个健壮、成熟和高性能的工具，帮助您充分发挥你代码的潜能。经过几十年成千上万人的开发，GCC 成为了世界上最受尊敬的编译器之一。如果您正在构建应用程序而不使用 GCC，那么您可能错过了最佳解决方案。
 
-GCC is the “de facto-standard open source compiler today” [1] according to LLVM.org and the foundation used to build complete systems - from the kernel upwards. GCC supports over 60 hardware platforms, including ARM, Intel, AMD, IBM POWER, SPARC, HP PA-RISC, and IBM Z, as well as a variety of operating environments, including GNU, Linux, Windows, macOS, FreeBSD, NetBSD, OpenBSD, DragonFly BSD, Solaris, AIX, HP-UX, and RTEMS. It offers highly compliant C/C++ compilers and support for popular C libraries, such as GNU C Library (glibc), Newlib, musl, and the C libraries included with various BSD operating systems, as well as front-ends for Fortran, Ada, and GO languages. GCC also functions as a cross compiler, creating executable code for a platform other than the one on which the compiler is running. GCC is the core component of the tightly integrated GNU toolchain, produced by the GNU Project, that includes glibc, Binutils, and the GNU Debugger (GDB).
+根据 LLVM.org 的说法，GCC 是“如今事实上的标准开源编译器”[1]，它可以从内核开始的构建完整的系统。GCC 支持超过 60 种硬件平台，包括 ARM、Intel、AMD、IBM POWER、SPARC、HP PA-RISC 和 IBM Z，以及各种操作环境，包括 GNU、Linux、Windows、macOS、FreeBSD、NetBSD、OpenBSD、DragonFly BSD、Solaris、AIX、HP- ux 和 RTEMS。它提供了高度兼容的 C/C++ 编译器，并支持流行的 C 库，如 GNU C Library（glibc）、Newlib、musl 和各种 BSD 操作系统中包含的 C库，以及 Fortran、Ada 和 GO 语言的前端。GCC 还可以作为一个交叉编译器，为运行编译器的平台以外的其他平台创建可执行代码。GCC 是紧密集成的 GNU 工具链的核心组件，由 GNU 项目产生，包括 glibc、Binutils 和 GNU 调试器（GDB）。
 
-"My all-time favorite GNU tool is GCC, the GNU Compiler Collection. At a time when developer tools were expensive, GCC was the second GNU tool and the one that enabled a community to write and build all the others. This tool single-handedly changed the industry and led to the creation of the free software movement, since a good, free compiler is a prerequisite to a community creating software." —Dave Neary, Open Source and Standards team at Red Hat. [2]
+“一直以来我最喜欢的 GNU 工具是 GCC。在开发工具非常昂贵的时候，GCC 是第二个 GNU 工具，它使一个社区能够编写和构建所有其他工具。这个工具一手改变了行业，导致了自由软件运动的诞生，因为一个好的、自由的编译器是一个社区软件的先决条件。”——Red Hat开源和标准团队的 Dave Neary。[2]
 
-### Optimizing Linux
+### 优化 Linux
 
 As the default compiler for the Linux kernel source, GCC delivers trusted, stable performance along with the additional extensions needed to correctly build the kernel. GCC is a standard component of popular Linux distributions, such as Arch Linux, CentOS, Debian, Fedora, openSUSE, and Ubuntu, where it routinely compiles supporting system components. This includes the default libraries used by Linux (such as libc, libm, libintl, libssh, libssl, libcrypto, libexpat, libpthread, and ncurses) which depend on GCC to provide correctness and performance and are used by applications and system utilities to access Linux kernel features. Many of the application packages included with a distribution are also built with GCC, such as Python, Perl, Ruby, nginx, Apache HTTP Server, OpenStack, Docker, and OpenShift. This combination of kernel, libraries, and application software translates into a large volume of code built with GCC for each Linux distribution. For the openSUSE distribution nearly 100% of native code is built by GCC, including 6,135 source packages producing 5,705 shared libraries and 38,927 executables. This amounts to about 24,540 source packages compiled weekly. [3]
 
