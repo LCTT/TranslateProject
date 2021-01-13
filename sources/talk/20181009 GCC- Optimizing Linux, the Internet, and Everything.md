@@ -1,3 +1,5 @@
+Chao-zhi is translating
+
 GCC: Optimizing Linux, the Internet, and Everything
 ======
 
