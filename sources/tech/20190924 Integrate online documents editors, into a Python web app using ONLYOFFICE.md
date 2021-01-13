@@ -7,78 +7,70 @@
 [#]: via: (https://opensourceforu.com/2019/09/integrate-online-documents-editors-into-a-python-web-app-using-onlyoffice/)
 [#]: author: (Aashima Sharma https://opensourceforu.com/author/aashima-sharma/)
 
-Integrate online documents editors, into a Python web app using ONLYOFFICE
+利用 **ONLYOFFICE** 将在线文档编辑器集成到 Python Web 应用程序中
 ======
 
 [![][1]][2]
 
-_[ONLYOFFICE][3] is an open-source collaborative office suite distributed under the terms of GNU AGPL v.3 license. It contains three editors for text documents, spreadsheets, and presentations and features the following:_
+_[ONLYOFFICE][3]是根据 GNU AGPL v.3 许可条款分发的开源协作办公套件。它包含三个用于文本文档，电子表格和演示文稿的编辑器，并具有以下功能:_
 
-  * Viewing, editing and co-editing docx, .xlsx, pptx files. OOXML as a core format ensures high compatibility with Microsoft Word, Excel and PowerPoint files.
-  * Editing other popular formats (.odt, .rtf, .txt, .html, .ods., .csv, .odp) with inner conversion to OOXML.
-  * Familiar tabbed interface.
-  * Collaboration tools: two co-editing modes (fast and strict), track changes, comments and integrated chat.
-  * Flexible access rights management: full access, read only, review, form filling and comment.
-  * Building your own add-ons using the API.
-  * 250 languages available and hieroglyphic alphabets.
+  * 查看，编辑和协同编辑 `.docx, .xlsx , .pptx` 文件。 OOXML作为一种核心格式，可确保与 Microsoft Word，Excel 和 PowerPoint 文件的高度兼容性。
+  * 通过内部转换为 OOXML，编辑其他流行格式（`.odt，.rtf，.txt，.html，.ods，.csv，.odp`）。
+  * 熟悉的选项卡式界面。
+  * 协作工具：两种协同编辑模式（快速和严谨），跟踪更改，评论和集成聊天。
+  * 灵活的访问权限管理：完全访问权限，只读，审阅，表单填写和评论。
+  * 使用 API ( 应用程序接口：Application Programming Interface ) 构建附加组件。
+  * 250 种可用语言和象形字母表。
 
+通过 API ( 应用程序接口：Application Programming Interface ) ，开发人员可以将 ONLYOFFICE 编辑器集成到网站和利用程序设计语言编写的应用程序中，并能配置和管理编辑器。
 
+要集成 ONLYOFFICE 编辑器，我们需要一个集成应用程序来连接编辑器（ ONLYOFFICE 文档服务器）和服务。 要在您的界面中使用编辑器，因该授予 ONLYOFFICE 以下权限：
 
-API allowing the developers integrate ONLYOFFICE editors into their own web sites and apps written in any programming language and setup and manage the editors.
+  * 添加并执行自定义代码。
+  * 用于下载和保存文件的匿名访问权限。这意味着编辑器仅与服务器端的服务通信，而不包括客户端的任何用户授权数据（浏览器cookies）。
+  * 在 UI（用户界面） 添加新按钮（例如，“在 ONLYOFFICE 中打开”，“在 ONLYOFFICE 中编辑”）。
+  * 开启一个新页面，ONLYOFFICE 可以在其中执行脚本以添加编辑器。
+  * 能够指定文档服务器连接设置。
 
-To integrate ONLYOFFICE editors, we will need an integration app connecting the editors (ONLYOFFICE Document Server) and your service. To use editors within your interface, it should grant to ONLYOFFICE the following permissions :
+流行的协作解决方案的成功集成案例有很多，如 Nextcloud，ownCloud，Alfresco，Confluence和SharePoint，都是通过 ONLYOFFICE 提供的官方即用型连接器实现的。
 
-  * Adding and executing custom code.
-  * Anonymous access for downloading and saving files. It means that the editors only communicate with your service on the server side without involving any user authorization data from the client side (browser cookies).
-  * Adding new buttons to UI (for example, “Open in ONLYOFFICE”, “Edit in ONLYOFFICE”).
-  * Оpening a new page where ONLYOFFICE can execute the script to add an editor.
-  * Ability to specify Document Server connection settings.
+实际的集成案例之一是 ONLYOFFICE 编辑器与以 C＃ 编写的开源协作平台的集成。 该平台具有文档和项目管理，CRM (客户关系管理) ，电子邮件聚合器，日历，用户数据库，博客，论坛，民意调查，Wiki和即时通讯程序的功能。
 
+将在线编辑器与 CRM 和项目模块集成，您可以：
 
+  * 文档关联到 CRM 时机和容器，项目任务和讨论，甚至创建一个单独的文件夹，其中包含与项目相关的文档，电子表格和演示文稿。
+  * 直接在 CRM 或项目模块中创建新的文档，工作表和演示文稿。
+  * 打开和编辑关联的文档，或者下载和删除。
+  * 将联系人从 CSV 文件批量导入到 CRM 中，并将客户数据库导出为 CSV 文件。
 
-There are several cases of successful integration with popular collaboration solutions such as Nextcloud, ownCloud, Alfresco, Confluence and SharePoint, via official ready-to-use connectors offered by ONLYOFFICE.
+在“邮件”模块中，您可以关联存储在“文档模块”中的文件，或者将指向所需文档的链接插入到邮件正文中。 当 ONLYOFFICE 用户收到带有附件的文档的消息时，他们可以：下载附件，在浏览器中查看文件，打开文件进行编辑或将其保存到“文档模块”。 如上所述，如果格式不同于 OOXML ，则文件将自动转换为 `.docx / .xlsx / .pptx`，并且其副本也将以原始格式保存。
 
-One of the most actual integration cases is the integration of ONLYOFFICE editors with its open-source collaboration platform written in C#. This platform features document and project management, CRM, email aggregator, calendar, user database, blogs, forums, polls, wiki, and instant messenger.
+在本文中，您将看到ONLYOFFICE 与最流行的编程语言之一的 Python 编写的文档管理系统的集成过程。 以下步骤将向您展示如何创建所有必要的部分，以使在 DMS（Document Management System）界面内的文档中可以进行协同工作成为可能：查看，编辑，协同编辑，保存文件和用户访问管理，并可以作为服务的示例集成到 Python 应用程序中。
 
-Integrating online editors with CRM and Projects modules, you can:
+**1\. What you will need 你需要什么**
 
-  * Attach documents to CRM opportunities and cases, or to project tasks and discussions, or even create a separate folder with documents, spreadsheets, and presentations related to the project.
-  * Create new docs, sheets, and presentations right in CRM or in the Project module.
-  * Open and edit attached documents, or download and delete them.
-  * Import contacts to your CRM in bulk from a CSV file as well as export the customer database as a CSV file.
+首先，创建集成过程的关键组件：[_ONLYOFFICE 文档服务器_][4] 和用 Python 编写的文件管理系统。
 
-
-
-In the Mail module, you can attach files stored in the Documents module or insert a link to the needed document into the message body. When ONLYOFFICE users receive a message with an attached document, they are able to: download the attachment, view the file in the browser, open the file for editing or save it to the Documents module. As mentioned above, if the format differs from OOXML, the file will be automatically converted to .docx/.xlsx/.pptx and its copy will be saved in the original format as well.
-
-In this article, you will see the integration process of ONLYOFFICE into the Document Management System written in Python, one of the most popular programming languages. The following steps will show you how to create all the necessary elements to make possible work and collaboration on documents within DMS interface: viewing, editing, co-editing, saving files and users access management and may serve as an example of integration into your Python app.
-
-**1\. What you will need**
-
-Let’s start off by creating key components of the integration process: [_ONLYOFFICE Document Server_][4] and DMS written in Python.
-
-1.1 To install ONLYOFFICE Document Server you can choose from multiple installation options: compile the source code available on GitHub, use .deb or .rpm packages or the Docker image.
-We recommend installing Document Server and all the necessary dependencies with only one command using the Docker image. Please note, that choosing this method, you need the latest Docker version installed.
+1.1 要安装 ONLYOFFICE 文档服务器，您可以从多个安装选项中进行选择：编译 GitHub 上可用的源代码，使用 `.deb` 或 `.rpm` 软件包亦或 Docker 映像。
+我们推荐使用下面这条命令利用 Docker 映像安装文档服务器和所有必需的依赖。请注意，选择此方法，您需要安装最新的 Docker 版本。
 
 ```
 docker run -itd -p 80:80 onlyoffice/documentserver-de
 ```
 
-1.2 We need to develop DMS in Python. If you have one already, please, check if it meets the following conditions:
+1.2我们需要利用 Python 开发 DMS。 如果已经拥有一个，请检查它是否满足以下条件：
 
-  * Has a list of files you need to open for viewing/editing
-  * Allows downloading files
+  * 包含需要打开以查看/编辑的保留文件
+  * 允许下载文件
 
-
-
-For the app, we will use a Bottle framework. We will install it in the working directory using the following command:
+对于该应用程序，我们将使用 Bottle 框架。我们将使用以下命令将其安装在工作目录中：
 
 ```
 pip install bottle
 ```
 
-Then we create the app’s code * main.py*  and the template _index.tpl_ .
-We add the following code into this * main.py*  file:
+然后我们创建应用程序代码 *main.py* 和模板 _index.tpl_。
+我们将以下代码添加到 *main.py* 文件中：
 
 ```
 from bottle import route, run, template, get, static_file # connecting the framework and the necessary components
@@ -88,23 +80,22 @@ return template('index.tpl') # showing template in response to request
 run(host="localhost", port=8080) # running the application on port 8080
 ```
 
-Once we run the app, an empty page will be rendered on <http://localhost:8080 >.
+一旦我们运行该应用程序，点击 <http://localhost:8080> 就会在浏览器上呈现一个空白页面 。
+为了使文档服务器能够创建新文档，添加默认文件并在模板中生成其名称列表，我们应该创建一个文件夹 _files_ 并将3种类型文件（.docx，.xlsx 和 .pptx）放入其中。
 
-In order, the Document Server to be able to create new docs, add default files and form a list of their names in the template, we should create a folder  _files_ , and put 3 files (.docx, .xlsx and .pptx) in there.
-
-To read these files’ names, we use the _listdir_ component.
+要读取这些文件的名称，我们使用 _listdir_ 组件(模块)。
 
 ```
 from os import listdir
 ```
 
-Now let’s create a variable for all the file names from the files folder:
+现在让我们为文件夹中的所有文件名创建一个变量：
 
 ```
 sample_files = [f for f in listdir('files')]
 ```
 
-To use this variable in the template, we need to pass it through the _template_ method:
+要在模板中使用此变量，我们需要通过 _template_ 方法传递它：
 
 ```
 def index():
@@ -118,8 +109,8 @@ Here’s this variable in the template:
 % end
 ```
 
-We restart the application to see the list of filenames on the page.
-Here’s the method to make these files available for all the app users:
+我们重新启动应用程序以查看页面上的文件名列表。
+使这些文件可用于所有应用程序用户的方法如下：
 
 ```
 @get("/files/<filepath:re:.*\.*>")
@@ -127,30 +118,27 @@ def show_sample_files(filepath):
 return static_file(filepath, root="files")
 ```
 
-**2\. How to view docs in ONLYOFFICE within the Python App**
-Once all the components are ready, let’s add functions to make editors operational within the app interface.
-
-The first option enables users to open and view docs. Connect document editors API in the template:
-
+**2\. 如何利用 Python 应用程序在ONLYOFFICE中查看文档**
+所有组件准备就绪后，让我们添加函数以使编辑者可以利用应用接口操作。
+第一个选项使用户可以打开和查看文档。连接模板中的文档编辑器 API ：
 ```
 <script type="text/javascript" src="editor_url/web-apps/apps/api/documents/api.js"></script>
 ```
 
-_editor_url_  is a link to document editors.
-
-A button to open each file for viewing:
+_editor_url_ 是文档编辑器的链接接口。
+打开每个文件以供查看的按钮：
 
 ```
 <button onclick="view('files/{{file}}')">view</button>
 ```
 
-Now we need to add a div with  _id_ , in which the document editor will be opened:
+现在我们需要添加带有 _id_ 的 `div` 标签，打开文档编辑器：
 
 ```
 <div id="editor"></div>
 ```
 
-To open the editor, we have to call a function:
+要打开编辑器，必须调用调用一个函数：
 
 ```
 <script>
@@ -178,28 +166,25 @@ editorConfig: {mode: 'view'}
 </script>
 ```
 
-There are two arguments for the DocEditor function: id of the element where the editors will be opened and a JSON with the editors’ settings.
-In this example, the following mandatory parameters are used:
+DocEditor 函数有两个参数：将在其中打开编辑器的元素 `id` 和带有编辑器设置的 `JSON`。
+在此示例中，使用了以下必需参数：
 
-  * _documentType_ is identified by its format (.docx, .xlsx, .pptx for texts, spreadsheets and presentations accordingly)
-  * _document.url_ is the link to the file you are going to open.
-  * _editorConfig.mode_.
+  * _documentType_ 由其格式标识（`.docx，.xlsx，.pptx` 用于相应的文本，电子表格和演示文稿）
+  * _document.url_ 是您要打开的文件链接。
+  * _editorConfig.mode_。
 
+我们还可以添加将在编辑器中显示的 _title_。
+接下来，我们可以在 Python 应用程序中查看文档。
 
-
-We can also add _title_ that will be displayed in the editors.
-
-So, now we have everything to view docs in our Python app.
-
-**3\. How to edit docs in ONLYOFFICE within the Python App**
-First of all, add the “Edit” button:
+**3\. 如何在 Python 应用中利用 ONLYOFFICE 编辑文档**
+首先，添加 “Edit”(编辑) 按钮：
 
 ```
 <button onclick="edit('files/{{file}}')">edit</button>
 ```
 
-Then create a new function that will open files for editing. It is similar to the View function.
-Now we have 3 functions:
+然后创建一个新功能，打开文件进行编辑。类似于查看功能。
+现在创建3个函数：
 
 ```
 <script>
@@ -245,15 +230,15 @@ return "presentation"
 </script>
 ```
 
-_destroyEditor_  is called to close an open editor.
-As you might notice, the _editorConfig_ parameter is absent from the _edit()_ function, because it has by default the value * {“mode”: “edit”}.*
+_destroyEditor_ 被调用以关闭一个打开的编辑器。
+您可能会注意到，_edit()_ 函数中缺少 _editorConfig_ 参数，因为默认情况下它的值是 **{"mode":"edit"}.*
 
-Now we have everything to open docs for co-editing in your Python app.
+现在，我们拥有了打开文档以在 Python 应用程序中进行协同编辑的所有功能。
 
-**4\. How to co-edit docs in ONLYOFFICE within the Python App**
-Co-editing is implemented by using the same document.key for the same document in the editors’ settings. Without this key, the editors will create the editing session each time you open the file.
+**4\. 如何在 Python 应用中利用 ONLYOFFICE 协同编辑文档**
+通过在编辑器中设置对同一文档使用相同的 `document.key` 来实现协同编辑。 如果没有此键，则每次打开文件时，编辑器都会创建编辑会话。
 
-Set unique keys for each doc to make users connect to the same editing session for co-editing. The format of the key should be the following:  _filename + “_key”_. The next step is to add it to all of the configs where document is present.
+为每个文档设置唯一键，以使用户连接到同一编辑会话时进行协同编辑。 密钥格式应为以下格式：_filename +"_key"_。下一步是将其添加到当前文档的所有配置中。
 
 ```
 document: {
@@ -263,10 +248,10 @@ key: filename + '_key'
 },
 ```
 
-**5\. How to save docs in ONLYOFFICE within the Python App**
-Every time we change and save the file, ONLYOFFICE stores all its versions. Let’s see closely how it works. After we close the editor, Document Server builds the file version to be saved and sends the request to callbackUrl address. This request contains document.key and the link to the just built file.
-document.key is used to find the old version of the file and replace it with the new one. As we do not have any database here, we just send the filename using callbackUrl.
-Specify _callbackUrl_ parameter in the setting in _editorConfig.callbackUrl_ and add it to the _edit()method_:
+**5\. 如何在 Python 应用中利用 ONLYOFFICE 保存文档**
+每次我们更改并保存文件时，ONLYOFFICE 都会存储其所有版本。 让我们仔细看看它是如何工作的。 关闭编辑器后，文档服务器将构建要保存的文件版本并将请求发送到 `callbackUrl` 地址。 该请求包含 `document.key`和指向刚刚构建的文件的链接。
+`document.key` 用于查找文件的旧版本并将其替换为新版本。 由于这里没有任何数据库，因此仅使用 `callbackUrl` 发送文件名。
+在 _editorConfig.callbackUrl_ 的设置中指定 _callbackUrl_ 参数并将其添加到 _edit()method_ 中：
 
 ```
 function edit(filename) {
@@ -291,7 +276,7 @@ callbackUrl: "host_url" + '/callback' + '&filename=' + filename // add file name
 }
 ```
 
-Write a method that will save file after getting the POST request to* /callback* address:
+编写一种方法，在获取到 POST 请求发送到 */callback* 地址后将保存文件：
 
 ```
 @post("/callback") # processing post requests for /callback
@@ -303,13 +288,12 @@ f.write(file)
 return "{\"error\":0}"
 ```
 
-* # status 2*  is the built file.
+*# status 2* 是已生成的文件
+当我们关闭编辑器时，新版本的文件将保存到存储器中。
 
-When we close the editor, the new version of the file will be saved to storage.
-
-**6\. How to manage users in ONLYOFFICE within the Python App**
-If there are users in your app, and you need to see who exactly is editing a doc, write their identifiers (id and name) in the editors’ configuration.
-Add the ability to select a user in the interface:
+**6\. 如何在 Python 应用中利用 ONLYOFFICE 管理用户**
+如果应用中有用户，并且您需要查看谁在编辑文档，请在编辑器的配置中输入其标识符（`id`和`name`）。
+在界面中添加选择用户的功能：
 
 ```
 <select id="user_selector" onchange="pick_user()">
@@ -320,7 +304,7 @@ Add the ability to select a user in the interface:
 </select>
 ```
 
-If you add the call of the function *pick_user()*at the beginning of the tag _&lt;script&gt;_, it will initialize, in the function itself, the variables responsible for the id and the user name.
+如果在标记 _＆lt;script＆gt;_ 的开头添加对函数 *pick_user()* 的调用，负责初始化函数自身 `id`和`name`变量。
 
 ```
 function pick_user() {
@@ -330,7 +314,7 @@ this.current_user_id = user_selector.options[user_selector.selectedIndex].value;
 }
 ```
 
-Make use of _editorConfig.user.id_ and  _editorConfig.user.name_ to configure user’s settings. Add these parameters to the editors’ configuration in the file editing function.
+使用 _editorConfig.user.id_ 和 _editorConfig.user.name_ 来配置用户设置。将这些参数添加到文件编辑函数中的编辑器配置中。
 
 ```
 function edit(filename) {
@@ -357,7 +341,7 @@ name: this.current_user_name
 }
 ```
 
-Using this approach, you can integrate ONLYOFFICE editors into your app written in Python and get all the necessary tools for working and collaborating on docs. For more integration examples (Java, Node.js, PHP, Ruby), please, refer to the official [_API documentation_][5].
+使用这种方法，您可以将 ONLYOFFICE 编辑器集成到用 Python 编写的应用程序中，并获得用于在文档上进行协同工作的所有必要工具。有关更多集成示例（Java，Node.js，PHP，Ruby），请参考官方的 [_API文档_][5]。
 
 **By: Maria Pashkina**
 
@@ -367,7 +351,7 @@ via: https://opensourceforu.com/2019/09/integrate-online-documents-editors-into-
 
 作者：[Aashima Sharma][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/stevenzdg988)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
