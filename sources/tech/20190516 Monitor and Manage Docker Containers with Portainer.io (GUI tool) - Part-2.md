@@ -7,12 +7,12 @@
 [#]: via: (https://www.linuxtechi.com/monitor-manage-docker-containers-portainer-io-part-2/)
 [#]: author: (Shashidhar Soppin https://www.linuxtechi.com/author/shashidhar/)
 
-Monitor and Manage Docker Containers with Portainer.io (GUI tool) – Part-2
+用 Portainer.io 来监控和管理 Docker 容器（2）
 ======
 
-As a continuation of Part-1, this part-2 has remaining features of Portainer covered and as explained below.
+作为第1部分的延续，本第2部分将介绍 Portainer 的其余功能。
 
-### Monitoring docker container images
+### 监控 docker 容器镜像
 
 ```
 root@linuxtechi ~}$ docker ps -a
@@ -22,19 +22,18 @@ CONTAINER ID        IMAGE                 COMMAND             CREATED           
 9a669f3dc4f6        portainer/portainer   "/portainer"        7 minutes ago       Up 7 minutes   0.0.0.0:9000->9000/tcp      trusting_keller
 ```
 
-Including the portainer(which is a docker container image), all the exited and present running docker images are displayed. Below screenshot from Portainer GUI displays the same.
+包括 portainer（docker容器镜像），所有已退出和当前正在运行的 docker 镜像都会显示出来。下面的 Portainer GUI 屏幕截图显示了相同的情况。
 
 [![Docker_status][1]][2]
 
-### Monitoring events
+### 监视事件
 
-Click on the “Events” option from the portainer webpage as shown below.
-
-Various events that are generated and created based on docker-container activity, are captured and displayed in this page
+单击 portainer 网页中的“Events”选项，如下所示。
+基于 docker 容器活动生成和创建的各种事件将被提取并显示在此页面中
 
 [![Container-Events-Poratiner-GUI][3]][4]
 
-Now to check and validate how the “ **Events** ” section works. Create a new docker-container image redis as explained below, check the docker ps –a status at docker command-line.
+现在检查并验证“**Events**”部分是如何工作的。创建一个新的 docker 容器映像 redis，如下所述，在 docker 命令行检查状态：docker ps –a。
 
 ```
 root@linuxtechi ~}$ docker ps -a
@@ -45,15 +44,15 @@ cdbfbef59c31        redis                 "docker-entrypoint.s…"   About a min
 9a669f3dc4f6        portainer/portainer   "/portainer"             17 minutes ago       Up 17 minutes         0.0.0.0:9000->9000/tcp   trusting_keller
 ```
 
-Click the “Event List” on the top to refresh the events list,
+单击顶部的“Event List”刷新事件列表，
 
 [![events_updated][5]][6]
 
-Now the event’s page also updated with this change,
+现在事件的页面也更新了这个变化，
 
-### Host status
+### 主机状态
 
-Below is the screenshot of the portainer displaying the host status. This is a simple window showing-up. This shows the basic info like “CPU”, “hostname”, “OS info” etc of the host linux machine. Instead of logging- into the host command-line, this page provides very useful info on for quick glance.
+下面是 portainer 显示主机状态的屏幕截图。这是一个简单的窗口。这显示了主机 linux 机器的基本信息，如“CPU”、“主机名”、“操作系统信息”等。这个页面在不需要登录主机命令行的情况下提供了非常有用的信息，以便快速浏览。
 
 [![Host-names-Portainer][7]][8]
 
@@ -62,6 +61,12 @@ Below is the screenshot of the portainer displaying the host status. This is a s
 Until now we have seen various features of portainer based under “ **Local”** section. Now jump on to the “ **Dashboard** ” section of the selected Docker Container image.
 
 When “ **EndPoint** ” option is clicked in the GUI of Portainer, the following window appears,
+
+Portainer 中的仪表板
+
+到目前为止，我们已经在“**Local**”部分看到了基于 portainer 的各种特性。现在跳到所选 Docker 容器镜像的“**Dashboard**”部分。
+
+在 Portainer 的网页中单击“**EndPoint**”选项时，会出现以下窗口：，
 
 [![End_Point_Settings][9]][10]
 
