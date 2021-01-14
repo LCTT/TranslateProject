@@ -113,25 +113,25 @@ Status: Downloaded newer image for nginx:latest
 
 [![start_containers2][21]][22]
 
-**Note:** Since both are Linux container images, they will not be started. Portainer tries to start and stops later. Try “Nginx” instead and you can see it coming to “running”status.
+**注意：** 因为这两个都是 Linux 容器映像，所以不会被启动。Portainer 尝试启动，但稍后又停止。试试启动“Nginx”，你会看到它变成了“running”状态。
 
 [![start_containers3][23]][24]
 
-**5) Volume:** Described in Part-I of Portainer Article
+**5） Volume：** 本文章第一部分
 
-### Setting option in Portainer
+### Portainer 中的设置选项
 
-Until now we have seen various features of portainer based under “ **Local”** section. Now jump on to the “ **Setting”** section of the selected Docker Container image.
+到目前为止，我们已经在“**Local**”部分看到了基于portainer 的各种特性。现在跳到所选 Docker 容器图像的“**设置**”部分。
 
-When “Settings” option is clicked in the GUI of Portainer, the following further configuration options are available,
+在 Portainer 的网页中单击“**Settings**”选项时，可以使用以下的配置选项：
 
-**1) Extensions** : This is a simple Portainer CE subscription process. The details and uses can be seen from the attached window. This is mainly used for maintaining the license and subscription of the respective version.
+**1） Extensions**：这是一个简单的 Portainer CE订阅程序。详细信息和用途可以从附加的窗口中看到。这主要用于维护相应版本的许可证和订阅。
 
 [![Extensions][25]][26]
 
-**2) Users:** This option is used for adding “users” with or without administrative privileges. Following example provides the same.
+**2） Users：** 此选项用于添加具有或不具有管理权限的“用户”。下面的示例提供了相同的示例。
 
-Enter the selected user name “shashi” in this case and your choice of password and hit “ **Create User** ” button below.
+在本例中输入你的想好的用户名比如“shashi”和您选择的密码，然后点击下面的“**Create User**”按钮。
 
 [![create_user_portainer][27]][28]
 
@@ -139,50 +139,48 @@ Enter the selected user name “shashi” in this case and your choice of passwo
 
 [![Internal-user-Portainer][31]][32]
 
-Similarly the just now created user “shashi” can be removed by selecting the check box and hitting remove button.
+类似地，可以通过选中复选框并点击 remove 按钮来删除刚刚创建的用户“shashi”。
 
 [![user_remove_portainer][33]][34]
 
-**3) Endpoints:** this option is used for Endpoint management. Endpoints can be added and removed as shown in the attached windows.
+**3） Endpoints：** 此选项用于端点终端管理。终端可以添加和删除，如附加窗口中所示。
 
 [![Endpoint-Portainer-GUI][35]][36]
 
-The new endpoint “shashi” is created using the various default parameters as shown below,
+新终端“shashi”是使用如下所示的各种默认参数创建的，
 
 [![Endpoint2-Portainer-GUI][37]][38]
 
-Similarly this endpoint can be removed by clicking the check box and hitting remove button.
+类似地，可以通过单击复选框并单击移除按钮来移除此端点。
 
-**4) Registries:** this option is used for registry management. As docker hub has registry of various images, this feature can be used for similar purposes.
+**4） Registries：** 此选项用于注册的管理。由于docker hub 有各种镜像的注册，因此此功能可用于类似的目的。
 
 [![Registry-Portainer-GUI][39]][40]
 
-With the default options the “shashi-registry” can be created.
+使用默认选项就可以创建“shashi-registry”。
 
 [![Registry2-Portainer-GUI][41]][42]
 
-Similarly this can be removed if not required.
+同样，如果不需要了，就可以移除它。
 
-**5) Settings:** This option is used for the following various options,
+**5） Settings：** 此选项用于设置以下各种选项，
 
-  * Setting-up snapshot interval
-  * For using custom logo
-  * To create external templates
-  * Security features like- Disable and enable bin mounts for non-admins, Disable/enable privileges for non-admins, Enabling host management features
+* 设置快照间隔
+* 设置自定义徽标
+* 创建外部模板
+* 安全功能，如：为非管理员禁用和启用 bin 挂载，为非管理员禁用/启用权限，启用主机管理功能
 
-
-
-Following screenshot shows some options enabled and disabled for demonstration purposes. Once all done hit on “Save Settings” button to save all these options.
+下面的屏幕截图显示了出于演示目的启用和禁用的一些选项。一旦全部完成点击“保存设置”按钮保存所有这些选项。
 
 [![Portainer-GUI-Settings][43]][44]
 
-Now one more option pops-up on “Authentication settings” for LDAP, Internal or OAuth extension as shown below”
+现在点开“Authentication settings”就会弹出 LDAP、Internal 和 OAuth（extension）选项，如下所示：
 
 [![Authentication-Portainer-GUI-Settings][45]][46]
 
-Based on what level of security features we want for our environment, respective option is chosen.
+根据我们想要的环境安全特性级别，选择相应的选项。
 
-That’s all from this article, I hope these Portainer GUI articles helps you to manage and monitor containers more efficiently. Please do share your feedback and comments.
+以上就是本文的内容，我希望这些介绍 portainer 的文章能帮助您更有效地管理和监视容器。请分享您的反馈和意见。
 
 --------------------------------------------------------------------------------
 
@@ -190,7 +188,7 @@ via: https://www.linuxtechi.com/monitor-manage-docker-containers-portainer-io-pa
 
 作者：[Shashidhar Soppin][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Chao-zhi]](https://github.com/Chao-zhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
