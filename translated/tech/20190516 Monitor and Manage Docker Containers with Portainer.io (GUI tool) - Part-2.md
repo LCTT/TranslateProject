@@ -7,12 +7,12 @@
 [#]: via: (https://www.linuxtechi.com/monitor-manage-docker-containers-portainer-io-part-2/)
 [#]: author: (Shashidhar Soppin https://www.linuxtechi.com/author/shashidhar/)
 
-Monitor and Manage Docker Containers with Portainer.io (GUI tool) – Part-2
+用 Portainer.io 来监控和管理 Docker 容器（2）
 ======
 
-As a continuation of Part-1, this part-2 has remaining features of Portainer covered and as explained below.
+作为第 1 部分的延续，本第 2 部分将介绍 Portainer 的其余功能。
 
-### Monitoring docker container images
+### 监控 docker 容器镜像
 
 ```
 root@linuxtechi ~}$ docker ps -a
@@ -22,19 +22,18 @@ CONTAINER ID        IMAGE                 COMMAND             CREATED           
 9a669f3dc4f6        portainer/portainer   "/portainer"        7 minutes ago       Up 7 minutes   0.0.0.0:9000->9000/tcp      trusting_keller
 ```
 
-Including the portainer(which is a docker container image), all the exited and present running docker images are displayed. Below screenshot from Portainer GUI displays the same.
+包括 portainer（docker 容器镜像），所有已退出和当前正在运行的 docker 镜像都会显示出来。下面的 Portainer GUI 屏幕截图显示了相同的情况。
 
 [![Docker_status][1]][2]
 
-### Monitoring events
+### 监视事件
 
-Click on the “Events” option from the portainer webpage as shown below.
-
-Various events that are generated and created based on docker-container activity, are captured and displayed in this page
+单击 portainer 网页中的“Events”选项，如下所示。
+基于 docker 容器活动生成和创建的各种事件将被提取并显示在此页面中
 
 [![Container-Events-Poratiner-GUI][3]][4]
 
-Now to check and validate how the “ **Events** ” section works. Create a new docker-container image redis as explained below, check the docker ps –a status at docker command-line.
+现在检查并验证“**Events**”部分是如何工作的。创建一个新的 docker 容器映像 redis，如下所述，在 docker 命令行检查状态：docker ps –a。
 
 ```
 root@linuxtechi ~}$ docker ps -a
@@ -45,35 +44,37 @@ cdbfbef59c31        redis                 "docker-entrypoint.s…"   About a min
 9a669f3dc4f6        portainer/portainer   "/portainer"             17 minutes ago       Up 17 minutes         0.0.0.0:9000->9000/tcp   trusting_keller
 ```
 
-Click the “Event List” on the top to refresh the events list,
+单击顶部的“Event List”刷新事件列表，
 
 [![events_updated][5]][6]
 
-Now the event’s page also updated with this change,
+现在事件的页面也更新了这个变化，
 
-### Host status
+### 主机状态
 
-Below is the screenshot of the portainer displaying the host status. This is a simple window showing-up. This shows the basic info like “CPU”, “hostname”, “OS info” etc of the host linux machine. Instead of logging- into the host command-line, this page provides very useful info on for quick glance.
+下面是 portainer 显示主机状态的屏幕截图。这是一个简单的窗口。这显示了主机 linux 机器的基本信息，如“CPU”、“主机名”、“操作系统信息”等。这个页面在不需要登录主机命令行的情况下提供了非常有用的信息，以便快速浏览。
 
 [![Host-names-Portainer][7]][8]
 
 ### Dashboard in Portainer
 
-Until now we have seen various features of portainer based under “ **Local”** section. Now jump on to the “ **Dashboard** ” section of the selected Docker Container image.
+Portainer 中的仪表板
 
-When “ **EndPoint** ” option is clicked in the GUI of Portainer, the following window appears,
+到目前为止，我们已经在“**Local**”部分看到了基于 portainer 的各种特性。现在跳到所选 Docker 容器镜像的“**Dashboard**”部分。
+
+在 Portainer 的网页中单击“**EndPoint**”选项时，会出现以下窗口：
 
 [![End_Point_Settings][9]][10]
 
-This Dashboard has many statuses and options, for a host container image.
+对于主机容器镜像，此仪表板有许多状态和选项。
 
-**1) Stacks:** Clicking on this option, provides status of any stacks if any. Since there are no stacks, this displays zero.
+**1）Stacks：** 单击此选项，提供任何堆栈（如果有的话）的状态。因为没有堆栈，所以显示为零。
 
-**2) Images:** Clicking on this option provides host of container images that are available. This option will display all the live and exited container images
+**2） Images：** 单击此选项可提供主机中可用的容器镜像。此选项将显示所有活动和退出的容器镜像
 
 [![Docker-Container-Images-Portainer][11]][12]
 
-For example create one more “ **Nginx”** container and refresh this list to see the updates.
+例如，再创建一个“**Nginx**”容器并刷新此列表以查看更新。
 
 ```
 root@linuxtechi ~}$  sudo docker run nginx
@@ -86,51 +87,51 @@ Digest: sha256:e71b1bf4281f25533cf15e6e5f9be4dac74d2328152edf7ecde23abc54e16c1c
 Status: Downloaded newer image for nginx:latest
 ```
 
-The following is the image after refresh,
+下面是刷新后的镜像界面：
 
 [![Nginx_Image_creation][13]][14]
 
-Once the Nginx image is stopped/killed and docker container image will be moved to unused status.
+当 Nginx 镜像处于 stopped/killed 时，docker 的容器镜像会改变为 unused 状态
 
-**Note** :-One can see all the image details here are very clear with memory usage, creation date and time. As compared to command-line option, maintaining and monitoring containers from here it will be very easy.
+**注**：-你可以看到这里所有的镜像的细节都非常清楚，比如内存使用，创建日期和时间。与命令行选项相比，从这里维护和监视容器将非常容易。
 
-**3) Networks:** this option is used for network operations. Like assigning IP address, creating subnets, providing IP address range, access control (admin and normal user) . The following window provides the details of various options possible. Based on your need these options can be explored further.
+**3） Networks：** 此选项用于网络操作。例如分配 IP 地址、创建子网、提供 IP 地址范围、访问控制（管理员和普通用户）。下面的窗口提供了各种可能选项的详细信息。根据您的需要，可以进一步去自行研究这些选项。
 
 [![Conatiner-Network-Portainer][15]][16]
 
-Once all the various networking parameters are entered, “ **create network** ” button is clicked for creating the network.
+输入所有各种网络参数后，单击“**创建网络**”按钮即可创建网络。
 
-**4) Container:** (click on container) This option will provide the container status. This list will provide details on live and not running container statuses. This output is similar to docker ps command option.
+**4） Container：** 此选项将提供容器状态。此列表将提供有关活动的和未运行的容器状态的详细信息。此输出类似于 docker ps 命令选项。
 
 [![Containers-Status-Portainer][17]][18]
 
-From this window only the containers can be stopped and started as need arises by checking the check box and selecting the above buttons. One example is provided as below,
+在该窗口中，通过选中复选框并选择上述按钮可以根据需要控制容器停止和启动。一个例子如下：
 
-Example, Both “CentOS” and “Ubuntu” containers which are in stopped state, they are started now by selecting check boxes and hitting “Start” button.
+例如，“CentOS”和“Ubuntu”容器都处于停止状态，现在可以通过选中复选框并点击“Start”按钮来启动它们。
 
 [![start_containers1][19]][20]
 
 [![start_containers2][21]][22]
 
-**Note:** Since both are Linux container images, they will not be started. Portainer tries to start and stops later. Try “Nginx” instead and you can see it coming to “running”status.
+**注意：** 因为这两个都是 Linux 容器映像，所以不会被启动。Portainer 尝试启动，但稍后又停止。试试启动“Nginx”，你会看到它变成了“running”状态。
 
 [![start_containers3][23]][24]
 
-**5) Volume:** Described in Part-I of Portainer Article
+**5） Volume：** 本文章第一部分
 
-### Setting option in Portainer
+### Portainer 中的设置选项
 
-Until now we have seen various features of portainer based under “ **Local”** section. Now jump on to the “ **Setting”** section of the selected Docker Container image.
+到目前为止，我们已经在“**Local**”部分看到了基于 portainer 的各种特性。现在跳到所选 Docker 容器图像的“**设置**”部分。
 
-When “Settings” option is clicked in the GUI of Portainer, the following further configuration options are available,
+在 Portainer 的网页中单击“**Settings**”选项时，可以使用以下的配置选项：
 
-**1) Extensions** : This is a simple Portainer CE subscription process. The details and uses can be seen from the attached window. This is mainly used for maintaining the license and subscription of the respective version.
+**1） Extensions**：这是一个简单的 Portainer CE 订阅程序。详细信息和用途可以从附加的窗口中看到。这主要用于维护相应版本的许可证和订阅。
 
 [![Extensions][25]][26]
 
-**2) Users:** This option is used for adding “users” with or without administrative privileges. Following example provides the same.
+**2） Users：** 此选项用于添加具有或不具有管理权限的“用户”。下面的示例提供了相同的示例。
 
-Enter the selected user name “shashi” in this case and your choice of password and hit “ **Create User** ” button below.
+在本例中输入你的想好的用户名比如“shashi”和您选择的密码，然后点击下面的“**Create User**”按钮。
 
 [![create_user_portainer][27]][28]
 
@@ -138,50 +139,48 @@ Enter the selected user name “shashi” in this case and your choice of passwo
 
 [![Internal-user-Portainer][31]][32]
 
-Similarly the just now created user “shashi” can be removed by selecting the check box and hitting remove button.
+类似地，可以通过选中复选框并点击 remove 按钮来删除刚刚创建的用户“shashi”。
 
 [![user_remove_portainer][33]][34]
 
-**3) Endpoints:** this option is used for Endpoint management. Endpoints can be added and removed as shown in the attached windows.
+**3） Endpoints：** 此选项用于端点终端管理。终端可以添加和删除，如附加窗口中所示。
 
 [![Endpoint-Portainer-GUI][35]][36]
 
-The new endpoint “shashi” is created using the various default parameters as shown below,
+新终端“shashi”是使用如下所示的各种默认参数创建的，
 
 [![Endpoint2-Portainer-GUI][37]][38]
 
-Similarly this endpoint can be removed by clicking the check box and hitting remove button.
+类似地，可以通过单击复选框并单击移除按钮来移除此端点。
 
-**4) Registries:** this option is used for registry management. As docker hub has registry of various images, this feature can be used for similar purposes.
+**4） Registries：** 此选项用于注册的管理。由于 docker hub 有各种镜像的注册，因此此功能可用于类似的目的。
 
 [![Registry-Portainer-GUI][39]][40]
 
-With the default options the “shashi-registry” can be created.
+使用默认选项就可以创建“shashi-registry”。
 
 [![Registry2-Portainer-GUI][41]][42]
 
-Similarly this can be removed if not required.
+同样，如果不需要了，就可以移除它。
 
-**5) Settings:** This option is used for the following various options,
+**5） Settings：** 此选项用于设置以下各种选项，
 
-  * Setting-up snapshot interval
-  * For using custom logo
-  * To create external templates
-  * Security features like- Disable and enable bin mounts for non-admins, Disable/enable privileges for non-admins, Enabling host management features
+* 设置快照间隔
+* 设置自定义徽标
+* 创建外部模板
+* 安全功能，如：为非管理员禁用和启用 bin 挂载，为非管理员禁用/启用权限，启用主机管理功能
 
-
-
-Following screenshot shows some options enabled and disabled for demonstration purposes. Once all done hit on “Save Settings” button to save all these options.
+下面的屏幕截图显示了出于演示目的启用和禁用的一些选项。一旦全部完成点击“保存设置”按钮保存所有这些选项。
 
 [![Portainer-GUI-Settings][43]][44]
 
-Now one more option pops-up on “Authentication settings” for LDAP, Internal or OAuth extension as shown below”
+现在点开“Authentication settings”就会弹出 LDAP、Internal 和 OAuth（extension）选项，如下所示：
 
 [![Authentication-Portainer-GUI-Settings][45]][46]
 
-Based on what level of security features we want for our environment, respective option is chosen.
+根据我们想要的环境安全特性级别，选择相应的选项。
 
-That’s all from this article, I hope these Portainer GUI articles helps you to manage and monitor containers more efficiently. Please do share your feedback and comments.
+以上就是本文的内容，我希望这些介绍 portainer 的文章能帮助您更有效地管理和监视容器。请分享您的反馈和意见。
 
 --------------------------------------------------------------------------------
 
@@ -189,7 +188,7 @@ via: https://www.linuxtechi.com/monitor-manage-docker-containers-portainer-io-pa
 
 作者：[Shashidhar Soppin][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Chao-zhi]](https://github.com/Chao-zhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
