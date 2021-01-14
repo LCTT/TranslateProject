@@ -58,10 +58,6 @@ cdbfbef59c31        redis                 "docker-entrypoint.s…"   About a min
 
 ### Dashboard in Portainer
 
-Until now we have seen various features of portainer based under “ **Local”** section. Now jump on to the “ **Dashboard** ” section of the selected Docker Container image.
-
-When “ **EndPoint** ” option is clicked in the GUI of Portainer, the following window appears,
-
 Portainer 中的仪表板
 
 到目前为止，我们已经在“**Local**”部分看到了基于 portainer 的各种特性。现在跳到所选 Docker 容器镜像的“**Dashboard**”部分。
@@ -70,15 +66,15 @@ Portainer 中的仪表板
 
 [![End_Point_Settings][9]][10]
 
-This Dashboard has many statuses and options, for a host container image.
+对于主机容器镜像，此仪表板有许多状态和选项。
 
-**1) Stacks:** Clicking on this option, provides status of any stacks if any. Since there are no stacks, this displays zero.
+**1）Stacks：** 单击此选项，提供任何堆栈（如果有的话）的状态。因为没有堆栈，所以显示为零。
 
-**2) Images:** Clicking on this option provides host of container images that are available. This option will display all the live and exited container images
+**2） Images：** 单击此选项可提供主机中可用的容器镜像。此选项将显示所有活动和退出的容器镜像
 
 [![Docker-Container-Images-Portainer][11]][12]
 
-For example create one more “ **Nginx”** container and refresh this list to see the updates.
+例如，再创建一个“**Nginx**”容器并刷新此列表以查看更新。
 
 ```
 root@linuxtechi ~}$  sudo docker run nginx
@@ -91,27 +87,27 @@ Digest: sha256:e71b1bf4281f25533cf15e6e5f9be4dac74d2328152edf7ecde23abc54e16c1c
 Status: Downloaded newer image for nginx:latest
 ```
 
-The following is the image after refresh,
+下面是刷新后的镜像界面：
 
 [![Nginx_Image_creation][13]][14]
 
-Once the Nginx image is stopped/killed and docker container image will be moved to unused status.
+当 Nginx 镜像处于 stopped/killed 时，docker 的容器镜像会改变为 unused 状态
 
-**Note** :-One can see all the image details here are very clear with memory usage, creation date and time. As compared to command-line option, maintaining and monitoring containers from here it will be very easy.
+**注**：-你可以看到这里所有的镜像的细节都非常清楚，比如内存使用，创建日期和时间。与命令行选项相比，从这里维护和监视容器将非常容易。
 
-**3) Networks:** this option is used for network operations. Like assigning IP address, creating subnets, providing IP address range, access control (admin and normal user) . The following window provides the details of various options possible. Based on your need these options can be explored further.
+**3） Networks：** 此选项用于网络操作。例如分配 IP 地址、创建子网、提供 IP 地址范围、访问控制（管理员和普通用户）。下面的窗口提供了各种可能选项的详细信息。根据您的需要，可以进一步去自行研究这些选项。
 
 [![Conatiner-Network-Portainer][15]][16]
 
-Once all the various networking parameters are entered, “ **create network** ” button is clicked for creating the network.
+输入所有各种网络参数后，单击“**创建网络**”按钮即可创建网络。
 
-**4) Container:** (click on container) This option will provide the container status. This list will provide details on live and not running container statuses. This output is similar to docker ps command option.
+**4） Container：** 此选项将提供容器状态。此列表将提供有关活动的和未运行的容器状态的详细信息。此输出类似于 docker ps 命令选项。
 
 [![Containers-Status-Portainer][17]][18]
 
-From this window only the containers can be stopped and started as need arises by checking the check box and selecting the above buttons. One example is provided as below,
+在该窗口中，通过选中复选框并选择上述按钮可以根据需要控制容器停止和启动。一个例子如下：
 
-Example, Both “CentOS” and “Ubuntu” containers which are in stopped state, they are started now by selecting check boxes and hitting “Start” button.
+例如，“CentOS”和“Ubuntu”容器都处于停止状态，现在可以通过选中复选框并点击“Start”按钮来启动它们。
 
 [![start_containers1][19]][20]
 
