@@ -10,7 +10,7 @@
 用 Portainer.io 来监控和管理 Docker 容器（2）
 ======
 
-作为第1部分的延续，本第2部分将介绍 Portainer 的其余功能。
+作为第 1 部分的延续，本第 2 部分将介绍 Portainer 的其余功能。
 
 ### 监控 docker 容器镜像
 
@@ -22,7 +22,7 @@ CONTAINER ID        IMAGE                 COMMAND             CREATED           
 9a669f3dc4f6        portainer/portainer   "/portainer"        7 minutes ago       Up 7 minutes   0.0.0.0:9000->9000/tcp      trusting_keller
 ```
 
-包括 portainer（docker容器镜像），所有已退出和当前正在运行的 docker 镜像都会显示出来。下面的 Portainer GUI 屏幕截图显示了相同的情况。
+包括 portainer（docker 容器镜像），所有已退出和当前正在运行的 docker 镜像都会显示出来。下面的 Portainer GUI 屏幕截图显示了相同的情况。
 
 [![Docker_status][1]][2]
 
@@ -62,7 +62,7 @@ Portainer 中的仪表板
 
 到目前为止，我们已经在“**Local**”部分看到了基于 portainer 的各种特性。现在跳到所选 Docker 容器镜像的“**Dashboard**”部分。
 
-在 Portainer 的网页中单击“**EndPoint**”选项时，会出现以下窗口：，
+在 Portainer 的网页中单击“**EndPoint**”选项时，会出现以下窗口：
 
 [![End_Point_Settings][9]][10]
 
@@ -121,11 +121,11 @@ Status: Downloaded newer image for nginx:latest
 
 ### Portainer 中的设置选项
 
-到目前为止，我们已经在“**Local**”部分看到了基于portainer 的各种特性。现在跳到所选 Docker 容器图像的“**设置**”部分。
+到目前为止，我们已经在“**Local**”部分看到了基于 portainer 的各种特性。现在跳到所选 Docker 容器图像的“**设置**”部分。
 
 在 Portainer 的网页中单击“**Settings**”选项时，可以使用以下的配置选项：
 
-**1） Extensions**：这是一个简单的 Portainer CE订阅程序。详细信息和用途可以从附加的窗口中看到。这主要用于维护相应版本的许可证和订阅。
+**1） Extensions**：这是一个简单的 Portainer CE 订阅程序。详细信息和用途可以从附加的窗口中看到。这主要用于维护相应版本的许可证和订阅。
 
 [![Extensions][25]][26]
 
@@ -153,7 +153,7 @@ Status: Downloaded newer image for nginx:latest
 
 类似地，可以通过单击复选框并单击移除按钮来移除此端点。
 
-**4） Registries：** 此选项用于注册的管理。由于docker hub 有各种镜像的注册，因此此功能可用于类似的目的。
+**4） Registries：** 此选项用于注册的管理。由于 docker hub 有各种镜像的注册，因此此功能可用于类似的目的。
 
 [![Registry-Portainer-GUI][39]][40]
 
