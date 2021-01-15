@@ -1,0 +1,27 @@
+name: LCTT Article Checker
+
+on:
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TRAVIS_REPO_SLUG: ${{ github.repository }}
+      TRAVIS_BRANCH: master
+      TRAVIS_PULL_REQUEST: ${{ github.event.number }}
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    steps:
+      - name: Set ENV variables
+        run: |
+          echo "::set-env name=TRAVIS_BRANCH::${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}" 
+          echo "::set-env name=TRAVIS_EVENT_TYPE::$(if [ "schedule" == "${{ github.event_name }}" ]; then echo "cron"; else echo "${{ github.event_name }}"; fi)"
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: "checkout master branch & return to pull request branch"
+        run: CURRENT=$(echo ${{github.ref}} |  sed "s|refs/|refs/remotes/|") && git checkout master && git checkout $CURRENT
+        if: ${{ github.event_name == 'pull_request' }}
+      - name: run check
+        if: ${{ github.event_name == 'pull_request' }}
+        run: sh ./scripts/check.sh;

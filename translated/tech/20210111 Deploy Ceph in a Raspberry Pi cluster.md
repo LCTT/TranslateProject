@@ -7,51 +7,50 @@
 [#]: via: (https://opensource.com/article/21/1/ceph-raspberry-pi)
 [#]: author: (AJ Canlas https://opensource.com/users/ajscanlas)
 
-Deploy Ceph in a Raspberry Pi cluster
+在树莓派集群中部署 Ceph
 ======
-Install Ceph storage using ceph-ansible and deploy it in a Raspberry Pi
-cluster.
+使用 ceph-ansible 安装 Ceph 存储，并将其部署在树莓派集群中。
 ![Vector, generic Raspberry Pi board][1]
 
-[Ceph][2] is an open source software storage platform that provides object, block, and filesystem storage in a unified storage cluster. I first used Ceph when I [integrat][3][ed it with OpenStack][3]. At first, I was confused about why I should use Ceph since storage devices are widely available. But after using it for more than three years, the platform's stability and integrity have proven its value again and again.
+[Ceph][2] 是一个开源软件存储平台，它在统一的存储集群中提供对象、块和文件系统存储。我第一次使用 Ceph 是在 [OpenStack 中集成它][3]的时候。一开始，我很困惑，既然存储设备广泛存在，为什么要使用 Ceph。但在使用了三年多之后，这个平台的稳定性和完整性一再证明了它的价值。
 
-This article will show you how to install Ceph using [ceph-ansible][4] (an officially supported Ansible playbook for Ceph) and deploy it in a Raspberry Pi cluster.
+本文将告诉你如何使用 [ceph-ansible][4]（Ceph 官方支持的 Ansible playbook）安装 Ceph，并将其部署在树莓派集群中。
 
-**Materials:**
+**材料：**
 
-  1. Four Raspberry Pi 4B 4GB models
-  2. Four 32GB microSD cards (boot OS)
-  3. Four Raspberry Pi cases with fans and heatsinks (very important)
-  4. Four Raspberry Pi chargers
-  5. Six 32GB USB flash drives (for the Ceph OSD nodes)
+  1. 树莓派 4B 4GB 型号四台。
+  2. 四张 32GB 的 microSD 卡（启动操作系统）
+  3. 四个树莓派外壳，带风扇和散热片（非常重要）
+  4. 四个树莓派充电器
+  5. 6 个 32GB U 盘（用于 Ceph OSD 节点）
 
 
 
-**Architecture:**
+**架构：**
 
 ![Project architecture][5]
 
-(Aaron John Canlas, [CC BY-SA 4.0][6])
+（Aaron John Canlas, [CC BY-SA 4.0][6]）
 
-Regarding the configuration:
+关于配置：
 
-  * Both the front-end and back-end networks are in the same subnet
-  * The [Ceph Monitor][7] software uses a Raspberry Pi 4B with 4GB RAM
-  * The [Ceph OSD][8] nodes use the same Raspberry Pi model but with two USB flash drives for the OSD disks
+  * 前端和后端网络都在同一个子网中
+  * [Ceph Monitor][7] 软件使用 4GB 内存的树莓派 4B。
+  * [Ceph OSD][8] 节点使用相同的树莓派型号，但有两个 U 盘用于 OSD 磁盘
 
 
 
-### Deploy Ceph using ceph-ansible
+### 使用 ceph-ansible 部署 Ceph
 
-Using Ceph's Ansible repository makes the deployment smooth and simple.
+使用 Ceph 的 Ansible 仓库可以让部署变得顺畅简单
 
-#### 1\. Copy ssh keys to all servers
+#### 1\. 复制 ssh 密钥到所有服务器
 
-I have a common user called `cephadmin` on all servers (each Raspberry Pi is a server in this context). The `cephadmin` user is configured with passwordless `sudo` to make things easier.
+我在所有的服务器上都有一个名为 `cephadmin` 的共同用户（在此背景下，每个树莓派都是一台服务器）。`cephadmin` 用户配置了无密码的 `sudo`，以方便工作。
 
-After generating a key using `ssh-keygen`, deploy all keys using `ssh-copy-id`.
+使用 `ssh-keygen` 生成密钥后，使用 `ssh-copy-id` 部署所有密钥。
 
-I use a Bash for-loop because I'm using consistent and incremental hostnames:
+我使用了一个Bash for 循环，因为我使用的是一致并递增的主机名：
 
 
 ```
@@ -60,18 +59,18 @@ $ for i in {0..3}; \
 done
 ```
 
-You need to accept and enter your password on each one, but you can automate this with `expect`.
+你需要每个接受并输入密码，但你可以用 `expect` 来自动完成。
 
-#### 2\. Clone ceph-ansible and install requirements
+#### 2\. 克隆 ceph-ansible 并安装依赖
 
-Install Git to clone the repository:
+安装 Git 来克隆仓库：
 
 
 ```
 `$ sudo yum install git -y`
 ```
 
-Clone the ceph-ansible repository:
+克隆 ceph-ansible 仓库：
 
 
 ```
@@ -79,30 +78,30 @@ $ git clone <https://github.com/ceph/ceph-ansible.git>
 $ cd ceph-ansible/
 ```
 
-I'm using an AArch64 build of CentOS 7, so I must install some required packages before continuing.
+我使用的是 CentOS 7 的 AArch64 构建，所以在继续之前，我必须安装一些所需的包。
 
-First, Python pip:
+首先安装 Python pip：
 
 
 ```
 `$ sudo yum install python3-pip -y`
 ```
 
-Then the packages ceph-ansible needs:
+接着是 ceph-ansible 需要的包：
 
 
 ```
 `$ sudo yum install python3-devel libffi-devel openssl-devel -y`
 ```
 
-Finally, the requirements `ceph-ansible` needs:
+最后，`ceph-ansible` 需要的依赖：
 
 
 ```
 `$ pip3 install -r requirements.txt --user`
 ```
 
-I received this error:
+我收到了这个错误：
 
 
 ```
@@ -112,27 +111,27 @@ this version only you can also set the environment variable
 CRYPTOGRAPHY_ALLOW_OPENSSL_102 to allow OpenSSL 1.0.2.
 ```
 
-This may be related to the architecture, because I can't replicate the error in a CentOS 7 virtual machine.
+这可能与架构有关，因为我无法在 CentOS 7 虚拟机中复现该错误。
 
-For deployment, export `CRYPTOGRAPHY_ALLOW_OPENSSL_102` to `True` so that Ansible can run:
+部署时，将 `CRYPTOGRAPHY_ALLOW_OPENSSL_102` 导出为 `True`，这样 Ansible 就可以运行了。
 
 
 ```
 `$ export CRYPTOGRAPHY_ALLOW_OPENSSL_102=True`
 ```
 
-#### 3\. Configure ceph-ansible for deployment
+#### 3\. 配置 ceph-ansible 进行部署
 
-Now you're ready to deploy Ceph using ceph-ansible.
+现在你可以使用 ceph-ansible 部署 Ceph 了。
 
-Copy `site.yml.sample` to `site.yml`:
+复制 `site.yml.sample` 到 `site.yml`：
 
 
 ```
 `$ mv site.yml.sample site.yml`
 ```
 
-Create `all.yml` in the `group_vars` directory:
+在 `group_vars` 目录下创建 `all.yml`：
 
 
 ```
@@ -149,7 +148,7 @@ configure_firewall: false
 EOF
 ```
 
-Create `osds.yml` in the `group_vars` directory:
+在 `group_vars` 目录下创建 `osds.yml`：
 
 
 ```
@@ -161,7 +160,7 @@ devices:
 EOF
 ```
 
-Create an inventory file:
+创建一个 inventory 文件：
 
 
 ```
@@ -176,7 +175,7 @@ rpi4b4-3
 EOF
 ```
 
-As of this writing, there is a bug in the ceph-ansible repository (according to this [bug ticket][9]). You can mitigate the bug by editing line 85 and 86 of the roles:
+在写这篇文章的时候，ceph-ansible 仓库里有一个 bug（根据这个 [bug 工单][9]）。你可以通过编辑角色的第 85 行和第 86 行来减轻这个 bug。
 
 
 ```
@@ -184,26 +183,26 @@ As of this writing, there is a bug in the ceph-ansible repository (according to 
     - (wait_for_all_osds_up.stdout | from_json)["osdmap"]["num_osds"] == (wait_for_all_osds_up.stdout | from_json)["osdmap"]["num_up_osds"]
 ```
 
-#### 4\. Deploy Ceph
+#### 4\. 部署 Ceph
 
-Run the Ansible playbook with your inventory file:
+用你的 inventory 文件运行 Ansible playbook：
 
 
 ```
 `$ ansible-playbook -i inventory site.yml`
 ```
 
-After 15–20 minutes, you should see this result:
+15-20 分钟后，你应该看到这个结果：
 
 ![Ceph deployment][10]
 
 (Aaron John Canlas, [CC BY-SA 4.0][6])
 
-### Next steps
+### 下面的步骤
 
-Previously, I [manually deployed][11] an OpenStack cluster in another Raspberry Pi cluster. I hope to integrate it with this one. I'm also looking into deploying with [TripleO][12].
+之前，我在另一个树莓派集群中[手动部署][11]了一个 OpenStack 集群。我希望能将其与这个集群整合在一起。我也在研究用 [TripleO][12] 部署。
 
-The possibilities for Raspberry Pi, Ansible, and OpenStack are endless. Get started with your own experiment, and let me know how it goes in the comments.
+树莓派、Ansible 和 OpenStack 的可能性是无穷的。开始做你自己的实验，并在评论中告诉我结果如何。
 
 --------------------------------------------------------------------------------
 
@@ -211,7 +210,7 @@ via: https://opensource.com/article/21/1/ceph-raspberry-pi
 
 作者：[AJ Canlas][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
