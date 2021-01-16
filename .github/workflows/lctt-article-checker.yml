@@ -14,7 +14,5 @@ jobs:
           fetch-depth: 0
       - name: "checkout master branch & return to pull request branch"
         run: CURRENT=$(echo ${{github.ref}} |  sed "s|refs/|refs/remotes/|") && git checkout master && git checkout $CURRENT
-        if: ${{ github.event_name == 'pull_request' }}
       - name: run check
-        if: ${{ github.event_name == 'pull_request' }}
         run: sh ./scripts/check.sh;
