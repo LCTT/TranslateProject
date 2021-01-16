@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13019-1.html)
 [#]: subject: (Why I like the FED text editor)
 [#]: via: (https://opensource.com/article/21/1/fed-editor)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
@@ -12,7 +12,7 @@
 
 > FED 编辑器让我可以轻松有效地对我的 FreeDOS 项目进行编码。学习如何充分利用这个灵活的 Linux、Windows 和 DOS 编辑器。
 
-![Person using a laptop][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/16/114344hgra9oq4q45mgz9r.jpg)
 
 当我不[在我的 Linux 桌面上工作][2]的时候，我通常是在为一个旧版的 16 位系统写代码。[FreeDOS][3] 是一个开源的 DOS 兼容操作系统，你可以用它来玩经典的 DOS 游戏，运行旧版的商业软件，或者开发嵌入式系统。任何在 MS-DOS 上运行的程序在 FreeDOS 上也应该可以运行。
 
