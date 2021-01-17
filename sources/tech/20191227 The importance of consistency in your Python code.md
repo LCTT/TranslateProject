@@ -8,10 +8,13 @@
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
 The importance of consistency in your Python code
+Python 代码一致性的重要性
 ======
 This is part of a special series about the Zen of Python focusing on the
 12th, 13th, and 14th principles: the roles of ambiguity and obviousness.
 ![Two animated computers waving one missing an arm][1]
+这是有关Python Zen的一个特别系列的一部分，该系列着重于第12、13和14条原则：歧义和明显性的作用。
+！[两台动画计算机挥舞着一只手臂失踪] [1]
 
 The principle of least surprise is [a guideline][2] when designing user interfaces. It says that when the user performs an action, the program should do whatever would surprise the user the least. This is for the same reason kids love reading the same book over and over again: there is nothing more comforting to people than the ability to predict and have those predictions come true.
 
