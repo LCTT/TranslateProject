@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13026-1.html)
 [#]: subject: (Homura: A WINE-based Game Launcher for BSD)
 [#]: via: (https://itsfoss.com/homura-game-launcher-bsd/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
@@ -18,7 +18,7 @@ BSD 不只是用于服务器。人们也将其用于桌面，并执行通常任�
 
 [Homura][2] 是一个能让你在 FreeBSD 上玩 Windows 游戏的工具。它的灵感来自于 [Lutris][3]。它允许你安装和管理多个 Windows 游戏和游戏商店启动器。它主要使用 Wine，但也附带了一些修复和变通的方法来让游戏工作。
 
-Homura 的创建者 [Alexander Vereeken][4] 说，他创建这个应用是因为“当我开始使用 FreeBSD 时，没有有用的程序在 Wine 中安装游戏或启动器，所以我自己创建了一个”。当时，Wine 是唯一的选择。Linux 版本的 Steam 并不存在。
+Homura 的创建者 [Alexander Vereeken][4] 说，他创建这个应用是因为“当我开始使用 FreeBSD 时，没有能用的可以在 Wine 中安装游戏或启动器的程序，所以我自己创建了一个”。当时，Wine 是唯一的选择。Linux 版本的 Steam 并不存在。
 
 ![Homura install list][5]
 
@@ -32,17 +32,13 @@ Homura 的创建者 [Alexander Vereeken][4] 说，他创建这个应用是因为
   * Discord
   * 龙歌 OL
   * GOG
-
-
   * 建造乌托邦
   * 英雄联盟
   * Origin 启动器
   * PokeMMO
-  * 精灵宝可梦绿铀
+  * 精灵宝可梦 绿铀
   * RuneScape
   * Steam
-
-
   * 地铁跑酷
   * Teamspeak
   * 猴岛大冒险 2
@@ -51,9 +47,7 @@ Homura 的创建者 [Alexander Vereeken][4] 说，他创建这个应用是因为
   * 战游游戏中心
   * Itch.io
 
-
-
-Homura 是以动画 [Madoka Magica][6] 中的一个角色命名的。在创建者转移到 GitLab 之前，它最初托管在 GitHub 上。目前它被托管在 Codeberg 上。希望它能暂时留在那里。
+Homura 是以动画 [Madoka Magica][6] 中的一个角色命名的。在创建者转移到 GitLab 之前，它最初托管在 GitHub 上。目前它被托管在 Codeberg 上。希望它现在还能留在那里。
 
 ![Homura][7]
 
@@ -71,11 +65,11 @@ pkg install games/homura
 cd /usr/ports/games/homura/ && make install clean
 ```
 
-安装完成后，你可以从菜单中选择 Homura，或在命令行中输入 `Homura` 来运行它。(在终端中名字必须大写，否则将无法运行。)
+安装完成后，你可以从菜单中选择 Homura，或在命令行中输入 `Homura` 来运行它。（在终端中名字必须大写开头，否则将无法运行。）
 
-如果你通过 Homura 安装 Steam，你需要从 Homura 启动它。如果你从操作系统的菜单中启动它，它目前不会显示。
+如果你通过 Homura 安装 Steam，你需要从 Homura 启动它。如果你想从操作系统的菜单中启动它，它当前不会显示在那里。
 
-Steam 的库和商店标签由内置的网络浏览器显示。由于某些原因，这在 FreeBSD 上是不行的。但如果你从 Homura 的菜单中启动 Steam，它将使用列表模式，工作没有问题。
+Steam 的库和商店标签由内置的 Web 浏览器显示。由于某些原因，这在 FreeBSD 上是不行的。但如果你从 Homura 的菜单中启动 Steam，它将使用列表模式，工作没有问题。
 
 ### 体验
 
@@ -83,17 +77,15 @@ Steam 的库和商店标签由内置的网络浏览器显示。由于某些原�
 
 ![Homura Main Menu][8]
 
-我也尝试安装 GOG 启动器。由于某些原因，它对我不起作用。加载页面会弹出，但什么都不会发生。我打算提交一个问题。我没有测试任何安装程序/启动器，因为我没有使用它们。
+我也尝试安装 GOG 启动器。由于某些原因，它对我不起作用。加载页面会弹出，但什么都不会发生。我打算提交一个议题。我没有测试过任何安装程序/启动器，因为我没有使用它们。
 
-### 最后想法
+### 总结
 
 并不是所有的东西都能顺利地与 Homura 一起使用，但我可以玩一些我最喜欢的游戏。
 
 ![Rise of Nation on BSD][9]
 
 这款应用是一个典型的用户有了需求，并决定去填补它的案例。通过这样做，他让其他人的生活变得更轻松。希望这个应用能让人们更容易地开始使用 FreeBSD 作为他们的操作系统。
-
-如果你觉得这篇文章有趣，请花点时间在社交媒体、Hacker News 或 [Reddit][10] 上分享。
 
 --------------------------------------------------------------------------------
 
@@ -102,7 +94,7 @@ via: https://itsfoss.com/homura-game-launcher-bsd/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
