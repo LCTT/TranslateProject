@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (XYenChi )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,13 +7,13 @@
 [#]: via: (https://opensource.com/article/19/3/when-web-grew)
 [#]: author: (Mike Bursell https://opensource.com/users/mikecamel)
 
-When the web grew up: A browser story
+web 的诞生：浏览器的故事grew up: A browser story
 ======
-A personal story of when the internet came of age.
+互联网诞生之处的个人故事。A personal story of when the internet came of age.
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_Internet_Sign.png?itok=5MFGKs14)
 
-Recently, I [shared how][1] upon leaving university in 1994 with a degree in English literature and theology, I somehow managed to land a job running a web server in a world where people didn't really know what a web server was yet. And by "in a world," I don't just mean within the organisation in which I worked, but the world in general. The web was new—really new—and people were still trying to get their heads around it.
+最近，我Recently, I [分享了shared how][1] 获得英文文学和神学学位离开大学，在一个大家都还不知道 web 服务器是什么的地方，设法找到一份运行 web 服务器的工作。upon leaving university in 1994 with a degree in English literature and theology, I somehow managed to land a job running a web server in a world where people didn't really know what a web server was yet. 那“地方”，我不仅仅指的是我工作的组织，而是泛指所有地方。And by "in a world," I don't just mean within the organisation in which I worked, but the world in general. Web 那时当真是全新的——人们还正尝试理出头绪。The web was new—really new—and people were still trying to get their heads around it.
 
 That's not to suggest that the place where I was working—an academic publisher—particularly "got it" either. This was a world in which a large percentage of the people visiting their website were still running 28k8 modems. I remember my excitement in getting a 33k6 modem. At least we were past the days of asymmetric upload/download speeds,1 where 1200/300 seemed like an eminently sensible bandwidth description. This meant that the high-design, high-colour, high-resolution documents created by the print people (with whom I shared a floor) were completely impossible on the web. I wouldn't allow anything bigger than a 40k GIF on the front page of the website, and that was pushing it for many of our visitors. Anything larger than 60k or so would be explicitly linked as a standalone image from a thumbnail on the referring page.
 
