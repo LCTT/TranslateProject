@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How to get Battery status notification when a battery is full or low)
@@ -10,26 +10,24 @@
 如何在电池充满或低电量时获得电池状态通知
 ======
 
-对于类 Unix 用户来说，Linux 笔记本是不错的选择，但它经常会耗尽电池。
+![](https://img.linux.net.cn/data/attachment/album/202101/20/231310avo3kzv67vkm3tz7.jpg)
 
-我试过很多 Linux 操作系统，但没有像 Windows 那样电池寿命长。
+对于类 Unix 用户来说，Linux 笔记本是不错的选择，但它经常会耗尽电池。我试过很多 Linux 操作系统，但没有像 Windows 那样电池寿命长。
 
-充电时间长了会对电池造成损害，所以在电池 100% 充满时要拔掉电源线。
+充电时间长了会对电池造成损害，所以在电池 100% 充满时要拔掉电源线。电池充电或放电时没有默认的应用程序来通知，需要安装第三方应用来通知你。
 
-电池充电或放电时没有默认的应用程序来通知，需要安装第三方应用来通知你。
-
-为此，我通常会安装 **[Battery Monitor][1]**，但它已经被废弃，所以我创建了一个 shell 脚本来获取通知。
+为此，我通常会安装 [Battery Monitor][1]，但它已经被废弃，所以我创建了一个 shell 脚本来获取通知。
 
 笔记本电池充放电状态可以通过以下两个命令来识别。
 
-使用 acpi 命令。
+使用 `acpi` 命令。
 
 ```
 $ acpi -b
 Battery 0: Discharging, 71%, 00:58:39 remaining
 ```
 
-使用 upower 命令。
+使用 `upower` 命令。
 
 ```
 $ upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -w 'state|percentage' | awk '{print $2}'
@@ -39,35 +37,37 @@ discharging
 
 ### 方法 1：当电池电量高于 95% 或低于 20% 时，用 Shell 脚本发送警报
 
-这个脚本在启动时在后台运行，每分钟检查一次电池状态，然后在电池电量超过 95% 或放电低于 20% 时发送通知。
+这个脚本在启动时在后台运行，每分钟检查一次电池状态，然后在电池电量超过 95% 或放电时电量低于 20% 时发送通知。
 
 警报会直到你的电池电量超过 20% 或低于 95% 时才会停止。
 
 ```
 $ sudo vi /opt/scripts/battery-status.sh
+```
 
+```
 #!/bin/bash
 while true
 do
-battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
-if [ $battery_level -ge 95 ]; then
-notify-send "Battery Full" "Level: ${battery_level}%"
-paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
-elif [ $battery_level -le 20 ]; then
-notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
-paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
-fi
-sleep 60
+  battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
+   if [ $battery_level -ge 95 ]; then
+      notify-send "Battery Full" "Level: ${battery_level}%"
+      paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+    elif [ $battery_level -le 20 ]; then
+      notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
+      paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+  fi
+ sleep 60
 done
 ```
 
-脚本完成后，设置可执行权限。
+脚本完成后，设置可执行权限：
 
 ```
 $ sudo chmod +x /opt/scripts/battery-status.sh
 ```
 
-最后，将该脚本添加到用户配置文件的底部。对于全局范围来说，你需要在 /etc/profile 文件中添加该脚本。
+最后，将该脚本添加到用户配置文件的底部。对于全局范围来说，你需要在 `/etc/profile` 文件中添加该脚本。
 
 ```
 $ vi /home/magi/.profile
@@ -75,17 +75,17 @@ $ vi /home/magi/.profile
 /opt/scripts/battery-status.sh &
 ```
 
-**[重启你的 Linux 系统][2]**来检查这点。
+[重启你的 Linux 系统][2]来检查这点。
 
 ```
 $ sudo reboot
 ```
 
-### 方法 2：当电池充电（高于 95%）或放电（低于 20%）时发送通知的 Shell 脚本。
+### 方法 2：当电池充电（高于 95%）或放电（低于 20%）时发送通知的 Shell 脚本
 
 这个脚本与上面的脚本类似，但它是由交流适配器负责。
 
-如果你的交流适配器插上了，而且电池的电量超过 95%，它就会发出一个带有声音的通知，但是这个通知不会停止，直到你拔掉交流适配器。
+如果你插上了交流适配器，而且电池的电量超过 95%，它就会发出一个带有声音的通知，但是这个通知不会停止，直到你拔掉交流适配器。
 
 ![][3]
 
@@ -95,34 +95,36 @@ $ sudo reboot
 
 ```
 $ sudo vi /opt/scripts/battery-status-1.sh
+```
 
+```
 #!/bin/bash
-while true
-do
-export DISPLAY=:0.0
-battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
-if on_ac_power; then
-if [ $battery_level -ge 95 ]; then
-notify-send "Battery Full" "Level: ${battery_level}% "
-paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
-fi
-else
-if [ $battery_level -le 20 ]; then
-notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
-paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
-fi
-fi
-sleep 60
+   while true
+    do
+       export DISPLAY=:0.0
+       battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
+       if on_ac_power; then
+           if [ $battery_level -ge 95 ]; then
+              notify-send "Battery Full" "Level: ${battery_level}% "
+              paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+           fi
+       else
+           if [ $battery_level -le 20 ]; then
+              notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
+              paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+           fi
+       fi
+     sleep 60
 done
 ```
 
-脚本完成后，设置执行权限。
+脚本完成后，设置执行权限：
 
 ```
 $ sudo chmod +x /opt/scripts/battery-status-1.sh
 ```
 
-最后将脚本添加到用户 **profile** 文件的底部。对于全局范围来说，你需要在 /etc/profile 文件中添加该脚本。
+最后将脚本添加到用户配置文件的底部。对于全局范围来说，你需要在 `/etc/profile` 文件中添加该脚本。
 
 ```
 $ vi /home/magi/.profile
@@ -130,13 +132,13 @@ $ vi /home/magi/.profile
 /opt/scripts/battery-status-1.sh &
 ```
 
-重启系统来检查。
+重启系统来检查：
 
 ```
 $ sudo reboot
 ```
 
-**参考：** [stackexchange][4]
+参考： [stackexchange][4]
 
 --------------------------------------------------------------------------------
 
