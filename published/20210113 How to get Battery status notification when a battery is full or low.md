@@ -91,7 +91,7 @@ $ sudo reboot
 
 如果你拔掉交流适配器，你将永远不会再看到通知，直到你的电池电量下降到 20%。
 
-![][3]
+![][5]
 
 ```
 $ sudo vi /opt/scripts/battery-status-1.sh
@@ -155,5 +155,6 @@ via: https://www.2daygeek.com/linux-low-full-charge-discharge-battery-notificati
 [b]: https://github.com/lujun9972
 [1]: https://www.2daygeek.com/category/battery-monitor/
 [2]: https://www.2daygeek.com/6-commands-to-shutdown-halt-poweroff-reboot-the-linux-system/
-[3]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+[3]: https://i0.wp.com/www.2daygeek.com/wp-content/uploads/2021/01/linux-low-full-battery-notification-2.png?w=1046&ssl=1
 [4]: https://unix.stackexchange.com/questions/60778/how-can-i-get-an-alert-when-my-battery-is-about-to-die-in-linux-mint
+[5]: https://i1.wp.com/www.2daygeek.com/wp-content/uploads/2021/01/linux-low-full-battery-notification-3.png?w=1029&ssl=1
