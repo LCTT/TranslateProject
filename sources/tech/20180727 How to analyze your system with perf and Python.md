@@ -21,7 +21,7 @@ Modern computational systems have many streams of execution:
 
   * Often, very large systems are created by literally wiring together smaller systems. At IBM, these smaller systems are sometimes called CECs (short for Central Electronics Complexes and pronounced "keks").
   * There are multiple sockets for processor modules in each system.
-  * There are sometimes multiple chips per socket (in the form of dual-chip modules—DCMs—or multi-chip modules—MCMs).
+  * There are sometimes multiple chips per socket (in the form of dual-chip modules閳ユ摖CMs閳ユ攼r multi-chip modules閳ユ摤CMs).
   * There are multiple cores per chip.
   * There are multiple threads per core.
 
@@ -60,20 +60,20 @@ Software events are predefined in the kernel, can be predefined in userspace cod
 The `stat` subcommand of `perf` will run a command, count some events commonly found interesting, and produce a simple report:
 ```
 Performance counter stats for './load 100000':
- 
-      90537.006424      task-clock:u (msec)       #    1.000 CPUs utilized          
-                 0      context-switches:u        #    0.000 K/sec                  
-                 0      cpu-migrations:u          #    0.000 K/sec                  
-               915      page-faults:u             #    0.010 K/sec                  
-   386,836,206,133      cycles:u                  #    4.273 GHz                      (66.67%)
-     3,488,523,420      stalled-cycles-frontend:u #    0.90% frontend cycles idle     (50.00%)
-   287,222,191,827      stalled-cycles-backend:u  #   74.25% backend cycles idle      (50.00%)
-   291,102,378,513      instructions:u            #    0.75  insn per cycle        
-                                                  #    0.99  stalled cycles per insn  (66.67%)
-    43,730,320,236      branches:u                #  483.010 M/sec                    (50.00%)
-       822,030,340      branch-misses:u           #    1.88% of all branches          (50.00%)
- 
-      90.539972837 seconds time elapsed
+鑱�
+鑱� 鑱� 鑱� 90537.006424 鑱� 鑱� 鑱絫ask-clock:u (msec) 鑱� 鑱� 鑱� # 鑱� 鑱�1.000 CPUs utilized 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�0 鑱� 鑱� 鑱絚ontext-switches:u 鑱� 鑱� 鑱� 鑱�# 鑱� 鑱�0.000 K/sec 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�0 鑱� 鑱� 鑱絚pu-migrations:u 鑱� 鑱� 鑱� 鑱� 鑱�# 鑱� 鑱�0.000 K/sec 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�915 鑱� 鑱� 鑱絧age-faults:u 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # 鑱� 鑱�0.010 K/sec 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱�386,836,206,133 鑱� 鑱� 鑱絚ycles:u 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�# 鑱� 鑱�4.273 GHz 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�(66.67%)
+鑱� 鑱� 鑱�3,488,523,420 鑱� 鑱� 鑱絪talled-cycles-frontend:u # 鑱� 鑱�0.90% frontend cycles idle 鑱� 鑱� (50.00%)
+鑱� 鑱�287,222,191,827 鑱� 鑱� 鑱絪talled-cycles-backend:u 鑱�# 鑱� 74.25% backend cycles idle 鑱� 鑱� 鑱�(50.00%)
+鑱� 鑱�291,102,378,513 鑱� 鑱� 鑱絠nstructions:u 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�# 鑱� 鑱�0.75 鑱絠nsn per cycle 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # 鑱� 鑱�0.99 鑱絪talled cycles per insn 鑱�(66.67%)
+鑱� 鑱� 43,730,320,236 鑱� 鑱� 鑱絙ranches:u 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�# 鑱�483.010 M/sec 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�(50.00%)
+鑱� 鑱� 鑱� 鑱�822,030,340 鑱� 鑱� 鑱絙ranch-misses:u 鑱� 鑱� 鑱� 鑱� 鑱� # 鑱� 鑱�1.88% of all branches 鑱� 鑱� 鑱� 鑱� 鑱�(50.00%)
+鑱�
+鑱� 鑱� 鑱� 90.539972837 seconds time elapsed
 ```
 
 #### perf record, perf report, and perf annotate
@@ -87,12 +87,12 @@ $ perf report --stdio --show-nr-samples --percent-limit 4
 # Samples: 366K of event 'cycles:u'
 # Event count (approx.): 388851358382
 #
-# Overhead       Samples  Command  Shared Object      Symbol                                          
-# ........  ............  .......  .................  ................................................
+# Overhead 鑱� 鑱� 鑱� Samples 鑱紺ommand 鑱絊hared Object 鑱� 鑱� 鑱絊ymbol 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+# ........ 鑱�............ 鑱�....... 鑱�................. 鑱�................................................
 #
-    62.31%        228162  load     load               [.] main
-    19.29%         70607  load     load               [.] sum_add
-    18.33%         67117  load     load               [.] sum_sub
+鑱� 鑱� 62.31% 鑱� 鑱� 鑱� 鑱�228162 鑱絣oad 鑱� 鑱� load 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [.] main
+鑱� 鑱� 19.29% 鑱� 鑱� 鑱� 鑱� 70607 鑱絣oad 鑱� 鑱� load 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [.] sum_add
+鑱� 鑱� 18.33% 鑱� 鑱� 鑱� 鑱� 67117 鑱絣oad 鑱� 鑱� load 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [.] sum_sub
 ```
 
 This example shows a program that spends about 60% of its running time in the function `main` and about 20% each in subfunctions `sum_sub` and `sum_add`. Note that the default event used by `perf record` is "cycles." Later examples will show how to use `perf record` with other events.
@@ -103,42 +103,42 @@ $ perf report --stdio --show-nr-samples --percent-limit 4 --sort=srcline
 # Samples: 366K of event 'cycles:u'
 # Event count (approx.): 388851358382
 #
-# Overhead       Samples  Source:Line                        
-# ........  ............  ...................................
+# Overhead 鑱� 鑱� 鑱� Samples 鑱絊ource:Line 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+# ........ 鑱�............ 鑱�...................................
 #
-    19.40%         71031  load.c:58
-    16.16%         59168  load.c:18
-    15.11%         55319  load.c:14
-    13.30%         48690  load.c:66
-    13.23%         48434  load.c:70
-     4.58%         16767  load.c:62
-     4.01%         14677  load.c:56
+鑱� 鑱� 19.40% 鑱� 鑱� 鑱� 鑱� 71031 鑱絣oad.c:58
+鑱� 鑱� 16.16% 鑱� 鑱� 鑱� 鑱� 59168 鑱絣oad.c:18
+鑱� 鑱� 15.11% 鑱� 鑱� 鑱� 鑱� 55319 鑱絣oad.c:14
+鑱� 鑱� 13.30% 鑱� 鑱� 鑱� 鑱� 48690 鑱絣oad.c:66
+鑱� 鑱� 13.23% 鑱� 鑱� 鑱� 鑱� 48434 鑱絣oad.c:70
+鑱� 鑱� 鑱�4.58% 鑱� 鑱� 鑱� 鑱� 16767 鑱絣oad.c:62
+鑱� 鑱� 鑱�4.01% 鑱� 鑱� 鑱� 鑱� 14677 鑱絣oad.c:56
 ```
 
 Further, `perf annotate` can show statistics for each instruction of the program:
 ```
 $ perf annotate --stdio
-Percent |      Source code & Disassembly of load for cycles:u (70607 samples)
+Percent | 鑱� 鑱� 鑱絊ource code & Disassembly of load for cycles:u (70607 samples)
 ------------------------------------------------------------------------------
-         :      0000000010000774 <sum_add>:
-         :      int sum_add(int sum, int value) {
-   12.60 :        10000774:   std     r31,-8(r1)
-    0.02 :        10000778:   stdu    r1,-64(r1)
-    0.00 :        1000077c:   mr      r31,r1
-   41.90 :        10000780:   mr      r10,r3
-    0.00 :        10000784:   mr      r9,r4
-    0.05 :        10000788:   stw     r10,32(r31)
-   23.78 :        1000078c:   stw     r9,36(r31)
-         :              return (sum + value);
-    0.76 :        10000790:   lwz     r10,32(r31)
-    0.00 :        10000794:   lwz     r9,36(r31)
-   14.75 :        10000798:   add     r9,r10,r9
-    0.00 :        1000079c:   extsw   r9,r9
-         :      }
-    6.09 :        100007a0:   mr      r3,r9
-    0.02 :        100007a4:   addi    r1,r31,64
-    0.03 :        100007a8:   ld      r31,-8(r1)
-    0.00 :        100007ac:   blr
+鑱� 鑱� 鑱� 鑱� 鑱�: 鑱� 鑱� 鑱�0000000010000774 <sum_add>:
+鑱� 鑱� 鑱� 鑱� 鑱�: 鑱� 鑱� 鑱絠nt sum_add(int sum, int value) {
+鑱� 鑱�12.60 : 鑱� 鑱� 鑱� 鑱�10000774: 鑱� std 鑱� 鑱� r31,-8(r1)
+鑱� 鑱� 0.02 : 鑱� 鑱� 鑱� 鑱�10000778: 鑱� stdu 鑱� 鑱絩1,-64(r1)
+鑱� 鑱� 0.00 : 鑱� 鑱� 鑱� 鑱�1000077c: 鑱� mr 鑱� 鑱� 鑱絩31,r1
+鑱� 鑱�41.90 : 鑱� 鑱� 鑱� 鑱�10000780: 鑱� mr 鑱� 鑱� 鑱絩10,r3
+鑱� 鑱� 0.00 : 鑱� 鑱� 鑱� 鑱�10000784: 鑱� mr 鑱� 鑱� 鑱絩9,r4
+鑱� 鑱� 0.05 : 鑱� 鑱� 鑱� 鑱�10000788: 鑱� stw 鑱� 鑱� r10,32(r31)
+鑱� 鑱�23.78 : 鑱� 鑱� 鑱� 鑱�1000078c: 鑱� stw 鑱� 鑱� r9,36(r31)
+鑱� 鑱� 鑱� 鑱� 鑱�: 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絩eturn (sum + value);
+鑱� 鑱� 0.76 : 鑱� 鑱� 鑱� 鑱�10000790: 鑱� lwz 鑱� 鑱� r10,32(r31)
+鑱� 鑱� 0.00 : 鑱� 鑱� 鑱� 鑱�10000794: 鑱� lwz 鑱� 鑱� r9,36(r31)
+鑱� 鑱�14.75 : 鑱� 鑱� 鑱� 鑱�10000798: 鑱� add 鑱� 鑱� r9,r10,r9
+鑱� 鑱� 0.00 : 鑱� 鑱� 鑱� 鑱�1000079c: 鑱� extsw 鑱� r9,r9
+鑱� 鑱� 鑱� 鑱� 鑱�: 鑱� 鑱� 鑱絵
+鑱� 鑱� 6.09 : 鑱� 鑱� 鑱� 鑱�100007a0: 鑱� mr 鑱� 鑱� 鑱絩3,r9
+鑱� 鑱� 0.02 : 鑱� 鑱� 鑱� 鑱�100007a4: 鑱� addi 鑱� 鑱絩1,r31,64
+鑱� 鑱� 0.03 : 鑱� 鑱� 鑱� 鑱�100007a8: 鑱� ld 鑱� 鑱� 鑱絩31,-8(r1)
+鑱� 鑱� 0.00 : 鑱� 鑱� 鑱� 鑱�100007ac: 鑱� blr
 ```
 
 (Note: this code is not optimized.)
@@ -154,28 +154,28 @@ Similar to the `top` command, which displays (at a regular update interval) the 
 The examples thus far have used the default event, run cycles. There are hundreds and perhaps thousands of events of different types. `perf list` will show them all. Following are just a few examples:
 ```
 $ perf list
-  instructions                                       [Hardware event]
-  context-switches OR cs                             [Software event]
-  L1-icache-loads                                    [Hardware cache event]
-  mem_access OR cpu/mem_access/                      [Kernel PMU event]
+鑱� instructions 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Hardware event]
+鑱� context-switches OR cs 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Software event]
+鑱� L1-icache-loads 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絒Hardware cache event]
+鑱� mem_access OR cpu/mem_access/ 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絒Kernel PMU event]
 cache:
-  pm_data_from_l2                                  
-       [The processor's data cache was reloaded from local core's L2 due to a demand load]
+鑱� pm_data_from_l2 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱絒The processor's data cache was reloaded from local core's L2 due to a demand load]
 floating point:
-  pm_fxu_busy                                      
-       [fxu0 busy and fxu1 busy]
+鑱� pm_fxu_busy 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱絒fxu0 busy and fxu1 busy]
 frontend:
-  pm_br_mpred_cmpl                                  
-       [Number of Branch Mispredicts]
+鑱� pm_br_mpred_cmpl 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱絒Number of Branch Mispredicts]
 memory:
-  pm_data_from_dmem                                
-       [The processor's data cache was reloaded from another chip's memory on the same Node or Group (Distant) due to a demand load]
-  pm_data_from_lmem                                
-       [The processor's data cache was reloaded from the local chip's Memory due to a demand load]
-  rNNN                                               [Raw hardware event descriptor]
-  raw_syscalls:sys_enter                             [Tracepoint event]
-  syscalls:sys_enter_chmod                           [Tracepoint event]
-  sdt_libpthread:pthread_create                      [SDT event]
+鑱� pm_data_from_dmem 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱絒The processor's data cache was reloaded from another chip's memory on the same Node or Group (Distant) due to a demand load]
+鑱� pm_data_from_lmem 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱絒The processor's data cache was reloaded from the local chip's Memory due to a demand load]
+鑱� rNNN 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Raw hardware event descriptor]
+鑱� raw_syscalls:sys_enter 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Tracepoint event]
+鑱� syscalls:sys_enter_chmod 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Tracepoint event]
+鑱� sdt_libpthread:pthread_create 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絒SDT event]
 ```
 
 Events labeled as `Hardware event`, `Hardware cache event`, `Kernel PMU event`, and most (if not all) of the events under the categories like `cache`, `floating point`, `frontend`, and `memory` are hardware events counted by the hardware and triggered each time a certain count is reached. Once triggered, an entry is made into the kernel trace buffer with the current state of the associated task. `Raw hardware event` codes are alphanumeric encodings of the hardware events. These are mostly needed when the hardware is newer than the kernel and the user needs to enable events that are new for that hardware. Users will rarely, if ever, need to use raw event codes.
@@ -190,27 +190,27 @@ Enabling SDTs is easy. First, make the SDTs for a certain library known to `perf
 ```
 $ perf buildid-cache -v --add /lib/powerpc64le-linux-gnu/libpthread.so.0
 $ perf list | grep libpthread
-[…]
-  sdt_libpthread:pthread_create                      [SDT event]
-[…]
+[閳ヮ泝
+鑱� sdt_libpthread:pthread_create 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絒SDT event]
+[閳ヮ泝
 ```
 
 Then, turn SDT definitions into available tracepoints:
 ```
 $ /usr/bin/sudo perf probe sdt_libpthread:pthread_create
 Added new event:
-  sdt_libpthread:pthread_create (on %pthread_create in /lib/powerpc64le-linux-gnu/libpthread-2.27.so)
+鑱� sdt_libpthread:pthread_create (on %pthread_create in /lib/powerpc64le-linux-gnu/libpthread-2.27.so)
 You can now use it in all perf tools, such as:
-    perf record -e sdt_libpthread:pthread_create -aR sleep 1
+鑱� 鑱� perf record -e sdt_libpthread:pthread_create -aR sleep 1
 $ perf record -a -e sdt_libpthread:pthread_create ./test
 [ perf record: Woken up 1 times to write data ]
 [ perf record: Captured and wrote 0.199 MB perf.data (9 samples) ]
 ```
 
-Note that any location in an application or library can be made into a tracepoint. To find functions in an application that can be made into tracepoints, use `perf probe` with `–funcs`:
+Note that any location in an application or library can be made into a tracepoint. To find functions in an application that can be made into tracepoints, use `perf probe` with `閳ユ徎uncs`:
 ```
-$ perf probe –x ./load --funcs
-[…]
+$ perf probe 閳ユ悪 ./load --funcs
+[閳ヮ泝
 main
 sum_add
 sum_sub
@@ -218,14 +218,14 @@ sum_sub
 
 To enable the function `main` of the `./load` application as a tracepoint:
 ```
-/usr/bin/sudo perf probe –x ./load main
+/usr/bin/sudo perf probe 閳ユ悪 ./load main
 Added new event:
-  probe_load:main      (on main in /home/pc/projects/load-2.1pc/load)
+鑱� probe_load:main 鑱� 鑱� 鑱�(on main in /home/pc/projects/load-2.1pc/load)
 You can now use it in all perf tools, such as:
-    perf record –e probe_load:main –aR sleep 1
+鑱� 鑱� perf record 閳ユ徍 probe_load:main 閳ユ彸R sleep 1
 $ perf list | grep load:main
-  probe_load:main                                     [Tracepoint event]
-$ perf record –e probe_load:main ./load
+鑱� probe_load:main 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Tracepoint event]
+$ perf record 閳ユ徍 probe_load:main ./load
 [ perf record: Woken up 1 times to write data ]
 [ perf record: Captured and wrote 0.024 MB perf.data (1 samples) ]
 ```
@@ -235,7 +235,7 @@ $ perf record –e probe_load:main ./load
 Continuing the previous example, `perf script` can be used to walk through the `perf.data` file and output the contents of each record:
 ```
 $ perf script
-            Load 16356 [004] 80526.760310: probe_load:main: (4006a2)
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� Load 16356 [004] 80526.760310: probe_load:main: (4006a2)
 ```
 
 ### Processing perf trace data
@@ -264,58 +264,58 @@ One of the last examples above showed how `perf script` is used for walking thro
 ```
 $ perf script -l
 List of available trace scripts:
-  rw-by-pid                            system-wide r/w activity
-  rwtop [interval]                     system-wide r/w top
-  wakeup-latency                       system-wide min/max/avg wakeup latency
-  failed-syscalls [comm]               system-wide failed syscalls
-  rw-by-file <comm>                    r/w activity for a program, by file
-  failed-syscalls-by-pid [comm]        system-wide failed syscalls, by pid
-  intel-pt-events                      print Intel PT Power Events and PTWRITE
-  syscall-counts-by-pid [comm]         system-wide syscall counts, by pid
-  export-to-sqlite [database name] [columns] [calls] export perf data to a sqlite3 database
-  futex-contention                     futext contention measurement
-  sctop [comm] [interval]              syscall top
-  event_analyzing_sample               analyze all perf samples
-  net_dropmonitor                      display a table of dropped frames
-  compaction-times [-h] [-u] [-p|-pv] [-t | [-m] [-fs] [-ms]] [pid|pid-range|comm-regex] display time taken by mm compaction
-  export-to-postgresql [database name] [columns] [calls] export perf data to a postgresql database
-  stackcollapse                        produce callgraphs in short form for scripting use
-  netdev-times [tx] [rx] [dev=] [debug] display a process of packet and processing time
-  syscall-counts [comm]                system-wide syscall counts
-  sched-migration                      sched migration overview
+鑱� rw-by-pid 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絪ystem-wide r/w activity
+鑱� rwtop [interval] 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� system-wide r/w top
+鑱� wakeup-latency 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� system-wide min/max/avg wakeup latency
+鑱� failed-syscalls [comm] 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� system-wide failed syscalls
+鑱� rw-by-file <comm> 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絩/w activity for a program, by file
+鑱� failed-syscalls-by-pid [comm] 鑱� 鑱� 鑱� 鑱絪ystem-wide failed syscalls, by pid
+鑱� intel-pt-events 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絧rint Intel PT Power Events and PTWRITE
+鑱� syscall-counts-by-pid [comm] 鑱� 鑱� 鑱� 鑱� system-wide syscall counts, by pid
+鑱� export-to-sqlite [database name] [columns] [calls] export perf data to a sqlite3 database
+鑱� futex-contention 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� futext contention measurement
+鑱� sctop [comm] [interval] 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絪yscall top
+鑱� event_analyzing_sample 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� analyze all perf samples
+鑱� net_dropmonitor 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絛isplay a table of dropped frames
+鑱� compaction-times [-h] [-u] [-p|-pv] [-t | [-m] [-fs] [-ms]] [pid|pid-range|comm-regex] display time taken by mm compaction
+鑱� export-to-postgresql [database name] [columns] [calls] export perf data to a postgresql database
+鑱� stackcollapse 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絧roduce callgraphs in short form for scripting use
+鑱� netdev-times [tx] [rx] [dev=] [debug] display a process of packet and processing time
+鑱� syscall-counts [comm] 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絪ystem-wide syscall counts
+鑱� sched-migration 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絪ched migration overview
 $ perf script failed-syscalls-by-pid /bin/ls
- 
+鑱�
 syscall errors:
- 
-comm [pid]                           count
-------------------------------  ----------
- 
+鑱�
+comm [pid] 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� count
+------------------------------ 鑱�----------
+鑱�
 ls [18683]
-  syscall: access          
-    err = ENOENT                         1
-  syscall: statfs          
-    err = ENOENT                         1
-  syscall: ioctl          
-    err = ENOTTY                         3
+鑱� syscall: access 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� err = ENOENT 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 1
+鑱� syscall: statfs 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� err = ENOENT 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 1
+鑱� syscall: ioctl 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� err = ENOTTY 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 3
 ```
 
 What do these scripts look like? Let's find out.
 ```
 $ locate failed-syscalls-by-pid
 /usr/libexec/perf-core/scripts/python/failed-syscalls-by-pid.py
-[…]
-$ rpm –qf /usr/libexec/perf-core/scripts/python/failed-syscalls-by-pid.py
+[閳ヮ泝
+$ rpm 閳ユ悗f /usr/libexec/perf-core/scripts/python/failed-syscalls-by-pid.py
 perf-4.14.0-46.el7a.x86_64
 $ $ ls /usr/libexec/perf-core/scripts
-perl  python
+perl 鑱絧ython
 $ perf script -s lang
- 
+鑱�
 Scripting language extensions (used in perf script -s [spec:]script.[spec]):
- 
-  Perl                                       [Perl]
-  pl                                         [Perl]
-  Python                                     [Python]
-  py                                         [Python]
+鑱�
+鑱� Perl 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Perl]
+鑱� pl 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Perl]
+鑱� Python 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Python]
+鑱� py 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Python]
 ```
 
 So, these scripts come with `perf`, and both Python and Perl are supported languages.
@@ -327,25 +327,25 @@ Note that for the entirety of this content, I will refer exclusively to Python.
 How do these scripts do what they do? Here are important extracts from `/usr/libexec/perf-core/scripts/python/failed-syscalls-by-pid.py`:
 ```
 def raw_syscalls__sys_exit(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, id, ret):
-[…]
-        if ret < 0:
-[…]
-                        syscalls[common_comm][common_pid][id][ret] += 1
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, id, ret):
+[閳ヮ泝
+鑱� 鑱� 鑱� 鑱� if ret < 0:
+[閳ヮ泝
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� syscalls[common_comm][common_pid][id][ret] += 1
 ```
 
 The function `raw_syscalls__sys_exit` has parameters for all the data for the associated event. The rest of the function only increments a counter associated with the command, process ID, and system call. The rest of the code doesn't do that much. Most of the complexity is in the function signature for the event-handling routine.
 
 Fortunately, `perf` makes it easy to figure out the proper signatures for various tracepoint event-handling functions.
 
-#### perf script –gen-script
+#### perf script 閳ユ徏en-script
 
 For the `raw_syscalls` events, we can generate a trace containing just those events:
 ```
 $ perf list | grep raw_syscalls
-  raw_syscalls:sys_enter                             [Tracepoint event]
-  raw_syscalls:sys_exit                              [Tracepoint event]
+鑱� raw_syscalls:sys_enter 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� [Tracepoint event]
+鑱� raw_syscalls:sys_exit 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絒Tracepoint event]
 $ perf record -e 'raw_syscalls:*' /bin/ls >/dev/null
 [ perf record: Woken up 1 times to write data ]
 [ perf record: Captured and wrote 0.025 MB perf.data (176 samples) ]
@@ -360,32 +360,32 @@ generated Python script: perf-script.py
 What do we find in the script?
 ```
 def raw_syscalls__sys_exit(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, id, ret):
-[…]
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, id, ret):
+[閳ヮ泝
 def raw_syscalls__sys_enter(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, id, args):
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, id, args):
 ```
 
 Both event-handling functions are specified with their signatures. Nice!
 
-Note that this script works with `perf script –s`:
+Note that this script works with `perf script 閳ユ悞`:
 ```
 $ perf script -s ./perf-script.py
 in trace_begin
-raw_syscalls__sys_exit     7 94571.445908134    21117 ls                    id=0, ret=0
-raw_syscalls__sys_enter     7 94571.445942946    21117 ls                    id=45, args=���?bc���?�
-[…]
+raw_syscalls__sys_exit 鑱� 鑱� 7 94571.445908134 鑱� 鑱�21117 ls 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絠d=0, ret=0
+raw_syscalls__sys_enter 鑱� 鑱� 7 94571.445942946 鑱� 鑱�21117 ls 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絠d=45, args=閿熸枻鎷烽敓锟�?bc閿熸枻鎷烽敓锟�?閿燂拷
+[閳ヮ泝
 ```
 
 Now we have a template on which to base writing a Python script to parse the events of interest for reporting system utilization.
 
 ### perf scripting
 
-The Python scripts generated by `perf script –gen-script` are not directly executable. They must be invoked by `perf`:
+The Python scripts generated by `perf script 閳ユ徏en-script` are not directly executable. They must be invoked by `perf`:
 ```
-$ perf script –s ./perf-script.py
+$ perf script 閳ユ悞 ./perf-script.py
 ```
 
 What's really going on here?
@@ -590,7 +590,7 @@ def raw_syscalls__sys_enter(event_name, context, common_cpu, common_secs, common
     task.cpus[common_cpu] = CPU()
 
   # compute time spent in the previous state ('user')
-  delta = timestamp – task.timestamp
+  delta = timestamp 閳ワ拷 task.timestamp
   # accumulate 'user' time for this task/CPU
   task.cpus[task.cpu].user += delta
   if id not in task.syscalls:
@@ -642,22 +642,22 @@ Following are some of the edge cases that are possible and must be handled.
 
 As a system-wide trace can be started at an arbitrary time, it is certainly possible that the first event for a task is `raw_syscalls:sys_exit`. This requires adding the same code for new task discovery from the event-handling function for `raw_syscalls:sys_enter` to the handler for `raw_syscalls:sys_exit`. This:
 ```
-  # get the task data structure
-  task = tasks[common_pid]
+鑱� # get the task data structure
+鑱� task = tasks[common_pid]
 ```
 
 becomes this:
 ```
-  # find this task's data structure
-  try:
-    task = tasks[common_pid]
-  except:
-    # new task!
-    task = Task()
-    # save the command string
-    task.comm = common_comm
-    # save the new task in the global list (dictionary) of tasks
-    tasks[common_pid] = task
+鑱� # find this task's data structure
+鑱� try:
+鑱� 鑱� task = tasks[common_pid]
+鑱� except:
+鑱� 鑱� # new task!
+鑱� 鑱� task = Task()
+鑱� 鑱� # save the command string
+鑱� 鑱� task.comm = common_comm
+鑱� 鑱� # save the new task in the global list (dictionary) of tasks
+鑱� 鑱� tasks[common_pid] = task
 ```
 
 Another issue is that it is impossible to properly accumulate the data for this system call since there is no timestamp for the start of the system call. The time from the start of the trace until this event has been spent by this task in the system call. It would be inaccurate to ignore this time. It would also be inaccurate to incorporate this time such that it is used to compute the average, minimum, or maximum. The only reasonable option is to accumulate this separately, calling it "pending" system time. To accurately compute this time, the timestamp of the first event of the trace must be known. Since any event could be the first event in the trace, every event must conditionally save its timestamp if it is the first event. A global variable is required:
@@ -668,62 +668,62 @@ start_timestamp = 0
 
 And every event-handling function must conditionally save its timestamp:
 ```
-  # convert the multiple timestamp values into a single value
-  timestamp = nsecs(common_secs, common_nsecs)
+鑱� # convert the multiple timestamp values into a single value
+鑱� timestamp = nsecs(common_secs, common_nsecs)
 
-  If start_timestamp = 0:
-    start_timestamp = timestamp
+鑱� If start_timestamp = 0:
+鑱� 鑱� start_timestamp = timestamp
 ```
 
 So, the event-handling function for `raw_syscalls:sys_exit` becomes:
 ```
 def raw_syscalls__sys_exit(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, ret):
 
-  # convert the multiple timestamp values into a single value
-  timestamp = nsecs(common_secs, common_nsecs)
+鑱� # convert the multiple timestamp values into a single value
+鑱� timestamp = nsecs(common_secs, common_nsecs)
 
-  If start_timestamp = 0:
-    start_timestamp = timestamp
+鑱� If start_timestamp = 0:
+鑱� 鑱� start_timestamp = timestamp
 
-  # find this task's data structure
-  try:
-    task = tasks[common_pid]
+鑱� # find this task's data structure
+鑱� try:
+鑱� 鑱� task = tasks[common_pid]
 
-    # compute elapsed time for this system call
-    delta =  task.timestamp - timestamp
+鑱� 鑱� # compute elapsed time for this system call
+鑱� 鑱� delta = 鑱絫ask.timestamp - timestamp
 
-    # accumulate time for this task/system call
-    task.syscalls[id].elapsed += delta
-    # increment the tally for this task/system call
-    task.syscalls[id].count += 1
-    # adjust statistics
-    if delta < task.syscalls[id].min:
-      task.syscalls[id].min = delta
-    if delta > task.syscalls[id].max:
-      task.syscalls[id].max = delta
+鑱� 鑱� # accumulate time for this task/system call
+鑱� 鑱� task.syscalls[id].elapsed += delta
+鑱� 鑱� # increment the tally for this task/system call
+鑱� 鑱� task.syscalls[id].count += 1
+鑱� 鑱� # adjust statistics
+鑱� 鑱� if delta < task.syscalls[id].min:
+鑱� 鑱� 鑱� task.syscalls[id].min = delta
+鑱� 鑱� if delta > task.syscalls[id].max:
+鑱� 鑱� 鑱� task.syscalls[id].max = delta
 
-  except:
-    # new task!
-    task = Task()
-    # save the command string
-    task.comm = common_comm
-    # save the new task in the global list (dictionary) of tasks
-    tasks[common_pid] = task
+鑱� except:
+鑱� 鑱� # new task!
+鑱� 鑱� task = Task()
+鑱� 鑱� # save the command string
+鑱� 鑱� task.comm = common_comm
+鑱� 鑱� # save the new task in the global list (dictionary) of tasks
+鑱� 鑱� tasks[common_pid] = task
 
-    # compute elapsed time for this system call
-    delta =  start_timestamp - timestamp
+鑱� 鑱� # compute elapsed time for this system call
+鑱� 鑱� delta = 鑱絪tart_timestamp - timestamp
 
-    # accumulate time for this task/system call
-    task.syscalls[id].pending += delta
+鑱� 鑱� # accumulate time for this task/system call
+鑱� 鑱� task.syscalls[id].pending += delta
 
-  # accumulate time for this task's state on this CPU
-  task.cpus[common_cpu].system += delta
+鑱� # accumulate time for this task's state on this CPU
+鑱� task.cpus[common_cpu].system += delta
 
-  # change task's state
-  task.mode = 'user'
+鑱� # change task's state
+鑱� task.mode = 'user'
 
-  # save the timestamp for the last event (this one) for this task
-  task.timestamp = timestamp
+鑱� # save the timestamp for the last event (this one) for this task
+鑱� task.timestamp = timestamp
 ```
 ### Sys_enter as last event
 
@@ -739,23 +739,23 @@ curr_timestamp = 0
 
 def raw_syscalls__sys_enter(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, args):
 
-  # convert the multiple timestamp values into a single value
-  curr_timestamp = nsecs(common_secs, common_nsecs)
-[…]
-  task.syscall = id
-[…]
+鑱� # convert the multiple timestamp values into a single value
+鑱� curr_timestamp = nsecs(common_secs, common_nsecs)
+[閳ヮ泝
+鑱� task.syscall = id
+[閳ヮ泝
 
 def trace_end():
-        for tid in tasks.keys():
-                task = tasks[tid]
-                # if this task ended while executing a system call
-                if task.mode == 'sys':
-                        # compute the time from the entry to the system call to the end of the trace period
-                        delta = curr_timestamp - task.timestamp
-                        # accumulate the elapsed time for this system call
-                        task.syscalls[task.syscall].pending += delta
-                        # accumulate the system time for this task/CPU
-                        task.cpus[task.cpu].sys += delta
+鑱� 鑱� 鑱� 鑱� for tid in tasks.keys():
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task = tasks[tid]
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # if this task ended while executing a system call
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if task.mode == 'sys':
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # compute the time from the entry to the system call to the end of the trace period
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� delta = curr_timestamp - task.timestamp
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # accumulate the elapsed time for this system call
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.syscalls[task.syscall].pending += delta
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # accumulate the system time for this task/CPU
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.cpus[task.cpu].sys += delta
 ```
 
 ### Migrations
@@ -780,86 +780,86 @@ For accurate statistics, task migrations must be detected as soon as possible. T
 ```
 def raw_syscalls__sys_exit(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, ret):
 
-  # convert the multiple timestamp values into a single value
-  timestamp = nsecs(common_secs, common_nsecs)
+鑱� # convert the multiple timestamp values into a single value
+鑱� timestamp = nsecs(common_secs, common_nsecs)
 
-  If start_timestamp = 0:
-    start_timestamp = timestamp
+鑱� If start_timestamp = 0:
+鑱� 鑱� start_timestamp = timestamp
 
-  # find this task's data structure
-  try:
-    task = tasks[common_pid]
+鑱� # find this task's data structure
+鑱� try:
+鑱� 鑱� task = tasks[common_pid]
 
-    # compute elapsed time for this system call
-    delta =  task.timestamp - timestamp
+鑱� 鑱� # compute elapsed time for this system call
+鑱� 鑱� delta = 鑱絫ask.timestamp - timestamp
 
-    # accumulate time for this task/system call
-    task.syscalls[id].elapsed += delta
-    # increment the tally for this task/system call
-    task.syscalls[id].count += 1
-    # adjust statistics
-    if delta < task.syscalls[id].min:
-      task.syscalls[id].min = delta
-    if delta > task.syscalls[id].max:
-      task.syscalls[id].max = delta
+鑱� 鑱� # accumulate time for this task/system call
+鑱� 鑱� task.syscalls[id].elapsed += delta
+鑱� 鑱� # increment the tally for this task/system call
+鑱� 鑱� task.syscalls[id].count += 1
+鑱� 鑱� # adjust statistics
+鑱� 鑱� if delta < task.syscalls[id].min:
+鑱� 鑱� 鑱� task.syscalls[id].min = delta
+鑱� 鑱� if delta > task.syscalls[id].max:
+鑱� 鑱� 鑱� task.syscalls[id].max = delta
 
-  except:
-    # new task!
-    task = Task()
-    # save the command string
-    task.comm = common_comm
-    # save the new task in the global list (dictionary) of tasks
-    tasks[common_pid] = task
+鑱� except:
+鑱� 鑱� # new task!
+鑱� 鑱� task = Task()
+鑱� 鑱� # save the command string
+鑱� 鑱� task.comm = common_comm
+鑱� 鑱� # save the new task in the global list (dictionary) of tasks
+鑱� 鑱� tasks[common_pid] = task
 
-    task.cpu = common_cpu
+鑱� 鑱� task.cpu = common_cpu
 
-    # compute elapsed time for this system call
-    delta =  start_timestamp - timestamp
+鑱� 鑱� # compute elapsed time for this system call
+鑱� 鑱� delta = 鑱絪tart_timestamp - timestamp
 
-    # accumulate time for this task/system call
-    task.syscalls[id].pending += delta
+鑱� 鑱� # accumulate time for this task/system call
+鑱� 鑱� task.syscalls[id].pending += delta
 
-  If common_cpu != task.cpu:
-    task.migrations += 1
-    # divide the time spent in this syscall in half...
-    delta /= 2
-    # and give have to the previous CPU, below, and half to the new CPU, later
-    task.cpus[task.cpu].system += delta
+鑱� If common_cpu != task.cpu:
+鑱� 鑱� task.migrations += 1
+鑱� 鑱� # divide the time spent in this syscall in half...
+鑱� 鑱� delta /= 2
+鑱� 鑱� # and give have to the previous CPU, below, and half to the new CPU, later
+鑱� 鑱� task.cpus[task.cpu].system += delta
 
-  # accumulate time for this task's state on this CPU
-  task.cpus[common_cpu].system += delta
+鑱� # accumulate time for this task's state on this CPU
+鑱� task.cpus[common_cpu].system += delta
 
-  # change task's state
-  task.mode = 'user'
+鑱� # change task's state
+鑱� task.mode = 'user'
 
-  # save the timestamp for the last event (this one) for this task
-  task.timestamp = timestamp
+鑱� # save the timestamp for the last event (this one) for this task
+鑱� task.timestamp = timestamp
 
 def sched__sched_migrate_task(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, comm, pid, prio, orig_cpu,
-        dest_cpu, perf_sample_dict):
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, comm, pid, prio, orig_cpu,
+鑱� 鑱� 鑱� 鑱� dest_cpu, perf_sample_dict):
 
-  If start_timestamp = 0:
-    start_timestamp = timestamp
+鑱� If start_timestamp = 0:
+鑱� 鑱� start_timestamp = timestamp
 
-  # find this task's data structure
-  try:
-    task = tasks[common_pid]
-  except:
-    # new task!
-    task = Task()
-    # save the command string
-    task.comm = common_comm
-    # save the new task in the global list (dictionary) of tasks
-    tasks[common_pid] = task
+鑱� # find this task's data structure
+鑱� try:
+鑱� 鑱� task = tasks[common_pid]
+鑱� except:
+鑱� 鑱� # new task!
+鑱� 鑱� task = Task()
+鑱� 鑱� # save the command string
+鑱� 鑱� task.comm = common_comm
+鑱� 鑱� # save the new task in the global list (dictionary) of tasks
+鑱� 鑱� tasks[common_pid] = task
 
-    task.cpu = common_cpu
+鑱� 鑱� task.cpu = common_cpu
 
-    If common_cpu not in task.cpus:
-      task.cpus[common_cpu] = CPU()
+鑱� 鑱� If common_cpu not in task.cpus:
+鑱� 鑱� 鑱� task.cpus[common_cpu] = CPU()
 
-    task.migrations += 1
+鑱� 鑱� task.migrations += 1
 ```
 
 ### Task creation
@@ -874,36 +874,36 @@ To accurately collect statistics for a task, it is essential to know when the ta
 One edge case that must be handled is if the creating task (parent) is not yet known, it must be created and initialized, and the presumption is that it has been actively running since the start of the trace.
 ```
 def sched__sched_process_fork(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, parent_comm, parent_pid, child_comm, child_pid):
-  global start_timestamp, curr_timestamp
-  curr_timestamp = self.timestamp
-  if (start_timestamp == 0):
-    start_timestamp = curr_timestamp
-  # find this task's data structure
-  try:
-    task = tasks[common_pid]
-  except:
-    # new task!
-    task = Task()
-    # save the command string
-    task.comm = common_comm
-    # save the new task in the global list (dictionary) of tasks
-    tasks[common_pid] = task
-  try:
-    parent = tasks[self.parent_tid]
-  except:
-    # need to create parent task here!
-    parent = Task(start_timestamp, self.command, 'sys', self.pid)
-    parent.sched_stat = True # ?
-    parent.cpu = self.cpu
-    parent.cpus[parent.cpu] = CPU()
-    tasks[self.parent_tid] = parent
- 
-    task.resume_mode = parent.mode
-    task.syscall = parent.syscall
-    task.syscalls[task.syscall] = Call()
-    task.syscalls[task.syscall].timestamp = self.timestamp
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, parent_comm, parent_pid, child_comm, child_pid):
+鑱� global start_timestamp, curr_timestamp
+鑱� curr_timestamp = self.timestamp
+鑱� if (start_timestamp == 0):
+鑱� 鑱� start_timestamp = curr_timestamp
+鑱� # find this task's data structure
+鑱� try:
+鑱� 鑱� task = tasks[common_pid]
+鑱� except:
+鑱� 鑱� # new task!
+鑱� 鑱� task = Task()
+鑱� 鑱� # save the command string
+鑱� 鑱� task.comm = common_comm
+鑱� 鑱� # save the new task in the global list (dictionary) of tasks
+鑱� 鑱� tasks[common_pid] = task
+鑱� try:
+鑱� 鑱� parent = tasks[self.parent_tid]
+鑱� except:
+鑱� 鑱� # need to create parent task here!
+鑱� 鑱� parent = Task(start_timestamp, self.command, 'sys', self.pid)
+鑱� 鑱� parent.sched_stat = True # ?
+鑱� 鑱� parent.cpu = self.cpu
+鑱� 鑱� parent.cpus[parent.cpu] = CPU()
+鑱� 鑱� tasks[self.parent_tid] = parent
+鑱�
+鑱� 鑱� task.resume_mode = parent.mode
+鑱� 鑱� task.syscall = parent.syscall
+鑱� 鑱� task.syscalls[task.syscall] = Call()
+鑱� 鑱� task.syscalls[task.syscall].timestamp = self.timestamp
 ```
 
 ### Task exit
@@ -911,28 +911,28 @@ def sched__sched_process_fork(event_name, context, common_cpu,
 Similarly, for complete and accurate task statistics, it is essential to know when a task has terminated. There's an event for that: `sched:sched_process_exit`. This one is pretty easy to handle, in that the effort is just to close out the statistics and set the mode appropriately, so any end-of-trace processing will not think the task is still active:
 ```
 def sched__sched_process_exit_old(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, comm, pid, prio):
-  global start_timestamp, curr_timestamp
-  curr_timestamp = self.timestamp
-  if (start_timestamp == 0):
-    start_timestamp = curr_timestamp
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, comm, pid, prio):
+鑱� global start_timestamp, curr_timestamp
+鑱� curr_timestamp = self.timestamp
+鑱� if (start_timestamp == 0):
+鑱� 鑱� start_timestamp = curr_timestamp
 
-  # find this task's data structure
-  try:
-    task = tasks[common_pid]
-  except:
-    # new task!
-    task = Task()
-    # save the command string
-    task.comm = common_comm
-    task.timestamp = curr_timestamp
-    # save the new task in the global list (dictionary) of tasks
-    tasks[common_pid] = task
+鑱� # find this task's data structure
+鑱� try:
+鑱� 鑱� task = tasks[common_pid]
+鑱� except:
+鑱� 鑱� # new task!
+鑱� 鑱� task = Task()
+鑱� 鑱� # save the command string
+鑱� 鑱� task.comm = common_comm
+鑱� 鑱� task.timestamp = curr_timestamp
+鑱� 鑱� # save the new task in the global list (dictionary) of tasks
+鑱� 鑱� tasks[common_pid] = task
 
-  delta = timestamp – task.timestamp
-  task.sys += delta
-  task.mode = 'exit'
+鑱� delta = timestamp 閳ワ拷 task.timestamp
+鑱� task.sys += delta
+鑱� task.mode = 'exit'
 ```
 
 ### Output
@@ -940,79 +940,79 @@ def sched__sched_process_exit_old(event_name, context, common_cpu,
 What follows is an example of the report displayed by `curt`, slightly reformatted to fit on a narrower page width and with the idle-time classification data (which makes the output very wide) removed, and for brevity. Seen are two processes, 1497 and 2857. Process 1497 has two tasks, 1497 and 1523. Each task has a per-CPU summary and system-wide ("ALL" CPUs) summary. Each task's data is followed by the system call data for that task (if any), hypervisor call data (if any), and interrupt data (if any). After each process's respective tasks is a per-process summary. Process 2857 has a task 2857-0 that is the previous task image before an exec() system call replaced the process image. After all processes is a system-wide summary.
 ```
 1497:
--- [  task] command     cpu      user       sys       irq        hv      busy      idle |  util% moves
-   [  1497] X             2  0.076354  0.019563  0.000000  0.000000  0.000000 15.818719 |   0.6%
-   [  1497] X           ALL  0.076354  0.019563  0.000000  0.000000  0.000000 15.818719 |   0.6%     0
- 
-  -- ( ID)name             count   elapsed      pending      average      minimum      maximum
-     (  0)read                 2  0.004699     0.000000     0.002350     0.002130     0.002569
-     (232)epoll_wait           1  9.968375     5.865208     9.968375     9.968375     9.968375
- 
--- [  task] command     cpu      user       sys       irq        hv      busy      idle |  util% moves
-   [  1523] InputThread   1  0.052598  0.037073  0.000000  0.000000  0.000000 15.824965 |   0.6%
-   [  1523] InputThread ALL  0.052598  0.037073  0.000000  0.000000  0.000000 15.824965 |   0.6%     0
- 
-  -- ( ID)name             count   elapsed      pending      average      minimum      maximum
-     (  0)read                14  0.011773     0.000000     0.000841     0.000509     0.002185
-     (  1)write                2  0.010763     0.000000     0.005381     0.004974     0.005789
-     (232)epoll_wait           1  9.966649     5.872853     9.966649     9.966649     9.966649
- 
--- [  task] command     cpu      user       sys       irq        hv      busy      idle |  util% moves
-   [   ALL]             ALL  0.128952  0.056636  0.000000  0.000000  0.000000 31.643684 |   0.6%     0
- 
+-- [ 鑱絫ask] command 鑱� 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱絒 鑱�1497] X 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 2 鑱�0.076354 鑱�0.019563 鑱�0.000000 鑱�0.000000 鑱�0.000000 15.818719 | 鑱� 0.6%
+鑱� 鑱絒 鑱�1497] X 鑱� 鑱� 鑱� 鑱� 鑱� ALL 鑱�0.076354 鑱�0.019563 鑱�0.000000 鑱�0.000000 鑱�0.000000 15.818719 | 鑱� 0.6% 鑱� 鑱� 0
+鑱�
+鑱� -- ( ID)name 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� count 鑱� elapsed 鑱� 鑱� 鑱絧ending 鑱� 鑱� 鑱絘verage 鑱� 鑱� 鑱絤inimum 鑱� 鑱� 鑱絤aximum
+鑱� 鑱� 鑱�( 鑱�0)read 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 2 鑱�0.004699 鑱� 鑱� 0.000000 鑱� 鑱� 0.002350 鑱� 鑱� 0.002130 鑱� 鑱� 0.002569
+鑱� 鑱� 鑱�(232)epoll_wait 鑱� 鑱� 鑱� 鑱� 鑱� 1 鑱�9.968375 鑱� 鑱� 5.865208 鑱� 鑱� 9.968375 鑱� 鑱� 9.968375 鑱� 鑱� 9.968375
+鑱�
+-- [ 鑱絫ask] command 鑱� 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱絒 鑱�1523] InputThread 鑱� 1 鑱�0.052598 鑱�0.037073 鑱�0.000000 鑱�0.000000 鑱�0.000000 15.824965 | 鑱� 0.6%
+鑱� 鑱絒 鑱�1523] InputThread ALL 鑱�0.052598 鑱�0.037073 鑱�0.000000 鑱�0.000000 鑱�0.000000 15.824965 | 鑱� 0.6% 鑱� 鑱� 0
+鑱�
+鑱� -- ( ID)name 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� count 鑱� elapsed 鑱� 鑱� 鑱絧ending 鑱� 鑱� 鑱絘verage 鑱� 鑱� 鑱絤inimum 鑱� 鑱� 鑱絤aximum
+鑱� 鑱� 鑱�( 鑱�0)read 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�14 鑱�0.011773 鑱� 鑱� 0.000000 鑱� 鑱� 0.000841 鑱� 鑱� 0.000509 鑱� 鑱� 0.002185
+鑱� 鑱� 鑱�( 鑱�1)write 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�2 鑱�0.010763 鑱� 鑱� 0.000000 鑱� 鑱� 0.005381 鑱� 鑱� 0.004974 鑱� 鑱� 0.005789
+鑱� 鑱� 鑱�(232)epoll_wait 鑱� 鑱� 鑱� 鑱� 鑱� 1 鑱�9.966649 鑱� 鑱� 5.872853 鑱� 鑱� 9.966649 鑱� 鑱� 9.966649 鑱� 鑱� 9.966649
+鑱�
+-- [ 鑱絫ask] command 鑱� 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱絒 鑱� ALL] 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� ALL 鑱�0.128952 鑱�0.056636 鑱�0.000000 鑱�0.000000 鑱�0.000000 31.643684 | 鑱� 0.6% 鑱� 鑱� 0
+鑱�
 2857:
--- [  task] command     cpu      user       sys       irq        hv      busy      idle |  util% moves
-   [  2857] execs.sh      1  0.257617  0.249685  0.000000  0.000000  0.000000  0.266200 |  65.6%
-   [  2857] execs.sh      2  0.000000  0.023951  0.000000  0.000000  0.000000  0.005728 |  80.7%
-   [  2857] execs.sh      5  0.313509  0.062271  0.000000  0.000000  0.000000  0.344279 |  52.2%
-   [  2857] execs.sh      6  0.136623  0.128883  0.000000  0.000000  0.000000  0.533263 |  33.2%
-   [  2857] execs.sh      7  0.527347  0.194014  0.000000  0.000000  0.000000  0.990625 |  42.1%
-   [  2857] execs.sh    ALL  1.235096  0.658804  0.000000  0.000000  0.000000  2.140095 |  46.9%     4
- 
-  -- ( ID)name             count   elapsed      pending      average      minimum      maximum
-     (  9)mmap                15  0.059388     0.000000     0.003959     0.001704     0.017919
-     ( 14)rt_sigprocmask      12  0.006391     0.000000     0.000533     0.000431     0.000711
-     (  2)open                 9  2.253509     0.000000     0.250390     0.008589     0.511953
-     (  3)close                9  0.017771     0.000000     0.001975     0.000681     0.005245
-     (  5)fstat                9  0.007911     0.000000     0.000879     0.000683     0.001182
-     ( 10)mprotect             8  0.052198     0.000000     0.006525     0.003913     0.018073
-     ( 13)rt_sigaction         8  0.004281     0.000000     0.000535     0.000458     0.000751
-     (  0)read                 7  0.197772     0.000000     0.028253     0.000790     0.191028
-     ( 12)brk                  5  0.003766     0.000000     0.000753     0.000425     0.001618
-     (  8)lseek                3  0.001766     0.000000     0.000589     0.000469     0.000818
- 
--- [  task] command     cpu      user       sys       irq        hv      busy      idle |  util% moves
-   [2857-0] perf          6  0.053925  0.191898  0.000000  0.000000  0.000000  0.827263 |  22.9%
-   [2857-0] perf          7  0.000000  0.656423  0.000000  0.000000  0.000000  0.484107 |  57.6%
-   [2857-0] perf        ALL  0.053925  0.848321  0.000000  0.000000  0.000000  1.311370 |  40.8%     1
- 
-  -- ( ID)name             count   elapsed      pending      average      minimum      maximum
-     (  0)read                 0  0.000000     0.167845           --           --           --
-     ( 59)execve               0  0.000000     0.000000           --           --           --
- 
+-- [ 鑱絫ask] command 鑱� 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱絒 鑱�2857] execs.sh 鑱� 鑱� 鑱�1 鑱�0.257617 鑱�0.249685 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.266200 | 鑱�65.6%
+鑱� 鑱絒 鑱�2857] execs.sh 鑱� 鑱� 鑱�2 鑱�0.000000 鑱�0.023951 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.005728 | 鑱�80.7%
+鑱� 鑱絒 鑱�2857] execs.sh 鑱� 鑱� 鑱�5 鑱�0.313509 鑱�0.062271 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.344279 | 鑱�52.2%
+鑱� 鑱絒 鑱�2857] execs.sh 鑱� 鑱� 鑱�6 鑱�0.136623 鑱�0.128883 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.533263 | 鑱�33.2%
+鑱� 鑱絒 鑱�2857] execs.sh 鑱� 鑱� 鑱�7 鑱�0.527347 鑱�0.194014 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.990625 | 鑱�42.1%
+鑱� 鑱絒 鑱�2857] execs.sh 鑱� 鑱紸LL 鑱�1.235096 鑱�0.658804 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�2.140095 | 鑱�46.9% 鑱� 鑱� 4
+鑱�
+鑱� -- ( ID)name 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� count 鑱� elapsed 鑱� 鑱� 鑱絧ending 鑱� 鑱� 鑱絘verage 鑱� 鑱� 鑱絤inimum 鑱� 鑱� 鑱絤aximum
+鑱� 鑱� 鑱�( 鑱�9)mmap 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�15 鑱�0.059388 鑱� 鑱� 0.000000 鑱� 鑱� 0.003959 鑱� 鑱� 0.001704 鑱� 鑱� 0.017919
+鑱� 鑱� 鑱�( 14)rt_sigprocmask 鑱� 鑱� 鑱�12 鑱�0.006391 鑱� 鑱� 0.000000 鑱� 鑱� 0.000533 鑱� 鑱� 0.000431 鑱� 鑱� 0.000711
+鑱� 鑱� 鑱�( 鑱�2)open 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 9 鑱�2.253509 鑱� 鑱� 0.000000 鑱� 鑱� 0.250390 鑱� 鑱� 0.008589 鑱� 鑱� 0.511953
+鑱� 鑱� 鑱�( 鑱�3)close 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�9 鑱�0.017771 鑱� 鑱� 0.000000 鑱� 鑱� 0.001975 鑱� 鑱� 0.000681 鑱� 鑱� 0.005245
+鑱� 鑱� 鑱�( 鑱�5)fstat 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�9 鑱�0.007911 鑱� 鑱� 0.000000 鑱� 鑱� 0.000879 鑱� 鑱� 0.000683 鑱� 鑱� 0.001182
+鑱� 鑱� 鑱�( 10)mprotect 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 8 鑱�0.052198 鑱� 鑱� 0.000000 鑱� 鑱� 0.006525 鑱� 鑱� 0.003913 鑱� 鑱� 0.018073
+鑱� 鑱� 鑱�( 13)rt_sigaction 鑱� 鑱� 鑱� 鑱� 8 鑱�0.004281 鑱� 鑱� 0.000000 鑱� 鑱� 0.000535 鑱� 鑱� 0.000458 鑱� 鑱� 0.000751
+鑱� 鑱� 鑱�( 鑱�0)read 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 7 鑱�0.197772 鑱� 鑱� 0.000000 鑱� 鑱� 0.028253 鑱� 鑱� 0.000790 鑱� 鑱� 0.191028
+鑱� 鑱� 鑱�( 12)brk 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�5 鑱�0.003766 鑱� 鑱� 0.000000 鑱� 鑱� 0.000753 鑱� 鑱� 0.000425 鑱� 鑱� 0.001618
+鑱� 鑱� 鑱�( 鑱�8)lseek 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�3 鑱�0.001766 鑱� 鑱� 0.000000 鑱� 鑱� 0.000589 鑱� 鑱� 0.000469 鑱� 鑱� 0.000818
+鑱�
+-- [ 鑱絫ask] command 鑱� 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱絒2857-0] perf 鑱� 鑱� 鑱� 鑱� 鑱�6 鑱�0.053925 鑱�0.191898 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.827263 | 鑱�22.9%
+鑱� 鑱絒2857-0] perf 鑱� 鑱� 鑱� 鑱� 鑱�7 鑱�0.000000 鑱�0.656423 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.484107 | 鑱�57.6%
+鑱� 鑱絒2857-0] perf 鑱� 鑱� 鑱� 鑱紸LL 鑱�0.053925 鑱�0.848321 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�1.311370 | 鑱�40.8% 鑱� 鑱� 1
+鑱�
+鑱� -- ( ID)name 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� count 鑱� elapsed 鑱� 鑱� 鑱絧ending 鑱� 鑱� 鑱絘verage 鑱� 鑱� 鑱絤inimum 鑱� 鑱� 鑱絤aximum
+鑱� 鑱� 鑱�( 鑱�0)read 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 0 鑱�0.000000 鑱� 鑱� 0.167845 鑱� 鑱� 鑱� 鑱� 鑱� -- 鑱� 鑱� 鑱� 鑱� 鑱� -- 鑱� 鑱� 鑱� 鑱� 鑱� --
+鑱� 鑱� 鑱�( 59)execve 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 0 鑱�0.000000 鑱� 鑱� 0.000000 鑱� 鑱� 鑱� 鑱� 鑱� -- 鑱� 鑱� 鑱� 鑱� 鑱� -- 鑱� 鑱� 鑱� 鑱� 鑱� --
+鑱�
 ALL:
--- [  task] command     cpu      user       sys       irq        hv      busy      idle |  util% moves
-   [   ALL]             ALL 10.790803 29.633170  0.160165  0.000000  0.137747 54.449823 |   7.4%    50
- 
-  -- ( ID)name             count   elapsed      pending      average      minimum      maximum
-     (  1)write             2896  1.623985     0.000000     0.004014     0.002364     0.041399
-     (102)getuid            2081  3.523861     0.000000     0.001693     0.000488     0.025157
-     (142)sched_setparam     691  7.222906    32.012841     0.024925     0.002024     0.662975
-     ( 13)rt_sigaction       383  0.235087     0.000000     0.000614     0.000434     0.014402
-     (  8)lseek              281  0.169157     0.000000     0.000602     0.000452     0.013404
-     (  0)read               133  2.782795     0.167845     0.020923     0.000509     1.864439
-     (  7)poll                96  8.583354   131.889895     0.193577     0.000626     4.596280
-     (  4)stat                93  7.036355     1.058719     0.183187     0.000981     3.661659
-     ( 47)recvmsg             85  0.146644     0.000000     0.001725     0.000646     0.019067
-     (  3)close               79  0.171046     0.000000     0.002165     0.000428     0.020659
-     (  9)mmap                78  0.311233     0.000000     0.003990     0.001613     0.017919
-     (186)gettid              74  0.067315     0.000000     0.000910     0.000403     0.014075
-     (  2)open                71  3.081589     0.213059     0.184248     0.001921     0.937946
-     (202)futex               62  5.145112   164.286154     0.405566     0.000597    11.587437
- 
-  -- ( ID)name             count   elapsed      pending      average      minimum      maximum
-     ( 12)i8042               10  0.160165     0.000000     0.016016     0.010920     0.032805
- 
+-- [ 鑱絫ask] command 鑱� 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱絒 鑱� ALL] 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� ALL 10.790803 29.633170 鑱�0.160165 鑱�0.000000 鑱�0.137747 54.449823 | 鑱� 7.4% 鑱� 鑱�50
+鑱�
+鑱� -- ( ID)name 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� count 鑱� elapsed 鑱� 鑱� 鑱絧ending 鑱� 鑱� 鑱絘verage 鑱� 鑱� 鑱絤inimum 鑱� 鑱� 鑱絤aximum
+鑱� 鑱� 鑱�( 鑱�1)write 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 2896 鑱�1.623985 鑱� 鑱� 0.000000 鑱� 鑱� 0.004014 鑱� 鑱� 0.002364 鑱� 鑱� 0.041399
+鑱� 鑱� 鑱�(102)getuid 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�2081 鑱�3.523861 鑱� 鑱� 0.000000 鑱� 鑱� 0.001693 鑱� 鑱� 0.000488 鑱� 鑱� 0.025157
+鑱� 鑱� 鑱�(142)sched_setparam 鑱� 鑱� 691 鑱�7.222906 鑱� 鑱�32.012841 鑱� 鑱� 0.024925 鑱� 鑱� 0.002024 鑱� 鑱� 0.662975
+鑱� 鑱� 鑱�( 13)rt_sigaction 鑱� 鑱� 鑱� 383 鑱�0.235087 鑱� 鑱� 0.000000 鑱� 鑱� 0.000614 鑱� 鑱� 0.000434 鑱� 鑱� 0.014402
+鑱� 鑱� 鑱�( 鑱�8)lseek 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�281 鑱�0.169157 鑱� 鑱� 0.000000 鑱� 鑱� 0.000602 鑱� 鑱� 0.000452 鑱� 鑱� 0.013404
+鑱� 鑱� 鑱�( 鑱�0)read 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 133 鑱�2.782795 鑱� 鑱� 0.167845 鑱� 鑱� 0.020923 鑱� 鑱� 0.000509 鑱� 鑱� 1.864439
+鑱� 鑱� 鑱�( 鑱�7)poll 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�96 鑱�8.583354 鑱� 131.889895 鑱� 鑱� 0.193577 鑱� 鑱� 0.000626 鑱� 鑱� 4.596280
+鑱� 鑱� 鑱�( 鑱�4)stat 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�93 鑱�7.036355 鑱� 鑱� 1.058719 鑱� 鑱� 0.183187 鑱� 鑱� 0.000981 鑱� 鑱� 3.661659
+鑱� 鑱� 鑱�( 47)recvmsg 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 85 鑱�0.146644 鑱� 鑱� 0.000000 鑱� 鑱� 0.001725 鑱� 鑱� 0.000646 鑱� 鑱� 0.019067
+鑱� 鑱� 鑱�( 鑱�3)close 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 79 鑱�0.171046 鑱� 鑱� 0.000000 鑱� 鑱� 0.002165 鑱� 鑱� 0.000428 鑱� 鑱� 0.020659
+鑱� 鑱� 鑱�( 鑱�9)mmap 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�78 鑱�0.311233 鑱� 鑱� 0.000000 鑱� 鑱� 0.003990 鑱� 鑱� 0.001613 鑱� 鑱� 0.017919
+鑱� 鑱� 鑱�(186)gettid 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�74 鑱�0.067315 鑱� 鑱� 0.000000 鑱� 鑱� 0.000910 鑱� 鑱� 0.000403 鑱� 鑱� 0.014075
+鑱� 鑱� 鑱�( 鑱�2)open 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�71 鑱�3.081589 鑱� 鑱� 0.213059 鑱� 鑱� 0.184248 鑱� 鑱� 0.001921 鑱� 鑱� 0.937946
+鑱� 鑱� 鑱�(202)futex 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 62 鑱�5.145112 鑱� 164.286154 鑱� 鑱� 0.405566 鑱� 鑱� 0.000597 鑱� 鑱�11.587437
+鑱�
+鑱� -- ( ID)name 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� count 鑱� elapsed 鑱� 鑱� 鑱絧ending 鑱� 鑱� 鑱絘verage 鑱� 鑱� 鑱絤inimum 鑱� 鑱� 鑱絤aximum
+鑱� 鑱� 鑱�( 12)i8042 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 10 鑱�0.160165 鑱� 鑱� 0.000000 鑱� 鑱� 0.016016 鑱� 鑱� 0.010920 鑱� 鑱� 0.032805
+鑱�
 Total Trace Time: 15.914636 ms
 ```
 
@@ -1024,10 +1024,10 @@ Following are some of the issues encountered in the development of `curt`.
 
 One of the more challenging issues is the discovery that events in a `perf.data` file can be out of time order. For a program trying to monitor state transitions carefully, this is a serious issue. For example, a trace could include the following sequence of events, displayed as they appear in the trace file:
 ```
-time 0000:  sys_enter syscall1
-time 0007:  sys_enter syscall2
-time 0006:  sys_exit syscall1
-time 0009:  sys_exit syscall2
+time 0000: 鑱絪ys_enter syscall1
+time 0007: 鑱絪ys_enter syscall2
+time 0006: 鑱絪ys_exit syscall1
+time 0009: 鑱絪ys_exit syscall2
 ```
 
 Just blindly processing these events in the order they are presented to their respective event-handling functions (in the wrong time order) will result in incorrect statistics (or worse).
@@ -1047,8 +1047,8 @@ I chose to implement a queue for incoming events that would be sufficiently deep
 In the redesigned code, the actual event handlers' only job is to save the relevant data from the event into an instance of the event class, queue it, then process the top (oldest in time) event from the queue:
 ```
 def raw_syscalls__sys_enter(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, args):
-         event = Event_sys_enter(nsecs(common_secs,common_nsecs), common_cpu, common_pid, common_comm, id)
-        process_event(event)
+鑱� 鑱� 鑱� 鑱� 鑱絜vent = Event_sys_enter(nsecs(common_secs,common_nsecs), common_cpu, common_pid, common_comm, id)
+鑱� 鑱� 鑱� 鑱� process_event(event)
 ```
 
 The simple reorderable queuing mechanism is in a common function:
@@ -1056,21 +1056,21 @@ The simple reorderable queuing mechanism is in a common function:
 events = []
 n_events = 0
 def process_event(event):
-        global events,n_events,curr_timestamp
-        i = n_events
-        while i > 0 and events[i-1].timestamp > event.timestamp:
-                i = i-1
-        events.insert(i,event)
-        if n_events < params.window:
-                n_events = n_events+1
-        else:
-                event = events[0]
-                # need to delete from events list now,
-                # because event.process() could reenter here
-                del events[0]
-                if event.timestamp < curr_timestamp:
-                        sys.stderr.write("Error: OUT OF ORDER events detected.\n  Try increasing the size of the look-ahead window with --window=<n>\n")
-                event.process()
+鑱� 鑱� 鑱� 鑱� global events,n_events,curr_timestamp
+鑱� 鑱� 鑱� 鑱� i = n_events
+鑱� 鑱� 鑱� 鑱� while i > 0 and events[i-1].timestamp > event.timestamp:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� i = i-1
+鑱� 鑱� 鑱� 鑱� events.insert(i,event)
+鑱� 鑱� 鑱� 鑱� if n_events < params.window:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� n_events = n_events+1
+鑱� 鑱� 鑱� 鑱� else:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� event = events[0]
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # need to delete from events list now,
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� # because event.process() could reenter here
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� del events[0]
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if event.timestamp < curr_timestamp:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� sys.stderr.write("Error: OUT OF ORDER events detected.\n 鑱絋ry increasing the size of the look-ahead window with --window=<n>\n")
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� event.process()
 ```
 
 Note that the size of the queue is configurable, primarily for performance and to limit memory consumption. The function will report when that queue size is insufficient to eliminate out-of-order events. It is worth considering whether to consider this case a catastrophic failure and elect to terminate the program.
@@ -1078,71 +1078,71 @@ Note that the size of the queue is configurable, primarily for performance and t
 Implementing a class for each event type led to some consideration for refactoring, such that common code could coalesce into a base class:
 ```
 class Event (object):
- 
-        def __init__(self):
-                self.timestamp = 0
-                self.cpu = 0
-                self.tid = 0
-                self.command = 'unknown'
-                self.mode = 'unknown'
-                self.pid = 0
- 
-        def process(self):
-                global start_timestamp
- 
-                try:
-                        task = tasks[self.tid]
-                        if task.pid == 'unknown':
-                                tasks[self.tid].pid = self.pid
-                except:
-                        task = Task(start_timestamp, self.command, self.mode, self.pid)
-                        tasks[self.tid] = task
- 
-                if self.cpu not in task.cpus:
-                        task.cpus[self.cpu] = CPU()
-                        if task.cpu == 'unknown':
-                                task.cpu = self.cpu
- 
-                if self.cpu != task.cpu:
-                        task.cpu = self.cpu
-                        task.migrations += 1
- 
-                return task
+鑱�
+鑱� 鑱� 鑱� 鑱� def __init__(self):
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.timestamp = 0
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.cpu = 0
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.tid = 0
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.command = 'unknown'
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.mode = 'unknown'
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.pid = 0
+鑱�
+鑱� 鑱� 鑱� 鑱� def process(self):
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� global start_timestamp
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� try:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task = tasks[self.tid]
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if task.pid == 'unknown':
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� tasks[self.tid].pid = self.pid
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� except:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task = Task(start_timestamp, self.command, self.mode, self.pid)
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� tasks[self.tid] = task
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if self.cpu not in task.cpus:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.cpus[self.cpu] = CPU()
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if task.cpu == 'unknown':
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.cpu = self.cpu
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if self.cpu != task.cpu:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.cpu = self.cpu
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.migrations += 1
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� return task
 ```
 
 Then a class for each event type would be similarly constructed:
 ```
 class Event_sys_enter ( Event ):
- 
-        def __init__(self, timestamp, cpu, tid, comm, id, pid):
-                self.timestamp = timestamp
-                self.cpu = cpu
-                self.tid = tid
-                self.command = comm
-                self.id = id
-                self.pid = pid
-                self.mode = 'busy-unknown'
-               
-        def process(self):
-                global start_timestamp, curr_timestamp
-                curr_timestamp = self.timestamp
-                if (start_timestamp == 0):
-                        start_timestamp = curr_timestamp
- 
-                task = super(Event_sys_enter, self).process()
- 
-                if task.mode == 'busy-unknown':
-                        task.mode = 'user'
-                        for cpu in task.cpus:
-                                task.cpus[cpu].user = task.cpus[cpu].busy_unknown
-                                task.cpus[cpu].busy_unknown = 0
- 
-                task.syscall = self.id
-                if self.id not in task.syscalls:
-                        task.syscalls[self.id] = Call()
- 
-                task.syscalls[self.id].timestamp = curr_timestamp
-                task.change_mode(curr_timestamp, 'sys')
+鑱�
+鑱� 鑱� 鑱� 鑱� def __init__(self, timestamp, cpu, tid, comm, id, pid):
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.timestamp = timestamp
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.cpu = cpu
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.tid = tid
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.command = comm
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.id = id
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.pid = pid
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� self.mode = 'busy-unknown'
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱� def process(self):
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� global start_timestamp, curr_timestamp
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� curr_timestamp = self.timestamp
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if (start_timestamp == 0):
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� start_timestamp = curr_timestamp
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task = super(Event_sys_enter, self).process()
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if task.mode == 'busy-unknown':
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.mode = 'user'
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� for cpu in task.cpus:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.cpus[cpu].user = task.cpus[cpu].busy_unknown
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.cpus[cpu].busy_unknown = 0
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.syscall = self.id
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if self.id not in task.syscalls:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.syscalls[self.id] = Call()
+鑱�
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.syscalls[self.id].timestamp = curr_timestamp
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� task.change_mode(curr_timestamp, 'sys')
 ```
 
 Further refactoring is evident above, as well, moving the common code that updates relevant statistics based on a task's state change and the state change itself into a `change_mode` method of the `Task` class.
@@ -1155,7 +1155,7 @@ As mentioned above, for scripts that depend on elapsed time, there should be an 
 
 The syntax for invoking a `perf` Python script, including script parameters, is slightly awkward:
 ```
-$ perf script –s ./curt.py -- --window=80
+$ perf script 閳ユ悞 ./curt.py -- --window=80
 ```
 
 Also, it's awkward that `perf` Python scripts are not themselves executable.
@@ -1168,24 +1168,24 @@ $ ./curt.py --window=80
 This script must detect when it has been directly invoked. The Python environment established by `perf` is a virtual module from which the `perf` Python scripts import:
 ```
 try:
-        from perf_trace_context import *
+鑱� 鑱� 鑱� 鑱� from perf_trace_context import *
 ```
 
 If this import fails, the script was directly invoked. In this case, the script will `exec perf`, specifying itself as the script to run, and passing along any command line parameters:
 ```
 except:
-        if len(params.file_or_command) == 0:
-                params.file_or_command = [ "perf.data" ]
-        sys.argv = ['perf', 'script', '-i' ] + params.file_or_command + [ '-s', sys.argv[0] ]
-        sys.argv.append('--')
-        sys.argv += ['--window', str(params.window)]
-        if params.debug:
-                sys.argv.append('--debug')
-        sys.argv += ['--api', str(params.api)]
-        if params.debug:
-                print sys.argv
-        os.execvp("perf", sys.argv)
-        sys.exit(1)
+鑱� 鑱� 鑱� 鑱� if len(params.file_or_command) == 0:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� params.file_or_command = [ "perf.data" ]
+鑱� 鑱� 鑱� 鑱� sys.argv = ['perf', 'script', '-i' ] + params.file_or_command + [ '-s', sys.argv[0] ]
+鑱� 鑱� 鑱� 鑱� sys.argv.append('--')
+鑱� 鑱� 鑱� 鑱� sys.argv += ['--window', str(params.window)]
+鑱� 鑱� 鑱� 鑱� if params.debug:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� sys.argv.append('--debug')
+鑱� 鑱� 鑱� 鑱� sys.argv += ['--api', str(params.api)]
+鑱� 鑱� 鑱� 鑱� if params.debug:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� print sys.argv
+鑱� 鑱� 鑱� 鑱� os.execvp("perf", sys.argv)
+鑱� 鑱� 鑱� 鑱� sys.exit(1)
 ```
 
 In this way, the script can not only be run directly, it can still be run by using the `perf script` command.
@@ -1194,7 +1194,7 @@ In this way, the script can not only be run directly, it can still be run by usi
 
 An artifact of the way `perf` enables events can lead to unexpected trace data. For example, specifying:
 ```
-$ perf record –a –e raw_syscalls:sys_enter –e raw_syscalls:sys_exit ./command
+$ perf record 閳ユ彸 閳ユ徍 raw_syscalls:sys_enter 閳ユ徍 raw_syscalls:sys_exit ./command
 ```
 
 Will result in a trace file that begins with the following series of events for a single task (the `perf` command itself):
@@ -1202,7 +1202,7 @@ Will result in a trace file that begins with the following series of events for 
 sys_enter
 sys_enter
 sys_enter
-…
+閳ワ拷
 
 ```
 
@@ -1210,7 +1210,7 @@ This happens because `perf` will register the `sys_enter` event for every CPU on
 
 The solution to this issue is to group the events, which is not well documented:
 ```
-$ perf record –e '{raw_syscalls:sys_enter,raw_syscalls:sys_exit}' ./command
+$ perf record 閳ユ徍 '{raw_syscalls:sys_enter,raw_syscalls:sys_exit}' ./command
 ```
 
 With this syntax, the `sys_enter` and `sys_exit` events are enabled simultaneously.
@@ -1226,13 +1226,13 @@ $ perf record -e '{raw_syscalls:*,sched:sched_switch,sched:sched_migrate_task,sc
 The solution to this issue is to enable the script to perform the record step itself, by itself invoking `perf`. A further enhancement is to proceed after the recording is complete and report the statistics from that recording:
 ```
 if params.record:
-        # [ed. Omitting here the list of events for brevity]
-        eventlist = '{' + eventlist + '}' # group the events
-        command = ['perf', 'record', '--quiet', '--all-cpus',
-                '--event', eventlist ] + params.file_or_command
-        if params.debug:
-                print command
-        subprocess.call(command)
+鑱� 鑱� 鑱� 鑱� # [ed. Omitting here the list of events for brevity]
+鑱� 鑱� 鑱� 鑱� eventlist = '{' + eventlist + '}' # group the events
+鑱� 鑱� 鑱� 鑱� command = ['perf', 'record', '--quiet', '--all-cpus',
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� '--event', eventlist ] + params.file_or_command
+鑱� 鑱� 鑱� 鑱� if params.debug:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� print command
+鑱� 鑱� 鑱� 鑱� subprocess.call(command)
 ```
 
 The command syntax required to record and report becomes:
@@ -1244,7 +1244,7 @@ $ ./curt.py --record ./command
 
 Process IDs are treated a bit cavalierly by `perf` scripting. Note well above that one of the common parameters for the generated event-handling functions is named `common_pid`. This is not the process ID, but the task ID. In fact, on many current Linux-based distributions, there is no way to determine a task's process ID from within a `perf` Python script. This presents a serious problem for a script that wants to compute statistics for a process.
 
-Fortunately, in Linux kernel v4.14, an additional parameter was provided to each of the event-handling functions—`perf_sample_dict`—a dictionary from which the process ID could be extracted: (`perf_sample_dict['sample']['pid']`).
+Fortunately, in Linux kernel v4.14, an additional parameter was provided to each of the event-handling functions閳ユ摽perf_sample_dict`閳ユ攣 dictionary from which the process ID could be extracted: (`perf_sample_dict['sample']['pid']`).
 
 Unfortunately, current Linux distributions may not have that version of the Linux kernel. If the script is written to expect that extra parameter, the script will fail and report an error:
 ```
@@ -1256,26 +1256,26 @@ Ideally, a means to automatically discover if the additional parameter is passed
 Since there is clearly value in using the new API to determine process-wide statistics, `curt` provides a command line option to use the new API. `curt` then takes advantage of Python's lazy function binding to adjust, at run-time, which API to use:
 ```
 if params.api == 1:
-        dummy_dict = {}
-        dummy_dict['sample'] = {}
-        dummy_dict['sample']['pid'] = 'unknown'
-        raw_syscalls__sys_enter = raw_syscalls__sys_enter_old
-        […]
+鑱� 鑱� 鑱� 鑱� dummy_dict = {}
+鑱� 鑱� 鑱� 鑱� dummy_dict['sample'] = {}
+鑱� 鑱� 鑱� 鑱� dummy_dict['sample']['pid'] = 'unknown'
+鑱� 鑱� 鑱� 鑱� raw_syscalls__sys_enter = raw_syscalls__sys_enter_old
+鑱� 鑱� 鑱� 鑱� [閳ヮ泝
 else:
-        raw_syscalls__sys_enter = raw_syscalls__sys_enter_new
-        […]
+鑱� 鑱� 鑱� 鑱� raw_syscalls__sys_enter = raw_syscalls__sys_enter_new
+鑱� 鑱� 鑱� 鑱� [閳ヮ泝
 ```
 
 This requires two functions for each event:
 ```
 def raw_syscalls__sys_enter_new(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, args, perf_sample_dict):
- 
-        event = Event_sys_enter(nsecs(common_secs,common_nsecs), common_cpu, common_pid, common_comm, id, perf_sample_dict['sample']['pid'])
-        process_event(event)
- 
+鑱�
+鑱� 鑱� 鑱� 鑱� event = Event_sys_enter(nsecs(common_secs,common_nsecs), common_cpu, common_pid, common_comm, id, perf_sample_dict['sample']['pid'])
+鑱� 鑱� 鑱� 鑱� process_event(event)
+鑱�
 def raw_syscalls__sys_enter_old(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, args):
-        global dummy_dict
-        raw_syscalls__sys_enter_new(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, args, dummy_dict)
+鑱� 鑱� 鑱� 鑱� global dummy_dict
+鑱� 鑱� 鑱� 鑱� raw_syscalls__sys_enter_new(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, id, args, dummy_dict)
 ```
 
 Note that the event-handling function for the older API will make use of the function for the newer API, passing a statically defined dictionary containing just enough data such that accessing it as `perf_sample_dict['sample']['pid']` will work (resulting in `'unknown'`).
@@ -1294,9 +1294,9 @@ System calls are identified in events only as unique numeric identifiers. These 
 ```
 from Util import syscall_name
 def raw_syscalls__sys_enter(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, id, args, perf_sample_dict):
-                print "%s id=%d" % (syscall_name(id), id)
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, id, args, perf_sample_dict):
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� print "%s id=%d" % (syscall_name(id), id)
 ```
 
 Unfortunately, using syscall_name introduces a dependency on the `audit` python bindings. This dependency is being removed in upstream versions of perf.
@@ -1306,57 +1306,57 @@ Unfortunately, using syscall_name introduces a dependency on the `audit` python 
 Similar to system calls, hypervisor calls are also identified only with numeric identifiers. For IBM's POWER hypervisor, they are statically defined. Unfortunately, `perf` does not provide a means to map hypervisor call identifiers to mnemonics. `curt` includes a (hardcoded) function to do just that:
 ```
 hcall_to_name = {
-        '0x4':'H_REMOVE',
-        '0x8':'H_ENTER',      
-        '0xc':'H_READ',      
-        '0x10':'H_CLEAR_MOD',
-[…]
+鑱� 鑱� 鑱� 鑱� '0x4':'H_REMOVE',
+鑱� 鑱� 鑱� 鑱� '0x8':'H_ENTER', 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱� '0xc':'H_READ', 鑱� 鑱� 鑱�
+鑱� 鑱� 鑱� 鑱� '0x10':'H_CLEAR_MOD',
+[閳ヮ泝
 }
- 
+鑱�
 def hcall_name(opcode):
-        try:
-                return hcall_to_name[hex(opcode)]
-        except:
-                return str(opcode)
+鑱� 鑱� 鑱� 鑱� try:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� return hcall_to_name[hex(opcode)]
+鑱� 鑱� 鑱� 鑱� except:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� return str(opcode)
 ```
 
 ### Command strings as bytearrays
 
-`perf` stores command names and string arguments in Python bytearrays. Unfortunately, printing bytearrays in Python prints every character in the bytearray—even if the string is null-terminated. For example:
+`perf` stores command names and string arguments in Python bytearrays. Unfortunately, printing bytearrays in Python prints every character in the bytearray閳ユ攨ven if the string is null-terminated. For example:
 ```
-$ perf record –a –e 'sched:sched_switch' sleep 3
-$ perf script –g Python
+$ perf record 閳ユ彸 閳ユ徍 'sched:sched_switch' sleep 3
+$ perf script 閳ユ徏 Python
 generated Python script: perf-script.py
 $ perf script -s ./perf-script.py
 in trace_begin
-sched__sched_switch      3 664597.912692243    21223 perf                  prev_comm=perf^@-terminal-^@, prev_pid=21223, prev_prio=120, prev_state=, next_comm=migration/3^@^@^@^@^@, next_pid=23, next_prio=0
-[…]
+sched__sched_switch 鑱� 鑱� 鑱�3 664597.912692243 鑱� 鑱�21223 perf 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絧rev_comm=perf^@-terminal-^@, prev_pid=21223, prev_prio=120, prev_state=, next_comm=migration/3^@^@^@^@^@, next_pid=23, next_prio=0
+[閳ヮ泝
 ```
 
 One solution is to truncate the length of these bytearrays based on null termination, as needed before printing:
 ```
 def null(ba):
-        null = ba.find('\x00')
-        if null >= 0:
-                ba = ba[0:null]
-        return ba
+鑱� 鑱� 鑱� 鑱� null = ba.find('\x00')
+鑱� 鑱� 鑱� 鑱� if null >= 0:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� ba = ba[0:null]
+鑱� 鑱� 鑱� 鑱� return ba
 
 def sched__sched_switch(event_name, context, common_cpu,
-        common_secs, common_nsecs, common_pid, common_comm,
-        common_callchain, prev_comm, prev_pid, prev_prio, prev_state,
-        next_comm, next_pid, next_prio, perf_sample_dict):
+鑱� 鑱� 鑱� 鑱� common_secs, common_nsecs, common_pid, common_comm,
+鑱� 鑱� 鑱� 鑱� common_callchain, prev_comm, prev_pid, prev_prio, prev_state,
+鑱� 鑱� 鑱� 鑱� next_comm, next_pid, next_prio, perf_sample_dict):
 
-                print "prev_comm=%s, prev_pid=%d, prev_prio=%d, " \
-                "prev_state=%s, next_comm=%s, next_pid=%d, " \
-                "next_prio=%d" % \
-                (null(prev_comm), prev_pid, prev_prio,
-                flag_str("sched__sched_switch", "prev_state", prev_state),
-                null(next_comm), next_pid, next_prio)
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� print "prev_comm=%s, prev_pid=%d, prev_prio=%d, " \
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� "prev_state=%s, next_comm=%s, next_pid=%d, " \
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� "next_prio=%d" % \
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� (null(prev_comm), prev_pid, prev_prio,
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� flag_str("sched__sched_switch", "prev_state", prev_state),
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� null(next_comm), next_pid, next_prio)
 ```
 
 Which nicely cleans up the output:
 ```
-sched__sched_switch      3 664597.912692243    21223 perf                  prev_comm=perf, prev_pid=21223, prev_prio=120, prev_state=, next_comm=migration/3, next_pid=23, next_prio=0
+sched__sched_switch 鑱� 鑱� 鑱�3 664597.912692243 鑱� 鑱�21223 perf 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱絧rev_comm=perf, prev_pid=21223, prev_prio=120, prev_state=, next_comm=migration/3, next_pid=23, next_prio=0
 ```
 
 ### Dynamic mappings, like IRQ number to name
@@ -1365,17 +1365,17 @@ Dissimilar to system calls and hypervisor calls, interrupt numbers (IRQs) are dy
 ```
 irq_to_name = {}
 def irq__irq_handler_entry_new(event_name, context, common_cpu, common_secs, common_nsecs, common_pid, common_comm, common_callchain, irq, name, perf_sample_dict):
-        irq_to_name[irq] = name
-        event = Event_irq_handler_entry(nsecs(common_secs,common_nsecs), common_cpu, common_pid, common_comm, irq, name, getpid(perf_sample_dict))
-        process_event(event)
+鑱� 鑱� 鑱� 鑱� irq_to_name[irq] = name
+鑱� 鑱� 鑱� 鑱� event = Event_irq_handler_entry(nsecs(common_secs,common_nsecs), common_cpu, common_pid, common_comm, irq, name, getpid(perf_sample_dict))
+鑱� 鑱� 鑱� 鑱� process_event(event)
 ```
 
 Somewhat oddly, `perf` does not pass the name to the `irq_handler_exit` routine. So, it is possible that a trace may only see an `irq_handler_exit` for an IRQ and must be able to tolerate that. Here, instead of mapping the IRQ to a name, the IRQ number is returned as a string instead:
 ```
 def irq_name(irq):
-        if irq in irq_to_name:
-                return irq_to_name[irq]
-        return str(irq)
+鑱� 鑱� 鑱� 鑱� if irq in irq_to_name:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� return irq_to_name[irq]
+鑱� 鑱� 鑱� 鑱� return str(irq)
 ```
 #### Task 0
 Task 0 shows up everywhere. It's not a real task. It's a substitute for the "idle" state. It's the task ID given to the `sched_switch` event handler when the CPU is going to (or coming from) the "idle" state. It's often the task that is "interrupted" by interrupts. Tracking the statistics for task 0 as if it were a real task would not make sense. Currently, `curt` ignores task 0. However, this loses some information, like some time spent in interrupt processing. `curt` should, but currently doesn't, track interesting (non-idle) time for task 0.
@@ -1385,10 +1385,10 @@ Task 0 shows up everywhere. It's not a real task. It's a substitute for the "idl
 Rarely, a `sched_migrate_task` event occurs in which the source and target CPUs are the same. In other words, the task is not migrated. To avoid artificially inflated migration counts, this case must be explicitly ignored:
 ```
 class Event_sched_migrate_task (Event):
-        def process(self):
-[…]
-                if self.cpu == self.dest_cpu:
-                        return
+鑱� 鑱� 鑱� 鑱� def process(self):
+[閳ヮ泝
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� if self.cpu == self.dest_cpu:
+鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� 鑱� return
 ```
 
 #### exec
@@ -1396,54 +1396,54 @@ class Event_sched_migrate_task (Event):
 The semantics of the `exec` system call are that the image of the current process is replaced by a completely new process image without changing the process ID. This is awkward for tracking the statistics of a process (really, a task) based on the process (task) ID. The change is significant enough that the statistics for each task should be accumulated separately, so the current task's statistics need to be closed out and a new set of statistics should be initialized. The challenge is that both the old and new tasks have the same process (task) ID. `curt` addresses this by tagging the task's task ID with a numeric suffix:
 ```
 class Event_sched_process_exec (Event):
-  def process(self):
-    global start_timestamp, curr_timestamp
-    curr_timestamp = self.timestamp
-    if (start_timestamp == 0):
-      start_timestamp = curr_timestamp
- 
-    task = super(Event_sched_process_exec, self).process()
- 
-    new_task = Task(self.timestamp, self.command, task.mode, self.pid)
-    new_task.sched_stat = True
-    new_task.syscall = task.syscall
-    new_task.syscalls[task.syscall] = Call()
-    new_task.syscalls[task.syscall].timestamp = self.timestamp
- 
-    task.change_mode(curr_timestamp, 'exit')
- 
-    suffix=0
-    while True:
-      old_tid = str(self.tid)+"-"+str(suffix)
-      if old_tid in tasks:
-        suffix += 1
-      else:
-        break
- 
-    tasks[old_tid] = tasks[self.tid]
- 
-    del tasks[self.tid]
- 
-    tasks[self.tid] = new_task
+鑱� def process(self):
+鑱� 鑱� global start_timestamp, curr_timestamp
+鑱� 鑱� curr_timestamp = self.timestamp
+鑱� 鑱� if (start_timestamp == 0):
+鑱� 鑱� 鑱� start_timestamp = curr_timestamp
+鑱�
+鑱� 鑱� task = super(Event_sched_process_exec, self).process()
+鑱�
+鑱� 鑱� new_task = Task(self.timestamp, self.command, task.mode, self.pid)
+鑱� 鑱� new_task.sched_stat = True
+鑱� 鑱� new_task.syscall = task.syscall
+鑱� 鑱� new_task.syscalls[task.syscall] = Call()
+鑱� 鑱� new_task.syscalls[task.syscall].timestamp = self.timestamp
+鑱�
+鑱� 鑱� task.change_mode(curr_timestamp, 'exit')
+鑱�
+鑱� 鑱� suffix=0
+鑱� 鑱� while True:
+鑱� 鑱� 鑱� old_tid = str(self.tid)+"-"+str(suffix)
+鑱� 鑱� 鑱� if old_tid in tasks:
+鑱� 鑱� 鑱� 鑱� suffix += 1
+鑱� 鑱� 鑱� else:
+鑱� 鑱� 鑱� 鑱� break
+鑱�
+鑱� 鑱� tasks[old_tid] = tasks[self.tid]
+鑱�
+鑱� 鑱� del tasks[self.tid]
+鑱�
+鑱� 鑱� tasks[self.tid] = new_task
 ```
 
 This will clearly separate the statistics for the different process images. In the example below, the `perf` command (task "9614-0") `exec`'d `exec.sh` (task "9614-1"), which in turn `exec`'d itself (task "9614"):
 ```
--- [  task] command   cpu      user       sys       irq        hv      busy      idle |  util% moves
-    [  9614] execs.sh    4  1.328238  0.485604  0.000000  0.000000  0.000000  2.273230 |  44.4%
-    [  9614] execs.sh    7  0.000000  0.201266  0.000000  0.000000  0.000000  0.003466 |  98.3%
-    [  9614] execs.sh  ALL  1.328238  0.686870  0.000000  0.000000  0.000000  2.276696 |  47.0%     1
+-- [ 鑱絫ask] command 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱� [ 鑱�9614] execs.sh 鑱� 鑱�4 鑱�1.328238 鑱�0.485604 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�2.273230 | 鑱�44.4%
+鑱� 鑱� [ 鑱�9614] execs.sh 鑱� 鑱�7 鑱�0.000000 鑱�0.201266 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.003466 | 鑱�98.3%
+鑱� 鑱� [ 鑱�9614] execs.sh 鑱紸LL 鑱�1.328238 鑱�0.686870 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�2.276696 | 鑱�47.0% 鑱� 鑱� 1
 
--- [  task] command   cpu      user       sys       irq        hv      busy      idle |  util% moves
-    [9614-0] perf        3  0.000000  0.408588  0.000000  0.000000  0.000000  2.298722 |  15.1%
-    [9614-0] perf        4  0.059079  0.028269  0.000000  0.000000  0.000000  0.611355 |  12.5%
-    [9614-0] perf        5  0.000000  0.067626  0.000000  0.000000  0.000000  0.004702 |  93.5%
-    [9614-0] perf      ALL  0.059079  0.504483  0.000000  0.000000  0.000000  2.914779 |  16.2%     2
- 
--- [  task] command   cpu      user       sys       irq        hv      busy      idle |  util% moves
-    [9614-1] execs.sh    3  1.207972  0.987433  0.000000  0.000000  0.000000  2.435908 |  47.4%
-    [9614-1] execs.sh    4  0.000000  0.341152  0.000000  0.000000  0.000000  0.004147 |  98.8%
-    [9614-1] execs.sh  ALL  1.207972  1.328585  0.000000  0.000000  0.000000  2.440055 |  51.0%     1
+-- [ 鑱絫ask] command 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱� [9614-0] perf 鑱� 鑱� 鑱� 鑱�3 鑱�0.000000 鑱�0.408588 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�2.298722 | 鑱�15.1%
+鑱� 鑱� [9614-0] perf 鑱� 鑱� 鑱� 鑱�4 鑱�0.059079 鑱�0.028269 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.611355 | 鑱�12.5%
+鑱� 鑱� [9614-0] perf 鑱� 鑱� 鑱� 鑱�5 鑱�0.000000 鑱�0.067626 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.004702 | 鑱�93.5%
+鑱� 鑱� [9614-0] perf 鑱� 鑱� 鑱紸LL 鑱�0.059079 鑱�0.504483 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�2.914779 | 鑱�16.2% 鑱� 鑱� 2
+鑱�
+-- [ 鑱絫ask] command 鑱� cpu 鑱� 鑱� 鑱絬ser 鑱� 鑱� 鑱� sys 鑱� 鑱� 鑱� irq 鑱� 鑱� 鑱� 鑱絟v 鑱� 鑱� 鑱絙usy 鑱� 鑱� 鑱絠dle | 鑱絬til% moves
+鑱� 鑱� [9614-1] execs.sh 鑱� 鑱�3 鑱�1.207972 鑱�0.987433 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�2.435908 | 鑱�47.4%
+鑱� 鑱� [9614-1] execs.sh 鑱� 鑱�4 鑱�0.000000 鑱�0.341152 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�0.004147 | 鑱�98.8%
+鑱� 鑱� [9614-1] execs.sh 鑱紸LL 鑱�1.207972 鑱�1.328585 鑱�0.000000 鑱�0.000000 鑱�0.000000 鑱�2.440055 | 鑱�51.0% 鑱� 鑱� 1
 ```
 
 #### Distribution support
@@ -1452,11 +1452,11 @@ Surprisingly, there is currently no support for `perf`'s Python bindings in Ubun
 
 #### Limit on number of traced events
 
-As `curt` gets more sophisticated, it is likely that more and more events may be required to be included in the trace file. `perf` currently requires one file descriptor per event per CPU. This becomes a problem when the maximum number of open file descriptors is not a large multiple of the number of CPUs on the system. On systems with large numbers of CPUs, this quickly becomes a problem. For example, the default maximum number of open file descriptors is often 1,024. An IBM POWER8 system with four sockets may have 12 cores per socket and eight threads (CPUs) per core. Such a system has 4 * 12 * 8 = 392 CPUs. In that case, `perf` could trace only about two events! A workaround is to (significantly) increase the maximum number of open file descriptors (`ulimit –n` if the system administrator has configured the hard limits high enough; or the administrator can set the limits higher in `/etc/security/limits.conf` for `nofile`).
+As `curt` gets more sophisticated, it is likely that more and more events may be required to be included in the trace file. `perf` currently requires one file descriptor per event per CPU. This becomes a problem when the maximum number of open file descriptors is not a large multiple of the number of CPUs on the system. On systems with large numbers of CPUs, this quickly becomes a problem. For example, the default maximum number of open file descriptors is often 1,024. An IBM POWER8 system with four sockets may have 12 cores per socket and eight threads (CPUs) per core. Such a system has 4 * 12 * 8 = 392 CPUs. In that case, `perf` could trace only about two events! A workaround is to (significantly) increase the maximum number of open file descriptors (`ulimit 閳ユ悏` if the system administrator has configured the hard limits high enough; or the administrator can set the limits higher in `/etc/security/limits.conf` for `nofile`).
 
 ### Summary
 
-I hope this article shows the power of `perf`—and specifically the utility and flexibility of the Python scripting enabled with `perf`—to perform sophisticated processing of kernel trace data. Also, it shows some of the issues and edge cases that can be encountered when the boundaries of such technologies are tested.
+I hope this article shows the power of `perf`閳ユ攣nd specifically the utility and flexibility of the Python scripting enabled with `perf`閳ユ敄o perform sophisticated processing of kernel trace data. Also, it shows some of the issues and edge cases that can be encountered when the boundaries of such technologies are tested.
 
 Please feel free to download and make use of the `curt` tool described here, report problems, suggest improvements, or contribute code of your own on the [`curt` GitHub page][5].
 
@@ -1464,12 +1464,12 @@ Please feel free to download and make use of the `curt` tool described here, rep
 
 via: https://opensource.com/article/18/7/fun-perf-and-python
 
-作者：[Paul Clarke][a]
-选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+娴ｆ粏鈧拑绱癧Paul Clarke][a]
+闁顣介敍姝攍ujun9972](https://github.com/lujun9972)
+鐠囨垼鈧拑绱癧鐠囨垼鈧將D](https://github.com/鐠囨垼鈧將D)
+閺嶁€愁嚠閿涙瓟閺嶁€愁嚠閼板將D](https://github.com/閺嶁€愁嚠閼板將D)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+閺堫剚鏋冮悽锟� [LCTT](https://github.com/LCTT/TranslateProject) 閸樼喎鍨辩紓鏍槯閿涘Linux娑擃厼娴梋(https://linux.cn/) 閼斤綀鐛曢幒銊ュ毉
 
 [a]:https://opensource.com/users/thinkopenly
 [1]:https://2018.texaslinuxfest.org/
