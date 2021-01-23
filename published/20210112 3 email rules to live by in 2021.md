@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13044-1.html)
 [#]: subject: (3 email rules to live by in 2021)
 [#]: via: (https://opensource.com/article/21/1/email-rules)
 [#]: author: (Kevin Sonney https://opensource.com/users/ksonney)
@@ -12,7 +12,7 @@
 
 > 电子邮件不是即时通讯。通过遵循这些规则来防止电子邮件不断地打断你的工作。
 
-![通过收件箱和浏览器发送电子邮件或通讯][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/23/141931hsgz7762jn960nmh.jpg)
 
 在前几年，这个年度系列涵盖了单个应用程序。今年，我们除了关注有助于 2021 年的策略外，还将关注一体化解决方案。欢迎来到“2021 年 21 天生产力”的第二天。
 
