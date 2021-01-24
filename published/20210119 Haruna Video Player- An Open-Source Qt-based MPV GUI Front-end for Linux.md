@@ -1,34 +1,34 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13050-1.html)
 [#]: subject: (Haruna Video Player: An Open-Source Qt-based MPV GUI Front-end for Linux)
 [#]: via: (https://itsfoss.com/haruna-video-player/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Haruna Video Player：一个适用于 Linux 的基于 Qt 的开源 MPV GUI 前端
+Haruna 视频播放器：一个 MPV GUI 前端
 ======
 
-_**简介：一个基于 Qt 的 Linux 视频播放器，它可作为 mpv 的前端，并能使用 youtube-dl。**_
+> 一个基于 Qt 的 Linux 视频播放器，它可作为 mpv 的前端，并能使用 youtube-dl。
 
-### Haruna Video Player：一个基于 Qt 的免费视频播放器
+### Haruna 视频播放器：一个基于 Qt 的免费视频播放器
 
 ![Haruna Video Player][1]
 
-如果你还不知道 [mpv][2]，它是一个基于命令行的免费开源媒体播放器。好吧，它有一个[简约的 MPV GUI][3]，但核心是命令行。
+如果你还不知道 [mpv][2]，它是一个基于命令行的自由开源的媒体播放器。好吧，它有一个[简约的 MPV GUI][3]，但核心是命令行。
 
 你可能还会找到几个[开源视频播放器][4]，它们基本上就是 mpv 的 GUI 前端。
 
-Haruna Video Player 就是其中之一，同时还可以[使用 youtube-dl][5]。你可以轻松播放本地媒体文件以及 YouTube 内容。
+Haruna 视频播放器就是其中之一，同时还可以[使用 youtube-dl][5]。你可以轻松播放本地媒体文件以及 YouTube 内容。
 
-让我给你一个概览以及这个播放器提供的功能。
+让我给你介绍一下这个播放器提供的功能。
 
-### Haruna Video Player 的功能
+### Haruna 视频播放器的功能
 
 ![][6]
 
-你可能会发现它与其他一些视频播放器有些不同。以下是你可以从 Haruna Video Player 获得的：
+你可能会发现它与其他一些视频播放器有些不同。以下是你可以从 Haruna 视频播放器 获得的：
 
   * 能够直接使用 URL 播放 YouTube 视频
   * 支持播放列表，并且你可以轻松控制它们
@@ -44,9 +44,7 @@ Haruna Video Player 就是其中之一，同时还可以[使用 youtube-dl][5]�
   * 能够调整鼠标和键盘的快捷键，以便能够快速浏览和做你想做的事情
   * 调整 UI（字体、主题）
 
-
-
-### 在 Linux 上安装 Haruna Video Player
+### 在 Linux 上安装 Haruna 视频播放器
 
 ![][8]
 
@@ -56,11 +54,11 @@ Haruna Video Player 就是其中之一，同时还可以[使用 youtube-dl][5]�
 
 但是，如果你不喜欢这样，你可以查看 [GitHub][12] 上的源代码，看看你是否可以像普通的 Gentoo 用户一样自己构建它。
 
-[Haruna Video Player][12]
+- [Haruna 视频播放器][12]
 
-### 最后想法
+### 总结
 
-Haruna Video Player 是一款简单实用的在 [libmpv][13] 之上的 GUI。能够在系统上播放 YouTube 视频以及各种文件格式绝对是很多用户所希望的。
+Haruna 视频播放器是一款简单实用的在 [libmpv][13] 之上的 GUI。能够在系统上播放 YouTube 视频以及各种文件格式绝对是很多用户所希望的。
 
 用户界面很容易上手，它也提供了一些重要的自定义选项。
 
@@ -73,7 +71,7 @@ via: https://itsfoss.com/haruna-video-player/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
