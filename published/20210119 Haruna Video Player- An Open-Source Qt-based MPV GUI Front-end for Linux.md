@@ -12,7 +12,7 @@ Haruna 视频播放器：一个 MPV GUI 前端
 
 > 一个基于 Qt 的 Linux 视频播放器，它可作为 mpv 的前端，并能使用 youtube-dl。
 
-### Haruna Video Player：一个基于 Qt 的免费视频播放器
+### Haruna 视频播放器：一个基于 Qt 的免费视频播放器
 
 ![Haruna Video Player][1]
 
