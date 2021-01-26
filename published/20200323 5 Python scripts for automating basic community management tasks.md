@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (stevenzdg988)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13055-1.html)
 [#]: subject: (5 Python scripts for automating basic community management tasks)
 [#]: via: (https://opensource.com/article/20/3/automating-community-management-python)
 [#]: author: (Rich Bowen https://opensource.com/users/rbowen)
@@ -12,7 +12,7 @@
 
 > 如果某些事情不得不重复做三遍，尝试使其自动化。
 
-![人形符号][1]
+![](https://img.linux.net.cn/data/attachment/album/202101/27/000544aakdc4mnmn6tzj8y.jpg)
 
 我 [之前写过关于社区管理员的工作][2]，如果你问 10 位社区管理员，你会得到 12 个不同的答案。不过，大多数情况下，你做的是社区需要你在任何特定时刻做的事情。而且很多事情可能是重复的。
 
