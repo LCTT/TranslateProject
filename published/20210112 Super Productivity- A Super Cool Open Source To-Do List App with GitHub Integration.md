@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13067-1.html)
 [#]: subject: (Super Productivity: A Super Cool Open Source To-Do List App with GitHub Integration)
 [#]: via: (https://itsfoss.com/super-productivity/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
@@ -28,7 +28,7 @@
 
 它还提供了一堆基本功能以及一些有趣的选项。让我们来看看它们。
 
-### “超级生产力”的特点
+### “超级生产力”的功能
 
 ![][5]
 
