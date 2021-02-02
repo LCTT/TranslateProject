@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Why you need to drop ifconfig for ip)
-[#]: via: (https://opensource.com/article/21/1/ifconfig-ip-linux)
-[#]: author: (Rajan Bhardwaj https://opensource.com/users/rajabhar)
+[#]: collector: "lujun9972"
+[#]: translator: "MjSeven"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Why you need to drop ifconfig for ip"
+[#]: via: "https://opensource.com/article/21/1/ifconfig-ip-linux"
+[#]: author: "Rajan Bhardwaj https://opensource.com/users/rajabhar"
 
 Why you need to drop ifconfig for ip
 ======
@@ -209,6 +209,6 @@ via: https://opensource.com/article/21/1/ifconfig-ip-linux
 
 [a]: https://opensource.com/users/rajabhar
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/gears_devops_learn_troubleshooting_lightbulb_tips_520.png?itok=HcN38NOk (Tips and gears turning)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/gears_devops_learn_troubleshooting_lightbulb_tips_520.png?itok=HcN38NOk "Tips and gears turning"
 [2]: https://en.wikipedia.org/wiki/OSI_model
 [3]: https://en.wikipedia.org/wiki/Multicast
