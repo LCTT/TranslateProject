@@ -7,25 +7,25 @@
 [#]: via: (https://opensource.com/article/21/1/gimp-scripting)
 [#]: author: (Cristiano L. Fontana https://opensource.com/users/cristianofontana)
 
-Write GIMP scripts to make image processing faster
+编写 GIMP 脚本使图像处理更快
 ======
-Learn GIMP's scripting language Script-Fu by adding an effect to a batch
-of images.
+通过向一批图像添加效果来学习 GIMP 的脚本语言 Script-Fu。
+
 ![Painting art on a computer screen][1]
 
-Some time ago, I wanted to give a blackboard-style look to a typeset equation. I started playing around with the [GNU Image Manipulation Program (GIMP)][2] and was satisfied with the result. The problem was that I had to perform several actions on the image, I wanted to use this style again, and I did not want to repeat the steps for all the images. Besides, I was sure that I would forget them in no time.
+前一段时间，我想给方程图片加一个黑板式的外观。 我开始使用 [GNU Image Manipulation Program (GIMP)][2] 来处理，并对结果感到满意。 问题是我必须对图像执行几个操作，当我想再次使用此样式，不想对所有图像重复这些步骤。 此外，我确信我会很快忘记他们。
 
 ![Fourier transform equations][3]
 
-Fourier transform equations (Cristiano Fontana, [CC BY-SA 4.0][4])
+傅立叶变换方程式（Cristiano Fontana，[CC BY-SA 4.0] [4]）
 
-GIMP is a great open source image editor. Although I have been using it for years, I had never investigated its batch-processing abilities nor its [Script-Fu menu][5]. This was the perfect chance to explore them.
+GIMP 是一个很棒的开源图像编辑器。 尽管我已经使用了多年，但从未研究过其批处理功能或 [Script-Fu][5] 菜单。 这是探索它们的绝好机会。
 
-### What is Script-Fu?
+### 什么是 Script-Fu？
 
-[Script-Fu][6] is the scripting language built into GIMP. It is an implementation of the [Scheme][7] programming language. If you have never used Scheme, give it a try, as it can be very useful. I think Script-Fu is a great way to start because it has an immediate effect on image processing, so you can feel productive very quickly. You can also write scripts in [Python][8], but Script-Fu is the default option.
+[Script-Fu][6]  是 GIMP 内置的脚本语言。 是一种基于 [Scheme ][7]的编程语言。 如果您从未使用过 Scheme，请尝试一下，因为它可能非常有用。 我认为 Script-Fu 是一个很好的入门方法，因为它对图像处理具有立竿见影的效果，因此您可以非常快速地提高工作效率。 您也可以使用 [Python][8] 编写脚本，但是 Script-Fu 是默认选项。
 
-To help you get acquainted with Scheme, GIMP's documentation offers an [in-depth tutorial][9]. Scheme is a [Lisp][10]-like language, so a major characteristic is that it uses a [prefix notation][11] and a [lot of parentheses][12]. Functions and operators are applied to a list of operands by prefixing them:
+为了帮助您熟悉 Scheme，GIMP 的文档提供了深入的[教程][9]。 Scheme 是一种类似于 [Lisp][10] 的语言，因此主要特征是它使用[前缀][11]表示法和[许多括号][12]。 通过为操作数和操作符添加前缀来将它们应用到操作数列表：
 
 
 ```
@@ -38,21 +38,21 @@ To help you get acquainted with Scheme, GIMP's documentation offers an [in-depth
 ↳ Returns a list containing 1, 2, 3, and 5
 ```
 
-It took me a while to find the documentation for the full list of GIMP's functions, but it was actually straightforward. In the **Help** menu, there is a **Procedure Browser** with very extensive and detailed documentation about all the possible functions.
+我花了一些时间才能找到 GIMP 功能完整列表的文档，但实际上很简单。 在 **Help** 菜单中，有一个 **Procedure Browser**，其中包含有关所有可能功能的非常详尽的文档。
 
 ![GIMP Procedure Browser][13]
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-### Accessing GIMP's batch mode
+### 使用 GIMP 的批处理模式
 
-You can run GIMP with batch mode enabled by using the `-b` option. The `-b` option's argument can be the script you want to run or a dash (`-`) that makes GIMP launch in an interactive mode instead of the command line. Normally when you start GIMP, it loads its graphical user interface (GUI), but you can disable that with the `-i` option.
+您可以使用 `-b` 选项以批处理的方式启动 GIMP. `-b` 选项的参数可以是你想要运行的脚本，或者用一个 `-` 来让 GIMP 进入交互模式而不是命令行模式。正常情况下，当你启动 GIMP 的时候，它会启动图形界面，但是你可以使用 `-i` 选项来禁用它。
 
-### Writing your first script
+### 开始编写你的第一个脚本
 
-Create a file called `chalk.scm` and save it to the `scripts` folder found in the **Preferences** window under **Folders → Scripts**. In my case, it is at `$HOME/.config/GIMP/2.10/scripts`.
+创建一个名为 `chalk.scm` 的文件，并把它保存在 **Preferences** 窗口中 **Folders** 选项下的 **Script** 中指定的 `script` 文件夹下。就我而言，是在 `$HOME/.config/GIMP/2.10/scripts`.
 
-Inside the `chalk.scm` file, write your first script with:
+在 `chalk.scm` 文件中，写入下面的内容：
 
 
 ```
@@ -62,7 +62,7 @@ Inside the `chalk.scm` file, write your first script with:
           (new-filename (string-append "modified_" filename)))
      (gimp-image-select-color image CHANNEL-OP-REPLACE drawable '(0 0 0))
      (gimp-selection-grow image grow-pixels)
-     (gimp-context-set-foreground '(0 0 0))
+     (gimp-context-set- '(0 0 0))
      (gimp-edit-bucket-fill drawable BUCKET-FILL-FG LAYER-MODE-NORMAL 100 255 TRUE 0 0)
      (gimp-selection-none image)
      (plug-in-spread RUN-NONINTERACTIVE image drawable spread-amount spread-amount)
@@ -72,20 +72,20 @@ Inside the `chalk.scm` file, write your first script with:
      (gimp-image-delete image)))
 ```
 
-### Defining the script variables
+### 定义脚本变量
 
-In the script, the `(define (chalk filename grow-pixels spread-amound percentage) ...)` function defines a new function called `chalk` that accepts the parameters: `filename`, `grow-pixels`, `spread-amound`, and `percentage`. Everything else inside the `define` function is the body of the `chalk` function. You might have noticed that variables with long names are spelled with dashes between the words; this is the idiomatic style of Lisp-like languages.
+在脚本中， `(define (chalk filename grow-pixels spread-amound percentage) ...)` 函数定义了一个名叫 `chalk` 的新函数。它的函数参数是 `filename`, `grow-pixels`, `spread-amound` 和 `percentage`. 在  `define` 中的所有内容都是 `chalk` 函数的主体。你可能已经注意到，那些名字比较长的变量中间都有一个破折号来分割。这是类 Lisp 语言的惯用风格。
 
-The `(let* ...)` function is a special procedure that allows you to define some temporary variables that are valid only inside the body. In this case, the variables are `image`, `drawable`, and `new-filename`. It loads the image with `gimp-file-load`, which returns a list that includes the image, then it selects the first entry with the `car` function. Then, it selects the first active layer and stores its reference in the `drawable` variable. Finally, it defines the string containing the new filename of the resulting image.
+`(let* ...)` 函数是一个特殊的函数可以让你定义一些只有在这个函数体中才有效的临时变量。临时变量有 `image`, `drawable`, 以及 `new-filename`. 它使用 `gimp-file-load` 来载入图片，这会返回它所包含的图片的一个列表。并通过 `car` 函数来选取第一项。 然后，它选择第一个活动层并将其引用存储在  `drawable` 变量中。 最后，它定义了包含图像新文件名的字符串。 
 
-To help you better understand the procedure, I'll break it down. First, start GIMP with the GUI enabled and the Script-Fu console, which is found in **Filters → Script-Fu → Console**. In this case, you cannot use `let*` because the variables must be persistent. Define the `image` variable using the `define` function, and give it the proper path to find the image:
+为了帮助您更好地了解该过程，我将对其进行分解。 首先，启动带 GUI 的 GIMP，然后你可以通过依次点击 **Filters → Script-Fu → Console** 来打开 Script-Fu 控制台。 在这种情况下，不能使用 `let *`，因为变量必须是持久的。 使用 `define` 函数定义 `image` 变量，并为其提供查找图像的正确路径：
 
 
 ```
 `(define image (car (gimp-file-load RUN-NONINTERACTIVE "Fourier.png" "Fourier.png")))`
 ```
 
-It appears that nothing has happened in the GUI, but the image is loaded. You need to enable the image display with:
+似乎在 GUI 中什么也没有发生，但是图像已加载。 您需要通过以下方式来让图像显示：
 
 
 ```
@@ -96,27 +96,27 @@ It appears that nothing has happened in the GUI, but the image is loaded. You ne
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Now, get the active layer and store it in the `drawable` variable:
+现在，获取活动层并将其存储在 `drawable` 变量中：
 
 
 ```
 `(define drawable (car (gimp-image-get-active-layer image)))`
 ```
 
-Finally, define the image's new filename:
+最后，定义图像的新文件名：
 
 
 ```
 `(define new-filename "modified_Fourier.png")`
 ```
 
-Here is what you should see in the Script-Fu console after running these commands:
+运行命令后，您将在 Script-Fu 控制台中看到以下内容：
 
 ![Script-Fu console][15]
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Before acting on the image, you need to define the variables that would be defined as the function arguments in the script:
+在对图像执行操作之前，需要定义将在脚本中作为函数参数的变量：
 
 
 ```
@@ -125,9 +125,9 @@ Before acting on the image, you need to define the variables that would be defin
 (define percentage 3)
 ```
 
-### Acting on the image
+### 处理图片
 
-Now that all the relevant variables are defined, you can act on the image. The script's actions can be executed directly on the console. The first step is to select the color black on the active layer. The color is written as a list of three numbers—either as `(list 0 0 0)` or `'(0 0 0)`:
+现在，所有相关变量都已定义，您可以对图像进行操作了。 脚本的操作可以直接在控制台上执行。第一步是在活动层上选择黑色。 颜色被写成一个由三个数字组成的列表，即 `(list 0 0 0)`  或者是 `'(0 0 0)`:
 
 
 ```
@@ -138,7 +138,7 @@ Now that all the relevant variables are defined, you can act on the image. The s
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Grow the selection by two pixels:
+扩大选取两个像素：
 
 
 ```
@@ -149,7 +149,7 @@ Grow the selection by two pixels:
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Set the foreground color to black, and fill the selection with it:
+将前景色设置为黑色，并用它填充选区：
 
 
 ```
@@ -161,7 +161,7 @@ Set the foreground color to black, and fill the selection with it:
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Delete the selection:
+删除选区：
 
 
 ```
@@ -172,7 +172,7 @@ Delete the selection:
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Move the pixels around randomly:
+随机移动像素：
 
 
 ```
@@ -183,7 +183,7 @@ Move the pixels around randomly:
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Invert the image colors:
+反转图像颜色：
 
 
 ```
@@ -194,7 +194,7 @@ Invert the image colors:
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Randomize the pixels:
+随机化像素：
 
 
 ```
@@ -205,7 +205,7 @@ Randomize the pixels:
 
 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-Save the image to a new file:
+将图像保存到新文件：
 
 
 ```
@@ -214,24 +214,24 @@ Save the image to a new file:
 
 ![Equations of the Fourier transform and its inverse][23]
 
-Fourier transform equations (Cristiano Fontana, [CC BY-SA 4.0][4])
+傅立叶变换方程 (Cristiano Fontana, [CC BY-SA 4.0][4])
 
-### Running the script in batch mode
+### 以批处理模式运行脚本
 
-Now that you know what the script does, you can run it in batch mode:
+现在您知道了脚本的功能，可以在批处理模式下运行它：
 
 
 ```
 `gimp -i -b '(chalk "Fourier.png" 2 4 3)' -b '(gimp-quit 0)'`
 ```
 
-After the `chalk` function runs, it calls a second function with the `-b` option to tell GIMP to quit: `gimp-quit`.
+在运行  `chalk` 函数之后，它将使用 `-b`  选项调用第二个函数  `gimp-quit` 来告诉 GIMP 退出。
 
-### Learn more
+### 了解更多
 
-This tutorial showed you how to get started with GIMP's built-in scripting features and introduced Script-Fu, GIMP's Scheme implementation. If you want to move forward, I suggest you look at the official documentation and its [tutorial][9]. If you are not familiar with Scheme or Lisp, the syntax could be a little intimidating at first, but I suggest you give it a try anyway. It might be a nice surprise.
+本教程向您展示了如何开始使用 GIMP 的内置脚本功能，并介绍了 GIMP 的 Scheme 实现的 Script-Fu。 如果您想继续前进，建议您查看官方文档及其[入门教程][9]。 如果您不熟悉 Scheme 或 Lisp，那么一开始的语法可能有点吓人，但我还是建议您尝试一下。 这可能是一个不错的惊喜。
 
-﻿Professional design software like Photoshop is terrific, but it’s also expensive. What do you do...
+Photoshop 之类的专业设计软件非常棒，但价格也很昂贵。 你会怎么做...
 
 --------------------------------------------------------------------------------
 
@@ -239,7 +239,7 @@ via: https://opensource.com/article/21/1/gimp-scripting
 
 作者：[Cristiano L. Fontana][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[amwps290](https://github.com/amwps290)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
