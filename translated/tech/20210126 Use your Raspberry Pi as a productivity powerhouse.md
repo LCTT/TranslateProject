@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Use your Raspberry Pi as a productivity powerhouse)
@@ -9,8 +9,10 @@
 
 将你的树莓派用作生产力源泉
 ======
-树莓派已经从主要为 hack 和业余爱好者服务，成为了小型生产力工作站的可靠选择。
-![Team checklist and to dos][1]
+
+> 树莓派已经从主要为黑客和业余爱好者服务，成为了小型生产力工作站的可靠选择。
+
+![](https://img.linux.net.cn/data/attachment/album/202102/04/103826pjbxb7j1m8ok6ezf.jpg)
 
 在前几年，这个年度系列涵盖了单个的应用。今年，我们除了关注 2021 年的策略外，还将关注一体化解决方案。欢迎来到 2021 年 21 天生产力的第十六天。
 
@@ -20,17 +22,17 @@
 
 ![Geary and Calendar apps on the Raspberry Pi][3]
 
-Geary 和 Calendar 应用 （Kevin Sonney, [CC BY-SA 4.0][4]）
+*Geary 和 Calendar 应用 （Kevin Sonney, [CC BY-SA 4.0][4]）*
 
 基本的 [Raspbian][5] 安装包括 [Claw Mail][6]，这是一个轻量级的邮件客户端。它的用户界面有点过时了，而且非常的简陋。如果你是一个 [Mutt 用户][7]，它可能会满足你的需求。
 
 我更喜欢安装 [Geary][8]，因为它也是轻量级的，而且有一个现代化的界面。另外，与 Claws 不同的是，Geary 默认支持富文本 （HTML） 邮件。我不喜欢富文本电子邮件，但它已经成为必要的，所以对它有良好的支持是至关重要的。
 
-默认的 Raspbian 安装不包含日历，所以我添加了 [GNOME Calendar][9] ，因为它可以与远程服务通信（因为我的几乎所有日历都在云提供商那里）。
+默认的 Raspbian 安装不包含日历，所以我添加了 [GNOME 日历][9] ，因为它可以与远程服务通信（因为我的几乎所有日历都在云提供商那里）。
 
 ![GTG and GNote open on Raspberry Pi][10]
 
-GTG 和 GNote（Kevin Sonney, [CC BY-SA 4.0][4]）
+*GTG 和 GNote（Kevin Sonney, [CC BY-SA 4.0][4]）*
 
 那笔记和待办事项清单呢？有很多选择，但我喜欢用 [GNote][11] 来做笔记，用 [Getting-Things-GNOME!][12] 来做待办事项。两者都相当轻量级，并且可以相互同步，也可以同步到其他服务。
 
@@ -40,9 +42,9 @@ GNOME 中包含了 [Evolution][13]，它将邮件、日历、笔记、待办事�
 
 ![Evolution on Raspbian][14]
 
-Raspbian 上的 Evolution （Kevin Sonney, [CC BY-SA 4.0][4]）
+*Raspbian 上的 Evolution （Kevin Sonney, [CC BY-SA 4.0][4]）*
 
-树莓派在过去的几年里走过了很长的路，已经从主要为 hack 和业余爱好者服务，成为了小型生产力工作站的可靠选择。
+树莓派在过去的几年里进步很快，已经从主要为黑客和业余爱好者服务，成为了小型生产力工作站的可靠选择。
 
 --------------------------------------------------------------------------------
 
@@ -51,7 +53,7 @@ via: https://opensource.com/article/21/1/raspberry-pi-productivity
 作者：[Kevin Sonney][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
