@@ -7,31 +7,32 @@
 [#]: via: "https://opensource.com/article/21/1/ifconfig-ip-linux"
 [#]: author: "Rajan Bhardwaj https://opensource.com/users/rajabhar"
 
-Why you need to drop ifconfig for ip
+
+放弃 ifconfig，拥抱 ip 
 ======
-Start using the modern method for configuring a Linux network interface.
+开始使用现代方法配置 Linux 网络接口。
 ![Tips and gears turning][1]
 
-For a long time, the `ifconfig` command was the default method for configuring a network interface. It served Linux users well, but networking is complex, and the commands to configure it must be robust. The `ip` command is the new default networking command for modern systems, and in this article, I'll show you how to use it.
+在很长一段时间内，`ifconfig` 命令是配置网络接口的默认方法。它为 Linux 用户提供了很好的服务，但是网络很复杂，所以配置网络的命令必须健壮。`ip` 命令是现代系统中新的默认网络命令，在本文中，我将向你展示如何使用它。
 
-The `ip` command is functionally organized on two layers of the [OSI networking stack][2]: Layer 2 (data link layer) and Layer 3 (network or IP layer). It does all the work in the old `net-tools` package.
+`ip` 命令工作在 [OSI 网络栈][2] 上：数据链路层和网络（IP）层。它做了之前 `net-tools` 包的所有工作。
 
-### Installing ip
+### 安装 ip
 
-The `ip` command is included in the `iproute2util` package. It's probably already included in your Linux distribution. If it's not, you can install it from your distro's software repository.
+`ip` 命令包含在 `iproute2util` 包中，它可能已经在你的 Linux 发行版中安装了。如果没有，你可以从发行版的仓库中进行安装。
 
-### Comparing ipconfig and ip usage
+### ifconfig 和 ip 使用对比 
 
-The `ip` and `ipconfic` commands can be used to configure a network interface, but they do things differently. I'll compare how to do common tasks with the old (`ipconfig`) and new (`ip`) commands.
+`ip` 和 `ifconfig` 命令可以用来配置网络接口，但它们做事方法不同。接下来，作为对比，我将用它们来执行一些常见的任务。
 
-#### View network interface and IP address
+#### 查看网口和 IP 地址
 
-If you want to see the IP address of a host or view network interface information, the old `ifconfig` command, with no arguments, provides a good summary:
+如果你想查看主机的 IP 地址或网络接口信息，`ifconfig` （不带任何参数）命令提供了一个很好的总结。
 
 
 ```
 $ ifconfig
-                                                                                                
+                                                                       
 eth0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500                                                                 
        ether bc:ee:7b:5e:7d:d8  txqueuelen 1000  (Ethernet)                                                       
        RX packets 0  bytes 0 (0.0 B)
@@ -59,7 +60,7 @@ wlan0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-The new `ip` command provides similar results, but the command is `ip address show`, or just `ip a` for short:
+新的 `ip` 命令提供了类似的结果，但命令是 `ip address show`，或者简写为 `ip a`:
 
 
 ```
@@ -83,118 +84,118 @@ $ ip a
       valid_lft forever preferred_lft forever
 ```
 
-#### Add IP address
+#### 添加 IP 地址
 
-To add an IP address to an interface with `ifconfig`, the command is:
-
-
-```
-`$ ifconfig eth0 add 192.9.203.21`
-```
-
-The command is similar for `ip`:
+使用 `ifconfig` 命令添加 IP 地址命令为：
 
 
-```
-`$ ip address add 192.9.203.21 dev eth0`
+```bash
+$ ifconfig eth0 add 192.9.203.21
 ```
 
-Subcommands in `ip` can be shortened, so this command is equally valid:
+`ip` 类似:
 
 
-```
-`$ ip addr add 192.9.203.21 dev eth0`
-```
-
-You can make it even shorter:
-
-
-```
-`$ ip a add 192.9.203.21 dev eth0`
+```bash
+$ ip address add 192.9.203.21 dev eth0
 ```
 
-#### Remove an IP address
-
-The inverse of adding an IP address is to remove one.
-
-With `ifconfig`, the syntax is:
+`ip` 中的子命令可以缩短，所以下面这个命令同样有效：
 
 
-```
-`$ ifconfig eth0 del 192.9.203.21`
+```bash
+$ ip addr add 192.9.203.21 dev eth0
 ```
 
-The `ip` command syntax is:
+你甚至可以更短些：
 
 
-```
-`$ ip a del 192.9.203.21 dev eth0`
-```
-
-#### Enable or disable multicast
-
-Enabling (or disabling) [multicast][3] on an interface with `ifconfig` happens with the `multicast` argument:
-
-
-```
-`# ifconfig eth0 multicast`
+```bash
+$ ip a add 192.9.203.21 dev eth0
 ```
 
-With `ip`, use the `set` subcommand with the device (`dev`) and a Boolean or toggle `multicast` option:
+#### 移除一个 IP 地址
+
+添加 IP 地址与删除 IP 地址正好相反。
+
+使用 `ifconfig`，命令是:
 
 
-```
-`# ip link set dev eth0 multicast on`
-```
-
-#### Enable or disable a network
-
-Every sysadmin is familiar with the old "turn it off and then on again" trick to fix a problem. In terms of networking interfaces, that translates to bringing a network up or down.
-
-The `ifconfig` command does this with the `up` or `down` keywords:
-
-
-```
-`# ifconfig eth0 up`
+```bash
+$ ifconfig eth0 del 192.9.203.21
 ```
 
-Or you could use a dedicated command:
+`ip` 命令的语法是：
 
 
-```
-`# ifup eth0`
-```
-
-The `ip` command uses the `set` subcommand to set the interface to an `up` or `down` state:
-
-
-```
-`# ip link set eth0 up`
+```bash
+$ ip a del 192.9.203.21 dev eth0
 ```
 
-#### Enable or disable the Address Resolution Protocol (ARP)
+#### 启用或禁用组播
 
-With `ifconfig`, you enable ARP by declaring it:
-
-
-```
-`# ifconfig eth0 arp`
-```
-
-With `ip`, you _set_ the `arp` property as `on` or `off`:
+使用 `ifconfig` 接口来启用或禁用[组播][3]：
 
 
-```
-`# ip link set dev eth0 arp on`
+```bash
+# ifconfig eth0 multicast
 ```
 
-### Pros and cons of ip and ipconfig
+对于 `ip`，使用 `set` 子命令与设备（`dev`）以及一个布尔值和 `multicast` 选项：
 
-The `ip` command is more versatile and technically more efficient than `ifconfig` because it uses `Netlink` sockets rather than `ioctl` system calls.
 
-The `ip` command may appear more verbose and more complex than `ifconfig`, but that's one reason it's more versatile. Once you start using it, you'll get a feel for its internal logic (for instance, using `set` instead of a seemingly arbitrary mix of declarations or settings).
+```bash
+# ip link set dev eth0 multicast on
+```
 
-Ultimately, `ifconfig` is outdated (for instance, it lacks full support for network namespaces), and `ip` is designed for the modern network. Try it out, learn it, use it. You'll be glad you did!
+#### 启用或禁用网络
+
+每个系统管理员都熟悉“先关闭，然后打开”这个技巧来解决问题。在网络接口上，即打开或关闭网络。
+
+`ifconfig` 命令使用 `up` 或 `down` 关键字来实现：
+
+
+```bash
+# ifconfig eth0 up
+```
+
+或者你可以使用一个专用命令：
+
+
+```bash
+# ifup eth0
+```
+
+`ip` 命令使用 `set` 子命令将网络设置为 `up` 或 `down` 状态：
+
+
+```bash
+# ip link set eth0 up
+```
+
+#### 开启或关闭地址解析功能（ARP）
+
+使用 `ifconfig`，你可以通过声明来启用：
+
+
+```bash
+# ifconfig eth0 arp
+```
+
+使用 `ip`，你可以将 `arp` 属性设置为 `on` 或 `off`：
+
+
+```bash
+# ip link set dev eth0 arp on
+```
+
+### ip 和 ipconfig 的优缺点
+
+`ip` 命令比 `ifconfig` 更通用，技术上也更有效，因为它使用的是 `Netlink` 套接字，而不是 `ioctl` 系统调用。
+
+`ip` 命令可能看起来比 `ifconfig` 更详细、更复杂，但这是它拥有更多功能的一个原因。一旦你开始使用它，你会了解它的内部逻辑（例如，使用 `set` 而不是看起来随意叠加的声明或设置）。
+
+最后，`ifconfig` 已经过时了（例如，它缺乏对网络名称空间的支持），而 `ip` 是为现代网络而生的。尝试并学习它，使用它，你会很感激你使用它的！
 
 --------------------------------------------------------------------------------
 
@@ -202,7 +203,7 @@ via: https://opensource.com/article/21/1/ifconfig-ip-linux
 
 作者：[Rajan Bhardwaj][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
