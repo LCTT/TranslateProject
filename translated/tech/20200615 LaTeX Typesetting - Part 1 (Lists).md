@@ -1,34 +1,36 @@
-[#]: collector: (lujun9972)
-[#]: translator: (rakino)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (LaTeX Typesetting – Part 1 (Lists))
-[#]: via: (https://fedoramagazine.org/latex-typesetting-part-1/)
-[#]: author: (Earl Ramirez https://fedoramagazine.org/author/earlramirez/)
+[#]: collector: "lujun9972"
+[#]: translator: "rakino"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "LaTeX Typesetting – Part 1 (Lists)"
+[#]: via: "https://fedoramagazine.org/latex-typesetting-part-1/"
+[#]: author: "Earl Ramirez https://fedoramagazine.org/author/earlramirez/"
 
-LaTeX Typesetting – Part 1 (Lists)
+LaTeX 排版——第 1 部分：列表
 ======
 
 ![][1]
 
-This series builds on the previous articles: [Typeset your docs with LaTex and TeXstudio on Fedora][2] and [LaTeX 101 for beginners][3]. This first part of the series is about LaTeX lists.
-
-### Types of lists
-
-LaTeX lists are enclosed environments, and each item in the list can take a line of text to a full paragraph. There are three types of lists available in LaTeX. They are:
-
-  * **Itemized**: unordered or bullet
-  * **Enumerated**: ordered
-  * **Description**: descriptive
+本系列基于前文 [Typeset your docs with LaTex and TeXstudio on Fedora][2] 和 [LaTeX 101 for beginners][3]，本文即系列的第一部分是关于 LaTeX 列表的。
 
 
 
-### Creating lists
+### 列表类型
 
-To create a list, prefix each list item with the \_item_ command. Precede and follow the list of items with the \_begin_{&lt;type&gt;} and \_end_{&lt;type&gt;} commands respectively where &lt;type&gt; is substituted with the type of the list as illustrated in the following examples.
+LaTeX 中的列表是封闭的环境，列表中的每个项目可以取一行文字到一个完整的段落。在 LaTeX 中有三种列表类型：
 
-#### Itemized list
+  * **itemize**: <ruby>无序列表<rt>unordered list</rt></ruby>/<ruby>项目符号列表<rt>bullet list</rt></ruby> 
+  * **enumerate**: <ruby>有序列表<rt>ordered list</rt></ruby> 
+  * **description**: <ruby>描述列表<rt>descriptive list</rt></ruby> 
+
+
+
+### 创建列表
+
+要创建一个列表，需要在每个项目前加上控制序列 \\_item_，并在项目清单前后分别加上控制序列 \\_begin_{<类型>} 和 \\_end_{<类型>}（将其中的 <类型> 替换为将要使用的列表类型），如下例：
+
+#### itemize（无序列表）
 
 ```
 \begin{itemize}
@@ -40,7 +42,7 @@ To create a list, prefix each list item with the \_item_ command. Precede and fo
 
 ![][4]
 
-#### Enumerated list
+#### enumerate（有序列表）
 
 ```
 \begin{enumerate}
@@ -52,7 +54,7 @@ To create a list, prefix each list item with the \_item_ command. Precede and fo
 
 ![][5]
 
-#### Descriptive list
+#### description（描述列表）
 
 ```
 \begin{description}
@@ -63,13 +65,13 @@ To create a list, prefix each list item with the \_item_ command. Precede and fo
 
 ![][6]
 
-### Spacing list items
+### 列表项目间距
 
-The default spacing can be customized by adding \_usepackage{enumitem}_ to the preamble. The _enumitem_ package enables the _noitemsep_ option and the \_itemsep_ command which you can use on your lists as illustrated below.
+可以通过在导言区加入 \\_usepackage{enumitem}_ 来自定义默认的间距，宏包 _enumitem_ 启用了选项 _noitemsep_ 和控制序列 \\_itemsep_ ，可以在列表中使用他们，如下例所示：
 
-#### Using the noitemsep option
+#### 使用选项 noitemsep
 
-Enclose the _noitemsep_ option in square brackets and place it on the \_begin_ command as shown below. This option removes the default spacing.
+将选项 _noitemsep_ 封闭在方括号内，并同下文所示放在控制序列 \\_begin_ 之后，该选项将移除默认的间距。
 
 ```
 \begin{itemize}[noitemsep]
@@ -81,9 +83,9 @@ Enclose the _noitemsep_ option in square brackets and place it on the \_begin_ c
 
 ![][7]
 
-#### Using the \itemsep command
+#### 使用控制序列 \itemsep
 
-The \_itemsep_ command must be suffixed with a number to indicate how much space there should be between the list items.
+控制序列 \\_itemsep_ 必须以一个数字作为后缀，用以表示列表项目之间应该有多少空间。
 
 ```
 \begin{itemize} \itemsep0.75pt
@@ -94,11 +96,11 @@ The \_itemsep_ command must be suffixed with a number to indicate how much space
 
 ![][8]
 
-### Nesting lists
+### 嵌套列表
 
-LaTeX supports nested lists up to four levels deep as illustrated below.
+LaTeX 最多最多支持四层嵌套列表，如下例：
 
-#### Nested itemized lists
+#### 嵌套无序列表
 
 ```
 \begin{itemize}[noitemsep]
@@ -122,7 +124,7 @@ LaTeX supports nested lists up to four levels deep as illustrated below.
 
 ![][9]
 
-#### Nested enumerated lists
+#### 嵌套有序列表
 
 ```
 \begin{enumerate}[noitemsep]
@@ -146,32 +148,32 @@ LaTeX supports nested lists up to four levels deep as illustrated below.
 
 ![][10]
 
-### List style names for each list type
+### 每种列表类型的列表样式名称
 
-**Enumerated** | **Itemized**
+**enumerate（有序列表）** | **itemize（无序列表）** 
 ---|---
-\alph* | $\bullet$
-\Alph* | $\cdot$
-\arabic* | $\diamond$
-\roman* | $\ast$
-\Roman* | $\circ$
-| $-$
+\alph* （小写字母） | $\bullet$ (Bullet) 
+\Alph* （大写字母） | $\cdot$ (Period) 
+\arabic* （阿拉伯数字） | $\diamond$ (Diamond) 
+\roman* （小写罗马数字） | $\ast$ (Asterisk) 
+\Roman* （大写罗马数字） | $\circ$ (Circle) 
+| $-$ (Dash) 
 
-### Default style by list depth
+### 按嵌套深度划分的默认样式
 
-**Level** | **Enumerated** | **Itemized**
+**嵌套深度** | **enumerate（有序列表）** | **itemize（无序列表）** 
 ---|---|---
-1 | Number | Bullet
-2 | Lowercase alphabet | Dash
-3 | Roman numerals | Asterisk
-4 | Uppercase alphabet | Period
+1 | 阿拉伯数字 | Bullet
+2 | 小写字母 | Dash
+3 | 小写罗马数字 | Asterisk
+4 | 大写字母 | Period
 
-### Setting list styles
+### 设置列表样式
 
-The below example illustrates each of the different itemiszed list styles.
+下面的例子列举了无序列表的不同样式。
 
 ```
-% Itemize style
+% 无序列表样式
 \begin{itemize}
     \item[$\ast$] Asterisk
     \item[$\diamond$] Diamond
@@ -185,14 +187,14 @@ The below example illustrates each of the different itemiszed list styles.
 
 ![][11]
 
-There are three methods of setting list styles. They are illustrated below. These methods are listed by priority; highest priority first. A higher priority will override a lower priority if more than one is defined for a list item.
+有三种设置列表样式的方式，下面将按照优先级从高到低的顺序分别举例。
 
-#### List styling method 1 – per item
+#### 方式一：为各项目单独设置
 
-Enclose the name of the desired style in square brackets and place it on the \_item_ command as demonstrated below.
+将需要的样式名称封闭在方括号内，并放在控制序列 \\_item_ 之后，如下例： 
 
 ```
-% First method
+% 方式一
 \begin{itemize}
     \item[$\ast$] Asterisk
     \item[$\diamond$] Diamond
@@ -204,12 +206,12 @@ Enclose the name of the desired style in square brackets and place it on the \_i
 \end{itemize}
 ```
 
-#### List styling method 2 – on the list
+#### 方式二：为整个列表设置
 
-Prefix the name of the desired style with _label=_. Place the parameter, including the _label=_ prefix, in square brackets on the \_begin_ command as demonstrated below.
+将需要的样式名称以 _label=_ 前缀并封闭在方括号内，放在控制序列 _\begin_ 之后，如下例：
 
 ```
-% Second method
+% 方式二
 \begin{enumerate}[label=\Alph*.]
     \item Fedora 32
     \item Fedora 31
@@ -217,23 +219,23 @@ Prefix the name of the desired style with _label=_. Place the parameter, includi
 \end{enumerate}
 ```
 
-#### List styling method 3 – on the document
+#### 方式三：为整个文档设置
 
-This method changes the default style for the entire document. Use the \_renewcommand_ to set the values for the labelitems. There is a different labelitem for each of the four label depths as demonstrated below.
+该方式将改变整个文档的默认样式。使用 \\_renewcommand_ 来设置项目标签的值，下例分别为四个嵌套深度的项目标签设置了不同的样式。
 
 ```
-% Third method
+% 方式三
 \renewcommand{\labelitemi}{$\ast$}
 \renewcommand{\labelitemii}{$\diamond$}
 \renewcommand{\labelitemiii}{$\bullet$}
 \renewcommand{\labelitemiv}{$-$}
 ```
 
-### Summary
+### 总结
 
-LaTeX supports three types of lists. The style and spacing of each of the list types can be customized. More LaTeX elements will be explained in future posts.
+LaTeX 支持三种列表，而每种列表的风格和间距都是可以自定义的。在以后的文章中，我们将解释更多的 LaTeX 元素。
 
-Additional reading about LaTeX lists can be found here: [LaTeX List Structures][12]
+关于 LaTeX 列表的延伸阅读可以在这里找到：[LaTeX List Structures][12]
 
 --------------------------------------------------------------------------------
 
