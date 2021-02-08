@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (ShuyRoy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -54,7 +54,7 @@ via: https://www.networkworld.com/article/3387117/intel-formally-launches-optane
 
 作者：[Andy Patrizio][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[RiaXu](https://github.com/ShuyRoy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
