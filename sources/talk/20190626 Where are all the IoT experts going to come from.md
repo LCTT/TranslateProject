@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (scvpet)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -8,6 +8,7 @@
 [#]: author: (Fredric Paul https://www.networkworld.com/author/Fredric-Paul/)
 
 Where are all the IoT experts going to come from?
+
 ======
 The fast growth of the internet of things (IoT) is creating a need to train cross-functional experts who can combine traditional networking and infrastructure expertise with database and reporting skills.
 ![Kevin \(CC0\)][1]
