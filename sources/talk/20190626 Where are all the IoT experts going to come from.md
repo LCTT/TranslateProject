@@ -7,50 +7,50 @@
 [#]: via: (https://www.networkworld.com/article/3404489/where-are-all-the-iot-experts-going-to-come-from.html)
 [#]: author: (Fredric Paul https://www.networkworld.com/author/Fredric-Paul/)
 
-Where are all the IoT experts going to come from?
+物联网专家都从何而来？
 ======
-The fast growth of the internet of things (IoT) is creating a need to train cross-functional experts who can combine traditional networking and infrastructure expertise with database and reporting skills.
+物联网 (IoT) 的快速发展催生了对跨职能专家进行培养的需求，这些专家可以将传统的网络和基础设施专业知识与数据库和报告技能相结合。
 ![Kevin \(CC0\)][1]
 
-If the internet of things (IoT) is going to fulfill its enormous promise, it’s going to need legions of smart, skilled, _trained_ workers to make everything happen. And right now, it’s not entirely clear where those people are going to come from.
+如果物联网 (IoT) 要实现其宏伟的诺言，它将需要大量聪明、熟练、**训练有素**的工人军团来实现这一切。而现在，这些人将从何而来尚不清楚。
 
-That’s why I was interested in trading emails with Keith Flynn, senior director of product management, R&amp;D at asset-optimization software company [AspenTech][2], who says that when dealing with the slew of new technologies that fall under the IoT umbrella, you need people who can understand how to configure the technology and interpret the data. Flynn sees a growing need for existing educational institutions to house IoT-specific programs, as well as an opportunity for new IoT-focused private colleges, offering a well -ounded curriculum
+这就是我为什么有兴趣同资产优化软件公司 [AspenTech][2] 的产品管理、R&amp;D 研发高级总监基思·弗林 (Keith Flynn) 通邮件，他说，当处理大量属于物联网范畴的新技术时，你需要能够理解如何配置技术和解释数据的人。弗林认为，现有的教育机构对物联网特定课程的需求越来越大，这同时也给了以物联网为重点，提供了完善课程的新私立学院机会。
 
-“In the future,” Flynn told me, “IoT projects will differ tremendously from the general data management and automation projects of today. … The future requires a more holistic set of skills and cross-trading capabilities so that we’re all speaking the same language.”
+弗林跟我说，“在未来物联网项目将与如今普遍的数据管理和自动化项目有着巨大的不同......未来需要更全面的技能和交叉交易能力，这样我们才会说同一种语言。”
 
-**[ Also read:  [20 hot jobs ambitious IT pros should shoot for][3] ]**
+**[ 参见： [有雄心壮志的I T 专业人才应该争取的 20 个热门职位][3] ]**
 
-With the IoT growing 30% a year, Flynn added, rather than a few specific skills, “everything from traditional deployment skills, like networking and infrastructure, to database and reporting skills and, frankly, even basic data science, need to be understood together and used together.”
+弗林补充说，随着物联网每年增长 30%，将不再依赖于几个特定的技能，“从传统的部署技能（如网络和基础设施）到数据库和报告技能，坦白说，甚至是基础数据科学，都将需要一起理解和使用。”
 
-### Calling all IoT consultants
+### 召集所有物联网顾问
 
-“The first big opportunity for IoT-educated people is in the consulting field,” Flynn predicted. “As consulting companies adapt or die to the industry trends … having IoT-trained people on staff will help position them for IoT projects and make a claim in the new line of business: IoT consulting.”
+弗林预测，“受过物联网教育的人的第一个大机会将会是在咨询领域，随着咨询公司对行业趋势的适应或淘汰......有受过物联网培训的员工将有助于他们在物联网项目中的定位，并在新的业务线中提出要求——物联网咨询。”
 
-The problem is especially acute for startups and smaller companies. “The bigger the organization, the more likely they have a means to hire different people across different lines of skillsets,” Flynn said. “But for smaller organizations and smaller IoT projects, you need someone who can do both.”
+对初创企业和小型公司而言，这个问题尤为严重。“组织越大，他们越有可能雇佣到不同技术类别的人”弗林这样说到，“但对于较小的组织和较小的物联网项目来说，你则需要一个能同时兼顾的人。”
 
-Both? Or _everything?_ The IoT “requires a combination of all knowledge and skillsets,” Flynn said, noting that “many of the skills aren’t new, they’ve just never been grouped together or taught together before.”
+两者兼而有之？还是**一应俱全？**物联网“需要将所有知识和技能组合在一起”，弗林说到，“并不是所有技能都是全新的，只是在此之前从来没有被归纳在一起或放在一起教授过。”
 
-**[ [Looking to upgrade your career in tech? This comprehensive online course teaches you how.][4] ]**
+**【[想在技术领域提升自己的事业？这个全面的在线课程会教您该怎么做。][4]】**
 
-### The IoT expert of the future
+### 未来的物联网专家
 
-True IoT expertise starts with foundational instrumentation and electrical skills, Flynn said, which can help workers implement new wireless transmitters and boost technology for better battery life and power consumption.
+弗林表示，真正的物联网专业技术是从基础的仪器仪表和电气技能开始的，这能帮助工人发明新的无线发射器或提升技术，以提高电池寿命和功耗。
 
-“IT skills, like networking, IP addressing, subnet masks, cellular and satellite are also pivotal IoT needs,” Flynn said. He also sees a need for database management skills and cloud management and security expertise, “especially as things like [advanced process control] APC and sending sensor data directly to databases and data lakes become the norm.”
+“IT 技能，如网络、IP 寻址、子网掩码、蜂窝和卫星也是物联网的关键需求”，弗林说。他还认为物联网需要数据库管理技能和云管理和安全专业知识，“特别是当高级过程控制 (APC) 将传感器数据直接发送到数据库和数据湖等事情成为常态时。”
 
-### Where will IoT experts come from?
+### 物联网专家又从何而来？
 
-Flynn said standardized formal education courses would be the best way to make sure that graduates or certificate holders have the right set of skills. He even laid out a sample curriculum: “Start in chronological order with the basics like [Electrical &amp; Instrumentation] E&amp;I and measurement. Then teach networking, and then database administration and cloud courses should follow that. This degree could even be looped into an existing engineering course, and it would probably take two years … to complete the IoT component.”
+弗林说，标准化的正规教育课程将是确保毕业生或证书持有者掌握一套正确技能的最佳途径。他甚至还列出了一个样本课程。“按时间顺序开始，从基础知识开始，比如[电气&amp;仪表]E&amp;I和测量。然后讲授网络知识，数据库管理和云计算课程都应在此之后开展。这个学位甚至可以循序渐进至现有的工程课程中，这可能需要两年时间......来完成物联网部分的学业。”
 
-While corporate training could also play role, “that’s easier said than done,” Flynn warned. “Those trainings will need to be organization-specific efforts and pushes.”
+虽然企业培训也能发挥作用，但实际上却是“说起来容易做起来难”，弗林这样警告，“这些培训需要针对组织的具体努力而推动。”
 
-Of course, there are already [plenty of online IoT training courses and certificate programs][5]. But, ultimately, the responsibility lies with the workers themselves.
+当然，现在市面上已经有了[大量的在线物联网培训课程和证书课程][5]。但追根到底，这一工作全都依赖于工人自身的推断。
 
-“Upskilling is incredibly important in this world as tech continues to transform industries,” Flynn said. “If that upskilling push doesn’t come from your employer, then online courses and certifications would be an excellent way to do that for yourself. We just need those courses to be created. ... I could even see organizations partnering with higher-education institutions that offer these courses to give their employees better access to it. Of course, the challenge with an IoT program is that it will need to constantly evolve to keep up with new advancements in tech.”
+“在这个世界上，随着科技不断改变行业，提升技能是非常重要的”，弗林说，“如果这种提升技能的推动力并不是来源于你的雇主，那么在线课程和认证将会是提升你自己很好的一个方式。我们只需要创建这些课程......我甚至可以预见组织将与提供这些课程的高等教育机构合作，让他们的员工更好地开始。当然，物联网课程的挑战在于它需要不断发展以跟上科技的发展。”
 
-**[ For more on IoT, see [tips for securing IoT on your network][6], our list of [the most powerful internet of things companies][7] and learn about the [industrial internet of things][8]. | Get regularly scheduled insights by [signing up for Network World newsletters][9]. ]**
+**【有关物联网的更多信息，请参阅[在网络上确保物联网安全的提醒][6]，我们的[最强大的物联网公司][7]列表，并了解[工业物联网][8]。 | 通过[注册网络世界新闻通讯][9]定期获取见解。】** 
 
-Join the Network World communities on [Facebook][10] and [LinkedIn][11] to comment on topics that are top of mind.
+参与[脸书][10]和[领英][11]上的网络世界社区，对最重要的话题进行评论。 
 
 --------------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ via: https://www.networkworld.com/article/3404489/where-are-all-the-iot-experts-
 
 作者：[Fredric Paul][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Percy (@scvoet)](https://github.com/scvoet)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
