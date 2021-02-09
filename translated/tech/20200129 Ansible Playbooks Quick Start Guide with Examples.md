@@ -1,96 +1,90 @@
-[#]: collector: (lujun9972)
-[#]: translator: (MjSeven)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Ansible Playbooks Quick Start Guide with Examples)
-[#]: via: (https://www.2daygeek.com/ansible-playbooks-quick-start-guide-with-examples/)
-[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
+[#]: collector: "lujun9972"
+[#]: translator: "MjSeven"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Ansible Playbooks Quick Start Guide with Examples"
+[#]: via: "https://www.2daygeek.com/ansible-playbooks-quick-start-guide-with-examples/"
+[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
-Ansible Playbooks Quick Start Guide with Examples
+Ansible 剧本快速入门指南
 ======
 
-We have already written two articles about Ansible, this is the third article.
+我们已经写了两篇关于 Ansible 的文章，这是第三篇。
 
-If you are new to Ansible, I advise you to read the two topics below, which will teach you the basics of Ansible and what it is.
+如果你是 Ansible 新手，我建议你阅读下面这两篇文章，它会教你一些 Ansible 的基础以及它是什么。
 
-  * **Part-1: [How to Install and Configure Ansible on Linux][1]**
-  * **Part-2: [Ansible ad-hoc Command Quick Start Guide][2]**
+  * **第一篇: [在 Linux 如何安装和配置 Ansible][1]**
+  * **第二篇: [Ansible ad-hoc 命令快速入门指南][2]**
 
+如果你已经阅读过了，那么在阅读本文时你才不会感到突兀。
 
+### 什么是 Ansible 剧本?
 
-If you have finished them, you will feel the continuity as you read this article.
+剧本比临时命令模式更强大，而且完全不同。
 
-### What is the Ansible Playbook?
+它使用了 **"/usr/bin/ansible-playbook"** 二进制文件，并且提供丰富的特性使得复杂的任务变得更容易。
 
-Playbooks are much more powerful and completely different way than ad-hoc command mode.
+如果你想经常运行一个任务，剧本是非常有用的。
 
-It uses the **“/usr/bin/ansible-playbook”** binary. It provides rich features to make complex task easier.
+此外，如果你想在服务器组上执行多个任务，它也是非常有用的。
 
-Playbooks are very useful if you want to run a task often.
+剧本由 YAML 语言编写。YAML 代表一种标记语言，它比其它常见的数据格式（如 XML 或 JSON）更容易读写。
 
-Also, this is useful if you want to perform multiple tasks at the same time on the group of server.
-
-Playbooks are written in YAML language. YAML stands for Ain’t Markup Language, which is easier for humans to read and write than other common data formats such as XML or JSON.
-
-The Ansible Playbook Flow Chart below will tell you its detailed structure.
+下面这张 Ansible 剧本流程图将告诉你它的详细结构。
 
 ![][3]
 
-### Understanding the Ansible Playbooks Terminology
+### 理解 Ansible 剧本的术语
 
-  * **Control Node:** The machine where Ansible is installed. It is responsible for managing client nodes.
-  * **Managed Nodes:** List of hosts managed by the control node
-  * **Playbook:** A Playbook file contains a set of procedures used to automate a task.
-  * **Inventory:** The inventory file contains information about the servers you manage.
-  * **Task:** Each play has multiple tasks, tasks that are executed one by one against a given machine (it a host or multiple host or a group of host).
-  * **Module:** Modules are a unit of code that is used to gather information from the client node.
-  * **Role:** Roles are ways to automatically load some vars_files, tasks, and handlers based on known file structure.
-  * **Play:** Each playbook has multiple plays, and a play is the implementation of a particular automation from beginning to end.
-  * **Handlers:** This helps you reduce any service restart in a play. Lists of handler tasks are not really different from regular tasks, and changes are notified by notifiers. If the handler does not receive any notification, it will not work.
+  * **控制节点:** Ansible 安装的机器，它负责管理客户端节点。
+  * **被控节点:** 被控制节点管理的主机列表。
+  * **剧本:** 一个剧本文件，包含一组自动化任务。
+  * **主机清单:*** 这个文件包含有关管理的服务器的信息。
+  * **任务:** 每个剧本都有大量的任务。任务在指定机器上依次执行（一个主机或多个主机）。
+  * **模块:** 模块是一个代码单元，用于从客户端节点收集信息。
+  * **角色:** 角色是根据已知文件结构自动加载一些变量文件、任务和处理程序的方法。
+  * **Play:** 每个剧本含有大量的 play, 一个 play 从头到尾执行一个特定的自动化。
+  * **Handlers:** 它可以帮助你减少在剧本中的重启任务。处理程序任务列表实际上与常规任务没有什么不同，更改由通知程序通知。如果处理程序没有收到任何通知，它将不起作用。
 
+### 基本的剧本是怎样的？
 
+下面是一个剧本的模板：
 
-### How Does the Basic Playbook looks Like?
-
-Here’s how the basic playbook looks.
-
-```
----                                [YAML file should begin with a three dash]
-- name:                            [Description about a script]
-  hosts: group                     [Add a host or host group]
-  become: true                     [It requires if you want to run a task as a root user]
-  tasks:                           [What action do you want to perform under task]
-    - name:                        [Enter the module options]
-      module:                      [Enter a module, which you want to perform]
-        module_options-1: value    [Enter the module options]
+```yaml
+---                                [YAML  文件应该以三个破折号开头]
+- name:                            [脚本描述]
+  hosts: group                     [添加主机或主机组]
+  become: true                     [如果你想以 root 身份运行任务，则标记它]
+  tasks:                           [你想在任务下执行什么动作]
+    - name:                        [输入模块选项]
+      module:                      [输入要执行的模块]
+        module_options-1: value    [输入模块选项]
         module_options-2: value
         .
         module_options-N: value
 ```
 
-### How to Understand Ansible Output
+### 如何理解 Ansible 的输出
 
-The Ansible Playbook output comes with 4 colors, see below for color definitions.
+Ansible 剧本的输出有四种颜色，下面是具体含义：
 
-  * **Green:** **ok –** If that is correct, the associated task data already exists and configured as needed.
-  * **Yellow: changed –** Specific data has updated or modified according to the needs of the tasks.
-  * **Red: FAILED –** If there is any problem while doing a task, it returns a failure message, it may be anything and you need to fix it accordingly.
-  * **White:** It comes with multiple parameters
+  * **绿色:** **ok –** 代表成功，关联的任务数据已经存在，并且已经根据需要进行了配置。
+  * **黄色: 已更改 –** 指定的数据已经根据任务的需要更新或修改。
+  * **红色: 失败–** 如果在执行任务时出现任何问题，它将返回一个失败消息，它可能是任何东西，你需要相应地修复它。
+  * **白色:** 表示有多个参数。
 
+为此，创建一个剧本目录，将它们都放在同一个地方。
 
-
-To do so, create a playbook directory to keep them all in one place.
-
-```
+```bash
 $ sudo mkdir /etc/ansible/playbooks
 ```
 
-### Playbook-1: Ansible Playbook to Install Apache Web Server on RHEL Based Systems
+### 剧本-1：在 RHEL 系统上安装 Apache Web 服务器
 
-This sample playbook allows you to install the Apache web server on a given target node.
+这个示例剧本允许你在指定的目标机器上安装 Apache Web 服务器：
 
-```
+```bash
 $ sudo nano /etc/ansible/playbooks/apache.yml
 
 ---
@@ -108,17 +102,17 @@ $ sudo nano /etc/ansible/playbooks/apache.yml
         state: started
 ```
 
-```
+```bash
 $ ansible-playbook apache1.yml
 ```
 
 ![][3]
 
-### How to Understand Playbook Execution in Ansible
+### 如何理解 Ansible 中剧本的执行
 
-To check the syntax error, run the following command. If it finds no error, it only shows the given file name. If it detects any error, you will get an error as follows, but the contents may differ based on your input file.
+使用以下命令来查看语法错误。如果没有发现错误，它只显示剧本文件名。如果它检测到任何错误，你将得到一个如下所示的错误，但内容可能根据你的输入文件而有所不同。
 
-```
+```bash
 $ ansible-playbook apache1.yml --syntax-check
 
 ERROR! Syntax Error while loading YAML.
@@ -143,11 +137,11 @@ Should be written as:
 # ^--- all spaces here.
 ```
 
-Alternatively, you can check your ansible-playbook content from online using the following url @ [YAML Lint][4]
+或者，你可以使用这个 URL [YAML Lint][4] 在线检查 Ansible 剧本内容。
 
-Run the following command to perform a **“Dry Run”**. When you run a ansible-playbook with the **“–check”** option, it does not make any changes to the remote machine. Instead, it will tell you what changes they have made rather than create them.
+执行以下命令进行**“演练”**。当你运行带有 **"-check"** 选项的剧本时，它不会对远程机器进行任何修改。相反，它会告诉你它将要做什么改变但不是真的执行。
 
-```
+```bash
 $ ansible-playbook apache.yml --check
 
 PLAY [Install and Configure Apache Webserver] ********************************************************************
@@ -169,9 +163,9 @@ node1.2g.lab               : ok=3    changed=2    unreachable=0    failed=0    s
 node2.2g.lab               : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-If you want detailed information about your ansible playbook implementation, use the **“-vv”** verbose option. It shows what it really does to gather this information.
+如果你想要知道 ansible 剧本实现的详细信息，使用 **"-vv"** 选项，它会展示如何收集这些信息。
 
-```
+```bash
 $ ansible-playbook apache.yml --check -vv
 
 ansible-playbook 2.9.2
@@ -212,11 +206,11 @@ node1.2g.lab               : ok=3    changed=2    unreachable=0    failed=0    s
 node2.2g.lab               : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-### Playbook-2: Ansible Playbook to Install Apache Web Server on Ubuntu Based Systems
+### 剧本-2：在 Ubuntu 系统上安装 Apache Web 服务器
 
-This sample playbook allows you to install the Apache web server on a given target node.
+这个示例剧本允许你在指定的目标节点上安装 Apache Web 服务器。
 
-```
+```bash
 $ sudo nano /etc/ansible/playbooks/apache-ubuntu.yml
 
 ---
@@ -250,13 +244,13 @@ $ sudo nano /etc/ansible/playbooks/apache-ubuntu.yml
         enabled: yes
 ```
 
-### Playbook-3: Ansible Playbook to Install a List of Packages on Red Hat Based Systems
+### 剧本-3：在 Red Hat 系统上安装软件包列表
 
-This sample playbook allows you to install a list of packages on a given target node.
+这个示例剧本允许你在指定的目标节点上安装软件包。
 
-**Method-1:**
+**方法-1:**
 
-```
+```bash
 $ sudo nano /etc/ansible/playbooks/packages-redhat.yml
 
 ---
@@ -273,9 +267,9 @@ $ sudo nano /etc/ansible/playbooks/packages-redhat.yml
           - htop
 ```
 
-**Method-2:**
+**方法-2:**
 
-```
+```bash
 $ sudo nano /etc/ansible/playbooks/packages-redhat-1.yml
 
 ---
@@ -292,9 +286,9 @@ $ sudo nano /etc/ansible/playbooks/packages-redhat-1.yml
         - htop
 ```
 
-**Method-3: Using Array Variable**
+**方法-3: 使用数组变量**
 
-```
+```bash
 $ sudo nano /etc/ansible/playbooks/packages-redhat-2.yml
 
 ---
@@ -309,11 +303,11 @@ $ sudo nano /etc/ansible/playbooks/packages-redhat-2.yml
        with_items: "{{ packages }}"
 ```
 
-### Playbook-4: Ansible Playbook to Install Updates on Linux Systems
+### 剧本-4：在 Linux 系统上安装更新
 
-This sample playbook allows you to install updates on your Linux systems, running Red Hat and Debian-based client nodes.
+这个示例剧本允许你在基于 Red Hat 或 Debian 的 Linux 系统上安装更新。
 
-```
+```bash
 $ sudo nano /etc/ansible/playbooks/security-update.yml
 
 ---
@@ -336,7 +330,7 @@ via: https://www.2daygeek.com/ansible-playbooks-quick-start-guide-with-examples/
 
 作者：[Magesh Maruthamuthu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
