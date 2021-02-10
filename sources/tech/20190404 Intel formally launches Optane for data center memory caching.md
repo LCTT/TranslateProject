@@ -7,7 +7,7 @@
 [#]: via: (https://www.networkworld.com/article/3387117/intel-formally-launches-optane-for-data-center-memory-caching.html#tk.rss_all)
 [#]: author: (Andy Patrizio https://www.networkworld.com/author/Andy-Patrizio/)
 
-Intel formally launches Optane for data center memory caching
+英特尔正式推出Optane：用于数据中心内存缓存
 ======
 
 ### 英特尔正式推出包含3D Xpoint 内存技术的傲腾持久内存产品线。英特尔的这个解决方案将傲腾持久内存放置在DRAM和NAND中间，以此来提升性能。
