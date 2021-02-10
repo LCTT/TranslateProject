@@ -10,43 +10,43 @@
 Intel formally launches Optane for data center memory caching
 ======
 
-### Intel formally launched the Optane persistent memory product line, which includes 3D Xpoint memory technology. The Intel-only solution is meant to sit between DRAM and NAND and to speed up performance.
+### 英特尔正式推出包含3D Xpoint 内存技术的傲腾持久内存产品线。英特尔的这个解决方案将傲腾持久内存放置在DRAM和NAND中间，以此来提升性能。
 
 ![Intel][1]
 
-As part of its [massive data center event][2] on Tuesday, Intel formally launched the Optane persistent memory product line. It had been out for a while, but the current generation of Xeon server processors could not fully utilize it. The new Xeon 8200 and 9200 lines take full advantage of it.
+英特尔在周二（2019年4月2日）的[大数据中心活动][2]中正式推出傲腾持久内存产品线。傲腾持久内存已经问世了一段时间，但是目前的Xeon服务器处理器还不能充分利用它。而新的Xeon8200和9200可以充分利用傲腾持久内存的优势。
 
-And since Optane is an Intel product (co-developed with Micron), that means AMD and Arm server processors are out of luck.
+由于傲腾是英特尔的产品（与美光合作开发），所以意味着AMD和ARM的服务器处理器不能够支持它。
 
-As I have [stated in the past][3], Optane DC Persistent Memory uses 3D Xpoint memory technology that Intel developed with Micron Technology. 3D Xpoint is a non-volatile memory type that is much faster than solid-state drives (SSD), almost at the speed of DRAM, but it has the persistence of NAND flash.
+正如[我之前所说的][3]，傲腾DC持久内存采用与美光合作研发的3D Xpoint内存技术。3D Xpoint是一种比SSD更快的非易失性内存，速度几乎与DRAM相近，而且它具有NAND flash的持久性。
 
-**[ Read also:[Why NVMe? Users weigh benefits of NVMe-accelerated flash storage][4] and [IDC’s top 10 data center predictions][5] | Get regularly scheduled insights [Sign up for Network World newsletters][6] ]**
+**[ 小编推荐：[为什么是NVMe？用户会权衡基于NVMe加速的闪存的优点。][4] 和 [IDC的十大数据中心预测][5] | 定期更新的新闻[请注册网络世界通信][6] ]**
 
-The first 3D Xpoint products were SSDs called Intel’s ["ruler,"][7] because they were designed in a long, thin format similar to the shape of a ruler. They were designed that way to fit in 1u server carriages. As part of Tuesday’s announcement, Intel introduced the new Intel SSD D5-P4326 'Ruler' SSD, using four-cell or QLC 3D NAND memory, with up to 1PB of storage in a 1U design.
+第一个3D Xpoint产品是被称为英特尔“尺子”的SSD，因为它们被设计成细长的样子，很像尺子的形状。他们被设计得能够适合1u的服务器托架。在周二发布的公告中，英特尔推出了新的利用四-cell或者QLC 3D NAND 内存的英特尔SSD D5-P4325[“尺子”][7]SSD，可以在1u的服务器托架上放1PB的存储。
 
-Optane DC Persistent Memory will be available in DIMM capacities of 128GB on up to 512GB initially. That’s two to four times what you can get with DRAM, said Navin Shenoy, executive vice president and general manager of Intel’s Data Center Group, who keynoted the event.
+傲腾DC持久内存的可用容量最初可以通过使用128GB的DIMM达到512GB。这次活动的关键人物——英特尔数据中心集团执行副总裁及总经理Navin Shenoy说：“傲腾DC持久内存可达到的容量是DRAM的2到4倍。”
 
-“We expect system capacity in a server system to scale to 4.5 terabytes per socket or 36 TB in an 8-socket system. That’s three times larger than what we were able to do with the first-generation of Xeon Scalable,” he said.
+他说：“我们希望服务器系统的容量可以扩展到每个插槽4.5TB或者8个插槽36TB，这是我们第一代Xeon可扩展芯片的3倍。”
 
-## Intel Optane memory uses and speed
+## 英特尔傲腾内存的使用和速度
 
-Optane runs in two different modes: Memory Mode and App Direct Mode. Memory mode is what I have been describing to you, where Optane memory exists “above” the DRAM and acts as a cache. In App Direct mode, the DRAM and Optane DC Persistent Memory are pooled together to maximize the total capacity. Not every workload is ideal for this kind of configuration, so it should be used in applications that are not latency-sensitive. The primary use case for Optane, as Intel is promoting it, is Memory Mode.
+傲腾有两种不同的运行模式：内存模式和APP直连模式。内存模式是将DRAM放在傲腾内存之上，将DRAM作为傲腾内存的缓存。APP直连模式是将DRAM和傲腾持久内存一起作为内存来最大化总容量。并不是每个工作负载都适合这种配置，所以应该在对延迟不敏感的应用程序中使用。正如英特尔推广的那样，傲腾的主要使用情景是内存模式。
 
-**[[Get certified as an Apple Technical Coordinator with this seven-part online course from PluralSight.][8] ]**
+**[[通过PluralSight上的7部分线上课程来获得苹果技术合作者的认证。][8] ]**
 
-When 3D Xpoint was initially announced a few years back, Intel claimed it was 1,000 times faster than NAND, with 1000 times the endurance, and 10 times the density potential of DRAM. Well that was a little exaggerated, but it does have some intriguing elements.
+几年前，当3D Xpoint最初发布时，英特尔宣称傲腾的速度是NAND的1000倍，忍耐力是NAND的1000倍，密度是DRAM的10倍。这虽然有点夸张，但这些因素确实很令人着迷。
 
-Optane memory, when used in 256B contiguous 4 cacheline, can achieve read speeds of 8.3GB/sec and write speeds of 3.0GB/sec. Compare that with the read/write speed of 500 or so MB/sec for a SATA SSD, and you can see the performance gain. Optane, remember, is feeding memory, so it caches frequently accessed SSD content.
+在256B的连续4个缓存行中使用傲腾内存可以达到8.3GB/秒的读速度和3.0GB/秒的写速度。与SATA SSD的500MB/秒左右的读/写速度相比，可以看到性能有很大提升。请记住，傲腾充当内存，所以它会缓存被频繁访问的SSD中的内容。
 
-This is the key takeaware of Optane DC. It will keep very large data sets very close to memory, and hence the CPU, with low latency while at the same time minimizing the need to access the slower storage subsystem, whether it’s SSD or HDD. It now offers the possibility of putting multiple terabytes of data very close to the CPU for much faster access.
+这是了解傲腾DC的关键。它能将非常大的数据集存储在离内存非常近的位置，因此具有很低延迟的CPU可以最小化访问较慢的存储子系统的访问延迟，无论存储是SSD还是HDD。现在，它提供了将很多TB的数据放在离CPU很近的位置，以获得更快的访问速度。
 
-## One challenge with Optane memory
+## 傲腾内存的一个挑战
 
-The only real challenge is that Optane goes into DIMM slots, which is where memory goes. Now some motherboards come with as many as 16 DIMM slots per CPU socket, but that’s still board real estate that the customer and OEM provider will need to balance out: Optane vs. memory. There are some Optane drives in PCI Express format, which alleviate the memory crowding on the motherboard.
+唯一真正的挑战是傲腾然后插进内存所在的DIMM插槽。现在有些主板的每个CPU有16个插槽，但是这仍然是客户和设备制造商之间需要平衡的：傲腾VS内存。有一些傲腾驱动采用了PCIe接口进行连接，可以减轻主板上内存的拥挤。
 
-3D Xpoint also offers higher endurance than traditional NAND flash memory due to the way it writes data. Intel promises a five-year warranty with its Optane, while a lot of SSDs offer only three years.
+3D Xpoint由于它写数据的方式，提供了比传统的NAND flash更高的耐久力。英特尔承诺傲腾提供5年保修期，而很多SSD只提供3年保修期。
 
-Join the Network World communities on [Facebook][9] and [LinkedIn][10] to comment on topics that are top of mind.
+加入Facebook[Facebook][9]和LinkedIn[LinkedIn][10]上的网络世界社区，对你最关心的话题发表评论吧。
 
 --------------------------------------------------------------------------------
 
