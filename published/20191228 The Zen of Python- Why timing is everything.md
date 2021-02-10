@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13103-1.html)
 [#]: subject: (The Zen of Python: Why timing is everything)
 [#]: via: (https://opensource.com/article/19/12/zen-python-timeliness)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-Python 之禅：为什么时间就是一切
+Python 之禅：时机最重要
 ======
 
-> 这是 Python 之禅特别系列的一部分，重点是第十五和第十六条原则：现在与永远。
+> 这是 Python 之禅特别系列的一部分，重点是第十五和第十六条原则：现在与将来。
 
-!["桌子上的时钟、笔和记事本"][1]
+![](https://img.linux.net.cn/data/attachment/album/202102/09/231557dkuzz22ame4ja2jj.jpg)
 
 Python 一直在不断发展。Python 社区对特性请求的渴求是无止境的，对现状也总是不满意的。随着 Python 越来越流行，这门语言的变化会影响到更多的人。
 
