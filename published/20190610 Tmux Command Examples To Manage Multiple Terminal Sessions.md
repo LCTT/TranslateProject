@@ -202,7 +202,7 @@ no server running on /tmp/tmux-1000/default
 
 ![][7]
 
-##### 水平切割 Tmux 窗格
+*水平切割 Tmux 窗格*
 
 可以使用组合键进一步切割面板。
 
