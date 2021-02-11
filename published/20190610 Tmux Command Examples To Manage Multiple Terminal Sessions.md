@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (chensanle)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13107-1.html)
 [#]: subject: (Tmux Command Examples To Manage Multiple Terminal Sessions)
 [#]: via: (https://www.ostechnix.com/tmux-command-examples-to-manage-multiple-terminal-sessions/)
 [#]: author: (sk https://www.ostechnix.com/author/sk/)
@@ -14,7 +14,7 @@
 
 我们已经了解到如何通过 [GNU Screen][2] 进行多会话管理。今天，我们将要领略另一个著名的管理会话的命令行实用工具 **Tmux**。类似 GNU Screen，Tmux 是一个帮助我们在单一终端窗口中创建多个会话，同一时间内同时运行多个应用程序或进程的终端复用工具。Tmux 自由、开源并且跨平台，支持 Linux、OpenBSD、FreeBSD、NetBSD 以及 Mac OS X。本文将讨论 Tmux 在 Linux 系统下的高频用法。
 
-### Linux 下安装 tmux
+### Linux 下安装 Tmux
 
 Tmux 可以在绝大多数的 Linux 官方仓库下获取。
 
