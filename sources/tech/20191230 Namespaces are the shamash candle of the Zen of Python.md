@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -9,8 +9,7 @@
 
 Namespaces are the shamash candle of the Zen of Python
 ======
-This is part of a special series about the Zen of Python focusing on one
-bonus principle: namespaces.
+This is part of a special series about the Zen of Python focusing on one bonus principle: namespaces.
 ![Person programming on a laptop on a building][1]
 
 Hanukkah famously has eight nights of celebration. The Hanukkah menorah, however, has nine candles: eight regular candles and a ninth that is always offset. It is called the **shamash** or **shamos**, which loosely translates to meaning "servant" or "janitor."
