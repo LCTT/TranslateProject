@@ -7,12 +7,12 @@
 [#]: via: (https://opensource.com/article/19/12/zen-python-implementation)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 
-如何判断实现你的 Python 代码是否是个好主意？
+如何判断你的 Python 代码实现是否合适？
 ======
 
 > 这是 Python 之禅特别系列的一部分，重点介绍第十七和十八条原则：困难和容易。
 
-!["开发人员和运营经理两个人之间的砖墙"][1]
+![](https://img.linux.net.cn/data/attachment/album/202102/14/120518rjkwvjs76p9d1911.jpg)
 
 一门语言并不是抽象存在的。每一个语言功能都必须用代码来实现。承诺一些功能是很容易的，但实现起来就会很麻烦。复杂的实现意味着更多潜在的 bug，甚至更糟糕的是，会带来日复一日的维护负担。
 
@@ -20,9 +20,9 @@
 
 ### <ruby>如果一个实现难以解释，那就是个坏思路<rt>If the implementation is hard to explain, it's a bad idea</rt></ruby>
 
-编程语言最重要的是可预测性。有时我们用抽象的编程模型来解释某个结构的语义，而这些模型与实现并不完全对应。然而，最好的解释只是*解释实现*。
+编程语言最重要的是可预测性。有时我们用抽象的编程模型来解释某个结构的语义，而这些模型与实现并不完全对应。然而，最好的释义就是*解释该实现*。
 
-如果该实现很难解释，那就意味着这个途径是不可能的。
+如果该实现很难解释，那就意味着这条路行不通。
 
 ### <ruby>如果一个实现易于解释，那它可能是一个好思路<rt>If the implementation is easy to explain, it may be a good idea</rt></ruby>
 
