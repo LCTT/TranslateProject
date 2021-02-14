@@ -47,7 +47,7 @@ Use ".open FILENAME" to reopen on a persistent database.
 sqlite>
 ```
 
-该命令将你使你处于 SQLite 的子 shell 中，因此现在的提示符是 SQLite 的提示符。你以前使用的 Bash 命令在这里将不再适用。你必须使用 SQLite 命令。要查看 SQLite 命令列表，请输入 `.help`：
+该命令将使你处于 SQLite 的子 shell 中，因此现在的提示符是 SQLite 的提示符。你以前使用的 Bash 命令在这里将不再适用。你必须使用 SQLite 命令。要查看 SQLite 命令列表，请输入 `.help`：
 
 ```
 sqlite> .help
