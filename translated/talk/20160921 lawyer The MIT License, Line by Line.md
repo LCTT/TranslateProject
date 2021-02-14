@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (bestony)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (lawyer The MIT License, Line by Line)
@@ -10,50 +10,51 @@
 逐行解读 MIT 许可证
 ======
 
+> 每个程序员都应该明白的 171 个字。
+
 [MIT 许可证][1] 是世界上最流行的开源软件许可证。以下是它的逐行解读。
 
-#### 阅读协议
+### 阅读许可证
 
-如果你涉及到开源软件，并且没有花时间从头到尾的阅读整个许可证（它只有 171 个单词），你现在就需要这样去做。尤其是当许可证不是你日常的工作内容时。把任何看起来不对劲或不清楚的地方记下来，然后继续阅读。我会把每一个单词再重复一遍，并按顺序分块，加入上下文和注释。但最重要的还是要牢记整体。
+如果你参与了开源软件，但还没有花时间从头到尾的阅读过这个许可证（它只有 171 个单词），你需要现在就去读一下。尤其如果许可证不是你日常每天都会接触的，把任何看起来不对劲或不清楚的地方记下来，然后继续阅读。我会分段、按顺序、加入上下文和注释，把每一个词再重复一遍。但最重要的还是要有个整体概念。
 
 > The MIT License (MIT)
 >
-> Copyright (c) <year> <copyright holders>
+> Copyright (c) \<year> \<copyright holders>
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 >
 > The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 >
-> The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the Software.
+> *The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the Software.*
 
-许可证可以分为五段，按照逻辑划分如下：
+该许可证分为五段，按照逻辑划分如下：
 
   * **头部**
-    * **许可证标题** : “MIT 许可证”
-    * **版权说明** : “Copyright (c) …”
-  * **许可证授权** : “特此批准 …”
-    * **授权范围** : “… 处理软件 …”
-    * **条件** : “… 服从了 …”
-      * **归属和通知** : “上述 … 应当被包含在内 …”
-      * **免责声明** : “软件按照“原状”提供 …”
-      * **责任限制** : “在任何情况下 …”
+    * **许可证名称**：“MIT 许可证”
+    * **版权说明**：“Copyright (c) …”
+  * **许可证授予**：“特此批准 …”
+    * **授予范围**：“… 处理软件 …”
+    * **条件**：“… 但需符合 …”
+      * **归属和通知**：“上述 … 应当被包含在内 …”
+      * **免责声明**：“软件按照‘原状’提供 …”
+      * **责任限制**：“在任何情况下 …”
 
+接下来详细看看。
 
-接下来详细看看
+### 头部
 
-#### 头部
-
-##### 许可证头部
+#### 许可证名称
 
 > The MIT License (MIT)
 
-“MIT 许可证“不是单一的许可证，而是一系列从麻省理工学院为将要发布的语言准备的许可证衍生的许可证。多年来，无论是对于使用它的原始项目，还是作为其他项目的模型，他都经历了许多变化。Fedora 项目维护了一个纯文本的[麻省理工学院许可证其他版本]的页面，如同泡在甲醛中的解剖标本一般，平淡的追溯了无序的演变。
+“MIT 许可证”不是一个单一的许可证，而是根据<ruby>麻省理工学院<rt>Massachusetts Institute of Technology</rt></ruby>（MIT）为发行版本准备的语言衍生出来一系列许可证形式。多年来，无论是对于使用它的原始项目，还是作为其他项目的范本，它经历了许多变化。Fedora 项目一直保持着 [收藏 MIT 许可证的好奇心][2]，以纯文本的方式记录了那些平淡的变化，如同泡在甲醛中的解剖标本一般，追溯了它的各种演变。
 
-幸运的是，[OSI（开放源码倡议）][3] 和 [Software Package Data eXchange（软件数据包交换）]团体已经将一种通用的 MIT 式的许可证形式标准化为”MIT 许可证“。而 OSI 则采用了 SPDX 标准化的[字符串标志符][5]，并将其中的 ”MIT“ 明确的指向标准化形式的”MIT 许可证“
+幸运的是，<ruby>[开放源码倡议组织][3]<rt>Open Source Initiative</rt></ruby>（OSI） 和 <ruby>[软件数据包交换][4]<rt>Software Package Data eXchange</rt></ruby>组织（SPDX）已经将一种通用的 MIT 式的许可证形式标准化为“<ruby>MIT 许可证<rt>The MIT License</rt></ruby>”。OSI 则采用了 SPDX 标准化的[字符串标志符][5]，并将其中的 “MIT” 明确的指向标准化形式的“MIT 许可证”。如果你想为一个新项目使用 MIT 式的条款，请使用[标准化的形式][1]。
 
-即使你在 “LICENSE” 文件中包含 “MIT 许可证”或 “SPDX:MIT“ ,任何负责的审查员仍会将文本与标准格式进行比较，以确保安全。尽管自称为“MIT 许可证”的各种许可证形式只在细微的细节上有所不同，但“MIT 许可证”的松散性吸引了一些作者加入麻烦的“定制”。典型的糟糕、不好的例子是[JSON 许可证][6]，一个 MIT 家族的许可证被加上了“这个软件应该被应用于好的，而不是恶的”。这件事情可能是“非常克罗克福特”的（译者注，JSON 格式和 JSON.org 的作者）。这绝对是一件麻烦事，也许这个笑话应该只是在律师身上，但它一直延伸到银行业。
+即使你在 `LICENSE` 文件中包含 The MIT License” 或 “SPDX:MIT”，任何负责的审查者仍会将文本与标准格式进行比较，以确保安全。尽管自称为“MIT 许可证”的各种许可证形式只在细微的细节上有所不同，但什么视作“MIT 许可证”的松散性已经诱使了一些作者加入麻烦的“自定义”。典型的糟糕、不好的、非常坏的例子是 [JSON 许可证][6]，一个 MIT 家族的许可证被加上了“本软件应用于善，而非恶”。这件事情可能是“非常克罗克福特”的（LCTT 译者注，JSON 格式和 JSON.org 的作者）。这绝对是一件麻烦事，也许这个玩笑本来是开在律师身上的。但他们却笑得前仰后合。
 
-这个故事的寓意是：“MIT 许可证”本身就是模棱两可的。大家可能很清楚你的意思，但你只需要把标准的 MIT 许可证文本复制到你的项目中，就可以节省每个人的时间。如果使用元数据（如包管理器中的元数据文件）来制定 “MIT 许可证”，请确保 “LICENSE” 文件和任何头部的注释都适用标准的许可证文本。所有的这些都可以[自动化完成][7]。
+这个故事的寓意是：“MIT 许可证”本身就是模棱两可的。大家可能很清楚你的意思，但你只需要把标准的 MIT 许可证文本复制到你的项目中，就可以节省每个人的时间。如果使用元数据（如包管理器中的元数据文件）来指定 “MIT 许可证”，请确保 `LICENSE` 文件和任何头部的注释都使用标准的许可证文本。所有的这些都可以 [自动化完成][7]。
 
 
 ##### 版权说明
