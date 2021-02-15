@@ -7,47 +7,47 @@
 [#]: via: (https://opensource.com/article/19/3/when-web-grew)
 [#]: author: (Mike Bursell https://opensource.com/users/mikecamel)
 
-web 的诞生：浏览器的故事grew up: A browser story
+web 的诞生：浏览器的故事
 ======
-互联网诞生之处的个人故事。A personal story of when the internet came of age.
+互联网诞生之处的个人故事。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_Internet_Sign.png?itok=5MFGKs14)
 
-最近，我Recently, I [分享了shared how][1] 获得英文文学和神学学位离开大学，在一个大家都还不知道 web 服务器是什么的地方，设法找到一份运行 web 服务器的工作。upon leaving university in 1994 with a degree in English literature and theology, I somehow managed to land a job running a web server in a world where people didn't really know what a web server was yet. 那“地方”，我不仅仅指的是我工作的组织，而是泛指所有地方。And by "in a world," I don't just mean within the organisation in which I worked, but the world in general. Web 那时当真是全新的——人们还正尝试理出头绪。The web was new—really new—and people were still trying to get their heads around it.
+最近，我[分享了][1] 1994年获得英文文学和神学学位离开大学，在一个人们还不知道 web 服务器是什么的地方，成功找到一份运维 web 服务器的工作。但那“地方”，并不仅仅指的是我工作的组织，而是泛指所有地方。Web 那时当真是全新的——人们还正尝试理出头绪。
 
-That's not to suggest that the place where I was working—an academic publisher—particularly "got it" either. 这是个大部分人还在用 28k8 猫访问网页的地方。我记得我拿到 33k6 猫时有多激动。This was a world in which a large percentage of the people visiting their website were still running 28k8 modems. I remember my excitement in getting a 33k6 modem. 至少上下行速率不对称的日子过去了，以前带宽显示 1200/300 特别常见。t least we were past the days of asymmetric upload/download speeds,1 where 1200/300 seemed like an eminently sensible bandwidth description. 这意味着This meant that the high-design设计复杂, high-colour色彩缤纷, high-resolution纤毫毕现 documents created by the print people (端同一家饭碗) were completely impossible on the web. 我不可能让大于 40k 的GIF 出现在网站的首页推送给访问的人。I wouldn't allow anything bigger than a 40k GIF on the front page of the website, and that was pushing it for many of our visitors. 大于大约 60k 的会作为独立的图片，缩略图链接到参照页。Anything larger than 60k or so would be explicitly linked as a standalone image from a thumbnail on the referring page.
+那并不是在暗示我在什么地方工作——学术出版社，也不是强调得到工作。这是个大部分人还在用 28k8 猫访问网页的世界。我记得我拿到 33k6 猫时有多激动。至少上下行速率不对称的日子过去了，以前带宽显示 1200/300 特别常见。这意味着(端同一家饭碗的)列印人员创作的设计复杂,色彩缤纷,纤毫毕现的档是完全不可能出现在 Web 上的。我不可能让大于 40k 的GIF 出现在网站的首页推送给访问的人。大于大约 60k 的会作为独立的图片，缩略图链接到参照页。
 
-To say that the marketing department didn't like this was an understatement. 更糟的是布局问题。Even worse was the question of layout. "Browsers decide how to lay out documents," I explained, time after time, "你可以使用眉头词或者段落，但是文档在页面上如何显示并不取决于文档，而是you can use headers or paragraphs, but how documents appear on the page isn't defined by the document, but by the renderer!" They wanted control. They wanted different coloured backgrounds. After a while, they got that. I went to what I believe was the first W3C meeting at which the idea of Cascading Style Sheets 层叠样式表(CSS) was discussed. And argued vehemently against them. The suggestion that document writers should control layout was anathema.2 It took some while for CSS to be adopted, and in the meantime, those who cared about such issues adopted the security trainwreck that was Portable Document Format (PDF).
+且不说商城部分不像现在这样。更糟的是布局问题。“如何布局文档取决于浏览器，”我一遍又一遍地解释，“你可以使用眉头词或者段落，但是文档在页面上如何显示并不取决于文档，而是取决于渲染器！”他们想控制，想要不同颜色的背景。后来明白了那些不能实现。我参与了我觉得层叠样式表(CSS)的想法第一次被讨论的 W3C 会议，并进行了激烈地争论。写文档的人控制布局的建议令人讨厌。后来 CSS 被采用了，与此同时，在意安全问题的人采用了可移植文件格式（PDF）。
 
-How documents were rendered wasn't the only issue. Being a publisher of actual physical books, the whole point of having a web presence, as far as the marketing department was concerned, was to allow customers—or potential customers—to know not only what a book was about, but also how much it was going to cost them to buy. This, however, presented a problem. You see, the internet—in which I include the rapidly growing World Wide Web—was an open, free-for-all libertarian sort of place where nobody was interested in money; in fact, where talk of money was to be shunned and avoided.
+如何渲染文档不是唯一的问题。作为一个实体书出版社，网页展示和商城部分的所有点都要关注，让消费者，或者潜在消费者知道一本书是关于什么的和预计需要花费多少钱。但这有一个问题，你看，互联网——包括快速发展的万维网——是开放的，所有都免费的自由之地没有人会在意钱；事实上，谈钱曾是被禁止的。
 
-I took the mainstream "Netizen网民" view that there was no place for pricing information online. 我老板，加上组织里相当多的人都持有相反的看法My boss—and, indeed, pretty much everybody else in the organisation—took a contrary view. They felt that customers should be able to see how much books would cost them. They also felt that my bank manager would like to see how much money was coming into my bank account on a monthly basis, which might be significantly reduced if I didn't come round to their view.
+我和主流“网民”的看法一致，认为没必要放价格信息在线上。我老板，加上组织里相当多的人都持有相反的看法。他们觉得消费者应该能够看到书要花多少钱。他们也觉得我管理银行资产会想看账户里每个月进了多少钱，如果我不认同他们的观点的话，资金可能会急剧减少的账户。
 
-Luckily, by the time I'd climbed down from my high horse and got over myself a bit—probably only a few weeks after I'd started digging my heels in—the web had changed, and there were other people putting pricing information up about their products. 新来的人渐渐瞧不起先前运行 web 服务器的老学究们，但风向很清晰。These newcomers were generally looked down upon by the old schoolers who'd been running web servers since the early days,3 but it was clear which way the wind was blowing. This didn't mean that the battle was won for our website, however. As an academic publisher, we shared an academic IP name ("ac.uk") with the University. The University was less than convinced that publishing pricing information was appropriate until some senior folks at the publisher pointed out that Princeton University Press was doing it, and wouldn't we look a bit silly if…?
+幸运的是，在我从高高的马儿身上摔下来之前，我已经自己认清了一些——可能是我开始迈入的几星期之后——Web 早已变了，有其他人公布他们产品的价格信息。新来的人渐渐瞧不起先前运行 web 服务器的老学究们，但风向很清晰。但是这并不意味着网站的战争结束了。作为一个学术出版社，我们和大学共享一个域名（“ac.uk“）。大学不确信公布价格信息合不合适直到普林斯顿大学出版社做了，我们会不会看起来有点傻如果······？
 
-The fun didn't stop there, either. A few months into my tenure as webmaster ("webmaster@…"), we started to see a worrying trend, as did lots of other websites. Certain visitors were single-handedly bringing our webserver to its knees. These visitors were running a new web browser: Netscape. Netscape was badly behaved. Netscape was multi-threaded.
+有趣的事情也没有停。站点管理员（“webmaster@…”）任职的短短几个月内，我们和其他很多网站一样开始看到了一种焦虑的趋势。某些访问者可以轻而易举地访问我们的网站服务器。这些访问者使用新的网页浏览器：网景。网景干坏事，它是多线程的。
 
-Why was this an issue? Well, before Netscape, all web browsers had been single-threaded. They would open one connection at a time, so even if you had, say five GIFs on a page,4 they would request the HTML base file, parse that, then download the first GIF, complete that, then the second, complete that, and so on. In fact, they often did the GIFs in the wrong order, which made for very odd page loading, but still, that was the general idea. The rude people at Netscape decided that they could open multiple connections to the webserver at a time to request all the GIFs at the same time, for example! And why was this a problem? Well, the problem was that most webservers were single-threaded. They weren't designed to have multiple connections open at any one time. Certainly, the HTTP server that we ran (MacHTTP) was single-threaded. Even though we had paid for it (it was originally shareware), the version we had couldn't cope with multiple requests at a time.
+这为什么是个问题呢？在网景之前，所有的浏览器都是单线程。他们一次只进行一个连接，所以即使一个页面有五张动图，也会先请求 HTML 基本文件进行解析，然后下载第一张动图，完成，接着第二张，完成，如此类推。事实上，动图顺序经常出错，使得页面加载得非常奇怪，但这也是常规思路。粗暴的网景人决定他们与网站服务器一次性进行多个连接来请求所有的动图，举个例子！为什么这是个问题呢？好吧，问题就是大多数网站服务器都是单线程的。他们不是设计来一次性进行多个连接的。确实，我们运行的 HTTP 服务的软件(MacHTTP)是单线程的。即使我们已经买了（原本是共享软件），我们用的这版一次不能处理多个请求。
 
-The debate raged across the internet. Who did these Netscape people think they were, changing how the world worked? How it was supposed to work? The world settled into different camps, and as with all technical arguments, heated words were exchanged on both sides. The problem was that not only was Netscape multi-threaded, it was also just better than the alternatives. Lots of web server code maintainers, MacHTTP author Chuck Shotton among them, sat down and did some serious coding to produce multi-threaded beta versions of their existing code. Everyone moved almost immediately to the beta versions, they got stable, and in the end, single-threaded browsers either adapted and became multi-threaded themselves, or just went the way of all outmoded products and died a quiet death.6
+互联网上爆发了大量讨论。做网景的人觉得他们正在改变世界的工作方式？它如何支持工作？大家分成了不同阵营,双方不断交流着技术层面的热词。问题是网景不仅多线程，而且优于其他。非常多 web 服务器代码维护者，包括 MacHTTP 作者查克·肖顿在内，坐下来认真在原有代码基础上更新多线程测试版。所有人几乎立马转向测试版，他们变得稳定，最终浏览器也舍弃了单线程，变成多线程，或者只是像所有过时产品一样销声匿迹。
 
-This, for me, is when the web really grew up. It wasn't prices on webpages nor designers being able to define what you'd see on a page,8 but rather when browsers became easier to use and when the network effect of thousands of viewers moving to many millions tipped the balance in favour of the consumer, not the producer. There were more steps in my journey—which I'll save for another time—but from around this point, my employers started looking at our monthly, then weekly, then daily logs, and realising that this was actually going to be something big and that they'd better start paying some real attention.
+对我来说，这就是 web 真正成长。那既不是网页展示的价格也不是设计者能有定义你能在网页上看到什么，而是浏览器变得更易用，几千浏览者变成几百万并且用户喜好而不是制作者变得更为重要。我的路还很长——有机会再谈——有关这点，我老板开始开始查看我们的每月，然后每周，然后每天的日志，并意识到这确实变成了大事而且真的需要我们关注。
 
-1\. How did they come back, again?
+1\. 他们如何再次回来？
 
-2\. It may not surprise you to discover that I'm still happiest at the command line.
+2\. 毫不意外我还是使用命令行里最开心的人。
 
-3\. About six months before.
+3\. 大约六个月前。
 
-4\. Reckless, true, but it was beginning to happen.5
+4\. 不计后果，真的，发生了
 
-5\. Oh, and no—it was GIFs or BMP. JPEG was still a bright idea that hadn't yet taken off.
+5\. 噢，不——GIF，BMP或者JPEG还是好主意没被取缔。
 
-6\. It's never actually quiet: there are always a few diehard enthusiasts who insist that their preferred solution is technically superior and bemoan the fact that the rest of the internet has gone to the devil.7
+6\. 从未沉寂：永远都会有少数坚信他们更偏爱的解决方案更优越并哀叹互联网的其他人已经变成了恶魔的难以退却的狂热者。
 
-7\. I'm not one to talk: I still use Lynx from time to time.
+7\. 我不是唯一一个说：我还在用 Lynx。
 
-8\. Creating major and ongoing problems for those with different accessibility needs, I would point out.
+8\. 我指出，不同访问需求的人创造主要和正在发生的问题。
 
 --------------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ via: https://opensource.com/article/19/3/when-web-grew
 
 作者：[Mike Bursell][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[XYenChi](https://github.com/XYenChi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
