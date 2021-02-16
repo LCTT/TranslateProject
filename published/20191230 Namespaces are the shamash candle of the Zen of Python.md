@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13123-1.html)
 [#]: subject: (Namespaces are the shamash candle of the Zen of Python)
 [#]: via: (https://opensource.com/article/19/12/zen-python-namespaces)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
@@ -12,11 +12,11 @@
 
 > 这是 Python 之禅特别系列的一部分，重点是一个额外的原则：命名空间。
 
-![在建筑物上的笔记本电脑上编程的人][1]
+![](https://img.linux.net.cn/data/attachment/album/202102/16/105800d64ceaeertt4u4ee.jpg)
 
-著名的<ruby>光明节<rt>Hanukkah</rt></ruby>有八个晚上的庆祝活动。然而，光明节的灯台有九根蜡烛：八根普通蜡烛和总是偏移的第九根蜡烛。它被称为 “shamash” 或 “shamos”，大致可以翻译为“仆人”或“看门人”的意思。
+著名的<ruby>光明节<rt>Hanukkah</rt></ruby>有八个晚上的庆祝活动。然而，光明节的灯台有九根蜡烛：八根普通的蜡烛和总是偏移的第九根蜡烛。它被称为 “shamash” 或 “shamos”，大致可以翻译为“仆人”或“看门人”的意思。
 
-shamos 是点燃所有其它蜡烛的蜡烛：它是唯一一支可以用火的蜡烛，而不仅仅是观看。当我们结束关于 Python 之禅系列时，我看到命名空间提供了类似的作用。
+shamos 是点燃所有其它蜡烛的蜡烛：它是唯一一支可以用火的蜡烛，而不仅仅是观看。当我们结束 Python 之禅系列时，我看到命名空间提供了类似的作用。
 
 ### Python 中的命名空间
 
