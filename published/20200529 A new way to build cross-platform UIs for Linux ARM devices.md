@@ -1,26 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Chao-zhi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13129-1.html)
 [#]: subject: (A new way to build cross-platform UIs for Linux ARM devices)
 [#]: via: (https://opensource.com/article/20/5/linux-arm-ui)
 [#]: author: (Bruno Muniz https://opensource.com/users/brunoamuniz)
 
 一种为 Linux ARM 设备构建跨平台 UI 的新方法
 ======
-AndroidXML 和 TotalCross 的运用为 Raspberry Pi 和其他设备创建 UI 提供了更简单的方法。
-![Digital images of a computer desktop][1]
 
-为应用程序创建良好的用户体验 （user experience，UX） 是一项艰巨的任务，尤其是在开发嵌入式应用程序时。今天，有两种图形用户界面 （graphical user interface，GUI） 工具通常用于开发嵌入式软件：它们要么涉及复杂的技术，要么非常昂贵。
+> AndroidXML 和 TotalCross 的运用为树莓派和其他设备创建 UI 提供了更简单的方法。
 
-然而，我们已经创建了一个概念验证 （proof-of-concept，PoC），它提供了一种新的方法来使用现有的、成熟的工具为运行在桌面、移动、嵌入式设备和低功耗 ARM 设备上的应用程序构建用户界面 （UI）。我们的方法是使用 Android Studio 绘制 UI； 使用 [TotalCross][2] 在设备上呈现 Android XML； 采用被称为 [KnowCode][4] 的新 [TotalCross API][3]； 以及使用 [Raspberry Pi 4][5] 来执行应用程序。
+![](https://img.linux.net.cn/data/attachment/album/202102/18/123715oomfuuz94ioi41ii.jpg)
+
+为应用程序创建良好的用户体验（UX）是一项艰巨的任务，尤其是在开发嵌入式应用程序时。今天，有两种图形用户界面（GUI）工具通常用于开发嵌入式软件：它们要么涉及复杂的技术，要么非常昂贵。
+
+然而，我们已经创建了一个概念验证（PoC），它提供了一种新的方法来使用现有的、成熟的工具为运行在桌面、移动、嵌入式设备和低功耗 ARM 设备上的应用程序构建用户界面（UI）。我们的方法是使用 Android Studio 绘制 UI；使用 [TotalCross][2] 在设备上呈现 Android XML；采用被称为 [KnowCode][4] 的新 [TotalCross API][3]；以及使用 [树莓派 4][5] 来执行应用程序。
 
 ### 选择 Android Studio
 
-可以使用 TotalCross API 为应用程序构建一个响应迅速且美观的用户体验，但是在 Android Studio 中创建 UI 缩短了原型制作和实际应用程序之间的时间。
+可以使用 TotalCross API 为应用程序构建一个美观的响应式用户体验，但是在 Android Studio 中创建 UI 缩短了制作原型和实际应用程序之间的时间。
 
-有很多工具可以用来为应用程序构建 UI，但是 [Android Studio][6] 是全世界开发者最常使用的工具。除了它被大量采用以外，这个工具的使用也非常直观，而且它对于创建简单和复杂的应用程序都非常强大。在我看来，唯一的缺点是使用该工具所需的计算能力，它比其他集成开发环境 （IDE） 如 VSCode 或其开源替代方案 [VSCodium][7] 要庞大得多。
+有很多工具可以用来为应用程序构建 UI，但是 [Android Studio][6] 是全世界开发者最常使用的工具。除了它被大量采用以外，这个工具的使用也非常直观，而且它对于创建简单和复杂的应用程序都非常强大。在我看来，唯一的缺点是使用该工具所需的计算机性能，它比其他集成开发环境 （IDE） 如 VSCode 或其开源替代方案 [VSCodium][7] 要庞大得多。
 
 通过思考这些问题，我们创建了一个概念验证，使用 Android Studio 绘制 UI，并使用 TotalCross 直接在设备上运行 AndroidXML。
 
@@ -30,21 +32,19 @@ AndroidXML 和 TotalCross 的运用为 Raspberry Pi 和其他设备创建 UI 提
 
 ![Home appliance application to control thermostat][8]
 
-(Bruno Muniz，[CC BY-SA 4.0][9])
-
-我们想为 Raspberry Pi 开发我们的应用程序，所以我们使用 Android 的 [ConstraintLayout][10] 来构建 848x480 （Raspberry Pi 的分辨率）的固定屏幕大小的 UI，不过您可以用其他布局构建响应性 UI。
+我们想为树莓派开发我们的应用程序，所以我们使用 Android 的 [ConstraintLayout][10] 来构建 848x480（树莓派的分辨率）的固定屏幕大小的 UI，不过你可以用其他布局构建响应性 UI。
 
 Android XML 为 UI 创建增加了很多灵活性，使得为应用程序构建丰富的用户体验变得容易。在下面的 XML 中，我们使用了两个主要组件：[ImageView][11] 和 [TextView][12]。
 
 ```
-&lt;ImageView
+<ImageView
 android:id="@+id/imageView6"
 android:layout_width="273dp"
 android:layout_height="291dp"
 android:background="@drawable/Casa"
 tools:layout_editor_absoluteX="109dp"
-tools:layout_editor_absoluteY="95dp" /&gt;
-&lt;TextView
+tools:layout_editor_absoluteY="95dp" />
+<TextView
 android:id="@+id/insideTempEdit"
 android:layout_width="94dp"
 android:layout_height="92dp"
@@ -56,31 +56,28 @@ android:textColor="#000000"
 android:textSize="67dp"
 android:textStyle="bold"
 tools:layout_editor_absoluteX="196dp"
-tools:layout_editor_absoluteY="246dp" /&gt;
+tools:layout_editor_absoluteY="246dp" />
 ```
 
-TextView 元素用于向用户显示一些数据，比如建筑物内的温度。大多数 imageview 都用作用户与 UI 交互的按钮，但它们也需要实现屏幕上组件提供的事件。
+TextView 元素用于向用户显示一些数据，比如建筑物内的温度。大多数 ImageView 都用作用户与 UI 交互的按钮，但它们也需要实现屏幕上组件提供的事件。
 
 ### 用 TotalCross 整合
 
 这个 PoC 中的第二项技术是 TotalCross。我们不想在设备上使用 Android 的任何东西，因为：
 
   1。我们的目标是为 Linux ARM 提供一个出色的 UI。
-  2。我们希望在设备上实现低占地面积。
+  2。我们希望在设备上实现低占用。
   3。我们希望应用程序在低计算能力的低端硬件设备上运行（例如，没有 GPU、 低 RAM 等）。
 
-首先，我们使用 [VSCode plugin][13] 创建了一个空的 TotalCross 项目。接下来，我们保存了 **drawable** 文件夹中的图像副本和 **XML** 文件夹中的 Android XML 文件副本，这两个文件夹都位于 **Resources** 文件夹中：
+首先，我们使用 [VSCode 插件][13] 创建了一个空的 TotalCross 项目。接下来，我们保存了 `drawable` 文件夹中的图像副本和 `xml` 文件夹中的 Android XML 文件副本，这两个文件夹都位于 `resources` 文件夹中：
 
 ![Home Appliance file structure][14]
 
-(Bruno Muniz，[CC BY-SA 4.0][9])
-
 为了使用 TotalCross 模拟器运行 XML 文件，我们添加了一个名为 KnowCode 的新 TotalCross API 和一个主窗口来加载 XML。下面的代码使用 API 加载和呈现 XML：
-
 
 ```
 public void initUI() {
-    XmlScreenAbstractLayout xmlCont = XmlScreenFactory.create(“xml / homeApplianceXML.xml”);
+    XmlScreenAbstractLayout xmlCont = XmlScreenFactory.create("xml / homeApplianceXML.xml");
     swap(xmlCont);
 }
 ```
@@ -89,48 +86,43 @@ public void initUI() {
 
 ![TotalCross simulator running temperature application][15]
 
-(Bruno Muniz，[CC BY-SA 4.0][9])
-
-完成这个 PoC 还有两件事要做：添加一些事件来提供用户交互和在 Raspberry Pi 上运行它。
+完成这个 PoC 还有两件事要做：添加一些事件来提供用户交互，并在树莓派上运行它。
 
 ### 添加事件
 
-KnowCode API 提供了一种通过 ID（getControlByID） 获取 XML 元素并更改其行为的方法，如添加事件、更改可见性等。
+KnowCode API 提供了一种通过 ID（`getControlByID`） 获取 XML 元素并更改其行为的方法，如添加事件、更改可见性等。
 
 例如，为了使用户能够改变家中或其他建筑物的温度，我们在 UI 底部放置了加号和减号按钮，并在每次单击按钮时都会出现“单击”事件，使温度升高或降低一度：
 
-
 ```
-[Button][16] plus = ([Button][16]) xmlCont.getControlByID("@+id/plus");
-[Label][17] insideTempLabel = ([Label][17]) xmlCont.getControlByID("@+id/insideTempLabel");
+Button plus = (Button) xmlCont.getControlByID("@+id/plus");
+Label insideTempLabel = (Label) xmlCont.getControlByID("@+id/insideTempLabel");
 plus.addPressListener(new PressListener() {
-    @Override
-    public void controlPressed(ControlEvent e) {
-        try {
-            [String][18] tempString = insideTempLabel.getText();
-            int temp;
-            temp = Convert.toInt(tempString);
-            insideTempLabel.setText(Convert.toString(++temp));
-        } catch (InvalidNumberException e1) {
-            e1.printStackTrace();
-        }
-    }
+    @Override
+    public void controlPressed(ControlEvent e) {
+        try {
+            String tempString = insideTempLabel.getText();
+            int temp;
+            temp = Convert.toInt(tempString);
+            insideTempLabel.setText(Convert.toString(++temp));
+        } catch (InvalidNumberException e1) {
+            e1.printStackTrace();
+        }
+    }
 });
 ```
 
-### 在树莓皮 4 上测试
+### 在树莓派 4 上测试
 
 最后一步！我们在一台设备上运行了应用程序并检查了结果。我们只需要打包应用程序并在目标设备上部署和运行它。[VNC][19] 也可用于检查设备上的应用程序。
 
-整个应用程序，包括资源（图像等 ）、AndroidXML、TotalCross 和 Knowcode API，在 Linux ARM 上大约是 8MB。
+整个应用程序，包括资源（图像等）、Android XML、TotalCross 和 Knowcode API，在 Linux ARM 上大约是 8MB。
 
 下面是应用程序的演示：
 
 ![Application demo][20]
 
-(Bruno Muniz，[CC BY-SA 4.0][9])
-
-在本例中，该应用程序仅为 Linux ARM 打包，但同一应用程序将作为 Linux 桌面应用程序 、Android 设备 、Windows、windows CE 甚至 IOS 运行。
+在本例中，该应用程序仅为 Linux ARM 打包，但同一应用程序可以作为 Linux 桌面应用程序运行，在Android 设备 、Windows、windows CE 甚至 iOS 上运行。
 
 所有示例源代码和项目都可以在 [HomeApplianceXML GitHub][21] 存储库中找到。
 
@@ -149,7 +141,7 @@ via: https://opensource.com/article/20/5/linux-arm-ui
 作者：[Bruno Muniz][a]
 选题：[lujun9972][b]
 译者：[Chao-zhi](https://github.com/Chao-zhi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
