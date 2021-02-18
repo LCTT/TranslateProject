@@ -7,7 +7,8 @@
 [#]: via: (https://fedoramagazine.org/latex-typesetting-part-2-tables/)
 [#]: author: (Earl Ramirez https://fedoramagazine.org/author/earlramirez/)
 
-LaTex 排版（2）：表格
+
+LaTex 排版 （2）：表格
 ======
 
 ![][1]
@@ -16,7 +17,7 @@ LaTeX 提供了许多工具来创建和定制表格，在本系列中，我们�
 
 ### 基础表格
 
-要创建表，只需指定环境 `\begin{tabular}{列选项}`
+要创建表，只需指定环境 `\begin{tabular}{ 列选项}`
 
 ```
 \begin{tabular}{c|c}
@@ -30,7 +31,7 @@ LaTeX 提供了许多工具来创建和定制表格，在本系列中，我们�
 
 ![Basic Table][2]
 
-在上面的示例中，花括号中的”{c|c}”表示文本在列中的位置。下表总结了位置参数及其说明。
+在上面的示例中，花括号中的 ”{c|c}” 表示文本在列中的位置。下表总结了位置参数及其说明。
 
 参数 | 位置
 |:---:|:---
@@ -90,7 +91,7 @@ b{width} | 文本对齐单元格底部
 正如您所看到的，文本超出了页面宽度；但是，有几个选项可以克服这个问题。
 
   * 指定列宽，例如 m{5cm}
-  * 利用 TABLARX 环境，这需要在导言区中引用 TABLARX 宏包。
+  * 利用 tablarx 环境，这需要在导言区中引用 tablarx 宏包。
 
 
 #### 使用列宽管理长文本
@@ -110,7 +111,7 @@ b{width} | 文本对齐单元格底部
 
 在我们利用表格之前，我们需要在导言区中加上它。TABLARX 方法见以下示例
 
-`\begin{tabularx}{宽度}{列选项}`
+`\begin{tabularx}{ 宽度}{列选项}`
 
 
 ```
@@ -123,7 +124,7 @@ Text &\blindtext \\ \hline
 
 ![Tabularx][6]
 
-请注意，我们需要处理长文本的列在花括号中指定了大写“X”。
+请注意，我们需要处理长文本的列在花括号中指定了大写 “X”。
 
 ### 合并行合并列
 
@@ -131,7 +132,7 @@ Text &\blindtext \\ \hline
 
 #### 合并行
 
-Multirow 采用以下参数`\multirow{行的数量}{宽度}{文本}`，让我们看看下面的示例。
+Multirow 采用以下参数 `\multirow{ 行的数量}{宽度}{文本}`，让我们看看下面的示例。
 
 ```
 \begin{tabular}{|l|l|}\hline
@@ -144,11 +145,11 @@ Multirow 采用以下参数`\multirow{行的数量}{宽度}{文本}`，让我们
 
 ![MultiRow][7]
 
-在上面的示例中，指定了两行，'*'告诉LaTeX自动管理单元格的大小。
+在上面的示例中，指定了两行，'*'告诉 LaTeX 自动管理单元格的大小。
 
 #### 合并列
 
-Multicolumn 参数是 `{Multicolumn{列的数量}{单元格选项}{位置}{文本}`，下面的示例演示 Multicolumn。
+Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文本}`，下面的示例演示 Multicolumn。
 
 ```
 \begin{tabular}{|l|l|l|}\hline
@@ -164,14 +165,14 @@ Multicolumn 参数是 `{Multicolumn{列的数量}{单元格选项}{位置}{文�
 
 可以为文本、单个单元格或整行指定颜色。此外，我们可以为每一行配置交替的颜色。
 
-在给表添加颜色之前，我们需要在导言区引用 `\usepackage[table]{xcolor}`。我们还可以使用以下颜色参考 [LaTeX Color][9] 或在颜色前缀后面添加感叹号（从0到100的阴影）来定义颜色。例如，`gray!30`
+在给表添加颜色之前，我们需要在导言区引用 `\usepackage[table]{xcolor}`。我们还可以使用以下颜色参考 [LaTeX Color][9] 或在颜色前缀后面添加感叹号（从 0 到 100 的阴影）来定义颜色。例如，`gray！30`
 
 ```
 \definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
 \definecolor{darkgray}{rgb}{0.66, 0.66, 0.66}
 ```
 
-下面的示例演示了一个具有各种颜色的表，`\rowcolors` 采用以下选项`\rowcolors{起始行颜色}{偶数行颜色}{奇数行颜色}`。
+下面的示例演示了一个具有各种颜色的表，`\rowcolors` 采用以下选项 `\rowcolors{ 起始行颜色}{偶数行颜色}{奇数行颜色}`。
 
 ```
 \rowcolors{2}{darkgray}{gray!20}
@@ -203,106 +204,83 @@ Multicolumn 参数是 `{Multicolumn{列的数量}{单元格选项}{位置}{文�
 
 ![Multi-row][12]
 
-Let us discuss the changes that were implemented to resolve the multi-row with the alternate colour issue.
+让我们讲解一下为解决合并行替换颜色问题而实施的更改。
 
-  * The first row started above the multi-row
-  * The number of rows was changed from 2 to -2, which means to read from the line above
-  * \rowcolor was specified for each row, more importantly, the multi-rows must have the same colour so that you can have the desired results.
+  * 第一行从合并行上方开始
+  * 行数从 2 更改为 -2，这意味着从上面的行开始读取
+  * `\rowcolor` 是为每一行指定的，更重要的是，多行必须具有相同的颜色，这样才能获得所需的结果。
 
-
-
-One last note on colour, to change the colour of a column you need to create a new column type and define the colour. The example below illustrates how to define the new column colour.
-```
+关于颜色的最后一个注意事项是，要更改列的颜色，需要创建新的列类型并定义颜色。下面的示例说明了如何定义新的列颜色。
 
 ```
-
-\newcolumntype{g}{&amp;amp;gt;{\columncolor{darkblue}}l}
+\newcolumntype{g}{>{\columncolor{darkblue}}l} 
 ```
 
-```
+我们把它分解一下
 
-Let’s break it down
-
-  * \newcolumntype{g}: defines the letter _g_ as the new column
-  * {&gt;{\columncolor{darkblue}}l}: here we select our desired colour, and _l_ tells the column to be left-justified, this can be subsitued with _c_ or _r_
-
+  * `\newcolumntype{g}`：将字母 _g_ 定义为新列
+  * `{>{\columncolor{darkblue}}l}`：在这里我们选择我们想要的颜色，并且 `l` 告诉列左对齐，这可以用 `c` 或 `r` 代替
 
 ```
-
-```
-
-\begin{tabular}{g|l}
-    \textsc{Release}  &amp;amp;amp;\textsc{Codename} \\\ \hline
-    Fedora Core 4 &amp;amp;amp;Stentz \\\
-    &amp;amp;amp;Fedora 8 \\\
-    \multirow{-2}{*}{Multi-Row} &amp;amp;amp;Werewolf \\\
+\begin{tabular}{g|l} 
+	\textsc{Release}  &\textsc{Codename} \\ \hline
+	Fedora Core 4 &Stentz \\ 
+	&Fedora 8 \\ 
+	\multirow{-2}{*}{Multi-Row} &Werewolf \\ 
 \end{tabular}\
-```
-
 ```
 
 ![Column Colour][13]
 
-### Landscape table
+### 横向表
 
-There may be times when your table has many columns and will not fit elegantly in portrait. With the _rotating_ package in preamble you will be able to create a sideways table. The below example demonstrates this.
+有时，您的表可能有许多列，纵向排列会很不好看。在导言区加入 “rotating” 包，您将能够创建一个横向表。下面的例子说明了这一点。
 
-For the landscape table, we will use the _sidewaystable_ environment and add the tabular environment within it, we also specified additional options.
+对于横向表，我们将使用 `sidewaystable` 环境并在其中添加表格环境，我们还指定了其他选项。
 
-  * \centering to position the table in the centre of the page
-  * \caption{} to give our table a name
-  * \label{} this enables us to reference the table in our document
-
-
-```
+  * `\centering` 可以将表格放置在页面中心
+  * `\caption{}` 为表命名
+  * `\label{}` 这使我们能够引用文档中的表
 
 ```
-
 \begin{sidewaystable}
 \centering
 \caption{Sideways Table}
 \label{sidetable}
 \begin{tabular}{ll}
-    \rowcolor{darkblue}\textsc{\color{white}Release}  &amp;amp;amp;\textsc{\color{white}Codename} \\\
-    \rowcolor{gray!10}Fedora Core 4 &amp;amp;amp;Stentz \\\
-    \rowcolor{gray!40} &amp;amp;amp;Fedora 8 \\\
-    \rowcolor{gray!40}\multirow{-2}{*}{Multi-Row} &amp;amp;amp;Werewolf \\\
+	\rowcolor{darkblue}\textsc{\color{white}Release}  &\textsc{\color{white}Codename} \\ 
+	\rowcolor{gray!10}Fedora Core 4 &Stentz \\ 
+	\rowcolor{gray!40} &Fedora 8 \\ 
+	\rowcolor{gray!40}\multirow{-2}{*}{Multi-Row} &Werewolf \\ 
 \end{tabular}\vspace{3mm}
 \end{sidewaystable}
 ```
 
-```
-
 ![Sideways Table][14]
 
-### List and tables
+### 列表和表格
 
-To include a list into a table you can use tabularx and include the list in the column where the _X_ is specified. Another option will be to use tabular but you must specify the column width.
+要将列表包含到表中，可以使用 tabularx，并将列表包含在指定的列中。另一个办法是使用表格格式，但必须指定列宽。
 
-### List in tabularx
+#### 用 tabularx 处理列表
+
 ```
-
-```
-
 \begin{tabularx}{\textwidth}{|l|X|} \hline
-    Fedora Version &amp;amp;amp;Editions \\\ \hline
-    Fedora 32 &amp;amp;amp;\begin{itemize}[noitemsep]
-        \item CoreOS
-        \item Silverblue
-        \item IoT
-    \end{itemize} \\\ \hline
+	Fedora Version &Editions \\ \hline
+	Fedora 32 &\begin{itemize}[noitemsep]
+		\item CoreOS
+		\item Silverblue
+		\item IoT
+	\end{itemize} \\ \hline
 \end{tabularx}\vspace{3mm}
-```
-
 ```
 
 ![List in tabularx][15]
 
-### List in tabular
-```
+#### 用 tabular 处理列表
+
 
 ```
-
 \begin{tabular}{|l|m{6cm}|}\hline
         Fedora Version &amp;amp;amp;Editions \\\ \hline
     Fedora 32 &amp;amp;amp;\begin{itemize}[noitemsep]
@@ -313,35 +291,29 @@ To include a list into a table you can use tabularx and include the list in the 
 \end{tabular}
 ```
 
-```
-
 ![List in tabular][16]
 
-### Conclusion
+### 结论
 
-LaTeX offers many ways to customise your table with tabular and tabularx, you can also add both tabular and tabularx within the table environment (\begin\table) to add the table name and to position the table.
+LaTeX 提供了许多使用 tablar 和 tablarx 自定义表的方法，您还可以在表环境 （\begin\table） 中添加 tablar 和 tablarx 来添加表的名称和定位表。
 
-### LaTeX packages
+### LaTeX 宏包
 
-The packages used in this series are.
+所需的宏包有如下这些：
+
 ```
-
-```
-
 \usepackage{fullpage}
-\usepackage{blindtext}  % add demo text
+\usepackage{blindtext}  % add demo text
 \usepackage{array} % used for column positions
 \usepackage{tabularx} % adds tabularx which is used for text wrapping
 \usepackage{multirow} % multi-row and multi-colour support
-\usepackage[table]{xcolor} % add colour to the columns
+\usepackage[table]{xcolor} % add colour to the columns 
 \usepackage{rotating} % for landscape/sideways tables
 ```
 
-```
+### 额外的知识
 
-### Additional Reading
-
-This was an intermediate lesson on tables; for more advanced information about tables and LaTex in general, you can go to [LaTeX Wiki][17]
+这是一堂关于表的小课，有关表和 LaTex 的更多高级信息，请访问 [LaTex Wiki][17]
 
 ![][13]
 
