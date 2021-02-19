@@ -1,5 +1,5 @@
 [#]: collector: (Chao-zhi)
-[#]: translator: ( )
+[#]: translator: (Chao-zhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,46 +7,47 @@
 [#]: via: (https://fedoramagazine.org/fedora-classroom-latex-101-beginners/)
 [#]: author: (Ankur Sinha)
 
-Fedora classroom: LaTeX 101 for beginners
+Fedora 课堂：LaTeX 入门 101
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/07/fedora-classroom.jpg)
 
-Fedora Classroom sessions continue with an introductory session on [LaTeX][4]. The general schedule for sessions is available [on the wiki][5], along with [resources and recordings from previous sessions][6].
+Fedora 课堂课程来到了 [LaTeX][4] 的介绍性课程。课程的总日程安排在 [wiki][5] 上，这里面还有[以前课程的资源和录音][6]。
 
-### Topic: LaTeX 101
+### 课题：LaTeX 101
 
-LaTeX is a typesetting system that the de-facto standard for scientific publishing. It is [Free software][7], and enables the generation of a multitude of high quality documents. LaTeX documents are written in plaintext and compiled to DVI/PDF. This permits the user to focus on writing the text, leaving the typesetting to LaTeX.
+LaTeX 是一种排版系统，是科学出版的事实标准。它是[自由软件][7]，能够生成大量高质量的文档。LaTeX 文档以明文编写并编译为 DVI/PDF。这使得用户将精力集中在文本的书写上，而将排版留给 LaTeX。
 
-This LaTeX 101 session is aimed at absolute beginners. So, no prior knowledge of LaTeX is required. The session will:
+这个 LaTeX 101 课程是针对绝对初学者。因此，不需要事先了解 LaTeX。会议将：
 
-*   introduce LaTeX.
-*   walk through writing a simple LaTeX document explaining basic commands.
-*   demonstrate compiling the document to a PDF.
-*   show the inclusion of references in the document from a bibliography.
-*   give an example of collaborative writing using LaTeX and Git.
+*   介绍 LaTeX.
+*   通过编写一个简单的LaTeX文档来讲解基本命令。
+*   演示如何将文档编译为PDF。
+*   在文档中显示 bibliography 中包含的参考文献。
+*   展示一个使用 LaTeX 和 Git 进行协作写作的例子。
 
-You will need:
+你需要准备：
 
-*   a text editor of choice.
-*   a LaTeX installation.
-*   optionally, a knowledge of Git and Github would be useful.
+* 选择一个文本编辑器。
+* 安装 LaTeX。
+* 或者，了解 Git 和 Github 也会很有用。
 
-LaTeX and Git can be installed on Fedora using dnf:
+LaTeX和Git可以使用dnf安装在Fedora上：
 
 ```
 sudo dnf install texlive-latex texlive-bibtex git
 ```
+其他系统你可以参考[这里][10]安装
 
-### When and where
+### 时间地点
 
-*   The session will be held on the Jitsi video-conferencing platform. Please use this URL to join the session: [https://meet.jit.si/20190110-latex-101][1]
-*   It will be held on  [Thursday, January 10 at 1400 UTC][2] on Jitsi.  (Please click the link to see the time in your time zone.)
-*   Update: The [classroom materials are available here][3].
+* 会议将在 Jitsi 视频会议平台上举行。请使用此 URL 加入会话：[https://meet.jit.si/20190110-latex-101][1]
+* 会议将于[2019年1月10日，星期四，14:00 UTC][2]在Jitsi举行。（请单击链接查看您所在时区的时间。）
+* [课堂材料可在此处获取][3]。
 
-### Instructor
+### 讲师
 
-[Ankur Sinha][8] (“FranciscoD”) is a Free Software supporter and has been with the Fedora community for the better part of a decade now. Ankur started as a font package maintainer and has since branched out to many other teams and SIGs. He uses Fedora Workstation and prefers the terminal whenever possible. Currently, he’s working on his PhD in computational neuroscience in the UK. When he has time to spare, he focuses on the Fedora Join SIG, Fedora classrooms, and  [NeuroFedora][9]. You can get in touch with him via his Fedora project e-mail or on one of the many Fedora IRC channels.
+[Ankur Sinha][8]（FranciscoD）是一个自由软件的支持者，在 Fedora 社区已经有十年的时间了。Ankur 最初是一名字体包维护人员，后来扩展到许多其他团队和 SIG。他使用 Fedora 工作站，并相对更喜欢使用终端。目前，他正在英国攻读计算神经科学博士学位。当他有时间的时候，他专注于 Fedora 加入 SIG：Fedora 课堂，和 [NeuroFedora][9]。你可以通过他的 Fedora 项目电子邮件或 Fedora IRC 与他联系。
 
 --------------------------------------------------------------------------------
 
@@ -54,7 +55,7 @@ via: https://fedoramagazine.org/fedora-classroom-latex-101-beginners/
 
 作者：[Ankur Sinha][a]
 选题：[Chao-zhi][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Chao-zhi](https://github.com/Chao-zhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -70,3 +71,4 @@ via: https://fedoramagazine.org/fedora-classroom-latex-101-beginners/
 [7]:https://www.fsf.org/blogs/community/user-liberation-watch-and-share-our-new-video/
 [8]:https://fedoraproject.org/wiki/User:Ankursinha
 [9]:https://fedoraproject.org/wiki/SIGs/NeuroFedora
+[10]:http://www.tug.org/texlive/
