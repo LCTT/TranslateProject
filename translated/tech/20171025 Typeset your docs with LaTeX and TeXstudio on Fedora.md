@@ -5,19 +5,19 @@
 [#]: url: ( )
 [#]: subject: (Typeset your docs with LaTeX and TeXstudio on Fedora)
 [#]: via: (https://fedoramagazine.org/typeset-latex-texstudio-fedora/)
-[#]: author: (Julita Inca Chiroque )
+[#]: author: (Julita Inca Chiroque)
 
-Typeset your docs with LaTeX and TeXstudio on Fedora
+在 fedora 上使用 LaTeX 和 TeXstudio 排版你的文档
 ======
 ![](https://fedoramagazine.org/wp-content/uploads/2017/07/latex-texstudio-945x400.jpg)
 
-LaTeX is [a document preparation system][1] for high-quality typesetting. It’s often used for larger technical or scientific documents. However, you can use LaTeX for almost any form of publishing. Teachers can edit their exams and syllabi, and students can present their thesis and reports for classes. This article gets you started with the TeXstudio app. TeXstudio makes it easy to edit LaTeX documents.
+LaTeX 是一个服务于高质量排版的[文档准备系统][1]。通常用于大量的技术和科学文档的排版。不过，你也可以使用 LaTex 排版各种形式的文档。教师可以编辑他们的考试和教学大纲，学生可以展示他们的论文和报告。这篇文章让你尝试使用 TeXstudio。TeXstudio 是一个便于编辑 LaTeX 文档的软件。
 
-### Launching TeXstudio
+### 启动 TeXstudio
 
-If you’re using Fedora Workstation, launch Software, and type TeXstudio to search for the app. Then select Install to add TeXstudio to your system. You can also launch the app from Software, or go to the shell overview as usual.
+如果您使用的是 Fedora Workstation，请启动软件管理，然后输入 TeXstudio 以搜索该应用程序。然后选择安装并添加 TeXstudio 到您的系统。你可以从软件中启动这个程序，或者像以往一样在概览中启动这个软件。
 
-Alternately, if you use a terminal, type texstudio. If the package isn’t installed, the system prompts you to install it. Type y to start the installation.
+或者，如果你使用终端，请输入 texstudio。如果未安装该软件包，系统将提示您安装它。键入 y 开始安装。
 
 ```
 $ texstudio
@@ -25,9 +25,9 @@ bash: texstudio: command not found...
 Install package 'texstudio' to provide command 'texstudio'? [N/y] y
 ```
 
-LaTeX commands typically start with a backslash (), and command parameters are enclosed in curly braces { }. Start by declaring the type of the documentclass. This example shows you the document class is an article.
+LaTeX命令通常以反斜杠`\`开头，命令参数用大括号{}括起来。首先声明 documentclass 的类型。这个例子向您展示了 document 类是一篇文章。
 
-Then, once you declare the documentclass, mark the beginning and the end of the document with begin and end. In between these commands, write a paragraph similar to the following:
+然后，在声明 documentclass 之后，用 begin 和 end 标记文档的开始和结束。在这些命令之间，写一段类似以下的内容：
 
 ```
 \documentclass{article}
@@ -38,13 +38,13 @@ The Fedora Project is a project sponsored by Red Hat primarily to co-ordinate th
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/07/Screenshot-from-2017-10-05-20-19-15.png)
 
-### Working with spacing
+### 使用间距
 
-To create a paragraph break, leave one or more blank spaces between text.  Here’s an example with four paragraphs:
+要创建段落分隔符，请在文本之间保留一个或多个换行符。下面是一个包含四个段落的示例：
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/07/Screenshot-from-2017-10-18-14-24-42.png)
 
-You can see from the example that more than one line break doesn’t create additional blank space between paragraphs. However, if you do need to leave additional space, use the commands hspace and vspace. These add horizontal and vertical space, respectively. Here is some example code that shows additional spacing around paragraphs:
+从该示例中可以看出，多个换行符不会在段落之间创建额外的空格。但是，如果您确实需要留出额外的空间，请使用 hspace 和 vspace 命令。这两个命令分别添加水平和垂直空间。下面是一些示例代码，显示了段落周围的附加间距：
 
 ```
 \documentclass{article}
@@ -67,11 +67,11 @@ The freedom to distribute copies of your modified versions to others (freedom 3)
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/07/Screenshot-from-2017-10-18-17-24-53.png)
 
-### Using Lists and Formats
+### 使用列表和格式
 
-This example would look better if it presented the four essential freedoms of free software as a list. Set the list structure by using \begin{itemize} at the beginning of the list, and \end{itemize} at the end. Precede each item with the command \item.
+如果把自由软件的四大基本自由列为一个清单，这个例子看起来会更好。通过在列表的开头使用`\begin{itemize}`，在末尾使用`\end{itemize}`来设置列表结构。在每个项目前面加上`\item`命令。
 
-Additional format also helps make the text more readable. Useful commands for formatting include bold, italic, underline, huge, large, tiny and textsc to help emphasize text:
+额外的格式也有助于使文本更具可读性。用于格式化的有用命令包括粗体、斜体、下划线、大、小和 textsc 以帮助强调文本：
 
 ```
 \documentclass{article}
@@ -93,15 +93,15 @@ Additional format also helps make the text more readable. Useful commands for fo
 \end{document}
 ```
 
-### Adding columns, images and links
+### 添加列、图像和链接
 
-Columns, images and links help add further information to your text. LaTeX includes functions for some advanced features as packages. The \usepackage command loads the package so you can make use of these features.
+列、图像和链接有助于为文本添加更多信息。LaTeX 包含一些高级功能的函数作为宏包。`\usepackage` 命令加载宏包以便您可以使用这些功能。
 
-For example, to make an image visible, you might use the command \usepackage{graphicx}. Or, to set up columns and links, use \usepackage{multicol} and \usepackage{hyperref}, respectively.
+例如，要使用图像，可以使用命令 `\usepackage{graphicx}`。或者，要设置列和链接，请分别使用 `\usepackage{multicol}` 和 `\usepackage{hyperref}`。
 
-The \includegraphics command places an image inline in your document. (For simplicity, include the graphics file in the same directory as your LaTeX source file.)
+`\includegraphics` 命令将图像内联放置在文档中。（为简单起见，请将图形文件包含在与LaTeX源文件相同的目录中。）
 
-Here’s an example that uses all these concepts. It also uses two PNG graphics files that were downloaded. Try your own graphics to see how they work.
+下面是一个使用所有这些概念的示例。它还使用下载的两个 PNG 图片。试试你自己的图片，看看它们是如何工作的。
 
 ```
 \documentclass{article} 
@@ -134,7 +134,7 @@ Here’s an example that uses all these concepts. It also uses two PNG graphics 
 
 [][2]
 
-The features here only scratch the surface of LaTeX capabilities. You can learn more about them at the project [help and documentation site][3].
+这里的功能只触及 LaTeX 功能的表皮。您可以在项目[帮助和文档站点][3]了解更多关于它们的信息。
 
 --------------------------------------------------------------------------------
 
