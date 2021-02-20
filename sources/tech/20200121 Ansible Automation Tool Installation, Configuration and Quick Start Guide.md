@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Ansible Automation Tool Installation, Configuration and Quick Start Guide)
-[#]: via: (https://www.2daygeek.com/install-configure-ansible-automation-tool-linux-quick-start-guide/)
-[#]: author: (Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/)
+[#]: collector: "lujun9972"
+[#]: translator: "MjSeven"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Ansible Automation Tool Installation, Configuration and Quick Start Guide"
+[#]: via: "https://www.2daygeek.com/install-configure-ansible-automation-tool-linux-quick-start-guide/"
+[#]: author: "Magesh Maruthamuthu https://www.2daygeek.com/author/magesh/"
 
 Ansible Automation Tool Installation, Configuration and Quick Start Guide
 ======
