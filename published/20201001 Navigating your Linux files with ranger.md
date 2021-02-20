@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13137-1.html)
 [#]: subject: (Navigating your Linux files with ranger)
 [#]: via: (https://www.networkworld.com/article/3583890/navigating-your-linux-files-with-ranger.html)
 [#]: author: (Sandra Henry-Stocker https://www.networkworld.com/author/Sandra-Henry_Stocker/)
@@ -12,7 +12,7 @@
 
 > ranger 是一个很好的工具，它为你的 Linux 文件提供了一个多级视图，并允许你使用方向键和一些方便的命令进行浏览和更改。
 
-![](https://images.idgesg.net/images/article/2018/05/compass_direction_path_guidance_lost_sea_ocean_heidi_sandstrom_cc0_via_unsplash_1200x800-100757640-large.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202102/20/121918g5hqhjfcjyffh3lt.jpg)
 
 `ranger` 是一款独特且非常方便的文件系统导航器，它允许你在 Linux 文件系统中移动，进出子目录，查看文本文件内容，甚至可以在不离开该工具的情况下对文件进行修改。
 
