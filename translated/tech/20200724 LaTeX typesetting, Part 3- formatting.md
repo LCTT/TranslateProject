@@ -1,60 +1,55 @@
 [#]: collector: (Chao-zhi)
-[#]: translator: ( )
+[#]: translator: (Chao-zhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-[#]: subject: (LaTeX typesetting, Part 3: formatting)
+[#]: subject: (LaTeX typesetting，Part 3: formatting)
 [#]: via: (https://fedoramagazine.org/latex-typesetting-part-3-formatting/)
 [#]: author: (Earl Ramirez https://fedoramagazine.org/author/earlramirez/)
 
 
-LaTeX typesetting, Part 3: formatting
+LaTeX 排版 （3）：排版
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/latex-series-redux-1536x650.jpg)
 
-This [series][1] covers basic formatting in LaTeX. [Part 1][2] introduced lists. [Part 2][3] covered tables. In part 3, you will learn about another great feature of LaTeX: the flexibility of granular document formatting. This article covers customizing the page layout, table of contents, title sections, and page style.
+本[系列 ][1] 介绍了 LaTeX 中的基本格式。[第 1 部分 ][2] 介绍了列表。[第 2 部分 ][3] 阐述了表格。在第 3 部分中，您将了解 LaTeX 的另一个重要特性：细腻灵活的文档排版。本文介绍如何自定义页面布局、目录、标题部分和页面样式。
 
-### Page dimension
+### 页面维度
 
-When you first wrote your LaTeX document you may have noticed that the default margin is slightly bigger than you may imagine. The margins have to do with the type of paper you specified, for example, a4, letter, and the document class: article, book, report, and so on. To modify the page margins there are a few options, one of the simplest options is using the [fullpage][4] package.
+当您第一次编写 LaTeX 文档时，您可能已经注意到默认边距比您想象的要大一些。页边距与指定的纸张类型有关，例如 A4、letter 和 documentclass（article、book、report） 等等。要修改页边距，有几个选项，最简单的选项之一是使用 [fullpage][4] 包。
 
-> This package sets the body of the page such that the page is almost full.FULLPAGE PACKAGE DOCUMENTATION
+> 该软件包设置页面的主体，可以使主体几乎占满整个页面。
+> 
+> ——FULLPAGE PACKAGE DOCUMENTATION
 
-The illustration below demonstrates the LaTeX default body compared to using the fullpage package.
+下图演示了使用 fullpage 包和没有使用的区别。
+<！-- 但是原文中并没有这个图 -->
 
-Another option is to use the [geometry][5] package. Before you explore how the geometry package can manipulate margins, first look at the page dimensions as depicted below.
+另一个选择是使用 [geometry][5] 包。在探索 geometry 包如何操纵页边距之前，请首先查看如下所示的页面尺寸。
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image.png)
 
-1.  one inch + \hoffset
+1。1 英寸 + \hoffset
+2。1 英寸 + \voffset
+3。\oddsidemargin = 31pt
+4。\topmargin = 20pt
+5。\headheight = 12pt
+6。\headsep = 25pt
+7。\textheight = 592pt
+8。\textwidth = 390pt
+9。\marginparsep = 35pt
+10。\marginparwidth = 35pt
+11。\footskip = 30pt
 
-2.  one inch + \voffset
-
-3.  \oddsidemargin = 31pt
-
-4.  \topmargin = 20pt
-
-5.  \headheight = 12pt
-
-6.  \headsep = 25pt
-
-7.  \textheight = 592pt
-
-8.  \textwidth = 390pt
-
-9.  \marginparsep = 35pt
-
-10.  \marginparwidth = 35pt
-
-11.  \footskip = 30pt
-
-To set the margin to 1 (one) inch using the geometry package use the following example
+要使用 geometry 包将边距设置为 1 英寸，请使用以下示例
 
 ```
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 ```
+
+除上述示例外，geometry 命令还可以修改纸张尺寸和方向。要更改纸张尺寸，请使用以下示例：
 
 ```
 \usepackage[a4paper, total={7in, 8in}]{geometry}
@@ -62,18 +57,20 @@ To set the margin to 1 (one) inch using the geometry package use the following e
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-2-1024x287.png)
 
-To change the page orientation, you need to add landscape to the geometry options as shown below:
+要更改页面方向，需要将横向添加到 geometery 选项中，如下所示：
 
 ```
 \usepackage{geometery}
 \geometry{a4paper, landscape, margin=1.5in
 ```
 
-### Table of contents
+![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-9.png)
 
-By default, a LaTeX table of contents is titled “Contents”. There are times when you prefer to relabel the text to be “Table of Content”, change the vertical spacing between the ToC and your first section of chapter, or simply change the color of the text.
+### 目录
 
-To change the text you add the following lines to your preamble, substitute english with your desired language :
+默认情况下，目录的标题为 “contents”。有时，您更想将标题改为 “Table of Content”，更改目录和章节第一节之间的垂直间距，或者只更改文本的颜色。
+
+若要更改文本，请在导言区中添加以下行，用所需语言替换英语：
 
 ```
 \usepackage[english]{babel}
@@ -81,8 +78,11 @@ To change the text you add the following lines to your preamble, substitute engl
 \renewcommand{\contentsname}
 {\bfseries{Table of Contents}}}
 ```
+要操纵目录与图，小节和章节列表之间的虚拟间距，请使用 tocloft 软件包。本文中使用的两个选项是 cftbeforesecskip 和 cftaftertoctitleskip。
 
-> The tocloft package provides means of controlling the typographic design of the ToC, List of Figures and List of Tables.TOCLOFT PACKAGE DOUCMENTATION
+> tocloft 包提供了控制目录、图表列表和表格列表的排版方法。
+> 
+> ——TOCLOFT PACKAGE DOUCMENTATION
 
 ```
 \usepackage{tocloft}
@@ -91,24 +91,25 @@ To change the text you add the following lines to your preamble, substitute engl
 ```
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-3.png)
-Default ToC
+默认目录
+
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-4.png)
-Customized ToC
+定制目录
 
-### Borders
+### 边框
 
-When using the package [hyperref][6] in your document, LaTeX section lists in the ToC and references including \url have a border, as shown in the images below.
+在文档中使用包 [hyperref][6] 时，目录中的 LaTeX 章节列表和包含 `\url` 的引用都有边框，如下图所示。
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-5.png)
 
-To remove these borders, include the following in the preamble, In the previous section, “Table of Contents,” you will see that there are not any borders in the ToC.
+要删除这些边框，请在导言区中包括以下内容，您将看到目录中没有任何边框。
 
 ```
 \usepackage{hyperref}
 \hypersetup{ pdfborder = {0 0 0}}
 ```
 
-To modify the title section font, style, and/or color, use the package [titlesec][7]. In this example, you will change the font size, font style, and font color of the section, subsection, and subsubsection. First, add the following to the preamble.
+要修改标题部分的字体、样式或颜色，请使用程序包 [titlesec][7]。在本例中，您将更改节、子节和子节的字体大小、字体样式和字体颜色。首先，在导言区中增加以下内容。
 
 ```
 \usepackage{titlesec}
@@ -117,11 +118,11 @@ To modify the title section font, style, and/or color, use the package [titlesec
 \titleformat*{\subsubsection}{\Large\bfseries\color{darkblue}}
 ```
 
-Taking a closer look at the code, \titleformat*{\section} specifies the depth of section to use. The above example, uses up to the third depth. The {\Huge\bfseries\color{darkblue}} portion specifies the size of the font, font style and, font color
+仔细看看代码，`\titleformat*{\section}` 指定要使用的节的深度。上面的示例最多使用第三个深度。`{\Huge\bfseries\color{darkblue}}` 部分指定字体大小、字体样式和字体颜色
 
-### Page style
+### 页面样式
 
-To customize the page headers and footers one of the packages, use [fancyhdr][8]. This example uses this package to modify the page style, header, and footer. The code below provides a brief description of what each option does.
+要自定义的页眉和页脚，请使用 [fancyhdr][8]。此示例使用此包修改页面样式、页眉和页脚。下面的代码简要描述了每个选项的作用。
 
 ```
 \pagestyle{fancy} %for header to be on each page
@@ -137,17 +138,19 @@ To customize the page headers and footers one of the packages, use [fancyhdr][8]
 \renewcommand{\headrulewidth}{2pt} % add header horizontal line
 \renewcommand{\footrulewidth}{1pt} % add footer horizontal line
 ```
+结果如下所示
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-7.png)
-Header
+页眉
+
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-8.png)
-Footer
+页脚
 
-### Tips
+### 小贴士
 
-### Centralize the preamble
+#### 集中导言区
 
-If write many TeX documents, you can create a .tex file with all your preamble based on your document categories and reference this file. For example, I use a structure.tex as shown below.
+如果要编写许多 TeX 文档，可以根据文档类别创建一个包含所有导言区的 `.tex` 文件并引用此文件。例如，我使用结构 `.tex` 如下所示。
 
 ```
 $ cat article_structure.tex
@@ -228,6 +231,8 @@ $ cat article_structure.tex
 %\pagenumbering{roman}
 ```
 
+在您的文章中，请参考以下示例中所示的方法引用 `structure.tex` 文件：
+
 ```
 \documentclass[a4paper,11pt]{article}
 \input{/path_to_structure.tex}}
@@ -236,17 +241,20 @@ $ cat article_structure.tex
 \end{document}
 ```
 
-To enable watermarks in your LaTeX document, use the [draftwatermark][9] package. The below code snippet and image demonstrates the how to add a watermark to your document. By default the watermark color is grey which can be modified to your desired color.
+#### 添加水印
+
+要在 LaTeX 文档中启用水印，请使用 [draftwatermark][9] 软件包。下面的代码段和图像演示了如何在文档中添加水印。默认情况下，水印颜色为灰色，可以将其修改为所需的颜色。
 
 ```
 \usepackage{draftwatermark} 
 \SetWatermarkText{\color{red}Classified} %add watermark text 
 \SetWatermarkScale{4} %specify the size of the text
 ```
+![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-10.png)
 
-### Conclusion
+### 结论
 
-In this series you saw some of the basic, but rich features that LaTeX provides for customizing your document to cater to your needs or the audience the document will be presented to. With LaTeX, there are many packages available to customize the page layout, style, and more.
+在本系列中，您了解了 LaTeX 提供的一些基本但丰富的功能，这些功能可用于自定义文档以满足您的需要或将文档呈现给的受众。LaTeX 海洋中，还有许多软件包需要大家自行去探索。
 
 --------------------------------------------------------------------------------
 
@@ -254,7 +262,7 @@ via: https://fedoramagazine.org/latex-typesetting-part-3-formatting/
 
 作者：[Earl Ramirez][a]
 选题：[Chao-zhi][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Chao-zhi](https://github.com/Chao-zhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
