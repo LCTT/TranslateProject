@@ -1,16 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13139-1.html)
 [#]: subject: (Viper Browser: A Lightweight Qt5-based Web Browser With A Focus on Privacy and Minimalism)
 [#]: via: (https://itsfoss.com/viper-browser/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Viper 浏览器：一款基于 Qt5 的轻量级浏览器，注重隐私和简约
+Viper 浏览器：一款注重隐私和简约的轻量级 Qt5 浏览器
 ======
 
-**简介：Viper 浏览器是一个基于 Qt 的浏览器，它提供了简单的用户体验，同时考虑到隐私问题。**_
+![](https://img.linux.net.cn/data/attachment/album/202102/21/110148d7r3hlurczc1ci73.jpg)
+
+> Viper 浏览器是一个基于 Qt 的浏览器，它提供了简单易用的用户体验，同时考虑到隐私问题。
 
 虽然大多数流行的浏览器都运行在 Chromium 之上，但像 [Firefox][1]、[Beaker 浏览器][2]以及其他一些 [chrome 替代品][3]这样独特的替代品不应该停止存在。
 
@@ -20,11 +22,9 @@ Viper 浏览器：一款基于 Qt5 的轻量级浏览器，注重隐私和简约
 
 ### Viper 浏览器：一个基于 Qt5 的开源浏览器
 
-_**注意**：Viper 浏览器是一个只有几个贡献者的相当新的项目。它缺乏某些功能，我将在下文提及。_
+**注意**：Viper 浏览器是一个只有几个贡献者的相当新的项目。它缺乏某些功能，我将在下文提及。
 
-![][7]
-
-Viper 是一款有趣的网络浏览器，在利用 [QtWebEngine][8] 的同时，它专注于成为一个强大而又轻巧的选择。
+Viper 是一款有趣的 Web 浏览器，在利用 [QtWebEngine][8] 的同时，它专注于成为一个强大而又轻巧的选择。
 
 QtWebEngine 借用了 Chromium 的代码，但它不包括连接到 Google 平台的二进制文件和服务。
 
@@ -49,8 +49,6 @@ QtWebEngine 借用了 Chromium 的代码，但它不包括连接到 Google 平�
 * 禁用 JavaScript 的选项
 * 能够阻止图像加载
 
-
-
 除了这些亮点之外，你还可以轻松地调整隐私设置，以删除你的历史记录、清理已有 cookies，以及一些更多的选项。
 
 ![][12]
@@ -61,7 +59,7 @@ QtWebEngine 借用了 Chromium 的代码，但它不包括连接到 Google 平�
 
 如果你需要帮助，你也可以参考我们的[在 Linux 上使用 AppImage 文件][14]指南。如果你好奇，你可以在 [GitHub][5] 上探索更多关于它的内容。
 
-[Viper 浏览器][5]
+- [Viper 浏览器][5]
 
 ### 我对使用 Viper 浏览器的看法
 
@@ -86,7 +84,7 @@ via: https://itsfoss.com/viper-browser/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
