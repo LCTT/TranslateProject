@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13140-1.html)
 [#]: subject: (A practical guide to JavaScript closures)
 [#]: via: (https://opensource.com/article/21/2/javascript-closures)
 [#]: author: (Nimisha Mukherjee https://opensource.com/users/nimisha)
@@ -12,7 +12,7 @@ JavaScript 闭包实践
 
 > 通过深入了解 JavaScript 的高级概念之一：闭包，更好地理解 JavaScript 代码的工作和执行方式。
 
-![女性编程][1]
+![](https://img.linux.net.cn/data/attachment/album/202102/21/162941ogyb74z3ahfbfe35.jpg)
 
 在《[JavaScript 如此受欢迎的 4 个原因][2]》中，我提到了一些高级 JavaScript 概念。在本文中，我将深入探讨其中的一个概念：<ruby>闭包<rt>closure</rt></ruby>。
 
@@ -123,7 +123,7 @@ via: https://opensource.com/article/21/2/javascript-closures
 作者：[Nimisha Mukherjee][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
