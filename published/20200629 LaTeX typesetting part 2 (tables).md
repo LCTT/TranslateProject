@@ -1,23 +1,22 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Chao-zhi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (LaTeX typesetting part 2 (tables))
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13146-1.html)
+[#]: subject: (LaTeX typesetting part 2 \(tables\))
 [#]: via: (https://fedoramagazine.org/latex-typesetting-part-2-tables/)
 [#]: author: (Earl Ramirez https://fedoramagazine.org/author/earlramirez/)
-
 
 LaTex 排版 （2）：表格
 ======
 
 ![][1]
 
-LaTeX 提供了许多工具来创建和定制表格，在本系列中，我们将使用 tabular 和 tabularx 环境来创建和定制表。
+LaTeX 提供了许多工具来创建和定制表格，在本系列中，我们将使用 `tabular` 和 `tabularx` 环境来创建和定制表。
 
 ### 基础表格
 
-要创建表，只需指定环境 `\begin{tabular}{ 列选项}`
+要创建表，只需指定环境 `\begin{tabular}{列选项}`：
 
 ```
 \begin{tabular}{c|c}
@@ -35,25 +34,25 @@ LaTeX 提供了许多工具来创建和定制表格，在本系列中，我们�
 
 参数 | 位置
 |:---:|:---
-c | 将文本置于中间
-l | 将文本左对齐
-r | 将文本右对齐
-p{width} | 文本对齐单元格顶部
-m{width} | 文本对齐单元格中间
-b{width} | 文本对齐单元格底部
+`c` | 将文本置于中间
+`l` | 将文本左对齐
+`r` | 将文本右对齐
+`p{宽度}` | 文本对齐单元格顶部
+`m{宽度}` | 文本对齐单元格中间
+`b{宽度}` | 文本对齐单元格底部
 
-> m{width} 和 b{width} 都要求在最前面指定数组包。
+> `m{宽度}` 和 `b{宽度}` 都要求在最前面指定数组包。
 
-使用上面的例子，让我们来详细讲解使用的要点，并描述您将在本系列中看到的更多选项
+使用上面的例子，让我们来详细讲解使用的要点，并描述你将在本系列中看到的更多选项：
 
 选项 | 意义
 |:-:|:-|
-&amp; | 定义每个单元格，这个符号仅用于第二列
-\ | 这将终止该行并开始一个新行
-\| | 指定表格中的垂直线（可选）
-\hline | 指定表格中水平线（可选）
-*{num}{form} | 当您有许多列时，可以使用这个，并且是限制重复的有效方法
-\|\| | 指定表格中垂直双线
+`&` | 定义每个单元格，这个符号仅用于第二列
+`\\` | 这将终止该行并开始一个新行
+`|` | 指定表格中的垂直线（可选）
+`\hline` | 指定表格中的水平线（可选）
+`*{数量}{格式}` | 当你有许多列时，可以使用这个，并且是限制重复的有效方法
+`||` | 指定表格中垂直双线
 
 ### 定制表格
 
@@ -77,7 +76,7 @@ b{width} | 文本对齐单元格底部
 
 如果列中有很多文本，那么它的格式就不好处理，看起来也不好看。
 
-下面的示例显示了文本的格式长度，我们将在导言区中使用 “blindtext”，以便生成示例文本。
+下面的示例显示了文本的格式长度，我们将在导言区中使用 `blindtext`，以便生成示例文本。
 
 ```
 \begin{tabular}{|l|l|}\hline
@@ -88,15 +87,14 @@ b{width} | 文本对齐单元格底部
 
 ![Default Formatting][4]
 
-正如您所看到的，文本超出了页面宽度；但是，有几个选项可以克服这个问题。
+正如你所看到的，文本超出了页面宽度；但是，有几个选项可以克服这个问题。
 
-  * 指定列宽，例如 m{5cm}
-  * 利用 tablarx 环境，这需要在导言区中引用 tablarx 宏包。
-
+  * 指定列宽，例如 `m{5cm}`
+  * 利用 `tablarx` 环境，这需要在导言区中引用 `tablarx` 宏包。
 
 #### 使用列宽管理长文本
 
-通过指定列宽，文本将被包装为如下示例所示的宽度。
+通过指定列宽，文本将被折行为如下示例所示的宽度。
 
 ```
 \begin{tabular}{|l|m{14cm}|} \hline
@@ -105,14 +103,11 @@ b{width} | 文本对齐单元格底部
 \end{tabular}\vspace{3mm}
 ```
 
-![Column width][5]
+![Column Width][5]
 
 #### 使用 tabularx 管理长文本
 
-在我们利用表格之前，我们需要在导言区中加上它。TABLARX 方法见以下示例
-
-`\begin{tabularx}{ 宽度}{列选项}`
-
+在我们利用表格之前，我们需要在导言区中加上它。`tabularx` 方法见以下示例：`\begin{tabularx}{宽度}{列选项}`。
 
 ```
 \begin{tabularx}{\textwidth}{|l|X|} \hline
@@ -121,18 +116,17 @@ Text &\blindtext \\ \hline
 \end{tabularx}
 ```
 
-
 ![Tabularx][6]
 
-请注意，我们需要处理长文本的列在花括号中指定了大写 “X”。
+请注意，我们需要处理长文本的列在花括号中指定了大写 `X`。
 
 ### 合并行合并列
 
-有时需要合并行或列。本节描述了如何完成。要使用 multirow 和 multicolumn，请将 multirow 添加到导言区。
+有时需要合并行或列。本节描述了如何完成。要使用 `multirow` 和 `multicolumn`，请将 `multirow` 添加到导言区。
 
 #### 合并行
 
-Multirow 采用以下参数 `\multirow{ 行的数量}{宽度}{文本}`，让我们看看下面的示例。
+`multirow` 采用以下参数 `\multirow{行的数量}{宽度}{文本}`，让我们看看下面的示例。
 
 ```
 \begin{tabular}{|l|l|}\hline
@@ -145,11 +139,11 @@ Multirow 采用以下参数 `\multirow{ 行的数量}{宽度}{文本}`，让我�
 
 ![MultiRow][7]
 
-在上面的示例中，指定了两行，'*'告诉 LaTeX 自动管理单元格的大小。
+在上面的示例中，指定了两行，`*` 告诉 LaTeX 自动管理单元格的大小。
 
 #### 合并列
 
-Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文本}`，下面的示例演示 Multicolumn。
+`multicolumn` 参数是 `{multicolumn{列的数量}{单元格选项}{位置}{文本}`，下面的示例演示合并列。
 
 ```
 \begin{tabular}{|l|l|l|}\hline
@@ -165,14 +159,14 @@ Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文�
 
 可以为文本、单个单元格或整行指定颜色。此外，我们可以为每一行配置交替的颜色。
 
-在给表添加颜色之前，我们需要在导言区引用 `\usepackage[table]{xcolor}`。我们还可以使用以下颜色参考 [LaTeX Color][9] 或在颜色前缀后面添加感叹号（从 0 到 100 的阴影）来定义颜色。例如，`gray！30`
+在给表添加颜色之前，我们需要在导言区引用 `\usepackage[table]{xcolor}`。我们还可以使用以下颜色参考 [LaTeX Color][9] 或在颜色前缀后面添加感叹号（从 0 到 100 的阴影）来定义颜色。例如，`gray！30`。
 
 ```
 \definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
 \definecolor{darkgray}{rgb}{0.66, 0.66, 0.66}
 ```
 
-下面的示例演示了一个具有各种颜色的表，`\rowcolors` 采用以下选项 `\rowcolors{ 起始行颜色}{偶数行颜色}{奇数行颜色}`。
+下面的示例演示了一个具有各种颜色的表，`\rowcolors` 采用以下选项 `\rowcolors{起始行颜色}{偶数行颜色}{奇数行颜色}`。
 
 ```
 \rowcolors{2}{darkgray}{gray!20}
@@ -207,7 +201,7 @@ Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文�
 让我们讲解一下为解决合并行替换颜色问题而实施的更改。
 
   * 第一行从合并行上方开始
-  * 行数从 2 更改为 -2，这意味着从上面的行开始读取
+  * 行数从 `2` 更改为 `-2`，这意味着从上面的行开始读取
   * `\rowcolor` 是为每一行指定的，更重要的是，多行必须具有相同的颜色，这样才能获得所需的结果。
 
 关于颜色的最后一个注意事项是，要更改列的颜色，需要创建新的列类型并定义颜色。下面的示例说明了如何定义新的列颜色。
@@ -216,10 +210,10 @@ Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文�
 \newcolumntype{g}{>{\columncolor{darkblue}}l} 
 ```
 
-我们把它分解一下
+我们把它分解一下：
 
-  * `\newcolumntype{g}`：将字母 _g_ 定义为新列
-  * `{>{\columncolor{darkblue}}l}`：在这里我们选择我们想要的颜色，并且 `l` 告诉列左对齐，这可以用 `c` 或 `r` 代替
+  * `\newcolumntype{g}`：将字母 `g` 定义为新列
+  * `{>{\columncolor{darkblue}}l}`：在这里我们选择我们想要的颜色，并且 `l` 告诉列左对齐，这可以用 `c` 或 `r` 代替。
 
 ```
 \begin{tabular}{g|l} 
@@ -234,7 +228,7 @@ Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文�
 
 ### 横向表
 
-有时，您的表可能有许多列，纵向排列会很不好看。在导言区加入 “rotating” 包，您将能够创建一个横向表。下面的例子说明了这一点。
+有时，你的表可能有许多列，纵向排列会很不好看。在导言区加入 `rotating` 包，你将能够创建一个横向表。下面的例子说明了这一点。
 
 对于横向表，我们将使用 `sidewaystable` 环境并在其中添加表格环境，我们还指定了其他选项。
 
@@ -260,7 +254,7 @@ Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文�
 
 ### 列表和表格
 
-要将列表包含到表中，可以使用 tabularx，并将列表包含在指定的列中。另一个办法是使用表格格式，但必须指定列宽。
+要将列表包含到表中，可以使用 `tabularx`，并将列表包含在指定的列中。另一个办法是使用表格格式，但必须指定列宽。
 
 #### 用 tabularx 处理列表
 
@@ -279,7 +273,6 @@ Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文�
 
 #### 用 tabular 处理列表
 
-
 ```
 \begin{tabular}{|l|m{6cm}|}\hline
         Fedora Version &amp;amp;amp;Editions \\\ \hline
@@ -293,9 +286,9 @@ Multicolumn 参数是 `{Multicolumn{ 列的数量}{单元格选项}{位置}{文�
 
 ![List in tabular][16]
 
-### 结论
+### 总结
 
-LaTeX 提供了许多使用 tablar 和 tablarx 自定义表的方法，您还可以在表环境 （\begin\table） 中添加 tablar 和 tablarx 来添加表的名称和定位表。
+LaTeX 提供了许多使用 `tablar` 和 `tablarx` 自定义表的方法，你还可以在表环境 （`\begin\table`） 中添加 `tablar` 和 `tablarx` 来添加表的名称和定位表。
 
 ### LaTeX 宏包
 
@@ -324,7 +317,7 @@ via: https://fedoramagazine.org/latex-typesetting-part-2-tables/
 作者：[Earl Ramirez][a]
 选题：[lujun9972][b]
 译者：[Chao-zhi](https://github.com/Chao-zhi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
