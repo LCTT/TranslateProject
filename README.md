@@ -28,13 +28,13 @@ LCTT 已经拥有几百名活跃成员，并欢迎更多的 Linux 志愿者加�
 加入的成员，请：
 
 1. 修改你的 QQ 群名片为“译者-您的_GitHub_ID”。
-2. 阅读 [WIKI](http://lctt.github.io/wiki) 了解如何开始。
+2. 阅读 [WIKI](https://lctt.github.io/wiki) 了解如何开始。
 3. 遇到不解之处，请在群内发问。
 
 如何开始
 -------------------------------
 
-请阅读 [WIKI](http://lctt.github.io/wiki)。如需要协助，请在群内发问。
+请阅读 [WIKI](https://lctt.github.io/wiki)。如需要协助，请在群内发问。
 
 历史
 -------------------------------
