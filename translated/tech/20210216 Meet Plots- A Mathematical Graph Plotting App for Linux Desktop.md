@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Meet Plots: A Mathematical Graph Plotting App for Linux Desktop)
@@ -10,17 +10,19 @@
 认识 Plots：一款适用于 Linux 桌面的数学图形绘图应用
 ======
 
-Plots 是一款图形绘图应用，它可以轻松实现数学公式的可视化。你可以用它来绘制任意三角函数、双曲函数、指数函数和对数函数的和和积。
+![](https://img.linux.net.cn/data/attachment/album/202102/25/140338su2fju6016t5q2tz.jpg)
+
+Plots 是一款图形绘图应用，它可以轻松实现数学公式的可视化。你可以用它来绘制任意三角函数、双曲函数、指数函数和对数函数的和与积。
 
 ### 在 Linux 上使用 Plots 绘制数学图形
 
-[Plots][1] 是一款简单的应用，它的灵感来自于像 [Desmos][2] 这样的网络图形绘图应用。它能让你绘制不同数学函数的图形，你可以交互式地输入这些函数，还可以自定义绘图的颜色。
+[Plots][1] 是一款简单的应用，它的灵感来自于像 [Desmos][2] 这样的 Web 图形绘图应用。它能让你绘制不同数学函数的图形，你可以交互式地输入这些函数，还可以自定义绘图的颜色。
 
 Plots 是用 Python 编写的，它使用 [OpenGL][3] 来利用现代硬件。它使用 GTK 3，因此可以很好地与 GNOME 桌面集成。
 
 ![][4]
 
-使用 plots 是很直接的。要添加一个新的方程，点击加号。点击垃圾箱图标可以删除方程。还可以选择撤销和重做。你也可以放大和缩小。
+使用 Plots 非常直白。要添加一个新的方程，点击加号。点击垃圾箱图标可以删除方程。还可以选择撤销和重做。你也可以放大和缩小。
 
 ![][5]
 
@@ -28,7 +30,7 @@ Plots 是用 Python 编写的，它使用 [OpenGL][3] 来利用现代硬件。�
 
 ![][6]
 
-在深色模式下，侧栏公式区域变成了深色，但主绘图区域仍然是白色。我相信这也许是设计好的。
+在深色模式下，侧栏公式区域变成了深色，但主绘图区域仍然是白色。我相信这也许是这样设计的。
 
 你可以使用多个函数，并将它们全部绘制在一张图中：
 
@@ -36,7 +38,7 @@ Plots 是用 Python 编写的，它使用 [OpenGL][3] 来利用现代硬件。�
 
 我发现它在尝试粘贴一些它无法理解的方程时崩溃了。如果你写了一些它不能理解的东西，或者与现有的方程冲突，所有图形都会消失，去掉不正确的方程就会恢复图形。
 
-不幸的是，没有导出绘图或复制到剪贴板的选项。你可以随时[在 Linux 中截图][8]，并在你要添加图像的文档中使用它。
+不幸的是，没有导出绘图或复制到剪贴板的选项。你可以随时 [在 Linux 中截图][8]，并在你要添加图像的文档中使用它。
 
 ### 在 Linux 上安装 Plots
 
@@ -50,17 +52,17 @@ sudo apt update
 sudo apt install plots
 ```
 
-对于其他基于 Debian 的发行版，你可以使用[这里][13]的 [deb 文件安装][12]。
+对于其他基于 Debian 的发行版，你可以使用 [这里][13] 的 [deb 文件安装][12]。
 
 我没有在 AUR 软件包列表中找到它，但是作为 Arch Linux 用户，你可以使用 Flatpak 软件包或者使用 Python 安装它。
 
-[Plots Flatpak Package][14]
+- [Plots Flatpak 软件包][14]
 
 如果你感兴趣，可以在它的 GitHub 仓库中查看源代码。如果你喜欢这款应用，请考虑在 GitHub 上给它 star。
 
-[GitHub 上的 Plots 源码][1]
+- [GitHub 上的 Plots 源码][1]
 
-**结论**
+### 结论
 
 Plots 主要用于帮助学生学习数学或相关科目，但它在很多其他场景下也能发挥作用。我知道不是每个人都需要，但肯定会对学术界和学校的人有帮助。
 
@@ -75,7 +77,7 @@ via: https://itsfoss.com/plots-graph-app/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
