@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13152-1.html)
 [#]: subject: (Starship: Open-Source Customizable Prompt for Any Shell)
 [#]: via: (https://itsfoss.com/starship/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-Starship： 跨 shell 的可定制的提示符
+Starship：跨 shell 的可定制的提示符
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202102/25/142817taqq2ahab0t61zss.jpg)
 
 > 如果你很在意你的终端的外观的话，一个跨 shell 的提示符可以让你轻松地定制和配置 Linux 终端提示符。
 
@@ -67,7 +69,7 @@ sudo apt install curl
 curl -fsSL https://starship.rs/install.sh | bash
 ```
 
-这应该会以 root 身份将 Starship 安装到 `usr/local/bin`。你可能会被提示输入密码。下面是它的样子：
+这应该会以 root 身份将 Starship 安装到 `usr/local/bin`。你可能会被提示输入密码。看起来如下：
 
 ![][11]
 
@@ -89,7 +91,7 @@ nano .bashrc
 
 ![][12]
 
-完成后，只需重启终端或重启会话即可看到最小化的提示符。对于你的 shell 来说，它可能看起来有点不同，但默认情况下应该是一样的。
+完成后，只需重启终端或重启会话即可看到一个精简的提示符。对于你的 shell 来说，它可能看起来有点不同，但默认情况下应该是一样的。
 
 ![][13]
 
