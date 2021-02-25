@@ -8,10 +8,12 @@
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
 4 reasons to choose Linux for art and design
+选择Linux作为艺术和设计的4个理由
 ======
 Open source enhances creativity by breaking you out of a proprietary
 mindset and opening your mind to possibilities. Explore several open
 source creative programs.
+开源会强化你的创造力。因为它把你带出私有化的思维定势，开阔你的视野，从而带来更多的可能性。看看几个开源的创意项目吧。
 ![Painting art on a computer screen][1]
 
 In 2021, there are more reasons why people love Linux than ever before. In this series, I'll share 21 different reasons to use Linux. Today I'll explain why Linux is an excellent choice for creative work.
