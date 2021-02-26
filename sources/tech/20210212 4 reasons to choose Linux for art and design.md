@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (amorsu)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,16 +7,15 @@
 [#]: via: (https://opensource.com/article/21/2/linux-art-design)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-4 reasons to choose Linux for art and design
+选择Linux来做艺术设计的4个理由
 ======
-Open source enhances creativity by breaking you out of a proprietary
-mindset and opening your mind to possibilities. Explore several open
-source creative programs.
-![Painting art on a computer screen][1]
 
-In 2021, there are more reasons why people love Linux than ever before. In this series, I'll share 21 different reasons to use Linux. Today I'll explain why Linux is an excellent choice for creative work.
+开源会强化你的创造力。因为它把你带出私有化的思维定势，开阔你的视野，从而带来更多的可能性。探索一些开源的创意项目。
+![在一台电脑屏幕上的喷涂艺术][1]
 
-Linux gets a lot of press for its amazing server and cloud computing software. It comes as a surprise to some that Linux happens to have a great set of creative tools, too, and that they easily rival popular creative apps in user experience and quality. When I first started using open source creative software, it wasn't because I didn't have access to the other software. Quite the contrary, I started using open source tools when I had the greatest access to the proprietary tools offered by several leading companies. I chose to switch to open source because open source made more sense and produced better results. Those are some big claims, so allow me to explain.
+2021年，人们比以前的任何时候都更有理由来爱上Linux。在这个系列，我会分享21个选择Linux的原因。今天，让我来解释一下，为什么Linux是艺术设计的绝佳选择。
+
+Linux在服务器和云计算方面获得很多的赞誉。让不少人感到惊讶的是，Linux刚好有一系列的创意设计工具，并且这些工具在用户体验和质量方面可以轻松打败那些流行的创意设计工具。我第一次使用开源的设计工具，并不是因为我没有其他工具可以选择。相反的，我是在接触了大量的这些领先的公司提供的私有化的设计工具后，才开始使用开源设计工具。我之所以最后选择开源设计工具是因为它们更合情而且我能获得更好的产出。以下是好几个方面，让我来慢慢解释吧！
 
 ### High availability means high productivity
 
@@ -80,7 +79,7 @@ via: https://opensource.com/article/21/2/linux-art-design
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[amorsu](https://github.com/amorsu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
