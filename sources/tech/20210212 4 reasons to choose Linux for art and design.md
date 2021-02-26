@@ -17,25 +17,26 @@
 
 Linux在服务器和云计算方面获得很多的赞誉。让不少人感到惊讶的是，Linux刚好有一系列的创意设计工具，并且这些工具在用户体验和质量方面可以轻松打败那些流行的创意设计工具。我第一次使用开源的设计工具，并不是因为我没有其他工具可以选择。相反的，我是在接触了大量的这些领先的公司提供的私有化的设计工具后，才开始使用开源设计工具。我之所以最后选择开源设计工具是因为它们更合情而且我能获得更好的产出。以下是好几个方面，让我来慢慢解释吧！
 
-### High availability means high productivity
+### 高可用性意味着高生产力
 
-The term _productivity_ means different things to different people. When I think of productivity, it's that when you sit down to do something, it's rewarding when you're able to meet whatever goal you've set for yourself. If you get interrupted or stopped by something outside your control, then your productivity goes down.
+“生产力”这一次对于不同的人来说含义不一样。当我想到生产力，就是当你坐下来做事情，并能够完成你给自己设定的所有任务的时候，这时就很有成就感。
+但是当你总是被一些你无法掌控的事情打断，那你的生产力就下降了。
 
-Computers can seem unpredictable, and there are admittedly a lot of things that can go wrong. There are lots of hardware parts to a computer, and any one of them can break at any time. Software has bugs and updates to fix bugs, and then new bugs introduced by those updates. If you're not comfortable with computers, it can feel a little like a timebomb just waiting to ensnare you. With so much potentially working _against_ you in the digital world, it doesn't make sense to me to embrace software that guarantees not to work when certain requirements (like a valid license, or more often, an up-to-date subscription) aren't met.
+电脑有时候会显得无法预测，并且大家也公认在很多方面会有可能出问题。电脑是由很多的硬件组成的，它们任何一个都有可能在任何时间出问题。软件会有bug，以及修复这些bug的更新，而更新后又会带来新的bug。如果你对电脑不了解，它可能就像一个定时炸弹，等着爆发。带着数字世界里的这么多的潜在问题，去接受一个当某些条件不满足（比如授权，或者订阅费）就会不工作的软件，对我来说就显得很不理智。
 
-![Inkscape application][2]
+![Inkscape 应用][2]
 
 Inkscape
 
-Open source creative apps have no required subscription fee and no licensing requirements. They're available when you need them and usually on any platform. That means when you sit down at a working computer, you know you have access to your must-have software. And if you're having a rough day and you find yourself sitting in front of a computer that isn't working, the fix is to find one that does work, install your creative suite, and get to work.
+开源的创意设计app不需要订阅费，也不需要授权。在你需要的时候，它们都能获取得到，并且通常都是跨平台的。这就意味着，当你坐在工作的电脑面前，你就能确定你能用到那些必需的软件。而如果某天你很忙碌，却发现你面前的电脑不工作了，解决办法就是找到一个能工作的，安装你的创意设计软件，然后开始工作。
 
-It's far harder to find a computer that _can't_ run Inkscape, for instance, than it is to find a computer that _is_ running a similar proprietary application. That's called high availability, and it's a game-changer. I've never found myself wasting hours of my day for lack of the software I want to run to get things done.
+想要找到一台无法运行Inkscape的电脑是很困难的。比找一台可以运行那些私有软件的电脑，还要难。这就叫做高可用。这是游戏规则的改变者。我从来不曾遇到因为软件用不了而不得不干等，浪费我数小时时间的事情。
 
-### Open access is better for diversity
+### 开源更有多样性
 
-When I was working in the creative industry, it sometimes surprised me how many of my colleagues were self-taught both in their artistic and technical disciplines. Some taught themselves on expensive rigs with all the latest "professional" applications, but there was always a large group of people who perfected their digital trade on free and open source software because, as kids or as poor college students, that was what they could afford and obtain easily.
+我在设计行业工作的时候，我的很多同事都是通过自学的方式来学习艺术和技术方面的知识，这让我感到惊讶。有的通过使用那些最新的昂贵的“专业”软件来自学，当大部分人则是通过使用免费和开源的软件来完善他们的数字化的职业技能。因为，对于孩子，或者没钱的大学生来说，这才是他们能负担的起，而且很容易就能获得的。
 
-That's a different kind of high availability, but it's one that's important to me and many other users who wouldn't be in the creative industry but for open source. Even open source projects that do offer a paid subscription, like [Ardour][3], ensure that users have access to the software regardless of an ability to pay.
+高可用有很多种，但有一种对我而言很重要，而且对那些没有在设计行业但使用开源软件的人也很重要。即使那些有提供付费订阅的开源项目，比如Ardour，都能确保他的用户在不需要支付任何费用的时候也能使用软件。
 
 ![Ardour interface][4]
 
