@@ -38,29 +38,37 @@ Inkscape
 
 高可用有很多种，但有一种对我而言很重要，而且对那些没有在设计行业但使用开源软件的人也很重要。即使那些有提供付费订阅的开源项目，比如Ardour，都能确保他的用户在不需要支付任何费用的时候也能使用软件。
 
-![Ardour interface][4]
+![Ardour 界面][4]
 
 Ardour
 
 When you don't restrict who gets to use your software, you're implicitly inviting more users. And when you do that, you enable a greater diversity of creative voices. Art loves influence, and the greater the variety of experiences and ideas you have to draw from, the better. That's what's possible with open source creative software.
-
+当你不限制别人用你的软件的时候，你其实拥有了更多的潜在用户。如果你这样做了，那么你就开放了一个接收多样的创意声音的窗口。艺术钟爱影响力，你能从越多的不同用户经验中获得越多的观点，就越好。这就是开源设计软件所带来的可能性。
 ### Resolute format support is more inclusive
+### 文件格式支持更具包容性
 
 We all acknowledge the value of inclusivity in basically every industry. Inviting _more people_ to the party results in a greater spectacle, in nearly every sense. Knowing this, it's painful when I see a project or initiative that invites people to collaborate, only to limit what kind of file formats are acceptable. It feels archaic, like a vestige of elitism out of the far past, and yet it's a real problem even today.
+我们都知道在几乎所有行业里面包容性的价值。在各种意义上，邀请更多的人到派对造就更壮观的场面。知道这一点，当看到有的项目或者创新公司只邀请某些人去合作，只接受某些文件格式，就让我很痛苦。这看起来很陈旧，就像某个远古时代的精英主义的遗迹，而这又是每天都在发生的真实问题。
 
 In a surprise and unfortunate twist, it's not because of technical limitations. Proprietary software has access to open file formats because they're open source and free to integrate into any application. Integrating these formats requires no reciprocation. By stark contrast, proprietary file formats are often shrouded in secrecy, locked away for use by the select few who pay to play. It's so bad, in fact, that quite often, you can't open some files to get to your data without the proprietary software available. Amazingly, open source creative applications nevertheless include support for as many proprietary formats as they possibly can. Here's just a sample of Inkscape's staggering support list:
+这是一个意外而不幸的转变，而且不是因为技术上的限制。私有软件可以访问开源的文件格式，因为这些格式是开源的而且可以免费的集成到各种应用里面。集成这些格式不需要任何回报。而相比之下，私有的文件格式笼罩着秘密，只被限制于提供给几个愿意付钱的人使用。这很糟糕，而且常常，你无法在没有这些私有软件的情况下打开一些文件来获取你的数据。令人惊喜的是，开源的设计软件却是尽力的支持更多的私有文件格式。以下是一些Inkscape所支持的令人难以置信的列表样本：
 
-![Available Inkscape file formats][5]
 
-Inkscape file formats
+![可用的 Inkscape 文件格式][5]
+
+Inkscape 文件格式
 
 And that's largely without contribution from the companies owning the file formats.
+而这大部分都是在没有这些私有格式厂商的支持下开发出来的。
 
 Supporting open file formats is more inclusive, and it's better for everyone.
+支持开放的文件格式可以更包容，对所有人都更好。
 
 ### No restrictions for fresh ideas
+### 对新的创意没有限制
 
 One of the things I've come to love about open source is the sheer diversity of how any given task is interpreted. When you're around proprietary software, you tend to start to see the world based on what's available to you. For instance, if you're thinking of manipulating some photos, then you generally frame your intent based on what you know to be possible. You choose from the three of four or ten applications on the shelf because they're the only options presented.
+我之所以爱上开源的其中一个原因是，解决一个指定任务时，有彻底的多样性。当你在
 
 You generally have several obligatory "obvious" solutions in open source, but you also get an additional _dozen_ contenders hanging out on the fringe. These options are sometimes only half-complete, or they're hyper-focused on a specific task, or they're challenging to learn, but most importantly, they're unique and innovative. Sometimes they've been developed by someone who's never seen the way a task is "supposed to be done," and so the approach is wildly different than anything else on the market. Other times, they're developed by someone familiar with the "right way" of doing something but is trying a different tactic anyway. It's a big, dynamic brainstorm of possibility.
 
