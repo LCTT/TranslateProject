@@ -42,15 +42,12 @@ Inkscape
 
 Ardour
 
-When you don't restrict who gets to use your software, you're implicitly inviting more users. And when you do that, you enable a greater diversity of creative voices. Art loves influence, and the greater the variety of experiences and ideas you have to draw from, the better. That's what's possible with open source creative software.
 当你不限制别人用你的软件的时候，你其实拥有了更多的潜在用户。如果你这样做了，那么你就开放了一个接收多样的创意声音的窗口。艺术钟爱影响力，你能从越多的不同用户经验中获得越多的观点，就越好。这就是开源设计软件所带来的可能性。
-### Resolute format support is more inclusive
+
 ### 文件格式支持更具包容性
 
-We all acknowledge the value of inclusivity in basically every industry. Inviting _more people_ to the party results in a greater spectacle, in nearly every sense. Knowing this, it's painful when I see a project or initiative that invites people to collaborate, only to limit what kind of file formats are acceptable. It feels archaic, like a vestige of elitism out of the far past, and yet it's a real problem even today.
-我们都知道在几乎所有行业里面包容性的价值。在各种意义上，邀请更多的人到派对造就更壮观的场面。知道这一点，当看到有的项目或者创新公司只邀请某些人去合作，只接受某些文件格式，就让我很痛苦。这看起来很陈旧，就像某个远古时代的精英主义的遗迹，而这又是每天都在发生的真实问题。
+我们都知道在几乎所有行业里面包容性的价值。在各种意义上，邀请更多的人到派对造就更壮观的场面。知道这一点，当看到有的项目或者创新公司只邀请某些人去合作，只接受某些文件格式，就让我很痛苦。这看起来很陈旧，就像某个远古时代的精英主义的遗迹，而这是即使在今天都在发生的真实问题。
 
-In a surprise and unfortunate twist, it's not because of technical limitations. Proprietary software has access to open file formats because they're open source and free to integrate into any application. Integrating these formats requires no reciprocation. By stark contrast, proprietary file formats are often shrouded in secrecy, locked away for use by the select few who pay to play. It's so bad, in fact, that quite often, you can't open some files to get to your data without the proprietary software available. Amazingly, open source creative applications nevertheless include support for as many proprietary formats as they possibly can. Here's just a sample of Inkscape's staggering support list:
 这是一个意外而不幸的转变，而且不是因为技术上的限制。私有软件可以访问开源的文件格式，因为这些格式是开源的而且可以免费的集成到各种应用里面。集成这些格式不需要任何回报。而相比之下，私有的文件格式笼罩着秘密，只被限制于提供给几个愿意付钱的人使用。这很糟糕，而且常常，你无法在没有这些私有软件的情况下打开一些文件来获取你的数据。令人惊喜的是，开源的设计软件却是尽力的支持更多的私有文件格式。以下是一些Inkscape所支持的令人难以置信的列表样本：
 
 
@@ -58,29 +55,25 @@ In a surprise and unfortunate twist, it's not because of technical limitations. 
 
 Inkscape 文件格式
 
-And that's largely without contribution from the companies owning the file formats.
 而这大部分都是在没有这些私有格式厂商的支持下开发出来的。
 
-Supporting open file formats is more inclusive, and it's better for everyone.
 支持开放的文件格式可以更包容，对所有人都更好。
 
-### No restrictions for fresh ideas
 ### 对新的创意没有限制
 
-One of the things I've come to love about open source is the sheer diversity of how any given task is interpreted. When you're around proprietary software, you tend to start to see the world based on what's available to you. For instance, if you're thinking of manipulating some photos, then you generally frame your intent based on what you know to be possible. You choose from the three of four or ten applications on the shelf because they're the only options presented.
-我之所以爱上开源的其中一个原因是，解决一个指定任务时，有彻底的多样性。当你在
+我之所以爱上开源的其中一个原因是，解决一个指定任务时，有彻底的多样性。当你在当你环绕在私有软件中，你所看到的世界是基于你所能够获取得到的东西。比如说，你过你打算处理一些照片，你通常会把你的意图框限在你所知道的可能性上面。你从你的架子上的4款或10款应用中，挑选出3款，因为它们是目前你唯一能够获取得到的选项。
 
-You generally have several obligatory "obvious" solutions in open source, but you also get an additional _dozen_ contenders hanging out on the fringe. These options are sometimes only half-complete, or they're hyper-focused on a specific task, or they're challenging to learn, but most importantly, they're unique and innovative. Sometimes they've been developed by someone who's never seen the way a task is "supposed to be done," and so the approach is wildly different than anything else on the market. Other times, they're developed by someone familiar with the "right way" of doing something but is trying a different tactic anyway. It's a big, dynamic brainstorm of possibility.
+在开源领域，你通常会有好几个“明显的”必备解决方案，但同时你还有一打的角逐者在边缘转悠，供你选择。这些选项有时只是半成品，或者它们超级专注于某项任务，又或者它们学起来有点挑战性，但最主要的是，它们是唯一的，而且充满创新的。有时候，它们是被某些不按“套路”出牌的人所开发的，因此处理的方法和市场上现有的产品截然不同。其他时候，它们是被那些熟悉做事情的“正确”方式，但还是在尝试不同策略的人所开发的。这就像是一个充满可能性的巨大的动态的头脑风暴。
 
-These kinds of everyday innovations can lead to flashes of inspiration, moments of brilliance, or widespread common improvements. For instance, the famous GIMP filter that removes items from photographs and automatically replaces the background was so popular that it later got "borrowed" by proprietary photo editing software. That's one metric of success, but it's the personal impact that matters most for an artist. I marvel at the creativity of new Linux users when I've shown them just one simple audio or video filter or paint application at a tech demo. Without any instruction or context, the ideas that spring out of a simple interaction with a new tool can be exciting and inspiring, and a whole new series of artwork can easily emerge from experimentation with just a few simple tools.
+这种类型的日常创新能够引领出闪现的灵感，光辉时刻，或者影响广泛的通用性改进。比如说，著名的GIMP滤镜，（用于从图像中移除项目并自动替换背景）是如此的受欢迎以至于后来被私有图片编辑软件商拿去“借鉴”。这是成功的一步，但是对于一个艺术家而言，个人的影响才是最关键的。我常感叹于新的Linux用户的创意，而我只是在技术展会上展示给他们一个简单的音频，或者视频滤镜，或者绘图应用。没有任何的指导，或者应用场景，从简单的交互中喷发出来的关于新的工具的主意，是令人兴奋和充满启发的，通过实验中一些简单的工具，一个全新的艺术系列可以轻而易举的浮现出来。
 
-There are also ways of working more efficiently, provided the right set of tools are available. While proprietary software usually isn't opposed to the idea of smarter work habits, there's rarely a direct benefit from concentrating on making it easy for users to automate tasks. Linux and open source are largely built exactly for [automation and orchestration][6], and not just for servers. Tools like [ImageMagick][7] and [GIMP scripts][8] have changed the way I work with images, both for bulk processing and idle experimentation.
+只要在适当的工具集都有的情况下，有很多方式来更有效的工作。虽然私有软件通常也不会反对更聪明的工作习惯的点子，专注于实现自动化任务让用户可以更轻松的工作，对他们也没有直接的收益。Linux和开源软件就是很大程度专为[自动化和编排][6]而建的。而不只是服务器。像 [ImageMagick][7] 和 [GIMP scripts][8]这样的工具改变了我的处理图片的方式，包括批量处理方面和纯粹实验方面。
 
-You never know what you might create, given tools that you've never imagined existed.
+你永远不知道你可以创造什么，如果你有一个你从来想象不到会存在的工具的话。
 
-### Linux artists
+### Linux艺术家
 
-There's a whole [community of artists using open source][9], from [photography][10] to [makers][11] to [musicians][12], and much much more. If you want to get creative, give Linux a go.
+这里有 [使用开源的艺术家社区][9], 从 [photography][10] 到 [makers][11] 到 [musicians][12], 还有更多更多。 如果你想要创新, 试试Linux吧。
 
 --------------------------------------------------------------------------------
 
