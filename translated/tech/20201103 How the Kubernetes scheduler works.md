@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MZqk)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (How the Kubernetes scheduler works)
@@ -9,48 +9,48 @@
 
 Kubernetes 调度器是如何工作的
 =====
-了解 Kubernetes 调度器是如何发现新的 pod 并将其分配到节点。
-![Parts, modules, containers for software][1]
 
-[Kubernetes][2] 作为容器和容器化工作负载标的准编标准引擎出现。它供提供一个了通用、开放的抽象层，跨公有云和私有云的环境。
+> 了解 Kubernetes 调度器是如何发现新的吊舱并将其分配到节点。
 
-对于那些已经熟悉 Kuberbetes 及其组件的人，他们讨论通常围绕着最大化使用 Kuberbetes 的功能。但当您只是 Kubernetes 初学者时或尝试在生产环境中使用前，明智的做法是从一些关于 Kubernetes 相关组件（包括 [Kubernetes 调度器][3]） 开始学习，如下抽象视图中所示。
+![](https://img.linux.net.cn/data/attachment/album/202102/26/123446popgvrc0vppptvtk.jpg)
+
+[Kubernetes][2] 已经成为容器和容器化工作负载的标准编排引擎。它提供一个跨公有云和私有云环境的通用和开源的抽象层。
+
+对于那些已经熟悉 Kuberbetes 及其组件的人，他们的讨论通常围绕着如何尽量发挥 Kuberbetes 的功能。但当你刚刚开始学习 Kubernetes 时，尝试在生产环境中使用前，明智的做法是从一些关于 Kubernetes 相关组件（包括 [Kubernetes 调度器][3]） 开始学习，如下抽象视图中所示：
 
 ![][4]
 
-Kubernetes 也分为控制平面和节点。
+Kubernetes 也分为控制平面和工作节点：
 
-  1. **控制平面：** 也称为 Master，负责对群集做出全局决策，以及检测和响应集群事件。控制平面组件包括：
+  1. **控制平面：** 也称为主控，负责对集群做出全局决策，以及检测和响应集群事件。控制平面组件包括：
    * etcd
    * kube-apiserver 
    * kube-controller-manager
-   * scheduler
-  2. **工作节点：** 也称 Node，是工作负载所在的位置。它始终和 Master 联系，以获取工作负载运行、集群外部进行通讯和连接所需的信息。工作节点组件包括：
+   * 调度器
+  2. **工作节点：** 也称节点，这些节点是工作负载所在的位置。它始终和主控联系，以获取工作负载运行所需的信息，并与集群外部进行通讯和连接。工作节点组件包括：
    * kubelet
    * kube-proxy
    * CRI
 
-
-
-我希望在这种背景下可以帮助您理解 Kubernetes 组件是如何关联在一起的。
+我希望这个背景信息可以帮助你理解 Kubernetes 组件是如何关联在一起的。
 
 ### Kubernetes 调度器是如何工作的
 
-Kubernetes [pod][5] 由一个或多个容器组成组成，共享存储和网络资源。Kubernetes 调度器的任务是确保每个 pod 分配到节点上运行。
+Kubernetes <ruby>[吊舱][5]<rt>pod</rt></ruby> 由一个或多个容器组成组成，共享存储和网络资源。Kubernetes 调度器的任务是确保每个吊舱分配到一个节点上运行。
 
-在更深层次下，Kubernetes 调度器的工作方式是这样的：
+（LCTT 译注：容器技术领域大量使用了航海比喻，pod 一词，意为“豆荚”，在航海领域指“吊舱” —— 均指盛装多个物品的容器。常不翻译，考虑前后文，可译做“吊舱”。）
 
-  1. 每个被调度的 pod 都需要加入到队列
-  2. 新的 pod 被创建后，它们也会加入到队列
-  3. 调度器持续从队列中取出 pod 并对其进行调度
+在更高层面下，Kubernetes 调度器的工作方式是这样的：
 
+  1. 每个需要被调度的吊舱都需要加入到队列
+  2. 新的吊舱被创建后，它们也会加入到队列
+  3. 调度器持续地从队列中取出吊舱并对其进行调度
 
+[调度器源码][6]（`scheduler.go`）很大，约 9000 行，且相当复杂，但解决了重要问题：
 
-[调度器源码][6] (`scheduler.go`) 很大，约 9000 行，且相当复杂，但解决了重要问题：
+#### 等待/监视吊舱创建的代码
 
-  1. **等待/监视 pod 创建的代码**
-监视 pod 创建的代码 `scheduler.go` 从 8970 行开始，它持续等待新的 pod：
-
+监视吊舱创建的代码始于 `scheduler.go` 的 8970 行，它持续等待新的吊舱：
 
 ```
 // Run begins watching and scheduling. It waits for cache to be synced, then starts a goroutine and returns immediately.
@@ -63,17 +63,16 @@ func (sched *Scheduler) Run() {
         go wait.Until(sched.scheduleOne, 0, sched.config.StopEverything)
 ```
 
-  2. **负责对 pod 进行排队的代码**
-负责 pod 进行排队的功能是：
+#### 负责对吊舱进行排队的代码
 
+负责对吊舱进行排队的功能是：
 
 ```
 // queue for pods that need scheduling
         podQueue *cache.FIFO
 ```
 
-负责 pod 进行排队的代码从 7360 行开始 `scheduler.go`。当新的 pod 显示可用时事件处理程序触发，这段代码将新的 pod 加入队列中：
-
+负责对吊舱进行排队的代码始于 `scheduler.go` 的 7360 行。当事件处理程序触发，表明新的吊舱显示可用时，这段代码将新的吊舱加入队列中：
 
 ```
 func (f *ConfigFactory) getNextPod() *v1.Pod {
@@ -87,9 +86,9 @@ func (f *ConfigFactory) getNextPod() *v1.Pod {
 }
 ```
 
-  3. **处理错误代码**
-在 pod 调度中您不可避免会遇到调度错误。以下代码是处理调度程序错误的方法。它监听 `podInformer` 然后抛出一个错误，提示此 pod 尚未调度并被终止：
+#### 处理错误代码
 
+在吊舱调度中不可避免会遇到调度错误。以下代码是处理调度程序错误的方法。它监听 `podInformer` 然后抛出一个错误，提示此吊舱尚未调度并被终止：
 
 ```
 // scheduled pod cache
@@ -106,30 +105,23 @@ func (f *ConfigFactory) getNextPod() *v1.Pod {
                         },
 ```
 
+换句话说，Kubernetes 调度器负责如下：
 
+  * 将新创建的吊舱调度至具有足够空间的节点上，以满足吊舱的资源需求。
+  * 监听 kube-apiserver 和控制器是否创建新的吊舱，然后调度它至集群内一个可用的节点。
+  * 监听未调度的吊舱，并使用 `/binding` 子资源 API 将吊舱绑定至节点。
 
-
-I换句话说，Kubernetes 调度器负责如下：
-
-  * 将新创建的 pod 调度至具有足够空间的节点上，以满足 pod 的资源需求。
-  * 监听 kube-apiserver 和控制器是否创建新的 pod，然后调度它至集群内一个可用的节点。
-  * 监听未安排的 pod，并使用 `/binding` 子资源 API 将 pod 绑定至节点。
-
-
-
-例如，假设正在部署一个需要 1 GB 内存和双核 CPU 的应用。因此创建应用 pod 的节点上需有足够资源可用，然后调度器会持续运行监听是否有 pod 需要调度。
+例如，假设正在部署一个需要 1 GB 内存和双核 CPU 的应用。因此创建应用吊舱的节点上需有足够资源可用，然后调度器会持续运行监听是否有吊舱需要调度。
 
 ### 了解更多
 
-要使 Kubernetes 集群工作，你需要使用以上所有组件一起同步运行。调度器有一段复杂的的代码，但是 Kubernetes 是一个很棒的软件，目前它仍是我们在讨论或采用云原生应用程序时的首选。
+要使 Kubernetes 集群工作，你需要使以上所有组件一起同步运行。调度器有一段复杂的的代码，但 Kubernetes 是一个很棒的软件，目前它仍是我们在讨论或采用云原生应用程序时的首选。
 
-学习 Kubernetes 需要精力和时间，但是将其作为您的专业技能之一能为您的职业生涯带来优势和回报。有很多很好的学习资源可供使用，而且[官方文档][7]也很棒。如果您有兴趣了解更多，建议从以下内容开始：
+学习 Kubernetes 需要精力和时间，但是将其作为你的专业技能之一能为你的职业生涯带来优势和回报。有很多很好的学习资源可供使用，而且 [官方文档][7] 也很棒。如果你有兴趣了解更多，建议从以下内容开始：
 
   * [Kubernetes the hard way][8]
   * [Kubernetes the hard way on bare metal][9]
   * [Kubernetes the hard way on AWS][10]
-
-
 
 你喜欢的 Kubernetes 学习方法是什么？请在评论中分享吧。
 
@@ -139,8 +131,8 @@ via: https://opensource.com/article/20/11/kubernetes-scheduler
 
 作者：[Mike Calizo][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/MZqk)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[MZqk](https://github.com/MZqk)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
