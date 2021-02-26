@@ -1,55 +1,51 @@
 [#]: collector: (Chao-zhi)
 [#]: translator: (Chao-zhi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (LaTeX typesetting，Part 3: formatting)
 [#]: via: (https://fedoramagazine.org/latex-typesetting-part-3-formatting/)
 [#]: author: (Earl Ramirez https://fedoramagazine.org/author/earlramirez/)
 
-
-LaTeX 排版 （3）：排版
+LaTeX 排版（3）：排版
 ======
 
-![](https://fedoramagazine.org/wp-content/uploads/2020/07/latex-series-redux-1536x650.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202102/26/113031wattha0hojj4f4ej.png)
 
-本[系列 ][1] 介绍了 LaTeX 中的基本格式。[第 1 部分 ][2] 介绍了列表。[第 2 部分 ][3] 阐述了表格。在第 3 部分中，您将了解 LaTeX 的另一个重要特性：细腻灵活的文档排版。本文介绍如何自定义页面布局、目录、标题部分和页面样式。
+本 [系列][1] 介绍了 LaTeX 中的基本格式。[第 1 部分][2] 介绍了列表。[第 2 部分][3] 阐述了表格。在第 3 部分中，你将了解 LaTeX 的另一个重要特性：细腻灵活的文档排版。本文介绍如何自定义页面布局、目录、标题部分和页面样式。
 
 ### 页面维度
 
-当您第一次编写 LaTeX 文档时，您可能已经注意到默认边距比您想象的要大一些。页边距与指定的纸张类型有关，例如 A4、letter 和 documentclass（article、book、report） 等等。要修改页边距，有几个选项，最简单的选项之一是使用 [fullpage][4] 包。
+当你第一次编写 LaTeX 文档时，你可能已经注意到默认边距比你想象的要大一些。页边距与指定的纸张类型有关，例如 A4、letter 和 documentclass（article、book、report） 等等。要修改页边距，有几个选项，最简单的选项之一是使用 [fullpage][4] 包。
 
 > 该软件包设置页面的主体，可以使主体几乎占满整个页面。
 > 
-> ——FULLPAGE PACKAGE DOCUMENTATION
+> —— FULLPAGE PACKAGE DOCUMENTATION
 
-下图演示了使用 fullpage 包和没有使用的区别。
-<！-- 但是原文中并没有这个图 -->
-
-另一个选择是使用 [geometry][5] 包。在探索 geometry 包如何操纵页边距之前，请首先查看如下所示的页面尺寸。
+另一个选择是使用 [geometry][5] 包。在探索 `geometry` 包如何操纵页边距之前，请首先查看如下所示的页面尺寸。
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image.png)
 
-1。1 英寸 + \hoffset
-2。1 英寸 + \voffset
-3。\oddsidemargin = 31pt
-4。\topmargin = 20pt
-5。\headheight = 12pt
-6。\headsep = 25pt
-7。\textheight = 592pt
-8。\textwidth = 390pt
-9。\marginparsep = 35pt
-10。\marginparwidth = 35pt
-11。\footskip = 30pt
+1. 1 英寸 + `\hoffset`
+2. 1 英寸 + `\voffset`
+3. `\oddsidemargin` = 31pt
+4. `\topmargin` = 20pt
+5. `\headheight` = 12pt
+6. `\headsep` = 25pt
+7. `\textheight` = 592pt
+8. `\textwidth` = 390pt
+9. `\marginparsep` = 35pt
+10. `\marginparwidth` = 35pt
+11. `\footskip` = 30pt
 
-要使用 geometry 包将边距设置为 1 英寸，请使用以下示例
+要使用 `geometry` 包将边距设置为 1 英寸，请使用以下示例
 
 ```
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 ```
 
-除上述示例外，geometry 命令还可以修改纸张尺寸和方向。要更改纸张尺寸，请使用以下示例：
+除上述示例外，`geometry` 命令还可以修改纸张尺寸和方向。要更改纸张尺寸，请使用以下示例：
 
 ```
 \usepackage[a4paper, total={7in, 8in}]{geometry}
@@ -57,7 +53,7 @@ LaTeX 排版 （3）：排版
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-2-1024x287.png)
 
-要更改页面方向，需要将横向添加到 geometery 选项中，如下所示：
+要更改页面方向，需要将横向（`landscape`）添加到 `geometery` 选项中，如下所示：
 
 ```
 \usepackage{geometery}
@@ -68,9 +64,9 @@ LaTeX 排版 （3）：排版
 
 ### 目录
 
-默认情况下，目录的标题为 “contents”。有时，您更想将标题改为 “Table of Content”，更改目录和章节第一节之间的垂直间距，或者只更改文本的颜色。
+默认情况下，目录的标题为 “contents”。有时，你想将标题更改为 “Table of Content”，更改目录和章节第一节之间的垂直间距，或者只更改文本的颜色。
 
-若要更改文本，请在导言区中添加以下行，用所需语言替换英语：
+若要更改文本，请在导言区中添加以下行，用所需语言替换英语（`english`）：
 
 ```
 \usepackage[english]{babel}
@@ -78,11 +74,12 @@ LaTeX 排版 （3）：排版
 \renewcommand{\contentsname}
 {\bfseries{Table of Contents}}}
 ```
-要操纵目录与图，小节和章节列表之间的虚拟间距，请使用 tocloft 软件包。本文中使用的两个选项是 cftbeforesecskip 和 cftaftertoctitleskip。
+
+要操纵目录与图、小节和章节列表之间的虚拟间距，请使用 `tocloft` 软件包。本文中使用的两个选项是 `cftbeforesecskip` 和 `cftaftertoctitleskip`。
 
 > tocloft 包提供了控制目录、图表列表和表格列表的排版方法。
 > 
-> ——TOCLOFT PACKAGE DOUCMENTATION
+> —— TOCLOFT PACKAGE DOUCMENTATION
 
 ```
 \usepackage{tocloft}
@@ -91,10 +88,12 @@ LaTeX 排版 （3）：排版
 ```
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-3.png)
-默认目录
+
+*默认目录*
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-4.png)
-定制目录
+
+*定制目录*
 
 ### 边框
 
@@ -102,14 +101,14 @@ LaTeX 排版 （3）：排版
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-5.png)
 
-要删除这些边框，请在导言区中包括以下内容，您将看到目录中没有任何边框。
+要删除这些边框，请在导言区中包括以下内容，你将看到目录中没有任何边框。
 
 ```
 \usepackage{hyperref}
 \hypersetup{ pdfborder = {0 0 0}}
 ```
 
-要修改标题部分的字体、样式或颜色，请使用程序包 [titlesec][7]。在本例中，您将更改节、子节和子节的字体大小、字体样式和字体颜色。首先，在导言区中增加以下内容。
+要修改标题部分的字体、样式或颜色，请使用程序包 [titlesec][7]。在本例中，你将更改节、子节和三级子节的字体大小、字体样式和字体颜色。首先，在导言区中增加以下内容。
 
 ```
 \usepackage{titlesec}
@@ -118,7 +117,7 @@ LaTeX 排版 （3）：排版
 \titleformat*{\subsubsection}{\Large\bfseries\color{darkblue}}
 ```
 
-仔细看看代码，`\titleformat*{\section}` 指定要使用的节的深度。上面的示例最多使用第三个深度。`{\Huge\bfseries\color{darkblue}}` 部分指定字体大小、字体样式和字体颜色
+仔细看看代码，`\titleformat*{\section}` 指定要使用的节的深度。上面的示例最多使用第三个深度。`{\Huge\bfseries\color{darkblue}}` 部分指定字体大小、字体样式和字体颜色。
 
 ### 页面样式
 
@@ -138,13 +137,16 @@ LaTeX 排版 （3）：排版
 \renewcommand{\headrulewidth}{2pt} % add header horizontal line
 \renewcommand{\footrulewidth}{1pt} % add footer horizontal line
 ```
-结果如下所示
+
+结果如下所示：
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-7.png)
-页眉
+
+*页眉*
 
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-8.png)
-页脚
+
+*页脚*
 
 ### 小贴士
 
@@ -231,13 +233,13 @@ $ cat article_structure.tex
 %\pagenumbering{roman}
 ```
 
-在您的文章中，请参考以下示例中所示的方法引用 `structure.tex` 文件：
+在你的文章中，请参考以下示例中所示的方法引用 `structure.tex` 文件：
 
 ```
 \documentclass[a4paper,11pt]{article}
 \input{/path_to_structure.tex}}
 \begin{document}
-…...
+......
 \end{document}
 ```
 
@@ -250,11 +252,12 @@ $ cat article_structure.tex
 \SetWatermarkText{\color{red}Classified} %add watermark text 
 \SetWatermarkScale{4} %specify the size of the text
 ```
+
 ![](https://fedoramagazine.org/wp-content/uploads/2020/07/image-10.png)
 
 ### 结论
 
-在本系列中，您了解了 LaTeX 提供的一些基本但丰富的功能，这些功能可用于自定义文档以满足您的需要或将文档呈现给的受众。LaTeX 海洋中，还有许多软件包需要大家自行去探索。
+在本系列中，你了解了 LaTeX 提供的一些基本但丰富的功能，这些功能可用于自定义文档以满足你的需要或将文档呈现给的受众。LaTeX 海洋中，还有许多软件包需要大家自行去探索。
 
 --------------------------------------------------------------------------------
 
@@ -263,15 +266,15 @@ via: https://fedoramagazine.org/latex-typesetting-part-3-formatting/
 作者：[Earl Ramirez][a]
 选题：[Chao-zhi][b]
 译者：[Chao-zhi](https://github.com/Chao-zhi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://fedoramagazine.org/author/earlramirez/
 [b]: https://github.com/Chao-zhi
 [1]:https://fedoramagazine.org/tag/latex/
-[2]:https://fedoramagazine.org/latex-typesetting-part-1/
-[3]:https://fedoramagazine.org/latex-typesetting-part-2-tables/
+[2]:https://linux.cn/article-13112-1.html
+[3]:https://linux.cn/article-13146-1.html
 [4]:https://www.ctan.org/pkg/fullpage
 [5]:https://www.ctan.org/geometry
 [6]:https://www.ctan.org/pkg/hyperref
