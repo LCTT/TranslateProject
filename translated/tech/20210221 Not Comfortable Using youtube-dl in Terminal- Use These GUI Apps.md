@@ -1,28 +1,28 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Not Comfortable Using youtube-dl in Terminal? Use These GUI Apps)
 [#]: via: (https://itsfoss.com/youtube-dl-gui-apps/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
-不习惯在终端使用 youtube-dl？使用这些 GUI 应用
+不习惯在终端使用 youtube-dl？可以使用这些 GUI 应用
 ======
 
-如果你一直在关注我们，可能已经知道 [youtube-dl 项目被 GitHub 暂时下架][1]以符合要求。
+![](https://img.linux.net.cn/data/attachment/album/202102/27/143909m29a8m8kgkzmmskc.jpg)
 
-考虑到它现在已经恢复并完全可以访问，可以说它并不是一个非法的工具。
+如果你一直在关注我们，可能已经知道 [youtube-dl 项目曾被 GitHub 暂时下架][1] 以合规。但它现在已经恢复并完全可以访问，可以说它并不是一个非法的工具。
 
-它是一个非常有用的命令行工具，可以让你[从 YouTube][2] 和其他一些网站下载视频。使用 [youtube-dl][3] 并不复杂，但我明白使用命令来完成这种任务并不是每个人都喜欢的方式。
+它是一个非常有用的命令行工具，可以让你 [从 YouTube][2] 和其他一些网站下载视频。使用 [youtube-dl][3] 并不复杂，但我明白使用命令来完成这种任务并不是每个人都喜欢的方式。
 
-好在有一些应用为 youtube-dl 工具提供了 GUI 前端。
+好在有一些应用为 `youtube-dl` 工具提供了 GUI 前端。
 
 ### 使用 youtube-dl GUI 应用的先决条件
 
-在你尝试下面提到的一些选择之前，你可能需要在你的系统上安装 youtube-dl 和 [FFmpeg][4]，才能够下载/选择不同的格式进行下载。
+在你尝试下面提到的一些选择之前，你可能需要在你的系统上安装 `youtube-dl` 和 [FFmpeg][4]，才能够下载/选择不同的格式进行下载。
 
-你可以按照我们的 [ffmpeg 使用完整指南][5]进行设置，并探索更多关于它的内容。
+你可以按照我们的 [ffmpeg 使用完整指南][5] 进行设置，并探索更多关于它的内容。
 
 要安装 [youtube-dl][6]，你可以在 Linux 终端输入以下命令：
 
@@ -44,7 +44,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 
 请注意，下面的列表没有特别的排名顺序。你可以根据你的要求选择。
 
-#### 1\. AllTube Download
+#### 1、AllTube Download
 
 ![][8]
 
@@ -52,9 +52,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 
   * Web GUI
   * 开源
-  * 自我托管选择
-
-
+  * 可以自托管
 
 AllTube 是一个开源的 web GUI，你可以通过 <https://alltubedownload.net/> 来访问。
 
@@ -62,9 +60,9 @@ AllTube 是一个开源的 web GUI，你可以通过 <https://alltubedownload.ne
 
 请注意，你不能使用这个工具提取视频的 MP3 文件，它只适用于视频。你可以通过他们的 [GitHub 页面][9]探索更多关于它的信息。
 
-[AllTube Download Web GUI][10]
+- [AllTube Download Web GUI][10]
 
-#### 2\. youtube-dl GUI
+#### 2、youtube-dl GUI
 
 ![][11]
 
@@ -74,17 +72,15 @@ AllTube 是一个开源的 web GUI，你可以通过 <https://alltubedownload.ne
   * 显示预计下载大小
   * 有音频和视频下载选择
 
-
-
 一个使用 electron 和 node.js 制作的有用的跨平台 GUI 应用。你可以很容易地下载音频和视频，以及选择各种可用的文件格式的选项。
 
 如果你愿意的话，你还可以下载一个频道或播放列表的部分内容。特别是当你下载高质量的视频文件时，预计的下载大小绝对是非常方便的。
 
 如上所述，它也适用于 Windows 和 MacOS。而且，你会在它的 [GitHub 发布][12]中得到一个适用于 Linux 的 AppImage 文件。
 
-[Youtube-dl GUI][13]
+- [Youtube-dl GUI][13]
 
-#### 3\. Videomass
+#### 3、Videomass
 
 ![][14]
 
@@ -94,8 +90,6 @@ AllTube 是一个开源的 web GUI，你可以通过 <https://alltubedownload.ne
   * 转换音频/视频格式
   * 支持多个 URL
   * 适用于也想使用 FFmpeg 的用户
-
-
 
 如果你想从 YouTube 下载视频或音频，并将它们转换为你喜欢的格式，Videomass 可以是一个不错的选择。
 
@@ -107,9 +101,9 @@ AllTube 是一个开源的 web GUI，你可以通过 <https://alltubedownload.ne
 
 它为 Ubuntu 用户提供了一个 PPA，为任何其他 Linux 发行版提供了一个 AppImage 文件。在它的 [Github 页面][16]探索更多信息。
 
-[Videomass][17]
+- [Videomass][17]
 
-#### 额外说明：Haruna Video Player
+#### 附送：Haruna Video Player
 
 ![][18]
 
@@ -117,11 +111,9 @@ AllTube 是一个开源的 web GUI，你可以通过 <https://alltubedownload.ne
 
   * 播放/流式传输 YouTube 视频
 
-
-
 Haruna Video Player 原本是 [MPV][19] 的前端。虽然使用它不能下载 YouTube 视频，但可以通过 youtube-dl 观看/流式传输 YouTube 视频。
 
-你可以在我们的[原始文章][20]中探索更多关于视频播放器的内容。
+你可以在我们的[文章][20]中探索更多关于视频播放器的内容。
 
 ### 总结
 
@@ -129,8 +121,7 @@ Haruna Video Player 原本是 [MPV][19] 的前端。虽然使用它不能下载 
 
 [Tartube][21] 就是这样的一个选择，你可以尝试一下，但可能无法达到预期的效果。我用 Pop!_OS 和 Ubuntu MATE 20.04（全新安装）进行了测试。每次我尝试下载一些东西时，无论我怎么做都会失败（即使系统中安装了 youtube-dl 和 ffmpeg）。
 
-
-所以，我个人最喜欢的似乎是 web GUI（[AllTube Download][9]），它不依赖于安装在你系统上的任何东西，也可以自我托管。
+所以，我个人最喜欢的似乎是 Web GUI（[AllTube Download][9]），它不依赖于安装在你系统上的任何东西，也可以自托管。
 
 如果我错过了你最喜欢的选择，请在评论中告诉我什么是最适合你的。
 
@@ -141,7 +132,7 @@ via: https://itsfoss.com/youtube-dl-gui-apps/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
