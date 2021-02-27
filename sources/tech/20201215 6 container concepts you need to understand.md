@@ -22,29 +22,38 @@ In modern application architectures, the ability to deliver changes quickly to t
 在现代化应用架构中，能够快速的把修改交付到生产环境的能力，让你比你的竞争对手更胜一筹。容器通过使用微服务架构，帮助开发团队开发功能、更小的失败、更快的恢复，从而加快交付速度。容器化还让应用软件能够快速启动、按需自动扩展云资源。还有，[DevOps][2]通过灵活性、移动性、和有效性让产品可以尽快进入市场，从而将容器化的所能带来的好处最大化。
 
 While speed, agility, and flexibility are the main promises of containerization using DevOps, security is a critical factor. This led to the rise of DevSecOps, which incorporates security into application development from the start and throughout the lifecycle of a containerized application. By default, containerization massively improves security because it isolates the application from the host and other containerized applications.
-在 DevOps 中，当速度，敏捷，灵活是容器化的主要保障时，安全则是一个重要的因素。这就导致了 DevSecOps 的出现。它从开始，到贯穿整个容器化应用的生命周期，都始终将安全并入应用的开发中。默认情况下，容器化大大地增强了安全，因为它将应用和宿主主机以及其他的容器化应用相互隔离开来。
+在 DevOps 中，当速度，敏捷，灵活是容器化的主要保障时，安全则是一个重要的因素。这就导致了 DevSecOps 的出现。它从一开始，到贯穿容器化应用的整个生命周期，都始终将安全融合到应用的开发中。默认情况下，容器化大大地增强了安全性，因为它将应用和宿主主机以及其他的容器化应用相互隔离开来。
 
 ### What are containers?
+### 什么是容器？
 
 Containers are the solution to problems inherited from monolithic architectures. Although monoliths have strengths, they prevent organizations from moving fast the agile way. Containers allow you to break monoliths into [microservices][3].
+容器是单体式应用程序所遗留的问题的解决方案。虽然单体式有它的优点，但是它让组织无法用敏捷的方式快速前进。而容器则让你能够将单体式分解成 [微服务][3]
 
 Essentially, a container is an application bundle of lightweight components, such as application dependencies, libraries, and configuration files, that run in an isolated environment on top of traditional operating systems or in virtualized environments for easy portability and flexibility.
+本质上来说，容器只是一些轻量化组件的应用集，比如软件依赖、库、配置文件等等，然后运行在一个隔离的环境之中，这个隔离的环境又是运行在传统操作系统之上的，或者为了可移植性和灵活性而运行在虚拟化环境之上。
 
-![Container architecture][4]
+![容器的架构][4]
 
 (Michael Calizo, [CC BY-SA 4.0][5])
 
 To summarize, containers provide isolation by taking advantage of kernel technologies like cgroups, [kernel namespaces][6], and [SELinux][7]. Containers share a kernel with the host, which allows them to use fewer resources than a virtual machine (VM) would require.
+总而言之，容器通过利用像 cgroups、 [kernel namespaces][6], and [SELinux][7] 这样的内核技术来实现隔离。容器跟宿主主机共用一个内核，因此比虚拟机占用更少的资源。
 
 ### Container advantages
+### 容器的优势
 
 This architecture provides agility that is not feasible with VMs. Furthermore, containers support a more flexible model when it comes to compute and memory resources, and they allow resource-burst modes so that applications can consume more resources, when required, within the defined boundaries. In other words, containers provide scalability and flexibility that you cannot get from running an application on top of a VM.
+这种架构所带来的敏捷性是虚拟机所不可能做到的。此外，在计算和内存资源方面，容器支持一种更灵活的模型，而且它支持突发资源模式，因此应用程序可以在需要的时候，在限定的范围内，使用更多的资源。
 
 Containers make it easy to share and deploy applications on public or private clouds. More importantly, they provide consistency that helps operations and development teams reduce the complexity that comes with multi-platform deployment.
+容器让在公有云或者私有云上部署和分享应用变得非常容易。更重要的是，它所提供的连贯性，帮助运维和开发团队降低了在跨平台部署的过程中的复杂度。
 
 Containers also enable a common set of building blocks that can be reused in any stage of development to recreate identical environments for development, testing, staging, and production, extending the concept of "write-once, deploy anywhere."
+容器还有一个通用的构建组件的集合，可以在开发的任何阶段拿来复用，从而可以重建出一样的环境供开发、测试、预备、生产使用，将“一次编写、到处执行”的概念加以扩展。
 
 Compared to virtualization, containers make it simpler to achieve flexibility, consistency, and the ability to deploy applications faster—the main principles of DevOps.
+和虚拟化相比，容器让灵活性、连贯性、和快速部署应用，这些 DevOps 的原则，实现起来更简单。
 
 ### The Docker factor
 
