@@ -8,16 +8,21 @@
 [#]: author: (Mike Calizo https://opensource.com/users/mcalizo)
 
 6 container concepts you need to understand
+6个你需要知道的关于容器的概念
 ======
 Containers are everywhere, and they've radically changed the IT
 landscape. What do you need to know about them?
-![Ships at sea on the web][1]
+容器现在是无所不在，它们已经快速的改变了 IT 行业。关于容器你需要知道一些什么呢？
+![网络上停泊在海里的船只][1]
 
 Containerization has radically changed the IT landscape because of the significant value and wide array of benefits it brings to business. Nearly any recent business innovation has containerization as a contributing factor, if not the central element.
+因为容器给商业所带来的巨大的价值和大量的好处，它快速的改变了IT行业。几乎所有最新的商业创新，都有容器化贡献的一部分因素，甚至是主要因素。
 
-In modern application architectures, the ability to deliver changes quickly to the production environment gives you an edge over your competitors. Containers deliver speed by using a microservices architecture that helps development teams create functionality, fail small, and recover faster. Containerization also enables applications to start faster and automatically scale cloud resources on demand. Furthermore, [DevOps][2] maximizes containerization's benefits by enabling the flexibility, portability, and efficiency required to go to market early.
+In modern application architectures, the ability to deliver changes quickly to the production environment gives you an edge over your competitors. Containers deliver speed by using a microservices architecture that helps development teams create functionality, fail small, and recover faster. Containerization also enables applications to start faster and automatically scale cloud resources on demand. Furthermore, [DevOps][2] maximizes containerization's benefits by enabling the flexibility, portability, and efficiency required to go to market early.
+在现代化应用架构中，能够快速的把修改交付到生产环境的能力，让你比你的竞争对手更胜一筹。容器通过使用微服务架构，帮助开发团队开发功能、更小的失败、更快的恢复，从而加快交付速度。容器化还让应用软件能够快速启动、按需自动扩展云资源。还有，[DevOps][2]通过灵活性、移动性、和有效性让产品可以尽快进入市场，从而将容器化的所能带来的好处最大化。
 
 While speed, agility, and flexibility are the main promises of containerization using DevOps, security is a critical factor. This led to the rise of DevSecOps, which incorporates security into application development from the start and throughout the lifecycle of a containerized application. By default, containerization massively improves security because it isolates the application from the host and other containerized applications.
+在 DevOps 中，当速度，敏捷，灵活是容器化的主要保障时，安全则是一个重要的因素。这就导致了 DevSecOps 的出现。它从开始，到贯穿整个容器化应用的生命周期，都始终将安全并入应用的开发中。默认情况下，容器化大大地增强了安全，因为它将应用和宿主主机以及其他的容器化应用相互隔离开来。
 
 ### What are containers?
 
