@@ -1,18 +1,18 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13161-1.html)
 [#]: subject: (Set up a Linux cloud on bare metal)
 [#]: via: (https://opensource.com/article/21/1/cloud-image-virt-install)
 [#]: author: (Sumantro Mukherjee https://opensource.com/users/sumantro)
 
-在裸机上建立 Linux 云
+在裸机上建立 Linux 云实例
 ======
 
 > 在 Fedora 上用 virt-install 创建云镜像。
 
-![云和草的天空][1]
+![](https://img.linux.net.cn/data/attachment/album/202102/28/130111cx5pux33bt74o36g.jpg)
 
 虚拟化是使用最多的技术之一。Fedora Linux 使用 [Cloud Base 镜像][2] 来创建通用虚拟机（VM），但设置 Cloud Base 镜像的方法有很多。最近，用于调配虚拟机的 `virt-install` 命令行工具增加了对 `cloud-init` 的支持，因此现在可以使用它在本地配置和运行云镜像。
 
