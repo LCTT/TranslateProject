@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (bestony)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13180-1.html)
 [#]: subject: (lawyer The MIT License, Line by Line)
 [#]: via: (https://writing.kemitchell.com/2016/09/21/MIT-License-Line-by-Line.html)
 [#]: author: (Kyle E. Mitchell https://kemitchell.com/)
 
 逐行解读 MIT 许可证
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202103/06/224509d0zt70ctxtt7iibo.png)
 
 > 每个程序员都应该明白的 171 个字。
 
@@ -48,7 +50,7 @@
   * **许可证授予**：“特此授予 …”
     * **授予范围**：“… 处置软件 …”
     * **条件**：“… 须在 …”
-      * **归属和通知**：“上述 … 应包含在 …”
+      * **归因和声明**：“上述 … 应包含在 …”
       * **免责声明**：“本软件是‘如此’提供的 …”
       * **责任限制**：“在任何情况下 …”
 
