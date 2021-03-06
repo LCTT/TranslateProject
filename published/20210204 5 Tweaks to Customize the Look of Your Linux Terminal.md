@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13181-1.html)
 [#]: subject: (5 Tweaks to Customize the Look of Your Linux Terminal)
 [#]: via: (https://itsfoss.com/customize-linux-terminal/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 
 定制你的 Linux 终端外观的 5 项调整
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202103/06/232911eg4g65gp4g2ww24u.jpg)
 
 终端仿真器（或简称终端）是任何 Linux 发行版中不可或缺的一部分。
 
