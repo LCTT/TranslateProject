@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13172-1.html)
 [#]: subject: (KDE Customization Guide: Here are 11 Ways You Can Change the Look and Feel of Your KDE-Powered Linux Desktop)
 [#]: via: (https://itsfoss.com/kde-customization/)
 [#]: author: (Dimitrios Savvopoulos https://itsfoss.com/author/dimitrios/)
 
 KDE 桌面环境定制指南
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202103/03/234801udzaled8erltd78u.jpg)
 
 [KDE Plasma 桌面][1] 无疑是定制化的巅峰，因为你几乎可以改变任何你想要的东西。你甚至可以让它充当 [平铺窗口管理器][2]。
 
