@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13187-1.html)
 
 Guake 终端：一个灵感来自于 FPS 游戏的 Linux 终端
 ======
@@ -14,7 +14,7 @@ Guake 终端：一个灵感来自于 FPS 游戏的 Linux 终端
 
 ### Guake 终端：GNOME 桌面中自上而下终端
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202103/09/062119ba36tottztz4torn.jpg)
 
 [Guake][2] 是一款为 GNOME 桌面量身定做的终端模拟器，采用下拉式设计。
 
