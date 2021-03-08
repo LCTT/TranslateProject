@@ -2,7 +2,7 @@
 [#]: via: (https://www.linux.com/news/an-introduction-to-webassembly/)
 [#]: author: (Dan Brown https://training.linuxfoundation.org/announcements/an-introduction-to-webassembly/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
