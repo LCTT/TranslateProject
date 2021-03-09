@@ -4,11 +4,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13189-1.html)
 
 SysMonTask：一个类似于 Windows 任务管理器的 Linux 系统监控器
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202103/09/232304ljsr5jfgluffn4a4.jpg)
 
 得益于桌面环境，几乎所有的 [Linux 发行版都带有任务管理器应用程序][1]。除此之外，还有 [一些其他的 Linux 的系统监控应用程序][2]，它们具有更多的功能。
 
