@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/how-to-use-poetry-to-manage-your-python-projects-on-fedora/)
 [#]: author: (Kader Miyanyedi https://fedoramagazine.org/author/moonkat/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
