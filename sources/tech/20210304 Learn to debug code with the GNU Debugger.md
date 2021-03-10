@@ -3,29 +3,29 @@
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
-Learn to debug code with the GNU Debugger
+学习使用 GDB 调试代码
 ======
-Troubleshoot your code with the GNU Debugger. Download our new cheat
-sheet.
-![magnifying glass on computer screen, finding a bug in the code][1]
 
-The GNU Debugger, more commonly known by its command, `gdb`, is an interactive console to help you step through source code, analyze what gets executed, and essentially reverse-engineer what's going wrong in a buggy application.
+> 使用 GNU 调试器来解决你的代码问题。
 
-The trouble with troubleshooting is that it's complex. [GNU Debugger][2] isn't exactly a complex application, but it can be overwhelming if you don't know where to start or even when and why you might need to turn to GDB to do your troubleshooting. If you've been using print, echo, or [printf statements][3] to debug your code, but you're beginning to suspect there may be something more powerful, then this tutorial is for you.
+![在电脑屏幕上放大镜，发现代码中的错误][1]
 
-### Code is buggy
+GNU 调试器常以它的命令 `gdb` 称呼它，它是一个交互式的控制台，可以帮助你浏览源代码、分析执行的内容，其本质上是对错误的应用程序中出现的问题进行逆向工程。
 
-To get started with GDB, you need some code. Here's a sample application written in C++ (it's OK if you don't typically write in C++, the principles are the same across all languages), derived from one of the examples in the [guessing game series][4] here on Opensource.com:
+故障排除的麻烦在于它很复杂。[GNU 调试器][2] 并不是一个特别复杂的应用程序，但如果你不知道从哪里开始，甚至不知道何时和为何你可能需要求助于 GDB 来进行故障排除，那么它可能会让人不知所措。如果你一直使用 `print`、`echo` 或 [printf 语句][3]来调试你的代码，当你开始思考是不是还有更强大的东西时，那么本教程就是为你准备的。
 
+### 有错误的代码
+
+要开始使用 GDB，你需要一些代码。这里有一个用 C++ 写的示例应用程序（如果你一般不使用 C++ 编写程序也没关系，在所有语言中原理都是一样的），其来源于 [猜谜游戏系列][4] 中的一个例子。
 
 ```
-#include &lt;iostream&gt;
-#include &lt;stdlib.h&gt; //srand
-#include &lt;stdio.h&gt;  //printf
+#include <iostream>
+#include <stdlib.h> //srand
+#include <stdio.h>  //printf
 
 using namespace std;
 
@@ -33,18 +33,17 @@ int main () {
 
 srand (time(NULL));
 int alpha = rand() % 8;
-cout &lt;&lt; "Hello world." &lt;&lt; endl;
+cout << "Hello world." << endl;
 int beta = 2;
 
 printf("alpha is set to is %s\n", alpha);
 printf("kiwi is set to is %s\n", beta);
 
- return 0;
+ return 0;
 } // main
 ```
 
-There's a bug in this code sample, but it does compile (at least as of GCC 5). If you're familiar with C++, you may already see it, but it's a simple problem that can help new GDB users understand the debugging process. Compile it and run it to see the error:
-
+这个代码示例中有一个 bug，但它确实可以编译（至少在 GCC 5 的时候）。如果你熟悉 C++，你可能已经看到了，但这是一个简单的问题，可以帮助新的 GDB 用户了解调试过程。编译并运行它就可以看到错误：
 
 ```
 $ g++ -o buggy example.cpp
@@ -53,12 +52,11 @@ Hello world.
 Segmentation fault
 ```
 
-### Troubleshooting a segmentation fault
+### 排除段故障
 
-From this output, you can surmise that the variable `alpha` was set correctly because otherwise, you wouldn't expect the line of code that came _after_ it. That's not always true, of course, but it's a good working theory, and it's essentially the same conclusion you'd likely come to if you were using `printf` as a log and debugger. From here, you can assume that the bug lies in _some line_ after the one that printed successfully. However, it's not clear whether the bug is in the very next line or several lines later.
+从这个输出中，你可以推测变量 `alpha` 的设置是正确的，因为否则的话，你就不会看到它*后面*的那行代码执行。当然，这并不总是正确的，但这是一个很好的工作理论，如果你使用 `printf` 作为日志和调试器，基本上也会得出同样的结论。从这里，你可以假设 bug 在于成功打印的那一行之后的*某行*。然而，不清楚错误是在下一行还是在几行之后。
 
-GNU Debugger is an interactive troubleshooter, so you can use the `gdb` command to run buggy code. For best results, you should recompile your buggy application from source code with _debug symbols_ included. First, take a look at what information GDB can provide without recompiling:
-
+GNU 调试器是一个交互式的故障排除工具，所以你可以使用 `gdb` 命令来运行错误的代码。为了得到更好的结果，你应该从包含有*调试符号*的源代码中重新编译你的错误应用程序。首先，看看 GDB 在不重新编译的情况下能提供哪些信息：
 
 ```
 $ gdb ./buggy
@@ -71,8 +69,7 @@ Temporary breakpoint 1, 0x0000000000400a44 in main ()
 (gdb)
 ```
 
-When you start GDB with a binary executable as the argument, GDB loads the application and then waits for your instructions. Because this is the first time you're running GDB on this executable, it makes sense to try to repeat the error in hopes that GDB can provide further insight. GDB's command to launch the application it has loaded is, intuitively enough, `start`. By default, there's a _breakpoint_ built into GDB so that when it encounters the `main` function of your application, it pauses execution. To allow GDB to proceed, use the command `continue`:
-
+当你以一个二进制可执行文件作为参数启动 GDB 时，GDB 会加载该应用程序，然后等待你的指令。因为这是你第一次在这个可执行文件上运行 GDB，所以尝试重复这个错误是有意义的，希望 GDB 能够提供进一步的见解。很直观，GDB 用来启动它所加载的应用程序的命令就是 `start`。默认情况下，GDB 内置了一个*断点*，所以当它遇到你的应用程序的 `main` 函数时，它会暂停执行。要让 GDB 继续执行，使用命令 `continue`：
 
 ```
 (gdb) continue
@@ -84,12 +81,11 @@ Program received signal SIGSEGV, Segmentation fault.
 (gdb)
 ```
 
-No surprises here: the application crashed shortly after printing "Hello world," but GDB can provide the function call that was happening when the crash occurred. This could potentially be all you need to find the bug that's causing the crash, but to get a better idea of GDB's features and the general debugging process, imagine that the problem hasn't become clear yet, and you want to dig even deeper into what's happening with this code.
+毫不意外：应用程序在打印 “Hello world” 后不久就崩溃了，但 GDB 可以提供崩溃发生时正在发生的函数调用。这有可能就足够你找到导致崩溃的 bug，但为了更好地了解 GDB 的功能和一般的调试过程，想象一下，如果问题还没有变得清晰，你想更深入地挖掘这段代码发生了什么。
 
-### Compiling code with debug symbols
+### 用调试符号编译代码
 
-To get the most out of GDB, you need debug symbols compiled into your executable. You can generate this with the `-g` option in GCC:
-
+要充分利用 GDB，你需要将调试符号编译到你的可执行文件中。你可以用 GCC 中的 `-g` 选项来生成这个符号：
 
 ```
 $ g++ -o debuggy example.cpp
@@ -98,8 +94,7 @@ Hello world.
 Segmentation fault
 ```
 
-Compiling debug symbols into an executable results in a much larger file, so they're usually not distributed with the added convenience. However, if you're debugging open source code, it makes sense to recompile with debug symbols for testing:
-
+将调试符号编译到可执行文件中的结果是得到一个大得多的文件，所以通常不会分发它们，以增加便利性。然而，如果你正在调试开源代码，那么用调试符号重新编译测试是有意义的：
 
 ```
 $ ls -l *buggy* *cpp
@@ -108,10 +103,9 @@ $ ls -l *buggy* *cpp
 -rwxr-xr-x  22952 Feb 19 10:53 debuggy*
 ```
 
-### Debugging with GDB
+### 用 GDB 调试
 
-Launch GDB with your new executable (`debuggy`, in this example) loaded:
-
+加载新的可执行文件（本例中为 `debuggy`）以启动 GDB：
 
 ```
 $ gdb ./debuggy
@@ -124,8 +118,7 @@ Temporary breakpoint 1, 0x0000000000400a44 in main ()
 (gdb)
 ```
 
-As before, use the `start` command to proceed:
-
+如前所述，使用 `start` 命令进行：
 
 ```
 (gdb) start
@@ -137,19 +130,18 @@ Temporary breakpoint 1, main () at debug.cpp:9
 (gdb)
 ```
 
-This time, the automatic `main` breakpoint can specify what line number GDB paused on and what code the line contains. You could resume normal operation with `continue` but you already know that the application crashes before completion, so instead, you can step through your code line-by-line using the `next` keyword:
-
+这一次，自动的 `main` 断点可以指明 GDB 暂停的行号和该行包含的代码。你可以用 `continue` 恢复正常操作，但你已经知道应用程序在完成之前就会崩溃，因此，你可以使用 `next` 关键字逐行步进检查你的代码：
 
 ```
 (gdb) next
-10  int alpha = rand() % 8;
+10  int alpha = rand() % 8;
 (gdb) next
-11  cout &lt;&lt; "Hello world." &lt;&lt; endl;
+11  cout << "Hello world." << endl;
 (gdb) next
 Hello world.
-12  int beta = 2;
+12  int beta = 2;
 (gdb) next
-14      printf("alpha is set to is %s\n", alpha);
+14      printf("alpha is set to is %s\n", alpha);
 (gdb) next
 
 Program received signal SIGSEGV, Segmentation fault.
@@ -157,12 +149,11 @@ Program received signal SIGSEGV, Segmentation fault.
 (gdb)
 ```
 
-From this process, you can confirm that the crash didn't happen when the `beta` variable was being set but when the `printf` line was executed. The bug has been exposed several times in this article (spoiler: the wrong data type is being provided to `printf`), but assume for a moment that the solution remains unclear and that further investigation is required.
+从这个过程可以确认，崩溃不是发生在设置 `beta` 变量的时候，而是执行 `printf` 行的时候。这个 bug 在本文中已经暴露了好几次（破坏者：向 `printf` 提供了错误的数据类型），但暂时假设解决方案仍然不明确，需要进一步调查。
 
-### Setting breakpoints
+### 设置断点
 
-Once your code is loaded into GDB, you can ask GDB about the data that the code has produced so far. To try some data introspection, restart your application by issuing the `start` command again and then proceed to line 11. An easy way to get to 11 quickly is to set a breakpoint that looks for a specific line number:
-
+一旦你的代码被加载到 GDB 中，你就可以向 GDB 询问到目前为止代码所产生的数据。要尝试数据自省，通过再次发出 `start` 命令来重新启动你的应用程序，然后进行到第 11 行。一个快速到达 11 行的简单方法是设置一个寻找特定行号的断点：
 
 ```
 (gdb) start
@@ -177,24 +168,22 @@ Temporary breakpoint 2, main () at debug.cpp:9
 Breakpoint 3 at 0x400a74: file debug.cpp, line 11.
 ```
 
-With the breakpoint established, continue the execution with `continue`:
-
+建立断点后，用 `continue` 继续执行：
 
 ```
 (gdb) continue
 Continuing.
 
 Breakpoint 3, main () at debug.cpp:11
-11      cout &lt;&lt; "Hello world." &lt;&lt; endl;
+11      cout << "Hello world." << endl;
 (gdb)
 ```
 
-You're now paused at line 11, just after the `alpha` variable has been set, and just before `beta` gets set.
+现在暂停在第 11 行，就在 `alpha` 变量被设置之后，以及 `beta` 被设置之前。
 
-### Doing variable introspection with GDB
+### 用 GDB 进行变量自省
 
-To see the value of a variable, use the `print` command. The value of `alpha` is random in this example code, so your actual results may vary from mine:
-
+要查看一个变量的值，使用 `print` 命令。在这个示例代码中，`alpha` 的值是随机的，所以你的实际结果可能与我的不同：
 
 ```
 (gdb) print alpha
@@ -202,18 +191,17 @@ $1 = 3
 (gdb)
 ```
 
-Of course, you can't see the value of a variable that has not yet been established:
-
+当然，你无法看到一个尚未建立的变量的值：
 
 ```
 (gdb) print beta
 $2 = 0
 ```
 
-### Using flow control
 
-To proceed, you could step through the lines of code to get to the point where `beta` is set to a value:
+### 使用流程控制
 
+要继续进行，你可以步进代码行来到达将 `beta` 设置为一个值的位置：
 
 ```
 (gdb) next
@@ -225,78 +213,73 @@ Hello world.
 $3 = 2
 ```
 
-Alternatively, you could set a watchpoint. A watchpoint, like a breakpoint, is a way to control the flow of how GDB executes the code. In this case, you know that the `beta` variable should be set to `2`, so you could set a watchpoint to alert you when the value of `beta` changes:
-
+另外，你也可以设置一个观察点，它就像断点一样，是一种控制 GDB 执行代码流程的方法。在这种情况下，你知道 `beta` 变量应该设置为 `2`，所以你可以设置一个观察点，当 `beta` 的值发生变化时提醒你：
 
 ```
-(gdb) watch beta &gt; 0
-Hardware watchpoint 5: beta &gt; 0
+(gdb) watch beta > 0
+Hardware watchpoint 5: beta > 0
 (gdb) continue
 Continuing.
 
 Breakpoint 3, main () at debug.cpp:11
-11      cout &lt;&lt; "Hello world." &lt;&lt; endl;
+11      cout << "Hello world." << endl;
 (gdb) continue
 Continuing.
 Hello world.
 
-Hardware watchpoint 5: beta &gt; 0
+Hardware watchpoint 5: beta > 0
 
 Old value = false
 New value = true
 main () at debug.cpp:14
-14      printf("alpha is set to is %s\n", alpha);
+14      printf("alpha is set to is %s\n", alpha);
 (gdb)
 ```
 
-You can step through the code execution manually with `next`, or you can control how the code executes with breakpoints, watchpoints, and catchpoints.
+你可以用 `next` 手动步进完成代码的执行，或者你可以用断点、观察点和捕捉点来控制代码的执行。
 
-### Analyzing data with GDB
+### 用 GDB 分析数据
 
-You can see data in different formats. For instance, to see the value of `beta` as an octal value:
-
+你可以以不同格式查看数据。例如，以八进制值查看 `beta` 的值：
 
 ```
 (gdb) print /o beta
 $4 = 02
 ```
 
-To see its address in memory:
-
+要查看其在内存中的地址：
 
 ```
 (gdb) print /o beta
 $5 = 0x2
 ```
 
-You can also see the data type of a variable:
-
+你也可以看到一个变量的数据类型：
 
 ```
 (gdb) whatis beta
 type = int
 ```
 
-### Solving bugs with GDB
+### 用 GDB 解决错误
 
-This kind of introspection better informs you about not only what code is getting executed but how it's getting executed. In this example, the `whatis` command on a variable gives you a clue that your `alpha` and `beta` variables are integers, which might jog your memory about `printf` syntax, making you realize that instead of `%s` in your `printf` statements, you must use the `%d` designator. Making that change causes the application to run as expected, with no more obvious bugs present.
+这种自省不仅能让你更好地了解什么代码正在执行，还能让你了解它是如何执行的。在这个例子中，对变量运行的 `whatis` 命令给了你一个线索，即你的 `alpha` 和 `beta` 变量是整数，这可能会唤起你对 `printf` 语法的记忆，使你意识到在你的 `printf` 语句中，你必须使用 `%d` 来代替 `%s`。做了这个改变，就可以让应用程序按预期运行，没有更明显的错误存在。
 
-It's especially frustrating when code compiles but then reveals that there are bugs present, but that's how the trickiest of bugs work. If they were easy to catch, they wouldn't be bugs. Using GDB is one way to hunt them down and eliminate them.
+当代码编译后发现有 bug 存在时，特别令人沮丧，但最棘手的 bug 就是这样，如果它们很容易被发现，那它们就不是 bug 了。使用 GDB 是猎取并消除它们的一种方法。
 
-### Download our cheatsheet
+### 下载我们的速查表
 
-It's a fact of life, in even the most basic forms of programming, that code has bugs. Not all bugs are so crippling that they stop an application from running (or even from compiling), and not all bugs are caused by incorrect code. Sometimes bugs happen intermittently based on an unexpected combination of choices made by a particularly creative user. Sometimes programmers inherit bugs from the libraries they use in their own code. Whatever the cause, bugs are basically everywhere, and it's part of the programmer's job to find and neutralize them.
+生活的真相就是这样，即使是最基本的编程，代码也会有 bug。并不是所有的错误都会导致应用程序无法运行（甚至无法编译），也不是所有的错误都是由错误的代码引起的。有时，bug 是基于一个特别有创意的用户所做的意外的选择组合而间歇性发生的。有时，程序员从他们自己的代码中使用的库中继承了 bug。无论原因是什么，bug 基本上无处不在，程序员的工作就是发现并消除它们。
 
-GNU Debugger is a useful tool in finding bugs. There's a lot more you can do with it than I demonstrated in this article. You can read about its many functions with the GNU Info reader:
-
+GNU 调试器是一个寻找 bug 的有用工具。你可以用它做的事情比我在本文中演示的要多得多。你可以通过 GNU Info 阅读器来了解它的许多功能：
 
 ```
-`$ info gdb`
+$ info gdb
 ```
 
-Whether you're just learning GDB or you're a pro at it, it never hurts to have a reminder of what commands are available to you and what the syntax for those commands are.
+无论你是刚开始学习 GDB 还是专业人员的，提醒一下你有哪些命令是可用的，以及这些命令的语法是什么，都是很有帮助的。
 
-### [Download our cheatsheet for GDB today.][5]
+- [下载 GDB 速查表][5]
 
 --------------------------------------------------------------------------------
 
@@ -304,8 +287,8 @@ via: https://opensource.com/article/21/3/debug-code-gdb
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -314,5 +297,5 @@ via: https://opensource.com/article/21/3/debug-code-gdb
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/mistake_bug_fix_find_error.png?itok=PZaz3dga (magnifying glass on computer screen, finding a bug in the code)
 [2]: https://www.gnu.org/software/gdb/
 [3]: https://opensource.com/article/20/8/printf
-[4]: https://opensource.com/article/20/12/learn-c-game
+[4]: https://linux.cn/article-12985-1.html
 [5]: https://opensource.com/downloads/gnu-debugger-cheat-sheet
