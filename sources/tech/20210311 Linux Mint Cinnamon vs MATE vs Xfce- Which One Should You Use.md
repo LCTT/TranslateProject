@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/linux-mint-cinnamon-mate-xfce/)
 [#]: author: (Dimitrios https://itsfoss.com/author/dimitrios/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
