@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/files-freedos)
 [#]: author: (Kevin O'Brien https://opensource.com/users/ahuka)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
