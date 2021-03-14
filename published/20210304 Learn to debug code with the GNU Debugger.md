@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13203-1.html)
 
 学习使用 GDB 调试代码
 ======
 
 > 使用 GNU 调试器来解决你的代码问题。
 
-![在电脑屏幕上放大镜，发现代码中的错误][1]
+![](https://img.linux.net.cn/data/attachment/album/202103/14/210547k3q5lek8j9qspkks.jpg)
 
 GNU 调试器常以它的命令 `gdb` 称呼它，它是一个交互式的控制台，可以帮助你浏览源代码、分析执行的内容，其本质上是对错误的应用程序中出现的问题进行逆向工程。
 
