@@ -58,7 +58,7 @@ Webpack 可以创建在运行时异步加载的单个捆绑包或多个素材链
 
 ### Strapi
 
-[Strapi][5] 是一个开源的<ruby>无界面<rt>headless</rt><ruby>内容管理系统（CMS）。无界面 CMS 是一种基础软件，可以管理内容而无需预先构建好的前端。它是一个使用 RESTful API 函数的只有后端的系统。
+[Strapi][5] 是一个开源的<ruby>无界面<rt>headless</rt></ruby>内容管理系统（CMS）。无界面 CMS 是一种基础软件，可以管理内容而无需预先构建好的前端。它是一个使用 RESTful API 函数的只有后端的系统。
 
 可以通过软件包管理器 Yarn 或 npx 安装 Strapi。
 
