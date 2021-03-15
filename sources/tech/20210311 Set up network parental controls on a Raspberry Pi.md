@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/raspberry-pi-parental-control)
 [#]: author: (Daniel Oh https://opensource.com/users/daniel-oh)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
