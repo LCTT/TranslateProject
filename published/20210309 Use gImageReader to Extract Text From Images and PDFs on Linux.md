@@ -3,16 +3,16 @@
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13205-1.html)
 
 在 Linux 上使用 gImageReader 从图像和 PDF 中提取文本
 ======
 
-_简介：gImageReader 是一个 GUI 工具，用于在 Linux 中利用 Tesseract OCR 引擎从图像和 PDF 文件中提取文本。_
+> gImageReader 是一个 GUI 工具，用于在 Linux 中利用 Tesseract OCR 引擎从图像和 PDF 文件中提取文本。
 
-[gImageReader][1] 是 [Tesseract 开源 OCR 引擎][2]的一个前端。_Tesseract_ 最初是由 HP 公司开发的，然后在 2006 年开源。
+[gImageReader][1] 是 [Tesseract 开源 OCR 引擎][2]的一个前端。Tesseract 最初是由 HP 公司开发的，然后在 2006 年开源。
 
 基本上，OCR（光学字符识别）引擎可以让你从图片或文件（PDF）中扫描文本。默认情况下，它可以检测几种语言，还支持通过 Unicode 字符扫描。
 
@@ -28,7 +28,7 @@ _简介：gImageReader 是一个 GUI 工具，用于在 Linux 中利用 Tesserac
 
 无论你是需要它来进行拼写检查还是翻译，它都应该对特定的用户群体有用。
 
-在列表总结下功能，这里是你可以用它做的事情：
+以列表总结下功能，这里是你可以用它做的事情：
 
   * 从磁盘、扫描设备、剪贴板和截图中添加 PDF 文档和图像
   * 能够旋转图像
@@ -43,11 +43,9 @@ _简介：gImageReader 是一个 GUI 工具，用于在 Linux 中利用 Tesserac
   * 将提取的文本导出为 .txt 文件
   * 跨平台（Windows）
 
-
-
 ### 在 Linux 上安装 gImageReader
 
-**注意**：_你需要安装 Tesseract 语言包，才能从软件管理器中的图像/文件中进行检测。_
+**注意**：你需要安装 Tesseract 语言包，才能从软件管理器中的图像/文件中进行检测。
 
 ![][5]
 
@@ -64,8 +62,6 @@ sudo apt install gimagereader
 你也可以从 openSUSE 的构建服务中找到它，Arch Linux 用户可在 [AUR][6] 中找到。
 
 所有的仓库和包的链接都可以在他们的 [GitHub 页面][1]中找到。
-
-[gImageReader][1]
 
 ### gImageReader 使用经验
 
@@ -90,7 +86,7 @@ via: https://itsfoss.com/gimagereader-ocr/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
