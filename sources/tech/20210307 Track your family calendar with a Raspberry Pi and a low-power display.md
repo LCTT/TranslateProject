@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/family-calendar-raspberry-pi)
 [#]: author: (Javier Pena https://opensource.com/users/jpena)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wyxplus)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
