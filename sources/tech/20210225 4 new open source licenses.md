@@ -7,33 +7,37 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-4 new open source licenses
+
+四个新式开源许可证
 ======
-Get to know the new OSI-approved Cryptographic Autonomy License and CERN
-open hardware licenses.
+
+让我们来看看 OSI 最新批准的 Cryptographic Autonomy License 和 CERN 开源硬件许可协议。
+
 ![Law books in a library][1]
 
-As the steward of the [Open Source Defintion][2], the [Open Source Initiative][3] has been designating licenses as "open source" for over 20 years. These licenses are the foundation of the open source software ecosystem, ensuring that everyone can use, improve, and share software. When a license is approved, it is because the OSI believes that the license fosters collaboration and sharing for the benefit of everyone who participates in the ecosystem.
+作为 [开源定义][2] 的管理者，[开源倡议][3] 把许可证当作“开源”已有20多年了。这些许可证是开源软件生态系统的基础，可确保每个人都可以使用，重构和共享软件。当一个许可证获批，是因为 OSI 认为该许可证可以促进相互的协作和共享，从而使得每个参与开源生态的人获益。
 
-The world has changed over the past 20 years, with software now used in new and even unimaginable ways. The OSI has seen that the familiar open source licenses are not always well-suited for these new situations. But license stewards have stepped up, submitting several new licenses for more expansive uses. The OSI was challenged to evaluate whether these new concepts in licensing would continue to advance sharing and collaboration and merit being referred to as "open source" licenses, ultimately approving some new special purpose licenses.
+在过去的20年里，世界发生了翻天覆地的变化。现如今，软件以新的甚至是无法想象的方式在被使用。OSI 已经预料到，曾经被人们所熟知的开源许可证现已无法满足如今的要求。因此，许可证管理者已经加强了工作，提交了多个更兼容的新式许可证。OSI 所面临的挑战是在评估许可证中，这些新观点是否会继续推动共享和协作，是否被值得称为“开源”许可证，最终 OSI 批准了一些用于特殊领域的新式许可证。
 
-### Four new licenses
+### 四个新式许可证
 
-First is the [Cryptographic Autonomy License][4]. This license is designed for distributed cryptographic applications. The challenge of this use case was that the existing open source licenses wouldn't assure openness because it would be possible for one peer to impair the functioning of the network if there was no obligation to also share data with the other peers. So, in addition to being a strong copyleft license, the CAL also includes an obligation to provide third parties the permissions and materials needed to independently use and modify the software without that third party having a loss of data or capability.
+第一个是 [Cryptographic Autonomy License][4]。该许可证是为分布式密码应用程序而设计的。此许可证所解决的问题是，现有的开源许可证无法保证开放性，因为使用方没有义务共享数据，如果其中一人不开放，则其他使用方照做，这样可能会有害于开放的作用。因此，除了要获得强有力的版权保护许可外，CAL 还包括向第三方提供独立使用和修改软件所需的权限和资料的义务，而不会让第三方有数据或功能的损失。
 
 As more and more uses arise for peer-to-peer sharing using a cryptographic structure, it wouldn't be surprising if more developers found themselves in need of a legal tool like the CAL. The community on License-Discuss and License-Review, OSI's two mailing lists where proposed new open source licenses are discussed, asked many questions about this license. We hope that the resulting license is clear and easy to understand and that other open source practitioners will find it useful.
 
-Next, the European Organization for Nuclear Research, CERN, submitted the CERN Open Hardware Licence (OHL) family of licenses for consideration. All three of its licenses are primarily intended for open hardware, a field of open access that is similar to open source software but with its own challenges and nuances. The line between hardware and software has blurred considerably, so applying separate hardware and software licenses has become more and more difficult. CERN undertook crafting a license that would ensure freedom for both hardware and software.
+随着越来越多的人使用加密结构进行点对点共享，那么更多的开发人员发现自己需要诸如 CAL 之类的法律工具也就不足为奇了。 OSI 的两个邮件列表中的许可证讨论和许可证审查社区，讨论了拟议的新开源许可证，并询问了有关此许可证的诸多问题。 我们希望由此产生的许可证清晰易懂，并希望对其他开源从业者有所裨益。
 
-The OSI probably would not have considered adding an open hardware license to its list of open source licenses back when it started, but the world has changed. So while the wording in the CERN licenses encompasses hardware concepts, it also meets all the qualifications to be approved by the OSI as an open source software license.
+接下来是，欧洲核研究组织（CERN）提交的 CERN Open Hardware Licence（OHL）系列许可证以供审议。它包括三个许可证，其主要用于开源硬件，这是一个与开源代码软件相似的开源访问领域，但有其自身的困难和细微差别。硬件和软件之间的界线现已变得相当模糊，因此应用单独的硬件和软件许可证变得越来越困难。欧洲核子研究组织（CERN）制定了可以确保硬件和软件开源的许可证。
 
-The suite of CERN Open Hardware licenses includes a [permissive license][5], a [weak reciprocal license][6], and a [strong reciprocal license][7]. Most recently, the license has been adopted by an international research project that is building simple, easily replicable ventilators to use with COVID-19 patients.
+OSI 可能在开始时就没考虑将开源硬件许可证添加到其开源代码许可证列表中，但是世界早已发生变革。因此，尽管 CERN 许可证中的措词涵盖了硬件术语，但它也符合 OSI 认可的所有开源软件许可证的条件。
 
-### Learn more
+CERN 开源硬件许可证包括 [permissive license][5]，[weak reciprocal license][6] 和  [strong reciprocal license][7]。最近，该许可证已被一个国际研究项目采用，该项目正在制造可用于 COVID-19 患者的简单、易于生产的呼吸机。
 
-The CAL and CERN OHL licenses are special-purpose, and the OSI does not recommend their use outside the fields for which they were designed. But the OSI is eager to see whether these licenses will work as intended, fostering robust open ecosystems in these newer computing arenas.
+### 了解更多
 
-More information on the [license approval process][8] is available from the OSI.
+CAL 和 CERN OHL 许可证是针对特殊事务，并且 OSI 不建议把它们用于其它领域。但是 OSI 想知道这些许可证是否会按预期发展，从而有助于在较新的计算机领域中培育出健壮的开源生态。
+
+可以从 OSI 获得关于 [许可证批准过程][8] 的更多信息。
 
 --------------------------------------------------------------------------------
 
@@ -41,14 +45,14 @@ via: https://opensource.com/article/21/2/osi-licenses-cal-cern-ohl
 
 作者：[Pam Chestek][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wyxplus](https://github.com/wyxplus)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/pchestek
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/LAW_lawdotgov3.png?itok=e4eFKe0l (Law books in a library)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/LAW_lawdotgov3.png?itok=e4eFKe0l "Law books in a library"
 [2]: https://opensource.org/osd
 [3]: https://opensource.org/
 [4]: https://opensource.org/licenses/CAL-1.0
