@@ -88,7 +88,7 @@ Program received signal SIGSEGV, Segmentation fault.
 要充分利用 GDB，你需要将调试符号编译到你的可执行文件中。你可以用 GCC 中的 `-g` 选项来生成这个符号：
 
 ```
-$ g++ -o debuggy example.cpp
+$ g++ -g -o debuggy example.cpp
 $ ./debuggy
 Hello world.
 Segmentation fault
@@ -250,7 +250,7 @@ $4 = 02
 要查看其在内存中的地址：
 
 ```
-(gdb) print /o beta
+(gdb) print /o &beta
 $5 = 0x2
 ```
 

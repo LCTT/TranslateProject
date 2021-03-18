@@ -4,11 +4,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13213-1.html)
 
 Cinnamon vs MATE vs Xfce：你应该选择那一个 Linux Mint 口味？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202103/18/111916ljidnfwwsxec1fqf.jpg)
 
 Linux Mint 无疑是 [最适合初学者的 Linux 发行版之一][1]。尤其是对于刚刚迈向 Linux 世界的 Windows 用户来说，更是如此。
 
