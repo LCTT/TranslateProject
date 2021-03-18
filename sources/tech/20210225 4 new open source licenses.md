@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/2/osi-licenses-cal-cern-ohl)
 [#]: author: (Pam Chestek https://opensource.com/users/pchestek)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wyxplus)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
