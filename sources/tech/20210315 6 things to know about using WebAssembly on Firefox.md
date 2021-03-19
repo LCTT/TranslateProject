@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/webassembly-firefox)
 [#]: author: (Stephan Avenwedde https://opensource.com/users/hansic99)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
