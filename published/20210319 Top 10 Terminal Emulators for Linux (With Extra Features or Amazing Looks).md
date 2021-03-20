@@ -4,11 +4,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13221-1.html)
 
 10 个常见的 Linux 终端仿真器
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202103/21/073043q4j4o6hr33b595j4.jpg)
 
 默认情况下，所有的 Linux 发行版都已经预装了“<ruby>终端<rt>terminal</rt></ruby>”应用程序或“<ruby>终端仿真器<rt>terminal emulator</rt></ruby>”（这才是正确的技术术语）。当然，根据桌面环境的不同，它的外观和感觉会有所不同。
 
