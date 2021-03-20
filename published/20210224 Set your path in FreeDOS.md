@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13218-1.html)
 
 在 FreeDOS 中设置你的路径
 ======
