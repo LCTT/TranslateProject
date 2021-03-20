@@ -1,315 +1,261 @@
-[#]: subject: (Top 10 Terminal Emulators for Linux (With Extra Features or Amazing Looks))
+[#]: subject: (Top 10 Terminal Emulators for Linux \(With Extra Features or Amazing Looks\))
 [#]: via: (https://itsfoss.com/linux-terminal-emulators/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
+[#]: translator: (wxy)
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
-Top 10 Terminal Emulators for Linux (With Extra Features or Amazing Looks)
+10 个常见的 Linux 终端仿真器
 ======
 
-By default, all Linux distributions already come pre-installed with a terminal application or terminal emulator (correct technical term). Of course, depending on the desktop environment, it will look and feel different.
+默认情况下，所有的 Linux 发行版都已经预装了“<ruby>终端<rt>terminal</rt></ruby>”应用程序或“<ruby>终端模拟器<rt>terminal emulator</rt></ruby>”（这才是正确的技术术语）。当然，根据桌面环境的不同，它的外观和感觉会有所不同。
 
-Here’s the thing about Linux. You are not restricted to what your distribution provides. You can opt for an alternative application of your choice. Terminal is no different. There are several impressive terminal emulators that offer unique features for a better user experience or for better looks.
+Linux 的特点是，你可以不用局限于你的发行版所提供的东西，你可以用你所选择的替代应用程序。终端也不例外。有几个提供了独特功能的终端仿真器令人印象深刻，可以获得更好的用户体验或更好的外观。
 
-Here, I will be compiling a list of such interesting terminal applications that you can try on your Linux distribution.
+在这里，我将组织一个有趣的终端应用程序的列表，你可以在你的 Linux 发行版上尝试它们。
 
-### Awesome Terminal Emulators for Linux
+### 值得赞叹的 Linux 终端仿真器
 
-The list is in no particular order of ranking. I’ve tried to list the interesting ones first followed by some of the most popular terminal emulators. Also, I have highlighted the key features for every terminal emulator mentioned, choose what you prefer.
+此列表没有特别的排名顺序，我会先列出一些有趣的，然后是一些最流行的终端仿真器。此外，我还强调了每个提到的终端仿真器的主要功能，你可以选择你喜欢的终端模拟器。
 
-#### 1\. Terminator
+#### 1、Terminator
 
 ![][1]
 
-**Key Highlights:**
+主要亮点：
 
-  * Multiple GNOME terminals in one window
+* 可以在一个窗口中使用多个 GNOME 终端
 
+[Terminator][2] 是一款非常流行的终端仿真器，目前仍在维护中（从 Launchpad 移到了 GitHub）。
 
+它基本上是在一个窗口中为你提供了多个 GNOME 终端。在它的帮助下，你可以轻松地对终端窗口进行分组和重组。你可能会觉得这像是在使用平铺窗口管理器，不过有一些限制。
 
-Terminator is decently popular terminal emulator which is still being maintained (moved from Launchpad to GitHub).
+##### 如何安装 Terminator？
 
-It basically provides you multiple GNOME terminals in one window. You can easily group and re-group terminal windows with the help of it. You may feel like using a tiling window manager but with some restrictions.
-
-[Gnome Terminator][2]
-
-##### How to install Terminator?
-
-For Ubuntu-based distros, all you have to do is type in the following command in the terminal:
+对于基于 Ubuntu 的发行版，你只需在终端输入以下命令:
 
 ```
 sudo apt install terminator
 ```
 
-You should find it in most of Linux distributions through the default repositories. But, if you need help installing, go through the [GitHub page][3].
+你应该可以在大多数 Linux 发行版的默认仓库中找到它。但是，如果你需要安装帮助，请访问它的 [GitHub 页面][3]。
 
-#### 2\. Guake Terminal
+#### 2、Guake 终端
 
 ![][4]
 
-**Key Highlights:**
+主要亮点：
 
-  * Tailored for quick access to terminal on GNOME
-  * Works fast and does not need a lot of system resource
-  * Shortcut key to access
+  * 专为在 GNOME 上快速访问终端而设计
+  * 工作速度快，不需要大量的系统资源
+  * 访问的快捷键
 
+[Guake][6] 终端最初的灵感来自于一款 FPS 游戏 Quake。与其他一些终端模拟器不同的是，它的工作方式是覆盖在其他的活动窗口上。
 
+你所要做的就是使用快捷键（`F12`）召唤该模拟器，它就会从顶部出现。你可以自定义该模拟器的宽度或位置，但大多数用户使用默认设置就可以了。
 
-Guake terminal was originally inspired by an FPS game Quake. Unlike some other terminal emulators, it works as an overlay on every other active window.
+它不仅仅是一个方便的终端模拟器，还提供了大量的功能，比如能够恢复标签、拥有多个标签、每个标签进行颜色编码等等。你可以查看我关于 [Guake 的单独文章][5] 来了解更多。
 
-All you have to do is summon the emulator using a shortcut key (F12) and it will appear from the top. You get customize the width or position of the emulator, but most of the users should be fine with the default setting.
+##### 如何安装 Guake 终端？
 
-Not just as a handy terminal emulator, it offers a ton of features like ability to restore tabs, having multiple tabs, color-coding each tab, and more. You can check out my separate article on [Guake][5] to learn more.
+Guake 在大多数 Linux 发行版的默认仓库中都可以找到，你可以参考它的 [官方安装说明][7]。
 
-[Guake][6]
-
-##### How to install Guake Terminal?
-
-Guake is available in the default repositories for most of the Linux distributions. You can refer to its [official installation instructions][7].
-
-Or if you’re using Debian-based distro, just type in the following command:
+如果你使用的是基于 Debian 的发行版，只需输入以下命令：
 
 ```
 sudo apt install guake
 ```
 
-#### 3\. Tilix Terminal
+#### 3、Tilix 终端
 
 ![][8]
 
-**Key Highlights:**
+主要亮点：
 
-  * Tiling feature
-  * Drag and drop support
-  * Drop down Quake mode
+  * 平铺功能
+  * 支持拖放
+  * 下拉式 Quake 模式
 
+[Tilix][10] 终端提供了与 Guake 类似的下拉式体验 —— 但它允许你在平铺模式下拥有多个终端窗口。
 
+如果你的 Linux 发行版中默认没有平铺窗口，而且你有一个大屏幕，那么这个功能就特别有用，你可以在多个终端窗口上工作，而不需要在不同的工作空间之间切换。
 
-Tilix Terminal offers a similar drop-down experience that you find with Guake – but it also lets you have multiple terminal windows in tiling mode.
+如果你想了解更多关于它的信息，我们之前已经 [单独介绍][9] 过了。
 
-This is particularly useful if you do not have tiling windows by default in your Linux distribution and have a big screen to work on multiple terminal windows without needing to switching between workspaces.
+##### 如何安装 Tilix？
 
-We’ve already covered it before [separately][9] if you’re curious to learn more about it.
-
-[Tilix][10]
-
-##### How to install Tilix?
-
-Tilix is available in the default repositories for most of the distributions. If you’re using Ubuntu-based distro, simply type in:
+Tilix 在大多数发行版的默认仓库中都有。如果你使用的是基于 Ubuntu 的发行版，只需输入：
 
 ```
 sudo apt install tilix
 ```
 
-**Recommended Read:**
-
-![][11]
-
-#### [5 Tweaks to Customize the Look of Your Linux Terminal][12]
-
-Want to beautify your Linux terminal and give it a different look? Here are a few ways you can customize your terminal.
-
-#### 4\. Hyper
+#### 4、Hyper
 
 ![][13]
 
-**Key Highlights:**
+主要亮点：
 
-  * Terminal built on HTML/CSS/JS
-  * Electron-based
-  * Cross-platform
-  * Extensive configuration options
+  * 基于 HTML/CSS/JS 的终端
+  * 基于 Electron
+  * 跨平台
+  * 丰富的配置选项
 
+[Hyper][15] 是另一个有趣的终端仿真器，它建立在 Web 技术之上。它并没有提供独特的用户体验，但看起来很不一样，并提供了大量的自定义选项。
 
+它还支持安装主题和插件来轻松定制终端的外观。你可以在他们的 [GitHub 页面][14] 中探索更多关于它的内容。
 
-Hyper is yet another interesting terminal emulator that is built on web technologies. It doesn’t provide a unique user experience, but looks quite different and offers a ton of customization options.
+##### 如何安装 Hyper？
 
-It also supports installing themes and plugins to easily customize the appearance of the terminal. You can explore more about it in their [GitHub page][14].
+Hyper 在默认的资源库中是不可用的。然而，你可以通过他们的 [官方网站][16] 找到 .deb 和 .rpm 包来安装。
 
-[Hyper][15]
+如果你是新手，请阅读文章以获得 [使用 deb 文件][17] 和 [使用 rpm 文件][18] 的帮助。
 
-##### How to install Hyper?
-
-Hyper is not available in the default repositories. However, you can find both .deb and .rpm packages available to install through their [official website][16].
-
-If you’re new, read through the articles to get help [using deb files][17] and [using RPM files][18].
-
-#### 5\. Tilda
+#### 5、Tilda
 
 ![][19]
 
-**Key Highlights:**
+主要亮点：
 
-  * Drop down terminal
-  * Search bar integrated
+  * 下拉式终端
+  * 搜索栏整合
 
+[Tilda][20] 是另一款基于 GTK 的下拉式终端仿真器。与其他一些不同的是，它提供了一个你可以切换的集成搜索栏，还可以让你自定义很多东西。
 
+你还可以设置热键来快速访问或执行某个动作。从功能上来说，它是相当令人印象深刻的。然而，在视觉上，我不喜欢覆盖的行为，而且它也不支持拖放。不过你可以试一试。
 
-Tilda is another drop-down GTK-based terminal emulator. Unlike some others, it focuses on providing an integrated search bar which you can toggle and also lets you customize many things.
+##### 如何安装 Tilda？
 
-You can also set hotkeys for quick access or a certain action. Functionally, it is quite impressive. However, visually, I don’t like how the overlay behaves and does not support drag and drop as well. You might give it a try though.
-
-[Tilda][20]
-
-##### How to install Tilda?
-
-For Ubuntu-based distros, you can simply type in:
+对于基于 Ubuntu 的发行版，你可以简单地键入：
 
 ```
 sudo apt install tilda
 ```
 
-You can refer to its [GitHub page][20] for installation instructions on other distributions.
+你可以参考它的 [GitHub 页面][20]，以了解其他发行版的安装说明。
 
-#### 6\. eDEX-UI
+#### 6、eDEX-UI
 
 ![][21]
 
-**Key Highlights:**
+主要亮点：
 
-  * Sci-Fi Look
-  * Cross-platform
-  * Theme options to customize
-  * Supports Multiple terminal tabs
+  * 科幻感的外观
+  * 跨平台
+  * 自定义主题选项
+  * 支持多个终端标签
 
+如果你不是特别想找一款可以帮助你更快的完成工作的终端仿真器，[eDEX-UI][23] 是你绝对应该尝试的。
 
+对于科幻迷和只想让自己的终端看起来独特的用户来说，这绝对是一款漂亮的终端仿真器。如果你不知道，它的灵感很大程度上来自于电影《创：战纪》。
 
-If you’re not looking particularly for a terminal emulator to help you get your work done faster, eDEX-UI is something that you must try.
+不仅仅是设计或界面，总的来说，它为你提供了独特的用户体验，你会喜欢的。它还可以让你 [自定义终端][12]。如果你打算尝试的话，它确实需要大量的系统资源。
 
-It is absolutely a beautiful terminal emulator for sci-fi fans and for users who just want their terminal to look unique. In case you didn’t know, it is heavily inspired from the **TRON legacy** movie.
+你不妨看看我们 [专门介绍 eDEX-UI][22] 的文章，了解更多关于它的信息和安装步骤。
 
-Not just the design or the interface, overall, it offers you a unique user experience that you will enjoy. It also lets you [customize the terminal][12]. It does require a significant amount of system resource if you’re planning to try it.
+##### 如何安装 eDEX-UI？
 
-You might want to check our dedicated article on [eDEX-UI][22] to know more about it and the steps to install it.
+你可以在一些包含 [AUR][24] 的仓库中找到它。无论是哪种情况，你都可以从它的 [GitHub 发布部分][25] 中抓取一个适用于你的 Linux 发行版的软件包（或 AppImage 文件）。
 
-[eDEX-UI][23]
-
-##### How to install eDEX-UI?
-
-You can find it in some of the repositories that include [AUR][24]. In either case, you can grab a package available for your Linux distribution (or an AppImage file) from its [GitHub releases section][25].
-
-**Recommended Read:**
-
-![][11]
-
-#### [5 Tweaks to Customize the Look of Your Linux Terminal][12]
-
-Want to beautify your Linux terminal and give it a different look? Here are a few ways you can customize your terminal.
-
-#### 7\. Cool Retro Terminal
+#### 7、Cool Retro Terminal
 
 ![][26]
 
-**Key Highlights:**
+主要亮点：
 
-  * Retro Theme
-  * Animation/Effects to tweak
+  * 复古主题
+  * 动画/效果调整
 
+[Cool Retro Terminal][27] 是一款独特的终端仿真器，它为你提供了一个复古的阴极射线管显示器的外观。
 
+如果你正在寻找一些额外功能的终端仿真器，这可能会让你失望。然而，令人印象深刻的是，它在资源上相当轻盈，并允许你自定义颜色、效果和字体。
 
-Cool Retro Terminal is a unique terminal emulator that provides you with a look of a vintage cathode ray tube monitor.
+##### 如何安装 Cool Retro Terminal？
 
-If you’re looking for some extra-functionality terminal emulator, this may disappoint you. However, it is impressive to note that it is decently light on resources and allows you to customize the color, effects, and fonts.
-
-[Cool Retro Theme][27]
-
-##### How to install Cool Retro Terminal?
-
-You can find all the installation instructions for major Linux distributions in its [GitHub page][27]. For Ubuntu-based distros, you can type in the following in the terminal:
+你可以在其 [GitHub 页面][27] 中找到所有主流 Linux 发行版的安装说明。对于基于 Ubuntu 的发行版，你可以在终端中输入以下内容：
 
 ```
 sudo apt install cool-retro-term
 ```
 
-#### 8\. Alacritty
+#### 8、Alacritty
 
 ![][28]
 
-**Key Highlights:**
+主要亮点：
 
-  * Cross-platform
-  * Extension options and focuses on integration
+  * 跨平台
+  * 选项丰富，重点是整合。
 
+[Alacritty][29] 是一款有趣的开源跨平台终端仿真器。尽管它被认为是处于“测试”阶段的东西，但它仍然可以工作。
 
+它的目标是为你提供广泛的配置选项，同时考虑到性能。例如，使用键盘点击 URL、将文本复制到剪贴板、使用 “Vi” 模式进行搜索等功能可能会吸引你去尝试。
 
-Alacritty is an interesting open-source cross-platform terminal emulator. Even though it is considered as something in “beta” phase, it still works.
+你可以探索它的 [GitHub 页面][29] 了解更多信息。
 
-It aims to provide you extensive configuration options while keeping the performance in mind. For instance, the ability to click through a URL using a keyboard, copying text to a clipboard, and performing a search using “Vi” mode may intrigue you to try it.
+##### 如何安装 Alacritty？
 
-You can explore its GitHub page for more information.
+官方 GitHub 页面上说可以使用包管理器安装 Alacritty，但我在 Linux Mint 20.1 的默认仓库或 [synaptic 包管理器][30] 中找不到它。
 
-[Alacritty][29]
+如果你想尝试的话，可以按照 [安装说明][31] 来手动设置。
 
-##### How to install Alacritty?
-
-Alacritty can be installed using package managers says the official GitHub page, but I couldn’t find it in the default repository or [synaptic package manager][30] on Linux Mint 20.1.
-
-You can follow the [installation instructions][31] to set it up manually if you want to try it.
-
-#### 9\. Konsole
+#### 9、Konsole
 
 ![][32]
 
-**Key Highlights:**
+主要亮点：
 
-  * KDE’s terminal
-  * Lightweight and customizable
+  * KDE 的终端
+  * 轻巧且可定制
 
+如果你不是新手，这个可能不用介绍了。[Konsole][33] 是 KDE 桌面环境的默认终端模拟器。
 
+不仅如此，它还集成了很多 KDE 应用。即使你使用的是其他的桌面环境，你也可以试试 Konsole。它是一个轻量级的终端仿真器，拥有众多的功能。
 
-If you’re not a newbie, this probably needs no introduction. Konsole is the default terminal emulator for KDE desktop environments.
+你可以拥有多个标签和多个分组窗口。以及改变终端模拟器的外观和感觉的大量的自定义选项。
 
-Not just limited to that, it also comes integrated with a lot of KDE apps as well. Even if you’re using some other desktop environment, you can still try Konsole. It is a lightweight terminal emulator with a host of features.
+##### 如何安装 Konsole？
 
-You can have multiple tabs and multiple grouped windows as well. Lot of customization options to change the look and feel of the terminal emulator as well.
-
-[Konsole][33]
-
-##### How to install Konsole?
-
-For Ubuntu-based distros and most other distributions, you can install it using the default repository. With Debian-based distros, you just need to type this in the terminal:
+对于基于 Ubuntu 的发行版和大多数其他发行版，你可以使用默认的版本库来安装它。对于基于 Debian 的发行版，你只需要在终端中输入以下内容：
 
 ```
 sudo apt install konsole
 ```
 
-#### 10\. GNOME Terminal
+#### 10、GNOME 终端
 
 ![][34]
 
-**Key Highlights:**
+主要亮点：
 
-  * GNOME’s terminal
-  * Simple yet customizable
+  * GNOME 的终端
+  * 简单但可定制
 
+如果你使用的是任何基于 Ubuntu 的 GNOME 发行版，它已经是天生的了，它可能不像 Konsole 那样可以自定义，但它可以让你轻松地配置终端的大部分重要方面。它可能不像 Konsole 那样可以自定义（取决于你在做什么），但它可以让你轻松配置终端的大部分重要方面。
 
+总的来说，它提供了良好的用户体验和易于使用的界面，并提供了必要的功能。
 
-If you’re utilizing any Ubuntu-based GNOME distribution, it already comes baked in. It may not be as customizable as Konsole (depends on what you’re doing) but it lets you configure most of the important aspects of the terminal easily.
+如果你好奇的话，我还有一篇 [自定义你的 GNOME 终端][12] 的教程。
 
-Overall, it offers a good user experience and an easy-to-use interface with essential functions.
+##### 如何安装 GNOME 终端？
 
-I’ve also covered a tutorial to [customize your GNOME terminal][12] if you’re curious.
+如果你没有使用 GNOME 桌面，但又想尝试一下，你可以通过默认的软件仓库轻松安装它。
 
-##### How to install GNOME Terminal?
-
-If you’re not using GNOME desktop but want to try it out, you can easily install it through the default repositories.
-
-For Debian-based distros, here’s what you need to type in the terminal:
+对于基于 Debian 的发行版，以下是你需要在终端中输入的内容：
 
 ```
 sudo apt install gnome-terminal
 ```
 
-### Wrapping Up
+### 总结
 
-There are several terminal emulators available out there. You can try anything you like if you’re looking for a different user experience. However, if you’re aiming for a stable and productive experience, you need to test the terminal emulators before you can rely on them.
+有好几个终端仿真器。如果你正在寻找不同的用户体验，你可以尝试任何你喜欢的东西。然而，如果你的目标是一个稳定的和富有成效的体验，你需要测试一下，然后才能依靠它们。
 
-For most of the users, the default terminal emulators should be good enough. But, if you’re looking for quick access (Quake Mode) or Tiling feature or multiple windows in a terminal, feel free to try out the options mentioned above.
+对于大多数用户来说，默认的终端仿真器应该足够好用了。但是，如果你正在寻找快速访问（Quake 模式）、平铺功能或在一个终端中的多个窗口，请试试上述选择。
 
-What’s your favorite terminal emulator on Linux? Did I miss listing your favorite? Feel free to let me know your thoughts in the comments down below.
+你最喜欢的 Linux 终端仿真器是什么？我有没有错过列出你最喜欢的？欢迎在下面的评论中告诉我你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -317,8 +263,8 @@ via: https://itsfoss.com/linux-terminal-emulators/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
