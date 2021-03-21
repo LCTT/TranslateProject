@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wyxplus)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13224-1.html)
 
 四个新式开源许可证
 ======
