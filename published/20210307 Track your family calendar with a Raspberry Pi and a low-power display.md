@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wyxplus)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13222-1.html)
 
 利用树莓派和低功耗显示器来跟踪你的家庭日程表
 ======
