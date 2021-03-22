@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/file-io-c)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wyxplus)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
