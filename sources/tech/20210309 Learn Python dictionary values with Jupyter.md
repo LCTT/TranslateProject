@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/dictionary-values-python)
 [#]: author: (Lauren Maffeo https://opensource.com/users/lmaffeo)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
