@@ -2,7 +2,7 @@
 [#]: via: (https://theartofmachinery.com/2021/03/18/reverse_engineering_a_docker_image.html)
 [#]: author: (Simon Arneaud https://theartofmachinery.com)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
