@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/desktop-3d-printer)
 [#]: author: (Joshua Pearce https://opensource.com/users/jmpearce)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
