@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/python-viztracer)
 [#]: author: (Tian Gao https://opensource.com/users/gaogaotiantian)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
