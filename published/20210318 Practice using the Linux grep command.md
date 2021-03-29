@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "lxbwolf"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13247-1.html"
 
 练习使用 Linux 的 grep 命令
 ======
