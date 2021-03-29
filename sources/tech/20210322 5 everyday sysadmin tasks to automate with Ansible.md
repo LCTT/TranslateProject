@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/ansible-sysadmin)
 [#]: author: (Mike Calizo https://opensource.com/users/mcalizo)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
