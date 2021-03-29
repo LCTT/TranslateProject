@@ -7,21 +7,21 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Reverse Engineering a Docker Image
+Docker 镜像逆向工程
 ======
 
-This started with a consulting snafu: Government organisation A got government organisation B to develop a web application. Government organisation B subcontracted part of the work to somebody. Hosting and maintenance of the project was later contracted out to a private-sector company C. Company C discovered that the subcontracted somebody (who was long gone) had built a custom Docker image and made it a dependency of the build system, but without committing the original Dockerfile. That left company C with a contractual obligation to manage a Docker image they had no source code for. Company C calls me in once in a while to do various things, so doing something about this mystery meat Docker image became my job.
+本文介绍的内容开始于一个咨询陷阱：政府组织 A 让政府组织 B 开发一个网络应用程序。政府机构 B 把部分工作外包给某个人。后来，项目的托管和维护被外包给一家私人公司 C。C 公司发现，之前外包的人（过世很久了）已经构建了一个自定义的 Docker 镜像，并使镜像成为系统构建的依赖项，但这个人没有提交原始的 Dockerfile。C 公司有合同义务管理这个 Docker 镜像，可是他们他们没有源代码。C 公司偶尔叫我进去做各种工作，所以处理一些关于这个神秘 Docker 镜像的事情就成了我的工作。
 
-Fortunately, the Docker image format is a lot more transparent than it could be. A little detective work is needed, but a lot can be figured out just by pulling apart an image file. As an example, here’s a quick walkthrough of an image for [the Prettier code formatter][1].
+幸运的是，这个 Docker 镜像格式比它应有的样子透明多了。虽然还需要做一些侦查工作，但只要解剖一个镜像文件，就能发现很多东西。例如，这里有一个 [Prettier 代码格式][1]镜像可供快速浏览。
 
-First let’s get the Docker daemon to pull the image, then extract the image to a file:
+首先，让 Docker <ruby>守护进程<rt>daemon</rt></ruby>拉取镜像，然后将镜像提取到文件中：
 
 ```
 docker pull tmknom/prettier:2.0.5
 docker save tmknom/prettier:2.0.5 > prettier.tar
 ```
 
-Yes, the file is just an archive in the classic tarball format:
+是的，该文件只是一个典型 tarball 格式的归档文件：
 
 ```
 $ tar xvf prettier.tar
@@ -42,7 +42,7 @@ manifest.json
 repositories
 ```
 
-As you can see, Docker uses hashes a lot for naming things. Let’s have a look at the `manifest.json`. It’s in hard-to-read compacted JSON, but the [`jq` JSON Swiss Army knife][2] can pretty print it for us:
+如你所见，Docker 在命名时经常使用<ruby>哈希<rt>hash</rt></ruby>。我们看看 `manifest.json`。它在难以阅读的压缩 JSON 中，不过 [`jq` JSON Swiss Army knife][2]可以很好地打印 JSON：
 
 ```
 $ jq . manifest.json
@@ -61,7 +61,7 @@ $ jq . manifest.json
 ]
 ```
 
-Note that the three layers correspond to the three hash-named directories. We’ll look at them later. For now, let’s look at the JSON file pointed to by the `Config` key. It’s a little long, so I’ll just dump the first bit here:
+请注意，这三层对应三个 hash 命名的目录。我们以后再看。现在，让我们看看 `Config` 键指向的 JSON 文件。文件名有点长，所有我把第一点放在这里：
 
 ```
 $ jq . 88f38be28f05f38dba94ce0c1328ebe2b963b65848ab96594f8172a9c3b0f25b.json | head -n 20
@@ -87,9 +87,9 @@ $ jq . 88f38be28f05f38dba94ce0c1328ebe2b963b65848ab96594f8172a9c3b0f25b.json | h
     "Image": "sha256:93e72874b338c1e0734025e1d8ebe259d4f16265dc2840f88c4c754e1c01ba0a",
 ```
 
-The most interesting part is the `history` list, which lists every single layer in the image. A Docker image is a stack of these layers. Almost every statement in a Dockerfile turns into a layer that describes the changes to the image made by that statement. If you have a `RUN script.sh` statement that creates `really_big_file` that you then delete with `RUN rm really_big_file`, you actually get two layers in the Docker image: one that contains `really_big_file`, and one that contains a `.wh.really_big_file` tombstone to cancel it out. The overall image file isn’t any smaller. That’s why you often see Dockerfile statements chained together like `RUN script.sh && rm really_big_file` — it ensures all changes are coalesced into one layer.
+最重要的是 `history` 列表，它列出了镜像中的每一层。Docker 镜像由这些层堆叠而成。Dockerfile 中几乎每条命令都会变成一个层，描述该命令对镜像所做的更改。如果你执行 `RUN script.sh` 命令，创建 `really_big_file`，然后你用 `RUN rm really_big_file` 命令删除文件，Docker 镜像实际生成两层：一个包含 `really_big_file`，一个包含 `.wh.really_big_file` 记录来删除它。整个镜像文件大小不变。这就是为什么你会经常看到像 `RUN script.sh && rm really_big_file` 这样的 Dockerfile 命令链接在一起——它保障所有更改都合并到一层中。
 
-Here are all the layers recorded in the Docker image. Notice that most layers don’t change the filesystem image and are marked `"empty_layer": true`. Only three are non-empty, which matches up with what we saw before.
+以下是 Docker 镜像中记录的所有层。注意，大多数层不改变文件系统镜像，并且 `empty_layer` 标记为 true。以下只有三个层是非空的，与我们之前描述的相符。
 
 ```
 $ jq .history 88f38be28f05f38dba94ce0c1328ebe2b963b65848ab96594f8172a9c3b0f25b.json
@@ -162,11 +162,11 @@ m=${NODEJS_VERSION} &&     npm install -g prettier@${PRETTIER_VERSION} &&     np
 ]
 ```
 
-Fantastic! All the statements are right there in the `created_by` fields, so we can almost reconstruct the Dockerfile just from this. Almost. The `ADD` statement at the very top doesn’t actually give us the file we need to `ADD`. `COPY` statements are also going to be opaque. We also lose `FROM` statements because they expand out to all the layers inherited from the base Docker image.
+太棒了！所有的命令都在 `created_by` 字段中，我们几乎可以用这些命令重建 Dockerfile。但不是完全可以。最上面的 `ADD` 命令实际上没有给我们需要添加的文件。`COPY` 命令也没有全部信息。因为 `FROM` 命令会扩展到继承基础 Docker 镜像的所有层，所以可能会跟丢该命令。
 
-We can group the layers by Dockerfile by looking at the timestamps. Most layer timestamps are under a minute apart, representing how long each layer took to build. However, the first two layers are from `2020-04-24`, and the rest of the layers are from `2020-04-29`. This would be because the first two layers are from a base Docker image. Ideally we’d figure out a `FROM` statement that gets us that image, so that we have a maintainable Dockerfile.
+我们可以通过查看<ruby>时间戳<rt>timestamp</rt></ruby>，按 Dockerfile 对层进行分组。大多数层的时间戳相差不到一分钟，代表每一层构建所需的时间。但是前两层是 `2020-04-24`，其余的是 `2020-04-29`。这是因为前两层来自一个基础 Docker 镜像。理想情况下，我们可以找出一个 `FROM` 命令来获得这个镜像，这样我们就有了一个可维护的 Dockerfile。
 
-The `manifest.json` says that the first non-empty layer is `a9cc4ace48cd792ef888ade20810f82f6c24aaf2436f30337a2a712cd054dc97/layer.tar`. Let’s take a look:
+`manifest.json` 展示第一个非空层是 `a9cc4ace48cd792ef888ade20810f82f6c24aaf2436f30337a2a712cd054dc97/layer.tar`。让我们看看它：
 
 ```
 $ cd a9cc4ace48cd792ef888ade20810f82f6c24aaf2436f30337a2a712cd054dc97/
@@ -183,7 +183,7 @@ bin/chmod
 bin/chown
 ```
 
-Okay, that looks like it might be an operating system base image, which is what you’d expect from a typical Dockerfile. There are 488 entries in the tarball, and if you scroll through them, some interesting ones stand out:
+看起来它可能是一个<ruby>操作系统<rt>operating system</rt></ruby>基础镜像，这也是你期望从典型 Dockerfile 中看到的。Tarball 中有 488 个条目，如果你浏览一下，就会发现一些有趣的条目：
 
 ```
 ...
@@ -203,7 +203,7 @@ etc/conf.d/
 ...
 ```
 
-Sure enough, it’s an [Alpine][3] image, which you might have guessed if you noticed that the other layers used an `apk` command to install packages. Let’s extract the tarball and look around:
+果不其然，这是一个 [Alpine][3] 镜像，如果你注意到其他层使用 `apk` 命令安装软件包，你可能已经猜到了。让我们解压 tarball 看看：
 
 ```
 $ mkdir files
@@ -215,9 +215,9 @@ $ cat etc/alpine-release
 3.11.6
 ```
 
-If you pull `alpine:3.11.6` and extract it, you’ll find that there’s one non-empty layer inside it, and the `layer.tar` is identical to the `layer.tar` in the base layer of the Prettier image.
+如果你拉取、解压 `alpine:3.11.6`，你会发现里面有一个非空层，`layer.tar`与 Prettier 镜像基础层中的 `layer.tar` 是一样的。
 
-Just for the heck of it, what’s in the other two non-empty layers? The second layer is the main layer containing the Prettier installation. It has 528 entries, including Prettier, a bunch of dependencies and certificate updates:
+出于兴趣，另外两个非空层是什么？第二层是包含 Prettier 安装包的主层。它有 528 个条目，包含 Prettier、一堆依赖项和证书更新：
 
 ```
 ...
@@ -257,14 +257,14 @@ usr/share/ca-certificates/mozilla/Actalis_Authentication_Root_CA.crt
 ...
 ```
 
-The third layer is created by the `WORKDIR /work` statement, and it contains exactly one entry:
+第三层由 `WORKDIR /work` 命令创建，它只包含一个条目：
 
 ```
 $ tar tf 6c37da2ee7de579a0bf5495df32ba3e7807b0a42e2a02779206d165f55f1ba70/layer.tar
 work/
 ```
 
-[The original Dockerfile is in the Prettier git repo.][4]
+[原始 Dockerfile 在 Prettier 的 git repo 中][4]
 
 --------------------------------------------------------------------------------
 
@@ -272,7 +272,7 @@ via: https://theartofmachinery.com/2021/03/18/reverse_engineering_a_docker_image
 
 作者：[Simon Arneaud][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[DCOLIVERSUN](https://github.com/DCOLIVERSUN)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
