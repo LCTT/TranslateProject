@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wyxplus)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13252-1.html)
 
 学习如何用 C 语言来进行文件输入输出操作
 ======
