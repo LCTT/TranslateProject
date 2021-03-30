@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13253-1.html)
 
 用一个开源工具实现多线程 Python 程序的可视化
 ======
 
 > VizTracer 可以跟踪并发的 Python 程序，以帮助记录、调试和剖析。
 
-![丰富多彩的声波图][1]
+![](https://img.linux.net.cn/data/attachment/album/202103/30/230404xi9pox38ookk8xe2.jpg)
 
 并发是现代编程中必不可少的一部分，因为我们有多个核心，有许多需要协作的任务。然而，当并发程序不按顺序运行时，就很难理解它们。对于工程师来说，在这些程序中发现 bug 和性能问题不像在单线程、单任务程序中那么容易。
 
