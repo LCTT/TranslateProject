@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/newsflash-feedreader/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
