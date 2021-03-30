@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/android-raspberry-pi)
 [#]: author: (Sudeshna Sur https://opensource.com/users/sudeshna-sur)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: ( RiaXu)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -131,7 +131,7 @@ via: https://opensource.com/article/21/3/android-raspberry-pi
 
 作者：[Sudeshna Sur][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/ShuyRoy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
