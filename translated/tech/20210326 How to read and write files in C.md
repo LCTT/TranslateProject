@@ -25,9 +25,9 @@ C++ 标准库提供了 [ios_base][2] 类。该类充当所有 I/O 流的基类�
 
 该两种类型都是在头文件 `<fstream>` 中所定义。
 
-从 `ios_base` 继承的类在写入时可被视为数据接收器，在从其读取时可被视为数据源，与数据本身完全分离。这种面向对象的方法使 [关注点分离][5]separation of concerns<ruby>[关注点分离][5]<rt>separation of concerns</rt></ruby> 和 [依赖注入][6]dependency injection<ruby>[依赖注入][6]<rt>dependency injection</rt></ruby> 等概念易于实现。
+从 `ios_base` 继承的类在写入时可被视为数据接收器，在从其读取时可被视为数据源，与数据本身完全分离。这种面向对象的方法使 <ruby>[关注点分离][5]<rt>separation of concerns</rt></ruby> 和 <ruby>[依赖注入][6]<rt>dependency injection</rt></ruby> 等概念易于实现。
 
-### A simple example 一个简单的例子
+### 一个简单的例子
 
 本例程是非常简单：实例化了一个 `ofstream` 来写入，和实例化一个 `ifstream` 来读取。
 
