@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/ccc-input-output)
 [#]: author: (Stephan Avenwedde https://opensource.com/users/hansic99)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wyxplus)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
