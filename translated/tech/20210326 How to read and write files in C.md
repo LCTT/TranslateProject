@@ -10,7 +10,7 @@
 如何用 C++ 读写文件
 ======
 
-如果你知道如何在 C++ 中使用输入输出I/O<ruby>输入输出<rt>I/O</rt></ruby>流，那么你便能够（原则上）处理任何类型的输入输出设备。
+如果你知道如何在 C++ 中使用<ruby>输入输出<rt>I/O</rt></ruby>流，那么你便能够（原则上）处理任何类型的输入输出设备。
 
 ![Computer screen with files or windows open][1]
 
