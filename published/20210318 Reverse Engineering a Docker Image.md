@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (DCOLIVERSUN)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13258-1.html)
 
 一次 Docker 镜像的逆向工程
 ======
