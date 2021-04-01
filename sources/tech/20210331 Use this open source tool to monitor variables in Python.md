@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/monitor-debug-python)
 [#]: author: (Tian Gao https://opensource.com/users/gaogaotiantian)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
