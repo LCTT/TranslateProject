@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (DCOLIVERSUN)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13264-1.html)
 
 NewsFlash: 一款支持 Feedly 的现代开源 Feed 阅读器
 ======
