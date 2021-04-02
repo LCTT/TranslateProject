@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wyxplus)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13263-1.html)
 
 如何用 C++ 读写文件
 ======
