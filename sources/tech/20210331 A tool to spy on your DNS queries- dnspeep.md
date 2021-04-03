@@ -2,7 +2,7 @@
 [#]: via: (https://jvns.ca/blog/2021/03/31/dnspeep-tool/)
 [#]: author: (Julia Evans https://jvns.ca/)
 [#]: collector: (lujun9972)
-[#]: translator: (wyxplus)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
