@@ -4,11 +4,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13267-1.html)
 
 strace 可以解决什么问题？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202104/05/094825y66126r56z361rz1.jpg)
 
 昨天我 [在 Twitter 上询问大家用 strace 解决了什么问题？][1]，和往常一样，大家真的是给出了自己的答案! 我收到了大约 200 个答案，然后花了很多时间手动将它们归为 9 类。
 
