@@ -2,7 +2,7 @@
 [#]: via: (https://jvns.ca/blog/2021/04/03/what-problems-do-people-solve-with-strace/)
 [#]: author: (Julia Evans https://jvns.ca/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
