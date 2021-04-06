@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/21/2/linux-choice)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-# 选择 Linux 的5大好处
+选择 Linux 的5大好处
 
 ---
 
