@@ -7,9 +7,7 @@
 [#]: via: (https://opensource.com/article/21/2/linux-choice)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-选择 Linux 的5大好处
-
----
+# 选择 Linux 的5大好处
 
 Linux 的一大优点是多样化选择，选择激发了用户之间自由分享想法和解决方案。Linux 将如何激发你为这个社区做出贡献呢？
 
