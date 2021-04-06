@@ -7,56 +7,57 @@
 [#]: via: (https://opensource.com/article/21/2/linux-choice)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-5 benefits of choosing Linux
-======
-One of the great things about Linux is choice, and choice inspires users
-to freely share ideas and solutions. How will Linux inspire you to
-contribute to this community?
+# 选择 Linux 的5大好处
+
+---
+
+Linux 的一大优点是多样化选择，选择激发了用户之间自由分享想法和解决方案。Linux 将如何激发你为这个社区做出贡献呢？
+
 ![Hand putting a Linux file folder into a drawer][1]
 
-In 2021, there are more reasons why people love Linux than ever before. In this series, I'll share 21 different reasons to use Linux. This article discusses the benefit of choice Linux brings. 
+到了2021年，人​​们比以往任何时候都更有理由喜欢 Linux。在本系列中，我将分享21个使用 Linux 的理由。本文讨论选择 Linux 带来的好处。
 
-_Choice_ is one of the most misunderstood features of Linux. It starts with how many Linuxes there are to choose from. Distrowatch.org reports hundreds of available and active Linux distributions. Many of these distributions, of course, are hobby projects or extremely specific to some obscure requirement. Because it's open source, in fact, anyone can "re-spin" or "remix" an existing distribution of Linux, give it a new name, maybe a new default wallpaper, and call it their own. And while that may seem trivial, I see it as an indication of something very special.
+_选择_ 是 Linux 中被误解最深的特性之一。这种误解从可被选择的 Linux 发行版数量就开始了。Distrowatch.org 报告了数百种可用的和活跃的 Linux 发行版。当然，在这些发行版当中，许多都是业余爱好项目或者对于某些晦涩需求的特别版。因为它是开源的，所以实际上，任何人都可以“重新设计”或“重新混搭”现有的Linux发行版，赋予一个新名称，提供一个新的默认墙纸，然后称其为自己的作品。尽管这些修改似乎微不足道，但我认为这显示了 Linux 的一些特别之处。
 
-### Inspiration
+### 灵感
 
-Linux, it seems, inspires people, from the very moment they learn about it, to make it their own.
+Linux 似乎一直在启迪着人们，从了解它的那一刻起，到创造出自己的版本。
 
-There are dozens of companies spending millions of dollars to generate inspiration from their product. Commercials for technology overwhelmingly try to convince you that as long as you buy some product, you'll feel more connected to the people you care about, more creative, and more alive. Shot in 4k video with soft focus and played to the beat of cheerful and uplifting music, these advertisements are attempts to convince people to not only purchase but then also to support and advertise that company's product.
+有数十家公司花费数百万美元来从他们自己的产品中获取灵感。商业技术广告试着强硬地说服你，只要你购买某种产品，你就会与所关心的人建立更多的联系，更具创造力，更加充满活力。这些广告以柔和的焦点拍摄4k视频，并使用愉悦而振奋的背景音乐，试图说服人们不仅购买而且还要支持和宣传该公司的产品。
 
-Of course, Linux has essentially no marketing budget because Linux is a diverse collection of individuals, a body _discorporate_. Yet when people discover it, they are seemingly inspired to build their own version of it.
+当然，Linux 基本没有营销预算，因为 Linux 是个形形色色的大集合，*没有固定实体*。然而，当人们发现它的存在时候，他们似乎就被启发着去构建属于自己的版本。
 
-It's difficult to quantify amounts of inspiration, but there's obvious value to it, or else companies wouldn't spend money in an attempt to create it.
+量化灵感的数量是件难事，但是它显然很有价值，要不然那些公司不会花钱来尝试创造灵感。
 
-### Innovation
+### 革新
 
-Inspiration, however difficult it is to put a price tag on it, is valuable because of what it produces. Many Linux users have been inspired to create custom solutions to odd problems. Many of the problems we each solve seem trivial to most other people. Maybe you monitor moisture levels of your tomato plant's soil with a [Seeed micro-controller][2], or you have a script to search through an index of Python packages because you keep forgetting the names of libraries you import every day, or you've automated cleaning out your Downloads folder because dragging icons to the Trash is too much work. Whatever problem you've solved for yourself on Linux, it's a feature of the platform that you're inspired by the open technology you're running to make it work better for yourself.
+灵感，无论给它标价有多难，它都因它的生产创造而有价值。许多 Linux 用户受启发来为各种奇怪问题定制解决方案。大多数由我们各自解决的问题，对于其他大部分人而言，似乎微不足道：也许你使用 [Seeed微控制器][2] 来监控番茄植株土壤的水分含量；或者你使用脚本来搜索 Python 软件包的索引，因为你会忘记每天导入的库的名称；或者设置了自动清理下载文件夹，因为将文件图标拖进回收站这个活儿干太多了。不管你在使用 Linux 的过程中，为自己解决过什么问题，都是这个平台包含的特性之一，你被这个正在运行中的开放的技术所启发，使其更好地服务于你自己。
 
-### Staying out of the way
+### 开放策略
 
-Of course, neither inspiration nor innovation are exclusive properties of Linux. Other platforms do authentically produce inspiration in us, and we do innovate in small and huge ways. Computing has largely leveled most playing fields, and anything you can do on one OS, you can likely find a way to do on another.
+诚然，不论是灵感，还是创新，都不能算 Linux 独有的属性。其他平台也确实让我们激发灵感，我们也以或大或小大的方式进行创新。运算能力已在很大程度上拉平了操作系统的竞争领域，你在一个操作系统上可以完成的任何事，在另一个操作系统上或许都能找到对应的方法来完成。
 
-What many users find, however, is that the Linux operating system maintains a firm policy of staying out of your way when you have the idea of trying something that possibly nobody else has thought to try yet. This doesn't and cannot happen, by design, on a proprietary operating system because there's just no way to get into certain areas of the system because they don't happen to be open source. There are arbitrary blockades. You tend not to bump up against invisible walls when you're doing exactly what the OS expects you to do, but when you have it in mind to do something that makes sense only to you, your environment may fail to adapt.
+但是，许多用户发现，Linux 操作系统保留了坚定的开放策略，即当你尝试可能无人想到过的尝试时，Linux 不会阻挡你。这在闭源操作系统上不会发生，而且不可能发生，因为无法进入系统层级的某些区域，因为它们本身就是被设计为不开放源码的。有任意的封锁。当你完全按照操作系统的期望进行操作时，你不会碰到那些看不见的墙，但是当你明知要执行的操作只对你自己有意义的时候，你的系统环境可能变得无从适应。
 
-### Small choices and why they matter
+### 小小的选择，大大的意义
 
-Not all innovations are big or important, but collectively they make a big difference. The crazy ideas that millions of users have had are evident today in every part of Linux. They're in the ways that the KDE and GNOME desktops work, they're in [31 different text editors][3] each of them loved by someone, and countless plugins for browsers and media applications, in file systems and extended attributes, and in the millions of lines of the Linux kernel. And if just one of these features gives you an extra hour each day to spend with your family or friends or hobby, then it's by definition, to use an over-used phrase, "life-changing."
+并非所有创新都是大的或重要的，但总的来说，它们带来的变化并不小。如今，数百万用户的那些疯狂想法在 Linux 的各个部分中愈发显现。它们存在于 KDE 或 GNOME 桌面的工作方式中，存在于 [31种不同的文本编辑器][3] 中——每一种都有人喜爱，存在于不计其数的浏览器插件和多媒体应用程序中，存在于文件系统和扩展属性中，以及数以百万计的 Linux 内核代码中。而且，如果上述功能中的哪怕仅其中一项，能让你每天额外节省下一小时时间，陪家人、朋友或用在自己的业余爱好上，那么按照定义，套用一句老话就是，“改变生活”。
 
-### Connecting with a community
+###  在社区中交流
 
-An important part of open source is the sharing of work. Sharing code is the obvious, prevalent transaction of open source software, but I think there's a lot more to the act of sharing than just making a commit to Gitlab. When people share their ideas with one another, with no ulterior motive aside from potentially getting useful code contributions in return, we all recognize it as a gift. It feels very different from when you purchase software from a company, and it's even different from when a company shares open source code they've produced. The reality of open source is that it's made by humans for humans. There's a connection created when knowledge and inspiration are given freely. It's not something that a marketing campaign can replicate, and I think that we recognize that.
+开源行动的重要组成部分之一是共享工作。共享代码是开源软件中显而易见的、普遍流行的事务，但我认为，分享，可不仅仅是在 Gitlab 做一次提交那么简单。当人们彼此分享着自己的奇思妙想，除了获得有用的代码贡献作为回报外，再无其他动机，我们一致认为这是一种馈赠。这与你花钱从某公司购买软件时的感觉非常不同，甚至与得到某公司对外分享他们自己生产的开源代码时的感觉也有很大不同。开源的实质是，由全人类创造，服务于全人类。当知识和灵感可以被自由地分享时，人与人之间就建立了连接，这是市场营销学无法复制的东西，我认为我们都认同这一点。
 
-### Choice
+### 选择
 
-Linux isn't the only platform with a lot of choices. You can find several solutions to the same problem regardless of your OS, especially when you delve into open source software. However, the level of choice evident on Linux is indicative of what drives Linux forward: The invitation to collaborate. Some things created on Linux fade quickly away, others stay on your home computer for years doing whatever small mundane task you've automated, and others are so successful that they get borrowed by other platforms and become commonplace. It doesn't matter. Whatever you create on Linux, don't hesitate to add it to the cacophony of choice. You never know who it might inspire.
+Linux 并不是唯一拥有很多选择的平台。无论使用哪种操作系统，你都可以找到针对同一问题的多种解决方案，尤其是在深入研究开源软件的时候。但是，Linux 明显的决策水准指示了推动 Linux 前进的因素：诚邀协作。在 Linux 上，有些创造会很快消失，有些会在你家用电脑中保留数年——即便只是执行一些不起眼的自动化任务，然而有一些则非常成功，以至于被其他系统平台借鉴并变得司空见惯。没关系，无论你在 Linux 上创作出什么，都请毫不犹豫地把它加入千奇百怪的选择之中，你永远都不知道它可能会激发到谁的灵感。
 
---------------------------------------------------------------------------------
+---
 
 via: https://opensource.com/article/21/2/linux-choice
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[max27149](https://github.com/max27149)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
