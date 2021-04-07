@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/rust-programmer)
 [#]: author: (Mike Bursell https://opensource.com/users/mikecamel)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
