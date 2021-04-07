@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "lxbwolf"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13274-1.html"
 
 在 Linux 中把多个 Markdown 文件转换成 HTML 或其他格式
 ======
