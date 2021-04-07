@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13256-1.html)
 
 用 Ansible 自动化系统管理员的 5 个日常任务
 ======
 
 > 通过使用 Ansible 自动执行可重复的日常任务，提高工作效率并避免错误。
 
-![Tips and gears turning][1]
+![](https://img.linux.net.cn/data/attachment/album/202103/31/233904oo7q68eo2njfmf8o.jpg)
 
 如果你讨厌执行重复性的任务，那么我有一个提议给你，去学习 [Ansible][2]!
 
