@@ -3,16 +3,18 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
-Windows-Linux 双启动设置中显示时间错误？如何解决这个问题
+如何解决 Windows-Linux 双启动设置中显示时间错误的问题
 ======
 
-如果你[双启动 Windows 和 Ubuntu][1] 或任何其他 Linux 发行版，你可能会注意到两个操作系统之间的时间差异。
+![](https://img.linux.net.cn/data/attachment/album/202104/08/102102xaup3iofozn2uvbf.jpg)
 
-当你[使用 Linux][2] 时，它会显示正确的时间。但当你进入 Windows 时，它显示的时间是错误的。有时，情况正好相反，Linux 显示的是错误的时间，而 Windows 的时间是正确的。
+如果你 [双启动 Windows 和 Ubuntu][1] 或任何其他 Linux 发行版，你可能会注意到两个操作系统之间的时间差异。
+
+当你 [使用 Linux][2] 时，它会显示正确的时间。但当你进入 Windows 时，它显示的时间是错误的。有时，情况正好相反，Linux 显示的是错误的时间，而 Windows 的时间是正确的。
 
 特别奇怪的是，因为你已连接到互联网，并且已将日期和时间设置为自动使用。
 
@@ -38,7 +40,7 @@ timedatectl set-local-rtc 1
 
 让我用例子来解释一下。
 
-你看我在加尔各答 UTC+5:30 时区。安装后，当我把 [Ubuntu 中的时区][4]]设置为加尔各答时区时，Ubuntu 会把这个时间信息同步到硬件时钟上，但会有 5:30 的偏移，因为对于 Linux 来说它必须是 UTC。
+你看我在加尔各答 UTC+5:30 时区。安装后，当我把 [Ubuntu 中的时区][4] 设置为加尔各答时区时，Ubuntu 会把这个时间信息同步到硬件时钟上，但会有 5:30 的偏移，因为对于 Linux 来说它必须是 UTC。
 
 假设加尔各答时区的当前时间是 15:00，这意味着 UTC 时间是 09:30。
 
@@ -46,7 +48,7 @@ timedatectl set-local-rtc 1
 
 ![][5]
 
-同样，如果我在 Windows 中通过自动时区和时间按钮来设置正确的时间，你知道会发生什么吗？现在它将在系统上显示正确的时间（15:00），并将此信息（注意图片中的”同步你的时钟“选项）同步到硬件时钟。
+同样，如果我在 Windows 中通过自动时区和时间按钮来设置正确的时间，你知道会发生什么吗？现在它将在系统上显示正确的时间（15:00），并将此信息（注意图片中的“同步你的时钟”选项）同步到硬件时钟。
 
 如果你启动到 Linux，它会从硬件时钟读取时间，而硬件时钟是当地时间（15:00），但由于 Linux 认为它是 UTC 时间，所以它在系统时钟上增加了 5:30 的偏移。现在 Linux 显示的时间是 20:30，比实际时间超出晚了 5:30。
 
@@ -59,11 +61,9 @@ timedatectl set-local-rtc 1
   * 让 Windows 将硬件时钟作为 UTC 时间
   * 让 Linux 将硬件时钟作为本地时间
 
-
-
 在 Linux 中进行修改是比较容易的，因此我推荐使用第二种方法。
 
-现在 Ubuntu 和大多数其他 Linux 发行版都使用 systemd，因此你可以使用 timedatectl 命令来更改设置。
+现在 Ubuntu 和大多数其他 Linux 发行版都使用 systemd，因此你可以使用 `timedatectl` 命令来更改设置。
 
 你要做的是告诉你的 Linux 系统将硬件时钟（RTC）作为本地时间。你可以通过 `set-local-rtc` （为 RTC 设置本地时间）选项来实现：
 
@@ -90,7 +90,7 @@ via: https://itsfoss.com/wrong-time-dual-boot/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
