@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/cherry-picking-git)
 [#]: author: (Rajeev Bera https://opensource.com/users/acompiler)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
