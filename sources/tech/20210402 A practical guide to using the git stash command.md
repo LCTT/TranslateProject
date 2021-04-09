@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/git-stash)
 [#]: author: (Ramakrishna Pattnaik https://opensource.com/users/rkpattnaik780)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
