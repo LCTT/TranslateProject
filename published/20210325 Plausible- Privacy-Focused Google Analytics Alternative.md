@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13283-1.html)
 
 Plausible：注重隐私的 Google Analytics 替代方案
 ======
