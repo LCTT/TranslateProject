@@ -3,24 +3,24 @@
 [#]: author: (Ramakrishna Pattnaik https://opensource.com/users/rkpattnaik780)
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
 git stash 命令实用指南
 ======
 
->  学习如何使用 `git stash` 命令，以及何时应该使用它。
+> 学习如何使用 `git stash` 命令，以及何时应该使用它。
 
-![女人在笔记本上坐在窗口][1]
+![](https://img.linux.net.cn/data/attachment/album/202104/12/232830chuyr6lkzevrfuzr.jpg)
 
-版本控制是软件开发人员日常生活中不可分割的一部分。很难想象有哪个团队在开发软件时不使用版本控制工具。同样也很难想象有哪个开发者没有使用过（或没有听说过）Git。在 2018 年 Stackoverflow 开发者调查中，74298 名参与者中 87.2% 的人 [使用 Git][2] 进行版本控制。
+版本控制是软件开发人员日常生活中不可分割的一部分。很难想象有哪个团队在开发软件时不使用版本控制工具。同样也很难想象有哪个开发者没有使用过（或没有听说过）Git。在 2018 年 Stackoverflow 开发者调查中，74298 名参与者中有 87.2% 的人 [使用 Git][2] 进行版本控制。
 
-Linus Torvalds 在 2005 年创建了 Git 用于开发 Linux 内核。本文将介绍 `git stash` 命令，并探讨一些有用的暂存修改的选项。本文假定你对 [Git 概念][3] 有基本的了解，并对工作树、暂存区和相关命令有良好的理解。
+Linus Torvalds 在 2005 年创建了 Git 用于开发 Linux 内核。本文将介绍 `git stash` 命令，并探讨一些有用的暂存变更的选项。本文假定你对 [Git 概念][3] 有基本的了解，并对工作树、暂存区和相关命令有良好的理解。
 
 ### 为什么 git stash 很重要？
 
-首先要明白为什么在 Git 中暂存变更很重要。假设 Git 没有暂存变更的命令。当你正在一个有两个分支（A 和 B）的仓库上工作时，这两个分支已经分叉了一段时间，并且有不同的头。当你正在处理 A 分支的一些文件时，你的团队要求你修复 B 分支的一个错误。你迅速将你的修改保存到 A 分支，并尝试用 `git checkout B` 来签出 B 分支。Git 立即中止了这个操作，并抛出错误：“你对以下文件的本地修改会被该签出覆盖……请在切换分支之前提交你的修改或将它们暂存起来。”
+首先要明白为什么在 Git 中暂存变更很重要。假设 Git 没有暂存变更的命令。当你正在一个有两个分支（A 和 B）的仓库上工作时，这两个分支已经分叉了一段时间，并且有不同的头。当你正在处理 A 分支的一些文件时，你的团队要求你修复 B 分支的一个错误。你迅速将你的修改保存到 A 分支（但没有提交），并尝试用 `git checkout B` 来签出 B 分支。Git 会立即中止了这个操作，并抛出错误：“你对以下文件的本地修改会被该签出覆盖……请在切换分支之前提交你的修改或将它们暂存起来。”
 
 在这种情况下，有几种方法可以启用分支切换：
 
@@ -31,7 +31,7 @@ Linus Torvalds 在 2005 年创建了 Git 用于开发 Linux 内核。本文将�
 
 `git stash` 将未提交的改动保存在本地，让你可以进行修改、切换分支以及其他 Git 操作。然后，当你需要的时候，你可以重新应用这些存储的改动。暂存是本地范围的，不会被 `git push` 推送到远程。
 
-### 如何使用git stash
+### 如何使用 git stash
 
 下面是使用 `git stash` 时要遵循的顺序：
 
@@ -54,7 +54,7 @@ $ git stash
 Saved working directory and index state WIP on master; d7435644 Feat: configure graphql endpoint
 ```
 
-默认情况下，`git stash` 存储（或“暂存”）未提交的更改（已暂存和未暂存的文件），并忽略未跟踪和忽略的文件。通常情况下，你不需要暂存未跟踪和忽略的文件，但有时它们可能会干扰你在代码库中要做的其他事情。
+默认情况下，`git stash` 存储（或称之为“暂存”）未提交的更改（已暂存和未暂存的文件），并忽略未跟踪和忽略的文件。通常情况下，你不需要暂存未跟踪和忽略的文件，但有时它们可能会干扰你在代码库中要做的其他事情。
 
 你可以使用附加选项让 `git stash` 来处理未跟踪和忽略的文件：
 
@@ -212,7 +212,7 @@ via: https://opensource.com/article/21/4/git-stash
 作者：[Ramakrishna Pattnaik][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
