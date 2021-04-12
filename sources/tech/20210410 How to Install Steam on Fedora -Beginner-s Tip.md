@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/install-steam-fedora/)
 [#]: author: (John Paul https://itsfoss.com/author/john/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
