@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/python-package-index-json-apis-requests)
 [#]: author: (Ben Nuttall https://opensource.com/users/bennuttall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
