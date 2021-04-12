@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/hedy-teach-code)
 [#]: author: (Joshua Allen Holm https://opensource.com/users/holmja)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
