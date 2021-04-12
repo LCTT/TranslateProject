@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13290-1.html)
 
 用 Hedy 教人编程
 ======
 
 > Hedy 是一种专门为教人编程而设计的新型编程语言。
 
-!["教师还是学习者?"][1]
+![](https://img.linux.net.cn/data/attachment/album/202104/12/111814w62da2sannsd2q76.jpg)
 
 学习编程既要学习编程逻辑，又要学习特定编程语言的语法。我在大学上第一堂编程课的时候，教的语言是 C++。第一个代码例子是基本的 “Hello World” 程序，就像下面的例子。
 
