@@ -7,20 +7,21 @@
 [#]: via: (https://opensource.com/article/20/7/systemd-timers)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-Use systemd timers instead of cronjobs
+使用systemd定时器代替cronjobs
 ======
 Timers provide finer-grained control of events than cronjobs.
+定时器提供了比cronjob更为细粒度的事件控制。
 ![Team checklist][1]
 
-I am in the process of converting my [cron][2] jobs to systemd timers. I have used timers for a few years, but usually, I learned just enough to perform the task I was working on. While doing research for this [systemd series][3], I learned that systemd timers have some very interesting capabilities.
+我正在致力于将我的[cron][2]jobs迁移到systemd定时器上。我已经使用定时器多年了，通常来说，我的学识足以支撑我当前的工作。在我研究[systemd series][3]的过程中，我发现systemd定时器有一些非常有意思的能力。
 
-Like cron jobs, systemd timers can trigger events—shell scripts and programs—at specified time intervals, such as once a day, on a specific day of the month (perhaps only if it is a Monday), or every 15 minutes during business hours from 8am to 6pm. Timers can also do some things that cron jobs cannot. For example, a timer can trigger a script or program to run a specific amount of time after an event such as boot, startup, completion of a previous task, or even the previous completion of the service unit called by the timer.
+与cronjobs类似，systemd定时器可以在特定的时间间隔触发事件--shell脚本和程序，例如每天一次，在一个月中的特定某一天（或许只有在周一生效），或在从上午8点到下午6点的工作时间内每隔15分钟一次。定时器也可以做到cronjob无法做到的一些事情。举个例子，一个定时器可以在特定事件发生后的一段时间后触发一段脚本或者程序去执行，例如开机，启动，上个任务完成，甚至于定时器调用的上个服务单元的完成。
 
-### System maintenance timers
+### 系统维护的计时器
 
-When Fedora or any systemd-based distribution is installed on a new system, it creates several timers that are part of the system maintenance procedures that happen in the background of any Linux host. These timers trigger events necessary for common maintenance tasks, such as updating system databases, cleaning temporary directories, rotating log files, and more.
+当在一个新系统上安装Fedora或者是任意一个基于systemd的发行版时，它会在Linux宿主机的后台中创建多个定时器作为系统维护过程的一部分。这些定时器会触发事件来执行必要的日常维护任务，比如更新系统数据库，清理临时目录，轮转日志文件，和更多其他事件。
 
-As an example, I'll look at some of the timers on my primary workstation by using the `systemctl status *timer` command to list all the timers on my host. The asterisk symbol works the same as it does for file globbing, so this command lists all systemd timer units:
+作为例子，我会查看一些我的主要工作站上的定时器，通过执行`systemctl status *timer`命令来展示所有主机上的定时器。星号的作用于文件遍历相同，所以这个命令会列出所有的systemd定时器单元。
 
 
 ```
