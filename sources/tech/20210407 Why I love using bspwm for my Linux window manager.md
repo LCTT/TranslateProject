@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/bspwm-linux)
 [#]: author: (Stephen Adams https://opensource.com/users/stevehnh)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
