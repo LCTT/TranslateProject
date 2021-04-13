@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/open-source-competitive-advantage)
 [#]: author: (Jason Blais https://opensource.com/users/jasonblais)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
