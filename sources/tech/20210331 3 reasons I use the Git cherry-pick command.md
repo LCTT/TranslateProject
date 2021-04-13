@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/git-cherry-pick)
 [#]: author: (Manaswini Das https://opensource.com/users/manaswinidas)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
