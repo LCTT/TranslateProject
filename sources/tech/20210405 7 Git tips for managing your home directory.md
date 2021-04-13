@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/git-home)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (stevenzdg988)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -122,7 +122,7 @@ via: https://opensource.com/article/21/4/git-home
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[stevenzdg988](https://github.com/stevenzdg988)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
