@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/groff-programmer)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (liweitianux)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
