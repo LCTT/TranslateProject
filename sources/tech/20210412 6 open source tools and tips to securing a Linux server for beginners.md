@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/securing-linux-servers)
 [#]: author: (Sahana Sreeram https://opensource.com/users/sahanasreeram01gmailcom)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
