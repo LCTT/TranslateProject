@@ -2,15 +2,14 @@
 [#]: via: (https://opensource.com/article/21/4/linux-encryption)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 
 Create an encrypted file vault on Linux
 ======
-Use Linux Unified Key Setup to create an encrypted vault for sensitive
-files on a physical drive or cloud storage.
+Use Linux Unified Key Setup to create an encrypted vault for sensitive files on a physical drive or cloud storage.
 ![Secure safe][1]
 
 Recently, I demonstrated how to [implement full-drive encryption][2] on Linux with LUKS and the `cryptsetup` command. While encrypting a whole drive is useful in many cases, there are reasons you might not want to encode an entire drive. For instance, you might require a drive to work across several platforms, some of which may not have Linux Unified Key Setup ([LUKS][3]) integration. Furthermore, it's the 21st century, the cloud exists, and you may not be using a physical drive for all your data.
