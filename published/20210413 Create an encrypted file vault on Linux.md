@@ -3,16 +3,16 @@
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13296-1.html)
 
 在 Linux 上创建一个加密文件保险库
 ======
 
 > 使用 Linux 统一密钥设置（LUKS）为物理驱动器或云存储上的敏感文件创建一个加密保险库。
 
-![安全保险库][1]
+![](https://img.linux.net.cn/data/attachment/album/202104/14/151220l5zkkxiukgzix54k.jpg)
 
 最近，我演示了如何在 Linux 上使用<ruby>统一密钥设置<rt>Linux Unified Key Setup</rt></ruby>（[LUKS][3]）和 `cryptsetup` 命令 [实现全盘加密][2]。虽然加密整个硬盘在很多情况下是有用的，但也有一些原因让你不想对整个硬盘进行加密。例如，你可能需要让一个硬盘在多个平台上工作，其中一些平台可能没有集成 [LUKS][3]。此外，现在是 21 世纪，由于云的存在，你可能不会使用物理硬盘来处理所有的数据。
 
