@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/network-bound-disk-encryption-with-stratis/)
 [#]: author: (briansmith https://fedoramagazine.org/author/briansmith/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
