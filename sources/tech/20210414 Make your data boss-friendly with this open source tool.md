@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/visualize-data-eda)
 [#]: author: (Juanjo Ortilles https://opensource.com/users/jortilles)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
