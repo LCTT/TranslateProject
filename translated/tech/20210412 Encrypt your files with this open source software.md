@@ -3,14 +3,16 @@
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
-用这个开源软件加密你的文件
+用开源的 VeraCrypt 加密你的文件
 ======
-VeraCrypt 提供跨平台的开源文件加密功能。
-![Lock][1]
+
+> VeraCrypt 提供跨平台的开源文件加密功能。
+
+![](https://img.linux.net.cn/data/attachment/album/202104/17/110244p1g4tbpnw00tqwq3.jpg)
 
 许多年前，有一个名为 [TrueCrypt][2] 的加密软件。它的源码是可以得到的，尽管没有任何人声称曾对它进行过审计或贡献过。它的作者是（至今仍是）匿名的。不过，它是跨平台的，易于使用，而且真的非常有用。
 
@@ -20,7 +22,7 @@ TrueCrypt 最终关闭了，但一个名为 VeraCrypt 的替代项目迅速兴�
 
 ### 安装 VeraCrypt
 
-你可以从 [VeraCrypt 下载页面][4]下载相应的安装文件，之后在所有主流平台上安装 VeraCrypt。
+你可以从 [VeraCrypt 下载页面][4] 下载相应的安装文件，之后在所有主流平台上安装 VeraCrypt。
 
 另外，你也可以自己从源码构建它。在 Linux 上，它需要 wxGTK3、makeself 和通常的开发栈（Binutils、GCC 等）。
 
@@ -28,15 +30,13 @@ TrueCrypt 最终关闭了，但一个名为 VeraCrypt 的替代项目迅速兴�
 
 ### 创建一个 VeraCrypt 卷
 
-如果你刚接触 VeraCrypt，你必须先创建一个 VeraCrypt 加密卷（否则，你没有任何东西可以解密）。在 VeraCrypt 窗口中，点击左侧的 **Create Volume** 按钮。
+如果你刚接触 VeraCrypt，你必须先创建一个 VeraCrypt 加密卷（否则，你没有任何东西可以解密）。在 VeraCrypt 窗口中，点击左侧的 “Create Volume” 按钮。
 
 ![Creating a volume with VeraCrypt][5]
 
-（Seth Kenlon, [CC BY-SA 4.0][6]）
+在出现的 VeraCrypt 的卷创建向导窗口中，选择要创建一个加密文件容器还是要加密整个驱动器或分区。向导将为你的数据创建一个保险库，所以请按照提示进行操作。
 
-在出现的 VeraCrypt 的**卷创建向导**窗口中，选择要创建一个加密文件容器还是要加密整个驱动器。向导将为你的数据创建一个保险库，所以请按照提示进行操作。
-
-在本文中，我创建了一个文件容器。VeraCrypt 容器和其他文件很像：它保存在硬盘、外置硬盘、云存储或其他任何你能想到的存储数据的地方。与其他文件一样，它可以被移动、复制和删除。与大多数其他文件不同的是，它可以_容纳_更多的文件，这就是为什么我认为它是一个“保险库”，而 VeraCrypt 开发者将其称为“容器”。它的开发者将 VeraCrypt 文件称为“容器”，因为它可以包含其他数据对象；它与 LXC、Kubernetes 和其他现代 IT 机制所流行的容器技术无关。
+在本文中，我创建了一个文件容器。VeraCrypt 容器和其他文件很像：它保存在硬盘、外置硬盘、云存储或其他任何你能想到的存储数据的地方。与其他文件一样，它可以被移动、复制和删除。与大多数其他文件不同的是，它可以_容纳_更多的文件，这就是为什么我认为它是一个“保险库”，而 VeraCrypt 开发者将其称为“容器”。它的开发者将 VeraCrypt 文件称为“容器”，是因为它可以包含其他数据对象；它与 LXC、Kubernetes 和其他现代 IT 机制所流行的容器技术无关。
 
 #### 选择一个文件系统
 
@@ -46,7 +46,7 @@ TrueCrypt 最终关闭了，但一个名为 VeraCrypt 的替代项目迅速兴�
 
 ### 挂载 VeraCrypt 加密卷
 
-当你创建了 VeraCrypt 卷，你就可以在 VeraCrypt 窗口中加载它。要挂载一个加密库，点击右侧的 **Select File** 按钮。选择你的加密文件，选择 VeraCrypt 窗口上半部分的一个编号栏，然后点击位于 VeraCrypt 窗口左下角的 **Mount** 按钮。
+当你创建了 VeraCrypt 卷，你就可以在 VeraCrypt 窗口中加载它。要挂载一个加密库，点击右侧的 “Select File” 按钮。选择你的加密文件，选择 VeraCrypt 窗口上半部分的一个编号栏，然后点击位于 VeraCrypt 窗口左下角的 “Mount” 按钮。
 
 你挂载的卷在 VeraCrypt 窗口的可用卷列表中，你可以通过文件管理器访问该卷，就像访问一个外部驱动器一样。例如，在 KDE 上，我打开 [Dolphin][7]，进入 `/media/veracrypt1`，然后我就可以把文件复制到我的保险库里。
 
@@ -58,9 +58,7 @@ TrueCrypt 最终关闭了，但一个名为 VeraCrypt 的替代项目迅速兴�
 
 ![Mounting a VeraCrypt volume][8]
 
-（Seth Kenlon, [CC BY-SA 4.0][6]）
-
-关闭 VeraCrypt 容器和打开容器一样简单。在 VeraCrypt 窗口中选择列出的卷，然后点击 **Dismount**。你就不再能访问保险库中的文件，其他人也不会再有访问权。
+关闭 VeraCrypt 容器和打开容器一样简单。在 VeraCrypt 窗口中选择列出的卷，然后点击 “Dismount”。你就不能访问保险库中的文件了，其他人也不会再有访问权。
 
 ### VeraCrypt 轻松实现跨平台加密
 
@@ -73,7 +71,7 @@ via: https://opensource.com/article/21/4/open-source-encryption
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
