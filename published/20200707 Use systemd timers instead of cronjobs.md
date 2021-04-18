@@ -291,15 +291,15 @@ AccuracySec=1us
 
 时间跨度可用于指定所需的精度，以及定义重复事件或一次性事件的时间跨度。它能识别以下单位：
 
-  * `usec`，`us`，`µs`
-  * `msec`，`ms`
-  * `seconds`，`second`，`sec`，`s`
-  * `minutes`，`minute`，`min`，`m`
-  * `hours`，`hour`，`hr`，`h`
-  * `days`，`day`，`d`
-  * `weeks`，`week`，`w`
-  * `months`，`month`，`M`（定义为 30.44 天）
-  * `years`，`year`，`y`（定义为 365.25 天）
+  * `usec`、`us`、`µs`
+  * `msec`、`ms`
+  * `seconds`、`second`、`sec`、`s`
+  * `minutes`、`minute`、`min`、`m`
+  * `hours`、`hour`、`hr`、`h`
+  * `days`、`day`、`d`
+  * `weeks`、`week`、`w`
+  * `months`、`month`、`M`（定义为 30.44 天）
+  * `years`、`year`、`y`（定义为 365.25 天）
 
 所有 `/usr/lib/systemd/system` 中的定时器都指定了一个更宽松的时间精度，因为精准时间没那么重要。看看这些系统创建的定时器的时间格式：
 
