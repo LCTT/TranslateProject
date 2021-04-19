@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13311-1.html)
 [#]: subject: (Getting started with Stratis encryption)
 [#]: via: (https://fedoramagazine.org/getting-started-with-stratis-encryption/)
 [#]: author: (briansmith https://fedoramagazine.org/author/briansmith/)
@@ -10,15 +10,15 @@
 Stratis 加密入门
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202104/19/094919orzaxwl5axiqqfiu.jpg)
 
-Stratis 在其 [官方网站][2] 上被描述为“_易于使用的 Linux 本地存储管理”。请看这个 [短视频][3]，快速演示基础知识。该视频是在 Red Hat Enterprise Linux 8 系统上录制的。视频中显示的概念也适用于 Fedora 中的 Stratis。
+Stratis 在其 [官方网站][2] 上被描述为“_易于使用的 Linux 本地存储管理_”。请看这个 [短视频][3]，快速演示基础知识。该视频是在 Red Hat Enterprise Linux 8 系统上录制的。视频中显示的概念也适用于 Fedora 中的 Stratis。
 
 Stratis 2.1 版本引入了对加密的支持。继续阅读以了解如何在 Stratis 中开始加密。
 
 ### 先决条件
 
-加密需要 Stratis 2.1 或更高版本。这篇文章中的例子使用的是 Fedora 33 的预发布版本。 Stratis 2.1 将用在 Fedora 33 的最终版本中。
+加密需要 Stratis 2.1 或更高版本。这篇文章中的例子使用的是 Fedora 33 的预发布版本。Stratis 2.1 将用在 Fedora 33 的最终版本中。
 
 你还需要至少一个可用的块设备来创建一个加密池。下面的例子是在 KVM 虚拟机上完成的，虚拟磁盘驱动器为 5GB（`/dev/vdb`）。
 
@@ -190,7 +190,7 @@ via: https://fedoramagazine.org/getting-started-with-stratis-encryption/
 作者：[briansmith][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
