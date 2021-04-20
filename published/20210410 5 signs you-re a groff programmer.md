@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (liweitianux)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13316-1.html)
 
 groff 程序员的 5 个标志
 ======
