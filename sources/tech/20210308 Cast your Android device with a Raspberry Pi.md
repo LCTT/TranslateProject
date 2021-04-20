@@ -2,34 +2,36 @@
 [#]: via: (https://opensource.com/article/21/3/android-raspberry-pi)
 [#]: author: (Sudeshna Sur https://opensource.com/users/sudeshna-sur)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (RiaXu)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 
-Cast your Android device with a Raspberry Pi
+使用树莓派投射你的安卓设备
 ======
-Use Scrcpy to turn your phone screen into an app running alongside your
-applications on a Raspberry Pi or any other Linux-based device.
+使用Scrcpy可以把你的手机屏幕变成一个应用，与在树莓派或任何其他基于Linux的设备上的应用一起运行。
 ![A person looking at a phone][1]
 
-It's hard to stay away from the gadgets we use on a daily basis. In the hustle and bustle of modern life, I want to make sure I don't miss out on the important notifications from friends and family that pop up on my phone screen. I'm also busy and do not want to get lost in distractions, and picking up a phone and replying to messages tends to be distracting.
+要远离我们日常使用的电子产品是很难的。在熙熙攘攘的现代生活中，我想确保我不会错过手机屏幕上弹出的来自朋友和家人的重要信息。我很忙而且不希望迷失在令人分心的事情中，但是拿起手机并且恢复信息往往会使我分心。
 
-To further complicate matters, there are a lot of devices out there. Luckily, most of them, from powerful workstations to laptops and even the humble Raspberry Pi, can run Linux. Because they run Linux, almost every solution I find for one device is a perfect fit for the others.
 
-### One size fits all
+更糟糕的是，还有很多其他的设备。幸运地是，大多数的设备（从功能强大的笔记本电脑到甚至不起眼的树莓派）都可以运行Linux。因为它们运行Linux，所以我找到的解决方案几乎都适用于其他设备。
 
-I wanted a way to unify the different sources of data in my life on whatever screen I am staring at.
 
-I decided to solve this problem by copying my phone's screen onto my computer. In essence, I made my phone into an app running alongside all of my other applications. This helps me keep my attention on my desktop, prevents me from mentally wandering away, and makes it easier for me to reply to urgent notifications.
+### 万全之策
 
-Sound appealing? Here's how you can do it too.
+我想要一种无论我使用什么屏幕，都能统一我生活中不同来源的数据的方法。
 
-### Set up Scrcpy
+我决定通过把手机屏幕复制到电脑上来解决这个问题。本质上，我把手机变成了一个应用，可以和其他所有程序运行在一起。这个有助于我将注意力集中在桌面上，防止我走神，并使我更容易回复紧急通知。
 
-[Scrcpy][2], commonly known as Screen Copy, is an open source screen-mirroring tool that displays and controls Android devices from Linux, Windows, or macOS. Communication between the Android device and the computer is primarily done over a USB connection and Android Debug Bridge (ADB). It uses TCP/IP and does not require any root access.
+听起来有吸引力吗？你也可以这样做。
 
-Scrcpy's setup and configuration are very easy. If you're running Fedora, you can install it from a Copr repository:
+### 设置Scrcpy
+
+[Scrcpy][2], 通常被称为屏幕复制（Screen Copy），是一个开源屏幕镜像工具，它可以在Linux、Windows或者MacOS上显示和控制安卓设备。安卓设备和计算机之间的通信主要是通过USB连接和安卓调试桥（Android Debug Bridge， ADB）。它使用TCP/IP，且不需要root权限访问。
+
+
+Scrcpy的设置和配置非常简单。如果你正在运行Fedora，你可以从Copr仓库安装它：
 
 
 ```
@@ -37,32 +39,32 @@ $ sudo dnf copr enable zeno/scrcpy
 $ sudo dnf install scrcpy -y
 ```
 
-On Debian or Ubuntu:
+在Debian或者Ubuntu上：
 
 
 ```
 `$ sudo apt install scrcpy`
 ```
 
-You can also compile scrcpy yourself. It doesn't take long to build, even on a Raspberry Pi, using the instructions on [scrcpy's GitHub page][3].
+你也可以自己编译Scrcpy。即使是在树莓派上，使用[Scrcpy的Github主页][3]上的说明来构建也不需要很长时间。
 
-### Set up the phone
+### 设置手机
 
-Once scrcpy is installed, you must enable USB debugging and authorize each device (your Raspberry Pi, laptop, or workstation) as a trusted controller.
+Scrcpy安装好后，你必须启用USB调试并授权每个设备（你的树莓派、笔记本电脑或者工作站）为受信任的控制器。
 
-Open the **Settings** app on your Android and scroll down to **Developer options.** If Developer options is not activated, follow Android's [instructions to unlock it][4].
+打开安卓上的**设置**应用程序。如果**开发者选项**没有被激活，按照安卓的[说明来解锁它][4]。
 
-Next, enable **USB debugging**.
+接下来，启用**USB调试**。
 
 ![Enable USB Debugging option][5]
 
 (Sudeshna Sur, [CC BY-SA 4.0][6])
 
-Then connect the phone to your Raspberry Pi or laptop (or whatever device you're using) over USB and set the mode to [PTP][7], if that's an option. If your phone doesn't use PTP, set the mode your phone uses for transferring files (rather than, for instance, serving as a tethering or MIDI device).
+然后通过USB将手机连接到你的树莓派或者笔记本电脑（或者你正在使用的任何设备），如果可以选择的话，将模式设置为[PTP][7]。如果你的手机不能使用PTP，将你的手机设置为用于传输文件的模式（而不是，如，作为一个捆绑或者MIDI设备）。
 
-Your phone will probably prompt you to authorize your computer, identified by its RSA fingerprint. You only have to do this the first time you connect; after that, your phone will recognize and trust your computer.
+你的手机可能会提示你授权你的电脑，这个是会通过它的RSA指纹进行识别的。你只需要在你第一次连接的时候操作即可，在之后你的手机会识别并信任你的计算机。
 
-Confirm the setting with the `lsusb` command:
+使用`lsusb`命令确认设置：
 
 
 ```
@@ -77,53 +79,53 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
-Then execute `$ scrcpy` to launch it with the default settings.
+然后执行`$scrcpy`在默认设置下运行。
 
 ![Scrcpy running on a Raspberry Pi][8]
 
 (Opensource.com, [CC BY-SA 4.0][6])
 
-Performance and responsiveness vary depending on what device you're using to control your mobile. On a Pi, some of the animations can be slow, and even the response sometimes lags. Scrcpy provides an easy fix for this: Reducing the bitrate and resolution of the image scrcpy displays makes it easier for your computer to keep up. Do this with:
+性能和响应能力取决于你使用什么设备来控制你的手机。在一个派上，一些动画可能会变慢，甚至有时候会响应滞后。Scrcpy提供了一个简单的解决办法：降低scrcpy显示的图像的位速率和分辨率使得你的计算机能够容易显示动画。使用以下命令来实现：
 
 
 ```
 `$ scrcpy --bit-rate 1M --max-size 800`
 ```
 
-Try different values to find the one you prefer. To make it easier to type, once you've settled on a command, consider [making your own Bash alias][9].
+尝试不同的值来找到一个适合你的值。为了使键入更方便，在选定一个命令之后，可以考虑[创建自己的Bash别名][9]。
 
-### Cut the cord
+### 冲破束缚
 
-Once scrcpy is running, you can even connect your mobile and your computer over WiFi. The scrcpy installation process also installs `adb`, a command to communicate with Android devices. Scrcpy also uses this command to communicate with your device and `adb` can connect over TCP/IP.
+一旦Scrcpy开始运行，你甚至可以通过WIFI连接你的手机和计算机。Scrcpy安装过程也会安装`adb`，它是一个完成安卓设备之间通信的命令。Scrcpy也可以使用这个命令与设备通信，`adb`可以通过TCP/IP连接。
 
 ![Scrcpy running on a computer][10]
 
 (Sudeshna Sur, [CC BY-SA 4.0][6])
 
-To try it, make sure your phone is connected over WiFi on the same wireless network your computer is using. Do NOT disconnect your phone from USB yet!
+试试吧，请确保你的手机通过WIFI连在与你的计算机所使用的相同的无线网络上。依然不要断开你的手机与USB的连接！
 
-Next, get your phone's IP address by navigating to **Settings** and selecting **About phone**. Look at the **Status** option to get your address. It usually starts with 192.168 or 10.
+接下来，通过手机中的**设置**，选择**关于手机**来获取你手机的IP地址。查看**状态**选项来获得你的地址。它通常是192.168或者10开头。
 
-Alternately, you can get your mobile's IP address using `adb`:
+或者，你也可以使用`adb`来获得你手机的IP地址：
 
 
 ```
 $ adb shell ip route | awk '{print $9}'
 
-To connect to your device over WiFi, you must enable TCP/IP connections. This, you must do through the adb command:
+为了通过WIFI连接你的设备，你必须打开TCP/IP连接。也就是说你必须通过adb命令：
 $ adb tcpip 5555
-Now you can disconnect your mobile from USB.
-Whenever you want to connect over WiFi, first connect to the mobile with the command adb connect. For instance, assuming my mobile's IP address is 10.1.1.22, the command is:
+现在你可以断开手机和USB的连接了。
+任何你想通过WIFI连接的时候，首先需要通过adb命令连接你的手机。例如，假设我的手机IP地址是10.1.1.22，命令如下：
 $ adb connect 10.1.1.22:5555
 ```
 
-Once it's connected, you can run scrcpy as usual.
+连接好之后，你就可以像往常一样运行Scrcpy了。
 
-### Remote control
+### 远程控制
 
-Scrcpy is easy to use. You can try it in a terminal or as [a GUI application][11].
+Scrcpy很容易使用。你可以在终端或者[一个图形界面应用][11]中尝试它。
 
-Do you use another screen-mirroring application? If so, let us know about it in the comments.
+你是否在使用另一个屏幕镜像？如果有的话，请在评论中告诉我们吧。
 
 --------------------------------------------------------------------------------
 
