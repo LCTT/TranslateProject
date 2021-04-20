@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/something-bugging-you-in-fedora-linux-lets-get-it-fixed/)
 [#]: author: (Matthew Miller https://fedoramagazine.org/author/mattdm/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
