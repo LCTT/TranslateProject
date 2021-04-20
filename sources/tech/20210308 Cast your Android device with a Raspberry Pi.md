@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/android-raspberry-pi)
 [#]: author: (Sudeshna Sur https://opensource.com/users/sudeshna-sur)
 [#]: collector: (lujun9972)
-[#]: translator: ( RiaXu)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
