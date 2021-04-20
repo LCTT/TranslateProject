@@ -2,10 +2,10 @@
 [#]: via: (https://opensource.com/article/21/3/android-raspberry-pi)
 [#]: author: (Sudeshna Sur https://opensource.com/users/sudeshna-sur)
 [#]: collector: (lujun9972)
-[#]: translator: (RiaXu)
+[#]: translator: (ShuyRoy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13314-1.html)
 
 将你的安卓手机屏幕投射到 Linux
 ======
