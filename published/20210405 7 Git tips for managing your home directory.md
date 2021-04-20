@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (stevenzdg988)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13313-1.html)
 
 7个管理家目录的 Git 技巧
 ======
