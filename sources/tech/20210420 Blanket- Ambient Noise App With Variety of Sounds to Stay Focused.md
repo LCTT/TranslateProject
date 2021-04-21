@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/blanket-ambient-noise-app/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
