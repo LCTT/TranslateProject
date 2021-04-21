@@ -53,7 +53,7 @@ via: https://www.linux.com/articles/open-source-supply-chain-a-matter-of-trust/
 
 作者：[Swapnil Bhartiya][a]
 选题：[lujun9972][b]
-译者：[译者ID](Kevin3599)
+译者：[译者ID](@Kevin3599)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
