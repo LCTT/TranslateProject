@@ -8,6 +8,7 @@
 [#]: author: (Domarys https://opensource.com/users/domarys)
 
 Update devices remotely with this open source tool
+使用开源工具远程更新设备
 ======
 Handle all your complete device updates, including firmware and
 bootloaders, over the air with UpdateHub Community Edition.
