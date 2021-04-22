@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13323-1.html)
 
 用开源工具定制 Mac 终端主题的 4 个步骤
 ======
