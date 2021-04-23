@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/arch-new-guided-installer/)
 [#]: author: (Jacob Crume https://news.itsfoss.com/author/jacob/)
 [#]: collector: (lujun9972)
-[#]: translator: (Kevin3599 )
+[#]: translator: (@Kevin3599 )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
