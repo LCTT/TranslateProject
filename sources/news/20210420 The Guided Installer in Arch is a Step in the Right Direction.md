@@ -7,12 +7,12 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-The Guided Installer in Arch is a Step in the Right Direction
+Arch Linux中的引导式安装程序是迈向正确的一步
 ======
 
-For 20 years, Arch Linux has provided users access to a completely custom and unique system. Over those years, it has built a reputation for customization, at the expense of user-friendliness.
+20年来，Arch Linux为用户提供了完全定制和独特的系统的权限。多年来，它以牺牲用户友好性为代价赢得了在定制方面独有的声誉。
 
-As a [rolling release distro][1], Arch doesn’t provide any set releases, instead they just update the image each month. However, if you have downloaded Arch in the last few weeks, you may have noticed a new addition: **archinstall**. It makes [installing Arch Linux way easier][2].
+作为滚动发行版本，Arch Linux不提供任何固定发行版本，而是每月更新一次。但是，如果您在最近几周下载了Arch Linux，那么您很可能已经注意到了一个新的附加功能：archinstall。它使Arch Linux更加易于安装。
 
 ![][3]
 
