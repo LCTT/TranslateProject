@@ -3,16 +3,18 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
 用 Sigil 在 Linux 上创建和编辑 EPUB 文件
 ======
 
-Sigil 是一个开源的 Linux、Windows 和 MacOS 上的 EPUB 编辑器。你可以使用 Sigil 创建一个新的 EPUB 格式的电子书，或编辑现有的 EPUB 电子书（以 .epub 扩展结尾的文件）。
+![](https://img.linux.net.cn/data/attachment/album/202104/23/184455qn6u6oozmf6gmnec.jpg)
 
-如果你感到好奇，EPUB 是一个标准的电子书格式，并被几个数字出版集团认可。它被许多设备和电子阅读器支持，除了 亚马逊的 Kindle。
+Sigil 是一个开源的 Linux、Windows 和 MacOS 上的 EPUB 编辑器。你可以使用 Sigil 创建一个新的 EPUB 格式的电子书，或编辑现有的 EPUB 电子书（以 `.epub` 扩展结尾的文件）。
+
+如果你感到好奇，EPUB 是一个标准的电子书格式，并被几个数字出版集团认可。它被许多设备和电子阅读器支持，除了亚马逊的 Kindle。
 
 ### Sigil 让你创建或编辑 EPUB 文件
 
@@ -20,15 +22,14 @@ Sigil 是一个开源的 Linux、Windows 和 MacOS 上的 EPUB 编辑器。你�
 
 ![][2]
 
-很多人在[创建或编辑电子书时非常相信 Calibre][3]。它确实是一个完整的工具，它有很多的功能并支持不仅仅是 EPUB 格式。然而，Calibre 有时可能是沉重的资源。
-
+很多人在 [创建或编辑电子书时非常相信 Calibre][3]。它确实是一个完整的工具，它有很多的功能，支持的格式不只是 EPUB 格式。然而，Calibre 有时可能需要过多的资源。
 
 Sigil 只专注于 EPUB 书籍，它有以下功能：
 
   * 支持 EPUB 2 和 EPUB 3（有一定的限制）
   * 提供代码视图预览
   * 编辑 EPUB 语法
-  * 带有多级标题的内容表生成器
+  * 带有多级标题的目录生成器
   * 编辑元数据
   * 拼写检查
   * 支持正则查找和替换
@@ -37,9 +38,7 @@ Sigil 只专注于 EPUB 书籍，它有以下功能：
   * 多语言支持的接口
   * 支持 Linux、Windows 和 MacOS
 
-
-
-Sigil 不是你可以直接输入新书章节的 [WYSIWYG][4] 类型的编辑器。由于 EPUB 依赖于 XML，因此它专注于代码。 将其视为用于 EPUB 文件的[类似于 VS Code 的代码编辑器][5]。出于这个原因，你应该使用一些其他[开源写作工具][6]，以 epub 格式导出你的文件（如果可能的话），然后在 Sigil 中编辑它。
+Sigil 不是你可以直接输入新书章节的 [所见即所得][4] 类型的编辑器。由于 EPUB 依赖于 XML，因此它专注于代码。可以将其视为用于 EPUB 文件的 [类似于 VS Code 的代码编辑器][5]。出于这个原因，你应该使用一些其他 [开源写作工具][6]，以 epub 格式导出你的文件（如果可能的话），然后在 Sigil 中编辑它。
 
 ![][7]
 
@@ -51,7 +50,7 @@ Sigil 是一款跨平台应用，支持 Windows 和 macOS 以及 Linux。它是�
 
 ![Sigil in Ubuntu Software Center][9]
 
-你可能需要事先启用 universe 仓库。你也可以在 Ubuntu发行版中使用 apt 命令：
+你可能需要事先启用 universe 仓库。你也可以在 Ubuntu发行版中使用 `apt` 命令：
 
 ```
 sudo apt install sigil
@@ -65,15 +64,15 @@ Sigil 有很多对 Python 库和模块的依赖，因此它下载和安装了大
 
 你的发行版提供的版本不一定是最新的。如果你想要 Sigil 的最新版本，你可以查看它的 GitHub 仓库。
 
-[Sigil on GitHub][11]
+- [Sigil 的 GitHub 仓库][11]
 
 ### 并不适合所有人，当然也不适合用于阅读 ePUB 电子书
 
-我不建议使用 Sigil 阅读电子书。Linux 上有[其他专门的应用来阅读 .epub 文件][12]。
+我不建议使用 Sigil 阅读电子书。Linux 上有 [其他专门的应用来阅读 .epub 文件][12]。
 
 如果你是一个必须处理 EPUB 书籍的作家，或者如果你在数字化旧书，并在各种格式间转换，Sigil 可能是值得一试。
 
-我还没有广泛使用 Sigil，所以我不提供对它的评论。我让你去探索它，并在这里与我们分享你的经验。
+我还没有大量使用 过 Sigil，所以我不提供对它的评论。我让你去探索它，并在这里与我们分享你的经验。
 
 --------------------------------------------------------------------------------
 
@@ -82,7 +81,7 @@ via: https://itsfoss.com/sigile-epub-editor/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
