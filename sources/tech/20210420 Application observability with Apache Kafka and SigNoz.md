@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/observability-apache-kafka-signoz)
 [#]: author: (Nitish Tiwari https://opensource.com/users/tiwarinitish86)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
