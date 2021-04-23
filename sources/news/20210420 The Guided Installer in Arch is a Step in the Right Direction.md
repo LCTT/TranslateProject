@@ -16,57 +16,56 @@ Arch Linux中的引导式安装程序是迈向正确的一步
 
 ![][3]
 
-Today, I will be discussing what this change represents for the future of the Arch project, and what this could mean for future releases.
+今天，我将探讨archinstall 的发布对未来的Arch Linux项目和发行版意味着什么。
 
-### A New Direction for Arch?
+### Arch Linux新的发展方向？
 
 ![][4]
 
-While many were surprised at this move, having an official installer included by default is actually a very sensible move. It signifies a change in direction for Arch, with a greater focus on accessibility, while still retaining the legendary customization it is known for.
+尽管很多人对此感到惊讶，但默认情况下包含官方安装程序实际上是非常明智的举动。这意味着ArchLinux的发展方向发生变化，即在保留使其知名的定制性和用户独特性的同时更加侧重用户的易用性。
 
-As the installer’s GitHub page says:
+在该安装程式的GitHub页面上有这样的描述：
 
-> The guided installer will provide user-friendly options along the way, but the keyword here is options, they are optional and will never be forced upon anyone
+> “引导性安装程式会给用户提供一个友好的安装方式，但是关键在于这个安装程式是选择性的，它是可选的并且永远不会强迫用户使用其进行安装。”
 
-This means that the new installer doesn’t affect advanced users, yet also opens up the distro to a wider audience. Among the many benefits this change brings, one stands above the crowd: more users.
+这意味着新的安装程式不会影响高级的进阶用户，同时也使得其可以向更广泛的受众开放，在这一改动所带来的许多优点之中，一个显著的优点即是：更广泛的用户。
 
-More users mean more support for the project, whether that is through donations or development work. And with each of these contributions, the user experience continues to improve for both new and experienced users alike.
+更多的用户意味着更多的项目，不管其是通过网络捐赠或在Arch Linux下的开发，通过这些项目贡献，不管是新用户还是有经验的用户的使用体验都会得到提升。
 
-### This was bound to happen
+### “这必然要发生”
 
-Looking into the past, we can see many additions to the installation medium that have helped new users. Examples of these include [pacstrap][5] (a tool to install base system) and [reflector][6] (a tool to find the best pacman mirrors).
+回顾过去，我们可以看到安装介质的许多新增功能对新用户有所帮助。这些示例包括pacstrap（安装基本系统的工具）和反射器（查找最佳pacman镜像的工具）。
 
-Plus, users have been asking for a way to script their installation for years, which the new installer provides. Capable of being scripted in Python, it enables far easier deployment for administrators, making it a very attractive option.
+另外，多年来，用户一直在追求使用脚本安装的方法，新安装程序允许了用户使用安装脚本。同时能够使用Python编写脚本，这使管理员的部署更加容易，这使其成为非常有吸引力的选择。更多可定制性（以某种方式？）
 
-### More Customizability (Somehow?)
+尽管这看上去可能有些反直觉，但是这个安装程式很可能能够改善Arch Linux的可定制性。当前，Arch定制性的最大瓶颈是用户的技术水平，而这一问题能够通过archinstall解决。
 
-While it may seem counter-intuitive, the inclusion of an installer actually may improve the customization options of Arch. Currently, the biggest bottleneck with Arch’s incredible customization options is the user’s skill level, an issue eliminated thanks to archinstall.
+通过由ArchLinux提供的安装程序，用户不需要掌握创建完美开发环境的技巧，安装程序可以帮助用户完成这些工作，这提供了广泛的自定义选项，是普通用户难以实现的。
 
-With the new installer, you don’t need to have the skills to create your perfect environment, instead taking advantage of the installer to do it for you. This opens up a huge range of customization options that would otherwise be out of reach for the average user.
+###思想总结
 
-### Closing Thoughts
+有了这一新功能，Arch Linux似乎正在向着“用户友好”这一软件设计哲学靠近，新安装程序为新手和高级用户提供了广泛的好处。其中包括更广泛的定制性和更大的用户社区。
 
-With this new addition, it seems that Arch Linux has started moving towards a more User-Friendly philosophy. The new installer provides a wide range of benefits to Newbies and advanced users alike. These include wider customization options and a larger community.
+总而言之，这个新变动对整个ArchLinux社区都会产生积极的影响。
 
-All in all, the new installer will provide a positive impact on the community as a whole.
+你对这个Arch Linux安装程式怎么看？是否已经尝试过它了呢？
 
-_What do you think about the new Arch guided installer? Have you tried it out yet?_
+###
 
 ![][7]
+我不感兴趣
 
-I'm not interested
+#### 关联
 
-#### _Related_
-
-  * [Installing Arch Linux is Now Easier With This Change in the Newest ISO Refresh][2]
+  * 通过最新的ISO刷新中的更改，现在更容易安装Arch Linux
   * ![][8] ![][9]
 
 
-  * [EndeavourOS's First Release of 2021 Brings Linux Kernel 5.10 LTS, Xfce 4.16, and More][10]
+  * EndeavourOS的2021年第一个版本带来了Linux内核5.10 LTS，Xfce 4.16等[10]
   * ![][8] ![][11]
 
 
-  * [Linux Kernel 5.9 Reached End of Life. Here's What You Should Do Now!][12]
+  * Linux Kernel 5.9终止了生命。这就是您现在应该做的！
   * ![][8] ![Linux kernel 5.9 reached end of life][13]
 
 
@@ -77,7 +76,7 @@ via: https://news.itsfoss.com/arch-new-guided-installer/
 
 作者：[Jacob Crume][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/Kevin3599)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
