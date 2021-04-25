@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Kevin3599)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13328-1.html)
 
 Arch Linux 中的引导式安装程序是迈向正确的一步
 ======
