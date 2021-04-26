@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ShuyRoy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13338-1.html)
 
 使用 C 优化你的 Python 代码
 ======
