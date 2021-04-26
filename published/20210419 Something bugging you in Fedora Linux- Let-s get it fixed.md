@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (DCOLIVERSUN)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13333-1.html)
 
 Fedora Linux 中有 Bug 吗？一起来修复它！
 ======
