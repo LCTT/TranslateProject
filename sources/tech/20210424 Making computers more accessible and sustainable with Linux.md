@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/linux-free-geek)
 [#]: author: (Don Watkins https://opensource.com/users/don-watkins)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
