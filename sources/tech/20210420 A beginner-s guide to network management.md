@@ -1,11 +1,11 @@
-[#]: subject: (A beginner's guide to network management)
-[#]: via: (https://opensource.com/article/21/4/network-management)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: subject: "A beginner's guide to network management"
+[#]: via: "https://opensource.com/article/21/4/network-management"
+[#]: author: "Seth Kenlon https://opensource.com/users/seth"
+[#]: collector: "lujun9972"
+[#]: translator: "ddl-hust"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 A beginner's guide to network management
 ======
@@ -206,10 +206,10 @@ via: https://opensource.com/article/21/4/network-management
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/gears_devops_learn_troubleshooting_lightbulb_tips_520.png?itok=HcN38NOk (Tips and gears turning)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/gears_devops_learn_troubleshooting_lightbulb_tips_520.png?itok=HcN38NOk "Tips and gears turning"
 [2]: https://tools.ietf.org/html/rfc793
 [3]: https://tools.ietf.org/html/rfc791
-[4]: https://opensource.com/sites/default/files/uploads/crossover.jpg (Crossover cable)
+[4]: https://opensource.com/sites/default/files/uploads/crossover.jpg "Crossover cable"
 [5]: https://creativecommons.org/licenses/by-sa/4.0/
 [6]: https://opensource.com/article/17/4/build-your-own-name-server
 [7]: http://redhat.com
