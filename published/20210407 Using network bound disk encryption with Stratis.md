@@ -4,13 +4,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13340-1.html)
 
 使用 Stratis 的网络绑定磁盘加密
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202104/27/221704gyzyvyroyyrybany.jpg)
 
 在一个有许多加密磁盘的环境中，解锁所有的磁盘是一项困难的任务。<ruby>网络绑定磁盘加密<rt>Network bound disk encryption</rt></ruby>（NBDE）有助于自动解锁 Stratis 卷的过程。这是在大型环境中的一个关键要求。Stratis 2.1 版本增加了对加密的支持，这在《[Stratis 加密入门][4]》一文中介绍过。Stratis 2.3 版本最近在使用加密的 Stratis 池时引入了对网络绑定磁盘加密（NBDE）的支持，这是本文的主题。
 
@@ -277,7 +277,7 @@ via: https://fedoramagazine.org/network-bound-disk-encryption-with-stratis/
 [1]: https://fedoramagazine.org/wp-content/uploads/2021/03/stratis-nbde-816x345.jpg
 [2]: https://unsplash.com/@imattsmart?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 [3]: https://unsplash.com/s/photos/lock?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
-[4]: https://fedoramagazine.org/getting-started-with-stratis-encryption/
+[4]: https://linux.cn/article-13311-1.html
 [5]: https://stratis-storage.github.io/
 [6]: https://www.youtube.com/watch?v=CJu3kmY-f5o
 [7]: https://github.com/latchset/tang
