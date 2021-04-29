@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/ubuntu-21-04-release/)
 [#]: author: (Ankush Das https://news.itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Kevin3599)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
