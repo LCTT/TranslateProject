@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/ubuntu-mate-21-04-release/)
 [#]: author: (Asesh Basu https://news.itsfoss.com/author/asesh/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Kevin3599 )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
