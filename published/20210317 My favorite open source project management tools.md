@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (stevenzdg988)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13344-1.html)
 
 我最喜欢的开源项目管理工具
 ======
