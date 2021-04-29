@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/announcing-fedora-34/)
 [#]: author: (Matthew Miller https://fedoramagazine.org/author/mattdm/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
