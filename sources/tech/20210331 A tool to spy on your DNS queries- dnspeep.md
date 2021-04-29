@@ -7,18 +7,19 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-A tool to spy on your DNS queries: dnspeep
+监控你所进行 DNS 查询的工具：dnspeep
 ======
 
-Hello! Over the last few days I made a little tool called [dnspeep][1] that lets you see what DNS queries your computer is making, and what responses it’s getting. It’s about [250 lines of Rust right now][2].
 
-I’ll talk about how you can try it, what it’s for, why I made it, and some problems I ran into while writing it.
+你好啊！在过去的几天中，我编写了一个叫作 [dnspeep][1] 的小工具，它能让你看到你电脑中正进行的 DNS 查询，并且还能看得到其响应。现在只需 [250 行 Rust 代码][2] 即可实现。
 
-### how to try it
+我将讨论你如何去尝试它、能做什么、为什么我要编写它，以及当我在开发时所遇到的问题。
 
-I built some binaries so you can quickly try it out.
+### 如何尝试
 
-For Linux (x86):
+我构建了一些二进制文件，因此你可以快速尝试一下。
+
+对于 Linux（x86）：
 
 ```
 wget https://github.com/jvns/dnspeep/releases/download/v0.1.0/dnspeep-linux.tar.gz
@@ -26,7 +27,7 @@ tar -xf dnspeep-linux.tar.gz
 sudo ./dnspeep
 ```
 
-For Mac:
+对于 Mac：
 
 ```
 wget https://github.com/jvns/dnspeep/releases/download/v0.1.0/dnspeep-macos.tar.gz
@@ -34,13 +35,13 @@ tar -xf dnspeep-macos.tar.gz
 sudo ./dnspeep
 ```
 
-It needs to run as root because it needs access to all the DNS packets your computer is sending. This is the same reason `tcpdump` needs to run as root – it uses `libpcap` which is the same library that tcpdump uses.
+它需要以<ruby>超级用户<rt>root</rt></ruby>身份运行，因为它需要访问计算机正在发送的所有 DNS 数据包。 这与 `tcpdump` 需要以超级身份运行的原因相同——它使用 `libpcap`，这与 tcpdump 使用的库相同。 
 
-You can also read the source and build it yourself at <https://github.com/jvns/dnspeep> if you don’t want to just download binaries and run them as root :).
+如果你不想下载二进制文件在超级用户下运行，你也能在 <https://github.com/jvns/dnspeep> 查看源码并且自行编译。
 
-### what the output looks like
+### 输出结果是什么样的
 
-Here’s what the output looks like. Each line is a DNS query and the response.
+以下是输出结果。每行都是一次 DNS 查询和响应。
 
 ```
 $ sudo dnspeep
@@ -50,94 +51,92 @@ AAAA    firefox.com          192.168.1.1    NOERROR
 A       bolt.dropbox.com     192.168.1.1    CNAME: bolt.v.dropbox.com, A: 162.125.19.131
 ```
 
-Those queries are from me going to `neopets.com` in my browser, and the `bolt.dropbox.com` query is because I’m running a Dropbox agent and I guess it phones home behind the scenes from time to time because it needs to sync.
+这些查询是来自于我打算在浏览器中访问 `neopets.com`，而 `bolt.dropbox.com` 查询是因为我正在运行 Dropbox 代理，并且我猜它不时会在后台运行，因为其需要同步。
 
-### why make another DNS tool?
+### 为什么我要再开发一个 DNS 工具？
 
-I made this because I think DNS can seem really mysterious when you don’t know a lot about it!
+之所以这样做，是因为我认为当你不太了解 DNS 时，DNS 似乎真的很神秘！
 
-Your browser (and other software on your computer) is making DNS queries all the time, and I think it makes it seem a lot more “real” when you can actually see the queries and responses.
+你的浏览器（和其他在你电脑上的软件）始终在进行 DNS 查询，我认为当你能真正看到请求和响应时，似乎会有更多的真实感。
 
-I also wrote this to be used as a debugging tool. I think the question “is this a DNS problem?” is harder to answer than it should be – I get the impression that when trying to check if a problem is caused by DNS people often use trial and error or guess instead of just looking at the DNS responses that their computer is getting.
 
-### you can see which software is “secretly” using the Internet
+我也把其当做一个调试工具。我想“这是 DNS 的问题？”的时候，往往很难回答。我得到的印象是，当尝试检查问题是否由 DNS 引起时，人们经常使用试错法或猜测，而不是仅仅查看计算机所获得的 DNS 响应。
 
-One thing I like about this tool is that it gives me a sense for what programs on my computer are using the Internet! For example, I found out that something on my computer is making requests to `ping.manjaro.org` from time to time for some reason, probably to check I’m connected to the internet.
 
-A friend of mine actually discovered using this tool that he had some corporate monitoring software installed on his computer from an old job that he’d forgotten to uninstall, so you might even find something you want to remove.
+### 你可以使用互联网查看“秘密”使用的软件
 
-### tcpdump is confusing if you’re not used to it
+我喜欢该工具的一方面是，它给我在我电脑上的程序正使用互联网的感觉！例如，我发现在我电脑上，某些软件正因为某些理由不断地发送请求到 `ping.manjaro.org`，可能是检查我是否已经连上互联网了。
 
-My first instinct when trying to show people the DNS queries their computer is making was to say “well, use tcpdump”! And `tcpdump` does parse DNS packets!
 
-For example, here’s what a DNS query for `incoming.telemetry.mozilla.org.` looks like:
+实际上，我的一个朋友使用该工具发现，他的电脑上安装了一些公司监控软件，这些软件是他在以前的工作中安装的，但是他忘记卸载了，因此你甚至可能发现一些你想要移动的东西。
 
+### 如果你不习惯 tcpdump，则会感到困惑
+
+当试图向人们展示 DNS 查询他们的计算机时，我的第一感是想“好吧，使用 tcpdump”！而且 `tcpdump` 可以解析 DNS 数据包！
+
+例如，下方是一次对 `incoming.telemetry.mozilla.org.` 的 DNS 查询结果：
 ```
 11:36:38.973512 wlp3s0 Out IP 192.168.1.181.42281 > 192.168.1.1.53: 56271+ A? incoming.telemetry.mozilla.org. (48)
 11:36:38.996060 wlp3s0 In  IP 192.168.1.1.53 > 192.168.1.181.42281: 56271 3/0/0 CNAME telemetry-incoming.r53-2.services.mozilla.com., CNAME prod.data-ingestion.prod.dataops.mozgcp.net., A 35.244.247.133 (180)
 ```
 
-This is definitely possible to learn to read, for example let’s break down the query:
+绝对可以学习阅读，例如，让我们分解一下查询：
 
 `192.168.1.181.42281 > 192.168.1.1.53: 56271+ A? incoming.telemetry.mozilla.org. (48)`
 
-  * `A?` means it’s a DNS **query** of type A
-  * `incoming.telemetry.mozilla.org.` is the name being qeried
-  * `56271` is the DNS query’s ID
-  * `192.168.1.181.42281` is the source IP/port
-  * `192.168.1.1.53` is the destination IP/port
-  * `(48)` is the length of the DNS packet
+ * `A?` 意味着这是一次 A 类的 DNS **查询**
+ * `incoming.telemetry.mozilla.org.` 是被查询的名称
+ * `56271` 是 DNS 查询的 ID
+ * `192.168.1.181.42281` 是源 IP/端口
+ * `192.168.1.1.53` 是目的 IP/端口
+ * `(48)` 是 DNS 报文长度
 
-
-
-And in the response breaks down like this:
+在响应报文中，我们可以这样分解：
 
 `56271 3/0/0 CNAME telemetry-incoming.r53-2.services.mozilla.com., CNAME prod.data-ingestion.prod.dataops.mozgcp.net., A 35.244.247.133 (180)`
 
-  * `3/0/0` is the number of records in the response: 3 answers, 0 authority, 0 additional. I think tcpdump will only ever print out the answer responses though.
-  * `CNAME telemetry-incoming.r53-2.services.mozilla.com`, `CNAME prod.data-ingestion.prod.dataops.mozgcp.net.`, and `A 35.244.247.133` are the three answers
-  * `56271` is the responses ID, which matches up with the query’s ID. That’s how you can tell it’s a response to the request in the previous line.
+  * `3/0/0` 是在响应报文中的记录数：3 个回答， 0 个授权， 0 个附加。我认为 tcpdump 甚至只打印出回答响应报文。
+  * `CNAME telemetry-incoming.r53-2.services.mozilla.com`, `CNAME prod.data-ingestion.prod.dataops.mozgcp.net.` 和 `A 35.244.247.133` 是三个响应方。
+  *  `56271` 是响应报文 ID，和查询报文的 ID 相对应。这便是你能在前一行分辨出对于请求报文的响应报文。
 
 
+我认为，这种格式最难处理的原因（作为一个只想查看一些 DNS 流量的人）是，你必须手动匹配请求和响应，而且它们并不总是相邻的。这就是计算机擅长的事情！
 
-I think what makes this format the most difficult to deal with (as a human who just wants to look at some DNS traffic) though is that you have to manually match up the requests and responses, and they’re not always on adjacent lines. That’s the kind of thing computers are good at!
+因此，我决定编写一个小程序（`dnspeep`）来进行匹配，并删除一些我认为多余的信息。
 
-So I decided to write a little program (`dnspeep`) which would do this matching up and also remove some of the information I felt was extraneous.
+### 当编写时我所遇到的问题
 
-### problems I ran into while writing it
+在撰写本文时，我遇到了一些问题。
 
-When writing this I ran into a few problems.
+  * 我必须修补 `pcap` 包，使其能在 Tokio 和 Mac 的操作系统上正常工作（[此更改][3]）。这是需要花费大量时间找出并修复一行的错误之一。
+  * 不同的 Linux 发行版似乎有不同的 `libpcap.so` 版本。所以我不能轻易地分发一个 libpcap 动态链接的二进制文件（你可以看到其他人 [在这里][4] 也有同样的问题）。因此，我决定将 libpcap 静态编译到 Linux 上的工具中。但我仍然不太了解如何在 Rust 中正确执行此操作，但我知道如何让它运行，将 `libpcap.a` 文件拷贝到 `target/release/deps` 目录下，然后运行 `cargo build`。
+  * 我使用的 `dns_parser` 不支持所有 DNS 查询类型，只支持最常见的。我可能需要更换一个不同的工具包来解析 DNS 数据包，但目前为止还没有找到合适的。
+  * 因为 `pcap` 接口只提供原始字节（包括以太网帧），所以我需要 [编写代码来计算从一开始要剥离多少字节才能获得数据包的 IP 报头][5]。我很肯定我还遗漏了某些点。
 
-  * I had to patch the `pcap` crate to make it work properly with Tokio on Mac OS ([this change][3]). This was one of those bugs which took many hours to figure out and 1 line to fix :)
-  * Different Linux distros seem to have different versions of `libpcap.so`, so I couldn’t easily distribute a binary that dynamically links libpcap (you can see other people having the same problem [here][4]). So I decided to statically compile libpcap into the tool on Linux. I still don’t really know how to do this properly in Rust, but I got it to work by copying the `libpcap.a` file into `target/release/deps` and then just running `cargo build`.
-  * The `dns_parser` crate I’m using doesn’t support all DNS query types, only the most common ones. I probably need to switch to a different crate for parsing DNS packets but I haven’t found the right one yet.
-  * Becuase the `pcap` interface just gives you raw bytes (including the Ethernet frame), I needed to [write code to figure out how many bytes to strip from the beginning to get the packet’s IP header][5]. I’m pretty sure there are some cases I’m still missing there.
+我对于取名也有过一段艰难的时光，因为已经有许多 DNS 工具了（dnsspy！dnssnoop！dnssniff！dnswatch！）我基本上只是查了下有关“监听”的每个同义词，然后选择了一个看起来很有趣并且还没有被其他 DNS 工具所占用的名称。
 
+该程序没有做的一件事就是告诉你哪个进程进行了 DNS 查询，我发现有一个名为 [dnssnoop][6] 的工具可以做到这一点。它使用 eBPF，看上去很酷，但我还没有尝试过。
 
+### 可能会有许多 bug
 
-I also had a hard time naming it because there are SO MANY DNS tools already (dnsspy! dnssnoop! dnssniff! dnswatch!). I basically just looked at every synonym for “spy” and then picked one that seemed fun and did not already have a DNS tool attached to it.
+我仅仅简单的在 Linux 和 Mac 上测试，并且我已知至少一个 bug（因为其不支持足够多的 DNS 查询类型），所以请在遇到问题时告知我！
 
-One thing this program doesn’t do is tell you which process made the DNS query, there’s a tool called [dnssnoop][6] I found that does that. It uses eBPF and it looks cool but I haven’t tried it.
-
-### there are probably still lots of bugs
-
-I’ve only tested this briefly on Linux and Mac and I already know of at least one bug (caused by not supporting enough DNS query types), so please report problems you run into!
-
-The bugs aren’t dangerous though – because the libpcap interface is read-only the worst thing that can happen is that it’ll get some input it doesn’t understand and print out an error or crash.
-
-### writing small educational tools is fun
-
-I’ve been having a lot of fun writing small educational DNS tools recently.
-
-So far I’ve made:
-
-  * <https://dns-lookup.jvns.ca> (a simple way to make DNS queries)
-  * <https://dns-lookup.jvns.ca/trace.html> (shows you exactly what happens behind the scenes when you make a DNS query)
-  * this tool (`dnspeep`)
+尽管这个 bug 没什么危害，因为这 libpcap 接口是只读的。所以可能发生的最糟糕的事情是它得到一些它无法解析的输入，最后打印出错误或是崩溃。
 
 
+### 编写小型教育工具很有趣
 
-Historically I’ve mostly tried to explain existing tools (like `dig` or `tcpdump`) instead of writing my own tools, but often I find that the output of those tools is confusing, so I’m interested in making more friendly ways to see the same information so that everyone can understand what DNS queries their computer is making instead of just tcpdump wizards :).
+最近，我对编写小型教育的 DNS 工具十分感兴趣。
+
+到目前为止我所编写的工具：
+
+  * <https://dns-lookup.jvns.ca>（一种进行 DNS 查询的简单方法）
+  * <https://dns-lookup.jvns.ca/trace.html>（向你显示在进行 DNS 查询时内部发生的情况）
+  * 本工具（`dnspeep`）
+ 
+
+以前我尽力阐述现存工具（如 `dig` 或 `tcpdump`）而不是编写自己的工具，但是经常我发现这些工具的输出结果让人费解，所以我非常关注以更加友好的方式来看这些相同的信息，以至于每个人都能明白他们电脑正在进行的 DNS 查询，来替换 tcmdump。
+
 
 --------------------------------------------------------------------------------
 
@@ -145,7 +144,7 @@ via: https://jvns.ca/blog/2021/03/31/dnspeep-tool/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wyxplus](https://github.com/wyxplus)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
