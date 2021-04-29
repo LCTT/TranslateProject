@@ -7,104 +7,104 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-What’s New in Ubuntu MATE 21.04
+Ubuntu MATE 21.04更新，多项新功能来袭
 ======
 
-Since 18.10, Yaru has been the default user interface. This year, the Yaru team along with the Canonical Design and Ubuntu Desktop Teams joined forces to create a new visual look for Ubuntu MATE 21.04.
+自从18.10发行版以来，yaru一直都是Ubuntu的默认用户桌面，今年，Yaru团队与Canonical Design和Ubuntu桌面团队携手合作，为Ubuntu MATE 21.04创建了新的外观界面。
 
-### What’s New in Ubuntu MATE 21.04?
+### Ubuntu21.04有什么新变化？
 
-Here are all the key changes that comes with this release.
+以下就是Ubuntu MATE 21.04此次发布中的主要变更
 
-### MATE Desktop
+### MATE桌面
 
-This time there are no new features but just bug fixes and translation updates. The MATE packaging in Debian has been updated to receive all the new bug fixes and updates.
+此次更新的MATE桌面相比以往并没有较大改动，此次更更新只是修复了错误BUG同时更新了语言翻译，Debian中的MATE软件包已经更新，用户可以下载所有的BUG修复和更新。
 
-### Ayatana Indicators
+### Avatana指示器
 
 ![][1]
 
-It is a system that controls the action, layout, behaviour of the panel indicator area that is also known as your system tray. You can now change settings of Ayatana Indicators from Control Center.
+这是一个控制面板指示器（也称为系统托盘），面板指示区域也就是您的系统托盘。现在，您可以从控制中心更改Ayatana指示器的设置。
 
-A new printer indication has been added and RedShift has been removed to maintain stability.
+添加了新的打印机标识，并删除了RedShift以保持稳定。
 
-### Yaru MATE Theme
+### Yaru MATE主题
 
-Yaru MATE is now a derivative of the Yaru theme. Yaru MATE will now be provided with a light and dark theme, the light theme being the default one. This should ensure better application compatibility.
+Yaru MATE现在是Yaru主题的派生产品。 Yaru MATE将提供浅色和深色主题，浅色作为默认主题。来确保更好的应用程序兼容性。
 
-Users will now have access to GTK 2.x, 3.x, 4.x light and dark themes collectively. You can also use Suru icons along with some new icons.
+从现在开始，用户可以使用GTK 2.x，3.x，4.x浅色和深色主题。也可以将Suru图标和某些新图标一起使用。
 
-LibreOffice will have a new Yaru MATE icon theming applied by default. Font contrast has been improved as well. As a result of this, you will find it easier to read tiny texts and/or reading from a distance.
+LibreOffice在MATE上会有新的默认桌面图标，字体对比度也得到了改善。您会发现阅读小字体文本或远距离阅读更加容易。
 
-Websites will now maintain the Dark Mode, if selected, at an Operating System level. To get dark theme in websites along with the rest of your system, just enable the Yaru MATE Dark theme.
+网页依旧是深色模式，要在网站以及其他发行版中使用深色主题，只需启用Yaru MATE深色主题即可。
 
-Windows manager themes for Macro, Metacity, Compiz now have SVG icons. What this means is that if you have a large screen, the icons won’t look pixelated, that’s a subtle but useful addition!
+现在，Macro，Metacity和Compiz的管理器主题使用了矢量图标。这意味着，如果您的屏幕较大，图标将不会像素画，又是一个小细节！
 
-### Yaru MATE Snaps
+### Yaru MATE 快照
 
-Although you can’t install Yaru MATE themes right now, you will soon be able to! The gtk-theme-yaru-mate and icon-theme-yaru-mate snaps are pre-installed and ready to be used when you need to connect the themes to compatible snaps.
+尽管您现在无法真正安装MATE主题，但是不要着急，它马上就来了！gtk-theme-yaru-mate和icon-theme-yaru-mate快照已经是预安装的，可以在需要将主题连接到兼容快照使用。
 
-As per the announcement, snapd will automatically connect your theme to compatible snaps soon:
+根据官方发布的公告，该功能将很快自动将您的主题连接到兼容的快照：
 
-> `snapd` will soon be able to automatically install snaps of themes that match your currently active theme. The snaps we’ve created are ready to integrate with that capability when it is available.
+> 快照功能很快将能够自动安装与您当前主题匹配的主题快照。创建的快照可以随时与该功能集成。
+> 
+### Mutiny Layout的新变化
 
-### Mutiny Layout Changes
+![Mutiny Layout实装深色主题][2]
 
-![Mutiny Layout with dark Yaru theme applied.][2]
+Mutiny布局模仿Unity的桌面布局。删除了MATE Dock Applet，并且对Mutiny Layout进行了优化以使用Plank。Plank主题被系统自动应用。操作是通过Mate Tweak切换到Mutiny Layout。Plank的深色和浅色Yaru主题都包含在内。
 
-Mutiny layout mimics the desktop layout of Unity. The MATE Dock Applet has been removed and the Mutiny Layout has been optimized to use Plank. Plank theming will be applied automatically. This will be done when switching to Mutiny Layout via Mate Tweak. Both dark and light Yaru themes of Plank are provided.
+其他调整和更新使得mutiny在不改变整体风格的前提下具备了更高的可靠性
 
-Other tweaks and updates have made the Mutiny much more reliability while the look and feel remains the same.
+### 主要应用升级
 
-### Major Application Upgrades
-
-  * Firefox 87
-  * LibreOffice 7.1.2.2
-  * Evolution 3.40
-  * Celluloid 0.20
-
-
-
-### Other Changes
-
-  * Linux command line fans will appreciate commands like neofetch, htop and inxi being included in the default Ubuntu MATE install.
-  * A Raspberry Pi 21.04 version will be released soon.
-  * There are no offline upgrade options in Ubuntu MATE.
-  * New Plank themes introduced for side and bottom docks that matches with the color scheme of Yaru MATE.
-  * A clean edge styling is applied to Yaru MATE windows manager for side tiled windows.
-  * It is available in various colors in Ubuntu MATE Welcome.
-  * Yaru MATE theme snap and icon theme snap has been published in Snap Store
-  * Yaru MATE PPA published for users of Ubunut MATE 20.04 LTS.
+  * Firefox 87(火狐浏览器)
+  * LibreOffice 7.1.2.2（办公软件）
+  * Evolution 3.40(邮件)
+  * Celluloid 0.20(视频播放器)
 
 
 
-### Download Ubuntu MATE 21.04
+### 其他更改
 
-You can download the ISO from the official website.
+  * Linux命令的忠实用户会喜欢在Ubuntu MATEZ中默认安装的neofetch，htop和inxi之类的命令。
+  * 树莓派版本很快将会发布。
+  * Ubuntu MATE上没有离线更新选项
+  * 针对侧边软件坞和底部软件坞引入了新的Plank主题，使其与Yaru MATE的配色方案相匹配。
+  * 简洁的边缘样式已应用于Yaru MATE窗口管理器，用于侧面窗口。
+  * 多彩的Ubuntu MATE欢迎界面现在已启用。
+  * Yaru MATE主题快照和图标主题快照已在Snap Store中发布
+  * 为Ubuntu MATE 20.04 LTS的用户发行了Yaru MATE PPA。
+
+
+
+### 下载Ubuntu MATE 21.04
+
+你可以从官网上下载镜像
 
 [Ubuntu MATE 21.04][3]
 
-If you’re curious to learn more about it, [check out the release notes.][4]
+如果你对此感兴趣, [请查看发行说明][4]
 
-_Are you excited to try out the new Yaru MATE theme? What do you think? Let us know in the comments below._
+你对尝试Yaru MATE感到兴奋吗？你怎么看？请看评论区。
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
+#### 大科技网站获得数百万收入！
 
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
+如果您喜欢我们在这里所做的事情，请考虑捐赠以支持我们的独立出版物。您的支持将帮助我们继续发布专注于桌面Linux和开源软件的内容。
 
-I'm not interested
+我不感兴趣
 
-#### _Related_
+#### _关联_
 
-  * [Ubuntu 21.04 is Releasing This Week! Take a Look at the New Features][5]
-  * ![][6] ![Ubuntu 21.04 New Features][7]
-
-
-  * [No GNOME 40 for Ubuntu 21.04 [And That's a Good Thing]][8]
-  * ![][6] ![No GNOME 40 in Ubuntu 21.04][9]
+  * [Ubuntu 21.04本周正在发布！看看新功能][5]
+  * ![][6] ![Ubuntu 21.04 新特征][7]
 
 
-  * [Ubuntu 21.04 Beta is Now Available to Download][10]
+  * [Ubuntu 21.04没有Gnome 40 [这是一件好事]][8]
+  * ![][6] ![Ubuntu 21.04没有GNOME40][9]
+
+
+  * [Ubuntu 21.04 Beta 现在已经可以下载了！][10]
   * ![][6] ![][11]
 
 
@@ -115,7 +115,7 @@ via: https://news.itsfoss.com/ubuntu-mate-21-04-release/
 
 作者：[Asesh Basu][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Kevin3599](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
