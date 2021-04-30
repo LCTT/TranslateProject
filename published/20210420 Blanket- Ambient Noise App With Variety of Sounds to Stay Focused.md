@@ -3,14 +3,16 @@
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13343-1.html)
 
 Blanket：拥有各种环境噪音的应用，帮助保持注意力集中
 ======
 
-_**简介：一个开源的环境噪音播放器，提供各种声音，帮助你集中注意力或入睡。**_
+> 一个开源的环境噪音播放器，提供各种声音，帮助你集中注意力或入睡。
+
+![](https://img.linux.net.cn/data/attachment/album/202104/29/094813oxcitipetajxjiex.jpg)
 
 随着你周围活动的增加，要保持冷静和专注往往是很困难的。
 
@@ -44,13 +46,13 @@ flatpak install flathub com.rafaelmardojai.Blanket
 
 如果你是 Flatpak 的新手，你可能想通过我们的 [Flatpak 指南][5]了解。
 
-如果你不喜欢使用 Flatpaks，你可以使用该项目中的贡献者维护的 PPA 来安装它。对于 Arch Linux 用户，你可以在 [AUR][6] 中找到它，以方便安装。
+如果你不喜欢使用 Flatpak，你可以使用该项目中的贡献者维护的 PPA 来安装它。对于 Arch Linux 用户，你可以在 [AUR][6] 中找到它，以方便安装。
 
-此外，你还可以找到 Fedora 和 openSUSE 的软件包。要探索所有可用的软件包，你可以前往其 [GitHub 页面][7]。
+此外，你还可以找到 Fedora 和 openSUSE 的软件包。要探索所有现成的软件包，你可以前往其 [GitHub 页面][7]。
 
 ### 结束语
 
-对于一个简单的环境噪音播放器来说，用户体验是相当好的。我有一副 HyperX Alpha S 耳机，我必须要说声音的质量很好。
+对于一个简单的环境噪音播放器来说，用户体验是相当好的。我有一副 HyperX Alpha S 耳机，我必须要说，声音的质量很好。
 
 换句话说，它听起来很舒缓，如果你想体验环境声音来集中注意力，摆脱焦虑或只是睡着，我建议你试试。
 
@@ -63,7 +65,7 @@ via: https://itsfoss.com/blanket-ambient-noise-app/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
