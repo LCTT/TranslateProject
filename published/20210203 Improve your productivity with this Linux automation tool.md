@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (stevenzdg988)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13347-1.html)
 [#]: subject: (Improve your productivity with this Linux automation tool)
 [#]: via: (https://opensource.com/article/21/2/linux-autokey)
 [#]: author: (Matt Bargenquast https://opensource.com/users/mbargenquast)
@@ -84,7 +84,7 @@ AutoKey 提供了一些预设配置的示例。你可能希望在熟悉 UI 时�
 
 ### 保存并测试
 
-对新配置满意后，请确保将其保存。 单击 “<ruby>文件<rt>File</rt></ruby>” ，然后选择 “<ruby>保持<rt>Save</rt></ruby>” 以使更改生效。
+对新配置满意后，请确保将其保存。 单击 “<ruby>文件<rt>File</rt></ruby>” ，然后选择 “<ruby>保存<rt>Save</rt></ruby>” 以使更改生效。
 
 现在进行重要的测试！在你的终端窗口中，键入 “gerp” 紧跟一个空格，它将自动更正为 “grep”。要验证窗口过滤器是否正在运行，请尝试在浏览器 URL 栏或其他应用程序中键入单词 “gerp”。它并没有变化。
 
