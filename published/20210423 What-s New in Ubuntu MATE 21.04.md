@@ -32,7 +32,7 @@ Ubuntu MATE 21.04 更新，多项新功能来袭
 
 添加了一个新的打印机标识，并删除了 RedShift 以保持稳定。
 
-### Yaru MATE 主题
+#### Yaru MATE 主题
 
 Yaru MATE 现在是 Yaru 主题的派生产品。Yaru MATE 将提供浅色和深色主题，浅色作为默认主题。来确保更好的应用程序兼容性。
 
@@ -44,7 +44,7 @@ LibreOffice 在 MATE 上会有新的默认桌面图标，字体对比度也得�
 
 现在，Macro、Metacity 和 Compiz 的管理器主题使用了矢量图标。这意味着，如果你的屏幕较大，图标不会看起来像是像素画，又是一个小细节！
 
-### Yaru MATE Snap 包
+#### Yaru MATE Snap 包
 
 尽管你现在无法安装 MATE 主题，但是不要着急，它很快就可以了。gtk-theme-yaru-mate 和 icon-theme-yaru-mate Snap 包是预安装的，可以在需要将主题连接到兼容的 Snap 软件包时使用。
 
@@ -52,7 +52,7 @@ LibreOffice 在 MATE 上会有新的默认桌面图标，字体对比度也得�
 
 > Snapd 很快就能自动安装与你当前活动主题相匹配的主题的 snap 包。我们创建的 snap 包已经准备好在该功能可用时与之整合。
 
-### Mutiny 布局的新变化
+#### Mutiny 布局的新变化
 
 ![应用了深色主题的 Mutiny 布局][2]
 
@@ -60,14 +60,14 @@ Mutiny 布局模仿了 Unity 的桌面布局。删除了 MATE 软件坞小应用
 
 其他调整和更新使得 Mutiny 在不改变整体风格的前提下具备了更高的可靠性
 
-### 主要应用升级
+#### 主要应用升级
 
   * Firefox 87（火狐浏览器）
   * LibreOffice 7.1.2.2（办公软件）
   * Evolution 3.40（邮件）
   * Celluloid 0.20（视频播放器）
 
-### 其他更改
+#### 其他更改
 
   * Linux 命令的忠实用户会喜欢在 Ubuntu MATE 中默认安装的 `neofetch`、`htop` 和 `inxi` 之类的命令。
   * 树莓派的 21.04 版本很快将会发布。
