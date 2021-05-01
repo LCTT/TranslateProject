@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Kevin3599)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13349-1.html)
 
 Ubuntu MATE 21.04 更新，多项新功能来袭
 ======
@@ -105,10 +105,3 @@ via: https://news.itsfoss.com/ubuntu-mate-21-04-release/
 [2]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2021/04/yaru-mate-mutiny-dark.jpg?resize=1568%2C882&ssl=1
 [3]: https://ubuntu-mate.org/download/
 [4]: https://discourse.ubuntu.com/t/hirsute-hippo-release-notes/19221
-[5]: https://news.itsfoss.com/ubuntu-21-04-features/
-[6]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzIwMCcgd2lkdGg9JzM1MCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2ZXJzaW9uPScxLjEnLz4=
-[7]: https://i2.wp.com/news.itsfoss.com/wp-content/uploads/2021/04/ubuntu_21_04_features.png?fit=1200%2C675&ssl=1&resize=350%2C200
-[8]: https://news.itsfoss.com/no-gnome-40-in-ubuntu-21-04/
-[9]: https://i1.wp.com/news.itsfoss.com/wp-content/uploads/2021/01/gnome-40-ubuntu-21-04.png?fit=1200%2C675&ssl=1&resize=350%2C200
-[10]: https://news.itsfoss.com/ubuntu-21-04-beta-release/
-[11]: https://i1.wp.com/news.itsfoss.com/wp-content/uploads/2021/04/ubuntu-21-04-ft.png?fit=1200%2C675&ssl=1&resize=350%2C200
