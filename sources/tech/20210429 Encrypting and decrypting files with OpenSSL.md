@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/encryption-decryption-openssl)
 [#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
