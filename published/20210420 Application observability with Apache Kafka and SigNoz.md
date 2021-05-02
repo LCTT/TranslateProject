@@ -3,14 +3,16 @@
 [#]: author: (Nitish Tiwari https://opensource.com/users/tiwarinitish86)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13352-1.html)
 
 使用 Apache Kafka 和 SigNoz 实现应用可观测性
 ======
-SigNoz 帮助开发者使用最小的精力快速实现他们的可观测性目标。
-![Ship captain sailing the Kubernetes seas][1]
+
+> SigNoz 帮助开发者使用最小的精力快速实现他们的可观测性目标。
+
+![](https://img.linux.net.cn/data/attachment/album/202105/01/231703oy5ln5nnqkuhxt1t.jpg)
 
 SigNoz 是一个开源的应用可观察性平台。SigNoz 是用 React 和 Go 编写的，它从头到尾都是为了让开发者能够以最小的精力尽快实现他们的可观察性目标。
 
@@ -24,8 +26,6 @@ SigNoz 将几个组件捆绑在一起，创建了一个可扩展的、耦合松�
   * Apache Kafka
   * Apache Druid
 
-
-
 [OpenTelemetry Collector][2] 是跟踪或度量数据收集引擎。这使得 SigNoz 能够以行业标准格式获取数据，包括 Jaeger、Zipkin 和 OpenConsensus。之后，收集的数据被转发到 Apache Kafka。
 
 SigNoz 使用 Kafka 和流处理器来实时获取大量的可观测数据。然后，这些数据被传递到 Apache Druid，它擅长于存储这些数据，用于短期和长期的 SQL 分析。
@@ -33,8 +33,6 @@ SigNoz 使用 Kafka 和流处理器来实时获取大量的可观测数据。然
 当数据被扁平化并存储在 Druid 中，SigNoz 的查询服务可以查询并将数据传递给 SigNoz React 前端。然后，前端为用户创建漂亮的图表，使可观察性数据可视化。
 
 ![SigNoz architecture][3]
-
-（Nitish Tiwari, [CC BY-SA 4.0][4]）
 
 ### 安装 SigNoz
 
@@ -44,26 +42,19 @@ SigNoz 的组件包括 Apache Kafka 和 Druid。这些组件是松散耦合的�
 
 当你有了可用的集群，并配置了 kubectl 来与集群通信，运行：
 
-
 ```
-$ git clone <https://github.com/SigNoz/signoz.git> &amp;&amp; cd signoz
-
+$ git clone https://github.com/SigNoz/signoz.git && cd signoz
 $ helm dependency update deploy/kubernetes/platform
-
 $ kubectl create ns platform
-
 $ helm -n platform install signoz deploy/kubernetes/platform
-
 $ kubectl -n platform apply -Rf deploy/kubernetes/jobs
-
 $ kubectl -n platform apply -f deploy/kubernetes/otel-collector
 ```
 
 这将在集群上安装 SigNoz 和相关容器。要访问用户界面 （UI），运行 `kubectl port-forward` 命令。例如：
 
-
 ```
-`$ kubectl -n platform port-forward svc/signoz-frontend 3000:3000`
+$ kubectl -n platform port-forward svc/signoz-frontend 3000:3000
 ```
 
 现在你应该能够使用本地浏览器访问你的 SigNoz 仪表板，地址为 `http://localhost:3000`。
@@ -72,10 +63,8 @@ $ kubectl -n platform apply -f deploy/kubernetes/otel-collector
 
 要安装它，请运行：
 
-
 ```
 $ kubectl create ns sample-application
-
 $ kubectl -n sample-application apply -Rf sample-apps/hotrod/
 ```
 
@@ -85,15 +74,11 @@ $ kubectl -n sample-application apply -Rf sample-apps/hotrod/
 
 ![SigNoz dashboard][8]
 
-（Nitish Tiwari, [CC BY-SA 4.0][4]）
-
 #### 指标
 
 当你点击一个特定的应用时，你会登录到该应用的主页上。指标页面显示最近 15 分钟的信息（这个数字是可配置的），如应用的延迟、平均吞吐量、错误率和应用目前访问最高的接口。这让你对应用的状态有一个大概了解。任何错误、延迟或负载的峰值都可以立即看到。
 
 ![Metrics in SigNoz][9]
-
-（Nitish Tiwari, [CC BY-SA 4.0][4]）
 
 #### 追踪
 
@@ -101,19 +86,13 @@ $ kubectl -n sample-application apply -Rf sample-apps/hotrod/
 
 ![Tracing in SigNoz][10]
 
-（Nitish Tiwari, [CC BY-SA 4.0][4]）
-
 ![Tracing in SigNoz][11]
-
-（Nitish Tiwari, [CC BY-SA 4.0][4]）
 
 #### 用量资源管理器
 
 大多数指标和跟踪数据都非常有用，但只在一定时期内有用。随着时间的推移，数据在大多数情况下不再有用。这意味着为数据计划一个适当的保留时间是很重要的。否则，你将为存储支付更多的费用。用量资源管理器提供了每小时、每一天和每一周获取数据的概况。
 
 ![SigNoz Usage Explorer][12]
-
-（Nitish Tiwari, [CC BY-SA 4.0][4]）
 
 ### 添加仪表
 
@@ -132,7 +111,7 @@ via: https://opensource.com/article/21/4/observability-apache-kafka-signoz
 作者：[Nitish Tiwari][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
