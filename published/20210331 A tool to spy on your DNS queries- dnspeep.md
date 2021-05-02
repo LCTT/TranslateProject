@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wyxplus)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13353-1.html)
 
 dnspeep：监控 DNS 查询的工具
 ======
