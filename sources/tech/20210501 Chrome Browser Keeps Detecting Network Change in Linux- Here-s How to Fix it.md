@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/network-change-detected/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (HuengchI)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
