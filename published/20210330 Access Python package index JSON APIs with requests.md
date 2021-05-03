@@ -7,7 +7,7 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-13356-1.html"
 
-使用 resuests 访问 Python 包索引（PyPI）的 JSON API
+使用 requests 访问 Python 包索引（PyPI）的 JSON API
 ======
 
 > PyPI 的 JSON API 是一种机器可直接使用的数据源，你可以访问和你浏览网站时相同类型的数据。
