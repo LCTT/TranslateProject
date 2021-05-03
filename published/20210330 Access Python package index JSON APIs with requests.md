@@ -3,97 +3,80 @@
 [#]: author: "Ben Nuttall https://opensource.com/users/bennuttall"
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13356-1.html"
 
-使用 Resuests 访问 Python 包索引的 JSON API
+使用 resuests 访问 Python 包索引（PyPI）的 JSON API
 ======
-PyPI 的 JSON API 是一种机器可直接使用的数据源，你可以在浏览网站时访问相同类型的数据。
-![Python programming language logo with question marks][1]
+
+> PyPI 的 JSON API 是一种机器可直接使用的数据源，你可以访问和你浏览网站时相同类型的数据。
+
+![](https://img.linux.net.cn/data/attachment/album/202105/03/111943du0lgbjj6br6sruu.jpg)
 
 PyPI（Python 软件包索引）提供了有关其软件包信息的 JSON API。本质上，它是机器可以直接使用的数据源，与你在网站上直接访问是一样的的。例如，作为人类，我可以在浏览器中打开 [Numpy][2] 项目页面，点击左侧相关链接，查看有哪些版本，哪些文件可用以及发行日期和支持的 Python 版本等内容：
 
 ![NumPy project page][3]
 
-(Ben Nuttall, [CC BY-SA 4.0][4])
-
 但是，如果我想编写一个程序来访问此数据，则可以使用 JSON API，而不必在这些页面上抓取和解析 HTML。
 
-顺便说一句：在旧的 PyPI 网站上，当它托管在 `pypi.python.org` 时，NumPy 的项目页面位于 `pypi.python.org/pypi/numpy`，访问其 JSON API 也很简单，只需要在最后面添加一个 `/json` ，即  `https://pypi.org/pypi/numpy/json`。现在，PyPI 网站托管在 `pypi.org`，NumPy 的项目页面是 `pypi.org/project/numpy`。新站点不会有单独的 JSON API URL，但它仍像以前一样工作。因此，你不必在 URL 后添加 `/json`，只要记住 URL 就够了。
+顺便说一句：在旧的 PyPI 网站上，还托管在 `pypi.python.org` 时，NumPy 的项目页面位于 `pypi.python.org/pypi/numpy`，访问其 JSON API 也很简单，只需要在最后面添加一个 `/json` ，即  `https://pypi.org/pypi/numpy/json`。现在，PyPI 网站托管在 `pypi.org`，NumPy 的项目页面是 `pypi.org/project/numpy`。新站点不会有单独的 JSON API URL，但它仍像以前一样工作。因此，你不必在 URL 后添加 `/json`，只要记住 URL 就够了。
 
 你可以在浏览器中打开 NumPy 的 JSON API URL，Firefox 很好地渲染了数据：
 
 ![JSON rendered in Firefox][5]
 
-(Ben Nuttall, [CC BY-SA 4.0][4])
-
 你可以查看 `info`，`release` 和 `urls` 其中的内容。或者，你可以将其加载到 Python Shell 中，以下是几行入门教程：
 
-
-```python
+```
 import requests
 url = "https://pypi.org/pypi/numpy/json"
 r = requests.get(url)
 data = r.json()
 ```
 
-获得数据后，调用 `.json()` 提供数据的[字典][6]，你可以对其进行查看：
+获得数据后（调用 `.json()` 提供了该数据的 [字典][6]），你可以对其进行查看：
 
 ![Inspecting data][7]
-
-(Ben Nuttall, [CC BY-SA 4.0][4])
 
 查看 `release` 中的键：
 
 ![Inspecting keys in releases][8]
 
-(Ben Nuttall, [CC BY-SA 4.0][4])
-
 这表明 `release` 是一个以版本号为键的字典。选择一个并查看以下内容：
 
 ![Inspecting version][9]
-
-(Ben Nuttall, [CC BY-SA 4.0][4])
 
 每个版本都包含一个列表，`release` 包含 24 项。但是每个项目是什么？由于它是一个列表，因此你可以索引第一项并进行查看：
 
 ![Indexing an item][10]
 
-(Ben Nuttall, [CC BY-SA 4.0][4])
+这是一个字典，其中包含有关特定文件的详细信息。因此，列表中的 24 个项目中的每一个都与此特定版本号关联的文件相关，即在  <https://pypi.org/project/numpy/1.20.1/#files> 列出的 24 个文件。
 
-这是一个字典，其中包含有关特定文件的详细信息。因此，列表中的 24 个项目中的每一个都与此特定版本号关联的文件相关，即在  <https://pypi.org/project/numpy/1.20.1/#files> 列出的 24 个文件中。
+你可以编写一个脚本在可用数据中查找内容。例如，以下的循环查找带有 sdist（源代码包）的版本，它们指定了 `requires_python` 属性并进行打印：
 
-你可以编写一个脚本在可用数据中查找内容。例如，以下的循环查找带有 stdis (源代码包) 的版本，它们指定了 `requires_python` 属性并进行打印：
-
-
-```python
+```
 for version, files in data['releases'].items():
     for f in files:
         if f.get('packagetype') == 'sdist' and f.get('requires_python'):
             print(version, f['requires_python'])
 ```
 
-![sdist files with requires_python attribute ][11]
-
-(Ben Nuttall, [CC BY-SA 4.0][4])
+![sdist files with requires_python attribute][11]
 
 ### piwheels
 
-去年，我在 piwheels 网站上[实现了类似的 API][12]。[piwheels.org][13] 是一个 Python 软件包索引，为 Raspberry Pi 架构提供了 wheel（预编译的二进制软件包）。它本质上是 PyPI 软件包的镜像，但带有 Arm wheel，而不是软件包维护者上传到 PyPI 的文件。
+去年，我在 piwheels 网站上[实现了类似的 API][12]。[piwheels.org][13] 是一个 Python 软件包索引，为树莓派架构提供了 wheel（预编译的二进制软件包）。它本质上是 PyPI 软件包的镜像，但带有 Arm wheel，而不是软件包维护者上传到 PyPI 的文件。
 
 由于 piwheels 模仿了 PyPI 的 URL 结构，因此你可以将项目页面 URL 的 `pypi.org` 部分更改为 `piwheels.org`。它将向你显示类似的项目页面，其中详细说明了构建的版本和可用的文件。由于我喜欢旧站点允许你在 URL 末尾添加 `/json` 的方式，所以我也支持这种方式。NumPy 在 PyPI 上的项目页面为 [pypi.org/project/numpy][14]，在 piwheels 上，它是 [piwheels.org/project/numpy][15]，而 JSON API 是 [piwheels.org/project/numpy/json][16] 页面。
 
-没有必要重复 PyPI  API 的内容，所以我们提供了 piwheels 上可用内容的信息，包括所有已知发行版的列表，一些基本信息以及我们拥有的文件列表：
+没有必要重复 PyPI API 的内容，所以我们提供了 piwheels 上可用内容的信息，包括所有已知发行版的列表，一些基本信息以及我们拥有的文件列表：
 
 ![JSON files available in piwheels][17]
 
-(Ben Nuttall, [CC BY-SA 4.0][4])
-
 与之前的 PyPI 例子类似，你可以创建一个脚本来分析 API 内容。例如，对于每个 NumPy 版本，其中有多少 piwheels 文件：
 
-
-```python
+```
 import requests
 
 url = "https://www.piwheels.org/project/numpy/json"
@@ -110,14 +93,12 @@ for version, info in package['releases'].items():
 
 ![Metadata in JSON files in piwheels][18]
 
-(Ben Nuttall, [CC BY-SA 4.0][4])
-
-方便的一件事是 `apt_dependencies` 字段，它列出了使用该库所需的 Apt 软件包。本例中的 NumPy 文件，或者通过 pip 安装 Numpy，你还需要使用 Debian 的 Apt 包管理器安装 `libatlas3-base` 和 `libgfortran`。
+方便的是 `apt_dependencies` 字段，它列出了使用该库所需的 Apt 软件包。本例中的 NumPy 文件，或者通过 `pip` 安装 Numpy，你还需要使用 Debian 的 `apt` 包管理器安装 `libatlas3-base` 和 `libgfortran`。
 
 以下是一个示例脚本，显示了程序包的 Apt 依赖关系：
 
 
-```python
+```
 import requests
 
 def get_install(package, abi):
@@ -140,7 +121,6 @@ get_install('opencv-python-headless', 'cp35m')
 
 我们还为软件包列表提供了一个通用的 API 入口，其中包括每个软件包的下载统计：
 
-
 ```python
 import requests
 
@@ -160,10 +140,9 @@ print(package, "has had", d_all, "downloads in total")
 
 ### pip search
 
-`pip search`  因为其 XMLRPC 接口过载而被禁用，因此人们一直在寻找替代方法。你可以使用 piwheels 的 JSON API 来搜索软件包名称，因为软件包的集合是相同的：
+`pip search` 因为其 XMLRPC 接口过载而被禁用，因此人们一直在寻找替代方法。你可以使用 piwheels 的 JSON API 来搜索软件包名称，因为软件包的集合是相同的：
 
-
-```python
+```
 #!/usr/bin/python3
 import sys
 
@@ -192,7 +171,7 @@ if __name__ == '__main__':
 
 * * *
 
-_本文最初发表在 Ben Nuttall 的 [Tooling Tuesday 博客上][20]，经许可可转载使用。_
+_本文最初发表在 Ben Nuttall 的 [Tooling Tuesday 博客上][20]，经许可转载使用。_
 
 --------------------------------------------------------------------------------
 
@@ -201,7 +180,7 @@ via: https://opensource.com/article/21/3/python-package-index-json-apis-requests
 作者：[Ben Nuttall][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
