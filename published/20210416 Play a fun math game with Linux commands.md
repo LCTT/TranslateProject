@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13358-1.html)
 
 用 Linux 命令玩一个有趣的数学游戏
 ======
