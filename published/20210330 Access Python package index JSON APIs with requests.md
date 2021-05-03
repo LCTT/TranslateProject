@@ -3,9 +3,9 @@
 [#]: author: "Ben Nuttall https://opensource.com/users/bennuttall"
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13356-1.html"
 
 使用 resuests 访问 Python 包索引（PyPI）的 JSON API
 ======
