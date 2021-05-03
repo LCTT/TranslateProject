@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13355-1.html)
 
 爱了！3 个受欢迎的 U 盘 Linux 发行版
 ======
 
 > 开源技术人员对此深有体会。
 
-![Linux keys on the keyboard for a desktop computer][1]
+![](https://img.linux.net.cn/data/attachment/album/202105/03/104610np5piwaavaa5qu2u.jpg)
 
 Linux 用户几乎都会记得他们第一次发现无需实际安装，就可以用 Linux 引导计算机并在上面运行。当然，许多用户都知道可以引导计算机进入操作系统安装程序，但是 Linux 不同：它根本就不需要安装！你的计算机甚至不需要有一个硬盘。你可以通过一个 U 盘运行 Linux 几个月甚至几 _年_。
 
