@@ -7,39 +7,40 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Build smaller containers
+构建更小的容器
 ======
 
 ![build smaller containers][1]
 
-Otter image excerpted from photo by [Dele Oluwayomi][2] on [Unsplash][3]
+水獭图片节选自[Dele Oluwayomi][2] 发表在 [Unsplash][3]上的照片
 
-Working with containers is a daily task for many users and developers. Container developers often need to (re)build container images frequently. If you develop containers, have you ever thought about reducing the image size? Smaller images have several benefits. They require less bandwidth to download and they save costs when run in cloud environments. Also, using smaller container images on Fedora [CoreOS][4], [IoT][5] and [Silverblue][6] improves overall system performance because those operating systems rely heavily on container workflows. This article will provide a few tips for reducing the size of container images.
+使用容器工作是很多用户和开发者的日常任务。容器开发者经常需要频繁地（重）构建容器镜像。如果你开发容器，你有想过减小镜像的大小吗？比较小的镜像有一些好处。在下载的时候所需要的带宽更少，而且在云环境中运行的时候也可以节省开销。而且在Fedora  [CoreOS][4]、[IoT][5]以及[Silverblue][6]上使用较小的容器镜像提升了整体系统性能，因为这些操作系统严重依赖于容器工作流。这篇文章将会提供一些减小容器镜像大小的技巧。
 
-### The tools
+### 工具
 
-The host operating system in the following examples is Fedora Linux 33. The examples use [Podman][7] 3.1.0 and [Buildah][8] 1.2.0. Podman and Buildah are pre-installed in most Fedora Linux variants. If you don’t have Podman or Buildah installed, run the following command to install them.
+以下例子所用到的主机操作系统是Fedora Linux33。例子使用 [Podman][7] 3.1.0 和[Buildah][8] 1.2.0。在大多数Fedora Linux变体中，Podman和Buildah都被预装好了。如果你没有安装Podman和Buildah，可以用下边的命令安装：
+
 
 ```
 $ sudo dnf install -y podman buildah
 ```
 
-### The task
+### 任务
 
-Begin with a basic example. Build a web container meeting the following requirements.
+从一个基础的例子开始。构建一个满足以下需求的web容器。
 
-  * The container must be based on Fedora Linux
-  * Use the Apache httpd web server
-  * Include a custom website
-  * The container should be relatively small
+  * 容器必须基于Fedora Linux
+  * 使用Apache httpd web 服务器
+  * 包含一个定制的网站
+  * 容器应该比较小
 
 
 
-The following steps will also work on more complex images.
+下边的步骤都是在比较复杂的镜像上进行的。
 
-### The setup
+### 设置
 
-First, create a project directory. This directory will include your website and container file.
+首先，创建一个工程目录。这个目录将会包含你的网站和容器文件。
 
 ```
 $ mkdir smallerContainer
@@ -48,7 +49,7 @@ $ mkdir files
 $ touch files/index.html
 ```
 
-Make a simple landing page. For this demonstration, you may copy the below HTML into the _index.html_ file.
+制作一个简单的登录页面。对于这个演示，你可以将下面的HTML复制到 _index.html_ 文件中。
 
 ```
 <!doctype html>
@@ -99,20 +100,20 @@ Make a simple landing page. For this demonstration, you may copy the below HTML 
 </html>
 ```
 
-Optionally, test the above _index.html_ file in your browser.
+此时你可以选择在浏览器中测试上面的 _index.html_ 文件。
 
 ```
 $ firefox files/index.html
 ```
 
-Finally, create a container file. The file can be named either _Dockerfile_ or _Containerfile_.
+最后，创建一个容器文件。这个文件可以命名为 _Dockerfile_ 或者 _Containerfile_。
+
 
 ```
 $ touch Containerfile
 ```
 
-You should now have a project directory with a file system layout similar to what is shown in the below diagram.
-
+现在你应该有了一个工程目录，并且该目录中的文件系统布局如下。
 ```
 smallerContainer/
 |- files/
@@ -121,48 +122,48 @@ smallerContainer/
 |- Containerfile
 ```
 
-### The build
+### 构建
 
-Now make the image. Each of the below stages will add a layer of improvements to help reduce the size of the image. You will end up with a series of images, but only one _Containerfile_.
+现在构建镜像。下边的每个阶段都会添加一层改进来帮助减小镜像的大小。你最终会得到一系列镜像，但只有一个 _Containerfile_ 。
 
-#### Stage 0: a baseline container image
+#### 阶段0：一个基本的容器镜像
 
-Your new image will be very simple and it will only include the mandatory steps. Place the following text in _Containerfile_.
+你的新镜像将会非常简单，它只包含强制性步骤。在 _Containerfile_ 中添加以下内容。
 
 ```
-# Use Fedora 33 as base image
+# 使用 Fedora 33作为基镜像
 FROM registry.fedoraproject.org/fedora:33
 
-# Install httpd
+# 安装 httpd
 RUN dnf install -y httpd
 
-# Copy the website
+# 复制这个网站
 COPY files/* /var/www/html/
 
-# Expose Port 80/tcp
+# 设置端口为80/tcp
 EXPOSE 80
 
-# Start httpd
+# 启动 httpd
 CMD ["httpd", "-DFOREGROUND"]
 ```
 
-In the above file there are some comments to indicate what is being done. More verbosely, the steps are:
+在上边的文件中有一些注释来解释每一行内容都是在做什么。更详细的步骤：
 
-  1. Create a build container with the base FROM registry.fedoraproject.org/fedora:33
-  2. RUN the command: _dnf install -y httpd_
-  3. COPY files relative to the _Containerfile_ to the container
-  4. Set EXPOSE 80 to indicate which port is auto-publishable
-  5. Set a CMD to indicate what should be run if one creates a container from this image
+  1. 在FROM registry.fedoraproject.org/fedora:33 的基础上创建一个构建容器 
+  2. 运行命令： _dnf install -y httpd_
+  3. 将与 _Containerfile_ 有关的文件拷贝到容器中
+  4. 设置EXPOSE 80来说明哪个端口是可以自动设置的
+  5. 设置一个CMD指令来说明如果从这个镜像创建一个容器应该运行什么
 
 
 
-Run the below command to create a new image from the project directory.
+运行下边的命令从工程目录创建一个新的镜像。
 
 ```
 $ podman image build -f Containerfile -t localhost/web-base
 ```
 
-Use the following command to examine your image’s attributes. Note in particular the size of your image (467 MB).
+使用一下命令来查看你的镜像的属性。注意你的镜像的大小（467 MB）。
 
 ```
 $ podman image ls
@@ -171,15 +172,15 @@ localhost/web-base                 latest  ac8c5ed73bb5  5 minutes ago  467 MB
 registry.fedoraproject.org/fedora  33      9f2a56037643  3 months ago   182 MB
 ```
 
-The example image shown above is currently occupying 467 MB of storage. The remaining stages should reduce the size of the image significantly. But first, verify that the image works as intended.
+以上这个例子中展示的镜像在现在占用了467 MB的空间。剩下的阶段将会显著地减小镜像的大小。但是首先要验证镜像是否能够按照预期工作。
 
-Enter the following command to start the container.
+输入以下命令来启动容器。
 
 ```
 $ podman container run -d --name web-base -P localhost/web-base
 ```
 
-Enter the following command to list your containers.
+输入以下命令可以列出你的容器。
 
 ```
 $ podman container ls
@@ -187,15 +188,16 @@ CONTAINER ID  IMAGE               COMMAND               CREATED        STATUS   
 d24063487f9f  localhost/web-base  httpd -DFOREGROUN...  2 seconds ago  Up 3 seconds ago  0.0.0.0:46191->80/tcp  web-base
 ```
 
-The container shown above is running and it is listening on port _46191_. Going to _localhost:46191_ from a web browser running on the host operating system should render your web page.
+以上展示的容器正在运行，它正在监听的端口是 _46191_ 。从运行在主机操作系统上的web浏览器转到 _localhost:46191_ 应该呈现你的web页面。
+
 
 ```
 $ firefox localhost:46191
 ```
 
-#### Stage 1: clear caches and remove other leftovers from the container
+#### 阶段1：清除缓存并将残余的内容从容器中删除
 
-The first step one should always perform to optimize the size of their container image is “clean up”. This will ensure that leftovers from installations and packaging are removed. What exactly this process entails will vary depending on your container. For the above example you can just edit _Containerfile_ to include the following lines.
+为了优化容器镜像的大小，第一步应该总是执行”清理“。这将保证安装和打包所残余的内容都被删掉。这个过程到底需要什么取决于你的容器。对于以上的例子，只需要编辑 _Containerfile_ 让它包含以下几行。
 
 ```
 [...]
@@ -205,7 +207,7 @@ RUN dnf install -y httpd && \
 [...]
 ```
 
-Build the modified _Containerfile_ to reduce the size of the image significantly (237 MB in this example).
+构建修改后的 _Containerfile_ 来显著地减小镜像（这个例子中是237 MB）。
 
 ```
 $ podman image build -f Containerfile -t localhost/web-clean
@@ -214,11 +216,11 @@ REPOSITORY            TAG     IMAGE ID      CREATED        SIZE
 localhost/web-clean   latest  f0f62aece028  6 seconds ago  237 MB
 ```
 
-#### Stage 2: remove documentation and unneeded package dependencies
+#### 阶段2：删除文档和不需要的依赖包
 
-Many packages will pull in recommendations, weak dependencies and documentation when they are installed. These are often not needed in a container and can be excluded. The _dnf_ command has options to indicate that it should not include weak dependencies or documentation.
+许多包在安装时会被建议拉下来，包含一些弱依赖和文档。这些在容器中通常是不需要的，可以删除。 _dnf_  命令的选项表明了他不需要包含弱依赖或文档。
 
-Edit _Containerfile_ again and add the options to exclude documentation and weak dependencies on the _dnf install_ line:
+再次编辑 _Containerfile_ ，并在 _dnf install_ 行中添加删除文档和弱依赖的选项：
 
 ```
 [...]
@@ -228,7 +230,7 @@ RUN dnf install -y httpd --nodocs --setopt install_weak_deps=False && \
 [...]
 ```
 
-Build _Containerfile_ with the above modifications to achieve an even smaller image (231 MB).
+构建经过以上修改后的 _Containerfile_ 可以得到一个更小的镜像（231 MB）。
 
 ```
 $ podman image build -f Containerfile -t localhost/web-docs
@@ -237,11 +239,11 @@ REPOSITORY            TAG     IMAGE ID      CREATED        SIZE
 localhost/web-docs    latest  8a76820cec2f  8 seconds ago  231 MB
 ```
 
-#### Stage 3: use a smaller container base image
+#### 阶段3：使用更小的容器基镜像
 
-The prior stages, in combination, have reduced the size of the example image by half. But there is still one more thing that can be done to reduce the size of the image. The base image _registry.fedoraproject.org/fedora:33_ is meant for general purpose use. It provides a collection of packages that many people expect to be pre-installed in their Fedora Linux containers. The collection of packages provided in the general purpose Fedora Linux base image is often more extensive than needed, however. The Fedora Project also provides a _fedora-minimal_ base image for those who wish to start with only the essential packages and then add only what they need to achieve a smaller total image size.
+前面的阶段结合起来，使得示例镜像的大小减少了一半。但是仍然还有一些途径来进一步减小镜像的大小。这个基镜像 _registry.fedoraproject.org/fedora:33_ 是通用的。它提供了一组软件包，许多人希望这些软件包预先安装在他们的Fedora Linux容器中。但是，通用Fedora Linux基镜像中提供的包通常必须要的更多。Fedora工程也为那些希望只从基本包开始，然后只添加所需内容来实现较小总镜像大小的用户提供了一个 _fedora-minimal_ 镜像。
 
-Use _podman image search_ to search for the _fedora-minimal_ image as shown below.
+使用 _podman image search_ 来查找 _fedora-minimal_ 镜像如下所示。
 
 ```
 $ podman image search fedora-minimal
@@ -249,19 +251,19 @@ INDEX               NAME   DESCRIPTION   STARS   OFFICIAL   AUTOMATED
 fedoraproject.org   registry.fedoraproject.org/fedora-minimal         0
 ```
 
-The _fedora-minimal_ base image excludes [DNF][9] in favor of the smaller [microDNF][10] which does not require Python. When _registry.fedoraproject.org/fedora:33_ is replaced with _registry.fedoraproject.org/fedora-minimal:33_, _dnf_ needs to be replaced with _microdnf_.
+_fedora-minimal_ 基镜像不包含[DNF][9]，而是倾向于不需要Python的较小的[microDNF][10]。当 _registry.fedoraproject.org/fedora:33_ 被 _registry.fedoraproject.org/fedora-minimal:33_ 替换后，需要用 _microdnf_ 来替换 _dnf_。
+
 
 ```
-# Use Fedora minimal 33 as base image
+# 使用Fedora minimal 33作为基镜像
 FROM registry.fedoraproject.org/fedora-minimal:33
 
-# Install httpd
+# 安装 httpd
 RUN microdnf install -y httpd --nodocs --setopt install_weak_deps=0 && \
     microdnf clean all -y
 [...]
 ```
-
-Rebuild the image to see how much storage space has been recovered by using _fedora-minimal_ (169 MB).
+使用 _fedora-minimal_ 重新构建后的镜像大小如下所示 （169 MB）。
 
 ```
 $ podman image build -f Containerfile -t localhost/web-docs
@@ -270,46 +272,47 @@ REPOSITORY             TAG     IMAGE ID      CREATED        SIZE
 localhost/web-minimal  latest  e1603bbb1097  7 minutes ago  169 MB
 ```
 
-The initial image size was **467 MB**. Combining the methods detailed in each of the above stages has resulted in a final image size of **169 MB**. The final _total_ image size is smaller than the original _base_ image size of 182 MB!
+最开始的镜像大小是**467 MB**。结合以上每个阶段所提到的方法，进行重新构建之后可以得到最终大小为**169 MB**的镜像。最终的 _总_ 镜像大小比最开始的 _基_ 镜像大小小了182 MB！
 
-### Building containers from scratch
+### 从零开始构建容器
 
-The previous section used a container file and Podman to build a new image. There is one last thing to demonstrate — building a container from scratch using Buildah. Podman uses the same libraries to build containers as Buildah. But Buildah is considered a pure build tool. Podman is designed to work as a replacement for Docker.
+前边的内容使用一个容器文件和Podman来构建一个新的镜像。还有最后一个方法要展示——使用Buildah来从头构建一个容器。Podman使用与Buildah相同的库来构建容器。但是Buildah被认为是一个纯构建工具。Podman被设计来是为了代替Docker的。
 
-When building from scratch using Buildah, the container is empty — there is _nothing_ in it. Everything needed must be installed or copied from outside the container. Fortunately, this is quite easy with Buildah. Below, a small Bash script is provided which will build the image from scratch. Instead of running the script, you can run each of the commands from the script individually in a terminal to better understand what is being done.
+使用Buildah从头构建的容器是空的——它里边什么都 _没有_ 。所有的东西都需要安装或者从容器外拷贝。幸运地是，使用Buildah可以相当简单。下边是一个从头开始构建镜像的小的Bash脚本。除了运行这个脚本，你也可以在终端逐条地运行脚本中的命令，来更好的理解每一步都是做什么的。
+
 
 ```
 #!/usr/bin/env bash
 set -o errexit
 
-# Create a container
+# 创建一个容器
 CONTAINER=$(buildah from scratch)
 
-# Mount the container filesystem
+# 挂载容器文件系统
 MOUNTPOINT=$(buildah mount $CONTAINER)
 
-# Install a basic filesystem and minimal set of packages, and nginx
+# 安装一个基本的文件系统和最小的包以及nginx
 dnf install -y --installroot $MOUNTPOINT  --releasever 33 glibc-minimal-langpack httpd --nodocs --setopt install_weak_deps=False
 
 dnf clean all -y --installroot $MOUNTPOINT --releasever 33
 
-# Cleanup
+# 清除
 buildah unmount $CONTAINER
 
-# Copy the website
+# 复制网站
 buildah copy $CONTAINER 'files/*' '/var/www/html/'
 
-# Expose Port 80/tcp
+# 设置端口为 80/tcp
 buildah config --port 80 $CONTAINER
 
-# Start httpd
+# 启动httpd
 buildah config --cmd "httpd -DFOREGROUND" $CONTAINER
 
-# Save the container to an image
+# 将容器保存为一个镜像
 buildah commit --squash $CONTAINER web-scratch
 ```
 
-Alternatively, the image can be built by passing the above script to Buildah. Notice that root privileges are not required.
+或者，可以通过将上面的脚本传递给Buildah来构建镜像。注意不需要root权限。
 
 ```
 $ buildah unshare bash web-scratch.sh
@@ -318,13 +321,14 @@ REPOSITORY             TAG     IMAGE ID      CREATED        SIZE
 localhost/web-scratch  latest  acca45fc9118  9 seconds ago  155 MB
 ```
 
-The final image is only **155 MB**! Also, the [attack surface][11] has been reduced. Not even DNF (or microDNF) is installed in the final image.
+最后的镜像只有**155 MB**！而且[攻击面][11]也减少了。甚至在最后的镜像中都没有安装DNF（或者microDNF）。
 
-### Conclusion
+### 结论
 
-Building smaller container images has many advantages. Reducing the needed bandwidth, the disk footprint and attack surface will lead to better images overall. It is easy to reduce the footprint with just a few small changes. Many of the changes can be done without altering the functionality of the resulting image.
+构建一个比较小的容器镜像有许多优点。减少所需要的带宽、磁盘占用以及攻击面，都会得到更好的镜像。只用很少的更改来减小镜像的大小很简单。许多更改都可以在不改变结果镜像的功能下完成。
 
-It is also possible to build very small images from scratch which will only hold the needed binaries and configuration files.
+
+只保存所需的二进制文件和配置文件来构建非常小的镜像也是可能的。
 
 --------------------------------------------------------------------------------
 
