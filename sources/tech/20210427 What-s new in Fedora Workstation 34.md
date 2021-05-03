@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/whats-new-fedora-34-workstation/)
 [#]: author: (Christian Fredrik Schaller https://fedoramagazine.org/author/uraeus/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
