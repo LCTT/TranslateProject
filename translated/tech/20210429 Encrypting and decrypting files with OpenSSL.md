@@ -1,39 +1,36 @@
-[#]: subject: (Encrypting and decrypting files with OpenSSL)
-[#]: via: (https://opensource.com/article/21/4/encryption-decryption-openssl)
-[#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
-[#]: collector: (lujun9972)
-[#]: translator: (MjSeven)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: subject: "Encrypting and decrypting files with OpenSSL"
+[#]: via: "https://opensource.com/article/21/4/encryption-decryption-openssl"
+[#]: author: "Gaurav Kamathe https://opensource.com/users/gkamathe"
+[#]: collector: "lujun9972"
+[#]: translator: "MjSeven"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
-Encrypting and decrypting files with OpenSSL
+使用 OpenSSL 加密和解密文件
 ======
-OpenSSL is a practical tool for ensuring your sensitive and secret
-messages can't be opened by outsiders.
+OpenSSL 是一个实用工具，它可以确保其他人员无法打开你的敏感和机密消息。
 ![A secure lock.][1]
 
-Encryption is a way to encode a message so that its contents are protected from prying eyes. There are two general types:
+加密是对消息进行编码的一种方法，这样可以保护消息的内容免遭他人窥视。一般有两种类型：
 
-  1. Secret-key or symmetric encryption
-  2. Public-key or asymmetric encryption
+  1. 密钥或对称加密
+  2. 公钥或非对称加密
 
+私钥加密使用相同的密钥进行加密和解密，而公钥加密使用不同的密钥进行加密和解密。每种方法各有利弊。私钥加密速度更快，而公钥加密更安全，因为它解决了安全共享密钥的问题，将它们结合在一起可以最大限度地利用每种类型的优势。
 
+### 公钥加密
 
-Secret-key encryption uses the same key for encryption and decryption, while public-key encryption uses different keys for encryption and decryption. There are pros and cons to each method. Secret-key encryption is faster, and public-key encryption is more secure since it addresses concerns around securely sharing the keys. Using them together makes optimal use of each type's strengths.
+公钥加密使用两组密钥，称为密钥对。一个是公钥，可以与你想要秘密通信的任何人自由共享。另一个是私钥，应该是一个秘密，永远不会共享。
 
-### Public-key encryption
+公钥用于加密。如果某人想与你交流敏感信息，你可以将你的公钥发送给他们，他们可以使用公钥加密消息或文件，然后再将其发送给你。私钥用于解密。解密发件人加密消息的唯一方法是使用私钥。因此，它们被称为“密钥对”，它们是相互关联的的。
 
-Public-key encryption uses two sets of keys, called a key pair. One is the public key and can be freely shared with anyone you want to communicate with secretly. The other, the private key, is supposed to be a secret and never shared.
+### 如何使用 OpenSSL 加密文件
 
-Public keys are used for encryption. If someone wants to communicate sensitive information with you, you can send them your public key, which they can use to encrypt their messages or files before sending them to you. Private keys are used for decryption. The only way you can decrypt your sender's encrypted message is by using your private key. Hence the descriptor "key-pair"; the set of keys goes hand-in-hand.
-
-### How to encrypt files with OpenSSL
-
-[OpenSSL][2] is an amazing tool that does a variety of tasks, including encrypting files. This demo uses a Fedora machine with OpenSSL installed. The tool is usually installed by default by most Linux distributions; if not, you can use your package manager to install it:
+[OpenSSL][2] 是一个了不起的工具，可以执行各种任务，例如加密文件。本文使用安装了 OpenSSL 的 Fedora 计算机。如果你的机器上没有，则可以使用软件包管理器进行安装：
 
 
-```
+```bash
 $ cat /etc/fedora-release
 Fedora release 33 (Thirty Three)
 $
@@ -42,25 +39,25 @@ OpenSSL 1.1.1i FIPS  8 Dec 2020
 alice $
 ```
 
-To explore file encryption and decryption, imagine two users, Alice and Bob, who want to communicate with each other by exchanging encrypted files using OpenSSL.
+要探索文件加密和解密，想象两个用户 Alice 和 Bob，他们想通过使用 OpenSSL 交换加密文件来相互通信。
 
-#### Step 1: Generate key pairs
+#### 步骤 1：生成密钥对
 
-Before you can encrypt files, you need to generate a pair of keys. You will also need a passphrase, which you must use whenever you use OpenSSL, so make sure to remember it.
+在加密文件之前，你需要生成密钥对。你还需要一个密码短语，每当你使用 OpenSSL 时都必须使用该密码短语，因此务必记住它。
 
-Alice generates her set of key pairs with:
+Alice 使用以下命令生成她的一组密钥对：
 
 
+```bash
+alice $ openssl genrsa -aes128 -out alice_private.pem 1024
 ```
-`alice $ openssl genrsa -aes128 -out alice_private.pem 1024`
-```
 
-This command uses OpenSSL's [genrsa][3] command to generate a 1024-bit public/private key pair. This is possible because the RSA algorithm is asymmetric. It also uses aes128, a symmetric key algorithm, to encrypt the private key that Alice generates using genrsa.
+此命令使用 OpenSSL 的 [genrsa][3] 命令生成一个 1024 位的公钥/私钥对。这是可以的，因为 RSA 算法是不对称的。它也可以使用 aes 128 对称密钥算法来加密 Alice 生成的私钥。
 
-After entering the command, OpenSSL prompts Alice for a passphrase, which she must enter each time she wants to use the keys:
+输入命令后，OpenSSL 会提示 Alice 输入密码，每次使用密钥时，她都必须输入该密码：
 
 
-```
+```bash
 alice $ openssl genrsa -aes128 -out alice_private.pem 1024
 Generating RSA private key, 1024 bit long modulus (2 primes)
 ..........+++++
@@ -78,10 +75,10 @@ alice_private.pem: PEM RSA private key
 alice $
 ```
 
-Bob follows the same procedure to create his key pair:
+Bob 使用相同的步骤来创建他的密钥对：
 
 
-```
+```bash
 bob $ openssl genrsa -aes128 -out bob_private.pem 1024
 Generating RSA private key, 1024 bit long modulus (2 primes)
 ..................+++++
@@ -98,10 +95,10 @@ bob_private.pem: PEM RSA private key
 bob $
 ```
 
-If you are curious about what the key file looks like, you can open the .pem file that the command generated—but all you will see is a bunch of text on the screen:
+如果你对密钥文件感到好奇，可以打开命令生成的 .pem 文件，但是你会看到屏幕上的一堆文本：
 
 
-```
+```bash
 alice $ head alice_private.pem
 \-----BEGIN RSA PRIVATE KEY-----
 Proc-Type: 4,ENCRYPTED
@@ -116,10 +113,10 @@ pyAnN9uGUTBCDYeTwdw8TEzkyaL08FkzLfFbS2N9BDksA3rpI1cxpxRVFr9+jDBz
 alice $
 ```
 
-To view the key's details, you can use the following OpenSSL command to input the .pem file and display the contents. You may be wondering where to find the other key since this is a single file. This is a good observation. Here's how to get the public key:
+要查看密钥的详细信息，可以使用以下 OpenSSL 命令打开 .pem 文件并显示内容。你可能想知道在哪里可以找到另一个密钥，因为这是单个文件。你观察的很细致，获取公钥的方法如下：
 
 
-```
+```bash
 alice $ openssl rsa -in alice_private.pem -noout -text
 Enter pass phrase for alice_private.pem:
 RSA Private-Key: (1024 bit, 2 primes)
@@ -135,7 +132,7 @@ modulus:
     ff:1b:12:af:53:22:c0:41:51
 publicExponent: 65537 (0x10001)
 
-&lt;&lt; snip &gt;&gt;
+<< snip >>
 
 exponent2:
     6e:aa:8c:6e:37:d0:57:37:13:c0:08:7e:75:43:96:
@@ -152,13 +149,13 @@ coefficient:
 alice $
 ```
 
-#### Step 2: Extract the public keys
+#### 步骤 2：提取公钥
 
-Remember, the public key is the one you can freely share with others, whereas you must keep your private key secret. So, Alice must extract her public key and save it to a file using the following command:
+注意，公钥是你可以与他人自由共享的密钥，而你必须将私钥保密。因此，Alice 必须提取她的公钥，并将其保存到文件中：
 
 
-```
-alice $ openssl rsa -in alice_private.pem -pubout &gt; alice_public.pem
+```bash
+alice $ openssl rsa -in alice_private.pem -pubout > alice_public.pem
 Enter pass phrase for alice_private.pem:
 writing RSA key
 alice $
@@ -168,10 +165,10 @@ alice $ ls -l *.pem
 alice $
 ```
 
-You can view the public key details the same way as before, but this time, input the public key .pem file instead:
+你可以使用与之前相同的方式查看公钥详细信息，但是这次，输入公钥 .pem 文件：
 
 
-```
+```bash
 alice $
 alice $ openssl rsa -in alice_public.pem -pubin -text -noout
 RSA Public-Key: (1024 bit)
@@ -183,11 +180,11 @@ Modulus:
 $
 ```
 
-Bob can follow the same process to extract his public key and save it to a file:
+Bob 可以按照相同的过程来提取他的公钥并将其保存到文件中：
 
 
-```
-bob $ openssl rsa -in bob_private.pem -pubout &gt; bob_public.pem
+```bash
+bob $ openssl rsa -in bob_private.pem -pubout > bob_public.pem
 Enter pass phrase for bob_private.pem:
 writing RSA key
 bob $
@@ -197,28 +194,28 @@ bob $ ls -l *.pem
 bob $
 ```
 
-#### Step 3: Exchange public keys
+#### 步骤 3：交换公钥
 
-These public keys are not much use to Alice and Bob until they exchange them with each other. Several methods are available for sharing public keys, including copying the keys to each other's workstations using the `scp` command.
+这些公钥在 Alice 和 Bob 彼此交换之前没有太大用处。有几种共享公钥的方法，例如使用 `scp` 命令将密钥复制到彼此的工作站。
 
-To send Alice's public key to Bob's workstation:
-
-
-```
-` alice $ scp alice_public.pem bob@bob-machine-or-ip:/path/`
-```
-
-To send Bob's public key to Alice's workstation:
+将 Alice 的公钥发送到 Bob 的工作站：
 
 
-```
-`bob $ scp bob_public.pem alice@alice-machine-or-ip:/path/`
+```bash
+alice $ scp alice_public.pem bob@bob-machine-or-ip:/path/
 ```
 
-Now, Alice has Bob's public key and vice versa:
+将 Bob 的公钥发送到 Alice 的工作站：
 
 
+```bash
+bob $ scp bob_public.pem alice@alice-machine-or-ip:/path/
 ```
+
+现在，Alice 有 Bob 的公钥，反之亦然：
+
+
+```bash
 alice $ ls -l bob_public.pem
 -rw-r--r--. 1 alice alice 272 Mar 22 17:51 bob_public.pem
 alice $
@@ -230,12 +227,12 @@ bob $ ls -l alice_public.pem
 bob $
 ```
 
-#### Step 4: Exchange encrypted messages with a public key
+#### 步骤 4：使用公钥交换加密的消息
 
-Say Alice needs to communicate secretly with Bob. She writes her secret message in a file and saves it to `top_secret.txt`. Since this is a regular file, anybody can open it and see its contents. There isn't much protection here:
+假设 Alice 需要与 Bob 秘密交流。她将秘密信息写入文件中，并将其保存到 `top_secret.txt` 中。由于这是一个普通文件，因此任何人都可以打开它并查看其内容，这里并没有太多保护：
 
 
-```
+```bash
 alice $
 alice $ echo "vim or emacs ?" &gt; top_secret.txt
 alice $
@@ -244,16 +241,14 @@ vim or emacs ?
 alice $
 ```
 
-To encrypt this secret message, Alice needs to use the `openssls -encrypt` command. She needs to provide three inputs to the tool:
+要加密此秘密消息，Alice 需要使用 `openssls -encrypt` 命令。她需要为该工具提供三个输入：
 
-  1. The name of the file that contains the secret message
-  2. Bob's public key (file)
-  3. The name of a file where the encrypted message will be stored
-
-
+  1. 秘密消息文件的名称
+  2. Bob 的公钥（文件）
+  3. 加密后新文件的名称
 
 
-```
+```bash
 alice $ openssl rsautl -encrypt -inkey bob_public.pem -pubin -in top_secret.txt -out top_secret.enc
 alice $
 alice $ ls -l top_secret.*
@@ -263,10 +258,10 @@ alice $
 alice $
 ```
 
-After encryption, the original file is still viewable, whereas the newly created encrypted file looks like gibberish on the screen. You can be assured that the secret message has been encrypted:
+加密后，原始文件仍然是可见的，而新创建的加密文件在屏幕上看起来像乱码。这样，你可以确定秘密消息已被加密：
 
 
-```
+```bash
 alice $ cat top_secret.txt
 vim or emacs ?
 alice $
@@ -290,24 +285,24 @@ top_secret.enc: data
 alice $
 ```
 
-It's safe to delete the original file with the secret message to remove any traces of it:
+删除秘密消息的原始文件是安全的，这样确保任何痕迹都没有：
 
 
-```
-`alice $ rm -f top_secret.txt`
-```
-
-Now Alice needs to send this encrypted file to Bob over a network, once again, using the `scp` command to copy the file to Bob's workstation. Remember, even if the file is intercepted, its contents are encrypted, so the contents can't be revealed:
-
-
-```
-`alice $  scp top_secret.enc bob@bob-machine-or-ip:/path/`
+```bash
+alice $ rm -f top_secret.txt
 ```
 
-If Bob uses the usual methods to try to open and view the encrypted message, he won't be able to read it:
+现在，Alice 需要再次使用  `scp` 命令将此加密文件通过网络发送给 Bob 的工作站。注意，即使文件被截获，其内容也会是加密的，因此内容不会被泄露：
 
 
+```bash
+alice $  scp top_secret.enc bob@bob-machine-or-ip:/path/
 ```
+
+如果 Bob 使用常规方法尝试打开并查看加密的消息，他将无法看懂该消息：
+
+
+```bash
 bob $ ls -l top_secret.enc
 -rw-r--r--. 1 bob bob 128 Mar 22 13:59 top_secret.enc
 bob $
@@ -327,27 +322,25 @@ bob $ hexdump -C top_secret.enc
 bob $
 ```
 
-#### Step 5: Decrypt the file using a private key
+#### 步骤 5：使用私钥解密文件
 
-Bob needs to do his part by decrypting the message using OpenSSL, but this time using the `-decrypt` command-line argument. He needs to provide the following information to the utility:
+Bob 需要使用 OpenSSL 来解密消息，但是这次使用的是 `-decrypt` 命令行参数。他需要向工具程序提供以下信息：
 
-  1. The encrypted file (which he got from Alice)
-  2. Bob's own private key (for decryption, since it was encrypted using Bob's public key)
-  3. A file name to save the decrypted output to via redirection
-
-
+  1. 加密的文件（从 Alice 那里得到）
+  2. Bob 的私钥（用于解密，因为文件是用 Bob 的公钥加密的）
+  3. 通过重定向保存解密输出的文件名
 
 
-```
+```bash
 bob $ openssl rsautl -decrypt -inkey bob_private.pem -in top_secret.enc &gt; top_secret.txt
 Enter pass phrase for bob_private.pem:
 bob $
 ```
 
-Bob can now read the secret message that Alice sent him:
+现在，Bob 可以阅读 Alice 发送给他的秘密消息：
 
 
-```
+```bash
 bob $ ls -l top_secret.txt
 -rw-r--r--. 1 bob bob 15 Mar 22 14:02 top_secret.txt
 bob $
@@ -356,10 +349,10 @@ vim or emacs ?
 bob $
 ```
 
-Bob needs to reply to Alice, so he writes his secret reply in a file:
+Bob 需要回复 Alice，因此他将秘密回复写在一个文件中：
 
 
-```
+```bash
 bob $ echo "nano for life" &gt; reply_secret.txt
 bob $
 bob $ cat reply_secret.txt
@@ -367,12 +360,12 @@ nano for life
 bob $
 ```
 
-#### Step 6: Repeat the process with the other key
+#### 步骤 6：使用其他密钥重复该过程
 
-To send his message, Bob follows the same process Alice used, but since the message is intended for Alice, he uses Alice's public key to encrypt the file:
+为了发送消息，Bob 采用和 Alice 相同的步骤，但是由于该消息是发送给 Alice 的，因此他需要使用 Alice 的公钥来加密文件：
 
 
-```
+```bash
 bob $ openssl rsautl -encrypt -inkey alice_public.pem -pubin -in reply_secret.txt -out reply_secret.enc
 bob $
 bob $ ls -l reply_secret.enc
@@ -397,17 +390,17 @@ bob $ # remove clear text secret message file
 bob $ rm -f reply_secret.txt
 ```
 
-Bob sends the encrypted file back to Alice's workstation via `scp`:
+Bob 通过 `scp` 将加密的文件发送至 Alice 的工作站：
 
 
+```bash
+$ scp reply_secret.enc alice@alice-machine-or-ip:/path/
 ```
-`$ scp reply_secret.enc alice@alice-machine-or-ip:/path/`
-```
 
-Alice cannot make sense of the encrypted text if she tries to read it using normal tools:
+如果 Alice 尝试使用常规工具去阅读加密的文本，她将无法理解加密的文本：
 
 
-```
+```bash
 alice $
 alice $ ls -l reply_secret.enc
 -rw-r--r--. 1 alice alice 128 Mar 22 18:01 reply_secret.enc
@@ -430,11 +423,11 @@ alice $ hexdump -C ./reply_secret.enc
 alice $
 ```
 
-So she decrypts the message with OpenSSL, only this time she provides her secret key and saves the output to a file:
+所以，她使用 OpenSSL 解密消息，只不过这次她提供了自己的私钥并将输出保存到文件中：
 
 
-```
-alice $ openssl rsautl -decrypt -inkey alice_private.pem -in reply_secret.enc &gt; reply_secret.txt
+```bash
+alice $ openssl rsautl -decrypt -inkey alice_private.pem -in reply_secret.enc > reply_secret.txt
 Enter pass phrase for alice_private.pem:
 alice $
 alice $ ls -l reply_secret.txt
@@ -445,9 +438,9 @@ nano for life
 alice $
 ```
 
-### Learn more about OpenSSL
+### 了解 OpenSSL 的更多信息
 
-OpenSSL is a true Swiss Army knife utility for cryptography-related use cases. It can do many tasks besides encrypting files. You can find out all the ways you can use it by accessing the OpenSSL [docs page][4], which includes links to the manual, the _OpenSSL Cookbook_, frequently asked questions, and more. To learn more, play around with its various included encryption algorithms to see how it works.
+OpenSSL 在加密界是真正的瑞士军刀。除了加密文件外，它还可以执行许多任务，你可以通过访问 OpenSSL [文档页面][4]来找到使用它的所有方式，包括手册的链接、 _OpenSSL Cookbook_、常见问题解答等。要了解更多信息，尝试使用其自带的各种加密算法，看看它是如何工作的。
 
 --------------------------------------------------------------------------------
 
@@ -455,14 +448,14 @@ via: https://opensource.com/article/21/4/encryption-decryption-openssl
 
 作者：[Gaurav Kamathe][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/gkamathe
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003601_05_mech_osyearbook2016_security_cc.png?itok=3V07Lpko (A secure lock.)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003601_05_mech_osyearbook2016_security_cc.png?itok=3V07Lpko "A secure lock."
 [2]: https://www.openssl.org/
 [3]: https://www.openssl.org/docs/man1.0.2/man1/genrsa.html
 [4]: https://www.openssl.org/docs/
