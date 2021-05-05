@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/scheduling-tasks-with-cron/)
 [#]: author: (Darshna Das https://fedoramagazine.org/author/climoiselle/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
