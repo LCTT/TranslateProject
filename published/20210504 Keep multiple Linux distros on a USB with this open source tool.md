@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13361-1.html)
 
 神器：在一个 U 盘上放入多个 Linux 发行版
 ======
@@ -60,7 +60,7 @@ $ sudo sh Ventoy2Disk.sh -i /dev/sdX
 
 这样就可以格式化它并将 Ventoy 安装到你的 U 盘上。现在你可以复制和粘贴所有适合放在 U 盘上的 Linux 发行版文件。如果你在电脑上用新创建的 U 盘引导，你会看到一个菜单，上面有你复制到 U 盘上的发行版。
 
-![Ventoy中的Linux发行版][9]
+![Ventoy 中的 Linux 发行版][9]
 
 ### 构建一个便携式的动力源
 
