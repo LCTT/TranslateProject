@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/linux-ventoy)
 [#]: author: (Don Watkins https://opensource.com/users/don-watkins)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
