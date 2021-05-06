@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/metro-exodus-steam/)
 [#]: author: (Asesh Basu https://news.itsfoss.com/author/asesh/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (alim0x)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
