@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/quarkus-tutorial)
 [#]: author: (Saumya Singh https://opensource.com/users/saumyasingh)
 [#]: collector: (lujun9972)
-[#]: translator: (geekpi)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
