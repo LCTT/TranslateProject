@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (alim0x)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13370-1.html)
 
 《地铁：离去》终于来到了 Steam for Linux
 ======
