@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13368-1.html"
 
 使用 OpenSSL 加密和解密文件
 ======
