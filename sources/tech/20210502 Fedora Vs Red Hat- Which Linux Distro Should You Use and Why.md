@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/fedora-vs-red-hat/)
 [#]: author: (Sarvottam Kumar https://itsfoss.com/author/sarvottam/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
