@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/linux-gui-apps-wsl/)
 [#]: author: (Jacob Crume https://news.itsfoss.com/author/jacob/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Kevin3599 )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
