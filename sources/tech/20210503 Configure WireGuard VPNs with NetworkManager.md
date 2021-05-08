@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/configure-wireguard-vpns-with-networkmanager/)
 [#]: author: (Maurizio Garcia https://fedoramagazine.org/author/malgnuz/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
