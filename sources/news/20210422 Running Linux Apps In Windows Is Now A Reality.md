@@ -86,27 +86,24 @@
 
 _你对Linux软件移植入Windows怎么看？请在下面留下你的评论。_
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
+#### BIG科技网站获得数百万美元的收入，这是FOSS的消息！
 
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
+如果您喜欢我们在FOSS上的文章，请考虑捐款以支持我们的独立出版物。您的支持将帮助我们继续发布针对台式机Linux和开源软件的内容。
 
-I'm not interested
+我对此不感兴趣
 
-#### _Related_
+＃＃＃＃ _有关的_
 
-  * [Linux Mint 20.1 is Available to Download Now, Here are 9 New Features in This Release][13]
-  * ![][14] ![Linux Mint 20.1][15]
-
-
-  * [The Progress Linux has Made in Terms of Gaming is Simply Incredible: Lutris Creator][16]
-  * ![][14] ![][17]
+  * [Linux Mint 20.1现在可以下载，这是此发行版中的9个新功能] [13]
+  *！[] [14]！[Linux Mint 20.1] [15]
 
 
-  * [Nitrux 1.3.8 Release Packs in KDE Plasma 5.21, Linux 5.11, and More Changes][18]
-  * ![][14] ![][19]
+  * [Linux在游戏方面取得的进步简直令人难以置信：Lutris Creator] [16]
+  *！[] [14]！[] [17]
 
 
-
+  * [KDE Plasma 5.21，Linux 5.11和更多更改中的Nitrux 1.3.8发布包] [18]
+  *！[] [14]！[] [19]
 --------------------------------------------------------------------------------
 
 via: https://news.itsfoss.com/linux-gui-apps-wsl/
