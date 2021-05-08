@@ -6,87 +6,85 @@
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
+在Windows中运行基于Linux的应用程序已经成为现实
 
-Running Linux Apps In Windows Is Now A Reality
 ======
 
-When Microsoft released [Windows Subsystem for Linux][1] (WSL) in 2016, the hype was unreal. People were dreaming of running their Windows and Linux apps side-by-side, without having to reboot. But alas, WSL could only run terminal applications.
+当微软在2016年发布“Windows subsystem for Linux”也就是WSL的时候显然有夸大宣传的嫌疑，当时人们梦想着无需重启就可以同时运行基于Windows和Linux的应用程序，令人可惜的是，WSL只能运行Linux终端程序。
 
-Last year, Microsoft set out again to try to revolutionize the Windows app ecosystem. This time, they replaced the old emulated kernel with a real Linux kernel. This change allowed you to run [Linux apps in Windows][2].
+去年，微软再次尝试去颠覆Windows的应用生态，这一次，他们替换了老旧的虚拟核心，转而使用了真正的Linux核心，这使得用户可以同时运行Linux和Windows程序。 [Linux apps in Windows][2].
 
-### Initial Preview of GUI Apps for WSL
+### 有关WSL用户界面的最初展示
 
 ![][3]
 
-Technically, you did get the initial support for Linux GUI apps on WSL, but only when using a 3rd-party X server. These were often buggy, slow, hard to set up, and posed a privacy concern.
+从技术上讲，用户确实获得了WSL上对Linux GUI应用程序的支持，但仅限于使用第三方X窗口系统时。这通常是不稳定的，缓慢的，难以设置的，并且使人们有隐私方面的顾虑。
 
-The result of this was a small group of Linux enthusiasts (that happened to run Windows) that had the skills and knowledge to set up an X server. These people were then horribly disappointed at the fact there was no hardware acceleration at all.
+结果是小部分Linux爱好者（碰巧运行Windows），他们具有设置X窗口系统的能力。但是，这些爱好者对硬件加速的缺失感到失望。
 
-So, it was wise to stick to command line utilities on WSL.
+所以，较为明智的方法是在WSL上只运行基于命令行的程序。
 
-**But this all changes now.** Now that Microsoft is [officially supporting][4] GUI Linux apps, we will be receiving hardware acceleration, alongside a huge range of other improvements in WSL.
+**但是现在这个问题得到了改善**  [现在，微软官方宣布了对图形化的Linux应用程序的支持，][4] 我们很快就能够享受硬件加速了，
+### 面向大众的Linux GUI应用程序：WSLg
 
-### Linux GUI Apps For The Masses: WSLg
+![图片来源：Microsoft Devblogs][5]
 
-![Image Credit: Microsoft Devblogs][5]
+随着微软发布新的WSL，有了一系列巨大的改进，它们包括：
 
-With the new official support from Microsoft in WSL, there is a huge range of available improvements. These include:
-
-  * GPU hardware acceleration
-  * Audio and microphone support out of the box
-  * Automatic starting of the X and PulseAudio servers
-
+  * GPU硬件加速
+  * 开箱即用的音频和麦克风支持
+  * 自动启用X图形界面和 Pulse Audio服务
 
 
-And, they’ve given this feature a nickname “**WSLg**“.
+有趣的是，开发者们给这个功能起了一个有趣的外号“WSLg”
 
-These features will make running Linux apps on WSL almost as easy as running native apps, with a minimal performance impact.
+这些功能将使在WSL上运行Linux应用程序几乎与运行原生应用程序一样容易，同时无需占用过多性能资源。
 
-So, you can try running your [favorite IDE][6], Linux-specific testing use-cases, and a variety of other applications like [CAD software][7].
+因此，您可以尝试运行 [自己喜欢的IDE][6], 特定于Linux的测试用例以及诸如CAD之类的各种软件 [CAD][7].
 
-#### GPU Hardware Acceleration In Linux Apps
+#### 在Linux应用下的GPU硬件加速。
 
-![Image Credit: Microsoft Devblogs][8]
+![图片鸣谢：Microsoft Devblogs][8]
 
-One of the biggest issues with running GUI Linux apps on Windows previously was that they couldn’t use hardware acceleration. This left us with a slow mess when trying to move windows around and doing anything that needed some GPU horsepower.
+以前在Windows上运行GUI Linux程序的最大问题之一是它们无法使用硬件加速。当用户尝试移动窗口并执行需要对GPU性能有要求的任务时候它常常陷入缓慢卡顿的局面。
 
-According to the announcement post from Microsoft:
+根据微软发布的宣发：
 
-> As part of this feature, we have also enabled support for GPU accelerated 3D graphics! Thanks to work that was completed in Mesa 21.0, any applications that are doing complex 3D rendering can leverage OpenGL to accelerate these using the GPU on your Windows 10 machine.
+> “作为此次更新的一部分，我们也启用了对3D图形的GPU加速支持，多亏了Mesa 21.0，所有的复杂3D渲染的应用程序都可以利用OpenGL在Windows 10上使用GPU为这些应用程序提供硬件加速。”
+> 
+这是一个相当实用的改进，这对用户在WSL下运行需求强大GPU性能的应用程序提供了莫大帮助。
 
-This is a useful addition, and should help anyone wanting to run GPU intensive applications through WSL.
+#### 开箱即用的音频和麦克风支持！
 
-#### Audio And Microphone Support Out Of The Box!
+如果想要良好的并行Windows和Linux程序，好的麦克风支持是必不可少的，随着新的WSL发布，音频支持时开箱即用的，这都要归功于随着X图形界面一同启用的pulse Audio服务。
 
-One of the key elements to a good experience with Linux apps running alongside Windows apps is the audio. With the new WSL update, audio is supported out of the box. This is achieved with a PulseAudio server being started at the same time as the X server.
+如果想要良好的并行Windows和Linux程序，好的麦克风支持是必不可少的，随着新的WSL发布，音频支持时开箱即用的，这都要归功于随着X图形界面一同启用的pulse Audio服务。
 
-Microsoft explains:
+> “WSL上的Linux GUI应用程序还将包括开箱即用的音频和麦克风支持。这一令人兴奋的改进将使您的应用程序可以播放音频提示并调用麦克风，适合构建，测试或使用电影播放器，应用程序等。”
 
-> Linux GUI applications on WSL will also include out-of-the-box audio and microphone support. This exciting aspect will let your apps play audio cues and utilize the microphone, perfect for building, testing, or using movie players, telecommunication apps, and more.
+如果我们希望Linux变得更加普及，这是一项关键功能。这也将允许Windows应用的开发人员更好地将其应用移植到Linux。
 
-If we want Linux apps to become more widespread, this is a key feature. This will also allow developers of Windows apps to better support porting their apps to Linux.
+####自动启动所有必需的服务
 
-#### Automatic Starting Of All The Required Servers
+![图片鸣谢：Microsoft Devblogs][9]
 
-![Image Credit: Microsoft Devblogs][9]
+以前，您必须先手动启动 [PulseAudio][10] 和 [X 图形界面][11] 然后才能运行应用程序。现在，Microsoft已实添加一项功能，该功能可以检查Linux应用程序是否正在运行，然后自动启动所需的服务。
 
-Previously, you had to start the [PulseAudio][10] and [X servers][11] manually before being able to actually run anything. Now, Microsoft has implemented a service that checks to see if a Linux app is running, and then starts the required servers automatically.
+这允许用户更容易在Windows上运行Linux应用程序
 
-This allows much easier launching and using of Linux apps on Windows.
+微软声称这些改动会显著提升用户体验.
 
-Microsoft claims this will improve the user experience significantly:
+> “借助此功能，我们将启动一个配套发行版，其中包含Wayland，X桌面，音频服务以及使Linux GUI应用程序与Windows并行所需的所有功能。使用完GUI应用程序并终止WSL分发后，系统发行版也会自动结束其进程。”
 
-> With this feature, we are automatically starting a companion system distro, containing a Wayland, X server, pulse audio server, and everything else needed to make Linux GUI apps communicate with Windows. After you’re finished using GUI applications and terminate your WSL distribution the system distro will automatically end its session as well.
+这些组件的结合使运行Linux GUI应用程序与常规Windows程序并行运行更为简单。
 
-These components combine to make it super easy to run Linux GUI apps alongside regular Windows apps.
+### 总结
 
-### Wrapping Up
+有了这些新功能，微软似乎正在竭尽全力使Linux应用程序在Windows上运行。随着越来越多的用户在Windows上运行Linux应用程序，我们可能会看到更多的用户转向Linux。特别是因为他们习惯的应用程序能够运行。
 
-With all these new features, it looks like Microsoft is giving it their best to get Linux apps working on Windows. And with more users running Linux apps on Windows, we may see more of them jump ship and move solely to Linux. Especially since the apps they’re used to would run anyway.
+如果这种做法取得了成功（并且微软几年后仍未将其雪藏），它将结束为期5年的试图将Linux应用程序移植入Windows的过程。如果您想了解更多信息，可以查看 [发行说明][12].
 
-If this takes off (and Microsoft doesn’t kill it in a few years), it will bring an end to a 5-year quest to bring Linux apps to Windows. If you are curious to learn more about it, you can look at the [release announcement][12].
-
-_What are your thoughts on GUI Linux apps running on Windows? Share them in the comments below!_
+_你对Linux软件移植入Windows怎么看？请在下面留下你的评论。_
 
 #### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
 
@@ -115,7 +113,7 @@ via: https://news.itsfoss.com/linux-gui-apps-wsl/
 
 作者：[Jacob Crume][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Kevin3599](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
