@@ -3,9 +3,9 @@
 [#]: author: (Sarvottam Kumar https://itsfoss.com/author/sarvottam/)
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13372-1.html)
 
 Fedora 和红帽 Linux：你应该使用哪个，为什么？
 ======
@@ -24,15 +24,15 @@ Fedora 和红帽 Linux。这两个 Linux 发行版都属于同一个组织，都
 
 #### 社区版与企业版
 
-早在 1995 年，红帽 Linux 就有了它的第一个非 beta 版本，它是作为盒装产品出售的。它也被称为<ruby>红帽商业 Linux<rt>Red Hat Commercial Linux</rt></ruby>。
+早在 1995 年，红帽 Linux 就有了它的第一个正式版本，它是作为盒装产品出售的。它也被称为<ruby>红帽商业 Linux<rt>Red Hat Commercial Linux</rt></ruby>。
 
-后来在 2003 年，红帽把红帽 Linux 变成了完全以企业客户为中心的<ruby>红帽企业 Linux<rt>Red Hat Enterprise Linux</rt></ruby>（RHEL）。从那时起，红帽就是一个企业版的 Linux 发行版。
+后来在 2003 年，红帽把红帽 Linux 变成了完全以企业客户为中心的<ruby>红帽企业 Linux<rt>Red Hat Enterprise Linux</rt></ruby>（RHEL）。从那时起，红帽 Linux 就是一个企业版的 Linux 发行版。
 
 它的意思是，你必须订阅并付费才能使用红帽 Linux，因为它不是作为一个免费的操作系统。甚至所有的软件、错误修复和安全支持都只对那些拥有红帽订阅的人开放。
 
 当红帽 Linux 变成 RHEL 时，它也导致了 Fedora 项目的成立，该项目负责 Fedora Linux的开发。
 
-与红帽不同，Fedora 是一个社区版本的 Linux 发行版，每个人都可以免费使用，包括错误修复和其他服务。
+与红帽不同，Fedora 是一个社区版的 Linux 发行版，每个人都可以免费使用，包括错误修复和其他服务。
 
 尽管红帽公司赞助了 Fedora 项目，但 Fedora Linux 主要由一个独立的开源社区维护。
 
@@ -52,7 +52,7 @@ Fedora 是 RHEL 的上游，RHEL 是 Fedora 的下游。这意味着当 Fedora �
 
 当然，红帽公司也会在合并到自己的 RHEL 代码库之前测试这些拉来的代码。
 
-换句话说，Fedora Linux 作为红帽公司的一个试验场，首先检查，然后将功能纳入 RHEL 系统中。
+换句话说，Fedora Linux 作为红帽公司的一个试验场，首先检查功能，然后将其纳入 RHEL 系统中。
 
 #### 发布周期
 
@@ -60,11 +60,11 @@ Fedora 是 RHEL 的上游，RHEL 是 Fedora 的下游。这意味着当 Fedora �
 
 Fedora 大约每六个月发布一个新版本（主要在四月和十月），并提供长达 13 个月的维护支持。
 
-红帽 Linux 每年发布一个特定系列的新的定点版本，大约 5 年后发布一个主要版本。红帽 Linux 的每个主要版本都要经过四个生命周期阶段，从 5 年的支持到使用附加的订阅的 10 年的延长寿命阶段。
+红帽 Linux 每年发布一个特定系列的新的定点版本，大约 5 年后发布一个主要版本。红帽 Linux 的每个主要版本都要经过四个生命周期阶段，从 5 年的支持到使用附加订阅的 10 年的延长寿命阶段。
 
-#### 先锋 Linux 发行版
+#### 尝鲜 Linux 发行版
 
-当涉及到创新和新技术时，Fedora 比 RHEL 更有先锋。即使 Fedora 不遵循 [滚动发布模式][6]，它也是以早期提供先锋技术而闻名的发行版。
+当涉及到创新和新技术时，Fedora 比 RHEL 更积极。即使 Fedora 不遵循 [滚动发布模式][6]，它也是以早期提供尝鲜技术而闻名的发行版。
 
 这是因为 Fedora 定期将软件包更新到最新版本，以便在每六个月后提供一个最新的操作系统。
 
@@ -72,13 +72,13 @@ Fedora 大约每六个月发布一个新版本（主要在四月和十月），�
 
 #### 文件系统
 
-在选择操作系统时，你是否把系统中数据的组织和检索放在了很重要的位置？如果是的话，在决定选择 Red Hat 和 Fedora 之前，你应该了解一下 XFS 和 BTRFS 文件系统。
+在选择操作系统时，你是否把系统中数据的组织和检索放在了很重要的位置？如果是的话，在决定选择 Red Hat 和 Fedora 之前，你应该了解一下 XFS 和 Btrfs 文件系统。
 
-那是在 2014 年，RHEL 7.0 用 XFS 取代 EXT4 作为其默认文件系统。从那时起，红帽在每个版本中都默认有一个 XFS 64 位日志文件系统。
+那是在 2014 年，RHEL 7.0 用 XFS 取代 Ext4 作为其默认文件系统。从那时起，红帽在每个版本中都默认有一个 XFS 64 位日志文件系统。
 
-虽然 Fedora 是红帽 Linux 的上游，但 Fedora 继续使用 EXT4，直到去年 [Fedora 33][9] 引入 [Btrfs 作为默认文件系统][10]。
+虽然 Fedora 是红帽 Linux 的上游，但 Fedora 继续使用 Ext4，直到去年 [Fedora 33][9] 引入 [Btrfs 作为默认文件系统][10]。
 
-有趣的是，红帽在最初发布的 RHEL 6 中包含了 Btrfs 作为“技术预览”。后来，红帽放弃了使用 Btrfs 的计划，因此在 RHEL 8 和 2019 年的后来的主要版本中完全 [删除][11] 了它。
+有趣的是，红帽在最初发布的 RHEL 6 中包含了 Btrfs 作为“技术预览”。后来，红帽放弃了使用 Btrfs 的计划，因此在 2019 年从 RHEL 8 和后来发布的主要版本中完全 [删除][11] 了它。
 
 #### 可用的变体
 
@@ -106,15 +106,16 @@ Fedora 大约每六个月发布一个新版本（主要在四月和十月），�
 
 #### 开源产品
 
-在你认为红帽 Linux 要收钱，那么它怎么能成为一个开源产品之前，我建议阅读我们的 [文章][15]，它分解了关于 FOSS 和开源的一切。
+在你认为红帽 Linux 要收钱，那么它怎么能成为一个开源产品之前，我建议阅读我们的 [文章][15]，它分析了关于 FOSS 和开源的一切。
 
-作为一个开源软件，并不意味着你可以免费得到它，有时它可能要花钱。红帽是一个已经在开源中建立了业务的开源公司。
+作为一个开源软件，并不意味着你可以免费得到它，有时它可能要花钱。红帽公司是一个已经在开源中建立了业务的开源公司。
 
 Fedora 和红帽 Linux 都是开源的操作系统。所有的 Fedora 软件包都可以在 [这里][16] 得到源代码和在 [这里][2] 得到已经打包好的软件。
 
-然而，就红帽 Linux 而言，源代码也是 [免费提供][17] 给任何人。但与 Fedora 不同的是，你需要为使用可运行的代码付费，要么你就可以自由地自行构建。
+然而，就红帽 Linux 而言，源代码也 [免费提供][17] 给任何人。但与 Fedora 不同的是，你需要为使用可运行的代码付费，要么你可以自由地自行构建。
 
 你支付给红帽的订阅费实际上是用于系统维护和技术支持。
+
 #### 桌面环境和初始系统
 
 Fedora 和红帽 Linux 的旗舰桌面版采用了 GNOME 图形界面。所以，如果你已经熟悉了 GNOME，从任何一个发行版开始都不会有太大的问题。
@@ -129,9 +130,9 @@ Fedora 和红帽 Linux 的旗舰桌面版采用了 GNOME 图形界面。所以�
 
 如果你已经精通使用 YUM、RPM 或 DNF 命令行工具来处理 RPM 软件包，赞一个！你可以在这两个基于 RPM 的发行版中选一个。
 
-默认情况下，红帽 Linux 使用 RPM（Red Hat Package Manager）来安装、更新、删除和管理 RPM 软件包。
+默认情况下，红帽 Linux 使用 RPM（<ruby>红帽包管理器<rt>Red Hat Package Manager</rt></ruby>）来安装、更新、删除和管理 RPM 软件包。
 
-Fedora 在 2015 年的 Fedora 21 之前使用 YUM（Yellowdog Updater Modified）。从 Fedora 22 开始，它现在使用 DNF（Dandified Yum）代替 YUM 作为默认的 [软件包管理器][19]。
+Fedora 在 2015 年的 Fedora 21 之前使用 YUM（<ruby>黄狗更新器修改版<rt>Yellowdog Updater Modified</rt></ruby>）。从 Fedora 22 开始，它现在使用 DNF（<ruby>时髦版 Yum<rt>Dandified Yum</rt></ruby>）代替 YUM 作为默认的 [软件包管理器][19]。
 
 ### Fedora 或红帽 Linux：你应该选择哪一个？
 
@@ -141,7 +142,7 @@ Fedora 在 2015 年的 Fedora 21 之前使用 YUM（Yellowdog Updater Modified�
 
 然而，这绝对不意味着你也应该使用 Fedora。如果你碰巧是一个企业，考虑到 Fedora 的支持生命周期在一年内就会结束，你可能会重新考虑选择它。
 
-而且，如果你不喜欢每个新版本的快速变化，你可能不喜欢尖端的 Fedora 来满足你的服务器和业务需求。
+而且，如果你不喜欢每个新版本的快速变化，你可能不喜欢尝鲜的 Fedora 来满足你的服务器和业务需求。
 
 使用企业版红帽，你可以得到高稳定性、安全性和红帽专家工程师为你的大型企业提供的支持品质。
 
@@ -154,7 +155,7 @@ via: https://itsfoss.com/fedora-vs-red-hat/
 作者：[Sarvottam Kumar][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
