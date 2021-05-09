@@ -155,7 +155,7 @@ trace id 20a4ef inet trace_debug trace_pre packet: iif "enp0" ether saddr .. ip 
 
 ### 规则集合分析
 
-上一节我们发现报文在 inet 过滤表中的一个名叫 `allowed_dnats` 的链中被丢弃。现在我们来查看它：
+上一节我们发现报文在 inet filter 表中的一个名叫 `allowed_dnats` 的链中被丢弃。现在我们来查看它：
 
 ```
 # nft list chain inet filter allowed_dnats
