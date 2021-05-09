@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "ddl-hust"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13374-1.html"
 
 网络管理初学者指南
 ======
