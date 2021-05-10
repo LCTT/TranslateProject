@@ -3,26 +3,24 @@
 [#]: author: (Maurizio Garcia https://fedoramagazine.org/author/malgnuz/)
 [#]: collector: (lujun9972)
 [#]: translator: (DCOLIVERSUN)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
 用 NetworkManager 配置 WireGuard 虚拟私有网络
 ======
 
-![wireguard][1]
-
-照片由[High Treason][3]节选自[Thin Ethernet Ramble (TS 10:38)][2]
+![](https://img.linux.net.cn/data/attachment/album/202105/10/235609bmbzbr4bikupbjjr.jpg)
 
 <ruby>虚拟私有网络<rt>Virtual Private Networks</rt></ruby>应用广泛。如今有各种方案可供使用，用户可通过这些方案访问任意类型的资源，同时保持其机密性与隐私性。
 
 最近，WireGuard 因为其简单性、速度与安全性成为最广泛使用的虚拟私有网络协议之一。WireGuard 最早应用于 Linux 内核，但目前可以用在其他平台，例如 iOS、Android 等。
 
-WireGuard 使用 UDP 作为其传输协议，基于 Critokey Routing (CKR) 建立对等节点之间的通信。服务器或客户端的每一个对等节点都有一对<ruby>密钥<rt>key</rt></ruby>（公钥与私钥），公钥与许可 IP 间建立通信连接。有关 WireGuard 更多信息请访问[主页][4]。
+WireGuard 使用 UDP 作为其传输协议，并在 Critokey Routing（CKR）的基础上建立对等节点之间的通信。每个对等节点（无论是服务器或客户端）都有一对<ruby>密钥<rt>key</rt></ruby>（公钥与私钥），公钥与许可 IP 间建立通信连接。有关 WireGuard 更多信息请访问其 [主页][4]。
 
-本文描述了如何在两个对等方——PeerA 与 PeerB——间设置 WireGuard。两个节点均运行 Fedora Linux 系统，使用 NetworkManager 为持久性配置。
+本文描述了如何在两个对等节点（PeerA 与 PeerB）间设置 WireGuard。两个节点均运行 Fedora Linux 系统，使用 NetworkManager 进行持久性配置。
 
-## **WireGuard 设置与网络配置**
+### WireGuard 设置与网络配置
 
 在 PeerA 与 PeerB 之间建立持久性虚拟私有网络连接只需三步：
 
@@ -30,35 +28,33 @@ WireGuard 使用 UDP 作为其传输协议，基于 Critokey Routing (CKR) 建�
   2. 生成<ruby>密钥对<rt>key pair</rt></ruby>。
   3. 配置 WireGuard 接口。
 
-### **安装**
+### 安装
 
-在两个对等节点（PeerA 与 PeerB）上安装 _wireguard-tools_ 软件包：
+在两个对等节点（PeerA 与 PeerB）上安装 `wireguard-tools` 软件包：
 
 ```
 $ sudo -i
 # dnf -y install wireguard-tools
 ```
 
-这个包可以从 Fedora Linux 更新库中找到。它在 _/etc/wireguard/_ 中创建一个配置目录。在这里你将创建密钥和接口配置文件。
+这个包可以从 Fedora Linux 更新库中找到。它在 `/etc/wireguard/` 中创建一个配置目录。在这里你将创建密钥和接口配置文件。
 
-### **生成密钥对**
+### 生成密钥对
 
-现在，使用 _wg_ 工具在每个节点上生成公钥与私钥：
+现在，使用 `wg` 工具在每个节点上生成公钥与私钥：
 
 ```
 # cd /etc/wireguard
 # wg genkey | tee privatekey | wg pubkey > publickey
 ```
 
-### **在 PeerA 上配置 WireGuard 接口**
+### 在 PeerA 上配置 WireGuard 接口
 
-WireGuard 接口命名规则为 _wg0_、_wg1_等等。完成下述步骤为 WireGuard 接口创建配置：
+WireGuard 接口命名规则为 `wg0`、`wg1` 等等。完成下述步骤为 WireGuard 接口创建配置：
 
-  * PeerA 节点上配置想要的 IP 地址与 MASK。
+  * PeerA 节点上配置想要的 IP 地址与掩码。
   * 该节点监听的 UDP 端口。
   * PeerA 的私钥。
-
-
 
 ```
 # cat << EOF > /etc/wireguard/wg0.conf
@@ -74,7 +70,7 @@ AllowedIPs = 172.16.1.2/32
 EOF
 ```
 
-节点监听端口的许可 UDP 流量：
+允许 UDP 流量通过节点监听的端口：
 
 ```
 # firewall-cmd --add-port=60001/udp --permanent --zone=public
@@ -82,14 +78,14 @@ EOF
 success
 ```
 
-最后，将接口配置文件导入 NetworkManager。因此，WireGuard 接口在重启后将持续存在。
+最后，将接口配置文件导入 NetworkManager。这样，WireGuard 接口在重启后将持续存在。
 
 ```
 # nmcli con import type wireguard file /etc/wireguard/wg0.conf
 Connection 'wg0' (21d939af-9e55-4df2-bacf-a13a4a488377) successfully added.
 ```
 
-验证 _wg0_ 的状态：
+验证 `wg0`的状态：
 
 ```
 # wg
@@ -128,18 +124,16 @@ IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
 ```
 
-上述输出显示接口 _wg0_ 已连接。现在，它可以和虚拟私有网络 IP 地址为 172.16.1.2 的对等节点通信。
+上述输出显示接口 `wg0` 已连接。现在，它可以和虚拟私有网络 IP 地址为 172.16.1.2 的对等节点通信。
 
 ### 在 PeerB 上配置 WireGuard 接口
 
-现在可以在第二个对等节点上创建 _wg0_ 接口的配置文件了。确保你已经完成以下步骤：
+现在可以在第二个对等节点上创建 `wg0` 接口的配置文件了。确保你已经完成以下步骤：
 
-  * PeerB 节点上设置 IP 地址与 MASK。
+  * PeerB 节点上设置 IP 地址与掩码。
   * PeerB 的私钥。
-  * PeerA 的公钥
+  * PeerA 的公钥。
   * PeerA 的 IP 地址或主机名、监听 WireGuard 流量的 UDP 端口。
-
-
 
 ```
 # cat << EOF > /etc/wireguard/wg0.conf
@@ -162,7 +156,7 @@ EOF
 Connection 'wg0' (39bdaba7-8d91-4334-bc8f-85fa978777d8) successfully added.
 ```
 
-验证 _wg0_ 的状态：
+验证 `wg0` 的状态：
 
 ```
 # wg
@@ -201,9 +195,9 @@ IP6.GATEWAY:                            --
 -------------------------------------------------------------------------------
 ```
 
-上述输出显示接口 _wg0_ 已连接。现在，它可以和虚拟私有网络 IP 地址为 172.16.1.254 的对等节点通信。
+上述输出显示接口 `wg0` 已连接。现在，它可以和虚拟私有网络 IP 地址为 172.16.1.254 的对等节点通信。
 
-### **验证节点间通信**
+### 验证节点间通信
 
 完成上述步骤后，两个对等节点可以通过虚拟私有网络连接相互通信，以下是 ICMP 测试结果：
 
@@ -222,7 +216,7 @@ PING 172.16.1.254 (172.16.1.254) 56(84) bytes of data.
 
 ## 总结
 
-虚拟私有网络很常见。在用于部署虚拟私有网络的各种协议和工具中，WireGuard 是一种简单、轻巧和安全的选择。它可以基于 CryptoKey Routing 的对等节点间建立安全的<ruby>点对点通信<rt>point-to-point connection</rt></ruby>>，过程非常简单。此外，NetworkManager 支持 WireGuard 接口，允许重启后进行持久配置。
+虚拟私有网络很常见。在用于部署虚拟私有网络的各种协议和工具中，WireGuard 是一种简单、轻巧和安全的选择。它可以在对等节点之间基于 CryptoKey 路由建立安全的点对点连接，过程非常简单。此外，NetworkManager 支持 WireGuard 接口，允许重启后进行持久配置。
 
 --------------------------------------------------------------------------------
 
@@ -231,7 +225,7 @@ via: https://fedoramagazine.org/configure-wireguard-vpns-with-networkmanager/
 作者：[Maurizio Garcia][a]
 选题：[lujun9972][b]
 译者：[DCOLIVERSUN](https://github.com/DCOLIVERSUN)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
