@@ -3,14 +3,16 @@
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13377-1.html)
 
-一个控制所有 RGB 灯光设置的开源应用
+OpenRGB：一个控制所有 RGB 灯光设置的开源应用
 ======
 
-**_简介_：**_OpenRGB 是一个有用的开源工具，可以一个工具管理所有的 RGB 灯光。让我们来了解一下它。_
+> OpenRGB 是一个有用的开源工具，可以一个工具管理所有的 RGB 灯光。让我们来了解一下它。
+
+![](https://img.linux.net.cn/data/attachment/album/202105/10/113851zqod756ft373tz36.jpg)
 
 无论是你的键盘、鼠标、CPU 风扇、AIO，还是其他连接的外围设备或组件，Linux 都没有官方软件支持来控制 RGB 灯光。
 
@@ -20,7 +22,7 @@
 
 ![][1]
 
-是的，你可能会找到不同的工具来调整设置，如 **Piper** 专门[在 Linux 上配置游戏鼠标][2]。但是，如果你有各种组件或外设，要把它们都设置成你喜欢的 RGB 颜色，那将是一件很麻烦的事情。
+是的，你可能会找到不同的工具来调整设置，如 **Piper** 专门 [在 Linux 上配置游戏鼠标][2]。但是，如果你有各种组件或外设，要把它们都设置成你喜欢的 RGB 颜色，那将是一件很麻烦的事情。
 
 OpenRGB 是一个令人印象深刻的工具，它不仅专注于 Linux，也可用于 Windows 和 MacOS。
 
@@ -44,8 +46,6 @@ OpenRGB 是一个令人印象深刻的工具，它不仅专注于 Linux，也可
   * 查看设备信息
   * 连接 OpenRGB 的多个实例，在多台电脑上同步灯光
 
-
-
 ![][4]
 
 除了上述所有的特点外，你还可以很好地控制照明区域、色彩模式、颜色等。
@@ -58,9 +58,9 @@ OpenRGB 是一个令人印象深刻的工具，它不仅专注于 Linux，也可
 
 官方网站应该也可以让你下载其他平台的软件包。但是，如果你想探索更多关于它的信息或自己编译它，请前往它的 [GitLab 页面][8]。
 
-[OpenRGB][9]
+- [OpenRGB][9]
 
-### 最后感想
+### 总结
 
 尽管我没有很多支持 RGB 的设备/组件，但我可以成功地调整我的罗技 G502 鼠标。
 
@@ -75,7 +75,7 @@ via: https://itsfoss.com/openrgb/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
