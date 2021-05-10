@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/fedora-34-release/)
 [#]: author: (Arish V https://news.itsfoss.com/author/arish/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
