@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Kevin3599)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13376-1.html)
 
 在 Windows 中运行基于 Linux 的应用程序已经成为现实
 ======
