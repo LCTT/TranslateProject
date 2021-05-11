@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/jenkins-logs)
 [#]: author: (Evan "Hippy" Slatis https://opensource.com/users/hippyod)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
