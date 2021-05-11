@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/linux-scan-samba)
 [#]: author: (Marc Skinner https://opensource.com/users/marc-skinner)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
