@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/sed-cheat-sheet)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
