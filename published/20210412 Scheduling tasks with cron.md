@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13383-1.html"
 
 使用 cron 调度任务
 ======
@@ -179,7 +179,7 @@ $ crontab -r -u username
 
 感谢你的阅读。cron 作业看起来可能只是系统管理员的工具，但它实际上与许多 Web 应用程序和用户任务有关。
 
-#### 参考
+### 参考
 
 Fedora Linux 文档的 [自动化任务][4]
 
