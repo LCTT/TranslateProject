@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/gnu-screen-cheat-sheet)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (ddl-hust)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
