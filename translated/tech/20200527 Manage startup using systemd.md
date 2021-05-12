@@ -7,27 +7,28 @@
 [#]: via: (https://opensource.com/article/20/5/manage-startup-systemd)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-Manage startup using systemd
+使用 systemd 来管理启动项
 ======
-Learn how systemd determines the order services start, even though it is
-essentially a parallel system.
+了解 systemd 是怎样决定服务启动顺序，即使它本质上是个并行系统。
 ![Penguin with green background][1]
 
-While setting up a Linux system recently, I wanted to know how to ensure that dependencies for services and other units were up and running before those dependent services and units start. Specifically, I needed more knowledge of how systemd manages the startup sequence, especially in determining the order services are started in what is essentially a parallel system.
 
-You may know that SystemV (systemd's predecessor, as I explained in the [first article][2] in this series) orders the startup sequence by naming the startup scripts with an SXX prefix, where XX is a number from 00 to 99. SystemV then uses the sort order by name and runs each start script in sequence for the desired runlevel.
+最近在设置 Linux 系统时，我想知道如何确保服务和其他单元的依赖关系在这些依赖服务和单元启动之前就已经启动并运行了。我需要更多 systemd 如何管理启动程序的相关知识，特别是关于本质上的并行系统中决定服务启动顺序方面。
 
-But systemd uses unit files, which can be created or modified by a sysadmin, to define subroutines for not only initialization but also for regular operation. In the [third article][3] in this series, I explained how to create a mount unit file. In this fifth article, I demonstrate how to create a different type of unit file—a service unit file that runs a program at startup. You can also change certain configuration settings in the unit file and use the systemd journal to view the location of your changes in the startup sequence.
+你可能知道 SystemV(systemd 的前身，我在这个系列的[第一篇文章 ][2] 中解释过)通过 SXX 前缀命名启动脚本来决定启动顺序，XX 是一个 00-99 的数字。然后 SystemV 利用文件名来排序，然后为目标运行等级执行队列中每个启动脚本。
 
-### Preparation
+但是 systemd 使用单元文件来定义子程序，单元文件可被系统管理员创建或编辑，这些文件不仅可以用于初始化时也可以用于常规操作。在这个系列的[第三篇文章 ][3] 中，我解释了如何创建一个挂载单元文件。在第五篇文章中，我解释了如何创建一种不同的单元文件--在启动时执行一个程序的服务单元文件。你也可以修改单元文件中某些配置，然后通过 systemd 日志去查看你的修改在启动序列中的位置。
 
-Make sure you have removed `rhgb` and `quiet` from the `GRUB_CMDLINE_LINUX=` line in the `/etc/default/grub` file, as I showed in the [second article][4] in this series. This enables you to observe the Linux startup message stream, which you'll need for some of the experiments in this article.
+### 准备工作
 
-### The program
+先确认你已经在 `/etc/default/grub` 文件中的 `GRUB_CMDLINE_LINUX=` 这行移除了 `rhgb` 和 `quiet`，如同我在这个系列的[第二篇文章 ][4] 中展示的那样。这让你能够查看 Linux 启动信息流，你在这篇文章中部分实验中需要用到。
 
-In this tutorial, you will create a simple program that enables you to observe a message during startup on the console and later in the systemd journal.
 
-Create the shell program `/usr/local/bin/hello.sh` and add the following content. You want to ensure that the result is visible during startup and that you can easily find it when looking through the systemd journal. You will use a version of the "Hello world" program with some bars around it, so it stands out. Make sure the file is executable and has user and group ownership by root with [700 permissions][5] for security:
+### 程序
+
+在本教程中，你会创建一个简单的程序让你能够在命令行和后续的 systemd 日志中查看启动时的信息。
+
+创建一个 shell 程序 `/usr/local/bin/hello.sh` 然后添加下述内容。你想确保执行结果在启动时是可见的，可以轻松的在 systemd 日志中找到它。你会使用一版携带一些方格的 "Hello world" 程序，这样它会非常显眼。为了确保这个文件是可执行的，且为了安全起见，它需要 root 的用户和组所有权和 [700 权限 ][5]。
 
 
 ```
@@ -42,7 +43,7 @@ echo "######### Hello World! ########"
 echo "###############################"
 ```
 
-Run this program from the command line to verify that it works correctly:
+在命令行中执行这个程序来检查它能否正常运行。
 
 
 ```
@@ -53,11 +54,11 @@ Run this program from the command line to verify that it works correctly:
 [root@testvm1 ~]#
 ```
 
-This program could be created in any scripting or compiled language. The `hello.sh` program could also be located in other places based on the [Linux filesystem hierarchical structure][6] (FHS). I place it in the `/usr/local/bin` directory so that it can be easily run from the command line without having to prepend a path when I type the command. I find that many of the shell programs I create need to be run from the command line and by other tools such as systemd.
+这个程序可以用任意脚本或编译语言实现。`hello.sh` 程序可以被放在 [Linux 文件系统层级结构 ][6] (FHS) 上的任意位置。我把它放在 `/usr/local/bin` 目录下，这样它可以直接在命令行中执行而不必在打命令的时候前面带上路径。我发现我创建的很多 shell 程序需要在命令行和其他工具(如 systemd) 运行。
 
-### The service unit file
+### 服务单元文件
 
-Create the service unit file `/etc/systemd/system/hello.service` with the following content. This file does not need to be executable, but for security, it does need user and group ownership by root and [644][7] or [640][8] permissions:
+创建服务单元文件 `/etc/systemd/system/hello.service`，写入下述内容。这个文件不一定是要可执行的，但是为了安全起见，它需要 root 的用户和组所有权和 [644][7] 或 [640][8] 权限。
 
 
 ```
@@ -78,7 +79,7 @@ ExecStart=/usr/local/bin/hello.sh
 WantedBy=multi-user.target
 ```
 
-Verify that the service unit file performs as expected by viewing the service status. Any syntactical errors will show up here:
+通过查看服务状态来确认服务单元文件能如期运行。如有任何语法问题，这里会显示错误。
 
 
 ```
@@ -89,11 +90,12 @@ Verify that the service unit file performs as expected by viewing the service st
 [root@testvm1 ~]#
 ```
 
-You can run this "oneshot" service type multiple times without problems. The oneshot type is intended for services where the program launched by the service unit file is the main process and must complete before systemd starts any dependent process.
 
-There are seven service types, and you can find an explanation of each (along with the other parts of a service unit file) in the [systemd.service(5)][9] man page. (You can also find more information in the [resources][10] at the end of this article.)
+你可以运行这类 "oneshot" 类型的服务多次而不会有问题。onehot 类型服务适用于服务单元文件启动的程序是主进程，必须在 systemd 启动任何依赖进程之前完成的服务。
 
-As curious as I am, I wanted to see what an error might look like. So, I deleted the "o" from the `Type=oneshot` line, so it looked like `Type=neshot`, and ran the command again:
+共有 9 种服务类型，你可以在 [systemd.service(5)][9] 的 man 手册上找到每一种(以及服务单元文件的其他部分)的详细解释。(你也可以在文章末尾的[资料 ][10] 中找到更多信息)。
+
+出于好奇，我想看看错误是什么样子的。所以我从 `Type=oneshot` 这行删了字母 "o"，现在它看起来是这样 `Type=neshot`，现在再次执行命令：
 
 
 ```
@@ -106,19 +108,19 @@ May 06 08:50:09 testvm1.both.org systemd[1]: /etc/systemd/system/hello.service:1
 [root@testvm1 ~]#
 ```
 
-These results told me precisely where the error was and made it very easy to resolve the problem.
+执行结果明确地告诉我错误在哪，这样解决错误变得十分容易。
 
-Just be aware that even after you restore the `hello.service` file to its original form, the error will persist. Although a reboot will clear the error, you should not have to do that, so I went looking for a method to clear out persistent errors like this. I have encountered service errors that require the command `systemctl daemon-reload` to reset an error condition, but that did not work in this case. The error messages that can be fixed with this command always seem to have a statement to that effect, so you know to run it.
+需要注意的是即使在你保存了 `hello.service` 文件为它原来的形式之后，错误依然存在。即使重启机器能消除这个错误，但你不必这么做，所以我去找了一个清理这类持久性错误的方法。我曾遇到有些错误需要 `systemctl daemon-relad` 命令来重置错误状态，但是这个例子不在此列。可以用这个命令修复的错误似乎总是有一个这样的声明，所以你知道要运行它。
 
-It is, however, recommended that you run `systemctl daemon-reload` after changing a unit file or creating a new one. This notifies systemd that the changes have been made, and it can prevent certain types of issues with managing altered services or units. Go ahead and run this command.
+然而，每次修改或新建一个单元文件之后执行 `systemctl daemon-reload` 确实是值得推荐的做法。它提醒 systemd 有修改发生，而且它可以防止某些与管理服务或单元相关的问题。所以继续去执行这条命令吧。
 
-After correcting the misspelling in the service unit file, a simple `systemctl restart hello.service` cleared the error. Experiment a bit by introducing some other errors into the `hello.service` file to see what kinds of results you get.
+在修改完服务单元文件中的拼写错误后，一个简单的 `systemctl restart hello.service` 命令就可以清除错误。实验下通过添加一些其他的错误至 `hello.service` 文件来看看会得到怎样的结果。
 
-### Start the service
+### 启动服务
 
-Now you are ready to start the new service and check the status to see the result. Although you probably did a restart in the previous section, you can start or restart a oneshot service as many times as you want since it runs once and then exits.
+现在你已经准备好启动这个新服务，通过检查状态来查看结果。尽管你可能之前已经重启过，你仍然可以启动或重启这个单发服务任意次，因为它只运行一次就退出了。
 
-Go ahead and start the service (as shown below), and then check the status. Depending upon how much you experimented with errors, your results may differ from mine:
+继续启动这个服务(如下所示)，然后检查状态。你的结果可能和我的有区别，取决于你做了多少试错实验。
 
 
 ```
@@ -141,9 +143,11 @@ May 10 10:54:45 testvm1.both.org systemd[1]: Finished My hello shell script.
 [root@testvm1 ~]#
 ```
 
-Notice in the status command's output that the systemd messages indicate that the `hello.sh` script started and the service completed. You can also see the output from the script. This display is generated from the journal entries of the most recent invocations of the service. Try starting the service several times, and then run the status command again to see what I mean.
 
-You should also look at the journal contents directly; there are multiple ways to do this. One way is to specify the record type identifier, in this case, the name of the shell script. This shows the journal entries for previous reboots as well as the current session. As you can see, I have been researching and testing for this article for some time now:
+从状态检查命令的输出中我们可以看到，systemd 日志表明 `hello.sh` 启动然后服务结束了。你也可以看到脚本的输出。该输出是根据服务的最近调用的日志记录生成的，试试看多启动几次这个服务，然后再看状态命令的输出就能理解我所说的。
+
+
+你也应该直接查看日志内容，有很多种方法可以实现。一种办法是指定记录类型标识符，在这个例子中就是 shell 脚本的名字。它会展示前几次重启和当前会话的日志记录。如你所见，我已经为这篇文章做了挺长一段时间的研究测试了。
 
 
 ```
@@ -167,7 +171,10 @@ May 10 10:54:45 testvm1.both.org hello.sh[1380]: ###############################
 [root@testvm1 ~]#
 ```
 
-To locate the systemd records for the `hello.service` unit, you can search on systemd. You can use **G+Enter** to page to the end of the journal entries and then scroll back to locate the ones you are interested in. Use the `-b` option to show only the entries for the most recent startup:
+
+为了定位 `hello.service` 单元的 systemd 记录，你可以在 systemd 中搜索。你可以使用 **G+Enter** 来翻页到日志记录
+记录的末尾，然后用回滚来找到你感兴趣的日志。使用 `-b` 选项仅展示最近启动的记录
+记录。
 
 
 ```
@@ -181,7 +188,8 @@ May 10 10:37:50 testvm1.both.org systemd[1]: Starting D-Bus System Message Bus..
 May 10 10:37:50 testvm1.both.org systemd[1]: Started D-Bus System Message Bus.
 ```
 
-I copied a few other journal entries to give you an idea of what you might find. This command spews all of the journal lines pertaining to systemd—109,183 lines when I wrote this. That is a lot of data to sort through. You can use the pager's search facility, which is usually `less`, or you can use the built-in `grep` feature. The `-g` (or `--grep=`) option uses Perl-compatible regular expressions:
+
+我拷贝了一些其他的日志记录，让你对你可能找到的东西有所了解。这条命令泼出所有属于 systemd 的日志内容--当我写这里时是 109 至 183 行。有很多数据需要整理。你可以使用页面的搜索功能，通常是 `less` 或者你可以使用内置的 `grep` 特性。`-g`( 或 `--grep=`) 选项可以使用兼容 Perl 的正则表达式。
 
 
 ```
@@ -197,11 +205,12 @@ May 10 10:54:45 testvm1.both.org systemd[1]: Finished My hello shell script.
 [root@testvm1 ~]#
 ```
 
-You could use the standard GNU `grep` command, but that would not show the log metadata in the first line.
+你可以使用标准的 GNU`grep` 命令，但是这不会展示日志首行的元数据。
 
-If you do not want to see just the journal entries pertaining to your `hello` service, you can narrow things down a bit by specifying a time range. For example, I will start with the beginning time of `10:54:00` on my test VM, which was the start of the minute the entries above are from. ****Note that the `--since=` option must be enclosed in quotes and that this option can also be expressed as `-S "<time specification>"`.
+如果你只想看包含你的 `hello` 服务的日志记录，你可以指定时间来缩小范围。举个例子，我将在我的测试虚拟机上以 `10:54:00` 为开始时间，这是上述的日志记录开始的分钟数。****注意 `--since=` 选项必须加引号，这个选项也可以写成 `-S "某个时间"`。
 
-The date and time will be different on your host, so be sure to use the timestamps that match the times in your journals:
+
+日期和时间可能在你的机器上有所不同，所以确保使用能匹配你日志中的时间的时间戳。
 
 
 ```
@@ -221,7 +230,8 @@ May 10 10:56:00 testvm1.both.org NetworkManager[840]: &lt;info&gt;  [1589122560
 &lt;snip&gt;
 ```
 
-The `since` specification skips all of the entries before that time, but there are still a lot of entries after that time that you do not need. You can also use the `until` option to trim off the entries that come a bit after the time you are interested in. I want the entire minute when the event occurred and nothing more:
+
+`since` 跳过了指定时间点的所有记录，但在此时间点之后仍有大量你不需要的记录。你也可以使用 `until` 选项来裁剪掉你感兴趣的时间之后的记录。我想要事件发生时附近的一分钟，其他的都不用：
 
 
 ```
@@ -243,7 +253,7 @@ May 10 10:54:45 testvm1.both.org audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967
 lines 1-46/46 (END)
 ```
 
-If there were a lot of activity in this time period, you could further narrow the resulting data stream using a combination of these options:
+如果在这个时间段中仍然有大量的活动的话，你可以使用这些选项组合来进一步缩小结果数据流：
 
 
 ```
@@ -255,11 +265,11 @@ May 10 10:54:45 testvm1.both.org hello.sh[1380]: ###############################
 [root@testvm1 ~]#
 ```
 
-Your results should be similar to mine. You can see from this series of experiments that the service executed properly.
+你的结果应该与我的相似。你可以从这一系列的实验中看出，这个服务运行的很正常。
 
-### Reboot—finally
+### 重启--还是走到这一步
 
-So far, you have not rebooted the host where you installed your service. So do that now because, after all, this how-to is about running a program at startup. First, you need to enable the service to launch during the startup sequence:
+到目前为止，你还没有重启过安装了服务的机器。所以现在重启吧，因为毕竟这个教程是关于启动阶段程序运行的情况。首先，你需要在启动序列中启用这个服务。
 
 
 ```
@@ -268,11 +278,11 @@ Created symlink /etc/systemd/system/multi-user.target.wants/hello.service → /e
 [root@testvm1 ~]#
 ```
 
-Notice that the link was created in the `/etc/systemd/system/multi-user.target.wants` directory. This is because the service unit file specifies that the service is "wanted" by the `multi-user.target`.
+注意到软链接是被创建在 `/etc/systemd/system/multi-user.target.wants` 目录下的。这是因为服务单元文件指定了服务是被 `multi-user.target` 所"需要"的。
 
-Reboot, and be sure to watch the data stream during the startup sequence to see the "Hello world" message. Wait … you did not see it? Well, neither did I. Although it went by very fast, I did see systemd's message that it was starting the `hello.service`.
+重启机器，确保能在启动阶段观察数据流，这样你能看到 "Hello world" 信息。等等。。.你看见了么？嗯，我也没看见。尽管它很快被刷过去了，但是我确实看到 systemd 的信息显示它启动了 `hello.service` 服务。
 
-Look at the journal since the latest system boot. You can use the `less` pager's search tool to find "Hello" or "hello." I pruned many lines of data, but I left some of the surrounding journal entries, so you can get a feel for what the entries pertaining to your service look like locally:
+看看上次系统启动后的日志。你可以使用页面搜索工具 `less` 来找到 "Hello" 或 "hello"。我裁剪了很多数据，但是留下了附近的日志记录，这样你就能感受到和你服务有关的日志记录在本地是什么样子的：
 
 
 ```
@@ -307,16 +317,17 @@ May 10 10:37:50 testvm1.both.org audit: BPF prog-id=28 op=LOAD
 &lt;snip&gt;
 ```
 
-You can see that systemd started the `hello.service` unit, which ran the `hello.sh` shell script with the output recorded in the journal. If you were able to catch it during boot, you would also have seen the systemd message indicating that it was starting the script and another message indicating that the service succeeded. By looking at the first systemd message in the data stream above, you can see that systemd started your service very soon after reaching the basic system target.
 
-But I would like to see the message displayed at startup as well. There is a way to make that happen: Add the following line to the `[Service]` section of the `hello.service` file:
+你可以看到 systemd 启动了 `hello.service`，它执行了 `hello.sh` 脚本并将输出记录在日志中。如果你能在启动阶段抓到它，你也应该能看见，systemd 信息表明了它正在启动这个脚本，另外一条信息表明了服务成功。通过观察上面数据流中第一条 systemd 消息，你会发现 systemd 在到达基本的系统目标后很快就启动了你的服务。
+
+但是我想看见信息在启动阶段也被打印出来。有一种方法可以做到：在 `hello.service` 文件的 `[Service]` 段中加入下述行：
 
 
 ```
 `StandardOutput=journal+console`
 ```
 
-The `hello.service` file now looks like this:
+现在 `hello.service` 文件看起来像这样：
 
 
 ```
@@ -338,38 +349,41 @@ StandardOutput=journal+console
 WantedBy=multi-user.target
 ```
 
-After adding this line, reboot the system, and watch the data stream as it scrolls up the display during the boot process. You should see the message in its little box. After the startup sequence completes, you can view the journal for the most recent boot and locate the entries for your new service.
+加上这一行，重启系统，并在启动过程中观察显示屏上滚动的数据流。你应该在它的小方框中看到信息。在启动序列完成后，你可以查看最近的启动日志，然后定位到你新服务的日志记录。
 
-### Changing the sequence
+### 修改次序
 
-Now that your service is working, you can look at where it starts in the startup sequence and experiment with changing it. It is important to remember that systemd's intent is to start as many services and other unit types in parallel within each of the major targets: `basic.target`, `multi-user.target`, and `graphical.target`. You should have just seen the journal entries for the most recent boot, which should look similar to my journal in the output above.
+现在你的服务已经可用了，你可以看看它在启动序列中哪个位置启动的，尝试下修改它。需要牢记的是 systemd 倾向于在每个主要目标类型中并行启动尽可能多的服务和其他的单元类型，主要类型包括：`basic.target`，`multi-user.target` 和 `graphical.target`。你应该刚刚看过最近一次开机的日志记录，应该和上面我的日志看上去类似。
 
-Notice that systemd started your test service soon after it reached the target basic system. This is what you specified in the service unit file in the `WantedBy` line, so it is correct. Before you change anything, list the contents of the `/etc/systemd/system/multi-user.target.wants` directory, and you will see a symbolic (soft) link to the service unit file. The `[Install]` section of the service unit file specifies which target will start the service, and running the `systemctl enable hello.service` command creates the link in the appropriate "target wants" directory:
+
+注意到 systemd 在它到达到基本系统目标后不久就启动了你的测试服务。这正是你在在服务单元文件的 `WantedBy` 行中指定的，所以它是对的。在你做出修改之前，列出 `/etc/systemd/system/multi-user.target.wants` 目录下的内容，你会看到一个指向服务单元文件的软链接。服务单元文件的 `[Install]` 段指定了哪一个目标会启动这个服务，执行 `systemctl enable hello.service` 命令会在适当的"目标要求"路径下创建软链接。
 
 
 ```
 `hello.service -> /etc/systemd/system/hello.service`
 ```
 
-Certain services need to start during the `basic.target`, and others do not need to start unless the system is starting the `graphical.target`. The service in this experiment will not start in the `basic.target`—assume you do not need it to start until the `graphical.target`. So change the `WantedBy` line:
+某些服务需要在 `basic.target` 阶段启动，其他则没这个必要，除非系统正在启动 `graphical.target`。这个实验中的服务不会在 `basic.target` 期间启动--假设你直到 `graphical.target` 阶段才需要它启动。那么修改 `WantedBy` 这一行：
 
 
 ```
 `WantedBy=graphical.target`
 ```
 
-Be sure to disable the `hello.service` and re-enable it to delete the old link and add the new one in the `graphical.targets.wants` directory. I have noticed that if I forget to disable the service before changing the target that wants it, I can run the `systemctl disable` command, and the links will be removed from both "target wants" directories. Then, I just need to re-enable the service and reboot.
 
-One concern with starting services in the `graphical.target` is that if the host boots to `multi-user.target`, this service will not start automatically. That may be what you want if the service requires a GUI desktop interface, but it also may not be what you want.
+一定要先禁用 `hello.service` 再重新启用它，这样可以删除旧链接并且在 `graphical.targets.wants` 目录下创建一个新的链接。我注意到如果我在修改服务需要的目标之前忘记禁用该服务，我可以运行 `systemctl disable` 命令，链接将从两个"目标需要"的目录中删除。之后我只需要重新启用这个服务然后重启电脑。
 
-Look at the journal entries for the `graphical.target` and the `multi-user.target` using the `-o short-monotonic` option that displays seconds after kernel startup with microsecond precision:
+启动 `graphical.target` 下的服务有个需要注意的地方，如果电脑启动到 `multi-user.target` 阶段，这个服务不会自动启动。如果这个服务需要 GUI 桌面接口，这或许是你想要的，但是它同样可能不是你想要的。
+
+用 `-o short-monotonic` 选项来查看 `graphical.target` 和 `multi-user.target` 的日志，展示内核启动几秒后的日志，精度为微妙级别：
 
 
 ```
 `[root@testvm1 ~]# journalctl -b -o short-monotonic`
 ```
 
-Some results for `multi-user.target`:
+
+`multi-user.target` 的部分日志：
 
 
 ```
@@ -387,7 +401,7 @@ Some results for `multi-user.target`:
 [   21.482605] testvm1.both.org systemd[1]: Finished My hello shell script.
 ```
 
-And some results for `graphical.target`:
+还有部分 `graphical.target` 的日志：
 
 
 ```
@@ -403,9 +417,10 @@ And some results for `graphical.target`:
 [   19.629782] testvm1.both.org systemd[1]: Finished My hello shell script.
 ```
 
-Despite having the `graphical.target` "want" in the unit file, the `hello.service` unit runs about 19.5 or 19.6 seconds into startup. But `hello.service` starts at about 17.24 seconds in the `multi-user.target` and 19.43 seconds in the graphical target.
+尽管单元文件的 "want" 部分包含了 `graphical.target`，`hello.service` 单元在启动后大约 19.5 或 19.6 秒后运行。但是 `hello.service` 在 `multi-user.target` 中开始于 17.24 秒，在 `graphical target` 中开始于 19.43 秒。
 
-What does this mean? Look at the `/etc/systemd/system/default.target` link. The contents of that file show that systemd first starts the default target, `graphical.target`, which then pulls in the `multi-user.target`:
+
+这意味着什么呢？看看 `/etc/systemd/system/default.target` 这个链接。文件内容显示 systemd 先启动了默认目标 `graphical.target`，然后 `graphical.target` 触发了 `multi-user.target`。
 
 
 ```
@@ -430,7 +445,7 @@ AllowIsolate=yes
 [root@testvm1 system]#
 ```
 
-Whether it starts the service with the `graphical.target` or the `multi-user.target`, the `hello.service` unit runs at about 19.5 or 19.6 seconds into startup. Based on this and the journal results (especially the ones using the monotonic output), you know that both of these targets are starting in parallel. Look at one more thing from the journal output:
+不管是用 `graphical.target` 还是 `multi-user.target` 启动服务，`hello.service` 单元都在启动后的 19.5 或 19.6 秒后启动。基于这个事实和日志结果(特别是使用单调输出的日志)，你就知道这些目标是在并行启动。再看看日志中另外一件事：
 
 
 ```
@@ -438,21 +453,22 @@ Whether it starts the service with the `graphical.target` or the `multi-user.tar
 [   28.397431] testvm1.both.org systemd[1]: Reached target Graphical Interface.
 ```
 
-Both targets finish at almost the same time. This is consistent because the `graphical.target` pulls in the `multi-user.target` and cannot finish until the `multi.user target` is reached, i.e., finished. But  **hello.service** finishes much earlier than this.
+两个目标大约是同时完成的。这是和理论一致的，因为 `graphical.target` 触发了 `multi-user.target`，在 `multi-user.target` 到达(即完成)之前它是不会完成的。但是 `hello.service` 比这个完成的早的多。
 
-What all this means is that these two targets start up pretty much in parallel. If you explore the journal entries, you will see various targets and services from each of those primary targets starting mostly in parallel. It is clear that the `multi-user.target` does not need to complete before the `graphical.target` starts. Therefore, simply using these primary targets to sequence the startup does not work very well, although it can be useful for ensuring that units are started only when they are needed for the `graphical.target`.
+这一切表明，这两个目标几乎是并行启动的。如果你查看日志，你会发现各种目标和来自这类主要目标的服务大多是平行启动的。很明显，`multi-user.target` 没有必要在 `graphical.target` 启动前完成。所以，单纯的使用主要目标来并不能很好地排序启动序列，尽管它在保证单元只在它们被 `graphical.target` 需要时启动这方面很有用。
 
-Before continuing, revert the `hello.service` unit file to `WantedBy=multi-user.target` (if it is not already.)
+Before continuing，revert the `hello.service` unit file to `WantedBy=multi-user.target` (if it is not already。)
+在继续前行之前，把 `hello.service` 单元文件回滚至 `WantedBy=multi-user.target`( 如果还没做的话)。
 
-### Ensure a service starts after the network is running
+### 确保一个服务在网络运行后启动
 
-A common startup sequence issue is ensuring that a unit starts after the network is up and running. The Freedesktop.org article [_Running services after the network is up_][11] says there is no real consensus on when a network is considered "up." However, the article provides three options, and the one that meets the needs of a fully operational network is `network-online.target`. Just be aware that `network.target` is used during shutdown rather than startup, so it will not do you any good when you are trying to sequence the startup.
+一个常见的启动问题是保证一个单元在网络启动运行后再启动。Freedesktop.org 的文章 [_Running services after the network is up_][11] 中提到，目前没有一个真正的关于网络何时算作"启动"的共识。然而，这篇文章提供了三个选项，满足完全可用网络需求的是 `network-online.target`。需要注意的是 `network.target` 是在关机阶段使用的而不是启动阶段，所以它对你做有序启动方面没什么帮助。
 
-Before making any other changes, be sure to examine the journal and verify that the `hello.service` unit starts well before the network. You can look for the `network-online.target` in the journal to check.
+在做出任何改变之前，一定要检查下日志，确认 `hello.service` 单元在网络可用之前可以正确启动。你可以在日志中查找 `network-online.target` 来确认。
 
-Your service does not really require the network service, but you can use it as an avatar for one that does.
+你的服务并不真的需要网络服务，但是你可以把它当作它是需要网络的。
 
-Because setting `WantedBy=graphical.target` does not ensure that the service will be started after the network is up and running, you need another way to ensure that it is. Fortunately, there is an easy way to do this. Add the following two lines to the `[Unit]` section of the `hello.service` unit file:
+因为设置 `WantedBy=graphical.target` 并不能保证服务会在网络启动可用后启动，所以你需要其他的方法来做到这一点。幸运的是，有个简单的方法可以做到。将下面两行代码加入 `hello.service` 单元文件的 `[Unit]` 段：
 
 
 ```
@@ -460,7 +476,8 @@ After=network-online.target                                   �
 Wants=network-online.target
 ```
 
-Both of these entries are required to make this work. Reboot the host and look for the location of entries for your service in the journals:
+Both of these entries are required to make this work。Reboot the host and look for the location of entries for your service in the journals:
+两个字段都需要才能生效。重启机器，在日志中找到服务的记录：
 
 
 ```
@@ -487,39 +504,39 @@ Both of these entries are required to make this work. Reboot the host and look f
 [   26.584966] testvm1.both.org sm-notify[1011]: Version 2.4.3 starting
 ```
 
-This confirms that the `hello.service` unit started after the `network-online.target`. This is exactly what you want. You may also have seen the "Hello World" message as it passed by during startup. Notice also that the timestamp is about six seconds later in the startup than it was before.
+这样能保证 `hello.service` 单元会在 `network-online.target` 之后启动。这正是你想要的。你可能也看见了 "Hello World" 消息在启动阶段出现。还需要注意的是，在启动时记录出现的时间戳比之前要晚了大约 6 秒。
 
-### The best way to define the start sequence
+### 定义启动序列的最好方法
 
-This article explored Linux startup with systemd and unit files and journals in greater detail and discovered what happens when errors are introduced into the service file. As a sysadmin, I find that this type of experimentation helps me understand the behaviors of a program or service when it breaks, and breaking things intentionally is a good way to learn in a safe environment.
+本文章详细地探讨了 Linux 启动时 systemd 和单元文件以及日志的细节，并且发现了当错误被引入单元文件时候会发生什么。作为系统管理员，我发现这类实验有助于我理解程序或者服务出故障时的行为，并且在安全环境中有意破坏是一种学习的好方法。
 
-As the experiments in this article proved, just adding a service unit to either the `multi-user.target` or the `graphical.target` does not define its place in the start sequence. It merely determines whether a unit starts as part of a graphical environment or not. The reality is that the startup targets `multi-user.target` and `graphical.target`—and all of their Wants and Requires—start up pretty much in parallel. The best way to ensure that a unit starts in a specific order is to determine the unit it is dependent on and configure the new unit to "Want" and "After" the unit upon which it is dependent.
+
+文章中实验结果证明，仅将服务单元添加至 `multi-user.target` 或者 `graphical.target` 并不能确定它在启动序列中的位置。它仅仅决定了一个单元是否作为图形环境一部分启动。事实上，启动目标 `multi-user.target` 和 `graphical.target` 和所有它们的 Wants 以及 Required 几乎是并行启动的。确保单元在特定位置启动的最好方法是确定它所依赖的单元，并将新单元配置成 "Want" 和 "After" 它的依赖。
+
 
 ### Resources
 
-There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup.
+网上有大量的关于 systemd 的参考资料，但是大部分都有点简略、晦涩甚至有误导性。除了本文中提到的资料，下列的网页提供了跟多可靠且详细的 systemd 入门信息。
 
-  * The Fedora Project has a good, practical [guide to systemd][12]. It has pretty much everything you need to know in order to configure, manage, and maintain a Fedora computer using systemd.
-  * The Fedora Project also has a good [cheat sheet][13] that cross-references the old SystemV commands to comparable systemd ones.
-  * For detailed technical information about systemd and the reasons for creating it, check out [Freedesktop.org][14]'s [description of systemd][15].
-  * [Linux.com][16]'s "More systemd fun" offers more advanced systemd [information and tips][17].
+Fedora 项目有一篇切实好用的 systemd 入门，它囊括了几乎所有你需要知道的关于如何使用 systemd 配置、管理和维护 Fedora 计算机的信息。
+Fedora 项目也有一个不错的 备忘录，交叉引用了过去 SystemV 命令和 systemd 命令做对比。
+关于 systemd 的技术细节和创建这个项目的原因，请查看 Freedesktop.org 上的 systemd 描述。
+Linux.com 的“更多 systemd 的乐趣”栏目提供了更多高级的 systemd 信息和技巧。
 
-
-
-There is also a series of deeply technical articles for Linux sysadmins by Lennart Poettering, the designer and primary developer of systemd. These articles were written between April 2010 and September 2011, but they are just as relevant now as they were then. Much of everything else good that has been written about systemd and its ecosystem is based on these papers.
+此外，还有一系列深度的技术文章，是由 systemd 的设计者和主要实现者 Lennart Poettering 为 Linux 系统管理员撰写的。这些文章写于 2010 年 4 月至 2011 年 9 月间，但它们现在和当时一样具有现实意义。关于 systemd 及其生态的许多其他好文章都是基于这些文章：
 
   * [Rethinking PID 1][18]
-  * [systemd for Administrators, Part I][19]
-  * [systemd for Administrators, Part II][20]
-  * [systemd for Administrators, Part III][21]
-  * [systemd for Administrators, Part IV][22]
-  * [systemd for Administrators, Part V][23]
-  * [systemd for Administrators, Part VI][24]
-  * [systemd for Administrators, Part VII][25]
-  * [systemd for Administrators, Part VIII][26]
-  * [systemd for Administrators, Part IX][27]
-  * [systemd for Administrators, Part X][28]
-  * [systemd for Administrators, Part XI][29]
+  * [systemd for Administrators，Part I][19]
+  * [systemd for Administrators，Part II][20]
+  * [systemd for Administrators，Part III][21]
+  * [systemd for Administrators，Part IV][22]
+  * [systemd for Administrators，Part V][23]
+  * [systemd for Administrators，Part VI][24]
+  * [systemd for Administrators，Part VII][25]
+  * [systemd for Administrators，Part VIII][26]
+  * [systemd for Administrators，Part IX][27]
+  * [systemd for Administrators，Part X][28]
+  * [systemd for Administrators，Part XI][29]
 
 
 
