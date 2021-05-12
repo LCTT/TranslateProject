@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ShuyRoy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13382-1.html)
 
 如何构建更小的容器
 ======
