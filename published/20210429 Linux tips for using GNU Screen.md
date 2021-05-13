@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ddl-hust)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13387-1.html)
 
 使用 GNU Screen 的小技巧
 ======
