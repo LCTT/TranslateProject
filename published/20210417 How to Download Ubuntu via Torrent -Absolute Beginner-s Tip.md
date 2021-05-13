@@ -3,14 +3,16 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13386-1.html)
 
-如何通过 Torrent 下载 Ubuntu（绝对的初学者技巧）
+初级：如何通过 Torrent 下载 Ubuntu
 ======
 
-下载 Ubuntu 是非常直接的。你去它的[官方网站][1]。点击[桌面下载][2]，选择合适的 Ubuntu 版本并点击下载按钮。
+![](https://img.linux.net.cn/data/attachment/album/202105/13/094313jdukww0zkli78hpg.jpg)
+
+下载 Ubuntu 是非常直接简单的。你可以去它的 [官方网站][1]，点击 [桌面下载部分][2]，选择合适的 Ubuntu 版本并点击下载按钮。
 
 ![][3]
 
@@ -22,7 +24,7 @@ Ubuntu 是以一个超过 2.5GB 大小的单一镜像形式提供的。直接下
 
 ### 通过 Torrent 下载 Ubuntu
 
-如果你也受到受限数据或网络连接过慢的困扰，使用下载管理器或 torrent 将是一个更好的选择。我不打算在这个快速教程中讨论什么是 torrent。你只需要知道，通过 torrent，你可以在多个会话内下载一个大文件。
+如果你也困扰于受限数据或网络连接过慢，使用下载管理器或 torrent 将是一个更好的选择。我不打算在这个快速教程中讨论什么是 torrent。你只需要知道，通过 torrent，你可以在多个会话内下载一个大文件。
 
 好的是，Ubuntu 实际上提供了通过 torrent 的下载。不好的是，它隐藏在网站上，如果你不熟悉它，很难猜到在哪。
 
@@ -30,11 +32,11 @@ Ubuntu 是以一个超过 2.5GB 大小的单一镜像形式提供的。直接下
 
 ![][5]
 
-**点击这个”其他下载方式“链接**，它将打开一个新的网页。**在这个页面向下滚动**，看到 BitTorrent 部分。你会看到下载所有可用版本的 torrent 文件的选项。如果你要在你的个人电脑或笔记本电脑上使用 Ubuntu，你应该选择桌面版本。
+点击这个“**alternative downloads and torrents**” 链接，它将打开一个新的网页。**在这个页面向下滚动**，看到 BitTorrent 部分。你会看到下载所有可用版本的 torrent 文件的选项。如果你要在你的个人电脑或笔记本电脑上使用 Ubuntu，你应该选择桌面版本。
 
 ![][6]
 
-阅读[这篇文章以获得一些关于你应该使用哪个 Ubuntu 版本的指导][7]。考虑到你要使用这个发行版，了解 [Ubuntu LTS 和非 LTS 版本会有所帮助][8]。
+阅读 [这篇文章以获得一些关于你应该使用哪个 Ubuntu 版本的指导][7]。考虑到你要使用这个发行版，了解 [Ubuntu LTS 和非 LTS 版本会有所帮助][8]。
 
 #### 你是如何使用下载的 torrent 文件来获取 Ubuntu 的？
 
@@ -42,13 +44,13 @@ Ubuntu 是以一个超过 2.5GB 大小的单一镜像形式提供的。直接下
 
 你已经下载了一个几 KB 大小的 .torrent 文件。你需要下载并安装一个 Torrent 应用，比如 uTorrent 或 Deluge 或 BitTorrent。
 
-我建议在 Windows 上使用 [uTorrent][9]。如果你使用的是某个 Linux 发行版，你应该已经有一个[像 Transmission 这样的 torrent 客户端][10]。如果没有，你可以从你的发行版的软件管理器中安装它。
+我建议在 Windows 上使用 [uTorrent][9]。如果你使用的是某个 Linux 发行版，你应该已经有一个 [像 Transmission 这样的 torrent 客户端][10]。如果没有，你可以从你的发行版的软件管理器中安装它。
 
 当你安装了 Torrent 应用，运行它。现在拖放你从 Ubuntu 网站下载的 .torrent 文件。你也可以使用菜单中的打开选项。
 
 当 torrent 文件被添加到 Torrent 应用中，它就开始下载该文件。如果你关闭了系统，下载就会暂停。再次启动 Torrent 应用，下载就会从同一个地方恢复。
 
-当下载 100% 完成后，你可以用它来[全新安装 Ubuntu][11]或[与 Windows 双启动][12]。
+当下载 100% 完成后，你可以用它来 [全新安装 Ubuntu][11] 或 [与 Windows 双启动][12]。
 
 享受 Ubuntu :)
 
@@ -59,7 +61,7 @@ via: https://itsfoss.com/download-ubuntu-via-torrent/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
