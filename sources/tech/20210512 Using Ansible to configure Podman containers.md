@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/using-ansible-to-configure-podman-containers/)
 [#]: author: (mahesh1b https://fedoramagazine.org/author/mahesh1b/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
