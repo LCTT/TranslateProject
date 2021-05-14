@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "HuengchI"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13389-1.html"
 
 Linux 下 Chrome 浏览器一直报“检测到网络变化”，修复方法来了
 ======
