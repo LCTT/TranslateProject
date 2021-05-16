@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/install-gui-ubuntu-server/)
 [#]: author: (Chris Patrick Carias Stas https://itsfoss.com/author/chris/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (lxbwolf)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
