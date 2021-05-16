@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (DCOLIVERSUN)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13396-1.html)
 
 使用 Ansible 配置 Podman 容器
 ======
