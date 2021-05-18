@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/container-management-pulp)
 [#]: author: (Melanie Corr https://opensource.com/users/melanie-corr)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
