@@ -1,3 +1,5 @@
+Gordon-Deng is translating
+
 [#]: subject: (What is fog computing?)
 [#]: via: (https://opensource.com/article/21/5/fog-computing)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
