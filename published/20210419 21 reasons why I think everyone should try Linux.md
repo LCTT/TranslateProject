@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ShuyRoy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13404-1.html)
 
 每个人都应该尝试 Linux 的 21 个理由
 ======
