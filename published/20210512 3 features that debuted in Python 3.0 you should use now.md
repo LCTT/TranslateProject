@@ -12,7 +12,7 @@
 
 > 探索一些未被充分利用但仍然有用的 Python 特性。
 
-![](https://img.linux.net.cn/data/attachment/album/202105/20/101254bxm9689zd0cpc91m.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202105/20/103117me72dllr6lebk1fv.jpg)
 
 这是 Python 3.x 首发特性系列文章的第一篇。Python 3.0 于 2008 年首次发布，尽管它已经发布了一段时间，但它引入的许多特性都没有被充分利用，而且相当酷。这里有三个你应该知道的。
 
