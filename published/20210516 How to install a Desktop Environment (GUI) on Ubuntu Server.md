@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "lxbwolf"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13408-1.html"
 
 如何在 Ubuntu 服务器上安装桌面环境（GUI）
 ======
