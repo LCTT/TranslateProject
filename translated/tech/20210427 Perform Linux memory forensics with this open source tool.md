@@ -7,24 +7,23 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Perform Linux memory forensics with this open source tool
+使用开源工具执行Linux内存取证
 ======
-Find out what's going on with applications, network connections, kernel
-modules, files, and much more with Volatility
+了解应用程序、网络连接、内核模块、文件以及更多Volatility的事情。
 ![Brain on a computer screen][1]
 
-A computer's operating system and applications use the primary memory (or RAM) to perform various tasks. This volatile memory, containing a wealth of information about running applications, network connections, kernel modules, open files, and just about everything else is wiped out each time the computer restarts.
+计算机的操作系统和应用使用主内存（或者RAM）来执行不同的任务。这种易失内存包含大量关于运行应用、网络连接、内核模块、打开文件以及几乎所有其他的内容信息，每次计算机重启的时候都会被清楚。
 
-Memory forensics is a way to find and extract this valuable information from memory. [Volatility][2] is an open source tool that uses plugins to process this type of information. However, there's a problem: Before you can process this information, you must dump the physical memory into a file, and Volatility does not have this ability.
+内存取证是一种从内存中找到和抽取这些有价值的信息的方式。[Volatility][2]是一种使用插件来处理这类信息的开源工具。但是，存在一个问题：在你处理这些信息前，必须将物理内存转储到一个文件中，而Volatility没有这种能力。
 
-Therefore, this article has two parts:
+因此，这篇文章有两部分：
 
-  * The first part deals with acquiring the physical memory and dumping it into a file.
-  * The second part uses Volatility to read and process information from this memory dump.
+  * 第一部分是处理获取物理内存并将其转储到一个文件中。
+  * 第二部分使用Volatility从这个内存转储中读取并处理这些信息
 
 
 
-I used the following test system for this tutorial, but it will work on any Linux distribution:
+我在本教程中使用了以下测试系统，不过它可以再任何Linux发行版上工作：
 
 
 ```
@@ -36,28 +35,29 @@ $ uname -r
 $
 ```
 
-> **A note of caution:** Part 1 involves compiling and loading a kernel module. Don't worry; it isn't as difficult as it sounds. Some guidelines:
+> **注意事项：** 部分1包含编译和加载内核模块。不要担心；它并不像听起来那么困难。一些指南：
 >
->   * Follow the steps.
->   * Do not try any of these steps on a production system or your primary machine.
->   * Always use a test virtual machine (VM) to try things out until you are comfortable using the tools and understand how they work.
->
+>   * 按照以下的步骤。
+>   * 不要在生产系统或您的主要计算机上尝试任何这些步骤。
+>   * 始终使用测试虚拟机（VM）来进行测试，直到你熟悉使用这些工具并理解它们的工作原理为止。
 
 
-### Install the required packages
+### 安装需要的包
 
-Before you get started, install the requisite tools. If you are using a Debian-based distro, use the equivalent `apt-get` commands. Most of these packages provide the required kernel information and tools to compile the code:
+在开始之前安装必要的工具。如果你经常使用基于Debian的发行版，可以使用`apt-get`命令。这些包大多数都提供了需要的内核信息和工具来编译代码：
+
 
 
 ```
 `$ yum install kernel-headers kernel-devel gcc elfutils-libelf-devel make git libdwarf-tools python2-devel.x86_64-y`
 ```
 
-### Part 1: Use LiME to acquire memory and dump it to a file
+### 部分1：使用LiME获取内存并将其转储到一个文件中
 
-Before you can begin to analyze memory, you need a memory dump at your disposal. In an actual forensics event, this could come from a compromised or hacked system. Such information is often collected and stored to analyze how the intrusion happened and its impact. Since you probably do not have a memory dump available, you can take a memory dump of your test VM and use that to perform memory forensics.
+在你开始分析内存之前，你需要一个内存转储任你使用。在实际的取证活动中，这可能来自一个被破坏或者被黑的系统。这些信息通常会被收集和存储来分析入侵是如何发生的及其影响。由于你可能没有一个可用的内存转储，你可以获取你的测试VM的内存转储，并使用它来执行内存取证。
 
-Linux Memory Extractor ([LiME][3]) is a popular tool for acquiring memory on a Linux system. Get LiME with:
+
+Linux内存提取器（[LiME][3]）是一个在Linux系统上获取内存很常用的工具。使用以下命令获得LiME：
 
 
 ```
@@ -70,9 +70,9 @@ deflate.c  disk.c  hash.c  lime.h  main.c  Makefile  Makefile.sample  tcp
 $
 ```
 
-#### Build the LiME kernel module
+#### 构建LiME内核模块
 
-Run the `make` command inside the `src` folder. This creates a kernel module with a .ko extension. Ideally, the `lime.ko` file will be renamed using the format `lime-<your-kernel-version>.ko` at the end of `make`:
+在`src`文件夹下运行`make`命令。这会创建一个以.ko为扩展名的内核模块。理想情况下，在`make`结束时，`lime.ko`文件会使用格式`lime-<your-kernel-version>.ko`被重命名。
 
 
 ```
@@ -95,9 +95,9 @@ lime-4.18.0-240.el8.x86_64.ko: ELF 64-bit LSB relocatable, x86-64, version 1 (SY
 $
 ```
 
-#### Load the LiME kernel module
+#### 加载LiME 内核模块
 
-Now it's time to load the kernel module to acquire the system memory. The `insmod` command helps load the kernel module; once loaded, the module reads the primary memory (RAM) on your system and dumps the memory's contents to the file provided in the `path` directory on the command line. Another important parameter is `format`; keep the format `lime`, as shown below. After inserting the kernel module, verify that it loaded using the `lsmod` command:
+现在是时候加载内核模块来获取系统内存了。`insmod`命令会帮助加载内核模块；模块一旦被加载，会在你的系统上读取主内存（RAM）并且将内存的内容转储到命令行所提供的`path`目录下的文件中。另一个重要的参数是`format`；保持`lime`的格式，如下所示。在插入内核模块之后，使用`lsmod`命令验证它是否真的被加载。
 
 
 ```
@@ -110,8 +110,7 @@ lime                   16384  0
 $
 ```
 
-You should see that the file given to the `path` command was created, and the file size is (not surprisingly) the same as the physical memory size (RAM) on your system. Once you have the memory dump, you can remove the kernel module using the `rmmod` command:
-
+你应该看到给`path`命令的文件已经创建好了，而且文件大小与你系统的物理内存（RAM）大小相同（不足为奇）。一旦你有了内存转储，你就可以使用`rmmod`命令删除内核模块：
 
 ```
 $
@@ -132,9 +131,10 @@ $ lsmod  | grep lime
 $
 ```
 
-#### What's in the memory dump?
+#### 内存转储中是什么？
 
-This dump file is just raw data, as you can see using the `file` command below. You cannot make much sense out of it manually; yes, there are some ASCII strings in there somewhere, but you can't open the file in an editor and read it out. The hexdump output shows that the initial few bytes are `EmiL`; this is because your request format was "lime" in the command above:
+内存转储文件只是原始数据，就像使用`file`命令可以看到的一样。你不可能通过手动去理解它；是的，在这里边有一些ASCII字符，但是你不能用一个编辑器打开这个文件并把它读出来。hexdump输出显示，最初的几个字节是`EmiL`；这是因为你的请求格式在上面的命令行中是“lime”：
+
 
 
 ```
@@ -156,9 +156,10 @@ $ hexdump -C ~/LiME/RHEL8.3_64bit.mem | head
 $
 ```
 
-### Part 2: Get Volatility and use it to analyze your memory dump
+### 部分2：获得Volatility并使用它来分析你的内存转储
 
-Now that you have a sample memory dump to analyze, get the Volatility software with the command below. Volatility has been rewritten in Python 3, but this tutorial uses the original Volatility package, which uses Python 2. If you want to experiment with Volatility 3, download it from the appropriate Git repo and use Python 3 instead of Python 2 in the following commands:
+现在你有了要分析的示例内存转储，使用 下面的命令获取Volatility软件。Volatility已经在Python3中重写了，但是它的教程使用的是用python2写的原始的Volatility包。如果你想用Volatility3进行实验，可以从合适的Git仓库下载它，并在以下命令中使用Python3而不是Python2：
+
 
 
 ```
@@ -172,7 +173,8 @@ CHANGELOG.txt  CREDITS.txt  LICENSE.txt  MANIFEST.in  pyinstaller  README.t
 $
 ```
 
-Volatility uses two Python libraries for some functionality, so please install them using the following commands. Otherwise, you might see some import errors when you run the Volatility tool; you can ignore them unless you are running a plugin that needs these libraries; in that case, the tool will error out:
+对于一些功能，Volatility使用两个Python库来实现，所以使用以下命令来安装它们。否则，在你跑Volatility工具时，你可能看到一些重要的错误；你可以忽略它们，除非你正在运行的插件需要这些库；这种情况下，工具将会报错：
+
 
 
 ```
@@ -180,9 +182,10 @@ $ pip2 install pycrypto
 $ pip2 install distorm3
 ```
 
-#### List Volatility's Linux profiles
+#### 列出Volatility的Linux配置文件
 
-The first Volatility command you'll want to run lists what Linux profiles are available. The main entry point to running any Volatility commands is the `vol.py` script. Invoke it using the Python 2 interpreter and provide the `--info` option. To narrow down the output, look for strings that begin with Linux. As you can see, not many Linux profiles are listed:
+你想要运行的第一个Volatility命令列出了可用的Linux配置文件，运行任何Volatility命令的主要入口点是`vol.py`脚本。使用Python2解释器调用它并提供`--info`选项。为了缩小输出，查找以Linux开头的字符串。正如你所看到的，并没有很多Linux配置文件被列出：
+
 
 
 ```
@@ -192,11 +195,11 @@ LinuxAMD64PagedMemory          - Linux-specific AMD 64-bit address space.
 $
 ```
 
-#### Build your own Linux profile
+#### 构建你自己的Linux配置文件
 
-Linux distros are varied and built for various architectures. This why profiles are essential—Volatility must know the system and architecture that the memory dump was acquired from before extracting information. There are Volatility commands to find this information; however, this method is time-consuming. To speed things up, build a custom Linux profile using the following commands.
+Linux发行版是多种多想的，并且构建了不同的架构。这就是为什么配置文件是必要的——Volatility在提取信息前必须知道内存转储是从哪个系统和架构获得的。有Volatility命令找到这些信息；但是这个方法很费时。为了加快速度，可以使用以下命令构建一个自定义的Linux配置文件：
 
-Move to the `tools/linux` directory within the Volatility repo, and run the `make` command:
+移动到Volatility仓库的`tools/linux`目录下，运行`make`命令：
 
 
 ```
@@ -216,7 +219,7 @@ make[1]: Leaving directory '/usr/src/kernels/4.18.0-240.el8.x86_64'
 $
 ```
 
-You should see a new `module.dwarf` file. You also need the `System.map` file from the `/boot` directory, as it contains all of the symbols related to the currently running kernel:
+你应该看到一个新的`module.dwarf`文件。你也需要`/boot`目录下的`System.map`文件，因为它包含了所有与当前运行的内核相关的符号：
 
 
 ```
@@ -232,7 +235,8 @@ $
 $
 ```
 
-To create a custom profile, move back to the Volatility directory and run the command below. The first argument provides a custom .zip with a file name of your choice. I used the operating system and kernel versions in the name. The next argument is the `module.dwarf` file created above, and the final argument is the `System.map` file from the `/boot` directory:
+为了创建一个自定义配置文件，移回到Volatility目录并且运行以下命令。第一个参数提供了一个自定义 .zip，文件名是你自己命名的。我经常使用操作系统和内核版本来命名。下一个参数是由前边`module.dwarf`文件，最后一个参数是`/boot`目录下的`System.map`文件：
+
 
 
 ```
@@ -245,7 +249,8 @@ $ zip volatility/plugins/overlays/linux/Redhat8.3_4.18.0-240.zip tools/linux/mod
 $
 ```
 
-Your custom profile is now ready, so verify the .zip file was created at the location given above. If you want to know if Volatility detects this custom profile, run the `--info` command again. This time, you should see the new profile listed below:
+现在自定义配置文件就准备好了，所以在前边给出的位置检查一下.zip文件是否被创建好。如果你想知道Volatility是否检测到这个自定义配置文件，再一次运行`--info`命令。现在，你应该可以在下边的列出的内容中看到新的配置文件：
+
 
 
 ```
@@ -261,16 +266,18 @@ $
 $
 ```
 
-#### Start using Volatility
+#### 开始使用Volatility
 
-Now you are all set to do some actual memory forensics. Remember, Volatility is made up of custom plugins that you can run against a memory dump to get information. The command's general format is:
+现在你已经准备好去做一些真正的内存取证了。记住，Volatility是由自定义的插件组成的，你可以运行内存转储来获得信息。命令的通用格式是：
+
 
 
 ```
 `python2 vol.py -f <memory-dump-file-taken-by-Lime> <plugin-name> --profile=<name-of-our-custom-profile>`
 ```
 
-Armed with this information, run the **linux_banner** plugin to see if you can identify the correct distro information from the memory dump:
+
+有了这些信息，运行**linux_banner**插件来看看你是否可从内存转储中识别正确的版本信息：
 
 
 ```
@@ -280,9 +287,9 @@ Linux version 4.18.0-240.el8.x86_64 ([mockbuild@vm09.test.com][4]) (gcc version 
 $
 ```
 
-#### Find Linux plugins
+#### 找到Linux插件
 
-That worked well, so now you're probably curious about how to find all the names of all the Linux plugins. There is an easy trick: run the `--info` command and `grep` for the `linux_` string. There are a variety of plugins available for different uses. Here is a partial list:
+到现在都很顺利，所以现在你可能对如何找到所有Linux差价的所有的名字比较好奇。有一个简单的技巧：运行`--info`命令并为`linux_`字符串`grep`。有各种各样的插件可用于不同的用途。这里列出一部分：
 
 
 ```
@@ -301,7 +308,8 @@ linux_yarascan             - A shell in the Linux memory image
 $
 ```
 
-Check which processes were running on the system when you took the memory dump using the **linux_psaux** plugin. Notice the last command in the list: it's the `insmod` command you ran before the dump:
+使用**linux_psaux**插件获取内存转储时检查系统上正在运行哪些进程。注意列表中的最后一个命令：它是你在转储之前运行的`insmod`命令：
+
 
 
 ```
@@ -330,8 +338,7 @@ Pid    Uid    Gid    Arguments                             �
 $
 ```
 
-Want to know about the system's network stats? Run the **linux_netstat** plugin to find the state of the network connections during the memory dump:
-
+想要知道系统的网络状态吗？运行**linux_netstat** 插件来找到在内存转储期间网络连接的状态：
 
 ```
 $ python2 vol.py -f ~/LiME/RHEL8.3_64bit.mem linux_netstat --profile=LinuxRedhat8_3_4_18_0-240x64
@@ -345,7 +352,7 @@ UNIX 11416              systemd/1    
 $
 ```
 
-Next, use the **linux_mount** plugin to see which filesystems were mounted during the memory dump:
+接下来，使用**linux_mount** 插件来看在内存转储期间哪些文件系统被挂载：
 
 
 ```
@@ -369,7 +376,7 @@ mqueue                    /dev/mqueue                      
 $
 ```
 
-Curious what kernel modules were loaded? Volatility has a plugin for that too, aptly named **linux_lsmod**:
+好奇哪些内核模块被加载了吗？Volatility也为这个提供了一个差价，命名位**linux_lsmod**：
 
 
 ```
@@ -387,7 +394,7 @@ ffffffffc024bbc0 dm_mod 151552
 $
 ```
 
-Want to find all the commands the user ran that were stored in the Bash history? Run the **linux_bash** plugin:
+想知道哪些文件被哪些进程打开了吗？使用**linux_bash**插件可以列出这些信息：
 
 
 ```
@@ -414,7 +421,7 @@ Pid      Name                 Command Time                  
 $
 ```
 
-Want to know what files were opened by which processes? Use the **linux_lsof** plugin to list that information:
+想知道哪些文件被哪些进程打开了吗？使用**linux_lsof**插件可以列出这些信息：
 
 
 ```
@@ -440,9 +447,10 @@ Offset             Name                           Pid     �
 $
 ```
 
-#### Access the Linux plugins scripts location
+#### 访问Linux插件脚本位置
 
-You can get a lot more information by reading the memory dump and processing the information. If you know Python and are curious how this information was processed, go to the directory where all the plugins are stored, pick one that interests you, and see how Volatility gets this information:
+你可以通过读取内存转储和处理这些信息来获得更多的信息。如果你会Python并且好奇这些信息是如何被处理的，转到所有的插件被存储的目录，选择一个你感兴趣的，并看看Volatility是如何获得这些信息的：
+
 
 
 ```
@@ -462,7 +470,7 @@ $
 $
 ```
 
-One reason I like Volatility is that it provides a lot of security plugins. This information would be difficult to acquire manually:
+我喜欢Volatility的理由是他提供了许多安全插件。这些信息很难手动获取：
 
 
 ```
@@ -471,7 +479,7 @@ linux_malfind              - Looks for suspicious process mappings
 linux_truecrypt_passphrase - Recovers cached Truecrypt passphrases
 ```
 
-Volatility also allows you to open a shell within the memory dump, so instead of running all the commands above, you can run shell commands instead and get the same information:
+Volatility也象允许你在内存转储中打开一个shell，所以你可以运行shell命令来代替上面所有命令，并获得相同的信息：
 
 
 ```
@@ -487,9 +495,10 @@ Current context: process systemd, pid=1 DTB=0x1042dc000
 &gt;&gt;&gt;
 ```
 
-### Next steps
+### 接下来的步骤
 
-Memory forensics is a good way to learn more about Linux internals. Try all of Volatility's plugins and study their output in detail. Then think about ways this information can help you identify an intrusion or a security issue. Dive into how the plugins work, and maybe even try to improve them. And if you didn't find a plugin for what you want to do, write one and submit it to Volatility so others can use it, too.
+内存转储时一个学习更多Linux内部组织的好方法。试一试Volatility的所有插件，并详细研究它们的输出。然后考虑这些信息可以帮助你识别入侵或安全问题的方式。深入了解插件的工作原理，甚至尝试改进他们。如果你没有找到你想做的事情的插件，那就一个并提交给Volatility，这样其他人也可以使用了。
+
 
 --------------------------------------------------------------------------------
 
