@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/what-serverless-java)
 [#]: author: (Daniel Oh https://opensource.com/users/daniel-oh)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (DCOLIVERSUN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
