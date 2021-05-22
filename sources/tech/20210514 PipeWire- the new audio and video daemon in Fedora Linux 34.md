@@ -1,5 +1,5 @@
 [#]: subject: (PipeWire: the new audio and video daemon in Fedora Linux 34)
-[#]: via: (https://fedoramagazine.org/pipewire-the-new-audio-and-video-daemon-in-fedora-linux-34/)
+[#]: translator: (Chao-zhi)
 [#]: author: (Christian Fredrik Schaller https://fedoramagazine.org/author/uraeus/)
 [#]: collector: (lujun9972)
 [#]: translator: ( )
@@ -136,7 +136,7 @@ via: https://fedoramagazine.org/pipewire-the-new-audio-and-video-daemon-in-fedor
 
 作者：[Christian Fredrik Schaller][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Chao-zhi](https://github.com/Chao-zhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
