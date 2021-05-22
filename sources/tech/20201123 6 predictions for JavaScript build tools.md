@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "ywxgod"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "6 predictions for JavaScript build tools"
-[#]: via: "https://opensource.com/article/20/11/javascript-build-tools"
-[#]: author: "Shedrack Akintayo https://opensource.com/users/shedrack-akintayo"
+[#]: collector: (lujun9972)
+[#]: translator: (ywxgod)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (6 predictions for JavaScript build tools)
+[#]: via: (https://opensource.com/article/20/11/javascript-build-tools)
+[#]: author: (Shedrack Akintayo https://opensource.com/users/shedrack-akintayo)
 
 6 predictions for JavaScript build tools
 ======
@@ -134,7 +134,7 @@ via: https://opensource.com/article/20/11/javascript-build-tools
 
 [a]: https://opensource.com/users/shedrack-akintayo
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/find-file-linux-code_magnifying_glass_zero.png?itok=E2HoPDg0 "Magnifying glass on code"
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/find-file-linux-code_magnifying_glass_zero.png?itok=E2HoPDg0 (Magnifying glass on code)
 [2]: https://www.javascript.com/
 [3]: https://babeljs.io/
 [4]: https://gruntjs.com/
