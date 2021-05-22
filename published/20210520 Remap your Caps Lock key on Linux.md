@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13414-1.html)
 
 在 Linux 上重新映射你的大写锁定键
 ======
 
 > 通过在 GNOME 3 和 Wayland 上重新映射你的键盘，提高你的打字和导航速度，避免重复性压力伤害。
 
-![Emoji keyboard][1]
+![](https://img.linux.net.cn/data/attachment/album/202105/22/174755hs0dbmm4idl5rbrr.jpg)
 
 对我来说，有许多改变生活的 Linux 时刻，但大多数都在成为现状后淡忘了。有一个 Linux 教给我的键盘小技巧，每次我使用它的时候（也许每天有 1000 次），我都会想起这件事，那就是把大写锁定键转换为 `Ctrl` 键。
 
