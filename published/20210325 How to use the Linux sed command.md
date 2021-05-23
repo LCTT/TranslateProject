@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13417-1.html"
 
 使用 sed 命令进行复制、剪切和粘贴
 ======
