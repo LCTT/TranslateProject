@@ -2,7 +2,7 @@
 [#]: via: (https://jvns.ca/blog/2021/05/17/how-to-look-at-the-stack-in-gdb/)
 [#]: author: (Julia Evans https://jvns.ca/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (amwps290)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
