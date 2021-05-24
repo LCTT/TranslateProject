@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "amwps290"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13419-1.html"
 
 抛弃 Autotools 向 CMake 迈进吧
 ======
