@@ -7,14 +7,16 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Joining Fedora Linux to an enterprise domain
+将 Fedora Linux 系统添加到企业域中
 ======
 
 ![][1]
 
-Photo by [Gene Gallin][2] on [Unsplash][3]
+图片来自 [Gene Gallin][2] 发表在 [Unsplash][3]
 
 When you think about corporate networks, the most widely used Linux-based operating system that comes to mind is Red Hat Enterprise Linux (RHEL), used mostly on servers, but also as workstations. Fedora Linux is also a very good choice for a workstation, and comes packed with lots of features to work in the corporate environment and makes management an easy task.
+
+
 
 When you work with many machines in your network you need a way to manage users and machines in a centralized way. That’s why [FreeIPA][4] and [Active Directory][5] are the technologies of choice for this task. They allow a sysadmin to manage a huge amount of machines using a directory of all the entities in their network.
 
