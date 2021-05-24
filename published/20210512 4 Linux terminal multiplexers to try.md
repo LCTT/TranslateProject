@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13420-1.html)
 
 4 款值得一试的 Linux 终端多路复用器
 ======
 
 > 比较 tmux、GNU Screen、Konsole 和 Terminator，看看哪个最适合你。
 
-![4 different color terminal windows with code][1]
+![](https://img.linux.net.cn/data/attachment/album/202105/24/205044ez55fdw99alhhgn8.jpg)
 
 Linux 用户通常需要大量的虚拟视觉空间。一个终端窗口是永远不够的，所以终端有了标签。一个桌面太受限制了，所以有了虚拟桌面。当然，应用程序窗口可以堆叠，但当它们堆叠起来时，又有多大的好处呢？哎呀，即使是后台文本控制台也有 `F1` 到 `F7`，可以在任务之间来回翻转。
 
