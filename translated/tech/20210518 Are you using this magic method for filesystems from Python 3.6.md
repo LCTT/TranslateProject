@@ -7,19 +7,18 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Are you using this magic method for filesystems from Python 3.6?
+你有在使用 Python 3.6 中针对文件系统的这个神奇方法吗？
 ======
-Explore os.fspath and two other underutilized but still useful Python
-features.
+探索 os.fspath 和其他两个未被充分利用但仍然有用的 Python 特性。
 ![Computer screen with files or windows open][1]
 
-This is the seventh in a series of articles about features that first appeared in a version of Python 3.x. Python 3.6 was first released in 2016, and even though it has been out for a while, many of the features it introduced are underused and pretty cool. Here are three of them.
+这是关于首次出现在 Python 3.x 版本中的特性的系列文章中的第七篇。Python 3.6 首次发布于 2016 年，尽管它已经发布了一段时间，但它引入的许多特性都没有得到充分利用，而且相当酷。下面是其中的三个。
 
-### Separated numeral constants
+### 分隔数字常数
 
-Quick, which is bigger, `10000000` or `200000`? Would you be able to answer correctly while scanning through code? Depending on local conventions, in prose writing, you would use 10,000,000 or 10.000.000 for the first number. The trouble is, Python uses commas and periods for other reasons.
+快，哪个更大，`10000000` 还是 `200000`？你在看代码时能正确回答吗？根据当地的习惯，在写作中，你会用 10,000,000 或 10.000.000 来表示第一个数字。问题是，Python 使用逗号和句号是用于其他地方。
 
-Fortunately, since Python 3.6, you can use underscores to separate digits. This works both directly in code and when using the `int()` convertor from strings:
+幸运的是，从 Python 3.6 开始，你可以使用下划线来分隔数字。这在代码中和使用字符串的 `int()` 转换器时都可以使用：
 
 
 ```
@@ -29,11 +28,11 @@ math.log(10_000_000) / math.log(10)
 [/code] [code]`    7.0`[/code] [code]`math.log(int("10_000_000")) / math.log(10)`[/code] [code]`    7.0`
 ```
 
-### Tau is right
+### Tau 是对的
 
-What's a 45-degree angle expressed in radians? One correct answer is `π/4`, but that's a little hard to remember. It's much easier to remember that a 45-degree angle is an eighth of a turn. As the [Tau Manifesto][2] explains, `2π`, called `Τ`, is a more natural constant.
+45 度角用弧度表示是多少？一个正确的答案是 `π/4`，但这有点难记。记住 45 度角是一个八分之一的转角要容易得多。正如 [Tau Manifesto][2] 所解释的，`2π`，称为 `Τ`，是一个更自然的常数。
 
-In Python 3.6 and later, your math code can use the more intuitive constant:
+在 Python 3.6 及以后的版本中，你的数学代码可以使用更直观的常数：
 
 
 ```
@@ -50,13 +49,13 @@ print("Sin of a quarter turn should be 1, go", round(math.sin(math.tau/4), 2))
 
 ### os.fspath
 
-Starting in Python 3.6, there is a magic method that represents "convert to a filesystem path." When given an `str` or `bytes`, it returns the input.
+从 Python 3.6 开始，有一个神奇的方法表示”转换为文件系统路径“。当给定一个 `str` 或 `bytes` 时，它返回输入。
 
-For all types of objects, it looks for an `__fspath__`method and calls it. This allows passing around objects that are "filenames with metadata."
+对于所有类型的对象，它寻找 `__fspath__` 方法并调用它。这允许传递的对象是”带有元数据的文件名“。
 
-Normal functions like `open()` or `stat` will still be able to use them, as long as `__fspath__` returns the right thing.
+像 `open()` 或 `stat` 这样的普通函数仍然能够使用它们，只要 `__fspath__` 返回正确的东西。
 
-For example, here is a function that writes some data into a file and then checks its size. It also logs the file name to standard output for tracing purposes:
+例如，这里有一个函数将一些数据写入一个文件，然后检查其大小。它还将文件名记录到标准输出，以便追踪：
 
 
 ```
@@ -67,7 +66,7 @@ def write_and_test(filename):
     print("size of", filename, "is", os.path.getsize(filename))
 ```
 
-You can call it the way you would expect, with a string for a filename:
+你可以用你期望的方式来调用它，用一个字符串作为文件名：
 
 
 ```
@@ -77,7 +76,7 @@ You can call it the way you would expect, with a string for a filename:
     size of plain.txt is 5
 ```
 
-However, it is possible to define a new class that adds information to the string representation of filenames. This allows the logging to be more detailed, without changing the original function:
+然而，可以定义一个新的类，为文件名的字符串表示法添加信息。这样可以使日志记录更加详细，而不改变原来的功能：
 
 
 ```
@@ -91,7 +90,7 @@ class DocumentedFileName:
         return f"DocumentedFileName(fname={self.fname!r}, why={self.why!r})"
 ```
 
-Running the function with a `DocumentedFileName` instance as input allows the `open` and `os.getsize` functions to keep working while enhancing the logs:
+用 `DocumentedFileName` 实例作为输入运行该函数，允许 `open` 和 `os.getsize` 函数继续工作，同时增强日志：
 
 
 ```
@@ -101,9 +100,9 @@ Running the function with a `DocumentedFileName` instance as input allows the `o
     size of DocumentedFileName(fname='documented.txt', why="because it's fun") is 5
 ```
 
-### Welcome to 2016
+### 欢迎来到 2016 年
 
-Python 3.6 was released about five years ago, but some of the features that first showed up in this release are cool—and underused. Add them to your toolkit if you haven't already.
+Python 3.6 是在五年前发布的，但是在这个版本中首次出现的一些特性非常酷，而且没有得到充分利用。如果你还没使用，那么将他们添加到你的工具箱中。
 
 --------------------------------------------------------------------------------
 
