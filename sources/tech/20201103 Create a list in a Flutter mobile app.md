@@ -7,9 +7,9 @@
 [#]: via: (https://opensource.com/article/20/11/flutter-lists-mobile-app)
 [#]: author: (Vitaly Kuprenko https://opensource.com/users/kooper)
 
-Create a list in a Flutter mobile app
+在Flutter移动应用程序中创建一个列表
 ======
-Learn how to create Flutter app screens and pass data between them.
+了解如何创建Flutter应用的界面以及如何在它们之间进行数据传递。
 ![Mobile devices and collaboration leads to staring at our phones][1]
 
 Flutter is a popular open source toolkit for building cross-platform apps. In "[Create a mobile app with Flutter][2]," I demonstrated how to install [Flutter][3] on Linux and create your first app. In this article, I'll show you how to add a list of items in your app, with each item opening a new screen. This is a common design method for mobile apps, so you've probably seen it before, but here's a screenshot to help you visualize it:
