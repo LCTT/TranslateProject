@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Chao-zhi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13422-1.html)
 
 Git 中上下文切换的 4 种方式
 ======
