@@ -10,19 +10,19 @@
 在Flutter移动应用程序中创建一个列表
 ======
 了解如何创建Flutter应用的界面以及如何在它们之间进行数据传递。
-![Mobile devices and collaboration leads to staring at our phones][1]
+![移动设备以及相互协作导致人们盯着手机看][1]
 
-Flutter is a popular open source toolkit for building cross-platform apps. In "[Create a mobile app with Flutter][2]," I demonstrated how to install [Flutter][3] on Linux and create your first app. In this article, I'll show you how to add a list of items in your app, with each item opening a new screen. This is a common design method for mobile apps, so you've probably seen it before, but here's a screenshot to help you visualize it:
+Flutter是一个流行的开源工具包，它可用于构建跨平台的应用。在文章"[用Flutter创建移动应用][2]"中，我已经向大家展示了如何在Linux中安装[Flutter][3]并创建你的第一个应用。而这篇文章，我将向你展示如何在你的应用中添加一个列表，点击每一个列表项可以打开一个新的界面。这是移动应用的一种常见设计方法，你可能以前见过的, 下面有一个截图，能帮助你对它有一个更直观的了解:
 
-![Testing the Flutter app][4]
+![测试Flutter应用][4]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][5])
 
-Flutter uses the [Dart][6] language. In some of the code snippets below, you'll see statements beginning with slashes. Two slashes (`/ /`) is for code comments, which explain certain pieces of code. Three slashes (`/ / /`) denotes Dart's documentation comments, which explain Dart classes and their properties and other useful information.
+Flutter使用[Dart][6]语言。在下面的一些代码片段中，你会看到以斜杠开头的语句。两个斜杠(`/ /`)是指代码注释，用于解释某些代码片段。三个斜杠(`/ / /`)则表示的是Dart的文档注释，用于解释Dart类和类的属性，以及其他的一些有用的信息。
 
-### Examine a Flutter app's main parts
+### 查看Flutter应用的主要部分
 
-A typical entry point for a  Flutter application is a `main()` function, usually found in a file called `lib/main.dart`:
+Flutter应用的典型入口点是`main()`函数，我们通常可以在文件`lib/main.dart`中找到它:
 
 
 ```
@@ -31,7 +31,7 @@ void main() {
 }
 ```
 
-This method is called when the app is launched. It runs `MyApp()`, a StatelessWidget containing all necessary app settings in the `MaterialApp()` widget (app theme, initial page to open, and so on):
+应用启动时，`main()`会被调用，然后执行`MyApp()`。 `MyApp`是一个无状态的Widget(StatelessWidget)，它包含了`MaterialApp()`widget，`MaterialApp`中包含了所有必要的应用设置(应用的主题、要打开的初始页面等):
 
 
 ```
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-The initial page generated is called `MyHomePage()`. It's a stateful widget that contains variables that can be passed to a widget constructor parameter (take a look at the code above, where you pass the variable `title` to the page constructor):
+`MyHomePage()`是应用的初始页面，是一个有状态的widget， 它包含了一个传给其构造函数的参数(从上面的代码看，我们传了一个`title`变量给初始页面的构造函数):
 
 
 ```
@@ -64,7 +64,7 @@ class MyHomePage extends StatefulWidget {
 }
 ```
 
-StatefulWidget means that this page has its own state: `_MyHomePageState`. It lets you call the `setState()` method there to rebuild the page's user interface (UI):
+有状态的widget，表示这个widget可以拥有自己的状态: `_MyHomePageState`。调用`_MyHomePageState`中的`setState()`方法，可以重新构建页面界面。
 
 
 ```
@@ -80,7 +80,7 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
 }
 ```
 
-A `build()` function in stateful and stateless widgets is responsible for UI appearance:
+不管是有状态的，还是无状态的微件(widget)，他们都有一个`build()`方法，该方法负责微件的UI外观。
 
 
 ```
@@ -114,49 +114,49 @@ Widget build(BuildContext context) {
 }
 ```
 
-### Modify your app
+### 修改你的应用
 
-It's good practice to separate the `main()` method and other pages' code into different files. To do so, you need to create a new .dart file by right-clicking on the **lib** folder then selecting **New &gt; Dart File**:
+一个好的做法是，把`main()`方法和其他页面的代码分开放到不同的文件中。要想将它们分开，你需要右击**lib**目录，然后选择**New &gt; Dart File**来创建一个.dart文件：
 
-![Create a new Dart file][10]
-
-(Vitaly Kuprenko, [CC BY-SA 4.0][5])
-
-Name the file `items_list_page`.
-
-Switch back to your `main.dart` file, cut the `MyHomePage` and `_MyHomePageState` code, and paste it into your new file. Next, set your cursor on `StatefulWidget` (underlined below in red), press Alt+Enter, and select `package:flutter/material.dart`:
-
-![Importing Flutter package][11]
+![创建一个新的Dart文件][10]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][5])
 
-This adds `flutter/material.dart` to your file so that you can use the default material widgets Flutter provides.
+将新建的文件命名为`items_list_page`。
 
-Then, right-click on **MyHomePage class &gt; Refactor &gt; Rename…** and rename this class to `ItemsListPage`:
+切换回到`main.dart`文件，将`MyHomePage`和`_MyHomePageState`中的代码，剪切并粘贴到我们新建的文件。然后将光标放到`StatefulWidget`上(下面红色的下划线处), 按Alt+Enter后出现下拉列表, 然后选择`package:flutter/material.dart`：
 
-![Renaming StatefulWidget class][12]
-
-(Vitaly Kuprenko, [CC BY-SA 4.0][5])
-
-Flutter recognizes that you renamed the StatefulWidget class and automatically renames its State class:
-
-![State class renamed automatically][13]
+![导入Flutter包][11]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][5])
 
-Return to the `main.dart` file and change the name `MyHomePage` to `ItemsListPage`. Once you start typing, your Flutter integrated development environment (probably IntelliJ IDEA Community Edition, Android Studio, and VS Code or [VSCodium][14]) suggests how to autocomplete your code:
+经过上面的操作我们将`flutter/material.dart`包添加到了`main.dart`文件中，这样我们就可以使用Flutter提供的默认的material主题微件.
 
-![IDE suggests autocompleting code][15]
+然后, 在类名**MyHomePage**右击，**MyHomePage class &gt; Refactor &gt; Rename…**将其重命名为`ItemsListPage`:
 
-(Vitaly Kuprenko, [CC BY-SA 4.0][5])
-
-Press Enter to complete your input. It will add the missing import to the top of the file automatically:
-
-![Adding missing import ][16]
+![重命名StatefulWidget类][12]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][5])
 
-You've completed your initial setup. Now you need to create a new .dart file in the **lib** folder and name it `item_model`. (Note that classes have UpperCamelCase names, but files have snake_case names.) Paste this code into the new file:
+Flutter识别到你重命名了StatefulWidget类，它会自动将它的State类也跟着重命名:
+
+![State类被自动重命名][13]
+
+(Vitaly Kuprenko, [CC BY-SA 4.0][5])
+
+回到`main.dart`文件，将文件名`MyHomePage`改为`ItemsListPage`。 一旦你开始输入, 你的Flutter集成开发环境(可能是IntelliJ IDEA社区版、Android Studio和VS Code或[VSCodium][14])，会给出建议告诉你，如何自动完成代码输入。
+
+![IDE建议自动完成的代码][15]
+
+(Vitaly Kuprenko, [CC BY-SA 4.0][5])
+
+按Enter键即可完成输入，缺失的导入语句会被自动添加到文件的顶部。
+
+![添加缺失的导入语句][16]
+
+(Vitaly Kuprenko, [CC BY-SA 4.0][5])
+
+到此，你已经完成了初始设置。现在你需要在**lib**目录创建一个新的.dart文件，命名为`item_model`。(注意，类命是大驼峰命名, 一般的文件名是下划线分割的命名。)然后粘贴下面的代码到新的文件中：
 
 
 ```
@@ -177,7 +177,7 @@ class ItemModel {
 }
 ```
 
-Return to `items_list_page.dart`, and replace the existing `_ItemsListPageState` code with:
+回到`items_list_page.dart`文件, 将已有的`_ItemsListPageState`代码替换为下面的代码:
 
 
 ```
@@ -239,9 +239,9 @@ class ItemWidget extends StatelessWidget {
 }
 ```
 
-Consider moving `ItemWidget` to a separate file in the **lib** folder to improve the readability of your code.
+为了提高代码的可读性，可以考虑将`ItemWidget`作为一个单独的文件放到**lib**目录中。
 
-The only thing missing is the `ItemDetailsPage` class. Create a new file in the **lib** folder and name it `item_details_page`. Then copy and paste this code there:
+现在唯一缺少的是`ItemDetailsPage`类。在**lib**目录中我们创建一个新文件并命名为`item_details_page`。然后将下面的代码拷贝进去:
 
 
 ```
@@ -287,59 +287,59 @@ class _ItemDetailsPageState extends State&lt;ItemDetailsPage&gt; {
 }
 ```
 
-Almost nothing new here. Notice that `_ItemDetailsPageState` is using the `widget.item.title` code. It enables referring to the `StatefulWidget` fields in its `State` class.
+上面的代码几乎没什么新东西，不过要注意的是`_ItemDetailsPageState`里使用了`widget.item.title`这样的语句，它让我们可以从State类中引用到其对应的微件(StatefulWidget)
 
-### Add some animation
+### 添加一些动画
 
-Now, it's time to add some basic animation:
+现在让我们来添加一些基础的动画:
 
-  1. Go to `ItemWidget` code.
-  2. Put the cursor on the `Icon()` widget in the `build()` method.
-  3. Press Alt+Enter and select "Wrap with widget…"
+  1. 找到`ItemWidget`代码块(或者文件).
+  2. 将光标放到`build()`方法中的`Icon()`微件上。
+  3. 按Alt+Enter，然后选择"Wrap with widget…"
 
 
 
-![Wrap with widget option][18]
-
-(Vitaly Kuprenko, [CC BY-SA 4.0][5])
-
-Start typing "Hero" and select the suggestion for `Hero((Key key, @required this, tag, this.create))`:
-
-![Finding the Hero widget][19]
+![查看微件选项][18]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][5])
 
-Next, add the tag property `tag: model.id` to the Hero widget:
+输入"Hero"，然后从建议的下拉列表中选择`Hero((Key key, @required this, tag, this.create))`:
 
-![Adding the tag property model.id to the Hero widget][20]
-
-(Vitaly Kuprenko, [CC BY-SA 4.0][5])
-
-And the final step is to make the same change in the `item_details_page.dart` file:
-
-![Changing item_details_page.dart file][21]
+![查找Hero微件][19]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][5])
 
-The previous steps wrapped the `Icon()` widget with the `Hero()` widget. Do you remember in `ItemModel` you added the `id field` but didn't use it anywhere? The Hero widget takes a unique tag for the child widget. If Hero detects that different app screens (MaterialPageRoute) have a Hero widget with the same tag, it'll automatically animate the transition between these pages.
+下一步, 给Hero微件添加tag属性`tag: model.id`:
 
-Test it out by running the app on an Android emulator or physical device. When you open and close the item details page, you'll see a nice animation of the icon:
-
-![Testing the Flutter app][4]
+![在Hero微件上添加tag属性为model.id][20]
 
 (Vitaly Kuprenko, [CC BY-SA 4.0][5])
 
-### Wrapping up
+最后我们在`item_details_page.dart`文件中做相同的修改:
 
-In this tutorial, you learned:
+![修改item_details_page.dart文件][21]
 
-  * The components of a standard, automatically created app
-  * How to add several pages that pass data among each other
-  * How to add a simple animation for those pages
+(Vitaly Kuprenko, [CC BY-SA 4.0][5])
+
+前面的步骤，其实我们是用`Hero()`微件对`Icon()`微件进行了包装。还记得吗？前面我们定义`ItemModel`类时，定义了一个`id field`，但没有在任何地方使用到。因为Hero微件会为其每个子微件添加一个唯一的tag。当Hero检测到不同页面(MaterialPageRoute)中存在相同tag的Hero时，它会自动在这些不同的页面中应用过渡动画。
+
+可以在安卓模拟器或物理设备上运行我们的应用来做这个动画的测试。当你打开或者关闭列表项的详情页时，你会看到一个漂亮的图标动画：
+
+![测试Flutter应用][4]
+
+(Vitaly Kuprenko, [CC BY-SA 4.0][5])
+
+### 收尾
+
+这篇教程，让你学到了:
+
+  * 一些符合标准的，且能用于自动创建应用的组件。
+  * 如何添加多个页面以及在页面间传递数据。
+  * 如何给多个页面添加简单的动画。
 
 
 
-If you want to learn more, check out Flutter's [docs][22] (with links to sample projects, videos, and "recipes" for creating Flutter apps) and the [source code][23], which is open source under a BSD 3-Clause License.
+如果你想了解更多, 查看Flutter的[文档][22] (一些视频和样例项目的链接, 还有一些创建Flutter应用的“秘方”)与[源码][23], 源码的开源协议是BSD 3。
 
 --------------------------------------------------------------------------------
 
@@ -347,7 +347,7 @@ via: https://opensource.com/article/20/11/flutter-lists-mobile-app
 
 作者：[Vitaly Kuprenko][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ywxgod](https://github.com/ywxgod)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
