@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13428-1.html)
 
 用开源软件保护你的文件的 5 种方法
 ======
 
 > 控制你自己的数据，使未经授权的用户无法访问它。
 
-![归档文件和文档][1]
+![](https://img.linux.net.cn/data/attachment/album/202105/27/000829h3fcdd9b6p9v9xx9.jpg)
 
 用户完全有权利关心他们数据的安全和保障。当你在计算机上创建数据时，希望对其进行独家控制是合理的。
 
