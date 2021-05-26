@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Chao-zhi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13426-1.html)
 
 将 Fedora Linux 系统添加到企业域中
 ======
