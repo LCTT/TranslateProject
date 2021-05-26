@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ShuyRoy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13425-1.html)
 
 使用开源工具进行 Linux 内存取证
 ======
