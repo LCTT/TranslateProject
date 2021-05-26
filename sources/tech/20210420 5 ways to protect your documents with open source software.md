@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/secure-documents-open-source)
 [#]: author: (Ksenia Fedoruk https://opensource.com/users/ksenia-fedoruk)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
