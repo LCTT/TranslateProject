@@ -7,21 +7,20 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Make your API better with this positional trick from Python 3.8
+用 Python 3.8 中的这个位置技巧让你的 API 变得更好
 ======
-Explore positional-only parameters and two other underutilized but still
-useful Python features.
+探索只接受位置参数和其他两个未被充分利用但仍然有用的 Python 特性。
 ![Women in computing and open source v5][1]
 
-This is the ninth in a series of articles about features that first appeared in a version of Python 3.x. Python 3.8 was first released in 2019, and two years later, many of its cool new features remain underused. Here are three of them.
+这是关于首次出现在 Python 3.x 版本中的特性的系列文章的第九篇。Python 3.8 于 2019 年首次发布，两年后，它的许多很酷的新特性仍然没有被使用。下面是其中的三个。
 
 ### importlib.metadata
 
-[Entry points][2] are used for various things in Python packages. The most familiar are [console_scripts][3] entrypoints, but many plugin systems in Python use them.
+[入口点][2]在 Python 包中被用来做各种事情。最熟悉的是 [console_scripts][3] 入口点，但 Python 中的许多插件系统都使用它们。
 
-Until Python 3.8, the best way to read entry points from Python was to use `pkg_resources`, a somewhat clunky module that is part of `setuptools`.
+在 Python 3.8 之前，从 Python 中读取入口点的最好方法是使用 `pkg_resources`，这是一个有点笨重的模块，它是 `setuptools` 的一部分。
 
-The new `importlib.metadata` is a built-in module that allows access to the same thing:
+新的 `importlib.metadata` 是一个内置模块，它允许访问同样的东西：
 
 
 ```
@@ -37,18 +36,18 @@ distribution.entry_points
      EntryPoint(name='f2py3.9', value='numpy.f2py.f2py2e:main', group='console_scripts')]
 ```
 
-Entry points are not the only thing `importlib.metadata` permits access to. For debugging, reporting, or (in extreme circumstances) triggering compatibility modes, you can also check the version of dependencies—at runtime!
+入口点并不是 `importlib.metadata` 允许访问的唯一东西。可以调试、报告，或者（在极端情况下）触发兼容模式，你也可以在运行时检查依赖的版本！
 
 
 ```
 `f"{distribution.metadata['name']}=={distribution.version}"`[/code] [code]`    'numpy==1.20.1'`
 ```
 
-### Positional-only parameters
+### 只接受位置参数
 
-After the wild success of keywords-only arguments at communicating API authors' intentions, another gap was filled: positional-only arguments.
+强制关键字的参数在传达 API 作者的意图方面取得巨大成功之后，另一个空白被填补了：只接受位置参数。
 
-Especially for functions that allow arbitrary keywords (for example, to generate data structures), this means there are fewer constraints on allowed argument names:
+特别是对于那些允许使用任意关键字的函数(例如，生成数据结构)，这意味着对允许的参数名称的限制更少：
 
 
 ```
@@ -58,13 +57,13 @@ def some_func(prefix, /, **kwargs):
 [/code] [code]`some_func("a_prefix", prefix="prefix keyword value")`[/code] [code]`    a_prefix {'prefix': 'prefix keyword value'}`
 ```
 
-Note that, confusingly, the value of the _variable_ `prefix` is distinct from the value of `kwargs["prefix"]`. As in many places, take care to use this feature carefully.
+注意，令人困惑的是，_变量_ `prefix` 的值与 `kwargs["prefix"]` 的值不同。就像在很多地方一样，要注意小心使用这个功能。
 
-### Self-debugging expressions
+### 自我调试表达式
 
-The `print()` statement (and its equivalent in other languages) has been a favorite for quickly debugging output for over 50 years.
+50多年来, `print()` 语句（及其在其他语言中的对应语句）一直是快速调试输出的最爱。
 
-But we have made much progress in print statements like:
+但是我们在打印语句方面取得了很大的进展，比如：
 
 
 ```
@@ -74,16 +73,16 @@ print("special_number = %s" % special_number)
 [/code] [code]`    special_number = 5`
 ```
 
-Yet self-documenting f-strings make it even easier to be clear:
+然而，自我记录的 f-strings 使它更容易明确：
 
 
 ```
 `print(f"{special_number=}")`[/code] [code]`    special_number=5`
 ```
 
-Adding an `=` to the end of an f-string interpolated section keeps the literal part while adding the value.
+在 f-string 插值部分的末尾添加一个 `=`，可以保留字面部分，同时添加数值。
 
-This is even more useful when more complicated expressions are inside the section:
+当更复杂的表达式在该部分内时，这就更有用了：
 
 
 ```
@@ -93,9 +92,9 @@ print(f"{values.get('something', 'default')=}")
 [/code] [code]`    values.get('something', 'default')='default'`
 ```
 
-### Welcome to 2019
+### 欢迎来到 2019 年
 
-Python 3.8 was released about two years ago, and some of its new features are cool—and underused. Add them to your toolkit if you haven't already.
+Python 3.8 大约在两年前发布，它的一些新特性非常酷，而且没有得到充分利用。如果你还没使用，那么将他们添加到你的工具箱中。
 
 --------------------------------------------------------------------------------
 
@@ -103,7 +102,7 @@ via: https://opensource.com/article/21/5/python-38-features
 
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
