@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (DCOLIVERSUN)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13429-1.html)
 
 什么是 Java 的无服务器化？
 ======
