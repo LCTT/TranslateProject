@@ -7,17 +7,16 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Slice infinite generators with this Python 3.7 feature
+用这个 Python 3.7 的特性来切片无限生成器
 ======
-Learn more about this and two other underutilized but still useful
-Python features.
+了解更多关于这个和其他两个未被充分利用但仍然有用的 Python 特性。
 ![Hands on a keyboard with a Python book ][1]
 
-This is the eighth in a series of articles about features that first appeared in a version of Python 3.x. [Python 3.7][2] was first released in 2018, and even though it has been out for a few years, many of the features it introduced are underused and pretty cool. Here are three of them.
+这是关于首次出现在 Python 3.x 版本中的特性的系列文章的第八篇。[Python 3.7][2] 于 2018 年首次发布，尽管它已经发布了几年，但它引入的许多特性都未被充分利用，而且相当酷。下面是其中的三个。
 
-### Postponed evaluation of annotations
+### 注解推迟评估
 
-In Python 3.7, as long as the right `__future__` flags are activated, annotations are not evaluated during runtime:
+在 Python 3.7 中，只要激活了正确的 `__future__` 标志，注解在运行时就不会被评估：
 
 
 ```
@@ -34,7 +33,7 @@ def another_brick(wall: List[Brick], brick: Brick) -&gt; Education:
 `    {'wall': 'List[Brick]', 'brick': 'Brick', 'return': 'Education'}`
 ```
 
-This allows recursive types (classes that refer to themselves) and other fun things. However, it means that if you want to do your own type analysis, you need to use `ast` explictly:
+它允许递归类型（指向自己的类）和其他有趣的事情。然而，这意味着如果你想做自己的类型分析，你需要明确地使用 `ast`。
 
 
 ```
@@ -53,11 +52,11 @@ f"{subscript.value.id}[{subscript.slice.id}]"
 `    'List[Brick]'`
 ```
 
-### itertools.islice supports __index__
+### itertools.islice 支持 __index__
 
-Sequence slices in Python have long accepted all kinds of _int-like objects_ (objects that have `__index__()`) as valid slice parts. However, it wasn't until Python 3.7 that `itertools.islice`, the only way in core Python to slice infinite generators, gained this support.
+Python 中的序列切片长期以来一直接受各种_类 int 对象_（具有 `__index__()` 的对象）作为有效的切片部分。然而，直到 Python 3.7，`itertools.islice`，即核心 Python 中对无限生成器进行切片的唯一方法，才获得了这种支持。
 
-For example, now it is possible to slice infinite generators by `numpy.short`-sized integers:
+例如，现在可以用 `numpy.short` 大小的整数来切片无限生成器：
 
 
 ```
@@ -80,9 +79,9 @@ list(itertools.islice(itertools.count(), short_1, short_3))
 `    [1, 2]`
 ```
 
-### functools.singledispatch() annotation registration
+### functools.singledispatch() 注解注册
 
-If you thought [singledispatch][3] couldn't get any cooler, you were wrong. Now it is possible to register based on annotations:
+如果你认为 [singledispatch][3] 不能再酷了，你错了。现在可以根据注解来注册了：
 
 
 ```
@@ -118,9 +117,9 @@ get_area(Circle(1)), get_area(Square(1))
 `    (3.141592653589793, 1)`
 ```
 
-### Welcome to 2017
+### 欢迎来到 2017 年
 
-Python 3.7 was released about four years ago, but some of the features that first showed up in this release are cool—and underused. Add them to your toolkit if you haven't already.
+Python 3.7 大约是四年前发布的，但是在这个版本中首次出现的一些特性非常酷，而且没有得到充分利用。如果你还没使用，那么将它们添加到你的工具箱中。
 
 --------------------------------------------------------------------------------
 
@@ -128,7 +127,7 @@ via: https://opensource.com/article/21/5/python-37-features
 
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
