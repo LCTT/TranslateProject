@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/port-chip-architectures)
 [#]: author: (Alan Smithee https://opensource.com/users/alansmithee)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
