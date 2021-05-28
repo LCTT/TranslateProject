@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13436-1.html)
 
 将操作系统移植到新的芯片架构的经验
 ======
 
 > 在将嵌入式系统操作系统移植到不同的芯片架构时，RT-Thread 的维护者们从中学到了什么。
 
-![规划云的图示][1]
+![](https://img.linux.net.cn/data/attachment/album/202105/28/221925tuv6j9lsg6xovog2.jpg)
 
 曾经有人问我，为什么计算机被称为“计算机”，它们做的事情可远不止计算数字。一台现代的个人电脑可以浏览互联网、播放音频和视频、为视频游戏和电影生成漂亮的图形、模拟和预测复杂的天气模式和流行病风险、将建筑和工程蓝图变为现实等等。
 
