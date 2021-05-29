@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/python-33)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
