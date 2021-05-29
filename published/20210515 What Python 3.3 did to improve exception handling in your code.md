@@ -3,16 +3,16 @@
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13439-1.html)
 
 Python 3.3 为改进代码中的异常处理所做的工作
 ======
 
 > 探索异常处理和其他未被充分利用但仍然有用的 Python 特性。
 
-![在计算机上编码][1]
+![](https://img.linux.net.cn/data/attachment/album/202105/29/221357mxpj2kitltdez6zj.jpg)
 
 这是 Python 3.x 首发特性系列文章的第四篇。Python 3.3 于 2012 年首次发布，尽管它已经发布了很长时间，但它引入的许多特性都没有得到充分利用，而且相当酷。下面是其中的三个。
 
