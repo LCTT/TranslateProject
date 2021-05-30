@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13442-1.html)
 
 体验 /e/ OS：开源的去谷歌化的安卓
 ======
