@@ -2,15 +2,14 @@
 [#]: via: (https://opensource.com/article/21/4/upgrade-linux-hardware)
 [#]: author: (Howard Fosdick https://opensource.com/users/howtech)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 
 Upgrade your Linux PC hardware using open source tools
 ======
-Get more performance from your PC with the hardware upgrades that will
-give you the biggest payback.
+Get more performance from your PC with the hardware upgrades that will give you the biggest payback.
 ![Business woman on laptop sitting in front of window][1]
 
 In my article on [identifying Linux performance bottlenecks using open source tools][2], I explained some simple ways to monitor Linux performance using open source graphical user interface (GUI) tools. I focused on identifying _performance bottlenecks_, situations where a hardware resource reaches its limits and holds back your PC's performance.
