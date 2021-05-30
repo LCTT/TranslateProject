@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/e-os-review/)
 [#]: author: (Dimitrios https://itsfoss.com/author/dimitrios/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
