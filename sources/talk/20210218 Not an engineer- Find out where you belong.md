@@ -7,79 +7,90 @@
 [#]: via: (https://opensource.com/article/21/2/advice-non-technical)
 [#]: author: (Dawn Parzych https://opensource.com/users/dawnparzych)
 
-Not an engineer? Find out where you belong
-======
-Whether you've been working for decades or are just starting in
-non-engineering tech role, this advice can help you figure out where you
-belong.
+不是程序员？那就找到自己的定位
+===
+
+无论你是已经工作了几十年的还是刚开始从业的非工程型技术人，此建议都可以帮助你确定你的位置归属。
+
 ![Looking at a map for career journey][1]
 
-In the [first article in this series][2], I explained the problems with dividing people and roles into "technical" or "non-technical" categories. In the [second article][3], I shared some of the tech roles for people who don't code. Here, I'll wrap up this exploration into what it means to be technical or non-technical with some recommendations to help you on your journey.
+在 [本系列第一篇文章][2] 中 ，我解释了将人员和角色分为“技术”或“非技术”类别的问题。在 [第二篇文章][3] 中，我为不写代码的人分享了一些技术岗位角色。这已次，我将把这次探索总结为——“技术或非技术意味着什么”，并提供一些能够在职业发展上帮到你的建议。
 
-Whether you've been working in tech for decades, are just starting, or are looking to change careers, consider the advice in this article from people who have been labeled as non-technical but are succeeding in tech roles.
+无论你是已经从事技术工作数十年，或是刚刚起步，还是正在寻求职业变更，请考虑本文中来自非技术人员但在技术角色方面取得成功的人士的建议。
 
-> "Don't tie up what you do and your identity. Get them separate."
->  —Adam Gordon Bell, Developer Relations, Earthly Technologies
+> “不要把你的工作和身份捆绑起来——把它们分开。”
 
-Switching roles doesn't mean your skills will disappear and you no longer have value. If you take on a new role, you need to focus on that role's critical skills. It takes time to develop skills. Take your time, and figure out the important skills for the new position.
+> ——亚当·戈登·贝尔，Earthly Technologies 开发人员关系部
 
-If you manage engineers, encourage them to develop their non-engineering skills and their technical skills. These skills often make a more significant difference in career growth and success than coding and technical skills.
+更换角色，并不意味着你的技能会消失且你不再具有价值。如果你担任新角色，则需要专注于该角色的关键技能。培养技能是需要时间的。花点时间，找出新职位的重要技能。
 
-### Be yourself
+如果你管理工程师，请鼓励他们提升技术技能的同时发展非工程技能，这些技能往往能比编程能力和技术技能对职业发展和成功产生更显著的变化。
 
-> "Don't let other people define whether you are technical or not-technical. "What's technical and what's not, and whether that's important or not is something the people have to figure out for themselves."
->  —Adam Gordon Bell
+## 做你自己
 
-> "Don't ever start a conversation with, 'I'm not technical.' It can come across as, 'I need to warn you about this thing,' which is never a good impression to make for an interview, but it also has the potential to come across as a lack of confidence in your skills."
->  —Mary Thengvall, Director of Developer Relations, Camunda
+> “不要让其他人定义你是技术人员还是非技术人员。什么是技术人员，什么不是技术人员，以及这是否重要是人们必须自己搞清楚的事情。”
 
-Avoid the stereotypes; not all engineers like Star Wars or Star Trek. Not all engineers wear hoodies. Engineers can speak to people.
+> ——亚当·戈登·贝尔
 
-> "People have a lot of perceptions about the technical, non-technical piece, in terms of how you present. When I was working in the office, I would wear a dress because that's how I feel comfortable."
->  —Shailvi Wakhlu, Senior Director of Data, Strava
+> “永远不要用'我不是技术人员'为开头进行对话。因为很可能让对方产生‘这点我不得不提醒你’的想法，这在面试的时候可从来不会留下好印象，而且还有可能会让人觉得你对自己技能缺乏信心。”
 
-### Know your worth
+> ——玛丽·恩瓦尔，Camunda 开发人员关系总监
 
-As I discussed in the first article, being labeled non-technical can lead to [impostor syndrome][4]. Recognize your value, and don't apply the non-technical label to yourself because it can limit earning potential and career growth.
+避免刻板成见；不是所有的工程师都喜欢《星球大战》或《星际迷航》。不是所有工程师都穿连帽卫衣。工程师也可以和别人交流。
 
-> "People kept reboxing me into something else because they thought I was different from the normal stereotype that they had for an engineer. I'm so glad that I didn't listen to any of those people because inherently they were also telling me to go for a lesser-paying job on the basis of something that was in addition to the skills that I had."
->  —Shailvi Wakhlu
+> “单单就你的行为举止，旁人就有很多关于技术或非技术方面的看法。在办公室工作的时候，我会穿裙子，因为只有这样我才能舒服一点。”
 
-> "It is more likely the younger and … the woman in tech, especially new to tech, who's going to have imposter syndrome, who's going to consider themselves not technical enough. Like, 'oh, I only do front-end.' What do you mean you _only_ do front-end? Front-end is incredibly hard."
->  —Liz Harris
+> ——夏维·瓦赫鲁，Strava 高级数据总监
 
-### Find where you can add value and help people
+## 了解你的价值
 
-You don't need to create a pull request to participate in open source.
+正如我在第一篇文章中讨论的那样，被打上“非技术”的标签会导致 [骗子综合症][4]。承认自己的价值，不要在自己身上贴上“非技术”标签，因为它会限制你的收入潜力和职业发展。
 
-> "I always say to people when they try to contribute to open source projects, 'don't think, it's got to be a commit, it's got to be a pull request.' It's like, 'No. How can you add value to that project?' If you haven't got time to do the pull request, are you raising an issue and putting the points down?"
->  —Eddie Jaoude, Open Source Developer, Jaoude Studios
+> “人们之所以把我重新包装成其他东西，是因为他们认为我和工程师的刻板印象不一样。我很高兴我没有听任何人的话，因为他们固执地告诉我，可以靠技能以外的其他东西来找一份低薪的工作。”
 
-### Diversity of thought leads to success
+> ——夏维·瓦赫鲁
 
-See the value and contributions of all roles and people. Don't pigeonhole them into a set of abilities based on their title.
+> “年轻的或者女性的技术人，特别是刚接触技术的女性，更容易患上骗子综合征，因为他们才会认为自己技术不够好。比如，‘哦，我只会前端。’，什​​么叫你*只会*前端？前端也很难的好吧。”
 
-> "Realize how important everybody is, including yourself at all times, and the overall picture of things. Being creative shouldn't be ego-driven. Realize that you can always be better. You can also be worse at what you do. Don't be afraid to ask for help, and realize that we're in there together."
->  —Therese Eberhard, scenic painter for film, commercials, and video
+> ——莉兹·哈里斯
 
-> "The hackathons that I have attended where we've all been technical, we've built a great team of four or five hardcore coders, we've lost. I kid you not, we've lost. And before COVID, I won six previous hackathons, and half the team was focused on other areas. In the hackathons we won, half the team would be considered non-technical by most people, although I do not like this term, as it is about adding value to the team/project. We won because we had so many different perspectives on what we were building."
->  —Eddie Jaoude
+## 寻找那些可以提升价值并帮到人们的地方
 
-> "The more we can move away from those labels of technical/not technical, developer/not developer, and understand that there's a continuum, the better off we're all going to be as far as hiring the right people for the job, instead of letting ourselves get hung up by the presumption that you need a technical team."
->  —Mary Thengvall
+你不需要创建 PR 就可以参与开源。
 
-The more diverse our communities and teams are, the more inclusive they are.
+> “当有人想为开源项目做点贡献时，我总是对他说，‘不要想着，得是一个 commit 才行，得提一个 PR 才可以。’这就好像，‘不行。怎么才能为那个项目贡献点价值呢？’ 如果你没时间提交 PR，那你是不是提了个 issue 并把分数降了呢？”
 
-> "I honestly think the most important thing, whether it's from a community perspective or whether it's from a product perspective, just in general, we have to make sure that we built an inclusive community, not just for our products, not just for the technology that we're working on, but as a human society in general. And I'm going to guess… I'm going to wager that if we do that, as a human species, we will actually be better than what we were yesterday."
->  —Leon Stigter, Senior Product Manager, Lightbend
+> ——埃杜·焦德，Jaoude Studios的开源程序员
 
-If you work in a non-coding tech role, what advice would you give people who consider themselves "non-technical" (or are considered by others to be so)? Share your insights in the comments.
+## 思维的多样性有助于事业成功
 
-There are lots of non-code ways to contribute to open source: Here are three alternatives.
+看看所有角色和人员的价值和贡献。不要根据头衔将人归到同能力的一组。
 
-This year's keynote speaker at the annual All Things Open conference is Red Hat's DeLisa Alexander...
+> “要认识到，所有人（包括自己在内），在任何时候，以及事情全貌的重要性。创造力这个事儿不应该由自我驱动。要知道，对于你所做的事情，你可以变更好，也可以变得更糟。不要害怕寻求帮助，知道到我们在一起。”
 
---------------------------------------------------------------------------------
+> ——特雷瑟·埃伯哈德，电影/广告和视频场景画师
+
+> “我参加过的黑客马拉松都是我们曾经技术过硬的领域，我们当时组建了一支四五个硬核程序员组成的强大团队，但我们输了。我不骗你，我们输了。在新冠疫情之前，我赢了前六次的黑客马拉松，而且当时团队中一半的人于其他领域的专家。在我们赢过的比赛中，大多数人会认为团队一半人是非技术的，尽管我不喜欢这个术语，因为这像是给团队/项目贴金。我们之所以获胜，是因为我们对所构建的东西有很多不同的看法。”
+
+> ——埃迪·贾德
+
+> “我们越能摆脱‘技术/非技术’、‘开发人员/非开发人员’的标签，并理解到一个连续统一的整体存在，我们就越能全力以赴地雇用到合适的人来做这项工作，只要不被你需要‘技术团队’的假设所困扰。”
+
+> ——玛丽·登瓦尔
+
+我们的社区和团队越多样化，它们的包容性就越大。
+
+> “老实说，无论是从社区角度还是从产品角度，我认为，总的来说，最重要的事情都是，我们应该确保我们建立的是一个包容性的社区，这不仅是为了我们的产品，也不仅是为了我们正在使用的技术，还为了整个人类社会，我想……我敢打赌，如果我们做到了这一点，那么作为人类，我们就比过去更进步了。”
+
+> ——里昂·斯泰格，Lightbend 高级产品经理
+
+如果你以非程序员的技术身份工作，你会给那些认为自己“非技术”的人（或被他人认为是“非技术”的人）提供什么建议？ 在评论中分享你的见解。
+
+有许多非编程的方式可以为开源做出贡献：这里提供三种选择。
+
+今年在万物公开会议上的主题演讲者是红帽的DeLisa Alexander ... 
+
+---
 
 via: https://opensource.com/article/21/2/advice-non-technical
 
@@ -96,3 +107,4 @@ via: https://opensource.com/article/21/2/advice-non-technical
 [2]: https://opensource.com/article/21/2/what-does-it-mean-be-technical
 [3]: https://opensource.com/article/21/2/non-engineering-jobs-tech
 [4]: https://opensource.com/business/15/9/tips-avoiding-impostor-syndrome
+
