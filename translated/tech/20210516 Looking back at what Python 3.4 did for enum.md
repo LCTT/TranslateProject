@@ -3,28 +3,28 @@
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
-回顾一下 Python 3.4 对枚举的做法
+回顾一下 Python 3.4 中的枚举
 ======
-另外探索一些未被充分利用但仍然有用的 Python 特性。
-![old school calculator][1]
 
-这是关于首次出现在 Python 3.x 版本中的特性的系列文章的第五篇。Python 3.4 在 2014 年首次发布，尽管它已经发布了很长时间，但它引入的许多特性都没有被充分利用，而且相当酷。下面是其中的三个。
+> 另外探索一些未被充分利用但仍然有用的 Python 特性。
+
+![](https://img.linux.net.cn/data/attachment/album/202105/30/230947j19r2772m12tccrh.jpg)
+
+这是 Python 3.x 首发特性系列文章的第五篇。Python 3.4 在 2014 年首次发布，尽管它已经发布了很长时间，但它引入的许多特性都没有被充分利用，而且相当酷。下面是其中的三个。
 
 ### 枚举
 
-我最喜欢的逻辑谜题之一是自我描述的[史上最难的逻辑谜题][2]。除了其他的之外，它谈到了三个神，他们被称为 A、B 和 C，他们的身份是真、假和随机，按一定顺序排列。你可以问他们问题，但他们只用神的语言回答，其中 “da” 和 “ja” 表示 “是” 和 “不是”，但你不知道哪个是哪个。
-
+我最喜欢的逻辑谜题之一是自我描述的 [史上最难的逻辑谜题][2]。在其中，它谈到了三个“神”，他们被称为 A、B 和 C，他们的身份是真、假和随机，按一定顺序排列。你可以问他们问题，但他们只用神的语言回答，其中 “da” 和 “ja” 表示 “是” 和 “不是”，但你不知道哪个是哪个。
 
 如果你决定使用 Python 来解决这个问题，你将如何表示神的名字和身份以及神的语言中的词语？传统的答案是使用字符串。然而，字符串的拼写错误可能会带来灾难性的后果。
 
 如果在解题的关键部分，你用字符串 “jaa” 而不是 “ja” 进行比较，你就会得到一个错误的答案。虽然谜题没有说明风险是什么，但这可能是最好的避免方式。
 
 `enum` 模块让你能够以一种可调试但安全的方式来定义这些东西：
-
 
 ```
 import enum
@@ -50,14 +50,15 @@ class Language(enum.Enum):
 
 枚举的一个好处是，在调试日志或异常中，枚举的呈现方式是有帮助的：
 
-
 ```
 name = Name.A
 identity = Identity.RANDOM
 answer = Language.da
 print("I suspect", name, "is", identity, "because they answered", answer)
+```
 
-[/code] [code]`    I suspect Name.A is Identity.RANDOM because they answered Language.da`
+```
+    I suspect Name.A is Identity.RANDOM because they answered Language.da
 ```
 
 ### functools.singledispatch
@@ -72,7 +73,6 @@ print("I suspect", name, "is", identity, "because they answered", answer)
 
 你可以定义没有行为的类：
 
-
 ```
 class Torch:
     name="torch"
@@ -82,9 +82,9 @@ class Sword:
 
 class Rock:
     name="rock"
+```
 
-[/code] [code]
-
+```
 import functools
 
 @functools.singledispatch
@@ -98,7 +98,6 @@ def acquire(x, inventory):
 
 对于火炬来说，这些通用的实现已经足够了：
 
-
 ```
 inventory = set()
 
@@ -108,15 +107,14 @@ def deploy(thing):
     print("You have", [item.name for item in inventory])
 
 deploy(Torch())
+```
 
-[/code] [code]
-
+```
     You use torch
     You have ['torch']
 ```
 
 然而，剑和石头需要一些专门的功能：
-
 
 ```
 import random
@@ -124,21 +122,21 @@ import random
 @use.register(Sword)
 def use_sword(sword):
     print("You try to use", sword.name)
-    if random.random() &lt; 0.9:
+    if random.random() < 0.9:
         print("You succeed")
     else:
         print("You fail")
 
 deploy(sword)
+```
 
-[/code] [code]
-
+```
     You try to use sword
     You succeed
     You have ['sword', 'torch']
+```
 
-[/code] [code]
-
+```
 import random
 
 @acquire.register(Rock)
@@ -148,9 +146,9 @@ def acquire_rock(rock, inventory):
     inventory.add(rock)
 
 deploy(Rock())
+```
 
-[/code] [code]
-
+```
     You use rock
     You have ['sword', 'rock']
 ```
@@ -161,10 +159,11 @@ deploy(Rock())
 
 从一开始，Python 中文件路径的接口就是“智能字符串操作”。现在，通过 `pathlib`，Python 有了一种面向对象的方法来操作路径。
 
+```
+import pathlib
+```
 
 ```
-`import pathlib`[/code] [code]
-
 gitconfig = pathlib.Path.home() / ".gitconfig"
 text = gitconfig.read_text().splitlines()
 ```
@@ -173,14 +172,15 @@ text = gitconfig.read_text().splitlines()
 
 这使你可以集中精力处理重要的事情：
 
-
 ```
 for line in text:
     if not line.strip().startswith("name"):
         continue
     print(line.split("=")[1])
+```
 
-[/code] [code]`     Moshe Zadka`
+```
+     Moshe Zadka
 ```
 
 ### 欢迎来到 2014 年
@@ -194,7 +194,7 @@ via: https://opensource.com/article/21/5/python-34-features
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
