@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/successful-apis)
 [#]: author: (Tom Wilson https://opensource.com/users/tomwillson4014)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (ywxgod)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
