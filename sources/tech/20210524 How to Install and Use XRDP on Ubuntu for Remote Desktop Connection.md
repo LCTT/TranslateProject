@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/xrdp-ubuntu/)
 [#]: author: (Hunter Wittenborn https://itsfoss.com/author/hunter/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
