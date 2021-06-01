@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13449-1.html)
 
 Nyxt 浏览器：一个受 Emacs 和 Vim 启发的面向键盘的网页浏览器
 ======
