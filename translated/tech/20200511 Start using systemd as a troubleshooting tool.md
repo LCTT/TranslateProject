@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (tt67wq)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Start using systemd as a troubleshooting tool)
@@ -9,18 +9,20 @@
 
 使用 systemd 作为问题定位工具
 ======
-虽然 systemd 并非真正的故障定位工具，但其输出中的信息为解决问题指明了方向。![Magnifying glass on code][1]
 
-没有人会认为 systemd 是一个故障定位工具，但当我的网络服务器遇到问题时，我对 systemd 和它的一些功能的不断了解帮助我找到并规避了问题。
+> 虽然 systemd 并非真正的故障定位工具，但其输出中的信息为解决问题指明了方向。
+ 
+![](https://img.linux.net.cn/data/attachment/album/202106/02/214321uqzzrqza9mlt9iam.jpg)
 
-我遇到的问题是这样，为我的家庭办公网络提供名称服务 、DHCP、NTP、HTTPD 和 SendMail 邮件服务的服务器 yorktown，它在正常启动时未能启动 Apache HTTPD 守护程序。在我意识到它没有运行之后，我不得不手动启动它。这个问题已经持续了一段时间，我最近才开始尝试去解决它。
+没有人会认为 systemd 是一个故障定位工具，但当我的 web 服务器遇到问题时，我对 systemd 和它的一些功能的不断了解帮助我找到并规避了问题。
 
-你们中的一些人会说，systemd 本身就是这个问题的原因，根据我现在了解的情况，我同意你们的看法。然而，我在使用 SystemV 时也遇到了类似的问题。(在本系列文章的[第一篇 ][2] 中，我探讨了围绕 systemd 作为旧有 SystemV 启动程序和启动脚本的替代品所产生的争议。如果你有兴趣了解更多关于 systemd 的信息，也可以阅读[第二篇 ][3] 和[第三篇 ][4] 文章。) 没有完美的软件，systemd 和 SystemV 也不例外，但 systemd 为解决问题提供的信息远远多于 SystemV。
+我遇到的问题是这样，我的服务器 yorktown 为我的家庭办公网络提供名称服务 、DHCP、NTP、HTTPD 和 SendMail 邮件服务，它在正常启动时未能启动 Apache HTTPD 守护程序。在我意识到它没有运行之后，我不得不手动启动它。这个问题已经持续了一段时间，我最近才开始尝试去解决它。
+
+你们中的一些人会说，systemd 本身就是这个问题的原因，根据我现在了解的情况，我同意你们的看法。然而，我在使用 SystemV 时也遇到了类似的问题。（在本系列文章的 [第一篇][2] 中，我探讨了围绕 systemd 作为旧有 SystemV 启动程序和启动脚本的替代品所产生的争议。如果你有兴趣了解更多关于 systemd 的信息，也可以阅读 [第二篇][3] 和 [第三篇][4] 文章。）没有完美的软件，systemd 和 SystemV 也不例外，但 systemd 为解决问题提供的信息远远多于 SystemV。
 
 ### 确定问题所在
 
 找到这个问题根源的第一步是确定 httpd 服务的状态：
-
 
 ```
 [root@yorktown ~]# systemctl status httpd
@@ -43,46 +45,44 @@ Apr 16 11:54:37 yorktown.both.org systemd[1]: Failed to start The Apache HTTP Se
 [root@yorktown ~]#
 ```
 
+这种状态信息是 systemd 的功能之一，我觉得比 SystemV 提供的任何功能都要有用。这里的大量有用信息使我很容易得出逻辑性的结论，让我找到正确的方向。我从旧的 `chkconfig` 命令中得到的是服务是否在运行，以及如果它在运行的话，进程 ID（PID）是多少。这可没多大帮助。
 
-这种状态信息是 systemd 的功能之一，我觉得比 SystemV 提供的任何功能都要有用。这里的大量有用信息使我很容易得出逻辑性的结论，让我找到正确的方向。我从旧的 **chkconfig** 命令中得到的是服务是否在运行，以及如果它在运行的话，进程 ID(PID) 是多少。这可没多大帮助。
-
-该状态报告中的关键条目显示，HTTPD 不能与 IP 地址绑定，这意味着它不能接受传入的请求。这表明网络启动速度不够快，因为 IP 地址还没有设置好，所以 HTTPD 服务还没有准备好与 IP 地址绑定。这是不应该发生的，所以我查看了我的网络服务的 systemd 启动配置文件；在正确的 "after" 和 "requires" 声明下，所有这些似乎都没问题。下面是我服务器上的 **/lib/systemd/system/httpd.service** 文件：
-
+该状态报告中的关键条目显示，HTTPD 不能与 IP 地址绑定，这意味着它不能接受传入的请求。这表明网络启动速度不够快，因为 IP 地址还没有设置好，所以 HTTPD 服务还没有准备好与 IP 地址绑定。这是不应该发生的，所以我查看了我的网络服务的 systemd 启动配置文件；在正确的 `after` 和 `requires` 语句下，所有这些似乎都没问题。下面是我服务器上的 `/lib/systemd/system/httpd.service` 文件：
 
 ```
-# Modifying this file in-place is not recommended, because changes                                                                                    
-# will be overwritten during package upgrades.  To customize the                                                                                      
-# behaviour, run "systemctl edit httpd" to create an override unit.                                                                                  
-                                                                                                                                                     
-# For example, to pass additional options (such as -D definitions) to                                                                                
-# the httpd binary at startup, create an override unit (as is done by                                                                                
-# systemctl edit) and enter the following:                                                                                                            
-                                                                                                                                                     
-#       [Service]                                                                                                                                    
-#       Environment=OPTIONS=-DMY_DEFINE                                                                                                              
-                                                                                                                                                     
-[Unit]                                                                                                                                                
-Description=The Apache HTTP Server                                                                                                                    
-Wants=httpd-init.service                                                                                                                              
-After=network.target remote-fs.target nss-lookup.target httpd-init.service                                                                            
-Documentation=man:httpd.service(8)                                                                                                                    
-                                                                                                                                                     
-[Service]                                                                                                                                            
-Type=notify                                                                                                                                          
-Environment=LANG=C                                                                                                                                    
-                                                                                                                                                     
-ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND                                                                                                      
-ExecReload=/usr/sbin/httpd $OPTIONS -k graceful                                                                                                      
-# Send SIGWINCH for graceful stop                                                                                                                    
-KillSignal=SIGWINCH                                                                                                                                  
-KillMode=mixed                                                                                                                                        
-PrivateTmp=true                                                                                                                                      
-                                                                                                                                                     
-[Install]                                                                                                                                            
+# Modifying this file in-place is not recommended, because changes 
+# will be overwritten during package upgrades.  To customize the 
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to 
+# the httpd binary at startup, create an override unit (as is done by                             
+# systemctl edit) and enter the following:                                           
+
+#    [Service]
+#    Environment=OPTIONS=-DMY_DEFINE             
+
+[Unit]                                               
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+
+[Install]
 WantedBy=multi-user.target
 ```
 
-**httpd.service** 的单元文件明确规定，它应该在 **network.target** 和 **httpd-init.service**( 以及其他)之后加载。我试着用 **systemctl list-units** 命令找到所有这些服务，并在结果数据流中搜索它们。所有这些服务都存在，应该可以确保在设置网络 IP 地址之前，httpd 服务没有加载。
+`httpd.service` 单元文件明确规定，它应该在 `network.target` 和 `httpd-init.service`（以及其他）之后加载。我试着用 `systemctl list-units` 命令找到所有这些服务，并在结果数据流中搜索它们。所有这些服务都存在，应该可以确保在设置网络 IP 地址之前，httpd 服务没有加载。
 
 ### 第一个解决方案
 
@@ -90,10 +90,9 @@ WantedBy=multi-user.target
 
 我搞不清楚为什么花了这么久才把 IP 地址分配给网卡。所以我想，如果我可以将 HTTPD 服务的启动推迟合理的一段时间，那么 IP 地址就会在那个时候分配。
 
-幸运的是，上面的 **/lib/systemd/system/httpd.service** 文件提供了一些方向。虽然它说不要修改它，但是它还是指出了如何操作：使用 **systemctl edit httpd** 命令，它会自动创建一个新文 (**/etc/systemd/system/httpd.service.d/override.conf**) 件并打开 [GNU Nano][5] 编辑器(如果你对 Nano 不熟悉，一定要看一下 Nano 界面底部的提示)。
+幸运的是，上面的 `/lib/systemd/system/httpd.service` 文件提供了一些方向。虽然它说不要修改它，但是它还是指出了如何操作：使用 `systemctl edit httpd` 命令，它会自动创建一个新文件（`/etc/systemd/system/httpd.service.d/override.conf`）并打开 [GNU Nano][5] 编辑器（如果你对 Nano 不熟悉，一定要看一下 Nano 界面底部的提示）。
 
-在新文件中加入以下代码并保存。
-
+在新文件中加入以下代码并保存：
 
 ```
 [root@yorktown ~]# cd /etc/systemd/system/httpd.service.d/
@@ -111,8 +110,7 @@ total 4
 ExecStartPre=/bin/sleep 30
 ```
 
-这个覆盖文件的 **[Service]** 段有一行代码，将 HTTPD 服务的启动时间推迟了 30 秒。下面的状态命令显示了等待时间里的服务状态：
-
+这个覆盖文件的 `[Service]` 段有一行代码，将 HTTPD 服务的启动时间推迟了 30 秒。下面的状态命令显示了等待时间里的服务状态：
 
 ```
 [root@yorktown ~]# systemctl status httpd
@@ -137,7 +135,6 @@ Apr 16 12:15:01 yorktown.both.org systemd[1]: Started The Apache HTTP Server.
 ```
 
 这个命令显示了 30 秒延迟过后 HTTPD 服务的状态。该服务已经启动并正常运行。
-
 
 ```
 [root@yorktown ~]# systemctl status httpd
@@ -172,23 +169,26 @@ Apr 16 12:15:01 yorktown.both.org systemd[1]: Started The Apache HTTP Server.
 
 ### 更好的解决方案
 
-把这个问题作为 bug 上报几天后，我收到了回复，表示 systemd 只是一个管理工具，如果 httpd 需要在满足某些要求之后被拉起，需要在单元文件中表达出来。这个回复指引我去查阅 **httpd.service** 的 man 手册。我希望我能早点发现这个，因为它是比我自己想出的更优秀的解决方案。这种方案明确的针对了前置目标单元，而不仅仅是随机延迟。
+把这个问题作为 bug 上报几天后，我收到了回复，表示 systemd 只是一个管理工具，如果 httpd 需要在满足某些要求之后被拉起，需要在单元文件中表达出来。这个回复指引我去查阅 `httpd.service` 的手册页。我希望我能早点发现这个，因为它是比我自己想出的更优秀的解决方案。这种方案明确的针对了前置目标单元，而不仅仅是随机延迟。
 
-来自 [**httpd.service** man page][7]:
+来自 [httpd.service 手册页][7]:
 
-> **Starting the service at boot time**
-> httpd.service 和 httpd.socket 单元默认是 _disabled_ 的。为了在启动阶段开启 httpd 服务，执行：**systemctl enable httpd.service**。在默认配置中，httpd 守护进程会接受任意配置的 IPV4 或 IPV6 地址的 80 口上的连接(如果安装了 mod_ssl，就会接受 443 端口上的 TLS 连接)。
+> **在启动时开启服务**
+> 
+> `httpd.service` 和 `httpd.socket` 单元默认是 _禁用_ 的。为了在启动阶段开启 httpd 服务，执行：`systemctl enable httpd.service`。在默认配置中，httpd 守护进程会接受任何配置好的 IPv4 或 IPv6 地址的 80 口上的连接（如果安装了 mod_ssl，就会接受 443 端口上的 TLS 连接）。
 >
-> 如果 httpd 被配置成依赖任一特定的 IP 地址(比如使用 "Listen" 指令)，该地址可能只在启动阶段可用，又或者 httpd 依赖其他服务(比如数据库守护进程)，那么必须配置该服务，以确保正确的启动顺序。
+> 如果 httpd 被配置成依赖任一特定的 IP 地址（比如使用 `Listen` 指令），该地址可能只在启动阶段可用，又或者 httpd 依赖其他服务（比如数据库守护进程），那么必须配置该服务，以确保正确的启动顺序。
 >
-> 例如，为了确保 httpd 在所有配置的网络接口配置完成之后再运行，可以创建一个带有以下代码段的 drop-in 文件(如上述)：
->
+> 例如，为了确保 httpd 在所有配置的网络接口配置完成之后再运行，可以创建一个带有以下代码段的 drop-in 文件（如上述）：
+> 
+> ```
 > [Unit]
->  After=network-online.target
->  Wants=network-online.target
+> After=network-online.target
+> Wants=network-online.target
+> ```
 
 
-我仍然觉得这是个 bug，因为在 **httpd.conf** 配置文件中使用 Listen 指令是很常见的，至少在我的经验中。我一直在使用 Listen 指令，即使在只有一个 IP 地址的主机上，在多个网卡 (NICS) 和 IP 地址的机器上这显然也是有必要的。在 **/usr/lib/systemd/system/httpd.service** 默认配置文件中加入上述几行，对不使用 **Listen** 指令的不会造成问题，对使用 **Listen** 指令的则会规避这个问题。
+我仍然觉得这是个 bug，因为在 `httpd.conf` 配置文件中使用 Listen 指令是很常见的，至少在我的经验中。我一直在使用 Listen 指令，即使在只有一个 IP 地址的主机上，在多个网卡和 IP 地址的机器上这显然也是有必要的。在 `/usr/lib/systemd/system/httpd.service` 默认配置文件中加入上述几行，对不使用 `Listen` 指令的不会造成问题，对使用 `Listen` 指令的则会规避这个问题。
 
 同时，我将使用建议的方法。
 
@@ -196,7 +196,7 @@ Apr 16 12:15:01 yorktown.both.org systemd[1]: Started The Apache HTTP Server.
 
 本文描述了一个我在服务器上启动 Apache HTTPD 服务时遇到的一个问题。它指引你了解我在解决这个问题上的思路，并说明了我是如何使用 systemd 来协助解决问题。我也介绍了我用 systemd 实现的规避方法，以及我按照我的 bug 报告得到的更好的解决方案。
 
-如我在开头处提到的那样，这有很大可能是一个 systemd 的问题，特别是 httpd 启动的配置问题。尽管如此，systemd 还是提供了工具让我找到了问题的可能来源，并制定和实现了规避方案。两种方案都没有真正令我满意地解决问题。目前，这个问题根源依旧存在，必须要解决。如果只是在 **/usr/lib/systemd/system/httpd.service** 文件中添加推荐的代码，那对我来说是可行的。
+如我在开头处提到的那样，这有很大可能是一个 systemd 的问题，特别是 httpd 启动的配置问题。尽管如此，systemd 还是提供了工具让我找到了问题的可能来源，并制定和实现了规避方案。两种方案都没有真正令我满意地解决问题。目前，这个问题根源依旧存在，必须要解决。如果只是在 `/usr/lib/systemd/system/httpd.service` 文件中添加推荐的代码，那对我来说是可行的。
 
 在这个过程中我发现了一件事，我需要了解更多关于定义服务启动顺序的知识。我会在下一篇文章中探索这个领域，即本系列的第五篇。
 
@@ -204,13 +204,10 @@ Apr 16 12:15:01 yorktown.both.org systemd[1]: Started The Apache HTTP Server.
 
 网上有大量的关于 systemd 的参考资料，但是大部分都有点简略、晦涩甚至有误导性。除了本文中提到的资料，下列的网页提供了跟多可靠且详细的 systemd 入门信息。
 
-Fedora 项目有一篇切实好用的 systemd 入门，它囊括了几乎所有你需要知道的关于如何使用 systemd 配置、管理和维护 Fedora 计算机的信息。
-
-Fedora 项目也有一个不错的 备忘录，交叉引用了过去 SystemV 命令和 systemd 命令做对比。
-
-关于 systemd 的技术细节和创建这个项目的原因，请查看 Freedesktop.org 上的 systemd 描述。
-
-Linux.com 的“更多 systemd 的乐趣”栏目提供了更多高级的 systemd 信息和技巧。
+- Fedora 项目有一篇切实好用的 [systemd 入门][8]，它囊括了几乎所有你需要知道的关于如何使用 systemd 配置、管理和维护 Fedora 计算机的信息。
+- Fedora 项目也有一个不错的 [备忘录][9]，交叉引用了过去 SystemV 命令和 systemd 命令做对比。
+- 关于 systemd 的技术细节和创建这个项目的原因，请查看 [Freedesktop.org][10] 上的 [systemd 描述][11]。
+- [Linux.com][12] 的“更多 systemd 的乐趣”栏目提供了更多高级的 systemd [信息和技巧][13]。
 
 此外，还有一系列深度的技术文章，是由 systemd 的设计者和主要开发者 Lennart Poettering 为 Linux 系统管理员撰写的。这些文章写于 2010 年 4 月至 2011 年 9 月间，但它们现在和当时一样具有现实意义。关于 systemd 及其生态的许多其他好文章都是基于这些文章：
 
@@ -227,8 +224,6 @@ Linux.com 的“更多 systemd 的乐趣”栏目提供了更多高级的 system
   * [systemd for Administrators，Part X][24]
   * [systemd for Administrators，Part XI][25]
 
-
-
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/20/5/systemd-troubleshooting-tool
@@ -236,7 +231,7 @@ via: https://opensource.com/article/20/5/systemd-troubleshooting-tool
 作者：[David Both][a]
 选题：[lujun9972][b]
 译者：[tt67wq](https://github.com/tt67wq)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
