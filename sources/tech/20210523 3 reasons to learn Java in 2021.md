@@ -17,11 +17,11 @@ Java是在1995年发布的，当我写这篇文章的时候，它已经26岁了�
 
 理解Java解决问题的最好方式就是开发软件，当然啦，如果不做开发，仅仅只是使用软件也会是一个很好的开始。 作为一名开发人员，当您将在自己的本地计算机上运行良好的软件部署到其他计算机上运行时，麻烦可能就开始了。它可能无妨正常运行。它本应正常工作，但正如每个程序员都知道的，总有一些问题会被忽视。而当您在另一个操作系统(OS)上尝试运行该软件时，情况就变得更加复杂了。这就是为什么在每一个软件的获取页面上都会有大量的下载按钮的原因：一个Windows的、macOS的、Linux的、移动端的、甚至许多其他的下载按钮。
 
-As a user, a typical scenario is you want to download some great software but find it's not available for your platform. It seems a pity that such a thing still happens on computers so advanced that they can run virtualized computers within computers, keep old video games alive through emulation, and even fit in your pocket, but software delivery is actually pretty difficult.
+作为一名用户，一个典型的场景是您想下载一些优秀的软件，但它却不适用于您的平台。遗憾的是，这样的情况仍然发生在非常先进的计算机上，它们可以在计算机中运行虚拟机，通过仿真使旧视频游戏保持活力，甚至可以放在你的口袋里，但软件交付实际上相当困难。
 
-Is there a better way? Probably.
+有没有更好的办法？可能会有吧。
 
-### 1\. Write once, run everywhere
+### 1\. 一次编码, 任意环境都能跑通
 
 Code is surprisingly, maybe even disappointingly, specific to OS and architecture. Code has to be _compiled_ from a human-friendly programming language into machine language, a series of binary instructions derived from what a CPU is designed to respond to. It feels arcane in the world of advanced computers that we can't just write code and send it to anyone who wants to run it without worrying about what platform they're on.
 
