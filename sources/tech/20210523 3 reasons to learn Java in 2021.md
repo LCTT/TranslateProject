@@ -13,7 +13,7 @@ Java具有功能强大、多样化、可拓展、有趣的特点。这就是你�
 
 ![Learning and studying technology is the key to success][1]
 
-Java was released in 1995, making it 26 years old as I'm writing this. It was proprietary at first, but in 2007, Java was released as open source under the GPL. To understand what makes Java important, you have to understand the problem it claims to solve. Then you can understand why and how it benefits developers and users.
+Java是在1995年发布的，当我写这篇文章的时候，它已经26岁了。起初它是闭源的，但在2007年，Java基于GPL协议被开源发布了。 To understand what makes Java important, you have to understand the problem it claims to solve. Then you can understand why and how it benefits developers and users.
 
 The best way to understand what Java solves is to develop software, but just using software is a good start, too. As a developer, your troubles are likely to begin when you send software that works perfectly on your own computer to some other computer; it probably won't work. It _should_ work, but as any programmer knows, something always gets overlooked. This is compounded when you try the software on another operating system (OS). It's why there are so many download buttons on any given software site: a button for Windows, for macOS, for Linux, for mobiles, and sometimes even more.
 
