@@ -9,8 +9,8 @@
 
 2021年学习Java的三个理由
 ======
-Java is powerful, diverse, scalable, and fun. Here's why—and how—you
-should be using it.
+Java具有功能强大、多样化、可拓展、有趣的特点。这就是你应该使用它的原因和方式。
+
 ![Learning and studying technology is the key to success][1]
 
 Java was released in 1995, making it 26 years old as I'm writing this. It was proprietary at first, but in 2007, Java was released as open source under the GPL. To understand what makes Java important, you have to understand the problem it claims to solve. Then you can understand why and how it benefits developers and users.
