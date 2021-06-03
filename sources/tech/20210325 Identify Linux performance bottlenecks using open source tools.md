@@ -2,15 +2,14 @@
 [#]: via: (https://opensource.com/article/21/3/linux-performance-bottlenecks)
 [#]: author: (Howard Fosdick https://opensource.com/users/howtech)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 
 Identify Linux performance bottlenecks using open source tools
 ======
-Not long ago, identifying hardware bottlenecks required deep expertise.
-Today's open source GUI performance monitors make it pretty simple.
+Not long ago, identifying hardware bottlenecks required deep expertise.Today's open source GUI performance monitors make it pretty simple.
 ![Lightning in a bottle][1]
 
 Computers are integrated systems that only perform as fast as their slowest hardware component. If one component is less capable than the others—if it falls behind and can't keep up—it can hold your entire system back. That's a _performance bottleneck_. Removing a serious bottleneck can make your system fly.
