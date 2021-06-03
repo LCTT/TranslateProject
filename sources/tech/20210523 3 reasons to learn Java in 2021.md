@@ -23,7 +23,7 @@ Java是在1995年发布的，当我写这篇文章的时候，它已经26岁了�
 
 ### 1\. 一次编码, 任意环境都能跑通
 
-Code is surprisingly, maybe even disappointingly, specific to OS and architecture. Code has to be _compiled_ from a human-friendly programming language into machine language, a series of binary instructions derived from what a CPU is designed to respond to. It feels arcane in the world of advanced computers that we can't just write code and send it to anyone who wants to run it without worrying about what platform they're on.
+如果代码只能在特定的操作系统和环境下运行，但这是很令人惊讶甚至是失望的。代码必须从一种对人友好的高级程序设计语言编译成机器语言，即被设计可以用于响应CPU的一系列二进制指令。 It feels arcane in the world of advanced computers that we can't just write code and send it to anyone who wants to run it without worrying about what platform they're on.
 
 Java is the solution to this incongruity. It's the realization of cross-platform code that works the same across any system you run it on. Java's approach to achieving this feat is counterintuitive at first. In a way, Java isn't compatible with anything but one computer. Stranger still, this computer doesn't actually exist. The computer that Java code targets is the Java Virtual Machine (JVM). This is a program written by Java's creators and distributed for practically any computing device you can think of. As long as you have it installed, any Java code you run is handled by this "imaginary" computer living inside your computer. Java code is executed by the JVM, which sends appropriate platform-specific instructions to your computer, so everything works the same on every OS and architecture.
 
