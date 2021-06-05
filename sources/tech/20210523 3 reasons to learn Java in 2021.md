@@ -37,7 +37,7 @@ I've found that learning Java often encourages self-taught programmers using les
 
 ### 3\. Scaffolding and support
 
-All the popular programming languages have great support systems in place. It's what makes popular languages popular. They all have lots of libraries; there are integrated development environments (IDEs) or IDE extensions for them, example code, free and paid training, and communities of developers. On the other hand, no programming language seems to have quite enough support when you get stuck trying to make something work.
+所有流行的编程语言都有很好的支持系统。这也是使得其变成流行语言的原因。 They all have lots of libraries; there are integrated development environments (IDEs) or IDE extensions for them, example code, free and paid training, and communities of developers. On the other hand, no programming language seems to have quite enough support when you get stuck trying to make something work.
 
 I can't claim that Java can differentiate itself from these two universal but contradictory truths. Still, I have found that when I need a library for Java, I inevitably find not just one but several options for a given task. Often I don't want to use a library because I don't like how its developer chose to implement the functions I need, its license is a little different from what I prefer, or any other trivial point of contention. When there's bountiful support for a language, I have the luxury of being very selective. I get to choose one—among many perfectly suitable solutions—that will best achieve any requirement, however trivial.
 
