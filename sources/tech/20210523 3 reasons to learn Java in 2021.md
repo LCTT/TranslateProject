@@ -47,17 +47,17 @@ You can even choose what to use when approaching the Java language itself. [Open
 
 There's a lot more, but suffice it to say that Java is a complete package regardless of what you're looking for.
 
-### Bonus: Easy to learn
+### 优点：简单易学
 
-Java has proven to be a sensible solution for me and many developers in various industries. Here are some of the reasons I love to use Java.
+事实证明，Java 对我和各行各业的许多开发人员来说是一个明智的解决方案。以下是我喜欢使用 Java 的一些原因。
 
-You may have heard or inferred that Java is a "professional" language for clunky government sites and reserved for "real" developers. Don't be fooled by the many different reputations Java has garnered over its 25+ years! It's only half as terrifying as its reputation, meaning no more than any other language.
+您可能听说过或推断出 Java 是一种“专业”语言，只适用于笨重的政府网站，专供“真正的”开发人员使用。不要被 Java 超过25年以来赢得的不同声誉所迷惑！ It's only half as terrifying as its reputation, meaning no more than any other language.
 
 Programming is hard; there's no getting away from that. It requires you to think logically, it forces you to learn a new language with fewer expressive options than your native tongue, and it demands that you figure out how to solve problems that are difficult enough that they've driven you to programmatic automation. No language alleviates these issues.
 
 However, learning curves for programming languages can differ in surprising ways. Some are easy to start but get complex when you start exploring the fine details. In other words, it might take just one line of code to print "hello world," but once you learn about classes or functions, you get to learn the language (or at least its data model) all over again. Java is Java from the beginning, but once you learn it, you have access to all of its many tricks and conveniences.
 
-In short: Go learn Java! It's powerful, diverse, scalable, and fun. To help you on your way, [download our Java cheat sheet][14], which contains all the basic syntax you'll need as you work on your first dozen projects. After that, you won't need it anymore because Java is wonderfully consistent and predictable. Enjoy!
+简而言之: Go learn Java! It's powerful, diverse, scalable, and fun. To help you on your way, [download our Java cheat sheet][14], which contains all the basic syntax you'll need as you work on your first dozen projects. After that, you won't need it anymore because Java is wonderfully consistent and predictable. Enjoy!
 
 --------------------------------------------------------------------------------
 
