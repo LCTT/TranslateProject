@@ -57,7 +57,7 @@ Programming is hard; there's no getting away from that. It requires you to think
 
 However, learning curves for programming languages can differ in surprising ways. Some are easy to start but get complex when you start exploring the fine details. In other words, it might take just one line of code to print "hello world," but once you learn about classes or functions, you get to learn the language (or at least its data model) all over again. Java is Java from the beginning, but once you learn it, you have access to all of its many tricks and conveniences.
 
-简而言之: 去学习Java吧！它具有功能强大、多样化、可拓展、有趣的特点。为了给您提供帮助, [download our Java cheat sheet][14], which contains all the basic syntax you'll need as you work on your first dozen projects. After that, you won't need it anymore because Java is wonderfully consistent and predictable. Enjoy!
+简而言之: 去学习 Java 吧！它具有功能强大、多样化、可拓展、有趣的特点。为了给您提供帮助, [下载我们的 Java 备忘单][14], 它包含您在处理前十个项目时需要的所有基本语法。在那之后，您就不再需要它了，因为Java具有完美的一致性和可预测性。来享受它吧!
 
 --------------------------------------------------------------------------------
 
