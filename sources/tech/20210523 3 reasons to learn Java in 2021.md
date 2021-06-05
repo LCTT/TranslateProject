@@ -51,11 +51,11 @@ There's a lot more, but suffice it to say that Java is a complete package regard
 
 事实证明，Java 对我和各行各业的许多开发人员来说是一个明智的解决方案。以下是我喜欢使用 Java 的一些原因。
 
-您可能听说过或推断出 Java 是一种“专业”语言，只适用于笨重的政府网站，专供“真正的”开发人员使用。不要被 Java 超过25年以来赢得的不同声誉所迷惑！ It's only half as terrifying as its reputation, meaning no more than any other language.
+您可能听说过或推断出 Java 是一种“专业”语言，只适用于笨重的政府网站，专供“真正的”开发人员使用。千万不要被 Java 超过25年以来的各种名声所迷惑！它的可怕程度只有它名声的一半，并不比其他任何语言更可怕。
 
-Programming is hard; there's no getting away from that. It requires you to think logically, it forces you to learn a new language with fewer expressive options than your native tongue, and it demands that you figure out how to solve problems that are difficult enough that they've driven you to programmatic automation. No language alleviates these issues.
+编程很困难的这件事是无法逃避的，它要求您基于逻辑进行思考，学习一种比母语表达选方式更少的新语言，要您弄清楚如何解决困难的问题，使它们可以使用您的程序完成自动化的执行，没有语言可以避免这些问题。
 
-However, learning curves for programming languages can differ in surprising ways. Some are easy to start but get complex when you start exploring the fine details. In other words, it might take just one line of code to print "hello world," but once you learn about classes or functions, you get to learn the language (or at least its data model) all over again. Java is Java from the beginning, but once you learn it, you have access to all of its many tricks and conveniences.
+然而，编程语言的学习曲线的差异令人惊讶。有些一开始很容易，但当您开始探索细节时就会变得复杂。换句话说，打印“hello world”可能只需要一行代码，但当您学习到了类和函数, 您相当于开始重新学习这门语言（或者至少是它的数据模型）。Java 从一开始就是 Java，一旦您学会了它，就可以使用它的许多技巧和便利。
 
 简而言之: 去学习 Java 吧！它具有功能强大、多样化、可拓展、有趣的特点。为了给您提供帮助, [下载我们的 Java 备忘单][14], 它包含您在处理前十个项目时需要的所有基本语法。在那之后，您就不再需要它了，因为Java具有完美的一致性和可预测性。来享受它吧!
 
