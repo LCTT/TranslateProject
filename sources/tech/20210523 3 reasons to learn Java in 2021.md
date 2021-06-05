@@ -37,9 +37,9 @@ I've found that learning Java often encourages self-taught programmers using les
 
 ### 3\. Scaffolding and support
 
-所有流行的编程语言都有很好的支持系统。这也是使得其变成流行语言的原因。They all have lots of libraries; there are integrated development environments (IDEs) or IDE extensions for them, example code, free and paid training, and communities of developers. On the other hand, no programming language seems to have quite enough support when you get stuck trying to make something work.
+所有流行的编程语言都有很好的支持系统。这也是使得其变成流行语言的原因。他们都有很多文档资料。有针对它们的集成开发环境 (IDE) 或 IDE 扩展、示例代码、免费和付费培训和开发者社区。在另一方面，当您在尝试做某事遇到困难时，似乎没有任何编程语言有足够的支持。
 
-I can't claim that Java can differentiate itself from these two universal but contradictory truths. Still, I have found that when I need a library for Java, I inevitably find not just one but several options for a given task. Often I don't want to use a library because I don't like how its developer chose to implement the functions I need, its license is a little different from what I prefer, or any other trivial point of contention. When there's bountiful support for a language, I have the luxury of being very selective. I get to choose one—among many perfectly suitable solutions—that will best achieve any requirement, however trivial.
+我不能说 Java 与这两个普遍但又相互矛盾的真理隔开。 Still, I have found that when I need a library for Java, I inevitably find not just one but several options for a given task. Often I don't want to use a library because I don't like how its developer chose to implement the functions I need, its license is a little different from what I prefer, or any other trivial point of contention. When there's bountiful support for a language, I have the luxury of being very selective. I get to choose one—among many perfectly suitable solutions—that will best achieve any requirement, however trivial.
 
 Better yet, there's a healthy infrastructure around Java. Tools like [Apache Ant][3], [Gradle][4], and [Maven][5] help you manage your build and delivery process. Services like [Sonatype Nexus][6] help you monitor security. [Spring][7] and [Grails][8] make it easy to develop for the web, while [Quarkus][9] and [Eclipse Che][10] help with cloud development.
 
