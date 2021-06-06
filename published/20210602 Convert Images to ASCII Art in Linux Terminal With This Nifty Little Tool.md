@@ -3,18 +3,20 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13461-1.html)
 
-用这个灵巧的小工具在 Linux 终端将图像转换成 ASCII 艺术
+在 Linux 终端将图像转换成 ASCII 艺术
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202106/06/210732m5oo91ao9ws33757.png)
 
 想在 Linux 终端中做一些有趣的事情吗？把一张普通的图片转换成 ASCII 艺术怎么样？
 
-你知道[什么是 ASCII][1] 么？它是一个标准，在 8 位码中的 256 个空位上分配字母、数字和其他字符。ASCII 艺术是一个由可打印的 ASCII 字符组成的图形。基本上，它是由一堆字母、数字和特殊字符组成的。
+你知道 [什么是 ASCII][1] 么？它是一个标准，在 8 位码中的 256 个空位上分配字母、数字和其他字符。ASCII 艺术是一个由可打印的 ASCII 字符组成的图形。基本上，它是由一堆字母、数字和特殊字符组成的。
 
-你可能见过有人[以 ASCII 格式显示他们发行版的标志][2]，像这样：
+你可能见过有人 [以 ASCII 格式显示他们发行版的标志][2]，像这样：
 
 ![][3]
 
@@ -36,8 +38,6 @@
 * WEBP
 * TIFF/TIF
 
-
-
 让我们看看如何安装和使用它。
 
 ### 在 Linux 上安装 Ascii Image Converter
@@ -50,7 +50,7 @@
 sudo snap install ascii-image-converter
 ```
 
-你也可以从它的发布页面下载 Linux 的可执行文件，并把可执行文件放在 /usr/local/bin/ 目录下。这样，你就能像普通的 Linux 命令一样运行它。如果你想知道为什么会这样，请了解一下 [Linux 目录层次结构][7]。
+你也可以从它的发布页面下载 Linux 的可执行文件，并把可执行文件放在 `/usr/local/bin/` 目录下。这样，你就能像普通的 Linux 命令一样运行它。如果你想知道为什么会这样，请了解一下 [Linux 目录层次结构][7]。
 
 ### 使用 Ascii Image Converter
 
@@ -76,17 +76,17 @@ ascii-image-converter -C path_to_image
 
 你可以通过提供它们的路径将多个图像转换为 ASCII。它将在终端显示器上一个接一个地打印 ASCII 版本。
 
-有一个选项可以保存生成的 ASCII 艺术，但是是作为一个文本文件，而不是作为一个图像。下面的命令将通过在传递给标志的目录路径中的图像名称上添加 “-ascii-art.txt” 来保存 ASCII 艺术。
+也有一个选项可以保存生成的 ASCII 艺术。在旧版本中，它只会被保存为文本文件，而不是图像。开发者 Zoraiz Hassan 发布了一个新版本，现在该工具默认将生成的 ASCII 图像保存为 PNG 格式。
 
 ```
 ascii-image-converter path_to_image -s .
 ```
 
-还有一些可用的选项，比如给输出一个特定的尺寸，使用更多的 ASCII 字符，或者使用你自己的字符集来打印 ASCII 艺术。你可以在[项目的仓库][4]上阅读相关内容。
+还有一些可用的选项，比如给输出一个特定的尺寸，使用更多的 ASCII 字符，或者使用你自己的字符集来打印 ASCII 艺术。你可以在 [项目的仓库][4] 上阅读相关内容。
 
 ### 喜欢它吗？
 
-你喜欢更多的 ASCII 相关的东西吗？那么[在 Linux 上玩 ASCII 游戏][10]怎么样？是的，你完全可以这么做。
+你喜欢更多的 ASCII 相关的东西吗？那么 [在 Linux 上玩 ASCII 游戏][10] 怎么样？是的，你完全可以这么做。
 
 如果你喜欢在终端做实验，你可能会喜欢这个工具。虽然我不知道 ASCII 转换后的图像能有什么好的实际用途。有什么想法吗？
 
@@ -97,7 +97,7 @@ via: https://itsfoss.com/ascii-image-converter/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
