@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/opensuse-leap-15-3-release/)
 [#]: author: (Ankush Das https://news.itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Chao-zhi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -66,7 +66,7 @@ via: https://news.itsfoss.com/opensuse-leap-15-3-release/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/Chao-zhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
