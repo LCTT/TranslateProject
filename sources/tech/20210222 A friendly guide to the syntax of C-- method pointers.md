@@ -7,212 +7,199 @@
 [#]: via: (https://opensource.com/article/21/2/ccc-method-pointers)
 [#]: author: (Stephan Avenwedde https://opensource.com/users/hansic99)
 
-A friendly guide to the syntax of C++ method pointers
+C++ 类成员函数指针语法的友好指南
 ======
-Once you understand the general principles, C++ method pointers become
-less intimidating.
+一旦您理解了一般原则，C++ 类成员函数指针不再那么令人生畏。
+
 ![Person drinking a hot drink at the computer][1]
 
-If you're looking for performance, complexity, or many possible solutions to solve a problem, [C ++][2] is always a good candidate when it comes to extremes. Of course, functionality usually comes with complexity, but some C++ peculiarities are almost illegible. From my point of view, C++ [method pointers][3] may be the most complex expressions I've ever come across, but I'll start with something simpler.
+如果您正在寻找性能、复杂性或许多可能的解决方法来解决问题，那么 [C++][2] 总是一个很好的选择。当然，功能通常伴随着复杂性，但是一些 C++ 的特性几乎难以分辨。根据我的观点，C++ 的 [类成员函数指针](3) 也许是我接触过的最复杂的表达式，但是我会先从一些较简单的开始。
 
-The examples in this article are available in my [GitHub repository][4].
+文章中的例子可以在我的 [Github 仓库][4] 里找到。
 
-### C: Pointer to functions
+### C 语言：函数指针
 
-Let's begin with some basics: Assume you have a function that takes two integers as arguments and returns an integer:
+让我们先从一些基础开始：假设您有一个函数接收两个整数作为参数返回一个整数：
 
-
-```
-int sum(int a, intb){
-    return a+b;
+```c
+int sum(int a, int b) {
+    return a+b;
 }
 ```
 
-In plain C, you can create a pointer to this function, assign it to your `sum(...)` function, and call it by dereferencing. The function's signature (arguments, return type) must comply with the pointer's signature. Aside from that, a function pointer behaves like an ordinary pointer:
+在纯 C 语言中，您可以创建一个指向这个函数的指针，将其分配给您的 `sum(...)` 函数，通过解引用来调用它。函数的签名（参数、返回类型）必须符合指针的签名。除此之外，一个函数指针表现和普通的指针相同：
 
-
-```
+```c
 int (*funcPtrOne)(int, int);
 
-funcPtrOne = &amp;sum;
+funcPtrOne = &sum;
 
 int resultOne = funcPtrOne(2, 5);
 ```
 
-It gets a bit uglier if you take a pointer as an argument and return a pointer:
+如果您使用指针作为参数并返回一个指针，这会显得很丑陋：
 
-
-```
+```c
 int *next(int *arrayOfInt){
-    return ++arrayOfInt;
+    return ++arrayOfInt;
 }
 
 int *(*funcPtrTwo)(int *intPtr);
 
-funcPtrTwo = &amp;next;
+funcPtrTwo = &next;
 
-int resultTwo = *funcPtrTwo(&amp;array[0]);
+int resultTwo = *funcPtrTwo(&array[0]);
 ```
 
-Function pointers in C store the address of a subroutine.
+C 语言中的函数指针存储着子程序的地址。
 
-### Pointers to methods
+### 指向类成员函数的指针
 
-Let's step into C++: The good news is that you probably won't need to use pointers to methods, except in a few rare cases, like the following one. First, define a class with member functions you already know:
+让我们来进入 C++：好消息是您也许不需要使用类成员函数指针，除非在一个特别罕见的情况下，像接下来的例子。首先，您已经知道定义一个类和其中一个成员函数：
 
-
-```
+```cpp
 class MyClass
 {
 public:
 
-    int sum(int a, int b) {
-        return a+b;
-    }
+    int sum(int a, int b) {
+        return a+b;
+    }
 
 };
 ```
 
-#### 1\. Define a pointer to a method of a certain class type
+#### 1\. 定义一个指针指向某一个类中一个成员函数
 
-Declare a pointer to a method of the `MyClass` type. At this point, you don't know the exact method you want to call. You've only declared a pointer to some arbitrary `MyClass` method. Of course, the signature (arguments, return type) matches the `sum(…)` method you want to call later:
+声明一个指针指向 `MyClass` 类成员函数。在此时，您并不知道想调用的具体函数。您仅仅声明了一个指向 `MyClass` 类中任意成员函数的指针。当然，签名（参数、返回值类型）需要匹配您接下想要调用的 `sum(...)` 函数：
 
-
-```
-`int (MyClass::*methodPtrOne)(int, int);`
-```
-
-#### 2\. Assign a certain method
-
-In contrast to C (or [static member functions][5]), method pointers don't point to absolute addresses. Each class type in C++ has a virtual method table (vtable) that stores the address offset for each method. A method pointer refers to a certain entry in the vtable, so it also stores only the offset value. This principle also enables [dynamic dispatch][6].
-
-Because the signature of the `sum(…)` method matches your pointer's declaration, you can assign the signature to it:
-
-
-```
-`methodPtrOne = &MyClass::sum;`
+```cpp
+int (MyClass::*methodPtrOne)(int, int);
 ```
 
-#### 3\. Invoke the method
+#### 2\. 赋值给一个具体的函数
 
-If you want to invoke the method with the pointer, you have to provide an instance of the class type:
+为了和 C 语言（或者 [静态成员函数][5]）对比，类成员函数指针不需要指向绝对地址。在 C++ 中，每一个类中都有一个虚拟函数表（vtable）用来储存每个成员函数的地址偏移量。一个类成员函数指针指向 vtable 中的某个条目，因此它也只存储偏移值。这样的原则使得 [多态][6] 变得可行。
 
+因为 `sum(...)` 函数的签名和您的指针声明匹配，您可以赋值签名给它：
 
+```cpp
+methodPtrOne = &MyClass::sum;
 ```
+
+#### 3\. 调用成员函数
+
+如果您想使用指针调用一个类成员函，您必须提供一个类的实例：
+
+```cpp
 MyClass clsInstance;
 int result = (clsInstance.*methodPtrOne)(2,3);
 ```
 
-You can access the instance with the `.` operator, dereference the pointer with a `*`, and thus call the method by providing two integers as arguments. Ugly, right? But you can still go a step further.
+您可以使用 `.` 操作符来访问，使用 `*` 对指针解引用，通过提供两个整数作为调用函数时的参数。这是丑陋的，对吧？但是您可以进一步应用。
 
-### Using method pointers within a class
+### 在类内使用类成员函数指针
 
-Assume you are creating an application with a [client/server][7] principle architecture with a backend and a frontend. You don't care about the backend for now; instead, you will focus on the frontend, which is based on a C++ class. The frontend's complete initialization relies on data provided by the backend, so you need an additional initialization mechanism. Also, you want to implement this mechanism generically so that you can extend your frontend with other initialization methods in the future (maybe dynamically).
+假设您正在创建一个带有后端和前端的 [客户端/服务器][7] 原理架构的应用程序。您现在并不需要关心后端，相反的，您将基于 C++ 类的前端。前端依赖于后端提供的数据完成初始化，所以您需要一个额外的初始化机制。同时，您希望通用地实现此机制，以便将来可以使用其他初始化函数（可能是动态的）来拓展您的前端。
 
-First, define a data type that can store a method pointer to an initialization method (`init`) and the information describing when this method should be called (`ticks`):
+首先定义一个数据类型用来存储初始化函数（`init`）的指针，同时描述何时应调用此函数的信息（`ticks`）：
 
-
-```
-template&lt;typename T&gt;
+```cpp
+template<typename T>
 struct DynamicInitCommand {
-    void (T::*init)();     // Pointer to additional initialization method
-    unsigned int ticks;    // Number of ticks after init() is called
+    void (T::*init)();     // 指向额外的初始化函数
+    unsigned int ticks;    // 在 init() 调用后 ticks 的数量
 };
 ```
 
-Here is what the `Frontend` class looks like:
+下面一个 `Frontend` 类示例代码：
 
-
-```
-class  Frontend
+```cpp
+class  Frontend
 {
 public:
 
-    Frontend(){
-        DynamicInitCommand&lt;Frontend&gt; init1, init2, init3;
+    Frontend(){
+        DynamicInitCommand<Frontend> init1, init2, init3;
 
-        init1 = { &amp;Frontend::dynamicInit1, 5};
-        init2 = { &amp;Frontend::dynamicInit2, 10};
-        init3 = { &amp;Frontend::dynamicInit3, 15};
+        init1 = { &Frontend::dynamicInit1, 5};
+        init2 = { &Frontend::dynamicInit2, 10};
+        init3 = { &Frontend::dynamicInit3, 15};
 
-        m_dynamicInit.push_back(init1);
-        m_dynamicInit.push_back(init2);
-        m_dynamicInit.push_back(init3);
-    }
-   
-   
+        m_dynamicInit.push_back(init1);
+        m_dynamicInit.push_back(init2);
+        m_dynamicInit.push_back(init3);
+    }
+   
+   
 
-    void  tick(){
-        std::cout &lt;&lt; "tick: " &lt;&lt; ++m_ticks &lt;&lt; std::endl;
-       
-        /* Check for delayed initializations */
-        std::vector&lt;DynamicInitCommand&lt;Frontend&gt;&gt;::iterator  it = m_dynamicInit.begin();
+    void  tick(){
+        std::cout << "tick: " << ++m_ticks << std::endl;
+       
+        /* 检查延迟初始化 */
+        std::vector<DynamicInitCommand<Frontend>>::iterator  it = m_dynamicInit.begin();
 
-        while (it != m_dynamicInit.end()){
-            if (it-&gt;ticks &lt; m_ticks){
-                 
-                if(it-&gt;init)
-                    ((*this).*(it-&gt;init))(); // here it is
+        while (it != m_dynamicInit.end()){
+            if (it->ticks < m_ticks){
+                 
+                if(it->init)
+                    ((*this).*(it->init))(); // 这里是具体调用
 
-                it = m_dynamicInit.erase(it);
+                it = m_dynamicInit.erase(it);
 
-            } else {
-                it++;
-            }
-        }
-    }
-   
-    unsigned  int  m_ticks{0};
-   
+            } else {
+                it++;
+            }
+        }
+    }
+   
+    unsigned  int  m_ticks{0};
+   
 private:
 
-    void  dynamicInit1(){
-        std::cout &lt;&lt; "dynamicInit1 called" &lt;&lt; std::endl;
-    };
+    void  dynamicInit1(){
+        std::cout << "dynamicInit1 called" << std::endl;
+    };
 
-    void  dynamicInit2(){
-        std::cout &lt;&lt; "dynamicInit2 called" &lt;&lt; std::endl;
-    }
+    void  dynamicInit2(){
+        std::cout << "dynamicInit2 called" << std::endl;
+    }
 
-    void  dynamicInit3(){
-        std::cout &lt;&lt; "dynamicInit3 called" &lt;&lt; std::endl;
-    }
+    void  dynamicInit3(){
+        std::cout << "dynamicInit3 called" << std::endl;
+    }
 
-    unsigned  int  m_initCnt{0};
-    std::vector&lt;DynamicInitCommand&lt;Frontend&gt; &gt; m_dynamicInit;
+    unsigned  int  m_initCnt{0};
+    std::vector<DynamicInitCommand<Frontend> > m_dynamicInit;
 };
 ```
 
-After `Frontend` is instantiated, the `tick()` method is called at fixed intervals by the backend. For example, you can call it every 200ms:
+在 `Frontend` 完成实例化后，`tick()` 函数会被后端以固定的时间时间调用。例如，您可以每 200 毫秒调用一次：
 
+```cpp
+int  main(int  argc, char*  argv[]){
+    Frontend frontendInstance;
 
-```
-int  main(int  argc, char*  argv[]){
-    Frontend frontendInstance;
-
-    while(true){
-        frontendInstance.tick(); // just for simulation purpose
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
-    }
+    while(true){
+        frontendInstance.tick(); // 仅用于模拟目的
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
 }
 ```
 
-`Frontend` has three additional initialization methods that must be called based on the value of `m_ticks`. The information about which initialization method to call at which tick is stored in the vector `m_dynamicInit`. In the constructor (`Frontend()`), append this information to the vector so that the additional initialization functions are called after five, 10, and 15 ticks. When the backend calls the `tick()` method, the value `m_ticks` is incremented, and you iterate over the vector `m_dynamicInit` to check whether an initialization method has to be called.
+`Fronted` 有三个额外的初始化函数，它们必须根据 `m_ticks` 的值来选择调用哪个。在 tick 等于何值调用哪个初始化函数的信息存储在数组 `m_dynamicInit` 中。在构造函数（`Frontend()`）中，将此信息附加到数组中，以便在 5、10 和 15 个 tick 后调用其他初始化函数。当后端调用 `tick()` 函数时，`m_ticks` 值会递增，同时遍历数组 `m_dynamicInit` 以检查是否必须调用初始化函数。
 
-If this is the case, the method pointer must be dereferenced by referring to `this`:
-
+如果是这种情况，则必须通过引用 `this` 指针来取消引用成员函数指针：
 
 ```
-`((*this).*(it->init))()`
+((*this).*(it->init))()
 ```
 
-### Summary
+### 总结
 
-Methods pointers can get a bit complicated if you're not familiar with them. I did a lot of trial and error, and it took time to find the correct syntax. However, once you understand the general principle, method pointers become less terrifying.
+如果您并不熟悉类成员函数指针，它们可能会显得有些复杂。我做了很多尝试和经历了很多错误，花了一些时间来找到正确的语法。然而，一旦你理解了一般原理后，方法指针就变得不那么可怕了。
 
-This is the most complex syntax I have found in C++ so far. Do you know something even worse? Post it in the comments!
-
-The pros and cons of each, and why you should consider Python for embedded programming.
+这是迄今为止我在 C++ 中发现的最复杂的语法。 您还知道更糟糕的吗？ 在评论中发布您的观点！
 
 --------------------------------------------------------------------------------
 
