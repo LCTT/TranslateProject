@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/kubernetes-ebook)
 [#]: author: (Chris Collins https://opensource.com/users/clcollins)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
