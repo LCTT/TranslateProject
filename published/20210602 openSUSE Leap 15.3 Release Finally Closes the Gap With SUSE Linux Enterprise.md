@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Chao-zhi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13469-1.html)
 
 openSUSE Leap 15.3 版本缩小了与 SUSE Linux 企业版的差距
 ======
