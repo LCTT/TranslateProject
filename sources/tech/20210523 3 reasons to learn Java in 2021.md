@@ -39,13 +39,13 @@ Java 的语法即使是在最好的方面都很无聊。如果你把所有流行
 
 所有流行的编程语言都有很好的支持系统。这也是使得其变成流行语言的原因。他们都有很多文档资料。有针对它们的集成开发环境 (IDE) 或 IDE 扩展、示例代码、免费和付费培训和开发者社区。在另一方面，当您在尝试做某事遇到困难时，似乎没有任何编程语言有足够的支持。
 
-我不能说 Java 与这两个普遍但又相互矛盾的真理隔开。 Still, I have found that when I need a library for Java, I inevitably find not just one but several options for a given task. Often I don't want to use a library because I don't like how its developer chose to implement the functions I need, its license is a little different from what I prefer, or any other trivial point of contention. When there's bountiful support for a language, I have the luxury of being very selective. I get to choose one—among many perfectly suitable solutions—that will best achieve any requirement, however trivial.
+我不能说 Java 与这两个普遍但又相互矛盾的真理隔开。尽管如此，我发现当我需要一个 Java 库时，我不可避免地会为给定的任务找到多个选项。通常我不想使用一个库，因为我不喜欢它的开发人员实现我需要的功能时，它的许可证与我喜欢的略有不同，或者有其他琐碎的争论点。当一门语言得到大量支持时，我就会非常有选择性。我可以从许多非常合适的解决方案中选择一个最能满足我需求的方案，不论我的这些需求多么微不足道都能被最好得满足。
 
 Better yet, there's a healthy infrastructure around Java. Tools like [Apache Ant][3], [Gradle][4], and [Maven][5] help you manage your build and delivery process. Services like [Sonatype Nexus][6] help you monitor security. [Spring][7] and [Grails][8] make it easy to develop for the web, while [Quarkus][9] and [Eclipse Che][10] help with cloud development.
 
 You can even choose what to use when approaching the Java language itself. [OpenJDK][11] provides classic, official Java, while [Groovy][12] is a simplified approach that resembles a scripting language (you might compare it to Python), and [Quarkus][13] provides a framework for container-first development.
 
-There's a lot more, but suffice it to say that Java is a complete package regardless of what you're looking for.
+还有很多论点，但现在已经足以说明 Java 是一个完整的包了，无论您想在其中寻找什么。 
 
 ### 优点：简单易学
 
