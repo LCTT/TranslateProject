@@ -7,57 +7,57 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-3 reasons to learn Java in 2021
+2021年学习Java的三个理由
 ======
-Java is powerful, diverse, scalable, and fun. Here's why—and how—you
-should be using it.
+Java具有功能强大、多样化、可拓展、有趣的特点。这就是Java为什么被我们广泛使用，也是我们应当找到正确使用它的方式。
+
 ![Learning and studying technology is the key to success][1]
 
-Java was released in 1995, making it 26 years old as I'm writing this. It was proprietary at first, but in 2007, Java was released as open source under the GPL. To understand what makes Java important, you have to understand the problem it claims to solve. Then you can understand why and how it benefits developers and users.
+Java是在1995年发布的，当我写这篇文章的时候，它已经26岁了。起初它是闭源的，但在2007年，Java基于GPL协议被开源发布了。如果想要理解是什么使得Java变得非常重要，您就必须理解它声称要解决的是什么样的问题，从而您就能理解它让开发者和用户受益的原因和方式。
 
-The best way to understand what Java solves is to develop software, but just using software is a good start, too. As a developer, your troubles are likely to begin when you send software that works perfectly on your own computer to some other computer; it probably won't work. It _should_ work, but as any programmer knows, something always gets overlooked. This is compounded when you try the software on another operating system (OS). It's why there are so many download buttons on any given software site: a button for Windows, for macOS, for Linux, for mobiles, and sometimes even more.
+理解Java解决问题的最好方式就是进行软件开发，当然啦，如果不做开发，仅仅只是使用软件也会是一个很好的开始。作为一名开发人员，当您将在自己的本地计算机上运行良好的软件部署到其他计算机上运行时，一些稀奇古怪的麻烦可能就出现了，从而导致软件可能无妨正常运行。软件本应正常工作，但每个程序员都明白，一些问题总是会被忽视。当您在另一个操作系统(OS)上尝试运行该软件时，情况就变得更加复杂了。这也是为什么在每一个软件的获取页面上都会有针对不同的操作系统有对应下载按钮的原因：Windows的、macOS的、Linux的、移动端的、甚至许多其他操作系统环境的下载选项。
 
-As a user, a typical scenario is you want to download some great software but find it's not available for your platform. It seems a pity that such a thing still happens on computers so advanced that they can run virtualized computers within computers, keep old video games alive through emulation, and even fit in your pocket, but software delivery is actually pretty difficult.
+作为一名用户，一个典型的场景是您想下载一些优秀的软件，但它却不适用于您的平台。遗憾的是这样的情况仍然发生在当下非常先进的计算机上，它们可以在计算机中运行虚拟机，通过仿真使旧视频游戏保持活力，甚至可以放在您的口袋里，但软件交付实际上相当困难。
 
-Is there a better way? Probably.
+有没有更好的办法？可能会有吧。
 
-### 1\. Write once, run everywhere
+### 1\. 一次编码, 任意环境都能跑通
 
-Code is surprisingly, maybe even disappointingly, specific to OS and architecture. Code has to be _compiled_ from a human-friendly programming language into machine language, a series of binary instructions derived from what a CPU is designed to respond to. It feels arcane in the world of advanced computers that we can't just write code and send it to anyone who wants to run it without worrying about what platform they're on.
+如果代码只能在特定的操作系统和环境下运行，那这会很令人惊讶甚至是失望的。代码需要从对人友好的高级程序设计语言编译成机器语言，即被设计可以用于响应CPU的一系列二进制指令。在先进的计算机世界中，我们很难理解为什么不能仅仅只要编写代码，就能将它发送给任何一个想要稳定运行它的平台，无需担忧它们正处在什么样的平台中。
 
-Java is the solution to this incongruity. It's the realization of cross-platform code that works the same across any system you run it on. Java's approach to achieving this feat is counterintuitive at first. In a way, Java isn't compatible with anything but one computer. Stranger still, this computer doesn't actually exist. The computer that Java code targets is the Java Virtual Machine (JVM). This is a program written by Java's creators and distributed for practically any computing device you can think of. As long as you have it installed, any Java code you run is handled by this "imaginary" computer living inside your computer. Java code is executed by the JVM, which sends appropriate platform-specific instructions to your computer, so everything works the same on every OS and architecture.
+Java可以解决这种不协调的问题。它的代码是可以跨平台进行工作的，在任何运行它的系统上都执行相同的工作。Java 实现这一壮举的方法起初是有驳常理的。在某种程度上，Java只与一台计算机兼容。奇怪的是，这台电脑实际上并不存在。Java代码的目标计算机是Java虚拟机 (JVM)。这是一个由Java的创建者编写的程序，可用于您能想到的任何计算机设备。只要您安装了它，您运行的任何 Java 代码都会由您计算机中的这台“虚拟”计算机进行处理。Java代码会由JVM执行，JVM向您的计算机发送适当的特定于平台的指令，因此所有内容在每个操作系统和架构上都相同。
 
-Of course, the method used by Java isn't really the selling point here. Most users and many developers don't care how software compatibility is achieved, only that it happens. Many languages promise cross-platform functionality, and usually, that promise is ultimately true, but the journey isn't always easy. Programming languages must be compiled for their target platforms, scripting languages require platform-specific interpreters, and it's rare that either can ensure consistent access to low-level system resources. Cross-platform support is getting better and better, with libraries to help with translating paths and environment variables and settings, and some frameworks (notably [Qt][2]) do much to bridge the gap for peripheral access. But Java has it and delivers it consistently and reliably.
+当然，Java 使用的方法并不是真正的卖点。大多数用户和许多开发人员并不关心软件兼容性是如何实现的，只关心它是否具备兼容性。许多语言都承诺提供跨平台的功能，通常情况下，这个承诺最终都是真的，但是这个过程并不总是容易实现的。编程语言必须针对其目标平台进行编译，脚本语言需要特定于平台的解释器，而且两者都很难确保对底层系统资源的一致访问。跨平台支持变得越来越好，库可以帮助转换路径、环境变量和设置，并且一些框架（特别是 [Qt][2]）在弥补外设访问的差距方面做了很多工作。Java始终可靠地提供它的兼容性。
 
-### 2\. Sensible code
+### 2\. 明智的代码
 
-Java's syntax is boring in the best of ways. If you took all the popular programming languages and put them in a rock tumbler, Java is what you'd get. Looking at source code written in Java, you more or less see the average of all the unique expressions of programming. Brackets indicate the scope of functions and flow control, variables are clearly declared and instantiated before being used, and there's a clear and consistent structure to expressions.
+Java 的语法即使是在最好的方面也很无聊。如果您把所有流行的编程语言都放在一个摇滚杯中，那么您会得到 Java。  通过观察Java编写的源代码，您或多或少会看到编程中所有特定表达式的平均值。括号表示函数和流程控制的范围，变量在使用前被清楚地声明和实例化，并且表达式具有清晰一致的结构。
 
-I've found that learning Java often encourages self-taught programmers using less structured languages to write smarter code. There are lots of "basic" programming lessons you can't learn by gleaning techniques from source code you study online, such as keeping global variable declarations together in the style of Java's public fields, properly anticipating and handling exceptions, using classes and functions, and more. Little touches borrowed from Java can make a big difference.
+我发现Java学习过程中通常会鼓励自学的程序员使用结构较少的语言编写更精炼的代码。有许多“基本”编程课程是无法通过从在线学习的源代码中收集技术来学习的，比如将全局变量声明保持在Java公共字段的风格中、正确地预测和处理异常、使用类和函数、和许多其他的技术。从Java借鉴的一点小改动可以产生很大的不同。
 
-### 3\. Scaffolding and support
+### 3\. 基础设施和支持
 
-All the popular programming languages have great support systems in place. It's what makes popular languages popular. They all have lots of libraries; there are integrated development environments (IDEs) or IDE extensions for them, example code, free and paid training, and communities of developers. On the other hand, no programming language seems to have quite enough support when you get stuck trying to make something work.
+所有流行的编程语言都有很好的支持系统，这也是使得其变成流行语言的原因。他们都有很多文档资料，有针对它们的集成开发环境 (IDE) 或 IDE 扩展、示例代码、免费和付费培训和开发者社区。在另一方面，当您在尝试做某事遇到困难时，似乎没有任何编程语言有足够的支持。
 
-I can't claim that Java can differentiate itself from these two universal but contradictory truths. Still, I have found that when I need a library for Java, I inevitably find not just one but several options for a given task. Often I don't want to use a library because I don't like how its developer chose to implement the functions I need, its license is a little different from what I prefer, or any other trivial point of contention. When there's bountiful support for a language, I have the luxury of being very selective. I get to choose one—among many perfectly suitable solutions—that will best achieve any requirement, however trivial.
+我不能认为Java与这两个普遍但又相互矛盾的真理能够区分开。尽管如此，我发现当我需要一个Java库时，我不可避免地会为给定的任务找到多个选项。通常我不想使用一个库的原因是我不喜欢它的开发人员在实现我需要的功能时，对应的许可证与我喜欢的有所不同或者有其他琐碎的争论点。当一门语言得到大量支持时，我就会很多的选择性。我可以从许多合适的解决方案中选择一个最能满足我需求的，不论我的需求多么微不足道都能被最好得满足。
 
-Better yet, there's a healthy infrastructure around Java. Tools like [Apache Ant][3], [Gradle][4], and [Maven][5] help you manage your build and delivery process. Services like [Sonatype Nexus][6] help you monitor security. [Spring][7] and [Grails][8] make it easy to develop for the web, while [Quarkus][9] and [Eclipse Che][10] help with cloud development.
+更好的是，有一个围绕Java的健康的基础设施。像[Apache Ant][3]、[Gradle][4]、和[Maven][5]等工具 帮助您管理构建和交付的过程。像[Sonatype Nexus][6]等服务帮助您实现监控的安全性。[Spring][7]和[Grails][8]使网络开发变得更加容易, 而[Quarkus][9]和[Eclipse Che][10]有助于云上的开发。
 
-You can even choose what to use when approaching the Java language itself. [OpenJDK][11] provides classic, official Java, while [Groovy][12] is a simplified approach that resembles a scripting language (you might compare it to Python), and [Quarkus][13] provides a framework for container-first development.
+在接触Java语言本身时，您甚至可以选择使用什么样的版本。[OpenJDK][11]提供经典的官方Java，而[Groovy][12]是一种类似于脚本语言的简化方法 (您可以将它与Python进行比较), 并且[Quarkus][13]为容器优先开发提供了一个框架。
 
-There's a lot more, but suffice it to say that Java is a complete package regardless of what you're looking for.
+还有很多论点，但现在已经足以说明Java是一个完整的包了，无论您想在其中寻找什么。 
 
-### Bonus: Easy to learn
+### 优点：简单易学
 
-Java has proven to be a sensible solution for me and many developers in various industries. Here are some of the reasons I love to use Java.
+事实证明，Java对我和各行各业的许多开发人员来说是一个明智的解决方案。以下是我喜欢使用Java的一些原因。
 
-You may have heard or inferred that Java is a "professional" language for clunky government sites and reserved for "real" developers. Don't be fooled by the many different reputations Java has garnered over its 25+ years! It's only half as terrifying as its reputation, meaning no more than any other language.
+您可能听说过或推断出Java是一种“专业”语言，只适用于笨重的政府网站，专供“真正的”开发人员使用。千万不要被 Java超过25年以来的各种名声所迷惑！它的可怕程度只有它名声的一半，并不比其他任何语言更可怕。
 
-Programming is hard; there's no getting away from that. It requires you to think logically, it forces you to learn a new language with fewer expressive options than your native tongue, and it demands that you figure out how to solve problems that are difficult enough that they've driven you to programmatic automation. No language alleviates these issues.
+编程很困难的这件事是无法逃避的，它要求您基于逻辑进行思考，学习一种比母语表达选方式更少的新语言，要您弄清楚如何解决困难的问题，使它们可以使用您的程序完成自动化的执行，没有语言可以避免这些问题。
 
-However, learning curves for programming languages can differ in surprising ways. Some are easy to start but get complex when you start exploring the fine details. In other words, it might take just one line of code to print "hello world," but once you learn about classes or functions, you get to learn the language (or at least its data model) all over again. Java is Java from the beginning, but once you learn it, you have access to all of its many tricks and conveniences.
+然而，编程语言的学习曲线的差异令人惊讶。有些一开始很容易，但当您开始探索细节时就会变得复杂。换句话说，打印“hello world”可能只需要一行代码，但当您学习到了类和函数, 您相当于开始重新学习这门语言（或者至少是它的数据模型）。Java从一开始就是Java，一旦您学会了它，就可以使用它的许多技巧和便利。
 
-In short: Go learn Java! It's powerful, diverse, scalable, and fun. To help you on your way, [download our Java cheat sheet][14], which contains all the basic syntax you'll need as you work on your first dozen projects. After that, you won't need it anymore because Java is wonderfully consistent and predictable. Enjoy!
+简而言之: 去学习Java吧！它具有功能强大、多样化、可拓展、有趣的特点。为了给您提供帮助, [下载我们的Java 备忘单][14], 它包含您在处理前十个项目时需要的所有基本语法。在那之后，您就不再需要它了，因为Java具有完美的一致性和可预测性。来享受它吧!
 
 --------------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ via: https://opensource.com/article/21/5/java
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[PearFL](https://github.com/PearFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
