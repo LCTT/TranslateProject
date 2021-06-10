@@ -41,9 +41,9 @@ Java 的语法即使是在最好的方面都很无聊。如果你把所有流行
 
 我不能说 Java 与这两个普遍但又相互矛盾的真理隔开。尽管如此，我发现当我需要一个 Java 库时，我不可避免地会为给定的任务找到多个选项。通常我不想使用一个库，因为我不喜欢它的开发人员实现我需要的功能时，它的许可证与我喜欢的略有不同，或者有其他琐碎的争论点。当一门语言得到大量支持时，我就会非常有选择性。我可以从许多非常合适的解决方案中选择一个最能满足我需求的方案，不论我的这些需求多么微不足道都能被最好得满足。
 
-Better yet, there's a healthy infrastructure around Java. Tools like [Apache Ant][3], [Gradle][4], and [Maven][5] help you manage your build and delivery process. Services like [Sonatype Nexus][6] help you monitor security. [Spring][7] and [Grails][8] make it easy to develop for the web, while [Quarkus][9] and [Eclipse Che][10] help with cloud development.
+更好的是，有一个围绕 Java 的健壮的基础设施。像[Apache Ant][3]、[Gradle][4]、和[Maven][5]等工具 帮助您管理构建和交付的过程。像[Sonatype Nexus][6]等服务帮助您实现监控的安全性。[Spring][7]和[Grails][8]使网络开发变得更加容易, 而[Quarkus][9]和[Eclipse Che][10]有助于云上的开发。
 
-You can even choose what to use when approaching the Java language itself. [OpenJDK][11] provides classic, official Java, while [Groovy][12] is a simplified approach that resembles a scripting language (you might compare it to Python), and [Quarkus][13] provides a framework for container-first development.
+在接触 Java 语言本身时，您甚至可以选择使用什么样的版本。[OpenJDK][11] 提供经典的官方 Java，而 [Groovy][12] 是一种类似于脚本语言的简化方法 (你可以将它与 Python 进行比较), 并且[Quarkus][13]为容器优先开发提供了一个框架。
 
 还有很多论点，但现在已经足以说明 Java 是一个完整的包了，无论您想在其中寻找什么。 
 
