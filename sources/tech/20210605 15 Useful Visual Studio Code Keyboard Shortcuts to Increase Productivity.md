@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/vs-code-shortcuts/)
 [#]: author: (Sarvottam Kumar https://itsfoss.com/author/sarvottam/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (ywxgod)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
