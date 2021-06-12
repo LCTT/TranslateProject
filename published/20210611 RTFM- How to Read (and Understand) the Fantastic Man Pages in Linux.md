@@ -4,11 +4,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13478-1.html)
 
 RTFM！如何阅读（和理解）Linux 中神奇的手册页
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202106/12/161749re6iiuhzn9ni2in4.jpg)
 
 <ruby>手册页<rt>man pages</rt></ruby>，即<ruby>参考手册页<rt>reference manual pages</rt></ruby>的简称，是你进入 Linux 的钥匙。你想知道的一切都在那里，包罗万象。这套文档永远不会赢得普利策奖，但这套文档是相当准确和完整的。手册页是主要信源，其权威性是众所周知的。
 
