@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/linux-man-page-guide/)
 [#]: author: (Bill Dyer https://itsfoss.com/author/bill/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
