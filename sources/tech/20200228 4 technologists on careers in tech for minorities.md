@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (M4Xrun)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -8,52 +8,54 @@
 [#]: author: (Shilla Saebi https://opensource.com/users/shillasaebi)
 
 4 technologists on careers in tech for minorities
+
 ======
-Learn what Black History Month means to them, what influences their
-career, resources for minorities wanting to break into tech, and more.
+了解黑人历史月对他们意味着什么，什么影响了他们的职业生涯，为想要进入科技领域的少数民族提供资源，等等。
 ![Team meeting][1]
 
-In honor of Black History Month, I've garnered the opinions of a few of my favorite technology professionals and open source contributors. These four individuals are paving the way for the next generation alongside the work they're doing in the technology industry. Learn what Black History Month means to them, what influences their career, resources for minorities wanting to break into tech, and more.
+为了纪念黑人历史月，我收集了一些我最喜欢的技术专家和开源贡献者的意见。这四位正在为下一代铺路，同时也在为他们在科技行业所做的工作铺路。了解黑人历史月对他们意味着什么，什么影响了他们的职业生涯，为想要进入科技领域的少数民族提供资源，等等。
 
-**[Tameika Reed][2], founder of Women In Linux**
+**[Tameika Reed][2], Women In Linux创始人**
 
-Since its launch, Tameika leads initiatives with a focus on exploring careers in infrastructure, cybersecurity, DevOps and IoT, pivoting into leadership and continuous skill-building. As a self-taught system administrator, Tameika believes the best way to learn tech is by just diving in. In efforts to give women a 360° view of tech, Tameika hosts a weekly virtual meetup to explore outside the norm of just Linux but introducing hyperledger, Kubernetes, microservices, and high-performance computing. Tameika’s career includes different conference talks from OSCon, LISA 2018, Seagl, HashiCorp EU 2019, and various local events.
+自Women In Linux发起以来，Tameika一直致力于探索基础设施、网络安全、DevOps和物联网领域的职业生涯，并致力于领导力和持续技能的培养。作为一个自学成才的系统管理员，Tameika相信学习技术的最好方法就是深入其中。为了给女性一个全面的角度来看技术，Tameika每周都会举办一次线上会议来探讨hyperledger、Kubernetes、微服务和高性能计算等Linux常规之外的技术。Tameika的职业生涯包括与OSCon、LISA 2018、Seagl、HashiCorp EU 2019不同的会议以及各种当地活动进行会议发言。
 
-**[Michael Scott Winslow][3], Director, Core Applications and Platforms, Comcast**
+**[Michael Scott Winslow][3], 康卡斯特公司核心应用与平台总监**
 
-"I'm a father, husband, brother, and son. I come from a small family so I have fun turning friends into an extended family. When I attach my name to something, I obsess over its success, so I am very careful what I agree to be a part of. Oh, so as far as my career I have been involved with software development for decades. I solve problems. I work with others to help solve large problems. I lead, guide and mentor newer software engineers while observing others that I want to learn from."
+"我是一个父亲，丈夫，兄弟，儿子。我出生在一个小家庭，所以我很乐于把朋友们变成一个大家庭。当我把我的名字附在某件事上时，我就非常希望它能成功，所以我很在意我同意参与的事情。
+噢，在我的职业生涯中我已经做了数十年的软件开发。我解决问题，和别人合作一起帮助解决大问题，我带领、引导和指导年轻的软件工程师的同时观察我想要学习的人。"
 
-**[Bryan Liles][4], senior staff engineer, VMware**
+**[Bryan Liles][4], 资深工程师, VMware**
 
-"I’m working with our team to rethink how developers interact with Kubernetes. When not working, I’m out in the community trying to inspire the next generation of software engineers and building robots."
+“我正在和我们的团队一起重新思考开发人员如何与Kubernetes进行交互。当我不工作的时候，我就制造机器人和在社区里努力激励下一代的软件工程师。”
 
-**[Mutale Nkonde][5], founding CEO of AI For the People (AFP)**
+**[Mutale Nkonde][5], AI For the People (AFP)首席执行官**
 
-AFP is a nonprofit creative agency. Prior to starting a nonprofit she worked in AI Governance. During that time she was part of the team that introduced the Algorithmic and Deep Fakes Algorithmic Acts, as well as the No Biometric Barriers to Housing Act to the US House of Representatives. Nkonde started her career as a broadcast journalist and worked at the BBC, CNN &amp; ABC. She also writes widely on race and tech, as well as holding fellowships at Harvard and Stanford.
+AFP是一家非盈利的创意机构。在创办非营利组织之前，Nkonde从事人工智能治理工作。在此期间，她是团队的一员，该团队向美国众议院介绍了算法和深度伪造算法方案，以及无生物识别障碍住房方案。Nkonde的职业生涯中最开始是做广播记者，曾在英国广播公司（BBC）、美国有线电视新闻网（CNN）和美国广播公司（ABC）工作。她还广泛从事种族和科技方面的写作，并在哈佛大学和斯坦福大学获得奖学金。
 
-### What influenced you to pursue a career in technology?
 
-My fear of the computer when I went back to college. I was afraid of the computer because I dropped out of college. After and going back, I made it my mission to learn all I can. This is still my motto to this day, learning never stops. —Tameika Reed
+### 是什么影响了你选择技术领域的职业？
 
-I won’t mince words, I was a child geek! At 10 years old I started writing GW-BASIC from code that I read in printed magazines. Every single day. I gave it a bit of a break to have a life while I went to high school, but when it came time to pick a major for college, it was an easy choice. I stayed in technology thanks to the amazing mentors and colleagues I’ve had along the way. —Michael Scott Winslow
+当我回到大学的时候，我害怕电脑。我害怕电脑，因为我从大学辍学了。在那之后，我就把尽我所能学习作为自己的任务。这是我至今的座右铭，学习永不停止。—Tameika Reed
 
-I’ve been writing software since I was in middle school. I like being able to tell computers to do things and seeing the results. As an adult, I quickly realized that having a job that gave me satisfaction and paid well was the way to go. —Bryan Liles
+我不会拐弯抹角，我小时候是个极客！在我10岁的时候，我从印刷杂志上读到的代码开始每天写GW-BASIC。在我上高中的时候，我给了自己一点喘息的时间来享受生活，但是当到了为大学选择专业的时候，这是一个很容易做出的选择。我留在了科技行业，这得感谢我一路走来遇到的了不起的导师和同事。—Michael Scott Winslow
 
-I wanted to explore the questions around why so few black women were being hired by tech companies. —Mutale Nkonde
+我从中学就开始写软件了。我喜欢告诉电脑去做事情并看到结果。长大后，我很快就意识到，拥有一份让我满意、收入高的工作才是正确的选择。—Bryan Liles
 
-### Is there a particular person or people in open source and the tech world who have inspired you?
+我想知道为什么科技公司雇佣的黑人女性这么少。 —Mutale Nkonde
 
-I get inspired by a lot of other people and projects. For example, I love seeing others come to [Women In Linux][6] and are sure where they want to go. I try to give people a 360-view of tech so they can make a decision on what they like. Its easy to say I want to be in tech but it’s hard to get started and stay. You don’t have to be just a coder/programmer but you can be a cloud architect. —Tameika Reed
+### 在开源技术领域有没有某个特别的人给了你启发？
 
-[Kelsey Hightower][7], [Bryan Liles][4], and Kim Scott inspire me very much. They are so REAL! They say things that I feel and experience every day. Get your job done! Stop complaining! Own your actions and understand how you contribute to your situation! [Gene Kim][8] is a big inspiration as well. As a leader in the DevOps movement, I see myself following and emulating a lot of things he does. —Michael Scott Winslow
+我从很多其他人和项目中得到启发。比如我喜欢看到其他人来到[Women In Linux][6]，并确定他们想去哪里。我试着让人们从更全面的角度来看科技，这样他们就可以决定自己喜欢什么。说自己想在科技行业工作很容易，但要入手并坚持下去很难。你可以称为一名云架构师而不只是一名程序员。—Tameika Reed
 
-No. I didn’t see the inspiration I wanted, so I’ve worked hard to be the inspiration I needed 20 years ago. —Bryan Liles
+[Kelsey Hightower][7]，[Bryan Liles][4]，和 Kim Scott 激励了我。他们太真实了！他们说的都是我每天的感受和经历。做好你的工作！别抱怨了！承认你的行为，并明白你是如何促成你的处境的！[Gene Kim][8]也给了我很大的启发。作为DevOps运动的领导者，我看到自己在追随和模仿他做的很多事情。 —Michael Scott Winslow
 
-There are so many! One of my favorites is [Dorothy Vaughan][9]: She was the first person in the US to program an IBM Watson computer. Her story is captured in the movie Hidden Figures. —Mutale Nkonde
+不，我没有看到我想要的灵感，所以我努力成为20年前那个给我启发的人。 —Bryan Liles
 
-### Are there particular resources you would recommend for minorities wanting to break into tech?
+太多了！我最喜欢的一个是：[Dorothy Vaughan][9]她是美国第一个为IBM沃森电脑变成的人。她的故事被记录在电影Hidden Figures中。 —Mutale Nkonde
 
-Yes, I recommend finding folks on Twitter and just ask questions. Here is a list of people I follow and admire in tech: —Tameika Reed
+### 你有什么特别的资源可以推荐给那些想要加入科技行业的少数人吗？
+
+有，我建议你在Twitter上交一些朋友，然后提问。以下是我在科技界关注和崇拜的一些人： —Tameika Reed
 
   * [@techgirl1908][10]
   * [@bryanl][4]
@@ -68,31 +70,31 @@ Yes, I recommend finding folks on Twitter and just ask questions. Here is a list
 
 
 
-Respected bootcamps are really cutting down the time it takes to break into the tech industry. I’ve met several professionals who went through bootcamps who have outshined their 4-year institution counterparts. I think we can really start respecting everything that people bring to the table, rather than technical fluency. —Michael Scott Winslow
+受重视的训练营确实缩短了人们加入科技行业的时间。我遇到过几位经过培训的专业人士，他们都比4年经验的机构同行更出色。我认为我们可以真正开始尊重人们创造的成果，而不是技术的熟练。 —Michael Scott Winslow
 
-I’m not sure I can recommend anything specific. Tech is a big thing and there isn’t an easy answer. My advice is to pick something you think will be interested in and work to become an expert on the topic. Start asking why instead of how, and also start understanding how things work together. — Bryan Liles
+我不确定我能推荐什么具体的东西。科技是一个很大的整体，所以没有一个简单的答案。我的建议是选择你认为会感兴趣的东西，并努力成为这个方面的专家。从问为什么开始，而不是怎么做，并且开始理解事物是如何一起运作的。 — Bryan Liles
 
-It really depends on the type of work they want to do. For people working at the intersection of tech and social justice, I would recommend the book [Algorithms of Oppression][17] by Safiya Noble. —Mutale Nkonde
+这取决于他们想做什么工作。对于那些在科技和社会公正的交汇处工作的人，我推荐Safiya Noble的[Algorithms of Oppression][17]。 —Mutale Nkonde
 
-### What advice would you give to a person of color considering technology as their career?
+### 你对有色人种将科技作为他们的职业有什么建议？
 
-I suggest you study your craft. You will be a forever learner. There will always be someone or something in your way how you respond and move will be on you. Never take the first offer push back and know your worth. I look at tech like I look at art. It takes time to develop so be patient with yourself. It's okay to unplug and say no. —Tameika Reed
+我建议你学习自己的技能。你将是一个永远的学习者。总会有人或事挡在你的路上，你的反应和行动将取决于你自己。永远不要拒绝第一个提议，要知道自己的价值。我看技术就像看艺术一样。发展需要时间，所以要对自己有耐心，拔掉插头说不也没关系。 —Tameika Reed
 
-As someone who is a bit of a protector of the industry, I don’t want people who are not suited for technology. So really decide if you have the personality for tech. Are you a problem solver? Are you more logical than emotional? Do you constantly find yourself creating processes? If so, no matter your background, I think you can find a home in tech. —Michael Scott Winslow
+作为这个行业的保护者，我不想要不适合技术的人。所以要真正判断自己是否适合科技。你是一个能解决问题的人吗？你是否理性多于感性？你是否经常发现自己在创造过程？如果是这样，无论你的背景如何，我认为你都可以在科技行业找到一个家。—Michael Scott Winslow
 
-It is not going to be simple. Your progress will be slowed because of your race. You will have to work harder. Use this adversity as a strength. You will be better prepared than those around you and when the opportunity arises, you will be able to tackle it. Find a network of those who look like you. Air grievances in private and show strength in public. You belong and you can succeed. —Bryan Liles
+事情不会那么简单。你的进步会因为你的比赛而减慢。你必须更努力工作。把逆境当作动力。你比周围的人准备的更充分，这样当机会出现时你就能够应对它。找一个长的像你的人。私下发现不满，公开展示实力。你属于这里，你就能成功。 —Bryan Liles
 
-To think beyond working for a company, the field of public interest tech is growing, our work centers on how technology impacts real people. Many of the people leading this work are women of color and Black women are making huge strides. Mutale Nkonde
+除了为一家公司工作，也在发展公共利益技术领域，我们的工作中心事技术如何影响真实的人。许多领导这项工作的人是有色人种妇女，黑人妇女正在取得巨大的进步。—Mutale Nkonde
 
-### What does Black History Month mean to you?
+### 黑人历史月对你来说意味着什么？
 
-It means never stop because you can never forget. —Tameika Reed
+意味着永不停止，为你永远不会忘记。 —Tameika Reed
 
-Black History Month to me means focusing on the Tuskegee Airmen and not slavery. Highlighting how we contributed to history and not how were victims of it. I want people to understand where our pride comes from and not our anger. There are a lot of really bad things that happened to our people and we are still right here. Strong! —Michael Scott Winslow
+黑人历史月对我来说意味着关注塔斯克基飞行队而不是奴隶制。强调我们如何为历史做出贡献，而不是如何成为历史的受害者。我希望人们理解我们的骄傲来自哪里，而不是我们的愤怒。在我们的人民身上发生了很多非常糟糕的事情，但我们还站在这里。强！—Michael Scott Winslow
 
-Black History Month is a time to reflect on the forgotten history of black people in the United States. I take it as a time to be thankful for the sacrifices my ancestors made. —Bryan Liles
+黑人历史月是一个反思被遗忘的美国黑人历史的日子。我把它当作是感谢我的祖先所做的牺牲的时刻。—Bryan Liles
 
-It is a time to center the contributions black people have made across the globe. I love it, it is one of my favorite times of year. —Mutale Nkonde
+这是一个集中体现全球黑人所作贡献的时刻。我喜欢它，这是我一年中最喜欢的时间之一。 —Mutale Nkonde
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +102,7 @@ via: https://opensource.com/article/20/2/careers-tech-minorities
 
 作者：[Shilla Saebi][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[M4Xrun](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
