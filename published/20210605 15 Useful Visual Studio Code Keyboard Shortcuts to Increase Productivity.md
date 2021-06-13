@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ywxgod)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13481-1.html)
 
 15 个提高工作效率的 VS Code 键盘快捷键
 ======
