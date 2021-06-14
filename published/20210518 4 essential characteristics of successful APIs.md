@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ywxgod)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13483-1.html)
 
 完善的 API 的 4 个基本特征
 ======
