@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ShuyRoy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13487-1.html)
 
 使用 Cockpit 管理你的树莓派
 ======
