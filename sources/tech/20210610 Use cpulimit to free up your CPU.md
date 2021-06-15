@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/use-cpulimit-to-free-up-your-cpu/)
 [#]: author: (Gregory Bartholomew https://fedoramagazine.org/author/glb/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
