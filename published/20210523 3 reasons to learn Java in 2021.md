@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (PearFL)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13491-1.html)
 
 2021 年学习 Java 的三个理由
 ======
