@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/static-site-builder)
 [#]: author: (Nwokocha Wisdom https://opensource.com/users/wise4rmgod)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
