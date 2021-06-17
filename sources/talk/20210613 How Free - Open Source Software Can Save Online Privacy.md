@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/save-privacy-with-foss/)
 [#]: author: (Team It's FOSS https://news.itsfoss.com/author/team/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zz-air)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
