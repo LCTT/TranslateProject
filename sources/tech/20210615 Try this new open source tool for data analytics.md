@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/cubejs)
 [#]: author: (Ray Paik https://opensource.com/users/rpaik)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
