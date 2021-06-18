@@ -7,16 +7,16 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How Free & Open Source Software Can Save Online Privacy
+免费和开源软件如何保护在线隐私
 ======
 
-_I have used services from tech giants for years. Most were free of charge, at the expense of my privacy. But those days are over. Now I browse, chat and work without anyone tracking, monetizing or censoring my data. Thanks to free (libre) and open source software._
+_多年来，我一直使用科技巨头提供的服务。大部分都是免费的, 以牺牲我的隐私为代价。 但是那些日子已经过去了，现在我浏览、聊天、工作，没有任何人跟踪，变现和审查我的数据。多亏了免费（自由）和开源软件。_
 
-### I start to worry about Big Tech
+### 我开始担心大型科技公司了
 
 ![][1]
 
-I’ve always felt machines should be doing what I want them to do, not the other way round. That’s why Google’s Android operating system immediately appealed to me when it first hit the market in 2008. At the time, Google’s open-source approach was genuinely refreshing. I spent hours customizing my HTC Hero phone. Little did I care that it was uglier than my friends’ iPhones or Symbian devices. My new gadget was infinitely more versatile.
+我一直觉得机器应该按照我的意愿行事，而不是反过来。 这就是为什么谷歌的 Android 操作系统在2008年首次上市时就立刻吸引了我。 在当时， 谷歌的开源方式确实令人耳目一新。 我花了几个小时定制了我的HTC Hero手机。 我一定也不关心它比我朋友的iphone或塞班设备丑。 我的新玩意功能要多的多。
 
 Fast forward a decade. Google has become a tech giant, dwarfed iOS and killed Symbian OS. Today, the company captures over 90% of search traffic and dominates the browser market. This stellar growth came at a cost, as illustrated by the removal of Google’s “don’t be evil” clause. The search giant is entangled in court cases, such as the one over [data collection and tracking malpractices][2]. Researchers also found [privacy flaws][3] in Google’s contact tracing app. To top it off, the tech giant announced a controversial new algorithm that [tracks browsing behaviour][4] to better serve ads.
 
