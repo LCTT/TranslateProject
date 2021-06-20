@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
+[#]: translator: (littlebirdnest)
+[#]: reviewer: （ ）
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (FCC auctions should be a long-term boost for 5G availability)
