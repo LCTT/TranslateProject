@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/systemd-timers-for-scheduling-tasks/)
 [#]: author: (Richard England https://fedoramagazine.org/author/rlengland/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (dcoliversun)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
