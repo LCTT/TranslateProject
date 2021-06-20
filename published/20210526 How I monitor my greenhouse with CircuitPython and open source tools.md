@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (alim0x)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13504-1.html)
 
 我如何用 CircuitPython 和开源工具监控温室
 ======
