@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/switch-to-linux-in-2021/)
 [#]: author: (Ankush Das https://news.itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zepoch)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
