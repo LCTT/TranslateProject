@@ -7,7 +7,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How Real-World Apps Lose Data
+真实世界的应用程序是如何丢失数据？
 ======
 
 A great thing about modern app development is that there are cloud providers to worry about things like hardware failures or how to set up RAID. Decent cloud providers are extremely unlikely to lose your app’s data, so sometimes I get asked what backups are really for these days. Here are some real-world stories that show exactly what.
