@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13506-1.html)
 
 探索 Kubernetes 生态系统（2021 版）
 ======
