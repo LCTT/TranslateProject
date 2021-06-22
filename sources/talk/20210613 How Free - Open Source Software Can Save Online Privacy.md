@@ -7,10 +7,10 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-免费和开源软件如何保护在线隐私
+自由/开源软件如何保护在线隐私
 ======
 
-_多年来，我一直使用科技巨头提供的服务。大部分都是免费的, 以牺牲我的隐私为代价。 但是那些日子已经过去了，现在我浏览、聊天、工作，没有任何人跟踪，变现和审查我的数据。多亏了免费（自由）和开源软件。_
+_多年来，我一直使用科技巨头提供的服务。大部分都是免费的, 以牺牲我的隐私为代价。 但是那些日子已经过去了，现在我浏览、聊天、工作，没有任何人跟踪，变现和审查我的数据。多亏了自由/开源软件。_
 
 ### 我开始担心大型科技公司了
 
@@ -24,20 +24,18 @@ _多年来，我一直使用科技巨头提供的服务。大部分都是免费�
 
 有人可能认为，用户至少可以指望苹果来保护他们的隐私。 这家科技巨头最近让他们选择，看看应用程序是否会追踪他们的行为。 事实证明，[只有5%][8] 的美国用户选择这种新的透明追踪应用。 与此同时，该公司从谷歌这样的数据代理公司的业务中获得了 [巨大的利益][9] 。 更别提《堡垒之夜》开发商Epic Games和苹果之间的 [反垄断审判][10] ，后者声称要保护其App Stere的隐私。 当然，还有Facebook。 该公司的隐私不正当行为在参议院就 [剑桥分析][11] 丑闻举行的听证会上达到了高潮，失去了用户仅存的信任。
 
-Yet in spite – or because – of these questionable practices, the total value of these companies reached over [7.5 trillion dollars][12] in March 2021. “Big Tech” is now worth more than Germany’s and the UK gross domestic product – combined!
+尽管如此 – 或者因为 – 这些有问题的做法， 这些公司的总价值在2011年三月超过了 [7.5万亿美元][12]。 “大的科技” 现在超过了德国和英国国内生产总值的总和！
 
-### Why privacy matters
+### 为什么隐私很重要
 
 ![][13]
 
-We all use Big Tech’s services. We are part of [Surveillance Capitalism][14], a term coined by Harvard professor Shoshana Zuboff and discussed in Cory Doctorow’s [latest book][15], Surveillance Capitalism. It’s an economic system centered around tech monopolies which harvest personal data to maximize profit. This system threatens the very core of democracy, as it gives rise to mass surveillance, polarizes the political debate, interferes with the electoral process and drives uniformity of thought as well as censorship.
+我都在使用大科技公司的服务。 我们是 [监视资本主义][14]的一部分， 哈佛大学教授舒沙娜·祖波夫创造的一个术语，并且在科利·多克托罗的 [最新的书][15]里讨论监视资本主义。 我们将通过技术手段来获取利润最大化。这一制度威胁到民主的核心，因为它导致了大规模监视，扰乱了选举程序，推动了思想的一致性和审查制度。
 
-Surveillance Capitalism is based on a deeply troubling invasion of our lives. We tend to forget that privacy is a fundamental right. It’s enshrined by the UN Human Rights Council, the International Covenant on Civil and Political Rights and a number of treaties. I think we can all relate: there are more than a few aspects in our lives we’d like to keep private, even without wrongdoing. Whether it is to freely express ourselves and explore our personality without being judged by others. Or to shield us from surveillance, censorship and manipulation. That’s why curtains were invented. And things like banking secrecy, attorney-client privilege, secrecy of correspondence, secrecy of the ballot, confessional secret or medical confidentiality.
+监视资本主义是基于对我们生活的一种令人深感不安的入侵。我们往往忘记隐私是一项基本权利。它被联合国人权理事会、公民与政治国际公约奉为神圣。我认为我们都可以联系起来：在我们的生活中有很多方面我们想要保持隐私，即使没有错误。无论是在不被他人评判的情况下，自由地探索我们的个性。或者保护我们不受监视，审查和操纵。 这就是窗帘被发明的原因。 还有银行秘书律师特权，通信保密，投票保密，告解室保密或医疗保密。
 
-Tackling online privacy is a broad issue. It requires comprehensive changes to our legal systems and social conventions. Regulation of tech monopolies is one of the main challenges of this decade. As illustrated by the recent standoffs between tech giants and governments: [Australia vs. Facebook][16], [China vs. Tencent][17], [India vs. WhatsApp][18], the [EU vs. Facebook][19] or the [US vs. Big Tech][20]. For years, digital rights groups and software foundations have been advocating for better privacy laws, user rights and the freedom to innovate. Let’s only name a few: the Electronic Frontier Foundation, the Free Software Foundation, the Freedom of the Press Foundation, Privacy International, the Open Rights Group or the European Digital Rights.
-
-### What’s this got to do with FOSS?
-
+解决网络隐私问题是对我们法律体系和社会习俗的全面改变所带来的广泛问题。 对技术垄断的监管是这一法案的主要挑战之一。 最近科技巨头和政府之间的对峙就说明了这一点：[美国 vs. Facebook][16], [中国 vs. 腾讯][17], [印度 vs. WhatsApp][18], [美国 vs. Facebook][19] 或者是[美国 vs. 科技巨头][20]。多年来，数字权利组织和软件基金会一直在倡导更好的隐私法、用户权利和创新自由。我们只举几个例子：电子前沿基金会、自由软件基金会、新闻自由基金会、隐私国际、开放权利组织或欧洲数字权利。
+### 这和自由/开源软件有什么关系？
 ![][21]
 
 Since its inception in 1983, the [Free Software movement][22] has become quite a diverse community. Free and open source software is often referred to as FOSS, FLOSS, Libre Software or Free Software. It includes a whole range of licenses that give users the right to [use, study, share and improve][23] the software. As well as the [right to repair][24]. Free Software is “free” as in “[free speech][25]” — and sometimes as in “free beer”. As such, FOSS is not only about technology. It’s about social, political and economic emancipation.
