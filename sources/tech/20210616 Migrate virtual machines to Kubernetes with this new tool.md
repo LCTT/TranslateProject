@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/migrate-vms-kubernetes-forklift)
 [#]: author: (Miguel Perez Colino https://opensource.com/users/mperezco)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
