@@ -48,21 +48,19 @@ Another common criticism is that FOSS exposes potential security vulnerabilities
 
 All in all, Free Software is instrumental in promoting online privacy. For nearly forty years, FOSS has been encouraging developers to audit the code, fix issues and ensure nothing shady goes on in the background.
 
-### Seven steps to online privacy with FOSS
+### 使用免费/开源软件实现在线隐私的七个步骤
 
 ![][33]
 
-While waiting for better privacy laws, there’s a lot you can do to make your devices more private. Here are seven steps to replace Big Tech with privacy-respecting, free and open source software. Depending on your [threat model][34], you’ll likely want to consider steps 1 through 4 first, as they already provide a reasonable level of privacy. If you have some tech skills and want to go further, take a look at steps 5 to 7.
+在等待更好的隐私法律出台的同时，还有很多事情可以让你的设备更隐私。以下是用尊重隐私、免费/开源软件取代大型科技公司的七个步骤。 根据您的 [威胁模型][34], 您可能想首先考虑步骤1到步骤4，  因为他们已经提供了一个合理的隐私水平。如果你有一些技术技能，想要更进一步，看看步骤5到步骤7.
 
   1. **[Get involved in privacy][35]**. There is much to be said and learned about online privacy, data exploitation, filter bubbles, surveillance and censorship. Get involved and spread the word.
-  2. **[Choose a safe and private browser][36]**. Switch to Firefox. Block trackers, cookies and ads. Use privacy-respecting search engines. Possibly encrypt your traffic with Tor or VPN.
-  3. **[Keep your conversations private][37]**. Use end-to-end encryption to secure your emails, messages and calls. Ditch classic social media and discover the Fediverse, a federated family of various online services.
-  4. **[Protect your data][38]**. Use long and unique passphrases. Choose a different one for each of your accounts and devices. Keep them safe in an encrypted password manager. Consider using two-factor authentication. Create a regular backup routine. And encrypt sensitive data.
-  5. **[Free your computer][39]**. Switch to GNU/Linux and favor free and open source apps. Depending on your needs, choose a beginner friendly distribution like Linux Mint or Ubuntu. For more experienced users, pick Debian, Manjaro, openSUSE, Fedora or Gentoo Linux. And for privacy buffs, have a look at Qubes OS, Whonix or Tails.
-  6. **[Free your phone][40]**. Switch to a custom mobile operating system like LineageOS, CalyxOS, GrapheneOS or /e/. Favor tracker-free open source apps from community maintained app stores.
-  7. **[Free your cloud][41]**. Choose privacy-respecting cloud providers. Or set up your own secure server and self host services such as cloud storage, photo galleries, task and contact management, or media streaming.
-
-
+  2. **[选择一个安全的私人浏览器][36]**. 切换到Firefox。阻止追踪器、cookie和广告。 使用尊重隐私的搜索引擎。 可能用Tor或VPN加密你的通信。
+  3. **[保持谈话的私密性][37]**. 使用端到端加密保护您的电子邮件，消息和电话。 抛弃传统的社交媒体，探索fediversity，一个由各种在线服务组成的联合家庭。
+  4. **[保护您的数据][38]**. 使用长且唯一的密码。为你的每个账户和设备选择一个不同的。在加密密码管理器中保存它们的安全。考虑使用双因素身份验证。创建一个常规备份例程。并对敏感数据进行加密。
+  5. **[释放您的电脑][39]**. 切换到GNU/Linux，喜欢免费并且开源的应用程序。根据您的需要， 选择一个初学者友好的发行版，如Linux Mint或Ubuntu 对于更有经验的用户，选择 Debian, Manjaro, openSUSE, Fedora 或 Gentoo Linux。 对于隐私爱好者，可以看看 Qubes OS, Whonix 或 Tails.
+  6. **[释放您的手机][40]**. 切换到定制的移动操作系统，如  LineageOS, CalyxOS, GrapheneOS 或 /e/。 喜欢社区维护的应用商店提供的免费开源应用。
+  7. **[释放您的云][41]**. 选择尊重隐私的云提供商。或设置您自己的安全服务器和自我主机服务， 例如 云存储、图库、任务和联系人管理，或媒体流。 
 
 ### 结束
 
