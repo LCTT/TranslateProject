@@ -64,11 +64,11 @@ While waiting for better privacy laws, there’s a lot you can do to make your d
 
 
 
-### Wrapping Up
+### 结束
 
 ![][42]
 
-There is no one-click solution for online privacy. Replacing Big Tech with free and open source software is a process. Some changes are simple – like installing Firefox or Signal. Other methods require more time and skills. But they are definitely worth it. And you’re not alone, you can count on the support of a wonderful community. So allow me to conclude by quoting [Geoffrey A. Fowler][43] from the Washington Post: “_Online privacy is not dead, but you have to be angry enough to demand it_“.
+没有针对在线隐私的一键式解决方案。 用自由和开源软件取代大型科技公司是一个过程。有些改动很简单，比如安装 Firefox 或 Signal。 其他方法需要更多的时间和技能。但它们绝对值得。你并不孤单， 你可以依靠一个很棒的社区的支持。 So allow me to conclude by quoting [Geoffrey A. Fowler][43] from the Washington Post: “_Online privacy is not dead, but you have to be angry enough to demand it_“.
 
 * * *
 
