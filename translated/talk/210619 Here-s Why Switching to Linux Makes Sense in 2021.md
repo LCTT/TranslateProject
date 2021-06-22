@@ -106,7 +106,7 @@ Of course, depending on your requirements, the benefits may not reflect with you
 
 如果您喜欢我们在 It's FOSS 所做的工作，请考虑捐款以支持我们的独立出版物。 您的支持将帮助我们继续发布专注于桌面 Linux 和开源软件的内容。
 
-谢谢各位。
+感谢各位。
 
 --------------------------------------------------------------------------------
 
