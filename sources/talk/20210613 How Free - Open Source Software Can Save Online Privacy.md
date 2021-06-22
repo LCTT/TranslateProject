@@ -7,10 +7,10 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-免费/开源软件如何保护在线隐私
+自由/开源软件如何保护在线隐私
 ======
 
-_多年来，我一直使用科技巨头提供的服务。大部分都是免费的, 以牺牲我的隐私为代价。 但是那些日子已经过去了，现在我浏览、聊天、工作，没有任何人跟踪，变现和审查我的数据。多亏了免费/开源软件。_
+_多年来，我一直使用科技巨头提供的服务。大部分都是自由的, 以牺牲我的隐私为代价。 但是那些日子已经过去了，现在我浏览、聊天、工作，没有任何人跟踪，变现和审查我的数据。多亏了自由/开源软件。_
 
 ### 我开始担心大型科技公司了
 
@@ -38,23 +38,20 @@ _多年来，我一直使用科技巨头提供的服务。大部分都是免费�
 ### 这和自由/开源软件有什么关系？
 ![][21]
 
-Since its inception in 1983, the [Free Software movement][22] has become quite a diverse community. Free and open source software is often referred to as FOSS, FLOSS, Libre Software or Free Software. It includes a whole range of licenses that give users the right to [use, study, share and improve][23] the software. As well as the [right to repair][24]. Free Software is “free” as in “[free speech][25]” — and sometimes as in “free beer”. As such, FOSS is not only about technology. It’s about social, political and economic emancipation.
+自1983年成立以来, [自由软件运动][22] 已经成为一个相当多样化的社区。 自由和开源软件通常是简称为FLOSS, FLOSS， Libre软件 或 自由软件。 他包括一系列授权给用户 [使用，学习，分享并提高][23] 这个软件的权力。 还有 [修理][24]的权利。 自由软件的自由是指 “[言论自由][25]” — 有时也指 “免费啤酒”. 像这样，自由/开源软件不仅仅是技术。 它是关于社会、政治和经济解放。
 
-A few years back, a privacy controversy shook up the Free Software community. Ubuntu 12.10 – one of the various GNU/Linux flavours – started establishing Internet connections for local searches on people’s computers. It served Amazon ads and shared private data with Facebook or Twitter. The [backlash was massive][26]. A few years later, Canonical – the firm behind Ubuntu – ended up removing online searches and the Amazon web app. The more recent [Audacity drama][27] is another example of how FOSS protects privacy. The new project management decided to add Google Analytics and Yandex to the audio software, but ended up renouncing to its plans after public outcry.
+几年前，一场隐私争议震动了自由软件社区。Ubuntu 12.10——各种不同的GHU/Linux风格之一——开始在人们的电脑上建立互联网连接，进行本地搜索。 它为亚马逊提供广告服务，并与Facebook或Twitter共享私人数据。[强烈反对][26]。几年后，Canonical——Ubuntu背后的公司——最终取消了在线搜索和亚马逊网络应用程序。 最近 [大胆的戏剧][27] 是自由/开源软件如何保护隐私的另一个例子。新的项目管理层决定将谷歌的Analytics和Yandex添加到音频软件中，但由于公众的强烈抗议，最终放弃了这一计划。
+尽管自由软件有很多优点，但它也不能免于批评。一种说法是自由/开源软件项目经常被放弃。 然而最近 [康奈尔大学研究][28] 表明在1.932个流行的开源项目中，有7%(128个项目)在被忽视后被新的开发人员接管，辍学率降低到不到10%(187个项目)。
+另一个常见的批评是FoSS通过发布代码暴露了潜在的安全漏洞。另一方面，将源代码保密 [不一定会提高安全性][29]. 认为封闭源代码要比自由/开源软件安全得多的观点，很方便地忽略了一个事实，即私有堆栈越来越多地构建在 [开放源代码之上][30]。 自由软件也倾向于去中心化，这有助于增强抵御监视、单点故障或大规模数据泄露的弹性。所以可以肯定的是，自由/开源软件并不能避免安全漏洞。 但也没有专有的解决方案，正如来自Facebook、Linkedin和Clubhouse的最新 [10亿人的数据泄露][31]。 或者是对太阳风和殖民管道公司(Colonial Pipeline)的大规模 [安全攻击][32] 。
 
-For all its merits, Free Software is not free from criticism. One claim is that FOSS projects often get abandoned. A recent [Cornell University study][28] however suggests otherwise: out of 1.932 popular open source projects, 7% (128 projects) were taken over by new developers after being neglected, reducing the dropout rate to less than 10% (187 projects).
-
-Another common criticism is that FOSS exposes potential security vulnerabilities by publishing the code. On the flip side, keeping the source code a secret [doesn’t necessarily increase security][29]. Arguing that closed source code is vastly more secure than FOSS conveniently omits the fact that proprietary stacks are increasingly built [on top of open source code][30]. Free Software also tends to be decentralized, which helps with resilience against surveillance, single points of failure or massive data leaks. So sure, FOSS is not immune to security breaches. But neither are proprietary solutions, as illustrated by the latest [leaks of a billion people’s data][31] from Facebook, LinkedIn and Clubhouse. Or the spectacular [security attacks][32] against SolarWind and Colonial Pipeline.
-
-All in all, Free Software is instrumental in promoting online privacy. For nearly forty years, FOSS has been encouraging developers to audit the code, fix issues and ensure nothing shady goes on in the background.
-
-### 使用免费/开源软件实现在线隐私的七个步骤
+总之，自由软件在促进网上隐私方面发挥了重要作用。近四十年来，自由/开源软件一直鼓励开发人员审计代码、修复问题并确保幕后没有任何可疑的事情发生。
+### 使用自由/开源软件实现在线隐私的七个步骤
 
 ![][33]
 
-在等待更好的隐私法律出台的同时，还有很多事情可以让你的设备更隐私。以下是用尊重隐私、免费/开源软件取代大型科技公司的七个步骤。 根据您的 [威胁模型][34], 您可能想首先考虑步骤1到步骤4，  因为他们已经提供了一个合理的隐私水平。如果你有一些技术技能，想要更进一步，看看步骤5到步骤7.
+在等待更好的隐私法律出台的同时，还有很多事情可以让你的设备更隐私。以下是用尊重隐私、自由/开源软件取代大型科技公司的七个步骤。 根据您的 [威胁模型][34], 您可能想首先考虑步骤1到步骤4，  因为他们已经提供了一个合理的隐私水平。如果你有一些技术技能，想要更进一步，看看步骤5到步骤7.
 
-  1. **[Get involved in privacy][35]**. There is much to be said and learned about online privacy, data exploitation, filter bubbles, surveillance and censorship. Get involved and spread the word.
+  1. **[Get involved in privacy][35]**. 关于网络隐私、数据利用、过滤泡沫、监控和审查，还有很多值得我们说和学的地方。参与进来，传播信息。
   2. **[选择一个安全的私人浏览器][36]**. 切换到Firefox。阻止追踪器、cookie和广告。 使用尊重隐私的搜索引擎。 可能用Tor或VPN加密你的通信。
   3. **[保持谈话的私密性][37]**. 使用端到端加密保护您的电子邮件，消息和电话。 抛弃传统的社交媒体，探索fediversity，一个由各种在线服务组成的联合家庭。
   4. **[保护您的数据][38]**. 使用长且唯一的密码。为你的每个账户和设备选择一个不同的。在加密密码管理器中保存它们的安全。考虑使用双因素身份验证。创建一个常规备份例程。并对敏感数据进行加密。
@@ -74,15 +71,15 @@ All in all, Free Software is instrumental in promoting online privacy. For nearl
 
 ![][42]
 
-_Georg Jerska 是一个对保护公民隐私特别感兴趣的开源爱好者。 他和他的小团队要求运营 [GoFOSS][44][][45],这是一个关于如何尊重隐私、免费和开源软件取代大型科技公司的全面指南。_
+_Georg Jerska 是一个对保护公民隐私特别感兴趣的开源爱好者。 他和他的小团队要求运营 [GoFOSS][44][][45],这是一个关于如何尊重隐私、自由和开源软件取代大型科技公司的全面指南。_
 
 * * *
 
 _[开源][46] illustrations by [Katerina Limpitsouni][47]._
 
-_所表达的观点只是作者的观点，并不一定反应其免费/开源软件的官方政策或立场。_
+_所表达的观点只是作者的观点，并不一定反应其自由/开源软件的官方政策或立场。_
 
-#### 大型科技网址获得数百万的收入，它的免费/开源软件得到了你！
+#### 大型科技网址获得数百万的收入，它的自由/开源软件得到了你！
 
 如果你喜欢我们的自由/开源软件，请考虑捐款支持我们的独立出版。您的支持将帮助我们发布内容集中在桌面Linux和开源软件上
 
