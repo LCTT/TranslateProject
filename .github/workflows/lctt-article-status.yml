@@ -1,0 +1,28 @@
+name: LCTT Article Status
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: checkout old pages branch
+        uses: actions/checkout@v2
+        with:
+          repository: lctt/translateproject
+          path: build
+          ref: gh-pages
+      - name: remove pages .git
+        run: rm -rf ./build/.git
+      - name: run status
+        run: sh ./scripts/status.sh;
+      - uses: crazy-max/ghaction-github-pages@v2.2.0
+        with:
+          build_dir: ./build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
