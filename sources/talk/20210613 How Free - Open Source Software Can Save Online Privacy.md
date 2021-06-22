@@ -7,10 +7,10 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-自由/开源软件如何保护在线隐私
+免费/开源软件如何保护在线隐私
 ======
 
-_多年来，我一直使用科技巨头提供的服务。大部分都是免费的, 以牺牲我的隐私为代价。 但是那些日子已经过去了，现在我浏览、聊天、工作，没有任何人跟踪，变现和审查我的数据。多亏了自由/开源软件。_
+_多年来，我一直使用科技巨头提供的服务。大部分都是免费的, 以牺牲我的隐私为代价。 但是那些日子已经过去了，现在我浏览、聊天、工作，没有任何人跟踪，变现和审查我的数据。多亏了免费/开源软件。_
 
 ### 我开始担心大型科技公司了
 
@@ -68,27 +68,27 @@ While waiting for better privacy laws, there’s a lot you can do to make your d
 
 ![][42]
 
-没有针对在线隐私的一键式解决方案。 用自由和开源软件取代大型科技公司是一个过程。有些改动很简单，比如安装 Firefox 或 Signal。 其他方法需要更多的时间和技能。但它们绝对值得。你并不孤单， 你可以依靠一个很棒的社区的支持。 So allow me to conclude by quoting [Geoffrey A. Fowler][43] from the Washington Post: “_Online privacy is not dead, but you have to be angry enough to demand it_“.
+没有针对在线隐私的一键式解决方案。 用自由和开源软件取代大型科技公司是一个过程。有些改动很简单，比如安装 Firefox 或 Signal。 其他方法需要更多的时间和技能。但它们绝对值得。你并不孤单， 你可以依靠一个很棒的社区的支持。 所以，请允许我引用《华盛顿邮报》在线专栏的[杰弗里 a 福勒][43] 的话作为总结: “_隐私没有消亡，但你必须足够愤怒才能要求它_“.
 
 * * *
 
-### About the author
+### 关于作者
 
 ![][42]
 
-_Georg Jerska is an open source enthusiast with a special interest in protecting the privacy of citizens. With his small team he runs [GoFOSS][44][][45], a comprehensive guide on how to replace Big Tech with privacy-respecting, free and open source software._
+_Georg Jerska 是一个对保护公民隐私特别感兴趣的开源爱好者。 他和他的小团队要求运营 [GoFOSS][44][][45],这是一个关于如何尊重隐私、免费和开源软件取代大型科技公司的全面指南。_
 
 * * *
 
-_[Open source][46] illustrations by [Katerina Limpitsouni][47]._
+_[开源][46] illustrations by [Katerina Limpitsouni][47]._
 
-_The views and opinions expressed are those of the authors and do not necessarily reflect the official policy or position of It’s FOSS._
+_所表达的观点只是作者的观点，并不一定反应其免费/开源软件的官方政策或立场。_
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
+#### 大型科技网址获得数百万的收入，它的免费/开源软件得到了你！
 
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
+如果你喜欢我们的自由/开源软件，请考虑捐款支持我们的独立出版。您的支持将帮助我们发布内容集中在桌面Linux和开源软件上
 
-I'm not interested
+我不感兴趣
 
 --------------------------------------------------------------------------------
 
