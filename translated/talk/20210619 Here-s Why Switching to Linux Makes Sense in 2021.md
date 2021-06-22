@@ -96,8 +96,6 @@ Linux 发行版被定期修补，以确保最佳安全性。
 
 这些只是我能想到的几个原因之一， Linux 作为操作系统的选择在 2021 年比以往任何时候都更值得被推荐。
 
-Of course, depending on your requirements, the benefits may not reflect with your use-case. But, if you did not know about Linux, at least, now you have a choice to make and evaluate your needs.
-
 当然，这也取决于您的要求，这些好处可能不会体现在在您的用例中。但是，如果你确实不了解 Linux，至少，现在你可以评估你的需求，重新作出选择。
 
 除了上述要点之外，您还能想到什么？请在下面的评论中告诉我。
