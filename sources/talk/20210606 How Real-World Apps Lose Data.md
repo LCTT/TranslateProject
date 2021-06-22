@@ -2,7 +2,7 @@
 [#]: via: (https://theartofmachinery.com/2021/06/06/how_apps_lose_data.html)
 [#]: author: (Simon Arneaud https://theartofmachinery.com)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (PearFL)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
