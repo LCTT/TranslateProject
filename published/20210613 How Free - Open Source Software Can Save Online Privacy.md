@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zz-air)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13512-1.html)
 
 自由/开源软件如何保护在线隐私
 ======
