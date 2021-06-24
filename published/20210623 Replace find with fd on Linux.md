@@ -4,15 +4,15 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13516-1.html)
 
 在 Linux 上用 fd 代替 find
 ======
 
 > fd 命令是一个流行的、用户友好的 find 命令的替代品。
 
-![代码上的放大镜][1]
+![](https://img.linux.net.cn/data/attachment/album/202106/24/110546npqmttwobtqpo4qk.jpg)
 
 许多 Linux 程序员在其工作中每天都在使用 `find` 命令。但是 `find` 给出的文件系统条目是有限的，如果你要进行大量的 `find` 操作，它甚至不是很快速。因此，我更喜欢使用 Rust 编写的 `fd` 命令，因为它提供了合理的默认值，适用于大多数使用情况。
 
