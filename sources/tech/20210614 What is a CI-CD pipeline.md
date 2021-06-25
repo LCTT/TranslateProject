@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/what-cicd-pipeline)
 [#]: author: (Will Kelly https://opensource.com/users/willkelly)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (baddate)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
