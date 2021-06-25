@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zepoch"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13519-1.html"
 
 为什么在 2021 年我仍然推荐你使用 Linux
 ======
