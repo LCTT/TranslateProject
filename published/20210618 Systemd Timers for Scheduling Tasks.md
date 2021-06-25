@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (dcoliversun)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13522-1.html)
 
 用于调度任务的 systemd 定时器
 ======
