@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/home-automation-ebook)
 [#]: author: (Alan Smithee https://opensource.com/users/alansmithee)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zepoch)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
