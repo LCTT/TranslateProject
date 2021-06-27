@@ -1,26 +1,26 @@
-[#]: collector: (lujun9972)
-[#]: translator: (BoosterY)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (7 Git tricks that changed my life)
-[#]: via: (https://opensource.com/article/20/10/advanced-git-tips)
-[#]: author: (Rajeev Bera https://opensource.com/users/acompiler)
+[#]: collector: "lujun9972"
+[#]: translator: "BoosterY"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "7 Git tricks that changed my life"
+[#]: via: "https://opensource.com/article/20/10/advanced-git-tips"
+[#]: author: "Rajeev Bera https://opensource.com/users/acompiler"
 
-7 Git tricks that changed my life
+七个改变我生活的 Git 小技巧
 ======
-These helpful tips will change the way you work with the popular version
-control system.
+
+接下来这些有用的小技巧将改变你在当前最流行的版本控制系统下的工作方式。
+
 ![Computer screen with files or windows open][1]
 
-Git is one of the most common version control systems available, and it's used on private systems and publicly hosted websites for all kinds of development work. Regardless of how proficient with Git I become, it seems there are always features left to discover. Here are seven tricks that have changed the way I work with Git.
+Git 是当前可用的最流行最普遍的版本控制系统之一，它被应用于私有系统和公有网站上各种各样的开发工作。不论我变得对 Git 有多熟悉，似乎总有些功能等待着被发掘。下面分享下和 Git 相关的改变我工作方式的一些小技巧。
 
-### 1\. Autocorrection in Git
+### 1\. Git 中的自动纠错
 
-We all make typos sometimes, but if you have Git's auto-correct feature enabled, you can let Git automatically fix a mistyped subcommand.
+我们每个人都不时在输入时犯拼写错误，但是如果你使能了 Git 的自动纠错功能，你就能让 Git 自动纠正一些输入错误的子命令。
 
-Suppose you want to check the status with `git status` but you type `git stats` by accident. Under normal circumstances, Git tells you that 'stats' is not a valid command:
-
+假如你想用命令`git status`来检查状态，但是你恰巧错误地输入了 `git stats`。通常情况下，Git会告诉你 ‘stats’ 不是个有效的命令：
 
 ```
 $ git stats
@@ -30,17 +30,15 @@ The most similar command is
 status
 ```
 
-To avoid similar scenarios, enable Git autocorrection in your Git configuration:
-
+为了避免类似情形，只需要在你的 Git 配置中使能自动纠错功能。
 
 ```
 `$ git config --global help.autocorrect 1`
 ```
 
-If you want this to apply only to your current repository, omit the `--global` option.
+如果你只想对当前的仓库生效，就省略掉选项`--global`。
 
-This command enables the autocorrection feature. An in-depth tutorial is available at [Git Docs][2], but trying the same errant command as above gives you a good idea of what this configuration does:
-
+这个命令会使能自动纠错功能。在相应的 [Git 官方文档][2] 中可以看到这个命令的详细说明，但是试着敲一下上面的错误命令会使你对这个设置干了什么有个直观的了解：
 
 ```
 $ git stats
@@ -51,21 +49,18 @@ Your branch is up to date with ‘origin/master’.
 nothing to commit, working tree clean
 ```
 
-Instead of suggesting an alternative subcommand, Git now just runs the top suggestion, which in this case was **git status**.
+在上面的例子中，Git 直接运行了它建议命令的第一个，也就是 **git status**，而不是给你展示它所建议的子命令。
 
-### 2\. Count your commits
+### 2\. 提交计数
 
-There are many reasons you might need to count your commits. Many developers count the number of commits to judge when to increment the build number, for instance, or just to get a feel for how the project is progressing.
+需要对提交进行计数的原因有很多。例如，一些开发人员利用提交计数来判断什么时候递增工程构建序号，也有一些开发人员用提交计数来对项目进展取得一个整体上的感观。
 
-To count your commits is really easy and straightforward; here is the Git command:
-
-
+对提交进行计数相当简单而且直接，下面就是相应的 Git 命令：
 ```
-`$ git rev-list --count`
+`$ git rev-list --count branch-name`
 ```
 
-In the above command, the **branch-name** should be a valid branch name in your current repository.
-
+在上述命令中，参数 **branch-name** 必须是一个你当前仓库里的有效分支名。
 
 ```
 $ git rev-list –count master
@@ -74,26 +69,25 @@ $ git rev-list –count dev
 34
 ```
 
-### 3\. Optimize your repo
+### 3\. 仓库优化
 
-Your code repository is valuable not only for you but also for your organization. You can keep your repository clean and up to date with a few simple practices. One of the best practices is to [use the .gitignore file][3]. By using this file, you are telling Git not to store many unwanted files like binaries, temporary files, and so on.
+你的代码仓不仅对你来说很宝贵，对你所在的组织也一样。通过少数几个惯例你就能使自己的仓库整洁并且保持最新。[使用 .gitignore 文件][3] 就是这些最好的惯例之一。通过使用这个文件你可以告诉 Git 不要保存一些不需要记录的文件，如二进制文件，临时文件等等。
 
-To optimize your repository further, you can use Git garbage collection.
-
+当然，你还可以使用Git的垃圾回收来进一步优化你的仓库。
 
 ```
 `$ git gc --prune=now --aggressive`
 ```
 
-This command helps when you or your team heavily uses **pull** or **push** commands.
+这个命令在你和你的团队经常使用 **pull** 或者 **push** 操作的时候很有帮助。
 
-This command is an internal utility that cleans up unreachable or "orphaned" Git objects in your repository.
+它是一个内部工具，能清理掉你的仓库里没法访问或者说”空悬“的 Git 对象。
 
-### 4\. Take a backup of untracked files
+### 4\. 给未追踪的文件来个备份
 
-Most of the time, it's safe to delete all the untracked files. But many times, there is a situation wherein you want to delete, but also to create a backup of your untracked files just in case you need them later.
+大多数时候，删除所有未追踪的文件使安全的。但很多时候也有这么一种场景，你想删掉这些未追踪的文件同时也想做个备份防止以后需要用到。
 
-Git, along with some Bash command piping, makes it easy to create a zip archive for your untracked files.
+Git 组合一些Bash命令和管道操作，可以让你可以很容易地给那些未追踪的文件创建 zip 压缩包。
 
 
 ```
@@ -101,30 +95,30 @@ $ git ls-files --others --exclude-standard -z |\
 xargs -0 tar rvf ~/backup-untracked.zip
 ```
 
-The above command makes an archive (and excludes files listed in .gitignore) with the name backup-untracked.zip
 
-### 5\. Know your .git folder
+上面的命令就生成了一个名字为 backup-untracked.zip 的压缩包文件（当然，在 .gitignore 里面忽略了的文件不会包含在内）。
 
-Every repository has a .git folder. It is a special hidden folder.
 
+### 5\. 了解你的 .git 文件夹
+
+每个仓库都有一个 .git 文件夹，它是一个特殊的隐藏文件夹。
 
 ```
 $ ls -a
 . … .git
 ```
 
-Git mainly works with two things:
+Git 主要处理两件事情：
 
-  1. The working tree (the state of files in your current checkout)
-  2. The path of your Git repository (specifically, the location of the .git folder, which contains the versioning information)
+1. 当前工作树（你当前检出的文件状态）
+  2. 你的 Git 仓库的文件夹（准确地说，包含版本信息的 .git 文件夹的位置）
 
 
+这个文件夹存储了所有参考信息和一些其他的像配置，仓库数据，HEAD 状态，日志等更多诸如此类的重要细节。
 
-This folder stores all references and other important details like configurations, repository data, the state of HEAD, logs, and much more.
+一旦你删除了这个文件夹，尽管你的源码没被删，但是类似你的工程历史记录等远程信息就没有了。删除这个文件夹意味着你的工程（至少本地的复制）不再在版本控制的范畴之内了。这也就意味着你没法追踪你的修改；你没法从远程仓拉取或推送到远程仓了。
 
-If you delete this folder, the current state of your source code is not deleted, but your remote information, such as your project history, is. Deleting this folder means your project (at least, the local copy) isn't under version control anymore. It means you cannot track your changes; you cannot pull or push from a remote.
-
-Generally, there's not much you need to do, or should do, in your .git folder. It's managed by Git and is considered mostly off-limits. However, there are some interesting artifacts in this directory, including the current state of HEAD:
+通常而言，你需要或者应当对你的 .git 文件夹的操作并不多。它是被 Git 管理而且大多数时候是一个禁区。然而，在这个文件夹内还是有一些有趣的人工产物，比如说当前的 HEAD 状态在内的就在其中。
 
 
 ```
@@ -132,43 +126,40 @@ $ cat .git/HEAD
 ref: refs/heads/master
 ```
 
-It also contains, potentially, a description of your repository:
-
+它也隐式地包含着一个对你仓库地描述：
 
 ```
 `$ cat .git/description`
 ```
 
-This is an unnamed repository; edit this file 'description' to name the repository.
+这是一个未命名的仓库；通过编辑文件 ‘description’ 可以给这个仓库命令。
 
-The Git hooks folder is also here, complete with example hook files. You can read these samples to get an idea of what's possible through Git hooks, and you can also [read this Git hook introduction by Seth Kenlon][4].
+Git 钩子文件夹连同一些钩子文件例子也在这里。参考这些例子你就能知道Git钩子能干什么了。当然，你也可以[参考这个 Seth Kenlon 写的Git钩子介绍][4]。
 
-### 6\. View a file of another branch
+### 6\. 浏览另一个分支的文件
 
-Sometimes you want to view the content of the file from another branch. It's possible with a simple Git command, and without actually switching your branch.
+有时，你会想要浏览另一个分支下某个文件的内容。这其实用一个简单的 Git 命令就可以实现，甚至都不用切换分支。
 
-Suppose you have a file called [README.md][5], and it's in the **main** branch. You're working on a branch called **dev**.
 
-With the following Git command, you can do it from the terminal.
+设想你有一个命名为 [README.md][5] 的文件，并且它在 **main** 分支上。当前你正工作在一个名为 **dev** 的分支。
 
+用下面的 Git 命令，在终端上就行。
 
 ```
 `$ git show main:README.md`
 ```
 
-Once you execute this command, you can view the content of the file in your terminal.
+一旦你执行这个命令，你就能在你的终端上看到 **main** 分支上该文件的内容。
 
-### 7\. Search in Git
+### 7\. Git 中的搜索
 
-You can search in Git like a pro with one simple command. Better still, you can search in Git even if you aren't sure which commit—or even branch—you made your changes.
-
+用一个简单的命令你就能在 Git 中像职业选手一样搜索了。更有甚者，尽管你不确定你的修改在哪次提交或者哪个分支上，你依然能搜索。
 
 ```
 `$ git rev-list --all | xargs git grep -F ‘’`
 ```
 
-For example, suppose you want to search for the string "font-size: 52 px;" in your repository:
-
+例如，假设你想在你的仓库中搜索字符串 “font-size: 52 px;" ：
 
 ```
 $ git rev-list –all | xargs git grep -F ‘font-size: 52 px;’
@@ -176,11 +167,11 @@ F3022…9e12:HtmlTemplate/style.css: font-size: 52 px;
 E9211…8244:RR.Web/Content/style/style.css: font-size: 52 px;
 ```
 
-### Try these tips
+### 试试这些小技巧
 
-I hope these advanced tips are useful and boost your productivity, saving you lots of time.
+我希望这些小技巧对你是有用的，或者增加你的生产力或者节省你的大量时间。
 
-Do you have [Git tips][6] you love? Share them in the comments.
+你也有一些喜欢的 [Git 技巧][6] 吗？在评论区分享吧。
 
 --------------------------------------------------------------------------------
 
@@ -188,7 +179,7 @@ via: https://opensource.com/article/20/10/advanced-git-tips
 
 作者：[Rajeev Bera][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[BoosterY](https://github.com/BoosterY)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
