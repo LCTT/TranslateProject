@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/dust-linux)
 [#]: author: (Sudeshna Sur https://opensource.com/users/sudeshna-sur)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
