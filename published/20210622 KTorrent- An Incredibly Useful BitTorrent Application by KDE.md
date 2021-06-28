@@ -3,18 +3,20 @@
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13530-1.html)
 
-KTorrent：KDE 的一个非常有用的 BitTorrent 应用
+KTorrent：KDE 上的一个非常有用的 BitTorrent 应用
 ======
 
-Linux 中有各种各样的 BitTorrent 应用。但是，找到一个好的、提供许多功能的应用应该可以为你节省一些时间。
+![](https://img.linux.net.cn/data/attachment/album/202106/28/120031cml79jimcs99ybpy.jpg)
+
+Linux 中有各种各样的 BitTorrent 应用。但是，找到一个好的、提供许多功能的应用将可以为你节省一些时间。
 
 KDE 的 KTorrent 就是这样一个为 Linux 打造的 BitTorrent 应用。
 
-虽然有 [Linux 有几个 torrent 客户端][1]，但我最近发现 KTorrent 对我而言很有趣。
+虽然 [Linux 有好几个 torrent 客户端][1]，但我最近发现 KTorrent 对我而言很合适。
 
 ### KTorrent: 适用于 Linux 的开源 BitTorrent 客户端
 
@@ -22,7 +24,7 @@ KDE 的 KTorrent 就是这样一个为 Linux 打造的 BitTorrent 应用。
 
 KTorrent 是一个成熟的 torrent 客户端，主要为 KDE 桌面定制。无论你使用什么桌面环境，它都能很好地工作。
 
-当然，使用KDE桌面，你可以得到一个无缝的用户体验。
+当然，使用 KDE 桌面，你可以得到一个无缝的用户体验。
 
 让我们来看看它的所有功能。
 
@@ -35,45 +37,43 @@ KTorrent 是一个成熟的 torrent 客户端，主要为 KDE 桌面定制。无
   * 在一个队列中添加 torrent 下载
   * 能够控制每次下载（或整体）的速度限制
   * 视频和音频文件预览选项
-  * 支持导入下载文件（部分/全部）。
+  * 支持导入下载的文件（部分/全部）
   * 在下载多个文件时，能够对 torrent 下载进行优先排序
   * 为多文件 torrent 选择要下载的特定文件
-  * IP 过滤器，可选择踢走/禁止 peer。
+  * IP 过滤器，可选择踢走/禁止对端。
   * 支持 UDP 跟踪器
-  * 支持 µTorrent peer
+  * 支持 µTorrent 对端
   * 支持协议加密
-  * 能够创建无 tracker 的 torrent
+  * 能够创建无跟踪器的 torrent
   * 脚本支持
   * 系统托盘集成
   * 通过代理连接
   * 增加了插件支持
   * 支持 IPv6
 
-
-
-KTorrent 听起来很有用，作为一个 torrent 客户端，你可以日常控制它在一个地方管理所有的 torrent 下载。
+KTorrent 看起来可以作为一个日常使用的 torrent 客户端，在一个地方管理所有的 torrent 下载。
 
 ![][4]
 
-除了上面提到的功能外，它还对客户端的行为提供了很大的控制。例如，调整指示下载/暂停/tracker 服务器的颜色。
+除了上面提到的功能外，它还对客户端的行为提供了很大的控制。例如，调整下载/暂停/跟踪器的指示颜色。
 
-如果你想禁用完成 torrent 下载的声音或得到活动通知，你还可以设置通知。
+如果你想禁用完成 torrent 下载时的声音或得到活动通知，你还可以设置通知。
 
 ![][5]
 
-虽然像协议加密支持这样的功能可能无法取代一些[最好的 VPN][6] 服务，但它对桌面客户端来说是一个重要的补充。
+虽然像协议加密支持这样的功能可能无法取代一些 [最好的私有专用网络][6] 服务，但它对桌面客户端来说是一个重要的补充。
 
 ### 在 Linux 中安装 KTorrent
 
 KTorrent 应该可以通过包管理器（如 [Synaptic][7]）或默认的仓库获得。你也可以在你的软件中心找到它并轻松安装。
 
-除此之外，它还在 [Flathub][9] 上提供了一个适用于任何 Linux 发行版的 [Flatpak][8] 官方包。如果你需要帮助，我们有一个 [Flatpak 指南][10]供参考。
+除此之外，它还在 [Flathub][9] 上提供了一个适用于任何 Linux 发行版的 [Flatpak][8] 官方包。如果你需要帮助，我们有一个 [Flatpak 指南][10] 供参考。
 
 如果你喜欢的话，你也可以尝试可用的 [snap包][11]。
 
-要探索更多关于它和源码的信息，请前往它的[官方 KDE 应用页面][12]。
+要探索更多关于它和源码的信息，请前往它的 [官方 KDE 应用页面][12]。
 
-[KTorrent][12]
+- [KTorrent][12]
 
 ### 结束语
 
@@ -90,7 +90,7 @@ via: https://itsfoss.com/ktorrent/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
