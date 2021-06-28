@@ -10,8 +10,7 @@
 为什么我们要开源我们的 Python 平台
 ======
 
-Open source development philosophy makes Anvil's entire solution more
-useful and trustworthy.开源开发的理念使得 Anvil 的整个解决方案更加有用且值得信赖。
+开源开发的理念使得 Anvil 的整个解决方案更加有用且值得信赖。
 ![neon sign with head outline and open source why spelled out][1]
 
 Anvil 团队最近开源了 [Anvil App Server][2]， 一个用于托管 Python Web 程序的运行引擎。
