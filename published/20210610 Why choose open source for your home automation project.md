@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zepoch"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13535-1.html"
 
 为什么要为你的家庭自动化项目选择开源
 ======
