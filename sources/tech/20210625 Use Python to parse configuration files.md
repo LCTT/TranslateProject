@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/parse-configuration-files-python)
 [#]: author: (Moshe Zadka https://opensource.com/users/moshez)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zepoch)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
