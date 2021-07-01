@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (stevenzdg988)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13539-1.html)
 
 使用开源工具创建私有的虚拟专用网络
 ======
