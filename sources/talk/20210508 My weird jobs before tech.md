@@ -36,7 +36,7 @@ via: https://opensource.com/article/21/5/weird-jobs-tech
 
 作者：[Chris Hermansen][a]
 选题：[lujun9972][b]
-译者：[MM-BCY](https://github.com/MM-BCY)
+译者：[MM-BCY](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
