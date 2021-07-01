@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/osquery-linux)
 [#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (YungeG)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
