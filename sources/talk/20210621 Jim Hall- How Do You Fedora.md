@@ -12,9 +12,9 @@ Jim Hall: 你觉得 Fedora 怎么样?
 
 ![][1]
 
-We recently interviewed Jim Hall on how he uses Fedora. This is part of a [series][2] on the Fedora Magazine. The series profiles Fedora users and how they use Fedora to get things done. Contact us on the [feedback form][3] if you are interested in being interviewed for a further installment of this series.
+我们最近采访了 Jim Hall 关于他如何使用 Fedora. 这个部分是在一个 Fedora 杂志 [系列][2] 上。 该系列介绍了Fedora用户以及他们如何使用Fedora来完成任务。 如果您对本系列的下一期采访感兴趣，请通过 [反馈表][3] 与我们联系。
 
-## **Who is Jim Hall?**
+## **Jim Hall是谁?**
 
 Jim Hall served as Chief Information Officer in higher education and government for over eight years and has recently started the consulting company [Hallmentum][4]. Most of his work includes training, workshops, and coaching to help new IT leaders develop leadership skills, also to help current IT leaders get better at leadership. Apart from consulting, Jim also serves as adjunct faculty at the university level, currently teaching courses in Management Information Systems (MIS) and Technical &amp; Professional Writing.
 
