@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/bash-config)
 [#]: author: (David Both https://opensource.com/users/dboth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
