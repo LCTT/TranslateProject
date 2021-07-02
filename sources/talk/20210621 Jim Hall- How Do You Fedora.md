@@ -14,17 +14,17 @@ Jim Hall: 你觉得 Fedora 怎么样?
 
 我们最近采访了 Jim Hall 关于他如何使用 Fedora. 这个部分是在一个 Fedora 杂志 [系列][2] 上。 该系列介绍了Fedora用户以及他们如何使用Fedora来完成任务。 如果您对本系列的下一期采访感兴趣，请通过 [反馈表][3] 与我们联系。
 
-## **Jim Hall是谁?**
+## **Jim Hall 是谁?**
 
-Jim Hall served as Chief Information Officer in higher education and government for over eight years and has recently started the consulting company [Hallmentum][4]. Most of his work includes training, workshops, and coaching to help new IT leaders develop leadership skills, also to help current IT leaders get better at leadership. Apart from consulting, Jim also serves as adjunct faculty at the university level, currently teaching courses in Management Information Systems (MIS) and Technical &amp; Professional Writing.
+Jim Hall 曾担任高等教育和政府部门的首席信息管超过8年，最近创办了咨询公司 [Hallmentum][4]。 他的大部分工作包括培训、研讨会和指导帮助新的IT领导者发展领导技能，也帮助当前的IT领导者更好地发挥领导能力。除了咨询 Jim 还担任大学水平的兼职教师， 目前教授管理信息系统(MIS)和技术与专业写作课程。
 
-How did Jim grow up? Jim’s childhood heroes were from TV and movies, including Batman and Han Solo. Jim’s long-time favorite go-to movie is Star Wars: A New Hope. Jim says, “I am a big Star Wars nerd.” Jim’s favorite meals are Italian. “I love Italian food! Probably my favorite Italian dish is chicken cacciatore.” Jim’s opinion is that Honesty, Creativity, Imagination, Curiosity, and Openness are the five greatest qualities someone can possess.
+Jim 是怎么长大的? Jim 童年时代的英雄来自电视和电影，包括蝙蝠侠和汉索罗。 Jim 长期以来最喜欢看的电影是《星球打字：新希望》。 Jim 说：“我是一个星球大战迷” Jim 最喜欢吃意大利菜。 “我喜欢的意大利菜可能是炖鸡”。 Jim 的观点是诚实、创造力、想象力、好奇心和开放性是一个人所能拥有的五大品质。
 
-He loves writing, which is good because most of his day job is about writing. He spends a lot of time writing “how-to” articles for places like OpenSource.com, CloudSavvy IT, and Linux Magazine, and right now he is writing a book about C programming. Apart from writing, he also relaxes by playing video games. He owns a PlayStation 4 and can be found most Saturday afternoons in front of his TV playing a game.
+他喜欢写作，这很好，因为他的日常工作主要是写作。 他花了很多时间为像OpenSource.com、CloudSavvy IT 和 Linux Magazine等网站撰写“如何”文章。现在他正在写一本关于C编程的书。除了写作，他还玩电子游戏来放松。他有一台 PlayStation 4游戏机，大多数周六下午他都会坐在电视机前玩游戏。
 
-## **Fedora Community**
+## **Fedora 社区**
 
-Jim started using Linux in 1993. His first Linux distribution was Softlanding Linux System (SLS) 1.03, running Linux kernel 0.99 patch level 11. “I’ve been a full-time Linux user at home ever since”. Jim became more involved in Fedora after attending a Linux conference long ago in the Fedora Core days. Jim met Tom “Spot” Callaway there, and they got talking about Fedora. “Spot encouraged me to contribute another way: by finding bugs and reporting them. And that’s how I got involved in testing for all the Beta releases”.
+Jim 从1993年开始使用 Linux 。 他的第一个 Linux 发行版本是软著陆 Linux 系统 (SLS) 1.03， 运行 Linux 内核 0.99 补丁级别 11。 “从那以后，我一直是家里全职 Linux 用户”。 Jim became more involved in Fedora after attending a Linux conference long ago in the Fedora Core days. Jim met Tom “Spot” Callaway there, and they got talking about Fedora. “Spot encouraged me to contribute another way: by finding bugs and reporting them. And that’s how I got involved in testing for all the Beta releases”.
 
 What would Jim like to change in Fedora? He would like to see a countdown on the getfedora.org website, that tells when the new Beta release or new full release is due out as a change in Fedora Project. And Jim wishes that other people know how easy it is to use Fedora. ”The most challenging thing in contributing to open source is to figure out how to make their first contribution.” Jim adds, “I don’t know that I’m a ‘Fedora Project member’ like other developers would be. I’m just a user. But as someone who’s been involved in developing open-source software since 1993 or 1994, I try to be a helpful member of the community. So I take every opportunity to experiment with new Fedora releases, even the Beta releases, and let people know if I find problems.”
 
