@@ -7,7 +7,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Jim Hall: How Do You Fedora?
+Jim Hall: 你觉得 Fedora 怎么样?
 ======
 
 ![][1]
