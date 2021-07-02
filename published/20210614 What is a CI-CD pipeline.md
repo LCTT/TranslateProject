@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (baddate)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13541-1.html)
 
 CI/CD 管道是什么？
 ======
