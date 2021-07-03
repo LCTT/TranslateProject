@@ -37,11 +37,11 @@ Jim 目前运行的是 Fedora 33 、之前的 Fedora 33 Beta 和 Fedora 32。 Ji
 
 为了经营他的咨询业务，Jim依赖于一套应用程序：
 
-  * [LibreOffice][5]例如，他去年出版了 [《指导按钮》][6]，他完全是用 来写这本书的。最近他写了一本关于  [用C语言编写自由DOS程序的书][7] 也用了 LibreOffice 。
-  * [INKSCAPE][8] for creating his company logo in vector format. His logo scales up and down perfectly—from a small corner image on a document to a large-format poster or banner. And INKSCAPE lets him export to a variety of common formats. Jim says that his advertising partners appreciate that INKSCAPE can export to EPS (Encapsulated Postscript), which makes it a snap to print his logo on products.
-  * [GIMP][9] for other graphics, such as a splash image. “My splash image is my company logo placed over a background image, and I use that in place of a plain logo where I need extra pizzazz, such as on printed materials. I also use a version of the splash image on my website.”
-  * [QEMU][10] to run a virtual machine where he can boot [FreeDOS][11]. “I like using QEMU because I can set all the options I need at the command line, which gives me a lot of extra flexibility in configuring the virtual machine. To make this easier, I put all the options into a script, and use that to run QEMU with the same options every time.”
-  * [Scribus][12] to print products. Scribus is easy to use to create print-ready materials with _full bleed_, meaning any color backgrounds overlap the edge of the paper. Full bleed requires a special print-ready file that overlaps the print area . It even provides cut marks so that the printer knows exactly where to trim.
+  * 使用 [LibreOffice][5] 去写他的书例如，他去年出版了 [《指导按钮》][6]，他完全是用 来写这本书的。最近他写了一本关于  [用C语言编写自由DOS程序的书][7] 也用了 LibreOffice 。
+  * [INKSCAPE][8] 在矢量格式上用于创造他公司的标志。他的标志从文件上的小角落图像到大幅面的海报或横幅，完美地上下伸缩。并且INKSCAPE允许他导出各种通用格式。Jim说他的广告合作伙伴很欣赏INKSCAPE可以输出到EPS（封装的附言），这使得在产品上打印他的徽标变得很容易。
+  * [GIMP][9] 用于其他图形，例如飞溅图片 “我的飞溅图片是我们公司的标准被放在了背景照片上，并且我用它来代替我需要额外装饰的普通标志，比如印刷材料。我也在我的网站上使用了splash图像的一个版本”。
+  * [QEMU][10] 运行一个虚拟机，在他那里可以启动 [FreeDOS][11]. “我喜欢使用QEMU，因为我可以在命令行中设置所有需要的选项，这使我在配置虚拟机时有了很大的灵活性。为了使这更容易，我将所有选项放入一个脚本中，并使用该脚本每次使用相同的选项运行QEMU。”
+  * [Scribus][12] 是用来打印产品的。 Scribus使用起来很容易，它可以创建打印就绪的材料，并带有“全出血”，这意味着任何颜色的背景都会重叠在纸张的边缘。 完全出血需要一个特殊的打印准备文件重叠的打印区域。它甚至还提供切割标记，以便打印机准确地知道要修剪的位置。
 
 
 
