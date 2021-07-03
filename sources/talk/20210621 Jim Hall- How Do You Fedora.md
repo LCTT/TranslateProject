@@ -28,15 +28,13 @@ Jim 从1993年开始使用 Linux 。 他的第一个 Linux 发行版本是软著
 
 What would Jim like to change in Fedora? He would like to see a countdown on the getfedora.org website, that tells when the new Beta release or new full release is due out as a change in Fedora Project. And Jim wishes that other people know how easy it is to use Fedora. ”The most challenging thing in contributing to open source is to figure out how to make their first contribution.” Jim adds, “I don’t know that I’m a ‘Fedora Project member’ like other developers would be. I’m just a user. But as someone who’s been involved in developing open-source software since 1993 or 1994, I try to be a helpful member of the community. So I take every opportunity to experiment with new Fedora releases, even the Beta releases, and let people know if I find problems.”
 
-## **What hardware do you use?**
+## **你用什么硬件 ?**
 
-Jim is currently running a ThinkCentre M720 Tiny. It’s configured with 8th Generation Intel Core i3-8100T (3.10GHz, 6MB Cache), 32GB (16GB + 16GB) DDR4 2666MHz, Intel graphics, 256GB Solid State Drive PCIe-NVME Opal M.2, Intel 8265 802.11AC, and Bluetooth 4.2. His monitor is an Asus VE248H. “It all works great with Fedora!” says Jim.
+Jim 目前正在运行 ThinkCentre M720 Tiny。 它配置了第8代酷睿 i3-8100T (3.10GHz, 6MB 内存), 32GB (16GB + 16GB) DDR4 2666MHz, 因特尔显卡, 256GB 固态硬盘 PCIe-NVME Opal M.2, 英特尔 8265 802.11AC, 和 蓝牙 4.2。 他的显卡是华硕 VE248H。 Jim说：“这一切都很适合 Fedora！”。
 
-He uses the Perixx Periboard-512 Ergonomic Classic Split Keyboard which replaced his original Microsoft Natural Keyboard Elite PS/2 keyboard from 1998. Jim says “I sometimes swap out the Perixx keyboard for my USB clone of the original IBM Model M keyboard, from Unicomp. I do love the clicky keyboard with the buckling spring action. And mine is in the ‘putty white’ color so it has that classic look and feel.”
+他使用 Perixx Periboard-512 人体工程学经典拆分键盘，它从1998年开始取代了他最初的微软天然键盘精英 PS/2 键盘。Jim 说： “我有时候会把我的 Perixx 键盘换成 Unicomp 的 IBM Model M USB克隆键盘。 我很喜欢带有弯曲弹簧动作的点击键盘。 我的是“灰白色”，所以它有种经典的外观和感觉”
 
-## **What software do you use?**
-
-Jim is currently running Fedora 33 and previously Fedora 33 Beta, and Fedora 32. “I use GNOME 3 as my desktop. I find the defaults suit most of my needs, so I don’t have any GNOME Extensions loaded, but I do adjust a few things using Settings and GNOME Tweaks. So I’m not making any big changes. For example, I changed my default user interface font to use Droid Sans Regular. And I used Settings to change the keyboard shortcut so Alt-Tab switches windows instead of switching applications. I grew up with the Alt-Tab workflow, so I’m used to that,” says Jim. He uses Firefox and Google Chrome as his web browsers.
+Jim 目前运行的是 Fedora 33 、之前的 Fedora 33 Beta 和 Fedora 32。 Jim说：“我使用 GNOME 3 作为我的桌面。 我发现默认值适合我的大多数需求，所以我没有加载任何GNOME 扩展， 但我确实使用设置和 GNOME 调整了一些东西。 所以我不会做什么大的改变。 例如，我将默认用户界面字体改为使用 Droid Sans Regular 字体。并且我用“设置”来改变键盘快捷键，用Alt-Tab键来切换窗口，而不是切换应用程序。我是在Alt-Tab工作流程中长大的，所以我已经习惯了。”。 他使用火狐和谷歌浏览器来作为他的网络浏览器。
 
 To run his consultancy business, Jim relies on a suite of applications:
 
