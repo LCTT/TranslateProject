@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zepoch"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13551-1.html"
 
 使用 Python 解析配置文件
 ======
