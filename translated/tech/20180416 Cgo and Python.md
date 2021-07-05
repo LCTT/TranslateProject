@@ -259,7 +259,7 @@ func main() {
 
 在 goroutines 中，我们从 Go 上下文操作，我们需要显式创建状态并在完成后将其删除，这就是 `PyGILState_Ensure()` 和 `PyGILState_Release()` 为我们所做的。
 ![](https://datadog-prod.imgix.net/img/blog/engineering/cgo-and-python/cgo_python_divider_4.png?auto=format&fit=max&w=847)
-扩展程序选项
+
 ### 释放 Gopher
 
 在这一点上，我们知道如何处理在嵌入式解释器中执行 Python 的多线程 Go 代码，但在 GIL 之后，另一个挑战即将来临：Go 调度程序。
