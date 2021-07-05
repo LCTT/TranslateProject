@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "amwps290"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13550-1.html"
 
 使用 GDB 查看程序的栈空间
 ======
