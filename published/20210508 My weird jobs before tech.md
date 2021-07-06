@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MM-BCY)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13553-1.html)
 
 我在进入技术行业之前的奇怪工作
 ======
