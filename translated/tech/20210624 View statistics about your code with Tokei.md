@@ -3,24 +3,24 @@
 [#]: author: "Sudeshna Sur https://opensource.com/users/sudeshna-sur"
 [#]: collector: "lujun9972"
 [#]: translator: "zepoch"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 
-使用Tokei查看有关代码的统计信息
+使用 Tokei 查看有关代码的统计信息
 ======
 
-了解有关项目编程语言的详细信息。
-![A screen of code.][1]
+> 了解有关项目编程语言的详细信息。
+
+![](https://img.linux.net.cn/data/attachment/album/202107/06/114306ar6zjnrr92rn2vnz.jpg)
 
 近来，GitHub 添加了一个小指标来展示项目的细节，包括项目使用的编程语言。在这之前，对一个新的贡献者来说，了解他们感兴趣的项目的信息是较为困难的。
 
 这个补充很有帮助，但是如果您想知道有关本地存储库中项目的相同信息该怎么办呢？ 这正是 [Tokei][2] 派上用场的地方。这是一个当你想和精通不同语言的人想要构建一个项目时可以告诉你项目的代码数据的特别有用的工具。
 
-### Exploring Tokei探索 Tokei
+### 探索 Tokei
 
-通过它的 [README][3]，“Tokei 是一个可以展示你的代码数据的程序。Tokei 将会展示文件的数量，和这些文件中不同语言的代码、注释、空白的行数。“它的 v.12.1.0 release [elaborates][4] 是这样子介绍的，”Tokei 是一个快速准确的代码分析 CLI 工具和库，可以使你轻松快速地在你的代码库中看到有多少空白、评论和代码行“。它能够识别超过 150 中编程语言。
-
+据其 [README][3]，“Tokei 是一个可以展示你的代码数据的程序。Tokei 将会展示文件的数量，和这些文件中不同语言的代码、注释、空白的行数。”它的 v.12.1.0 版本 [elaborates][4] 是这样子介绍的，“Tokei 是一个快速准确的代码分析 CLI 工具和库，可以使你轻松快速地在你的代码库中看到有多少空白、评论和代码行”。它能够识别超过 150 种编程语言。
 
 ```
 $ ./tokei ~/exa/src ~/Work/wildfly/jaxrs
@@ -28,10 +28,10 @@ $ ./tokei ~/exa/src ~/Work/wildfly/jaxrs
 Language   Files Lines Code Comments Blank
 Java        46    6135  4324  945     632
 XML         23    5211  4839  473     224
-\---------------------------------
+---------------------------------
 Rust
 Markdown
-\-----------------------------------
+-----------------------------------
 Total
 ```
 
@@ -39,22 +39,19 @@ Total
 
 在 Fedora 上安装 Tokei：
 
-
 ```
-`$ sudo dnf install tokei`
+$ sudo dnf install tokei
 ```
 
 用 Rust's Cargo 包管理器安装：
 
-
 ```
-`$ cargo install tokei`
+$ cargo install tokei
 ```
 
 ### 使用 Tokei
 
-To list code statistics for the current directory:
-
+要列出当前目录中的代码统计：
 
 ```
 $ tokei
@@ -92,13 +89,13 @@ $ tokei
  XML                     1          116           95           17            4
  YAML                    2           81           56           12           13
  Zsh                     1           59           48            8            3
-\-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
  Markdown               55         4677            0         3214         1463
  |- C                    1            2            2            0            0
  |- Rust                19          336          268           20           48
  |- TOML                23           61           60            0            1
  (Total)                           5076          330         3234         1512
-\-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
  Rust                  496       210966       188958         5348        16660
  |- Markdown           249        17676         1551        12502         3623
  (Total)                         228642       190509        17850        20283
@@ -109,7 +106,6 @@ $
 ```
 
 下面的命令打印出了支持的语言和拓展：
-
 
 ```
 $ tokei -l
@@ -133,10 +129,7 @@ GNU Style Assembly
 
 ![Running Tokei on two files][5]
 
-(Sudeshna Sur, [CC BY-SA 4.0][6])
-
 默认情况下，`tokei` 仅仅输出有关语言的数据，但是使用 `--files` 标记可提供单个文件统计信息：
-
 
 ```
 $ tokei ~/exa/src --files
@@ -146,7 +139,7 @@ $ tokei ~/exa/src --files
  Rust                                   54          9339        7070             400       1869
  |- Markdown                            33          1306           0            1165        141
  (Total)                                           10645        7070        1565       2010
-\-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
  /home/ssur/exa/src/theme/default_theme.rs           130         107           0         23
  /home/ssur/exa/src/output/render/times.rs            30          24           0          6
  /home/ssur/exa/src/output/render/users.rs            98          76           0         22
@@ -168,14 +161,14 @@ $ tokei ~/exa/src --files
  /home/ssur/exa/src/options/flags.rs                  84          63           6         15
  /home/ssur/exa/src/fs/mod.rs                         10           8           0          2
  /home/ssur/exa/src/fs/feature/mod.rs                 33          25           0          8
-\-- /home/ssur/exa/src/output/time.rs ---------------------------------------------------------------
+-- /home/ssur/exa/src/output/time.rs ---------------------------------------------------------------
  |- Rust                                             215          170          5         40
  |- Markdown                                          28            0         25          3
 ```
 
 ### 总结
 
-我发现使用 `tokei` 来了解我的代码统计数据十分容易。另一个使用 `tokei` 的好处就是它可以用作为一个很容易集成到其他项目的库。访问 Tokei 的 [Crate.io page][7] 和 [Docs.rs][8] 网站来了解其更多用法。如果你想参与其中，你也可以通过它的 [GitHub repository][2] 来为 Tokei 作贡献。
+我发现使用 `tokei` 来了解我的代码统计数据十分容易。另一个使用 `tokei` 的好处就是它可以用作为一个很容易集成到其他项目的库。访问 Tokei 的 [Crate.io page][7] 和 [Docs.rs][8] 网站来了解其更多用法。如果你想参与其中，你也可以通过它的 [GitHub 仓库][2] 来为 Tokei 作贡献。
 
 你是否觉得 Tokei 很有用呢？可以在下方的评论区告诉我们。
 
@@ -186,7 +179,7 @@ via: https://opensource.com/article/21/6/tokei
 作者：[Sudeshna Sur][a]
 选题：[lujun9972][b]
 译者：[zepoch](https://github.com/zepoch)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
