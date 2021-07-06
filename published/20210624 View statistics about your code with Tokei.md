@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zepoch"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13554-1.html"
 
 使用 Tokei 查看有关代码的统计信息
 ======
