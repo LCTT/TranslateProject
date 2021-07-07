@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zz-air)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13558-1.html)
 
 Jim Hall，你觉得 Fedora 怎么样?
 ======
