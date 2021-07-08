@@ -7,23 +7,23 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Send and receive Gmail from the Linux command line
+在 Linux 命令行中收发 Gmail 邮件
 ======
-Use Mutt to send and receive email from your terminal, even if you're
-using hosted service such as Gmail.
+即使你用的是诸如 Gmail 的托管邮件服务，你也可以通过 Mutt 在终端里收发电子邮件。
+
 ![woman on laptop sitting at the window][1]
 
-I'm a [Mutt][2] user. I like viewing and composing emails in the convenience of my Linux terminal. With a lightweight and minimal client like Mutt, I know that I can have my email available regardless of system specifications or internet access. And because I have a Linux terminal open more often than not, my email client essentially has no footprint on my desktop real estate. It's hidden away in a [terminal tab or multiplexer pane][3], so I can ignore it when I don't need it but get to it quickly when I do need it.
+我喜欢在 Linux 终端上读写电子邮件的便捷，因此我是 [Mutt][2] 这个轻量简洁的电子邮件客户端的忠实用户。对于电子邮件服务来说，不同的系统配置和网络接入并不会造成什么影响。这个客户端通常隐藏在我 Linux 终端的[某个标签页或者某个终端复用器的面板][3]上，需要用的时候随时可以调出来，不需要使用的时候放到后台，就不需要在桌面上一直放置一个电子邮件客户端的应用程序。
 
-A commonly perceived problem with Mutt is that most of us use hosted email accounts these days and interact with actual email protocols only superficially. Mutt (and ELM before it) was created back in simpler times, when checking email was a call to `uucp` and a glance at `/var/mail`. However, it's adapted nicely to developing technology and works well with all sorts of modern protocols like POP, IMAP, and even LDAP, so you can use Mutt even if you're using Gmail as your email host.
+当今我们大多数人使用的都是托管电子邮件账号，在这个在这种使用场景中并不会与电子邮件协议发生过多的直接交互。而 Mutt（以及更早的 ELM）在创立之初实现的是对 `uucp` 的调用，以及对 `/var/mail` 的读取。当然 Mutt 也很与时俱进，随着各种流行的协议（如 POP、IMAP、LDAP）出现，它都实现了良好的支持。因此，即使我们使用的是 Gmail 这种邮件服务，也可以与 Mutt 无缝衔接。
 
-Because it's relatively rare to run your own email server today, and because Gmail is very common, this tutorial assumes you're using Mutt with Gmail. If you're concerned about email privacy, consider opening an account with [ProtonMail][4] or [Tutanota][5], both of which provide fully encrypted email. Tutanota has many [open source components][6], and ProtonMail provides an [IMAP bridge][7] for paid users so that you don't have to work around accessing your email outside a browser. However, many companies, schools, and organizations don't run their own email services and just use Gmail, so you may have a Gmail account whether you want one or not.
+在大多数情况下，用户都不会拥有自己的电子邮件服务器，同时大部分用户都会选择 Gmail，因此下文会以 Mutt + Gmail 为例作介绍。如果你比较注重电子邮件隐私，不妨考虑 [ProtonMail][4] 或者 [Tutanota][5]，它们都提供完全加密的电子邮件服务。其中 Tutanota 包含很多[开源组件][6]，而 ProtonMail 则为付费用户提供 [IMAP 桥][7]， 简化了在非浏览器环境下的邮件访问。尽管如此，很多公司、学校和组织都没有自己的电子邮件服务，而是使用 Gmail 提供的邮件服务，这样一来，大部分用户都会有一个 Gmail 邮箱。
 
-If you are [running your own email server][8], setting up Mutt is even easier than what I demonstrate in this article, so just dive right in.
+当然，如果你自己就[拥有电子邮件服务器][8]，那么使用 Mutt 就更简单了。下面我们开始介绍。
 
-### Install Mutt
+### 安装 Mutt
 
-On Linux, you can install Mutt from your distribution's software repository and then create a `.mutt` directory to hold its configuration files:
+在 Linux 系统上，一般可以直接从发行版提供的软件库中安装 Mutt，另外需要在 home 目录中创建一个 `.mutt` 目录以存放配置文件：
 
 
 ```
@@ -31,24 +31,24 @@ $ sudo dnf install mutt
 $ mkdir ~/.mutt
 ```
 
-On macOS, use [MacPorts][9] or [Homebrew][10]. On Windows, use [Chocolatey][11].
+在 MacOS 上，可以通过 [MacPorts][9] 或者 [Homebrew][10] 安装；在 Windows 上则可以使用 [Chocolatey][11] 安装。
 
-Mutt is a mail user agent (MUA), meaning its job is to read, compose, and send email to an outbound mail spool. It's the job of some other application or service to actually transfer a message to or from a mail server (although there's a lot of integration with Mutt so that it seems like it's doing all the work even when it's not.) Understanding this separation of tasks can help configuration make a little more sense.
+Mutt 是一个<ruby>邮件用户代理<rt>Mail User Agent</rt></ruby>（MUA），因此它的作用是读取、编写以及向外部邮件池发送邮件，其它邮件应用或者邮件服务则仅仅是负责在用户和邮件服务器之间传递信息，尽管它们可以和 Mutt 进行协作，让我们看起来是邮件应用们实现了所有功能，但实际上并非如此。在弄懂了两者之间的区别之后，我们会对 Mutt 的配置更加清楚。
 
-It also explains why you must have helper applications (in addition to Mutt) depending on what service you need to communicate with. For this article, I use IMAP so that my local copy of email and my email provider's remote copy of mail remain synchronized. Should you decide to use POP instead, that configuration is even easier to configure and can be done without any external tools. IMAP integration, however, requires OfflineIMAP, a Python application available from [its GitHub repository][12].
+除了 Mutt 之外，我们还需要视乎进行通信的服务种类选择一些辅助应用程序。在本文中我使用的是 IMAP 服务，这可以让我本地的电子邮件副本与电子邮件服务提供商的电子邮件副本保持同步。如果你选择 POP 服务，配置的难度就更下一个台阶了，也无需依赖其它外部工具。我们需要OfflineIMAP 这个 Python 应用程序来实现 IMAP 的集成，这个应用程序可以在[它的 GitHub 存储库][12]获取。 
 
-Eventually, you'll be able to install it with the `python3 -m pip` command, but as of this writing, you must install OfflineIMAP manually because it's still being ported from Python 2 to Python 3.
+OfflineIMAP 目前仍然在从 Python 2 移植到 Python 3，目前需要手动安装，但以后你也可以通过 `python3 -m pip` 命令进行安装。
 
-OfflineIMAP requires `imaplib2`, which is also in heavy development, so I prefer doing a manual install of that, as well. The process is the same: clone the source code repository with Git, change into the directory, and install with `pip`.
+OfflineIMAP 依赖于 `imaplib2` 库，这个库也在开发当中，所以我更喜欢手动安装。同样地，也是通过 Git 将代码库克隆到本地，进入目录后使用 `pip` 安装。
 
-First, install the `rfc6555` dependency:
+首先安装 `rfc6555` 依赖：
 
 
 ```
 `$ python3 -m pip install --user rfc6555`
 ```
 
-Next, install `imaplib2` from source:
+然后从源码安装 `imaplib2`：
 
 
 ```
@@ -58,7 +58,7 @@ $ python3 -m pip install --upgrade --user .
 $ popd
 ```
 
-Finally, install OfflineIMAP from source:
+最后从源码安装 OfflineIMAP：
 
 
 ```
@@ -68,20 +68,20 @@ $ python3 -m pip install --upgrade --user .
 $ popd
 ```
 
-If you're using Cygwin on Windows, then you must also install [Portalocker][14].
+如果你使用的是 Windows 上的 Cygwin，那么你还需要安装 [Portlocker][14]。
 
-### Configure OfflineIMAP
+### 配置 OfflineIMAP
 
-OfflineIMAP reads the configuration file `~/.offlineimaprc` by default. A template for this file, named `offlineimap.conf`, is included in the Git repository you cloned to install OfflineIMAP. Move the example file to your home directory:
+ OfflineIMAP 默认使用 `~/.offlineimaprc` 这个配置文件，在它的代码库中会有一个名为 `offlineimap.conf` 的配置模板，可以直接将其复制到 home 目录下：
 
 
 ```
 `$ mv offlineimap3.git/offlineimap.conf ~/.offlineimaprc`
 ```
 
-Open the file in your favorite text editor and read through it. It's a well-commented file, and it's good to get familiar with the options available.
+你可以使用任何文本编辑器打开浏览这个配置文件，它的注释很完善，便于了解各个可用的配置项。
 
-Here's my `.offlineimaprc` as an example, with comments removed for brevity. Some values may be slightly different for you, but this gives you a reasonable idea of what your end product ought to look like:
+以下是我的 `.offlineimaprc` 配置文件，为了清晰起见，我把其中的注释去掉了。对于你来说其中有些配置项的值可能会略有不同，但或许会为你的配置带来一些启发：
 
 
 ```
@@ -127,31 +127,31 @@ folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
                                              ]
 ```
 
-There are two replaceable values in this file: `%your-gmail-username%` and `%your-gmail-API-password%`. Replace the first with your Gmail user name. That's the part of your email address on the left of the `@gmail.com` part. You must acquire the second value from Google through a two-factor authentication (2FA) setup process (even though you don't need to use 2FA to check email).
+配置文件里有两个可以替换的值，分别是 `%your-gmail-username%` 和  `%your-gmail-API-password%`。其中第一个值需要替换为 Gmail 用户名，也就是邮件地址中 `@gmail.com` 左边的部分。而第二个值则需要通过双因素身份验证（2FA）后从 Google 获取。
 
-### Set up 2FA for Gmail
+### 为 Gmail 设置双因素身份验证（2FA）
 
-Google expects its users to use the Gmail website for email, so when you attempt to access your email outside of Gmail's interface, you're essentially doing so as a developer (even if you don't consider yourself a developer). In other words, you're creating what Google considers an "app." To obtain a developer-level _app password_, you must set up 2FA; through that process, you get an app password, which Mutt can use to log in outside the usual browser interface.
+Google 希望用户通过 Gmail 网站收发电子邮件，因此当你在 Gmail 网站以外操作电子邮件时，实际上是被 Google 作为“开发者”看待（尽管你没有进行任何开发工作）。也就是说，Google 会认为你正在创建一个应用程序。要获得开发者层面的应用程序密码，就必须设置双因素身份验证。完成了这个过程以后，就可以获得一个应用程序密码，Mutt 可以通过这个密码在浏览器以外的环境登录到你的电子邮箱中。
 
-For safety, you can also add a recovery email address. To do that, go to Google's [Account Security page][15] and scroll down to **Recovery email**.
+为了安全起见，你还可以在 Google 的[账号安全][15]页面中添加一个用于找回的电子邮件地址。
 
-To set up 2FA, go back to the Account Security page, and click on **2-step Verification** to activate and configure it. This requires a mobile phone for setup.
+在账号安全页面中，点击“两步验证”（2-step Verification）开始设置 2FA，设置过程中需要用到一部手机。
 
-After activating 2FA, you get a new Google Account Security option: **App passwords**. Click on it to create a new app password for Mutt. Google generates the password for you, so copy it and paste it into your `.offlineimaprc` file in the place of the `%your-gmail-API-password%` value.
+激活 2FA 之后，账号安全页面中会出现“应用程序密码”（App Passwords）选项，点击就可以为 Mutt 创建一个新的应用程序密码。在 Google 生成密码之后，将其替换 `.offlineimaprc` 配置文件中的 `%your-gmail-API-password%` 值。
 
-Placing your API password in your `.offlineimaprc` file stores it in plain text, which can be dangerous. For a long while, I did this and felt fine about it because my home directory is encrypted. However, in the interest of better security, I now encrypt my API password with GnuPG. That's somewhat beyond the scope of this article, but I've written an article demonstrating how to [set up GPG password integration][16].
+直接将应用程序密码记录在 `.offlineimaprc` 文件中，这种以纯文本形式存储的做法有一定的风险。因为我的 home 目录是加密的，所以我长期以来都是这样做的。但出于安全考虑，我现在已经改为使用 GnuPG 加密应用程序密码，这部分内容不在本文的讨论范围，关于如何设置 GPG 密码集成，可以参考我的[另一篇文章][16]。
 
-### Enable IMAP in Gmail
+### 在 Gmail 启用  IMAP
 
-There's one last thing before you can say goodbye to the Gmail web interface forever: You must enable IMAP access to your Gmail account.
+在启用 IMAP 访问 Gmail 账户之后，你就可以不再打开 Gmail 网站了。
 
-To do this, go to the Gmail web interface, click the "cog" icon in the upper-right corner, and select **See all settings**. In Gmail **Settings**, click the **POP/IMAP** tab, and enable the radio button next to **Enable IMAP**. Save your settings.
+在 Gmail 网站页面中，点击右上角的“cog”图标，选择“查看所有设置”（See all settings）。 在 Gmail 设置页面中，点击“POP/IMAP”标签页，并选中“启用 IMAP”（enable IMAP），然后保存设置。
 
-Now Gmail is configured to give you access to your email outside a web browser.
+现在就可以在浏览器以外访问你的 Gmail 电子邮件了。
 
-### Configure Mutt
+### 配置 Mutt
 
-Now that you're all set up for Mutt, you'll be happy to learn that configuring Mutt is the easy part. As with [.bashrc][17], [.zshrc][18], and .emacs files, there are many examples of very good .muttrc files available on the internet. For my configuration file, I borrowed options and ideas from [Kyle Rankin][19], [Paul Frields][20], and many others, so I've abbreviated my .muttrc file to just the essentials in the interest of simplicity:
+Mutt 的配置过程相对简单。和 [.bashrc][17]、[.zshrc][18]、.emacs 这些配置文件一样，网络上有很多优秀的 .muttrc 配置文件可供参照。我自己的 .muttrc 配置文件则借鉴了 [Kyle Rankin][19]、[Paul Frields][20] 等人的配置项和想法。下面列出我的配置文件的一些要点：
 
 
 ```
@@ -207,26 +207,26 @@ macro index gi "&lt;change-folder&gt;=example.com/INBOX&lt;enter&gt;" "Go to inb
 macro index gt "&lt;change-folder&gt;=example.com/sent" "View sent"
 ```
 
-Nothing in this file requires changing, but consider replacing the fake name `Tux Example` and the fake address `example.com` with something that applies to you. Copy and paste this text into a file and save it as `~/.mutt/muttrc`.
+整个配置文件基本是开箱即用的，只需要将其中的 `Tux Example`和 `example.com` 替换为你的实际值，并将其保存为 `~/.mutt/muttrc` 就可以使用了。
 
-### Launch Mutt
+### 启动 Mutt
 
-Before launching Mutt, run `offlineimap` from a terminal to sync your computer with the remote server. The first run of this takes _a long time_, so leave it running overnight.
+Before launching Mutt, run `offlineimap` from a terminal to sync your computer with the remote server. The first run of this takes _a long time_, so leave it running overnight. 在启动 Mutt 之前，需要先启动 `offlineimap` 将远程邮件服务器上的邮件同步到本地。在首次启动的时候耗时可能会比较长，只需要让它默默运行直到同步完成就可以了。
 
-Once your account has synchronized, you can launch Mutt:
+在同步完成后，启动 Mutt：
 
 
 ```
 `$ mutt`
 ```
 
-Mutt prompts you for permission to create the directories it needs to organize your email activity and then displays a view of your inbox.
+Mutt 会提示你打开用于管理电子邮件的目录权限，并展示收件箱的视图。
 
 ![Mutt email client][22]
 
-### Learn Mutt
+### 学习使用 Mutt
 
-Learning Mutt is a mixture of exploring the application and finding your favorite hacks for your .muttrc config. For example, my config file integrates Emacs for composing messages, LDAP so that I can search through contacts, GnuPG so that I can encrypt and decrypt messages, link harvesting, HTML views, and much more. You can make Mutt anything you want it to be (as long as you want it to be an email client), and the more you experiment, the more you discover.
+Learning Mutt is a mixture of exploring the application and finding your favorite hacks for your .muttrc config. For example, my config file integrates Emacs for composing messages, LDAP so that I can search through contacts, GnuPG so that I can encrypt and decrypt messages, link harvesting, HTML views, and much more. You can make Mutt anything you want it to be (as long as you want it to be an email client), and the more you experiment, the more you discover. 在学习使用 Mutt 的过程中，你可以找到最符合你使用习惯的 .muttrc 配置。例如我的 .muttrc 配置文件集成了使用 Emacs 编写邮件、使用 LDAP 搜索联系人、使用 GnuPG 对邮件进行加解密、链接获取、HTML 视图等等一系列功能。你可以让 Mutt 做到任何你想让它做到的事情，你越探索，就能发现越多。
 
 --------------------------------------------------------------------------------
 
@@ -234,7 +234,7 @@ via: https://opensource.com/article/21/7/gmail-linux-terminal
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[HankChow](https://github.com/HankChow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
