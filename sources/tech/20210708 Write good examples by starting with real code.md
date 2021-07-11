@@ -2,7 +2,7 @@
 [#]: via: (https://jvns.ca/blog/2021/07/08/writing-great-examples/)
 [#]: author: (Julia Evans https://jvns.ca/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zepoch)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
