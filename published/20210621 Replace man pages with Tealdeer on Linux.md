@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (ddl-hust)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13570-1.html)
 
 在 Linux 上使用 Tealdeer 替代手册页
 ======
