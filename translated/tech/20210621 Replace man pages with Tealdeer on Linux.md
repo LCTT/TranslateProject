@@ -7,39 +7,34 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Replace man pages with Tealdeer on Linux
+在Linux上使用Tealdeer 替代 man 手册
 ======
-Tealdeer is a Rust implementation of tldr, which provides
-easy-to-understand information about common commands.
+
+Tealder 是 Rust 版本的tldr(too long dnot's read)，对常用的命令提供了易于理解的说明信息。
 ![computer screen ][1]
 
-Man pages were my go-to resource when I started exploring Linux. Certainly, `man` is the most frequently used command when a beginner starts getting familiar with the world of the command line. But man pages, with their extensive lists of options and arguments, can be hard to decipher, which makes it difficult to understand whatever you wanted to know. If you want an easier solution with example-based output, I think [tldr][2] is the best option.
+Man 手册是我开始探索Linux时最常用的资源。当然，对于初学者熟悉命令行指令而言，`man` 是最频繁使用的指令。但是 man 手册有大量的选项和参数列表，很难被解码，这使得你很难理解你想知道的东西。如果你想要一个更简单的解决方案，有基于例子的输出，我认为[tldr][2]是最好的选择。
 
-### What's Tealdeer?
+### Tealdeer是什么?
 
-[Tealdeer][3] is a wonderful implementation of tldr in Rust. It's a community-driven man page that gives very simple examples of how commands work. The best part about Tealdeer is that it has virtually every command you would normally use.
+[Tealdeer][3]是基于Rust，对tldr的一个很好的实现。它是一个社区驱动的手册页，给出了非常简单的命令工作原理的例子。Tealdeer最棒的地方在于它几乎包含了所有你通常会用到的命令。
 
-### Install Tealdeer
+### 安装Tealdeer
 
-On Linux, you can install Tealdeer from your software repository. For example, on [Fedora][4]:
-
+在 Linux 系统，你可以从软件仓库安装 Tealdeer ,比如在on [Fedora][4]上:
 
 ```
 `$ sudo dnf install tealdeer`
 ```
-
-On macOS, use [MacPorts][5] or [Homebrew][6].
-
-Alternately, you can build and install the tool with Rust's Cargo package manager:
-
+在 macOS 使用[ MacPorts ][5] 或者 [ Homebrew ][6].
+同样，你可以使用 Rust 的 Cargo 包管理器来编译和安装此工具:
 
 ```
 `$ cargo install tealdeer`
 ```
+### 使用 Tealdeer
 
-### Use Tealdeer
-
-Entering `tldr --list` returns the list of man pages tldr supports, like `touch`, `tar`, `dnf`, `docker`, `zcat`, `zgrep`, and so on:
+输入 `tldr-list` 返回 tldr 所支持的书册，比如` touch`, `tar`, `dnf`, `docker`, `zcat`, `zgrep `等;
 
 
 ```
@@ -58,9 +53,7 @@ a2ensite
 a2query
 [...]
 ```
-
-Using `tldr` with a specific command (like `tar`) shows example-based man pages that describe all the options that you can do with that command:
-
+使用 `tldr` 接具体的命令（比如 `tar` ）能够显示基于案例的手册页，描述了你可以用该命令做的所有选项。
 
 ```
 $ tldr tar
@@ -94,26 +87,22 @@ $ tldr tar
       tar caf target.tar.xz file1 file2 file3
 ```
 
-To control the cache:
-
+控制缓存：
 
 ```
     $ tldr --update
     $ tldr --clear-cache
 ```
 
-You can give Tealdeer output some color with the `--color` option, setting it to `always`, `auto`, and `never`. The default is `auto`, but I like the added context color provides, so I make mine permanent with this addition to my `~/.bashrc` file:
-
+你能够控制 Tealdeer 输出的颜色选项，有三种模式选择：总是，自动，从不。默认选项是自动，但我喜欢颜色提供的额外信息，所以我在我的`~/.bashrc `文件中增加了这个别名
 
 ```
 `alias tldr='tldr --color always'`
 ```
+### 结论
+Tealdeer 的美妙之处在于不需要网络连接就可以使用，只有更新缓存的时候才需要联网。因此，即使你处于离线状态，依然能够查找和学习你新学到的命令。更多信息，请查看该工具的[说明文档][8]。
 
-### Conclusion
-
-The beauty of Tealdeer is you don't need a network connection to use it, except when you're updating the cache. So, even if you are offline, you can still search for and learn about your new favorite command. For more information, consult the tool's [documentation][8].
-
-Would you use Tealdeer? Or are you already using it? Let us know what you think in the comments below.
+你会使用 Tealdeer么？或者你已经在使用了？欢迎留言让我们知道。
 
 --------------------------------------------------------------------------------
 
@@ -121,7 +110,7 @@ via: https://opensource.com/article/21/6/tealdeer-linux
 
 作者：[Sudeshna Sur][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ddl-hust](https://github.com/ddl-hust)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
