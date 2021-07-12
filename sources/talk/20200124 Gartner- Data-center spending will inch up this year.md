@@ -7,34 +7,31 @@
 [#]: via: (https://www.networkworld.com/article/3515314/data-center-spending-will-inch-up-in-year-of-accelerated-it-investment-gartner.html)
 [#]: author: (Andy Patrizio https://www.networkworld.com/author/Andy-Patrizio/)
 
-Gartner公司宣称：今年数据中心的支出将有所增加
+高德纳公司宣称：今年数据中心的支出将有所增加
 ======
-据Gartner公司披露：在经历了2019年的低迷之后,公司信息技术开支今年将会增加, 主要增加在企业应用软件和云计算方面,数据中心冷却支出也有小幅增加.
-Getty Images
+据高德纳公司披露：在经历了2019年的低迷之后,公司信息技术开支今年将会增加, 主要增加在企业应用软件和云计算方面,数据中心冷却支出也有小幅增加。
 
-Gartner公司最新发布的数据显示全球信息技术支出可能达到3.865万亿美元,相较于2019年增幅达3.4%, 对比之下,2019年仅比2018年增长0.5%.全球信息技术支出预计将持续攀升，2021年将突破4万亿美元大关，增幅达3.7%.
+Gartner公司最新发布的数据显示全球信息技术支出可能达到3.865万亿美元,相较于2019年增幅达3.4%, 对比之下,2019年仅比2018年增长0.5%。全球信息技术支出将持续攀升，预计2021年将突破4万亿美元大关，增幅达3.7%.
 
-Spending on hardware – including edge devices and data center hardware – will be deemphasized, while investments in software and services, including cloud, will see an increase, the firm predictsGartner公司预测，硬件支出，包括边界设备和数据中心硬件，支出所占比重将减小，与此同时，软件和服务支出，如云计算，支出所占比重将会增大.
+Gartner公司预测，硬件支出，包括边界设备和数据中心硬件，支出所占比重将减小，与此同时，软件和服务支出，如云计算，支出所占比重将会增大.
 
-**READ MORE:** [Data centers in 2020 will feature greater automation, cheaper memory][1]
+**阅读拓展:** [数据中心在2020年将具有更高的自动化程度，更便宜的存储成本。][1]
 
-"With the waning of global uncertainties, businesses are redoubling investments in IT as theITy anticipate revenue growth, but their spending patterns are continually shifting," said John-David Lovelock, distinguished research vice president at Gartner, in a statement“随着全球不确定性的减弱，随着IT业预期收入的增长，企业正在加倍投资IT行业。但他们的支出模式也在不断变化，“Gartner公司杰出的研究副总裁John-David Lovelock在一份声明中说道。
+“随着全球不确定性的减弱，随着IT业预期收入的增长，企业正在加倍投资IT行业。但他们的投资模式也在不断变化，“Gartner公司杰出的研究副总裁John-David Lovelock在一份声明中说道。
 
-After a decline of 2.7% in 2019, data center systems sales will grow 1.9% in 2020, while devices – everything from laptops to printers to smartphones – will rise just 0.8% in 2020 after a 4.3% decline in 2019数据中心系统销售额在2019年仅下降2.7%之后，2020年将增长1.9%，然而从笔记本电脑到打印机到智能手机的一系列设备，销售额在2019年下降4.3%之后，2020年将仅增长0.8%
+2019数据中心系统销售额在2019年仅下降2.7%之后，2020年将增长1.9%，然而从笔记本电脑到打印机到智能手机的一系列设备，在信息技术服务销售额下降4.3%之后，2020年将仅增长0.8%，与2019年相比，增长势头将增加3.6%。但销售额迅速增长的将是企业软件，预计今年将增长10.5%。这包括现场软件(如微软、甲骨文)和云服务。高德纳数据中心还指出，更多的支出增长是针对软件服务的，而不是针对本地软件的
 
-IT services will rise 5.0%, increasing its momentum over 2019, which saw a rise of 3.6%. But the real action will be in enterprise software, which is expected to grow 10.5% this year. This includes both on-premises software (such as Microsoft, Oracle) and cloud services. More of the spending growth is aimed at SaaS than on-premises software, Gartner notes.
+"Lovelock说：“几乎所有的企业软件的市场划分都受到SaaS的推动，我们甚至预计，在不属于云计算的软件形式上的支出也将继续增长，尽管增长速度较慢。SaaS的开支也在增加，授权软件将要被购买，其使用期将扩展到2023年。
 
-"Almost all of the market segments with enterprise software are being driven by the adoption of software as a service (SaaS)," Lovelock said. "We even expect spending on forms of software that are not cloud to continue to grow, albeit at a slower rate. SaaS is gaining more of the new spending, although licensed-based software will still be purchased and its use expanded through 2023."Lovelock说：“几乎所有的企业软件的市场划分都受到软件服务(SaaS)的推动，我们甚至预计，在不属于云的软件形式上的支出也将继续增长，尽管增长速度较慢。SaaS正在获得更多的新支出，尽管基于许可的软件仍将被购买，其使用将扩展到2023年。
+Lovelock说，过去三年里，世界正在经历着从“人们推崇所有的技术”到“人们推崇信息技术而不是所有的技术”的转变。目前的主流趋势是咨询、软件、云计算。
 
-In a conference call with clients, Lovelock said there has been a shift over the last three years, where the world is going from "'we like all tech' to 'we like softer tech and not all tech.'" The trend is toward consulting, software, and the cloud, the softest of tech.在于客户的电话会议上，Lovelock说，过去三年里，世界正在经历着“‘我们喜欢所有的技术’到‘我们喜欢更软技术而不是所有的技术’的转变。”目前的趋势是咨询、软件、云计算。
+最薄弱的环节是移动设备。这并不是说人们不再想要它们了，而是移动设备领域，没有更多必须拥有的功能，没有什么新的功能和技术可以让人们提前几天排队，就像我们十年前看到的每一款新iPhone一样。Lovelock说：“人们对他们所拥有的设备感到满意。市场已经变成了一个可替代市场，所以人们扩大了他们的支出领域。”
 
-The weakest segment is mobile devices. It's not that people don’t want them any longer, but in the mobile device space there is no more must-have feature, nothing to make people line up for days in advance like we saw a decade ago with each new iPhone release. "People are happy with the devices they have. The market is down to a replacement market so they extend their spending," Lovelock said.
+在数据中心，也有类似的模式。服务持续时间越长，随之而来的，公司外部的托管和云计算也有越多的工作要做。
 
-In data center space, there's a similar pattern. Servers last longer, and at the same time, more work is being done outside the company at colocations and the cloud.
+Lovelock说：“云计算正在从数据中心拿走大量的钱，SaaS和IaaS对于公司来说都是可行的，都要赚取数据中心的钱。我们一直说软件支出增长最快，确实如此。但要认识到，它也在从其他领域赚取资金。预算并没有上升，而是我们只关注了开支。
 
-"The cloud is taking a lot [of money] out of the data center," Lovelock said. "SaaS and IaaS are all viable for organizations but taking data center dollars. Where we keep saying software is growing most quickly, that’s very true. But recognize that it is also taking money from other areas. Budgets aren’t going up, concentrations in spending is where we are seeing things happen."
-
-Join the Network World communities on [Facebook][2] and [LinkedIn][3] to comment on topics that are top of mind.
+加入网络社区[Facebook][2]和[LinkedIn][3]评论热点话题。
 
 --------------------------------------------------------------------------------
 
