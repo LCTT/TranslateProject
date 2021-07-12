@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (HankChow)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13573-1.html)
 
 在 Linux 命令行中收发 Gmail 邮件
 ======
