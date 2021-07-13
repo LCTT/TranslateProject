@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/can-windows-11-influence-linux/)
 [#]: author: (Ankush Das https://news.itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zz-air)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -100,7 +100,7 @@ via: https://news.itsfoss.com/can-windows-11-influence-linux/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zz-air](https://github.com/zz-air)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
