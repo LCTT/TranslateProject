@@ -10,7 +10,7 @@
 真实世界的应用程序是如何丢失数据？
 ======
 
-A great thing about modern app development is that there are cloud providers to worry about things like hardware failures or how to set up RAID. Decent cloud providers are extremely unlikely to lose your app’s data, so sometimes I get asked what backups are really for these days. Here are some real-world stories that show exactly what.
+现代应用程序开发的一大优点是，云提供商会担心硬件故障或如何设置RAID等问题。优秀的云提供商不太可能丢失你的应用数据, 所以有时我会被询问现在的备份究竟是什么呢？ 下面是一些现实世界的故事。
 
 ### 故事 #1
 
