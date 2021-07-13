@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/what-xml)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (amwps290)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
