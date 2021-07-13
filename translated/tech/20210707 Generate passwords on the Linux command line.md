@@ -3,37 +3,37 @@
 [#]: author: (Sumantro Mukherjee https://opensource.com/users/sumantro)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (turbokernel)
 [#]: publisher: ( )
 [#]: url: ( )
 
-Generate passwords on the Linux command line
+在 Linux 命令行中生成密码
 ======
-Create passwords that meet specific criteria on the command line.
+在命令行上创建符合特定规范的密码。
 ![Password lock][1]
 
-Most websites and applications ask users to create accounts with secure passwords so that they can provide tailored user experiences. While this tips the odds in favor of website developers, it certainly doesn't make life easier for users.
+大多数网站或应用都要求用户创建带有安全密码的账户，以便他们能够迎合用户体验。虽然这有利网站开发者，但肯定不会让用户的生活更轻松。
 
-Sometimes the rules for creating passwords are so strict that it's hard to get a good and allowable combination. It would be much easier to have a tool that generates secure passwords that meet whatever rules the website or application requires.
+有时，创建密码的规则是如此严格，以至于难以生成一个强壮且合规的组合。如果有一个工具可以生成符合网站或应用程序要求的任何规则的安全密码，那就容易多了。
 
-This is where pwgen comes into play. According to its [man page][2], "the pwgen program generates passwords which are designed to be easily memorized by humans, while being as secure as possible." It returns multiple password options that meet the criteria you provide so that you can select the one that you prefer (and might be more likely to remember).
+这就是 pwgen 的用武之地。根据它的[手册页][2]：“pwgen 生成的密码在设计上很容易被人类记住，同时又尽可能的安全。” 它返回多个符合你所提供的规则的密码选项，这样你就可以选择一个你喜欢的（而且可能更容易记住）。
 
-### Install pwgen
+### 安装 pwgen
 
-On Linux, you can install pwgen using your package manager. For instance, on Fedora:
+在 Linux 上，你可以通过包管理器安装 pwgen。例如，在 Fedora 上：
 
 
 ```
 `$ sudo dnf install pwgen`
 ```
 
-On macOS, use [MacPorts][3] or [Homebrew][4]. On Windows, use [Chocolatey][5].
+在 macOS 上，使用 [MacPorts][3] 或 [Homebrew][4]。在 Windows 上，使用 [Chocolatey][5]。
 
-### Generate passwords with pwgen
+### 使用 pwgen 生成密码
 
-There are several ways to pass arguments to pwgen to generate passwords, depending on what parameters you need. Here are some examples; consult the man page for more options.
+有几种方式可以通过向 pwgen 传递参数来生成密码，这取决于你所需的参数。这里有一些例子。更多的参数选项请查阅手册页。
 
-If you need a secure, hard-to-remember password of a specific length, run `pwgen --secure` (or `-s` for short) followed by the character length you need:
+如果你需要一个安全的、难以记忆的特定长度的密码，请运行 `pwgen --secure`（或简写 `-s`），后面跟上你所需的密码长度：
 
 
 ```
@@ -52,7 +52,7 @@ j6XkmdB3LBfqZf5mbL3GndliG PpZbeXfWOFCpNARyXt1FWPAb8 OLQS2HFuqkiSg56sdxNsg5vaJ
 gLmYUTp0XZJWvIVbA5rFvBT54 LEm6QVeTMinc056DC9c4V55cV ipV45Ewj704365byKhY8zn766
 ```
 
-Run `pwgen –symbols` (or `-y` for short) followed by the desired character length to generate a password that has special characters:
+运行 `pwgen -symbols`（或简写 `-y`），再加上所需的密码长度，生成包含特殊字符的密码：
 
 
 ```
@@ -71,7 +71,7 @@ aec#ii6Chophu3aigh*ai#le4 looleihoog:uo4Su"thiediec eeTh{o7Eechah7eeJ2uCeish!
 oi3jaiphoof$aiy;ieriexeiP Thozool3aipi|cahfu0Ha~e1e az/u8iel2Jaeph2vooshai9Wi
 ```
 
-Run `pwgen --capitalize` (or `-c` for short) followed by the character length to generate a password with at least one capital letter:
+运行 `pwgen --capitalize`(或缩写 `-c`)，后面跟上密码长度，生成包含大写字母的密码：
 
 
 ```
@@ -91,9 +91,9 @@ thung2pheiy2tooBeenuN8ia3 foh0oge1athei0oowieZen0ai iexei0io1vohsieThuCoy5ogi
 tohHe3uu2eXieheeQuoh7eit8 aiMieCeizeivu1ooch8aih0sh Riojei2yoah0AiWeiRoMieQu0
 ```
 
-### Make it easy
+### 让它变得简单
 
-Good, randomized passwords are hard to invent, especially because the human brain tends to prefer patterns. Make password generation easier on yourself by using pwgen. With a good [open source password manager][6], you can benefit from passwords that are hard to guess but easy to use from start to finish.
+由于人脑更倾向于选择模式，所以强壮随机密码难以生成。通过使用 pwgen，你可以轻松生成密码。借助于优秀的[开源密码管理器][6]，你可以完全从易于使用但难以猜测的密码中获益。
 
 --------------------------------------------------------------------------------
 
@@ -101,8 +101,8 @@ via: https://opensource.com/article/21/7/generate-passwords-pwgen
 
 作者：[Sumantro Mukherjee][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

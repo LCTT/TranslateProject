@@ -2,7 +2,7 @@
 [#]: via: (https://www.debugpoint.com/2021/06/setup-internet-minimal-install-server/)
 [#]: author: (Arindam https://www.debugpoint.com/author/admin1/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
