@@ -3,24 +3,26 @@
 [#]: author: (Chris Hermansen https://opensource.com/users/clhermansen)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13576-1.html)
 
 用 Groovy 解析 JSON 配置文件
 ======
-抛开关于是否使用 JSON 作为配置格式的争论，只需学习如何用 Groovy 来解析它。
-![Looking back with binoculars][1]
+
+> 抛开关于是否使用 JSON 作为配置格式的争论，只需学习如何用 Groovy 来解析它。
+
+![](https://img.linux.net.cn/data/attachment/album/202107/12/232406vpp4qrv6ee5a3erz.jpg)
 
 应用程序通常包括某种类型的默认或“开箱即用”的状态或配置，以及某种让用户根据自己的需要定制配置的方式。
 
-例如，[LibreOffice Writer][2] 通过其菜单栏上的**工具&gt;选项**，可以访问诸如用户数据、字体、语言设置等（更多）东西。一些应用程序（如 LibreOffice）提供了一个点选式的用户界面来管理这些设置。有些，像 [Tracker][3]（GNOME 的任务，用于索引文件），使用 XML 文件。还有一些，特别是基于 JavaScript 的应用，使用 JSON，尽管它有许多人抗议（例如，[这位作者][4]和[这位其他作者][5]）。
+例如，[LibreOffice Writer][2] 通过其菜单栏上的**工具 > 选项**，可以访问诸如用户数据、字体、语言设置等（以及更多的）设置。一些应用程序（如 LibreOffice）提供了一个点选式的用户界面来管理这些设置。有些，像 [Tracker][3]（GNOME 的“任务”，用于索引文件）使用 XML 文件。还有一些，特别是基于 JavaScript 的应用，使用 JSON，尽管它有许多人抗议（例如，[这位作者][4] 和 [这位其他作者][5]）。
 
-在这篇文章中，我将回避关于是否使用 JSON 作为配置文件格式的争论，并解释如何使用 [Groovy 编程语言][6]来解析这类信息。Groovy 以 Java 为基础，但有一套不同的设计重点，使 Groovy 感觉更像 Python。
+在这篇文章中，我将回避关于是否使用 JSON 作为配置文件格式的争论，并解释如何使用 [Groovy 编程语言][6] 来解析这类信息。Groovy 以 Java 为基础，但有一套不同的设计重点，使 Groovy 感觉更像 Python。
 
 ### 安装 Groovy
 
-由于 Groovy 是基于 Java 的，它也需要安装 Java。你可能会在你的 Linux 发行版的软件库中找到最近的、合适的 Java 和 Groovy 版本。或者，你可以按照其网站上的[说明][7]安装 Groovy。 Linux 用户的一个不错的选择是 [SDKMan][8]，你可以使用它来获取 Java、Groovy 和许多其他相关工具的多个版本。 对于本文，我将使用我的发行版的 OpenJDK11 和 SDKMan 的 Groovy 3.0.7。
+由于 Groovy 是基于 Java 的，它也需要安装 Java。你可能会在你的 Linux 发行版的软件库中找到最近的、合适的 Java 和 Groovy 版本。或者，你可以按照其网站上的 [说明][7] 安装 Groovy。 Linux 用户的一个不错的选择是 [SDKMan][8]，你可以使用它来获取 Java、Groovy 和许多其他相关工具的多个版本。 对于本文，我将使用我的发行版的 OpenJDK11 和 SDKMan 的 Groovy 3.0.7。
 
 ### 演示的 JSON 配置文件
 
@@ -45,9 +47,9 @@
    "drupal8": {
     "account_name": "root",
     "account_pass": "root",
-    "account_mail": "[box@example.com][10]",
+    "account_mail": "box@example.com",
     "site_name": "Drupal 8",
-    "site_mail": "[box@example.com][10]",
+    "site_mail": "box@example.com",
     "vhost": {
      "document_root": "drupal8",
      "url": "drupal8.dev",
@@ -57,9 +59,9 @@
    "drupal7": {
     "account_name": "root",
     "account_pass": "root",
-    "account_mail": "[box@example.com][10]",
+    "account_mail": "box@example.com",
     "site_name": "Drupal 7",
-    "site_mail": "[box@example.com][10]",
+    "site_mail": "box@example.com",
     "vhost": {
      "document_root": "drupal7",
      "url": "drupal7.dev",
@@ -73,16 +75,14 @@
 
 这是一个漂亮的、复杂的 JSON 文件，有几层结构，如：
 
-
 ```
-`<>.vdd.sites.drupal8.account_name`
+<>.vdd.sites.drupal8.account_name
 ```
 
 和一些列表，如：
 
-
 ```
-`<>.vm.synced_folders`
+<>.vm.synced_folders
 ```
 
 这里，`<>` 代表未命名的顶层。让我们看看 Groovy 是如何处理的。
@@ -106,17 +106,15 @@ println "config = $config"
 
 在终端的命令行上运行这个程序：
 
-
 ```
 $ groovy config1.groovy
-config = [vm:[ip:192.168.44.44, memory:1024, synced_folders:[[host_path:data/, guest_path:/var/www, type:default]], forwarded_ports:[]], vdd:[sites:[drupal8:[account_name:root, account_pass:root, account_mail:[box@example.com][10], site_name:Drupal 8, site_mail:[box@example.com][10], vhost:[document_root:drupal8, url:drupal8.dev, alias:[www.drupal8.dev]]], drupal7:[account_name:root, account_pass:root, account_mail:[box@example.com][10], site_name:Drupal 7, site_mail:[box@example.com][10], vhost:[document_root:drupal7, url:drupal7.dev, alias:[www.drupal7.dev]]]]]]
+config = [vm:[ip:192.168.44.44, memory:1024, synced_folders:[[host_path:data/, guest_path:/var/www, type:default]], forwarded_ports:[]], vdd:[sites:[drupal8:[account_name:root, account_pass:root, account_mail:box@example.com, site_name:Drupal 8, site_mail:box@example.com, vhost:[document_root:drupal8, url:drupal8.dev, alias:[www.drupal8.dev]]], drupal7:[account_name:root, account_pass:root, account_mail:box@example.com, site_name:Drupal 7, site_mail:box@example.com, vhost:[document_root:drupal7, url:drupal7.dev, alias:[www.drupal7.dev]]]]]]
 $
 ```
 
-输出显示了一个有两个键的顶层 map：`vm` 和 `vdd`。每个键都引用了它自己的值的 map。注意 `forwarded_ports` 键所引用的空列表。
+输出显示了一个有两个键的顶层映射：`vm` 和 `vdd`。每个键都引用了它自己的值的映射。注意 `forwarded_ports` 键所引用的空列表。
 
 这很容易，但它所做的只是把东西打印出来。你是如何获得各种组件的呢？下面是另一个程序，显示如何访问存储在 `config.vm.ip` 的值：
-
 
 ```
 import groovy.json.JsonSlurper
@@ -130,7 +128,6 @@ println "config.vm.ip = ${config.vm.ip}"
 
 运行它：
 
-
 ```
 $ groovy config2.groovy
 config.vm.ip = 192.168.44.44
@@ -139,31 +136,25 @@ $
 
 是的，这也很容易。 这利用了 Groovy 速记，这意味着：
 
-
 ```
-`config.vm.ip`
+config.vm.ip
 ```
 
 在 Groovy 中等同于：
 
-
 ```
-`config['vm']['ip']`
-```
-
-当 `config `和 `config.vm` 都是 `Map` 的实例，并且都等同于:
-
-
-```
-`config.get("vm").get("ip")`
+config['vm']['ip']
 ```
 
-在 Java 中。
+当 `config` 和 `config.vm` 都是 `Map` 的实例，并且都等同于在 Java 中的:
+
+```
+config.get("vm").get("ip")
+```
 
 仅仅是处理 JSON 就这么多了。如果你想有一个标准的配置并让用户覆盖它呢？在这种情况下，你可能想在程序中硬编码一个 JSON 配置，然后读取用户配置并覆盖任何标准配置的设置。
 
 假设上面的配置是标准的，而用户只想覆盖其中的一点，只想覆盖 `vm` 结构中的 `ip` 和 `memory` 值，并把它放在 `userConfig.json` 文件中:
-
 
 ```
 {
@@ -181,9 +172,8 @@ import groovy.json.JsonSlurper
 
 def jsonSlurper = new JsonSlurper()
 
-// 使用parseText()来解析一个字符串，而不是从文件中读取。
+// 使用 parseText() 来解析一个字符串，而不是从文件中读取。
 // 这给了我们一个“标准配置”
-
 def standardConfig = jsonSlurper.parseText("""
 {
  "vm": {
@@ -203,9 +193,9 @@ def standardConfig = jsonSlurper.parseText("""
    "drupal8": {
     "account_name": "root",
     "account_pass": "root",
-    "account_mail": "[box@example.com][10]",
+    "account_mail": "box@example.com",
     "site_name": "Drupal 8",
-    "site_mail": "[box@example.com][10]",
+    "site_mail": "box@example.com",
     "vhost": {
      "document_root": "drupal8",
      "url": "drupal8.dev",
@@ -215,9 +205,9 @@ def standardConfig = jsonSlurper.parseText("""
    "drupal7": {
     "account_name": "root",
     "account_pass": "root",
-    "account_mail": "[box@example.com][10]",
+    "account_mail": "box@example.com",
     "site_name": "Drupal 7",
-    "site_mail": "[box@example.com][10]",
+    "site_mail": "box@example.com",
     "vhost": {
      "document_root": "drupal7",
      "url": "drupal7.dev",
@@ -230,19 +220,15 @@ def standardConfig = jsonSlurper.parseText("""
 """)
 
 // 打印标准配置
-
 println "standardConfig = $standardConfig"
 
 //读入并解析用户配置信息
-
 def userConfig = jsonSlurper.parse(new File('userConfig.json'))
 
 // 打印出用户配置信息
-
 println "userConfig = $userConfig"
 
 // 一个将用户配置与标准配置合并的函数
-
 def mergeMaps(Map input, Map merge) {
   merge.each { k, v -&gt;
     if (v instanceof Map)
@@ -252,9 +238,7 @@ def mergeMaps(Map input, Map merge) {
   }
 }
 
-// 合并配置并打印出修改后的
-// 标准配置
-
+// 合并配置并打印出修改后的标准配置
 mergeMaps(standardConfig, userConfig)
 
 println "modified standardConfig $standardConfig"
@@ -262,24 +246,23 @@ println "modified standardConfig $standardConfig"
 
 以下列方式运行：
 
-
 ```
 $ groovy config3.groovy
-standardConfig = [vm:[ip:192.168.44.44, memory:1024, synced_folders:[[host_path:data/, guest_path:/var/www, type:default]], forwarded_ports:[]], vdd:[sites:[drupal8:[account_name:root, account_pass:root, account_mail:[box@example.com][10], site_name:Drupal 8, site_mail:[box@example.com][10], vhost:[document_root:drupal8, url:drupal8.dev, alias:[www.drupal8.dev]]], drupal7:[account_name:root, account_pass:root, account_mail:[box@example.com][10], site_name:Drupal 7, site_mail:[box@example.com][10], vhost:[document_root:drupal7, url:drupal7.dev, alias:[www.drupal7.dev]]]]]]
+standardConfig = [vm:[ip:192.168.44.44, memory:1024, synced_folders:[[host_path:data/, guest_path:/var/www, type:default]], forwarded_ports:[]], vdd:[sites:[drupal8:[account_name:root, account_pass:root, account_mail:box@example.com, site_name:Drupal 8, site_mail:box@example.com, vhost:[document_root:drupal8, url:drupal8.dev, alias:[www.drupal8.dev]]], drupal7:[account_name:root, account_pass:root, account_mail:box@example.com, site_name:Drupal 7, site_mail:box@example.com, vhost:[document_root:drupal7, url:drupal7.dev, alias:[www.drupal7.dev]]]]]]
 userConfig = [vm:[ip:201.201.201.201, memory:4096]]
-modified standardConfig [vm:[ip:201.201.201.201, memory:4096, synced_folders:[[host_path:data/, guest_path:/var/www, type:default]], forwarded_ports:[]], vdd:[sites:[drupal8:[account_name:root, account_pass:root, account_mail:[box@example.com][10], site_name:Drupal 8, site_mail:[box@example.com][10], vhost:[document_root:drupal8, url:drupal8.dev, alias:[www.drupal8.dev]]], drupal7:[account_name:root, account_pass:root, account_mail:[box@example.com][10], site_name:Drupal 7, site_mail:[box@example.com][10], vhost:[document_root:drupal7, url:drupal7.dev, alias:[www.drupal7.dev]]]]]]
+modified standardConfig [vm:[ip:201.201.201.201, memory:4096, synced_folders:[[host_path:data/, guest_path:/var/www, type:default]], forwarded_ports:[]], vdd:[sites:[drupal8:[account_name:root, account_pass:root, account_mail:box@example.com, site_name:Drupal 8, site_mail:box@example.com, vhost:[document_root:drupal8, url:drupal8.dev, alias:[www.drupal8.dev]]], drupal7:[account_name:root, account_pass:root, account_mail:box@example.com, site_name:Drupal 7, site_mail:box@example.com, vhost:[document_root:drupal7, url:drupal7.dev, alias:[www.drupal7.dev]]]]]]
 $
 ```
 
 以 `modified standardConfig` 开头的一行显示，`vm.ip` and `vm.memory` 的值被覆盖了。
 
-眼尖的读者会注意到，我没有检查畸形的 JSON，也没有仔细确保用户的配置是有意义的（不创建新字段，提供合理的值，等等）。所以用这个递归方法来合并两个 map 在现实中可能并不那么实用。
+眼尖的读者会注意到，我没有检查畸形的 JSON，也没有仔细确保用户的配置是有意义的（不创建新字段，提供合理的值，等等）。所以用这个递归方法来合并两个映射在现实中可能并不那么实用。
 
-好吧，我必须为家庭作业留下_一些_东西，不是吗？
+好吧，我必须为家庭作业留下 _一些_ 东西，不是吗？
 
 ### Groovy 资源
 
-Apache Groovy 网站有很多很棒的[文档][11]。另一个很棒的 Groovy 资源是 [Mr. Haki][12]。学习 Groovy 的一个非常好的理由是继续学习 [Grails][13]，它是一个非常高效的全栈网络框架，建立在 Hibernate、Spring Boot 和 Micronaut 等优秀组件之上。
+Apache Groovy 网站有很多很棒的 [文档][11]。另一个很棒的 Groovy 资源是 [Mr. Haki][12]。学习 Groovy 的一个非常好的理由是继续学习 [Grails][13]，它是一个非常高效的全栈 Web 框架，建立在 Hibernate、Spring Boot 和 Micronaut 等优秀组件之上。
 
 --------------------------------------------------------------------------------
 
@@ -288,7 +271,7 @@ via: https://opensource.com/article/21/6/groovy-parse-json
 作者：[Chris Hermansen][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
