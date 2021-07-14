@@ -14,7 +14,7 @@
 
 ### 故事 #1
 
-第一个故事来自一个数据科学项目: it was basically a big, complex pipeline that took data collected from ongoing research and crunched it in various ways to feed some cutting-edge model.它基本上是一个庞大而复杂的管道，从正在进行的研究中收集数据，并以各种方式处理，以提供一些前沿模型。The user-facing application hadn’t been launched yet, but a team of data scientists and developers had been working on building the model and its dataset for several months.这个面向用户的应用程序还没有启动，但一个由数据科学家和开发人员组成的团队已经为构建模型和数据集工作了几个月。
+第一个故事来自一个数据科学项目: it was basically a big, complex pipeline that took data collected from ongoing research and crunched it in various ways to feed some cutting-edge model.它基本上是一个从正在进行的研究中收集数据的庞大而复杂的管道，然后用各种不同的方式处理以满足一些尖端模型的需要。The user-facing application hadn’t been launched yet, but a team of data scientists and developers had been working on building the model and its dataset for several months.这个面向用户的应用程序还没有启动，但一个由数据科学家和开发人员组成的团队已经为构建模型和数据集工作了几个月。
 
 The people working on the project had their own development environments for experimental work. 在项目中工作的人有他们自己的实验工作的开发环境。They’d do something like `export ENVIRONMENT=simonsdev` in a terminal, and then all the software running in that terminal would run against that environment instead of the production environment.他们会在终端中做一些类似' export ENVIRONMENT=simonsdev '的事情，然后在终端中运行的所有软件将在该环境中运行，而不是在生产环境中。
 
