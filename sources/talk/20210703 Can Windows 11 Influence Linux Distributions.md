@@ -19,20 +19,18 @@ Windows 11 能影响 Linux 发行版吗？
 ### Some Linux Distributions Already Focus on Windows-like Experience: But, why?
 
 微软的 Windows 是最受欢迎的桌面操作系统，因其易操作、软件支持和硬件兼容占据了 88% 的市场分额。
-相反， Linux 占有 **大约 2% 的市场分额，** 即使 Linux 比 Windows 有更多的优势On the contrary, Linux has **about 2% of the market share,** even with all the added [benefits of Linux over Windows][1].
+相反， Linux 占有 **大约 2% 的市场分额，**  [即使 Linux 比 Windows 有更多的优势][1]。
 
-So what can Linux do to convince more users to try Linux as their desktop operating system?
+那么 Linux 能做什么来说服更多的用户将 Linux 作为他们的桌面操作系统呢？
 
-The main focus of every desktop operating system should be the user experience. While Microsoft and Apple have managed to provide a comfortable user experience for the masses, Linux distributions did not manage to get a big win on that front.
+每个桌面操作系统的主要关注点应该是用户体验。当微软和苹果设法为大众提供舒适的用户体验时， Linux 发行版并没有设法在这方面取得巨大的胜利。
 
-However, you will find several [Linux distributions that aim to replace Windows 10][2]. These Linux distributions try to provide a familiar user interface that could encourage a Windows user to consider switching to Linux.
+然而，你将会发现有几个 [Linux 发行版打算取代 Windows10][2]。这些 Linux 发行版试图提供一个熟悉的用户界面，鼓励 Windows 用户考虑切换到 Linux 。 
 
-And, due to the existence of such distributions, [switching to Linux in 2021][3] makes more sense than ever.
+而且，由于这些发行版的存在，[在 2021 年切换到 Linux][3] 比以往任何时候都更有意义。
 
-Hence, to get more users to jump-ship to Linux, Microsoft Windows has influenced many distributions for years now.
-
-### Is Windows 11 Better than Linux in Some Way?
-
+因此，为了让更多的用户跳转到 Linux ，微软 Window 多年来已经影响了许多发行版。
+### Windows11 在某些方面比 Linux 好？
 The user interface is constantly evolving with Windows. Even if that’s subjective, it is what most desktop users seem to be going for.
 
 So I’d say Windows 11 has made some attractive improvements on that front.
