@@ -12,15 +12,14 @@ Windows 11 能影响 Linux 发行版吗？
 
 微软的 Windows11 终于发布了。 有些人将其与 macOS 进行比较，另一些人则比较其本质细节以找到与 GNOME 和 KDE 的相似之处（这没有多大意义）。
 
-但是，在所以的热议中，我对另一件事很好奇- **微软的 Windows11 能影响桌面 Linux 发行版未来的决策吗？** 
+但是，在所以的热议中，我对另一件事很好奇—— **微软的 Windows11 能影响桌面 Linux 发行版未来的决策吗？** 
 
-Here I shall mention some of my thoughts on why it might happen, if it has happened before, and what the future holds for Linux distributions.
+在这里，如果它以前发生过，我将提到一些我的想法，关于它为什么会发生，以及 Linux 发行版未来会发生什么。
 
 ### Some Linux Distributions Already Focus on Windows-like Experience: But, why?
 
-Microsoft’s Windows is the most popular desktop operating system with **88% of the market share** for its ease of use, software support, and hardware compatibility.
-
-On the contrary, Linux has **about 2% of the market share,** even with all the added [benefits of Linux over Windows][1].
+微软的 Windows 是最受欢迎的桌面操作系统，因其易操作、软件支持和硬件兼容占据了 88% 的市场分额。
+相反， Linux 占有**大约 2% 的市场分额，**即使 Linux 比 Windows 有更多的优势On the contrary, Linux has **about 2% of the market share,** even with all the added [benefits of Linux over Windows][1].
 
 So what can Linux do to convince more users to try Linux as their desktop operating system?
 
