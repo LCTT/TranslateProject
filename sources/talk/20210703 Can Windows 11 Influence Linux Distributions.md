@@ -19,7 +19,7 @@ Windows 11 能影响 Linux 发行版吗？
 ### Some Linux Distributions Already Focus on Windows-like Experience: But, why?
 
 微软的 Windows 是最受欢迎的桌面操作系统，因其易操作、软件支持和硬件兼容占据了 88% 的市场分额。
-相反， Linux 占有**大约 2% 的市场分额，**即使 Linux 比 Windows 有更多的优势On the contrary, Linux has **about 2% of the market share,** even with all the added [benefits of Linux over Windows][1].
+相反， Linux 占有 **大约 2% 的市场分额，** 即使 Linux 比 Windows 有更多的优势On the contrary, Linux has **about 2% of the market share,** even with all the added [benefits of Linux over Windows][1].
 
 So what can Linux do to convince more users to try Linux as their desktop operating system?
 
