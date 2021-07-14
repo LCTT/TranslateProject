@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (YungeG)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13578-1.html)
 
 像查询数据库一样查询你的 Linux 操作系统信息
 ======
