@@ -2,7 +2,7 @@
 [#]: via: (https://www.debugpoint.com/2021/06/plasma-5-22-kubuntu-21-04/)
 [#]: author: (Arindam https://www.debugpoint.com/author/admin1/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
