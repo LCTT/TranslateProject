@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/my-linux-story)
 [#]: author: (Chris Hermansen https://opensource.com/users/clhermansen)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (shiboi77 )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
