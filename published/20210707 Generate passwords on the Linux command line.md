@@ -4,37 +4,37 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (turbokernel)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13582-1.html)
 
 在 Linux 命令行中生成密码
 ======
-在命令行上创建符合特定规范的密码。
-![Password lock][1]
 
-大多数网站或应用都要求用户创建带有安全密码的账户，以便他们能够迎合用户体验。虽然这有利网站开发者，但肯定不会让用户的生活更轻松。
+> 在命令行上创建符合特定规范的密码。
+
+![](https://img.linux.net.cn/data/attachment/album/202107/15/094657l4l494c0080u2ca4.jpg)
+
+大多数网站或应用都要求用户创建带有安全密码的账户，以便他们能够迎合用户体验。虽然这有利于网站开发者，但肯定不会让用户的生活更轻松。
 
 有时，创建密码的规则是如此严格，以至于难以生成一个强壮且合规的组合。如果有一个工具可以生成符合网站或应用程序要求的任何规则的安全密码，那就容易多了。
 
-这就是 pwgen 的用武之地。根据它的[手册页][2]：“pwgen 生成的密码在设计上很容易被人类记住，同时又尽可能的安全。” 它返回多个符合你所提供的规则的密码选项，这样你就可以选择一个你喜欢的（而且可能更容易记住）。
+这就是 `pwgen` 的用武之地。根据它的 [手册页][2]：“pwgen 生成的密码是为了让人容易记住，同时又尽可能的安全。” 它返回符合你所提供的规则的多个密码选项，这样你就可以选择一个你喜欢的（而且可能更容易记住）。
 
 ### 安装 pwgen
 
-在 Linux 上，你可以通过包管理器安装 pwgen。例如，在 Fedora 上：
-
+在 Linux 上，你可以通过包管理器安装 `pwgen`。例如，在 Fedora 上：
 
 ```
-`$ sudo dnf install pwgen`
+$ sudo dnf install pwgen
 ```
 
-在 macOS 上，使用 [MacPorts][3] 或 [Homebrew][4]。在 Windows 上，使用 [Chocolatey][5]。
+在 macOS 上，可以使用 [MacPorts][3] 或 [Homebrew][4]。在 Windows 上，可以使用 [Chocolatey][5]。
 
 ### 使用 pwgen 生成密码
 
-有几种方式可以通过向 pwgen 传递参数来生成密码，这取决于你所需的参数。这里有一些例子。更多的参数选项请查阅手册页。
+有几种方式可以通过向 `pwgen` 传递参数来生成密码，这取决于你所需的参数。这里有一些例子。更多的参数选项请查阅手册页。
 
 如果你需要一个安全的、难以记忆的特定长度的密码，请运行 `pwgen --secure`（或简写 `-s`），后面跟上你所需的密码长度：
-
 
 ```
 $ pwgen -s 25
@@ -54,25 +54,23 @@ gLmYUTp0XZJWvIVbA5rFvBT54 LEm6QVeTMinc056DC9c4V55cV ipV45Ewj704365byKhY8zn766
 
 运行 `pwgen -symbols`（或简写 `-y`），再加上所需的密码长度，生成包含特殊字符的密码：
 
-
 ```
 $ pwgen -y 25
 Osh0chahxe0won9aech4ese?v pemoh2ohm9aim;iu4Eiy"ah0y Taiqu;o2aeSh+o4aedoagait3
 Vei;phoh5owai5jui+t|ei3ot teu!w7mahxoh0Po7ohph8Iez6 quie#phooCeu2lohm5shaPaer
-eTh5AechaexieToh9ez5eeZ;e nuloh1ico0Nool:eG&lt;aiv`ah, Heeghuo8ahzii1Iep~ie_ch7p
+eTh5AechaexieToh9ez5eeZ;e nuloh1ico0Nool:eG<aiv`ah, Heeghuo8ahzii1Iep~ie_ch7p
 oe6Xee6uchei7Oroothail~iL ahjie!Chee.W4wah[wuu]phoo ees7ieb!i[ibahhei1xoz2Woh
-Atei9ooLu7lo~sh&gt;aig@ae9No OVahh2OhNgahtu8iethaR@i7o ouFai8ahP@eil4Ieh5le5ipu5
+Atei9ooLu7lo~sh>aig@ae9No OVahh2OhNgahtu8iethaR@i7o ouFai8ahP@eil4Ieh5le5ipu5
 eeT4tahW0ieng9fe?i5auM3ie seet0ohc4aiJei]koiGha2zu% iuh@oh4eix0Vuphi?o,hei9me
 loh0Aeph=eix(ohghe6chee3z ahgh2eifiew8dahG_aeph8woo oe!B4iasaeHo`ungie3taekoh
-cei!c&lt;ung&amp;u,shee6eir7Eigo va6phou8ooYuoquohghi-n6Qu eeph4ni\chi2shohg3Die1hia
+cei!c<ung&u,shee6eir7Eigo va6phou8ooYuoquohghi-n6Qu eeph4ni\chi2shohg3Die1hia
 uCagha8Toos2bahLai7phuph` Zue2thieng9ohhoo~shoh6ese Aet7Lio1ailee^qu4hiech5ie
 dee]kuwu9OhTh3shoi2eijoGe daethahH6ahV3eekoo9aep$an aehiiMaquieHee9moh`l_oh4l
 aec#ii6Chophu3aigh*ai#le4 looleihoog:uo4Su"thiediec eeTh{o7Eechah7eeJ2uCeish!
 oi3jaiphoof$aiy;ieriexeiP Thozool3aipi|cahfu0Ha~e1e az/u8iel2Jaeph2vooshai9Wi
 ```
 
-运行 `pwgen --capitalize`(或缩写 `-c`)，后面跟上密码长度，生成包含大写字母的密码：
-
+运行 `pwgen --capitalize`（或缩写 `-c`），后面跟上密码长度，生成包含大写字母的密码：
 
 ```
 $ pwgen -c 25
@@ -93,7 +91,7 @@ tohHe3uu2eXieheeQuoh7eit8 aiMieCeizeivu1ooch8aih0sh Riojei2yoah0AiWeiRoMieQu0
 
 ### 让它变得简单
 
-由于人脑更倾向于选择模式，所以强壮随机密码难以生成。通过使用 pwgen，你可以轻松生成密码。借助于优秀的[开源密码管理器][6]，你可以完全从易于使用但难以猜测的密码中获益。
+由于人脑更倾向于选择模式，所以强壮的随机密码难以生成。通过使用 `pwgen`，你可以轻松生成密码。借助于优秀的 [开源密码管理器][6]，你可以完全从易于使用但难以猜测的密码中获益。
 
 --------------------------------------------------------------------------------
 
