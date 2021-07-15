@@ -31,35 +31,36 @@ Windows 11 能影响 Linux 发行版吗？
 
 因此，为了让更多的用户跳转到 Linux ，微软 Window 多年来已经影响了许多发行版。
 ### Windows11 在某些方面比 Linux 好？
-The user interface is constantly evolving with Windows. Even if that’s subjective, it is what most desktop users seem to be going for.
+用户界面随着 Windows 的发展而不断的发展。即使这是主观的，它似乎是大多数桌面用户的选择。
 
-So I’d say Windows 11 has made some attractive improvements on that front.
+所以我要说 Windows11 在这方面做了一些有吸引力的改进。
 
 ![][4]
 
-Not just limited to the UI/UX, things like integrating Microsoft Team’s chat features in the taskbar makes it convenient for users to instantly connect with anyone.
+不仅仅局限于 UI/UX ，比如在任务栏中集成微软团队的聊天功能，可以方便用户与任何人即时联系。
 
-**While Linux distributions do not have their own full-fledged services, more out-of-the-box integrations tailored like this should make the onboarding experience easier for new users.**
+**虽然 Linux 发行版没有自己成熟的服务，但是像这样定制的更多开箱即用的集成，应该会使新用户更容易上手。**
 
-And that brings me to another aspect of Windows 11—a personalized news and information feed.
+并且这让我想起了 Windows11 的另一个方面——一个个性化的欣慰和信息提要。
 
-Sure, Microsoft collects data for that, and you may have to sign in using a Microsoft account. But this is yet something that reduces friction for the users to go and look for a separate app to keep track of weather, news, and other daily information.
+当然，微软会为此收集数据，你可能需要使用微软账号登录。但这也减少了用户寻找独立应用程序来跟踪天气、新闻和其他日常信息。
 
-Linux does not force these choices for a user but features/integrations like this can be added as additional options which can be presented in the form of a choice to users.
+Linux 不会强迫用户做出这些选择，但是像这样的特性/集成可以作为额外的选项添加，可以以选择的形式呈现给用户。
 
-**In other words, making things more accessible while integrated with the OS should get rid of a steep learning curve.**
+**换句话说，在与操作系统集成的同时使事物更容易访问，应该可以摆脱陡峭的学习曲线。**
 
-And, the dreaded Microsoft Store has also got a serious upgrade with Windows 11.
+而且，可怕的微软商店也在 Windows11 上进行了重大升级。
 
 ![][5]
 
-Unfortunately, for Linux distributions, I don’t see much meaningful upgrade to the app centers to make it visually appealing, and something interesting.
+不幸的是，对于 Linux 发行版，我没有看到对应用中心进行有意义的升级，来使其在视觉上更吸引人，更有趣。
 
-elementaryOS is probably making a good effort to focus on the UX/UI, and the evolving the experience with app center but for the most other distros, no significant upgrade.
 
-![Software Manager in Linux Mint 20.1][6]
+elementaryOS 可能正努力专注于 UX/UI ，并发展应用中心的体验，但对于大多数其他发行版，没有重大的升级。
 
-While I appreciate what Deepin Linux does in this regard, but it isn’t the popular choice for many users who try Linux for the first time.
+![Linux Mint 20.1 中的软件管理器][6]
+
+虽然我很欣赏 Deepin Linux 在这方面所做的，但它并不是许多用户第一次尝试 Linux 时的热门选择。
 
 ### Windows 11 Introduces More Competition: Linux Has to Keep Up
 
