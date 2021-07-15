@@ -36,13 +36,13 @@ FreeDOS 简史
 
 ###早期的 DOS
 
-早期的 DOS 在内存中运行最多为640千字节, DOS really couldn't do much more than manage the hardware and allow the user to launch applications. As a result, the PC-DOS 1.0 command line was pretty anemic, only including a few commands to set the date and time, manage files, control the terminal, and format floppy disks. DOS also included a BASIC language interpreter, which was a standard feature in all personal computers of the era.
+早期的 DOS 在内存中运行最多为640千字节, DOS 只能管理硬件，允许用户启动应用程序。因此，PC-DOS 1.0 命令行非常贫乏，只包含了一些设置日期和时间、管理文件、控制终端和格式化软盘的命令。DoS还包括一个基本的语言解释器，这是这个时代所有个人计算机的一个基本功能。
 
-It wasn't until PC-DOS 2.0 that DOS became more interesting, adding new commands to the command line, and including other useful tools. But for me, it wasn't until MS-DOS 5.0 in 1991 that DOS began to feel "modern." Microsoft overhauled DOS in this release, updating many of the commands and replacing the venerable Edlin editor with a new full-screen editor that was more user-friendly. DOS 5 included other features that I liked, as well, such as a new BASIC interpreter based on Microsoft QuickBASIC Compiler, simply called QBASIC. If you've ever played the Gorillas game on DOS, it was probably in MS-DOS 5.0.
+直到 PC-DOS 2.0，DOS 才变得更加有趣，在命令行中添加了新的命令，并包含了其他有用的工具。但对我来说，直到1991 年 MS-DOS 5.0 才开始感觉到先进。微软在这个版本中对 DOS 进行了全面改革，更新了许多命令，并用一个新的全屏编辑器取代了老旧的 Edlin 编辑器，这个编辑器对用户更加友好。 DoS 5还包括我喜欢的其他特性，比如基于 Microsoft QuickBASIC Compiler, 简称 QBASIC. 如果你曾经在DOS上玩过 the Gorillas游戏, 可能是在 MS-DOS 5.0中运行。
 
-Despite these upgrades, I wasn't entirely satisfied with the DOS command line. DOS never strayed far from the original design, which proved limiting. DOS gave the user a few tools to do some things from the command line—otherwise, you were meant to use the DOS command line to launch applications. Microsoft assumed the user would spend most of their time in a few key applications, such as a word processor or spreadsheet.
+尽管进行了这些升级，但我对 DOS 命令行并不完全满意。DOS 从来没有偏离原来的设计，改变有限。DOS为用户提供了一些工具，可以从命令行执行一些事情--否则，你就应该使用DOS命令行来启动应用程序。微软认为用户大部分时间都会花在几个关键的应用程序上，比如文字处理器或电子表格。
 
-But developers wanted a more functional DOS, and a sub-industry sprouted to offer neat tools and programs. Some were full-screen applications, but many were command-line utilities that enhanced the DOS command environment. When I learned a bit of C programming, I started writing my own utilities that extended or replaced the DOS command line. And despite the rather limited underpinnings of MS-DOS, I found that the third-party utilities, plus my own, created a powerful DOS command line.
+但是开发人员想要一个功能更强的 DOS，此时一个子行业正在萌芽，以提供整洁的工具和程序。有些是全屏应用程序，但也有许多是增强DOS命令环境的命令行实用程序. 当我学到一点C编程时，我开始编写自己的实用程序，扩展或替换DOS命令行。尽管MS-DOS的基础相当有限，但我发现第三方实用程序加上我自己的工具创建了一个功能强大的DOS命令行。
 
 ### FreeDOS
 
