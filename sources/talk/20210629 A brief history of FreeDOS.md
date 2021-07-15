@@ -7,28 +7,28 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-A brief history of FreeDOS
+FreeDOS 简史
 ======
-Throughout its nearly 30-year journey, FreeDOS has been the modern DOS.
-![Person typing on a 1980's computer][1]
+经历了近30年的发展, FreeDOS 已经成为了世界先进的 DOS。
+![第一批使用计算机的人][1]
 
-A master was explaining the nature of [The Tao of Programming][2] to one of his novices. "The Tao is embodied in all software—regardless of how insignificant," said the master.
+一个老师正在给他的一个学生讲[编程之道][2]。 “编程之道包含在所有的软件中--不管它多么微不足道，” 老师说道。
 
-"Is Tao in a hand-held calculator?" asked the novice.
+“编程之道在手提电脑里面吗?” 学生问道。
 
-"It is," came the reply.
+“是的,” 老师回答道。
 
-"Is the Tao in a video game?" continued the novice.
+“编程之道在电脑游戏里面吗?”学生继续问道
 
-"It is even in a video game," said the master.
+“他甚至在电脑游戏里面," 老师说。
 
-"And is the Tao in the DOS for a personal computer?"
+“那编程之道在个人电脑的操作系统里面吗?”
 
-The master coughed and shifted his position slightly. "The lesson is over for today," he said.
+老师咳嗽了一下，稍稍改变了姿势，说道，“今天的课结束了。” 
 
-The Tao of Programming, Geoffrey James, InfoBooks, 1987
+编程之道, Geoffrey James, 信息类书籍, 1987
 
-Computing used to be limited only to expensive mainframes and "Big Iron" computer systems like the PDP11. But the advent of the microprocessor brought about a computing revolution in the 1970s. You could finally have a computer in your home—the "personal computer" had arrived!
+过去，计算仅限于昂贵的大型机和“超大型计算机”计算机系统，如PDP 11。但是微处理器的出现在20世纪70年代带来了一场计算机革命。 You could finally have a computer in your home—the "personal computer" had arrived!
 
 The earliest personal computers I remember seeing included the Commodore, TRS-80, and Apple. The personal computer became such a hot topic that IBM decided to enter the market. After a rapid development cycle, IBM released the IBM 5150 Personal Computer (the original "IBM PC") in August 1981.
 
