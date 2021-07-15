@@ -7,7 +7,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-我家庭的 Linux 的故事
+我的家庭 Linux 故事
 ======
 Our first attempt at Linux was just an apt-get away.
 ![Terminal command prompt on orange background][1]
