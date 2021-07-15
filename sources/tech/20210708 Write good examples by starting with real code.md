@@ -1,85 +1,83 @@
-[#]: subject: (Write good examples by starting with real code)
-[#]: via: (https://jvns.ca/blog/2021/07/08/writing-great-examples/)
-[#]: author: (Julia Evans https://jvns.ca/)
-[#]: collector: (lujun9972)
-[#]: translator: (zepoch)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: subject: "Write good examples by starting with real code"
+[#]: via: "https://jvns.ca/blog/2021/07/08/writing-great-examples/"
+[#]: author: "Julia Evans https://jvns.ca/"
+[#]: collector: "lujun9972"
+[#]: translator: "zepoch"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
-Write good examples by starting with real code
+从实际代码开始编写好的示例
 ======
 
-When I write about programming, I spend a lot of time trying to come up with good examples. I haven’t seen a lot written about how to make examples, so here’s a little bit about my approach to writing examples!
+当我写关于编程的事情时，我花费了大量时间在生产好的示例上。我从未见过有人写过关于如何写出好的示例，所以我就写了一下如何写出一份好的示例。
 
-The basic idea here is to start with real code that you wrote and then remove irrelevant details to make it into a self-contained example instead of coming up with examples out of thin air.
+最基础的就是你真的去写代码，然后删除不相关的细节，使其成为一个自成一体的例子，而不是无中生有地想出一些例子。
 
-I’ll talk about two kinds of examples: realistic examples and suprising examples.
+我将会谈论两种示例：实例和令人惊讶的例子
 
-### good examples are realistic
+### 好的示例是真实的
 
-To see why examples should be realistic, let’s first talk about an unrealistic example! Let’s say we’re trying to explain Python lambdas (which is just the first concept I thought of). You could give this example, of using `map` and a lambda to double a set of numbers.
+为了说明为什么好的案例应该是真实的，我们就先讨论一个不真实的案例。假设我们在试图解释 Python 的 lambda 函数（这只是我想到的第一个概念）。你可以举一个例子，使用 `map` 和 lambda 来让一组数字变为原先的两倍。
 
 ```
 numbers = [1, 2, 3, 4]
 squares = map(lambda x: x * x, numbers)
 ```
 
-I think this example is unrealistic for a couple of reasons:
+我觉得这个示例是不真实的，有两方面的原因：
 
-  * squaring a set of numbers isn’t something you’re super likely to do in a real program unless it’s for Project Euler or something (there are LOTS of operations on lists that are a lot more likely)
-  * This usage of `map` is not idiomatic Python, even if you were doing this I would write `[x*x for x in numbers]` instead
+  * 将一组数字作平方运算不是你想要在真正的程序中完成的事，除非是项目 Euler 或某种东西（也有很多其它的更有可能的操作系统）
+  * `map` 在 Python 中并不是很常用，即便是做这个我也更愿意写 `[x*x for x in numbers]` 
 
-
-
-A more realistic example of Python lambdas is using them with `sort`, like this;
+一个更加真实的 Python lambdas 的示例是使用 `sort` 函数，就像这样：
 
 ```
 children = [{"name": "ashwin", "age": 12}, {"name": "radhika", "age": 3}]
 sorted_children = sorted(children, key=lambda x: x['age'])
 ```
 
-But this example is still pretty contrived (why exactly do we need to sort these children by age?). So how do we actually make realistic examples?
+但是这个示例是被精心设计的（为什么我们需要按照年龄对这些孩子进行排序呢？）。所以我们如何来做一个真实的示例呢？
 
-### how to make your examples realistic: look at actual code you wrote
+### 如何让你的示例真实起来：看你写实际代码
 
-I think the easiest way to make realistic examples is, instead of pulling an example out of thin air (like I did with that `children` example), instead just start by looking at real code!
+我认为最简单的来生成一个例子的方法就是，不是凭空出现一个例子（就像我用那个`儿童`的例子），而只是从看真正的代码开始！
 
-For example, if I grep a bunch of Python code I wrote for `sort.+key`, I find LOTS of real examples of me sorting a list by some criterion, like:
+举一个例子吧，如果我要用 `sort.+key` 来编写一串 Python 代码，我会发现很多我按某个标准对列表进行排序的真实例子，例如：
 
   * `tasks.sort(key=lambda task: task['completed_time'])`
   * `emails = reversed(sorted(emails, key=lambda x:x['receivedAt']))`
   * `sorted_keysizes = sorted(scores.keys(), key=scores.get)`
   * `shows = sorted(dates[date], key=lambda x: x['time']['performanceTime'])`
 
+在这里很容易看到一个规律——这些大都是按时间排序的！因此，您可以明白如何轻松地将按时间排序的某些对象（电子邮件、事件等）的简单实例放在一起。
 
+### 现实的例子有助于"推销"你试图解释的概念
 
-It’s pretty easy to see a pattern here – a lot of these are sorting by time! So you can see how you could easily put together a simple realistic example of sorting some objects (emails, events, etc) by time.
+当我试图去解释一个想法（就好比 Python Lambdas）的时候，我通常也会试图说服读者，说这是值得学习的想法。Python lambdas 是如此的有用！当我去试图说服某个人 lambdas 是很好用的时候，让他想象一下 lambdas 如何帮助他们完成一项他们将要去做的任务或是以及一项他们以前做过的任务，对说服他会很有帮助。
 
-### realistic examples help “sell” the concept you’re trying to explain
-
-When I’m trying to explain an idea (like Python lambdas), I’m usually also trying to convince the reader that it’s worth learning! Python lambdas are super useful! And to convince someone that lambdas are useful, it really helps to show someone how lambdas could help them do a task that they could actually imagine themselves doing, and ideally a task that they’ve done before.
-
-### distilling down examples from real code can take a long time
+### 从真实代码中提炼出示例可能需要很长时间
 
 The example I just gave of explaining how to use `sort` with `lambda` is pretty simple and it didn’t take me a long time to come up with, but turning real code into a standalone example can take a really long time!
 
-For example, I was thinking of including an example of some weird CSS behaviour in this post to illustrate how it’s fun to create examples with weird or surprising behaviour. I spent 2 hours taking a real problem I had this week, making sure I understood what was actually happening with the CSS, and making it into a minimal example.
+我给出的解释如何使用 `lambda` 和 `sort` 函数的例子是十分简单的，它并不需要花费我很长时间来想出来，但是将真实的代码化为一个独立的示例则是会需要花费很长的时间
 
-In the end it “just” took [5 lines of HTML and a tiny bit of CSS][1] to demonstrate the problem and it doesn’t really look like it took hours to write. But originally it was hundreds of lines of JS/CSS/JavaScript, and it takes time to untangle all that and come up with something small that gets at the heart of the issue!
+举个例子，我想在这篇文章中融入一些奇怪的 CSS 行为的例子来说明创造一个怪异或令人惊讶的案例是十分有趣的。我花费了两个小时来解决我这周遇到的一个实际的问题，确保我理解 CSS 的实际情况，并将其变成一个迷你的示例。
 
-But I think it’s worth it to take the time to make examples really clear and minimal – if hundreds of people are reading your example, you’re saving them all so much time!
+最后，它“仅仅”用了[五行 HTML 和一点点的 CSS][1] 来说明了这个问题，看起来并不想是我花费了好多小时写出来的。但是最初它却是几百行的 JS/CSS/JavaScript，它需要花费很长时间来将所有的代码化为核心的很少的代码。
 
-### that’s all for now!
+但我认为花点时间把示例讲得非常简单明了是值得的——如果有成百上千的人在读你的示例，你就节省了他们这么多时间！
 
-I think there’s a lot more to say about examples – for instance I think there are a few different types of useful examples, like:
+### 就这么多了！
 
-  * examples that are surprising to the reader, which are more about changing someone’s mental model than providing code to use directly
-  * examples that are easy to copy and paste to use as a starting point
+我觉得关于示例还有更多可以去讲的——我觉得还有几个不同类型的有用示例，例如
+
+  * 可以更多的改变人的思维而不是直接提供使用的代码的让读者感到惊喜的示例
+  * 易于复制粘贴以用作起点的示例
 
 
 
-but maybe I’ll write about that another day :)
+也许有一天我还会再写一些呢？ :)
 
 --------------------------------------------------------------------------------
 
@@ -87,7 +85,7 @@ via: https://jvns.ca/blog/2021/07/08/writing-great-examples/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zepoch](https://github.com/zepoch)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
