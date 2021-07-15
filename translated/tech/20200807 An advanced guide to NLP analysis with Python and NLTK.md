@@ -259,7 +259,6 @@ words_tagged = nltk.pos_tag(words)
 grammar = "NP: {&lt;JJ&gt;&lt;NN&gt;}"
 ```
 
-Next, use the grammar to create a tree:
 然后用这个<ruby>语法<rt>grammar</rt></ruby>创建一颗<ruby>树<rt>tree</rt></ruby>：
 
 
