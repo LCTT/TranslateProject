@@ -28,15 +28,15 @@ FreeDOS 简史
 
 编程之道, Geoffrey James, 信息类书籍, 1987
 
-过去，计算仅限于昂贵的大型机和“超大型计算机”计算机系统，如PDP 11。但是微处理器的出现在20世纪70年代带来了一场计算机革命。 You could finally have a computer in your home—the "personal computer" had arrived!
+过去，计算仅限于昂贵的大型机和“超大型计算机”计算机系统，如PDP 11。但是微处理器的出现在20世纪70年代带来了一场计算机革命。 你终于可以在家里有一台电脑了——“个人电脑浪潮”已经到了！
 
-The earliest personal computers I remember seeing included the Commodore, TRS-80, and Apple. The personal computer became such a hot topic that IBM decided to enter the market. After a rapid development cycle, IBM released the IBM 5150 Personal Computer (the original "IBM PC") in August 1981.
+我记得看到的最早的个人电脑包括 Commodore, TRS-80, 和 Apple。 个人电脑成了一个热门话题，所以 IBM 决定进入这个市场。 在经历了一个快速的开发周期之后，IBM 于 1981 年 8 月发布了 IBM 5150 个人计算机(最初的“IBM PC”)。
 
-Creating a computer from scratch is no easy task, so IBM famously used "off-the-shelf" hardware to build the PC, and licensed other components from outside developers. One of those was the operating system, licensed from Microsoft. In turn, Microsoft acquired 86-DOS from Seattle Computer Products, applied various updates, and debuted the new version with the IBM PC as IBM PC-DOS.
+从零开始创建一台计算机并非易事，因此 IBM 用现成的硬件来构建 PC 而闻名，并从外部开发人员那里获得了其他组件的许可。 其中之一是微软授权的操作系统。反过来，微软从西雅图电脑产品公司获得了 86-DOS ，进行了各种更新，并在 IBM PC 上推出了新版本的 IBM PC-DOS。
 
-### Early DOS
+###早期的 DOS
 
-Running in memory _up to_ 640 kilobytes, DOS really couldn't do much more than manage the hardware and allow the user to launch applications. As a result, the PC-DOS 1.0 command line was pretty anemic, only including a few commands to set the date and time, manage files, control the terminal, and format floppy disks. DOS also included a BASIC language interpreter, which was a standard feature in all personal computers of the era.
+早期的 DOS 在内存中运行最多为640千字节, DOS really couldn't do much more than manage the hardware and allow the user to launch applications. As a result, the PC-DOS 1.0 command line was pretty anemic, only including a few commands to set the date and time, manage files, control the terminal, and format floppy disks. DOS also included a BASIC language interpreter, which was a standard feature in all personal computers of the era.
 
 It wasn't until PC-DOS 2.0 that DOS became more interesting, adding new commands to the command line, and including other useful tools. But for me, it wasn't until MS-DOS 5.0 in 1991 that DOS began to feel "modern." Microsoft overhauled DOS in this release, updating many of the commands and replacing the venerable Edlin editor with a new full-screen editor that was more user-friendly. DOS 5 included other features that I liked, as well, such as a new BASIC interpreter based on Microsoft QuickBASIC Compiler, simply called QBASIC. If you've ever played the Gorillas game on DOS, it was probably in MS-DOS 5.0.
 
