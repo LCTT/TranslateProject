@@ -3,18 +3,18 @@
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
 [#]: translator: "zepoch"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
 从实际代码开始编写好的示例
 ======
 
-当我写关于编程的事情时，我花费了大量时间在生产好的示例上。我从未见过有人写过关于如何写出好的示例，所以我就写了一下如何写出一份好的示例。
+当编写程序时，我花费了大量时间在编写好的示例上。我从未见过有人写过关于如何写出好的示例，所以我就写了一下如何写出一份好的示例。
 
-最基础的就是你真的去写代码，然后删除不相关的细节，使其成为一个自成一体的例子，而不是无中生有地想出一些例子。
+基础思路就是从你写的真实代码开始，然后删除不相关的细节，使其成为一个独立的例子，而不是无中生有地想出一些例子。
 
-我将会谈论两种示例：实例和令人惊讶的例子
+我将会谈论两种示例：基于真实案例的示例和奇怪的示例
 
 ### 好的示例是真实的
 
@@ -25,9 +25,9 @@ numbers = [1, 2, 3, 4]
 squares = map(lambda x: x * x, numbers)
 ```
 
-我觉得这个示例是不真实的，有两方面的原因：
+我觉得这个示例不是真实的，有两方面的原因：
 
-  * 将一组数字作平方运算不是你想要在真正的程序中完成的事，除非是项目 Euler 或某种东西（也有很多其它的更有可能的操作系统）
+  * 将一组数字作平方运算不是在真实的程序中完成的事，除非是项目 Euler 或某种东西（更多的可能是针对列表的操作）
   * `map` 在 Python 中并不是很常用，即便是做这个我也更愿意写 `[x*x for x in numbers]` 
 
 一个更加真实的 Python lambdas 的示例是使用 `sort` 函数，就像这样：
@@ -58,9 +58,8 @@ sorted_children = sorted(children, key=lambda x: x['age'])
 
 ### 从真实代码中提炼出示例可能需要很长时间
 
-The example I just gave of explaining how to use `sort` with `lambda` is pretty simple and it didn’t take me a long time to come up with, but turning real code into a standalone example can take a really long time!
 
-我给出的解释如何使用 `lambda` 和 `sort` 函数的例子是十分简单的，它并不需要花费我很长时间来想出来，但是将真实的代码化为一个独立的示例则是会需要花费很长的时间
+我给出的解释如何使用 `lambda` 和 `sort` 函数的例子是十分简单的，它并不需要花费我很长时间来想出来，但是将真实的代码化为一个独立的示例则是会需要花费很长的时间！
 
 举个例子，我想在这篇文章中融入一些奇怪的 CSS 行为的例子来说明创造一个怪异或令人惊讶的案例是十分有趣的。我花费了两个小时来解决我这周遇到的一个实际的问题，确保我理解 CSS 的实际情况，并将其变成一个迷你的示例。
 
@@ -86,7 +85,7 @@ via: https://jvns.ca/blog/2021/07/08/writing-great-examples/
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
 译者：[zepoch](https://github.com/zepoch)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[校对者ID](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
