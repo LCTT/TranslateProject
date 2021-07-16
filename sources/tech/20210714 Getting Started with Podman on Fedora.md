@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/getting-started-with-podman-in-fedora/)
 [#]: author: (Yazan Monshed https://fedoramagazine.org/author/yazanalmonshed/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
