@@ -46,17 +46,17 @@ FreeDOS 简史
 
 ### FreeDOS
 
-In early 1994, I started seeing a lot of interviews with Microsoft executives in tech magazines saying the next version of Windows would totally do away with DOS. I'd used Windows before—but if you remember the era, you know Windows 3.1 wasn't a great platform. Windows 3.1 was clunky and buggy—if an application crashed, it might take down the entire Windows system. And I didn't like the Windows graphical user interface, either. I preferred doing my work at the command line, not with a mouse.
+1994 年初，我开始在科技杂志上看到很多微软高管的采访，他们说下一个版本的 Windows 将完全取代DOS。 我以前使用过 Windows，但如果你还记得那个时代，你就知道 Windows3.1 不是一个很好的平台。 Windows 3.1 是笨重的和漏洞百出的——如果一个应用程序崩溃，它可能会摧毁整个 Windows 系统。我也不喜欢 Windows 的图形用户界面。我更喜欢在命令行做我的工作，而不是用鼠标。
 
-I considered Windows and decided, “If Windows 3.2 or Windows 4.0 will be anything like Windows 3.1, I want nothing to do with it.” But what were my options? I'd already experimented with Linux at this point, and thought [Linux was great][3]—but Linux didn't have any applications. My word processor, spreadsheet, and other programs were on DOS. I needed DOS.
+我考虑了 Windows，并决定，“如果 Windows3.2 或 Windows4.0 将类似于 Windows3.1，我我将不会去使用它。” 但我有什么选择？此时，我已经对 Linux 进行了实验，并认为 [linux很棒][3]—但是 Linux 没有任何应用程序。我的文字处理器、电子表格和其他程序都在 DOS 上。我需要 DOS。
 
-Then I had an idea! I thought, “If developers can come together over the internet to write a complete Unix operating system, surely we can do the same thing with DOS.” After all, DOS was a fairly straightforward operating system compared to Unix. DOS ran one task at a time (single-tasking) and had a simpler memory model. It shouldn't be _that_ hard to write our own DOS.
+然后我有了个主意！我想，“如果开发人员能够在互联网上共同编写一个完整的 Unix 操作系统，那么我们当然可以在 DOS 中做同样的事情。”毕竟，与 Unix 相比，DOS 是一个相当简单的操作系统。DOS 一次运行一个任务(单任务)，并且有一个更简单的内存模型。写我们自己的 DOS 应该不难。
 
-So on June 29, 1994, I [posted an announcement][4] to `comp.os.msdos.apps`, on a message board network called Usenet:
+因此，在1994年6月29日，我在一个名为Usenet的留言板网络上向‘comp.os.msdos.apps’[发布了一个公告][4] 。
 
-ANNOUNCEMENT OF PD-DOS PROJECT:
+PD-DOS项目宣布：
 
-A few months ago, I posted articles relating to starting a public domain version of DOS. The general support for this at the time was strong, and many people agreed with the statement, "start writing!" So, I have...
+几个月前，我发表了关于启动 DOS 公共领域版本的文章。 The general support for this at the time was strong, and many people agreed with the statement, "start writing!" So, I have...
 
 Announcing the first effort to produce a PD-DOS. I have written up a "manifest" describing the goals of such a project and an outline of the work, as well as a "task list" that shows exactly what needs to be written. I'll post those here, and let discussion follow.
 
