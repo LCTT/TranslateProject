@@ -5,7 +5,7 @@
 [#]: translator: (geekpi)
 [#]: reviewer: (turbokernel)
 [#]: publisher: (wxy)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-13585-1.html)
 
 如何在 CentOS、RHEL、Rocky Linux 最小化安装中设置互联网
 ======
