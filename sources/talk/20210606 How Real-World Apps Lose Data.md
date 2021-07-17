@@ -38,7 +38,7 @@ With any outage postmortem, it’s easy to lose sight of the big picture and end
 
 故事2并不有趣, but worked out much better. Backups were available, but the data migration was reversible, too. The unfun part was that the release was done just before lunch and the fix had to be coded up while the production site was down. The main reason I’m telling this story is as a reminder that backups aren’t just about catastrophic data loss. Partial data corruption happens, too, and can be extra messy.
 
-故事3仅仅只是一般。尽管少量数据永久丢失，但大部分数据可以从备份中恢复。团队中的每个人都对现在没有注释的极其危险的代码感到非常糟糕。I wasn’t involved in the early development, but I felt bad because the recovery took a lot longer than it should have. With a well-tested recovery process, I think the site should have been back online in under 15mins total. But the recovery didn’t work first time, and I had to debug why not and retry. When a production site is down and it’s on you to get it up again, every 10s feels like an eternity. Thankfully, the stakeholders were much more understanding than some. They were actually relieved that a one-off disaster that could have sunk the company only resulted in minutes of lost data and under an hour of downtime.
+故事3仅仅只是一般。尽管少量数据永久丢失，但大部分数据可以从备份中恢复。团队中的每个人都对现在没有注释的极其危险的代码感到非常糟糕。我没有参与早期的开发，但我感觉很糟糕，因为恢复数据所需的时间比正常情况要长得多。通过经过良好测试的恢复过程，我认为该站点应该在总共不到 15 分钟的时间内重新上线。但是第一次恢复没有成功，我不得不调试为什么不能成功，然后重试。当一个生产站点宕机了，需要你重新启动它，每10秒就会感觉很漫长。 值得庆幸的是，涉众比某些人理解得多。他们实际上松了一口气，因为一次数分钟的数据丢失和不到一小时的停机时间本就可以使公司陷入瘫痪的灾难。
 
 在实践中，进行了备份“工作”但恢复失败是非常常见的。很多时候，小型数据集上进行恢复测试是可以正常工作的，但在生产规模的大数据集上就会失败。当每个人都压力过大时，灾难最有可能发生，而关闭生产站点只会增加压力。在时间合适的时候测试和记录完整的恢复过程是一个非常好的主意。
 --------------------------------------------------------------------------------
