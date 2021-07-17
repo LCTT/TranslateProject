@@ -24,15 +24,15 @@
 
 第二个故事来自于一个商业网页和手机应用。后端有一个由一组工程师负责的微服务体系结构。这意味着部署需要协调，但是使用正式的发布过程和自动化简化了一些。当准备好时，新代码将被审查并合并到主代码中，并且高级开发人员常常会为每个微服务标记一个发布版本，然后这些微服务将自动部署到登台环境中。临时环境中的版本会定期收集到一个元版本中，在自动部署到生产之前，该版本会得到不同人的认可（这是一个合规环境）。
 
-One day a developer was working on a complex feature, and the other developers working on that microservice agreed that the work-in-progress code should be committed to master with the understanding that it shouldn’t be actually released yet.有一天，一位开发人员正在开发一个复杂的功能，而其他开发该微服务的开发人员一致认为，应该致力于掌握正在进行的代码，并理解它不应实际发布。长话短说，并不是团队中的每个人都收到了消息，而是代码进入了发布管道。更糟糕的是，实验代码需要一种新的方式来表示用户配置文件数据，因此它有一个临时数据迁移，在启动到生产时运行并损坏所有用户配置文件。
+有一天，一位开发人员正在开发一个复杂的功能，而其他开发该微服务的开发人员一致认为，应该致力于掌握正在进行的代码，并理解它不应该被实际发布。长话短说，并不是团队中的每个人都收到了消息，而是代码进入了发布管道。更糟糕的是，实验代码需要一种新的方式来表示用户配置文件数据，因此它有一个临时数据迁移，在启动到生产时运行并损坏所有用户配置文件。
 
 ### 故事 #3
 
-第三个故事来自另一款网络应用。这个有一个更简单的架构：大部分代码在一个应用程序中，数据在数据库中。然而，这个应用程序也是在很大的截止日期压力下编写的。 It turned out that early on in development, when radical database schema changes were common, a feature was added to detect such changes and clean up old data. This was actually useful for early development before launch, and was always meant to be a temporary feature for development environments only. Unfortunately, the code was forgotten about in the rush to build the rest of the app and get to launch. Until, of course, one day it got triggered in the production environment.
+第三个故事来自另一款网络应用。这个有一个更简单的架构：大部分代码在一个应用程序中，数据在数据库中。然而，这个应用程序也是在很大的截止日期压力下编写的。事实证明，在开发初期，当彻底的数据库架构更改很常见时，添加了一项功能来检测此类更改并清理旧数据。这实际上对发布前的早期开发很有用，并且始终仅作为开发环境的临时功能。不幸的是，在匆忙构建应用的其余部分并启动时，我们忘记了代码。当然，直到有一天它在生产环境中被触发。
 
 ### 事后分析
 
-对于任何停机问题的事后分析，很容易忽视大局，最终将一切归咎于一些小细节。A special case of that is finding some mistake someone made and then blaming that person. All of the engineers in these stories were actually good engineers (companies that hire SRE consultants aren’t the ones to cut corners with their permanent hires), so firing them and replacing them wouldn’t have solved any problem. Even if you have 100x developers, that 100x is still finite, so mistakes will happen with enough complexity and pressure. The big-picture solution is back ups, which help you however you lose the data (including from malware, which is a hot topic in the news lately). If you’re not okay with having zero copies of it, don’t have one copy.
+对于任何停机问题的事后分析，很容易忽视大局，最终将一切归咎于一些小细节。一个特例是发现某人犯了一些错误，然后责怪那个人。这些故事中的所有工程师实际上都是优秀的工程师（雇佣SRE顾问的公司不是为了偷工减料），所以解雇他们，换掉他们并不能解决任何问题。即使你拥有100个开发人员，这100个开发人员仍然是有限的，所以在足够的复杂性和压力下，错误也会发生。最重要的解决方案是备份，它可以帮助你在丢失数据的情况下(包括来自恶意软件的数据，这是最近新闻中的一个热门话题)。如果你无法容忍零拷贝，就不要只有一个副本。
 
 故事1的结局很糟糕：没有备份。该项目因近六个月的数据收集而推迟。顺便说一句，有些地方只保留一个每日快照作为备份，这个故事也是一个很好的例子，说明了这是如何出错的：如果数据丢失发生在星期六，并且准备在星期一尝试恢复，那么一日备份就只能得到星期日的空数据。
 
