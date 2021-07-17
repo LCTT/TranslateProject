@@ -40,7 +40,7 @@ With any outage postmortem, it’s easy to lose sight of the big picture and end
 
 故事3仅仅只是一般. A small amount of data was lost permanently, but most was recovered from the backup. Everyone on the team felt pretty bad about not flagging the now-extremely-obviously-dangerous code. I wasn’t involved in the early development, but I felt bad because the recovery took a lot longer than it should have. With a well-tested recovery process, I think the site should have been back online in under 15mins total. But the recovery didn’t work first time, and I had to debug why not and retry. When a production site is down and it’s on you to get it up again, every 10s feels like an eternity. Thankfully, the stakeholders were much more understanding than some. They were actually relieved that a one-off disaster that could have sunk the company only resulted in minutes of lost data and under an hour of downtime.
 
-It’s extremely common in practice for the backup to “work” but the recovery to fail.在实践中，备份“工作”但恢复失败是非常常见的。 Often the recovery works when tested on small datasets, but fails on production-sized datasets. Disaster is most likely to strike when everyone is stressed out, and having the production site down only increases the pressure. It’s a really good idea to test and document the full recovery process while times are good.
+在实践中，进行了备份“工作”但恢复失败是非常常见的。很多时候，小型数据集上进行恢复测试是可以正常工作的，但在生产规模的大数据集上就会失败。当每个人都压力过大时，灾难最有可能发生，而关闭生产站点只会增加压力。在时间合适的时候测试和记录完整的恢复过程是一个非常好的主意。
 --------------------------------------------------------------------------------
 
 via: https://theartofmachinery.com/2021/06/06/how_apps_lose_data.html
