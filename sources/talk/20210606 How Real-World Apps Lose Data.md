@@ -32,7 +32,7 @@ One day a developer was working on a complex feature, and the other developers w
 
 ### 事后分析
 
-With any outage postmortem, it’s easy to lose sight of the big picture and end up blaming everything on some little detail.在任何停机事后分析中，很容易忽视大局，最终将一切归咎于一些小细节。 A special case of that is finding some mistake someone made and then blaming that person. All of the engineers in these stories were actually good engineers (companies that hire SRE consultants aren’t the ones to cut corners with their permanent hires), so firing them and replacing them wouldn’t have solved any problem. Even if you have 100x developers, that 100x is still finite, so mistakes will happen with enough complexity and pressure. The big-picture solution is back ups, which help you however you lose the data (including from malware, which is a hot topic in the news lately). If you’re not okay with having zero copies of it, don’t have one copy.
+对于任何停机问题的事后分析，很容易忽视大局，最终将一切归咎于一些小细节。A special case of that is finding some mistake someone made and then blaming that person. All of the engineers in these stories were actually good engineers (companies that hire SRE consultants aren’t the ones to cut corners with their permanent hires), so firing them and replacing them wouldn’t have solved any problem. Even if you have 100x developers, that 100x is still finite, so mistakes will happen with enough complexity and pressure. The big-picture solution is back ups, which help you however you lose the data (including from malware, which is a hot topic in the news lately). If you’re not okay with having zero copies of it, don’t have one copy.
 
 故事1的结局很糟糕：没有备份。该项目因近六个月的数据收集而推迟。顺便说一句，有些地方只保留一个每日快照作为备份，这个故事也是一个很好的例子，说明了这是如何出错的：如果数据丢失发生在星期六，并且准备在星期一尝试恢复，那么一日备份就只能得到星期日的空数据。
 
