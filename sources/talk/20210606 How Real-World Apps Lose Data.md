@@ -18,7 +18,7 @@
 
 在项目中工作的人有他们自己的实验工作的开发环境。他们会在终端中做一些类似' export ENVIRONMENT=simonsdev '的事情，然后所有在终端上运行的软件都会在那个环境下运行，而不是在生产环境下。
 
-The team was under a lot of pressure to get a user-facing app launched so that stakeholders could actually see some results from their several months of investment.该团队在发布面向用户的应用时承受着巨大的压力，这样利益相关者才能真正看到他们几个月的投资所带来的结果。 One Saturday, an engineer tried to catch up with some work.一个星期六，一个工程师想把一些工作赶完。 He finished an experiment he was doing late in the evening, and decided to tidy up and go home.他在晚上很晚的时候做完了一个实验，决定收拾一下然后回家。 He fired off a cleanup script to delete everything from his development environment, but strangely it took a lot longer than usual.他启动了一个清理脚本，从他的开发环境中删除所有内容，但奇怪的是，它花费的时间比平常要长得多。 That’s when he realised he’d lost track of which terminal was configured to point to which environment.就在那时，他意识到自己失去了对哪个终端配置指向哪个环境的追踪。
+该团队承受着巨大的压力，需要推出面向用户的应用程序，以便利益相关者能够从他们几个月的投资中真正看到一些成果。一个星期六，一位工程师试图赶完一些工作。他在晚上很晚的时候做完了一个实验，决定收拾东西回家。他启动了一个清理脚本来删除他的开发环境中的所有内容，但奇怪的是，这比平时花费了更长的时间。那时他意识到他已经忘记了哪个终端被配置为指向哪个环境。
 
 ### 故事 #2
 
