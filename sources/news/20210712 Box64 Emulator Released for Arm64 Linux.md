@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/box64-emulator-released/)
 [#]: author: (Jacob Crume https://news.itsfoss.com/author/jacob/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zd200572)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
