@@ -28,7 +28,7 @@ One day a developer was working on a complex feature, and the other developers w
 
 ### 故事 #3
 
-第三个故事来自另一款网络应用。 This one had a much simpler architecture: most of the code was in one app, and the data was in a database. However, this app had also been written under a lot of deadline pressure. It turned out that early on in development, when radical database schema changes were common, a feature was added to detect such changes and clean up old data. This was actually useful for early development before launch, and was always meant to be a temporary feature for development environments only. Unfortunately, the code was forgotten about in the rush to build the rest of the app and get to launch. Until, of course, one day it got triggered in the production environment.
+第三个故事来自另一款网络应用。这个有一个更简单的架构：大部分代码在一个应用程序中，数据在数据库中。然而，这个应用程序也是在很大的截止日期压力下编写的。 It turned out that early on in development, when radical database schema changes were common, a feature was added to detect such changes and clean up old data. This was actually useful for early development before launch, and was always meant to be a temporary feature for development environments only. Unfortunately, the code was forgotten about in the rush to build the rest of the app and get to launch. Until, of course, one day it got triggered in the production environment.
 
 ### 事后分析
 
