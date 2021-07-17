@@ -22,7 +22,7 @@
 
 ### 故事 #2
 
-第二个故事来自于一个商业网页和手机应用。后端有一个由一组工程师负责的微服务体系结构。这意味着部署需要协调，但是使用正式的发布过程和自动化简化了一些。当准备好时，新代码将被审查并合并到主代码中，并且高级开发人员常常会为每个微服务标记一个发布版本，然后这些微服务将自动部署到登台环境中。The releases in the staging environment would periodically get collected together into a meta-release that got signoff from various people (it was a compliance environment) before being automatically deployed to production.临时环境中的版本会定期收集到一个元版本中，在自动部署到生产之前，该版本会得到不同人的认可（这是一个合规环境）。
+第二个故事来自于一个商业网页和手机应用。后端有一个由一组工程师负责的微服务体系结构。这意味着部署需要协调，但是使用正式的发布过程和自动化简化了一些。当准备好时，新代码将被审查并合并到主代码中，并且高级开发人员常常会为每个微服务标记一个发布版本，然后这些微服务将自动部署到登台环境中。临时环境中的版本会定期收集到一个元版本中，在自动部署到生产之前，该版本会得到不同人的认可（这是一个合规环境）。
 
 One day a developer was working on a complex feature, and the other developers working on that microservice agreed that the work-in-progress code should be committed to master with the understanding that it shouldn’t be actually released yet.有一天，一位开发人员正在开发一个复杂的功能，而其他开发该微服务的开发人员一致认为，应该致力于掌握正在进行的代码，并理解它不应实际发布。长话短说，并不是团队中的每个人都收到了消息，而是代码进入了发布管道。更糟糕的是，实验代码需要一种新的方式来表示用户配置文件数据，因此它有一个临时数据迁移，在启动到生产时运行并损坏所有用户配置文件。
 
