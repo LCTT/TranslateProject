@@ -34,9 +34,9 @@ One day a developer was working on a complex feature, and the other developers w
 
 With any outage postmortem, it’s easy to lose sight of the big picture and end up blaming everything on some little detail.在任何停机事后分析中，很容易忽视大局，最终将一切归咎于一些小细节。 A special case of that is finding some mistake someone made and then blaming that person. All of the engineers in these stories were actually good engineers (companies that hire SRE consultants aren’t the ones to cut corners with their permanent hires), so firing them and replacing them wouldn’t have solved any problem. Even if you have 100x developers, that 100x is still finite, so mistakes will happen with enough complexity and pressure. The big-picture solution is back ups, which help you however you lose the data (including from malware, which is a hot topic in the news lately). If you’re not okay with having zero copies of it, don’t have one copy.
 
-故事1的结局很糟糕: there were no backups. The project was set back by nearly six months of data collection. By the way, some places only keep a single daily snapshot as a backup, and this story is a good example of how that can go wrong, too: if the data loss happened on Saturday and recovery was attempted on Monday, the one-day backup would only have an empty database from the Sunday.
+故事1的结局很糟糕：没有备份。该项目因近六个月的数据收集而推迟。顺便说一句，有些地方只保留一个每日快照作为备份，这个故事也是一个很好的例子，说明了这是如何出错的：如果数据丢失发生在星期六，并且准备在星期一尝试恢复，那么一日备份就只能得到星期日的空数据。
 
-故事2并不有趣, but worked out much better. Backups were available, but the data migration was reversible, too. The unfun part was that the release was done just before lunch and the fix had to be coded up while the production site was down. The main reason I’m telling this story is as a reminder that backups aren’t just about catastrophic data loss. Partial data corruption happens, too, and can be extra messy.
+故事2并不有趣，但效果要好得多。备份可用，但数据迁移也是可逆的。不有趣的部分是发布是在午餐前完成的，并且必须在生产站点关闭时对修复进行编码。我讲这个故事的主要原因是为了提醒大家，备份并不仅仅是灾难性的数据丢失。部分数据损坏也会发生，而且可能会更加混乱。
 
 故事3仅仅只是一般。尽管少量数据永久丢失，但大部分数据可以从备份中恢复。团队中的每个人都对现在没有注释的极其危险的代码感到非常糟糕。我没有参与早期的开发，但我感觉很糟糕，因为恢复数据所需的时间比正常情况要长得多。通过经过良好测试的恢复过程，我认为该站点应该在总共不到 15 分钟的时间内重新上线。但是第一次恢复没有成功，我不得不调试为什么不能成功，然后重试。当一个生产站点宕机了，需要你重新启动它，每10秒就会感觉很漫长。 值得庆幸的是，涉众比某些人理解得多。他们实际上松了一口气，因为一次数分钟的数据丢失和不到一小时的停机时间本就可以使公司陷入瘫痪的灾难。
 
