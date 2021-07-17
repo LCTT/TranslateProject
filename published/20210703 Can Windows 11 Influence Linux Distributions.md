@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zz-air)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13588-1.html)
 
 Windows 11 能影响 Linux 发行版吗？
 ======
