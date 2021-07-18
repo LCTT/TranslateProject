@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/hash-linux-review/)
 [#]: author: (Sarvottam Kumar https://itsfoss.com/author/sarvottam/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (mcfd)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
