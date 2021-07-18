@@ -2,7 +2,7 @@
 [#]: via: (https://twobithistory.org/2021/03/08/arpanet-protocols.html)
 [#]: author: (Two-Bit History https://twobithistory.org)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Lin-vy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
