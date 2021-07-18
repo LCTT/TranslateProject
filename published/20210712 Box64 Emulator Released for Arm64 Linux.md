@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zd200572)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13591-1.html)
 
 Box64 模拟器发布 Arm64 Linux 版本
 ======
