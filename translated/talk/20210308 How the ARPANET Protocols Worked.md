@@ -8,9 +8,13 @@
 [#]: url: ( )
 
 How the ARPANET Protocols Worked
+ARPANET 协议是如何工作的
 ======
 
 The ARPANET changed computing forever by proving that computers of wildly different manufacture could be connected using standardized protocols. In my [post on the historical significance of the ARPANET][1], I mentioned a few of those protocols, but didn’t describe them in any detail. So I wanted to take a closer look at them. I also wanted to see how much of the design of those early protocols survives in the protocols we use today.
+
+ARPANET 通过证明完全不同制造商的计算机能够使用标准化的协议连接起来，从而永久的改变了计算。在我的[关于 ARPANET 的历史意义的帖子][1]中，我提到了其中的一些协议，但没有详细描述它们。所以我想更进一步探索它们。也想看看那些早期协议的设计在我们今天使用的协议中有多少被保留了下来。
+
 
 The ARPANET protocols were, like our modern internet protocols, organized into layers.[1][2] The protocols in the higher layers ran on top of the protocols in the lower layers. Today the TCP/IP suite has five layers (the Physical, Link, Network, Transport, and Application layers), but the ARPANET had only three layers—or possibly four, depending on how you count them.
 
