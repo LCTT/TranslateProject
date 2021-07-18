@@ -2,25 +2,39 @@
 [#]: via: (https://twobithistory.org/2021/03/08/arpanet-protocols.html)
 [#]: author: (Two-Bit History https://twobithistory.org)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Lin-vy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 
 How the ARPANET Protocols Worked
+ARPANET 协议是如何工作的
 ======
 
 The ARPANET changed computing forever by proving that computers of wildly different manufacture could be connected using standardized protocols. In my [post on the historical significance of the ARPANET][1], I mentioned a few of those protocols, but didn’t describe them in any detail. So I wanted to take a closer look at them. I also wanted to see how much of the design of those early protocols survives in the protocols we use today.
 
+ARPANET 通过证明完全不同制造商的计算机能够使用标准化的协议连接起来，从而永久的改变了计算。在我的[关于 ARPANET 的历史意义的帖子][1]中，我提到了其中的一些协议，但没有详细描述它们。所以我想更进一步探索它们。也想看看那些早期协议的设计在我们今天使用的协议中有多少被保留了下来。
+
+
 The ARPANET protocols were, like our modern internet protocols, organized into layers.[1][2] The protocols in the higher layers ran on top of the protocols in the lower layers. Today the TCP/IP suite has five layers (the Physical, Link, Network, Transport, and Application layers), but the ARPANET had only three layers—or possibly four, depending on how you count them.
+
+ARPANET 协议类似与如今的互联网协议，也是通过分层形式来组织管理的。[1][2] 较高层协议运行在较低层协议之上。如今的 TCP/IP 协议栈有5层（物理层、数据链路层、网络层、传输层、以及应用层），但是这个 ARPANET 仅有3层或者可能4层，这取决于你们怎样去数它们。
 
 I’m going to explain how each of these layers worked, but first an aside about who built what in the ARPANET, which you need to know to understand why the layers were divided up as they were.
 
+我将会解释每一层是如何工作的，但首先，你需要知道谁在 ARPANET 中构建了些什么，以及需要了解为什么层要被划分成这样。
+
 ### Some Quick Historical Context
+短暂的历史背景
 
 The ARPANET was funded by the US federal government, specifically the Advanced Research Projects Agency within the Department of Defense (hence the name “ARPANET”). The US government did not directly build the network; instead, it contracted the work out to a Boston-based consulting firm called Bolt, Beranek, and Newman, more commonly known as BBN.
 
+ARPANET 由美国联邦政府资助，确切的说是位于美国国防部内的高级研究计划属（因此命名为“ARPANET”）。美国政府并没有直接建设这个网络；而是，它把这项工作外包给了基于波士顿的一家名为 Bolt, Beranek, 和 Newman, 通常更多时候被称为 BBN 的咨询公司。
+
+
 BBN, in turn, handled many of the responsibilities for implementing the network but not all of them. What BBN did was design and maintain a machine known as the Interface Message Processor, or IMP. The IMP was a customized Honeywell minicomputer, one of which was delivered to each site across the country that was to be connected to the ARPANET. The IMP served as a gateway to the ARPANET for up to four hosts at each host site. It was basically a router. BBN controlled the software running on the IMPs that forwarded packets from IMP to IMP, but the firm had no direct control over the machines that would connect to the IMPs and become the actual hosts on the ARPANET.
+
+反过来，BBN 承担了实现这个网络的大部门责任，但不是全部。BBN 所做的是设计和维护一个称为接口消息处理器或者简称IMP的机器。
 
 The host machines were controlled by the computer scientists that were the end users of the network. These computer scientists, at host sites across the country, were responsible for writing the software that would allow the hosts to talk to each other. The IMPs gave hosts the ability to send messages to each other, but that was not much use unless the hosts agreed on a format to use for the messages. To solve that problem, a motley crew consisting in large part of graduate students from the various host sites formed themselves into the Network Working Group, which sought to specify protocols for the host computers to use.
 
