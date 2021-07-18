@@ -7,47 +7,47 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How Real-World Apps Lose Data
+真实世界的应用程序是如何丢失数据？
 ======
 
-A great thing about modern app development is that there are cloud providers to worry about things like hardware failures or how to set up RAID. Decent cloud providers are extremely unlikely to lose your app’s data, so sometimes I get asked what backups are really for these days. Here are some real-world stories that show exactly what.
+现代应用程序开发的一大优点是，云提供商会担心硬件故障或如何设置RAID等问题。优秀的云供应商不太可能丢失你的应用数据, 所以有时我会被询问现在的备份究竟是什么呢？下面是一些现实世界的故事。
 
-### Story #1
+### 故事 #1
 
-This first story is from a data science project: it was basically a big, complex pipeline that took data collected from ongoing research and crunched it in various ways to feed some cutting-edge model. The user-facing application hadn’t been launched yet, but a team of data scientists and developers had been working on building the model and its dataset for several months.
+第一个故事来自一个数据科学项目：它基本上是一个从正在进行的研究中来收集数据的庞大而复杂的管道，然后用各种不同的方式处理以满足一些尖端模型的需要。这个面向用户的应用程序还没有启动，但是一个由数据科学家和开发人员组成的团队已经为建立这个模型和它的数据集工作了好几个月。
 
-The people working on the project had their own development environments for experimental work. They’d do something like `export ENVIRONMENT=simonsdev` in a terminal, and then all the software running in that terminal would run against that environment instead of the production environment.
+在项目中工作的人有他们自己的实验工作的开发环境。他们会在终端中做一些类似' export ENVIRONMENT=simonsdev '的事情，然后所有在终端上运行的软件都会在那个环境下运行，而不是在生产环境下。
 
-The team was under a lot of pressure to get a user-facing app launched so that stakeholders could actually see some results from their several months of investment. One Saturday, an engineer tried to catch up with some work. He finished an experiment he was doing late in the evening, and decided to tidy up and go home. He fired off a cleanup script to delete everything from his development environment, but strangely it took a lot longer than usual. That’s when he realised he’d lost track of which terminal was configured to point to which environment.
+该团队需要承受着巨大的压力去推出面向用户的应用程序，以便利益相关者能够从他们几个月的投资中真正看到一些回报。一个星期六，一位工程师试图赶完一些工作。他在晚上很晚的时候做完了一个实验，决定收拾东西回家。他启动了一个清理脚本来删除他的开发环境中的所有内容，但奇怪的是，这比平时花费了更长的时间。那时他意识到他已经忘记了哪个终端被配置为指向哪个环境。
 
-### Story #2
+### 故事 #2
 
-Story #2 is from a commercial web and mobile app. The backend had a microservice architecture worked on by a team of engineers. That meant deployments required co-ordination, but things were simplified a bit using a formal release process and automation. New code would get reviewed and merged into master when ready, and every so often a senior developer would tag a release for each microservice, which would then automatically deploy to the staging environment. The releases in the staging environment would periodically get collected together into a meta-release that got signoff from various people (it was a compliance environment) before being automatically deployed to production.
+第二个故事来自于一个商业网页和手机应用。后端有一个由一组工程师负责的微服务体系结构。这意味着部署需要协调，但是使用正式的发布过程和自动化简化了一些。新代码在准备好后会被审查并合并到 master 中，并且高级开发人员经常会为每个微服务标记一个版本，然后自动部署到暂存环境。临时环境中的版本会定期收集到一个元版本中，在自动部署到生产之前，该版本会得到不同人的认可（这是一个合规环境）。
 
-One day a developer was working on a complex feature, and the other developers working on that microservice agreed that the work-in-progress code should be committed to master with the understanding that it shouldn’t be actually released yet. To cut a long story short, not everyone in the team got the message, and the code got into the release pipeline. Worse, the experimental code required a new way to represent user profile data, so it had an ad-hoc data migration that ran on launch into production and corrupted all user profiles.
+有一天，一位开发人员正在开发一个复杂的功能，而其他开发该微服务的开发人员一致认为，应该致力于掌握正在进行的代码，并理解它不应该被实际发布。长话短说，并不是团队中的每个人都收到了消息，而是代码进入了发布管道。更糟糕的是，实验代码需要一种新的方式来表示用户配置文件数据，因此它有一个临时数据迁移，在启动到生产时运行并损坏所有用户配置文件。
 
-### Story #3
+### 故事 #3
 
-Story #3 is from another web app. This one had a much simpler architecture: most of the code was in one app, and the data was in a database. However, this app had also been written under a lot of deadline pressure. It turned out that early on in development, when radical database schema changes were common, a feature was added to detect such changes and clean up old data. This was actually useful for early development before launch, and was always meant to be a temporary feature for development environments only. Unfortunately, the code was forgotten about in the rush to build the rest of the app and get to launch. Until, of course, one day it got triggered in the production environment.
+第三个故事来自另一款网络应用。这个有一个更简单的架构：大部分代码在一个应用程序中，数据在数据库中。然而，这个应用程序也是在很大的截止日期压力下编写的。事实证明，在开发初期，当彻底的数据库架构更改很常见时，添加了一项功能来检测此类更改并清理旧数据。这实际上对发布前的早期开发很有用，并且始终仅作为开发环境的临时功能。不幸的是，在匆忙构建应用的其余部分并启动时，我们忘记了代码。当然，直到有一天它在生产环境中被触发。
 
-### Postmortem
+### 事后分析
 
-With any outage postmortem, it’s easy to lose sight of the big picture and end up blaming everything on some little detail. A special case of that is finding some mistake someone made and then blaming that person. All of the engineers in these stories were actually good engineers (companies that hire SRE consultants aren’t the ones to cut corners with their permanent hires), so firing them and replacing them wouldn’t have solved any problem. Even if you have 100x developers, that 100x is still finite, so mistakes will happen with enough complexity and pressure. The big-picture solution is back ups, which help you however you lose the data (including from malware, which is a hot topic in the news lately). If you’re not okay with having zero copies of it, don’t have one copy.
+对于任何停机问题的事后分析，很容易忽视大局，最终将一切归咎于一些小细节。一个特例是发现某人犯了一些错误，然后责怪那个人。这些故事中的所有工程师实际上都是优秀的工程师（雇佣SRE顾问的公司不是为了偷工减料），所以解雇他们，换掉他们并不能解决任何问题。即使你拥有100个开发人员，这100个开发人员仍然是有限的，所以在足够的复杂性和压力下，错误也会发生。最重要的解决方案是备份，它可以帮助你在丢失数据的情况下(包括来自恶意软件的数据，这是最近新闻中的一个热门话题)。如果你无法容忍零拷贝，就不要只有一个副本。
 
-Story #1 had a bad end: there were no backups. The project was set back by nearly six months of data collection. By the way, some places only keep a single daily snapshot as a backup, and this story is a good example of how that can go wrong, too: if the data loss happened on Saturday and recovery was attempted on Monday, the one-day backup would only have an empty database from the Sunday.
+故事1的结局很糟糕：没有备份。该项目因近六个月的数据收集而推迟。顺便说一句，有些地方只保留一个每日快照作为备份，这个故事也是一个很好的例子，说明了这是如何出错的：如果数据丢失发生在星期六，并且准备在星期一尝试恢复，那么一日备份就只能得到星期日的空数据。
 
-Story #2 wasn’t fun, but worked out much better. Backups were available, but the data migration was reversible, too. The unfun part was that the release was done just before lunch and the fix had to be coded up while the production site was down. The main reason I’m telling this story is as a reminder that backups aren’t just about catastrophic data loss. Partial data corruption happens, too, and can be extra messy.
+故事2并不有趣，但效果要好得多。备份可用，但数据迁移也是可逆的。不有趣的部分是发布是在午餐前完成的，并且必须在生产站点关闭时对修复进行编码。我讲这个故事的主要原因是为了提醒大家，备份并不仅仅是灾难性的数据丢失。部分数据损坏也会发生，而且可能会更加混乱。
 
-Story #3 was so-so. A small amount of data was lost permanently, but most was recovered from the backup. Everyone on the team felt pretty bad about not flagging the now-extremely-obviously-dangerous code. I wasn’t involved in the early development, but I felt bad because the recovery took a lot longer than it should have. With a well-tested recovery process, I think the site should have been back online in under 15mins total. But the recovery didn’t work first time, and I had to debug why not and retry. When a production site is down and it’s on you to get it up again, every 10s feels like an eternity. Thankfully, the stakeholders were much more understanding than some. They were actually relieved that a one-off disaster that could have sunk the company only resulted in minutes of lost data and under an hour of downtime.
+故事3仅仅只是一般。尽管少量数据永久丢失，但大部分数据可以从备份中恢复。团队中的每个人都对现在没有注释的极其危险的代码感到非常糟糕。我没有参与早期的开发，但我感觉很糟糕，因为恢复数据所需的时间比正常情况要长得多。通过经过良好测试的恢复过程，我认为该站点应该在总共不到 15 分钟的时间内重新上线。但是第一次恢复没有成功，我不得不调试为什么不能成功，然后重试。当一个生产站点宕机了，需要你重新启动它，每10秒就会感觉很漫长。 值得庆幸的是，涉众比某些人理解得多。他们实际上松了一口气，因为一次数分钟的数据丢失和不到一小时的停机时间本就可以使公司陷入瘫痪的灾难。
 
-It’s extremely common in practice for the backup to “work” but the recovery to fail. Often the recovery works when tested on small datasets, but fails on production-sized datasets. Disaster is most likely to strike when everyone is stressed out, and having the production site down only increases the pressure. It’s a really good idea to test and document the full recovery process while times are good.
+在实践中，进行了备份“工作”但恢复失败是非常常见的。很多时候，小型数据集上进行恢复测试是可以正常工作的，但在生产规模的大数据集上就会失败。当每个人都压力过大时，灾难最有可能发生，而关闭生产站点只会增加压力。在时间合适的时候测试和记录完整的恢复过程是一个非常好的主意。
 --------------------------------------------------------------------------------
 
 via: https://theartofmachinery.com/2021/06/06/how_apps_lose_data.html
 
 作者：[Simon Arneaud][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[PearFL](https://github.com/PearFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
