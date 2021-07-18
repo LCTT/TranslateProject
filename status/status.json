@@ -1,0 +1,4681 @@
+{
+  "translating": [
+    {
+      "file": "sources/talk/20200124 Gartner- Data-center spending will inch up this year.md",
+      "time": "2021-07-05",
+      "user": "zxy-wyx"
+    },
+    {
+      "file": "sources/talk/20191029 5 reasons why I love Python.md",
+      "time": "2021-06-06",
+      "user": "osu-zxf"
+    },
+    {
+      "file": "sources/talk/20200402 When debugging, your attitude matters.md",
+      "time": "2020-04-06",
+      "user": "Name1e5s"
+    },
+    {
+      "file": "sources/tech/20200320 Run a command on binary files with this script.md",
+      "time": "2021-06-18",
+      "user": "Hilton Chain"
+    },
+    {
+      "file": "sources/tech/20210522 Run your favorite Windows applications on Linux.md",
+      "time": "2021-05-22",
+      "user": "hongsofwing"
+    }
+  ],
+  "unselected": [
+    {
+      "file": "sources/talk/20200801 8 tips for running a virtual hackathon.md",
+      "time": "2020-08-02",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200127 IBM Power-based cloud instances available- from Google.md",
+      "time": "2020-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200415 How to dispose of IT hardware without hurting the environment.md",
+      "time": "2020-04-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200806 You don-t need a computer science degree to work with open source software.md",
+      "time": "2020-08-07",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201127 Comparing the similarities and differences between inner source and open source.md",
+      "time": "2020-11-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200202 6 open governance questions every project needs to answer.md",
+      "time": "2020-02-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201112 Improve open source community sustainability by tracking these two metrics.md",
+      "time": "2020-11-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200421 What is a High Traffic Website.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200311 Data-center power consumption holds steady.md",
+      "time": "2020-03-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200416 Harvesting ambient energy will power IoT, scientists say.md",
+      "time": "2020-04-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200405 Book review- Nine Lies About Work.md",
+      "time": "2020-04-06",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210630 How a college student founded a free and open source operating system.md",
+      "time": "2021-07-01",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200319 Electronics should sweat to cool down, say researchers.md",
+      "time": "2020-03-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201108 Open environments are where innovative ideas thrive.md",
+      "time": "2020-11-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200930 VMware plan disaggregates servers- offloads network virtualization and security.md",
+      "time": "2020-09-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200616 Changing the world with open source- GNOME president shares her story.md",
+      "time": "2020-06-17",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201128 Why failure should be normalized and how to do it.md",
+      "time": "2020-11-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200417 Face-to-face collaboration for community to become more impactful - Chip Childers.md",
+      "time": "2020-04-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200610 8 steps to make your next meeting more productive.md",
+      "time": "2020-06-11",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200225 Spilling over- How working openly with anxiety affects my team.md",
+      "time": "2020-02-26",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210215 Why everyone should try using Linux.md",
+      "time": "2021-02-16",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200105 7 Ways NOT to manage your remote team.md",
+      "time": "2020-01-06",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200228 No More WhatsApp- The EU Commission Switches To ‘Signal- For Internal Communication.md",
+      "time": "2020-02-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200210 5 firewall features IT pros should know about but probably don-t.md",
+      "time": "2020-02-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200415 Network World 2020 State of the Network- SD-WAN, edge networking and security are hot.md",
+      "time": "2020-04-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200302 8 reasons to consider hyperconverged infrastructure for your data center.md",
+      "time": "2020-03-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200911 How open source legal teams can get to yes.md",
+      "time": "2020-09-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201111 Why I use Home Assistant for open source home automation.md",
+      "time": "2020-11-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210625 How the Apache Software Foundation selects open source projects.md",
+      "time": "2021-06-26",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210709 Apply lean startup principles to your open source project.md",
+      "time": "2021-07-10",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200928 5 ways to conduct user research with an open source mindset.md",
+      "time": "2020-09-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200107 Researchers aim for transistors that compute and store in one component.md",
+      "time": "2020-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20190808 Scrum vs. kanban- Which agile methodology is better.md",
+      "time": "2019-08-09",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200327 6 tricks for developing a work from home schedule.md",
+      "time": "2020-03-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200212 A SASE Crash Course.md",
+      "time": "2020-02-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200416 Contact tracing via Bluetooth could help track COVID-19 transmission.md",
+      "time": "2020-04-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201224 Why I rewrote my open source virtual reality server.md",
+      "time": "2020-12-25",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200406 How to Use a Differential Analyzer (to Murder People).md",
+      "time": "2020-04-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210405 What motivates open source software contributors.md",
+      "time": "2021-04-06",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200109 How to Deliver Affordable and Optimized Application Access Worldwide with SASE.md",
+      "time": "2020-01-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210418 F(r)iction- Or How I Learnt to Stop Worrying and Start Loving Vim.md",
+      "time": "2021-04-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181218 The Rise and Demise of RSS.md",
+      "time": "2021-02-21",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/talk/20200325 COVID-19 vs. Raspberry Pi- Researchers bring IoT technology to disease detection.md",
+      "time": "2020-03-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200118 7 things I learned from starting an open source project.md",
+      "time": "2020-01-19",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200213 Server sales projected to decline 10- due to coronavirus.md",
+      "time": "2020-02-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200901 4 reasons Jamstack is changing web development.md",
+      "time": "2020-09-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200219 Fedora at the Czech National Library of Technology.md",
+      "time": "2020-02-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200306 How I learned about burnout the hard way.md",
+      "time": "2020-04-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200514 Ethernet Alliance study finds Power over Ethernet issues.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201002 VMware highlights security in COVID-era networking.md",
+      "time": "2020-10-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20191011 Everything you need to know about Grace Hopper in six books.md",
+      "time": "2019-10-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200818 Amazon Braket lets customers try out quantum computing.md",
+      "time": "2020-08-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201211 Create a DevOps culture with open source principles.md",
+      "time": "2020-12-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200121 Never enough- Working openly with anxiety.md",
+      "time": "2020-01-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210308 How the ARPANET Protocols Worked.md",
+      "time": "2021-03-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201114 How I channel my inner Star Trek character at work.md",
+      "time": "2020-11-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200731 Linux dominates supercomputing.md",
+      "time": "2020-08-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200321 Coronavirus challenges capacity, but core networks are holding up.md",
+      "time": "2020-03-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200421 How underwater Internet of Things will work.md",
+      "time": "2020-04-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200312 Next wave of digital transformation requires better security, automation.md",
+      "time": "2020-03-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210107 3 serverless strategies to look for in 2021.md",
+      "time": "2021-01-08",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200325 The coming together of SD-WAN and AIOps.md",
+      "time": "2020-03-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201016 Is open source a development model, business model, or something else.md",
+      "time": "2020-10-17",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200726 Globalization- A history of openness.md",
+      "time": "2020-07-27",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200221 Google Cloud moves to aid mainframe migration.md",
+      "time": "2020-02-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200320 How technical debt is risking your security.md",
+      "time": "2020-03-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200202 Bulletin Board Systems- The VICE Exposé.md",
+      "time": "2020-02-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210228 What is GNU-Linux Copypasta.md",
+      "time": "2021-02-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200719 Open source development works to improve contact tracing in Europe.md",
+      "time": "2020-07-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200303 How to assess your organization-s technological maturity.md",
+      "time": "2020-03-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200502 The real impact of canceling PyCon due to COVID-19.md",
+      "time": "2020-05-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200604 Airbus tells quantum-computing developers what it needs from the the technology.md",
+      "time": "2020-06-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200722 Student Linux club refurbishes computers to support distance learning.md",
+      "time": "2020-07-23",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200427 DevOps vs. Agile- Do they have anything in common.md",
+      "time": "2020-04-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210505 What Google v. Oracle means for open source.md",
+      "time": "2021-05-06",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200423 Getting to know our new, virtual world.md",
+      "time": "2020-04-24",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200607 Is your team a -glue team.md",
+      "time": "2020-06-08",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200114 What communities of practice can do for your organization.md",
+      "time": "2020-01-15",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210502 15 unusual paths to tech.md",
+      "time": "2021-05-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200428 How I empower and reach millions through open source.md",
+      "time": "2020-04-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200912 How breaking my back led me to open source.md",
+      "time": "2020-09-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200613 Introducing the Open Management Practices.md",
+      "time": "2020-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200129 You can now have a Mac Pro in your data center.md",
+      "time": "2020-01-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200923 How my students taught me to code.md",
+      "time": "2020-09-25",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200215 The Background Story of AppImage -Interview.md",
+      "time": "2020-02-15",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200215 3 steps for product marketing your open source project.md",
+      "time": "2020-02-16",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200306 What is Linux and Why There are 100-s of Linux Distributions.md",
+      "time": "2020-03-06",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200911 Lenovo introduces four new HCI solutions.md",
+      "time": "2020-09-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210325 Elevating open leaders by getting out of their way.md",
+      "time": "2021-03-27",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200224 Discussing Past, Present and Future of FreeBSD Project.md",
+      "time": "2020-02-24",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200131 How bacteria could run the Internet of Things.md",
+      "time": "2020-02-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200831 Open Source Project For Earthquake Warning Systems.md",
+      "time": "2020-09-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210214 Give something from the heart to the public domain.md",
+      "time": "2021-02-15",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200316 As the networks evolve enterprises need to rethink network security.md",
+      "time": "2020-03-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200629 NIST aims to make frequency sharing more efficient for wireless networks.md",
+      "time": "2020-06-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200107 Wi-Fi 6 is slowly gathering steam.md",
+      "time": "2020-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200218 Building a community of practice in 5 steps.md",
+      "time": "2020-02-19",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200326 ROLLING UPDATE- The impact of COVID-19 on public networks and security.md",
+      "time": "2020-03-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201010 5 qualities of great open source developer advocates.md",
+      "time": "2020-10-11",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200911 Why the future of IoT depends on open source.md",
+      "time": "2020-09-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20190903 IoT security essentials- Physical, network, software.md",
+      "time": "2019-09-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200209 Open source vs. proprietary- What-s the difference.md",
+      "time": "2020-02-10",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210325 Linux powers the internet, confirms EU commissioner.md",
+      "time": "2021-03-27",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200211 Future ‘smart walls- key to IoT.md",
+      "time": "2020-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200807 Meeting for the first time after 26 years of open source collaboration.md",
+      "time": "2020-08-09",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200128 Communication superstars- A model for understanding your organization-s approach to new technologies.md",
+      "time": "2020-01-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210423 Sustainable economic development begins with open thinking.md",
+      "time": "2021-04-24",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201007 Telcos Move from Black boxes to Open Source.md",
+      "time": "2020-10-09",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200824 Origin stories about Unix.md",
+      "time": "2020-09-04",
+      "user": "Starryi"
+    },
+    {
+      "file": "sources/talk/20201109 DevOps Replaces Developers As Most Sought After Skill Set.md",
+      "time": "2020-11-16",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/talk/20190831 Why support open source- Strategies from around the world.md",
+      "time": "2019-09-01",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20181031 3 scary sysadmin stories.md",
+      "time": "2018-11-01",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20200430 Industrial robots could -eat metal- to power themselves.md",
+      "time": "2020-05-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200903 Why your open source project needs more than just coders.md",
+      "time": "2020-09-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210716 Dear Mozilla, Please Remove This Annoying ‘Feature- from Firefox.md",
+      "time": "2021-07-17",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201206 Openness is the key to innovation, history shows.md",
+      "time": "2020-12-07",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201027 How to define a product in the open source software supply chain.md",
+      "time": "2020-10-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200317 -AI everywhere- IoT chips coming from Arm.md",
+      "time": "2020-03-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200101 How to get started with open source in 2020.md",
+      "time": "2020-01-02",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210209 Understanding Linus-s Law for open source security.md",
+      "time": "2021-02-10",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200418 My 10 guiding principles for open source community management.md",
+      "time": "2020-04-19",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200229 Solus Linux Creator Ikey Doherty Enters the Game Dev Business With a New Open Source Game Engine.md",
+      "time": "2020-02-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210219 Why every job in the tech industry is technical.md",
+      "time": "2021-02-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200226 Mirantis- Balancing Open Source with Guardrails.md",
+      "time": "2020-02-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200221 Japanese firm announces potential 80TB hard drives.md",
+      "time": "2020-02-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200116 4 core skills to level-up your tech career in 2020.md",
+      "time": "2020-01-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200817 What makes Java open source.md",
+      "time": "2020-08-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200305 Report- Most IoT transactions are not secure.md",
+      "time": "2020-03-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20171229 Important Papers- Codd and the Relational Model.md",
+      "time": "2018-10-25",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20200530 How open standards guide us in a world of change.md",
+      "time": "2020-05-31",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210212 How to adopt DevSecOps successfully.md",
+      "time": "2021-02-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200321 3 metrics to measure your open source community health.md",
+      "time": "2020-03-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200821 3 ways a legal team can enable open source.md",
+      "time": "2020-08-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200415 Fedora Origins - Part 01.md",
+      "time": "2020-04-16",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200415 IBM extends z15 mainframe family, intensifies Linux security.md",
+      "time": "2020-04-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200219 A -399 device that translates brain signals into digital commands.md",
+      "time": "2020-02-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200708 How wireless networks can battle COVID-19.md",
+      "time": "2020-07-13",
+      "user": "gavinsun"
+    },
+    {
+      "file": "sources/talk/20200806 5 tips for making documentation a priority in open source projects.md",
+      "time": "2020-08-07",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20170928 The Lineage of Man.md",
+      "time": "2021-01-27",
+      "user": "bestony"
+    },
+    {
+      "file": "sources/talk/20191009 Why to choose Rust as your next programming language.md",
+      "time": "2020-11-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200911 Ankur Sinha- How do you Fedora.md",
+      "time": "2020-09-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200525 In Free Software, the Community is the Most Important Ingredient- Jerry Bezencon of Linux Lite -Interview.md",
+      "time": "2020-05-26",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210213 5 reasons why I love coding on Linux.md",
+      "time": "2021-02-14",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200201 IBM-s CEO Virginia Rometty to be replaced by its cloud, Red Hat chiefs.md",
+      "time": "2020-02-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200401 How enterprise networking is changing with a work-at-home workforce.md",
+      "time": "2020-08-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20190228 A Brief History of FOSS Practices.md",
+      "time": "2019-03-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20200715 The Impact of COVID-19 on the Global Digital Economy.md",
+      "time": "2020-07-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200727 Are newer medical IoT devices less secure than old ones.md",
+      "time": "2020-07-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200121 What you need to know about System76-s open source firmware project.md",
+      "time": "2020-01-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200716 Options grow for migrating mainframe apps to the cloud.md",
+      "time": "2020-07-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200124 How Open-RAN could ‘white-box- 5G.md",
+      "time": "2020-01-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200927 What would a global open organization look like.md",
+      "time": "2020-09-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200127 Some Useful Probability Facts for Systems Programming.md",
+      "time": "2020-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200825 Why we open sourced our security project.md",
+      "time": "2021-06-13",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/talk/20201227 9 insights from pivoting to remote work in 2020.md",
+      "time": "2020-12-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201030 My journey to becoming an open source mentor.md",
+      "time": "2020-11-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200226 How we decide when to release Fedora.md",
+      "time": "2020-02-27",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200303 Most-used libraries, open source adoption, and more industry trends.md",
+      "time": "2020-03-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200311 Setting yourself up for success while working remotely.md",
+      "time": "2020-03-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201127 4 questions about AI ethics and how open source can help.md",
+      "time": "2020-11-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200121 Beyond Moore-s Law- Neuromorphic computing.md",
+      "time": "2020-01-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201113 3 ways managers build team culture around open source.md",
+      "time": "2020-11-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200823 Open organizations through the ages.md",
+      "time": "2020-08-24",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210105 My Linux Story- How an influential security developer got started in open source.md",
+      "time": "2021-01-06",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200717 Open source accounting software developed by accountants.md",
+      "time": "2020-07-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210621 Why transparency is critical to your open source project-s security.md",
+      "time": "2021-06-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210324 Get better at programming by learning how things work.md",
+      "time": "2021-03-25",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200815 What Does Mozilla Firing 25- of its Workforce Tells us About its Future.md",
+      "time": "2020-08-15",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210415 Microsoft Gets into the OpenJDK Business- What Does it Mean for You.md",
+      "time": "2021-04-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20191003 Sharing vs. free vs. public- The real definition of open source.md",
+      "time": "2019-10-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210224 Why Linux is critical to edge computing.md",
+      "time": "2021-02-25",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210226 How I became a Kubernetes maintainer in 4 hours a week.md",
+      "time": "2021-02-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210312 Extending Looped Music for Fun, Relaxation and Productivity.md",
+      "time": "2021-03-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210606 How Real-World Apps Lose Data.md",
+      "time": "2021-06-18",
+      "user": "菜梨子"
+    },
+    {
+      "file": "sources/talk/20210108 What is an open source evangelist.md",
+      "time": "2021-01-09",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210421 How to take your open source project to the next level.md",
+      "time": "2021-04-22",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210223 What makes the Linux community special.md",
+      "time": "2021-02-24",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200427 Comparing subscription, pay-per-bug, and consulting software business models.md",
+      "time": "2020-04-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200421 IoT offers a way to track COVID-19 via connected thermometers.md",
+      "time": "2020-04-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200501 Red Hat Summit 2020 virtual experience.md",
+      "time": "2020-05-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210213 How open source provides students with real-world experience.md",
+      "time": "2021-02-14",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200211 Who should lead the push for IoT security.md",
+      "time": "2020-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210509 My first tech job- 8 stories from the community.md",
+      "time": "2021-05-10",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200227 How Melissa Di Donato Is Going To Reinvent SUSE.md",
+      "time": "2020-02-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200913 Overcoming resistance to open management.md",
+      "time": "2020-09-14",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200424 FCC boosts Wi-Fi 6 spectrum five-fold.md",
+      "time": "2020-04-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200206 How Drupal 8 aims to be future-proof.md",
+      "time": "2020-02-07",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200411 5 open source activities while you work from home.md",
+      "time": "2020-04-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200822 3 reasons small businesses choose open source tools for remote employees.md",
+      "time": "2020-08-23",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200420 Why I use open source technology for web development.md",
+      "time": "2020-04-21",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200416 How I-ve adjusted my work-from-home habits.md",
+      "time": "2020-04-17",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210422 Energy infrastructure platform uses open source to fight climate change.md",
+      "time": "2021-04-23",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200831 Making Zephyr More Secure.md",
+      "time": "2020-09-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200614 Who is the glue person on your team.md",
+      "time": "2020-06-15",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200414 How World of Warcraft introduced me to Linux.md",
+      "time": "2020-04-15",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200808 Matrix encrypted chat rolls out across Germany, Project ACRN-s new IoT release, and more open source news.md",
+      "time": "2020-08-09",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201023 Why it-s important to keep the cloud open.md",
+      "time": "2020-10-27",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200104 Industrial Internet Consortium teams up with blockchain-focused security group.md",
+      "time": "2020-01-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20180201 6 pivotal moments in open source history.md",
+      "time": "2018-02-04",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/talk/20200924 Still not dead- The mainframe hangs on, sustained by Linux and hybrid cloud.md",
+      "time": "2020-09-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200104 DevOps is a solution to burnout worth investing in.md",
+      "time": "2020-01-05",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210117 4 big lessons from my internship with open source.md",
+      "time": "2021-01-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20171007 The Most Important Database You-ve Never Heard of.md",
+      "time": "2018-12-28",
+      "user": "lctt-bot"
+    },
+    {
+      "file": "sources/talk/20200330 SASE might be better than VPNs for quickly ramping up remote access.md",
+      "time": "2020-03-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20191017 Measuring the business value of open source communities.md",
+      "time": "2019-10-19",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200123 Survey- Digital transformation can reveal network weaknesses.md",
+      "time": "2020-01-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200505 11 DevOps lessons from My Little Pony.md",
+      "time": "2020-05-06",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200730 4 ways I contribute to open source as a Linux systems administrator.md",
+      "time": "2020-07-31",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180818 What Did Ada Lovelace-s Program Actually Do.md",
+      "time": "2019-07-28",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/talk/20210125 7 ways open source was essential to business in 2020.md",
+      "time": "2021-01-26",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200828 Why Comcast open sourced its DNS management tool.md",
+      "time": "2020-08-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200304 Seawater, humidity inspire new ways to generate power.md",
+      "time": "2020-03-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200612 3 lessons from remote meetings we-re taking back to the office.md",
+      "time": "2020-06-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200531 Red Hat- Holding Its Own and Fueling Open Source Innovation.md",
+      "time": "2020-06-02",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200117 Insights into Why Hyperbola GNU-Linux is Turning into Hyperbola BSD.md",
+      "time": "2020-03-02",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/talk/20200216 Minicomputers and The Soul of a New Machine.md",
+      "time": "2020-02-19",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200203 Private equity firms are gobbling up data centers.md",
+      "time": "2020-02-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210527 How Linux made a school pandemic-ready.md",
+      "time": "2021-05-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210507 6 examples of open source best practices in knowledge-sharing projects.md",
+      "time": "2021-05-08",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200330 Know the benefits of cloud-native networking for SASE.md",
+      "time": "2020-03-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200728 Green Data Centers - Scaling environmental sustainability for business and consumers collectively.md",
+      "time": "2020-07-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210311 Test cases and open source license enforcement.md",
+      "time": "2021-03-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200729 Switch turns to Tesla for renewable energy storage.md",
+      "time": "2020-07-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20201223 9 stories about switching to an open source alternative in 2020.md",
+      "time": "2020-12-24",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201021 How anyone can contribute to open source software in their job.md",
+      "time": "2020-10-27",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210212 18 ways to differentiate open source products from upstream suppliers.md",
+      "time": "2021-02-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200406 What is good documentation for software projects.md",
+      "time": "2020-04-07",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210529 My family-s Linux story.md",
+      "time": "2021-07-14",
+      "user": "Shiboi77"
+    },
+    {
+      "file": "sources/talk/20200830 The power of open source during a pandemic.md",
+      "time": "2020-08-31",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20171128 The politics of the Linux desktop.md",
+      "time": "2018-11-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210207 The Real Novelty of the ARPANET.md",
+      "time": "2021-02-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210211 Understanding Open Governance Networks.md",
+      "time": "2021-02-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200116 Google Cloud launches Archive cold storage service.md",
+      "time": "2020-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200303 Key Takeaways from Cisco-s Annual Internet Report.md",
+      "time": "2020-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200619 What do Paketo Buildpacks Mean for Developers and Operators.md",
+      "time": "2020-06-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200721 Data-center survey- IT seeks faster switches, intelligent computing.md",
+      "time": "2020-07-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200628 Roy Fielding-s Misappropriated REST Dissertation.md",
+      "time": "2020-06-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200305 Chinese auto giant Geely plans a private satellite network to support autonomous vehicles.md",
+      "time": "2020-03-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210506 Optimal flow- Building open organizations where leaders can emerge.md",
+      "time": "2021-05-07",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200630 Should API-restricting licenses qualify as open source.md",
+      "time": "2020-07-01",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20180713 What-s the difference between a fork and a distribution.md",
+      "time": "2018-07-16",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20200424 Red Hat Enterprise Linux 8.2 Hits the stage.md",
+      "time": "2020-04-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200630 The open organization everyone deserves.md",
+      "time": "2020-07-01",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200130 Intel denies reports of Xeon shortage.md",
+      "time": "2020-01-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200115 Instant, secure ‘teleportation- of data in the works.md",
+      "time": "2020-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200324 COVID-19- Weekly health check of ISPs, cloud providers and conferencing services.md",
+      "time": "2020-07-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20210424 Can We Recommend Linux for Gaming in 2021.md",
+      "time": "2021-04-25",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201113 How to create trust in artificial intelligence using open source.md",
+      "time": "2020-11-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200730 Role Of SPDX In Open Source Software Supply Chain.md",
+      "time": "2020-07-31",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210704 Pricing Yourself as a Contractor 101.md",
+      "time": "2021-07-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20190227 Let your engineers choose the license- A guide.md",
+      "time": "2019-03-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/talk/20200702 How an open project-s governance model evolves.md",
+      "time": "2020-07-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201214 Ben Cotton- How Do You Fedora.md",
+      "time": "2020-12-15",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/talk/20200211 Why innovation can-t happen without standardization.md",
+      "time": "2020-02-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200506 IBM rolls Red Hat into edge, AI, hybrid-cloud expansion.md",
+      "time": "2020-05-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200228 Intel takes aim at Huawei 5G market presence.md",
+      "time": "2020-02-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200204 Stuck in a loop- 4 signs anxiety may be affecting your work.md",
+      "time": "2020-02-05",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201125 Got something to say- How to get started writing.md",
+      "time": "2020-11-27",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200320 Cisco warns of five SD-WAN security weaknesses.md",
+      "time": "2020-03-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20200730 SODA Foundation- Autonomous data management framework for data mobility.md",
+      "time": "2020-07-31",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210419 13 ways to get involved with your favorite open source project.md",
+      "time": "2021-04-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210216 How Ansible got started and grew.md",
+      "time": "2021-02-18",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20191001 The monumental impact of C.md",
+      "time": "2019-10-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200308 The De-Googled Android Fork is Making Good Progress.md",
+      "time": "2020-03-08",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200902 My dramatic journey to becoming an open source engineer.md",
+      "time": "2020-09-03",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20201028 A few things I-ve learned about email marketing.md",
+      "time": "2020-10-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20210113 Gain control of your calendar with this simple strategy.md",
+      "time": "2021-01-14",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200603 5 common open source testing myths debunked.md",
+      "time": "2020-06-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20200316 How to be the right person for DevOps.md",
+      "time": "2020-03-17",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20191112 5 open source plugins for Flutter apps.md",
+      "time": "2019-11-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200814 Fixing -Unable to correct problems, you have held broken packages- Error in Ubuntu and other Linux Distributions.md",
+      "time": "2020-08-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210424 Getting Started With Markdown -Beginner-s Guide.md",
+      "time": "2021-04-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200327 KubeCF Is What DevOps Wanted- Marrying Cloud Foundry with Kubernetes.md",
+      "time": "2020-03-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210614 Install FreeDOS without the installer.md",
+      "time": "2021-06-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201012 Create an Ansible module for integrating your Google Calendar.md",
+      "time": "2020-10-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201106 I-m doing another Recurse Center batch.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210414 Using Web Assembly Written in Rust on the Server-Side.md",
+      "time": "2021-04-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210305 Build a printer UI for Raspberry Pi with XML and Java.md",
+      "time": "2021-03-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210105 How to customize your voice assistant with the voice of your choice.md",
+      "time": "2021-01-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200806 5 reasons to run Kubernetes on your Raspberry Pi homelab.md",
+      "time": "2020-08-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201214 Practice coding in Java by writing a game.md",
+      "time": "2020-12-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200916 Manage your Raspberry Pi fleet with Ansible.md",
+      "time": "2020-09-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200201 ProtonVPN adopts GPLv3, Mozilla Thunderbird gets new home, and more news.md",
+      "time": "2020-02-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210202 Convert audio files with this versatile Linux command.md",
+      "time": "2021-02-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201116 Linux Jargon Buster- What is Grub in Linux- What is it Used for.md",
+      "time": "2020-11-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201127 How to choose a wireless protocol for home automation.md",
+      "time": "2020-11-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201212 How to Customize the Task Switcher in KDE Plasma.md",
+      "time": "2020-12-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210304 Measure your Internet of Things with Raspberry Pi and open source tools.md",
+      "time": "2021-03-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210322 Productivity with Ulauncher.md",
+      "time": "2021-03-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210205 Astrophotography with Fedora Astronomy Lab- setting up.md",
+      "time": "2021-02-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200929 Xen on Raspberry Pi 4 adventures.md",
+      "time": "2020-09-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210607 Identify security properties on Linux using checksec.md",
+      "time": "2021-06-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210508 Best Open Source LMS for Creating Online Course and e-Learning Websites.md",
+      "time": "2021-05-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210616 Set up a service mesh on Istio.md",
+      "time": "2021-06-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190408 Linux Server Hardening Using Idempotency with Ansible- Part 1.md",
+      "time": "2019-04-10",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20210103 How open principles will impact the future of work.md",
+      "time": "2021-01-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200630 Using TensorFlow.js and Node-RED with image recognition applications.md",
+      "time": "2020-07-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201021 Incremental backup with Butterfly Backup.md",
+      "time": "2020-10-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201201 Create universal blockchain smart contracts.md",
+      "time": "2020-12-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201227 Jot down your ideas in a digital notebook.md",
+      "time": "2020-12-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210717 How to avoid waste when writing code.md",
+      "time": "2021-07-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210602 How to navigate FreeDOS with CD and DIR.md",
+      "time": "2021-06-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210123 Firecracker- start a VM in less than a second.md",
+      "time": "2021-01-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210326 Network address translation part 3 - the conntrack event framework.md",
+      "time": "2021-03-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200731 Bring your Mycroft AI voice assistant skill to life with Python.md",
+      "time": "2020-08-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210602 Establish an SSH connection between Windows and Linux.md",
+      "time": "2021-06-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201202 5 collaboration tips for using an open source alternative to Google Docs.md",
+      "time": "2020-12-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200528 4 Linux distributions for gaming.md",
+      "time": "2020-08-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210409 Stream event data with this open source tool.md",
+      "time": "2021-04-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210607 Comparing Linux Mint and Fedora- Which One Should You Use.md",
+      "time": "2021-06-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200426 6 tips for securing your WordPress website.md",
+      "time": "2020-04-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210618 Use this nostalgic text editor on FreeDOS.md",
+      "time": "2021-06-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201006 5 Scratch code blocks to teach kids how to program a video game.md",
+      "time": "2020-10-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210510 Getting started with edge development on Linux using open source.md",
+      "time": "2021-05-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210203 Defining boundaries and interfaces in software development.md",
+      "time": "2021-02-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210606 5 handy guides to open source for teachers.md",
+      "time": "2021-06-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200313 How to whiteboard collaboratively with Drawpile.md",
+      "time": "2020-03-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201026 Manage content using Pulp Debian.md",
+      "time": "2020-10-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210521 Play the Busy Beaver Game through a simulator.md",
+      "time": "2021-05-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201009 5 ways organizations can lean into failure and transform it into success.md",
+      "time": "2020-10-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210615 Listen to music on FreeDOS.md",
+      "time": "2021-06-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200407 Love or hate chat- 4 best practices for remote teams.md",
+      "time": "2020-04-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210218 What is PPA Purge- How to Use it in Ubuntu and other Debian-based Distributions.md",
+      "time": "2021-02-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200302 Using LibreOffice for your open source budgeting tool.md",
+      "time": "2020-03-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210331 Playing with modular synthesizers and VCV Rack.md",
+      "time": "2021-04-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200602 Control your computer time and date with systemd.md",
+      "time": "2020-08-01",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20201111 How I use Cockpit for my home-s Linux server management.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210101 Solve a charity-s problem with the Julia programming language.md",
+      "time": "2021-01-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210105 A few bytes here, a few there, pretty soon you-re talking real memory.md",
+      "time": "2021-01-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201130 Getting started with Stratis - up and running.md",
+      "time": "2020-12-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210119 10 ways big data and data science impacted the world in 2020.md",
+      "time": "2021-01-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200723 Build your own open source alternative to Google Suite with Nextcloud.md",
+      "time": "2020-07-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210626 How I helped my mom switch from Windows to Linux.md",
+      "time": "2021-06-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200420 New open source GIS projects for Kubernetes applications.md",
+      "time": "2020-04-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200504 Understanding systemd at startup on Linux.md",
+      "time": "2020-05-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210618 DevSecOps- An open source story.md",
+      "time": "2021-06-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210614 Fedora Classroom- RPM Packaging 101.md",
+      "time": "2021-06-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200409 Use Emacs Org mode to easily create LaTeX documents.md",
+      "time": "2020-04-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200409 How to set up a remote school environment for kids with Linux.md",
+      "time": "2020-04-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200108 Automating the creation of research artifacts.md",
+      "time": "2020-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200908 Open source data control for cloud services with Apache Ranger.md",
+      "time": "2020-09-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201012 Build a Kubernetes Minecraft server with Ansible-s Helm modules.md",
+      "time": "2020-12-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210210 Configure multi-tenancy with Kubernetes namespaces.md",
+      "time": "2021-02-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200415 Writing Java with Quarkus in VS Code.md",
+      "time": "2020-04-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20200902 Open ports and route traffic through your firewall.md",
+      "time": "2020-09-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200129 What Amazon Kindle- Here-s an Open Source eBook Reader.md",
+      "time": "2020-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201121 Open source brings musicians together virtually.md",
+      "time": "2020-11-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190820 The infrastructure is code- A story of COBOL and Go.md",
+      "time": "2019-08-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200812 Create a wifi hotspot with Raspberry Pi 3 and Fedora.md",
+      "time": "2020-08-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200328 Open source fights against COVID-19, Google-s new security tool written in Python, and more open source news.md",
+      "time": "2020-03-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200115 Develop GUI apps using Flutter on Fedora.md",
+      "time": "2020-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190104 Three Ways To Reset And Change Forgotten Root Password on RHEL 7-CentOS 7 Systems.md",
+      "time": "2019-02-19",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20210603 Get started with Kustomize for Kubernetes configuration management.md",
+      "time": "2021-06-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200223 The Zen of Go.md",
+      "time": "2021-04-19",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20200630 What-s New in Harbor 2.0.md",
+      "time": "2020-07-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200623 Take control of your data with associative arrays in Bash.md",
+      "time": "2020-06-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200629 Use intent parsers for your open source home automation project.md",
+      "time": "2020-06-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210618 5 more reasons to run Kubernetes in your Linux homelab.md",
+      "time": "2021-06-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201014 Web of Trust, Part 1- Concept.md",
+      "time": "2020-10-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190219 4 secrets management tools for Git encryption.md",
+      "time": "2019-02-27",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20201207 Set up Home Assistant to manage your open source smart home.md",
+      "time": "2020-12-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210407 Get started with batch files in FreeDOS.md",
+      "time": "2021-04-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210127 Build a programmable light display on Raspberry Pi.md",
+      "time": "2021-01-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200508 A guide to setting up your Open Source Program Office (OSPO) for success.md",
+      "time": "2020-05-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200908 Tux the Linux Penguin in its first video game.md",
+      "time": "2021-04-22",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20210712 Reading and writing files with Python.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210525 Launch Flatpaks from your Linux terminal.md",
+      "time": "2021-05-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200929 This Python script mimics Babbage-s Difference Engine.md",
+      "time": "2020-09-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210716 Apps for daily needs part 1- web browsers.md",
+      "time": "2021-07-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201207 Always on Top- An Often Ignored But Handy Feature in Linux Desktop.md",
+      "time": "2020-12-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200218 10 Grafana features you need to know for effective monitoring.md",
+      "time": "2020-02-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210527 Processing modular and dynamic configuration files in shell.md",
+      "time": "2021-05-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201110 Use your favorite open source apps on your Mac with MacPorts.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201223 How to use the Eclipse IDE as your text editor.md",
+      "time": "2020-12-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210204 How to implement business requirements in software development.md",
+      "time": "2021-02-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210414 3 essential Linux cheat sheets for productivity.md",
+      "time": "2021-04-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20180619 Systemd Services- Monitoring Files and Directories.md",
+      "time": "2021-07-12",
+      "user": "SilentDawn"
+    },
+    {
+      "file": "sources/tech/20201105 6 evening rituals for working in tech.md",
+      "time": "2020-11-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210612 How I teach Python on the Raspberry Pi 400 at the public library.md",
+      "time": "2021-06-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200906 PCLinuxOS Review- This Classic Independent Linux Distribution is Definitely Worth a Look.md",
+      "time": "2020-09-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200831 Tune up your sound with PulseEffects- Microphones.md",
+      "time": "2020-09-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200120 Learning about Partitions and How to Create Them for Fedora.md",
+      "time": "2020-01-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200504 Create interactive learning games for kids with open source.md",
+      "time": "2020-05-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200212 Manage your SSL certificates with the ssl-on-demand script.md",
+      "time": "2020-02-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210317 Track aircraft with a Raspberry Pi.md",
+      "time": "2021-03-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210622 What is a config file.md",
+      "time": "2021-06-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200218 Getting started with OpenTaxSolver.md",
+      "time": "2020-02-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210411 Why Crate.io has returned to its pure open source roots.md",
+      "time": "2021-04-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210108 10 ways to advance your JavaScript journey in 2021.md",
+      "time": "2021-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210617 Linux package management with dnf.md",
+      "time": "2021-06-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210319 Managing deb Content in Foreman.md",
+      "time": "2021-03-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210318 Get started with an open source customer data platform.md",
+      "time": "2021-03-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200726 Dreamweaver Alternatives- 5 Open Source HTML and CSS Editors for Web Developers and Designers.md",
+      "time": "2020-07-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210506 Resolve DHCPD and HTTPD startup failures with Ansible.md",
+      "time": "2021-05-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210324 Build a to-do list app in React with hooks.md",
+      "time": "2021-03-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210709 Troubleshooting bugs in an API implementation.md",
+      "time": "2021-07-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200107 App Highlight- Catfish Desktop File Searching Tool.md",
+      "time": "2020-01-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210603 FreeDOS commands for Linux fans.md",
+      "time": "2021-06-07",
+      "user": "shipsw"
+    },
+    {
+      "file": "sources/tech/20201124 A beginner-s guide to developing with React.md",
+      "time": "2020-11-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200921 Use this Python script to simulate Babbage-s Difference Engine.md",
+      "time": "2020-09-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200313 Open source alternative for multi-factor authentication- privacyIDEA.md",
+      "time": "2020-03-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200130 Run your network with open source software.md",
+      "time": "2020-01-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201008 Top 5 open source alternatives to Google Analytics.md",
+      "time": "2020-10-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200326 How to detect outdated Kubernetes APIs.md",
+      "time": "2020-03-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201008 Protect your network with open source tools.md",
+      "time": "2020-10-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200529 Beaker Browser 1.0 Beta- One Step Forward and Two Steps Back.md",
+      "time": "2020-05-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210713 Use XMLStarlet to parse XML in your the Linux terminal.md",
+      "time": "2021-07-16",
+      "user": "zEpoch"
+    },
+    {
+      "file": "sources/tech/20201229 Experience alternate computing with the Pe text editor.md",
+      "time": "2020-12-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200511 Tips and tricks for optimizing container builds.md",
+      "time": "2020-05-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210418 Hyperbola Linux Review- Systemd-Free Arch With Linux-libre Kernel.md",
+      "time": "2021-04-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200127 How to get started with test-driven development.md",
+      "time": "2020-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210711 Ubuntu 21.10 Impish Indri - New Features and Release Date.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210413 Make Conway-s Game of Life in WebAssembly.md",
+      "time": "2021-04-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210711 How to Dual Boot Fedora and Windows.md",
+      "time": "2021-07-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201203 Support your work-life balance with this open source productivity tool.md",
+      "time": "2020-12-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210607 Automate tasks with BAT files on FreeDOS.md",
+      "time": "2021-06-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200701 Install a Kubernetes load balancer on your Raspberry Pi homelab with MetalLB.md",
+      "time": "2020-07-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210228 Edit video on Linux with this Python app.md",
+      "time": "2021-03-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200421 How I use Hugo for my classroom-s open source CMS.md",
+      "time": "2020-04-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200409 GNOME Announces Community Engagement Challenge Offering up to -65,000 in Rewards.md",
+      "time": "2020-04-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210623 Program on FreeDOS with Bywater BASIC.md",
+      "time": "2021-06-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210416 Notes on building debugging puzzles.md",
+      "time": "2021-04-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200818 D Declarations for C and C-- Programmers.md",
+      "time": "2020-08-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210426 How we built an open source design system to create new community logos.md",
+      "time": "2021-04-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210208 How to set up custom sensors in Home Assistant.md",
+      "time": "2021-02-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210513 Building open organizations to make a better life more sustainable for everyone.md",
+      "time": "2021-05-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200717 A brief history of the Content Management System.md",
+      "time": "2020-07-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210709 What you need to know about security policies.md",
+      "time": "2021-07-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200526 Create interactive content in WordPress with the H5P plugin.md",
+      "time": "2020-05-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201026 Pi from High School Maths.md",
+      "time": "2020-10-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210630 Is remmina useful for your daily work.md",
+      "time": "2021-07-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210301 Build a home thermostat with a Raspberry Pi.md",
+      "time": "2021-03-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210311 Review of Four Hyperledger Libraries- Aries, Quilt, Ursa, and Transact.md",
+      "time": "2021-03-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210416 WASI, Bringing WebAssembly Way Beyond Browsers.md",
+      "time": "2021-04-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200505 Analyzing data science code with R and Emacs.md",
+      "time": "2020-05-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200114 LMMS- A Free - Open Source Digital Audio Workstation (DAW).md",
+      "time": "2020-01-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200503 13 tips for getting your talk accepted at a tech conference.md",
+      "time": "2020-05-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201212 Power up your Linux terminal text editor with ed.md",
+      "time": "2020-12-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210413 What-s new with Drupal in 2021.md",
+      "time": "2021-04-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201001 Bringing COBOL to the Modern World.md",
+      "time": "2020-10-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200520 Fedora Silverblue, an introduction for developers.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200515 The pieces of Fedora Silverblue.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 How to Assign Static IP Address on Ubuntu Linux.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210525 Pen testing with Linux security tools.md",
+      "time": "2021-05-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200901 Developing an email alert system using a surveillance camera with Node-RED and TensorFlow.js.md",
+      "time": "2020-09-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210227 Build your own technology on Linux.md",
+      "time": "2021-02-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201215 Cut your Cloud Computing Costs by Half with Unikraft.md",
+      "time": "2020-12-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200925 Code your first algorithm in Scratch.md",
+      "time": "2020-09-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210127 Introduction to Thunderbird mail filters.md",
+      "time": "2021-01-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200217 Create web user interfaces with Qt WebAssembly instead of JavaScript.md",
+      "time": "2020-02-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210616 Hash Linux- Arch Linux Preconfigured With Xmonad, Awesome, i3, and Bspwm Window Manager.md",
+      "time": "2021-06-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200204 Ansible Roles Quick Start Guide with Examples.md",
+      "time": "2020-02-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210524 4 steps to set up global modals in React.md",
+      "time": "2021-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200429 Open source live streaming with Open Broadcaster Software.md",
+      "time": "2020-04-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200330 Why I switched from Mac to Linux.md",
+      "time": "2020-03-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200303 Watching activity on Linux with watch and tail commands.md",
+      "time": "2020-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210129 Machine learning made easy with Python.md",
+      "time": "2021-01-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201116 Day 5- drawing lots of faces with sketch-rnn.md",
+      "time": "2020-11-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210128 Start programming in Racket by writing a -guess the number- game.md",
+      "time": "2021-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200907 A beginner-s guide to SSH for remote connection on Linux.md",
+      "time": "2020-11-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201123 A beginner-s guide to Kubernetes Jobs and CronJobs.md",
+      "time": "2020-11-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210612 How to get KDE Plasma 5.22 in Kubuntu 21.04 Hirsute Hippo.md",
+      "time": "2021-07-15",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20210625 How to program in C on FreeDOS.md",
+      "time": "2021-06-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200615 My Linux Story- remixing distributions at 17 years old.md",
+      "time": "2020-06-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 Debian-s Decision to Drop Old Drivers has Upset Vintage Hardware Users.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210309 Collect sensor data with your Raspberry Pi and open source tools.md",
+      "time": "2021-03-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200305 5 productivity apps for Linux.md",
+      "time": "2020-03-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210718 Up for a Challenge- Try These ‘Advanced- Linux Distros -Not Based on Debian, Arch or Red Hat.md",
+      "time": "2021-07-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201112 Quick Lookup is a Simple Open Source Word Lookup Tool to Find Meaning of Words You Come Across.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210211 Getting to Know the Cryptocurrency Open Patent Alliance (COPA).md",
+      "time": "2021-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210621 Why I love programming on FreeDOS with GW-BASIC.md",
+      "time": "2021-06-22",
+      "user": "charain"
+    },
+    {
+      "file": "sources/tech/20200729 How learning Linux introduced me to open source.md",
+      "time": "2020-07-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210122 Why KubeEdge is my favorite open source project of 2020.md",
+      "time": "2021-01-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200118 Zorin Grid Lets You Remotely Manage Multiple Zorin OS Computers.md",
+      "time": "2020-01-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200307 Compose music as code using Sonic Pi.md",
+      "time": "2020-03-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210117 3 steps to achieving Inbox Zero.md",
+      "time": "2021-01-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201226 10 open source news headlines of 2020.md",
+      "time": "2020-12-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210713 Use VS Code to develop in containers.md",
+      "time": "2021-07-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210701 How I build my personal website using containers with a Makefile.md",
+      "time": "2021-07-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210405 How different programming languages do the same thing.md",
+      "time": "2021-04-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190409 topgrade - Upgrade-Update Everything In Single Command On Linux.md",
+      "time": "2019-04-09",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20200414 How young people can help fight COVID-19 with code.md",
+      "time": "2020-04-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210705 Things to do after installing Fedora 34 Workstation.md",
+      "time": "2021-07-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201103 27 Super Cool Raspberry Pi Zero W Projects for DIY Enthusiasts.md",
+      "time": "2020-11-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210611 How hypertext can establish application state in REST.md",
+      "time": "2021-06-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210526 Linux Jargon Buster- What are Daemons in Linux.md",
+      "time": "2021-05-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210102 Explore the night sky with this open source astronomy app.md",
+      "time": "2021-01-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210131 How to teach open source beyond business.md",
+      "time": "2021-02-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200521 Glico (Weighted Rock Paper Scissors).md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200712 Recovering audio from a lost format with open source.md",
+      "time": "2020-07-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201215 How to Resize Images with Right Click on Linux.md",
+      "time": "2020-12-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200703 Create LEGO designs in Blender with this plugin.md",
+      "time": "2020-07-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210706 Why you need to use Kubernetes schema validation tools.md",
+      "time": "2021-07-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210518 Vimix is an Open Source Tool That Helps With Graphical Mixing and Blending Live.md",
+      "time": "2021-05-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210310 Troubleshoot WiFi problems with Go and a Raspberry Pi.md",
+      "time": "2021-03-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201111 Create your first Knative app.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210714 How different programming languages read and write data.md",
+      "time": "2021-07-17",
+      "user": "MjSeven"
+    },
+    {
+      "file": "sources/tech/20210714 Getting Started with Podman on Fedora.md",
+      "time": "2021-07-16",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20200228 Fedora-s gaggle of desktops.md",
+      "time": "2020-02-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210428 How to create your first Quarkus application.md",
+      "time": "2021-05-06",
+      "user": "geekpi"
+    },
+    {
+      "file": "sources/tech/20200403 Building a sensing prosthetic with the Raspberry Pi.md",
+      "time": "2020-04-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200518 Using Fedora to implement REST API in JavaScript- part 2.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201111 Day 3- an infinitely tall fridge.md",
+      "time": "2020-11-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210406 Use Apache Superset for open source business intelligence reporting.md",
+      "time": "2021-04-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210510 Getting better at counting rpm-ostree based systems.md",
+      "time": "2021-05-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201210 Set up a hyperconverged infrastructure with open source tools.md",
+      "time": "2020-12-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210503 Learn the Lisp programming language in 2021.md",
+      "time": "2021-05-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200207 Using Powershell to automate Linux, macOS, and Windows processes.md",
+      "time": "2020-02-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200917 Update devices remotely with this open source tool.md",
+      "time": "2020-09-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201027 Map Your Gamepad Buttons With Keyboard, Mouse, or Macros-Scripts Using AntiMicroX in Linux.md",
+      "time": "2020-10-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201016 systemd-resolved- introduction to split DNS.md",
+      "time": "2020-10-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 What to do When You See -Repository does not have a release file- Error in Ubuntu.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200630 10 ReactJS tools to boost your web development skills.md",
+      "time": "2020-07-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210104 8 Kubernetes insights for 2021.md",
+      "time": "2021-01-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200925 -email-protected-- Help the Fight Against COVID-19 With Your Linux System.md",
+      "time": "2020-09-25",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20201007 Design and document APIs using an open source cross-platform tool.md",
+      "time": "2020-10-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201118 Apply the Scientific Method to agile development.md",
+      "time": "2020-11-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200709 Expand your Raspberry Pi with Arduino ports.md",
+      "time": "2020-07-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210307 How to Install Nvidia Drivers on Linux Mint -Beginner-s Guide.md",
+      "time": "2021-03-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201202 Set up OpenStack on a Raspberry Pi cluster.md",
+      "time": "2020-12-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201110 Load balance network traffic with HAProxy.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210711 Explore waterways with this open source nautical navigation tool.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210211 31 open source text editors you need to try.md",
+      "time": "2021-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200116 Automating Helm deployments with Bash.md",
+      "time": "2020-01-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200221 Live video streaming with open source Video.js.md",
+      "time": "2020-02-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210123 How I programmed a virtual gift exchange.md",
+      "time": "2021-01-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200901 How to Set Up Facial Recognition to Sign into Ubuntu and Other Linux Distributions.md",
+      "time": "2020-09-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200128 How I had a nerdy date night with StreetComplete quests.md",
+      "time": "2020-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 CopyQ Clipboard Manager for Keeping a Track of Clipboard History.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200430 Edit music recordings with Audacity on Linux.md",
+      "time": "2020-05-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200207 Introducing Zuul for improved CI-CD.md",
+      "time": "2020-02-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210423 How I use OBS Studio to record videos for my YouTube channel.md",
+      "time": "2021-04-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210319 Create a countdown clock with a Raspberry Pi.md",
+      "time": "2021-03-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200709 Making compliance scalable in a container world.md",
+      "time": "2020-07-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200825 How to choose an affordable Linux laptop for video conferencing.md",
+      "time": "2020-08-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200626 Advice for getting started with GNOME.md",
+      "time": "2020-06-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210403 FreeDOS commands you need to know.md",
+      "time": "2021-04-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210417 How I digitized my CD collection with open source tools.md",
+      "time": "2021-04-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200114 16 Places to Buy a Pre-installed Linux Laptop Online.md",
+      "time": "2020-01-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210701 Try Dolibarr, an open source customer relationship management platform.md",
+      "time": "2021-07-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210215 Installing Nextcloud 20 on Fedora Linux with Podman.md",
+      "time": "2021-02-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210115 Review of Container-to-Container Communications in Kubernetes.md",
+      "time": "2021-04-19",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20200914 The future of virtual conferences, service mesh, and more industry trends.md",
+      "time": "2020-09-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20180225 What I learnt from building 3 high traffic web applications on an embedded key value store.md",
+      "time": "2018-04-06",
+      "user": "Ezio"
+    },
+    {
+      "file": "sources/tech/20200714 5 things to look for in an open source alternative to SharePoint.md",
+      "time": "2020-07-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210616 How to use FreeDOS as an embedded system.md",
+      "time": "2021-06-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210625 Mount cue-bin image files with CDemu.md",
+      "time": "2021-06-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201210 Practice coding in Groovy by writing a game.md",
+      "time": "2020-12-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20180605 Sound themes in Linux- What every user should know.md",
+      "time": "2018-06-06",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20200203 New zine- Become a SELECT Star.md",
+      "time": "2020-02-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210107 A hands-on tutorial for using the GNU Project Debugger.md",
+      "time": "2021-01-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201225 3 critical DevOps concepts we explored in 2020.md",
+      "time": "2020-12-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201009 My open source video game for Open Jam.md",
+      "time": "2020-10-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210122 Configure a Linux workspace remotely from the command line.md",
+      "time": "2021-01-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201212 How to Install Mesa Drivers on Ubuntu -Latest and Stable.md",
+      "time": "2020-12-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201218 Using pods with Podman on Fedora.md",
+      "time": "2020-12-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201001 Akraino- An Open Source Project for the Edge.md",
+      "time": "2020-10-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200124 Thunderbolt - how to use keyboard during boot time.md",
+      "time": "2020-01-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200718 Tricks with Pseudorandom Number Generators.md",
+      "time": "2020-07-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200613 How to Use Microsoft OneDrive in Linux With Rclone Open-Source Tool -For Intermediate to Expert Users.md",
+      "time": "2020-06-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200228 How to process real-time data with Apache.md",
+      "time": "2020-02-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210610 Install and remove software packages on FreeDOS.md",
+      "time": "2021-06-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210114 How I prioritize tasks on my to-do list.md",
+      "time": "2021-01-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210702 Creating a PKGBUILD to Make Packages for Arch Linux.md",
+      "time": "2021-07-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200103 Tracking Translations with Transtats.md",
+      "time": "2020-01-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210115 How open source builds distributed trust.md",
+      "time": "2021-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200304 How service virtualization relates to test-driven development.md",
+      "time": "2020-03-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 How to Compress PDF in Linux -GUI - Terminal.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210101 Djinn- A Code Generator and Templating Language Inspired by Jinja2.md",
+      "time": "2021-01-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210420 In the trenches with Thomas Gleixner, real-time Linux kernel patch set.md",
+      "time": "2021-04-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201207 Manage multiple service instances with systemctl.md",
+      "time": "2020-12-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210109 Catch up on these 4 virtual events from 2020.md",
+      "time": "2021-01-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210226 Navigate your FreeDOS system.md",
+      "time": "2021-02-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201019 Web of Trust, Part 2- Tutorial.md",
+      "time": "2020-10-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210408 5 commands to level-up your Git game.md",
+      "time": "2021-04-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201124 Customize Task Switching Experience on GNOME Desktop With These Nifty Tools.md",
+      "time": "2020-11-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210118 Set up a minimal server on a Raspberry Pi.md",
+      "time": "2021-01-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200303 Getting started with lightweight alternatives to GNU Emacs.md",
+      "time": "2020-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210617 Refactor your applications to Kubernetes.md",
+      "time": "2021-06-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210628 Introduction to image builder.md",
+      "time": "2021-06-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210519 A beginner-s guide for contributing to Apache Cassandra.md",
+      "time": "2021-05-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210530 16 efficient breakfasts of open source technologists from around the world.md",
+      "time": "2021-05-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200204 Managing your attached hardware on Linux with systemd-udevd.md",
+      "time": "2020-02-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210625 9 Features in Brave Search That Make it a Great Google Search Alternative.md",
+      "time": "2021-06-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210116 Looking to Ditch WhatsApp- Here are 5 Better Privacy Alternatives to WhatsApp.md",
+      "time": "2021-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210330 A DevOps guide to documentation.md",
+      "time": "2021-03-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210306 Manage containers on Raspberry Pi with this open source tool.md",
+      "time": "2021-03-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210130 How I de-clutter my digital workspace.md",
+      "time": "2021-01-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210702 Run Prometheus at home in a container.md",
+      "time": "2021-07-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210402 20 ways to be more productive and respect yourself.md",
+      "time": "2021-04-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210617 Why FreeDOS has 16 colors.md",
+      "time": "2021-06-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210609 What happens when you terminate Kubernetes containers on purpose.md",
+      "time": "2021-06-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200924 Manage knowledge with BlueSpice, an open source alternative to Confluence.md",
+      "time": "2020-09-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200508 Metaphors in man pages.md",
+      "time": "2020-11-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201221 Try a text editor inspired by Notepad.md",
+      "time": "2020-12-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210517 Network address translation part 4 - Conntrack troubleshooting.md",
+      "time": "2021-05-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210126 Automate setup and delivery for virtual machines in the cloud.md",
+      "time": "2021-01-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200417 Is reporting 100- of code coverage reasonable.md",
+      "time": "2020-04-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 How to Install Linux Mint in VirtualBox -Screenshot Tutorial.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210710 A new open source operating system for embedded systems.md",
+      "time": "2021-07-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210415 Resolve systemd-resolved name-service failures with Ansible.md",
+      "time": "2021-04-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210124 3 stress-free steps to tackling your task list.md",
+      "time": "2021-01-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200629 Scaling a GraphQL Website.md",
+      "time": "2021-06-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201118 Cloud control vs local control- What to choose for your home automation.md",
+      "time": "2020-11-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200722 6 ways to contribute to an open source alternative to Slack.md",
+      "time": "2020-07-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201231 4 considerations for getting started with CI-CD in 2021.md",
+      "time": "2021-01-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210211 Unikraft- Pushing Unikernels into the Mainstream.md",
+      "time": "2021-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210222 A step-by-step guide to Knative eventing.md",
+      "time": "2021-02-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201222 How to Automatically Accept SSH Key Fingerprint.md",
+      "time": "2020-12-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200415 6 open source teaching tools for virtual classrooms.md",
+      "time": "2020-04-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201204 Try this Linux text editor for Emacs fans.md",
+      "time": "2020-12-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200613 Manjaro Linux Review- ‘Arch Linux for Human Beings- Provides Rolling Release for Every User.md",
+      "time": "2020-06-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201027 Bring old hardware back to life with OpenBSD.md",
+      "time": "2020-10-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210322 6 WordPress plugins for restaurants and retailers.md",
+      "time": "2021-03-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200419 A stress-free guide to keeping WordPress sites updated.md",
+      "time": "2020-04-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210524 Keep tabs on your Linux computer specs with this desktop application.md",
+      "time": "2021-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200611 Nextcloud Vs ownCloud- What-s the Difference- Which one Should You Use.md",
+      "time": "2020-06-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210108 The Definitive Guide to Using and Customizing the Dock in Ubuntu.md",
+      "time": "2021-01-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210104 Learn Fortran by writing a -guess the number- game.md",
+      "time": "2021-01-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200708 A visual guide to Lens- A new way to see Kubernetes.md",
+      "time": "2020-07-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210426 Exploring the world of declarative programming.md",
+      "time": "2021-04-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200617 Internet connection sharing with NetworkManager.md",
+      "time": "2020-06-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210401 Use awk to calculate letter frequency.md",
+      "time": "2021-04-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190815 12 extensions for your GNOME desktop.md",
+      "time": "2019-08-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200121 13 of the best React JavaScript frameworks.md",
+      "time": "2020-01-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210419 How to Deploy Seafile Server with Docker to Host Your Own File Synchronization and Sharing Solution.md",
+      "time": "2021-04-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210313 My review of the Raspberry Pi 400.md",
+      "time": "2021-03-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200616 Hard lessons learned about Kubernetes garbage collection.md",
+      "time": "2020-06-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210626 Windows 11 Look Inspired by KDE Plasma and GNOME.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210707 Open source tools and tips for improving your Linux PC-s performance.md",
+      "time": "2021-07-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210317 Programming 101- Input and output with Java.md",
+      "time": "2021-03-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200704 Purism-s Ultra-Secure Linux Machine is Now Available in a New Size.md",
+      "time": "2020-07-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200516 Fatih-s question.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200107 Introduction to the Linux goto shell utility.md",
+      "time": "2020-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200329 Nextcloud- The Swiss Army Knife of Remote Working Tools.md",
+      "time": "2020-03-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190604 Create a CentOS homelab in an hour.md",
+      "time": "2019-06-04",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20210706 How to Install Fedora 34 Workstation -Step by Step.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210227 Getting started with COBOL development on Fedora Linux 33.md",
+      "time": "2021-02-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210118 Deploy your own Matrix server on Fedora CoreOS.md",
+      "time": "2021-01-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210708 3 reasons Quarkus 2.0 improves developer productivity on Linux.md",
+      "time": "2021-07-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201216 Radicle- An Open-Source Decentralized App for Code Collaboration -P2P GitHub Alternative.md",
+      "time": "2020-12-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210305 5 useful Moodle plugins to engage students.md",
+      "time": "2021-03-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210609 Making portable functions across serverless platforms.md",
+      "time": "2021-06-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210530 Complete Guide to Configuring SSH in Ubuntu.md",
+      "time": "2021-05-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200214 How to restore a single-core computer with Linux.md",
+      "time": "2020-02-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210207 3 ways to play video games on Linux.md",
+      "time": "2021-02-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210113 Analyze Kubernetes files for errors with KubeLinter.md",
+      "time": "2021-01-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201204 Setting a standard for digital public goods.md",
+      "time": "2020-12-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201209 How I use Stream Deck on Linux with open source tools.md",
+      "time": "2020-12-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201102 5 reasons to use Linux in 2020.md",
+      "time": "2020-11-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210511 What is fog computing.md",
+      "time": "2021-05-23",
+      "user": "Gordon"
+    },
+    {
+      "file": "sources/tech/20210604 Set and use environment variables in FreeDOS.md",
+      "time": "2021-06-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200729 Demonstrating Perl with Tic-Tac-Toe, Part 4.md",
+      "time": "2020-07-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200113 Use this script to create, save, and run different rsync configurations via named profiles.md",
+      "time": "2020-01-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210707 How to Know if Your System Uses MBR or GPT Partitioning -on Windows and Linux.md",
+      "time": "2021-07-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200730 Monitor systemd journals via email.md",
+      "time": "2020-07-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210416 Use the DNF local plugin to speed up your home lab.md",
+      "time": "2021-04-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200617 What happens when you update your DNS.md",
+      "time": "2020-11-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210121 How to Uninstall Applications from Ubuntu Linux.md",
+      "time": "2021-01-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210503 Why I support systemd-s plan to take over the world.md",
+      "time": "2021-05-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201124 Communication by example- Which methods do high-performing open source communities use.md",
+      "time": "2020-11-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201114 Woothee (HTTP User Agent Parser).md",
+      "time": "2020-11-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200624 Why you should use Node.js for data science.md",
+      "time": "2020-06-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210316 Get started with edge computing by programming embedded systems.md",
+      "time": "2021-03-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200311 Using the Quarkus Framework on Fedora Silverblue - Just a Quick Look.md",
+      "time": "2020-03-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210301 5 tips for choosing an Ansible collection that-s right for you.md",
+      "time": "2021-03-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210115 Learn awk by coding a -guess the number- game.md",
+      "time": "2021-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210326 10 open source tools for content creators.md",
+      "time": "2021-03-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200910 How this open source test framework evolves with .NET.md",
+      "time": "2020-09-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200515 How to examine processes running on Linux.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210108 Java development on Fedora Linux.md",
+      "time": "2021-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200410 How Kubernetes saved my desktop application.md",
+      "time": "2020-06-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200219 How to conveniently unsubscribe from a mailing list.md",
+      "time": "2020-02-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200606 What are the pros and cons of virtual events.md",
+      "time": "2020-06-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210624 Linux package management with apt.md",
+      "time": "2021-06-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210122 Convert your filesystem to Btrfs.md",
+      "time": "2021-01-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200916 Analyze Linux startup performance.md",
+      "time": "2020-09-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210327 My favorite open source tools to meet new friends.md",
+      "time": "2021-03-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210414 Fedora Workstation 34 feature focus- Btrfs transparent compression.md",
+      "time": "2021-04-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201013 What measured boot and trusted boot means for Linux.md",
+      "time": "2020-10-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201217 Explore the exciting features of the Howl text editor.md",
+      "time": "2020-12-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200414 Try this Kubernetes HTTP router and reverse proxy.md",
+      "time": "2020-04-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201109 What-s the difference between orchestration and automation.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200421 How to take advantage of Linux-s extensive vocabulary.md",
+      "time": "2020-04-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200505 8 open source video games to play.md",
+      "time": "2020-05-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190316 Program the real world using Rust on Raspberry Pi.md",
+      "time": "2019-03-18",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20210601 Start monitoring your Kubernetes cluster with Prometheus and Grafana.md",
+      "time": "2021-06-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200224 Make free encrypted backups to the cloud on Fedora.md",
+      "time": "2020-02-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201123 Day 11- learning about learning rates.md",
+      "time": "2020-11-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210716 What does the Open-Closed Principle mean for refactoring.md",
+      "time": "2021-07-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210616 Top 5 Chrome-like Browsers That Are Better Than Google Chrome in 2021.md",
+      "time": "2021-06-17",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20210607 Test arbitrary pod failures on Kubernetes with kube-monkey.md",
+      "time": "2021-06-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 LanguageTool Review- Free and Open Source Grammar Checker.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210712 Set up temperature sensors in your home with a Raspberry Pi.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200316 How to test failed authentication attempts with test-driven development.md",
+      "time": "2020-03-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210611 How to use the FreeDOS text editor.md",
+      "time": "2021-06-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210112 15 favorite programming tutorials and insights.md",
+      "time": "2021-01-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200619 Get Your Work Done Faster With These To-Do List Apps on Linux Desktop.md",
+      "time": "2020-06-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200829 5 open source activities for kids to try this weekend.md",
+      "time": "2020-08-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210415 5 reasons sysadmins love systemd.md",
+      "time": "2021-04-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20191128 Monitoring Linux and Windows hosts with Glances.md",
+      "time": "2019-11-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200608 A secure and private open source alternative to Alexa.md",
+      "time": "2020-06-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210313 Build an open source theremin.md",
+      "time": "2021-03-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210615 Keep track of your IRC chats with ZNC.md",
+      "time": "2021-06-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200107 5 ways to improve your Bash scripts.md",
+      "time": "2021-06-13",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20210112 8 tips for the Linux command line.md",
+      "time": "2021-01-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201118 Day 8- Start with something that works.md",
+      "time": "2020-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210620 8 books open source technologists should read this summer.md",
+      "time": "2021-06-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200612 Fedora 32- Simple Local File-Sharing with Samba.md",
+      "time": "2020-06-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201023 New open source project crowdsources internet security.md",
+      "time": "2020-10-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200211 Using external libraries in Java.md",
+      "time": "2020-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200825 6 open source virtualization technologies to know in 2020.md",
+      "time": "2020-08-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210128 Open Source Security Foundation (OpenSSF)- Reflection and Future.md",
+      "time": "2021-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210712 What is XML.md",
+      "time": "2021-07-13",
+      "user": "amwps290"
+    },
+    {
+      "file": "sources/tech/20200608 Eliminate spam using SSL with an open source certification authority.md",
+      "time": "2020-06-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210209 My open source disaster recovery strategy for the home office.md",
+      "time": "2021-02-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210511 What is the OSI model.md",
+      "time": "2021-05-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201212 How to List and Remove a GPG Key in Ubuntu.md",
+      "time": "2020-12-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200729 How to Install Discord Application in Ubuntu and Other Linux Distributions -3 Methods.md",
+      "time": "2020-07-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210210 Manage your budget on Linux with this open source finance tool.md",
+      "time": "2021-02-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201126 5 open source alternatives to GitHub.md",
+      "time": "2020-11-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210104 Docker Compose- a nice way to set up a dev environment.md",
+      "time": "2021-01-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201119 Automate your tasks with this Ansible cheat sheet.md",
+      "time": "2020-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210706 Element- A Cross-Platform Decentralized Open-Source Messaging App.md",
+      "time": "2021-07-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200427 New zine- How Containers Work.md",
+      "time": "2020-04-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210205 Integrate devices and add-ons into your home automation setup.md",
+      "time": "2021-02-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201223 Deploy Fedora CoreOS servers with Terraform.md",
+      "time": "2020-12-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200926 Cisco turns out security patches 25 high-threat flaws for IOS, IOS XE.md",
+      "time": "2020-09-26",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20210116 Install Privacy-friendly WhatsApp Alternative Signal on Linux Desktop.md",
+      "time": "2021-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210608 Analyze community health metrics with this open source tool.md",
+      "time": "2021-06-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210104 10 ways Ansible is for everyone.md",
+      "time": "2021-01-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210501 Flipping burgers to flipping switches- A tech guy-s journey.md",
+      "time": "2021-05-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210608 Play Doom on Kubernetes.md",
+      "time": "2021-06-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200728 Why now is the best time to use GNOME.md",
+      "time": "2020-07-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200110 5 ops hacks for sysadmins.md",
+      "time": "2020-01-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210623 Parsing config files with Lua.md",
+      "time": "2021-06-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210415 A beginner-s guide to load balancing.md",
+      "time": "2021-04-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210310 3 open source tools for producing video tutorials.md",
+      "time": "2021-03-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20170112 Writing Advanced Web Applications with Go.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201116 Manage multiple Terraform versions with tfenv.md",
+      "time": "2020-11-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210103 7 enlightening talks from All Things Open 2020.md",
+      "time": "2021-01-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200108 Detecting CPU steal time in guest virtual machines.md",
+      "time": "2020-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200921 Solve a real-world problem using Java.md",
+      "time": "2020-09-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201117 How to upgrade to Terraform 0.12.md",
+      "time": "2020-11-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210120 Help safeguard your Linux server from attack with this REST API.md",
+      "time": "2021-01-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210609 Configure FreeDOS in plain text.md",
+      "time": "2021-06-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190911 10 Ansible modules you need to know.md",
+      "time": "2019-09-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201117 My top 7 Rust commands for using Cargo.md",
+      "time": "2020-11-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201103 A Brief History of Ubuntu Touch.md",
+      "time": "2020-11-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201124 Build a motion detection system with a Raspberry Pi.md",
+      "time": "2020-11-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201010 Robust and Race-free Server Logging using Named Pipes.md",
+      "time": "2020-10-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201221 5 open source security practices from 2020.md",
+      "time": "2020-12-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200109 Create demo project templates with one script.md",
+      "time": "2020-01-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200221 Don-t like loops- Try Java Streams.md",
+      "time": "2020-02-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210514 PipeWire- the new audio and video daemon in Fedora Linux 34.md",
+      "time": "2021-05-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200622 Manage your Kubernetes cluster with Lens.md",
+      "time": "2020-06-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210208 Fedora Aarch64 on the SolidRun HoneyComb LX2K.md",
+      "time": "2021-02-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201211 Try FeatherPad as your Linux terminal text editor.md",
+      "time": "2020-12-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200313 How to set up the Raspberry Pi Zero for travel.md",
+      "time": "2020-03-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200430 Linux and Kubernetes- Serving The Common Goals of Enterprises.md",
+      "time": "2020-05-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210323 WebAssembly Security, Now and in the Future.md",
+      "time": "2021-03-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210111 9 Decentralized, P2P and Open Source Alternatives to Mainstream Social Media Platforms Like Twitter, Facebook, YouTube and Reddit.md",
+      "time": "2021-01-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210709 OS Chroot 101- covering btrfs subvolumes.md",
+      "time": "2021-07-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210329 Setting up a VM on Fedora Server using Cloud Images and virt-install version 3.md",
+      "time": "2021-03-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201213 Garuda Linux Provides a Hassle-free Arch Experience With a Beautiful Neon Look -Review with Video.md",
+      "time": "2020-12-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200228 Revive your RSS feed with Newsboat in the Linux terminal.md",
+      "time": "2020-02-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210707 Parsing config files with Java.md",
+      "time": "2021-07-08",
+      "user": "Starryi"
+    },
+    {
+      "file": "sources/tech/20210211 What-s new with ownCloud in 2021.md",
+      "time": "2021-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200510 Open source underpins coronavirus IoT and robotics solutions.md",
+      "time": "2020-05-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210126 Movim- An Open-Source Decentralized Social Platform Based on XMPP Network.md",
+      "time": "2021-01-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200330 Access control lists and external drives on Linux- What you need to know.md",
+      "time": "2020-03-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210312 Build a router with mobile connectivity using Raspberry Pi.md",
+      "time": "2021-03-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200619 How to prepare to write your first Mycroft AI skill using Python.md",
+      "time": "2020-06-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200612 How to Install Opera Browser on Ubuntu -Easy Way.md",
+      "time": "2020-06-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190108 Create your own video streaming server with Linux.md",
+      "time": "2019-01-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20200814 7 tips for giving and receiving better feedback.md",
+      "time": "2020-08-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200917 Open Usage Commons- Google-s Initiative to Manage Trademark for Open Source Projects Runs into Controversy.md",
+      "time": "2020-09-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200125 Oh, Bummer- Rocket League is Ending Support For Linux.md",
+      "time": "2020-01-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210714 5 Rust tools worth trying on the Linux command line.md",
+      "time": "2021-07-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200504 Define and optimize data partitions in Apache Cassandra.md",
+      "time": "2020-05-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201120 Day 10- Training an RNN to count to three.md",
+      "time": "2020-11-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200909 Create a slide deck using Jupyter Notebooks.md",
+      "time": "2020-09-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210627 How to Convert File Formats With Pandoc in Linux -Quick Guide.md",
+      "time": "2021-06-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200110 How I upgraded my CuBox open source music server.md",
+      "time": "2020-01-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 EU Parliament Strongly Recommends Developing and Using Open Source Software.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210712 Use Docker Compose with Podman to Orchestrate Containers on Fedora.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20191021 How to build a Flatpak.md",
+      "time": "2019-10-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200524 Diamond interface composition in Go 1.14.md",
+      "time": "2021-02-08",
+      "user": "LazyWolfLin"
+    },
+    {
+      "file": "sources/tech/20210430 Access freenode using Matrix clients.md",
+      "time": "2021-05-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210116 4 DevOps books to read this year.md",
+      "time": "2021-01-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210128 Interview with Shuah Khan, Kernel Maintainer - Linux Fellow.md",
+      "time": "2021-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200106 Create fancy text for your social media posts with this Gawk script.md",
+      "time": "2020-01-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20191111 A guide to intermediate awk scripting.md",
+      "time": "2020-03-02",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20201120 What do open source product teams do.md",
+      "time": "2020-11-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200609 humanID Project- Restoring Civil Discussion Through Better Online Identity.md",
+      "time": "2020-06-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210602 Test Kubernetes cluster failures and experiments in your terminal.md",
+      "time": "2021-06-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200603 Exploring Algol 68 in the 21st century.md",
+      "time": "2020-06-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200919 3 ways to protect yourself from imposter syndrome.md",
+      "time": "2020-09-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200224 17 Cool Arduino Project Ideas for DIY Enthusiasts.md",
+      "time": "2020-02-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200401 How does kanban relate-to DevOps.md",
+      "time": "2020-04-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210302 Learn Java with object orientation by building a classic Breakout game.md",
+      "time": "2021-03-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201112 Test GNOME apps on this Linux reference platform.md",
+      "time": "2020-11-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200205 PaperWM, the Tiling Window Manager for GNOME.md",
+      "time": "2020-02-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210120 Highlighted Text Not Visible in gedit in Dark Mode- Here-s What You Can Do.md",
+      "time": "2021-01-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210225 AIOps vs. MLOps- What-s the difference.md",
+      "time": "2021-02-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210202 How I build and expand application development and testing.md",
+      "time": "2021-02-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200522 Fast data modeling with JavaScript.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201219 Learn a new old language by programming a game in Algol 68.md",
+      "time": "2020-12-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210114 Discover Fedora Kinoite- a Silverblue variant with the KDE Plasma desktop.md",
+      "time": "2021-01-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210222 Review of Three Hyperledger Tools - Caliper, Cello and Avalon.md",
+      "time": "2021-02-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190624 Linux Package Managers Compared - AppImage vs Snap vs Flatpak.md",
+      "time": "2019-06-29",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20200525 Using ‘apt search- and ‘apt show- Commands to Search and Find Details of Packages in Ubuntu.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210529 Configuring Vim as a Writing Tool.md",
+      "time": "2021-05-30",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20210702 Bind a cloud event to Knative.md",
+      "time": "2021-07-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200624 A surprising way to do data science with Node.js.md",
+      "time": "2020-06-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200528 Getting Started With Nano Text Editor -Beginner-s Guide.md",
+      "time": "2020-05-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200315 How I migrated from a Mac Mini to a Raspberry Pi.md",
+      "time": "2020-03-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200131 5 ways to use Emacs as your RPG dashboard.md",
+      "time": "2020-02-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201208 Collaborate on text with Etherpad, an open source alternative to Google Docs.md",
+      "time": "2020-12-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210314 12 Raspberry Pi projects to try this year.md",
+      "time": "2021-03-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200204 SimpleLogin- Open Source Solution to Protect Your Email Inbox From Spammers.md",
+      "time": "2020-02-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200205 OpenCensus to monitor your Kubernetes cluster.md",
+      "time": "2020-02-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201109 Program your microcontroller with MicroBlocks.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210531 Get started with Kubernetes using chaos engineering.md",
+      "time": "2021-06-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210214 Why programmers love Linux packaging.md",
+      "time": "2021-04-19",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20190412 Linux Server Hardening Using Idempotency with Ansible- Part 2.md",
+      "time": "2019-04-15",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20201124 Create a machine learning model with Bash.md",
+      "time": "2020-11-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201112 MuditaOS- A Beautiful and Minimal Open Source Mobile Operating System for Feature Phones.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200805 Matthew Arnold- Why I switched to Fedora.md",
+      "time": "2020-08-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201229 Rocket.Chat- An Amazing Open-Source Alternative to Slack That You Can Self-host.md",
+      "time": "2020-12-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200904 Managing a non-profit organization-s supply chain with Groovy.md",
+      "time": "2020-09-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200129 3 lessons I-ve learned writing Ansible playbooks.md",
+      "time": "2020-01-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200703 What does a scrum master do.md",
+      "time": "2020-07-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210603 Test your Kubernetes experiments with an open source web interface.md",
+      "time": "2021-06-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210215 Protect your Home Assistant with these backups.md",
+      "time": "2021-02-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200804 An open source solution for continuous testing at scale.md",
+      "time": "2020-08-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201119 The relationship between labor and open source.md",
+      "time": "2020-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201029 Managing resources with cgroups in systemd.md",
+      "time": "2020-10-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210112 Server-sent events- a simple way to stream events from a server.md",
+      "time": "2021-01-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210123 Schedule appointments with an open source alternative to Doodle.md",
+      "time": "2021-01-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200218 How to embed Twine stories in WordPress.md",
+      "time": "2020-02-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210626 Windows 11 System Requirement is Turning Heads. Time to migrate to Linux.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190612 The bits and bytes of PKI.md",
+      "time": "2019-06-17",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20200501 Transparent, open source alternative to Google Analytics.md",
+      "time": "2020-05-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210604 Optimize Java serverless functions in Kubernetes.md",
+      "time": "2021-06-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201223 10 Raspberry Pi project ideas from 2020.md",
+      "time": "2020-12-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201211 Learn Julia by coding a game.md",
+      "time": "2020-12-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210519 Set up a .NET development environment.md",
+      "time": "2021-05-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210630 9 reasons I love to use the Qt Creator IDE.md",
+      "time": "2021-07-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200630 What is End of Life in Ubuntu- Everything You Should Know About it.md",
+      "time": "2020-06-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200507 Using the systemctl command to manage systemd units.md",
+      "time": "2020-05-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190523 Hardware bootstrapping with Ansible.md",
+      "time": "2019-05-27",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20210329 Rapidly configure SD cards for your Raspberry Pi cluster.md",
+      "time": "2021-03-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210308 6 open source tools for wedding planning.md",
+      "time": "2021-03-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210201 My handy guide to software development and testing.md",
+      "time": "2021-02-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201109 Set up Minishift and run Jenkins on Linux.md",
+      "time": "2020-11-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210602 New ways to learn about open organizations.md",
+      "time": "2021-06-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210715 Linux for Education- Best Distributions for Kids, Teachers - Schools.md",
+      "time": "2021-07-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201118 Secure your containers with SELinux.md",
+      "time": "2020-11-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201208 Meet Twake, A Modern Open-Source Collaboration Platform -Nextcloud Alternative.md",
+      "time": "2020-12-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210619 Try quantum computing with this open source software development kit.md",
+      "time": "2021-06-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210303 Host your website with dynamic content and a database on a Raspberry Pi.md",
+      "time": "2021-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210627 Try Chatwoot, an open source customer relationship platform.md",
+      "time": "2021-06-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200525 Encrypt Your Files Before Uploading it to Cloud With Cryptomator.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200417 How to set up and run WordPress for your classroom.md",
+      "time": "2020-04-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200409 Print double-sided documents at home with this simple Bash script.md",
+      "time": "2020-04-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210323 Meet Sleek- A Sleek Looking To-Do List Application.md",
+      "time": "2021-03-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190416 Linux Server Hardening Using Idempotency with Ansible- Part 3.md",
+      "time": "2019-04-17",
+      "user": "darksun"
+    },
+    {
+      "file": "sources/tech/20210608 Tune your MySQL queries like a pro.md",
+      "time": "2021-06-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20190807 Trace code in Fedora with bpftrace.md",
+      "time": "2019-08-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200211 Automate your live demos with this shell script.md",
+      "time": "2020-02-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210622 How to Make LibreOffice Look Like Microsoft Office.md",
+      "time": "2021-07-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210428 Share files between Linux and Windows computers.md",
+      "time": "2021-04-29",
+      "user": "wyxplus"
+    },
+    {
+      "file": "sources/tech/20200314 Adding a display to a travel-ready Raspberry Pi Zero.md",
+      "time": "2020-03-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210525 Gromit-MPX Lets You Draw Anywhere On Linux Desktop Screen.md",
+      "time": "2021-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201218 The role of empathy in DevOps.md",
+      "time": "2020-12-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201203 Watch Live TV on Linux With Hypnotix- A New IPTV Application Being Developed by Linux Mint Team.md",
+      "time": "2020-12-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200908 Deploy a deep learning model on Kubernetes.md",
+      "time": "2020-09-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200619 A little bit of plain Javascript can do a lot.md",
+      "time": "2020-11-05",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201120 How we develop success metrics for open source events.md",
+      "time": "2020-11-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201119 Day 9- Generating a lot of nonsense with an RNN.md",
+      "time": "2020-11-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210511 Use the Alpine email client in your Linux terminal.md",
+      "time": "2021-05-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200706 A guide to Terraform for Kubernetes beginners.md",
+      "time": "2020-07-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200519 How to use Windows Subsystem for Linux to open Linux on Windows 10 machines.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201222 10 lessons from sysadmins adapting to change in 2020.md",
+      "time": "2020-12-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200309 Level up your use of Helm on Kubernetes with Charts.md",
+      "time": "2020-03-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210405 Scaling Microservices on Kubernetes.md",
+      "time": "2021-04-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200703 How to Create a Pareto Diagram -80-20 Rule- in LibreOffice Calc.md",
+      "time": "2020-07-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200731 Real-time noise suppression for video conferencing.md",
+      "time": "2020-08-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210622 Edit text like Emacs in FreeDOS.md",
+      "time": "2021-06-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210201 Best Single Board Computers for AI and Deep Learning Projects.md",
+      "time": "2021-02-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210401 Partition a drive on Linux with GNU Parted.md",
+      "time": "2021-04-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210428 5 ways to process JSON data in Ansible.md",
+      "time": "2021-04-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210629 Try Linux on any operating system with VirtualBox.md",
+      "time": "2021-06-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201208 3 ways Kubernetes optimizes your IT budget.md",
+      "time": "2020-12-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200315 Getting started with shaders- signed distance functions.md",
+      "time": "2020-03-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210210 Draw Mandelbrot fractals with GIMP scripting.md",
+      "time": "2021-02-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201214 Write in XML with the NetBeans text editor.md",
+      "time": "2020-12-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200412 Use this helpful Bash script when stargazing.md",
+      "time": "2020-04-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200128 How I teach physics using open source tools.md",
+      "time": "2020-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200511 How I track my home-s energy consumption with open source.md",
+      "time": "2020-05-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200727 What does it mean for code to -work.md",
+      "time": "2020-07-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200129 7 open source desktop tools- Download our new eBook.md",
+      "time": "2020-01-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200812 Why I still love tcsh after all these years.md",
+      "time": "2020-08-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20201202 Vagrant beyond the basics.md",
+      "time": "2020-12-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210402 Read and write files with Groovy.md",
+      "time": "2021-04-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210408 Protect external storage with this Linux encryption system.md",
+      "time": "2021-04-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210601 Get started with Java serverless functions.md",
+      "time": "2021-06-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200922 Run Linux apps on your Chromebook.md",
+      "time": "2020-09-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20151127 Research log- gene signatures and connectivity map.md",
+      "time": "2020-05-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200127 Building Zero Trust authentication for multi-cloud application services.md",
+      "time": "2020-01-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210526 6 exciting new ShellHub features to look for in 2021.md",
+      "time": "2021-05-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210528 3 key considerations for your trusted compute base.md",
+      "time": "2021-05-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20200217 Automating unit tests in test-driven development.md",
+      "time": "2020-02-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210614 13 open source tools for developers.md",
+      "time": "2021-06-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210705 How I avoid breaking functionality when modifying legacy code.md",
+      "time": "2021-07-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20210215 Review of Five popular Hyperledger DLTs- Fabric, Besu, Sawtooth, Iroha and Indy.md",
+      "time": "2021-02-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210710 Linux Mint 20.2 -Uma- Released. This is What-s New.md",
+      "time": "2021-07-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/news/20210614 helloSystem - FreeBSD Based OS Brings another Promising Release 0.5.0.md",
+      "time": "2021-07-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/news/20210701 KaOS 2021.06 Brings in Plasma 5.22, JPEG XL Support, and More.md",
+      "time": "2021-07-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210630 Children-s Drawing App Tux Paint Now Has Gradient Fill and Pixel Art Options.md",
+      "time": "2021-07-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210627 Using Git Version Control as a Writer.md",
+      "time": "2021-06-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210615 PDF Mix Tool 1.0.1 Now Lets You Edit Metadata with an Improved UI - Qt 6 Support.md",
+      "time": "2021-07-16",
+      "user": "lcf33"
+    },
+    {
+      "file": "sources/news/20210629 Nextcloud Alternative Twake Adds New Features and Privacy Improvements.md",
+      "time": "2021-06-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210707 Nextcloud Hub 22 Makes It Easy to Collaborate and Manage Groups.md",
+      "time": "2021-07-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210625 Windows 11 Makes Your Hardware Obsolete, Use Linux Instead.md",
+      "time": "2021-06-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210617 elementary OS 6 Beta 2 is the First Step to Have Flatpak Apps Out-of-the-box.md",
+      "time": "2021-06-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210610 Vivaldi 4.0 Looks Like an All-in-One Browser for Linux.md",
+      "time": "2021-06-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210622 Security-Focused Tutanota Mail-s Linux Desktop Application is Now Available.md",
+      "time": "2021-06-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20210629 Dark and Light Only- Ubuntu 21.10 Looks to Ditch the Standard Mixed Color Theme.md",
+      "time": "2021-06-30",
+      "user": "DarkSun"
+    }
+  ]
+}
