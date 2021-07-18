@@ -24,7 +24,7 @@
 
 ### WordNet 和<ruby>同义词集<rt>synsets</rt></ruby>
 
-[WordNet][4] 是 NLTK 里的一个大型词典数据库。WordNet 包含各单词的诸多<ruby>认知同义词<rt>cognitive synonyms</rt></ruby> (一个<ruby>认知同义词<rt>cognitive synonyms</rt></ruby>常被称作 synset)。
+[WordNet][4] 是 NLTK 里的一个大型词典数据库。WordNet 包含各单词的诸多<ruby>认知同义词<rt>cognitive synonyms</rt></ruby> (一个认知同义词常被称作 synset)。在 WordNet 里，名词、动词、形容词和副词，各自被组织成一个同义词的网络。
 
 WordNet 是文本分析的一个很有用的工具。它有面向多种语言的版本 (汉语、英语、日语、俄语和西班牙语等)，也使用多种许可证 (从开源许可证到商业许可证都有)。初代版本的 WordNet 由普林斯顿大学研发，面向英语，使用<ruby>类 MIT 许可证<rt>MIT-like license</rt></ruby>。
 
@@ -34,13 +34,13 @@ WordNet 是文本分析的一个很有用的工具。它有面向多种语言的
 |---|---|---|
 |<ruby>名称<rt>Name</rt></ruby>| 此 synset 的名称 | 单词 code 有 5 个 synset，名称分别是 `code.n.01`、 `code.n.02`、 `code.n.03`、`code.v.01` 和 `code.v.02`|
 |<ruby>词性<rt>POS</rt></ruby>| 此 synset 的词性 | 单词 code 有 3 个名词词性的 synset 和 2 个动词词性的 synset|
-|<ruby>定义<rt>Definition</rt></ruby>| 该词作对应词性时的定义 | 动词 code 的一个定义是： (<ruby>计算机科学<rt>computer science</rt></ruby>)数据或计算机程序指令的<ruby>象征性排列<rt>symbolic arrangement</rt></ruby>|
+|<ruby>定义<rt>Definition</rt></ruby>| 该词作对应词性时的定义 | 动词 code 的一个定义是：(计算机科学) 数据或计算机程序指令的<ruby>象征性排列<rt>symbolic arrangement</rt></ruby>|
 |<ruby>例子<rt>Examples</rt></ruby>| 使用该词的例子 | code 一词的例子：<ruby>为了安全，我们应该给信息编码。<rt>We should encode the message for security reasons</rt></ruby>|
-|<ruby>词元<rt>Lemmas</rt></ruby>| 与该词向关联的其他 synset (包括那些不一定严格地是该词的同义词，但可以大体看作同义词的)；<ruby>词元<rt>lemma</rt></ruby>直接与其他<ruby>词元<rt>lemma</rt></ruby>连关联，而不是直接与<ruby>单词<rt>words/rt></ruby>相关联| `code.v.02` 的<ruby>词元<rt>lemma</rt></ruby>是`code.v.02.encipher`、`code.v.02.cipher`、`code.v.02.cypher`、`code.v.02.encrypt`、`code.v.02.inscribe` 和 `code.v.02.write_in_code`|
-|<ruby>反义词<rt>Antonyms</rt></ruby>| 意思相反的词 | <ruby>词元<rt>lemma</rt></ruby>`encode.v.01.encode` 的<ruby>反义词<rt>antonym</rt></ruby>是 `decode.v.01.decode`|
-|<ruby>上义词<rt>Hypernym</rt></ruby>|该词所属的一个范畴更大的词 | `code.v.01` 的一个<ruby>上义词<rt>hypernym</rt></ruby>是 `tag.v.01`|
-|<ruby>分项词<rt>Meronym</rt></ruby>| 属于该词组成部分的词 | <ruby>计算机<rt>computer</rt></ruby>的一个<ruby>分项词<rt>meronym</rt></ruby>是<ruby>芯片<rt>chip</rt></ruby>|
-|<ruby>总项词<rt>Holonym</rt></ruby>| 该词作为组成部分所属的词 | <ruby>窗<rt>window</rt></ruby>的一个<ruby>总项词<rt>holonym</rt></ruby>是<ruby>电脑屏幕<rt>computer screen</rt></ruby>|
+|<ruby>词元<rt>Lemmas</rt></ruby>| 与该词相关联的其他 synset (包括那些不一定严格地是该词的同义词，但可以大体看作同义词的)；词元直接与其他词元相关联，而不是直接与<ruby>单词<rt>words/rt></ruby>相关联|`code.v.02` 的词元是`code.v.02.encipher`、`code.v.02.cipher`、`code.v.02.cypher`、`code.v.02.encrypt`、`code.v.02.inscribe` 和 `code.v.02.write_in_code`|
+|<ruby>反义词<rt>Antonyms</rt></ruby>| 意思相反的词 | 词元 `encode.v.01.encode` 的反义词是 `decode.v.01.decode`|
+|<ruby>上义词<rt>Hypernym</rt></ruby>|该词所属的一个范畴更大的词 | `code.v.01` 的一个上义词是 `tag.v.01`|
+|<ruby>分项词<rt>Meronym</rt></ruby>| 属于该词组成部分的词 | computer 的一个分项词是 chip |
+|<ruby>总项词<rt>Holonym</rt></ruby>| 该词作为组成部分所属的词 | window 的一个总项词是 computer screen|
 
 synset 还有一些其他属性，在 `<你的 Python 安装路径>/Lib/site-packages` 下的 `nltk/corpus/reader/wordnet.py`，你可以找到它们。
 
@@ -116,7 +116,7 @@ Part Holonyms: []
 Part Meronyms: []
 ```
 
-<ruby>同义词集<rt>synsets</rt></ruby>和<ruby>词元<rt>lemma</rt></ruby>在 WordNet 里是按照树状结构组织起来的，下面的代码会给出直观的展现：
+<ruby>同义词集<rt>synsets</rt></ruby>和<ruby>词元<rt>lemmas</rt></ruby>在 WordNet 里是按照树状结构组织起来的，下面的代码会给出直观的展现：
 
 ```
 def hypernyms(synset):
@@ -194,7 +194,7 @@ Synset('soccer.n.01') ( n ) [ a football game in which two teams of 11 players t
    is 0.05
 ```
 
-两个词各个 synset 之间<ruby>路径相似度<rt>path similarity</rt></ruby>最大的是 0.5，表明它们关联性很大 (路径相似度指两个词的意义在<ruby>上下义关系的词汇分类结构<rt>hypernym/hypnoym taxonomy</rt></ruby>中的最短距离)。
+两个词各个 synset 之间<ruby>路径相似度<rt>path similarity</rt></ruby>最大的是 0.5，表明它们关联性很大 ([<ruby>路径相似度<rt>path similarity</rt></ruby>][6]指两个词的意义在<ruby>上下义关系的词汇分类结构<rt>hypernym/hypnoym taxonomy</rt></ruby>中的最短距离)。
 
 那么 code 和 bug 呢？这两个计算机领域的词的相似度是：
 
@@ -226,7 +226,7 @@ NLTK 提供多种<ruby>相似度计分器<rt>similarity scorers</rt></ruby>，�
   * jcn_similarity
   * lin_similarity
 
-要进一步了解这个<ruby>相似度计分器<rt>similarity scorers</rt></ruby>，请查看 [WordNet Interface][6] 的 Similarity 部分。
+要进一步了解这些<ruby>相似度计分器<rt>similarity scorers</rt></ruby>，请查看 [WordNet Interface][6] 的 Similarity 部分。
 
 #### 自主尝试
 
@@ -408,7 +408,7 @@ tree.draw()
 
 
 ```
-`sentence = 'Peterson first suggested the name "open source" at Palo Alto, California'`
+sentence = 'Peterson first suggested the name "open source" at Palo Alto, California'
 ```
 
 验证这个句子里的<ruby>人名<rt>name</rt></ruby>和<ruby>地名<rt>place</rt></ruby>有没有被识别出来。照例先预处理：
@@ -488,18 +488,18 @@ NLTK 也可以使用其他<ruby>标注器<rt>tagger</rt></ruby>，比如 [Stanfo
 使用 Python 库，下载维基百科的 [Category: Computer science page][18]，然后：
 
 
-  * 找出其中频率最高的<ruby>单词<rt>unigrams</rt></ruby><ruby>、二元搭配<rt>bigrams</rt></ruby>和<ruby>三元搭配<rt>trigrams</rt></ruby>，将它们作为一个<ruby>关键词<rt>keywords</rt></ruby>列表或者<ruby>技术<rt>techonologies</rt></ruby>列表。相关领域的学生或者工程师需要了解这样一份列表里的内容。
+  * 找出其中频率最高的<ruby>单词<rt>unigrams</rt></ruby><ruby>、二元搭配<rt>bigrams</rt></ruby>和<ruby>三元搭配<rt>trigrams</rt></ruby>，将它们作为一个关键词列表或者技术列表。相关领域的学生或者工程师需要了解这样一份列表里的内容。
   * 图形化地显示这个领域里重要的人名、技术、日期和地点。这会是一份很棒的信息图。
-  * 构建一个<ruby>搜索引擎<rt>search engine</rt></ruby>。你的<ruby>搜索引擎<rt>search engine</rt></ruby>性能能够超过维基百科吗？
+  * 构建一个搜索引擎。你的搜索引擎性能能够超过维基百科吗？
 
 
-### 接下来可以做什么？
+### 下一步？
 
-<ruby>自然语言处理<rt>NLP</rt></ruby>是<ruby>应用构建<rt>application building</rt></ruby>的典型支柱。NLTK 是经典、丰富且强大的工具集，提供了为现实世界构建有吸引力、目标明确的应用的工作坊。
+自然语言处理是<ruby>应用构建<rt>application building</rt></ruby>的典型支柱。NLTK 是经典、丰富且强大的工具集，提供了为现实世界构建有吸引力、目标明确的应用的工作坊。
 
 在这个系列的文章里，我用 NLTK 作为例子，展示了自然语言处理可以做什么。自然语言处理和 NLTK 还有太多东西值得探索，这个系列的文章只是帮助你探索它们的切入点。
 
-如果你的需求慢慢增长到 NLTK 已经满足不了了，你可以训练新的模型或者向 NLTK 添加新的功能。基于 NLTK 构建的新的<ruby>自然语言处理库<rt>NLP libraries</rt></ruby>正在不断涌现，机器学习也正被深度用于自然语言处理。
+如果你的需求增长到 NLTK 已经满足不了了，你可以训练新的模型或者向 NLTK 添加新的功能。基于 NLTK 构建的新的自然语言处理库正在不断涌现，机器学习也正被深度用于自然语言处理。
 
 --------------------------------------------------------------------------------
 
