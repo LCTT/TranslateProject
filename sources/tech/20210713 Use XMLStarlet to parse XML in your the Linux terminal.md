@@ -1,124 +1,125 @@
-[#]: subject: (Use XMLStarlet to parse XML in your the Linux terminal)
-[#]: via: (https://opensource.com/article/21/7/parse-xml-linux)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
-[#]: collector: (lujun9972)
-[#]: translator: (zepoch)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: subject: "Use XMLStarlet to parse XML in your the Linux terminal"
+[#]: via: "https://opensource.com/article/21/7/parse-xml-linux"
+[#]: author: "Seth Kenlon https://opensource.com/users/seth"
+[#]: collector: "lujun9972"
+[#]: translator: "zepoch"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
-Use XMLStarlet to parse XML in your the Linux terminal
+在你的 Linux 终端中使用 XMLStarlet 来解析 XML
 ======
-Become an XML star with XMLStarlet, an XML toolkit for your terminal.
+
+借助 XMLStarlet，一个终端上的 XML 工具包，你就是 XML 之星。
 ![Penguin with green background][1]
 
-Learning to parse XML is often considered a complex venture, but it doesn't have to be. [XML is highly and strictly structured][2], so it's relatively predictable. There are also lots of tools out there to help make the job manageable.
+学习解析 XML 通常被认为是一件复杂的事情，但其实大可不必。[XML 是高度严格结构化的][2]，所以也是相对来说可预测的。也有许多其他工具可以帮助你管理工作。
 
-One of my favorite XML utilities is [XMLStarlet][3], an XML toolkit for your terminal. With XMLStarlet, you can validate, parse, edit, format, and transform XML data. XMLStarlet is a relatively minimal command, but navigating XML is full of potential, so this article demonstrates how to use it to query XML data.
+我最喜欢的 XML 实用程序之一是 [XMLStarlet][3]， 用于终端的 XML 工具包，借助 XML 工具包，你可以验证、解析、编辑、格式化和转换 XML 数据。XMLStarLet 是个相对最小的命令，但指导 XML 却充满潜力，因此本文演示了如何使用它来查询 XML 数据。
 
-### Install
+### 安装
 
-XMLStarlet is installed by default on CentOS, Fedora, and many other modern Linux distributions, so just open a terminal and type `xmlstarlet` to access it. If XMLStarlet isn't already installed, your operating system offers to install it for you.
+XMLStarLet 默认安装在 CentOS，Fedora，和许多其他现代 Linux 发行版上，所以你可以打开终端，输入 `xmlstarlet` 来访问它。如果 XMLStarLet 还没有被安装，你的操作系统则会为你安装它。
 
-Alternately, you can install the `xmlstarlet` command from your package manager:
+或者，你可以用包管理器安装 `xmlstarlet`：
 
 
 ```
 `$ sudo dnf install xmlstarlet`
 ```
 
-On macOS, use [MacPorts][4] or [Homebrew][5]. On Windows, use [Chocolatey][6].
+在 macOS 上，使用 [MacPorts][4] 或 [Homebrew][5]。在 Windows 上，使用 [Chocolatey][6]。
 
-Should all else fail, you can install it manually from the [source code on Sourceforge][7].
+如果都失败了，您可以从 [Sourceforge 上的源代码][7]手动安装它。
 
-### Parsing XML with XMLStarlet
+### 用 XMLStarlet 解析 XML
 
-There are many tools designed to help parse and transform XML data, including software libraries that let you [write your own parser][8] and complex commands like `fop` and `xsltproc`. Sometimes you don't need to process XML data, though; you just need a convenient way to extract important data from, update, or just validate it. For spontaneous XML interactions, I use `xmlstarlet`, a classic "Swiss Army knife"-style application that does the most common XML tasks. You can see what it has to offer by running the command along with the `--help` option:
+有许多工具可以帮助解析和转换XML数据，包括允许您[编写自己的解析器][8]和复杂命令的软件库，如 `fop` 和 `xsltproc`。尽管有时您不需要处理XML数据；您可以很方便的从 XML 数据中来提取、更新或验证重要数据。对于自发的XML交互，我使用 `xmlstarlet`，这是常见的处理 XML任务的一个典型的“瑞士军刀”式应用。通过运行 `--help` 命令，您可以看到它提供哪些选项：
 
 
 ```
 $ xmlstarlet --help
 Usage: xmlstarlet [&lt;options&gt;] &lt;command&gt; [&lt;cmd-options&gt;]
 where &lt;command&gt; is one of:
-  ed    (or edit)      - Edit/Update XML document(s)
-  sel   (or select)    - Select data or query XML document(s) (XPATH, etc)
-  tr    (or transform) - Transform XML document(s) using XSLT
-  val   (or validate)  - Validate XML document(s) (well-formed/DTD/XSD/RelaxNG)
-  fo    (or format)    - Format XML document(s)
-  el    (or elements)  - Display element structure of XML document
-  c14n  (or canonic)   - XML canonicalization
-  ls    (or list)      - List directory as XML
+  ed    (or edit)      - Edit/Update XML document(s)
+  sel   (or select)    - Select data or query XML document(s) (XPATH, etc)
+  tr    (or transform) - Transform XML document(s) using XSLT
+  val   (or validate)  - Validate XML document(s) (well-formed/DTD/XSD/RelaxNG)
+  fo    (or format)    - Format XML document(s)
+  el    (or elements)  - Display element structure of XML document
+  c14n  (or canonic)   - XML canonicalization
+  ls    (or list)      - List directory as XML
 [...]
 ```
 
-You can get further help by appending `--help` to the end of any of these subcommands:
+您可以通过在这些子命令的末尾附加 `-help` 来获得进一步的帮助：
 
 
 ```
 $ xmlstarlet sel --help
-  -Q or --quiet             - do not write anything to standard output.
-  -C or --comp              - display generated XSLT
-  -R or --root              - print root element &lt;xsl-select&gt;
-  -T or --text              - output is text (default is XML)
-  -I or --indent            - indent output
+  -Q or --quiet             - do not write anything to standard output.
+  -C or --comp              - display generated XSLT
+  -R or --root              - print root element &lt;xsl-select&gt;
+  -T or --text              - output is text (default is XML)
+  -I or --indent            - indent output
 [...]
 ```
 
-#### Selecting data with sel
+#### 用 sel 命令选择数据
 
-You can view the data in XML with the `xmlstarlet select` (`sel` for short) command. Here's a simple XML document:
+可以使用 `xmlstarlet select`（简称 `sel`）命令查看XML格式的数据。下面是一个简单的XML文档：
 
 
 ```
 &lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 &lt;xml&gt;
-  &lt;os&gt;
-   &lt;linux&gt;
-    &lt;distribution&gt;
-      &lt;name&gt;Fedora&lt;/name&gt;
-      &lt;release&gt;7&lt;/release&gt;
-      &lt;codename&gt;Moonshine&lt;/codename&gt;
-      &lt;spins&gt;
-        &lt;name&gt;Live&lt;/name&gt;
-        &lt;name&gt;Fedora&lt;/name&gt;
-        &lt;name&gt;Everything&lt;/name&gt;
-      &lt;/spins&gt;
-    &lt;/distribution&gt;
+  &lt;os&gt;
+   &lt;linux&gt;
+    &lt;distribution&gt;
+      &lt;name&gt;Fedora&lt;/name&gt;
+      &lt;release&gt;7&lt;/release&gt;
+      &lt;codename&gt;Moonshine&lt;/codename&gt;
+      &lt;spins&gt;
+        &lt;name&gt;Live&lt;/name&gt;
+        &lt;name&gt;Fedora&lt;/name&gt;
+        &lt;name&gt;Everything&lt;/name&gt;
+      &lt;/spins&gt;
+    &lt;/distribution&gt;
 
-    &lt;distribution&gt;
-      &lt;name&gt;Fedora Core&lt;/name&gt;
-      &lt;release&gt;6&lt;/release&gt;
-      &lt;codename&gt;Zod&lt;/codename&gt;
-      &lt;spins&gt;&lt;/spins&gt;
-    &lt;/distribution&gt;
-   &lt;/linux&gt;
-  &lt;/os&gt;    
+    &lt;distribution&gt;
+      &lt;name&gt;Fedora Core&lt;/name&gt;
+      &lt;release&gt;6&lt;/release&gt;
+      &lt;codename&gt;Zod&lt;/codename&gt;
+      &lt;spins&gt;&lt;/spins&gt;
+    &lt;/distribution&gt;
+   &lt;/linux&gt;
+  &lt;/os&gt;    
 &lt;/xml&gt;
 ```
 
-When looking for data in an XML file, your first task is to focus on the node you want to explore. If you know the path to the node, specify the full path with the `--value-of` option. The earlier in the [Document Object Model][9] (DOM) tree you start to explore, the more information you see:
+在 XML 文件中查找数据时，您的第一个任务是关注要探索的节点。如果知道节点的路径，请使用 `-value of` 选项指定完整路径。您越早浏览 [Document Object Model][9]（DOM）树，就可以看到更多信息：
 
 
 ```
 $ xmlstarlet select --template \
 \--value-of /xml/os/linux/distribution \
 \--nl myfile.xml
-      Fedora
-      7
-      Moonshine
-     
-        Live
-        Fedora
-        Everything     
-     
-      Fedora Core
-      6
-      Zod
+      Fedora
+      7
+      Moonshine
+     
+        Live
+        Fedora
+        Everything     
+     
+      Fedora Core
+      6
+      Zod
 ```
 
-The `--nl` stands for "new line," and it inserts copious amounts of whitespace to ensure your terminal prompt gets a new line after your results are in. I've removed some of the excess space in the sample output.
+`--nl` 代表“新的一行”，它插入大量的空白，以确保在输入结果后，终端在新的一行显示。我已经删除了样本输出中的一些多余空间。
 
-Narrow your focus by descending further into the DOM tree:
+通过进一步深入 DOM 树来凝聚焦点：
 
 
 ```
@@ -129,13 +130,13 @@ Fedora
 Fedora Core
 ```
 
-#### Conditional selects
+#### 条件选择
 
-One of the most powerful tools for navigating and parsing XML is called XPath. It governs the syntax used in XML searches and invokes functions from XML libraries. XMLStarlet understands XPath expressions, so you can make your selection conditional with an XPath function. XPath features a wealth of functions, and it's [documented in detail by W3C][10], but I find [Mozilla's XPath documentation][11] more concise.
+用于导航和解析 XML 的最强大工具之一被称为 XPath。它控制 XML 搜索中使用的语法，并从 XML 库调用函数。XMLStarlet 能够解析 XPath 表达式，因此可以使用 XPath 函数来有条件的进行选择。XPath 具有丰富的函数，[由 W3C 详细记录][10]，但我觉得 [Mozilla 的 XPath 文档][11]更简洁。
 
-You can use square brackets as a test function, comparing the contents of an element to some value. Here's a test for the value of the `<name>` element, which returns the release number associated only with a specific match.
+可以使用方括号作为测试函数，将元素的内容与某个值进行比较。下面是对 `<name>` 元素的值的测试，它仅返回与特定匹配相关联的版本号。
 
-Imagine for a moment that the sample XML file contains all Fedora releases beginning with 1. To view all release numbers associated with the old name "Fedora Core" (the project dropped "Core" from the name from release 7 onward):
+想象一下，示例 XML 文件包含以 1 开头的所有 Fedora 版本。要查看与旧名称 “Fedora Core” 关联的所有版本号（项目从版本 7 开始名称中的 “Core” 被删除掉了），请执行以下操作：
 
 
 ```
@@ -150,13 +151,13 @@ $ xmlstarlet sel --template \
 1
 ```
 
-You could view all codenames for those releases, too, by changing the `--value-of` path to `/xml/os/linux/distribution[name = "Fedora Core"]/codename`.
+通过将 `--path 的值`更改为 `/xml/os/linux/distribution[name=“Fedora Core”]/codename`，您便可以查看这些版本的所有代号。
 
-### Matching paths and getting values
+### 匹配路径和获取目标值
 
-An advantage of viewing XML tags as nodes is that once you find the node, you can think of it as your current "directory" of data. It's not really a directory, at least not in the filesystem sense, but it is a collection of data that you can query. To help you keep your destination and the data "inside" it separate, XMLStarlet differentiates between what you're trying to match with the `--match` option and the value of the data you want with a `--value-of` option.
+将 XML 标记视为节点的一个优点是，一旦找到节点，就可以将其视为当前的数据“目录”。它不是一个真正的目录，至少不是文件系统意义上的目录，但它是一个可以查询的数据集合。为了帮助您将目标和“其他”的数据分开，XMLStarlet 把您试图用 `--match` 选项匹配的内容和用 `--value` 选项匹配的数据值进行了区分。
 
-Suppose you know that the `<spin>` node contains several elements. That makes it your destination. Once you're there, you can use `--value-of` to specify which element you want a value for. To look at all elements, use a dot (`.`) to represent your current location:
+假设你知道 `<spin>` 节点包含几个元素。这就是你的目的节点了。一旦到了这一步，就可以使用 `-value of` 指定要为哪个元素赋值。要查看所有元素，可以使用点（`.`）展示当前位置的所有元素：
 
 
 ```
@@ -168,7 +169,7 @@ Fedora
 Everything
 ```
 
-As with navigating the DOM, you can use XPath expressions to limit the scope of what data is returned. In this example, I use the `last()` function to retrieve just the last element in the `spin` node:
+与导航 DOM 一样，可以使用 XPath 表达式来限制返回数据的范围。在本例中，我使用 `last（）` 函数来检索 `spin` 节点中的最后一个元素：
 
 
 ```
@@ -178,7 +179,7 @@ $ xmlstarlet select --template \
 Everything
 ```
 
-In this example, I use the `position()` function to select a specific element in the `spin` node:
+在本例中，我使用 `position（）` 函数选择 `spin` 节点中的特定元素：
 
 
 ```
@@ -190,15 +191,17 @@ Fedora
 
 The `--match` and `--value-of` options can overlap, so it's up to you how you want to use them together. These two expressions, in the case of the sample XML, do the same thing:
 
+`--match` 和 `--value` 选项可以重叠，因此如何将它们一起使用取决于您自己。对于示例 XML，这两个表达式执行的是相同的操作：
+
 
 ```
-$ xmlstarlet select  --template \
+$ xmlstarlet select  --template \
 \--match '/xml/os/linux/distribution/spin' \
 \--value-of '.' \
 \--nl myfile.xml
 Live
 Fedora
-Everything     
+Everything     
 
 $ xmlstarlet select --template \
 \--match '/xml/os/linux/distribution' \
@@ -209,9 +212,9 @@ Fedora
 Everything
 ```
 
-### Getting comfortable with XML
+### 熟悉XML
 
-XML can seem over-verbose and unwieldy at times, but the tools built to interact with it consistently surprise me. If you're looking to take advantage of XML, then XMLStarlet could be a good entry point. The next time you're about to open an XML file to look at structured data, try using XMLStarlet and see if you can query that data instead. The more comfortable you get with XML, the better it can serve you as a robust and flexible data format.
+XML 有时看起来过于冗长和笨拙，但为与之交互和构建的工具却总是让我吃惊。如果您想要好好使用 XML，那么XMLStarlet 可能是一个很好的切入点。下次要打开 XML 文件查看结构化数据时，请尝试使用 XMLStarlet，看看是否可以改为查询该数据。当 XML 越适合你时，它就越能作为一种健壮灵活的数据格式而存在。
 
 --------------------------------------------------------------------------------
 
@@ -219,14 +222,14 @@ via: https://opensource.com/article/21/7/parse-xml-linux
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zepoch](https://github.com/zepoch)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux_penguin_green.png?itok=ENdVzW22 (Penguin with green background)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux_penguin_green.png?itok=ENdVzW22 "Penguin with green background"
 [2]: https://opensource.com/article/21/6/what-xml
 [3]: https://en.wikipedia.org/wiki/XMLStarlet
 [4]: https://opensource.com/article/20/11/macports
@@ -237,3 +240,4 @@ via: https://opensource.com/article/21/7/parse-xml-linux
 [9]: https://opensource.com/article/21/6/what-xml#dom
 [10]: https://www.w3.org/TR/1999/REC-xpath-19991116
 [11]: https://developer.mozilla.org/en-US/docs/Web/XPath/Functions
+
