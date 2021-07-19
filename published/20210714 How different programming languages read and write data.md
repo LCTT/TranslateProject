@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13599-1.html"
 
 不同的编程语言是如何读写数据的
 ======
