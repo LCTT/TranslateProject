@@ -7,7 +7,7 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Up for a Challenge? Try These ‘Advanced’ Linux Distros [Not Based on Debian, Arch or Red Hat]
+Up for a Challenge? Try These ‘Advanced’ Linux Distros [Not Based on Debian, Arch or Red Hat][tag]
 ======
 
 There are hundreds of Linux distributions. Some are for general purpose usage, while some are specifically tailored for education, robotics, hacking, gaming and what not.
