@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (PearFL)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13598-1.html)
 
 现实中的应用程序是如何丢失数据？
 ======
