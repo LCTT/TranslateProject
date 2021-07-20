@@ -7,35 +7,35 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Getting Started with Podman on Fedora
+在 Fedora 上开始使用 Podman
 ======
 
 ![][1]
 
-Podman logo from the Podman project <https://github.com/containers/podman/tree/main/logo>
+来自 Podman 项目的 Podman 标志 <https://github.com/containers/podman/tree/main/logo>
 
-[Podman][2] is a daemonless container engine for developing, managing, and running OCI Containers on your Linux System. In this article, we will introduce podman and how to use it with a small application build using nodejs. The app will be very simple and clean.
+[Podman][2] 是一个无守护程序的容器引擎，用于在你的 Linux 系统上开发、管理和运行 OCI 容器。在这篇文章中，我们将介绍 podman 以及如何用 nodejs 构建一个小型应用来使用它。该应用将是非常简单和干净的。
 
-### Install Podman
+### 安装 Podman
 
-Podman command is the same as [docker][3] just type in your terminal **alias docker=podman** if you have docker already installed
+如果你已经安装了 docker，只需在终端输入 **alias docker=podman**，那么 Podman 的命令就与 [docker][3] 相同。
 
-Podman is installed by default in Fedora. But if you don’t have it for any reason, you can install it using the following command:
+在 Fedora 中，Podman 是默认安装的。但是如果你因为任何原因没有安装，你可以用下面的命令安装它：
 
 ```
 sudo dnf install podman
 ```
 
-For fedora [silverblue][4] users, podman is already installed in your OS.
+对于 Fedora [silverblue][4] 用户，podman 已经安装在你的操作系统中了。
 
-After installation, run the hello world image to ensure everything is working:
+安装后，运行 hello world 镜像，以确保一切正常：
 
 ```
 podman pull hello-world
 podman run hello-world
 ```
 
-If everything is working well you will see the following output in your terminal:
+如果一切运行良好，你将在终端看到以下输出：
 
 ```
 Hello from Docker!
@@ -53,15 +53,15 @@ This message shows that your installation appears to be working correctly.
   https://docs.docker.com/get-started/
 ```
 
-### Simple Nodejs App
+### 简单的 Nodejs 应用
 
-First, we will create a folder **webapp** , type the following command in your terminal
+首先，我们将创建一个文件夹 **webapp**，在终端输入以下命令
 
 ```
 mkdir webapp && cd webapp
 ```
 
-Now create the file ****_package.json_ This file includes all the dependencies that the project needs to work well. Copy the following code inside the file _package.json ._
+现在创建文件 **_package.json_**，该文件包括项目运行所需的所有依赖项。在文件 _package.json_ 中复制以下代码：
 
 ```
 {
@@ -74,7 +74,7 @@ Now create the file ****_package.json_ This file includes all the dependencies t
 }
 ```
 
-Create the file _index.js_ and add the following code there:
+创建文件 _index.js_，并在其中添加以下代码：
 
 ```
 const express = require('express')
@@ -89,11 +89,11 @@ app.listen(8081, () => {
 });
 ```
 
-You can download source code from [here][5].
+你可以从[这里][5]下载源代码。
 
-### Create Dockerfile
+### 创建 Dockerfile
 
-First of all, create a file called _Dockerfile_ and make sure the first character is a capital, NOT lower case, then add the following code there:
+首先，创建一个名为 _Dockerfile_ 的文件，并确保第一个字符是大写，而不是小写，然后在那里添加以下代码：
 
 ```
 FROM node:alpine
@@ -103,42 +103,42 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 
-Be sure you are inside the folder _webapp_ then show the image and then type the following command:
+确保你在 _webapp_ 文件夹内，然后显示镜像，然后输入以下命令：
 
 ```
 podman build .
 ```
 
-Make sure to add the **dot**. The image is created on your machine and you can show it using the following command:
+确保加了**点**。镜像在你的机器上被创建，你可以用以下命令显示它：
 
 ```
 podman images
 ```
 
-The last step is to run the image inside a container by typing the following command:
+最后一步是输入以下命令在容器中运行该镜像：
 
 ```
 podman run -p 8080:8080 <image-name>
 ```
 
-Now open your browser in _localhost:8080_ and you will see that your app works.
+现在在你的浏览器中打开 _localhost:8080_，你会看到你的应用已经工作。
 
-### Stopping and Remove Container
+### 停止和删除容器
 
-To exit from the container use _CTRL-C._ You can remove the container by using the container id. Get the id and stop the container using these commands:
+使用 _CTRL-C_ 退出容器，你可以使用容器 ID 来删除容器。获取 ID 并使用这些命令停止容器：
 
 ```
 podman ps -a
 podman stop <container_id>
 ```
 
-You can delete the images from your machine by using the following command:
+你可以使用以下命令从你的机器上删除镜像：
 
 ```
 podman rmi <image_id>
 ```
 
-Read more about podman and how it works on the [official website][2]
+在[官方网站][2]上阅读更多关于 podman 和它如何工作的信息。
 
 --------------------------------------------------------------------------------
 
@@ -146,7 +146,7 @@ via: https://fedoramagazine.org/getting-started-with-podman-in-fedora/
 
 作者：[Yazan Monshed][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
