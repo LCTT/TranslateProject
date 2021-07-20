@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (6 evening rituals for working in tech)
-[#]: via: (https://opensource.com/article/20/11/evening-rituals-working-tech)
-[#]: author: (Jen Wike Huger https://opensource.com/users/jen-wike)
+[#]: collector: "lujun9972"
+[#]: translator: "Arzelan"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "6 evening rituals for working in tech"
+[#]: via: "https://opensource.com/article/20/11/evening-rituals-working-tech"
+[#]: author: "Jen Wike Huger https://opensource.com/users/jen-wike"
 
 6 evening rituals for working in tech
 ======
@@ -44,6 +44,6 @@ via: https://opensource.com/article/20/11/evening-rituals-working-tech
 
 [a]: https://opensource.com/users/jen-wike
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/EDUCATION_jadud_farm-road.png?itok=of8IuSM5 (A farm road)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/EDUCATION_jadud_farm-road.png?itok=of8IuSM5 "A farm road"
 [2]: https://opensource.com/article/20/2/linux-ebook-readers
 [3]: https://opensource.com/article/20/10/tech-morning-rituals
