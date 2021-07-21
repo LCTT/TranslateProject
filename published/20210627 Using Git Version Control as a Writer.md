@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (piaoshi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13604-1.html)
 
 作为一个写作者如何使用 Git 版本控制
 ======
