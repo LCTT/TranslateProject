@@ -1,18 +1,20 @@
 [#]: collector: (lujun9972)
 [#]: translator: (tanloong)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (An advanced guide to NLP analysis with Python and NLTK)
 [#]: via: (https://opensource.com/article/20/8/nlp-python-nltk)
 [#]: author: (Girish Managoli https://opensource.com/users/gammay)
 
-用 Python 和 NLTK 进行 NLP 分析的高级教程
+进阶教程：用 Python 和 NLTK 进行 NLP 分析
 ======
-进一步学习自然语言处理的基本概念  
-![Brain on a computer screen][1]
 
-在[之前的文章][2]里，我介绍了<ruby>自然语言处理<rt>NLP</rt></ruby>和宾夕法尼亚大学研发的自然语言处理工具包 ([NLTK][3])。我演示了用 Python 解析文本和定义停用词的方法，并介绍了语料库的概念。语料库是由文本构成的数据集，通过提供现成的文本数据来辅助文本处理。在这篇文章里，我将继续用各种语料库对文本进行对比和分析。
+> 进一步学习自然语言处理的基本概念  
+
+![](https://img.linux.net.cn/data/attachment/album/202107/21/115633k8l9nkqowqkowpwm.jpg)
+
+在 [之前的文章][2] 里，我介绍了<ruby>自然语言处理<rt>natural language processing</rt></ruby>（NLP）和宾夕法尼亚大学研发的<ruby>自然语言处理工具包<rt>Natural Language Toolkit</rt></ruby> ([NLTK][3])。我演示了用 Python 解析文本和定义<ruby>停顿词<rt>stopword</rt></ruby>的方法，并介绍了<ruby>语料库<rt>corpus</rt></ruby>的概念。语料库是由文本构成的数据集，通过提供现成的文本数据来辅助文本处理。在这篇文章里，我将继续用各种语料库对文本进行对比和分析。
 
 这篇文章主要包括以下部分：
 
@@ -21,37 +23,34 @@
   * <ruby>树<rt>Tree</rt></ruby>和<ruby>树库<rt>treebank</rt></ruby>
   * <ruby>命名实体识别<rt>Named entity recognition</rt></ruby>
 
+### 词网和同义词集
 
-### WordNet 和<ruby>同义词集<rt>synsets</rt></ruby>
+<ruby>[词网][4]<rt>WordNet</rt></ruby> 是 NLTK 里的一个大型词汇数据库语料库。词网包含各单词的诸多<ruby>认知同义词<rt>cognitive synonyms</rt></ruby>（认知同义词常被称作“<ruby>同义词集<rt>synset</rt></ruby>”）。在词网里，名词、动词、形容词和副词，各自被组织成一个同义词的网络。
 
-[WordNet][4] 是 NLTK 里的一个大型词典数据库。WordNet 包含各单词的诸多<ruby>认知同义词<rt>cognitive synonyms</rt></ruby> (一个认知同义词常被称作 synset)。在 WordNet 里，名词、动词、形容词和副词，各自被组织成一个同义词的网络。
+词网是一个很有用的文本分析工具。它有面向多种语言的版本（汉语、英语、日语、俄语和西班牙语等），也使用多种许可证（从开源许可证到商业许可证都有）。初代版本的词网由普林斯顿大学研发，面向英语，使用<ruby>类 MIT 许可证<rt>MIT-like license</rt></ruby>。
 
-WordNet 是文本分析的一个很有用的工具。它有面向多种语言的版本 (汉语、英语、日语、俄语和西班牙语等)，也使用多种许可证 (从开源许可证到商业许可证都有)。初代版本的 WordNet 由普林斯顿大学研发，面向英语，使用<ruby>类 MIT 许可证<rt>MIT-like license</rt></ruby>。
-
-因为一个词可能有多个意义或多个词性，所以可能与多个 synset 相关联。每个 synset 通常提供下列属性：
+因为一个词可能有多个意义或多个词性，所以可能与多个同义词集相关联。每个同义词集通常提供下列属性：
 
 |**属性** | **定义** | **例子**|
 |---|---|---|
-|<ruby>名称<rt>Name</rt></ruby>| 此 synset 的名称 | 单词 code 有 5 个 synset，名称分别是 `code.n.01`、 `code.n.02`、 `code.n.03`、`code.v.01` 和 `code.v.02`|
-|<ruby>词性<rt>POS</rt></ruby>| 此 synset 的词性 | 单词 code 有 3 个名词词性的 synset 和 2 个动词词性的 synset|
-|<ruby>定义<rt>Definition</rt></ruby>| 该词作对应词性时的定义 | 动词 code 的一个定义是：(计算机科学) 数据或计算机程序指令的<ruby>象征性排列<rt>symbolic arrangement</rt></ruby>|
-|<ruby>例子<rt>Examples</rt></ruby>| 使用该词的例子 | code 一词的例子：<ruby>为了安全，我们应该给信息编码。<rt>We should encode the message for security reasons</rt></ruby>|
-|<ruby>词元<rt>Lemmas</rt></ruby>| 与该词相关联的其他 synset (包括那些不一定严格地是该词的同义词，但可以大体看作同义词的)；词元直接与其他词元相关联，而不是直接与<ruby>单词<rt>words/rt></ruby>相关联|`code.v.02` 的词元是`code.v.02.encipher`、`code.v.02.cipher`、`code.v.02.cypher`、`code.v.02.encrypt`、`code.v.02.inscribe` 和 `code.v.02.write_in_code`|
-|<ruby>反义词<rt>Antonyms</rt></ruby>| 意思相反的词 | 词元 `encode.v.01.encode` 的反义词是 `decode.v.01.decode`|
+|<ruby>名称<rt>Name</rt></ruby>| 此同义词集的名称 | 单词 `code` 有 5 个同义词集，名称分别是 `code.n.01`、 `code.n.02`、 `code.n.03`、`code.v.01` 和 `code.v.02`|
+|<ruby>词性<rt>POS</rt></ruby>| 此同义词集的词性 | 单词 `code` 有 3 个名词词性的同义词集和 2 个动词词性的同义词集|
+|<ruby>定义<rt>Definition</rt></ruby>| 该词作对应词性时的定义 | 动词 `code` 的一个定义是：（计算机科学）数据或计算机程序指令的<ruby>象征性排列<rt>symbolic arrangement</rt></ruby>|
+|<ruby>例子<rt>Example</rt></ruby>| 使用该词的例子 | `code` 一词的例子：We should encode the message for security reasons|
+|<ruby>词元<rt>Lemma</rt></ruby>| 与该词相关联的其他同义词集（包括那些不一定严格地是该词的同义词，但可以大体看作同义词的）；词元直接与其他词元相关联，而不是直接与<ruby>单词<rt>word</rt></ruby>相关联|`code.v.02` 的词元是 `code.v.02.encipher`、`code.v.02.cipher`、`code.v.02.cypher`、`code.v.02.encrypt`、`code.v.02.inscribe` 和 `code.v.02.write_in_code`|
+|<ruby>反义词<rt>Antonym</rt></ruby>| 意思相反的词 | 词元 `encode.v.01.encode` 的反义词是 `decode.v.01.decode`|
 |<ruby>上义词<rt>Hypernym</rt></ruby>|该词所属的一个范畴更大的词 | `code.v.01` 的一个上义词是 `tag.v.01`|
-|<ruby>分项词<rt>Meronym</rt></ruby>| 属于该词组成部分的词 | computer 的一个分项词是 chip |
-|<ruby>总项词<rt>Holonym</rt></ruby>| 该词作为组成部分所属的词 | window 的一个总项词是 computer screen|
+|<ruby>分项词<rt>Meronym</rt></ruby>| 属于该词组成部分的词 | `computer` 的一个分项词是 `chip` |
+|<ruby>总项词<rt>Holonym</rt></ruby>| 该词作为组成部分所属的词 | `window` 的一个总项词是 `computer screen`|
 
-synset 还有一些其他属性，在 `<你的 Python 安装路径>/Lib/site-packages` 下的 `nltk/corpus/reader/wordnet.py`，你可以找到它们。
+同义词集还有一些其他属性，在 `<你的 Python 安装路径>/Lib/site-packages` 下的 `nltk/corpus/reader/wordnet.py`，你可以找到它们。
 
 下面的代码或许可以帮助理解。
 
 这个函数：
 
-
 ```
 from nltk.corpus import wordnet
-
 
 def synset_info(synset):
     print("Name", synset.name())
@@ -74,7 +73,6 @@ for synset in synsets:
 ```
 
 将会显示：
-
 
 ```
 5 synsets:
@@ -116,7 +114,7 @@ Part Holonyms: []
 Part Meronyms: []
 ```
 
-<ruby>同义词集<rt>synsets</rt></ruby>和<ruby>词元<rt>lemmas</rt></ruby>在 WordNet 里是按照树状结构组织起来的，下面的代码会给出直观的展现：
+<ruby>同义词集<rt>synset</rt></ruby>和<ruby>词元<rt>lemma</rt></ruby>在词网里是按照树状结构组织起来的，下面的代码会给出直观的展现：
 
 ```
 def hypernyms(synset):
@@ -127,9 +125,9 @@ for synset in synsets:
     print(synset.name() + " tree:")
     pprint(synset.tree(rel=hypernyms))
     print()
+```
 
-[/code] [code]
-
+```
 code.n.01 tree:
 [Synset('code.n.01'),
  [Synset('written_communication.n.01'),
@@ -155,24 +153,23 @@ code.v.02 tree:
    ...
 ```
 
-WordNet 并没有涵盖所有的单词和其信息 (现今英语有约 17,0000 个单词，最新版的 WordNet 涵盖了约 15,5000 个)，但它开了个好头。掌握了 WordNet 的各个概念后，如果你觉得它词汇少，不能满足你的需要，可以转而使用其他工具。或者，你也可以打造自己的<ruby>“词网”<rt>WordNet</rt></ruby>！
+词网并没有涵盖所有的单词和其信息（现今英语有约 17,0000 个单词，最新版的 词网 涵盖了约 15,5000 个），但它开了个好头。掌握了“词网”的各个概念后，如果你觉得它词汇少，不能满足你的需要，可以转而使用其他工具。或者，你也可以打造自己的“词网”！
 
 #### 自主尝试
 
-使用 Python 库，下载维基百科的 [open source][5] 页面，并列出该页面所有单词的<ruby>同义词集<rt>synsets</rt></ruby>和<ruby> 词元<rt>lemmas</rt></ruby>。
+使用 Python 库，下载维基百科的 “[open source][5]” 页面，并列出该页面所有单词的<ruby>同义词集<rt>synset</rt></ruby>和<ruby>词元<rt>lemma</rt></ruby>。
 
 ### 相似度比较
 
 相似度比较的目的是识别出两篇文本的相似度，在搜索引擎、聊天机器人等方面有很多应用。
 
-比如，相似度比较可以识别 football 和 soccer 是否有相似性。
+比如，相似度比较可以识别 `football` 和 `soccer` 是否有相似性。
 
 ```
 syn1 = wordnet.synsets('football')
 syn2 = wordnet.synsets('soccer')
 
-# A word may have multiple synsets, so need to compare each synset of word1 with synset of word2
-# 一个单词可能有多个 synset，需要把 word1 的每个 synset 和 word2 的每个 synset 分别比较
+# 一个单词可能有多个 同义词集，需要把 word1 的每个同义词集和 word2 的每个同义词集分别比较
 for s1 in syn1:
     for s2 in syn2:
         print("Path similarity of: ")
@@ -180,9 +177,9 @@ for s1 in syn1:
         print(s2, '(', s2.pos(), ')', '[', s2.definition(), ']')
         print("   is", s1.path_similarity(s2))
         print()
+```
 
-[/code] [code]
-
+```
 Path similarity of:
 Synset('football.n.01') ( n ) [ any of various games played with a ball (round or oval) in which two teams try to kick or carry or propel the ball into each other's goal ]
 Synset('soccer.n.01') ( n ) [ a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal ]
@@ -194,9 +191,9 @@ Synset('soccer.n.01') ( n ) [ a football game in which two teams of 11 players t
    is 0.05
 ```
 
-两个词各个 synset 之间<ruby>路径相似度<rt>path similarity</rt></ruby>最大的是 0.5，表明它们关联性很大 ([<ruby>路径相似度<rt>path similarity</rt></ruby>][6]指两个词的意义在<ruby>上下义关系的词汇分类结构<rt>hypernym/hypnoym taxonomy</rt></ruby>中的最短距离)。
+两个词各个同义词集之间<ruby>路径相似度<rt>path similarity</rt></ruby>最大的是 0.5，表明它们关联性很大（[<ruby>路径相似度<rt>path similarity</rt></ruby>][6]指两个词的意义在<ruby>上下义关系的词汇分类结构<rt>hypernym/hypnoym taxonomy</rt></ruby>中的最短距离）。
 
-那么 code 和 bug 呢？这两个计算机领域的词的相似度是：
+那么 `code` 和 `bug` 呢？这两个计算机领域的词的相似度是：
 
 ```
 Path similarity of:
@@ -215,7 +212,7 @@ Synset('bug.n.02') ( n ) [ a fault or defect in a computer program, system, or m
    is 0.09090909090909091
 ```
 
-这些是这两个词各 synset 之间<ruby>路径相似度<rt>path similarity</rt></ruby>的最大值，这些值表明两个词是有关联性的。
+这些是这两个词各同义词集之间<ruby>路径相似度<rt>path similarity</rt></ruby>的最大值，这些值表明两个词是有关联性的。
 
 NLTK 提供多种<ruby>相似度计分器<rt>similarity scorers</rt></ruby>，比如：
 
@@ -232,14 +229,13 @@ NLTK 提供多种<ruby>相似度计分器<rt>similarity scorers</rt></ruby>，�
 
 使用 Python 库，从维基百科的 [Category: Lists of computer terms][7] 生成一个术语列表，然后计算各术语之间的相似度。
 
-### <ruby>树<rt>tree</rt></ruby>和<ruby>树库<rt>treebank</rt></ruby>
+### 树和树库
 
 使用 NLTK，你可以把文本表示成树状结构以便进行分析。
 
 这里有一个例子：
 
 这是一份简短的文本，对其做预处理和词性标注：
-
 
 ```
 import nltk
@@ -251,8 +247,7 @@ words = nltk.tokenize.word_tokenize(text)
 words_tagged = nltk.pos_tag(words)
 ```
 
-要把文本转换成树状结构，你必须定义一个<ruby>语法<rt>grammar</rt></ruby> 。这个例子里用的是一个基于 [Penn Treebank tags][8] 的简单语法。
-
+要把文本转换成树状结构，你必须定义一个<ruby>语法<rt>grammar</rt></ruby>。这个例子里用的是一个基于 [Penn Treebank tags][8] 的简单语法。
 
 ```
 # A simple grammar to create tree
@@ -260,7 +255,6 @@ grammar = "NP: {&lt;JJ&gt;&lt;NN&gt;}"
 ```
 
 然后用这个<ruby>语法<rt>grammar</rt></ruby>创建一颗<ruby>树<rt>tree</rt></ruby>：
-
 
 ```
 # Create tree
@@ -270,7 +264,6 @@ pprint(tree)
 ```
 
 运行上面的代码，将得到：
-
 
 ```
 Tree('S', [('I', 'PRP'), ('love', 'VBP'), Tree('NP', [('open', 'JJ'), ('source', 'NN')])])
@@ -284,10 +277,7 @@ tree.draw()
 
 ![NLTK Tree][9]
 
-(Girish Managoli, [CC BY-SA 4.0][10])
-
-这个树状结构有助于准确解读文本的意思。比如，用它可以找到文本的主语 ([subject][11])：
-
+这个树状结构有助于准确解读文本的意思。比如，用它可以找到文本的 [主语][11]：
 
 ```
 subject_tags = ["NN", "NNS", "NP", "NNP", "NNPS", "PRP", "PRP$"]
@@ -300,22 +290,22 @@ def subject(sentence_tree):
 print("Subject:", subject(tree))
 ```
 
-结果显示主语是 I：
+结果显示主语是 `I`：
 
 ```
 Subject: I
 ```
 
-这是一个比较基础的文本分析步骤，可以用到更广泛的应用场景中。 比如，在聊天机器人方面，如果用户告诉机器人：“给我妈妈 Jane 预订一张机票，1 月 1 号伦敦飞纽约的“，机器人可以用这种分析方法解读这个指令：
+这是一个比较基础的文本分析步骤，可以用到更广泛的应用场景中。 比如，在聊天机器人方面，如果用户告诉机器人：“给我妈妈 Jane 预订一张机票，1 月 1 号伦敦飞纽约的”，机器人可以用这种分析方法解读这个指令：
 
 **动作**: 预订  
 **动作的对象**: 机票  
 **乘客**: Jane  
 **出发地**: 伦敦  
 **目的地**: 纽约  
-**日期**: (明年) 1 月 1 号   
+**日期**: （明年）1 月 1 号   
 
-<ruby>树库<rt>treebank</rt></ruby>指由许多预先标注好的<ruby>树<rt>tree</rt></ruby>构成的语料库。现在已经有面向多种语言的树库，既有开源的，也有限定条件下才能免费使用的，以及商用的。其中使用最广泛的是面向英语的宾州树库。宾州树库取材于<ruby> _华尔街日报_ <rt>Wall Street Journal</rt></ruby>。NLTK 也包含了宾州树库作为一个子语料库。下面是一些使用<ruby>树库<rt>treebank</rt></ruby>的方法：
+<ruby>树库<rt>treebank</rt></ruby>指由许多预先标注好的<ruby>树<rt>tree</rt></ruby>构成的语料库。现在已经有面向多种语言的树库，既有开源的，也有限定条件下才能免费使用的，以及商用的。其中使用最广泛的是面向英语的宾州树库。宾州树库取材于<ruby>华尔街日报<rt>Wall Street Journal</rt></ruby>。NLTK 也包含了宾州树库作为一个子语料库。下面是一些使用<ruby>树库<rt>treebank</rt></ruby>的方法：
 
 ```
 words = nltk.corpus.treebank.words()
@@ -326,8 +316,9 @@ tagged_sents = nltk.corpus.treebank.tagged_sents()
 print(len(tagged_sents), "sentences:")
 print(tagged_sents)
 
-[/code] [code]
+```
 
+```
 100676 words:
 ['Pierre', 'Vinken', ',', '61', 'years', 'old', ',', ...]
 3914 sentences:
@@ -339,9 +330,9 @@ print(tagged_sents)
 ```
 sent0 = tagged_sents[0]
 pprint(sent0)
+```
 
-[/code] [code]
-
+```
 [('Pierre', 'NNP'),
  ('Vinken', 'NNP'),
  (',', ','),
@@ -354,20 +345,20 @@ pprint(sent0)
 
 ```
 grammar = '''
-    Subject: {&lt;NNP&gt;&lt;NNP&gt;}
-    SubjectInfo: {&lt;CD&gt;&lt;NNS&gt;&lt;JJ&gt;}
-    Action: {&lt;MD&gt;&lt;VB&gt;}
-    Object: {&lt;DT&gt;&lt;NN&gt;}
-    Stopwords: {&lt;IN&gt;&lt;DT&gt;}
-    ObjectInfo: {&lt;JJ&gt;&lt;NN&gt;}
-    When: {&lt;NNP&gt;&lt;CD&gt;}
+    Subject: {<NNP><NNP>}
+    SubjectInfo: {<CD><NNS><JJ>}
+    Action: {<MD><VB>}
+    Object: {<DT><NN>}
+    Stopwords: {<IN><DT>}
+    ObjectInfo: {<JJ><NN>}
+    When: {<NNP><CD>}
 '''
 parser = nltk.RegexpParser(grammar)
 tree = parser.parse(sent0)
 print(tree)
+```
 
-[/code] [code]
-
+```
 (S
   (Subject Pierre/NNP Vinken/NNP)
   ,/,
@@ -385,27 +376,23 @@ print(tree)
 
 图形化地显示：
 
-
 ```
 tree.draw()
 ```
 
 ![NLP Treebank image][12]
 
-(Girish Managoli, [CC BY-SA 4.0][10])
-
 <ruby>树<rt>trees</rt></ruby>和<ruby>树库<rt>treebanks</rt></ruby>的概念是文本分析的一个强大的组成部分。
 
 #### 自主尝试
 
-使用 Python 库，下载维基百科的 [open source][5] 页面，将得到的文本以图形化的树状结构展现出来。
+使用 Python 库，下载维基百科的 “[open source][5]” 页面，将得到的文本以图形化的树状结构展现出来。
 
-### <ruby>命名实体识别<rt>Named entity recognition</rt></ruby>
+### 命名实体识别
 
 无论口语还是书面语都包含着重要数据。文本处理的主要目标之一，就是提取出关键数据。几乎所有应用场景所需要提取关键数据，比如航空公司的订票机器人或者问答机器人。 NLTK 为此提供了一个<ruby>命名实体识别<rt>named entity recognition</rt></ruby>的功能。
 
 这里有一个代码示例：
-
 
 ```
 sentence = 'Peterson first suggested the name "open source" at Palo Alto, California'
@@ -427,9 +414,9 @@ ne_tagged = nltk.ne_chunk(pos_tagged)
 print("NE tagged text:")
 print(ne_tagged)
 print()
+```
 
-[/code] [code]
-
+```
 NE tagged text:
 (S
   (PERSON Peterson/NNP)
@@ -454,9 +441,9 @@ print("Recognized named entities:")
 for ne in ne_tagged:
     if hasattr(ne, "label"):
         print(ne.label(), ne[0:])
+```
 
-[/code] [code]
-
+```
 Recognized named entities:
 PERSON [('Peterson', 'NNP')]
 FACILITY [('Palo', 'NNP'), ('Alto', 'NNP')]
@@ -471,27 +458,23 @@ ne_tagged.draw()
 
 ![NLTK Treebank tree][13]
 
-(Girish Managoli, [CC BY-SA 4.0][10])
+NLTK 内置的<ruby>命名实体标注器<rt>named-entity tagger</rt></ruby>，使用的是宾州法尼亚大学的 [Automatic Content Extraction][14]（ACE）程序。该标注器能够识别<ruby>组织机构<rt>ORGANIZATION</rt></ruby><ruby>、人名<rt>PERSON</rt></ruby><ruby>、地名<rt>LOCATION</rt></ruby><ruby>、设施<rt>FACILITY</rt></ruby>和<ruby>地缘政治实体<rt>geopolitical entity</rt></ruby>等常见<ruby>实体<rt>entites</rt></ruby>。
 
-NLTK 内置的<ruby>命名实体标注器<rt>named-entity tagger</rt></ruby>，使用的是宾州法尼亚大学的 [Automatic Content Extraction][14] (ACE) 程序。 该标注器能够识别<ruby>组织机构<rt>ORGANIZATION</rt></ruby><ruby>、人名<rt>PERSON</rt></ruby><ruby>、地名<rt>LOCATION</rt></ruby><ruby>、设施<rt>FACILITY</rt></ruby>和<ruby>地缘政治实体<rt>geopolitical entity</rt></ruby>等常见<ruby>实体<rt>entites</rt></ruby>。
-
-NLTK 也可以使用其他<ruby>标注器<rt>tagger</rt></ruby>，比如 [Stanford Named Entity Recognizer][15]. 这个经过训练的标注器用 Java 写成，但 NLTK 提供了一个使用它的接口 (详情请查看 [nltk.parse.stanford][16] 或 [nltk.tag.stanford][17])。
+NLTK 也可以使用其他<ruby>标注器<rt>tagger</rt></ruby>，比如 [Stanford Named Entity Recognizer][15]. 这个经过训练的标注器用 Java 写成，但 NLTK 提供了一个使用它的接口（详情请查看 [nltk.parse.stanford][16] 或 [nltk.tag.stanford][17]）。
 
 #### 自主尝试
 
-使用 Python 库，下载维基百科的 [open source][5] 页面，并识别出对<ruby>开源<rt>open source</rt></ruby>有影响力的人的名字，以及他们为<ruby>开源<rt>open source</rt></ruby>做贡献的时间和地点。
+使用 Python 库，下载维基百科的 “[open source][5]” 页面，并识别出对<ruby>开源<rt>open source</rt></ruby>有影响力的人的名字，以及他们为<ruby>开源<rt>open source</rt></ruby>做贡献的时间和地点。
 
 ### 高级实践
 
 如果你准备好了，尝试用这篇文章以及此前的文章介绍的知识构建一个<ruby>超级结构<rt>superstructure</rt></ruby>。
 
-使用 Python 库，下载维基百科的 [Category: Computer science page][18]，然后：
-
+使用 Python 库，下载维基百科的 “[Category: Computer science page][18]”，然后：
 
   * 找出其中频率最高的<ruby>单词<rt>unigrams</rt></ruby><ruby>、二元搭配<rt>bigrams</rt></ruby>和<ruby>三元搭配<rt>trigrams</rt></ruby>，将它们作为一个关键词列表或者技术列表。相关领域的学生或者工程师需要了解这样一份列表里的内容。
   * 图形化地显示这个领域里重要的人名、技术、日期和地点。这会是一份很棒的信息图。
   * 构建一个搜索引擎。你的搜索引擎性能能够超过维基百科吗？
-
 
 ### 下一步？
 
@@ -508,7 +491,7 @@ via: https://opensource.com/article/20/8/nlp-python-nltk
 作者：[Girish Managoli][a]
 选题：[lujun9972][b]
 译者：[tanloong](https://github.com/tanloong)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
