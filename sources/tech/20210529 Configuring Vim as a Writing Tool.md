@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/configuring-vim-writing/)
 [#]: author: (Theena https://news.itsfoss.com/author/theena/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (piaoshi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
