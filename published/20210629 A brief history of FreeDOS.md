@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zxy-wyx)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13601-1.html)
 
 FreeDOS 简史
 ======
