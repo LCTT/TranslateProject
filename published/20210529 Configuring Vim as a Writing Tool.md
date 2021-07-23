@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (piaoshi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13607-1.html)
 
 将 Vim 配置成一个写作工具
 ======
