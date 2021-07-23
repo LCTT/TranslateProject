@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "mcfd"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13608-1.html"
 
 Hash Linux：预配置了四种平铺窗口管理器的 Arch Linux 衍生版
 ======
