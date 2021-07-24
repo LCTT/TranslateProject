@@ -7,109 +7,94 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How the ARPANET Protocols Worked
+
 ARPANET 协议是如何工作的
 ======
 
-The ARPANET changed computing forever by proving that computers of wildly different manufacture could be connected using standardized protocols. In my [post on the historical significance of the ARPANET][1], I mentioned a few of those protocols, but didn’t describe them in any detail. So I wanted to take a closer look at them. I also wanted to see how much of the design of those early protocols survives in the protocols we use today.
+ARPANET 通过证明可以使用标准化协议连接完全不同的制造商的计算机，永远改变了计算。 在我的[关于 ARPANET 的历史意义的帖子][1]中，我提到了其中的一些协议，但没有详细描述它们。所以我想仔细看看它们。也想看看那些早期协议的设计有多少保留到了我们今天使用的协议中。
 
-ARPANET 通过证明完全不同制造商的计算机能够使用标准化的协议连接起来，从而永久的改变了计算。在我的[关于 ARPANET 的历史意义的帖子][1]中，我提到了其中的一些协议，但没有详细描述它们。所以我想更进一步探索它们。也想看看那些早期协议的设计在我们今天使用的协议中有多少被保留了下来。
+ARPANET 协议像我们现代的互联网协议，是通过分层形式来组织的。[1][2] 较高层协议运行在较低层协议之上。如今的 TCP/IP 套件有 5 层（物理层、链路层、网络层、传输层、以及应用层），但是这个 ARPANET 仅有 3 层或者可能 4 层，这取决于你怎样计算它们。
 
+我将会解释每一层是如何工作的，但首先，你需要知道谁在 ARPANET 中是构建了些什么，以及还需要了解为什么要分层。
 
-The ARPANET protocols were, like our modern internet protocols, organized into layers.[1][2] The protocols in the higher layers ran on top of the protocols in the lower layers. Today the TCP/IP suite has five layers (the Physical, Link, Network, Transport, and Application layers), but the ARPANET had only three layers—or possibly four, depending on how you count them.
+### 短暂的历史背景
 
-ARPANET 协议类似与如今的互联网协议，也是通过分层形式来组织管理的。[1][2] 较高层协议运行在较低层协议之上。如今的 TCP/IP 协议栈有5层（物理层、数据链路层、网络层、传输层、以及应用层），但是这个 ARPANET 仅有3层或者可能4层，这取决于你们怎样去数它们。
+ARPANET 由美国联邦政府资助，确切的说是位于美国国防部的高级研究计划属（因此命名为 “ ARPANET ” ）。美国政府并没有直接建设这个网络；而是，把这项工作外包给了位于波士顿的一家名为 Bolt, Beranek, and Newman, 的咨询公司，通常更多时候被称为 BBN。
 
-I’m going to explain how each of these layers worked, but first an aside about who built what in the ARPANET, which you need to know to understand why the layers were divided up as they were.
+相反， BBN 承担了实现这个网络的大部分任务，但不是全部。 BBN 所做的是设计和维护一台称为接口消息处理机或简称 IMP 的机器。这个 IMP 是一种定制的 Honeywell 小型计算机，它们被分配给那些想要接入这个 ARPANET 的遍及全国各地的各个站点。它们充当通往 ARPANET 的网关为每个站点提供多达四台主机的连接支持。它基本上是一台路由器。BBN 能控制在 IMP 上运行的软件，把数据包从一个 IMP 转发到另一个 IMP ，但是该公司无法直接控制那些将要连接到 IMP 上并且成为 ARPANET 网络中实际主机的机器。
 
-我将会解释每一层是如何工作的，但首先，你需要知道谁在 ARPANET 中构建了些什么，以及需要了解为什么层要被划分成这样。
+那些主机被网络中作为终端用户的计算机科学家们所控制。位于遍及全国各地的主机站点中的这些计算机科学家们，他们负责编写允许主机之间相互通信的软件。而 IMP 赋予主机之间互相发送消息的能力，但是那并没有多大用处除非主机之间能商定一种用于消息的格式。为了解决这个问题，一群杂七杂八的人员组成了网络工作组，其中有大部分是来自各个站点的研究生，该组力求指定主机计算机使用的协议。
 
-### Some Quick Historical Context
-短暂的历史背景
-
-The ARPANET was funded by the US federal government, specifically the Advanced Research Projects Agency within the Department of Defense (hence the name “ARPANET”). The US government did not directly build the network; instead, it contracted the work out to a Boston-based consulting firm called Bolt, Beranek, and Newman, more commonly known as BBN.
-
-ARPANET 由美国联邦政府资助，确切的说是位于美国国防部内的高级研究计划属（因此命名为“ARPANET”）。美国政府并没有直接建设这个网络；而是，它把这项工作外包给了基于波士顿的一家名为 Bolt, Beranek, 和 Newman, 通常更多时候被称为 BBN 的咨询公司。
+因此，如果你设想通过 ARPANET 进行一次成功的网络互动，（例如发送一封电子邮件），使这些互动成功的一些工程由一组人负责（BBN），然而其他的一些工程则由另一组人负责（网络工作组和在每个站点的工程师们）。这种有组织，有保障的情景或许对推动采用分层的方法来管理 ARPANET 网络中的协议起到很大的作用，这反过来又影响了TCP/IP的分层方式。
 
 
-BBN, in turn, handled many of the responsibilities for implementing the network but not all of them. What BBN did was design and maintain a machine known as the Interface Message Processor, or IMP. The IMP was a customized Honeywell minicomputer, one of which was delivered to each site across the country that was to be connected to the ARPANET. The IMP served as a gateway to the ARPANET for up to four hosts at each host site. It was basically a router. BBN controlled the software running on the IMPs that forwarded packets from IMP to IMP, but the firm had no direct control over the machines that would connect to the IMPs and become the actual hosts on the ARPANET.
+### 好的，回到协议上来
 
-反过来，BBN 承担了实现这个网络的大部门责任，但不是全部。BBN 所做的是设计和维护一个称为接口消息处理器或者简称IMP的机器。
+![ARPANET Network Stack][3] _ ARPANET 协议层次结构。_
 
-The host machines were controlled by the computer scientists that were the end users of the network. These computer scientists, at host sites across the country, were responsible for writing the software that would allow the hosts to talk to each other. The IMPs gave hosts the ability to send messages to each other, but that was not much use unless the hosts agreed on a format to use for the messages. To solve that problem, a motley crew consisting in large part of graduate students from the various host sites formed themselves into the Network Working Group, which sought to specify protocols for the host computers to use.
+协议层被组织成一个层次结构，在最底部是 “ level 0. ” [2][4] 这在某种意义上是不算数的，因为在 ARPANET 中这层完全由 BBN 控制，所以不需要标准协议。level 0 的作用是管理数据在 IMP 之间如何传输。在 BBN 内部，有管理 IMP 如何做到这一点的规则；在 BBN 之外，IMP 子网是一个黑匣子，它只会传送你提供的任意数据。因此，level 0 是一个没有真正协议的层，就公开已知和商定的规则集而言，它的存在可以被运行在 ARPANET 的主机上的软件忽略。粗略地说，它处理相当于当今使用的 TCP/IP 套件的物理层、链路层和网络层下的所有内容，甚至还包括相当多的传输层，这是我将在这篇文章的末尾回来讨论的内容。
 
-So if you imagine a single successful network interaction over the ARPANET, (sending an email, say), some bits of engineering that made the interaction successful were the responsibility of one set of people (BBN), while other bits of engineering were the responsibility of another set of people (the Network Working Group and the engineers at each host site). That organizational and logistical happenstance probably played a big role in motivating the layered approach used for protocols on the ARPANET, which in turn influenced the layered approach used for TCP/IP.
+“ level 1 ” 层在 ARPANET 的主机和它们所连接的 IMP 之间建立了接口。如果你愿意可以认为它是为 BBN 构建的 “ level 0 ” 层的黑匣子使用的一个应用程序接口。 当时它也被称为 IMP-Host 协议。 必须编写和发布该协议，因为在首次建立 ARPANET 网络时，每个主机站点都必须编写自己的软件来与 IMP 连接。 除非 BBN 给他们一些指导，否则他们不会知道如何做到这一点。
 
-### Okay, Back to the Protocols
-
-![ARPANET Network Stack][3] _The ARPANET protocol hierarchy._
-
-The protocol layers were organized into a hierarchy. At the very bottom was “level 0.”[2][4] This is the layer that in some sense doesn’t count, because on the ARPANET this layer was controlled entirely by BBN, so there was no need for a standard protocol. Level 0 governed how data passed between the IMPs. Inside of BBN, there were rules governing how IMPs did this; outside of BBN, the IMP sub-network was a black box that just passed on any data that you gave it. So level 0 was a layer without a real protocol, in the sense of a publicly known and agreed-upon set of rules, and its existence could be ignored by software running on the ARPANET hosts. Loosely speaking, it handled everything that falls under the Physical, Link, and Internet layers of the TCP/IP suite today, and even quite a lot of the Transport layer, which is something I’ll come back to at the end of this post.
-
-The “level 1” layer established the interface between the ARPANET hosts and the IMPs they were connected to. It was an API, if you like, for the black box level 0 that BBN had built. It was also referred to at the time as the IMP-Host Protocol. This protocol had to be written and published because, when the ARPANET was first being set up, each host site had to write its own software to interface with the IMP. They wouldn’t have known how to do that unless BBN gave them some guidance.
-
-The IMP-Host Protocol was specified by BBN in a lengthy document called [BBN Report 1822][5]. The document was revised many times as the ARPANET evolved; what I’m going to describe here is roughly the way the IMP-Host protocol worked as it was initially designed. According to BBN’s rules, hosts could pass _messages_ to their IMPs no longer than 8095 bits, and each message had a _leader_ that included the destination host number and something called a _link number_.[3][6] The IMP would examine the designation host number and then dutifully forward the message into the network. When messages were received from a remote host, the receiving IMP would replace the destination host number with the source host number before passing it on to the local host. Messages were not actually what passed between the IMPs themselves—the IMPs broke the messages down into smaller _packets_ for transfer over the network—but that detail was hidden from the hosts.
-
-![1969 Host-IMP Leader][7] _The Host-IMP message leader format, as of 1969. Diagram from [BBN Report 1763][8]._
-
-The link number, which could be any number from 0 to 255, served two purposes. It was used by higher level protocols to establish more than one channel of communication between any two hosts on the network, since it was conceivable that there might be more than one local user talking to the same destination host at any given time. (In other words, the link numbers allowed communication to be multiplexed between hosts.) But it was also used at the level 1 layer to control the amount of traffic that could be sent between hosts, which was necessary to prevent faster computers from overwhelming slower ones. As initially designed, the IMP-Host Protocol limited each host to sending just one message at a time over each link. Once a given host had sent a message along a link to a remote host, it would have to wait to receive a special kind of message called an RFNM (Request for Next Message) from the remote IMP before sending the next message along the same link. Later revisions to this system, made to improve performance, allowed a host to have up to eight messages in transit to another host at a given time.[4][9]
-
-The “level 2” layer is where things really start to get interesting, because it was this layer and the one above it that BBN and the Department of Defense left entirely to the academics and the Network Working Group to invent for themselves. The level 2 layer comprised the Host-Host Protocol, which was first sketched in RFC 9 and first officially specified by RFC 54. A more readable explanation of the Host-Host Protocol is given in the [ARPANET Protocol Handbook][10].
-
-The Host-Host Protocol governed how hosts created and managed _connections_ with each other. A connection was a one-way data pipeline between a _write socket_ on one host and a _read socket_ on another host. The “socket” concept was introduced on top of the limited level-1 link facility (remember that the link number can only be one of 256 values) to give programs a way of addressing a particular process running on a remote host. Read sockets were even-numbered while write sockets were odd-numbered; whether a socket was a read socket or a write socket was referred to as the socket’s gender. There were no “port numbers” like in TCP. Connections could be opened, manipulated, and closed by specially formatted Host-Host control messages sent between hosts using link 0, which was reserved for that purpose. Once control messages were exchanged over link 0 to establish a connection, further data messages could then be sent using another link number picked by the receiver.
-
-Host-Host control messages were identified by a three-letter mnemonic. A connection was established when two hosts exchanged a STR (sender-to-receiver) message and a matching RTS (receiver-to-sender) message—these control messages were both known as Request for Connection messages. Connections could be closed by the CLS (close) control message. There were further control messages that changed the rate at which data messages were sent from sender to receiver, which were needed to ensure again that faster hosts did not overwhelm slower hosts. The flow control already provided by the level 1 protocol was apparently not sufficient at level 2; I suspect this was because receiving an RFNM from a remote IMP was only a guarantee that the remote IMP had passed the message on to the destination host, not that the host had fully processed the message. There was also an INR (interrupt-by-receiver) control message and an INS (interrupt-by-sender) control message that were primarily for use by higher-level protocols.
-
-The higher-level protocols all lived in “level 3”, which was the Application layer of the ARPANET. The Telnet protocol, which provided a virtual teletype connection to another host, was perhaps the most important of these protocols, but there were many others in this level too, such as FTP for transferring files and various experiments with protocols for sending email.
-
-One protocol in this level was not like the others: the Initial Connection Protocol (ICP). ICP was considered to be a level-3 protocol, but really it was a kind of level-2.5 protocol, since other level-3 protocols depended on it. ICP was needed because the connections provided by the Host-Host Protocol at level 2 were only one-way, but most applications required a two-way (i.e. full-duplex) connection to do anything interesting. ICP specified a two-step process whereby a client running on one host could connect to a long-running server process on another host. The first step involved establishing a one-way connection from the server to the client using the server process’ well-known socket number. The server would then send a new socket number to the client over the established connection. At that point, the existing connection would be discarded and two new connections would be opened, a read connection based on the transmitted socket number and a write connection based on the transmitted socket number plus one. This little dance was a necessary prelude to most things—it was the first step in establishing a Telnet connection, for example.
-
-That finishes our ascent of the ARPANET protocol hierarchy. You may have been expecting me to mention a “Network Control Protocol” at some point. Before I sat down to do research for this post and my last one, I definitely thought that the ARPANET ran on a protocol called NCP. The acronym is occasionally used to refer to the ARPANET protocols as a whole, which might be why I had that idea. [RFC 801][11], for example, talks about transitioning the ARPANET from “NCP” to “TCP” in a way that makes it sound like NCP is an ARPANET protocol equivalent to TCP. But there has never been a “Network Control Protocol” for the ARPANET (even if [Encyclopedia Britannica thinks so][12]), and I suspect people have mistakenly unpacked “NCP” as “Network Control Protocol” when really it stands for “Network Control Program.” The Network Control Program was the kernel-level program running in each host responsible for handling network communication, equivalent to the TCP/IP stack in an operating system today. “NCP”, as it’s used in RFC 801, is a metonym, not a protocol.
-
-### A Comparison with TCP/IP
-
-The ARPANET protocols were all later supplanted by the TCP/IP protocols (with the exception of Telnet and FTP, which were easily adapted to run on top of TCP). Whereas the ARPANET protocols were all based on the assumption that the network was built and administered by a single entity (BBN), the TCP/IP protocol suite was designed for an _inter_-net, a network of networks where everything would be more fluid and unreliable. That led to some of the more immediately obvious differences between our modern protocol suite and the ARPANET protocols, such as how we now distinguish between a Network layer and a Transport layer. The Transport layer-like functionality that in the ARPANET was partly implemented by the IMPs is now the sole responsibility of the hosts at the network edge.
-
-What I find most interesting about the ARPANET protocols though is how so much of the transport-layer functionality now in TCP went through a janky adolescence on the ARPANET. I’m not a networking expert, so I pulled out my college networks textbook (Kurose and Ross, let’s go), and they give a pretty great outline of what a transport layer is responsible for in general. To summarize their explanation, a transport layer protocol must minimally do the following things. Here _segment_ is basically equivalent to _message_ as the term was used on the ARPANET:
-
-  * Provide a delivery service between _processes_ and not just host machines (transport layer multiplexing and demultiplexing)
-  * Provide integrity checking on a per-segment basis (i.e. make sure there is no data corruption in transit)
+BBN 在一份名为 [BBN Report 1822][5] 的冗长文件中指定了 IMP-Host 协议。 随着 ARPANET 的发展，该文件多次被修订； 我将在这里大致描述 IMP-Host 协议最初设计时的工作方式。 根据 BBN 的规则，主机可以将长度不超过 8095 位的消息传递给它们的 IMP，并且每条消息都有一个包含目标主机号和链路识别号的头部字段。 [3] [6] IMP 将检查指定的主机号，然后尽职尽责地将消息转发到网络中。 当从远端主机接收到消息时，接收 IMP 在将消息传递给本地主机之前会把目标主机号替换为源主机号。 实际上在IMP之间传递的内容并不是消息——IMP 将消息分解成更小的数据包以便通过网络传输——但该细节对主机来说是不可见的。
 
 
+![1969 Host-IMP Leader][7]
+_ Host-IMP 消息头部格式, 截至 1969. 图标来自 [BBN Report 1763][8]._
 
-A transport layer could also, like TCP does, provide _reliable data transfer_, which means:
+链路号的取值范围为 0 到 255 ，它有两个作用。一是更高级别的协议可以利用它在网络上的任何两台主机之间建立多个通信信道，因为可以想象得到，在任何时刻都有可能存在多个本地用户与同一个目标主机进行通信的场景（换句话说，链路号允许在主机之间进行多路通信。）二是它也被用在 “ level 1 ” 层去控制主机之间发送的大量流量，以防止高性能计算机压制低性能计算机的情况出现。按照最初的设计，这个 IMP-Host 协议限制每台主机在某一时刻通过某条链路仅发送一条消息。一旦某台主机沿着某条链路发送了一条消息给远端主机后，在它沿着该链路发送下一条消息之前，必须等待接收一条来自远端的 IMP 的特别类型的消息，叫做 RFNM（请求下一条消息）。针对这个体系的后期修订，为了改善它的性能，允许一台主机在给定的时刻传送多达8条消息给另一台主机。.[4][9]
 
-  * Segments are delivered in order
-  * No segments go missing
-  * Segments aren’t delivered so fast that they get dropped by the receiver (flow control)
+“ level 2 ” 层才是事情真正开始变得有趣的地方，因为这一层和在它上面的那一层由 BBN 和国防部全部留给学者们和网络工作组自己去研发。 “ level 2 ” 层包括了 Host-Host 协议，这个协议在 RFC9 中第一次被草拟并且在 RFC54 中第一次被官方指定。更多可读的Host-Host 协议的解释在 [ ARPANET 协议手册][10] 中被给出。
 
+“ Host-Host 协议 ”  管理主机之间如何创建和管理链接。链接是某个主机上的写套接字和另一个主机上的读套接字之间的一个单向的数据管道。“ 套接字 ” 的概念是在 “ level-1 ” 层的有限的链路设施（记住链路号只是那256个值中的一个）之上被引入的，是为了给程序提供寻找运行在远端主机上的特定进程地址的一种方式。“读套接字”是用偶数表示的，而“写套接字”是用奇数表示的；套接字是“读”还是“写”被称为套接字的“性别”。并没有类似于TCP协议那样的“端口号”机制，链接的打开、维持以及关闭操作是通过主机之间使用“链路0” 发送指定格式的 Host-Host 控制消息来实现的，这也是“链路0”被保留的目的。一旦控制消息在“链路 0”上被交换来建立起一个连接后，就可以使用接收端挑选的另一个链路号来发送进一步的数据消息。 
 
+Host-Host控制消息一般通过 3 个字母型的助记符来表示。当两个主机交换一条 STR（发送端到接收端）消息和一条配对的 RTS（接收端到发送端）消息后，就建立起了一条链接。——这些控制消息都被称为请求链接消息。链接能够被 CLS （关闭）控制消息关闭。存在更进一步的控制信息能够改变从发送端到接收端发送消息的速率。从而需要确保较快的主机不会压制较慢的主机。在 “ level 1 ” 层上的协议提供了流量控制的功能，但对 “ level 2 ” 层来说显然是不够的；我怀疑这是因为从远端 IMP 接收到的 RFNM 只能保证远端IMP 已经传送该消息到目标主机，不能保证目标主机已经全部处理了该消息。 还有INR（接收端中断）、INS（发送端中断）控制消息，它们主要是被高层协议使用。
 
-It seems like there was some confusion on the ARPANET about how to do multiplexing and demultiplexing so that processes could communicate—BBN introduced the link number to do that at the IMP-Host level, but it turned out that socket numbers were necessary at the Host-Host level on top of that anyway. Then the link number was just used for flow control at the IMP-Host level, but BBN seems to have later abandoned that in favor of doing flow control between unique pairs of hosts, meaning that the link number started out as this overloaded thing only to basically became vestigial. TCP now uses port numbers instead, doing flow control over each TCP connection separately. The process-process multiplexing and demultiplexing lives entirely inside TCP and does not leak into a lower layer like on the ARPANET.
+更高级别的协议都位于 “ level 3 ” ,这层是 ARPANET 的应用层。Telnet 协议，它提供到另一台主机的一个虚拟电传链接，其可能是这些协议中最重要的。但在这层中也有许多其他协议，例如用于传输文件的 FTP 协议和各种用于发送email的实验协议。
 
-It’s also interesting to see, in light of how Kurose and Ross develop the ideas behind TCP, that the ARPANET started out with what Kurose and Ross would call a strict “stop-and-wait” approach to reliable data transfer at the IMP-Host level. The “stop-and-wait” approach is to transmit a segment and then refuse to transmit any more segments until an acknowledgment for the most recently transmitted segment has been received. It’s a simple approach, but it means that only one segment is ever in flight across the network, making for a very slow protocol—which is why Kurose and Ross present “stop-and-wait” as merely a stepping stone on the way to a fully featured transport layer protocol. On the ARPANET, “stop-and-wait” was how things worked for a while, since, at the IMP-Host level, a Request for Next Message had to be received in response to every outgoing message before any further messages could be sent. To be fair to BBN, they at first thought this would be necessary to provide flow control between hosts, so the slowdown was intentional. As I’ve already mentioned, the RFNM requirement was later relaxed for the sake of better performance, and the IMPs started attaching sequence numbers to messages and keeping track of a “window” of messages in flight in the more or less the same way that TCP implementations do today.[5][13]
+在这一层中有一个不同于其他的协议：初始链接协议（ICP）。ICP被认为是一个 “ level-3 ” 层协议，但实际上它是一种 “ level-2.5 ” 层协议，因为其他 “ level-3 ” 层协议都依赖它。ICP的存在是因为 “ level 2 ” 层的 Host-Host 协议提供的链接只是单向的，但大多数的应用需要一个双向（列如：全双工）的链接来做任何有趣的事情。要使得运行在某个主机上的客户端能够链接到另一个主机上长时间运行的服务进程， ICP 定义了两个步骤。第一步是建立一个从服务端到客户端的单向链接，通过使用服务端进程的众所周知的socket号来实现。第二步服务端通过建立的这个链接发送一个新的 socket 号给客户端。到那时，那个存在的链接就会被丢弃，然后有另外两个新的链接会被开启，它们是基于传输的socket号建立的“读”链接和基于传输的 socket 号加 1 的 “ 写 ” 链接。这个小插曲是大多数事务的一个前提——比如它是建立 Telnet 链接的第一步。
 
-So the ARPANET showed that communication between heterogeneous computing systems is possible if you get everyone to agree on some baseline rules. That is, as I’ve previously argued, the ARPANET’s most important legacy. But what I hope this closer look at those baseline rules has revealed is just how much the ARPANET protocols also influenced the protocols we use today. There was certainly a lot of awkwardness in the way that transport-layer responsibilities were shared between the hosts and the IMPs, sometimes redundantly. And it’s really almost funny in retrospect that hosts could at first only send each other a single message at a time over any given link. But the ARPANET experiment was a unique opportunity to learn those lessons by actually building and operating a network, and it seems those lessons were put to good use when it came time to upgrade to the internet as we know it today.
+以上是我们对 ARPANET 协议层次结构的提升。你们可能一直期待我在某个时候提一下 “ Network Control Protocol ” 。在我坐下来去研究这篇贴子和我的最后一篇贴子之前，我坚定的认为 ARPANET 运行在一个叫做 NCP 的协议之上。那个首字母缩略词有时用来指代整个 ARPANET 协议，这可能就是我为什么有这个想法的原因。举个例子，[RFC801][11] 讨论了将 ARPANET 从 “  NCP ” 过渡到 “ TCP ” 的方式，这使 NCP 听起来像是一个等同TCP的 ARPANET 协议。但是对于 ARPANET来说，从来都没有一个叫 “ Network Control Protocol ” 的东西（即使[大英百科全书是这样认为的][12]），我怀疑人们错误地将 “ NCP ” 解释为 “ Network Control Protocol ” ，而实际上它代表的是 “ Network Control Pragram ” 。网络控制程序是一个运行在各个主机上的内核级别的程序，主要负责处理网络通信，等同于现如今操作系统中的 TCP/IP 协议栈。用在 RFC 801 的 “ NCP ” 是一种转喻，而不是协议。
 
-_If you enjoyed this post, more like it come out every four weeks! Follow [@TwoBitHistory][14] on Twitter or subscribe to the [RSS feed][15] to make sure you know when a new post is out._
+### 与TCP/IP的比较
 
-_Previously on TwoBitHistory…_
+ARPANET 协议以后都会被 TCP/IP 协议替换（但 Telnet 和 FTP 协议除外，因为它们很容易就能在 TCP 上适配运行）。然而 ARPANET 协议都基于这么一个假设就是网络是由一个单一实体（BBN）来构建和管理的。 TCP/IP 协议套件是为具有可变性和不可靠性的互联的网络而设计的。这就导致了现代协议套件和 ARPANET 协议有明显的不同，比如我们现在怎样区分网络层和传输层。在 ARPANET 中部分由 IMP 实现的类似传输层的功能现在完全由在网络边界的主机负责。
+
+我发现关于ARPANET协议最有趣的事情是现在在 TCP 中的传输层的功能有多少在 ARPANET 上经历了一个糟糕的青春期。我不是一个网络专家，因此我拿出大学时的网络课本（Kurose and Ross, let’s go），他们对传输层通常负责什么给出了一个非常好的概述。总结一下他们的解释，一个传输层协议必须至少做到以下几点。这里的 “ segment ” 在 ARPANET 上基本等同于 “ message ” 作为术语被使用：
+
+  * 提供进程之间的传送服务，而不仅仅是主机之间的（传输层多路复用和多路分解）
+  * 在每个段的基础上提供完整性检查（即确保传输过程中没有数据损坏）
+
+像 TCP 那样，传输层也能够提供可靠的数据传输，这意味着：
+
+  * “段” 是按顺序被传送的
+  * 不会丢失任何 “段”
+  * “段” 的传送速度不会太快以至于被接收端丢弃（流量控制）
+
+似乎在 ARPANET 上关于如何进行多路复用和多路分解以便进程可以通信存在一些混淆—— BBN 在 IMP-Host 层引入了链路号来做到这一点，但结果证明在 Host-Host 层上无论如何套接字号都是必要的。然后链路号只是用于 IMP-Host 级别的流量控制，但 BBN 似乎后来放弃了它，转而支持在唯一的主机对之间进行流量控制，这意味着链路号开始时只是作为这个重载的东西基本上变成了遗迹。 TCP 现在使用端口代替，分别对每一个 TCP 链接进行流量控制。进程间的多路复用和多路分解完全在 TCP 内部进行，不会像 ARPANET 一样泄露到较低层去。
+
+同样有趣的是，鉴于 Kurose 和 Ross 如何开发 TCP 背后的想法，ARPANET 开始于 Kurose 和 Ross 所调用的一个严谨的 “stop-and-wait” 方法，以便在 IMP-Host 层上进行可靠的数据传输。这个 “stop-and-wait” 方法发送一个 “段” 然后就拒绝再去发送更多 “段” ，直到一个最近发送的 “段” 的确认被接收到为止。这是一种简单的方法，但这意味着只有一个 “段” 在整个网络中运行，从而导致协议非常缓慢——这就是为什么 Kurose 和 Ross 将 “stop-and-wait” 仅仅作为在通往功能齐全的传输层协议的路上的垫脚石的原因。在 ARPANET 上，“stop-and-wait” 是一段时间的工作方式，因为在 IMP–Host 层，必须接收下一条消息的请求以响应每条发出的消息，然后才能发送任何进一步的消息。客观的说 ，BBN 起初认为这对于提供主机之间的流量控制是必要的，因此减速是故意的。正如我已经提到的，为了更好的性能，RFNM 的要求后来放宽松了，而且 IMP 也开始向消息中添加序列号和保持对传输中的消息的 “窗口” 的跟踪，这或多或少与如今 TCP 的实现如出一辙。[5][13]
+
+ARPANET 表明，如果你能让每个人都遵守一些基本规则，异构计算系统之间的通信是可能的。正如我先前所说的，那个是 ARPANET 的最重要的遗产。但是我希望通过这次仔细研究的哪些基本规则所透露的是有多少 ARPANET 协议影响了我们如今所用的协议。在主机和 IMP 之间分担传输层职责的方式上肯定有很多笨拙之处，有时候是冗余的。回想起来，主机之间一开始只能通过给出的任意链路在某刻只发送一条消息，这真的很有趣。 但是 ARPANET 实验是一个独特的机会，可以通过实际构建和操作网络来学习这些经验，当到了是时候升级到我们今天所知的互联网时，似乎这些经验变得很有用。
+
+_如果你喜欢这篇贴子，更喜欢每四周发布一次的方式！那么在Twitter上关注[@TwoBitHistory][14] 或者订阅[RSS提要][15]，以确保你知道新帖子的发布时间。_
+
+_以前在 TwoBitHistory 上…_
 
 > Trying to get back on this horse!
 >
-> My latest post is my take (surprising and clever, of course) on why the ARPANET was such an important breakthrough, with a fun focus on the conference where the ARPANET was shown off for the first time:<https://t.co/8SRY39c3St>
+> 
+> 我最近的贴子是我的一些关于为什么ARPANET是一个如此重要的突破的看法（当然，是令人惊讶和新颖的），并重点关注ARPANET被首次展示的发布会:<https://t.co/8SRY39c3St>
 >
-> — TwoBitHistory (@TwoBitHistory) [February 7, 2021][16]
+> — TwoBitHistory (@TwoBitHistory) [2021年2月7日][16]
 
-  1. The protocol layering thing was invented by the Network Working Group. This argument is made in [RFC 871][17]. The layering thing was also a natural extension of how BBN divided responsibilities between hosts and IMPs, so BBN deserves some credit too. [↩︎][18]
+  1. 协议分层是网络工作组发明的。 这个论点是在[ RFC 871][17] 中提出的。分层也是 BBN 如何在主机和 IMP 之间划分职责的自然延伸，因此 BBN 也值得称赞。 [↩︎][18]
 
-  2. The “level” terminology was used by the Network Working Group. See e.g. [RFC 100][19]. [↩︎][20]
+  2.	The “level” 是被网络工作组使用的术语。 详见[RFC 100][19] [↩︎][20]
 
-  3. In later revisions of the IMP-Host protocol, the leader was expanded and the link number was upgraded to a _message ID_. But the Host-Host protocol continued to make use of only the high-order eight bits of the message ID field, treating it as a link number. See the “Host-to-Host” protocol section of the [ARPANET Protocol Handbook][10]. [↩︎][21]
-
-  4. John M. McQuillan and David C. Walden. “The ARPA Network Design Decisions,” p. 284, <https://www.walden-family.com/public/whole-paper.pdf>. Accessed 8 March 2021. [↩︎][22]
-
-  5. Ibid. [↩︎][23]
+  3. 在 IMP-Host 协议的后续版本中，扩展了头部字段，并且将链路号升级为消息 ID。 但是 Host-Host 协议仅仅继续使用消息 ID 字段的高位 8 位，并将其视为链路号。 请参阅 [ARPANET 协议手册][10]的 “ Host-Host ” 协议部分。[↩︎][21]
+  4. John M. McQuillan 和 David C. Walden。 “ARPA 网络设计决策”，第 284页，<https://www.walden-family.com/public/whole-paper.pdf>。 2021 年 3 月 8 日访问。[↩︎][22]
+  5. 同上。[↩︎][23]
 
 
 
