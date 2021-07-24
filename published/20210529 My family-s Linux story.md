@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (shiboi77)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13614-1.html)
 
 我家的 Linux 故事
 ======
