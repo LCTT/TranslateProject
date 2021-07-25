@@ -105,13 +105,13 @@ procps: /usr/bin/pgrep
 使用`apt` 和 `dnf` 安装应用程序本质上是相同的：
 
 ```
-`$ sudo apt install zsh`
+$ sudo apt install zsh
 ```
 
 使用 `dnf`，您可以使用同样的方式来安装一个包：
 
 ```
-`$ sudo dnf install zsh`
+$ sudo dnf install zsh
 ```
 
 许多基于RPM的发行版都具有组包安装的特性，这些特性会将具有相关性的应用程序收集到一个易于安装的目标中。例如，Fedora 中的 [Design Suite][4] 组包就包含目前流行的创建应用程序。那些想要一个创造性应用程序的艺术家可能也想要一个类似的应用程序，安装一整个组包是建立一个数据工厂简单而快速的方法。您可以通过 `group list` 来查看可用的组（使用 `-v` 来过滤空格）：
@@ -130,13 +130,13 @@ $ sudo dnf group list -v
 使用 `group install` 子命令安装 RPM 组：
 
 ```
-`$ sudo dnf group install design-suite`
+$ sudo dnf group install design-suite
 ```
 
 您可以使用 `@` 符号来减少输入：
 
 ```
-`$ sudo dnf install @design-suite`
+$ sudo dnf install @design-suite
 ```
 
 ### 更新应用程序
@@ -146,19 +146,19 @@ $ sudo dnf group list -v
 `dnf` 和 `apt` 使用的子命令略有不同。因为 `apt` 保存了需要定期更新的缓存信息，它使用 `upgrade` 子命令来更新应用程序：
 
 ```
-`$ sudo apt upgrade`
+$ sudo apt upgrade
 ```
 
 相比之下，`dnf` 命令在您每次使用时都会更新元信息，所以 `update` 和 `upgrade` 子命令是可以互换的： 
 
 ```
-`$ sudo dnf upgrade`
+$ sudo dnf upgrade
 ```
 
 这等同于：
 
 ```
-`$ sudo dnf update`
+$ sudo dnf update
 ```
 
 ### 删除应用程序
@@ -166,19 +166,19 @@ $ sudo dnf group list -v
 如果您曾经尝试在任何一个平台上手动删除一个应用程序，您就会知道，应用程序删除后，在硬盘上会残留各种文件，比如首选项文件、数据或图标。所以包管理器的另一个优点是，包管理器知道包中安装的每一个文件：
 
 ```
-`$ sudo dnf remove zsh`
+$ sudo dnf remove zsh
 ```
 
 `remove` 子命令也适用于 `apt`：
 
 ```
-`$ sudo apt remove zsh`
+$ sudo apt remove zsh
 ```
 
 使用 `apt` 命令删除一个包并不会删除已修改的用户配置文件，以防您意外删除了包。如果您想通过 `apt` 命令删除一个应用及其配置文件，可以在删除包之前，使用 `purge` 子命令：
 
 ```
-`$ sudo apt purge zsh`
+$ sudo apt purge zsh
 ```
 
 `apt` 和 `dnf` 都不会删除家目录中的数据和配置文件（即使使用 `purge` 子命令）。如果想要从家目录中删除数据，您必须手动操作（通常您可以在 `~/.config` 和 `~/.local` 文件中找到）。
