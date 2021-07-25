@@ -3,14 +3,16 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
 在 Linux 上批量处理图像的 Converseen
 ======
 
-Converseen 是一个免费的开源软件，用于批量图像转换。有了这个工具，你可以一次将多张图片转换成另一种格式，调整大小，改变它们的长宽比，旋转或翻转它们。
+![](https://img.linux.net.cn/data/attachment/album/202107/25/215958jd5jl9q2jlzqvvg6.jpg)
+
+Converseen 是一个用于批量图像转换的自由开源软件。有了这个工具，你可以一次将多张图片转换成另一种格式、调整大小、改变它们的长宽比、旋转或翻转它们。
 
 对于像我这样的人来说，这是一个很方便的工具，我必须处理多个不同大小的截图，但在上传到网站之前必须调整它们的大小。
 
@@ -26,7 +28,7 @@ Converseen 是一个免费的开源软件，用于批量图像转换。有了这
 
 ![][3]
 
-你也可以选择将转换后的图像以不同的名称保存在同一目录或其他位置。你也可以覆盖现有的图像。
+你也可以选择将转换后的图像以不同的名称保存在同一目录或其他位置，也可以覆盖现有的图像。
 
 你不能添加文件夹，但你可以一次选择并添加多个图像。
 
@@ -66,11 +68,11 @@ sudo dnf install converseen
 sudo pacman -Sy converseen
 ```
 
-Converseen 也可用于 Windows 和 FreeBSD。你可以在项目网站的下载页面获得相关说明。
+Converseen 也可在 Windows 和 FreeBSD 下使用。你可以在项目网站的下载页面获得相关说明。
 
-[下载 Converseen][6]
+- [下载 Converseen][6]
 
-它的源码可在 GitHub 仓库[获取][7]。
+它的源码可在 GitHub 仓库 [获取][7]。
 
 如果你正在寻找一个更简单的方法来调整一张图片的大小，你可以使用这个巧妙的技巧，[在 Nautilus 文件管理器中用右键菜单调整图片大小和旋转图片][8]。
 
@@ -83,7 +85,7 @@ via: https://itsfoss.com/converseen/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
