@@ -12,17 +12,17 @@
 
 ![][1]
 
-bpftrace 是一个[基于 eBPF  的新型追踪工具][2]，在 Fedora 28 第一次引入。Brendan Gregg，Alastair Robertson 和 Matheus Marchini 在分散于全网络的黑客团队的帮助下开发了 bpftrace，一个允许你分析系统在幕后正在执行的操作的追踪工具，告诉你代码中正在被调用的函数、传递给函数的参数、函数的调用次数等。
+bpftrace 是一个[基于 eBPF 的新型追踪工具][2]，在 Fedora 28 第一次引入。Brendan Gregg，Alastair Robertson 和 Matheus Marchini 在分散于全网络的黑客团队的帮助下开发了 bpftrace，一个允许你分析系统在幕后正在执行的操作的追踪工具，告诉你代码中正在被调用的函数、传递给函数的参数、函数的调用次数等。
 
 这篇文章的内容涉及了 bpftrace 的一些基础，以及它是如何工作的，请继续阅读获取更多的信息和一些有用的实例。
 
 ### eBPF (extended Berkeley Packet Filter)
 
-[eBPF][3] 是一个微小的虚拟机，更确切的说是一个虚拟 CPU，位于 Linux 内核中。eBPF 可以在内核空间以一种安全可控的方式加载和运行体积较小的程序，保证 eBPF 的使用更加安全，即使在生产环境系统中。eBPF 虚拟机有自己的指令集（ [ISA][4] ），类似于现代处理器架构的一个子集。通过这个 ISA，可以很容易将这些程序转化为真实硬件上的代码。内核即时将程序转化为主流处理器架构上的本地代码，从而提升性能。
+[eBPF][3] 是一个微型虚拟机，更确切的说是一个虚拟 CPU，位于 Linux 内核中。eBPF 可以在内核空间以一种安全可控的方式加载和运行体积较小的程序，保证 eBPF 的使用更加安全，即使在生产环境系统中。eBPF 虚拟机有自己的指令集（[ISA][4]），类似于现代处理器架构的一个子集。通过这个 ISA，可以很容易将 eBPF 程序转化为真实硬件上的代码。内核即时将程序转化为主流处理器架构上的本地代码，从而提升性能。
 
 eBPF 虚拟机允许通过编程扩展内核，目前已经有一些内核子系统使用这一新型强大的 Linux Kernel 功能，比如网络，安全计算、追踪等。这些子系统的主要思想是添加 eBPF 程序到特定的代码点，从而扩展原生的内核行为。
 
-虽然 eBPF 机器语言功能强大，由于是一种底层语言，直接用于编写代码很费力， bpftrace 就是为了解决这个问题而生的。eBPF 提供了一种高级语言编写 eBPF 追踪脚本，然后在 clang / LLVM 库的帮助下将这些脚本转化为 eBPF，最终添加到特定的代码点。
+虽然 eBPF 机器语言功能强大，由于是一种底层语言，直接用于编写代码很费力，bpftrace 就是为了解决这个问题而生的。eBPF 提供了一种高级语言编写 eBPF 追踪脚本，然后在 clang / LLVM 库的帮助下将这些脚本转化为 eBPF，最终添加到特定的代码点。
 
 ## 安装和快速入门
 
@@ -32,7 +32,7 @@ eBPF 虚拟机允许通过编程扩展内核，目前已经有一些内核子系
 $ sudo dnf install bpftrace
 ```
 
-使用“ hello world ”进行实验：
+使用“hello world”进行实验：
 
 ```
 $ sudo bpftrace -e 'BEGIN { printf("hello world\n"); }'
@@ -50,7 +50,7 @@ $ sudo bpftrace -e 't:syscalls:sys_enter_execve { printf("%s called %s\n", comm,
 
 这个例子打印系统中正在创建的每个新进程的父进程名 _(comm)_。_t:syscalls:sys_enter_execve_ 是一个内核追踪点，是 _tracepoint:syscalls:sys_enter_execve_ 的简写，两种形式都可以使用。下一部分会向你展示如何列出所有可用的追踪点。
 
-_comm_ 是一个 `bpftrace` 内建指令，代表进程名；_filename_ 是 _t:syscalls:sys_enter_execve_ 追踪点的一个域，这些域可以通过 _args_ 内建指令访问。
+_comm_ 是一个 bpftrace 内建指令，代表进程名；_filename_ 是 _t:syscalls:sys_enter_execve_ 追踪点的一个域，这些域可以通过 _args_ 内建指令访问。
 
 追踪点的所有可用域可以通过这个命令列出：
 
@@ -98,11 +98,11 @@ $ sudo bpftrace -e 't:syscalls:sys_enter_* { @[probe] = count(); }'
 
 一些探针类型允许使用通配符匹配多个探针，你也可以使用一个逗号隔开的列表为一个操作块指明多个连接点。上面的例子中，操作块连接到了所有名称以 _t:syscalls:sysenter__ 开头的追踪点，即所有可用的系统调用。
 
-bpftrace 的内建函数 _count()_ 统计系统调用被调用的次数；_@[]_ 代表一个映射（一个相关的数组）。映射的键是另一个内建指令 _probe_，代表完整的探针名。
+bpftrace 的内建函数 _count()_ 统计系统调用被调用的次数；_@[]_ 代表一个映射（一个关联的数组）。映射的键是另一个内建指令 _probe_，代表完整的探针名。
 
 这个例子中，相同的操作块连接到了每个系统调用，之后每次有系统调用被调用时，映射就会被更新，映射中和系统调用对应的项就会增加。程序终止时，自动打印出所有声明的映射。
 
-下面的例子统计所有的系统调用，然后通过 bpftrace  过滤语法使用 _PID_ 过滤出某个特定进程调用的系统调用：
+下面的例子统计所有的系统调用，然后通过 bpftrace 过滤语法使用 _PID_ 过滤出某个特定进程调用的系统调用：
 
 ```
 $ sudo bpftrace -e 't:syscalls:sys_enter_* / pid == 1234 / { @[probe] = count(); }'
@@ -175,9 +175,9 @@ $ sudo /usr/share/bpftrace/tools/killsnoop.bt
 ## 链接
 
   * bpftrace 参考指南——<https://github.com/iovisor/bpftrace/blob/master/docs/reference_guide.md>
-  * Linux 2018 `bpftrace` （DTrace 2.0）——<http://www.brendangregg.com/blog/2018-10-08/dtrace-for-linux-2018.html>
+  * Linux 2018 `bpftrace`（DTrace 2.0）——<http://www.brendangregg.com/blog/2018-10-08/dtrace-for-linux-2018.html>
   * BPF：通用的内核虚拟机——<https://lwn.net/Articles/599755/>
-  * Linux Extended BPF（eBPF） Tracing Tools——<http://www.brendangregg.com/ebpf.html>
+  * Linux Extended BPF（eBPF）Tracing Tools——<http://www.brendangregg.com/ebpf.html>
   * 深入 BPF：一个阅读材料列表—— [https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf][6]
 
 
@@ -193,7 +193,7 @@ via: https://fedoramagazine.org/trace-code-in-fedora-with-bpftrace/
 
 作者：[Augusto Caringi][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[YungeG](https://github.com/YungeG)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
