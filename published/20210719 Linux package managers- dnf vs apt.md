@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (perfiffer)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13620-1.html)
 
 Linux 包管理器比较：dnf 和 apt
 ======
