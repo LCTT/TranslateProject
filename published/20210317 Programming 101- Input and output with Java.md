@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (piaoshi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13622-1.html)
 
 编程基础：Java 中的输入和输出
 ======
