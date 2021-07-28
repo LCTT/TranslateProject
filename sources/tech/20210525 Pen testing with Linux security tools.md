@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/linux-security-tools)
 [#]: author: (Peter Gervase https://opensource.com/users/pgervase)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

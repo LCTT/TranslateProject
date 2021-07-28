@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/rust-tools-linux)
 [#]: author: (Sudeshna Sur https://opensource.com/users/sudeshna-sur)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (amwps290 )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
