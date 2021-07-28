@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "amwps290"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13624-1.html"
 
 什么是 XML？
 ======
