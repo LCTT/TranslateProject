@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zepoch"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13627-1.html"
 
 在命令行中使用 XMLStarlet 来解析 XML
 ======
