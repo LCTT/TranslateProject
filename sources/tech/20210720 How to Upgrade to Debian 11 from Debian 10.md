@@ -2,7 +2,7 @@
 [#]: via: (https://www.debugpoint.com/2021/07/upgrade-debian-11-from-debian-10/)
 [#]: author: (Arindam https://www.debugpoint.com/author/admin1/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
