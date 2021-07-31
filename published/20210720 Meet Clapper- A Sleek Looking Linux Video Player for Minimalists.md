@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
 [#]: reviewer: (turbokernel)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13638-1.html)
 
 认识 Clapper：一款外观时尚的 Linux 视频播放器，极简主义者适用
 ======
@@ -16,7 +16,7 @@ Clapper 是一个全新 [Linux 视频播放器][1]。实际上，它更多的是
 
 它基于 GNOME 的 JavaScript 库和 GTK4 工具包构建，自然地融合在 GNOME 的桌面环境中。它使用 [GStreamer][2] 作为媒体后端，使用 [OpenGL][3] 进行渲染。
 
-我喜欢极简主义的应用。虽然 VLC 是媒体播放器中的瑞士刀，但我更喜欢 [MPV 播放器][4]，因为它的界面时尚、简约。现在我想要坚持使用 Clapper 一段时间了。
+我喜欢极简主义的应用。虽然 VLC 是媒体播放器中的瑞士军刀，但我更喜欢 [MPV 播放器][4]，因为它的界面时尚、简约。现在我想要坚持使用 Clapper 一段时间了。
 
 ### Clapper 视频播放器
 
@@ -32,28 +32,25 @@ Clapper 是一个全新 [Linux 视频播放器][1]。实际上，它更多的是
   * 浮动模式：隐藏进度条，播放器浮于其他应用程序的顶部，就像“[总是在顶部][8]”或“画中画”模式。
   * 全屏模式：播放器进入全屏，进度条变大，但它们都会自动隐藏起来
 
-
-
 ![Interface of Clapper video player with preference control and window modes][9]
 
 Clapper 也有一个自适应的用户界面，可基于 Linux 的智能手机和平板电脑上使用。因此，如果你有自己的 Pine Phone 或 Librem5，你可以在它上面使用 Clapper。
 
 它支持字幕，并可选择改变字体。然而，在我的测试中，字幕并不可用。也没有可以明确地在播放的视频中添加字幕的选项。这一点必须改进。
 
-和 VLC 一样，如果你再次打开同一个视频文件，Clapper 也可以让你选择从最后一个时间点恢复播放。这是我喜欢的 VLC 中的一个[方便的功能][10]。
+和 VLC 一样，如果你再次打开同一个视频文件，Clapper 也可以让你选择从最后一个时间点恢复播放。这是我喜欢的 VLC 中的一个 [方便的功能][10]。
 
 如果你有 URL，Clapper 也支持从互联网上播放视频。
 
 这里的截图中，我正在 Clapper 中播放一个 YouTube 视频。这是一首由一位美丽的歌手和演员唱的优美歌曲。你能猜到这是哪首歌或哪部电影吗？
 
-
 ![Clapper playing a video from YouTube][11]
 
 ### 在 Linux 上安装 Clapper
 
-对 Arch 和 Manjaro 用户而言，Clapper 可在 AUR 中找到。这很稀疏平常，因为AUR 包罗万象。
+对 Arch 和 Manjaro 用户而言，Clapper 可在 AUR 中找到。这很稀疏平常，因为 AUR 包罗万象。
 
-对于其他发行版，Clapper 官方提供了 [Flatpak 包][12]。所以，请[为你的发行版启用 Flatpak 支持][13]，然后使用下面的命令来安装它：
+对于其他发行版，Clapper 官方提供了 [Flatpak 包][12]。所以，请 [为你的发行版启用 Flatpak 支持][13]，然后使用下面的命令来安装它：
 
 ```
 flatpak install flathub com.github.rafostar.Clapper
