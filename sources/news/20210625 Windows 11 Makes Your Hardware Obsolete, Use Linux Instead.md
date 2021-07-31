@@ -7,36 +7,36 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Windows 11 Makes Your Hardware Obsolete, Use Linux Instead!
+Windows 11 让你的硬件过时，使用Linux代替吧！
 ======
 
-Windows 11 is finally here. We’re not entirely thrilled by it – but it introduces problems for many computer users.
+Windows 11终于来了，我们对此并不完全兴奋， – 但是它给许多电脑用户带来了问题。
 
-And I’m not even talking the privacy aspect or its design choice. But it seems that Windows 11 is demanding newer hardware to work, which makes your old computer obsolete in a way and forces you to upgrade your hardware for no good reason.
+我基本不会讨论隐私方面或者它的设计选择。可是Windows 11要求更新的硬件，这会让你的旧电脑在某种程度上过时，没有好的理由却强迫你升级新的硬件。
 
-What else is a problem with the arrival of Windows 11? What’s so bad about it?
+Windows 11发布的其他问题是啥，它为为什么这么坏？
 
-### Only Eligible Devices Can Get the Windows 11 Upgrade
+### 只有有资格的设备才能获得Windows 11升级
 
-To start with, Windows 11 has interestingly added a minimum system requirement which looks good on paper:
+起初，Windows 11增加了一个看起来不错的最低系统需求:
 
-  * 1 GHz dual-core 64-bit processor
-  * 4 GB RAM
-  * 64 GB storage
-  * UEFI, Secure Boot support
-  * Trusted Platform Module version 2.0
-  * DirectX 12 compatible graphics
-  * 720p resolution display
+  * 1GHz双核64位处理器
+  * 4GB内存
+  * 64GB存储空间
+  * 支持 UEFI 安全启动
+  * 受信任的平台模块 (TPM) 版本 2.0
+  * DirectX 12兼容显卡
+  * 720P分辨率显示器
 
 
 
 ![][1]
 
-You can check if your system is eligible by downloading the **PC Health Check** app from [Microsoft’s official site][2].
+你可以下载电脑健康状况检查应用[微软官方网站][2]检查你的系统是否有升级的资格。
 
-Most of the computers from the last decade should meet these criteria – but there’s a catch.
+十年内的大多数电脑能达到这些要求，但有一个问题
 
-The hardware should have a TPM chip, which may not be the case for some PC builds or laptops. Fortunately, it is not all bad, you may just need to enable it from your BIOS settings including the Secure Boot support, to make your PC eligible. There’s a guide on [PCGamer][3] to help you with that.
+需要有一个TPM硬件芯片，一些电脑和笔记本可能没有。幸运的是，您可能只需要从BIOS设置(包括安全引导支持)中启用它，就可以使您的PC符合条件。这里有一个向导[PCGamer][3] to help you with that.
 
 Technically, processors older than **Intel 8th gen and Ryzen 3000 series** are not officially supported as per Microsoft’s official documentations ([AMD][4] | [Intel][5]).
 
@@ -82,11 +82,6 @@ While Windows 11 plans to force users to upgrade their hardware in the next few 
 
 So, if you are not happy with Windows 11 release, you may want to start using Linux instead. Fret not, you can refer to our guides on our main web portal [It’s FOSS][11] to learn everything you need to get started using Linux!
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
-
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
-
-I'm not interested
 
 --------------------------------------------------------------------------------
 
