@@ -36,51 +36,51 @@ Windows 11发布的其他问题是啥，它为为什么这么坏？
 
 十年内的大多数电脑能达到这些要求，但有一个问题
 
-需要有一个TPM硬件芯片，一些电脑和笔记本可能没有。幸运的是，您可能只需要从BIOS设置(包括安全引导支持)中启用它，就可以使您的PC符合条件。这里有一个向导[PCGamer][3] to help you with that.
+需要有一个TPM硬件芯片，一些电脑和笔记本可能没有。幸运的是，您可能只需要从BIOS设置(包括安全引导支持)中启用它，就可以使您的PC符合条件。这里有一个可供帮忙[PCGamer][3]的向导.
 
-Technically, processors older than **Intel 8th gen and Ryzen 3000 series** are not officially supported as per Microsoft’s official documentations ([AMD][4] | [Intel][5]).
+技术上说，微软官方文档中不支持比**Intel第8代和Ryzen3000系列**老的处理器([AMD][4] | [Intel][5]).
 
-However, there are a sound number of systems that may not have the support for it. So, what do you do?
+可是，有相当数量的电脑失去支持，你该怎么做？
 
-Easy, [**switch to Linux in 2021**][6] before Windows 10 no longer receives updates. This year, it makes more sense than ever for you to try Linux for your personal computer!
+简单, [**2021年啦，换成Linux吧**][6]，在Windows 10不再收到更新之前. 今年，在你的个人电脑上尝试Linux变得更有意义。
 
-### Windows 11 Installation Requires Internet Connectivity
-
-![][7]
-
-While we do not have enough clarity about this but as per its system requirement specifications, it will require users to have an active Internet connection for Windows 11 installation.
-
-But, with Linux, you do not need that.
-
-That’s just one of the [benefits of using Linux over Windows][8] – you get complete control of your operating system.
-
-### No 32-Bit Support
+### Windows 11安装需要网络
 
 ![][7]
 
-Windows 10 did support 32-bit systems, but Windows 11 ends that.
+由于我们不太清楚系统要求参数，Windows 11安装过程中将要求用户有可连通的网络连接。
 
-This is where Linux shines.
+但是，Linux不需要这样.
 
-Even though the 32-bit support is dwindling everywhere, we still have a bunch of [**Linux distributions that support 32-bit systems**][9]. Your 32-bit system may still live for a decade with Linux.
+这只是其中一个[使用Linux而不是Windows][8]的好处 –你对你的操作系统有完全的掌控。
 
-### Windows 10 Support Ends in 2025
+### 不再有32位支持
 
-Well, this was unexpected considering Microsoft initially planned to never have an upgrade after Windows 10 but support it for the foreseeable future.
+![][7]
 
-Now, Windows 10 will be killed in 2025…
+Windows 10是支持32位系统的，但是Windows 11终结了相关支持.
 
-So, what do you do then? Upgrade your hardware just because it does not support Windows 11?
+这又是Linux的优势了。
 
-Unless there’s a necessity, Linux is your friend forever.
+尽管32位支持都在逐渐减少, 我们依然有一系列[**支持32位系统的Linux发行版**][9]. 你的32-bit电脑或许在10年内依然能使用Linux。
 
-You can try several [**lightweight Linux distributions**][10] that will revive any of your computers that Microsoft considers obsolete!
+### Windows 10将在2025结束支持
 
-### Wrapping Up
+好吧，这是意料之外的，鉴于微软最初计划 Windows 10将是最后一个Windows版本。
 
-While Windows 11 plans to force users to upgrade their hardware in the next few years, Linux lets you keep your hardware for a long time along with several added benefits.
+现在，Windows 10将会在2025被杀掉…
 
-So, if you are not happy with Windows 11 release, you may want to start using Linux instead. Fret not, you can refer to our guides on our main web portal [It’s FOSS][11] to learn everything you need to get started using Linux!
+那么，到那里我们该怎么做呢？升级你的硬件只因为它不支持Windows 11?
+
+除非有这个必要，否则Linux是你永远的朋友。
+
+你可以尝试几个[**轻量级Linux发行版**][10]，它们将复活微软认为过时的你的电脑。
+
+### 总结
+
+尽管在未来几年Windows 11计划强迫用户升级他们的硬件，Linux将让你长时间继续使用你的硬件，并有额外的好处。
+
+因此，如果你对Windows 11不满，你可能想开始使用Linux代替。不要烦恼，你可以参考我们主站的教程[FOSS][11]来学习开始使用Linux的一切!
 
 
 --------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ via: https://news.itsfoss.com/windows-11-linux/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zd200572](https://github.com/zd200572)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
