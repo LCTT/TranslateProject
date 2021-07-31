@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (piaoshi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13634-1.html)
 
 小说还是折磨：我如何学会克服焦虑并开始爱上 Vim
 ======
