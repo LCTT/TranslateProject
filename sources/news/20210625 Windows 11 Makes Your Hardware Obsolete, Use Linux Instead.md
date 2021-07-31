@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/windows-11-linux/)
 [#]: author: (Ankush Das https://news.itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zd200572)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
