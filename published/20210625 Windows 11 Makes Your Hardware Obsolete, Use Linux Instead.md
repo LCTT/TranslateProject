@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (zd200572)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13640-1.html)
 
 Windows 11 让你的硬件过时，使用 Linux 代替吧！
 ======
