@@ -3,21 +3,24 @@
 [#]: author: (Arindam https://www.debugpoint.com/author/admin1/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13641-1.html)
 
 在 Fedora 34 及以上版本中安装 Shutter
 ======
-这个快速指南解释了在 Fedora 34 及以上版本中安装 shutter 所需的步骤。
 
-截图工具有很多替代和选择。但在我个人看来，没有一个能接近 Shutter 的灵活性。不幸的是，多年来，Linux 发行版，如 Ubuntu、Fedora，由于各种依赖性问题，特别是它的设计方式，面临着将这个应用打包到官方仓库的问题。
+![](https://img.linux.net.cn/data/attachment/album/202108/01/211059fzo531621ydrr27k.jpg)
+
+> 这个快速指南解释了在 Fedora 34 及以上版本中安装 Shutter 所需的步骤。
+
+截图工具有很多替代和选择。但在我个人看来，没有一个能接近 Shutter 的灵活性。不幸的是，由于各种依赖性问题，特别是它的设计方式，多年来，Linux 发行版，如 Ubuntu、Fedora，都面临着将这个应用打包到官方仓库的问题。
 
 主要问题是它仍然基于 GTK2 和 Perl。当大多数应用转移到 GTK3 时，它仍然是 GTK2。这就造成了一个依赖性问题，因为 Debian/Ubuntu、Fedora 删除了某些包的依赖的 GTK2 版本。
 
 在 Fedora 34 及以上版本中安装 [Shutter][1] 截图工具需要采用另一种方法。
 
-现在，你只能通过个人包存档来安装这个工具。下面是如何在 Fedora 34 及以上版本中安装它。
+现在，你只能通过个人包存档（PPA）来安装这个工具。下面是如何在 Fedora 34 及以上版本中安装它。
 
 ![Shutter in Fedora][2]
 
@@ -29,7 +32,7 @@
 sudo dnf copr enable geraldosimiao/shutter
 ```
 
-完成后，你就可以通过 dnf 在 Fedora 34 及以上版本中简单地安装 shutter。
+完成后，你就可以通过 `dnf` 在 Fedora 34 及以上版本中简单地安装 Shutter。
 
 ```
 sudo dnf install shutter
@@ -55,11 +58,11 @@ sudo dnf autoremove shutter
 
 #### 在其他 Linux 发行版中安装 Shutter
 
-如果你想在 Debian、Ubuntu 或相关发行版中安装它，请[查看此指南][4]。
+如果你想在 Debian、Ubuntu 或相关发行版中安装它，请 [查看此指南][4]。
 
 ### Shutter 的开发
 
-最近，这个项目[转移到了 GitHub][6]，以便更好地合作，并且正在进行 GTK3 移植。而且它相当活跃，最近还发布了一个版本。我们希望它能尽快被移植到 gtk3 上，并在各发行版的原生仓库中可用。
+最近，这个项目 [转移到了 GitHub][6]，以便更好地协作，并且正在进行 GTK3 移植。而且它相当活跃，最近还发布了一个版本。我们希望它能尽快被移植到 GTK3 上，并在各发行版的原生仓库中可用。
 
 如果你在安装 Shutter 时遇到任何错误，请在评论栏告诉我。
 
@@ -70,7 +73,7 @@ via: https://www.debugpoint.com/2021/07/install-shutter-fedora/
 作者：[Arindam][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
