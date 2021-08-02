@@ -3,16 +3,18 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13637-1.html)
 
 如何在 Fedora Linux 上安装 VLC
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202107/31/215634thkmiihq1limel4i.jpg)
+
 如果你刚刚安装了 Fedora，现在想在上面安装你最喜欢的视频播放器 VLC，你可能不会在软件中心找到它。至少不会立即找到。
 
-由于开发者最清楚的原因，Fedora 既没有安装 [VLC][1]，也不包括在 Fedora 官方仓库中。
+出于只有它的开发者知道的原因，Fedora 既没有安装 [VLC][1]，也不包括在 Fedora 官方仓库中。
 
 那么，你如何在 Fedora 上安装 VLC 呢？很简单。RPM Fusion 是你的朋友。让我告诉你详细的步骤。
 
@@ -26,13 +28,13 @@
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-当被要求确认添加新仓库时按 Y。接下来，使用 DNF 命令安装 VLC：
+当被要求确认添加新仓库时按 `Y`。接下来，使用 DNF 命令安装 VLC：
 
 ```
 sudo dnf install vlc
 ```
 
-它将在 Fedora 中从RPM Fusion 仓库中安装 VLC，并从不同的仓库中安装一些额外的依赖项。
+它将在 Fedora 中从 RPM Fusion 仓库中安装 VLC，并从不同的仓库中安装一些额外的依赖项。
 
 ![Installing VLC in Fedora with DNF command][2]
 
@@ -65,7 +67,7 @@ via: https://itsfoss.com/install-vlc-fedora/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

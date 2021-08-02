@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/kubectl)
 [#]: author: (Alan Smithee https://opensource.com/users/alansmithee)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
