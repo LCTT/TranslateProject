@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/command-line-quick-tips-wc-sort-sed-and-tr/)
 [#]: author: (mahesh1b https://fedoramagazine.org/author/mahesh1b/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (perfiffer)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
