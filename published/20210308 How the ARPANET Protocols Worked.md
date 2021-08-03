@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Lin-vy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13643-1.html)
 
 ARPANET 协议是如何工作的
 ======
