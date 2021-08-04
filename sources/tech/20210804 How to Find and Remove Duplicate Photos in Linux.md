@@ -24,7 +24,6 @@
 
 #### 第一步
 
-First thing first, install digiKam. It is a popular application and you should be able to install it from the software center or using the package manager of your distribution.
 首先是安装 digiKam。它是一个很流行的应用程序，应该可以在软件中心里直接安装，或者通过你的发行版的包管理器安装。
 
 ![通过软件中心安装 digikam][3]
@@ -41,7 +40,6 @@ First thing first, install digiKam. It is a popular application and you should b
 
 #### 第三步
 
-Now that you have imported your photos, go to **Tools-&gt;Find Duplicates** from the file menu.
 在相片导入完成以后，在文件菜单里选择**工具-&gt;查找重复图片**。
 
 ![在文件菜单里，选择工具->查找重复图片][7]
@@ -88,7 +86,7 @@ via: https://itsfoss.com/find-remove-duplicate-photos-linux/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/zpl1025)
+译者：[zpl1025](https://github.com/zpl1025)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
