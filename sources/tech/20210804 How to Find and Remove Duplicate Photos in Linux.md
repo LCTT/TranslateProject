@@ -7,30 +7,31 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How to Find and Remove Duplicate Photos in Linux
+如何在 Linux 系统里查找并删除重复相片
 ======
 
-Clicked too many similar photos? Have saved the same photo in different folders? I know that feel.
+点击打开了很多相似的相片？同样的相片保存在不同文件夹里？我理解这种感受。
 
-You click photos on camera, send it through WhatsApp. Now you back up the images and you have two copies of the photos from the gallery and WhatsApp. It is annoying, cluttered and takes extra space unnecessarily.
+在相机里点击相片，然后通过 WhatsApp 发送。然后又备份相片，于是在 WhatsApp 和系统相册里就会存下同样的拷贝。这个很烦人，很乱而且额外占用不必要的存储空间。
 
-I came across this issue while going through my father-in-law’s photo collection. Here’s what I did to find the duplicate photos and remove thm.
+我是在翻看我岳父的相片收藏时遇到这个问题的。下面是我如何找出重复相片并删除的做法。
 
-### Find and remove duplicate photos with digiKam
+### 使用 digiKam 来找出和删除重复相片
 
-[digiKam][1] is a free and [open source utility for managing photo collections][2]. It is primarily aimed at photographers but you do not need to be a professional camera person for using it.
+[digiKam][1] 是一个免费的[用来管理和收集相片的开源应用][2]。它主要是方便摄影师，但并不是说一定要专业玩相机的人才能用。
 
-Let me show you how you can use this tool for finding duplicate photos and if you feel like it, remove the duplicate ones.
+我可以演示如何使用这个工具来查找重复相片，然后根据需要删除重复内容。
 
-#### Step 1
+#### 第一步
 
 First thing first, install digiKam. It is a popular application and you should be able to install it from the software center or using the package manager of your distribution.
+首先是安装 digiKam。它是一个很流行的应用程序，应该可以在软件中心里直接安装，或者通过你的发行版的包管理器安装。
 
-![Install digikam from the software center][3]
+![通过软件中心安装 digikam][3]
 
-#### Step 2
+#### 第二步
 
-When you start digiKam for the first time, it asks for the location of your image collection. Then it creates a SQLite database and then imports the images.
+在第一次运行 digiKam 时，它会要求你选择相片保存的位置。然后会创建一个 SQLite 数据库并开始导入图片。
 
 ![][4]
 
@@ -38,47 +39,48 @@ When you start digiKam for the first time, it asks for the location of your imag
 
 ![][6]
 
-#### Step 3
+#### 第三步
 
 Now that you have imported your photos, go to **Tools-&gt;Find Duplicates** from the file menu.
+在相片导入完成以后，在文件菜单里选择**工具-&gt;查找重复图片**。
 
-![From the file menu, go to Tools->Find Duplicates][7]
+![在文件菜单里，选择工具->查找重复图片][7]
 
-#### Step 4
+#### 第四步
 
-It will take some time depending on the number of images you have in your collection. After that, you should see all the photos that have duplicate images in the left sidebar. It also shows the duplicate photos for the selected image in the right sidebar.
+根据你所收集的图片数量，会需要一些时间。之后，你应该可以在左侧边栏里看到有重复的所有相片。在选中图片后，重复的相片会在右侧边栏里显示出来。
 
-![Duplicate images found with digiKam][8]
+![digiKam 找到的重复图片][8]
 
-In the screenshot above, there are four copies of the same photo that I have selected in the left sidebar. You can see one of the images is labelled as ‘Reference image’. But it is up to you to believe which is original and which is duplicate.
+在上面的截图里，我在左侧选中的图片有四张一样的。其中有一张图片标记了‘参考图片’，不过还是由你来确定哪张是原始的，哪张是复制的。
 
-By default, the duplicate photos are divided into sections based on their location, i.e. folders. You may change that by going to **View-&gt;Separate Items** in the file menu.
+重复的相片默认会按保存位置（比如文件夹）来分组。可以在文件菜单里选择**视图-&gt;分类显示**选择其他方式。
 
-**To delete the duplicate photos**, select the image(s) in the right sidebar and then hit the delete button.
+**要删除重复相片的话**，选中有侧边栏里的相片并按下删除键。
 
-You can repeat this by selecting the image in the left sidebar and then delete the duplicates one by one. Too time taking? There is a trick to delete multiple duplicates at a time.
+可以重复这个操作，选择左侧边栏里的图片，一个个删除重复图片。会花太长时间？有个方法可以一次删除多个重复内容。
 
-#### Deleting multiple duplicates images in digiKam
+#### 在 digiKam 里删除多个重复图片
 
-If you want to delete duplicate photos for more than images at the same time, select all the images from the left sidebar.
+如果想一次把所有重复相片全删掉的话，可以在左侧边栏里选中所有相片。
 
-Now, go to the **file menu -&gt; View -&gt; Sort Items** and select By Similarity.
+然后，打开**文件菜单-&gt;视图-&gt;排序**，然后选择按相似程度。
 
-![Removing multiple duplicate photos][9]
+![删除多个重复相片][9]
 
-This will put all the referenced images at the bottom. You can select all the images in the right sidebar that are NOT labelled as duplicate and press the delete button.
+之后会在底部显示所有参考图片。然后可以在右侧边栏里选中所有没有标记重复的相片，并按下删除按钮。
 
-#### Bonus Tip: There is a trash bin for restoring deleted photos
+#### 额外提示：可以在垃圾桶里恢复已删除的相片
 
-Accident happens. It is common to accidentally delete the wrong photos. This is why images are never really deleted by digiKam immediately. Instead, it creates a hidden .dtrash folder in the same folder where your photos are stored and moves the ‘deleted’ photos here.
+意外总是有的。人们经常会不小心误删了相片。这也是为什么 digiKam 不会立刻彻底删除图片。而是选择在保存相片的文件夹下创建隐藏的 .dtrash 文件夹，然后将‘已删除’的相片移动到里面。
 
-Even on the application interface, you can see the Trash folder. You can find your ‘deleted’ photos here and restore the ones you want.
+在应用程序界面上，你也可以看到这个垃圾桶文件夹。在里面可以找到你‘删除’的相片，然后根据需要可以选择恢复。
 
-![Trash folder in digiKam][10]
+![digiKam 的垃圾桶文件夹][10]
 
-I hope you like this quick tutorial on finding and removing duplicate images in Linux. On a similar note, you may want to know about [using GUI tools for finding duplicate files in your Linux system][11].
+希望你能喜欢这个关于在 Linux 上查找和删除重复图片的简短教程。类似的，你可能会想了解[使用 GUI 工具在 Linux 系统里搜索重复文件][11]。
 
-Have questions or suggestions? Please leave a comment below.
+有任何问题和建议，请在下方留评。
 
 --------------------------------------------------------------------------------
 
@@ -86,7 +88,7 @@ via: https://itsfoss.com/find-remove-duplicate-photos-linux/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/zpl1025)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
