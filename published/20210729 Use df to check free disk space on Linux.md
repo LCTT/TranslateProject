@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (piaoshi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13646-1.html)
 
 使用 df 命令查看 Linux 上的可用磁盘空间
 ======
