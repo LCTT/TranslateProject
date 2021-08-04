@@ -2,7 +2,7 @@
 [#]: via: (https://www.debugpoint.com/2021/06/windows-11-inspiration-linux-kde-plasma/)
 [#]: author: (Arindam https://www.debugpoint.com/author/admin1/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (imgradeone)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
