@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/find-remove-duplicate-photos-linux/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (zpl1025)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
