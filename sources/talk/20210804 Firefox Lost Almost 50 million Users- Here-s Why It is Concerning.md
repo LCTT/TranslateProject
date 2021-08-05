@@ -7,58 +7,54 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Firefox Lost Almost 50 million Users: Here’s Why It is Concerning
+Firefox 失去了近 5000 万用户：令人担忧的原因
 ======
 
-Mozilla’s Firefox is the only popular alternative to Chromium-based browsers.
+Mozilla 的 Firefox 是唯一流行的 Chromium 内核浏览器的替代品。
 
-It has been the default choice for Linux users and privacy-conscious users across every platform.
+它已经成为了 Linux 用户，以及全平台注重隐私的用户的默认选择。
 
-However, even with all benefits as one of the best web browsers around, it is losing its grip for the past few years.
+然而，即便凭借着大量优势成为最佳网络浏览器之一，Firefox 近几年逐渐流失了它的影响力。
 
-To be honest, we do not even need a stat to say that, many of us have switched over to Chromium-based browsers or Chromium itself instead of Firefox or Google Chrome.
+实话实说，我们都不需要借助数据来论证这一点，因为我们当中的许多人就已经转向其他 Chromium 内核的浏览器，或者 Chromium 本身，而不是 Firefox 和 Google Chrome。
 
-However, I came across a Reddit thread by [u/nixcraft][1], which highlighted more details on the decline in the userbase of Firefox since 2018.
+不过，我在 Reddit 上偶然发现了由 [u/nixcraft][1] 写的一篇帖子，这篇帖子强调了 Firefox 的用户数从 2018 年来不断下降的原因。
 
-And surprisingly, the original source for this information is [Firefox’s Public Data Report][2].
+更令人惊喜的是，这篇帖子的原始信息来源就是 [Firefox 公开的数据报表][2]。
 
 ![][3]
 
-As per the official stats, the reported number of active (monthly) users was about **244 million** at the end of 2018.
+根据官方数据统计，在 2018 年底，其报告的（月度）活跃人数达到了 **2.44 亿**。
 
-And, it seems to have declined to **198 million** at the end of **Q2 2021**.
+但，到了 **2021 年第二季度**，这个数字降到了 **1.98 亿**。
 
-So, that makes it a whopping ~**46 million** decline in the userbase.
+由此可以得出，Firefox 的用户基数下降了约 **4600 万**。
 
-### Firefox’s Decline is Concerning But Obvious
+### Firefox 的衰落确实令人担忧，但也很明显
 
-Considering 2021 is the year when privacy-focused tools saw a big boost in their userbase, Mozilla’s Firefox is looking at a constant decline.
+鉴于 2021 年注重隐私的用户数量大幅增长，Mozilla 的 Firefox 用户基数不断下降。
 
-Especially when Firefox manages to introduce some industry-first privacy practices. Quite the irony, eh?
+尤其是在 Firefox 设法引入一些业界首创的隐私功能之后。呵，是不是很讽刺？
 
-In case you have never used Firefox or have moved away for a long time, a [comparison between Brave and Firefox][4] highlights that it is still a solid web browser choice to date.
+如果你很久没有使用 Firefox，或者已经迁移至其他浏览器许久，这篇 [关于 Brave 和 Firefox 浏览器的比较][4] 表明 Firefox 其实还是一个比较可靠的浏览器。
 
-So, why are users moving away to Chromium-based web browsers or Chrome in particular?
+所以，为什么许多用户迁移到了 Chromium 内核的浏览器，尤其是 Chrome 呢？
 
-There are a few things that I can think of right off the bat:
+我这里马上就想到了这几点：
 
-  * Google Chrome being the default web browser on Android
-  * Microsoft Edge as the default web browser for Windows (which naturally has a huge marketshare)
-  * Google.com (the biggest search engine) recommending users to install Google Chrome (which is potentially an anti-competitive behaviour)
-  * Some web services are exclusive to Chrome-based browsers
+  * Google Chrome 是 Android 设备上的默认浏览器
+  * Microsoft Edge 是 Windows 设备上的默认浏览器（因此自然就有巨大的市场份额）
+  * Google.com（最大的搜索引擎）建议用户安装 Google Chrome（实际上是一种潜在的反竞争手段）
+  * 一些网络服务只兼容基于 Chrome 的浏览器
 
+除此之外，Firefox 可能也做错了这几件事：
 
+  * 通过大型修改来不断破坏用户体验
+  * 近年来缺乏显著的性能改进
 
-In addition to that, there are also a few things that Firefox may have done wrong:
+当然，没有哪个浏览器是完美的，但这是什么值得担心的事吗？嗯，我想是的。
 
-  * Constantly breaking the user experience with major overhauls
-  * Lack of significant performance improvements in the recent years
-
-
-
-Of course, no web browser is perfect but is this something to worry about? Well, I think, yes.
-
-### Here’s Why You Should be Worried
+### 为什么你应该担忧
 
 Mozilla’s Firefox is the only viable competitor to Chromium-based browsers. If Firefox disappears, users won’t have a choice to select a different browser engine.
 
@@ -86,17 +82,11 @@ While they are busy introducing VPN services, email relays, and other service in
 
 At least, that is what I think. I’ve used Firefox as my primary browser for years now but I end up switching to other browsers once in a while, especially, after every major UI overhaul.
 
-### What Do You Think?
+### 你怎么看？
 
 I’d love to know what you think about this and what seems to be affecting Firefox’s decline in the userbase.
 
 What do you prefer to use as your primary web browser? Let me know all of it in the comments down below!
-
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
-
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
-
-I'm not interested
 
 --------------------------------------------------------------------------------
 
@@ -104,7 +94,7 @@ via: https://news.itsfoss.com/firefox-decline/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[imgradeone](https://github.com/imgradeone)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -113,6 +103,6 @@ via: https://news.itsfoss.com/firefox-decline/
 [b]: https://github.com/lujun9972
 [1]: https://www.reddit.com/user/nixcraft/
 [2]: https://data.firefox.com/dashboard/user-activity
-[3]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI4MSIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
+[3]: https://i2.wp.com/news.itsfoss.com/wp-content/uploads/2021/08/firefox-userbase-decline.png
 [4]: https://itsfoss.com/brave-vs-firefox/
-[5]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQzOSIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
+[5]: https://i1.wp.com/news.itsfoss.com/wp-content/uploads/2021/08/firefox-survive.jpg
