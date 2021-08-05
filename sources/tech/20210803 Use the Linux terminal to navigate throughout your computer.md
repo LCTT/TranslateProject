@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/8/navigate-linux-directories)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (piaoshi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
