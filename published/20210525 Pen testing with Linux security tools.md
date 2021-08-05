@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13650-1.html"
 
 使用 Linux 安全工具进行渗透测试
 ======
