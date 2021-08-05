@@ -275,7 +275,7 @@ via: https://opensource.com/article/21/5/linux-security-tools
 [6]: https://www.redhat.com/sysadmin/using-nmap-harden-systems
 [7]: https://opensource.com/sites/default/files/uploads/nmap-scan.png "Nmap scan"
 [8]: https://opensource.com/sites/default/files/uploads/nmap-port80.png "Nmap scan of port 80"
-[9]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-40r3.pdf%5D
+[9]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-40r3.pdf
 [10]: https://www.redhat.com/sysadmin/how-red-hat-insights
 [11]: https://en.wikipedia.org/wiki/Armitage_(computing)
 [12]: https://access.redhat.com/security
