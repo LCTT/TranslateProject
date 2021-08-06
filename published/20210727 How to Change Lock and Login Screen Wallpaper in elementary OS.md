@@ -3,28 +3,28 @@
 [#]: author: (Arindam https://www.debugpoint.com/author/admin1/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13655-1.html)
 
 如何在 elementary OS 中改变锁定和登录屏幕的壁纸
 ======
-本教程解释了在 elementary OS 中改变锁定和登录屏幕背景的步骤。这将取代默认的灰色背景。
 
-在 elementary OS 中改变锁屏或登录屏背景的灰色默认壁纸是有点困难的。典型的用图像文件的路径改变 greeter 配置是行不通的。
+> 本教程解释了在 elementary OS 中改变锁定和登录屏幕背景的步骤。这将取代默认的灰色背景。
 
-不幸的是，这不是一个更简单的解决方案，因为灰色背景是一个图像文件，它的数据在 greeter 中是硬编码的，需要用新的图像重新编译才能使其发挥作用。
+在 elementary OS 中改变锁屏或登录屏背景的灰色默认壁纸是有点困难的。典型的用图像文件的路径改变 `greeter` 的配置是行不通的。
 
-下面是方法。
+不幸的是，这不是一个更简单的解决方案，因为灰色背景是一个图像文件，它的数据是硬编码在 `greeter` 中的，需要用新的图像重新编译才能使其发挥作用。
+
+下面是方法：
 
 ![Lock / Login screen background elementary OS \(Odin\)][1]
 
 ### 改变 elementary OS 锁定和登录屏幕背景
 
-  * 在 elementary OS 中打开一个终端。
-  * 为 [greeter包][2]安装 git 和以下依赖项。
+在 elementary OS 中打开一个终端。
 
-
+为 [greeter 包][2]安装 git 和以下依赖项：
 
 ```
 sudo apt install git
@@ -34,24 +34,18 @@ sudo apt install git
 sudo apt install -y gnome-settings-daemon libaccountsservice-dev libgdk-pixbuf2.0-dev libgranite-dev libgtk-3-dev libhandy-1-dev liblightdm-gobject-1-dev libmutter-6-dev libwingpanel-dev libx11-dev meson valac
 ```
 
-  * 进入临时的 /tmp 目录，从 GitHub 克隆最新的 greeter 主分支。
-
-
+进入临时的 `/tmp` 目录，从 GitHub 克隆最新的 greeter 主分支：
 
 ```
 cd /tmp
 git clone https://github.com/elementary/greeter.git
 ```
 
-  * 克隆完成后，在文件管理器中打开路径 `/tmp/greeter/data`。
+克隆完成后，在文件管理器中打开路径 `/tmp/greeter/data`。
 
+elementary OS 使用一个 100×100px 的 PNG 文件作为登录屏幕/锁屏的默认背景。该图像是平铺的，给人一种灰色背景的感觉。
 
-  * 初级操作系统使用一个 100×100px 的 PNG 文件作为登录屏幕/锁屏的默认背景。该图像是平铺的，给人一种灰色背景的感觉。
-
-
-  * 用 `texture.png` 重命名你想要的墙纸图像，并在路径中覆盖以下文件。
-
-
+用 `texture.png` 重命名你想要的墙纸图像，并在路径中覆盖以下文件：
 
 ![gray background is created using this file][3]
 
@@ -59,9 +53,7 @@ git clone https://github.com/elementary/greeter.git
 /tmp/greeter/data/texture.png
 ```
 
-  * 在文本编辑器中打开文件 `/tmp/greeter/compositor/SystemBackground.vala`，并替换下面一行：
-
-
+在文本编辑器中打开文件 `/tmp/greeter/compositor/SystemBackground.vala`，并替换下面一行：
 
 ![change the path of image][4]
 
@@ -75,12 +67,10 @@ resource:///io/elementary/desktop/gala/texture.png
 resource:///io/elementary/greeter/texture.png
 ```
 
-  * 保存该文件。
+保存该文件。
 
 
-  * 再次打开终端，使用以下命令构建 `greeter`。
-
-
+再次打开终端，使用以下命令构建 `greeter`。
 
 ```
 cd /tmp/greeter
@@ -90,10 +80,9 @@ sudo ninja install -C _build
 
 ![building greeter][5]
 
-  * 如果你遇到任何构建错误，请在下面的评论中告诉我。你应该不会看到任何错误，因为我已经测试过了。
+如果你遇到任何构建错误，请在下面的评论中告诉我。你应该不会看到任何错误，因为我已经测试过了。
 
-
-上面的命令完成后，你可以在测试模式下运行 lightdm 来测试登录屏：
+上面的命令完成后，你可以在测试模式下运行 `lightdm` 来测试登录屏：
 
 ```
 lightdm --test-mode --debug
@@ -116,7 +105,7 @@ via: https://www.debugpoint.com/2021/07/change-lock-login-screen-background-elem
 作者：[Arindam][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
