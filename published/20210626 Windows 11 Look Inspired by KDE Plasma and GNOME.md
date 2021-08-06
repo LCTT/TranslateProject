@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (imgradeone)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13653-1.html)
 
 Windows 11 的外观受到了 KDE Plasma 和 GNOME 的启发吗？
 ======
