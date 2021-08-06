@@ -1,11 +1,11 @@
-[#]: subject: "Move files in the Linux terminal"
-[#]: via: "https://opensource.com/article/21/8/move-files-linux"
-[#]: author: "Seth Kenlon https://opensource.com/users/seth"
-[#]: collector: "lujun9972"
-[#]: translator: " "
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: subject: (Move files in the Linux terminal)
+[#]: via: (https://opensource.com/article/21/8/move-files-linux)
+[#]: author: (Seth Kenlon https://opensource.com/users/seth)
+[#]: collector: (lujun9972)
+[#]: translator: (geekpi)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
 
 Move files in the Linux terminal
 ======
