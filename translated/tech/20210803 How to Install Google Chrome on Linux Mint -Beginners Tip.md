@@ -7,92 +7,92 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How to Install Google Chrome on Linux Mint [Beginners Tip]
+如何在 Linux Mint 上安装 Google Chrome（初学者技巧）
 ======
 
-This should be a really simple topic but I am writing this because I see so many websites recommending strange command line steps for installing Google Chrome on Linux Mint. That would work but that’s unnecessarily complicated, specially for beginners not familiar with the command line.
+这应该是一个非常简单的话题，但我写这个是因为我看到很多网站推荐在 Linux Mint 上安装 Google Chrome 的奇怪命令行步骤。那是可行的，但那是不必要的复杂，特别是对于不熟悉命令行的初学者。
 
-In reality, you don’t need to go terminal way at all. All you have to do is to go to Google Chrome’s website and download the installer file for Ubuntu and install it.
+实际上，你根本不需要走终端方式。你所要做的就是去谷歌浏览器的网站，下载 Ubuntu 的安装文件并安装。
 
-Let me detail the steps for your understanding.
+让我详细介绍一下步骤，供你了解。
 
-### Installing Google Chrome on Linux Mint
+### 在 Linux Mint 上安装 Google Chrome
 
-Go to the website of Google Chrome.
+进入 Google Chrome 的网站。
 
 [Google Chrome Website][1]
 
-You’ll see a “Download Chrome” button here. Click on it.
+你会看到一个 “Download Chrome” 的按钮。点击它。
 
 ![Download Chrome for Linux][2]
 
-It will show you two option for downloading Chrome on Linux. Go with the Debian/Ubuntu option and hit the “Accept and Install” button.
+它将向你显示在 Linux 上下载 Chrome 的两个选项。选择 Debian/Ubuntu 选项并点击 “Accept and Install” 按钮。
 
 ![Select Debian/Ubuntu option for Chrome package on Mint][3]
 
-Before starting the download, Firefox asks you if you want to open the downloaded file with Gdebi or save it. You can go with either option because ultimately, you’ll be [using Gdebi for installing the deb file][4]. However, I prefer to save the file first.
+在开始下载之前，Firefox 会询问你是否要用 Gdebi 打开下载的文件或保存它。你可以选择任何一个选项，因为最终你会[使用 Gdebi 来安装 deb 文件][4]。然而，我更喜欢先保存文件。
 
 ![Save the deb file][5]
 
-Wait for the download to finish.
+等待下载完成。
 
 ![Wait for Google Chrome download to finish][6]
 
-Once the download finishes, go to the Downloads folder in File Explorer. To [install the deb file][7], either double click on it or right click on it and select ‘Open With GDebi Package Installer’.
+下载完成后，在文件管理器中进入下载文件夹。要[安装 deb 文件][7]，可以双击它或者右击它并选择 “Open With GDebi Package Installer”。
 
 ![Double click on the downloaded deb file to install it][8]
 
-Wait for a few seconds and it should give you the option to install.
+等待几秒钟，它应该给你一个安装的选项。
 
 ![Hit the Install Package option in Gdebi][9]
 
-It will ask for Linux Mint account password. In Linux, you need to provide your password for installing any application.
+它将要求你提供 Linux Mint 的账户密码。在 Linux 中，你需要提供你的密码来安装任何应用。
 
 ![Enter your password for installing an application][10]
 
-You are almost there. It will show what additional packages will be installed with it (if any). Just hit the Continue button.
+你就要完成了。它将显示哪些额外的软件包将与之一起安装（如果有的话）。点击继续按钮即可。
 
 ![Details on the packages to be installed][11]
 
-It should take a few seconds or a minute at most for installation to complete.
+安装完成应该只需要几秒钟或最多一分钟。
 
 ![Installing Chrome in progress][12]
 
-You should see a screen like this when the installation completes.
+安装完成后，你应该看到这样的屏幕。
 
 ![Chrome successfully installed on Linux Mint][13]
 
-Once installed, you can run Google Chrome by looking for it in the application menu.
+安装完成后，你可以在应用菜单中寻找 Google Chrome 来运行它。
 
 ![Run Google Chrome in Linux Mint][14]
 
-And then enjoy Google Chrome on Linux Mint.
+然后在 Linux Mint 上享受 Google Chrome。
 
 ![Google Chrome running in Linux Mint][15]
 
-### How to update Google Chrome on Linux Mint
+### 如何在 Linux Mint 上更新 Google Chrome
 
-The good thing about this method is that Google Chrome gets updated with system updates. When you install the deb file, it also adds a repository from Google to your system.
+这个方法的好处是，谷歌浏览器会随着系统的更新而更新。当你安装 deb 文件的时候，它也会在你的系统中添加一个来自谷歌的仓库。
 
 ![Chrome adds a repository to the system for providing updates][16]
 
-Thanks to this added repository, the updates on the Chrome browser will be added to the system updates. So when you update Linux Mint, it gets updated as well (if there is an update available).
+由于这个添加的仓库，Chrome 浏览器上的更新将被添加到系统更新中。因此，当你更新 Linux Mint 时，它也会被更新（如果有可用的更新）。
 
-### How to remove Google Chrome from Linux Mint
+### 如何从 Linux Mint 中删除 Google Chrome
 
-Don’t like Chrome? No worries. You can uninstall Google Chrome from Linux Mint. And no, you don’t need to use terminal this time as well.
+不喜欢 Chrome？不用担心。你可以从 Linux Mint 中卸载谷歌浏览器。同样这次你也不需要使用终端。
 
-Click on the menu and search for Chrome. Right click on the Chrome icon and you’ll see an ‘Uninstall’ option. Select it.
+点击菜单，搜索 Chrome。在 Chrome 图标上点击右键，你会看到一个 “Uninstall” 选项。选择它。
 
 ![Removing Google Chrome from Linux Mint][17]
 
-You’ll have to enter your password, of course. It will show the package to be removed. Click OK here.
+当然，你必须输入你的密码。它将显示要删除的软件包。在这里点击 OK。
 
 ![Uninstalling Google Chrome from Linux mint][18]
 
-You may leave the repo from Google Chrome or remove it. It’s your choice, really.
+你可以留下 Google Chrome 的仓库，也可以删除它。这是你的选择。
 
-I hope you find this tutorial helpful in using Google Chrome on Linux Mint.
+我希望你觉得这个教程对在 Linux Mint 上使用 Google Chrome 有帮助。
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ via: https://itsfoss.com/install-chrome-linux-mint/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
