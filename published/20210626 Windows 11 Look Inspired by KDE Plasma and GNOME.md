@@ -14,7 +14,7 @@ Windows 11 的外观受到了 KDE Plasma 和 GNOME 的启发吗？
 
 ![](https://img.linux.net.cn/data/attachment/album/202108/06/103308cfoo3xoz2c002hx2.jpg)
 
-我曾记得一句俗话 —— “<ruby>好的艺术家会复制，伟大的艺术家偷窃。<rt>Good artists copy. Great artists steal</rt></ruby>”。我不认识 Windows 11 背后的设计团队，但他们似乎很大程度上受到了 Linux 桌面的影响。如果你回顾近几年来的 Windows 系统外观 —— 从 Windows XP 到 7，再到 10 —— 整体视觉上都没有什么太大的变化，直到今天为止。
+我曾记得一句俗话 —— “<ruby>优秀者模仿，伟大者剽窃<rt>Good artists copy. Great artists steal</rt></ruby>”。我不认识 Windows 11 背后的设计团队，但他们似乎很大程度上受到了 Linux 桌面的影响。如果你回顾近几年来的 Windows 系统外观 —— 从 Windows XP 到 7，再到 10 —— 整体视觉上都没有什么太大的变化，直到今天为止。
 
 Windows 操作系统的新版本通常有 5 到 7 年的生命周期。如果你试着回想 Windows 提供给你的个性化选项，你会发现这些选项近几年来基本都是一致的，甚至包括开始菜单位置、宽度、颜色在内的桌面整体的体验，一切都没变过。
 
