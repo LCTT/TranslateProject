@@ -52,41 +52,42 @@ Mozilla 的 Firefox 是唯一流行的 Chromium 内核浏览器的替代品。
   * 通过大型修改来不断破坏用户体验
   * 近年来缺乏显著的性能改进
 
-当然，没有哪个浏览器是完美的，但这是什么值得担心的事吗？嗯，我想是的。
+当然，没有哪个浏览器是完美的，但这是什么值得担心的事吗？嗯，我觉得是的。
 
 ### 为什么你应该担忧
 
-Mozilla’s Firefox is the only viable competitor to Chromium-based browsers. If Firefox disappears, users won’t have a choice to select a different browser engine.
+Mozilla 的 Firefox 是唯一可行的 Chromium 内核浏览器的竞争品。如果 Firefox 消失了，用户就会失去其它浏览器内核的选择。
 
-I’m sure you will agree that monopoly is bad; hence, we need something to survive as an alternative to Google’s chrome engine.
+我知道你会坚信纵容垄断是有害的，因此我们需要拯救 Google Chrome 的内核的替代品。
 
-In fact, a significant number of websites optimize the user experience by keeping chrome-based browsers in mind.
+实际上，相当多的网站会借助基于 Chrome 的浏览器来优化用户体验。
 
-So, eventually, if the declining trend continues, **users like us may just be forced to switch to other browsers by adapting to new workflows**.
+因此，如果用户量下降的趋势一直持续下去，**我们这样的用户就可能要被迫切换到其他浏览器，并且适应新的流程**。
 
-Even if we ignore the dominant control of Google’s chrome engine on the web by arguing that it is technically better, Firefox is still something precious. Because it provides way more customizations and constantly improves its privacy practices unlike any other.
+即使忽略掉 Google 的 Chrome 内核在互联网的主导地位，或者认为 Chrome 之类的浏览器在技术上更好，Firefox 仍旧十分珍贵。因为它至少提供了更多的个性化功能，也不断改进隐私体验，而不像其他公司。
 
-In other words, we will be losing out on a lot of good things (forcefully) just because all the competition prefers using Chromium as its base or engage in anti-competitive activities.
+换句话说，我们可能会（被迫）失去许多好的东西，而这一切仅仅是因为其他竞争对手都选择基于 Chromium 内核，或者从事反竞争活动。
 
-Maybe, you’re frustrated with Firefox now and move away to something else. That’s completely your choice.
+也许，你现在对 Firefox 很失望而想转向其他浏览器。当然，这是你自己的选择。
 
-**But, how would you feel if you won’t have an alternative when Firefox ceases to exist because of all the factors affecting its decline?**
+
+**但是，待到 Firefox 因为各种使其衰落的因素而彻底消失后，你又该何去何从呢？**
 
 ![][5]
 
-Hence, to keep things balanced, I think we should constantly oppose the anti-competitive behavior by tech giants and start using Mozilla Firefox (in whatever capacity, even as a secondary browser).
+因此，为了让一切保持平衡，我认为我们应该开始慢慢反抗科技巨头的不当垄断行为，并且开始使用 Mozilla Firefox（不论是什么功能，甚至作为备用浏览器也足够了）。
 
-Of course, Mozilla needs to give this situation some serious attention as well.
+当然，Mozilla 也需要面对这种情况做出什么措施了。
 
-While they are busy introducing VPN services, email relays, and other service integrations, they are not succeeding with the user experience improvements.
+当他们忙于添加隐私网络服务、邮件中继和其他服务集成时，Mozilla 并没有成功改善用户体验。
 
-At least, that is what I think. I’ve used Firefox as my primary browser for years now but I end up switching to other browsers once in a while, especially, after every major UI overhaul.
+至少，这是我的拙见。多年来，我一直使用 Firefox 作为主力浏览器，但我最终还是会偶尔转向其他浏览器，尤其是每次 Firefox 界面进行大幅度更改后。
 
 ### 你怎么看？
 
-I’d love to know what you think about this and what seems to be affecting Firefox’s decline in the userbase.
+我很想知道你对此有何想法，以及你认为究竟是什么因素导致了 Firefox 用户数的下降。
 
-What do you prefer to use as your primary web browser? Let me know all of it in the comments down below!
+您更喜欢将哪款浏览器作为您的主力浏览器？在评论区中告诉我吧！
 
 --------------------------------------------------------------------------------
 
@@ -103,6 +104,6 @@ via: https://news.itsfoss.com/firefox-decline/
 [b]: https://github.com/lujun9972
 [1]: https://www.reddit.com/user/nixcraft/
 [2]: https://data.firefox.com/dashboard/user-activity
-[3]: https://i2.wp.com/news.itsfoss.com/wp-content/uploads/2021/08/firefox-userbase-decline.png
+[3]: https://news.itsfoss.com/wp-content/uploads/2021/08/firefox-userbase-decline.png
 [4]: https://itsfoss.com/brave-vs-firefox/
-[5]: https://i1.wp.com/news.itsfoss.com/wp-content/uploads/2021/08/firefox-survive.jpg
+[5]: https://news.itsfoss.com/wp-content/uploads/2021/08/firefox-survive.jpg
