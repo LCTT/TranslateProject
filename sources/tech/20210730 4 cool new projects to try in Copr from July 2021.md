@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/4-cool-new-projects-to-try-in-copr-for-july-2021/)
 [#]: author: (Jakub Kadlčík https://fedoramagazine.org/author/frostyx/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
