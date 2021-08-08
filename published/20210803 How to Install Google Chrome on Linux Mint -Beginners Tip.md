@@ -3,12 +3,14 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (geekpi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13659-1.html)
 
-如何在 Linux Mint 上安装 Google Chrome（初学者技巧）
+初级：如何在 Linux Mint 上安装 Google Chrome
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202108/08/133301ni5k5i8rziezwe5i.jpg)
 
 这应该是一个非常简单的话题，但我写这个是因为我看到很多网站推荐在 Linux Mint 上安装 Google Chrome 的奇怪命令行步骤。那是可行的，但那是不必要的复杂，特别是对于不熟悉命令行的初学者。
 
@@ -30,7 +32,7 @@
 
 ![Select Debian/Ubuntu option for Chrome package on Mint][3]
 
-在开始下载之前，Firefox 会询问你是否要用 Gdebi 打开下载的文件或保存它。你可以选择任何一个选项，因为最终你会[使用 Gdebi 来安装 deb 文件][4]。然而，我更喜欢先保存文件。
+在开始下载之前，Firefox 会询问你是否要用 Gdebi 打开下载的文件或保存它。你可以选择任何一个选项，因为最终你会 [使用 Gdebi 来安装 deb 文件][4]。然而，我更喜欢先保存文件。
 
 ![Save the deb file][5]
 
@@ -38,7 +40,7 @@
 
 ![Wait for Google Chrome download to finish][6]
 
-下载完成后，在文件管理器中进入下载文件夹。要[安装 deb 文件][7]，可以双击它或者右击它并选择 “Open With GDebi Package Installer”。
+下载完成后，在文件管理器中进入下载文件夹。要 [安装 deb 文件][7]，可以双击它或者右击它并选择 “Open With GDebi Package Installer”。
 
 ![Double click on the downloaded deb file to install it][8]
 
@@ -101,7 +103,7 @@ via: https://itsfoss.com/install-chrome-linux-mint/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
