@@ -7,17 +7,18 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How to Install elementary Tweaks Tool
+如何安装 elementary 优化工具
 ======
-This quick tutorial demonstrates the steps to install elementary Tweaks
-tool/Pantheon Tweaks Tool.
-The elementary Tweaks tool is a handy utility specially designed for [elementary OS][1]. It gives you various options to change certain settings for elementary. Although elementary provides most of the settings already, however, few Pantheon desktop tweaks are not available via standard settings. Hence, this tool. This is a similar tool like we have in GNOME called [GNOME Tweaks][2].
 
-That said, installing this tool is straight forward. Although it’s a bit different in [elementary OS 6 Odin][3] than earlier versions such as elementary OS 5 Juno. From the elementary OS 6 Odin onwards, this tool is renamed as Pantheon Tweaks tool. Here’s how to install.
+> 这篇快速教程演示了如何安装 elementary / Pantheon 优化工具。
 
-### Install elementary Tweaks Tool
+elementary 优化工具（elementary Tweaks Tool）是专为 [elementary OS][1] 设计的实用工具。它提供了一些用于修改 elementary 设置的选项。虽然 elementary 已经提供了绝大多数选项，但还有一小部分的 Pantheon 桌面优化是不能直接通过普通设置修改的，因此这个工具才得以诞生。这个工具与 GNOME 中的 [GNOME Tweaks][2] 有些相似。
 
-The elementary OS doesn’t include the software-properties-common package, which is required for adding a PPA. If it is not install already, use the following command to install.
+也就是说，安装这个工具其实十分简单，只是 [elementary OS 6 Odin][3] 与早期版本（例如 elementary OS 5 Juno）存在一些区别。在 elementary OS 6 Odin 和更新的版本中，这个工具已经重命名为 Pantheon 优化工具（Pantheon Tweaks Tool）。接下来是安装步骤。
+
+### 安装 elementary 优化工具
+
+elementary OS 并没有内置用于添加 PPA 的 software-properties-common 软件包。如果您还没有安装此软件包，请使用如下命令安装。
 
 ```
 sudo apt install software-properties-common
@@ -25,7 +26,7 @@ sudo apt install software-properties-common
 
 #### elementary OS 6 Odin
 
-The Tweak tool is renamed with a new name and being developed separately. It is called [Pantheon Tweaks][4]. And using the following commands you can install it.
+该版本的优化工具已经改名，并且单独开发。它的名称是 [Pantheon Tweaks][4]。您可以使用如下命令安装它。
 
 ```
 sudo add-apt-repository -y ppa:philip.scott/pantheon-tweaks
@@ -34,30 +35,26 @@ sudo apt install -y pantheon-tweaks
 
 #### elementary OS 5 Juno and below
 
-If you are using elementary OS 5 June and below, you can install the earlier [elementary-tweaks][5] using the same PPA. Follow the below commands from terminal.
+如果您正在使用 elementary OS 5 June 或者更旧的版本，您可以使用同一 PPA 安装早期的 [elementary-tweaks][5]。在终端输入以下命令即可安装。
 
 ```
 sudo add-apt-repository -y ppa:philip.scott/elementary-tweaks
 sudo apt install -y elementary-tweaks
 ```
 
-### Usage
+### 使用方法
 
-After installation, you can run it via `Application Menu > System Settings > Tweaks`.
+安装完成后，您可以在 `应用程序菜单 > 系统设置 > Tweaks` 中使用此工具。
 
-![tweak in settings][6]
+![设置中的 Tweaks（优化）选项][6]
 
-In the Tweaks window, you can find several options to change and configure your elementary desktop.
+在 Tweaks 窗口，您可以修改一些选项，配置您的 elementary 桌面。
 
-![elementary tweaks after install – options][7]
+![安装完成后的 elementary 优化工具 —— 选项][7]
 
-For your information, this tool is just a front end to elementary desktop settings. You can very well change them via terminal provided you know the exact name or property. The settings you get in this tool can also be changed via `dconf` editor in `io.elementary` path.
+额外供您参考，这款工具仅仅是 elementary 桌面设置的前端。如果您知道准确的名称或属性，您可以直接在终端中修改配置。您在这款优化工具中获得的选项也可以在 `dconf` 编辑器中查找 `io.elementary` 路径以修改。
 
-[][8]
-
-SEE ALSO:   elementary OS 5.1 Hera Released. Here’s What’s New
-
-Let me know in the comment box below, if you face any trouble installing, or using this tweak tool.
+如果您在安装或使用优化工具时遇到了一些问题，您可以在评论区留言。
 
 * * *
 
@@ -67,7 +64,7 @@ via: https://www.debugpoint.com/2021/07/elementary-tweaks-install/
 
 作者：[Arindam][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[imgradeone](https://github.com/imgradeone)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
