@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "YungeG"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13662-1.html"
 
 3 个提高生产力的必备 Linux 速查表
 ======
