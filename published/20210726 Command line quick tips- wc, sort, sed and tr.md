@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (perfiffer)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13664-1.html)
 
 一些命令行小技巧：wc、sort、sed 和 tr
 ======
