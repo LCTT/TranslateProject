@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/ubuntu-hybrid-release-model/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
