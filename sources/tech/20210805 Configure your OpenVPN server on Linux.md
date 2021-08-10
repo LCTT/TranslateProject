@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/7/openvpn-firewall"
 [#]: author: "D. Greg Scott https://opensource.com/users/greg-scott"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
