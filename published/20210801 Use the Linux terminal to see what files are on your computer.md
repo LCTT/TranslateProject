@@ -12,7 +12,7 @@
 
 > 通过这个 Linux 教程学习如何使用 ls 命令在终端中列出文件。
 
-![List files on your computer][1]
+![](https://img.linux.net.cn/data/attachment/album/202108/11/142450etebpqtp7bl4kupt.jpg)
 
 要在有图形界面的计算机上列出文件，你通常可以打开一个文件管理器（Linux 上的 “文件”，MacOS 上的 “访达”，Windows 上的 “文件资源管理器”）来查看文件。
 
