@@ -7,24 +7,24 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-4 cool new projects to try in Copr from July 2021
+COPR 仓库中 4 个很酷的新项目（2021.07）
 ======
 
 ![][1]
 
-Copr is a [collection][2] of personal repositories for software that isn’t carried in Fedora Linux. Some software doesn’t conform to standards that allow easy packaging. Or it may not meet other Fedora Linux standards, despite being free and open-source. Copr can offer these projects outside the Fedora Linux set of packages. Software in Copr isn’t supported by Fedora infrastructure or signed by the project. However, it can be a neat way to try new or experimental software.
+COPR 是个人软件仓库[集合][2]，它不在 Fedora 中。这是因为某些软件不符合轻松打包的标准；或者它可能不符合其他 Fedora 标准，尽管它是自由而开源的。COPR 可以在 Fedora 套件之外提供这些项目。COPR 中的软件不受 Fedora 基础设施的支持，或者是由项目自己背书的。但是，这是一种尝试新的或实验性的软件的一种巧妙的方式。
 
-This article presents a few new and interesting projects in Copr. If you’re new to using Copr, see the [Copr User Documentation][3] for how to get started.
+本文介绍了 COPR 中一些有趣的新项目。如果你第一次使用 COPR，请参阅 [COPR 用户文档][3]。
 
 ## [][4] Wike
 
-[Wike][5] is a Wikipedia reader for the GNOME Desktop with search integration in the GNOME Shell. It provides distraction-free access to the [online encyclopedia][6]. The interface is minimalistic but it supports switching an article between multiple languages, bookmarks, article table of contents, dark mode, and more.
+[Wike][5] 是一个用于 GNOME 桌面的维基百科阅读器，在 GNOME Shell 中集成了搜索功能。它提供了对[在线百科全书][6]的无干扰访问。它的界面很简约，但它支持在多种语言之间切换文章、书签、文章目录、黑暗模式等。
 
 ![][7]
 
-### [][8] Installation instructions
+### [][8] 安装说明
 
-The [repo][9] currently provides Wike for Fedora 33, 34, and Fedora Rawhide. To install it, use these commands:
+该[仓库]][9]目前在 Fedora 33、34 和 Fedora Rawhide 提供 Wike。要安装它，请使用这些命令：
 
 ```
 sudo dnf copr enable xfgusta/wike
@@ -33,20 +33,20 @@ sudo dnf install wike
 
 ## [][10] DroidCam
 
-We are living through confusing times, being isolated at our homes, and the majority of our interactions with friends and coworkers take place on some video conference platform. Don’t waste your money on an overpriced webcam if you carry one in your pocket already. [DroidCam][11] lets you pair your phone with a computer and use it as a dedicated webcam. The connection made through a USB cable or over WiFi. DroidCam provides remote control of the camera and allows zooming, using autofocus, toggling the LED light, and other convenient features.
+我们正生活在一个混乱的时代，被隔离在家中，我们与朋友和同事的大部分互动都发生在一些视频会议平台上。如果你已经有一部手机，就不要把钱浪费在价格过高的网络摄像头上。[DroidCam][11] 让你将手机与电脑配对，并将其作为专用网络摄像头使用。通过 USB 线或通过 WiFi 进行连接。DroidCam 提供对摄像头的远程控制，并允许缩放、使用自动对焦、切换 LED 灯和其他便利功能。
 
 ![][12]
 
-### [][13] Installation instructions
+### [][13] 安装说明
 
-The [repo][14] currently provides DroidCam for Fedora 33 and 34. Before installing it, please update your system and reboot, or make sure you are running the latest kernel version and have an appropriate version of _kernel-headers_ installed.
+该[仓库][14]目前为在 Fedora 33 和 34 中提供 DroidCam。在安装之前，请更新你的系统并重新启动，或者确保你运行的是最新的内核版本，并安装了适当版本的 _kernel-headers_。
 
 ```
 sudo dnf update
 sudo reboot
 ```
 
-Droidcam depends on _v4l2loopback_ which must be installed manually from the [RPM Fusion Free repository][15].
+Droidcam 依赖 _v4l2loopback_，必须从 [RPM Fusion 免费仓库][15]手动安装。
 
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
@@ -54,7 +54,7 @@ sudo dnf install v4l2loopback
 sudo modprobe v4l2loopback
 ```
 
-Now install the _droidcam_ package:
+现在安装 _droidcam_ 软件包：
 
 ```
 sudo dnf copr enable meeuw/droidcam
@@ -63,17 +63,17 @@ sudo dnf install droidcam
 
 ## [][16] Nyxt
 
-[Nyxt][17] is a keyboard-oriented, infinitely extensible web browser designed for power users. It was heavily inspired by Emacs and as such is implemented and configured in Common Lisp providing familiar key-bindings ([Emacs][18], [vi][19], [CUA][20]).
+[Nyxt][17] 是一个面向键盘、可无限扩展的网络浏览器，专为高级用户设计。它在很大程度上受到 Emacs 的启发，因此用 Common Lisp 实现和配置，提供熟悉的按键绑定（[Emacs][18]、[vi][19]、[CUA][20]）。
 
-Other killer features that cannot be missed are a built-in REPL, [tree history][21], [buffers instead of tabs][22], and [so much more][17].
+其他不能错过的杀手锏是一个内置的 REPL、[树形历史][21]、[缓冲区代替标签][22]，还有[更多][17]。
 
-Nyxt is web engine agnostic so don’t worry about pages rendering in unexpected ways.
+Nyxt 与网络引擎无关，所以不用担心页面会以意外的方式呈现。
 
 ![][23]
 
-### [][24] Installation instructions
+### [][24] 安装说明
 
-The [repo][25] currently provides Nyxt for Fedora 33, 34, and Fedora Rawhide. To install it, use these commands:
+该[仓库][25]目前为 Fedora 33、34 和 Fedora Rawhide 提供 Nyxt。要安装它，请使用这些命令：
 
 ```
 sudo dnf copr enable teervo/nyxt
@@ -82,22 +82,22 @@ sudo dnf install nyxt
 
 ## [][26] Bottom
 
-[Bottom][27] is a system monitor with a customizable interface and multitude of features, It took inspiration from [gtop][28], [gotop][29], and [htop][30]. As such, it supports [processes][31] monitoring, [CPU][32], [RAM][33], and [network][34] usage monitoring. Besides those, it also provides more exotic widgets such as [disk capacity][35] usage, [temperature sensors][36], and [battery][37] usage.
+[Bottom][27] 是一个具有可定制界面和多种功能的系统监控器，它从 [gtop][28]、[gotop][29] 和 [htop][30] 获得灵感。因此，它支持[进程][31]监控、[CPU][32]、[RAM][33]和[网络][34]使用监控。除了这些，它还提供了更多奇特的小部件，如[磁盘容量][35]使用情况，[温度传感器][36]，和[电池][37]使用情况。
 
-Bottom utilizes the screen estate very efficiently thanks to the customizable layout of widgets as well as the [possibility to focus on just one widget and maximizing it][38].
+由于小部件的可自定义布局以及[可以只关注一个小部件并最大化它][38]，Bottom 可以非常有效地利用屏幕空间。
 
 ![][39]
 
-### [][40] Installation instructions
+### [][40] 安装说明
 
-The [repo][41] currently provides Bottom for Fedora 33, 34, and Fedora Rawhide. It is also available for EPEL 7 and 8. To install it, use these commands:
+该[仓库][41]提供为 Fedora 33、34 和 Fedora Rawhide 提供 Bottom。它也可用于 EPEL 7 和 8。要安装它，请使用这些命令：
 
 ```
 sudo dnf copr enable opuk/bottom
 sudo dnf install bottom
 ```
 
-Use _btm_ command to run the program.
+使用 _btm_ 命令来运行该程序。
 
 --------------------------------------------------------------------------------
 
@@ -105,7 +105,7 @@ via: https://fedoramagazine.org/4-cool-new-projects-to-try-in-copr-for-july-2021
 
 作者：[Jakub Kadlčík][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

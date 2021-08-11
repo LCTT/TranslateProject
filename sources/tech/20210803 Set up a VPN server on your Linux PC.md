@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/8/openvpn-server-linux)
 [#]: author: (D. Greg Scott https://opensource.com/users/greg-scott)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (perfiffer)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
