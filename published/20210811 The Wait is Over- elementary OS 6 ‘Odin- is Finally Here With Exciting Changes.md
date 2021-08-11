@@ -3,14 +3,16 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "imgradeone"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13670-1.html"
 
 久等了！elementary OS 6 “Odin” 正式发布，带来令人激动的新变化
 ======
 
-> 基于 Ubuntu 20.04 LTS，备受期待的 elementary OS 6 终于正式发布了。
+> 基于 Ubuntu 20.04 LTS，备受期待的 elementary OS 6 终于可以下载了。
+
+![](https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2021/08/elementary-os-6-release.jpg?w=1200&ssl=1)
 
 [2021 年最值得期待的 Linux 发行版][1] 之一，终于来了。
 
@@ -24,7 +26,7 @@ elementary OS 6 基于 Ubuntu 20.04 LTS，它大幅改进了用户体验和安�
 
 elementary OS 6 加入这个功能可能为时太晚，但至少他们做了极大的努力，让整个系统拥有一致的暗黑模式体验。
 
-您也会注意到，预装应用和应用中心里部分适配过的应用都支持暗黑模式。
+你也会注意到，预装应用和应用中心里部分适配过的应用都支持暗黑模式。
 
 暗黑模式在安装 elementary OS 6 后也可以直接在欢迎页设置。
 
@@ -46,9 +48,9 @@ elementary OS 6 加入这个功能可能为时太晚，但至少他们做了极�
 
 ![][6]
 
-对于触控板和触摸屏用户，elementary OS 6 带来了不错的手势交互，您完全可以借助手势来穿梭于系统中。
+对于触控板和触摸屏用户，elementary OS 6 带来了不错的手势交互，你完全可以借助手势来穿梭于系统中。
 
-您甚至可以通过手势来忽略通知。
+你甚至可以通过手势来忽略通知。
 
 ### 新应用，新更新
 
@@ -60,9 +62,9 @@ elementary OS 6 加入这个功能可能为时太晚，但至少他们做了极�
 
 ![][7]
 
-如果您想了解更多关于本次更新的内容，我强烈建议您试用 elementary OS 6 来自行探索。
+如果你想了解更多关于本次更新的内容，我强烈建议你试用 elementary OS 6 来自行探索。
 
-当然，如果您现在就想速览其他重要的新功能，那么我列出几个：
+当然，如果你现在就想速览其他重要的新功能，那么我列出几个：
 
   * 在安装应用中心之外的第三方应用时会有警告。
   * 在向终端粘贴需要 root 权限的命令时会有警告。
@@ -74,9 +76,9 @@ elementary OS 6 加入这个功能可能为时太晚，但至少他们做了极�
 
 ### 下载 elementary OS 6
 
-您现在可以从 elementary OS 的官网获取 elementary OS 的最新版本。如需了解详情，您也可以查阅 [官方公告][8]。
+你现在可以从 elementary OS 的官网获取 elementary OS 的最新版本。如需了解详情，你也可以查阅 [官方公告][8]。
 
-[下载 elementary OS 6][9]
+- [下载 elementary OS 6][9]
 
 --------------------------------------------------------------------------------
 
@@ -85,7 +87,7 @@ via: https://news.itsfoss.com/elementary-os-6-release/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[imgradeone](https://github.com/imgradeone)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
