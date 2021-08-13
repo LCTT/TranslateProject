@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/use-opencv-on-fedora-linux-part-1/)
 [#]: author: (Onuralp SEZER https://fedoramagazine.org/author/thunderbirdtr/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (geekpi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
