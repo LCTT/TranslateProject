@@ -7,7 +7,7 @@
 [#]: publisher: (wxy)
 [#]: url: (https://linux.cn/article-13681-1.html)
 
-用 OneDriver GUI 工具在 Linux 中安装微软 OneDrive
+用 OneDriver GUI 工具在 Linux 中挂载微软 OneDrive
 ======
 
 在 Windows 上，微软提供了一个 [免费云存储服务][1] OneDrive。它与 Windows 集成，你可以通过你的微软账户获得 5GB 的免费存储空间。
