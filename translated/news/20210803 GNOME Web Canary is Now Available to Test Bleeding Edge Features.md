@@ -10,46 +10,46 @@
 GNOME Web Canary现在可用于测试前沿功能
 ======
 
-Epiphany或[GNOME Web][1]是一个Linux发行版上最小且能干的浏览器，你会发现它是elementary OS的默认浏览器。
+Epiphany或[GNOME Web][1]是一个Linux发行版上最小但功能强大的浏览器，你会发现它是elementary OS的默认浏览器。
 
 使用GNOME40，Epiphany浏览器有一些[改进和新增功能][2]。
 
-在幕后，经常有许多令人兴奋的提升和新增特性。因此，你可以选择面向早期测试者的技术预览版。
+在幕后，经常有许多令人兴奋的提升和新增特性。因此，你可以选择为早期测试人员量身定制的GNOME Web技术预览版。
 
-现在，一个新的Canary版本发布了，你可以使用来测试甚至在技术预览版中没有的特性。
+现在，一个新的Canary版本发布了，你可以使用它来测试甚至在技术预览版中都没有的特性。
 
 ### GNOME Web Canary版本
 
 ![][3]
 
-GNOME Web的“Canary”版本让你测试甚至没有出现地最新[WebKitGTK][4]版本的特性。
+GNOME Web的“Canary”版本允许你测试甚至没有出现地最新[WebKitGTK][4]版本的特性。
 
-注意Canary版本可能相当不稳定，甚至稳定性比开发者技术预览版更差。
+注意Canary版本应该是极其不稳定的，甚至稳定性比开发者技术预览版更差。
 
-可是，使用Canary版本， 一个终端用户可以在早期开发过程中测试，帮助开发者发现灾难性bugs。
+可是，使用Canary版本， 一个终端用户可以在开发过程中的早期进行测试，帮助开发者发现灾难性bugs。
 
-不只是终端用户早期测试，Canary版本还让GNOME Web开发者的工作更轻松。
+不只是终端用户的早期测试，Canary版本还让GNOME Web开发者的工作更轻松。
 
-他们不再需要为了实现和测试一个新特性，单独构建WebKitGTK。
+他们不再需要为了实现和测试一个新特性，来单独构建WebKitGTK。
 
-尽管开发者有一个Flatpak SDK可以方便进行测试，但是这是一个费时的任务。
+尽管开发者有一个Flatpak SDK可以简化开发人员的流程，但是这仍然是一项耗时的任务。
 
-现在，没有了这个阻碍，开发节奏也可以提升。
+现在，没有了这个阻碍，开发速度也有可能提升。
 
 ### 怎样获得Canary版本?
 
-首先，你需要使用下面命令远程添加WebKit SDK Flatpak:
+首先，你需要使用以下命令添加WebKit SDK Flatpak remote:
 
 ```
 flatpak --user remote-add --if-not-exists webkit https://software.igalia.com/flatpak-refs/webkit-sdk.flatpakrepo
 flatpak --user install https://nightly.gnome.org/repo/appstream/org.gnome.Epiphany.Canary.flatpakref
 ```
 
-一旦完成，你就可以使用提供的[Flatpakref file][5]安装啦！
+一旦完成，你就可以使用提供的[Flatpakref文件][5]安装啦！
 
-测试一个Canary版本让更多的用户有能力来帮助GNOME Web开发者的开发过程。所以，这绝对是一个很需要的新增功能，来促进GNOME Web浏览器的开发。
+测试一个Canary版本让更多的用户能够在此过程中帮助GNOME Web开发者的开发人员。所以，这绝对是改进GNOME Web浏览器的开发的急需的补充。
 
-更多技术细节，你或许想看开发者中的一个写的[公告栏][6]。
+更多技术细节，你可能需要看一位开发者中发布的[公告][6]。
 
 
 
