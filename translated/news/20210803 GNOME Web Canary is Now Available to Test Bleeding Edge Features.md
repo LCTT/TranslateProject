@@ -22,7 +22,7 @@ Epiphany或[GNOME Web][1]是一个Linux发行版上最小但功能强大的浏�
 
 ![][3]
 
-GNOME Web的“Canary”版本允许你测试甚至没有出现地最新[WebKitGTK][4]版本的特性。
+GNOME Web的“Canary”版本允许你测试甚至没有出现在最新[WebKitGTK][4]版本中的特性。
 
 注意Canary版本应该是极其不稳定的，甚至稳定性比开发者技术预览版更差。
 
@@ -47,7 +47,7 @@ flatpak --user install https://nightly.gnome.org/repo/appstream/org.gnome.Epipha
 
 一旦完成，你就可以使用提供的[Flatpakref文件][5]安装啦！
 
-测试一个Canary版本让更多的用户能够在此过程中帮助GNOME Web开发者的开发人员。所以，这绝对是改进GNOME Web浏览器的开发的急需的补充。
+测试一个Canary版本让更多的用户能够在此过程中帮助GNOME Web开发者的开发人员。所以，这绝对是改进GNOME Web浏览器开发的急需补充。
 
 更多技术细节，你可能需要看一位开发者中发布的[公告][6]。
 
