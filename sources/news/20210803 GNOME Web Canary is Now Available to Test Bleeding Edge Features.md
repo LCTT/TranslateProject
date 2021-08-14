@@ -7,55 +7,51 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-GNOME Web Canary is Now Available to Test Bleeding Edge Features
+GNOME Web Canary现在可用于测试前沿功能
 ======
 
-Epiphany or [GNOME Web][1] is a minimal and yet capable browser for Linux distributions. You should find it as the default browser for elementary OS.
+Epiphany或[GNOME Web][1]是一个Linux发行版上最小且能干的浏览器，你会发现它是elementary OS的默认浏览器。
 
-With GNOME 40, the Epiphany browser has had some [improvements and additions][2].
+使用GNOME40，Epiphany浏览器有一些[改进和新增功能][2]。
 
-Behind the scenes, it regularly gets some exciting improvements and feature additions. And for that, you can opt for the Tech Preview version of GNOME Web tailored for early testers.
+在幕后，经常有许多令人兴奋的提升和新增特性。因此，你可以选择面向早期测试者的技术预览版。
 
-Now, a new Canary flavor has been introduced that you can use to test features that are not yet available even in the tech preview build.
+现在，一个新的Canary版本发布了，你可以使用来测试甚至在技术预览版中没有的特性。
 
-### GNOME Web Canary Flavor
+### GNOME Web Canary版本
 
 ![][3]
 
-GNOME Web’s “Canary” builds let you test features that are not even available in the latest [WebKitGTK][4] version.
+GNOME Web的“Canary”版本让你测试甚至没有出现地最新[WebKitGTK][4]版本的特性。
 
-Do note that the canary builds are supposed to be extremely unstable, even worse than the development builds available as a tech preview.
+注意Canary版本可能相当不稳定，甚至稳定性比开发者技术预览版更差。
 
-However, with the help of a Canary build, an end-user can test things way early in the process of development that can help find disastrous bugs.
+可是，使用Canary版本， 一个终端用户可以在早期开发过程中测试，帮助开发者发现灾难性bugs。
 
-Not just limited to end-user early testing, a canary build also makes things easier for a GNOME Web developer.
+不只是终端用户早期测试，Canary版本还让GNOME Web开发者的工作更轻松。
 
-They no longer have to build WebKitGTK separately in order to implement and test a new feature.
+他们不再需要为了实现和测试一个新特性，单独构建WebKitGTK。
 
-Even though there was a Flatpak SDK available to ease the process for developers, it was still a time-consuming task.
+尽管开发者有一个Flatpak SDK可以方便进行测试，但是这是一个费时的任务。
 
-Now, with that out of the way, the development pace can potentially improve as well.
+现在，没有了这个阻碍，开发节奏也可以提升。
 
-### How to Get the Canary Build?
+### 怎样获得Canary版本?
 
-First, you need to add the WebKit SDK Flatpak remote using the commands below:
+首先，你需要使用下面命令远程添加WebKit SDK Flatpak:
 
 ```
 flatpak --user remote-add --if-not-exists webkit https://software.igalia.com/flatpak-refs/webkit-sdk.flatpakrepo
 flatpak --user install https://nightly.gnome.org/repo/appstream/org.gnome.Epiphany.Canary.flatpakref
 ```
 
-Once done, you can install the Canary by using the [Flatpakref file][5] provided.
+一旦完成，你就可以使用提供的[Flatpakref file][5]安装啦！
 
-Testing a Canary build gives more users the ability to help GNOME Web developers in the process. So, it is definitely a much-needed addition to improve the development of the GNOME Web browser.
+测试一个Canary版本让更多的用户有能力来帮助GNOME Web开发者的开发过程。所以，这绝对是一个很需要的新增功能，来促进GNOME Web浏览器的开发。
 
-For more technical details, you might want to take a look at the [announcement post][6] by one of the developers.
+更多技术细节，你或许想看开发者中的一个写的[公告栏][6]。
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
 
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
-
-I'm not interested
 
 --------------------------------------------------------------------------------
 
@@ -63,7 +59,7 @@ via: https://news.itsfoss.com/gnome-web-canary/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zd200572](https://github.com/zd200572)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
