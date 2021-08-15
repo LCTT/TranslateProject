@@ -7,112 +7,112 @@
 [#]: publisher: " "
 [#]: url: " "
 
-What is SteamOS? Everything Important You Need to Know About This “Gaming Distribution”
+SteamOS 是什么？关于这款“游戏发行版”你所要知道的事
 ======
 
-SteamOS is a Linux-based operating system that aims to provide a seamless gaming experience from Steam’s own game store.
+SteamOS 是一款基于 Linux 的操作系统，旨在提供来自 Steam 平台自身的无缝游戏体验。
 
-While it has been in existence for about a decade now, there are a few things that you should know about it.
+虽然它已经存在了许久，但有几件事你应该知道。
 
-In this article, we try to address most of the common questions regarding SteamOS.
+在这篇文章中，我们将回答许多 SteamOS 相关的常见问题。
 
-### What is SteamOS?
+### SteamOS 是什么？
 
-SteamOS is a Linux distribution from the game distribution platform Steam. It is not a generic desktop operating system like Debian, Linux Mint or Ubuntu though you could use the desktop features. By default, SteamOS gives you a console like interface because SteamOS is intended to be the operating system on Steam devices like Steam Machine (discontinued) and Steam Deck.
+SteamOS 是由游戏分发平台 Steam 开发的 Linux 发行版。它并是一款像 Debian、Linux Mint 或者 Ubuntu 那样的泛用型桌面操作系统，即便你确实可以使用桌面功能。默认情况下，SteamOS 的界面类似于游戏主机，因为 SteamOS 旨在成为专为 Steam 游戏设备（如 Steam Machine（已停产）和 Steam Deck）定制的操作系统。
 
-![SteamOS interface][1]
+![SteamOS 界面][1]
 
-While you can install the Steam game client on any Linux distribution and other platforms, SteamOS was developed to provide a console-like experience to play games from the Steam store.
+你确实也可以在任何 Linux 发行版和其他平台安装 Steam 客户端，但 SteamOS 更是为了提供类似游戏主机的体验，方便你玩 Steam 上的游戏。
 
-### Which Linux distribution SteamOS is based on?
+### SteamOS 基于哪个 Linux 发行版？
 
-SteamOS is a Linux-based operating system originally based on Debian 8. With Valve’s new [Steam Deck][2] handheld gaming device, SteamOS’s latest version (SteamOS 3.0) uses Arch Linux as its base because of its rolling-release update schedule.
+作为基于 Linux 的系统，SteamOS 最初基于 Debian 8 开发。随着 Valve 的全新 [Steam Deck][2] 掌机发布，SteamOS 的最新版本（SteamOS 3.0）将基于 Arch Linux 开发，因为 Arch 支持滚动更新。
 
-The developers believe that Arch Linux as a base for SteamOS is useful to push quick updates and optimize SteamOS for Steam Deck.
+SteamOS 的开发团队也相信，SteamOS 基于 Arch Linux 更有利于快速推送更新和优化 Steam Deck。
 
 ![][3]
 
-### System requirements for SteamOS
+### SteamOS 的系统要求
 
-Ideally, any machine with the following minimum requirements should work:
+理想情况下，符合以下最低要求的设备都应该可以正常运行 SteamOS：
 
-  * Intel or AMD 64-bit capable processor
-  * 4GB or more memory
-  * 250GB or larger disk
-  * NVIDIA, Intel, or AMD graphics card
-  * USB port or DVD drive for installation
+  * Intel / AMD 的 64 位 CPU
+  * 4GB 或更高的运行内存（RAM）
+  * 250GB 或更大的磁盘
+  * NVIDIA / Intel / AMD 的显卡
+  * 用于安装介质的 USB 或者 DVD
 
+（LCTT 译注：本段内容仅针对 SteamOS 2.0。）
 
+### SteamOS 能否在你的电脑上正常运作？
 
-### Will SteamOS Work on your PC?
+SteamOS（2.0 版本）内置了支持特定硬件的驱动程序。
 
-SteamOS (version 2.0) comes with drivers and chipsets that support a specific set of hardware.
+理论上 SteamOS 可以在任何电脑上运行，但目前官方并没有支持最新的硬件。
 
-It should theoretically work on every PC, but there’s no official support for the latest and greatest hardware.
+### SteamOS 只是另外一款 Linux 发行版吗？
 
-### Is SteamOS just another Linux distribution?
+SteamOS 严格来说已经是现有的 [适合游戏的 Linux 发行版][4] 之一。但与其他发行版不同的是，SteamOS 并不是为了泛用型桌面而设计的。你确实可以安装 Linux 程序，但 SteamOS 支持的软件包极为有限。
 
-SteamOS is technically one of the [gaming Linux distributions][4] available. But, unlike some others, it is not meant for a full-fledged desktop experience. While you have the ability to install Linux applications, it supports a limited number of packages.
+总之，它并不适合替代普通 Linux 桌面系统。
 
-In short, it is not suitable to replace a desktop Linux OS.
+### SteamOS 现在还在积极维护中吗？
 
-### Is Steam OS Actively Maintained?
+**是**，但又**不是**。
 
-**Yes** and **No.**
+SteamOS 基于 Debian 8 许久，目前没有任何更新。
 
-SteamOS is based on Debian 8 for a long time now with no updates whatsoever.
+如果你正期望将 SteamOS 安装到你的个人设备上，那么目前公开发布的版本（SteamOS 2.0）已经处于不再维护的状态。
 
-So, if you are looking to install it on your personal machine, the version available to the public (SteamOS 2.0) is not actively maintained.
+不过，Valve 目前正在为 Steam Deck 维护 SteamOS 3.0。因此，可能不久 SteamOS 就可以用于你的桌面了。
 
-However, Valve is actively working on SteamOS 3.0 for its Steam Deck hardware. Hence, there is a possibility that you should find it available soon enough for your desktop.
+### 你是否推荐使用 SteamOS 来玩电脑游戏吗？
 
-### Should You Prefer SteamOS for PC Gaming?
+**不推荐。**在 Windows 和其它 Linux 发行版面前，SteamOS 并不是你应该选择的替代品。
 
-**No.** SteamOS is not a proper replacement for Windows or other Linux distributions.
+虽然 SteamOS 主要是为游戏定制的，但在拿它玩游戏之前，你还需要了解许多注意事项。
 
-While it was primarily tailored to play games, there are many caveats to know before you proceed.
+### 所有游戏都可以在 SteamOS 上玩吗？
 
-### Do all games work on SteamOS?
+**不。**SteamOS 需要依赖 Proton 兼容层才能让 Windows 平台的游戏正常运行。
 
-**No.** SteamOS relies on the Proton compatibility layer to make most of the Windows-exclusive games work.
+当然，如今借助同样的底层技术，[在 Linux 里玩游戏][5] 已经成为了可能，但至少在我写这篇文章时，你并不能让 Steam 上架的所有游戏都可以在 Linux 中运行。
 
-Of course, [Gaming on Linux][5] has been made possible with the same underlying tech, but at the time of writing this, you cannot make all the games available in Steam work with it.
+虽然大部分游戏都可以运行，但这并不意味着你游戏库里的所有游戏都能正常游玩。
 
-Even though many games should work on it, that does not guarantee that all games you have in your library will work as expected.
+如果你想玩 Steam 支持的游戏，以及仅限 Linux 平台的游戏，那还是值得一试的。
 
-If you are looking to play supported games and Linux-only games, you can consider trying it.
+### SteamOS 是否开源？
 
-### Is SteamOS open source?
+**是的**（SteamOS 2.0）。
 
-**Yes** (SteamOS 2.0).
+SteamOS 操作系统是开源的，你可以在 [官方仓库][6] 中找到源码。
 
-The operating system is open-source, and you can find the source code in its [official repo][6].
+不过，你用来玩游戏的 Steam 客户端是专有的。
 
-But, the Steam client that you will be using on it is proprietary.
+值得注意的是，SteamOS 3.0 目前仍处于开发阶段，因此你无法获得它的源代码和任何公开进展。
 
-It is worth noting that SteamOS 3.0 is still a work in progress. So, you cannot find the source code or any progress of it available to the public.
+### SteamOS 是否免费使用？
 
-### Is SteamOS free to use?
+目前你暂时无法找到可供公众使用的最新版 SteamOS，但它基本上是免费的。基于 Debian 的旧版 SteamOS 可在其 [官方网站][7] 上获取。
 
-You won’t find the new SteamOS version available to the public yet, but it is essentially free to use. The older version based on Debian is available to download from the [official site][7].
+### 我能找到内置 SteamOS 的游戏主机吗？
 
-### Can I find a gaming system with SteamOS built in?
+![Steam Machine 主机，已经停产][8]
 
-![Steam Machine console has been doscontinued][8]
+SteamOS 最初是为 Steam Machine 这款 Steam 自家的 PlayStation/Xbox 风格主机定制的操作系统。2015 年 Steam Machine 发布后并没有在市场上获得成功，最终停产。
 
-SteamOS was originally created to be the operating system on Steam’s very own PlayStation/Xbox styled console called Steam Machine. Released around 2015, Steam Machine did not see much success and was eventually discontinued.
+目前，唯一一款预装 SteamOS 的设备是备受瞩目的 Steam Deck。
 
-Now the only device to feature SteamOS is the much-anticipated Steam Deck.
+待到 SteamOS 开放针对其它设备的下载后，你就可以看到有硬件厂商销售预装 SteamOS 的游戏设备了。
 
-If SteamOS is available to download for other hardware, you may see commercial choices to have SteamOS pre-installed with a gaming machine.
+但，至少目前来看，你不应该相信任何不知名的制造商提供开箱即用的 SteamOS。
 
-But, for now, you should not believe any claims by unknown manufacturers to offer SteamOS out of the box.
+### 下一代 SteamOS 能否使 Linux 成为游戏的可行选择？
 
-### Will Next-gen SteamOS Make Linux a Viable Choice for Gaming?
+是的，绝对是的。
 
-Absolutely. Yes.
-
-Linux may not be the recommended choice for gamers out there. You can explore if [we recommend Linux for gaming][9]. Still, if SteamOS evolves to support every game for its Steam Deck hardware, desktop Linux users can finally experience all unsupported Steam games.
+Linux 可能不是外界所推荐的游戏选择，但如果你乐意的话，你也可以查看 [我们所推荐的 Linux 游戏发行版][9]。最后，如果 SteamOS 下了狠心，让每款游戏都能在 Steam Deck 上运行，那么桌面 Linux 用户也将终于可以体验到所有曾经不支持的 Steam 游戏了。
 
 --------------------------------------------------------------------------------
 
@@ -120,19 +120,19 @@ via: https://itsfoss.com/steamos/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[imgradeone](https://github.com/imgradeone)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://itsfoss.com/author/ankush/
 [b]: https://github.com/lujun9972
-[1]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2021/08/steamos.jpg?resize=800%2C450&ssl=1
+[1]: https://itsfoss.com/wp-content/uploads/2021/08/steamos.jpg
 [2]: https://www.steamdeck.com/en/
-[3]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2021/08/steam-deck.jpg?resize=800%2C479&ssl=1
+[3]: https://itsfoss.com/wp-content/uploads/2021/08/steam-deck.jpg
 [4]: https://itsfoss.com/linux-gaming-distributions/
 [5]: https://itsfoss.com/linux-gaming-guide/
 [6]: https://repo.steampowered.com/steamos/
 [7]: https://store.steampowered.com/steamos/
-[8]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2021/08/valves-steam-machine.jpg?resize=800%2C441&ssl=1
+[8]: https://itsfoss.com/wp-content/uploads/2021/08/valves-steam-machine.jpg
 [9]: https://news.itsfoss.com/linux-for-gaming-opinion/
