@@ -3,14 +3,16 @@
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "imgradeone"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 
 SteamOS 是什么？关于这款“游戏发行版”你所要知道的事
 ======
 
-SteamOS 是一款基于 Linux 的操作系统，旨在提供来自 Steam 平台自身的无缝游戏体验。
+![](https://img.linux.net.cn/data/attachment/album/202108/16/113402ass3smho7sbmo75b.jpg)
+
+SteamOS 是一款基于 Linux 的操作系统，旨在提供来自 Steam 自己的游戏商店顺滑的游戏体验。
 
 虽然它已经存在了许久，但有几件事你应该知道。
 
@@ -18,11 +20,11 @@ SteamOS 是一款基于 Linux 的操作系统，旨在提供来自 Steam 平台�
 
 ### SteamOS 是什么？
 
-SteamOS 是由游戏分发平台 Steam 开发的 Linux 发行版。它并是一款像 Debian、Linux Mint 或者 Ubuntu 那样的泛用型桌面操作系统，即便你确实可以使用桌面功能。默认情况下，SteamOS 的界面类似于游戏主机，因为 SteamOS 旨在成为专为 Steam 游戏设备（如 Steam Machine（已停产）和 Steam Deck）定制的操作系统。
+SteamOS 是由游戏分发平台 Steam 开发的 Linux 发行版。它并是一款像 Debian、Linux Mint 或者 Ubuntu 那样的泛用型桌面操作系统，即便你确实可以使用桌面功能。默认情况下，SteamOS 的界面类似于游戏机，因为 SteamOS 旨在成为专为 Steam 游戏设备定制的操作系统，如 Steam Machine（已停产）和 Steam Deck。
 
 ![SteamOS 界面][1]
 
-你确实也可以在任何 Linux 发行版和其他平台安装 Steam 客户端，但 SteamOS 更是为了提供类似游戏主机的体验，方便你玩 Steam 上的游戏。
+你确实也可以在任何 Linux 发行版和其他平台安装 Steam 客户端，但 SteamOS 更是为了提供类似游戏机的体验，方便你玩 Steam 上的游戏。
 
 ### SteamOS 基于哪个 Linux 发行版？
 
@@ -50,7 +52,7 @@ SteamOS（2.0 版本）内置了支持特定硬件的驱动程序。
 
 理论上 SteamOS 可以在任何电脑上运行，但目前官方并没有支持最新的硬件。
 
-### SteamOS 只是另外一款 Linux 发行版吗？
+### SteamOS 只是又一款 Linux 发行版吗？
 
 SteamOS 严格来说已经是现有的 [适合游戏的 Linux 发行版][4] 之一。但与其他发行版不同的是，SteamOS 并不是为了泛用型桌面而设计的。你确实可以安装 Linux 程序，但 SteamOS 支持的软件包极为有限。
 
@@ -80,7 +82,7 @@ SteamOS 基于 Debian 8 许久，目前没有任何更新。
 
 虽然大部分游戏都可以运行，但这并不意味着你游戏库里的所有游戏都能正常游玩。
 
-如果你想玩 Steam 支持的游戏，以及仅限 Linux 平台的游戏，那还是值得一试的。
+如果你想玩 Steam 支持的游戏，以及仅限于 Linux 平台的游戏，那还是值得一试的。
 
 ### SteamOS 是否开源？
 
@@ -98,9 +100,9 @@ SteamOS 操作系统是开源的，你可以在 [官方仓库][6] 中找到源�
 
 ### 我能找到内置 SteamOS 的游戏主机吗？
 
-![Steam Machine 主机，已经停产][8]
+![Steam Machine 游戏机，已经停产][8]
 
-SteamOS 最初是为 Steam Machine 这款 Steam 自家的 PlayStation/Xbox 风格主机定制的操作系统。2015 年 Steam Machine 发布后并没有在市场上获得成功，最终停产。
+SteamOS 最初是为 Steam Machine 这款 Steam 自家的 PlayStation/Xbox 风格的游戏机定制的操作系统。2015 年 Steam Machine 发布后并没有在市场上获得成功，最终停产。
 
 目前，唯一一款预装 SteamOS 的设备是备受瞩目的 Steam Deck。
 
@@ -121,7 +123,7 @@ via: https://itsfoss.com/steamos/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[imgradeone](https://github.com/imgradeone)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
