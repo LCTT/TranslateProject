@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/freedos-gw-basic)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: (chai-yuan)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
