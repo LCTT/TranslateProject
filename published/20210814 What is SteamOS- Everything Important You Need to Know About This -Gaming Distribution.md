@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "imgradeone"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13688-1.html"
 
 SteamOS 是什么？关于这款“游戏发行版”你所要知道的事
 ======
@@ -70,13 +70,13 @@ SteamOS 基于 Debian 8 许久，目前没有任何更新。
 
 ### 你是否推荐使用 SteamOS 来玩电脑游戏吗？
 
-**不推荐。**在 Windows 和其它 Linux 发行版面前，SteamOS 并不是你应该选择的替代品。
+**不推荐**。 在 Windows 和其它 Linux 发行版面前，SteamOS 并不是你应该选择的替代品。
 
 虽然 SteamOS 主要是为游戏定制的，但在拿它玩游戏之前，你还需要了解许多注意事项。
 
 ### 所有游戏都可以在 SteamOS 上玩吗？
 
-**不。**SteamOS 需要依赖 Proton 兼容层才能让 Windows 平台的游戏正常运行。
+**不**。 SteamOS 需要依赖 Proton 兼容层才能让 Windows 平台的游戏正常运行。
 
 当然，如今借助同样的底层技术，[在 Linux 里玩游戏][5] 已经成为了可能，但至少在我写这篇文章时，你并不能让 Steam 上架的所有游戏都可以在 Linux 中运行。
 
