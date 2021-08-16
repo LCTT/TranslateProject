@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/install-linux-mint-lvm"
 [#]: author: "Kenneth Aaron https://opensource.com/users/flyingrhino"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
