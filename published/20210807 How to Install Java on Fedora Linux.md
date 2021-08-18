@@ -3,12 +3,14 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13694-1.html"
 
 如何在 Fedora Linux 上安装 Java
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202108/18/102444nfsktbup4b7bfp88.jpg)
 
 不管是爱它还是恨它，都很难避开 Java。
 
@@ -18,14 +20,12 @@ Java 仍然是一种非常流行的编程语言，在学校里教，在企业里
 
 这就变得很混乱，因为围绕着 Java 有很多技术术语。
 
-  * Java 开发工具包（JDK）用于创建 Java 程序
-  * Java 运行环境（JRE）或 Java 虚拟机（JVM），用于运行 Java 程序。
+  * <ruby>Java 开发工具包<rt>Java Development Kit</rt></ruby>（JDK）用于创建 Java 程序
+  * <ruby>Java 运行环境<rt>Java Runtime Environment</rt></ruby>（JRE）或 Java 虚拟机（JVM），用于运行 Java 程序。
 
+除此之外，你还会遇到 [OpenJDK][1] 和 [Oracle Java SE][2]。推荐使用 OpenJDK ，因为它是开源的。如果你有专门的需求，那么你应该选择 Oracle Java SE。
 
-
-除此之外，你还会遇到 [OpenJDK][1] 和 [Oracle Java SE][2]。OpenJDK 是被推荐的，因为它是开源的。如果你有专门的需求，那么你只应该选择 Oracle Java SE。
-
-这里还有一件事。即使是 OpenJDK 也有几个版本可供选择。在写这篇文章的时候，Fedora 34 有 OpenJDK 1.8、OpenJDK 11 和 OpenJDK 16 可用。
+还有一件事。即使是 OpenJDK 也有几个版本可供选择。在写这篇文章的时候，Fedora 34 有 OpenJDK 1.8、OpenJDK 11 和 OpenJDK 16 可用。
 
 你可以自行决定想要哪个Java版本。
 
@@ -49,13 +49,13 @@ java -version
 sudo dnf search openjdk
 ```
 
-这里的sudo不是必须的，但它会刷新 sudo 用户的元数据，这在你安装另一个版本的 Java 时会有帮助。
+这里的 `sudo` 不是必须的，但它会刷新 `sudo` 用户的元数据，这在你安装另一个版本的 Java 时会有帮助。
 
 上面的命令将显示很多输出，其中有很多看起来相似的软件包。你必须专注于最初的几个词来理解不同的版本。
 
 ![Available Java versions in Fedora][4]
 
-例如，要安装 Java 8 (OpenJDK 1.8)，包的名字应该是 java-1.8.0-openjdk.x86_64 或者 java-1.8.0-openjdk。用它来安装：
+例如，要安装 Java 8（OpenJDK 1.8），包的名字应该是 `java-1.8.0-openjdk.x86_64` 或者 `java-1.8.0-openjdk`。用它来安装：
 
 ```
 sudo dnf install java-1.8.0-openjdk.x86_64
@@ -73,7 +73,7 @@ sudo dnf install java-1.8.0-openjdk.x86_64
 sudo alternatives --config java
 ```
 
-你会注意到在 Java 版本前有一个数字。Java 版本前的 + 号表示当前正在使用的 Java 版本。
+你会注意到在 Java 版本前有一个数字。Java 版本前的 `+` 号表示当前正在使用的 Java 版本。
 
 你可以指定这个数字来切换 Java 版本。因此，在下面的例子中，如果我输入 2，它将把系统中的 Java 版本从 Java 11 改为 Java 8。
 
@@ -88,7 +88,7 @@ via: https://itsfoss.com/install-java-fedora/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
