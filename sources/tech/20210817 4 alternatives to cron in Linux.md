@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/7/alternatives-cron-linux"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: "geekpi"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
