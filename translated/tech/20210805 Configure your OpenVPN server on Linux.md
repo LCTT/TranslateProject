@@ -34,7 +34,7 @@ OpenVPN 在两点之间建立一条加密的隧道，防止第三方访问你的
 
 你可以使用我预先建立的服务器和客户端配置文件模板和 `sysctl` 文件来打开网络路由，从而节省时间和麻烦。这个配置还包括自定义记录连接和断开的情况。它在 OpenVPN 服务器的 `/etc/openvpn/server/logs` 中保存日志。
 
-如果你使用我的模板，你将需要编辑它们以使用你的 IP 地址和主机名。
+如果你使用我的模板，你需要使用你的 IP 地址和主机名编辑它们。
 
 要使用我的预建配置模板、脚本和 `sysctl` 来打开 IP 转发，请下载我的脚本：
 
@@ -45,7 +45,7 @@ $ curl \
 OVPNdownloads.sh
 ```
 
-阅读该脚本，了解它的工作内容。下面是它的行为概述：
+阅读该脚本，了解它的工作内容。下面是它的运行概述：
 
   * 在你的 OpenVPN 服务器上创建适当的目录
   * 从我的网站下载服务器和客户端的配置文件模板
@@ -124,7 +124,7 @@ $ sudo chown -R openvpn.openvpn /etc/openvpn
 
 ### 防火墙
 
-如果你在步骤 1 中决定不禁用 firewalld 服务，那么你的服务器的防火墙服务可能默认不允许 VPN 流量。使用 [`firewall-cmd` 命令][5]，你可以启用 OpenVPN 服务，它可以打开必要的端口并根据需要路由流量：
+如果你在步骤 1 中启用 firewalld 服务，那么你的服务器的防火墙服务可能默认不允许 VPN 流量。使用 [`firewall-cmd` 命令][5]，你可以启用 OpenVPN 服务，它可以打开必要的端口并按需路由流量：
 
 
 ```
@@ -136,7 +136,7 @@ $ sudo firewall-cmd --reload
 
 ### 启动你的服务器
 
-现在你可以启动你的 OpenVPN 服务器了。为了让它在重启后自动启动，使用 `systemctl` 的 `enable` 子命令：
+现在你可以启动 OpenVPN 服务器了。为了让它在重启后自动运行，使用 `systemctl` 的 `enable` 子命令：
 
 
 ```
@@ -145,7 +145,7 @@ $ sudo firewall-cmd --reload
 
 ### 最后的步骤
 
-本文的第四篇也是最后一篇文章将演示如何设置客户端，以便从远处连接到你的 OpenVPN。
+本文的第四篇也是最后一篇文章将演示如何设置客户端，以便远程连接到你的 OpenVPN。
 
 
 * * *
@@ -159,7 +159,7 @@ via: https://opensource.com/article/21/7/openvpn-firewall
 作者：[D. Greg Scott][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
