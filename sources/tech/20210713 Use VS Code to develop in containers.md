@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/vs-code-remote-containers-podman)
 [#]: author: (Brant Evans https://opensource.com/users/branic)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
