@@ -3,7 +3,7 @@
 [#]: author: "D. Greg Scott https://opensource.com/users/greg-scott"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
@@ -12,29 +12,29 @@
 在你安装了 OpenVPN 之后，是时候配置它了。
 ![Lock][1]
 
-OpenVPN 在两点之间建立一个加密的隧道，防止第三方访问你的网络流量。通过设置你的虚拟私人网络（VPN）服务器，你就成为你自己的 VPN 供应商。许多流行的 VPN 服务已经使用 [OpenVPN][2]，所以当你可以完全控制时，为什么要把你的连接绑定到一个特定的供应商？
+OpenVPN 在两点之间建立一条加密的隧道，防止第三方访问你的网络流量。通过设置你的虚拟私人网络（VPN）服务器，你就成为你自己的 VPN 供应商。许多流行的 VPN 服务已支持 [OpenVPN][2]，所以当你可以完全控制时，为什么要把你的连接绑定到一个特定的供应商？
 
-本系列中的[第一篇][3]设置了一个 VPN 服务器，[第二篇][4]演示了如何安装和配置 OpenVPN 服务器软件。这第三篇文章展示了如何在认证到位的情况下启动 OpenVPN。
+本系列中的[第一篇][3]设置了一个 VPN 服务器，[第二篇][4]演示了如何安装和配置 OpenVPN 服务器软件。这第三篇文章演示了如何在认证成功的情况下启动 OpenVPN。
 
 要设置一个 OpenVPN 服务器，你必须：
 
   * 创建一个配置文件。
   * 设置 `sysctl` 值 `net.ipv4.ip_forward = 1` 以启用路由。
-  * 为所有的配置和认证文件设置适当的所有权，以便在一个非 root 账户下运行 OpenVPN 服务器守护程序。
-  * 设置 OpenVPN 以适当的配置文件启动。
+  * 为所有的配置和认证文件设置适当的所有权，以便使用非 root 账户运行 OpenVPN 服务器守护程序。
+  * 设置 OpenVPN 加载适当的配置文件启动。
   * 配置你的防火墙。
 
 
 
 ### 配置文件
 
-你必须在 `/etc/openvpn/server/` 中创建一个服务器配置文件。如果你想的话，你可以从头开始，OpenVPN 包括了几个样本配置文件，可以作为开始。看看 `/usr/share/doc/openvpn/sample/sample-config-files/` 就知道了。
+你必须在 `/etc/openvpn/server/` 中创建一个服务器配置文件。如果你想的话，你可以从头开始，OpenVPN 包括了几个配置示例示例文件，可以以此作为开始。看看 `/usr/share/doc/openvpn/sample/sample-config-files/` 就知道了。
 
-如果你想手工建立一个配置文件，从 `server.conf` 或 `roadwarrior-server.conf` 开始（视情况而定），并将你的配置文件放在 `/etc/openvpn/server` 中。这两个文件都有大量的注释，所以请阅读注释并决定哪一个适用你的情况。
+如果你想手工建立一个配置文件，从 `server.conf` 或 `roadwarrior-server.conf` 开始（视情况而定），并将你的配置文件放在 `/etc/openvpn/server` 中。这两个文件都有大量的注释，所以请阅读注释并根据你的情况作出决定。
 
-你可以通过使用我预先建立的服务器和客户端配置文件模板和 `sysctl` 文件来打开网络路由，从而节省时间和麻烦。这个配置还包括自定义记录连接和断开的情况。它在 OpenVPN 服务器的 `/etc/openvpn/server/logs` 中保存日志。
+你可以使用我预先建立的服务器和客户端配置文件模板和 `sysctl` 文件来打开网络路由，从而节省时间和麻烦。这个配置还包括自定义记录连接和断开的情况。它在 OpenVPN 服务器的 `/etc/openvpn/server/logs` 中保存日志。
 
-如果你使用我的模板，你将需要编辑它们以使用你的 IP 地址和主机名。
+如果你使用我的模板，你需要使用你的 IP 地址和主机名编辑它们。
 
 要使用我的预建配置模板、脚本和 `sysctl` 来打开 IP 转发，请下载我的脚本：
 
@@ -45,7 +45,7 @@ $ curl \
 OVPNdownloads.sh
 ```
 
-阅读该脚本，了解它的工作内容。下面是它的行为概述：
+阅读该脚本，了解它的工作内容。下面是它的运行概述：
 
   * 在你的 OpenVPN 服务器上创建适当的目录
   * 从我的网站下载服务器和客户端的配置文件模板
@@ -124,7 +124,7 @@ $ sudo chown -R openvpn.openvpn /etc/openvpn
 
 ### 防火墙
 
-如果你在步骤 1 中决定不禁用 firewalld 服务，那么你的服务器的防火墙服务可能默认不允许 VPN 流量。使用 [`firewall-cmd` 命令][5]，你可以启用 OpenVPN 服务，它可以打开必要的端口并根据需要路由流量：
+如果你在步骤 1 中启用 firewalld 服务，那么你的服务器的防火墙服务可能默认不允许 VPN 流量。使用 [`firewall-cmd` 命令][5]，你可以启用 OpenVPN 服务，它可以打开必要的端口并按需路由流量：
 
 
 ```
@@ -136,7 +136,7 @@ $ sudo firewall-cmd --reload
 
 ### 启动你的服务器
 
-现在你可以启动你的 OpenVPN 服务器了。为了让它在重启后自动启动，使用 `systemctl` 的 `enable` 子命令：
+现在你可以启动 OpenVPN 服务器了。为了让它在重启后自动运行，使用 `systemctl` 的 `enable` 子命令：
 
 
 ```
@@ -145,7 +145,7 @@ $ sudo firewall-cmd --reload
 
 ### 最后的步骤
 
-本文的第四篇也是最后一篇文章将演示如何设置客户端，以便从远处连接到你的 OpenVPN。
+本文的第四篇也是最后一篇文章将演示如何设置客户端，以便远程连接到你的 OpenVPN。
 
 
 * * *
@@ -159,7 +159,7 @@ via: https://opensource.com/article/21/7/openvpn-firewall
 作者：[D. Greg Scott][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

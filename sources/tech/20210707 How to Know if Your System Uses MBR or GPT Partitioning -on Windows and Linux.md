@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/check-mbr-or-gpt/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (alim0x)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
