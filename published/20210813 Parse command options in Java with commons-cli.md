@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13699-1.html"
 
 使用 commons-cli 解析 Java 中的命令行选项
 ======
