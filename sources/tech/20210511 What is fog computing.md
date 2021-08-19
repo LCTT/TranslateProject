@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/fog-computing)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: (Gordon-Deng)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
