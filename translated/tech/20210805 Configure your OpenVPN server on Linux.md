@@ -3,7 +3,7 @@
 [#]: author: "D. Greg Scott https://opensource.com/users/greg-scott"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
@@ -12,27 +12,27 @@
 在你安装了 OpenVPN 之后，是时候配置它了。
 ![Lock][1]
 
-OpenVPN 在两点之间建立一个加密的隧道，防止第三方访问你的网络流量。通过设置你的虚拟私人网络（VPN）服务器，你就成为你自己的 VPN 供应商。许多流行的 VPN 服务已经使用 [OpenVPN][2]，所以当你可以完全控制时，为什么要把你的连接绑定到一个特定的供应商？
+OpenVPN 在两点之间建立一条加密的隧道，防止第三方访问你的网络流量。通过设置你的虚拟私人网络（VPN）服务器，你就成为你自己的 VPN 供应商。许多流行的 VPN 服务已支持 [OpenVPN][2]，所以当你可以完全控制时，为什么要把你的连接绑定到一个特定的供应商？
 
-本系列中的[第一篇][3]设置了一个 VPN 服务器，[第二篇][4]演示了如何安装和配置 OpenVPN 服务器软件。这第三篇文章展示了如何在认证到位的情况下启动 OpenVPN。
+本系列中的[第一篇][3]设置了一个 VPN 服务器，[第二篇][4]演示了如何安装和配置 OpenVPN 服务器软件。这第三篇文章演示了如何在认证成功的情况下启动 OpenVPN。
 
 要设置一个 OpenVPN 服务器，你必须：
 
   * 创建一个配置文件。
   * 设置 `sysctl` 值 `net.ipv4.ip_forward = 1` 以启用路由。
-  * 为所有的配置和认证文件设置适当的所有权，以便在一个非 root 账户下运行 OpenVPN 服务器守护程序。
-  * 设置 OpenVPN 以适当的配置文件启动。
+  * 为所有的配置和认证文件设置适当的所有权，以便使用非 root 账户运行 OpenVPN 服务器守护程序。
+  * 设置 OpenVPN 加载适当的配置文件启动。
   * 配置你的防火墙。
 
 
 
 ### 配置文件
 
-你必须在 `/etc/openvpn/server/` 中创建一个服务器配置文件。如果你想的话，你可以从头开始，OpenVPN 包括了几个样本配置文件，可以作为开始。看看 `/usr/share/doc/openvpn/sample/sample-config-files/` 就知道了。
+你必须在 `/etc/openvpn/server/` 中创建一个服务器配置文件。如果你想的话，你可以从头开始，OpenVPN 包括了几个配置示例示例文件，可以以此作为开始。看看 `/usr/share/doc/openvpn/sample/sample-config-files/` 就知道了。
 
-如果你想手工建立一个配置文件，从 `server.conf` 或 `roadwarrior-server.conf` 开始（视情况而定），并将你的配置文件放在 `/etc/openvpn/server` 中。这两个文件都有大量的注释，所以请阅读注释并决定哪一个适用你的情况。
+如果你想手工建立一个配置文件，从 `server.conf` 或 `roadwarrior-server.conf` 开始（视情况而定），并将你的配置文件放在 `/etc/openvpn/server` 中。这两个文件都有大量的注释，所以请阅读注释并根据你的情况作出决定。
 
-你可以通过使用我预先建立的服务器和客户端配置文件模板和 `sysctl` 文件来打开网络路由，从而节省时间和麻烦。这个配置还包括自定义记录连接和断开的情况。它在 OpenVPN 服务器的 `/etc/openvpn/server/logs` 中保存日志。
+你可以使用我预先建立的服务器和客户端配置文件模板和 `sysctl` 文件来打开网络路由，从而节省时间和麻烦。这个配置还包括自定义记录连接和断开的情况。它在 OpenVPN 服务器的 `/etc/openvpn/server/logs` 中保存日志。
 
 如果你使用我的模板，你将需要编辑它们以使用你的 IP 地址和主机名。
 
