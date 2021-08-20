@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "perfiffer"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13702-1.html"
 
 如何在免费 WiFi 中保护隐私（二）
 ======
