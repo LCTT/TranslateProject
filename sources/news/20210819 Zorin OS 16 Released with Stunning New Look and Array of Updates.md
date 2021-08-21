@@ -23,69 +23,67 @@ Zorin OS同时使用自有和Ubuntu的软件仓库.
 
 这个版本最主要的更新是加入了Zorin，Zorin应用商店成为了Linux发行版中最大的应用集之一。因为它可以支持Flathub，另外还有早前的Snap商店，Ubuntu软件仓库, Zorin自有仓库和AppImage支持.
 
-Zorin is known for its looks, mostly. In this release, a handful of improvements arrives. Here’s a quick summary:
+Zorin主要因其外观而闻名，在新版中，有一系列改进，这是一个简要的总结：
 
-  * The default theme is more polished with updated icons and color palette.
-  * New Artwork and wallpapers are pre-loaded.
-  * The Lock screen can now show a blurred version of your selected wallpaper, giving you a clean look.
+  * 新的图标和调色板，默认主题更加精致。
+  * 预装新的艺术和壁纸。
+  * 锁屏现在可以展示一系列自选的模糊图片，给你一个更新简洁的视觉效果。
 
 
 
-icons are enabled active indicator with notification banner with counts. That means, you can get unread message counts, etc. in taskbar icons for example for messaging apps. Taskbar also received a bunch of standard features such as auto hide, transparency, moving icons around, etc.
+图标可以通过未读消息条数动态提示。这意味着你可以在任务栏中看到你的未读消息计数，例如信息App。任务栏也有一些基本特性，比如自动隐藏、透明度和移动图标等等。
 
-![New Taskbar Notification Bubbles][2]
+![新的任务栏提示气泡][2]
 
-Many internal improvement received in this release. The details are not available, however as per the team overall desktop experience in all Zorin flavors is much improved from its predecessor [Zorin 15][3].
+新版有许多内部提升，细节不清楚，不过 据该团队称，所有Zorin版本的整体桌面体验都比其前身有了很大改进[Zorin 15][3].
 
-Two introduces in this release. A Tour app which give you a quick walkthrough of Zorin desktop after first installation. And a new sound recorder app is also introduced.
+引入了两个新特性，首次安装后可以用不用一个Tour应用概览Zorin桌面，另一个是新的录制应用。
 
-If you’re using a laptop, moving between your apps and workspaces is even quicker and easier. Zorin OS 16 introduces , enabled out of the box. Now you can switch between workspaces with fluid 1:1 motion by swiping 4 fingers up or down. Pinch on the touchpad with 3 fingers to open the activities overview and instantly see every app running on your workspaces.
-
+如果你使用笔记本，应用间和工作空间切换变得更加快捷和简便。Zorin OS 16带来了开箱即用，现在你可以通过向上或向下滑动4个手指，可以在平滑1:1运动在工作空间之间。 用3个手指捏一下触摸板，打开活动概述，立即看到您工作区上运行的每个应用程序。 
 [][3]
 
-SEE ALSO:   Zorin OS 15.3 Released with Latest LibreOffice, New Software
+另见：Zorin OS 15.3版本带来了最新的LibreOffice, 新软件
 
-Zorin OS 16 is now supports for high resolution displays
+Zorin OS 16现在支持高分辨率显示器了
 
-The installer now includes the NVIDIA drivers which can be selected in the first LIVE disk boot prompt, and the installer now supports encryption.
+安装器现在包含了NVIDIA驱动，可以在首次LIVE硬盘启动时选择，也支持加密.
 
-A full details of the change is available [here][4].
+详细的更新日志在[这][4].
 
-### Zorin OS 16 Minimum System Requirement
+### Zorin OS 16 最小系统需求
 
-#### Zorin OS Core, Education and Pro
+#### Zorin OS核心, 教育和Pro版本
 
-  * CPU – 1 GHz Dual Core – Intel/AMD 64-bit processor
+  * CPU – 1 GHz双核处理器 – Intel/AMD 64位处理器
   * RAM – 2 GB
-  * Storage – 15 GB (Core &amp; Education) or 30 GB (Pro)
-  * Display – 800 × 600 resolution
+  * 存储 – 15 GB (C核心和教育版本)或30 GB(Pro版本)
+  * 显示器 – 800 × 600分辨率
 
 
 
-#### Zorin OS LITE
+#### Zorin OS LITE版本
 
-  * CPU – 700 MHz Single Core – Intel/AMD 64-bit or 32-bit processor
+  * CPU – 700 MHz单核 – Intel/AMD 64或32位处理器
   * RAM – 512 MB
-  * Storage – 10 GB
-  * Display – 640 × 480 resolution
+  * 存储 – 10 GB
+  * 显示器 – 640 × 480分辨率
 
 
 
-### Download Zorin OS 16
+### 下载Zorin OS 16
 
-It is worth to mention that Zorin comes with a PRO version which is around $39 with additional features such as Windows 11 style look, etc. However, you can always download the free versions – they are Zorin OS 16 Core and Zorin OS 16 LITE (for low- end hardware). You might want to take a look at their feature [comparison][5].
+值得一提的是Zorin发布了一个PRO版本，售价$39，有类似Windows 11风格等额外特性。可是，你仍然可以下载免费版本– Zorin OS 16 Core和Zorin OS 16 LITE(对于低配电脑)。你可能想看下它们的区别 [比较][5].
 
-You can download the latest .iso from the below link. Likewise, you can either use [Etcher][6] or any other utility to create a LIVE USB for installation.
-
+你可以从以下链接下载最新的.iso文件。然后，你可以使用[Etcher][6]或斯工具来创建地个LIVE USB启动盘来安装。
 [download zorin os 16][7]
 
-#### Upgrade from Zorin 15.x
+#### 从Zorin 15.x升级
 
-There is no upgrade path available at the moment from Zorin OS 15. However, as per the team, an upgrade path will be available soon when Zorin 15 users can easily upgrade to the latest version.
+现在还没有从Zorin OS 15升级的方法，可是，据该团队称，未来将会有升级到最新版本的简单方法。
 
-### Closing Notes
+### 闭幕词
 
-One of the best feature of Zorin is its unique way of handling App ecosystem. It is probably the only Linux desktop distribution which provides out-of-the-box experience to search and install apps from Flathub, Snap Store, AppImage, Ubuntu/Own repo via its Software Store. You do not require to manually configure your system for Snap or Flatpak. That said, It’s still a modified GNOME with additional items. Some may not prefer Zorin and may feel bloated with all these features pre-loaded. In that sense, it is one of the ideal distro for new Linux desktop users who need a ready-made Windows/macOS like feel with all the Linux features.
+Zorin的特性之一是它独特的App生态处理方式。它可能是唯一的提供开箱即用体验的Linux桌面发行版，可以从Flathub, Snap商店, AppImage, Ubuntu/自有软件仓库，通过它的软件商店搜索和安装App.你不需要 为Snap或者Flatpak手动配置系统。That said, It’s still a modified GNOME with additional items. Some may not prefer Zorin and may feel bloated with all these features pre-loaded. In that sense, it is one of the ideal distro for new Linux desktop users who need a ready-made Windows/macOS like feel with all the Linux features.
 
 * * *
 
