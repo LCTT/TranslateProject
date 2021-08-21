@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/pdf-mix-tool-1-0-1-release/)
 [#]: author: (Omar Maarof https://news.itsfoss.com/author/omar/)
 [#]: collector: (lujun9972)
-[#]: translator: (lcf33)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
