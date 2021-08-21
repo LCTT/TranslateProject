@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2021/08/zorin-os-16-release-announcement/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zd200572"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
