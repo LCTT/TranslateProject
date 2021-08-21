@@ -7,25 +7,21 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Zorin OS 16 Released with Stunning New Look and Array of Updates
+Zorin OS 16发布：惊艳的新外观和一系列更新
 ======
-The team announced the release of brand new Zorin OS 16, bringing some
-much-needed improvements and updates. We round up the release in this
-post.Linux Kernel 5.11Flathub repo by defaultTaskbarperformancenew
-appsmulti-touch touchpad gesturesfractional scaling
-![Zorin OS 16 Desktop][1]
+Zorin OS 16团队宣布了新系统的发布，带来了许多亟需的更新和改进。 我们在这总结了这次发布。Linux内核5.11 lathub repo默认任务栏性能新应用：多点触摸触摸板手势和缩放![Zorin OS 16 桌面版][1]
 
-The open-source and eye-candy Linux distribution Zorin OS brings its latest stable release version 16 which will be supported with updates and enhancements until 2025. This release brings some unique but useful features, while the team made sure that there is no performance drops.
+开源和赏心悦目的Linux发行版Zorin OS发布了它的最新稳定版本16，这个版本将在2025年前提供支持和更新。它有一些独特和有用的特性，同时团队确保性能不会下降。
 
-Zorin OS uses its own software repository and also uses Ubuntu repo as well.
+Zorin OS同时使用自有和Ubuntu的软件仓库.
 
-Let’s take a look at the important new features.
+让我们看下重要的新特性。
 
-### Zorin OS 16 – New Features
+### Zorin OS 16 – 新特性
 
-The latest Zorin OS 16 is powered by (hwe stack). This release is based on **Ubuntu 20.04 LTS**.
+最新的Zorin OS 16代号为hwe stack，基于**Ubuntu 20.04 LTS**。
 
-The major update in this release is inclusion of in Zorin. With this, Zorin Software Store becomes one of the largest collection of applications available in Linux distribution. Because it can now support Flathub plus earlier supports of Snap Store, Ubuntu repo, Zorin own repo and AppImage support.
+这个版本最主要的更新是加入了Zorin，Zorin应用商店成为了Linux发行版中最大的应用集之一。因为它可以支持Flathub，另外还有早前的Snap商店，Ubuntu软件仓库, Zorin自有仓库和AppImage支持.
 
 Zorin is known for its looks, mostly. In this release, a handful of improvements arrives. Here’s a quick summary:
 
@@ -99,7 +95,7 @@ via: https://www.debugpoint.com/2021/08/zorin-os-16-release-announcement/
 
 作者：[Arindam][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zd200572](https://github.com/zd200572)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
