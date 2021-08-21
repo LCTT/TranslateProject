@@ -83,7 +83,7 @@ Zorin OS 16现在支持高分辨率显示器了
 
 ### 闭幕词
 
-Zorin的特性之一是它独特的App生态处理方式。它可能是唯一的提供开箱即用体验的Linux桌面发行版，可以从Flathub, Snap商店, AppImage, Ubuntu/自有软件仓库，通过它的软件商店搜索和安装App.你不需要 为Snap或者Flatpak手动配置系统。That said, It’s still a modified GNOME with additional items. Some may not prefer Zorin and may feel bloated with all these features pre-loaded. In that sense, it is one of the ideal distro for new Linux desktop users who need a ready-made Windows/macOS like feel with all the Linux features.
+Zorin的特性之一是它独特的App生态处理方式。它可能是唯一的提供开箱即用体验的Linux桌面发行版，可以从Flathub, Snap商店, AppImage, Ubuntu/自有软件仓库，通过它的软件商店搜索和安装App.你不需要 为Snap或者Flatpak手动配置系统。也就是说，它仍然是一个带有附加项目的GNOME修改版。有些人可能不喜欢Zorin，可能会因为预装了所有这些功能而感到臃肿。从这方面说，它是需要功能完善的Windows/macOS系统的Linux桌面新用户的理想发行版之一。
 
 * * *
 
