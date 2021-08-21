@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zd200572"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13705-1.html"
 
 Zorin OS 16 发布：惊艳的新外观和一系列更新
 ======
