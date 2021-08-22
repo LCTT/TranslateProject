@@ -1,9 +1,9 @@
 [#]: collector: "lujun9972"
-[#]: translator: "fisherue "
+[#]: translator: "fisherue"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-[#]: subject: "5 步提升你的脚本程序"
+[#]: subject: "5 ways to improve your Bash scripts"
 [#]: via: "https://opensource.com/article/20/1/improve-bash-scripts"
 [#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 
