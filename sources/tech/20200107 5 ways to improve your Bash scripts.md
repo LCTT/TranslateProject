@@ -1,24 +1,24 @@
-[#]: collector: (lujun9972)
-[#]: translator: (fisherue )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (5 ways to improve your Bash scripts)
-[#]: via: (https://opensource.com/article/20/1/improve-bash-scripts)
-[#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
+[#]: collector: "lujun9972"
+[#]: translator: "fisherue "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "5 步提升你的脚本程序"
+[#]: via: "https://opensource.com/article/20/1/improve-bash-scripts"
+[#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 
-5 ways to improve your Bash scripts
+5 步提升你的脚本程序
 ======
-Find out how Bash can help you tackle the most challenging tasks.
-![A person working.][1]
+巧用 Bash 脚本程序能帮助你完成很多极具挑战的任务。
+![A person working.工作者图片][1]
 
-A system admin often writes Bash scripts, some short and some quite lengthy, to accomplish various tasks.
+系统管理员经常写脚本程序，不论长短，这些脚本可以完成某种任务。
 
-Have you ever looked at an installation script provided by a software vendor? They often add a lot of functions and logic in order to ensure that the installation works properly and doesn’t result in damage to the customer’s system. Over the years, I’ve amassed a collection of various techniques for enhancing my Bash scripts, and I’d like to share some of them in hopes they can help others. Here is a collection of small scripts created to illustrate these simple examples.
+你是否曾经查看过某个软件发行方提供的安装用的脚本 (script) 程序？为了能够适应不同用户的系统配置，顺利完成安装，这些脚本程序经常包含很多函数和逻辑分支。多年来，我已经集合了提升我的脚本程序的一些技巧，这里分享几个技巧，希望能对朋友们也有用。这里列出一组短脚本示例，展示给大家做脚本样本。
 
-### Starting out
+### 初步尝试
 
-When I was starting out, my Bash scripts were nothing more than a series of commands, usually meant to save time with standard shell operations like deploying web content. One such task was extracting static content into the home directory of an Apache web server. My script went something like this:
+我尝试写一个脚本程序时，原始程序往往就是一组命令行，通常就是调用标准命令完成诸如更新网页内容之类的工作，这样可以节省时间。其中一个类似的工作是解压文件到阿帕奇 (Apache) 网站服务器的主目录里，我的最初脚本程序大概是下面这样：
 
 
 ```
@@ -27,13 +27,13 @@ cd /usr/apache/home/calendar/
 tar zvxf january_schedule.tar.gz
 ```
 
-While this saved me some time and typing, it certainly was not a very interesting or useful script in the long term. Over time, I learned other ways to use Bash scripts to accomplish more challenging tasks, such as creating software packages, installing software, or backing up a file server.
+这帮我节省了时间，也减少了键入多条命令操作。时日久了，我掌握了另外的技巧，可以用 Bash 脚本程序完成更难的一些工作，比如说创建软件安装包、安装软件、备份文件系统等工作。
 
-### 1\. The conditional statement
+### 1\. 条件分支结构
 
-Just as with so many other programming languages, the conditional has been a powerful and common feature. A conditional is what enables logic to be performed by a computer program. Most of my examples are based on conditional logic.
+和众多其他编程语言一样，脚本程序的条件分支结构同样是强大的常用技能。条件分支结构赋予了计算机程序逻辑能力，我的很多实例都是基于条件逻辑分支。
 
-The basic conditional uses an "if" statement. This allows us to test for some condition that we can then use to manipulate how a script performs. For instance, we can check for the existence of a Java bin directory, which would indicate that Java is installed. If found, the executable path can be updated with the location to enable calls by Java applications.
+基本的条件分支结构就是 IF 条件分支结构。通过判定是否满足特定条件，可以控制程序选择执行相应的脚本命令段。比如说，想要判断系统是否安装了 Java ，可以通过判断系统有没有一个 Java 库目录；如果找到这个目录，就把这个目录路径添加到可运行程序路径，也就可以调用 Java 库应用了。
 
 
 ```
@@ -41,13 +41,13 @@ if [ -d "$JAVA_HOME/bin" ] ; then
     PATH="$JAVA_HOME/bin:$PATH"
 ```
 
-### 2\. Limit execution
+### 2\. 限定运行权限
 
-You might want to limit a script to only be run by a specific user. Although Linux has standard permissions for users and groups, as well as SELinux for enabling this type of protection, you could choose to place logic within a script. Perhaps you want to be sure that only the owner of a particular web application can run its startup script. You could even use code to limit a script to the root user. Linux has a couple of environment variables that we can test in this logic. One is **$USER**, which provides the username. Another is **$UID**, which provides the user’s identification number (UID) and, in the case of a script, the UID of the executing user.
+你或许想只允许特定的用户才能执行某个脚本程序。除了 Linux 的权限许可管理，比如对用户和用户组设定权限、通过 SELinux 设定此类的保护权限等，你还可以在脚本里设置逻辑判断来设置执行权限。类似的情况可能是，你需要确保只有网站程序的所有者才能执行相应的网站初始化操作脚本。甚至你可以限定只有根用户才能执行某个脚本。这个可以通过在脚本程序里设置逻辑判断实现， Linux 提供的几个环境变量可以帮忙。其中一个是保存用户名称的变量 **$USER**, 另一个是保存用户识别码的变量 **$UID** 。在脚本程序里，执行用户的 UID 值就保存在 **$UID** 变量里。
 
-#### User
+#### 用户名判别
 
-The first example shows how I could limit a script to the user jboss1 in a multi-hosting environment with several application server instances. The conditional "if" statement essentially asks, "Is the executing user not jboss1?" When the condition is found to be true, the first echo statement is called, followed by the **exit 1,** which terminates the script.
+第一个例子里，我在一个多用户环境里指定只有用户 jboss1 可以执行脚本程序。条件 if 语句猜测判断，‘要求执行这个脚本程序的用户不是 jboss1?’　如果我猜测的没错，就会输出提示“用户不是 jboss1 ”，然后直接退出这个脚本程序，返回码为1 **exit 1** 。
 
 
 ```
@@ -58,9 +58,9 @@ fi
 echo "continue script"
 ```
 
-#### Root
+#### 根用户判别
 
-This next example script ensures that only the root user can execute it. Because the UID for root is 0, we can use the **-gt** option in the conditional if statement to prohibit all UIDs greater than zero.
+接下来的例子是要求只有根用户才能执行脚本程序。根用户的用户识别码 (UID) 是０，设置的条件判断采用大于操作符 (**-gt**) ，所有 UID 值大于０的用户都被禁止执行该脚本程序。
 
 
 ```
@@ -71,9 +71,9 @@ fi
 echo "continue script"
 ```
 
-### 3\. Use arguments
+### 3\. 带参数执行程序
 
-Just like any executable program, Bash scripts can take arguments as input. Below are a few examples. But first, you should understand that good programming means that we don’t just write applications that do what we want; we must write applications that _can’t_ do what we _don’t_ want. I like to ensure that a script doesn’t do anything destructive in the case where there is no argument. Therefore, this is the first check that y. The condition checks the number of arguments, **$#**, for a value of zero and terminates the script if true.
+可执行程序可以附带参数作为执行选项，命令行脚本程序也是一样，下面给出几个例子。在这之前，我想告诉你，能写出好的程序并不只是写出我们想要它执行什么就执行什么的程序，程序还需要按照我们不想让它执行什么它可以按我们的意愿能够不执行相应操作。如果运行程序时没有提供参数造成程序缺少足够信息，我愿意脚本程序不要做任何破坏性的操作。因而，程序的第一步就是确认命令行是否提供了参数，判定的条件就是参数 **$# **的值是否为 0 ，如果是（意味着没有提供参数），就直接终止脚本程序并退出操作。
 
 
 ```
@@ -84,36 +84,36 @@ fi
 echo "arguments found: $#"
 ```
 
-#### Multiple arguments
+#### 多个运行参数
 
-You can pass more than one argument to a script. The internal variables that the script uses to reference each argument are simply incremented, such as **$1**, **$2**, **$3**, and so on. I’ll just expand my example above with the following line to echo the first three arguments. Obviously, additional logic will be needed for proper argument handling based on the total number. This example is simple for the sake of demonstration.
+可以传递给脚本程序的参数不知一个。脚本使用内部变量指代这些参数，内部变量名用非负整数递增标识，也就是 **$1**,** $2**,** $3 **等等递增。我只是扩展前面的程序，输出显示用户提供的前三个参数。显然，要针对所有的每个参数有对应的响应需要更多的逻辑判断，这里的例子只是简单展示参数的使用。
 
 
 ```
 `echo $1 $2 $3`
 ```
 
-While we’re discussing these argument variables, you might have wondered, "Did he skip zero?"
+我们在讨论这些参数变量名，你或许有个疑问，“参数变量名怎么跳过了**$0**，（而直接从**$1**开始）？”
 
-Well, yes, I did, but I have a great reason! There is indeed a **$0** variable, and it is very useful. Its value is simply the name of the script being executed.
+是的，是这样，这是有原因的。变量名 **$0** 确实存在，也非常有用，它储存的是被执行的脚本程序的名称。
 
 
 ```
 `echo $0`
 ```
 
-An important reason to reference the name of the script during execution is to generate a log file that includes the script’s name in its own name. The simplest form might just be an echo statement.
+程序执行过程中有一个变量名指代程序名称，很重要的一个原因是，可以在生成的日志文件名称里包含程序名称，最简单的方式应该是调用一个 "echo" 语句。
 
 
 ```
 `echo test >> $0.log`
 ```
 
-However, you will probably want to add a bit more code to ensure that the log is written to a location with the name and information that you find helpful to your use case.
+当然，你或许要增加一些代码，确保这个日志文件存放在你希望的路径，日志名称包含你认为有用的信息。
 
-### 4\. User input
+### 4\. 交互输入
 
-Another useful feature to use in a script is its ability to accept input during execution. The simplest is to offer the user some input.
+脚本程序的另一个好用的特性是可以在执行过程中接受输入，最简单的情况是让用户可以输入一些信息。
 
 
 ```
@@ -122,7 +122,7 @@ echo "enter a word please:"
  echo $word
 ```
 
-This also allows you to provide choices to the user.
+这样也可以让用户在程序执行中作出选择。
 
 
 ```
@@ -133,9 +133,9 @@ read -p "Install Software ?? [Y/n]: " answ
    echo "Installation starting..."
 ```
 
-### 5\. Exit on failure
+### 5\. 出错退出执行
 
-Some years ago, I wrote a script for installing the latest version of the Java Development Kit (JDK) on my computer. The script extracts the JDK archive to a specific directory, updates a symbolic link, and uses the alternatives utility to make the system aware of the new version. If the extraction of the JDK archive failed, continuing could break Java system-wide. So, I wanted the script to abort in such a situation. I don’t want the script to make the next set of system changes unless the archive was successfully extracted. The following is an excerpt from that script:
+几年前，我写了各脚本，想在自己的电脑上安装最新版本的 Java 开发工具包 (JDK) 。这个脚本把 JDK 文件解压到指定目录，创建更新一些符号链接，再做一下设置告诉系统使用这个最新的版本。如果解压过程出现错误，在执行后面的操作就会使 Java 系统破坏不能使用。因而，这种情况下需要终止程序。如果解压过程没有成功，就不应该再继续进行之后的更新操作。下面语句段可以完成这个功能。
 
 
 ```
@@ -146,20 +146,20 @@ if [ $ec -ne 0 ]; then
 fi
 ```
 
-A quick way for you to demonstrate the usage of the **$?** variable is with this short one-liner:
+下面的一行语句组可以快速展示变量 **$?** 的用法。
 
 
 ```
 `ls T; ec=$?; echo $ec`
 ```
 
-First, run **touch T** followed by this command. The value of **ec** will be 0. Then, delete **T**, **rm T**, and repeat the command. The value of **ec** will now be 2 because ls reports an error condition since **T** was not found.
+先用 **touch T** 命令创建一个文件名为 **T** 的文件，然后执行这个文件行，变量 **ec **的值会是０。然后，用 **rm T **命令删除文件，在执行示例的文件行，变量 **ec** 的值会是２，因为文件 T 不存在，命令 **ls **找不到指定文件报错，相应返回值是２。
 
-You can take advantage of this error reporting to include logic, as I have above, to control the behavior of your scripts.
+在逻辑条件里利用这个出错标识，参照前文我使用的条件判断，可以使脚本文件按需完成设定操作。
 
-### Takeaway
+### 结语
 
-We might assume that we need to employ languages, such as Python, C, or Java, for higher functionality, but that’s not necessarily true. The Bash scripting language is very powerful. There is a lot to learn to maximize its usefulness. I hope these few examples will shed some light on the potential of coding with Bash.
+要完成复杂的功能，或许我们觉得应该使用诸如 Python, C, 或 Java 这类的高级编程语言，然而并不尽然，脚本编程语言也很强大，可以完成类似任务。要充分发挥脚本的作用，有很多需要学习的，希望这里的几个例子能让你意识到脚本编程的功能。
 
 --------------------------------------------------------------------------------
 
@@ -167,11 +167,11 @@ via: https://opensource.com/article/20/1/improve-bash-scripts
 
 作者：[Alan Formy-Duval][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[fisherue](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/alanfdoss
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003784_02_os.comcareers_os_rh2x.png?itok=jbRfXinl (A person working.)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003784_02_os.comcareers_os_rh2x.png?itok=jbRfXinl "工作者图片"
