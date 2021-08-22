@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/7/openvpn-client"
 [#]: author: "D. Greg Scott https://opensource.com/users/greg-scott"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "perfiffer"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
