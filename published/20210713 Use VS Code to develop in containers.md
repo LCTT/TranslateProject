@@ -44,7 +44,7 @@ $ sudo dnf install -y podman
 
 “Remote - Containers” 扩展可以在项目文件夹中添加必要的基本配置文件。要添加这些文件，通过在键盘上输入 `Ctrl+Shift+P` 打开命令面板，搜索 “Remote-Containers: Add Development Container Configuration Files”，并选择它。
 
-![Remote-Containers: Add Development Container Configuration Files][8] 。
+![Remote-Containers: Add Development Container Configuration Files][8]
 
 在接下来的弹出窗口中，定义你想设置的开发环境的类型。对于这个例子的配置，搜索 “Python 3” 定义并选择它。
 
