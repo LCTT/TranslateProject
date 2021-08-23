@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13710-1.html"
 
 用 Linux 的 at 命令来安排一个任务
 ======
