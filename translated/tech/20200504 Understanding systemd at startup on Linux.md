@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/20/5/systemd-startup)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-在 Linux 启动时理解 systemd
+理解 Linux 启动时 systemd
 ======
 
 systemd 启动过程提供的重要线索可以在问题出现时助你一臂之力。
