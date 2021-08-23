@@ -1,6 +1,6 @@
 [#]: collector: (lujun9972)
 [#]: translator: (YungeG)
-[#]: reviewer: ( )
+[#]: reviewer: (turbokernel)
 [#]: publisher: ( )
 [#]: url: ( )
 [#]: subject: (Understanding systemd at startup on Linux)
@@ -13,17 +13,17 @@
 systemd 启动过程提供的重要线索可以在问题出现时助你一臂之力。
 ![People at the start line of a race][1]
 
-在本系列的第一篇文章[_学着爱上 systemd_][2]，我考察了 systemd 的功能和架构，以及围绕 systemd 作为古老的 SystemV 初始化程序和启动脚本的替代品的争论。在这第二篇文章中，我将开始探索管理 Linux 启动序列的文件和工具。我会解释 systemd 启动序列、如何更改默认的启动目标（SystemV 术语中的运行级别）、以及在不重启的情况下如何手动切换到不同的目标。
+在本系列的第一篇文章[_学着爱上 systemd_][2]，我研究了 systemd 的功能和架构，以及围绕 systemd 作为古老的 SystemV 初始化程序和启动脚本的替代品的争论。在这第二篇文章中，我将开始研究管理 Linux 启动序列的文件和工具。我会解释 systemd 启动序列、如何更改默认的启动目标（SystemV 术语中的运行级别）、以及在不重启的情况下如何手动切换到不同的目标。
 
-我还将考察两个重要的 systemd 工具。第一个 **systemctl** 命令是和 systemd 交互、向其发送命令的基本方式。第二个是 **journalctl**，用于访问 systemd 日志，后者包含了大量系统历史数据，比如内核和服务的消息（包括指示性信息和错误信息）。
+我还将研究两个重要的 systemd 工具。第一个 **systemctl** 命令是和 systemd 交互、向其发送命令的基本方式。第二个是 **journalctl**，用于访问 systemd 日志，后者包含了大量系统历史数据，比如内核和服务的消息（包括指示性信息和错误信息）。
 
-务必使用一个非生产系统进行本文和后续文章中的测试和实验。你的测试系统需要安装一个 GUI 桌面（比如 Xfce，LXDE，Gnome，KD E或其他）。
+务必使用一个测试系统进行本文和后续文章中的测试和实验。你的测试系统需要安装一个 GUI 桌面（比如 Xfce，LXDE，Gnome，KDE 或其他）。
 
-上一篇文章中我写道计划在这篇文章创建一个 systemd 单元并添加到启动序列。由于这篇文章比我预期中要长，这些内容将留到本系列的下一篇文章。
+上一篇文章中我计划在本篇文章创建一个 systemd 单元并添加到启动序列。由于本篇文章比我预期中要长，这些内容将留到本系列的下一篇文章。
 
-### 使用 systemd 探索 Linux 的启动
+### 使用 systemd 研究 Linux 的启动
 
-在观察启动序列之前，你需要做几件事情得使引导和启动序列开放可见。正常情况下，大多数发行版使用一个开机动画或者启动画面隐藏 Linux 启动和关机过程中的显示细节，在基于 Red Hat 的发行版中称作 Plymouth 引导画面。这些隐藏的消息能够向寻找信息以排除程序故障、或者只是学习启动序列的系统管理员提供大量有关系统启动和关闭的信息。你可以通过 GRUB（Grand Unified Boot Loader）配置改变这个设置。
+在观察启动序列之前，你需要做几件事情来显示引导和启动序列。正常情况下，大多数发行版使用一个开机启动动画或画面隐藏 Linux 启动和关闭过程中的细节显示，在基于 Red Hat 的发行版中称作 Plymouth 引导画面。这些隐藏的消息能够向寻找信息以排除程序故障、或者只是学习启动序列的系统管理员提供大量有关系统启动和关闭的信息。你可以通过 GRUB（Grand Unified Boot Loader）配置改变这个设置。
 
 主要的 GRUB 配置文件是 **/boot/grub2/grub.cfg** ，但是这个文件在更新内核版本时会被覆盖，你不会想修改它的。相反，修改用于改变 **grub.cfg** 默认设置的 **/etc/default/grub** 文件。
 
@@ -390,7 +390,7 @@ via: https://opensource.com/article/20/5/systemd-startup
 作者：[David Both][a]
 选题：[lujun9972][b]
 译者：[YungeG](https://github.com/YungeG)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
