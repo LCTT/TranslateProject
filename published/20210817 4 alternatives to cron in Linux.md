@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13716-1.html"
 
 Linux 中 cron 系统的 4 种替代方案
 ======
