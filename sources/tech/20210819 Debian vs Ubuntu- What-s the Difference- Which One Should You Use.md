@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/debian-vs-ubuntu/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "perfiffer"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
