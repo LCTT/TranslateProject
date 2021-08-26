@@ -7,63 +7,61 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Elementary OS 6 Odin Review – Late Arrival but a Solid One
+elementary OS 6 Odin 评测 – 迟到的新版本，但也实至名归
 ======
-We review the elementary OS 6 Odin and give you some glimpse on how it
-went for our test drive.
-For almost two years, the elementary OS fans was waiting for elementary OS 6 Odin release. Because, the earlier version elementary OS 5.1 was too old in terms of Kernel, packages in 2021. It was based on Ubuntu 18.04 LTS. So, the users was waiting to get a flavor based on Ubuntu 20.04 LTS – which is already in 2nd year, and we have another LTS coming up.
+> 这篇 elementary OS 6 的评测将为您呈现该系统在旧款测试设备上的表现。
 
-You get the idea. Sometimes the wait was too long, probably some users jumped ship to other distributions. 
+elementary OS 的粉丝们已经焦急等待 elementary OS 6 Odin 发布将近两年了。如此焦急的原因，主要在于早期版本 elementary OS 5.1 的内核和软件包在 2021 年来说实在太旧了。而且，这一旧版本基于 Ubuntu 18.04 LTS 构建。因此，用户都急切地等待着基于 Ubuntu 20.04 LTS 的全新版本 —— 最重要的是，Ubutnu 20.04 LTS 已经发布一年，接下来也将有下一个 LTS 版本发布。
 
-However, the release [was done in August][1], and it was a hit among the users and fanboys.
+你应该也明白的，过长的等待时间，很可能导致用户跳槽到其他发行版。
 
-So, I ran elementary OS 6 Odin for a week on an old hardware (I know newer hardware would do just fine), and this is the review.
+无论如何，新版本终于还是 [在 8 月发布了][1]，它也在用户和粉丝群体中引起了很大的轰动。
 
-![elementary OS 6 ODIN Desktop][2]
+于是，我在一周前为一台旧设备（我知道新设备的体验会更好）安装了 elementary OS 6 Odin，下面就是测评。
 
-### Elementary OS 6 Odin review
+![elementary OS 6 Odin 的桌面][2]
 
-Test Hardware
+### elementary OS 6 Odin 测评
 
-  * CPU – Intel Core i3 with RAM 4GB
-  * Disk – SSD
-  * Graphics – Nvidia GeForce (340)
+测试设备
 
+  * CPU – Intel Core i3，4 GB 运行内存
+  * 硬盘 – SSD 固态硬盘
+  * 显卡 – Nvidia GeForce（340）
 
+#### 安装
 
-#### Installation
+在这一版本中，elementary 团队针对 elementary 安装器做了易用性优化，而这一次的安装器也是自制安装器。新安装器减少了安装前的准备步骤，虽然它还是需要依赖 GParted 进行分区操作（当然 GParted 本身是一款不错的工具）。
 
-In this release, the team made some usability changes to the elementary Installer, which is a homegrown tool. It reduced the steps require to begin the installation. Although it still depends on gparted for partition (which is a great tool itself anyway).
+在前述测试设备中，安装过程大约花费了 10 分钟，没有任何报错。初始化之后，GRUB 也正常更新，没有任何意外。这是一个带有 Legacy BIOS 的三系统启动器。
 
-The installation took around 10 minutes in above hardware and went without any error. Post installation, the Grub is updated properly and no surprises there. It was a triple boot system with Legacy Bios.
+<!-- 不太确定“这是一个带有 Legacy BIOS 的三系统启动器”这句话的翻译。原句：It was a triple boot system with Legacy Bios. -->
 
-#### First Impression
+#### 初见印象
 
-If you are new to elementary OS or Pantheon desktop, and coming from traditional menu-driven desktops, then you might need a day or two to be familiar to the way this desktop is set up. Otherwise, if you are a long time elementary user, you feel the same with some performance benefits and looks.
+如果你刚听说 elementary OS 和 Pantheon 桌面，或者从其他传统菜单型桌面环境迁移过来，你可能需要一两天时间来适应这款桌面。当然，如果你已经是 elementary OS 的老用户的话，那么你将获得一致的体验，外加性能和外观的优化。
 
-Couple of [new features of elementary OS 6][3] you might notice as they are visible. The accent color, native dark mode, a setup of nice wallpapers.
+你应该可以察觉到一些明显可见的 [elementary OS 6 的新特性][3]，像是强调色、原生暗黑模式，以及一组不错的新壁纸。
 
 [][4]
 
-SEE ALSO:   elementary OS 6 Odin: New Features and Release Date
+#### 稳定性与性能
 
-#### Stability and performance
+我已经使用 elementary OS 6 Odin 超过一周的时间。在日常使用后，我只能说，它很稳定，没有突然的崩溃和意外。其他额外软件（需要从 apt 独立安装）也运作正常，没有性能损耗。
 
-I have used elementary OS Odin for more than a week. After using it daily, I must say it is very stable. No sudden crash or surprises. Additional applications (those installed separately via apt) are working well with no loss to performance. 
+在近乎闲置的情况下，CPU 使用率处在 5%-10% 之间，内存占用约为 900 MB。CPU / 内存的消耗主要分配在 Gala（Pantheon 的窗口管理器）、Wingpanel（顶栏）和应用中心。
 
-In almost idle state, the CPU usage is around 5% to 10% and memory is consumed around 900 MB. The CPU/Memory mostly consumed by Gala – Pantheon’s window manager, Wingpanel and AppCenter.
+![elementary OS 6 的系统性能][5]
 
-![System performance of elementary OS 6][5]
+考虑到系统的视觉效果，我认为这些占用数据也十分合理。不过，当你打开更多软件，例如 LibreOffice、Chrome、Kdenlive 之后，消耗的资源肯定会更多。
 
-Considering the look and feel it provides, I guess the above numbers are well justified. But remember, if you open more applications such as LibreOffice, Chrome, or Kdenlive for example, it will definitely consume more resources.
+#### 应用程序与应用中心
 
-#### Applications and AppCenter
+elementary OS 的应用程序列表经过精选，几乎所有类型的软件都可以从应用中心获取，包括 Flatpak 应用。不过，elementary OS 并没有预装一些重要的应用程序，像是 Firefox、LibreOffice、Torrent 客户端、硬盘分区工具、照片编辑器之类 —— 这些重要的程序需要在安装系统后再自行安装。我认为预装软件这一块有很大的改进空间。
 
-The application list of elementary OS is well curated and almost all types of apps are available from AppCenter including the Flatpak apps. However, elementary doesn’t include some important applications pre-loaded in default install. For example, Firefox, LibreOffice, Torrent client, disk formatter, photo editor – some important ones you need to manually install after a fresh installation. This is one of the improvement areas for the team, I feel.
+### 结束语
 
-### Final Notes
-
-I have encountered one bug multiple times in my week long test run. The Wi-Fi was disconnecting randomly sometimes. But that is totally on Ubuntu 20.04 which has weird Wi-Fi problems over the years. Apart from that, it is a very stable and good Linux distribution. I wish there is a rolling-release of elementary, that would have been awesome. That said, it’s a recommended distro for all, specially for those coming from macOS.
+在这一周的测试中，我也多次遇到了一个 bug，Wi-Fi 有时会突然断开，不过这完全是 Ubuntu 20.04 上游的问题 —— 多年以来，它一直有奇怪的 Wi-Fi 问题。抛开这个问题，elementary OS 确实是一款稳定、优秀的 Linux 发行版。如果 elementary OS 有滚动更新的版本，也许会更好。因此，这是一款值得推荐的发行版，尤其适合 macOS 的迁移者。
 
 * * *
 
