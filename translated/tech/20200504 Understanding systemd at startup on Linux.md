@@ -359,9 +359,9 @@ Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/g
 
 ### 资源
 
-关于 systemd 网络上有大量的信息，但大部分都简短生硬、愚钝、甚至令人误解。除了本文提到的资源，下面的网页提供了关于 systemd 启动更详细可靠的信息。
+关于 systemd 网络上有大量的信息，但大部分都简短生硬、错误、甚至令人误解。除了本文提到的资源，下面的网页提供了关于 systemd 启动更可靠的详细信息。
 
-  * Fedora 项目有一个优质实用的 [systemd 指南][6]，几乎有你使用 systemd 配置、管理、维护一个 Fedora 计算机需要知道的一切。
+  * Fedora 项目有一个优质实用的 [systemd 指南][6]，几乎囊括 systemd 配置、管理、维护一个 Fedora 计算机。
   * Fedora 项目还有一个好用的[速查表][7]，交叉引用了古老的 SystemV 命令和对应的 systemd 命令。
   * 要获取 systemd 的详细技术信息和创立的原因，查看 [Freedesktop.org][8] 的 [systemd 描述][9]。
   * Linux.com 上”systemd 的更多乐趣"提供了更高级的 systemd [信息和提示][11]。
@@ -381,7 +381,7 @@ Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/g
   * [systemd for Administrators, Part X][22]
   * [systemd for Administrators, Part XI][23]
 
-Mentor Graphics 公司的一位 Linux 内核和系统工程师 Alison Chiaken，对 systemd 进行了预展...
+Mentor Graphics 公司的一位 Linux 内核和系统工程师 Alison Chiaken，对 systemd 进行了展望...
 
 --------------------------------------------------------------------------------
 
