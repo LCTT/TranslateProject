@@ -10,12 +10,12 @@
 理解 Linux 启动时 systemd
 ======
 
-systemd 启动过程提供的重要线索可以在问题出现时助你一臂之力。
+systemd 启动过程中提供的重要线索可以在出现问题时助你一臂之力。
 ![People at the start line of a race][1]
 
 在本系列的第一篇文章[_学着爱上 systemd_][2]，我研究了 systemd 的功能和架构，以及围绕 systemd 作为古老的 SystemV 初始化程序和启动脚本的替代品的争论。在这第二篇文章中，我将开始研究管理 Linux 启动序列的文件和工具。我会解释 systemd 启动序列、如何更改默认的启动目标（SystemV 术语中的运行级别）、以及在不重启的情况下如何手动切换到不同的目标。
 
-我还将研究两个重要的 systemd 工具。第一个 **systemctl** 命令是和 systemd 交互、向其发送命令的基本方式。第二个是 **journalctl**，用于访问 systemd 日志，后者包含了大量系统历史数据，比如内核和服务的消息（包括指示性信息和错误信息）。
+我还将研究两个重要的 systemd 工具。第一个 **systemctl** ，该命令是和 systemd 交互、发送命令的基本方式。第二个是 **journalctl**，用于访问 systemd 日志，后者包含了大量系统历史数据，比如内核和服务的消息（包括指示性信息和错误信息）。
 
 务必使用一个测试系统进行本文和后续文章中的测试和实验。你的测试系统需要安装一个 GUI 桌面（比如 Xfce，LXDE，Gnome，KDE 或其他）。
 
@@ -23,11 +23,11 @@ systemd 启动过程提供的重要线索可以在问题出现时助你一臂之
 
 ### 使用 systemd 研究 Linux 的启动
 
-在观察启动序列之前，你需要做几件事情来显示引导和启动序列。正常情况下，大多数发行版使用一个开机启动动画或画面隐藏 Linux 启动和关闭过程中的细节显示，在基于 Red Hat 的发行版中称作 Plymouth 引导画面。这些隐藏的消息能够向寻找信息以排除程序故障、或者只是学习启动序列的系统管理员提供大量有关系统启动和关闭的信息。你可以通过 GRUB（Grand Unified Boot Loader）配置改变这个设置。
+在观察启动序列之前，你需要完成几件事情来显示引导和启动序列。正常情况下，大多数发行版使用一个开机启动动画或画面隐藏 Linux 启动和关闭过程中的细节，在基于 Red Hat 的发行版中称作 Plymouth 引导画面。这些隐藏的消息能够向寻找信息以排除程序故障、或者只是学习启动序列的系统管理员提供大量有关系统启动和关闭的信息。你可以通过 GRUB（Grand Unified Boot Loader）变更这个设置。
 
-主要的 GRUB 配置文件是 **/boot/grub2/grub.cfg** ，但是这个文件在更新内核版本时会被覆盖，你不会想修改它的。相反，修改用于改变 **grub.cfg** 默认设置的 **/etc/default/grub** 文件。
+GRUB 的主配置文件是 **/boot/grub2/grub.cfg** ，但该文件在更新内核版本时会被覆盖，你不会想修改它的。相反，修改用于变更 **grub.cfg** 的默认配置文件 **/etc/default/grub** 。
 
-从 **/etc/default/grub** 文件当前还未修改的版本看起：
+从 **/etc/default/grub** 文件当前默认版本看起：
 
 ```
 [root@testvm1 ~]# cd /etc/default ; cat grub
@@ -43,12 +43,12 @@ GRUB_DISABLE_RECOVERY="true"
 [root@testvm1 default]#
 ```
 
-[GRUB 文档][3]的第 6 章列出了  **/etc/default/grub** 文件的所有可用项，我只关注下面的部分：
+[GRUB 文档][3]的第 6 章列出了  **/etc/default/grub** 文件的所有可用项，我只关注如下的部分选项：
 
-  * 我将 GRUB 菜单倒计时的秒数 **GRUB_TIMEOUT**，从 5 改成 10，以便在倒计时达到 0 之前有更多的时间响应 GRUB 菜单。
-  * **GRUB_CMDLINE_LINUX** 列出了启动阶段传递给内核的命令行参数，我删除了其中的最后两个参数。其中的一个参数 **rhgb** 代表 Red Hat Graphical Boot，在内核初始化阶段显示一个小小的 Fedora 图标动画，而不是显示启动阶段的信息。另一个参数 **quiet**，屏蔽记录启动进度和发生错误的消息。系统管理员需要这些信息，因此我删除了 **rhgb** 和 **quiet**。如果启动阶段发生了错误，屏幕上显示的信息可以指向故障的原因。
+  * 我将 GRUB 菜单倒计时的秒数 **GRUB_TIMEOUT**，从 5 改成 10，以便在倒计时结束之前有更多的时间响应 GRUB 菜单。
+  * **GRUB_CMDLINE_LINUX** 列出了启动阶段传递给内核的命令行参数，我删除了其中的最后两个参数。其中的一个参数 **rhgb** 代表 Red Hat Graphical Boot，用于内核初始化阶段显示一个小小的 Fedora 图标动画，而不是显示启动阶段的信息。另一个参数 **quiet**，屏蔽启动进度记录和发生错误的消息。系统管理员需要这些信息，因此我删除了 **rhgb** 和 **quiet**。如果启动阶段发生了错误，屏幕上显示的信息可以指向故障的原因。
 
-更改之后，你的 GRUB 文件将会像下面一样：
+更改之后，你的 GRUB 文件如下：
 
 ```
 [root@testvm1 default]# cat grub
@@ -64,7 +64,7 @@ GRUB_DISABLE_RECOVERY="false"
 [root@testvm1 default]#
 ```
 
-**grub2-mkconfig** 程序使用 **/etc/default/grub** 文件的内容生成 **grub.cfg** 配置文件，从而改变一些默认的 GRUB 设置。**grub2-mkconfig** 输出到 **STDOUT**，你可以使用程序的 **-o** 参数指明数据流输出的文件，不过使用重定向也同样简单。执行下面的命令更新 **/boot/grub2/grub.cfg** 配置文件：
+**grub2-mkconfig** 程序使用 **/etc/default/grub** 文件生成 **grub.cfg** 配置文件，从而改变一些默认的 GRUB 设置。**grub2-mkconfig** 程序默认输出到标准输出，你可以使用程序的 **-o** 参数指明输出的文件，不过使用重定向也同样简单。执行下面的命令更新 **/boot/grub2/grub.cfg** 配置文件：
 
 ```
 [root@testvm1 grub2]# grub2-mkconfig > /boot/grub2/grub.cfg
@@ -83,7 +83,7 @@ done
 
 重新启动你的测试系统查看本来会隐藏在 Plymouth 开机动画之下的启动信息。但是如果你没有关闭开机动画，又需要查看启动信息的话又该如何操作？或者你关闭了开机动画，而消息流过的速度太快，无法阅读怎么办？（实际情况如此。）
 
-有两个解决方案，都涉及到日志文件和 systemd 日志——两个都是你的好伙伴。你可以使用 **less** 命令查看 **/var/log/messages** 文件的内容。这个文件包含引导和启动信息，以及操作系统执行正常操作时生成的信息。你也可以使用不加任何参数的 **journalctl** 命令查看 systemd 日志，包含基本相同的信息：
+有两个解决方案————日志文件和 systemd 日志，两个都是你的好伙伴。你可以通过 **less** 命令查看 **/var/log/messages** 文件的内容。该文件包含引导和启动信息，以及操作系统正常执行操作时生成的信息。你也可以使用不加任何参数的 **journalctl** 命令查看 systemd 日志，包含基本相同的信息：
 
 ```
 [root@testvm1 grub2]# journalctl
@@ -122,15 +122,15 @@ Jan 11 21:48:08 f31vm.both.org kernel: e820: remove [mem 0x000a0000-0x000fffff] 
 
 我将在本系列之后的文章讨论 systemd 日志、**journalctl** 命令、以及如何整列输出的日志数据来寻找更详细的信息。
 
-内核被 GRUB 加载到内存后，必须先将自己从压缩后的文件中解压出来，才能执行任何有意义的操作。解压自己后，内核开始运行，加载 systemd 并转交控制权。
+内核被 GRUB 加载到内存后，必须先将自己解压出来，才能执行任何有意义的操作。解压自己后，内核开始运行，加载 systemd 并转交控制权。
 
-引导阶段到此结束，此时 Linux 内核和 systemd 正在运行，但是无法为用户执行任何生产性任务，因为其他的程序都没有执行，没有命令行解释器提供命令行，没有后台进程管理网络和其他的通信链接，也没有任何东西能够控制计算机执行生产功能。
+引导阶段到此结束，此时 Linux 内核和 systemd 正在运行，但是无法为用户执行任何生产性任务，因为其他的程序都没有执行，没有命令行解释器提供命令行，没有后台进程管理网络和其他的通信链接，也没有任何能够控制计算机执行生产功能的东西。
 
-现在 systemd 可以加载所需的功能性单元以便将系统启动到选择的目标运行状态。
+现在 systemd 可以加载所需的功能性单元以便将系统启动运行至目标状态。
 
 ### 目标
 
-一个 systemd 目标代表一个 Linux 系统当前的或期望的运行状态。与 SystemV 启动脚本十分类似，目标定义了系统运行必须存在的服务，以及处于目标状态下必须激活的服务。图片 1 展示了使用 systemd 的 Linux 系统可能的运行状态目标。就像在本系列的第一篇文章以及 systemd 启动的手册页（`man bootup`）所看到的一样，有一些开启不同必要服务的其他中间目标，包括 **swap.target**、**timers.target**、**local-fs.target** 等。一些目标（像 **basic.target**）作为检查点使用，在移动到下一个更高级的目标之前保证所有需要的服务已经启动并运行。
+一个 systemd 目标代表一个 Linux 系统当前的或期望的运行状态。与 SystemV 启动脚本十分类似，目标定义了系统启动必须运行的服务，以及处于目标状态下必须启用的服务。图片 1 展示了使用 systemd 的 Linux 系统可能的运行状态目标。就像在本系列的第一篇文章以及 systemd 启动的手册页（`man bootup`）所看到的一样，有一些开启不同必要服务的其他中间目标，包括 **swap.target**、**timers.target**、**local-fs.target** 等。一些目标（像 **basic.target**）作为检查点使用，在移动到下一个更高级的目标之前保证所有需要的服务已经启动并运行。
 
 除非开机时在 GRUB 菜单进行更改，systemd 总是启动 **default.target**。**default.target** 文件是指向真实的目标文件的符号链接。对于桌面工作站，**default.target** 通常是 **graphical.target**，等同于 SystemV 的运行等级 5。对于服务器，默认目标多半是 **multi-user.target**，就像 SystemV 的运行等级 3。**emergency.target** 文件类似单用户模式。目标和服务都是 systemd 单元。
 
