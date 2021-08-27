@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/open-organization/21/8/leadership-cultural-social-norms"
 [#]: author: "Ron McFarland https://opensource.com/users/ron-mcfarland"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zz-air"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -57,7 +57,7 @@ via: https://opensource.com/open-organization/21/8/leadership-cultural-social-no
 
 作者：[Ron McFarland][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zz-air](https://github.com/zz-air)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
