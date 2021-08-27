@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/apps-for-daily-needs-part-4-audio-editors/"
 [#]: author: "Arman Arisman https://fedoramagazine.org/author/armanwu/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
