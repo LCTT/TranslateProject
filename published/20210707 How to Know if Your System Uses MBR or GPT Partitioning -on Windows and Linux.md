@@ -3,18 +3,20 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (alim0x)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13727-1.html)
 
-如何在 Windows 和 Linux 上确定系统使用 MBR 还是 GPT 分区
+如何在 Windows 和 Linux 上确定系统使用的是 MBR 还是 GPT 分区
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202108/28/165508gqjyigp3yz3gy6yy.jpg)
 
 在你安装 Linux 或任何其他系统的时候，了解你的磁盘的正确分区方案是非常关键的。
 
 目前有两种流行的分区方案，老一点的 MBR 和新一些的 GPT。现在大多数的电脑使用 GPT。
 
-在制作 live 镜像或可启动 USB 设备时，一些工具（比如 [Rufus][1]）会问你在用的磁盘分区情况。如果你在 MBR 分区的磁盘上选择 GPT 方案的话，制作出来的可启动 USB 设备可能会不起作用。
+在制作临场镜像或可启动 USB 设备时，一些工具（比如 [Rufus][1]）会问你在用的磁盘分区情况。如果你在 MBR 分区的磁盘上选择 GPT 方案的话，制作出来的可启动 USB 设备可能会不起作用。
 
 在这个教程里，我会展示若干方法，来在 Windows 和 Linux 系统上检查磁盘分区方案。
 
@@ -48,15 +50,15 @@
 
 命令行的方法应该在所有 Linux 发行版上都有效。
 
-打开终端并使用 sudo 运行下列命令：
+打开终端并使用 `sudo` 运行下列命令：
 
 ```
 sudo parted -l
 ```
 
-上述命令实际上是一个基于命令行的 [Linux 分区管理器][5]。命令参数 -l 会列出系统中的所有磁盘以及它们的详情，里面包含了分区方案信息。
+上述命令实际上是一个基于命令行的 [Linux 分区管理器][5]。命令参数 `-l` 会列出系统中的所有磁盘以及它们的详情，里面包含了分区方案信息。
 
-在命令输出中，寻找以 **Partition Table（分区表）**开头的行：
+在命令输出中，寻找以 **Partition Table**（分区表）开头的行：
 
 ![][6]
 
@@ -76,17 +78,17 @@ Ubuntu 和一些其它基于 GNOME 的发行版内置了叫做 Disks 的图形�
 
 如果你没办法使用 GNOME Disks 工具，别担心，还有其它工具可以使用。
 
-其中一款流行的工具是 Gparted。你应该可以在大多数 Linux 发行版的软件源中找到它。如果系统中没有安装的话，使用你的发行版的软件中心或[包管理器][9]来[安装 Gparted][8]。
+其中一款流行的工具是 Gparted。你应该可以在大多数 Linux 发行版的软件源中找到它。如果系统中没有安装的话，使用你的发行版的软件中心或 [包管理器][9] 来 [安装 Gparted][8]。
 
-在 Gparted 中，通过菜单选择 **View-Device Information（查看—设备信息）**。它会在左下区域显示磁盘信息，这些信息中包含分区方案信息。
+在 Gparted 中，通过菜单选择 **View->Device Information**（查看—>设备信息）。它会在左下区域显示磁盘信息，这些信息中包含分区方案信息。
 
 ![][10]
 
 看吧，也不是太复杂，对吗？现在你了解了好几种途径来确认你的系统使用的是 GPT 还是 MBR 分区方案。
 
-同时我还要提一下，有时候磁盘还会有[混合分区方案][11]。这不是很常见，大多数时候分区不是 MBR 就是 GPT。
+同时我还要提一下，有时候磁盘还会有 [混合分区方案][11]。这不是很常见，大多数时候分区不是 MBR 就是 GPT。
 
-有任何问题或建议？请在下方留下评论。
+有任何问题或建议，请在下方留下评论。
 
 --------------------------------------------------------------------------------
 
@@ -95,7 +97,7 @@ via: https://itsfoss.com/check-mbr-or-gpt/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
