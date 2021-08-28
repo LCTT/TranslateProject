@@ -7,7 +7,7 @@
 [#]: publisher: " "
 [#]: url: " "
 
-A guide to understanding your team's implicit values and needs
+了解团队隐含价值观和需求的指南
 ======
 To enhance team dynamics, open leaders can study the implicit social
 norms that guide members' behaviors and decisions.
