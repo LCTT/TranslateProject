@@ -9,8 +9,7 @@
 
 了解团队隐含价值观和需求的指南
 ======
-To enhance team dynamics, open leaders can study the implicit social
-norms that guide members' behaviors and decisions.
+为了增强团队动力，开放的领导可以研究指导成员行为和决策的隐性社会规范。
 ![Working meetings can be effective meetings][1]
 
 Culture matters in [open organizations][2]. But "culture" seems like such a large, complicated concept to address. How can we help open organization teams better understand it?
