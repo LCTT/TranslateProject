@@ -12,13 +12,13 @@
 为了增强团队动力，开放的领导可以研究指导成员行为和决策的隐性社会规范。
 ![Working meetings can be effective meetings][1]
 
-Culture matters in [open organizations][2]. But "culture" seems like such a large, complicated concept to address. How can we help open organization teams better understand it?
+文化在[开放的组织][2]很重要。 但“文化”似乎是一个如此庞大而复杂的概念。我们该如何帮助开放式的团队组织去理解它呢？
 
-One solution might come from [Michele J. Gelfand][3], author of [_Rule Makers, Rule Breakers_][4]_: Tight and Loose Cultures and the Secret Signals That Direct Our Lives_. Gelfand organizes all countries and cultures into two very simple groups: those with "tight" cultures and those with "loose" ones. Then she explains the characteristics and social norms of both, offering their relative strengths and weaknesses. By studying both, one might overcome the divisions and conflicts that separate people in and across teams, organizations, and countries.
+一个解决方案可能来自于 [_Rule Makers, Rule Breakers_][4]_的作者 [Michele J. Gelfand][3]：紧密和松散的文化以及指导我们生活的秘密信号_。Gelfand 把所有的国家和文化分成简单的两类， 一类是“严格的”文化另一类是“松散的”。然后，她解释了两者的特点和社会规范，提供了它们的相对优势和劣势。通过研究两者，我们可以克服团队、组织和国家之间的分歧和冲突。
 
-In this two-part review of _Rule Makers, Rule Breakers_, I'll explain Gelfand's argument and discuss the ways it's useful to people working in open organizations.
+In this two-part review of _Rule Makers, Rule Breakers_, 我将解释 Gelfand 的论点，并讨论它对在开放性组织中工作的人们有用的方式。
 
-### Know your social norms
+### 了解你的社会规范
 
 Gelfand believes that our behavior is very strongly dependent on whether we live in a "tight" or "loose" community culture, because each of these cultures has social norms that differ from the other. These norms—and the strictness with which they are enforced—will determine our behavior in the community. They give us our identity. They help us coordinate with each other. In short, they're the glue that holds communities together.
 
