@@ -7,40 +7,40 @@
 [#]: via: (https://opensource.com/article/20/9/deep-learning-model-kubernetes)
 [#]: author: (Chaimaa Zyani https://opensource.com/users/chaimaa)
 
-Deploy a deep learning model on Kubernetes
+在 Kubernetes 上部署一个深度学习模型
 ======
-Learn how to deploy, scale, and manage a deep learning model that serves
-up image recognition predictions with Kubermatic Kubernetes Platform.
+了解如何使用 Kubermatic Kubernetes 平台部署、缩放与管理图像识别深度学习模型。
+
 ![Brain on a computer screen][1]
 
-As enterprises increase their use of artificial intelligence (AI), machine learning (ML), and deep learning (DL), a critical question arises: How can they scale and industrialize ML development? These conversations often focus on the ML model; however, this is only one step along the way to a complete solution. To achieve in-production application and scale, model development must include a repeatable process that accounts for the critical activities that precede and follow development, including getting the model into a public-facing deployment.
+随着企业增加了对人工智能（AI）、机器学习（ML）与深度学习（DL）的使用，出现了一个关键问题：如何将机器学习的发展进行规模化与产业化？这些讨论经常聚焦于机器学习模型本身；然而，模型仅仅只是完整解决方案的其中一环。为了达到生产环境的应用和规模，模型的开发过程必须还包括一个可以说明开发前后关键活动以及可公用部署的可重复过程。
 
-This article demonstrates how to deploy, scale, and manage a deep learning model that serves up image recognition predictions using [Kubermatic Kubernetes Platform][2].
+本文演示了如何使用[Kubermatic Kubernetes Platform][2]对图像识别预测的深度学习模型进行部署，缩放与管理。
 
-Kubermatic Kubernetes Platform is a production-grade, open source Kubernetes cluster-management tool that offers flexibility and automation to integrate with ML/DL workflows with full cluster lifecycle management.
+Kubermatic Kubernetes 平台是一个可以与机器学习/深度学习工作流结合进行完整集群生命周期管理的一个自动且灵活的开源生产级 Kubernetes 集群管理工具。
 
-### Get started
+### 开始
 
-This example deploys a deep learning model for image recognition. It uses the [CIFAR-10][3] dataset that consists of 60,000 32x32 color images in 10 classes with the [Gluon][4] library in [Apache MXNet][5] and NVIDIA GPUs to accelerate the workload. If you want to use a pre-trained model on the CIFAR-10 dataset, check out the [getting started guide][6].
+这个例子部署了一个图像识别的深度学习模型。它使用了包含 60,000 张分属 10 个类别的 32x32 彩色图 [CIFAR-10][3] 像数据集，同时使用了 [Apache MXNet][5] 的 [Gluon][4] 与 NVIDIA GPUs 进行加速计算。如果你希望使用 CIFAR-10 数据集的预训练模型，可以查阅 [getting started guide][6]。
 
-The model was trained over a span of 200 epochs, as long as the validation error kept decreasing slowly without causing the model to overfit. This plot shows the training process:
+使用训练集中的样本对模型训练 200 次，只要训练误差保持缓慢减少，就可以保证模型不会过拟合。下方图展示了训练的过程：
 
-![Deep learning model training plot][7]
+![深度学习模型训练 loss 图][7]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
-After training, it's essential to save the model's parameters so they can be loaded later:
+训练结束后，必须保存模型训练所得到的参数，以便稍后可以加载它们：
 
 
-```
+```python
 file_name = "net.params"
 net.save_parameters(file_name)
 ```
 
-Once the model is ready, wrap your prediction code in a Flask server. This allows the server to accept an image as an argument to its request and return the model's prediction in the response:
+一旦你的模型训练好了，就可以用 Flask 服务器来封装它。下方的程序演示了如何接收 request 中的一张图片作为参数并且在 response 中返回模型的预测结果：
 
 
-```
+```python
 from gluoncv.model_zoo import get_model
 import matplotlib.pyplot as plt
 from mxnet import gluon, nd, image
@@ -76,12 +76,12 @@ if __name__ == '__main__':
    app.run(host='0.0.0.0')
 ```
 
-### Containerize the model
+### 容器化模型
 
-Before you can deploy your model to Kubernetes, you need to install Docker and create a container image with your model.
+在将模型部署到 Kubernetes 前，你需要先安装 Docker 并使用你的模型创建一个镜像。
 
-  1. Download, install, and start Docker: [code]
-
+  1. 下载、安装并启动 Docker：
+```bash
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 
 sudo yum-config-manager --add-repo <https://download.docker.com/linux/centos/docker-ce.repo>
@@ -91,14 +91,14 @@ sudo yum install docker-ce
 sudo systemctl start docker
 
 ```
-  2. Create a directory where you can organize your code and dependencies: [code]
-
+  2. 创建一个你用来管理代码与依赖的文件夹：
+```bash
 mkdir kubermatic-dl
 cd kubermatic-dl
 ```
 
-  3. Create a `requirements.txt` file to contain the packages the code needs to run: [code]
-
+  3. 创建 `requirements.txt` 文件管理代码运行时需要的所有依赖：
+```
 flask
 gluoncv
 matplotlib
@@ -107,75 +107,76 @@ requests
 Pillow
 
 ```
-  4. Create the Dockerfile that Docker will read to build and run the model: [code]
-
+  4. 创建 Dockerfile，Docker 将根据这个文件创建镜像:
+```
 FROM python:3.6
 WORKDIR /app
 COPY requirements.txt /app
 RUN pip install -r ./requirements.txt
 COPY app.py /app
-CMD ["python", "app.py"]~
-
-[/code] This Dockerfile can be broken down into three steps. First, it creates the Dockerfile and instructs Docker to download a base image of Python 3. Next, it asks Docker to use the Python package manager `pip` to install the packages in `requirements.txt`. Finally, it tells Docker to run your script via `python app.py`.
-
-  5. Build the Docker container: [code]`sudo docker build -t kubermatic-dl:latest .`[/code] This instructs Docker to build a container for the code in your current working directory, `kubermatic-dl`.
-
-  6. Check that your container is working by running it on your local machine: [code]`sudo docker run -d -p 5000:5000 kubermatic-dl`
+CMD ["python", "app.py"]
 ```
 
-  7. Check the status of your container by running `sudo docker ps -a`:
+这个 Dockerfile 主要可以分为三个部分。首先，Docker 会下载 Python 的基础镜像。然后，Docker 会使用 Python 的包管理工具 `pip` 安装 `requirements.txt` 记录的包。最后，Docker 会通过执行 `python app.py` 来运行你的脚本。
 
-![Checking the container's status][9]
+
+  1. 构建 Docker 容器: `sudo docker build -t kubermatic-dl:latest .` 这条命令使用 `kubermatic-dl` 镜像为你当前工作目录的代码创建了一个容器。
+
+  2. 使用 `sudo docker run -d -p 5000:5000 kubermatic-dl` 命令检查你的容器可以在你的主机上正常运行。
+
+  3. 使用 `sudo docker ps -a` 命令查看你本地容器的运行状态:
+
+![查看容器的运行状态][9]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
 
 
 
-### Upload the model to Docker Hub
+### 将你的模型上传到 Docker Hub
 
-Before you can deploy the model on Kubernetes, it must be publicly available. Do that by adding it to [Docker Hub][10]. (You will need to create a Docker Hub account if you don't have one.)
+在向 Kubernetes 上部署模型前，你的镜像首先需要是公开可用的。你可以通过将你的模型上传到 [Docker Hub][10] 来将它公开。（如果你没有 Docker Hub 的账号，你需要先创建一个）
 
-  1. Log into your Docker Hub account: [code]`sudo docker login`
-```
-  2. Tag the image so you can refer to it for versioning when you upload it to Docker Hub: [code]
+  1. 在终端中登录 Docker Hub 账号：`sudo docker login`
 
+  2. 给你的镜像打上 tag ，这样你的模型上传到 Docker Hub 后也能拥有版本信息
+```bash
 sudo docker tag &lt;your-image-id&gt; &lt;your-docker-hub-name&gt;/&lt;your-app-name&gt;
 
 sudo docker push &lt;your-docker-hub-name&gt;/&lt;your-app-name&gt;
 ```
 
-![Tagging the image][11]
+![给镜像打上 tag][11]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
-  3. Check your image ID by running `sudo docker images`.
+  3. 使用 `sudo docker images` 命令检查你的镜像的 ID。
 
 
 
 
-### Deploy the model to a Kubernetes cluster
+### 部署你的模型到 Kubernetes 集群
 
-  1. Create a project on the Kubermatic Kubernetes Platform, then create a Kubernetes cluster using the [quick start tutorial][12].
+  1. 首先在 Kubermatic Kubernetes 平台创建一个项目, 然后根据 [快速开始][12] 创建一个 Kubernetes 集群。
 
-![Create a Kubernetes cluster][13]
-
-(Chaimaa Zyami, [CC BY-SA 4.0][8])
-
-  2. Download the `kubeconfig` used to configure access to your cluster, change it into the download directory, and export it into your environment:
-
-![Kubernetes cluster example][14]
+![创建一个 Kubernetes 集群][13]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
-  3. Using `kubectl`, check the cluster information, such as the services that `kube-system` starts on your cluster: [code]`kubectl cluster-info`
-```
-![Checking the cluster info][15]
+  2. 下载用于访问你的集群的 `kubeconfig`，将它放置在下载目录中，并记得设置合适的环境变量，使得你的环境能找到它：
+
+![Kubernetes 集群示例][14]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
-  4. To run the container in the cluster, you need to create a deployment (`deployment.yaml`) and apply it to the cluster: [code]
+  3. 使用 `kubectl` 命令检查集群信息，例如，需要检查 `kube-system` 是否在你的集群正常启动了就可以使用命令 `kubectl cluster-info`
 
+![查看集群信息][15]
+
+(Chaimaa Zyami, [CC BY-SA 4.0][8])
+
+  4. 为了在集群中运行容器，你需要创建一个部署用的配置文件(`deployment.yaml`)，再运行 `apply` 命令将其应用于集群中：
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -197,38 +198,39 @@ spec:
        ports:
        - containerPort: 8080
 
-[/code] [code]`kubectl apply -f deployment.yaml`
+``` `kubectl apply -f deployment.yaml`
 ```
 
-  5. To expose your deployment to the outside world, you need a service object that will create an externally reachable IP for your container: [code]`kubectl expose deployment kubermatic-dl-deployment  --type=LoadBalancer --port 80 --target-port 5000`
-```
-6. You're almost there! Check your services to determine the status of your deployment and get the IP address to call your image recognition API: [code]`kubectl get service`
-```
+  5. 为了将你的部署开放到公网环境，你需要一个能够给你的容器创建外部可达 IP 地址的服务：`kubectl expose deployment kubermatic-dl-deployment  --type=LoadBalancer --port 80 --target-port 5000`
 
-![Get the IP address to call your image recognition API][16]
+  6. 就快大功告成了！首先检查你布署的服务的状态，然后通过 IP 请求的你图像识别 API：`kubectl get service`
 
-(Chaimaa Zyami, [CC BY-SA 4.0][8])
 
-  7. Test your API with these two images using the external IP:
-
-![Horse][17]
+![获取请求图像识别 API 的 IP 地址][16]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
-![Dog][18]
+  7. 最后根据你的外部 IP 使用以下两张图片对你的图像识别服务进行测试：
+
+![马][17]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
-![Testing the API][19]
+![狗][18]
+
+(Chaimaa Zyami, [CC BY-SA 4.0][8])
+
+![测试 API][19]
 
 (Chaimaa Zyami, [CC BY-SA 4.0][8])
 
 
 
 
-### Summary
+### 总结
 
-In this tutorial, you created a deep learning model to be served as a [REST API][20] using Flask. It put the application inside a Docker container, uploaded the container to Docker Hub, and deployed it with Kubernetes. Then, with just a few commands, Kubermatic Kubernetes Platform deployed the app and exposed it to the world.
+
+在这篇教程中，你可以创建一个深度学习模型，并且使用 Flask 提供 [REST API][20] 服务。它介绍了如何将应用放在 Docker 容器中，如何将这个镜像上传到 Docker Hub 中，以及如何使用 Kubernetes 部署你的服务。只需几个简单的命令，你就可以使用 Kubermatic Kubernetes 平台部署该应用程序，并且开放服务给别人使用。
 
 --------------------------------------------------------------------------------
 
