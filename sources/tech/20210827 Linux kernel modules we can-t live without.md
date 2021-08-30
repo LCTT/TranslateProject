@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/linux-kernel-module"
 [#]: author: "Jen Wike Huger https://opensource.com/users/jen-wike"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
