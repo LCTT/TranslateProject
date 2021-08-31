@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/linux-terminal"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "fisherue "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -108,7 +108,7 @@ via: https://opensource.com/article/21/8/linux-terminal
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID][c]
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -127,3 +127,4 @@ via: https://opensource.com/article/21/8/linux-terminal
 [10]: https://opensource.com/article/21/7/terminal-basics-copying-files-linux-terminal
 [11]: https://opensource.com/article/21/7/terminal-basics-removing-files-and-folders-linux-terminal
 [12]: https://opensource.com/downloads/bash-scripting-ebook
+[c]: https://github.com/fisherue

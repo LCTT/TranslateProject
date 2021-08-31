@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/linux-stat-file-status"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "New-World-2019"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
