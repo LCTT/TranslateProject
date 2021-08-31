@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13737-1.html"
 
 用这个开源工具在 Linux 上访问你的 iPhone
 ======
