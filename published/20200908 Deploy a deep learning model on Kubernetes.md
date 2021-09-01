@@ -179,7 +179,7 @@ if __name__ == '__main__':
 
     ![Kubernetes 集群示例][14]
 
-3. 使用 `kubectl` 命令检查集群信息，例如，需要检查 `kube-system` 是否在你的集群正常启动了就可以使用命令 `kubectl cluster-info`
+3. 使用 `kubectl` 命令检查集群信息，例如，需要检查 `kube-system` 是否在你的集群正常启动了就可以使用命令 `kubectl cluster-info`：
 
     ![查看集群信息][15]
 
