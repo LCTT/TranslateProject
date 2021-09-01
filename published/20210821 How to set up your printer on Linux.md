@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "fisherue"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13740-1.html"
 
 如何在 Linux 系统设置打印机
 ======
