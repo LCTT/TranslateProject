@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/guess-number-game-ncurses-linux"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "perfiffer"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
