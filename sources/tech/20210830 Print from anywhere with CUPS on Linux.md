@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/share-printer-cups"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "fisherue "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
