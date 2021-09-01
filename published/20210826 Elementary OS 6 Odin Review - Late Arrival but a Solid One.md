@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "imgradeone"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13739-1.html"
 
 elementary OS 6 Odin 评测：迟到的新版本，但也实至名归
 ======
