@@ -7,34 +7,34 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Download Audio Only Using youtube-dl
+如何使用 youtube-dl 只下载音频
 ======
 
-[youtube-dl][1] is a versatile command line tool for downloading videos from YouTube and many other websites. I use it for making back up of my own YouTube videos.
+[youtube-dl][1] 是一个多功能的命令行工具，用于从 YouTube 和许多其他网站下载视频。我用它来做我自己的 YouTube 视频的备份。
 
-By default, you [use youtube-dl for downloading videos][2]. How about extracting only the audio with youtubde-dl? That’s very simple actually. Let me show you the steps.
+默认情况下，你[使用 youtube-dl 下载视频][2]。用 youtube-dl 只提取音频怎么样？ 其实很简单。让我告诉你步骤。
 
-Attention
+注意
 
-Downloading videos from websites could be against their policies. It’s up to you if you choose to download videos or audio.
+从网站下载视频可能违反他们的政策。这取决于你是否选择下载视频或音频。
 
-### Download only audio with youtube-dl
+### 使用 youtube-dl 只下载音频
 
-Please make sure that you have installed youtube-dl on your Linux distribution first.
+请确保你已经在你的 Linux 发行版上安装了 youtube-dl。
 
 ```
 sudo snap install youtube-dl
 ```
 
-If you only want to download audio from a YouTube video, you can use the -x option with youtube-dl. This extract-audio option converts the video files to audio-only files.
+如果你只想从 YouTube 视频中下载音频，你可以使用 youtube-dl 的 -x 选项。这个提取音频的选项将视频文件转换为纯音频文件。
 
 ```
 youtube-dl -x video_URL
 ```
 
-The file is saved in the same directory from where you ran the youtube-dl command.
+该文件被保存在你运行 youtube-dl 命令的同一目录下。
 
-Here’s an example where I downloaded the voice-over of our Zorin OS 16 review video.
+这是我下载 Zorin OS 16 评论视频的画外音的示例。
 
 ```
 youtube-dl -x https://www.youtube.com/watch?v=m_PmLG7HqbQ
@@ -45,15 +45,15 @@ youtube-dl -x https://www.youtube.com/watch?v=m_PmLG7HqbQ
 [ffmpeg] Post-process file Zorin OS 16 Review - It's a Visual Masterpiece-m_PmLG7HqbQ.m4a exists, skipping
 ```
 
-Did you notice the audio format? It is in .m4a format. You may specify the audio format to something of your choice.
+你注意到音频格式了吗？它是 .m4a 格式。你可以把音频格式指定为你所选择的格式。
 
-Say you want to extract the audio in MP3 format. You can use it like this:
+比如你想提取 MP3 格式的音频。你可以像这样使用它：
 
 ```
 youtube-dl -x --audio-format mp3 video_URL
 ```
 
-Here’s the same example I showed previously. You can see that it [uses ffmpeg to convert][3] the m4a file into mp3.
+下面是我之前展示的同一个例子。你可以看到它[使用 ffmpeg 转换][3] m4a 文件为 mp3：
 
 ```
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=m_PmLG7HqbQ
@@ -65,33 +65,33 @@ youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=m_PmLG7HqbQ
 Deleting original file Zorin OS 16 Review - It's a Visual Masterpiece-m_PmLG7HqbQ.m4a (pass -k to keep)
 ```
 
-### Download entire YouTube playlist in MP3 format
+### 以 MP3 格式下载整个 YouTube 播放列表
 
-Yes, you can totally do that. The main thing is to get the URL of the playlist here. It is typically in the following format:
+是的，你完全可以这样做。最主要的是要在这里得到播放列表的 URL。它通常是以下格式：
 
 ```
 https://www.youtube.com/playlist?list=XXXXXXXXXXXXXXXXXXX
 ```
 
-To get the URL of a playlist, click on its name when the playlist is being displayed in the right sidebar.
+要获得一个播放列表的 URL，当播放列表显示在右边栏时，点击其名称。
 
 ![Click on the playlist title][4]
 
-It will take you to the playlist page and you can copy the URL here.
+它将带你到播放列表页面，你可以在这里复制 URL。
 
 ![Grab the playlist URL][5]
 
-Now that you have the playlist URL, you can use it to download the audio files in MP3 format in the following fashion:
+现在你有了播放列表的 URL，你可以用它来下载 MP3 格式的音频文件，方法如下：
 
 ```
 youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" playlist_URL
 ```
 
-That scary looking `-o "%(title)s.%(ext)s"` specifies the output file (with option -o) and instructs it to use the title of the video and the extension (mp3 in this case) for naming the audio files.
+那个看起来很可怕的 `-o "%(title)s.%(ext)s"` 指定了输出文件（带选项 -o），并指示它使用视频的标题和扩展名（本例为 mp3）来命名音频文件。
 
 ![][6]
 
-I hope you find this quick tip helpful. Enjoy the audio files :)
+我希望你觉得这个技巧对你有帮助。享受音频文件吧 :)
 
 --------------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ via: https://itsfoss.com/youtube-dl-audio-only/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
