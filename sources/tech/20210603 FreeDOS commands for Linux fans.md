@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/freedos-linux-users)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( shipsw )
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
