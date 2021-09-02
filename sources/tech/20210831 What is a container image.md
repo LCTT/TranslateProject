@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/container-image"
 [#]: author: "Nived V https://opensource.com/users/nivedv"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
