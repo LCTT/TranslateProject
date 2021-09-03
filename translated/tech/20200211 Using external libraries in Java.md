@@ -7,63 +7,58 @@
 [#]: via: (https://opensource.com/article/20/2/external-libraries-java)
 [#]: author: (Chris Hermansen https://opensource.com/users/clhermansen)
 
-Using external libraries in Java
+在 Java 中使用外部库
 ======
-External libraries fill gaps in the Java core libraries.
+外部库填补了 Java 核心库中的一些功能空白。
 ![books in a library, stacks][1]
 
-Java comes with a core set of libraries, including those that define commonly used data types and related behavior, like **String** or **Date**; utilities to interact with the host operating system, such as **System** or **File**; and useful subsystems to manage security, deal with network communications, and create or parse XML. Given the richness of this core set of libraries, it's often easy to find the necessary bits and pieces to reduce the amount of code a programmer must write to solve a problem.
+Java 自带有一组核心库，其中包含了定义常用数据类型和相关行为的库（例如 **String** 和 **Date**）、与主机操作系统交互的实用程序（例如 **System** 和 **File**），以及一些用来管理安全性、处理网络通信、创建或解析 XML的有用的子系统。鉴于核心库的丰富性，程序员通常很容易在其中找到有用的组件，以减少需要编写的代码量。
 
-Even so, there are a lot of interesting Java libraries created by people who find gaps in the core libraries. For example, [Apache Commons][2] "is an Apache project focused on all aspects of reusable Java components" and provides a collection of some 43 open source libraries (as of this writing) covering a range of capabilities either outside the Java core (such as [geometry][3] or [statistics][4]) or that enhance or replace capabilities in the Java core (such as [math][5] or [numbers][6]).
+即便如此，核心库仍有一些功能上的不足，因此发现这些不足的程序员们还额外创建了很多有趣的 Java 库。例如，[Apache Commons][2] <q>是一个专注于可重用 Java 组件所有方面的 Apache 项目</q>，提供了大约 43 个开源库的集合（截至撰写本文时），涵盖了 Java 核心库之外的一系列功能 （例如 [geometry][3] 或 [statistics][4]），并增强或替换了 Java 核心库中的原有功能（例如 [math][5] 或 [numbers][6]）。
 
-Another common type of Java library is an interface to a system component—for example, to a database system. This article looks at using such an interface to connect to a [PostgreSQL][7] database and get some interesting information. But first, I'll review the important bits and pieces of a library.
+另一种常见的 Java 库类型是系统组件的接口（例如数据库系统接口），本文会着眼于使用此类接口连接到 [PostgreSQL][7] 数据库，并得到一些有趣的信息。首先，我们来回顾一下库的重要部分。
 
-### What is a library?
+### 什么是库？
 
-A library, of course, must contain some useful code. But to be useful, that code needs to be organized in such a way that the Java programmer can access the components to solve the problem at hand.
+库里自然包含的是一些有用的代码。但为了发挥用处，代码需要以特定方式进行组织，特定的方式使 Java 程序员可以访问其中组件来解决手头问题。
 
-I'll boldly claim that the most important part of a library is its application programming interface (API) documentation. This kind of documentation is familiar to many and is most often produced by [Javadoc][8], which reads structured comments in the code and produces HTML output that displays the API's packages in the panel in the top-left corner of the page; its classes in the bottom-left corner; and the detailed documentation at the library, package, or class level (depending on what is selected in the main panel) on the right. For example, the [top level of API documentation for Apache Commons Math][9] looks like:
+可以说，一个库最重要的部分是它的应用程序编程接口 (API) 文档。这种文档很多人都熟悉，通常是由 [Javadoc][8] 生成的。Javadoc 读取代码中的结构化注释并以 HTML 格式输出文档，通常 API 的 <ruby>包<rt><rp>(</rp>pacage<rp>)</rp></rt></ruby> 在页面左上角的面板中显示，<ruby>类<rt><rp>(</rp>class<rp>)</rp></rt></ruby> 在左下角显示，同时右侧会有库、包或类级别的详细文档（具体取决于在主面板中选择的内容）。例如，[Apache Commons Math 的顶级 API 文档][9] 如下所示：
 
 ![API documentation for Apache Commons Math][10]
 
-Clicking on a package in the main panel shows the Java classes and interfaces defined in that package. For example, **[org.apache.commons.math4.analysis.solvers][11]** shows classes like **BisectionSolver** for finding zeros of univariate real functions using the bisection algorithm. And clicking on the [BisectionSolver][12] link lists all the methods of the class **BisectionSolver**.
+单击主面板中的包会显示该包中定义的 Java 类和接口。例如，**[org.apache.commons.math4.analysis.solvers][11]** 显示了诸如 **BisectionSolver** 这样的类，该类用于使用二分算法查找单变量实函数的零点。单击 [BisectionSolver][12] 链接会列出 **BisectionSolver** 类的所有方法。 
 
-This type of documentation is useful as reference information; it's not intended as a tutorial for learning how to use the library. For example, if you know what a univariate real function is and look at the package **org.apache.commons.math4.analysis.function**, you can imagine using that package to compose a function definition and then using the **org.apache.commons.math4.analysis.solvers** package to look for zeros of the just-created function. But really, you probably need more learning-oriented documentation to bridge to the reference documentation. Maybe even an example!
+这类文档可用作参考文档，不适合作为学习如何使用库的教程。比如，如果你知道什么是单变量实函数并查看包 **org.apache.commons.math4.analysis.function**，就可以试着使用该包来组合函数定义，然后使用 **org.apache.commons.math4.analysis.solvers** 包来查找刚刚创建的函数的零点。但如果你不知道，就可能需要更多学习向的文档，也许甚至是一个实际例子，来读懂参考文档。
 
-This documentation structure also helps clarify the meaning of _package_—a collection of related Java class and interface definitions—and shows what packages are bundled in a particular library.
+这种文档结构还有助于阐明 _package_（相关 Java 类和接口定义的集合）的含义，并显示特定库中捆绑了哪些包。
 
-The code for such a library is most commonly found in a [**.jar** file][13], which is basically a .zip file created by the Java **jar** command that contains some other useful information. **.jar** files are typically created as the endpoint of a build process that compiles all the **.java** files in the various packages defined.
+这种库的代码通常是在 [**.jar** 文件][13] 中，它基本上是由 Java 的 **jar** 命令创建的 .zip 文件，其中还包含一些其他有用的信息。**.jar** 文件通常被创建为构建过程的端点，该构建过程编译了所定义包中的所有 **.java** 文件。
 
-There are two main steps to accessing the functionality provided by an external library:
+要访问外部库提供的功能，有两个主要步骤：
 
-  1. Make sure the library is available to the Java compilation step—[**javac**][14]—and the execution step—**java**—via the classpath (either the **-cp** argument on the command line or the **CLASSPATH** environment variable).
-  2. Use the appropriate **import** statements to access the package and class in the program source code.
+  1. 确保通过类路径（或者命令行中的 **-cp** 参数或者 **CLASSPATH** 环境变量），库可用于 Java 编译步骤（[**javac**][14]）和执行步骤（**java**）。
+  2. 使用恰当的 **import** 语句访问程序源代码中的包和类。
 
+其余的步骤就与使用 **String** 等 Java核心类相同，使用库提供的类和接口定义来编写代码。很简单对吧？不过也没那么简单。首先，你需要了解库组件的预期使用模式，然后才能编写代码。
 
+### 示例：连接 PostgreSQL 数据库
 
-The rest is just like coding with Java core classes, such as **String**—write the code using the class and interface definitions provided by the library. Easy, eh? Well, maybe not quite that easy; first, you need to understand the intended use pattern for the library components, and then you can write code.
+在数据库系统中访问数据的典型使用步骤是：
 
-### An example: Connect to a PostgreSQL database
+  1. 访问正在使用的特定数据库软件代码。
+  2. 连接到数据库服务器。
+  3. 构建查询字符串。
+  4. 执行查询字符串。
+  5. 针对返回的结果，做需要的处理。
+  6. 断开与数据库服务器的连接。
 
-The typical use pattern for accessing data in a database system is:
+所有这些面向程序员的部分由接口包 **[java.sql][15]** 提供，它独立于数据库，定义了核心客户端 Java 数据库连接 (JDBC) API。**java.sql** 包是 Java 核心库的一部分，因此无需提供 **.jar** 文件即可编译。但每个数据库提供者都会创建自己的 **java.sql** 接口实现（例如 **Connection** 接口），并且必须在运行步骤中提供这些实现。
 
-  1. Gain access to the code specific to the database software being used.
-  2. Connect to the database server.
-  3. Build a query string.
-  4. Execute the query string.
-  5. Do something with the results returned.
-  6. Disconnect from the database server.
+接下来我们使用 PostgreSQL，看看这一过程是如何进行的。
 
+#### 访问特定数据库的代码
 
-
-The programmer-facing part of all of this is provided by a database-independent interface package, **[java.sql][15]**, which defines the core client-side Java Database Connectivity (JDBC) API. The **java.sql** package is part of the core Java libraries, so there is no need to supply a **.jar** file to the compile step. However, each database provider creates its own implementation of the **java.sql** interfaces—for example, the **Connection** interface—and those implementations must be provided on the run step.
-
-Let's see how this works, using PostgreSQL.
-
-#### Gain access to the database-specific code
-
-The following code uses the [Java class loader][16] (the **Class.forName()** call) to bring the PostgreSQL driver code into the executing virtual machine:
-
+以下代码使用 [Java 类加载器][16]（**Class.forName()** 调用）将 PostgreSQL 驱动程序代码加载到正在执行的虚拟机中：
 
 ```
 import java.sql.*;
@@ -90,10 +85,9 @@ public class Test1 {
 }
 ```
 
-Because the class loader can fail, and therefore can throw an exception when failing, surround the call to **Class.forName()** in a try-catch block.
+因为类加载器可能失败，失败时会抛出异常，所以将对 **Class.forName()** 的调用放在 try-catch 代码块中。
 
-If you compile the above code with **javac** and run it with Java:
-
+如果你使用 **javac** 编译上面的代码，然后用 Java 运行，会报异常：
 
 ```
 me@mymachine:~/Test$ javac Test1.java
@@ -103,8 +97,7 @@ java.lang.ClassNotFoundException: org.postgresql.Driver
 me@mymachine:~/Test$
 ```
 
-The class loader needs the **.jar** file containing the PostgreSQL JDBC driver implementation to be on the classpath:
-
+类加载器要求类路径中有包含 PostgreSQL JDBC 驱动程序实现的 **.jar** 文件：
 
 ```
 me@mymachine:~/Test$ java -cp ~/src/postgresql-42.2.5.jar:. Test1
@@ -113,10 +106,9 @@ done.
 me@mymachine:~/Test$
 ```
 
-#### Connect to the database server
+#### 连接到数据库服务器
 
-The following code loads the JDBC driver and creates a connection to the PostgreSQL database:
-
+以下代码实现了加载 JDBC 驱动程序和创建到 PostgreSQL 数据库的连接：
 
 ```
 import java.sql.*;
@@ -161,8 +153,7 @@ public class Test2 {
 }
 ```
 
-Compile and run it:
-
+编译并运行上述代码:
 
 ```
 me@mymachine:~/Test$ javac Test2.java
@@ -174,19 +165,18 @@ done.
 me@mymachine:~/Test$
 ```
 
-Some notes on the above:
+关于上述的一些注意事项：
 
-  * The code following comment [2] uses system properties to set up connection parameters—in this case, the PostgreSQL username and password. This allows for grabbing those parameters from the Java command line and passing all the parameters in as an argument bundle. There are other **Driver.getConnection()** options for passing in the parameters individually.
-  * JDBC requires a URL for defining the database, which is declared above as **String database** and passed into the **Driver.getConnection()** method along with the connection parameters.
-  * The code uses try-with-resources, which auto-closes the connection upon completion of the code in the try-catch block. There is a lengthy discussion of this approach on [Stack Overflow][23].
-  * The try-with-resources provides access to the **Connection** instance and can execute SQL statements there; any errors will be caught by the same **catch** statement.
+  * 注释 [2] 后面的代码使用系统属性来设置连接参数（在本例中参数为 PostgreSQL 用户名和密码）。代码也可以从 Java 命令行获取这些参数并将所有参数作为参数包传递，同时还有一些其他 **Driver.getConnection()** 选项可用于单独传递参数。
+  * JDBC 需要一个用于定义数据库的 URL，它在上述代码中被声明为 **String database** 并与连接参数一起传递给 **Driver.getConnection()** 方法。
+  * 代码使用 try-with-resources 语句，它会在 try-catch 块中的代码完成后自动关闭连接。[Stack Overflow][23] 上对这种方法进行了长期的讨论。
+  * try-with-resources 语句提供对 **Connection** 实例的访问，并可以在其中执行 SQL 语句；所有错误都会被同一个 **catch** 语句捕获。
 
-
-
-#### Do something fun with the database connection
+#### 用数据库的连接处理一些有趣的事情
 
 In my day job, I often need to know what users have been defined for a given database server instance, and I use this [handy piece of SQL][24] for grabbing a list of all users:
 
+日常工作中，我经常需要知道为给定的数据库服务器实例定义了哪些用户，这里我使用这个 [简便的 SQL][24] 来获取所有用户的列表：
 
 ```
 import java.sql.*;
@@ -264,10 +254,9 @@ public class Test3 {
 }
 ```
 
-In the above, once it has the **Connection** instance, it defines a query string (comment [4] above), creates a **Statement** instance and uses it to execute the query string, then puts its results in a **ResultSet** instance, which it can iterate through to analyze the results returned, and ends by closing both the **ResultSet** and **Statement** instances (comment [5] above).
+在上述代码中，一旦有了 **Connection** 实例，它就会定义一个查询字符串（上面的注释 [4]），创建一个 **Statement** 实例并用其来执行查询字符串，然后将其结果放入一个 **ResultSet** 实例。程序可以遍历该 **ResultSet** 实例来分析返回的结果，并以关闭 **ResultSet** 和 **Statement** 实例结束（上面的注释 [5]）。
 
-Compiling and executing the program produces the following output:
-
+编译和执行程序会产生以下输出：
 
 ```
 me@mymachine:~/Test$ javac Test3.java
@@ -284,7 +273,7 @@ done.
 me@mymachine:~/Test$
 ```
 
-This is a (very simple) example of using the PostgreSQL JDBC library in a simple Java application. It's worth emphasizing that it didn't need to use a Java import statement like **import org.postgresql.jdbc.*;** in the code because of the way the **java.sql** library is designed. Because of that, there's no need to specify the classpath at compile time. Instead, it uses the Java class loader to bring in the PostgreSQL code at run time.
+这是在一个简单的 Java 应用程序中使用 PostgreSQL JDBC 库的（非常简单的）示例。要注意的是，由于 **java.sql** 库的设计方式，它不需要在代码中使用像 **import org.postgresql.jdbc.*;** 这样的 Java 导入语句，而是使用 Java 类加载器在运行时引入 PostgreSQL 代码的方式，也正因此无需在代码编译时指定类路径。
 
 --------------------------------------------------------------------------------
 
