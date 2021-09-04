@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13750-1.html"
 
 Zulip：一个不错的开源的 Slack 替代品
 ======
