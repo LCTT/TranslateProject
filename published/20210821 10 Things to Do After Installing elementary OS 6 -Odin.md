@@ -38,9 +38,9 @@ hostnamectl set-hostname your-new-hostname
 
 示例：
 
-![修改 hostname][3]
+![修改主机名][3]
 
-![hostname 修改之后][4]
+![主机名修改之后][4]
 
 #### 2、升级你的系统
 
