@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "anine09"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13749-1.html"
 
 安装 elementary OS 6 “Odin” 后要做的 10 件事
 ======
