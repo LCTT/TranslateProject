@@ -156,7 +156,7 @@ function
 $ sudo cat current_tracer
 function
 
-$ sudo echo nop &gt; current_tracer
+$ sudo echo nop > current_tracer
 
 $ sudo cat current_tracer
 nop
@@ -167,7 +167,7 @@ nop
 现在尝试第二个名为 `function_graph` 的追踪器。你可以使用和上面相同的步骤：在 `current_tracer` 文件中写入 `function_graph`：
 
 ```
-$ sudo echo function_graph &gt; current_tracer
+$ sudo echo function_graph > current_tracer
 
 $ sudo cat current_tracer
 function_graph
