@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (mengxinayan)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13752-1.html)
 
 通过 ftrace 来分析 Linux 内核
 ======
