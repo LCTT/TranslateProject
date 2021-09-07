@@ -3,38 +3,40 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13753-1.html"
 
 如何使用 youtube-dl 只下载音频
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202109/05/153110dkamc1kv0173ggc3.jpg)
+
 [youtube-dl][1] 是一个多功能的命令行工具，用于从 YouTube 和许多其他网站下载视频。我用它来做我自己的 YouTube 视频的备份。
 
-默认情况下，你[使用 youtube-dl 下载视频][2]。用 youtube-dl 只提取音频怎么样？ 其实很简单。让我告诉你步骤。
+默认情况下，你会 [使用 youtube-dl 下载视频][2]。用 youtube-dl 只提取音频怎么样？ 其实很简单。让我告诉你步骤。
 
-注意
-
-从网站下载视频可能违反他们的政策。这取决于你是否选择下载视频或音频。
+> **注意**
+>
+> 从网站下载视频可能违反他们的政策。这取决于你是否选择下载视频或音频。
 
 ### 使用 youtube-dl 只下载音频
 
-请确保你已经在你的 Linux 发行版上安装了 youtube-dl。
+请确保你已经在你的 Linux 发行版上安装了 `youtube-dl`。
 
 ```
 sudo snap install youtube-dl
 ```
 
-如果你只想从 YouTube 视频中下载音频，你可以使用 youtube-dl 的 -x 选项。这个提取音频的选项将视频文件转换为纯音频文件。
+如果你只想从 YouTube 视频中下载音频，你可以使用 `youtube-dl` 的 `-x` 选项。这个提取音频的选项将视频文件转换为纯音频文件。
 
 ```
 youtube-dl -x video_URL
 ```
 
-该文件被保存在你运行 youtube-dl 命令的同一目录下。
+该文件被保存在你运行 `youtube-dl` 命令的同一目录下。
 
-这是我下载 Zorin OS 16 评论视频的画外音的示例。
+这是我下载 Zorin OS 16 评论视频的画外音的示例：
 
 ```
 youtube-dl -x https://www.youtube.com/watch?v=m_PmLG7HqbQ
@@ -53,7 +55,7 @@ youtube-dl -x https://www.youtube.com/watch?v=m_PmLG7HqbQ
 youtube-dl -x --audio-format mp3 video_URL
 ```
 
-下面是我之前展示的同一个例子。你可以看到它[使用 ffmpeg 转换][3] m4a 文件为 mp3：
+下面是我之前展示的同一个例子。你可以看到它 [使用 ffmpeg 转换][3] m4a 文件为 mp3：
 
 ```
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=m_PmLG7HqbQ
@@ -87,11 +89,11 @@ https://www.youtube.com/playlist?list=XXXXXXXXXXXXXXXXXXX
 youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" playlist_URL
 ```
 
-那个看起来很可怕的 `-o "%(title)s.%(ext)s"` 指定了输出文件（带选项 -o），并指示它使用视频的标题和扩展名（本例为 mp3）来命名音频文件。
+那个看起来很可怕的 `-o "%(title)s.%(ext)s"` 指定了输出文件（选项 `-o`），并指示它使用视频的标题和扩展名（本例为 mp3）来命名音频文件。
 
 ![][6]
 
-我希望你觉得这个技巧对你有帮助。享受音频文件吧 :)
+我希望你觉得这个技巧对你有帮助。享受音频文件吧。
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +102,7 @@ via: https://itsfoss.com/youtube-dl-audio-only/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
