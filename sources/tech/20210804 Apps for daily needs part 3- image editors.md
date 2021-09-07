@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/apps-for-daily-needs-part-3-image-editors/"
 [#]: author: "Arman Arisman https://fedoramagazine.org/author/armanwu/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
