@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "perfiffer"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13762-1.html"
 
 通过 ncurses 在 Linux 上写一个猜谜游戏
 ======
