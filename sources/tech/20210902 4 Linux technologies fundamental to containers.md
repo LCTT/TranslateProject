@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/container-linux-technology"
 [#]: author: "Nived V https://opensource.com/users/nivedv"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
