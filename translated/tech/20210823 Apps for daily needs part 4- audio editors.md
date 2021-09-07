@@ -3,7 +3,7 @@
 [#]: author: "Arman Arisman https://fedoramagazine.org/author/armanwu/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
@@ -62,7 +62,7 @@ TuxGuitar 是一个指法谱和乐谱编辑器。它配备了指法编辑器、�
 
 ### 总结
 
-这篇文章介绍了四个音频编辑器，作为你在 Fedora Linux 上的日常需要和使用的应用。实际上，还有许多其他的你可以在 Fedora Linux 上使用的音频编辑器或者 DAW。你也可以使用 Mixxx、Rosegarden、Kwave、Qtractor、MuseScore、musE 等等。希望这篇文章能帮助你调查和选择合适的音频编辑器或者 DAW。如果你有使用这些应用的经验，请在评论中分享你的经验。
+本文章介绍了四款音频编辑器，满足您在 Fedora Linux 上日常使用的需求。其实，在 Fedora Linux 上还有很多音频编辑器或者 DAW 供您选择。您也可以使用 Mixxx、Rosegarden、Kwave、Qtractor、MuseScore、musE 等等。希望本文为您调查和选择合适的音频编辑器或者 DAW 提供帮助。如您有使用这些应用的经验，请在评论中分享您的经验。
 
 --------------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ via: https://fedoramagazine.org/apps-for-daily-needs-part-4-audio-editors/
 作者：[Arman Arisman][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
