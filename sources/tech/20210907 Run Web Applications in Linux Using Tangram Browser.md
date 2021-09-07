@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/tangram/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: "阿九"
+[#]: translator: "anine09"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
