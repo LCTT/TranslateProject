@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13766-1.html"
 
 什么是容器镜像？
 ======
