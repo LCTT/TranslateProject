@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/live-usb-with-dd-command/"
 [#]: author: "Hunter Wittenborn https://itsfoss.com/author/hunter/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "perfiffer"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
