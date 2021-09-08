@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zz-air"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13765-1.html"
 
 了解团队隐含价值观和需求的指南
 ======
