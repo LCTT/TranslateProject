@@ -5,7 +5,7 @@
 [#]: translator: "New-World-2019"
 [#]: reviewer: "turbokernel"
 [#]: publisher: "wxy"
-[#]: url: " "
+[#]: url: "https://linux.cn/article-13768-1.html"
 
 在 Linux 上使用 stat 命令查看文件状态
 ======
