@@ -7,20 +7,18 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Use lspci on Linux to see your hardware
+在 Linux 上使用 lspci 命令查看硬件情况
 ======
-Use the lspci command to display devices and drivers on your Linux
-system.
+使用 lspci 命令可以显示 Linux 系统上的设备和驱动程序。
 ![computer screen ][1]
 
-When you're running Linux on a desktop or server, sometimes you need to identify the hardware in that system. One command used for this is `lspci`. It works by showing all devices attached to the PCI bus. It's provided by the [pciutils][2] package and is available for a wide range of Linux and BSD-based operating systems.
+当你在个人电脑或服务器上运行 Linux 时，有时可能需要识别该系统中的硬件。`lspci` 命令可以显示连接到 PCI 总线的所有设备，从而实现上述目的。该命令由 [pciutils][2] 包提供，可用于各种基于 Linux 和 BSD 的操作系统。
 
-### Basic usage
+### 基础用法
 
-The information displayed when a regular user runs `lspci` might be limited due to access permissions. Running the command with `sudo` provides a complete picture.
+由于访问权限的存在，普通用户运行 `lspci` 时显示的信息可能会受限，因此可以使用 `sudo` 运行命令，系统会给出完整的信息图。
 
-Running `lspci` by itself lists the PCI buses and their attached devices. Here's an example from my media center PC. It's an AMD Phenom CPU-based system, so it has an AMD chipset. It also has an Atheros wireless controller and an Nvidia graphics card. All hardware devices are listed with details such as vendor, name, and model number:
-
+单独运行 `lspci` 命令会列出 PCI 总线及其连接的设备，下图是在我的媒体中心 PC 上的演示样例。图中是一个基于 AMD Phenom CPU 的系统，所以它有一个 AMD 芯片组，以及 Atheros 无线控制器和 Nvidia 显卡。所有硬件设备都列出了详细信息，例如供应商、名称和型号等：
 
 ```
 $ sudo lspci
@@ -50,14 +48,13 @@ $ sudo lspci
 02:00.0 Network controller: Qualcomm Atheros AR9287 Wireless Network Adapter (PCI-Express) (rev 01)
 ```
 
-### Verbose output
+### 详细输出
 
-Adding a `-v` option increases the verbosity or the level of detail for each device. You can use `-vv` or `-vvv` for even higher amounts of device detail. At this level, `lspci` displays various subsystems and memory addresses, interrupt request (IRQ) numbers, and other capabilities for all devices. The output is extremely long. Give it a try on your system.
+添加 `-v` 选项会增加每个设备的详细程度或详细程度，你可以使用 `-vv` 或 `-vvv` 来获取更多的设备细节。在 `-v` 级别，`lspci` 会显示所有设备的各种子系统和内存地址、中断请求 (IRQ) 编号和一些其他功能信息。输出信息会非常长。在你的系统上试一试吧。
 
-### Searching with grep
+### 使用 grep 过滤搜索
 
-Sometimes you want to narrow your search. For instance, the RPM Fusion web site has instructions for installing Nvidia graphics drivers. They begin with identifying your graphics card using the `grep` command. This is what I get on my laptop:
-
+有时你可能会想要缩小搜索范围。例如，RPM Fusion 网站有安装 Nvidia 图形驱动程序的说明，里面就首先使用了 `grep` 命令来定位显卡信息。下面是我在笔记本电脑上得到的界面：
 
 ```
 $ sudo lspci | grep -e VGA
@@ -66,8 +63,7 @@ $ sudo lspci | grep -e 3D
 01:00.0 3D controller: NVIDIA Corporation GM108M [GeForce MX130] (rev a2)
 ```
 
-The `grep` commands above show one VGA device on my media center PC but no 3D device.
-
+下面（LCTT 译注：原文为 “above”，应为作者笔误）的 `grep` 命令在我的媒体中心 PC 上显示了一个 VGA 设备，但没有显示 3D 设备。
 
 ```
 $ sudo lspci | grep -e VGA
@@ -76,20 +72,18 @@ $ sudo lspci | grep -e 3D
 $
 ```
 
-### Searching by vendor ID
+### 按供应商 ID 搜索
 
-There is another way that doesn't require `grep`. Suppose I want to determine whether any other Nvidia devices are present. It's necessary to know a little more. I use the `-nn` option to display vendor and device ID numbers. On my media center PC, this option shows my VGA card, vendor ID, and device ID:
-
+还有另一种不需要 `grep` 的方法可以使用。假设我想确认一下此计算机是否有其他的 Nvidia 设备，在此之前我们还需要一些额外信息，使用 `-nn` 选项显示的供应商和设备 ID 号。在我的媒体中心 PC 上，此选项会给出我的 VGA 卡、供应商 ID 和设备 ID：
 
 ```
 $ sudo lspci -nn | grep -e VGA
 01:00.0 VGA compatible controller [0300]: NVIDIA Corporation GK107 [GeForce GTX 650] [10de:0fc6] (rev a1)
 ```
 
-The set of brackets with the colon-separated numbers after the device name shows the vendor and device ID. The output indicates that the vendor ID for a device made by Nvidia Corporation is **10de**.
+设备名称后的括号内有用冒号分隔的数字，即供应商和设备 ID。输出表明 Nvidia Corporation 制造的设备的供应商 ID 为 **10de**。
 
-The `-d` option displays all devices from a specified vendor, device, or class ID. Here are all the Nvidia devices in my system (keeping the `-nn` to include the vendor IDs):
-
+`-d` 选项会给出来自指定供应商、设备或类 ID 的所有设备。以下是我系统中的所有 Nvidia 设备（保留 `-nn` 以解析供应商 ID）：
 
 ```
 $ sudo lspci -nn -d 10de:
@@ -97,12 +91,11 @@ $ sudo lspci -nn -d 10de:
 01:00.1 Audio device [0403]: NVIDIA Corporation GK107 HDMI Audio Controller [10de:0e1b] (rev a1)
 ```
 
-From the output, you can see that in addition to a graphics card, I have an Nvidia audio device. They are both actually part of the same **Nvidia GeForce GTX 650** card, but this is a good example nonetheless.
+从输出中可以看到，除了显卡之外，我还有一个 Nvidia 音频设备。虽然它们实际上都是同一张 **Nvidia GeForce GTX 650** 卡的一部分，但这仍然是一个很好的示例。
 
-### Kernel modules
+### 内核模块
 
-Along with PCI hardware devices, `lspci` can show what kernel driver modules are loaded with the `-k` option. I add this option to my `lspci` commands to view several pieces of information about my Nvidia devices.
-
+结合 PCI 硬件设备，`lspci` 可以使用 `-k` 选项显示加载了哪些内核驱动程序模块。我将此选项添加到我的 `lspci` 命令来查看有关我的 Nvidia 设备的信息。
 
 ```
 $ sudo lspci -nn -k -d 10de:
@@ -116,28 +109,26 @@ $ sudo lspci -nn -k -d 10de:
  Kernel modules: snd_hda_intel
 ```
 
-Two additional lines are displayed: _Kernel driver in use_ and _Kernel modules_. The second one lists the modules available to support the device.
+可以看到额外显示了两行：<ruby>_正在使用的内核驱动程序_<rt><rp>(</rp>Kernel driver in use<rp>)</rp></rt></ruby> 和 <ruby>_内核模块_<rt><rp>(</rp>Kernel modules<rp>)</rp></rt></ruby>，其中后者列出了可用于支持该设备的模块。
 
-### Keeping up to date
+### 同步最新状态
 
-New devices and vendors are constantly entering the market. If you see a device listed as _unknown_, your PCI device ID database may be outdated. There are two ways to check. The `-Q` option uses DNS to query the central database. This, of course, requires network connectivity.
-
+新设备和供应商总是在持续不断进入市场。如果看到显示为 _unknown_ 的设备，说明你的 PCI 设备 ID 数据库可能已过时。有两种方法可以检查更新。`-Q` 选项会使用 DNS 查询中央数据库，当然，这需要网络连接。
 
 ```
 `$ sudo lspci -Q`
 ```
 
-You can also update your local PCI ID database by running the command `update-pciids`.
-
+你还可以通过运行命令 `update-pciids` 来更新本地 PCI ID 数据库。
 
 ```
 $ sudo update-pciids
 Downloaded daily snapshot dated 2021-08-22 03:15:01
 ```
 
-### Learn more about your hardware
+### 了解有关你的硬件的更多信息
 
-Of course, `lspci` is just one of many commands available for Linux that is useful for querying the hardware and software on your system. Learn more about hardware on Linux in my article covering USB devices: [Recognize more devices on Linux with this USB ID Repository][3].
+当然，`lspci` 只是 Linux 中可用于查询系统硬件和软件的诸多命令之一。读者可以在阅读我关于 USB 设备的文章，了解有关 Linux 硬件的更多信息：[使用此 USB ID 存储库识别 Linux 上的更多设备][3]。
 
 --------------------------------------------------------------------------------
 
