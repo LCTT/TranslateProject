@@ -7,56 +7,56 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Getting the Top Indicator Panel Back in GNOME
+恢复 GNOME 顶栏的托盘图标
 ======
 
-GNOME is the popular desktop environment that thrives to give Linux a modern desktop experience.
+GNOME 是一款流行的 Linux 桌面环境，致力于为 Linux 用户提供现代化的桌面体验。
 
-While it works for the most part, some of their decisions has left the user fuming and questioning.
+虽然这款桌面绝大部分功能都是可用的，但 GNOME 团队的某些决定确实也让许多用户恼火、质疑。
 
-You cannot have icons and files on the desktop, [new document option has been removed][1] from the right click context menu. In addition to that, GNOME has also removed the applet indicator functionality.
+前脚不能在桌面摆放图标和文件，后脚将右键菜单中的 [新建文档选项移除][1]，现在，除此之外，GNOME 同样也移除了托盘图标栏功能。
 
-You know what indicator applets are, don’t you? Those little icons that let you access additional features of the given application. I have plenty of them in my Ubuntu system.
+怎么说，你总得知道托盘图标栏是什么吧？这些小图标允许你使用相应应用程序的额外功能。我自己的 Ubuntu 系统里就有许多托盘图标。
 
-![Indicator applets][2]
+![托盘图标栏][2]
 
-And this creates a problem, specially for applications that rely completely on these applet indicators to function. Take [Dropbox][3] for example. The only way to access Dropbox settings is through the app-indicator and you won’t find it in GNOME.
+这一砍就砍出了大问题，尤其是针对那些完全依赖托盘图标的软件的致命打击。就拿 [Dropbox][3] 举例子吧，你只能通过 Dropbox 的托盘图标菜单来访问 Dropbox 的设置页面，很不幸，你在 GNOME 中就完全找不到这个图标。
 
-That’s a problem, but thankfully, there is a workaround for that.
+这确实是个大问题，好在，我们还是有解决办法的。
 
-### Enabling applet indicator in GNOME via extension
+### 借助插件来重新启用 GNOME 的托盘图标栏
 
-If you are using GNOME, you probably already know what GNOME Extension is. These are basically small add-ons developed by enthusiastic, independent developers.
+如果你在用 GNOME，想必你已经知道 GNOME 插件是什么了。这些小插件基本上是由热心的独立开发者开发的。
 
-If not done already, [enable GNOME extensions][4]. It’s actually quite simple. Go to any GNOME extension’s page using Firefox or Chrome and it will suggest downloading a browser extension. Install it and you are good to go.
+如果你没有准备好，那么就去 [启用 GNOME 插件][4] 吧。这一步其实非常简单，使用 Chrome 或 Firefox 打开任意一个插件的页面，然后页面会提示你安装浏览器扩展。安装这个扩展，然后就可以启程了。
 
-![Enabling GNOME Extension browser add-on][5]
+![启用 GNOME 插件的浏览器扩展][5]
 
-Now, there are several GNOME extensions available that allow adding applet indicators in the top panel. At the time of writing this tutorial, [AppIndicator and KStatusNotifierItem Support][6] extension is well developed and supported for the recent GNOME versions.
+现在，这里有一些可以向顶栏增加托盘图标的 GNOME 插件。在撰写本篇教程的时候，[AppIndicator and KStatusNotifierItem Support][6] 这款插件在 GNOME 的较新版本中已经有良好的开发优化与支持。、
 
-Go to its webpage:
+前往插件的页面：
 
-[AppIndicator Extension][6]
+[AppIndicator 插件][6]
 
-On the page, you should see a toggle button. Click it to install it.
+在这个页面中，你应该能看到一个开关按钮。点击这个按钮即可安装该插件。
 
 ![][7]
 
-There will be a pop-up. Hit install when you see it.
+接下来会有一个弹窗，弹出后请点击“安装”。
 
-![Install the extension][8]
+![安装插件][8]
 
-The results won’t be seen immediately. You’ll have to restart GNOME. On Xorg, you could just use Alt+F2 and enter r but that does not work in Wayland.
+也许安装插件后，插件不会立即生效。此时，你必须重启 GNOME。在 Xorg 会话中，你只需要按下 Alt + F2 并输入 `r` 即可重启 GNOME，但这个操作不支持 Wayland 会话。
 
-Log out of the system and log back in. Applet indicator should be activated now. If you have any applications installed that provides an indicator applet, you should see it on the top panel.
+注销当前会话，并且重新登录，此后托盘图标应该就能成功启用了。如果你安装了任何一款带托盘图标的软件，那么你应该可以在顶栏上看见这些图标的身影了。
 
-In my case, I had Dropbox already installed and hence it started showing the icon in the top panel.
+于我而言，我已经安装了 Dropbox，因此托盘图标就直接出现在顶栏上了。
 
-![Dropbox indicator working in GNOME][9]
+![Dropbox 托盘图标在 GNOME 下可用的截图][9]
 
-I hope this little tip help you gain access to the app indicators in the top panel of GNOME again.
+希望这个小提示能帮助你恢复 GNOME 顶栏中的托盘图标。
 
-I do not know why the GNOME developers though that dropping this essential feature was a good idea. Anyway, if one door closes, another opens (usually). Enjoy GNOME to your liking.
+我完全不理解，为什么 GNOME 的开发者会认为把这种实用性极强的功能删除会是个好主意。不过，上帝关上了一扇门，却（通常）会再打开一扇窗。好好享受按你的偏好运作的 GNOME 吧。
 
 --------------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ via: https://itsfoss.com/enable-applet-indicator-gnome/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[imgradeone](https://github.com/imgradeone)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
