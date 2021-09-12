@@ -3,12 +3,14 @@
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (wxy)
 
 谈谈 GNU/Linux 口水话
 ======
+
+![](https://i2.wp.com/itsfoss.com/wp-content/uploads/2021/02/gnu-linux-copypasta.png)
 
 作为一个 Linux 用户，你可能遇到过以这样开头的一大段文字：“我想插一句话。你所说的 Linux，实际上是指 GNU/Linux。”
 
