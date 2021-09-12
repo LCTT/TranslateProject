@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "anine09"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13777-1.html"
 
 使用 Tangram 浏览器在 Linux 中运行 Web 应用
 =======
