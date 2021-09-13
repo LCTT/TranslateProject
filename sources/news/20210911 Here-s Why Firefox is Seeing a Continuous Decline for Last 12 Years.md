@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/firefox-continuous-decline/"
 [#]: author: "Community https://news.itsfoss.com/author/team/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
