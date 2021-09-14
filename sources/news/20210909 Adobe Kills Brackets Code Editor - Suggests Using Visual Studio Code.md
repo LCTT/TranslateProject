@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/adobe-kills-brackets-editor/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
