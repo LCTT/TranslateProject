@@ -3,9 +3,9 @@
 [#]: author: "Community https://news.itsfoss.com/author/team/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13780-1.html"
 
 Firefox 在过去 12 年里损失了 5 亿用户及其 75% 份额的原因
 ======
