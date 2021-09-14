@@ -3,9 +3,9 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13782-1.html"
 
 Adobe 终止支持 Brackets，并建议使用 VS Code 替代
 ======
