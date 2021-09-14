@@ -3,22 +3,22 @@
 [#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
 在 Linux 上使用 lspci 命令查看硬件情况
 ======
-使用 lspci 命令可以显示 Linux 系统上的设备和驱动程序。
+lspci 命令用于显示 Linux 系统上的设备和驱动程序。
 ![computer screen ][1]
 
-当你在个人电脑或服务器上运行 Linux 时，有时可能需要识别该系统中的硬件。`lspci` 命令可以显示连接到 PCI 总线的所有设备，从而实现上述目的。该命令由 [pciutils][2] 包提供，可用于各种基于 Linux 和 BSD 的操作系统。
+当你在个人电脑或服务器上运行 Linux 时，有时需要识别该系统中的硬件。`lspci` 命令用于显示连接到 PCI 总线的所有设备，从而满足上述需求。该命令由 [pciutils][2] 包提供，可用于各种基于 Linux 和 BSD 的操作系统。
 
 ### 基础用法
 
-由于访问权限的存在，普通用户运行 `lspci` 时显示的信息可能会受限，因此可以使用 `sudo` 运行命令，系统会给出完整的信息图。
+由于访问权限，普通用户运行 `lspci` 时显示的信息可能会受限，因此可以使用 `sudo` 运行命令，系统会给出完整的信息图。
 
-单独运行 `lspci` 命令会列出 PCI 总线及其连接的设备，下图是在我的媒体中心 PC 上的演示样例。图中是一个基于 AMD Phenom CPU 的系统，所以它有一个 AMD 芯片组，以及 Atheros 无线控制器和 Nvidia 显卡。所有硬件设备都列出了详细信息，例如供应商、名称和型号等：
+直接运行 `lspci` 命令会列出 PCI 总线及其连接的设备，下图是在我的媒体中心 PC 上的演示样例。图中是一个基于 AMD Phenom CPU 的系统，所以它有一个 AMD 芯片组，以及 Atheros 无线适配器和 Nvidia 显卡。所有硬件设备都列出了详细信息，例如供应商、名称和型号等：
 
 ```
 $ sudo lspci
@@ -50,11 +50,11 @@ $ sudo lspci
 
 ### 详细输出
 
-添加 `-v` 选项会增加每个设备的详细程度或详细程度，你可以使用 `-vv` 或 `-vvv` 来获取更多的设备细节。在 `-v` 级别，`lspci` 会显示所有设备的各种子系统和内存地址、中断请求 (IRQ) 编号和一些其他功能信息。输出信息会非常长。在你的系统上试一试吧。
+添加 `-v` 选项会显示每个设备的详细信息，你可以使用 `-vv` 或 `-vvv` 来获取更多的设备细节。在 `-v` 级别，`lspci` 会显示所有设备的各种子系统和内存地址、中断请求 (IRQ) 编号和一些其他功能信息。输出信息会非常长。在你的系统上试一试吧。
 
 ### 使用 grep 过滤搜索
 
-有时你可能会想要缩小搜索范围。例如，RPM Fusion 网站有安装 Nvidia 图形驱动程序的说明，里面就首先使用了 `grep` 命令来定位显卡信息。下面是我在笔记本电脑上得到的界面：
+你可能会需要缩小搜索范围。例如，RPM Fusion 网站有安装 Nvidia 图形驱动程序的说明，里面就首先使用了 `grep` 命令来定位显卡信息。下面是我在笔记本电脑上得到的输出：
 
 ```
 $ sudo lspci | grep -e VGA
@@ -63,7 +63,7 @@ $ sudo lspci | grep -e 3D
 01:00.0 3D controller: NVIDIA Corporation GM108M [GeForce MX130] (rev a2)
 ```
 
-下面（LCTT 译注：原文为 “above”，应为作者笔误）的 `grep` 命令在我的媒体中心 PC 上显示了一个 VGA 设备，但没有显示 3D 设备。
+下面（LCTT 译注：原文为 “above”，应为作者笔误）的 `grep` 命令在我的媒体中心 PC 上定位了一个 VGA 设备，但没有显示 3D 设备。
 
 ```
 $ sudo lspci | grep -e VGA
@@ -74,16 +74,16 @@ $
 
 ### 按供应商 ID 搜索
 
-还有另一种不需要 `grep` 的方法可以使用。假设我想确认一下此计算机是否有其他的 Nvidia 设备，在此之前我们还需要一些额外信息，使用 `-nn` 选项显示的供应商和设备 ID 号。在我的媒体中心 PC 上，此选项会给出我的 VGA 卡、供应商 ID 和设备 ID：
+还有另一种无需 `grep` 的方法可以使用。假设我想确认一下此计算机是否有其他的 Nvidia 设备，在此之前我们还需要一些额外信息，使用 `-nn` 选项显示的供应商和设备 ID 号。在我的媒体中心 PC 上，此选项会给出我的 VGA 卡、供应商 ID 和设备 ID：
 
 ```
 $ sudo lspci -nn | grep -e VGA
 01:00.0 VGA compatible controller [0300]: NVIDIA Corporation GK107 [GeForce GTX 650] [10de:0fc6] (rev a1)
 ```
 
-设备名称后的括号内有用冒号分隔的数字，即供应商和设备 ID。输出表明 Nvidia Corporation 制造的设备的供应商 ID 为 **10de**。
+设备名称后的方括号内有用冒号分隔的数字，即供应商和设备 ID。输出表明 Nvidia Corporation 制造的设备的供应商 ID 为 **10de**。
 
-`-d` 选项会给出来自指定供应商、设备或类 ID 的所有设备。以下是我系统中的所有 Nvidia 设备（保留 `-nn` 以解析供应商 ID）：
+`-d` 选项用于指定供应商、设备或类 ID 的所有设备。以下是我系统中的所有 Nvidia 设备（保留 `-nn` 以解析供应商 ID）：
 
 ```
 $ sudo lspci -nn -d 10de:
@@ -91,11 +91,11 @@ $ sudo lspci -nn -d 10de:
 01:00.1 Audio device [0403]: NVIDIA Corporation GK107 HDMI Audio Controller [10de:0e1b] (rev a1)
 ```
 
-从输出中可以看到，除了显卡之外，我还有一个 Nvidia 音频设备。虽然它们实际上都是同一张 **Nvidia GeForce GTX 650** 卡的一部分，但这仍然是一个很好的示例。
+从输出中可以看到，除了显卡之外，我还有一个 Nvidia 音频设备。实际上它们都属于同一张 **Nvidia GeForce GTX 650** 卡，但这仍然是一个很好的示例。
 
 ### 内核模块
 
-结合 PCI 硬件设备，`lspci` 可以使用 `-k` 选项显示加载了哪些内核驱动程序模块。我将此选项添加到我的 `lspci` 命令来查看有关我的 Nvidia 设备的信息。
+结合 PCI 硬件设备，`lspci` 可以使用 `-k` 选项显示内核加载了哪些驱动程序模块。我将此选项添加到我的 `lspci` 命令来查看有关我的 Nvidia 设备的信息。
 
 ```
 $ sudo lspci -nn -k -d 10de:
@@ -113,7 +113,7 @@ $ sudo lspci -nn -k -d 10de:
 
 ### 同步最新状态
 
-新设备和供应商总是在持续不断进入市场。如果看到显示为 _unknown_ 的设备，说明你的 PCI 设备 ID 数据库可能已过时。有两种方法可以检查更新。`-Q` 选项会使用 DNS 查询中央数据库，当然，这需要网络连接。
+新设备和供应商总是在不断迭代。如果看到显示为 _unknown_ 的设备，说明你的 PCI 设备 ID 数据库可能已过时。有两种方法可以检查更新。`-Q` 选项会使用 DNS 查询中央数据库，当然，这需要联网。
 
 ```
 `$ sudo lspci -Q`
@@ -128,7 +128,7 @@ Downloaded daily snapshot dated 2021-08-22 03:15:01
 
 ### 了解有关你的硬件的更多信息
 
-当然，`lspci` 只是 Linux 中可用于查询系统硬件和软件的诸多命令之一。读者可以在阅读我关于 USB 设备的文章，了解有关 Linux 硬件的更多信息：[使用此 USB ID 存储库识别 Linux 上的更多设备][3]。
+当然，`lspci` 只是 Linux 中用于查询系统硬件和软件的诸多命令之一。读者可以在阅读关于 USB 设备的文章，了解有关 Linux 硬件的更多信息：[使用此 USB ID 存储库识别 Linux 上的更多设备][3]。
 
 --------------------------------------------------------------------------------
 
@@ -137,7 +137,7 @@ via: https://opensource.com/article/21/9/lspci-linux-hardware
 作者：[Alan Formy-Duval][a]
 选题：[lujun9972][b]
 译者：[unigeorge](https://github.com/unigeorge)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
