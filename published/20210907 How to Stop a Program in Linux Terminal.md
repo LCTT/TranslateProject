@@ -24,7 +24,7 @@
 
 以 `ping` 命令为例。如果你不中止它，它将持续显示结果。
 
-按住 `Ctrl` 键并同时按下 `C` 键。它向正在运行的程序发送 [SIGKILL 信号][1]以强制退出该命令。
+按住 `Ctrl` 键并同时按下 `C` 键。它向正在运行的程序发送 [SIGINT 信号][1]以强制退出该命令。
 
 ![Stopping a program in the Linux terminal][2]
 
