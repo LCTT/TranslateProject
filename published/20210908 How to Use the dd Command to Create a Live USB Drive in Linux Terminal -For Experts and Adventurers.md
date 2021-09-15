@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "perfiffer"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13787-1.html"
 
 怎样在 Linux 终端下使用 dd 命令创建一个临场 USB 驱动器
 ======
