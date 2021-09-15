@@ -3,9 +3,9 @@
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13786-1.html"
 
 浅谈慢速的二次算法与快速的 hashmap 
 ======
