@@ -3,16 +3,18 @@
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13786-1.html"
 
 浅谈慢速的二次算法与快速的 hashmap 
 ======
 
-大家好！昨天我与一位正在准备编程面试并努力学习算法基础知识的朋友进行了一些交流。
+![](https://img.linux.net.cn/data/attachment/album/202109/15/094524s7dlcq74ksqazyyc.jpg)
 
-我们聊到了二次时间与线性时间算法的话题，我认为在这里写这篇文章会很有趣，因为避免二次时间算法不仅在面试中很重要——有时在现实生活中了解一下也是很好的！后面我会快速解释一下什么是“二次时间算法” :) 
+大家好！昨天我与一位朋友聊天，他正在准备编程面试，并试图学习一些算法基础知识。
+
+我们聊到了<ruby>二次时间<rt>quadratic-time</rt></ruby>与<ruby>线性时间<rt>linear-time</rt></ruby>算法的话题，我认为在这里写这篇文章会很有趣，因为避免二次时间算法不仅在面试中很重要——有时在现实生活中了解一下也是很好的！后面我会快速解释一下什么是“二次时间算法” :) 
 
 以下是我们将要讨论的 3 件事：
 
@@ -26,11 +28,11 @@
 
 我们来讨论一个简单的面试式问题：获取 2 个数字列表的交集。 例如，`intersect([1,2,3], [2,4,5])` 应该返回 `[2]`。
 
-这个问题也是有些现实应用的——你可以假设有一个真实程序，其需求正是取两个 ID 列表交集。
+这个问题也是有些现实应用的——你可以假设有一个真实程序，其需求正是取两个 ID 列表的交集。
 
 ### “显而易见”的解决方案：
 
-我们来写一些获取 2 个列表交集的代码。下面是一个实现此需求的程序，命名为“quadratic.py”。
+我们来写一些获取 2 个列表交集的代码。下面是一个实现此需求的程序，命名为 `quadratic.py`。
 
 ```
 import sys
@@ -56,7 +58,7 @@ def run(n):
 run(int(sys.argv[1]))
 ```
 
-程序名为 `quadratic.py`（LCTT 译注：“quadratic”意为“二次的”）的原因是：如果 `list1` 和 `list2` 的大小为 `n`，那么内层循环（`if x == y`）会运行 `n^2` 次。在数学中，像 `x^2` 这样的函数就称为“二次”函数。
+程序名为 `quadratic.py`（LCTT 译注：“quadratic”意为“二次方的”）的原因是：如果 `list1` 和 `list2` 的大小为 `n`，那么内层循环（`if x == y`）会运行 `n^2` 次。在数学中，像 `x^2` 这样的函数就称为“二次”函数。
 
 ### `quadratic.py` 有多慢？
 
@@ -205,7 +207,7 @@ def intersection(list1, list2):
 
 ### hashmap 查找是即时的（“常数级时间”）
 
-我们看一下快速版程序中的 if 语句：
+我们看一下快速版程序中的 `if` 语句：
 
 ```
 if y in set1:
@@ -214,7 +216,7 @@ if y in set1:
 
 你可能会认为如果 `set1` 包含 1000 万个元素，那么这个查找——`if y in set1` 会比 `set1` 包含 1000 个元素时慢。但事实并非如此！无论 `set1` 有多大，所需时间基本是相同的（超级快）。
 
-这是因为 `set1` 是一个 hash set 集合，它是一种只有键没有值的 hashmap 或 hashtable 结构。
+这是因为 `set1` 是一个哈希集合，它是一种只有键没有值的 hashmap（hashtable）结构。
 
 我不准备在本文中解释 _为什么_ hashmap 查找是即时的，但是神奇的 Vaidehi Joshi 的 [basecs][1] 系列中有关于 [hash table][2] 和 [hash 函数][3] 的解释，其中讨论了 hashmap 即时查找的原因。
 
@@ -239,7 +241,7 @@ via: https://jvns.ca/blog/2021/09/10/hashmaps-make-things-fast/
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
 译者：[unigeorge](https://github.com/unigeorge)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
