@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "guevaraya"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13789-1.html"
 
 如何轻松安装 Debian Linux 系统
 ======
