@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/how-to-check-for-update-info-and-changelogs-with-rpm-ostree-db/"
 [#]: author: "Mateus Rodrigues Costa https://fedoramagazine.org/author/mateusrodcosta/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
