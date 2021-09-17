@@ -3,71 +3,56 @@
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13795-1.html"
 
-从命令行调试网页错误
+从命令行使用 wget 调试网页错误
 ======
-调试网络服务器的一种方法是使用 wget 命令行程序。
-![Digital creative of a browser on the internet][1]
 
-有时在管理一个网站时，事情会被搞得一团糟。你可能会删除一些陈旧的内容，用重定向到其他页面来代替。后来，在做了其他改动后，你发现一些网页变得完全无法访问了。你可能会在浏览器中看到一个错误：“该页面没有正确重定向”，并建议你检查你的 cookies。
+> 调试 Web 服务器的一种方法是使用 wget 命令行程序。
+
+![](https://img.linux.net.cn/data/attachment/album/202109/17/225018elcip4pii4qcknir.jpg)
+
+有时在管理一个网站时，事情会被搞得一团糟。你可能会删除一些陈旧的内容，用重定向到其他页面来代替。后来，在做了其他改动后，你发现一些网页变得完全无法访问了。你可能会在浏览器中看到一个错误：“该页面没有正确重定向”，并建议你检查你的 cookie。
 
 ![Redirect loop example in Firefox][2]
 
-Screenshot by Jim Hall，[CC-BY SA 4.0][3]
-
 调试这种情况的一个方法是使用 `wget` 命令行程序，使用 `-S` 选项来显示所有的服务器响应。当使用 `wget` 进行调试时，我也喜欢使用 `-O` 选项将输出保存到一些临时文件中，以备以后需要查看其内容。
 
-
 ```
-$ wget -O /tmp/test.html -S <http://10.0.0.11/announce/>
-\--2021-08-24 17:09:49-- <http://10.0.0.11/announce/>
+$ wget -O /tmp/test.html -S http://10.0.0.11/announce/
+--2021-08-24 17:09:49--  http://10.0.0.11/announce/
 Connecting to 10.0.0.11:80... connected.
-HTTP request sent, awaiting response...
+
+HTTP request sent, awaiting response... 
 
 HTTP/1.1 302 Found
-
 Date: Tue, 24 Aug 2021 22:09:49 GMT
-
 Server: Apache/2.4.48 (Fedora)
-
 X-Powered-By: PHP/7.4.21
-
-Location: <http://10.0.0.11/assets/>
-
+Location: http://10.0.0.11/assets/
 Content-Length: 0
-
 Keep-Alive: timeout=5, max=100
-
 Connection: Keep-Alive
-
 Content-Type: text/html; charset=UTF-8
-Location: <http://10.0.0.11/assets/> [following]
-\--2021-08-24 17:09:49-- <http://10.0.0.11/assets/>
+Location: http://10.0.0.11/assets/ [following]
+--2021-08-24 17:09:49--  http://10.0.0.11/assets/
 Reusing existing connection to 10.0.0.11:80.
-HTTP request sent, awaiting response...
 
+HTTP request sent, awaiting response... 
+ 
 HTTP/1.1 302 Found
-
 Date: Tue, 24 Aug 2021 22:09:49 GMT
-
 Server: Apache/2.4.48 (Fedora)
-
 X-Powered-By: PHP/7.4.21
-
-Location: <http://10.0.0.11/announce/>
-
+Location: http://10.0.0.11/announce/
 Content-Length: 0
-
 Keep-Alive: timeout=5, max=99
-
 Connection: Keep-Alive
-
 Content-Type: text/html; charset=UTF-8
-Location: <http://10.0.0.11/announce/> [following]
-\--2021-08-24 17:09:49-- <http://10.0.0.11/announce/>
+Location: http://10.0.0.11/announce/ [following]
+--2021-08-24 17:09:49--  http://10.0.0.11/announce/
 Reusing existing connection to 10.0.0.11:80.
 .
 .
@@ -84,7 +69,7 @@ via: https://opensource.com/article/21/9/wget-debug-web-server
 作者：[Jim Hall][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
