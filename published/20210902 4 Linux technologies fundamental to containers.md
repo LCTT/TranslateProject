@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "turbokernel"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13792-1.html"
 
 容器的四大基础技术
 ======
 
 > 命名空间、控制组、seccomp 和 SELinux 构成了在系统上构建和运行一个容器进程的 Linux 技术基础。
 
-![企鹅驾驶一辆黄色背景的汽车][1]
+![](https://img.linux.net.cn/data/attachment/album/202109/17/085439ye0iq5ynzyhpusy5.jpg)
 
 在以前的文章中，我介绍过 [容器镜像][2] 及其 [运行时][3]。在本文中，我研究了容器是如何在一些特殊的 Linux 技术基础上实现的，这其中包括命名空间和控制组。
 
@@ -48,7 +48,7 @@
 ```
 #### 用户
 
-用户（`user`）命名空间将用户和组隔离在一个容器内。这是通过分配给容器与宿主系统有不同的 UID 和 GID 范围来实现的。用户命名空间使软件能够以 root 用户的身份在容器内运行。如果入侵者攻击容器，然后逃逸到宿主机上，他们就只能以受限的非 root身份运行了。
+用户（`user`）命名空间将用户和组隔离在一个容器内。这是通过分配给容器与宿主系统有不同的 UID 和 GID 范围来实现的。用户命名空间使软件能够以 root 用户的身份在容器内运行。如果入侵者攻击容器，然后逃逸到宿主机上，他们就只能以受限的非 root 身份运行了。
 
 #### 挂载
 
@@ -184,8 +184,8 @@ via: https://opensource.com/article/21/8/container-linux-technology
 [a]: https://opensource.com/users/nivedv
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/car-penguin-drive-linux-yellow.png?itok=twWGlYAc (Penguin driving a car with a yellow background)
-[2]: https://opensource.com/article/21/8/container-fundamentals-2
-[3]: https://opensource.com/article/21/8/deep-dive-container-runtimes
+[2]: https://linux.cn/article-13766-1.html
+[3]: https://linux.cn/article-13772-1.html
 [4]: https://opensource.com/sites/default/files/1linuxtechs.png (layers of linux technologies)
 [5]: https://creativecommons.org/licenses/by-sa/4.0/
 [6]: https://opensource.com/article/19/10/namespaces-and-containers-linux
