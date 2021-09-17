@@ -60,19 +60,16 @@
 
 当然，除非你有特殊需求。
 
-In addition to the size of the board, the pricing, power requirement, and processing power are some of the key highlights of this board under **$20**.
 另外，对于同水平的单片机规模，定价，功率要求，运算能力而言，树莓派 Zero 最亮眼的地方就是它低于 **20 美元**的价格。
 
-So, if you are looking for the essential features under a budget, the Raspberry Zero series should work for you.
 因此，如果你正在寻找预算中满足基本功能的单片机，树莓派 Zero 就是专门为你打造的。
 
 ### Is Raspberry Pi Zero series affordable?
+
 ### 树莓派 Zero 系列价格怎么样？
 
-Raspberry Pi Zero costs **$5** and the Raspberry Pi Zero W would cost you around **$10**. ****Of course, depending on its availability and region, the cost will differ. If you want the Raspberry Pi Zero W with header pins, it should cost you around **$14**.
 树莓派 Zero 售价 **5 美元** ，Zero W 售价 **10 美元左右**，当然，在不同的地方，定价规则会不一样，如果你选择树莓派 Zero W 带 引脚的版本，售价大概是 **14 美元**左右。
 
-There are other devices that can be used as an [alternative to Raspberry Pi Zero][11] and they have similar price tag.
 还有[其他的设备可以代替树莓派 Zero][11]，它们价格也相差不大。
 
 --------------------------------------------------------------------------------
