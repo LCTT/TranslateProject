@@ -7,28 +7,28 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to check for update info and changelogs with rpm-ostree db
+如何用 rpm-ostree db 检查更新信息和更新日志
 ======
 
 ![][1]
 
-Photo by [Dan-Cristian Pădureț][2] on [Unsplash][3]
+照片由 [Dan-Cristian Pădureț][2] 发布在 [Unsplash][3]。
 
-This article will teach you how to check for updates, check the changed packages, and read the changelogs with _rpm-ostree db_ and its subcommands.
+这篇文章将教你如何使用 _rpm-ostree db_ 及其子命令检查更新、检查更改的软件包和阅读更新日志。
 
-The commands will be demoed on a Fedora Silverblue installation and should work on any OS that uses _rpm-ostree_.
+这些命令将在 Fedora Silverblue 上进行演示，并且应该在任何使用 _rpm-ostree_ 的操作系统上工作。
 
-### Introduction
+### 简介
 
-Let’s say you are interested in immutable systems. Using a base system that is read-only while you build your use cases on top of containers technology sounds very attractive and it persuades you to select a distro that uses _rpm-ostree_.
+假设你对不可更改的系统感兴趣。在基于容器技术构建用例时使用只读的基本系统听起来非常有吸引力，它会说服你选择使用 _rpm-ostree_ 的发行版。
 
-You now find yourself on [Fedora Silverblue][4] (or another similar distro) and you want to check for updates. But you hit a problem. While you can find the updated packages on Fedora Silverblue with GNOME Software, you can’t actually read their changelogs. You also can’t [use _dnf updateinfo_ to read them on the command line][5], since there’s no DNF on the host system.
+你现在发现自己在 [Fedora Silverblue][4]（或其他类似的发行版）上，你想检查更新。但你遇到了一个问题。虽然你可以通过 GNOME Software 找到 Fedora Silverblue 上的更新包，但你实际上无法阅读它们的更新日志。你也不能[使用 _dnf updateinfo_ 在命令行上读取它们][5]，因为主机系统上没有 DNF。
 
-So, what should you do? Well, _rpm-ostree_ has subcommands that can help in this situation.
+那么，你应该怎么做呢？嗯，_rpm-ostree_ 有一些子命令可以在这种情况下提供帮助。
 
-### Checking for updates
+### 检查更新
 
-The first step is to check for updates. Simply run _rpm-ostree upgrade –check_:
+第一步是检查更新。只需运行 _rpm-ostree upgrade -check_：
 
 ```
 $ rpm-ostree upgrade --check
@@ -41,9 +41,9 @@ AvailableUpdate:
            Diff: 4 upgraded
 ```
 
-Notice that while it doesn’t tell the updated packages in the output, it does show the Commit for the update as _d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4_. This will be useful later.
+请注意，虽然它没有在输出中告诉更新的软件包，但它显示了更新的 Commit 为 _d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4_。这在后面会很有用。
 
-Next thing you need to do is find the Commit for the current deployment you are running. Run _rpm-ostree status_ to get the BaseCommit of the current deployment:
+接下来你需要做的是找到你正在运行的当前部署的 Commit。运行 _rpm-ostree status_ 以获得当前部署的 BaseCommit：
 
 ```
 $ rpm-ostree status
@@ -58,9 +58,9 @@ Deployments:
 ...
 ```
 
-For this example BaseCommit is _e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e_.
+对于这个例子，BaseCommit 是 _e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e_。
 
-Now you can find the diff of the two commits with _rpm-ostree db diff [commit1] [commit2]_. In this command _commit1_ will be the BaseCommit from the current deployment and _commit2_ will be the Commit from the upgrade checking command.
+现在你可以用 _rpm-ostree db diff [commit1] [commit2]_ 找到这两个提交的差异。在这个命令中，_commit1_ 将是当前部署的 BaseCommit，_commit2_ 将是升级检查命令中的 Commit。
 
 ```
 $ rpm-ostree db diff e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4
@@ -70,7 +70,7 @@ Upgraded:
   soundtouch 2.1.1-6.fc34 -> 2.1.2-1.fc34
 ```
 
-The diff output shows that _soundtouch_ was updated and indicates the version numbers. View the changelogs by adding _–changelogs_ to the previous command:
+diff 输出显示 _soundtouch_ 被更新了，并指出了版本号。通过在前面的命令中加入 _-changelogs_ 来查看更新日志：
 
 ```
 $ rpm-ostree db diff e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4 --changelogs
@@ -86,13 +86,13 @@ Upgraded:
     - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 ```
 
-This output shows the commit notes as well as the version numbers.
+这个输出显示了提交说明以及版本号。
 
-### Conclusion
+### 总结
 
-Using _rpm-ostree db_ you are now able to have the functionality equivalent to _dnf check-update_ and _dnf updateinfo_.
+使用 _rpm-ostree db_，你现在可以拥有相当于 _dnf check-update_ 和 _dnf updateinfo_ 的功能。
 
-This will come in handy if you want to inspect detailed info about the updates you install.
+如果你想检查你所安装的更新的详细信息，这将非常有用。
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ via: https://fedoramagazine.org/how-to-check-for-update-info-and-changelogs-with
 
 作者：[Mateus Rodrigues Costa][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
