@@ -4,13 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
 [#]: reviewer: "turbokernel"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13793-1.html"
 
 在 Linux 上使用 lspci 命令查看硬件情况
 ======
-lspci 命令用于显示 Linux 系统上的设备和驱动程序。
-![computer screen ][1]
+
+> lspci 命令用于显示 Linux 系统上的设备和驱动程序。
+
+![](https://img.linux.net.cn/data/attachment/album/202109/17/091425l7c8au5c865x7q68.jpg)
 
 当你在个人电脑或服务器上运行 Linux 时，有时需要识别该系统中的硬件。`lspci` 命令用于显示连接到 PCI 总线的所有设备，从而满足上述需求。该命令由 [pciutils][2] 包提供，可用于各种基于 Linux 和 BSD 的操作系统。
 
@@ -50,7 +52,7 @@ $ sudo lspci
 
 ### 详细输出
 
-添加 `-v` 选项会显示每个设备的详细信息，你可以使用 `-vv` 或 `-vvv` 来获取更多的设备细节。在 `-v` 级别，`lspci` 会显示所有设备的各种子系统和内存地址、中断请求 (IRQ) 编号和一些其他功能信息。输出信息会非常长。在你的系统上试一试吧。
+添加 `-v` 选项会显示每个设备的详细信息，你可以使用 `-vv` 或 `-vvv` 来获取更多的设备细节。在 `-v` 级别，`lspci` 会显示所有设备的各种子系统和内存地址、中断请求（IRQ）编号和一些其他功能信息。输出信息会非常长。在你的系统上试一试吧。
 
 ### 使用 grep 过滤搜索
 
@@ -81,7 +83,7 @@ $ sudo lspci -nn | grep -e VGA
 01:00.0 VGA compatible controller [0300]: NVIDIA Corporation GK107 [GeForce GTX 650] [10de:0fc6] (rev a1)
 ```
 
-设备名称后的方括号内有用冒号分隔的数字，即供应商和设备 ID。输出表明 Nvidia Corporation 制造的设备的供应商 ID 为 **10de**。
+设备名称后的方括号内有用冒号分隔的数字，即供应商和设备 ID。输出表明 Nvidia Corporation 制造的设备的供应商 ID 为 `10de`。
 
 `-d` 选项用于指定供应商、设备或类 ID 的所有设备。以下是我系统中的所有 Nvidia 设备（保留 `-nn` 以解析供应商 ID）：
 
@@ -109,14 +111,14 @@ $ sudo lspci -nn -k -d 10de:
  Kernel modules: snd_hda_intel
 ```
 
-可以看到额外显示了两行：<ruby>_正在使用的内核驱动程序_<rt><rp>(</rp>Kernel driver in use<rp>)</rp></rt></ruby> 和 <ruby>_内核模块_<rt><rp>(</rp>Kernel modules<rp>)</rp></rt></ruby>，其中后者列出了可用于支持该设备的模块。
+可以看到额外显示了两行：<ruby>正在使用的内核驱动程序<rt>Kernel driver in use</rt></ruby> 和 <ruby>内核模块<rt>Kernel modules</rt></ruby>，其中后者列出了可用于支持该设备的模块。
 
 ### 同步最新状态
 
-新设备和供应商总是在不断迭代。如果看到显示为 _unknown_ 的设备，说明你的 PCI 设备 ID 数据库可能已过时。有两种方法可以检查更新。`-Q` 选项会使用 DNS 查询中央数据库，当然，这需要联网。
+新设备和供应商总是在不断迭代。如果看到显示为 `unknown` 的设备，说明你的 PCI 设备 ID 数据库可能已过时。有两种方法可以检查更新。`-Q` 选项会使用 DNS 查询中央数据库，当然，这需要联网。
 
 ```
-`$ sudo lspci -Q`
+$ sudo lspci -Q
 ```
 
 你还可以通过运行命令 `update-pciids` 来更新本地 PCI ID 数据库。
