@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "anine09"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13799-1.html"
 
 树莓派 Zero 与 Zero W 对比
 ======
