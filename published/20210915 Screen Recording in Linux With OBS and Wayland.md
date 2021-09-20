@@ -3,22 +3,22 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13802-1.html"
 
 在 Linux 中使用 OBS 和 Wayland 进行屏幕录制
 ======
 
-有[大量可用于 Linux 的屏幕录像机][1]。但是当涉及到支持 [Wayland][2] 时，几乎所有的都不能用。
+有 [大量可用于 Linux 的屏幕录像机][1]。但是当涉及到支持 [Wayland][2] 时，几乎所有的都不能用。
 
 这是个问题，因为许多新发布的版本都再次默认切换到 Wayland 显示管理器。而如果像屏幕录像机这样基本的东西不能工作，就会给人留下不好的体验。
 
-[GNOME 的内置屏幕录像机][3]可以工作，但它是隐藏的，没有 GUI，也没有办法配置和控制记录内容。还有一个叫 [Kooha][4] 的工具，但它一直在屏幕上显示一个计时器。
+[GNOME 的内置屏幕录像机][3] 可以工作，但它是隐藏的，没有 GUI，也没有办法配置和控制记录内容。此外，还有一个叫 [Kooha][4] 的工具，但它一直在屏幕上显示一个计时器。
 
-只是为了录制屏幕而[在 Xorg 和 Wayland 之间切换][5]，这不是很方便。
+只是为了录制屏幕而 [在 Xorg 和 Wayland 之间切换][5]，这不是很方便。
 
-在这一切中，我很高兴地得知，由于 Pipewire 的帮助，在 OBS Studio v27 中支持了 Wayland。但即使是这样，也不是很简单，因此我将向你展示使用 [OBS Studio][6] 在 Wayland 上录制屏幕的步骤。
+这种情况下，我很高兴地得知，由于 Pipewire 的帮助，在 OBS Studio v27 中支持了 Wayland。但即使是这样，也不是很简单，因此我将向你展示使用 [OBS Studio][6] 在 Wayland 上录制屏幕的步骤。
 
 ### 使用 OBS 在 Wayland 上进行屏幕录制
 
@@ -30,7 +30,7 @@
 
 你应该先安装 OBS Studio v27。它已经包含在 Ubuntu 21.10 中，我会在本教程中使用它。
 
-要在 Ubuntu 18.04、20.04、Linux Mint 20 等系统上安装 OBS Studio 27，请使用[官方的 OBS Studio PPA][8]。
+要在 Ubuntu 18.04、20.04、Linux Mint 20 等系统上安装 OBS Studio 27，请使用 [官方的 OBS Studio PPA][8]。
 
 打开终端，逐一使用以下命令：
 
@@ -56,7 +56,7 @@ sudo apt install obs-studio
 
 ![Do you see PipeWire option in the screen sources?][10]
 
-**如果答案是否定的，请退出 OBS Studio**。这很正常。至少在 Ubuntu 下，OBS Studio 不会自动切换到使用 Wayland。对此有一个修复方法。
+**如果没看到，请退出 OBS Studio**。这很正常。至少在 Ubuntu 下，OBS Studio 不会自动切换到使用 Wayland。对此有一个修复方法。
 
 打开一个终端，使用以下命令：
 
@@ -74,7 +74,7 @@ obs
 
 ![][10]
 
-你这次用 QT_QPA_PLATFORM 变量明确要求 OBS Studio 使用 Wayland。
+你这次用 `QT_QPA_PLATFORM` 变量明确要求 OBS Studio 使用 Wayland。
 
 选择 PipeWire 作为源，然后它要求你选择一个显示屏幕。选择它并点击分享按钮。
 
@@ -88,7 +88,7 @@ obs
 
 这很好。你刚刚验证了你可以在 Wayland 上录制屏幕。但每次设置环境变量并从终端启动 OBS 并不方便。
 
-你可以做的是**把这个变量导出到你的 ~/.bash_profile（对你而言）或 /etc/profile（对系统中的所有用户而言）。**
+你可以做的是**把这个变量导出到你的 `~/.bash_profile`（对你而言）或 `/etc/profile`（对系统中的所有用户而言）。**
 
 ```
 export QT_QPA_PLATFORM=wayland
@@ -105,7 +105,7 @@ via: https://itsfoss.com/screen-record-obs-wayland/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
