@@ -3,32 +3,30 @@
 [#]: author: "Mateus Rodrigues Costa https://fedoramagazine.org/author/mateusrodcosta/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13803-1.html"
 
-如何用 rpm-ostree db 检查更新信息和更新日志
+如何用 rpm-ostree 数据库检查更新信息和更新日志
 ======
 
 ![][1]
 
-照片由 [Dan-Cristian Pădureț][2] 发布在 [Unsplash][3]。
+这篇文章将教你如何使用 `rpm-ostree` 数据库及其子命令检查更新、检查更改的软件包和阅读更新日志。
 
-这篇文章将教你如何使用 _rpm-ostree db_ 及其子命令检查更新、检查更改的软件包和阅读更新日志。
-
-这些命令将在 Fedora Silverblue 上进行演示，并且应该在任何使用 _rpm-ostree_ 的操作系统上工作。
+这些命令将在 Fedora Silverblue 上进行演示，并且应该在任何使用 `rpm-ostree` 的操作系统上工作。
 
 ### 简介
 
-假设你对不可更改的系统感兴趣。在基于容器技术构建用例时使用只读的基本系统听起来非常有吸引力，它会说服你选择使用 _rpm-ostree_ 的发行版。
+假设你对不可更改的系统感兴趣。在基于容器技术构建用例时使用只读的基本系统听起来非常有吸引力，它会说服你选择使用 `rpm-ostree` 的发行版。
 
-你现在发现自己在 [Fedora Silverblue][4]（或其他类似的发行版）上，你想检查更新。但你遇到了一个问题。虽然你可以通过 GNOME Software 找到 Fedora Silverblue 上的更新包，但你实际上无法阅读它们的更新日志。你也不能[使用 _dnf updateinfo_ 在命令行上读取它们][5]，因为主机系统上没有 DNF。
+你现在发现自己在 [Fedora Silverblue][4]（或其他类似的发行版）上，你想检查更新。但你遇到了一个问题。虽然你可以通过 GNOME Software 找到 Fedora Silverblue 上的更新包，但你实际上无法阅读它们的更新日志。你也不能 [使用 dnf updateinfo 在命令行上读取它们][5]，因为主机系统上没有 DNF。
 
-那么，你应该怎么做呢？嗯，_rpm-ostree_ 有一些子命令可以在这种情况下提供帮助。
+那么，你应该怎么做呢？嗯，`rpm-ostree` 有一些子命令可以在这种情况下提供帮助。
 
 ### 检查更新
 
-第一步是检查更新。只需运行 _rpm-ostree upgrade -check_：
+第一步是检查更新。只需运行：
 
 ```
 $ rpm-ostree upgrade --check
@@ -41,9 +39,9 @@ AvailableUpdate:
            Diff: 4 upgraded
 ```
 
-请注意，虽然它没有在输出中告诉更新的软件包，但它显示了更新的 Commit 为 _d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4_。这在后面会很有用。
+请注意，虽然它没有在输出中告诉更新的软件包，但它显示了更新的提交为 `d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4`。这在后面会很有用。
 
-接下来你需要做的是找到你正在运行的当前部署的 Commit。运行 _rpm-ostree status_ 以获得当前部署的 BaseCommit：
+接下来你需要做的是找到你正在运行的当前部署的提交。运行 `rpm-ostree status` 以获得当前部署的<ruby>基提交<rt>BaseCommit</rt></ruby>：
 
 ```
 $ rpm-ostree status
@@ -58,9 +56,9 @@ Deployments:
 ...
 ```
 
-对于这个例子，BaseCommit 是 _e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e_。
+对于这个例子，基提交是`e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e`。
 
-现在你可以用 _rpm-ostree db diff [commit1] [commit2]_ 找到这两个提交的差异。在这个命令中，_commit1_ 将是当前部署的 BaseCommit，_commit2_ 将是升级检查命令中的 Commit。
+现在你可以用 `rpm-ostree db diff [commit1] [commit2]` 找到这两个提交的差异。在这个命令中，`[commit1]` 将是当前部署的基提交，`[commit2]` 将是升级检查命令中的提交。
 
 ```
 $ rpm-ostree db diff e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4
@@ -70,7 +68,7 @@ Upgraded:
   soundtouch 2.1.1-6.fc34 -> 2.1.2-1.fc34
 ```
 
-diff 输出显示 _soundtouch_ 被更新了，并指出了版本号。通过在前面的命令中加入 _-changelogs_ 来查看更新日志：
+`diff` 输出显示 `soundtouch` 被更新了，并指出了版本号。通过在前面的命令中加入 `-changelogs` 来查看更新日志：
 
 ```
 $ rpm-ostree db diff e279286dcd8b5e231cff15c4130a4b1f5a03b6735327b213ee474332b311dd1e d8bab818f5abcfb58d2c038614965bf26426d55667e52018fcd295b9bfbc88b4 --changelogs
@@ -90,7 +88,7 @@ Upgraded:
 
 ### 总结
 
-使用 _rpm-ostree db_，你现在可以拥有相当于 _dnf check-update_ 和 _dnf updateinfo_ 的功能。
+使用 `rpm-ostree db`，你现在可以拥有相当于 `dnf check-update` 和 `dnf updateinfo` 的功能。
 
 如果你想检查你所安装的更新的详细信息，这将非常有用。
 
@@ -101,7 +99,7 @@ via: https://fedoramagazine.org/how-to-check-for-update-info-and-changelogs-with
 作者：[Mateus Rodrigues Costa][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
