@@ -3,7 +3,7 @@
 [#]: author: "Ayush Sharma https://opensource.com/users/ayushsharma"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 
