@@ -4,10 +4,10 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13808-1.html"
 
-满足日常需求的应用（四）：视频编辑器
+满足日常需求的应用（五）：视频编辑器
 ======
 
 ![][1]
