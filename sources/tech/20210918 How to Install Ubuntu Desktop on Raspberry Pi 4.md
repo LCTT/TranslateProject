@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-ubuntu-desktop-raspberry-pi/"
 [#]: author: "Avimanyu Bandyopadhyay https://itsfoss.com/author/avimanyu/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
