@@ -3,7 +3,7 @@
 [#]: author: "Avimanyu Bandyopadhyay https://itsfoss.com/author/avimanyu/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
@@ -187,7 +187,7 @@ via: https://itsfoss.com/install-ubuntu-desktop-raspberry-pi/
 作者：[Avimanyu Bandyopadhyay][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
