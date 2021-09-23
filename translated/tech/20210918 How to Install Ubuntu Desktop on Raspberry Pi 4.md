@@ -12,7 +12,7 @@
 
 > 本教程将详细告诉你在树莓派 4 设备上如何安装 Ubuntu 桌面。
 
-革命性的<ruby>树莓派<rt>Raspberry Pi</rt></ruby>是最受欢迎的单板计算机。它有自己的基于 Debian 的操作系统，叫做 <ruby>[树莓派操作系统][1]<rt>Raspberry Pi OS</rt></ruby>（原名 Raspbian）。
+革命性的<ruby>树莓派<rt>Raspberry Pi</rt></ruby>是最受欢迎的单板计算机。它拥有基于 Debian 的操作系统，叫做 <ruby>[树莓派操作系统][1]<rt>Raspberry Pi OS</rt></ruby>（原名 Raspbian）。
 
 还有其他几个 [可用于树莓派的操作系统][2]，但几乎所有的都是轻量级的，适合于树莓派设备的小尺寸和低端硬件。
 
