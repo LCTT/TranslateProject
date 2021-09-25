@@ -80,7 +80,7 @@ sudo snap install rpi-imager
 
 将 Micro SD 卡插入读卡器中，等待它挂载。选择“<ruby>存储设备<rt>Storage</rt></ruby>”下的 “<ruby>选择存储设备<rt>CHOOSE STORAGE</rt></ruby>”：
 
-![镜像工具：选择存储设备（SD 卡）][16] 。
+![镜像工具：选择存储设备（SD 卡）][16]
 
 你应该可以根据存储空间大小，识别你的 Micro SD 卡。这里，我使用的是 32GB 的卡：
 
