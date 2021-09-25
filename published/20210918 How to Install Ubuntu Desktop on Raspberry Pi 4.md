@@ -4,13 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "turbokernel"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13817-1.html"
 
 如何在树莓派 4 上安装 Ubuntu 桌面系统
 ======
 
 > 本教程将详细告诉你在树莓派 4 设备上如何安装 Ubuntu 桌面。
+
+![](https://img.linux.net.cn/data/attachment/album/202109/25/084015z4cfiiy8e1ezmmz0.jpg)
 
 革命性的<ruby>树莓派<rt>Raspberry Pi</rt></ruby>是最受欢迎的单板计算机。它拥有基于 Debian 的操作系统，叫做 <ruby>[树莓派操作系统][1]<rt>Raspberry Pi OS</rt></ruby>（原名 Raspbian）。
 
@@ -38,7 +40,7 @@
 
 最好能够提前 [详细阅读树莓派的要求][8] 。
 
-现在，不再拖延了，让我快速带领你完成 SD 卡的镜像准备。
+现在，闲话少叙，让我快速带领你完成 SD 卡的镜像准备。
 
 ### 为树莓派准备 Ubuntu 桌面镜像
 
@@ -80,7 +82,7 @@ sudo snap install rpi-imager
 
 ![镜像工具：选择存储设备（SD 卡）][16] 。
 
-你应该根据存储空间大小，识别你的 Micro SD 卡。这里，我使用的是 32GB 的卡：
+你应该可以根据存储空间大小，识别你的 Micro SD 卡。这里，我使用的是 32GB 的卡：
 
 ![镜像工具：选择 SD 卡][17]
 
@@ -92,11 +94,11 @@ sudo snap install rpi-imager
 
 ![镜像工具：镜像写入确认][19]
 
-由于这是一个 [sudo][20] 的权限，你必须输入密码。如果你从终端运行 `sudo rpi-imager`，就不会出现这种情况：
+由于这需要 [sudo][20] 的权限，你必须输入密码。如果你从终端运行 `sudo rpi-imager`，就不会出现这种情况：
 
 ![镜像工具：镜像写入授权需要密码][21]
 
-如果你的 SD 卡有点旧，这将需要一些时间。但是，如果它是一个新的高速的 SD 卡，就无需很长时间：
+如果你的 SD 卡有点旧，这将需要一些时间。如果它是一个新的高速 SD 卡，就无需很长时间：
 
 ![镜像工具：写入镜像][22]
 
@@ -110,9 +112,9 @@ sudo snap install rpi-imager
 
 现在，从你的系统中安全移除 SD 卡。
 
-###在树莓派上使用装有 Ubuntu 的 MicroSD 卡
+### 在树莓派上使用装有 Ubuntu 的 MicroSD 卡
 
-战斗的一半已经胜利了。与常规的 Ubuntu 安装不同，无需创建一个临时安装环境。Ubuntu 已经安装在 SD 卡上了，而且几乎可以直接使用了。让我们来看看这里还剩下什么。
+已经成功了一半了。与常规的 Ubuntu 安装不同，无需创建一个临场安装环境。Ubuntu 已经安装在 SD 卡上了，而且几乎可以直接使用了。让我们来看看这里还剩下什么。
 
 #### 第 1 步：将 SD 卡插入树莓派中
 
