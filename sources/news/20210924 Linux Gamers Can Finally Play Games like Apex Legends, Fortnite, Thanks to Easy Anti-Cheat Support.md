@@ -3,64 +3,62 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 
-Linux Gamers Can Finally Play Games like Apex Legends, Fortnite, Thanks to Easy Anti-Cheat Support
+Linux 玩家终于可以玩《Apex Legends》、《Fortnite》等游戏了
 ======
 
-Linux gamers, this is big news!
+> 如果你是一个狂热的多人游戏玩家，你将能够玩到《Apex Legends》和《Fortnite》这样的热门游戏。但是，你可能需要等待一段时间。
 
-Epic Games adds complete Linux support for its Easy-Anti Cheat service, along with official [SteamPlay][1] (or Proton) and Wine compatibility.
+![](https://i1.wp.com/news.itsfoss.com/wp-content/uploads/2021/09/easy-anti-cheat-linux.png?w=1200&ssl=1)
 
-Even though we expected this to happen sometime in the future, the introduction of Steam Deck changed the scene for [gaming on Linux][2].
+Linux 玩家们，这可是个大新闻啊！
 
-If you aren’t aware, Steam Deck is powered by Linux, which is why Epic Games was interested in expanding support to the Linux platform.
+Epic Games 为其“简易反作弊”服务增加了完整的 Linux 支持，官方提供了兼容 [SteamPlay][1]（或 Proton）和 Wine 兼容性。
 
-So, safe to say, if it wasn’t for Valve’s effort with Steam Deck, the chances of getting Easy Anti-Cheat support on Linux were not good.
+尽管我们预计这将在未来的某个时候发生，但 Steam Deck 的引入改变了 [在 Linux 上玩游戏][2] 的场景。
 
-### Multiplayer Gamers Can Consider Switching to Linux
+你可能知道，Steam Deck 是由 Linux 驱动的，这就是为什么 Epic Games 有兴趣扩大对 Linux 平台的支持。
 
-With [Easy Anti-Cheat][3] support, many popular multiplayer titles like Apex Legends, Fortnite, Tom Clancy’s Division 2, Rust, and many other games should work flawlessly on Linux.
+因此，可以说，如果不是 Valve 在 Steam Deck 上的努力，在 Linux 上获得“简易反作弊”支持的机会并不乐观。
 
-As per the announcement by Epic Games:
+### 多人游戏玩家可以考虑转到 Linux 上了
 
-> Starting with the latest SDK release, developers can activate anti-cheat support for Linux via Wine or Proton with just a few clicks in the Epic Online Services Developer Portal.
+有了 [简易反作弊][3] 的支持，许多流行的多人游戏，如《Apex Legends》、《Fortnite》、《Tom Clancy's Division 2》、《Rust》 和其他许多游戏应该可以在 Linux 上完美地运行了。
 
-So, it may take a while for developers to activate the anti-cheat support for various games. But, it should be a green signal for most of the games with Easy Anti-Cheat.
+根据 Epic Games 的公告：
 
-One less reason to [dual-boot Windows with Linux][4].
+> 从最新的 SDK 版本开始，开发者只需在 Epic 在线服务开发者门户点击几下，就可以通过 Wine 或 Proton 激活对 Linux 的反作弊支持。
 
-Apex Legends is one of the multiplayer titles I like. And, I had to use Windows to do that. Hopefully, that changes soon, and I get to try it on Linux in the coming weeks!
+因此，开发人员可能需要一段时间来激活对各种游戏的反作弊支持。但是，对于大多数带有简易反作弊功能的游戏来说，这应该是一个绿色信号。
 
-Similarly, if you were nearly making a switch to Linux but held back for its compatibility issues with games, I’d say that’s halfway resolved!
+少了一个 [Windows 与 Linux 双启动][4] 的理由。
 
-Sure, we still need the official support for BattleEye, other anti-cheat services, and game clients. But, this is a start.
+《Apex Legends》 是我喜欢的多人游戏之一。而且，我不得不使用 Windows 来玩这个游戏。希望这种情况很快就会改变，在未来几周内，我可以在 Linux 上试一试!
 
-### Steam Deck is Now a Compelling Choice for Gaming
+同样，如果你几乎就要转到 Linux 了，但因为它与游戏的兼容性问题而迟疑，我想说问题已经解决了一半了！
 
-While many were unsure of Steam Deck’s support for all AAA games, this should improve things!
+当然，我们仍然需要对 BattleEye、其他反作弊服务和游戏客户端的官方支持。但是，这是个开端。
 
-[Steam Deck][5] should now be an easy choice for multiplayer gamers.
+### Steam Deck 现在是一个令人信服的游戏选择
 
-### Wrapping Up
+虽然许多人不确定 Steam Deck 是否支持所有的 AAA 级游戏，但这应该会有所改善！
 
-If Steam Deck steals the spotlight as a successful handheld gaming console, Linux gaming is going to change as we know it!
+[Steam Deck][5] 现在应该是多人游戏玩家的一个简单选择。
 
-And, I think Epic Games adding Linux support to its anti-cheat service is just the beginning.
+### 总结
 
-Maybe, we’ll never have to refer [ProtonDB][6] to play a Windows-only game on Linux; who knows? But, the future of Linux gaming seems promising right after this.
+如果 Steam Deck 作为一个成功的掌上游戏机而成为了焦点，那么正如我们所知，在 Linux 上玩游戏也将发生改变。
 
-If you are a developer, you might want to go through the [announcement][7] to get the latest SDK.
+而且，我认为 Epic Games 在其反作弊服务中加入 Linux 支持仅仅只是一个开始。
 
-_What do you think about Epic Games bringing Easy Anti-Cheat to Linux? Feel free to share your thoughts in the comments down below._
+也许，我们永远都不用借助 [ProtonDB][6] 来在 Linux 上玩一个只有 Windows 支持的游戏；谁知道呢？但是，在这之后，Linux 游戏的未来似乎充满希望。
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
+如果你是一个开发者，你可能想阅读 [该公告][7] 来获得最新的 SDK。
 
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
-
-I'm not interested
+你对 Epic Games 将简易反作弊引入 Linux 有何看法？欢迎在下面的评论中分享你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -68,8 +66,8 @@ via: https://news.itsfoss.com/easy-anti-cheat-linux/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
