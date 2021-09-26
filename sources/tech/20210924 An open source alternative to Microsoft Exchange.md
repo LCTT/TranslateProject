@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/open-source-groupware-grommunio"
 [#]: author: "Markus Feilner https://opensource.com/users/mfeilner"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
