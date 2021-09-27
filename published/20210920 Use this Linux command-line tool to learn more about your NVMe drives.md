@@ -3,16 +3,18 @@
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "turbokernel"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13822-1.html"
 
 使用 Linux 命令行工具来了解你的 NVMe 驱动器
 ======
-nvme-cli 命令拥有诸多实用的选项，且它是控制和管理数据一种很好的方式。
-![Command line prompt][1]
 
-NVMe 是指 _Non-Volatile Memory_（非易失性内存主机控制器接口规范），它规范了软件和存储通过 PCIe 和其他协议（包括 TCP）进行通信的方式。它由非营利组织领导的[开放规范][2]，并定义了几种形式的固态存储。
+> nvme-cli 命令拥有诸多实用的选项，且它是控制和管理数据一种很好的方式。
+
+![](https://img.linux.net.cn/data/attachment/album/202109/26/102441ux8cy36gy1vggykz.jpg)
+
+NVMe 是指<ruby>非易失性内存规范<rt>Non-Volatile Memory Express</rt></ruby>，它规范了软件和存储通过 PCIe 和其他协议（包括 TCP）进行通信的方式。它是由非营利组织领导的 [开放规范][2]，并定义了几种形式的固态存储。
 
 我的笔记本电脑有一个 NVMe 驱动器，我的台式机也有。而且它们的速度很快。我喜欢我的电脑启动的速度，以及它们读写数据的速度。几乎没有延迟。
 
@@ -24,41 +26,38 @@ NVMe 是指 _Non-Volatile Memory_（非易失性内存主机控制器接口规�
 
 你可以从你的发行版的包管理器中安装 `nvme-cli`。例如，在 Fedora、CentOS 或类似系统上：
 
-
 ```
-`$ sudo dnf install nvme-cli`
+$ sudo dnf install nvme-cli
 ```
 
 在 Debian、Mint、Elementary 和类似系统上:
 
-
 ```
-`$ sudo apt install nvme-cli`
+$ sudo apt install nvme-cli
 ```
 
 ### 探索 NVMe 驱动器
 
 在安装 `nvme-cli` 后，我想探索我的驱动器。`nvme-cli` 没有手册页，但你可以通过输入 `nvme help` 获得很多帮助：
 
-
 ```
 $ nvme help
 nvme-1.14
-usage: nvme &lt;command&gt; [&lt;device&gt;] [&lt;args&gt;]
+usage: nvme <command> [<device>] [<args>]
 
-The '&lt;device&gt;' may be either an NVMe character device (ex: /dev/nvme0) or an
+The '<device>' may be either an NVMe character device (ex: /dev/nvme0) or an
 nvme block device (ex: /dev/nvme0n1).
 
 The following are all implemented sub-commands:
-list List all NVMe devices and namespaces on machine
-list-subsys List nvme subsystems
-id-ctrl Send NVMe Identify Controller
-id-ns Send NVMe Identify Namespace, display structure
-id-ns-granularity Send NVMe Identify Namespace Granularity List, display structure
-list-ns Send NVMe Identify List, display structure
-list-ctrl Send NVMe Identify Controller List, display structure
-nvm-id-ctrl Send NVMe Identify Controller NVM Command Set, display structure
-primary-ctrl-caps Send NVMe Identify Primary Controller Capabilities
+ list List all NVMe devices and namespaces on machine
+ list-subsys List nvme subsystems
+ id-ctrl Send NVMe Identify Controller
+ id-ns Send NVMe Identify Namespace, display structure
+ id-ns-granularity Send NVMe Identify Namespace Granularity List, display structure
+ list-ns Send NVMe Identify List, display structure
+ list-ctrl Send NVMe Identify Controller List, display structure
+ nvm-id-ctrl Send NVMe Identify Controller NVM Command Set, display structure
+ primary-ctrl-caps Send NVMe Identify Primary Controller Capabilities
 [...]
 ```
 
@@ -72,17 +71,16 @@ $ sudo nvme list
 
 Node SN Model Namespace Usage Format FW Rev
 
-\--------------------- -------------------- ---------------------------------------- --------- -------------------------- ---------------- --------
+--------------------- -------------------- ---------------------------------------- --------- -------------------------- ---------------- --------
 
-/dev/nvme0n1  S42GMY9M141281 SAMSUNG MZVLB256HAHQ-000L7 1
+/dev/nvme0n1    S42GMY9M141281 SAMSUNG MZVLB256HAHQ-000L7 1
 
-214.68 GB / 256.06 GB 512 B + 0 B 0L2QEXD7
+214.68 GB / 256.06 GB 512  B + 0 B 0L2QEXD7
 ```
 
 我有一个名为 `nvme0n1` 的驱动器。它列出了序列号、品牌、容量、固件版本等等。
 
 通过使用 `id-ctrl` 子命令，你可以得到更多关于该硬盘和它所支持的特性的信息：
-
 
 ```
 $ sudo nvme id-ctrl /dev/nvme0n1
@@ -106,7 +104,6 @@ rtd3e : 0x7a1200
 ### 驱动器健康
 
 你可以通过 `smart-log` 子命令来了解硬盘的整体健康状况：
-
 
 ```
 $ sudo nvme smart-log /dev/nvme0n1
@@ -143,20 +140,18 @@ Thermal Management T2 Total Time : 0
 
 你可以用 `nvme-cli` 格式化一个 NVMe 驱动器，但要注意。这将删除驱动器上的所有数据！如果你的硬盘上有重要的数据，你必须在这样做之前将其备份，否则你**将会**丢失数据。子命令是 `format`：
 
-
 ```
-`$ sudo nvme format /dev/nvme0nX`
+$ sudo nvme format /dev/nvme0nX
 ```
 
-(为了安全起见，我用 **X** 替换了驱动器的实际位置，以防止复制粘贴的错误。将 **X** 改为 **1** 或 `nvme list` 结果中列出的实际位置)。
+（为了安全起见，我用 `X` 替换了驱动器的实际位置，以防止复制粘贴的错误。将 `X` 改为 `1` 或 `nvme list` 结果中列出的实际位置。）
 
 ### 安全地擦除 NVMe 驱动器
 
 当你准备出售或处理你的 NVMe 电脑时，你可能想安全地擦除驱动器。这里的警告与格式化过程中的警告相同。首先要备份重要的数据，因为这个命令会删除这些数据！
 
-
 ```
-`$ sudo nvme sanitize /dev/nvme0nX`
+$ sudo nvme sanitize /dev/nvme0nX
 ```
 
 ### 尝试 nvme-cli
