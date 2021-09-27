@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (perfiffer)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13826-1.html)
 
 2021 年了，我们能推荐使用 Linux 来玩游戏吗？
 ======
