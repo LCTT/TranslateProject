@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13829-1.html"
 
 使用 Vagrant 在不同的操作系统上测试你的脚本
 ======
