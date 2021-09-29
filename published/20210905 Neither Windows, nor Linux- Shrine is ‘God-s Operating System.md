@@ -3,12 +3,14 @@
 [#]: author: "John Paul https://itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13831-1.html"
 
 不是 Windows，也不是 Linux，Shrine 才是 “神之操作系统”
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202109/28/154516dcc5u1a50zfn4abw.jpg)
 
 在生活中，我们都曾使用过多种操作系统。有些好，有些坏。但你能说你使用过由“神”设计的操作系统吗？今天，我想向你介绍 Shrine（圣殿）。
 
@@ -18,21 +20,21 @@
 
 从介绍里，你可能想知道这到底是怎么回事。嗯，这一切都始于一个叫 Terry Davis 的人。在我们进一步介绍之前，我最好提醒你，Terry 在生前患有精神分裂症，而且经常不吃药。正因为如此，他在生活中说过或做过一些不被社会接受的事情。
 
-总之，让我们回到故事的主线。在 21 世纪初，Terry 发布了一个简单的操作系统。多年来，它不停地换了几个名字，有 J Operating System、LoseThos 和 SparrowOS 等等。他最终确定了 [TempleOS][2] 这个名字。他选择这个名字（神庙系统）是因为这个操作系统将成为神的圣殿。因此，神给 Terry 的操作系统规定了以下 [规格][3]：
+总之，让我们回到故事的主线。在 21 世纪初，Terry 发布了一个简单的操作系统。多年来，它不停地换了几个名字，有 J Operating System、LoseThos 和 SparrowOS 等等。他最终确定了 [TempleOS][2]（神庙系统）这个名字。他选择这个名字是因为这个操作系统将成为“神的圣殿”。因此，“神”给 Terry 的操作系统规定了以下 [规格][3]：
 
 ![video](https://youtu.be/LtlyeDAJR7A)
 
-  * 它将有 640×480 的 16 色图形
-  * 它将使用“单声道 8 位带符号的类似 MIDI 的声音采样”
+  * 它将有 640×480 的 16 色图形显示
+  * 它将使用 “单声道 8 位带符号的类似 MIDI 的声音采样”
   * 它将追随 Commodore 64，即“一个非网络化的简单机器，编程是目标，而不仅仅是达到目的的手段”
-  * 它将只支持一个文件系统（名为 “Red Sea”）。
-  * 它将被限制在 10 万行代码内，以使它 “整体易于学习”。
-  * “只支持 Ring-0 级，一切都在内核模式下运行，包括用户应用程序
+  * 它将只支持一个文件系统（名为 “Red Sea”）
+  * 它将被限制在 10 万行代码内，以使它 “整体易于学习”
+  * “只支持 Ring-0 级，一切都在内核模式下运行，包括用户应用程序”
   * 字体将被限制为 “一种 8×8 等宽字体”
   * “对一切都可以完全访问。所有的内存、I/O 端口、指令和类似的东西都绝无限制。所有的函数、变量和类成员都是可访问的”
   * 它将只支持一个平台，即 64 位 PC
 
-Terry 用一种他称之为 HolyC（神圣 C 语言）的编程语言编写了这个操作系统。TechRepublic 称其为一种 “C++ 的修改版（‘比 C 多，比 C++ 少’）”。如果你有兴趣了解 HolyC，我推荐，[这篇文章][4] 和 [RosettaCode][5] 上的 HolyC 条目。
+Terry 用一种他称之为 HolyC（神圣 C 语言）的编程语言编写了这个操作系统。TechRepublic 称其为一种 “C++ 的修改版（‘比 C 多，比 C++ 少’）”。如果你有兴趣了解 HolyC，我推荐 [这篇文章][4] 和 [RosettaCode][5] 上的 HolyC 条目。
 
 2013 年，Terry 在他的网站上宣布，TempleOS 已经完成。不幸的是，几年后的 2018 年 8 月，Terry 被火车撞死了。当时他无家可归。多年来，许多人通过他在该操作系统上的工作关注着他。大多数人对他在如此小的体积中编写操作系统的能力印象深刻。
 
@@ -44,6 +46,8 @@ Terry 用一种他称之为 HolyC（神圣 C 语言）的编程语言编写了�
   * 包括一个软件包下载器
 
 minexew 正计划在未来增加更多的功能，但还没有宣布具体会包括什么。他有计划为 Linux 制作一个完整的 TempleOS 环境。
+
+![video](https://youtu.be/UCgoxQCf5Jg)
 
 ### 体验
 
@@ -62,7 +66,7 @@ via: https://itsfoss.com/shrine-os/
 作者：[John Paul][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
