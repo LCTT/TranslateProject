@@ -3,24 +3,26 @@
 [#]: author: "Markus Feilner https://opensource.com/users/mfeilner"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13833-1.html"
 
-Microsoft Exchange 的一个开源替代方案
+微软 Exchange 的一个开源替代方案
 ======
-开源用户现在有了一个强大的、功能齐全的群件选择。
-![Working on a team, busy worklife][1]
 
-多年来，Microsoft Exchange 作为群件环境的平台几乎是不可避免的。然而，在 2020 年末，一个奥地利的开源软件开发商推出了[grommunio][2]，一个群件服务器和客户端，其外观和感觉对 Exchange 和 Outlook 用户所熟悉。
+> 开源用户现在有了一个强大的、功能齐全的群件选择。
+
+![](https://img.linux.net.cn/data/attachment/album/202109/29/141404pesw8xgh8oohwhjh.jpg)
+
+多年来，微软 Exchange 作为一个平台牢牢统治着群件环境。然而，在 2020 年末，一个奥地利的开源软件开发商推出了 [grommunio][2]，这是一个群件服务器和客户端，其外观和感觉让 Exchange 和 Outlook 用户感到很熟悉。
 
 grmmunio 项目可以很好地替代 Exchange。开发者以与微软相同的方式将组件连接到平台上，它们支持 RPC （远程过程调用）与 HTTP 协议。据开发者介绍，grommunio 还包括许多常见的群件接口，如 IMAP、POP3、SMTP、EAS（Exchange ActiveSync）、EWS（Exchange Web Services）、CalDAV 和 CardDAV。有了这样广泛的支持，grommunio 可以顺利地整合到现有的基础设施中。
 
-用户会注意到 Outlook、Android 和 iOS 客户端之间几乎没有区别。当然，作为开源软件，它也支持其他客户端。由于集成了本地 Exchange 协议，Outlook 和智能手机与 grommunio 的通信就像与 Microsoft Exchange 服务器一样。日常的企业用户可以继续使用他们现有的客户端，而 grommunio 服务器则在后台安静地运行。
+用户会注意到对 Outlook、Android 和 iOS 客户端来说几乎没有区别。当然，作为开源软件，它也支持其他客户端。由于集成了原生的 Exchange 协议，Outlook 和智能手机与 grommunio 的通信就像与微软 Exchange 服务器一样。日常的企业用户可以继续使用他们现有的客户端，而 grommunio 服务器则在后台安静地运行。
 
 ### 不仅仅是邮件
 
-除了邮件功能外，grommunio 界面还提供了日历系统。可以直接在日历显示中或在一个新标签中点击创建约会。这很直观，正是你对现代工具的期望。用户可以创建、管理和分享日历以及地址簿。私人联系人或普通联系人都是可能的，而且你可以与同事分享一切。
+除了邮件功能外，grommunio 界面还提供了日历系统。可以直接在日历显示中或在一个新标签中点击创建约会。这很直观，正如你对现代工具的期望。用户可以创建、管理和分享日历以及地址簿。私人联系人或普通联系人都支持，而且你可以与同事分享一切。
 
 任务管理在左边的下拉菜单中显示任务列表，它们可以有一个所有者和多个合作者。你可以为每个任务指定截止日期、类别、附件和其他属性。笔记可以以同样的方式被管理并与其他团队成员共享。
 
@@ -30,25 +32,25 @@ grmmunio 项目可以很好地替代 Exchange。开发者以与微软相同的�
 
 ![Screenshot of grommunio meeting space][3]
 
-用于高级视频会议的 Jitsi 集成（Markus Feilner, [CC BY-SA 4.0][4]）
+*用于高级视频会议的 Jitsi 集成（Markus Feilner, [CC BY-SA 4.0][4]）*
 
 在 grommunio 会议功能的背后是 [Jitsi][5]，它以熟悉的用户界面顺利地集成到 grommunio 的用户界面中。完全集成和集中管理的聊天功能是基于 [Mattermost][6]。
 
 ![Screenshot of grommunio's town square for chat][7]
 
-用于聊天的 Mattermost（Markus Feilner，[CC BY-SA 4.0][4]）
+*用于聊天的 Mattermost（Markus Feilner，[CC BY-SA 4.0][4]）*
 
-用于文件同步和交换的 ownCloud（Markus Feilner，[CC BY-SA 4.0][4]）
+[ownCloud][8] 承诺提供企业级的文件共享和同步，在点击“文件”按钮后开始。
 
 ![Screenshot of grommunio file sharing space][9]
 
-用于文件同步和交换的 ownCloud（Markus Feilner，[CC BY-SA 4.0][4]）
+*用于文件同步和交换的 ownCloud（Markus Feilner，[CC BY-SA 4.0][4]）*
 
-grommunio 项目有一个强大的管理界面，包括角色、域和组织管理、预测性监测和自助服务门户。基于 shell 的向导指导管理员完成安装和从 Microsoft Exchange 迁移数据。开发团队正在不断努力，以实现更好的整合和更集中的管理，并随之为管理员提供更好的工作流程。
+grommunio 项目有一个强大的管理界面，包括角色、域和组织管理、预测性监测和自助服务门户。基于 shell 的向导指导管理员完成安装和从微软 Exchange 迁移数据。开发团队正在不断努力，以实现更好的整合和更集中的管理，并随之为管理员提供更好的工作流程。
 
 ![Screenshot of grommunio dashboards][10]
 
-grommunio 的管理界面（Markus Feilner, [CC BY-SA 4.0][4]）
+*grommunio 的管理界面（Markus Feilner, [CC BY-SA 4.0][4]）*
 
 ### 探索 grommunio
 
@@ -61,7 +63,7 @@ via: https://opensource.com/article/21/9/open-source-groupware-grommunio
 作者：[Markus Feilner][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
