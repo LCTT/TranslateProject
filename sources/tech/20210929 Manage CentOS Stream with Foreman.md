@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/centos-stream-foreman"
 [#]: author: "Melanie Corr https://opensource.com/users/melanie-corr"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
