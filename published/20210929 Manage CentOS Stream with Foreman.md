@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13837-1.html"
 
 用 Foreman 管理 CentOS Stream
 ======
 
 > 这个例子让我们看到了在 Foreman 中管理和配置 CentOS Stream 内容的许多选项。
 
-![拼图拼成的电脑屏幕][1]
+![](https://img.linux.net.cn/data/attachment/album/202109/30/133541s3e3s31yzmnugl1s.jpg)
 
 2021 年 12 月，CentOS 8 将达到生命终点，被 CentOS Stream 取代。CentOS Stream 和 CentOS 之前的迭代之间的主要变化之一是没有小版本。Centos Stream 采用了一个连续的发布周期。从今年年初开始，Foreman 社区的开发者开始看到 CentOS Stream 由于持续发布而提供的更早的错误检测和补丁的好处。我们不再需要等待下一个版本来利用最新的变化和错误修复。[一位资深的 Linux 社区爱好者][2] 指出，此举也使 RHEL 开发者比以往更接近 FOSS 社区。
 
