@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/install-java-linux-repositories"
 [#]: author: "Chris Hermansen https://opensource.com/users/clhermansen"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
