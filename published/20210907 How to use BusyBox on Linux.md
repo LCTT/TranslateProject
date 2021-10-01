@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13840-1.html"
 
 如何在 Linux 上使用 BusyBox
 ======
 
 > BusyBox 是一个开源（GPL）项目，提供了近 400 个常用命令的简单实现。
 
-![绿色背景上的bash标志][1]
+![](https://img.linux.net.cn/data/attachment/album/202110/01/185208x6ckkmvi0silk3vk.jpg)
 
 我们很容易认为 Linux 的命令是理所当然的。当你安装 Linux 时，它们与系统捆绑在一起，而我们常常不问为什么它们会在那里。一些基本的命令，如 [cd][2]、[kill][3] 和 echo，并不总是独立的应用程序，而是实际上内置于你的 shell 中。其他如 [ls][4]、[mv][5] 和 [cat][6] 是核心工具包（通常是 GNU `coreutils`）的一部分。但在开源的世界里，总是有一些替代品，其中最有趣的是 [BusyBox][7]。
 
@@ -26,7 +26,7 @@ BusyBox 非常小。作为一个可执行文件，它不到 1MB，所以它在 [
 
 ### 极简主义
 
-BusyBox 的部分魅力在于它的极简主义。它的所有命令都被编译到一个二进制文件里（`busybox'），它的手册只有 81 页（根据我对 `man` 送到 `pr` 管道的计算），但它涵盖了近 400 条命令。
+BusyBox 的部分魅力在于它的极简主义。它的所有命令都被编译到一个二进制文件里（`busybox`），它的手册只有 81 页（根据我对 `man` 送到 `pr` 管道的计算），但它涵盖了近 400 条命令。
 
 作为一个例子的比较，这是 “原版” 的 `useradd —help` 的输出：
 
