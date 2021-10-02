@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/yaml-cheat-sheet"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
