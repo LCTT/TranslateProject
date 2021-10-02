@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13842-1.html"
 
 让 YAML 变得像它看起来一样简单
 ======
 
 > YAML 看起来很简单，为什么它这么难写呢？了解成功使用 YAML 的两个秘诀。
 
-![使用笔记本电脑的人][1]
+![](https://img.linux.net.cn/data/attachment/album/202110/02/101824shamurmpvldpu29a.jpg)
 
 如果你曾经尝试过写 YAML，你可能一开始会对它看起来很容易感到高兴。乍一看，经常用于配置文件、Ansible 剧本和普通文件数据库的 YAML 看起来就像购物清单一样直观。然而，YAML 的结构中有很多细微的差别，它隐藏着一个危险的秘密：YAML 实际上是一种高度精确、结构化和令人惊讶的严格语言。好消息是，你只需要了解两件事就可以知道 YAML 的工作原理。
 
