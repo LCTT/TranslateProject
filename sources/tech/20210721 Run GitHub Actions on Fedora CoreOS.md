@@ -2,7 +2,7 @@
 [#]: via: (https://fedoramagazine.org/run-github-actions-on-fedora-coreos/)
 [#]: author: (Clément Verna https://fedoramagazine.org/author/cverna/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
