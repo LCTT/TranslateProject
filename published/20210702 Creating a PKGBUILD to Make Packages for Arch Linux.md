@@ -4,11 +4,13 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13843-1.html)
 
 Arch Linux 软件包制作入门
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202110/02/130702ybexb5tsvkx1xbs1.jpg)
 
 `PKGBUILD` 文件是为 Arch Linux 及其衍生版（如 Manjaro）构建和创建软件包的方式。
 
