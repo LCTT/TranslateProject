@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13845-1.html"
 
 实例讲解代码之内存安全与效率
 ======
