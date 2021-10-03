@@ -2,31 +2,29 @@
 [#]: via: (https://fedoramagazine.org/run-github-actions-on-fedora-coreos/)
 [#]: author: (Clément Verna https://fedoramagazine.org/author/cverna/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 
-Run GitHub Actions on Fedora CoreOS
+在 Fedora CoreOS 上运行 GitHub Actions
 ======
 
 ![][1]
 
-[United Artists][2], Public domain, via Wikimedia Commons
+[GitHub Actions][3] 是一项为快速建立持续集成和交付（CI/CD）工作流程而提供的服务。这些工作流程在被称为“<ruby>运行器<rt>runner</rt></ruby>”的主机上运行。GitHub 提供的 [托管运行器][4] 的操作系统的选择是有限的（Windows Server、Ubuntu、MacOS）。
 
-[GitHub Actions][3] is a service provided to quickly setup continuous integration and delivery (CI/CD) workflows . These workflows run on hosts called _runners_. GitHub provides [hosted runners][4] with a limited set of operating system choice (Windows Server, Ubuntu, MacOS).
+另一个选择是使用 [自我托管][5] 运行器，这让仓库管理员对运行器有更多控制。自我托管的运行程序是专门为某个版本库或组织服务的。下面的文章介绍了使用 Fedora CoreOS 配置自我托管运行程序的步骤。
 
-Another option is to use [self-hosted][5] runners which gives the repository administrator more control on the runners. Self-hosted runners are dedicated to a repository or organization. The following article goes through the steps of configuring self-hosted runners using Fedora CoreOS.
+### 入门
 
-### Getting Started
+Fedora CoreOS 是一个精简的操作系统，旨在便于大规模的部署和维护。该操作系统会自动更新，并默认提供运行容器所需的工具。由于这些原因，Fedora CoreOS 是运行 CI/CD 工作流程的一个极佳选择。
 
-Fedora CoreOS is a minimalist operating system designed to be easy to deploy and maintain at scale. The operating system will automaticaly update and provide, by default, the tools needed to run containers. For all of these reasons, Fedora CoreOS is a great choice to consider for running CI/CD workflows.
+配置和配备 Fedora CoreOS 机器的第一步是生成一个 [Ignition][6] 文件。[Butane][7] 允许你使用更友好的格式（YAML）生成 Ignition 文件。
 
-The first step to configure and provision a Fedora CoreOS machine is to generate an [Ignition][6] file. [Butane][7] allows you to generate Ignition’s file using a friendlier format (YAML).
+#### 配置一个 Fedora CoreOS 运行器
 
-#### Configure a Fedora CoreOS runner
-
-To execute GitHub actions on Fedora CoreOS, the host needs the binaries and scripts used to register and run the runner. Download the binaries and scripts from the [actions runner project][8] and deploy under _/usr/local/sbin/actions-runner_.
+要在 Fedora CoreOS 上执行 GitHub Actions，托管主机需要用于注册和运行该运行器的二进制文件和脚本。从 [Actions 运行器项目][8] 下载二进制文件和脚本，并部署在 `/usr/local/sbin/actions-runner` 下。
 
 ```
 version: "1.3.0"
@@ -51,13 +49,13 @@ storage:
         name: core
 ```
 
-#### Registration and Removal token
+#### 注册和删除令牌
 
-Configuring runners for a project requires a “token”. This prevents registering or removing self-hosted runners from projects without the correct permissions. Tokens provided by Github have a one hour expiration time. If the runner restarts after this time it will require a new registration token.
+为一个项目配置运行程序需要一个“<ruby>令牌<rt>token</rt></ruby>”。这可以防止在没有正确权限的情况下从项目中注册或删除自我托管的运行器。GitHub 提供的令牌有一个小时的过期时间。如果运行器在这个时间之后重新启动，它将需要一个新的注册令牌。
 
-The token can be problematic, in particular with Fedora CoreOS automatic updates. The update process expects that the host will restart at least once every couple weeks after receiving new data.
+该令牌可能有问题，特别是在 Fedora CoreOS 自动更新时。更新过程希望托管主机在收到新数据后至少每隔几周重启一次。
 
-Luckily, it is possible to use GitHub REST API to obtain these tokens and automatically configure the runner every time the host restarts. The following _manage-runner.sh_ script uses the APIs to retrieve a token, remove any runner already configured and register the runner with a new token.
+幸运的是，可以使用 GitHub REST API 来获取这些令牌，并在主机每次重启时自动配置运行器。下面的 `manage-runner.sh` 脚本使用 API 来获取令牌，删除任何已经配置好的运行器，并用新的令牌注册运行器。
 
 ```
 #!/bin/bash
@@ -75,7 +73,7 @@ REGISTRATION_TOKEN=$(curl -u ${GITHUB_USER}:${GITHUB_TOKEN} -X POST -H "Accept: 
 /usr/local/sbin/actions-runner/config.sh --url https://github.com/cverna/fcos-actions-runner --token ${REGISTRATION_TOKEN} --labels fcos --unattended
 ```
 
-The script above uses a few environment variables that contain a GitHub username and a [Personal Access Token][9] used to authenticate the REST API requests. The Personal Access Token requires the repo permissions in order to successfully retrieve the runner registration and removal tokens. The token is security sensitive so it is better to store it in a different file with stricter permissions. In this example that file is _actions-runner_.
+上面的脚本使用了一些环境变量，包含 GitHub 用户名和用于验证 REST API 请求的 <ruby>[个人访问令牌][9]<rt>Personal Access Token</rt></ruby>。个人访问令牌需要存储库权限，以便成功检索运行者注册和移除令牌。该令牌是安全敏感的，所以最好将其存储在一个具有更严格权限的不同文件中。在这个例子中，这个文件是 `actions-runner`。
 
 ```
 GITHUB_USER=<user>
@@ -83,7 +81,7 @@ GITHUB_REPO=<repo>
 GITHUB_TOKEN=<personal_access_token>
 ```
 
-Following is the Butane snippet that creates these two files – _manage-runner.sh_ and _actions-runner_.
+以下是创建这两个文件 `manage-runner.sh` 和 `actions-runner` 的 Butane 片段。
 
 ```
 - path: /usr/local/sbin/actions-runner/manage-runner.sh
@@ -104,9 +102,9 @@ Following is the Butane snippet that creates these two files – _manage-runner.
         name: core
 ```
 
-### Running Actions on Fedora CoreOS
+### 在 Fedora CoreOS 上运行 Actions
 
-Finally, create the systemd services that will configure and start the runner. Define the services in the Butane configuration file.
+最后，创建用于配置和启动运行器的 systemd 服务。在 Butane 配置文件中定义这些服务。
 
 ```
 systemd:
@@ -142,21 +140,19 @@ systemd:
         WantedBy=multi-user.target
 ```
 
-This creates two services, _github-runner-configure.service_ (running once when the host has finished booting) and _github-runner.service_ (running the Actions runner binaries and waiting for new CI/CD jobs).
+这将创建两个服务：`github-runner-configure.service`（在主机启动完成后运行一次）和 `github-runner.service`（运行 Actions 运行器二进制文件并等待新的 CI/CD 作业）。
 
-Now that the Butane configuration is complete, generate an Ignition file out of it and provision a Fedora CoreOS Actions runner.
+现在 Butane 配置已经完成，从中生成一个 Ignition 文件并配备一个Fedora CoreOS Actions 运行器。
 
 ```
 $ podman run -i --rm -v $PWD:/code:z --workdir /code quay.io/coreos/butane:release --pretty --strict --files-dir /code config.yaml -o config.ignition
 ```
 
-Once the Ignition file is generated, it can be used to provision a runner on the platforms where Fedora CoreOS is [available][10].
+一旦 Ignition 文件生成，它就可以用来在 [支持][10] Fedora CoreOS 的平台上配备一个运行器。
 
-> [Getting started with Fedora CoreOS][11]
+### 配置一个 Action 来使用一个自我托管的运行器
 
-### Configure an Action to use a self-hosted runner
-
-The following test Action workflow will test the FCOS self-hosted worker. Create the following file in your git repository _.github/workflows/main.yml_
+下面的测试 Action 工作流程将测试 FCOS 的自我托管的工作者。在你的 git 存储库中创建以下文件 `.github/workflows/main.yml`。
 
 ```
 # This is a basic workflow to help you get started with Actions
@@ -188,9 +184,9 @@ jobs:
         run: podman run --rm fedora-minimal:34 echo Hello World !
 ```
 
-Note that the _runs-on_ configuration is set up to use a runner with the label _fcos_.
+请注意，`runs-on` 的配置被设置为使用标签为 `fcos` 的运行器。
 
-The code presented in this article is available [here][12].
+本文介绍的代码可以在 [这里][12] 中找到。
 
 --------------------------------------------------------------------------------
 
@@ -198,7 +194,7 @@ via: https://fedoramagazine.org/run-github-actions-on-fedora-coreos/
 
 作者：[Clément Verna][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wxy](https://github.com/wxy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
