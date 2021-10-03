@@ -3,7 +3,7 @@
 [#]: author: (Clément Verna https://fedoramagazine.org/author/cverna/)
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
@@ -14,7 +14,7 @@
 
 [GitHub Actions][3] 是一项为快速建立持续集成和交付（CI/CD）工作流程而提供的服务。这些工作流程在被称为“<ruby>运行器<rt>runner</rt></ruby>”的主机上运行。GitHub 提供的 [托管运行器][4] 的操作系统的选择是有限的（Windows Server、Ubuntu、MacOS）。
 
-另一个选择是使用 [自我托管][5] 运行器，这让仓库管理员对运行器有更多控制。自我托管的运行程序是专门为某个版本库或组织服务的。下面的文章介绍了使用 Fedora CoreOS 配置自我托管运行程序的步骤。
+另一个选择是使用 [自托管][5] 的运行器，这让仓库管理员对运行器有更多控制。自托管的运行程序是专门为某个存储库或组织服务的。下面的文章介绍了使用 Fedora CoreOS 配置自托管运行程序的步骤。
 
 ### 入门
 
@@ -51,11 +51,11 @@ storage:
 
 #### 注册和删除令牌
 
-为一个项目配置运行程序需要一个“<ruby>令牌<rt>token</rt></ruby>”。这可以防止在没有正确权限的情况下从项目中注册或删除自我托管的运行器。GitHub 提供的令牌有一个小时的过期时间。如果运行器在这个时间之后重新启动，它将需要一个新的注册令牌。
+为一个项目配置运行器需要一个“<ruby>令牌<rt>token</rt></ruby>”。这可以防止在没有正确权限的情况下从项目中注册或删除自托管的运行器。GitHub 提供的令牌有一个小时的过期时间。如果运行器在这个时间之后重新启动，它将需要一个新的注册令牌。
 
-该令牌可能有问题，特别是在 Fedora CoreOS 自动更新时。更新过程希望托管主机在收到新数据后至少每隔几周重启一次。
+该令牌可能出问题，特别是在 Fedora CoreOS 自动更新时。更新过程希望托管主机在收到新数据后至少每隔几周重启一次。
 
-幸运的是，可以使用 GitHub REST API 来获取这些令牌，并在主机每次重启时自动配置运行器。下面的 `manage-runner.sh` 脚本使用 API 来获取令牌，删除任何已经配置好的运行器，并用新的令牌注册运行器。
+幸运的是，可以使用 GitHub REST API 来获取这些令牌，并在托管主机每次重启时自动配置运行器。下面的 `manage-runner.sh` 脚本使用 API 来获取令牌，删除任何已经配置好的运行器，并用新的令牌注册运行器。
 
 ```
 #!/bin/bash
@@ -73,7 +73,7 @@ REGISTRATION_TOKEN=$(curl -u ${GITHUB_USER}:${GITHUB_TOKEN} -X POST -H "Accept: 
 /usr/local/sbin/actions-runner/config.sh --url https://github.com/cverna/fcos-actions-runner --token ${REGISTRATION_TOKEN} --labels fcos --unattended
 ```
 
-上面的脚本使用了一些环境变量，包含 GitHub 用户名和用于验证 REST API 请求的 <ruby>[个人访问令牌][9]<rt>Personal Access Token</rt></ruby>。个人访问令牌需要存储库权限，以便成功检索运行者注册和移除令牌。该令牌是安全敏感的，所以最好将其存储在一个具有更严格权限的不同文件中。在这个例子中，这个文件是 `actions-runner`。
+上面的脚本使用了一些环境变量，包含 GitHub 用户名和用于验证 REST API 请求的 <ruby>[个人访问令牌][9]<rt>Personal Access Token</rt></ruby>。个人访问令牌需要存储库权限，以便成功检索运行器的注册和移除令牌。该令牌是安全敏感信息，所以最好将其存储在一个具有更严格权限的不同文件中。在这个例子中，这个文件是 `actions-runner`。
 
 ```
 GITHUB_USER=<user>
@@ -142,7 +142,7 @@ systemd:
 
 这将创建两个服务：`github-runner-configure.service`（在主机启动完成后运行一次）和 `github-runner.service`（运行 Actions 运行器二进制文件并等待新的 CI/CD 作业）。
 
-现在 Butane 配置已经完成，从中生成一个 Ignition 文件并配备一个Fedora CoreOS Actions 运行器。
+现在 Butane 配置已经完成，从中生成一个 Ignition 文件并配备一个 Fedora CoreOS Actions 运行器。
 
 ```
 $ podman run -i --rm -v $PWD:/code:z --workdir /code quay.io/coreos/butane:release --pretty --strict --files-dir /code config.yaml -o config.ignition
@@ -150,9 +150,9 @@ $ podman run -i --rm -v $PWD:/code:z --workdir /code quay.io/coreos/butane:relea
 
 一旦 Ignition 文件生成，它就可以用来在 [支持][10] Fedora CoreOS 的平台上配备一个运行器。
 
-### 配置一个 Action 来使用一个自我托管的运行器
+### 配置一个 Action 来使用一个自托管的运行器
 
-下面的测试 Action 工作流程将测试 FCOS 的自我托管的工作者。在你的 git 存储库中创建以下文件 `.github/workflows/main.yml`。
+下面的测试 Action 工作流程将测试 FCOS 的自托管的运行器。在你的 git 存储库中创建以下文件 `.github/workflows/main.yml`。
 
 ```
 # This is a basic workflow to help you get started with Actions
@@ -195,7 +195,7 @@ via: https://fedoramagazine.org/run-github-actions-on-fedora-coreos/
 作者：[Clément Verna][a]
 选题：[lujun9972][b]
 译者：[wxy](https://github.com/wxy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
