@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (wxy)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13846-1.html)
 
 在 Fedora CoreOS 上运行 GitHub Actions
 ======
