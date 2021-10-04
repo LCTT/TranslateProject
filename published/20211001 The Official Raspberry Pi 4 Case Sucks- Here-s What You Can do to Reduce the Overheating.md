@@ -4,13 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13851-1.html"
 
 官方的树莓派 4 外壳很烂！怎么样减少过热？
 ======
 
-![树莓派 4][1] 绝对是数百万人的最爱，特别是在极客社区里，我也不例外。但是你知道树莓派在没有适当冷却的情况下会限制性能吗？
+![](https://img.linux.net.cn/data/attachment/album/202110/04/201826ghpecyb43cxehi4y.jpg)
+
+[树莓派 4][1] 绝对是数百万人的最爱，特别是在极客社区里，我也不例外。但是你知道树莓派在没有适当冷却的情况下会限制性能吗？
 
 在这里，我将介绍 [树莓派 4 官方外壳][2] 的一些严重缺点，同时也分享一些缓解这些缺点的方法。
 
