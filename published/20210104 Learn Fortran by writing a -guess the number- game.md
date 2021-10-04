@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (unigeorge)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13849-1.html)
 [#]: subject: (Learn Fortran by writing a "guess the number" game)
 [#]: via: (https://opensource.com/article/21/1/fortran)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
@@ -10,8 +10,9 @@
 通过写“猜数字”游戏学习 Fortran
 ======
 
-Fortran 是在打孔卡时代编写的语言，因此它的语法非常有限。但你仍然可以用它编写有用和有趣的程序。 
-![Person typing on a 1980's computer][1]
+> Fortran 是在打孔卡时代编写的语言，因此它的语法非常有限。但你仍然可以用它编写有用和有趣的程序。
+
+![](https://img.linux.net.cn/data/attachment/album/202110/04/125311k6uwzpybabayyoag.jpg)
 
 Fortran 77 是我学习的第一门编译型编程语言。一开始时，我自学了如何在 Apple II 上用 BASIC 编写程序，后来又学会在 DOS 上用 QBasic 编写程序。但是当我去大学攻读物理学时，我又学习了 [Fortran][2]。
 
@@ -23,7 +24,7 @@ Fortran 曾经在科学计算中很常见。曾几何时，所有计算机系统
 
 ### Fortran 编程基础
 
-虽然 Fortran 这些年来一直在更新，但我最熟悉的还是 Fortran 77，这是我多年前学习的实现版本。Fortran 是程序员还在打孔卡上编程的年代创建的，因此“经典”Fortran 仅限于处理可以放在打孔卡上的数据。这意味着你只能编写符合以下限制条件的经典 Fortran 程序（LCTT 译注：后来的 Fortran 95 等版本已经对这些限制做了很大的改进，如有兴趣**建议直接学习新版**）： 
+虽然 Fortran 这些年来一直在更新，但我最熟悉的还是 Fortran 77，这是我多年前学习的实现版本。Fortran 是程序员还在打孔卡上编程的年代创建的，因此“经典” Fortran 仅限于处理可以放在打孔卡上的数据。这意味着你只能编写符合以下限制条件的经典 Fortran 程序（LCTT 译注：后来的 Fortran 95 等版本已经对这些限制做了很大的改进，如有兴趣**建议直接学习新版**）： 
 
   * 每张卡只允许一行源代码。
   * 仅识别第 1-72 列（最后八列，73-80，保留给卡片分类器）。
@@ -31,7 +32,7 @@ Fortran 曾经在科学计算中很常见。曾几何时，所有计算机系统
   * 程序语句在第 7-72 列。
   * 要表示跨行，请在第 6 列中输入一个连续字符（通常是 `+`）。
   * 要创建注释行，请在第 1 列中输入 `C` 或 `*`。
-  * 只有字符`A` 到`Z`（大写字母）、`0` 到`9`（数字）和特殊字符`= + - * / ( ) , . $ ' :` 和空格能够使用。
+  * 只有字符 `A` 到`Z`（大写字母）、`0` 到`9`（数字）和特殊字符 `= + - * / ( ) , . $ ' :` 和空格能够使用。
 
 虽然有这些限制，你仍然可以编写非常有用和有趣的程序。 
 
@@ -119,7 +120,7 @@ via: https://opensource.com/article/21/1/fortran
 作者：[Jim Hall][a]
 选题：[lujun9972][b]
 译者：[unigeorge](https://github.com/unigeorge)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
