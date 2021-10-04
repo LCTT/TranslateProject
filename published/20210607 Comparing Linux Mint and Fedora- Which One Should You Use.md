@@ -10,6 +10,8 @@
 Linux Mint 和 Fedora：应该使用哪一个？
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202110/04/123523kzzm3x4yr2ppmfj9.jpg)
+
 Linux Mint 是一个 [为初学者定制的流行的 Linux 发行版][1]，同时为用户提供了与 Windows 类似的体验。事实上，它有 [一些地方比 Ubuntu 做的更好][2]，这使它成为每一类用户的合适选择。
 
 它是基于 Ubuntu 的，完全由社区所支持。
