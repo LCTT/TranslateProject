@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/raspberry-pi-case-overheating/"
 [#]: author: "Avimanyu Bandyopadhyay https://itsfoss.com/author/avimanyu/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
