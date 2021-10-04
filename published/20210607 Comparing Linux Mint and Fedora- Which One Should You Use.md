@@ -10,6 +10,8 @@
 Linux Mint 和 Fedora：应该使用哪一个？
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202110/04/123523kzzm3x4yr2ppmfj9.jpg)
+
 Linux Mint 是一个 [为初学者定制的流行的 Linux 发行版][1]，同时为用户提供了与 Windows 类似的体验。事实上，它有 [一些地方比 Ubuntu 做的更好][2]，这使它成为每一类用户的合适选择。
 
 它是基于 Ubuntu 的，完全由社区所支持。
@@ -104,7 +106,7 @@ Linux Mint（或 Ubuntu）的默认软件库提供了大量可以安装的软件
 
 但是，对于 Fedora，即使我按照我们的 [在 Fedora 中安装 Nvidia 驱动程序][17] 的指南，我在重启时还是出现了一个错误。
 
-![在 Fedora 中安装 NVIDIA 驱动程序][18]。
+![在 Fedora 中安装 NVIDIA 驱动程序][18]
 
 不仅如此，由于某些原因，我的有线网络似乎没有被激活，因此，我没有互联网连接。
 
