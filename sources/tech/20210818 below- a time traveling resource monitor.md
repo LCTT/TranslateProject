@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/below-a-time-traveling-resource-monitor/"
 [#]: author: "Daniel Xu https://fedoramagazine.org/author/dxuu/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
