@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/why-i-learned-core-java"
 [#]: author: "Shantam Sahai https://opensource.com/users/shantam-sahai"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
