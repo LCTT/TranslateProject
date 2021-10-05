@@ -3,16 +3,18 @@
 [#]: author: (Gaurav Kamathe https://opensource.com/users/gkamathe)
 [#]: collector: (lujun9972)
 [#]: translator: (mengxinayan)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13852-1.html)
 
 使用 trace-cmd 追踪内核
 ======
-trace-cmd 是一个容易使用且特性众多的，可用来追踪内核函数的命令。
-![Puzzle pieces coming together to form a computer screen][1]
 
-在 [之前的文章][2] 里，我介绍了如何利用 `ftrace` 来追踪内核函数。通过写入和读出文件来使用 `ftrace` 会变得很枯燥，所以在它周围使用了一个包装器来运行带有选项的命令，以启用和禁用追踪，设置过滤器，查看输出，清除输出等等。
+> trace-cmd 是一个易于使用，且特性众多、可用来追踪内核函数的命令。
+
+![](https://img.linux.net.cn/data/attachment/album/202110/05/145818d2i9tgjetzj8itqg.jpg)
+
+在 [之前的文章][2] 里，我介绍了如何利用 `ftrace` 来追踪内核函数。通过写入和读出文件来使用 `ftrace` 会变得很枯燥，所以我对它做了一个封装来运行带有选项的命令，以启用和禁用追踪、设置过滤器、查看输出、清除输出等等。
 
 [trace-cmd][3] 命令是一个可以帮助你做到这一点的工具。在这篇文章中，我使用 `trace-cmd` 来执行我在 `ftrace` 文章中所做的相同任务。由于会经常参考那篇文章，建议在阅读这篇文章之前先阅读它。
 
@@ -27,7 +29,7 @@ trace-cmd 是一个容易使用且特性众多的，可用来追踪内核函数�
 none on /sys/kernel/tracing type tracefs (rw,relatime,seclabel)
 ```
 
-然而，你需要手动尝试安装 `trace-cmd` 命令：
+不过，你需要手动尝试安装 `trace-cmd` 命令：
 
 ```
 # dnf install trace-cmd -y
@@ -35,16 +37,16 @@ none on /sys/kernel/tracing type tracefs (rw,relatime,seclabel)
 
 ### 列出可用的追踪器
 
-当使用 `ftrace` 时，你必须查看文件的内容以了解有哪些追踪器可用。但使用 `trace-cmd`，你可以通过以下方式获得这些信息。
+当使用 `ftrace` 时，你必须查看文件的内容以了解有哪些追踪器可用。但使用 `trace-cmd`，你可以通过以下方式获得这些信息:
 
 ```
 # trace-cmd list -t
 hwlat blk mmiotrace function_graph wakeup_dl wakeup_rt wakeup function nop
 ```
 
-### 启用函数(function)追踪器
+### 启用函数追踪器
 
-在我之前的文章中，我使用了两个追踪器，在这里我也会这么做。用 `function` 启用你的第一个追踪器。
+在我 [之前的文章][2] 中，我使用了两个追踪器，在这里我也会这么做。用 `function` 启用你的第一个追踪器:
 
 ```
 $ trace-cmd start -p function
@@ -53,7 +55,7 @@ $ trace-cmd start -p function
 
 ### 查看追踪输出
 
-一旦追踪器被启用，你可以通过使用 `show` 参数来查看输出。这只显示了前20行，以保持例子的简短（见我之前的文章对输出的解释）。
+一旦追踪器被启用，你可以通过使用 `show` 参数来查看输出。这只显示了前 20 行以保持例子的简短（见我之前的文章对输出的解释）：
 
 ```
 # trace-cmd show | head -20
@@ -83,24 +85,28 @@ $ trace-cmd start -p function
 
 追踪将会在后台继续运行，你可以继续用 `show` 查看输出。
 
-要停止追踪，请运行带有 `stop` 参数的 `trace-cmd` 命令。
+要停止追踪，请运行带有 `stop` 参数的 `trace-cmd` 命令：
+
 ```
 # trace-cmd stop
 ```
-要清除缓冲区，用 `clear` 参数运行它。
+
+要清除缓冲区，用 `clear` 参数运行它：
+
 ```
 # trace-cmd clear
 ```
 
-### 启用 函数调用图(function_graph) 追踪器
+### 启用函数调用图追踪器
 
 运行第二个追踪器，通过 `function_graph` 参数来启用它。
+
 ```
 # trace-cmd start -p function_graph
   Plugin 'function_graph'
 ```
 
-再次使用 `show` 参数查看输出。正如预期的那样，输出与第一次追踪输出略有不同。这一次，它包括一个**函数调用**链。
+再次使用 `show` 参数查看输出。正如预期的那样，输出与第一次追踪输出略有不同。这一次，它包括一个**函数调用**链：
 
 ```
 # trace-cmd show | head -20
@@ -126,7 +132,7 @@ $ trace-cmd start -p function
  4)               |      __cond_resched() {
 ```
 
-使用 `stop` 和 `clear` 命令来停止追踪和清楚缓存区。
+使用 `stop` 和 `clear` 命令来停止追踪和清除缓存区：
 
 ```
 # trace-cmd stop
@@ -135,14 +141,14 @@ $ trace-cmd start -p function
 
 ### 调整追踪以增加深度
 
-如果你想在函数调用中看到更多的深度，你可以对追踪器进行调整。
+如果你想在函数调用中看到更多的深度，你可以对追踪器进行调整：
 
 ```
 # trace-cmd start -p function_graph --max-graph-depth 5
   plugin 'function_graph'
 ```
 
-现在，当你将这个输出与你之前看到的进行比较时，你应该看到更多的嵌套函数调用。
+现在，当你将这个输出与你之前看到的进行比较时，你应该看到更多的嵌套函数调用：
 
 ```
 # trace-cmd show | head -20
@@ -170,7 +176,7 @@ $ trace-cmd start -p function
 
 ### 了解可被追踪的函数
 
-如果你想只追踪某些函数而忽略其他的，你需要知道确切的函数名称。你可以用 `list -f` 参数来得到它们。例如搜索常见的内核函数 `kmalloc`，它被用来在内核中分配内存。
+如果你想只追踪某些函数而忽略其他的，你需要知道确切的函数名称。你可以用 `list -f` 参数来得到它们。例如搜索常见的内核函数 `kmalloc`，它被用来在内核中分配内存：
 
 ```
 # trace-cmd list -f | grep kmalloc
@@ -198,7 +204,7 @@ __kmalloc_node_track_caller
 
 ### 追踪内核模块相关的函数
 
-你也可以追踪与特定内核模块相关的函数。假设你想追踪 `kvm` 内核模块相关的功能，你可以通过以下方式来实现。确保该模块已经加载。
+你也可以追踪与特定内核模块相关的函数。假设你想追踪 `kvm` 内核模块相关的功能，你可以通过以下方式来实现。请确保该模块已经加载：
 
 ```
 # lsmod | grep kvm_intel
@@ -228,7 +234,7 @@ vmx_dump_sel [kvm_intel]
 
 现在你知道了如何找到感兴趣的函数，请用一个例子把这些内容用于时间。就像前面的文章一样，试着追踪与文件系统相关的函数。我的测试系统上的文件系统是 `ext4`。
 
-这个过程略有不同；你在运行命令时，不需要**启动**，而是在**记录**参数后面加上你想追踪的函数的 "模式"。你还需要指定你想要的追踪器；在这种情况下，就是 `function_graph`。该命令会继续记录追踪，直到你用 `Ctrl+C` 停止它。所以几秒钟后，按 `Ctrl+C` 停止追踪。
+这个过程略有不同；你在运行命令时，不使用 `start` 参数，而是在 `record` 参数后面加上你想追踪的函数的“模式”。你还需要指定你想要的追踪器；在这种情况下，就是 `function_graph`。该命令会继续记录追踪，直到你用 `Ctrl+C` 停止它。所以几秒钟后，按 `Ctrl+C` 停止追踪：
 
 ```
 # trace-cmd list -f | grep ^ext4_
@@ -244,7 +250,7 @@ CPU0 data recorded at offset=0x856000
 
 ### 查看追踪记录
 
-要查看你之前的追踪记录，运行带有 `report` 参数的命令。从输出结果来看，很明显过滤器起作用了，你只看到 `ext4` 相关的函数追踪。
+要查看你之前的追踪记录，运行带有 `report` 参数的命令。从输出结果来看，很明显过滤器起作用了，你只看到 `ext4` 相关的函数追踪：
 
 ```
 # trace-cmd report | head -20
@@ -267,14 +273,14 @@ cpus=8
 
 ### 追踪一个特定的 PID
 
-假设你想追踪与一个进程（PID）有关的函数。打开另一个终端，注意运行中的 shell 的PID。
+假设你想追踪与一个进程（PID）有关的函数。打开另一个终端，注意运行中的 shell 的PID：
 
 ```
 # echo $$
 10885
 ```
 
-再次运行 `record` 命令，用 `-P` 选项传递PID。这一次，让终端运行（也就是说，先不要按 `Ctrl+C` ）。
+再次运行 `record` 命令，用 `-P` 选项传递PID。这一次，让终端运行（也就是说，先不要按 `Ctrl+C` ）：
 
 ```
 # trace-cmd record -P 10885 -p function_graph
@@ -284,7 +290,7 @@ Hit Ctrl^C to stop recording
 
 ### 在 shell 上运行一些命令
 
-移动到另一个终端，在那里你有一个以特定PID运行的shell，并运行任何命令，例如，`ls`  命令用来列出文件。
+移动到另一个终端，在那里你有一个以特定 PID 运行的 shell，并运行任何命令，例如，`ls` 命令用来列出文件：
 
 ```
 # ls
@@ -294,7 +300,7 @@ v8-compile-cache-1000
 [...]
 ```
 
-移动到你启用追踪的终端，按 `Ctrl+C` 停止追踪。
+移动到你启用追踪的终端，按 `Ctrl+C` 停止追踪：
 
 ```
 # trace-cmd record -P 10885 -p function_graph
@@ -306,7 +312,7 @@ CPU1 data recorded at offset=0x856000
 [...]
 ```
 
-在追踪的输出中，你可以看到左边是 PID 和 Bash shell，右边是与之相关的函数调用。这对于缩小你的追踪范围是非常方便的。
+在追踪的输出中，你可以看到左边是 PID 和 Bash shell，右边是与之相关的函数调用。这对于缩小你的追踪范围是非常方便的：
 
 ```
 # trace-cmd report  | head -20
@@ -337,12 +343,12 @@ via: https://opensource.com/article/21/7/linux-kernel-trace-cmd
 作者：[Gaurav Kamathe][a]
 选题：[lujun9972][b]
 译者：[萌新阿岩](https://github.com/mengxinayan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/gkamathe
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/puzzle_computer_solve_fix_tool.png?itok=U0pH1uwj (Puzzle pieces coming together to form a computer screen)
-[2]: https://opensource.com/article/21/7/analyze-linux-kernel-ftrace
+[2]: https://linux.cn/article-13752-1.html
 [3]: https://lwn.net/Articles/410200/
