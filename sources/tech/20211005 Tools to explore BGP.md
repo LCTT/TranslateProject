@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2021/10/05/tools-to-look-at-bgp-routes/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
