@@ -4,15 +4,17 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13854-1.html"
 
 Below：一个时间旅行的资源监控器
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202110/06/093522hdsb82nm1cb4b4b6.jpg)
 
 在这篇文章中，我们将介绍 `below`：一个用于现代 Linux 系统的 Apache 2.0 许可的资源监视器。`below` 可以让你重放以前记录的数据。
+
+![][1]
 
 ### 背景
 
