@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13855-1.html"
 
 学习 Core Java 的 8 个原因
 ======
 
 > 在学习建立在 Java 之上的所有相关工具时，了解 Core Java 会给你带来很大的优势。
 
-![学习和研究技术是成功的关键][1]
+![](https://img.linux.net.cn/data/attachment/album/202110/06/094720iax1d49c5sc0sd48.jpg)
 
 计算机编程（也被称为 *编码*）的重点不是使用哪种编程语言，而是发展编程逻辑和学习像程序员一样思考。你一开始使用的编程语言应该是在这一努力过程中对你帮助最大的语言。因此，你必须问自己一个问题，“作为一个程序员，你想开发什么？”
 
