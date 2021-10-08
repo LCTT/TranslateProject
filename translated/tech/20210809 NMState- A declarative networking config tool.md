@@ -4,13 +4,13 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13861-1.html"
 
 NMState：一个声明式网络配置工具
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202110/08/145714mqcyh6sshchomyot.jpg)
 
 这篇文章描述并演示了 NMState，这是一个使用声明式方法配置主机的网络管理器。这意味着你可以通过 API 定义所需的配置状态，而工具则通过<ruby>提供者<rt>provider</rt></ruby>来应用配置。
 
