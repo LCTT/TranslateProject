@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13860-1.html"
 
 用 jconsole 在 Linux 上监控你的 Java
 ======
 
 > 如何使用 Java 开发工具包中的 Java 监控和管理控制台。
 
-![拼图拼成的电脑屏幕][1]
+![](https://img.linux.net.cn/data/attachment/album/202110/08/131129bf3h3gv18388fl11.jpg)
 
 Java 开发工具包（JDK）提供了开发 Java 应用程序的二进制文件、工具和编译器。其中一个有用的工具是 `jconsole`。
 
@@ -26,7 +26,7 @@ Java 开发工具包（JDK）提供了开发 Java 应用程序的二进制文件
   JAVA: /usr/lib/jvm/java-11-openjdk-11.0.11.0.9-5.fc34.x86_64/bin/java
 ```
 
-现在，在另一个终端，我输入 `jconsole`。
+现在，在另一个终端，输入 `jconsole`。
 
 ```
 $ jconsole
@@ -46,7 +46,7 @@ $ jconsole
 
 ### 内存
 
-“<ruby>内存<rt>Memory</rt></ruby>”标签显示 JVM 所使用的内存的各个方面的图表。分配给 JVM 的服务器系统内存的数量被称为“<ruby>堆<rt>Heap</rt></ruby>”。这个屏幕还提供了关于堆的内部组件使用情况的详细信息，例如 Eden Space、Old Gen 和 Survivor Space。你也可以手动请求一个垃圾收集动作。
+“<ruby>内存<rt>Memory</rt></ruby>”标签显示 JVM 所使用的内存的各个方面的图表。分配给 JVM 的服务器系统内存量被称为“<ruby>堆<rt>Heap</rt></ruby>”。这个屏幕还提供了关于堆的内部组件使用情况的详细信息，例如 “<ruby>伊甸园<rt>Eden Space</rt></ruby>”、“<ruby>老年代<rt>Old Gen</rt></ruby>” 和 “<ruby>幸存者区<rt>Survivor Space</rt></ruby>”。你也可以手动请求一个垃圾收集动作。
 
 ![jconsole 内存标签][5]
 
@@ -78,7 +78,7 @@ $ jconsole
 
 ### 总结
 
-Java 已经存在了很长时间，它将继续为全球数百万的系统提供动力。有很多开发环境和监控系统可以使用，但在基本工具包中包含像 `jconsole` 这样的工具会非常有价值。
+Java 已经存在了很长时间，它将继续为全球数百万的系统提供动力。有很多开发环境和监控系统可以使用，但像 `jconsole` 这样的包含在基本工具包中的工具非常有价值。
 
 --------------------------------------------------------------------------------
 
