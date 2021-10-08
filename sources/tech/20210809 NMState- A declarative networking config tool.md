@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/nmstate-a-declarative-networking-config-tool/"
 [#]: author: "Maurizio Garcia https://fedoramagazine.org/author/malgnuz/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
