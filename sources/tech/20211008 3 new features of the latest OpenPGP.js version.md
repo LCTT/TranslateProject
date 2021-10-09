@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/openpgpjs"
 [#]: author: "Daniel Huigens https://opensource.com/users/twiss"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
