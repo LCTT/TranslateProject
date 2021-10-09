@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-vivaldi-ubuntu-linux/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "imgradeone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
