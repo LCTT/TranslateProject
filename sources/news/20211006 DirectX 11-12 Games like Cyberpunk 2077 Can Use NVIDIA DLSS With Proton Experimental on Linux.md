@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/nvidia-dlss-dx-11-12-proton/"
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
