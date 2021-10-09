@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13865-1.html"
 
 《赛博朋克 2077》等 DirectX 11/12 游戏可在 Linux 上体验 DLSS 了
 ======
