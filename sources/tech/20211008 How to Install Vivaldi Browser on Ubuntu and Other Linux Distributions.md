@@ -7,18 +7,20 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Install Vivaldi Browser on Ubuntu and Other Linux Distributions
+如何在 Ubuntu 和其他 Linux 发行版中安装 Vivaldi 浏览器
 ======
 
-_**Brief: Learn how to install Vivaldi web browser on Ubuntu, Debian and several other Linux distributions in this beginner’s tutorial. You’ll also learn about updating it and removing it.**_
+> 您将在本篇新手教程中学习如何在 Ubuntu、Debian 及其他 Linux 发行版中安装 Vivaldi 网页浏览器，同时本教程也将介绍如何更新和卸载该软件。
 
-[Vivaldi][1] is an increasingly popular web browser. It is based on Chromium, so you have Chrome like features, but it adds several other features to give a different, intuitive interface.
+[Vivaldi][1] 是一款关注度逐步上升的网页浏览器。它基于 Chromium 内核，因此它拥有和 Chrome 类似的功能，但它也新增了一些其他特色功能，让这款浏览器与众不同、更为直观。
 
-It comes with tab grouping, ad blocker, mouse gestures, notes manager and even allows adding macros. You could even use split viewing to view multiple pages at once. It also respects your privacy, unlike Chrome.
+它内置了标签组、广告拦截、鼠标手势、笔记管理，甚至还有命令连锁。你甚至可以借助页面平铺来一次性浏览多个页面。当然，相比于 Chrome，Vivaldi 更加尊重你的隐私。
 
-![Tab tiling for split viewing multiple websites at once][2]
+![页面平铺，一次性浏览多个页面][2]
 
-You can understand the popularity of this browser from the fact that [Manjaro Linux recently replaced Firefox with Vivaldi as the default browser][3] in some of its variants.
+你可以从 [Manjaro Linux 近期使用 Vivaldi 取代 Firefox 作为部分分支的默认浏览器][3] 这件事来了解 Vivaldi 浏览器的受欢迎程度。
+
+如果你想尝试一下
 
 If you want to try it, let me show how to install Vivaldi on Linux. You’ll learn:
 
@@ -26,11 +28,9 @@ If you want to try it, let me show how to install Vivaldi on Linux. You’ll lea
   * Tips on updating Vivaldi to the newest version
   * Steps for removing Vivaldi from Ubuntu
 
-
-
-Non-FOSS alert!
-
-Vivaldi is not complete open source software. It’s UI is closed source. It’s been covered here because Vivaldi team took effort in making its software available on Linux.
+> 非自由软件（Non-FOSS）警告！  
+> 
+> Vivaldi is not complete open source software. It’s UI is closed source. It’s been covered here because Vivaldi team took effort in making its software available on Linux.
 
 ### Installing Vivaldi on Ubuntu [GUI Method]
 
