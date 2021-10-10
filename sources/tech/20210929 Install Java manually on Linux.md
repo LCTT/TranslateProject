@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/install-java-manually-linux"
 [#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
