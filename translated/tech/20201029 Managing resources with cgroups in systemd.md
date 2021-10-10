@@ -7,30 +7,31 @@
 [#]: via: (https://opensource.com/article/20/10/cgroups)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-Managing resources with cgroups in systemd
+在 systemd 中使用 cgroup 管理资源
 ======
-Cgroups manage resources per application rather than by the individual
-processes that make up an application.
+
+cgroup 按照应用管理资源，而不是按照组成应用的单个进程。
+
 ![Business woman on laptop sitting in front of window][1]
 
-There is little more frustrating to me as a sysadmin than unexpectedly running out of a computing resource. On more than one occasion, I have filled all available disk space in a partition, run out of RAM, and not had enough CPU time to perform my tasks in a reasonable amount of time. Resource management is one of the most important tasks that sysadmins do.
+作为一个系统管理员，没有事情比意外地耗尽计算资源让我更觉得沮丧。我曾不止一次填满了一个分区的所有可用磁盘空间、耗尽内存、以及没有足够的 CPU 时间在合理的时间内处理我的任务。资源管理是系统管理员最重要的工作之一。
 
-The point of resource management is to ensure that all processes have relatively equal access to the system resources they need. Resource management also involves ensuring that RAM, hard drive space, and CPU capacity are added when necessary or rationed when that is not possible. In addition, users who hog system resources, whether intentionally or accidentally, should be prevented from doing so.
+资源管理的关键是保证所有的进程能够相对公平的访问需要的系统资源。资源管理还包括确保在需要时添加内存、硬盘驱动器空间、还有 CPU 容量；或者在无法添加时限制资源的使用。此外，应该阻止独占系统资源的用户，无论其是否有意。
 
-There are tools that enable sysadmins to monitor and manage various system resources. For example, [top][2] and similar tools allow you to monitor the use of memory, I/O, storage (disk, SSD, etc.), network, swap space, CPU usage, and more. These tools, particularly those that are CPU-centric, are mostly based on the paradigm that the running process is the unit of control. At best, they provide a way to adjust the nice number–and through that, the priority—or to kill a running process. (For information about nice numbers, see [_Monitoring Linux and Windows hosts with Glances_][3].)
 
-Other tools based on traditional resource management in a SystemV environment are managed by the `/etc/security/limits.conf` file and the local configuration files located in the `/etc/security/limits.d` directory. Resources can be limited in a fairly crude but useful manner by user or group. Resources that can be managed include various aspects of RAM, total CPU time per day, total amount of data, priority, nice number, number of concurrent logins, number of processes, maximum file size, and more.
+系统管理员可以通过一些工具监控和管理不同的系统资源。例如，[top][2] 和类似的工具允许你监控内存、I/O、存储（磁盘，SSD等）、网络、交换空间、CPU 的用量等。这些工具，尤其是以 CPU 为中心的工具，大部分基于运行的进程是控制的基本单位的模型。他们最多只是提供了一种方式来调整 nice 数字——从而修改优先级——或者杀死一个运行的进程。（要了解 nice 数字的信息，查看[_使用 Glances 监控 Linux 和 Windows 主机_][3]）。
 
-### Using cgroups for process management
+SystemV 环境中基于传统的资源管理的其他工具，由 `/etc/security/limits.conf` 文件和 `/etc/security/limits.d` 中的本地配置文件控制。资源可以按照用户或组以一种相当粗糙但实用的方式限制。可以管理的资源包括 RAM 的各个方面、每日的总 CPU 时间、数据总量、优先级、nice 数字、同时登陆的数量、进程数、文件大小的最大值等。
 
-One major difference between [systemd and SystemV][4] is how they handle processes. SystemV treats each process as an entity unto itself. systemd collects related processes into control groups, called [cgroups][5] (short for control groups), and manages system resources for the cgroup as a whole. This means resources can be managed per application rather than by the individual processes that make up an application.
+### 使用 cgroup 管理进程
 
-The control units for cgroups are called slice units. Slices are a conceptualization that allows systemd to order processes in a tree format for ease of management.
+[systemd 和 SystemV][4] 之间的一个主要差异是管理进程的方式。SystemV 将每个进程当做指向自身的一个实体。systemd 将相关的进程集中到一个控制组，称作 [cgroup][5]（控制组的简称），并将 cgroup 作为一个整体管理系统资源。这意味着资源能够基于应用管理，而不是组成应用的单个进程。
 
-### Viewing cgroups
+cgroup 的控制单元称作切片单元。切片是允许 systemd 以树状格式控制程序次序，从而简化管理的概念化。
 
-I'll start with some commands that allow you to view various types of information about cgroups. The `systemctl status <service>` command displays slice information about a specified service, including its slice. This example shows the `at` daemon:
+### 查看 cgroup
 
+我将从一些允许你查看不同类型  cgroup 信息的命令开始。 `systemctl status <service>` 命令显示一个特定服务的切片信息，包括服务的切片。这个例子展示了 `at` 守护进程：
 
 ```
 [root@testvm1 ~]# systemctl status atd.service
@@ -49,10 +50,9 @@ Sep 23 12:18:24 testvm1.both.org systemd[1]: Started Deferred execution schedule
 [root@testvm1 ~]#
 ```
 
-This is an excellent example of one reason that I find systemd more usable than SystemV and the old init program. There is so much more information here than SystemV could provide. The cgroup entry includes the hierarchical structure where the `system.slice` is systemd (PID 1), and the `atd.service` is one level below and part of the `system.slice`. The second line of the cgroup entry also shows the process ID (PID) and the command used to start the daemon.
+这是一个我感到 systemd 比 SystemV 和旧的初始化程序更好用的原因的绝佳示例。这里的信息远比 SystemV 能够提供的丰富。cgroup 项包括的层级结构中，`system.slice` 是 systemd（PID 1），`atd.service` 在下一层，是 `system.slice` 的一部分。cgroup 项的第二行还显示了进程 ID（PID）和启动守护进程使用的命令。
 
-The `systemctl` command shows multiple cgroup entries. The `--all` option shows all slices, including those that are not currently active:
-
+`systemctl` 命令列出多个 cgroup 项，`--all` 参数列出所有的切片，包括当前没有激活的：
 
 ```
 [root@testvm1 ~]# systemctl -t slice --all
@@ -78,14 +78,13 @@ To show all installed unit files use 'systemctl list-unit-files'.
 [root@testvm1 ~]#
 ```
 
-The first thing to notice about this data is that it shows user slices for UIDs 0 (root) and 1000, which is my user login. This shows only the slices and not the services that are part of each slice. This data shows that a slice is created for each user at the time they log in. This can provide a way to manage all of a user's tasks as a single cgroup entity.
+关于这个数据，第一个需要注意的是数据显示了 UID 0（root）和 1000 的用户切片，1000 是我登陆的用户。这里列出了组成每个切片的切片部分，而不是服务。还说明了每个用户登录时都会为其创建一个切片，这为将一个用户的所有任务作为单个 cgroup 项进行管理提供了一种方式。
 
-### Explore the cgroup hierarchy
+### 探索 cgroup 层次结构
 
-All is well and good so far, but cgroups are hierarchical, and all of the service units run as members of one of the cgroups. Viewing that hierarchy is easy and uses one old command and one new one that is part of systemd.
+目前为止一切顺利，但是 cgroup 是分层的，所有的服务单元作为其中一个 cgroup 的成员运行。要查看这个层次结构很简单，使用 systemd 的一个旧命令和一个新命令即可。
 
-The `ps` command can be used to map the processes and their locations in the cgroup hierarchy. Note that it is necessary to specify the desired data columns when using the `ps` command. I significantly reduced the volume of output from this command below, but I tried to leave enough so you can get a feel for what you might find on your systems:
-
+`ps` 命令可以用于映射进程的和其所处的 cgroup 层次。注意使用 `ps` 命令时需要指明想要的数据列。我大幅削减了下面命令的输出数量，但是试图保留足够的数据，以便你能够对自己系统上的输出有所感受：
 
 ```
 [root@testvm1 ~]# ps xawf -eo pid,user,cgroup,args
@@ -162,10 +161,9 @@ ons Action Buttons Log out, lock or other system actions
 &lt;SNIP&gt;
 ```
 
-You can view the entire hierarchy with the `systemd-cgls` command, which is a bit simpler because it does not require any complex options.
+你可以使用 `systemd-cgls` 命令查看整个层次结构，这个命令不需要任何的复杂参数，更加简单。
 
-I have shortened this tree view considerably. as well, but I left enough to give you some idea of the amount of data as well as the types of entries you should see when you do this on your system. I did this on one of my virtual machines, and it is about 200 lines long; the amount of data from my primary workstation is about 250 lines:
-
+我也大幅缩短了这个树状结构，但是保留了足够多的输出，以便你能够了解在自己的系统上执行这个命令时应该看到的数据总量和条目类型。我在我的一个虚拟机上执行了这个命令，输出大概有 200 行；我的主要工作站的输出大概有 250 行。
 
 ```
 [root@testvm1 ~]# systemd-cgls
@@ -263,43 +261,45 @@ Control group /:
  &lt;SNIP&gt;
 ```
 
-This tree view shows all of the user and system slices and the services and programs running in each cgroup. Notice the units called "scopes," which group related programs into a management unit, within the `user-1000.slice` in the listing above. The `user-1000.slice/session-7.scope` cgroup contains the GUI desktop program hierarchy, starting with the LXDM display manager session and all of its subtasks, including things like the Bash shell and the Thunar GUI file manager.
+这个树状视图显示了所有的用户和系统切片，以及每个 cgroup 内正在运行的服务和程序。注意叫作“范围”的单元，它将相关的程序组成一个管理单元，在上面列出的结果中就是 `user-1000.slice`。`user-1000.slice/session-7.scope` cgroup 包含了 GUI 桌面程序层次结构，以 LXDM 显示管理器会话和其所有的子任务开始，包括像 Bash 命令行解释器和 Thunar GUI 文件管理器之类的程序。
 
-Scope units are not defined in configuration files but are generated programmatically as the result of starting groups of related programs. Scope units do not create or start the processes running as part of that cgroup. All processes within the scope are equal, and there is no internal hierarchy. The life of a scope begins when the first process is created and ends when the last process is destroyed.
+配置文件中不定义范围单元，而是作为启动相关程序组的结果程序化生成的。范围单元不创建或启动作为 cgroup 组成部分运行的进程。范围内的所有进程都是平等的，没有内部的层次结构。范围的生命周期在第一个进程创建时开始，在最后一个进程销毁时结束。
 
-Open several windows on your desktop, such as terminal emulators, LibreOffice, or whatever you want, then switch to an available virtual console and start something like `top` or [Midnight Commander][11]. Run the `systemd-cgls` command on your host, and take note of the overall hierarchy and the scope units.
+在你的桌面打开多个窗口，比如终端模拟器、LibreOffice、或者任何你想打开的，然后切换到一个可用的虚拟控制台，启动类似 `top` 或 [Midnight Commander][11] 的程序。在主机运行 `systemd-cgls` 命令，留意整体的层次结构和范围单元。
 
-The `systemd-cgls` command provides a more complete representation of the cgroup hierarchy (and details of the units that make it up) than any other command I have found. I prefer its cleaner representation of the tree than what the `ps` command provides.
+`systemd-cgls` 命令提供的 cgroup 层次结构表示（以及组成 cgroup 单元的细节），比我见过的其他任何指令都要完整。和 `ps` 命令提供的输出相比，我喜欢 `systemd-cgls` 命令更简洁的树形表示。
 
-### With a little help from my friends
+### 来自朋友们的一点帮助
 
-After covering these basics, I had planned to go into more detail about cgroups and how to use them, but I discovered a series of four excellent articles by Red Hat's [Steve Ovens][12] on Opensource.com's sister site [Enable Sysadmin][13]. Rather then basically rewriting Steve's articles, I decided it would be much better to take advantage of his cgroup expertise by linking to them:
+介绍完这些基础知识后，我曾计划过深入研究 cgroup 的更多细节，以及如何使用，但是我在 Opensource.com 的姐妹网站 [Enable Sysadmin][13] 上发现了一系列四篇优秀文章，由 Red Hat 公司的 [Steve Ovens][12] 所作。与其从头重写 Steve 的文章，我觉得倒不如通过链接到这些文章，利用他的 cgroup 专业知识：
 
-  1. [A Linux sysadmin's introduction to cgroups][14]
-  2. [How to manage cgroups with CPUShares][15]
-  3. [Managing cgroups the hard way—manually][16]
-  4. [Managing cgroups with systemd][17]
+  1. [一个 Linux 系统管理员对 cgroup 的介绍][14]
+  2. [如何用 CPUShares 管理 cgroup][15]
+  3. [用更难的方式——手动管理 cgroup][16]
+  4. [用 systemd 管理 cgroup][17]
+
+像我一样享受这些文章并从中汲取知识吧。
+
+### 其他资源
+
+因特网上充斥着大量关于 systemd 的信息，但大部分都简短生硬、愚钝、甚至令人误解。除了本文提到的资源，下面的网页提供了关于 systemd 启动更详细可靠的信息。自从我开始这一系列的文章来反映我所做的研究以来，这个的列表已经变长了。
+
+  * Fedora 项目有一个优质实用的 [systemd 指南][18]，几乎有你使用 systemd 配置、管理、维
+护一个 Fedora 计算机需要知道的一切。
+  * Fedora 项目还有一个好用的[速查表][19]，交叉引用了古老的 SystemV 命令和对应的 systemd 命令。
+  * [systemd.unit(5) 手册页][20]包含了一个不错的单元文件中段的列表，以及这些段的配置选项和简洁的描述。
+  * Red Hat 文档包含了一个[单元文件结构][21]的有用描述，还有一些其他的重要信息。
+  * 要获取 systemd 的详细技术信息和创立的原因，查看 Freedesktop.org 的 [systemd 描
+述][22]。这个使我发现过的最棒页面之一，因为其中包含了许多指向其他重要准确文档的链接。
+
+  * Linux.com 上 ”systemd 的更多乐趣 " 提供了更高级的 systemd [信息和提示][23]。
+  * 查看 [systemd.resource-control(5)][24] 的手册页
+  * 查看 [_Linux 内核用户和管理员指南_][25]中的[控制组 v2 条目][26]。
 
 
-
-Enjoy and learn from them, as I did.
-
-### Other resources
-
-There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup. This list has grown since I started this series of articles to reflect the research I have done.
-
-  * The Fedora Project has a good, practical [guide][18] [to systemd][18]. It has pretty much everything you need to know in order to configure, manage, and maintain a Fedora computer using systemd.
-  * The Fedora Project also has a good [cheat sheet][19] that cross-references the old SystemV commands to comparable systemd ones.
-  * The [systemd.unit(5) manual page][20] contains a nice list of unit file sections and their configuration options along with concise descriptions of each.
-  * Red Hat documentation contains a good description of the [Unit file structure][21] as well as other important information.
-  * For detailed technical information about systemd and the reasons for creating it, check out Freedesktop.org's [description of systemd][22]. This page is one of the best I have found because it contains many links to other important and accurate documentation.
-  * Linux.com's "More systemd fun" offers more advanced systemd [information and tips][23].
-  * See the man page for [systemd.resource-control(5)][24].
-  * In [_The Linux kernel user's and administrator's guide_][25], see the [Control Group v2][26] entry.
-
-
-
-There is also a series of deeply technical articles for Linux sysadmins by Lennart Poettering, the designer and primary developer of systemd. These articles were written between April 2010 and September 2011, but they are just as relevant now as they were then. Much of everything else good that has been written about systemd and its ecosystem is based on these papers.
+还有一系列针对系统管理员的深度技术文章，由 systemd 的设计者和主要开发者 Lennart
+Poettering 所作。这些文章写于 2010 年 4 月到 2011 年 9 月之间，但在当下仍然像当时一样有
+价值。关于 systemd 及其生态的许多其他优秀的作品都是基于这些文章的。
 
   * [Rethinking PID 1][27]
   * [systemd for Administrators, Part I][28]
@@ -322,7 +322,7 @@ via: https://opensource.com/article/20/10/cgroups
 
 作者：[David Both][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[YungeG](https://github.com/YungeG)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
