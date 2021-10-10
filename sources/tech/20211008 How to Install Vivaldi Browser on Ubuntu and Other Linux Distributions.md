@@ -20,113 +20,111 @@
 
 你可以从 [Manjaro Linux 近期使用 Vivaldi 取代 Firefox 作为部分分支的默认浏览器][3] 这件事来了解 Vivaldi 浏览器的受欢迎程度。
 
-如果你想尝试一下
+如果你想尝试一下这款浏览器的话，接下来让我告诉你，如何在 Linux 上安装 Vivaldi。你将了解到：
 
-If you want to try it, let me show how to install Vivaldi on Linux. You’ll learn:
-
-  * GUI and command line methods for installing Vivaldi
-  * Tips on updating Vivaldi to the newest version
-  * Steps for removing Vivaldi from Ubuntu
+  * 安装 Vivaldi 的 GUI 和命令行方式
+  * 将 Vivaldi 更新到最新版本的提示
+  * 在 Ubuntu 中卸载 Vivaldi 的方式
 
 > 非自由软件（Non-FOSS）警告！  
 > 
-> Vivaldi is not complete open source software. It’s UI is closed source. It’s been covered here because Vivaldi team took effort in making its software available on Linux.
+> Vivaldi 并非完全的开源软件。它的 UI 界面是闭源的。之所以在这里介绍这款浏览器，是因为 Vivaldi 团队正努力让该软件在 Linux 平台上可用。
 
-### Installing Vivaldi on Ubuntu [GUI Method]
+### 在 Ubuntu 中安装 Vivaldi [GUI 方式]
 
-The good thing is that Vivaldi provides pre-built binaries in DEB form for Ubuntu/Debian based distros and in RPM form for Fedora, Red Hat and SUSE.
+好消息是，Vivaldi 提供了预先构建好的安装包，包括 Ubuntu/Debian 的 DEB 文件，以及 Fedora、Red Hat、SUSE 的 RPM 文件、
 
-It is available for both 32 bit and 64-bit platforms, as well as [ARM devices like Raspberry Pi][4].
+它支持 32 位和 64 位平台，也支持 [像树莓派之类的 ARM 设备][4]。
 
-![Vivaldi provides installer for several types of Linux distributions][5]
+![Vivaldi 为各类 Linux 发行版提供了安装包][5]
 
-The installation process is really simple. You go to the Vivaldi web page and download the appropriate installer file and then double click on it to install it. That’s it.
+安装过程非常简单。你只需要前往 Vivaldi 的官网下载正确的安装包文件，双击打开，然后安装，大功告成。
 
-I’ll show the steps in detail for Ubuntu/Debian. You can use similar steps for other distributions.
+我将详细介绍在 Ubuntu/Debian 下的安装过程。对于其他类型的发行版，你可以使用类似的步骤。
 
-#### Step 1: Download Vivaldi
+#### 第 1 步：下载 Vivaldi
 
-Go to the Vivaldi’s download page and download the DEB file for Ubuntu.
+前往 Vivaldi 的下载页面，下载支持 Ubuntu 的 DEB 格式安装包。
 
-[Download Vivaldi][6]
+[下载 Vivaldi][6]
 
-![Download DEB file for Ubuntu/Debian][7]
+![下载支持 Ubuntu/Debian 的 DEB 安装包][7]
 
-#### Step 2: Install the downloaded DEB file
+#### 第 2 步：安装刚刚下载的 DEB 文件
 
-Go to the Downloads folder where you have the deb file downloaded. [Installing deb file][8] is easy. Either just double-click on it or right click to open it with software center.
+前往你刚刚下载 DEB 文件的下载文件夹。[安装 DEB 文件][8] 非常简单，只需要双击打开，或者右键后使用软件中心打开即可。
 
-![Right click on the downloaded deb file and open it with Software Install][9]
+![右键点击下载的 DEB 文件并用软件中心打开以安装][9]
 
-It will open the software center application and here, you can see the option to install Vivaldi. Just hit the Install button.
+这将打开软件中心，在这里可以看到安装 Vivaldi 的选项。点击安装按钮即可。
 
-![Hit the Install button][10]
+![点击安装按钮][10]
 
-You’ll be asked to enter your system’s account password. Enter that and you should have it installed in a few seconds. You’ll see that Install option changes to remove. This is an indication that Vivaldi is now installed.
+您将需要输入系统账户的密码，输入密码授权后，Vivaldi 很快就能完成安装，随后安装按钮也变成了移除按钮。这表明 Vivaldi 已经安装完成了。
 
-#### Step 3: Using Vivaldi
+#### 第 3 步：使用 Vivaldi
 
-Open the system menu by pressing the super (Windows) key and searching for Vivaldi. Click on the Vivaldi icon.
+按下 Super（Windows）键打开系统菜单，搜索 Vivaldi，然后单击 Vivaldi 的图标。
 
-![Search for Vivaldi in the system menu][11]
+![在系统菜单中搜索 Vivaldi][11]
 
-You’ll see a screen like this on the first run.
+首次启动时，你将看到如下界面。
 
-![Vivaldi running in Ubuntu][12]
+![运行于 Ubuntu 的 Vivaldi][12]
 
-Now that you know the this method, let me quickly show how to install Vivaldi on Ubuntu and Debian from the terminal.
+既然你已经知道了这个方法，那我接下来将展示在 Ubuntu/Debian 使用终端安装 Vivaldi 的方法。
 
-### Method 2: Installing Vivaldi on Ubuntu and Debian from the command line
+### 方式 2：借助终端，在 Ubuntu/Debian 上安装 Vivaldi
 
-Open a terminal and make sure that you have wget installed for [downloading files in the command line.][13]
+打开终端，确认你已经安装了用于 [在命令行下下载文件][13] 的 wget。
 
 ```
 sudo apt install wget
 ```
 
-Next, get the public key of the Vivaldi repository and add it to your system so that your system trusts the packages coming from it. If interested, read [this article about adding external repository in Ubuntu][14].
+接下来，获取 Vivaldi 仓库的公钥并添加到系统，以让系统信任该来源的软件包。如果你感兴趣的话，你可以阅读 [关于在 Ubuntu 添加第三方软件仓库的文章][14]。
 
 ```
 wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
 ```
 
-Once the key has been added, add Vivaldi repository as well:
+添加完该密钥后，再添加 Vivaldi 的仓库：
 
 ```
 sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main'
 ```
 
-Now you are almost set. Update the package cache and install it.
+现在距离完成也只有一步之遥了。更新软件仓库缓存并安装 Vivaldi。
 
 ```
 sudo apt update && sudo apt install vivaldi-stable
 ```
 
-And that’s it. Search for it in the menu and start it from there.
+大功告成。现在，前往系统菜单搜索并启动 Vivaldi 吧。
 
-### Updating Vivaldi on Ubuntu
+### 在 Ubuntu 中更新 Vivaldi
 
-Both GUI and command line methods add the Vivaldi repository to your system. This means that whenever there is a new Vivaldi release, you get it along with the system updates.
+GUI 和命令行这两种方式都会在系统里添加 Vivaldi 的仓库。这意味着，只要 Vivaldi 发布了新版本，你就可以在系统更新中一并获取 Vivaldi 的更新。
 
-![Vivaldi repo is added to the system][15]
+![已添加到系统中的 Vivaldi 仓库][15]
 
-Basically, you update the Ubuntu system and it updates the Vivaldi browser if there is a new version available.
+一般情况下，你更新 Ubuntu 系统时，如果 Vivaldi 发布了新版本，那么 Vivaldi 也同时会被更新。
 
-![Vivaldi browser is updated with the system updates][16]
+![Vivaldi 浏览器会跟随系统更新][16]
 
-### Removing Vivaldi from Ubuntu
+### 在 Ubuntu 中卸载 Vivaldi
 
-If you do not like Vivaldi or no longer want to use it, you can surely remove it. Now, to [uninstall applications from Ubuntu][17], you may use Software Center but it won’t find the external, third-party installed software.
+如果你不喜欢 Vivaldi 或者不再使用，你可以直接卸载。现在，如果你想 [在 Ubuntu 中卸载软件][17]，你可能会想到软件中心，但软件中心不会查找到外部和第三方的软件包。
 
-You’ll have to use the terminal now even though you used GUI method to install it. That’s really easy. Open a terminal and use the command below:
+目前你必须使用终端卸载 Vivaldi，即便你使用 GUI 方式安装。其实这也很简单，打开终端，输入以下命令：
 
 ```
 sudo apt remove vivaldi-stable
 ```
 
-Sudo gives you [root access in Ubuntu][18]. You’ll have to enter your account’s password. While entering the password, nothing is seen on the screen. That’s normal. Enter the password blindly and it will be removed.
+sudo 会 [在 Ubuntu 中给予你 root 权限][18]。你需要输入当前账户的密码。输入密码时，你可能不会在屏幕上看见输入密码的痕迹。这是正常现象，直接输入密码即可，随后 Vivaldi 将被卸载。
 
-I hope you find this tutorial helpful in installing and using Vivaldi on Linux.
+希望这篇关于如何在 Linux 安装 Vivaldi 的教程对你有用。
 
 --------------------------------------------------------------------------------
 
