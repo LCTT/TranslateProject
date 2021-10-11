@@ -4,11 +4,13 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13872-1.html"
 
 基于 KDE 的最佳 Linux 发行版
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202110/11/115436wngdi7vndoodjnfd.jpg)
 
 KDE 是目前最具定制性和最快速的桌面环境之一。虽然你可以随时安装 KDE，但最好选择一个 KDE 开箱即用的 Linux 发行版。
 
