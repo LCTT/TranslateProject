@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "perfiffer"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13875-1.html"
 
 使用 Jekyll 构建你的网站
 ======
