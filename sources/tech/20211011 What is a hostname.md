@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/what-hostname"
 [#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
