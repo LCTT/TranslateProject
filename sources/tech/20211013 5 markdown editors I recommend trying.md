@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/markdown-editors"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
