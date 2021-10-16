@@ -2,45 +2,48 @@
 [#]: via: "https://news.itsfoss.com/open-source-changed-linux-torvalds/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lujun9972"
-[#]: translator: "zd200572"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-Open Source Changed Linux Otherwise It Was Done: Linus Torvalds
+开源改变了Linux, 否则它就完了：Linus Torvalds 
+
 ======
 
-You probably already know the story. 30 years ago, Finnish student Linus Torvalds created a UNIX-like operating system as a hobby project.
 
-What you do not know is that Torvalds thought that the hobby project was done, and he would have left it behind to work on some new and interesting project.
+你可能已经知道这个故事，30年前，芬兰学生Linus Torvalds创建了一个类UNIX操作系统，作为一个业余项目。
 
-So, what made his work on this ‘hobby project’ for 30 years? The answer is open source.
+你不知道的是，Torvalds认为这个业余项目已经完成，他会把它抛在脑后，他将从事一些新的和有趣的项目。
 
-### Open source changed Linux
 
-At the recently concluded [Open Source Summit North America event][1], Linus Torvalds shared some insights into the past, present and future of the Linux project.
+所以，是什么让他在这个”业余项目"工作了30年呢？答案是开源。
 
-While remembering the beginning of the project, [Torvalds said][2] that he’d expected to leave behind Linux in a ‘done state’ to work for something new and interesting.
+### 开源改变了Linux
 
-> That was clearly then what open source changed. Because suddenly this project — that I probably would’ve left behind, if it was only up to me — I started getting questions about, and eventually patches — that just kept the motivation going. And here we are 30 years later, and it’s still what keeps the motivation going.
+在最近结束的[北美开源峰会][1]上，Linus Torvalds分享了一些关于Linux项目过去、现在和未来的见解。
 
-Torvalds also added that as far as he is concerned, Linux is done for the past 29 years. Every other feature that has been added later is about what other people needed, wanted or were interested in.
+当回忆起这个项目的最初情况，[Torvalds说][2]他期望离开Linux这个“完成状态”的项目，去做些新的和更有趣的工作。
 
-Many developers would relate to this. You work on a project and think that it has reached a ‘done’ state. If the project does not get enough traction, you lose interest to work on it and move to something ‘new and exciting’. The real motivation to continue the project comes from the users and the recognition.
 
-When asked about what they should be doing for the 50th anniversary of Linux, Torvalds said that he doesn’t see himself doing kernel programming at the age of 70. Then he also chipped in that he didn’t imagine himself doing kernel programming at the age of 50 as well and yet he is doing that at present.
+> 显然是开源改变了这一切。因为突然这个项目，我可能会留下，如果这仅取决于我，我开始得到问题，最后打补丁，这让我的动力得以继续。现在30年过去了，这仍然是保持动力的原因。
 
-> “Somehow I don’t see myself doing kernel programming when I’m 70. But on the other hand, I didn’t see myself doing kernel programming when I was 50 either, a few years back. So… we’ll see.”
+Torvalds还补充说，就他而言，Linux在过去29年里一直这样做。以后添加的所有其他功能，都是其他人需要、想要或感兴趣的。
 
-It is always endearing to listen to Torvalds talking about Linux. So much to learn and to relate as an ardent Linux user, right?
+许多开发人员都会涉及到这一点。你工作在一个“完成”的项目上，如果这个项目没有获得足够的吸引力，你将会失去兴趣去做它，并转移到“新的和更有趣的”东西上。实际上继续这个项目的真正动力来自用户和认可。
+
+
+当被问及Linux50周年要做些什么时，Torvalds说，他不想看到自己在70岁继续内核编程。他也插话说，他没想到自己在50岁还在从事内核编程，但是他现在正在做。
+
+
+> ”不知何故，我不能想像我70岁还做内核编程。但是另一方面，几年前，我也不能想到自己50岁还做内核编程，所以。。。我们拭目以待。“
+
+听Torvalds谈论Linux总是很可爱的，作为一个热心的Linux用户，有这么多需要学习和联系的东西，对吗？
+
 
 _Source: [The News Stack][2]_
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
 
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
-
-I'm not interested
 
 --------------------------------------------------------------------------------
 
@@ -48,7 +51,7 @@ via: https://news.itsfoss.com/open-source-changed-linux-torvalds/
 
 作者：[Abhishek][a]
 选题：[lujun9972][b]
-译者：[zd200572](https://github.com/译者ID)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
