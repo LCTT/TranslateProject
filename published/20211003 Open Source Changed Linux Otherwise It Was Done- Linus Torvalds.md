@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zd200572"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13890-1.html"
 
 Linus Torvalds ：开源改变了 Linux, 否则它就完了
 ======
