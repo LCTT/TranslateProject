@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (unigeorge)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-13891-1.html)
 [#]: subject: (How to process real-time data with Apache)
 [#]: via: (https://opensource.com/article/20/2/real-time-data-processing)
 [#]: author: (Simon Crosby https://opensource.com/users/simon-crosby)
@@ -10,13 +10,13 @@
 如何使用 Apache 软件处理实时数据
 ======
 
-开源社区在处理实时事件的项目丰富度方面处于领先地位。
+> 开源以丰富的项目画布引领着处理实时事件的方向。
 
-![Alarm clocks with different time][1]
+![](https://img.linux.net.cn/data/attachment/album/202110/17/105502opl53qrmj950j3mv.jpg)
 
-在“永不下线”的未来，入网设备规模可能会达到数十亿。存储原始数据，日后再进行分析的方案将不再能满足需求，因为用户需要实时且准确的响应。要对故障等敏感状况进行预测，实时处理数据也必不可少——数据到达数据库后再处理肯定是来不及的。
+在“永不下线”的未来，入网设备规模可能会达到数十亿。存储原始数据，日后再进行分析的方案将不再能满足需求，因为用户需要实时且准确的响应。要对故障等对环境敏感的状况进行预测，实时处理数据也必不可少 —— 数据到达数据库后再处理肯定是来不及的。
 
-有人可能会说，“云可扩展性”能够满足实时处理流数据的需求，但一些简单的例子就能表明它永远无法满足对无界数据流进行实时响应的需求。从移动设备到物联网，都需要一种新的范式来满足需求。尽管云计算依赖对大数据“先存储后分析”的方案，但也迫切需要一种能够处理持续、杂乱和海量数据流的软件框架，并在数据流到达时立即对其进行处理，以保证实时的响应、预测和对数据的洞悉。
+有人可能会说，“云可扩展性”能够满足实时处理流数据的需求，但一些简单的例子就能表明它永远无法满足对无界数据流进行实时响应的需求。从移动设备到物联网，都需要一种新的范式来满足需求。尽管云计算依赖于对大数据“先存储后分析”的方案，但也迫切需要一种能够处理持续、杂乱和海量数据流的软件框架，并在数据流到达时立即对其进行处理，以保证实时的响应、预测和对数据的洞悉。
 
 例如，在加利福尼亚州的帕洛阿尔托市，每天从基础交通设施产生的流数据比 Twitter Firehose 还要多。这是很大的数据量。为 Uber、Lyft 和 FedEx 等消费者预测城市交通需要实时的分析、学习和预测。云处理不可避免地导致每个事件大约会有半秒的延迟。
 
@@ -29,13 +29,13 @@
 
 ### 发布和订阅 
 
-事件驱动系统领域中有一个关键架构模式：<ruby>发布/订阅<rp>(</rp><rt>publish/subscribe</rt><rp>)</rp></ruby> 消息传递模式。这是一种异步通信方法，其中消息会从 _发布者_（数据产生方）传递到 _订阅者_（处理数据的应用程序）。发布/订阅模式可以将消息发送者与消费者分离开来。
+事件驱动系统领域中有一个关键架构模式：<ruby>发布/订阅<rt>publish/subscribe</rt></ruby> 消息传递模式。这是一种异步通信方法，其中消息会从 _发布者_（数据产生方）传递到 _订阅者_（处理数据的应用程序）。发布/订阅模式可以将消息发送者与消费者分离开来。
 
-在发布/订阅模式中，消息源会 _发布_ 针对某个 _topic_（主题） 的 <ruby>事件<rp>(</rp><rt>event</rt><rp>)</rp></ruby> 至 _broker_（服务端），后者按接收顺序存储它们。应用程序可以 _订阅_ 一个或多个 _topic_，然后 _broker_ 会转发匹配的事件。 Apache Kafka 和 Pulsar 以及 CNCF NATS 是发布/订阅系统。 发布/订阅的云服务包括 Google Pub/Sub、AWS Kinesis、Azure Service Bus、Confluent Cloud 等。（LCTT译注：本段部分术语英文名称更为泛用，针对这些术语，正文采用英文，仅在括号中标注其对应中文。）
+在发布/订阅模式中，消息源会 _发布_ 针对某个 <ruby>主题<rt>topic</rt></ruby> 的 <ruby>事件<rt>event</rt></ruby> 至 <ruby>服务端<rt>broker</rt></ruby>，后者按接收顺序存储它们。应用程序可以 _订阅_ 一个或多个 _主题_，然后 _服务端_ 会转发匹配的事件。 Apache Kafka 和 Pulsar 以及 CNCF NATS 是发布/订阅系统。 发布/订阅的云服务包括 Google Pub/Sub、AWS Kinesis、Azure Service Bus、Confluent Cloud 等。（LCTT 译注：本段部分术语英文名称更为泛用，针对这些术语，采用了中英文标注。）
 
-发布/订阅系统不会 _运行_ 订阅者应用程序，它们只是 _传递_ 数据给相应 topic 的订阅者。
+发布/订阅系统不会 _运行_ 订阅者应用程序，它们只是 _传递_ 数据给相应主题的订阅者。
 
-流数据通常包含应用程序或基础架构状态更新的事件。在选择架构来处理数据时，发布/订阅框架等数据分发系统的作用是有限的。消费者应用程序的“处理方式”超出了发布/订阅系统的范围。这让开发人员的管理变得极具复杂性。所谓的流处理器是一种特殊的订阅者，可以动态分析数据并将结果返回给同一个 broker。 
+流数据通常包含应用程序或基础架构状态更新的事件。在选择架构来处理数据时，发布/订阅框架等数据分发系统的作用是有限的。消费者应用程序的“处理方式”超出了发布/订阅系统的范围。这让开发人员的管理变得极具复杂性。所谓的流处理器是一种特殊的订阅者，可以动态分析数据并将结果返回给同一个服务端。 
 
 ### Apache Spark
 
@@ -65,7 +65,7 @@ via: https://opensource.com/article/20/2/real-time-data-processing
 作者：[Simon Crosby][a]
 选题：[lujun9972][b]
 译者：[unigeorge](https://github.com/unigeorge)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
