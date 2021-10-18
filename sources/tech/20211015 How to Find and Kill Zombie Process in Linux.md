@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/kill-zombie-process-linux/"
 [#]: author: "Marco Carmona https://itsfoss.com/author/marco/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zengyi1001"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
