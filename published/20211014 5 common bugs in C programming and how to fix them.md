@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13894-1.html"
 
 C 语言编程中的 5 个常见错误及对应解决方案
 ======
