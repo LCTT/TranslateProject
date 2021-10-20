@@ -7,24 +7,22 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Rotate and archive logs with the Linux logrotate command
+使用 Linux `logrotate` 命令轮转和归档日志
 ======
-Keep log files fresh with this Linux command. Download the new logrotate
-cheat sheet.
+使用此 Linux 命令保持日志文件更新。下载新的 `logrotate` 备忘单。
 ![Logs stacked up and to the right in front of a green tree forest][1]
 
-Logs are great for finding out what an application is doing or troubleshooting a possible problem. Almost every application we deal with generates logs, and we want the applications we develop ourselves to generate them too. The more verbose the logs, the more information we have. But left to themselves, logs can grow to an unmanageable size, and they can, in turn, become a problem of their own. So it's a good idea to keep them trimmed down, keep the ones we're going to need, and archive the rest.
+日志非常适合找出应用程序在做什么或对可能的问题进行故障排除。几乎我们处理的每个应用程序都会生成日志，我们希望我们自己开发的应用程序也生成日志。日志越详细，我们拥有的信息就越多。但放任不管，日志可能会增长到无法管理的大小，反过来，它们可能会成为它们自己的问题。因此，最好将它们进行裁剪，保留我们需要的那些，并将其余的归档。
 
-### Basics
+### 基本功能
 
-The `logrotate` utility is excellent at managing logs. It can rotate them, compress them, email them, delete them, archive them, and start fresh ones when you need them.
+`logrotate` 实用程序在管理日志方面非常出色。它可以轮转日志、压缩日志、通过电子邮件发送日志、删除日志、归档日志，并在你需要时开始记录最新的。
 
-Running `logrotate` is pretty simple—just run `logrotate -vs state-file config-file`. In the above command, the `v` option enables verbose mode, `s` specifies a state file, and the final `config-file` mentions the configuration file, where you specify what you need done.
+运行 `logrotate` 非常简单——只需要运行 `logrotate -vs state-file config-file`。在上面的命令中，`v` 选项开启详细模式，`s` 指定一个状态文件，最后的 `config-file` 是配置文件，你可以指定需要做什么。
 
-### Hands-on
+### 实战演练
 
-Let's check out a `logrotate` configuration that is running silently on our system, managing the wealth of logs we find in the `/var/log` directory. Check out the current files in that directory. Do you see a lot of `*.[number].gz` files? That’s what `logrotate` is doing. You can find the configuration file for this under `/etc/logrotate.d/rsyslog`. Mine looks like this:
-
+让我们看看在我们的系统上静默运行的 `logrotate` 配置，管理我们在 `/var/log` 目录中找到的大量日志。查看该目录中的当前文件。你是否看到很多 `*.[number].gz` 文件？这就是 `logrotate` 正在做的。你可以在 `/etc/logrotate.d/rsyslog` 下找到此配置文件。我的配置文件如下：
 
 ```
 /var/log/syslog
@@ -36,7 +34,7 @@ Let's check out a `logrotate` configuration that is running silently on our sy
         delaycompress
         compress
         postrotate
-                reload rsyslog &gt;/dev/null 2&gt;&amp;1 || true
+                reload rsyslog > /dev/null 2>&1 || true
         endscript
 }
 
@@ -62,29 +60,26 @@ Let's check out a `logrotate` configuration that is running silently on our sy
         delaycompress
         sharedscripts
         postrotate
-                reload rsyslog &gt;/dev/null 2&gt;&amp;1 || true
+                reload rsyslog > /dev/null 2>&1 || true
         endscript
 }
 ```
 
-The file starts with defining the instructions for rotating the `/var/log/syslog` file and the instructions are contained within the curly braces that follow. Here’s what they mean:
+该文件首先定义了轮转 `/var/log/syslog` 文件的说明，这些说明包含在后面的花括号中。以下是它们的含义：
 
-  * `rotate 7`: Keep logs from the last seven rotations. Then start deleting them.
-  * `daily`: Rotate the log daily. Along with `rotate 7`, this would mean that logs would be kept for the last seven days. Other options are `weekly`, `monthly`, `yearly`. There is also a `size` parameter that will rotate log files if their size increases beyond a specified limit—for example, `size 10k`, `size 10M`, `size 10G`, etc. If nothing is specified, logs will be rotated whenever `logrotate` runs. You can even run `logrotate` in a `cron` to use it at more specific time intervals.
-  * `missingok`: It’s okay if the log file is missing. Don’t Panic.
-  * `notifempty`: Don’t rotate if the log file is empty.
-  * `delaycompress`: If compression is on, delay compression until the next rotation. This allows at least one rotated but uncompressed file to be present. Useful if you want yesterday’s logs to stay uncompressed for troubleshooting. It is also helpful if some program might still write to the old file until it is restarted/reloaded, like Apache.
-  * `compress`: Compression is on. Use `nocompress` to turn it off.
-  * `postrotate/endscript`: Run the script within this section after rotation. Helpful in doing cleanup stuff. There is also a `prerotate/endscript` for doing things before rotation begins.
+  * `rotate 7`: 保留最近 7 次轮转的日志。然后开始删除它们。
+  * `daily`: 每天轮转日志，与 `rotate 7` 一起使用，这意味着日志将保留过去 7 天。其它选项是每周、每月、每年。还有一个大小参数，如果日志文件的大小增加超过指定的限制（例如，大小 10k、大小 10M、大小 10G 等），则将轮转日志文件。如果未指定任何内容，日志将在运行 `logrotate` 时轮转。你甚至可以在 cron 中运行 `logrotate` 以便在更具体的时间间隔内使用它。 
+  * `missingok`: 如果日志文件丢失也没关系。不要惊慌。
+  * `notifempty`: 日志文件为空时不轮转。
+  * `delaycompress`: 如果压缩已打开，则将压缩延迟到下一次轮转。这允许至少存在一个轮转但未压缩的文件。如果你希望昨天的日志保持未压缩以便进行故障排除，那么此配置会很有用。如果某些程序在重新启动/重新加载之前可能仍然写入旧文件，这也很有帮助，例如 Apache。 
+  * `compress`: 开启压缩，使用 `nocompress` 关闭它。
+  * `postrotate/endscript`: 轮转后运行此部分中的脚本。有助于做清理工作。还有一个 `prerotate/endscript` 用于在轮转开始之前执行操作。 
 
+你能弄清楚下一节对上面配置中提到的所有文件做了什么吗？第二部分中唯一的附加参数是 `sharedscripts`，它告诉 `logrotate` 在所有日志轮转完成之前不要运行 `postrotate/endscript` 中的部分。它可以防止脚本在每一次轮转时执行，只在之后一次轮转完成时执行。
 
+### 看点新的东西
 
-Can you figure out what the next section does for all those files mentioned in the configuration above? The only additional parameter in the second section is `sharedscripts`, which tells `logrotate` to not run the section within `postrotate/endscript` until all log rotation is complete. It prevents the script from being executed for every log rotated and runs once at the end.
-
-### Something New
-
-I’m using the following configuration for dealing with Nginx access and error logs on my system.
-
+我使用下面的配置来处理我系统上的 `Nginx` 的访问和错误日志。
 
 ```
 /var/log/nginx/access.log
@@ -106,15 +101,13 @@ I’m using the following configuration for dealing with Nginx access and error 
 }
 ```
 
-The above script can be run using:
-
+上面的脚本可以使用：
 
 ```
 logrotate -vs state-file /tmp/logrotate
 ```
 
-Running the command for the first time gives this output:
-
+第一次运行该命令会给出以下输出：
 
 ```
 reading config file /tmp/logrotate
@@ -141,7 +134,7 @@ running postrotate script
 * Reloading nginx configuration nginx
 ```
 
-And running it a second time:
+第二次运行它：
 
 
 ```
@@ -168,8 +161,7 @@ running postrotate script
 * Reloading nginx configuration nginx
 ```
 
-And running it a third time:
-
+第三次运行它：
 
 ```
 reading config file /tmp/logrotate
@@ -195,8 +187,7 @@ running postrotate script
 * Reloading nginx configuration nginx
 ```
 
-The contents of the state file look like this:
-
+状态文件的内容如下所示：
 
 ```
 logrotate state -- version 2
@@ -204,11 +195,11 @@ logrotate state -- version 2
 "/var/log/nginx/access.log" 2021-08-27-9:11:56
 ```
 
-[**Download the Linux logrotate cheat sheet.**][2]
+[**下载 Linux logrotate 备忘单**][2]
 
 * * *
 
-_This article was originally published on the [author's personal blog][3] and has been adapted with permission._
+本文首发于[作者个人博客][3]，经授权改编。
 
 --------------------------------------------------------------------------------
 
@@ -216,7 +207,7 @@ via: https://opensource.com/article/21/10/linux-logrotate
 
 作者：[Ayush Sharma][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[perfiffer](https://github.com/perfiffer)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
