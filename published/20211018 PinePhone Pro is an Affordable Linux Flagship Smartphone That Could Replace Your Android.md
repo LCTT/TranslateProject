@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13901-1.html"
 
 PinePhone Pro：一款价位适中的 Linux 旗舰智能手机
 ======
@@ -18,7 +18,7 @@ PinePhone Pro：一款价位适中的 Linux 旗舰智能手机
 
 现在，随着 PinePhone Pro 的宣布，Pine64 正在扩大 Linux 手机的受众范围。这个设备有许多令人难以置信的新功能，所有这些都使它可以与许多中档 Android 手机相提并论。
 
-- [视频](https://youtu.be/wP2-6Z74W44)
+- [视频](https://img.linux.net.cn/static/video/Meet%20the%20PinePhone%20Pro%20_%20PINE64-wP2-6Z74W44.mp4)
 
 ### PinePhone Pro 功能
 
