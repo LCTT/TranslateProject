@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/memory-stats-linux-smem"
 [#]: author: "Tomasz Waraksa https://opensource.com/users/tomasz"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
