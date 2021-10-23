@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/mx-linux-21-release/"
 [#]: author: "Omar Maarof https://news.itsfoss.com/author/omar/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
