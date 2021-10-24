@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/linux-wget-command"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zengyi1001"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
