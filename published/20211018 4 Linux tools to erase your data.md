@@ -3,14 +3,16 @@
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13913-1.html"
 
-4 个 Linux 工具来清除你的数据
+4 个用来擦除数据的 Linux 工具
 ======
-用这些开源工具从你的硬盘驱动器中删除数据。
-![Tools in a cloud][1]
+
+> 用这些开源工具从你的硬盘驱动器中擦除数据。
+
+![](https://img.linux.net.cn/data/attachment/album/202110/23/113918sdojp6sj0odgis16.jpg)
 
 保持数据安全的最好方法之一是只向加密的硬盘驱动器写入数据。在一个标准的硬盘上，只要把硬盘挂载就可以查看数据，就像 U 盘一样，甚至可以用 [Scalpel][2] 和 [Testdisk][3] 等工具显示和恢复已删除的数据。但是在一个加密的驱动器上，如果没有解密密钥（通常是你在挂载驱动器时输入的密码），数据是无法被读取的。
 
@@ -28,49 +30,43 @@
 
 ### GNU Shred
 
-
 ```
-`$ sudo shred -vfz /dev/sdX`
+$ sudo shred -vfz /dev/sdX
 ```
 
 Shred 有许多选项：
 
-  * n - 覆盖的次数。默认是三次。
-  * u - 覆盖和删除。
-  * s - 要粉碎的字节数。
-  * v - 显示扩展信息。
-  * f - 必要时强制改变权限以允许写入。
-  * z - 最后用 0 覆盖来隐藏粉碎。
-
-
+  * `-n` - 覆盖的次数。默认是三次。
+  * `-u` - 覆盖并删除。
+  * `-s` - 要粉碎的字节数。
+  * `-v` - 显示扩展信息。
+  * `-f` - 必要时强制改变权限以允许写入。
+  * `-z` - 最后用 0 覆盖来隐藏粉碎。
 
 使用 `shred --help` 获取更多信息
 
 ### ShredOS
 
-ShredOS 是一个 Live Linux 发行版，它的唯一目的是清除驱动器的全部内容。它是在一个名为 DBAN 的类似发行版停止维护后开发的。它使用 `nwipe` 应用，它是 DBAN 的 `dwipe` 的一个分叉。你可以通过下载 32 位或 64 位镜像，并在 Linux 和 macOS 上使用 `dd` 命令将其写入驱动器来制作一个可启动的 USB 驱动器：
-
+ShredOS 是一个<ruby>即用<rt>Live</rt></ruby> Linux 发行版，它的唯一目的是清除驱动器的全部内容。它是在一个名为 DBAN 的类似发行版停止维护后开发的。它使用 `nwipe` 应用，它是 DBAN 的 `dwipe` 的一个分叉。你可以通过下载 32 位或 64 位镜像，并在 Linux 和 macOS 上使用 `dd` 命令将其写入驱动器来制作一个可启动的 USB 驱动器：
 
 ```
-`$ sudo dd if=shredos.img of=/dev/sdX bs=4M status=progress`
+$ sudo dd if=shredos.img of=/dev/sdX bs=4M status=progress
 ```
 
-另外，你可以在 Linux、macOS 和 Windows 上使用 [Etcher][4] 工具。
+另外，你可以在 Linux、macOS 和 Windows 上使用 [Etcher][4] 工具烧录。
 
 ### dd 命令
 
 清除驱动器的一个常见方法是使用 Linux 的 `dd` 命令。几乎所有的 Linux 安装都安装了 `dd` 工具。确保该驱动器没有被挂载。
 
+```
+$ sudo umount /dev/sdXY -l
+```
+
+如果你想在整个目标磁盘上写零，执行以下命令。这可能需要一个整个通宵。
 
 ```
-`$ sudo umount /dev/sdXY -l`
-```
-
-如果你想在整个目标磁盘上写零，执行以下命令。这可能会是一个通宵的工作。
-
-
-```
-`$ sudo dd if=/dev/urandom of=/dev/sdX bs=10M`
+$ sudo dd if=/dev/urandom of=/dev/sdX bs=10M
 ```
 
 **警告**：请确保你知道你在系统中的位置，并以正确的驱动器为目标，这样你就不会意外地删除自己的数据。
@@ -79,22 +75,19 @@ ShredOS 是一个 Live Linux 发行版，它的唯一目的是清除驱动器的
 
 如果你的计算机包含一个较新的 NVMe 驱动器，你可以安装 [nvme-cli][5] 程序，并使用 `sanitize` 选项来清除你的驱动器。
 
-`nvme sanitize help` 命令为你提供了一个 sanitize 选项的列表，其中包括以下内容：
+`nvme sanitize help` 命令提供了选项列表：
 
-  * \--no-dealloc, -d - sanitize 后不解除分配。
-  * \--oipbp, -i - 在通道之间覆盖反转模式。
-  * \--owpass=, -n - 覆盖通道次数。
-  * \--ause, -u - 允许 sanitize 无限制退出。
-  * \--sanact=, -a - Sanitize 行为。
-  * \--ovrpat=, -p - 覆盖模式。
-
-
+  * `--no-dealloc`、`-d` - 净化后不解除分配。
+  * `--oipbp`、`-i` - 每次覆写后反转模式。
+  * `--owpass=`、`-n` - 覆写次数。
+  * `--ause`、`-u` - 允许无限制净化退出。
+  * `--sanact=`、`-a` - 净化动作。
+  * `--ovrpat=`、`-p` - 覆写模式。
 
 下面是我使用的命令：
 
-
 ```
-`$ sudo nvme sanitize /dev/nvme0nX`
+$ sudo nvme sanitize /dev/nvme0nX
 ```
 
 这里的警告与格式化过程相同：首先备份重要的数据，因为这个命令会擦除这些数据！
@@ -110,7 +103,7 @@ via: https://opensource.com/article/21/10/linux-tools-erase-data
 作者：[Don Watkins][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
