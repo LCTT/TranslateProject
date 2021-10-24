@@ -3,9 +3,9 @@
 [#]: author: "John Paul Wohlscheid https://news.itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13915-1.html"
 
 helloSystem：一款类似 Mac 的 FreeBSD 系统
 ======
