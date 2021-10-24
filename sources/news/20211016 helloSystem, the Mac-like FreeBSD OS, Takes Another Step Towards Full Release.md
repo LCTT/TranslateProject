@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/hellosystem-towards-first-release/"
 [#]: author: "John Paul Wohlscheid https://news.itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
