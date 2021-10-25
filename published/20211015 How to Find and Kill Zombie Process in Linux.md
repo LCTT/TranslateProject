@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zengyi1001"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13919-1.html"
 
 如何找到并杀掉 Linux 系统中的僵尸进程
 ======
