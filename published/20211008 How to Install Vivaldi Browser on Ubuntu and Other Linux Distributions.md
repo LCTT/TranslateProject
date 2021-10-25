@@ -3,36 +3,38 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "imgradeone"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13877-1.html"
 
-如何在 Ubuntu 和其他 Linux 发行版中安装 Vivaldi 浏览器
+[初级] 如何在 Ubuntu 中安装 Vivaldi 浏览器
 ======
 
-> 您将在本篇新手教程中学习如何在 Ubuntu、Debian 及其他 Linux 发行版中安装 Vivaldi 网页浏览器，同时本教程也将介绍如何更新和卸载该软件。
+![](https://img.linux.net.cn/data/attachment/album/202110/13/142545reotvtqgqpfvmmvp.jpg)
 
-[Vivaldi][1] 是一款关注度逐步上升的网页浏览器。它基于 Chromium 内核，因此它拥有和 Chrome 类似的功能，但它也新增了一些其他特色功能，让这款浏览器与众不同、更为直观。
+> 你将在本篇新手教程中学习如何在 Ubuntu、Debian 及其他 Linux 发行版中安装 Vivaldi 网页浏览器，同时本教程也将介绍如何更新和卸载该软件。
 
-它内置了标签组、广告拦截、鼠标手势、笔记管理，甚至还有命令连锁。你甚至可以借助页面平铺来一次性浏览多个页面。当然，相比于 Chrome，Vivaldi 更加尊重你的隐私。
+[Vivaldi][1] 是一款日益流行的网页浏览器。它基于 Chromium 内核，因此它拥有和 Chrome 类似的功能，但它也新增了一些其他特色功能，让这款浏览器与众不同、更为直观。
 
-![页面平铺，一次性浏览多个页面][2]
+它内置了标签组、广告拦截、鼠标手势、笔记管理，甚至还有命令连锁。你甚至可以借助切分视图来一次性浏览多个页面。当然，相比于 Chrome，Vivaldi 更加尊重你的隐私。
 
-你可以从 [Manjaro Linux 近期使用 Vivaldi 取代 Firefox 作为部分分支的默认浏览器][3] 这件事来了解 Vivaldi 浏览器的受欢迎程度。
+![标签平铺，一次性分割浏览多个页面][2]
+
+[Manjaro Linux 近期使用 Vivaldi 取代 Firefox 作为其部分变体的默认浏览器][3]，你可以从这件事来了解 Vivaldi 浏览器的受欢迎程度。
 
 如果你想尝试一下这款浏览器的话，接下来让我告诉你，如何在 Linux 上安装 Vivaldi。你将了解到：
 
   * 安装 Vivaldi 的 GUI 和命令行方式
-  * 将 Vivaldi 更新到最新版本的提示
+  * 将 Vivaldi 更新到最新版本的技巧
   * 在 Ubuntu 中卸载 Vivaldi 的方式
 
-> 非自由软件（Non-FOSS）警告！  
+> **非自由软件警告！**  
 > 
 > Vivaldi 并非完全的开源软件。它的 UI 界面是闭源的。之所以在这里介绍这款浏览器，是因为 Vivaldi 团队正努力让该软件在 Linux 平台上可用。
 
-### 在 Ubuntu 中安装 Vivaldi [GUI 方式]
+### 方式 1：在 Ubuntu 中安装 Vivaldi [GUI 方式]
 
-好消息是，Vivaldi 提供了预先构建好的安装包，包括 Ubuntu/Debian 的 DEB 文件，以及 Fedora、Red Hat、SUSE 的 RPM 文件、
+好消息是，Vivaldi 提供了预先构建好的安装包，包括 Ubuntu/Debian 的 DEB 文件，以及 Fedora、Red Hat、SUSE 的 RPM 文件。
 
 它支持 32 位和 64 位平台，也支持 [像树莓派之类的 ARM 设备][4]。
 
@@ -46,7 +48,7 @@
 
 前往 Vivaldi 的下载页面，下载支持 Ubuntu 的 DEB 格式安装包。
 
-[下载 Vivaldi][6]
+- [下载 Vivaldi][6]
 
 ![下载支持 Ubuntu/Debian 的 DEB 安装包][7]
 
@@ -60,11 +62,11 @@
 
 ![点击安装按钮][10]
 
-您将需要输入系统账户的密码，输入密码授权后，Vivaldi 很快就能完成安装，随后安装按钮也变成了移除按钮。这表明 Vivaldi 已经安装完成了。
+你将需要输入系统账户的密码，输入密码授权后，Vivaldi 很快就能完成安装，随后安装按钮也变成了移除按钮。这表明 Vivaldi 已经安装完成了。
 
 #### 第 3 步：使用 Vivaldi
 
-按下 Super（Windows）键打开系统菜单，搜索 Vivaldi，然后单击 Vivaldi 的图标。
+按下 `Super`（`Windows`）键打开系统菜单，搜索 Vivaldi，然后单击 Vivaldi 的图标。
 
 ![在系统菜单中搜索 Vivaldi][11]
 
@@ -76,7 +78,7 @@
 
 ### 方式 2：借助终端，在 Ubuntu/Debian 上安装 Vivaldi
 
-打开终端，确认你已经安装了用于 [在命令行下下载文件][13] 的 wget。
+打开终端，确认你已经安装了用于 [在命令行下下载文件][13] 的 `wget`。
 
 ```
 sudo apt install wget
@@ -116,13 +118,13 @@ GUI 和命令行这两种方式都会在系统里添加 Vivaldi 的仓库。这�
 
 如果你不喜欢 Vivaldi 或者不再使用，你可以直接卸载。现在，如果你想 [在 Ubuntu 中卸载软件][17]，你可能会想到软件中心，但软件中心不会查找到外部和第三方的软件包。
 
-目前你必须使用终端卸载 Vivaldi，即便你使用 GUI 方式安装。其实这也很简单，打开终端，输入以下命令：
+目前你必须使用终端卸载 Vivaldi，即便你是使用 GUI 方式安装的。其实这也很简单，打开终端，输入以下命令：
 
 ```
 sudo apt remove vivaldi-stable
 ```
 
-sudo 会 [在 Ubuntu 中给予你 root 权限][18]。你需要输入当前账户的密码。输入密码时，你可能不会在屏幕上看见输入密码的痕迹。这是正常现象，直接输入密码即可，随后 Vivaldi 将被卸载。
+`sudo` 会 [在 Ubuntu 中给予你 root 权限][18]。你需要输入当前账户的密码。输入密码时，你可能不会在屏幕上看见输入密码的痕迹。这是正常现象，直接输入密码即可，随后 Vivaldi 将被卸载。
 
 希望这篇关于如何在 Linux 安装 Vivaldi 的教程对你有用。
 
@@ -132,8 +134,8 @@ via: https://itsfoss.com/install-vivaldi-ubuntu-linux/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[imgradeone](https://github.com/imgradeone)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
