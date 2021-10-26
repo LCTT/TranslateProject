@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/rust-embedded-development"
 [#]: author: "Alan Smithee https://opensource.com/users/alansmithee"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
