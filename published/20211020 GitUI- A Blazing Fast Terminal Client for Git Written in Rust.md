@@ -3,20 +3,22 @@
 [#]: author: "Marco Carmona https://itsfoss.com/author/marco/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13922-1.html"
 
 GitUI: 用 Rust 编写的 Git 的快速命令行客户端
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202110/26/111605achvngqr6ix6vv0p.jpg)
+
 [基本的 Git 命令][1] 对于通常的克隆、添加、提交推送已经足够好了。
 
-但如果你在一个有多个贡献者的大型项目上工作，你可能需要将事情可视化。GUI 工具可以让你更好地了解 diff、stash 和 blame 的情况。
+但如果你在一个有多个贡献者的大型项目上工作，你可能需要将事情可视化。GUI 工具可以让你更好地了解 `diff`、`stash` 和 `blame` 的情况。
 
-但是，如果你常用终端，想要 Git 的舒适性，我为你准备了一个好工具。
+但是，如果你常用终端，又想要 Git 的舒适性，我为你准备了一个好工具。
 
-它叫 GitUI，它提供了类似于 Git GUI 的用户体验和舒适度，但就在你的终端中。它是可移植的、快速的、免费的和开源的。
+它叫 GitUI，它提供了类似于 Git GUI 的用户体验和舒适度，但就在你的终端中。它是可移植的、快速的、自由而开源的。
 
 ### GitUI：一个基于终端的 Git 工具
 
@@ -30,15 +32,15 @@ gitui | 24 s | 0.17 | 1.4 | 否 | 否
 lazygit | 57 s | 2.6 | 16 | 是 | 有时
 tig | 4 m 20 s | 1.3 | 0.6 | 有时 | 否
 
-GitUI、LazyGit 和 Tig 之间的比较。Git 的简单用户界面
+*GitUI、LazyGit 和 Tig 之间的比较。*
 
 这种优化大部分来自于 Rust 语言的使用。
 
-_**注意：该程序处于早期开发阶段，还没有为生产做好准备。**_
+**注意：该程序处于早期开发阶段，还没有为生产做好准备。**
 
 ### 在 Linux 上安装 GitUI
 
-不用说，你应该已经[在你的系统上安装了 Git][5]。
+不用说，你应该已经 [在你的系统上安装了 Git][5]。
 
 要使用 GitUI，首先需要 [为你的 Linux 发行版安装 Rust 支持][6]。
 
@@ -62,19 +64,19 @@ source $HOME/.cargo/env
 cargo install gitui
 ```
 
-然后你就可以使用 GitUI了，只需在终端输入 `gitui`就可以运行了。我做了一些示例文件来测试 Git 和 GitUI。
+然后你就可以使用 GitUI了，只需在终端输入 `gitui` 就可以运行了。我做了一些示例文件来测试 Git 和 GitUI。
 
 ![Starting gitui on terminal][8]
 
 值得一提的是，这个界面有一个快速而直观的纯键盘控制。一切都很简单，只需输入正确的字母即可将文件暂存、提交、分支或推送到 git 仓库中。
 
-真正让我兴奋的是，你不仅可以做之前的四个动作，还可以**编辑**每个文件，**拉取**它，**blame** 它，在其中**导航**等等，这一切都无需退出界面。 很棒，不是吗？
+真正让我兴奋的是，你不仅可以做之前的四个动作，还可以**编辑**每个文件，**拉取**它，**追溯** 它，在其中**导航**等等，这一切都无需退出界面。 很棒，不是吗？
 
 ![More functions inside the interface][9]
 
 祝贺你! 现在你知道了如何安装 GitUI 以及它在你的终端中的样子。
 
-如果你喜欢这个项目，请在 [GitHub][2] 上启动它的仓库。如果你使用其他工具来管理 Git，请在评论区提出你的建议。
+如果你喜欢这个项目，请在 [GitHub][2] 上点赞它的仓库。如果你使用其他工具来管理 Git，请在评论区提出你的建议。
 
 --------------------------------------------------------------------------------
 
@@ -83,7 +85,7 @@ via: https://itsfoss.com/gitui/
 作者：[Marco Carmona][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
