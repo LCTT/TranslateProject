@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "unigeorge"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13924-1.html"
 
 在 OpenTTD 中玩模型火车
 ======
