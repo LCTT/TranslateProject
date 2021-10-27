@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/mark-text-markdown-editor"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
