@@ -10,7 +10,7 @@
 有哪些 Linux 平板电脑可供选择
 ======
 
-![](https://img.linux.net.cn/data/attachment/album/202110/28/172623vkx0p7uuvebi7hx7.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202110/28/180114mism33m44sibmsc9.jpg)
 
 有很多 [基于 Linux 的笔记本电脑][1]，也有 [预装了 Linux 的迷你 PC][2]，而市场上还有一些 [基于 Linux 的智能手机][3]。
 
@@ -61,18 +61,6 @@ PineTab 是一款用于浏览互联网、使用应用程序和玩游戏的 Linux
 PineNote 拥有四核 Rockchip、多点触控电子墨水面板、4GB 内存和 128GB eMMC 存储。它也是为数不多的价格高于通常的 399 美元的平板点之一。
 
 请记住，PineNote 正处于早期开发阶段，只接受开发者的订单。
-
-### JingPad
-
-![我桌子上的 JingPad][15]
-
-也许是为数不多的旨在提供“消费级的 Linux 平板电脑”的项目之一。他们拥有高端的优质定制硬件。它有 11 英寸 2K AMOLED 显示屏、8GB 内存、Unisoc Tiger T7510 八核处理器，以及磁性键盘。
-
-总的来说，至少从硬件角度来看，规格看起来相当不错。当然，好东西价格也好。该设备的价格可能在 600-800 美元之间。
-
-[JingPad][17] 也有自己的基于 Linux 的触摸式操作系统，名为 JingOS。该操作系统仍在大力开发中，应该在 2022 年第一季度末准备就绪。
-
-想了解更多关于 JingPad 的信息？请阅读 [我对 JingPad 和 JingOS 的详细测评][16]。
 
 ### RasPad
 
