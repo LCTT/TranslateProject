@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/raspberry-pi-zero-2-w-launch/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
