@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/change-terminal-color-ubuntu/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
