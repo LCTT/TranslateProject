@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13939-1.html"
 
 在 Linux 上用 ASCII 艺术打印万圣节问候语
 ======
