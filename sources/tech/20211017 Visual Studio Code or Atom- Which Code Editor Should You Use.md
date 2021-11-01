@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/visual-studio-code-vs-atom/"
 [#]: author: "Pratham Patel https://itsfoss.com/author/pratham/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
