@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13944-1.html"
 
 VS Code 还是 Atom？你应该选择哪个？
 ======
