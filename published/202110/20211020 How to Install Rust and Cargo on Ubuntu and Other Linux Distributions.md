@@ -3,18 +3,20 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "perfiffer"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13938-1.html"
 
-如何在 Ubuntu 和其它的 Linux 发行版安装 `Rust` 和 `Cargo`
+如何在 Ubuntu 和其它的 Linux 发行版安装 Rust 和 Cargo
 ======
 
--**简介：了解在 Linux 上安装 Rust 编程语言及其包管理器 Cargo 的各种方法。**—
+> 了解在 Linux 上安装 Rust 编程语言及其包管理器 Cargo 的各种方法。
 
-自从 Mozilla 贡献了 Rust[1] 语言之后，它就获得了更加突出和受欢迎的地位。不要只相信我的话。 [Rust 将被使用在 Linux 内核中][2]，它是继 C 语言之后的第二种编程语言。
+![](https://img.linux.net.cn/data/attachment/album/202110/31/150031j9e0xgeg9jpxeip0.jpg)
 
-许多开发人员也开始使用 Rust 语言制作很棒的基于命令行的工具。这些工具通常可以通过 [Cargo 包管理器][3]获得。
+自从 Mozilla 贡献了 [Rust][1] 语言之后，它就获得了更加突出和受欢迎的地位。口说无凭。[Rust 将被使用在 Linux 内核中][2]，它是继 C 语言之后的第二种编程语言。
+
+许多开发人员也开始使用 Rust 语言制作很棒的基于命令行的工具。这些工具通常可以通过 [Cargo 包管理器][3] 获得。
 
 这就是为什么在 Linux 中安装 Rust 支持对程序员和最终用户都很重要的原因。
 
@@ -34,11 +36,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
   * 你可以获取最新的 Rust 和 Cargo 版本
   * Rust 仅仅是为当前的用户安装，并不是所有用户
-  * 你并不需要 root 用户或者 sudo 权限就可以为自己安装 Rust
+  * 你并不需要 root 用户或者 `sudo` 权限就可以为自己安装 Rust
 
-一些人不喜欢从 Internet 下载和[运行 shell][5] 脚本，即使它来自官方。但是，由于它不需要 root 访问权限并且脚本来自官方，因此以这种方式安装它应该是安全的。
+一些人不喜欢从互联网下载并 [运行 shell][5] 脚本，即使它来自官方。但是，由于它不需要 root 访问权限并且脚本来自官方，因此以这种方式安装它应该是安全的。
 
-首先，确保你已经安装了 `Curl`。如果没安装，使用你的发行版的包管理器安装它。你可以使用 `apt` 命令在 [Ubuntu 和 Debian 上安装 Curl][6]。
+首先，确保你已经安装了 `curl`。如果没安装，使用你的发行版的包管理器安装它。你可以使用 `apt` 命令在 [Ubuntu 和 Debian 上安装 Curl][6]。
 
 ```
 sudo apt install curl
@@ -52,7 +54,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ![][7]
 
-它会询问你输入所需的安装类型。选择选项 1：
+它会询问你输入所需的安装类型。选择选项 `1`：
 
 ![][8]
 
@@ -105,12 +107,12 @@ rustup self uninstall
 
 Ubuntu 中有两个主要的 Rust 包：
   
-  * rustc：用于 Rust 编程语言的 Rust 编译器
-  * cargo：Cargo是 Rust 的包管理器，它会自动安装 rustc
+  * `rustc`：用于 Rust 编程语言的 Rust 编译器
+  * `cargo`：Cargo 是 Rust 的包管理器，它会自动安装 `rustc`
 
 作为一个普通用户，你将使用 Cargo 来安装基于 Rust 的应用程序。作为程序员，你需要 Cargo 来获取其它 Rust 包或创建自己的包。
 
-由于 Cargo 包含 rustc，我建议安装它，以便一次性安装所有必需的软件包。
+由于 `cargo` 包含 `rustc`，所以我建议安装它，以便一次性安装所有必需的软件包。
 
 ```
 sudo apt install cargo
@@ -128,15 +130,15 @@ sudo apt install cargo
 
 很好。让我也快速展示卸载步骤。
 
-#### 使用 `apt remove` 移除 Rust
+#### 使用 apt remove 移除 Rust
 
-要移除 Rust，你可以先移除 Cargo，然后使用 autoremove 命令移除随它安装的依赖项。
+要移除 Rust，你可以先移除 Cargo，然后使用 `autoremove` 命令移除随它安装的依赖项。
 
 ```
 sudo apt remove cargo
 ```
 
-现在运行 autoremove：
+现在运行 `autoremove`：
 
 ```
 sudo apt autoremove
@@ -151,7 +153,7 @@ via: https://itsfoss.com/install-rust-cargo-ubuntu-linux/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[perfiffer](https://github.com/perfiffer)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
