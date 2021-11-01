@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/linux-zombie-process"
 [#]: author: "Anderson Silva https://opensource.com/users/ansilva"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
