@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/jekyll-config-files"
 [#]: author: "Ayush Sharma https://opensource.com/users/ayushsharma"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
