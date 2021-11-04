@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/edit-photos-linux-command-line"
 [#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
