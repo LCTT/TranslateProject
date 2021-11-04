@@ -7,64 +7,65 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Only 4 MB? How to Fix USB ‘Destroyed’ by Etcher and Rufus After Creating Live Linux USB
+只有 4MB？如何修复 Etcher 和 Rufus 创建 Linux USB 后“破坏”的 USB
 ======
 
-Here’s the scenario. You used Etcher or Rufus tools to create a bootable, live Linux USB in Windows or perhaps in Linux.
+情况是这样的。你用 Etcher 或者 Rufus 工具在 Windows 或者 Linux 中创建了一个可启动的、Live Linux USB。
 
-You used it to install Linux and the purpose of the USB is accomplished. Now you want to format this USB and use it for the regular data transfer or storage.
+你用它来安装 Linux，USB 的目的已经达到了。现在你想格式化这个 USB，用它来进行常规的数据传输或存储。
 
-You plug it in your Windows system and to your surprise, the disk capacity of the USB is just 4 MB.
+你把它插入你的 Windows 系统，令你吃惊的是，这个 USB 的磁盘容量只有 4MB。
 
 ![][1]
 
-You try to format it and it probably won’t let you do that. Even if you manage to format it, the size of the USB is now shrunk to just 4 MB from the usual 8 GB, 16 GB or 32 GB.
+你试图格式化它，但它可能不会让你这么做。即使你设法格式化它，USB 的大小现在也从通常的 8GB、16GB 或 32GB 缩减到只有 4MB。
 
-Have you lost your USB? Not really. Your USB is not completely destroyed. You can still format it with a little trick and use it comfortably.
+你失去了你的 USB 吗？并非如此。你的 USB 并没有完全被破坏。你仍然可以用一个小技巧来格式化它，并舒适地使用它。
 
-Let me show how to restore the bootable USB to a usable state in both Windows and Linux.
+让我告诉你如何在 Windows 和 Linux 中把可启动的 USB 恢复到可用的状态。
 
-### Formatting the live Linux USB created by Rufus or Etcher [In Windows]
+### 格式化由 Rufus 或 Etcher 创建的 Live Linux USB （在 Windows 下）
 
-You see only 4 MB of disk space in Windows. Do you know why? Because while creating the live Linux USB, the tool creates a 4 MB of EFI partition in FAT 32 filesystem. The other partition(s) is in Linux’s Ext4 filesystem which is not recognized by Windows.
+你在 Windows 中看到只有 4MB 的磁盘空间。你知道为什么吗？因为在创建 Live Linux USB 时，该工具在 FAT32 文件系统中创建了一个 4MB 的 EFI 分区。其他的分区是在 Linux 的 Ext4 文件系统中，而这是不被 Windows 识别的。
 
-This is why your Windows system only sees the EFI partition of 4 MB and shows the USB size as 4 MB.
+这就是为什么你的 Windows 系统只看到 4MB 的 EFI 分区，并显示 USB 大小为 4MB。
 
 ![Windows only see the EFI partition on the USB][2]
 
-All in all, what you need to do is to delete all the partition on the USB disk, create a new NTFS or FAT32 partition from the free space you got from deleting the existing partitions. That’s it.
+总而言之，你需要做的是删除 USB 盘上的所有分区，用删除现有分区后得到的空闲空间创建一个新的 NTFS 或 FAT32 分区。这就行了。
 
-Let me show the steps in detail.
+让我展示一下详细的步骤。
 
-#### Step 1:
+#### 步骤 1：
 
-Go to the Windows menu and look for the Disk Management tool.
+进入 Windows 菜单，寻找“磁盘管理”工具。
 
 ![Start disk management tool][3]
 
-Start this tool and it will show all the disks present on your computer. This includes the plugged-in USB, of course.
+启动这个工具，它将显示你电脑上存在的所有磁盘。当然，这包括插入的 USB。
 
-_**This is very important to select the correct disk**_. Identify which one it is from the size of the USB disk or from the ‘Removable’ tag.
+_**选择正确的磁盘是非常重要的**_。从 U 盘的大小或“可移动”的标签中辨别出它是哪一个。
+
 
 ![][4]
 
-#### Step 2:
+#### 步骤 2：
 
-The idea is to delete any existing partition present on the USB disk. The unallocated space cannot be deleted but that’s okay.
+我们的想法是删除 U 盘上的任何现有分区。未分配的空间不能被删除，但这也没关系。
 
-Right click on the partition and click **Delete Volume**.
+在该分区上点击右键，然后点击**删除卷**。
 
 ![Delete partitions on the USB disk][5]
 
-When asked for your confirmation, press Yes.
+当要求你确认时，按是。
 
 ![Confirm deletion of partition][6]
 
-Your aim is to have only a single block of unallocated space. When you see that, right click on it and click on “New Simple Volume” to create a partition.
+你的目标是只有一个未分配的空间块。当你看到它时，右击它并点击“新的简单卷”来创建一个分区。
 
 ![Create New Simple Volume \(partition\)][7]
 
-The next steps are simple. Click on Next, select the entire available space, assign a letter to it, select the file system (FAT 32 or NTFS) and format it.
+接下来的步骤很简单。点击“下一步”，选择整个可用空间，给它分配一个字母，选择文件系统（FAT32 或 NTFS），并将其格式化。
 
 ![Click Next][8]
 
@@ -76,43 +77,43 @@ The next steps are simple. Click on Next, select the entire available space, ass
 
 ![Revise all the changes][12]
 
-Once that is done, you’ll see that the USB has returned to normal state and you can start copy-pasting data to it.
+完成后，你会看到 USB 已经恢复到正常状态，你可以开始向它复制粘贴数据。
 
 ![USB is back to normal state][13]
 
-You can use your USB as before now.
+你现在可以像以前一样使用你的 USB 了。
 
-These steps were for Windows. What if you use Linux?
+这些步骤是针对 Windows 的。如果你使用 Linux 呢？
 
-### Formatting live Linux USB on Linux
+### 在 Linux 上格式化 Live USB
 
-I have noticed that live USB created by Etcher and such tools often create refuse to be formatted properly by the right click format option in the file manager.
+我注意到，由 Etcher 和这类工具创建的 Live USB 经常拒绝被文件管理器中的右键格式化选项正确格式化。
 
-As an alternative, you can do what you did in Windows: delete existing partitions and create a new partition with the entire free space.
+除此之外，你可以像在 Windows 中那样做：删除现有的分区，用整个可用空间创建一个新的分区。
 
-Use the GNOME Disks tool here. It is already installed on Ubuntu and many other Linux distributions.
+这里使用 GNOME Disks 工具。它已经安装在 Ubuntu 和许多其他 Linux 发行版上。
 
 ![Start disk app][14]
 
-_**Again, make sure that you have selected the external USB disk here.**_
+_**同样，确保你在这里选择了外部 USB 盘。**_
 
-You’ll see various partitions on the USB disk. Try and format the disk from the menu above.
+你会看到 U 盘上的各种分区。试着从上面的菜单中格式化该磁盘。
 
 ![Format disk][15]
 
-**If that does not work, delete the partitions individually** one by one and then make the entire USB as free space.
+**如果这不起作用，逐个删除分区**，然后把整个 USB 作为自由空间。
 
-When you have the entire free space created, click on the + sign to create a partition on it in NTFS or FAT32 filesystem.
+当你创建了整个自由空间后，点击 “+” 号，在上面创建一个 NTFS 或 FAT32 文件系统的分区。
 
 ![][16]
 
-Create the partition with NTFS (or FAT 32), name it something appropriate and then you can enjoy the USB like it was before.
+用 NTFS（或 FAT32）创建分区，给它起个合适的名字，然后你就可以像以前一样使用这个 USB 了。
 
-### Conclusion
+### 总结
 
-Tools like Rufus and Etcher don’t really destroy your USB. This is how they function, by creating a different filesystem on the disk. But then the operating system doesn’t understand it properly.
+像 Rufus 和 Etcher 这样的工具并没有真正破坏你的 USB。这就是它们的功能，通过在磁盘上创建一个不同的文件系统。但这样一来，操作系统就不能正确理解它。
 
-The good thing is that it can be fixed with only a little effort. I hope you too were able to fix it. If not, share your issue with me and I’ll try to help.
+好在只需付出一点努力就可以修复。我希望你也能够修复它。如果没有，请与我分享你的问题，我将尽力帮助你。
 
 --------------------------------------------------------------------------------
 
@@ -120,7 +121,7 @@ via: https://itsfoss.com/format-live-linux-usb/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
