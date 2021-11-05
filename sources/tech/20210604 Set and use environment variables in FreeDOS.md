@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/freedos-environment-variables)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (robsean)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
