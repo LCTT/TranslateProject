@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/project-trident-discontinues/"
 [#]: author: "John Paul https://news.itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zd200572"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -60,7 +60,7 @@ via: https://news.itsfoss.com/project-trident-discontinues/
 
 作者：[John Paul][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/zd200572)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
