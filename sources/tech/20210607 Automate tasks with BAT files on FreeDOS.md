@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/automate-tasks-bat-files-freedos)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MjSeven)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
