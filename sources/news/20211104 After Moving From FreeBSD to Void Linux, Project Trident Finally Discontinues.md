@@ -18,19 +18,19 @@
 
 一段时间以来，Trident开发团队竭力在FreeBSD之上建立一个良好的桌面体验。可是，由于[FreeBSD的问题][6]，包括“硬件兼容性，通信标准，或软件包的可得性一直限制Trident项目的用户”，他们决定在其他底层上继续。他们的解决方案是在2019年，基于[Void Linux][7]重新构建了项目。 那段时间，看起来Trident项目的未来已经确定了。然后2020发生了。
 
-![Project Trident desktop][8]
+![Trident项目桌面][8]
 
-### The End of a Project
+### 项目的终止
 
-On October 29th, the Project Trident team posted the following [announcement][9]:
+10月29号，Trident项目团队发布了如下[声明][9]：
 
-> It is with great sadness that we are announcing that Project Trident will be entering is “sunset” period starting Nov 1 of 2021 and will be closing up shop in March of 2022. The core team of the project has come to this decision together. With changes and events over the past two years in life, jobs, family, etc; our individual priorities have changed as well.
+> 我们无比遗憾地宣布Trident项目将从2021年11月1号起进入“夕阳”阶段，2022年3月将关掉商店。项目核心共同做出了这个决定。由于过去两年中生活、工件和家庭等的事情和变故；我们每个人的优先级也发生了改变。
 >
-> We will keep the Project Trident package repository and websites up and running until the EOL date of March 1, 2022, but we strongly encourage users to begin looking for alternative desktop OS solutions over the coming new year holiday.
+> 我们将保持Trident项目的包和网站运行，直到2022年3月1日的终止服务期，但是我们强烈推荐用户在即将到来的新年假期中开始寻找其他桌面系统替代。
 >
-> Thank you all for your support and encouragement! The project had a good run and we thoroughly enjoyed getting to know many of you over the years.
+> 感谢你们所有的支持和鼓励！过去几年中，项目得以良好运转，我们也尽情享受这个过程。
 
-### The Lumina Project Continues
+### Lumina项目继续
 
 One constant throughout the PC-BSD/TrueOS/Project Trident saga is the desktop environment in use. In 2012, [Ken Moore][10] (Kris’ younger brother) started working on a Qt-based desktop environment named [Lumina][11]. In 2014, it became the default desktop environment of PC-BSD and has stayed that way down to Project Trident. Lumina stands apart from other desktop environment because it was designed to be operating system agnostic. Other desktop environments like KDE and GNOME have Linux specific code that makes it hard to port to BSD.
 
