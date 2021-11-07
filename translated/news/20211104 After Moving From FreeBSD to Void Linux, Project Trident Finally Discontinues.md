@@ -3,56 +3,54 @@
 [#]: author: "John Paul https://news.itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
 [#]: translator: "zd200572"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 
-从FreeBSD迁移到Void Linux后，Trident项目最终停止了
+从 FreeBSD 转到 Void Linux 后，Trident 项目终于结束了
 ======
 
-令人遗憾,[Trident项目][1]团队宣布他们将结束他们的Linux发行版的开发。
+> Trident 项目为我们提供了与操作系统无关的 Lumina 桌面。
 
-### 故事时间!!!
+![](https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2021/11/project-trident-discontinues.png?w=1200&ssl=1)
 
-对于没有听说过个项目的人，让我来讲点关于它的一点记忆。早在2005年，Kris Moore推出了[PC-BSD][2]，作为一个建立FreeBSD桌面的简单方法。第二年，[iXsystems][3]收购了它. 2016年9月，这个项目改名为TrueOS。这个项目也变成FreeBSD现有分支的滚动版本。两年后，TrueOS[宣布][4]他们将专注商业和服务器市场，取消其操作系统的桌面版本。桌面元件[剥离][5]到一个新项目：Trident。
+令人遗憾，[Trident 项目][1] 团队宣布将结束他们的 Linux 发行版的开发。
 
-有一段时间，Trident开发团队尽力在FreeBSD之上打造一个良好的桌面体验。可是，由于[FreeBSD的问题][6]，包括“硬件兼容性，通信标准，或包可用性一直限制Trident项目的用户”，他们决定将其建立在其他基础之上。他们的解决方案是在2019年，基于[Void Linux][7]重新构建项目。 那时，看起来Trident项目的未来已经确定了。然后，2020年来了。
+### 那段故事
 
-![Trident项目桌面][8]
+你或许没有听说过 Trident 项目，让我来讲点关于它的一点回忆。那是在 2005 年，Kris Moore 推出了 [PC-BSD][2]，提供了一种用桌面界面来设置 FreeBSD 的简单方法。次年，它被 [iXsystems][3] 收购。十年后，2016 年 9 月，这个项目被改名为 TrueOS。这个项目也变成了基于 FreeBSD Current 分支的滚动发行版。两年后，TrueOS [宣布][4] 他们将取消其操作系统的桌面版本，而专注于商业和服务器市场。其桌面元素被 [剥离][5] 到一个新项目：Trident。
+
+有一段时间，Trident 开发团队尽力在 FreeBSD 之上打造良好的桌面体验。可是，由于 [FreeBSD 的问题][6]，包括 “硬件兼容性、通信标准，或软件包的可用性一直限制着 Trident 项目的用户”，他们决定将其建立在其他基础之上。他们的解决方案是在 2019 年将其项目重新构建在 [Void Linux][7] 之上。有那么一段时间，看起来 Trident 项目似乎有了未来。然后，2020 年来了。
+
+![Trident 桌面][8]
 
 ### 项目的终止
 
-10月29号，Trident项目团队发布了如下[声明][9]：
+10 月 29 号，Trident 项目团队发布了以下 [公告][9]：
 
-> 我们无比遗憾地宣布Trident项目将从2021年11月1号起进入“夕阳”阶段，并将于2022年3月关掉商店。项目核心团队共同做出了这个决定。由于过去两年中生活、工件和家庭等的事情和变故；我们个人的优先事项也发生了改变。
+> 我们非常悲伤地宣布，Trident 项目将从 2021 年 11 月 1 号起进入“夕阳”阶段，并将于 2022 年 3 月关掉商店。项目的核心团队共同做出了这个决定。随着过去两年中，生活、工件和家庭等方面的事情和变故；我们个人的优先事项也发生了改变。
 >
-> 我们将保持Trident项目包存储库和网站的运行，直到2022年3月1日的终止服务期，但是我们强烈推荐用户在即将到来的新年假期中开始寻找其他桌面系统替代。
+> 我们将保持 Trident 项目的软件包存储库和网站的运行，直到 2022 年 3 月 1 日的终止期，但是我们强烈推荐用户在即将到来的新年假期中开始寻找其他桌面系统替代。
 >
-> 感谢大家的支持和鼓励！过去几年中，项目得以良好运转，我们也非常高兴这些年来结识了你们中的许多人。
+> 感谢大家的支持和鼓励！过去几年中，该项目得以良好运转，我们也非常高兴在这些年里结识了你们中的许多人。
 
-### Lumina项目继续
+### Lumina 项目继续
 
-一般认为PC-BSD/TrueOS/Trident项目的传奇故事是一个在用的桌面环境。2012年, [Ken Moore][10] (Kris的弟弟)开始开发一个基于Qt的桌面环境[Lumina][11]。2014年，它成为PC-BSD的默认桌面环境，并一直保持到Trident项目。Lumina不同于其他桌面环境，因为它的设计与操作系统无关。其他桌面系统像KDE和GNOME具有Linux特定代码，难以移植到BSD。
+贯穿 PC-BSD/TrueOS/Trident 项目传奇故事的一个永恒主题是桌面环境。2012 年，[Ken Moore][10]（Kris 的弟弟）开始开发一个基于 Qt 的桌面环境 [Lumina][11]。2014 年，它成为 PC-BSD 的默认桌面环境，并一直保持到 Trident 项目出现。Lumina 不同于其他桌面环境，因为它的设计与操作系统无关。其他桌面系统像 KDE 和 GNOME 都具有 Linux 特定代码，这使得它们难以移植到 BSD。
 
-![Lumina桌面环境][8]
+![Lumina 桌面环境][15]
 
-今年6月，Ken把[Lumina的领导权][12]交给了Trident的开发者[JT Pennington][13] (又名[BSDNow][14]).
+今年 6 月，Ken 把 [Lumina 的领导权][12] 交给了 Trident 的开发者 [JT Pennington][13]（又名 [BSDNow][14]）。
 
-[声明][12]指出:
+[公告][12] 中说：
 
-> 经过长达7年的工作，我决定是时候让其他人接手Lumina桌面项目的开发了。这是个难以置信的任务，推动我进入之前从未考虑过的发展领域。可是，由于工作和生活的变化，我为Lumina开发新功能的时间基本没有了，特别是即将在明年或者晚些时候到来的Qt5->Qt6升级。通过把火炬传递给JT (GitHub昵称q5sys)，我希望这个项目能获得更及时的更新，利好每个人。
+> 经过长达 7 年的工作，我决定是时候让其他人接手 Lumina 桌面项目的开发了。这是个难以置信的任务，推动我进入之前从未考虑过的开发领域。可是，由于工作和生活的变化，我几乎没有为 Lumina 开发新功能的时间了，特别是即将在明年或者晚些时候到来的 Qt5->Qt6 升级。通过把火炬传递给 JT （GitHub 昵称是 q5sys），我希望这个项目能获得更及时的更新，以造福每个人。
 >
-> 感谢大家，我希望Lumina桌面项目继续成功!!
+> 感谢大家，我希望 Lumina 桌面项目能继续成功！！
 
-### 最后的想法
+### 总结
 
-我一直对Trident项目抱有很高的期望。与我们介绍的许多发行版相比，它很小巧。他们不只是有一两个新工具的Arch或Ubuntu的翻版。不只如此，他们还努力改进一个与他们理念相同的发行版。可是，生活的变故会发生，即使是我们中最好的人。我祝愿Ken，JT和其他人，以及他们花费了很多时间的项目。希望，我们未来能从他们身上看到更多。
-
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
-
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
-
-I'm not interested
+我一直对 Trident 项目抱有很高的期望。与我们介绍的许多发行版相比，它很小巧。它不是只增加了一两个新工具的、对 Arch 或 Ubuntu 的翻版。不仅如此，他们还努力改进一个与他们理念相同的发行版 Void Linux。可是，生活会发生变故，即使是我们中最好的人也难以避免遇到变故。我祝愿 Ken、JT 和其他人一切顺利，他们已经在这个项目上花费了很多时间。希望，我们未来能看到他们的更多作品。
 
 --------------------------------------------------------------------------------
 
@@ -60,8 +58,8 @@ via: https://news.itsfoss.com/project-trident-discontinues/
 
 作者：[John Paul][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/zd200572)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[zd200572](https://github.com/zd200572)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -74,10 +72,11 @@ via: https://news.itsfoss.com/project-trident-discontinues/
 [5]: https://itsfoss.com/project-trident-interview/
 [6]: https://project-trident.org/post/os_migration/
 [7]: https://voidlinux.org/
-[8]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQzOSIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
+[8]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2021/11/project-trident.png?w=850&ssl=1
 [9]: https://project-trident.org/post/2021-10-29_sunset/
 [10]: https://github.com/beanpole135
 [11]: https://lumina-desktop.org/
 [12]: https://lumina-desktop.org/post/2021-06-23/
 [13]: https://github.com/q5sys
 [14]: https://www.bsdnow.tv/
+[15]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2021/11/lumina.png?w=850&ssl=1
