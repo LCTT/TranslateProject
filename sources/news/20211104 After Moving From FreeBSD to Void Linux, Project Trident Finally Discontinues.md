@@ -36,17 +36,17 @@
 
 ![Lumina桌面环境][8]
 
-June of this year, Ken [handed the reigns of Lumina][12] to a fellow Project Trident developer [JT Pennington][13] (also of [BSDNow][14] fame).
+今年6月，Ken把[Lumina的领导权][12]交给了Trident期日开发者[JT Pennington][13] (又名[BSDNow][14] fame).
 
-The [announcement][12] states:
+[声明][12]指出:
 
-> After more than 7 years of work, I have decided that it is time to let others take over the development of the Lumina Desktop project going forward. It has been an incredible task which has pushed me into areas of development that I had never previously considered. However, with work and life changes, my time for developing new functionality for Lumina has become nearly non-existent, particularly for the Qt5 -&gt; Qt6 change that will be coming within the next year or so. By passing the torch over to JT (q5sys on GitHub), I am hoping that the project might receive more timely updates, for the benefit of everyone.
+> 经过长达7年的工作，我决定是时候让其他开发者接过Lumina桌面项目了。这是个难以置信的任务，推动我进入之前从未想过的开发领域。可是，由于工作和生活的变化，我为Lumina开发新功能的时间基本没有了，特别是即将在明年或者晚些时候到来的Qt5-Qt6升级。通过把火炬传递给JT (GitHub昵称q5sys)，我希望这个项目能获得更多与时俱进的更新，利好每个人。
 >
-> Thank you all, and I hope for the continued success of the Lumina Desktop project!!
+> 感谢你们所有人，我希望Lumina桌面项目继续成功!!
 
-### Final Thoughts
+### 最后的想法
 
-I always had high hopes for Project Trident. They were small compared to many of the distros that we cover. They weren’t just a reskin of Arch or Ubuntu with one or two new tools. Not only that, but they were working to improve a distro (Void) that shared their ideals. However, life happens, even to the best of us. I wish Ken, JT and the others well as they sunset a project that they have spent many hours working on. Hopefully, we’ll be seeing more from them in the future.
+我一直对TridentI always had high hopes for Project Trident. They were small compared to many of the distros that we cover. They weren’t just a reskin of Arch or Ubuntu with one or two new tools. Not only that, but they were working to improve a distro (Void) that shared their ideals. However, life happens, even to the best of us. I wish Ken, JT and the others well as they sunset a project that they have spent many hours working on. Hopefully, we’ll be seeing more from them in the future.
 
 #### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
 
