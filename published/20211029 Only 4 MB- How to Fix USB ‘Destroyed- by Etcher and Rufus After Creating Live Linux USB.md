@@ -3,12 +3,14 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13961-1.html"
 
 只有 4MB？如何修复 Etcher 和 Rufus 创建 Linux USB 后“破坏”的 USB
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202111/07/165254zlhgz6an6vgpv2qd.jpg)
 
 情况是这样的。你用 Etcher 或者 Rufus 工具在 Windows 或者 Linux 中创建了一个可启动的、Live Linux USB。
 
@@ -44,8 +46,7 @@
 
 启动这个工具，它将显示你电脑上存在的所有磁盘。当然，这包括插入的 USB。
 
-_**选择正确的磁盘是非常重要的**_。从 U 盘的大小或“可移动”的标签中辨别出它是哪一个。
-
+**选择正确的磁盘是非常重要的**。从 U 盘的大小或“可移动”的标签中辨别出它是哪一个。
 
 ![][4]
 
@@ -53,19 +54,19 @@ _**选择正确的磁盘是非常重要的**_。从 U 盘的大小或“可移�
 
 我们的想法是删除 U 盘上的任何现有分区。未分配的空间不能被删除，但这也没关系。
 
-在该分区上点击右键，然后点击**删除卷**。
+在该分区上点击右键，然后点击“<ruby>删除卷<rt>Delete Volume</rt></ruby>”。
 
 ![Delete partitions on the USB disk][5]
 
-当要求你确认时，按是。
+当要求你确认时，按“<ruby>是<rt>Yes</rt></ruby>”。
 
 ![Confirm deletion of partition][6]
 
-你的目标是只有一个未分配的空间块。当你看到它时，右击它并点击“新的简单卷”来创建一个分区。
+你的目标是只有一个未分配的空间块。当你看到它时，右击它并点击“<ruby>新建简单卷……<rt>New Simple Volume...</rt></ruby>”来创建一个分区。
 
 ![Create New Simple Volume \(partition\)][7]
 
-接下来的步骤很简单。点击“下一步”，选择整个可用空间，给它分配一个字母，选择文件系统（FAT32 或 NTFS），并将其格式化。
+接下来的步骤很简单。点击“<ruby>下一步<rt>Next &gt;</rt></ruby>”，选择整个可用空间，给它分配一个字母，选择文件系统（FAT32 或 NTFS），并将其格式化。
 
 ![Click Next][8]
 
@@ -91,11 +92,11 @@ _**选择正确的磁盘是非常重要的**_。从 U 盘的大小或“可移�
 
 除此之外，你可以像在 Windows 中那样做：删除现有的分区，用整个可用空间创建一个新的分区。
 
-这里使用 GNOME Disks 工具。它已经安装在 Ubuntu 和许多其他 Linux 发行版上。
+这里使用 GNOME “磁盘” 工具。它已经安装在 Ubuntu 和许多其他 Linux 发行版上。
 
 ![Start disk app][14]
 
-_**同样，确保你在这里选择了外部 USB 盘。**_
+**同样，确保你在这里选择了外部 USB 盘。**
 
 你会看到 U 盘上的各种分区。试着从上面的菜单中格式化该磁盘。
 
@@ -111,7 +112,7 @@ _**同样，确保你在这里选择了外部 USB 盘。**_
 
 ### 总结
 
-像 Rufus 和 Etcher 这样的工具并没有真正破坏你的 USB。这就是它们的功能，通过在磁盘上创建一个不同的文件系统。但这样一来，操作系统就不能正确理解它。
+像 Rufus 和 Etcher 这样的工具并没有真正破坏你的 USB。这就是它们的功能，通过在磁盘上创建一个不同的文件系统。但这样一来，Windows 操作系统就不能正确理解它。
 
 好在只需付出一点努力就可以修复。我希望你也能够修复它。如果没有，请与我分享你的问题，我将尽力帮助你。
 
@@ -122,7 +123,7 @@ via: https://itsfoss.com/format-live-linux-usb/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
