@@ -16,7 +16,7 @@
 
 对于没有听说过个项目的人，让我来讲点关于它的一点记忆。回到2005年，Kris Moore引入了[PC-BSD][2]作为一个建立FreeBSD桌面的简单方法。第二年，它被接受为[iXsystems][3]. 2016年9月，这个项目改名为TrueOS。这个项目也变成FreeBSD现有分支的滚动发行版。两年后，TrueOS[宣布][4]他们将专注商业和服务器市场，建立自己的操作系统。桌面元素[剥离][5]到一个新项目：Trident。
 
-For a time, the dev team at Project Trident tried their best to create a good desktop experience on top of FreeBSD. However, due to [issues with FreeBSD][6] including “hardware compatibility, communications standards, or package availability continue to limit Project Trident users” they decide to base it on something else. Their solution was to rebase their project on [Void Linux][7] in 2019. For a while, it looked like the future of Project Trident was set. Then 2020 happened.
+一段时间以来，Trident开发团队竭力在FreeBSD之上建立一个良好的桌面体验。可是，由于[FreeBSD的问题][6]，包括“硬件兼容性，通信标准，或软件包的可得性一直限制Trident项目的用户”，他们决定在其他底层上继续。他们的解决方案是在2019年，基于[Void Linux][7]重新构建了项目。 那段时间，看起来Trident项目的未来已经确定了。然后2020发生了。
 
 ![Project Trident desktop][8]
 
