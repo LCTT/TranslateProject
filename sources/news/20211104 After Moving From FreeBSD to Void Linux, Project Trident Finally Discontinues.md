@@ -7,12 +7,12 @@
 [#]: publisher: " "
 [#]: url: " "
 
-After Moving From FreeBSD to Void Linux, Project Trident Finally Discontinues
+从FreeBSD迁移到Void Linux后，Trident项目最终停止了
 ======
 
-Sadly, the [Project Trident][1] team announced that they will be ending development of their Linux distro.
+令人遗憾,[Trident项目][1]团队宣布他们将结束他们的Linux发行版的开发。
 
-### Story Time!!!
+### 故事时间!!!
 
 For those of you who have not heard of Project Trident, let me give you a little ride down memory lane. Back in 2005, Kris Moore introduced [PC-BSD][2] as an easy way to set up FreeBSD with a desktop interface. It was acquired the following year by [iXsystems][3]. In September of 2016, the name of the project was changed to TrueOS. The project also became a rolling release based on the Current branch of FreeBSD. Two years later, TrueOS [announced][4] that they would be doing away with the desktop version of their operating system and focusing on the enterprise and server market. The desktop elements [were spun off][5] to a new project: Project Trident.
 
