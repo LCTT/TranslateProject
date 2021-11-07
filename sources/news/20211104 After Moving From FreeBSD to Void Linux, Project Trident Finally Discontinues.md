@@ -32,9 +32,9 @@
 
 ### Lumina项目继续
 
-One constant throughout the PC-BSD/TrueOS/Project Trident saga is the desktop environment in use. In 2012, [Ken Moore][10] (Kris’ younger brother) started working on a Qt-based desktop environment named [Lumina][11]. In 2014, it became the default desktop environment of PC-BSD and has stayed that way down to Project Trident. Lumina stands apart from other desktop environment because it was designed to be operating system agnostic. Other desktop environments like KDE and GNOME have Linux specific code that makes it hard to port to BSD.
+一般认为PC-BSD/TrueOS/Trident项目的传奇故事是一个在用的桌面环境。2012年, [Ken Moore][10] (Kris’的弟弟)开始为一个基于Qt的桌面环境[Lumina][11]工作。2014年，它成为了PC-BSD的默认桌面环境，并一直将这种状态保持到Trident项目。Lumina代表不同于其他桌面环境，因为它被设计成操作系统不可知论的。其他桌面系统像KDE和GNOME有Linux特定代码，难以移植到BSD。
 
-![Lumina desktop environment][8]
+![Lumina桌面环境][8]
 
 June of this year, Ken [handed the reigns of Lumina][12] to a fellow Project Trident developer [JT Pennington][13] (also of [BSDNow][14] fame).
 
