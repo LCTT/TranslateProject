@@ -7,65 +7,66 @@
 [#]: via: (https://opensource.com/article/20/2/devops-automation)
 [#]: author: (Willy-Peter Schaub https://opensource.com/users/wpschaub)
 
-Using Powershell to automate Linux, macOS, and Windows processes
+使用Powershell来自动化Linux, macOS以及Windows进程
 ======
-Automation is pivotal to DevOps, but is everything automatable?
+自动化对DevOps是关键的，但是，是否任何事都可以自动化？
+
 ![CICD with gears][1]
 
-Automation takes control of manual, laborious, and error-prone processes and replaces engineers performing manual tasks with computers running automation scripts. Everyone agrees that manual processes are a foe of a healthy DevOps mindset. Some argue that automation is not a good thing because it replaces hard-working engineers, while others realize that it boosts consistency, reliability, and efficiency, saves time, and (most importantly) enables engineers to work smart.
+自动化控制了那些手工的、费力的和容易出错的过程，用运行自动化脚本的计算机代替了工程师执行手工任务。每个人都认同手工流程是健康的DevOps模式的敌人。一些人认为自动化不是一件好事，因为它取代了辛勤工作的工程师，而另一些人则意识到它提高了一致性、可靠性和效率，节省了时间，(最重要的是)使工程师能够聪明地工作。
 
-> "_DevOps is not just automation or infrastructure as code_" —[Donovan Brown][2].
+> "_DevOps并不只是自动化或者基础架构即代码_" —[Donovan Brown][2].
 
-Having used automated processes and toolchains since the early '80s, I always twitch when I hear or read the recommendation to "automate everything." While it is technically possible to automate everything, automation is complex and comes at a price in terms of development, debugging, and maintenance. If you have ever dusted off an inviable Azure Resource Manager (ARM) template or a precious maintenance script you wrote a long time ago, expecting it to execute flawlessly months or years later, you will understand that automation, like any other code, is brittle and needs continuous maintenance and nurture.
+自从上个世纪80年代早期开始使用自动化过程和工具链以来，每当我听到或读到“自动化一切”的建议时，我总是会激动不已。虽然在技术上可以实现一切自动化，但自动化是复杂的，并且需要付出开发、调试和维护方面的代价。如果您曾经重新启动过Azure资源管理器(ARM)模板或很久以前编写的宝贵维护脚本，并期望它在几个月或几年之后能够完美地执行，那么您就会明白，自动化就像任何其他代码一样，是脆弱的，需要持续的维护和培养。
 
-So, what and when should you automate?
+所以，你应该对什么进行自动化并在何时进行自动化?
 
-  * Automate processes you perform manually more than once or twice.
-  * Automate processes you will perform regularly and continuously.
-  * Automate everything automatable.
-
-
-
-More importantly, what should you _not_ automate?
-
-  * Don't automate processes that are a one-off—it is not worth the investment unless you reuse it as reference documentation and regularly validate to ensure it remains functional.
-  * Don't automate highly volatile processes—it is too complex and expensive.
-  * Don't automate broken processes—fix them before automating.
+  * 当您手动执行自动化流程超过一两次
+  * 当您需要经常地持续地执行自动化流程
+  * 自动化任何可被自动化的
 
 
 
-For example, my team continuously inspects hundreds of user activities on our common collaboration and engineering system, looking for inactivity that is wasting precious dollars. If a user has been inactive for three or more months and has been assigned an expensive license, we revert the user to a less functional and free license.
+更重要的是，什么是您不能自动化的?
 
-As Fig. 1 shows, it is not a technically challenging process. It is a mind-numbing and error-prone process, especially when it's performed while context switching with other development and operational tasks.
+  * 不要自动化一次性的流程，因为不值得投入，除非您会重新使用它作为参考文档，并且您会经常验证它的可用性
+  * 不要自动化高度不稳定的流程，因为太复杂且昂贵
+  * 不要自动化有问题的流程，在自动化前先修复它们
+
+
+
+举例来说，我的团队使用我们通用的协作和工程系统来不断的监控数百的用户行为。如果一个用户处于非活动状态三个月或者以上，并且这个用户被分配了一个昂贵的许可，我们就会重分配这个用户一个功能少一些但是免费的许可
+
+如图一所示，这是一个没有技术挑战性的流程。这是一个令人费解且容易出错的过程，尤其是在执行上下文时与其他开发和运维任务切换时。
 
 ![Manual process to switch user license][3]
 
-Fig. 1 Manual process to switch user license
+图 1 手工流程切换用户许可
 
-Incidentally, this is an example of a value stream map created in three easy steps:
+顺带的，这里有一个用简单三步创建的价值流图的例子:
 
-  1. Visualize all activities: list users, filter users, and reset licenses.
-  2. Identify stakeholders, namely operations and licensing teams.
-  3. Measure:
-    * Total lead time (TLT) = 13 hours
-    * Total cycle time (TCT) = 1.5 hours
-    * Total efficiency percentage = TLT/TCT*100 = 11.5%
+  1. 可视化所有活动: 列出用户，过滤用户，重置许可.
+  2. 确定利益相关者，即运营和许可团队.
+  3. 措施:
+    * 总交货时间 (TLT) = 13 hours
+    * 总周期时间 (TCT) = 1.5 hours
+    * 总效率百分比 = TLT/TCT*100 = 11.5%
 
 
 
-If you hang a copy of these visualizations in high-traffic and high-visibility areas, such as your team's breakout area, cafeteria, or on the way to your washrooms, you will trigger lots of discussions and unsolicited feedback. For example, looking at the visual, it is evident that the manual tasks are a waste, caused primarily by long process wait times.
+如果你在人流量大和容易看到的区域挂一个这些可视化的副本，比如在你的团队的讨论区，餐厅，或在去洗手间的路上，你将引发大量的讨论和主动反馈。例如，从视觉上看，很明显，手工任务是一种浪费，主要是由于漫长的流程等待时间造成的。
 
-Let us explore a simple PowerShell script that automates the process, as shown in Figure 2, reducing the total lead-time from 13 to 4 hours and 60 seconds, and raising the overall efficiency from 11.5 to 12.75%.
+让我们研究一个简单的PowerShell脚本，它可以自动化该过程，如图2所示，将总交付时间从13小时60秒减少到4小时60秒，并将总体效率从11.5提高到12.75%。
 
 ![Semi-automated PowerShell-based process to switch user license][4]
-
+图 2 半自动化的PowerShell脚本切换用户许可
  
 
-[PowerShell][5] is an open source task-based scripting language. It is found [on GitHub][6], is built on .NET, and allows you to automate Linux, macOS, and Windows processes. Users with a development background, especially C#, will enjoy the full benefits of PowerShell.
+[PowerShell][5] 是一种开源的基于任务的脚本语言。它可以在GitHub[on GitHub][6]上找到。它构建在.NET上，允许你自动化Linux、macOS和Windows进程。具有开发背景的用户，特别是c#用户，将充分享受PowerShell的好处。
 
-The PowerShell script example below communicates with [Azure DevOps][7] via its service [REST API][8]. The script combines the manual list users and filter users tasks in Fig. 1, identifies all users in the **DEMO** organization that have not been active for two months and are using either a **Basic** or a more expensive **Basic + Test** license, and outputs the user's details to the console. Simple!
+下面的PowerShell脚本示例通过它的服务[REST API][8]与[Azure DevOps][7]进行通信。 脚本结合了手动用户和过滤用户任务列表在图1中,识别**演示Demo**组织中的所有两个月没有活动的用户,并为他们使用**基本Basic**或稍微昂贵的**基本+测试Basic+Test**许可,用户的详细信息并将其输出到控制台。是那么简单!
 
-First, set up the authentication header and other variables that will be used later with this initialization script:
+首先，设置验证头和其他变量，这些变量将在稍后的初始化脚本中使用:
 
 
 ```
@@ -91,7 +92,7 @@ $members              = New-Object System.Collections.ArrayList
 [string] $basicTest   = "Basic + Test Plans";
 ```
 
-Next, query all the entitlements with this script to identify inactive users:
+接下来，使用此脚本查询所有授权，以识别不活动用户:
 
 
 ```
@@ -129,7 +130,7 @@ $response.items | ForEach-Object {
 }
 ```
 
-When you run the script, you get the following output, which you can forward to the licensing team to reset the user licenses:
+当您运行脚本时，您将得到以下输出，您可以将其转发给许可团队，以重置用户许可:
 
 
 ```
@@ -144,29 +145,25 @@ When you run the script, you get the following output, which you can forward to 
 **INACTIVE** Name: Demo9 Last Access: 2019/08/28 10:58:22 AM License: Basic
 ```
 
-If you automate the final step, automatically setting the user licenses to a free stakeholder license, as in Fig. 3, you can further reduce the overall lead time to 65 seconds and raise the overall efficiency to 77%.
+如果您将最后一步自动化，自动将用户许可设置为一个自由的利益相关方许可，如图3所示，您可以进一步将总体交付时间减少到65秒，并将总体效率提高到77%。
 
 ![Fully automated PowerShell-based process to switch user license][9]
 
-Fig. 3 Fully automated PowerShell-based process to switch user license
+图 3 完全自动化的基于powershell的过程，切换用户许可证。
 
-The core value of this PowerShell script is not just the ability to _automate_ but also to perform the process _regularly_, _consistently_, and _quickly_. Further improvements would trigger the script weekly or daily using a scheduler such as an Azure pipeline, but I will hold the programmatic license reset and script scheduling for a future article.
+这个PowerShell脚本的核心价值不仅在于能够_自动化_，还在于能够_定期_、_持续_和_快速地_执行过程。进一步的改进将使用Azure管道等调度器每周或每天触发脚本，但我将在以后的文章中保留编程许可证重置和脚本调度。
 
-Here is a graph to visualize the progress:
+这里是将流程可视化的图：
 
 ![Graph to visualize progress][10]
 
-Fig. 4 Measure, measure, measure
+图 4，措施，措施，措施
 
-I hope you enjoyed this brief journey through automation, PowerShell, REST APIs, and value stream mapping. Please share your thoughts and feedback in the comments.
-
---------------------------------------------------------------------------------
-
-via: https://opensource.com/article/20/2/devops-automation
+我希望您能喜欢这个简短的关于自动化，PowerShell, REST API和价值流图的介绍。请在评论中分享您的想法和反馈
 
 作者：[Willy-Peter Schaub][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/FigaroCao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
