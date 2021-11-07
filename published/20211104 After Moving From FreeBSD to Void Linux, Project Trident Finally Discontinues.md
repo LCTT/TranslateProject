@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zd200572"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13960-1.html"
 
 从 FreeBSD 转到 Void Linux 后，Trident 项目终于结束了
 ======
