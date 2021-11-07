@@ -40,7 +40,7 @@
 
 ![Lumina 桌面环境][15]
 
-今年 6 月，Ken 把 [Lumina 的领导权][12] 交给了 Trident 的开发者 [JT Pennington][13]（又名 [BSDNow][14]）。
+今年 6 月，Ken 把 [Lumina 的领导权][12] 交给了 Trident 的开发者 [JT Pennington][13]（也因 [BSDNow][14] 知名）。
 
 [公告][12] 中说：
 
