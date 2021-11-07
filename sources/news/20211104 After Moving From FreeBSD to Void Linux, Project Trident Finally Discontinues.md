@@ -46,7 +46,7 @@
 
 ### 最后的想法
 
-我一直对TridentI always had high hopes for Project Trident. They were small compared to many of the distros that we cover. They weren’t just a reskin of Arch or Ubuntu with one or two new tools. Not only that, but they were working to improve a distro (Void) that shared their ideals. However, life happens, even to the best of us. I wish Ken, JT and the others well as they sunset a project that they have spent many hours working on. Hopefully, we’ll be seeing more from them in the future.
+我一直对Trident项目有很高的期望。相比其他发行版，他们小巧。他们不是只是有一两个新工具的Arch或Ubuntu的皮。不只如此，他们还努力提升一个发行版来分享自己的创意。可是，生活的变故，甚至会发生在最好的我们之中。我希望Ken，JT和其他人，尽管他们将花费了很多时间的项目确定为了夕阳项目。希望，我们能在未来看到他们的更多。
 
 #### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
 
