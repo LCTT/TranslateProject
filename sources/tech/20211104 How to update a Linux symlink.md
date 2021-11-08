@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/update-linux-file-system-link"
 [#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
