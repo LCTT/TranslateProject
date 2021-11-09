@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/opensuse-leap-vs-tumbleweed/"
 [#]: author: "John Paul https://itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
