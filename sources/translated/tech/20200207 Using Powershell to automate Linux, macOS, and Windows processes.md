@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (FigaroCao)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -163,7 +163,7 @@ $response.items | ForEach-Object {
 
 作者：[Willy-Peter Schaub][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/FigaroCao)
+译者：[FigaroCao](https://github.com/FigaroCao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
