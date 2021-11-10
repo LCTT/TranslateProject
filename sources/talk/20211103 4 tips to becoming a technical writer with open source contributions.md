@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/technical-writing-open-source"
 [#]: author: "Ashley Hardin https://opensource.com/users/ashleyhardin"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "yingmanwumen"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
