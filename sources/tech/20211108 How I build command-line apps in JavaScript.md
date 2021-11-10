@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/javascript-command-line-apps"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
