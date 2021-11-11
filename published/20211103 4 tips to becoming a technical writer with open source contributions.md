@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "yingmanwumen"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13974-1.html"
 
 成为为开源做贡献的技术写手的四个建议
 ======
