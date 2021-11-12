@@ -18,7 +18,7 @@
 
 所以，为了搞点有趣的事，我想用它来庆祝 <ruby>亡灵节<rt>Día de los Muertos</rt></ruby>（LCTT 译注：墨西哥传统的鬼节，著名动画电影《<ruby>寻梦环游记<rt>Coco</rt></ruby>》即以此为背景）。
 
-除了牛之外，其实还有一些其他的可用图像。当安装 `cowsay` 时，程序会自动安装其他几个图像，并存储在 `/user/share/cowsay` 目录中。你可以用 `-l` 参数来获取图像列表。 
+除了牛之外，其实还有一些其他的可用图像。当安装 `cowsay` 时，程序会自动安装其他几个图像，并存储在 `/usr/share/cowsay` 目录中。你可以用 `-l` 参数来获取图像列表。 
 
 ```
 $ sudo dnf install cowsay
