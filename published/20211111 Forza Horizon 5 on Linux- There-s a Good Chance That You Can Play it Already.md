@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13980-1.html"
 
 《极限竞速：地平线 5》登陆 Linux 了吗？有可能你已经玩起来了
 ======
