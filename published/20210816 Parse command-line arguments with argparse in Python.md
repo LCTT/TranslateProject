@@ -3,14 +3,16 @@
 [#]: author: "Moshe Zadka https://opensource.com/users/moshez"
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-13986-1.html"
 
 Python 中使用 argparse 解析命令行参数
 ======
-使用 argparse 模块为应用程序设置命令行选项。
-![Python options][1]
+
+> 使用 argparse 模块为应用程序设置命令行选项。
+
+![](https://img.linux.net.cn/data/attachment/album/202111/15/110139bakkfdt4zoadqiv0.jpg)
 
 有一些第三方库用于命令行解析，但标准库 `argparse` 与之相比也毫不逊色。
 
@@ -21,7 +23,7 @@ Python 中使用 argparse 解析命令行参数
 使用 `argparse` 解析命令行参数时，第一步是配置一个 `ArgumentParser` 对象。这通常在全局模块内完成，因为单单_配置_一个解析器没有副作用。
 
 
-```python
+```
 import argparse
 
 PARSER = argparse.ArgumentParser()
@@ -30,75 +32,85 @@ PARSER = argparse.ArgumentParser()
 `ArgumentParser` 中最重要的方法是 `.add_argument()`，它有几个变体。默认情况下，它会添加一个参数，并期望一个值。
 
 
-```python
+```
 PARSER.add_argument("--value")
 ```
 
 查看实际效果，调用 `.parse_args()`：
 
-
-```python
+```
 PARSER.parse_args(["--value", "some-value"])
+```
+
+```
 Namespace(value='some-value')
 ```
 
 也可以使用 `=` 语法：
 
-
-```python
+```
 PARSER.parse_args(["--value=some-value"])
+```
+
+```
 Namespace(value='some-value')
 ```
 
-你还可以为短选项指定一个“别名”：
+为了缩短在命令行输入的命令，你还可以为选项指定一个短“别名”：
 
-
-```python
+```
 PARSER.add_argument("--thing", "-t")
 ```
 
 可以传入短选项：
 
-
-```python
+```
 PARSER.parse_args("-t some-thing".split())
+```
+
+```
 Namespace(value=None, thing='some-thing')
 ```
 
 或者长选项：
 
-
-```python
+```
 PARSER.parse_args("--thing some-thing".split())
+```
+
+```
 Namespace(value=None, thing='some-thing')
 ```
 
 ### 类型
 
-有很多类型的参数可供你使用。除了默认类型，最流行的两个是布尔类型和计数器。布尔类型默认为 true。
+有很多类型的参数可供你使用。除了默认类型，最流行的两个是布尔类型和计数器。布尔类型有一个默认为 `True` 的变体和一个默认为 `False` 的变体。
 
-
-```python
+```
 PARSER.add_argument("--active", action="store_true")
 PARSER.add_argument("--no-dry-run", action="store_false", dest="dry_run")
 PARSER.add_argument("--verbose", "-v", action="count")
 ```
 
-除非显示传入 `--active`，否则 `active` 就是 `False`。`dry-run` 默认为是 `True`，除非传入 `--no-dry-run`。短选项可以并列。
+除非显式传入 `--active`，否则 `active` 就是 `False`。`dry-run` 默认是 `True`，除非传入 `--no-dry-run`。无值的短选项可以并列。
 
 传递所有参数会导致非默认状态：
 
-
-```python
+```
 PARSER.parse_args("--active --no-dry-run -vvvv".split())
+```
+
+```
 Namespace(value=None, thing=None, active=True, dry_run=False, verbose=4)
 ```
 
 默认值则比较单一：
 
-
-```python
+```
 PARSER.parse_args("".split())
+```
+
+```
 Namespace(value=None, thing=None, active=False, dry_run=True, verbose=None)
 ```
 
@@ -108,8 +120,7 @@ Namespace(value=None, thing=None, active=False, dry_run=True, verbose=None)
 
 `git`、`podman` 和 `kubectl` 充分说明了这种范式的流行。`argparse` 库也可以做到：
 
-
-```python
+```
 MULTI_PARSER = argparse.ArgumentParser()
 subparsers = MULTI_PARSER.add_subparsers()
 get = subparsers.add_parser("get")
@@ -118,10 +129,21 @@ get.set_defaults(command="get")
 search = subparsers.add_parser("search")
 search.add_argument("--query")
 search.set_defaults(command="search")
+```
 
+```
 MULTI_PARSER.parse_args("get --name awesome-name".split())
+```
+
+```
 Namespace(name='awesome-name', command='get')
+```
+
+```
 MULTI_PARSER.parse_args("search --query name~awesome".split())
+```
+
+```
 Namespace(query='name~awesome', command='search')`
 ```
 
@@ -129,7 +151,7 @@ Namespace(query='name~awesome', command='search')`
 
 使用 `argparse` 的一种方法是使用下面的结构：
 
-```python
+```
 ## my_package/__main__.py
 import argparse
 import sys
@@ -140,7 +162,7 @@ parsed_arguments = toplevel.PARSER.parse_args(sys.argv[1:])
 toplevel.main(parsed_arguments)
 ```
 
-```python
+```
 ## my_package/toplevel.py
 
 PARSER = argparse.ArgumentParser()
@@ -153,7 +175,7 @@ def main(parsed_args):
     # do stuff with parsed_args
 ```
 
-在这种情况下，使用 `python -m my_package` 运行。或者，你可以在包安装时使用 [`console_scprits`][2] 入口点。
+在这种情况下，使用 `python -m my_package` 运行。或者，你可以在包安装时使用 [console_scprits][2] 入口点。
 
 ### 总结
 
@@ -166,7 +188,7 @@ via: https://opensource.com/article/21/8/python-argparse
 作者：[Moshe Zadka][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
