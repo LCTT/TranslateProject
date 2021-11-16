@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/install-freedos-without-installer)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (robsean)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
