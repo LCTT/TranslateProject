@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/kubernetes-replicationcontroller"
 [#]: author: "Mike Calizo https://opensource.com/users/mcalizo"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
