@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/mount-encrypted-windows-partition-linux/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
