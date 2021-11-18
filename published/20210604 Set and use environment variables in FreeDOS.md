@@ -5,7 +5,7 @@
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
 [#]: publisher: (wxy)
-[#]: url: ( )
+[#]: url: (https://linux.cn/article-13995-1.html)
 
 在 FreeDOS 中设置和使用环境变量
 ======
