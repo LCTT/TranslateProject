@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/raspberry-pi-3-vs-4/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
