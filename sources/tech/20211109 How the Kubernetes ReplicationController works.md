@@ -7,130 +7,128 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How the Kubernetes ReplicationController works
+Kubernetes ReplicationController 如何工作
 ======
-A ReplicationController is responsible for managing the pod lifecycle
-and ensuring that the specified number of pods required are running at
-any given time.
+ReplicationController 负责管理 pod 的生命周期并确保所需的指定数量的 pod 在任何时候都在运行。
 ![Ships at sea on the web][1]
 
-Have you ever wondered what is responsible for supervising and managing just the exact number of pods running inside the Kubernetes cluster? Kubernetes can do this in multiple ways, but one common approach is using ReplicationController (rc). A ReplicationController is responsible for managing the pod lifecycle and ensuring that the specified number of pods required are running at any given time. On the other hand, it is not responsible for the advanced cluster capabilities like performing auto-scaling, readiness and liveliness probes, and other advanced replication capabilities. Other components within the Kubernetes cluster better perform those capabilities.
+你有没有想过，谁负责监督和管理 Kubernetes 集群内运行的 pod 的确切数量？Kubernetes 可以通过多种方式做到这一点，但一个常见的方法是使用 ReplicationController（rc）。ReplicationController 负责管理 pod 的生命周期，并确保在任何时候都能运行所需的指定数量的 pod。另一方面，它不负责高级的集群能力，如执行自动扩展、准备度和活跃探测以及其他高级的复制能力。Kubernetes 集群中的其他组件可以更好地执行这些功能。
 
-In short, the ReplicationController has limited responsibility and gets typically used for specific implementations that do not require complex logic to attain certain requirements (for example, ensuring that the desired number of pods always matches the specified number). If there are more than the desired number, the ReplicationController removes the excess ones and ensures the same number of pods exist even in the event of node failure or pod termination
+简而言之，ReplicationController 的职责有限，通常用于不需要复杂逻辑就能达到某些要求的具体实现（例如，确保所需的 pod 数量总是与指定的数量相符）。如果超过了所需的数量，ReplicationController 会删除多余的，并确保即使在节点故障或 pod 终止的情况下，也有相同数量的 pod 存在。
 
-Simple things do not require complex solutions, and this is, for me, a perfect metaphor of how a ReplicationController gets used.
+简单的事情不需要复杂的解决方案，对我来说，这就是 ReplicationController 如何被使用的一个完美的比喻。
 
-### How to Create a ReplicationController
+### 如何创建一个 ReplicationController
 
-Like most Kubernetes resources, you can create a ReplicationController using YAML or JSON format then post it to the Kubernetes API endpoint.
+像大多数 Kubernetes 资源一样，你可以使用 YAML 或 JSON 格式创建一个 ReplicationController，然后将其发布到 Kubernetes API 端点。
 
 
 ```
 
 
 $ kubectl create -f rcexample.yaml
-  replicationcontroller/rcexample created
+ replicationcontroller/rcexample created
 
 ```
 
-Now, I'll dig a bit deeper into what `rcexample.yaml` looks like. 
+现在，我将深入一下 `rcexample.yaml` 的样子。
 
 
 ```
 
 
 apiVersion: v1
-kind: ReplicationController   → rc descriptor    
+kind: ReplicationController  → rc descriptor  
 metadata:
- name: rcexample            → Name of the replication controller              
+name: rcexample      → Name of the replication controller       
 spec:
- replicas: 3                 → Desired number of pods      
- selector:                  → The pod selector for this rc        
-   app: nginx                        
- template:                  → The template for creating a new pod        
-   metadata:                        
-     labels:                        
-       app: nginx                    
-   spec:                            
-     containers:                    
-     - name: nginx                  
-       image: nginx
+replicas: 3         → Desired number of pods   
+selector:         → The pod selector for this rc    
+ app: nginx            
+template:         → The template for creating a new pod    
+ metadata:            
+  labels:            
+   app: nginx          
+ spec:              
+  containers:          
+  - name: nginx         
+   image: nginx
 
 ```
 
-To explain further, this file, when executed to create a ReplicationController called `rcexample` ensures that three instances of pods called `nginx` are running all the time. If one or all the pods `app=nginx` are not running, new pods are created based on the defined pod template.
+为了进一步解释，这个文件在执行时创建了一个名为 `rcexample` 的 ReplicationController，确保三个名为 `nginx` 的 pod 实例一直在运行。如果一个或所有的pod `app=nginx` 没有运行，新的 pod 将根据定义的 pod 模板创建。
 
-A ReplicationController has three parts:
+一个 ReplicationController 有三个部分：
 
-  * Replica: 3
-  * Pod Template: app=nginx
-  * Pod Selector: app=nginx
+  * Replica：3
+  * Pod Template：app=nginx
+  * Pod Selector：app=nginx
 
 
 
-Notice that Pod Template matches with Pod Selector to prevent the ReplicationController from indefinitely creating pods. If you create a ReplicationController with a pod selector not matching the template, the Kubernetes API server gives you an error.
+注意，Pod Template 要与 Pod Selector 相匹配，以防止 ReplicationController 无限期地创建 pod。如果你创建的 ReplicationController 的 pod selector 与 template 不匹配，Kubernetes API 服务器会给你一个错误。
 
-To verify that the ReplicationController `rcexample` got created:
+为了验证 ReplicationController `rcexample` 是否被创建：
 
 
 ```
 
 
 $ kubectl get po
-NAME          READY     STATUS              RESTARTS   AGE
-rcexample-53thy   0/1   Running                 0          10s
-rcexample-k0xz6   0/1   Running                 0          10s
-rcexample-q3vkg   0/1   Running                 0          10s
+NAME     READY   STATUS       RESTARTS  AGE
+rcexample-53thy  0/1  Running         0     10s
+rcexample-k0xz6  0/1  Running         0     10s
+rcexample-q3vkg  0/1  Running         0     10s
 
 ```
 
-To delete the ReplicationController:
+要删除 ReplicationController：
 
 
 ```
 
 
 $ kubectl delete rc rcexample
-  replicationcontroller "rcexample" deleted
+ replicationcontroller "rcexample" deleted
 
 ```
 
-Note that you can use a [rolling update][2] strategy to the service in the ReplicationController by replacing pods one by one.
+注意，你可以对 ReplicationController 中的服务使用[滚动更新][2]策略，逐个替换 pod。
 
-### Other methods to replicate containers
+### 其他复制容器的方法
 
-In a Kubernetes deployment, there are multiple ways you that can attain replication of containers. One of the main reasons Kubernetes is the main choice for container platforms is the native ability to replicate containers to attain reliability, load balancing, and scaling. 
+在 Kubernetes 部署中，有多种方法可以实现容器的复制。Kubernetes 成为容器平台的主要选择的主要原因之一是复制容器以获得可靠性、负载平衡和扩展的原生能力。
 
-I have shown above how you can easily create a ReplicationController to make sure that a certain number of pods is available at any given time. You can manually scale pods by updating the number of replicas.
+我在上面展示了你如何轻松地创建一个 ReplicationController，以确保在任何时候都有一定数量的 pod 可用。你可以通过更新副本的数量来手动扩展 pod。
 
-The other possible approach to attain replication is by using [ReplicaSet][3].
+另一种可能的方法是通过使用 [ReplicaSet][3] 来达到复制的目的。
 
 
 ```
 `(kind: ReplicaSet)`
 ```
 
-ReplicaSet (rs) functions are almost identical to ReplicationController. The main difference is that a ReplicaSet does not allow a rolling-update strategy.
+ReplicaSet（rs） 的功能几乎与 ReplicationController 相同。主要区别在于，ReplicaSet 不允许滚动更新策略。
 
-Another approach to attain replication is by using [Deployments][4].
+另一种实现复制的方法是通过使用 [Deployments][4]。
 
 
 ```
 `(kind: Deployment)`
 ```
 
-Deployments is a more advanced container replication approach. Functionality-wise, Deployments provide the same functionality but can roll out and roll back changes if needed. This functionality is possible because Deployments has StrategyType specification to replace old pods with new ones. There are two types of deployment strategies that you can define—Recreate and RollingUpdate. You specify the deployment strategy as shown below:
+Deployments 是一种更高级的容器复制方法。从功能上讲，Deployments 提供了相同的功能，但在需要时可以推出和回滚变化。这种功能之所以能够实现，是因为 Deployments 有 StrategyType 规范来用新的 pod 替换旧的 pod。你可以定义两种类型的部署策略：Recreate 和 RollingUpdate。你可以如下指定部署策略：
 
 
 ```
 `StrategyType: RollingUpdate`
 ```
 
-### Conclusion
+### 总结
 
-Replication of containers is one of the main reasons why Kubernetes gets considered for most enterprise container adoption. Replication allows you to attain the reliability and scalability that most critical applications need as minimum requirements for production.
+容器的复制是大多数企业考虑采用 Kubernetes 的主要原因之一。复制可以让你达到大多数关键应用程序需要的可靠性和可扩展性，作为生产的最低要求。
 
-Understanding which methods to use to attain replication in a Kubernetes cluster is important to decide which one is the best for you to incorporate in your application architecture consideration.
+了解在 Kubernetes 集群中使用哪些方法来实现复制对于决定哪种方法最适合你的应用架构考虑非常重要。
 
 --------------------------------------------------------------------------------
 
@@ -138,7 +136,7 @@ via: https://opensource.com/article/21/11/kubernetes-replicationcontroller
 
 作者：[Mike Calizo][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
