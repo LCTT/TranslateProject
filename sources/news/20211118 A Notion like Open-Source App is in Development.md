@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/appflowy-development/"
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zengyi1001"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
