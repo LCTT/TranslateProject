@@ -3,18 +3,20 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14002-1.html"
 
-如何在 Fedora Linux 中切换到深色模式（初学者技巧）
+入门：如何在 Fedora Linux 中切换到深色模式
 ======
 
-与 Ubuntu 不同，Fedora 提供的是真正的、原生般的 GNOME 体验。而且效果很好。横向布局，三指滑动，这一切都很好。
+![](https://img.linux.net.cn/data/attachment/album/202111/20/114412oqqw4mdnxbwfbprb.jpg)
 
-我不喜欢的一点是默认的标准主题，它是 Adwaita Light（默认）主题和深色 shell 的混合。
+与 Ubuntu 不同，Fedora 提供的是真正的、原生般的 GNOME 体验，而且体验很好，横向布局、三指滑动，一切都很好。
 
-因此，虽然通知和通知区是深色的，但系统和应用的其他部分是浅色主题。老实说，对我来说，这看起来很沉闷。
+我不喜欢的一点是默认的标准主题，它是 Adwaita Light（默认）主题和深色的 GNOME Shell 的混合体。
+
+因此，虽然通知和通知区是深色的，但系统和应用的其他部分是浅色主题。老实说，对我来说，这看起来很不协调。
 
 ![Fedora GNOME standard theme][1]
 
@@ -29,38 +31,34 @@
 好了！我将分享命令行的方法，因为它更快。打开一个终端，使用这个命令：
 
 ```
-
-    gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
-
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 ```
 
 完成了。这很容易，对吗？但我也要展示一下 GUI 的方法。
 
 因为我主要使用 Ubuntu，所以我始终参照 Ubuntu。Ubuntu 在系统设置中本身就提供了在浅色和深色主题之间切换的选项。
 
-然而，在原生 GNOME 中却没有这样的设置。你必须先[在 Fedora 上安装 GNOME Tweaks 工具][3]，然后用它来切换主题。
+然而，在原生 GNOME 中却没有这样的设置。你必须先 [在 Fedora 上安装 GNOME Tweaks 工具][3]，然后用它来切换主题。
 
-你可以在软件中心搜索它并点击“安装”按钮：
+你可以在软件中心搜索它并点击“<ruby>安装<rt>Install</rt></ruby>”按钮：
 
 ![Install GNOME Tweaks from the software center in Fedora][4]
 
 或者，你在终端输入以下命令：
 
 ```
-
-    sudo dnf install gnome-tweaks
-
+sudo dnf install gnome-tweaks
 ```
 
-安装完成后，按超级键（Windows 键）在系统菜单中搜索它：
+安装完成后，按 `Super` 键（`Windows` 键）在系统菜单中搜索它：
 
 ![Start GNOME Tweaks][5]
 
-点击左侧边栏的**外观**标签，点击主题部分下的应用。
+点击左侧边栏的“<ruby>外观<rt>Appearance</rt></ruby>”标签，点击主题部分下的应用。
 
 ![Changing theme in Fedora][6]
 
-你会看到这里有几个可用的主题。你应该在这里选择 Adwaita-dark。当你选择了它，应用就会切换到深色主题。
+你会看到这里有几个可用的主题。你应该在这里选择 “Adwaita-dark”。当你选择了它，应用就会切换到深色主题。
 
 ![Selecting the Adwaita-dark theme][7]
 
@@ -68,11 +66,11 @@
 
 ### 总结
 
-你可以找到各种深色 GTK 主题并安装它们来给你的 Fedora 带来不同的深色外观。然而，我注意到，只有系统自己的深色主题才能被网络浏览器识别。
+你可以找到各种深色 GTK 主题并安装它们来给你的 Fedora 带来不同的深色外观。然而，我注意到，只有系统自己的深色主题才能被网页浏览器识别。
 
 所以，如果你访问一个根据你的系统主题自动启用深色模式的网站，它将与 Adwaita-dark 兼容，但可能与其他深色 GTK 主题不兼容。
 
-这就是使用系统提供的深色主题的一个肯定的优势。
+这就是使用系统提供的深色主题的一个优势。
 
 如你所见，在 Fedora 中启用深色模式并不是什么火箭科学。它只是一个了解和发现的过程。
 
@@ -85,7 +83,7 @@ via: https://itsfoss.com/fedora-dark-mode/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
