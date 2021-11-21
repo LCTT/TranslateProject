@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "perfiffer"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14005-1.html"
 
 Kubernetes 网络策略基础
 ======
