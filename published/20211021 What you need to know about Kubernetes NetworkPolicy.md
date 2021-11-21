@@ -20,7 +20,7 @@ Kubernetes 网络策略基础
 
 对于刚开始学习 Kubernetes 实施的人来说，理解 Kubernetes <ruby>网络策略<rt>NetworkPolicy</rt></ruby> 可能会令人生畏。但这是在将应用程序部署到 Kubernetes 集群之前必须了解的基本要求之一。在学习 Kubernetes 和云原生应用程序时，请把“不要把安全抛在脑后！”定为你的口号。
 
-### NetworkPolicy 概念
+### 网络策略概念
 
 <ruby>[网络策略][2]<rt>NetworkPolicy</rt></ruby> 取代了你所知道的数据中心环境中的防火墙设备 —— 如<ruby>吊舱<rt>Pod</rt></ruby>之于计算实例、网络插件之于路由器和交换机，以及卷之于存储区域网络（SAN）。
 
