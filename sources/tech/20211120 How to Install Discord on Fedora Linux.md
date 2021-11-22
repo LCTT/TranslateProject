@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-discord-fedora/"
 [#]: author: "Pranav Krishna https://itsfoss.com/author/pranav/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
