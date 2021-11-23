@@ -12,7 +12,7 @@
 
 > 它被称为“Notion 的开源替代品”，AppFlowy 旨在让你可以完全控制你的数据和定制选项。
 
-![](https://i2.wp.com/news.itsfoss.com/wp-content/uploads/2021/11/AppFlowy-ft.png?w=1200&ssl=1)
+![](https://img.linux.net.cn/data/attachment/album/202111/23/162933pedqtdm73tk7tp49.jpg)
 
 Notion 是深受团队和个人欢迎的生产力应用之一，而现在我们似乎有希望获得一个有前途的开源替代品。
  
@@ -23,6 +23,8 @@ Notion 是深受团队和个人欢迎的生产力应用之一，而现在我们�
 那么，如果有一个可以提供类似 UI 和功能的开源应用会怎么样？
 
 这就是 AppFlowy。
+
+![](https://i2.wp.com/news.itsfoss.com/wp-content/uploads/2021/11/AppFlowy-ft.png?w=1200&ssl=1)
 
 ### 什么是 AppFlowy
 
