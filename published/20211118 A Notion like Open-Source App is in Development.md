@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "zengyi1001"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14012-1.html"
 
 一个正在开发中的类似 Notion 的开源 APP 
 ======
