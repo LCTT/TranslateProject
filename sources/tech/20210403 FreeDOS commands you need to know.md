@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/freedos-commands)
 [#]: author: (Kevin O'Brien https://opensource.com/users/ahuka)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (robsean)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
