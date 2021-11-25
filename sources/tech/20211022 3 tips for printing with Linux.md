@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/print-linux"
 [#]: author: "Lauren Pritchett https://opensource.com/users/lauren-pritchett"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
