@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/c-stdcout-cheat-sheet"
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
