@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/dark-gtk-themes/"
 [#]: author: "Pratham Patel https://itsfoss.com/author/pratham/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
