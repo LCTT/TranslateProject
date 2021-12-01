@@ -3,18 +3,20 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14034-1.html"
 
-用 Flatseal 图形化管理 Flatpak 的权限
+用 Flatseal 图形化管理 Flatpak 应用的权限
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202111/30/135209fbcvqnvnzidvg2hw.jpg)
 
 新版本的安卓系统让你对单个应用的访问和权限有了更精细的控制。这一点至关重要，因为许多应用曾经（正在）滥用系统权限。下载一个天气应用，它将要求访问你的通话记录，好像这与天气有什么关系一样。
 
 为什么我在说安卓应用的权限？因为这可能与此应用的功能有关。
 
-你可能已经知道[什么是 Flatpak][1]。这些都是沙盒应用，可以选择访问系统资源，如文件存储、网络接口等。
+你可能已经知道 [什么是 Flatpak][1]。这些都是沙盒应用，可以选择访问系统资源，如文件存储、网络接口等。
 
 就像 Android 一样，你可以控制 Flatpak 应用对系统资源的访问。默认情况下，这要用 [Flatpak 命令][2]，不是每个人都能适应它。
 
@@ -26,7 +28,7 @@
 
 [Flatseal][4] 是一个图形化的工具，用于审查和修改你的 Flatpak 应用的权限。这使得事情比通过命令要容易得多。
 
-Flatseal 会列出所有已安装的 Flatpak 应用。当你选择一个，你可以看到所有的权限。已启用的权限很容易被发现，如果你愿意，你可以禁用它。
+Flatseal 会列出所有已安装的 Flatpak 应用。当你选择一个应用，你可以看到所有的权限。很容易发现已启用的权限，如果你愿意，你可以禁用它。
 
 例如，Ksnip 是一个屏幕截图工具，但它也有联网权限，可以用 Imgur 等在线服务分享截图。如果你不需要它，你可以禁用它。
 
@@ -38,7 +40,7 @@ Flatseal 会列出所有已安装的 Flatpak 应用。当你选择一个，你�
 
 ### 安装 Flatseal
 
-既然都是 Flatpak，那么 Flatseal 作为一个 Flatpak 包来使用也是合理的。
+既然管理的都是 Flatpak，那么 Flatseal 作为一个 Flatpak 包来使用也是合理的。
 
 在 Fedora 上，如果已经添加 Flathub 仓库，你可以从软件中心安装它。
 
@@ -47,14 +49,12 @@ Flatseal 会列出所有已安装的 Flatpak 应用。当你选择一个，你�
 否则，命令行总是可以帮助你。
 
 ```
-
-    flatpak install flathub com.github.tchx84.Flatseal
-
+flatpak install flathub com.github.tchx84.Flatseal
 ```
 
 ### 你真的需要控制权限吗？
 
-这是一个主观的问题，完全取决于你。值得庆幸的是，到目前为止，桌面 Linux 应用并不像 Android 应用那样滥用。
+这是一个主观的问题，完全取决于你。值得庆幸的是，到目前为止，桌面 Linux 应用并不像 Android 应用那样滥用权限。
 
 一个普通用户通常不会去管这些事情，这完全没问题。
 
@@ -71,7 +71,7 @@ via: https://itsfoss.com/flatseal/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
