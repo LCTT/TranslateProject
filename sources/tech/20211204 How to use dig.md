@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2021/12/04/how-to-use-dig/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
