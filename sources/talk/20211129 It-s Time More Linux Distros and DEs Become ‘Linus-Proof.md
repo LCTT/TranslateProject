@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/more-linux-distros-become-linus-proof/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "imgradeone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
