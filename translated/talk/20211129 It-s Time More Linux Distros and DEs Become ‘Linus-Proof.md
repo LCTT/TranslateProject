@@ -92,4 +92,4 @@ via: https://news.itsfoss.com/more-linux-distros-become-linus-proof/
 [8]: https://twitter.com/jeremy_soller/status/1453008808314351628?ref_src=twsrc%5Etfw
 [9]: https://linux.cn/article-14015-1.html
 [10]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjM4OSIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
-[ 11 ]: https://www.bilibili.com/video/BV1Fh411b7q3?t=769
+[11]: https://www.bilibili.com/video/BV1Fh411b7q3?t=769
