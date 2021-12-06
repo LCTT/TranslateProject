@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/parsing-config-files-java)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: (Starryi)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
