@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-flutter-linux/"
 [#]: author: "Community https://itsfoss.com/author/itsfoss/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
