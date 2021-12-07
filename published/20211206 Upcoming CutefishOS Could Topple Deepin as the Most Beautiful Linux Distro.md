@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14058-1.html"
 
 即将推出的 CutefishOS 可能取代深度成为最漂亮的 Linux 发行版
 ======
