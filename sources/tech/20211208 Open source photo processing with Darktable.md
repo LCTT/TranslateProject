@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/open-source-photo-processing-darktable"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
