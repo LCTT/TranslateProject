@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/apache-shardingsphere"
 [#]: author: "Trista Pan https://opensource.com/users/trista-pan"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
