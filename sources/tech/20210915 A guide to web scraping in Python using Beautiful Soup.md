@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/web-scraping-python-beautiful-soup"
 [#]: author: "Ayush Sharma https://opensource.com/users/ayushsharma"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
