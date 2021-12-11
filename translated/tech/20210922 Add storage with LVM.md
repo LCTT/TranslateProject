@@ -7,46 +7,42 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Add storage with LVM
+使用 LVM 添加存储
 ======
-LVM enables extreme flexibility in how you configure your storage.
+LVM 为你配置存储的方式提供了极大的灵活性。
 ![Storage units side by side][1]
 
-Logical Volume Manager (LVM) allows for a layer of abstraction between the operating system and the hardware. Normally, your OS looks for disks (`/dev/sda`, `/dev/sdb`, and so on) and partitions within those disks (`/dev/sda1`, `/dev/sdb1`, and so on).
+逻辑卷管理器（LVM）允许在操作系统和硬件之间建立一个抽象层。通常，你的操作系统会查找磁盘（`/dev/sda`，`/dev/sdb` 等）和这些磁盘中的分区（`/dev/sda1`，`/dev/sdb1` 等）。
 
-In LVM, a virtual layer is created between the operating system and the disks. Instead of one drive holding some number of partitions, LVM creates a unified storage pool (called a _Volume Group_) that spans any number of physical drives (called _Physical Volumes_). Using the storage available in a Volume Group, LVM provides what appear to be disks and partitions to your OS.
+LVM 在操作系统和磁盘之间创建了一个虚拟层。LVM 不是一个驱动器持有一定数量的分区，而是创建一个统一的存储池（称为卷组），跨越任意数量的物理驱动器（称为物理卷）。使用卷组中可用的存储，LVM 为你的操作系统提供类似磁盘和分区的功能。
 
-And the operating system is completely unaware that it's being "tricked."
+操作系统完全没有意识到它被“欺骗”了。
 
 ![Drive space][2]
 
 Opensource.com, [CC BY-SA 4.0][3]
 
-Because the LVM creates volume groups and logical volumes virtually, it makes it easy to resize or move them, or create new volumes, even while the system is running. Additionally, LVM provides features that are not present otherwise, like creating live snapshots of logical volumes, without unmounting the disk first.
+由于 LVM 虚拟的创建卷组和逻辑卷，因此即使在系统运行时，也可以轻松调整它们的大小或移动它们，或者创建新卷。此外，LVM 提供了其它情况下不存在的特性，比如创建逻辑卷的活动快照，而无需首先卸载磁盘。
 
-A volume group in an LVM is a named virtual container that groups together the underlying physical disks. It acts as a pool from which logical volumes of different sizes can be created. Logical volumes contain the actual file system and can span multiple disks, and don't need to be physically contiguous.
+LVM 中的卷组是一个命名的虚拟容器，将底层物理磁盘组合在一起。它充当一个池，可以从中创建不同大小的逻辑卷。逻辑卷包含实际的文件系统并且可以跨越多个磁盘，并且不需要物理上连续。
 
-### Features
+### 特性
+  * 分区名称通常具有系统名称，例如 `/dev/sda1`。LVM 具有便于人们理解的名称，例如 `home` 或者 `media`。
+  * 分区的总大小受底层物理磁盘大小的限制。在 LVM 中，卷可以跨越多个磁盘，并且仅受 LVM 中所有物理磁盘总大小的限制。
+  * 分区通常只有在磁盘未使用且已卸载时才能调整大小、移动或删除。LVM 卷可以在系统运行时进行操作。
+  * 只能通过分配与分区相邻的可用空间来扩展分区。LVM 卷可以从任何地方占用可用空间。  
+  * 扩展分区涉及移动数据以腾出可用空间，这非常耗时，并且可能会在断电期间导致数据丢失。LVM 卷可以从卷组中的任何地方占用可用空间，甚至可以在另一块磁盘上。
+  * 因为在 LVM 中创建卷非常容易，所以它鼓励创建不同的卷，例如创建单独的卷来测试功能或尝试不同的操作系统。对于分区，此过程将非常耗时并且容易出错。
+  * 快照只能在 LVM 中创建。它允许你创建当前逻辑卷的时间点镜像，即使在系统运行时也可以。这非常适合备份。
 
-  * Partition names normally have system designations like `/dev/sda1`. LVM volumes have normal human-understandable names, like `home` or `media`.
-  * The total size of partitions is limited by the size of the underlying physical disk. In LVM, volumes can span multiple disks, and are only limited by the total size of all physical disks in the LVM.
-  * Partitions can normally only be resized, moved, or deleted when the disk is not in use and is unmounted. LVM volumes can be manipulated while the system is running.
-  * Partitions can only be expanded by allocating them free space adjacent to the partition. LVM volumes can take free space from anywhere.
-  * Expanding a partition involves moving the data around to make free space, which is time-consuming and could lead to data loss during a power outage. LVM volumes can take free space from anywhere in the volume group, even on another disk.
-  * Because it’s so easy to create volumes in an LVM, it encourages creating different volumes, like creating separate volumes to test features or to try different operating systems. With partitions, this process would be time-consuming and error-prone.
-  * Snapshots can only be created in an LVM. It allows you to create a point-in-time image of the current logical volume, even while the system is running. This is great for backups.
+### 测试设置
 
-
-
-### Test setup
-
-As a demonstration, assume your system has the following drive configuration:
-
+作为演示，假设你的系统具有以下驱动器配置：
 
 ```
 NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 xvda    202:0    0   8G  0 disk
-`-xvda1 202:1    0   8G  0 part /
+ -xvda1 202:1    0   8G  0 part /
 xvdb    202:16   0   1G  0 disk
 xvdc    202:32   0   1G  0 disk
 xvdd    202:48   0   2G  0 disk
@@ -54,10 +50,9 @@ xvde    202:64   0   5G  0 disk
 xvdf    202:80   0   8G  0 disk
 ```
 
-#### Step 1. Initialize disks to use with LVM
+#### 步骤 1. 初始化磁盘以用于 LVM
 
-Run `pvcreate /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf`. The output should be:
-
+运行 `pvcreate /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf`。输出应如下：
 
 ```
 Physical volume "/dev/xvdb" successfully created
@@ -67,24 +62,23 @@ Physical volume "/dev/xvde" successfully created
 Physical volume "/dev/xvdf" successfully created
 ```
 
-See the result using `pvs` or `pvdisplay`:
-
+使用 `pvs` 或者 `pvdisplay` 查看结果：
 
 ```
 "/dev/xvde" is a new physical volume of "5.00 GiB"
-\--- NEW Physical volume ---
+--- NEW Physical volume ---
 PV Name               /dev/xvde
 VG Name
 PV Size               5.00 GiB
 Allocatable           NO
 PE Size               0
-Total PE              0
+Total PE              0vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf
 Free PE               0
 Allocated PE          0
 PV UUID               728JtI-ffZD-h2dZ-JKnV-8IOf-YKdS-8srJtn
 
 "/dev/xvdb" is a new physical volume of "1.00 GiB"
-\--- NEW Physical volume ---
+--- NEW Physical volume ---
 PV Name               /dev/xvdb
 VG Name
 PV Size               1.00 GiB
@@ -96,7 +90,7 @@ Allocated PE          0
 PV UUID               zk1phS-7uXc-PjBP-5Pv9-dtAV-zKe6-8OCRkZ
 
 "/dev/xvdd" is a new physical volume of "2.00 GiB"
-\--- NEW Physical volume ---
+--- NEW Physical volume ---
 PV Name               /dev/xvdd
 VG Name
 PV Size               2.00 GiB
@@ -108,7 +102,7 @@ Allocated PE          0
 PV UUID               R0I139-Ipca-KFra-2IZX-o9xJ-IW49-T22fPc
 
 "/dev/xvdc" is a new physical volume of "1.00 GiB"
-\--- NEW Physical volume ---
+--- NEW Physical volume ---
 PV Name               /dev/xvdc
 VG Name
 PV Size               1.00 GiB
@@ -118,9 +112,9 @@ Total PE              0
 Free PE               0
 Allocated PE          0
 PV UUID               FDzcVS-sq22-2b13-cYRj-dXHf-QLjS-22Meae
-
+vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf
 "/dev/xvdf" is a new physical volume of "8.00 GiB"
-\--- NEW Physical volume ---
+--- NEW Physical volume ---
 PV Name               /dev/xvdf
 VG Name
 PV Size               8.00 GiB
@@ -132,17 +126,16 @@ Allocated PE          0
 PV UUID               TRVSH9-Bo5D-JHHb-g0NX-8IoS-GG6T-YV4d0p
 ```
 
-#### Step 2. Create the volume group
+#### 步骤 2. 创建卷组
 
-Run `vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf`. See the results with `vgs` or `vgdisplay`:
-
+运行 `vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf`。通过 `vgs` 或者 `vgdisplay` 查看结果：
 
 ```
-\--- Volume group ---
+--- Volume group ---
 VG Name               myvg
 System ID
 Format                lvm2
-Metadata Areas        5
+Metadata Areas        5vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf
 Metadata Sequence No  1
 VG Access             read/write
 VG Status             resizable
@@ -160,21 +153,19 @@ Free  PE / Size       4347 / 16.98 GiB
 VG UUID               ewrrWp-Tonj-LeFa-4Ogi-BIJJ-vztN-yrepkh
 ```
 
-#### Step 3: Create logical volumes
+#### 步骤 3: 创建逻辑卷
 
-Run the following commands:
-
+运行以下命令：
 
 ```
 lvcreate myvg --name media --size 4G
 lvcreate myvg --name home --size 4G
 ```
 
-Verify the results using `lvs` or `lvdisplay`:
-
+使用 `lvs` 或者 `lvdisplay` 验证结果：
 
 ```
-\--- Logical volume ---
+--- Logical volume ---
 LV Path                /dev/myvg/media
 LV Name                media
 VG Name                myvg
@@ -188,10 +179,10 @@ Current LE             1024
 Segments               1
 Allocation             inherit
 Read ahead sectors     auto
-\- currently set to     256
+- currently set to     256
 Block device           252:0
 
-\--- Logical volume ---
+--- Logical volume ---
 LV Path                /dev/myvg/home
 LV Name                home
 VG Name                myvg
@@ -205,48 +196,44 @@ Current LE             1024
 Segments               1
 Allocation             inherit
 Read ahead sectors     auto
-\- currently set to     256
+- currently set to     256
 Block device           252:1
 ```
 
-#### Step 4: Create the file system
+#### 步骤 4: 创建文件系统
 
-Create the file system using:
+使用以下命令创建文件系统：
 
-
-```
+```vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf
 mkfs.ext3 /dev/myvg/media
 mkfs.ext3 /dev/myvg/home
 ```
 
-Mount it:
-
+挂载它：
 
 ```
 mount /dev/myvg/media /media
 mount /dev/myvg/home /home
 ```
 
-See your full setup using `lsblk`:
-
+使用 `lsblk` 命令查看完整配置：
 
 ```
 NAME         MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 xvda         202:0    0   8G  0 disk
-`-xvda1      202:1    0   8G  0 part /
+ -xvda1      202:1    0   8G  0 part /
 xvdb         202:16   0   1G  0 disk
 xvdc         202:32   0   1G  0 disk
 xvdd         202:48   0   2G  0 disk
 xvde         202:64   0   5G  0 disk
-`-myvg-media 252:0    0   4G  0 lvm  /media
-xvdf         202:80   0   8G  0 disk
-`-myvg-home  252:1    0   4G  0 lvm  /home
-```
+ -myvg-media 252:0    0   4G  0 lvm  /media
+vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdfxvdf         202:80   0   8G  0 disk
+ -myvg-home  252:1    0   4G  0 lvm  /home
+```vgcreate myvg /dev/xvdb /dev/xvdc /dev/xvdd /dev/xvde /dev/xvdf
 
-#### Step 5: Extending the LVM
+#### 步骤 5: 扩展 LVM
 
-Add a new disk at `/dev/xvdg`. To extend the `home` volume, run the following commands:
-
+添加一块新的 `/dev/xvdg` 磁盘。要扩展 `home` 卷，运行以下命令：
 
 ```
 pvcreate /dev/xvdg
@@ -255,15 +242,15 @@ lvextend -l 100%FREE /dev/myvg/home
 resize2fs /dev/myvg/home
 ```
 
-Run `df -h` and you should see your new size reflected.
+运行 `df -h`，你应该可以看到新的磁盘大小。
 
-And that's it!
+就是这样！
 
-LVM enables extreme flexibility in how you configure your storage. Try it out, and have fun with LVM!
+LVM 为你配置存储的方式提供了极大的灵活性。尝试一下，并享受 LVM 的乐趣！
 
 * * *
 
-_This article was originally published on the [author's personal blog][4] and has been adapted with permission._
+本文首发于 [作者个人博客][4]，经授权改编。
 
 --------------------------------------------------------------------------------
 
@@ -271,7 +258,7 @@ via: https://opensource.com/article/21/9/add-storage-lvm
 
 作者：[Ayush Sharma][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[perfiffer](https://github.com/perfiffer)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
