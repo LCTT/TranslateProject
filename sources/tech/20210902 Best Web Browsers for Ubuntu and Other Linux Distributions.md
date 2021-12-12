@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/best-browsers-ubuntu-linux/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
