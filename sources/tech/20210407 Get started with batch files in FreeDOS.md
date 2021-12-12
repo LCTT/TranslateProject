@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/batch-files-freedos)
 [#]: author: (Kevin O'Brien https://opensource.com/users/ahuka)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (robsean)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
