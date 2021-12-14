@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/3d-pixel-art-goxel"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
