@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/gpg-encrypt-files-basic/"
 [#]: author: "Hunter Wittenborn https://itsfoss.com/author/hunter/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
