@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/optimize-web-images-linux"
 [#]: author: "Ayush Sharma https://opensource.com/users/ayushsharma"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
