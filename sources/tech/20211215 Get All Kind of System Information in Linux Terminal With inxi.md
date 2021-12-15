@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/inxi-system-info-linux/"
 [#]: author: "Pratham Patel https://itsfoss.com/author/pratham/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "jrglinux"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -257,7 +257,7 @@ via: https://itsfoss.com/inxi-system-info-linux/
 
 作者：[Pratham Patel][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[jrglinux](https://github.com/jrglinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
