@@ -3,32 +3,32 @@
 [#]: author: "Ayush Sharma https://opensource.com/users/ayushsharma"
 [#]: collector: "lujun9972"
 [#]: translator: "MjSeven"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14086-1.html"
 
-Python Beautiful Soup 爬虫指南
+Python Beautiful Soup 刮取简易指南
 ======
-Python 中的 Beautiful Soup 库可以很方便的从网页中提取 HTML 内容。
 
-![打开文件或窗口的计算机屏幕][1]
+> Python 中的 Beautiful Soup 库可以很方便的从网页中提取 HTML 内容。
+
+![](https://img.linux.net.cn/data/attachment/album/202112/16/142118cmffvtfrmh1h3ufv.jpg)
 
 今天我们将讨论如何使用 Beautiful Soup 库从 HTML 页面中提取内容，之后，我们将使用它将其转换为 Python 列表或字典。
 
-### 什么是 web 爬虫，为什么我需要它？
+### 什么是 Web 刮取，为什么我需要它？
 
-答案很简单：并非每个网站都有获取内容的 API。你可能想从你最喜欢的烹饪网站上获取食谱，或者从旅游博客上获取照片。如果没有 API，提取 HTML 或 _爬虫_ 可能是获取内容的唯一方法。我将向你展示如何使用 Python 来获取。
+答案很简单：并非每个网站都有获取内容的 API。你可能想从你最喜欢的烹饪网站上获取食谱，或者从旅游博客上获取照片。如果没有 API，提取 HTML（或者说 <ruby>刮取<rt>scraping</rt></ruby> 可能是获取内容的唯一方法。我将向你展示如何使用 Python 来获取。
 
-**并非所以网站都喜欢爬虫，有些网站可能会明确禁止。与站长核对是否同意抓取。**
+**并非所以网站都喜欢被刮取，有些网站可能会明确禁止。请于网站所有者确认是否同意刮取。**
 
-### Python 如何抓取网站？
+### Python 如何刮取网站？
 
-使用 Python 进行爬虫，我们将执行三个基本步骤：
+使用 Python 进行刮取，我们将执行三个基本步骤：
 
   1. 使用 `requests` 库获取 HTML 内容
   2. 分析 HTML 结构并识别包含我们需要内容的标签
   3. 使用 Beautiful Soup 提取标签并将数据放入 Python 列表中
-
 
 ### 安装库
 
@@ -40,7 +40,7 @@ pip3 install requests beautifulsoup4
 
 ### 提取 HTML
 
-在本例中，我将选择抓取网站的 [Techhology][2] 部分。如果你跳转到此页面，你会看到带有标题、摘录和发布日期的文章列表。我们的目标是创建一个包含这些信息的文章列表。
+在本例中，我将选择刮取网站的 [Techhology][2] 部分。如果你跳转到此页面，你会看到带有标题、摘录和发布日期的文章列表。我们的目标是创建一个包含这些信息的文章列表。
 
 网站页面的完整 URL 是：
 
@@ -50,7 +50,7 @@ https://notes.ayushsharma.in/technology
 
 我们可以使用 `requests` 从这个页面获取 HTML 内容：
 
-```python
+```
 #!/usr/bin/python3
 import requests
 
@@ -69,7 +69,7 @@ print(data.text)
 
 如果你浏览 HTML，你会发现靠近顶部的这一段：
 
-```html
+```
 <div class="col">
   <a href="/2021/08/using-variables-in-jekyll-to-define-custom-content" class="post-card">
     <div class="card">
@@ -91,7 +91,7 @@ print(data.text)
 
 让我们使用 Beautiful Soup 提取这些内容。
 
-```python
+```
 #!/usr/bin/python3
 import requests
 from bs4 import BeautifulSoup
@@ -145,15 +145,13 @@ python3 fetch.py
 ... (truncated)
 ```
 
-以上是全部内容！在这 22 行代码中，我们用 Python 构建了一个网络爬虫，你可以在[我的示例仓库中找到源代码][7]。
+以上是全部内容！在这 22 行代码中，我们用 Python 构建了一个网络刮取器，你可以在 [我的示例仓库中找到源代码][7]。
 
 ### 总结
 
 对于 Python 列表中的网站内容，我们现在可以用它做一些很酷的事情。我们可以将它作为 JSON 返回给另一个应用程序，或者使用自定义样式将其转换为 HTML。随意复制粘贴以上代码并在你最喜欢的网站上进行试验。
 
 玩的开心，继续编码吧。
-
-* * *
 
 _本文最初发表在[作者个人博客][8]上，经授权改编。_
 
@@ -164,7 +162,7 @@ via: https://opensource.com/article/21/9/web-scraping-python-beautiful-soup
 作者：[Ayush Sharma][a]
 选题：[lujun9972][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
