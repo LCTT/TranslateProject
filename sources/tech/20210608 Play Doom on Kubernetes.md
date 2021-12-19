@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/kube-doom)
 [#]: author: (Jessica Cherry https://opensource.com/users/cherrybomb)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (wxy)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
