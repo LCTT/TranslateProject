@@ -3,33 +3,33 @@
 [#]: author: "Trista Pan https://opensource.com/users/trista-pan"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14095-1.html"
 
-了解更多关于 ShardingSphere 分布式数据库的信息
+ShardingSphere 分布式数据库简介
 ======
-Apache ShardingSphere 是一个开源的分布式数据库，外加一个用户和开发人员需要的生态系统，为他们的数据库提供一个定制和云原生的体验。
-![Cloud and databsae incons][1]
 
-Apache ShardingSphere 是一个开源的分布式数据库，外加一个用户和开发人员需要的生态系统，为他们的数据库提供一个定制和云原生的体验。在加入 Apache 基金会的三年里，ShardingSphere 核心团队与社区一起努力工作，创建了一个开源的、强大的、分布式的数据库和一个支持性生态系统。
+> Apache ShardingSphere 是一个开源的分布式数据库，它还有一个用户和开发人员需要的生态系统，为之提供了定制和云原生的体验。
 
-ShardingSphere 并不完全适合业界通常的简单分布式数据库中间件解决方案的模式。ShardingSphere 重新创建了分布式可插拔系统，使实际的用户实施方案得以蓬勃发展，并为社区和数据库行业贡献有价值的解决方案。
+![](https://img.linux.net.cn/data/attachment/album/202112/19/093406msdyogai9rzo2rvo.jpg)
+
+Apache ShardingSphere 是一个开源的分布式数据库，它还有一个用户和开发人员需要的生态系统，为之提供了定制和云原生的体验。在加入 Apache 基金会的三年里，ShardingSphere 核心团队与社区一起努力工作，创建了一个开源的、强大的、分布式的数据库和一个支持性生态系统。
+
+ShardingSphere 并不完全符合业界通常的简单分布式数据库中间件解决方案的模式。ShardingSphere 重新创建了分布式可插拔系统，使实际的用户实施方案得以蓬勃发展，并为社区和数据库行业贡献有价值的解决方案。
 
 ShardingSphere 的目标是 _Database Plus_ 概念。
 
 ### Database Plus
 
-Database Plus 的出发点是在零散的数据库基本服务之上建立一个标准层和生态系统层。统一的、标准化的数据库使用规范为上层应用提供了保障，企业因底层数据库碎片化而面临的挑战也得到了尽可能的减少。为了连接数据库和应用，它使用了流量和数据渲染和解析。它为用户提供了增强的核心功能，如分布式数据库、数据安全、数据库网关和压力测试。
+Database Plus 的出发点是在零散的数据库基本服务之上建立一个标准层和生态系统层。统一的、标准化的数据库使用规范为上层应用提供了保障，尽可能的减少了企业因底层数据库碎片化而面临的挑战。为了连接数据库和应用，它使用了流量和数据的渲染和解析。它为用户提供了增强的核心功能，如分布式数据库、数据安全、数据库网关和压力测试。
 
-ShardingSphere 为 Database Plus 使用了可插拔的内核架构。这意味着有模块化，这为用户提供了灵活性。它有几个不同的层：
+ShardingSphere 为 Database Plus 使用了可插拔的内核架构。这意味着模块化，这为用户提供了灵活性。它有几个不同的层：
 
-  **基础层：**提供各种访问终端和访问形式，满足用户在不同场景下的需求。
-  **插件层：**通过实现可扩展性提供基础设施支持。
-  **功能层：**提供各种满足用户需求的功能插件，使用户在选择和组合插件时具有高度的灵活性。
-  **产品层：**这是终端用户看到的层。这为他们提供了面向行业和特定场景的产品。换句话说，它为用户提供了适合他们所做的任何工作的工具。
-
-
+ * **基础层：** 提供各种访问终端和访问形式，满足用户在不同场景下的需求。
+ * **插件层：** 通过实现可扩展性提供基础设施支持。
+ * **功能层：** 提供各种满足用户需求的功能插件，使用户在选择和组合插件时具有高度的灵活性。
+ * **产品层：** 这是终端用户看到的层。这为他们提供了面向行业和特定场景的产品。换句话说，它为用户提供了适合他们所做的任何工作的工具。
 
 ![Database Plus platform][2]
 
@@ -55,7 +55,7 @@ ShardingSphere JDBC 和 ShardingSphere Proxy 经过两年的打磨和测试，�
 
 ### 分布式治理
 
-在 ShardingSphere 生态系统中，计算和存储是分开的，因此有能力对数据库进行分布式治理，所以你可以维护许多存储节点、计算节点，实施断路器，并确保高可用性。
+在 ShardingSphere 生态系统中，计算和存储是分开的，因此具备对数据库进行分布式治理的能力，所以你可以维护许多存储节点、计算节点，实施断路器，并确保高可用性。
 
 ![Distributed governance][6]
 
@@ -80,7 +80,7 @@ via: https://opensource.com/article/21/12/apache-shardingsphere
 作者：[Trista Pan][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
