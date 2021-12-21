@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/mainframe-tetris"
 [#]: author: "Elizabeth K. Joseph https://opensource.com/users/pleia2"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
