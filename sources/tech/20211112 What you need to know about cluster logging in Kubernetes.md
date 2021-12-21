@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/cluster-logging-kubernetes"
 [#]: author: "Mike Calizo https://opensource.com/users/mcalizo"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "perfiffer"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
