@@ -2,7 +2,7 @@
 [#]: via: (https://www.debugpoint.com/2021/06/libreoffice-like-microsoft-office/)
 [#]: author: (Arindam https://www.debugpoint.com/author/admin1/)
 [#]: collector: (lujun9972)
-[#]: translator: (piaoshi)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

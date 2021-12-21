@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/open-source-hardware-careers"
 [#]: author: "Joshua Pearce https://opensource.com/users/jmpearce"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zengyi1001"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
