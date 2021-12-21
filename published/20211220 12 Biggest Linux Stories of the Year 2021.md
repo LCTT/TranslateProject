@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14103-1.html"
 
 2021 年的 12 件 Linux 大事
 ======
