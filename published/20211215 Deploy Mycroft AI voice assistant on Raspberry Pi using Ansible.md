@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "jrglinux"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14102-1.html"
 
 使用 Ansible 在树莓派上部署 Mycroft AI 语音助手
 ======
