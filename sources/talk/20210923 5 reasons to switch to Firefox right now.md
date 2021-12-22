@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/switch-to-firefox"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "leo314159"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
