@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/linux-game-rise-prtondb-dec-21/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
