@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (Starryi)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14107-1.html)
 [#]: subject: (Getting started with shaders: signed distance functions!)
 [#]: via: (https://jvns.ca/blog/2020/03/15/writing-shaders-with-signed-distance-functions/)
 [#]: author: (Julia Evans https://jvns.ca/)
@@ -10,13 +10,15 @@
 着色器入门：符号距离函数！
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202112/22/162653fn58ajqa6d65e8f5.jpg)
+
 大家好！不久前我学会了如何使用着色器制作有趣的闪亮旋转八面体：
 
 ![][1]
 
 我的着色器能力仍然非常基础，但事实证明制作这个有趣的旋转八面体比我想象中要容易得多（从其他人那里复制了很多代码片段！）。
 
-我在做这件事时， 从一个非常有趣的叫做[符号距离函数教程：盒子和气球][2]的教程中学到了“符号距离函数”的重要想法。
+我在做这件事时， 从一个非常有趣的叫做 [符号距离函数教程：盒子和气球][2] 的教程中学到了“符号距离函数”的重要思路。
 
 在本文中，我将介绍我用来学习编写简单着色器的步骤，并努力让你们相信着色器并不难入门！
 
@@ -29,13 +31,13 @@
 
 ### 步骤一：我的第一个着色器
 
-我知道你可以在 shadertoy 上制作着色器，所以我去了<https://www.shadertoy.com/new>。它们提供了一个默认着色器，如下图所示：
+我知道你可以在 shadertoy 上制作着色器，所以我去了 <https://www.shadertoy.com/new>。它们提供了一个默认着色器，如下图所示：
 
 ![][3]
 
 代码如下：
 
-```cpp
+```
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     // 规范像素坐标 (从 0 到 1)
@@ -51,11 +53,11 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 虽然还没有做什么令人兴奋的事情，但它已经教会了我着色器程序的基本结构！
 
-### 想法：将一对坐标（和时间）映射到一个颜色
+### 思路：将一对坐标（和时间）映射到一个颜色
 
-这里的想法是获得一对坐标作为输入（`fragCoord`），你需要输出一个RGBA向量作为此坐标的颜色。该函数也可以使用当前时间（`iTime`），图像从而可以随时间变化。
+这里的思路是获得一对坐标作为输入（`fragCoord`），你需要输出一个 RGBA 向量作为此坐标的颜色。该函数也可以使用当前时间（`iTime`），图像从而可以随时间变化。
 
-这种编程模型（将一对坐标和时间映射到其中）的巧妙之处在于，它非常容易并行化。我对GPU了解不多，但我的理解是，这种任务（一次执行10000个微不足道的可并行计算）正是GPU擅长的事情。
+这种编程模型（将一对坐标和时间映射到其中）的巧妙之处在于，它非常容易并行化。我对 GPU 了解不多，但我的理解是，这种任务（一次执行 10000 个微不足道的可并行计算）正是 GPU 擅长的事情。
 
 ### 步骤二：使用 `shadertoy-render` 加快开发迭代
 
@@ -63,7 +65,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 我找到了一个名为 [shadertoy-render][4] 命令行工具，它会在每次保存时实时查看文件并更新动画。现在我可以运行：
 
-```bash
+```
 shadertoy-render.py circle.glsl
 ```
 
@@ -71,15 +73,15 @@ shadertoy-render.py circle.glsl
 
 ### 步骤三：画一个圆圈
 
-接下来我想——我擅长数学！我可以用一些基本的三角学来画一个会弹跳的彩虹圈！
+接下来我想 —— 我擅长数学！我可以用一些基本的三角学来画一个会弹跳的彩虹圈！
 
 我知道圆的方程为（`x^2 + y^2 = 任意正数`！），所以我写了一些代码来实现它：
 
 ![][5]
 
-代码如下：（你也可以[在 shadertoy 上查看][6]）
+代码如下：（你也可以 [在 shadertoy 上查看][6]）
 
-```cpp
+```
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     // 规范像素坐标 (从 0 到 1)
@@ -103,17 +105,17 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 我觉得有意思的（即使我们没有做任何超级高级的事情！）是这些着色器为我们提供了一种有趣的可视化方式学习数学 - 我用 `sin` 和 `cos` 来使某些东西沿着圆移动，如果你想更直观地了解三角函数的工作方式， 也许编写着色器会是一种有趣的方法！
 
-我喜欢的是，可以获得有关数学代码的即时视觉反馈 - 如果你把一些东西乘以2，图像里的东西会变得更大！或更小！或更快！或更慢！或更红！
+我喜欢的是，可以获得有关数学代码的即时视觉反馈 - 如果你把一些东西乘以 2，图像里的东西会变得更大！或更小！或更快！或更慢！或更红！
 
 ### 但是我们如何做一些真正有趣的事情呢？
 
 这个会弹跳的圆圈很好，但它与我见过的其他人使用着色器所做的非常奇特的事情相去甚远。那么下一步要做什么呢？
 
-### 想法：不要使用 if 语句，而是使用符号距离函数！
+### 思路：不要使用 if 语句，而是使用符号距离函数！
 
 在我上面的圆圈代码中，我基本上是这样写的：
 
-```cpp
+```
 if (dot(uv, uv) < 0.03) {
     // 圆里的代码
 } else {
@@ -121,11 +123,11 @@ if (dot(uv, uv) < 0.03) {
 }
 ```
 
-但问题（也是我感到卡住的原因）是不清楚如何将它推广到更复杂的形状！编写大量的 if 语句似乎不太好用。那人们要如何渲染这些 3d 形状呢？
+但问题（也是我感到卡住的原因）是不清楚如何将它推广到更复杂的形状！编写大量的 `if` 语句似乎不太好用。那人们要如何渲染这些 3d 形状呢？
 
-所以！**符号距离函数** 是定义形状的另一种方式。不是使用硬编码的 if 语句，而是定义一个 **函数**，该函数告诉你，对于世界上的任何一个点，该点与你的形状有多远。比如，下面是球体的符号距离函数。
+所以！<ruby>符号距离函数<rt>Signed distance function</rt></ruby> 是定义形状的另一种方式。不是使用硬编码的 `if` 语句，而是定义一个 **函数**，该函数告诉你，对于世界上的任何一个点，该点与你的形状有多远。比如，下面是球体的符号距离函数。
 
-```cpp
+```
 float sdSphere( vec3 p, float center )
 {
   return length(p) - center;
@@ -143,13 +145,13 @@ float sdSphere( vec3 p, float center )
 当我开始时，我不明白需要编写什么代码来制作一个闪亮的旋转东西。结果表明如下是基本步骤：
 
   1. 为想要的形状创建一个符号距离函数（在我的例子里是八面体）
-  2. 光线追踪符号距离函数，以便可以在 2D 图片中显示它（或光线行进？我使用的教程称之为光线追踪，我还不明白光线追踪和光线行进之间的区别）
+  2. 光线追踪符号距离函数，以便可以在 2D 图片中显示它（或沿光线行进？我使用的教程称之为光线追踪，我还不明白光线追踪和光线行进之间的区别）
   3. 编写代码处理形状的表面纹理并使其发光
 
-我不打算在本文中详细解释符号距离函数或光线追踪，因为我发现这个[关于符号距离函数的惊人教程][2]非常友好，老实说，它比我做的更好，它解释了如何执行上述3个步骤，并且代码有大量的注释，非常棒。
+我不打算在本文中详细解释符号距离函数或光线追踪，因为我发现这个 [关于符号距离函数的神奇教程][2] 非常友好，老实说，它比我做的更好，它解释了如何执行上述 3 个步骤，并且代码有大量的注释，非常棒。
 
   * 该教程名为“符号距离函数教程：盒子和气球”，它在这里：<https://www.shadertoy.com/view/Xl2XWt>
-  * 这里有大量符号距离函数，你可以将其复制粘贴到代码中<http://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm>（以及组合它们以制作其他形状的方法）
+  * 这里有大量符号距离函数，你可以将其复制粘贴到代码中（以及组合它们以制作其他形状的方法）：<http://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm>
 
 ### 步骤四：复制教程代码并开始更改内容
 
@@ -171,7 +173,7 @@ float sdSphere( vec3 p, float center )
 
 下面是我用来使八面体旋转的代码！事实证明这真的很简单：首先从 [这个页面][8] 复制一个八面体符号距离函数，然后添加一个 `rotate` 使其根据时间旋转，然后它就可以旋转了！
 
-```cpp
+```
 vec2 sdfOctahedron( vec3 currentRayPosition, vec3 offset ){
     vec3 p = rotate((currentRayPosition), offset.xy, iTime * 3.0) - offset;
     float s = 0.1; // s 是啥?
@@ -184,11 +186,11 @@ vec2 sdfOctahedron( vec3 currentRayPosition, vec3 offset ){
 
 ### 用一些噪音让它发光 
 
-我想做的另一件事是让我的形状看起来闪闪发光/有光泽。我使用了在[这个github gist][9]中找到的噪声函数使表面看起来有纹理。
+我想做的另一件事是让我的形状看起来闪闪发光/有光泽。我使用了在 [这个 GitHub gist][9] 中找到的噪声函数使表面看起来有纹理。
 
-以下是我如何使用噪声函数的代码。基本上，我只是随机地将参数更改为噪声函数（乘以2？3？1800？随你！），直到得到喜欢的效果。
+以下是我如何使用噪声函数的代码。基本上，我只是随机地将参数更改为噪声函数（乘以 2？3？1800？随你！），直到得到喜欢的效果。
 
-```cpp
+```
 float x = noise(rotate(positionOfHit, vec2(0, 0), iGlobalTime * 3.0).xy * 1800.0);
 float x2 = noise(lightDirection.xy * 400.0);
 float y = min(max(x, 0.0), 1.0);
@@ -205,7 +207,7 @@ vec3 balloonColor = vec3(y, y + y2, y + y2);
 再说一遍，如下是我用到的两个资源：
 
   1. “符号距离函数教程：盒子和气球”：<https://www.shadertoy.com/view/Xl2XWt>（修改和玩起来真的很有趣）
-  2. 可以将大量符号距离函数复制并粘贴到你的代码中<http://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm>
+  2. 可以将大量符号距离函数复制并粘贴到你的代码中：<http://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm>
 
 
 --------------------------------------------------------------------------------
@@ -215,7 +217,7 @@ via: https://jvns.ca/blog/2020/03/15/writing-shaders-with-signed-distance-functi
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
 译者：[Starryi](https://github.com/Starryi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
