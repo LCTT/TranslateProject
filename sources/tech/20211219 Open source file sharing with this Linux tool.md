@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/file-sharing-linux-samba"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
