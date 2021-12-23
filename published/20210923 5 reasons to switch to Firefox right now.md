@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "leo314159"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14108-1.html"
 
 马上改用 Firefox 的 5 个理由
 ======
