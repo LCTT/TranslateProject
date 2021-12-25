@@ -2,16 +2,14 @@
 [#]: via: "https://opensource.com/article/21/12/linux-fountain"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
 Write your screenplay on Linux in Fountain markdown
 ======
-The Fountain markdown technique requires just a plain text editor, like
-Atom, Kate, Gedit, or similar, and it exports to a properly formatted
-HTML or PDF screenplay.
+The Fountain markdown technique requires just a plain text editor, like Atom, Kate, Gedit, or similar, and it exports to a properly formatted HTML or PDF screenplay.
 ![Typewriter in the grass][1]
 
 A screenplay is the blueprint for a movie, and it used to be written on a typewriter. You bought the typewriter, and you could write a screenplay. And not just one screenplay, but lots of them. You could write screenplays until typewriters fell out of fashion.
