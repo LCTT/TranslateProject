@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/open-practice-library"
 [#]: author: "Donna Benjamin https://opensource.com/users/kattekrab"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
