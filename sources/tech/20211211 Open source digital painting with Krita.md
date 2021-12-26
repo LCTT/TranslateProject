@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/krita-digital-paint"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
