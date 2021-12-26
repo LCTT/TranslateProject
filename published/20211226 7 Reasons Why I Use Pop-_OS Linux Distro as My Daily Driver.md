@@ -42,7 +42,7 @@ Pop!_OS 是向 Linux 初学者和游戏玩家的热门推荐。但是，Pop!_OS 
 
 顺便说一句，对于大多数流行的 Linux 发行版，这个过程应该与 [在 Linux Mint 中安装 Nvidia 驱动程序][5] 类似。
 
-![渠道管理器 | Linux Mint (Cinnamon)][6]
+![驱动管理器 | Linux Mint (Cinnamon)][6]
 
 请注意，有时你需要排除故障或重新安装正确的（或较早的驱动版本）才能正确使用 Nvidia 显卡。
 
