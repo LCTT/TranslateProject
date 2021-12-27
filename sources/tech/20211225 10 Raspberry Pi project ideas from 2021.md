@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/raspberry-pi-projects"
 [#]: author: "Joshua Allen Holm https://opensource.com/users/holmja"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
