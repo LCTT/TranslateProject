@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/open-source-alternatives"
 [#]: author: "Lauren Maffeo https://opensource.com/users/lmaffeo"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
