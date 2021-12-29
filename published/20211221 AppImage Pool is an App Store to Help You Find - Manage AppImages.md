@@ -3,22 +3,22 @@
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14124-1.html"
 
-AppImage Pool 是一个帮助你寻找和管理 AppImages 的应用商店
+AppImage Pool：一个帮助你寻找和管理 AppImage 的应用商店
 ======
 
-_**简介：**一个管理和寻找 AppImage 应用的有趣的 GUI 前端。让我们来了解一下它！_
+> 这是一个管理和寻找 AppImage 应用的有趣的 GUI 前端。让我们来了解一下它！
 
-我们有很多关于 [AppImage 的历史和它的制作][1]的信息。如果你是 Linux 的新手，你也应该看看我们的 [AppImage 使用指南][2]。
+我们有很多关于 [AppImage 的历史和制作它][1] 的信息。如果你是 Linux 的新手，你也应该看看我们的 [AppImage 使用指南][2]。
 
 AppImage 使应用可以很容易地在不同的发行版上运行，而不需要安装依赖关系或任何东西。
 
-然而，与 [Flatpaks][3] 的 Flathub 不同，你可能找不到一个浏览 AppImages 应用的门户。
+然而，与 [Flatpak][3] 的 Flathub 不同，你可能找不到一个浏览 AppImage 应用的门户。
 
-在 [Nitrux OS][4] 中的 NX 软件中心做了同样的工作，但它不能轻易安装在其他发行版上。因此，AppImage Pool 作为 AppImage 应用的应用商店上场了，你可以安装在任何 Linux 发行版上。
+[Nitrux OS][4] 中的 NX 软件中心做了类似的工作，但它不能轻易安装在其他发行版上。因此，AppImage Pool 作为 AppImage 应用的应用商店上场了，你可以安装在任何 Linux 发行版上。
 
 ### AppImage Pool：一个管理和寻找 AppImage 应用的 GUI 前端
 
@@ -28,15 +28,15 @@ AppImage Pool 是一个使用 Flutter 构建的 GUI 前端，它从 [AppImageHub
 
 它并不托管任何 AppImage 文件，但它可以让你从项目的 GitHub 页面下载可用的 AppImage 文件。
 
-当你试图下载一个 AppImage 文件时，它在 GitHub 发布页列出了应用的所有可用选项。
+当你试图下载一个 AppImage 文件时，它会从应用的 GitHub 发布页列出所有下载方式。
 
-我不确定它是否仅限于来自 GitHub 的项目，但你可以得到 [AppImageHub 门户][6]中的所有精选选项。
+我不确定它是否仅限于来自 GitHub 的项目，但你可以在 [AppImageHub 门户][6] 中找到各种不同方式。
 
 ### AppImage Pool 的特点
 
 ![][7]
 
-AppImage 是一个直接的应用商店，让你搜索、下载和管理 AppImage 文件。
+AppImage 是一个简单直白的应用商店，可以让你搜索、下载和管理 AppImage 文件。
 
 其中一些功能包括：
 
@@ -46,11 +46,9 @@ AppImage 是一个直接的应用商店，让你搜索、下载和管理 AppImag
   * 管理所有已安装的 AppImages
   * 查看下载历史
 
+考虑到该应用是使用 Flutter 构建的，它给人带来了快捷的用户体验。
 
-
-考虑到该应用是使用 Flutter 构建的，它提供了一个快速的体验。
-
-如果你是一个开发者，你也可以[在 Linux 中安装 Flutter][8]，如果这鼓励你使用它制作一个应用。
+如果你是一个开发者，这鼓励了你使用它制作一个应用的话，你也可以 [在 Linux 中安装 Flutter][8]。
 
 ![][9]
 
@@ -58,17 +56,17 @@ AppImage 是一个直接的应用商店，让你搜索、下载和管理 AppImag
 
 由于明显的原因，开发者提供了一个可供下载的 AppImage 文件。
 
-你也可以选择从 [Flathub][11] 中[安装 Flatpak 包][10]。如果你想测试它即将发布的任何版本，也有一个每次构建的 AppImage 版本。
+你也可以选择从 [Flathub][11] 中 [安装它的 Flatpak 包][10]。如果你想测试它即将发布的任何版本，也有一个每夜构建的 AppImage 版本。
 
-在其 [GitHub 页面][12]上探索更多关于它的信息。
+在其 [GitHub 页面][12] 上可以了解关于它的更多信息。
 
-[AppImage Pool 下载][13]
+- [AppImage Pool 下载][13]
 
-### 关于使用 AppImage Pool 的想法
+### 使用 AppImage Pool 的感受
 
 ![][14]
 
-该应用按预期工作。然而，我注意到，列出的一些应用没有下载链接或任何相关信息。
+该应用可以如预期的工作。然而，我注意到，列出的一些应用没有下载链接或任何相关信息。
 
 毕竟，这些数据是来自于 AppImageHub 的。
 
@@ -76,7 +74,7 @@ AppImage 是一个直接的应用商店，让你搜索、下载和管理 AppImag
 
 ![][15]
 
-虽然这也是选择项目发布分支的一个优势，但我认为我不会下载预发布包。
+虽然这也是可以选择项目发布分支的一个优势，但我认为我不会下载预发布包。
 
 总的来说，找到一个能让人轻松下载和管理 AppImages 的东西是件好事。
 
@@ -89,7 +87,7 @@ via: https://itsfoss.com/appimagepool/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
