@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/open-source-business-tools"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
