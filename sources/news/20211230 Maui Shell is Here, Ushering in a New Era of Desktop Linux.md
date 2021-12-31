@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/maui-shell-unveiled/"
 [#]: author: "Jacob Crume https://news.itsfoss.com/author/jacob/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "imgradeone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
