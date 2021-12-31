@@ -7,73 +7,69 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Maui Shell is Here, Ushering in a New Era of Desktop Linux
+Maui Shell 来了，开启 Linux 桌面新时代
 ======
 
-Over the past few years, it has been extremely exciting to see the team behind [Nitrux Linux][1] expand their influence on the Linux community. Now, this influence is set to expand even further with their brand-new Maui Shell.
+过去的几年里，我们很欣慰地看到 [Nitrux Linux][1] 背后的团队正在扩大他们对 Linux 社区的影响。如今，伴随着全新 Maui Shell 的发布，他们的影响也已经得到了进一步扩大。
 
-Let’s take a look at it!
+让我们一起来看看吧！
 
-### A Little Bit Of Background on The Maui Project
+### 关于 Maui Project 的一些背景介绍
 
 ![][2]
 
-Created, developed, and maintained by the same team behind Nitrux Linux, the Maui project has produced a wide variety of essential apps. In fact, their file manager, [Index][3], even managed to make it onto our list of [my top 5 apps of 2021][4]!
+作为由 Nitrux Linux 团队原班人马创建、开发、维护的项目，Maui Project 已经开发了许多基础应用。实际上，他们的文件管理器 [Index][3] 甚至成功进入了我们的 [2021 年五大应用列表][4] 之中！
 
-All their apps use a custom framework called MauiKit. Based on Kirigami, MauiKit is designed to be convergent, meaning that apps run equally well on desktops and phones. Additionally, it gives developers a greater set of pre-made widgets to make creating apps faster.
+他们的所有应用均使用 MauiKit 这款定制框架开发。基于 Kirigami 的 MauiKit 专注于跨终端融合性，因此开发出来的应用可以同时在电脑和手机端拥有一致的体验。此外，它为开发者提供了更多的预置组件，因此创建应用可以更加便捷。
 
-Some of the apps they have produced so far include:
+目前 Maui Project 开发的部分应用包括：
 
-  * Index (File manager)
-  * Nota (Note-taking app)
-  * VVave (Music player)
-  * Clip (Video player)
-  * Pix (Image viewer)
+  * Index（文件管理器）
+  * Nota（文本编辑器）<!-- 我认为原文的笔记应用描述不准确，所以改用文本编辑器来描述 -->
+  * VVave（音乐播放器）
+  * Clip（视频播放器）
+  * Pix（图片查看器）
 
+虽然这些自制应用本身质量不错，但它们在 Nitrux Linux 的默认桌面环境 KDE Plasma 里总显得不合群。因此，Maui Shell 应运而生。
 
-
-While these are all great apps on their own, they have always looked a bit out-of-place on Nitrux Linux’s default KDE Plasma desktop environment. That’s where Maui Shell comes in.
-
-### The Maui Shell
+### Maui Shell 介绍
 
 ![][5]
 
-Built using the same MauiKit and Qt technologies as the Maui apps, Maui Shell is a new venture into the desktop environment space for Nitrux. From the above screenshot, it can be seen that it is heavily inspired by Gnome Shell, and this really shows during use.
+借助与 Maui 应用一致的 MauiKit 和 Qt 技术底层，Maui Shell 是 Nitrux 在桌面环境领域的一个新尝试。从上面的截图可以看出，它在很大程度上受到了 GNOME Shell 的启发，这在使用过程中也确实有所体现。
 
-However, that doesn’t mean that it isn’t original. Swiping up from the bottom opens up a Gnome activites-like overview. Accompanied by this is a small dock that allows for launching apps through the rather beautiful launcher. Up at the top right, a very macOS-like control center can be seen, with a huge number of controls available in a number of very well-thought-out menus.
+但，这并不意味着 Maui Shell 没有原创的地方。从底部上滑可打开类似于 GNOME “活动”的概览界面。与此相邻的是一个小 Dock，可以通过相当美观的启动器来启动应用。右上角有一个与 macOS 相似的控制中心，内有精心设计的菜单和许多控制功能。
 
-During my use of it, everything felt extremely well-designed and natural. I suspect this has something to do with the very modern and flat aesthetic of it, in my opinion even beating alternatives like Gnome and KDE Plasma. Speaking of Plasma, Maui shell feels much more responsive on low-end systems (and virtual machines) compared to the default Plasma version on Nitrux.
+在我使用它的过程中，一切都是如此精致、自然。我感觉这与它极致现代、扁平的设计美学有关，我甚至认为 Maui Shell 已经超越了 GNOME 和 KDE Plasma 等同类软件。说到 Plasma，与 Nitrux 的默认 Plasma 版本相比，Maui Shell 在低端设备（和虚拟机）上的反应更加灵敏。
 
-Overall, from a usability standpoint, I expect that Maui shell will soon reign king. However, I have yet to touch on what is arguably Maui Shell’s greatest feature: Convergence.
+总的来说，我预测 Maui Shell 将依靠其实用性成为 “Linux 桌面环境之王”。然而，我还没谈到 Maui Shell 最核心的特性：跨终端自适应性。
 
-### Convegence In The Mainstream
+### 主流之中的融合
 
-Many of you will remember Canonical’s attempts back in 2010 to create a similar environment called Unity. In the end, it ended up being a huge failure, with it being completely phased out by 2018. However, it had one key feature it shares with Maui Shell: Convergence.
+许多人可能还记得 2010 年 Canonical 开发了一款类似的跨终端桌面环境 Unity，它最终以失败落幕，到 2018 年则被完全淘汰了。但是，Unity 和 Maui Shell 有一个共同特性 —— 那就是跨终端融合性。
 
-As Linux on mobile devices gains development effort, convergence support is becoming ever more important. As such, it is incredible to see a new desktop environment have equal support for desktop and mobile form-factors.
+随着 Linux 在移动端的开发力度逐渐加大，跨终端支持变得尤为重要。由此来看，一个新的桌面环境竟能同时支持桌面端和移动端，的确不可思议。
 
-This can really only be achieved when there are a variety of pre-existing convergent apps, and Maui is in a unique position where this exists. This is just one reason why I believe that Maui Shell may just be the future of desktop Linux.
+这一点必须依靠大量的跨终端应用实现，而 Maui 已经处在了完美的衔接点上。这仅仅是我相信 Maui Shell 能成为 Linux 桌面未来的原因之一。
 
-### Trying Out Maui Shell For Yourself
+### 立即试用 Maui Shell
 
-Unlike many other newly-released pieces of software, Maui Shell is available out-of-the-box on the newly-released Nitrux 1.8. If you want to try it out for yourself, feel free to grab the ISO from the link below. However, before you do, it should be noted that Maui Shell is still in early development.
+与其他新发布的软件不同，Maui Shell 已经预装于新发布的 Nitrux 1.8。如果你想亲自尝试一下，那请随时从下方链接中获取 ISO 镜像。但是，在尝试之前，请务必知晓：Maui Shell 仍处于早期开发阶段。
 
-Despite the long list of innovative features, some elements are either broken, not implemented yet, or just missing. Some of these include:
+尽管 Maui Shell 拥有许多特色功能，但部分功能可能已经损坏，或者尚未实现，或者就是缺失，其中包括：
 
-  * Bluetooth support
-  * PulseAudio support
-  * Network toggles
-  * MPRIs control
-  * Drag and drop support
-  * Multi-screen support
-  * A settings app
-  * XWayland shell extension.
+  * 蓝牙支持
+  * PulseAudio 支持
+  * 网络开关
+  * 媒体控制（MPRIS）
+  * 拖放支持
+  * 多显示器支持
+  * 设置应用
+  * XWayland Shell 插件
 
+因此，我暂时不能建议你使用 Maui Shell 作为主力桌面环境。为此，你可能需要等待 2022 年秋季发布的正式版本。
 
-
-Because of this, I can’t recommend that you use Maui Shell as your daily driver. For that, you will probably have to wait for the final release in fall 2022.
-
-Until then, I will definitely be keeping my eye on Maui shell. What are your thoughts on it? Let us know in the comments below!
+在此之前，我仍将持续关注 Maui Shell。对于这款桌面环境，你的评价如何？欢迎在评论区说出你的想法！
 
 --------------------------------------------------------------------------------
 
@@ -81,7 +77,7 @@ via: https://news.itsfoss.com/maui-shell-unveiled/
 
 作者：[Jacob Crume][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[imgradeone](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
