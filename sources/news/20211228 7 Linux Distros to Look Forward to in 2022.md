@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/linux-distro-releases-2022/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "imgradeone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
