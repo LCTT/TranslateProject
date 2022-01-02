@@ -10,6 +10,8 @@
 7 Linux Distros to Look Forward to in 2022
 ======
 
+> Moving forward to 2022, it’s time to expect some exciting distro releases! Here are some of our picks that we think you should keep an eye on.
+
 It is time to bid farewell to 2021.
 
 You might want to go through some of the [biggest Linux stories of 2021][1] if you missed them.
