@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "imgradeone"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14143-1.html"
 
 2022 年值得期待的 7 款 Linux 发行版
 ======
