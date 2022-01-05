@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14149-1.html"
 
 想在 Ubuntu 上使用深度桌面？UbuntuDDE Remix 21.10 来了！
 ======
