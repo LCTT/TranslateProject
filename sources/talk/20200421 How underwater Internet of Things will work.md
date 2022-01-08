@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (CN-QUAN)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
