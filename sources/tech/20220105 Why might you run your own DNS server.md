@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/01/05/why-might-you-run-your-own-dns-server-/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
