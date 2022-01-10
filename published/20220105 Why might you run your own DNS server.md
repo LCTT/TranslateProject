@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14165-1.html"
 
 为什么你要运行自己的 DNS 服务器？
 ======
@@ -118,7 +118,7 @@
 
 有一个人提到，他们喜欢把所有的配置（DNS 记录、let's encrypt、nginx 等）放在一台服务器上的同一个地方。
 
-**另类原因：把 DNS 当作 VPN 使用**
+#### 另类原因：把 DNS 当作 VPN 使用
 
 显然，[iodine][12] 是一个可以让你通过 DNS 隧道传输流量的权威 DNS 服务器，它可以让你像 VPN 一样与外界联系，
 
