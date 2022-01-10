@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14165-1.html"
 
 为什么你要运行自己的 DNS 服务器？
 ======
