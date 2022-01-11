@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/learn-ansible"
 [#]: author: "Sumantro Mukherjee https://opensource.com/users/sumantro"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "

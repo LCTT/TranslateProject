@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/open-source-cheat-sheets"
 [#]: author: "Jessica Cherry https://opensource.com/users/cherrybomb"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
