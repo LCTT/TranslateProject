@@ -2,7 +2,7 @@
 [#]: via: (https://theartofmachinery.com/2021/07/04/pricing_as_contractor_101.html)
 [#]: author: (Simon Arneaud https://theartofmachinery.com)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (CN-QUAN)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
