@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/run-containers-without-sudo-podman"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
