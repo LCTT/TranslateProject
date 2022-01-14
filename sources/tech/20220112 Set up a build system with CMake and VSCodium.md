@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/devops-cmake"
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "robsesan"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
