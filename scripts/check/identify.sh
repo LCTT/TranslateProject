@@ -24,9 +24,9 @@ rule_bypass_check() {
   [ -f /tmp/bypass ] && echo "匹配规则：绕过检查"
 }
 
-# 添加原文：添加至少一篇原文
+# 添加原文：只能添加一篇原文
 rule_source_added() {
-  [ "$SRC_A" -ge 1 ] \
+  [ "$SRC_A" -eq 1 ] \
       && check_category SRC A \
       && [ "$TOTAL" -eq "$SRC_A" ] && echo "匹配规则：添加原文 ${SRC_A} 篇"
 }
