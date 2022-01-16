@@ -3,14 +3,14 @@
 [#]: author: "Pratham Patel https://itsfoss.com/author/pratham/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14183-1.html"
 
 EndeavourOS vs. Manjaro：两个基于 Arch Linux 的最佳发行版之间的深度比较
 ======
 
-如果你曾经尝试过使用 Arch Linux，你就知道如果没有适当的文档和 Linux 知识，几乎不可能安装它。而实际上，这就是 Arch Linux的 [魅力][1]。
+如果你曾经尝试过使用 Arch Linux，你就知道如果没有适当的文档和 Linux 知识，几乎不可能安装它。而实际上，这就是 Arch Linux 的 [魅力][1]。
 
 但由于 Arch Linux 属于专业级的 Linux 发行版，因此有几个 [基于 Arch 的发行版，它们试图让普通人可以更轻松地使用它们][2]。
 
