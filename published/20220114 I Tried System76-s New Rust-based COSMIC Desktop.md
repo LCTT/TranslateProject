@@ -3,9 +3,9 @@
 [#]: author: "Community https://news.itsfoss.com/author/team/"
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14186-1.html"
 
 提前了解一下 System76 新的基于 Rust 的 COSMIC 桌面
 =====
