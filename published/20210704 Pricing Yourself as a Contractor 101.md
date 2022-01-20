@@ -3,8 +3,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (CN-QUAN)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14196-1.html)
 
 将自己作为承包商而定价的基础原则
 ======
