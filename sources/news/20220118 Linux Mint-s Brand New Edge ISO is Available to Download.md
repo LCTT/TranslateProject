@@ -2,8 +2,8 @@
 [#]: via: "https://news.itsfoss.com/linux-mint-20-3-edge-iso/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
-[#]: reviewer: " "
+[#]: translator: "wxy"
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 
