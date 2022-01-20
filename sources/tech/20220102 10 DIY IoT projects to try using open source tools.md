@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/open-source-internet-of-things"
 [#]: author: "Joshua Allen Holm https://opensource.com/users/holmja"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "CN-QUAN "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
