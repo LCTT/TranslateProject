@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/bitsy-game-design"
 [#]: author: "Peter Cheer https://opensource.com/users/petercheer"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
