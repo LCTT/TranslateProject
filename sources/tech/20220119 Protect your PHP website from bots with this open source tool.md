@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/php-website-bouncer-crowdsec"
 [#]: author: "Philippe Humeau https://opensource.com/users/philippe-humeau"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
