@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/fun-linux-commands"
 [#]: author: "Opensource.com https://opensource.com/users/admin"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
