@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14218-1.html"
 
 如何建立一个开源的元宇宙
 ======
 
 > 开源世界是建立元宇宙的首选之地。
 
-![代表创新的新科技小玩意][1]
+![](https://img.linux.net.cn/data/attachment/album/202201/27/123936o0fcmdfb0d88p0zy.jpg)
 
 如果我告诉你，构建元宇宙所需要的所有内容和软件都已经有了，而且完全免费，你会去构建吗？
 
