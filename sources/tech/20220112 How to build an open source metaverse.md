@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/open-source-metaverse"
 [#]: author: "Josip Almasi https://opensource.com/users/jalmasi"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
