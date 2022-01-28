@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/linux-accessibility-settings"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
