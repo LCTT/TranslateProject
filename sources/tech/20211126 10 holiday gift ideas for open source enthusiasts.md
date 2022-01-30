@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/open-source-holiday-gifts"
 [#]: author: "Joshua Allen Holm https://opensource.com/users/holmja"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
