@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/sharing-the-computer-screen-in-gnome/"
 [#]: author: "Lukáš Růžička https://fedoramagazine.org/author/lruzicka/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
