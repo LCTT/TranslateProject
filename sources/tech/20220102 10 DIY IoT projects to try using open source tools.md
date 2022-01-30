@@ -1,4 +1,3 @@
-[#]: subject: "10 DIY IoT projects to try using open source tools"
 [#]: via: "https://opensource.com/article/22/1/open-source-internet-of-things"
 [#]: author: "Joshua Allen Holm https://opensource.com/users/holmja"
 [#]: collector: "lujun9972"
@@ -7,71 +6,67 @@
 [#]: publisher: " "
 [#]: url: " "
 
-10 DIY IoT projects to try using open source tools
+尝试使用开源工具的10个DIY物联网项目
 ======
-Opensource.com's writers shared their expertise about a variety of
-Internet of Things projects many times during 2021.
-![collection of hardware on blue backround][1]
+在2021年期间，Opensource.com的作者们多次分享了他们关于各种物联网项目的专业知识。
+！[蓝色背景上的硬件集合][1]
 
-The Internet of Things (IoT) is a fascinating development in the realm of computing. Connected smart devices, home automation, and related areas of development are producing many interesting projects. Opensource.com's writers shared their expertise about a variety of Internet of Things projects many times during 2021. Here are Opensource.com's ten best Internet of Things articles from the year.
+物联网(IoT)是计算领域的一个令人着迷的发展方向。互联智能设备、家庭自动化以及相关的发展领域正在产生许多有趣的项目。在2021年期间，Opensource.com的作者们多次分享了他们关于各种物联网项目的专业知识。以下是Opensource.com今年的十大最佳物联网文章。
 
-### How to customize your voice assistant with the voice of your choice
+###如何使用您选择的声音定制您的语音助手
 
-[Learn about the Nana and Poppy project][2] in this article by Rich Lucente. The Nana and Poppy project is Rich Lucente's open source project for creating custom greetings for artificial intelligence voice assistants. He describes the entire process, from recording the necessary audio clips to writing the code to combine the clips into a complete greeting. The finished product was five custom voice assistants gifted to great grandparents and grandparents who could now hear their grandchildren's voices whenever they interacted with the voice assistant.
+在这篇由Rich Lucente撰写的文章中[了解Nana和Poppy项目][2]。Nana and Poppy项目是Rich Lucente为人工智能语音助手创建自定义问候的开源项目。他描述了整个过程，从录制必要的音频片段到编写代码将这些片段组合成完整的问候语。成品是五个定制的语音助手，送给曾祖父母和祖父母，他们现在无论何时与语音助手互动都能听到孙辈的声音。
 
-### Monitor your home's temperature and humidity with Raspberry Pis and Prometheus
+###用树莓派和普罗米修斯监测你家的温湿度
 
-Chris Collins describes how he [used Prometheus to monitor his home's temperature and humidity][3]. He provides detailed instructions about installing Prometheus on Raspberry Pi OS, instrumenting a Prometheus application, setting up a systemd unit and logging, and more to create a tool for monitoring temperature and humidity data. This article builds on an earlier article written by Chris, which is the next article on this list.
+克里斯·柯林斯（Chris Collins）描述了他如何[利用普罗米修斯（Prometheus）监测家中的温度和湿度][3]。他提供了关于在Raspberry PI OS上安装普罗米修斯、检测普罗米修斯应用程序、设置系统单元和日志记录等方面的详细说明，以创建用于监控温度和湿度数据的工具。本文建立在克里斯（Chris）以前写的一篇文章的基础上，是这个系列的下一篇文章。
 
-### Set up temperature sensors in your home with a Raspberry Pi
+###用树莓派在家里设置温度传感器
 
-Learn [how to set up temperature sensors][4] using a Raspberry Pi, a DHT22 digital sensor, and some Python code. In this article, Chris Collins explains how to connect the sensor to the Raspberry Pi, install the DHT sensor software, and get the sensor data using a Python script. He concludes by teasing a future article that will do more to automate the data collection from this device, which is the previous article on this list.
+学习[如何设置温度传感器][4]通过使用树莓派、DHT22数字传感器和一些Python代码。在本文中，Chris Collins解释了如何将传感器连接到树莓派，安装DHT传感器软件，并使用Python脚本获取传感器数据。他最后调侃了一篇未来的文章，这篇文章将更多地自动化从该设备收集数据，这是本列表中的前一篇文章。
 
-### Control your Raspberry Pi remotely with your smartphone
+###用智能手机远程控制你的树莓派
 
-Stephan Avenwedde explains how to [use your smartphone to control the GPIOs on a Raspberry Pi][5]. This tutorial describes how to install and use Pythonic to make the Raspberry Pi controllable over a network connection using Telegram. There was no specific end project in mind when he wrote the article, so it provides broad instructions that you can apply to many projects. Some possible projects suggested by Stephan include lawn irrigation and a garage door opener.
+斯蒂芬·艾文韦德(Stephan Avenwede)解释了如何[使用你的智能手机来控制树莓派的gpio][5]。本教程描述了如何安装和使用python来使用Telegram通过网络连接控制树莓派。在写这篇文章时，他并没有考虑到具体的最终项目，因此本文提供了广泛的指导，您可以将其应用于许多项目。斯蒂芬建议的一些可能的项目包括草坪灌溉和车库开门器。
 
-### Why choose open source for your home automation project
+#家庭自动化项目为什么选择开源
 
-Alan Smithee [introduces the Opensource.com Home Automation eBook][6] in this article. The eBook contains a selection of Opensource.com content related to home automation. Alan's article provides an overview of why technology makes things better for everyone and provides a link to download the eBook.
+Alan Smithee在本文中[介绍了Opensource.com家庭自动化电子书][6]。这本电子书包含了Opensource.com网站上与家庭自动化相关的内容。Alan的文章概述了为什么技术让每个人的生活变得更好，并提供了一个下载电子书的链接。
 
-### Monitor your Raspberry Pi with Grafana Cloud
+###用Grafana Cloud监控你的树莓派
 
-Discover how to [monitor your Raspberry Pi with Grafana Cloud][7] in this tutorial by Matthew Helmke. This project uses a Raspberry Pi, the Prometheus time-series database, and a Grafana Cloud account. Matthew explains how to install Prometheus on the Raspberry Pi and connect it to Grafana Cloud to provide monitoring for your Raspberry Pi.
+在Matthew Helmke的这篇教程中，了解如何[用Grafana Cloud监控你的树莓派][7]。该项目使用树莓派、Prometheus时间序列数据库和Grafana Cloud帐户。Matthew解释了如何在树莓派上安装Prometheus，并将其连接到Grafana Cloud，为您的树莓派提供监控。
 
-### A new open source operating system for embedded systems
+###一种新的嵌入式开源操作系统
 
-Zhu Tianlong provides an [introduction to the RT-Thread Smart operating system][8]. The article explains what RT-Thread Smart is, who might need to use it, and how it works. There is also a section in the article that compares and contrasts between RT-Thread Smart and RT-Thread.
+朱天龙提供了[RT-Thread智能操作系统简介][8]。本文解释了什么是RT-Thread Smart，谁可能需要使用它，以及它是如何工作的。本文中还有一个章节对RT Thread Smart和RT Thread进行了对比。
 
-### Use Rust for embedded development
+###使用Rust进行嵌入式开发
 
-This article, authored by Alan Smithee and provided by Liu Kang, introduces [using Rust for embedded development][9]. This code-heavy tutorial shows how to call Rust in C and how to call C in Rust. There are plenty of code examples and detailed instructions for using Rust tools, like Cargo, for development.
+本文由Alan Smithee撰写，刘康提供，介绍了[使用Rust进行嵌入式开发][9]。这个包含大量代码的教程展示了如何在C中调用Rust，以及如何在Rust中调用C。这里有大量使用Rust工具(如Cargo)进行开发的代码示例和详细说明。
 
-### Getting started with edge development on Linux using open source
+###开源Linux边缘开发入门
 
-Daniel Oh explains how to use the Quarkus cloud-native Java framework to [get started with edge development][10]. Daniel starts by providing a brief introduction to CentOS Stream, the operating system he uses for his tutorial. He then covers the three main steps of his tutorial:
+Daniel Oh解释了如何使用Quarkus云原生Java框架来[开始边缘开发][10]。Daniel首先简要介绍了他在教程中使用的操作系统CentOS Stream。然后他介绍了教程的三个主要步骤:
 
-  * Sending IoT data to the lightweight message broker
-  * Processing reactive data streams with Quarkus
-  * Monitoring the real-time data channel
+*将物联网数据发送到轻量级消息代理。
+*使用Quarkus处理反应性数据流。
+*监控实时数据通道。
 
+#什么是雾计算？
 
-
-### What is fog computing?
-
-You have probably heard about cloud computing, but [what is fog computing][11]? Seth Kenlon describes fog computing as the "outer 'edge' of the cloud"—built up of all the connected devices like phones, watches, and various other things that comprise the Internet of Things.
+您可能听说过云计算，但是[什么是雾计算][11]?Seth Kenlon将雾计算描述为“云的外部‘边缘’”——由手机、手表和其他组成物联网的各种设备组成。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/22/1/open-source-internet-of-things
 
+
 作者：[Joshua Allen Holm][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CN-QUAN](https://github.com/CN-QUAN)
 校对：[校对者ID](https://github.com/校对者ID)
-
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
-
 [a]: https://opensource.com/users/holmja
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc_BUS_Apple_520.png?itok=ZJu-hBV1 (collection of hardware on blue backround)
