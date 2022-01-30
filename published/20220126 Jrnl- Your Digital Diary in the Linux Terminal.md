@@ -3,25 +3,25 @@
 [#]: author: "Marco Carmona https://itsfoss.com/author/marco/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14229-1.html"
 
-Jrnl：你在 Linux 终端的数字日记
+Jrnl：你的 Linux 终端数字日记
 ======
 
-想象一下：有人伤了你的心，而你想要的是心无旁骛地在日记中写下你的感受。你明白这个想法了吗？没有吗？我也不知道。我没有心碎（或者也许我心碎了，但我不想告诉你）。
+![](https://img.linux.net.cn/data/attachment/album/202201/30/234157xxoo76bdxb7xxbgl.jpg)
 
-但我还是想向你展示一个奇妙的极简的开源的记事应用来保存日记条目。
+想象一下：有人伤了你的心，而你想要的是心无旁骛地在日记中写下你的感受。你明白这种感受吗？没有吗？我也不知道。我没有心碎过（或者也许我心碎了，但我不想告诉你）。
+
+但我还是想向你展示一个奇妙的极简的开源的记事应用来保存日记。
 
 这个方便的小程序是 [Jrnl][1]，它可以让你在终端中直接创建、搜索和查看日记条目。
 
 用 Jrnl 创建新的笔记就像下面一样简单：
 
 ```
-
-    jrnl yesterday: I read an amazing article on It’s FOSS. I learn about a minimalist app called Jrnl, I should try it.
-
+jrnl yesterday: I read an amazing article on It’s FOSS. I learn about a minimalist app called Jrnl, I should try it.
 ```
 
 看起来很简单，不是吗？关键字 “yesterday” 在这里是一个触发器，它把你的笔记保存到昨天的日期。记住，它被称为 Jrnl（日记）是有原因的。它的主要目的是保存日记。
@@ -35,21 +35,17 @@ Jrnl 可以用 pipx 或 Homebrew 包管理器安装。
 我在测试中使用了 Homebrew，所以我将列出这些步骤。首先获取 Homebrew：
 
 ```
-
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ![Installing Homebrew on your system][2]
 
-这就好了！如果你需要更多的信息，我们有一个关于[在 Linux 上安装 Homebrew][3] 的详细教程。
+这就好了！如果你需要更多的信息，我们有一个关于 [在 Linux 上安装 Homebrew][3] 的详细教程。
 
 当你安装了 Homebrew 包管理器后，用它来安装 Jrnl：
 
 ```
-
-    brew install jrnl
-
+brew install jrnl
 ```
 
 ![Installing Jrnl with Homebrew][4]
@@ -59,9 +55,7 @@ Jrnl 可以用 pipx 或 Homebrew 包管理器安装。
 你还记得本文开头的第一个例子吗？让我们再来看看它吧！
 
 ```
-
-    jrnl yesterday: I read an amazing article in It’s FOSS. I learn about a minimalist app called Jrnl, I should try it.
-
+jrnl yesterday: I read an amazing article in It’s FOSS. I learn about a minimalist app called Jrnl, I should try it.
 ```
 
 ![Writing an entry][5]
@@ -71,9 +65,7 @@ Jrnl 可以用 pipx 或 Homebrew 包管理器安装。
 目前，Jnrl 有两种模式：撰写和查看；前面的步骤用于撰写条目，但如果你想查看，例如，之前写过的条目，语法也很简单，你只需输入下一行。
 
 ```
-
-    jrnl -on yesterday
-
+jrnl -on yesterday
 ```
 
 ![Viewing an entry][6]
@@ -83,12 +75,10 @@ Jrnl 可以用 pipx 或 Homebrew 包管理器安装。
 这就好了！ 当然，Jrnl 还有很多功能，你可以通过下面这行轻松找到：
 
 ```
-
-    jrnl --help
-
+jrnl --help
 ```
 
-你也可以参考[其官方网站][7]上的文档。记住，在这样的一个开源项目中，文档是你最好的朋友。享受它吧！
+你也可以参考 [其官方网站][7] 上的文档。记住，在这样的一个开源项目中，文档是你最好的朋友。享受它吧！
 
 ### 总结
 
@@ -103,7 +93,7 @@ via: https://itsfoss.com/jrnl/
 作者：[Marco Carmona][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
