@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/word-game-linux-command-line"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
