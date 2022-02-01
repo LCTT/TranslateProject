@@ -3,14 +3,16 @@
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14233-1.html"
 
-使用 Mozilla DeepSpeech 在你的应用中实现语音转文字
+使用 DeepSpeech 在你的应用中实现语音转文字
 ======
-应用中的语音识别不仅仅是一个有趣的技巧，而且是一个重要的无障碍功能。
-![Colorful sound wave graph][1]
+
+> 应用中的语音识别不仅仅是一个有趣的技巧，而且是一个重要的无障碍功能。
+
+![](https://img.linux.net.cn/data/attachment/album/202202/01/102117mvnx1o9zxxikz91z.jpg)
 
 计算机的主要功能之一是解析数据。有些数据比其他数据更容易解析，而语音输入仍然是一项进展中的工作。不过，近年来该领域已经有了许多改进，其中之一就是 DeepSpeech，这是 Mozilla 的一个项目，Mozilla 是维护 Firefox 浏览器的基金会。DeepSpeech 是一个语音到文本的命令和库，使其对需要将语音输入转化为文本的用户和希望为其应用提供语音输入的开发者都很有用。
 
@@ -20,27 +22,22 @@ DeepSpeech 是开源的，使用 Mozilla 公共许可证（MPL）发布。你可
 
 要安装，首先为 Python 创建一个虚拟环境：
 
-
 ```
-`$ python3 -m pip install deepspeech --user`
+$ python3 -m pip install deepspeech --user
 ```
 
 DeepSpeech 依靠的是机器学习。你可以自己训练它，但最简单的是在刚开始时下载预训练的模型文件。
 
-
 ```
-
-
 $ mkdir DeepSpeech
 $ cd Deepspeech
 $ curl -LO \
-<https://github.com/mozilla/DeepSpeech/releases/download/vX.Y.Z/deepspeech-X.Y.Z-models.pbmm>
+  https://github.com/mozilla/DeepSpeech/releases/download/vX.Y.Z/deepspeech-X.Y.Z-models.pbmm
 $ curl -LO \
-<https://github.com/mozilla/DeepSpeech/releases/download/vX.Y.Z/deepspeech-X.Y.Z-models.scorer>
-
+  https://github.com/mozilla/DeepSpeech/releases/download/vX.Y.Z/deepspeech-X.Y.Z-models.scorer
 ```
 
-### 用户的应用
+### 用户应用
 
 通过 DeepSpeech，你可以将语音的录音转录成书面文字。你可以从在最佳条件下干净录制的语音中得到最好的结果。然而，在紧要关头，你可以尝试任何录音，你可能会得到一些你需要手动转录的东西。
 
@@ -48,42 +45,30 @@ $ curl -LO \
 
 在你的 DeepSpeech 文件夹中，通过提供模型文件、评分器文件和你的音频启动一个转录：
 
-
 ```
-
-
 $ deepspeech --model deepspeech*pbmm \
-\--scorer deepspeech*scorer \
-\--audio hello-test.wav
-
+  --scorer deepspeech*scorer \
+  --audio hello-test.wav
 ```
 
 输出到标准输出（你的终端）：
 
-
 ```
-`this is a test hello world this is a test`
+this is a test hello world this is a test
 ```
 
 你可以通过使用 `--json` 选项获得 JSON 格式的输出：
 
-
 ```
-
-
 $ deepspeech --model deepspeech*pbmm \
-\-- json
-\--scorer deepspeech*scorer \
-\--audio hello-test.wav
-
+  -- json
+  --scorer deepspeech*scorer \
+  --audio hello-test.wav
 ```
 
 这就把每个词和时间戳一起渲染出来：
 
-
 ```
-
-
 {
   "transcripts": [
     {
@@ -110,12 +95,11 @@ $ deepspeech --model deepspeech*pbmm \
           "duration": 0.74
         },
 [...]
-
 ```
 
 ### 开发者
 
-DeepSpeech 不仅仅是一个转录预先录制的音频的命令。你也可以用它来实时处理音频流。GitHub 仓库 [DeepSpeech-examples][3] 中充满了 JavaScript、Python、C# 和 Android 的 Java 代码。
+DeepSpeech 不仅仅是一个转录预先录制的音频的命令。你也可以用它来实时处理音频流。GitHub 仓库 [DeepSpeech-examples][3] 中有 JavaScript、Python、C# 和用于 Android 的 Java 等各种代码。
 
 大部分困难的工作已经完成，所以集成 DeepSpeech 通常只是引用 DeepSpeech 库，并知道如何从主机设备上获得音频（你通常通过 Linux 上的 `/dev` 文件系统或 Android 和其他平台上的 SDK 来完成。）
 
@@ -130,7 +114,7 @@ via: https://opensource.com/article/22/1/voice-text-mozilla-deepspeech
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
