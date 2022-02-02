@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/pinephone-review/"
 [#]: author: "Jacob Crume https://news.itsfoss.com/author/jacob/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
