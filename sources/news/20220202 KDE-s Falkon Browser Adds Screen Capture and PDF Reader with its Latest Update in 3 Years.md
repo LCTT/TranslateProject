@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/falkon-browser-3-2-release/"
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
