@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/delta-chat-software-privacy-day"
 [#]: author: "Alan Smithee https://opensource.com/users/alansmithee"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
