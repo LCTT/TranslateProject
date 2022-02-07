@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "robsean"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14249-1.html"
 
 使用 CMake 和 VSCodium 设置一个构建系统
 ======
