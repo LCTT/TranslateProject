@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/brave-vs-vivaldi/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "imgradeone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
