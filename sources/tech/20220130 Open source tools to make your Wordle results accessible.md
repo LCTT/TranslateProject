@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/open-source-accessibility-wordle"
 [#]: author: "AmyJune Hineline https://opensource.com/users/amyjune"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
