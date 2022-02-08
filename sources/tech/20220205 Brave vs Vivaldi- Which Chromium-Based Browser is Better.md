@@ -12,7 +12,7 @@ Brave vs Vivaldi：哪个浏览器更好？
 
 Brave，毫无疑问，是一款出色的开源网页浏览器。它也是 [适用于 Linux 的最佳网页浏览器][1] 之一。
 
-另一方面，Vivaldi 凭借其自定义能力和标签页管理功能，在 Linux 用户群中获得了不错的声誉。
+另一方面，Vivaldi 凭借其强劲的自定义能力和标签页管理功能，在 Linux 用户群中获得了不错的声誉。
 
 Vivaldi 是否值得一试？它开源吗？为什么你会更喜欢 Brave 而不是它？或者，是否应该考虑使用 Vivaldi 呢？
 
@@ -36,11 +36,11 @@ Brave 专注于提供简洁的外观，而 Vivaldi 则尽力提供更多的功�
 
 反观另一边，Vivaldi 默认情况下看上去似乎有点超负荷 —— 能够快速访问的侧边栏，地址栏右边的搜索框，再加上浏览器底部还有更多要素。
 
-Vivaldi 默认也会提供更多主题。别忘了，你可以无缝编辑并定制主题，Brave 可没有这种功能哦。
+Vivaldi 默认也会提供更多主题。别忘了，你可以无缝编辑并定制主题，而 Brave 可没有这种功能哦。
 
 ![][4]
 
-对于那些想要一款简洁明了，同时可以自定义的浏览器的人来说，Brave 就是一款简洁的推荐项。而对于那些需要丰富的界面和大量设置项的用户来说，Vivaldi 是个不错的选择。
+对于那些想要一款简洁明了，同时可以自定义的浏览器的人来说，Brave 就是合适的推荐项。而对于那些需要丰富的界面和大量设置项的用户来说，Vivaldi 是个不错的选择。
 
 ### 完全开源 vs 99% 开源
 
@@ -48,7 +48,7 @@ Brave 是完全开源的，可以免费 / 自由使用。你可以在 GitHub 上
 
 Vivaldi 的话，呃……只能说是几乎开源。整个浏览器基于 Chromium 开发，而修改过的 Chromium 源代码可以在它的官网中找到。不过，这款浏览器的用户界面却是专有的。
 
-为确保提供独特的用户体验，并保持对它的控制权，Vivaldi 决定让用户界面闭源。
+为确保提供独特的用户体验，并保持对它的控制权，Vivaldi 决定将用户界面闭源。
 
 不过，他们在一篇 [博文][5] 中解释得很清楚。
 
@@ -56,7 +56,7 @@ Vivaldi 的话，呃……只能说是几乎开源。整个浏览器基于 Chrom
 
 ![][6]
 
-对于大多数用户来说，这可能不算是一个比较标准，但考虑到 Vivaldi 以其标签页管理功能为知名，因此这一点仍旧值得比较。
+对于大多数用户来说，这可能不算是一个比较标准，但考虑到 Vivaldi 以其标签页管理功能而著名，因此这一点仍旧值得比较。
 
 在你打开了许多标签页时，标签页管理就会大有用场。如果你只开了少量的标签页，那你不需要同时考虑标签页管理，但它仍旧十分有用。
 
@@ -70,7 +70,7 @@ Brave 同样可以分组标签、指定颜色、命名标签组，以及展开 /
 
 不过，在 Brave 里就没有 Vivaldi 那样的两级标签栏，以及自定义标签行为的功能。
 
-此外，我个人认为 Brave 的标签管理（在开启暗色模式时）看上去有一点点乱。
+此外，我个人认为 Brave 的标签管理（在开启暗色模式时）看上去有点混乱不堪。
 
 当然，你可以决定新标签页展示什么内容，但这远远不及 Vivaldi 大量选项那么有用。
 
@@ -88,7 +88,7 @@ Brave 搜索是 Brave 浏览器的默认搜索引擎。虽然这款搜索引擎�
 
 来到 Vivaldi 这边，它提供了大量额外功能，包括侧边栏的 Web 面板、番茄钟、页面平铺、日历集成、电子邮箱集成、RSS 订阅等。
 
-侧边栏（或者叫 Web 面板）允许你快速访问内容，不需额外新建标签或窗口，让你轻松进行多任务处理，而不会失去对活跃标签的专注。
+侧边栏（或者叫 Web 面板）允许你快速访问内容，不需额外新建标签或窗口，让你轻松进行多任务处理，而不会失去对当前活跃标签的专注。
 
 ![][9]
 
@@ -118,45 +118,43 @@ Brave 同样给你类似的控制级别，当然也有更高级的设置项，�
 
 一如既往，我借助一些知名的跑分工具来测试浏览器的性能，例如：[JetStream 2][13]、[Speedometer 2.0][14] 和 [Basemark Web 3.0][15]。
 
-我使用 Pop!_OS 21.10 作为我的 Linux 发行版，而测试的浏览器版本为 **Vivaldi 5.0.2497.51 稳定版** 和 Brave **97.0.4692.99**。
+我使用 Pop!\_OS 21.10 作为我的 Linux 发行版，而测试的浏览器版本为 **Vivaldi 5.0.2497.51 稳定版** 和 Brave **97.0.4692.99**。
 
-在这些基准跑分测试中，Brave 总体会更快，但 Vivaldi 在 Speedometer 2.0 中得分更高。
+在这些基准跑分测试中，Brave 总体更快，但 Vivaldi 在 Speedometer 2.0 中得分更高。
 
 给你一个概念，我后台没有运行任何程序，只运行了浏览器。电脑配置为 **英特尔 15-11600K @4.7GHz，32GB 3200 MHz 运存，英伟达 1050Ti 显卡**。
 
-因此，
+因此，两款浏览器都应该能带来快速、便捷的网络体验。
 
-So, both browsers should be good enough for a snappy web experience.
+### 安装
 
-### Installation
-
-Vivaldi offers the latest DEB/RPM packages on its [official website][16] and also provides support for ARM devices. You do not find any Flatpak or Snap packages for Vivaldi in the stable channel for the time being.
+Vivaldi 在它的 [官网][16] 提供了最新的 DEB/RPM 软件包，而且同样支持 ARM 设备。不过目前稳定版本的 Vivaldi 暂时不提供 Flatpak 和 Snap 版本。
 
 ![][17]
 
-Brave, on the other hand, does not directly offer these packages on its website. You will have to [follow a set of commands in the terminal][18] to install it, which is the recommended way of installation.
+另一边，Brave 并没有直接在官网提供这些软件包。你必须 [在终端中输入一组命令][18] 以安装 Brave，至少这是官方推荐的安装方式。
 
 ![][19]
 
-You can find a [Snap package][20], but it is not the best method as mentioned by them officially.
+你也能下载 [Snap 版软件包][20]，但这并非是最佳方法，官方也承认有许多问题存在。
 
-In any case, you can refer to our [Brave installation guide for Fedora][21] to get help.
+但无论如何，你都可以查阅我们的 [在 Fedora 上安装 Brave 的指南][21] 以获得帮助。
 
-### The Final Verdict
+### 最终结论
 
-When it comes to open-source browsers, Brave gets the edge as its entire source code is available. However, the commitment to a private web experience, and the focus on Linux as a platform by Vivaldi, is impressive.
+如果说到开源浏览器，那 Brave 占绝对优势，毕竟它是完全开源的。不过，Vivaldi 对于隐私型网络体验的承诺，以及对 Linux 平台的重视，反而更具吸引力。
 
-Feature-wise, the tab management ability on Vivaldi can be a compelling option to help you dabble between multiple tabs.
+从功能上看，Vivaldi 的标签页管理功能已经是极具竞争力的选择，它可以帮助你在大量标签中更加游刃有余。
 
-Note that the experience may not be excellent with dual-monitor systems (as is my case). As of now, Vivaldi seems to stutter and becomes unresponsive with my dual-monitor system, which didn’t happen with a single display.
+需要注意的是，Vivaldi 的双显示器体验似乎不太友好（至少在我这边是这样的）。目前来看，Vivaldi 在我的双显示器环境下出现卡顿，甚至无响应，但在单显示器上从来没有这种情况。
 
-Brave does not seem to suffer from this issue. So, you might want to test things out in such cases.
+而 Brave 就没有这种问题。因此，建议你自行测试一下。
 
-Brave should provide a clean and fast experience, and Vivaldi can be a good choice for users looking for more customizability and a rich user interface.
+Brave 提供简洁和快速的体验，Vivaldi 则更适合那些喜欢更多自定义配置和丰富界面的用户。
 
-I’d go with Vivaldi considering the tab management feature saves a lot of time, but then again I’ve switched to Firefox until it works flawlessly with dual-monitors.
+考虑到 Vivaldi 标签页管理功能确实能省下不少时间，我会选择 Vivaldi，不过我最后还是换回了 Firefox，至少等到 Vivaldi 能够在双显示器环境下流畅运行。
 
-What would you prefer? Let me know in the comments down below.
+你又会选择哪款呢？欢迎在评论区留言，让我了解你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -191,4 +189,4 @@ via: https://itsfoss.com/brave-vs-vivaldi/
 [18]: https://brave.com/linux/#linux
 [19]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2022/02/brave-install-on-linux.png?resize=800%2C358&ssl=1
 [20]: https://snapcraft.io/brave
-[21]: https://itsfoss.com/install-brave-browser-fedora/
+[21]: https://linux.cn/article-14028-1.html
