@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/turris-omnia-open-source-router"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -38,9 +38,9 @@ If you've bought a router in the past, you'll have performed those same steps be
 
 ### Simple and advanced configuration
 
-After initial setup, when you navigate to the Turris Omnia router, you have a choice between a simple configuration environment or advanced. You have to begin with the simple configuration. In the **Password** panel, you can set a password for the advanced interface, which also grants you SSH access to the router.
+After initial setup, when you navigate to the Turris Omnia router, you have a choice between a simple configuration environment or advanced. You have to begin with the simple configuration. In the **Password** panel, you can set a password for the advanced interface, which also grants you SSH access to the router.
 
-The simple interface lets you configure how you connect to the wide-area network (WAN) and set parameters for your local-area network (LAN). It also allows you to set up a personal WiFi access point, a guest network, and install and interact with plugins.
+The simple interface lets you configure how you connect to the wide-area network (WAN) and set parameters for your local-area network (LAN). It also allows you to set up a personal WiFi access point, a guest network, and install and interact with plugins.
 
 The advanced interface, called LuCI, is exactly what it claims. It's for the network engineer who's familiar with network topography and design, and it's essentially a collection of key and value pairs that you can edit through a simple web interface. If you prefer to edit values directly, you can instead SSH into the router:
 
@@ -53,15 +53,15 @@ root@192.168.1.1's password:
 
 BusyBox v1.28.4 () built-in shell (ash)
 
-      ______                _         ____  _____
-     /_  __/_  ____________(_)____   / __ \/ ___/
-      / / / / / / ___/ ___/ / ___/  / / / /\\__
-     / / / /_/ / /  / /  / (__  )  / /_/ /___/ /
-    /_/  \\__,_/_/  /_/  /_/____/   \\____//____/  
-                                             
- -----------------------------------------------------
- TurrisOS 4.0.1, Turris Omnia
- -----------------------------------------------------
+      ______                _         ____  _____
+     /_  __/_  ____________(_)____   / __ \/ ___/
+      / / / / / / ___/ ___/ / ___/  / / / /\\__
+     / / / /_/ / /  / /  / (__  )  / /_/ /___/ /
+    /_/  \\__,_/_/  /_/  /_/____/   \\____//____/  
+                                             
+ -----------------------------------------------------
+ TurrisOS 4.0.1, Turris Omnia
+ -----------------------------------------------------
 root@turris:~#
 
 ```
@@ -80,7 +80,7 @@ With just a few clicks, you can install your own [Nextcloud][6] server so you ca
 
 The best part about this router is that it's open source and supports open source. You can download Turris OS and many related open source tools from their [gitlab.nic.cz][7]. You don't have to settle for the firmware that ships on the device, either. With 2 GB of RAM and miniPCIe slots, you can run Debian on it. Even the LEDs in the front panel are programmable. This is a hacker's router, and whether you're a network engineer or a curious hobbyist, you ought to take a look at it the next time you're in the market for network gear.
 
-You can get the Turris Omnia and several other router models from the [turris.com][8] website, and then join the community at [forum.turris.cz][9]. They're a friendly bunch of enthusiasts, eager to share knowledge, tips, and cool hacks to further what you can do with your open source router.
+You can get the Turris Omnia and several other router models from the [turris.com][8] website, and then join the community at [forum.turris.cz][9]. They're a friendly bunch of enthusiasts, eager to share knowledge, tips, and cool hacks to further what you can do with your open source router.
 
 --------------------------------------------------------------------------------
 
