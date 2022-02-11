@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/unacceptable-tls-certificate-error-linux/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
