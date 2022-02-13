@@ -106,6 +106,7 @@ do_check() {
       || rule_translation_revised \
       || rule_translation_published \
       || rule_published_translation_revised \
+      || rule_onestep \
       || {
         error_translation_requested_multiple \
             || error_translation_completed_multiple \
