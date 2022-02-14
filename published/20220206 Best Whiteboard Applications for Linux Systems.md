@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14271-1.html"
 
 适用于 Linux 系统的最佳白板应用
 ======
@@ -53,7 +53,9 @@ Xournal++ 可以让你写字、画画，做一切你通常在纸上做的事情�
 
 这款软件非常适合初学者和初级学生在在线课程中做笔记。
 
-![OpenBoard][7] 加载了很多功能。如颜色、画笔、文本、简单的绘图形状、页面支持等。这个应用程序是使用 Qt 技术构建的。
+![OpenBoard][7] 
+
+OpenBoard 加载了很多功能。如颜色、画笔、文本、简单的绘图形状、页面支持等。这个应用程序是使用 Qt 技术构建的。
 
 这个应用程序只适用于 Ubuntu，它是一个独立的 deb 包。你可以从下面的链接下载 OpenBoard。
 
