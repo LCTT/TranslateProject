@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/2/dotfiles-source-control"
 [#]: author: "Moshe Zadka https://opensource.com/users/moshez"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
