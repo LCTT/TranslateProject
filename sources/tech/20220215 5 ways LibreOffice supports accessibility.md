@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/2/libreoffice-accessibility"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
