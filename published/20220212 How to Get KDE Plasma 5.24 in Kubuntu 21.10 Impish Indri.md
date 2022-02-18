@@ -3,38 +3,30 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14279-1.html"
 
-如何在 Kubuntu 21.10 Impish Indri 中获得 KDE Plasma 5.24
+如何在 Kubuntu 21.10 中升级 KDE Plasma 5.24
 ======
-KDE 开发人员启用了有名的 Backports PPA，以便你在 Kubuntu 21.10 中安装/升级到 KDE Plasma 5.24。 以下是方法。  
 
-KDE Plasma 5.24 最近[发布][1]了令人兴奋的变化。在这个新版本中，你会得到一个全新的概览页面，它很像 GNOME 的概览。还有，一个更新的默认 Breeze 主题、性能更新、通知外观的调整等。在我们的[官方综述页面][2]阅读更多关于这些功能的信息。
+![](https://img.linux.net.cn/data/attachment/album/202202/17/093727qw3js653lzksscfw.jpg)
+
+> KDE 开发人员启用了有名的 Backports PPA，以便你在 Kubuntu 21.10 中安装/升级到 KDE Plasma 5.24。 以下是方法。
+
+KDE Plasma 5.24 最近的 [发布][1] 带来了令人兴奋的变化。在这个新版本中，你会得到一个全新的概览页面，它很像 GNOME 的概览。此外，还有崭新的默认 Breeze 主题、性能提升、通知外观的调整等。在我们的 [官方综述页面][2] 可以阅读更多关于这些功能的信息。
 
 如果你很匆忙，没有时间阅读文章，这里有一组简短的命令，可以做到这些。😃
 
 ```
-
-    sudo add-apt-repository ppa:kubuntu-ppa/backports
-    sudo apt update
-    sudo apt full-upgrade
-
+sudo add-apt-repository ppa:kubuntu-ppa/backports
+sudo apt update
+sudo apt full-upgrade
 ```
 
-如果你运行 Kubuntu 21.10 Impish Indri，你将不会得到这个开箱更新。因为 Kubuntu 21.10 Impish Indri 目前有 KDE Plasma 5.22.5 作为稳定版本。尽管 Kubuntu 21.10 计划在 2022 年 7 月结束生命，你仍然可以通过 Backports PPA 安装 KDE Plasma 5.24。
+如果你运行 Kubuntu 21.10 Impish Indri，你不会马上得到这个更新。因为 Kubuntu 21.10 Impish Indri 目前采用 KDE Plasma 5.22.5 作为稳定版本。尽管 Kubuntu 21.10 计划在 2022 年 7 月结束生命，但你仍然可以通过 Backports PPA 安装 KDE Plasma 5.24。
 
-然而，请注意，你将在 2022 年 4 月到期的 Kubuntu 22.04 LTS 中得到 KDE Plasma 5.24，比 Kubuntu 21.10 的寿命结束早得多。
-
-### 内容
-
-  * [如何在 Kubuntu 21.10 中安装 KDE Plasma 5.24][3]
-  * [如何在 Ubuntu 21.10 中与 GNOME 一起安装 KDE Plasma 5.24][4]
-  * [我可以在 Ubuntu 20.04 LTS 中安装 KDE Plasma 5.24 吗？][5]
-  * [如何卸载][6]
-
-
+然而，请注意，你将在 2022 年 4 月的 Kubuntu 22.04 LTS 中得到 KDE Plasma 5.24，这要比 Kubuntu 21.10 的寿命结束早得多。
 
 ### 如何在 Kubuntu 21.10 中安装 KDE Plasma 5.24
 
@@ -42,18 +34,14 @@ KDE Plasma 5.24 最近[发布][1]了令人兴奋的变化。在这个新版本�
 
 #### 如何在 Kubuntu 21.10 中安装 KDE Plasma 5.24
 
-如果你对 Discover 感到满意，添加 Backports PPA `ppa:kubuntu-ppa/backports` 作为软件源并点击更新。一旦检索到更新的软件包信息，就可以安装。
+如果你习惯使用“<ruby>发现<rt>Discover</rt></ruby>” 感到满意，请添加 Backports PPA `ppa:kubuntu-ppa/backports` 作为软件源并点击更新。一旦检索到更新的软件包信息，就可以安装。
 
 我建议使用以下终端方法，以获得更快和无错误的安装。
 
-  * 打开 Konsole，运行以下命令来添加 backports PPA。如果你喜欢，你可以验证你运行的 Plasma 是什么版本。
-
-
+打开 Konsole，运行以下命令来添加 backports PPA。如果你喜欢，你可以验证你运行的 Plasma 是什么版本。
 
 ```
-
-    sudo add-apt-repository ppa:kubuntu-ppa/backports
-
+sudo add-apt-repository ppa:kubuntu-ppa/backports
 ```
 
 ![Add the PPA][7]
@@ -65,14 +53,12 @@ KDE Plasma 5.24 最近[发布][1]了令人兴奋的变化。在这个新版本�
 现在运行最后的命令来启动升级。
 
 ```
-
-    sudo apt full-upgrade
-
+sudo apt full-upgrade
 ```
 
 上面的命令会下载大约 270MB 以上的软件包。升级过程大约需要 10 分钟。命令完成后，重启你的系统。
 
-而你应该通过 Kubuntu 21.10 Impish Indri 获得全新的 KDE Plasma 5.24。
+而你应该通过 Kubuntu 21.10 Impish Indri 获得了全新的 KDE Plasma 5.24。
 
 ![KDE Plasma 5.24 in Kubuntu 21.10][9]
 
@@ -83,11 +69,9 @@ KDE Plasma 5.24 最近[发布][1]了令人兴奋的变化。在这个新版本�
 打开一个终端，依次运行下面的命令。
 
 ```
-
-    sudo add-apt-repository ppa:kubuntu-ppa/backpots
-    sudo apt update
-    sudo apt install kubuntu-desktop
-
+sudo add-apt-repository ppa:kubuntu-ppa/backpots
+sudo apt update
+sudo apt install kubuntu-desktop
 ```
 
 上述命令完成后，重启系统。在登录页面上，选择 KDE Plasma 作为桌面环境。然后你就可以开始了。
@@ -102,16 +86,14 @@ Ubuntu 20.04 LTS 版有早期的 KDE Plasma 5.18、KDE Framework 5.68、KDE Appl
 
 ### 如何卸载
 
-在任何时候，如果你想回到 KDE Plasma 桌面的原始版本，那么你可以安装 ppa-purge 并删除 PPA，接着刷新软件包。
+在任何时候，如果你想回到 KDE Plasma 桌面的原始版本，那么你可以安装 `ppa-purge` 并删除 PPA，接着刷新软件包。
 
 打开一个终端，依次执行以下命令。
 
 ```
-
-    sudo apt install ppa-purge
-    sudo ppa-purge ppa:kubuntu-ppa/backports
-    sudo apt update
-
+sudo apt install ppa-purge
+sudo ppa-purge ppa:kubuntu-ppa/backports
+sudo apt update
 ```
 
 当命令完成，重启你的系统。
@@ -122,13 +104,6 @@ Ubuntu 20.04 LTS 版有早期的 KDE Plasma 5.18、KDE Framework 5.68、KDE Appl
 
 请在下面的评论栏里告诉我进展如何。
 
-干杯。
-
-* * *
-
-我们带来最新的技术、软件新闻和重要的东西。通过 [Telegram][10]、[Twitter][11]、[YouTube][12] 和 [Facebook][13] 保持联系，永远不错过任何更新!
-
-
 --------------------------------------------------------------------------------
 
 via: https://www.debugpoint.com/2022/02/kde-plasma-5-24-kubuntu-21-10/
@@ -136,7 +111,7 @@ via: https://www.debugpoint.com/2022/02/kde-plasma-5-24-kubuntu-21-10/
 作者：[Arindam][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
