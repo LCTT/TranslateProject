@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/using-linux-terminal-android/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
