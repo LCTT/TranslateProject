@@ -4,11 +4,13 @@
 [#]: collector: "lujun9972"
 [#]: translator: "wxy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14286-1.html"
 
 在安卓手机上使用 Linux 终端
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202202/19/190329mrnlr1fzkrmeewe5.jpg)
 
 想练习 Linux 命令吗？你不需要为此而安装一个完整的发行版。
 
