@@ -69,6 +69,14 @@ rule_published_translation_revised() {
       && [ "$TOTAL" -eq 1 ] && echo "匹配规则：校对已发布译文"
 }
 
+# 一步翻译发布
+rule_onestep() {
+  [ "$SRC_D" -eq 1 ] && [ "$PUB_A" -eq 1 ] \
+      && ensure_identical SRC D PUB A 1 \
+      && check_category SRC D \
+      && [ "$TOTAL" -eq 2 ] && echo "匹配规则：一步翻译发布"
+}
+
 # 定义常见错误
 
 # 未知错误
@@ -97,6 +105,7 @@ do_check() {
       || rule_translation_revised \
       || rule_translation_published \
       || rule_published_translation_revised \
+      || rule_onestep \
       || {
         error_translation_requested_multiple \
             || error_translation_completed_multiple \

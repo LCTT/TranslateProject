@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/devops-transformation"
 [#]: author: "Will Kelly https://opensource.com/users/willkelly"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "CN-QUAN "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
