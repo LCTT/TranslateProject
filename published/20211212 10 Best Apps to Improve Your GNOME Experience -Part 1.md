@@ -108,7 +108,7 @@
 
 [Cawbird][32] 是一个基于 GTK 的 Twitter 客户端，用于 GNOME 桌面。它是那个在 Twitter API 变化后停止使用的 [Corebird][33] 的一个复刻。这款应用非常适合你的 GNOME 桌面，并且拥有 Twitter 网站的所有功能。从资源上看，它是轻量级的。如果你是 Twitter 的忠实用户，那么你可以试试这个应用。
 
-![Cawbird - 一个原生的 Twitter GNOME 应用][34]。
+![Cawbird - 一个原生的 Twitter GNOME 应用][34]
 
 以下是安装步骤。
 
@@ -140,8 +140,7 @@ News Flash 是最好的 GNOME 应用程序之一，用于阅读你喜爱的网�
 
 有兴趣吗？下面是如何安装的方法。
 
-- 在 [初始设置][16] 之后以 Flatpak 包安装
-- [通过 Flathub 安装][40]
+- 在 [初始设置][16] 之后，[通过 Flathub 安装][40]
 - 如果你在 Arch Linux 中，你可以 [设置 Yay AUR 助手][23]，然后使用下面的命令来安装：`yay -S newsflash`
 
 更多信息：
