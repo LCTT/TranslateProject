@@ -161,7 +161,7 @@ The string does not match because of the capitalized H.
 
 ### while 循环
 
-在结束这个系列之前，让我们看一下循环。一个关于 `while` 循环的例子是：“当 1 小于 10 时，在数值上加 1”，你继续这样做直到该判断语句不再为真。下面你将看到变量 `number` 设置为 `1`。在下一行，我们有一个 `while` 语句，它检查 `number` 是否小于或等于 `10`。在 `do` 和 `done` 之间包含的命令被执行，因为 `while` 的比较结果为真。所以我们回显一些文本，并在 `number` 的值上加 `1`。我们继续执行，直到 `while` 语句不再为真，它脱离了循环，并回显 `We have completed the while loop since $number is greater than 10.`。
+在结束这个系列之前，让我们看一下循环。一个关于 `while` 循环的例子是：“当 1个数值 小于 10 时，在数值上加 1”，你继续这样做直到该判断语句不再为真。下面你将看到变量 `number` 设置为 `1`。在下一行，我们有一个 `while` 语句，它检查 `number` 是否小于或等于 `10`。在 `do` 和 `done` 之间包含的命令被执行，因为 `while` 的比较结果为真。所以我们回显一些文本，并在 `number` 的值上加 `1`。我们继续执行，直到 `while` 语句不再为真，它脱离了循环，并回显 `We have completed the while loop since $number is greater than 10.`。
 
 ```
 #!/bin/bash
