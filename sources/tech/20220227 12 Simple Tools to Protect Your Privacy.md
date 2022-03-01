@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/privacy-tools/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "aREversez"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
