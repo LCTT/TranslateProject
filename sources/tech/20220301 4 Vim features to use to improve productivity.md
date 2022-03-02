@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/3/vim-features-productivity"
 [#]: author: "Hunter Coleman https://opensource.com/users/hunterc"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
