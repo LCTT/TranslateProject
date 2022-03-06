@@ -7,76 +7,73 @@
 [#]: via: (https://opensource.com/article/21/2/try-linux)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-Why everyone should try using Linux
+为什么每个人都应该试试去用 Linux
 ======
-If you're curious about Linux, the open source community makes sure it's
-easy to try.
+如果你对 Linux 有着充满着好奇的心态，那开源社区会让你觉得 Linux 是很容易上手的。
 ![Woman sitting in front of her computer][1]
 
-In 2021, there are more reasons why people love Linux than ever before. In this series, I'll share 21 different reasons to use Linux. Let's explore why anyone can try Linux.
+在2021年，人们喜欢 Linux 的原因要比以前的时候多。在这里，我会分享使用 Linux 的 21 个不同的理由。我们来讨论讨论，为什么建议，每个人都要试试用一下 Linux。
 
-Linux can seem mysterious to the uninitiated. People talk about Linux like it's something only meant for computer programmers or sysadmins, yet people also talk about running Linux on laptops or mobile devices. Tech sites list the [top 10 Linux commands][2] you [need to know][3], and yet there's just as much talk about [how exciting the Linux desktops (plural!) are][4].
+Linux 对外行人来说，好像是一个神秘的东西。每当人们说起 Linux ，就觉得它是被计算机管理员或者系统管理员用的，也认为 Linux 就用在笔记本电脑跟手机上使用。某个技术网站列出了[你需要知道][2]的 [10 个 Linux 命令][3]，有很多关于 [Linux 桌面!多么令人兴奋的话题][4]。
 
-So what's Linux all about, really?
+那么,Linux 到底是干嘛的呢？
 
-Well, one of the many important things about Linux is its dedication to availability. If you're curious about Linux, the open source community makes sure it's easy to try.
+Linux 的可用性是它众多重要特性之一。如果你对 Linux 感到新奇，开源社区向你保证，它很容易上手。
 
-### Try Linux without trying Linux
+### 试试去用 Linux 而不是一直用 Linux
 
-It doesn't matter whether you're switching from Windows to Linux, Windows to Mac (or Mac to Windows), or from Mac to Linux: Changing your computing style is hard. It's not often discussed, but modern computing is a strangely personal thing. Everyone gets comfortable with their own computer, and they tend to dislike big changes. Just shifting back and forth between my work computer and my personal computer (both of which run the same OS) requires mental and muscle adjustment for me, simply because the two are "optimized" for different kinds of activities. Even though I inevitably end up being referred to just as "the guy who knows computers" in my local communities (and I do like to think that I do), were I forced to change the OS I use, my sense of productivity and enjoyment would plummet for a week or two. The thing is, it's mostly superficial. I know how to use other operating systems, but I'd need time to establish new instincts and habits. I'd need a chance to remember where some of the small configuration options are located in a new OS, and I'd have to discover new features to capitalize upon.
+无论 Windows 换到 Linux，Windows 换到 Mac（或是从 Mac 换到 Windows ），还是 Mac 换到 Linux，要想改变一个人计算机操作系统的使用习惯是一件很难的事。虽然这件事很少会去讨论，不过现在的电脑是一个比较个性化的东西，每个人都对自己电脑当前的使用习惯，都是感到舒适的，他们往往不愿意去做太大的变化。对我来说，就算在工作电脑跟个人电脑中来回切换（两者都运行相同的操作系统），也需要我在心理和肌肉做下调整，是因为两个电脑针对不同的活动场景进行了优化。我被我所在社区的人喊作是"很了解计算机的家伙"，（我觉得自己也名副其实嘿嘿）。如果我被人强迫更换我常用的操作系统，我会觉得自己的生产力跟舒适感将在一两周内直线下降。不过这还是比较表层的，虽然我知道怎么用其他的操作系统，但是我需要时间去形成新的直觉跟习惯，需要记住新系统中，一些小的配置选项的位置，还必须知道要怎么用新的功能。
 
-For this reason, I often tell people who are curious about Linux that the first step is to use Linux _applications_. There aren't actually that many applications exclusive to Linux, largely because most apps on Linux are open source and are therefore eagerly ported between all platforms. But there are lots of applications commonly found on Linux that you can also try on your current non-Linux platform. Make it a goal to replace the applications you default to, either by force of habit or convenience, with open source equivalents.
+出于这个原因，我经常对那些对 Linux 感到新奇的人说，学习 Linux 的第一步就是要去使用 Linux 的应用。实际上，Linux 上专用的应用程序不多，主要是因为 Linux 的大多数应用程序是开源的，因此在所有平台之间都热切地移植。在 Linux 上是可以找到许多应用程序的，我们可以在不是 Linux 的平台上去试用这些应用。无论是出于习惯还是便利性，可以将我们默认的应用程序替换为开源的等效应用程序。
 
-### Replacing apps
+### 应用替换
 
-The end goal of this exercise is to make a soft transition to Linux by way of the applications you'll eventually be running. Once you're used to a new set of applications, there's not much left to get used to on Linux, aside from system settings and file management.
+我们最终的目的是想要通过运行应用软件，最终把操作系统去过渡到 Linux 中去。一旦你习惯了使用新的应用程序，那么在 Linux 系统上，除了系统设置和文件管理外，就没有其他什么要适应的了。
 
-If you're not sure what applications you use the most, just take a look at your **Recent Applications** menu (if your OS doesn't have a Recent Applications menu, then it might be time to switch to Linux). Once you've identified your must-have applications, take a look at our [Application Alternatives][5] page to learn about many of the common open source apps considered equivalents to popular proprietary ones.
+如果你还不确定哪个是自己常用的应用，只需要查看 **最近使用的应用程序**列表（如果你的系统上没有最近使用应用的列表，那还等啥，赶紧换成 Linux 系统吧）。一旦你确定了常用的应用程序，可以查看[应用替代方案][5]页面，了解许多被视为与流行的专有应用程序等效的常见开源应用程序。
 
-### Getting Linux
+### 获取 Linux
 
-Not all open source applications get ported to all platforms, and many ultimately benefit from running on Linux. Eventually, if you're keen to switch to Linux, it pays to complete the transition. Luckily, getting Linux is as easy as downloading it, almost as if it were just another open source app.
+不是所有的开源软件都能移植到其他平台，最终很多应用都会在linux上运行而受益。很幸运，我们下载这些应用就像下载 Linux 一样，几乎就像它是另一个开源程序。
 
-Usually, a Linux installation image features a Live mode and an Installation mode. That means you can boot from a Linux drive and use it in Live mode without actually installing it to your computer. This is a great way to get a hint of what the OS is like, but it's only a temporary experience because data isn't retained between boots. However, there are distributions, like [Porteus Linux][6], specially designed for running exclusively off of a USB thumb drive so that your personal data is retained. I keep a Porteus drive on my keychain, so no matter where I am, I have a bootable Linux image with me.
+通常，Linux 的安装映像，有实时模式跟安装模式两种，这意味着你可以从 Linux 驱动器启动，并且在实时模式下运行使用，无需将系统安装到您的计算机。这是了解操作系统的好方法，因为只是一种临时体验，所以启动之间不会保留数据。但是，有些发行版本[Porteus Linux],专门有设计在 USB 上运行的系统，以便保存个人数据。我在钥匙串上（U盘）装了一个 Porteus 的驱动器，所以我无论在哪里，身上都有一个可以启动的Linux 系统来使用。
 
-![Porteus Live Linux distribution][7]
+![Porteus Live Linux 发行版本][7]
 
-The Porteus Live Linux distribution desktop.
+Porteus Live Linux 发行版的桌面版
 
-### The best Linux
+### “最好的” Linux 
 
-Once you've decided to install Linux, you'll find plenty of distributions available for the low cost of $0. If you're used to having only one or two choices in an operating system (for instance, a Home Edition and a Business Edition), then you probably find the idea of several different _distributions_ of Linux confusing. It seems more complicated than it actually is, though. Linux is Linux, and it rarely makes much of a difference whose "flavor" you download and install. The big names, like [Fedora][8], [Debian][9], [Linux Mint][10], and [Elementary][11], all deliver the same experience with a slightly unique emphasis.
+一旦你决定开始安装 Linux 系统，你会发现有很多 Linux 系统的发行版本都是免费的。如果你之前用的操作系统版本只有一个或两个选择（例如，家庭版或商业版），那么你对 Linux 操作系统有这么多发行版本会感到困惑。Linux 系统看起来比实际中要复杂，不过，Linux 就是 Linux， 它的下载和安装没有什么不同。像[Fedora][8], [Debian][9], [Linux Mint][10],和 [Elementary][11],这些大牌系统厂商都提供了相同的安装体验，只是在重点略有不同。
 
-  * Fedora is famous for being first to update its software
-  * Linux Mint provides easy options to install missing drivers
-  * Debian is well known for its long-term support, so updates are slow, but reliability is high
-  * Elementary provides a beautiful desktop experience and several special, custom-built applications
+  * Fedora 以软件更新迭代快而出名
+  * Linux Mint 驱动程序安装简单
+  * 因能提供长期的支撑而受欢迎，所以它的更新是相对缓慢的，但是可靠性很高
+  * Elementary 有精美的桌面体验并可以定制某些特殊的应用程序
 
+总而言之，所谓最好的 "Linux 系统"，即是最适合你的 Linux 系统。而最适合你的Linux，就是，满足你所要求计算机功能都在你的 Linux 中顺畅运行。
 
+### 获取驱动程序
 
-Ultimately, the "best" Linux is the Linux that works best for you. I mean that literally: The best Linux for you is the Linux you try and find that all your computer features still work as expected.
+大多数的驱动程序被捆绑在 Linux 的内核中（或者作为内核模块），特别是在处理一到两年前的计算机零件和外围设备时常常如此。借助已经上市一段时间的设备，Linux 程序员有机会去开发驱动程序或着将企业的驱动程序集成到系统里。我惊讶的是有不少人通过将 Wacom 图形输入板、游戏控制器、打印机或扫描仪连接到 Linux 计算机中，不需要下载安装驱动程序，而且几乎不用配置，可以立即使用。
 
-### Getting drivers
+专有的操作系统有两种处理设备驱动程序的策略。要么是限制用户与操作系统一起使用的设备，要么是向企业付费来编写驱动程序并将驱动程序与设备一起提供。第一种方法有种让人不适的限制性，但是大多数人（可悲的）习惯了某些设备只能在某些平台上运行的想法。而后一种方法，被认为是一种奢侈，但在实践中，这种方法太过于依赖程序员。旧货店有很多计算器的外围设备，虽然它们设备状况良好，但却基本上报废了。因为设备制造商已经不再维护此设备以及与现在系统一起运行所需要的驱动程序了。
 
-Most drivers are already bundled in the Linux kernel (or as a kernel module). This is especially true when you're dealing with parts and peripherals a year or two old. With equipment that's been on the market for a while, Linux programmers have had the chance to develop drivers or integrate drivers from companies into the system. I've surprised more than just a few people by just attaching a Wacom graphics tablet, or a game controller, or a printer or scanner, to my Linux computer and immediately start using it, with no driver download, no installation, and little to no configuration.
+对于 Linux 来说，驱动程序要么由制造设备的厂商来开发，要么是由 Linux 的程序员来开发。这就可能会导致，某些驱动程序集成到操作系统的时间会被延迟（例如，新的设备可能要在发布后六个月才能在 Linux 系统上运行），但是对比旧货店的外围计算机设备来说，Linux 具有被长期支持的明显优势。
 
-Proprietary operating systems have two strategies for dealing with device drivers. They either restrict what devices you're supposed to use with the OS, or they pay companies to write and ship drivers along with the devices. The first method is uncomfortably restrictive, but most people are (sadly) acclimated to the idea that some devices only work on some platforms. The latter method is considered a luxury, but in practice, it also has the disadvantage of being dependent upon the driver programmer. There are plenty of computer peripherals in thrift stores in perfect condition but essentially dead because the manufacturer no longer maintains the drivers the devices require to function with modern systems.
+如果你发现一个要用驱动程序还没有进入发行版本，那你可以等几个月再试一次，有可能是驱动程序已经集成到了系统的镜像里了，或者可以到不同的发行版本 Linux 中找找有没有你要的驱动程序。
 
-For Linux, drivers are developed either by the manufacturer or by Linux programmers. This can cause some driver integration to be delayed (for instance, a new device might not work on Linux until six months after release), but it has the distinct advantage of long-term support.
+### 为 Linux 付费
 
-Should you find that there's a driver that hasn't made its way into a distribution yet. You can wait a few months and try again in hopes that a driver has been integrated into the installer image, or you can just try a different distribution to see whether the driver is there.
+通过购买预装 Linux 的 PC 或者经过 Linux 认证的 PC，可以避免所有的选择和关于兼容性的担忧。一些供应商提供预装 Linux，包括所有[System76][12]计算机，并选择 [Lenovo][13]型号。此外，所有的 Lenovo 型号都有[Linux 认证 ][14]的兼容性。
 
-### Paying for Linux
+这是迄今为止尝试使用 Linux 最简单的方法。
 
-You can avoid all the choices and any concern about compatibility by buying a PC already loaded with Linux or a PC certified for Linux. Several vendors are offering Linux pre-installed, including all [System76][12] computers, and select [Lenovo][13] models. Additionally, all Lenovo models are [Certified for Linux][14] compatibility.
+### 迈向 Linux
 
-This is by far the easiest way to try Linux.
+这是给你的一个挑战，去浏览自己电脑上安装的每个应用程序，并找到潜在对应的开源替代程序。选择一个你经常使用但不是都用的应用程序，在下次要用的时候换成开源的应用程序。花点时间学习新的应用程序，知道能够将它作为新的默认程序，或者直到你确定需要要用哪种程序。
 
-### Working toward Linux
-
-Here's a challenge for you. Go through each application you have installed, and find a potential open source replacement. Select an application you use frequently, but not daily, and the next time you're about to use it, launch the open source one instead. Take the time you need to learn the new application until you're either able to adopt it as your new default or until you determine that you need to try a different option.
-
-The more open source products you use, the more you'll be ready to launch into the exciting world of Linux. And eventually, you'll be running the Linux desktop, along with your favorite open source apps.
+随着你使用的开源产品越多，你就越准备好进入激动人心的 Linux 世界。 最后，你将会用上 Linux 桌面还有你最喜欢的开源应用程序。 
 
 --------------------------------------------------------------------------------
 
