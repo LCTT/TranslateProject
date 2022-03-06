@@ -7,61 +7,61 @@
 [#]: publisher: " "
 [#]: url: " "
 
-12款保护隐私的简洁软件
+12 Simple Tools to Protect Your Privacy
 ======
 
-数据是最宝贵的一项资产。
+Data is one of the most valuable assets available.
 
-无论影响好坏，数据收集技术都会一直存在。现实生活中，人们进行分析、研究以及学习，都需要各种各样的数据。
+For better or worse, data collection techniques aren’t going anywhere. To be practical, we need all sorts of data to analyze, study, and learn about things.
 
-当然，数据收集也会带来风险，比如不法机构会收集用户的浏览数据（或网络活动）。
+Of course, it also brings in the risk of exploiting the data collected, such as malicious agencies getting hold of your browsing data (or internet activity).
 
-匿名数据收集等技术虽然在不断发展，但在隐私保护这方面可能做的并不是十分完善。
+While data collection methods have improved over time (like anonymous collection practices), they may not be entirely privacy-friendly.
 
-不过先别担心，保护好自己的隐私并不是件难事。
+Fret not, you do not need to be an expert to protect your privacy.
 
-一些简洁的软件可以在不影响用户体验的前提下，增强用户的隐私保护。更重要的是，搞明白这些软件，你根本不需要着急花大把的时间。
+There are some simple tools to enhance your privacy, without compromising the user experience. And, the best thing—you do not need to waste time to research these options like there’s no tomorrow.
 
-本文将会推荐一些简洁的软件，可以轻松保护你的网络隐私。
+Here, I highlight such simple tools to guard your online privacy easily.
 
-### **一些增强隐私保护的简洁软件**
+### **Basic Tools to Step Up Your Online Privacy**
 
-保护数据安全最有效的办法就是，关注你使用频率最高的产品。
+The best way to protect your data is to focus on the options that you interact with the most.
 
-担心数据安全是必要的，但不能顾此失彼，忘记产品最基本的用途。
+While you have to right to be paranoid, you shouldn’t forget the practical use-cases.
 
-比如，你使用一款去中心化的社交软件，但是你的亲朋好友都不去用它，他们大多时候还是使用WhatsApp。那么，你的这种做法就没有任何意义。
+For instance, it is useless to opt for a decentralized messenger that none of your friends/family uses and end up using WhatsApp most of the time.
 
-因此，我们在这里列出了一些非常简明易用的软件，并将它们归为以下几类：
+Hence, we list some of the options that you can easily try without making any special efforts, categorizing them as:
 
-  * [网页浏览器][1]
-  * [VPN服务][2]
-  * [搜索引擎][3]
-  * [社交软件][4]
-  * [操作系统][5]
-  * [密码管理][6]
+  * [Web Browser][1]
+  * [VPN Services][2]
+  * [Search Engines][3]
+  * [Messengers][4]
+  * [Operating System][5]
+  * [Password Manager][6]
 
 
 
-### 关注隐私保护的开源网页浏览器
+### Open-Source Web Browsers for Privacy
 
-从办理银行业务到访问社交媒体，网页浏览器能帮你做各种事情。
+From banking to social media access, the web browser helps you. 
 
-如果你选择了一款提供优质安全服务以及强大隐私保护功能的网页浏览器，你几乎就可以高枕无忧了。
+If you choose a web browser that offer good security and solid privacy features, you end up with a few things to worry about.
 
-我们推荐的[最好的网页浏览器][7]，包括:
+Among our [top choices for web browsers][7], some recommendations include:
 
 #### 1\. Tor Browser
 
 ![][8]
 
-Tor Browser 是一款免费开源的网页浏览器，提供强大的隐私保护功能。它是火狐浏览器的定制版本。
+Tor Browser is a free and open-source browser with solid privacy features. It is a customized version of Firefox.
 
-Tor Browser 使用 [Tor network][9] 进行连接，通过多点发送网络请求，隐藏IP地址和位置信息。
+It utilizes the [Tor network][9] for connection, routing your internet requests through multiple points, hiding your IP address and location.
 
-在 Tor Browser 上浏览网页，几乎没有人可以追踪到你。
+When you browse a website/service through the Tor Browser, it is almost impossible to trace you back.
 
-然而，Tor Browser 的浏览体验可能稍差一些，它的响应速度极慢。所以，如果你不介意这一点，Tor Browser 绝对是你的不二之选。
+However, the browsing experience can be incredibly slow. So, if you are ready for the trade-off, Tor Browser can be the perfect pick.
 
 [Tor Browser][10]
 
@@ -69,11 +69,11 @@ Tor Browser 使用 [Tor network][9] 进行连接，通过多点发送网络请�
 
 ![][11]
 
-可以说，火狐是最优秀的[开源浏览器][12]。也难怪[我会一次又一次地回归火狐][13].
+Firefox is arguably the most impressive [open-source browser][12]. No wonder [I keep coming back to it][13].
 
-火狐浏览器不仅内置最强大的隐私保护功能，而且还经常引入新的工业标准，以确保用户安全地浏览网页。
+It includes some of the best privacy protection features and often introduces new industry standards to secure your web experience.
 
-你可以在火狐上安装一些[最好的开源插件][14]，然后自行配置，更好地保护自己的隐私。
+You can install some of the [best open-source add-ons][14] and customize the options to further enhance privacy protections. 
 
 [Firefox][15]
 
@@ -81,29 +81,29 @@ Tor Browser 使用 [Tor network][9] 进行连接，通过多点发送网络请�
 
 ![][16]
 
-Brave 是 Linux 系统上最好的浏览器之一，用户体验清新简洁，外观与 Chrome 有些相似。
+Brave is one of the best browsers available for Linux. It offers a clean user experience and resembles a bit like Chrome.
 
-Brave 凭借其强大的跟踪保护功能，以及打开之后就会自动运行的跟踪拦截器，一直以来都是 Linux 用户的最佳选择。
+Starting from its tracking protection, and aggressive tracker blocking out-of-the-box, Brave can be a solid option.
 
-阅读我们的文章：[Brave vs. Firefox][17]，进一步了解 Brave 的优点与缺陷。
+You can learn more about its advantages and trade-offs in our [Brave vs Firefox comparison][17] article.
 
 [Brave][18]
 
-### 保护隐私的VPN服务
+### VPN Services to Enhance Privacy
 
-无论你使用的是电脑还是手机，VPN（虚拟专用网络）都可以全程保护你的网络连接。
+A VPN (Virtual Private Network) helps secure your internet connection overall, whether you are using a computer or a smartphone.
 
-VPN 还可以隐藏你真实的IP地址与位置，让你轻松浏览受限制的内容。
+It also hides your original IP address, location, and unblocks access to any restricted and censored content.
 
-[专注隐私保护的VPN服务][19]有很多，这里我们推荐以下几款：
+While there are a lot of [privacy-focused VPN services][19], we list a few here:
 
 #### 1\. ProtonVPN
 
 ![][20]
 
-[ProtonVPN][21] 是一款强大的隐私保护服务，提供桌面版和移动版的开源客户端。
+[ProtonVPN][21] is an impressive privacy-centric service with open-source applications for desktop and mobile.
 
-你可以免费使用这款软件；也可以选择付费，享受恶意软件拦截以及跟踪保护等功能。ProtonVPN还可以与 ProtonMail 一起付费订阅。
+You can use it for free, but you need to upgrade the subscription to get access to features like malware blocking and tracker protection. It also offers bundled subscription plans with ProtonMail.
 
 [ProtonVPN][21]
 
@@ -111,27 +111,27 @@ VPN 还可以隐藏你真实的IP地址与位置，让你轻松浏览受限制�
 
 ![][22]
 
-Mullvad 也提供了开源的客户端。有趣的是，它不需要你使用邮箱注册。
+Mullvad also offers an open-source client and is an interesting VPN service that needs no email address to sign up.
 
-你只需生成一个用户ID，然后就可以使用加密货币或信用卡购买服务。
+All you have to do is generate a user ID, and make payment for the subscription using cryptocurrency/credit card.
 
 [Mullvad VPN][23]
 
-### 使用私人搜索引擎，确保网络活动的安全
+### Private Search Engines to Keep Your Internet Activity Safe
 
-网上浏览信息会透露你的身份和工作。
+What you search on the web, tells a lot about you and your work.
 
-不法组织可能会利用你的搜索内容，对你实施欺诈。
+The data on your search activity can be exploited by malicious parties to easily lure you into a scam.
 
-所以，能够保护隐私的搜索引擎就显得十分重要了。我推荐以下两款：
+So, a privacy-friendly search engine should help you get there. I prefer using these two options:
 
 #### 1\. DuckDuckGo
 
 ![][24]
 
-DuckDuckGo 是最流行的[匿名搜索引擎][25]之一，声明不会记录用户的任何浏览数据。
+DuckDuckGo is one of the most popular [private search engines][25] that claim not to record any of your browsing data.
 
-一直以来，DuckDuckGo 也在不断提升自身的搜索结果质量，所以一般情况下你都可以搜索到想要的内容。
+Over time, DuckDuckGo has also improved its search result quality, so you should get what you’re looking for most of the time.
 
 [DuckDuckGo][26]
 
@@ -139,27 +139,27 @@ DuckDuckGo 是最流行的[匿名搜索引擎][25]之一，声明不会记录用
 
 ![][27]
 
-Startpage 是一款很有趣的搜索引擎，外观和谷歌搜索相似，搜索结果与谷歌搜索同步。不过，它不会收集你的信息。
+Startpage is an interesting alternative that resembles the look of Google search and utilizes the same results, but without collecting your data.
 
-如果你想要获取和谷歌搜索最相似的搜索结果，并且还希望可以使用隐私保护功能，那么你可以试试 Startpage。
+If you want search results closest to Google and still want to have a number of privacy features, Startpage can be an option.
 
 [Startpage][28]
 
-### 使用安全的社交软件，保护聊天隐私
+### Secure Messenger to Protect Your Conversations
 
-无论是政府还是软件本身，如果你不想别人在未经同意下获取你的聊天记录，你需要使用具有隐私保护功能的社交软件。
+Whether it’s the government or the app itself, if you want no one to access your conversations except the intended recipient, private messengers should help.
 
-尽管大多数用户选择信赖WhatsApp，但是它并不是最有效的隐私保护解决方案。当然，Facebook Messenger就更不用考虑了。
+While most of the users swear by WhatsApp, it is not the most privacy-friendly solution. And, yes, Facebook Messenger is not even an option to consider.
 
-这里我推荐一些[能够代替WhatsApp的社交软件][29]：
+Here are some of the [best WhatsApp alternatives][29]:
 
 #### 1\. Signal
 
 ![][30]
 
-Signal 是一款开源的社交软件，支持端对端加密，[可安装在 Linux 桌面上][31]。
+Signal is an open-source messenger that supports end-to-end encryption and [can be installed on your Linux desktop][31].
 
-它也有一些隐私保护功能，可以保证聊天对话的安全。
+It also features several privacy features to keep the conversations safe.
 
 [Signal][32]
 
@@ -167,25 +167,25 @@ Signal 是一款开源的社交软件，支持端对端加密，[可安装在 Li
 
 ![][33]
 
-Threema 是一款付费软件，内置 Signal 的全部核心功能，无需手机号码即可登录使用。
+Threema is a paid application that features all the essentials from Signal without requiring your phone number.
 
-这款软件也提供了办公版本。如果你的亲朋好友愿意一次性花费3美元购买一款软件，那么Threema 是一个不错的选择。
+It also offers a separate version for work. Threema can be a good pick if your friends/family are willing to purchase the app with a one-time fee of about $3.
 
 [Threema][34]
 
-### 选用安全的操作系统，为隐私保护打好基础
+### Choose a Secure Operating System to Build the Foundation
 
-可以理解，为了满足个人需求，你[选择了 Windows，而没有选择 Linux][35]。
+It is understandable if you cannot [choose Linux over Windows][35] as per your requirements.
 
-但是，如果你为了保护隐私，想换个系统，可以考虑下面这些[安全的 Linux 发行版][36]。
+However, if you want to make the switch, to get complete privacy, here are some options among the [list of secure Linux distributions][36] available.
 
 #### 1\. Linux Mint
 
 ![][37]
 
-Linux Mint 可以满足日常所需，是一款非常出色的 Linux 发行版。它基于 Ubuntu，追求青出于蓝胜于蓝，[希望在一些方面做得更好][38]
+Linux Mint is a fantastic Linux distribution for everyday usage. It manages to do a [few things better than Ubuntu][38] while being based on it.
 
-Linux Mint 通过关注用户的选择以及常规的安全升级，确保操作系统的安全。
+It focuses on user choices and regular security updates to keep the operating system safe.
 
 [Linux Mint][39]
 
@@ -193,39 +193,39 @@ Linux Mint 通过关注用户的选择以及常规的安全升级，确保操作
 
 ![][40]
 
-Qubes OS 专注安全和隐私问题。对新手来说，使用起来可能比较困难。
+Qubes OS is a security-focused distro that can be overwhelming for beginners.
 
-不过，如果你想尝试体验一下最安全、最强大的隐私保护操作系统，那你一定要试试 Qubes OS。
+However, if you want to take the adventure of using one of the most secure/private OS, Qubes OS is a must-try.
 
 [Qubes OS][41]
 
-### 选择可靠的密码管理器，保护账号安全
+### Password Manager to Secure Accounts
 
-如果不法分子可以轻易获取你的账户信息，那么就算你准备再多的隐私措施，也无济于事。
+No amount of privacy measures will do any good if an attacker can easily access any of your online accounts.
 
-因此，你必须设置更强大、更复杂的密码。此外，要想做到这些，必须先有密码管理器。
+So, you must generate stronger and more complex passwords. And, without a password manager, it is tough to do that.
 
-[Linux 上最好的密码管理器][42]，我建议使用下面这个:
+Among the [best password managers for Linux][42], I’ll suggest using this:
 
 #### 1\. Bitwarden
 
 ![][43]
 
-这是一款开源的密码管理器，全部的主要功能均可免费使用。
+An open-source password manager that offers all the essential features for free.
 
-解锁这款软件的高级功能，每年只需花费10美元。
+If you want to unlock its premium features, it would cost you just $10 a year.
 
 [Bitwarden][44]
 
-### 总结
+### Wrapping Up
 
-专注隐私保护的软件有很多，数不胜数。
+There’s no end to the number of privacy-focused options available.
 
-但是，很多都只是打着“隐私保护”的幌子，实际上不过是营销噱头；还有一些则根本无法使用。
+After all, a major chunk of those just use “privacy” as a marketing gimmick or end up being unusable for end-users.
 
-所以，坚持使用那些自己用过的、适合自己的软件，才是比较好的选择。
+So, it is better to stick with some tried and tested services to use what works best for you.
 
-以上软件你喜欢哪些？最喜欢的又是哪一款呢？请在下方评论留言。
+What do you prefer to use among the tools listed? Do you have a favorite? Share your thoughts in the comments below.
 
 --------------------------------------------------------------------------------
 
@@ -233,7 +233,7 @@ via: https://itsfoss.com/privacy-tools/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[aREversez](https://github.com/aREversez)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
