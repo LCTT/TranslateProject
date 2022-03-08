@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "aREversez"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14337-1.html"
 
 12 款简单好用的保护隐私的软件
 ======
