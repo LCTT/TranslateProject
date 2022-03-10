@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/3/contribute-open-source-2022"
 [#]: author: "Opensource.com https://opensource.com/users/admin"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
