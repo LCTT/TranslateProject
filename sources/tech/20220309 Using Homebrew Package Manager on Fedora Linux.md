@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/using-homebrew-package-manager-on-fedora-linux/"
 [#]: author: "Mehdi Haghgoo https://fedoramagazine.org/author/powergame/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
