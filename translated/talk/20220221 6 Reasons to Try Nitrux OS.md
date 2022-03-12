@@ -7,110 +7,110 @@
 [#]: publisher: " "
 [#]: url: " "
 
-6 Reasons to Try Nitrux OS
+6大理由，让你尝试 Nitrux 系统
 ======
 
-Nitrux OS may not be one of the mainstream Linux distributions, but it is surely one of the unique offerings.
+Nitrux 系统也许算不上 Linux 的主流发行版本之一，但它绝对是一款极其独特的产品。
 
-We have also [interviewed its creator Uri Herrera][1] in 2019 to learn how they initially aimed to go beyond the traditional Linux distributions.
+2019 年，我们[采访了 Nitrux 的创始人 Uri Herrera][1]，了解到 Herrera 等人开发这款系统的初衷：超越 Linux 传统的发行版本。
 
-And, since then, we’ve come a long way to its recent [Nitrux 2.0 release][2].
+自那之后，过了许久，我们终于迎来了 [Nitrux 2.0 版本][2]。
 
-Not to forget, they also [ditched Ubuntu as its base in favor of Debian][3], last year.
+不要忘了，Nitrux 在去年[放弃基于 Ubuntu 而选择 Debian][3]。
 
-So, considering a lot has happened, and it’s been around for a few years now. Should you give it a try?
+考虑到自 Nitrux 发行以来的数年间，也发生了许多大事，所以你应该尝试一下这款系统。
 
-Here, I highlight some reasons to try [Nitrux OS][4]:
+这里，我要分享一些体验 [Nitrux 系统][4]的理由：
 
-### 1\. It Isn’t Ubuntu-based
-
-![][5]
-
-Most Linux distributions recommended for everyday use are based on Ubuntu.
-
-Of course, our [recommendations for beginners][6] also include mostly Ubuntu Linux, but don’t let that fool you.
-
-The only reason we recommend Ubuntu-based distros is it’s an easy-to-use distro with direct support for a lot of commercial software products.
-
-So, if you are not entirely new to Linux, and want to try something refreshing, stable but familiar, Nitrux OS as a Debian-based distro can be a good fit.
-
-You can work your way through the terminal without a steep learning curve, whenever needed.
-
-If you are curious, refer to our [comparison between Debian and Ubuntu][7] to learn more.
-
-### 2\. Focus on AppImages
+### 1\. Nitrux 不再基于 Ubuntu
 
 ![][5]
 
-[AppImage][8] is a universal packaging system that does not depend on anything. You do not need a package manager, or any dependencies on your distro, to make it work.
+人们一般都会推荐基于 Ubuntu 的 Linux 发行版本，来满足日常所需。
 
-It aims to be portable, efficient and does not need any setup/installation. Just like portable Windows executables.
+当然，在我们[为新手推荐的 Linux 系统][6]中，也包括了许多基于 Ubuntu 的版本，但是请不要误会。
 
-And, Nitrux OS focuses on using AppImage applications to give you a seamless app experience.
+我们之所以推荐基于 Ubuntu 的发行版本，唯一的理由在于它们简单易用，支持大量的商业软件。
 
-The NX Software Center is a GUI to manage and install AppImage applications built using MauiKit (its UI framework).
+所以，如果你不是刚开始使用 Linux 系统，同时也想尝试既能让你耳目一新，又不至于使你感到陌生，而且十分稳定的发行版，基于 Debian 的 Nirtux 是一个不错的选择。
 
-### 3\. A KDE-Based Distro
+你完全不需要在短期内迅速了解这款系统，就可以得心应手地使用终端来完成各项工作。
+
+感兴趣的话，可以参考我们的文章 [Debian vs Ubuntu][7]，了解更多.
+
+### 2\. 专注 AppImages
 
 ![][5]
 
-Nitrux OS is one of the [best Linux distributions featuring KDE.][9] If you dislike using GNOME or any other desktop environment (DE) out-of-the-box, KDE is a nice alternative to try.
+[AppImage][8] 是通用的软件包系统，没有任何依赖。你不需要在 Linux 上安装任何软件包管理器或者依赖包，就可以直接运行 AppImage 应用。
 
-In case you didn’t know, [KDE can be customized in many ways][10] compared to other DEs.
+AppImage 旨在打造便携、高效的软件包系统，省去安装的步骤，与 Windows 系统的便携版软件非常相似。
 
-So, if you want to personalize your desktop with the widest range of options, KDE lets you do that without much effort.
+Nitrux 操作系统专注 AppImage 应用软件，为你带来流畅的用户体验。
 
-### 4\. Unique User Experience
+NX 软件中心是一个 GUI 程序，用户可以通过使用 Mauikit（该软件中心的 UI 框架），安装、管理 AppImage 应用程序。
+
+### 3\. 基于 KDE 桌面环境的发行版本
+
+![][5]
+
+Nitrux 操作系统是[搭载 KDE 桌面环境中最好的 Linux 发行版本][9]之一。 如果你不喜欢 GNOME 或者其他开箱即用的桌面环境，KDE 会是一个不错的选择。
+
+也许你还不知道, 相较于其他桌面环境，[KDE 支持自定义配置][10]。
+
+因此，在 KED 桌面环境下，你可以毫不费力地打造自己的个性化桌面。
+
+### 4\. 独特的用户体验
 
 ![][11]
 
-Nitrux UX combines the best of KDE, and Qt technologies along with its tweaks to give you a refreshing user experience.
+Nitrux 的用户体验设计包括了最好的 KDE 桌面环境与 Qt 技术及其调整工具，为你带来全新的用户体验。
 
-While it does not feel completely alien, your workflow will feel a bit different when using Nitrux OX.
+虽然在使用 Nitrux 操作系统时，你不会觉得十分陌生，但是还是会感到有些许的不同。
 
-Even without any customizations from your side, the out-of-the-box experience is solid enough to count it as one of the [most beautiful distributions][12].
+即使你没有对 Nitrux 系统做任何自定义的设置，开箱即用的体验也足以让它成为[最优雅的发行版][12]之一。
 
 ### 5\. Maui Shell
 
 ![][11]
 
-[Maui Shell][13] is a key highlight of Nitrux’s user experience. Recently, it has managed to put some promising work presenting a convergent interface for both desktop and mobiles/tablets.
+[Maui Shell][13] 是 Nitrux 用户体验的亮点之一。近来，Maui Shell 得到了进一步的完善，将同时支持桌面端和移动端。
 
-While it hasn’t matured enough, it already looks pretty. And, as exciting as [System76’s upcoming Rust-based desktop environment][14].
+尽管 Maui Shell 目前还不成熟，但是外观看起来十分大气简约，就像 [System76 将要推出基于 Rust 的桌面环境][14]一样令人兴奋。
 
-It can be one of the most important reasons to try Nitrux OS to see it unfold a new era of the desktop experience, who knows?
+这也是我们推荐尝试 Nitrux 系统最重要的原因之一。时间会证明，Nitrux 系统是否将会开启桌面体验的全新时代。
 
-### 6\. Xanmod Kernel
+### 6\. Xanmod 内核
 
 ![][5]
 
-[Xanmod Kernel][15] is a customized version of the mainline Linux Kernel with performance tweaks and additional features. This should help you improve the desktop experience.
+[Xanmod 内核][15] 是主流 Linux 内核的定制版本，对性能进行了适当的调整，附加了一些其他功能。有了它，你的桌面体验一定能得到大幅提升。
 
-Starting with Nitrux 2.0, Xanmod Kernel will be the default Linux Kernel to provide you with an enhanced desktop experience.
+自 2.0 版本起，Nitrux 操作系统选用 Xanmod 作为默认内核，为用户提供“升级版”的桌面体验。
 
-You also get the option to choose other Linux Kernels like Liquorix and Libre, each of their benefits.
+当然你也可以选择其他 Linux 内核，比如 Liquorix 和 Libre，它们都有着各自的优点。
 
-Or, you can also choose to go with mainline LTS Linux Kernel, if you do not prefer Xanmod. So, you’ve complete freedom and the ability to seamlessly choose a different kernel if you want to ditch the default.
+如果你不喜欢 Xanmod，也可以选择主流长期支持版的内核。所以说，在 Nitrux 操作系统上，你完全可以修改使用不同的内核。
 
 [Nitrux OS][4]
 
-### Wrapping Up
+### 总结
 
-It is important to consider all the risks when switching from a mainstream distribution to options like Nitrux OS.
+诚然，从主流发行版转到像 Nitrux 这样的操作系统，需要考虑各种风险。
 
-But, **I’d like you to give this a thought:**
+但是，**我建议你好好考虑一番：**
 
-Distributions like Nitrux OS passionately try to improve things as per their vision.
+Nitrux 等发行版本在每一次版本升级中，都会尽全力去完善各项功能。
 
-Even without corporate backing or massive funds to help them, they have been able to develop this amazing distribution, developed [Maui project][16], and the interesting Maui shell.
+尽管背后没有强大的企业和财力支撑，他们依然可以开发出这款令人惊艳的发行版本、进阶版的 [Maui 项目][16]，以及别开生面的 Maui shell.
 
-So, I think we should try our best to support them in any way we can.
+所以，我认为，我们也应该以己所能,尽己之力，支持这些优秀的发行版。
 
-That being said, every Linux distribution comes with its share of issues. Whenever you take a leap with a new distro, you might want to give it some time before getting comfortable with it as your daily driver.
+不过话说回来，每一款 Linux 发行版都会或多或少地存在一些问题。当你试用一款新的发行版本时，你需要给它点儿时间，在最终将它作为日常使用的操作系统之前，慢慢地去适应它。
 
-So, I would suggest trying it in your spare time or setting up a virtual machine to test things out.
+换言之，我推荐你在业余时间试用 Nitrux 操作系统，或者直接装个虚拟机来一探究竟。
 
-_I_‘_d be curious if you like/hate the experience. Let me know your thoughts after trying it out in the comments below._
+_我很关注大家对这篇文章的看法，请在下方评论留言_
 
 --------------------------------------------------------------------------------
 
