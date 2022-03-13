@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/03/10/how-to-use-undocumented-web-apis/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
