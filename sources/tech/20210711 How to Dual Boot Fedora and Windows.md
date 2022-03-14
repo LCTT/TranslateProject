@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/dual-boot-fedora-windows/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (robsean)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

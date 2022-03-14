@@ -1,18 +1,18 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Bulletin Board Systems: The VICE Exposé)
-[#]: via: (https://twobithistory.org/2020/02/02/bbs.html)
-[#]: author: (Two-Bit History https://twobithistory.org)
+[#]: subject: "Bulletin Board Systems: The VICE Exposé"
+[#]: via: "https://twobithistory.org/2020/02/02/bbs.html"
+[#]: author: "Two-Bit History https://twobithistory.org"
+[#]: collector: "lujun9972"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Bulletin Board Systems: The VICE Exposé
 ======
 
 By now, you have almost certainly heard of the dark web. On sites unlisted by any search engine, in forums that cannot be accessed without special passwords or protocols, criminals and terrorists meet to discuss conspiracy theories and trade child pornography.
 
-We have reported before on the dark web’s [“hurtcore” communities][1], its [human trafficking markets][2], its [rent-a-hitman websites][3]. We have explored [the challenges the dark web presents to regulators][4], the rise of [dark web revenge porn][5], and the frightening size of [the dark web gun trade][6]. We have kept you informed about that one dark web forum where you can make like Walter White and [learn how to manufacture your own drugs][7], and also about—thanks to our foreign correspondent—[the Chinese dark web][8]. We have even attempted to [catalog every single location on the dark web][9]. Our coverage of the dark web has been nothing if not comprehensive.
+We here at VICE headquarters have reported before on the dark web’s [“hurtcore” communities][1], its [human trafficking markets][2], its [rent-a-hitman websites][3]. We have explored [the challenges the dark web presents to regulators][4], the rise of [dark web revenge porn][5], and the frightening size of [the dark web gun trade][6]. We have kept you informed about that one dark web forum where you can make like Walter White and [learn how to manufacture your own drugs][7], and also about—thanks to our foreign correspondent—[the Chinese dark web][8]. We have even attempted to [catalog every single location on the dark web][9]. Our coverage of the dark web has been nothing if not comprehensive.
 
 But I wanted to go deeper.
 

@@ -1,18 +1,18 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Robust and Race-free Server Logging using Named Pipes)
-[#]: via: (https://theartofmachinery.com/2020/10/10/logging_with_named_pipes.html)
-[#]: author: (Simon Arneaud https://theartofmachinery.com)
+[#]: subject: "Robust and Race-free Server Logging using Named Pipes"
+[#]: via: "https://theartofmachinery.com/2020/10/10/logging_with_named_pipes.html"
+[#]: author: "Simon Arneaud https://theartofmachinery.com"
+[#]: collector: "lujun9972"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Robust and Race-free Server Logging using Named Pipes
 ======
 
 If you do any server administration work, you’ll have worked with log files. And if your servers need to be reliable, you’ll know that log files are common source of problems, especially when you need to rotate or ship them (which is practically always). In particular, moving files around causes race conditions.
 
-Thankfully, there are better ways. With named pipes, you can have a simple and robust logging framework, with no race conditions, and without patching your servers to support some network logging protocol.
+Thankfully, there are better ways. With named pipes, you can have a simple and robust logging stack, with no race conditions, and without patching your servers to support some network logging protocol.
 
 ### The problems with rotating log files
 
@@ -45,7 +45,9 @@ That’s okay because *nix “everything is a file” lets us easily get a file 
 Maybe you’ve seen pipes in pipelines like this:
 
 ```
-$ sort user_log.txt | uniq
+
+    $ sort user_log.txt | uniq
+
 ```
 
 The pipe connecting `sort` and `uniq` is a temporary, anonymous communication channel that `sort` writes to and `uniq` reads from. Named pipes are less common, but they’re also communication channels. The only difference is that they persist on the filesystem as if they were files.
@@ -53,16 +55,20 @@ The pipe connecting `sort` and `uniq` is a temporary, anonymous communication ch
 Open up a terminal and `cd` into some temporary working directory. The following creates a named pipe and uses `cat` to open a writer:
 
 ```
-$ mkfifo p
-$ # This cat command will sit waiting for input
-$ cat > p
+
+    $ mkfifo p
+    $ # This cat command will sit waiting for input
+    $ cat > p
+
 ```
 
 Leave that `cat` command waiting, and open up another terminal in the same directory. In this terminal, start your reader:
 
 ```
-$ # This will sit waiting for data to come over the pipe
-$ cat p
+
+    $ # This will sit waiting for data to come over the pipe
+    $ cat p
+
 ```
 
 Now as you type things into the writer end, you’ll see them appear in the reader end. `cat` will use line buffering in interactive mode, so data will get transferred every time you start a new line.
