@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/native-go-fuzz-testing"
 [#]: author: "Gaurav Kamathe https://opensource.com/users/gkamathe"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
