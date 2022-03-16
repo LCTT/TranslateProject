@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/uninstall-chrome-from-ubuntu/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: "lkxed"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
