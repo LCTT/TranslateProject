@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/gawk-letter-game)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (lkxed)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
