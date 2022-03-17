@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lkxed)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14364-1.html)
 
 五个提升你的 Git 水平的命令
 ======
