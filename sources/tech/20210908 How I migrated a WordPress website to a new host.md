@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/migrate-wordpress"
 [#]: author: "David Both https://opensource.com/users/dboth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
