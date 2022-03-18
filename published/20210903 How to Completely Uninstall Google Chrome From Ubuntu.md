@@ -3,9 +3,9 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14368-1.html"
 
 如何从 Ubuntu 中彻底卸载 Google Chrome
 ======
@@ -22,7 +22,7 @@
 
 ![Illustration for removing Google Chrome from Ubuntu][5]
 
-你可能使用了图形界面的方式安装 Google Chrome，但不幸的是，你将不得不使用命令行的方式来移除它，除非你选择 [使用 Synaptic 软件包管理器][6]。
+你可能使用了图形界面的方式安装 Google Chrome，但不幸的是，你得使用命令行的方式来移除它，除非你选择 [使用 Synaptic 软件包管理器][6]。
 
 使用命令行来做这件事也不是很难。首先，按下 [键盘上的 Ctrl+Alt+T 快捷键来打开一个终端][7]。
 
@@ -36,7 +36,7 @@ sudo apt purge google-chrome-stable
 
 当你输入密码的时候，屏幕上什么也不会显示。这是 Linux 系统的正常行为。继续输入密码，完成后按下回车键。
 
-此时它会让你确认是否删除 Google Chrome，输入 Y 来确认，或者直接按下回车键也行。
+此时它会让你确认是否删除 Google Chrome，输入 `Y` 来确认，或者直接按下回车键也行。
 
 ![Removing Google Chrome for Ubuntu][8]
 
@@ -48,13 +48,13 @@ sudo apt purge google-chrome-stable
 
 如果你想要彻底地移除 Google Chrome，你可能会想要把这些文件也移除掉。那么，下面是你需要做的：
 
-切换到 .config 目录。 _**注意 config 前面有个点**_，这是 [Linux 隐藏文件和目录的方式][10]。
+切换到 `.config` 目录。 **注意 config 前面有个点**`，这是 [Linux 隐藏文件和目录的方式][10]。
 
 ```
 cd ~/.config
 ```
 
-然后移除 google-chrome 目录：
+然后移除 `google-chrome` 目录：
 
 ```
 rm -rf google-chrome
@@ -62,11 +62,11 @@ rm -rf google-chrome
 
 ![Removing the leftover Google Chrome settings from Ubuntu][11]
 
-你也可以仅使用一个命令 rm -rf ~/.config/google-chrome 来删除它。因为本教程面向的对象是完完全全的初学者，所以我把这个命令拆分为以上两个步骤来完成，这样可以减少由于拼写问题造成的可能错误。
+你也可以仅使用一个命令 `rm -rf ~/.config/google-chrome` 来删除它。因为本教程面向的对象是完完全全的初学者，所以我把这个命令拆分为以上两个步骤来完成，这样可以减少由于拼写问题造成的可能错误。
 
-小技巧
-
-想要你的终端和截图里看起来一样漂亮吗？试试这些 [终端定制小技巧][12]。
+> 小技巧
+>
+> 想要你的终端和截图里看起来一样漂亮吗？试试这些 [终端定制小技巧][12]。
 
 我希望这篇快速的入门技巧可以帮助你在 Ubuntu 上摆脱 Google Chrome。
 
@@ -77,7 +77,7 @@ via: https://itsfoss.com/uninstall-chrome-from-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
