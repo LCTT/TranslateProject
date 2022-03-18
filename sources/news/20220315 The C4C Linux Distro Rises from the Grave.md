@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/c4c-linux-distro-revived/"
 [#]: author: "John Paul https://news.itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
-[#]: translator: "lkxed"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
