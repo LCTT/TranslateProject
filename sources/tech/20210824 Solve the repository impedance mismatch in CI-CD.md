@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/impedance-mismatch-cicd"
 [#]: author: "Evan "Hippy" Slatis https://opensource.com/users/hippyod"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
