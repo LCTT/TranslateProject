@@ -28,35 +28,38 @@ Steam Deck已经在努力增强对Linux平台的游戏支持。
 
 ![][7]
 
-If you’re curious: **Heroic Bash Launcher** _is a tool that creates launch scripts (.sh files) for all installed Heroic games and allows you to launch the game directly from the terminal or game frontend/launcher without having any need to open Heroic._
+如果你好奇：**Heroic Bash Launcher**_是一个为已安装的英雄游戏创建启动脚本(.sh文件)的工具，让你方便从终端或者 前端启动器启动游戏，而不心打开英雄。_
 
-Here’s how it all went down (as per my brief chat with the developer of Heroic Bash Launcher):
+这里是它怎么执行的(根据我与英雄Bash Launcher开发者的简短交谈):
 
-Initially, with Epic Games Store experiment on Steam Deck, the Steam controller did not work, considering the Epic Games Store ran as a “Non-Steam game” using the Steam client.
+首先，在Steam Deck上通过Epic游戏商店实验，Steam控制器不工作，考虑到Epic游戏商店作为一个“非Steam游戏”使用Steam客户端运行。
 
-So, the developer of Heroic Bash Launcher, [Rishabh Moharir][8] (also a fellow writer here) suggested using his tool to make it work by following his [wiki guide on GitHub][9].
+所以，英雄Bash Launcher的开发者, [Rishabh Moharir][8] (也是这里的一位作者)建议使用他的工具来让它工作，根据他的[GitHub上的wiki指南][9].
 
-The Heroic Bash Launcher works with Epic Games Store on a Linux desktop. So, it was worth a try!
+英雄Bash启动器和Epic游戏商店一起运行在一个Linux桌面上。所以，这值得一试！
 
-And, fortunately, it worked!
+然后，幸运地，它工作了。
 
-### Installing Epic Games Store on Steam Deck
 
-First, you need to install the **Heroic Games Launcher** on Steam Deck using the available AppImage file in the **Desktop mode**.
+### 在Steam Deck上安装Epic游戏商店
 
-Once done, you need to log in and download the game of your choice.
 
-Next, you need to download the latest binary files for [legendary][10] and set it as the alternative legendary binary from the launcher’s settings.
 
-You need to configure and set the compatibility layer to Proton 7.0 from the game settings in the launcher.
+首先，你需要使用**桌面模式**的AppImage文件，在Steam Deck安装**Heroic游戏启动器**。
 
-That’s when you need to download the latest [Heroic Bash Launcher binary][11] and run it.
+一旦完成，你需要登陆和下载你选择的游戏。
 
-Finally, you have to add the game to Steam (to find it in Steam Deck’s UI) following the [official wiki guide on GitHub][9].
+下一步，你需要下载最新的[legendary][10]的二进制文件，以及在启动器的设置中把它设为可选的legendary二进制文件。
 
-Overall, it sure took a while for tinkerers to make it work. And, if you are still confused, you can find the same set of steps with all the details in the [wiki][12] put together by the Heroic Games Launcher team (or refer to the video above).
+你需要在启动器的游戏设置中配置和设置Proton 7.0的兼容层。
 
-To me, it sounds doable and should not be an overwhelming process for most Steam Deck users as of now. Unfortunately, I can’t get my hands on the Steam Deck in India (yet).
+这时你需要下载最新的[英雄Bash启动器二进制文件][11]，然后运行它。
+
+最后，你不得不根据这个[GitHub上的官方wiki指南][9]把游戏添加到Steam(在Steam Deck的界面找到它)。
+
+总之，对于“臭皮匠”它肯定需要花好大一会儿才能使其工作。另外，如果你仍然困惑，你可以找到相同的详细步骤在[wiki][12]上，这是英雄游戏启动器团队整理的(或者上面的视频)。
+
+对于我，这听起来可行，应该不会超越大多数 用户的能力。不幸的是，我不能让我的手伸到印度的Steam Deck。
 
 As for the future of Epic Games Store on Steam Deck, we can only hope for the best!
 
