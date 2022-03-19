@@ -7,7 +7,7 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Epic游戏商店现在在Steam Deck上可用啦
+Epic游戏商店现在可在Steam Deck上使用啦
 ======
 
 Steam Deck已经在努力增强对Linux平台的游戏支持。
