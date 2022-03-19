@@ -12,17 +12,17 @@ Epic游戏商店现在可在Steam Deck上使用啦
 
 Steam Deck已经在努力增强对Linux平台的游戏支持。
 
-运行在**Steam OS 3.0**（基于Arch）上，以KDE Plasma桌面为特色。 感谢 Valve 没有锁定平台并让用户进行试验。 
+它运行在**Steam OS 3.0**（基于Arch）上，并具有KDE Plasma桌面环境。 感谢Valve没有锁定平台并让用户进行试验。 
 
-尽管它不是每个人都能用，但对于 Nintendo Switch这是一个令人兴奋有硬件挑战。
+尽管它不是每个人都可以用，但这是一款令人兴奋有硬件，挑战手持式的Nintendo Switch。
 
-它可能不会支持所有流行的游戏(比如Destiny 2, Fortnite), 但它在往3A和深度内容的方向上作出好的进步。你可以到官网页面[Deck Verified][1]查看支持游戏的最新信息。
+它可能还不支持所有流行的游戏(比如《命运 2》、《堡垒之夜》), 但它在几个3A和独立游戏的方面取得了不错的进展。你可以到官方页面[Deck认证][1]查看有关支持游戏的最新信息。
 
-现在，更令人激动的是，Steam Deck也可以使用[Epic Games Store][2] (**unofficially**)来运行游戏。但是，怎样运行呢，我们一起看下：
+现在，更令人激动的是，事实证明Steam Deck也可以使用[Epic游戏商店][2](**非官方**)来运行游戏。但是，怎样运行呢，让我们来一探究竟。
 
-### 通过英雄游戏启动器使用Epic游戏商店
+### 将英雄游戏启动器和Epic游戏商店一起使用
 
-是的，相同的[Heroic Games launcher][3][去年][4]正在制作, 同时已经已知可以工件在一个Linux桌面上。
+是的，与[去年][4]制作的[英雄游戏启动器][3]相同, 并且已知它可以运行在Linux桌面上。
 
 另外。感谢Liam Dawe(通过[GamingOnLinux][5])，已经和尊敬的开发者一道，成功在Steam Deck测试了Heroic Games Launcher (and [Heroic Bash Launcher][6])。
 
