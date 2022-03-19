@@ -7,24 +7,24 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Epic Games Store Now Works on Steam Deck
+Epic游戏商店现在在Steam Deck上可用啦
 ======
 
-Steam Deck is already making waves to enhance the game support for the Linux platform.
+Steam Deck已经在努力增强对Linux平台的游戏支持。
 
-It runs on **Steam OS 3.0** (based on Arch) and features KDE Plasma. Kudos to Valve for not locking down the platform and letting users experiment with it.
+运行在**Steam OS 3.0**（基于Arch）上，以KDE Plasma桌面为特色。 感谢 Valve 没有锁定平台并让用户进行试验。 
 
-While it is not available for everyone, it is an exciting piece of hardware challenging handheld Nintendo Switch.
+尽管它不是每个人都能用，但对于 Nintendo Switch这是一个令人兴奋有硬件挑战。
 
-It may not support all the popular titles yet (like Destiny 2, Fortnite), but it is making good progress with several AAA and indie titles. You can head to the official page of [Deck Verified][1] to check the latest information about supported games.
+它可能不会支持所有流行的游戏(比如Destiny 2, Fortnite), 但它在往3A和深度内容的方向上作出好的进步。你可以到官网页面[Deck Verified][1]查看支持游戏的最新信息。
 
-Now, to make things more exciting, it turns out that Steam Deck can also run games using the [Epic Games Store][2] (**unofficially**). But, how? Let’s find out.
+现在，更令人激动的是，Steam Deck也可以使用[Epic Games Store][2] (**unofficially**)来运行游戏。但是，怎样运行呢，我们一起看下：
 
-### Using the Epic Games Store with Heroic Games Launcher
+### 通过英雄游戏启动器使用Epic游戏商店
 
-Yes, it’s the same [Heroic Games launcher][3] that was in the making [last year][4], and it is already known to work on a Linux desktop.
+是的，相同的[Heroic Games launcher][3][去年][4]正在制作, 同时已经已知可以工件在一个Linux桌面上。
 
-And, thanks to Liam Dawe (via [GamingOnLinux][5]), for successfully testing the Heroic Games Launcher (and [Heroic Bash Launcher][6]) on Steam Deck while coordinating with the respective developers.
+另外。感谢Liam Dawe(通过[GamingOnLinux][5])，已经和尊敬的开发者一道，成功在Steam Deck测试了Heroic Games Launcher (and [Heroic Bash Launcher][6])。
 
 ![][7]
 
@@ -68,7 +68,7 @@ via: https://news.itsfoss.com/epic-games-steam-deck/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/zd200572)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
