@@ -22,9 +22,9 @@ Steam Deck已经在努力增强对Linux平台的游戏支持。
 
 ### 通过英雄游戏启动器使用Epic游戏商店
 
-Yes, it’s the same [Heroic Games launcher][3] that was in the making [last year][4], and it is already known to work on a Linux desktop.
+是的，相同的[Heroic Games launcher][3][去年][4]正在制作, 同时已经已知可以工件在一个Linux桌面上。
 
-And, thanks to Liam Dawe (via [GamingOnLinux][5]), for successfully testing the Heroic Games Launcher (and [Heroic Bash Launcher][6]) on Steam Deck while coordinating with the respective developers.
+另外。感谢Liam Dawe(通过[GamingOnLinux][5])，已经和尊敬的开发者一道，成功在Steam Deck测试了Heroic Games Launcher (and [Heroic Bash Launcher][6])。
 
 ![][7]
 
