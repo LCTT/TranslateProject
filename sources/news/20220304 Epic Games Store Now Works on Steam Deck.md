@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/epic-games-steam-deck/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "zd200572"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -61,9 +61,9 @@ Steam Deck已经在努力增强对Linux平台的游戏支持。
 
 对于我，这听起来可行，应该不会超越大多数 用户的能力。不幸的是，我不能让我的手伸到印度的Steam Deck。
 
-As for the future of Epic Games Store on Steam Deck, we can only hope for the best!
+对于Epic游戏商店在Steam Deck的未来，我们只希望最好。
 
-_Have you tried Steam Deck yet? Let me know your thoughts in the comments down below._
+_你试过Steam Deck吗？在下面的评论区让我知道你的想法._
 
 --------------------------------------------------------------------------------
 
