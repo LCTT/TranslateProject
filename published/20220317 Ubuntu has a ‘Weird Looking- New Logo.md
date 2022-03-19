@@ -3,16 +3,20 @@
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14370-1.html"
 
 Ubuntu 有了一个“怪怪的”新标志
 ======
 
+> Ubuntu 已经重新设计了它的标志。不是每个人都会喜欢它。
+
+![](https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/ubuntu-unveils-new-logo.png?w=1200&ssl=1)
+
 Ubuntu 的标志包含了多个元素。对粉丝来说，橙色和紫色是 Ubuntu 的特征。
 
-除此之外，Ubuntu 的标志上还写有 `ubuntu` 的字样，以及一个橙色的图案。
+除此之外，Ubuntu 的标志上还写有 “ubuntu” 的字样，以及一个橙色的图案。
 
 ![Ubuntu’s old logo][1]
 
@@ -24,13 +28,13 @@ Ubuntu 的标志包含了多个元素。对粉丝来说，橙色和紫色是 Ubu
 
 ### Ubuntu 有了一个全新的标志
 
-但这个图案正在发生变化。[OMG! Ubuntu][3] 报道说，Canonical 重新设计了标志的元素、文字和朋友圈图案。
+但这个图案正在发生变化。[OMG! Ubuntu][3] 报道说，Canonical 重新设计了标志的元素、文字和这个“朋友圈”的图案。
 
-在旧的标志中，"朋友圈"图案在粗体 `ubuntu` 文字的右上角。
+在旧的标志中，“朋友圈”图案在粗体 “ubuntu” 文字的右上角。
 
-新的标志改变了这一点。"朋友圈"图案经过重新设计，看起来更平滑，而且被放置在一个橙色的矩形里。文字也有变化，现在使用了更细的字体。`Ubuntu` 中的 `U` 现在是大写的了。
+新的标志改变了这一点。“朋友圈”图案经过重新设计，看起来更平滑，而且被放置在一个橙色的矩形里。文字也有变化，现在使用了更细的字体。“Ubuntu” 中的 “U” 现在是大写的了。
 
-有趣的是，新标志不再包含注册商标符号 ® 了。
+有趣的是，新标志不再包含注册商标符号 “®” 了。
 
 ![][4]
 
@@ -40,19 +44,19 @@ Ubuntu 在官方博文中提到了关于新设计的 [这些变化][5]：
 
 你可以在这个视频中看到新标志的动画：
 
-![][6]
+[![][6]](https://img.linux.net.cn/static/video/Ubuntu%20new%20logo%20animation-9DHUyz54flA.mp4)
 
 这个新标志将会出现在 Ubuntu 22.04 发行版中。
 
 ### 这不是首次重新设计标志
 
-这并不是 Ubuntu 第一次重新设计它的标志。早在 Ubuntu 项目于 2004 年初创时，朋友圈图案有三种颜色：黄色、红色和橙色。在 2010 年的时候，它被重新设计，“搭在一起的人” 变成了白色，他们被一个橙色的圆圈围绕着。
+这并不是 Ubuntu 第一次重新设计它的标志。早在 Ubuntu 项目于 2004 年初创时，“朋友圈”图案有三种颜色：黄色、红色和橙色。在 2010 年的时候，它被重新设计，“搭在一起的人” 变成了白色，他们被一个橙色的圆圈围绕着。
 
 ![Image courtesy: OMG! Ubuntu][7]
 
 ### 你喜欢这个新标志吗？
 
-这次的新设计距离上一次已经过了 13 年。这个新”朋友圈“图案看起来还不错，但我还是觉得这个矩形背景有点怪怪的。
+这次的新设计距离上一次已经过了 13 年。这个新“朋友圈”图案看起来还不错，但我还是觉得这个矩形背景有点怪怪的。
 
 你怎么看？你喜欢 Ubuntu 的新标志吗，还是说更喜欢以前的那个呢？请在下方评论区分享你的观点吧！
 
@@ -63,16 +67,17 @@ via: https://news.itsfoss.com/ubuntu-new-logo/
 作者：[Abhishek][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://news.itsfoss.com/author/root/
 [b]: https://github.com/lujun9972
-[1]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQxNyIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
-[2]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUyMCIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
+[1]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/ubuntu-old-logo.png?w=1294&ssl=1
+[2]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/huddle.jpg?w=800&ssl=1
 [3]: https://www.omgubuntu.co.uk/2022/03/ubuntu-has-a-brand-new-logo
-[4]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ2NSIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
+[4]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/new-ubuntu-logo.png?w=780&ssl=1
 [5]: https://ubuntu.com/blog/a-new-look-for-the-circle-of-friends
 [6]: https://i0.wp.com/i.ytimg.com/vi/9DHUyz54flA/hqdefault.jpg?w=780&ssl=1
-[7]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQxMCIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
+[6a]: https://youtu.be/9DHUyz54flA
+[7]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/ubuntu-logo-comparison.jpg?w=1200&ssl=1
