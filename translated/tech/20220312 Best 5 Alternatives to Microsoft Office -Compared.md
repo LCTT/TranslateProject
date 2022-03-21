@@ -7,7 +7,7 @@
 [#]: publisher: " "
 [#]: url: " "
 
-可以替代 Microsoft Office 的 5 款最佳软件[附对比表]
+可以替代 Microsoft Office 的 5 款最佳软件 [附对比表]
 ======
 在这篇文章中，我们将推荐 5 款可以替代 Microsoft Office 的最佳软件，并从功能、操作难易程度等方面，对它们进行比较。看一看哪款更适合你？
 
