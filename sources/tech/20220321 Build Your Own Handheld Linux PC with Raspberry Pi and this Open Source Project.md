@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/penkesu-handheld-linux-pc/"
 [#]: author: "John Paul https://news.itsfoss.com/author/john/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
