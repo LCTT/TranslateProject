@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/creating-lists-groovy-java"
 [#]: author: "Chris Hermansen https://opensource.com/users/clhermansen"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
