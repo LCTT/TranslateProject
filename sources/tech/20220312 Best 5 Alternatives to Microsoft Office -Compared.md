@@ -7,40 +7,39 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Best 5 Alternatives to Microsoft Office [Compared]
+可以替代 Microsoft Office 的 5 款最佳软件[附对比表]
 ======
-HERE WE GIVE YOU THE FIVE BEST ALTERNATIVES TO MICROSOFT OFFICE. WE
-COMPARE THEM BASED ON FEATURES, ARE EASY TO USE AND PROVIDE YOU GUIDE TO
-CHOOSE THE ONE YOU NEED.
-I think we all agree that Microsoft Office is one of the best software developed by Mircosoft. It has a presence almost everywhere in the entire world in nearly every business. It is a fine piece of software that evolved over a couple of past decades.
+在这篇文章中，我们将推荐 5 款可以替代 Microsoft Office 的最佳软件，并从功能、操作难易程度等方面，对它们进行比较。看一看哪款更适合你？
 
-And obviously, it doesn’t have a Linux native installer and comes with a significant price. If you are a business owner or a personal user, the current Microsoft Office 365 subscription pricing is a little higher. And not everyone can afford that price bucket for a longer time.
+可以说，Office 办公软件是微软开发的最优质的软件之一，受到世界各地用户的青睐，广泛应用于各行各业，当属近几十年来软件市场涌现出来的精品。
 
-Then what are the alternatives? You can try other options that relatively get the job done for most users or businesses.
+不过大家都知道，Office 不仅没有开发适用于 Linux 的版本，而且价格高昂。对于企业用户或者个人用户来说，Office 365 的价格就更贵了，远超普通人能接受的价格水平。
 
-This article gives you the five best alternatives to Microsoft Office.
+那么，有哪些软件可以替代 Office 呢？
 
-### Best Alternatives to Microsoft Office
+这篇文章推荐 5 款可以替代 Office 的最佳软件。
+
+### 可以替代 Microsoft Office 的最佳软件
 
 ### LibreOffice
 
 ![LibreOffice][1]
 
-The first alternative we highlight here is [LibreOffice][2]. The Document Foundation develops and manages the entire LibreOffice free and open-source office suite, available for Linux, macOS and Windows.
+首先推荐的是 [LibreOffice][2]。LibreOffice 是一款免费开源的办公套件，由文档基金会开发维护，支持 Linux, macOS, 以及 Windows 系统。
 
-It comes with a spreadsheet ([Calc][3]), word processor (Writer), presentation (Impress), drawing (Draw) and a database program (Base).
+LibreOffice 套件包括表格工具 [Calc][3], 文字处理工具 Writer, 演示工具 Impress, 画图工具 Draw 以及数据库工具 Base。
 
-This project is actively developed, and compatibility with Microsoft Office documents is improved in every release iteration. If appropriately used, LibreOffice can effectively do all the work that a Mircosoft office program does. A massive set of documentation and communities can help you adopt LibreOffice in no time.
+LibreOffice 办公软件的开发十分很活跃，同时不断提升对 Microsoft Office 的兼容性。如果善加利用，LibreOffice 完全可以取代 Office。借助丰富的技术文档和社区资源，用户可以迅速掌握 LibreOffice 的使用方法。
 
-If you are a small or a large corporation, you don’t need to pay for the software itself. But paid deployment and support is also available at minimal cost if you require them for your critical work.
+企业用户也可以免费使用 LibreOffice，如果需要用它来完成关键工作，用户也可以购买配置服务和支持服务，相关费用十分低廉。
 
-However, LibreOffice does not come with an Outlook-like email program. This might be one of the minor drawbacks, but you can access emails from web browsers today for all email service providers.
+然而，LibreOffice 不提供像 Outlook 一样的邮箱服务。这可能是它的一个小缺点，不过好在现在的邮箱服务都可以在浏览器上运行。
 
-  * [Home page][2]
-  * [For Business][4]
-  * [Download for general-purpose personal use][5]
-  * [Help and Documentation][6]
-  * [Official support forum][7]
+  * [主页][2]
+  * [商业版][4]
+  * [下载普通个人版][5]
+  * [帮助文档][6]
+  * [官方支持论坛][7]
 
 
 
@@ -50,16 +49,17 @@ However, LibreOffice does not come with an Outlook-like email program. This migh
 
 ![Google Docs][8]
 
-The search engine giant Google provides a complete web-based Office suite (aka [Google Docs][9]) with its own Docs (document processor), Sheets (spreadsheet program) and Slides (presentation) for free users.
+搜索引擎巨头 Google 为用户免费提供一套网页版的办公套件——[Google Docs][9], 其中包括 Docs（文档编辑器），Sheets（表格程序），Slides（演示程序）。
 
-You can access and create documents in your Google Drive account by default for free and access them from anywhere in the world. The office components provide well-designed web-based toolbars, advanced options, spell check, Voice to Text feature (only in Chrome), encryption and cloud access. Google also offers mobile apps for iOS and Android to access your documents and edit them on the go.
+用户可以在 Google 云盘中免费创建、打开文档。随时随地，自由存取。Google Docs 界面设计优美，内置工具栏、高级选项、拼写检查、语音输入功能（仅支持 Chrome 浏览器）、加密功能以及云存储服务。Google 也为 iOS 系统和安卓系统提供了移动端，用户可以在移动设备上轻松打开、编辑文档。
 
-One of the best features of Google Docs is templates. With the power of pre-built templates, you can start professional-grade documents in time. The collaboration option gives you more control when sharing and deploying documents with a Google account-based authentication and authorization mechanism for a wider audience.
+Google Docs 最为人称道的功能在于它的模板。有了这些内置模板，用户可以迅速编辑出一份专业的文档。此外，通过邀请其他 Google 用户，还可以使用多人协作在线编辑功能。
 
-If you need more from Google Docs, you may opt for Google Workspace with a very minimal price compared to costly Microsoft Office. The Google Workspace is a complete and integrated solution that gives you Google Forms to collect data and integrate into your docs and Sheets, website builder Google Sites, Google Calendar and more storage options to keep your document.
 
-  * [Home page][9]
-  * [Documentation][10]
+如果你需要更多的功能，可以付费使用 Google Workspace。这是一套全面的整合方案，你可以通过 Google Forms 收集信息，使用文档、表格、网站编辑工具 Google Sites、Google 日历等服务编辑信息，保存为文档。
+
+  * [主页][9]
+  * [帮助文档][10]
 
 
 
@@ -67,21 +67,21 @@ If you need more from Google Docs, you may opt for Google Workspace with a very 
 
 ![OnlyOffice][11]
 
-[OnlyOffice][12] (styled as ONLYOFFICE) is a free and open-source complete Office productivity suite that contains text editor, spreadsheet program, presentation tool for you and your office work. It supports advanced features such as real-time collaboration with proper tracking changes for your shared documents, fillable forms and many such features.
+[OnlyOffice][12]（或 ONLYOFFICE）是一套免费开源的办公软件，包括文本编辑器、表格工具、演示软件，提供共享文件实时协作编辑、修改痕迹记录查看以及制作可供填写的表格等高级功能。
 
-This powerful office suite looks better with its Office 365 type ribbons which helps to adopt this program quickly. OnlyOffice has better Microsoft Office compatibility with .docx .xlsx and .pptx file formats which are easy for you and your organization to share documents.
+外观上，OnlyOffice 的功能区模仿了 Office 365 功能区的设计风格，能让用户快速上手。此外，OnlyOffice 对 Office 文件格式（.docx .xlsx 以及 .pptx）的兼容性更好，方便用户与他人共享文件。
 
 [][13]
 
-SEE ALSO:   10 Best Apps to Improve Your GNOME Experience [Part 1]
+参阅：提升 GNOME 体验的 10 款宝藏软件。[系列一]
 
-It’s worth mentioning that OnlyOffice provides an Enterprise office suite,, aka “ONLYOFFICE Workspace, ” a paid product with additional features and instant support. This enterprise suite is perfect for those with a tight budget on office products but needs near compatibility with Office 365.
+值得一提的是，OnlyOffice 还推出了需要付费使用的企业版本 —— ONLYOFFICE Workspace。该版本增加了一些其他的高级功能，提供即时支持服务，非常适合那些预算紧张但对格式兼容性要求又很高的用户。
 
-The ONLYOFFICE Workspace comes with an Email client, CRM product, Project Management tool and an integrated calendar. Although everything works well, you face some issues with spell checking, print preview, page size and some bugs. But you should not worry as the team is receptive, and you can report issues in GitHub and get help.
+ONLYOFFICE Workspace 集成了邮箱客户端、客户关系管理产品、项目管理工具以及日历。总体来说，ONLYOFFICE Workspace 是一款不错的软件，但也有一些不足：拼写检查、打印预览、页面尺寸以及漏洞等问题。不过也不需要过分担心，你可以在 GitHub 上传错误报告，向开发团队寻求帮助。
 
-  * [Home page][12]
-  * [Download][14]
-  * [Documentation and help][15]
+  * [主页][12]
+  * [下载][14]
+  * [帮助文档][15]
 
 
 
@@ -89,17 +89,15 @@ The ONLYOFFICE Workspace comes with an Email client, CRM product, Project Manage
 
 ![FreeOffice][16]
 
-The [FreeOffice][17] is another option if you are looking for Microsoft Office alternatives. This office suite was developed by SoftMaker and is arguably one of the choices that you may have. The FreeOffice brings TextMaker (like Word), PlanMaker (like Excel), Presentations and a comparison utility. The user interfaces as two options. The modern Ribbon option makes it a desirable product due to its popularity. It also has a traditional Legacy user interface with a menu and toolbar with a considerable fanbase.
+[FreeOffice][17] 由 SoftMaker 开发，是一套十分优秀的办公软件，包括 TextMaker (可替代 Word), PlanMaker (可替代 Excel), 以及 Presentations。FreeOffice 提供了两种用户界面：带有功能区选项的现代化界面与带有菜单和工具栏的传统界面，两种界面都十分受欢迎。此外，FreeOffice 还为触控设备提供专有的用户界面与功能。
 
-The SoftMaker FreeOffice provides a specific user interface and features in touch-based devices. The Microsoft Office document format compatibility is well established to get the most done.
+FreeOffice 采用 Office 的文档格式，能够完美对接主流办公软件。不过相较之下，尽管 ODT 格式的应用并没有那么普遍，但它可以为用户免去许多麻烦。
 
-However, you may have little trouble working with Open Document Format files, whose support is limited.
+FreeOffice 是一款闭源软件。
 
-This is a closed source product.
-
-  * [Home page][17]
-  * [Download][18]
-  * [Documentation and help][19]
+  * [主页][17]
+  * [下载][18]
+  * [帮助文档][19]
 
 
 
@@ -107,75 +105,47 @@ This is a closed source product.
 
 ![WPS Office][20]
 
-Remember Kingston Office? Well, it’s now renamed and repackaged as WPS Office, which is the acronym for ord, **P**resentation and **S**preadsheets. Today, the WPS Office is one of the oldest office suites with more than three decades of development and releases. It is a fully-featured office suite available for all platforms and mobile devices.
+还记得 Kingston Office 吗？ 它现在的名字叫做 WPS Office。WPS 取 **W**ord, **P**resentation 与 **S**preadsheets 的首字母组合而成。到今天，WPS 办公软件已有 30 年的发展历史，是老牌办公软件之一。WPS 作为办公软件，功能齐全，支持移动端在内的各类平台。
 
-Some of the unique features of WPS Office are its real-time collaboration in its core programs which helps you work in a team in a shared document. The office suite comes with 100,000+ templates which allows you to create professional-grade documents and presentations.
+WPS 最具特色的功能在于支持实时协作编辑。使用 WPS，团队成员可以同时编辑一份共享文档。WPS 还为用户提供了超过 10 万种文档模板，帮助用户编辑出专业美观的文档与演示文件。
 
-The WPS Office comes with the standard edition, free to download and use but limited in features.
+WPS 的标准版本可以免费下载使用，不过有一些高级功能需要付费。
 
-If you need additional features such as PDF editing, Cloud support, collaborations and enterprise support, then you can opt for the WPS Premium of WPS Business option with a price.
+如果你需要额外的功能，比如编辑 PDF 文件、云空间扩容、团队协作以及企业支持，可以考虑付费开通会员，使用 WPS 企业版。
 
-Its important to mention that this is a closed source program and may contain Ads. Also its developed by a Chinese company.
+注意，这是一款闭源软件，而且可能会推送广告。该软件由中国金山软件公司开发。
 
-  * [Home page][21]
-  * [Documentation][22]
-  * [Download][23]
+  * [主页][21]
+  * [帮助文档][22]
+  * [下载][23]
 
 
 
-### Comparison
+### 对比表
 
-Here’s a quick comparison of the above free Microsoft office alternatives based on features and other details.
+下表基于功能以及其他细节，对上述 5 款办公软进行对比总结。
 
-Product | Price | Source Type | Pros | Cons
+产品 | 价格 | 是否开源 | 优势 | 劣势
 ---|---|---|---|---
-LibreOffice | Free | Open source | Free and cross platform
-Multi language support
-Complete support of ODF files
-Best compatibility support of Microsoft Office
-Very active deleopment | No email and project management suite
-The database program depends on Java
-Google Docs | Free | Close source | Free and cross platform
-Well documented support
-Access documents via cloud anywhere
-Complete Mobile device support | Requires internet connection
-Little slow due to web based tool
-No native desktop executable available
-OnlyOffice | Free (basic product) | Open source | The user interface almost similar to Microsoft Office
-Better support and compatibility with Microsoft Office files
-Cloud integration, and plugin support
-Cross platform | May face problems with some basic features.
-Cloud integrations are not compatible with EU due to GDPR
-The web app version is slow
-FreeOffice | Free (basic product) | Close source | Free and lightweight compared to LibreOffice.
-Touchscreen support
-Good Microsoft Office compatibility
-Cross platform | Free version only have document, spreadsheet and presentation.
-Additional prodcuts needs purchase
-Open Document Format support is limited
-Not open source product
-WPS Office | Free | Close source | Good Microsoft office compatibility
-Cross platform product
-Tabbed interface
-Multi language support | Not open source product
-Developed by a Chinese company
-May contain ads
+LibreOffice | 免费 | 开源 | 免费；跨平台；支持多种语言；完全支持 ODF 文件格式；对 Office 兼容性最好；开发活跃 | 不提供邮箱应用；不提供项目管理功能；数据库基于 Java
+Google Docs | 免费 | 闭源 | 免费；跨平台；良好的文档支持；随时随地存取云文档；完美支持移动端 | 需要网络连接；网络连接导致卡顿或延迟；不提供可供安装的版本
+OnlyOffice | 免费 (basic product) | 开源 | 用户界面酷似 Office；对 Office 文件拥有更好的兼容性；云集成；支持插件；跨平台 | 基本功能可能出现问题；云集成服务违反欧盟通用数据保护条例；网页端延迟
+FreeOffice | 免费 (基础功能) | 闭源 | 免费；相较于 LibreOffice 更加轻量；支持触屏；良好的 Office 兼容性；跨平台 | 免费版本只包括文档、表格与演示功能；其他产品需要付费；对 ODT 文件格式的支持有限；闭源软件
+WPS Office | 免费 | 闭源 | 良好的 Office 兼容性；跨平台；标签界面；支持多语言 | 闭源软件；中国软件公司开发；可能弹出广告
 
-### Our Recommendation
+### 我们推荐
 
-Leaving aside all the pros and cons, if you cannot choose which of the Office suite is best for you, I would recommend going ahead with LibreOffice always. Because LibreOffice and TDF has a good vision, active development and worldwide community support. LibreOffice has a considerable knowledge base about tips tutorials on the helpful web. And you can easily automate tasks with Basic or Python Macro.
+抛开所有这些优势和劣势不管，如果你还不确定哪一款才是最适合你的，我推荐你使用 LibreOffice。因为 LibreOffice 与 TDF 格式前景广阔，开发活跃，在全世界都拥有广泛的支持。LibreOffice 有着庞大的在线知识库，为用户提供丰富的使用技巧。通过在 LibreOffice 中使用 Basic 语言或者 Python 宏，你还可以轻松实现办公自动化。
 
-### Closing Notes
+### 总结
 
-I hope this guide helps you choose the best alternatives for Microsoft Office for your personal or business usage. Genuinely speaking, none of the above office products come close in comparison to Microsoft Office in true sense. Not everyone or every business is able to pay hefty subscription fee every month for Microsoft Office. For those, I believe some of these options can be a good starting point.
+我希望，我们的推荐能帮助你选择适合自己的可替代 Office 的办公软件。 说实话，上述软件没有一个能真正比得上 Office。但是并不是每个人都能付得起 Office 高昂的费用，我相信以上 5 款软件对这部分人来说会是不错的选择。
 
-_Some image credits: Respective product owner_
+_一些图片来源：上述软件所属公司_
 
 * * *
 
-We bring the latest tech, software news and stuff that matters. Stay in touch via [Telegram][24], [Twitter][25], [YouTube][26], and [Facebook][27] and never miss an update!
-
-##### Also Read
+我们分享最新技术新闻、软件资讯。欢迎关注我们的 [Telegram][24], [Twitter][25], [YouTube][26] 与 [Facebook][27]，精彩不容错过。
 
 --------------------------------------------------------------------------------
 
