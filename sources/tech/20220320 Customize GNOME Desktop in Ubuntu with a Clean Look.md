@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/03/customize-gnome-clean-look-2022-1/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
