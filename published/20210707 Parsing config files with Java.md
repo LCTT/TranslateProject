@@ -37,7 +37,7 @@
 
 在这个 <ruby>自我描述的<rt>self-descriptive</rt></ruby> 例子中，XML 解析器使用了以下几个概念：
 
-  * <ruby>文档<rt>Document</rt><ruby>：`<xml>` 标签标志着一个 _文档_ 的开始，`</xml>` 标签标志着这个文档的结束。
+  * <ruby>文档<rt>Document</rt></ruby>：`<xml>` 标签标志着一个 _文档_ 的开始，`</xml>` 标签标志着这个文档的结束。
   * <ruby>节点<rt>Node</rt></ruby>：`<node>` 标签代表了一个 _节点_。
   * <ruby>元素<rt>Element</rt></ruby>：`<element>Penguin</element>` 中，从开头的 `<` 到最后的 `>` 表示了一个 _元素_。
   * <ruby>内容<rt>Content</rt></ruby>： 在 `<element>` 元素里，字符串 `Penguin` 就是 _内容_。
