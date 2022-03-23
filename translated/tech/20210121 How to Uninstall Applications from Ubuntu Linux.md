@@ -7,7 +7,7 @@
 [#]: via: (https://itsfoss.com/uninstall-programs-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-标题
+怎么卸载 Ubuntu Linux 应用
 =======
 
 卸载不再使用的应用是 [最简单释放磁盘空间的方法][1] ，而且可以使系统保持整洁。
