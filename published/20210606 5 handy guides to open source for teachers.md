@@ -3,14 +3,16 @@
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
 [#]: translator: (lkxed)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14386-1.html)
 
 5 个为教师准备的方便的开源指南
 ======
-![Looking at a map][1]
-我们收集了一些最受欢迎的简明指南，它们既能满足你充分利用暑假的愿望，又能满足你为下一个学期做规划的需要。
+
+![](https://img.linux.net.cn/data/attachment/album/202203/23/162904laqecdh4xraveac7.jpg)
+
+> 我们收集了一些最受欢迎的简明指南，它们既能满足你充分利用暑假的愿望，又能满足你为下一个学期做规划的需要。
 
 对一些老师来说，夏天到了，一个漫长的（希望也是放松的）假期也到了。所有我认识的老师都是自豪的终身学习者，尽管暑假过后，又有一个新学期会到来。为了帮助你充分利用暑假时间，与此同时也为即将到来的下一个学期做好准备，我们收集了一些最受欢迎的 _简明_ 指南。
 
@@ -21,7 +23,6 @@
 ### 为教师准备的终极开源指南
 
 通过本文，你可以学习如何在课堂上 [融入开源原则][4]。开源不仅仅和科技相关，它同时也关于知识共享、团队协作以及为了一个共同目标而努力。你可以把你的教室变成一个共享的空间，让学生们互相学习，就像他们向你学习一样。阅读开源，把开源付诸实践，并鼓励学生们积极参与。
-
 
 ### 8 个为虚拟教室准备的 WordPress 插件
 
@@ -35,10 +36,7 @@ WordPress Web 平台是一个构建网站的强大工具。在教室里，它可
   2. 然后，如果你熟悉 [Jupyter][8] 库的话，可以学习 [使用 Python 和 Jupyter 来编写一个简单游戏][9]。
   3. 接着，你也可以 [在这本 Python 电子书里学到游戏开发的知识][10]，里面会教你如何使用 Git、Python 和 PyGame 库。当你学会了这些基础内容，你可以看看 [这本书里的 "游戏测试员" 的有趣创作集合][11]。
 
-
-
 如果 Python 对你或你的学生来说太难了，那么看看 [Thine][12] 吧，它是一个简单的基于 HTML 的交互式的讲故事工具。
-
 
 ### 教孩子们玩树莓派（编程）
 
@@ -55,7 +53,7 @@ via: https://opensource.com/article/21/6/open-source-guides-teachers
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
