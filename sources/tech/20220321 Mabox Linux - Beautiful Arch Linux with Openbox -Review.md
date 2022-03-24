@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/03/mabox-linux-2022/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
