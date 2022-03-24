@@ -7,76 +7,65 @@
 [#]: via: (https://itsfoss.com/uninstall-programs-ubuntu/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-How to Uninstall Applications from Ubuntu Linux
-======
+怎么卸载 Ubuntu Linux 应用
+=======
 
-Don’t use a certain application anymore? Remove it.
+卸载不再使用的应用是 [最简单释放磁盘空间的方法][1] ，而且可以使系统保持整洁。
 
-In fact, removing programs is one of the [easiest ways to free up disk space on Ubuntu][1] and keep your system clean.
+在此篇入门教程中，会介绍几种不同在 Ubuntu 上卸载应用程序的方法。
 
-In this beginner’s tutorial, I’ll show you various ways of uninstalling software from Ubuntu.
+在 Ubuntu 中有几种方法 [安装应用][2] ，同意也有以下几种方法卸载应用：   
+- Ubuntu Software Center 卸载应用（桌面用户）
+- apt remove 命令卸载应用
+- 用命令行中删除 snap 应用（中级到高级用户）    
 
-Did I say various ways? Yes, because there are [various ways of installing applications in Ubuntu][2] and hence various ways of removing them. You’ll learn to:
-
-  * Remove applications from Ubuntu Software Center (for desktop users)
-  * Remove applications using apt remove command
-  * Remove snap applications in command line (intermediate to advanced users)
-
-
-
-Let’s see these steps one by one.
-
-### Method 1: Remove applications using Ubuntu Software Center
-
-Start the Software Center application. You should find it in the dock on the left side or search for it in the menu.
+让我们来一个一个了解这些方法。
+  
+### 方法 1：Ubuntu Software Center 卸载应用
+在左侧栏或者菜单中找到 Ubuntu Software Center ，打开它。
 
 ![][3]
 
-You can see the installed applications in the Installed tab.
+在 Installed 栏中有已安装的应用。
 
-![List installed applications][4]
+![][4]
 
-If you don’t see a program here, try to use the search feature.
+如果你要找的应用不在 Installed 栏中，使用搜索查找应用。
 
-![Search for installed applications][5]
+![][5]
 
-When you open an installed application, you should see the option to remove it. Click on it.
+打开已经安装的应用，有一个 remove 选项，点击它。
 
-![Removing installed applications][6]
+![][6]
 
-It will ask for your account password. Enter it and the applications will be removed in seconds.
+这会请求账户密码，输入后应用会在几秒内删除。
 
-This method works pretty well except in the case when Software Center is misbehaving (it does that a lot) or if the program is a software library or some other command line utility. You can always resort to the terminal in such cases.
-
-### Method 2: Remove programs from Ubuntu using command line
-
-You know that you can use `apt-get install` or `apt install` for installing applications. For uninstalling, you don’t use the apt-get uninstall command but `apt-get remove` or `apt remove`.
-
-All you need to do is to use the command in the following fashion:
+### 方法2：  Ubuntu 命令行卸载应用
+安装应用时使用 `apt-get install` 或者 `apt install` 。
+卸载应用时使用 `apt-get remove` 或者 `apt remove` ，而不是 `apt-get uninstall` 。
+按照以下方式使用命令：
 
 ```
 sudo apt remove program_name
 ```
 
-You’ll be asked to enter your account password. When you enter it, nothing is visible on the screen. That’s normal. Just type it blindly and press enter.
-
-The program won’t be removed immediately. You need to confirm it. When it asks for your conformation, press the enter key or Y key:
+执行此操作会请求您的账户密码。当输入密码时，屏幕上不会有提示。输入完后按下回车。
+待删除的应用不会立刻被删除。您需要确认。当询问您的确认时，请输入回车或者 Y：
 
 ![][7]
 
-Keep in mind that you’ll have to use the exact package name in the apt remove command otherwise it will throw ‘[unable to locate package error][8]‘.
+请在命令行中输入准确的包的名字，不然会出现 [unable to locate package error][8] 。
+不要担心记不住具体的应用名字，您可以使用超级有用的 tab 补全应用名称。 tab 是您必须知道的 [Linux 命令行技巧][9] 之一。
 
-Don’t worry if you don’t remember the exact program name. You can utilize the super useful tab completion. It’s one of the [most useful Linux command line tips][9] that you must know.
+您只需要输入想要卸载应用的前几个字母，然后按下 tab ，会提示以这几个字母开头的已安装应用程序。
 
-What you can do is to type the first few letters of the program you want to uninstall. And then hit the tab key. It will show all the installed packages that match those letters at the beginning of their names.
-
-When you see the desired package, you can type its complete name and remove it.
+找到要卸载的应用名称，输入完整的应用名称然后卸载。
 
 ![][10]
 
-What if you do not know the exact package name or even the starting letters? Well, you can [list all the installed packages in Ubuntu][11] and grep with whatever your memory serves.
+如果不知道具体的应用名称或者开头字母，您可以 [列出 Ubuntu 中所有已安装的包][11] ，然后查找符合您记忆的应用名称。
 
-For example, the command below will show all the installed packages that have the string ‘my’ in its name anywhere, not just the beginning.
+比如，下图的命令会列出所有已安装的应用名称中包含 ‘my’ 的应用，不仅仅是以 'my’ 开头的应用。
 
 ```
 apt list --installed | grep -i my
@@ -84,29 +73,22 @@ apt list --installed | grep -i my
 
 ![][12]
 
-That’s cool, isn’t it? Just be careful with the package name when using the remove command in Ubuntu.
-
-#### Tip: Using apt purge for removing package (advanced users)
-
-When you remove a package in Ubuntu, the packaged data is removed, but it may leave small, modified user configuration files. This is intentional because if you install the same program again, it would use those configuration files.
-
-If you want to remove it completely, you can use apt purge command. You can use it instead of apt remove command or after running the apt remove command.
+这非常酷炫对不对？在 Ubuntu 中使用卸载命令时请注意应用名。
+#### 补充：使用 apt purge 卸载应用（进阶用户）
+当在 Ubuntu 中卸载应用时，应用程序会被卸载，但是会留下细小的、修改过的用户配置文件。这些文件是故意被留下的，因为当你再次安装同样的应用时，会使用这些遗留的配置文件。
+如果您想完全卸载应用，您可以使用 apt purge 命令代替 apt remove 命令，或者在 apt remove 命令后再使用。
 
 ```
 sudo apt purge program_name
 ```
 
-Keep in mind that the purge command won’t remove any data or configuration file stored in the home directory of a user.
+注意 apt purge 令不会删除保存在用户目录下的数据或者配置文件。
 
-### Method 3: Uninstall Snap applications in Ubuntu
-
-The previous method works with the DEB packages that you installed using apt command, software center or directly from the deb file.
-
-Ubuntu also has a new packaging system called [Snap][13]. Most of the software you find in the Ubuntu Software Center are in this Snap package format.
-
-You can remove these applications from the Ubuntu Software Center easily but if you want to use the command line, here’s what you should do.
-
-List all the snap applications installed to get the package name.
+### 方法3： Ubuntu 中卸载 snap 应用
+在以前可以使用 apt 命令、Software center 或者直接使用 deb 文件安装应用。
+Ubuntu 新推出了 [snap][13] 包管理系统。在 Software center 中的大部分应用都可以使用 snap 包格式。
+您可以使用 Software center 轻松地卸载这些应用，也可以使用命令行卸载。
+列出所有已经安装的 snap 包名字。
 
 ```
 snap list
@@ -114,29 +96,25 @@ snap list
 
 ![][14]
 
-Now use the package name to remove the application from Ubuntu. You won’t be asked for confirmation before removal.
+选择您想要卸载的应用，然后卸载，这不会要求您确认是否删除。
 
 ```
 sudo snap remove package_name
 ```
 
-### Bonus Tip: Clean up your system with one magical command
-
-Alright! You learned to remove the applications. Now let me tell you about a simple command that cleans up leftover package traces like dependencies that are no longer used, old Linux kernel headers that won’t be used anymore.
-
-In the terminal, just run this command:
+### #妙招：用一个神奇的命令清理系统
+到此您已经学会怎么卸载应用，现在使用一个简单的命令清理卸载残留，比如不再用到的依赖或 Linux 内核头文件。
+在终端输入如下命令：
 
 ```
 sudo apt autoremove
 ```
 
-This is a safe command, and it will easily free up a few hundred MB’s of disk space.
+这条命令很安全，而且会释放几百 MB 的磁盘空间。
 
-### Conclusion
-
-You learned three ways of removing applications from Ubuntu Linux. I covered both GUI and command line methods so that you are aware of all the options.
-
-I hope you find this simple tutorial helpful as an Ubuntu beginner. Questions and suggestions are always welcome.
+### 总结
+一共介绍了三种卸载应用的方法，包裹通过图形界面卸载、命令行卸载，以便您了解所有选项。
+希望此篇教程对 Ubuntu 初学者有所帮助，欢迎提出问题和建议。
 
 --------------------------------------------------------------------------------
 
@@ -144,7 +122,7 @@ via: https://itsfoss.com/uninstall-programs-ubuntu/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[amagicowboy](https://github.com/amagicboy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
