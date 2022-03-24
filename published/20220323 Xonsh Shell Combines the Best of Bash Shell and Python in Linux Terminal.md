@@ -3,17 +3,18 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14390-1.html"
 
-Xonsh Shell Combines the Best of Bash Shell and Python in Linux Terminal
-Xnosh Shell 在 Linux 终端上结合了 Bash Shell 和 Python 的最佳特性
+Xnosh Shell：在 Linux 终端结合 Bash Shell 和 Python 的最佳特性
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202203/24/111824ufw1815lyvclnsr2.jpg)
 
 最受欢迎的 shell 是什么？我猜你会回答 bash 或者 zsh，没错，的确如此。
 
-UNIX 和 Linux 系统上有许多可用的 shell，包括 bash、ksh、zsh、fish 等等。
+UNIX 和 Linux 系统上有许多可用的 shell，包括 Bash、Ksh、Zsh、Fish 等等。
 
 最近，我碰到了另外一个 shell，它结合了 Python 和 bash，还蛮特别的。
 
@@ -21,7 +22,7 @@ UNIX 和 Linux 系统上有许多可用的 shell，包括 bash、ksh、zsh、fis
 
 [Xonsh][1] 是一个使用 Python 编写的跨平台 shell 语言和命令提示符。
 
-它结合了 Python 和 bash shell，因此你可以在这个 shell 中直接运行 Python 命令。你甚至可以把 Python 命令和 shell 命令混合起来使用。
+它结合了 Python 和 Bash shell，因此你可以在这个 shell 中直接运行 Python 命令（语句）。你甚至可以把 Python 命令和 shell 命令混合起来使用。
 
 ![][2]
 
@@ -36,24 +37,23 @@ UNIX 和 Linux 系统上有许多可用的 shell，包括 bash、ksh、zsh、fis
 在 Ubuntu 和 Debian 上，你可以尝试运行：
 
 ```
-    sudo apt install xonsh
+sudo apt install xonsh
 ```
 
-因为它本质上是一个 Python 应用，所以你总是可以使用 Pip 来安装（如果你的系统已经安装了 pip 的话）。或者，你也可以使用 Conda 来安装 Xonsh。同时，它还提供了 AppImage 格式和 Docker 镜像。
+因为它本质上是一个 Python 应用，所以你总是可以使用 Pip 来安装（如果你的系统已经安装了的话）。或者，你也可以使用 Conda 来安装 Xonsh。同时，它还提供了 AppImage 格式和 Docker 镜像。
 
 你可以自由选择你喜欢的安装方式。
 
 ### Xonsh shell 初体验
 
-如果你不熟悉 Linux 的“多 shell “概念和终端的相关知识，我推荐你阅读 [我写的一篇终端入门的文章][3]。这篇文章会帮助 Linux 新手弄清楚很多东西。
+如果你不熟悉 Linux 的“多 shell”概念和终端的相关知识，我推荐你阅读 [我写的一篇终端入门的文章][3]。这篇文章会帮助 Linux 新手弄清楚很多东西。
 
 我在这里简单介绍一下。你的终端运行着一个默认的 shell（通常是 bash shell）。如果你在系统上安装了其他的 shell，你可以 [轻松地切换这些 shell][4]。
-
 
 要进入 Xonsh shell，只需运行一条命令：
 
 ```
-    xonsh
+xonsh
 ```
 
 ![][5]
@@ -66,13 +66,13 @@ UNIX 和 Linux 系统上有许多可用的 shell，包括 bash、ksh、zsh、fis
 
 ![Xonsh shell automatically suggests last matching command from the history as you type][6]
 
-不仅如此，它还支持交互式的 Tab 补全。当你开始输入命令，并按下 tab 键，它会显示一个类似于下拉式的交互式菜单。你可以在这个菜单中选择可用的命令。
+不仅如此，它还支持交互式的 Tab 补全。当你开始输入命令，并按下 `tab` 键，它会显示一个类似于下拉式的交互式菜单。你可以在这个菜单中选择可用的命令。
 
 ![Tab completion in Xonsh shell][7]
 
 你可以混合使用 Python 和 bash 命令，并且直接在 shell 中运行它们。
 
-如果你对 [终端定制][8] 感兴趣，你可以花点时间和精力，根据自己的喜好来定制 tab 补全、按键绑定和颜色样式。
+如果你对 [终端定制][8] 感兴趣，你可以花点时间和精力，根据自己的喜好来定制 Tab 补全、按键绑定和颜色样式。
 
 它同时拥有一个叫做 [Xontrib][9] 的用户自定义插件系统，你可以使用这些插件来扩展 Xonsh shell 的功能。
 
@@ -80,9 +80,9 @@ UNIX 和 Linux 系统上有许多可用的 shell，包括 bash、ksh、zsh、fis
 
 ### 最后
 
-大多数用户坚持使用默认的 bash shell，这很正常。有一些开发者和系统管理员会选择使用 Zsh，因为它有很多附加特性。而 Xonsh 完全聚焦在 Python 上，对于 Python 使用者来说，它或许具有吸引力。对于其余的人来说，bash 已经足够好了。
+大多数用户坚持使用默认的 Bash shell，这很正常。有一些开发者和系统管理员会选择使用 Zsh，因为它有很多附加特性。而 Xonsh 完全聚焦在 Python 上，对于 Python 使用者来说，它或许具有吸引力。对于其余的人来说，Bash 已经足够好了。
 
-你使用过 Xonsh 或者其他的 shell 吗？你用它来代替 bash 的原因是什么呢？欢迎在评论区留言。
+你使用过 Xonsh 或者其他的 shell 吗？你用它来代替 Bash 的原因是什么呢？欢迎在评论区留言。
 
 --------------------------------------------------------------------------------
 
@@ -91,7 +91,7 @@ via: https://itsfoss.com/xonsh-shell/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
