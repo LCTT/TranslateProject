@@ -86,7 +86,7 @@ sudo apt update && sudo apt install conky-manager2
 
 将应用的菜单按钮改成你喜欢的一些图标。在本指南中，我从 [这里][16] 下载了一个 GNOME 图标。并通过 Arc 菜单的 “<ruby>设置<rt>Settings</rt></ruby> > <ruby>按钮外观<rt>Button Appearance</rt></ruby> > <ruby>浏览图标<rt>Browse Icon</rt></ruby>”应用它。它应该看起来像这样。
 
-![Arch Menu – Raven][17]
+![Arc Menu – Raven][17]
 
 从“<ruby>扩展<rt>Extension</rt></ruby>”程序中打开 “Dash to Dock” 设置。在“<ruby>外观<rt>Appearance</rt></ruby>”选项卡中，改变以下项目：
 
