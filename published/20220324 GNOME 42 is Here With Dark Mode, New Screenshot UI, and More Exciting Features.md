@@ -3,14 +3,18 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14392-1.html"
 
-GNOME 42 带来了深色模式、新的截图界面以及更多激动人心的特性
+GNOME 42 发布：深色模式、新的截图界面
 ======
 
-GNOME 42 是一个有着显著视觉变化的重大升级。
+> GNOME 42 终于到来了，它带来了急需的视觉升级和功能改进。
+
+![](https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/gnome-42.jpg?w=1200&ssl=1)
+
+[GNOME 42][17] 是一个有着显著视觉变化的重大升级。
 
 GNOME 42 提供了许多必要的改进和急需的升级。现在它已经发布了，就让我们来看看一些关键的亮点吧。
 
@@ -18,9 +22,9 @@ GNOME 42 提供了许多必要的改进和急需的升级。现在它已经发�
 
 鉴于我们已经写了一篇 [详细的文章来介绍 GNOME 42 的新特性][1]，请允许我在这里挑选其中最重要的几个来介绍。
 
-![][2]
+[![][2]](https://youtu.be/du-2QpWbiLU)
 
-### 1. 暗黑模式主题和外观调整
+### 1. 深色模式主题和外观调整
 
 ![][3]
 
@@ -42,9 +46,8 @@ GNOME 的文件夹图标主题看起来也太古老了。为了摆脱这种印�
 
 ### 3. 新的截图界面
 
-GNOME 42 的新截图界面是本次发布的最好的特性之一。
+新的 GNOME 42 截图的界面是本次发布的最好的特性之一。
 
-Not just limited to taking screenshots, it also lets you record your screen with a simple toggle. The user interface looks great and works well in my initial usage with Fedora 36 (pre-release).
 它不仅仅局限于截图，只要简单切换一下，你就可以用它来录制屏幕。它的用户界面看起来很棒，而且在我最初使用的 Fedora 36（预发布版）中工作良好。
 
 ![][7]
@@ -71,11 +74,9 @@ Not just limited to taking screenshots, it also lets you record your screen with
 
 除了视觉变化，新版本的 GNOME 还进行了性能优化和整个平台的细微改进。其中包括了以下升级：
 
-  * **提升了文件检索效率**
-  * **远程桌面功能现在支持 RDP 协议了**
-  * **GNOME 网页浏览器现在开启了硬件加速**
-
-
+  * 提升了文件检索效率
+  * 远程桌面功能现在支持 RDP 协议了
+  * GNOME 网页浏览器现在开启了硬件加速
 
 你可以在 [官方声明][13] 中了解这个版本的所有变化。
 
@@ -87,8 +88,6 @@ Not just limited to taking screenshots, it also lets you record your screen with
 
 你也可以尝试附带 GNOME 42 的 Arch，或者等待下个月将发布的 Ubuntu 22.04 长期支持版和 Fedora 36.
 
-[GNOME 42][17]
-
 --------------------------------------------------------------------------------
 
 via: https://news.itsfoss.com/gnome-42-release/
@@ -96,13 +95,13 @@ via: https://news.itsfoss.com/gnome-42-release/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://news.itsfoss.com/author/ankush/
 [b]: https://github.com/lujun9972
-[1]: https://news.itsfoss.com/gnome-42-features/
+[1]: https://linux.cn/article-14267-1.html
 [2]: https://i0.wp.com/i.ytimg.com/vi/du-2QpWbiLU/hqdefault.jpg?w=780&ssl=1
 [3]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/fedora-36-gnome-42-dark.jpg?resize=1568%2C882&ssl=1
 [4]: https://news.itsfoss.com/elementary-os-6-features/
@@ -112,7 +111,7 @@ via: https://news.itsfoss.com/gnome-42-release/
 [8]: https://news.itsfoss.com/gnome-libadwaita-library/
 [9]: https://news.itsfoss.com/fragments-2-0-release/
 [10]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/02/gnome-42-text-editor-alpha.jpg?w=1480&ssl=1
-[11]: https://gitlab.gnome.org/GNOME/gnome-text-editor
+[11]: https://linux.cn/article-14060-1.html
 [12]: https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/console-screenshot-1.png?w=694&ssl=1
 [13]: https://release.gnome.org/42/
 [14]: https://itsfoss.com/gnome-os/
