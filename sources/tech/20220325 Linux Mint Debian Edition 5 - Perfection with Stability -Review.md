@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/03/linux-mint-debian-edition-5-review/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
