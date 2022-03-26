@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hwlife )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -7,39 +7,56 @@
 [#]: via: (https://opensource.com/article/21/1/minimal-server-raspberry-pi)
 [#]: author: (Alan Formy-Duval https://opensource.com/users/alanfdoss)
 
-Set up a minimal server on a Raspberry Pi
+
+
+在树莓派上创建一个最小化的服务器
+
 ======
-Don't decommission that old Raspberry Pi just yet! This step-by-step
-guide shows how I set up my Raspberry Pi with the most minimal
-configuration to conserve precious system resources.
-![Raspberry Pi board Model B][1]
 
-Recently, the microSD (secure digital) card in my [Raspberry Pi][2] stopped working. It had been in constant use as a server for almost two years, and this provided a good opportunity to start fresh and correct a few problems. After its initial installation, it began experiencing disk problems and the official Raspberry Pi operating system (OS) received a significant update (and was renamed from Raspbian to Raspberry Pi OS). So I acquired a new microSD card and preceded to rebuild.
+不要舍旧配置的树莓派，这个详细步骤的指南展示了我怎样用最小化设置来充分利用我珍贵的树莓派系统资源。
 
-Although this Raspberry Pi 3 Model B isn't the latest hardware, it is still adequate for running a minimal server for various services. I think my original installation used the full operating system image that includes the graphical user interface and a lot of other software packages unnecessary for my needs.
 
-This step-by-step guide shows how I set up my Raspberry Pi with the most minimal configuration to conserve precious system resources.
 
-### Get started
+最近，在我树莓派的储存卡不工作了。它已经作为服务器持续使用将近两年了，这为我提供了一个开始探索和修正问题的好机会。在初始化安装完成以后，它开始表现出一些磁盘方面的问题，并且官方树莓派操作系统发布了一个有重大意义的更新（Raspbian更名为Raspberr Pi OS）。所以我买了一个新的储存卡并开始重装。
 
-To begin, create a new operating system drive for the Pi. This requires two things: an OS image file and a microSD card.
 
-#### Download the Raspberry Pi OS image file
 
-While several operating systems are available, I chose to stick to the officially supported OS.
+尽管树莓派3B不是最新的硬件，但它对运行最小化的服务器提供多样化服务还是足够的。我认为我之前的安装用了完整安装镜像包括图形用户界面和许多其他的软件包是没有必要的。
 
-The first step is to download the newest OS image file from the official [Raspberry Pi OS][3] site to a computer you can use to write to a microSD card. Three different images are offered, and I chose the Raspberry Pi OS Lite. It is the smallest OS and includes only the essential files required for a base OS, so it will consume the least amount of disk space and system RAM. (When I downloaded the OS, the release date was August 20, 2020, but it has been updated since then. I do not expect any major differences, but as always, I recommend reading the release notes.)
 
-#### Write the OS to the microSD Card
+这个详细步骤的指南展示了我怎样用最小化设置来充分利用我珍贵的树莓派系统资源。
 
-The second step is to write the downloaded OS image file to the microSD card. My card was used previously, and when I inserted it into my Linux desktop, it automatically mounted its two existing partitions. I couldn't write the image until I unmounted these partitions. To do so, I had to determine their path with the `lsblk` command, which identified the device as `/dev/mmcblk0`:
+
+### 开始
+
+
+
+开始，要为树莓派创建一个新的系统分区。这要求两件事：系统镜像文件和储存卡。
+
+#### 下载树莓派系统镜像文件
+
+
+
+当有好几种操作系统可用的时候，我选择坚持树莓派官方支持的系统。
+
+
+第一步是从树莓派官方那个网站上下载最新的系统镜像文件到计算机，让后写入储存卡。有三个不同的镜像被提供，我选择树莓派精简版。它是最小化的操作系统只包含必要的文件为基本系统，所以它将占用最少的磁盘空间和系统内存。（当我下载系统的时候，发布日期是2020年8月20日，但是它已经被更新到最新。我不期望有什么巨大不同，但是我建议读一下发行说明。）
+
+
+
+#### 写树莓派系统镜像到储存卡
+
+
+第二步是写下载的系统镜像到储存卡。我的卡之前用过，当我把它插入我的Linux桌面之后，它自动加载了两个存在的分区。我不能写入镜像直到我卸载了这两个分区。
+我不得不用`lsblk`命令来证实`/dev/mmcblk0`设备文件的路径：
 
 
 ```
 `# lsblk -p`
 ```
 
-I then unmounted the partitions with the `umount` command:
+
+我用`umount`命令卸载了这两个分区：
 
 
 ```
@@ -47,22 +64,25 @@ I then unmounted the partitions with the `umount` command:
 # umount /dev/mmcblk0p1
 ```
 
-Once the partitions are unmounted, write the image file to the microSD card. Although there are many graphical image-writing tools available, I used the venerable `dd` command:
+
+一旦分区被卸载，就可以将镜像文件写入到储存卡了。尽管有许多图形化烧录工具，我还是习惯是用 `dd`命令：
+
 
 
 ```
 `# dd bs=4M if=/home/alan/Downloads/raspios/2020-08-20-raspios-buster-armhf-lite.img of=/dev/mmcblk0 status=progress conv=fsync`
 ```
 
-#### Boot the Pi
+#### 启动树莓派
 
-You just need a monitor, keyboard, and power adapter to access the Raspberry Pi. I also have an Ethernet cable for network connectivity, which I prefer over wireless—especially for a dedicated server.
+你只需要一个显示器，键盘，电源适配器来使用树莓派。我也有一个以太网口用网络连接，不过我更喜欢通过无线网络来搭建一个专用的服务器。
 
-Insert the microSD card and power on the Pi. Once it boots, log in with the default credentials: user `pi` and password `raspberry`.
+插入储存卡并打开电源。一旦成功启用，用默认的缺省密码来进行登录：用户名 `pi` and 密码`raspberry`。
 
-### Configure the OS
+### 系统设置
 
-Take the following steps to minimize your installation, disk space, and memory usage as much as possible. I recommend spending time to research each configuration to be as correct as possible. There are often several ways to apply a configuration, and configuration files and directives can be deprecated. Always review a product's documentation to ensure you're not applying an outdated configuration.
+
+按照以下步骤尽可能最小化设置磁盘空间，内存使用等。我建议花时间尽可能正确的研究每个配置。通常有几种应用配置的方法，有些配置文件和目录可能会被丢弃，所以要查看产品文档确保你没有应用过时的配置。
 
 #### Run raspi-config
 
