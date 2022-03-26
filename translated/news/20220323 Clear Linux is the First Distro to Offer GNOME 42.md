@@ -12,7 +12,7 @@ Clear Linux 是首个提供 GNOME 42 的发行版
 
 Clear Linux 是一个开源的滚动发布的发行版，它为云计算和边缘计算的开发者量身定制。
 
-你可能不知道，Clear Linux 是一个<ruby>英特尔<rt>Intel</rt></ruby>的项目。它在针对英特尔的处理器做了优化，并且提供了一个容器快速部署的环境。
+你可能不知道，Clear Linux 是一个<ruby>英特尔<rt>Intel</rt></ruby>的项目。它针对英特尔的处理器做了优化，并且提供了一个容器快速部署的环境。
 
 它同时支持了桌面和服务器（AWS、Google Compute Engine 和 Azure Hyper-V 等）。
 
@@ -20,7 +20,7 @@ Clear Linux 是一个开源的滚动发布的发行版，它为云计算和边�
 
 令人惊讶的是，Clear Linux 的最新发布版看起来会包括 GNOME 42（稳定版）。
 
-显而易见的是，Clear Linux 比 Arch 和 Fedora 更新地还要快，以此来支持最新的 GNOME 稳定发布版的特性。
+更不用提，Clear Linux 比 Arch 和 Fedora 更新地还要快，以此来支持最新的 GNOME 稳定发布版的特性。
 
 ### Clear Linux 上的 GNOME 42
 
@@ -40,7 +40,7 @@ Clear Linux 是一个开源的滚动发布的发行版，它为云计算和边�
 
 我在虚拟机上测试过，它的运行情况和预期的一致，没有显著的<ruby>缺陷<rt>bugs</rt></ruby>。
 
-如果你已经在使用 Clear Linux 了，或者对它好奇，想要了解更多，你在它的 [版本发布说明][5] 中找到更多细节，包括更新的软件包和其他变化。
+如果你已经在使用 Clear Linux 了，或者对它好奇，想要了解更多，你可以在它的 [版本发布说明][5] 中找到更多细节，包括更新的软件包和其他变化。
 
 ### 下载附带 GNOME 42 的 Clear Linux
 
