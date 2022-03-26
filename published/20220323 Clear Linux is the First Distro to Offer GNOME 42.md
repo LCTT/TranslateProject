@@ -3,12 +3,16 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14400-1.html"
 
 Clear Linux 是首个提供 GNOME 42 的发行版
 ======
+
+> 击败了 Arch 和 Fedora，Clear Linux 的最新版本提供了 GNOME 42 的稳定版本。
+
+![](https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/clear-linux-gnome-42.jpg?w=1200&ssl=1)
 
 Clear Linux 是一个开源的滚动发布的发行版，它为云计算和边缘计算的开发者量身定制。
 
@@ -20,33 +24,31 @@ Clear Linux 是一个开源的滚动发布的发行版，它为云计算和边�
 
 令人惊讶的是，Clear Linux 的最新发布版看起来会包括 GNOME 42（稳定版）。
 
-更不用提，Clear Linux 比 Arch 和 Fedora 更新地还要快，以此来支持最新的 GNOME 稳定发布版的特性。
+更不用提，Clear Linux 比 Arch 和 Fedora 更新地还要快，提供了最新的 GNOME 稳定发布版。
 
 ### Clear Linux 上的 GNOME 42
 
 ![][1]
 
-你有理由相信，Clear Linux 上有着 [最好的 GNOME 42 特性][2]。
+你可以期待在 Clear Linux 上看到 [最好的 GNOME 42 特性][2]。
 
-根据我的简单使用，其中大部分功能都是符合 GNOME 42 的预期的。
+根据我的简单使用，其中大部分功能都符合你对 GNOME 42 的预期。
 
 ![][3]
 
 文件管理器、日历、照片、天气以及许多其他应用程序都反映出，最新的 GNOME 42 版本升级到了 GTK 4。
 
-当然，在 Clear Linux 上，默认的桌面壁纸会有些不同，但你可以获取到同一张壁纸集的浅色/深色不同版本。
+当然，在 Clear Linux 上，默认的桌面壁纸会有些不同，但你可以获取到同一套壁纸集的浅色/深色不同版本。
 
 ![][4]
 
-我在虚拟机上测试过，它的运行情况和预期的一致，没有显著的<ruby>缺陷<rt>bugs</rt></ruby>。
+我在虚拟机上测试过，它的运行情况和预期的一致，没有显著的缺陷。
 
 如果你已经在使用 Clear Linux 了，或者对它好奇，想要了解更多，你可以在它的 [版本发布说明][5] 中找到更多细节，包括更新的软件包和其他变化。
 
 ### 下载附带 GNOME 42 的 Clear Linux
 
 或许你在它的官网下载页面找不到最新的发布版。但是，你可以在 [官方下载仓库][6] 中找到它。
-
-[Clear Linux (GNOME 42)][6]
 
 你可以根据自身需求（服务器/桌面），下载到对应的 ISO 文件。现在就开始体验吧！
 
@@ -57,7 +59,7 @@ via: https://news.itsfoss.com/clear-linux-gnome-42/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
