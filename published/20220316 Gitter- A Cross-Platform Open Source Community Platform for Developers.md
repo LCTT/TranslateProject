@@ -3,14 +3,16 @@
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14397-1.html"
 
 Gitter：面向开发者的跨平台开源社区平台
 ======
 
-**简介：** _一个为开发者量身定做的跨平台开源解决方案。你可以建立或加入现有的社区来进行协作和互动。
+![](https://img.linux.net.cn/data/attachment/album/202203/26/132222ldtjfcxvfz9kx5jv.jpg)
+
+> 一个为开发者量身定做的跨平台开源解决方案。你可以建立或加入现有的社区来进行协作和互动。
 
 几乎每个网络用户都知道 Slack、Rocket.Chat、Trello、[Nextcloud][1]，以及其他一些用于工作沟通和协作的解决方案。
 
@@ -18,11 +20,11 @@ Gitter：面向开发者的跨平台开源社区平台
 
 但是，作为一个软件开发者，如果你偶然发现了一个开发者社区怎么办？
 
-与 Reddit 或其他社交媒体上的社区不同，你可以进入一个开源平台，在那里，开发者们遇见并就重要的开源项目进行合作。这对于社会协作和同行之间的互动来说，不是很令人兴奋吗？
+与 Reddit 或其他社交媒体上的社区不同，你可以进入一个开源平台，在那里，开发者们遇见并就重要的开源项目进行合作。这对于社交协作和同行之间的互动来说，不是很令人兴奋吗？
 
 ![][3]
 
-Gitter（现在是 [Element][4] 的一部分，也是一个协作/聊天应用）的目标就是这样。它是一个由开源技术驱动的社区平台（[Matrix][5] 协议）。
+[Gitter][10]（现在是 [Element][4] 的一部分，也是一个协作/聊天应用）的目标就是这样。它是一个由开源技术驱动的社区平台（[Matrix][5] 协议）。
 
 ### Gitter：使用开源技术连接的开发者社区
 
@@ -55,12 +57,10 @@ Gitter 是一个令人兴奋的聊天和网络平台，有助于建立或加入�
   * 从你的网络中添加用户（例如，如果你使用 Twitter 登录，你可以选择从 Twitter 邀请用户到你的社区）。
   * 几个可用的集成（GitHub、Bitbucket、Trello、GitLab、Docker Hub、Discourse 等）。
   * 支持 GitHub 风格的 Markdown。
-  * 在同一社区下创建额外的房间，以保持事情的条理性。
+  * 在同一社区下创建更多的房间，以保持事情的条理性。
   * 轻松地分享/嵌入聊天室的链接。
   * 帖子系统，以保持对话的整齐。
   * 删除/报告信息的能力。
-
-
 
 总之，Gitter 提供了适合不同社区的各种功能。
 
@@ -76,13 +76,11 @@ Gitter 是一个令人兴奋的聊天和网络平台，有助于建立或加入�
 
 我在简短的测试中尝试了 Flatpak 包，它在 Ubuntu 20.04 LTS 上运行良好。你可以在你喜欢的任何一个 Linux 发行版上尝试 Flatpak/Snap。
 
-你也可以在你的移动设备上使用它。不幸的是，官方的 Gitter 应用已经不再维护。但是，你可以使用 Element 应用来登录房间/社区，考虑到两者都是由同一个去中心化的网络（即Matrix）驱动的。
+你也可以在你的移动设备上使用它。不幸的是，官方的 Gitter 移动应用已经不再维护。但是，你可以使用 Element 应用来登录房间/社区，考虑到两者都是由同一个去中心化的网络（即Matrix）驱动的。
 
 要了解更多信息，请浏览 [GitLab 页面][13]或前往其网站。
 
-[Gitter][10]
-
-_你试过 Gitter 吗？你对它有什么看法？它适合你这个开发者吗？你用它做什么？请在下面的评论中告诉我们你的想法。_
+你试过 Gitter 吗？你对它有什么看法？它适合你这个开发者吗？你用它做什么？请在下面的评论中告诉我们你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -91,7 +89,7 @@ via: https://itsfoss.com/gitter/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
