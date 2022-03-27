@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/mom-switch-linux)
 [#]: author: (Tomasz https://opensource.com/users/tomaszwaraksa)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (lkxed)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
