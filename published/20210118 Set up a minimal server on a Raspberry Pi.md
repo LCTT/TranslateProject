@@ -213,7 +213,7 @@ systemctl mask wpa_supplicant.service
 重启：重启你的新服务器是一个好主意: 
 
 ```
-# systemctl reboot`
+# systemctl reboot
 ```
 
 安装 Cockpit：你可以在树莓派系统上安装著名的 Linux Web 控制台 [Cockpit][5]，它提供了一个基于 HTML 界面来远程管理和监控你的服务器。我最近写了一篇 [Cockpit 入门][6] 的文章。用这个命令来安装它
