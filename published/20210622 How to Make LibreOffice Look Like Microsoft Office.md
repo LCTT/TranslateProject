@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (robsean)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14412-1.html)
 
 如何使 LibreOffice 看起来像微软 Office
 ======
@@ -63,11 +63,11 @@ LibreOffice 有一个名为“标签栏” 的 “<ruby>功能区<rt>Ribbon</rt>
 
 就这样，你的 LibreOffice 应该看起来像这样：
 
-![Making LibreOffice look like Microsoft Office in KDE Plasma][9]
+![在 KDE Plasma 中让 LibreOffice 看起来像微软 Office][9]
 
-![Making LibreOffice look like Microsoft Office in Windows 10][10]
+![在 Windows 10 中让 LibreOffice 看起来像微软 Office][10]
 
-![Making LibreOffice look like Microsoft Office in GNOME][11]
+![在 GNOME 中让 LibreOffice 看起来像微软 Office][11]
 
 注意，如果你正在使用 Ubuntu、KDE Plasma，或者任何 Linux 发行版，它们的外观可能会有所不同。但是，在我看来，在 KDE Plasma 中比在 GNOME 中看起来更像微软 Office 。LibreOffice 目前在基于 GTK 的系统中看起来并不太好。
 
