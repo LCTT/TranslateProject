@@ -3,14 +3,16 @@
 [#]: author: (Tomasz https://opensource.com/users/tomaszwaraksa)
 [#]: collector: (lujun9972)
 [#]: translator: (lkxed)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14407-1.html)
 
 我是如何帮助妈妈从 Windows 切换至 Linux 的
 ======
-有了 Linux，即便是新手用户，也能通过大量熟悉的应用程序获得流畅、精致的桌面体验。
-![Red Lego Heart][1]
+
+> 有了 Linux，即便是新手用户，也能通过大量熟悉的应用程序获得流畅、精致的桌面体验。
+
+![](https://img.linux.net.cn/data/attachment/album/202203/29/103155z5khz7z05fl7mz7l.jpg)
 
 大型强子对撞机是 [由 Linux 驱动][2] 的，国际空间站上的笔记本电脑是 [运行在 Linux 上][3] 的，[Instagram][4] 和 [Nest thermostats][5] 也是如此。最近，我们观看了 <ruby>机智号<rt>Ingenuity</rt></ruby> 在火星上空飞翔，它是一个令人惊叹的无人直升机，也是 [由 Linux 驱动的][6]！这进一步证明了这个操作系统的灵活性和通用性。
 
@@ -38,20 +40,17 @@
 
 ![Cowsay "Can Mom Survive Linux?"][7]
 
-(图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8])
+（图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8]）
 
 于是，在 2020 年 2 月的某一天，我从遥远的都柏林带着一台使用七年的联想 Yoga 13 来到这里，这台电脑和妈妈那台有着相似的参数，但它的屏幕要好很多，而且只有一半的重量。我在 VirtualBox 里讨论和测试了不同的 Linux 发行版，最终选择了 [Zorin OS][9] 发行版，一个自豪的“爱尔兰造”系统。我选择它是考虑到了下面几个因素：
-
 
   * 它基于我最熟悉的 Ubuntu Linux。
   * 它和 Windows 7 很像，在精心设计的同时考虑到了 Windows 难民。
   * 我感觉它很轻量、简单，对妈妈来说足够保守。完全没有 macOS Big Sur 上的花里胡哨！
 
-
-
 ![Zorin OS desktop][10]
 
-(图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8])
+（图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8]）
 
 ### 系统安装
 
@@ -69,15 +68,13 @@
   * [VLC][15]，用来播放视频和音乐
   * Softmaker Office，用来编辑文本和表格
 
-
-
 注意到列表里没有杀毒软件了吗？好耶！
 
 一个小时后，系统和应用全部安装完成，妈妈的 Zorin OS 已准备就绪。
 
 ![Zorin OS home folder][16]
 
-(图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8])
+（图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8]）
 
 ### 设置系统
 
@@ -90,13 +87,11 @@
   * 启动了简单防火墙（`ufw`）并允许 ssh 流量
   * 安装了 AnyDesk 来远程登录到桌面
 
-
-
 这样操作之后，我就可以通过安全的 ssh 连接访问到妈妈的笔记本电脑。我可以通过 shell 进行定期维护，而妈妈甚至不会注意到任何事情。这是因为 Linux 完成更新后通常 _不需要_ 重新启动。真是一个奇迹啊！简直不可能的事，它是怎么做到的呢？
 
 ![Updating software remotely][17]
 
-(图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8])
+（图源 Tomasz Waraksa，遵从[<ruby>署名-相同方式共享 4.0 国际协议<rt>CC BY-SA 4.0</rt></ruby>][8]）
 
 ### 妈妈能学会使用 Linux 吗
 
@@ -122,8 +117,6 @@
 
 _免责声明：本文不推广所描述的任何产品、服务或供应商。我与他们没有任何商业利益或联系。我并没有在暗示这些产品或服务是最适合你的，也不承诺你的体验会和我一样。_
 
-* * *
-
 _本文最初发布在 [Let's Debug It][18] 上，在获得许可后重新使用。_
 
 --------------------------------------------------------------------------------
@@ -133,7 +126,7 @@ via: https://opensource.com/article/21/6/mom-switch-linux
 作者：[Tomasz][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
