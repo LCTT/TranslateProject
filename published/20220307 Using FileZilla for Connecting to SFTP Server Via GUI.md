@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "hwlife"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14410-1.html"
 
 使用 FileZilla 以图形界面连接 SFTP 服务器
 ======
