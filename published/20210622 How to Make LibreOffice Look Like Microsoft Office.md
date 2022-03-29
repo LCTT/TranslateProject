@@ -32,7 +32,7 @@
 
 LibreOffice 有一个名为“标签栏” 的 “<ruby>功能区<rt>Ribbon</rt></ruby>” 式工具栏。尽管它带有多种工具栏变体（如下）。但是，对于这篇指南，我使用 <ruby>标签式<rt>Tabbed</rt></ruby> 工具栏选项。
 
-  * 打开 LibreOffice 并转到 “<ruby>菜单<rt>Menu<rt></ruby> > <ruby>视图<rt>View</rt></ruby> > <ruby>用户界面<rt>User Interface</rt></ruby>”。
+  * 打开 LibreOffice 并转到 “<ruby>菜单<rt>Menu</rt></ruby> > <ruby>视图<rt>View</rt></ruby> > <ruby>用户界面<rt>User Interface</rt></ruby>”。
   * 从 UI 部分中选择 “<ruby>标签式<rt>Tabbed</rt></ruby>” 。
 
     ![tabbed bar option][3]
