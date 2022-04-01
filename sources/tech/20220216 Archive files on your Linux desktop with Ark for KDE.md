@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/2/archives-files-linux-ark-kde"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
