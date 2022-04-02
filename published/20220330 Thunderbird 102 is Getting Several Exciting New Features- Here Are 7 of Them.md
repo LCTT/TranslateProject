@@ -3,18 +3,22 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14421-1.html"
 
 7 个 即将发布的 Thunderbird 102 版本的新功能
 ======
+
+> Thunderbird 102 将带来有用的新功能以及 UI/UX 升级。在此查看其中最精彩的内容！
+
+![](https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/thunderbird-102.jpg?w=1200&ssl=1)
 
 毫无疑问，Thunderbird 是 Linux 上最好的 [电子邮件客户端][1] 之一。
 
 它是 Mozilla 基金会的一个开源产品，是一个具有强大功能的可靠的电子邮件客户端。
 
-在 [最近的更新][2] 中，它已经收到了新增的功能以及一些视觉上的改进。
+在 [最近的更新][2] 中，它已经新增了一些功能以及视觉上的改进。
 
 现在，随着 Thunderbird 102 版本即将发布，它将添加更多激动人心的功能。
 
@@ -24,7 +28,7 @@
 
 Thunderbird 102 版本将是一次重大升级，它增加了一些有用的功能，[预期发布时间][4] 为 2022 年 6 月 28 日。其中包括下面这几个变化：
 
-  * Spaces 工具栏
+  * 空间工具栏
   * 新的地址簿
   * 支持 Matrix 协议
   * 链接预览卡片
@@ -34,13 +38,13 @@ Thunderbird 102 版本将是一次重大升级，它增加了一些有用的功�
 
 这听起来不错吧，这里还有一些关于以上变化的更多细节。
 
-### 1. <ruby>空间工具栏<rt>Spaces Toolbar</rt></ruby>
+### 1. 空间工具栏
 
-新的“空间工具栏”在左边的侧边栏中，它将不同的活动以图标的形式分隔开来。
+新的“<ruby>空间工具栏<rt>Spaces Toolbar</rt></ruby>”位于左边的侧边栏中，它将不同的活动以图标的形式分隔开来。
 
 ![][5]
 
-你将可以更容易地在电子邮件客户端内的多个标签间导航，也可以更容易地管理它们。
+你可以更容易地在电子邮件客户端内的多个标签间导航，也可以更容易地管理它们。
 
 你也可以折叠工具栏，让它作为一个图标显示在标签栏中，为你节省一些屏幕空间。
 
@@ -94,12 +98,11 @@ Thunderbird 102 版本改进了所有账户设置功能的体验，如添加账�
 
 ### 其他变化
 
-In addition to the key highlights, you can expect numerous technical improvements and bug fixes.
 除了以上的关键亮点外，你还可以得到许多技术升级和错误修复。
 
-例如，OpenPGP 的用户体验和用户交互也得到了升级，同时还有一个新的存储格式 Maildir。
+例如，OpenPGP 的用户体验和用户交互也得到了升级，同时还有一个新的存储格式：Maildir。
 
-_你对 Thunderbird 102 版本即将新增的功能有什么看法吗？你对 Thunderbird 的用户体验/用户交互升级感到兴奋吗？请在下方的评论区中说说你的想法吧。_
+你对 Thunderbird 102 版本即将新增的功能有什么看法吗？你对 Thunderbird 的用户体验/用户交互升级感到兴奋吗？请在下方的评论区中说说你的想法，或只是简单说声“谢谢”。
 
 --------------------------------------------------------------------------------
 
@@ -108,7 +111,7 @@ via: https://news.itsfoss.com/thunderbird-102-features/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
