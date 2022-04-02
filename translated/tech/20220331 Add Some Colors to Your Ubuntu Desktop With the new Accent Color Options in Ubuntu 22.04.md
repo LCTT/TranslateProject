@@ -7,42 +7,42 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Add Some Colors to Your Ubuntu Desktop With the new Accent Color Options in Ubuntu 22.04
+在 Ubuntu 22.04 中使用新的强调色选项为你的 Ubuntu 桌面添加一些颜色
 ======
 
-Traditionally, Ubuntu has always used orange and aubergine accent colors. If you want to add a different color theme without changing the Yaru theme, the option is provided with a third party [theme called Yaru colors][1].
+传统上，Ubuntu 一直使用橙色和茄子色的强调色。如果你想在不改变 Yaru 主题的情况下添加一个不同的颜色主题，它由第三方[名为 Yaru 颜色的主题][1]提供。
 
-But this is changing with Ubuntu 22.04. Starting with the new upcoming LTS, you’ll be able to change the accent color of your Ubuntu desktop without any additional tool.
+但是这一点随着 Ubuntu 22.04 的到来而改变。从即将推出的新的 LTS 开始，你将能够改变你的 Ubuntu 桌面的强调色，而不需要任何额外的工具。
 
-The option is available right in the system settings.
+这个选项在系统设置中就有。
 
-### Changing accent color in Ubuntu 22.04
+### 改变 Ubuntu 22.04 的强调色
 
-I am already using Ubuntu 22.04 pre-release version. You won’t get this option yet but it’s good to know about this [new feature of Ubuntu 22.04][2].
+我已经在使用 Ubuntu 22.04 预发布版本。你还不会得到这个版本，但知道这个 [Ubuntu 22.04 的新功能][2]是件好事。
 
-In the settings, under the Appearance tab, you’ll see the color options. It will give you ten color options including the default orange: Bark, Sage, Olive, Viridian, Prussian Green, Blue, Purple, Magenta and Red.
+在设置中，在外观标签下，你会看到颜色选项。它将给你十个颜色选项，包括默认橙色、树皮色、鼠尾草色、橄榄色、绿色、普鲁士绿、蓝色、紫色、洋红色和红色。
 
-You can select your preferred color from here.
+你可以从这里选择你喜欢的颜色。
 
 ![Changing accent colors in Ubuntu 22.04][3]
 
-What does it change? All the places where you had Orange color element in the desktop. So, the folder colors get changed, calendar entries, software center logo, text selection highlight in browsers and more.
+它改变了什么？所有你在桌面上有橙色元素的地方。所以，文件夹的颜色会被改变，日历条目，软件中心的标志，浏览器中的文本选择高亮等等。
 
 ![Effect of accent color change][4]
 
-This video shows all the accent colors in action:
+这段视频展示了所有强调色的作用。
 
-You should mix the colors with light and dark theme. Some colors look good with the light theme, while some look better with the dark theme.
+你应该将颜色与浅色和深色主题混合。有些颜色在浅色主题下看起来不错，而有些则在深色主题下看起来更好。
 
-### Change the accent color or stick with default?
+### 改变强调色还是坚持使用默认颜色？
 
 ![Accent color option in elementary OS 6][5]
 
-In recent times, Linux Mint and elementary OS started providing accent color options. Ubuntu is also joining this party.
+最近，Linux Mint 和 elementary OS 开始提供强调色选项。Ubuntu 也在加入这个行列。
 
-Personally, I have always associated orange color with the identity of Ubuntu. I am not sure if I’ll go with different colors but It’s always good to have options.
+就我个人而言，我一直将橙色与 Ubuntu 的身份联系在一起。我不确定我是否会使用不同的颜色，但有选择总是好的。
 
-How about you? Do you look forward to using the accent colors in Ubuntu 22.04 or would you stick with the default orange color? Please share your view in the comment section.
+你呢？你是否期待使用 Ubuntu 22.04 中的强调色，还是坚持使用默认的橙色？请在评论区分享你的观点。
 
 --------------------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ via: https://itsfoss.com/accent-color-ubuntu/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
