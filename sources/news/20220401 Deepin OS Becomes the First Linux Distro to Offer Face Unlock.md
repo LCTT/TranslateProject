@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/deepin-os-20-5-release/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
