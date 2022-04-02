@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/glow-cli-tool-markdown/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hwlife"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
