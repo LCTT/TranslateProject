@@ -1,32 +1,33 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lkxed)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14427-1.html)
 [#]: subject: (Linux Jargon Buster: What is Grub in Linux? What is it Used for?)
 [#]: via: (https://itsfoss.com/what-is-grub/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
-Linux 术语克星：Linux 中的 Grub 是什么？它有什么用？
+Linux 黑话解释：Linux 中的 GRUB 是什么？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202204/03/111835u4rcmcf7qze8pawa.png)
 
 如果你曾经使用过 Linux 桌面，你一定见过这个屏幕。这就是所谓的 GRUB 屏幕。是的，它的字母全部都是大写的。
 
 ![Remember this screen? This is GRUB][1]
 
-在 “<ruby>Linux 术语克星<rt>Linux Jargon Buster</rt></ruby>”系列的这一个章节中，我将告诉你 Grub 是什么，以及它有什么用处。此外，我还会简要地介绍一下配置和定制的部分。
+在 “<ruby>Linux 黑话解释<rt>Linux Jargon Buster</rt></ruby>”系列的这一个章节中，我将告诉你 GRUB 是什么，以及它有什么用处。此外，我还会简要地介绍一下配置和定制的部分。
 
 ### GRUB 是什么？
 
-GRUB[2] 是一个用于加载和管理系统启动的完整程序。它是 Linux 发行版中最常见的引导程序。引导程序是计算机启动时运行的第一个软件。它加载 [操作系统的内核][3]，然后再由内核初始化操作系统的其他部分（包括 Shell、[显示管理器][4]、[桌面环境][5] 等等）。
+[GRUB][2] 是一个用于加载和管理系统启动的完整程序。它是 Linux 发行版中最常见的<ruby>引导程序<rt>bootloader</rt></ruby>。引导程序是计算机启动时运行的第一个软件。它加载 [操作系统的内核][3]，然后再由内核初始化操作系统的其他部分（包括 Shell、[显示管理器][4]、[桌面环境][5] 等等）。
 
-### <ruby>引导程序<rt>boot loader</rt></ruby> 和 <ruby>引导管理器<rt>boot manager</rt></ruby>
+### 引导程序和引导管理器
 
-我不想现在就把你搞糊涂，但是我认为这个话题是不可避免的。引导程序和引导管理器之间有着一条模糊的界限。
+我不想现在就把你搞糊涂，但是我认为这个话题是不可避免的。<ruby>引导程序<rt>boot loader</rt></ruby>和<ruby>引导管理器<rt>boot manager</rt></ruby>之间有着一条模糊的界限。
 
 你已经知道了引导程序是什么。它会首先启动，然后将内核加载到内存中并执行它。引导管理器则允许你在不同的操作系统之间进行选择（如果你的电脑上不止一个操作系统的话）。引导管理器并不会直接加载系统。
 
-With Linux kernel version 3.3, the [Linux kernel includes a built-in EFI bootloader][6]. In fact, any operating system that is capable of working [EFI system includes an EFI bootloader][7]. In EFI capable systems, the firmware reads the EFI System Partition (ESP) for the EFI files for boot information.
 随着 Linux 内核 3.3 版本的推出，[Linux 内核包括了一个内置的 EFI 引导程序][6]。事实上，任何一个[支持 EFI 的系统都包括一个 EFI 引导程序][7]。在支持 EFI 的系统中，固件会读取 <ruby>EFI 系统分区<rt>EFI System Partition</rt></ruby>（ESP）中的 EFI 文件，从而获得启动信息。
 
 这里插入一张图片，图中显示了带有 ESP 分区的分区表：
@@ -35,13 +36,29 @@ With Linux kernel version 3.3, the [Linux kernel includes a built-in EFI bootloa
 
 GRUB 既是一个引导程序，也是一个引导管理器。一会儿我再来谈 GRUB。让我们先看看其他类似 GRUB 的程序。
 
-> 小知识：GRUB 是 **GR**and **U**nified **B**ootloader 的首字母缩写。
+> 小知识：GRUB 是 **GR**and **U**nified **B**ootloader（大一统引导程序） 的首字母缩写。
+
+### GRUB 屏幕上的那些行是什么意思？
+
+你会在 GRUB 屏幕上看到几行字。这些行对于不同的设置、不同的发行版会有所不同。
+
+通常情况下，第一行是你的 Linux 发行版。如果你看到类似高级选项的东西，你可以进入其中，找到一些以 “linux-generic-x-y-z” 等开头的行。
+
+当你的 Linux 发行版更新内核版本时，它至少会保留一个旧版本。你可以选择启动到旧的 Linux 内核，以防你的系统遇到新更新的 Linux 内核的任何问题。
+
+在基于 Ubuntu 的发行版中，你也可以看到一个恢复选项。
+
+![][8a]
+
+*在高级选项下，通常有一个旧的内核版本和恢复选项*
+
+在最后，你可能会看到一个条目，如系统设置或 UEFI 设置，以访问系统的 BIOS 设置。
 
 ### 还有哪些类似 GRUB 的引导管理器？
 
-GRUB 是 Linux 中最流行的引导管理器。但它并不是唯一的一个。有一个高度可定制的引导管理器，名字叫做 [rEFInd boot manager][9]，它同样受到了一些 Linux 用户的喜爱。
+GRUB 是 Linux 中最流行的引导管理器。但它并不是唯一的一个。有一个高度可定制的引导管理器，名字叫做 [rEFInd 引导管理器][9]，它同样受到了一些 Linux 用户的喜爱。
 
-![定制化的 rEFInd Boot Manager 屏幕 | 图片来源：kofler.info/pop_os][10]
+![定制化的 rEFInd 引导管理器屏幕 | 图片来源：kofler.info/pop_os][10]
 
 还有一个基于文本的引导管理器，名字叫做 [systemd-boot][11]。你可以猜到这是专为基于 systemd 的 Linux 发行版准备的。有一些发行版正在使用 systemd-boot，比如 Pop OS。
 
@@ -69,16 +86,15 @@ GRUB 是 Linux 中最流行的引导管理器。但它并不是唯一的一个�
 
 你必须 [更新 GRUB 才能使这些修改生效][16]。
 
-### Ubuntu 中的 GRUB 定制器
+### 使用 GRUB 定制器来定制 GRUB
 
 如果你不太习惯 [在终端里使用文本编辑器编辑文件][17]，你可以 [使用一个叫做 GRUB 定制器的图形工具][18]。
 
+它允许你改变启动顺序、默认超时时间等等。你还可以用它来把 GRUB 的背景设置成一张自定义的墙纸。
 
 ![][19]
 
-它允许你改变启动顺序、默认超时时间等等。你还可以用它来把 GRUB 的背景设置成一张自定义的墙纸。
-
-遗憾的是，这个工具只适用于基于 Ubuntu 的 Linux 发行版。
+GRUB 定制器可以在 Ubuntu 20.04 中从 Universe 仓库安装，在 Ubuntu 18.04 中 [通过 PPA 安装][22]。它可以 [通过 AUR][23] 在基于 Arch Linux 的发行版中使用。
 
 ### 总结
 
@@ -101,7 +117,7 @@ via: https://itsfoss.com/what-is-grub/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -110,11 +126,12 @@ via: https://itsfoss.com/what-is-grub/
 [1]: https://i2.wp.com/itsfoss.com/wp-content/uploads/2020/11/grub-screen-linux.png?resize=800%2C450&ssl=1
 [2]: https://www.gnu.org/software/grub/
 [3]: https://itsfoss.com/what-is-linux/
-[4]: https://itsfoss.com/display-manager/
-[5]: https://itsfoss.com/what-is-desktop-environment/
+[4]: https://linux.cn/article-12773-1.html
+[5]: https://linux.cn/article-12579-1.html
 [6]: https://www.rodsbooks.com/efi-bootloaders/efistub.html
 [7]: https://jdebp.eu/FGA/efi-boot-process.html
 [8]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/11/disk-partition-gparted.png?resize=744%2C385&ssl=1
+[8a]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2012/07/boot-into-recovery-mode-ubuntu-1.jpg?w=635&ssl=1
 [9]: https://www.rodsbooks.com/refind/
 [10]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/11/refind-boot-manager.png?resize=800%2C602&ssl=1
 [11]: https://wiki.gentoo.org/wiki/Systemd-boot
@@ -128,3 +145,5 @@ via: https://itsfoss.com/what-is-grub/
 [19]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2013/05/make-windows-default-grub-2.jpeg?resize=799%2C435&ssl=1
 [20]: https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/11/grub-manual-Linux-terminal.png?resize=800%2C462&ssl=1
 [21]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/11/what_is_GRUB.gif?resize=500%2C343&ssl=1
+[22]: https://itsfoss.com/ppa-guide/
+[23]: https://itsfoss.com/aur-arch-linux/
