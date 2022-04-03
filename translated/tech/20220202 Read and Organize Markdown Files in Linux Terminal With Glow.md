@@ -7,18 +7,18 @@
 [#]: publisher: " "
 [#]: url: " "
 
-在 Linux 终端用 Glow 阅读和管理 Markdown 文件
+用 Glow 在 Linux 终端阅读和管理 Markdown 文件
 ======
 
 _**简要说明: Glow 是一个能让你在 Linux 终端渲染 Markdown 文件的命令行工具。你也可以用它来管理 Markdown 文件。**_
 
-我喜欢 Markdown 。虽然我不是一个专业的 Markdown 用户，但我确定可以用 Markdown 写下了许多文章。
+我喜欢 Markdown 。虽然我不是一个专业的 Markdown 用户，但我确定可以用 Markdown 写下许多文章。
 
-如果你是 It’s FOSS 的常客，你可能已经遇到过 [Markdown 指南][1]，编辑器和类似 Obsidian 的工具。我将再加个工具到名单。它叫做 [Glow][2] 并且不像之前涵盖的程序，Glow 能够让你在终端里阅读 Markdown 文件。
+如果你是 It’s FOSS 的常客，你可能已经遇到过 [Markdown 指南][1]，编辑器和类似 Obsidian 的工具。我将再加个工具到这个名单。它叫做 [Glow][2] 并且不像之前涵盖的程序，Glow 能够让你在终端里阅读 Markdown 文件。
 
-等等！你不能使用类似 cat , less 甚至是像 Vim 编辑器这样常规的[ Linux 命令去阅读文本文件][3]在终端里去阅读 Markdown 文件吗？
+等等！你不能在终端里使用类似 cat , less 甚至是像常规的 [ Linux 命令阅读文本文件][3] 的 Vim 编辑器去阅读 Markdown 文件吗？
 
-是的，你可以。但它将会是所有代码按原样显示的原始 Markdown 文件，而不是显示正确的格式化文本。
+是的，你可以。但它会将所有代码按原样显示成原始 Markdown 文件，而不是显示正确的格式化文本。
 
 ![Glow renders the Markdown file][4]
 
@@ -27,7 +27,7 @@ _**简要说明: Glow 是一个能让你在 Linux 终端渲染 Markdown 文件�
 
 ### Markdown 爱好者将会喜欢 Glow 的功能
 
-Glow 可以用两张格式来使用：[命令行界面和终端用户界面][5]。
+Glow 可以用两种格式来使用：[命令行界面和终端用户界面][5]。
 
 简单的在一个 Markdown 文件使用 Glow 命令将在屏幕上显示整个渲染后的内容。
 
@@ -39,10 +39,10 @@ Glow 可以用两张格式来使用：[命令行界面和终端用户界面][5]�
 
 ![Markdown display with Glow][6]
 
-这是很好的，但是 Glow 可以做的更好。它有额外的选项打开终端用户界面模式(terminal user interface)并且允许你用它来做更多的事情。
+这是很不错，但是 Glow 可以做的更好。它有额外的参数打开终端用户界面模式(terminal user interface)并且允许你用它来做更多的事情。
 
 
-你可以在页面模式下使用页面参数来显示渲染后的文本(比如 less 命令如何显示文本没有弄乱屏幕一样)。
+你可以在页面模式下使用页面参数来显示渲染后的文本(类似 less 命令显示文本没有弄乱屏幕一样)。
 
 ```
 
@@ -50,12 +50,12 @@ Glow 可以用两张格式来使用：[命令行界面和终端用户界面][5]�
 
 ```
 
-在页面视图中，你可以使用 **/ 键和 less 命令相同方法那样搜索特定的文本**。你可以按下** q 键退出**这个视图。
+在页面视图中，你可以使用 **/ 键和 less 命令相同方法那样搜索特定的文本**。你可以按下**q 键退出** 这个视图。
 
 ![Pager view similar to the less command][7]
 
 
-不止这些。你可以是使用 -a 选项，它将查找当前目录和它子目录中的所有 Markdown 文件。
+不止这些。你可以使用 -a 选项，它将查找当前目录和它子目录中的所有 Markdown 文件。
 
 ```
 
@@ -67,7 +67,7 @@ Glow 可以用两张格式来使用：[命令行界面和终端用户界面][5]�
 
 ![With -a option, Glow finds and displays all Markdown files in current directory][8]
 
-你可以查看显示在底部的帮助选项。在这个视图查找选项允许你根据名称查找文件(不是它们的内容).
+你可以查看显示在底部的帮助选项。在这个视图查找选项允许你根据文件名查找文件(不是它们的内容).
 
 ![You can search files by their name][9]
 
@@ -90,7 +90,7 @@ Glow 可以用两张格式来使用：[命令行界面和终端用户界面][5]�
 
 ### 在 Linux 上安装 Glow
 
-Glow 在 Linux 和 macOS 上是可用的。你可以在 macOS 和[ Linux 上使用 Homebrew ][13]来安装它，然而，我建议你在这里用 Linux 安装包。
+Glow 在 Linux 和 macOS 上是可用的。你可以在 macOS 和[ Linux 上使用 Homebrew ][13]来安装它，然而，我建议你在这里使用 Linux 安装包。
 
 Glow 在 Void， Solus 和 Arch Linux 的仓库里是可用的。你可以用它们的包管理器来安装它们。
 
@@ -108,7 +108,7 @@ Glow 在 Void， Solus 和 Arch Linux 的仓库里是可用的。你可以用它
 
 ### 结尾
 
-总之，Glow 是在终端里的一个美化视图和管理 Markdown 的便利工具。像许多其他的命令行工具一样，它不是每个人都适合。如果你常在终端里并喜欢 Markdown 文件，你可以尝试使用一下。当你用过了，请在评论区里分享你使用它的体验。
+总之，Glow 是在终端里的一个美化视图和管理 Markdown 的便利工具。像许多其他的命令行工具一样，它不是每个人都适合。如果你经常在终端并喜欢 Markdown 文件，你可以尝试使用一下。当你用过后，请在评论区里分享你使用它的体验。
 
 --------------------------------------------------------------------------------
 
