@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/using-sourcegraph-to-search-34000-fedora-repositories/"
 [#]: author: "Justin Dorfman https://fedoramagazine.org/author/jdorfman/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
