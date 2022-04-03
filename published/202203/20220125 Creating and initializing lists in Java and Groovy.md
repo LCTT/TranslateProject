@@ -3,14 +3,16 @@
 [#]: author: "Chris Hermansen https://opensource.com/users/clhermansen"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14411-1.html"
 
 在 Java 和 Groovy 中创建和初始化列表的不同
 ======
-首先在 Java 中创建初始化一个整数列表，然后在 Groovy 中做同样的事。
-![Developing code.][1]
+
+> 首先在 Java 中创建初始化一个整数列表，然后在 Groovy 中做同样的事。
+
+![](https://img.linux.net.cn/data/attachment/album/202203/29/214023b4r9rauua1gjp59l.jpg)
 
 我非常喜欢 [Groovy 编程语言][2]。我喜欢它是因为我喜欢 Java，尽管 Java 有时候感觉很笨拙。正因为我是那么喜欢 Java，其他运行在 JVM 上语言都不能吸引我。比方说 Kotlin、Scala 还有 Clojure 语言，它们感觉上就和 Java 不一样，因为它们对于什么是好的编程语言的理解不同。Groovy 和它们都不一样，在我看来，Groovy 是一个完美的选项，特别是对于一部分程序员来说，他们喜欢 Java，但是又需要一个更灵活、更紧凑，并且有时候更直接的语言。
 
@@ -18,12 +20,10 @@
 
 ### 安装 Java 和 Groovy
 
-Groovy 是基于 Java 的，因此需要同时安装一个 Java 才行。你的 Linux 发行版的仓库中可能有最近的比较好的 Java 版本。或者，你也可以在根据 [这些指示][3] 来安装 Groovy。对于 Linux 用户来说，SDKMan 是一个不错的代替选项，你可以使用它来获取多个 Java 和 Groovy 版本，以及许多其他的相关工具。在这篇文章中，我使用的 SDK 发行版是：
+Groovy 是基于 Java 的，因此需要同时安装一个 Java 才行。你的 Linux 发行版的仓库中可能有最近的比较好的 Java 版本。或者，你也可以在根据 [这些指导][3] 来安装 Groovy。对于 Linux 用户来说，SDKMan 是一个不错的代替选项，你可以使用它来获取多个 Java 和 Groovy 版本，以及许多其他的相关工具。在这篇文章中，我使用的 SDK 发行版是：
 
-  * Java: version 11.0.12-open of OpenJDK 11
-  * Groovy: version 3.0.8
-
-
+  * Java: OpenJDK 11 的 11.0.12-open 版本 
+  * Groovy: 3.0.8 版本
 
 ### 言归正传
 
@@ -34,36 +34,34 @@ Java 中有很多方法可以实例化并初始化列表，从它最初被引入
 `java.util.Arrays` 类定义了一个 `asList()` 静态方法，它可以被用来创建一个基于数组的列表，因此大小是不可变的，尽管其中的元素是可以被修改的。下面是它的使用方式：
 
 
-```java
-var a1 = [Arrays][4].asList(1,2,3,4,5,6,7,8,9,10); // immutable list of mutable elements
+```
+var a1 = Arrays.asList(1,2,3,4,5,6,7,8,9,10); // immutable list of mutable elements
 
-[System][5].out.println("a1 = " + a1);
-[System][5].out.println("a1 is an instance of " + a1.getClass());
+System.out.println("a1 = " + a1);
+System.out.println("a1 is an instance of " + a1.getClass());
 
 // output is
 // a1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // a1 is an instance of class java.util.Arrays$ArrayList
 
 a1.set(0,0); // succeeds
-[System][5].out.println("a1 = " + a1); // output is
+System.out.println("a1 = " + a1); // output is
 // a1 = [0, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 a1.add(11); // fails producing
 // Exception in thread "main" java.lang.UnsupportedOperationException
-[System][5].out.println("a1 = " + a1); // not reached
-
+System.out.println("a1 = " + a1); // not reached
 ```
 
 #### 使用 java.util.List 类
 
 `java.util.List` 类定义了一个 `of()` 静态方法，它可以被用来创建一个不可变的列表，其中的元素是否可变要取决于它们本身是否支持修改。下面是它的使用方式：
 
+```
+var a2 = List.of(1,2,3,4,5,6,7,8,9,10);
 
-```java
-var a2 = [List][6].of(1,2,3,4,5,6,7,8,9,10);
-
-[System][5].out.println("a2 = " + a2);
-[System][5].out.println("a2 is an instance of " + a2.getClass());
+System.out.println("a2 = " + a2);
+System.out.println("a2 is an instance of " + a2.getClass());
 
 // output is
 // a2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -71,11 +69,10 @@ var a2 = [List][6].of(1,2,3,4,5,6,7,8,9,10);
 
 a2.set(0,0); // fails producing
 // Exception in thread "main" java.lang.UnsupportedOperationException
-[System][5].out.println("a2 = " + a2); // not reached
+System.out.println("a2 = " + a2); // not reached
 
 a2.add(11); // also fails for same reason if above two lines commented out
-[System][5].out.println("a2 = " + a2); // not reached
-
+System.out.println("a2 = " + a2); // not reached
 ```
 
 因此，我可以使用 `Arrays.asList()`，也可以使用 `List.of()` 方法，前提是如果我想要的是一个大小不能改变、且不关心元素是否可变的列表。
@@ -83,45 +80,42 @@ a2.add(11); // also fails for same reason if above two lines commented out
 如果我想要初始化一个可变的列表，我更倾向于把这些不可变的列表作为参数传给一个列表构造器，就像下面这样：
 
 
-```java
-var a1 = new ArrayList<Integer>([Arrays][4].asList(1,2,3,4,5,6,7,8,9,10));
+```
+var a1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
 
-[System][5].out.println("a1 = " + a1);
-[System][5].out.println("a1 is an instance of " + a1.getClass());
+System.out.println("a1 = " + a1);
+System.out.println("a1 is an instance of " + a1.getClass());
 
 // output is
 // a1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // a1 is an instance of class java.util.ArrayList
 
 a1.set(0,0);
-[System][5].out.println("a1 = " + a1);
+System.out.println("a1 = " + a1);
 
 //output is
 // a1 = [0, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 a1.add(11);
-[System][5].out.println("a1 = " + a1);
+System.out.println("a1 = " + a1);
 
 // output is
 // a1 = [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
 ```
 
 注意，这个 `Arrays.asList()` 方法是用来初始化这个新的 `ArrayList<Integer>()` 的，也就是说，它为这个传进来的列表创建了一个可变的拷贝。
 
 现在，或许只有我这么想，但是这种方式确实看起来需要理解很多关于 `java.util.Arrays` 和 `java.util.List` 类的细节才行，而我只是想要创建并初始化一个数字列表而已（尽管真正使用到的语句并没有太多“仪式”）。下面是真正用到的那行代码，仅供参考：
 
-
-```java
-`var a1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));`
+```
+var a1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
 ```
 
 ### Groovy 是怎么做的
 
 下面来看看在 Groovy 中如何实现上述需求：
 
-
-```groovy
+```
 def a1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 println "a1 = $a1"
@@ -142,7 +136,6 @@ println "a1 = $a1"
 
 // output is
 // a1 = [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
 ```
 
 我们一眼就能发现，Groovy 使用了 `def` 关键字而不是 `var` 关键字。我还发现了，仅仅是把一系列的类型（在这个例子里是整数）放进括号里，我就得到了一个创建好的列表。此外，这样创建出来的列表完全就是我想要的：一个可变的 `ArrayList` 实例。
@@ -155,8 +148,6 @@ println "a1 = $a1"
 
 Apache Groovy 网站上有非常多的文档。另一个很棒的 Groovy 资源是 [Mr. Haki][7]。学习 Groovy 还有一个很棒的原因，那就是可以接着学习 [Grails][8]，后者是一个优秀的、高效率的全栈 Web 框架，基于许多优秀组件构建而成，比如有 Hibernate、Spring Boot 和 Micronaut 等。
 
-本文献给我亲爱的朋友 Anil Mukhi，他于 2022 年 1 月 3 日不幸离世。谢谢你，Anil，让我有机会了解这么多关于 Groovy、Grails 和赛马数据的知识。
-
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/22/1/creating-lists-groovy-java
@@ -164,7 +155,7 @@ via: https://opensource.com/article/22/1/creating-lists-groovy-java
 作者：[Chris Hermansen][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
