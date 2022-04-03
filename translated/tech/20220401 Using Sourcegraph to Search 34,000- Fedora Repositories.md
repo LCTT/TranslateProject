@@ -2,120 +2,111 @@
 [#]: via: "https://fedoramagazine.org/using-sourcegraph-to-search-34000-fedora-repositories/"
 [#]: author: "Justin Dorfman https://fedoramagazine.org/author/jdorfman/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-Using Sourcegraph to Search 34,000+ Fedora Repositories
+使用 Sourcegraph 搜索 34,000 多个 Fedora 仓库
 ======
 
 ![][1]
 
-Photo by [Markus Winkler][2] on [Unsplash][3]
+照片由 [Unsplash][3] 上的 [Markus Winkler][2] 提供
 
-In October 2021, a Fedora Linux user [asked a question about licensing][4]. Fedora Project Leader Matthew Miller [left a response][5]: “Since we don’t have a complete, exploded, searchable repository of all of the packages in Fedora, I don’t have a quick way to check.” 
+在 2021 年 10 月，一个 Fedora Linux 用户 [问了一个关于许可的问题][4]。Fedora 项目负责人 Matthew Miller [回复道][5]：“我不能快速地检查（这个问题），因为我们没有一个收录完整、使用广泛、可搜索的存储库来检索 Fedora 中所有软件包。”
 
-[Followed by][6]: “…or possibly pay Sourcegraph to do it for us. They seem like nice people.” He is correct, we (Sourcegraph) _are_ nice people, but we don’t want your money. Instead, we wanted to team up with the Fedora community.
+[接着他说][6]："......或许我们可以付钱给 Sourcegraph，让他们帮我们做这个。他们看起来是很好的人。" 他是对的，我们（Sourcegraph）的确是好人，但我们不想要你的钱。相反，我们想与 Fedora 社区合作。
 
-The Fedora Community can now search their universe of open source code—currently over 34,000 repositories and counting.
+Fedora 社区现在可以在他们的开源代码宇宙中尽情搜索 —— 目前有超过 34,000 个存储库，而且还在不断增加。
 
-### Introduction to code search
+### 代码搜索简介
 
-For those who aren’t familiar with the concept of [code search][7], it enables teams to onboard to a new codebase and find answers faster, helps to identify security risks, and many other use cases. Sourcegraph has indexed over two-million repositories across multiple code hosts such as GitHub and GitLab. **This article is going to focus strictly on code search for _src.fedoraproject.org_.** Sourcegraph provides both a [web app][8] and [CLI][9] interface.
+如果你还不熟悉 [代码搜索][7] 的概念，我现在就来告诉你。代码搜索可以让团队更快地适应一个新的代码库，并在里面找到答案，帮助团队识别安全风险，以及许多其他用例。Sourcegraph 已经在 GitHub 和 GitLab 等多个代码托管服务上，索引了 200 多万个存储库。本文只关注 src.fedoraproject.org 的代码搜索。Sourcegraph 同时提供了一个 [Web 应用][8] 和 [命令行客户端][9]。
 
-### Using the Web app
+### 使用 Web 应用
 
-When using the Sourcegraph [web app][8] you will need to start each search with **repo:^src.fedoraprojects.org** before entering any search queries. Using this link to the [web app][8] will include this initial string as shown here:
+在使用 Sourcegraph [Web 应用][8] 时，你需要先输入初始字符串 `repo:^src.fedoraprojects.org`，然后再开始查询。这个 [Web 应用][8] 链接中包括了上面的初始字符串，点击这个链接后，搜索界面如下图所示：
 
-![Sourcegraph web app interface][10]
+![Sourcegraph Web 应用界面][10]
 
-The following sections will provide some web app examples of searches that might be of interest.
+下面我将提供几个使用 Web 应用程序进行搜索的例子，大家可能会对它们感兴趣。
 
-#### Find repositories using popular OSI-approved licenses 
+#### 查找使用流行的 <ruby>经 OSI 批准的<rt>OSI-approved</rt></ruby> 许可证的存储库 
 
-The following query will scan all the repositories for software that is compatible with the “Open Source Definition” (OSD).
+下面的查询语句将扫描所有兼容 “<ruby>开源定义<rt>Open Source Definition</rt></ruby>”（OSD） 的软件存储库。
 
 ```
-
     repo:^src.fedoraproject.org/ lang:"RPM Spec" License: ^.*apache|bsd|gpl|lgpl|mit|mpl|cddl|epl.*$
-
 ```
 
-![License search][11]
+![许可证搜索][11]
 
-[Try it!][12]
+[试试吧！][12]
 
-#### Find files with TODOs
+#### 查找带有 TODO 的文件
 
-The following query can find TODOs in 34k repositories. This is great for those looking to contribute to projects that need help.
+下面的查询语句将在 34,000 多个仓库中找到 TODO。对于那些希望为需要帮助的项目做出贡献的人来说，是一个非常棒的功能。
 
 ```
-
     repo:^src.fedoraproject.org/ "TODO"
-
 ```
 
-![Search for TODO][13]
+![搜索 TODO][13]
 
-[Try it!][14]
+[试试吧！][14]
 
-#### Find files being served via FTP
+#### 查找 FTP 服务器上的文件
 
-A co-worker of mine from back in the day told me “FTP is a dead protocol”. Is it? You can add to this query to find any other protocol such as irc, https, etc.
+我的一个前同事告诉我 “FTP是一个死的协议”。真的是这样吗？你也可以在这个查询中加入任何其他协议，如 irc、https 等。
 
 ```
-
     repo:^src.fedoraproject.org/ (?:ftp)://[A-Za-z0-9-]{0,63}(.[A-Za-z0-9-]{0,63})+(:d{1,4})?/*(/*[A-Za-z0-9-._]+/*)*(?.*)?(#.*)?
-
 ```
 
-![Search for protocol][15]
+![搜索协议][15]
 
-[Try it!][16]
+[试试吧！][16]
 
-#### Find files with a vulnerable version of Log4j
+#### 查找使用有漏洞的 Log4j 版本的文件
 
-This query will find any files that are possibly vulnerable (false positives can happen) to CVE-2021-44228 aka Log4j. You can also search for other vulnerabilities that can then be reported to project maintainers.
+这个查询语句将找到任何可能存在 CVE-2021-44228（也就是 Log4j）漏洞的文件（可能会有误报）。你也可以搜索其他漏洞，然后报告给项目维护者。
 
 ```
-
     repo:^src.fedoraproject.org/ org.apache.logging.log4j 2.((0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15)(.[0-9]+)) count:all
-
 ```
 
-![Search for log4j][17]
+![搜索 log4j][17]
 
-[Try it!][18]
+[试试吧！][18]
 
-### Use the CLI
+### 使用命令行
 
-Sourcegraph also has a command-line interface tool called [src][19], which allows you to do everything I just mentioned above, plus other useful commands like getting results in JSON for programmatic consumption.
+Sourcegraph 还有一个叫做 [src][19] 的命令行客户端，它可以让你完成我刚才提到的所有事情。此外，它还有其他一些有用的命令。比如说，它可以把结果用 JSON 格式输出，方便你在编程中使用。
 
 ```
-
     src search -json 'repo:^src.fedoraproject.org/ lang:"RPM Spec" License: ^.*apache|bsd|g
     pl|lgpl|mit|mpl|cddl|epl.*$'
-
 ```
 
-#### JSON output
+#### 输出 JSON
 
-![JSON output][20]
+![输出 JSON][20]
 
-[Try it!][21]
+[试试吧！][21]
 
-### Search Syntax
+### 搜索语法
 
-The examples shown may be a good starting point but are by no means the only queries that may be made. You can [view all search query syntaxes][22] and create your own as needed.
+就入门而言，上面的例子是很好的起点，但 Sourcegraph 还支持更多的查询语句。你可以 [查看所有的搜索查询语法][22]，并根据需要创建你自己的查询语句。
 
-### Conclusion
 
-As you can see, with Sourcegraph, the Fedora Linux community can now quickly search for all code hosted at [src.fedoraproject.org][23], regardless of whether they are literal or complex regex queries.
+### 总结
 
-I appreciate the Fedora Linux community being so helpful and welcoming. If you have anything you want to add or questions, my team and I will be in the comments section below. You can also [join us on Slack][24].
+正如你所看到的，有了 Sourcegraph，Fedora Linux 社区现在可以快速搜索托管在 [src.fedoraproject.org][23] 上的所有代码，无论是使用普通查询还是复杂的正则查询。
 
-Special thanks to [Vanesa Ortiz][25] for [making this collaboration happen][26], [Ben Venker][27] for his help fixing my broken regex (multiple times), as well as [Rebecca Dodd][28] and [Nick Moore][29] for their help with editing.
+感谢 Fedora Linux 社区的慷慨帮助和热情欢迎。如果你有任何想补充的内容或问题，我和我的团队都会在下面的评论区回复。你也可以 [在 Slack 上找到我们][24]。
+
+特别感谢 [Vanesa Ortiz][25] 促成了这次合作，还有 [Ben Venker][27] 帮助修复了我的正则表达式（多次），以及 [Rebecca Dodd][28] 和 [Nick Moore][29] 在编辑上的帮助。
 
 --------------------------------------------------------------------------------
 
@@ -123,7 +114,7 @@ via: https://fedoramagazine.org/using-sourcegraph-to-search-34000-fedora-reposit
 
 作者：[Justin Dorfman][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lkxed]](https://github.com/lkxed)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
