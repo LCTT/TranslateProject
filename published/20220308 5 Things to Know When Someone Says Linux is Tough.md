@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "aREversez"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14429-1.html"
 
 Linux 太难了？你需要知道这 5 点
 ======
