@@ -10,7 +10,7 @@
 Linux 太难了？你需要知道这 5 点
 ======
 
-> Linux 很难吗？为什么人们认为它很难？我们重点分析了一些常见的问题，并对其进行了说明，以使事情变得简单。
+> Linux 很难吗？为什么人们认为它很难？我们重点分析了一些常见的问题，并对其进行了说明，让你觉得它没那么难。
 
 ![](https://i0.wp.com/news.itsfoss.com/wp-content/uploads/2022/03/linux-is-tough.png?w=1200&ssl=1)
 
