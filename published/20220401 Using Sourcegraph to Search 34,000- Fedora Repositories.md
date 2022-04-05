@@ -3,26 +3,24 @@
 [#]: author: "Justin Dorfman https://fedoramagazine.org/author/jdorfman/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14434-1.html"
 
-使用 Sourcegraph 搜索 34,000 多个 Fedora 仓库
+使用 Sourcegraph 搜索 34000 多个 Fedora 仓库
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202204/05/151255yuq9zem6euei5ui5.jpg)
 
-照片由 [Unsplash][3] 上的 [Markus Winkler][2] 提供
+在 2021 年 10 月，一个 Fedora Linux 用户 [问了一个关于许可的问题][4]。Fedora 项目负责人 Matthew Miller [回复道][5]：“我不能快速地检查（这个问题），因为我们没有一个完整的、庞大的、可搜索的存储库来检索 Fedora 中所有软件包。”
 
-在 2021 年 10 月，一个 Fedora Linux 用户 [问了一个关于许可的问题][4]。Fedora 项目负责人 Matthew Miller [回复道][5]：“我不能快速地检查（这个问题），因为我们没有一个收录完整、使用广泛、可搜索的存储库来检索 Fedora 中所有软件包。”
+[接着他说][6]：“……或许我们可以付钱给 Sourcegraph，让他们帮我们做这个。他们看起来乐于助人。” 他说的没错，我们（Sourcegraph）的确是乐于助人，而且我们还不想要你的钱，相反，我们想与 Fedora 社区合作。
 
-[接着他说][6]："......或许我们可以付钱给 Sourcegraph，让他们帮我们做这个。他们看起来是很好的人。" 他是对的，我们（Sourcegraph）的确是好人，但我们不想要你的钱。相反，我们想与 Fedora 社区合作。
-
-Fedora 社区现在可以在他们的开源代码宇宙中尽情搜索 —— 目前有超过 34,000 个存储库，而且还在不断增加。
+Fedora 社区现在可以在他们的开源代码世界中尽情搜索 —— 目前有超过 34,000 个存储库，而且还在不断增加。
 
 ### 代码搜索简介
 
-如果你还不熟悉 [代码搜索][7] 的概念，我现在就来告诉你。代码搜索可以让团队更快地适应一个新的代码库，并在里面找到答案，帮助团队识别安全风险，以及许多其他用例。Sourcegraph 已经在 GitHub 和 GitLab 等多个代码托管服务上，索引了 200 多万个存储库。本文只关注 src.fedoraproject.org 的代码搜索。Sourcegraph 同时提供了一个 [Web 应用][8] 和 [命令行客户端][9]。
+如果你还不熟悉 [代码搜索][7] 的概念，我现在就来告诉你。代码搜索可以让团队更快地掌握一个新的代码库，在里面找到答案，帮助团队识别安全风险，以及许多其他用例。Sourcegraph 已经在 GitHub 和 GitLab 等多个代码托管服务上，索引了 200 多万个存储库。本文只关注 src.fedoraproject.org 的代码搜索。Sourcegraph 同时提供了一个 [Web 应用][8] 和 [命令行客户端][9]。
 
 ### 使用 Web 应用
 
@@ -32,73 +30,71 @@ Fedora 社区现在可以在他们的开源代码宇宙中尽情搜索 —— �
 
 下面我将提供几个使用 Web 应用程序进行搜索的例子，大家可能会对它们感兴趣。
 
-#### 查找使用流行的 <ruby>经 OSI 批准的<rt>OSI-approved</rt></ruby> 许可证的存储库 
+#### 查找使用流行的经 OSI 批准的许可证的存储库 
 
 下面的查询语句将扫描所有兼容 “<ruby>开源定义<rt>Open Source Definition</rt></ruby>”（OSD） 的软件存储库。
 
 ```
-    repo:^src.fedoraproject.org/ lang:"RPM Spec" License: ^.*apache|bsd|gpl|lgpl|mit|mpl|cddl|epl.*$
+repo:^src.fedoraproject.org/ lang:"RPM Spec" License: ^.*apache|bsd|gpl|lgpl|mit|mpl|cddl|epl.*$
 ```
 
 ![许可证搜索][11]
 
-[试试吧！][12]
+> [试一下！][12]
 
 #### 查找带有 TODO 的文件
 
-下面的查询语句将在 34,000 多个仓库中找到 TODO。对于那些希望为需要帮助的项目做出贡献的人来说，是一个非常棒的功能。
+下面的查询语句将在 34,000 多个仓库中找到 `TODO` 文件。对于那些希望为需要帮助的项目做出贡献的人来说，是一个非常棒的功能。
 
 ```
-    repo:^src.fedoraproject.org/ "TODO"
+repo:^src.fedoraproject.org/ "TODO"
 ```
 
 ![搜索 TODO][13]
 
-[试试吧！][14]
+> [试一下！][14]
 
 #### 查找 FTP 服务器上的文件
 
-我的一个前同事告诉我 “FTP是一个死的协议”。真的是这样吗？你也可以在这个查询中加入任何其他协议，如 irc、https 等。
+我的一个前同事告诉我 “FTP 是一个死协议”。真的是这样吗？你也可以在这个查询中加入任何其他协议，如 irc、https 等。
 
 ```
-    repo:^src.fedoraproject.org/ (?:ftp)://[A-Za-z0-9-]{0,63}(.[A-Za-z0-9-]{0,63})+(:d{1,4})?/*(/*[A-Za-z0-9-._]+/*)*(?.*)?(#.*)?
+repo:^src.fedoraproject.org/ (?:ftp)://[A-Za-z0-9-]{0,63}(.[A-Za-z0-9-]{0,63})+(:d{1,4})?/*(/*[A-Za-z0-9-._]+/*)*(?.*)?(#.*)?
 ```
 
 ![搜索协议][15]
 
-[试试吧！][16]
+> [试一下！][16]
 
 #### 查找使用有漏洞的 Log4j 版本的文件
 
 这个查询语句将找到任何可能存在 CVE-2021-44228（也就是 Log4j）漏洞的文件（可能会有误报）。你也可以搜索其他漏洞，然后报告给项目维护者。
 
 ```
-    repo:^src.fedoraproject.org/ org.apache.logging.log4j 2.((0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15)(.[0-9]+)) count:all
+repo:^src.fedoraproject.org/ org.apache.logging.log4j 2.((0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15)(.[0-9]+)) count:all
 ```
 
 ![搜索 log4j][17]
 
-[试试吧！][18]
+> [试一下！][18]
 
 ### 使用命令行
 
 Sourcegraph 还有一个叫做 [src][19] 的命令行客户端，它可以让你完成我刚才提到的所有事情。此外，它还有其他一些有用的命令。比如说，它可以把结果用 JSON 格式输出，方便你在编程中使用。
 
 ```
-    src search -json 'repo:^src.fedoraproject.org/ lang:"RPM Spec" License: ^.*apache|bsd|g
-    pl|lgpl|mit|mpl|cddl|epl.*$'
+src search -json 'repo:^src.fedoraproject.org/ lang:"RPM Spec" License: ^.*apache|bsd|gpl|lgpl|mit|mpl|cddl|epl.*$'
 ```
 
 #### 输出 JSON
 
 ![输出 JSON][20]
 
-[试试吧！][21]
+> [试一下！][21]
 
 ### 搜索语法
 
 就入门而言，上面的例子是很好的起点，但 Sourcegraph 还支持更多的查询语句。你可以 [查看所有的搜索查询语法][22]，并根据需要创建你自己的查询语句。
-
 
 ### 总结
 
@@ -114,8 +110,8 @@ via: https://fedoramagazine.org/using-sourcegraph-to-search-34000-fedora-reposit
 
 作者：[Justin Dorfman][a]
 选题：[lujun9972][b]
-译者：[lkxed]](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[lkxed](https://github.com/lkxed)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
