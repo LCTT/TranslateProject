@@ -7,100 +7,92 @@
 [#]: publisher: " "
 [#]: url: " "
 
-A guide to the Linux terminal for beginners
+Linux 终端新手指南
 ======
-Learn the differences between Linux terminal commands, arguments, and
-options, and how to use them to control your computer.
-![Terminal command prompt on orange background][1]
+学习 Linux 终端命令、参数的区别，以及如何使用它们来控制你的计算机。
+![橙色背景的终端命令提示符][1]
 
-There's a café a few streets away from where I live, and I go there every Sunday for a regularly scheduled game of D&amp;D. They have a menu, and the first few times I ordered, I looked over the menu for several minutes to see what my choices were. Being a creature of habit, I eventually stopped referring to the menu because I knew exactly what they have for sale, and I know exactly what I want. Ordering food for the table is now as easy as saying "the usual" and waiting for the cups of coffee and bowls of chips and scones to be delivered (usually inconveniently at just the moment we've rolled for initiative, but that's hardly the staff's fault or problem).
+距离我的住处几条街远的地方，有一家咖啡馆，我在每个周日都会去那里参加固定的 “<ruby>龙与地下城<rt>Dungeons & Dragons, D&D</rt><ruby>” 游戏。他们有一份菜单，前几次我去点餐时，我总是要翻看好几分钟，才能确定要点些什么。熟悉了之后，我就不用看菜单了，因为我清楚地知道他们在卖什么，也清楚地知道自己想要什么。现在点餐对我来说很简单，只要说一声“老规矩”就好了，接下来就是等待一杯咖啡、一碗薯片和烤饼被送来（通常在我们 <ruby>做出决定<rt>roll for initiative</rt></ruby>「译者注：这是 D&D 玩家的黑话，它指的是在比赛开始前掷骰子的行为」的那一刻，员工都不大方便，但这也不是他们的问题）。
 
-Similar to a restaurant menu, graphical interfaces for computers offer users a choice of actions. There are icons and windows and buttons, and you hunt for the one you're looking for, click on items, drag other items, and manipulate graphical representations until a task is complete. After a while, though, this can become cumbersome and, worse yet, inefficient. You know exactly what needs to be done, so wouldn't it be nice to just tell the computer exactly what you want to happen, rather than going through the physical and mental motions of hunting for components and repeating a mouse-based dance routine?
+与餐厅的菜单类似，计算机的图形界面也为用户提供了操作选项。这里有图标、窗口和按钮，你可以搜索你想要的东西，点击项目，拖动其他项目，操纵图形界面，直到你的任务完成。不过，一段时间后，这可能会变得繁琐，甚至是效率低下。既然你清楚地知道需要做什么，那么，如果只需告诉计算机你想要发生什么，无需耗费大量的体力和脑力来搜索项目、舞动鼠标，就能达到目的，岂不是更好吗？
 
-### What is the Linux terminal?
+### Linux 终端是什么
 
-The Linux terminal is a text-based interface used to control a Linux computer. It's just one of the many tools provided to Linux users for accomplishing any given task, but it's widely considered the most efficient method available. Outside of writing code, it's certainly the most direct method possible. It's so popular, in fact, that Apple changed its foundation to Unix and has gained the [Bash and Z shell][2], and Microsoft developed [PowerShell][3], its very own open source command line.
+Linux 终端是一个基于文本的交互界面，它是用来控制 Linux 计算机的。虽然它只是帮助 Linux 用户完成任何特定任务的众多工具之一，但是它被广泛地认为是最有效的方法。除了编写代码，这无疑是最直接的方法。事实上，它是如此受欢迎，以至于苹果公司将操作系统的基础改为 Unix，从而获得了 [Bash 和 Z shell][2]，而微软公司开发了它自己的开源命令行 [PowerShell][3]。
 
 ### What is a Linux command?
+### Linux 命令是什么
 
-A **command** is a special keyword you can use in a terminal to tell your computer to perform an action. Most commands are tiny little applications that get installed with the rest of your operating system. You may not realize they're on your computer because they're generally kept in relatively obscure directories like `/bin`, `/sbin`, `/usr/bin`, and `/usr/sbin`, but your terminal knows where to find them (thanks to something called the [PATH][4]). Other commands are built into your terminal. You don't have to worry about whether a command was installed or comes built-in because your terminal knows the commands either way. Better yet, on most Linux distributions, when your terminal can't find a command, it searches the internet for a package to provide that command and then offers to install and run it for you!
+**<ruby>命令<rt>commands</rt></ruby>** 是一种特殊的关键词，你可以在终端中使用它，告诉计算机去执行一个动作。大多数命令是很小的应用程序，它们与你的操作系统的其他部分一起安装。你可能没有意识到它们的存在，因为它们通常被保存在相对模糊的目录中，如 `/bin`、`/sbin`、`/usr/bin` 和 `/usr/sbin`，但你的终端知道在哪里可以找到它们（多亏了一个叫 [PATH][4] 的东西）。其他的命令是内置在终端中的。你不必担心一个命令是安装的还是内置的，无论是哪一种，终端都能执行。更棒的是，在大多数 Linux 发行版上，当终端找不到一个命令时，它会在互联网上搜索提供该命令的软件包，然后会主动为你提供安装软件包、运行该命令的服务。
 
-Here's a simple command:
+下面是一个简单的命令：
 
-
-```
-`$ ls`
-```
-
-The `ls` command is short for "list," and it lists the contents of your current directory. Open a terminal and try it out. Then open a file manager window (_Files_ on Linux, _Finder_ on macOS, _Windows Explorer_ on Windows) and compare. It's two different views of the same data.
-
-### What is an argument in a Linux command?
-
-An **argument** is any part of a command that isn't the command. For instance, to list the contents of a specific directory, you can provide the name of that directory as an argument:
-
-
-```
-`$ ls Documents`
+```shell
+$ ls
 ```
 
-In this example, `ls` is the command and `Documents` is the argument. This would render a list of your `Documents` directory's contents.
+`ls` 命令是 "list" 的缩写，它会列出当前目录的内容。试一试吧！先打开一个终端窗口，然后打开一个文件管理器窗口（Linux 上叫 “<ruby>文件<rt>Files</rt></ruby>”，macOS 上叫 “<ruby>访达<rt>Finder</rt></ruby>”，Windows 上叫 “<ruby>资源管理器<rt>Windows Explorer</rt><ruby>”）。比较一下这两个窗口，它们是同一数据的两种不同表现方式。
 
-### What are options in Linux?
+### Linux 命令中的参数是什么
 
-Command **options**, also called **flags** or **switches**, are part of command arguments. A command argument is anything that follows a command, and an option is usually (but not always) demarcated by a dash or double dashes. For instance:
+**<ruby>参数<rt>argument</rt></ruby>** 是命令中的任意一个“不是命令本身”的部分。例如，要列出一个特定目录的内容，你可以提供该目录的名称作为参数。
 
-
-```
-`$ ls --classify Documents`
-```
-
-In this example, `--classify` is an option. It also has a short version because terminal users tend to prefer the efficiency of less typing:
-
-
-```
-`$ ls -F Documents`
+```shell
+$ ls Documents
 ```
 
-Short options can usually be combined. Here's an `ls` command combining the `-l` option with the `--human-readable`, `--classify`, and `--ignore-backups` options:
+在这个例子中，`ls` 是命令，`Documents` 是参数。该命令将列出 `Documents` 目录的内容。
+
+### Linux 命令中的选项是什么
+
+命令的 **<ruby>选项<rt>options</rt></ruby>**，也叫 **<ruby>标志<rt>flags</rt></ruby>** 或 **<ruby>开关<rt>switches</rt></ruby>**，它是命令参数的一部分。命令参数是跟在命令后面的任何东西，而选项通常（但不总是）用<ruby>一个连接号<rt>-</rt></ruby>或<ruby>两个连接号<rt>--</rt></ruby>来划分。请看下面这个例子：
 
 
+```shell
+$ ls --classify Documents
 ```
-`$ ls -lhFB`
+
+在这个例子中，`--classify` 是一个选项。它也有一个简短的版本，因为终端用户更喜欢少打点字来提高效率。
+
+```shell
+$ ls -F Documents
 ```
 
-Some options can take arguments themselves. For instance, the `--format` option for `ls` lets you change how information is presented. By default, the contents of directories are provided to you in columns, but if you need them to be listed in a comma-delimited list, you can set `format` to `comma`:
+短的选项通常可以合并。下面是一个 `ls` 命令，它将 `-l` 选项与 `--human-readable`、`--classify` 和 `--ignore-backups` 选项结合了起来：
 
-
+```shell
+$ ls -lhFB
 ```
+
+一些选项本身可以带参数。例如，`ls` 的 `--format` 选项可以让你改变信息的呈现方式。默认情况下，目录的内容是以列的形式提供给你的，但如果你需要它们显示为逗号分隔的列表，你可以把 `--format` 设置为 `comma`。
+
+```shell
 $ ls --format=comma Documents
 alluvial, android-info.txt, arduinoIntro, dmschema,
 headers.snippet, twine, workshop.odt
 ```
 
-The equal sign (`=`) is optional, so this works just as well:
+等于号（`=`）是可选的，所以这样做也可以:
 
-
-```
+```shell
 $ ls --format comma Documents
 alluvial, android-info.txt, arduinoIntro, dmschema,
 headers.snippet, twine, workshop.odt
 ```
 
-### Learning to use the Linux terminal
+### 学习使用 Linux 终端
 
-Learning how to use a terminal can increase efficiency and productivity—and can also make computing a lot of fun. There are few times when I run a carefully crafted command and don't sit back marveling at what I've managed to make happen with just a few words typed into an otherwise blank screen. A terminal is many things—programming, poetry, puzzle, and pragmatism—but no matter how you see it, it's a lasting innovation that's worth learning.
+学习如何使用终端可以提高工作效率和生产力，同时也可以使计算变得非常有趣。当我运行一个精心设计的命令时，我常常会坐下来，为我在空白屏幕上输入几个字就能实现的事情而惊叹。终端可是和很多东西相关 —— 编程、诗歌、拼图和实用主义，但无论你如何看待，它都是一个值得学习的持续创新。
 
-  * [Use the Linux terminal to see what files are on your computer][5]
-  * [How to open and close directories in the Linux terminal][6]
-  * [Navigating in the Linux terminal][7]
-  * [Move a file in the Linux terminal][8]
-  * [Rename a file in the Linux terminal][9]
-  * [Copy files and folders in the Linux terminal][10]
-  * [Remove files and folders in the Linux Terminal][11]
+  * [使用 Linux 终端查看你的计算机上有哪些文件][5]
+  * [如何在 Linux 终端中打开和关闭目录][6]
+  * [在 Linux 终端中进行导航][7]
+  * [在 Linux 终端中移动一个文件][8]
+  * [在 Linux 终端中重命名一个文件][9]
+  * [在 Linux 终端中复制文件和文件夹][10]
+  * [在 Linux 终端中删除文件和文件夹][11]
 
-
-
-After reading and practicing the lessons in these articles, download our free ebook, [Sysadmin's guide to Bash scripting][12] for even more fun in the terminal.
+在阅读和练习了这些文章中的课程后，你可以下载我们的免费电子书 [系统管理员的 Bash 脚本指南][12]，在终端中获得更多乐趣。
 
 --------------------------------------------------------------------------------
 
@@ -108,7 +100,7 @@ via: https://opensource.com/article/21/8/linux-terminal
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lkxed](https://github.com/lkxed)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
