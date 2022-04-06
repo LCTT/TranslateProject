@@ -21,14 +21,18 @@ systemd 初始化系统提供了 systemd-analyze 工具，帮助查看性能和�
 ### 总览
 
 The Linux startup sequence is a good place to begin exploring because many `systemd-analyze` tool functions are targeted at startup. But first, it is important to understand the difference between boot and startup. The boot sequence starts with the BIOS power-on self test (POST) and ends when the kernel is finished loading and takes control of the host system, which is the beginning of startup and the point when the systemd journal begins.
-通过查看LINUX启动顺序来学习是好主意，因为 systemd-analyze 工具很多功能聚焦在起动startup过程。但是首先，要理解启动boot和起动startup。启动从BIOS加电自检（POST）开始，装载和控制主机系统后结束，然后是起动startup开始，systemd 日志开始。
+
+LINUX起动顺序是学习关注的地方，因为 systemd-analyze 工具很多功能聚焦在起动startup过程。但是首先，要理解启动boot和起动startup。启动从BIOS加电自检（POST）开始，装载和控制主机系统后结束，然后是起动startup，systemd 日志开始。
 
 In the second article in this series, [_Understanding systemd at startup on Linux_][3], I discuss startup in a bit more detail with respect to what happens and in what sequence. In this article, I want to examine the startup sequence to look at the amount of time it takes to go through startup and which tasks take the most time.
 
-The results I'll show below are from my primary workstation, which is much more interesting than a virtual machine's results. This workstation consists of an ASUS TUF X299 Mark 2 motherboard, an Intel i9-7960X CPU with 16 cores and 32 CPUs (threads), and 64GB of RAM. Some of the commands below can be run by a non-root user, but I will use root in this article to prevent having to switch between users.
+这个系列的第二篇文章， [_理解LINUX起动 systemd_]【3】，我讨论起动startup的一点顺序上的细节，文章里，我试图解释起动startup顺序时间总进程和大部分时间花费在哪里。
+
+The results I'll show below are from my primary workstation, which is much more interesting than a virtual machine's results. This workstation consists of an ASUS TUF X299 Mark 2 motherboard, an Intel i9-7960X CPU with 16 cores and 32 CPUs (threads), and 64GB of RAM. Some of the commands below can be run by a non-root user, but I will use root in this article to prevent having to switch between users.
+我将展示我的主工作站，非常感兴趣在虚拟机的结果，工作站组成是ASUS TUF X299 Mark 2 主板，Intel i9-7960X cpu （16核 32线程），64G内存。一些命令可以用非超级用户使用，但是我在这篇文章里使用了超级用户避免在用户之间切换。
 
 There are several options for examining the startup sequence. The simplest form of the `systemd-analyze` command displays an overview of the amount of time spent in each of the main sections of startup, the kernel startup, loading and running `initrd` (i.e., initial ramdisk, a temporary system image that is used to initialize some hardware and mount the `/` [root] filesystem), and userspace (where all the programs and daemons required to bring the host up to a usable state are loaded). If no subcommand is passed to the command, `systemd-analyze time` is implied:
-
+检查起动过程有几个选项，最简单的是从 systemd-analyze 命令显示起动的几个主要分段耗费的时间汇总，核心起动，装载运行 initrd （初始ramdisk，一个临时的系统镜像用来初始化一些硬件，挂载/ 文件系统），还有用户空间 （所有的程序和后台需要主机起动到一个可用的状态）。如果没有子命令传递给命令， systemd-analyze time 是这样的。
 
 ```
 [root@david ~]$ systemd-analyze
@@ -38,6 +42,7 @@ graphical.target reached after 10.071s in userspace
 ```
 
 The most notable data in this output is the amount of time spent in firmware (BIOS): almost 54 seconds. This is an extraordinary amount of time, and none of my other physical systems take anywhere near as long to get through BIOS.
+主要的在BIOS花费了接近54秒，这是一个非同寻常的时间段，基本上所有的物理硬件系统都要穿过BIOS。
 
 My System76 Oryx Pro laptop spends only 8.506 seconds in BIOS, and all of my home-built systems take a bit less than 10 seconds. After some online searches, I found that this motherboard is known for its inordinately long BIOS boot time. My motherboard never "just boots." It always hangs, and I need to do a power off/on cycle, and then BIOS starts with an error, and I need to press F1 to enter BIOS configuration, from where I can select the boot drive and finish the boot. This is where the extra time comes from.
 
