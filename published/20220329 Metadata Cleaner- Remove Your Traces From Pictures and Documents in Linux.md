@@ -3,16 +3,18 @@
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14437-1.html"
 
 Metadata Cleaner：在 Linux 中清除你在图片和文件中的痕迹
 ======
 
-**简介：** _摆脱元数据对增强隐私至关重要。Metadata Cleaner 是一个开源的 Linux 应用，可以帮助你做到这一点。让我们在这里探讨更多。_
+![](https://img.linux.net.cn/data/attachment/album/202204/06/082027g9h9nzgzhw66ffhn.jpg)
 
-元数据无处不在，无论是文档、信息、图片还是其他文件类型。
+> 摆脱元数据对增强隐私至关重要。Metadata Cleaner 是一个开源的 Linux 应用，可以帮助你做到这一点。让我们在这里探讨更多。
+
+元数据无处不在，它在文档中、在信息中、在图片中，在各种文件中。
 
 当你检查一个文件的属性时，你可以很容易地访问元数据。
 
@@ -26,17 +28,17 @@ Metadata Cleaner 就是这样一个供 Linux 用户使用的工具。
 
 Metadata Cleaner 帮助你删除与元数据相关的信息的痕迹。它利用 [mat2][2] 来删除元数据。
 
-换句话说，你可以假设 GUI 是 mat2 的前端。
+换句话说，你可以将这个 GUI 当成 mat2 的前端。
 
 例如，一张照片包括拍摄地点、使用的相机、镜头信息等信息。
 
-虽然这对某些人来说可能是有用的信息，但如果你想保持所有细节的私密性，你就需要删除元数据。
+虽然这对某些人来说可能是有用的信息，但如果你想保持各种细节的私密，你就需要删除元数据。
 
 文件的情况也是如此。删除元数据可以确保提高隐私性，无论是对你的业务还是个人使用。
 
-你必须添加目标文件，并使用 Metadata Cleaner 处理它们，使它们得到清理。
+你可以添加目标文件，并使用 Metadata Cleaner 处理它们，使它们得到清理。
 
-**注意**：_在清理之前，你必须保留一份文件的备份。摆脱你的元数据可能会导致你的文件发生剧烈的变化，比如无法选择 PDF 文件中的文本，压缩图片等_。
+**注意**：在清理之前，你必须保留一份文件的备份。摆脱你的元数据可能会导致你的文件发生剧烈的变化，比如无法选择 PDF 文件中的文本，压缩图片等。
 
 ### Metadata Cleaner 的特性
 
@@ -53,9 +55,7 @@ Metadata Cleaner 是一个简单的工具，具有一些有用的功能。让我
   * 可以从内部创建一个新的窗口。
   * 你可以添加整个文件夹来处理多个文件。
 
-
-
-我开始用一般的截图、几张照片和从网上下载的文件来测试。
+我用一般的截图、几张照片和从网上下载的文件来开始测试。
 
 ![][4]
 
@@ -63,7 +63,7 @@ Metadata Cleaner 是一个简单的工具，具有一些有用的功能。让我
 
 这只是一个例子。同样，如果你想与某人或公众分享一个 PDF 文件，不想让别人看到它的来源信息，你可以使用 Metadata Cleaner 清理你的踪迹。
 
-如前所述，如果文件对你很重要，如果清理过程以你不希望的方式影响文件，请确保适当的备份。
+如前所述，如果文件对你很重要，如果清理过程以你不希望的方式影响了文件，请确保适当的备份。
 
 ![][5]
 
@@ -73,25 +73,23 @@ Metadata Cleaner 是一个简单的工具，具有一些有用的功能。让我
 
 ![][6]
 
-同样，在处理文档和图片时，你会有大部分的基本数据被移除。
+同样，在处理文档和图片时，你的大部分的基本数据会被移除。
 
 ### 在 Linux 中安装 Metadata Cleaner
 
-Metadata Cleaner 是以 [Flatpak 包][7]的形式提供的。因此，考虑到你[设置了 Flatpak][8]或者你已经启用了它，你可以在任何 Linux 发行版上安装它。
+Metadata Cleaner 是以 [Flatpak 包][7] 的形式提供的。因此，考虑到你 [设置了 Flatpak][8] 或者你已经启用了它，你可以在任何 Linux 发行版上安装它。
 
 你可以在终端使用以下命令来安装它（如果你没有软件中心集成）：
 
 ```
-
-    flatpak install flathub fr.romainvigier.MetadataCleaner
-
+flatpak install flathub fr.romainvigier.MetadataCleaner
 ```
 
-你可以到它的[网站][9]或 [GitLab 页面][10]去探索更多关于它的信息。
+你可以到它的 [网站][9] 或 [GitLab 页面][10] 去探索更多关于它的信息。
 
-[Metadata Cleaner][9]
+> [Metadata Cleaner][9]
 
-_你以前尝试过清除元数据的痕迹吗？你对这个工具有什么看法？请在下面的评论中告诉我你的想法。_
+你以前尝试过清除元数据的痕迹吗？你对这个工具有什么看法？请在下面的评论中告诉我你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +98,7 @@ via: https://itsfoss.com/metadata-cleaner/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
