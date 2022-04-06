@@ -13,13 +13,15 @@
 
 ![Magnifying glass on code][1]
 
-系统管理员的一部分工作就是分析系统性能，去发现并解决引起性能不佳长时间启动系统的问题。系统管理员们也需要去检查系统配置和使用各方面。
+系统管理员的一部分工作就是分析系统性能，去发现并解决引起性能不佳长时间启动系统的问题。系统维护者也需要去检查系统配置和使用各方面。
 
 systemd 初始化系统提供了 systemd-analyze 工具，帮助查看性能和其他重要的 systemd 信息。在以前的文章 [_分析 systemd 日历和时间间隔_][2] 里，我用了 systemd-analyze 去分析 systemd 里的时间戳和时间间隔，但是这个工具有很多其他用法，这个文章里我再揭示一些。
 
 ### Startup overview
+### 总览
 
 The Linux startup sequence is a good place to begin exploring because many `systemd-analyze` tool functions are targeted at startup. But first, it is important to understand the difference between boot and startup. The boot sequence starts with the BIOS power-on self test (POST) and ends when the kernel is finished loading and takes control of the host system, which is the beginning of startup and the point when the systemd journal begins.
+通过查看LINUX启动顺序来学习是好主意，因为 systemd-analyze 工具很多功能聚焦在起动startup过程。但是首先，要理解启动boot和起动startup。启动从BIOS加电自检（POST）开始，装载和控制主机系统后结束，然后是起动startup开始，systemd 日志开始。
 
 In the second article in this series, [_Understanding systemd at startup on Linux_][3], I discuss startup in a bit more detail with respect to what happens and in what sequence. In this article, I want to examine the startup sequence to look at the amount of time it takes to go through startup and which tasks take the most time.
 
