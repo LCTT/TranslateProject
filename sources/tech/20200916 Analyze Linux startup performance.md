@@ -7,13 +7,13 @@
 [#]: via: (https://opensource.com/article/20/9/systemd-startup-configuration)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-Analyze Linux startup performance
+分析Linux启动性能
 ======
-Use systemd-analyze to get insights and solve problems with Linux
-startup performance.
+用 systemd-analyze 看一看Linux启动性能或者解决一些问题
+
 ![Magnifying glass on code][1]
 
-Part of the system administrator's job is to analyze the performance of systems and to find and resolve problems that cause poor performance and long startup times. Sysadmins also need to check other aspects of systemd configuration and usage.
+系统管理员的一部分工作就是分析系统性能，去发现并解决引起性能不佳长时间启动系统的问题。系统管理员们也需要去检查系统配置和使用各方面。
 
 The systemd init system provides the `systemd-analyze` tool that can help uncover performance problems and other important systemd information. In a previous article, [_Analyzing systemd calendar and timespans_][2], I used `systemd-analyze` to analyze timestamps and timespans in systemd timers, but this tool has many other uses, some of which I will explore in this article.
 
