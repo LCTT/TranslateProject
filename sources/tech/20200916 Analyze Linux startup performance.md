@@ -79,13 +79,16 @@ You can use `systemd-analyze blame` to discover which systemd units take the mos
 注：删去了好多小时间
 
 Because many of these services start in parallel, the numbers may add up to significantly more than the total given by `systemd-analyze time` for everything after the BIOS. All of these are small numbers, so I cannot find any significant savings here.
-因为很多服务是并行开始的，在BIOS
+因为很多服务是并行开始的，在BIOS之后所有加在一起的超过了汇总数 systemd-analyze time。很多都是小数，所以我不能发现这签解决了哪些。
 
 The data from this command can provide indications about which services you might consider to improve boot times. Services that are not used can be disabled. There does not appear to be any single service that is taking an excessively long time during this startup sequence. You may see different results for each boot and startup.
+这个命令提供的数据表明了提升启动时间的办法。无用的服务禁止（disable）掉。在起动序列中花掉很多时间的单一服务可以消失？你可以看到每次不同结果每次启动起动。
 
 ### Critical chains
+### 严格链
 
 Like the critical path in project management, a _critical chain_ shows the time-critical chain of events that take place during startup. These are the systemd units you want to look at if startup is slow, as they are the ones that would cause delays. This tool does not display all the units that start, only those in this critical chain of events:
+工程管理中有个严格链，在起动中能查一个严格的链表现了时间相关的事件。有一些systemd单元起动中很慢，可能就是因为限制链影响的，工具没有显示所有单元开始，仅仅是有严格限制关系的事件。
 
 
 ```
@@ -123,6 +126,7 @@ graphical.target @10.071s
 ```
 
 The numbers preceded with `@` show the absolute number of seconds since startup began when the unit becomes active. The numbers preceded by `+` show the amount of time it takes for the unit to start.
+@后面的秒数数字是从起动开始到单元激活的时间，+后面是单元开始花费的时间。
 
 ### System state
 
