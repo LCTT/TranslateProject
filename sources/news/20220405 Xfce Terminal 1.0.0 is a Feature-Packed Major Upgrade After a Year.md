@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/xfce-terminal-1-0-0-release/"
 [#]: author: "Jacob Crume https://news.itsfoss.com/author/jacob/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geelpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
