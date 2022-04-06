@@ -15,7 +15,7 @@
 
 系统管理员的一部分工作就是分析系统性能，去发现并解决引起性能不佳长时间启动系统的问题。系统管理员们也需要去检查系统配置和使用各方面。
 
-The systemd init system provides the `systemd-analyze` tool that can help uncover performance problems and other important systemd information. In a previous article, [_Analyzing systemd calendar and timespans_][2], I used `systemd-analyze` to analyze timestamps and timespans in systemd timers, but this tool has many other uses, some of which I will explore in this article.
+systemd 初始化系统提供了 systemd-analyze 工具，帮助查看性能和其他重要的 systemd 信息。在以前的文章 [_分析 systemd 日历和时间间隔_][2] 里，我用了 systemd-analyze 去分析 systemd 里的时间戳和时间间隔，但是这个工具有很多其他用法，这个文章里我再揭示一些。
 
 ### Startup overview
 
