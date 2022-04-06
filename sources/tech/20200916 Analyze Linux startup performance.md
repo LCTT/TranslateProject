@@ -45,14 +45,19 @@ The most notable data in this output is the amount of time spent in firmware (BI
 主要的在BIOS花费了接近54秒，这是一个非同寻常的时间段，基本上所有的物理硬件系统都要穿过BIOS。
 
 My System76 Oryx Pro laptop spends only 8.506 seconds in BIOS, and all of my home-built systems take a bit less than 10 seconds. After some online searches, I found that this motherboard is known for its inordinately long BIOS boot time. My motherboard never "just boots." It always hangs, and I need to do a power off/on cycle, and then BIOS starts with an error, and I need to press F1 to enter BIOS configuration, from where I can select the boot drive and finish the boot. This is where the extra time comes from.
+我的System76 Oryx Pro笔记本在BIOS只花了8.506秒，我家里所有的系统都在10秒以内。一些在线搜索之后，我发现这个主板因为不同寻常的IBIOS启动时间著名，我的主板从不“正启动”，总是挂掉，我需要关机/再开机，BIOS报错开始，需要按F1进入BIOS设置，选择要启动的驱动器完成启动，这些时间就是这样用掉的。
 
 Not all hosts show firmware data. My unscientific experiments lead me to believe that this data is shown only for Intel generation 9 processors or above. But that could be incorrect.
+不是所有主机显示固件数据，用Intel 9代或者更高的处理器就感觉不科学，那不是正确的。
 
 This overview of the boot startup process is interesting and provides good (though limited) information, but there is much more information available about startup, as I'll describe below.
+总结关于启动起动是非常有趣的同时提供了很好的（虽然有限）的信息，但是仍然有很多关于起动的信息可用，就像下面我将描述的一样。
 
 ### Assigning blame
+### 设定火炬
 
 You can use `systemd-analyze blame` to discover which systemd units take the most time to initialize. The results are displayed in order by the amount of time they take to initialize, from most to least:
+你可以用 systemd-analyze blame 去发现初始化systemd 单元花费的时间，结果按照初始化花费时间的排序，从多到少。
 
 
 ```
@@ -71,8 +76,10 @@ You can use `systemd-analyze blame` to discover which systemd units take the mos
         396ms initrd-switch-root.service
 &lt;SNIP – removed lots of entries with increasingly small times&gt;
 ```
+注：删去了好多小时间
 
 Because many of these services start in parallel, the numbers may add up to significantly more than the total given by `systemd-analyze time` for everything after the BIOS. All of these are small numbers, so I cannot find any significant savings here.
+因为很多服务是并行开始的，在BIOS
 
 The data from this command can provide indications about which services you might consider to improve boot times. Services that are not used can be disabled. There does not appear to be any single service that is taking an excessively long time during this startup sequence. You may see different results for each boot and startup.
 
