@@ -129,9 +129,10 @@ The numbers preceded with `@` show the absolute number of seconds since startup 
 @后面的秒数数字是从起动开始到单元激活的时间，+后面是单元开始花费的时间。
 
 ### System state
+### 系统状态
 
 Sometimes you need to determine the system's current state. The `systemd-analyze dump` command dumps a _massive_ amount of data about the current system state. It starts with a list of the primary boot timestamps, a list of each systemd unit, and a complete description of the state of each:
-
+有时候你需要决定系统的当前状态， systemd-analyze dump 命令挖显出当前系统状态的一堆数据。有启动的时间戳，一个每个systemd单元的列表，和一个完整的每个状态的详细描述
 
 ```
 [root@david ~]# systemd-analyze dump
@@ -166,26 +167,31 @@ Timestamp initrd-units-load-finish: Wed 2020-08-26 12:33:38 EDT
         May GC: no
 &lt;SNIP – Deleted a bazillion lines of output&gt;
 ```
+注：删掉了一些输出行
 
 On my main workstation, this command generated a stream of 49,680 lines and about 1.66MB. This command is very fast, so you don't need to wait for the results.
+在我的主工作站，这个命令生成了49680行大概1.66MB，命令很快，你不需要等待。
 
 I do like the wealth of detail provided for the various connected devices, such as storage. Each systemd unit has a section with details such as modes for various runtimes, cache, and log directories, the command line used to start the unit, the process ID (PID), the start timestamp, as well as memory and file limits.
+我喜欢多种连接设备的细节规格，例如存储。每个systemd单元有一节例如模块给多种运行时，缓存，和日志目录，命令用来开始单元，PID，开始时间戳，和内存和文件限制。
 
 The man page for `systemd-analyze` shows the `systemd-analyze --user dump` option, which is intended to display information about the internal state of the user manager. This fails for me, and internet searches indicate that there may be a problem with it. In systemd, `--user` instances are used to manage and control the resources for the hierarchy of processes belonging to each user. The processes for each user are part of a control group, which I'll cover in a future article.
+systemd-analyze 的man帮助里展示了 systemd-analyze --user dump 选项，显示内部用户管理器的状态，但是我失败了，搜索之后表明有一些问题。在systemd里， --user 实例用来管理和控制处理器给每个用户的资源。处理器分给每个用户一部分控制组（译者注：系统管理的一个特性），我回头会再写一篇。
 
 ### Analytic graphs
+### 分析图表
 
 Most pointy-haired-bosses (PHBs) and many good managers find pretty graphs easier to read and understand than the text-based system performance data I usually prefer. Sometimes, though, even I like a good graph, and `systemd-analyze` provides the capability to display boot/startup data in an [SVG][4] vector graphics chart.
-
+很多PHB老板和好的经理人发现好的图表特别容易阅读肯理解文本类胡系统性能数据，有时，我喜欢好图表，systemd-analyze 提供了显示启动起动数据用[SVG][4] 向量图表。
 The following command generates a vector graphics file that displays the events that take place during boot and startup. It only takes a few seconds to generate this file:
-
+下面胡命令生成一个向量图文件来显示在启动起动之间发生胡事件，生成这个文件只需要几秒：
 
 ```
 `[root@david ~]# systemd-analyze plot > /tmp/bootup.svg`
 ```
 
 This command creates an SVG, which is a text file that defines a series of graphic vectors that applications, including Image Viewer, Ristretto, Okular, Eye of Mate, LibreOffice Draw, and others, use to generate a graph. These applications process SVG files to create an image.
-
+这个命令创建SVG，是一个文本文件来定义图表向量的应用，包括Image Viewer, Ristretto, Okular, Eye of Mate, LibreOffice Draw,(译者注：这些都是一些文档程序），和其他，用来生成图，这些应用可以处理SVG来创建一个图像。
 I used LibreOffice Draw to render a graph. The graph is huge, and you need to zoom in considerably to make out any detail. Here is a small portion of it:
 
 ![The bootup.svg file displayed in LibreOffice Draw.][5]
