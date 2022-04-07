@@ -226,13 +226,14 @@ sys     0m0.070s
 I won't reproduce the output here because the resulting graph is pretty much spaghetti. But you should try it and view the result to see what I mean.
 我不想重新生成输出了，因为比spaghetti还好。你应该试试看看我想让你看到的结果。
 ### Conditionals
+### 条件
 
 One of the more interesting, yet somewhat generic, capabilities I discovered while reading the `systemd-analyze(1)` man page is the `condition` subcommand. (Yes—I do read the man pages, and it is amazing what I have learned this way!) This `condition` subcommand can be used to test the conditions and asserts that can be used in systemd unit files.
-
+很多有意思的，也有些普遍的，当我读 systemd-analyze man帮助时发现 condition 子命令 （是的，我读了man帮助手册，我就是这样学习的）。这个 condition 子命令能用来测试条件和断言systemd单元文件。
 It can also be used in scripts to evaluate one or more conditions—it returns a zero (0) if all are met or a one (1) if any condition is not met. In either case, it also spews text about its findings.
-
+它能用来编码评估一个或者多个条件成立是否返回0值，或者条件没有成立返回1. 在其他时候，它根据它的调查结果吐出文本。
 The example below, from the man page, is a bit complex. It tests for a kernel version between 4.0 and 5.1, that the host is running on AC power, that the system architecture is anything but ARM, and that the directory `/etc/os-release` exists. I added the `echo $?` statement to print the return code.
-
+下面的例子，来自man帮助手册，稍微有点复杂。它测试了内核版本是不是在4.0和5.1，主机正在运行ACpower，系统结构不是arm，并且它的目录 /etc/os-release 是否存在，我加了 echo $? 来打印返回值。
 
 ```
 [root@david ~]# systemd-analyze condition 'ConditionKernelVersion = ! &lt;4.0' \
@@ -253,11 +254,11 @@ Conditions succeeded.
 ```
 
 The list of conditions and asserts starts around line 600 on the `systemd.unit(5)` man page.
-
+条件和断言在 systemd.unit(5) man帮助手册的大概600行。
 ### Listing configuration files
-
+### 配置文件列表
 The `systemd-analyze` tool provides a way to send the contents of various configuration files to `STDOUT`, as shown here. The base directory is `/etc/`:
-
+systemd-analyze 工具提供了一个方法去发送多种配置文件内容去标准输出，像这儿展示的，依据目根录是 /etc/
 
 ```
 [root@david ~]# systemd-analyze cat-config systemd/system/display-manager.service
@@ -281,7 +282,7 @@ Alias=display-manager.service
 ```
 
 This is a lot of typing to do nothing more than a standard `cat` command does. I find the next command a tiny bit helpful. It can search out files with the specified pattern within the standard systemd locations:
-
+这和标准的cat命令做的差不多。我发现另外一条小有帮助的命令，它能在标准的systemd所在的位置搜索指定的模式：
 
 ```
 [root@david ~]# systemctl cat backup*
@@ -325,22 +326,22 @@ WantedBy=multi-user.target
 ```
 
 Both of these commands preface the contents of each file with a comment line containing the file's full path and name.
-
+这些命令为每个文件提供了注释行包含了文件的全路径名。
 ### Unit file verification
-
+### 单元文件校验
 After creating a new unit file, it can be helpful to verify that its syntax is correct. This is what the `verify` subcommand does. It can list directives that are spelled incorrectly and call out missing service units:
-
+当创建了一个新的单元文件，它能帮助校验语法是否正确，利用 verify 子命令。它能列出来不正确拼写和呼叫错误服务单元的指导。
 
 ```
 `[root@david ~]# systemd-analyze verify /etc/systemd/system/backup.service`
 ```
 
 Adhering to the Unix/Linux philosophy that "silence is golden," a lack of output messages means that there are no errors in the scanned file.
-
+Unix/Linux的宗旨是“沉默是金”，没有输出意味着扫描文件没有错。
 ### Security
-
+### 安全
 The `security` subcommand checks the security level of specified services. It only works on service units and not on other types of unit files:
-
+security 子命令检查指定服务的安全级别，只能对服务单元工作，其他类型的单元文件不可用。
 
 ```
 [root@david ~]# systemd-analyze security display-manager
@@ -367,18 +368,18 @@ lines 34-81/81 (END)
 ```
 
 Yes, the emoji is part of the output. But, of course, many services need pretty much complete access to everything in order to do their work. I ran this program against several services, including my own backup service; the results may differ, but the bottom line seems to be mostly the same.
-
+是的，emoji是输出。但是当然，很多服务为了工作比需要更美更重要。我列举了一些服务，包括我自己的备份服务，结果不同，但是底行看起来是很重要的的一样。
 This tool would be very useful for checking and fixing userspace service units in security-critical environments. I don't think it has much to offer for most of us.
-
+这个工具对于在严格的安全空间环境检查和修复用户空间服务单元是很有用的。我不认为我们的大多数都能用到它。
 ### Final thoughts
-
+### 最后总结
 This powerful tool offers some interesting and amazingly useful options. Much of what this article explores is about using `systemd-analyze` to provide insights into Linux's startup performance using systemd. It can also analyze other aspects of systemd.
-
+强有力的工具提供了一些有意思和迷人的有益的选项。这篇文章阐述了Linux起动性能用systemd-analyze来分析systemd的内部查看工具。它同样能分析其他systemd。
 Some of these tools are of limited use, and a couple should be forgotten completely. But most can be used to good effect when resolving problems with startup and other systemd functions.
-
+这些工具的一部分是限制使用的，有些被完整遗忘。但是大多数对于起动和其他systemd功能的问题解决提供了很好的结果。
 ### Resources
-
-There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup. This list has grown since I started this series of articles to reflect the research I have done.
+### 资源
+There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup. This list has grown since I started this series of articles to reflect the research I have done.
 
   * The [systemd.unit(5) manual page][9] contains a nice list of unit file sections and their configuration options along with concise descriptions of each.
   * The Fedora Project has a good, practical [guide to systemd][10]. It has pretty much everything you need to know in order to configure, manage, and maintain a Fedora computer using systemd.
