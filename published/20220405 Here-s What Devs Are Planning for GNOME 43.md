@@ -3,14 +3,17 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14440-1.html"
 
 开发者对于 GNOME 43 的计划
 ======
+> GNOME 43 及以后的开发计划令人振奋，以下是你可以期待的：……
 
-不久前，GNOME 42 发布了。
+![](https://news.itsfoss.com/wp-content/uploads/2022/04/gnome43-ft.jpg)
+
+GNOME 42 刚刚发布不久。
 
 尽管它是 GNOME 41 之后的一次令人兴奋的升级，但你可能无法在每个主流 Linux 发行版上找到它（除了 OpenSUSE、Arch 和 Clear Linux）。
 
@@ -20,23 +23,21 @@ Fedora 36 和 Ubuntu 22.04 应该是采用 GNOME 42 的最受欢迎的选择，�
 
 ### GNOME 43：计划中的新功能
 
-在一篇 [博文][1] 中，一位 GNOME 开发者 (Chris Davis) 分享了一些 GNOME 43 及之后版本的计划变更。
+在一篇 [博文][1] 中，GNOME 开发者 Chris Davis 分享了一些 GNOME 43 及之后版本计划中的变更。
 
-Let me highlight some major highlights of it.
 我在这里介绍其中的一些主要亮点。
 
-Note that the planned changes or improvements mentioned here may/may not debut with GNOME 43.
-请注意，这里提到的计划变更或改进可能会在 GNOME 43 中首次亮相，也可能不会。
+> 请注意，这里提到的计划变更或改进可能会在 GNOME 43 中首次亮相，也可能不会。
 
 #### 全局强调色
 
-![Ubuntu 22.04 Beta 中的强调色][2]。
+![Ubuntu 22.04 Beta 中的强调色][2]
 
 随着 Libadwaita 的引入，现在有可能增加一个全局强调色的功能。
 
 你不必依赖发行版来提供使用强调色的能力（比如 [Ubuntu 22.04 中添加了这个功能][3]）。
 
-有了强调色，GNOME 桌面体验可以更加个性化。此外，它将不仅仅局限于预设，同时也支持自定义强调色，开发者将会使用到这个功能。
+有了强调色，GNOME 桌面体验可以更加个性化。此外，它将不仅仅局限于预设，同时也支持自定义强调色，应用开发者可以考虑支持它。
 
 #### 重新着色 API
 
@@ -64,9 +65,9 @@ Nautius 文件管理器将得到一些升级，比如针对移动尺寸的自适
 
 ![][6]
 
-这个图片浏览器的目标是自适应，对触摸板和触摸屏友好，并且易于使用。你可以期待它与 Nautilus 集成，以遵循文件管理器中任何文件夹的排序设置。
+这个图片浏览器的目标是自适应、对触摸板和触摸屏友好，并且易于使用。你可以期待它与 Nautilus 集成，以遵循文件管理器中任何文件夹的排序设置。
 
-除了系统集成之外，新的图片浏览器还将获得一些功能升级，主要是在基本的图片编辑方面，比如剪裁、旋转和注释。
+除了系统集成之外，新的图片浏览器还将会有一些功能升级，主要是在基本的图片编辑方面，比如剪裁、旋转和注释。
 
 ![][7]
 
@@ -88,13 +89,13 @@ Nautius 文件管理器将得到一些升级，比如针对移动尺寸的自适
 
 ### 其他改进措施
 
-随着开发的进行，我们应该会知道更多关于 GNOME 外观和其他方面的计划变更。
+随着开发的进行，我们应该会知道更多关于 GNOME 外观和其他方面计划中的变更。
 
 当我们了解到更多关于 GNOME 43 的功能时，我将会更新这篇文章。
 
 如果你对技术细节感到好奇，你可以阅读 [Chris 的博文][1]。你也可以赞助他为 GNOME 做的工作，以及其他任何相关的东西。
 
-_你期待中的 GNOME 43 是什么样的？请在下面的评论中分享你的想法吧！
+你期待中的 GNOME 43 是什么样的？请在下面的评论中分享你的想法吧！
 
 --------------------------------------------------------------------------------
 
@@ -103,7 +104,7 @@ via: https://news.itsfoss.com/gnome-43-dev-plans/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
