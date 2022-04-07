@@ -193,18 +193,20 @@ The following command generates a vector graphics file that displays the events 
 This command creates an SVG, which is a text file that defines a series of graphic vectors that applications, including Image Viewer, Ristretto, Okular, Eye of Mate, LibreOffice Draw, and others, use to generate a graph. These applications process SVG files to create an image.
 这个命令创建SVG，是一个文本文件来定义图表向量的应用，包括Image Viewer, Ristretto, Okular, Eye of Mate, LibreOffice Draw,(译者注：这些都是一些文档程序），和其他，用来生成图，这些应用可以处理SVG来创建一个图像。
 I used LibreOffice Draw to render a graph. The graph is huge, and you need to zoom in considerably to make out any detail. Here is a small portion of it:
+我用 LibreOffice Draw（译者注：一个办公文档软件）去渲染一幅图。图很大，你需要放大来看细节。这里是一个比较小部分。
 
 ![The bootup.svg file displayed in LibreOffice Draw.][5]
 
 (David Both, [CC BY-SA 4.0][6])
 
 The bootup sequence is to the left of the zero (0) on the timeline in the graph, and the startup sequence is to the right of zero. This small portion shows the kernel, `initrd`, and the processes `initrd` started.
-
+启动顺序是图上左面的时间线0，起动序列是右面的0.这个小图显示了内核、initrd、和处理器initrd开始。
 This graph shows at a glance what started when, how long it took to start up, and the major dependencies. The critical path is highlighted in red.
-
+这个图显示了谁什么时候开始，持续了多久，和主要的依赖。严格路径是红色高亮的。
 Another command that generates graphical output is `systemd-analyze plot`. It generates textual dependency graph descriptions in [DOT][7] format. The resulting data stream is then piped through the `dot` utility, which is part of a family of programs that can be used to generate vector graphic files from various types of data. These SVG files can also be processed by the tools listed above.
-
+另外一个生成图片输出的命令是 systemd-analyze plot，它生成了纹理依赖图描述在 [DOT][7]格式。结果数据流通过dot工具的管道，这是一族用来生成向量图片文件多种类型数据的程序。这些SVG文件也能被上面列出的工具处理。
 First, generate the file. This took almost nine minutes on my primary workstation:
+首先，生成文件，在我的主工作站花了9分钟
 
 
 ```
@@ -222,7 +224,7 @@ sys     0m0.070s
 ```
 
 I won't reproduce the output here because the resulting graph is pretty much spaghetti. But you should try it and view the result to see what I mean.
-
+我不想重新生成输出了，因为比spaghetti还好。你应该试试看看我想让你看到的结果。
 ### Conditionals
 
 One of the more interesting, yet somewhat generic, capabilities I discovered while reading the `systemd-analyze(1)` man page is the `condition` subcommand. (Yes—I do read the man pages, and it is amazing what I have learned this way!) This `condition` subcommand can be used to test the conditions and asserts that can be used in systemd unit files.
