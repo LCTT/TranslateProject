@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/04/linux-mint-21-announcement/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
