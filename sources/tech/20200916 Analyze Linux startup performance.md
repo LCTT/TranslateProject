@@ -111,8 +111,7 @@ graphical.target @10.071s
 
 ### 系统状态
 
-Sometimes you need to determine the system's current state. The `systemd-analyze dump` command dumps a _massive_ amount of data about the current system state. It starts with a list of the primary boot timestamps, a list of each systemd unit, and a complete description of the state of each:
-有时候你需要决定系统的当前状态， systemd-analyze dump 命令挖显出当前系统状态的一堆数据。有启动的时间戳，一个每个systemd单元的列表，和一个完整的每个状态的详细描述
+有时候你需要决定系统的当前状态， systemd-analyze dump 命令挖显出当前系统状态的一堆数据。有主要的启动时间戳，一个每个systemd单元的列表，和一个每个完整的详细描述：
 
 ```
 [root@david ~]# systemd-analyze dump
@@ -149,38 +148,31 @@ Timestamp initrd-units-load-finish: Wed 2020-08-26 12:33:38 EDT
 ```
 注：删掉了一些输出行
 
-On my main workstation, this command generated a stream of 49,680 lines and about 1.66MB. This command is very fast, so you don't need to wait for the results.
 在我的主工作站，这个命令生成了49680行大概1.66MB，命令很快，你不需要等待。
 
-I do like the wealth of detail provided for the various connected devices, such as storage. Each systemd unit has a section with details such as modes for various runtimes, cache, and log directories, the command line used to start the unit, the process ID (PID), the start timestamp, as well as memory and file limits.
-我喜欢多种连接设备的细节规格，例如存储。每个systemd单元有一节例如模块给多种运行时，缓存，和日志目录，命令用来开始单元，PID，开始时间戳，和内存和文件限制。
+我喜欢多种连接设备的规格细节，例如存储。每个systemd单元有一节例如模块的多种运行时、缓存、日志目录、单元开始命令、PID、开始时间戳、内存和文件限制。
 
 The man page for `systemd-analyze` shows the `systemd-analyze --user dump` option, which is intended to display information about the internal state of the user manager. This fails for me, and internet searches indicate that there may be a problem with it. In systemd, `--user` instances are used to manage and control the resources for the hierarchy of processes belonging to each user. The processes for each user are part of a control group, which I'll cover in a future article.
-systemd-analyze 的man帮助里展示了 systemd-analyze --user dump 选项，显示内部用户管理器的状态，但是我失败了，搜索之后表明有一些问题。在systemd里， --user 实例用来管理和控制处理器给每个用户的资源。处理器分给每个用户一部分控制组（译者注：系统管理的一个特性），我回头会再写一篇。
+systemd-analyze 的man帮助手册里展示了 systemd-analyze --user dump 选项，显示用户管理器的内部状态。但是我失败了，互联网搜索之后表明机器有一些问题。在systemd里， --user 实例用来管理和控制处理器给每个用户的资源。处理能力按分给每个用户的控制组control group（译者注：系统管理一个特性）分配，我回头再写。
 
-### Analytic graphs
 ### 分析图表
 
-Most pointy-haired-bosses (PHBs) and many good managers find pretty graphs easier to read and understand than the text-based system performance data I usually prefer. Sometimes, though, even I like a good graph, and `systemd-analyze` provides the capability to display boot/startup data in an [SVG][4] vector graphics chart.
-很多PHB老板和好的经理人发现好的图表特别容易阅读肯理解文本类胡系统性能数据，有时，我喜欢好图表，systemd-analyze 提供了显示启动起动数据用[SVG][4] 向量图表。
-The following command generates a vector graphics file that displays the events that take place during boot and startup. It only takes a few seconds to generate this file:
-下面胡命令生成一个向量图文件来显示在启动起动之间发生胡事件，生成这个文件只需要几秒：
+很多尖头老板(pointy-haired-bosses)和好的经理人发现好的图表特别容易阅读理解，比我经常看的文本类系统性能数据好。看，我喜欢好图表，systemd-analyze 提供了显示启动/起动数据用[SVG][4] 向量图表。
+下面的命令生成一个向量图文件来显示在启动起动之间发生的事件。生成这个文件只需要几秒：
 
 ```
 `[root@david ~]# systemd-analyze plot > /tmp/bootup.svg`
 ```
 
-This command creates an SVG, which is a text file that defines a series of graphic vectors that applications, including Image Viewer, Ristretto, Okular, Eye of Mate, LibreOffice Draw, and others, use to generate a graph. These applications process SVG files to create an image.
-这个命令创建SVG，是一个文本文件来定义图表向量的应用，包括Image Viewer, Ristretto, Okular, Eye of Mate, LibreOffice Draw,(译者注：这些都是一些文档程序），和其他，用来生成图，这些应用可以处理SVG来创建一个图像。
-I used LibreOffice Draw to render a graph. The graph is huge, and you need to zoom in considerably to make out any detail. Here is a small portion of it:
-我用 LibreOffice Draw（译者注：一个办公文档软件）去渲染一幅图。图很大，你需要放大来看细节。这里是一个比较小部分。
+这个命令创建了SVG，SVG是一个定义图向量应用的文本文件，包括Image Viewer、Ristretto、 Okular、 Eye of Mate、 LibreOffice Draw、和其他，(译者注：这些是文档应用）用来生成图。这些应用可以处理SVG来创建一个图像。
+我用 LibreOffice Draw（译者注：一个办公文档软件）去渲染一幅图。图很大，你需要放大来看细节。这里放的比较小：
 
 ![The bootup.svg file displayed in LibreOffice Draw.][5]
 
 (David Both, [CC BY-SA 4.0][6])
 
 The bootup sequence is to the left of the zero (0) on the timeline in the graph, and the startup sequence is to the right of zero. This small portion shows the kernel, `initrd`, and the processes `initrd` started.
-启动顺序是图上左面的时间线0，起动序列是右面的0.这个小图显示了内核、initrd、和处理器initrd开始。
+启动起顺序是图上左面的时间线0，起动序列是右面的0.这个小图显示了内核、initrd、和处理器initrd开始。
 This graph shows at a glance what started when, how long it took to start up, and the major dependencies. The critical path is highlighted in red.
 这个图显示了谁什么时候开始，持续了多久，和主要的依赖。严格路径是红色高亮的。
 Another command that generates graphical output is `systemd-analyze plot`. It generates textual dependency graph descriptions in [DOT][7] format. The resulting data stream is then piped through the `dot` utility, which is part of a family of programs that can be used to generate vector graphic files from various types of data. These SVG files can also be processed by the tools listed above.
