@@ -380,18 +380,18 @@ Some of these tools are of limited use, and a couple should be forgotten complet
 ### Resources
 ### 资源
 There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup. This list has grown since I started this series of articles to reflect the research I have done.
-
-  * The [systemd.unit(5) manual page][9] contains a nice list of unit file sections and their configuration options along with concise descriptions of each.
-  * The Fedora Project has a good, practical [guide to systemd][10]. It has pretty much everything you need to know in order to configure, manage, and maintain a Fedora computer using systemd.
-  * The Fedora Project also has a good [cheat sheet][11] that cross-references the old SystemV commands to comparable systemd ones.
-  * Red Hat documentation contains a good description of the [Unit file structure][12] as well as other important information.  
-  * For detailed technical information about systemd and the reasons for creating it, check out Freedesktop.org's [description of systemd][13].
-  * [Linux.com][14]'s "More systemd fun" offers more advanced systemd [information and tips][15].
+互联网上关于systemd有很多信息，但是很多过于简洁，迟钝，甚至误导。这篇文章中提到的额外的资源，是下面的关于systemd起动的更细节更可信的web页。列出自从我开始这个系列的文章影响我研究的。
+  * [systemd.unit(5) manual page][9] 包含了非常棒的每个都是丰富细节描述的一些单元文件节段和他们的配置文件选项。contains a nice list of unit file sections and their configuration options along with concise descriptions of each.
+  * Fedora 项目有一个好的练习 [guide to systemd][10]. 它指导了你用Fedora计算机用systemd要知道的设置，管理，维护。It has pretty much everything you need to know in order to configure, manage, and maintain a Fedora computer using systemd.
+  * Fedora 项目还有一个好的 [cheat sheet][11] 兼容了交叉了老的 SystemV 命令和与systemd的比较。that cross-references the old SystemV commands to comparable systemd ones.
+  * Red Hat 文档包含了一个详细的描述 [Unit file structure][12] 和其他一样重要的信息。as well as other important information.  
+  * 关于systemd技术细节和创建的原因，可以去 Freedesktop.org [description of systemd][13].
+  * [Linux.com][14]'s "更多 systemd 乐趣" 提供了很多高级的 systemd [information and tips][15].
 
 
 
 There is also a series of deeply technical articles for Linux sysadmins by Lennart Poettering, the designer and primary developer of systemd. These articles were written between April 2010 and September 2011, but they are just as relevant now as they were then. Much of everything else good that has been written about systemd and its ecosystem is based on these papers.
-
+这是systemd 设计者和主要开发者 Lennart Poettering 关于Linux系统管理员深度技术文档，这些文章尽管写于2010年4月到2011年9月，当时是非常适应时宜的。其他很棒的关于systemd的和相关的体系都基于这些设计。
   * [Rethinking PID 1][16]
   * [systemd for Administrators, Part I][17]
   * [systemd for Administrators, Part II][18]
@@ -413,7 +413,7 @@ via: https://opensource.com/article/20/9/systemd-startup-configuration
 
 作者：[David Both][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/jiamn)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
