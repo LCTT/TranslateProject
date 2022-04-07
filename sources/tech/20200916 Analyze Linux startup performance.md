@@ -152,7 +152,6 @@ Timestamp initrd-units-load-finish: Wed 2020-08-26 12:33:38 EDT
 
 我喜欢多种连接设备的规格细节，例如存储。每个systemd单元有一节例如模块的多种运行时、缓存、日志目录、单元开始命令、PID、开始时间戳、内存和文件限制。
 
-The man page for `systemd-analyze` shows the `systemd-analyze --user dump` option, which is intended to display information about the internal state of the user manager. This fails for me, and internet searches indicate that there may be a problem with it. In systemd, `--user` instances are used to manage and control the resources for the hierarchy of processes belonging to each user. The processes for each user are part of a control group, which I'll cover in a future article.
 systemd-analyze 的man帮助手册里展示了 systemd-analyze --user dump 选项，显示用户管理器的内部状态。但是我失败了，互联网搜索之后表明机器有一些问题。在systemd里， --user 实例用来管理和控制处理器给每个用户的资源。处理能力按分给每个用户的控制组control group（译者注：系统管理一个特性）分配，我回头再写。
 
 ### 分析图表
@@ -171,15 +170,10 @@ systemd-analyze 的man帮助手册里展示了 systemd-analyze --user dump 选�
 
 (David Both, [CC BY-SA 4.0][6])
 
-The bootup sequence is to the left of the zero (0) on the timeline in the graph, and the startup sequence is to the right of zero. This small portion shows the kernel, `initrd`, and the processes `initrd` started.
-启动起顺序是图上左面的时间线0，起动序列是右面的0.这个小图显示了内核、initrd、和处理器initrd开始。
-This graph shows at a glance what started when, how long it took to start up, and the major dependencies. The critical path is highlighted in red.
+启动起始是图上左面的时间线0，起动序列在0的右面。这个小图显示了内核、initrd、和initrd处理开启。
 这个图显示了谁什么时候开始，持续了多久，和主要的依赖。严格路径是红色高亮的。
-Another command that generates graphical output is `systemd-analyze plot`. It generates textual dependency graph descriptions in [DOT][7] format. The resulting data stream is then piped through the `dot` utility, which is part of a family of programs that can be used to generate vector graphic files from various types of data. These SVG files can also be processed by the tools listed above.
-另外一个生成图片输出的命令是 systemd-analyze plot，它生成了纹理依赖图描述在 [DOT][7]格式。结果数据流通过dot工具的管道，这是一族用来生成向量图片文件多种类型数据的程序。这些SVG文件也能被上面列出的工具处理。
-First, generate the file. This took almost nine minutes on my primary workstation:
-首先，生成文件，在我的主工作站花了9分钟
-
+另外一个生成图片输出的命令是 systemd-analyze plot，它生成了[DOT][7]格式纹理依赖图。结果数据流通过dot工具管道，这是一族用来生成向量图文件多种类型数据的程序。这些SVG文件也能被上面列出的工具处理。
+首先，生成文件，在我的主工作站花了9分钟：
 
 ```
 [root@david ~]# time systemd-analyze dot | dot -Tsvg &gt; /tmp/test.svg
@@ -195,9 +189,8 @@ sys     0m0.070s
 [root@david ~]#
 ```
 
-I won't reproduce the output here because the resulting graph is pretty much spaghetti. But you should try it and view the result to see what I mean.
-我不想重新生成输出了，因为比spaghetti还好。你应该试试看看我想让你看到的结果。
-### Conditionals
+我不想重新生成输出了，因为比意大利面还好。但是你应该试试看看我想让你看到的结果。
+
 ### 条件
 
 One of the more interesting, yet somewhat generic, capabilities I discovered while reading the `systemd-analyze(1)` man page is the `condition` subcommand. (Yes—I do read the man pages, and it is amazing what I have learned this way!) This `condition` subcommand can be used to test the conditions and asserts that can be used in systemd unit files.
