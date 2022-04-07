@@ -7,32 +7,26 @@
 [#]: via: (https://opensource.com/article/20/9/systemd-startup-configuration)
 [#]: author: (David Both https://opensource.com/users/dboth)
 
-分析Linux启动性能
+分析Linux起动性能
 ======
-用 systemd-analyze 看一看Linux启动性能或者解决一些问题
+用 systemd-analyze 查看Linux起动性能或者解决一些问题
 
 ![Magnifying glass on code][1]
 
-系统管理员的一部分工作就是分析系统性能，去发现并解决引起性能不佳长时间启动系统的问题。系统维护者也需要去检查系统配置和使用各方面。
+系统管理员的一部分工作就是分析系统性能，去发现并解决引起性能不佳、长时间启动系统的问题。系统维护者也需要去检查系统配置和使用等。
 
 systemd 初始化系统提供了 systemd-analyze 工具，帮助查看性能和其他重要的 systemd 信息。在以前的文章 [_分析 systemd 日历和时间间隔_][2] 里，我用了 systemd-analyze 去分析 systemd 里的时间戳和时间间隔，但是这个工具有很多其他用法，这个文章里我再揭示一些。
+（译者注： systemd 是目前主流Linux release 采用的系统管理；boot翻译为启动，startup翻译为起动）
 
-### Startup overview
 ### 总览
 
-The Linux startup sequence is a good place to begin exploring because many `systemd-analyze` tool functions are targeted at startup. But first, it is important to understand the difference between boot and startup. The boot sequence starts with the BIOS power-on self test (POST) and ends when the kernel is finished loading and takes control of the host system, which is the beginning of startup and the point when the systemd journal begins.
+LINUX起动顺序是值得学习关注的地方，因为 systemd-analyze 工具很多功能聚焦在起动startup过程。但是首先，要理解启动boot和起动startup。启动从BIOS加电自检（POST）开始，装载和控制主机系统结束，然后是起动startup，systemd 日志开始。
 
-LINUX起动顺序是学习关注的地方，因为 systemd-analyze 工具很多功能聚焦在起动startup过程。但是首先，要理解启动boot和起动startup。启动从BIOS加电自检（POST）开始，装载和控制主机系统后结束，然后是起动startup，systemd 日志开始。
+这个系列的第二篇文章， [_理解LINUX起动 systemd_]【3】，我讨论了起动startup的一点顺序上的细节，文章里，我试图解释起动startup顺序时间总进程和大部分时间花费在哪里。
 
-In the second article in this series, [_Understanding systemd at startup on Linux_][3], I discuss startup in a bit more detail with respect to what happens and in what sequence. In this article, I want to examine the startup sequence to look at the amount of time it takes to go through startup and which tasks take the most time.
+我的主工作站，比虚拟机的结果更有意义。工作站组成是ASUS TUF X299 Mark 2 主板，Intel i9-7960X cpu （16核 32线程），64G内存。一些命令非超级用户可以使用，但是我在这篇文章里使用了超级用户避免在用户之间切换。
 
-这个系列的第二篇文章， [_理解LINUX起动 systemd_]【3】，我讨论起动startup的一点顺序上的细节，文章里，我试图解释起动startup顺序时间总进程和大部分时间花费在哪里。
-
-The results I'll show below are from my primary workstation, which is much more interesting than a virtual machine's results. This workstation consists of an ASUS TUF X299 Mark 2 motherboard, an Intel i9-7960X CPU with 16 cores and 32 CPUs (threads), and 64GB of RAM. Some of the commands below can be run by a non-root user, but I will use root in this article to prevent having to switch between users.
-我将展示我的主工作站，非常感兴趣在虚拟机的结果，工作站组成是ASUS TUF X299 Mark 2 主板，Intel i9-7960X cpu （16核 32线程），64G内存。一些命令可以用非超级用户使用，但是我在这篇文章里使用了超级用户避免在用户之间切换。
-
-There are several options for examining the startup sequence. The simplest form of the `systemd-analyze` command displays an overview of the amount of time spent in each of the main sections of startup, the kernel startup, loading and running `initrd` (i.e., initial ramdisk, a temporary system image that is used to initialize some hardware and mount the `/` [root] filesystem), and userspace (where all the programs and daemons required to bring the host up to a usable state are loaded). If no subcommand is passed to the command, `systemd-analyze time` is implied:
-检查起动过程有几个选项，最简单的是从 systemd-analyze 命令显示起动的几个主要分段耗费的时间汇总，核心起动，装载运行 initrd （初始ramdisk，一个临时的系统镜像用来初始化一些硬件，挂载/ 文件系统），还有用户空间 （所有的程序和后台需要主机起动到一个可用的状态）。如果没有子命令传递给命令， systemd-analyze time 是这样的。
+检查起动过程有几个选项，最简单的是从 systemd-analyze 命令显示起动的几个主要分段耗费的时间汇总，内核起动，装载运行 initrd （初始ramdisk，一个临时系统镜像用来初始化一些硬件，挂载 / 根文件系统），还有用户空间 （所有的程序和后台进程需要主机起动到一个可用的状态）。如果没有子命令传递给命令， systemd-analyze time 是这样的：
 
 ```
 [root@david ~]$ systemd-analyze
@@ -41,17 +35,13 @@ graphical.target reached after 10.071s in userspace
 [root@david ~]#
 ```
 
-The most notable data in this output is the amount of time spent in firmware (BIOS): almost 54 seconds. This is an extraordinary amount of time, and none of my other physical systems take anywhere near as long to get through BIOS.
-主要的在BIOS花费了接近54秒，这是一个非同寻常的时间段，基本上所有的物理硬件系统都要穿过BIOS。
+特别要注意的BIOS花费了接近54秒，这是一个非同寻常的时间段，基本上所有的物理硬件系统都要使用BIOS。
 
-My System76 Oryx Pro laptop spends only 8.506 seconds in BIOS, and all of my home-built systems take a bit less than 10 seconds. After some online searches, I found that this motherboard is known for its inordinately long BIOS boot time. My motherboard never "just boots." It always hangs, and I need to do a power off/on cycle, and then BIOS starts with an error, and I need to press F1 to enter BIOS configuration, from where I can select the boot drive and finish the boot. This is where the extra time comes from.
-我的System76 Oryx Pro笔记本在BIOS只花了8.506秒，我家里所有的系统都在10秒以内。一些在线搜索之后，我发现这个主板因为不同寻常的IBIOS启动时间著名，我的主板从不“正启动”，总是挂掉，我需要关机/再开机，BIOS报错开始，需要按F1进入BIOS设置，选择要启动的驱动器完成启动，这些时间就是这样用掉的。
+我的System76 Oryx Pro笔记本在BIOS只花了8.506秒，我家里所有的系统都在10秒以内。在线搜索一阵之后，我发现这个主板（译者注：作者的主工作站主板）因为不同寻常的BIOS启动时间著名，我的主板从不“启动”，总是挂掉，我需要关机再开机，BIOS报错，按F1进入BIOS设置，选择要启动的驱动器完成启动，多出的时间就是这样用掉的。
 
-Not all hosts show firmware data. My unscientific experiments lead me to believe that this data is shown only for Intel generation 9 processors or above. But that could be incorrect.
-不是所有主机显示固件数据，用Intel 9代或者更高的处理器就感觉不科学，那不是正确的。
+不是所有主机显示固件数据（译者注：固件启动无法用systemd）。用Intel 9代或者更高的处理器就感觉不科学。尽管那不是正确的。（译者注：更高代的cpu启动时间更短，因为优化的BIOS）
 
-This overview of the boot startup process is interesting and provides good (though limited) information, but there is much more information available about startup, as I'll describe below.
-总结关于启动起动是非常有趣的同时提供了很好的（虽然有限）的信息，但是仍然有很多关于起动的信息可用，就像下面我将描述的一样。
+总结关于启动起动是非常有趣的，同时提供了很好的（虽然有限）的信息，仍然有很多关于起动的信息，就像下面我将描述的一样。
 
 ### Assigning blame
 ### 设定火炬
