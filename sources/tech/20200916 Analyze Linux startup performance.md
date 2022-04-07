@@ -193,12 +193,9 @@ sys     0m0.070s
 
 ### 条件
 
-One of the more interesting, yet somewhat generic, capabilities I discovered while reading the `systemd-analyze(1)` man page is the `condition` subcommand. (Yes—I do read the man pages, and it is amazing what I have learned this way!) This `condition` subcommand can be used to test the conditions and asserts that can be used in systemd unit files.
 很多有意思的，也有些普遍的，当我读 systemd-analyze man帮助时发现 condition 子命令 （是的，我读了man帮助手册，我就是这样学习的）。这个 condition 子命令能用来测试条件和断言systemd单元文件。
-It can also be used in scripts to evaluate one or more conditions—it returns a zero (0) if all are met or a one (1) if any condition is not met. In either case, it also spews text about its findings.
-它能用来编码评估一个或者多个条件成立是否返回0值，或者条件没有成立返回1. 在其他时候，它根据它的调查结果吐出文本。
-The example below, from the man page, is a bit complex. It tests for a kernel version between 4.0 and 5.1, that the host is running on AC power, that the system architecture is anything but ARM, and that the directory `/etc/os-release` exists. I added the `echo $?` statement to print the return code.
-下面的例子，来自man帮助手册，稍微有点复杂。它测试了内核版本是不是在4.0和5.1，主机正在运行ACpower，系统结构不是arm，并且它的目录 /etc/os-release 是否存在，我加了 echo $? 来打印返回值。
+把它放到程序里评估一个或者多个条件成立是否返回0值，或者条件没有成立返回1。 在其他情况，它根据调查结果吐出文本。
+下面的例子，来自man帮助手册，稍微有点复杂。它测试了内核版本是不是在4.0和5.1，主机使用AC power，系统结构不是arm，并且它的目录 /etc/os-release 是否存在。我加了 echo $? 来打印返回值。
 
 ```
 [root@david ~]# systemd-analyze condition 'ConditionKernelVersion = ! &lt;4.0' \
@@ -218,12 +215,11 @@ Conditions succeeded.
 [root@david ~]#
 ```
 
-The list of conditions and asserts starts around line 600 on the `systemd.unit(5)` man page.
 条件和断言在 systemd.unit(5) man帮助手册的大概600行。
-### Listing configuration files
-### 配置文件列表
-The `systemd-analyze` tool provides a way to send the contents of various configuration files to `STDOUT`, as shown here. The base directory is `/etc/`:
-systemd-analyze 工具提供了一个方法去发送多种配置文件内容去标准输出，像这儿展示的，依据目根录是 /etc/
+
+### 罗列配置文件
+
+systemd-analyze 工具可以发送多种配置文件内容去标准输出，像这儿展示的，基础根目录是 /etc/
 
 ```
 [root@david ~]# systemd-analyze cat-config systemd/system/display-manager.service
@@ -246,8 +242,7 @@ Alias=display-manager.service
 [root@david ~]#
 ```
 
-This is a lot of typing to do nothing more than a standard `cat` command does. I find the next command a tiny bit helpful. It can search out files with the specified pattern within the standard systemd locations:
-这和标准的cat命令做的差不多。我发现另外一条小有帮助的命令，它能在标准的systemd所在的位置搜索指定的模式：
+这和标准的cat命令做的差不多。我发现另外一条小有帮助的命令，它能在标准的 systemd 所在的位置搜索匹配的模式：
 
 ```
 [root@david ~]# systemctl cat backup*
@@ -290,23 +285,21 @@ WantedBy=multi-user.target
 [root@david ~]#
 ```
 
-Both of these commands preface the contents of each file with a comment line containing the file's full path and name.
-这些命令为每个文件提供了注释行包含了文件的全路径名。
-### Unit file verification
-### 单元文件校验
-After creating a new unit file, it can be helpful to verify that its syntax is correct. This is what the `verify` subcommand does. It can list directives that are spelled incorrectly and call out missing service units:
-当创建了一个新的单元文件，它能帮助校验语法是否正确，利用 verify 子命令。它能列出来不正确拼写和呼叫错误服务单元的指导。
+这些命令为每个文件提供了包含文件的全路径和文件名的注释行。
+
+### 单元文件检查
+
+当创建了一个新的单元文件，利用 verify 子命令帮助检查语法是否正确。它能指出来不正确拼写和呼叫错误服务单元的指导。
 
 ```
 `[root@david ~]# systemd-analyze verify /etc/systemd/system/backup.service`
 ```
 
-Adhering to the Unix/Linux philosophy that "silence is golden," a lack of output messages means that there are no errors in the scanned file.
-Unix/Linux的宗旨是“沉默是金”，没有输出意味着扫描文件没有错。
-### Security
+Unix/Linux的反馈宗旨是“沉默是金”，没有输出意味着扫描文件没有错。
+
 ### 安全
-The `security` subcommand checks the security level of specified services. It only works on service units and not on other types of unit files:
-security 子命令检查指定服务的安全级别，只能对服务单元工作，其他类型的单元文件不可用。
+
+security 子命令检查指定服务的安全级别。只能针对服务单元，其他类型的单元文件不可用：
 
 ```
 [root@david ~]# systemd-analyze security display-manager
@@ -332,31 +325,27 @@ security 子命令检查指定服务的安全级别，只能对服务单元工�
 lines 34-81/81 (END)
 ```
 
-Yes, the emoji is part of the output. But, of course, many services need pretty much complete access to everything in order to do their work. I ran this program against several services, including my own backup service; the results may differ, but the bottom line seems to be mostly the same.
-是的，emoji是输出。但是当然，很多服务为了工作比需要更美更重要。我列举了一些服务，包括我自己的备份服务，结果不同，但是底行看起来是很重要的的一样。
-This tool would be very useful for checking and fixing userspace service units in security-critical environments. I don't think it has much to offer for most of us.
-这个工具对于在严格的安全空间环境检查和修复用户空间服务单元是很有用的。我不认为我们的大多数都能用到它。
-### Final thoughts
+是的，哭脸（emoji）是输出。但是当然，很多服务的工作比美观更重要。我列举了一些服务，包括我自己的备份服务，结果可能不同，但是最下面一行看起来是一样的。
+
+这个工具对于在严格的安全环境检查和修复用户空间服务单元是很有用的。我不认为我们的大多数都能用到它。
+
 ### 最后总结
-This powerful tool offers some interesting and amazingly useful options. Much of what this article explores is about using `systemd-analyze` to provide insights into Linux's startup performance using systemd. It can also analyze other aspects of systemd.
-强有力的工具提供了一些有意思和迷人的有益的选项。这篇文章阐述了Linux起动性能用systemd-analyze来分析systemd的内部查看工具。它同样能分析其他systemd。
-Some of these tools are of limited use, and a couple should be forgotten completely. But most can be used to good effect when resolving problems with startup and other systemd functions.
-这些工具的一部分是限制使用的，有些被完整遗忘。但是大多数对于起动和其他systemd功能的问题解决提供了很好的结果。
-### Resources
+
+强有力的工具（sysmted-analyze）提供了一些有意思和迷人的有益的选项。这篇文章阐述了用systemd-analyze来分析systemd Linux内部起动性能。它同样能分析systemd的其他方面。
+
+工具的某部分是限制使用的，有些被遗漏。但是大多数对于起动和其他systemd功能的问题解决提供了很好的结果。
+
 ### 资源
-There is a great deal of information about systemd available on the internet, but much is terse, obtuse, or even misleading. In addition to the resources mentioned in this article, the following webpages offer more detailed and reliable information about systemd startup. This list has grown since I started this series of articles to reflect the research I have done.
-互联网上关于systemd有很多信息，但是很多过于简洁，迟钝，甚至误导。这篇文章中提到的额外的资源，是下面的关于systemd起动的更细节更可信的web页。列出自从我开始这个系列的文章影响我研究的。
-  * [systemd.unit(5) manual page][9] 包含了非常棒的每个都是丰富细节描述的一些单元文件节段和他们的配置文件选项。contains a nice list of unit file sections and their configuration options along with concise descriptions of each.
-  * Fedora 项目有一个好的练习 [guide to systemd][10]. 它指导了你用Fedora计算机用systemd要知道的设置，管理，维护。It has pretty much everything you need to know in order to configure, manage, and maintain a Fedora computer using systemd.
-  * Fedora 项目还有一个好的 [cheat sheet][11] 兼容了交叉了老的 SystemV 命令和与systemd的比较。that cross-references the old SystemV commands to comparable systemd ones.
-  * Red Hat 文档包含了一个详细的描述 [Unit file structure][12] 和其他一样重要的信息。as well as other important information.  
-  * 关于systemd技术细节和创建的原因，可以去 Freedesktop.org [description of systemd][13].
-  * [Linux.com][14]'s "更多 systemd 乐趣" 提供了很多高级的 systemd [information and tips][15].
 
+互联网上关于systemd有很多信息，但是很多过于简洁，迟钝，甚至误导。这篇文章中提到的额外的资源，是列在下面的关于systemd起动的更细节更可信的web页面。我罗列了自从我开始这个系列的文章影响我研究的内容。
+  * [systemd.unit(5) 手册页面][9] 包含了非常棒的每个都是丰富细节描述的一些单元文件节段和它们的配置文件选项。
+  * Fedora 项目有一个好的练习 [systemd指导][10]. 它指导了你用Fedora systemd要知道的设置，管理，维护。
+  * Fedora 项目还有一个好的 [备忘录][11] 兼容交叉了老的 SystemV 命令和systemd以及比较。
+  * Red Hat 文档包含了一个详细的描述 [单元文件结构][12] 和其他一样重要的信息。
+  * 关于systemd技术细节和创建的原因，可以去 Freedesktop.org [systemd详述][13].
+  * [Linux.com][14]的 "更多 systemd 乐趣" 提供了很多高级的 systemd [信息和提示][15].
 
-
-There is also a series of deeply technical articles for Linux sysadmins by Lennart Poettering, the designer and primary developer of systemd. These articles were written between April 2010 and September 2011, but they are just as relevant now as they were then. Much of everything else good that has been written about systemd and its ecosystem is based on these papers.
-这是systemd 设计者和主要开发者 Lennart Poettering 关于Linux系统管理员深度技术文档，这些文章尽管写于2010年4月到2011年9月，当时是非常适应时宜的。其他很棒的关于systemd的和相关的体系都基于这些设计。
+下面是 systemd 设计者和主要开发者 Lennart Poettering 关于Linux系统管理员的深度技术文档，这些文章尽管写于2010年4月到2011年9月，现在看也是非常适应时宜的。其他很棒的 systemd 相关的体系都基于这些设计。
   * [Rethinking PID 1][16]
   * [systemd for Administrators, Part I][17]
   * [systemd for Administrators, Part II][18]
@@ -378,7 +367,7 @@ via: https://opensource.com/article/20/9/systemd-startup-configuration
 
 作者：[David Both][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/jiamn)
+译者：[jiamn](https://github.com/jiamn)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
