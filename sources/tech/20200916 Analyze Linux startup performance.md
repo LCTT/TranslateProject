@@ -43,12 +43,9 @@ graphical.target reached after 10.071s in userspace
 
 总结关于启动起动是非常有趣的，同时提供了很好的（虽然有限）的信息，仍然有很多关于起动的信息，就像下面我将描述的一样。
 
-### Assigning blame
-### 设定火炬
+### 指定火炬
 
-You can use `systemd-analyze blame` to discover which systemd units take the most time to initialize. The results are displayed in order by the amount of time they take to initialize, from most to least:
-你可以用 systemd-analyze blame 去发现初始化systemd 单元花费的时间，结果按照初始化花费时间的排序，从多到少。
-
+你可以用 systemd-analyze blame 去发现初始化每个 systemd 单元用掉的时间，结果按照初始化时间长短排序，从多到少：
 
 ```
 [root@david ~]$ systemd-analyze blame                                                                        
@@ -66,20 +63,15 @@ You can use `systemd-analyze blame` to discover which systemd units take the mos
         396ms initrd-switch-root.service
 &lt;SNIP – removed lots of entries with increasingly small times&gt;
 ```
-注：删去了好多小时间
+注：删去了好多时间不长的条目
 
-Because many of these services start in parallel, the numbers may add up to significantly more than the total given by `systemd-analyze time` for everything after the BIOS. All of these are small numbers, so I cannot find any significant savings here.
-因为很多服务是并行开始的，在BIOS之后所有加在一起的超过了汇总数 systemd-analyze time。很多都是小数，所以我不能发现这签解决了哪些。
+因为很多服务是并行开始的，在BIOS之后所有单元加在一起的总数超过了 systemd-analyze time 汇总数。很多都是小数，所以我不能发现哪里能显著的节省时间。
 
-The data from this command can provide indications about which services you might consider to improve boot times. Services that are not used can be disabled. There does not appear to be any single service that is taking an excessively long time during this startup sequence. You may see different results for each boot and startup.
-这个命令提供的数据表明了提升启动时间的办法。无用的服务禁止（disable）掉。在起动序列中花掉很多时间的单一服务可以消失？你可以看到每次不同结果每次启动起动。
+这个命令提供的数据显明了提升启动时间的办法。无用的服务禁止（disable）掉。在起动序列中花掉很多时间的单一服务呈现，每次启动起动你可以看到不同结果。（译者注：并行起动服务的原因）
 
-### Critical chains
 ### 严格链
 
-Like the critical path in project management, a _critical chain_ shows the time-critical chain of events that take place during startup. These are the systemd units you want to look at if startup is slow, as they are the ones that would cause delays. This tool does not display all the units that start, only those in this critical chain of events:
-工程管理中有个严格链，在起动中能查一个严格的链表现了时间相关的事件。有一些systemd单元起动中很慢，可能就是因为限制链影响的，工具没有显示所有单元开始，仅仅是有严格限制关系的事件。
-
+项目管理中有个严格链，（译者注：systemd可以定义服务间严格依赖，构成严格链）在起动中可以通过查看一个严格链与时间相关的事件。有一些systemd单元起动中很慢，可能因为依赖严格链影响的，工具没有显示所有单元开始，仅仅是有严格限制关系的事件。（译者注：相当于最短路径。并不显示依赖但不在严格链上的服务单元）
 
 ```
 [root@david ~]# systemd-analyze critical-chain
@@ -115,10 +107,8 @@ graphical.target @10.071s
 [root@david ~]#
 ```
 
-The numbers preceded with `@` show the absolute number of seconds since startup began when the unit becomes active. The numbers preceded by `+` show the amount of time it takes for the unit to start.
 @后面的秒数数字是从起动开始到单元激活的时间，+后面是单元开始花费的时间。
 
-### System state
 ### 系统状态
 
 Sometimes you need to determine the system's current state. The `systemd-analyze dump` command dumps a _massive_ amount of data about the current system state. It starts with a list of the primary boot timestamps, a list of each systemd unit, and a complete description of the state of each:
