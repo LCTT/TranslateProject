@@ -15,13 +15,15 @@
 
 
 系统管理员的一部分工作就是分析系统性能，去发现并解决引起性能不佳、长时间启动系统的问题。系统维护者也需要去检查系统配置和使用等。
+
 systemd 初始化系统提供了 systemd-analyze 工具，帮助查看性能和其他重要的 systemd 信息。在以前的文章 分析 [_systemd 日历和时间间隔_][2] 里，我用了 systemd-analyze 去分析 systemd 里的时间戳和时间间隔，但是这个工具有很多其他用法，这个文章里我再揭示一些。
-（译者注： systemd 是目前主流Linux release 采用的系统管理；boot翻译为启动，startup翻译为起动）
+
+（译者注： systemd 是目前主流Linux release 采用的系统管理； boot 翻译为启动，startup 翻译为起动）
 
 ### 总览
 
-LINUX起动顺序是值得学习关注的地方，因为 systemd-analyze 工具很多功能聚焦在起动startup过程。但是首先，要理解启动boot和起动startup。启动从BIOS加电自检（POST）开始，装载和控制主机系统结束，然后是起动startup，systemd 日志开始。
-这个系列的第二篇文章， [_理解LINUX起动 systemd_][3]，我讨论了起动startup的一点顺序上的细节，文章里，我试图解释起动startup顺序时间总进程和大部分时间花费在哪里。
+LINUX 起动顺序是值得学习关注的地方，因为 systemd-analyze 工具很多功能聚焦在起动 startup 过程。但是首先，要理解启动 boot 和起动 startup 。启动从 BIOS 加电自检（POST）开始，装载和控制主机系统结束，然后是起动 startup ，systemd 日志开始。
+这个系列的第二篇文章， [_理解LINUX起动 systemd_][3]，我讨论了起动 startup 的一点顺序上的细节，文章里，我试图解释起动 startup 顺序时间总进程和大部分时间花费在哪里。
 我的主工作站比虚拟机的结果更有意义。工作站组成是ASUS TUF X299 Mark 2 主板，Intel i9-7960X cpu （16核 32线程），64G内存。一些命令非超级用户可以使用，但是我在这篇文章里使用了超级用户避免在用户之间切换。
 检查起动过程有几个选项，最简单的是从 systemd-analyze 命令显示起动的几个主要分段耗费的时间汇总，内核起动，装载运行 initrd （初始ramdisk，一个临时系统镜像用来初始化一些硬件，挂载 / 根文件系统），还有用户空间 （所有的程序和后台进程需要主机起动到一个可用的状态）。如果没有子命令传递给命令， systemd-analyze time 是这样的：
 
@@ -31,11 +33,11 @@ Startup finished in 53.921s (firmware) + 2.643s (loader) + 2.236s (kernel) + 4.3
 graphical.target reached after 10.071s in userspace
 [root@david ~]#
 ```
-特别要注意的BIOS花费了接近54秒，这是一个非同寻常的时间段，基本上所有的物理硬件系统都要使用BIOS。
+特别要注意的 BIOS 花费了接近54秒，这是一个非同寻常的时间段，基本上所有的物理硬件系统都要使用 BIOS。
 
-我的System76 Oryx Pro笔记本在BIOS只花了8.506秒，我家里所有的系统都在10秒以内。在线搜索一阵之后，我发现这个主板（译者注：作者的主工作站主板）因为不同寻常的BIOS启动时间著名，我的主板从不“启动”，总是挂掉，我需要关机再开机，BIOS报错，按F1进入BIOS设置，选择要启动的驱动器完成启动，多出的时间就是这样用掉的。
+我的System76 Oryx Pro笔记本在BIOS只花了8.506秒，我家里所有的系统都在10秒以内。在线搜索一阵之后，我发现这个主板（译者注：作者的主工作站主板）因为不同寻常的 BIOS 启动时间著名，我的主板从不“启动”，总是挂掉，我需要关机再开机，BIOS报错，按 F1 进入 BIO S设置，选择要启动的驱动器完成启动，多出的时间就是这样用掉的。
 
-不是所有主机显示固件数据（译者注：固件启动无法用systemd）。用Intel 9代或者更高的处理器就感觉不科学。尽管那不是正确的。（译者注：更高代的cpu启动时间更短，因为优化的BIOS）
+不是所有主机显示固件数据（译者注：固件启动中无法使用 systemd）。用Intel 9代或者更高的处理器就感觉不科学。尽管那不是正确的。（译者注：更高代的 cpu 启动时间更短，因为优化的 BIOS ）
 
 总结关于启动起动是非常有趣的，同时提供了很好的（虽然有限）的信息，仍然有很多关于起动的信息，就像下面我将描述的一样。
 
@@ -62,13 +64,14 @@ graphical.target reached after 10.071s in userspace
 ```
 注：删去了好多时间不长的条目
 
-因为很多服务是并行开始的，在BIOS之后所有单元加在一起的总数超过了 systemd-analyze time 汇总数。很多都是小数，不能显著的节省时间。
+因为很多服务是并行开始的，在 BIOS 之后所有单元加在一起的总数超过了 systemd-analyze time 汇总数。很多都是小数，不能显著的节省时间。
 
 这个命令提供的数据显明了提升启动时间的办法。无用的服务禁止（disable）掉。在起动序列中花掉很多时间的单一服务呈现明显。每次启动起动你可以看到不同结果。（译者注：并行起动服务的原因）
 
 ### 严格链
 
-项目管理中有个严格链，（译者注：systemd可以定义服务间严格依赖，构成严格链）在起动中可以通过查看一个严格链与时间相关的事件。有一些systemd单元起动中很慢，可能因为依赖严格链影响的，工具没有从开始显示所有单元，仅仅是有严格限制关系的事件。（译者注：相当于最短路径。并不显示依赖但不在严格链上的服务单元）
+项目管理中有个严格链，（译者注：systemd可以定义服务间严格依赖，构成严格链）在起动中可以通过查看一个严格链与时间相关的事件。
+有一些systemd单元起动中很慢，可能因为依赖严格链影响的，工具没有从开始显示所有单元，仅仅是有严格限制关系的事件。（译者注：相当于最短路径。并不显示依赖但不在严格链上的服务单元）
 
 
 ```
@@ -150,13 +153,13 @@ Timestamp initrd-units-load-finish: Wed 2020-08-26 12:33:38 EDT
 
 在我的主工作站，这个命令生成了49680行大概1.66MB，命令很快，你不需要等待。
 
-我喜欢多种连接设备的规格细节，例如存储。每个systemd单元有一节例如模块的多种运行时、缓存、日志目录、单元开始命令、PID、开始时间戳、内存和文件限制。
+我喜欢多种连接设备的规格细节，例如存储。每个 systemd 单元有一节例如模块的多种运行时、缓存、日志目录、单元开始命令、PID、开始时间戳、内存和文件限制。
 
-systemd-analyze 的 man 帮助手册里展示了 systemd-analyze --user dump 选项，显示用户管理器的内部状态。但是我失败了，互联网搜索之后表明机器有一些问题。在systemd里， --user 实例用来管理和控制处理器给每个用户的资源。处理能力按分给每个用户的控制组control group（译者注：系统管理一个特性）分配，我回头再写。
+systemd-analyze 的 man 帮助手册里展示了 systemd-analyze --user dump 选项，显示用户管理器的内部状态。但是我失败了，互联网搜索之后表明机器有一些问题。在 systemd 里， --user 实例用来管理和控制处理器给每个用户的资源。处理能力按分给每个用户的控制组 control group（译者注：系统管理一个特性）分配，我回头再写。
 
 ### 分析图表
 
-很多尖头老板(pointy-haired-bosses)和好的经理人发现好的图表特别容易阅读理解，比我经常看的文本类系统性能数据好。看，我喜欢好图表，systemd-analyze 提供了显示启动/起动数据用[SVG][4] 向量图表。 
+很多尖头老板( pointy-haired-bosses )和好的经理人发现好的图表特别容易阅读理解，比我经常看的文本类系统性能数据好。看，我喜欢好图表，systemd-analyze 提供了显示启动/起动数据用 [SVG][4] 向量图表。 
 
 下面的命令生成一个向量图文件来显示在启动起动之间发生的事件。生成这个文件只需要几秒：
 
@@ -164,7 +167,7 @@ systemd-analyze 的 man 帮助手册里展示了 systemd-analyze --user dump 选
 `[root@david ~]# systemd-analyze plot > /tmp/bootup.svg`
 ```
 
-这个命令创建了SVG，SVG是一个定义图向量应用的文本文件，包括Image Viewer、Ristretto、 Okular、 Eye of Mate、 LibreOffice Draw、和其他，(译者注：这些是文档应用）用来生成图。这些应用可以处理SVG来创建一个图像。
+这个命令创建了 SVG，SVG是一个定义图向量应用的文本文件，包括Image Viewer、Ristretto、 Okular、 Eye of Mate、 LibreOffice Draw、和其他，(译者注：这些是文档应用）用来生成图。这些应用可以处理 SVG 来创建一个图像。
 
 我用 LibreOffice Draw（译者注：一个办公文档软件）去渲染一幅图。图很大，你需要放大来看细节。这里放的比较小：
 
@@ -172,9 +175,11 @@ systemd-analyze 的 man 帮助手册里展示了 systemd-analyze --user dump 选
 
 (David Both, [CC BY-SA 4.0][6])
 
-启动起始是图上左面的时间线0，起动序列在0的右面。这个小图显示了内核、initrd、和initrd处理开启。 这个图显示了谁什么时候开始，持续了多久，和主要的依赖。严格路径是红色高亮的。
+启动起始是图上左面的时间线0，起动序列在0的右面。这个小图显示了内核、initrd、和initrd处理开启。 
 
-另外一个生成图片输出的命令是 systemd-analyze plot，它生成了[DOT][7] 格式纹理依赖图。结果数据流通过dot工具管道，这是一族用来生成向量图文件多种类型数据的程序。这些SVG文件也能被上面列出的工具处理。
+这个图显示了谁什么时候开始，持续了多久，和主要的依赖。严格路径是红色高亮的。
+
+另外一个生成图片输出的命令是 systemd-analyze plot，它生成了[DOT][7] 格式纹理依赖图。结果数据流通过 dot 工具管道，这是一族用来生成向量图文件多种类型数据的程序。这些 SVG 文件也能被上面列出的工具处理。
 
 首先，生成文件，在我的主工作站花了9分钟：
 
@@ -199,11 +204,11 @@ sys     0m0.070s
 
 我不想重新生成输出了，因为比意大利面还好。但是你应该试试看看我想让你看到的结果。
 
-很多有意思的，也有些普遍的，当我读 systemd-analyze man帮助时发现 condition 子命令 （是的，我读了man帮助手册，我就是这样学习的）。这个 condition 子命令能用来测试条件和断言systemd单元文件。
+很多有意思的，也有些普遍的，当我读 systemd-analyze man 帮助时发现 condition 子命令 （是的，我读了man帮助手册，我就是这样学习的）。这个 condition 子命令能用来测试条件和断言 systemd 单元文件。
 
-把它放到程序里评估一个或者多个条件成立是否返回0值，或者条件没有成立返回1。 在其他情况，它根据调查结果吐出文本。
+把它放到程序里评估一个或者多个条件成立是否返回 0 值，或者条件没有成立返回 1。 在其他情况，它根据调查结果吐出文本。
 
-下面的例子，来自man帮助手册，稍微有点复杂。它测试了内核版本是不是在4.0和5.1，主机使用AC power，系统结构不是arm，并且它的目录 /etc/os-release 是否存在。我加了 echo $? 来打印返回值。
+下面的例子，来自man帮助手册，稍微有点复杂。它测试了内核版本是不是在 4.0 和 5.1，主机使 用AC power，系统结构不是 arm，并且它的目录 /etc/os-release 是否存在。我加了 echo $? 来打印返回值。
 
 
 ```
@@ -224,7 +229,7 @@ Conditions succeeded.
 [root@david ~]#
 ```
 
-条件和断言在 systemd.unit(5) man帮助手册的大概600行。
+条件和断言在 systemd.unit(5) man帮助手册的大概 600 行。
 
 ### 罗列配置文件
 
@@ -252,7 +257,7 @@ Alias=display-manager.service
 [root@david ~]#
 ```
 
-这和标准的cat命令做的差不多。我发现另外一条小有帮助的命令，它能在标准的 systemd 所在的位置搜索模式匹配的内容：
+这和标准的 cat 命令做的差不多。我发现另外一条小有帮助的命令，它能在标准的 systemd 所在的位置搜索模式匹配的内容：
 
 
 ```
@@ -307,7 +312,7 @@ WantedBy=multi-user.target
 `[root@david ~]# systemd-analyze verify /etc/systemd/system/backup.service`
 ```
 
-Unix/Linux的反馈宗旨是“沉默是金”，没有输出意味着扫描文件没有错。
+Unix/Linux 的反馈宗旨是“沉默是金”，没有输出意味着扫描文件没有错。
 
 ### 安全
 
@@ -343,28 +348,22 @@ lines 34-81/81 (END)
 
 ### 最后总结
 
-强有力的工具（sysmted-analyze）提供了一些有意思和迷人的有益的选项。这篇文章阐述了用systemd-analyze来分析systemd Linux内部起动性能。它同样能分析 systemd 的其他方面。
-工具的某部分是限制使用的，有些被遗漏。但是大多数对于起动和其他systemd功能的问题解决提供了很好的结果。
+强有力的工具（sysmted-analyze）提供了一些有意思和迷人的有益的选项。这篇文章阐述了用 systemd-analyze 来分析 systemd Linux内部起动性能。它同样能分析 systemd 的其他方面。
+工具的某部分是限制使用的，有些被遗漏。但是大多数对于起动和其他 systemd 功能的问题解决提供了很好的结果。
 
 ### 资源
 
-互联网上关于systemd有很多信息，但是很多过于简洁，迟钝，甚至误导。这篇文章中提到的额外的资源，是列在下面的关于 systemd 起动的更细节更可信的web页面。我罗列了自从我开始这个系列的文章影响我研究的内容。
+互联网上关于 systemd 有很多信息，但是很多过于简洁，迟钝，甚至误导。这篇文章中提到的额外的资源，是列在下面的关于 systemd 起动的更细节更可信的web页面。我罗列了自从我开始这个系列的文章影响我研究的内容。
 
-  * The [systemd.unit(5) manual page][9] 包含了非常棒的每个都是丰富细节描述的一些单元文件节段和它们的配置文件选项。
-  * The Fedora Project has a good, practical [guide to systemd][10]. 它指导了你用Fedora systemd要知道的设置，管理，维护。
-  * The Fedora Project also has a good [cheat sheet][11] 兼容交叉了老的 SystemV 命令和systemd以及比较。
-  * Red Hat documentation contains a good description of the [Unit file structure][12] 和其他一样重要的信息。
-  * 关于systemd技术细节和创建的原因，可以去 Freedesktop.org's [description of systemd][13].
-  * [Linux.com][14]'s "More systemd fun" offers more advanced systemd [information and tips][15].
+  * The [systemd.unit(5) 手册页面][9] 包含了非常棒的每个都是丰富细节描述的一些单元文件节段和它们的配置文件选项。
+  * The Fedora 项目有一个好的练习 [systemd 指导][10]. 它指导了你用 Fedora systemd 要知道的设置，管理，维护。
+  * The Fedora 项目还有一个好的 [备忘录][11] 兼容交叉了老的 SystemV 命令和 systemd 以及比较。
+  * Red Hat 文档包含了一个详细的描述 [单元文件结构][12] 和其他一样重要的信息。
+  * 关于systemd技术细节和创建的原因，可以去 Freedesktop.org's [ systemd 详述][13].
+  * [Linux.com][14]的 "更多 systemd 乐趣" 提供了很多高级的 systemd  [信息和提示][15].
 
-systemd.unit(5) 手册页面 
-Fedora 项目有一个好的练习 systemd指导. 
-Fedora 项目还有一个好的 备忘录 
-Red Hat 文档包含了一个详细的描述 单元文件结构 
- Freedesktop.org systemd详述.
-Linux.com的 "更多 systemd 乐趣" 提供了很多高级的 systemd 信息和提示.
 
-There is also a series of deeply technical articles for Linux sysadmins by Lennart Poettering, the designer and primary developer of systemd. These articles were written between April 2010 and September 2011, but they are just as relevant now as they were then. Much of everything else good that has been written about systemd and its ecosystem is based on these papers.
+下面是 systemd 设计者和主要开发者 Lennart Poettering 关于 Linux 系统管理员的深度技术文档，这些文章尽管写于2010年4月到2011年9月，现在看也是非常适应时宜的。其他很棒的 systemd 相关的体系都基于这些设计。
 
   * [Rethinking PID 1][16]
   * [systemd for Administrators, Part I][17]
