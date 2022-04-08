@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/2/linux-network-security-netstat"
 [#]: author: "Sahana Sreeram https://opensource.com/users/sahanasreeram01gmailcom"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hwlife"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
