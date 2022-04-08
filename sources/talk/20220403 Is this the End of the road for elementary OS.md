@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/04/end-of-elementary-os/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hwlife"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
