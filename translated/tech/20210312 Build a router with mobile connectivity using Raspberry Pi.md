@@ -79,16 +79,17 @@
 首次登录不需要密码，所以直接点击  **Login** 按钮继续。
 
 
-### Configure network connection
+### 设置网络连接
 
-The Raspberry Pi has only one Ethernet port, while normal routers have a couple of them: one for WAN (wired area network) and the other for LAN (local area network). You have two options:
+树莓派只有一个以太网口，而普通路由器有两个：一个是 WAN (有线区域网络) 口，另一个是 LAN (本地区域网络)。
+你有两个选择：
 
-  1. Use your Ethernet port for network connectivity
-  2. Use WiFi for network connectivity
+  1. 使用你的以太网口接入互联网
+  2. 使用 WIFI 接入互联网
 
 
 
-**使用以太网:**
+**使用以太网连接:**
 
 你应该决定使用以太网，导航到 **网络 → 接口**。在这个设置页面，按下蓝色的 **Edit** 按钮，将 **LAN** 接口与之关联。
 
@@ -96,43 +97,45 @@ The Raspberry Pi has only one Ethernet port, while normal routers have a couple 
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-A pop-up window should appear. In that window, you need to enter the IP address to match the subnet of the router to which you will connect the Raspberry Pi. Change the Netmask, if needed, and enter the IP address of the router the Raspberry Pi will connect to.
+一个弹窗应该出现，在这个窗口中，你需要键入与你将要连接树莓派的路由器子网匹配的 IP 地址。修改子网掩码，如果需要的话，与树莓派将要连接的路由器的 IP 地址。
 
 ![Enter IP in the LAN interface][12]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-Save this configuration and connect your Pi to the router over Ethernet. You can now reach the Raspberry Pi with this new IP address.
+保存设置，然后通过以太网连接你的树莓派到路由器。你可以现在用这个新的 IP 地址访问到树莓派。
 
-Be sure to set a password for your OpenWRT router before you put it into production use!
+当你在把树莓派投入生产环境使用之前，确保为你的 OpenWRT 设置一个密码！
 
-**To use WiFi**
 
-If you would like to connect the Raspberry Pi to the internet through WiFi, navigate to **Network → Wireless**. In the **Wireless** menu, press the blue **Scan** button to locate your home network.
+**使用 WiFi 连接**
+
+如果你想通过 WiFi 连接树莓派到互联网，导航到 **网络 → 无线** 。在 **无线** 菜单里，按下蓝色的  **扫描** 按钮查找你的家庭网络。
+
 
 ![Scan the network][13]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-In the pop-up window, find your WiFi network and connect to it. Don't forget to **Save and Apply** the configuration.
+在弹出的窗口中，找到你的 WiFi 网络然后连接它。不要忘记 **保存并应用** 设置。
 
-In the **Network → Interfaces** section, you should see a new interface.
+在这 **网络 → 接口** 部分，你应该看到了一个新的接口。 
 
 ![New interface][14]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-Be sure to set a password for your OpenWRT router before you put it into production use!
+当你在把树莓派投入生产环境使用之前，确保为你的 OpenWRT 设置一个密码！
 
-### Install the necessary packages
+### 安装必要的软件包
 
-By default, the router doesn't have a lot of packages. OpenWRT offers a package manager with a selection of packages you need to install. Navigate to **System → Software** and update your package manager by pressing the button labeled "**Update lists…**".
+默认状态下，路由器并没有许多软件包。OpenWRT 提供了带有一系列你需要安装的一个包管理器。导航到 **系统 → 软件** 然后通过按下标有 "**更新列表…**" 的按钮来更新你的包管理器。
 
 ![Updating packages][15]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-You will see a lot of packages; you need to install these:
+你将会看到许多软件包；你需要安装一下这些：
 
   * usb-modeswitch
   * kmod-mii
@@ -140,127 +143,129 @@ You will see a lot of packages; you need to install these:
   * kmod-usb-wdm
   * kmod-usb-serial
   * kmod-usb-serial-option
-  * kmod-usb-serial-wwan (if it's not installed)
+  * kmod-usb-serial-wwan (是否可以不安装)
 
 
 
-Additionally, [download this modemmanager package][16] and install it by pressing the button labeled **Upload Package…** in the pop-up window. Reboot the Raspberry Pi for the packages to take effect.
+另外，[下载这个调制解调器管理软件包]然后在弹出的窗口中按下标有 **上传软件包…** 的按钮来安装它。重启树莓派让安装包生效。
 
-### Set up the mobile interface
+### 设置移动网接口
 
-After all those packages are installed, you can set up the mobile interface. Before connecting the modem to the Raspberry Pi read, the [modem instructions][17] to set it up. Then connect your mobile modem to the Raspberry Pi and wait a little until the modem boots up.
+所有这些软件包被安装完之后，你可以设置移动网接口。在连接调制解调器到树莓派之前，先阅读以下 [调制解调器说明书][17] 。然后连接你的移动调制解调器到树莓派，然后等待一会直到调制解调器启动。
 
-Navigate to **Network → Interface**. At the bottom of the page, press the **Add new interface…** button. In the pop-up window, give your interface a name (e.g., **mobile**) and select **ModemManager** from the drop-down list.
+导航到 **网络 → 接口**。在页面底部，按下 **添加一个新接口** 按钮。在弹出的窗口中，给你的接口命令 (比如 **移动网** ) 然后从下拉列表中选择**调制解调器管理** 。
 
 ![Add a new mobile interface][18]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-Press the button labeled **Create Interface**. You should see a new pop-up window. This is the main window for configuring the interface. In this window, select your modem and enter any other information like an Access Point Name (APN) or a PIN.
+按下一个标有 **创建接口** 的按钮。你应该看到弹出一个新窗口。这是设置接口的一个主窗口。在这个窗口中，选择你的调制解调器然后键入像接入点名称 (APN) 或是 PIN 码之类的信息。
+
 
 ![Configuring the interface][19]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-**Note:** If no modem devices appear in the list, try rebooting your Raspberry Pi or installing the kmod-usb-net-qmi-wwan package.
 
-When you are done configuring your interface, press **Save** and then **Save and Apply**. Give some time for the system to take effect. If everything went well, you should see something like this.
+**注意:** 如果在列表中没有调制解调器设备出现，尝试重启树莓派或者安装  kmod-usb-net-qmi-wwan 软件包 。
+
+当你已经配置完你的接口，按下 **保存** 然后 **保存并应用**。给系统一些生效的时间。如果一切正常，你应该看到像这样的一些东西。
 
 ![Configured interface][20]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-If you want to check your internet connection over this interface, you can use ssh to connect to your Raspberry Pi shell. In the terminal, enter:
+如果你想通过接口查看你的网络连接，你可以使用 SSH 连接到你的树莓派 shell。在终端里，键入：
 
 
 ```
 `ssh root@192.168.1.1`
 ```
 
-The default IP address is 192.168.1.1; if you changed it, then use that IP address to connect. When connected, execute this command in the terminal:
+缺省 IP 地址是 192.168.1.1：如果你要修改它，然后用这个 IP 地址连接。当连接的状态时，在终端里执行命令：
 
 
 ```
 `ping -I ppp0 google.com`
 ```
 
-If everything is working, then you should receive pings back from Google's servers.
+如果一切正常运行，那么你应该从 Google 的服务器接收到 pings 。
 
 ![Terminal interface][21]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-**ppp0** is the default interface name for the mobile interface you created. You can check your interfaces using **ifconfig**. It shows active interfaces only.
+**ppp0** 是为你创建的移动网接口的默认接口名称。你可以通过使用 **ifconfig** 命令检查你的接口。它只显示活动的接口。
 
-### Set up the firewall
+### 设置防火墙
 
-To get the mobile interface working, you need to configure a firewall for the **mobile** interface and the **lan** interface to direct traffic to the correct interface.
+要让移动网接口运行，你需要为 **移动网** 接口和 **lan** 接口引导流量到正确的接口。
 
-Navigate to **Network → Firewall**. At the bottom of the page, you should see a section called **Zones**.
+导航到 **网络 → 防火墙**。在页面的底部，你应该看到一个叫做 **区域** 的部分。
 
 ![Firewall zones][22]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-The simplest way to configure the firewall is to adjust the **wan** zone. Press the **Edit** button and in the **Covered networks** option, select your **mobile** interface, and **Save and Apply** your configuration. If you don't want to use WiFi to connect to the internet, you can remove **wwan** from the **Covered networks** or disable the WiFi connection.
+设置防火墙最简单的方法就是调整 **wan** 区域。在 **已覆盖的网络** 选项里按下 **编辑** 按钮，选择你的 **移动网** 接口，然后 **保存并应用** 你的设置。如果你不想用 WiFi 连接你的树莓派，你可以从 **已覆盖的网络** 里删除 **wwan** 接口，或者关闭 WiFi 连接。 
 
 ![Firewall zone settings][23]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-If you want to set up individual zones for each interface, just create a new zone and assign the necessary interfaces. For example, you may want to have a mobile zone that covers the mobile interface and is used to forward LAN interface traffic through it. Press the **Add** button, then **Name** your zone, check the **Masquerading** check box, select **Covered Networks**, and choose which zones can forward their traffic.
+如果你想为每个接口设置一个独立区域，只需创建一个新区域然后分配必要的接口即可。举个例子，你可能想有一个移动网区域，这个区域覆盖移动网接口并且通过它来转发 LAN 接口流量。按下 **添加** 按钮，然后给你的区域 **命名**， 检查 **伪装** 复选框，选中 **已覆盖的网络** ，然后选择可以转发它们流量的区域。
 
 ![Firewall zone settings][24]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-Then **Save and Apply** the changes. Now you have a new zone.
+然后 **保存并应用** 这些修改。现在你有一个新的区域。 
 
-### Set up an Access Point
+### 设置一个接入点
 
-The last step is to configure a network with an Access Point for your devices to connect to the internet. To set up an Access Point, navigate to **Network → Wireless**. You will see a WiFi device interface, a disabled Access Point named **OpenWRT**, and a connection that is used to connect to the internet over WiFi (if you didn't disable or delete it earlier). On the **Disable** interface, press the **Edit** button, then **Enable** the interface.
+最后一步是为你的设备接入互联网设置一个网络接入点。要设置一个接入点，导航到 **网络 → 无线** 。你将会看到一个 WiFi 设备接口，一个关闭的以 **OpenWRT** 命名的接入点，这个连接通过 WiFi来连接到互联网 (如果你先前没有关闭或者删除它)。在这个 **关闭** 的接口上，按下 **编辑** 按钮，然后 **开启** 接口。
 
 ![Enabling wireless network][25]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-If you want, you can change the interface name by editing the **ESSID** option. You can also select which network it will be associated with. By default, it with be associated with the **lan** interface.
+如果你想，你可以通过编辑 **ESSID** 选项来修改接口名称。你也可以选择它要关联的网络。默认状态下，它将会与 **lan** 口关联。
 
 ![Configuring the interface][26]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-To add a password for this interface, select the **Wireless Security** tab. In the tab, select the encryption **WPA2-PSK** and enter the password for the interface in the **Key** option field.
+要为这个接口添加密码，选择 **无线安全**选项，选择 **WPA2-PSK** 加密方式然后在 **Key** 选项字段键入接口的密码。
 
 ![Setting a password][27]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-Then **Save and Apply** the configuration. If the configuration was set correctly, when scanning available Access Points with your device, you should see a new Access Point with the name you assigned.
+然后 **保存并应用** 设置。如果设置正确的话，当用你的设备扫码可用接入点的话，你应该看到你分配了名称的新接入点。
 
-### Additional packages
+### 额外的软件包
 
-If you want, you can download additional packages for your router through the web interface. Just go to **System → Software** and install the package you want from the list or download it from the internet and upload it. If you don't see any packages in the list, press the **Update lists…** button.
+如果你愿意，你可以通过网络接口为你的路由器下载额外的软件包。只需到 **系统 → 软件** 然后安装你想从列表或者互联网上下载的软件包并上传它。如果你在列表中没有看到任何软件包，按下 **更新列表…** 按钮。
 
-You can also add other repositories that have packages that are good to use with OpenWRT. Packages and their web interfaces are installed separately. The packages that start with the prefix **luci-** are web interface packages.
+你也可以添加其他有软件包的仓库更好的利用 OpenWRT 。软件包和它们的网络接口分开安装。软件包名称是以 **luci-** 开始的是网络接口软件包。
 
 ![Packages with luci- prefix][28]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-### Give it a try
+### 试试看
 
-This is what my Raspberry Pi router setup looks like.
+这就是我的树莓派路由设置的过程。
 
 ![Raspberry Pi router][29]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-It not difficult to build a router from a Raspberry Pi. The downside is that a Raspberry Pi has only one Ethernet port. You can add more ports with a USB-to-Ethernet adapter. Don't forget to configure the port on the interface's website.
+从树莓派建立一个路由器不是很困难。缺点是树莓派只有一个以太网接口。你可以用一个  USB-to-Ethernet 适配器来增加更多的网口。不要忘记在接口的网站上设置网口。
 
-OpenWRT supports a large number of mobile modems, and you can configure the mobile interface for any of them with the modemmanager, which is a universal tool to manage modems.
+OpenWRT 支持大量移动调制解调器，你可以用管理调制解调器的通用工具 modemmanager 为它们设置移动网接口。
 
-Have you used your Raspberry Pi as a router? Let us know how it went in the comments.
+你使用你的树莓派作为路由器了吗？在下方评论让我们进展如何。
 
 --------------------------------------------------------------------------------
 
@@ -268,7 +273,7 @@ via: https://opensource.com/article/21/3/router-raspberry-pi
 
 作者：[Lukas Janėnas][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hwlife](https://github.com/hwlilfe)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
