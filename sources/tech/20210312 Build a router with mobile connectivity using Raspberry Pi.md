@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/router-raspberry-pi)
 [#]: author: (Lukas Janėnas https://opensource.com/users/lukasjan)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hwlife)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
