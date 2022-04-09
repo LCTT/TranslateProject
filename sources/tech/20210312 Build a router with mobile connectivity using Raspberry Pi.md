@@ -2,62 +2,64 @@
 [#]: via: (https://opensource.com/article/21/3/router-raspberry-pi)
 [#]: author: (Lukas Janėnas https://opensource.com/users/lukasjan)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hwlife)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
 
-Build a router with mobile connectivity using Raspberry Pi
+使用树莓派建立一个带有移动网络连接功能的路由器
 ======
-Use OpenWRT to get more control over your network's router.
+在你的网络路由器上使用 OpenWRT获得更多控制功能。
 ![Mesh networking connected dots][1]
 
-The Raspberry Pi is a small, single-board computer that, despite being the size of a credit card, is capable of doing a lot of things. In reality, this little computer can be almost anything you want to be. You just need to open up your imagination.
+树莓派是一个小型单板电脑，尽管只有信用卡大小，但是能做许多事情。事实上，这个小电脑几乎可以成为你想让它成为的任何东西。你只需要打开你的想象力。
 
-Raspberry Pi enthusiasts have made many different projects, from simple programs to complex automation projects and solutions like weather stations or even smart-home devices. This article will show how to turn your Raspberry Pi into a router with LTE mobile connectivity using the OpenWRT project.
+树莓派爱好者已经做了许多不同的项目，从单个程序到复杂的自动化项目和类似气象站或者甚至智能家居设备的解决方案。这篇文章将展示怎样使用 OpenWRT 项目将你的树莓派变成带有 LTE 移动网络连接功能的路由器。
 
-### About OpenWRT and LTE
 
-[OpenWRT][2] is an open source project that uses Linux to target embedded devices. It's been around for more than 15 years and has a large and active community.
+### 关于 OpenWRT 和 LTE
 
-There are many ways to use OpenWRT, but its main purpose is in routers. It provides a fully writable filesystem with package management, and because it is open source, you can see and modify the code and contribute to the ecosystem. If you would like to have more control over your router, this is the system you want to use.
+[OpenWRT][2] 是一个利用 Linux 内核为嵌入式设备开发的开源项目，它已经存在超过15年了，有着大量和活跃的社区。
 
-Long-term evolution (LTE) is a standard for wireless broadband communication based on the GSM/EDGE and UMTS/HSPA technologies. The LTE modem I'm using is a USB device that can add 3G or 4G (LTE) cellular connectivity to a Raspberry Pi computer.
+有许多使用 OpenWRT 的方法，但是它的主要目的还是用在路由器上。它提供了一个带有包管理功能的完全可写的文件系统，并且因为它的的开源属性，你可以查看和修改代码并且可以贡献到开源生态。如果你喜欢对你的路由器获得更多的控制，这就是你想要的系统。
+
+长期演进技术 (LTE) 是一个基于 GSM/EGDE 和 UMTS/HSPA 技术的无线宽带通信标准。我使用的 LTE 调制解调器是一个能够添加 3G 或 4G (LTE) 蜂窝连接到树莓派电脑的　USB　设备。
 
 ![Teltonika TRM240 modem][3]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-### Prerequisites
+### 安装前的准备
 
-For this project, you will need:
+对这个项目来说，你需要：
 
-  * A Raspberry Pi with a power cable
-  * A computer, preferably running Linux
-  * A microSD card with at least 16GB
-  * An Ethernet cable
-  * An LTE modem (I am using a Teltonika [TRM240][5])
-  * A SIM card for mobile connectivity
+  * 一个带有电源线的树莓派
+  * 一台运行　Linux　的电脑
+  * 一张至少 16GB 的 SD 储存卡
+  * 以太网线
+  * LTE 调制解调器 (我使用的是 Teltonika [TRM240][5])
+  * A SIM card for mobile connectivity 一张移动网络的 SIM 卡
 
 
 
-### Install OpenWRT
+### 安装 OpenWRT
 
-To get started, download the latest [Raspberry Pi-compatible release of OpenWRT][6]. On the OpenWRT site, you see four images: two with **ext4** and two with **squashfs** filesystems. I use the **ext4** filesystem. You can download either the **factory** or **sysupgrade** image; both work great.
+首先，下载最新的 [兼容树莓派的 OpenWRT 的发布版本][6]. 在 OpenWRT 官网，你可以看到 4 个镜像：两个 **ext4** 文件系统的和两个 **squashfs** 文件系统的。我使用 **ext4** 文件系统。你可以下载 **factory** 或者  **sysupgrade** 镜像，这两个都运行良好。
 
 ![OpenWRT image files][7]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-Once you download the image, you need to extract it and install it on the SD card by [following these instructions][8]. It can take some time to install the firmware, so be patient. Once it's finished, there will be two partitions on your microSD card. One is used for the bootloader and the other one for the OpenWRT system.
+一旦你下载了镜像，你按照 [以下的说明][8] 需要解压并安装它到 SD 卡上。这将会花些时间安装固件，需要些耐心。一旦安装完成，在你的 SD 卡上将会有两个分区。一个是用来放 bootloader ，另一个是 OpenWRT 系统。
 
-### Boot up the system
 
-To boot up your new system, insert the microSD card into the Raspberry Pi, connect the Pi to your router (or a switch) with an Ethernet cable, and power it on.
+### 启动系统
 
-If you're experienced with the Raspberry Pi, you may be used to accessing it through a terminal over SSH, or just by connecting it to a monitor and keyboard. OpenWRT works a little differently. You interact with this software through a web browser, so you must be able to access your Pi over your network.
+要启动你的新系统，插入 SD 卡到树莓派，用以太网线把树莓派和你的路由器 (或者交换机) 相连，然后点亮。
 
-By default, the Raspberry Pi uses this IP address: 192.168.1.1. The computer you use to configure the Pi must be on the same subnet as the Pi. If your network doesn't use 192.168.1.x addresses, or if you're unsure, open **Settings** in GNOME, navigate to network settings, select **Manual**, and enter the following IP address and Netmask:
+如果你有使用树莓派的经验，你可能通过终端使用 SSH 访问过它，或者通过显示器和键盘连接到树莓派。 OpenWRT 工作有一点点不同。你与这个系统交互是通过网络浏览器，所以你必须能够通过网络来访问你的树莓派。
+
+缺省状态下，树莓派使用的 IP 地址是：192.168.1.1 。用来配置树莓派的计算机必须和树莓派在同一个子网中。如果你的网络没有使用 192.168.1.x 地址，或者你不能确定，在 GNOME 打开 **Settings** ，导航到网络设置，选择  **Manual** ，然后键入以下的 IP 地址和子网掩码：
 
   * **IP address:** 192.168.1.15
   * **Netmask:** 255.255.255.0
@@ -68,13 +70,14 @@ By default, the Raspberry Pi uses this IP address: 192.168.1.1. The computer you
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-Open a web browser on your computer and navigate to 192.168.1.1. This opens an authentication page so you can log in to your Pi.
+在你的电脑上打开一个浏览器然后导航到 192.168.1.1 。这将打开一个授权网页，你可以登录到你的树莓派。
 
 ![OpenWRT login page][10]
 
 (Lukas Janenas, [CC BY-SA 4.0][4])
 
-No password is required yet, so just click the **Login** button to continue.
+首次登录不需要密码，所以直接点击  **Login** 按钮继续。
+
 
 ### Configure network connection
 
@@ -85,9 +88,9 @@ The Raspberry Pi has only one Ethernet port, while normal routers have a couple 
 
 
 
-**To use Ethernet:**
+**使用以太网:**
 
-Should you decide to use Ethernet, navigate to **Network → Interfaces**. On the configuration page, press the blue **Edit** button that is associated with the **LAN** interface.
+你应该决定使用以太网，导航到 **网络 → 接口**。在这个设置页面，按下蓝色的 **Edit** 按钮，将 **LAN** 接口与之关联。
 
 ![LAN interface][11]
 
