@@ -3,13 +3,17 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14448-1.html"
 
 Linux Mint 21 公布了代号、新的升级工具及更多内容
 ======
-Mint 团队公布了即将到来的 Linux Mint 21 的代号、一个用于轻松升级的工具，以及令团队惊叹的 Warpinator 使用案例。
+
+![](https://img.linux.net.cn/data/attachment/album/202204/09/112010zm619gd31ka7zk3k.jpg)
+
+> Mint 团队公布了即将到来的 Linux Mint 21 的代号、一个用于轻松升级的工具，以及令团队惊叹的 Warpinator 使用案例。
+
 ### Linux Mint 21 公告和其他更新
 
 首先，Linux Mint 21 的代号是 “Vanessa”，它将基于 [Ubuntu 22.04 LTS Jammy Jellyfish][1]。像往常一样，它将提供三个旗舰版本：Xfce、Cinnamon 和 MATE。
@@ -18,7 +22,7 @@ Mint 团队公布了即将到来的 Linux Mint 21 的代号、一个用于轻松
 
 除此之外，项目负责人 Clement Lefebvre 还宣布了 [一个新的升级工具][3]（mintupgrade2），这样一来，计划升级到 Linux Mint 21 的用户可以更轻松地完成升级步骤。根据历史经验，升级到 Mint 的主要版本是一个涉及大量终端操作的复杂过程，这对普通用户来说通常是困难的。
 
-![随 Linux Mint 21 公布的 Mint 升级工具][4] 。
+![随 Linux Mint 21 公布的 Mint 升级工具][4]
 
 因此，考虑到其用户基础，Mint 团队为用户开发这个升级工具还是很有必要的。Clement Lefebvre 承诺，新的工具将是完全图形化的，附带有易于管理的步骤和说明。它将支持语言的本地化，还将为复杂的升级过程提供预先检查，同时也将为用户提供易于理解的可配置的指南。
 
@@ -39,7 +43,7 @@ via: https://www.debugpoint.com/2022/04/linux-mint-21-announcement/
 作者：[Arindam][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
