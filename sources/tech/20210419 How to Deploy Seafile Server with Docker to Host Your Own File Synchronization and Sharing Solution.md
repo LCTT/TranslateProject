@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/deploy-seafile-server-docker/)
 [#]: author: (Hunter Wittenborn https://itsfoss.com/author/hunter/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hwlife)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
