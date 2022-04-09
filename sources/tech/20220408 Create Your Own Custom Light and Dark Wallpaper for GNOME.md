@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/04/custom-light-dark-wallpaper-gnome/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
