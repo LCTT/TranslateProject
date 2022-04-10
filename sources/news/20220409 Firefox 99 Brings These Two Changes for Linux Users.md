@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/firefox-99-release/"
 [#]: author: "Shobhit Singh https://news.itsfoss.com/author/shobhit/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
