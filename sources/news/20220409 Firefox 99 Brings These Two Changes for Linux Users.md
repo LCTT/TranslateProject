@@ -17,18 +17,18 @@ Mozilla的Firefox因为被许多Linux发行版（如Mint和Ubuntu）作为默认
 ### 更新了什么呢？
 
   * 现在，您可以使用键盘快捷键“n”在阅读器模式中切换“讲述”。
-  * You can find added support for search—with or without diacritics—in the PDF viewer.
-  * Added GTK overlay scrollbars
-  * The Linux sandbox has been strengthened: processes exposed to web content no longer have access to the X Window system (X11).
-  * Firefox now supports credit card autofill and capture in Germany and France.
+  * 您可以在PDF查看器中找到对搜索的新增支持（带或不带音调符号）。
+  * 添加了GTK叠加滚动条
+  * Linux沙箱已得到加强：向Web公开内容的进程不再有权访问X Window系统（X11）。
+  * Firefox现在在德国和法国支持信用卡自动填充和捕获。
 
 
 
-In this article, we will be diving into what these are, and expand more on Linux specific changes.
+在本文中，我们将深入研究这些内容，并进一步扩展Linux版本特定的更改。
 
-### Gtk overlay scrollbars
+### GTK 叠加滚动条
 
-This version of Firefox comes with a new sleek thinner design for the scrollbar. The scrollbar also hides, if not in use which provides a more modern and elegant feel to the browser.
+这个版本的Firefox为滚动条配备了一个新的时尚更窄的设计。滚动条也会隐藏，如果不在使用中，这为浏览器提供了更现代和优雅的感觉。
 
 ![][1]
 
