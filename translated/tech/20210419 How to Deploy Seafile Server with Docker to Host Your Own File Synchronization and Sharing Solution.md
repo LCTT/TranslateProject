@@ -7,7 +7,6 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-How to Deploy Seafile Server with Docker to Host Your Own File Synchronization and Sharing Solution
 怎样用 Docker 部署 Seafile 服务器来托管你自己的文件同步和共享解决方案
 ======
 
