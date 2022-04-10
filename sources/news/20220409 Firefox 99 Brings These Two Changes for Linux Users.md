@@ -7,16 +7,16 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Firefox 99 Brings These Two Changes for Linux Users
+Firefox 99为Linux用户带来了两点改变
 ======
 
-Mozilla’s Firefox is one of the most popular open-source browsers which is the reason it is used as the default browser in many Linux distributions such as Mint and Ubuntu.
+Mozilla的Firefox因为被许多Linux发行版（如Mint和Ubuntu）作为默认浏览器,是最流行的开源浏览器之一。
 
-Recently, Mozilla released Firefox version 99.0 which brings new security and UI features to Linux.
+最近，Mozilla发布了Firefox 99.0版本，为Linux版本带来了新的安全和UI特性。
 
-### Whats new ?
+### 更新了什么呢？
 
-  * You can now toggle Narrate in ReaderMode with the keyboard shortcut “n.”
+  * 现在，您可以使用键盘快捷键“n”在阅读器模式中切换“讲述”。
   * You can find added support for search—with or without diacritics—in the PDF viewer.
   * Added GTK overlay scrollbars
   * The Linux sandbox has been strengthened: processes exposed to web content no longer have access to the X Window system (X11).
