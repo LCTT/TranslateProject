@@ -42,15 +42,15 @@ Mozilla的Firefox因为被许多Linux发行版（如Mint和Ubuntu）作为默认
 
 Snap，Flatpak和Appimage已经为App提供了隔离在容器中运行的沙盒版本。如果你是一个Snap或者Appimage用户，这是个好消息。然而，有[报道称][3]这破坏了硬件加速功能。
 
-_Hardware acceleration is a process where applications offload certain tasks to the hardware which results in improved performance and efficient hardware usage. Bad hardware acceleration is one of the reasons for bad battery performance on Linux._
+_硬件加速是应用程序将某些任务卸载到硬件的过程，从而提高性能和提高硬件使用效率。糟糕的硬件加速是Linux上电池性能不佳的原因之一。_
 
-### Wrapping up
+### 结束语
 
-All in all, this was Firefox’s last major two-digit update and it is good to see Firefox’s consistent determination for privacy and security. There are some issues that weren’t addressed in this release such as bugs related to hardware acceleration which will hopefully be resolved in the next update.
+总之，这是Firefox最后一次的两位数版本号更新，很高兴看到Firefox对隐私和安全的一贯决心。此版本中未解决一些问题，例如与硬件加速相关的错误，希望在下次更新中得到解决。
 
-This brings us to Firefox 100. The nightly build for Firefox 100 is already out and the full stable version will be released on May 3, 2022. It promises features such as captions in Picture-in-Picture format and improved hardware acceleration. You can try these experimental builds of Firefox by enabling `Firefox 100 User-Agent String` in `about:preferences#experimental` in the nightly builds.
+这就把我们带到了Firefox 100。每日构建版本的Firefox 100已经发布。完全稳定版将在2022.5.3发布。它承诺提供诸如画中画格式的标题和改进的硬件加速等功能。您可以通过在每日构建`about:preferences#experimental`中启用`Firefox 100 User-Agent String`来尝试Firefox的这些实验性版本。
 
-Want more? Check out some of the not-so-known [Firefox features for a better browsing experience][4].
+想要了解更多？查看一些不太知名的[Firefox功能，以获得更好的浏览体验][4].
 
 --------------------------------------------------------------------------------
 
