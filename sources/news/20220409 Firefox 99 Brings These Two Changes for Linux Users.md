@@ -32,15 +32,15 @@ Mozilla的Firefox因为被许多Linux发行版（如Mint和Ubuntu）作为默认
 
 ![][1]
 
-This feature however is not enabled by default in the Stable release. To enable this feature, go to `about:config` and search for `widget.gtk.overlay-scrollbars.enabled` . By default, this value should be set to `false` but double-clicking it will set it to `true` which will enable the new scrollbars.
+这个特性在稳定版中默认不启用。开启这个特性，转到`about:config`，搜索`widget.gtk.overlay-scrollbars.enabled`。这个值默认是`false`，双击它将设置为`true`，将启用新的滚动条。
 
 ![][2]
 
-### Linux sandbox strengthened
+### Linux沙盒得到加强
 
-This is a security update aimed to isolate the Firefox processes from the rest of the system. A sandboxed environment is one in which applications can run without affecting or interacting with any outside applications. This particular update disables any interaction of web processes with the X server. X server or X11 is the default GUI server used in most Linux distributions.
+这是一个安全更新，目的是将Firefox进程与系统的其余部分隔离开来。一个沙盒环境是一个应用可以在不影响任何外部应用的情况下运行。这次的更新禁止了任何Web进程和X server的互动。X server或 X11是Linux发行版的默认GUI服务器。
 
-Snap, Flatpak and Appimage already provide sandboxed versions of their apps which run in isolated containers so if you are a Snap or Appimage user, this is good news. However, there have been [reports][3] of this breaking the hardware acceleration feature.
+Snap，Flatpak和Appimage已经为App提供了隔离在容器中运行的沙盒版本。如果你是一个Snap或者Appimage用户，这是个好消息。然而，有[报道称][3]这破坏了硬件加速功能。
 
 _Hardware acceleration is a process where applications offload certain tasks to the hardware which results in improved performance and efficient hardware usage. Bad hardware acceleration is one of the reasons for bad battery performance on Linux._
 
