@@ -7,59 +7,58 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Manage your passwords in the Linux terminal
+在 Linux 终端里管理你的密码
 ======
-Pass is a classic UNIX-style password management system that uses GnuPG
-(GPG) for encryption, and the terminal as its primary interface.
+Pass 是一个经典的类 UNIX 密码管理系统，使用 GnuPG (GPG) 作为加密方式，并且终端作为它的主要界面。
+
 ![Linux keys on the keyboard for a desktop computer][1]
 
-These days, we all have a few dozen passwords. Fortunately, the bulk of those passwords are probably for websites, and you probably access most websites through your internet browser, and most browsers have a built-in password manager. The most common internet browsers also have a synchronization feature to help you distribute your passwords between the browsers you run across all your devices, so you're never without your login information when you need it. If that's not enough for you, there are excellent open source projects like [BitWarden][2] that can host your encrypted passwords, ensuring that only you have the key to unlock them. These solutions help make maintaining unique passwords easy, and I use these convenient systems for a selection of passwords. But my main vault of password storage is a lot simpler than any of these methods. I primarily use [pass][3], a classic UNIX-style password management system that uses GnuPG (GPG) for encryption, and the terminal as its primary interface.
+这些日子里，我们有了几十个密码。幸运的是，这些密码大部分几乎都是用于网站的，而且你通过互联网浏览器访问了许多网站，许多浏览器都有内置的密码管理器。最普遍的互联网浏览器也有一个同步的功能帮助你所有设备上运行的浏览器之间分发共享密码，所以当你需要它的时候，绝不会找不到你的登录信息。如过这不能够满足你，还有类似 [BitWarden][2] 这样优秀的开源项目可以托管你的加密的密码，确保只有你自己才能解锁它们。这些方案帮助你轻松的维护唯一的密码，同时用这些方便的系统来选择密码。但是我的主密码存储库比以上这些方式简单的多。我主要是使用 [pass][3] ，一个经典的类 UNIX 密码管理系统，使用 GnuPG (GPG) 作为加密方式，并且终端作为它的主要界面。
 
-### Install pass
+### 安装 pass
 
-You can install the `pass` command from your distribution repository.
+你可以从你的发行版仓库中安装 `pass` 命令。
 
-On Fedora, Mageia, and similar distributions, you can install it with your package manager:
+在 Fedora，Mageia和类似的发行版上，你可以用你的包管理器来安装它：
 
 
 ```
 `$ sudo dnf install pass`
 ```
 
-On Elementary, Mint, and other Debian-based distributions:
+在 Elementary ，Mint 和其它基于 Debian 的发行版上:
 
 
 ```
 `$ sudo apt install pass`
 ```
 
-On macOS, you can install it using [Homebrew][4]:
+在 macOS ,你可以使用 [Homebrew][4] 来安装它：
 
 
 ```
 `$ brew install pass`
 ```
 
-### Configuring GnuPG
+### 设置 GnuPG
 
-Before you can use `pass`, you need a valid PGP ("Pretty Good Privacy") key. If you already maintain a PGP key, you can skip this step, or you can choose to create a new key exclusively for use with `pass`. The most common open source PGP implementation is GnuPG (GPG), which ships with Linux, and you can install it on macOS from [gpgtools.org][5], Homebrew, or [Macports][6]. To create a GnuPG key, run this command:
-
+在使用 `pass` 之前，你需要一个有效的 PGP ("Pretty Good Privacy") 密钥。如果你已经维护了一个 PGP 密钥，你可以跳过这个步骤，或者你可以选择为使用 `pass` 而创建一个新的密钥。最喜闻乐见的开源 PGP 协议是 Linux 附带的 GnuPG (GPG) ，你可以在 macOS 上从 [gpgtools.org][5] ，Homebrew 或者 [Macports][6] 来安装它。要创建 GnuPG 密码，运行这个命令：
 
 ```
 `$ gpg --generate-key`
 ```
 
-You're prompted for your name and email address and create a password for the key. Your key is a digital file, and your password is known only to you. Combined, these two things can lock and unlock encrypted information, such as a file containing a password.
+提示你输入你的名字和电子邮件并且为密钥创建密码。你的密钥是一个数字文件，你的密码只有你自己知道。它俩组合起来能够加密和解锁加密的信息，比如包含密码的文件。
 
-A GPG key is much like a house key or a car key. Should you lose it, anything locked by it becomes unobtainable. Just knowing your password is not enough.
+GPG 密钥更像是一个房门钥匙或者车钥匙，如果你是去它，它加密的任何东西将不能在获得。光知道你的密码是不够的。
 
-If you already manage several SSH keys, you're probably used to this. If you're new to digital encryption keys, it can take some getting used to. Backup your `~/.gnupg` directory, so you don't accidentally erase it the next time you decide to try an exciting new distro on a whim.
+如果你已经管理了几个 SSH 密钥，你可能就知道怎么回事了。如果你对数字加密密钥是个新手，可能得花些时间来使用。备份你的 `~/.gnupg` 目录，你不能随意删除它，除非下次你一时兴起决定尝试一个新的发行版。
 
-Make a backup and keep the backup safe.
+做一个备份保持备份安全。
 
-### Configuring pass
+### 设置 pass
 
-To start using `pass`, you must initialize a _password store_, which is defined as a storage location configured to use a specific encryption key. You can indicate what GPG key you want to use for your password store by either the name associated with the key or the digital fingerprint. Your own name is usually the easier option:
+要开始使用  `pass` ， 你必须初始化一个 _密码仓库_ ，定义为一个已设置的使用指定加密密钥的储存位置。您可以通过与密钥相关联的名称或数字指纹来指示要用于密码存储的GPG密钥。你自己的名字通常更容易选择：
 
 
 ```
@@ -71,7 +70,7 @@ Password store initialized for seth
 
 ```
 
-If you've managed to forget your name, you can see the digital fingerprint and name associated with your key with the `gpg` command:
+如果你忘记了你的名称，你可以使用 `gpg` 命令查看数字指纹和关联你名称的密钥：
 
 
 ```
@@ -88,16 +87,16 @@ sub  cv25519 2022-01-06 [E] [expires: 2024-01-06]
 
 ```
 
-Initializing a password store with the fingerprint is basically the same as with your name:
+用数字指纹初始化一个和你的名称基本相同的密码仓库：
 
 
 ```
 `$ pass init 2BFF94286461216C907CBA52F067996F13EF10D8`
 ```
 
-### Store a password
+### 存储密码
 
-Add a password to your password store with the `pass add` command:
+使用 `pass add` 命令添加密码到你的密码仓库：
 
 
 ```
@@ -108,10 +107,9 @@ Enter password for [www.example.com][8]:
 
 ```
 
-Enter the password you want to add when prompted.
+提示你键入你要添加的密码。
 
-The password now gets stored in your password store. You can take a look for yourself:
-
+密码现在存储到了你的密码仓库中。你可以自己查看一下：
 
 ```
 
@@ -121,9 +119,10 @@ $ ls /root/.password-store/
 
 ```
 
-Of course, the file is unreadable, and if you attempt to run `cat` or `less` on it, you'll get unprintable characters in your terminal (use `reset` to fix your terminal if its display gets too untidy.)
+当然，这个文件是不可读的，并且你尝试对它运行 `cat` 或 `less` 时，在你的终端上会显示乱码(如果显示太过杂乱，可以使用 `reset` 命令来恢复你的终端。)
 
-### Edit a password with pass
+
+### 用 pass 编辑密码
 
 I use different user names for different activities online, so the username for a site is often just as important as the password. The `pass` system allows for this, even though it doesn't prompt you for it by default. You can add a user name to a password file using the `pass edit` command:
 
