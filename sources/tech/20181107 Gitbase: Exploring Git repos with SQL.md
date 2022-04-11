@@ -77,8 +77,8 @@ The article was [originally published][20] on Medium and is republished here wit
 
 via: https://www.debugpoint.com/2022/04/kubuntu-22-04-lts/
 
-作者：[Arindam][a]
-选题：[lujun9972][b]
+作者：[Francesc Campoy][a]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
