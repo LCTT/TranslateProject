@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/2/configure-vim-default-editor"
 [#]: author: "David Both https://opensource.com/users/dboth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
