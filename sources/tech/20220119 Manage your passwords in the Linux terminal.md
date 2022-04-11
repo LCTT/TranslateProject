@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/manage-passwords-linux-terminal"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hwlife"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
