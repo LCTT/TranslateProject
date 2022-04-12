@@ -75,7 +75,7 @@ The article was [originally published][20] on Medium and is republished here wit
 
 --------------------------------------------------------------------------------
 
-via: https://www.debugpoint.com/2022/04/kubuntu-22-04-lts/
+via: https://opensource.com/article/18/11/gitbase
 
 作者：[Francesc Campoy][a]
 选题：[lkxed][b]
