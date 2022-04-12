@@ -124,14 +124,14 @@ $ ls /root/.password-store/
 
 ### 用 pass 编辑密码
 
-I use different user names for different activities online, so the username for a site is often just as important as the password. The `pass` system allows for this, even though it doesn't prompt you for it by default. You can add a user name to a password file using the `pass edit` command:
+我使用不同的用户名称进行不同的上网活动，所以网站的用户名常常和密码同样重要。`pass` 是有这个功能的，即使它默认状态下并不提示你。你可以使用 `pass edit` 命令添加用户名到密码文件：
 
 
 ```
 `$ pass edit www.example.com`
 ```
 
-This opens a text editor (specifically the editor you have set as your `EDITOR` or `VISUAL` [environment variable][10]) displaying the contents of the `www.example.com` file. Currently, that's just a password, but you can add a user name and even another URL or any information you want. It's an encrypted file, so you're free to keep what you want in it.
+这会打开一个编辑器 (特别是你已经设置了你的 `EDITOR` 或者 `VISUAL` [环境变量][10]) 显示 `www.example.com` 文件的内容。目前，那仅仅是一个密码，但是你可以添加用户名甚至网址或者你想要添加的任何信息。它是个加密了的文件，所以你可以把你要放的任何东西放到里边。
 
 
 ```
@@ -143,11 +143,11 @@ url: example.com
 
 ```
 
-Save the file and close it.
+保存文件然后关闭。
 
-### Get a password from pass
+### 从 pass 获取密码
 
-To see the contents of a password file, use the `pass show` command:
+要查看密码文件的内容，使用 `pass show` 命令：
 
 
 ```
@@ -160,11 +160,11 @@ url: [www.example.org][11]
 
 ```
 
-### Search for a password
+### 查找密码
 
-Sometimes it's tough to remember whether a password is filed under `www.example.com` or just `example.com` or even something like `app.example.com`. Furthermore, some website infrastructures use different URLs for different site functions, so you might file a password away under `www.example.com` even though you also use the same login information for the partner site `www.example.org`.
+有时候很难记住是否在 `www.example.com` 或者仅仅是 `example.com` 又或者一些类似 `app.example.com` 的网址中填写过密码。此外，一些网站架构使用不同的 URLs 来实现不同的网站功能，所以你可能在  `www.example.com` 网址下填写过密码，你同时也用相同的登录信息在合作网站  `www.example.org` 下使用过密码。
 
-When in doubt, use `grep`. The `pass grep` command shows all instances of a search term, either in a file name or in the contents of a file:
+如果有疑问，使用 `grep` 命令。 `pass grep` 命令显示整个搜索项目的实例，无论是在文件名中还是在文件内容中：
 
 
 ```
@@ -176,7 +176,7 @@ url: [www.example.org][11]
 
 ```
 
-### Using pass with a browser
+### 在浏览器中使用 pass
 
 I use `pass` for information beyond just internet passwords, but websites are where I most often need passwords. I usually have a terminal open somewhere on my computer, so it's not much trouble to **Alt+Tab** to a terminal and get the information I need with `pass`. But that's not what I do because there are plugins to integrate `pass` with web browsers.
 
