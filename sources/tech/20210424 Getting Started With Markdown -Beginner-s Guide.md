@@ -7,37 +7,39 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Getting Started With Markdown [Beginner’s Guide]
+开始使用 Markdown [初学者指南]
 ======
 
-In my work, I often have to write code, write the documentation that goes with that code, create Web pages, and work on text restoration projects, and have written several formal papers while I was in school. I can include class notes here, too; I needed to write them for nearly every class.
+在我的工作中，我经常要写代码，写于代码配套的文档，创建网页，进行文本恢复项目，但我还在学校的时候写过几篇正式的论文。我也在这里写课堂笔记，几乎每节课都写。
 
-I use Markdown for nearly all of my writing and it is a major time-saver for me.
+我几乎在我的所有写作中都使用 Markdown,它对我来说是一个节省时间的好方法。
 
-In this article, I am going to share my experience with Markdown. You’ll be learning the following:
+在这篇文章中，我将分享使用 Markdown 的体会。你将会了解一下内容：
 
-  * What is Markdown?
-  * How does it work?
-  * Markdown basic syntax and how to use them
+  * 什么是 Markdown ？
+  * 它是怎么工作的？
+  * 的基本语法和怎样使用它们
 
 
 
-### What is Markdown?
+### 什么是 Markdown ？
 
-If you are new to Markdown, it is a text-to-HTML conversion tool for web writers. Markdown files follow a specific syntax that is easy to read and just as easy to write. They are plain text files so they can be created using any text editor on any computer. These files can then be turned into Web pages – and Web pages are built using a markup called HTML.
+如果你是 Markdown 新手，它是一个为网络写手转换文本到 HTML 的工具。Markdown 文档按照特定的语法容易阅读和写作。它们是存文本所以能够通过电脑上的任何文本编辑器来创建。这些文档然后能够被转换成网页 —— 网页通过使用叫做 HTML 为标记而创建的。
 
-Markdown then, is just a way to create Web pages without the need (or even know how) to write HTML code. Actually, Markdown is an great way to format plain text even if you don’t have to convert to HTML. Someone once described Markdown to me this way:
+Markdown只是一种不需要 (甚至知道怎么做) 写 HTML 代码就能够创建网页的方式。实际上，如果你不转换 HTML 的话，Markdown甚至是个格式化的纯文本的好的方法。有人曾这样对我描述 Markdown ：
 
-> “It isn’t _what you see is what you get_, but _what you see is what you mean_”.
 
-Markdown, however, is more than an easy formatting scheme, it is also a software tool that converts the plain text formatting to HTML.
+> “ 它不是 _你看到的就是你得到的，而是 _你看到的是你想到的_ ”.
 
-This is why the syntax is important. If you want a title on your Web page, Markdown will create one based on the character(s) you use in front of your title. A sampling of some of Markdown’s syntax is shown this screenshot:
+然而，Markdown不只是一个简单的格式化体系，它也是一个转化纯文本格式化到 HTML 的一个软件工具。
+
+这就是为什么语法是重要的了。如果你想在网页上起个标题，Markdown 将会基于你的标题前面的字符来创建。Markdown　的一些语法示例如截图所示：
 
 ![Markdown to HTML conversion][1]
 
-### So how do I make this plain text to HTML conversion?
+### 所以我怎样才能使纯文本文件转换成 HTML 呢?
 
+John Gruber 的 Markdown 是一个运行在命令行上的 Perl 脚本。
 John Gruber’s Markdown is a Perl script that is run on the command line. Basically, it reads the Markdown text that you create and builds a Web page from it.
 
 I will avoid the command line here since there are [many outstanding Markdown editors][2] that can do this conversion for you. Not only that, many of these editors will let you write your text and show you what the Web page will look like (called _rendering_) at the same time.
