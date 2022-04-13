@@ -178,55 +178,58 @@ url: [www.example.org][11]
 
 ### 在浏览器中使用 pass
 
-I use `pass` for information beyond just internet passwords, but websites are where I most often need passwords. I usually have a terminal open somewhere on my computer, so it's not much trouble to **Alt+Tab** to a terminal and get the information I need with `pass`. But that's not what I do because there are plugins to integrate `pass` with web browsers.
+除了互联网密码，我还使用 `pass` 来查看信息，但是上网站是我经常需要密码的地方。我常常在电脑上有一个终端打开，所以我通过 **Alt+Tab** 键切换到终端用 `pass` 来获取信息。但是我并不这么做是因为有了网络浏览器整合了 `pass` 的插件。
 
-#### Pass host script
 
-First, install the `pass` host script:
+#### Pass 托管脚本
+
+首先，安装 `pass` 托管脚本：
 
 
 ```
 `$ curl -sSL github.com/passff/passff-host/release/latest/download/install_host_app.sh`
 ```
 
-This install script places a Python script that helps your browser access your password store and GPG keys. Run it along with the name of the browser you use (or nothing, to see all options):
+这个脚本放置了一个 Python 脚本帮助你的浏览器访问你的密码和 GPG 密码。与其所用的浏览器同时运行(或者不运行，查看整个选项)：
 
 
 ```
 `$ bash ./install_host_app.sh firefox`
 ```
 
-If you use multiple browsers, you can install it for each.
+如果你使用多个浏览器，你可以为每一个浏览器安装它。
 
-#### Pass Add-on
+#### Pass 附件
 
-Once you've installed the host application, you can install an add-on or extension for your browser. Search for the `PassFF` plugin in your browser's add-on or extension manager.
+一旦你已经安装了这个托管程序，你可以为你的浏览器安装一个附件或者扩展。在你的浏览器附件或者扩展管理器里搜索 `PassFF` 插件。
+
 
 ![PassFF][12]
 
 (Seth Kenlon, [CC BY-SA 4.0][13])
 
-Install the add-on, and then close and re-launch your browser.
+安装了这个附件，然后关闭并重新打开浏览器。
 
-Navigate to a site you've got a password for in your password store. There's now a small **P** icon in the right of your login text fields.
+
+导航到一个你在密码仓库存存有密码的网站。在你的登录文本框右侧会显示一个小 **P** 的图标。
 
 ![PassFF browser prompt][14]
 
 (Seth Kenlon, [CC BY-SA 4.0][13])
 
-Click on the **P** button to see a list of matching site names in your password store.
+点击 **P** 按钮会看到在你的密码仓库有一个与你网站名称匹配的列表。
 
 ![PassFF browser menu][15]
 
 (Seth Kenlon, [CC BY-SA 4.0][13])
 
-Click the pen-and-paper icon to fill in the form or the paper-airplane icon to fill and auto-submit the form.
+点击纸和笔的图标填写表单或者通过纸飞机的图标填写并自动提交表单。
 
-Easy password management and fully integrated!
+轻松的密码管理并完全整合了!
 
-### Try pass as your Linux password manager
+### 尝试用 pass 作为你的 Linux 密码管理器
 
-The `pass` command is a great option for users who want to manage passwords and personal information using tools they already use on a daily basis. If you rely on GPG and a terminal already, then you may enjoy the `pass` system. It's also an important option for users who don't want their passwords tied to a specific application. Maybe you don't use just one browser, or you don't like the idea that it might be difficult to extract your passwords from an application if you decide to stop using it. With `pass`, you maintain control of your secrets in a UNIX-like and straightforward system.
+对于希望使用日常使用的工具管理密码和个人信息的用户来说，`pass` ”命令是一个很好的选择。如果你已经依赖 GPG 和终端，那么你可能会喜欢 `pass` 系统。对于用户不想让他们的密码和特定的程序挂钩，这也是一个重要的选择。可能你并不适用一个浏览器，或者你不喜欢这种想法，如果你决定停止使用它，从程序中提取密码就会变的困难。使用 `pass` ，你可以在类 UNIX 和直接的系统里保持着对你秘密的控制。
 
 --------------------------------------------------------------------------------
 
@@ -234,7 +237,7 @@ via: https://opensource.com/article/22/1/manage-passwords-linux-terminal
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hwlife](https://github.com/hwlife)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
