@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
