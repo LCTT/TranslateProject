@@ -78,7 +78,7 @@
 
 #### 使用以太网连接
 
-你决定使用以太网，导航到 “<ruby>网络<rt>Network</rt></rby> → <ruby>接口<rt>Interfaces</rt></ruby>”。在这个设置页面，按下与 “LAN” 接口对应的蓝色 “<ruby>编辑<rt>Edit</rt></ruby>” 按钮。
+你决定使用以太网，导航到 “<ruby>网络<rt>Network</rt></ruby> → <ruby>接口<rt>Interfaces</rt></ruby>”。在这个设置页面，按下与 “LAN” 接口对应的蓝色 “<ruby>编辑<rt>Edit</rt></ruby>” 按钮。
 
 ![LAN interface][11]
 
@@ -92,7 +92,7 @@
 
 #### 使用 WiFi 连接
 
-如果你想通过 WiFi 将树莓派连接到互联网，导航到 “<ruby>网络<rt>Network</rt></rby> → <ruby>无线<rt>Wireless</rt></ruby>” 。在 “<ruby>无线<rt>Wireless</rt></ruby>” 菜单里，按下蓝色的 “<ruby>扫描<rt>Scan</rt></ruby>” 按钮查找你的家庭网络。
+如果你想通过 WiFi 将树莓派连接到互联网，导航到 “<ruby>网络<rt>Network</rt></ruby> → <ruby>无线<rt>Wireless</rt></ruby>” 。在 “<ruby>无线<rt>Wireless</rt></ruby>” 菜单里，按下蓝色的 “<ruby>扫描<rt>Scan</rt></ruby>” 按钮查找你的家庭网络。
 
 ![Scan the network][13]
 
@@ -196,7 +196,7 @@ ping -I ppp0 google.com
 
 如果你愿意，你可以通过网页界面为你的路由器下载额外的软件包。只需到 “<ruby>系统<rt>System</rt></ruby> → <ruby>软件<rt>Software</rt></ruby>” 然后安装你想从列表或者互联网上下载的软件包并上传它。如果你在列表中没有看到任何软件包，请按下 “<ruby>更新列表…<rt>Update lists...</rt></ruby>” 按钮。
 
-你也可以添加其他拥有适合与 OpenWRT 一起使用的软件包的仓库。软件包和它们的网页界面是分开安装的。软件包名称是以 “luci-” 开始的是网也界面软件包。
+你也可以添加其他拥有适合与 OpenWRT 一起使用的软件包的仓库。软件包和它们的网页界面是分开安装的。软件包名称是以 “luci-” 开始的是网页界面软件包。
 
 ![Packages with luci- prefix][28]
 
