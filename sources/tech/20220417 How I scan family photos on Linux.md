@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/4/scan-family-photos-linux"
 [#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
