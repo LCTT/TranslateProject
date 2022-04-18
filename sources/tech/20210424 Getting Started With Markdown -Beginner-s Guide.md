@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/markdown-guide/)
 [#]: author: (Bill Dyer https://itsfoss.com/author/bill/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hwlife)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
