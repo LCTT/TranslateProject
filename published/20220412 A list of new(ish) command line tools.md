@@ -3,38 +3,38 @@
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14488-1.html"
 
-一个新的命令行工具列表
+新式 Linux 命令行工具大全
 ======
 
-你好！今天我[在 twitter][1] 询问了一些新的命令行工具，比如 `ripgrep` 和 `fd` 以及 `fzf` 和 `exa` 以及 `bat`。
+![](https://img.linux.net.cn/data/attachment/album/202204/18/230845e83y1wla8feawucp.jpg)
 
-我收到了一大堆我没有听说过的工具的回复，所以我想我应该在这里列出一个清单。很多人还指出了 [modern-unix][2] 的列表。
+嗨！今天我 [在 twitter][1] 询问有没有一些像 `ripgrep`、`fd`、`fzf`、`exa` 及 `bat` 之类的新式命令行工具。
+
+我收到了一大堆回复，都是我没有听说过的工具，所以我想我应该在这里列出一个清单。另外，很多人还指出有一个 [modern-unix][2] 的列表。
 
 ### 标准工具的替代物
 
-  * [ripgrep][3]、[ag][4]、[ack][5] （grep）
-  * [exa][6]、[lsd][7] （ls）
-  * [mosh][8] （ssh）
-  * [bat][9] （cat）
-  * [delta][10] （git 分页器）
-  * [fd][11] （find）
-  * [drill][12]、[dog][13] （dig）
-  * [duf][14] （df）
-  * [dust][15]、ncdu （du）
+  * [ripgrep][3]、[ag][4]、[ack][5] （`grep`）
+  * [exa][6]、[lsd][7] （`ls`）
+  * [mosh][8] （`ssh`）
+  * [bat][9] （`cat`）
+  * [delta][10] （`git` 分页器）
+  * [fd][11] （`find`）
+  * [drill][12]、[dog][13] （`dig`）
+  * [duf][14] （`df`）
+  * [dust][15]、`ncdu` （`du`）
   * [pgcli][16] （psql）
-  * [btm][17]、[btop][18]、[glances][19]、[gtop][20]、[zenith][21] （top）
-  * [tldr][22] （类似 man）
-  * [sd][23] （sed）
-  * [difftastic][24] （diff）
-  * mtr （traceroute）
-  * [plocate][25] （locate）
-  * xxd、[hexyl][26] （hexdump）
-
-
+  * [btm][17]、[btop][18]、[glances][19]、[gtop][20]、[zenith][21] （`top`）
+  * [tldr][22] （类似 `man`）
+  * [sd][23] （`sed`）
+  * [difftastic][24] （`diff`）
+  * `mtr` （`traceroute`）
+  * [plocate][25] （`locate`）
+  * `xxd`、[hexyl][26] （`hexdump`）
 
 ### 新的发明
 
@@ -44,62 +44,54 @@
   * [broot][31]、[nnn][32]、[ranger][33] （文件管理器）
   * [direnv][34] （根据当前目录加载环境变量）
   * [fzf][35]、[peco][36] （“模糊查找器”）
-  * [croc][37] and [magic-wormhole][38] （将文件从一台计算机发送到另一台）
+  * [croc][37] 和 [magic-wormhole][38] （将文件从一台计算机发送到另一台）
   * [hyperfine][39] 基准测试
   * [httpie][40]、[curlie][41]、[xh][42] （用于发出 HTTP 请求）
   * [entr][43] （当文件改变时运行任意命令）
   * [asdf][44] （多语言的版本管理器）
-  * [tig][45]、[lazygit][46] （git 的交互界面）
-  * [lazydocker][47] （docker 的交互式界面）
-  * [choose][48] （awk/cut 的基础）
-  * [ctop][49] （容器的 top）
+  * [tig][45]、[lazygit][46] （`git` 的交互界面）
+  * [lazydocker][47] （`docker` 的交互式界面）
+  * [choose][48] （基本版的 `awk`/`cut`）
+  * [ctop][49] （容器的 `top`）
   * [fuck][50] （自动纠正命令行错误）
   * [tmate][51] （与朋友分享你的终端）
   * [lnav][52]、[angle-grinder][53] （管理日志的工具）
-  * [mdp][54]、[glow][55] （在终端显示 markdown 的方法）
-  * pbcopy/pbpaste （用于剪贴板标准输入/标准输出，可能不是“新的”，但被提到了很多。你可以使用 xclip 在 Linux 上做同样的事情。）
+  * [mdp][54]、[glow][55] （在终端显示 Markdown 的方法）
+  * `pbcopy`/`pbpaste`（用于剪贴板和标准输入/标准输出之间）可能不是“新的”，但被提到了很多次。你可以使用 `xclip` 在 Linux 上做同样的事情
 
-
-
-**JSON/YAML/CSV 工具：**
+### JSON/YAML/CSV 工具
 
   * [jq][57] （一个很好的 JSON 处理工具）
   * [jc][58] （将各种工具的输出转换成 JSON）
   * [jo][59] （创建 JSON 对象）
-  * [yq][60] （类似 `jq`，但用于 YAML）。还有[另一个 yq][61] 。
+  * [yq][60] （类似 `jq`，但用于 YAML），还有 [另一个 yq][61]
   * [fq][62] （类似 `jq`，但用于二进制）
   * [htmlq][63] （类似 `jq`，但用于 HTML）
-  * [fx][64] （交互式 json 工具）
-  * [jless][65] （json 分页器）
-  * [xsv][66] （一个用于 csv 文件的命令行工具，来自 burntsushi）
+  * [fx][64] （交互式 JSON 工具）
+  * [jless][65] （JSON 分页器）
+  * [xsv][66] （一个用于 CSV 文件的命令行工具，来自 burntsushi）
   * [visidata][67] （“一个用于表格数据的交互式多功能工具”）
-  * [miller][68] （“像 awk/sed/cut/join/sort 一样用于 CSV/TSV/JSON/JSON 行”）
+  * [miller][68] （“像用于 CSV/TSV/JSON/JSON 的 awk/sed/cut/join/sort”）
 
+### grep 工具
 
-
-**grep 工具：**
-
-  * [pdfgrep][69] （用于 PDF 的 grep）
-  * [gron][70] （使 JSON 可 grep）
-  * [ripgrep-all][71] （ripgrep，但包括 PDF、zip、ebooks 等）
-
-
+  * [pdfgrep][69] （用于 PDF 的 `grep`）
+  * [gron][70] （用于 JSON 的 `grep`）
+  * [ripgrep-all][71] （`ripgrep`，但也用于 PDF、zip、电子书等）
 
 ### 不太新的工具
 
-下面是一些不那么新的工具，人们提到的不那么知名的工具：
+下面是人们提到的一些不那么新的工具，但不那么知名：
 
-  * pv （“pipe viewer”, 给你一个管道的进度条）
-  * vidir （来自 [moreutils][72]，让你在 vim 中批量重命名/删除文件）
-  * sponge、ts、parallel （也来自 moreutils）
-
-
+  * `pv` （“管道查看程序”，给你一个管道的进度条）
+  * `vidir` （来自 [moreutils][72]，可以让你在 `vim` 中批量重命名/删除文件）
+  * `sponge`、`ts`、`parallel` （也来自 moreutils）
 
 ### 我的一些最爱
 
-我最喜欢的是 `entr`、`ripgrep`、`git-delta`、`httpie`、`plocate`和 `jq`，这些都是我已经使用的。
+我最喜欢的是 `entr`、`ripgrep`、`git-delta`、`httpie`、`plocate` 和 `jq`，这些都是我已经使用过的。
 
-我有兴趣尝试 `direnv`、`btm`、`z`、`xsv` 和 `duf`，但我认为我了解到的最令人兴奋的工具是 `vidir`。
+我也想尝试一下 `direnv`、`btm`、`z`、`xsv` 和 `duf`，但我认为我知道到的最令人兴奋的工具是 `vidir`。
 
 --------------------------------------------------------------------------------
 
@@ -107,10 +99,10 @@ via: https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[geekpi]（https://github.com/geekpi）
-校对：[校对者ID]（https://github.com/校对者ID）
+译者：[geekpi](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
-本文由 [LCTT]（https://github.com/LCTT/TranslateProject） 原创编译，[Linux中国]（https://linux.cn/） 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://jvns.ca/
 [b]: https://github.com/lujun9972
