@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/tensorbook-razer-lambda/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
