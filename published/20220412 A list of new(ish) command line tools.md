@@ -57,14 +57,14 @@
   * [tmate][51] （与朋友分享你的终端）
   * [lnav][52]、[angle-grinder][53] （管理日志的工具）
   * [mdp][54]、[glow][55] （在终端显示 Markdown 的方法）
-  * `pbcopy`/`pbpaste`（用于剪贴板和标准输入/标准输出之间）可能不是“新的”，但被提到了很多次。你可以使用 `xclip` 在 Linux 上做同样的事情。
+  * `pbcopy`/`pbpaste`（用于剪贴板和标准输入/标准输出之间）可能不是“新的”，但被提到了很多次。你可以使用 `xclip` 在 Linux 上做同样的事情
 
 ### JSON/YAML/CSV 工具
 
   * [jq][57] （一个很好的 JSON 处理工具）
   * [jc][58] （将各种工具的输出转换成 JSON）
   * [jo][59] （创建 JSON 对象）
-  * [yq][60] （类似 `jq`，但用于 YAML）。还有 [另一个 yq][61]
+  * [yq][60] （类似 `jq`，但用于 YAML），还有 [另一个 yq][61]
   * [fq][62] （类似 `jq`，但用于二进制）
   * [htmlq][63] （类似 `jq`，但用于 HTML）
   * [fx][64] （交互式 JSON 工具）
@@ -99,10 +99,10 @@ via: https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[geekpi]（https://github.com/geekpi）
-校对：[wxy]（https://github.com/wxy）
+译者：[geekpi](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
-本文由 [LCTT]（https://github.com/LCTT/TranslateProject） 原创编译，[Linux中国]（https://linux.cn/） 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://jvns.ca/
 [b]: https://github.com/lujun9972
