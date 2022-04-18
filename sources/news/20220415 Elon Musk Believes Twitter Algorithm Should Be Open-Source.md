@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/elon-musk-twitter-open-source/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
