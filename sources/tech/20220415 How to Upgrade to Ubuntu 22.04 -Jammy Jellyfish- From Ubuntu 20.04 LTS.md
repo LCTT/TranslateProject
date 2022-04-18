@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/04/upgrade-ubuntu-22-04-from-20-04/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
