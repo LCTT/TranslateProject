@@ -39,55 +39,56 @@ Markdown只是一种不需要 (甚至知道怎么做) 写 HTML 代码就能够�
 
 ### 所以我怎样才能使纯文本文件转换成 HTML 呢?
 
-John Gruber 的 Markdown 是一个运行在命令行上的 Perl 脚本。
-John Gruber’s Markdown is a Perl script that is run on the command line. Basically, it reads the Markdown text that you create and builds a Web page from it.
+John Gruber 的 Markdown 是一个运行在命令行上的 Perl 脚本。也就是说，它可以读取你创建的的 Markdown 文本和用它来构建网页。
 
-I will avoid the command line here since there are [many outstanding Markdown editors][2] that can do this conversion for you. Not only that, many of these editors will let you write your text and show you what the Web page will look like (called _rendering_) at the same time.
+由于有 [许多著名的编辑器][2] 能为你做这个转换，我在这里尽量避免命令行。不止这些，同时许多编辑器会让你写入你的文本并通过网页显示给你想看的 (被称为 _渲染_) 。
 
-Markdown editors are generally set up to show two frames. The left frame is where you write your text and the right frame shows you what the formatted text will look like in HTML:
+Markdown 编辑器总的来说设置了两个框架。左边框架是你要写你文本的地方，右边框见显示给你用 HTML 语言显示格式化文本的样子：  
+
 
 ![Most Markdown editors have two panes to write and preview the text][3]
 
-When you are finished with your text and are happy with it, simply save the Markdown file. This way, you’ll always have it in case you need to edit or rewrite later. Once the file is saved, you can have the editor export the markdown file to HTML.
+当你用它完成你的文本并喜欢使用它时，简单的保存 Markdown 文件。就像这样，之后一旦你需要编辑和修改的时候，你总是会想起它。一旦文件保存后，你可以用编辑器将 Markdown 文档导出为 HTML 格式的文档。
 
-The editor will create the Web page, using your Markdown as a reference. Your Markdown file will not be changed during an export – you will still have it – along with a separate, newly created HTML (Web page) file that you can put on a Web server.
+编辑器将会创建网页，用你的 Markdown 作为参照。你的 Markdown 文档在导出时不会修改，你仍然可以拥有它，同时创建一个独立的，新的 <ruby>HTML<rt>网页</rt></ruby> 文档，你可以把它放到一个网页服务器上。
 
-**Note**: Many Markdown editors can also export your Markdown files to other formats, such as `.doc`, `.docx`, and `.pdf`. You can learn about those advanced setups, and extra software you might need, later on.
+**注意**: 许多 Markdown 编辑器也可以将你的 Markdown 文档导出为其他格式，比如 `.doc`, `.docx`, and `.pdf`。之后你可以了解这些高级设置和你可能需要的额外软件。
 
-### Basic Markdown Syntax
 
-To get the new Markdown user up to speed quickly, I will limit this to cover the syntax I use most often. These, I believe will be the most helpful – you can be productive now while you learn more about what Markdown can do for you later on.
+### 基础 Markdown 语法
 
-#### Write Headings
+为了让新 Markdown 用户快速了解，我将有限的讲解我经常使用的的语法。我相信这些将是最有帮助的 - 当你了解更多关于 Markdown 能为你做什么之后，可以马上提高你的生产力。
 
-I normally use `#` characters to denote headings. There are six levels:
+#### 写标题
 
-```
-# Level 1 Heading
-## Level 2 Heading
-### Level 3 Heading
-#### Level 4 Heading
-##### Level 5 Heading
-###### Level 6 Heading
-```
-
-There is another heading style that uses lines underneath the text. I rarely use this type of heading since I am limited to only two. A double line, which is made with the `=` character, makes a `H1` heading. A single line, made with the `-` character, makes a `H2` heading:
+我经常使用 `#` 字符来表示标题。这里有六个等级：
 
 ```
-Level 1 Heading
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+```
+
+另一种标题类型是在文本下使用下划线。我很少使用这种类型的标题，因为我只使用限于两种。一种是使用 `=`字符表示的双下划线，生成 `H1` 标题。一种是使用 `-` 字符表示的单下划线，生成 `H2` 标题：
+
+```
+一级标题
 ===============
 
-Level 2 Heading
+二级标题
 ---------------
 ```
 
 ![][4]
 
-#### Paragraphs
+#### 段落
 
-Paragraphs are separated by a blank line (make sure that there is a blank line between paragraphs). Do not indent the first line at all. Indenting with a `<Tab>` or `<spaces>` has a different purpose in Markdown.
+段落被空行隔开(确保段落之间有一个空行)。首行不要缩进。在 Markdown 里用 <ruby>`<Tab>`<rt>Tab键</rt></ruby> 或者 <ruby>`<spaces>`<rt>空格键</rt></ruby>  缩进有着不懂的目的和作用。
 
-A paragraph is a block of text and should not be indented with spaces or tabs. It can have one line or many lines. To end a paragraph and start a new one, the `<Enter>` key is hit twice; paragraphs are separated by a blank line.
+段落是一个文本块，不应该用空格键和 tab 键来缩进。它可以有一行或者多行。要结束这一段另起一段，点两下 <ruby>`<Enter>`<rt>回车键</rt></ruby>  ；段落通过一个空行分开。
 
 ![][5]
 
