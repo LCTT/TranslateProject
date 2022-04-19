@@ -92,32 +92,32 @@ Markdown 编辑器总的来说设置了两个框架。左边框架是你要写�
 
 ![][5]
 
-#### Line Breaks
+#### 换行
 
-Remember that with paragraphs, a blank line has to separate them and this is done by pressing twice on the `<Enter>` key. Markdown is strict about it.
+ 记住一个空行将段落分开通过按下两次  <ruby>`<Enter>`<rt>回车键</rt></ruby> 。关于这个 Markdown 是有严格标准的。
+ 
+Markdown 不支持 <ruby>“hard-wrapped”<rt>强制插入换行符</rt></ruby> 或者 <ruby>“fixed-line-length”<rt>固定行长度</rt></ruby> 段落。那就是说，单击 <ruby>`<Enter>`<rt>回车键</rt></ruby> 一次将不会强制文本换到新的一行。它可能在编辑窗口显示，但是 HTML 下不显示。
 
-Markdown does not support “hard-wrapped” or “fixed-line-length” paragraphs. That is, hitting the `<Enter>` key once will not force text to a new line. It may appear so in the editing window, but the HTML won’t show it.
-
-Yet, there will be times when you may need to break up paragraphs with some way to break up a line. Markdown does have a way to do this but it may seem a little strange at first: **a line break is made by ending a line with two or more spaces and then hitting the `<Enter>` key once.**
+然而，有时你可能需要拆分段落或者换行。Markdown 确实有一种方法可以做到，但是它起先看起来可能有一点陌生：**换行是通过点击两到多个空格键然后点一次 <ruby>`<Enter>`<rt>回车键</rt></ruby> 完成的。**
 
 ![][6]
 
-Here is a working example of a short verse. Each line has two spaces at the end. The last line, since it’s the end of the verse, doesn’t have the extra spaces. Since it’s the end of the verse (paragraph), I hit the `<Enter>` key twice:
+这里有一个小节的范例。每行以两个空格结束。最后一行，由于是这个小节的结束，没有额外的空格。因为它是这个小节(段落)的结束，我双击 <ruby>`<Enter>`<rt>回车键</rt></ruby> 两次：
 
 Baa, baa black sheep,
 Have you any wool?.
 Yes, sir. Yes, sir.
 Three bags full.
 
-Adding two spaces at the end of a line, to create a line break, can take some getting used to.
-
+在一行的最后加两个空格，去创建一个换行，可能需要时间去习惯。
+ 
 ![][7]
 
-#### Horizontal Rules
+#### 水平线
 
-Horizontal rules are great for splitting up text into sections.
+水平线非常适合将文本拆分为多个部分。
 
-Use three or more dashes `-`, underscores `_`, or asterisks `*` for horizontal rules, like so:
+用三个或更多的破折号 `-` ，下划线 `_` ，或者星号 `*` 来做水平线，像这样：
 
 ```
 `---`
@@ -127,37 +127,37 @@ Use three or more dashes `-`, underscores `_`, or asterisks `*` for horizontal r
 `___`
 ```
 
-You can even put spaces between the characters:
+你甚至可以在字符之间输入空格：
 
 ```
 `- - -`
 ```
 
-I do not use horizontal rules very often in articles or papers, but they come in handy for me in journal entries, system logs, and class notes.
+ 在文章和报告中我不经常使用水平线，但是在日记账中，系统日志和课堂笔记中对我很有用。
 
 ![][8]
 
-#### Emphasis on text with bold and italics
+#### 用加粗和斜体来强调文本
 
-When you want a word or phrase to stand out and be noticed, you can either make it bold or italicized. Italics and bold text can be made on one of two ways. The first is by surrounding the text with asterisks `*`, while the second is to use underscores `_`.
-
-To italicize a word or phrase, surround the text with one underscore or asterisk. To make a word or phrase bold, surround it with two underscores or asterisks:
+当你想让一个单词或者短语脱颖而出，引起注意，你可以让它加粗或者斜体显示。斜体和加粗文本可以在两种方式中任选其一。第一种是用星号 `*` 将其包括，第二种是用下划线 `_` 的方式。 
+ 
+使一个单词或者短语斜体显示，用一个下划线或者星号来括住文本。是一个单词或者短语加粗，使用两个下划线或者星号来括住文本：
 
 ```
-This is *italics* made with asterisks.
+用星号来显示斜体 *italics* 。
 
-This is _italics_ made with underscores.
+用下划线来显示斜体 _italics_ 。
 
-This is **bold** made with asterisks.
+用星号来显示加粗 **bold** 。
 
-This is __bold__ made with underscores.
+用下划线来显示加粗 __bold__ 。
 ```
 
-Remember to use the same character. An asterisk on one side of a word or phrase, and an underscore on the side, will not work. The same character has to be on both sides of the word or phrase.
+记住两边使用相同的字符。单词或短语的一面是星号，另一面是下划线，将不会生效。相同字符必须在单词或者短语的两边。
 
 ![][9]
 
-#### Block quotes
+#### 块应用
 
 Block quotes are used for direct quotes. If you were writing a blog entry and you wanted to repeat something that Benjamin Franklin said, you could use a block quote.
 
