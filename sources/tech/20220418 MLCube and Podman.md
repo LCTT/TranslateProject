@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/mlcube-and-podman/"
 [#]: author: "Benson Muite https://fedoramagazine.org/author/fed500/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
