@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/disable-animations-cinnamon-desktop/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
