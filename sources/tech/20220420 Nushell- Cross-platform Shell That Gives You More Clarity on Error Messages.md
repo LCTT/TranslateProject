@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/nushell/"
 [#]: author: "Marco Carmona https://itsfoss.com/author/marco/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
