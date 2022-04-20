@@ -20,7 +20,7 @@ Xfce Terminal 1.0.0：时隔一年后的一次功能丰富的重大升级
 
 ### 新的维护者和版本管理方案
 
-Igor Zakharov 从 2016 年到 2020 年一直在领导它的开发工作。不幸的是，在 2021 年，当新的维护者 [Sergios][1] Anestis Kefalidis（也是 Thunar 文件管理器的开发者）接手后，它就没有被维护了。
+Igor Zakharov 从 2016 年到 2020 年一直在领导它的开发工作。不幸的是，在 2021 年它就没有被维护过，直到新的维护者 [Sergios][1] Anestis Kefalidis（也是 Thunar 文件管理器的开发者）接手。
 
 而且，自从 Sergios 接管了这个项目后，版本管理方案也发生了变化。经过与社区的协商，采用了 Thunar 的旧版本计划。
 
