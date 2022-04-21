@@ -7,16 +7,16 @@
 [#]: publisher: " "
 [#]: url: " "
 
-MLCube and Podman
+MLCube 和 Podman
 ======
 
 ![Two sides of a blue cube with the text "Machine" and "Learning" on one face, and "Pod" and "Management" on the other face. The background is comprised of alternating zeroes and ones in green on black.][1]
 
-[MLCube][2] is a new open source container based infrastructure specification introduced to enable reproducibility in Python based machine learning workflows. It can utilize tools such as [Podman][3], [Singularity][4] and [Docker][5]. Execution on remote platforms is also supported. One of the chairs of the MLCommons Best Practices working group that is developing MLCube is [Diane Feddema][6] from Red Hat. This introductory article explains how to run the [hello world MLCube example][7] using Podman on Fedora Linux.
+[MLCube][2] 是一个新的基于容器的开源基础设施规范，被引入到基于 Python 的机器学习工作流程中，以实现可重复性。它可以利用诸如 [Podman][3]、[Singularity][4] 和 [Docker][5] 等工具。也支持在远程平台上的执行。正在开发 MLCube 的 MLCommons 最佳实践工作组的主席之一是来自 Red Hat 的 [Diane Feddema][6]。这篇介绍性文章解释了如何在 Fedora Linux 上使用 Podman 运行 [hello world MLCube 例子][7]。
 
-[Yazan Monshed][8] has written a very helpful introduction to [Podman on Fedora][9] which gives more details on some of the steps used here.
+[Yazan Monshed][8] 写了一篇关于 [Fedora 上的 Podman][9] 的非常有用的介绍，对这里使用的一些步骤给出了更多细节。
 
-First install the necessary dependencies.
+首先安装必要的依赖项。
 
 ```
 
@@ -26,7 +26,7 @@ First install the necessary dependencies.
 
 ```
 
-Then, following the documentation, setup a virtual environment and get the example code. To ensure reproducibility, use a specific commit as the project is being actively improved.
+然后，按照文档的要求，设置一个虚拟环境并获得示例代码。为了确保可重复性，使用一个特定的提交，因为该项目正在积极改进。
 
 ```
 
@@ -40,7 +40,7 @@ Then, following the documentation, setup a virtual environment and get the examp
 
 ```
 
-Now change the runner command from _docker_ to _podman_ by editing the file $HOME/mlcube.yaml so that the line
+现在，通过编辑 $HOME/mlcube.yaml 文件，将运行器命令从 _docker_ 改为 _podman_，以便将这一行：
 
 ```
 
@@ -48,7 +48,7 @@ Now change the runner command from _docker_ to _podman_ by editing the file $HOM
 
 ```
 
-becomes
+改为：
 
 ```
 
@@ -56,7 +56,7 @@ becomes
 
 ```
 
-If you are on a computer with x86_64 architecture, you can get the container using
+如果你使用的是 x86_64 架构的电脑，你可以用以下方式获得容器：
 
 ```
 
@@ -64,7 +64,7 @@ If you are on a computer with x86_64 architecture, you can get the container usi
 
 ```
 
-You will see a number of options
+你会看到一些选项：
 
 ```
 
@@ -76,9 +76,9 @@ You will see a number of options
 
 ```
 
-Choose docker.io/mlcommons/hello_world:0.0.1 to obtain the container.
+选择 docker.io/mlcommons/hello_world:0.0.1 来获取容器。
 
-If you are not on a computer with x86_64 architecture, you will need to build the container. Change the file $HOME/mlcube.yaml so that the line
+如果你的电脑不是 x86_64 架构的，你将需要构建容器。改变文件 $HOME/mlcube.yaml，使这一行：
 
 ```
 
@@ -86,7 +86,7 @@ If you are not on a computer with x86_64 architecture, you will need to build th
 
 ```
 
-becomes
+变为：
 
 ```
 
@@ -94,7 +94,7 @@ becomes
 
 ```
 
-and then build the container using
+然后用以下方法构建容器：
 
 ```
 
@@ -102,7 +102,7 @@ and then build the container using
 
 ```
 
-To run the tests, you may need to set SELinux permissions in the directories appropriately. You can check that SELinux is enabled by typing
+要运行测试，你可能需要在目录中适当地设置 SELinux 权限。你可以通过输入以下内容来检查 SELinux 是否已经启用：
 
 ```
 
@@ -110,7 +110,7 @@ To run the tests, you may need to set SELinux permissions in the directories app
 
 ```
 
-which should give you output similar to
+应该会有类似的输出：
 
 ```
 
@@ -119,7 +119,7 @@ which should give you output similar to
 
 ```
 
-[Josphat Mutai][10], [Christopher Smart][11] and [Daniel Walsh][12] explain that you need to be careful in setting appropriate SELinux policies for files used by containers. Here, you will allow the container to read and write to the _workspace_ directory.
+[Josphat Mutai][10]、[Christopher Smart][11] 和 [Daniel Walsh][12] 解释说，在为容器使用的文件设置适当的 SELinux 策略时，你需要谨慎。在这里，你将允许容器读取和写入 _workspace_ 目录。
 
 ```
 
@@ -128,7 +128,7 @@ which should give you output similar to
 
 ```
 
-Now check the directory policy by checking that
+现在检查目录策略：
 
 ```
 
@@ -136,7 +136,7 @@ Now check the directory policy by checking that
 
 ```
 
-gives output similar to
+输出结果类似于：
 
 ```
 
@@ -148,7 +148,7 @@ gives output similar to
 
 ```
 
-Now run the example
+现在运行这个例子：
 
 ```
 
@@ -157,7 +157,7 @@ Now run the example
 
 ```
 
-Finally, check that the output
+最后，检查输出：
 
 ```
 
@@ -165,7 +165,7 @@ Finally, check that the output
 
 ```
 
-has text similar to
+有类似于以下的文字：
 
 ```
 
@@ -174,7 +174,7 @@ has text similar to
 
 ```
 
-You can create your own MLCube as described [here][13]. Contributions to the [MLCube examples repository][14] are welcome. [Udica][15] is a new project that promises more fine grained SELinux policy controls for containers that are easy for system administrators to apply. Active development of these projects is ongoing. Testing and providing feedback on them would help make secure data management on systems with SELinux easier and more effective.
+你可以按照[这里][13]的描述创建你自己的 MLCube。欢迎对 [MLCube 示例库][14]做出贡献。[Udica][15] 是一个新项目，它承诺为容器提供更精细的 SELinux 策略控制，便于系统管理员应用。这些项目的积极开发正在进行中。对它们进行测试并提供反馈，将有助于使带有 SELinux 的系统上的安全数据管理更容易、更有效。
 
 --------------------------------------------------------------------------------
 
@@ -182,7 +182,7 @@ via: https://fedoramagazine.org/mlcube-and-podman/
 
 作者：[Benson Muite][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
