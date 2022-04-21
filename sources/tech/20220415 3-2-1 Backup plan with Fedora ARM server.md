@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/3-2-1-backup-plan-with-fedora-arm-server/"
 [#]: author: "Hanku Lee https://fedoramagazine.org/author/hankuoffroad/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hwllife"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
