@@ -35,11 +35,15 @@ Learning about different tools helps build open source projects to a great exten
 
 You can build a career in open source in broadly three ways.
 
-*Build, scale and monetise your own open source project:* Identifying and solving a problem is a good rule of thumb for building your own project. Noting down the problems that others may face will create a demand for it. The size of the market for your project can be estimated only through trial and error. For new and individual contributors who do not have much funding, social media, blogs, posts and talks at conferences help reaching out to users to a large extent. These platforms can generate a lot of traffic for your open source project.
+#### Build, scale and monetise your own open source project
+
+Identifying and solving a problem is a good rule of thumb for building your own project. Noting down the problems that others may face will create a demand for it. The size of the market for your project can be estimated only through trial and error. For new and individual contributors who do not have much funding, social media, blogs, posts and talks at conferences help reaching out to users to a large extent. These platforms can generate a lot of traffic for your open source project.
 
 Funding plays an important role in almost all business models. The Mozilla Foundation relies on voluntary donations to fund its projects. MariaDB follows the business model of delayed open sourcing. Many of IBM’s open source projects follow the open core business model, i.e., the core of the project is open sourced while the surrounding add-ons are closed source and proprietary. Red Hat doesn’t sell code; instead, it sells professional services like support, tooling, and technical assistance around a project. These examples of business models can be adopted to build a project, open source it, and monetise it.
 
-Work for a company that builds projects with an open source business model: Being a part of a community of contributors and maintainers, engaging in talks and participating in meetings will help you to contribute to a project. You can follow the guidelines for how the first contribution can be made, which doesn’t necessarily have to be code. Looking at a big code base may seem intimidating but starting small is the key here. Look for a problem and fix it. This will help you understand the contribution flow, code base, set up of the project, etc.
+#### Work for a company that builds projects with an open source business model
+
+Being a part of a community of contributors and maintainers, engaging in talks and participating in meetings will help you to contribute to a project. You can follow the guidelines for how the first contribution can be made, which doesn’t necessarily have to be code. Looking at a big code base may seem intimidating but starting small is the key here. Look for a problem and fix it. This will help you understand the contribution flow, code base, set up of the project, etc.
 
 Non-code contributions are also valuable. People great at writing can contribute by documenting or writing for social media. Those who excel at designing, can design a convention, a colour scheme, or also work on creating a better user interface. Newcomers have a high probability of discovering bugs when compared to senior engineers. They can test, identify, and report their user experience, thus improving the project. Mentoring is another area. A lot of open source programs connect mentors and mentees, and help the latter make important contributions. Another option is being an organiser or a community manager, which means taking up the role of a project manager and ensuring that features are delivered exactly as intended, the roadmap is followed and the contributors are taken care of. Most open source projects lack proper management, since engineers don’t like doing that job.
 
@@ -52,7 +56,9 @@ As Travis Oliphant, creator of NumPy, SciPy and Anaconda, says, “Build an open
 * Be a maintainer, doing things that an engineer is expected to do like reviewing, designing, documenting, and helping others contribute.
 * The key to good contribution is ‘paying it forward’, which means helping newcomers by sharing experiences and wisdom, and making sure they don’t commit mistakes.
 
-Get sponsored to work in open source: As an individual, if you are working for a project that is built by a company, you can ask for funding. It is important to note that only if your contribution is significant will the organisation be happy to sponsor you. However, if you have built your own project that has a significant user base, you could ask for funding from users.
+#### Get sponsored to work in open source
+
+ As an individual, if you are working for a project that is built by a company, you can ask for funding. It is important to note that only if your contribution is significant will the organisation be happy to sponsor you. However, if you have built your own project that has a significant user base, you could ask for funding from users.
 
 As an organisation, you can raise money through platforms like Open Collective, Patreon and GitHub Sponsors, where people donate to your project. Open source grants like Linux Foundation and Mozilla Foundation also provide funds to support projects. GitHub has given 15 Indian contributors grants for their projects.
 
