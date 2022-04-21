@@ -7,36 +7,36 @@
 [#]: via: (https://opensource.com/article/21/1/testcloud-virtual-machines)
 [#]: author: (Sumantro Mukherjee https://opensource.com/users/sumantro)
 
-Automate setup and delivery for virtual machines in the cloud
+在云上自动化设置和交付虚拟机
 ======
-Get a cloud image ready in minutes by using Testcloud to automate the
-setup process and deliver a VM ready to run.
+在几分钟之内准备好一个云镜像，通过使用 Testcloud 自动化设置过程并交付一个准备运行的虚拟机。
+
 ![Looking at a map][1]
 
-If you're a developer or hobbyist using a Fedora [qcow2 image][2] for the cloud, you always have to do a bunch of initial configuration before an image is ready to use. I know this all too well, and I was eager to find a way to make the setup process simpler. As it happens, the entire Fedora quality assurance team feels the same way, so we developed [Testcloud][3].
+如果你是一个在云上使用 Fedora  [qcow2 镜像][2] 的开发者或者爱好者，在一个镜像准备使用之前，你总是不得不做一大堆初始化设置。我太清楚了，并且我渴望找到一种使设置过程更加简单的方法。碰巧，整个 Fedora 质量保证团队有同感，所以我们开发了 [Testcloud][3] 。
 
-Testcloud is a tool that makes it easy to get a cloud image ready for testing in minutes. It automates the setup process and delivers a virtual machine (VM) ready to run on the cloud with just a few commands. 
+Testcloud 是一个轻松的在几分钟之内准备云镜像测试的工具。它用几个命令在云上自动化设置并交付准备运行的虚拟机 (VM) 。
 
 Testcloud:
 
-  1. Downloads the qcow2 image
-  2. Creates the instance with the name of your choice
-  3. Creates a user named `fedora` with the password of `passw0rd`
-  4. Assigns an IP, which you can later use to secure shell (SSH) into the cloud
-  5. Starts, stops, removes, and lists an instance
+  1. 下载 qcow2 镜像
+  2. 用你选择的名称创建实例
+  3. 创建一个密码为  `passw0rd` ，用户名为 `fedora` 的用户
+  4. 分配一个 IP 地址，以便于你之后用安全 shell (SSH) 登录到云上。
+  5. 启动， 停止，删除和列出一个实例
 
 
 
-### Install Testcloud
+### 安装 Testcloud
 
-To start your journey, you first must install the Testcloud package. You can install it from a terminal or through the software application. In both cases, the package name is `testcloud`. Install with:
+要开始你的过程，首先你必须安装 Testcloud 软件包。你可以通过终端或者软件程序来安装它。在这两种情况下，软件包的名字都是 `testcloud` 。用以下命令安装：
 
 
 ```
 `$ sudo dnf install testcloud -y`
 ```
 
-Once the installation is complete, add your desired user to the `testcloud` group, which helps Testcloud automate the rest of the process. Execute these two commands to add your user to the `testcloud` group and restart the session with the updated group privileges:
+一旦安装完成，添加你要添加的用户到 `testcloud` 用户组，协助 Testcloud 完成设置过程的剩余部分。执行这两个命令添加你的用户到 `testcloud` 用户组，并通过提升组权限重启会话：
 
 
 ```
@@ -44,28 +44,26 @@ $ sudo usermod -a -G testcloud $USER
 $ su - $USER
 ```
 
-![Add user to testcloud group][4]
+![添加用户到 testcloud 组][4]
 
 (Sumantro Mukherjee, [CC BY-SA 4.0][5])
 
-### Spin cloud images like a pro
+### 像老手一样玩转云镜像
 
-Once your user has the required group permissions, create an instance:
-
+一旦你的用户获得了组权限，创建一个实例：
 
 ```
 `$ testcloud instance create <instance name> -u <url for qcow2 image>`
 ```
 
-Alternatively, you can use `fedora:latest/fedora:XX` (where `XX` is your Fedora release) instead of the full URL:
+或者，你可以使用 `fedora:latest/fedora:XX` ( `XX` 是你的 Fedora 发行版本) 来代替 URL 完成地址：
 
 
 ```
 `$ testcloud instance create <instance name> -u fedora:latest`
 ```
 
-This returns the IP address of your VM:
-
+这将返回你的 VM 的 IP 地址：
 
 ```
 $ testcloud instance create testcloud272593 -u <https://download.fedoraproject.org/pub/fedora/linux/releases/33/Cloud/x86\_64/images/Fedora-Cloud-Base-33-1.2.x86\_64.qcow2>  
@@ -78,10 +76,9 @@ ssh fedora@192.168.122.202
 \------------------------------------------------------------
 ```
 
-You can log in as the default user `fedora` with the password `passw0rd` (note the zero). You can get to the VM with `ssh`, `virt-manager`, or any other method that supports connecting to libvirt machines.
+你可以使用密码为 `passw0rd` (注意这个 0 ) 用户名为  `fedora` 的默认用户来登录。你可以使用 `ssh` 协议登录到 VM ，<ruby>`virt-manager`<rt>虚拟机管理器</rt></ruby> ，或者支持连接到 libvirt 虚拟机的其他方式。
 
-Another simple way to create a Fedora cloud is:
-
+另一种创建 Fedora 云的方式是：
 
 ```
 $ testcloud instance create testcloud193 -u fedora:33
@@ -103,11 +100,11 @@ ssh fedora@192.168.122.225
 \------------------------------------------------------------
 ```
 
-### Play with instances
+### 玩转实例
 
-Testcloud can be used to administer instances. This includes activities such as listing images or stopping and starting an instance.
+Testcloud 可以用来管理实例。这包括像列出镜像或者停止和启动一个实例等活动。
 
-To list instances, use the `list` subcommand:
+要列出实例，使用 `list` 子命令：
 
 
 ```
@@ -120,7 +117,7 @@ testcloud252793                 192.168.122.146         shutoff   �
 testcloud93                             192.168.122.152         shutoff
 ```
 
-To stop a running instance:
+要停止一个运行的实例：
 
 
 ```
@@ -129,7 +126,7 @@ DEBUG:stop instance: testcloud193
 DEBUG:stopping instance testcloud193.
 ```
 
-To remove an instance:
+要删除一个实例：
 
 
 ```
@@ -140,7 +137,7 @@ DEBUG:Unregistering instance from libvirt.
 DEBUG:removing instance /var/lib/testcloud/instances/testcloud193 from disk
 ```
 
-To reboot a running instance:
+要重启一个运行中的实例：
 
 
 ```
@@ -152,7 +149,7 @@ The IP of vm testcloud93:  192.168.122.152
 usage: testcloud [-h] {instance,image} ...
 ```
 
-Give Testcloud a try and let me know what you think in the comments.
+尝试一下 Testcloud ，在评论中让我知道你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -160,7 +157,7 @@ via: https://opensource.com/article/21/1/testcloud-virtual-machines
 
 作者：[Sumantro Mukherjee][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hwlife](https://github.com/hwlife)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
