@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/3/how-c-programming-language-has-grown"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
