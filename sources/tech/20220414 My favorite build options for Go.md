@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/4/go-build-options"
 [#]: author: "Gaurav Kamathe https://opensource.com/users/gkamathe"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
