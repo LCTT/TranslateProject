@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/04/how-to-build-a-career-in-open-source/"
 [#]: author: "Navendu Pottekkat https://www.opensourceforu.com/author/navendu-pottekkat/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
