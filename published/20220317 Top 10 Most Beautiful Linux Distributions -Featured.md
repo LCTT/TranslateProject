@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "amagicboy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14501-1.html"
 
 精选 10 个最美的 Linux 发行版
 ======
