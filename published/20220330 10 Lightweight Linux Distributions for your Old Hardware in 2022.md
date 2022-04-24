@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "robsean"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14505-1.html"
 
 最适合旧计算机的 10 款 Linux 发行版
 ======
