@@ -140,7 +140,7 @@ Q4OS 是这份列表中的一款独特的 Linux 发行版。它针对的是现�
 
 Q4OS 针对这些实际使用实例，给予你一款精心设计的 Linux 发行版，附带有 32 位安装程序、 Windows 安装程序、Trinity 桌面环境，以及预制的 Windows 主题等。
 
-![MX Linux][18]
+![Q4OS][18]
 
 > **[下载 Q4OS][19]**
 
@@ -194,7 +194,7 @@ via: https://www.debugpoint.com/2022/03/lightweight-linux-distributions-2022/
 [15]: https://www.debugpoint.com/2022/01/best-gnome-apps-part-3/
 [16]: https://www.debugpoint.com/wp-content/uploads/2022/03/Porteus-Linux-1024x576.jpg
 [17]: http://www.porteus.org/
-[18]: https://www.debugpoint.com/wp-content/uploads/2022/03/MX-Linux-1024x515.jpg
+[18]: https://q4os.org/style/image5.jpg
 [19]: https://q4os.org/
 [20]: https://www.debugpoint.com/wp-content/uploads/2022/03/MX-Linux-1-1024x515.jpg
 [21]: https://mxlinux.org/
