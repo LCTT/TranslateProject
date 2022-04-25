@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14508-1.html"
 
 C 语言发展简史
 ======
