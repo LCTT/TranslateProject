@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/4/jvm-parameters-java-developers"
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Veryzzj"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
