@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/3/troubleshoot-wifi-go-raspberry-pi"
 [#]: author: "Chris Collins https://opensource.com/users/clcollins"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
