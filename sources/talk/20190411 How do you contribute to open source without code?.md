@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/19/4/contribute-without-code"
 [#]: author: "Chris Hermansen https://opensource.com/users/clhermansen"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
