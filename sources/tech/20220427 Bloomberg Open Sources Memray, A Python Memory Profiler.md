@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/04/bloomberg-open-sources-memray-a-python-memory-profiler/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
