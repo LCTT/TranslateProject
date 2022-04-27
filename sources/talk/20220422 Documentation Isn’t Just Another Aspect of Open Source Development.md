@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/04/documentation-isnt-just-another-aspect-of-open-source-development/"
 [#]: author: "Harsh Bardhan Mishra https://www.opensourceforu.com/author/harsh-bardhan-mishra/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
