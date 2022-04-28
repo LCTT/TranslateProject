@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/gnome-text-editor/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "aREversez"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -141,7 +141,7 @@ via: https://itsfoss.com/gnome-text-editor/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[aREversez](https://github.com/aREversez)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
