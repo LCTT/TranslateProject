@@ -78,7 +78,7 @@ openSUSE 是最稳定、最专业的 Linux 发行版之一，是企业界（包�
 
 如果你有一些 Linux 发行版的使用经验，推荐选择 openSUSE 进行开发工作。
 
-[Download openSUSE][5]
+[下载 openSUSE][5]
 
 #### 4、Manjaro Linux
 
@@ -86,7 +86,7 @@ Manjaro Linux 基于 Arch Linux，不过安装起来更容易一些。Manjaro Li
 
 如果你想使用 Arch Linux 及其滚动发行的软件包来满足开发需求，但又不想在安装原版 Arch 上来回折腾，Manjaro 绝对是你的最佳选择。
 
-[Download Manjaro][6]
+[下载 Manjaro][6]
 
 #### 5、Arch Linux
 
