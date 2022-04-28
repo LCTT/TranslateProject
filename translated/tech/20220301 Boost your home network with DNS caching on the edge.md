@@ -8,24 +8,39 @@
 [#]: url: " "
 
 Boost your home network with DNS caching on the edge
+
+用边缘侧 DNS 缓存加速你的家庭网络
 ======
-Create your own edge by running a DNS caching service on your home or
-business network.
+Create your own edge by running a DNS caching service on your home or business network.
+
+通过在你的家庭或企业网络上运行一个 DNS 缓存服务来创建你自己的边缘。
 ![Mesh networking connected dots][1]
 
 If you've been hearing a lot of talk about "the cloud" over the past several years, then you may also have heard rumblings about something called "the edge."
 
+如果你在过去的几年里有听说过许多关于“云（the cloud）“的讨论，那么你一定也对“边缘（the edge）”有所耳闻。
+
 The term _edge computing_ reflects the recognition that the cloud has boundaries. To reach those boundaries, your data has to connect with one of the physical datacenters powering the cloud. Getting data from a user's computer to a cluster of servers might be quick in some settings, but it depends heavily on geographic location and network infrastructure. The cloud itself can be as fast and powerful as possible, but it can't do much to offset the time required for the roundtrip your data has to make.
+
+_边缘计算_ 这个概念暗示云是有边界的。你的数据要想到达那些边界，就必须与云提供的某一个物理数据中心进行连接。在某些配置下，将用户电脑上的数据传输到服务器集群可能很快，但是这非常依赖于地理位置和网络基础设施。云本身可以尽可能快速和强大，但它无法抵消数据进行必要往返所需的时间。
 
 **[ What's the latest in edge? See [Red Hat's news roundup][2] from Mobile World Congress 2022. ]**
 
 The answer is to use the edge of the boundaries of regional networks and the cloud. When initial services or computation happen on servers at the edge, it speeds up a user's interactions with the cloud.
 
+答案是使用区域网络和云的边缘。当初始化的服务和计算发生在边缘的服务器上时，用户与云之间的交互将被加速。
+
 By the same principle, you can create your own edge by running some services on your home server to minimize roundtrip lag times. Don't let the special terminology intimidate you. Edge computing can be as simple as an IoT device or running a server connected to [federated services][3].
+
+基于同样的原则，你可以通过在家庭服务器上运行一些服务来创建你自己的边缘，从而最小化往返的延时。不要让这些专业术语吓到你。边缘计算可以像 IoT 设备一样简单，或者运行在一个与 [联合服务][3]连接的服务器。
 
 One particularly useful and easy change you can make to your home or business network to give it a boost is running a DNS caching service.
 
+一个特别有用而简单的改变就可以加速你的家庭和企业网络，那就是运行一个 DNS 缓存服务。
+
 ### What is DNS?
+
+### 什么是 DNS
 
 The Domain Name System (DNS) is what enables us to translate the IP addresses of servers, whether they're in the cloud or just across town, to friendly website names like `opensource.com`.
 
