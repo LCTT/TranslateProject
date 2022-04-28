@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "hwlife"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14519-1.html"
 
 使用 Fedora ARM 服务器来做 3-2-1 备份计划
 ======
