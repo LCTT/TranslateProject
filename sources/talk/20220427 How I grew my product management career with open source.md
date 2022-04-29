@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/4/product-management-open-source"
 [#]: author: "Shebuel Inyang https://opensource.com/users/shebuel"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
