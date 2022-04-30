@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/04/detect-a-phishing-url-using-machine-learning-in-python/"
 [#]: author: "Jishnu Saurav Mittapalli https://www.opensourceforu.com/author/jishnu-saurav-mittapalli/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
