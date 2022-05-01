@@ -194,7 +194,7 @@ toplevel (volume root directory, not to be mounted by default)
 
 都做对了，那就很简单了!
 
-##### 修改 fstab
+##### 修改 fstab 分区表
 
 为了重启之后挂载新卷， _fstab_ 必须要修改，用新的来代替旧的  _ext4_  文件系统挂载行。
 
