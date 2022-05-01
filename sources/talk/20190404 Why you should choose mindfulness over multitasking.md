@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/19/4/mindfulness-over-multitasking"
 [#]: author: "Sarah Wall https://opensource.com/users/sarahwall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
