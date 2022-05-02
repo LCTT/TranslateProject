@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "PeterPan0106"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14532-1.html"
 
 KDE Plasma 5.25 推出了令人激动的新特性！先睹为快
 ======
