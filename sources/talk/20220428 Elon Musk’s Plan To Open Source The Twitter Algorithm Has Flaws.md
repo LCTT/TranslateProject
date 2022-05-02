@@ -2,7 +2,11 @@
 [#]: via: "https://www.opensourceforu.com/2022/04/elon-musks-plan-to-open-source-the-twitter-algorithm-has-flaws/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
+<<<<<<< HEAD
 [#]: translator: " "
+=======
+[#]: translator: "lkxed"
+>>>>>>> 5394f0a1b5f36003936387dfd44f3d43c91ec8ec
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
