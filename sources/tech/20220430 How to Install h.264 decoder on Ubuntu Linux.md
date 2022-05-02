@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-h-264-decoder-ubuntu/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hwlife"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
