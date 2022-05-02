@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (hanszhao80)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14537-1.html)
 
 如何在 Linux 和 Windows 电脑之间共享文件
 ======
