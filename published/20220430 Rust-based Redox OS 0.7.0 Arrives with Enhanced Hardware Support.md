@@ -3,23 +3,24 @@
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14533-1.html"
 
 基于 Rust 的 Redox OS 0.7.0 发布：增强硬件支持
 ======
-Unix 风格的 Redox OS 0.7.0 发布了，它此次带来了几项改进，聚焦于在最广泛的硬件上启动。
+
+> Unix 风格的 Redox OS 0.7.0 发布了，它此次带来了几项改进，聚焦于在最广泛的硬件上启动。
 
 ![Redox OS][1]
 
 每年的这个时候，我们都会继续观察报道 Ubuntu 和基于它的发行版的新版本，但是今天不一样。
 
-今天，我们要介绍的主角是 Redox OS，它专注于稳定性和安全性。我们 [早在 2016 年就报道过一篇文章][2]，那时它还处于开发早期阶段（如果你感兴趣的话）。
+今天，我们要介绍的主角是 Redox OS，它专注于稳定性和安全性。我们 [早在 2016 年就报道过它][2]，那时它还处于开发早期阶段（如果你感兴趣的话）。
 
-它大致上是基于 Unix 的，但却是一个完整的操作系统。此外，它完全使用 Rust 从零开始编写。Rust 是一个流行的手动管理内存的编程语言。
+它大致上类似 Unix，但却是一个完整的操作系统。此外，它完全使用 Rust 从零开始编写。Rust 是一个流行的内存安全的编程语言。
 
-Redox OS 的另一个主要特点是它采用了微内核设计方法。这意味着与 Linux 单片机内核相比，它的体积和使用的基本功能都比较少。
+Redox OS 的另一个主要特点是它采用了微内核设计方法。这意味着与 Linux 宏内核相比，它的体积和使用的基本功能都比较少。
 
 ### 版本更新介绍
 
@@ -29,7 +30,7 @@ Redox OS 的另一个主要特点是它采用了微内核设计方法。这意�
 
 Redox 附带一个名为 RedoxFS 的自定义文件系统，这个文件系统也与 Linux 兼容。
 
-RedoxFS 目前是一个 Copy-on-Write 文件系统，当硬件加速可用时，支持使用 AES（高级加密标准）进行透明加密。
+RedoxFS 目前是一个<ruby>写时复制<rt>copy-on-Write</rt></ruby>文件系统，当硬件加速功能可用时，支持使用 AES（高级加密标准）进行透明加密。
 
 #### 重写的引导程序
 
@@ -39,13 +40,13 @@ RedoxFS 目前是一个 Copy-on-Write 文件系统，当硬件加速可用时，
 
 #### 微内核的更新
 
-微内核已经经历了几次修复和更新，以提高性能并带来更好的硬件支持。
+其微内核已经经历了几次修复和更新，以提高性能并带来更好的硬件支持。
 
-例如，它增加了对 ARM（arch64）和未来编译器的支持。
+例如，它增加了对 ARM（aarch64）和未来编译器的支持。
 
 内核强制对所有系统路径进行 UTF-8 编码，并使用了 acpid —— 用于电源管理的守护程序。
 
-由于 initfs 被移到了一个单独的文件中，打包也得到了提升。
+由于 initfs 被移到了一个单独的文件中，打包性能也得到了提升。
 
 #### 其他特性
 
@@ -68,7 +69,7 @@ via: https://news.itsfoss.com/redox-os-0-7-0-release/
 作者：[Rishabh Moharir][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
