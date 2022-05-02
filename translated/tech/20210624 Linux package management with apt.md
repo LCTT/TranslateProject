@@ -27,7 +27,7 @@ Debian 和基于 Debian 的发行版（例如 MX Linux、Deepin、Ubuntu）以�
 
 还有其他的包管理系统，例如 [Flatpak][7] 和 [Snap][8]，你可能会在 Debian 和基于 Debian 的系统上遇到它们，但我不打算在这里讨论。还有一些应用程序“商店”，例如 [GNOME 软件][9]，与 `apt` 和其他打包技术重叠；我也不打算在这里讨论它们。最后，还有其他 Linux 发行版，例如 [Arch][10] 和 [Gentoo][11] 既不使用 `dnf` 也不使用 `apt`，我也不打算在这里讨论它们！
 
-上面我讲了这么多我不想提及的内容，您可能怀疑 `apt` 到底能处理多少软件。这么说吧，在我的 Ubuntu 20.04 上，`apt` 可以让我使用 69,371 个软件包，从 `0ad` ，一款古代战争题材的即时战略游戏，到 `zzuf`，一个透明的应用程序输入模糊器。一点也不差。
+上面我讲了这么多我不想提及的内容，您可能怀疑 `apt` 到底还能处理多少软件。这么说吧，在我的 Ubuntu 20.04 上，`apt` 可以让我使用 69,371 个软件包，从 `0ad` ，一款古代战争题材的即时战略游戏，到 `zzuf`，一个透明的应用程序输入模糊器。一点也不差。
 
 ### 使用 apt 搜索软件
 
@@ -48,14 +48,14 @@ cockpit/hirsute,hirsute 238-1 all
 $
 ```
 
-上面的第二个包是你要的那个（以 `cockpit/hirsute` 开头的那一行）。如果你决定要安装它，输入：
+上面的第二个包就是你要的那个（以 `cockpit/hirsute` 开头的那一行）。如果你决定要安装它，输入：
 
 
 ```
 `$ sudo apt install cockpit`
 ```
 
-`apt` will take care of installing Cockpit and all the bits and pieces, or _dependencies_, needed to make it work. Sometimes that's all that's needed; sometimes it's not. It's possible that having a bit more information could be useful in deciding whether you really want to install this application.`apt` 将负责安装 Cockpit 以及使其工作所需的所有部件或 _依赖_。有时这就是我们所需要的；有时不是。了解更多的信息可能有助于你决定是否真的要安装此应用程序。
+`apt` 将负责安装 Cockpit 以及使其工作所需的所有部件或 _依赖_。有时我们不太确定这是我们所需要的。了解更多的信息可能有助于你决定是否真的要安装此应用程序。
 
 ### 包元数据
 
@@ -89,7 +89,7 @@ Description: Web Console for Linux servers
 $
 ```
 
-In particular, notice the `Description` field, which tells you more about the application. The `Depends` field says what else must be installed, and `Recommends` shows what other—if any—cooperating components are suggested alongside it. The `Homepage` field offers a URL in case you need more info.特别要注意的是 `Description` 字段，它会告诉你更多关于应用程序的信息。`Depends` 字段说明还必须安装什么，而 `Recommends` 则显示建议安装的其他（如果有的话）合作组件。`Homepage` 字段会提供一个网址，通过它你可以了解更多。
+特别要注意的是 `Description` 字段，它会告诉你更多关于应用程序的信息。`Depends` 字段说明还必须安装什么，而 `Recommends` 则显示建议安装的其他（如果有的话）合作组件。`Homepage` 字段会提供一个网址，通过它你可以了解更多。
 
 ### 哪个包提供的这个文件？
 
@@ -103,7 +103,7 @@ Full Text Search... Done
 $
 ```
 
-但是，一个有关联的命令 `apt-file` 会探索包内部：
+但是，另一个有关联的命令 `apt-file` 可以用来探索包内部：
 
 
 ```
@@ -116,7 +116,7 @@ $
 
 ### 包里包含哪些文件？
 
-方便的 `apt-file` 命令会列出一个给定的包中包含哪些文件。例如：
+方便的 `apt-file` 命令会列出给定的包中包含哪些文件。例如：
 
 
 ```
@@ -156,7 +156,7 @@ $
 
 即便你不是 `apt` 的重度使用者，当你需要在命令行中安装或删除软件包时（例如，在一台远程服务器上或遵循某些热心肠发布的操作指南时），掌握一些 apt 的知识也会很有用。在某些软件创作者仅提供了一个裸 `.pkg` 文件的情况下，可能还需要了解一些关于 Dkpg 的知识（如上所述）。
 
-我发现 Synaptic 包管理器在我的桌面上是一个非常有用的工具，但出于各种目的，我也在少数我维护的服务器上使用着 `apt`。
+我发现 Synaptic 包管理器在我的桌面上是一个非常有用的工具，但出于各种目的，我也在少数维护的服务器上使用着 `apt`。
 
 **[下载我们的 `apt` 速查表][15]** 习惯该命令并尝试一些新技巧。一旦你这样做了，你可能会发现很难再使用其他任何东西。
 
