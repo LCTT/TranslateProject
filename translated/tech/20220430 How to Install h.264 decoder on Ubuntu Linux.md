@@ -42,6 +42,8 @@ _**播放这个文件要求 H.264 (高端类) 解码器 ， 但是没有安装�
 
 或者,你可以使用这个命令在终端来安装软件包：
 
+```
+
     sudo apt install gstreamer1.0-plugins-bad
 
 ```
@@ -64,13 +66,15 @@ _**播放这个文件要求 H.264 (高端类) 解码器 ， 但是没有安装�
 
 然而,在 Ubuntu 有一个 [ 安装多媒体解码器更加方便的方法 ][5] 并且在下一节我会展示给你。
 
-#### 方法 2: 安装所有多媒体解码器 (建议)
 
-Ubuntu provides a meta-package named ubuntu-restricted-extras that consists of most of the common audio and video codecs along with some other packages like the Microsoft fonts.
+####  方法 2: 安装所有多媒体解码器 (建议)  
+  
 
-Install this package and you won’t have to worry about the media codecs anymore.
+Ubuntu 系统提供了一个名字叫做 ubuntu-restricted-extras 的原始软件包，由许多常规的音频和视频解码器以及像类似微软字体库那样无用的一些软件包组成。
 
-Open the terminal in Ubuntu and type the following command:
+安装这个软件包你将不用再担心多媒体解码器的问题了。
+
+在 Ubuntu 打开终端并键入以下命令：
 
 ```
 
@@ -78,45 +82,46 @@ Open the terminal in Ubuntu and type the following command:
 
 ```
 
-Since this meta-package contains software from Microsoft, you’ll have to accept the End User License Agreement (EULA).
+由于这个原始软件包包含类似微软字库那样用不到的一些多余的软件，你将不得不接受最终用户许可协议 (EULA) 。
 
-![Press tab and hit enter to accept EULA][6]
 
-The next screen may look like the one below. Just press tab and it will highlight the options. When the correct options are highlighted, press enter to confirm your selection.
+![按下 tab 键 然后点击回车接受 EULA 协议][6]
 
-![Press tab and when it highlights the correct option, press enter to confirm][7]
+下一屏可能类似以下这样。只按下 tab 键将会高亮显示选项。当正确的选项高亮显示时，按下回车键来确认你的选择。
 
-With the multimedia codecs installed, you should be able to play (almost) all kinds of media files. Your music player can play MP3 files and your video player should be able to play MP4, MKV, and whatnot.
+![当高亮显示你正确的选项时，按下 tab 键，按回车键确认][7]
 
-However, this too is not the end of the story, at least for some people.
+多媒体解码器安装完成，你应该能够播放 (大多数) 许多中媒体文件。你的音乐播放器能播放 MP3 文件，你的视频播放器能播放 MP4，MKV等等格式。
 
-Why do I say that? Because I have noticed that the default video player in Ubuntu, Totem, often struggles while playing certain kinds of video files. You’ll notice that suddenly your system heats up, the fans start blowing and your mouse cursor stop functioning smoothly.
+然而，这也不是故事的终点，至少对某些人来说。
 
-Why? Because Totem is struggling in decoding the video and taking too much processing power.
+为什么我要那样说？因为我已经注意到 Ubuntu 系统下的默认视频播放器，Totem，在播放某些视频格式文件时常常遇到问题。你会注意到突然你的系统主机发热，风扇狂转并且鼠标指针停止运行。
 
-You can test it by running the top command while playing the video. Look for the process named totem (that’s the name of the default video player).
+为什么？因为 Totem 播放器在视频解码方面占用了太多的处理器资源。
 
-![Ubuntu’s default video player, Totem, may consume more than necessary CPU power][8]
+当你播放视频的时候你可以通过 top 命令 测试以下。查看名称为 totem 这个进程 (那是默认视频播放器的名字)。
 
-What can you do now? Your trouble seems to be never ending. Fret not. There are [better video players in Linux][9] and they will help you solve the issue.
+![Ubuntu 默认的视频播放器, Totem, 可能消耗过多的必要的 CPU 资源][8]
 
-#### Method 3: Install a better video player (recommended)
+你现在能够做什么？你的麻烦看起来永无止境，别担心。[在 Linux 上有更好的视频播放器][9] 并且它们能帮助你解决问题。
 
-There are many good video players in Linux. I find them better than the default Totem video player.
+#### 方法 3: 安装一个更好的视频播放器 (建议)
 
-Personally, I prefer two of the lot: [VLC][10] and [MPV][11].
+在 Linux 有很多优秀的视频播放器。我发现它们好于默认的 Totem 视频播放器。
 
-VLC is a versatile and hugely popular video player. Chances are that you have already used VLC.
+就我个人来说，那么多个我只喜欢这两个：VLC][10] 和 [MPV][11]。
 
-MPV Media Player is not that popular but this lightweight application is quite good for playing video files.
+VLC 是一个多功能且超级流行的额视频播放器。很可能你已经使用过 VLC 。
 
-Both VLC and MPV players are good at handling media codecs. You don’t even need to install media codecs separately with them. Just [install VLC][12] or MPV and you should be able to play various kinds of video files.
+MPV 媒体播放器不是那么流行但是这个轻量级的程序播放视频文件是再合适不过了。
 
-Either look for it in the software center:
+VLC 和 MPV 播放器都擅长处理多媒体解码器。你甚至不必分开来安装多媒体解码器。只需要 [安装 VLC][12] 或者 MPV ，你就能够播放各种格式的视频文件。
 
-![MPV player is available in Ubuntu software center][13]
+在软件中心也可以找到它：
 
-Or [install MPV on Ubuntu][14] using the command line:
+![在 Ubuntu 软件中心 MPV 可用][13]
+
+或者 使用命令行 [在 Ubuntu 安装 MPV][14]：
 
 ```
 
@@ -124,15 +129,15 @@ Or [install MPV on Ubuntu][14] using the command line:
 
 ```
 
-Now that you have another video player, you should right click on the video files and choose to open with the new video player.
+现在你已经有了另一个视频播放器，你应该右键点击视频文件，选择新的视频播放器来打开。
 
-Alternatively, you can [make it the default application][15] for playing video files and use double clicks.
+或者，你可以[使其作为默认程序][15] 双击来播放视频文件。
 
-### Did it work for you?
+### 对你有用吗?
 
-I hope I didn’t go into too much detail here. I wanted to explain the various methods and the pros and cons associated with each of them.
+我在这里没有说太多细节。我想阐述各种方法和它们每个的利弊。
 
-Did you manage to get rid of the h264 decoder problem in Ubuntu? Which method did you go for?
+你在 Ubuntu 处理好 h264 解码器的问题了吗？那种方法对你有用？
 
 --------------------------------------------------------------------------------
 
@@ -140,7 +145,7 @@ via: https://itsfoss.com/install-h-264-decoder-ubuntu/
 
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hwlife](https://github.com/hwlife)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
