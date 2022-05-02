@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/open-source-card-game"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hadisi1993"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
