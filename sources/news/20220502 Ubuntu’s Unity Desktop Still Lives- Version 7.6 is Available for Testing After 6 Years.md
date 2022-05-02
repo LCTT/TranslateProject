@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/unity-7-6-testing/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "imgradeone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
