@@ -18,7 +18,7 @@ System76 依照 [Ubuntu 22.04 LTS][2] [发布][1] 了 Pop OS 22.04 LTS ，它带
 
 ### 从 Pop OS 21.10 升级到 Pop OS 22.04
 
-#### Before Upgrade
+#### 升级之前的准备
 
 Pop OS 升级过程相对来说较为稳定。 因为根据我们 [关于升级问题的最近文章][4] 显示，许多用户面临升级方面的问题。但是如果你运行带有 NVIDIA 硬件的 Pop OS ，我建议你做个备份。 
 
@@ -42,7 +42,7 @@ Pop OS 升级过程相对来说较为稳定。 因为根据我们 [关于升级�
 
 [][5]
 
-另见:   怎样从Pop OS 20.10 更新到 Pop OS 21.04 lts [按步骤]
+另见： 怎样从Pop OS 20.10 更新到 Pop OS 21.04 lts [按步骤]
 
 ### Pop OS 22.04 LTS 的升级步骤
 
@@ -101,31 +101,28 @@ Pop OS 升级过程相对来说较为稳定。 因为根据我们 [关于升级�
 
 ![开始升级过程][8]
 
-  * 首先,升级过程将会下载软件包。按照我们的测试，大约 1600 多个软件包需要下载。 the upgrade will start the download of the packages. As of our test, around 1600+ packages need downloading. Hence you should wait until it finishes.
+  * 首先,升级过程将会下载软件包。按照我们的测试，大约 1600 多个软件包需要下载。因此，你应该等到它结束。
+
+  * 其次,一旦下载完成，更新管理器将会提示你重启。
 
 
-  * Secondly, once the download is complete, the upgrader will prompt you for the reboot.
+![准备升级][9]
+
+  * 重启之后，Pop OS 将开始安装最新的软件包到你的系统中。
 
 
-
-![Ready for upgrade][9]
-
-  * Pop OS would start installing the latest packages to your system after the reboot.
+  * 最后,这个下载过程要花将近一个小时，所以等待它完成。我不建议中途停止更新，这将会导致系统不稳定。
 
 
-  * Finally, the download process takes about an hour, so wait for it to be finished. I would not recommend stopping the upgrade mid-way as it may lead to an unstable system.
+![Pop OS 22.04 LTS 桌面][10]
 
-
-
-![Pop OS 22.04 LTS Desktop][10]
-
-  * After the upgrade is complete, enjoy the brand new Pop OS 22.04 LTS.
+  * 升级完成之后，享受全新的 Pop OS 22.04 LTS 。
 
 
 
 * * *
 
-We bring the latest tech, software news and stuff that matters. Stay in touch via [Telegram][11], [Twitter][12], [YouTube][13], and [Facebook][14] and never miss an update!
+我们带来了最新的技术，软件和重要新闻。通过 [Telegram][11], [Twitter][12], [YouTube][13] 和 [Facebook][14] 与我们保持联系，不要错过更新哟！
 
 --------------------------------------------------------------------------------
 
