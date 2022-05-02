@@ -7,58 +7,54 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Install h.264 decoder on Ubuntu Linux
+怎样在 Ubuntu Linux 安装 h.264 解码器
 ======
 
-When you start using a [fresh installed Ubuntu system][1] and try to open an MP4 file to play videos, it may show you an error that reads:
+当你开始使用 [新安装的 Ubuntu 系统][1] 并尝试打开一个 MP4 文件进行播放时，它可能会显示一个错误，即：
 
-_**H.264 (High Profile) decoder is required to play the file, but is not installed.**_
+_**播放这个文件要求 H.264 (高端类) 解码器 ， 但是没有安装。**_
 
-![Ubuntu’s default video player shows error while playing certain media files][2]
+![当播放特定媒体文件时，Ubuntu 的默认视频播放器会显示错误][2]
 
-You can perhaps guess what’s going on here. Your system doesn’t have the required media codecs installed and hence the video player cannot play that video file.
+你可能会猜到这是怎么了。系统没有安装所需的多媒体解码器阻止了视频播放器不能播放视频文件。
 
-So, what’s the solution here? You install the required codec. But how?
+所以，解决方案是什么？安装所需的解码器。怎么做呢？
 
-I’ll discuss three ways about fixing this issue:
+我将讨论解决这个问题的三种方法：
 
-  1. Install just the required codec: It could work for the given file but some other video files will still complain about missing codecs.
-  2. Install a wide variety of multimedia codecs at once: It installs codecs as well as some other packages that you might not need like Microsoft Fonts.
-  3. Install a different video player: Applications like VLC and MPV have better support for codecs by default. You don’t need to install them separately for most common video files.
+  1. 只安装所需的解码器：它可能会让所需的文件播放但是一些其它格式的文件仍然会处在失去解码器的状态。
+  2. 一次安装多种多媒体解码器：它会安装解码器之外，还会安装其它你不需要的软件包，类似微软的字体库一样。
+  3. 安装一个不同的视频播放器：像 VLC 和 MPV 视频播放器默认状态下对解码器有更好的支持。对大多数常规视频文件来说，你不必分别安装它们。
 
+如果你遵从我的建议，我建议你采用第二种和第三种方法。为什么？一会你就知道了。
 
+### 在 Ubuntu Linux 获取 h264 解码器
 
-If you take my advice, I suggest going for the second as well as the third method. Why? You’ll see in a moment.
+这里我使用 Ubuntu Linux。第一和第三种方法应该适用于其它发行版，但是第二种方法不适用，因为所提到的包 (常常) 是 Ubuntu 所独有的。
 
-### Getting h264 decoder in Ubuntu Linux
+#### 方法 1: 只安装所需的解码器 (不建议)
 
-I am using Ubuntu Linux here. The first and the third methods should work for other distributions but not the second one as the package mentioned is (usually) exclusive to Ubuntu.
+当你看到这个错误，它给你一个叫做 “在 Ubuntu 软件中心查找 ” 的选项。点击这个选项打开软件中心，可能显示(或不显示)一些软件包将会在你的系统上安装 h264 解码器。
 
-#### Method 1: Install only the required codec (not recommended)
+![在 Ubuntu 软件中心可能提供 h264 解码器软件包][3]
 
-When you see the error, it gives you the option to “Find in Ubuntu Software”. Clicking on that option opens the Software Center and it may (or may not) show some packages that will install the h264 decoder on your system.
+软件包名可能听起来很相似但是需要带有“糟糕”设置的 GStreamer 多媒体解码器。检查软件包的描述。
 
-![Packages that may offer h264 decoder in Ubuntu software center][3]
-
-The package names may sound similar but you need the GStreamer Multimedia Codecs from the “bad” set. Check the description of the packages.
-
-Alternatively, you can install the package in the terminal using this command:
-
-```
+或者,你可以使用这个命令在终端来安装软件包：
 
     sudo apt install gstreamer1.0-plugins-bad
 
 ```
 
-If you are new to the terminal, please note that it will ask for your account password. **Nothing is displayed on the screen while you type the password**. That’s the Linux way. You type the password blindly and press enter.
+如果你对终端不了解，请注意它将要求使用你的账户密码。**当你输入你的密码时，屏幕什么都不显示**。这是 Linux 的方式。你盲输密码然后按回车键。
 
-Once this package is installed, open the file again and see if it works now.
+一旦软件包安装完成，再次打开文件看看是否能够正常播放。
 
-It may work for you but the story doesn’t end here. You may have other video files that require some other h264 decoder or some other decoder.
+这可能对你有用，但是故事并未结束。你可能有其它格式的一些视频文件要求一些其它的 h264 解码器 或者其它解码器。
 
-![You may still have trouble with other video decoders][4]
+![其它的解码器播放视频你可能仍然有问题][4]
 
-You can try and install more decoders like this:
+你可以像这样尝试安装更多的解码器：
 
 ```
 
@@ -66,9 +62,9 @@ You can try and install more decoders like this:
 
 ```
 
-However, there is a much more [convenient way of installing media codecs in Ubuntu][5] and I’ll show it to you in the next section.
+然而,在 Ubuntu 有一个 [ 安装多媒体解码器更加方便的方法 ][5] 并且在下一节我会展示给你。
 
-#### Method 2: Install all multimedia codecs (recommended)
+#### 方法 2: 安装所有多媒体解码器 (建议)
 
 Ubuntu provides a meta-package named ubuntu-restricted-extras that consists of most of the common audio and video codecs along with some other packages like the Microsoft fonts.
 
