@@ -7,113 +7,113 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Hands on With GNOME’s New Text Editor for Linux Users
+GNOME 新文本编辑器尝鲜
 ======
 
-If you are a regular reader here on It’s FOSS, you might have read about [GNOME’s plan to replace Gedit with their own text editor][1].
+如果你是 It's FOSS 的忠实读者，你可能读过这样一篇文章： [GNOME 计划用自家的文本编辑器取代 Gedit][1]。
 
-Yes, GNOME has a brand-new text editor and it is called, well, Text Editor.
+没错，GNOME 推出了一款全新的文本编辑器，名字就叫做 Text Editor（中文译名：文本编辑器）。
 
-While Gedit is still the default, this new editor has made an entry with the release of GNOME 42. I am using Ubuntu 22.04 and it is available to install from the repositories.
+尽管 GNOME 桌面的默认文本编辑器还是 Gedit，但是新编辑器 Text Editor 已经和 GNOME 42 一起发布了。
 
-Not exactly a brand-new [feature of Ubuntu 22.04][2], this new editor is available to install in the latest Ubuntu LTS version and perhaps other distributions using GNOME 42.
+也就是说，这款新编辑器可以在 Ubuntu 最新的长期发行版或者其他应用 GNOME 42 的发行版上获取（笔者现在使用的正是 Ubuntu 22.04）。
 
-Intrigued? Let me share my experience with this new editor and then I’ll show you the installation steps.
+感兴趣吗？在本文，笔者将分享这款编辑器的使用体验以及安装步骤。
 
-### Experience with GNOME Text Editor
+### Text Editor 使用体验
 
-Built on top of the [controversial libadwaita][3], GNOME Text Editor follows the new design principles set by its development committee. It has a sleek, modern look with rounded corners.
+Text Editor 基于 [备受争议的 libadwaita 库][3]，遵循着其开发委员会的设计新理念，采用圆角边框，外观优美典雅，颇具现代化特点。
 
-Don’t expect anything extraordinary here in terms of features. It’s not a replacement of coding focused editors like [Atom or VS Code][4]. This also doesn’t mean it’s as plain and simple as Windows’ Notepad.
+但就功能而言，这款软件并没有什么特别的“过人之处”。毕竟，它并不能取代 [Atom 或者 VS Code][4] 这类专业的代码编辑器。但同时，它也绝不像 Windows 的记事本那样“平平无奇”。
 
-Let’s see what it has to offer.
+那么，让我们来一睹它的“风采”吧！
 
-#### Saved sessions
+#### 会话保存功能
 
-By default, GNOME Text Editor automatically opens the last opened files. This is a neat feature that lets you resume your work.
+默认情况下，Text Editor 会自动打开上次编辑的文件，这一功能可以让你快速继续之前的工作。
 
-This behavior can be controlled by the Restore Session option under Preferences.
+你可以通过首选项下的还原会话选项，开启或关闭该功能。
 
 ![][5]
 
-You can also search and open the recently opened files. Clearing the history (as shown in the above image) will clear the recently accessed files.
+你还可以搜索文件记录，打开最近处理的文件。请注意：清除文件记录（见上图 Clear History）会清除最近打开的文件列表。
 
-#### Themes and in-built themes
+#### Themes and in-built themes 主题与内置主题
 
-Like new GNOME applications, it gives you three theming style to choose from: system theme, light theme and dark theme. If you have chosen system theme, the editor will automatically switch between light and dark theme based on the system theme (light or dark) in use.
+Text Editor 与其他新的 GNOME 软件一样，自带三种主题风格：跟随系统、浅色模式和深色模式。如果你选择了跟随系统，编辑器会根据系统主题（浅色或深色）自动变换自身的深浅主题色。
 
 ![System theme option gnome text editor][6]
 
-Apart from that, you can choose between eight available themes (available in dark and light variants) under the preference section.
+此外，在首选项下还设有八个主题（深浅色模式下主题有所不同），为用户提供了更多的选择。
 
 ![Theme options under preference][7]
 
-You can see the changes immediately as you select the themes.
+只需点击选中，主题即可生效。
 
-#### Changes and Unsaved file handling
+#### 文件修改以及未保存文件的处理
 
-Modified and unsaved files are prominently reflected while you work on them.
+如果你修改了某个文件但是没能成功保存，在你下次打开 Text Editor 时，它会再次打开该文件并提醒你保存。
 
 ![Unsaved files are more prominently marked][8]
 
-You’ll obviously be warned if you try to close the editor with modified files.
+不过，在你修改文件后点击关闭窗口时，编辑器会提醒你选择保存修改还是放弃修改。
 
 ![][9]
 
-There is no automatic save options here. [Gedit has option for automatically saving files][10] without using any additional plugins.
+相比之下，[Gedit 有自动保存选项][10]，无需插件即可使用，而 Text Editor 没有这一功能。
 
-#### No plugins
+#### 暂无插件
 
-Speaking of plugins, there is no such system for the new text Editor yet. Gedit has a decent plugin ecosystems that helps in enhancing the capacity of the editor.
+提到插件，不得不承认这款新的编辑器还没有推出插件功能。而另一方面，Gedit 有着良好的插件生态，所以它的功能更加强大。
 
-I don’t have any concrete information if plugins will be allowed in this editor in the future or not.
+不过我不确定 Text Editor 未来是否会引入支持插件的功能。
 
-#### Syntax highlighting
+#### 代码语法高亮
 
-Syntax highlight is an integral part of text editors these days. GNOME Text Editor promptly highlights syntax for various programming language.
+近年来，代码语法高亮可以说是文本编辑器的一个必备功能了。Text Editor 也提供了这一功能，支持各种程序语言语法高亮。
 
-This is usually done based on the extension of the code file. However, I noticed that it also detects and highlights syntax for bash scripts and C/C++ programs even before saving the file.
+通常来说，语法高亮的前提是代码文件要有对应的后缀名。不过，我发现 Text Editor 甚至可以在文件保存之前就识别出 bash 脚本和 C/C++ 程序，并对其语法标出高亮。
 
 ![Bash scripts. C/C++ code are detected even without file extension][11]
 
-#### Keyboard shortcuts
+#### 快捷键
 
-I love using keyboard shortcuts in my favorite applications. It makes things quicker.
+笔者喜欢在常用软件里使用快捷键，因为这样效率会更高。
 
-The GNOME Text Editor supports plenty of keyboard shortcuts for all kind of actions. You can find the list of keyboard shortcuts under the hamburger menu (☰) or use the keyboard shortcut Ctrl+?.
+Text Editor 的各种操作都支持快捷键。你可以点击软件右上角的三条横线（☰ 符号），看到“快捷键”选项；或者直接敲快捷键 Ctrl+？调出“快捷键”窗口。
 
-![Keyboard shortcuts in GNOME Text Editor][12]
+![Keyboard shortcuts in Text Editor][12]
 
-#### Search and replace
+#### 查找和替换
 
-Text Editor has pretty decent find and replace feature. You can use set extra parameters like regex search, case-sensitive search or match exact words.
+Text Editor 有着完善的查找替换功能。它有三种模式可供选择：正则表达式、区分大小写以及匹配精准字符。
 
 ![search replace gnome text editor][13]
 
-#### More features
+#### 更多功能
 
-There are several other features that you may find in Gedit:
+Text Editor 与 Gedit 一样，还具备一些其他功能：
 
-  * Spell check
-  * Line numbers
-  * Automatic indentation
-  * Space/tab indentation
-  * Change case
-  * Text wrapping
+  * 拼写检查
+  * 显示行号
+  * 自动缩进
+  * 空格空格和制表位缩进
+  * 大小写转换
+  * 自动换行
 
 
 
-#### What it doesn’t do?
+#### Text Editor 的局限
 
-It is essentially a text editor, so you cannot open doc files in it and that’s by design. If you open a doc file, you’ll see gibberish. The same goes for PDF files.
+归根结底，Text Editor 依旧是一个文本编辑器，无法也无意用来打开 doc 文件。如果你执意用它要打开 doc 文件，你看到的就只有一堆乱码。当然，pdf 文件也是如此。
 
 ![][14]
 
-Also, it is not intended for hardcore coding. It cannot replace the likes of VS Code. It is okay for occasional code reading or shell scripting but it doesn’t have the features like project folders or running the codes.
+此外，Text Editor 并不是专门用来写复杂代码的，它无法取代 VS Code 等代码编辑器。如果说偶尔用来读读代码或者写写 shell 脚本，倒也无伤大雅，但是它并不具备管理项目文件夹和运行代码等功能。
 
-### Installing GNOME Text Editor
+### 安装 Text Editor
 
-As stated earlier, it is available with GNOME 42, but not installed by default. In Ubuntu 22.04, it is available in the Universe repository and can be installed with the following command:
+就像笔者在开头所说，Text Editor 已经和 GNOME 42 一起发布了，不过它并不属于默认安装的软件。在 Ubuntu 22.04，Universe 仓库里就有 Text Editor，你可以通过输入下面的命令进行安装：
 
 ```
 
@@ -121,19 +121,19 @@ As stated earlier, it is available with GNOME 42, but not installed by default. 
 
 ```
 
-It should be available in other distros with GNOME 42. Please [check the version of desktop environment][15] you are using.
+其他应用 GNOME 42 的发行版也可以获取 Text Editor，请在安装前查看所用系统的[桌面环境版本][15]。
 
-Once installed, you can search and open it in the Activities area. The icon for the new editor is a refreshed version of the Gedit icon.
+安装完成后，可以点击屏幕左上角的“活动”按钮，查找打开 Text Editor。它的图标与 Gedit 的图标相似，但设计更为新颖。
 
 ![][16]
 
-### Conclusion
+### 总结
 
-The good old [Gedit][17] has been a part of GNOME for a long time. There were lack of development a few years ago but the development has resumed again. However, the GNOME team is working on revamping their core applications for GTK 4 and libadwaita.
+[Gedit][17] 是一款非常完善的文本编辑器，也是 GNOME 桌面环境长期以来的预装软件。多年前，Gedit 的发展尚且不足，不过后期又迎来了新的发展。然而，如今 GNOME 团队正在努力为 GTK 4 和 libadwaita 改进核心应用程序。
 
-This new Text Editor looks like a reimplementation of the Gedit with similar interface and feature but a more fluid experience which is more consistent with the new GNOME design.
+Text Editor 很像 Gedit 的翻版，两者有着相似的界面和功能。不过，Text Editor 与新版 GNOME 的设计风格更加统一，使用体验也更加流畅。
 
-It won’t surprise me that this new editor becomes the default text editor in the coming version of GNOME. It would be interesting to see if a plugin ecosystem is developed for the new editor or not.
+这款新的编辑器日后很有可能会成为 GNOME 的默认文本编辑器。不过让人感兴趣的是，Text Editor 将来是否会拥有自己的插件生态呢？
 
 --------------------------------------------------------------------------------
 
