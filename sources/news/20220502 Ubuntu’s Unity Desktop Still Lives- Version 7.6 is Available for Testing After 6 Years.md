@@ -7,59 +7,61 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Ubuntu’s Unity Desktop Still Lives: Version 7.6 is Available for Testing After 6 Years
+Ubuntu 的 Unity 桌面还活着：时隔 6 年测试，7.6 版本终于上线
 ======
-While Canonical no longer maintains it, Ubuntu Unity’s developer has taken up the task with a major upgrade (currently for testing).
+> 虽然 Canonical 已经不再维护 Unity 桌面，但 Ubuntu Unity 的开发者承担了这项重任，且进行了一次大型更新（目前仅用于测试）。
 
-![unity 7.6][1]
+![Unity 7.6][1]
 
-Before you get too excited, you should know that Canonical is not coming back to maintain Unity desktop.
+怕你兴奋过头了，先提醒一下，Canonical 并没有回归 Unity 桌面的维护。
 
-Thanks to the developer of the Ubuntu Unity distribution (*Rudra Saraswat*), we get to see an update to the Unity desktop environment after six long years.
+得益于 Ubuntu Unity 发行版开发者（*Rudra Saraswat*）的不懈努力，时隔 6 年，我们终于看到了 Unity 桌面环境的更新。
 
-In case you did not know, [Ubuntu Unity][2] is a community project that utilizes the Unity interface instead of GNOME. So, yes, if you wanted to use Ubuntu 22.04 LTS with Unity desktop, [Ubuntu Unity][2] is your friend.
+如果你不知道的话，[Ubuntu Unity][2] 是一款采用 Unity 桌面（而不是 GNOME）的社区项目。因此，如果你想在 Ubuntu 22.04 LTS 上使用 Unity 桌面，那么毋庸置疑，[Ubuntu Unity][2] 绝对是你的最佳玩伴。
 
-Initially, it simply offered the Unity experience with a few tweaks. But, now, **Unity 7.6** looks to be getting some improvements and visual changes to the interface.
+起初，它仅仅提供了经过微调的 Unity 体验，但现在，**Unity 7.6** 的界面得到了一些优化及视觉变更。
 
-Here’s what you should know about it:
+下面是你应该了解的东西：
 
-### Unity 7.6: What’s New?
+### Unity 7.6：更新了什么？
 
-**Note**: Unity 7.6 is out for public testing and should not be a replacement for other desktop environments.
+**提示**：Unity 7.6 是为公共测试而发布的，它不应成为其他桌面环境的替代品。
 
-It is not just about the user-facing side, but there have been development efforts to help contributors conveniently help with Unity7’s development.
+这不仅仅是面向用户的改进，还有针对开发方面的努力，旨在帮助贡献者，让他们更方便地帮助 Unity7 的开发。
 
-Some refinements include:
+这些改善包括：
 
-#### User Interface Changes
+#### 用户界面变更
 
-![unity desktop][3]
+![Unity 桌面][3]
 
-The dash launcher (app launcher) and HUD have been redesigned for a modern/slick look.
+Dash 启动器（应用启动器）与 HUD 现已重新设计，拥有更现代、简洁的视觉。
 
-Overall, the design is now much flatter but retains the good-old system-wide blur effect. The dock’s menu and tooltips also received some refreshed modern look.
+总的来看，现在的设计看上去更加扁平，但仍旧保留了不错的系统全局模糊效果。
 
-There are some subtle visual improvements like ‘Empty Trash’ button in the dock using Nemo instead of Nautilus and fixing the app info and ratings in dash preview.
+本次引入了一些细微的视觉改进，比如 Dock 上的“清空回收站”按钮修改为使用 Nemo（而不是 Nautilus），以及修复了 Dash 预览中的应用详情与评分。
 
-#### Performance Improvements
+#### 性能改进
 
-![unity desktop][4]
+![Unity 桌面][4]
 
-The RAM usage in Unity7 is lower with the latest update. And, you can notice the RAM usage with Ubuntu Unity 22.04 is significantly lower to about 700-800 MB.
+在最新的更新中，Unity7 的内存使用量更低，同时你也可以注意到，Ubuntu Unity 22.04 的内存使用量明显降低到约 700-800 MB。
 
-Furthermore, the low graphics mode works much better now, making the dash faster than ever.
+此外，低端显卡模式现在运作得更好，Dash 也比以前更快。
 
-#### Other Changes
+#### 其他变更
 
-The Unity7’s shell source code has been migrated entirely to [GitLab][5]. The standalone testing Unity7 launcher has been fixed, and the buggy tests have been disabled, improving the build time (making it much shorter).
+Unity7 Shell 的源代码已经完全迁移至 [GitLab][5]。用于独立测试的 Unity7 启动器已被修复，同时一些有问题的测试项也已被禁用，改善了构建用时（使其大幅缩短）。
 
-The release notes say that these changes should help Unity7 contributors.
+发布说明上说，这些改进将帮助 Unity7 的贡献者。
 
-### Testing Unity 7.6
+### 测试 Unity 7.6
 
-You can follow the instructions mentioned in the [official testing announcement][6] to compile it and try it for yourself. You can also head to its official website to explore more.
+你可以按照 [官方测试公告][6] 中提到的方式来编译它，并亲自尝试。你也可以前往其官方网站探索更多。
 
-In either case, you can wait for an update to Ubuntu Unity 22.04, if you would rather not add the testing PPA yet.
+另一种情况，如果你不想添加测试 PPA 源，你也可以等待 Ubuntu Unity 22.04 的更新。
+
+*你对 Unity 桌面环境的这次更新有什么看法？你喜欢它吗？欢迎在评论区中告诉我你的想法。*
 
 *What do you think about this refreshment to the Unity desktop environment? Do you like it? Let me know your thoughts in the comments.*
 
@@ -69,7 +71,7 @@ via: https://news.itsfoss.com/unity-7-6-testing/
 
 作者：[Ankush Das][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[imgradeone](https://github.com/imgradeone)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
