@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/microsoft-joins-the-open-3d-foundation-for-open-source-3d-development-promotion/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
