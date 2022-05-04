@@ -3,12 +3,13 @@
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14544-1.html"
 
 微软加入开放 3D 基金会，参与开源 3D 开发
 ======
+
 ![微软][1]
 
 微软已经以首席成员的身份加入了<ruby>开放 3D 基金会<rt>Open 3D Foundation</rt></ruby>（O3DF），其他首席成员是 Adobe、AWS、华为、英特尔和 Niantic。微软的参与为该项目带来了大量的知识和思想引领，这表明了：通过行业合作，创造一个高保真、功能齐全、不受商业条件限制的开源 3D 引擎是多么的关键。
@@ -28,7 +29,7 @@ via: https://www.opensourceforu.com/2022/05/microsoft-joins-the-open-3d-foundati
 作者：[Laveesh Kocher][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
