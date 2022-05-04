@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/rt-thread-smart)
 [#]: author: (Zhu Tianlong https://opensource.com/users/zhu-tianlong)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (tendertime)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
