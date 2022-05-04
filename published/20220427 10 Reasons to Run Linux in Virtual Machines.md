@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "PeterPan0106"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14541-1.html"
 
 在虚拟机中运行 Linux 的十大优点
 ======
