@@ -39,10 +39,6 @@ Perhaps the most frequently asked question of any elementary OS release is the r
 
 Finally, read the official elementary OS 7 [announcement][4] for more about this release and many updates on elementary OS 6 “Odin” (point release 6.1).
 
-We bring the latest tech, software news and stuff that matters. Stay in touch via [Telegram][5], [Twitter][6], [YouTube][7], and [Facebook][8] and never miss an update!
-
-![Join our Telegram channel and stay informed on the move.][9]
-
 --------------------------------------------------------------------------------
 
 via: https://www.debugpoint.com/2022/05/elementary-os-7-announcement/
@@ -60,8 +56,3 @@ via: https://www.debugpoint.com/2022/05/elementary-os-7-announcement/
 [2]: https://www.debugpoint.com/2022/01/ubuntu-22-04-lts/
 [3]: https://www.debugpoint.com/2021/11/linux-kernel-5-15/
 [4]: https://blog.elementary.io/updates-for-april-2022/
-[5]: https://t.me/debugpoint
-[6]: https://twitter.com/DebugPoint
-[7]: https://www.youtube.com/c/debugpoint?sub_confirmation=1
-[8]: https://facebook.com/DebugPoint
-[9]: https://www.debugpoint.com/wp-content/uploads/2020/07/telegramjoin1.png
