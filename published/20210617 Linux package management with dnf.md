@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (hanszhao80)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14542-1.html)
 
 使用 dnf 进行 Linux 包管理
 ======
