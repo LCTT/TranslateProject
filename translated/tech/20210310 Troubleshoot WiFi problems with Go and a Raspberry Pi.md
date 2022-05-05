@@ -65,11 +65,11 @@ func main() {
 &{Index:3 Name:wlp2s0 HardwareAddr:5c:5f:67:f3:0a:a7 PHY:0 Device:1 Type:station Frequency:2412}
 ```
 
-注意，两行输出中的 MAC 地址都是 `HardwareAddr`，这意味着它们是同一个物理硬件。你也可以通过 `PHY: 0` 来确认。根据 Go 的 [wifi 模块文档][3]，`PHY` 指的就是接口所属的物理设备。
+注意，两行输出中的 MAC 地址(`HardwareAddr`) 是相同的，这意味着它们是同一个物理硬件。你也可以通过 `PHY: 0` 来确认。根据 Go 的 [wifi 模块文档][3]，`PHY` 指的就是接口所属的物理设备。
 
-第一个接口没有名字，类型是 `TYPE: P2P`。第二个接口名为 `wpl2s0`，类型是 `TYPE: Station`。Go 的 wifi 模块文档列出了 [不同类型的接口][4]，并描述了它们是什么。根据文档，“<ruby>P2P<rt>点对点传输</rt></ruby>” 类型表示“这个接口是点对点客户端网络中的一个设备”。我认为这个接口是用于 [WiFi 直连][5] 的，这是一个允许两个 WiFi 设备在没有中间接入点的情况下直接连接的标准。
+第一个接口没有名字，类型是 `TYPE: P2P`。第二个接口名为 `wpl2s0`，类型是 `TYPE: Station`。Go 的 wifi 模块文档列出了 [不同类型的接口][4]，以及他们的用途。根据文档，“<ruby>P2P<rt>点对点传输</rt></ruby>” 类型表示“该接口属于点对点客户端网络中的一个设备”。我认为这个接口的用途是 [WiFi 直连][5] ，这是一个允许两个 WiFi 设备在没有中间接入点的情况下直接连接的标准。
 
-“<ruby>Station<rt>基站</rt></ruby>” 类型表示“这个接口是带有<ruby>控制接入点<rt>controlling access point</rt></ruby>的客户端设备管理的<ruby>基本服务集（BSS）<rt>basic service set</rt></ruby>的一部分”。这是大多数人所习惯的无线设备标准功能，也就是作为一个客户端来连接到网络接入点。这也是测试 WiFi 质量的重要接口。
+“<ruby>Station<rt>基站</rt></ruby>” 类型表示“该接口是带有<ruby>控制接入点<rt>controlling access point</rt></ruby>的客户端设备管理的<ruby>基本服务集（BSS）<rt>basic service set</rt></ruby>的一部分”。这是大多数人所习惯的无线设备标准功能，也就是作为一个客户端来连接到网络接入点。这也是测试 WiFi 质量的重要接口。
 
 ### 利用接口获取基站信息
 
