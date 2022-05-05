@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14545-1.html"
 
 文档并不是开源项目开发的附属品
 ======
