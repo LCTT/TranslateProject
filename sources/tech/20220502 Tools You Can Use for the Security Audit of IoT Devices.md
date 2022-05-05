@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/tools-you-can-use-for-the-security-audit-of-iot-devices/"
 [#]: author: "Dr Kumar Gaurav https://www.opensourceforu.com/author/dr-gaurav-kumar/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "tendertime "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
