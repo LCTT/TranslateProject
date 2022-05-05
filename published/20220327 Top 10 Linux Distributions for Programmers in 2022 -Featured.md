@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "aREversez"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14547-1.html"
 
 最适合程序员的 10 款 Linux 发行版
 ======
