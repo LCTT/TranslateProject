@@ -188,7 +188,7 @@ via: https://opensource.com/article/21/3/troubleshoot-wifi-go-raspberry-pi
 作者：[Chris Collins][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
