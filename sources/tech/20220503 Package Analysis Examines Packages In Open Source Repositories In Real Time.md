@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/package-analysis-examines-packages-in-open-source-repositories-in-real-time/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
