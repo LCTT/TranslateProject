@@ -1,3 +1,5 @@
+zxcv545 is translating
+
 [#]: subject: "Nvidia Begins To Set The Foundation For Future Open And Parallel Coding"
 [#]: via: "https://www.opensourceforu.com/2022/05/nvidia-begins-to-set-the-foundation-for-future-open-and-parallel-coding/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
