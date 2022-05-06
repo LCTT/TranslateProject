@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/esi-group-collaborates-with-ensam-open-sources-its-inspector-software/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Veryzzj"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
