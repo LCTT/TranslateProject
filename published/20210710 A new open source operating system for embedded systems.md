@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (tendertime)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14552-1.html)
 
 一种新的开源嵌入式操作系统
 ======
