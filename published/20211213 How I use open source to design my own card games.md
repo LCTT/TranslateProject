@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "hadisi1993"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14551-1.html"
 
 我如何利用开源设计自己的卡牌游戏
 ======
