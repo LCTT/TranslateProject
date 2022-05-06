@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/05/elementary-os-7-announcement/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
