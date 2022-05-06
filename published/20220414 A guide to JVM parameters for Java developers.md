@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Veryzzj"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14553-1.html"
 
 面向 Java 开发人员的 JVM 参数指南
 ======
