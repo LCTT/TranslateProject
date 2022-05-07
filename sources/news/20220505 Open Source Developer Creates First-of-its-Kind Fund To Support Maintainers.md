@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/open-source-developer-creates-first-of-its-kind-fund-to-support-maintainers/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
