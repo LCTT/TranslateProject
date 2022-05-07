@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/cron-crontab-ui"
 [#]: author: "Kevin Sonney https://opensource.com/users/ksonney"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
