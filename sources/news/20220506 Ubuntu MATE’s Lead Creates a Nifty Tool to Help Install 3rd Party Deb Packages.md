@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/deb-get-ubuntu/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
