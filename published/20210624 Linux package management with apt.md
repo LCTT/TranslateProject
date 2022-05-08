@@ -3,18 +3,20 @@
 [#]: author: (Chris Hermansen https://opensource.com/users/clhermansen)
 [#]: collector: (lujun9972)
 [#]: translator: (hanszhao80)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14558-1.html)
 
 使用 apt 进行 Linux 包管理
 ======
-学习如何使用 apt 命令在基于 Debian 的 Linux 发行版上安装软件包，然后下载我们的速查表，让正确的命令触手可及。
-![绿色背景的 bash 标志][1]
 
-[包管理器][2] 可帮助你处理 Linux 系统的计算机上软件的更新、卸载、故障排除等问题。Seth Kenlon 写了 [使用 `dnf` 进行 Linux 包管理][3] 一文，介绍了如何使用 dnf 这款命令行包管理工具，在 RHEL、CentOS、Fedora、Mageia、OpenMandriva 和其他 Linux 发行版中安装软件。
+> 学习如何使用 apt 命令在基于 Debian 的 Linux 发行版上安装软件包，然后下载我们的速查表，让正确的命令触手可及。
 
-Debian 和基于 Debian 的发行版（例如 MX Linux、Deepin、Ubuntu）以及基于 Ubuntu 的发行版（例如 Linux Mint 和 Pop!_OS）都有`apt`，一个“相似但不同”的工具。在本文中，我将按照 Seth 的示例（但使用 `apt`）向你展示如何使用它。
+![](https://img.linux.net.cn/data/attachment/album/202205/07/104236md5zqhpub9vqeaah.jpg)
+
+[包管理器][2] 可帮助你处理 Linux 系统的计算机上软件的更新、卸载、故障排除等问题。Seth Kenlon 写了 [使用 dnf 进行 Linux 包管理][3] 一文，介绍了如何使用 `dnf` 这款命令行包管理工具，在 RHEL、CentOS、Fedora、Mageia、OpenMandriva 等 Linux 发行版中安装软件。
+
+Debian 和基于 Debian 的发行版（例如 MX Linux、Deepin、Ubuntu）以及基于 Ubuntu 的发行版（例如 Linux Mint 和 Pop!_OS）都有 `apt`，这是一个“相似但不同”的工具。在本文中，我将按照 Seth 的示例（但使用 `apt`）向你展示如何使用它。
 
 在一开始，我想先提一下四个跟 `apt` 相关的软件安装工具：
 
@@ -23,16 +25,13 @@ Debian 和基于 Debian 的发行版（例如 MX Linux、Deepin、Ubuntu）以�
   * `apt` 的前身有 `apt-get`、`apt-cache` 等工具。
   * [Dpkg][6] 是在 `apt` 包管理器背后处理繁杂事务的”幕后工作者“。
 
+还有其他的包管理系统，例如 [Flatpak][7] 和 [Snap][8]，你可能会在 Debian 和基于 Debian 的系统上遇到它们，但我不打算在这里讨论。还有一些应用程序“商店”，例如 [GNOME “软件”][9]，与 `apt` 和其他打包技术重叠；我也不打算在这里讨论它们。最后，还有其他 Linux 发行版，例如 [Arch][10] 和 [Gentoo][11] 既不使用 `dnf` 也不使用 `apt`，我也不打算在这里讨论它们！
 
-
-还有其他的包管理系统，例如 [Flatpak][7] 和 [Snap][8]，你可能会在 Debian 和基于 Debian 的系统上遇到它们，但我不打算在这里讨论。还有一些应用程序“商店”，例如 [GNOME 软件][9]，与 `apt` 和其他打包技术重叠；我也不打算在这里讨论它们。最后，还有其他 Linux 发行版，例如 [Arch][10] 和 [Gentoo][11] 既不使用 `dnf` 也不使用 `apt`，我也不打算在这里讨论它们！
-
-上面我讲了这么多我不想提及的内容，您可能怀疑 `apt` 到底还能处理多少软件。这么说吧，在我的 Ubuntu 20.04 上，`apt` 可以让我使用 69,371 个软件包，从 `0ad` ，一款古代战争题材的即时战略游戏，到 `zzuf`，一个透明的应用程序输入模糊器。一点也不差。
+上面我讲了这么多我不想提及的内容，你可能怀疑 `apt` 到底还能处理多少软件。这么说吧，在我的 Ubuntu 20.04 上，`apt` 可以让我使用 69,371 个软件包，从 `0ad`（一款古代战争题材的即时战略游戏）到 `zzuf`（一个透明的应用程序模糊测试工具），一点也不差。
 
 ### 使用 apt 搜索软件
 
 使用 `apt` 软件包管理器的第一步是找到感兴趣的软件包。Seth 的 `dnf` 文章以 [Cockpit][12] 服务器管理应用程序为例。用 `apt` 我会输入如下命令：
-
 
 ```
 $ apt search cockpit
@@ -50,9 +49,8 @@ $
 
 上面的第二个包就是你要的那个（以 `cockpit/hirsute` 开头的那一行）。如果你决定要安装它，输入：
 
-
 ```
-`$ sudo apt install cockpit`
+$ sudo apt install cockpit
 ```
 
 `apt` 将负责安装 Cockpit 以及使其工作所需的所有部件或 _依赖_。有时我们不太确定这是我们所需要的。了解更多的信息可能有助于你决定是否真的要安装此应用程序。
@@ -61,7 +59,6 @@ $
 
 要了解有关软件包的更多信息，使用 `apt show` 命令：
 
-
 ```
 $ apt show cockpit
 Package: cockpit
@@ -69,22 +66,22 @@ Version: 238-1
 Priority: optional
 Section: universe/admin
 Origin: Ubuntu
-Maintainer: Ubuntu Developers &lt;[ubuntu-devel-discuss@lists.ubuntu.com][13]&gt;
-Original-Maintainer: Utopia Maintenance Team &lt;[pkg-utopia-maintainers@lists.alioth.debian.org][14]&gt;
-Bugs: <https://bugs.launchpad.net/ubuntu/+filebug>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
 Installed-Size: 88.1 kB
-Depends: cockpit-bridge (&gt;= 238-1), cockpit-ws (&gt;= 238-1), cockpit-system (&gt;= 238-1)
-Recommends: cockpit-storaged (&gt;= 238-1), cockpit-networkmanager (&gt;= 238-1), cockpit-packagekit (&gt;= 238-1)
-Suggests: cockpit-doc (&gt;= 238-1), cockpit-pcp (&gt;= 238-1), cockpit-machines (&gt;= 238-1), xdg-utils
-Homepage: <https://cockpit-project.org/>
+Depends: cockpit-bridge (>= 238-1), cockpit-ws (>= 238-1), cockpit-system (>= 238-1)
+Recommends: cockpit-storaged (>= 238-1), cockpit-networkmanager (>= 238-1), cockpit-packagekit (>= 238-1)
+Suggests: cockpit-doc (>= 238-1), cockpit-pcp (>= 238-1), cockpit-machines (>= 238-1), xdg-utils
+Homepage: https://cockpit-project.org/
 Download-Size: 21.3 kB
-APT-Sources: <http://ca.archive.ubuntu.com/ubuntu> hirsute/universe amd64 Packages
+APT-Sources: http://ca.archive.ubuntu.com/ubuntu hirsute/universe amd64 Packages
 Description: Web Console for Linux servers
- The Cockpit Web Console enables users to administer GNU/Linux servers using a
- web browser.
- .
- It offers network configuration, log inspection, diagnostic reports, SELinux
- troubleshooting, interactive command-line sessions, and more.
+ The Cockpit Web Console enables users to administer GNU/Linux servers using a
+ web browser.
+ .
+ It offers network configuration, log inspection, diagnostic reports, SELinux
+ troubleshooting, interactive command-line sessions, and more.
 
 $
 ```
@@ -95,7 +92,6 @@ $
 
 有时你并不知道包名，但你知道包里一定包含着的某个文件。Seth 以 `qmake-qt5` 程序作为示例。使用 `apt search` 找不到它：
 
-
 ```
 $ apt search qmake-qt5
 Sorting... Done
@@ -104,7 +100,6 @@ $
 ```
 
 但是，另一个有关联的命令 `apt-file` 可以用来探索包内部：
-
 
 ```
 $ apt-file search qmake-qt5
@@ -117,7 +112,6 @@ $
 ### 包里包含哪些文件？
 
 方便的 `apt-file` 命令会列出给定的包中包含哪些文件。例如：
-
 
 ```
 $ apt-file list cockpit
@@ -136,29 +130,29 @@ $
 
 你还可以使用 `apt` 移除软件包。例如，要移除`apt-file` 应用程序：
 
-
 ```
-`$ sudo apt purge apt-file`
+$ sudo apt purge apt-file
 ```
 
 注意必须由超级用户运行 `apt` 才能安装或移除应用程序。
 
 移除一个包并不会自动移除 `apt` 在此过程中安装的所有依赖项。不过，一点点的工作就很容易去除这些残留：
 
-
 ```
-`$ sudo apt autoremove`
+$ sudo apt autoremove
 ```
 
 ### 认识一下 apt
 
 正如 Seth 所写的，“你对包管理器的工作方式了解得越多，在需要安装和查询应用程序时就会越容易。”
 
-即便你不是 `apt` 的重度使用者，当你需要在命令行中安装或删除软件包时（例如，在一台远程服务器上或遵循某些热心肠发布的操作指南时），掌握一些 apt 的知识也会很有用。在某些软件创作者仅提供了一个裸 `.pkg` 文件的情况下，可能还需要了解一些关于 Dkpg 的知识（如上所述）。
+即便你不是 `apt` 的重度使用者，当你需要在命令行中安装或删除软件包时（例如，在一台远程服务器上或遵循某些热心肠发布的操作指南时），掌握一些 `apt` 的知识也会很有用。在某些软件创作者仅提供了一个裸 `.pkg` 文件的情况下，可能还需要了解一些关于 dpkg 的知识（如上所述）。
 
 我发现 Synaptic 包管理器在我的桌面上是一个非常有用的工具，但出于各种目的，我也在少数维护的服务器上使用着 `apt`。
 
-**[下载我们的 `apt` 速查表][15]** 习惯该命令并尝试一些新技巧。一旦你这样做了，你可能会发现很难再使用其他任何东西。
+[下载我们的 apt 速查表][15] 习惯该命令并尝试一些新技巧。一旦你这样做了，你可能会发现很难再使用其他任何东西。
+
+> **[apt 速查表][15]**
 
 --------------------------------------------------------------------------------
 
@@ -167,7 +161,7 @@ via: https://opensource.com/article/21/6/apt-linux
 作者：[Chris Hermansen][a]
 选题：[lujun9972][b]
 译者：[hanszhao80](https://github.com/hanszhao80)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -175,7 +169,7 @@ via: https://opensource.com/article/21/6/apt-linux
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bash_command_line.png?itok=k4z94W2U (bash logo on green background)
 [2]: https://opensource.com/article/21/2/linux-package-management
-[3]: https://opensource.com/article/21/5/dnf
+[3]: https://linux.cn/article-14542-1.html
 [4]: https://www.nongnu.org/synaptic/
 [5]: https://wiki.debian.org/Aptitude
 [6]: https://wiki.debian.org/Teams/Dpkg
