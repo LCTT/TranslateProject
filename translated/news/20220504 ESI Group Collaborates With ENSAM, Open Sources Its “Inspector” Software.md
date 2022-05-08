@@ -7,8 +7,6 @@
 [#]: publisher: " "
 [#]: url: " "
 
-======
-
 ESI 集团同 ENSAM 合作，开源其”Inpsector“软件
 ======
 
