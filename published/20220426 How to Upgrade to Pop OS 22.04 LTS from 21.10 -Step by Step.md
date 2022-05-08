@@ -7,12 +7,12 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-14561-1.html"
 
-分步指南：从 Pop OS 21.10 更新到 Pop OS 22.02 LTS
+分步指南：从 Pop OS 21.10 更新到 Pop OS 22.04 LTS
 ======
 
 ![](https://img.linux.net.cn/data/attachment/album/202205/08/094819p7c49e1fc9b4vc15.jpg)
 
-> 从 Pop OS 21.10 升级到 Pop OS 22.02 LTS 的简单步骤。
+> 从 Pop OS 21.10 升级到 Pop OS 22.04 LTS 的简单步骤。
 
 System76 跟着 [Ubuntu 22.04 LTS][2] [发布][1] 了 Pop OS 22.04 LTS ，它带来了一些令人兴奋的功能。Pop OS 22.04 LTS 是来自 System76 发布的长期支持版本，它带来了自动计划更新、自定义的 GNOME 42、底层性能改进和 [许多其它的功能][3]。
 
