@@ -1,4 +1,4 @@
-zxcv545 is translating
+
 
 [#]: subject: "Nvidia Begins To Set The Foundation For Future Open And Parallel Coding"
 [#]: via: "https://www.opensourceforu.com/2022/05/nvidia-begins-to-set-the-foundation-for-future-open-and-parallel-coding/"
@@ -9,25 +9,25 @@ zxcv545 is translating
 [#]: publisher: " "
 [#]: url: " "
 
-Nvidia Begins To Set The Foundation For Future Open And Parallel Coding
+Nvidia 开始着手为未来的开放和并行编程建立基础。
 ======
 ![Nvidia_logo_angled_shutterstock][1]
 
-As graphics processors become more common in computers, Nvidia is expanding its collaboration with standards and open source communities to include downstream technologies that were previously limited to the company’s development tools. A lot of effort is being put into programming languages like C++ and Fortran, which are thought to lag behind native implementation when it comes to executing code on highly parallel computers.
+随着图形处理器在计算机里变得越来越常见，Nvidia 正在扩大与标准和开源社区的合作，以便于包括先前仅限于公司开发工具的下游技术。在 C++ 和 Fortran 等被认为在高度并行的计算机上执行代码时落后于本机实现的编程语言投入了大量精力。
 
-Nvidia’s CUDA parallel programming framework, which combines open and proprietary libraries, is responsible for many of the technologies being opened up and mainstreamed. In 2007, CUDA was introduced as a set of programming tools and frameworks for programmers to develop GPU-based systems. However, as GPU utilisation grew in more applications and sectors, the CUDA philosophy shifted.
+Nvidia 的结合了开放和专有库的 CUDA 并行编程框架影响了许多正在开放和主流化的技术。在 2007 年，CUDA 作为一个为程序员开发基于 GPU 的系统的一系列编程工具和框架而推出。然而，随着 GPU 利用率在更多应用程序和领域中的增长，CUDA 理念发生了转变。
 
-Nvidia is best recognised for its GPU dominance, but CUDA is at the heart of the company’s rebranding as a software and services supplier targeting a $1 trillion market cap. Nvidia’s long-term ambition is to become a full-stack provider with a focus on specific fields such as autonomous driving, quantum computing, health care, robotics, cybersecurity, and quantum computing.
+Nvidia 因其在 GPU 上的主导地位而广为人知，但 CUDA 是这家以1万亿市值为目标的软件和服务供应商重塑品牌的核心。Nvidia 的长期目标是成为一个全栈提供商，专注于，自动驾驶、量子全栈提供商计算、医疗保健、机器人、网络安全和量子计算等特定领域。
 
-Nvidia has created dedicated CUDA libraries in certain domains, as well as the hardware and services that businesses can use. The concept of a “AI factory,” announced by CEO Jensen Huang at the recent GPU Technology Conference, best exemplifies the full-stack strategy. Customers can drop applications into Nvidia’s mega datacenters, with the result being a customised AI model tailored to specific industry or application needs.
+Nvidia 在特定领域创建了专用的 CUDA 库，以及企业和可以使用的硬件和服务。CEO 黄仁勋在最近的 GPU 技术大会上宣布「AI 工厂」概念，最能体现全栈战略。客户可以将应用程序放入 Nvidia 的大型数据中心，从而获得针对特定行业或应用程序需求量身定制的定制 AI 模型。
 
-Nvidia may profit from AI factory principles in two ways: by utilising GPU capacity or by utilising domain-specific CUDA libraries. On Nvidia GPUs, programmers can use open source parallel programming frameworks such as OpenCL. CUDA, on the other hand, will deliver that extra last-mile increase for those willing to invest because it is tuned to operate closely with Nvidia’s GPU.
+Nvidia 可以通过两种方式从 AI 工厂原则中受益：利用 GPU 容量或利用特定领域的 CUDA 库。在 Nvidia GPU 上，程序员可以使用 OpenCL 等开源并行编程框架。 另一方面，CUDA 将为那些愿意投资的人提供额外的最后一英里增长，因为其已转向与 Nvidia 的 GPU 密切合作。
 
-While parallel programming is common in high-performance computing, Nvidia’s goal is to make it a norm in mainstream computing. The company is assisting in the standardisation of best-in-class tools for writing parallel code that is portable across hardware platforms regardless of brand, accelerator type, or parallel programming framework.
+虽然并行编程在高性能计算中很常见常见，但Nvidia的目标是让其成为主流计算的标准。该公司正在协助实现一流工具的标准化，无论品牌、加速器类型或并行编程框架是什么，都可以编写可跨硬件平台移植的并行代码。
 
-For one thing, Nvidia is a member of a C++ group that is building the groundwork for simultaneous execution of portable code across hardware. A context could be a CPU thread that primarily performs IO or a CPU or GPU thread that does demanding computation. Nvidia is particularly engaged in delivering C++ programmers a standard language and infrastructure for asynchrony and parallelism.
+一方面，Nvidia 是 C++ 小组的成员，该小组正在为跨硬件同时执行可移植代码奠定基础。 上下文可以是主要执行 IO 的 CPU 线程，也可以是执行高要求计算的 CPU 或 GPU 线程。 Nvidia 特别致力于为 C++ 程序员提供异步和并行的标准语言和基础设施。
 
-The first work focused on the memory model, which was incorporated in C++ 11, but had to be updated when parallelism and concurrency became more prevalent. C++ 11’s memory model emphasised concurrent execution across multicore CPUs, but it lacked parallel programming hooks. The C++ 17 standard laid the foundation for higher-level parallelism features, but real portability will have to wait for future standards. C++ 20 is the current standard, with C++ 23 on the horizon.
+第一项工作侧重于内存模型，该模型已合并到 C++ 11 中，但当并行性和并发性变得更加普遍时，必须对其进行更新。 C++ 11 的内存模型强调跨多核 CPU 的并发执行，但它缺乏并行编程钩子。 C++ 17 标准为更高级别的并行特性奠定了基础，但真正的可移植性必须等待未来的标准。 C++ 20 是当前标准，C++ 23 即将推出。
 
 --------------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ via: https://www.opensourceforu.com/2022/05/nvidia-begins-to-set-the-foundation-
 
 作者：[Laveesh Kocher][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/zxcv545)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
