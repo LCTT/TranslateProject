@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "hwlife"
 [#]: reviewer: "turbokernel, wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14567-1.html"
 
 怎样在 Ubuntu Linux 中移除 Snap 软件包
 ======
