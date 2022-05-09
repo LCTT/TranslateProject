@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "zxcv545"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14565-1.html"
 
 英伟达开始着手为未来的开放和并行编程建立基础
 ======
