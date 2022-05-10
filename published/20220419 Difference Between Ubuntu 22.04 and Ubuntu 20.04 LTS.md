@@ -88,11 +88,11 @@ Ubuntu 的默认安装程序并没有看到太多变化。我们其实更希望�
 
 ![Take Screenshot option in top bar menu][17]
 
-#### 8、 Firfox 浏览器成为了 Snap 版本
+#### 8、 Firefox 浏览器成为了 Snap 版本
 
-此外，Firfox 浏览器在本次更新中变成了 Snap 版本。而此前在 20.04 LTS 中，Firfox 浏览器以 deb 包形式呈现。这对于一般用户而言区别不大。
+此外，Firefox 浏览器在本次更新中变成了 Snap 版本。而此前在 20.04 LTS 中，Firefox 浏览器以 deb 包形式呈现。这对于一般用户而言区别不大。
 
-但是 Firfox 浏览器的 Snap 沙箱运行模式使得安装 GNOME 扩展工具时会产生问题，同时在同等硬件条件之下相较于之前的版本会显得更慢。
+但是 Firefox 浏览器的 Snap 沙箱运行模式使得安装 GNOME 扩展工具时会产生问题，同时在同等硬件条件之下相较于之前的版本会显得更慢。
 
 这个最为常用的应用的 Snap 迁移所带来的后续影响我们将拭目以待。
 
