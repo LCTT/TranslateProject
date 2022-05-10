@@ -26,10 +26,9 @@ As a simple example, we might ask the user a question and read the result into a
 #include <stdio.h>
 #include <string.h>
 
-int
-main()
+int main()
 {
-  char city[10];                       // Such as "Chicago"
+  char city[10]; // Such as "Chicago"
 
   // this is bad .. please don't use gets
 
