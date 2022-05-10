@@ -2,7 +2,7 @@
 [#]: via: "https://ruthikegah.xyz/a-beginners-guide-to-open-source"
 [#]: author: "Ruth Ikegah https://hashnode.com/@ikegah_ruth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
