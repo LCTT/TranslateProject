@@ -202,10 +202,10 @@ else {
 Rust
 ```rust
 _ if guess < random => println!("Too low"),
-    _ if guess > random => println!("Too high"),
-    _ => {
-        println!("That's right");
-        break;
+_ if guess > random => println!("Too high"),
+_ => {
+    println!("That's right");
+    break;
 }
 ```
 
