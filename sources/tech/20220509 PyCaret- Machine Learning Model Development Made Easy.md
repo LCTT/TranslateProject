@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/pycaret-machine-learning-model-development-made-easy/"
 [#]: author: "S Ratan Kumar https://www.opensourceforu.com/author/s-ratan/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
