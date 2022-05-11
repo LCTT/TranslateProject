@@ -3,22 +3,22 @@
 [#]: author: "Sarah Wall https://opensource.com/users/sarahwall"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14581-1.html"
 
 你为什么应该选择专注而非一心多用
 ======
-如果你有时候会感觉大脑处于停滞状态，那么你可能正在遭受一心多用和决策疲劳。
 
-![][1]
-(图源：Pixabay，经 Opensource.com 修改，CC BY-SA 4.0)
+> 如果你有时候会感觉大脑处于停滞状态，那么你可能正在遭受一心多用和决策疲劳。
+
+![](https://img.linux.net.cn/data/attachment/album/202205/11/232939ixz3xfnhwxn5oz2i.jpg)
 
 想象一下，你刚完成了日常工作，坐在电脑前，手里拿着晨间咖啡，正准备开始新的一天。突然，一条 Slack 消息弹了出来，你扫了一眼邮件，然后切回 Slack。你打开日历，看看下一次会议是什么时候，令你惊讶的是，它 15 分钟后就要开始了！你回到办公桌前，开始检查待办事项，想看看在这短短 15 分钟内还能给自己安排什么任务，但不巧的是，这时你的一个同事请求你帮他解决一个问题。大半天就这样过去了，而你根本没有意识到……
 
 我的许多日子都是这样度过的，不断地多个任务之间徘徊。有些时候，我发现自己盯着电脑，大脑完全停滞。如果你也发现自己处于这种情况，这可能是你的大脑发出的信号，提醒你休息一下。你可能正在遭受一心多用和决策疲劳。
 
-平均而言，成年人每天要做大约 [35000 个决定][2]! 它们可以是简单的决定，如吃什么或穿什么，也可以是需要更多思考的决定，如下一个假期去哪里或从事哪个职业。每天你都面临着大量的选择，它们占据了你的头脑。
+平均而言，成年人每天要做大约 [35000 个决定][2]！它们可能是简单的决定，如吃什么或穿什么，也可能是需要更多思考的决定，如下一个假期去哪里或从事哪个职业。每天你都面临着大量的选择，它们占据了你的头脑。
 
 ### 分散注意力的一心多用
 
@@ -70,7 +70,7 @@ via: https://opensource.com/article/19/4/mindfulness-over-multitasking
 作者：[Sarah Wall][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
