@@ -12,7 +12,7 @@ Fedora Linux 36 发布
 
 ![](https://img.linux.net.cn/data/attachment/album/202205/11/162224g07rzfbbniwbrgbn.jpg)
 
-今天（5 月 6 日），我很高兴与大家分享一个消息，它是成千上万的 Fedora 项目贡献者辛勤工作的成果：我们的最新版本 —— Fedora Linux 36，和大家见面了！
+今天，我很高兴与大家分享一个消息，它是成千上万的 Fedora 项目贡献者辛勤工作的成果：我们的最新版本 —— Fedora Linux 36，和大家见面了！
 
 ### 由社区开发，为社区服务
 
