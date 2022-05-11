@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/announcing-fedora-36/"
 [#]: author: "Matthew Miller https://fedoramagazine.org/author/mattdm/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
