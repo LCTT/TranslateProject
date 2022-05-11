@@ -11,6 +11,7 @@ How to Upgrade to Fedora 36 from Fedora 35 Workstation (GUI and CLI Method)
 ======
 COMPLETE STEPS TO UPGRADE TO FEDORA 36 FROM FEDORA 35 WORKSTATION
 EDITION WITH GUI AND CLI METHOD.
+
 Fedora 36 brings several important features such as the beautiful GNOME 42, Linux Kernel 5.17, default font changes and many stunning features. Moreover, Fedora 36 also brings Wayland display server as the default NVIDIA proprietary driver. Plus several other significant changes that Fedora 36 brings, which you can read here in our [top 10 feature coverage][1].
 
 If you plan to upgrade to Fedora 36 from Fedora 35 workstation edition, here are the steps you need to perform.
@@ -28,9 +29,7 @@ However, before you get excited to upgrade, there is some housekeeping that you 
 Firstly, Open GNOME Software and check for any pending updates. Or, open a terminal and run the following command to ensure that your system is up-to-date.
 
 ```
-
     sudo dnf update
-
 ```
 
 After the above command is complete, reboot your system to ensure all the updates are applied.
@@ -64,9 +63,7 @@ If you are comfortable with the command line, you can use the dnf upgrade comman
 Open up the terminal and run the below command:
 
 ```
-
     sudo dnf upgrade --refresh
-
 ```
 
 This command will refresh the packages for the new upgrade stream to get ready for Fedora 36.
@@ -74,45 +71,37 @@ This command will refresh the packages for the new upgrade stream to get ready f
 Next, install the dnf upgrade plugin by running the below command. This is required for the upgrade process.
 
 ```
-
     sudo dnf install dnf-plugin-system-upgrade
-
 ```
 
 Make sure your system is up-to-date by running the below command and installing any necessary pending updates. Do it once again (if you have done it via pre-upgrade steps)
 
 ```
-
     sudo dnf --refresh upgrade
-
 ```
 
 Initiate the download process by running the below command. This command will fetch all required packages and save them locally before the upgrade.
 
 ```
-
     sudo dnf system-upgrade download --releasever=36
-
 ```
 
 If you installed many packages and applications manually and are unsure whether they are correctly supported by Fedora 36, run the above command with “–allowerasing” flag. When you provide this, dnf will remove the packages that are blockers for your system upgrade.
 
 The above command displays what will be replaced, updated, upgraded, or downgraded. Carefully glance through the list if you want to review the list. Or, you can check the red-marked items and start the upgrade process—something like below.
 
-![Fedora 36 upgrade via CLI][2]
+![Fedora 36 upgrade via CLI][6]
 
-![Review the RED marked items][2]
+![Review the RED marked items][7]
 
-![Start the Fedora 36 Upgrade from CLI][2]
+![Start the Fedora 36 Upgrade from CLI][8]
 
 Remember, the download size ideally is in GB, so that it might take some time based on your internet speed.
 
 After the above command is complete, run the below command to start the upgrade.
 
 ```
-
     sudo dnf system-upgrade reboot
-
 ```
 
 The system will reboot automatically and wait until the entire upgrade process completes. As I mentioned earlier, this might take time in terms of hours, depending on your system hardware. Hence be patient.
@@ -120,31 +109,6 @@ The system will reboot automatically and wait until the entire upgrade process c
 You will be greeted with a brand new Fedora 36 system if all goes well.
 
 Good luck! 🤞
-
-* * *
-
-We bring the latest tech, software news and stuff that matters. Stay in touch via [Telegram][6], [Twitter][7], [YouTube][8], and [Facebook][9] and never miss an update!
-
-#### Share this:
-
-  * [Twitter][10]
-
-  * [Facebook][11]
-
-  * [Print][12]
-
-  * [LinkedIn][13]
-
-  * [Reddit][14]
-
-  * [Telegram][15]
-
-  * [WhatsApp][16]
-
-  * [Email][17]
-
-  *
-
 
 --------------------------------------------------------------------------------
 
@@ -160,19 +124,10 @@ via: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/
 [a]: https://www.debugpoint.com/author/admin1/
 [b]: https://github.com/lujun9972
 [1]: https://www.debugpoint.com/2021/04/fedora-34-features/
-[2]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+[2]: https://www.debugpoint.com/wp-content/uploads/2022/05/Fedora-36-Workstation-Desktop2.jpg
 [3]: https://flathub.org/apps/details/org.gnome.Extensions
 [4]: https://fedoraproject.org/wiki/Common_F36_bugs
 [5]: https://ask.fedoraproject.org/tags/c/common-issues/141/none/f36/l/latest
-[6]: https://t.me/debugpoint
-[7]: https://twitter.com/DebugPoint
-[8]: https://www.youtube.com/c/debugpoint?sub_confirmation=1
-[9]: https://facebook.com/DebugPoint
-[10]: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/?share=twitter (Click to share on Twitter)
-[11]: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/?share=facebook (Click to share on Facebook)
-[12]: tmp.qWNnWrQWsn#print (Click to print)
-[13]: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/?share=linkedin (Click to share on LinkedIn)
-[14]: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/?share=reddit (Click to share on Reddit)
-[15]: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/?share=telegram (Click to share on Telegram)
-[16]: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/?share=jetpack-whatsapp (Click to share on WhatsApp)
-[17]: https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/?share=email (Click to email this to a friend)
+[6]: https://www.debugpoint.com/wp-content/uploads/2022/05/Fedora-36-upgrade-via-CLI.jpg
+[7]: https://www.debugpoint.com/wp-content/uploads/2022/05/Review-the-RED-marked-items.jpg
+[8]: https://www.debugpoint.com/wp-content/uploads/2022/05/Start-the-Fedora-36-Upgrade-from-CLI.jpg
