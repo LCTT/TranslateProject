@@ -18,12 +18,10 @@ The latest release of Fedora Workstation 36 continues the Fedora Project’s ong
 
 Fedora Workstation 36 includes the latest version of the GNOME desktop environment. GNOME 42 includes many improvements and new features. Just some of the improvements include:
 
-  * Significantly improved input handling, resulting in lower input latency and improved responsiveness when the system is under load. This is particularly beneficial for games and graphics applications.
-  * The Wayland session is now the default for those who use Nvidia’s proprietary graphics driver.
-  * A universal dark mode is now available.
-  * A new interface has been added for taking screenshots and screen video recordings.
-
-
+* Significantly improved input handling, resulting in lower input latency and improved responsiveness when the system is under load. This is particularly beneficial for games and graphics applications.
+* The Wayland session is now the default for those who use Nvidia’s proprietary graphics driver.
+* A universal dark mode is now available.
+* A new interface has been added for taking screenshots and screen video recordings.
 
 In addition, many of the core apps have been ported to GTK 4, and the shell features a number of subtle refinements.
 
@@ -51,12 +49,10 @@ Now, pressing Print Screen presents you with an all-new user interface that allo
 
 GNOME’s core applications have seen a number of improvements. A number of them have been ported to GTK 4 and use libadwaita, a new widget library that implements GNOME’s Human Interface Guidelines.
 
-  * Files now includes the ability to sort files by creation date, and includes some visual refinements, such as a tweaked headerbar design and file renaming interface.
-  * The Software app now includes a more informative update interface, and more prominently features GNOME Circle apps.
-  * The Settings app now has a more visually appealing interface matching the visual tweaks present throughout GNOME Shell.
-  * Text Editor replaces Gedit by default. Text Editor is an all-new app built in GTK 4 and libadwaita. You can always reinstall Gedit by searching for it in the Software app.
-
-
+* Files now includes the ability to sort files by creation date, and includes some visual refinements, such as a tweaked headerbar design and file renaming interface.
+* The Software app now includes a more informative update interface, and more prominently features GNOME Circle apps.
+* The Settings app now has a more visually appealing interface matching the visual tweaks present throughout GNOME Shell.
+* Text Editor replaces Gedit by default. Text Editor is an all-new app built in GTK 4 and libadwaita. You can always reinstall Gedit by searching for it in the Software app.
 
 #### Wayland support on Nvidia’s proprietary graphics driver
 
@@ -66,11 +62,9 @@ If you experience issues with the Wayland session, you can always switch back to
 
 ### Under-the-hood changes throughout Fedora Linux 36
 
-  * When installing or upgrading packages with DNF or PackageKit, weak dependencies that have been manually removed will no longer be reinstalled. That is to say: if _foo_ is installed and it has _bar_ as a weak dependency, and _bar_ is then removed, _bar_ will not be reinstalled when _foo_ is updated.
-  * The Noto fonts are now used by default for many languages. This provides greater coverage for different character sets. For users who write in the Malayalam script, the new Meera and RIT Rachana fonts are now the default.
-  * systemd messages now include unit names by default rather than just the description, making troubleshooting easier.
-
-
+* When installing or upgrading packages with DNF or PackageKit, weak dependencies that have been manually removed will no longer be reinstalled. That is to say: if _foo_ is installed and it has _bar_ as a weak dependency, and _bar_ is then removed, _bar_ will not be reinstalled when _foo_ is updated.
+* The Noto fonts are now used by default for many languages. This provides greater coverage for different character sets. For users who write in the Malayalam script, the new Meera and RIT Rachana fonts are now the default.
+* systemd messages now include unit names by default rather than just the description, making troubleshooting easier.
 
 ![systemd messages shows unit names by default][5]
 
@@ -82,10 +76,8 @@ You can upgrade your system through GNOME Software, via _[dnf system-upgrade][6]
 
 There are always cool things happening in the Fedora Project!
 
-  * The social links in the upper right corner on Fedora Magazine now include our official [Fedora YouTube prescence][8], [Fedora Matrix homeserver][9], and the [Fedora Discussion][10] website!
-  * Fedora Discussion has been lightly renovated! Come and chat with us! ☺️
-
-
+* The social links in the upper right corner on Fedora Magazine now include our official [Fedora YouTube prescence][8], [Fedora Matrix homeserver][9], and the [Fedora Discussion][10] website!
+* Fedora Discussion has been lightly renovated! Come and chat with us! ☺️
 
 --------------------------------------------------------------------------------
 
