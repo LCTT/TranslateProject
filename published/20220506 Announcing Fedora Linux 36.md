@@ -3,16 +3,16 @@
 [#]: author: "Matthew Miller https://fedoramagazine.org/author/mattdm/"
 [#]: collector: "lujun9972"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14579-1.html"
 
 Fedora Linux 36 发布
 ======
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202205/11/162224g07rzfbbniwbrgbn.jpg)
 
-今天，我很高兴与大家分享一个消息，它是成千上万的 Fedora 项目贡献者辛勤工作的成果：我们的最新版本 —— Fedora Linux 36，和大家见面了！
+今天（5 月 6 日），我很高兴与大家分享一个消息，它是成千上万的 Fedora 项目贡献者辛勤工作的成果：我们的最新版本 —— Fedora Linux 36，和大家见面了！
 
 ### 由社区开发，为社区服务
 
@@ -32,7 +32,7 @@ Fedora 工作站专注于桌面体验，尤其是面向那些希望获得“刚�
 
 如果你使用了英伟达的专有图形驱动，你的桌面会话现在将默认使用 Wayland 协议。这使你能够在使用现代桌面管理器时，充分利用硬件加速。
 
-当然，我们生产的不仅仅是版本。[Fedora Spins][4] 和 [Labs][5] 针对不同的受众和使用场景。例如 [Fedora Comp Neuro][6] ，它为计算神经科学提供工具，以及 [Fedora LXQt][7]，它提供一个轻量级的桌面环境。并且，我们附加了可选架构：[ARM AArch64、Power 和 S390x][8]。
+当然，我们生产的不仅仅是 “Editions”。[Fedora Spins][4] 和 [Labs][5] 针对不同的受众和使用场景。例如 [Fedora Comp Neuro][6] ，它为计算神经科学提供工具，以及 [Fedora LXQt][7]，它提供一个轻量级的桌面环境。并且，我们附加了可选架构：[ARM AArch64、Power 和 S390x][8]。
 
 ### 针对系统管理员的改进
 
@@ -44,9 +44,9 @@ Fedora Linux 36 包含最新的 Ansible 版本。Ansible 5 将“引擎”拆分
 
 无论你使用 Fedora Linux 的哪个衍生版，你都会得到开源世界所提供的最新成果。Podman 4.0 将在 Fedora Linux 36 中首次全面发布。它带来了大量变化和一个全新的网络栈。不过，它也带来了向下**不兼容**的 API 变化，所以请仔细阅读 [上游文档][11]。
 
-遵循 Fedora 的“[<ruby>争先<rt>First</rt></ruby>][12]”理念，我们已经更新了关键的编程语言和系统库包，包括 Ruby 3.1、Golang 1.18 和 PHP 8.1。 
+遵循 Fedora 的 “<ruby>[争先][12]<rt>First</rt></ruby>” 理念，我们已经更新了关键的编程语言和系统库包，包括 Ruby 3.1、Golang 1.18 和 PHP 8.1。 
 
-我们很高兴你能试用新版本！请访问 [https://getfedora.org](https://getfedora.org) 并立即下载它吧！或者，如果你正在使用 Fedora Linux，请遵循我们的 [简易升级说明][13]。想了解更多关于 Fedora Linux 36 新功能的信息，请查看 [发行说明][14]。
+我们很高兴你能试用新版本！请访问 [https://getfedora.org](https://getfedora.org) 并立即下载它吧！或者，如果你正在使用 Fedora Linux，请按照我们的 [简易升级说明][13] 进行。想了解更多关于 Fedora Linux 36 新功能的信息，请查看 [发行说明][14]。
 
 ### 虽然不大可能会出现问题……
 
@@ -63,7 +63,7 @@ via: https://fedoramagazine.org/announcing-fedora-36/
 作者：[Matthew Miller][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
