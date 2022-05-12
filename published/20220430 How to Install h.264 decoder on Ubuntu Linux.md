@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "hwlife"
 [#]: reviewer: "turbokernel"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14583-1.html"
 
 在 Ubuntu Linux 如何安装 H.264 解码器
 ======
