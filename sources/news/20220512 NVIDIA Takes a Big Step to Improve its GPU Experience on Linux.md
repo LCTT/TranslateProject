@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/nvidia-open-source-linux/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chunyang.wen"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
