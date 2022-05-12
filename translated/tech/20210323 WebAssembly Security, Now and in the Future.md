@@ -17,11 +17,11 @@ WebAssembly 安全的现在和未来
 
 ### WebAssembly 跟 JavaScript 很像
 
-在Web浏览器内部，WebAssembly模块由执行JavaScript代码的同一 <ruby>虚拟机<rt>VM</rt></ruby> 管理。因此，WebAssembly 可用于造成与 JavaScript 相同的危害，只是效率更高，并且不易被察觉。由于 JavaScript 是纯文本，运行前需要浏览器的编译，而 WebAssembly 是一种可立即运行的二进制格式，后者运行速度更快，也更难被扫描出（即使用杀毒软件）其中的恶意指令。
+在 Web 浏览器内部，WebAssembly 模块由执行 JavaScript 代码的同一 <ruby>虚拟机<rt>VM</rt></ruby> 管理。因此，WebAssembly 可用于造成与 JavaScript 相同的危害，只是效率更高，并且不易被察觉。由于 JavaScript 是纯文本，运行前需要浏览器的编译，而 WebAssembly 是一种可立即运行的二进制格式，后者运行速度更快，也更难被扫描出（即使用杀毒软件）其中的恶意指令。
 
 WebAssembly 的这种 **代码混淆** 效果已经被用来弹出不受欢迎的广告或打开要求敏感数据的虚假 **技术支持** 窗口。另一个把戏则是自动将浏览器重定向到包含真正危险的恶意软件的 **登陆** 页面。
 
-最后，就像 JavaScript 一样，WebAssembly 可能被用来 **窃取** 处理能力而不是数据。2019 年，[对 150 个不同的 WASM 模块的分析][2]发现，其中约 _32%%d_ 被用于加密货币挖掘。
+最后，就像 JavaScript 一样，WebAssembly 可能被用来 **窃取** 处理能力而不是数据。2019 年，[对 150 个不同的 WASM 模块的分析][2]发现，其中约 _32%_ 被用于加密货币挖掘。
 
 ### WebAssembly 沙箱和接口
 
