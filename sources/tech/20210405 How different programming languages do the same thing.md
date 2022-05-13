@@ -16,12 +16,10 @@ Whenever I start learning a new programming language, I focus on defining variab
 
 To help me practice a new programming language, I like to write a few test programs. One sample program I often write is a simple "guess the number" game, where the computer picks a number between one and 100 and asks me to guess it. The program loops until I guess correctly. This is a very simple program, as you can see using pseudocode like this:
 
-  1. The computer picks a random number between 1 and 100
-  2. Loop until I guess the random number
-    1. The computer reads my guess
-    2. It tells me if my guess is too low or too high
-
-
+* The computer picks a random number between 1 and 100
+* Loop until I guess the random number
+    + The computer reads my guess
+    + It tells me if my guess is too low or too high
 
 Recently, Opensource.com ran an article series that wrote this program in different languages. This was an interesting opportunity to compare how to do the same thing in each language. I also found that most programming languages do things similarly, so learning the next programming language is mostly about learning its differences.
 
@@ -33,59 +31,242 @@ For example, look at how these different programming languages implement the maj
 
 You can see a lot of similarities here. Most of the programming languages generate a random number with a function like `rand()` that you can put into a range on your own. Other languages use a special function where you can specify the range for the random value.
 
-C | Using the Linux `getrandom` system call:
-`getrandom(&randval, sizeof(int), GRND_NONBLOCK); number = randval % maxval + 1;`
+C
+```c
+// Using the Linux `getrandom` system call
+getrandom(&randval, sizeof(int), GRND_NONBLOCK);
+number = randval % maxval + 1;
 
-Using the standard C library:
-`number = rand() % 100 + 1;`
----|---
-C++ | `int number = rand() % 100+1;`
-Rust | `let random = rng.gen_range(1..101);`
-Java | `private static final int NUMBER = r.nextInt(100) + 1;`
-Groovy | `int randomNumber = (new Random()).nextInt(100) + 1`
-JavaScript | `const randomNumber = Math.floor(Math.random() * 100) + 1`
-awk | `randomNumber = int(rand() * 100) + 1`
-Lua | `number = math.random(1,100)`
+// Using the standard C library
+number = rand() % 100 + 1;
+```
+
+C++
+```cpp
+int number = rand() % 100+1;
+```
+
+Rust
+```rust
+let random = rng.gen_range(1..101);
+```
+
+Java
+```java
+private static final int NUMBER = r.nextInt(100) + 1;
+```
+
+Groovy
+```groovy
+int randomNumber = (new Random()).nextInt(100) + 1
+```
+
+JavaScript
+```javascript
+const randomNumber = Math.floor(Math.random() * 100) + 1
+```
+
+awk
+```awk
+randomNumber = int(rand() * 100) + 1
+```
+
+Lua
+```lua
+number = math.random(1,100)
+```
 
 ### Loop until I guess the random number
 
 Loops are usually done with a flow-control block such as `while` or `do-while`. The JavaScript implementation doesn't use a loop and instead updates the HTML page "live" until the user guesses the correct number. Awk supports loops, but it doesn't make sense to loop to read input because awk is based around data pipelines, so it reads input from a file instead of directly from the user. 
 
-C | `do { … } while (guess != number); `
----|---
-C++ | `do { …  } while ( number != guess ); `
-Rust | `for line in std::io::stdin().lock().lines() { … break; } `
-Java | `while ( guess != NUMBER ) { … } `
-Groovy | `while ( … ) { … break; } `
-Lua | ` while ( player.guess ~= number ) do … end`
+C
+```c
+do {
+    …
+} while (guess != number);
+```
+
+C++
+```cpp
+do {
+    …
+} while ( number != guess );
+```
+
+Rust
+```rust
+for line in std::io::stdin().lock().lines() {
+    …
+    break;
+}
+```
+
+Java
+```java
+while ( guess != NUMBER ) {
+    …
+}
+```
+
+Groovy
+```groovy
+while ( … ) {
+    …
+    break;
+}
+```
+
+Lua
+```lua
+while ( player.guess ~= number ) do
+    …
+end
+```
 
 ### The computer reads my guess
 
 Different programming languages handle input differently. So there's some variation here. For example, JavaScript reads values directly from an HTML form, and awk reads data from its data pipeline.
 
-C | `scanf("%d", &guess); `
----|---
-C++ | `cin >> guess; `
-Rust | `let parsed = line.ok().as_deref().map(str::parse::<i64>); if let Some(Ok(guess)) = parsed { … } `
-Java | `guess = player.nextInt(); `
-Groovy | `response = reader.readLine() int guess = response as Integer `
-JavaScript | `let myGuess = guess.value `
-awk | `guess = int($0) `
-Lua | `player.answer = io.read() player.guess = tonumber(player.answer) `
+C
+```c
+scanf("%d", &guess);
+```
+
+C++
+```cpp
+cin >> guess;
+```
+
+Rust
+```rust
+let parsed = line.ok().as_deref().map(str::parse::<i64>);
+if let Some(Ok(guess)) = parsed {
+    …
+}
+```
+
+Java
+```java
+guess = player.nextInt();
+```
+
+Groovy
+```groovy
+response = reader.readLine()
+int guess = response as Integer
+```
+
+JavaScript
+```javascript
+let myGuess = guess.value
+```
+
+awk
+```awk
+guess = int($0)
+```
+
+Lua
+```lua
+player.answer = io.read()
+player.guess = tonumber(player.answer)
+```
 
 ### Tell me if my guess is too low or too high
 
 Comparisons are fairly consistent across these C-like programming languages, usually through an `if` statement. There's some variation in how each programming language prints output, but the print statement remains recognizable across each sample.
 
-C | `    if (guess < number) {       puts("Too low");     }     else if (guess > number) {       puts("Too high");     } …   puts("That's right!");``  `
----|---
-C++ | `  if ( guess > number) { cout << "Too high.\n" << endl; }   else if ( guess < number ) { cout << "Too low.\n" << endl; }   else {     cout << "That's right!\n" << endl;     exit(0);   }``  `
-Rust | `                _ if guess < random => println!("Too low"),                 _ if guess > random => println!("Too high"),                 _ => {                     println!("That's right");                     break;                 } `
-Java | `            if ( guess > NUMBER ) {                 System.out.println("Too high");             } else if ( guess < NUMBER ) {                 System.out.println("Too low");             } else {                 System.out.println("That's right!");                 System.exit(0);             } `
-Groovy | `                  if (guess < randomNumber)                       print 'too low, try again: '                   else if (guess > randomNumber)                       print 'too high, try again: '                   else {                       println "that's right"                       break                   } `
-JavaScript | `      if (myGuess === randomNumber) {         feedback.textContent = "You got it right!"       } else if (myGuess > randomNumber) {         feedback.textContent = "Your guess was " + myGuess + ". That's too high. Try Again!"       } else if (myGuess < randomNumber) {        feedback.textContent = "Your guess was " + myGuess + ". That's too low. Try Again!"      } `
-awk | `            if (guess < randomNumber) {                 printf "too low, try again:"             } else if (guess > randomNumber) {                 printf "too high, try again:"             } else {                 printf "that's right\n"                 exit             } `
-Lua | `  if ( player.guess > number ) then     print("Too high")   elseif ( player.guess < number) then     print("Too low")   else     print("That's right!")     os.exit()   end `
+C
+```c
+if (guess < number) {
+    puts("Too low");
+}
+else if (guess > number) {
+    puts("Too high");
+}
+…
+puts("That's right!");
+```
+
+C++
+```cpp
+if ( guess > number) { cout << "Too high.\n" << endl; }
+else if ( guess < number ) { cout << "Too low.\n" << endl; }
+else {
+    cout << "That's right!\n" << endl;
+    exit(0);
+}
+```
+
+Rust
+```rust
+_ if guess < random => println!("Too low"),
+_ if guess > random => println!("Too high"),
+_ => {
+    println!("That's right");
+    break;
+}
+```
+
+Java
+```java
+if ( guess > NUMBER ) {
+    System.out.println("Too high");
+} else if ( guess < NUMBER ) {
+    System.out.println("Too low");
+} else {
+    System.out.println("That's right!");
+    System.exit(0);
+}
+```
+
+Groovy
+```groovy
+if (guess < randomNumber)
+    print 'too low, try again: '
+else if (guess > randomNumber)
+    print 'too high, try again: '
+else {
+    println "that's right"
+    break
+}
+```
+
+JavaScript
+```javascript
+if (myGuess === randomNumber) {
+    feedback.textContent = "You got it right!"
+} else if (myGuess > randomNumber) {
+    feedback.textContent = "Your guess was " + myGuess + ". That's too high. Try Again!"
+} else if (myGuess < randomNumber) {
+    feedback.textContent = "Your guess was " + myGuess + ". That's too low. Try Again!"
+}
+```
+
+awk
+```awk
+if (guess < randomNumber) {
+    printf "too low, try again:"
+} else if (guess > randomNumber) {
+    printf "too high, try again:"
+} else {
+    printf "that's right\n"
+    exit
+}
+```
+
+Lua
+```lua
+if ( player.guess > number ) then
+    print("Too high")
+elseif ( player.guess < number) then
+    print("Too low")
+else
+    print("That's right!")
+    os.exit()
+end
+```
 
 ### What about non-C-based languages?
 
@@ -93,12 +274,51 @@ Programming languages that are not based on C can be quite different and require
 
 As an example of how these other programming languages can differ, I'll compare just the "if" statement that sees if one value is less than or greater than another and prints an appropriate message to the user.
 
-Racket | `  (cond [(> number guess) (displayln "Too low") (inquire-user number)]         [(< number guess) (displayln "Too high") (inquire-user number)]         [else (displayln "Correct!")])) `
----|---
-Python | `    if guess < random:         print("Too low")     elif guess > random:         print("Too high")     else:         print("That's right!") `
-Elixir | `    cond do       guess < num ->         IO.puts "Too low!"         guess_loop(num)       guess > num ->         IO.puts "Too high!"         guess_loop(num)       true ->         IO.puts "That's right!"     end `
-Bash | `        [ "0$guess" -lt $number ] && echo "Too low"         [ "0$guess" -gt $number ] && echo "Too high" `
-Fortran | `      IF (GUESS.LT.NUMBER) THEN          PRINT *, 'TOO LOW'       ELSE IF (GUESS.GT.NUMBER) THEN          PRINT *, 'TOO HIGH'       ENDIF `
+Racket
+```racket
+(cond [(> number guess) (displayln "Too low") (inquire-user number)]
+    [(< number guess) (displayln "Too high") (inquire-user number)]
+    [else (displayln "Correct!")]))
+```
+
+Python
+```python
+if guess < random:
+    print("Too low")
+elif guess > random:
+    print("Too high")
+else:
+    print("That's right!")
+```
+
+Elixir
+```elixir
+cond do
+    guess < num ->
+        IO.puts "Too low!"
+        guess_loop(num)
+    guess > num ->
+        IO.puts "Too high!"
+        guess_loop(num)
+    true ->
+        IO.puts "That's right!"
+end
+```
+
+Bash
+```bash
+[ "0$guess" -lt $number ] && echo "Too low"
+[ "0$guess" -gt $number ] && echo "Too high" 
+```
+
+Fortran
+```fortran
+IF (GUESS.LT.NUMBER) THEN
+    PRINT *, 'TOO LOW'
+ELSE IF (GUESS.GT.NUMBER) THEN
+    PRINT *, 'TOO HIGH'
+ENDIF 
+```
 
 ### Read more
 
@@ -106,26 +326,22 @@ This "guess the number" game is a great introductory program when learning a new
 
 Learn how to write the "guess the number" game in C and C-like languages:
 
-  * [C][2], by Jim Hall
-  * [C++][3], by Seth Kenlon
-  * [Rust][4], by Moshe Zadka
-  * [Java][5], by Seth Kenlon
-  * [Groovy][6], by Chris Hermansen
-  * [JavaScript][7], by Mandy Kendall
-  * [awk][8], by Chris Hermansen
-  * [Lua][9], by Seth Kenlon
-
-
+* [C][2], by Jim Hall
+* [C++][3], by Seth Kenlon
+* [Rust][4], by Moshe Zadka
+* [Java][5], by Seth Kenlon
+* [Groovy][6], by Chris Hermansen
+* [JavaScript][7], by Mandy Kendall
+* [awk][8], by Chris Hermansen
+* [Lua][9], by Seth Kenlon
 
 And in non-C-based languages:
 
-  * [Racket][10], by Cristiano L. Fontana
-  * [Python][11], by Moshe Zadka
-  * [Elixir][12], by Moshe Zadka
-  * [Bash][13], by Jim Hall
-  * [Fortran][14], by Jim Hall
-
-
+* [Racket][10], by Cristiano L. Fontana
+* [Python][11], by Moshe Zadka
+* [Elixir][12], by Moshe Zadka
+* [Bash][13], by Jim Hall
+* [Fortran][14], by Jim Hall
 
 --------------------------------------------------------------------------------
 
