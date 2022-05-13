@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/use-sudo-linux"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
