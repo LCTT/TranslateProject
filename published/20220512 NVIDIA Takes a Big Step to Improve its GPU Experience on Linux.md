@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "chunyang-wen"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14587-1.html"
 
 英伟达在提升 Linux 上的 GPU 使用体验上迈出了一大步
 =====
