@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/4/apache-druid-open-source-analytics"
 [#]: author: "David Wang https://opensource.com/users/davidwang"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "unigeorge"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -71,7 +71,7 @@ via: https://opensource.com/article/22/4/apache-druid-open-source-analytics
 
 作者：[David Wang][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[unigeorge](https://github.com/unigeorge)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
