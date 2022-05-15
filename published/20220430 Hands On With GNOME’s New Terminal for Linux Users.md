@@ -3,44 +3,50 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14595-1.html"
 
-上手体验 GNOME 为 Linux 用户带来的新终端
+GNOME 新终端程序尝鲜
 ======
 
 几天前，我分享了我 [对新 GNOME 文本编辑器的体验][1]，它是原编辑器 Gedit 的替代品。
 
-但它并不是唯一的应用程序替代品。GNOME 42 还有一个新的终端，叫做 [<ruby>控制台<rt>Console</rt></ruby>][2]。
+但它并不是唯一的应用程序替代品。GNOME 42 还有一个新的终端，叫做 <ruby>[控制台][2]<rt>Console</rt></ruby>。
 
 让我来分享一下 GNOME 提供的这个新终端的新功能，以及它的使用体验吧！
 
-### Console：GNOME 的新终端模拟器
+### 控制台：GNOME 的新终端模拟器
 
-这个新应用程序的目标是提供一个“简单的用户友好的终端模拟器”。它确实“简单”，因为它没有提供以往 GNOME 终端下用户习惯的许多功能。
+这个新应用程序的目标是提供一个“简单的、用户友好的终端模拟器”。它确实“简单”，因为它没有提供以往 GNOME 终端下用户习惯的许多功能。
 
 后面我会继续谈这个话题。让我们先看看 GNOME 控制台的新功能。
 
 #### 桌面通知
 
-Ubuntu 的 GNOME 终端从来没有这个功能，不过我在 elementary 和 Fedora 等发行版中看到过。
+Ubuntu 上的 GNOME 终端从来没有这个功能，不过我在 elementary 和 Fedora 等发行版中看到过。
 
 这是一个很方便的功能，当一个长期运行的命令执行完毕时，终端会发送一个桌面通知。
 
 ![GNOME 控制台的通知][3]
 
-如果你在命令运行的同时，需要做其他事情，那么得到命令完成的通知有助于你保持工作效率。
+如果你在命令正在运行的同时，需要做其他事情，那么得到命令完成的通知有助于你保持工作效率。
 
-#### 进行 root 操作时改变窗口颜色
+#### 进行 root 和 SSH 操作时改变窗口颜色
 
 这很可能是我在其他终端程序中没有见过的独特功能。
 
-当你使用带有 sudo 或 [切换到根用户][4] 的命令时，应用程序窗口会变成红色。
+当你用 `sudo` 运行命令或 [切换到 root 用户][4] 时，应用程序窗口会变成红色。
 
 ![GNOME 控制台在使用 sudo 或 root 用户时变成红色][5]
 
 我想它的目的是警告用户他们正在使用高级权限，因此在运行命令时要小心。
+
+同样，如果你使用 SSH 连接到一个远程服务器，终端应用程序窗口的颜色会变成紫色。
+
+![GNOME 控制台在 SSH 连接时变成紫色][5a]
+
+这也是提醒用户命令正在远程 Linux 机器上运行，而不是在本地机器上运行的好方法。
 
 #### 主题
 
@@ -48,15 +54,25 @@ Ubuntu 的 GNOME 终端从来没有这个功能，不过我在 elementary 和 Fe
 
 ![GNOME 控制台主题][6]
 
-控制台默认使用系统主题，它根据你的操作系统主题而改变中终端配色。如果你不想改变系统主题，你可以使用控制台的浅色/深色选项。
+控制台默认使用系统主题，它根据你的操作系统的深浅主题而改变终端配色。你也可以单独使用控制台的浅色/深色主题，而不用改变系统主题。
 
 关于主题的内容差不多就这些。你可以进行的 [终端定制][7] 并不多。
+
+### 关闭终端窗口时更好的警告
+
+当你试图关闭一个仍在运行的命令时，老的 GNOME 终端也会显示一个警告。
+
+![旧版 GNOME 终端中的警告][7a]
+
+这个警告在新的 GNOME 控制台中稍好一些，因为它也会显示正在运行的命令。
+
+![新版 GNOME 控制台中的警告][7b]
 
 #### 透明界面
 
 GNOME 控制台默认有一个透明界面。在正常模式下，你可以透过它看到一点背景。
 
-例如，你可以从背景程序中看到一些模糊的文字。
+例如，你可以看到背景程序中的一些模糊的文字。
 
 ![GNOME 控制台的透明界面][8]
 
@@ -80,19 +96,19 @@ GNOME 控制台默认有一个透明界面。在正常模式下，你可以透�
 
 ### 在 Ubuntu 22.04 上安装 GNOME 控制台
 
-如果你的发行版使用了未经修改的 GNOME 42，那么它应该默认提供了新终端。
+如果你的发行版使用了原版 GNOME 42，那么它应该默认提供了新终端。
 
 尽管 Ubuntu 22.04 使用的是 GNOME 42，但它仍然使用旧的 GNOME 终端。不过，你可以使用下面的命令来安装新的控制台。
 
-```shell
+```
 sudo apt install gnome-console
 ```
 
 ### 总结
 
-你可能会想，既然我们已经有了一个更好的、功能更强的 GNOME 终端，为什么还要开发一个新的控制台呢？这是因为 GNOME 有了新的设计指南。改造这些应用程序的旧代码库太复杂了，可能也不不大划算，从头开始写反而会更容易，因此你会看到更多的“新的” GNOME 应用程序，如控制台和文本编辑器。
+你可能会想，既然我们已经有了一个更好的、功能更强的 GNOME 终端，为什么还要开发一个新的控制台呢？这是因为 GNOME 有了新的设计指南。改造这些应用程序的旧代码库太复杂了，可能也不大划算，从头开始写反而会更容易，因此你会看到更多的“新的” GNOME 应用程序，如控制台和文本编辑器。
 
-由于这个新的应用程序的目标是让事情更简单，因此它没有提供很多功能。你不能定制它，改变颜色、字体等。由于不支持定制，所以也不需要配
+由于这个新的应用程序的目标是让事情更简单，因此它没有提供很多功能。你不能定制它，改变颜色、字体等。由于不支持定制，所以也不需要配置文件。
 
 对于很少使用终端的人来说，控制台已经够用了。不过，我认为应该增加在输入密码时显示星号的功能。其他 [面向初学者的发行版][12]，如 Mint，就使用了这个功能，从而避免对 Linux 新手用户造成困扰。
 
@@ -105,7 +121,7 @@ via: https://itsfoss.com/gnome-console/
 作者：[Abhishek Prakash][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -116,8 +132,11 @@ via: https://itsfoss.com/gnome-console/
 [3]: https://itsfoss.com/wp-content/uploads/2022/04/notification-from-gnome-console.png
 [4]: https://itsfoss.com/root-user-ubuntu/
 [5]: https://itsfoss.com/wp-content/uploads/2022/04/GNOME-Console-turns-red-when-using-sudo-or-root-800x442.webp
+[5a]: https://itsfoss.com/wp-content/uploads/2022/05/gnome-console-color-change-ssh.png
 [6]: https://itsfoss.com/wp-content/uploads/2022/04/themes-gnome-console.png
 [7]: https://itsfoss.com/customize-linux-terminal/
+[7a]: https://itsfoss.com/wp-content/uploads/2022/05/warning-in-old-gnome-terminal.png
+[7b]: https://itsfoss.com/wp-content/uploads/2022/05/warning-in-new-gnome-console.png
 [8]: https://itsfoss.com/wp-content/uploads/2022/04/transparent-gnome-console.png
 [9]: https://itsfoss.com/wp-content/uploads/2022/04/tabs-GNOME-Console.png
 [10]: https://itsfoss.com/wp-content/uploads/2022/04/search-GNOME-Console.png
