@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/how-to-install-fedora-workstation/"
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
