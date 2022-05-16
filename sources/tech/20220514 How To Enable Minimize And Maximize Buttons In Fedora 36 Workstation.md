@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/how-to-enable-minimize-and-maximize-buttons-in-fedora/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
