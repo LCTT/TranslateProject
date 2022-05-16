@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/how-to-install-multimedia-codecs-in-fedora-linux/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
