@@ -12,6 +12,7 @@ Use Composer to require Git repositories within PHP projects
 This dependency management tool makes it easier to require a repository even when it hasn't been created as a package.
 
 ![young woman working on a laptop][1]
+
 Image by: CC BY 3.0 US Mapbox Uncharted ERG
 
 The dependency management tool [Composer][2] provides multiple ways to include Git repositories within a PHP: Hypertext Preprocessor (PHP) project.
