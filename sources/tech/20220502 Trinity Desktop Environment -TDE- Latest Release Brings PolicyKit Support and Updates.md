@@ -1,7 +1,7 @@
 [#]: subject: "Trinity Desktop Environment (TDE) Latest Release Brings PolicyKit Support and Updates"
 [#]: via: "https://www.debugpoint.com/2022/05/tde-release-r14-0-12/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
-[#]: collector: "lujun9972"
+[#]: collector: "lkxed"
 [#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
@@ -9,8 +9,8 @@
 
 Trinity Desktop Environment (TDE) Latest Release Brings PolicyKit Support and Updates
 ======
-TRINITY DESKTOP ENVIRONMENT (TDE) BRINGS THE LATEST APPLICATION UPDATES,
-BUG FIXES, AND ENHANCEMENTS TO ITS RELEASE TRINITY R14.0.12.
+Trinity Desktop Environment (TDE) brings the latest application updates, bug fixes, and enhancements to its release Trinity R14.0.12.
+
 Trinity Desktop Environment is a Fork of KDE version 3.5 and a continuation of feature updates and bug fixes by a small development team. This independent and standalone desktop project is still alive today for those who believe how excellent the KDE 3 desktop methodology is.
 
 Trinity Desktop Environment release R14.0.12 brings new applications, enhancements and significant bug fixes.
@@ -33,66 +33,55 @@ Among all, other notable core bug fixes include a timeout fix in dbus service st
 
 Furthermore, following the other Linux distribution’s latest releases, TDE R14.0.12 introduces Ubuntu 22.04 LTS Jammy Jellyfish support, dropped support for Debian Jessie and improvements for Gentoo.
 
-All of these changes with some additional updates for developers who build applications for this KDE 3.5 tech can be found in the official changelog of TDE R14.0.12 on this [page][1].
+All of these changes with some additional updates for developers who build applications for this KDE 3.5 tech can be found in the official changelog of TDE R14.0.12 on this [page][4].
 
-Finally, you should be happy to know that Good ol’ Trinity Desktop Environment is available for all mainstream Linux Distribution for installation, including Ubuntu, Fedora, Arch Linux, etc. A list of installation instructions is available [here][4].
+Finally, you should be happy to know that Good ol’ Trinity Desktop Environment is available for all mainstream Linux Distribution for installation, including Ubuntu, Fedora, Arch Linux, etc. A list of installation instructions is available [here][5].
 
-As always, make sure to check out the official [contribution][5] page to help the dev team with your expertise and capacity.
+#### Installing TDE in Ubuntu 22.04 LTS
 
-_Via Release [announcement][1]_
+Open a terminal and run the following commands in sequence to install this desktop environment. Also, make sure to log off after completion and choose TDE from the login. While installing, the installer would prompt you to choose the display manager. Choose the option gdm (GNOME Display Manager).
 
-* * *
+```
+sudo gedit /etc/apt/sources.list
+```
 
-We bring the latest tech, software news and stuff that matters. Stay in touch via [Telegram][6], [Twitter][7], [YouTube][8], and [Facebook][9] and never miss an update!
+Add the following line and save the file.
 
-#### Share this:
+```
+deb http://mirror.ppa.trinitydesktop.org/trinity/deb/trinity-sb jammy deps-r14 main-r14deb-src http://mirror.ppa.trinitydesktop.org/trinity/deb/trinity-sb jammy deps-r14 main-r14
+```
 
-  * [Twitter][10]
+```
+wget http://mirror.ppa.trinitydesktop.org/trinity/deb/trinity-keyring.debsudo dpkg -i trinity-keyring.debsudo apt updatesudo apt install kubuntu-default-settings-trinity kubuntu-desktop-trinity
+```
 
-  * [Facebook][11]
+### Video walkthrough of this release
 
-  * [Print][12]
+Here’s a quick video we prepared for you of this release. Don’t forget to subscribe to us!
 
-  * [LinkedIn][13]
+![Trinity Desktop Environment TDE R14 0 12 Walkthrough Video][6]
 
-  * [Reddit][14]
+As always, make sure to check out the official [contribution][7] page to help the dev team with your expertise and capacity.
 
-  * [Telegram][15]
-
-  * [WhatsApp][16]
-
-  * [Email][17]
-
-  *
-
+*Via Release announcement*
 
 --------------------------------------------------------------------------------
 
 via: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/
 
 作者：[Arindam][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.debugpoint.com/author/admin1/
-[b]: https://github.com/lujun9972
+[b]: https://github.com/lkxed
 [1]: https://wiki.trinitydesktop.org/Release_Notes_For_R14.0.12
 [2]: https://www.debugpoint.com/2022/04/ubuntu-studio-22-04-lts/
-[3]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
-[4]: https://wiki.trinitydesktop.org/Category:Installation
-[5]: https://www.trinitydesktop.org/helpwanted.php
-[6]: https://t.me/debugpoint
-[7]: https://twitter.com/DebugPoint
-[8]: https://www.youtube.com/c/debugpoint?sub_confirmation=1
-[9]: https://facebook.com/DebugPoint
-[10]: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/?share=twitter (Click to share on Twitter)
-[11]: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/?share=facebook (Click to share on Facebook)
-[12]: tmp.NZ5pAosxsa#print (Click to print)
-[13]: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/?share=linkedin (Click to share on LinkedIn)
-[14]: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/?share=reddit (Click to share on Reddit)
-[15]: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/?share=telegram (Click to share on Telegram)
-[16]: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/?share=jetpack-whatsapp (Click to share on WhatsApp)
-[17]: https://www.debugpoint.com/2022/05/tde-release-r14-0-12/?share=email (Click to email this to a friend)
+[3]: https://www.debugpoint.com/wp-content/uploads/2022/05/Trinity-Desktop-Environment-TDE-release-R14.0.12.jpg
+[4]: https://wiki.trinitydesktop.org/Release_Notes_For_R14.0.12
+[5]: https://wiki.trinitydesktop.org/Category:Installation
+[6]: https://youtu.be/qoGylRyAJEo
+[7]: https://www.trinitydesktop.org/helpwanted.php
