@@ -25,9 +25,13 @@ The first Linux distribution, which I think is the best on this list, is Fedora 
 
 In addition, KDE Plasma also brings KDE Applications and goodies, eliminating additional software you need. And with the help of Fedora repo and [RPM Fusion][2], you can blindly trust Fedora Linux with KDE Edition for your daily driver.
 
-On a side note, you can also consider the [Fedora Linux workstation][3] edition with GNOME if you prefer a GNOME-styled desktop. In addition, you might consider other [Fedora Spins][4] or [Fedora Labs][5] if you like a different desktop flavour.
+![Fedora KDE Edition][3]
 
-You can download Fedora KDE Edition here. Other downloads with [torrent details][6] are present here.
+On a side note, you can also consider the [Fedora Linux workstation][4] edition with GNOME if you prefer a GNOME-styled desktop. In addition, you might consider other [Fedora Spins][5] or [Fedora Labs][6] if you like a different desktop flavour.
+
+You can download Fedora KDE Edition here. Other downloads with [torrent details][7] are present here.
+
+[Download Fedora][8]
 
 #### 2. KDE Neon
 
@@ -35,7 +39,11 @@ The second distribution we would like to feature in this list is KDE Neon. The K
 
 In contrast, the Kubuntu LTS releases are also perfect. But they may not have the latest KDE Framework or applications.
 
+![KDE Neon][9]
+
 You can download the KDE Neon at the below link. Make sure to choose the user edition while downloading.
+
+[Download KDE Neon][10]
 
 #### 3. Ubuntu LTS Releases with GNOME
 
@@ -47,7 +55,11 @@ Most of the third-party applications and games primarily target Ubuntu, and you 
 
 But for casual users who want to browse the internet, watch movies, listen to music and do personal work, you can blindly trust Ubuntu LTS versions as your best Linux distribution.
 
+![Ubuntu LTS with GNOME][11]
+
 Finally, you can download Ubuntu 22.04 LTS (the current one) using the below link.
+
+[Download Ubuntu][12]
 
 #### 4. Linux Mint Cinnamon
 
@@ -57,7 +69,11 @@ Furthermore, with Linux Mint, you do not need to install any additional applicat
 
 In addition, if you are new to Linux or Windows users who plan to migrate, then it is a perfect distribution to start. Its legacy menu-driven Cinnamon desktop is one of the best open-source desktops today.
 
+![Linux Mint Cinnamon Edition][13]
+
 If you ever get confused or have no time to choose which distribution is best for you, choose the Linux Mint Cinnamon edition. With that said, you can download Linux Mint using the below link.
+
+[Download Linux Mint][14]
 
 #### 5. Pop OS
 
@@ -65,7 +81,11 @@ The Pop OS is developed by American computer manufacturer System76 for their har
 
 In addition, if you want to get a professional-grade Linux distribution with official help and support, you should check out actual System76 hardware with Pop OS.
 
+![Pop OS][15]
+
 However, you can download the Pop OS for various hardware for free using the link below.
+
+[Download Pop OS][16]
 
 #### 6. MX Linux
 
@@ -73,19 +93,27 @@ MX Linux is a well designed Linux distribution primarily targeted at the older h
 
 You can use MX Linux for all of your needs. But I would not recommend it for gaming or development work. If you need a stable Linux distribution for your older hardware, free from systemd, you can choose MX Linux. Especially the Fluxbox edition.
 
+![MX Linux][17]
+
 You can download MX Linux from its official website below.
+
+[Download MX Linux][18]
 
 #### 7. Endeavour OS
 
-If you like the concept of “Rolling release”, which gives you all the latest packages and operating system components, then Arch Linux is perhaps the best you can have. However, installing Arch Linux might be tricky for new users, although the recent [archinstall][7] does a pretty job.
+If you like the concept of “Rolling release”, which gives you all the latest packages and operating system components, then Arch Linux is perhaps the best you can have. However, installing Arch Linux might be tricky for new users, although the recent [archinstall][19] does a pretty job.
 
 However, EndeavourOS is a perfect Arch Linux based distribution which features Xfce, KDE Plasma and other popular desktops out of the box. Armed with the Calamares installer, it is super easy to install Endeavour OS.
 
 However, this might not be the best Linux distribution for beginners. But the best one for little advanced users who are familiar already with Linux in general. On the brighter side, you get to say, “btw, I use Arch”.
 
+![EndeavourOS][20]
+
 Last but not least, EndeavourOS has excellent community support, and its Telegram channel support is the best in my personal experience. So, if you ever get stuck, help is just a message away.
 
 Download this excellent and emerging Linux distribution using the link below.
+
+[Download Endeavour OS][21]
 
 #### 8. Zorin OS
 
@@ -93,9 +121,13 @@ Zorin OS is a Linux distribution based on Ubuntu Linux and is best for those who
 
 This helps the new users easily migrate to Linux and use Zorin for their day to day work.
 
+![Zorin OS][22]
+
 Other than that, Zorin OS maintains three editions – Pro, Lite and Core, which cater to the different user bases. The Pro edition is a paid version with additional themes and tweaks out of the box with a minimal fee.
 
 You can download Zorin OS from the below link.
+
+[Download Zorin OS][23]
 
 #### 9. Debian with Xfce
 
@@ -103,7 +135,11 @@ There are many Linux Distribution which is based on Debian. But the only reason 
 
 Debian package repo contains all possible packages, which give you the ultimate flexibility to set up any custom system you want.
 
-A perfect Linux distribution if you know how to set up a Debian box with some experience. You can download and install Debian after choosing the proper installer for your system here. Debian comes with an installer for several architectures. You may [read our guide][8]if you are confused about which one to choose and how to install it.
+![Debian with Xfce Desktop][24]
+
+A perfect Linux distribution if you know how to set up a Debian box with some experience. You can download and install Debian after choosing the proper installer for your system here. Debian comes with an installer for several architectures. You may [read our guide][25]if you are confused about which one to choose and how to install it.
+
+[Download Debian][26]
 
 #### 10. Ubuntu Studio
 
@@ -111,11 +147,15 @@ The final best Linux distribution we feature in this list is Ubuntu Studio. Ubun
 
 Ubuntu Studio comes with the low-latency mainline Linux Kernel to give additional advantage to multiple operations. In addition, Ubuntu Studio brings its native “Ubuntu Studio Controls”, which provides creators with several options to tweak CPU settings for heavy CPU intensive rendering and processing.
 
+![Ubuntu Studio 22.04 LTS Desktop][27]
+
 Moreover, a massive list of free and open-source audio, graphics, and video applications is pre-loaded into the ISO, saving time if you plan to build a multimedia workstation.
 
 Ubuntu Studio is powered by the KDE Plasma desktop, the perfect Linux distribution for all creators worldwide.
 
 You can download Ubuntu Studio from the below link.
+
+[Download Ubuntu Studio][28]
 
 ### Closing Notes
 
@@ -138,9 +178,29 @@ via: https://www.debugpoint.com/2022/05/best-linux-distributions-2022/
 [b]: https://github.com/lkxed
 [1]: https://www.debugpoint.com/2022/02/fedora-36/
 [2]: https://www.debugpoint.com/2020/07/enable-rpm-fusion-fedora-rhel-centos/
-[3]: https://getfedora.org/en/workstation/download/
-[4]: https://spins.fedoraproject.org/
-[5]: https://labs.fedoraproject.org/
-[6]: https://torrent.fedoraproject.org/
-[7]: https://www.debugpoint.com/2022/01/archinstall-guide/
-[8]: https://www.debugpoint.com/2021/01/install-debian-buster/
+[3]: https://www.debugpoint.com/wp-content/uploads/2022/05/Fedora-KDE-Edition.jpg
+[4]: https://getfedora.org/en/workstation/download/
+[5]: https://spins.fedoraproject.org/
+[6]: https://labs.fedoraproject.org/
+[7]: https://torrent.fedoraproject.org/
+[8]: https://spins.fedoraproject.org/kde/download/index.html
+[9]: https://www.debugpoint.com/wp-content/uploads/2022/05/KDE-Neon.jpg
+[10]: https://neon.kde.org/download
+[11]: https://www.debugpoint.com/wp-content/uploads/2022/05/Ubuntu-LTS-with-GNOME.jpg
+[12]: https://ubuntu.com/download/desktop
+[13]: https://www.debugpoint.com/wp-content/uploads/2022/05/Linux-Mint-Cinnamon-Edition.jpg
+[14]: https://linuxmint.com/download.php
+[15]: https://www.debugpoint.com/wp-content/uploads/2022/05/Pop-OS.jpg
+[16]: https://pop.system76.com/
+[17]: https://www.debugpoint.com/wp-content/uploads/2022/05/MX-Linux.jpg
+[18]: https://mxlinux.org/download-links/
+[19]: https://www.debugpoint.com/2022/01/archinstall-guide/
+[20]: https://www.debugpoint.com/wp-content/uploads/2022/05/EndeavourOS.jpg
+[21]: https://endeavouros.com/download/
+[22]: https://www.debugpoint.com/wp-content/uploads/2022/05/Zorin-OS.jpg
+[23]: https://zorin.com/os/download/
+[24]: https://www.debugpoint.com/wp-content/uploads/2022/05/Debian-with-Xfce-Desktop.jpg
+[25]: https://www.debugpoint.com/2021/01/install-debian-buster/
+[26]: https://www.debian.org/distrib/
+[27]: https://www.debugpoint.com/wp-content/uploads/2022/04/Ubuntu-Studio-22.04-LTS-Desktop.jpg
+[28]: https://ubuntustudio.org/download/
