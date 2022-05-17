@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/structured-data-processing-with-spark-sql/"
 [#]: author: "Phani Kiran https://www.opensourceforu.com/author/phani-kiran/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
