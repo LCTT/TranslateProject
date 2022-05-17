@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14602-1.html"
 
 Xebian：Debian 与 Xfce 的完美结合
 ======
