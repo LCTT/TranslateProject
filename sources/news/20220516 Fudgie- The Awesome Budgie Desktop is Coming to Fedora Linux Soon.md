@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/fudgie-fedora-budgie-announcement/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
