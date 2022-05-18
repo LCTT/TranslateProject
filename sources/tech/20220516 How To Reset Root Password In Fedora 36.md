@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/reset-root-password-in-fedora/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
