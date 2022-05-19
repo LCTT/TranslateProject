@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/five-common-mistakes-when-using-automation/"
 [#]: author: "Gary Scarborough https://fedoramagazine.org/author/gscarbor/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
