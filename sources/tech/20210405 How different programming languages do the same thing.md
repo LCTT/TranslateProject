@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/compare-programming-languages)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (VeryZZJ)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
