@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/activate-linux/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
