@@ -1,7 +1,7 @@
 [#]: subject: "Top Nitrux Applications (Maui) Everyone Should Try"
 [#]: via: "https://www.debugpoint.com/2022/03/top-nitrux-maui-applications/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
-[#]: collector: "lkxed"
+[#]: collector: "lujun9972"
 [#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "

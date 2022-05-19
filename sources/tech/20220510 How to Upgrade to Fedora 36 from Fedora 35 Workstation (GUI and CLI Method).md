@@ -1,7 +1,7 @@
 [#]: subject: "How to Upgrade to Fedora 36 from Fedora 35 Workstation (GUI and CLI Method)"
 [#]: via: "https://www.debugpoint.com/2022/05/upgrade-fedora-36-from-fedora-35/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
-[#]: collector: "lkxed"
+[#]: collector: "lujun9972"
 [#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "

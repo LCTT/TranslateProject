@@ -1,7 +1,7 @@
 [#]: subject: "Transform Your Arch Installation with Stunning XMonad WM Setup"
 [#]: via: "https://www.debugpoint.com/2022/02/xmonad-arch-linux-setup/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
-[#]: collector: "lkxed"
+[#]: collector: "lujun9972"
 [#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
