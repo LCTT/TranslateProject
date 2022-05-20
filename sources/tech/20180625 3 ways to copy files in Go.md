@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/18/6/copying-files-go"
 [#]: author: "Mihalis Tsoukalos https://opensource.com/users/mtsouk"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
