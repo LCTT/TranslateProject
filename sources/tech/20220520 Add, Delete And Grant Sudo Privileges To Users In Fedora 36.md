@@ -9,9 +9,9 @@
 
 Add, Delete And Grant Sudo Privileges To Users In Fedora 36
 ======
-Create sudo user in Fedora.
+Create sudo user in Fedora
 
-Using **sudo** program, we can elevate the ability of a normal user to run administrative tasks, without giving away the `root` user's password in Linux operating systems. This guide explains how to add, delete and grant sudo privileges to users in Fedora 36 desktop and server editions.
+Using `sudo` program, we can elevate the ability of a normal user to run administrative tasks, without giving away the `root` user's password in Linux operating systems. This guide explains how to add, delete and grant sudo privileges to users in Fedora 36 desktop and server editions.
 
 I've divided this guide in three sections. The first section teaches you how to create a new user. In the second section, you'll learn how to give sudo access to the existing user. And in the last section, you will know how to remove sudo access from a user. I've also provided example commands in each section, so you can understand it better.
 
