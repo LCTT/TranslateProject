@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/raspberry-pi-totalcross)
 [#]: author: (Edson Holanda Teixeira Junior https://opensource.com/users/edsonhtj)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (CoWave-Fall)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
