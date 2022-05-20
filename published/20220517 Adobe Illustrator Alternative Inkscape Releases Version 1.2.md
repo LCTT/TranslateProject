@@ -3,13 +3,14 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14615-1.html"
 
 Adobe Illustrator 的替代品 Inkscape 发布了 1.2 版本
 ======
-Inkscape 1.2 是一个激动人心的更新，包含许多有用的改进和新增功能。试一试吧！
+
+> Inkscape 1.2 是一个激动人心的更新，包含许多有用的改进和新增功能。试一试吧！
 
 ![Inkscape][1]
 
@@ -85,7 +86,7 @@ Inkscape 1.2 是一个激动人心的更新，它包含了许多有用的增强�
 
 你可以从它的官方网站下载 AppImage 格式的 Inkscape 1.2 软件包，或查看其他适用于 Windows/macOS 平台的可用软件包。
 
-[Inkscape 1.2][8]
+> **[Inkscape 1.2][8]**
 
 --------------------------------------------------------------------------------
 
@@ -94,7 +95,7 @@ via: https://news.itsfoss.com/inkscape-1-2-release/
 作者：[Ankush Das][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
