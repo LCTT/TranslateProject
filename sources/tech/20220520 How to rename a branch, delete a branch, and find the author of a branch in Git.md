@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/git-branch-rename-delete-find-author"
 [#]: author: "Agil Antony https://opensource.com/users/agantony"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
