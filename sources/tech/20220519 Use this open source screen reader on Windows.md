@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/open-source-screen-reader-windows-nvda"
 [#]: author: "Peter Cheer https://opensource.com/users/petercheer"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
