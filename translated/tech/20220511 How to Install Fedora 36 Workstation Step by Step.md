@@ -31,7 +31,7 @@
 
 使用下面的链接来从 fedora 官方网站下载 ISO 文件。
 
-* [下载 Fedora Workstation][33]
+* [下载 Fedora Workstation][1]
 
 在 iso 文件下载后，接下来将其刻录到 USB 驱动器，使其可启动。
 
@@ -39,17 +39,13 @@
 
 现在，转向到目标系统，重新启动它，并在 BIOS 设置中将可启动媒介盘从硬盘驱动器启动更改为从 USB 驱动器（可启动媒介盘）启动。在系统使用可启动媒介盘启动后，我们将获得下面的屏幕。
 
-[][1]
-
 ![Choose-Start-Fedora-Workstation-Live-36][2]
 
 选择第一个选项 "Start Fedora-Workstation-Live 36" ，并按下 enter 按键
 
 ### 3) 选择安装到硬盘驱动器
 
-[][3]
-
-![Select-Install-to-Hardrive-Fedora-36-workstation][4]
+![Select-Install-to-Hardrive-Fedora-36-workstation][3]
 
 选择 "<ruby>安装到硬盘<rt>Install to Hard Drive</rt></ruby>" 选项来继续安装。
 
@@ -57,9 +53,7 @@
 
 选择你的首选语言来适应你的安装过程
 
-[][5]
-
-![Language-Selection-Fedora36-Installation][6]
+![Language-Selection-Fedora36-Installation][4]
 
 单击 <ruby>继续<rt>Continue</rt></ruby> 按钮
 
@@ -71,9 +65,7 @@
 * 时间和日期 (时区)
 * 安装目标 – 选择你想要安装 fedora 36 workstation 的硬盘。
 
-[][7]
-
-![Default-Installation-Summary-Fedora36-workstation][8]
+![Default-Installation-Summary-Fedora36-workstation][5]
 
 单击 "<ruby>安装目标<rt>Installation Destination</rt></ruby>" 按钮
 
@@ -84,9 +76,7 @@
 
 在这篇指南中，我们将使用第一个选项 "<ruby>自动<rt>Automatic</rt></ruby>"
 
-[][9]
-
-![Automatic-Storage-configuration-Fedora36-workstation-installation][10]
+![Automatic-Storage-configuration-Fedora36-workstation-installation][6]
 
 单击 "<ruby>完成<rt>Done</rt></ruby>" 按钮，来继续安装
 
@@ -94,21 +84,15 @@
 
 单击 "<ruby>开始安装<rt>Begin Installation</rt></ruby>" 按钮，来开始 Fedora 36 workstation 的安装
 
-[][11]
-
-![Choose-Begin-Installation-Fedora36-Workstation][12]
+![Choose-Begin-Installation-Fedora36-Workstation][7]
 
 正如我们在下面的屏幕中所看到的一样，安装过程已经开始，并且正在安装过程之中。
 
-[][13]
-
-![Installation-Progress-Fedora-36-Workstation][14]
+![Installation-Progress-Fedora-36-Workstation][8]
 
 在安装过程完成后，安装器将通知我们来重新启动计算机系统。
 
-[][15]
-
-![Select-Finish-Installation-Fedora-36-Workstation][16]
+![Select-Finish-Installation-Fedora-36-Workstation][9]
 
 单击 "<ruby>完成安装<rt>Finish Installation</rt></ruby>" 按钮，来重新启动计算机系统。也不要忘记在 BIOS 设置中将可启动媒介盘从USB 驱动器启动更改为从硬盘驱动器启动。
 
@@ -116,53 +100,39 @@
 
 当计算机系统在重新启动后，我们将得到下面的设置屏幕。
 
-[][17]
-
-![Start-Setup-Fedora-36-Linux][18]
+![Start-Setup-Fedora-36-Linux][10]
 
 单击 "<ruby>开始设置<rt>Start Setup</rt></ruby>" 按钮
 
 根据你的需要选择隐私设置
 
-[][19]
-
-![Privacy-Settings-Fedora-36-Linux][20]
+![Privacy-Settings-Fedora-36-Linux][11]
 
 单击 "<ruby>下一步<rt>Next</rt></ruby> " 按钮，来继续安装
 
-[][21]
-
-![Enable-Third-Party Repositories-Fedora-36-Linux][22]
+![Enable-Third-Party Repositories-Fedora-36-Linux][12]
 
 如果你想启用第三方存储库，接下来单击 "<ruby>启用第三方存储库<rt>Enable Third-Party Repositories</rt></ruby>" 按钮，如果你现在不想配置它，那么单击 "<ruby>下一步<rt>Next</rt></ruby>" 按钮
 
 同样，如果你想要跳过联网账号设置，那么单击 "<ruby>跳过<rt>Skip</rt></ruby>" 按钮
 
-[][23]
-
-![Online-Accounts-Fedora-36-Linux][24]
+![Online-Accounts-Fedora-36-Linux][13]
 
 具体指定本地用户名称，在我的实例中，我使用下图中的名称
 
 注意：这个用户名称将用于登录系统，并且它也将拥有 sudo 权限。
 
-[][25]
-
-![Local-Account-Fedora-36-workstation][26]
+![Local-Account-Fedora-36-workstation][14]
 
 单击 "<ruby>下一步<rt>Next</rt></ruby>" 按钮来设置该用户的密码。
 
-[][27]
-
-![Set-Password-Local-User-Fedora-36-Workstation][28]
+![Set-Password-Local-User-Fedora-36-Workstation][15]
 
 在设置密码后，单击 "<ruby>下一步<rt>Next</rt></ruby>" 按钮。
 
 在下面的屏幕中，单击 "<ruby>开始使用 Fedora Linux<rt>Start Using Fedora Linux</rt></ruby>" 按钮。
 
-[][29]
-
-![Click-On-Start-Using-Fedora-Linux][30]
+![Click-On-Start-Using-Fedora-Linux][16]
 
 现在，打开终端，运行下面的命令，
 
@@ -172,9 +142,7 @@ $ cat /etc/redhat-release
 $ neofetch
 ```
 
-[][31]
-
-![Neofetch-Fedora-36-Linux][32]
+![Neofetch-Fedora-36-Linux][17]
 
 好极了，上面的步骤可以确保 Fedora 36 Workstation 已经成功安装。以上就是这篇指南的全部内容。请毫不犹豫地在下面的评论区写出你的疑问和反馈。
 
@@ -191,36 +159,20 @@ via: https://www.linuxtechi.com/how-to-install-fedora-workstation/
 
 [a]: https://www.linuxtechi.com/author/pradeep/
 [b]: https://github.com/lkxed
-[1]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Choose-Start-Fedora-Workstation-Live-36.png
+[1]: https://download.fedoraproject.org/pub/fedora/linux/releases/36/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-36-1.5.iso
 [2]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Choose-Start-Fedora-Workstation-Live-36.png
 [3]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Select-Install-to-Hardrive-Fedora-36-workstation.png
-[4]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Select-Install-to-Hardrive-Fedora-36-workstation.png
-[5]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Language-Selection-Fedora36-Installation.png
-[6]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Language-Selection-Fedora36-Installation.png
-[7]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Default-Installation-Summary-Fedora36-workstation.png
-[8]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Default-Installation-Summary-Fedora36-workstation.png
-[9]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Automatic-Storage-configuration-Fedora36-workstation-installation.png
-[10]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Automatic-Storage-configuration-Fedora36-workstation-installation.png
-[11]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Choose-Begin-Installation-Fedora36-Workstation.png
-[12]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Choose-Begin-Installation-Fedora36-Workstation.png
-[13]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Installation-Progress-Fedora-36-Workstation.png
-[14]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Installation-Progress-Fedora-36-Workstation.png
-[15]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Select-Finish-Installation-Fedora-36-Workstation.png
-[16]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Select-Finish-Installation-Fedora-36-Workstation.png
-[17]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Start-Setup-Fedora-36-Linux.png
-[18]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Start-Setup-Fedora-36-Linux.png
-[19]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Privacy-Settings-Fedora-36-Linux.png
-[20]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Privacy-Settings-Fedora-36-Linux.png
-[21]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Enable-Third-Party-Repositories-Fedora-36-Linux.png
-[22]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Enable-Third-Party-Repositories-Fedora-36-Linux.png
-[23]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Online-Accounts-Fedora-36-Linux.png
-[24]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Online-Accounts-Fedora-36-Linux.png
-[25]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Local-Account-Fedora-36-workstation.png
-[26]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Local-Account-Fedora-36-workstation.png
-[27]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Set-Password-Local-User-Fedora-36-Workstation.png
-[28]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Set-Password-Local-User-Fedora-36-Workstation.png
-[29]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Click-On-Start-Using-Fedora-Linux.png
-[30]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Click-On-Start-Using-Fedora-Linux.png
-[31]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Neofetch-Fedora-36-Linux.png
-[32]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Neofetch-Fedora-36-Linux.png
-[33]: https://download.fedoraproject.org/pub/fedora/linux/releases/36/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-36-1.5.iso
+[4]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Language-Selection-Fedora36-Installation.png
+[5]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Default-Installation-Summary-Fedora36-workstation.png
+[6]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Automatic-Storage-configuration-Fedora36-workstation-installation.png
+[7]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Choose-Begin-Installation-Fedora36-Workstation.png
+[8]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Installation-Progress-Fedora-36-Workstation.png
+[9]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Select-Finish-Installation-Fedora-36-Workstation.png
+[10]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Start-Setup-Fedora-36-Linux.png
+[11]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Privacy-Settings-Fedora-36-Linux.png
+[12]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Enable-Third-Party-Repositories-Fedora-36-Linux.png
+[13]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Online-Accounts-Fedora-36-Linux.png
+[14]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Local-Account-Fedora-36-workstation.png
+[15]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Set-Password-Local-User-Fedora-36-Workstation.png
+[16]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Click-On-Start-Using-Fedora-Linux.png
+[17]: https://www.linuxtechi.com/wp-content/uploads/2022/05/Neofetch-Fedora-36-Linux.png
