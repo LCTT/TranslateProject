@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (CoWave-Fall)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14620-1.html)
 
 用 XML 和 Java 构建树莓派打印机的用户界面
 ======
