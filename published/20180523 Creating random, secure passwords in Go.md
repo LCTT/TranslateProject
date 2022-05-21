@@ -3,17 +3,16 @@
 [#]: author: "Mihalis Tsoukalos https://opensource.com/users/mtsouk"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14621-1.html"
 
 在 Go 中生成随机的安全密码
 ======
-Go 的随机数生成器是生成难以猜测的密码的好方法。
 
-![密码笔记本电脑][1]
+> Go 的随机数生成器是生成难以猜测的密码的好方法。
 
-图源：geralt，发布于 Pixabay，CC0
+![](https://img.linux.net.cn/data/attachment/album/202205/21/152534k13a1wly39fuywu2.jpg)
 
 你可以使用 [Go 编程语言][2] 提供的随机数生成器来生成由 ASCII 字符组成的难以猜测的密码。尽管本文中提供的代码很容易阅读，但是你仍需要了解 Go 的基础知识，才能更好地理解它。如果你是对 Go 还不熟悉，请阅读 [Go 语言之旅][3] 来了解更多信息，然后返回此处。
 
@@ -109,7 +108,7 @@ via: https://opensource.com/article/18/5/creating-random-secure-passwords-go
 作者：[Mihalis Tsoukalos][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
