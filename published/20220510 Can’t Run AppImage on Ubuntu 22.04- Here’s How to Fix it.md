@@ -3,12 +3,14 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14619-1.html"
 
 无法在 Ubuntu 22.04 上运行 AppImage？这是解决方法
 ======
+
+![该图片由 Ryan McGuire 在 Pixabay 上发布](https://img.linux.net.cn/data/attachment/album/202205/21/093854fdcjm47bqyjm6vqz.jpg)
 
 最近发布的 [Ubuntu 22.04 LTS 充满了新的视觉变化和功能][1]。
 
@@ -36,7 +38,7 @@
 sudo apt install libfuse2
 ```
 
-如果你不熟悉终端，那么你需要了解以下内容。它会要求你输入 sudo 密码。实际上，那是你的帐户密码。 **当你输入密码时，屏幕上不会显示任何内容**。这是设计使然。只需继续输入密码并输入。
+如果你不熟悉终端，那么你需要了解以下内容。它会要求你输入 `sudo` 密码。实际上，那是你的帐户密码。 **当你输入密码时，屏幕上不会显示任何内容**。这是设计使然。只需继续输入密码并输入。
 
 ![Install libfuse2 in Ubuntu][4]
 
@@ -44,25 +46,25 @@ sudo apt install libfuse2
 
 这个不用说了。你需要对下载的应用的 AppImage 文件具有“执行”权限。
 
-转到你已下载所需应用的 AppImage 文件的文件夹。**右键单击**并**选择属性**。
+转到你已下载所需应用的 AppImage 文件的文件夹。右键单击并选择<ruby>属性<rt>Properties</rt></ruby>。
 
-现在转到**权限选项卡**并选中“**允许将文件作为程序执行**”选项。
+现在转到<ruby>权限<rt>Permissions</rt></ruby>选项卡并选中“<ruby>允许将文件作为程序执行<rt>Allow executing file as program</rt></ruby>”选项。
 
 ![give execute permission to AppImage file][5]
 
 设置完成后就好了。现在只需双击该文件，它就会按预期运行应用。
 
-获取 libfuse 的这个小步骤在我的[安装 Ubuntu 22.04 后推荐要做的事情列表][6]上了。
+获取 libfuse 的这个小步骤已经在我的 [安装 Ubuntu 22.04 后推荐要做的事情列表][6] 上了。
 
-#### 进一步的故障排除提示
+### 进一步的故障排除提示
 
 你的 AppImage 文件仍未运行？你下载的 AppImage 可能会出现一些其他问题，使其无法运行。
 
-检查它的一种方法是下载一个已知的应用，如 [Balena Etcher][7] 并查看其 AppImage 文件是否有效。如果这个没问题，那么当你下载的另一个应用的 AppImage 文件无法工作。你可以通过从终端运行 AppImage 文件并分析它显示的错误来深入挖掘。
+检查它的一种方法是下载一个已知的应用，如 [Balena Etcher][7] 并查看其 AppImage 文件是否有效。如果这个没问题，那么当你下载的另一个应用的 AppImage 文件无法工作，你可以通过从终端运行 AppImage 文件并分析它显示的错误来深入挖掘。
 
-#### 对你有用吗？
+### 对你有用吗？
 
-继续尝试。如果有效，请给我写个谢谢。如果仍然没有，请在评论部分中提及详细信息，我会尽力帮助你。
+继续尝试。如果有效，请给我写个“感谢”。如果仍然没有解决，请在评论部分中提及详细信息，我会尽力帮助你。
 
 --------------------------------------------------------------------------------
 
@@ -71,7 +73,7 @@ via: https://itsfoss.com/cant-run-appimage-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
