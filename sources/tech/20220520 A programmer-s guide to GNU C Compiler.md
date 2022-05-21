@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/gnu-c-compiler"
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
