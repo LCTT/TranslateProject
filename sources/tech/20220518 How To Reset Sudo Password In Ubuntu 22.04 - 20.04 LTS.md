@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/how-to-reset-sudo-password-in-ubuntu-20-04-lts/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
