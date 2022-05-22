@@ -3,16 +3,16 @@
 [#]: author: "Mihalis Tsoukalos https://opensource.com/users/mtsouk"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14623-1.html"
 
 在 Go 中实现一个支持并发的 TCP 服务端
 ======
-仅用大约 65 行代码，开发一个用于生成随机数、支持并发的 TCP 服务端。
 
-![土拨鼠插图][1]
-（图源：Renee French, CC BY 3.0）
+![](https://img.linux.net.cn/data/attachment/album/202205/22/115536nkfuuf4dklgg7fsx.jpg)
+
+> 仅用大约 65 行代码，开发一个用于生成随机数、支持并发的 TCP 服务端。
 
 TCP 和 UDP 服务端随处可见，它们基于 TCP/IP 协议栈，通过网络为客户端提供服务。在这篇文章中，我将介绍如何使用 [Go 语言][2] 开发一个用于返回随机数、支持并发的 TCP 服务端。对于每一个来自 TCP 客户端的连接，它都会启动一个新的 goroutine（轻量级线程）来处理相应的请求。
 
@@ -22,7 +22,7 @@ TCP 和 UDP 服务端随处可见，它们基于 TCP/IP 协议栈，通过网络
 
 这个程序的主要逻辑在 `handleConnection()` 函数中，具体实现如下：
 
-```go
+```
 func handleConnection(c net.Conn) {
         fmt.Printf("Serving %s\n", c.RemoteAddr().String())
         for {
@@ -44,14 +44,14 @@ func handleConnection(c net.Conn) {
 }
 ```
 
-如果 TCP 客户端发送了一个“STOP”字符串，为它提供服务的 goroutine 就会终止；否则，TCP 服务端就会返回一个随机数给它。只要客户端不主动终止，服务端就会一直提供服务，这是由 `for` 循环保证的。具体来说，`for` 循环中的代码使用了 `bufio.NewReader(c).ReadString('\n')` 来逐行读取客户端发来的数据，并使用 `c.Write([]byte(string(result)))` 来返回数据（生成的随机数）。你可以在 Go 的 net 标准包 [文档][4] 中了解更多。
+如果 TCP 客户端发送了一个 “STOP” 字符串，为它提供服务的 goroutine 就会终止；否则，TCP 服务端就会返回一个随机数给它。只要客户端不主动终止，服务端就会一直提供服务，这是由 `for` 循环保证的。具体来说，`for` 循环中的代码使用了 `bufio.NewReader(c).ReadString('\n')` 来逐行读取客户端发来的数据，并使用 `c.Write([]byte(string(result)))` 来返回数据（生成的随机数）。你可以在 Go 的 net 标准包 [文档][4] 中了解更多。
 
 
 ### 支持并发
 
 在 `main()` 函数的实现部分，每当 TCP 服务端收到 TCP 客户端的连接请求，它都会启动一个新的 goroutine 来为这个请求提供服务。
 
-```go
+```
 func main() {
         arguments := os.Args
         if len(arguments) == 1 {
@@ -138,7 +138,7 @@ via: https://opensource.com/article/18/5/building-concurrent-tcp-server-go
 作者：[Mihalis Tsoukalos][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
