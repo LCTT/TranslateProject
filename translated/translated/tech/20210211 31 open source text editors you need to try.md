@@ -1,11 +1,11 @@
-[#]: collector: "lujun9972"
-[#]: translator: "CoWave-Fall"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-[#]: subject: "31 open source text editors you need to try"
-[#]: via: "https://opensource.com/article/21/2/open-source-text-editors"
-[#]: author: "Seth Kenlon https://opensource.com/users/seth"
+[#]: collector: (lujun9972)
+[#]: translator: (CoWave-Fall)
+[#]: reviewer: ( )
+[#]: publisher: ( )
+[#]: url: ( )
+[#]: subject: (31 open source text editors you need to try)
+[#]: via: (https://opensource.com/article/21/2/open-source-text-editors)
+[#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
 您可以尝试的 31 个开源文本编辑器
 ======
@@ -137,7 +137,7 @@ via: https://opensource.com/article/21/2/open-source-text-editors
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/button_push_open_keyboard_file_organize.png?itok=KlAsk1gx "open source button on keyboard"
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/button_push_open_keyboard_file_organize.png?itok=KlAsk1gx (open source button on keyboard)
 [2]: https://opensource.com/sites/default/files/kakoune-screenshot.png
 [3]: https://opensource.com/article/20/12/vi-text-editor
 [4]: https://opensource.com/article/20/12/kakoune
