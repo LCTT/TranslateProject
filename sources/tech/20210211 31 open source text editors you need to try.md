@@ -1,129 +1,128 @@
-[#]: collector: (lujun9972)
-[#]: translator: (CoWave-Fall)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (31 open source text editors you need to try)
-[#]: via: (https://opensource.com/article/21/2/open-source-text-editors)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
+[#]: collector: "lujun9972"
+[#]: translator: "CoWave-Fall"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "31 open source text editors you need to try"
+[#]: via: "https://opensource.com/article/21/2/open-source-text-editors"
+[#]: author: "Seth Kenlon https://opensource.com/users/seth"
 
-31 open source text editors you need to try
+您可以尝试的 31 个开源文本编辑器
 ======
-Looking for a new text editor? Here are 31 options to consider.
+
+正在寻找新的文本编辑器？ 这里有 31 个选项可供您考虑。
 ![open source button on keyboard][1]
 
-Computers are text-based, so the more things you do with them, the more you find yourself needing a text-editing application. And the more time you spend in a text editor, the more likely you are to demand more from whatever you use.
+计算机是基于文本的，因此您使用它们做的事情越多，您可能就越需要文本编辑应用程序。 您在文本编辑器上花费的时间越多，您就越有可能对您您使用的编辑器提出更多的要求。
 
-If you're looking for a good text editor, you'll find that Linux has plenty to offer. Whether you want to work in the terminal, on your desktop, or in the cloud, you can literally try a different editor every day for a month (or one a month for almost three years) in your relentless search for the perfect typing experience.
+如果您正在寻找一个好的文本编辑器，您会发现 Linux 可以提供很多。 无论您是想在终端、桌面还是在云端工作，您都可以试一试。您可以每天一款编辑器，连续着试一个月（或每月试一个，能够试三年）。坚持不懈，您终将找到适合您的完美的编辑器。
 
-### Vim-like editors
+### 与 Vim 相似的编辑器
 
 ![][2]
 
-  * [Vi][3] ships with every Linux, BSD, Solaris, and macOS installation. It's the quintessential Unix text editor, with its unique combination of editing modes and super-efficient single-key shortcuts. The original Vi editor was an application written by Bill Joy, creator of the C shell. Modern incarnations of Vi, most notably Vim, have added many features, including multiple levels of undo, better navigation while in insert mode, line folding, syntax highlighting, plugin support, and much more. It takes practice (it even has its own tutor application, vimtutor.)
-  * [Kakoune][4] is a Vim-inspired application with a familiar, minimalistic interface, short keyboard shortcuts, and separate editing and insert modes. It looks and feels a lot like Vi at first, but with its own unique style, both in design and function. As a special bonus, it features an implementation of the Clippy interface.
+  * [Vi][3] 通常随着 Linux 各发行版、BSD、Solaris 和 macOS 一起安装。 它是典型的 Unix 文本编辑器，具有编辑模式和超高效的单键快捷键二者的独特组合。 最初的 Vi 编辑器由 Bill Joy 编写（他也是 C shell 的作者）。 Vi 的现代版本，尤其是 Vim，增加了许多特性，包括多级撤消、在插入模式下更好的导航、折叠行、语法高亮、插件支持等等。但它需要学习如何使用（它甚至有自己的教程程序，vimtutor）。
+  * [Kakoune][4] 是一个受 Vim 启发的应用程序，它具有熟悉的简约界面、短键盘快捷键以及独立的编辑和插入模式。 乍一看，它的外观和感觉很像 Vi，但它在设计和功能上有自己独特的风格。 它有一个小彩蛋：具有 Clippy 接口的实现。
 
 
 
-### emacs editors
+### emacs 编辑器
 
 ![][5]
 
-  * The original free emacs, and one of the first official applications of the GNU project that started the Free Software movement, [GNU Emacs][6] is a wildly popular text editor. It's great for sysadmins, developers, and everyday users alike, with loads of features and seemingly endless extensions. Once you start using Emacs, you might find it difficult to think of a reason to close it because it's just that versatile!
-  * If you like Emacs but find GNU Emacs too bloated, then you might like [Jove][7]. Jove is a terminal-based emacs editor. It's easy to use, but if you're new to emacsen (the plural of emacs), Jove is also easy to learn, thanks to the teachjove command.
-  * Another lightweight emacs editor, [Jed][8] is a simple incarnation of a macro-based workflow. One thing that sets it apart from other editors is its use of [S-Lang][9], a C-like scripting language providing extensibility options to developers more comfortable with C than with Lisp.
+  * 从最初的免费 emacs 开始，发展到 GNU 项目（自由软件运动的发起者）的第一批官方应用程序，[GNU Emacs][6] 是一个广受欢迎的文本编辑器。 它非常适合系统管理员、开发人员和日常用户的使用，具有大量功能和近乎无穷无尽的扩展。 一旦您开始使用 Emacs，您可能会发现很难想出一个理由来关闭它，因为它能做的事情非常多！
+  * 如果您喜欢 Emacs 但觉得 GNU Emacs 过于臃肿，那么您可以试试 [Jove][7]。 Jove 是一个基于终端的 emacs 编辑器。 它很容易使用，但是如果您是使用 emacs 一类编辑器的新手，那么  Jove 也是很容易学习的，这要归功于 teajove 命令。
+  * 另一个轻量级的 emacs 编辑器是 [Jed][8]。它的工作流程基于宏。 它与其他编辑器的不同之处在于它使用了 [S-Lang][9]，这是一种类似 C 的脚本语言，它为使用 C 而不是使用 Lisp 的开发人员提供了可扩展的选项。
 
 
 
-### Interactive editors
+### 交互式编辑器
 
 ![][10]
 
-  * [GNU nano][11] takes a bold stance on terminal-based text editing: it provides a menu. Yes, this humble editor takes a cue from GUI editors by telling the user exactly which key they need to press to perform a specific function. This is a refreshing take on user experience, so it's no wonder that it's nano, not Vi, that's set as the default editor for "user-friendly" distributions.
-  * [JOE][12] is based on an old text-editing application called WordStar. If you're not familiar with Wordstar, JOE can also mimic Emacs or GNU nano. By default, it's a good compromise between something relatively mysterious like Emacs or Vi and the always-on verbosity of GNU Nano (for example, it tells you how to activate an onscreen help display, but it's not on by default).
-  * The excellent [e3][13] application is a tiny text editor with five built-in keyboard shortcut schemes to emulate Emacs, Vi, nano, NEdit, and WordStar. In other words, no matter what terminal-based editor you are used to, you're likely to feel right at home with e3.
+  * [GNU nano][11] 对基于终端的文本编辑采取了大胆的立场：它提供了一个菜单。是的，这个不起眼的编辑器从 GUI 编辑器那里得到了提示，它告诉用户他们需要按哪个键来执行特定的功能。这是一种令人耳目一新的用户体验，所以难怪 nano 被设置为“用户友好”发行版的默认编辑器，而不是 Vi。
+  * [JOE][12] 基于一个名为 WordStar 的旧文本编辑应用程序。如果您不熟悉 Wordstar，JOE 也可以模仿 Emacs 或 GNU nano。默认情况下，它是介于 Emacs 或 Vi 等相对神秘的编辑器和 GNU Nano 永远在线的冗长信息之间的一个很好的折衷方案（例如，它告诉您如何激活屏幕帮助显示，但默认情况下不启用）。
+  * [e3][13] 是一个优秀的小型文本编辑器，具有五个内置的键盘快捷键方案来模拟 Emacs、Vi、nano、NEdit 和 WordStar。换句话说，无论您习惯使用哪种基于终端的编辑器，您都可能对 e3 感到宾至如归。
+
+### ed 和更多像 ed 一样的编辑器
+
+  * [ed][14] 行编辑器是 [POSIX][15] 和 Open Group 对基于 Unix 的操作系统的标准定义的一部分。它安装在您遇到的几乎所有 Linux 或 Unix 系统上。它小巧、简洁、一流。
+  * 基于 ed，[Sed][16] 流编辑器因其功能和语法而广受欢迎。大多数 Linux 用户在搜索更新配置文件中的行的最简单和最快的方法时至少会学习一个 sed 命令，但值得仔细研究一下。 Sed 是一个强大的命令，包含许多有用的子命令。更好地了解它，您可能会发现自己打开文本编辑器应用程序的频率要低得多。
+  * 您并不总是需要文本编辑器来编辑文本。 [heredoc][17]（或 Here Doc）系统可在任何 POSIX 终端中使用，允许您直接在打开的终端中输入文本，然后将输入的内容通过管道传输到文本文件中。这不是最强大的编辑体验，但它用途广泛且始终可用。
 
 
 
-### ed and more
-
-  * The [ed][14] line editor is part of the [POSIX][15] and Open Group's standard definition of a Unix-based operating system. You can count on it being installed on nearly every Linux or Unix system you'll ever encounter. It's tiny, terse, and tip-top.
-  * Building upon ed, the [Sed][16] stream editor is popular both for its functionality and its syntax. Most Linux users learn at least one sed command when searching for the easiest and fastest way to update a line in a config file, but it's worth taking a closer look. Sed is a powerful command with lots of useful subcommands. Get to know it better, and you may find yourself open text editor applications a lot less frequently.
-  * You don't always need a text editor to edit text. The [heredoc][17] (or Here Doc) system, available in any POSIX terminal, allows you to type text directly into your open terminal and then pipes what you type into a text file. It's not the most robust editing experience, but it is versatile and always available.
-
-
-
-### Minimalist editors
+### 极简风格的编辑器
 
 ![][18]
 
-If your idea of a good text editor is a word processor except without all the processing, you're probably looking for one of these classics. These editors let you write and edit text with minimal interference and minimal assistance. What features they do offer are often centered around markup, Markdown, or code. Some have names that follow a certain pattern:
+如果您对一个好的文本编辑器的想法是一个文字处理器（除了没有所有的处理功能）的话，您可能正在寻找这些经典。这些编辑器可让您以最少的干扰和最少的帮助写作和编辑文本。它们提供的功能通常以标记、Markdown 或代码为中心。有些名称遵循某种模式：
 
-  * [Gedit][19] from the GNOME team
-  * [medit][20] for a classic GNOME feel
-  * [Xedit][21] uses only the most basic X11 libraries
-  * [jEdit][22] for Java aficionados
-
-
-
-A similar experience is available for KDE users:
-
-  * [Kate][23] is an unassuming editor with all the features you need.
-  * [KWrite][24] hides a ton of useful features in a deceptively simple, easy-to-use interface.
+  * [Gedit][19] 来自 GNOME 团队；
+  * [medit][20] 有经典的 GNOME 手感；
+  * [Xedit][21] 仅使用最基本的 X11 库；
+  * [jEdit][22] 适用于 Java 爱好者。
 
 
 
-And there are a few for other platforms:
+KDE 用户也类似：
 
-  * [Notepad++][25] is a popular Windows application, while Notepadqq takes a similar approach for Linux.
-  * [Pe][26] is for Haiku OS (the reincarnation of that quirky child of the '90s, BeOS).
-  * [FeatherPad][27] is a basic editor for Linux but with some support for macOS and Haiku. If you're a Qt hacker looking to port code, take a look!
-
+  * [Kate][23] 是一款低调的编辑器，拥有您需要的几乎所有功能；
+  * [KWrite][24] 在看似简单易用的界面中隐藏了大量有用的功能。
 
 
-### IDEs
+
+还有一些适用于其他平台：
+
+  * [Notepad++][25] 是一种流行的 Windows 应用程序，而 Notepadqq 对 Linux 采用了类似的方法；
+  * [Pe][26] 适用于 Haiku OS（90 年代那个古怪的孩子 BeOS 的转世）；
+  * [FeatherPad][27] 是适用于 Linux 的基本编辑器，但对 macOS 和 Haiku 有一些支持。如果您是一名希望移植代码的 Qt 骇客，请务必看一看！
+
+
+
+### 集成开发环境（IDE）
 
 ![][28]
 
-There's quite a crossover between text editors and integrated development environments (IDEs). The latter really is just the former with lots of code-specific features added on. If you use an IDE regularly, you might find an XML or Markdown editor lurking in your extension manager:
+文本编辑器和集成开发环境 (IDE) 之间存在相当大的相同之处。 后者实际上只是前者加上许多对于特定代码的添加的功能。 如果您经常使用 IDE，您可能会在扩展管理器中发现一个 XML 或 Markdown 编辑器：
 
-  * [NetBeans][29] is a handy text editor for Java users.
-  * [Eclipse][30] offers a robust editing suite with lots of extensions to give you the tools you need.
+   * [NetBeans][29] 是一个方便 Java 用户的文本编辑器。
+   * [Eclipse][30] 提供了一个强大的编辑套件，其中包含许多扩展，可为您提供所需的工具。
 
 
 
-### Cloud-based editors
+### 云端编辑器
 
 ![][31]
 
-Working in the cloud? You can write there too, you know.
+在云端写作？ 当然，您也可以在那里写。
 
-  * [Etherpad][32] is a text editor app that runs on the web. There are free and independent instances for you to use, or you can set up your own.
-  * [Nextcloud][33] has a thriving app scene and includes both a built-in text editor and a third-party Markdown editor with live preview.
+   * [Etherpad][32] 是在网上运行的文本编辑器应用程序。 有独立免费的实例供您使用，或者您也·可以设置自己的实例。
+   * [Nextcloud][33] 拥有蓬勃发展的应用场景，包括内置文本编辑器和具有实时预览功能的第三方 Markdown 编辑器。
 
 
 
-### Newer editors
+### 较新的编辑器
 
 ![][34]
 
-Everybody has an idea about what makes a text editor perfect. For that reason, new editors are released each year. Some reimplement classic old ideas in a new and exciting way, some have unique takes on the user experience, and some focus on specific needs.
+每个人都会有让文本编辑器变得更完美的想法。 因此，几乎每年都会发布新的编辑器。 有些以一种新的、令人兴奋的方式重新实现经典的旧想法，有些对用户体验有独特的看法，还有些则专注于特定的需求。
 
-  * [Atom][35] is an all-purpose modern text editor from GitHub featuring lots of extensions and Git integration.
-  * [Brackets][36] is an editor from Adobe for web developers.
-  * [Focuswriter][37] seeks to help you focus on writing with helpful features like a distraction-free fullscreen mode, optional typewriter sound effects, and beautiful configuration options.
-  * [Howl][38] is a progressive, dynamic editor based on Lua and Moonscript.
-  * [Norka][39] and [KJots][40] mimic a notebook with each document representing a "page" in your "binder." You can take individual pages out of your notebook through export functions.
+   * [Atom][35] 是来自 GitHub 的多功能的现代文本编辑器，具有许多扩展和 Git 集成。
+   * [Brackets][36] 是 Adobe 为 Web 开发人员提供的编辑器。
+   * [Focuswriter][37] 旨在通过无干扰全屏模式、可选的打字机音效和精美的配置选项等有用功能帮助您专注于写作。
+   * [Howl][38] 是一个基于 Lua 和 Moonscript 的渐进式动态编辑器。
+   * [Norka][39] 和 [KJots][40] 模仿笔记本，每个文档代表“活页夹”中的“页面”。 您可以通过导出功能从笔记本中取出单个页面。
 
 
 
-### DIY editor
+### 自己制作编辑器
 
 ![][41]
 
-As the saying does _NOT_ go: Why use somebody else's application when you can write your own? Linux has over 30 text editors available, so probably the last thing it really needs is another one. Then again, part of the fun of open source is the ability to experiment.
+俗话说得好：既然可以编写自己的应用程序，为什么要使用别人的（虽然其实没有这句俗语）？虽然 Linux 有超过 30 个常用的文本编辑器，但是再说一次，开源的一部分乐趣在于能够亲手进行实验。
 
-If you're looking for an excuse to learn how to program, making your own text editor is a great way to get started. You can achieve the basics in about 100 lines of code, and the more you use it, the more you'll be inspired to learn more so you can make improvements. Ready to get started? Go and [create your own text editor][42].
+如果您正在寻找学习编程的理由，那么制作自己的文本编辑器是一个很好的入门方法。 您可以在大约 100 行代码中实现基础知识，并且您使用它的次数越多，您可能就越会受到启发，进而去学习更多内容，从而进行改进。 准备好开始了吗？ 来吧，去[创建您自己的文本编辑器][42]。
 
 --------------------------------------------------------------------------------
 
@@ -131,14 +130,14 @@ via: https://opensource.com/article/21/2/open-source-text-editors
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CoWave-Fall](https://github.com/CoWave-Fall)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/button_push_open_keyboard_file_organize.png?itok=KlAsk1gx (open source button on keyboard)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/button_push_open_keyboard_file_organize.png?itok=KlAsk1gx "open source button on keyboard"
 [2]: https://opensource.com/sites/default/files/kakoune-screenshot.png
 [3]: https://opensource.com/article/20/12/vi-text-editor
 [4]: https://opensource.com/article/20/12/kakoune
