@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/google-to-start-distributing-a-collection-of-open-source-software-libraries/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "beamrolling"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
