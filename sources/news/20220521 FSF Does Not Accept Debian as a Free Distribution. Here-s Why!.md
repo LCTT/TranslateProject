@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/fsf-does-not-consider-debian-a-free-distribution/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/root/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Chao-zhi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
