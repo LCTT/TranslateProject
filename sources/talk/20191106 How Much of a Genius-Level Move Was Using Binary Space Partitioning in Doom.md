@@ -1,18 +1,18 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (How Much of a Genius-Level Move Was Using Binary Space Partitioning in Doom?)
-[#]: via: (https://twobithistory.org/2019/11/06/doom-bsp.html)
-[#]: author: (Two-Bit History https://twobithistory.org)
+[#]: subject: "How Much of a Genius-Level Move Was Using Binary Space Partitioning in Doom?"
+[#]: via: "https://twobithistory.org/2019/11/06/doom-bsp.html"
+[#]: author: "Two-Bit History https://twobithistory.org"
+[#]: collector: "lujun9972"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 How Much of a Genius-Level Move Was Using Binary Space Partitioning in Doom?
 ======
 
 In 1993, id Software released the first-person shooter _Doom_, which quickly became a phenomenon. The game is now considered one of the most influential games of all time.
 
-A decade after _Doom_’s release, in 2003, journalist David Kushner published a book about id Software called _Masters of Doom_, which has since become the canonical account of _Doom_’s creation. I read _Masters of Doom_ a few years ago and don’t remember much of it now, but there was one story in the book about lead programmer John Carmack that has stuck with me. This is a loose gloss of the story (see below for the full details), but essentially, early in the development of _Doom_, Carmack realized that the 3D renderer he had written for the game slowed to a crawl when trying to render certain levels. This was unacceptable, because _Doom_ was supposed to be action-packed and frenetic. So Carmack, realizing the problem with his renderer was fundamental enough that he would need to find a better rendering algorithm, starting reading research papers. He eventually implemented a technique called “binary space partitioning,” never before used in a video game, that dramatically sped up the _Doom_ engine.
+A decade after _Doom_’s release, in 2003, journalist David Kushner published a book about id Software called _Masters of Doom_, which has since become the canonical account of _Doom_’s creation. I read _Masters of Doom_ a few years ago and don’t remember much of it now, but there was one story in the book about lead programmer John Carmack that has stuck with me. This is a loose gloss of the story (see below for the full details), but essentially, early in the development of _Doom_, Carmack realized that the 3D renderer he had written for the game slowed to a crawl when trying to render certain levels. This was unacceptable, because _Doom_ was supposed to be action-packed and frenetic. So Carmack, realizing the problem with his renderer was fundamental enough that he would need to find a better rendering algorithm, started reading research papers. He eventually implemented a technique called “binary space partitioning,” never before used in a video game, that dramatically sped up the _Doom_ engine.
 
 That story about Carmack applying cutting-edge academic research to video games has always impressed me. It is my explanation for why Carmack has become such a legendary figure. He deserves to be known as the archetypal genius video game programmer for all sorts of reasons, but this episode with the academic papers and the binary space partitioning is the justification I think of first.
 
@@ -58,21 +58,21 @@ Binary space partitioning makes the VSD problem easier to solve by splitting a 3
 
 The first people to write about dividing a 3D scene like this were researchers trying to establish for the US Air Force whether computer graphics were sufficiently advanced to use in flight simulators. They released their findings in a 1969 report called “Study for Applying Computer-Generated Images to Visual Simulation.” The report concluded that computer graphics could be used to train pilots, but also warned that the implementation would be complicated by the VSD problem:
 
-> One of the most significant problems that must be faced in the real-time computation of images is the priority, or hidden-line, problem. In our everyday visual perception of our surroundings, it is a problem that nature solves with trivial east; a point of an opaque object obscures all other points that lie along the same line of sight and are more distant. In the computer, the task is formidable. The computations required to resolve priority in the general case grow exponentially with the complexity of the environment, and soon they surpass the computing load associated with finding the perspective images of the objects.[2][3]
+> One of the most significant problems that must be faced in the real-time computation of images is the priority, or hidden-line, problem. In our everyday visual perception of our surroundings, it is a problem that nature solves with trivial ease; a point of an opaque object obscures all other points that lie along the same line of sight and are more distant. In the computer, the task is formidable. The computations required to resolve priority in the general case grow exponentially with the complexity of the environment, and soon they surpass the computing load associated with finding the perspective images of the objects.[2][3]
 
-One solution these researchers mention, which according to them was earlier used in a project for NASA, is based on creating what I am going to call an “occlusion matrix.” The researchers point out that a plane dividing a scene in two can be used to resolve “any priority conflict” between objects on opposite sides of the plane. In general you might have to add these planes explicitly to your scene, but with certain kinds of geometry you can just rely on the faces of the objects you already have. They give the example in the figure below, where (p_1), (p_2), and (p_3) are the separating planes. If the camera viewpoint is on the forward or “true” side of one of these planes, then (p_i) evaluates to 1. The matrix shows the relationships between the three objects based on the three dividing planes and the location of the camera viewpoint—if object (a_i) obscures object (a_j), then entry (a_{ij}) in the matrix will be a 1.
+One solution these researchers mention, which according to them was earlier used in a project for NASA, is based on creating what I am going to call an “occlusion matrix.” The researchers point out that a plane dividing a scene in two can be used to resolve “any priority conflict” between objects on opposite sides of the plane. In general you might have to add these planes explicitly to your scene, but with certain kinds of geometry you can just rely on the faces of the objects you already have. They give the example in the figure below, where \\(p_1\\), \\(p_2\\), and \\(p_3\\) are the separating planes. If the camera viewpoint is on the forward or “true” side of one of these planes, then \\(p_i\\) evaluates to 1. The matrix shows the relationships between the three objects based on the three dividing planes and the location of the camera viewpoint—if object \\(a_i\\) obscures object \\(a_j\\), then entry \\(a_{ij}\\) in the matrix will be a 1.
 
 ![][4]
 
 The researchers propose that this matrix could be implemented in hardware and re-evaluated every frame. Basically the matrix would act as a big switch or a kind of pre-built z-buffer. When drawing a given object, no video would be output for the parts of the object when a 1 exists in the object’s column and the corresponding row object is also being drawn.
 
-The major drawback with this matrix approach is that to represent a scene with (n) objects you need a matrix of size (n^2). So the researchers go on to explore whether it would be feasible to represent the occlusion matrix as a “priority list” instead, which would only be of size (n) and would establish an order in which objects should be drawn. They immediately note that for certain scenes like the one in the figure above no ordering can be made (since there is an occlusion cycle), so they spend a lot of time laying out the mathematical distinction between “proper” and “improper” scenes. Eventually they conclude that, at least for “proper” scenes—and it should be easy enough for a scene designer to avoid “improper” cases—a priority list could be generated. But they leave the list generation as an exercise for the reader. It seems the primary contribution of this 1969 study was to point out that it should be possible to use partitioning planes to order objects in a scene for rendering, at least _in theory_.
+The major drawback with this matrix approach is that to represent a scene with \\(n\\) objects you need a matrix of size \\(n^2\\). So the researchers go on to explore whether it would be feasible to represent the occlusion matrix as a “priority list” instead, which would only be of size \\(n\\) and would establish an order in which objects should be drawn. They immediately note that for certain scenes like the one in the figure above no ordering can be made (since there is an occlusion cycle), so they spend a lot of time laying out the mathematical distinction between “proper” and “improper” scenes. Eventually they conclude that, at least for “proper” scenes—and it should be easy enough for a scene designer to avoid “improper” cases—a priority list could be generated. But they leave the list generation as an exercise for the reader. It seems the primary contribution of this 1969 study was to point out that it should be possible to use partitioning planes to order objects in a scene for rendering, at least _in theory_.
 
 It was not until 1980 that a paper, titled “On Visible Surface Generation by A Priori Tree Structures,” demonstrated a concrete algorithm to accomplish this. The 1980 paper, written by Henry Fuchs, Zvi Kedem, and Bruce Naylor, introduced the BSP tree. The authors say that their novel data structure is “an alternative solution to an approach first utilized a decade ago but due to a few difficulties, not widely exploited”—here referring to the approach taken in the 1969 Air Force study.[3][5] A BSP tree, once constructed, can easily be used to provide a priority ordering for objects in the scene.
 
 Fuchs, Kedem, and Naylor give a pretty readable explanation of how a BSP tree works, but let me see if I can provide a less formal but more concise one.
 
-You begin by picking one polygon in your scene and making the plane in which the polygon lies your partitioning plane. That one polygon also ends up as the root node in your tree. The remaining polygons in your scene will be on one side or the other of your root partitioning plane. The polygons on the “forward” side or in the “forward” half-space of your plane end in up in the left subtree of your root node, while the polygons on the “back” side or in the “back” half-space of your plane end up in the right subtree. You then repeat this process recursively, picking a polygon from your left and right subtrees to be the new partitioning planes for their respective half-spaces, which generates further half-spaces and further sub-trees. You stop when you run out of polygons.
+You begin by picking one polygon in your scene and making the plane in which the polygon lies your partitioning plane. That one polygon also ends up as the root node in your tree. The remaining polygons in your scene will be on one side or the other of your root partitioning plane. The polygons on the “forward” side or in the “forward” half-space of your plane end up in the left subtree of your root node, while the polygons on the “back” side or in the “back” half-space of your plane end up in the right subtree. You then repeat this process recursively, picking a polygon from your left and right subtrees to be the new partitioning planes for their respective half-spaces, which generates further half-spaces and further sub-trees. You stop when you run out of polygons.
 
 Say you want to render the geometry in your scene from back-to-front. (This is known as the “painter’s algorithm,” since it means that polygons further from the camera will get drawn over by polygons closer to the camera, producing a correct rendering.) To achieve this, all you have to do is an in-order traversal of the BSP tree, where the decision to render the left or right subtree of any node first is determined by whether the camera viewpoint is in either the forward or back half-space relative to the partitioning plane associated with the node. So at each node in the tree, you render all the polygons on the “far” side of the plane first, then the polygon in the partitioning plane, then all the polygons on the “near” side of the plane—”far” and “near” being relative to the camera viewpoint. This solves the VSD problem because, as we learned several paragraphs back, the polygons on the far side of the partitioning plane cannot obstruct anything on the near side.
 
@@ -98,7 +98,7 @@ Remember that, in his first draft of the _Doom_ renderer, Carmack had been tryin
 
 Carmack put a spin on the BSP tree algorithm outlined in the 1980 paper, because once _Doom_ is started and the BSP tree for the current level is read into memory, the renderer uses the BSP tree to draw objects front-to-back rather than back-to-front. In the 1980 paper, Fuchs, Kedem, and Naylor show how a BSP tree can be used to implement the back-to-front painter’s algorithm, but the painter’s algorithm involves a lot of over-drawing that would have been expensive on an IBM-compatible PC. So the _Doom_ renderer instead starts with the geometry closer to the player, draws that first, then draws the geometry farther away. This reverse ordering is easy to achieve using a BSP tree, since you can just make the opposite traversal decision at each node in the tree. To ensure that the farther-away geometry is not drawn over the closer geometry, the _Doom_ renderer uses a kind of implicit z-buffer that provides much of the benefit of a z-buffer with a much smaller memory footprint. There is one array that keeps track of occlusion in the horizontal dimension, and another two arrays that keep track of occlusion in the vertical dimension from the top and bottom of the screen. The _Doom_ renderer can get away with not using an actual z-buffer because _Doom_ is not technically a fully 3D game. The cheaper data structures work because certain things never appear in _Doom_: The horizontal occlusion array works because there are no sloping walls, and the vertical occlusion arrays work because no walls have, say, two windows, one above the other.
 
-The only other tricky issue left is how to incorporate _Doom_’s moving characters into the static level geometry drawn with the aid of the BSP tree. The enemies in _Doom_ cannot be a part of the BSP tree because they move; the BSP tree only works for geometry that never moves. So the _Doom_ renderer draws the static level geometry first, keeping track of the segments of the screen that were drawn to (with yet another memory-efficient data structure). It then draws the enemies in back-to-front order, clipping them against the segments of the screen that occlude them. This process is not as optimal as rendering using the BSP tree, but because there are usually fewer enemies visible then there is level geometry in a level, speed isn’t as much of an issue here.
+The only other tricky issue left is how to incorporate _Doom_’s moving characters into the static level geometry drawn with the aid of the BSP tree. The enemies in _Doom_ cannot be a part of the BSP tree because they move; the BSP tree only works for geometry that never moves. So the _Doom_ renderer draws the static level geometry first, keeping track of the segments of the screen that were drawn to (with yet another memory-efficient data structure). It then draws the enemies in back-to-front order, clipping them against the segments of the screen that occlude them. This process is not as optimal as rendering using the BSP tree, but because there are usually fewer enemies visible than there is level geometry in a level, speed isn’t as much of an issue here.
 
 Using BSP trees in _Doom_ was a major win. Obviously it is pretty neat that Carmack was able to figure out that BSP trees were the perfect solution to his problem. But was it a _genius_-level move?
 
@@ -148,26 +148,26 @@ via: https://twobithistory.org/2019/11/06/doom-bsp.html
 
 [a]: https://twobithistory.org
 [b]: https://github.com/lujun9972
-[1]: tmp.BANyYeM4Vm#fn:1
+[1]: tmp.eMwywbWYsp#fn:1
 [2]: https://youtu.be/HQYsFshbkYw?t=822
-[3]: tmp.BANyYeM4Vm#fn:2
+[3]: tmp.eMwywbWYsp#fn:2
 [4]: https://twobithistory.org/images/matrix_figure.png
-[5]: tmp.BANyYeM4Vm#fn:3
+[5]: tmp.eMwywbWYsp#fn:3
 [6]: https://twobithistory.org/images/bsp.svg
 [7]: https://twobithistory.org/images/bsp1.svg
 [8]: https://twobithistory.org/images/bsp2.svg
-[9]: tmp.BANyYeM4Vm#fn:4
-[10]: tmp.BANyYeM4Vm#fn:5
-[11]: tmp.BANyYeM4Vm#fn:6
-[12]: tmp.BANyYeM4Vm#fn:7
+[9]: tmp.eMwywbWYsp#fn:4
+[10]: tmp.eMwywbWYsp#fn:5
+[11]: tmp.eMwywbWYsp#fn:6
+[12]: tmp.eMwywbWYsp#fn:7
 [13]: https://en.wikipedia.org/wiki/Binary_space_partitioning
 [14]: https://twitter.com/TwoBitHistory
 [15]: https://twobithistory.org/feed.xml
 [16]: https://twitter.com/TwoBitHistory/status/1164631020353859585?ref_src=twsrc%5Etfw
-[17]: tmp.BANyYeM4Vm#fnref:1
-[18]: tmp.BANyYeM4Vm#fnref:2
-[19]: tmp.BANyYeM4Vm#fnref:3
-[20]: tmp.BANyYeM4Vm#fnref:4
-[21]: tmp.BANyYeM4Vm#fnref:5
-[22]: tmp.BANyYeM4Vm#fnref:6
-[23]: tmp.BANyYeM4Vm#fnref:7
+[17]: tmp.eMwywbWYsp#fnref:1
+[18]: tmp.eMwywbWYsp#fnref:2
+[19]: tmp.eMwywbWYsp#fnref:3
+[20]: tmp.eMwywbWYsp#fnref:4
+[21]: tmp.eMwywbWYsp#fnref:5
+[22]: tmp.eMwywbWYsp#fnref:6
+[23]: tmp.eMwywbWYsp#fnref:7

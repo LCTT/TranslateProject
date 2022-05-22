@@ -24,9 +24,9 @@ rule_bypass_check() {
   [ -f /tmp/bypass ] && echo "匹配规则：绕过检查"
 }
 
-# 添加原文：添加至少一篇原文
+# 添加原文：只能添加一篇原文
 rule_source_added() {
-  [ "$SRC_A" -ge 1 ] \
+  [ "$SRC_A" -eq 1 ] \
       && check_category SRC A \
       && [ "$TOTAL" -eq "$SRC_A" ] && echo "匹配规则：添加原文 ${SRC_A} 篇"
 }
@@ -69,6 +69,14 @@ rule_published_translation_revised() {
       && [ "$TOTAL" -eq 1 ] && echo "匹配规则：校对已发布译文"
 }
 
+# 一步翻译发布
+rule_onestep() {
+  [ "$SRC_D" -eq 1 ] && [ "$PUB_A" -eq 1 ] \
+      && ensure_identical SRC D PUB A 1 \
+      && check_category SRC D \
+      && [ "$TOTAL" -eq 2 ] && echo "匹配规则：一步翻译发布"
+}
+
 # 定义常见错误
 
 # 未知错误
@@ -97,6 +105,7 @@ do_check() {
       || rule_translation_revised \
       || rule_translation_published \
       || rule_published_translation_revised \
+      || rule_onestep \
       || {
         error_translation_requested_multiple \
             || error_translation_completed_multiple \
