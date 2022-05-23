@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Chao-zhi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14628-1.html"
 
 自由软件基金会为什么不认为 Debian 是一种自由发行版？
 ======
