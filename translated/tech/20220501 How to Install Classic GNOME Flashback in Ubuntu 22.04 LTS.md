@@ -7,17 +7,17 @@
 [#]: publisher: " "
 [#]: url: " "
 
-如何在 Ubuntu 22.04 LTS 中安装 Classic GNOME Flashback
+Ubuntu 22.04 LTS 中安装经典 GNOME Flashback 指南
 ======
-关于如何在最新的 UBUNTU 22.04 LTS 中安装旧的 Classic GNOME Flashback 的快速指南。
+关于如何在最新的 UBUNTU 22.04 LTS 中安装旧的经典 GNOME Flashback 的快速指南。
 
-[GNOME Flashback][1]（又名 classic GNOME）是旧 GNOME 3 shell 的一个分支，它使用早期 GNOME 2 技术的布局和原则。它的速度快如闪电，并且在设计上占用的 CPU 和系统资源非常少。因此，它非常适合可以追溯到几十年前的旧硬件。
+[GNOME Flashback][1]（又名 classic GNOME）是旧 GNOME 3 shell 的一个分支，它使用早期 GNOME 2 技术的布局和原则。它的速度快如闪电，并且在设计上非常轻量级。因此，它非常适合几十年前的老旧硬件。
 
-随着带有现代 GNOME 42 的 [Ubuntu 22.04 LTS][2] 的发布，有必要寻找消耗很少系统资源的桌面环境选项。
+随着带有现代 GNOME 42 的 [Ubuntu 22.04 LTS][2] 的发布，有必要寻找轻量级的桌面环境选项。
 
 此外，GNOME Flashback 很容易安装在现代 Ubuntu Linux 中，你仍然可以享受 Ubuntu 性能而不必担心 GNOME 42、GTK4、libadwaita 和其他东西。
 
-### 在 Ubuntu 22.04 LTS 中下载并安装 Classic GNOME Flashback
+### 在 Ubuntu 22.04 LTS 中下载并安装经典 GNOME Flashback
 
 按照以下步骤在 Ubuntu 22.04 LTS 中下载并安装经典 GNOME Flashback（Metacity）。
 
@@ -43,7 +43,7 @@
 
 ### 经典 GNOME Flashback 的特点
 
-首先，当你登录时，你将体验到传统的 GNOME 技术，该技术已被证明具有良好的生产力并且比今天的技术快得多。
+首先，当你登录时，你将体验到经典的 GNOME 技术，该技术已被证明具有良好的生产力并且比今天的技术快得多。
 
 在顶部有旧版面板，左侧是应用菜单，而系统托盘位于桌面的右上方。应用程序菜单显示所有已安装的应用和软件快捷方式，你可以在工作流程中轻松浏览。
 
@@ -61,7 +61,7 @@
 
 ![Add to panel widgets][3]
 
-### GNOME Classic 的性能
+### 经典 GNOME 的性能
 
 首先，磁盘空间占用极小，即仅安装 61 MB。我的测试使用了大约 28% 的内存，其中大部分被其他进程占用。猜猜是谁？是的，是 snap-store 又名 Ubuntu 软件。
 
@@ -69,11 +69,11 @@
 
 ![Performance of GNOME Classic in Ubuntu 22.04][3]
 
-此外，假设你将其与同样使用相同技术的 Ubuntu MATE 进行比较。在这种情况下，它比 MATE 更轻量，因为你不需要任何额外的 MATE 应用及其用于通知、主题和其他补充资源的本机包。
+此外，假设你将其与同样使用相同技术的 Ubuntu MATE 进行比较。在这种情况下，它比 MATE 更轻量，因为你不需要任何额外的 MATE 应用及其用于通知、主题和其他附加资源的软件包。
 
 ### 结束语
 
-我希望本指南在你决定在 Ubuntu 22.04 LTS Jammy Jellyfish 中安装 GNOME Classic 之前帮助你获得必要的信息。
+我希望本指南在你决定在 Ubuntu 22.04 LTS Jammy Jellyfish 中安装经典 GNOME 之前帮助你获得必要的信息。
 
 * * *
 
