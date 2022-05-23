@@ -69,8 +69,6 @@ These are a sampling of different image registries available on the internet:
 
 There are two utilities whose purpose is to manage images and containers: [Docker][8]and [Podman][9]. They are available for Windows, Linux, and Mac workstations. From a developer's point of view, they are completely equivalent when executing commands. They can be considered aliases of one another. You can even install a package on many systems that will automatically change Docker into a Podman alias. Wherever Podman is mentioned in this document, Docker can be safely substituted with no change in outcome.
 
-[ Read next: 5 underused Podman features to try now ]
-
 You'll immediately notice these utilities are very similar to [Git][10] in that they perform tagging, pushing, and pulling. You will use or refer to this functionality regularly. They should not be confused with Git, however, since Git also manages version control, whereas images are immutable and their management utilities and registry have no concept of change management. If you push two images with the same name and tag to the same repository, the second image will overwrite the first with no way to see or understand what has changed.
 
 #### Subcommands
@@ -78,32 +76,16 @@ You'll immediately notice these utilities are very similar to [Git][10] in that 
 The following are a sampling of Podman and Docker subcommands you will commonly use or refer to:
 
 * build: `build` an image
-
-Example: `podman build -t org/some-image-repo -f Dockerfile`
-* Example: `podman build -t org/some-image-repo -f Dockerfile`
+    * Example: `podman build -t org/some-image-repo -f Dockerfile`
 * image: manage `image`s locally
-
-Example: `podman image rm -a` will remove all local images.
-* Example: `podman image rm -a` will remove all local images.
+    * Example: `podman image rm -a` will remove all local images.
 * images: list `images` stored locally
-* tag: `tag` an image
+    * tag: `tag` an image
 * container: manage `container`s
-
-Example: `podman container rm -a` will remove all stopped local containers.
-* Example: `podman container rm -a` will remove all stopped local containers.
+    * Example: `podman container rm -a` will remove all stopped local containers.
 * run: `create` and `start` a container
-
-also `stop` and `restart`
-* also `stop` and `restart`
+    * also `stop` and `restart`
 * pull/push: `pull`/push and image from/to a repository on a registry
-
-* Example: `podman build -t org/some-image-repo -f Dockerfile`
-
-* Example: `podman image rm -a` will remove all local images.
-
-* Example: `podman container rm -a` will remove all stopped local containers.
-
-* also `stop` and `restart`
 
 #### Dockerfiles
 
@@ -392,16 +374,6 @@ This article introduces four key ideas for software developers new to images and
 2. Containers are isolated processes: When they are created, containers are a runtime instantiation of an image. When containers are started, they become processes in memory on a host machine, which is much lighter and faster than a virtual machine. For the most part, developers only need to know the latter, but understanding the former is helpful.
 3. "Build once, deploy many": This principle is what makes container technology so useful. Images and containers provide consistency in deployments and independence from the host machine, allowing you to deploy with confidence across many different environments. Containers are also easily scalable because of this principle.
 4. Externalize the configuration: If your image has configuration data that is environment-specific, release-independent, or secret, consider making that data external to the image and containers. You can inject this data into your running image by injecting an environment variable or mounting an external file into the container.
-
-### Additional reading
-
-[A brief history of containers: from the 1970s till now][16]
-
-[A practical introduction to container terminology][17]
-
-[Dockerfile reference][18]
-
-[Podman vs. Docker][19]
 
 --------------------------------------------------------------------------------
 
