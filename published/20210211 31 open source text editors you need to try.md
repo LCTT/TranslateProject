@@ -7,7 +7,7 @@
 [#]: via: (https://opensource.com/article/21/2/open-source-text-editors)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 
-值得尝试的 31 个开源文本编辑器
+值得尝试的 30 个开源文本编辑器
 ======
 
 > 正在寻找新的文本编辑器？这里有 31 个编辑器可供尝试。
