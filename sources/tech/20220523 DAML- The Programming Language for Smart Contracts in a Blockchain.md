@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/daml-the-programming-language-for-smart-contracts-in-a-blockchain/"
 [#]: author: "Dr Kumar Gaurav https://www.opensourceforu.com/author/dr-gaurav-kumar/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
