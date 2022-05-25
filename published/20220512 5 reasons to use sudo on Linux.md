@@ -5,7 +5,7 @@
 [#]: translator: "MjSeven"
 [#]: reviewer: "turbokernel"
 [#]: publisher: "wxy"
-[#]: url: " "
+[#]: url: "https://linux.cn/article-14634-1.html"
 
 在 Linux 上使用 sudo 命令的 5 个理由
 ======
