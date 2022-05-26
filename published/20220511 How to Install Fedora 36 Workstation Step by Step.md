@@ -58,7 +58,7 @@
 
 ![Language-Selection-Fedora36-Installation][4]
 
-单击 <ruby>继续<rt>Continue</rt></ruby> 按钮。
+单击 “<ruby>继续<rt>Continue</rt></ruby>” 按钮。
 
 ### 5、选择安装目标
 
