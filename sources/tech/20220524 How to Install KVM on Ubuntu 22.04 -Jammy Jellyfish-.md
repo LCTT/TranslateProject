@@ -7,9 +7,10 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Install KVM on Ubuntu 22.04 (Jammy Jellyfish)
+Ubuntu 22.04 (Jammy Jellyfish) 之 KVM 安装手札
 ======
-KVM, an acronym for Kernel-based Virtual Machine is an opensource virtualization technology integrated into the Linux kernel. It’s a type 1 (bare metal ) hypervisor that enables the kernel to act as a bare-metal hypervisor.
+**KVM** 是 **Kernel-based Virtual Machine** 首字母缩写，一项嵌入内核的开源虚拟化技术。其基于内核的裸设备虚拟化引擎。
+It’s a type 1 (bare metal ) hypervisor that enables the kernel to act as a bare-metal hypervisor.
 
 KVM allows users to create and run multiple guest machines which can be either Windows or Linux. Each guest machine runs independently of other virtual machines and the underlying OS ( host system ) and has its own computing resources such as CPU, RAM, network interfaces, and storage to mention a few.
 
