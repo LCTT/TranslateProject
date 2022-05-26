@@ -3,47 +3,41 @@
 [#]: author: "Phani Kiran https://www.opensourceforu.com/author/phani-kiran/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14631-1.html"
 
 用 Spark SQL 进行结构化数据处理
 ======
-Spark SQL 是 Spark 生态系统中处理结构化格式数据的模块。它在内部使用 Spark Core API 进行处理，但对用户的使用进行了抽象。这篇文章深入浅出，告诉你 Spark SQL 3.x 的新内容。
 
-![][1]
+> Spark SQL 是 Spark 生态系统中处理结构化格式数据的模块。它在内部使用 Spark Core API 进行处理，但对用户的使用进行了抽象。这篇文章深入浅出地告诉你 Spark SQL 3.x 的新内容。
 
-有了 Spark SQL，用户还可以编写 SQL 风格的查询。这对于精通结构化查询语言或 SQL 的广大用户群体来说，基本上是很有帮助的。用户也将能够在结构化数据上编写交互式和临时性的查询。Spark SQL 弥补了弹性分布式数据集（RDD）和关系表之间的差距。RDD 是 Spark 的基本数据结构。它将数据作为分布式对象存储在适合并行处理的节点集群中。RDD 很适合底层处理，但在运行时很难调试，程序员不能自动推断 schema。另外，RDD 没有内置的优化功能。Spark SQL 提供了 DataFrames 和数据集来解决这些问题。
+![](https://img.linux.net.cn/data/attachment/album/202205/24/093036xaf6kaz1auaf4a7s.jpg)
 
-Spark SQL 可以使用现有的 Hive 元存储、SerDes 和 UDFs。它可以使用 JDBC/ODBC 连接到现有的 BI 工具。
+有了 Spark SQL，用户可以编写 SQL 风格的查询。这对于精通结构化查询语言或 SQL 的广大用户群体来说，基本上是很有帮助的。用户也将能够在结构化数据上编写交互式和临时性的查询。Spark SQL 弥补了<ruby>弹性分布式数据集<rt>resilient distributed data sets</rt></ruby>（RDD）和关系表之间的差距。RDD 是 Spark 的基本数据结构。它将数据作为分布式对象存储在适合并行处理的节点集群中。RDD 很适合底层处理，但在运行时很难调试，程序员不能自动推断<ruby>模式<rt>schema</rt></ruby>。另外，RDD 没有内置的优化功能。Spark SQL 提供了<ruby>数据帧<rt>DataFrame</rt></ruby>和数据集来解决这些问题。
+
+Spark SQL 可以使用现有的 Hive 元存储、SerDes 和 UDF。它可以使用 JDBC/ODBC 连接到现有的 BI 工具。
 
 ### 数据源
 
-大数据处理通常需要处理不同的文件类型和数据源（关系型和非关系型）的能力。Spark SQL 支持一个统一的 DataFrame 接口来处理不同类型的源，如下所示。
+大数据处理通常需要处理不同的文件类型和数据源（关系型和非关系型）的能力。Spark SQL 支持一个统一的数据帧接口来处理不同类型的源，如下所示。
 
-*文件：*
+* 文件：
+    * CSV
+    * Text
+    * JSON
+    * XML
+* JDBC/ODBC：
+    * MySQL
+    * Oracle
+    * Postgres
+* 带模式的文件：
+  * AVRO
+  * Parquet
+* Hive 表：
+  * Spark SQL 也支持读写存储在 Apache Hive 中的数据。
 
-* CSV
-* Text
-* JSON
-* XML
-
-*JDBC/ODBC：*
-
-* MySQL
-* Oracle
-* Postgres
-
-*带 schema 的文件：*
-
-* AVRO
-* Parquet
-
-*Hive 表：*
-
-* Spark SQL 也支持读写存储在 Apache Hive 中的数据。
-
-通过 DataFrame，用户可以无缝地读取这些多样化的数据源，并对其进行转换/连接。
+通过数据帧，用户可以无缝地读取这些多样化的数据源，并对其进行转换/连接。
 
 ### Spark SQL 3.x 的新内容
 
@@ -67,19 +61,19 @@ AQE 可以通过设置 SQL 配置来启用，如下所示（Spark 3.0 中默认�
 spark.conf.set(“spark.sql.adaptive.enabled”,true)
 ```
 
-#### 动态合并 shuffle 分区
+#### 动态合并“洗牌”分区
 
-Spark 在 shuffle 操作后确定最佳的分区数量。在 AQE 中，Spark 使用默认的分区数，即 200 个。这可以通过配置来启用。
+Spark 在“<ruby>洗牌<rt>shuffle</rt></ruby>”操作后确定最佳的分区数量。在 AQE 中，Spark 使用默认的分区数，即 200 个。这可以通过配置来启用。
 
 ```
 spark.conf.set(“spark.sql.adaptive.coalescePartitions.enabled”,true)
 ```
 
-#### 动态切换 join 策略
+#### 动态切换连接策略
 
-广播哈希是最好的连接操作。如果其中一个数据集很小，Spark 可以动态地切换到广播 join，而不是在网络上 shuffe 大量的数据。
+广播哈希是最好的连接操作。如果其中一个数据集很小，Spark 可以动态地切换到广播连接，而不是在网络上“洗牌”大量的数据。
 
-#### 动态优化倾斜 join
+#### 动态优化倾斜连接
 
 如果数据分布不均匀，数据会出现倾斜，会有一些大的分区。这些分区占用了大量的时间。Spark 3.x 通过将大分区分割成多个小分区来进行优化。这可以通过设置来启用：
 
@@ -91,16 +85,15 @@ spark.conf.set(“spark.sql.adaptive.skewJoin.enabled”,true)
 
 ### 其他改进措施
 
-
 此外，Spark SQL 3.x还支持以下内容。
 
 #### 动态分区修剪
 
 3.x 将只读取基于其中一个表的值的相关分区。这消除了解析大表的需要。
 
-#### Join 提示
+#### 连接提示
 
-如果用户对数据有了解，这允许用户指定要使用的 join 策略。这增强了查询的执行过程。
+如果用户对数据有了解，这允许用户指定要使用的连接策略。这增强了查询的执行过程。
 
 #### 兼容 ANSI SQL
 
@@ -119,7 +112,7 @@ via: https://www.opensourceforu.com/2022/05/structured-data-processing-with-spar
 作者：[Phani Kiran][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
