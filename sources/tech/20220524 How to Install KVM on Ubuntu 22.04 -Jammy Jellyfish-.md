@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/how-to-install-kvm-on-ubuntu-22-04/"
 [#]: author: "James Kiarie https://www.linuxtechi.com/author/james/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "turbokernel"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -233,7 +233,7 @@ via: https://www.linuxtechi.com/how-to-install-kvm-on-ubuntu-22-04/
 
 作者：[James Kiarie][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[turbokernel](https://github.com/turbokernel)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
