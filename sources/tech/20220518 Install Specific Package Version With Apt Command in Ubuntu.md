@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/apt-install-specific-version-2/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
