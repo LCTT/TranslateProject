@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "beamrolling"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14641-1.html"
 
 谷歌开始分发一系列开源软件库
 ======
