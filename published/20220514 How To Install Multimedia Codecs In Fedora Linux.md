@@ -3,15 +3,20 @@
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
 [#]: translator: "robsean"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14642-1.html"
 
 如何在 Fedora Linux 中安装多媒体编码器 
 ======
-在新安装 Fedora后，安装多媒体编码器来播放音频和视频是第一件要事。在这篇简单的教程中，我们将看到如何在 Fedora 36 workstation 中从 RPM Fusion 软件包存储库中安装多媒体编码器。
 
-### 序言
+![](https://img.linux.net.cn/data/attachment/album/202205/27/112826w7kyg5vddudxwwdg.jpg)
+
+> 在新安装 Fedora后，安装多媒体编码器来播放音频和视频是第一件要事。
+
+在这篇简单的教程中，我们将看到如何在 Fedora 36 工作站中从 RPM Fusion 软件包存储库安装多媒体编码器。
+
+### 介绍
 
 很多多媒体编码器要么是闭源的，要么是非自由的，因此出于法律的原因，它们没有包含在 Fedora Linux 的默认存储库中。
 
@@ -49,7 +54,7 @@ $ sudo dnf group upgrade --with-optional Multimedia
 
 #### 安装多媒体播放器
 
-一些流行的媒体播放器，诸如 VLC、Celluloid、SMplayer 和 Plex-media-palyer 等等，将提供所有需要是编码器。你不需要将它们全部都安装，只要任意一两个就足够了。下面给出安装这些播放器的命令：
+一些流行的媒体播放器，诸如 VLC、Celluloid、SMplayer 和 Plex-media-palyer 等等，将提供所有需要的编码器。你不需要将它们全部都安装，只要任意一两个就足够了。下面给出安装这些播放器的命令：
 
 ```
 $ sudo dnf install vlc
@@ -69,9 +74,9 @@ $ sudo dnf install smplayer
 $ sudo dnf install plex-media-player
 ```
 
-这将不仅为你提供 h264、h265、vp8 和 vp9 编码器 (均带硬件支持)，它也将启用一种更高效的编码器 av1 (又名 av01)。你可以使用 [AV1 Beta Launch Playlist][2]来测试你的浏览器是否支持这个编码器。
+这将不仅为你提供 H264、H265、VP8 和 VP9 编码器（均带硬件支持），它也将启用一种更高效的编码器 AV1（又名 AV01）。你可以使用 [AV1 Beta Launch Playlist][2] 来测试你的浏览器是否支持这个编码器。
 
-它们中的一些播放器也可以作为 **flatpak** 格式的应用程序来使用的。如果与传统的软件包管理器相比，你更喜欢 flatpak 格式的应用程序，你可以安装它们。现在大多数的 Linux 发行版都支持开箱即用的 flatpak 格式的应用程序
+它们中的一些播放器也可以作为 **flatpak** 格式的应用程序来使用。如果与传统的软件包管理器相比，你更喜欢 flatpak 格式的应用程序，你可以安装它们。现在大多数的 Linux 发行版都支持开箱即用的 flatpak 格式的应用程序
 
 为安装 VLC 的 flatpak 版本，运行：
 
@@ -81,13 +86,13 @@ $ flatpak install vlc
 
 #### 可选 - 安装 FFmpeg
 
-**FFmpeg** 是一个功能强大的多媒体框架，它可用于编码、解码、转码、mux, demux, record, stream, filter, 以及播放各种类型的媒体文件。你可以通过在你的系统上安装 FFmpeg 来获取相应的解码器。
+**FFmpeg** 是一个功能强大的多媒体框架，它可用于编码、解码、转码、混流、解混流、录制、音轨、过滤等，以及播放各种类型的媒体文件。你可以通过在你的系统上安装 FFmpeg 来获取相应的解码器。
 
 * [如何在 Linux 中安装 FFmpeg][3]
 
 希望这有帮助。
 
-**相关阅读:**
+**相关阅读：**
 
 * [在 Fedora Silverblue 中的 Chromium 和 Firefox 上启用 H264][4]
 * [如何在 OpenSUSE 中安装多媒体解码器][5]
@@ -99,7 +104,7 @@ via: https://ostechnix.com/how-to-install-multimedia-codecs-in-fedora-linux/
 作者：[sk][a]
 选题：[lkxed][b]
 译者：[robsean](https://github.com/robsean)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
