@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/machine-learning-classification-using-python/"
 [#]: author: "Gayatri Venugopal https://www.opensourceforu.com/author/gayatri-venugopal/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
