@@ -3,13 +3,14 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14645-1.html"
 
 System76 与惠普合作为开发者提供功能强大的 Linux 笔记本电脑
 ======
-惠普正在以开箱即用的 Pop!_OS 为特色进入 Linux 硬件市场，貌似有点激动人心？还是先来看一看吧！
+
+> 惠普正在以开箱即用的 Pop!_OS 为特色进入 Linux 硬件市场，貌似有点激动人心？还是先来看一看吧！
 
 ![hp][1]
 
@@ -62,7 +63,7 @@ via: https://news.itsfoss.com/hp-dev-one-system76/
 作者：[Ankush Das][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
