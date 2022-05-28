@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/2/kubernetes-architecture"
 [#]: author: "Nived Velayudhan https://opensource.com/users/nivedv"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
