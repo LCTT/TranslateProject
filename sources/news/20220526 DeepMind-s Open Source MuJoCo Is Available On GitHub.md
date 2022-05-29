@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/deepminds-open-source-mujoco-is-available-on-github/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
