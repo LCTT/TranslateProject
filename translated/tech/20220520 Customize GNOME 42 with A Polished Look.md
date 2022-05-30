@@ -3,35 +3,35 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
-自定义 GNOME 42 的精致外观
+精美 GNOME 42 外观定制
 ======
-一个关于如何在 5 分钟内为你最喜欢的 GNOME 桌面提供精美外观的教程。
+一篇如何在 5 分钟内为你最喜欢的 GNOME 桌面提供精美外观的教程。
 
-你可以通过多种方式使用图标、主题、光标和壁纸自定义你最喜爱的 GNOME 桌面。本文向你展示了如何使 GNOME 42 桌面看起来更加精致。GNOME 42 桌面环境可用于最近发布的 Ubuntu 22.04 LTS 和 Fedora 36。
+你可以使用图标、主题、光标和壁纸多种方式定制你最喜爱的 GNOME 桌面。本文向你展示了如何使 GNOME 42 桌面看起来更加精致。最近发布的 Ubuntu 22.04 LTS 和 Fedora 36 使用了GNOME 42 桌面环境。
 
-在你进一步阅读之前，这是并排比较（之前和之后）的外观。
+在你进一步阅读之前，先并排对比定制前后的外观。
 
 ![GNOME before customisation][1]
 
 ![GNOME after customisation][2]
 
-我将把本教程分为两个部分。
+我将本教程分为两个部分。
 
-第一部分涉及设置和安装所需的软件包。其次，如何应用各种设置来获得你想要的外观。
+第一部分涉及安装和设置所需的软件包。其次，如何变更各种设置来获得你想要的外观。
 
-本教程主要在 Ubuntu 22.04 LTS 上测试。但是，它应该适用于 Ubuntu 和 Fedora 的其他变体。
+本教程主要在 Ubuntu 22.04 LTS 上测试。但它同样适用于 Ubuntu 和 Fedora 的其他发行版。
 
-### 使用精致外观自定义 GNOME 42
+### 使用精致外观定制 GNOME 42
 
 #### 设置
 
-* 首先，为你的系统启用 Flatpak，因为我们需要安装扩展管理器来下载本教程所需的 GNOME Shell 扩展。
+* 首先，启用系统中的 Flatpak，因为我们需要安装扩展管理器用于下载本教程所需的 GNOME Shell 扩展。
 
-* 因此，要做到这一点，请打开一个终端并运行以下命令。
+* 因此，要做到这一点，请打开一个终端并运行如下命令：
 
 ```
 sudo apt install flatpak gnome-software-plugin-flatpakflatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -39,35 +39,35 @@ sudo apt install flatpak gnome-software-plugin-flatpakflatpak remote-add --if-no
 
 * 完成后重启计算机。
 
-* 然后从终端运行以下命令来安装扩展管理器应用以下载 GNOME Shell 扩展。
+* 然后从终端运行以下命令来安装扩展管理器以下载 GNOME Shell 扩展。
 
 ```
 flatpak install flathub com.mattjakeman.ExtensionManager
 ```
 
-* 打开扩展管理器应用并安装两个扩展。第一个是浮动 dock，它具有超酷的 dock，你可以在桌面上的任何位置移动。其次，安装用户主题扩展来帮助你在 Ubuntu Linux 中安装外部 GTK 主题。
+* 打开扩展管理器并安装两个扩展。第一个是浮动 dock，它具有超酷的 dock ，你可以在桌面上移动至任何位置。其次，安装用户主题扩展来帮助你在 Ubuntu Linux 中加载外部 GTK 主题。
 
 ![User Themes Extension][3]
 
 ![Floating Dock Extension][4]
 
-* 其次，使用以下命令安装 [Materia 主题][5]。你必须构建它，因为它没有任何可执行文件。在 Ubuntu 中依次运行以下命令进行安装。
+* 其次，使用以下命令安装 [Materia 主题][5]。因为它没有任何可执行文件，所以你必须构建它。在 Ubuntu 中依次运行以下命令进行安装：
 
 ```
 git clone https://github.com/ckissane/materia-theme-transparent.gitcd materia-theme-transparentmeson _buildmeson install -C _build
 ```
 
-* 此外，请从以下链接下载 [Kora 图标主题][6]。下载后解压文件，将以下四个文件夹复制到 `/home/<用户名>/.icons` 路径下。如果 .icons 文件夹不存在，请创建它。
+* 此外，请从以下链接下载 [Kora 图标主题][6]。下载后解压文件，将以下四个文件夹复制到 `/home/<用户名>/.icons` 目录下。如果 .icons 目录不存在，请创建它。
 
 [下载 Kora 图标主题][7]
 
 ![Kora Icon Theme][8]
 
-* 除了上述更改，从下面的链接下载 Bibata 光标主题。下载后，解压文件夹并将其复制到相同的 `/home/<用户名>/.icons` 文件夹中。
+* 此外，从下面的链接下载 Bibata 光标主题。下载后，解压文件夹并将其复制到相同的 `/home/<用户名>/.icons` 目录中。
 
 [下载 Bibata 光标主题][9]
 
-* 除了上述之外，如果你想要一个与上述主题相匹配的漂亮字体，请从 Google Fonts [下载 Robot font][10] 并将它们复制到 `/home/<user name>/.fonts` 文件夹。
+* 此外，如果你想要一个与上述主题相匹配的漂亮字体，请从 Google Fonts [下载 Robot font][10] 并将它们复制到 `/home/<user name>/.fonts` 目录。
 
 * 最后，再次重启系统。
 
@@ -77,27 +77,27 @@ git clone https://github.com/ckissane/materia-theme-transparent.gitcd materia-th
 
 ![Changes to Extensions][11]
 
-* 此外，打开浮动 dock 设置并进行以下更改。
+* 接着，打开浮动 dock 设置并进行以下更改。
 
 ![Floating Dock Settings][12]
 
-* 此外，打开 [GNOME Tweak Tool][13]，然后转到外观选项卡。设置以下内容。
+* 随后，打开 [GNOME Tweak Tool][13]，然后转到外观选项卡。设置以下内容。
 
 * 光标：Bibata-Original-Ice
 * Shell 主题：Materia
 * 图标：Kora
 
-* 除此之外，你可能还想更改字体。为此，请转到字体选项卡并将文档和界面更改为 Robot 10pt。
+* 如果你还想更改字体，请转到字体选项卡并将文档和界面更改为 Robot 10pt。
 
 * 或者，你也可以从 Ubuntu 22.04 的默认设置中更改强调色和样式。
 
 * 最后，根据你的喜好下载漂亮的壁纸。对于本教程，我从[这里][14]下载了一个示例壁纸。
 
-* 如果一切顺利，你应该有一个漂亮的桌面，如下图所示。
+* 如果一切顺利，你将有一个漂亮的桌面，如下图所示：
 
 ![Customize GNOME 42 – Final Look][15]
 
-享受精致的 GNOME 42。干杯。
+为享受精致的 GNOME 42 干杯。
 
 --------------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ via: https://www.debugpoint.com/2022/05/customize-gnome-42-look-1/
 作者：[Arindam][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
