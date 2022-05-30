@@ -51,7 +51,8 @@ Once that is done we have trained our model, and it’s now ready to make predic
 
 ![Figure 2: Making predictions][3]
 
-**Using ML model in Java**
+### Using ML model in Java
+
 What we need to do now is to convert the ML model into a model that can be used by a Java program. There is a library called sklearn2pmml that helps us do this:
 
 ```
