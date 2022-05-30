@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/dual-boot-ubuntu-22-04-and-windows-11/"
 [#]: author: "James Kiarie https://www.linuxtechi.com/author/james/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
