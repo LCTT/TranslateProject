@@ -3,19 +3,20 @@
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14654-1.html"
 
 Tails 警告用户不要使用 Tor 浏览器：原因如下！
 ======
-Tails 5.1 将针对“可绕过 Tor 浏览器安全措施的危险漏洞”提供关键修复。以下是它的全部内容。
+
+> Tails 5.1 将针对“可绕过 Tor 浏览器安全措施的危险漏洞”提供关键修复。以下是它的全部内容。
 
 ![Tails][1]
 
-**Tails** 是一个专注于安全的便携式 Linux 发行版，最近，它的开发团队发布了有关其当前版本的重要公告。他们警告用户在 **Tails 5.0 或更早版本** 上使用 Tor 浏览器时，避免输入或使用任何个人或敏感信息。
+Tails 是一个专注于安全的便携式 Linux 发行版，最近，它的开发团队发布了有关其当前版本的重要公告。他们警告用户在 **Tails 5.0 或更早版本** 上使用 Tor 浏览器时，避免输入或使用任何个人或敏感信息。
 
-Tor 浏览器是 Tails 事实上的（默认）网络浏览器，它有助于在用户连接到 Internet 时，保护他们的在线身份。它主要被各种记者和活动家用来逃避审查。不过，普通用户也可以使用它。
+Tor 浏览器是 Tails 事实上的（默认）网页浏览器，它有助于在用户连接到互联网时，保护他们的在线身份。它主要被各种记者和活动家用来逃避审查。不过，普通用户也可以使用它。
 
 ### 问题说明
 
@@ -31,6 +32,8 @@ Tails 公告中也对此进行了说明：
 
 没有这个必要。
 
+用户会很高兴地知道，这些漏洞并不影响 Tor 的连接。这意味着，如果你不交换任何敏感信息，如密码、个人信息、信息等，你可以随意地浏览互联网。
+
 Tails 中的其他应用程序，尤其是 Thunderbird，仍然可以安全使用，因为 JavaScript 在使用时会被禁用。
 
 此外，你也可以在 Tor 浏览器中启用最高的安全级别。这是推荐的，因为（该级别下）JavaScript 引擎会被禁用。不过，请注意，这会使网站无法正常运行。
@@ -39,7 +42,7 @@ Tails 中的其他应用程序，尤其是 Thunderbird，仍然可以安全使�
 
 ### 漏洞修复即将发布
 
-好消息！Mozilla 已经在上游修补了这些错误，现在就等 Tails 团队发布修复程序了。
+好的消息是，Mozilla 已经在上游修补了这些错误，现在就等 Tails 团队发布修复程序了。
 
 至于何时发布，他们是这样说的：
 
@@ -54,7 +57,7 @@ via: https://news.itsfoss.com/tails-tor-browser/
 作者：[Rishabh Moharir][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
