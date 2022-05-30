@@ -9,8 +9,8 @@
 
 Transform Your Arch Installation with Stunning XMonad WM Setup
 ======
-THIS ARTICLE GIVES YOU A STEP-BY-STEP INSTALLATION GUIDE FOR THE XMONAD
-SETUP IN ARCH LINUX WITH A CUSTOM PRE-CONFIGURED SCRIPT.
+This article gives you a step-by-step installation guide for the xmonad setup in arch linux with a custom pre-configured script.
+
 ### What is XMonad
 
 The [xmonad][1] is a dynamic tiling window manager for X Window system written in Haskell programming language. It is famous for its window automation, stability, minimal, workspace features, and more unique features. With features like – multiple display support, auto window tiling management, quick keyboard navigation, extension support, this window manager is one of the popular choices for those users who wants a productive and faster working system.
@@ -25,48 +25,32 @@ You can learn more about this window manager at [https://xmon][1][ad.org/][1].
 
 This guide assumes that you have a functional Arch Linux system ready to follow the below steps. If you want to install Arch Linux, then you can follow our guides as below:
 
-  * [How to Install Arch Linux via archinstall (recommended)][3]
-  * [How to Install Arch Linux (basics)][4]
-
-
+* [How to Install Arch Linux via archinstall (recommended)][3]
+* [How to Install Arch Linux (basics)][4]
 
 For this guide, we will use [Axarva’s pre-configured xmonad script][5], which comes with xmonad, Eww (Elkowars Wacky Widgets is a standalone widget system made in Rust), rofi (window switcher), tint2 (panels and taskbar) and some cool widgets. This guide is only for physical systems and not virtual machines.
 
 Using this personal script is best for novice Arch Linux users because it is unnecessary to go through the hassles of choosing and installing each of the above components and configure them separately.
 
-  * Ensure that you are logged on to the Arch Linux system as an admin user (preferable). And connected to the internet.
-
-
-  * In the terminal prompt, install the following components while in the home directory.
-
-
+* Ensure that you are logged on to the Arch Linux system as an admin user (preferable). And connected to the internet.
+* In the terminal prompt, install the following components while in the home directory.
 
 ```
-
     sudo pacman -Syu base-devel git nano
-
 ```
 
-  * Wait for the download to complete. Then clone the following [Axarva’s repo][5] from GitHub.
-
-
+* Wait for the download to complete. Then clone the following [Axarva’s repo][5] from GitHub.
 
 ```
-
     git clone https://github.com/Axarva/dotfiles-2.0.git
-
 ```
 
-  * After the above command is complete, browse to the dotfiles-2.0 directory. Here you should see a script – `install-on-arch.sh`. Give the execute permission on this script and run. All these you can do with the below set of commands.
-
-
+* After the above command is complete, browse to the dotfiles-2.0 directory. Here you should see a script – `install-on-arch.sh`. Give the execute permission on this script and run. All these you can do with the below set of commands.
 
 ```
-
     cd ./dotfiles-2.0
     chmod +x ./install-on-arch.sh
     ./install-on-arch.sh
-
 ```
 
 The above script will take some time to complete. It will download all the required packages for xmonad setup in Arch Linux. And at the end, the script will compile the entire source code that you downloaded in the first step, including xmonad and other additional utilities.
@@ -89,30 +73,20 @@ Congratulations if you reached this far. It’s time for some configuration. Onc
 
 Installing the xmonad window manager is not sufficient. You have to tell the Arch system where it should pick the executables and widgets. Also, you have to manually configure to tell X Windows server to execute the main xmonad binary. When you use a stacking window system (such as GNOME, KDE Plasma, etc.), the display manager (such as lightdm) takes care of this.
 
-  * Open the `~/.bashrc` file from the terminal prompt and append the $HOME/bin.
-
-
+* Open the `~/.bashrc` file from the terminal prompt and append the $HOME/bin.
 
 ![Updating bashrc file][9]
 
-  * Open the `~/.bash_profile` file and add startx at the beginning to start the xserver when logging in. Save and exit from the file.
-
-
+* Open the `~/.bash_profile` file and add startx at the beginning to start the xserver when logging in. Save and exit from the file.
 
 ![Updating bash_profile file][10]
 
-  * Open `~/.xinitrc` file and add `exec xmonad`. This file is new. Save the file once you add the command.
-
-
+* Open `~/.xinitrc` file and add `exec xmonad`. This file is new. Save the file once you add the command.
 
 ![Create xinitrc file][11]
 
-  * The steps are almost complete, open the `~/dotfiles-2.0/.config/alacritty.yml` file and change the font size for the terminal to something larger than the default value of 9. This is an optional step, but it’s better to change this. Save and close the file.
-
-
-  * Exit and log in again. And if all goes well, you should see a default xmonad desktop as below. Now, if you like to configure further such as installing applications and other steps, proceed to the next step.
-
-
+* The steps are almost complete, open the `~/dotfiles-2.0/.config/alacritty.yml` file and change the font size for the terminal to something larger than the default value of 9. This is an optional step, but it’s better to change this. Save and close the file.
+* Exit and log in again. And if all goes well, you should see a default xmonad desktop as below. Now, if you like to configure further such as installing applications and other steps, proceed to the next step.
 
 ![xmonad base install in Arch Linux – before configuration][12]
 
@@ -121,8 +95,6 @@ Installing the xmonad window manager is not sufficient. You have to tell the Arc
 The default install in this process gives you a basic setup without the necessary applications to perform day to day tasks.
 
 [][13]
-
-SEE ALSO:   How to Install yay AUR Helper in Arch Linux [Beginner’s Guide]
 
 Here, I have compiled a list of some famous and essential software for this setup. This step is optional, and you can install something else as you wish. However, you can install using the command that follows this list.
 
@@ -134,12 +106,8 @@ Here, I have compiled a list of some famous and essential software for this setu
   * Thunar – File manager
   * KSnip – Screenshot tool
 
-
-
 ```
-
     pacman -S gtklib firefox leafpad libreoffice thunar ksnip ristretto gimp feh gvfs polkit-gnome
-
 ```
 
 The gvfs and polkit-gnome packages are for Thunar and detect USB drives.
@@ -201,12 +169,6 @@ With that said, I hope this guide helps you to set up your xmonad window manager
 
 Cheers.
 
-* * *
-
-We bring the latest tech, software news and stuff that matters. Stay in touch via [Telegram][19], [Twitter][20], [YouTube][21], and [Facebook][22] and never miss an update!
-
-##### Also Read
-
 --------------------------------------------------------------------------------
 
 via: https://www.debugpoint.com/2022/02/xmonad-arch-linux-setup/
@@ -238,7 +200,3 @@ via: https://www.debugpoint.com/2022/02/xmonad-arch-linux-setup/
 [16]: https://www.debugpoint.com/wp-content/uploads/2022/02/xmonad-performance-in-Arch-Linux-during-idle-state-1024x575.jpg
 [17]: https://www.debugpoint.com/wp-content/uploads/2022/02/xmonad-performance-in-Arch-Linux-during-heavy-workflow-state-1024x575.jpg
 [18]: https://www.debugpoint.com/tag/arch-linux
-[19]: https://t.me/debugpoint
-[20]: https://twitter.com/DebugPoint
-[21]: https://www.youtube.com/c/debugpoint?sub_confirmation=1
-[22]: https://facebook.com/DebugPoint
