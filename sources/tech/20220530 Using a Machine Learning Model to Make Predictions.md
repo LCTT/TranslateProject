@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/using-a-machine-learning-model-to-make-predictions/"
 [#]: author: "Jishnu Saurav Mittapalli https://www.opensourceforu.com/author/jishnu-saurav-mittapalli/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
