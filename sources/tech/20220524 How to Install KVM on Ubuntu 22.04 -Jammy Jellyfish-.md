@@ -13,21 +13,21 @@ Ubuntu 22.04 (Jammy Jellyfish) 之 KVM 安装手札
 
 在 **KVM** 之上可以运行 Windows 和 Liunx 虚拟机。每个虚拟机之间相互独立并独享 CPU、内存、网络设备、存储设备等相关资源。
 
-本文将介绍如何在 Ubuntu 22.04 LTS (Jammy Jellyfish) 中安装 **KVM** 。在文末，我们也将演示在安装 **KVM** 完成之后如何创建虚拟机。
+本文将介绍在 Ubuntu 22.04 LTS (Jammy Jellyfish) 中如何安装 **KVM** 。在文末，我们也将演示在安装 **KVM** 完成之后如何创建虚拟机。
 
 ### 1) 更新 Ubuntu 22.04
 
-To get off the ground, launch the terminal and update your local package index as follows.
+在一切开始前，打开终端并通过如下命令更新更新apt软件包索引：
 
 ```
 $ sudo apt update
 ```
 
-### 2) Check if Virtualization is enabled
+### 2) 检查虚拟化是否开启
 
-Before you proceed any further, you need to check if your CPU supports KVM virtualization. For this to be possible, your system needs to either have a VT-x( vmx ) Intel processor or an AMD-V (svm) processor.
+首先需要检查您的CPU是否支持 KVM 虚拟化。确保您系统中安装了 Intel 处理器 VT-x( vmx ) 或 AMD AMD-V (svm) 处理器。
 
-This is achieved by running the following command. if the output is greater than 0, then virtualization is enabled. Otherwise, virtualization is disabled and you need to enable it.
+您可以通过运行如下命令，根据返回的结果是否大于0判断虚拟化是否启用。如果返回值等于0，则表示虚拟化已禁用，您需要先启用虚拟化。
 
 ```
 $ egrep -c '(vmx|svm)' /proc/cpuinfo
@@ -37,7 +37,7 @@ $ egrep -c '(vmx|svm)' /proc/cpuinfo
 
 From the above output, you can deduce that virtualization is enabled since the result printed is greater than 0. If Virtualization is not enabled, be sure to enable the virtualization feature in your system’s BIOS settings.
 
-In addition, you can verify if KVM virtualization is enabled by running the following command:
+另外，您可以通过如下命令判断 KVM 虚拟化是否已经在运行：
 
 ```
 $ kvm-ok
@@ -49,13 +49,13 @@ Directly below, you will get instructions on how to resolve this issue, and that
 
 ![KVM-OK-Command-Not-Found-Ubuntu][2]
 
-Therefore, install the cpu-checker package as follows.
+随后，通过如下命令安装 cpu-checker 软件包：
 
 ```
 $ sudo apt install -y cpu-checker
 ```
 
-Then run the kvm-ok command, and if KVM virtualization is enabled, you should get the following output.
+接着运行 kvm-ok 命令，如果 KVM 已经启动，您将看到如下输出：
 
 ```
 $ kvm-ok
@@ -63,26 +63,26 @@ $ kvm-ok
 
 ![KVM-OK-Command-Output][3]
 
-### 3) Install KVM on Ubuntu 22.04
+### 3) 在 Ubuntu 22.04 上安装 KVM
 
-Next, run the command below to install KVM and additional virtualization packages on Ubuntu 22.04.
+随后，通过如下命令在 Ubuntu 22.04 中安装 KVM 以及其他相关虚拟化软件包：
 
 ```
 $ sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils
 ```
 
-Let us break down the packages that we are installing:
+为您解释下刚刚安装了哪些软件包：
 
-* qemu-kvm  – An opensource emulator and virtualization package that provides hardware emulation.
-* virt-manager – A Qt-based graphical interface for managing virtual machines via the libvirt daemon.
-* libvirt-daemon-system – A package that provides configuration files required to run the libvirt daemon.
-* virtinst – A  set of command-line utilities for provisioning and modifying virtual machines.
+* qemu-kvm  – 一款开源模拟器，为虚拟化安装包提供硬件模拟的支持
+* virt-manager – 一款基于 **QT** 和 **libvirt** 的图形的 libvirt 虚拟机管理工具
+* libvirt-daemon-system – 一款为运行 libvirt 进程提供必要配置文件的工具
+* virtinst – 一套为置备和修改虚拟机提供的命令行工具
 * libvirt-clients – A set of client-side libraries and APIs for managing and controlling virtual machines & hypervisors from the command line.
 * bridge-utils – A set of tools for creating and managing bridge devices.
 
-###  4) Enable the virtualization daemon (libvirtd)
+###  4) 启用虚拟化守护进程 (libvirtd)
 
-With all the packages installed, enable and start the Libvirt daemon.
+在所有软件包安装完毕之后，通过如下命令 启用并启动 Libvirt 守护进程：
 
 ```
 $ sudo systemctl enable --now libvirtd
@@ -106,7 +106,7 @@ $ sudo usermod -aG libvirt $USER
 
 The $USER environment variable points to the name of the currently logged-in user.  To apply this change, you need to log out and log back again.
 
-### 5) Create Network Bridge (br0)
+### 5) 创建网桥(br0)
 
 If you are planning to access KVM virtual machines outside from your Ubuntu 22.04 system, then you must map VM’s interface to a network bridge. Though a virtual bridge named virbr0, created automatically when KVM is installed but it is used for testing purposes.
 
@@ -148,7 +148,7 @@ To apply above change, run ‘netplan apply’
 $ sudo netplan apply
 ```
 
-Verify the network bridge ‘br0’, run below ip command
+您可以通过如下命令，验证网桥 ‘br0’：
 
 ```
 $ ip add show
@@ -156,7 +156,7 @@ $ ip add show
 
 ![Network-Bridge-br0-ubuntu-linux][5]
 
-### 6) Launch KVM Virtual Machines Manager
+### 6) 启动 KVM 虚拟机管理器
 
 With KVM installed, you can begin creating your virtual machines using the virt-manager GUI tool. To get started, use the GNOME search utility and search for ‘Virtual machine Manager’.
 
@@ -203,7 +203,7 @@ Next, define the RAM and the number of CPU cores for your virtual machine and cl
 
 ![Virtual-Machine-RAM-CPU-Virt-Manager][14]
 
-In the next step, define the disk space for your virtual machine and click ‘Forward’.
+下一页中，输入虚拟机磁盘空间，并点击 ‘Forward’ 继续。
 
 ![Storage-for-Virtual-Machine-KVM-Virt-Manager][15]
 
@@ -211,21 +211,21 @@ To associate virtual machine’s nic to network bridge, click on ‘Network sele
 
 ![Network-Selection-KVM-Virtual-Machine-Virt-Manager][16]
 
-Finally, click ‘Finish’ to wind up setting the virtual machine.
+最后，点击 ‘Finish’ 按钮结束设置虚拟机。
 
 ![Choose-Finish-to-OS-Installation-KVM-VM][17]
 
-Shortly afterward, the virtual machine creation will get underway.
+稍等片刻，虚拟机的创建过程将开始。
 
 ![Creating-Domain-Virtual-Machine-Virt-Manager][18]
 
-Once completed, the virtual machine will start with the OS installer displayed. Below is the Debian 11 installer listing the options for installation. From here, you can proceed to install your preferred system.
+当创建结束时，虚拟机将开机并进入系统安装界面。如下是 Debian 11 的安装选项。在这里您可以根据需要进行系统安装。
 
 ![Virtual-Machine-Console-Virt-Manager][19]
 
-##### Conclusion
+##### 小结
 
-And that’s it. In this guide, we have demonstrated how you can install the KVM hypervisor on Ubuntu 22.04. Your feedback on this guide is much welcome.
+至此，本文向您演示了如何在 Ubuntu 22.04 上 安装 KVM 虚拟化引擎。您的反馈对我们至关重要。
 
 --------------------------------------------------------------------------------
 
