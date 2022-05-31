@@ -3,17 +3,16 @@
 [#]: author: "Mihalis Tsoukalos https://opensource.com/users/mtsouk"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14658-1.html"
 
 在 Go 中复制文件的三种方法
 ======
-本文是 Go 系列的第三篇文章，我将介绍三种最流行的复制文件的方法。
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202205/31/153413kcrth9v8c93r5u8e.jpg)
 
-图源：Opensource.com
+> 本文是 Go 系列的第三篇文章，我将介绍三种最流行的复制文件的方法。
 
 本文将介绍展示如何使用 [Go 编程语言][3] 来复制文件。在 Go 中复制文件的方法有很多，我只介绍三种最常见的：使用 Go 库中的 `io.Copy()` 函数调用、一次读取输入文件并将其写入另一个文件，以及使用缓冲区一块块地复制文件。
 
@@ -85,7 +84,7 @@ if err != nil {
 }
 ```
 
-上述代码包括了两个 if 代码块（嗯，用 Go 写程序就是这样的），程序的实际功能其实体现在 `ioutil.ReadFile()` 和 `ioutil.WriteFile()` 这两行代码中。
+上述代码包括了两个 `if` 代码块（嗯，用 Go 写程序就是这样的），程序的实际功能其实体现在 `ioutil.ReadFile()` 和 `ioutil.WriteFile()` 这两行代码中。
 
 运行 `cp2.go`，你会得到下面的输出：
 
@@ -204,7 +203,7 @@ via: https://opensource.com/article/18/6/copying-files-go
 作者：[Mihalis Tsoukalos][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
