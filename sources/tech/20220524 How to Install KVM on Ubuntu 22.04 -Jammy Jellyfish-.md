@@ -35,7 +35,7 @@ $ egrep -c '(vmx|svm)' /proc/cpuinfo
 
 ![SVM-VMX-Flags-Cpuinfo-linux][1]
 
-From the above output, you can deduce that virtualization is enabled since the result printed is greater than 0. If Virtualization is not enabled, be sure to enable the virtualization feature in your system’s BIOS settings.
+根据上方命令输出，您通过返回值是否大于0判断虚拟化环境启用与否。如果虚拟化未启用，请在BIOS设置中将其开启。
 
 另外，您可以通过如下命令判断 KVM 虚拟化是否已经在运行：
 
@@ -43,9 +43,9 @@ From the above output, you can deduce that virtualization is enabled since the r
 $ kvm-ok
 ```
 
-For this to work, you need to have installed the cpu-checker package, otherwise, you will bump into the error ‘Command ‘kvm-ok’ not found’.
+请确保您已经安装了 cpu-checker 软件包，否则将提示未找到该命令的报错。
 
-Directly below, you will get instructions on how to resolve this issue, and that is to install the cpu-checker package.
+关于此类问题的解决方案以及 cp-checker 软件包的安装，您可以参考如下：
 
 ![KVM-OK-Command-Not-Found-Ubuntu][2]
 
@@ -77,9 +77,8 @@ $ sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvi
 * virt-manager – 一款基于 **QT** 和 **libvirt** 的图形的 libvirt 虚拟机管理工具
 * libvirt-daemon-system – 一款为运行 libvirt 进程提供必要配置文件的工具
 * virtinst – 一套为置备和修改虚拟机提供的命令行工具
-* libvirt-clients – A set of client-side libraries and APIs for managing and controlling virtual machines & hypervisors from the command line.
-* bridge-utils – A set of tools for creating and managing bridge devices.
-
+* libvirt-clients – 一套提供管理和控制虚拟机以及虚拟化引擎的客户端侧库和API命令行工具
+* bridge-utils – 一套用于创建和管理桥接设备的工具
 ###  4) 启用虚拟化守护进程 (libvirtd)
 
 在所有软件包安装完毕之后，通过如下命令 启用并启动 Libvirt 守护进程：
@@ -89,7 +88,7 @@ $ sudo systemctl enable --now libvirtd
 $ sudo systemctl start libvirtd
 ```
 
-Confirm that the virtualization daemon is running as shown.
+您可以通过如下命令验证虚拟化守护进程是否已经运行：
 
 ```
 $ sudo systemctl status libvirtd
@@ -97,14 +96,14 @@ $ sudo systemctl status libvirtd
 
 ![Libvirtd-Status-Ubuntu-Linux][4]
 
-In addition, you need to add the currently logged-in user to the kvm and libvirt groups so that they can create and manage virtual machines.
+另外，请将当前登录用户加入 kvm 和 libvirt 用户组，以便能够创建和管理虚拟机。
 
 ```
 $ sudo usermod -aG kvm $USER
 $ sudo usermod -aG libvirt $USER
 ```
 
-The $USER environment variable points to the name of the currently logged-in user.  To apply this change, you need to log out and log back again.
+$USER 环境变量引用的即为当前登录的用户名。您需要重新登录才能使得配置生效。
 
 ### 5) 创建网桥(br0)
 
