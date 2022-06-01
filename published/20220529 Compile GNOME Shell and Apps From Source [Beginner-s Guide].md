@@ -3,40 +3,43 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14662-1.html"
 
-从源码编译 Gnome Shell 和应用（初学者指南）
+如何从源码编译 GNOME Shell 和应用
 ======
-这是你如何从其来源码编译 GNOME 的快速指南，包括 shell，mutter 和一些原生应用。
+
+![](https://img.linux.net.cn/data/attachment/album/202206/01/180518p98dt89wz7779tyb.jpg)
+
+> 这是一篇如何从源码编译 GNOME 的快速指南，包括 Shell、mutter 和一些原生应用。
 
 在编译之前，你需要确保一些事情，因为以下编译直接来自 Gitlab 的主分支，其中包含一些开发包。
 
-通常，你可以选择在任何 Linux 分发中编译。但是我建议使用 Fedora Rawhide（Fedora 的开发分支，即未来版本）。
+通常，你可以选择在任何 Linux 发行版中编译。但是我建议使用 Fedora Rawhide（Fedora 的开发分支，用于将来的发布）。
 
 另外，请勿在稳定系统中尝试此操作。因为操作可能出错，所以你可能最终得到损坏的系统。
 
-总而言之，你需要以下内容来从源码编译 Gnome。
+总而言之，你需要以下内容来从源码编译 GNOME。
 
-* 测试设置（[虚拟机][1]或测试系统）。
+* 测试环境（[虚拟机][1] 或测试系统）。
 * Fedora Rawhide 发行版（推荐，[从此处下载][2]）。
 * 确保你的发行版是最新的。
 * 你已登录 X.org 会话。
 
 我不建议你在 Wayland 会话中进行编译，因为你会遇到问题。
 
-### 从源码编译 Gnome
+### 从源码编译 GNOME
 
-Gnome 桌面是基于其功能的软件包集合。Linux 发行版的桌面组件在窗口管理器和 shell 下工作。
+GNOME 桌面是一个基于其功能的软件包集合。Linux 发行版的桌面组件工作于窗口管理器和 shell 之下。
 
-因此，对于 Gnome，我将首先编译 mutter – Gnome Shell 的窗口管理。然后进行 Gnome Shell 的编译。最后，我将编译一些原生应用。
+因此，对于 GNOME，我将首先编译 mutter – 它是 GNOME Shell 的窗口管理器。然后进行 GNOME Shell 的编译。最后，我将编译一些原生应用。
 
-我将使用 meson 构建系统进行编译。meson 是一个美丽的构建系统，快速且用户友好。
+我将使用 meson 构建系统进行编译。meson 是一个漂亮的构建系统，快速且用户友好。
 
-#### 编译 Mutter
+#### 编译 mutter
 
-打开终端并安装需要的 GNOME Shell 和 mutter。
+打开终端并安装 GNOME Shell 和 mutter 所需的软件包。
 
 ```
 sudo dnf build-dep mutter gnome-shell
@@ -46,27 +49,20 @@ sudo dnf build-dep mutter gnome-shell
 
 ```
 cd ~
-```
-
-```
 mkdir demo
-```
-
-```
 cd demo
 ```
 
 从 Gitlab 克隆 mutter 的主分支。
 
+```
 git clone https://gitlab.gnome.org/GNOME/mutter
+```
 
-进入克隆目录，然后使用以下 meson 命令来准备构建文件。默认情况下，Meson 使用 `/usr/local` 用于构建文件。但是，你也可以使用前缀开关将输出重定向到特定文件夹（如下所示）。
+进入克隆目录，然后使用以下 `meson` 命令来准备构建文件。默认情况下，meson 使用 `/usr/local` 用于构建文件。但是，你也可以使用前缀开关将输出重定向到特定文件夹（如下所示）。
 
 ```
 cd mutter
-```
-
-```
 meson _build --prefix=/usr
 ```
 
@@ -86,9 +82,6 @@ GNOME Shell 和其他软件包的编译方法类似。首先，从 GitLab 克隆
 
 ```
 sudo dnf install asciidoc
-```
-
-```
 sudo dnf install sassc
 ```
 
@@ -100,7 +93,7 @@ git clone https://gitlab.gnome.org/GNOME/gnome-shellcd gnome-shellmeson _build -
 
 ### 运行 GNOME Shell
 
-编译完成后，你可以尝试重新启动 GNOME Shell 来查看主分支的变化。
+编译完成后，你可以尝试重新启动 GNOME Shell 来查看来自主分支的变化。
 
 在重启之前，正如我之前提到的，确保你处于 X.Org 会话中。按 `ALT+F2` 并输入 `r`。然后按回车键。这个命令将重启 GNOME Shell。
 
@@ -120,7 +113,7 @@ git clone https://gitlab.gnome.org/GNOME/gnome-shellcd gnome-shellmeson _build -
 git clone https://gitlab.gnome.org/GNOME/nautilus/cd gnome-shellmeson _build --prefix=/usrsudo ninja install -C _build
 ```
 
-#### GNOME 软件
+#### GNOME 软件商店
 
 ```
 git clone https://gitlab.gnome.org/GNOME/gnome-software/cd gnome-shellmeson _build --prefix=/usrsudo ninja install -C _build
@@ -139,7 +132,7 @@ git clone https://gitlab.gnome.org/GNOME/gnome-control-center/cd gnome-shellmeso
 
 ### 结束语
 
-我希望这个小小的高级教程能够帮助你在 GNOME 每日构建系统出现之前尝试新的 GNOME 功能。既然你编译了，你也可以为测试新的 GNOME 功能做出贡献，并在 GitLab 问题页面上报告任何特定包的 bug 或问题。
+我希望这个小小的高级教程能够帮助你在新的 GNOME 功能出现在 GNOME 每日构建系统之前尝试它。既然你编译了，你也可以为测试新的 GNOME 功能做出贡献，并在 GitLab 问题页面上报告任何特定包的 bug 或问题。
 
 这篇文章是开源应用编译系列的第一篇文章。请继续关注更多开源应用的编译文章。
 
@@ -154,7 +147,7 @@ via: https://www.debugpoint.com/2022/05/compile-gnome-source/
 作者：[Arindam][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
