@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "turbokernel"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14661-1.html"
 
 Ubuntu 22.04 之 KVM 安装手札
 ======
