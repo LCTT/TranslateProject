@@ -137,12 +137,11 @@ network:
   version: 2
 ```
 
-save and exit the file.
+保存并推出文件。
 
-Note: These details as per my setup, so replace the IP address entries, interface name and mac address as per your setup.
+注：上述文件的配置是我环境中的，请根据您实际环境替换 IP 地址、网口名称以及mac地址。
 
-To apply above change, run ‘netplan apply’
-
+您可以通过运行 ‘netplan apply’命令应用上述变更。T
 ```
 $ sudo netplan apply
 ```
