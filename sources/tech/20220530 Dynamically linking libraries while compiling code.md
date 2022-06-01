@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/compile-code-ldlibrarypath"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
