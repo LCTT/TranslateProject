@@ -107,9 +107,8 @@ $USER 环境变量引用的即为当前登录的用户名。您需要重新登�
 
 ### 5) 创建网桥(br0)
 
-If you are planning to access KVM virtual machines outside from your Ubuntu 22.04 system, then you must map VM’s interface to a network bridge. Though a virtual bridge named virbr0, created automatically when KVM is installed but it is used for testing purposes.
-
-To create a network bridge, create the file ‘01-netcfg.yaml’ with following content under the folder /etc/netplan.
+如果您打算从本机（Ubuntu 22.04）之外访问 KVM 虚拟机，您必须将虚拟机的网卡映射至网桥。virbr0 网桥是 KVM安装完成后自动创建的，仅做测试用途。
+您可以通过如下内容在 /etc/netplan 目录下创建文件 ‘01-netcfg.yaml’ 来新建网桥：
 
 ```
 $ sudo vi /etc/netplan/01-netcfg.yaml
@@ -156,48 +155,48 @@ $ ip add show
 
 ### 6) 启动 KVM 虚拟机管理器
 
-With KVM installed, you can begin creating your virtual machines using the virt-manager GUI tool. To get started, use the GNOME search utility and search for ‘Virtual machine Manager’.
+当KVM安装完成后，您可以使用 virt-manager 图形管理工具创建虚拟机。您可以在 GNOME 搜索工具中搜索 ‘Virtual machine Manager’ 以启动。
 
-Click on the icon that pops up.
+点击搜索出来的图标即可。
 
 ![Access-Virtual-Machine-Manager-Ubuntu-Linux][6]
 
-This launches the Virtual Machine Manager Interface.
+虚拟机管理器界面如下所示：
 
 ![Virtual-Machine-Manager-Interface-Ubuntu-Linux][7]
 
-Click on “File” then select “New Virtual Machine”. Alternatively, you can click on the button shown.
+您可以点击 “File” 并选择 “New Virtual Machine”。您也可以点击下图所示的图标：
 
 ![New-Virtual-Machine-Icon-Virt-Manager][8]
 
-This pops open the virtual machine installation wizard which presents you with the following four options:
+您在弹出的虚拟机安装向导将看到如下四个选项：
 
-* Local install Media ( ISO image or CDROM )
-* Network Install ( HTTP, HTTPS, and FTP )
-* Import existing disk image
-* Manual Install
+* 本地安装介质 ( ISO 镜像或 CDROM )
+* 网络安装 ( HTTP, HTTPS, 和 FTP )
+* 导入现有磁盘镜像
+* 手动安装
 
-In this guide, we have downloaded a Debian 11 ISO image, and therefore, if you have an ISO image, select the first option and click ‘Forward’.
+本文使用已下载的 ISO镜像，您可以选择自己的 ISO 镜像，选择第一个选项，并点击 ‘Forward’。
 
 ![Local-Install-Media-ISO-Virt-Manager][9]
 
-In the next step, click ‘Browse’ to navigate to the location of the ISO image,
+下一步中，点击‘Browse’选择ISO 镜像路径。
 
 ![Browse-ISO-File-Virt-Manager-Ubuntu-Linux][10]
 
-In the next window, click ‘Browse local’ in order to select the ISO image from the local directories on your Linux PC.
+在下一个窗口中点击‘Browse local’选取本机中 ISO 镜像。
 
 ![Browse-Local-ISO-Virt-Manager][11]
 
-As demonstrated below, we have selected the Debian 11 ISO image. Then click ‘Open’
+如下所示，我们选择了 Debian 11 ISO 镜像，随后点击‘Open’。
 
 ![Choose-ISO-File-Virt-Manager][12]
 
-Once the ISO image is selected, click ‘Forward’ to proceed to the next step.
+当 ISO 镜像选择后，点击‘Forward’进入下一步。
 
 ![Forward-after-browsing-iso-file-virt-manager][13]
 
-Next, define the RAM and the number of CPU cores for your virtual machine and click ‘Forward’.
+接着定义虚拟机所用 RAM 大小以及 CPU 核心数，并点击 ‘Forward’。
 
 ![Virtual-Machine-RAM-CPU-Virt-Manager][14]
 
@@ -205,7 +204,7 @@ Next, define the RAM and the number of CPU cores for your virtual machine and cl
 
 ![Storage-for-Virtual-Machine-KVM-Virt-Manager][15]
 
-To associate virtual machine’s nic to network bridge, click on ‘Network selection’ and choose br0 bridge.
+如您需要将虚拟机网卡连接至网桥，点击‘Network selection’并选择 br0 网桥。
 
 ![Network-Selection-KVM-Virtual-Machine-Virt-Manager][16]
 
