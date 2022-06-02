@@ -3,17 +3,16 @@
 [#]: author: "Mihalis Tsoukalos https://opensource.com/users/mtsouk"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14665-1.html"
 
 Go 数组和切片的介绍
 ======
-了解使用数组和切片在 Go 中存储数据的优缺点，以及为什么其中一个比另一个更好。
 
-![][1]
+![](https://img.linux.net.cn/data/attachment/album/202206/02/105657zahhco3612vv1bbo.jpg)
 
-图源：carrotmadman6，经 Opensource.com 修改，CC BY-SA 2.0
+> 了解使用数组和切片在 Go 中存储数据的优缺点，以及为什么其中一个更好。
 
 在本系列的第四篇文章中，我将解释 [Go][5] 数组和切片，包括如何使用它们，以及为什么你通常要选择其中一个而不是另一个。
 
@@ -26,6 +25,7 @@ Go 数组和切片的介绍
 ```
 anArray := [4]int{-1, 2, 0, -4}
 ```
+
 数组的大小应该在它的类型之前声明，而类型应该在声明元素之前定义。`len()` 函数可以帮助你得到任何数组的长度。上面数组的大小是 4。
 
 如果你熟悉其他编程语言，你可能会尝试使用 `for` 循环来遍历数组。Go 当然也支持 `for` 循环，不过，正如你将在下面看到的，Go 的 `range` 关键字可以让你更优雅地遍历数组或切片。
@@ -39,7 +39,6 @@ twoD := [3][3]int{
   {10, 11, 12}}
 ```
 
-The `arrays.go` source file explains the use of Go arrays. The most important code in `arrays.go` is:
 `arrays.go` 源文件中包含了 Go 数组的示例代码。其中最重要的部分是：
 
 ```
@@ -101,7 +100,6 @@ Go 切片与 Go 数组类似，但是它没有后者的缺点。
 
 此外，切片是通过引用传递给函数的，这意味着实际传递给函数的是切片变量的内存地址，这样一来，你对函数内部的切片所做的任何修改，都不会在函数退出后丢失。因此，将大切片传递给函数，要比将具有相同数量元素的数组传递给同一函数快得多。这是因为 Go 不必拷贝切片 —— 它只需传递切片变量的内存地址。
 
-Go slices are illustrated in `slice.go`, which contains the following code:
 `slice.go` 源文件中有 Go 切片的代码示例，其中包含以下代码：
 
 ```
@@ -141,7 +139,7 @@ func main() {
 }
 ```
 
-切片和数组在定义方式上的最大区别就在于：你不需要指定切片的大小。实际上，切片的大小取决于你要放入其中的元素数量。此外，`append()` 函数允许你将元素添加到现有切片 —— 请注意，即使切片的容量允许你将元素添加到该切片，它的长度也不会被修改，除非你调用 `append ()`。上述代码中的 `printSlice()` 函数是一个辅助函数，用于打印切片中的所有元素，而 `negative()` 函数将切片中的每个元素都变为各自的相反数。
+切片和数组在定义方式上的最大区别就在于：你不需要指定切片的大小。实际上，切片的大小取决于你要放入其中的元素数量。此外，`append()` 函数允许你将元素添加到现有切片 —— 请注意，即使切片的容量允许你将元素添加到该切片，它的长度也不会被修改，除非你调用 `append()`。上述代码中的 `printSlice()` 函数是一个辅助函数，用于打印切片中的所有元素，而 `negative()` 函数将切片中的每个元素都变为各自的相反数。
 
 运行 `slice.go` 将得到以下输出：
 
@@ -192,7 +190,7 @@ Array: [1 -2 3 -4 5]
 
 你可以在 [GitHub][6] 上找到 `arrays.go`、`slice.go` 和 `refArray.go` 的源代码。
 
-如果您有任何问题或反馈，请在下方发表评论或在 [Twitter][7] 上与我联系。
+如果你有任何问题或反馈，请在下方发表评论或在 [Twitter][7] 上与我联系。
 
 --------------------------------------------------------------------------------
 
@@ -201,7 +199,7 @@ via: https://opensource.com/article/18/7/introduction-go-arrays-and-slices
 作者：[Mihalis Tsoukalos][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
