@@ -4,30 +4,33 @@
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
 [#]: reviewer: "turbokernel"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14638-1.html"
 
-在 Fedora 36 中如何重置 Root 密码
+在 Fedora 36 中如何重置 root 密码
 ======
-在 Fedora 中重置忘记的 root 密码。
 
-您是否忘记了 Fedora 中的 root 密码？或者您想更改 Fedora 系统中的 root 用户密码？没问题！本手册将指导您在 Fedora 操作系统中完成更改或重置 root 密码的步骤。
+![](https://img.linux.net.cn/data/attachment/album/202205/26/094836cgtywrtwkywg2nem.jpg)
+
+> 在 Fedora 中重置忘记的 root 密码。
+
+你是否忘记了 Fedora 中的 root 密码？或者你想更改 Fedora 系统中的 root 用户密码？没问题！本手册将指导你在 Fedora 操作系统中完成更改或重置 root 密码的步骤。
 
 **注意：** 本手册已在 Fedora 36 和 35 版本上进行了正式测试。下面提供的步骤与在 Fedora Silverblue 和旧 Fedora 版本中重置 root 密码的步骤相同。
 
-**步骤 1** - 打开 Fedora 系统并按下 **ESC** 键，直到看到 GRUB 启动菜单。出现 GRUB 菜单后，选择要引导的内核并按下 **e** 编辑选定的引导条目。
+**步骤 1** - 打开 Fedora 系统并按下 `ESC` 键，直到看到 GRUB 启动菜单。出现 GRUB 菜单后，选择要引导的内核并按下 `e` 编辑选定的引导条目。
 
 ![Grub Menu In Fedora 36][1]
 
-**步骤 2** - 在下一个页面中，你将看到所有启动参数。找到名为 **ro** 的参数。
+**步骤 2** - 在下一个页面中，你将看到所有启动参数。找到名为 `ro` 的参数。
 
 ![Find ro Kernel Parameter In Grub Entry][2]
 
-**步骤 3** - 将 **“ro”** 参数替换为 **“rw init=/sysroot/bin/sh”**（不带引号）。请注意 “`rw`” 和 “`init=/sysroot`...” 之间的空格。修改后的内核参数行应如下所示。
+**步骤 3** - 将 `ro` 参数替换为 `rw init=/sysroot/bin/sh`。请注意 `rw` 和 `init=/sysroot`...之间的空格。修改后的内核参数行应如下所示。
 
 ![Modify Kernel Parameters][3]
 
-**步骤 4** - 上述步骤更改参数后，按 **Ctrl+x** 进入紧急模式，即单用户模式。
+**步骤 4** - 上述步骤更改参数后，按 `Ctrl+x` 进入紧急模式，即单用户模式。
 
 在紧急模式下，输入以下命令以  **读/写** 模式挂载根文件系统（`/`）。
 
@@ -73,7 +76,7 @@ reboot
 
 ![Login To Fedora As Root User][8]
 
-如你所见，在 Fedora 36 中重置 root 密码的步骤非常简单，并且与**[在 RHEL 中重置 root 密码][9]**及其衍生版本（如 CentOS、AlmaLinux 和 Rocky Linux）完全相同。
+如你所见，在 Fedora 36 中重置 root 密码的步骤非常简单，并且与 [在 RHEL 中重置 root 密码][9] 及其衍生版本（如 CentOS、AlmaLinux 和 Rocky Linux）完全相同。
 
 --------------------------------------------------------------------------------
 
