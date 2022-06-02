@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/create-local-yum-dnf-repository-rhel/"
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
