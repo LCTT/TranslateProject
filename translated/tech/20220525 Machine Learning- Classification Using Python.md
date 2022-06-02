@@ -3,7 +3,7 @@
 [#]: author: "Gayatri Venugopal https://www.opensourceforu.com/author/gayatri-venugopal/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
@@ -99,7 +99,7 @@ via: https://www.opensourceforu.com/2022/05/machine-learning-classification-usin
 作者：[Gayatri Venugopal][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
