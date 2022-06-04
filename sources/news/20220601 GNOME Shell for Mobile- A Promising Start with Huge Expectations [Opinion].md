@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/06/gnome-shell-mobile-announcement/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
