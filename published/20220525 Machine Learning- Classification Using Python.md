@@ -4,18 +4,19 @@
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
 [#]: reviewer: "turbokernel"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14676-1.html"
 
 机器学习：使用 Python 进行分类
 ======
-在机器学习 (ML) 中，分析一组数据以预测结果。 Python 被认为是 ML 的最佳编程语言选择之一。在本文中，我们将讨论使用 Python 进行分类的机器学习。
+
+> 机器学习（ML）就是，分析一组数据以预测结果。Python 被认为是 ML 的最佳编程语言选择之一。在本文中，我们将讨论使用 Python 进行分类的机器学习。
 
 ![machine-learning-classification][1]
 
 假设你想教孩子区分苹果和橙子。有多种方法可以做到这一点。你可以让孩子触摸这两种水果，让他们熟悉形状和柔软度。你还可以向她展示苹果和橙子的多个例子，以便他们可以直观地发现差异。这个过程的技术等价物被称为机器学习。
 
-机器学习教计算机解决特定问题，并通过经验变得更好。这里讨论的示例是一个分类问题，其中机器被赋予各种标记示例，并期望使用它从标记样本中获得的知识来标记未标记样本。机器学习问题也可以采用回归的形式，其中期望根据已知样本及其解决方案来预测给定问题的实值解决方案。分类和回归被广泛称为监督学习。机器学习也可以是无监督的，机器识别未标记数据中的模式，并形成具有相似模式的样本集群。机器学习的另一种形式是强化学习，机器通过犯错从环境中学习。
+机器学习教计算机解决特定问题，并通过经验变得更好。这里讨论的示例是一个分类问题，其中机器被赋予各种标记示例，并期望使用它从标记样本中获得的知识来对未标记样本进行标记。机器学习问题也可以采用回归的形式，其中期望根据已知样本及其解决方案来预测给定问题的<ruby>实值<rt>real-valued</rt></ruby>解决方案。<ruby>分类<rt>Classification</rt></ruby>和<ruby>回归<rt>Regression</rt></ruby>被广泛称为<ruby>监督学习<rt>supervised learning</rt></ruby>。机器学习也可以是<ruby>无监督<rt>unsupervised</rt></ruby>的，机器识别未标记数据中的模式，并形成具有相似模式的样本集群。机器学习的另一种形式是<ruby>强化学习<rt>reinforcement learning</rt></ruby>，机器通过犯错从环境中学习。
 
 ### 分类
 
@@ -23,41 +24,40 @@
 
 在该表中，最后一列的值，即贷款批准，预计将基于其他变量进行预测。在接下来的部分中，我们将学习如何使用 Python 训练和评估分类器。
 
-| - | - | - | - | - |
-| :- | :- | :- | :- | :- |
 | 年龄 | 信用等级 | 工作 | 拥有房产 | 贷款批准 | 
+| :- | :- | :- | :- | :- |
 | 35 | 好 | 是 | 是 | 是 | 
 | 32 | 差 | 是 | 不 | 不 | 
 | 22 | 一般 | 不 | 不 | 不 | 
 | 42 | 好 | 是 | 不 | 是 |
 
-表格 1
+*表 1*
 
 ### 训练和评估分类器
 
-为了训练分类器，我们需要一个包含标记示例的数据集。尽管本节不涉及清理数据的过程，但建议你在将数据集输入分类器之前阅读各种数据预处理和清理技术。为了在 Python 中处理数据集，我们将导入 pandas 包和 data frame 结构。然后，你可以从多种分类算法中进行选择，例如决策树、支持向量分类器、随机森林、XG boost、ADA boost 等。我们将看看随机森林分类器，它是使用多个决策树形成的集成分类器。
+为了训练<ruby>分类器<rt>classifier</rt></ruby>，我们需要一个包含标记示例的数据集。尽管本节不涉及清理数据的过程，但建议你在将数据集输入分类器之前阅读各种数据预处理和清理技术。为了在 Python 中处理数据集，我们将导入 `pandas` 包和<ruby>数据帧<rt>DataFrame</rt></ruby>结构。然后，你可以从多种分类算法中进行选择，例如<ruby>决策树<rt>decision tree</rt></ruby>、<ruby>支持向量分类器<rt>support vector classifier</rt></ruby>、<ruby>随机森林<rt>random forest</rt></ruby>、XG boost、ADA boost 等。我们将看看随机森林分类器，它是使用多个决策树形成的集成分类器。
 
 ```
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
-
+ 
 classifier = RandomForestClassifier()
-
+ 
 #creating a train-test split with a proportion of 70:30
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
-
-classifier.fit(X_train, y_train) #train the classifier on the training set
-
-y_pred = classifier.predict(X_test) #evaluate the classifier on unknown data
-
-print(“Accuracy: “, metrics.accuracy_score(y_test, y_pred)) #compare the predictions with the actual values in the test set
+ 
+classifier.fit(X_train, y_train) # 在训练集上训练分类器
+ 
+y_pred = classifier.predict(X_test) # 用未知数据评估分类器
+ 
+print("Accuracy: ", metrics.accuracy_score(y_test, y_pred)) # 用测试计划中的实际值比较准确率
 ```
 
 虽然这个程序使用准确性作为性能指标，但应该使用多种指标的组合，因为当测试集不平衡时，准确性往往会产生非代表性的结果。例如，如果模型对每条记录都给出了相同的预测，而用于测试模型的数据集是不平衡的，即数据集中的大多数记录与模型预测的类别相同，我们就会得到很高的准确率。
 
 ### 调整分类器
 
-调优是指修改模型的超参数值以提高其性能的过程。超参数是可以改变其值以改进算法的学习过程的参数。
+调优是指修改模型的<ruby>超参数<rt>hyperparameter</rt></ruby>值以提高其性能的过程。超参数是可以改变其值以改进算法的学习过程的参数。
 
 以下代码描述了随机搜索超参数调整。在此，我们定义了一个搜索空间，算法将从该搜索空间中选择不同的值，并选择产生最佳结果的那个：
 
@@ -71,8 +71,8 @@ grid = {‘min_samples_split’ : min_samples_split, ‘min_samples_leaf’ : mi
 
 classifier = RandomizedSearchCV(classifier, grid, n_iter = 100)
 
-#n_iter represents the number of samples to extract from the search space
-#result.best_score and result.best_params_ can be used to obtain the best performance of the model, and the best values of the parameters
+# n_iter 代表从搜索空间提取的样本数
+# result.best_score 和 result.best_params_ 可以用来获得模型的最佳性能，以及参数的最佳值
 
 classifier.fit(X_train, y_train)
 ```
@@ -81,7 +81,7 @@ classifier.fit(X_train, y_train)
 
 你也可以使用多个分类器和它们的预测来创建一个模型，根据各个预测给出一个预测。这个过程（只考虑为每个预测投票的分类器的数量）被称为硬投票。软投票是一个过程，其中每个分类器产生一个给定记录属于特定类别的概率，而投票分类器产生的预测是获得最大概率的类别。
 
-A code snippet for creating a soft voting classifier is given below:
+下面给出了一个创建软投票分类器的代码片段：
 
 ```
 soft_voting_clf = VotingClassifier(
