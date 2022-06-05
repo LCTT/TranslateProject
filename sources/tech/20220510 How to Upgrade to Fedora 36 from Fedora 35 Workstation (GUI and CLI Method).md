@@ -9,8 +9,7 @@
 
 How to Upgrade to Fedora 36 from Fedora 35 Workstation (GUI and CLI Method)
 ======
-COMPLETE STEPS TO UPGRADE TO FEDORA 36 FROM FEDORA 35 WORKSTATION
-EDITION WITH GUI AND CLI METHOD.
+Complete steps to upgrade to fedora 36 from fedora 35 workstation edition with gui and cli method.
 
 Fedora 36 brings several important features such as the beautiful GNOME 42, Linux Kernel 5.17, default font changes and many stunning features. Moreover, Fedora 36 also brings Wayland display server as the default NVIDIA proprietary driver. Plus several other significant changes that Fedora 36 brings, which you can read here in our [top 10 feature coverage][1].
 
