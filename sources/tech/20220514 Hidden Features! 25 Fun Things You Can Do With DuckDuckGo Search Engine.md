@@ -197,7 +197,7 @@ via: https://itsfoss.com/duckduckgo-easter-eggs/
 
 作者：[sreenath][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Peaksol](https://github.com/TravinDreek)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
