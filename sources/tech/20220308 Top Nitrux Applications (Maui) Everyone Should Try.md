@@ -9,8 +9,8 @@
 
 Top Nitrux Applications (Maui) Everyone Should Try
 ======
-THIS ARTICLE SHOWCASES SOME OF THE EXCELLENT MAUI NATIVE APPLICATIONS
-THAT COME AS DEFAULT IN NITRUX OS LINUX DISTRIBUTION.
+This article showcases some of the excellent maui native applications that come as default in nitrux os linux distribution.
+
 ### What is Maui Apps and Nitrux OS
 
 [Nitrux][1] is a Linux Distribution and a complete operating system based on Debian with the power NX Desktop, which uses KDE Plasma and Mauikit components. It is one of the beautiful Linux distributions today, giving you the best looks and performance.
@@ -56,8 +56,6 @@ Other features that make it a most desirable text editors are –
   * Autosave
   * Supports dark and light themes
 
-
-
 This text editor reminds me of the great Gedit, which is [not a default editor anymore][7] in GNOME. Gedit [has all the features][8] of this text editor via plugins.
 
 ![Nota Text Editor][9]
@@ -76,8 +74,6 @@ The [Clip][12] is the convergence video player for desktop and mobile phones tha
 
 [][13]
 
-SEE ALSO:   10 Necessary Apps to Improve Your GNOME Desktop Experience [Part 4]
-
 ##### Quick features of Clip
 
   * Local, network and internet streaming playback (limited)
@@ -85,8 +81,6 @@ SEE ALSO:   10 Necessary Apps to Improve Your GNOME Desktop Experience [Part 4]
   * Tagging of videos for management
   * Subtitles support
   * Based on the MPV video player
-
-
 
 ![Clip Video Player][14]
 
@@ -119,8 +113,6 @@ You can view the image metadata and basic image edition as well. The image editi
   * Changing brightness, contrast, saturation, exposure
   * Supports layers
   * Cropping and rotating
-
-
 
 However, you can not annotate with arrows or add any texts into the image.
 
@@ -156,14 +148,6 @@ So, what is your favourite application on this list? Let me know in the comment 
 
 Cheers.
 
-_Some image credits – Maui, Nitrux team._
-
-* * *
-
-We bring the latest tech, software news and stuff that matters. Stay in touch via [Telegram][22], [Twitter][23], [YouTube][24], and [Facebook][25] and never miss an update!
-
-##### Also Read
-
 --------------------------------------------------------------------------------
 
 via: https://www.debugpoint.com/2022/03/top-nitrux-maui-applications/
@@ -198,7 +182,3 @@ via: https://www.debugpoint.com/2022/03/top-nitrux-maui-applications/
 [19]: https://mauikit.org/apps/pix/
 [20]: https://www.debugpoint.com/wp-content/uploads/2022/03/Pix-Image-Viewer.jpg
 [21]: https://www.debugpoint.com/wp-content/uploads/2022/03/Downlaod-Nitrux-Maui-application-appimage-and-apk-files-1024x584.jpg
-[22]: https://t.me/debugpoint
-[23]: https://twitter.com/DebugPoint
-[24]: https://www.youtube.com/c/debugpoint?sub_confirmation=1
-[25]: https://facebook.com/DebugPoint
