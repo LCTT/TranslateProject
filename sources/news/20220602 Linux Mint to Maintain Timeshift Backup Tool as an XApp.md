@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/linux-mint-timeshift/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "hadisi1993"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
