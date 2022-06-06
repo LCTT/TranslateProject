@@ -9,17 +9,25 @@
 
 How to teach open source beyond business
 ======
+开源不是生意
+=====
 The Beyond program connects future talents in the tech industry with
 open source culture.
+The Beyond Program 连接起未来科技行业拥抱开源文化的人才。
+
 ![Teacher or learner?][1]
 
 When I was a university student, I didn't understand the fuss about open source software. I used Linux and open source software but didn't really understand the open source model, how to contribute to projects, or how it could benefit my future career. My development experience consisted mainly of homework assignments and a large final project required for my degree.
+那时，我还是一个大学生，我不明白人们为什么那么吹捧开源软件。我也使用 Linux 和开源软件，但是我不明白开源的模式，如何参加一个开源项目，并且它是如何影响我点职业生涯的。我的开发经验主要是家庭作业和学位需要的一个大型项目。
 
 So, when I took my first steps in the tech industry, there was a big learning curve before I felt comfortable. I needed to understand how to join established, sometimes large, and distributed teams working on an ongoing project. I also needed to know how to communicate properly so that my efforts could be recognized.
+所以，当我开始踏足科技行业时，我发现我还有很多知识需要学习。我需要明白如何加入一个正在进行中的项目，可能团队很大，并且分散在不同地方。我还要学会正确的沟通以保证我付出点努力不白费。
 
 I am not special in this regard. This is a common situation among new graduates.
+我在这个行业并不特殊。我只是众多毕业生中的一员。
 
 ### Open source gives students a head start
+### 开源让毕业生点起点更高
 
 Since then, as an engineer and later as a manager, I have helped onboard many junior engineers. One of the things I've noticed is that the new graduates who have already contributed to open source projects could onboard quickly and start contributing faster than those without this experience.
 
