@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/06/install-ffmpeg-ubuntu/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "aREversez"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -149,7 +149,7 @@ via: https://www.debugpoint.com/2022/06/install-ffmpeg-ubuntu/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[aREversez](https://github.com/aREversez)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
