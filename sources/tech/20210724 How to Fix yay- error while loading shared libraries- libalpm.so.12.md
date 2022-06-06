@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2021/07/yay-error-libalpm-so-12/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
