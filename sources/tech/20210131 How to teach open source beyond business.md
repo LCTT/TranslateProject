@@ -30,10 +30,13 @@ The value of open source methodologies in the tech industry is well-established 
 ### Moving open source culture 'Beyond' business
 
 When I met [Liora Milbaum][3], a senior principal software engineer at Red Hat, I learned we shared an interest in bringing open source culture and principles into academics. Liora had previously founded [DevOps Loft][4], in which she shared DevOps practices with people interested in stepping into this world, and wished to start a similar initiative to teach open source to university students. We decided to launch the [Beyond][5] program to connect future talents in the tech industry with open source culture as Red Hat practices it.
+当我遇到红帽的高级软件工程师 [Liora Milbaum][3] 时，我发现，我们对将开源文化和规则引入学术界有着共同的兴趣。Liora 之前创立了 [DevOps Loft][4], 在其中，她与有兴趣进入这个行业的人们分享了 DevOps 实践，并希望发起一个类似的项目，向大学生教授开源。我们决定启动 [Beyond][5] program，将科技行业拥抱开源精神的人才与红帽的实践联系起来。
 
 We started the Beyond program at the [Academic College of Tel Aviv-Yafo][6], where we were warmly welcomed by the information systems faculty. We started by teaching an "Introduction to DevOps'' course to introduce elements of the DevOps tech stack. Our biggest challenge at the start was deciding how to teach what open source is. The answer was simple: by practicing it, of course. We didn't want to deliver yet another old-school academic course; rather, we wanted to expose students to industry standards.
+我们在 [Academic College of Tel Aviv-Yafo][6] 开始了 Beyond program ，在那里，我们受到了信息系统学院的热烈欢迎。我们从介绍 DevOps 技术栈的“DevOps入门”开始。我们开始时最大的挑战是怎么讲明白开源是什么。答案似乎很简单：实践出真理。我们不想给学生们讲授什么老套的学院课程，而是向学生们展示了一套工业标准。
 
 We created a syllabus that incorporated common open source projects and tools to teach the DevOps stack. The course consisted of lectures and hands-on participation taught by engineers. The students were divided into groups, each one mentored and supported by an engineer. They practiced working in teams, sharing knowledge (both inside and outside of their groups), and collaborating effectively.
+我们创建了一个包含常见的开源项目和工具的教学大纲来教授 DevOps 技术栈。该课程由工程师教授的讲座和实践组成。学生们被分成小组，每组都由一名工程师指导和支持。他们练习团队合作，分享知识（在团队内外），并有效的协作。
 
 During our second course, "Open source development pillars," for students in the computer science department, we encountered another big obstacle. Two weeks after the course started, we became fully remote as the COVID pandemic hit the globe. We solved this problem by using the same remote collaboration tools with our students that we were using for our daily work at Red Hat. We were amazed at how simple and smooth the transition was.
 
@@ -42,6 +45,7 @@ During our second course, "Open source development pillars," for students in the
 (Irit Goihman, [CC BY-SA 4.0][8])
 
 ### Successful early outcomes
+### 成果展示
 
 The two courses were a huge success, and we even hired one of the top students we taught. The feedback we received was amazing; the students said we positively impacted their knowledge, thinking, and soft skills. A few students were hired for their first tech job based on their open source contributions during the course.
 
