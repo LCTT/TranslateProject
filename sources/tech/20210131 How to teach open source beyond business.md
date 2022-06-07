@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (duoluoxiaosheng )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

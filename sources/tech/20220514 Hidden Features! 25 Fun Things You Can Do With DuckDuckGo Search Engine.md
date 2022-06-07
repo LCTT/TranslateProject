@@ -7,189 +7,187 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Hidden Features! 25 Fun Things You Can Do With DuckDuckGo Search Engine
+隐藏功能！在 DuckDuckGo 搜索引擎中，你可以做这 25 件有趣的事情
 ======
-DuckDuckGo is one of the alternative search engines that is less privacy intruding than the omnipresent Google.
+比起无处不在的 Google，[有些搜索引擎替代品更加尊重隐私][1]，而 DuckDuckGo 就是其中之一。
 
-DuckDuckGo is one of the [alternative search engines that is less privacy intruding][1] than the omnipresent Google.
+最近，这个搜索引擎有了很大的改进，搜索一般网页十分顺畅。在搜索本地地点方面，则还远不及 Google。
 
-It has improved a lot lately and works quite satisfactorily for general web search. It is nowhere close to Google when it comes to local search.
+不过，DuckDuckGo（其爱称为 DDG）有一些很酷的功能，大部分用户还没注意到。如果你是一位 DDG 狂热粉，你可能会喜欢用这些小技巧来提升你的搜索体验。
 
-However, DuckDuckGo (fondly nicknamed DDG) has some cool features most users are not aware of. If you are an ardent DDG fan, you may enjoy enhancing your search experience with these tricks.
+### 1. 跳转特定网页
 
-### 1. Jump on a specific website
+在你最喜欢的网站名称前输入 ! 即可直接进入这个网站。则类似于 Google 的 “运气不错” 功能，但用 DDG 的话来说，这就叫 “叹号搜索”。
 
-Type ! before your favorite website name and directly enter the website. This is like the ‘feeling lucky’ feature of Google but in DDG terms, it’s called ‘bangs.’
-
-There are short forms for the websites, which will be suggested when we start typing.
+网站有缩写，开始输入时便会提示。
 
 ![duckduckgo bang feature][2]
 
-Entering the search term just after the website name will land you on the required result from that website.
+在网站名后面输入搜索词，就可以直接抵达那个网站的搜索结果处。
 
-### 2. Convert text to ASCII
+### 2. 文本转 ASCII
 
-Figlet is one of the [fun Linux commands][3]. It converts any text into a decorated ASCII format.
+Figlet 是一个[有趣的 Linux 命令][3]，可以将任意文本转换为漂亮的 ASCII 画格式。
 
-Type **figlet** before any search term; it will print its ASCII output. No need to open the terminal.
+在任意搜索词前输入 **figlet**，就会显示 ASCII 输出。无需打开终端。
 
 ![Figlet in DDG][4]
 
-### 3. Check social media status
+### 3. 检查社交媒体的状态
 
-Use ‘@’ in front of the proper twitter name of someone will show their status (followers etc.).
+在某个人的 Twitter 名前加上 ‘@’，就会显示 TA 的状态（关注者等）。
 
 ![Itsfoss Twitter][5]
 
-### 4. Generate a strong password
+### 4. 生成强密码
 
-Type ‘password’ followed by the number of characters to be included and it will generate a strong, unique password for you.
+输入 ‘password’ 并加上需要的字符数，就可以生成一个独特的强密码。
 
 ![Generating password in DuckDuckGo][6]
 
-### 5. Generate Random Passphrase
+### 5. 生成随机密码短语
 
-Type ‘random passphrase’ to generate a passphrase, usually 4 words long.
+输入 ‘random passphrase’ 可生成一段密码短语，通常长度为 4 个词。
 
 ![Random Passphrase][7]
 
-### 6. Get a cheatsheet
+### 6. 获取一份速查表
 
-Type cheatsheet after the term whose cheatsheet you want. If there is a cheat sheet for the searched term, it will show it immediately on the search page.
+在需要看速查表的搜索词后面，可输入 cheatsheet。如果要搜索的东西有速查表，就会立即显示在搜索页面。
 
 ![Vim Cheatsheet][8]
 
-### 7. Get color from the color code
+### 7. 通过色码获取颜色
 
-Type ‘color’ followed by the hex code of the color you want to check and it will show what that color looks like.
+输入 ‘color’ 并加上你想查的颜色的十六进制码，便可显示这个颜色。
 
 ![Color][9]
 
-### 8. Generate a random number
+### 8. 生成随机数
 
-Searching ‘random number’ will output a random number between 0 and 1
+搜索 ‘random number’ 会输出一个 0 到 1 之间的随机数。
 
 ![Random Number][10]
 
-You can also specify the range to look for.
+你也可以指定需要的范围。
 
 ![Random Number between 1 and 1000][11]
 
-### 9. Convert to binary and other formats
+### 9. 转换为二进制等形式
 
-Type a binary number and append it with ‘binary’ will convert it from binary to decimal
+输入一个二进制数并加上 ‘binary’，可将其从二进制转换为十进制。
 
 ![Binary to Decimal][12]
 
-Similarly, it works for hexadecimal and oct, but I am confused about their logic.
+类似地，它也能用于十六禁止和八进制，但我不清楚它们的处理逻辑。
 
-### 10. Find rhyming words
+### 10. 寻找韵词
 
-Type ‘what rhymes with ‘ followed by the word you want to get rhymes of. Helps with your poetry skills, no?
+输入 ‘what rhymes with ’ 并带上要找同韵词的词语。作诗能力变强了，对吧？
 
 ![What rhymes with rain][13]
 
-### 11. Get Ramanujan number, Pi, and other constants
+### 11. 获取拉马努金数、圆周率等常数
 
-Type the name of the constant whose value you want and you get it right in the search result page.
+输入想获取数值的常数名，便可在搜索结果中看到它。
 
 ![Ramanujan Number][14]
 
-### 12. Check who is currently in space
+### 12. 查询现在谁在太空中
 
-Type ‘people in space’ and get the list of those currently in space. It also shows how long they have been in space.
+输入 ‘people in space’ 获取当前在太空中的人员名单。同时还会显示他们在太空中居住的时间。
 
 ![People in Space][15]
 
-### 13. Check if a website is down
+### 13. 查询网页是否无法访问
 
-If you want to know if a particular website is down for you or for everyone, just use the “is xyz.com is down” search query.
+如果你想知道某个网站是你无法访问了，还是大家都无法访问了，只需在搜索词中输入 “is xyz.com down”。
 
 ![Is down?][16]
 
-### 14. Get quotes on certain topics
+### 14. 获取特定话题的名言
 
-Type a word followed by quotes, and it will give quotes related to that word.
+输入一个词并带上 quotes，就会显示与这个词相关的名言。
 
 ![Get quotes in DDG][17]
 
-### 15. Get Placeholder texts
+### 15. 获取占位文本
 
-Search for ‘lorem ipsum’ and get 5 paragraphs of placeholder texts. Useful for web developers perhaps.
+搜索 ‘lorem ipsum’ 就可以获取 5 段占位文本。对 Web 开发者应该会有用。
 
 ![Lorem ipsum][18]
 
-### 16. Get the calendar of any month
+### 16. 获取任意月份的日历
 
-Type calendar followed by day, month, and year and it gives you an interactive calendar of that month.
+在年、月、日后面输入 calendar，就会为你显示该月份的交互式日历。
 
 ![Calendar][19]
 
-### 17. Generate QR code
+### 17. 生成二维码
 
-Search ‘qr’ followed by any text, be it a link or anything, will generate the respective QR Code.
+在文字、链接等后面输入 ‘qr’，就会生成对应的二维码。
 
 ![QRCode][20]
 
-### 18. Get some CSS Animations
+### 18. 获取一些 CSS 动画
 
-Search for ‘css animations’ to get some CSS animation examples.
+搜索 ‘css animations’ 以获取一些 CSS 动画例子。
 
 ![CSS Animations][21]
 
-### 19. Expand a shortened link
+### 19. 展开短链接
 
-Got a bitly or some other shortened link but not sure where it takes you. Instead of landing on a spammy website, expand the shortened URL and see the actual website URL.
+如果有一个 Bitly 链接或其他短链接，但不确定它指向哪里，不必再跳转到充满垃圾信息的网页了，只需展开短链接，看看真正的网址。
 
-Use the keyword expand followed by the shortened URL and it will show the actual destination URL.
+在短链接后面输入关键词 expand，就会显示真正的目标 URL。
 
 ![Expand Link][22]
 
-### 20. Get HTML codes for special characters
+### 20. 获取特殊字符的 HTML 代码
 
-Search ‘html chars’ and get a very long list of HTML entities and their description, if pressed show more in the result
+搜索 ‘html chars’，可以获取一份很长的列表，上面有 HTML 实体及其描述，按下后会在结果中显示更多信息。
 
 ![HTML Chars][23]
 
-### 21. Why should I use this?
+### 21. 我用这东西干啥？
 
-This one is pretty useless. If you enter the term “why should I use this?” it shows “cause it’s awesome” at the top of the search result page. Clearly, DuckDuckGo is referring to itself.
+这功能没什么用。如果你输入 “why should I use this?” ，它就会在搜索结果顶部显示 “cause it's awesome”。显然，DuckDuckGo 在说他自己。
 
 ![Why should I use this?][24]
 
-### 22. Convert case
+### 22. 转换大小写
 
-This works in two cases. lowercase <searchterm in Upper-case> will show the lowered case result
+大小写都可转换。lowercase <大写搜索词> 就会显示小写的结果
 
 ![Lowercase][25]
 
-uppercase <searchterm in lower case> will show an uppercase result.
+uppercase <小写搜索词> 就会显示大写的结果。
 
 ![Uppercase][26]
 
-### 23. Encode a URL
+### 23. 编码 URL
 
-Search ‘encode’ followed by a URL will give an encoded result
+搜索 ‘encode’ 并加上 URL，就会给出编码后的结果
 
 ![URL Encode][27]
 
 ### 24. Motherboard
 
-Search for ‘Motherboard’, and you can see that the logo of DuckDuckGo on the left side is changed. It shows a random logo from the selection of a few.
+搜索 ‘Motherboard’就会看见左侧的 DuckDuckGo 的 logo 变了。它会显示选好的几个随机 logo。
 
 ![Motherboard][28]
 
-### 25. Get HTML Color Codes
+### 25. 获取 HTML 色码
 
-Search for ‘color codes’ and you get a chart of colors. Again, this one is more for web developers and designers.
+搜索 ‘color codes’ 便可获得一份颜色表。一样，这个功能多为 Web 开发者和设计师所用。
 
 ![Color Codes][29]
 
-### There are many more…
+### 还有很多别的···
 
-My teammate Sreenath came up with this post idea. He says there are more such ‘easter eggs’ in DuckDuckGo and I believe him. But it won’t be feasible to list them all here.
+我的伙伴 Sreenath 想到本贴的主意。他说 DuckDuckGo 中还有许多 “彩蛋”，我觉得没错。但全部列出来有诸多不便。
 
-If you know more such interesting DDG search features, share them in the comments. If you found your next favorite search feature, do mention that too.
+如果你知道更多这样有趣的 DDG 搜索功能，请在评论中分享。如果你又发现了你喜欢的搜索功能，也提出来吧。
 
 --------------------------------------------------------------------------------
 
