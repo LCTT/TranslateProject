@@ -9,8 +9,8 @@
 
 How to teach open source beyond business
 ======
-开源不是生意
-=====
+商业之上是开源
+======
 The Beyond program connects future talents in the tech industry with
 open source culture.
 The Beyond Program 连接起未来科技行业拥抱开源文化的人才。
@@ -30,12 +30,17 @@ I am not special in this regard. This is a common situation among new graduates.
 ### 开源让毕业生点起点更高
 
 Since then, as an engineer and later as a manager, I have helped onboard many junior engineers. One of the things I've noticed is that the new graduates who have already contributed to open source projects could onboard quickly and start contributing faster than those without this experience.
+作为一个工程师，一个管理者，从那时起我开始帮助刚入行的工程师。我发现，有开源经验的毕业生比没有开源经验的毕业生能更快的入门。
 
 By incorporating open source methodology into academic studies, students can gain experience relevant to the industry, learn to reuse their existing knowledge, and establish a good platform for formulating ideas and sharing knowledge. Practicing open source can make a positive impact on students' technical knowledge and experience. This can help them become more successful in bootstrapping their careers.
+通过将开源方法纳入学术研究，学生们可以获得相关的行业经验，学会复用他们自己的知识，并建立一个陈述观点和分享知识的平台。
 
 The value of open source methodologies in the tech industry is well-established and shapes the culture of software companies worldwide. Involvement in open source projects and adoption of the [open organization culture][2] has become an industry standard. Companies seek fresh-minded, talented employees who know how to work in open source and cultivate its culture. Therefore, the tech industry must drive the academic world to embrace open source culture as one of the fundamental methodologies to learn in tech studies.
+开源在科技行业的价值是塑造并完善全球软件公司的文化。参与开源项目并采用[开放组织文化][2]正在成为行业普遍现象。公司寻求知道如何在开源领域工作并培养其文化的思想新颖，才华横溢的员工。
+因此，科技行业必须推动学术界将开源文化作为学习科技研究的基本方法之一。
 
 ### Moving open source culture 'Beyond' business
+### 商业之上是开源文化
 
 When I met [Liora Milbaum][3], a senior principal software engineer at Red Hat, I learned we shared an interest in bringing open source culture and principles into academics. Liora had previously founded [DevOps Loft][4], in which she shared DevOps practices with people interested in stepping into this world, and wished to start a similar initiative to teach open source to university students. We decided to launch the [Beyond][5] program to connect future talents in the tech industry with open source culture as Red Hat practices it.
 当我遇到红帽的高级软件工程师 [Liora Milbaum][3] 时，我发现，我们对将开源文化和规则引入学术界有着共同的兴趣。Liora 之前创立了 [DevOps Loft][4], 在其中，她与有兴趣进入这个行业的人们分享了 DevOps 实践，并希望发起一个类似的项目，向大学生教授开源。我们决定启动 [Beyond][5] program，将科技行业拥抱开源精神的人才与红帽的实践联系起来。
@@ -67,7 +72,7 @@ via: https://opensource.com/article/21/1/open-source-beyond-business
 
 作者：[Irit Goihman][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/duoluoxiaosheng)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
