@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/contribute-at-the-fedora-linux-37-test-week-for-kernel-5-18/"
 [#]: author: "Sumantro Mukherjee https://fedoramagazine.org/author/sumantrom/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
