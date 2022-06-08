@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/word-processors-linux"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "duoluoxiaosheng"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
