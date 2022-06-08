@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/first-open-source-contribution-libreoffice"
 [#]: author: "Klaatu https://opensource.com/users/klaatu"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkskjjk"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
