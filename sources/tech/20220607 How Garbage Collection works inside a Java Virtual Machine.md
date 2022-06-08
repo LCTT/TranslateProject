@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/garbage-collection-java-virtual-machine"
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
