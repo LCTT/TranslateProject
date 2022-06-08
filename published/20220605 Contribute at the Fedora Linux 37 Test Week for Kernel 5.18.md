@@ -3,15 +3,15 @@
 [#]: author: "Sumantro Mukherjee https://fedoramagazine.org/author/sumantrom/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14685-1.html"
 
 Fedora Linux 37 的内核 5.18 测试周到了，一起来做贡献吧！
 ======
 ![][1]
 
-Fedora 内核团队正在为 Linux 内核 5.18 进行最终集成。这个版本刚刚发布，很快就会出现在 Fedora 中。因此，Fedora 内核和 QA 团队组织了一个测试周，截止日期为 **2022 年 6 月 12 日，星期日。** 请参阅 [wiki page][2] 来获取你将要参与的测试镜像链接。继续阅读下文，可了解更多细节～
+Fedora 内核团队正在为 Linux 内核 5.18 进行最终集成。这个版本刚刚发布，很快就会出现在 Fedora 中。因此，Fedora 内核和 QA 团队组织了一个测试周，截止日期为 **2022 年 6 月 12 日，星期日。** 请参阅 [维基页面][2] 来获取你将要参与的测试镜像链接。继续阅读下文，可了解更多细节～
 
 ### 测试周是如何运作的？
 
@@ -33,7 +33,7 @@ via: https://fedoramagazine.org/contribute-at-the-fedora-linux-37-test-week-for-
 作者：[Sumantro Mukherjee][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
