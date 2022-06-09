@@ -3,13 +3,16 @@
 [#]: author: "Jishnu Saurav Mittapalli https://www.opensourceforu.com/author/jishnu-saurav-mittapalli/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14689-1.html"
 
-使用机器学习模型进行预测
+机器学习：使用 Python 进行预测
 ======
-机器学习基本上是人工智能的一个子集，它使用以前存在的数据对新数据进行预测。当然，现在我们所有人都知道这个道理了！这篇文章展示了如何将 Python 中开发的机器学习模型作为 Java 代码的一部分来进行预测。
+
+> 机器学习基本上是人工智能的一个子集，它使用以前存在的数据对新数据进行预测。
+ 
+当然，现在我们所有人都知道这个道理了！这篇文章展示了如何将 Python 中开发的机器学习模型作为 Java 代码的一部分来进行预测。
 
 ![Machine-learning][1]
 
@@ -28,14 +31,15 @@ import matplotlib.pyplot as plt
 ```
 from google.colab import files
 uploaded = files.upload()
-for fn in uploaded.keys(): print(‘User uploaded file “{name}” with length {length} bytes’.format(
-name=fn, length=len(uploaded[fn])))
-Choose files No file chosen
+for fn in uploaded.keys(): 
+    print('User uploaded file "{name}" with length {length} bytes'.format(name=fn, length=len(uploaded[fn])))
 ```
 
-只有在当前浏览器会话中执行了该单元格时，上传部件才可用。请重新运行此单元，上传文件 *“Hoppers Crossing-Hourly-River-Level.csv”*，大小 2207036 字节。
+如果没有选择文件的话，选择上传的文件。
 
-完成后，我们就可以使用 *sklearn 库*来训练我们的模型。为此，我们首先需要导入该库和算法模型，如图 1 所示。
+只有在当前浏览器会话中执行了该单元格时，上传部件才可用。请重新运行此单元，上传文件 `Hoppers Crossing-Hourly-River-Level.csv`，大小 2207036 字节。
+
+完成后，我们就可以使用 `sklearn` 库来训练我们的模型。为此，我们首先需要导入该库和算法模型，如图 1 所示。
 
 ![Figure 1: Training the model][2]
 
@@ -51,7 +55,7 @@ regressor.fit(X_train, y_train)
 
 ### 在 Java 中使用 ML 模型
 
-我们现在需要做的是把 ML 模型转换成一个可以被 Java 程序使用的模型。有一个叫做 sklearn2pmml 的库可以帮助我们做到这一点：
+我们现在需要做的是把 ML 模型转换成一个可以被 Java 程序使用的模型。有一个叫做 `sklearn2pmml` 的库可以帮助我们做到这一点：
 
 ```
 # Install the library
@@ -75,7 +79,7 @@ via: https://www.opensourceforu.com/2022/05/using-a-machine-learning-model-to-ma
 作者：[Jishnu Saurav Mittapalli][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
