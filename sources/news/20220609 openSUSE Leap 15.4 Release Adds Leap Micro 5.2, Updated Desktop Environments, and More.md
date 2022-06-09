@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/opensuse-leap-15-4-release/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
