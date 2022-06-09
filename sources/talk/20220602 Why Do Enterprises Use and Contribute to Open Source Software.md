@@ -2,7 +2,7 @@
 [#]: via: "https://www.linux.com/news/why-do-enterprises-use-and-contribute-to-open-source-software/"
 [#]: author: "Dan Whiting https://www.linuxfoundation.org/blog/why-do-enterprises-use-and-contribute-to-open-source-software/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "aREversez"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -97,7 +97,7 @@ via: https://www.linux.com/news/why-do-enterprises-use-and-contribute-to-open-so
 
 作者：[Dan Whiting][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[aREversez](https://github.com/aREversez)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
