@@ -1,31 +1,34 @@
-[#]: subject: "Linux Kernel 5.19 RC1 Released, Concluding ARM Generic Kernel Work"
+[#]: subject: "Linux 内核 5.19 系列第一个候选版本（RC1）发布，包含 ARM 通用工作"
 [#]: via: "https://www.debugpoint.com/2022/06/linux-kernel-5-19-rc1/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: " Donkey-Hao "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-Linux Kernel 5.19 RC1 Released, Concluding ARM Generic Kernel Work
+Linux 内核 5.19 系列第一个候选版本（RC1）发布，包含 ARM 通用工作
 ======
-Linus Torvalds releases Linux Kernel 5.19 RC1 for testing, bringing a vast amount of changes.
+Linus Torvalds 发布了 Linux Kernel 5.19 RC1 进行测试，带来了重大变化。
 
-Following the [Linux Kernel 5.18][1] release last month, Linus Torvalds announced the first release candidate availability of Linux Kernel 5.19. With this announcement, the official merge window of Linux Kernel 5.19 closes, meaning no new features are to be accepted unless it’s critical.
+继上个月 [Linux Kernel 5.18][1] 发布之后，Linus Torvalds 宣布 Linux 内核 5.19 系列第一个候选版本可用。同时，Linux 内核 5.19 官方合并窗口关闭，这意味着只有很关键的特性才会被认可。
 
 A brief look at the new items in Linux Kernel 5.19 shows regular updates across CPU, GPU, networking, storage and core modules. In addition, the code cleanups, removal of obsolete hardware and continuous support for future chipsets are the highlight of this release.
+在 Linux Kernel 5.19 的简要介绍显示了 CPU、GPU、网络、存储和核心模块的定期更新。 此外，代码清理、淘汰过时硬件和对以后芯片组的持续支持是此版本的亮点。
 
-Without further introduction, let’s take a look at the new features.
+让我们简单来看一下这些新特性
 
-### Linux Kernel 5.19 – New Features (RC1)
+### Linux 内核 5.19(RC1) 的新特性
 
-#### Processor
+#### 处理器
 
-First and foremost, Linux Kernel 5.19 begins [initial support][2]for the LoongArch CPU family. It is developed by the Chinese company [Loongson][3]. LoongArch CPUs are the general general-purpose, MIPS architecture-compatible microprocessors. Although the support is now available, you can not boot Linux in these CPUs because some code is still under review. And hopefully, they will be already in the 5.20 version.
+最重要的是，Linux Kernel 5.19 开始对龙芯架构 CPU 的 [初步支持][2]。龙芯由中国龙芯中科公司设计。龙芯架构下的 CPU 是通用 MIPS 架构兼容处理器。尽管现在支持服务，但是你仍不能在龙芯上启动 Linux 因为代码还在审核中。希望在 5.20 版本中能够使用。
 
-The new [Intel IFS driver lands][4] in this version which helps to detect hardware issues before deployment and after. It will help detect CPU faults at the circuit level at an early stage.
+[Intel IFS 驱动 ][4] 在该版本中落地，这有助于在部署前后发现硬件问题。它能够在早期发现 CPU 关键部分的错误。
 
 The power management and thermal work have continued for the last couple of Kernel releases for Intel CPUs. And [this release][5] also is no exception. Firstly, the Intel Run-Time Average Power Limiting (RAPL) support was added for Raptor and Alder Lake family. Second, the P-state driver is improved to handle frequency variance and CPU based scaling support is added to the passive devfreq.
+
+
 
 While the thermal and power dominated Intel CPUs, AMD sees more performance updates in its own CPU families. Firstly, more updates were [introduced][6] in the Instruction-Based Sampling (IBS) module for AMD Zen 4 CPUs are planned for the end of this year. Moreover, PerfMonV2 is introduced in this release giving more performance monitoring capabilities.
 
@@ -75,7 +78,7 @@ via: https://www.debugpoint.com/2022/06/linux-kernel-5-19-rc1/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
