@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/boot-ubuntu-22-04-rescue-emergency-mode/"
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
