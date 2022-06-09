@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/raspberry-pi-countdown-clock)
 [#]: author: (Chris Collins https://opensource.com/users/clcollins)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: ( Donkey-Hao )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
