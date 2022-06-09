@@ -1,4 +1,4 @@
-[#]: subject: "Linux 内核 5.19 系列第一个候选版本（RC1）发布，包含 ARM 通用工作"
+[#]: subject: "Linux Kernel 5.19 系列第一个候选版本（RC1）发布，包含 ARM 通用工作"
 [#]: via: "https://www.debugpoint.com/2022/06/linux-kernel-5-19-rc1/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
@@ -7,70 +7,69 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Linux 内核 5.19 系列第一个候选版本（RC1）发布，包含 ARM 通用工作
+Linux Kernel 5.19 系列第一个候选版本（RC1）发布，包含 ARM 通用工作
 ======
 Linus Torvalds 发布了 Linux Kernel 5.19 RC1 进行测试，带来了重大变化。
 
-继上个月 [Linux Kernel 5.18][1] 发布之后，Linus Torvalds 宣布 Linux 内核 5.19 系列第一个候选版本可用。同时，Linux 内核 5.19 官方合并窗口关闭，这意味着只有很关键的特性才会被认可。
+继上个月 [Linux Kernel 5.18][1] 发布之后，Linus Torvalds 宣布 Linux Kernel 5.19 系列第一个候选版本可用。同时，Linux Kernel 5.19 官方合并窗口关闭，这意味着只有很关键的特性才会被接受。
 
-A brief look at the new items in Linux Kernel 5.19 shows regular updates across CPU, GPU, networking, storage and core modules. In addition, the code cleanups, removal of obsolete hardware and continuous support for future chipsets are the highlight of this release.
-在 Linux Kernel 5.19 的简要介绍显示了 CPU、GPU、网络、存储和核心模块的定期更新。 此外，代码清理、淘汰过时硬件和对以后芯片组的持续支持是此版本的亮点。
+简要介绍一下 Linux Kernel 5.19 的项目，会发现 CPU、GPU、网络、存储和核心模块会定期更新。 此外，代码清理、淘汰过时硬件和对以后芯片组的持续支持是此版本的亮点。
 
-让我们简单来看一下这些新特性
+让我们简单来看一下这些新特性。
 
-### Linux 内核 5.19(RC1) 的新特性
+### Linux Kernel 5.19(RC1) 的新特性
 
 #### 处理器
 
-最重要的是，Linux Kernel 5.19 开始对龙芯架构 CPU 的 [初步支持][2]。龙芯由中国龙芯中科公司设计。龙芯架构下的 CPU 是通用 MIPS 架构兼容处理器。尽管现在支持服务，但是你仍不能在龙芯上启动 Linux 因为代码还在审核中。希望在 5.20 版本中能够使用。
+最重要的是，Linux Kernel 5.19 开始对龙芯架构 CPU 的 [初步支持][2]。龙芯由中国龙芯中科公司设计开发。龙芯架构下的 CPU 是通用 MIPS 架构兼容微处理器。尽管现在提供了支持，但是你仍不能在龙芯 CPU 上启动 Linux 因为一些代码还在审核中。希望在 5.20 版本中能够使用。
+
 
 [Intel IFS 驱动 ][4] 在该版本中落地，这有助于在部署前后发现硬件问题。它能够在早期发现 CPU 关键部分的错误。
 
-The power management and thermal work have continued for the last couple of Kernel releases for Intel CPUs. And [this release][5] also is no exception. Firstly, the Intel Run-Time Average Power Limiting (RAPL) support was added for Raptor and Alder Lake family. Second, the P-state driver is improved to handle frequency variance and CPU based scaling support is added to the passive devfreq.
+
+电源管理和散热工作在英特尔 CPU 的最后几个内核版本中继续进行。 在 [这个版本][5] 也不例外。首先，为 Raptor 和 Alder Lake 家族添加了英特尔运行时平均功率限制（RAPL）的支持。其次，为了处理频率变化升级了 P-state 驱动，并且基于 CPU 的缩放支持被添加到被动的 devfreq 中。
 
 
+虽然散热和供电主导着英特尔 CPU ，但 AMD 看到了自己 CPU 系列更多的性能更新。首先，计划在今年年底完成 ZMD Zen 4 CPUs 的 Instruction-Based Sampling (IBS) 模块的很多更新。此外，此版本引入了 PerfMonV2 ，提供了更多性能监视能力。
 
-While the thermal and power dominated Intel CPUs, AMD sees more performance updates in its own CPU families. Firstly, more updates were [introduced][6] in the Instruction-Based Sampling (IBS) module for AMD Zen 4 CPUs are planned for the end of this year. Moreover, PerfMonV2 is introduced in this release giving more performance monitoring capabilities.
+此外，该版本中移除了 a.out 支持。同样，过时的 Renesas H8/300 CPU 也被移除了。
+#### 主要 ARM 更新
 
-Furthermore, the a.out support is removed in this release. Also, the Renesas H8/300 CPU architecture support is removed as its obsolete by now.
+最后，主线 Linux Kernel 能够 [支持多个 ARM 平台][7]。在 Linus 的 RC1 开场白中可以看到，这是此版本中的巨大改变！从 Linux 3.7 开始跨越了十多年的工作，这是多么漫长的过程。
 
-#### Major ARM update
+![Linux Kernel 5.19 Rc1 发布公告提到了 ARM 更改][8]
 
-Finally, the mainline Linux Kernel can [support multiple ARM platforms][7] with this release. This is a big step in this version, which is heard in Linus’s opening note on this Rc1 release. This is a long process that started with Linux 3.7 and spanned more than a decade of work and patches.
+#### 图像和存储升级
 
-![Linux Kernel 5.19 Rc1 release announcement mentions ARM changes][8]
+存储子系统实现了跨越流行文件系统的性能提升。最主要的变化包括苹果 M1 NVMe 控制器支持和对 XFS 文件系统的更好支持。此外，提升了 Btrfs ， F2FS 以及 exFAT 文件系统。
 
-#### Graphics and Storage Updates
+关于 LOC 有一个令人兴奋的指标是仅图像驱动程序， Linux Kernel 5.19 增加了大约[50 万行代码][9] 。包括 AMD RDNA, CDNA, 英特尔的 Raptor Lake, DG2/Alchemist 等图形架构更新。
 
-The storage subsystem sees performance improvements across popular file systems. The significant changes include Apple M1 NVMe controller support and better support for the XFS file system. In addition, enhancements arrive for Btrfs, F2FS and exFAT file systems.
+#### 重要的网络变化
 
-One of the exciting metrics in terms of LOC is Linux Kernel 5.19 adds around [half-million lines of code][9] for the Graphics driver alone. It includes graphics updates across AMD RDNA, CDNA, Intel’s Raptor Lake, Intel’s DG2/Alchemist and more.
+鉴于数据传输大幅增长，对 Big TCP 的支持有助于数据中心流量达到 400 GBit 的范围。它还可以在高性能网络环境中降低延迟。
 
-#### Important Networking Changes
+继续改进了 Multi-Path TCP (MPTCP) 。此外，高通 ath11k WiFi 驱动程序在此版本中添加了网络唤醒功能。同样增加了对瑞昱的 8852ce 芯片，联发科的 T700 调制解调器以及瑞萨科技的 RZ/V2M 的支持。
 
-Looking at the massive growth in the data transmission, the support for Big TCP lands which helps the data centre traffic at a range of 400GBit. It also aims to give lower latency in high-performance networking environments.
+#### 其他值得注意的功能
 
-The Multi-Path TCP (MPTCP) continues its improvements. In addition to that, Qualcomm ath11k WiFi driver adds wake-on-lan support in this version. Also, support is added for Realtek 8852ce chipset, MediaTek T700 modems and Rensas RZ/V2M
+首先，内核中著名的随机函数生成器在此版本中 [继续][10] 改进。
 
-#### Other Notable Features
+其次，著名的初创公司 Framework 模块化笔记本电脑获得了此版本 Chrome OS EC 驱动支持。 Framework 笔记本现在可以利用 ChromeOS 的嵌入式控制器作为 non-Chromebook 设备。
 
-Firstly, the famous random number generator in Kernel [continues][10] its improvements in this release.
+此外， Wacom 绘画板以及其他相关设备也有众多更新。 [包括][11] 对联想 Thinkpad TrackPoint II, 谷歌 Whiskers Touchpad, 联想 X12 TrackPoint 等设备支持的提升。
 
-Second, the famous and emerging Framework Modular Laptop gets this release Chrome OS EC Driver support. The Framework laptop now can take advantage of ChromeOS’s embedded controller as a non-Chromebook device.
+### Linux Kernel 5.19 下载
 
-Moreover, more updates arrive at Wacom tabs and other related devices. It [includes][11] improved support for Lenovo Thinkpad TrackPoint II, Google Whiskers Touchpad, Lenovo X12 TrackPoint, etc.
-
-### Linux Kernel 5.19 Download
-
-If you want to test and try this release candidate, download the release tarball [here][12]. Or refer below for a direct link to tar and diffs.
+如果你想要测试并尝试该候选版本，可以在 [这里][12] 下载。或者参考下面的链接。
 
 | - | - | - | - | - | - | - | - | - |
 | :- | :- | :- | :- | :- | :- | :- | :- | :- |
 | mainline: | 5.19-rc1 | 2022-06-06 | [tarball][13] |  | [patch][14] |  | [view diff][15] | [browse][16] |
 
-There will be multiple kernel iterations until the final release, expected around July 2022.
+预计在2022年7月左右最终版本发布前，将会有多个版本更迭。
 
-*[Via Kernel mailing list.][17]*
+*[Kernel 邮件列表.][17]*
 
 --------------------------------------------------------------------------------
 
@@ -78,7 +77,7 @@ via: https://www.debugpoint.com/2022/06/linux-kernel-5-19-rc1/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/Donkey-Hao)
+译者：[Donkey-Hao](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
