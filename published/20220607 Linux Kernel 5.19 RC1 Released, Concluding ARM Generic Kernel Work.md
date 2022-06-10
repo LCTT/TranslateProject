@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Donkey-Hao"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14692-1.html"
 
 Linux 内核 5.19 RC1 发布，完成了 ARM 通用内核的工作
 ======
