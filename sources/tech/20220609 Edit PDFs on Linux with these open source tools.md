@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/open-source-pdf-editors-linux"
 [#]: author: "Michael Korotaev https://opensource.com/users/michaelk"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
