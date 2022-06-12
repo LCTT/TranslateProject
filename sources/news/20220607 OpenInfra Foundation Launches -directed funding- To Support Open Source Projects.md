@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/openinfra-foundation-launches-directed-funding-to-support-open-source-projects/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
