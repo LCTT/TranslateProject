@@ -7,7 +7,7 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Learn the Lisp programming language in 2022
+Let's learn the Lisp programming language
 ======
 A lot of Lisp code lurks inside big codebases, so it's smart to get familiar with the language.
 
