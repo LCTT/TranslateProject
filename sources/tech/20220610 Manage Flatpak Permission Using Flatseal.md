@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/06/manage-flatpak-permission-flatseal/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
