@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/7/javascript-cheat-sheet"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
