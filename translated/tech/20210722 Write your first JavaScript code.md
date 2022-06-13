@@ -42,7 +42,7 @@ JavaScript 语言的用途多到令人惊讶，它拥有各种各样的库，而
 
 ![浏览器中显示的 HTML][6]
 
-要将 JavaScript 添加到这个简单的 HTML 页面，你可以创建一个 JavaScript 文件并在页面的 `<head>` 中引用它，或者只需使用 `<script>` 标记将 JavaScript 代码嵌入 HTML 中。在这个例子中，我们嵌入下面的了代码：
+要将 JavaScript 添加到这个简单的 HTML 页面，你可以创建一个 JavaScript 文件并在页面的 `<head>` 中引用它，或者只需使用 `<script>` 标记将 JavaScript 代码嵌入 HTML 中。在这个例子中，我嵌入了下面的代码：
 
 ```
 <html>
