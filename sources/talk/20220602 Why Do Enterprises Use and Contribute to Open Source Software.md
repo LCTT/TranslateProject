@@ -7,89 +7,86 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Why Do Enterprises Use and Contribute to Open Source Software
+企业为何使用开源软件，又为何推动开源软件的发展
 ======
-When people find out I work at the Linux Foundation they invariably ask what we do? Sometimes it is couched around the question, As in the Linux operating system? I explain open source software and try to capture the worldwide impact into 20 seconds before I lose their attention. If they happen to stick around for more, we often dig into the question, Why would enterprises want to participate in open source software projects or use open source software? The reality is – they do, whether they know it or not. And the reality is thousands of companies donate their code to open source projects and invest time and resources helping to further develop and improve open source software.
+每当人们知道我在 <ruby>Linux 基金会<rt>Linux Foundation</rt></ruby> 工作，他们总是会问我们的工作具体是做什么的。有时候，他们会一直问我是不是开发 Linux 操作系统的。我只能回答说，我们做的是开源软件，并试图在他们失去兴趣之前，将对世界的重大影响赌在短短的 20 秒上。如果他们的兴趣还在，想要进一步了解，我就会给他们深入分析一番：企业为何想参与到开源软件项目之中？它们为何会使用开源软件？没错，企业确实会这样做，无论它们有没有意识到这一点。此外，成千上万的企业会将企业内部代码捐给开源项目，为推动开源软件的进一步开发和优化投入大量的时间和资源。
 
-### How extensively used is open source software
+### 开源软件的使用范围有多广
 
-To quote from our recently released report, A Guide to Enterprise Open Source, “Open source software (OSS) has transformed our world and become the backbone of our digital economy and the foundation of our digital world. From the Internet and the mobile apps we use daily to the operating systems and programming languages we use to build the future, OSS has played a vital role. It is the lifeblood of the technology industry. Today, OSS powers the digital economy and enables scientific and technological breakthroughs that improve our lives. It’s in our phones, our cars, our airplanes, our homes, our businesses, and our governments. But just over two decades ago, few people had ever heard of OSS, and its use was limited to a small group of dedicated enthusiasts.”
+引用我们基金会最近发表的一项报告 <ruby>《企业开源指南》<rt>A Guide to Enterprise Open Source</rt></ruby>，“<ruby>开源软件<rt>open source software</rt></ruby>（OSS）改变了世界，是数字经济的支柱，数字世界的基石。从我们日常使用的互联网和移动应用到开拓未来的操作系统和程序语言，开源软件无不发挥着重要的作用，可谓是科技行业的命脉。在今天，开源软件驱动数字经济发展，推进科学技术取得突破，不断改善人们的生活水平。手机、汽车和飞机等设备，家庭、企业和政府等群体都在使用着开源软件。但就在 20 年前，开源软件还仅仅为少数人所知，为少数热心爱好者们组成的群体所用。”
 
-Open source software (OSS) has transformed our world and become the backbone of our digital economy and the foundation of our digital world.
+如今，情况可大不相同了:
 
-But what does this look like practically:
+* 在各行业的 <ruby>垂类软件栈<rt>vertical software stacks</rt></ruby> 中，开源软件的占比达到了 20%-85%。
+* 超过 90% 的网站服务器和联网设备都依靠 Linux 来运行。
+* 安卓手机系统也是基于 Linux 内核。
+* 用于应用程序开发的 AMP、Appium、Dojo、jQuery、Marko、Node.js 等 [主流的库和工具][1] 均属于开源项目。
+* 世界上排名位列前 100 名的超级计算机都在使用 Linux。
+* 大型机客户均在使用 Linux。
+* AWS、Google 以及 Microsoft 三大云服务供应商都在使用开源软件运行服务，策划并在云端发起开源解决方案。
 
-* In vertical software stacks across industries, open source penetration ranges from 20 to 85 percent of the overall software used.
-* Linux fuels 90%+ of web servers and Internet-connected devices.
-* The Android mobile operating system is built on the Linux kernel.
-* Immensely [popular libraries and tools][1] to build web applications, such as: AMP, Appium, Dojo, jQuery, Marko, Node.js and so many more are open source.
-* The world’s top 100 supercomputers run Linux.
-* 100% of mainframe customers use Linux.
-* The major cloud-service providers – AWS, Google, and Microsoft – all utilize open-source software to run their services and host open-source solutions delivered through the cloud.
+### 企业为何想参与到开源软件项目之中
 
-### Why do companies want to participate in open source software projects
+企业参与开源软件项目主要通过三种方式：
 
-Companies primarily participate in open source software projects in three ways:
+* 企业向开源社区捐赠自家开发的软件。
+* 企业向开源软件项目提供直接的资金援助。
+* 企业向开源项目分派软件开发人员以及其他员工。
 
-* They donate software they created to the open source community.
-* They provide direct funding and/or allocate software developers and other staff to contribute to open source software projects
+人们经常会问，为什么这些企业愿意放弃自家软件的所有权？为什么它们不让员工专攻自家软件的开发呢？
 
-The question often asked is, why wouldn’t they want to keep all of their software proprietary or only task their employees to work on their proprietary software?
+从整体上来看，这一问题的答案就是，企业和组织聚集起来，合力解决共同的难题，如此一来，他们就可以各自专注于在这基础上的各类难题。这些企业明白，将资源聚集在一起，能够更好地解决基础问题。有时，这种现象被叫做“竞合”，大概的意思是企业在一些领域可能互为竞争对手，但是它们在另一些领域则会互相合作。
 
-The 30,000-foot answer is that it is about organizations coming together to collectively solve common problems so they can separately innovate and differentiate on top of the common baseline. They see that they are better off pooling resources to make the baseline better. Sometimes it is called “coopetition.” It generally means that while companies may be in competition with each other in certain areas, they can still cooperate on others.
+“竞合”现象的一些典型例子：
 
-It is about organizations coming together to collectively solve common problems so they can separately innovate and differentiate
+* 铁路公司采用统一的铁轨尺寸，统一规划建设。得益于此，火车就可以在同样铁轨上运行，铁路公司之间也可以互相交换设备。
+* 在数码相机诞生之前，不同的公司在电影和摄像机行业各行创新之路，形成了各自的优势，但为了推进电影行业的发展，它们在相机链轮间距这一问题上达成了统一。
+* 娱乐产业在开展竞争的同时，也一致坚持采用家用录像系统和蓝光格式。
 
-Some old-school examples of this principle:
+如今，企业、组织以及个体在合力解决难题的同时，也在不断地改进自身的产品与业务。
 
-* Railroads agreed on a common track size and build so they can all utilize the same lines and equipment was interchangeable.
-* Before digital cameras, companies innovated and differentiated on film and cameras, but they all agreed on the spacing for the sprockets to advance the film.
-* The entertainment industry united around the VHS and Blu-Ray formats over their rivals.
+[<ruby>来此加密<rt>Let’s Encrypt</rt></ruby>][2] 是一个免费开放的自动化证书颁发机构，旨在通过简化安装程序，减低安装费用，快速扩大安全网络协议的应用范围。该机构为超过 2.25 亿个网站提供服务，每天平均发放证书约 150 万张。
 
-Now, we see companies, organizations, and individuals coming together to solve problems while simultaneously improving their businesses and products:
+好莱坞成立的 [<ruby>学院软件基金会<rt>Academy Software Foundation</rt></ruby>][3] 通过共同开发软件，推动娱乐、游戏和媒体等产业的增长，为产业发展提供开放标准，在电影行业内 [创造了巨大的价值][4]。
 
-[Let’s Encrypt][2] is a free, automated, and open certificate authority with the goal of dramatically increasing the use of secure web protocols by making it much easier and less expensive to setup. They are serving 225+ million websites, issuing ~1.5 million certificates each day on average.
+<ruby>超级账本<rt>Hyperledger</rt></ruby> 基金会发起了多个企业级区块链软件项目。众所周知，这些项目 [消耗的能源远比其他解决方案要少][5]。
 
-The [Academy Software Foundation][3] [creates value in the film industry][4] through collectively engineering software that powers much of the entertainment, gaming, and media industry productions and open standards needed for growth.
+[LF Energy 基金会][6] 推动 [电网朝着更加模块化、互操作和可拓展的方向发展][7]，助力提升可再生能源的利用率。
 
-The Hyperledger Foundation hosts enterprise-grade blockchain software projects, notably [using significantly fewer energy resources][5] than other popular solutions.
+[Dronecode 基金会][8] 致力于无人机软件的开发，促进企业在无人机领域进一步开拓创新。
 
-[LF Energy][6] is [making the electric grid more modular, interoperable, and scalable][7] to help increase the use of renewable energy sources.
+[<ruby>开源软件软件安全基金会<rt>OpenSSF</rt></ruby>][9] 聚集了顶尖的科技企业，共同强化开源软件的安全与韧性。
 
-[Dronecode][8] is enabling the development of drone software so companies can use their resources to innovate further.
+[Kubernetes][10] 是 Google 捐赠给 Linux 基金会下属的云原生计算基金会（CNCF）的一个项目，是管理基于云计算软件的首选方案。
 
-[OpenSSF][9] is the top technology companies coming together to strengthen the security and resiliency of open source software.
+上述只是企业参与的一小部分开源软件项目，点击[此处][11]，在 Linux 基金会官网浏览全部项目列表。
 
-[Kubernetes][10] was donated by Google and is the go-to solution for managing cloud-based software.
+### 企业如何有效利用和参与开源软件项目？
 
-These are just a small sampling of the open source software projects that enterprises are participating in. You can explore all of the ones hosted at the Linux Foundation [here][11].
+若想要更好地利用开源项目，更有效地参与开源项目，企业可以向 Linux 基金会寻求帮助。我们最新发布的报告 [《企业开源指南》][12] 提供了企业与组织需要了解的大部分信息。这份报告凝聚了来自多家顶级企业、具有几十年丰富经验的开源领袖的知识与智慧，报告主要分为以下六个章节：
 
-### How can companies effectively use and participate in open source software projects?
+* 使用开源软件
+* 准备参与开源
+* 制定开源策略
+* 部署基础设施
+* 建立人才团队
+* 应对多方挑战
 
-Enterprises looking to better utilize and participate in open source projects can look to the Linux Foundation’s resources to help. Much of what organizations need to know is provided in the just-published report,[A Guide to Enterprise Open Source][12]. The report is packed with information and insights from open source leaders at top companies with decades of combined experience. It includes chapters on these topics:
+此外，Linux 基金会还提供了许多开源 [培训课程][13]、全年 [活动][14]、[LFX 平台][15]，发起开源项目，协助企业与组织利用和参与开源项目，比如：
 
-* Leveraging Open Source Software
-* Preparing the Enterprise for Open Source
-* Developing an Open Source Strategy
-* Setting Up Your Infrastructure for Implementation
-* Setting Up Your Talent for Success
-* Challenges
+[TODO 工作组][16] 为开源项目办公室的建立和运作提供资源，包括其自身 [丰富的指导意见][17]。
 
-Additionally, the Linux Foundation offers many open source [training courses][13], [events][14] throughout the year, the [LFX Platform][15], and hosts projects that help organizations manage open source utilization and participation, such as:
+[Openchain 项目][18] 旨在提供和维护国际开源许可标准，包括各种许可规定的相关信息。依赖于此，企业可以确保自身行为符合法律规定。
 
-The [TODO Group][16] provides resources to setup and run an open source program office, including their [extensive guides][17].
+[FinOps 基金会][19] 目前正在将自身打造为“不断发展的云财务管理和文化实践平台，通过促进工程、财务、技术以及商业团队之间在数据驱动支出决策方面的合作，确保企业能够最大化实现商业价值”。
 
-The [Openchain Project][18] maintains an international standard for sharing what software package licenses are included in a larger package, including information on the various licensing requirements so enterprises can ensure they are complying with all of the legal requirements.
+[Software Data Package Exchange (SPDX)][20] 是一个用于交流 <ruby>软件构成清单<rt>software bill of materials</rt></ruby>（SBOMs）的开放标准。在该标准下，每个用户都能清楚了解整个软件包中包括哪些软件。
 
-The [FinOps Foundation][19] is fostering an, “evolving cloud financial management discipline and cultural practice that enables organizations to get maximum business value by helping engineering, finance, technology, and business teams to collaborate on data-driven spending decisions.”.
+重复一遍，上述这些只是 Linux 基金会所有项目中的一小部分。所有这些项目都致力于帮助企业接受和使用开源项目，引导企业为开源项目做出贡献、提供捐赠。
 
-The [Software Data Package Exchange (SPDX)][20] is an open standard for communication software bill of materials (SBOMs) so it is clear to every user which pieces of software are included in the overall package.
+总而言之，目前，企业正在迅速投向开源软件项目，借此解决共同的难题，并探索进一步的创新发展，而 Linux 基金会将为它们提供帮助。
 
-Again, this is just a snippet of the projects at the Linux Foundation that are working to help organizations adapt, utilize, contribute, and donate open source projects.
-
-The bottom line: Enterprises are increasingly turning to open source software projects to solve common problems and innovate beyond the baseline, and the Linux Foundation is here to help.
-
-The post [Why Do Enterprises Use and Contribute to Open Source Software][21] appeared first on [Linux Foundation][22].
+该文 [《企业为何使用开源软件，又为何推动开源软件的发展》][21] 首发于 [Linux 基金会][22] 官网。
 
 --------------------------------------------------------------------------------
 
