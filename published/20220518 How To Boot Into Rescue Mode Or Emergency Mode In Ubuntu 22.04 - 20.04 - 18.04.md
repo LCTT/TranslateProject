@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "robsean"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14709-1.html"
 
 详解在 Ubuntu 中引导到救援模式或紧急模式
 ======
