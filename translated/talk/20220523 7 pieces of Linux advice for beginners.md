@@ -9,7 +9,6 @@
 
 给Linux初学者的7条建议
 ======
-We asked our community of writers for the best advice they got when they first started using Linux.
 我们咨询了社区Linux专家分享他们的初学经验。
 
 ![Why the operating system matters even more in 2017][1]
