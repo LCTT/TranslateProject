@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/love-thy-terminal/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "duoluoxiaosheng"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
