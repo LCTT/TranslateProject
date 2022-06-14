@@ -13,8 +13,6 @@
 
 ![Why the operating system matters even more in 2017][1]
 
-图源: Internet Archive Book Images. Modified by Opensource.com. CC BY-SA 4.0
-
 对Linux的新用户有什么建议？我们咨询了社区专家分享他们初学时的最佳经验。
 
 ### 1.用好Linux资源
