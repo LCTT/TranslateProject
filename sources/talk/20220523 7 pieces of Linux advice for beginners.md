@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/linux-advice-beginners"
 [#]: author: "Opensource.com https://opensource.com/users/admin"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lightchaserhy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
