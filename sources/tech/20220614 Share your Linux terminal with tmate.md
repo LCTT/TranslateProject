@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/share-linux-terminal-tmate"
 [#]: author: "Sumantro Mukherjee https://opensource.com/users/sumantro"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
