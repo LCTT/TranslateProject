@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "lightchaserhy"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14712-1.html"
 
 给 Linux 初学者的 7 条建议
 ======
