@@ -11,9 +11,9 @@
 ======
 ![安卓开发者][1]
 
-开源电子邮件客户端 Thunderbird 将通过 K-9 Mail Android 电子邮件应用项目进入 Android，该项目与 Thunderbird 合并后，产生了 Thunderbird Android 电子邮件应用。两年前，Thunderbird 被转移到了 Mozilla 基金会的子公司 MZLA Technologies Corporation 下，该公司的所有权结构与基金会子公司 Mozilla Corporation 旗下的 Firefox 类似。有了 OpenPGP 端到端加密和期待已久的移动应用等新功能，Thunderbird 项目能够开辟出一条自己的道路。
+开源电子邮件客户端 Thunderbird 将通过 K-9 Mail Android 电子邮件应用项目登陆 Android，该项目与 Thunderbird 合并后的产品就是 Thunderbird Android 电子邮件应用。两年前，Thunderbird 被转移到了 Mozilla 基金会的子公司 MZLA Technologies Corporation 下，该公司的所有权结构与基金会子公司 Mozilla Corporation 旗下的 Firefox 类似。有了 OpenPGP 端到端加密和期待已久的移动应用等新功能，Thunderbird 项目能够开辟出一条自己的道路。
 
-根据 Thunderbird 团队的说法，Thunderbird 产品经理 Ryan Lee Sipes 和 K-9 的主要维护者 Christian Ketterer，早在 2018 年就开始讨论可能的 Thunderbird 电子邮件应用合作了。到了 2022 年，两人决定不再让 Thunderbird 从头开始​​开发自己的应用程序，而是直接让 K-9 加入 Thunderbird。
+根据 Thunderbird 团队的说法，Thunderbird 产品经理 Ryan Lee Sipes 和 K-9 的主要维护者 Christian Ketterer，两人早在 2018 年就开始讨论可能的 Thunderbird 电子邮件应用合作了。到了 2022 年，两人决定不再让 Thunderbird 从头开始​​开发自己的应用程序，而是直接让 K-9 加入 Thunderbird。
 
 Thunderbird 团队表示：“许多 Thunderbird 用户都要求在移动设备上获得 Thunderbird 体验，我们打算通过把 K-9 打造成令人惊叹的产品（并将其变成 Android 上的 Thunderbird）来提供这种体验。K-9 将补充提供 Thunderbird 体验，并增强它的使用场景和方式，让用户获得出色的电子邮件体验。我们对桌面 Thunderbird 的承诺没有改变，我们团队中的大多数人都致力于将其打造为一流的电子邮件客户端，并将保持这种状态。”
 
