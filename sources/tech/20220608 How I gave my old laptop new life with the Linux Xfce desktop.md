@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/linux-xfce-old-laptop"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lightchaserhy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
