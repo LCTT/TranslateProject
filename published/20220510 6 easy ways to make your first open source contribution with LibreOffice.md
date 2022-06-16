@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "lkskjjk"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14719-1.html"
 
 使用 LibreOffice 进行首次开源贡献的 6 种简单方法
 ======
