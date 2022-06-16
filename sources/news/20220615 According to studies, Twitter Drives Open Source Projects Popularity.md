@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/according-to-studies-twitter-drives-open-source-projects-popularity/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
