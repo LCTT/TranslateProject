@@ -3,15 +3,16 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14717-1.html"
 
-Thonny 是在学校教授 Python 编程的理想 IDE
+Thonny：在学校教授 Python 编程的理想 IDE
 ======
-在 Linux 中运行一个 Python 程序就像在终端中执行 Python 文件一样简单。
 
-但这对每个人来说都不是很方便，也不能帮助你调试你的程序。太原始了。
+在 Linux 中运行一个 Python 程序只需要简单地在终端中执行 Python 文件就行。
+
+但这对人们来说不是很方便，也不能帮助你调试你的程序。太原始了。
 
 有几个 IDE 和文本编辑器可以用于 Python 开发。Linux 用户可以使用 [PyCharm 社区版][1]。
 
@@ -21,27 +22,27 @@ Thonny 是在学校教授 Python 编程的理想 IDE
 
 [Thonny][2] 在用户界面和用户体验方面，感觉就像 Python 版本的 Eclipse。考虑到大多数 C++ 和 Java 的初学者都是从 Eclipse 开始的，而且许多人后来一直使用它，这也不完全是一件坏事。
 
-它不是一个新的工具。它已经出现好几年了。我没有用 Python 编码，所以直到最近才发现它。
+它不是一个新的工具。它已经出现好几年了。我没有用 Python 进行编码，所以直到最近才发现它。
 
-致力于 Python，Thonny 具有帮助 Python 初学者了解其程序行为的功能。让我们来看看这些功能。
+Thonny 专注于 Python，提供了帮助 Python 初学者了解其程序行为的功能。让我们来看看这些功能。
 
 #### 即装即用
 
 Thonny 自带 Python，所以你不需要为安装 Python 做额外的努力。这对 Linux 用户来说不是什么大事，因为大多数发行版都默认安装了 Python。
 
-界面很简单。它给你一个编辑器，你可以写你的 Python 程序，然后点击运行按钮或使用 F5 键来运行程序。输出显示在底部。
+界面很简单。它给你一个编辑器，你可以写你的 Python 程序，然后点击运行按钮或使用 `F5` 键来运行程序。输出显示在底部。
 
 ![thonny hello world][3]
 
 #### 查看变量
 
-在 View->Variables，你可以看到所有变量的值。不需要将它们全部打印出来。
+在 “<ruby>查看<rt>View</rt></ruby>-><ruby>变量<rt>Variables</rt></ruby>”，你可以看到所有变量的值。不需要将它们全部打印出来。
 
 ![thonny variable pane][4]
 
 #### 内置调试器
 
-通过使用调试器一步步运行你的程序。你可以从顶部的菜单或使用 Ctrl+F5 键访问它。在这里你甚至不需要断点。你可以用 F6 进入大步骤，或用 F7 进入小步骤。
+通过使用调试器一步步运行你的程序。你可以从顶部的菜单或使用 `Ctrl + F5` 键访问它。在这里你甚至不需要设置断点。你可以用 `F6` 进入大步骤，或用 `F7` 进入小步骤。
 
 ![thonny step by step f6][5]
 
@@ -87,7 +88,7 @@ Thonny 是一个跨平台的应用。它可用于 Windows、macOS 和 Linux。
 
 另外，你也可以随时使用你的 Linux 发行版的包管理器。
 
-在 Debian 和基于 Ubuntu 的发行版上，你可以使用 apt 命令来安装它。
+在 Debian 和基于 Ubuntu 的发行版上，你可以使用 `apt` 命令来安装它。
 
 ```
 sudo apt install thonny
@@ -110,7 +111,7 @@ via: https://itsfoss.com/thonny-python-ide/
 作者：[Abhishek Prakash][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
