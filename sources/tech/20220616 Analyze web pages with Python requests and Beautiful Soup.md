@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/analyze-web-pages-python-requests-beautiful-soup"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
