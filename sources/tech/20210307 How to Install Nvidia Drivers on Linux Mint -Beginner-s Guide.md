@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/nvidia-linux-mint/)
 [#]: author: (Ankush Das https://itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hwlife)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
