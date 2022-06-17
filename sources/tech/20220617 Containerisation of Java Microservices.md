@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/containerisation-of-java-microservices/"
 [#]: author: "Krishna Mohan Koyya https://www.opensourceforu.com/author/krishna-mohan-koyya/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
