@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/qtcreator)
 [#]: author: (Stephan Avenwedde https://opensource.com/users/hansic99)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (hadisi1993)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
