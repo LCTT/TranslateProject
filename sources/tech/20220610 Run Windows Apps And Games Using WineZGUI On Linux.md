@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/winezgui-run-windows-apps-and-games-on-linux/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
