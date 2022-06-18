@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/5/kubernetes-chaos)
 [#]: author: (Jessica Cherry https://opensource.com/users/cherrybomb)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Donkey-Hao)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
