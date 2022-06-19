@@ -3,13 +3,14 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14730-1.html"
 
 Ubuntu Core 22 来了，适用于物联网和边缘设备
 ======
-Ubuntu Core 22 基于 Ubuntu 22.04 LTS，为物联网和嵌入式设备带来了最佳的安全性和性能。
+
+> Ubuntu Core 22 基于 Ubuntu 22.04 LTS，为物联网和嵌入式设备带来了最佳的安全性和性能。
 
 ![Ubuntu][1]
 
@@ -19,7 +20,7 @@ Ubuntu Core 22 是一个容器化的 Ubuntu 22.04 LTS 变体，针对嵌入式�
 
 在发布 Ubuntu Core 22 时，Canonical 的 CEO **Mark Shuttleworth** 说：
 
-> “Canonical 的目标是在任何地方提供安全、可靠的开源技术，从开发环境到云，再到边缘和设备。”
+> “Canonical 的目标是在从开发环境到云、再到边缘和设备的任何地方提供安全、可靠的开源技术。”
 
 ### Ubuntu Core 22 更新介绍
 
@@ -31,11 +32,11 @@ Ubuntu Core 22 版本带来了针对安全性和可靠性的改进。其中包�
 
 正如公告中提到的，Ubuntu 22.04 LTS 提供了一个实时内核（测试版可用），它能为那些时间敏感的工业、汽车和机器人用例，提供高性能、超低延迟和工作负载可预测性。
 
-此外，如果你有 Ubuntu 认证的硬件，你还能充分利用高级的实时功能。
+此外，如果你有 Ubuntu 认证的硬件，你还能充分利用先进的实时功能。
 
 #### Snapcraft 框架
 
-整个 Ubuntu 映像分解为许多个包（快照），使得内核、操作系统和应用程序隔离在一个沙箱中。
+整个 Ubuntu 镜像分解为许多个包（Snap），使得内核、操作系统和应用程序隔离在一个沙箱中。
 
 这可以让你轻松地安装应用程序，而无需担心来自专用 <ruby>物联网应用商店<rt>IoT App Store</rt></ruby> 的依赖。对于企业而言，通过软件商店进行的软件管理解决方案，应该能够带来一系列内部部署的机会。
 
@@ -64,7 +65,7 @@ via: https://news.itsfoss.com/ubuntu-core-22-release/
 作者：[Ankush Das][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
