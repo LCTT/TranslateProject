@@ -3,19 +3,20 @@
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14729-1.html"
 
-Adobe 推出了开源工具包以减少视觉错误信息
+为减少视觉错误信息，Adobe 推出了开源工具包
 ======
-![Adobe][1]
 
-Adobe 设想了一个充满照片和视频的网络，照片和视频上标注关于它们来自哪里的信息。该公司的主要目标是减少视觉错误信息的传播，不过，该系统也可以使那些“希望将自己的名字与工作关联起来”的内容创作者受益。
+![](https://img.linux.net.cn/data/attachment/album/202206/19/105844yauuhdz1u1189ffr.jpg)
 
-Adobe 的 <ruby>内容真实性计划<rt>Content Authenticity Initiative</rt></ruby> (CAI) 项目于 2019 年首次宣布，此后，它发布了一份关于实现该目标的技术白皮书，将该系统集成了到自己的软件中，并与新闻编辑室和硬件制造商展开了合作，以帮助普及其愿景。
+Adobe 设想的是为网络上充斥的照片和视频标注关于它们的来源。该公司的主要目标是减少视觉错误信息的传播，不过，该系统也可以使那些“希望将自己的名字与工作关联起来”的内容创作者受益。
 
-现在，该公司发布了一个由三部分组成的开源工具包，从而把该技术交到开发人员手中并投入使用。Adobe 的新开源工具包括用于开发“在浏览器中显示内容凭据”的 JavaScript SDK、命令行实用程序和用于开发桌面应用程序、移动应用程序和其他用于创建、查看和验证嵌入式内容凭据的 Rust SDK。
+Adobe 在 2019 年首次宣布了其 <ruby>内容真实性计划<rt>Content Authenticity Initiative</rt></ruby>（CAI）项目，此后，它发布了一份关于实现该目标的技术白皮书，将该系统集成了到自己的软件中，并与新闻编辑室和硬件制造商展开了合作，以帮助普及其愿景。
+
+现在，该公司发布了一个由三部分组成的开源工具包，从而把该技术交到开发人员手中，并投入使用。Adobe 的新开源工具包括一个用于开发“在浏览器中显示内容凭据”的 JavaScript SDK、一个命令行实用程序，和一个用于开发桌面应用程序、移动应用程序和其他应用的 Rust SDK，以创建、查看和验证嵌入式内容凭据。
 
 众所周知，照片的 EXIF 数据中记录了有关光圈和快门速度的信息，这个新标准也采用了这种方式，它还记录有关文件创建的信息，例如文件的创建和编辑方式。如果该公司的共同愿景成真，这些 Adobe 称之为“内容凭证”的元数据，将在社交媒体平台、图像搜索平台、图像编辑器、搜索引擎中广泛可见。
 
@@ -34,7 +35,7 @@ via: https://www.opensourceforu.com/2022/06/adobe-launches-open-source-toolkit-t
 作者：[Laveesh Kocher][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
