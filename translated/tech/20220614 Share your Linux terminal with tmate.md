@@ -9,31 +9,31 @@
 
 使用 tmate 分享你的 Linux 终端
 ======
-Tmate 扩展了你与 Linux 终端共享会话的选项。
+Tmate 增加了你与 Linux 终端共享会话的选择。
 
 ![Terminal command prompt on orange background][1]
 
 图片提供: [iradaturrahmat][2] 通过 [Pixabay][3]，CC0
 
-作为 Fedora Linux QA 团队的一员，我有时会发现自己执行了一堆我想广播给其他开发者的命令。如果你曾经使用过像 [tmux][5] 或 [GNU Screen][6] 这样的[终端复用器][4]，你可能会认为这是一个相对容易的任务。但并不是所有我想看我的演示的人都是从笔记本电脑或台式机连接到我的终端会话的。有些人可能是随便从他们的手机浏览器中打开的，他们可以很容易地做到这一点，因为我使用了[tmate][7]。
+作为 Fedora Linux QA 团队的一员，有时我发现自己执行了一堆想广播给其他开发者的命令。如果你曾经使用过类似 [tmux][5] 或 [GNU Screen][6] 这样的[终端复用器][4]，你可能会认为这是一个相对容易的任务。但并不是所有想看我演示的人都是通过笔记本电脑或台式机连接到我的终端会话的。有些人可能是随时从他们的手机浏览器中打开的，他们可以很容易地做到这一点，因为我使用了[tmate][7]。
 
 ### 使用 tmate 共享 Linux终端
 
-看别人在 Linux 终端工作是非常有教育意义的。你可以学到新的命令，新的工作流程，或者新的调试和自动化的方法。但要捕捉到你所看到的东西，以便你以后可以自己尝试，这可能很困难。你可能会诉诸于截图或共享终端会话的屏幕记录，这样你就可以在以后打出每个命令。唯一的选择是由演示命令的人使用 [Asciinema][8] 或 [script 和 scriptreplay][9] 等工具来记录会话。
+观摩别人在 Linux 终端工作是非常有教育意义的。你可以学到新的命令，新的工作流程，或者新的调试和自动化的方法。但要记录到你所看到的东西，以便后续的自行尝试，这可能很困难。你可能会依赖于截图或共享终端会话的屏幕记录，这样你就可以在以后打出每个命令。唯一的选择是由演示命令的人使用 [Asciinema][8] 或 [script 和 scriptreplay][9] 等工具来记录会话。
 
-但是通过 tmate，用户可以在只读模式下或通过 SSH 共享一个终端。SSH 和只读会话都可以通过终端或以 HTML 网页的形式访问。
+通过 tmate，用户仅需在只读模式下或通过 SSH 共享一个终端。SSH 和只读会话都可以通过终端或以 HTML 网页的形式访问。
 
 当我为 Fedora QA 团队培训人员时，我使用只读模式，因为我需要运行命令并显示输出，但有了 tmate，人们可以通过从他们的浏览器复制和粘贴到文本编辑器来保持笔记。
 
-### Linux tmate 上手
+### Linux tmate 入门
 
-在 Linux 上，你可以用你的包管理器安装 tmate。例如，在 Fedora 上：
+在 Linux 上，你可以通过包管理器安装 tmate。例如，在 Fedora 上：
 
 ```
 $ sudo dnf install tmate
 ```
 
-在 Debian 和类似的发行版上：
+在 Debian 系列的发行版上：
 
 ```
 $ sudo apt install tmate
@@ -59,7 +59,7 @@ Tmate 的网络控制台是 HTML5 的，因此，用户可以复制整个屏幕�
 
 ### 保持会话活跃
 
-你可能想知道如果你不小心关闭了你的终端会发生什么。你也可能想知道如何与不同的控制台应用共享你的终端。毕竟，tmate 是一个多路复用器，所以它应该能够保持会话的活力，脱离并重新连接到一个会话，等等。
+你可能想知道如果不小心关闭了你的终端会发生什么。你也可能想知道如何与不同的控制台应用共享你的终端。毕竟，tmate 是一个多路复用器，所以它应该能够保持会话活跃，脱离并重新连接到一个会话，等等。
 
 当然，这正是 tmate 所能做到的。如果你曾经使用过 tmux，这可能是相当熟悉的。
 
@@ -67,13 +67,13 @@ Tmate 的网络控制台是 HTML5 的，因此，用户可以复制整个屏幕�
 $ tmate -F -n web new-session vi console
 ```
 
-这个命令在 Vi 中打开了 `new-session`，`-F` 选项确保会话在关闭时也能重新产生。
+这个命令在 Vi 中打开了 `new-session`，`-F` 选项确保会话在关闭时也能重新开启。
 
 ![A screenshot of the terminal showing the output after using the new-session and -F options: connection information for either a web session (regular or read-only) or ssh session (regular or read-only)][15]
 
 ### 社交复用
 
-Tmate 给你带来了 tmux 或 GNU Screen 的自由，以及与他人共享会话的能力。对于教其他用户如何使用终端，演示一个新命令的功能，或调试意外的行为，这是一个有价值的工具。它是开源的，所以请试一试！
+Tmate 给你带来了自由的 tmux 或 GNU Screen ，以及与他人共享会话的能力。对于教其他用户如何使用终端，演示一个新命令的功能，或调试意外的行为，这是一个有价值的工具。它是开源的，所以请试一试！
 
 图片提供（Sumantro Mukherjee，CC BY-SA 4.0）
 
