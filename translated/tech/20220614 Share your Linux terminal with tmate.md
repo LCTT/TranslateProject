@@ -7,7 +7,7 @@
 [#]: publisher: " "
 [#]: url: " "
 
-用 tmate 分享你的 Linux 终端
+使用 tmate 分享你的 Linux 终端
 ======
 Tmate 扩展了你与 Linux 终端共享会话的选项。
 
