@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/integrating-zeek-with-elk-stack/"
 [#]: author: "Tridev Reddy https://www.opensourceforu.com/author/tridev-reddy/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
