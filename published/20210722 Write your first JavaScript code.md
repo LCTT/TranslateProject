@@ -67,7 +67,7 @@ JavaScript 语言的用途多到令人惊讶，它拥有各种各样的库，而
 
 如你所见，`<p>` 标签仍然包含字符串 `"Nothing here"`，但是当它被渲染时，JavaScript 会改变它，使其包含 `"Hello world"`。是的，JavaScript 具有重建​​（或只是帮助构建）网页的能力。
 
-这个简单脚本中的 JavaScript 做了两件事。首先，它创建一个名为 `myvariable` 的变量，并将字符串 `"Hello world!"` 放置其中。然后，它会在当前文档（浏览器呈现的网页）中搜索 ID 为 `example` 的所有 HTML 元素。当它找到 `example` 时，它使用了 `innerHTML` 函数将 HTML 元素的内容替换为 `myvariable` 的内容。
+这个简单脚本中的 JavaScript 做了两件事。首先，它创建一个名为 `myvariable` 的变量，并将字符串 `"Hello world!"` 放置其中。然后，它会在当前文档（浏览器呈现的网页）中搜索 ID 为 `example` 的所有 HTML 元素。当它找到 `example` 时，它使用了 `innerHTML` 函数将 HTML 元素的内容替换为 `myvariable` 的内容。（LCTT 译注：这里作者笔误了，`innerHTML` 是“属性”而非“函数”。）
 
 当然，我们也可以不用自定义变量。因为，使用动态创建的内容来填充 HTML 元素也是容易的。例如，你可以使用当前时间戳来填充它：
 
