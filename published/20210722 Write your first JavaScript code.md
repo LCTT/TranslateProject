@@ -3,17 +3,16 @@
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14740-1.html"
 
 编写你的第一段 JavaScript 代码
 ======
-JavaScript 是为 Web 而生的，但它可以做的事远不止于此。本文将带领你了解它的基础知识，然后你可以下载我们的备忘清单，以便随时掌握详细信息。
 
-![开源编程][1]
+> JavaScript 是为 Web 而生的，但它可以做的事远不止于此。本文将带领你了解它的基础知识，然后你可以下载我们的备忘清单，以便随时掌握详细信息。
 
-图源：Opensource.com
+![](https://img.linux.net.cn/data/attachment/album/202206/21/114718zzb8f6na6lgb28cn.jpg)
 
 JavaScript 是一种充满惊喜的编程语言。许多人第一次遇到 JavaScript 时，它通常是作为一种 Web 语言出现的。所有主流浏览器都有一个 JavaScript 引擎；并且，还有一些流行的框架，如 JQuery、Cash 和 Bootstrap 等，它们可以帮助简化网页设计；甚至还有用 JavaScript 编写的编程环境。它似乎在互联网上无处不在，但事实证明，它对于 [Electron][2] 等项目来说也是一种有用的语言。Electron 是一个构建跨平台桌面应用程序的开源工具包，它使用的语言就是 JavaScript。
 
@@ -21,11 +20,11 @@ JavaScript 语言的用途多到令人惊讶，它拥有各种各样的库，而
 
 ### 安装 JavaScript
 
-随着你的 JavaScript 水平不断提高，你可能会发现自己需要高级的 JavaScript 库和运行时。不过，刚开始学习的时候，你是根本不需要安装 JavaScript 的。因为所有主流的 Web 浏览器都包含一个 JavaScript 引擎来运行代码。你可以使用自己喜欢的文本编辑器编写 JavaScript，将其加载到 Web 浏览器中，接着你就能看到代码的作用。
+随着你的 JavaScript 水平不断提高，你可能会发现自己需要高级的 JavaScript 库和运行时环境。不过，刚开始学习的时候，你是根本不需要安装 JavaScript 环境的。因为所有主流的 Web 浏览器都包含一个 JavaScript 引擎来运行代码。你可以使用自己喜欢的文本编辑器编写 JavaScript，将其加载到 Web 浏览器中，接着你就能看到代码的作用。
 
 ### 上手 JavaScript
 
-要编写你的第一个 JavaScript 代码，请打开你喜欢的文本编辑器，例如 [Notepad++][3]、[Atom][4] 或 [VSCode][5] 等。因为它是为 Web 开发的，所以 JavaScript 可以很好地与 HTML 配合使用。因此，我们先来尝试一些基本的 HTML：
+要编写你的第一个 JavaScript 代码，请打开你喜欢的文本编辑器，例如 [Atom][4] 或 [VSCode][5] 等。因为它是为 Web 开发的，所以 JavaScript 可以很好地与 HTML 配合使用。因此，我们先来尝试一些基本的 HTML：
 
 ```
 <html>
@@ -66,9 +65,9 @@ JavaScript 语言的用途多到令人惊讶，它拥有各种各样的库，而
 
 ![在浏览器中显示带有 JavaScript 的 HTML][7]
 
-如你所见，`<p>` 标签仍然包含字符串 “Nothing here”，但是当它被渲染时，JavaScript 会改变它，使其包含 “Hello world”。是的，JavaScript 具有重建​​（或只是帮助构建）网页的能力。
+如你所见，`<p>` 标签仍然包含字符串 `"Nothing here"`，但是当它被渲染时，JavaScript 会改变它，使其包含 `"Hello world"`。是的，JavaScript 具有重建​​（或只是帮助构建）网页的能力。
 
-这个简单脚本中的 JavaScript 做了两件事。首先，它创建一个名为 `myvariable` 的变量，并将字符串 “Hello world!” 放置其中。然后，它会在当前文档（浏览器呈现的网页）中搜索 ID 为 “example” 的所有 HTML 元素。当它找到 `example` 时，它使用了 `innerHTML` 函数将 HTML 元素的内容替换为 `myvariable` 的内容。
+这个简单脚本中的 JavaScript 做了两件事。首先，它创建一个名为 `myvariable` 的变量，并将字符串 `"Hello world!"` 放置其中。然后，它会在当前文档（浏览器呈现的网页）中搜索 ID 为 `example` 的所有 HTML 元素。当它找到 `example` 时，它使用了 `innerHTML` 函数将 HTML 元素的内容替换为 `myvariable` 的内容。（LCTT 译注：这里作者笔误了，`innerHTML` 是“属性”而非“函数”。）
 
 当然，我们也可以不用自定义变量。因为，使用动态创建的内容来填充 HTML 元素也是容易的。例如，你可以使用当前时间戳来填充它：
 
@@ -94,7 +93,7 @@ JavaScript 语言的用途多到令人惊讶，它拥有各种各样的库，而
 
 在编程中，<ruby>语法<rt>syntax</rt></ruby> 指的是如何编写句子（或“行”）的规则。在 JavaScript 中，每行代码必须以分号（`;`）结尾，以便运行代码的 JavaScript 引擎知道何时停止阅读。（LCTT 译注：从实用角度看，此处的“必须”其实是不正确的，大多数 JS 引擎都支持不加分号。Vue.js 的作者尤雨溪认为“没有应该不应该，只有你自己喜欢不喜欢”，他同时表示，“Vue.js 的代码全部不带分号”。详情可以查看他在知乎上对于此问题的 [回答][10]。）
 
-单词（或 <ruby>“字符串”<rt>strings</rt></ruby>）必须用引号（`"`）括起来，而数字（或 <ruby>“整数”<rt>integers</rt></ruby>）则不用。
+单词（或 <ruby>字符串<rt>strings</rt></ruby>）必须用引号（`"`）括起来，而数字（或 <ruby>整数<rt>integers</rt></ruby>）则不用。
 
 几乎所有其他东西都是 JavaScript 语言的约定，例如变量、数组、条件语句、对象、函数等等。
 
@@ -111,7 +110,7 @@ document.getElementById("example").innerHTML = typeof(myvariable);
 </string>
 ```
 
-接着，你就会发现 Web 浏览器中显示出 “string” 字样，因为该变量包含的数据是 “Hello world!”。在 `myvariable` 中存储不同类型的数据（例如整数），浏览器就会把不同的数据类型打印到示例网页上。尝试将 `myvariable` 的内容更改为你喜欢的数字，然后重新加载页面。
+接着，你就会发现 Web 浏览器中显示出 “string” 字样，因为该变量包含的数据是 `"Hello world!"`。在 `myvariable` 中存储不同类型的数据（例如整数），浏览器就会把不同的数据类型打印到示例网页上。尝试将 `myvariable` 的内容更改为你喜欢的数字，然后重新加载页面。
 
 ### 在 JavaScript 中创建函数
 
@@ -160,7 +159,7 @@ document.getElementById("example").innerHTML = typeof(myvariable);
 
 学习 JavaScript 既简单又有趣。网络上有很多网站提供了相关教程，还有超过一百万个 JavaScript 库可帮助你与设备、外围设备、物联网、服务器、文件系统等进行交互。在你学习的过程中，请将我们的 [JavaScript 备忘单][9] 放在身边，以便记住语法和结构的细节。
 
-正文中的配图来自：Seth Kenlon，CC BY-SA 4.0
+> **[JavaScript 备忘单][9]**
 
 --------------------------------------------------------------------------------
 
@@ -169,7 +168,7 @@ via: https://opensource.com/article/21/7/javascript-cheat-sheet
 作者：[Seth Kenlon][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
