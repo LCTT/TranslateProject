@@ -7,7 +7,7 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-14746-1.html"
 
-Ubuntu 可以运行在谷歌 Nest Hub 上吗？！
+Ubuntu 可以运行在谷歌 Nest Hub 上了？！
 ======
 
 > 一名安全专家成功地在谷歌 Nest Hub（第 2 代）上运行了 Ubuntu，嗯，然后呢？
