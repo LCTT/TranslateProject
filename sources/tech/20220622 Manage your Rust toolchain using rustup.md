@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/rust-toolchain-rustup"
 [#]: author: "Gaurav Kamathe https://opensource.com/users/gkamathe"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
