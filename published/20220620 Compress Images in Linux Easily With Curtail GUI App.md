@@ -3,14 +3,16 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14748-1.html"
 
 用 Curtail GUI 应用轻松压缩 Linux 中的图像
 ======
 
-有一大堆文件大小的图片占用了太多的磁盘空间？或者你必须将图片上传到有文件大小限制的门户网站？
+![](https://img.linux.net.cn/data/attachment/album/202206/23/182901s4d060uu98g8qquv.jpg)
+
+有一大堆文件尺寸巨大的图片占用了太多的磁盘空间？或者你必须将图片上传到有文件大小限制的门户网站？
 
 你可能有很多原因想要压缩图片。有大量的工具可以帮助你，我在这里说的不是命令行的工具。
 
@@ -56,7 +58,7 @@ flatpak install flathub com.github.huluti.Curtail
 
 正如你在上面的图片中看到的，我的一张图片的尺寸减少了 35%，另外两张图片的尺寸减少了 3% 和 8%。这是在无损压缩的情况下。
 
-这些图片以 -min 为后缀（默认），保存在与原始图片相同的目录中。
+这些图片以 `-min` 为后缀（默认），保存在与原始图片相同的目录中。
 
 虽然它看起来很简约，但有几个选项可以配置 Curtail。点击菜单，你会看到一些设置选项。
 
@@ -87,7 +89,7 @@ via: https://itsfoss.com/curtail-image-compress/
 作者：[Abhishek Prakash][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
