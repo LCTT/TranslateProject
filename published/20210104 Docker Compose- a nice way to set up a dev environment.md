@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (lkxed)
 [#]: reviewer: (turbokernel)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14747-1.html)
 [#]: subject: (Docker Compose: a nice way to set up a dev environment)
 [#]: via: (https://jvns.ca/blog/2021/01/04/docker-compose-is-nice/)
 [#]: author: (Julia Evans https://jvns.ca/)
 
 Docker Compose：搭建开发环境的好方式
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202206/23/180033lpg4v4bz0bbb1719.jpg)
 
 大家好！我又写了一篇关于 [我最喜欢的电脑工具][1] 的文章。这一篇讲的是 Docker Compose！
 
@@ -24,7 +26,7 @@ Docker Compose：搭建开发环境的好方式
 
   * 一个 Nginx 服务器
   * 一个 Rails 服务
-  * 一个 Go 服务 (使用了 [gotty][2] 来代理一些 SSH 连接)
+  * 一个 Go 服务（使用了 [gotty][2] 来代理一些 SSH 连接）
   * 一个 Postgres 数据库
 
 在本地搭建 Rails 服务非常简单，用不着容器（我只需要安装 Postgres 和 Ruby 就行了，小菜一碟）。但是，我还想要把匹配 `/proxy/*` 的请求的发送到 Go 服务，其他所有请求都发送到 Rails 服务，所以需要借助 Nginx。问题来了，在笔记本电脑上安装 Nginx 对我来说太麻烦了。
@@ -120,11 +122,11 @@ $ dig +short @127.0.0.11 go_server
 
 **第一步：**：使用 `ps aux | grep puma`，获取 Rails 服务的进程 ID。
 
-找到了，它是 `1837916`！感觉不错哦～
+找到了，它是 `1837916`！简单～
 
 **第二步：**：找到和 `1837916` 运行在同一个网络命名空间的 UDP 服务。
 
-我使用了 `nsenter` 来在 `puma` 进程的网络命令空间内运行 `netstat`（理论上，我猜想你也可以使用 `netstat -tupn` 来只显示 UDP 服务，但此时，我的手指头只会打出 `netstat -tulpn`）。
+我使用了 `nsenter` 来在 `puma` 进程的网络命令空间内运行 `netstat`（理论上，我猜想你也可以使用 `netstat -tupn` 来只显示 UDP 服务，但此时，我的手指头只习惯于打出 `netstat -tulpn`）。
 
 ```
 $ sudo nsenter -n -t 1837916 netstat -tulpn
@@ -196,7 +198,7 @@ IRB.conf[:HISTORY_FILE] = "/app/tmp/irb_history"
 
 ### 我还是不知道它在生产环境的表现如何
 
-到目前为止，这个项目的生产环境搭建进度，还停留在“我制作了一个 digitalocean droplet（LCCT 译注：一种 Linux 虚拟机服务），并手工编辑了很多文件”的阶段。
+到目前为止，这个项目的生产环境搭建进度，还停留在“我制作了一个 DigitalOcean droplet（LCCT 译注：一种 Linux 虚拟机服务），并手工编辑了很多文件”的阶段。
 
 嗯……我相信以后会在生产环境中使用 docker-compose 来运行一下它的。我猜它能够正常工作，因为这个服务很可能最多只有两个用户在使用，并且，如果我愿意，我可以容忍它在部署过程中有 60 秒的不可用时间。不过话又说回来，出错的往往是我想不到的地方。
 
@@ -204,9 +206,9 @@ IRB.conf[:HISTORY_FILE] = "/app/tmp/irb_history"
 
   * `docker-compose up` 只会重启那些需要重启的容器，这会让重启速度更快。
   * 有一个 Bash 小脚本 [wait-for-it][3]，你可以用它来保持等待一个容器，直到另一个容器的服务可用。
-  * 你可以准备两份 `docker-compose.yaml` 文件：用于开发环境的 `docker-compose.yaml` 和 用于生产环境的 `docker-compose-prod.yaml`。我想我会在分别为 Nginx 指定不同的端口：开发时使用 `8999`，生产中使用 `80`。
+  * 你可以准备两份 `docker-compose.yaml` 文件：用于开发环境的 `docker-compose.yaml` 和用于生产环境的 `docker-compose-prod.yaml`。我想我会在分别为 Nginx 指定不同的端口：开发时使用 `8999`，生产中使用 `80`。
   * 人们似乎一致认为，如果你的项目是一台计算机上运行的小网站，那么 docker-compose 在生产中不会有问题。
-  * 有个人建议说，如果愿意在生产环境搭建复杂那么一丢丢，Docker Swarm 就或许会是更好的选择，不过我还没试过（当然，如果要这么说的话，干嘛不用 Kubernetes 呢？Docker Compose 的意义就是它超级简单，而 Kubernetes 肯定不简单 :)）。
+  * 有个人建议说，如果愿意在生产环境搭建复杂那么一丢丢，Docker Swarm 就或许会是更好的选择，不过我还没试过（当然，如果要这么说的话，干嘛不用 Kubernetes 呢？Docker Compose 的意义就是它超级简单，而 Kubernetes 肯定不简单 : )）。
 
 Docker 似乎还有一个特性，它能够 [把你用 docker-compose 搭建的环境，自动推送到弹性容器服务（ESC）上][4]，听上去好酷的样子，但是我还没有试过。
 
