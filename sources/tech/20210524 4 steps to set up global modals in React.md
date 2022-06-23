@@ -1,15 +1,16 @@
-[#]: subject: (4 steps to set up global modals in React)
-[#]: via: (https://opensource.com/article/21/5/global-modals-react)
-[#]: author: (Ajay Pratap https://opensource.com/users/ajaypratap)
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: subject: "4 steps to set up global modals in React"
+[#]: via: "https://opensource.com/article/21/5/global-modals-react"
+[#]: author: "Ajay Pratap https://opensource.com/users/ajaypratap"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 4 steps to set up global modals in React
 ======
 Learn how to create interactive pop-up windows in a React web app.
+
 ![Digital creative of a browser on the internet][1]
 
 A modal dialog is a window that appears on top of a web page and requires a user's interaction before it disappears. [React][2] has a couple of ways to help you generate and manage modals with minimal coding.
@@ -24,10 +25,9 @@ In my opinion, the best way to manage modal dialogs in your React application is
 
 Here are the steps (and code) to set up global modals in React. I'm using [Patternfly][3] as my foundation, but the principles apply to any project.
 
-#### 1\. Create a global modal component
+#### 1. Create a global modal component
 
 In a file called **GlobalModal.tsx**, create your modal definition:
-
 
 ```
 import React, { useState, createContext, useContext } from 'react';
@@ -46,25 +46,25 @@ const MODAL_COMPONENTS: any = {
 };
 
 type GlobalModalContext = {
- showModal: (modalType: string, modalProps?: any) =&gt; void;
- hideModal: () =&gt; void;
+ showModal: (modalType: string, modalProps?: any) => void;
+ hideModal: () => void;
  store: any;
 };
 
 const initalState: GlobalModalContext = {
- showModal: () =&gt; {},
- hideModal: () =&gt; {},
+ showModal: () => {},
+ hideModal: () => {},
  store: {},
 };
 
 const GlobalModalContext = createContext(initalState);
-export const useGlobalModalContext = () =&gt; useContext(GlobalModalContext);
+export const useGlobalModalContext = () => useContext(GlobalModalContext);
 
-export const GlobalModal: React.FC&lt;{}&gt; = ({ children }) =&gt; {
+export const GlobalModal: React.FC<{}> = ({ children }) => {
  const [store, setStore] = useState();
  const { modalType, modalProps } = store || {};
 
- const showModal = (modalType: string, modalProps: any = {}) =&gt; {
+ const showModal = (modalType: string, modalProps: any = {}) => {
    setStore({
      ...store,
      modalType,
@@ -72,7 +72,7 @@ export const GlobalModal: React.FC&lt;{}&gt; = ({ children }) =&gt; {
    });
  };
 
- const hideModal = () =&gt; {
+ const hideModal = () => {
    setStore({
      ...store,
      modalType: null,
@@ -80,19 +80,19 @@ export const GlobalModal: React.FC&lt;{}&gt; = ({ children }) =&gt; {
    });
  };
 
- const renderComponent = () =&gt; {
+ const renderComponent = () => {
    const ModalComponent = MODAL_COMPONENTS[modalType];
    if (!modalType || !ModalComponent) {
      return null;
    }
-   return &lt;ModalComponent id="global-modal" {...modalProps} /&gt;;
+   return <ModalComponent id="global-modal" {...modalProps} />;
  };
 
  return (
-   &lt;GlobalModalContext.Provider value={{ store, showModal, hideModal }}&gt;
+   <GlobalModalContext.Provider value={{ store, showModal, hideModal }}>
      {renderComponent()}
      {children}
-   &lt;/GlobalModalContext.Provider&gt;
+   </GlobalModalContext.Provider>
  );
 };
 ```
@@ -103,40 +103,39 @@ The `showModal` function takes two parameters: `modalType` and `modalProps`. The
 
 The `hideModal` function doesn't have any parameters; calling it causes the current open modal to close.
 
-#### 2\. Create modal dialog components
+#### 2. Create modal dialog components
 
 In a file called **CreateModal.tsx**, create a modal:
-
 
 ```
 import React from "react";
 import { Modal, ModalVariant, Button } from "@patternfly/react-core";
 import { useGlobalModalContext } from "../GlobalModal";
 
-export const CreateModal = () =&gt; {
+export const CreateModal = () => {
  const { hideModal, store } = useGlobalModalContext();
  const { modalProps } = store || {};
  const { title, confirmBtn } = modalProps || {};
 
- const handleModalToggle = () =&gt; {
+ const handleModalToggle = () => {
    hideModal();
  };
 
  return (
-   &lt;Modal
+   <Modal
      variant={ModalVariant.medium}
      title={title || "Create Modal"}
      isOpen={true}
      onClose={handleModalToggle}
      actions={[
-       &lt;Button key="confirm" variant="primary" onClick={handleModalToggle}&gt;
+       <Button key="confirm" variant="primary" onClick={handleModalToggle}>
          {confirmBtn || "Confirm button"}
-       &lt;/Button&gt;,
-       &lt;Button key="cancel" variant="link" onClick={handleModalToggle}&gt;
+       </Button>,
+       <Button key="cancel" variant="link" onClick={handleModalToggle}>
          Cancel
-       &lt;/Button&gt;
+       </Button>
      ]}
-   &gt;
+   >
      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -144,7 +143,7 @@ export const CreateModal = () =&gt; {
      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
      est laborum.
-   &lt;/Modal&gt;
+   </Modal>
  );
 };
 ```
@@ -153,34 +152,33 @@ This has a custom hook, `useGlobalModalContext`, that provides store object from
 
 To delete a modal, create a file called **DeleteModal.tsx**:
 
-
 ```
 import React from "react";
 import { Modal, ModalVariant, Button } from "@patternfly/react-core";
 import { useGlobalModalContext } from "../GlobalModal";
 
-export const DeleteModal = () =&gt; {
+export const DeleteModal = () => {
  const { hideModal } = useGlobalModalContext();
 
- const handleModalToggle = () =&gt; {
+ const handleModalToggle = () => {
    hideModal();
  };
 
  return (
-   &lt;Modal
+   <Modal
      variant={ModalVariant.medium}
      title="Delete Modal"
      isOpen={true}
      onClose={handleModalToggle}
      actions={[
-       &lt;Button key="confirm" variant="primary" onClick={handleModalToggle}&gt;
+       <Button key="confirm" variant="primary" onClick={handleModalToggle}>
          Confirm
-       &lt;/Button&gt;,
-       &lt;Button key="cancel" variant="link" onClick={handleModalToggle}&gt;
+       </Button>,
+       <Button key="cancel" variant="link" onClick={handleModalToggle}>
          Cancel
-       &lt;/Button&gt;
+       </Button>
      ]}
-   &gt;
+   >
      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -188,41 +186,40 @@ export const DeleteModal = () =&gt; {
      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
      est laborum.
-   &lt;/Modal&gt;
+   </Modal>
  );
 };
 ```
 
 To update a modal, create a file called **UpdateModal.tsx** and add this code:
 
-
 ```
 import React from "react";
 import { Modal, ModalVariant, Button } from "@patternfly/react-core";
 import { useGlobalModalContext } from "../GlobalModal";
 
-export const UpdateModal = () =&gt; {
+export const UpdateModal = () => {
  const { hideModal } = useGlobalModalContext();
 
- const handleModalToggle = () =&gt; {
+ const handleModalToggle = () => {
    hideModal();
  };
 
  return (
-   &lt;Modal
+   <Modal
      variant={ModalVariant.medium}
      title="Update Modal"
      isOpen={true}
      onClose={handleModalToggle}
      actions={[
-       &lt;Button key="confirm" variant="primary" onClick={handleModalToggle}&gt;
+       <Button key="confirm" variant="primary" onClick={handleModalToggle}>
          Confirm
-       &lt;/Button&gt;,
-       &lt;Button key="cancel" variant="link" onClick={handleModalToggle}&gt;
+       </Button>,
+       <Button key="cancel" variant="link" onClick={handleModalToggle}>
          Cancel
-       &lt;/Button&gt;
+       </Button>
      ]}
-   &gt;
+   >
      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -230,15 +227,14 @@ export const UpdateModal = () =&gt; {
      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
      est laborum.
-   &lt;/Modal&gt;
+   </Modal>
  );
 };
 ```
 
-#### 3\. Integrate GlobalModal into the top-level component in your application
+#### 3. Integrate GlobalModal into the top-level component in your application
 
-To integrate the new modal structure you've created into your app, you just import the global modal class you've created. Here's my sample **App.tsx** file:
-
+To integrate the new modal structure you've created into your app, you just import the global modal class you've created. Here's my sample **App.tsx**file:
 
 ```
 import "@patternfly/react-core/dist/styles/base.css";
@@ -248,9 +244,9 @@ import { AppLayout } from "./AppLayout";
 
 export default function App() {
  return (
-   &lt;GlobalModal&gt;
-     &lt;AppLayout /&gt;
-   &lt;/GlobalModal&gt;
+   <GlobalModal>
+     <AppLayout />
+   </GlobalModal>
  );
 }
 ```
@@ -259,55 +255,54 @@ App.tsx is the top-level component in your app, but you can add another componen
 
 `GlobalModal` is the root-level component where all your modal components are imported and mapped with their specific `modalType`.
 
-#### 4\. Select the modal's button from the AppLayout component
+#### 4. Select the modal's button from the AppLayout component
 
 Adding a button to your modal with **AppLayout.js**:
-
 
 ```
 import React from "react";
 import { Button, ButtonVariant } from "@patternfly/react-core";
 import { useGlobalModalContext, MODAL_TYPES } from "./components/GlobalModal";
 
-export const AppLayout = () =&gt; {
+export const AppLayout = () => {
  const { showModal } = useGlobalModalContext();
 
- const createModal = () =&gt; {
+ const createModal = () => {
    showModal(MODAL_TYPES.CREATE_MODAL, {
      title: "Create instance form",
      confirmBtn: "Save"
    });
  };
 
- const deleteModal = () =&gt; {
+ const deleteModal = () => {
    showModal(MODAL_TYPES.DELETE_MODAL);
  };
 
- const updateModal = () =&gt; {
+ const updateModal = () => {
    showModal(MODAL_TYPES.UPDATE_MODAL);
  };
 
  return (
-   &lt;&gt;
-     &lt;Button variant={ButtonVariant.primary} onClick={createModal}&gt;
+   <>
+     <Button variant={ButtonVariant.primary} onClick={createModal}>
        Create Modal
-     &lt;/Button&gt;
-     &lt;br /&gt;
-     &lt;br /&gt;
-     &lt;Button variant={ButtonVariant.primary} onClick={deleteModal}&gt;
+     </Button>
+     <br />
+     <br />
+     <Button variant={ButtonVariant.primary} onClick={deleteModal}>
        Delete Modal
-     &lt;/Button&gt;
-     &lt;br /&gt;
-     &lt;br /&gt;
-     &lt;Button variant={ButtonVariant.primary} onClick={updateModal}&gt;
+     </Button>
+     <br />
+     <br />
+     <Button variant={ButtonVariant.primary} onClick={updateModal}>
        Update Modal
-     &lt;/Button&gt;
-   &lt;/&gt;
+     </Button>
+   </>
  );
 };
 ```
 
-There are three buttons in the AppLayout component: create modal, delete modal, and update modal. Each modal is mapped with the corresponding `modalType`: `CREATE_MODAL`, `DELETE_MODAL`, or `UPDATE_MODAL`.
+There are three buttons in the AppLayout component: create modal, delete modal, and update modal. Each modal is mapped with the corresponding `modalType` : `CREATE_MODAL`, `DELETE_MODAL`, or `UPDATE_MODAL`.
 
 ### Use global dialogs
 
@@ -315,22 +310,20 @@ Global modals are a clean and efficient way to handle dialogs in React. They are
 
 If you'd like to see the code in action, I've included the [complete application][4] I created for this article in a sandbox.
 
-Leslie Hinson sits down with Andrés Galante, an expert HTML and CSS coder who travels the world...
-
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/21/5/global-modals-react
 
 作者：[Ajay Pratap][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/ajaypratap
-[b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/browser_web_internet_website.png?itok=g5B_Bw62 (Digital creative of a browser on the internet)
+[b]: https://github.com/lkxed
+[1]: https://opensource.com/sites/default/files/lead-images/browser_web_internet_website.png
 [2]: https://reactjs.org/
 [3]: https://www.patternfly.org/v4/
 [4]: https://codesandbox.io/s/affectionate-pine-gib74
