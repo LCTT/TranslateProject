@@ -30,6 +30,8 @@ Ubuntu 可以运行在谷歌 Nest Hub 上吗？！
 
 虽然这很有趣，但对于始终在线的谷歌智能家居显示器来说，这也是一个严重的安全问题。
 
+![](https://news.itsfoss.com/wp-content/uploads/2022/06/ubuntu-google-nest-hacked.gif)
+
 正如这位安全专家在 [博客文章][2] 中所解释的，他使用了树莓派 Pico 微控制器，利用引导加载程序中的 USB 漏洞，从而破坏了安全启动链。
 
 这位安全专家得出结论：
