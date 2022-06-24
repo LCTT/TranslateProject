@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/the-final-version-of-7-zip-22-00-is-now-available/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
