@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/minetest/"
 [#]: author: "John Paul https://itsfoss.com/author/john/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
