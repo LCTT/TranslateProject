@@ -3,23 +3,22 @@
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14751-1.html"
 
 一起来学习 Lisp 编程语言吧！
 ======
-许多大型代码库中都有 Lisp 代码的身影，因此，熟悉一下这门语言是一个明智之举。
 
-![科技和计算领域的女性][1]
+![](https://img.linux.net.cn/data/attachment/album/202206/24/124147v0loy4e3y0hneih8.jpg)
 
-图源：kris krüg
+> 许多大型代码库中都有 Lisp 代码的身影，因此，熟悉一下这门语言是一个明智之举。
 
-Lisp 在 1958 年就被发明出来了，它是世界上第二老的计算机编程语言（LCTT 译注：最老的是 Fortran，诞生于 1957 年）。它有许多现代的衍生品，包括 Common Lisp、Emacs Lisp（Elisp）、Clojure、Racket、Scheme、Fennel 和 GNU Guile 等。
+早在 1958 年，Lisp 就被发明出来了，它是世界上第二古老的计算机编程语言（LCTT 译注：最古老的编程语言是 Fortran，诞生于 1957 年）。它有许多现代的衍生品，包括 Common Lisp、Emacs Lisp（Elisp）、Clojure、Racket、Scheme、Fennel 和 GNU Guile 等。
 
-那些喜欢思考编程语言设计的人，往往都喜欢 Lisp，因为它的语法和数据有者相同的结构：Lisp 代码实际上是<ruby>一个列表的列表<rt>a list of lists</rt></ruby>，它的名字其实是 <ruby>“列表处理”<rt>LISt Processing</rt></ruby> 的首字母缩写。那些喜欢思考编程语言美学的人，往往都讨厌 Lisp，因为它经常使用括号来定义范围；事实上，编程界也有一个广为流传的笑话：Lisp 代表的其实是 <ruby>“大量烦人的多余括号”<rt>Lots of Irritating Superfluous Parentheses</rt></ruby>。
+那些喜欢思考编程语言的设计的人，往往都喜欢 Lisp，因为它的语法和数据有着相同的结构：Lisp 代码实际上是<ruby>一个列表的列表<rt>a list of lists</rt></ruby>，它的名字其实是 “<ruby>列表处理<rt>LISt Processing</rt></ruby>” 的简写。而那些喜欢思考编程语言的美学的人，往往都讨厌 Lisp，因为它经常使用括号来定义范围；事实上，编程界也有一个广为流传的笑话：Lisp 代表的其实是 <ruby>“大量烦人的多余括号”<rt>Lots of Irritating Superfluous Parentheses</rt></ruby>。
 
-不管你是喜欢还是讨厌 Lisp 的设计哲学，你都不得不承认，它都是一门有趣的语言，过去如此，现在亦然（这得归功于现代方言 Clojure 和 Guile）。你可能会感到惊讶，但事实就是，Lisp 在任何行业的大型代码库中都占有一席之地。因此，现在开始学习 Lisp，至少熟悉一下它，不失为一个好主意。
+不管你是喜欢还是讨厌 Lisp 的设计哲学，你都不得不承认，它都是一门有趣的语言，过去如此，现在亦然（这得归功于现代方言 Clojure 和 Guile）。你可能会惊讶于在任何特定行业的大代码库中潜伏着多少 Lisp 代码，因此，现在开始学习 Lisp，至少熟悉一下它，不失为一个好主意。
 
 ### 安装 Lisp
 
@@ -55,7 +54,7 @@ $ brew install clisp
 
 ### 列表处理
 
-Lisp 源代码的基本单元是 <ruby>“表达式”<rt>expression</rt></ruby>，它在形式上是一个列表。举个例子，下面就是一个列表，它由一个操作符（`+`）和两个整数（`1` 和 `2`）组成的：
+Lisp 源代码的基本单元是 “<ruby>表达式<rt>expression</rt></ruby>”，它在形式上是一个列表。举个例子，下面就是一个列表，它由一个操作符（`+`）和两个整数（`1` 和 `2`）组成：
 
 ```
 (+ 1 2)
@@ -85,7 +84,7 @@ $ clisp
 
 ### 函数
 
-在了解了 Lisp 表达式的基本结构后，你可以使用函数来做更多有用的事。譬如，`print` 函数可以接受任意数量的参数，然后把它们都显示在你的终端上，`pprint` 函数还可以实现格式化打印。还有更多不同的打印函数，不过，`pprint` 在 REPL 中的效果还挺好的：
+在了解了 Lisp 表达式的基本结构后，你可以使用函数来做更多有用的事。譬如，`print` 函数可以接受任意数量的参数，然后把它们都显示在你的终端上，`pprint` 函数还可以实现格式化打印。还有更多不同的打印函数，不过，`pprint` 在 REPL 中的效果就挺好的：
 
 ```
 [1]> (pprint "hello world")
@@ -121,7 +120,7 @@ MYPRINTER
 [3]>
 ```
 
-你可以往表达式里嵌套表达式（就像使用某种管道一样）。举个例子，你可以先使用 `string-upcase` 函数，把某个字符串的所有字符转换成大写，然后再使用 `pprint` 函数，将它的内容格式化打印到终端上：
+你可以在表达式里嵌套表达式（就像使用某种管道一样）。举个例子，你可以先使用 `string-upcase` 函数，把某个字符串的所有字符转换成大写，然后再使用 `pprint` 函数，将它的内容格式化打印到终端上：
 
 ```
 [3]> (pprint (string-upcase foo))
@@ -141,7 +140,6 @@ Lisp 是动态类型语言，这意味着，你在给变量赋值时不需要声
 ```
 
 如果你想让整数被当作字符串来处理，你可以给它加上引号：
-
 
 ```
 [4]> (setf foo "2")
@@ -215,7 +213,7 @@ $
 
 ### 编写脚本
 
-Lisp 可以被编译，也可以作为解释型的脚本语言来使用。在你刚开始学习的时候，后者很可能是最容易的选项，特别是当你已经熟悉 Python 或 [Shell 脚本][9] 时。
+Lisp 可以被编译，也可以作为解释型的脚本语言来使用。在你刚开始学习的时候，后者很可能是最容易的方式，特别是当你已经熟悉 Python 或 [Shell 脚本][9] 时。
 
 下面是一个用 Common Lisp 编写的简单的“掷骰子”脚本：
 
@@ -231,7 +229,7 @@ Lisp 可以被编译，也可以作为解释型的脚本语言来使用。在你
 (roller userput)
 ```
 
-脚本的第一行注释告诉了你的 POSIX 终端，该使用什么可执行文件来运行这个脚本。
+脚本的第一行注释（LCTT 译注：称之为“<ruby>释伴<rt>shebang</rt></ruby>”）告诉了你的 POSIX 终端，该使用什么可执行文件来运行这个脚本。
 
 `roller` 函数使用 `defun` 函数创建，它在内部使用 `random` 函数来打印一个伪随机数，这个伪随机数严格小于 `num` 列表中下标为 0 的元素。在脚本中，这个 `num` 列表还没有被创建，不过没关系，因为只有当脚本被调用时，函数才会执行。
 
@@ -278,7 +276,7 @@ via: https://opensource.com/article/21/5/learn-lisp
 作者：[Seth Kenlon][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
