@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/github-copilot/"
 [#]: author: "Jacob Crume https://news.itsfoss.com/author/jacob/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
