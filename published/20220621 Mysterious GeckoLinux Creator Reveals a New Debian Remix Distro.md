@@ -3,13 +3,14 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14758-1.html"
 
-神秘的 GeckoLinux 创建者推出了一个新的 Debian Remix 发行版
+神秘的 GeckoLinux 创建者推出了一个新的 Debian 合成发行版
 ======
-GeckoLinux 创建者推出了一个基于 Debian 的新 Linux 发行版，专注于简单性和可用性。
+
+> GeckoLinux 创建者推出了一个基于 Debian 的新 Linux 发行版，专注于简单性和可用性。
 
 ![Linux 螺旋][1]
 
@@ -17,7 +18,7 @@ GeckoLinux 改进了的 openSUSE 体验，它的创建者一直保持匿名。
 
 我不会评论这是好事还是坏事，但现在，开发者又带着另一个基于 Debian 的类似项目回来了。
 
-**SpiralLinux**，一个基于 Debian 的发行版，旨在使 Debian 可供最终用户使用。
+**SpiralLinux**，这是一个基于 Debian 的发行版，旨在使 Debian 适合最终用户使用。
 
 ### SpiralLinux：基于 Debian 构建的发行版
 
@@ -27,27 +28,27 @@ GeckoLinux 改进了的 openSUSE 体验，它的创建者一直保持匿名。
 
 那么，这个发行版有什么不同呢？
 
-嗯，它的创建者说，这个项目旨在帮助你使用 Debian 的所有核心优势，而无需定制很多东西。
+嗯，它的创建者说，这个项目旨在帮助你获得 Debian 的所有核心优势，而无需定制很多东西。
 
-如果你想在桌面上使用 Debian，SpiralLinux 是一种接近原版的体验。你还可以根据需要升级到最新的稳定 Debian 版本（或不稳定/测试版），而不会丢失用户友好的自定义设置。
+如果你想在桌面上使用 Debian，SpiralLinux 是一种接近原版的体验。你还可以根据需要升级到最新的稳定 Debian 版本（或不稳定/测试版），而不会丢失方便易用的自定义设置。
 
-换句话说，SpiralLinux 使 Debian 适合桌面使用，而最不需要最终用户操心。
+换句话说，SpiralLinux 使 Debian 适合桌面使用，而最终用户只需付出最小的努力。
 
-为了实现这一点，SpiralLinux 使用了 Debian 官方软件包存储库，并提供了 live 安装方式，让你能够定制自己的 Debian 系统。
+为了实现这一点，SpiralLinux 使用了 Debian 官方软件包存储库，并提供了现场安装方式，让你能够定制自己的 Debian 系统。
 
 此外，SpiralLinux 还具有以下功能：
 
 * 开箱即用的 VirtualBox 支持
-* 预装了专有媒体编解码器和非自由软件包存储库
+* 预装了专有的媒体编解码器和非自由软件包存储库
 * 预装了专有固件
 * 打印机支持
 * 通过 GUI（软件中心）支持 Flatpak
-* 默认情况下启用 zRAM 交换
+* 默认启用 zRAM 交换
 * 多种桌面环境（Cinnamon、XFCE、Gnome、Plasma、MATE、Budgie、LXQt）
 
-考虑到 Debian 始终坚持使用开源和自由软件包，最终用户必须自己搞定编解码器、驱动程序和其他软件包，从而使许多功能正常工作，获得令他们满意的桌面体验。
+Debian 始终坚持使用开源和自由软件包，最终用户必须自己搞定编解码器、驱动程序和其他软件包，才能使许多功能正常工作，获得令他们满意的桌面体验。
 
-SpiralLinux 似乎可以作为 Debian 的一个有用的替代品，就像 GeckoLinux 之于 openSUSE 一样。
+而 SpiralLinux 似乎可以作为 Debian 的一个有用的替代品，就像 GeckoLinux 之于 openSUSE 一样。
 
 ### 下载 SpiralLinux
 
@@ -55,7 +56,7 @@ SpiralLinux 似乎可以作为 Debian 的一个有用的替代品，就像 Gecko
 
 你可以前往其托管在 GitHub 上的官网以了解更多信息，链接如下：
 
-[SpiralLinux][3]
+> **[SpiralLinux][3]**
 
 --------------------------------------------------------------------------------
 
@@ -64,7 +65,7 @@ via: https://news.itsfoss.com/debian-remix-spiral-linux/
 作者：[Ankush Das][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
