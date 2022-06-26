@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/pandoc-convert-file/)
 [#]: author: (Bill Dyer https://itsfoss.com/author/bill/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (lkxed)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
