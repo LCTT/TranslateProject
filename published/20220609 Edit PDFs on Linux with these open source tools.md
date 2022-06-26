@@ -3,27 +3,26 @@
 [#]: author: "Michael Korotaev https://opensource.com/users/michaelk"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14761-1.html"
 
 用这些开源工具在 Linux 上编辑 PDF 文件
 ======
-Adobe Acrobat 的开源替代品具有创建、编辑和注释 PDF 的所有必要功能。
 
-![a checklist for a team][1]
+![](https://img.linux.net.cn/data/attachment/album/202206/26/152728d3kajokj34t3agwm.jpg)
 
-图片由：Opensource.com
+> Adobe Acrobat 的开源替代品具有创建、编辑和注释 PDF 的所有必要功能。
 
-开源的 PDF 阅读和编辑工具通常比 “PDF 编辑器”搜索结果第一页中的应用更安全和可靠。在那里，你很可能看到带有隐藏限制和关税的专有应用，缺乏关于数据保护政策和托管的足够信息。你可以有更好的。
+开源的 PDF 阅读和编辑工具通常比 “PDF 编辑器” 搜索结果第一页中的应用更安全和可靠。在那里，你很可能看到带有隐藏的限制和关税的专有应用，缺乏关于数据保护政策和托管的足够信息。你可以有更好的。
 
-这里有五个应用，可以安装在你的 Linux 系统上（和其他系统）或托管在服务器上。每一个都是免费和开源的，具有创建、编辑和注释 PDF 文件的所有必要功能。
+这里有五个应用，可以安装在你的 Linux 系统上（和其他系统）或托管在服务器上。每一个都是自由而开源的，具有创建、编辑和注释 PDF 文件的所有必要功能。
 
 ### LibreOffice
 
 使用 [LibreOffice][2] 套件，你对应用的选择取决于最初的任务。虽然文字处理器 LibreOffice Writer，可以让你创建 PDF 文件，并从 ODF 和其他文本格式导出，但 Draw 更适合于处理现有的 PDF 文件。
 
-Draw 是用来创建和编辑图形文件的，如小册子、杂志和海报。因此，该工具集主要集中在视觉对象和布局上。然而，对于 PDF 编辑，当文件具有编辑属性时，LibreOffice Draw 提供了用于修改和添加 PDF 内容的工具。如果没有的话，你仍然可以在现有的内容层上添加新的文本字段，并对文件进行注释或完成。
+Draw 是用来创建和编辑图形文件的，如小册子、杂志和海报。因此，其工具集主要用于视觉对象和布局上。然而，对于 PDF 编辑，当文件具有可编辑属性时，LibreOffice Draw 提供了用于修改和添加 PDF 内容的工具。如果没有的话，你仍然可以在现有的内容层上添加新的文本字段，并对文件进行注释或完成。
 
 Draw 和 Writer 都被捆绑在 LibreOffice 桌面套件中，可在 Linux 系统、macOS 和 Windows 上安装。
 
@@ -39,7 +38,7 @@ ONLYOFFICE Docs 可以作为一个网络套件（内部或云端）集成到文�
 
 ### PDF Arranger
 
-[PDF Arranger][4] 是 PikePDF 库的一个前端应用。它不像 LibreOffice 和 ONLYOFFICE 那样对 PDF 的内容进行编辑，但它对于重新排序页面、将 PDF 分割成更小的文件、将几个 PDF 合并成一个、旋转或裁剪页面等都很好。它的界面是直观的，易于使用。
+[PDF Arranger][4] 是 PikePDF 库的一个前端应用。它不像 LibreOffice 和 ONLYOFFICE 那样用于对 PDF 的内容进行编辑，但它对于重新排序页面、将 PDF 分割成更小的文件、将几个 PDF 合并成一个、旋转或裁剪页面等都很好。它的界面是直观的，易于使用。
 
 PDF Arranger 可用于 Linux 和 Windows。
 
@@ -67,7 +66,7 @@ Xournal++ 可在 Linux 系统（Ubuntu、Debian、Arch、SUSE）、MacOS 和 Win
 
 如果你正在寻找一个免费和安全的专有 PDF 浏览和编辑软件的替代品，不难找到一个开源的选择，无论是桌面还是在线使用。只要记住，目前可用的解决方案在不同的使用情况下有各自的优势，没有一个工具在所有可能的任务中都同样出色。
 
-这五个方案因其功能或对小众 PDF 任务的有用性而脱颖而出。对于企业使用和协作，我建议 ONLYOFFICE 或 LibreOffice Draw。PDF Arranger 是一个简单的、轻量级的工具，当你不需要改变文本时，可以用它来处理页面。Okular 为多种文件类型提供了很好的查看功能，如果你想在 PDF 中画草图和做笔记，Xournal++ 是最佳选择。
+这五个方案因其功能或对小众 PDF 任务的有用性而脱颖而出。对于企业使用和协作，我建议使用 ONLYOFFICE 或 LibreOffice Draw。PDF Arranger 是一个简单的、轻量级的工具，当你不需要改变文本时，可以用它来处理页面。Okular 为多种文件类型提供了很好的查看功能，如果你想在 PDF 中画草图和做笔记，Xournal++ 是最佳选择。
 
 --------------------------------------------------------------------------------
 
@@ -76,7 +75,7 @@ via: https://opensource.com/article/22/6/open-source-pdf-editors-linux
 作者：[Michael Korotaev][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
