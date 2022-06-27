@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/download-youtube-videos-vlc/"
 [#]: author: "Community https://itsfoss.com/author/itsfoss/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
