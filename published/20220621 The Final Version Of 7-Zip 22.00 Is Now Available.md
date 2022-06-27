@@ -7,7 +7,7 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-14764-1.html"
 
-7-Zip 的最终版本 22.00 现已推出
+7-Zip 22.00 最终版现已推出
 ======
 
 ![](https://img.linux.net.cn/data/attachment/album/202206/27/110310hwrmxuwyqlor1olp.jpg)
