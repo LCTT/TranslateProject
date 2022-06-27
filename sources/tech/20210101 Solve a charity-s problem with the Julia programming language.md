@@ -1,17 +1,19 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Solve a charity's problem with the Julia programming language)
-[#]: via: (https://opensource.com/article/21/1/solve-problem-julia)
-[#]: author: (Chris Hermansen https://opensource.com/users/clhermansen)
+[#]: subject: "Solve a charity's problem with the Julia programming language"
+[#]: via: "https://opensource.com/article/21/1/solve-problem-julia"
+[#]: author: "Chris Hermansen https://opensource.com/users/clhermansen"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Solve a charity's problem with the Julia programming language
 ======
-See how Julia differs from Java, Python, and Groovy to solve a food
-bank's real-world problem.
+See how Julia differs from Java, Python, and Groovy to solve a food bank's real-world problem.
+
 ![Puzzle pieces coming together to form a computer screen][1]
+
+Image by: Opensource.com
 
 I have been writing a series of articles about solving a nice, small, and somewhat unusual problem in different programming languages ([Groovy][2], [Python][3], and [Java][4] so far).
 
@@ -29,10 +31,9 @@ But enough speculation, let's code something!
 
 ### The Julia solution
 
-My first decision is how to implement the data model. Julia supports _composite types_, seemingly similar to `struct` in C, and Julia even uses the keyword `struct`. Of note is that a `struct` is immutable (unless declared a `mutable struct`), which is fine for this problem since the data doesn't need to be mutated.
+My first decision is how to implement the data model. Julia supports *composite types*, seemingly similar to `struct` in C, and Julia even uses the keyword `struct`. Of note is that a `struct` is immutable (unless declared a `mutable struct` ), which is fine for this problem since the data doesn't need to be mutated.
 
-By following the approach I took in the Java solution, the `Unit struct` can be defined as: 
-
+By following the approach I took in the Java solution, the `Unit struct` can be defined as:
 
 ```
 struct Unit
@@ -44,20 +45,18 @@ end
 
 Similarly, `Pack` is defined as the bulk package of `Unit` instances:
 
-
 ```
 struct Pack
       unit::Unit
       count::Int
       Pack(item, brand, unitCount,p ackPrice) =
-            new(Unit(item, brand, [div][6](packPrice,unitCount)), unitCount)
+            new(Unit(item, brand, div(packPrice,unitCount)), unitCount)
 end
 ```
 
 There is an interesting thing here: a Julia "inner constructor." In the Java solution, I decided that the units inside bulk packages are (in my mind, anyway) a part of the bulk package and not something seen externally, so I decided I wanted to pass in the item, brand, number of units, and package price and have the `Pack` object create its unit internally. I'll do the same thing here.
 
 Because Julia isn't object-oriented, I can't add methods to `Pack` to give unit price vs. pack price or to unpack it into a list of `Unit` instances. I can declare "getter" functions that accomplish the same tasks. (I probably don't need these, but I'll do it anyway to see how Julia methods work):
-
 
 ```
 item(pack::Pack) = pack.unit.item
@@ -68,17 +67,16 @@ packPrice(pack::Pack) = pack.unit.price * pack.count
 unpack(pack::Pack) = Iterators.collect(Iterators.repeated(pack.unit,pack.count))
 ```
 
-The `unpack()` method is quite similar to the method of the same name I declared in the Java class `Pack`. The function `Iterators.repeated(thing,N)` creates an iterator that will deliver `N` copies of `thing`. The `Iterators.collect` (`iterator`) function processes the `iterator` to yield an array made up of the elements it delivers.
+The `unpack()` method is quite similar to the method of the same name I declared in the Java class `Pack`. The function `Iterators.repeated(thing,N)` creates an iterator that will deliver `N` copies of `thing`. The `Iterators.collect` (`iterator` ) function processes the `iterator` to yield an array made up of the elements it delivers.
 
-Finally, the `Bought struct`:
-
+Finally, the `Bought struct` :
 
 ```
 struct Bought
       pack::Pack
       count::Int
 end
-unpack(bought::Bought) =        
+unpack(bought::Bought) =         
      Iterators.collect(Iterators.flatten(Iterators.repeated(unpack(bought.pack),
          bought.count)))
 ```
@@ -86,7 +84,6 @@ unpack(bought::Bought) =        
 Once again, I'm creating an array of an array of unpacked `Pack` instances (i.e., units) and using `Iterators.flatten()` to turn that into a simple array.
 
 Now I can construct the list of what I bought:
-
 
 ```
 packs = [
@@ -111,12 +108,11 @@ I'm starting to see a pattern here… this looks surprisingly like the Java solu
 
 With the list packs of what I bought, I can now unpack into the units before working on redistributing them:
 
-
 ```
-`units = Iterators.collect(Iterators.flatten(unpack.(packs)))`
+units = Iterators.collect(Iterators.flatten(unpack.(packs)))
 ```
 
-What's going on here? Well, a construct like `unpack.(packs)`—that is, the dot between the function name and the argument list—applies the function `unpack()` to each element in the list `packs`. This will generate a list of lists corresponding to the unpacked groups of `Packs` I bought. To turn that into a flat list of units, I apply `Iterators.flatten()`. Because `Iterators.flatten()` is lazy, to make the flatten thing happen, I wrap it in `Iterators.collect()`. This kind of composition of functions adheres to the spirit of functional programming, even though you don't see the functions chained together, as programmers who write functionally in JavaScript, Java, or what-have-you are familiar with.
+What's going on here? Well, a construct like `unpack.(packs)` —that is, the dot between the function name and the argument list—applies the function `unpack()` to each element in the list `packs`. This will generate a list of lists corresponding to the unpacked groups of `Packs` I bought. To turn that into a flat list of units, I apply `Iterators.flatten()`. Because `Iterators.flatten()` is lazy, to make the flatten thing happen, I wrap it in `Iterators.collect()`. This kind of composition of functions adheres to the spirit of functional programming, even though you don't see the functions chained together, as programmers who write functionally in JavaScript, Java, or what-have-you are familiar with.
 
 One observation is that the list of units created here is actually an array whose starting index is 1, not 0.
 
@@ -124,62 +120,58 @@ With units being the list of units purchased and unpacked, I can now take on rep
 
 Here's the code, which is not exceptionally different than the versions in Groovy, Python, and Java:
 
-
 ```
  1      valueIdeal = 5000
  2      valueMax = round(valueIdeal * 1.1)
  3      hamperNumber = 0
        
- 4      while length(units) &gt; 0
+ 4      while length(units) > 0
  5          global hamperNumber += 1
  6          hamper = Unit[]
  7          value = 0
  8          canAdd = true
  9          while canAdd
-10              u = [rand][7](0:(length(units)-1))
+10              u = rand(0:(length(units)-1))
 11              canAdd = false
 12              for o = 0:(length(units)-1)
 13                  uo = (u + o) % length(units) + 1
 14                  unit = units[uo]
-15                  if length(units) &lt; 3 || findfirst(u -&gt; u == unit,hamper) === nothing &amp;&amp; (value + unit.price) &lt; valueMax
+15                  if length(units) < 3 || findfirst(u -> u == unit,hamper) === nothing && (value + unit.price) < valueMax
 16                      push!(hamper,unit)
 17                      value += unit.price
 18                      deleteat!(units,uo)
-19                      canAdd = length(units) &gt; 0
+19                      canAdd = length(units) > 0
 20                      break
 21                  end
 22              end
 23          end
-24          Printf.@[printf][8]("\nHamper %d value %d:\n",hamperNumber,value)
+24          Printf.@printf("\nHamper %d value %d:\n",hamperNumber,value)
 25          for unit in hamper
-26              Printf.@[printf][8]("%-25s%-25s%7d\n",unit.item,unit.brand,unit.price)
+26              Printf.@printf("%-25s%-25s%7d\n",unit.item,unit.brand,unit.price)
 27          end
-28          Printf.@[printf][8]("Remaining units %d\n",length(units))
+28          Printf.@printf("Remaining units %d\n",length(units))
 29      end
 ```
 
 Some clarification, by line numbers:
 
-  * Lines 1–3: Set up the ideal and maximum values to be loaded into any given hamper and initialize Groovy's random number generator and the hamper number
-  * Lines 4–29: This `while` loop redistributes units into hampers, as long as there are more available
-  * Lines 5–7: Increment the (global) hamper number, get a new empty hamper (an array of `Unit` instances), and set its value to 0
-  * Line 8 and 9–23: As long as I can add units to the hamper…
-  * Line 10: Gets a random number between zero and the number of remaining units minus 1
-  * Line 11: Assumes I can't find more units to add
-  * Lines 12–22: This `for` loop, starting at the randomly chosen index, will try to find a unit that can be added to the hamper
-  * Lines 13–14: Figure out which unit to look at (remember arrays start at index 1) and get it
-  * Lines 15–21: I can add this unit to the hamper if there are only a few left or if the value of the hamper isn't too high once the unit is added and if that unit isn't already in the hamper
-  * Lines 16–18: Add the unit to the hamper, increment the hamper value by the unit price, and remove the unit from the available units list
-  * Lines 19–20: As long as there are units left, I can add more, so break out of this loop to keep looking
-  * Line 22: On exit from this `for` loop, if I have inspected every remaining unit and could not find one to add to the hamper, the hamper is complete; otherwise, I found one and can continue looking for more
-  * Line 23: On exit from this `while` loop, the hamper is as full as I can make it, so…
-  * Lines 24–28: Print out the contents of the hamper and the remaining units info
-  * Line 29: When I exit this loop, there are no more units left
-
-
+* Lines 1–3: Set up the ideal and maximum values to be loaded into any given hamper and initialize Groovy's random number generator and the hamper number
+* Lines 4–29: This `while` loop redistributes units into hampers, as long as there are more available
+* Lines 5–7: Increment the (global) hamper number, get a new empty hamper (an array of `Unit` instances), and set its value to 0
+* Line 8 and 9–23: As long as I can add units to the hamper…
+* Line 10: Gets a random number between zero and the number of remaining units minus 1
+* Line 11: Assumes I can't find more units to add
+* Lines 12–22: This `for` loop, starting at the randomly chosen index, will try to find a unit that can be added to the hamper
+* Lines 13–14: Figure out which unit to look at (remember arrays start at index 1) and get it
+* Lines 15–21: I can add this unit to the hamper if there are only a few left or if the value of the hamper isn't too high once the unit is added and if that unit isn't already in the hamper
+* Lines 16–18: Add the unit to the hamper, increment the hamper value by the unit price, and remove the unit from the available units list
+* Lines 19–20: As long as there are units left, I can add more, so break out of this loop to keep looking
+* Line 22: On exit from this `for` loop, if I have inspected every remaining unit and could not find one to add to the hamper, the hamper is complete; otherwise, I found one and can continue looking for more
+* Line 23: On exit from this `while` loop, the hamper is as full as I can make it, so…
+* Lines 24–28: Print out the contents of the hamper and the remaining units info
+* Line 29: When I exit this loop, there are no more units left
 
 The output of running this code looks quite similar to the output from the other programs:
-
 
 ```
 Hamper 1 value 5020:
@@ -238,9 +230,8 @@ Once again, the random-number-driven list manipulation seems to make the "workin
 
 Given that the main effort revolves around `for` and `while` loops, in Julia, I don't see any construct similar to:
 
-
 ```
-`for (boolean canAdd = true; canAdd; ) { … }`
+for (boolean canAdd = true; canAdd; ) { … }
 ```
 
 This means I have to declare the `canAdd` variable outside the `while` loop. Which is too bad—but not a terrible thing.
@@ -249,27 +240,24 @@ I do miss not being able to attach behavior directly to my data, but that's just
 
 Good things: low ceremony, check; decent list-handling, check; compact and readable code, check. All in all, a pleasant experience, supporting the idea that Julia can be a decent choice to solve "ordinary problems" and as a scripting language.
 
-Next time, I'll do this exercise in [Go][9].
+Next time, I'll do this exercise in [Go][6].
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/21/1/solve-problem-julia
 
 作者：[Chris Hermansen][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/clhermansen
-[b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/puzzle_computer_solve_fix_tool.png?itok=U0pH1uwj (Puzzle pieces coming together to form a computer screen)
+[b]: https://github.com/lkxed
+[1]: https://opensource.com/sites/default/files/lead-images/puzzle_computer_solve_fix_tool.png
 [2]: https://opensource.com/article/20/9/groovy
 [3]: https://opensource.com/article/20/9/solve-problem-python
 [4]: https://opensource.com/article/20/9/problem-solving-java
 [5]: https://julialang.org/
-[6]: http://www.opengroup.org/onlinepubs/009695399/functions/div.html
-[7]: http://www.opengroup.org/onlinepubs/009695399/functions/rand.html
-[8]: http://www.opengroup.org/onlinepubs/009695399/functions/printf.html
-[9]: https://golang.org/
+[6]: https://golang.org/

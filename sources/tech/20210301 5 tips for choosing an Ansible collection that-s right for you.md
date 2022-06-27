@@ -1,17 +1,19 @@
-[#]: subject: (5 tips for choosing an Ansible collection that's right for you)
-[#]: via: (https://opensource.com/article/21/3/ansible-collections)
-[#]: author: (Tadej Borovšak https://opensource.com/users/tadeboro)
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: subject: "5 tips for choosing an Ansible collection that's right for you"
+[#]: via: "https://opensource.com/article/21/3/ansible-collections"
+[#]: author: "Tadej Borovšak https://opensource.com/users/tadeboro"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 5 tips for choosing an Ansible collection that's right for you
 ======
-Try these strategies to find and vet collections of Ansible plugins and
-modules before you install them.
-![Woman sitting in front of her computer][1]
+Try these strategies to find and vet collections of Ansible plugins and modules before you install them.
+
+![Women in computing and open source][1]
+
+Image by: Ray Smith
 
 In August 2020, Ansible issued its first release since the developers split the core functionality from the vast majority of its modules and plugins. A few [basic Ansible modules][2] remain part of core Ansible—modules for templating configuration files, managing services, and installing packages. All the other modules and plugins found their homes in dedicated [Ansible collections][3].
 
@@ -24,7 +26,6 @@ At its core, an Ansible collection is a collection (pun intended) of related mod
 With the introduction of Ansible collections, [Ansible Galaxy][7] became the central hub for all Ansible content. Authors publish their Ansible collections there, and Ansible users use Ansible Galaxy's search function to find Ansible content they need.
 
 Ansible comes bundled with the `ansible-galaxy` tool for installing collections. Once you know what Ansible collection you want to install, things are relatively straightforward: Run the installation command listed on the Ansible Galaxy page. Ansible takes care of downloading and installing it. For example:
-
 
 ```
 $ ansible-galaxy collection install sensu.sensu_go
@@ -44,7 +45,7 @@ The ability to install Ansible collections offered a lot more control over the c
 
 Now users are solely responsible for the quality of content they use to build Ansible playbooks. But how can you separate high-quality content from the rest? Here are five things to check when evaluating an Ansible collection.
 
-#### 1\. Documentation
+#### 1. Documentation
 
 Once you find a potential candidate on Ansible Galaxy, check its documentation first. In an ideal world, each Ansible collection would have a dedicated documentation site. For example, the [Sensu Go][8] and [F5 Networks][9] Ansible collections have them. Most other Ansible collections come only with a README file, but this will change for the better once the documentation tools mature.
 
@@ -52,10 +53,9 @@ The Ansible collection's documentation should contain at least a quickstart tuto
 
 Another essential part of the documentation is a detailed module, plugin, and role reference guide. Collection authors do not always publish those guides on the internet, but they should always be accessible with the `ansible-doc` tool.
 
-
 ```
 $ ansible-doc community.sops.sops_encrypt
-&gt; SOPS_ENCRYPT    (/home/tadej/.ansible/collections/ansible&gt;
+> SOPS_ENCRYPT    (/home/tadej/.ansible/collections/ansible>
 
         Allows to encrypt binary data (Base64 encoded), text
         data, JSON or YAML data with sops.
@@ -63,7 +63,7 @@ $ ansible-doc community.sops.sops_encrypt
   * This module is maintained by The Ansible Community
 OPTIONS (= is mandatory):
 
-\- attributes
+- attributes
         The attributes the resulting file or directory should
         have.
         To get supported flags look at the man page for
@@ -78,18 +78,17 @@ OPTIONS (= is mandatory):
 ...
 ```
 
-#### 2\. Playbook readability
+#### 2. Playbook readability
 
 An Ansible playbook should serve as a human-readable description of the desired state. To achieve that, modules from the Ansible collection under evaluation should have a consistent user interface and descriptive parameter names.
 
 For example, if Ansible modules interact with a web service, authentication parameters should be separated from the rest. And all modules should use the same authentication parameters if possible.
 
-
 ```
-\- name: Create a check that runs every 30 seconds
+- name: Create a check that runs every 30 seconds
   sensu.sensu_go.check:
-    auth: &amp;auth
-      url: <https://my.sensu.host:8080>
+    auth: &auth
+      url: https://my.sensu.host:8080
       user: demo
       password: demo-pass
     name: check
@@ -97,35 +96,33 @@ For example, if Ansible modules interact with a web service, authentication para
     interval: 30
     publish: true
 
-\- name: Create a filter
+- name: Create a filter
   sensu.sensu_go.filter:
-    # Reuse the authentication data from before
+     # Reuse the authentication data from before
     auth: *auth
     name: filter
     action: deny
     expressions:
-      - event.check.interval == 10
+       - event.check.interval == 10
       - event.check.occurrences == 1
 ```
 
-#### 3\. Basic functionality
+#### 3. Basic functionality
 
 Before you start using third-party Ansible content in production, always check each Ansible module's basic functionality.
 
 Probably the most critical property to look for is the result. Ansible modules and roles that enforce a state are much easier to use than their action-executing counterparts. This is because you can update your Ansible playbook and rerun it without risking a significant breakage.
 
-
 ```
-\- name: Command module executes an action -&gt; fails on re-run
+- name: Command module executes an action -> fails on re-run
   ansible.builtin.command: useradd demo
 
-\- name: User module enforces a state -&gt; safe to re-run
+- name: User module enforces a state -> safe to re-run
   ansible.builtin.user:
     name: demo
 ```
 
 You should also expect support for [check mode][12], which simulates the change without making it. If you combine check mode with state enforcement, you get a configuration drift detector for free.
-
 
 ```
 $ ansible-playbook --check playbook.yaml
@@ -142,11 +139,11 @@ host        : ok=5    changed=2    unreachable=0    failed=0
                       skipped=3        rescued=0   ignored=0
 ```
 
-#### 4\. Implementation robustness
+#### 4. Implementation robustness
 
 A robustness check is a bit harder to perform if you've never developed an Ansible module or role before. Checking the continuous integration/continuous delivery (CI/CD) configuration files should give you a general idea of what is tested. Finding `ansible-test` and `molecule` commands in the test suite is an excellent sign.
 
-#### 5\. Maintenance
+#### 5. Maintenance
 
 During your evaluation, you should also take a look at the issue tracker and development activity. Finding old issues with no response from maintainers is one sign of a poorly maintained Ansible collection.
 
@@ -163,15 +160,15 @@ If you are thinking about creating your own Ansible Collection, you can download
 via: https://opensource.com/article/21/3/ansible-collections
 
 作者：[Tadej Borovšak][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/tadeboro
-[b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_women_computing_3.png?itok=qw2A18BM (Woman sitting in front of her computer)
+[b]: https://github.com/lkxed
+[1]: https://opensource.com/sites/default/files/lead-images/OSDC_women_computing_3.png
 [2]: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/
 [3]: https://docs.ansible.com/ansible/latest/collections/index.html#list-of-collections
 [4]: https://galaxy.ansible.com/sensu/sensu_go
