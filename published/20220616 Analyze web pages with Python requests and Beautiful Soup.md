@@ -3,17 +3,16 @@
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14769-1.html"
 
 使用 Python 的 requests 和 Beautiful Soup 来分析网页
 ======
-学习这个 Python 教程，轻松提取网页的有关信息。
 
-![带问号的 Python 语言图标][1]
+![](https://img.linux.net.cn/data/attachment/album/202206/28/132859owwf9az49k2oje2o.jpg)
 
-图源：Opensource.com
+> 学习这个 Python 教程，轻松提取网页的有关信息。
 
 浏览网页可能占了你一天中的大部分时间。然而，你总是需要手动浏览，这很讨厌，不是吗？你必须打开浏览器，然后访问一个网站，单击按钮，移动鼠标……相当费时费力。如果能够通过代码与互联网交互，岂不是更好吗？
 
@@ -69,7 +68,7 @@ print(SOUP.p)
 
 ### 循环
 
-使用 Beautiful Soup 的 `find_all` 函数，你可以创建一个 for 循环，从而遍历 `SOUP` 变量中包含的整个网页。除了 `<p>` 标签之外，你可能也会对其他标签感兴趣，因此最好将其构建为自定义函数，由 Python 中的 `def` 关键字（意思是 <ruby>“定义”<rt>define</rt></ruby>）指定。
+使用 Beautiful Soup 的 `find_all` 函数，你可以创建一个 `for` 循环，从而遍历 `SOUP` 变量中包含的整个网页。除了 `<p>` 标签之外，你可能也会对其他标签感兴趣，因此最好将其构建为自定义函数，由 Python 中的 `def` 关键字（意思是 <ruby>“定义”<rt>define</rt></ruby>）指定。
 
 ```
 def loopit():
@@ -77,7 +76,7 @@ def loopit():
         print(TAG)
 ```
 
-你可以随意更改临时变量 `TAG` 的名字，例如 `ITEM` 或 `i` 或任何你喜欢的。每次循环运行时，`TAG` 中都会包含`find_all` 函数的搜索结果。在此代码中，它搜索的是 `<p>` 标签。
+你可以随意更改临时变量 `TAG` 的名字，例如 `ITEM` 或 `i` 或任何你喜欢的。每次循环运行时，`TAG` 中都会包含 `find_all` 函数的搜索结果。在此代码中，它搜索的是 `<p>` 标签。
 
 函数不会自动执行，除非你显式地调用它。你可以在代码的末尾调用这个函数：
 
@@ -92,7 +91,7 @@ if __name__ == '__main__':
 
 ### 只获取内容
 
-你可以通过指定只需要 <ruby>“字符串”<rt>string</rt></ruby>（它是 <ruby>“单词”<rt>words</rt></ruby> 的编程术语）来排除打印标签。
+你可以通过指定只需要 “<ruby>字符串<rt>string</rt></ruby>”（它是 “<ruby>单词<rt>words</rt></ruby>” 的编程术语）来排除打印标签。
 
 ```
 def loopit():
@@ -125,8 +124,8 @@ def loopit():
 你可以使用 Beautiful Soup 和 Python 提取更多信息。以下是有关如何改进你的应用程序的一些想法：
 
 * [接受输入][3]，这样你就可以在启动应用程序时，指定要下载和分析的 URL。
-* 统计页面上图片（<img> 标签）的数量。
-* 统计另一个标签中的图片（<img> 标签）的数量（例如，仅出现在 `<main>` div 中的图片，或仅出现在 `</p>` 标签之后的图片）。
+* 统计页面上图片（`<img>` 标签）的数量。
+* 统计另一个标签中的图片（`<img>` 标签）的数量（例如，仅出现在 `<main>` div 中的图片，或仅出现在 `</p>` 标签之后的图片）。
 
 --------------------------------------------------------------------------------
 
@@ -135,7 +134,7 @@ via: https://opensource.com/article/22/6/analyze-web-pages-python-requests-beaut
 作者：[Seth Kenlon][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
