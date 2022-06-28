@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/05/essential-ubuntu-apps-2022-part-1/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Donkey"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
