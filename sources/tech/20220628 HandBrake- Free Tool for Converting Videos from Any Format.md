@@ -93,6 +93,8 @@ You can download HandBrake only from the official website https://handbrake.fr/ 
 
 Handbrake is one of the professional-grade free and open-source video encoders available today. It is a time-tested application used by millions of users daily. I hope this guide helps you to learn about this fantastic tool and get you started with your video projects.
 
+**The demo video is used from [Pexels – cottonbro][7]**
+
 --------------------------------------------------------------------------------
 
 via: https://www.debugpoint.com/handbrake/
@@ -112,3 +114,4 @@ via: https://www.debugpoint.com/handbrake/
 [4]: https://handbrake.fr/downloads2.php
 [5]: https://www.debugpoint.com/wp-content/uploads/2022/06/HandBrake-Video-Conversion-in-three-simple-steps.jpg
 [6]: https://www.debugpoint.com/wp-content/uploads/2022/06/Encoding-status.jpg
+[7]: https://www.pexels.com/video/hands-hand-table-colorful-3997786/
