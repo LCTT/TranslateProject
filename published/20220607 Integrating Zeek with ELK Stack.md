@@ -3,44 +3,44 @@
 [#]: author: "Tridev Reddy https://www.opensourceforu.com/author/tridev-reddy/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14770-1.html"
 
 将 Zeek 与 ELK 栈集成
 ======
-Zeek 是一个开源的网络安全监控工具。本文讨论了如何将 Zeek 与 ELK 集成。
 
-![Integrating-Zeek-with-ELK-Stack-Featured-image][1]
+> Zeek 是一个开源的网络安全监控工具。本文讨论了如何将 Zeek 与 ELK 集成。
 
-在本杂志 2022 年 3 月版发表的题为“用 Zeek 轻松实现网络安全监控”的文章中，我们研究了 Zeek 的功能，并学习了如何开始使用它。现在我们将把我们的学习经验再进一步，看看如何将其与 ELK（也称为 Elasticsearch、Kibana、Beats 和 Logstash）整合。
+![](https://img.linux.net.cn/data/attachment/album/202206/28/164550v4nuk3g7ux77y77v.jpg)
+
+在本杂志 2022 年 3 月版发表的题为“用 Zeek 轻松实现网络安全监控”的文章中，我们研究了 Zeek 的功能，并学习了如何开始使用它。现在我们将把我们的学习经验再进一步，看看如何将其与 ELK（即 Elasticsearch、Kibana、Beats 和 Logstash）整合。
 
 为此，我们将使用一个叫做 Filebeat 的工具，它可以监控、收集并转发日志到 Elasticsearch。我们将把 Filebeat 和 Zeek 配置在一起，这样后者收集的数据将被转发并集中到我们的 Kibana 仪表盘上。
 
 ### 安装 Filebeat
 
-让我们首先将 Filebeat 与 Zeek 安装在一起。使用 *apt* 来安装 Filebeat，使用以下命令：
+让我们首先将 Filebeat 与 Zeek 安装在一起。使用 `apt` 来安装 Filebeat，使用以下命令：
 
 ```
 sudo apt install filebeat
 ```
 
-接下来，我们需要配置 *.yml* 文件，它位于 /etc*/filebeat/* 文件夹中：
-
+接下来，我们需要配置 `.yml` 文件，它位于 `/etc/filebeat/` 文件夹中：
 
 ```
 sudo nano /etc/filebeat/filebeat.yml
 ```
 
-我们只需要在这里配置两件事。在 *Filebeat* 输入部分，将类型改为 log，并取消对 *enabled*:false 的注释，将其改为 true。我们还需要指定存储日志的路径，也就是说，我们需要指定*/opt/zeek/logs/current/\*.log*。
+我们只需要在这里配置两件事。在 Filebeat 输入部分，将类型改为 `log`，并取消对 `enabled:false` 的注释，将其改为 `true`。我们还需要指定存储日志的路径，也就是说，我们需要指定 `/opt/zeek/logs/current/*.log`。
 
 完成这些后，设置的第一部分应该类似于图 1 所示的内容。
 
 ![Figure 1: Filebeat config (a)][2]
 
-在 Elasticsearch 输出部分，第二件要修改的事情是在 *Outputs*下，取消对 output.elasticsearch 和 hosts 的注释。确保主机的 URL 和端口号与你安装 ELK 时配置的相似。我们把它保持为 localhost，端口号为 9200。
+第二件要修改的事情是在输出下的 Elasticsearch 输出部分，取消对 `output.elasticsearch` 和 `hosts` 的注释。确保主机的 URL 和端口号与你安装 ELK 时配置的相似。我们把它保持为 `localhost`，端口号为 `9200`。
 
-在同一部分中，取消底部的用户名和密码，输入安装后配置 ELK 时生成的弹性用户的用户名和密码。完成这些后，参考图 2，检查设置。
+在同一部分中，取消底部的用户名和密码的注释，输入安装后配置 ELK 时生成的 Elasticsearch 用户的用户名和密码。完成这些后，参考图 2，检查设置。
 
 ![Figure 2: Filebeat config (b)][3]
 
@@ -51,7 +51,7 @@ cd /opt/zeek/bin
 ./zeekctl stop
 ```
 
-现在我们需要在 local.zeek 中添加一小行，它存在于 *opt/zeek/share/zeek/site/* 目录中。
+现在我们需要在 `local.zeek` 中添加一小行，它存在于 `opt/zeek/share/zeek/site/` 目录中。
 
 以 root 身份打开该文件，添加以下行：
 
@@ -76,11 +76,11 @@ cd /opt/zeek/bin
 sudo filebeat modules enable zeek
 ```
 
-我们几乎要好了。在最后一步，配置 *zeek.yml* 文件要记录什么类型的数据。这可以通过修改 */etc/filebeat/modules.d/zeek.yml* 文件完成。
+我们几乎要好了。在最后一步，配置 `zeek.yml` 文件要记录什么类型的数据。这可以通过修改 `/etc/filebeat/modules.d/zeek.yml` 文件完成。
 
-在这个 *.yml 文件*中，我们必须提到这些指定的日志存放在哪个目录下。我们知道，这些日志存储在当前文件夹中，其中有几个文件，如 *dns.log*、*conn.log、dhcp.log* 等等。我们需要在每个部分提到每个路径。如果而且只有在你不需要该文件/程序的日志时，你可以通过把启用值改为 false 来舍弃不需要的文件。
+在这个 .yml 文件中，我们必须提到这些指定的日志存放在哪个目录下。我们知道，这些日志存储在当前文件夹中，其中有几个文件，如 `dns.log`、`conn.log`、`dhcp.log` 等等。我们需要在每个部分提到每个路径。如果而且只有在你不需要该文件/程序的日志时，你可以通过把启用值改为 `false` 来舍弃不需要的文件。
 
-例如，对于 *dns*，确保启用值为 “true”，并且路径被配置：
+例如，对于 `dns`，确保启用值为 `true`，并且路径被配置：
 
 ```
 var.paths: [ “/opt/zeek/logs/current/dns.log”, “/opt/zeek/logs/*.dns.json” ]
@@ -108,7 +108,7 @@ sudo service filebeat start
 现在让我们进入发现选项卡，通过使用查询进行过滤来检查结果：
 
 ```
-event.module: “zeek”
+event.module: "zeek"
 ```
 
 这个查询将过滤它在一定时间内收到的所有数据，只向我们显示名为 Zeek 的模块的数据（图 7）。
@@ -127,7 +127,7 @@ via: https://www.opensourceforu.com/2022/06/integrating-zeek-with-elk-stack/
 作者：[Tridev Reddy][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
