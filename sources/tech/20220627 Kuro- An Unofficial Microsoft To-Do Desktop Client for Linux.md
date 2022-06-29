@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/kuro-to-do-app/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
