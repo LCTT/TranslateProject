@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/dynamic-linking-modular-libraries-linux"
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
