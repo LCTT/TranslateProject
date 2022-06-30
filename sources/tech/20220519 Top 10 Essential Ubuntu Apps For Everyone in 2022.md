@@ -7,23 +7,25 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Top 10 Essential Ubuntu Apps For Everyone in 2022
+
+2022 年人人必备的 10 大 Ubuntu 应用
 ======
-This article lists the top 10 essential Ubuntu apps for various use cases in 2022.
+本文列出了 2022 年各种情况下使用的 10 大 Ubuntu 必备应用。
 
-If you are a casual user, student, teacher, scientist, developer or creator – you need additional applications for your workflow. The Linux ecosystem has thousands of applications scattered around for almost all possible needs. Most of the mainstream Linux distribution, including Ubuntu, features only basic applications as default.
+如果你是偶尔使用的用户、学生、老师、科学家、开发人员或发明家，你需要为你的工作流程提供额外的应用程序。Linux 生态系统有数以千计的应用程序分散在各地，几乎可以满足所有可能的需求。大多数主流 Linux 发行版，包括 Ubuntu ，都只把基本的应用程序作为默认功能。
 
-In this part 1 article (of a 5 part series), we list some of the professional-grade applications for everyone.
+在这篇文章的第一部分（5个系列）中，我们为大家列出了一些专业级的应用。
 
-### Essential Ubuntu Apps in 2022 – Part 1
+### 2022 年 Ubuntu 必备应用--第一部分
 
-#### 1. GNOME Tweak Tool
+#### 1. GNOME 调整工具
 
-The [GNOME Tweak Tool][1] is a must-have utility for your Ubuntu desktop if you are using the Ubuntu GNOME edition. To customise your desktop using this utility, you can change the font, scaling, themes, cursor, and many additional options. The default settings window doesn’t expose all the options today.
+如果你在使用 Ubuntu GNOME 版本，GNOME 调整工具是你必备的实用工具。使用这个工具来定制你的桌面，你可以改变字体、缩放比例、主题、光标和许多其他选项。默认设置窗口现在没有列出所有选项。
 
-In addition, you can also change the window decorations, title bar, title bar buttons and startup applications using this application.
+此外，你也能用该应用改变窗口布局、标题栏、标题栏按钮以及开机启动项
 
-You can install it using the Software app by searching “Tweaks” or via the commands from the terminal as mentioned below.
+
+你可以使用软件应用程序搜索 "Tweaks" 来安装它，或者通过下列终端的命令来安装。
 
 ```
 sudo apt install gnome-tweaks
@@ -33,6 +35,7 @@ sudo apt install gnome-tweaks
 
 #### 2. Steam
 
+在 Linux 上玩游戏不再困难，感谢 Valve 公司和相关社区的贡献。[Steam][3] 是一个
 Gaming in Linux is not that difficult anymore, thanks to Valve and associated contributions from the community. [Steam][3] is a front end of video games service developed by Valve, which gives you access to the latest games on the Ubuntu platform with top features. Moreover, the Steam client also offers anti-cheat measures, auto-update and support for social conversation with streaming features.
 
 If you are a gamer and use Linux, Steam is a go-to client which you can install with the below commands. Also, you can search in Software as “Steam Installer” and install using [Flatpak][4] or [Snap][5].
