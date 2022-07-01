@@ -35,10 +35,9 @@ sudo apt install gnome-tweaks
 
 #### 2. Steam
 
-在 Linux 上玩游戏不再困难，感谢 Valve 公司和相关社区的贡献。[Steam][3] 是一个
-Gaming in Linux is not that difficult anymore, thanks to Valve and associated contributions from the community. [Steam][3] is a front end of video games service developed by Valve, which gives you access to the latest games on the Ubuntu platform with top features. Moreover, the Steam client also offers anti-cheat measures, auto-update and support for social conversation with streaming features.
+在 Linux 上玩游戏不再困难，感谢 Valve 公司和相关社区的贡献。[Steam][3] 是 Valve 公司开发的视频游戏的前端服务平台，你可以通过 Steam 在 Ubuntu 上获取最新的游戏版本。此外， Steam 客户端提供反外挂监测、自动更新并且支持带有流媒体功能的社交对话。
 
-If you are a gamer and use Linux, Steam is a go-to client which you can install with the below commands. Also, you can search in Software as “Steam Installer” and install using [Flatpak][4] or [Snap][5].
+如果你用 Linux 玩游戏，Steam 是常用的客户端，你可以用下面的命令来安装。此外，你可以在软件中搜索 “Steam Installer” 并使用 [Flatpak][4] 或 [Snap][5] 进行安装。
 
 ```
 sudo apt install steam
@@ -48,9 +47,10 @@ sudo apt install steam
 
 #### 3. Peek
 
-[Peek][7] is, in my opinion, an underrated application. It is an animated GIF recorder which is very useful for various workflow. This is such a powerful utility that it right fits in at Ubuntu or any Linux distro. Moreover, Peek brings options like recording area selection, countdown, gif, mp4 and WebM support. It uses ffmpeg for its backend.
+在我看来， [Peek][7] 是被低估的一款应用。它是一个对各种工作流非常有用的 GIF 动画记录器。这是一款非常强大的实用程序，它适合 Ubuntu 或任何 Linux 发行版。此外， Peek 带有如录制区域选择、倒计时、gif 、mp4 和 WebM 支持等选项。它的后端使用 ffmpeg 。
 
-Install this excellent utility using Software by searching “peek” or by terminal commands mentioned below.
+在软件中搜索 “peek” 或者在命令行输入以下命令来安装这款优秀的应用。
+
 
 ```
 sudo apt install peek
@@ -60,9 +60,10 @@ sudo apt install peek
 
 #### 4. Synaptic
 
-[Synaptic][9] is an excellent package manager that helps you add and remove packages traditionally. Those who are little experienced in Linux know about its features and flexibility. You can search for packages in various repositories, verify dependencies and proceed with the installation.
+[Synaptic][9] 是一款杰出的软件包管理器，可以帮助你传统地添加和移除软件包。对 Linux 经验很少的用户知道它的特性以及灵活性。你可以在各种库中搜索软件包，验证依赖性并继续安装。
 
-A perfect application if you frequently install and uninstall packages. You can install synaptic using the commands mentioned below or search in Software with “synaptic”.
+如果你经常安装和卸载软件包，这是一个完美的应用程序。你可以通过以下命令或在软件中搜索 “synaptic” 来安装它。
+
 
 ```
 sudo apt install synaptic
