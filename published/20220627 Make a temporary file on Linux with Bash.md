@@ -3,17 +3,16 @@
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14783-1.html"
 
 在 Linux 上使用 Bash 创建一个临时文件
 ======
-基于 Fedora 的系统上的 mktemp 命令和基于 Debian 的系统上的 tempfile 是专门为减轻这种负担而设计的，它使创建、使用和删除独特的文件变得容易。
 
-![bash logo on green background][1]
+![](https://img.linux.net.cn/data/attachment/album/202207/01/145110u1ninn1n3idspp71.jpg)
 
-图片来源：Opensource.com
+> 基于 Fedora 的系统上的 `mktemp` 命令和基于 Debian 的系统上的 `tempfile` 是专门为减轻这种负担而设计的，它使创建、使用和删除独特的文件变得容易。
 
 使用 Bash 脚本语言进行编程时，有时需要创建一个临时文件。例如，你可能需要一个可以提交到磁盘的中间文件，以便你可以使用另一个命令对其进行处理。创建诸如 `temp` 之类的文件或任何以 `.tmp` 结尾的文件很容易。但是，这些名称很可能是由其他进程生成的，因此你可能会不小心覆盖现有的临时文件。除此之外，你不应该花费脑力想出看起来独特的名字。基于 Fedora 的系统上的 `mktemp` 命令和基于 Debian 的系统上的 `tempfile` 是专门为减轻这种负担而设计的，它使创建、使用和删除独特的文件变得容易。
 
@@ -29,14 +28,16 @@ $ mktemp
 /tmp/tmp.ojEfvMaJEp
 ```
 
-除非你指定不同的路径，否则系统会将临时文件放在 `/tmp` 目录中。对于 `mktemp`，使用 `-p` 选项指定路径：
+除非你指定不同的路径，否则系统会将临时文件放在 `/tmp` 目录中。
+
+对于 `mktemp`，可以使用 `-p` 选项指定路径：
 
 ```
 $ mktemp -p ~/Demo
 /home/tux/Demo/tmp.i8NuhzbEJN
 ```
 
-对于 `tempfile`，使用 `--directory` 或 `-d` 选项：
+对于 `tempfile`，可以使用 `--directory` 或 `-d` 选项：
 
 ```
 $ tempfile --directory ~/Demo/
@@ -49,7 +50,7 @@ $ tempfile --directory ~/Demo/
 
 但是，如果你正在编写脚本，则无法通过读取文件名并在以下命令中使用它来进行干预。
 
-`mktemp` 和 `tempfile` 的作者想到了这个问题，并且有一个简单的解决方法。终端将输出发送到名为 *stdout* 的流。你可以通过将变量设置为在子 shell 中启动的命令的结果来捕获标准输出：
+`mktemp` 和 `tempfile` 的作者想到了这个问题，并且有一个简单的解决方法。终端将输出发送到名为“标准输出”的流。你可以通过将变量设置为在子 shell 中启动的命令的结果来捕获标准输出：
 
 ```
 $ TMPFILE=$(mktemp -p ~/Demo)
@@ -86,12 +87,11 @@ $ mktemp -p ~/Demo/ --suffix .mine
 使用 `tempfile`，你可以设置前缀和后缀：
 
 ```
-$ tempfile --directory ~/Demo/ \
---prefix tt_ --suffix .mine
+$ tempfile --directory ~/Demo/ --prefix tt_ --suffix .mine
 /home/tux/Demo/tt_0dfu5q.mine
 ```
 
-### 把 Tempfile 作为 touch 使用
+### 把 tempfile 作为 touch 使用
 
 你还可以使用 `tempfile` 设置自定义名称：
 
@@ -103,9 +103,7 @@ not_random
 当你使用 `--name` 选项时，它是绝对的，忽略所有其他形式的自定义。事实上，它甚至忽略了 `--directory` 选项：
 
 ```
-$ tempfile --directory ~/Demo \
---prefix this_is_ --suffix .all \
---name not_random_at
+$ tempfile --directory ~/Demo --prefix this_is_ --suffix .all --name not_random_at
 not_random_at
 ```
 
@@ -120,7 +118,7 @@ open: file exists
 
 ### 安装 mktemp 和 tempfile
 
-[GNU Core Utils][3] 包括 `mktemp` 命令。主要发行版默认包括 Core Utils（它与包含 `chmod`、`cut`、`du` 和其他基本命令的包相同）。
+[GNU Core Utils][3] 包括 `mktemp` 命令。主要发行版默认包括 Core Utils（它是包含 `chmod`、`cut`、`du` 和其他基本命令的同一个软件包）。
 
 Debian Utils 软件包包含 `tempfile` 命令，默认安装在大多数基于 Debian 的发行版和 Slackware Linux 上。
 
@@ -135,7 +133,7 @@ via: https://opensource.com/article/22/6/make-temporary-file-bash
 作者：[Seth Kenlon][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
