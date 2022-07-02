@@ -3,12 +3,16 @@
 [#]: author: (Julia Evans https://jvns.ca/)
 [#]: collector: (lujun9972)
 [#]: translator: (hanszhao80)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14786-1.html)
 
 OSI 模型是什么？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202207/02/153620k7nwc6nn2b6n6p2c.jpg)
+
+（LCTT 校注：作者原文已经大篇幅进行了修订更新，本文据之前的版本翻译。）
 
 今天我在推特上发布了一些关于 OSI 模型如何与 TCP/IP 工作原理的实际表现不相符的观点，这让我思考——OSI 模型到底是什么？通过阅读推特上的一些回复发现，似乎至少存在三种不同的思考方式：
 
@@ -49,7 +53,7 @@ OSI 模型是什么？
 
 此外，TCP/IP 的某些部分即使在第二层到第四层也不能很好地适应 OSI 模型——例如，哪一层是 ARP 数据包？ARP 数据包发送一些带有以太网标头的数据，这是否意味着它们是第三层？或是第二层？列出不同 OSI 层的维基百科文章将其归类为“第 2.5 层”，这并不令人满意。
 
-因为 OSI 模型有时用于教授 TCP/IP，若搞不清楚它的哪些部分与 TCP/IP 映射良好，而哪些部分不能，则会令人困惑。这才是真的问题。
+因为 OSI 模型有时用于教授 TCP/IP，若搞不清楚它的哪些部分可以映射到 TCP/IP，而哪些部分不能，则会令人困惑。这才是真的问题。
 
 ### OSI 模型：用于比较网络协议的一个抽象
 
@@ -76,7 +80,7 @@ via: https://jvns.ca/blog/2021/05/11/what-s-the-osi-model-/
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
 译者：[hanszhao80](https://github.com/hanszhao80)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
