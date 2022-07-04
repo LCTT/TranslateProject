@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (hanszhao80)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14792-1.html)
 [#]: subject: (Djinn: A Code Generator and Templating Language Inspired by Jinja2)
 [#]: via: (https://theartofmachinery.com/2021/01/01/djinn.html)
 [#]: author: (Simon Arneaud https://theartofmachinery.com)
@@ -10,13 +10,15 @@
 Djinn：一个受 Jinja2 启发的代码生成器和模板语言
 ======
 
-代码生成器是非常有用的工具。我有时使用 [jinja2][1] 的命令行版本来生成高度冗余的配置文件和其他文本文件，但它在转换数据方面功能有限。显然，Jinja2 的作者有不同的想法，但我想要类似于 <ruby>列表推导<rt>list comprehensions</rt></ruby> 或 D 语言的 <ruby>可组合范围<rt>composable range</rt></ruby> 算法之类的东西。
+![](https://img.linux.net.cn/data/attachment/album/202207/04/101711nq2we7z7x7wz2z7e.jpg)
 
-我决定制作一个类似于 Jinja2 的工具，但让我可以通过使用范围算法转换数据来生成复杂的文件。这个想法非常简单：一个直接用 D 语言代码重写的模板语言。这样它就支持 D 语言所能做的一切，仅仅因为它 _是_ D 语言。我想要一个独立的代码生成器，但是由于 [ D 语言的 `mixin` 特性][2]，相同的模板语言可以作为嵌入式模板语言工作（例如，Web 应用程序中的 HTML）。有关该技巧的更多信息，请参阅 [这篇关于在编译时使用 mixins 将 Brainfuck 转换为 D 到机器代码的帖子][3]。
+代码生成器是非常有用的工具。我有时使用 [jinja2][1] 的命令行版本来生成高度冗余的配置文件和其他文本文件，但它在转换数据方面功能有限。显然，Jinja2 的作者有不同的想法，而我想要类似于 <ruby>列表推导<rt>list comprehensions</rt></ruby> 或 D 语言的 <ruby>可组合范围<rt>composable range</rt></ruby> 算法之类的东西。
 
-像往常一样，[源码在 GitLab 上][4]。[这篇文章中的例子也可以在这里找到。][5]
+我决定制作一个类似于 Jinja2 的工具，但让我可以通过使用范围算法转换数据来生成复杂的文件。这个想法非常简单：一个直接用 D 语言代码重写的模板语言。因为它 _就是_ D 语言，它可以支持 D 语言所能做的一切。我想要一个独立的代码生成器，但是由于 [D 语言的 `mixin` 特性][2]，同样的模板语言可以作为嵌入式模板语言工作（例如，Web 应用程序中的 HTML）。有关该技巧的更多信息，请参阅 [这篇关于在编译时使用 mixins 将 Brainfuck 转换为 D 和机器代码的文章][3]。
 
-### 你好世界示例
+像往常一样，[源码在 GitLab 上][4]。[这篇文章中的例子也可以在这里找到][5]。
+
+### Hello world 示例
 
 这是一个演示这个想法的例子：
 
@@ -35,7 +37,7 @@ Hello world!
 1 + 1 = 2
 ```
 
-如果您使用过 Jinja2，您可能想知道第二行发生了什么。Djinn 有一个简化格式化和空格处理的特殊规则：如果源代码行包含 `[:` 语句或 `[<` 指令但不包含任何非空格输出，则整行都会被忽略输出。空行则仍会原样呈现。
+如果你使用过 Jinja2，你可能想知道第二行发生了什么。Djinn 有一个简化格式化和空格处理的特殊规则：如果源代码行包含 `[:` 语句或 `[<` 指令但不包含任何非空格输出，则整行都会被忽略输出。空行则仍会原样呈现。
 
 ### 生成数据
 
@@ -79,9 +81,9 @@ x,f(x)
 这个例子展示了一个图片的生成过程。[经典的 Netpbm 图像库定义了一堆图像格式][7]，其中一些是基于文本的。例如，这是一个 3 x 3 向量的图像：
 
 ```
-P2 # <ruby>便携式灰色地图<rt>Portable GrayMap</rt></ruby>格式标识
+P2 # PGM 格式标识
 3 3 # 宽和高
-7 # 代表纯白色的值 (0 代表黑色)
+7 # 代表纯白色的值（0 代表黑色）
 7 0 7
 0 0 0
 7 0 7
@@ -130,7 +132,7 @@ $ gm convert mandelbrot.pgm mandelbrot.png
 
 一个 5 行 5 列的网格需要用 1 到 5 的数字填充，每个数字在每一行中限使用一次，在每列中限使用一次（即，制作一个 5 行 5 列的<ruby>拉丁方格<rt>Latin square</rt></ruby>）。相邻单元格中的数字还必须满足所有 `>` 大于号表示的不等式。
 
-[几个月前我使用了 <ruby>线性规划<rt>linear programming</rt></ruby>（英文缩写 LP）][11]。线性规划问题是具有线性约束的连续变量系统。这次我将使用<ruby>混合整数线性规划<rt>mixed integer linear programming</rt></ruby>(英文缩写 MILP)，它通过允许整数约束变量来归纳 LP。事实证明，这足以成为 NP 完备的，而 MILP 恰好可以很好地模拟这个谜题。
+[几个月前我使用了 <ruby>线性规划<rt>linear programming</rt></ruby>（LP）][11]。线性规划问题是具有线性约束的连续变量系统。这次我将使用<ruby>混合整数线性规划<rt>mixed integer linear programming</rt></ruby>（MILP），它通过允许整数约束变量来归纳 LP。事实证明，这足以成为 NP 完备的，而 MILP 恰好可以很好地模拟这个谜题。
 
 在上一篇文章中，我使用 Julia 库 JuMP 来帮助解决这个问题。这次我将使用 [CPLEX：基于文本的格式][12]，它受到多个 LP 和 MILP 求解器的支持（如果需要，可以通过现成的工具轻松转换为其他格式）。这是上一篇文章中 CPLEX 格式的 LP：
 
@@ -169,9 +171,9 @@ foreach (c; iota(N))
 [::]
 ```
 
-`ivar()` 是一个辅助函数，它为我们提供变量名为 i 的字符串标识符，而 `vs` 存储从 1 到 5 的数字以方便使用。行和列内唯一性的约束完全相同，但在 i 的其他两个维度上迭代。
+`ivar()` 是一个辅助函数，它为我们提供变量名为 `i` 的字符串标识符，而 `vs` 存储从 1 到 5 的数字以方便使用。行和列内唯一性的约束完全相同，但在 `i` 的其他两个维度上迭代。
 
-为了使变量组 i 与变量组 v 保持一致，我们需要如下约束（请记住，变量组 i 中只有一个元素的值是非零的）：
+为了使变量组 `i` 与变量组 `v` 保持一致，我们需要如下约束（请记住，变量组 `i` 中只有一个元素的值是非零的）：
 
 ```
 [i_{r,c,1} + 2i_{r,c,2} + 3i_{r,c,3} + 4i_{r,c,4} + 5i_{r,c,5} = v_{r,c}]
@@ -189,7 +191,7 @@ foreach (c; iota(N))
 [::]
 ```
 
-不等符号相邻的和左下角值为为 4 单元格的约束写起来都很简单。剩下的便是将指示器变量声明为二进制，并为变量组 v 设置边界。加上变量的边界，总共有 150 个变量和 111 个约束 [你可以在仓库中看到完整的代码][14]。
+不等符号相邻的和左下角值为为 4 单元格的约束写起来都很简单。剩下的便是将指示器变量声明为二进制，并为变量组 `v` 设置边界。加上变量的边界，总共有 150 个变量和 111 个约束 [你可以在仓库中看到完整的代码][14]。
 
 [GNU 线性规划工具集][15] 有一个命令行工具可以解决这个 CPLEX MILP。不幸的是，它的输出是一个包含了所有内容的体积很大的转储，所以我使用 awk 命令来提取需要的内容：
 
@@ -241,7 +243,7 @@ via: https://theartofmachinery.com/2021/01/01/djinn.html
 作者：[Simon Arneaud][a]
 选题：[lujun9972][b]
 译者：[hanszhao80](https://github.com/hanszhao80)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
