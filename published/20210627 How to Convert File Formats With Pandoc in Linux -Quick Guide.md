@@ -3,12 +3,11 @@
 [#]: author: (Bill Dyer https://itsfoss.com/author/bill/)
 [#]: collector: (lujun9972)
 [#]: translator: (lkxed)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14785-1.html)
 
-How to Convert File Formats With Pandoc in Linux [Quick Guide]
-如何在 Linux 中使用 Pandoc 转换文件格式（快速指南）
+如何在 Linux 中使用 Pandoc 转换文件格式
 ======
 
 在之前的一篇文章中，我介绍了 [使用 pandoc 将少量 Markdown 文件批量转换为 HTML 的过程][1]。在那篇文章中，我创建了多个 HTML 文件，但 Pandoc 可以做的更多。它被称为文档转换的“瑞士军刀” —— 这是有充分理由的。很少有它做不到的事情。
@@ -25,7 +24,7 @@ How to Convert File Formats With Pandoc in Linux [Quick Guide]
 
 ![][4]
 
-本文中，我会将 Markdown 文件转换成几种不同的格式。我几乎所有的写作都使用 Markdown 语法，但我经常需要转换为另一种格式：学校作业通常需要的 .docx 格式；我创建的网页通常需要的 .html 格式；工作需要的 .epub 格式；传单和讲义需要的 .pdf 格式；甚至包括大学数字人文项目偶尔需要的 TEI Simple 格式。Pandoc 可以轻松处理所有这些格式，甚至更多。
+本文中，我会将 Markdown 文件转换成几种不同的格式。我几乎所有的写作都使用 Markdown 语法，但我经常需要转换为另一种格式：学校作业通常需要的 .docx 格式；我创建的网页通常需要的 .html 格式；工作需要的 .epub 格式；传单和讲义需要的 .pdf 格式；甚至包括一个大学数字人文项目偶尔需要的 TEI Simple 格式。Pandoc 可以轻松处理所有这些格式，甚至更多。
 
 首先，你需要 [安装 pandoc][5]。此外，要创建 .pdf 文件，还需要 LaTeX。我最喜欢的套件是 [TeX Live][6]。
 
@@ -46,7 +45,7 @@ sudo apt-get install pandoc texlive
 
 安装完成 `pandoc` 和 `texlive` 后，你就可以尝试用它们来完成一些工作了！
 
-该项目的示例文档将是一篇文章，该文章于 1894 年 12 月首次发表在《北美评论》上，标题为“如何击退火车劫匪”。我将使用的 Markdown 文件是前一段时间创建的，它是该文章的恢复项目的一部分（LCTT 译注：这是篇一百多年前发表的文章，我想“恢复”指的就是把它数字化吧）。
+该项目的示例文档将是一篇文章，该文章于 1894 年 12 月首次发表在《北美评论》上，标题为“如何击退火车劫匪”。我将使用的 Markdown 文件是前一段时间创建的，该文章的一个恢复项目的一部分（LCTT 译注：这是篇一百多年前发表的文章，这是一个数字化“恢复”项目）。
 
 我把这篇文章保存为 `how_to_repel_train_robbers.md`，它位于我的 `Documents` 目录下，名为 `samples` 的子目录中。它在 Ghostwriter 中看起来是这样的：
 
@@ -57,7 +56,7 @@ sudo apt-get install pandoc texlive
 #### 第一次转换
 
 首先，我将制作一个 .pdf 副本，因为我在安装 LaTeX 包时遇到了些麻烦。
-、
+
 在 `~/Documents/samples/` 目录中，我输入以下，以创建一个 .pdf 文件：
 
 ```
@@ -110,7 +109,7 @@ pandoc -o htrtr.html how_to_repel_train_robbers.md
 
 Pandoc 可以做的远不止这里完成的三个小转换。如果你选择使用一个首选格式编写文件，但时不时又需要将文件转换为另一种格式，pandoc 很大概率都能为你完成。
 
-现在，既然你已经学会了，你会用它做什么呢？你会把它自动化吗？如果你的网站上有文章供读者下载怎么办？你可以修改这些小命令，把它们编写成一个脚本，你的读者可以决定他们想要哪种格式。你可以提供 .docx、.pdf、.odt、.epub 或更多格式。你的读者只需要选择一种格式，然后对应的转换脚本就会执行，最后，你的读者下载他们想要的文件。这是完全可以做到的。
+现在，既然你已经学会了，你会用它做什么呢？你会把它自动化吗？如果你有一个网站，想供读者下载文章怎么办？你可以修改这些小命令，把它们编写成一个脚本，你的读者可以决定他们想要哪种格式。你可以提供 .docx、.pdf、.odt、.epub 或更多格式。你的读者只需要选择一种格式，然后对应的转换脚本就会执行，最后，你的读者下载他们想要的文件。这是完全可以做到的。
 
 --------------------------------------------------------------------------------
 
@@ -119,7 +118,7 @@ via: https://itsfoss.com/pandoc-convert-file/
 作者：[Bill Dyer][a]
 选题：[lujun9972][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

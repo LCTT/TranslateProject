@@ -1,5 +1,5 @@
 [#]: subject: "10 Best Ubuntu Apps for Everyone in 2022 [Part 2]"
-[#]: via: "https://www.debugpoint.com/2022/06/best-ubuntu-apps-2022-part2/"
+[#]: via: "https://www.debugpoint.com/best-ubuntu-apps-2022-part2/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: " "
@@ -15,21 +15,24 @@ If you plan to migrate to Linux permanently, you should be happy knowing that th
 
 Hence, in this article series, we are highlighting a set of Ubuntu apps at a time to increase collaboration and awareness among the user base.
 
-This is part 2 of the Ubuntu Apps series.
+This is part 2 of the Ubuntu Apps series. If you missed the other parts in this series, read them here:
+
+* [Part 1][1]
+* [Part 3][2]
 
 ### Best Ubuntu Apps in 2022 – Part 2
 
 #### 1. OBS Studio
 
-The first application is the famous [streaming application][1] – OBS Studio. It is a free and open-source application primarily used for streaming over the internet. In addition, using this application, you can create a complex streaming project using multiple sources, overlay banners and more.
+The first application is the famous [streaming application][3] – OBS Studio. It is a free and open-source application primarily used for streaming over the internet. In addition, using this application, you can create a complex streaming project using multiple sources, overlay banners and more.
 
 Furthermore, thanks to its support of “Real-Time Messaging Protocol” (RTMP), you can use this app to stream on Facebook, YouTube, Twitch and another supported platform.
 
 This decade-old application is one of the best apps for Linux.
 
-![OBS Studio][2]
+![OBS Studio][4]
 
-You can learn more about OBS Studio here at the [official home page][3] and download or install it via the below methods.
+You can learn more about OBS Studio here at the [official home page][5] and download or install it via the below methods.
 
 Via PPA in Ubuntu and related distribution:
 
@@ -39,21 +42,21 @@ sudo apt update
 sudo apt install obs-studio
 ```
 
-If you wish for Flatpak, then [setup your system for Flatpak][4] and [install via this page][5].
+If you wish for Flatpak, then [setup your system for Flatpak][6] and [install via this page][7].
 
-For Arch Linux and others, [visit this page for more information.][6]
+For Arch Linux and others, [visit this page for more information.][8]
 
 #### 2. Inkscape
 
 The second application in this is the popular Inkscape application. Inkscape is a free and cross-platform vector graphics editor. It is primarily used to create scalable vector graphics. In addition, it is a world-class application which uses basic vector shapes such as rectangles, polygons, spirals and more. You can create world-class drawings using these primitive shapes and their additional tools (see below).
 
-Furthermore, you can also create [stunning animations][7] using Inkscape with sufficient skills. It is one of the must-have applications for artists.
+Furthermore, you can also create [stunning animations][9] using Inkscape with sufficient skills. It is one of the must-have applications for artists.
 
-![Sample Image – credit-Inkscape][8]
+![Sample Image – credit-Inkscape][10]
 
-![Inkscape][9]
+![Inkscape][11]
 
-You can learn more about Inkscape here at the [official home page][10] and download or install it via the below methods.
+You can learn more about Inkscape here at the [official home page][12] and download or install it via the below methods.
 
 Via PPA in Ubuntu and other Linux distributions:
 
@@ -63,19 +66,19 @@ sudo apt update
 sudo apt install inkscape
 ```
 
-For other download methods, visit [this page][11].
+For other download methods, visit [this page][13].
 
 #### 3. GIMP
 
-The GIMP aka GNU Image Manipulation Program is a raster graphics editor which is sometimes considered a debatable-[Photoshop alternative][12] in the Linux world. In addition, this two-decade-old application is perfect for basic to advanced image editing. Moreover, it supports layers, filters, decorations, and other advanced image editing features essential for a photography workflow.
+The GIMP aka GNU Image Manipulation Program is a raster graphics editor which is sometimes considered a debatable-[Photoshop alternative][14] in the Linux world. In addition, this two-decade-old application is perfect for basic to advanced image editing. Moreover, it supports layers, filters, decorations, and other advanced image editing features essential for a photography workflow.
 
-![GIMP Image Editor][13]
+![GIMP Image Editor][15]
 
-A great way to learn more about GIMP is at the [official home page][14]and download or install via the below methods.
+A great way to learn more about GIMP is at the [official home page][16]and download or install via the below methods.
 
-The recommended way is Flatpak to get the latest GIMP version. You can set up[your system][15] for Flatpak and [click here to install][16].
+The recommended way is Flatpak to get the latest GIMP version. You can set up[your system][17] for Flatpak and [click here to install][18].
 
-For more download options, visit [this page][17].
+For more download options, visit [this page][19].
 
 #### 4. Spotify
 
@@ -85,7 +88,7 @@ Firstly, to access the Spotify streaming service, you need a client. Secondly, I
 
 You can listen to millions of songs on your Linux desktop by installing the desktop client. For Linux distributions, you can install the Spotify client from various sources.
 
-![Spotify Client in Ubuntu][18]
+![Spotify Client in Ubuntu][20]
 
 The recommended method for Ubuntu and other Linux is using the Snap package. You can install it via the below command.
 
@@ -99,7 +102,7 @@ If you prefer the native deb package, you can install it using the below command
 curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 ```
 
-There is also an unofficial [Flatpak package available][19], which you can take advantage of.
+There is also an unofficial [Flatpak package available][21], which you can take advantage of.
 
 #### 5. SimpleScreen recorder
 
@@ -107,9 +110,9 @@ The simplescreenrecorder is perhaps the best open-source screen recorder availab
 
 Furthermore, you can also specify the auto/video bit rate, audio source options and different output options. Finally, it is available to install in all Linux distributions.
 
-![SimpleScreenRecorder][20]
+![SimpleScreenRecorder][22]
 
-The [official home page][21] contains more details about SimpleScreenRecorder, and you can download it using the below methods.
+The [official home page][23] contains more details about SimpleScreenRecorder, and you can download it using the below methods.
 
 Using the PPA commands below, you can install this application in Ubuntu and other related distributions.
 
@@ -117,18 +120,18 @@ Using the PPA commands below, you can install this application in Ubuntu and oth
 sudo apt-get updatesudo apt-get install simplescreenrecorder
 ```
 
-For additional download instructions, visit [this page][22].
+For additional download instructions, visit [this page][24].
 
 #### 6. Calibre
 
 Calibre is a free and open-source e-book library management application available in Ubuntu, Linux Mint and other Linux platforms. It brings library management, e-book conversion, sync to your e-book devices and more unique features. Moreover, you can download news and other articles from the web and convert them to e-book formats using Calibre. In addition, it supports a wide range of e-book formats for management. Calibre is one of the best e-book management applications with all these features.
 
-![Calibre][23]
+![Calibre][25]
 
-A lot of documentation and tutorials are available on the [home page of Calibre][24], and you can download them using the below means.
+A lot of documentation and tutorials are available on the [home page of Calibre][26], and you can download them using the below means.
 
-* [Download for Linux distributions][25]
-* [Download for other operating systems][26]
+* [Download for Linux distributions][27]
+* [Download for other operating systems][28]
 
 #### 7. Scribus
 
@@ -136,9 +139,9 @@ Desktop publishing changed over the years. Today, there are several applications
 
 And it is still in active development.
 
-![Scribus][27]
+![Scribus][29]
 
-You can learn more about Scribus here at the [official home page][28] and download or install it via the below methods.
+You can learn more about Scribus here at the [official home page][30] and download or install it via the below methods.
 
 Scribus is in the main repo for Ubuntu and other related distributions. You can run the below command to install.
 
@@ -146,19 +149,19 @@ Scribus is in the main repo for Ubuntu and other related distributions. You can 
 sudo apt install scribus
 ```
 
-For other download options, visit [this page][29].
+For other download options, visit [this page][31].
 
 #### 8. MyPaint
 
 The eighth application in this is MyPaint. MyPaint is a free and open-source drawing program for digital artists. MyPaint supports and can be used in pressure-sensitive tablets and devices. In addition, its unique distraction-free design lets you focus on the drawing instead of the application. Furthermore, it brings a real pencil and brushes emulation with a wide range of brushes, colours and layers.
 
-![MyPaint 2.0.1][30]
+![MyPaint 2.0.1][32]
 
-For more information, visit the [official homepage][31] of MyPaint and download using the below methods.
+For more information, visit the [official homepage][33] of MyPaint and download using the below methods.
 
-The recommended install method is Flatpak. You can set up your [system for Flatpak][32] and install it by [clicking here][33].
+The recommended install method is Flatpak. You can set up your [system for Flatpak][34] and install it by [clicking here][35].
 
-For other download options, visit [this page][34].
+For other download options, visit [this page][36].
 
 #### 9. LibreOffice
 
@@ -168,11 +171,11 @@ In addition to that, LibreOffice features two editions. Firstly, the community e
 
 LibreOffice office suite is installed by default in Ubuntu.
 
-![LibreOffice 7.3.x Community Edition in Ubuntu 22.04 LTS Jammy Jellyfish][35]
+![LibreOffice 7.3.x Community Edition in Ubuntu 22.04 LTS Jammy Jellyfish][37]
 
-[LibreOffice’s official documentation][36] is vast, and you can go through them through any means, including its [friendly forum][37]. You can download LibreOffice [from here][38].
+[LibreOffice’s official documentation][38] is vast, and you can go through them through any means, including its [friendly forum][39]. You can download LibreOffice [from here][40].
 
-Also, if you are planning to upgrade LibreOffice, you can [visit our guide here][39].
+Also, if you are planning to upgrade LibreOffice, you can [visit our guide here][41].
 
 #### 10. Cawbird
 
@@ -180,21 +183,24 @@ If you are a heavy Twitter user, you may consider a desktop app. Cawbird is a de
 
 However, due to Twitter API limitations, it refreshes every two minutes and several other restrictions such as no notification for follows, unfollows, block, mute and other features. Twitter imposed these limitations.
 
-![Cawbird][40]
+![Cawbird][42]
 
-Finally, you can download the Cawbird for all Linux distributions using the [link present here][41].
+Finally, you can download the Cawbird for all Linux distributions using the [link present here][43].
 
 ### Closing Notes
 
 This concludes part 2 of a 5-part series of best Ubuntu Apps in 2022. I expect you get to install and use some of these applications in Ubuntu and other distros for your daily work. Also, let me know which apps you prefer from this list in the comment box below.
 
-Finally, stay tuned for part 3 of this Ubuntu apps series. If you missed part 1, you could read it here – “[Essential Ubuntu Apps in 2022 – Part 1][42]“.
+Finally, stay tuned for part 3 of this Ubuntu apps series. If you missed the other parts of this series, you can read them here:
+
+* [Part 1][44]
+* [Part 3][45]
 
 Cheers.
 
 --------------------------------------------------------------------------------
 
-via: https://www.debugpoint.com/2022/06/best-ubuntu-apps-2022-part2/
+via: https://www.debugpoint.com/best-ubuntu-apps-2022-part2/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
@@ -205,45 +211,48 @@ via: https://www.debugpoint.com/2022/06/best-ubuntu-apps-2022-part2/
 
 [a]: https://www.debugpoint.com/author/admin1/
 [b]: https://github.com/lkxed
-[1]: https://www.debugpoint.com/2022/02/live-streaming-applications-linux-2022/
-[2]: https://www.debugpoint.com/wp-content/uploads/2022/06/OBS-Studio.jpg
-[3]: https://obsproject.com/
-[4]: https://www.debugpoint.com/2018/07/how-to-install-flatpak-apps-ubuntu-linux/
-[5]: https://flathub.org/apps/details/com.obsproject.Studio
-[6]: https://obsproject.com/wiki/unofficial-linux-builds
-[7]: https://inkscape.org/gallery/
-[8]: https://www.debugpoint.com/wp-content/uploads/2022/06/Sample-Image-credit-Inkscape.jpg
-[9]: https://www.debugpoint.com/wp-content/uploads/2018/09/Inkscape-Running.png
-[10]: https://inkscape.org/
-[11]: https://inkscape.org/release/
-[12]: https://www.debugpoint.com/2018/09/3-best-free-photoshop-alternatives-ubuntu-linux/
-[13]: https://www.debugpoint.com/wp-content/uploads/2018/09/GIMP-Running.png
-[14]: https://www.gimp.org/
-[15]: https://www.debugpoint.com/2018/07/how-to-install-flatpak-apps-ubuntu-linux/
-[16]: https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
-[17]: https://www.gimp.org/downloads/
-[18]: https://www.debugpoint.com/wp-content/uploads/2022/06/Spotify-Client-in-Ubuntu.jpg
-[19]: https://flathub.org/apps/details/com.spotify.Client
-[20]: https://www.debugpoint.com/wp-content/uploads/2022/06/SimpleScreenRecorder.jpg
-[21]: https://www.maartenbaert.be/simplescreenrecorder/
-[22]: https://www.maartenbaert.be/simplescreenrecorder/#download
-[23]: https://www.debugpoint.com/wp-content/uploads/2019/11/Calibre.png
-[24]: https://calibre-ebook.com/
-[25]: https://calibre-ebook.com/download_linux
-[26]: https://calibre-ebook.com/download
-[27]: https://www.debugpoint.com/wp-content/uploads/2022/06/Scribus.jpg
-[28]: https://www.scribus.net/
-[29]: https://www.scribus.net/downloads/stable-branch/
-[30]: https://www.debugpoint.com/wp-content/uploads/2020/05/MyPaint-2.0.1.png
-[31]: http://mypaint.org/
-[32]: https://www.debugpoint.com/2018/07/how-to-install-flatpak-apps-ubuntu-linux/
-[33]: https://flathub.org/repo/appstream/org.mypaint.MyPaint.flatpakref
-[34]: http://mypaint.org/downloads/
-[35]: https://www.debugpoint.com/wp-content/uploads/2019/09/LibreOffice-7.3.x-Community-Edition-in-Ubuntu-22.04-LTS-Jammy-Jellyfish.jpg
-[36]: https://help.libreoffice.org/latest/index.html
-[37]: https://ask.libreoffice.org/
-[38]: https://www.libreoffice.org/download/download/
-[39]: https://www.debugpoint.com/2022/06/libreoffice-upgrade-update-latest/
-[40]: https://www.debugpoint.com/wp-content/uploads/2022/06/Cawbird.jpg
-[41]: https://software.opensuse.org//download.html?project=home%3AIBBoard%3Acawbird&package=cawbird
-[42]: https://www.debugpoint.com/2022/05/essential-ubuntu-apps-2022-part-1/
+[1]: https://www.debugpoint.com/essential-ubuntu-apps-2022-part-1/
+[2]: https://www.debugpoint.com/necessary-ubuntu-apps-2022/
+[3]: https://www.debugpoint.com/2022/02/live-streaming-applications-linux-2022/
+[4]: https://www.debugpoint.com/wp-content/uploads/2022/06/OBS-Studio.jpg
+[5]: https://obsproject.com/
+[6]: https://www.debugpoint.com/2018/07/how-to-install-flatpak-apps-ubuntu-linux/
+[7]: https://flathub.org/apps/details/com.obsproject.Studio
+[8]: https://obsproject.com/wiki/unofficial-linux-builds
+[9]: https://inkscape.org/gallery/
+[10]: https://www.debugpoint.com/wp-content/uploads/2022/06/Sample-Image-credit-Inkscape.jpg
+[11]: https://www.debugpoint.com/wp-content/uploads/2018/09/Inkscape-Running.png
+[12]: https://inkscape.org/
+[13]: https://inkscape.org/release/
+[14]: https://www.debugpoint.com/2018/09/3-best-free-photoshop-alternatives-ubuntu-linux/
+[15]: https://www.debugpoint.com/wp-content/uploads/2018/09/GIMP-Running.png
+[16]: https://www.gimp.org/
+[17]: https://www.debugpoint.com/2018/07/how-to-install-flatpak-apps-ubuntu-linux/
+[18]: https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
+[19]: https://www.gimp.org/downloads/
+[20]: https://www.debugpoint.com/wp-content/uploads/2022/06/Spotify-Client-in-Ubuntu.jpg
+[21]: https://flathub.org/apps/details/com.spotify.Client
+[22]: https://www.debugpoint.com/wp-content/uploads/2022/06/SimpleScreenRecorder.jpg
+[23]: https://www.maartenbaert.be/simplescreenrecorder/
+[24]: https://www.maartenbaert.be/simplescreenrecorder/#download
+[25]: https://www.debugpoint.com/wp-content/uploads/2019/11/Calibre.png
+[26]: https://calibre-ebook.com/
+[27]: https://calibre-ebook.com/download_linux
+[28]: https://calibre-ebook.com/download
+[29]: https://www.debugpoint.com/wp-content/uploads/2022/06/Scribus.jpg
+[30]: https://www.scribus.net/
+[31]: https://www.scribus.net/downloads/stable-branch/
+[32]: https://www.debugpoint.com/wp-content/uploads/2020/05/MyPaint-2.0.1.png
+[33]: http://mypaint.org/
+[34]: https://www.debugpoint.com/2018/07/how-to-install-flatpak-apps-ubuntu-linux/
+[35]: https://flathub.org/repo/appstream/org.mypaint.MyPaint.flatpakref
+[36]: http://mypaint.org/downloads/
+[37]: https://www.debugpoint.com/wp-content/uploads/2019/09/LibreOffice-7.3.x-Community-Edition-in-Ubuntu-22.04-LTS-Jammy-Jellyfish.jpg
+[38]: https://help.libreoffice.org/latest/index.html
+[39]: https://ask.libreoffice.org/
+[40]: https://www.libreoffice.org/download/download/
+[41]: https://www.debugpoint.com/2022/06/libreoffice-upgrade-update-latest/
+[42]: https://www.debugpoint.com/wp-content/uploads/2022/06/Cawbird.jpg
+[43]: https://software.opensuse.org//download.html?project=home%3AIBBoard%3Acawbird&package=cawbird
+[44]: https://www.debugpoint.com/essential-ubuntu-apps-2022-part-1/
+[45]: https://www.debugpoint.com/necessary-ubuntu-apps-2022/
