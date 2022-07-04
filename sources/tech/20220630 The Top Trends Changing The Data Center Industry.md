@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/top-trends-changing-data-center-industry/"
 [#]: author: "abhimanyu rathore https://www.opensourceforu.com/author/abhimanyu-rathore/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
