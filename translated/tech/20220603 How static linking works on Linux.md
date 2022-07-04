@@ -3,11 +3,11 @@
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
 [#]: translator: "robsean"
-[#]: reviewer: " "
+[#]: reviewer: "turbokernel"
 [#]: publisher: " "
 [#]: url: " "
 
-如何在 Linux 上静态链接 
+Linux 静态链接工作原理
 ======
 学习如何将多个 C <ruby>对象<rt>object</rt></ruby> 文件组合到一个带有静态库的单个可执行文件文件之中。
 
@@ -204,7 +204,7 @@ via: https://opensource.com/article/22/6/static-linking-linux
 作者：[Jayashree Huttanagoudar][a]
 选题：[lkxed][b]
 译者：[robsean](https://github.com/robsean)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[turbokernel](https://github.com/turbokernel)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
