@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/gnome-web-extensions-dev/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
