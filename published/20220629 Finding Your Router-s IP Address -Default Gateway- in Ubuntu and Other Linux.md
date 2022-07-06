@@ -42,7 +42,7 @@
 
 你还会看到一个名为“<ruby>默认路由<rt>Default Route</rt></ruby>”的条目。这就是你要找的东西。你的路由器的 IP 地址。
 
-![defaul gateway ip ubuntu][9]
+![default gateway ip ubuntu][9]
 
 你的系统和网络上的所有其他设备都使用这个 IP 地址连接到路由器。这就是大多数家庭的设置。
 
@@ -67,7 +67,7 @@ default via 192.168.1.1 dev wlp0s20f3 proto dhcp metric 600
 
 第一行，以 `default via` 开头，给出了你网关的 IP。这是你的路由器的 IP 地址。
 
-![defaul route linux terminal][10]
+![default route linux terminal][10]
 
 你可以看到，`192.168.1.1` 是我的路由器的 IP 地址。通常情况下，路由器的 IP 地址是子网的第一个数字。然而，这并不是一个硬性规定。我也见过有 `x.y.z.30` 地址的路由器。
 
