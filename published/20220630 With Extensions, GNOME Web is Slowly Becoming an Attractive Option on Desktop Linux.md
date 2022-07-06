@@ -3,13 +3,14 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14797-1.html"
 
 有了扩展，GNOME Web 正逐渐成为 Linux 桌面上一个有吸引力的选择
 ======
-GNOME Web 正在打磨成一个完美的 Linux 浏览器。你认同吗？
+
+> GNOME Web 正在打磨成一个完美的 Linux 浏览器。你认同吗？
 
 ![Gnome Web 浏览器][1]
 
@@ -17,7 +18,7 @@ GNOME Web（Epiphany）是 [可供 Linux 用户使用的最佳浏览器][2] 之�
 
 它提供了简约且独特的用户体验。
 
-不幸的是，这种独特性并没有激励用户把它作为主力网络浏览器。
+不幸的是，这种独特性并没有激励用户把它作为主力网页浏览器。
 
 但是，看起来这种情况很快就会改变……
 
@@ -55,7 +56,7 @@ flatpak install gnome-nightly org.gnome.Epiphany.Devel
 flatpak run --command=gsettings org.gnome.Epiphany.Devel set org.gnome.Epiphany.web:/org/gnome/epiphany/web/ enable-webextensions true
 ```
 
-请注意，它仍在积极开发中，可能无法按预期工作。在第一次尝试时，你可能需要密切关注终端是否有错误，如果有的话，要先解决它才行。
+请注意，它仍在活跃开发中，可能无法按预期工作。在第一次尝试时，你可能需要密切关注终端是否有错误，如果有的话，要先解决它才行。
 
 如果你想了解更多技术细节，你可以阅读 [TingPing 的博文][6]。
 
@@ -74,7 +75,7 @@ via: https://news.itsfoss.com/gnome-web-extensions-dev/
 作者：[Ankush Das][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
