@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/starfighter-laptop-reveal/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
