@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/manage-files-linux-terminal-ranger"
 [#]: author: "Sumantro Mukherjee https://opensource.com/users/sumantro"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
