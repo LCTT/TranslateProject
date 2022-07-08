@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/linux-desktop-notifications"
 [#]: author: "Tomasz Waraksa https://opensource.com/users/tomasz"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "mcfd"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
