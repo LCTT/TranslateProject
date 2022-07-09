@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/meta-open-source-ai-model/"
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "fenglyulin"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
