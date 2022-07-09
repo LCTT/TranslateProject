@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/check-disk-usage-linux"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
