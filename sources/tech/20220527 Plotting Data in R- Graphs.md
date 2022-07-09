@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/plotting-data-in-r-graphs/"
 [#]: author: "Shakthi Kannan https://www.opensourceforu.com/author/shakthi-kannan/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "tanloong"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
