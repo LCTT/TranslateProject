@@ -7,51 +7,45 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Meta’s AI Model That Helps Overcome Language Barrier Is Now Open-Source
+Meta 的帮助克服语言障碍的 AI 模型现已开源
 ======
-No Language Left Behind by Meta is an ambitious open-source project which aims to translate languages with the highest level of accuracy.
+Meta 的 No Language Left Behind （不落下任何语言）是一个宏大的开源项目，旨在以最高准确度翻译语言。
 
 ![meta][1]
 
-Meta (formerly known as Facebook) has made quite a splash in the open-source world. If you did not know, Meta works on various research and innovative projects like React (a JavaScript library) apart from focusing on the metaverse and its social media platforms.
+Meta（Facebook 的前身）在开源世界做出了不小的贡献。Meta 除了专注于元宇宙（Metaverse）和其社交媒体平台外，还致力于各种研究和创新工作，比如 React（一个 JaveScript 库）。
 
-Researchers at Meta have decided to open-source one such project, an AI model called ‘*No Language Left Behind*‘.
+现在，在 Meta 的研究人员决定开源一个叫“*No Language Left Behind（不落下任何语言）*”
 
-### Meta’s Attempt To Leave No Language Behind 
+### Meta 在 Leave No Language Behind 项目中的尝试
 
 ![200 languages within a single AI model: A breakthrough in high-quality machine translation][2]
 
-While around 7000 languages are spoken in the world today, most of the online content is available in a handful of popular languages like English. This leaves many people who don’t know such languages at a disadvantage.
+目前，虽然世界上有大约 7000 个在使用中的语言，但大多数在线的内容都是以少数的流行语言来提供的，比如英语。这让许多不懂这些语言的人处于不利的地位。
 
-While many tools exist for translation, grammatical errors can make content difficult to read and understand. Moreover, if you are looking to translate it into a language that is not popular, it won’t be a pretty experience.
+虽然现存的许多翻译工具，但语法错误会让错误变得难以阅读和理解。另外，如果你想把内容翻译到一个不流行的语言（特别是非洲和亚洲的一些语言），翻译体验不会很好。
 
-Specifically, for languages of Africa and Asia.
+因此，Meta 正在开发有最高质量的翻译工具，可以帮助解决这一全球性的问题。
 
-Hence, Meta is working on a translational tool with one of the highest quality results recorded that can help counter this global issue.
+NLLB-200（No Language Left Behind，不落下任何语言） 是一个人工智能翻译模型，其可以翻译200多种语言。该模型在每种语言中的翻译性能是通过一个名为 FLORES-200 复杂数据集来确定和评估的。
 
-No Language Left Behind or simply **NLLB-200** is a machine translation model that can translate over 200 languages using artificial intelligence
+正如 Meta 所说，NLLB 的翻译结果比以前的人工智能研究方法好40% 。对于一些最不常见的语言，其翻译准确率甚至超过70%。了不起的工作！
 
-NLLB’s performance in each language is determined and evaluated using a complex dataset called FLORES-200 (if you’re curious).
+为了帮助开发项目和提高模型的翻译质量，Meta 向所有感兴趣的研究人员开放了源代码，包括 NLLB-200 模型、 FLORES-200 数据库、模型训练和重建训练数据库的代码。
+ 
+你可以在 [GitHub][3] 上找到源代码，并且可以在项目的 [博客][4] 上了解有关该项目的更多信息。
 
-As stated by Meta, NLLB’s results are 40% better than “previous AI research” methods. It even has an accuracy of over 70% for some of the least-common languages. That’s quite an impressive feat!
+### 对社会事业的鼓励
 
-To help develop and improve the quality of translations, Meta has made the source code open to all interested researchers. This includes code for NLLB-200, FLORES-200, model training, and re-creating the training database.
+Meta 宣布向从事联合国可持续发展目标（UN Sustainable Development Goals）和翻译非洲语言的、任何地区的非营利组织和研究人员提供高达20万美元的捐赠，目前也鼓励其他学术领域如语言学和机器翻译的研究人员申请。
 
-You can find the source code on [GitHub][3] and learn more about the project in its [research blog post][4].
+### 项目的影响
 
-### Rewards for Social Cause
+尽管 Meta 主要打算在其数字平台上，特别是在 Metaverse上使用 NLLB，但 NLLB 也有可能在其他领域产生巨大影响。
 
-Meta has announced rewards of up to $200,00 of grants for non-profit organizations and researchers who are working on any areas of the UN Sustainable Development Goals and translating African languages.
+许多用户可以用他们的母语轻松地访问和阅读在线资源。项目开源后，社区应该能够帮助实现这个目标。
 
-Other researchers currently working in academic fields like linguistics and machine translation are also encouraged to apply.
-
-### The Impact of this Project
-
-Although Meta intends to mostly make use of NLLB across its digital platforms, particularly the Metaverse, it can be hugely impactful in other domains as well.
-
-Many users will be able to access and easily read online resources in their native languages without a lot of effort. The idea of making it an open-source project should allow the community to help make this happen.
-
-*What are your thoughts on this project by Meta?*
+*你对 Meta的这个项目有什么看法？*
 
 --------------------------------------------------------------------------------
 
@@ -59,7 +53,7 @@ via: https://news.itsfoss.com/meta-open-source-ai-model/
 
 作者：[Rishabh Moharir][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[fenglyulin](https://github.com/fenglyulin)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
