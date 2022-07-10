@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/getting-started-with-docker/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MCGA"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
