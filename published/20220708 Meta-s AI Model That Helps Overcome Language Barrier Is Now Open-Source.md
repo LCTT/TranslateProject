@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "fenglyulin"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14812-1.html"
 
 Meta 开源了语言翻译 AI 模型
 ======
