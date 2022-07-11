@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Donkey-Hao"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14816-1.html"
 
 10 大必备 Ubuntu 应用：优选篇
 ======
