@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/07/09/monitoring-small-web-services/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
