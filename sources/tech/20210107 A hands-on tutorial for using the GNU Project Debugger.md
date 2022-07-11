@@ -7,52 +7,49 @@
 [#]: publisher: " "
 [#]: url: " "
 
-A hands-on tutorial for using the GNU Project Debugger 手把手教你使用 GNU 调试器
+手把手教你使用 GNU 调试器
 ======
-The GNU Project Debugger is a powerful tool for finding bugs in programs.GNU 调试器是一个强大的发现程序缺陷的工具。
+GNU 调试器是一个强大的发现程序缺陷的工具。
 
 ![magnifying glass on computer screen, finding a bug in the code][1]
 
-Image by: Opensource.com 图片来源：Opensource.com
+图片来源：Opensource.com
 
-If you're a programmer and you want to put a certain functionality in your software, you start by thinking of ways to implement it—such as writing a method, defining a class, or creating new data types. Then you write the implementation in a language that the compiler or interpreter can understand. But what if the compiler or interpreter does not understand the instructions as you had them in mind, even though you're sure you did everything right? What if the software works fine most of the time but causes bugs in certain circumstances? In these cases, you have to know how to use a debugger correctly to find the source of your troubles.
+如果您是一个想在您的软件增加某些功能的程序员，您首先考虑实现它的方法：例如写一个method、定义一个class或者创建新的数据类型。然后您用一种编译器或解释器可以理解的编程语言来实现这个功能。但是，如果您觉得您所有代码都正确，但是编译器或解释器依然无法理解您的指令怎么办？如果软件大多数情况下都运行良好，但是在某些环境下出现缺陷怎么办？这种情况下，您得知道如何正确使用调试器找到问题的根源。
 
-如果你是一个想在你的软件增加某些功能的程序员，你首先考虑实现它的方法：例如写一个method、定义一个class或者创建新的数据类型。然后你用一种编译器或解释器可以理解的编程语言来实现这个功能。但是，如果你觉得你所有代码都正确，但是编译器或解释器依然无法理解你的指令怎么办？如果软件大多数情况下都运行良好，但是在某些环境下出现缺陷怎么办？这种情况下，你得知道如何正确使用调试器找到问题的根源。
-
-The GNU Project Debugger ([GDB][2]) is a powerful tool for finding bugs in programs. It helps you uncover the reason for an error or crash by tracking what is going on inside the program during execution.
-GNU调试器是一个发现项目缺陷的强大工具。它通过追踪程序执行过程中发生了什么来帮助你发现程序错误或崩溃的原因。
-This article is a hands-on tutorial on basic GDB usage. To follow along with the examples, open the command line and clone this repository:
+GNU调试器([GDB][2]) 是一个发现项目缺陷的强大工具。它通过追踪程序执行过程中发生了什么来帮助您发现程序错误或崩溃的原因。
 本文是GDB使用的基础教程。请跟随示例，打开命令行并克隆此仓库：
 ```
 git clone https://github.com/hANSIc99/core_dump_example.git
 ```
 
-### Shortcuts 快捷方式
+### 快捷方式
+GDB的每条命令都可以缩短。例如：“info break”,表示设置断点，可以被缩短为“i break”。您可能在其他地方看到过这种缩写，但在本文中，为了清晰展现使用的函数，我将所写出所有命令。
 
-Every command in GDB can be shortened. For example, `info break`, which shows the set breakpoints, can be shortened to `i break`. You might see those abbreviations elsewhere, but in this article, I will write out the entire command so that it is clear which function is used.
-GDB的每条命令都可以被缩短。例如：“info break”,表示设置断点，可以被缩短成“i break”。你可能在其他地方见过这种缩写，但是为了常用功能清晰，我将把所有命令写出来。
 
-### Command-line parameters
+### 命令行参数
 
-You can attach GDB to every executable. Navigate to the repository you cloned, and compile it by running `make`. You should now have an executable called **coredump**. (See my article on [Creating and debugging Linux dump files][3] for more information..
+您可以将GDB附加到每个可执行文件。导航到您克隆的仓库，运行'make'进行编译。您现在能看到一个名为**coredump**的可执行文件。（更多信息，请参考我的文章 [Creating and debugging Linux dump files][3] 。）
 
-To attach GDB to the executable, type: `gdb coredump`.
 
-Your output should look like this:
+要将GDB附加到执行文件，请输入: `gdb coredump`。
+
+您的输出应如下所示：
 
 ![gdb coredump output][4]
 
 
-It says no debugging symbols were found.
+它说没有找到调试符号。
 
-Debugging information is part of the object file (the executable) and includes data types, function signatures, and the relationship between the source code and the opcode. At this point, you have two options:
+调试信息是目标文件（可执行文件）的组成部分，调试信息包括数据类型、函数签名、源代码和操作码之间的关系。此时，您有两种选择：
 
-* Continue debugging the assembly (see "Debug without symbols" below)
-* Compile with debug information using the information in the next section
+* 继续调试程序集（参见下文"Debug without symbols"）
+* 使用下一节的信息编译调试信息
 
-### Compile with debug information
+### Compile with debug information使用调试信息进行编译
 
-To include debug information in the binary file, you have to recompile it. Open the **Makefile** and remove the hashtag (`#` ) from line 9:
+为了在二进制文件中包含调试信息，您必须重新编译。打开**Makefile**，从第9行删除(`#` ) 标签：To include debug information in the binary file, you have to recompile it. Open the **Makefile** and remove the hashtag (`#` ) from line 9:
+要在二进制文件中包含调试信息，您必须重新编译它。打开 * *Makefile** 并从第 9 行删除主题标签（`#`）：
 
 ```
 CFLAGS =-Wall -Werror -std=c++11 -g
