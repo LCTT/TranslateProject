@@ -2,7 +2,7 @@
 [#]: via: "https://www.linux.com/news/google-summer-of-code-zephyr-rtos/"
 [#]: author: "The Linux Foundation https://www.linuxfoundation.org/blog/google-summer-of-code-zephyr-rtos/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
