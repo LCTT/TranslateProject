@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/1/gnu-project-debugger"
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Maisie-x"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
