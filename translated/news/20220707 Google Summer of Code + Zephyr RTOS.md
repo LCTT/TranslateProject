@@ -83,13 +83,13 @@ Dhruva 是一名电气工程专业的本科生。他的兴趣广泛，从嵌入�
 * [Christopher Friedt][29] – Meta 的 SWE / ASIC FW 和 Zephyr TSC 成员
 * [Stephanos Ioannidis][30] – Zephyr CXX 子系统维护者
 
-**代码许可：** Apache 2.0
+**代码许可证：** Apache 2.0
 
 **贡献者详细信息：**
 
-**姓名：** Young
+* 姓名：Young
 
-**关于贡献者：**Young 是一名通信工程专业的学生，他将攻读计算机工程硕士学位。他兴趣广泛，从前端开发到硬件设计，在 Web、IoT 和嵌入式平台方面拥有丰富的工作经验。2021 年他设计的一款搭载 RISC-V 64 处理器的低成本单板机被多家极客媒体报道。
+**关于贡献者：** Young 是一名通信工程专业的学生，他将攻读计算机工程硕士学位。他兴趣广泛，从前端开发到硬件设计，在 Web、IoT 和嵌入式平台方面拥有丰富的工作经验。2021 年他设计的一款搭载 RISC-V 64 处理器的低成本单板机被多家极客媒体报道。
 
 本文 [Google Summer of Code + Zephyr RTOS][31] 首发于 [Linux 基金会][32]。
 
