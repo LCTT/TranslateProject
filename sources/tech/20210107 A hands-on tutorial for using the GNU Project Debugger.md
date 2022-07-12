@@ -29,7 +29,7 @@ GDB的每条命令都可以缩短。例如：“info break”,表示设置断点
 
 ### 命令行参数
 
-您可以将GDB附加到每个可执行文件。导航到您克隆的仓库，运行'make'进行编译。您现在能看到一个名为**coredump**的可执行文件。（更多信息，请参考我的文章 [Creating and debugging Linux dump files][3] 。）
+您可以将GDB附加到每个可执行文件。进入您克隆的仓库（core_dump_example），运行'make'进行编译。您现在能看到一个名为**coredump**的可执行文件。（更多信息，请参考我的文章 [Creating and debugging Linux dump files][3] 。）
 
 
 要将GDB附加到执行文件，请输入: `gdb coredump`。
@@ -39,42 +39,42 @@ GDB的每条命令都可以缩短。例如：“info break”,表示设置断点
 ![gdb coredump output][4]
 
 
-它说没有找到调试符号。
+返回结果显示没有找到调试符号。
 
 调试信息是目标文件（可执行文件）的组成部分，调试信息包括数据类型、函数签名、源代码和操作码之间的关系。此时，您有两种选择：
 
 * 继续调试程序集（参见下文"Debug without symbols"）
-* 使用下一节的信息编译调试信息
+* 使用调试信息进行编译，参见下一节内容
 
 ### Compile with debug information使用调试信息进行编译
 
-为了在二进制文件中包含调试信息，您必须重新编译。打开**Makefile**，从第9行删除(`#` ) 标签：To include debug information in the binary file, you have to recompile it. Open the **Makefile** and remove the hashtag (`#` ) from line 9:
-要在二进制文件中包含调试信息，您必须重新编译它。打开 * *Makefile** 并从第 9 行删除主题标签（`#`）：
+为了在二进制文件中包含调试信息，您必须重新编译。打开**Makefile**，删除第9行的(`#`) 标签后结果如下：
 
 ```
 CFLAGS =-Wall -Werror -std=c++11 -g
 ```
 
-The `g` option tells the compiler to include the debug information. Run `make clean` followed by `make` and invoke GDB again. You should get this output and can start debugging the code:
+'g'表示编译器包含调试信息。运行'make clean'，接着运行 'make'，然后再次调用GDB。您得到如下输出后就可以调试代码了：
 
 ![GDB output with symbols][5]
 
-The additional debugging information will increase the size of the executable. In this case, it increases the executable by 2.5 times (from 26,088 byte to 65,480 byte).
+新增的调试信息会增加可执行文件的大小。在这种情况下，执行文件增加了2.5倍（从26,088 字节 增加到 65,480 字节）。
 
-Start the program with the `-c1` switch by typing `run -c1`. The program will start and crash when it reaches `State_4` :
+输入“run -c1”，使用“-c1”开关启动程序。当程序为 `State_4` 时，程序将启动并崩溃：
 
 ![gdb output crash on c1 switch][6]
 
-You can retrieve additional information about the program. The command `info source` provides information about the current file:
+您可以检索有关程序的其他信息， `info source`命令提供了当前文件的信息：
 
 ![gdb info source output][7]
 
 
-* 101 lines
-* Language: C++
-* Compiler (version, tuning, architecture, debug flag, language standard)
-* Debugging format: [DWARF 2][8]
-* No preprocessor macro information available (when compiled with GCC, macros are available only when [compiled with the `-g3` flag][9]).
+* 101 行
+* 语言: C++
+* 编译器（版本、调优、架构、调试标志、语言标准)
+* 调试格式: [DWARF 2][8]
+* 没有预处理器宏指令（使用 GCC 编译时，宏仅在 [使用 `-g3` 标志编译][9] 时可用）。No preprocessor macro information available (when compiled with GCC, macros are available only when [compiled with the `-g3` flag][9]).
+
 
 The command `info shared` prints a list of dynamic libraries with their addresses in the virtual address space that was loaded on startup so that the program will execute:
 
