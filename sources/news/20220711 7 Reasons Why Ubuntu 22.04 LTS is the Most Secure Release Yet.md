@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/reasons-ubuntu-22-04-secure/"
 [#]: author: "Jacob Crume https://news.itsfoss.com/author/jacob/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
