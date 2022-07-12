@@ -54,7 +54,7 @@ VirtualBox 安装 Arch Linux 的新手操作指南
 
 你应该增加内存大小以舒适地使用虚拟机。如果只是用于小型测试，你可以继续使用默认设置。
 
-我在这个例子中分配了 ~**4 GB 的 RAM**。
+我在这个例子中分配了 **4 GB 左右的内存**。
 
 另外，请确保在<ruby>硬盘<rt>Hard disk</rt></ruby>选项下选择**<ruby>现在创建虚拟硬盘<rt>create a virtual hard disk</rt></ruby>**。它应该是默认选项。
 
@@ -82,7 +82,7 @@ VDI 是虚拟硬盘最常见的硬盘类型。
 
 ![][15]
 
-为此，你需要导航至虚拟机设置的 **ruby>存储<rt>Storage</rt></ruby>** 页签。
+为此，你需要导航至虚拟机设置的 **<ruby>存储<rt>Storage</rt></ruby>** 页签。
 
 ![][16]
 
