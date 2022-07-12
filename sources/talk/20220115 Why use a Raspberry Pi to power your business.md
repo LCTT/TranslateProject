@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/raspberry-pi-business"
 [#]: author: "Giuseppe Cassibba https://opensource.com/users/peppe8o"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: " void-mori"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -75,7 +75,7 @@ via: https://opensource.com/article/22/1/raspberry-pi-business
 
 [a]: https://opensource.com/users/peppe8o
 [b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BIZ_WorkInPublic_4618517_1110_CS_A.png?itok=RwVrWArk (A chair in a field.)
+[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BIZ_WorkInPublic_4618517_1110_CS_A.png?itok=RwVrWArk "A chair in a field."
 [2]: https://opensource.com/resources/raspberry-pi
 [3]: https://enterprisersproject.com/article/2020/11/raspberry-pi-7-enterprise-it-uses
 [4]: https://peppe8o.com
