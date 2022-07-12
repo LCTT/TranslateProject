@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (What makes the Linux community special?)
-[#]: via: (https://opensource.com/article/21/2/linux-community)
-[#]: author: (Seth Kenlon https://opensource.com/users/seth)
+[#]: collector: "lujun9972"
+[#]: translator: "void-mori"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "What makes the Linux community special?"
+[#]: via: "https://opensource.com/article/21/2/linux-community"
+[#]: author: "Seth Kenlon https://opensource.com/users/seth"
 
 What makes the Linux community special?
 ======
