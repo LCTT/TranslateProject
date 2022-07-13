@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/07/manual-renewal-of-ssl-certificates-a-simple-guide/"
 [#]: author: "Jitendra Bhojwani https://www.opensourceforu.com/author/jitendra-bhojwani/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
