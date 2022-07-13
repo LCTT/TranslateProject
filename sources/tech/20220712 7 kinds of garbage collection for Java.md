@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/garbage-collection-java"
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Veryzzj"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
