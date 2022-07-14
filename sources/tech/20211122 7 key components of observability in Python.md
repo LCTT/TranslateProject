@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/observability-python"
 [#]: author: "Moshe Zadka https://opensource.com/users/moshez"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "MCGA"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
