@@ -3,14 +3,14 @@
 [#]: author: "The Linux Foundation https://www.linuxfoundation.org/blog/google-summer-of-code-zephyr-rtos/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14818-1.html"
 
 谷歌编程之夏与 Zephyr RTOS 项目介绍
 ======
 
-**谷歌编程之夏**（GSoC）是一个谷歌举办的国际年度项目，每年都在夏季举办。当贡献者们参与并完成一个 [自由开源软件][3] 的编码项目，[谷歌][1] 就会给他们发放 [津贴][2]。谷歌编程之夏于 2005 年推出，于 5 月至 8 月举行。项目创意由参与开源软件开发的主办组织提交，但学生也可以提出自己的项目创意。
+**谷歌编程之夏**（GSoC）是一个谷歌举办的国际年度项目，每年都在夏季举办。当贡献者们参与并完成一个 [自由开源软件][3] 的编码项目，[谷歌][1] 就会给他们发放 [津贴][2]。谷歌编程之夏于 2005 年推出，于每年 5 月至 8 月举行。项目创意由参与开源软件开发的主办组织提交，但学生也可以提出自己的项目创意。
 
 今年，该项目向 18 岁或以上的任何人开放 —— 不仅限于学生和应届毕业生了。参与者通过编写软件获得报酬，其 [津贴][4] 的金额取决于他们所在国家/地区的 [购买力平价][5]。
 
@@ -30,7 +30,7 @@
 * 得益于 Zephyrs 的设备支持，用户可以选择标准 Arduino 生态系统更广泛的设备
 * 能够重复使用 Arduino 工具，如 Arduino IDE 和丰富的库
 
-Arduino Core 使用 LGPL 下进行许可，Zephyr 使用 Apache 2 下进行许可。这意味着该项目的开发很可能需要脱离主分支，并在单独的 repo 中进行，以保持代码和许可证分离。有关这方面的历史讨论，请参阅 [#22247][9]，有关 Arduino 核心架构之前的早期尝试，请参阅 [soburi/arduino-on-zephyr][10]。
+Arduino Core 使用 LGPL 许可证，Zephyr 使用 Apache 2 许可证。这意味着该项目的开发很可能需要脱离主分支，并在单独的仓库中进行，以保持代码和许可证分离。有关这方面的历史讨论，请参阅 [#22247][9]，有关 Arduino 核心架构之前的早期尝试，请参阅 [soburi/arduino-on-zephyr][10]。
 
 **贡献者的任务是：**
 
@@ -40,7 +40,7 @@ Arduino Core 使用 LGPL 下进行许可，Zephyr 使用 Apache 2 下进行许�
 
 **导师：**
 
-[Jonathan Beri][12]– Golioth 和 Zephyr TSC 的首席执行官
+[Jonathan Beri][12] – Golioth 和 Zephyr TSC 的首席执行官
 [Alvaro Viebrantz][13] – Golioth 和 Google GDE 的创始工程师
 
 **代码许可证：** LGPL
@@ -61,7 +61,7 @@ Dhruva 是一名电气工程专业的本科生。他的兴趣广泛，从嵌入�
 
 ### 项目二：Zephyr 的 Apache Thrift 模块
 
-一个贡献者（350 hours）。
+一个贡献者（350 小时）。
 
 [Apache Thrift][17] 是一个 [IDL][18] 规范、[RPC][19] 框架和代码生成器，它抽象出传输和协议细节，让开发者专注于应用逻辑。它适用于所有主流操作系统，支持超过 27 种编程语言、7 种协议和 6 种底层传输方式。最初，它于 [2007 年在 Facebook 开发][20]，随后与 Apache 软件基金会共享。
 
@@ -100,7 +100,7 @@ via: https://www.linux.com/news/google-summer-of-code-zephyr-rtos/
 作者：[The Linux Foundation][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
