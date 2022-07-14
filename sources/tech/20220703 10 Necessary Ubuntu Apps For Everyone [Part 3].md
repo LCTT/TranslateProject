@@ -2,253 +2,262 @@
 [#]: via: "https://www.debugpoint.com/necessary-ubuntu-apps-2022"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Donkey"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-10 Necessary Ubuntu Apps For Everyone [Part 3]
+10 大必备 Ubuntu 应用——第三篇
 ======
-This article lists the top 10 necessary Ubuntu apps for your daily workflow.
+本文列出了 2022 年可以用于日常工作的 10 个 Ubuntu 必备应用。
 
-We often forget that thousands of free and open-source applications can compete with other commercial counterparts in their category. Moreover, if you are a Windows user and thinking about getting rid of Windows completely, you should also be aware of such apps beforehand.
+我们经常忘记在有成千上万的免费和开源应用能够与同类商业产品相媲美。此外，若你是 Windows 用户并且想完全摆脱 Windows ，你应该提前想到这些应用。
 
-Hence, in this article series of “necessary Ubuntu apps”, we are featuring ten apps for much-needed awareness among Linux users.
+因此，在这一“必备 Ubuntu 应用”文章中，我们为急需的 Linux 用户列举了 10 款应用。
 
-This is part 3 of this Ubuntu Apps series. If you missed the earlier parts, you can read them here, Or navigate from the Menu above.
+这是这个系列的第三篇文章，如果你错过了之前的文章，可以通过以下链接阅读：
 
 * [Part 1][1]
 * [Part 2][2]
 
-### Best Ubuntu Apps in 2022 – Part 3
 
 #### Guake
 
-Ever wanted to quickly open a terminal with a quick keyboard shortcut while you are middle of a vital workflow? This Top-Down terminal app Guake helps you to do that. If you are busy working on an essay, editing a video, debugging a code in your favourite code editor and want to quickly check something in the terminal and then go back to work – Guake can help you do that. Just press F12 and a terminal will pop up, and press F12 again, and it will go away—no need to launch/close a separate terminal instance.
+你是否想要在重要工作中使用快捷键打开一个终端？这款自上而下的终端程序 Guake 能够帮你实现。如果你正忙于写文章、剪辑视频、在你最喜欢的代码编辑器中写代码，并想要快速用终端检查一些东西并返回到工作中， Guake 能够帮助你。只用按 F12 终端就会立即出现，再次按 F12 它会消失，不用打开或关闭不同的终端。
+
 
 ![Guake Running in Ubuntu][3]
 
-For Ubuntu and other related distros, you can run the below command to install. For further download options, visit [this page][4].
+在 Ubuntu 或其他发行版，你可以使用以下命令安装。如需更多下载选项，请访问 [此页面][4]。
+
 
 ```
 sudo apt install guake
 ```
 
-**More information about Guake:**
+**关于 Guake 的更多信息：**
 
-* [Home page][5]
-* [Source code][6]
+* [主页][5]
+* [源码][6]
 
 #### Safe Eyes
 
-Eyes are precious, and if you are a user with long work hours on Laptop/Desktop, you should also take care of your eyes. While there are other methods, this app, Safe Eyes, can help reduce and prevent repetitive strain injury.
+眼睛很宝贵，如果你是长时间使用平板或电脑的用户，你应该保护好眼睛。这里有一款可以帮助你保护眼睛的应用—— Safe Eyes ，能够帮你减少并预防用眼过度。
 
-Safe Eyes app gives you pop-up instruction with activities such as ‘rotate your eyes clockwise for 10 seconds’ during your work.
+Safe Eyes 这款应用会在你的工作期间为你提供“顺时针转动眼睛 10 秒”等活动的弹出式指令。
 
-I think it is one of the necessary Ubuntu apps everyone should try.
+我认为它是每个人都应该尝试使用的一款 Ubuntu 应用。
+
 
 ![Safe Eyes][7]
 
-Installing safe eyes is easy to install in Ubuntu via PPA. You can open a terminal prompt and run the following commands to install this app.
+通过 PPA 很容易在 Ubuntu 上安装 Safe Eyes 。你可以打开终端并使用以下命令安装这款应用。
+
 
 ```
 sudo add-apt-repository ppa:slgobinath/safeeyessudo apt updatesudo apt install safeeyes
 ```
 
-For other download, options visit [this page][8].
+更多下载选项，请访问 [此页面][8]。
 
-**More details:**
+**关于 Safe Eyes 的更多信息**
 
-* [Home page][9]
-* [Source code][10]
+* [主页][9]
+* [源码][10]
 
 #### Tusk
 
-Note-taking apps are plenty. Moreover, all the Linux distributions, including Ubuntu, always bring a basic text editor. But for advanced note-taking, you need a specialized app.
+记笔记的应用有很多。虽然，包括 Ubuntu 在内的所有 Linux 发行版，都带有一个基础文本编辑器，但是想要高级的笔记功能，你需要一个专业应用。
 
-Tusk is a modern Evernote desktop app available for Ubuntu/Linux. It comes with plenty of themes such as Light, Sepia, and Dark – it is loaded with features such as:
+Tusk 是适用于 Ubuntu/Linux 的新款印象笔记桌面应用程序。它带有大量主题，例如浅色、深褐色和深色。它具有以下功能：
 
-* Local and global customizable keyboard shortcuts
-* Update notification
-* A cross-platform app built on electron
-* Scalable interface (zoom-in and out)
-* Black, light and sepia themes
-* Focus mode and auto night mode
-* Export options of notes to HTML, PDF, and mark down files
+* 局部和全局自定义快捷键
+* 更新提示
+* 基于 Electron 的跨平台应用
+* 可扩展的界面（放大和缩小）
+* 浅色、深褐色和深色主题
+* 对焦模式和自动夜间模式
+* 将笔记导出为 HTML、PDF 和 Markdown 格式
 
 ![Tusk][11]
 
-This application is available as AppImage, Deb and RPM files for Linux distributions. You can download the deb file from the below link and run it to install it in Ubuntu. For other download options, visit [this page][12].
+该应用有 Linux 发行版的 AppImage 、Deb 和 RPM 文件等格式。你可以从以下链接下载 deb 文件并运行它以在 Ubuntu 中安装它。有关其他下载选项，请访问 [此页面][12]。
 
-[Download Tusk][13]
 
-**More information about Tusk**:
+[下载 Tusk][13]
 
-* [Home page][14]
-* [Source code][15]
+**关于 Tusk 的更多信息**:
+
+* [主页][14]
+* [源码][15]
 
 #### Krita
 
-If you are an artist or learning to draw in Linux, your must-have application is Krita. Krita brings a vast selection of drawing tools, including advanced modes such as pressure-sensitive drawing. In addition, you can also use Krita on touch-based tablet devices. Some of its unique features include:
+如果你是一个艺术家并学着在 Linux 上绘画，那你一定要用 Krita 。Krita 拥有众多绘画工具，包含诸如压敏绘画等高级模式。此外，你也可以在触屏设备上使 Krita 。它包含一些独特的功能：
 
-* Customizable toolbar and docks
-* Save your workspace as a file
-* Light and dark theme
-* Built-in vector engine, a vast set of brushes
-* Brush engine with stabilization
-* Support for PhotoShop Document (PSD)
-* Full-colour support
-* Extend your workflow with Python script
+* 自定义工具栏和停靠栏
+* 将工作区另存为文件
+* 明暗主题
+* 内置矢量引擎，海量画笔
+* 带稳定功能的刷子引擎
+* 支持 PhotoShop 文件 (PSD)
+* 全彩支持
+* 支持 Python 脚本扩展
 
 ![Krita Drawing Program][16]
 
-Installing Krita is easy because it is available for all Linux distribution’s official repo. For Ubuntu, you can search in Software and install it. If you prefer the terminal, you can also run the following command for installation.
+在所有的 Linux 发行版的官方仓库都有 Krita ，所以很容易安装。在 Ubuntu 中，你可以在应用商店里搜索并安装。如果你更喜欢使用终端安装，可以运行如下指令：
 
 ```
 sudo apt install krita
 ```
 
-For more details about Krita, visit the following pages:
+浏览以下链接了解 Krita 的更多信息：
 
-* [Home page][17]
-* [Documentation and learning][18]
-* [Source code][19]
+* [主页][17]
+* [学习文件][18]
+* [源码][19]
 
 #### Foliate
 
-When you think about e-book readers, always Calibre comes to mind. But there is another stunning GNOME app – Foliate. Foliate is a modern e-book reader written in GTK which brings exciting features such as custom colours of your pages, brightness, multicolumn support and more. In addition, it supports epub, Amazon Kindle, Fiction book, comic book archive and Mobipocket formats to give you complete control of your collection.
+当你想要一个电子书阅读器时，你会情不自禁地想到 Calibre 。不过还有一款杰出的 GNOME 应用—— Foliate 。Foliate 是用 GTK 编写的新颖的电子书阅读器，它带来了令人惊奇的功能，例如页面的自定义颜色、亮度、多列支持等等。此外，它还支持 epub、Amazon Kindle、小说、漫画书存档和 Mobipocket 格式，让你完全控制自己的收藏。
 
-It’s a must-have app if you want a nice and sleek e-book reader.
+如果你想要一个漂亮而优美的电子书阅读器，非它莫属。
+
 
 ![Foliate][20]
 
-Installing Foliate is easy, using Flatpak for all Linux distros. First, you need to [set up Flatpak][21] and click on the below button to install.
+使用 Linux 发行版的 Flatpak 安装 Foliate 很容易。首先，你需要 [设置 Flatpak][21] 并单击下方链接进行安装。
 
-[Download Foliate][22]
+[下载 Foliate][22]
 
-**More information**:
+**更多信息**:
 
-* [Home page][23]
-* [Source code][24]
+* [主页][23]
+* [源码][24]
 
 #### Bitwarden
 
-On average, every person has at least 10+ online accounts and passwords. And the more you are tech-savvy, the number of passwords you have to manage increases. Using a password manager is always recommended to protect your data and passwords. Hence the next app in this list is the best password manager available today, i.e. Bitwarden.
+平均每个人至少有十个账号和密码。若你精通技术，那么你管理密码的数量肯定会增加。使用密码管理器能够更好的保护你的数据以及密码。那么接下来这款应用，Bitwarden ，是当今管理密码最好的应用
 
-Bitwarden is a free and open-source password manager that helps you generate, store and protect your online credentials easily. Backed by AES-256 encryption, Bitwarden also syncs passwords among multiple devices such as mobile phones and tabs.
+Bitwarden 是一款免费开源的密码管理器，能够轻松帮助你生成、存储并保存密码。基于 AES-256 加密方案， Bitwarden 能够在不同设备，比如手机和平板自动同步密码。
 
 ![Bitwarden Password Manager desktop client][25]
 
-You can download the self-contained executable AppImage file from [this page][26]. Also, if you plan to access it in your favourite browser, you can get it there.
+你可以从 [此页面][26] 下载可执行安装包文件。此外，如果你打算在你最喜欢的浏览器中使用它，也可以在该页面中获取。
 
-More information about Bitwarden:
+关于 Bitwarden 更多信息：
 
-* [Home page][27]
-* [Help and documentation][28]
+* [主页][27]
+* [帮助文档][28]
 
 #### Brave Browser
 
-Brave is a Chromium-based privacy-centric web browser. It is perfect for users who want complete control of their online activities. Brave comes with a built-in ad blocker, incognito browsing, VPN, and Tor mode for more anonymous browsing.
+Brave 是基于 Chromium 的以隐私为中心的浏览器。它非常适合希望完全控制其在线活动的用户。Brave 带有内置广告拦截器、隐身浏览、VPN 和 Tor 模式，可实现更多匿名浏览。
 
-Recently, Brave browser also introduced an email service, which you can access right from the browser itself. Furthermore, it brings some advantages over Firefox, Google Chrome and Safari.
+最近，Brave 推出了电子邮件服务，你可以直接从浏览器访问邮件。此外，它具备一些 Firefox 、 Google Chrome 以及 Safari 没有的优点。
 
 ![Brave Browser][29]
 
-Installing the Brave browser requires additional commands from the terminal for Ubuntu Linux. You can find the detailed download instructions [here][30].
+在 Ubuntu 终端上安装这款浏览器需要额外的命令。你可以 [在此][30] 找到相信的下载教程。
 
-For more details, visit the official [home page][31].
+更多详细信息，浏览官方 [主页][31] 。
 
 #### Mailspring
 
-If you are looking for a friendly and productive desktop email client for Linux which supports all email protocols, then try Mailspring.
+如果你在找一款友好的并且高效的 Linux 桌面电子邮件客户端，并且想要它支持所有的电子邮件协议，那你应该试试 Mailspring 。
 
-Mailspring brings multiple account support, a unified mailbox, and touch and gesture support. In addition, it supports Microsoft Office 365, one of the best advantages of this email client in Linux systems. Moreover, features such as fast search, translations, undo send (recall), and built-in spell-check make it one of the best email clients.
+Mailspring 支持多个账户、统一邮箱并且支持触控和手势。它还支持 Microsoft Office 365 ，这是此电子邮件客户端在 Linux 系统中的最大优势之一。此外，具有快速检索、翻译、取消发送（邮件召回）以及内置的拼写检查等特征，使得它是最好的邮件客户端之一。
 
-It also comes with a paid version with a minimal monthly fee and additional features such as company profile creation, link tracking, read receipt, templates and insights. The insights feature in the pro version gives details about when you receive more emails during the day.
+它还配备了每月最低费用的付费版本和附加功能，例如公司资料创建、链接跟踪、阅读回执、模板和见解。专业版中的洞察功能提供了有关你在白天何时收到更多电子邮件的详细信息。
 
 ![Mailspring Email Client][32]
 
-This application is available as a Snap and Deb file for Ubuntu and related Linux.
+这款应用可以通过 Snap 和 Deb 文件在 Ubuntu 或其他相关 Linux 上安装。
 
-For the Snap package, visit the official Snapcraft page [here][33] and install it.
+访问官方 [Snapcraft 页面][33] 获取 Snap 包并安装。 
 
-And for the deb package, click here to download it. After download, you can double-click the deb package to install via Software in Ubuntu.
+点击 [这里] **这里缺少链接(译注)** 下载 deb 包。下载后，你可以双击 deb 文件通过 Ubuntu 应用商店程序安装。
 
-For more details, refer to the following pages.
+更多信息请参考以下链接：
 
-* [Home page][34]
-* [Other download options][35] (Fedora Linux, Windows and macOS)
+
+* [主页][34]
+* [其他下载选项][35] (Fedora Linux, Windows 以及 macOS)
 
 #### Blender
 
-I’m sure you have heard about Blender. Blender is one of the free and open-source professional-grade graphic design software which is capable of doing almost everything that you need for your graphics project.
+我确信你听说过 Blender 。 Blender 是一款免费并开源的专业级图形设计软件，几乎可以完成图形项目所需的一切。
 
 ![Blender Video Editor][36]
 
-You can create animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, and computer games. Blender’s features include 3D modelling, UV unwrapping, texturing, raster graphics editing, rigging and skinning, fluid and smoke simulation, particle simulation, soft body simulation, sculpting, animating, match moving, rendering, motion graphics, video editing, and compositing.
+你可以创建动画电影、视觉效果、艺术作品、3D 打印模型、动态图形、交互式 3D 应用程序和计算机游戏。 Blender 的功能包括 3D 建模、UV 展开、纹理、光栅图形编辑、绑定和蒙皮、流体和烟雾模拟、粒子模拟、柔体模拟、雕刻、动画、匹配移动、渲染、运动图形、视频编辑和合成。
 
-It is a professional-grade application which is still free and open-source.
+它是一个专业级的应用程序，还是免费和开源的。
 
-For easy installation in Ubuntu, open Software, search for Blender, and then hit install. Alternatively, you can also open a terminal window and run the following command to install.
+
+想要在 Ubuntu 中轻松安装，打开应用商店，搜索 Blender，然后点击安装。或者，你也可以打开终端窗口并运行以下命令进行安装。
 
 ```
 sudo apt install blender
 ```
+该软件适用于 Windows、macOS 和其他平台。你可以访问 [官方下载页面][37] 了解更多详情。
 
-This software is available for Windows, macOS and other platforms. You can visit the [official download page][37] for more details.
 
-**More information:**
+**更多信息：**
 
-* [Home page][38]
-* [Detailed Feature highlights][39]
-* [Documentation][40]
+* [主页][38]
+* [详细功能亮点][39]
+* [文档][40]
 
 #### Ungoogled Chromium
 
-If you want a clean browser free from Google apps and services, you should try out the Ungoogled Chromium browser. It’s a drop-in replacement for the stock Chromium experience without the Google integrated services.
+如果你想要一个没有 Google 应用和服务的干净浏览器，你应该尝试使用 Ungoogled Chromium 浏览器。在没有 Google 集成服务的情况下，它可以替代现有的 Chromium 体验。
 
-For example, it is free of all pre-compiled binaries from the code and all Google integration and also disables features requiring manual enabling for better control.
+例如，它没有代码中的所有预编译二进制文件和所有 Google 集成，并且还禁用了需要手动启用以获得更好控制的功能。
 
-Perhaps a well-suited browser is the best Chromium experience.
+或许一个合适的浏览器，才会有最好的 Chromium 体验。
 
 ![Ungoogled-Chromium][41]
 
-Installing Ungoogled Chromium is easy using Flatpak. First, set up[Flatpak][42] and install this browser using the following command.
+使用 Flatpak 安装 Ungoogled Chromium 很容易。首先设置 [Flatpak][42] 然后使用下列命令安装该浏览器：
 
 ```
 flatpak install flathub com.github.Eloston.UngoogledChromium
 ```
+浏览 [官方 GitHub 页面][43] 获取该浏览器更多信息。
 
-To learn more, visit the [official GitHub page][43] of this browser.
 
 #### Tilix
 
 ![Tilix Terminal Window][44]
 
-The final app in this necessary Ubuntu apps list is Tilix. Tilix is a tiling window-based terminal emulator which is based on GTK. It comes with custom titles, additional notification support (for command completion) and transparent background image support. In addition, Tilix also enables you to add a custom image background in the terminal window. Finally, you can create multiple terminal panes side-by-side in a single window.
+必备 Ubuntu 应用程序列表中的最后一个应用程序是 Tilix 。Tilix 是一个基于 GTK 的基于平铺窗口的终端仿真器。它带有自定义标题、附加通知支持（用于命令完成）和透明背景图像支持。此外，Tilix 还允许你在终端窗口中添加自定义图像背景。最后，你可以在一个窗口中并排创建多个终端窗口。
 
-An advanced terminal is written in GTK, which you may find productive.
+这是一个用 GTK 编写的高级终端，你可能会发现它很有用。
 
-Installation packages are available for all Linux distributions. For Ubuntu and related distros, run the following command to install.
+所有 Linux 发行版都有安装包。在 Ubuntu 或相关版本，运行以下命令进行安装：
+
 
 ```
 sudo apt install tilix
 ```
 
-For more details, visit the Tilix [home page][45].
+更多信息请浏览 Tilix [主页][45] 。
 
-### Closing Notes
 
-This completes part 3 of a 5-part series of best Ubuntu Apps in 2022. I hope you get to install and use some of these applications in Ubuntu and other distros for your daily productive output. Also, let me know which apps you pick from this list as your best in the comment box below.
+### 结语
 
-Finally, stay tuned for part 4 of this Ubuntu apps series. If you missed the other parts, you could read them here:
+这是 2022 年 5 篇系列的必备 Ubuntu 应用程序的第 3 篇。我希望你能够在 Ubuntu 或者其他 Linux 发行版上安装，并在你的日常工作中使用这些应用程序。同时，欢迎在下方评论，让我知道你最喜欢哪一款应用。
 
-* [Part 1][46]
-* [Part 2][47]
+最后，请继续关注本 Ubuntu 应用程序系列的第 4 部分。如果你错过了其他部分，你可以在这里阅读它们：
 
-Cheers.
+* [第一篇][46]
+* [第二篇][47]
 
-*Some image credits: Respected app developers/teams.*
+干杯！
+
+*一些图片来源：令人尊敬的应用开发人员或团队*
 
 --------------------------------------------------------------------------------
 
@@ -256,7 +265,7 @@ via: https://www.debugpoint.com/necessary-ubuntu-apps-2022
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Donkey](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
