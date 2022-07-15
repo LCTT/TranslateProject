@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/c-linux-mp3"
 [#]: author: "Rikard Grossman-Nielsen https://opensource.com/users/rikardgn"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
