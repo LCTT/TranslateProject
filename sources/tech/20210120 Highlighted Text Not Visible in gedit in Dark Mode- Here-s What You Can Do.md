@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Highlighted Text Not Visible in gedit in Dark Mode? Here’s What You Can Do)
-[#]: via: (https://itsfoss.com/gedit-dark-mode-problem/)
-[#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
+[#]: collector: "lujun9972"
+[#]: translator: "void-mori "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+[#]: subject: "Highlighted Text Not Visible in gedit in Dark Mode? Here’s What You Can Do"
+[#]: via: "https://itsfoss.com/gedit-dark-mode-problem/"
+[#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 
 Highlighted Text Not Visible in gedit in Dark Mode? Here’s What You Can Do
 ======
