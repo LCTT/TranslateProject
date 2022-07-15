@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "void-mori"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14829-1.html"
 
 为何要使用树莓派为你的业务提供动力
 ======
