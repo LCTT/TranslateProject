@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "tanloong"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14830-1.html"
 
 R 语言绘制数据：图表篇
 ======
