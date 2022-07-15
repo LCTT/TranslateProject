@@ -3,17 +3,18 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14822-1.html"
 
 怀念 Firefox Send 吗？不妨试试 Internxt Send 吧
 ======
-Internxt 发布了一个新产品，它可以让你快速地将加密文件发送给任何人，同时保持你的隐私。嗯，我们只能希望它不会像 Firefox Send 那样关闭吧……
+
+> Internxt 发布了一个新产品，它可以让你快速地将加密文件发送给任何人，同时保持你的隐私。嗯，我们只能希望它不会像 Firefox Send 那样关闭吧……
 
 ![Internxt][1]
 
-[Internxt][2] 是一个相当新的开源加密云服务，旨在取代大型科技公司的产品。例如，你可以把它作为 Google Photos 和 Drive 的替代品。
+[Internxt][2] 是一个相当新的开源加密云服务，旨在取代大型科技公司的产品。例如，你可以把它作为谷歌的相册和云端硬盘的替代品。
 
 它免费提供 10 GB 的容量。所以，如果感兴趣的话，你可以注册个账号试一试。
 
@@ -29,7 +30,7 @@ Internxt 发布了一个新产品，它可以让你快速地将加密文件发�
 
 我在 GitHub 上找不到 Internxt Send 的存储库，但我已经要求他们澄清了。
 
-*LCTT 译注：虽然 Internxt 是在 GitHub 上开源的，但是 GitHub 上没有 Internxt Send 这个产品的存储库，产品的介绍里也没有声称它是开源的。*
+（LCTT 译注：虽然 Internxt 是在 GitHub 上开源的，但是 GitHub 上没有 Internxt Send 这个产品的存储库，产品的介绍里也没有声称它是开源的。）
 
 正如你所期望的那样，你无需创建帐户即可将文件上传到 Internxt Send。
 
@@ -54,7 +55,7 @@ via: https://news.itsfoss.com/internxt-send/
 作者：[Ankush Das][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
