@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/cutefish-os-development-halts/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "imgradeone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
