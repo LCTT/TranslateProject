@@ -7,34 +7,34 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How I use open source to play RPGs
+我如何使用开源玩 RPG 游戏
 ======
-Find an open source tool for almost every element of role-playing games.
+为角色扮演游戏的所有元素找到一个开源工具。
 ![Dice as a random number generator][1]
 
-I play a lot of tabletop role-playing games (RPGs), in terms of both frequency and variety. Generally, I prefer playing RPGs in person with friends, but over the past two years, I've been playing online.
+我玩过很多桌面角色扮演游戏（RPG），无论是频率还是种类。一般来说，我更喜欢和朋友一起玩RPG，但在过去的 2 年里，我一直在玩网络游戏。
 
-At first, I wasn't sure how to run a long-term game online. I knew there were a lot of tools out there to make it possible, but none of them interested me until I discovered the world of open source online tabletop gaming. With a small collection of open source applications, I've been able to run all my games exclusively on open source.
+起初，我不确定如何在线运行长期游戏。我知道有很多的工具可以实现，但直到我发现开源在线桌面游戏的世界之前，我都对此不敢兴趣。通过一小部分开源应用程序，我已经能够在开源平台上运行我的所有游戏。
 
-It's a good time of year for it, too, because it was recently [Free RPG Day][2]. On FreeRPG Day, publishers across the tabletop role-playing game industry release, free of charge, games to encourage players to try new games and new adventures. Although it was canceled in 2020, it's back this year as a live event with some virtual support by way of free RPG sampler downloads from [Dungeon Crawl Classics][3] and [Paizo][4].
+这也是一年中的好时机，因为最近是[免费 RPG 日][2]。在免费 RPG 日，桌面角色扮演游戏行业的发型商免费发布游戏，鼓励玩家尝试新游戏和新冒险。尽管它在 2020 年被取消，但今年它又作为现场活动回归，并通过 [Dungeon Crawl Classics][3] 和 [Paizo][4] 的免费 RPG 采样器下载提供了一些虚拟支持。
 
-And if the event's virtual offerings aren't enough, I've compiled a list of [5 open source tabletop RPGs you may not have tried yet][5].
+如果活动的虚拟产品还不够，我整理了一份[你可能尚未尝试过的 5 个开源桌面 RPG 游戏列表][5]。
 
-When you're ready to start playing, try some of these open source tools and see how much they can enhance your gameplay.
+当你准备好开始玩游戏时，请尝试其中一些开源工具，看看它们能在多大程度上增强你的游戏玩法。
 
-### Chat
+### 聊天
+在线 RPG 游戏最基本的（从技术上讲，也是唯一的）要求是交流。这是游戏的媒介：玩家需要一种说话的途径。
 
-The most basic—and technically speaking, the only—requirement for an RPG game online is communication. It's the medium of the game: players need a way to talk.
-
-There are a few good options for this. I find that [Mumble][6] is the tool with the lowest demand on bandwidth. It's a voice-only chat application that can use the very efficient Opus codec to get everyone talking for hours at a time without interruption.
+有几个不错的选择。我发现 [Mumble][6] 是对带宽需求最低的工具。这是一个纯语音聊天应用程序，可以使用非常高效的 Opus 编解码器让每个人一次交谈数小时而不会中断。
 
 ![Mumble client][7]
 
 CC BY-SA Seth Kenlon
 
-There are public instances all around the world, so after downloading the Mumble client, you can join any of them that are open and use it to run a game online. There's a push-to-talk setting, so you can cut out background noise, which is a welcome feature when the rest of your household doesn't halt all of its activity just for your tabletop session.
+世界各地都有公共实例，所以下载 Mumble 客户端后，你可以加入其中任何一个开放的实例，并使用它来在线运行游戏。有一个按键通话设置，你可以用此来消除背景噪音，当你的其他家庭成员在进行其它工作而不想被你的桌面会话打扰时，这个功能将会非常实用。
 
-There's also a text chat client for asides. My gaming groups usually use the chat to post links relevant to the game, but you could also use it for off-topic chatter in an attempt to keep the spoken game on topic.
+还有一个文本聊天客户端。我的游戏组通常使用它来发布与游戏相关的链接，但你也可以将其用于无关的聊天，尝试保持口语游戏的主题。
+
 
 If your players prefer facial cues or are just used to video chat web apps, then [Jitsi][8] is an excellent substitute for in-person gatherings around a table. Jitsi is mostly like every other video chat application you've ever used, except possibly even easier. You can set up a room, invite friends, keep out strangers, and play for hours. Muting and going off-camera are intuitive, the interface is attractive, and new features are being developed and introduced regularly.
 
