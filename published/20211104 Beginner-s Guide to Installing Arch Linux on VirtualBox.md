@@ -3,26 +3,30 @@
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
 [#]: translator: "hanszhao80"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14834-1.html"
 
-VirtualBox 安装 Arch Linux 的新手操作指南
+在 VirtualBox 安装 Arch Linux 的新手操作指南
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202207/16/100738bceesesazv6rsxl4.jpg)
 
 [Arch Linux 在桌面 Linux 世界中非常流行][1]。受欢迎的原因之一是 [安装 Arch Linux][2] 本身就是一项复杂的任务。
 
-我没有夸大其词。安装 [Ubuntu 或 Debian][3] 比 Arch Linux 容易得多，因为官方没给后者提供图形界面的安装程序。这时虚拟机就派上用场了。
+我没有夸大其词。安装 [Ubuntu 或 Debian][3] 比 Arch Linux 容易得多，因为官方没给后者提供图形界面的安装程序。
 
-你可以先在 VirtualBox 中尝试安装 Arch Linux，看看它是否是你想在实际硬件上运行的系统。通过这种方式，你可以在不打乱当前操作系统的情况下体验 Arch Linux。
+这时虚拟机就派上用场了。
+
+你可以先在 VirtualBox 中尝试安装 Arch Linux，看看它是否是你想在实际硬件上运行的系统。通过这种方式，你可以在不弄乱当前操作系统的情况下体验 Arch Linux。
 
 在本文，我将一步一步指导你完成一个实用的 Arch Linux 虚拟机的安装过程。
 
 ### 在 VirtualBox 上安装 Arch Linux
 
-毫无疑问，你需要先 [在 Linux 上安装 VirtualBox][4]（或 Windows）。在 Windows 上，只需访问 Oracle 的网站并下载 VirtualBox。
+毫无疑问，你需要先 [在 Linux 上安装 VirtualBox][4]（或在 Windows 上）。在 Windows 上，只需访问 Oracle 的网站并下载 VirtualBox。
 
-[下载 VirtualBox][5]
+> **[下载 VirtualBox][5]**
 
 如果你使用的是 Windows 10 或更高版本，请确保你的系统已启用虚拟化。
 
@@ -36,11 +40,11 @@ VirtualBox 安装 Arch Linux 的新手操作指南
 
 #### 第一部分 创建虚拟机
 
-**第一步**：首先，你需要在 VirtualBox 中设置一下。启动 VirtualBox 并单击 **<ruby>新建<rt>New</rt></ruby>** 来创建一个虚拟机。
+**第一步**：首先，你需要在 VirtualBox 中设置一下。启动 VirtualBox 并单击 “<ruby>新建<rt>New</rt></ruby>” 来创建一个虚拟机。
 
 ![][10]
 
-注意，你可以使用<ruby>向导模式<rt>guided mode</rt></ruby>继续创建虚拟机，但使用<ruby>专家模式<rt>expert mode</rt></ruby>可以一目了然地获得更多选项。
+注意，你可以使用 “<ruby>向导模式<rt>guided mode</rt></ruby>” 继续创建虚拟机，但使用 “<ruby>专家模式<rt>expert mode</rt></ruby>” 可以一目了然地获得更多选项。
 
 ![][11]
 
@@ -48,7 +52,7 @@ VirtualBox 安装 Arch Linux 的新手操作指南
 
 不用担心，专家模式同样简单，只是多了一些额外的可选项，无需担心其他任何事情。
 
-**第二步**：输入你的虚拟机名称。当你在<ruby>名称<rt>Name</rt></ruby>字段中输入 **Arch Linux** 时，它会分别自动检测<ruby>类型<rt>Type</rt></ruby>和<ruby>版本<rt>Version</rt></ruby>。
+**第二步**：输入你的虚拟机名称。当你在 “<ruby>名称<rt>Name</rt></ruby>” 字段中输入 “Arch Linux” 时，它会分别自动检测 “<ruby>类型<rt>Type</rt></ruby>” 和 “<ruby>版本<rt>Version</rt></ruby>”。
 
 ![][12]
 
@@ -56,47 +60,47 @@ VirtualBox 安装 Arch Linux 的新手操作指南
 
 我在这个例子中分配了 **4 GB 左右的内存**。
 
-另外，请确保在<ruby>硬盘<rt>Hard disk</rt></ruby>选项下选择**<ruby>现在创建虚拟硬盘<rt>create a virtual hard disk</rt></ruby>**。它应该是默认选项。
+另外，请确保在 “<ruby>硬盘<rt>Hard disk</rt></ruby>”选项下选择 “<ruby>现在创建虚拟硬盘<rt>create a virtual hard disk</rt></ruby>”。它应该是默认选项。
 
 现在，继续设置虚拟硬盘大小。
 
-**第三步**：你可以选择虚拟硬盘的存放位置，并根据你的需求调整大小。最小分配大小 (8 GB) 对于安装系统应该不是问题，但安全起见，你可能得分配至少 10 到 15 GB。
+**第三步**：你可以选择虚拟硬盘的存放位置，并根据你的需求调整大小。最小分配大小（8 GB）对于安装系统应该不是问题，但安全起见，你可能得分配至少 10 到 15 GB。
 
 ![][13]
 
-接下来，你需要将硬盘硬盘文件类型选择为 **VDI (VirtualBox <ruby>磁盘镜像<rt>Disk Image</rt></ruby>)** ，将存储选择为 **<ruby>动态分配<rt>Dynamically assigned</rt></ruby>**，如上图所示。
+接下来，你需要将硬盘硬盘文件类型选择为 “VDI（VirtualBox Disk Image）” ，将存储选择为 “<ruby>动态分配<rt>Dynamically assigned</rt></ruby>”，如上图所示。
 
 VDI 是虚拟硬盘最常见的硬盘类型。
 
-当你为硬盘存储选择 **动态分配** 选项时，这意味着存储空间将根据使用情况进行使用。换言之，当创建虚拟机后，并不会立即将这 15 GB 的空间从你的磁盘中锁定。
+当你为硬盘存储选择 “<ruby>动态分配<rt>Dynamically allocated</rt></ruby>” 选项时，这意味着存储空间将根据使用情况进行使用。换言之，当创建虚拟机后，并不会立即将这 15 GB 的空间从你的磁盘中锁定。
 
-现在，你所要做的就是点击 **<ruby>创建<rt>Create</rt></ruby>** 来添加虚拟机。
+现在，你所要做的就是点击 “<ruby>创建<rt>Create</rt></ruby>” 来添加虚拟机。
 
 #### 第二部分 添加 ISO 文件以开始安装 Arch Linux
 
 ![][14]
 
-当虚拟机在左侧列表中出现后，你可以查看其配置并在 **<ruby>存储<rt>Storage</rt></ruby>** 选项下选择 ISO 文件作为磁盘驱动。
+当虚拟机在左侧列表中出现后，你可以查看其配置并在 “<ruby>存储<rt>Storage</rt></ruby>” 选项下选择 ISO 文件作为磁盘驱动。
 
 你也可以单独前往虚拟机设置以探索更多内容并选择 ISO 文件。
 
 ![][15]
 
-为此，你需要导航至虚拟机设置的 **<ruby>存储<rt>Storage</rt></ruby>** 页签。
+为此，你需要导航至虚拟机设置的 “<ruby>存储<rt>Storage</rt></ruby>” 标签页。
 
 ![][16]
 
-在这里，你必须单击 <ruby>控制器<rt>Controller</rt></ruby> 下的 **<ruby>没有盘片<rt>Empty</rt></ruby>**，然后继续选择 Arch Linux ISO 文件作为磁盘文件（如上图所示）。
+在这里，你必须单击 “<ruby>控制器<rt>Controller</rt></ruby>” 下的 “<ruby>没有盘片<rt>Empty</rt></ruby>”，然后继续选择 Arch Linux ISO 文件作为磁盘文件（如上图所示）。
 
 ![][17]
 
-完成选择后，点击 **OK** 以保存设置的变更。
+完成选择后，点击 “OK” 以保存设置的变更。
 
 将 ISO 设置为要引导的磁盘时，虚拟机设置应如下所示：
 
 ![][18]
 
-现在，点击 **<ruby>启动<rt>Start</rt></ruby>** 启动虚拟机并开始安装。
+现在，点击 “<ruby>启动<rt>Start</rt></ruby>” 启动虚拟机并开始安装。
 
 #### 第三部分 使用引导式安装程序安装 Arch Linux
 
@@ -126,9 +130,9 @@ VDI 是虚拟硬盘最常见的硬盘类型。
 
 ![][23]
 
-选择首选地区而不是“<ruby>全球<rt>“Worldwide”</rt></ruby>”。这至关重要，因为如果你选择 **全球** 作为你的地区，它会下载许多不必要的包。
+选择首选地区而不是 “<ruby>全球<rt>Worldwide</rt></ruby>”。这至关重要，因为如果你选择 **全球** 作为你的地区，它会下载许多不必要的包。
 
-**第四步**：选择区域后，它会要求你选择驱动器进行安装。在这个例子中，我们已经创建了一个大约 15 GB 的虚拟驱动器，显示为 **/dev/sda**。
+**第四步**：选择区域后，它会要求你选择驱动器进行安装。在这个例子中，我们已经创建了一个大约 15 GB 的虚拟驱动器，显示为 `/dev/sda`。
 
 类似的，根据大小检查你创建的驱动器，然后选择该磁盘继续。在这里，我输入 `1` 作为输入；你的可能会有所不同。
 
@@ -136,38 +140,36 @@ VDI 是虚拟硬盘最常见的硬盘类型。
 
 **第五步**：接下来，你将被询问以下内容：
 
-  - **选择文件系统类型**
-  - **加密密码** (可选的)
-  - **主机名**
-  - **创建 root 密码** (可选的)
-  - **创建超级用户**
-  - **选择一个预编程的配置文件**
-
-
+  - 选择文件系统类型
+  - 加密密码（可选的）
+  - 主机名
+  - 创建 root 密码（可选的）
+  - 创建超级用户
+  - 选择一个预编程的配置文件
 
 ![][25]
 
-在我的测试中，我选择了 BTRFS 作为文件系统，没有设置任何磁盘加密密码。
+在我的测试中，我选择了 btrfs 作为文件系统，没有设置任何磁盘加密密码。
 
 主机名可随心所欲的设置，但我建议保持简短。
 
-你可以选择创建一个 root 密码，即使不这么做也应该没什么问题。不过，你需要创建一个具有 Sudo 权限的超级用户。
+你可以选择创建一个 root 密码，即使不这么做也应该没什么问题。不过，你需要创建一个具有 sudo 权限的超级用户。
 
-我使用 **admin/pass** 作为用户名和密码。不过，如果你不想让其他人访问你计算机上的虚拟机，则不应使用易于猜测的密码。
+我使用 `admin`/`pass` 作为用户名和密码。不过，如果你不想让其他人访问你计算机上的虚拟机，则不应使用易于猜测的密码。
 
-然后，你将看到一个选择配置文件的选项。在这种情况下，我们需要一个成熟的 Arch Linux 桌面。因此，我们通过输入 `0` 来选择 **<ruby>桌面<rt>desktop</rt></ruby>**。
+然后，你将看到一个选择配置文件的选项。在这种情况下，我们需要一个成熟的 Arch Linux 桌面。因此，我们通过输入 `0` 来选择 “<ruby>桌面<rt>desktop</rt></ruby>”。
 
 **第六步**：接下来，你将被要求选择桌面环境。我决定使用 KDE。你可以选择任何你喜欢的。
 
 ![][26]
 
-**第七步**：最后，你将被要求选择显卡驱动程序。由于我们是在 VirtualBox 上安装的 Arch Linux，你可以选择选项 4：**VMware/VirtualBox**，如下图所示：
+**第七步**：最后，你将被要求选择显卡驱动程序。由于我们是在 VirtualBox 上安装的 Arch Linux，你可以选择选项 4：VMware/VirtualBox，如下图所示：
 
 ![][27]
 
-你可能还会被要求输入“是（y）或否（no）”选择 pipewire 而不是 PulseAudio 作为音频服务。选任何一个都应该都能达到目的。
+你可能还会被要求输入“是（`y`）或否（`n`）”选择 pipewire 而不是 PulseAudio 作为音频服务。选任何一个都应该都可以。
 
-**第八步**：接下来是重要的一步。在这里，如果你需要内核的 LTS 版本，你可以选择使用 **linux-lts**，或者继续使用默认值。
+**第八步**：接下来是重要的一步。在这里，如果你需要内核的 LTS 版本，你可以选择使用 “linux-lts”，或者继续使用默认值。
 
 ![][28]
 
@@ -175,19 +177,19 @@ VDI 是虚拟硬盘最常见的硬盘类型。
 
 **第九步**：你将被要求选择所需的网络适配器以启用互联网访问。你必须选择以下选项：
 
-**<ruby>使用网络管理器来控制和管理你的互联网连接<rt>Use network manager to control and manage your internet connection</rt></ruby>**
+“<ruby>使用网络管理器来控制和管理你的互联网连接<rt>Use network manager to control and manage your internet connection</rt></ruby>”
 
 ![][29]
 
 **第十步**：下一步需要定义时区。选择适用于你的时区，或继续使用默认选项。
 
-**第十一步**：完成后，它将显示你选择的大部分选项以供确认。按 **回车** 继续。
+**第十一步**：完成后，它将显示你选择的大部分选项以供确认。按回车键继续。
 
 ![][30]
 
 **第十二步**：安装完成需要花费几分钟时间，这取决于你的互联网连接速度。
 
-安装完成后，它会要求你**chroot 进入新创建的安装以进行安装后配置**，但我们不需要。因此输入 `N` 以完成安装。
+安装完成后，它会要求你 “chroot 进入新创建的安装以进行安装后配置”，但我们不需要。因此输入 `N` 以完成安装。
 
 **第十三步**：最后，你应该会再次看到终端窗口。输入：
 
@@ -226,7 +228,7 @@ via: https://itsfoss.com/install-arch-linux-virtualbox/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[hanszhao80](https://github.com/hanszhao80)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
