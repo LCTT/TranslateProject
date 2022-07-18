@@ -7,58 +7,58 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Meet Free Software Foundation Executive Director Zoë Kooyman
+采访自由软件基金会执行董事 Zoë Kooyman
 ======
-Find out what the Free Software Foundation (FSF) is all about.
+了解自由软件基金会（FSF）的一切。
 
 ![Dandelion zoomed in][1]
 
-Image by: Photo by Rob Tiller, CC BY-SA 4.0
+图片署名：由 Rob Tiller 拍摄，以 CC BY-SA 发布
 
-The [Free Software Foundation (FSF)][2] started promoting the idea of sharing code way back in 1985, and since then it's defended the rights of computer users and developers. The FSF says that the terms "open" and "closed" are not effective words when classifying software, and instead considers programs either *freedom-respecting* ("free" or "libre") or *freedom-trampling* ("non-free" or "proprietary"). Whatever terminology you use, the imperative is that computers must belong, part and parcel, to the users, and not to the corporations that owns the software the computers run. This is why the GNU Project, and the Linux kernel, Freedesktop.org, and so many other open source projects are so important.
+早在 1985 年，[自由软件基金会（FSF）][2]就开始提倡源代码共享的理念，并从此打响了为计算机用户和开发者捍卫权利的斗争。FSF 认为，用“开源”和“闭源”这两个词来划分软件，十分具有局限性；于是，在为程序分类时，转而使用了以下词语：*尊重自由*（“自由”）或*践踏自由*（“非自由”或“专有”）。不管用语如何，关键之处在于，计算机必须受用户控制，而不是任由开发了计算机软件的公司来摆布。正因如此，GNU 工程、Linux 内核、Freedesktop.org 等众多自由软件项目，才会如此重要。
 
-Recently, the FSF has acquired a new executive director, Zoë Kooyman. I met Zoë in 2019 at an [All Things Open][3] conference. She wasn't yet the executive director of the FSF at that time, of course, but was managing their growing list of major events, including [LibrePlanet][4]. I was captivated by her energy and sincerity as she introduced me to a seemingly nonstop roster of people creating the freedom-respecting software I used on a *daily basis*. I had stumbled into an FSF meetup and ended up hanging out with the people who were actively defining the way I lived my digital life. These were the people who ensured that I had what Zoë Kooyman and the FSF calls the [four essential freedoms][5]:
+最近，FSF 新上任了一位执行董事，她叫 Zoë Kooyman。我初见 Zoë 时，是在 2019 年的一个 [All Things Open][3] 大会上。当然，那个时候她还不是 FSF 的执行董事，不过已经在管理 FSF 的重大活动列表了——那份列表的活动包括了 [LibrePlant][4], 并且还在不断地增长。她之前递给我了一份自由软件作者的名单，名单长得一眼望不尽，而且那些软件都是我*每天*在用的。由此，我也很受她那充沛的精力和诚恳的态度所打动。我只是偶然参加了一次 FSF 的聚会，但最后却和那些人成了朋友。是他们让我的数字生活有了意义，是他们保障了我能够拥有 Zoë 和 FSF 所说的[四项基本自由][5]：
 
-* The freedom to run the program as you wish, for any purpose (freedom 0).
-* The freedom to study how the program works and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.
-* The freedom to redistribute copies so you can help others (freedom 2).
-* The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.
+* 无论用户出于何种目的，用户必须可以按照自己的意愿，自由地运行该软件（自由之零）。
+* 用户可以自由地学习并修改该软件，这样程序的计算过程才是可控的（自由之一）。作为前提，用户必须可以得到该软件的源代码。
+* 用户可以自由地分发该软件的副本，这样就可以帮助别人（自由之二）。
+* 用户可以自由地分发该软件修改后的副本（自由之三)。借此，用户可以把改进后的软件分享给整个社区，令他人也从中受益。作为前提，用户必须可以得到该软件的源代码。
 
-When I heard about Zoë's appointment as executive director, I emailed her for an interview and she was kind enough to take some time out of her very busy schedule to have a chat.
+听说了 Zoë 受任为执行董事后，我给她发了一封邮件，提出想和她进行一次采访。她十分热心，在百忙之中抽出了一点时间来和我畅谈。
 
-**Seth Kenlon: You're the executive director of the FSF! How did you get here?**
+**Seth Kenlon：你当上 FSF 的执行董事了！你是怎么走到今天的呢？**
 
-**Zoë Kooyman:** In my working life, I started out as an event organizer, traveling the world while producing some of the world's biggest music shows. Working with so many different cultures in ever-changing locations is exciting, as is making all the different elements of production come together, whether that's the show, technique, or the other live elements. It's a juggling game to have everything fall into place at the right moment. I spent a lot of time living and working in different countries, and learning a lot about organization and communication thanks to this work. I also studied, and worked with different forms of media, how they are experienced, and their relationship with society.
+**Zoë Kooyman：** 在我的工作生涯中，我最开始是一位活动组织者。我环游世界，举办着一些世界上最大的音乐节目。在不断变更的地点、各具特色的文化中工作，是十分有趣的，因为不管是演出、技艺还是别的现场元素，所有各异的制作元素都结合在一起了。让一切事物都在恰当时候安排到位，就像是耍杂技一样。很多时候，我都是在不同的国家生活和工作。多亏了我的工作，我才能学到这么多的组织和交流技巧。我也对不同形式的媒体有过研究和工作，了解它们的经历，以及它们与社会的关系。
 
-It was in university that I first learned about copyleft. About how we can use existing structures to our benefit, and drive change. It was also then that media (as well as the Internet, and software) landscapes started changing rapidly with encroachments on freedom as a consequence. Moving to the US changed things for me. In the US, I developed a much stronger sense of urgency for matters of social responsibility, and so I decided to act on it. I was thankful to John Sullivan (the FSF executive director at that time) for hiring me based on what I knew about free software and my organizing experience, and allowed me to bring the two together.
+大学时期，我第一次了解到了 copyleft（译注：一种分享软件的思想和方法；简而言之，其目的是保障一款软件对其每一位接收者来说都是自由的），它是关于我们如何才能使用现有的结构来造福自己，并推动变革的。也正是在那时，媒体（以及互联网和软件）的格局开始迅速变化，而这种变化却是以自由为代价的。搬到美国后，我变了许多。在美国，我对社会责任问题有了更加强烈的紧迫感，因此我决定为此付诸行动。我很感激 John Sullivan（当时 FSF 的执行董事），他根据我对自由软件的了解以及我在活动组织方面的经验， 把我招了进来，由此我也得以把这两方面的能力结合到一起。
 
-**Seth: How did you get into Free Software?**
+**Seth：你是如何了解到自由软件的？**
 
-**Zoë:** We tend to expect technical people to be the main people affected by free software, but free software is a movement to defend freedom for anyone using a computer. Actually, software freedom affects members of marginalized communities who are unable to have regular access to a computer. Software shapes their lives as well.
+**Zoë：** 我们常常会觉得，自由软件主要影响的是懂技术的人。但是，自由软件运动的目的是捍卫每一位计算机用户的自由。其实，软件自由影响着边缘化社区（译注：因条件受限或受到排斥等，落后于主流社会的发展，而被置于社会边缘的群体）的成员，他们很少有机会使用计算机。而软件也塑造了他们的生活。
 
-What the concept of copyleft, as well as the GNU Project, has achieved is exceptional. To truly observe the direction society was heading in, and say, "It doesn't have to be this way. We can take matters in our own hands." That changed my outlook on life early on. I started working on the idea of using already existing materials and reintroducing it to different subcultures. In the entertainment industry you see this all the time, the inspiration from and building on other people's work, and the result is a reflection of the time we live in, as well as a nod to history. True progression cannot happen without that freedom.
+GNU 工程和 copyleft 的概念，取得的成就是十分卓越的。去真正观察社会发展的方向，然后说：“不一定非得那样才行，我们可以把事情掌握在自己手中。”这在早期改变了我的人生观。我开始有了一种想法，把现有的材料用起来，再把它重新引入不同的亚文化之中。在娱乐行业，这已是家常便饭。从他人的作品中得到灵感，并基于此创造新的作品，其结果就是对我们所处时代的反映，同时也是对历史的致敬。没有这般自由，也不会有真正的进步。
 
-As a commentary on copyright for film, I spent time working with the National Film Institute in the Netherlands to create a compilation of "orphaned footage" that was shown at a large scale dance event for thousands of young people in an area with a 170m panoramic screen and a live DJ playing to it. They have continued to play it regularly at events like the Dutch *Museumnacht*.
+谈谈我对电影版权的看法吧。我曾经与荷兰电影研究所合作，做了一个由许多“孤立的电影片段”组合而成的混剪。然后，在一次有几千名年轻人参加的大型舞蹈活动中，那个混剪就在一个 170 米的全景屏幕上播放了，而且还有现场 DJ 在配合演奏。他们之后也经常在别的活动中播放它，比如说荷兰的 *Museumnacht*。
 
-Not being a technical person, I expressed these ideas culturally, but over the years, I was confronted with the ideas of free software more and more, and I realized that with the continued integration of software into our lives (and sometimes our bodies), the fight for free software is becoming more relevant every day. In a world where proprietary software prevails, our society will progress in a way that favors profit and the progression of the few over the freedom of many. Without free software, there are so many aspects of life, so many important social causes that cannot truly succeed.
+我并不懂技术，于是我通过文化来表达了这些观点。但这些年来，我接触自由软件的思想，接触得越来越频繁了。我于是意识到，随着软件不断融入我们的生活（有时还是身体），自由软件斗争的重要性正日益凸显。在当今的世界，专有软件处于称霸地位，我们社会的发展呈现出以利益驱动、为少数人着想的趋势，而这种趋势是以多数人的自由为代价的。如果没有自由软件，生活中的许多方面、社会的许多重要事业，就不可能真正取得成功。
 
-**Seth:** When did you start with the FSF?
+**Seth：** 你是什么时候加入 FSF 的？
 
-**Zoë:** Early 2019, one week before the last in-person edition of LibrePlanet.
+**Zoë：** 在 2019 年初，LibrePlanet 最后一期现场版的前一周（译注：LibrePlant 之后因为疫情而改成了线上活动）。
 
-**Seth:** What attracted you to the Executive Director role?
+**Seth：** 是什么吸引了你去担任执行董事这一职位？
 
-**Zoë:** The FSF is just one organization that is trying to move the needle towards a more equitable, more collaborative, and more software-literate society, but it has been at the core of the movement for a long time. Society is changing rapidly, and most people are not being properly prepared in how to deal with the digital building blocks of today's society i.e. software. This is all incredibly important work, and there are not enough people doing this work. It is important to have an organization that can handle the different challenges that lay ahead.
+**Zoë：** 有许多组织都致力于让社会更加公平、更加协作、更加理解软件。FSF 只是其中之一，但它长期以来一直是这场运动的核心。社会正在迅速变化，而许多人却还没准备好如何应对当今社会的数字产物，例如软件。这是一项十分重要的工作，但是去担任这项工作的人还是太少了。能有一个组织来应对未来的各种挑战，这是十分重要的。
 
-The executive director role, is in a way, merely a facilitating role for the staff and the community to be able to make significant changes toward free software. I believe it is vitally important that we continue to spread the free software message, and with the team we have at the FSF, I believe we can make a real difference. I believe I can use the lessons of working with so many different cultures and people, organizing really challenging projects globally, to help get the best out of all of us. The support I received from staff, management, the community, and the board in this decision, convinced me it was a good decision to take this on.
+执行董事这一职位，在某种程度上，不过是辅助了工作人员和社区而已，好让他们为自由软件作出关键的改变。我相信，我们继续传播自由软件的思想，是非常重要的；并且，有了 FSF 的团队协助，我也相信，我能利用好工作在不同文化和人群中的经验，以及组织高挑战性的全球项目的经验，来使我们发挥出最大的潜能。我的这项决定，得到了来自工作人员、管理层和社区的支持，由此我相信，这个决定是正确的。
 
-**Seth:** What do you see as the biggest challenges in software freedom today? What should the FSF's role be in addressing those challenges?
+**Seth：** 你认为当今的软件自由，面临的最大的挑战是什么？FSF 在应对这些挑战的时候，应该承担怎样的使命？
 
-**Zoë:** As software has integrated itself more and more into the basic fabric of society, it's also become more invisible. Software is now so widespread, and we've been conditioned to overlook it. We focus on what a program can do, not how it does it, let alone if it respects you as a user. And in the meantime, software is proliferating more rapidly than ever before. If people don't understand the fabric out of which a program is made, and all they do, all day, is use these programs, then how can we even begin to explain to them that they are being treated unjustly?
+**Zoë：** 随着软件越来越多地融入了社会的基本结构，软件也更加无形了。如今，软件存在如此广泛，我们却习惯性地忽视它。我们只关注着程序的功能，却无视了实现这种功能的手段，更别说它尊不尊重你作为一位用户的自由了。而与此同时，软件的发展速度又比以往任何时候都要快。如果人们无法理解程序是如何构成的，而只是整天地用着这些程序，那我们该怎么向他们解释，他们正遭受着不公呢？
 
-The FSF's role is to bring every conversation back to this logic of user freedom, to remind us that the tools we use are not benign. Education and government adoption are important focus areas for that reason. If we get people to focus on the issue of software freedom in those areas, we will truly make a difference. Education will help make sure future generations have a chance at freedom, and free software in government is about protecting citizens from unjust influences through proprietary software (maintaining digital sovereignty).
+FSF 的职责就是，让每个人重新谈起用户自由，并提醒人们，我们所使用的工具并没有那么好。因此，教育行业和政府的认可是十分重要的。如果我们让人们关注软件自由在这些领域的问题，那我们必将取得成效。通过教育，我们可以确保后代也有选择自由的权利；而政府采用自由软件，可以保护公民免遭专有软件的不正影响（维护数字主权）。
 
-We can show people that today's society is teaching us a faulty lesson: that it is normal to be subjected to encroachments on your freedoms for reasons "too complex to understand." If you want convenience, connection, or just to do your job, you need to trust these organizations and abide by their will. That is not true. We have an entire community of people who believe we can have a society that doesn't ask you to surrender your freedoms to function in it. And we have this legal framework that supports our ideas. People of all backgrounds and skill levels join our conversations daily, more and more people care about their freedom, and everyone has their own reasons. We learn new things every day about how we can protect ourselves and others, and I look forward to a freer future.
+我们可以告诉人们，当今社会给我们灌输了错误的观点：你的自由受到侵犯是正常的，毕竟事情“太复杂，你理解不了”。如果你想要图个便利，想要相互联系，或者就是想要满足你的需求，那你就得相信这些组织，按照他们的意愿来。这是不对的。我们整个社区都相信，我们能构建一个无需抛弃自由也能处在其中的社会。并且我们也有这样的法律框架来支持我们的观点。每天，不同背景、不同能力的人都加入我们的对话，越来越多的人关心自己的自由，并且每个人都是出于真心的。我们每天都在学习如何去保护自己以及他人，并且我也希望，未来能够更加自由。
 
 --------------------------------------------------------------------------------
 
