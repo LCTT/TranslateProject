@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/listen-music-rhythmbox-linux"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "duoluoxiaosheng"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
