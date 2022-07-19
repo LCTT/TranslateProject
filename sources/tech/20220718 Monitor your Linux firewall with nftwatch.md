@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/nftwatch-linux-firewall"
 [#]: author: "Kenneth Aaron https://opensource.com/users/flyingrhino"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "

@@ -7,32 +7,32 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How I create music playlists on Linux
+如何在 Linux 上创建音乐播放列表
 ======
-Use this C program I made on Linux to listen to your favorite songs on the go.
+使用我在 Linux 上制作的这个 C 程序在旅途中聆听你喜爱的歌曲。
 
 ![Open source software helps artists create music][1]
 
-Image by: Opensource.com
+图片来源：Opensource.com
 
-I recently wrote a C program in Linux to create a smaller random selection of MP3 files from my extensive MP3 library. The program goes through a directory containing my MP3 library, and then creates a directory with a random, smaller selection of songs. I then copy the MP3 files to my smartphone to listen to them on the go.
+我最近在 Linux 中编写了一个 C 程序，从我广泛的 MP3 库中创建一个较小的随机 MP3 文件选择。该程序会遍历一个包含我的 MP3 库的目录，然后创建一个包含随机的、较小的歌曲选择的目录。然后我将 MP3 文件复制到我的智能手机上，以便随时随地收听。
 
-Sweden is a sparsely populated country with many rural areas where you don't have full cell phone coverage. That's one reason for having MP3 files on a smartphone. Another reason is that I don't always have the money for a streaming service, so I like to have my own copies of the songs I enjoy.
+瑞典是一个人口稀少的国家，有许多农村地区没有完整的手机覆盖。这就是在智能手机上拥有 MP3 文件的原因之一。另一个原因是我并不总是有钱购买流媒体服务，所以我喜欢拥有自己喜欢的歌曲的副本。
 
-You can download my application from its [Git repository][2]. I wrote it for Linux specifically in part because it's easy to find well-tested file I/O routines on Linux. Many years ago, I tried writing the same program on Windows using proprietary C libraries, and I got stuck trying to get the file copying routing to work. Linux gives the user easy and direct access to the file system.
+你可以从它的 [Git 仓库][2]下载我的应用。我专门为 Linux 编写了它，部分原因是在 Linux 上很容易找到经过良好测试的文件 I/O 例程。多年前，我尝试使用专有的 C 库在 Windows 上编写相同的程序，但在尝试文件复制时遇到了困难。 Linux 使用户可以轻松直接地访问文件系统。
 
-In the spirit of open source, it didn't take much searching before I found file I/O code for Linux to inspire me. I also found some code for allocating memory which inspired me. I wrote the code for random number generation.
+本着开源的精神，我没费多少力气就找到了 Linux 的文件 I/O 代码来激发我的灵感。我还发现了一些启发了我的分配内存的代码。我编写了随机数生成的代码。
 
-The program works as described here:
+该程序的工作方式如下所述：
 
-1. It asks for the source and destination directory.
-2. It asks for the number of files in the directory of MP3 files.
-3. It searches for the percentage (from 1.0 to 88.0 percent) of your collection that you wish to copy. You can also enter a number like 12.5%, if you have a collection of 1000 files and wish to copy 125 files from your collection rather than 120 files. I put the cap at 88% because copying more than 88% of your library would mostly generate a collection similar to your base collection. Of course, the code is open source so you can freely modify it to your liking.
-4. It allocates memory using pointers and malloc. Memory is required for several actions, including the list of strings representing the files in your music collection. There is also a list to hold the randomly generated numbers.
-5. It generates a list of random numbers in the range of all the files (for example, 1 to 1000, if the collection has 1000 files).
-6. It copies the files.
+1. 请求源目录和目标目录。
+2. 请求 MP3 文件目录下的文件个数。
+3. 搜索你希望复制的收藏的百分比（从 1.0% 到 88.0%）。如果你有 1000 个文件的集合并希望从你的集合中复制 125 个文件而不是 120 个文件，你也可以输入 12.5% 之类的数字。我将上限设置为 88%，因为复制超过 88% 的库将基本生成与你的基础库相似的库。当然，代码是开源的，因此你可以根据自己的喜好自由修改。
+4. 使用指针和 malloc 分配内存。一些操作需要内存，包括代表音乐收藏中文件的字符串列表。还有一个列表来保存随机生成的数字。
+5. 生成所有文件范围内的随机数列表（例如，如果集合有 1000 个文件，则为 1 到 1000）。
+6. 复制文件。
 
-Some of these parts are simpler than others, but the code is only about 100 lines:
+其中一些部分比其他部分更简单，但代码只有大约 100 行：
 
 ```
 #include <dirent.h>
@@ -167,7 +167,7 @@ int main(void) {
 }
 ```
 
-This code is possibly the most complex:
+这段代码可能是最复杂的：
 
 ```
 while(1) {
@@ -181,23 +181,23 @@ while(1) {
 }
 ```
 
-This reads a number of bytes (readByteCount) from a file specified into the character buffer. The first parameter to the function is the file name (srcFileDesc). The second parameter is a pointer to the character buffer, declared previously in the program. The last parameter of the function is the size of the buffer.
+这将从指定的文件中读取多个字节 (readByteCount) 到字符缓冲区中。该函数的第一个参数是文件名（srcFileDesc）。第二个参数是一个指向字符缓冲区的指针，这之前在程序中声明过。该函数的最后一个参数是缓冲区的大小。
 
-The program returns the number of the bytes read (in this case, 4 bytes). The first `if` clause breaks out of the loop if a number of 0 or less is returned.
+程序返回读取的字节数（在本例中为 4 个字节）。如果返回的数字为 0 或更少，则第一个 `if` 子句会跳出循环。
 
-If the number of read bytes is 0, then all of the writing is done, and the loop breaks to write the next file. If the number of bytes read is less than 0, then an error has occurred and the program exits.
+如果读取字节数为 0，则所有写入完成，循环中断以写入下一个文件。如果读取的字节数小于 0，则发生错误并退出程序。
 
-When the 4 bytes are read, it will write to them.The write function takes three arguments.The first is the file to write to, the second is the character buffer, and the third is the number of bytes to write (4 bytes). The function returns the number of bytes written.
+当读取 4 个字节时，它会写入它们。write 函数接受三个参数。第一个是要写入的文件，第二个是字符缓冲区，第三个是要写入的字节数（4 个字节） .该函数返回写入的字节数。
 
-If 0 bytes are written, then a write error has occurred, so the second `if` clause exits the program.
+如果写入了 0 个字节，则发生了写入错误，因此第二个 `if` 子句退出程序。
 
-The `while` loop reads and copies the file, 4 bytes at a time, until the file is copied. When the copying is done, you can copy the directory of randomly generated mp3 files to your smartphone.
+`while` 循环读取并复制文件，一次 4 个字节，直到文件被复制。复制完成后，你可以将随机生成的 mp3 文件的目录复制到你的智能手机。
 
-The copy and write routine are fairly efficient because they use file system calls in Linux.
+复制和写入例程相当有效，因为它们使用 Linux 中的文件系统调用。
 
-### Improving the code
+### 改进代码
 
-This program is simple and it could be improved in terms of its user interface, and how flexible it is. You can implement a function that calculates the number of files in the source directory so you don't have to enter it manually, for instance. You can add options so you can pass the percentage and path non-interactively.nBut the code does what I need it to do, and it's a demonstration of the simple efficiency of the C programming language.
+该程序很简单，可以在用户界面和灵活性方面进行改进。例如，你可以实现一个计算源目录中文件数量的函数，这样你就不必手动输入它。你可以添加选项，这样你就可以非交互地传递百分比和路径。但是代码做了我需要它做的事情，它是 C 编程语言简单效率的演示。
 
 --------------------------------------------------------------------------------
 
@@ -205,7 +205,7 @@ via: https://opensource.com/article/22/7/c-linux-mp3
 
 作者：[Rikard Grossman-Nielsen][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
