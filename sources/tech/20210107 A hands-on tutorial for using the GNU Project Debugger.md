@@ -68,14 +68,11 @@ CFLAGS =-Wall -Werror -std=c++11 -g
 
 ![gdb info source output][7]
 
-
 * 101 行
 * 语言: C++
 * 编译器（版本、调优、架构、调试标志、语言标准)
 * 调试格式: [DWARF 2][8]
 * 没有预处理器宏指令（使用 GCC 编译时，宏仅在 [使用 `-g3` 标志编译][9] 时可用）。
-
-
 
  `info shared`命令在启动时加载的虚拟地址空间中打印动态库列表及动态库地址，以便程序运行：
 
@@ -116,7 +113,7 @@ GDB highlights the line to be executed. By typing `next` (n), you can execute th
 
 要退出 GDB，只需输入 `quit`。
 
-###设置观察点
+###设置监察点
 
 这个示例程序的核心是一个在无限循环中运行的状态机。 `n_state`变量枚举了当前所有状态：
 
@@ -138,59 +135,59 @@ while(true){
 }
 ```
 
-如果您想`n_state` 为 `State_5` 值时停止程序。为此，请在 `main` 函数处停止程序并为 `n_state` 设置观察点：
+如果您想`n_state` 为 `State_5` 值时停止程序。为此，请在 `main` 函数处停止程序并为 `n_state` 设置监察点：
 
 ```
 watch n_state == State_5
 ```
 
-只有当所需的变量在当前上下文中可用时，使用变量名设置观察点才有效。
+只有当所需的变量在当前上下文中可用时，使用变量名设置监察点才有效。
 
 当您输入 `continue` 继续运行程序时，您会得到如下输出：
 
 ![gdb output stop on watchpoint_1][18]
 
-如果您继续运行程序，当观察点表达式评估为 `false` 时 GDB 将停止：
+如果您继续运行程序，当监察点表达式评估为 `false` 时 GDB 将停止：
 
 ![gdb output stop on watchpoint_2][19]
 
-您可以自定义观察点的一般值、特定值，读取或写入权限。You can specify watchpoints for general value changes, specific values, and read or write access.
+您可以自定义监察点的一般值、特定值，读取或写入权限。
 
-### 更改断点和观察点
+### 更改断点和监察点
 
-Type `info watchpoints` to print a list of previously set watchpoints:
+输入 `info watchpoints` 打印先前设置的监察点列表：
 
 ![gdb output info watchpoints][20]
 
-#### Delete breakpoints and watchpoints
+#### 删除断点和监察点
 
-As you can see, watchpoints are numbers. To delete a specific watchpoint, type `delete` followed by the number of the watchpoint. For example, my watchpoint has the number 2; to remove this watchpoint, enter `delete 2`.
+如您所见，监察点就是数字。要删除特定的监察点，请先输入`delete`后输入监察点的编号。例如，我的监察点编号为 2；要删除此监察点，输入 `delete 2`。
 
-*Caution:* If you use `delete` without specifying a number, *all* watchpoints and breakpoints will be deleted.
+*注意：* 如果您使用 `delete` 而没有指定数字，*所有* 监察点和断点将被删除。
 
-The same applies to breakpoints. In the screenshot below, I added several breakpoints and printed a list of them by typing `info breakpoint` :
+这同样适用于断点。在下面的截屏中，我添加了几个断点，输入 `info breakpoint` 打印断点列表：
 
 ![gdb output info breakpoints][21]
 
-To remove a single breakpoint, type `delete` followed by its number. Alternatively, you can remove a breakpoint by specifying its line number. For example, the command `clear 78` will remove breakpoint number 7, which is set on line 78.
+要删除单个断点，请先输入`delete`后输入监察点的编号。另外一种方式：您可以通过指定断点的行号来删除断点。例如，`clear 78`命令将删除第 78 行设置的断点号 7。
 
-#### Disable or enable breakpoints and watchpoints
+#### Disable or enable breakpoints and watchpoints禁用或启用断点和监察点
 
-Instead of removing a breakpoint or watchpoint, you can disable it by typing `disable` followed by its number. In the following, breakpoints 3 and 4 are disabled and are marked with a minus sign in the code window:
+除了删除断点或监察点之外，您可以通过先输入`disable`，后输入编号禁用断点或监察点。在下文中，断点 3 和 4 被禁用，并在代码窗口中用减号标记：
 
 ![disabled breakpoints][22]
 
-It is also possible to modify a range of breakpoints or watchpoints by typing something like `disable 2 - 4`. If you want to reactivate the points, type `enable` followed by their numbers.
+也可以通过输入类似 `disable 2 - 4`修改某个范围内的断点或监察点。如果要重新激活这些点，请先输入`enable`，然后输入它们的编号。
 
-### Conditional breakpoints
+### 条件断点
 
-First, remove all breakpoints and watchpoints by typing `delete`. You still want the program to stop at the `main` function, but instead of specifying a line number, add a breakpoint by naming the function directly. Type `break main` to add a breakpoint at the `main` function.
+首先，输入 `delete` 删除所有断点和监察点。如果您不想指定行号而是通过直接命名函数来添加断点这种方式使程序在 `main` 函数处停止。输入 `break main` 从而在 `main` 函数处添加断点。
 
-Type `run` to start the execution from the beginning, and the program will stop at the `main` function.
+输入`run`从头开始运行程序，程序将在`main`函数处停止。
 
-The `main` function includes the variable `n_state_3_count`, which is incremented when the state machine hits state 3.
+`main` 函数包括变量 `n_state_3_count`，当状态机达到状态 3 时，该变量会递增。
 
-To add a conditional breakpoint based on the value of `n_state_3_count` type:
+基于 `n_state_3_count` 的值添加条件断点，请输入：
 
 ```
 break 54 if n_state_3_count == 3
@@ -198,7 +195,7 @@ break 54 if n_state_3_count == 3
 
 ![Set conditional breakpoint][23]
 
-Continue the execution. The program will execute the state machine three times before it stops at line 54. To check the value of `n_state_3_count`, type:
+继续运行程序。程序将在第 54 行停止之前运行状态机 3 次。要检查 `n_state_3_count` 的值，请输入：
 
 ```
 print n_state_3_count
@@ -206,27 +203,27 @@ print n_state_3_count
 
 ![print variable][24]
 
-#### Make breakpoints conditional
+#### 使断点成为条件断点
 
-It is also possible to make an existing breakpoint conditional. Remove the recently added breakpoint with `clear 54`, and add a simple breakpoint by typing `break 54`. You can make this breakpoint conditional by typing:
+您也可以使现有断点成为条件断点。用 `clear 54` 命令删除最近添加的断点，并通过输入 `break 54`命令添加一个简单的断点。您可以输入以下内容使此断点成为条件断点：
 
 ```
 condition 3 n_state_3_count == 9
 ```
 
-The `3` refers to the breakpoint number.
+`3` 指的是断点编号。
 
 ![modify breakpoint][25]
 
-#### Set breakpoints in other source files
+#### 在其他源文件中设置断点
 
-If you have a program that consists of several source files, you can set breakpoints by specifying the file name before the line number, e.g., `break main.cpp:54`.
+如果您的程序由多个源文件组成，您可以在行号前指定文件名来设置断点，例如，`break main. cpp:54`。
 
-#### Catchpoints
+#### 捕捉断点
 
-In addition to breakpoints and watchpoints, you can also set catchpoints. Catchpoints apply to program events like performing syscalls, loading shared libraries, or raising exceptions.
+除了断点和监察点之外，您还可以设置捕获点。捕获点适用于执行系统调用、加载共享库或引发异常等事件。
 
-To catch the `write` syscall, which is used to write to STDOUT, enter:
+要捕获用于写入 STDOUT 的 `write` 系统调用，请输入：
 
 ```
 catch syscall write
@@ -234,45 +231,45 @@ catch syscall write
 
 ![catch syscall write output][26]
 
-Each time the program writes to the console output, GDB will interrupt execution.
+每当程序写入控制台输出时，GDB将中断执行。
 
-In the manual, you can find a whole chapter [covering break-, watch-, and catchpoints][27].
+在手册中，您可以找到一整章 [covering break-, watch-, and catchpoints][27].
 
-### Evaluate and manipulate symbols
+### 评估和操作符号
 
-Printing the values of variables is done with the `print` command. The general syntax is `print <expression> <value>`. The value of a variable can be modified by typing:
+用`print`命令打印变量的值。一般语法是`print <表达式> <值>`。修改变量的值，请输入：
 
 ```
 set variable <variable-name> <new-value>.
 ```
 
-In the screenshot below, I gave the variable `n_state_3_count` the value *123*.
+在下面的截屏中，我将变量 `n_state_3_count` 的值设为 *123*。
 
 ![catch syscall write output][28]
 
-The `/x` expression prints the value in hexadecimal; with the `&` operator, you can print the address within the virtual address space.
+`/x` 表达式以十六进制打印值；使用 `&` 运算符，您可以打印虚拟地址空间内的地址。
 
-If you are not sure of a certain symbol's data type, you can find it with `whatis` :
+如果您不确定某个符号的数据类型，可以使用 `whatis` 来查明。
 
 ![whatis output][29]
 
-If you want to list all variables that are available in the scope of the `main` function, type `info scope main` :
+如果您要列出 `main` 函数范围内可用的所有变量，请输入`info scope main` :
 
 ![info scope main output][30]
 
-The `DW_OP_fbreg` values refer to the stack offset based on the current subroutine.
+`DW_OP_fbreg` 值是指基于当前子程序的堆栈偏移量。
 
-Alternatively, if you are already inside a function and want to list all variables on the current stack frame, you can use `info locals` :
+或者，如果您已经在一个函数中并且想要列出当前堆栈帧上的所有变量，您可以使用 `info locals` :
 
 ![info locals output][31]
 
-Check the manual to learn more about [examining symbols][32].
+查看手册以了解更多关于 [examining symbols][32].
 
-### Attach to a running process
+### 调试正在运行的进程
 
-The command `gdb attach <process-id>` allows you to attach to an already running process by specifying the process ID (PID). Luckily, the `coredump` program prints its current PID to the screen, so you don't have to manually find it with [ps][33] or [top][34].
+`gdb attach <process-id>`命令允许您通过指定进程ID（PID）调试已经在运行的进程。幸运的是，`coredump` 程序将其当前 PID 打印到屏幕上，因此您不必使用 [ps][33] 或 [top][34] 手动查找PID。
 
-Start an instance of the coredump application:
+启动 coredump 应用程序的一个实例：
 
 ```
 ./coredump
@@ -280,50 +277,50 @@ Start an instance of the coredump application:
 
 ![coredump application][35]
 
-The operating system gives the PID `2849`. Open a separate console window, move to the coredump application's source directory, and attach GDB:
-
+操作系统显示PID为 `2849`。打开一个单独的控制台窗口，移动到 coredump 应用程序的根目录，然后调试GDB：
 ```
 gdb attach 2849
 ```
 
 ![attach GDB to coredump][36]
 
-GDB immediately stops the execution when you attach it. Type `layout src` and `backtrace` to examine the call stack:
+当你调试 GDB 时，GDB会立即停止运行。输入 `layout src` 和 `backtrace` 来检查调用堆栈：
 
 ![layout src and backtrace output][37]
 
-The output shows the process interrupted while executing the `std::this_thread::sleep_for<...>(...)` function that was called in line 92 of `main.cpp`.
+输出显示在`main.cpp`第92行运行 `std::this_thread::sleep_for<...>(. ..) `函数时进程中断。
 
-As soon as you quit GDB, the process will continue running.
+只要您退出 GDB，该进程将继续运行。
 
-You can find more information about [attaching to a running process][38] in the GDB manual.
+您可以在 GDB 手册中找到有关 [attaching to a running process][38] 的更多信息。
 
-#### Move through the stack
+#### 在堆栈中移动
 
-Return to the program by using `up` two times to move up in the stack to `main.cpp` :
+在命令窗口，输入`up` 两次可以在堆栈中向上移动到 `main.cpp` :
 
 ![moving up the stack to main.cpp][39]
 
-Usually, the compiler will create a subroutine for each function or method. Each subroutine has its own stack frame, so moving upwards in the stackframe means moving upwards in the callstack.
+通常，编译器将为每个函数或方法创建一个子程序。每个子程序都有自己的栈帧，所以在栈帧中向上移动意味着在调用栈中向上移动。
 
-You can find out more about [stack evaluation][40] in the manual.
+您可以在手册中找到有关 [stack evaluation][40] 的更多信息。
 
-#### Specify the source files
+#### 指定源文件
 
-When attaching to an already running process, GDB will look for the source files in the current working directory. Alternatively, you can specify the source directories manually with the [directory command][41].
+当调试一个已经在运行的进程时，GDB 将在当前工作目录中寻找源文件。您也可以使用 [directory command][41] 手动指定源目录。
 
-### Evaluate dump files
+### 评估dump文件
 
-Read [Creating and debugging Linux dump files][42] for information about this topic.
+阅读 [Creating and debugging Linux dump files][42] 了解有关此主题的信息。
 
-TL;DR:
+参考文章太长，没看的看下文:
 
-1. I assume you're working with a recent version of Fedora
-2. Invoke coredump with the c1 switch: `coredump -c1`
-3. Load the latest dumpfile with GDB: `coredumpctl debug`
-4. Open TUI mode and enter `layout src`
+1. 假设您使用的是最新版本的 Fedora
+2. 使用 c1 开关调用 coredump：`coredump -c1`
 
 ![Crash meme][44]
+
+3. 使用 GDB 加载最新的dump文件：`coredumpctl debug`
+4. 打开 TUI 模式并输入 `layout src`
 
 ![coredump output][45]
 
