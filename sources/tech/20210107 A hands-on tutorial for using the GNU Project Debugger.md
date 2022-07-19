@@ -17,7 +17,7 @@ GNU 调试器是一个强大的发现程序缺陷的工具。
 
 如果您是一个想在您的软件增加某些功能的程序员，您首先考虑实现它的方法：例如写一个method、定义一个class或者创建新的数据类型。然后您用一种编译器或解释器可以理解的编程语言来实现这个功能。但是，如果您觉得您所有代码都正确，但是编译器或解释器依然无法理解您的指令怎么办？如果软件大多数情况下都运行良好，但是在某些环境下出现缺陷怎么办？这种情况下，您得知道如何正确使用调试器找到问题的根源。
 
-GNU调试器([GDB][2]) 是一个发现项目缺陷的强大工具。它通过追踪程序执行过程中发生了什么来帮助您发现程序错误或崩溃的原因。
+GNU调试器([GDB][2]) 是一个发现项目缺陷的强大工具。它通过追踪程序运行过程中发生了什么来帮助您发现程序错误或崩溃的原因。
 本文是GDB使用的基础教程。请跟随示例，打开命令行并克隆此仓库：
 ```
 git clone https://github.com/hANSIc99/core_dump_example.git
@@ -73,50 +73,52 @@ CFLAGS =-Wall -Werror -std=c++11 -g
 * 语言: C++
 * 编译器（版本、调优、架构、调试标志、语言标准)
 * 调试格式: [DWARF 2][8]
-* 没有预处理器宏指令（使用 GCC 编译时，宏仅在 [使用 `-g3` 标志编译][9] 时可用）。No preprocessor macro information available (when compiled with GCC, macros are available only when [compiled with the `-g3` flag][9]).
+* 没有预处理器宏指令（使用 GCC 编译时，宏仅在 [使用 `-g3` 标志编译][9] 时可用）。
 
 
-The command `info shared` prints a list of dynamic libraries with their addresses in the virtual address space that was loaded on startup so that the program will execute:
+
+ `info shared`命令在启动时加载的虚拟地址空间中打印动态库列表及动态库地址，以便程序运行：
 
 ![gdb info shared output][10]
 
-If you want to learn about library handling in Linux, see my article [How to handle dynamic and static libraries in Linux][11].
+如果你想了解Linux库处理，请参见我的文章 [How to handle dynamic and static libraries in Linux][11].
 
-### Debug the program
+### 调试程序
 
-You may have noticed that you can start the program inside GDB with the `run` command. The `run` command accepts command-line arguments like you would use to start the program from the console. The `-c1` switch will cause the program to crash on stage 4. To run the program from the beginning, you don't have to quit GDB; simply use the `run` command again. Without the `-c1` switch, the program executes an infinite loop. You would have to stop it with **Ctrl+C**.
+您可能已经注意到，您可以在 GDB 中使用 `run` 命令启动程序。 `run` 命令接受命令行参数，就像从控制台启动程序一样。 `-c1` 开关会导致程序在第 4 阶段崩溃。要从头开始运行程序，您不用退出 GDB，只需再次运行'run'命令。如果没有 `-c1` 开关，程序将陷入死循环，您必须使用 **Ctrl+C** 来结束死循环。
 
 ![gdb output stopped by sigint][12]
 
-You can also execute a program step by step. In C/C++, the entry point is the `main` function. Use the command `list main` to open the part of the source code that shows the `main` function:
+您也可以一步一步运行程序。在 C/C++ 中，入口是 `main` 函数。使用 `list main`命令打开显示部分 `main` 函数的源代码：
 
 ![gdb output list main][13]
 
-The `main` function is on line 33, so add a breakpoint there by typing `break 33` :
+`main` 函数在第 33 行，因此输入`break 33` 在33行添加断点:
 
 ![gdb output breakpoint added][14]
 
-Run the program by typing `run`. As expected, the program stops at the `main` function. Type `layout src` to show the source code in parallel:
+输入 `run` 运行程序。正如预期的那样，程序在 `main` 函数处停止。输入 `layout src` 并行查看源代码：
 
 ![gdb output break at main][15]
 
-You are now in GDB's text user interface (TUI) mode. Use the Up and Down arrow keys to scroll through the source code.
+您现在处于 GDB 的文本用户界面 (TUI) 模式。使用键盘向上和向下箭头键滚动查看源代码。
 
+GDB 高亮显示当前行。通过输入 `next` (n)，您可以输入 `next` (n)命令逐行查看命令。如果您一直输入`next` (n)命令，GBD 会一直高亮显示到最后一个命令。要逐行运行代码，只需按 **Enter** 键。
 GDB highlights the line to be executed. By typing `next` (n), you can execute the commands line by line. GBD executes the last command if you don't specify a new one. To step through the code, just hit the **Enter** key.
 
-From time to time, you will notice that TUI's output gets a bit corrupted:
+有时，您会发现文本的输出有点显示不正常：
 
 ![gdb output corrupted][16]
 
-If this happens, press **Ctrl+L** to reset the screen.
+如果发生这种情况，请按 **Ctrl+L** 重置屏幕。
 
-Use **Ctrl+X+A** to enter and leave TUI mode at will. You can find [other key bindings][17] in the manual.
+使用**Ctrl+X+A**随意进入和退出TUI模式。您可以在手册中找到[other key bindings][17] 。
 
-To quit GDB, simply type `quit`.
+要退出 GDB，只需输入 `quit`。
 
-### Watchpoints
+###设置观察点
 
-The heart of this example program consists of a state machine running in an infinite loop. The variable `n_state` is a simple enum that determines the current state:
+这个示例程序的核心是一个在无限循环中运行的状态机。 `n_state`变量枚举了当前所有状态：
 
 ```
 while(true){
@@ -136,25 +138,25 @@ while(true){
 }
 ```
 
-You want to stop the program when `n_state` is set to the value `State_5`. To do so, stop the program at the `main` function and set a watchpoint for `n_state` :
+如果您想`n_state` 为 `State_5` 值时停止程序。为此，请在 `main` 函数处停止程序并为 `n_state` 设置观察点：
 
 ```
 watch n_state == State_5
 ```
 
-Setting watchpoints with the variable name works only if the desired variable is available in the current context.
+只有当所需的变量在当前上下文中可用时，使用变量名设置观察点才有效。
 
-When you continue the program's execution by typing `continue`, you should get output like:
+当您输入 `continue` 继续运行程序时，您会得到如下输出：
 
 ![gdb output stop on watchpoint_1][18]
 
-If you continue the execution, GDB will stop when the watchpoint expression evaluates to `false` :
+如果您继续运行程序，当观察点表达式评估为 `false` 时 GDB 将停止：
 
 ![gdb output stop on watchpoint_2][19]
 
-You can specify watchpoints for general value changes, specific values, and read or write access.
+您可以自定义观察点的一般值、特定值，读取或写入权限。You can specify watchpoints for general value changes, specific values, and read or write access.
 
-### Altering breakpoints and watchpoints
+### 更改断点和观察点
 
 Type `info watchpoints` to print a list of previously set watchpoints:
 
