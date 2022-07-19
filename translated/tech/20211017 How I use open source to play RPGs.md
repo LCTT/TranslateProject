@@ -33,52 +33,51 @@ CC BY-SA Seth Kenlon
 
 世界各地都有公共实例，所以下载 Mumble 客户端后，你可以加入其中任何一个开放的实例，并使用它来在线运行游戏。有一个按键通话设置，你可以用此来消除背景噪音，当你的其他家庭成员在进行其它工作而不想被你的桌面会话打扰时，这个功能将会非常实用。
 
-还有一个文本聊天客户端。我的游戏组通常使用它来发布与游戏相关的链接，但你也可以将其用于无关的聊天，尝试保持口语游戏的主题。
+还有一个文本聊天客户端。我的游戏组通常使用它来发布与游戏相关的链接，但你也可以将其用于离题的交谈，试图让口头游戏保持主题。
 
-
-If your players prefer facial cues or are just used to video chat web apps, then [Jitsi][8] is an excellent substitute for in-person gatherings around a table. Jitsi is mostly like every other video chat application you've ever used, except possibly even easier. You can set up a room, invite friends, keep out strangers, and play for hours. Muting and going off-camera are intuitive, the interface is attractive, and new features are being developed and introduced regularly.
+如果你的玩家更喜欢面部表情，或者只是习惯于视频聊天网页应用。那么 [Jitsi][8] 是面对面围坐在桌子旁聚会的绝佳替代品。Jitsi 和你曾经使用过的其它视频聊天软件几乎一样，甚至更简单。你可以设置一个房间，邀请朋友，将陌生人拒之门外，并玩上几个小时。静音和离机很直观，界面很吸引人，并且定期开发和推出新功能。
 
 ![Jitsi][9]
 
 CC BY-SA Seth Kenlon
 
-Both Mumble and Jitsi have clients for both desktop and mobiles, so anyone can play no matter what device they're on.
+Mumble 和 Jitsi 都有适用于台式机和移动设备的客户端，因此任何人都可以在任何设备上使用。
 
-### Character sheets
+### 字符表
 
-I've already posted about my [digital character sheet][10] solutions, but any RPG player knows that there's more to managing a character than just stats.
+我已经发布了我的[数字角色表][10]解决方案，但任何 RPG 玩家都知道管理角色不仅仅是统计数据。
 
-During a game online that spanned several sessions, I found there was a lot of downtime between games. It occurred to me that, while I found it unreasonable to demand that my players calculate encumbrance during a live pen-and-paper game, it's pretty easy to request them to track encumbrance when everything's digital.
+在跨越多个会话的在线游戏中，我发现游戏之间有很多的停机时间。我突然想到，虽然我发现要求我的玩家在现场纸笔游戏中计算负担是不合理的，但当一切都是数字化时，要求他们跟踪负担很容易。
 
-There are plenty of spreadsheets available online, but the open source option is [Ethercalc][11]. With instances all over the world, it's easy to find a free Ethercalc host. Alternately, you can use Podman or Docker to easily install and run your own instance.
+网上有很多可用的电子表格，但开源选项是 [Ethercalc][11]。由于实例遍布世界各地，因此很容易找到免费的 Ethercalc 主机。或者，你可以使用 Podman 或者 Docker 轻松安装和运行你自己的实例。
 
 ![Ethercalc spreadsheet of inventory][12]
 
 Seth Kenlon, CC-BY-SA 4.0
 
-Ethercalc provides the essentials: a shared ledger so players can track the items their party is carrying (and who's holding one at any given time), the weight of each item, and the value. Items get entered as the party collects loot during the game, so they know when they're too burdened to pick up something new.
+Etherclac 提供了一些基本要素：一个共享的账本，这样玩家就可以跟踪他们的团队所携带的物品（以及在任何给定的时间持有物品的人）、每件物品的重量和价值。当队伍在游戏过程中收集战利品时，物品就会进入，所以他们知道什么自己何时会因为负担过重而无法获得新内容。
 
-Between sessions, the shared spreadsheet can be referenced and organized so that the PCs know what to sell or stuff into a bag of holding or what they can safely drop when better loot presents itself next session.
+在会话之间，可以引用和组织共享的电子表格，以便 PC 知道要出售什么或将什么东西放入一个袋子中，或者当更好的战利品出现在下一个会话时，他们可以安全地丢弃什么。
 
-### Maps
+### 地图
 
-Mythic Table is an open source shared mapping system for tabletop games. That means you can load an image to serve as the map of your game and move digital tokens on the map to represent where players' characters are located.
+Mythic Table 是一款开源的桌面游戏共享地图系统。这意味着你可以加载图片作为游戏地图，并在地图上移动数字标记以表示玩家角色所在的位置。
 
-Since [last I wrote about Mythic Table][13], it's run a successful Kickstarter campaign to ensure its continued development. It's also gained several new features, most notably a "fog of war" feature that allows the dungeon master to blank out the map and reveal only the parts that players have explored.
+自从[上次我写了关于 Mythic Table][13]以来，它已经成功地在 Kickstarter 上进行了一次活动，以确保它的持续发展。它还获得了一些新功能，其中最引人注目的是“战争迷雾”功能，它允许地下城主将地图留白并仅显示玩家探索过的部分。
 
 ![A dungeon map rendered by Mythic Table and user interface choices for chat, maps, and characters][14]
 
 Seth Kenlon, CC-BY-SA 4.0
 
-I've been running two games on Mythic Table for the past few months, and it's been an excellent and straightforward map system. Conveniently, it also features a digital dice roller, so if your players lack dice or you prefer to roll dice in the open, you have a shared dice pool.
+在过去的几个月里，我一直在 Mythic Table 上运行两款游戏，这是一款优秀且直观的地图系统。它还提供了一个数字掷骰子器，所以如果你的玩家没有骰子，或者你更喜欢在公开场合掷骰子，你就有了一个共享的骰子池。
 
-You can try Mythic Table at [mythictable.com][15] or visit their code repository on [Github][16].
+你可以在 [mythictable.com][15] 上试用 Mythic Table，或者访问他们在 [Github][16] 上的代码库。
 
-### Open gaming on open source
+### 在开源上开放游戏
 
-The open source tools I use are universal, so they work with whatever game system you decide to play. Because they're all open source, they can be used online by all your players regardless of what OS they use, and they can all be self-hosted.
+我使用的开源工具是通用的，因为它们适用于你决定玩的任何游戏系统。因为它们都是开源的，所以无论你的玩家使用什么操作系统，他们都可以在线使用，并且它们都可以自托管。
 
-If you're a programmer as well as a gamer, visit their Git repositories and see if there's anything you can contribute. If you're a gamer or a gamemaster, try the tools out the next time you sit down at a digital game table. You might be surprised at just how few online accounts you actually need to have to use some of the best applications available for gaming.
+如果你既是程序员又是游戏玩家，请访问他们的 Git 代码仓库，看看是否有任何你可以贡献的东西。如果你是游戏玩家或者游戏大师，请在下次坐在数字游戏桌前尝试使用这些工具。你可能会惊讶于你只需要很少的在线账户就可以使用一些可用于游戏的最佳应用程序。
 
 --------------------------------------------------------------------------------
 
@@ -86,7 +85,7 @@ via: https://opensource.com/article/21/10/open-source-rpgs
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/perfiffer)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
