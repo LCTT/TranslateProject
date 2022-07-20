@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/ssh-windows)
 [#]: author: (Stephan Avenwedde https://opensource.com/users/hansic99)
 [#]: collector: (lujun9972)
-[#]: translator: (yjacks)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -203,7 +203,7 @@ via: https://opensource.com/article/21/6/ssh-windows
 
 作者：[Stephan Avenwedde][a]
 选题：[lujun9972][b]
-译者：[yjacks](https://github.com/yjacks)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
