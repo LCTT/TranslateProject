@@ -349,32 +349,31 @@ CFLAGS =-Wall -Werror -std=c++11 #-g
 
 ![info file output][49]
 
-入口点 `.text` 开头，其中包含实际的操作码。要在入口点添加断点，输入 `break *0x401110` 然后输入 `run` 开始执行：
-The entry point corresponds with the beginning of the `.text` area, which contains the actual opcode. To add a breakpoint at the entry point, type `break *0x401110` then start execution by typing `run` :
+`.text`区段始终从入口点开始，其中包含实际的操作码。要在入口点添加断点，输入 `break *0x401110` 然后输入 `run` 开始运行程序：
 
 ![breakpoint at the entry point][50]
 
-To set up a breakpoint at a certain address, specify it with the dereferencing operator `*`.
+要在某个地址设置断点，使用取消引用运算符`*`指定地址。
 
-#### Choose the disassembler flavor
+#### 选择反汇编程序风格
 
-Before digging deeper into assembly, you can choose which [assembly flavor][51] to use. GDB's default is AT&T, but I prefer the Intel syntax. Change it with:
+在深入研究汇编之前，您可以选择要使用的 [assembly flavor][51] 。 GDB 默认是 AT&T，但我更喜欢 Intel 语法。变更风格如下：
 
 ```
 set disassembly-flavor intel
 ```
-
 ![changing assembly flavor][52]
 
-Now open the assembly and register the window by typing `layout asm` and `layout reg`. You should now see output like this:
+现在输入 `layout asm` 调出汇编代码窗口，输入 `layout reg` 调出寄存器窗口。您现在应该看到如下输出：
 
 ![layout asm and layout reg output][53]
 
-#### Save configuration files
+#### 保存配置文件
 
+尽管您已经输入了许多命令，但实际上还没有开始调试。如果您正在大量调试应用程序或尝试解决逆向工程的难题，则将 GDB 特定设置保存在文件中会很有用。
 Although you have already entered many commands, you haven't actually started debugging. If you are heavily debugging an application or trying to solve a reverse-engineering challenge, it can be useful to save your GDB-specific settings in a file.
 
-The [config file gdbinit][54] in this project's GitHub repository contains the recently used commands:
+该项目的 GitHub 存储库中的 [config file gdbinit][54] 包含最近使用的命令：
 
 ```
 set disassembly-flavor intel
@@ -385,49 +384,52 @@ layout asm
 layout reg
 ```
 
-The `set write on` command enables you to modify the binary during execution.
+`set write on` 命令使您能够在程序运行期间修改二进制文件。
 
-Quit GDB and reopen it with the configuration file: `gdb -x gdbinit coredump`.
+退出 GDB 并使用配置文件重新启动 GDB ： `gdb -x gdbinit coredump`
 
-#### Read instructions
+#### Read instructions阅读指令
 
-With the `c2` switch applied, the program will crash. The program stops at the entry function, so you have to write `continue` to proceed with execution:
+应用 `c2` 开关后，程序将崩溃。程序在入口函数处停止，因此您必须编写 `continue` 才能继续运行：
 
 ![continuing execution after crash][55]
 
-The `idiv` instruction performs an integer division with the dividend in the `RAX` register and the divisor specified as an argument. The quotient is loaded into the `RAX` register, and the remainder is loaded into `RDX`.
+`idiv` 指令进行整数除法运算： `RAX` 寄存器中为被除数，指定参数为除数。商被加载到 `RAX` 寄存器中，余数被加载到 `RDX` 中。
 
-From the register overview, you can see the `RAX` contains *5*, so you have to find out which value is stored on the stack at position `RBP-0x4`.
+从寄存器角度，您可以看到 `RAX` 包含 *5*，因此您必须找出存储堆栈中位置为 `RBP-0x4` 的值。
 
-#### Read memory
+#### 读取内存
 
-To read raw memory content, you must specify a few more parameters than for reading symbols. When you scroll up a bit in the assembly output, you can see the division of the stack:
+要读取原始内存内容，您必须指定比读取符号更多的参数。在汇编输出中向上滚动一点，可以看到堆栈的划分：
 
 ![stack division output][56]
 
-You're most interested in the value of `rbp-0x4` because this is the position where the argument for `idiv` is stored. From the screenshot, you can see that the next variable is located at `rbp-0x8`, so the variable at `rbp-0x4` is 4 bytes wide.
+您最感兴趣的应该是 `rbp-0x4` 的值，因为它是 `idiv` 的存储参数。您可以从截图中看到`rbp-0x8`位置的下一个变量，所以`rbp-0x4`位置的变量是4字节宽。
 
-In GDB, you can use the `x` command to *examine* any memory content:
+在 GDB 中，您可以使用 `x` 命令*检查*任何内存内容：
 
-> `x/` < optional parameter `n` `f` `u` > < memory address `addr` >
 
-Optional parameters:
+> `x/` < 可选参数 `n` `f` `u` > < 内存地址 `addr` >
 
-* n: Repeat count (default: 1) refers to the unit size
-* f: Format specifier, like in [printf][57]
-* u: Unit size
-  * b: `b`ytes
-h: `h`alf `w`ords (2 bytes)
-w: word (4 bytes)(default)
-  * g: `g`iant word (8 bytes)
+可选参数：
 
-To print out the value at `rbp-0x4`, type `x/u $rbp-4` :
+* n: 单元大小的重复计数（默认值：1）
+* f：格式说明符，如 [printf][57]
+* u：单元大小
+  * b：字节
+  * h：2个字节
+  * w: 4个字节(默认)
+  * g: 8个字节
+
+要打印 `rbp-0x4` 的值，请输入 `x/u $rbp-4` :
 
 ![print value][58]
 
-If you keep this pattern in mind, it's straightforward to examine the memory. Check the [examining memory][59] section in the manual.
+如果您能记住这种模式，则可以直接检查内存。检查手册中的 [examining memory][59] 部分。
 
-#### Manipulate the assembly
+#### 操作程序集
+
+子程序 `zeroDivide()` 中发生算术异常。当你用向上箭头键向上滚动一点时，您会找到下面信息：
 
 The arithmetic exception happened in the subroutine `zeroDivide()`. When you scroll a bit upward with the Up arrow key, you can find this pattern:
 
@@ -435,6 +437,17 @@ The arithmetic exception happened in the subroutine `zeroDivide()`. When you scr
 0x401211 <_Z10zeroDividev>              push   rbp
 0x401212 <_Z10zeroDividev+1>            mov    rbp,rsp
 ```
+
+这被称为 [function prologue][60 ]:
+
+1. 调用函数的基指针（rbp）存放在栈上
+2. 栈指针（rsp）的值被加载到基指针（rbp）
+
+完全跳过这个子程序。您可以使用 `backtrace` 检查调用堆栈。你在 `main` 函数之前只有一个堆栈帧，所以你可以用一个 `up` 回到 `main` :
+
+![Callstack assembly][61]
+
+在你的 `main` 函数中，你可以找到这种模式:
 
 This is called the [function prologue][60]:
 
