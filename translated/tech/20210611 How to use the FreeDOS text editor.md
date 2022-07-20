@@ -3,74 +3,59 @@
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
 [#]: translator: (yjacks)
-[#]: reviewer: ( )
+[#]: reviewer: (wxy)
 [#]: publisher: ( )
 [#]: url: ( )
 
-如何使用FreeDOS Edit
+如何使用 FreeDOS Edit
 ======
-FreeDOS提供了一个叫做 FreeDOS Edit 的用户友好的文本编辑器
-![Person using a laptop][1]
 
-在任何操作系统中，编辑文件都是一项常有的任务。当你想去做一个某事的笔记、写封信给朋友或升级一个系统配置——你需要一个文本编辑器。FreeFOS提供了一个用户友好的文本编辑器（也许你难以想象）叫做”FreeDOS Edit。“
+> FreeDOS 提供了一个叫做 FreeDOS Edit 的用户友好的文本编辑器。
+
+![](https://img.linux.net.cn/data/attachment/album/202207/20/173027t6ctk5cwf9u988p9.jpg)
+
+在任何操作系统中，编辑文件都是一项常有的任务。当你想去做一个某事的笔记、写封信给朋友或升级一个系统配置 —— 你需要一个文本编辑器。FreeDOS 提供了一个用户友好的文本编辑器（也许没啥想象力）叫做 “FreeDOS Edit”。
+
 ### 编辑文件
 
-最简单的启用 FreeDOS Edit 的方式就只是`EDIT`。它提供一个空的编辑器窗口。图案背景显示为一个空的“桌面”——提醒您没有编辑任何文件。
+最简单的启用 FreeDOS Edit 的方式就就是输入 `EDIT`。它提供一个空的编辑器窗口。图案背景显示为一个空的“桌面”——提醒你没有编辑任何文件。
 
-![FreeDOS Edit][2]
+![FreeDOS Edit：未加载任何文件][2]
 
-FreeDOS Edit未加载任何文件
-Jim Hall, CC-BY SA 4.0
+就像多数 DOS 应用程序一样，你可以按下你键盘上的 `Alt` 键来访问 Edit 的菜单。这就激活了这个菜单。在你按下 `Alt` 后，Edit 将切换到“菜单”访问方式，并高亮 “<ruby>文件<rt>File</rt></ruby>” 菜单。如果你想要访问菜单栏上的一个不同的菜单，可以使用左右方向键。按向下的方向键并按下回车键来“进入”菜单。
 
-就像多数 DOS 程式，你可以轻击你键盘上的 Alt 键一次来启动菜单。这将激活这个菜单。在你轻击 Alt 后，编辑器将转为“menu”并将高亮“File”菜单。如果你想要启用一个别的菜单从菜单栏上，使用左与右方向键。按下下方向键或击打回车键去“进入”菜单。
+![高亮菜单][3]
 
-![FreeDOS Edit menu][3]
+你注意到所有菜单标题的第一个字母是不同的颜色么？这种高亮字母显示了一种快捷方式。例如，“<ruby>文件<rt>File</rt></ruby>”菜单的“F”高亮为红色。所以你可以按下 `Alt+F`（`Alt` 和 `F` 同时按下），Edit 会显示“<ruby>文件<rt>File</rt></ruby>”菜单。
 
-高亮菜单
-Jim Hall, CC-BY SA 4.0
+![文件菜单][4]
 
-你注意到所有菜单标题的第一个字母是不同的颜色么？高亮字母显示了一条捷径。例如，"F"在"File"菜单高亮为红色。所以你可以通过按下 Alt+F (Alt 和 F 在同一个瞬间），编辑器会显示“File”菜单。
+你可以使用“<ruby>文件<rt>File</rt></ruby>”菜单来开始一个新的（空）文件，或打开一个存在的文件。让我们开始一个新文件，使用方向键移动到“<ruby>新建<rt>New</rt></ruby>“然后按下回车键。你也可以用 `Ctrl+N` （`Ctrl` 和 `N` 同时按下）打开一个新文件。
 
-![File menu][4]
+![编辑一个新的文件][5]
 
-文件菜单
-Jim Hall, CC-BY SA 4.0
+此后，编辑文件应该非常简单。大多数熟悉的快捷键都可以在 FreeDOS Edit 中使用：`Ctrl+C` 复制文本，`Ctrl+X` 剪贴文本，和 `Ctrl+V` 将复制的或剪贴的文本粘贴到新的地方。如果你需要在一个长文档中寻找一个特殊文本，按下 `Ctrl+F`。保存你的工作成果，请使用 `Ctrl+S` 以将变更提交到硬盘。
 
-你可以使用“File”菜单来原则开始一个新（空）文件，或打开一个存在的文件。让我们开始一个新文件使用方向键移动到“New“然后按下回车键。你也可以用 Ctrl+N （Ctrl 和 N 在相同的时间）启动一个新文件。
+### 在 Edit 中编程
 
-![new file][5]
+如果你是个程序员，你也许会发现扩展的 ASCII 表是一个有用的工具。DOS 系统支持“拓展的” ASCII字符集，通常被称之为“代码页 437”。0 到 127 的标准字符包括字母 A 到 Z（大写和小写）、数字和特殊字符，如标点符号。但是，从 128 到 255 的 DOS 拓展字符包括其它语言字符和“画线”元素。DOS 程序员有时需要使用这些拓展 ASCII 字符，所以 FreeDOS Edit 可以很容易地查看所有 ASCII 码和它们的相关字符的表格。
 
-编辑一个新的文件
-Jim Hall, CC-BY SA 4.0
+要查看这个 ASCII 表，请使用“<ruby>工具<rt>Utilities</rt></ruby>”菜单，选择“<ruby>ASCII 表<rt>ASCII Table</rt></ruby>”菜单项，这将显示一个包含该表格的窗口。
 
-在那之后编辑文件应该非常简单。大多快捷键都存在于 FreeDOS 中。编辑器：Ctrl+C以复制文本，Ctrl+X 以剪贴文本，和 Ctrl+V 以粘贴复制的或剪贴的文本到新的地方。如果你需要寻找一个特殊文本在一个长文档中，按 Ctrl+F。保存你的工作成果，使用 Ctrl+S 以推送变更回到硬碟。
+![在工具菜单找到 ASCII 表][6]
 
-### 编辑器中的编程
+沿着左边，这张表显示十六进制值“00”到“F0”，顶部展示了单一值“0”到“F”。这些为每个字符的十六进制代码提供了一个快速参考。例如，第一行（00）和第一列（0）中的项目具有十六进制值 00 + 0，即0x00（“NULL”值）。而第五行（40）和第二列（1）中的字符，其数值为 40 + 1，即 0x41（字母 “A”）。
 
-如果你是个程序员，你也许需要寻找 ASCII 拓展表——一个有用的拓展。DOS 系统支援一个”拓展的“ASCII字符集通常援引自“code page 437.”。标准的字符包含字母 A 到 Z(大写与小写）、数字和特殊字符像是标点符号。但是，DOS 拓展字符自编码 128 到编码 255 包含拉丁语言字符和“行绘画”元素。DOS 程序员有时需要使用这些拓展 ASCII 字符，所以 FreeDOS Edit 将它变得简单去检视一个表表示所有 ASCII 码和它们的相关字符。
+![ASCII 表提供一个便于参考的扩展字符表][7]
 
-查看 ASCII 表，请使用“工具”菜单，选择“ASCII表”选项，这将显示一个窗口包含一个表。
+当你在表格内移动光标高亮不同的字符时，你会看到表格底部的值发生变化，展示了字符的十进制、十六进制和八进制编码。例如，移动光标以高亮在 C0 行和第 5 列的“行交叉”字符，显示这个扩展字符的代码为 197（十进制）、0xc5（十六进制）和 305（八进制）。在一个程序中，你可以通过输入十六进制值 0xc5 或八进制“转义代码” \305 来引用这个扩展字符。
 
-![utilities menu - ascii table][6]
+![“行交叉”字符是 197（十进制）、0xc5（十六进制）和 305（八进制）][8]
 
-找寻 ASCII 表在工具菜单
-Jim Hall, CC-BY SA 4.0
+请随意浏览 Edit 中的菜单，以发现其他不错的功能。例如，“<ruby>选项<rt>Options</rt></ruby>”菜单允许你更改 Edit 的行为和外观。如果你喜欢使用更密集的显示，可以使用“<ruby>显示<rt>Display</rt></ruby>”菜单（在“<ruby>选项<rt>Options</rt></ruby>”下）将 Edit
+ 设置为 25、43 或 50 行。你还可以强制 Edit 以单色（黑底白字）或反转模式（白底黑字）显示。
 
-沿着左边，这张表显示十六进制值"00"到"F0"，顶部展示值“0”到“F”。这提供一个快速的十六进制码参考予每个字符。例如，在第一行（00）和第一列（0）的东西为值 00+0，或者说 0x00（“NULL”值）。字符在第五行（40）和第二列（1）的值为40+1，或者说0x41（字母“A”）。
-
-![utilities menu - ascii table][7]
-
-ASCII 表提供一个易用的参考予扩展字符
-Jim Hall, CC-BY SA 4.0
-
-当你移动光标通过表去高亮不同的字符，你见到值在表的中间变化来展示字符的十进制、十六进制和八进制编码。例如，移动光标以高亮“线路交点”字符在C0行和列5展示拓展的字符值为 197（十进制）、0xc5（十六进制）和 305（八进制）。再一个程序中，你也许参考这些拓展字符以输入十六进值`0xc5`，或者十进制“转译码”`\305`。
-
-![ASCII 0xc5][8]
-
-“线路交点”字符是 197（十进制）、0xc5（十六进制）和 305（八进制）
-Jim Hall, CC-BY SA 4.0
-
-请随意浏览Edit中的菜单，以发现其他简洁的功能。例如，“选项”菜单允许您更改编辑的行为和外观。如果您喜欢使用更密集的显示，可以使用“显示”菜单（在“选项”下）将“编辑”设置为 25、43或 50 行。您还可以强制编辑以单色（黑底白字）或反转模式（白底白字）显示。
+（文内图片来自 Jim Hall，CC-BY SA 4.0）
 
 --------------------------------------------------------------------------------
 
@@ -79,7 +64,7 @@ via: https://opensource.com/article/21/6/freedos-text-editor
 作者：[Jim Hall][a]
 选题：[lujun9972][b]
 译者：[yjacks](https://github.com/yjacks)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -92,4 +77,4 @@ via: https://opensource.com/article/21/6/freedos-text-editor
 [5]: https://opensource.com/sites/default/files/uploads/edit-new.png (Editing a new file)
 [6]: https://opensource.com/sites/default/files/uploads/utilities-ascii.png (Find the ASCII Table in the Utilities menu)
 [7]: https://opensource.com/sites/default/files/uploads/ascii-table-0x00.png (The ASCII Table provides a handy reference for extended characters)
-[8]: https://opensource.com/sites/default/files/uploads/ascii-0xc5.png (The "line intersection" character is 197 (dec), 0xc5 (hex), and 305 (oct))
+[8]: https://opensource.com/sites/default/files/uploads/ascii-0xc5.png 
