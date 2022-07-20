@@ -50,7 +50,7 @@ $man date
 
 The redirection operator is really useful when you want to capture the output of a command in a file or redirect to a file.
 
-| - | - |
+| Command | Description |
 | :- | :- |
 | $ls -l /usr/bin >file | default stdout to file | 
 | $ls -l /usr/bin 2>file | redirects stderr to file | 
@@ -78,7 +78,7 @@ This creates a directory for 12 months from 2009 to 2011.
 
 An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer. This variable is a part of the environment in which a process runs.
 
-| - | - |
+| Command | Description |
 | :- | :- |
 | printenv | Print part of all of the environment | 
 | set | set shell options | 
@@ -89,7 +89,7 @@ An environment variable is a dynamic-named value that can affect the way running
 
 Network commands are very useful for troubleshooting issues on the network and to check the particular port connecting to the client.
 
-| - | - |
+| Command | Description |
 | :- | :- |
 | ping | Send ICMP packets | 
 | traceroute | Print route packets to a network | 
@@ -105,7 +105,7 @@ interface stats |
 
 Grep commands are useful to find the errors and debug the logs in the system. It is one of the powerful tools that shell has.
 
-| - | - |
+| Command | Description |
 | :- | :- |
 | grep -h ‘.zip’ file.list | . is any character | 
 | grep -h ‘^zip’ file.list | starts with zip | 
@@ -118,7 +118,7 @@ Grep commands are useful to find the errors and debug the logs in the system. It
 
 Here are some examples of quantifiers:
 
-| - | - |
+| Command | Description |
 | :- | :- |
 | ? | match element zero or one time | 
 | * | match an element zero or more times | 
@@ -129,7 +129,7 @@ Here are some examples of quantifiers:
 
 Text processing is another important task in the current IT world. Programmers and administrators can use the commands to dice, cut and process texts.
 
-| - | - |
+| Command | Description |
 | :- | :- |
 | cat -A $FILE | To find any CTRL character introduced | 
 | sort file1.txt file2.txt file3.txt > 
@@ -151,7 +151,7 @@ by numeric |
 
 In Linux, we can go back to our history of commands by either using simple commands or control options.
 
-| - | - |
+| Command | Description |
 | :- | :- |
 | clear | clears the screen | 
 | history | stores the history | 
