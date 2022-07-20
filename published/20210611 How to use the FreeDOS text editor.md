@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (yjacks)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-14847-1.html)
 
 如何使用 FreeDOS Edit
 ======
