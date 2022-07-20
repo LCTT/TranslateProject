@@ -101,7 +101,6 @@ CFLAGS =-Wall -Werror -std=c++11 -g
 您现在处于 GDB 的文本用户界面 (TUI) 模式。使用键盘向上和向下箭头键滚动查看源代码。
 
 GDB 高亮显示当前行。通过输入 `next` (n)，您可以输入 `next` (n)命令逐行查看命令。如果您一直输入`next` (n)命令，GBD 会一直高亮显示到最后一个命令。要逐行运行代码，只需按 **Enter** 键。
-GDB highlights the line to be executed. By typing `next` (n), you can execute the commands line by line. GBD executes the last command if you don't specify a new one. To step through the code, just hit the **Enter** key.
 
 有时，您会发现文本的输出有点显示不正常：
 
@@ -324,32 +323,33 @@ gdb attach 2849
 
 ![coredump output][45]
 
-The output of `backtrace` shows that the crash happened five stack frames away from `main.cpp`. Enter to jump directly to the faulty line of code in `main.cpp` :
+`backtrace` 的输出显示崩溃发生在距离 `main.cpp` 五个堆栈帧之外。回车直接跳转到`main.cpp`中的错误代码行:
 
 ![up 5 output][46]
 
-A look at the source code shows that the program tried to free a pointer that was not returned by a memory management function. This results in undefined behavior and caused the `SIGABRT`.
+看源码发现程序试图释放一个内存管理函数没有返回的指针。这会导致未定义的行为并引起“SIGABRT”。
 
-### Debug without symbols
+### 无符号调试
 
-If there are no sources available, things get very hard. I had my first experience with this when trying to solve reverse-engineering challenges. It is also useful to have some knowledge of [assembly language][47].
+如果没有可用的资源，事情会变得非常困难。当我在尝试解决逆向工程的挑战时，我第一次体验到了这一点。了解一些 [assembly language][47] 的知识会很有用。
 
-Check out how it works with this example.
+我们用例子看看它是如何运行的。
 
-Go to the source directory, open the **Makefile**, and edit line 9 like this:
+找到根目录，打开 **Makefile**，然后像下面一样编辑第 9 行：
 
 ```
 CFLAGS =-Wall -Werror -std=c++11 #-g
 ```
 
-To recompile the program, run `make clean`  followed by `make` and start GDB. The program no longer has any debugging symbols to lead the way through the source code.
+要重新编译程序，先运行 `make clean`  ，再运行 `make` ，最后启动 GDB。该程序不再有任何调试符号来引导源代码。
 
 ![no debugging symbols][48]
 
-The command `info file` reveals the memory areas and entry point of the binary:
+`info file`命令显示二进制文件的内存区域和入口点：
 
 ![info file output][49]
 
+入口点 `.text` 开头，其中包含实际的操作码。要在入口点添加断点，输入 `break *0x401110` 然后输入 `run` 开始执行：
 The entry point corresponds with the beginning of the `.text` area, which contains the actual opcode. To add a breakpoint at the entry point, type `break *0x401110` then start execution by typing `run` :
 
 ![breakpoint at the entry point][50]
