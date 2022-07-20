@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-discord-arch-manjaro/"
 [#]: author: "Anuj Sharma https://itsfoss.com/author/anuj/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
