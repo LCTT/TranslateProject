@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/build-a-smart-parking-system-for-a-metro-station/"
 [#]: author: "Dr Maheswari R. https://www.opensourceforu.com/author/dr-maheswari-r/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Maisie-x "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
