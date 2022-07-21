@@ -2,23 +2,25 @@
 [#]: via: "https://ostechnix.com/getting-started-with-docker/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: "MCGA"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: translator: "Yufei-Yan"
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14849-1.html"
 
-Docker 命令教程 | 在 Linux 中入门 Docker
+Linux 下的 Docker 入门教程
 ======
 
-初学者的 Docker 基本命令
+![](https://img.linux.net.cn/data/attachment/album/202207/21/101143uuwylyrrglzjfwj7.jpg)
 
-这篇详细的 Docker 教程覆盖了核心的 **Docker 命令**，比如，如何创建新容器，运行容器，删除容器等。另外，这篇教程也解释了如何从已有的容器构建你自己的 Docker 镜像，如何移除容器和镜像。言归正传，现在开始 Docker 的基本用法。
+> 面向初学者的 Docker 基本命令指南。
+
+这篇详细的 Docker 教程覆盖了核心的 **Docker 命令**，比如，如何创建新容器、运行容器、删除容器等。另外，这篇教程也解释了如何从已有的容器构建你自己的 Docker 镜像，如何移除容器和镜像。言归正传，现在开始 Docker 的基本用法。
 
 ### Docker 安装步骤
 
 大多数现代 Linux 操作系统都可以安装 Docker。如果还没安装过 Docker，请参考下面的步骤：
 
-* [在 AlmaLinux，CentOS，Rocky Linux 上安装 Docker Engine 和 Docker Compose][1]
+* [在 AlmaLinux、CentOS、Rocky Linux 上安装 Docker Engine 和 Docker Compose][1]
 * [如何在 Ubuntu 上安装 Docker 和 Docker Compose][2]
 
 ### 什么是 Docker 镜像和 Docker 容器？
@@ -29,29 +31,29 @@ Docker 镜像是一个描述容器如何运行的的文件，Docker 容器是 Do
 
 容器和主机上的其他文件是隔离的。
 
-当我们运行一个 Docker 容器的时候，它会使用一个被隔离出来的文件系统，这个文件系统是由一个 Docker 镜像提供的。Docker 镜像包含了运行应用程序所需要的一切东西 - 所有的依赖，配置，脚本，二进制文件等等。
+当我们运行一个 Docker 容器的时候，它会使用一个被隔离出来的文件系统，这个文件系统是由一个 Docker 镜像提供的。Docker 镜像包含了运行应用程序所需要的一切东西 - 所有的依赖、配置、脚本、二进制文件等等。
 
-镜像也包含容器所需要的其他配置项，比如说环境变量，运行的默认命令，以及其他元数据。
+镜像也包含容器所需要的其他配置项，比如说环境变量、默认运行的命令，以及其他元数据。
 
 ### Linux 下的 Docker 入门
 
-下面的所有步骤都已在 Ubuntu 22.04，20.04 以及 18.04 LTS 服务器版本中测试通过。后续小节中提供的步骤对于所有 Linux 平台都是通用的。比如，在基于 RHEL 的系统中（比如 AlmaLinux）可以运行相同的命令。
+下面的所有步骤都已在 Ubuntu 22.04、20.04 以及 18.04 LTS 服务器版本中测试通过。后续小节中提供的步骤对于所有 Linux 平台都是通用的。比如，在基于 RHEL 的系统中（比如 AlmaLinux）可以运行相同的命令。
 
-#### 1. 搜索 Docker 镜像
+#### 1、搜索 Docker 镜像
 
-我们可以从叫做 [Docker hub][3] 的 docker 官方库获得镜像，或者我们也可以制作自己的镜像。
+我们可以从叫做 [Docker hub][3] 的 Docker 官方库获得镜像，或者我们也可以制作自己的镜像。
 
-有些人可能不清楚，Docker hub 是一个线上的中心化仓库，所有的 Docker 用户在上面构建，测试，然后保存他们的 Docker 镜像。Docker hub 有数以万计的 Docker 镜像，而且这个数字还在每天增长。
+有些人可能不清楚，Docker hub 是一个线上的中心化仓库，Docker 用户们在上面构建、测试、然后保存他们的 Docker 镜像。Docker hub 有数以万计的 Docker 镜像，而且这个数字还在每天增长。
 
-你可以从命令行通过 **“docker search”** 命令搜索任意 Docker 镜像。
+你可以从命令行通过 ``docker search` 命令搜索任意 Docker 镜像。
 
-比如要搜索基于 **Alpine** Linux 的 docker 镜像，运行：
+比如要搜索基于 **Alpine** Linux 的 Docker 镜像，运行：
 
 ```
 $ sudo docker search alpine
 ```
 
-**输出结果：**
+输出结果：
 
 ![Search Docker Images][4]
 
@@ -67,11 +69,11 @@ $ sudo docker search ubuntu
 $ sudo docker search nginx
 ```
 
-Docker hub 有各种各样的镜像。你能在 Docker hub 上找到一切已构建好的 Docker 镜像，比如说操作系统，应用，或者多个应用的合体（比如 LAMP 栈）。
+Docker hub 有各种各样的镜像。你能在 Docker hub 上找到各种已构建好的 Docker 镜像，比如说操作系统、应用，或者多个应用的合体（比如 LAMP 栈）。
 
 如果你找的东西不在上面，你还可以构建一个镜像，然后通过 Docker hub 向其他人开放，或者只是自己用。
 
-#### 2. 下载 Docker 镜像
+#### 2、下载 Docker 镜像
 
 从终端运行下面的命令可以下载 Ubuntu OS 的 Docker 镜像：
 
@@ -81,7 +83,7 @@ $ sudo docker pull ubuntu
 
 上面的这个命令会从 Docker hub 下载最新的 Ubuntu 镜像。
 
-**输出结果：**
+输出结果：
 
 ```
 Using default tag: latest
@@ -108,9 +110,9 @@ $ sudo docker pull alpine
 
 ![Download Docker Images][5]
 
-#### 3. 列出 Docker 镜像
+#### 3、列出 Docker 镜像
 
-所有已下载的 Docker 镜像都保存在 **/var/lib/docker** 路径下。
+所有已下载的 Docker 镜像都保存在 `/var/lib/docker` 路径下。
 
 要查看所有已下载的 Docker 镜像，运行：
 
@@ -118,7 +120,7 @@ $ sudo docker pull alpine
 $ sudo docker images
 ```
 
-**输出结果：**
+输出结果：
 
 ```
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
@@ -129,32 +131,29 @@ alpine       latest    e66264b98777   5 weeks ago   5.52MB
 
 ![List Docker Images][6]
 
-从上面可以看出来，我已经下载了三个 Docker 镜像 - **Ubuntu** **lates**，**Ubuntu 20.04** 和 **Alpine Linux**。
+从上面可以看出来，我已经下载了三个 Docker 镜像 - Ubuntu latest、Ubuntu 20.04 和 Alpine Linux。
 
 现在，我们看一下接下来如何从下载的镜像启动或者运行容器。
 
-#### 4. 运行 Docker 容器
+#### 4、运行 Docker 容器
 
-有两种方法我们可以启动一个容器 - 使用 Docker **镜像** **TAG** 或者 **<ruby>镜像 ID<rt>Image ID</rt></ruby>**。
+有两种方法我们可以启动一个容器 - 使用 Docker 镜像的<ruby>标签<rt>TAG</rt></ruby> 或者 <ruby>镜像 ID<rt>Image ID</rt></ruby>。
 
-**TAG** 指的是一个特定的镜像快照，**<ruby>镜像 ID<rt>Image ID</rt></ruby>** 是那个镜像对应的唯一识别码。
+标签指的是一个特定的镜像快照，<ruby>镜像 ID<rt>Image ID</rt></ruby> 是那个镜像对应的唯一识别码。
 
 可以查看下面这个截图：
 
 ![Docker Image Tag and ID][7]
 
-从上面的解脱可以看到，<ruby>标签<rt>tags</rt></ruby>是 **latest** 和 **“20.04”**。
+从上面的解脱可以看到，标签是 `latest` 和 `20.04`。
 
-* 27941809078c is the IMAGE ID of Ubuntu latest Docker image,
-* 27941809078c 是 Ubuntu latest 的 Docker 镜像的<ruby>镜像 ID<rt>IMAGE ID</rt></ruby>，
-* 20fffa419e3a is the image id of Ubuntu 20.04 Docker image
-* 20fffa419e3a 是 Ubuntu 20.04 的 Docker 镜像的镜像 ID，
-* and `e66264b98777` is the image id of Alpine latest Docker image.
-* 而  `e66264b98777` 是 Alpine latest 的 Docker 镜像的镜像 ID。
+* `27941809078c` 是 Ubuntu latest 的 Docker 镜像的镜像 ID，
+* `20fffa419e3a` 是 Ubuntu 20.04 的 Docker 镜像的镜像 ID，
+* 而 `e66264b98777` 是 Alpine latest 的 Docker 镜像的镜像 ID。
 
-##### 4.1. 使用<ruby>标签<rt>Tag</rt></ruby>运行容器
+##### 4.1、使用标签运行容器
 
-下载选择好的 Docker 镜像后，运行下面的命令来启动 Docker 容器，并且通过它的<ruby>标签<rt>TAG</rt></ruby>进行连接。
+下载选择好的 Docker 镜像后，运行下面的命令来启动 Docker 容器，并且通过它的标签进行连接。
 
 ```
 $ sudo docker run -t -i ubuntu:latest /bin/bash
@@ -165,28 +164,29 @@ $ sudo docker run -t -i ubuntu:latest /bin/bash
 ```
 $ sudo docker run -it ubuntu:latest /bin/bash
 ```
+
 这里，
 
-* -t：在 Ubuntu 容器内分配一个伪终端。
-* -i：通过从容器获取一个便准输入（STDIN），允许我们创建一个可交互的连接。
-* ubuntu:latest：标签为“latest”的 Ubuntu docker 镜像。
-* /bin/bash：新容器的 BASH shell。这个是可选项。如果你不加 shell 的话，默认的 shell 会被分配给容器。
+* `-t`：在 Ubuntu 容器内分配一个伪终端。
+* `-i`：通过从容器获取一个标准输入（STDIN），允许我们创建一个可交互的连接。
+* `ubuntu:latest`：标签为 `latest` 的 Ubuntu Docker 镜像。
+* `/bin/bash`：新容器的 BASH shell。这个是可选项。如果你不加 shell 的话，会分配默认的 shell 给容器。
 
 启动容器后，会自动进入容器的 shell（命令行）：
 
 ![Run Containers Using Tag][8]
 
-基于最新 Ubuntu 镜像的容器现在已经启动了。所有的新容器都会被赋予一个名字和唯一的 ID。从上面的输出可以看到，那个 Ubuntu 容器的 ID 是 **2f2a5b826762**。一会儿我们会看到从哪找到容器的名字。
+基于最新 Ubuntu 镜像的容器现在已经启动了。所有的新容器都会被赋予一个名字和唯一的 ID。从上面的输出可以看到，那个 Ubuntu 容器的 ID 是 `2f2a5b826762`。一会儿我们会看到从哪找到容器的名字。
 
 现在就可以在容器里面工作了。当你完成容器内的工作后，你可以回到主机操作系统的终端（在我这个例子中，操作系统是 Ubuntu 22.04 LTS）而不需要关掉容器（客户机）。
 
-##### 4.2. 从运行中的容器中分离
+##### 4.2、从运行中的容器中脱离
 
-使用 **CTRL+P** 然后 **CTRL+Q** 就可以从运行中的容器分离（不需要关闭）。
+使用 `CTRL+P` 然后 `CTRL+Q` 就可以从运行中的容器脱离（不需要关闭）。
 
 现在，你就回到了你原来的主机的终端窗口。请注意，容器还在后台运行中，我们并没有关掉它。
 
-##### 4.3. 使用镜像 ID 运行容器
+##### 4.3、使用镜像 ID 运行容器
 
 另一种启动容器并且连接进去的方式是通过使用镜像 ID，像下面这样：
 
@@ -196,15 +196,15 @@ $ sudo docker run -it 20fffa419e3a /bin/bash
 
 这里，
 
-* 20fffa419e3a - 镜像 id
+* `20fffa419e3a` - 镜像 ID
 
-按 **CTRL+P** 然后 **CTRL+Q** 可以从当前容器中分离回到主机系统的终端。我们只是从容器中分离，但是没有让它停止。容器仍然在后台运行中。
+按 `CTRL+P` 然后 `CTRL+Q` 可以从当前容器中脱离回到主机系统的终端。我们只是从容器中脱离，但是没有让它停止。容器仍然在后台运行中。
 
-##### 4.4. 在分离模式中运行容器
+##### 4.4. 在脱离模式中运行容器
 
-在前面的小结中，我们启动了一个容器并且立刻连接了进去。然后当容器中的工作结束后，我们从容器中分离了出来
+在前面的小结中，我们启动了一个容器并且立刻连接了进去。然后当容器中的工作结束后，我们从容器中脱离了出来。
 
-你也可以在分离模式（不需要自动连接进去）中启动容器
+你也可以在脱离模式（不需要自动连接进去）中启动容器。
 
 在后台运行一个容器，输入命令：
 
@@ -212,13 +212,13 @@ $ sudo docker run -it 20fffa419e3a /bin/bash
 $ sudo docker run -it -d alpine:latest
 ```
 
-**输出结果：**
+输出结果：
 
 ```
 d74f2ceb5f3ad2dbddb0b26e372adb14efff91e75e7763418dbd12d1d227129d
 ```
 
-上面输出结果的前 12 字符代表的是容器的 ID
+上面输出结果的前 12 字符代表的是容器的 ID。
 
 通过 `docker ps` 命令，你可以验证容器是否在运行：
 
@@ -238,7 +238,7 @@ d74f2ceb5f3a   alpine:latest   "/bin/sh"   3 seconds ago   Up 2 seconds         
 $ sudo docker attach d74f2ceb5f3a
 ```
 
-#### 5. 查看运行中的容器
+#### 5、查看运行中的容器
 
 查看运行中的容器，运行下面的命令：
 
@@ -246,7 +246,7 @@ $ sudo docker attach d74f2ceb5f3a
 $ sudo docker ps
 ```
 
-**输出结果：**
+输出结果：
 
 ```
 CONTAINER ID   IMAGE           COMMAND       CREATED          STATUS          PORTS     NAMES
@@ -258,12 +258,12 @@ f7e04eed577e   20fffa419e3a    "/bin/bash"   6 minutes ago    Up 6 minutes      
 
 这里，
 
-* f7e04eed577e 是由镜像 “2f2a5b826762” 创建的 Ubuntu 容器的 ID。并且，“brave_mclean”是这个容器的名字。
-* 2f2a5b826762 是由镜像 “ubuntu：latest” 创建的 Ubuntu 容器的 ID。并且，“hungry_leavitt” 是这个容器的名字。
+* `f7e04eed577e` 是由镜像 `2f2a5b826762` 创建的 Ubuntu 容器的 ID。并且，`brave_mclean` 是这个容器的名字。
+* `2f2a5b826762` 是由镜像 “ubuntu：latest” 创建的 Ubuntu 容器的 ID。并且，`hungry_leavitt` 是这个容器的名字。
 
-当一个新容器被创建后，一个唯一的 ID 和名字会赋给它，这样我们就能通过它的 ID 和名字来连接它。
+当一个新容器被创建后，会赋给它一个唯一的 ID 和名字，这样我们就能通过它的 ID 和名字来连接它。
 
-**注意：** 请注意**容器 ID 和 Docker 镜像 ID 是不同的**。
+**注意：请注意容器 ID 和 Docker 镜像 ID 是不同的**。
 
 列出所有可用的（运行或者停止）容器，运行：
 
@@ -271,7 +271,7 @@ f7e04eed577e   20fffa419e3a    "/bin/bash"   6 minutes ago    Up 6 minutes      
 $ sudo docker ps -a
 ```
 
-#### 6. 从运行中的容器分离或连接
+#### 6、从运行中的容器脱离或连接
 
 首先，通过 `docker ps` 命令找到容器的 ID。
 
@@ -285,7 +285,7 @@ $ sudo docker ps
 $ sudo docker attach <container-id>
 ```
 
-比如像下面这样，我要连接到 ID 为 “f7e04eed577e” 的容器：
+比如像下面这样，我要连接到 ID 为 `f7e04eed577e` 的容器：
 
 ```
 $ sudo docker attach f7e04eed577e
@@ -299,9 +299,9 @@ $ sudo docker attach brave_mclean
 
 现在你就登录到这个容器了。
 
-想要从容器分离，只要按 **CTRL+P** 然后 **CTRL+Q**。
+想要从容器脱离，只要按 `CTRL+P` 然后 `CTRL+Q`。
 
-#### 7. 启动，重启，暂停和终止容器。
+#### 7、启动、重启、暂停和终止容器
 
 你可以使用容器的名字或 ID 来启动，重启，暂停或者终止一个 Docker 容器。
 
@@ -373,9 +373,9 @@ $ sudo docker stop 35b5ee8c3d3a 10615254bb45
 $ sudo docker ps
 ```
 
-#### 8. <ruby>强行关闭<rt>Kill</rt></ruby> Docker 容器
+#### 8、强行关闭 Docker 容器
 
-docker stop 命令可以非常优雅的关掉运行中的容器。有时候，你可能卡在一个没有响应的容器，或者你想强制关掉容器。
+`docker stop` 命令可以非常优雅的关掉运行中的容器。有时候，你可能卡在一个没有响应的容器，或者你想强制关掉容器。
 
 通过给一个运行中的容器发送 `SIGKILL` 来强行关闭容器，运行：
 
@@ -383,7 +383,7 @@ docker stop 命令可以非常优雅的关掉运行中的容器。有时候，�
 $ sudo docker kill 10615254bb45
 ```
 
-#### 9. 在关闭容器后自动删除他们
+#### 9、在关闭容器后自动删除他们
 
 也许你想测试一个容器，然后当你完成在容器中的工作就把它删掉。如果是这样，通过使用 `--rm` 标签在关闭后自动删掉容器：
 
@@ -397,7 +397,7 @@ $ sudo docker run -it --rm debian:latest
 
 从上面的结果可以看到，我先创建了一个新的 Debian 容器。当我退出这个容器的时候，它就被自动删掉了。`docker ps -a` 命令的输出结果显示，Debian 容器现在不存在。
 
-#### 10. 给容器命名
+#### 10、给容器命名
 
 如果你再看一下之前命令的输出结果，当你启动一个容器的时候，每个容器都被赋予了一个随机的名字。如果你不命名你的容器，Docker 会自动替你给他们命名。
 
@@ -420,7 +420,7 @@ CONTAINER ID   IMAGE           COMMAND     CREATED         STATUS         PORTS 
 2af79e97a825   alpine:latest   "/bin/sh"   6 seconds ago   Up 5 seconds             recursing_taussig
 ```
 
-从上面的结果可以看到，尽管我用同一个 docker image 创建了两个容器，它们获得了不同的 ID 和名字。
+从上面的结果可以看到，尽管我用同一个 Docker 镜像创建了两个容器，它们获得了不同的 ID 和名字。
 
 如果你想给容器赋一个不变的名字，使用 `--name` 标签，像下面这样：
 
@@ -428,14 +428,14 @@ CONTAINER ID   IMAGE           COMMAND     CREATED         STATUS         PORTS 
 $ sudo docker run -it -d --name ostechnix_alpine alpine:latest
 ```
 
-上面的命令会在分离模式中创建一个叫做 **ostechnix_alpine** 的新容器。
+上面的命令会在脱离模式中创建一个叫做 `ostechnix_alpine` 的新容器。
 
 我们看一下当前运行的容器列表：
 
 ```
 $ sudo docker ps
 ```
-**输出结果：**
+输出结果：
 
 ```
 CONTAINER ID   IMAGE           COMMAND     CREATED         STATUS         PORTS     NAMES
@@ -446,13 +446,13 @@ CONTAINER ID   IMAGE           COMMAND     CREATED         STATUS         PORTS 
 
 ![Assign Name To Containers][13]
 
-注意到上面输出结果中的第一个容器的名字了吗？对了，我们给这个容器分配了一个自定义的名字（也就是 `ostechnix_alpine`)。
+注意到上面输出结果中的第一个容器的名字了吗？对了，我们给这个容器分配了一个自定义的名字（也就是 `ostechnix_alpine`）。
 
 给容器分配自定义的名字可以给我们带来其他好处。只要看一下容器的名字，我们就能很容易的确定那个容器里面安装了什么。
 
-#### 11. 构建自定义 Docker 镜像
+#### 11、构建自定义 Docker 镜像
 
-Docker 不仅仅是下载和使用已存在的容器。你也可以创建自己的自定义 docker 镜像。
+Docker 不仅仅是下载和使用已存在的容器。你也可以创建自己的自定义 Docker 镜像。
 
 现在我们开始一个 Ubuntu 容器：
 
@@ -464,7 +464,7 @@ $ sudo docker run -it ubuntu:latest
 
 然后，在容器中，你可以安装任何的软件或者做你想做的事情。
 
-比如，我们在容器中安装 “Apache web server**。
+比如，我们在容器中安装 Apache Web 服务器。
 
 ```
 # apt update
@@ -473,7 +473,7 @@ $ sudo docker run -it ubuntu:latest
 
 相似地，在容器中，可以根据自己的需要安装和测试软件。
 
-完成以后，从容器分离（不要退出）回到主机系统的 shell。不要终止或者关闭容器。使用 **CTRL+P** 然后 **CTRL+Q** 从容器中分离，这样不会关闭容器。
+完成以后，从容器脱离（不要退出）回到主机系统的 shell。不要终止或者关闭容器。使用 `CTRL+P` 然后 `CTRL+Q` 从容器中脱离，这样不会关闭容器。
 
 在你的 Docker 主机的终端，运行下面的命令来找到容器 ID：
 
@@ -481,13 +481,13 @@ $ sudo docker run -it ubuntu:latest
 $ sudo docker ps
 ```
 
-最后，创建一个当前运行中的容器的 Docker image，使用命令：
+最后，创建一个当前运行中的容器的 Docker 镜像，使用命令：
 
 ```
 $ sudo docker commit 377e6d77ebb5 ostechnix/ubuntu_apache
 ```
 
-**输出结果**
+输出结果：
 
 ```
 sha256:bc5e5f95ca592a3585fda2c5a40ec30c98e292046ef70390a2c3b7863cc6f7c1
@@ -495,9 +495,9 @@ sha256:bc5e5f95ca592a3585fda2c5a40ec30c98e292046ef70390a2c3b7863cc6f7c1
 
 这里，
 
-* 377e6d77ebb5 – Ubuntu 容器的 ID。
-* ostechnix – 创建容器的用户的名字。
-* ubuntu_apache – 用户 ostechnix 创建的 docker image 的名字。
+* `377e6d77ebb5` – Ubuntu 容器的 ID。
+* `ostechnix` – 创建容器的用户的名字。
+* `ubuntu_apache` – 用户 `ostechnix` 创建的 Docker 镜像的名字。
 
 现在我们查看一下新的 Docker 镜像是否被创建了，使用下面的命令：
 
@@ -505,7 +505,7 @@ sha256:bc5e5f95ca592a3585fda2c5a40ec30c98e292046ef70390a2c3b7863cc6f7c1
 $ sudo docker images
 ```
 
-**输出结果：**
+输出结果：
 
 ```
 ostechnix/ubuntu_apache
@@ -521,9 +521,9 @@ ostechnix/ubuntu_apache
 $ sudo docker run -it ostechnix/ubuntu_apache
 ```
 
-#### 12. 移除容器
+#### 12、移除容器
 
-当你在 Docker 容器中完成所有开发后，如果你不需要他们了，你可以删掉他们。
+当你在 Docker 容器中完成所有开发后，如果你不需要它们了，你可以删掉它们。
 
 为此，首先我们需要终止（关闭）运行中的容器。
 
@@ -533,7 +533,7 @@ $ sudo docker run -it ostechnix/ubuntu_apache
 $ sudo docker ps
 ```
 
-**输出结果：**
+输出结果：
 
 ```
 CONTAINER ID   IMAGE           COMMAND   CREATED         STATUS         PORTS     NAMES
@@ -560,7 +560,7 @@ $ sudo docker rm 377e6d77ebb5
 $ sudo docker container prune
 ```
 
-敲 **Y** 然后回车键，这些容器就被删掉了。
+敲 `Y` 然后回车键，这些容器就被删掉了。
 
 ```
 WARNING! This will remove all stopped containers.
@@ -584,7 +584,7 @@ $ sudo docker ps -a
 
 如果看不到任何结果，说明所有容器被删掉了。
 
-#### 13. 删除 Docker 镜像
+#### 13、删除 Docker 镜像
 
 记住，在删除所有镜像之前，首先要删掉所有从那些镜像创建的容器。
 
@@ -596,7 +596,7 @@ $ sudo docker ps -a
 $ sudo docker images
 ```
 
-**输出结果：**
+输出结果：
 
 ```
 REPOSITORY                TAG       IMAGE ID       CREATED          SIZE
@@ -615,7 +615,7 @@ alpine                    latest    e66264b98777   5 weeks ago      5.52MB
 $ sudo docker rmi ce5aa74a48f1
 ```
 
-**输出结果：**
+输出结果：
 
 ```
 Untagged: ostechnix/ubuntu_apache:latest
@@ -625,19 +625,19 @@ Deleted: sha256:a8e4797160a2b2d33d8bd1bd67e008260c022b3a53fbcc198b2b74d9eae5961d
 
 同样，删除其他所有 Docker 镜像。
 
-删掉所有未运行的容器，所有镜像，构建的缓存，所有网络，运行：
+删掉所有未运行的容器、所有镜像、构建的缓存、所有网络，运行：
 
 ```
 $ sudo docker system prune -a
 ```
 
-使用这个命令的时候要注意，它会删掉所有没有使用的容器，网络，镜像（<ruby>挂起<rt>dangling</rt></ruby>和<ruby>未使用<rt>unreferenced</rt></ruby>）
+使用这个命令的时候要注意，它会删掉所有没有使用的容器、网络、镜像（包括 <ruby>挂起<rt>dangling</rt></ruby>和<ruby>未使用<rt>unreferenced</rt></ruby> 的）
 
 ![Delete Everything In Docker][16]
 
-默认情况下，即使当前没有容器在使用<ruby>磁盘容量<rt>volumes</rt></ruby>，为防止重要数据被删除，<ruby>磁盘容量<rt>volumes</rt></ruby>也不会被删除
+默认情况下，即使当前没有容器在使用<ruby>磁盘卷<rt>volumes</rt></ruby>，为防止重要数据被删除，磁盘卷也不会被删除。
 
-如果你想删掉所有东西，包括分配的容量，使用 `--volumes` 标签。
+如果你想删掉所有东西，包括分配的卷，使用 `--volumes` 标签。
 
 ```
 $ sudo docker system prune -a --volumes
@@ -645,9 +645,9 @@ $ sudo docker system prune -a --volumes
 
 ### Docker 问题汇总
 
-Docker 不会允许你删除 Docker 镜像，如果这些镜像正在被运行或停止的容器使用。
+如果 Docker 镜像正在被运行或停止的容器使用，Docker 不会允许你删除这些镜像。
 
-比如，当我尝试从一个以前的 Ubuntu 服务器上删除 ID 为 **b72889fa879c** 的 Docker 镜像。我会得到下面的错误：
+比如，当我尝试从一个以前的 Ubuntu 服务器上删除 ID 为 `b72889fa879c` 的 Docker 镜像。我会得到下面的错误：
 
 ```
 Error response from daemon: conflict: unable to delete b72889fa879c (must be forced) - image is being used by stopped container dde4dd285377
@@ -661,7 +661,7 @@ Error response from daemon: conflict: unable to delete b72889fa879c (must be for
 $ sudo docker ps
 ```
 
-**输出结果：**
+输出结果：
 
 ![Show running docker containers][17]
 
@@ -673,23 +673,23 @@ $ sudo docker ps
 $ sudo docker ps -a
 ```
 
-**输出结果：**
+输出结果：
 
 ![Show running and stopped docker containers][18]
 
 可以看到，仍然有停止的容器在使用其中一个 Docker 镜像。所以，我们先把所有容器删掉。
 
-**比如：**
+比如：
 
 ```
 $ sudo docker rm 12e892156219
 ```
 
-类似地，向上面那样，用对应容器的 ID 将他们都删除。
+类似地，向上面那样，用对应容器的 ID 将它们都删除。
 
 当把所有容器删掉后，移除掉 Docker 镜像。
 
-**比如：**
+比如：
 
 ```
 $ sudo docker rmi b72889fa879c
@@ -705,13 +705,13 @@ $ sudo docker images
 
 ### 总结
 
-在这篇全面的 Docker 入门教程中，我们解释了 Docker 的基本操作，比如创建，运行，搜索，删除容器，还有从 Docker 镜像构建你自己的容器。同时，我们也解释了如何在不需要 Docker 容器和镜像的时候删除它们。
+在这篇全面的 Docker 入门教程中，我们解释了 Docker 的基本操作，比如创建、运行、搜索、删除容器，还有从 Docker 镜像构建你自己的容器。同时，我们也解释了如何在不需要 Docker 容器和镜像的时候删除它们。
 
-希望你现在对 **Docker 的使用** 有一个基本的了解
+希望你现在对 **Docker 的使用** 有一个基本的了解。
 
 更多细节，请参考这篇教程最下面的官方资源链接，或者在下面的评论区进行评论。
 
-**相关资料：**
+### 相关资料
 
 * [Docker 官网][19]
 * [Docker 文档][20]
@@ -723,7 +723,7 @@ via: https://ostechnix.com/getting-started-with-docker/
 作者：[sk][a]
 选题：[lkxed][b]
 译者：[MCGA](https://github.com/Yufei-Yan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
