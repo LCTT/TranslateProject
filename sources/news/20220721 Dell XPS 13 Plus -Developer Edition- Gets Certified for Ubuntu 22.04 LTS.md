@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/dell-xps-13-plus-dev-ubuntu-certified/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
