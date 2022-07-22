@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/how-to-install-rocky-linux-9-step-by-step/"
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
