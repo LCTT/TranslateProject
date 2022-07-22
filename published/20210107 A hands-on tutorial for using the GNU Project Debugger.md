@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Maisie-x"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14853-1.html"
 
 手把手教你使用 GNU 调试器
 ======
