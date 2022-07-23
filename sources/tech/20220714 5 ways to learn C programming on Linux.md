@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/learn-c-linux"
 [#]: author: "Alan Smithee https://opensource.com/users/alansmithee"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Donkey"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
