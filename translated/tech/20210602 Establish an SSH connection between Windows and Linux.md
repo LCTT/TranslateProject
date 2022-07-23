@@ -13,21 +13,21 @@
 使用开源的PuTTY创建Windows与Linux间的SSH连接。
 ![clouds in windows][1]
 
-安全外壳协议（SSH）在 Linux 世界中，是最为常用的的，基于命令行的远程计算机连接方案。SSH 是由 Linux 原创的，但是它同样在 Windows 世界中流行。甚至有一份官方的 [Windows 的 SSH 文档][2]，一种在Windows中使用 SSH 的方式： [OpenSSH][3]。
+安全外壳协议（SSH）在 Linux 世界中是最为常用的、基于命令行的远程计算机连接方案。SSH 是 Linux 原创的，但是它在 Windows 世界中同样流行。甚至有了一份官方的 [Windows 的 SSH 文档][2]，那篇文档阐述了一种在 Windows 中使用 SSH 的方式： [OpenSSH][3]。
 
-这篇文章展示了如何从 Windows 创建 SSH 连接到 Fedora 33 Linux 系统，使用流行的开源工具 [PuTTY][4]。
+这篇文章展示了如何从 Windows 创建一个 SSH 连接到 Fedora 33 Linux 系统，使用了流行的开源工具 [PuTTY][4]。
 
 ### 使用 SSH 的方法
 
-SSH 使用客户-服务器架构，当SSH 客户端创建了到 SSH 服务端的连接，SSH 服务端通常会运行为守护进程，所以它常被称为 SSHD。你很难找到一个 Linux 发行版不自带 SSH 守护进程。在 Fedora 33 中，SSH 守护进程已被安装，但是并未激活。
+SSH 使用客户服务器模式，当 SSH 客户端创建了到 SSH 服务端的连接，SSH 服务端通常会运行为守护进程，所以它常被称为 SSHD。你很难找到一个 Linux 发行版不自带 SSH 守护进程。在 Fedora 33 中，SSH 守护进程已被安装，但是并未激活。
 
-在几乎所有的 Linux 机器上，你都可以使用 SSH 协议。如果它是作为虚拟机或你的网络上的实体机。一个常见的用例是无头配置的嵌入式设备，包括树莓派。SSH 也可以用为一个连接其它网络服务的隧道。因为 SSH 连接是加密的，你可以使用 SSH 作为一个所有的其它默认未提供加密协议的中继。
+在几乎所有的 Linux 机器上，你都可以使用 SSH 协议。如果它是作为虚拟机或你的网络上的实体机，包括树莓派，一个常见的用例是无头配置的嵌入式设备，SSH 也可以用为一个连接其它网络服务的隧道。因为 SSH 连接是加密的，所以你可以使用 SSH 作为一个所有的其它默认未提供加密协议的中继。
 
-在这篇文章中，我将提供四个方式使用 SSH：1. 如何在 Linux 端配置 SSH 守护进程，2. 如何设置远程命令行连接，3. 如何复制文件通过网络，4. 如何将 SSH 作为某些协议的通道。
+在这篇文章中，我将提供四个方式使用 SSH：1. 如何在 Linux 端配置 SSH 守护进程，2. 如何设置远程控制台连接，3. 如何通过网络复制文件，4. 如何将 SSH 作为某些协议的通道。
 
 ### 1\. 配置 SSHD
 
-Linux 系统 (例子为 Fedora 33) 作为 SSH 服务器，允许 PuTTY SSH 客户端连接。 首先，检查守护进程的 SSH 配置。配置文件放在`/etc/ssh/sshd_config`，它包含了许多选项可被激活——通过取消掉相关行的注释：
+将Linux 系统 (文中是 Fedora 33) 作为 SSH 服务器，其允许 PuTTY SSH 客户端连接。首先，检查守护进程的 SSH 配置。配置文件放在`/etc/ssh/sshd_config`，它包含了许多选项，通过取消掉相关行的注释就可以激活：
 
 
 ```
@@ -52,7 +52,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 ```
 
 
-默认的配置中没有行是取消注释的，你需要修改这个示例。要检查 SSH 守护进程是否已经运行，输入`systemctl status sshd`：
+因为默认的配置中没有行的注释被取消，所以你需要修改这个示例。要检查 SSH 守护进程是否已经运行，输入`systemctl status sshd`：
 
 
 ```
@@ -69,9 +69,9 @@ $ systemctl status sshd
 ```
 
 
-假如它处于未激活状态，使用`systemctl start sshd`命令启动它启动它。
+假如它处于未激活状态，使用`systemctl start sshd`命令启动它。
 
-### 2\. Set up a remote console
+### 2\. 设置远程控制台
 
 Windows 下, [下载 PuTTY 安装程序][6], 然后安装并打开它，你应看到一个像这样的窗口：
 
@@ -79,20 +79,20 @@ Windows 下, [下载 PuTTY 安装程序][6], 然后安装并打开它，你应�
 
 (Stephan Avenwedde, [CC BY-SA 4.0][8])
 
-在**主机名（或 IP 地址）**输入框，进入你的 Linux 系统的“连接信息”。在这个例子中，我设置了一个 Fedora 33 虚拟机，它使用桥接网络适配器，使我可以由 IP 地址 `192.168.1.60` 连接这个系统。点击**开启**，一个窗口如图示应打开：
+在**主机名（或 IP 地址）**输入框，进入你的 Linux 系统的“连接信息”。本文设置了一个 Fedora 33 虚拟机，它使用桥接网络适配器，使我可以由 IP 地址 `192.168.1.60` 连接这个系统。点击**开启**，应会如图示的打开一个窗口：
 
 ![PutTTY security alert][9]
 
 (Stephan Avenwedde, [CC BY-SA 4.0][8])
 
-这是 SSH 的安全方式之一，是为了防止[<ruby>中间人攻击<rt>man-in-the-middle attack</rt></ruby>][10]. 信息中的指纹应该匹配 Linux 系统中放在`/etc/ssh/ssh_host_ed25519_key.pub`的密钥。PuTTY打印这个密钥为[MD5 哈希][11]。为检查它的真实性，切换到 Linux 系统，打开一个命令行，然后输入：
+这是 SSH 的安全措施之一，是为了防止[<ruby>中间人攻击<rt>man-in-the-middle attack</rt></ruby>][10]. 信息中的指纹应该匹配 Linux 系统中放在`/etc/ssh/ssh_host_ed25519_key.pub`的密钥。PuTTY将这个密钥打印为[MD5 哈希值][11]。要检查它的真实性，切换到 Linux 系统并打开一个控制台，然后输入：
 
 
 ```
 `ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ed25519_key.pub`
 ```
 
-输出应该对上 PuTTY 展示的指纹：
+输出应该和 PuTTY 展示的指纹一致：
 
 
 ```
@@ -101,7 +101,7 @@ $ ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ed25519_key.pub
 ```
 
 
-按**是**以设置 PuTTY 的安全警报。主系统的指纹在 PuTTY的信任列表中，其位于 Windows 的注册表中的：
+按**是**以设置 PuTTY 的安全警报。主系统的指纹在 PuTTY 的信任列表中，其位于 Windows 的注册表中的：
 
 
 
@@ -110,7 +110,7 @@ $ ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ed25519_key.pub
 ```
 
 
-输入你正确的登录凭证，然后你应该进入终端了，位置在你的用户主目录。
+输入正确的登录凭证，然后你应该进入控制台了，位置在你的用户主目录。
 
 
 ![Logged in to SSH][12]
@@ -120,9 +120,9 @@ $ ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ed25519_key.pub
 
 ### 3\. 通过网络传输文件
 
-除了远程命令行，你也可以使用 PuTTY 通过 SSH来传输文件。安装目录在`C:\\Program Files (x86)\\PuTTY`，寻找`ppscp.exe`。你可以使用它来拷贝文件自 Linux 系统，或是到 Linux 系统。
+除了远程控制台，你同样可以使用 PuTTY 通过 SSH 来传输文件。PuTTY 的安装目录在`C:\\Program Files (x86)\\PuTTY`，在目录下寻找`ppscp.exe`。你既可以使用它来复制文件自 Linux 系统，也可以复制文件到到 Linux 系统。
 
-使用**Windows + R**打开命令提示符并输入**cmd**，复制“MYFile.txt”从你的 Linux 用户主目录到你的 Windows 主目录，输入：
+使用**Windows + R**打开命令提示符，然后输入**cmd**，复制“MYFile.txt”从你的 Linux 用户主目录到你的 Windows 主目录，输入：
 
 
 ```
@@ -152,12 +152,12 @@ $ ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ed25519_key.pub
 
 
   1. 这个服务通过 HTTP 而非 HTTPS 运行
-  2. 根本没有任何用户在管理或登录
+  2. 根本没有任何人在管理或登录
 
 
-乍一看，不产生一个可怕的漏洞而建立这种架构似乎是一项不可能的任务。但是 SSH 将为这种情况建立一个安全的解决方案变得简单了。
+乍一看，不产生一个可怕的漏洞而建立这种架构似乎是一项不可能的任务。但是 SSH 可简单的为这种情况建立一个安全的解决方案。
 
-我将用我的软件项目[Pythonic][13]来证明它。在容器中运行。Pythonic 开放两个 TCP 端口：TCP 端口7000（主要编辑者）和 TCP 端口 8000（[code-server][14] 代码编辑器）
+我将用我的软件项目[Pythonic][13]来证明它。在容器中运行。Pythonic 开放两个 TCP 端口：TCP 端口7000（主要编辑器）和 TCP 端口 8000（[code-server][14] 代码编辑器）
 
 要安装 Pythonic 在一个 Linux 机器上，运行：
 
@@ -206,7 +206,7 @@ podman run -d -p 7000:7000 -p 8000:8000 pythonic
 
 ### 了解更多
 
-这篇文章只阐述了使用 SSH 的其中一个方式。如果你正在寻找关于特别的用例的信息，你也许可以在互联网中找到无数的教程。我使用 PuTTY 在工作中，因为它易于设置，在两个操作系统间又具有良好的可操作性，使得它的连接解决方案像是卡尔埃·尔森纳的瑞士军刀。
+这篇文章只阐述了使用 SSH 的其中一个方式。如果你正在寻找关于特别的用例的信息，你也许可以在互联网中找到无数的教程。我在工作中使用 PuTTY ，因为它易于设置，在两个操作系统间又具有良好的可操作性，使得它的连接解决方案像是卡尔埃·尔森纳的瑞士军刀。
 
 --------------------------------------------------------------------------------
 
