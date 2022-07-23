@@ -3,18 +3,20 @@
 [#]: author: "Anuj Sharma https://itsfoss.com/author/anuj/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14856-1.html"
 
-如何在 Manjaro 和其他 Arch Linux 衍生品上安装 Discord
+如何在 Manjaro 和其他 Arch Linux 衍生品上安装 Discord 客户端
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202207/23/181625i62zdef7iufup2e6.jpg)
 
 [Discord][1] 是一个跨平台的应用，可用于语音通话、视频通话、文本消息，以及分享媒体和文件。
 
-它在游戏玩家和主播中非常流行。虽然，许多开源项目已经开始使用它来主持他们的社区讨论。你可以为这类开源社区找到[官方 Discord 服务器][2]。
+它在游戏玩家和主播中非常流行。虽然，许多开源项目已经开始使用它来主持他们的社区讨论。你可以找到这类开源社区的 [官方 Discord 服务器][2]。
 
-Discord 可以直接从你的网络浏览器访问。安装官方桌面客户端可以让你获得系统通知和集中交流，而不是在多个打开的标签中摸索 Discord 标签。
+Discord 可以直接从你的网页浏览器访问。安装官方桌面客户端可以让你获得系统通知和集中交流，而不是在多个打开的标签中摸索 Discord 标签。
 
 虽然 Discord 为 Ubuntu 提供了 Deb 文件，但在 Arch Linux 上却没有这样的即用型软件包。
 
@@ -27,7 +29,7 @@ Discord 可以直接从你的网络浏览器访问。安装官方桌面客户端
 
 首先，更新你的系统，因为它是一个滚动发布的版本，[不支持部分升级][6]。
 
-在终端输入以下 [pacman 命令][7]来[更新你的 Arch Linux 系统][8]。
+在终端输入以下 [pacman 命令][7] 来 [更新你的 Arch Linux 系统][8]。
 
 ```
 sudo pacman -Syu
@@ -43,7 +45,7 @@ sudo pacman -S discord
 
 ![Discord client in Arch Linux][9]
 
-**如果你想安装 Discord 的 Nightly 版本**来测试即将到来的新功能，请使用以下命令。请注意，它可能并不稳定，所以如果你想要这个版本，请再考虑一下。
+**如果你想安装 Discord 的每日构建版本** 来测试即将到来的新功能，请使用以下命令。请注意，它可能并不稳定，所以如果你想要这个版本，请再考虑一下。
 
 ```
 sudo pacman -S discord-canary
@@ -57,7 +59,7 @@ sudo pacman -S discord-canary
 sudo pacman -Rns discord
 ```
 
-如果你选择的是 Nightly 版本，请使用以下命令将其删除：
+如果你选择的是每日构建版本，请使用以下命令将其删除：
 
 ```
 sudo pacman -Rns discord-canary
@@ -75,11 +77,11 @@ sudo pacman -Rns discord-canary
 
 ![pamac menu][12]
 
-点击更新来更新你的系统。
+点击“<ruby>更新<rt>Updates</rt></ruby>”来更新你的系统。
 
 ![pamac update][13]
 
-现在点击浏览，使用左上方的搜索按钮搜索 discord。然后，选择软件包并点击应用来安装。
+现在点击“<ruby>浏览<rt>Browse</rt></ruby>”，使用左上方的搜索按钮搜索 “discord”。然后，选择软件包并点击“<ruby>应用<rt>Apply</rt></ruby>”来安装。
 
 ![Installing Discord from Pamac][14]
 
@@ -94,7 +96,7 @@ via: https://itsfoss.com/install-discord-arch-manjaro/
 作者：[Anuj Sharma][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
