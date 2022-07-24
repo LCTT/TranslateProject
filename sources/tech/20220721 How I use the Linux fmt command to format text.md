@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/fmt-trivial-text-formatter"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "perfiffer"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
