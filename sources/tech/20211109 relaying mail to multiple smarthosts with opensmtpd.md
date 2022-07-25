@@ -2,7 +2,7 @@
 [#]: via: "https://jao.io/blog/2021-11-09-relaying-mail-to-multiple-smarthosts.html"
 [#]: author: "jao https://jao.io"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
