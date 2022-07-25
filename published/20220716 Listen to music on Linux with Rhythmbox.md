@@ -7,7 +7,7 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-14865-1.html"
 
-在 Linux 上使用 Rhythbox 听音乐
+在 Linux 上使用 Rhythmbox 听音乐
 ======
 
 ![](https://img.linux.net.cn/data/attachment/album/202207/25/234644f4rgrx1vrpgfk86n.jpg)
