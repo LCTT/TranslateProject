@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/binary-bit-fields-masks"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "FYJNEVERFOLLOWS"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -156,7 +156,7 @@ via: https://opensource.com/article/21/8/binary-bit-fields-masks
 
 作者：[Jim Hall][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
