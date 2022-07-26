@@ -19,10 +19,11 @@ Web应用程序是在Web服务器上运行的软件。终端用户通过Web浏�
 
 使用的节点如下：
 
-**[地铁智能停车节点流程设计][2]**
-Node-RED是使用’node-red‘命令激活。通过网址 *http://127.0.0.1:1880/*可以访问Node-RED的用户界面流程图的浏览器。我们认为Node-RED设置已完成并且可以正常工作了。
-
 ![table function][3]
+
+**地铁智能停车节点流程设计**
+
+Node-RED是使用’node-red‘命令激活。通过网址http://127.0.0.1:1880/ 可以访问Node-RED的用户界面流程图的浏览器。我们认为Node-RED设置已完成并且可以正常工作了。
 
 ![Figure 1: Web API][4]
 
@@ -55,6 +56,7 @@ Node-RED是使用’node-red‘命令激活。通过网址 *http://127.0.0.1:188
 输入链接然后单击<ruby>提交<rt>Submit</rt></ruby>后，该链接会跳转到下一页，您可以在该页面阅读所有新闻。
 
 **Node-RED工作流程**
+
 在单个Node-RED流程中，您可以创建登录表单和提交表单，如图4和图5所示。
 
 现在我们将配置节点属性。
@@ -102,6 +104,7 @@ Node-RED是使用’node-red‘命令激活。通过网址 *http://127.0.0.1:188
 ![Figure 14: Debug node property configurations][17]
 
 **用户界面的控制面板**
+
 当用户单击<ruby>提交<rt>Submit</rt></ruby>，给出的数据将显示在用户界面和调试节点。如果单击<ruby>重置<rt>Reset</rt></ruby>，详细信息将被清除，允许用户输入新的详细信息（图15）。
 
 ![Figure 15: User login UI][18]
