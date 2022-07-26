@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/learn-javascript-before-reactjs"
 [#]: author: "Sachin Samal https://opensource.com/users/sacsam005"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
