@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/deepin-arch-linux-install-20/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
