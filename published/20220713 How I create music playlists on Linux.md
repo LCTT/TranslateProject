@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14868-1.html"
 
 如何编写 C 程序在 Linux 上创建音乐播放列表
 ======
