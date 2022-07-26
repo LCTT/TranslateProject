@@ -3,12 +3,14 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: "wxy"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14867-1.html"
 
 如何在 Arch Linux 中安装深度桌面（DDE）
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202207/26/170414x01pmevoo8o8b6ob.jpg)
 
 > 在本指南中，我们将解释在 Arch Linux 中安装漂亮的深度桌面（DDE）所需的步骤。
 
@@ -18,7 +20,7 @@
 
 [深度操作系统][1] 是一个基于 Debian 稳定分支的、功能丰富且漂亮的桌面环境。深度桌面环境（DDE）是深度操作系统自主开发的桌面环境。它由它自己的 dde-kwin 窗口管理器驱动。深度桌面带有漂亮的停靠区和许多预装的深度原生的应用程序。
 
-这个令人眼花缭乱的桌面环境 [可在 Arch 仓库中找到][2]；这篇文章介绍了你如何在 Arch Linux 中安装深度桌面。
+这个令人眼花缭乱的桌面环境 [可在 Arch 仓库中找到][2]；这篇文章介绍了如何在 Arch Linux 中安装深度桌面。
 
 本指南安装深度桌面环境 20.1。然而，其他版本的步骤也应该是类似的。
 
@@ -137,7 +139,7 @@ nano /etc/locale.gen
 
 去掉开头的 `#`，取消对你选择的语言环境的注释。在本指南中，我选择了 `en_US.UTF-8 UTF-8`。按 `CTRL+O`、回车和 `CTRL+X` 退出 nano。
 
-![改变 locale][14]
+![改变语言环境][14]
 
 使用以下方法生成语言环境数据。
 
@@ -258,7 +260,7 @@ systemctl enable lightdm
 systemctl enable NetworkManager
 ```
 
-![启用 Lightdm 和网络][19]。
+![启用 Lightdm 和网络][19]
 
 使用 `reboot` 命令重新启动系统。
 
