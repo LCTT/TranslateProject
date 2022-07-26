@@ -7,156 +7,165 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Install Deepin Desktop in Arch Linux [Complete Guide]
+如何在 Arch Linux 中安装深度桌面（DDE）
 ======
-In this guide, we explain the steps required to install the beautiful Deepin Desktop in Arch Linux.
 
-The first part of the guide explains the steps for installing the base Arch system. The second part is installing the complete Deepin desktop on top of Arch Linux.
+> 在本指南中，我们将解释在 Arch Linux 中安装漂亮的深度桌面（DDE）所需的步骤。
 
-### What is the Deepin Desktop?
+指南的第一部分解释了安装 Arch 基本系统的步骤。第二部分是在 Arch Linux 的基础上安装完整的深度桌面。
 
-[Deepin][1] is a feature-rich and beautiful desktop environment based on Debian stable branch. Deepin desktop is a homegrown desktop environment by Deepin. It is powered by its own `dde-kwin` Window manager. Deepin desktop comes with nice looking dock and many native Deepin applications pre-loaded.
+### 什么是深度桌面（DDE）？
 
-This eye candy desktop environment is [available in the Arch repository][2]; this is how you can install Deepin Desktop Environment in Arch Linux.
+[深度操作系统][1] 是一个基于 Debian 稳定分支的、功能丰富且漂亮的桌面环境。深度桌面环境（DDE）是深度操作系统自主开发的桌面环境。它由它自己的 dde-kwin 窗口管理器驱动。深度桌面带有漂亮的停靠区和许多预装的深度原生的应用程序。
 
-This guide installs Deepin 20.1 Desktop Environment. However, the steps should be similar for other versions as well.
+这个令人眼花缭乱的桌面环境 [可在 Arch 仓库中找到][2]；这篇文章介绍了你如何在 Arch Linux 中安装深度桌面。
 
-### Install Deepin Desktop in Arch Linux
+本指南安装深度桌面环境 20.1。然而，其他版本的步骤也应该是类似的。
 
-#### Part 1: Install Arch Linux
+### 第一部分：安装 Arch Linux
 
-If you have already Arch Linux installed, you can skip this step and directly go to the install Deepin Desktop section .
+如果你已经安装了 Arch Linux，你可以跳过这一步，直接进入安装深度桌面部分。
 
-For a quick Arch Linux base installation, follow the below steps. You can also visit [this guide][3] for a complete tutorial on installing Arch Linux as Dual Boot or on a virtual machine.
+要快速安装基本的 Arch Linux，请按照以下步骤进行。你也可以访问 [本指南][3] 了解以双启动或在虚拟机上安装 Arch Linux 的完整教程。
 
-##### Download Arch Linux
+#### 下载 Arch Linux
 
-Download Arch Linux .iso from the below link. There are magnet and torrent links available. Once you download it, write the ISO to a USB drive. And then boot from the drive.
+从下面的链接下载 Arch Linux 的 .iso 文件。这里有磁力链和 BT 链接。一旦你下载好了，就把 ISO 写入 U 盘。然后从该驱动器启动。
 
-[Download Arch Linux][4]
+> **[下载 Arch Linux][4]**
 
-If you are planning to install it as a virtual machine image via [GNOME Boxes][5], [virt-manager][6] – then you do not need to write it to a USB drive.
+如果你打算通过 [GNOME Boxes][5]、[virt-manager][6] 将其安装为虚拟机镜像 —— 那么你不需要将其写入 U 盘。
 
-##### Boot and Configure Partitions
+#### 启动和配置分区
 
-After you boot from the Arch Linux iso, you have to run a series of commands to install the base system.
+从 Arch Linux ISO 启动后，你必须运行一系列的命令来安装基本系统。
 
-First, run the below command to find out the device identifier.
+首先，运行下面的命令，找出设备的标识符。
 
 ```
 fdisk -l
 ```
 
-![fdisk -l before][7]
+![fdisk -l 之前的分区][7]
 
-Then with the device identifier, run the below command to start partitioning your disk. Make sure to change `/dev/sda` as per your system.
+然后用此设备标识符，运行下面的命令，开始对你的磁盘进行分区。请确保根据你的系统而修改下面的 `/dev/sda` 参数。
 
 ```
 cfdisk /dev/sda
 ```
 
-Select `label type = dos` the next prompt.
+在下一个提示中选择 `label type = dos`。
 
-Select the free space and choose the option NEW from the bottom. In this example, I will create three partitions as per below.
+选择可用空间，并从底部选择 “NEW” 选项。在这个例子中，我将创建三个分区，如下所示：
 
 ```
-/dev/sda1 - 1G - for /boot/dev/sda2 - 5G - for root/dev/sda3 - 1G - for swap
+/dev/sda1 - 1G - for /boot
+/dev/sda2 - 5G - for root
+/dev/sda3 - 1G - for swap
 ```
 
 ![cfdisk][8]
 
-In the next screen, provide the partition size for the boot partition (for this example, I gave 1 GB). Select it as the primary partition.
+在下一个屏幕中，提供启动分区（`/boot`）的大小（在这个例子中，我给出了 1GB）。选择它作为主分区。
 
-Repeat the same step for the main root partition of size 5GB.
+对 5GB 大小的主根分区（`/`）重复同样的步骤。
 
-![Swap partition type change][9]
+![改变交换分区的类型][9]
 
-Create a swap partition using the same steps with size 1G (you may change it as per your need). After you create the swap partition, make sure to choose Type at the bottom and mark it as a swap with the option “Linux Swap/Solaris”.
+用同样的步骤创建一个大小为 1G 的交换分区（你可以根据你的需要改变大小）。创建交换分区后，确保在底部选择类型，并将其标记为 “Linux Swap/Solaris” 选项的交换分区。
 
-![final partition list in cfdisk][10]
+![cfdisk 的最终分区列表][10]
 
-Once done, write the changes to the disk using the Write option at the bottom. Make sure you take a backup before you write, as this is a permanent change in your system.
+完成后，用底部的 “Write” 选项将变化写到磁盘上。确保你在写之前做一个备份，因为这是你系统中的一个永久性的改变。
 
-Run the below command to check before you proceed. You can see in this example, that three partitions are listed.
+在你继续之前，运行下面的命令来检查。在这个例子中，你可以看到，列出了三个分区。
 
 ```
 fdisk -l
 ```
 
-![final partition list in fdisk][11]
+![fdisk 中的最终分区列表][11]
 
-Run the following commands in sequence to format and create an ext4 file system in the newly created partition above. Make sure you change the /dev/sda1 and /dev/sda2 as per your need.
-
-```
-mkfs.ext4 /dev/sda1mkfs.ext4 /dev/sda2mkswap /dev/sda3swapon /dev/sda3
-```
-
-After completion, mount the system and create the necessary directories.
+依次运行下面的命令，在上面新创建的分区中格式化并创建一个 ext4 文件系统。确保你根据你的需要改变 `/dev/sda1` 和 `/dev/sda2` 参数。
 
 ```
-mount /dev/sda2 /mntmkdir /mnt/boot /mnt/var /mnt/homemount /dev/sda1 /mnt/boot
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda2
+mkswap /dev/sda3
+swapon /dev/sda3
 ```
 
-Again, make sure you change /dev/sda1, /dev/sda2 and /dev/sda3 as per your system.
-
-![prepare file system][12]
-
-##### Install the base system
-
-I hope you are already connected to the internet. If not, try using a USB dongle or wired internet connection which the Arch installer automatically configures and detect. If you do not have a wired connection available, follow this guide to configure a wireless or wifi network using the Arch Linux installer.
-
-Run the below commands in sequence to install the base system in the mounted partition. The download size is approx 400 MB.
+完成后，挂载系统并创建必要的目录。
 
 ```
-pacman -Syypacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub
+mount /dev/sda2 /mnt
+mkdir /mnt/boot /mnt/var /mnt/home
+mount /dev/sda1 /mnt/boot
 ```
 
-![Install base system][13]
+同样，确保你根据你的系统改变 `/dev/sda1`、`/dev/sda2` 和 `/dev/sda3` 参数。
 
-Once complete, generate a file system table without which you can’t boot the system.
+![准备文件系统][12]
+
+#### 安装基本系统
+
+我希望你已经连接到互联网了。如果没有，请尝试使用 USB 网卡或有线网络连接，Arch 安装程序会自动配置和检测。如果你没有可用的有线连接，请按照本指南使用 Arch Linux 安装程序配置无线 Wi-Fi 网络。
+
+依次运行下面的命令，将基本系统安装到挂载的分区中。下载的大小约为 400MB。
+
+```
+pacman -Syy
+pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub
+```
+
+![安装基本系统][13]
+
+一旦完成，生成一个文件系统表，没有这个表你就无法启动系统。
 
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-##### Configure the base system
+#### 配置基本系统
 
-Follow the below commands in sequence to configure the base system. This involves setting up your locale and language, adding a login user, and setting up the internet.
+依次按照下面的命令来配置基本系统。这包括设置你的地区和语言，添加一个登录用户，以及设置互联网。
 
 ```
-arch-chroot /mntnano /etc/locale.gen
+arch-chroot /mnt
+nano /etc/locale.gen
 ```
 
-Uncomment the locale of your choice by removing # at the beginning. For this guide, I have chosen en_US.UTF-8 UTF-8. Press CTRL+O, Enter, and CTRL+X to exit from nano.
+去掉开头的 `#`，取消对你选择的语言环境的注释。在本指南中，我选择了 `en_US.UTF-8 UTF-8`。按 `CTRL+O`、回车和 `CTRL+X` 退出 nano。
 
-![change locale][14]
+![改变 locale][14]
 
-Generate the locale using:
+使用以下方法生成语言环境数据。
 
 ```
 locale-gen
 ```
 
-Set up the language using the below command.
+使用下面的命令设置语言。
 
 ```
-echo LANG=en_US.UTF-8 > /etc/locale.confexport LANG=en_US.UTF-8
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+export LANG=en_US.UTF-8
 ```
 
-Set up the local time zone.
+设置本地时区。
 
 ```
 ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 ```
 
-Again, you can choose them as per your need. You can list the local time zones via the below commands.
+同样，你可以根据你的需要来选择它们。你可以通过以下命令列出本地时区。
 
 ```
 ls /usr/share/zoneinfo
 ls /usr/share/zoneinfo/America
 ```
 
-Set up the hardware clock, create a hostname and enable the DHCP for the internet using the below commands in sequence. You can change `"arindam-pc"` to any hostname as per your desire.
+依次使用下面的命令设置硬件时钟、创建主机名并启用互联网的 DHCP。你可以根据你的想法把 `debugpoint-pc` 改为任何主机名。
 
 ```
 hwclock --systohc --utc
@@ -164,102 +173,108 @@ echo debugpoint-pc > /etc/hostname
 systemctl enable dhcpcd
 ```
 
-The next step is to set up the root user password, create an admin user, and add the user to the sudoers file.
+下一步是设置 `root` 用户的密码、创建一个管理员用户，并将该用户添加到 `sudoers` 文件中。
 
-Follow the below commands in sequence. Make sure to change the user name `debugpoint` to something else as per your need.
+按照下面的命令依次进行。确保根据你的需要将用户名`debugpoint` 改为其他名称。
 
 ```
 passwd rootuseradd -m -g users -G wheel -s /bin/bash debugpointpasswd debugpoint
 ```
 
-![create user][15]
+![创建用户][15]
 
-Open the sudoers file and add the below lines.
+打开 `sudoers` 文件，添加以下几行。
 
 ```
 nano /etc/sudoers
 ```
 
-Add the below lines. As you already created the root user, the entry should be there.
+添加下面几行。由于你已经创建了 `root` 用户，该条目应该已经有了。
 
 ```
-root ALL=(ALL) ALLdebugpoint ALL=(ALL) ALL
+root ALL=(ALL) ALL
+debugpoint ALL=(ALL) ALL
 ```
 
-![update sudoers file][16]
+![更新 sudoers 文件][16]
 
-Install grub, set up the initial ramdisk environment, and unmount the system using the below commands.
-
-```
-grub-install /dev/sdagrub-mkconfig -o /boot/grub/grub.cfgmkinitcpio -p linuxexit
-```
-
-![configure grub][17]
-
-Then reboot your system.
+安装 GRUB，建立初始的 Ramdisk 环境，并使用下面的命令卸载系统。
 
 ```
-umount /mnt/bootumount /mntreboot
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+mkinitcpio -p linux
+exit
 ```
 
-You have now successfully installed the Arch Linux base system. It’s time to install the complete Deepin desktop.
+![配置 GRUB][17]
 
-#### Part 2: Install Deepin Desktop in Arch Linux
-
-After reboot, choose Arch Linux from grub. In the Arch Linux prompt, start running the following commands in sequence. These commands install the Xorg server, lightdm display manager and Deepin desktop components.
-
-For all the commands, use default as package versions, i.e. press enter when asked.
-
-* Install Xorg and display manager. Approx install size is 80 MB.
+然后重新启动你的系统。
 
 ```
-sudo pacman -S --needed xorg lightdm
+umount /mnt/boot
+umount /mnt
+reboot
 ```
 
-* Install additional components and applications (approx 550 MB)
+现在你已经成功地安装了 Arch Linux 基本系统。现在是安装完整的深度桌面的时候了。
+
+### 第二部分：在 Arch Linux 中安装深度桌面
+
+重新启动后，从 GRUB 中选择 Arch Linux。在 Arch Linux 的提示符下，开始依次运行以下命令。这些命令安装 Xorg 服务器、Lightdm 显示管理器和深度桌面组件。
+
+对于所有的命令，使用默认的包版本，即在询问时按回车。
+
+安装 Xorg 和显示管理器。大约安装大小为 80 MB。
 
 ```
-sudo pacman -S --needed deepin deepin-extra
+sudo pacman -S --need xorg lightdm
 ```
 
-After the installation, enable the Deepin greeter by modifying the lightdm configuration file. Follow the below commands.
+安装额外的组件和应用程序（约 550 MB）。
+
+```
+sudo pacman -S --need deepin deepin-extra
+```
+
+安装完成后，通过修改 Lightdm 配置文件启用深度欢迎页。按照下面的命令。
 
 ```
 nano /etc/lightdm/lightdm.conf
 ```
 
-And add the below line. Save the file (CTRL+O, CTRL+X).
+并添加下面这一行。保存该文件（`CTRL+O`、`CTRL+X`）。
 
 ```
 greeter-session=lightdm-deepin-greeter
 ```
 
-![add deepin-greeter in lightdm login - install Deepin desktop in Arch Linux][18]
+![在 Lightdm 登录页中添加深度欢迎欢迎页][18]
 
-Now it’s time to enable the display manager and network manager as service. So that next time you log on, they can run automatically by systemd.
+现在是时候把显示管理器和网络管理器作为服务启用了。这样，下次登录时，它们就可以由 systemd 自动运行。
 
 ```
 systemctl enable lightdm
 systemctl enable NetworkManager
 ```
 
-![Enable lightdm and network][19]
+![启用 Lightdm 和网络][19]。
 
-Reboot the system using the reboot command.
+使用 `reboot` 命令重新启动系统。
 
 ```
 reboot
 ```
 
-If all goes well, you should see the Deepin desktop login prompt. Login using the credentials you just created in the above steps. You should be greeted with the latest Deepin desktop environment.
+如果一切顺利，你应该看到深度桌面的登录提示。使用你刚刚在上面的步骤中创建的凭证登录。你应该会看到最新的深度桌面环境。
 
-![Deepin 20.1 Login screen in Arch Linux][20]
+![Arch Linux 中的深度 20.1 登录屏幕][20]
 
-![Deepin Desktop 20.1 in Arch Linux][21]
+![Arch Linux中的深度桌面 20.1][21]
 
-### Wrapping Up
+### 总结
 
-I hope this guide helped you to install the Deepin desktop in Arch Linux. Although it is not my daily driver, I feel Deepin’s desktop is somewhat slow in nature. Probably because of too much colour rendering and animation and not properly optimized by `dde-desktop` despite it being built on Qt.
+我希望这个指南能帮助你在 Arch Linux 中安装深度桌面。虽然它不是我的日常环境，我觉得深度的桌面在本质上有些慢。可能是因为有太多的颜色渲染和动画，而且尽管它是建立在 Qt 上的，但没有为深度桌面进行适当的优化。
 
 --------------------------------------------------------------------------------
 
@@ -267,8 +282,8 @@ via: https://www.debugpoint.com/deepin-arch-linux-install-20/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
