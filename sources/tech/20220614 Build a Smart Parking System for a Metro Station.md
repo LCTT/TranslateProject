@@ -7,103 +7,106 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Build a Smart Parking System for a Metro Station
+为地铁站构建智能停车系统
 ======
-This article will help you design a Web based application that automates a smart parking system for cars in a metro station using Node-RED.
+本文将帮助你设计一个基于 Web 的应用程序，该应用程序使用 Node-RED 为地铁站的汽车自动实现智能停车系统。
 
 ![Smart car parking][1]
 
-A Web application is software that gets executed on a Web server. Every Web application is accessed by the end user through a Web browser. These Web applications are programmed using a client-server architecture, where the user (client) is provided services through a remotely located server that might be hosted by a third-party. A Web API (application programming interface) is available across the Web and can be accessed by the user using the HTTP protocol, as shown in Figure 1.
+Web应用程序是在Web服务器上运行的软件。终端用户通过Web浏览器访问每个Web应用程序。Web应用程序使用客户端—服务器架构进行编程，该架构是用户（客户端）通过可能由第三方托管的远程服务器提供服务。Web API(应用程序编程接口)在Web上可用，用户可以通过HTTP协议访问该接口，如图1所示。
 
-This article will demonstrate how to design a Web based application for an automated smart parking system for cars in a metro station. It is designed using open source Node-RED. This system creates an interactive and stylish user login form using a template node, where HTML and CSS are coded to get car owner details to automate the parking system. We can see the login and submission form flow diagrams in Figures 2 and 3.
+本文将演示如何为地铁设计一个基于Web的汽车自动智能停车系统。 它是使用开源的Node-RED设计。该系统使用模板节点创建了一个互动式且时尚的用户登录表单，该模板用HTML和CSS编码以获取车主详细，从而实现停车系统的自动化。我们可以在图2和图3看到登录表单和提交表单的流程图。
 
-The nodes used are as follows:
+使用的节点如下：
 
-**[Metro smart parking node flow design][2]**
-Node-RED is triggered using the command ‘node-red’. Through the URL *http://127.0.0.1:1880/*, the node-RED UI flow browser is enabled. We have considered that the Node-RED setup is done and working.
+**[地铁智能停车节点流程设计][2]**
+Node-RED是使用’node-red‘命令激活。通过网址 *http://127.0.0.1:1880/*可以访问Node-RED的用户界面流程图的浏览器。我们认为Node-RED设置已完成并且可以正常工作了。
 
 ![table function][3]
 
 ![Figure 1: Web API][4]
 
-Follow the steps given below to create the login and submission forms.
+按照下面给出的步骤创建登录表单和提交表单。
 
 ![Figure 2: Login form flow diagram][5]
 
 ![Figure 3: Submission form flow diagram][6]
 
-*Login form*
-1) From the node palette, drag and drop http in node, which creates an HTTP end point for creating Web services.
-2) Connect http in node to function node. The latter helps to code JavaScript functions to run against the messages being received by the node.
+**登录表单**
+
+1) 在节点画布中，拖放http in节点，这会为创建Web服务创建一个HTTP访问点。
+2) 将http in节点连接到<ruby>函数<rt>function</rt></ruby>节点。函数节点有助于编写JavaScripts函数处理节点接收到的消息。
 
 ![Figure 4: Login form for smart parking for cars][7]
 
-3) Connect function node to template node, where the latter creates a Web API based on the provided template.
-4) Connect template node to http response node; the latter sends responses back to requests received from an http input node.
+3) 将<ruby>函数<rt>function</rt></ruby>节点连接到<ruby>模板<rt>template</rt></ruby>节点，模板节点基于提供的模板创建一个Web API。
+4) 将<ruby>模板<rt>template</rt></ruby>节点连接到http <ruby>响应<rt>response</rt></ruby>节点，响应节点将响应http输入节点的请求。
 
 ![Figure 5: Submission form for smart parking for cars][8]
 
-**Submission form**
-1) Drag and drop http in node and connect it to json node, which converts and communicates the data as JSON string.
-2) Connect http in node to debug node, which gives output in a debug monitor.
-3) Place and connect json node to function node and connect the latter to http response node.
+**提交表单**
 
-After the creation of a complete flow, click on the Deploy button in the top right corner of the Node-RED window. To view the user interface, go to the link*127.0.0.1:1880/ui/.*
-Once you enter and then click Submit, it will take you to the next page where you can read all the news articles.
+1) 拖放http in节点并将其连接到json节点，json节点将数据转换为JSON字符串进行通信。
+2) 将http in节点连接到<ruby>调试<rt>debug</rt></ruby>节点，调试节点的调试监控器会输出结果。
+3) 将json节点放置并连接到<ruby>函数<rt>function</rt></ruby>节点，将函数节点连接到http响应节点。
 
-**Node-RED workflow**
-In a single flow of Node-RED, you can create both the login form and submission form, as shown in Figures 4 and 5.
+创建完整流程后，单击Node-RED窗口右上角的<ruby>部署<rt>Deploy</rt></ruby>按钮。访问*127.0.0.1:1880/ui/*这个链接查看用户界面。
 
-Now we will configure the Node properties.
+输入链接然后单击<ruby>提交<rt>Submit</rt></ruby>后，该链接会跳转到下一页，您可以在该页面阅读所有新闻。
 
-*Login form:* Edit the http in property by choosing the method ‘Get’ and set the URL to ‘/MetroStation’ and configure the name as ‘Smart Parking’.
+**Node-RED工作流程**
+在单个Node-RED流程中，您可以创建登录表单和提交表单，如图4和图5所示。
+
+现在我们将配置节点属性。
+
+**登录表单**：编辑http in属性：<ruby>方法<rt>method</rt></ruby>选择 ‘Get’，<ruby>网址<rt>URL</rt></ruby>设为‘/MetroStation’ ，<ruby>名称<rt>name</rt></ruby>配置为 “<ruby>智能停车系统<rt>Smart Parking</rt></ruby>”。（译注：下文http响应节点的名称为Smart parking，p字母小写，为了区分，此处中文翻译成智能停车系统。）
 
 ![Figure 6: Http in node property configurations][9]
 
 | - |
 | :- |
-| Note: The URL can be any user defined local variable. |
+| 注意：任何用户可以定义<ruby>网址<rt>URL</rt></ruby>为本地变量。 |
 
-Now select the function node and edit its properties by coding the ‘msg.url = project’ and configure the name field with ‘Project Submission’.
+现在选择函数节点，编辑函数节点属性：输入代码 ‘msg.url = project’ ，并配置代码<ruby>名称<rt>name</rt></ruby>字段为 “<ruby>项目提交<rt>Project Submission</rt></ruby>”。
 
 ![Figure 7: Function node property configurations][10]
 
-In the Property window of the template node, configure the appropriate HTML code required for the login form and specify the name as ‘Display panel’. The Mustache template format is being used in this flow. Mustache is a simple Web template system that is described as a logicless template engine. It does not have any explicit control flow statements, such as ‘if’ and ‘else’ conditionals or ‘for’ loops. Looping and conditional evaluation can be achieved using section tags processing lists and lambdas.
+在模板节点的属性窗口，为登录表单配置相应的HTML代码，并将代码<ruby>名称<rt>name</rt></ruby>命名为 “<ruby>显示面板<rt>Display panel</rt></ruby>”。猜此流程使用了Mustache（译注：Mustache是胡子的意思，因为它的嵌入标记{{ }}非常像胡子）模板格式。Mustache是一个简单的Web模板系统，被描述为无逻辑的模板引擎。Mustache没有任何显式的控制流语句，例如 ‘if’ 和 ‘else’条件和‘for’ 循环。可以通过使用块标签处理列表和lambdas来实现循环和条件评估。
 
 ![Figure 8: Template node property configurations][11]
 
-Configure the edit property of http response node with the name ‘Smart Parking’ (Figure 9).
+配置编辑http<ruby>响应<rt>response</rt></ruby>节点的属性，<ruby>名称<rt>name</rt></ruby>设为 "<ruby>智能停车<rt>Smart parking</rt></ruby>"（图9） 。
 
 ![Figure 9: Http response node property configurations][12]
 
-*Submission form:*In the edit property window of http in node, choose the method ‘POST’ and the URL ‘/project’.
+**提交表单**：在http in节点的编辑属性窗口，<ruby>方法<rt>method</rt></ruby>选择‘POST’ ，<ruby>网址<rt>URL</rt></ruby>设为 ‘/project’。
 
 ![Figure 10: Http in node property configurations][13]
 
-In the JSON node edit window, set *Action* as ‘Convert between JSON String & Object’. Refer to Figure 11.
+在JSON节点的编辑窗口，<ruby>操作<rt>Action</rt></ruby>设为‘<ruby>JSON字符串与对象互转<rt>Convert between JSON String & Object</rt></ruby>’，参考图11。
 
 ![Figure 11: JSON node property configurations][14]
 
-The function node is configured as specified in Figure 12.
+函数节点的配置如图12所示。
 
 ![Figure 12: Function node property configurations][15]
 
-In http response node, edit the property name as ‘Project Submitted’.
+在http<ruby>响应<rt>response</rt></ruby>节点，编辑属性<ruby>名称<rt>name</rt></ruby>为“<ruby>已提交项目<rt>Project Submitted</rt></ruby>”。
 
 ![Figure 13: Http response node property configurations][16]
 
 | - |
 | :- |
-| Note: Also add the comment node with comments as ‘Login Form’ and ‘Submission Form’ |
+| 注意：添加带有评论的评论节点作为 “登录表单” 和 “提交表单”。 |
 
 ![Figure 14: Debug node property configurations][17]
 
-**Dashboard UI Web page**
-When the user clicks on Submit, the data given will be displayed in the UI and the debug node. If Reset is clicked, the details will be cleared, allowing the user to enter new details (Figure 15).
+**用户界面的控制面板**
+当用户单击<ruby>提交<rt>Submit</rt></ruby>，给出的数据将显示在用户界面和调试节点。如果单击<ruby>重置<rt>Reset</rt></ruby>，详细信息将被清除，允许用户输入新的详细信息（图15）。
 
 ![Figure 15: User login UI][18]
 
-Metro parking rates are provided through a hyperlink, and the tariff output is displayed in the UI. So the smart parking for cars is automated with appropriate hyperlinks to exhibit the parking tariff at the metro station. The final outputs of this automated system are retrieved and displayed in the Node-RED dashboard UI and debug monitor.
+地铁停车费通过超链接提供，收费表在用户界面显示。因此，汽车智能停车系统通过适当的超链接实现自动化，展示地铁站的停车费。该自动化系统的最终输出可以在Node-RED控制面板的用户界面和调试监控器调取和展示。
 
 ![Figure 16: Metro parking tariff][19]
 
@@ -113,7 +116,7 @@ via: https://www.opensourceforu.com/2022/06/build-a-smart-parking-system-for-a-m
 
 作者：[Dr Maheswari R.][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Maisie-x](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
