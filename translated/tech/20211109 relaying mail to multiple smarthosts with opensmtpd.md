@@ -7,14 +7,14 @@
 [#]: publisher: " "
 [#]: url: " "
 
-relaying mail to multiple smarthosts with opensmtpd
+使用 opensmtpd 将邮件中继到多个 smarthost
 ======
 
-I like to use a local smtp daemon for sending email from my laptop, because that way i can send emails even while disconnected and, even when the network is up, because i don't have to wait for the network protocol to be completed with a remote smarthost. Oh, and i also need local mail delivery.
+我喜欢使用本地 smtp 守护进程从我的笔记本电脑发送电子邮件，因为这样我即使在断开连接的情况下也可以发送电子邮件，而且，即使是在网络正常的情况下，因为我不需要等待网络协议在远程 smarthost 上完成。哦，我还需要本地邮件发送。
 
-For many years i've used postfix to those ends; it has an acceptably simply-ish configuration; but recently i've become fond of VPNs ([mullvad][1], if you want to know), and was annoyed by its getting confused when `/etc/resolv.conf` changes (for instance, because you get the VPN up after postfix's service has started). I've found a pleasantly simple alternative: [OpenSMTPD][2].
+多年来，我一直使用后缀来达到这些目的。它具有可接受的简单配置。但最近我开始喜欢 VPN（[mullvad][1]，如果你想知道的话），并且在 `/etc/resolv.conf` 更改时会感到困惑（例如，因为你在 postfix 的服务启动后启动了 VPN）。我找到了一个非常简单的替代方案：[OpenSMTPD][2]。
 
-Say i want to use the SMTP server fencepost.gnu.org when sending an email as [jao@gnu.org][3] and smtp.jao.io when writing with [mail@jao.io][4] or [news@xmobar.org][5] in my `From` header. OpenSMTPD let's you do that with a very simple configuration file in `/etc/smtpd.conf`[1][6]:
+假设我想在使用 [jao@gnu.org][3] 发送电子邮件时使用 SMTP 服务器 fencepost.gnu.org，而在我的 `From` 头中使用 [mail@jao.io][4] 或 [news@xmobar.org][5] 时使用 smtp.jao.io。OpenSMTPD 让你通过一个非常简单的配置文件 `/etc/smtpd.conf`[1][6] 来实现：
 
 ```
 
@@ -36,7 +36,7 @@ Say i want to use the SMTP server fencepost.gnu.org when sending an email as [ja
 
 ```
 
-where we have also configured local delivery for a good measure. That's the full configuration file! The only other thing needed is generating the `secrets.db` file with the users and passwords corresponding to the keys `gnu` and `jao` (those are just arbitrary names). To that end, we create a plain text file with them, using entries of the form `<key> <user>:<password>`:
+我们还为此配置了本地投递。这是完整的配置文件！唯一需要的另一件事是生成 `secrets.db` 文件，其中包含与键 `gnu` 和 `jao` 对应的用户和密码（这些只是任意名称）。为此，我们使用它们创建一个纯文本文件，使用形式为 `<key> <user>:<password>` 的条目：
 
 ```
 
@@ -45,7 +45,7 @@ where we have also configured local delivery for a good measure. That's the full
 
 ```
 
-where my user for `fencepost.gnu.org` is `jao` and for `smtp.jao.io` is `mail@jao.io` (you see there's no need of escaping spaces or ats). Then we use the program `makemap` to create the secrets db:
+`fencepost.gnu.org` 用户是 `jao`，`smtp.jao.io` 的用户是 `mail@jao.io`（你看，不需要转义空格或 ats）。然后我们使用程序 `makemap` 来创建密钥数据库：
 
 ```
 
@@ -53,13 +53,12 @@ where my user for `fencepost.gnu.org` is `jao` and for `smtp.jao.io` is `mail@ja
 
 ```
 
-### Footnotes:
+### 脚注：
 
 [1][7]
 
 That's the default configuration file in my debian box; other popular alternative is `/etc/openstmpd.conf`.
-
-[Tags][8]: [sundry][9]
+这是我的 debian 机器中的默认配置文件。另一个流行的替代方案是 `/etc/openstmpd.conf`。
 
 --------------------------------------------------------------------------------
 
@@ -67,7 +66,7 @@ via: https://jao.io/blog/2021-11-09-relaying-mail-to-multiple-smarthosts.html
 
 作者：[jao][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
