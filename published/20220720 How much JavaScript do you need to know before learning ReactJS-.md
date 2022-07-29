@@ -3,13 +3,16 @@
 [#]: author: "Sachin Samal https://opensource.com/users/sacsam005"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14874-1.html"
 
 学习 ReactJS 之前，你需要了解多少 JavaScript？
 ======
-主要的想法是精通 JavaScript，这样你就可以减少 ReactJS 之旅的复杂性。
+
+![](https://img.linux.net.cn/data/attachment/album/202207/29/082104d5zn1xn77r1n8p1n.jpg)
+
+> 最主要的是要精通 JavaScript，这样你就可以减少 ReactJS 之旅的复杂性。
 
 React 是一个建立在 HTML、CSS 和 JavaScript 之上的 UI 框架，其中 JavaScript（JS）负责大部分的逻辑。如果你对变量、数据类型、数组函数、回调、作用域、字符串方法、循环和其他 JS DOM 操作相关的主题有一定了解，这些将极大地加快学习 ReactJS 的步伐。
 
@@ -21,7 +24,7 @@ React 是一个建立在 HTML、CSS 和 JavaScript 之上的 UI 框架，其中 
 
 假设我获得了一些关于主题（牛）的知识，我如何计算我需要知道多少英语才能写出规定的主题？如果我必须用英语写一篇关于其他复杂话题的文章呢？
 
-这很难搞清楚，不是吗？我不知道我要写关于这个话题的什么东西，但它可能是任何东西。所以要想开始，我必须要有适当的英语知识，但这还没有结束。
+这很难搞清楚，不是吗？我不知道我要写关于这个话题的什么东西，但它可能是任何东西。所以要想开始，我必须要有适当的英语知识，但还不止于此。
 
 ### 极端现实
 
@@ -37,7 +40,7 @@ React 是一个建立在 HTML、CSS 和 JavaScript 之上的 UI 框架，其中 
 * 循环
 * 条件式
 
-你应该对这些具体的 JavaScript 熟悉。但这些只是最基本的先决条件。当你试图创建一个简单的 React 应用时，你将不可避免地需要处理事件。所以，普通函数、函数表达式、语句、箭头函数的概念，箭头函数和普通函数的区别，以及两类函数中 `this` 关键字的词义范围，这确实很重要。
+你应该对这些具体的 JavaScript 熟悉。但这些只是最基本的先决条件。当你试图创建一个简单的 React 应用时，你将不可避免地需要处理事件。所以，普通函数、函数表达式、语句、箭头函数的概念，箭头函数和普通函数的区别，以及这两类函数中 `this` 关键字的词义范围，这确实很重要。
 
 但问题是，如果我必须使用 ReactJS 创建一个复杂的应用怎么办？
 
@@ -47,8 +50,7 @@ React 是一个建立在 HTML、CSS 和 JavaScript 之上的 UI 框架，其中 
 
 最重要的是，你必须了解 JavaScript 本身背后的核心概念。JavaScript 在设计上是异步的。当出现在文件底部的代码在文件顶部的代码之前执行时，不要惊讶。像 promise、callback、async-await、map、filter 和 reduce 这样的结构，是 ReactJS 中最常见的方法和概念，尤其是在开发复杂的应用时。
 
-The main idea is to be good in JavaScript so you can reduce the complexity of your ReactJS journey.
-主要的想法是精通 JavaScript，这样你可以减少 ReactJS 之旅的复杂性。
+最主要的是要精通 JavaScript，这样你可以减少 ReactJS 之旅的复杂性。
 
 ### 越来越好
 
@@ -56,7 +58,7 @@ The main idea is to be good in JavaScript so you can reduce the complexity of yo
 
 ### 立即开始使用 JavaScript
 
-不要费心等到你涵盖了 JavaScript 的所有方面。那永远不会发生。如果这样做，你将陷入学习 JavaScript 的永远循环中。你们都知道技术领域是如何不断发展和迅速变化的。如果你想开始学习 JavaScript，请尝试阅读 Mandy Kendall 的介绍性文章[通过编写猜谜游戏学习 JavaScript][2]。这是一种快速入门的好方法，当你看到了可能的情况，我认为你可能会发现很难停下来。
+不要费心等到你了解了 JavaScript 的所有方面。那永远不会发生。如果这样做，你将陷入学习 JavaScript 的永远循环中。你们都知道技术领域是如何不断发展和迅速变化的。如果你想开始学习 JavaScript，请尝试阅读 Mandy Kendall 的介绍性文章 [通过编写猜谜游戏学习 JavaScript][2]。这是一种快速入门的好方法，当你看到了可能的情况，我认为你可能会发现很难停下来。
 
 --------------------------------------------------------------------------------
 
@@ -65,7 +67,7 @@ via: https://opensource.com/article/22/7/learn-javascript-before-reactjs
 作者：[Sachin Samal][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
