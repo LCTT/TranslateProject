@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/pending-update-firefox-ubuntu/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
