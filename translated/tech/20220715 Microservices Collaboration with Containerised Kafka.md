@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/07/microservices-collaboration-with-containerised-kafka/"
 [#]: author: "Krishna Mohan Koyya https://www.opensourceforu.com/author/krishna-mohan-koyya/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "yjacks"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
