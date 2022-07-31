@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/ubuntu-vs-manjaro/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Return7g"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
