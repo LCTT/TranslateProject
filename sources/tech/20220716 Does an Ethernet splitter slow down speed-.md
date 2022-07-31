@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/ethernet-splitter-speed/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MCGA"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
