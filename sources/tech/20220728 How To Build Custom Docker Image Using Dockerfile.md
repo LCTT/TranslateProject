@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/a-brief-introduction-to-dockerfile/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Donkey"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -289,7 +289,7 @@ via: https://ostechnix.com/a-brief-introduction-to-dockerfile/
 
 作者：[sk][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Donkey](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
