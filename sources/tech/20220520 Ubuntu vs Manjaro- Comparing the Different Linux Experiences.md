@@ -2,16 +2,19 @@
 [#]: via: "https://itsfoss.com/ubuntu-vs-manjaro/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Return7g"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
 Ubuntu vs Manjaro: Comparing the Different Linux Experiences
+对比 Ubuntu 和 Manjaro ：比较不同 Linux 发行版体验
 ======
 Ubuntu is the most popular Debian-based Linux distribution for desktops and servers.
+Ubuntu 是基于 Debian 最流行的桌面和服务器 Linux 发行版
 
 And Manjaro Linux is an Arch-based distro tailored for desktops.
+Manjaro Linux 是基于 Arch 量身定制的桌面发行版
 
 Both are entirely different when it comes to user experience and features.
 
