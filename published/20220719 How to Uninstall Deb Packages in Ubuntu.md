@@ -10,6 +10,8 @@
 如何在 Ubuntu 中卸载 deb 包
 ======
 
+![](https://img.linux.net.cn/data/attachment/album/202208/01/180906afaqifcsqqsfsxyq.jpg)
+
 [从 .deb 文件安装应用][1] 非常简单。双击它，它会在软件中心中打开，然后从那里安装它。
 
 但是如何在 Ubuntu 或 Debian 中卸载 deb 包呢？如何删除一段时间前安装的软件包呢。
