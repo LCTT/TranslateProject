@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/libreoffice-writer-templates"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
