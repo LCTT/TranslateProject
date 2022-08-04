@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "robsean"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14894-1.html"
 
 Linux Mint 21 “Vanessa” 的 10 大特色
 ======
