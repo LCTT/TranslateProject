@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/08/ai-ml-and-dl-whats-the-difference/"
 [#]: author: "Bala Kalavala https://www.opensourceforu.com/author/bala-kalavala/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
