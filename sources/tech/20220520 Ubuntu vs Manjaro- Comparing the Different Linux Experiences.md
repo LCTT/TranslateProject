@@ -8,19 +8,24 @@
 [#]: url: " "
 
 Ubuntu vs Manjaro: Comparing the Different Linux Experiences
-对比 Ubuntu 和 Manjaro ：比较不同 Linux 发行版体验
+对比Ubuntu和Manjaro：比较不同的Linux发行版体验
+
 ======
 Ubuntu is the most popular Debian-based Linux distribution for desktops and servers.
-Ubuntu 是基于 Debian 最流行的桌面和服务器 Linux 发行版
+Ubuntu是基于Debian最流行的桌面和服务器Linux发行版
 
 And Manjaro Linux is an Arch-based distro tailored for desktops.
-Manjaro Linux 是基于 Arch 量身定制的桌面发行版
+Manjaro是基于Arch量身定制的Linux发行版
 
 Both are entirely different when it comes to user experience and features.
+两者在用户体验以及功能上都大相径庭
 
 However, one of the common grounds is the [desktop environment][1] when considering Manjaro’s GNOME edition with Ubuntu.
+然而，桌面环境的共同点之一是 Manjaro 的 GNOME 版本和 Ubuntu。
+
 
 But, what exactly are the differences? Is the package manager on Manjaro better? Are software tools available on both Ubuntu and Manjaro?
+但是它们之间究竟有什么区别呢？ Manjaro 的包管理器更好骂？
 
 Here, we shall look at the differences in both the Linux distributions at certain key points.
 
