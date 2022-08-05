@@ -7,7 +7,6 @@
 [#]: publisher: " "
 [#]: url: " "
 
-An open source project that opens the internet for all
 一个为了使因特网开放向所有人的开源项目
 ======
 Equalify 是一个为了让因特网更加无障碍的开源项目。
@@ -48,7 +47,7 @@ via: https://opensource.com/article/22/6/equalify-open-internet-accessibility
 
 作者：[Blake Bertuccelli][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/yjacks)
+译者：[yjacks](https://github.com/yjacks)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
