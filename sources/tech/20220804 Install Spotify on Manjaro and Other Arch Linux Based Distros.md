@@ -9,6 +9,7 @@
 
 Install Spotify on Manjaro and Other Arch Linux Based Distros
 ======
+
 Spotify needs no introduction. It is the most popular music streaming service.
 
 You can [play Spotify in a web browser][1], but using the desktop application would be a better option if you use it extensively.
