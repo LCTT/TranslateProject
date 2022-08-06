@@ -7,13 +7,12 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Write a chess game using bit-fields and masks
+使用位字段和掩码写一个国际象棋游戏
 ======
-Using bit-fields and masks is a common method to combine data without
-using structures.
+使用位字段和掩码是不用数据结构组合数据的常用方法。
 ![Chess pieces on a chess board][1]
 
-Let's say you were writing a chess game in C. One way to track the pieces on the board is by defining a structure that defines each possible piece on the board, and its color, so every square contains an element from that structure. For example, you might have a structure that looks like this:
+假设你在用 C 语言写一个国际象棋游戏。追踪棋盘上棋子的一种方法是定义一个结构，该结构定义了棋盘上每个可能的棋子及其颜色，因此每个格子都包含该结构中的一个元素。例如，你可以将结构定义成下面这样：
 
 
 ```
@@ -23,53 +22,54 @@ struct chess_pc {
 }
 ```
 
-With this programming structure, your program will know what piece is in every square and its color. You can quickly identify if the piece is a pawn, rook, knight, bishop, queen, or king—and if the piece is black or white. But there's a more straightforward way to track the same information while using less data and memory. Rather than storing a structure of two `int` values for every square on a chessboard, we can store a single `int` value and use binary _bit-fields_ and _masks_ to identify the pieces and color in each square.
-
-### Bits and binary
-
-When using bit-fields to represent data, it helps to think like a computer. Let's start by listing the possible chess pieces and assigning a number to each. I'll help us along to the next step by representing the number in its binary form, the way the computer would track it. Remember that binary numbers are made up of _bits_, which are either zero or one.
-
-  * `00000000:` empty (0)
-  * `00000001:` pawn (1)
-  * `00000010:` rook (2)
-  * `00000011:` knight (3)
-  * `00000100:` bishop (4)
-  * `00000101:` queen (5)
-  * `00000110:` king (6)
+有了这个数据结构，你的程序就会知道每个格子里是什么棋子及棋子的颜色。你可以快速识别出棋子是兵、车、马、象、后还是王，以及棋子是黑还是白。但是，有一种更直接的方法来跟踪这些信息，同时只用更少的数据和内存。与为棋盘上的每个方格存储两个 `int` 值的结构不同，我们可以存储单个 `int` 值，并使用二进制位字段和掩码来标识每个方格中的棋子和颜色。
 
 
+### 比特和二进制
 
-To list all pieces on a chessboard, we only need the three bits that represent (from right to left) the values 1, 2, and 4. For example, the number 6 is binary `110`. All of the other bits in the binary representation of 6 are zeroes.
+当使用位字段表示数据时，我们最好像计算机一样思考。让我们从列出可能的棋子开始，并为每个棋子分配一个数字。我将帮助我们进入下一个步骤，用二进制表示这个数字，也就是按照计算机追踪它的方式。记住，二进制数是由比特组成的，比特要么是 0，要么是 1。
 
-And with a bit of cleverness, we can use one of those extra always-zero bits to track if a piece is black or white. We can use the number 8 (binary `00001000`) to indicate if a piece is black. If this bit is 1, it's black; if it's 0, it's white. That's called a _bit-field_, which we can pull out later using a binary _mask_.
+  * `00000000:` 空 (0)
+  * `00000001:` 兵 (1)
+  * `00000010:` 车 (2)
+  * `00000011:` 马 (3)
+  * `00000100:` 象 (4)
+  * `00000101:` 后 (5)
+  * `00000110:` 王 (6)
 
-### Storing data with bit-fields
 
-To write a chess program using bit-fields and masks, we might start with these definitions:
+
+要列出一个棋盘上的所有棋子，我们只需要三个比特从右到左依次代表值 1、2 和 4。例如，数字 6 是二进制的 110。6 的二进制表示中的其他所有位都是 0。
+
+一个聪明一点的方法：我们可以使用那些额外的总为零的比特来跟踪一个棋子是黑还是白。我们可以使用数字 8（二进制 `00001000`）来表示棋子是否为黑色。如果这一位是 1，则代表该棋子是黑色；如果是 0，则代表该棋子是白色。这被称为**位字段**，稍后我们可以使用二进制**掩码**将其取出。
+
+### 用位字段存储数据
+
+要编写一个使用位字段和掩码的国际象棋程序，我们可以从以下定义开始：
 
 
 ```
-/* game pieces */
+/* 棋子 */
 
-#define EMPTY 0
-#define PAWN 1
-#define ROOK 2
-#define KNIGHT 3
-#define BISHOP 4
-#define QUEEN 5
-#define KING 6
+#define EMPTY 0 // 空
+#define PAWN 1 // 兵
+#define ROOK 2 // 车
+#define KNIGHT 3 // 马
+#define BISHOP 4 // 象
+#define QUEEN 5 // 后
+#define KING 6 // 王
 
-/* piece color (bit-field) */
+/* 棋色 */
 
-#define BLACK 8
-#define WHITE 0
+#define BLACK 8 // 黑
+#define WHITE 0 // 白
 
-/* piece only (mask) */
+/* 掩码 */
 
 #define PIECE 7
 ```
 
-When you assign a value to a square, such as when initializing the chessboard, you can assign a single `int` value to track both the piece and its color. For example, to store a black rook in position 0,0 of an array, you would use this code:
+当你为一个棋格赋值时，比如初始化棋盘，你可以赋一个 `int` 类型的值来跟踪棋子及其颜色。例如，要在棋盘的 0,0 位置存储棋子黑车，你可以使用下面的代码：
 
 
 ```
@@ -79,8 +79,7 @@ When you assign a value to a square, such as when initializing the chessboard, y
 
   board[0][0] = BLACK | ROOK;
 ```
-
-The `|` is a binary OR, which means the computer will combine the bits from two numbers. For every bit position, if that bit from _either_ number is 1, the result for that bit position is also 1. Binary OR of the value `BLACK` (8, or binary `00001000`) and the value `ROOK` (2, or binary `00000010`) is binary `00001010`, or 10:
+`|` 是二进制或符号，这意味着计算机将合并两个数字的比特。对于每个比特的位置，如果**任意一个**数字的比特为 1，该位置比特的结果也是 1。`BLACK` 的值（8，即二进制下的 `00001000`）和 `ROOK` 的值（2，即二进制下的 `00000010`）的二进制或结果是二进制下的 `00001010`，即 10：
 
 
 ```
@@ -90,14 +89,13 @@ The `|` is a binary OR, which means the computer will combine the bits from two 
     00001010 = 10
 ```
 
-Similarly, to store a white pawn in position 6,0 of the array, you could use this:
+类似地，要在棋盘的 6,0 位置存储一个白色兵，你可以这样做：
 
 
 ```
-`  board[6][0] = WHITE | PAWN;`
+  board[6][0] = WHITE | PAWN;
 ```
-
-This stores the value 1 because the binary OR of `WHITE` (0) and `PAWN` (1) is just 1:
+这样存储的值就是 `WHITE` (0) 和 `PAWN` (1) 的二进制或的结果，也即是 1。
 
 
 ```
@@ -107,11 +105,11 @@ This stores the value 1 because the binary OR of `WHITE` (0) and `PAWN` (1) is j
     00000001 = 1
 ```
 
-### Getting data out with masks
+### 用掩码获取数据
 
-During the chess game, the program will need to know what piece is in a square and its color. We can separate the piece using a binary mask.
+在下棋过程中，程序需要知道棋格中的棋子和它的颜色。我们可以使用二进制掩码来分离这部分。
 
-For example, the program might need to know the contents of a specific square on the board during the chess game, such as the array element at `board[5][3]`. What piece is there, and is it black or white? To identify the chess piece, combine the element's value with the `PIECE` mask using the binary AND:
+举个例子，程序可能需要知道棋局中棋盘上特定棋格的内容，例如位于 `board[5][3]` 的数组元素。这个是什么棋子，是黑的还是白的？为了识别棋子，使用二进制和 (AND) 将元素的值与掩码 `PIECE` 结合起来：
 
 
 ```
@@ -120,10 +118,9 @@ For example, the program might need to know the contents of a specific square on
 
 ..
 
-  piece = board[5][3] &amp; PIECE;
+  piece = board[5][3] & PIECE;
 ```
-
-The binary AND operator (`&`) combines two binary values so that for any bit position, if that bit in _both_ numbers is 1, then the result is also 1. For example, if the value of `board[5][3]` is 11 (binary `00001011`), then the binary AND of 11 and the mask PIECE (7, or binary `00000111`) is binary `00000011`, or 3. This is a knight, which also has the value 3.
+二进制与 (AND) 操作符 (`&`) 将两个二进制值结合，这样对于任意位，如果两个数字中的那个位**都是** 1，那么结果也是 1。例如，如果 `board[5][3]` 的值是 11（二进制下的 `00001011`），那么 11 和 掩码 `PIECE`（7，二进制下的 `00000111`）二进制与的结果为二进制下的 `00000011`，也即 3。这代表马，马的值是 3。
 
 
 ```
@@ -132,8 +129,7 @@ AND 00000111 = 7
     ________
     00000011 = 3
 ```
-
-Separating the piece's color is a simple matter of using binary AND with the value and the `BLACK` bit-field. For example, you might write this as a function called `is_black` to determine if a piece is either black or white:
+解析棋子的颜色是一个简单的事情，只需要将棋子的值与 `BLACK` 位字段进行二进制与操作。比如，你可以写一个名为 `is_black` 的函数来确定棋子是黑还是白：
 
 
 ```
@@ -143,12 +139,10 @@ is_black(int piece)
   return (piece &amp; BLACK);
 }
 ```
+这样之所以有效，是因为 `BLACK` 的值为 8（二进制下的 `00001000`）。在 C 语言中，任何非零值都被视为 True，零总是 False。所以如果 `5,3` 处的棋子是黑色的，则 `is_black(board[5][3])` 返回 True 值 (8)；如果是白色的，则返回 False 值 (0)。
 
-This works because the value `BLACK` is 8, or binary `00001000`. And in the C programming language, any non-zero value is treated as True, and zero is always False. So `is_black(board[5][3])` will return a True value (8) if the piece in array element `5,3` is black and will return a False value (0) if it is white.
-
-### Bit fields
-
-Using bit-fields and masks is a common method to combine data without using structures. They are worth adding to your programmer's "tool kit." While data structures are a valuable tool for ordered programming where you need to track related data, using separate elements to track single On or Off values (such as the colors of chess pieces) is less efficient. In these cases, consider using bit-fields and masks to combine your data more efficiently.
+### 位字段
+使用位字段和掩码是不使用结构组合数据的常用方法。它们值得被程序员收藏到“工具包”中。虽然数据结构对于需要跟踪相关数据的有序编程是一种有价值的工具，但是使用单独的元素来跟踪单个的 On 或 Off 值（例如棋子的颜色）的效率较低。在这些情况下，可以考虑使用位字段和掩码来更高效地组合数据。
 
 --------------------------------------------------------------------------------
 
