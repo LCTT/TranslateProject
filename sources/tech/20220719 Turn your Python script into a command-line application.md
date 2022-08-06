@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/bootstrap-python-command-line-application"
 [#]: author: "Mark Meyer https://opensource.com/users/ofosos"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
