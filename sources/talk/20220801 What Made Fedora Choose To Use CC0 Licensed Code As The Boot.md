@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/08/what-made-fedora-choose-to-use-cc0-licensed-code-as-the-boot/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "yjacks"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
