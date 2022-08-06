@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/delete-local-reference-remote-branch-git"
 [#]: author: "Agil Antony https://opensource.com/users/agantony"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MCGA"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
