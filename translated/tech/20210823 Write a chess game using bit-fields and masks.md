@@ -136,7 +136,7 @@ AND 00000111 = 7
 int
 is_black(int piece)
 {
-  return (piece &amp; BLACK);
+  return (piece & BLACK);
 }
 ```
 这样之所以有效，是因为 `BLACK` 的值为 8（二进制下的 `00001000`）。在 C 语言中，任何非零值都被视为 True，零总是 False。所以如果 `5,3` 处的棋子是黑色的，则 `is_black(board[5][3])` 返回 True 值 (8)；如果是白色的，则返回 False 值 (0)。
