@@ -3,17 +3,20 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14899-1.html"
 
 如何在基于 Ubuntu 的 Linux 发行版上安装最新的 Vim 9.0
 ======
-简介：这个快速教程展示了在 Ubuntu Linux 上安装最新版本的 Vim 的步骤。
 
-Vim 是最[流行的基于终端的文本编辑器][1]之一。然而，它在 Ubuntu 上没有被默认安装。
+![](https://img.linux.net.cn/data/attachment/album/202208/05/174903f3zu3nqrrnwclwrz.jpg)
 
-Ubuntu 使用 Nano 作为默认的终端编辑器。Nano 也是一个优秀的工具，我不打算参与 [Nano 与 Vim 的辩论][2]。
+> 这个快速教程展示了在 Ubuntu Linux 上安装最新版本的 Vim 的步骤。
+
+Vim 是最 [流行的基于终端的文本编辑器][1] 之一。然而，它在 Ubuntu 上没有被默认安装。
+
+Ubuntu 使用 Nano 作为默认的终端编辑器。Nano 也是一个优秀的工具，我并不打算参与 [Nano 与 Vim 孰优孰劣的辩论][2]。
 
 如果你已经花了一些时间掌握了 Vim 的快捷键，你就不必忘记它们，而开始使用一个新的编辑器。
 
@@ -23,7 +26,7 @@ Ubuntu 使用 Nano 作为默认的终端编辑器。Nano 也是一个优秀的�
 sudo apt install vim
 ```
 
-这很简单，对吗？这种方法的主要问题是，你不会得到最新的Vim版本。
+这很简单，对吗？这种方法的主要问题是，你不会得到最新的 Vim 版本。
 
 你可以用以下命令检查已安装的 Vim 版本：
 
@@ -31,11 +34,11 @@ sudo apt install vim
 vim --version
 ```
 
-而如果你查看 [Vim 网站][3]，你会发现 Vim 已经有较新的版本发布。
+而如果你查看 [Vim 网站][3]，你会发现 Vim 已经发布了更新的版本。
 
 在写这篇文章的时候，[Vim 9.0 已经发布][4]，但在 Ubuntu 仓库中还没有。
 
-好消息是，你可以使用一个[非官方但积极维护的 PPA][5] 安装最新的 Vim。
+好消息是，你可以使用一个 [非官方的，但积极维护的 PPA][5] 安装最新的 Vim。
 
 ### 使用 PPA 在 Ubuntu 上安装 Vim 9
 
@@ -71,7 +74,7 @@ vim --version
 
 这是一个维护得非常好的 PPA，适用于所有活跃的 Ubuntu 版本。
 
-如果你是 PPA 的新手，我有一个关于这个主题的详细指南。你应该阅读以了解更多关于 [Ubuntu 中 PPA 的概念][8]。
+如果你是 PPA 的新手，我有一个关于这个主题的详细指南。你应该阅读以对 [Ubuntu 中 PPA 的概念][8] 了解更多。
 
 ### 降级或删除
 
@@ -79,7 +82,7 @@ vim --version
 
 在删除 Vim 之前，如果你做了自定义修改并打算再次使用 Vim，你应该复制 vimrc 或其他类似的配置文件。
 
-好的。打开一个终端，使用以下命令：
+那么，打开一个终端，使用以下命令：
 
 ```
 sudo apt remove vim
@@ -91,7 +94,7 @@ sudo apt remove vim
 sudo add-apt-repository -r ppa:jonathonf/vim
 ```
 
-现在，如果你想要旧的、官方的 Ubuntu 版本的 Vim，只需再次[使用 apt 命令][9]安装它。
+现在，如果你想要旧的、官方的 Ubuntu 版本的 Vim，只需再次 [使用 apt 命令][9] 安装它。
 
 享受 Ubuntu 上的 Vim 吧。
 
@@ -102,7 +105,7 @@ via: https://itsfoss.com/install-latest-vim-ubuntu/
 作者：[Abhishek Prakash][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
