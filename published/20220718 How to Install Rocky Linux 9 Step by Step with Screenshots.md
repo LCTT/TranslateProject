@@ -3,81 +3,84 @@
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
 [#]: translator: "robsean"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14909-1.html"
 
 图解 Rocky Linux 9 安装步骤 
 ======
-这篇教程中，我们将图解 Rocky Linux 9 安装步骤。
 
-Rocky 企业软件基金会已经发布了它的最新的操作系统 ‘Rocky Linux 9’ 。Rocky Linux 是针对工作站和服务器的自由和开放源文件的操作系统。它被认为是 CentOS Linux 的继承者。
+![](https://img.linux.net.cn/data/attachment/album/202208/08/172822s7zwhj7wuzzjfm25.jpg)
 
-‘Blue Onyx’ 是 Rocky Linux 9 的代码名称，它的 RHEL 9 的复制品。Rocky Linux 和 RHEL 之间的主要不同是，它有它自己的开放源文件构建系统，名称为 ‘Peridot’ 。
+> 这篇教程中，我们将图解 Rocky Linux 9 安装步骤。
 
-##### Rocky Linux 9 的新的更新和特色功能
+<ruby>Rocky 企业软件基金会<rt>Rocky Enterprise Software Foundation</rt></ruby> 已经发布了它的最新的操作系统 “Rocky Linux 9”。Rocky Linux 是针对工作站和服务器的自由而开源的操作系统。它被认为是 CentOS Linux 的继承者。
+
+Rocky Linux 9 是 RHEL 9 的复制品，其开发代号是“Blue Onyx”。Rocky Linux 和 RHEL 之间的主要不同是，它有它自己的名为 “Peridot” 的开源构建系统。
+
+### Rocky Linux 9 的更新和特色
 
 * Gnome 40 是默认的桌面环境
-* 在 XFS 文件系统上支持直接访问 (DAX) 操作
-* 更新运行时和编译器，像 GCC 11.2.1 、LLVM (13.0.1) 、Rust (1.58.1) 和 Go (1.17.1)
-* 更新开发工具链，像 Python 3.9 、Node.js 16 、Ruby 3.0.3 、Perl 5.32 和 PHP 8.0
-* 默认情况下，通过 ssh 禁用 root 用户身份验证
-* 更新 OpenSSL 3.0 和改善 cockpit web console
-* 社区支持到 2032 年 05 月 31 日
+* 在 XFS 文件系统上支持<ruby>直接访问<rt>Direct Access</rt></ruby>（DAX）操作
+* 更新了运行时和编译器，如 GCC 11.2.1 、LLVM 13.0.1 、Rust 1.58.1 和 Go 1.17.1
+* 更新了开发工具链，如 Python 3.9 、Node.js 16 、Ruby 3.0.3 、Perl 5.32 和 PHP 8.0
+* ssh 默认禁用了 root 用户身份验证
+* 更新了 OpenSSL 3.0，改进了 Cockpit 网页主控台
+* 社区提供支持到 2032 年 05 月 31 日
 
-##### 必要条件
+### 前置条件
 
-* 2 GB RAM 或更多
-* 2 个 CPU 核心 (1.1 GHz 处理器或更高)
+* 2 GB 及更多的内存
+* 2 个 CPU 核心（1.1 GHz 及更高)
 * 20 GB 硬盘空间
-* 可启动媒介盘 (USD 或 DVD)
-* 因特网连接 (可选)
+* 可启动介质（USD 或 DVD）
+* 互联网连接（可选）
 
-不再耽误时间，让我们跳入 Rocky Linux 9 的安装步骤
+不再耽误时间，让我们直接进入 Rocky Linux 9 的安装步骤：
 
-### 1) 下载 Rocky Linux 9 的 ISO 文件
+### 1、下载 Rocky Linux 9 的 ISO 文件
 
 使用下面的官方网址来下载 ISO 文件
 
-* [Rocky Linux 9 ISO][1]
+> **[Rocky Linux 9 ISO][1]**
 
-在你下载 iso 文件后，使用已下载的 ISO 文件制作一个可启动媒介盘 (USB/DVD)
+在你下载 ISO 文件后，使用已下载的 ISO 文件制作一个可启动介质（USB/DVD）。
 
-在 Windows 中，你可以利用 ‘Rufus’ 软件来使用 ISO 文件来制作可启动 USB 驱动器。在 Linux 中，参考下面的内容
+在 Windows 中，你可以利用 Rufus 软件来使用 ISO 文件来制作可启动 USB 驱动器。在 Linux 中，参考下面的内容：
 
-* [在 Ubuntu / Linux Mint 上，如何创建可启动 USB 驱动器][2]
+> **[在 Ubuntu / Linux Mint 上，如何创建可启动 USB 驱动器][2]**
 
-### 2) 使用可启动媒介盘启动系统
+### 2、使用可启动媒介盘启动系统
 
-前往你计划安装 Rocky Linux 9 的硬件系统，并在 BIOS 设置中将可启动介质从硬盘驱动器更改为 USB 驱动器, 重新启动它。
+在你计划安装 Rocky Linux 9 的硬件系统上，BIOS 设置中将可启动介质从硬盘驱动器更改为 USB 驱动器, 重新启动它。
 
-在硬件系统使用可启动介质启动后，我们将获得下面的屏幕，
+在硬件系统使用可启动介质启动后，我们将看到下面的屏幕，
 
 ![Select-Install-Rocky-Linux-9-option][3]
 
-选择第一个选项， <ruby>安装 Rocky Linux 9.0<rt>Install Rocky Linux 9.0</rt></ruby> ，并按下 <ruby>回车<rt>enter</rt></ruby> 按键
+选择第一个选项， <ruby>安装 Rocky Linux 9.0<rt>Install Rocky Linux 9.0</rt></ruby> ，并按下 <ruby>回车<rt>enter</rt></ruby> 按键。
 
-### 3) 选择首选语言
+### 3、选择首选语言
 
-选择安装过程的首选语言，然后单击 <ruby>继续<rt>Continue</rt></ruby> 按钮
+选择**安装过程**的首选语言，然后单击 <ruby>继续<rt>Continue</rt></ruby> 按钮，
 
 ![Preferred-Language-for-RockyLinux9-Installation][4]
 
-### 4) 安装过程摘要
+### 4、安装过程摘要
 
-在这个步骤中，我们将获得下面的初始安装摘要。为开始安装，首先，我们必须完成标记项目T，像 <ruby>安装目标<rt>Installation Destination</rt></ruby> 和 <ruby>用户设置<rt>User settings</rt></ruby>
+在这个步骤中，我们将看到如下的初始安装摘要。要开始安装，首先，我们必须完成标记项目，如 <ruby>安装目标<rt>Installation Destination</rt></ruby> 和 <ruby>用户设置<rt>User settings</rt></ruby>。
 
 除了已标记的项目外，我们也可以更改现有的项目，只需要按照你的要求单击它们就可以进行更改。
 
 ![Initial-Installation-Summary-Rocky-Linux9][5]
 
-##### 配置安装目标
+#### 配置安装目标
 
-在这个项目中，我们将为 Rocky Linux 具体指定分区方案。单击 <ruby>安装目标<rt>Installation Destination</rt></ruby>
+在这个项目中，我们将为 Rocky Linux 具体指定分区方案。单击 <ruby>安装目标<rt>Installation Destination</rt></ruby>。
 
 在这里，我们可以为 <ruby>存储配置<rt>storage configuration</rt></ruby> 或 <ruby>分区方案<rt>partition scheme</rt></ruby> 选择 <ruby>自动<rt>automatic</rt></ruby> 选项或 <ruby>自定义<rt>custom </rt></ruby> 选项。
 
-在自动选项中，安装程序将在磁盘上自动地创建分区，然而，自定义选项将允许我们在磁盘上手动创建分区。
+在自动选项中，安装程序将在磁盘上自动地创建分区，而自定义选项允许我们在磁盘上手动创建分区。
 
 ![Choose-custom-Storage-Configuration-Rocky-Linux9][6]
 
@@ -87,26 +90,26 @@ Rocky 企业软件基金会已经发布了它的最新的操作系统 ‘Rocky L
 
 在该 40 GB 的磁盘上，我们将创建以下分区，
 
-* /boot          :  2GB   (xfs file system)
-* /                 : 10 GB  (xfs file system)
-* /home         : 25 GB (xfs file system)
-* Swap           : 2 GB
+* `/boot`：2GB（xfs 文件系统）
+* `/`：10 GB（xfs 文件系统）
+* `/home`：25 GB（xfs 文件系统）
+* 交换分区：2 GB
 
-为开始创建分区，选择 <ruby>标准分区<rt>Standard Partition</rt> 方案，然后单击 + 符号。
+开始创建分区，选择 <ruby>标准分区<rt>Standard Partition</rt> 方案，然后单击 “+” 符号。
 
-创建第一个分区，大小为 2 GB 的 /boot 分区，
+创建第一个分区，大小为 2 GB 的 `/boot` 分区，
 
 ![Boot-Partition-RockyLinux9-Installation][8]
 
 单击 <ruby>添加挂载点<rt>Add mount point</rt></ruby> 按钮。
 
-类似地，接下来分别创建大小为 10 GB 的 / 分区和 25 GB 的 /home 分区
+类似地，接下来分别创建大小为 10 GB 的 `/` 分区和 25 GB 的 `/home` 分区。
 
 ![Slash-Partition-Rocky-Linux9-installation][9]
 
 ![Home-Partition-Rocky-Linux9-Installation][10]
 
-现在，创建最后一个分区，大小为 2 GB 的 swap 分区，
+现在，创建最后一个分区，大小为 2 GB 的交换分区，（LCTT 校注：如果你的内存非常多，你可以选择不创建交换分区。另外，对于生产环境，建议将存储数据的目录单独划分分区。）
 
 ![Swap-Partition-RockyLinux9-Installation][11]
 
@@ -118,15 +121,15 @@ Rocky 企业软件基金会已经发布了它的最新的操作系统 ‘Rocky L
 
 ![Accept-Changes-to-Write-on-Disk-RockyLinux9][13]
 
-##### 配置用户设置
+#### 配置用户设置
 
-在<ruby>用户设置<rt>User Settings</rt></ruby>下，单击 <ruby>root 密码<rt>Root Password</rt></ruby> 按钮。
+在 <ruby>用户设置<rt>User Settings</rt></ruby> 下，单击 <ruby>root 密码 <rt>Root Password</rt></ruby> 按钮。
 
 ![Set-Root-Password-RockyLinux9-Instalation][14]
 
-设置 root 用户的密码，并单击<ruby>执行<rt>Done</rt></ruby> 按钮，
+设置 root 用户的密码，并单击 <ruby>执行<rt>Done</rt></ruby> 按钮。
 
-再次回到 <ruby>用户设置<rt>User Settings</rt></ruby> 下，单击 <ruby>用户创建<rt>User Creation</rt></ruby> 按钮，具体指定本地用户是详细信息，例如用户名称和密码。
+再次回到 <ruby>用户设置<rt>User Settings</rt></ruby> 下，单击 <ruby>用户创建<rt>User Creation</rt></ruby> 按钮，具体指定本地用户的详细信息，例如用户名称和密码。
 
 ![Local-User-Create-During-RockyLinux9-Installation][15]
 
@@ -136,23 +139,23 @@ Rocky 企业软件基金会已经发布了它的最新的操作系统 ‘Rocky L
 
 ![Begin-Installation-Option-RockyLinux9][16]
 
-### 5) 安装过程开始
+### 5、安装过程开始
 
 在这一步骤中，安装程序已经开始了，并在正在进行中，
 
 ![RockyLinux9-Installation-Progress][17]
 
-在安装过程完成后，安装程序将提示你来重新启动系统。
+在安装过程完成后，安装程序将提示你重新启动系统。
 
 ![Reboot-System-after-RockyLinux9-Installation][18]
 
-单击 <ruby>重新启动系统<rt>Reboot System</rt></ruby> 按钮，
+单击 <ruby>重新启动系统<rt>Reboot System</rt></ruby> 按钮。
 
-注意：不要忘记在 BIOS 设置中将可启动介质从 USB 启动更改为硬盘驱动器启动
+注意：不要忘记在 BIOS 设置中将可启动介质从 USB 启动更改为硬盘驱动器启动。
 
-### 6) 安装后的登录屏幕和桌面环境
+### 6、安装后的登录屏幕和桌面环境
 
-在成功安装后，当系统启动时，我们将获得下面的登录屏幕，
+在成功安装后，当系统启动时，我们将看到下面的登录屏幕：
 
 ![RockyLinux9-Loginscreen-Post-Installation][19]
 
@@ -160,14 +163,14 @@ Rocky 企业软件基金会已经发布了它的最新的操作系统 ‘Rocky L
 
 ![Desktop-Env-RockyLinux9][20]
 
-打开终端，依次运行下面的命令，
+打开终端，依次运行下面的命令：
 
 ```
 $ sudo dnf install epel-release -y
 $ sudo dnf install neofetch -y
 ```
 
-现在，来验证系统的详细信息，运行 neofetch 命令，
+现在，来验证系统的详细信息，运行 `neofetch` 命令：
 
 ```
 $ neofetch
@@ -175,7 +178,7 @@ $ neofetch
 
 ![neofetch-rockylinux9-post-installation][21]
 
-这就这篇指南的全部内容，我希望你发现它是有用的。请在下面的评论区贴出你的疑问和反馈。
+这就是这篇指南的全部内容，我希望它对你有用。请在下面的评论区贴出你的疑问和反馈。
 
 --------------------------------------------------------------------------------
 
@@ -184,7 +187,7 @@ via: https://www.linuxtechi.com/how-to-install-rocky-linux-9-step-by-step/
 作者：[Pradeep Kumar][a]
 选题：[lkxed][b]
 译者：[robsean](https://github.com/robsean)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
