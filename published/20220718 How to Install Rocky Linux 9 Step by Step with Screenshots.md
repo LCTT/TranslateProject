@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "robsean"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14909-1.html"
 
 图解 Rocky Linux 9 安装步骤 
 ======
