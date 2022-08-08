@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/delete-local-reference-remote-branch-git"
 [#]: author: "Agil Antony https://opensource.com/users/agantony"
 [#]: collector: "lkxed"
-[#]: translator: "MCGA"
+[#]: translator: "Yufei-Yan"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -92,7 +92,7 @@ via: https://opensource.com/article/22/8/delete-local-reference-remote-branch-gi
 
 作者：[Agil Antony][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[https://github.com/Yufei-Yan](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
