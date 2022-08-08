@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/upgrade-linux-mint-version/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
