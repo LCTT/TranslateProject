@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/change-grub-theme-in-linux/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
