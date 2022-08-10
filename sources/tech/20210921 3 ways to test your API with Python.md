@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/9/unit-test-python"
 [#]: author: "Miguel Brito https://opensource.com/users/miguendes"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "Yufei-Yan"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
