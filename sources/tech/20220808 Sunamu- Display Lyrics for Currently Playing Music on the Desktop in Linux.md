@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/sunamu-music-widget/"
 [#]: author: "Sagar Sharma https://itsfoss.com/author/sagar/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
