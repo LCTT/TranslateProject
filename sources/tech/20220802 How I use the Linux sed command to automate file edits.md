@@ -3,7 +3,7 @@
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
 [#]: translator: "perfiffer"
-[#]: reviewer: "geekpi"
+[#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
