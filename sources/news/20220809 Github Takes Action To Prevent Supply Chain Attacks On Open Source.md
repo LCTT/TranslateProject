@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/08/github-takes-action-to-prevent-supply-chain-attacks-on-open-source/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lzx916"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
