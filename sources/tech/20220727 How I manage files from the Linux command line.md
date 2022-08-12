@@ -1,4 +1,4 @@
-[#]: subject: "How I manage files from the Linux command line"
+[#]: subject: "**How I manage files from the Linux command lin**e"
 [#]: via: "https://opensource.com/article/22/7/manage-files-linux-command-line"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
@@ -7,29 +7,29 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How I manage files from the Linux command line
+在 Linux 中如何使用命令行管理文件
 ======
-If you prefer to interact with your system through the terminal, check out my favorite Linux commands for managing files.
+如果你更喜欢用终端与系统交互，请查看我最喜欢的管理文件的命令。
 
 ![Files in a folder][1]
 
-Managing files in a graphical desktop like GNOME or KDE is an exercise in point-and-click. To move a file into a folder, you click and drag the icon to its new home. To remove a file, you drag it into the “Trash” icon. The graphical interface makes desktop computing easy to use.
+在如 GNOME 或 KDE 等图形桌面中使用鼠标点击管理文件。你点击文件的图标将它移动到另一个文件夹中，或者移动到回收站里。图形交互使得桌面计算 (desktop computing) 方便使用。
 
-But we don't always interact with Linux systems with a graphical interface. If you work on a server, you likely need to use the command line to get around. Even desktop users like me might prefer to interact with their system through a terminal and command line. I tend to rely on a few commands to manage my files from the command line:
+但是在 Linux 中，我们并不总是与图形界面交互。如果你在服务器上工作，那么你可能需要使用命令行来解决问题。即使像我这样使用桌面的用户，可能也更喜欢使用终端和命令行和系统交互。我倾向于通过命令行运行命令来管理我的文件：
 
-### List files with Linux ls
+### 使用 ls 显示文件
 
 ```
 ls
 ```
 
-For anyone who uses the command line, you can't get far without seeing what's there. The [ls command][2] lists the contents of a directory. For example, to look at what's in a web server's document root in `/var/www/html`, you can type:
+对任何使用命令行的人来说，如果不知道有什么文件，工作将很难进行下去。[ls 命令][2] 会罗列出文件夹中的文件。例如，要查看 Web 服务器的文档根目录 `/var/www/html` 中的内容，你可以键入：
 
 ```
 ls /var/www/html
 ```
 
-Most of the time, I use `ls` to look at the directory I'm in. To do that, just type `ls` to list everything. For example, when I'm in the root directory of my web project, I might see this:
+大多数情况，我使用 `ls` 命令查看当前文件夹内的文件。只需要输入 `ls` 即可查看所有文件。例如，当我在我的网页项目的根目录时，输入 `ls` 后可以看到这些：
 
 ```
 $ ls
@@ -37,7 +37,7 @@ about  fontawesome      fonts   index.php  styles
 docs   fontawesome.zip  images  prism
 ```
 
-The `ls` command has about 60 command line options that can list files and directories in all kinds of ways. One useful option is `-l` to provide a long or detailed listing, including permissions, file size, and owner:
+`ls` 命令包含 60 种选项，可以以任意方式显示文件和目录。`-l` 是一个很有用的选项，可以详细的显示文件，包含权限、文件大小以及所有者等信息。
 
 ```
 $ ls -l
@@ -54,7 +54,7 @@ drwxrwxr-x. 2 jhall jhall    4096 Jun 22 16:18 prism
 drwxrwxr-x. 2 jhall jhall    4096 Jun 22 16:17 styles
 ```
 
-File sizes are shown in bytes, which may not be useful if you are looking at very large files. To see file sizes in a format that is helpful to humans, add the `-h` or `--human-readable` option to print sizes with `G` for Gigabyte, `M` for Megabyte, and `K` for Kilobyte:
+上方的文件大小是以字节为单位，或许看起来有点吃力。想要以方便我们阅读的格式查看文件大小，只需要添加 `-h` 或 `--human-readable` 选项，可以以 `G` 、`M` 、`K` 为单位显示文件大小。
 
 ```
 $ ls -l --human-readable
@@ -70,9 +70,9 @@ drwxrwxr-x. 2 jhall jhall 4.0K Jun 22 16:18 prism
 drwxrwxr-x. 2 jhall jhall 4.0K Jun 22 16:17 styles
 ```
 
-Rather than `6365962` for the file size, `ls` now displays the zip file as `6.1M` or just over 6 MB in size.
+现在，`ls` 将 zip 文件显示为 `6.1M` 或刚刚超过 6 MB 的文件大小，而不是 `6365962`。
 
-### View files with Linux cat, head, and tail
+### 使用 cat ，head 和 tail 命令查看文件
 
 ```
 cat
@@ -86,7 +86,7 @@ head
 tail
 ```
 
-The next step after listing files is examining what each file contains. For that, I use a few commands. Starting with the `docs` directory on my web server:
+当显示出文件后，需要检查文件夹中的内容。使用很少一些命令即可。以我的 Web 服务器中的 `docs` 文件夹为例：
 
 ```
 $ ls docs
@@ -95,7 +95,7 @@ chapter2.tex  chapter5.tex  chapter8.tex  readme.txt
 chapter3.tex  chapter6.tex  chapter9.tex  workbook.tex
 ```
 
-What are these files? Fortunately, this directory has a `readme.txt` file, which I might assume contains a description of the files in this project directory. If the file is not too long, I can view it using the `cat` command:
+这些文件是什么？我不知道，幸运的是该目录中有一个 `readme.txt` 文件，我猜它包含了这个项目目录中文件的描述。如果该文件不是很长，那我可以使用 `cat` 命令查看它：
 
 ```
 $ cat docs/readme.txt 
@@ -104,72 +104,77 @@ video series. The main file is the workbook.tex file,
 which includes the other chapters.
 ```
 
-If a file is very long, I can look at just the first few lines using the `head` command. This displays a certain number of lines from the file, usually the first 10 lines unless you tell `head` otherwise with the `-n` or `--lines` option. For example, these two versions of the `head` command examine the first three lines of the `lorem.txt` file:
+如果这个文件很长，则可以使用 `head` 命令查看文件的前几行。该命令通常显示前 10 行的内容，不过你也可以使用 `-n` 或者 `--lines` 选项来指定行数。例如，使用这两个 `head` 命令的选项查看 `lorem.txt` 文件的前三行：
 
 ```
 $ head -n 3 docs/lorem.txt 
 Lorem ipsum dolor sit amet, consectetur adipiscing
 elit. Nullam at ligula eget nunc feugiat pharetra. Nullam
 nec vulputate augue. Suspendisse tincidunt aliquet
+
 $ head --lines=3 docs/lorem.txt 
 Lorem ipsum dolor sit amet, consectetur adipiscing
 elit. Nullam at ligula eget nunc feugiat pharetra. Nullam
 nec vulputate augue. Suspendisse tincidunt aliquet
 ```
 
-If I instead wanted to see the last few lines of a file, I can use the `tail` command in the same way. Again, these two `tail` commands each show the last three lines of the `lorem.txt` file:
+如果我想要查看文件的最后几行的内容，可以以相同方式使用 `tail` 命令。同样，这两个 `tail` 命令分别显示 `lorem.txt` 文件的最后三行：
 
 ```
 $ tail -n 3 docs/lorem.txt 
 egestas sodales. Vivamus tincidunt ex sed tellus tincidunt
 varius. Nunc commodo volutpat risus, vitae luctus lacus
 malesuada tempor. Nulla facilisi.
+
 $ tail --lines=3 docs/lorem.txt 
 egestas sodales. Vivamus tincidunt ex sed tellus tincidunt
 varius. Nunc commodo volutpat risus, vitae luctus lacus
 malesuada tempor. Nulla facilisi.
 ```
 
-Using `head` and `tail` are also useful when examining log files on a server. I have a small web server I run on my at-home network to test websites before I make them live. I recently discovered that the web server's log is quite long, and I wondered how old it was. Using `head`, I printed just the first line to see that the log file was created in December 2020:
+使用 `head` 和 `tail` 命令在服务器中查看日志文件十分有用。我有一个小型 Web 服务器运行在家庭网络，用于在网站上线前的测试。最近我发现 Web 服务器的日志很长，我好奇它存在多久了。使用 `head` 命令，我只打印第一行，可以看到该日志文件是在 2020 年 12 月创建的：
 
 ```
 $ ls -l --human-readable /var/log/httpd
 total 13M
 -rw-r--r--. 1 root root 13M Jun 25 16:23 access_log
 -rw-r--r--. 1 root root 45K Jun  2 00:00 error_log
+
 $ sudo head -n 1 /var/log/httpd/access_log
 10.0.0.177 - - [05/Dec/2020:14:58:35 -0600] "GET / HTTP/1.1" 403 5564 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 ```
 
-**[[ Related read: Getting started with the Linux cat command ]][3]**
+**[[ 相关阅读：Linux cat 命令入门 ]][3]**
 
-### Delete files with Linux rm
+### 使用 rm 命令删除文件
 
 ```
 rm
 ```
 
-In my directory with the sample text files, the `lorem.txt` file contains *Lorem Ipsum* text. This is just dummy text used in the printing industry, so the `lorem.txt` file doesn't really belong in this project. Let's delete it. The `rm` command removes a file like this:
+在包含示例文本文件的目录中，`lorem.txt` 文件中包含 “乱数假文” (`Lorem Ipsum`) 文本。这只是印刷行业中使用的虚拟文本，因此 "lorem.txt" 文件并不属于该项目。让我们用 `rm` 命令删除这样的文件：
 
 ```
 $ ls docs
 chapter1.tex  chapter4.tex  chapter7.tex  lorem.txt
 chapter2.tex  chapter5.tex  chapter8.tex  readme.txt
 chapter3.tex  chapter6.tex  chapter9.tex  workbook.tex
+
 $ rm docs/lorem.txt 
+
 $ ls docs
 chapter1.tex  chapter4.tex  chapter7.tex  readme.txt
 chapter2.tex  chapter5.tex  chapter8.tex  workbook.tex
 chapter3.tex  chapter6.tex  chapter9.tex
 ```
 
-The `rm` command is dangerous, because it removes a file without the intervention of a trash or recycle bin. It's much safer to install a trash command, such as [trashy][4] or [trash-cli][5]. Then you can send files to a staging area before deleting them forever:
+由于用 `rm` 命令删除的文件会直接删除，而不会放入回收站，因此它很危险。安装 trash 命令比较安全，例如 [trashy][4] 或 [trash-cli][5] 命令。这样你可以在文件永久删除前，将其放入暂存区。
 
 ```
 $ rm docs/lorem.txt
 ```
 
-Managing files on the command line requires only a few commands. The `ls` command lists the contents of a directory, and `cat`, `head` and `tail` show the contents of files. Use `rm` or a safe "trash" command to remove files you don't need. These five commands will help you manage your files on any Linux system. To learn more, including the options available, use the `--help` option to see a summary of how to use each command, such as `ls --help` to see how to use the `ls` command.
+只需很少的命令即可在命令行中管理文件。使用 `ls` 命令显示目录中的文件，使用 `cat` 、`head` 和 `tail` 命令查看文件中的内容。使用 `rm` 或者安全的 `trash` 命令将不需要的文件删除。这五个命令足以帮你在 Linux 中管理文件。想要了解更多，可以使用 `--hep` 选项来查看如何使用这些命令。例如使用 `ls --help` 查看 `ls` 命令如何使用。
 
 --------------------------------------------------------------------------------
 
