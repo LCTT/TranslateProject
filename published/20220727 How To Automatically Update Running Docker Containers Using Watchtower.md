@@ -2,22 +2,25 @@
 [#]: via: "https://ostechnix.com/automatically-update-running-docker-containers/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: "Donkey"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: translator: "Donkey-Hao"
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14926-1.html"
 
 如何使用 Watchtower 自动更新正在运行的 Docker 容器
 ======
-使用 Watchtower 自动更新 Docker 容器基础镜像
+
+![](https://img.linux.net.cn/data/attachment/album/202208/13/171633bitrd5imi953bbbi.jpg)
+
+> 使用 Watchtower 自动更新 Docker 容器基础镜像
 
 对开发运维人员来说，保持 Docker 容器为最新版本是重要工作之一。手动更新 Docker 容器是一项耗时的工作。这篇文章解释了 **Watchtower** 是什么，如何安装它，以及在 Linux 中如何 **使用 Watchtower 自动更新正在运行的 Docker 容器** 。
 
 ### Watchtower 是什么？
 
-**Watchtower** 是一款免费、开源的应用，用来监控运行中的 Docker 容器，并且当它发现基础镜像被更改后，可以自动的更新容器。
+**Watchtower** 是一款自由开源的应用，用来监控运行中的 Docker 容器，并且当它发现基础镜像被更改后，可以自动的更新容器。
 
-若 watchtower 发现一个运行中的容器需要更新，它会以发送 SIGTERM 信号的方式，优雅的结束运行中容器的运行。
+若 Watchtower 发现一个运行中的容器需要更新，它会以发送 SIGTERM 信号的方式，优雅的结束运行中容器的运行。
 
 它会下载新镜像，然后以最初部署时使用的方式，重启容器。所有文件会在后台自动下载，因此不需要用户的介入。
 
@@ -27,7 +30,7 @@
 
 ### 在 Linux 中安装 Watchtower
 
-可以通过 Docker 镜像的方式下载 Watchtower 。因此，部署它小事一桩。在你的 Linux 中安装 Docker 镜像，然后运行 Watchtower 立即开始监控 Docker 容器。
+可以通过 Docker 镜像的方式下载 Watchtower 。因此，部署它是小事一桩。在你的 Linux 中安装 Docker 镜像，然后运行 Watchtower 立即开始监控 Docker 容器。
 
 参考下方指导在基于 PRM 和 DEB 包管理系统中安装 Docker
 
@@ -35,8 +38,7 @@
 * [如何在 Ubuntu 中安装 Docker][2]
 * [适用于 Linux 的 Docker 桌面初学者手册][3]
 
-
-安装 Docker 后，你可以使用以下命令以 **root** 用户身份部署 Watchtower 容器：
+安装 Docker 后，你可以使用以下命令以 `root` 用户身份部署 Watchtower 容器：
 
 ```
 # docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
@@ -48,9 +50,9 @@
 $ docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
 ```
 
-该命令会拉取最新版的 watchtower 镜像，并运行 watchtower 容器。
+该命令会拉取最新版的 `watchtower` 镜像，并运行 `watchtower` 容器。
 
-**输出样例：**
+输出样例：
 
 ```
 Unable to find image 'containrrr/watchtower:latest' locally
@@ -67,13 +69,13 @@ Status: Downloaded newer image for containrrr/watchtower:latest
 
 ### 使用 Watchtower 自动更新 Docker 容器
 
-你系统上，Watchtower 正在和其他容器一起运行。你可以使用一下命令查看运行中的 Docker 容器列表：
+在你的系统上，Watchtower 正在和其他容器一起运行。你可以使用一下命令查看运行中的 Docker 容器列表：
 
 ```
 $ docker ps
 ```
 
-**输出样例：**
+输出样例：
 
 ```
 CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                         NAMES
@@ -81,9 +83,9 @@ CONTAINER ID   IMAGE                       COMMAND                  CREATED     
 f90b462b0712   bitnami/wordpress-nginx:6   "/opt/bitnami/script…"   19 minutes ago   Up 19 minutes   0.0.0.0:80->8080/tcp, 0.0.0.0:443->8443/tcp   ostechnix-wordpress-1
 ```
 
-正如上方输出所示，watchtower 容器正在和名为 **"ostechnix-wordpress-1"** 的容器一起运行。从现在开始，watchtower 会每隔几分钟会检查该容器。
+正如上方输出所示，`watchtower` 容器正在和名为 `ostechnix-wordpress-1` 的容器一起运行。从现在开始，`watchtower` 会每隔几分钟会检查该容器。
 
-如果 watchtower 发现该容器的基础镜像的任何变化，它会优雅的关闭 "ostechnix-wordpress-1" 容器，然后使用与最初启动它时使用的相同方式，启动新的镜像。
+如果 Watchtower 发现该容器的基础镜像的任何变化，它会优雅的关闭 `ostechnix-wordpress-1` 容器，然后使用与最初启动它时使用的相同方式，启动新的镜像。
 
 类似的，它会自动地每隔几分钟检查所有的运行中容器，并自动更新它们。
 
@@ -97,7 +99,7 @@ f90b462b0712   bitnami/wordpress-nginx:6   "/opt/bitnami/script…"   19 minutes
 $ docker ps
 ```
 
-**输出样例：**
+输出样例：
 
 ```
 CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                         NAMES
@@ -108,27 +110,27 @@ a895f082438a   bitnami/mariadb:10.6        "/opt/bitnami/script…"   20 minutes
 
 ![View Running Docker Containers][5]
 
-正如你看到的，我们正在运行 "ostechnix-wordpress-1" 和 "ostechnix-mariadb-1" 这两个容器。Mariadb 容器链接到 wordpress 容器。
+正如你看到的，我们正在运行 `ostechnix-wordpress-1` 和 `ostechnix-mariadb-1` 这两个容器。`ostechnix-mariadb-1` 容器链接到 `ostechnix-wordpress-1` 容器。
 
-如果 Watchtower 发现 "wordpress" 容器有个新版本，它会先关闭与之相连接的 "mariadb" 容器 ，然后才会关闭 "wordpress" 容器。
+如果 Watchtower 发现 `ostechnix-wordpress-1` 容器有个新版本，它会先关闭与之相连接的 `ostechnix-mariadb-1` 容器 ，然后才会关闭 `ostechnix-wordpress-1` 容器。
 
-更新 wordpress 容器后，Watchtower 会以正确的顺序，且与最初启动它们时使用的相同方式，重启这两个容器，以便应用程序正确恢复。在我们的例子中，首先启动的是 mariadb 容器，然后是 wordpress 容器，以确保连接能够继续运行。
+更新 `ostechnix-wordpress-1` 容器后，Watchtower 会以正确的顺序，且与最初启动它们时使用的相同方式，重启这两个容器，以便应用程序正确恢复。在我们的例子中，首先启动的是 `ostechnix-mariadb-1` 容器，然后是 `ostechnix-wordpress-1` 容器，以确保连接能够继续运行。
 
 ### 监控特定容器
 
 默认情况下，Watchtower 将监控在它所指向的 Docker 守护进程中运行的所有 Docker 容器。
 
-不过，你可以像下面这样，通过指定容器名称限制 watchtower 监视特定的 Docker 容器。
+不过，你可以像下面这样，通过指定容器名称限制 Watchtower 监视特定的 Docker 容器。
 
 ```
 $ docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower ostechnix-wordpress-1
 ```
 
-在上方的例子中，watchtower 会忽略其他容器，只监视名为 "ostechnix-wordpress-1" 的容器更新情况。
+在上方的例子中，`watchtower` 会忽略其他容器，只监视名为 `ostechnix-wordpress-1` 的容器更新情况。
 
-如果你不指定任何参数，watchtower 会照常监视所有运行中的 Docker 容器。
+如果你不指定任何参数，Watchtower 会照常监视所有运行中的 Docker 容器。
 
-### 发送提示 Sending Notifications
+### 发送提示
 
 或许你想收到容器更新的通知。你可以通过电子邮件、Slack 、MSTeams 以及 Gotify 发送通知。
 
@@ -151,12 +153,10 @@ docker run -d \
 
 参考下方 Watchtower Github 仓库和 Watchtower 官方主页获取更多信息：
 
-**资料**
+### 资料
 
 * [Watchtower GitHub][6]
 * [Watchtower 主页][7]
-
-> **推荐下载** — [免费电子书： "Docker Containerization Cookbook"][8]
 
 --------------------------------------------------------------------------------
 
@@ -165,7 +165,7 @@ via: https://ostechnix.com/automatically-update-running-docker-containers/
 作者：[sk][a]
 选题：[lkxed][b]
 译者：[Donkey](https://github.com/Donkey-Hao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
