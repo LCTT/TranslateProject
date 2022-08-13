@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-vs-code-extensions/"
 [#]: author: "Pratham Patel https://itsfoss.com/author/pratham/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "CoWave-Fall"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
