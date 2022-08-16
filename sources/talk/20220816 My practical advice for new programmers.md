@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/coding-advice-new-programmers"
 [#]: author: "Sachin Samal https://opensource.com/users/sacsam005"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
