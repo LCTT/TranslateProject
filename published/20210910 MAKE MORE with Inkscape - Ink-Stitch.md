@@ -105,7 +105,7 @@ Ink/Stitch 提供了为 Inkscape 安装插件的功能，用户需首先执行�
 
 ### 绣制区域、路径等对象
 
-Ink/Stitch 最容易实现的就是绣制区域或者路径。你需要做的只是画出路径。如果你使用的是形状，那么你需要将其转换成路径，然后执行如下操作：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>填充工具<rt>Fill Tools</rt></ruby> > <ruby>分离填充对象<rt>Break Apart Fill Objects…<ruby><rt>，将路径分割成若干部分。
+Ink/Stitch 最容易实现的就是绣制区域或者路径。你需要做的只是画出路径。如果你使用的是形状，那么你需要将其转换成路径，然后执行如下操作：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>填充工具<rt>Fill Tools</rt></ruby> > <ruby>分离填充对象<rt>Break Apart Fill Objects…</rt></ruby>，将路径分割成若干部分。
 
 虽然 Inkscape 也有 <ruby>路径<rt>Path</rt></ruby> > <ruby>分离<rt>Break apart</rt></ruby> 功能，但是在这种情况下并不可行。
 
@@ -153,7 +153,7 @@ Ink/Stitch 会使用连续的线条（非虚线）将每个笔画转换成之字
 
 有些绣花机，尤其是商用的绣花机，根据设计的需要，可以提前适配不同的针线。必要时，这类机器会自动切换使用合适的针线。有些绣花文件格式支持这一功能，但有些并不支持。Ink/Stitch 可以将用户设置好的线条列表应用到绣花设计中。
 
-如果你想在现有的设计上导入线条列表，可执行如下操作：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>导入线条列表<rt>Import Threadlist</rt></ruby>。同样的，线条列表也可以导出：<ruby>另存为 zip 文件，打包多种不同的文件格式<rt>Save As different file formats as *.zip</rt></ruby>。当然，也可以将其打印出来：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>打印 PDF<rt>Print PDF</rt></ruby>。
+如果你想在现有的设计上导入线条列表，可执行如下操作：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>导入线条列表<rt>Import Threadlist</rt></ruby>。同样的，线条列表也可以导出：<ruby>另存为<rt>Save As</rt></ruby> 不同的文件格式，如 *.zip。当然，也可以将其打印出来：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>打印 PDF<rt>Print PDF</rt></ruby>。
 
 ### 结语
 
