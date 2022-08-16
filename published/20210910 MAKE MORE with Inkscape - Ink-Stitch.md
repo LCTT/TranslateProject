@@ -7,14 +7,12 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-14935-1.html"
 
-Inkscape 拓展应用：Ink/Stitch
+Inkscape 扩展应用：Ink/Stitch
 ======
 
 ![MAKE more with Inkscape - Ink/Stitch][1]
 
-Inkscape 是 Fedora 设计团队最喜爱最常用的软件，它的功能可不止于制作精美的矢量图形。矢量图形（也就是 SVG 文件）可以帮助实现更多操作，许多软件也支持这一格式。不过，Inkscape 还有其他功能有待发掘。[本系列][2] 第一篇文章介绍了如何 [使用 Inkscape 生成 GCode 文件][3]；本篇文章将探索 Inkscape 的另一项拓展功能：用于绣花设计的 [Ink/Stitch][4]。
-
-（LCTT 校注：Extension 这个词我们一般翻译为“扩展”，但在 Inkscape 中被翻译为了“拓展”，为了和应用软件一致，此处采用了“拓展”的译法。）
+Inkscape 是 Fedora 设计团队最喜爱最常用的软件，它的功能可不止于制作精美的矢量图形。矢量图形（也就是 SVG 文件）可以帮助实现更多操作，许多软件也支持这一格式。不过，Inkscape 还有其他功能有待发掘。[本系列][2] 第一篇文章介绍了如何 [使用 Inkscape 生成 GCode 文件][3]；本篇文章将探索 Inkscape 的另一项扩展功能：用于绣花设计的 [Ink/Stitch][4]。
 
 ### 绣花 DIY
 
@@ -67,17 +65,17 @@ Ink/Stitch 最初使用的是 [libembroidery][12] 库，现在则使用 [pyembro
 
 除了文件格式，绣花缝纫软件还需解决其它一些问题。
 
-支持繁杂多样的线迹类型是一个难题，绘制工具与缝制工具的搭配使用又是另一个难题。不过，为什么非要从无到有搞出一套新应用？为什么不依赖现有的矢量软件？这样一来，开发者只需要在其基础上增添绣花拓展功能即可。后者就是 [Ink/Stitch 项目][4] 过去四年来的设计理念。
+支持繁杂多样的线迹类型是一个难题，绘制工具与缝制工具的搭配使用又是另一个难题。不过，为什么非要从无到有搞出一套新应用？为什么不依赖现有的矢量软件？这样一来，开发者只需要在其基础上增添绣花扩展功能即可。后者就是 [Ink/Stitch 项目][4] 过去四年来的设计理念。
 
 ### 安装 Ink/Stitch
 
-Ink/Stitch 是 [Inkscape 的一个拓展功能][16]。不过，由于 Inkscape 下载安装拓展的新功能还处于测试阶段，在其提供的拓展功能中可能无法找到 Ink/Stitch。因此，你需要自行手动 [下载][17] 该拓展。下载后，将压缩包解压到 Inkscape 拓展所在路径，默认路径为 `~/.config/Inkscape/extensions`（或者放置在系统全局路径：`/usr/share/inkscape/extensions`）。若你改变了默认路径，则需检查 Inkscape 设置选项，找到拓展文件的存放位置。
+Ink/Stitch 是 [Inkscape 的一个扩展功能][16]。不过，由于 Inkscape 下载安装扩展的新功能还处于测试阶段，在其提供的扩展功能中可能无法找到 Ink/Stitch。因此，你需要自行手动 [下载][17] 该扩展。下载后，将压缩包解压到 Inkscape 扩展所在路径，默认路径为 `~/.config/Inkscape/extensions`（或者放置在系统全局路径：`/usr/share/inkscape/extensions`）。若你改变了默认路径，则需检查 Inkscape 设置选项，找到扩展文件的存放位置。
 
 ### 自定义：为 Ink/Stitch 安装插件
 
 Ink/Stitch 提供了为 Inkscape 安装插件的功能，用户需首先执行这一功能。
 
-依次点击如下选项：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>线条颜色管理<rt>Thread Color Management</rt></ruby> > <ruby>为 Inkscape 安装线条调色板<rt>Install thread color palettes for Inkscape</rt></ruby>，之后等待片刻。
+依次点击如下选项：<ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>线条颜色管理<rt>Thread Color Management</rt></ruby> > <ruby>为 Inkscape 安装线条调色板<rt>Install thread color palettes for Inkscape</rt></ruby>，之后等待片刻。
 
 虽然这一过程不会出现进度条之类的提示，不过也无需着急。
 
@@ -91,11 +89,11 @@ Ink/Stitch 提供了为 Inkscape 安装插件的功能，用户需首先执行�
 
 ### Ink/Stitch 绣字
 
-到目前为止，绣花设计最简单也最常用的方法就是使用 Ink/Stitch 的 <ruby>文字缝制<rt>Lettering</rt></ruby> 功能。该功能位于 <ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>文字缝制<rt>Lettering</rt></ruby>。绣花文字缝制可不是一件简单事儿，它其实就是所谓的缎面绣字，需要做好特殊的文字设置。
+到目前为止，绣花设计最简单也最常用的方法就是使用 Ink/Stitch 的 <ruby>文字缝制<rt>Lettering</rt></ruby> 功能。该功能位于 <ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>文字缝制<rt>Lettering</rt></ruby>。绣花文字缝制可不是一件简单事儿，它其实就是所谓的缎面绣字，需要做好特殊的文字设置。
 
 ![Inkscape with a “Chopin” glyph for satin stitching defined for the Lettering function][20]
 
-你可以将路径转换为缎面绣，但是这种方法比使用文字缝制功能还要繁琐许多。多亏了社区的活跃，2021 年 5 月份发布的 Ink/Stitch 2.0 版本预置了更多的字体。2.0 版本还增加了 <ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>字体管理<rt>Font Management</rt></ruby> 功能，让用户更方便地管理这些字体。
+你可以将路径转换为缎面绣，但是这种方法比使用文字缝制功能还要繁琐许多。多亏了社区的活跃，2021 年 5 月份发布的 Ink/Stitch 2.0 版本预置了更多的字体。2.0 版本还增加了 <ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>字体管理<rt>Font Management</rt></ruby> 功能，让用户更方便地管理这些字体。
 
 此外，还有制作字体的功能，但是你需要了解如何使用 Inkscape 设计字体，可在 [此处][21] 浏览相关英文教程。这里只给出大概的介绍：首先创建一个 SVG 字体，接着将其储存在 JSON 文件中，这样便可以在 Ink/Stitch 字体管理功能中使用。
 
@@ -105,15 +103,15 @@ Ink/Stitch 提供了为 Inkscape 安装插件的功能，用户需首先执行�
 
 ### 绣制区域、路径等对象
 
-Ink/Stitch 最容易实现的就是绣制区域或者路径。你需要做的只是画出路径。如果你使用的是形状，那么你需要将其转换成路径，然后执行如下操作：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>填充工具<rt>Fill Tools</rt></ruby> > <ruby>分离填充对象<rt>Break Apart Fill Objects…</rt></ruby>，将路径分割成若干部分。
+Ink/Stitch 最容易实现的就是绣制区域或者路径。你需要做的只是画出路径。如果你使用的是形状，那么你需要将其转换成路径，然后执行如下操作：<ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>填充工具<rt>Fill Tools</rt></ruby> > <ruby>分离填充对象<rt>Break Apart Fill Objects…</rt></ruby>，将路径分割成若干部分。
 
 虽然 Inkscape 也有 <ruby>路径<rt>Path</rt></ruby> > <ruby>分离<rt>Break apart</rt></ruby> 功能，但是在这种情况下并不可行。
 
-接下来，运行 Ink/Stitch 内置模拟器：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>模拟器/实际预览<rt>Simulator/Realistic Preview</rt></ruby>。
+接下来，运行 Ink/Stitch 内置模拟器：<ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>模拟器/实际预览<rt>Simulator/Realistic Preview</rt></ruby>。
 
 ![The new Fedora logo as Stitch Plan Preview][23]
 
-注意，模拟器运行时需要占用大量的系统资源，而且启动时间也比较长。其实，以下功能操作起来会更加简便：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>线迹计划预览<rt>Stitch Plan Preview</rt></ruby>。该功能会在文件外部对线条进行渲染。
+注意，模拟器运行时需要占用大量的系统资源，而且启动时间也比较长。其实，以下功能操作起来会更加简便：<ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>线迹计划预览<rt>Stitch Plan Preview</rt></ruby>。该功能会在文件外部对线条进行渲染。
 
 ![Nicubunu’s Fedora hat icon as embroidery. The angles for the stitches of the head part and the brim are different so that it looks more realistic. The outline is done in Satin stitching][24]
 
@@ -123,11 +121,11 @@ Ink/Stitch 会使用连续的线条（非虚线）将每个笔画转换成之字
 
 ![Parameter setting dialogue and on the right the Fedora logo shape embroidered as Zig-Zag line][25]
 
-这个方法虽然简单，但绝不是最好的选择。最好的选择是使用缎面工具，该功能可以在 <ruby>拓展<rt>Extensions</rt></ruby> > <ruby>缎面工具<rt>Satin Tools</rt></ruby> 找到。其中，转换功能又是重中之重，它可以将路径转换为缎面笔画。
+这个方法虽然简单，但绝不是最好的选择。最好的选择是使用缎面工具，该功能可以在 <ruby>扩展<rt>Extensions</rt></ruby> > <ruby>缎面工具<rt>Satin Tools</rt></ruby> 找到。其中，转换功能又是重中之重，它可以将路径转换为缎面笔画。
 
 ![Fedora logo shape as Satin Line embroidery][26]
 
-通过 <ruby>拓展<rt>Extensions</rt></ruby> > <ruby>缎面工具<rt>Satin Tools</rt></ruby> > <ruby>旋转缎纹路径<rt>Flip Satin Column Rails</rt></ruby>，你还可以改变线迹的方向。这样做可以凸显缎面绣的立体感，典型的例子就是泡芙刺绣（一种非常具有立体感的刺绣）。支持这种功能的机器还可以为绣花时产生的多余的连线线迹标记出修剪记号。这些记号正是从 Ink/Stitch 自身符号库里安装得到的符号。
+通过 <ruby>扩展<rt>Extensions</rt></ruby> > <ruby>缎面工具<rt>Satin Tools</rt></ruby> > <ruby>旋转缎纹路径<rt>Flip Satin Column Rails</rt></ruby>，你还可以改变线迹的方向。这样做可以凸显缎面绣的立体感，典型的例子就是泡芙刺绣（一种非常具有立体感的刺绣）。支持这种功能的机器还可以为绣花时产生的多余的连线线迹标记出修剪记号。这些记号正是从 Ink/Stitch 自身符号库里安装得到的符号。
 
 ### Ink/Stitch 线迹库
 
@@ -153,7 +151,7 @@ Ink/Stitch 会使用连续的线条（非虚线）将每个笔画转换成之字
 
 有些绣花机，尤其是商用的绣花机，根据设计的需要，可以提前适配不同的针线。必要时，这类机器会自动切换使用合适的针线。有些绣花文件格式支持这一功能，但有些并不支持。Ink/Stitch 可以将用户设置好的线条列表应用到绣花设计中。
 
-如果你想在现有的设计上导入线条列表，可执行如下操作：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>导入线条列表<rt>Import Threadlist</rt></ruby>。同样的，线条列表也可以导出：<ruby>另存为<rt>Save As</rt></ruby> 不同的文件格式，如 *.zip。当然，也可以将其打印出来：<ruby>拓展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>打印 PDF<rt>Print PDF</rt></ruby>。
+如果你想在现有的设计上导入线条列表，可执行如下操作：<ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>导入线条列表<rt>Import Threadlist</rt></ruby>。同样的，线条列表也可以导出：<ruby>另存为<rt>Save As</rt></ruby> 不同的文件格式，如 *.zip。当然，也可以将其打印出来：<ruby>扩展<rt>Extensions</rt></ruby> > Ink/Stitch > <ruby>可视化并导出<rt>Visualise and Export</rt></ruby> > <ruby>打印 PDF<rt>Print PDF</rt></ruby>。
 
 ### 结语
 
