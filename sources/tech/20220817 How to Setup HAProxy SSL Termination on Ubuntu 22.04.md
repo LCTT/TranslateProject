@@ -9,6 +9,7 @@
 
 How to Setup HAProxy SSL Termination on Ubuntu 22.04
 ======
+
 In our previous guide, we demonstrated how to install and configure HAProxy as a load balancer on Ubuntu 22.04. This guide is a continuation of that guide and, we will go a step further and demonstrate how to setup HAPrpxy SSL termination on Ubuntu 22.04 step by step.
 
 HA Proxy is a widely used and opensource HTTP load balancer and proxying solution for Linux, Solaris, and FreeBSD environments. It’s used to enhance the performance and reliability of web servers by distributing the workload across multiple servers. By so doing, it provides high availability of services and applications.
