@@ -12,7 +12,7 @@
 
 > 使用我最喜欢的工具在 Linux 上截屏，可以节省时间。
 
-![](https://img.linux.net.cn/data/attachment/album/202208/18/171722vpqzxcghsqrj52p7.jpg)
+![](https://img.linux.net.cn/data/attachment/album/202208/18/172307e5du1dxqd66d66cm.jpg)
 
 在写开源软件时，我更喜欢展示一些截图来帮助演示我在说什么。古语有云，一图胜千言。如果你能展示一件事，那通常比试图用言语描述它要好。
 
