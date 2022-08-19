@@ -15,7 +15,7 @@ Ubuntu is the most popular Debian-based Linux distribution for desktops and serv
 Ubuntu是基于Debian最流行的桌面和服务器Linux发行版
 
 And Manjaro Linux is an Arch-based distro tailored for desktops.
-Manjaro是基于Arch量身定制的Linux发行版
+Manjaro是基于 Arch 量身定制的Linux发行版
 
 Both are entirely different when it comes to user experience and features.
 两者在用户体验以及功能上都大相径庭
@@ -25,14 +25,14 @@ However, one of the common grounds is the [desktop environment][1] when consider
 
 
 But, what exactly are the differences? Is the package manager on Manjaro better? Are software tools available on both Ubuntu and Manjaro?
-但是它们之间究竟有什么区别呢？ Manjaro 的包管理器更好骂？
+但是它们之间究竟有什么区别呢？ Manjaro 的包管理器更好吗？
 
 Here, we shall look at the differences in both the Linux distributions at certain key points.
 
 ### Release Cycle 
-
+### 发行周期
 Ubuntu offers two different release cycles, considering the version you pick. If you are going with the Long-Term Support version, you get security/maintenance updates for at least five years from its release.
-
+考虑到你选择的版本，Ubuntu 提供了两种发行周期。如果你选择的是长期发行版本，那么你在至少未来五年内都会收到安全维护更新。
 Suppose if you install Ubuntu 22.04 LTS, you will be getting updates until **April 2027**.
 
 ![ubuntu22 04 lts about][2]
