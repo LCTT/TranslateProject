@@ -17,11 +17,11 @@ GitHub 并不是开源生态系统的唯一组成部分，但 Sigstore 的联合
 
 通过让包管理器可以使用 Sigstore，开发人员可以在 Sigstore 工具的帮助下，在软件通过供应链时处理加密检查和要求。这增加了产品流通过程中每个阶段的透明度。Lorenc 说，许多人惊讶地发现，这些完整性检查还没有实施，开源生态系统中相当大的一部分长期以来一直依赖于盲目的信心。拜登政府于 2021 年 5 月发布了一项行政命令，主要处理软件供应链安全问题。
 
-Linux 基金会、Google、Red Hat、Purdue Universit 和 Chainguard 都对 Sigstore 的开发做出了贡献。现在有了使用 Sigstore 为 Python 包发行版签名的官方软件，而且开发软件的开源环境   Kubernetes 现在也支持它。
+Linux 基金会、Google、Red Hat、Purdue Universit 和 Chainguard 都对 Sigstore 的开发做出了贡献。现在有了使用 Sigstore 为 Python 包发行版签名的官方软件，而且开发软件的开源环境 　Kubernetes 现在也支持它。
 
 Sigstore 依靠免费和简单易用来鼓励采用，就像主要行业推动 HTTPS 网络加密一样，这在很大程度上是由非营利互联网安全研究集团（Internet Security Research Group）的 Let’s Encrypt 等工具实现的。据 Github 称，该项目会首先提出 Sigstore 将如何在 npm 中实现的建议，并在开放评论期征求社区人员对该工具的精确部署策略的意见。然而，最终的目标是让这样的代码签名能够被尽可能多的开源项目使用，从而实现对供应链的攻击。
 
-GitHub 的 Hutchings 说「我们希望看到这样一个世界，最终所有的软件工件都被签名并链接回源代码，这就是为什么构建像 Sigstore 这样的开放技术栈是如此重要，其他打包存储库也可以采用这种技术。」
+GitHub 的 Hutchings 说：“我们希望看到这样一个世界，最终所有的软件工件都被签名并链接回源代码，这就是为什么构建像 Sigstore 这样的开放技术栈是如此重要，其他打包存储库也可以采用这种技术。”
 
 --------------------------------------------------------------------------------
 
