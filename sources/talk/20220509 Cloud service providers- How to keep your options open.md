@@ -2,11 +2,10 @@
 [#]: via: "https://opensource.com/article/22/5/cloud-service-providers-open"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "FelixYFZ "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-
 Cloud service providers: How to keep your options open
 ======
 No matter what level of openness your cloud service operates on, you have choices for your own environment.

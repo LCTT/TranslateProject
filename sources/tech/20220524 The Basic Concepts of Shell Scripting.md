@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/05/the-basic-concepts-of-shell-scripting/"
 [#]: author: "Sathyanarayanan Thangavelu https://www.opensourceforu.com/author/sathyanarayanan-thangavelu/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "FYJNEVERFOLLOWS"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -179,7 +179,7 @@ via: https://www.opensourceforu.com/2022/05/the-basic-concepts-of-shell-scriptin
 
 作者：[Sathyanarayanan Thangavelu][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
