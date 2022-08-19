@@ -34,7 +34,7 @@ Here, we shall look at the differences in both the Linux distributions at certai
 Ubuntu offers two different release cycles, considering the version you pick. If you are going with the Long-Term Support version, you get security/maintenance updates for at least five years from its release.
 考虑到你选择的版本，Ubuntu 提供了两种发行周期。如果你选择的是长期发行版本，那么你在至少未来五年内都会收到安全维护更新。
 Suppose if you install Ubuntu 22.04 LTS, you will be getting updates until **April 2027**.
-
+如果你安装了 Ubuntu 22.04 ，你在 2027 年 4 月之前都能获取更新。
 ![ubuntu22 04 lts about][2]
 
 The LTS version is what we recommend for most desktop users.
