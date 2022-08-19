@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/linux-cheat-command"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Donkey"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -141,7 +141,7 @@ via: https://opensource.com/article/22/6/linux-cheat-command
 
 作者：[Seth Kenlon][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Donkey](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
