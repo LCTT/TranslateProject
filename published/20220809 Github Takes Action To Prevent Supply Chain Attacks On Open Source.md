@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "lzx916"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14949-1.html"
 
 为防止对开源供应链的攻击，GitHub 在行动
 ======
