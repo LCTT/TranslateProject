@@ -2,13 +2,13 @@
 [#]: via: "https://www.debugpoint.com/ubuntu-accent-colour/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "yjacks"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-
 How to Apply Accent Colour in Ubuntu Desktop
 ======
+
 It’s easy to apply accent colour on Ubuntu desktop, thanks to recent developments. Here’s how.
 
 Every Linux distribution has its default theme, bringing a dominant colour. The Accent colours are used to highlight the dominant colour in any setup. Generally, the primary and Accent colours should contrast or complement each other.
