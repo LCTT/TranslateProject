@@ -3,13 +3,16 @@
 [#]: author: "Sachin Samal https://opensource.com/users/sacsam005"
 [#]: collector: "lkxed"
 [#]: translator: "lkxed"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14952-1.html"
 
 我给新手程序员的实用建议
 ======
-做一个高效的、充满好奇心的问题解决者吧！这会帮助你成为一名成功的程序员。
+
+![](https://img.linux.net.cn/data/attachment/album/202208/21/161450vm33z0ex30w4073z.jpg)
+
+> 做一个高效的、充满好奇心的问题解决者吧！这会帮助你成为一名成功的程序员。
 
 你是否曾经遇到过这样一种情况：你想解决一个问题，并且你在 YouTube 或 Google 中找到了相关的教程。嗯，你觉得看会了，可真做起来，却止步不前，大脑一片空白。你感觉自己每一行代码都看懂了，可一旦离开了那个教程，就步履维艰。如果你在 HackerRank 或 LeetCode 上看过别人的解题过程，你就能体会到，一个有追求的程序员第一次看到这些挑战时，他会是何种感受。举例来说，假设你正在学习一门新语言，在你刚开始理解这门语言的基础知识的时候，你看了一个教程，摩拳擦掌，结果发现自己无法独立应用学到的知识，这反过来可能会导致你怀疑自己的知识和能力。
 
@@ -60,7 +63,7 @@ via: https://opensource.com/article/22/8/coding-advice-new-programmers
 作者：[Sachin Samal][a]
 选题：[lkxed][b]
 译者：[lkxed](https://github.com/lkxed)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
