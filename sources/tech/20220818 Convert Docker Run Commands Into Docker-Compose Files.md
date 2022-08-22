@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/convert-docker-run-commands-into-docker-compose-files/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
