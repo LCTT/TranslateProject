@@ -8,8 +8,8 @@
 [#]: url: " "
 
 你只需要知道这个 Linux 命令
-
 ======
+
 Linux cheat 命令是一个实用程序，可以用来搜索和显示你想要使用的命令的使用示例。
 
 ![Command line prompt][1]
@@ -82,7 +82,7 @@ Cheat 只是包含常用命令的纯文本文件。该程序可以从 [Github.co
 $ cheat --fetch
 ```
 
-与 `man` 一样，你的系统上可以有多个备忘单集合。 Go 版本的 Cheat 使用 [YAML][9] 配置文件来定义每个集合的位置。Bash 版本在安装过程中定义了路径，默认下载 [Github.com/cheat/cheatsheets][10] 集合以及 [Opensource.com][11] 自己的 [Gitlab.com/opensource.com /cheatsheets][12] 集合。
+与 `man` 一样，你的系统上可以有多个备忘单集合。 Go 版本的 Cheat 使用 [YAML][9] 配置文件来定义每个集合的位置。Bash 版本在安装过程中定义了路径，默认下载 [Github.com/cheat/cheatsheets][10] 集合以及 [Opensource.com][11] 自己的 [Gitlab.com/opensource.com/cheatsheets][12] 集合。
 
 ### 列出 Cheat 支持项目
 
@@ -116,7 +116,7 @@ alias
 alias ll='ls -l'
 ```
 
-默认情况下，`cheat` 命令会使用你的[环境变量][13] `PAGER` 。你可以在运行 `cheat` 命令前改写 `PAGER` 变量值，暂时修改环境变量。
+默认情况下，`cheat` 命令会使用你的 [环境变量][13] `PAGER` 。你可以在运行 `cheat` 命令前改写 `PAGER` 变量值，暂时修改环境变量。
 
 ```
 $ PAGER=most cheat less
