@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/3-nes-emulators-to-play-old-nes-games-in-linux/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
