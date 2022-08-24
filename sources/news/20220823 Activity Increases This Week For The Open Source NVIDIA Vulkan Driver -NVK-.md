@@ -9,6 +9,9 @@
 
 Activity Increases This Week For The Open Source NVIDIA Vulkan Driver (NVK)
 ======
+
+![][1]
+
 The open source NVIDIA Vulkan driver “NVK,” which is being created for Mesa, has experienced a busy week of fresh development activity. NVK was developed by Nouveau developers at Red Hat, including Karol Herbst, as an open-source NVIDIA Vulkan driver. It will probably take some time before this Vulkan driver is prepared for Linux gamers and other users because it is still very much a work in progress and has not yet been added to mainline Mesa.
 
 The lack of re-clocking support for GeForce GTX 900 “Maxwell” GPUs and newer, which results in the NVIDIA GPUs being constrained to operating at their low boot-clock speeds, continues to be the major Nouveau barrier on the kernel driver side. For GTX 900 series graphics cards and newer, the Nouveau performance is in terrible shape. The GTX 600/700 series are getting on in years and may be manually re-clocked to their ideal clock frequencies by interested users using the command-line. Both the OpenGL and Vulkan Nouveau performance will continue to suffer significantly until this is resolved, and ultimately the PMU firmware issue complicating these efforts.
@@ -30,3 +33,4 @@ via: https://www.opensourceforu.com/2022/08/activity-increases-this-week-for-the
 
 [a]: https://www.opensourceforu.com/author/laveesh-kocher/
 [b]: https://github.com/lkxed
+[1]: https://www.opensourceforu.com/wp-content/uploads/2022/08/nvedia2-768x432.jpg
