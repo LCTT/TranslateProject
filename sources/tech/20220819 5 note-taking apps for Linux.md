@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/note-taking-apps-linux"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
