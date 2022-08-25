@@ -3,15 +3,18 @@
 [#]: author: "Anuj Sharma https://itsfoss.com/author/anuj/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14965-1.html"
 
 在 Manjaro 和其他基于 Arch Linux 的发行版上安装 Spotify
 ======
-Spotify 不需要介绍。它是最流行的音乐流媒体服务。
 
-你可以[在 web 浏览器中播放 Spotify][1]，但如果你经常使用它，使用桌面应用会是一个更好的选择。
+![](https://img.linux.net.cn/data/attachment/album/202208/25/133643nz8h58cl5ly8y6ly.jpg)
+
+> Spotify 不需要介绍。它是最流行的音乐流媒体服务。
+
+你可以 [在 Web 浏览器中播放 Spotify][1]，但如果你经常使用它，使用桌面应用会是一个更好的选择。
 
 为什么呢？因为你可以用媒体键控制播放，得到歌曲的通知，而且不需要担心不小心关闭浏览器标签或窗口。桌面客户端给人一种完整的体验。
 
@@ -34,9 +37,9 @@ sudo pacman -Syu spotify-launcher
 
 ### 方法 1：使用 pacman 安装 Spotify
 
-Spotify 可在 Arch Linux 的社区仓库中[访问][8]。它实际上是 Spotify 提供的 APT 仓库的 Rust 实现。
+Spotify 可在 Arch Linux 的社区仓库中 [找到][8]。它实际上是 Spotify 提供的 APT 仓库的 Rust 实现。
 
-打开你的终端，按以下方式[使用 pacman 命令][9]：
+打开你的终端，按以下方式 [使用 pacman 命令][9]：
 
 ```
 sudo pacman -Syu spotify-launcher
@@ -54,7 +57,7 @@ sudo pacman -Rns spotify-launcher
 
 ### 方法 2：使用 Pamac 安装 Spotify
 
-如果你使用 Manjaro 或者[在你的系统中安装了 Pamac][11]，你可以用它来图形化安装 Spotify。
+如果你使用 Manjaro 或者 [在你的系统中安装了 Pamac][11]，你可以用它来图形化安装 Spotify。
 
 从应用菜单中打开添加/删除软件。点击左上角的搜索图标，搜索 Spotify。然后，选择名为 `spotify-launcher` 的软件包，并点击应用进行安装，如下图所示。
 
@@ -106,7 +109,7 @@ flatpak remove spotify
 
 ### 方法 4：使用 Snap 安装 Spotify
 
-我知道很多人对 Snap 打包格式的“封闭性”非常反感。然而，Spotify 官方提供了一个 Snap 包。你从 Spotify 的开发者那里得到它。
+我知道很多人对 Snap 打包格式的“封闭性”非常反感。然而，Spotify 官方提供了一个 Snap 包。你可以从 Spotify 的开发者那里得到它。
 
 如果你的系统支持 Snap 包，请使用以下命令：
 
@@ -120,9 +123,9 @@ sudo snap install spotify
 sudo snap remove spotify
 ```
 
-#### 总结
+### 总结
 
-第一个方法中讨论的 Arch 包是由 [kpcyrd][14] 开发和维护的。你可以在[这里][15]查看源代码。
+第一个方法中讨论的 Arch 包是由 [kpcyrd][14] 开发和维护的。你可以在 [这里][15] 查看源代码。
 
 如果你喜欢 Arch Linux 并想支持它，请考虑向该项目捐款。所有的工作都是由社区成员完成的，他们是无偿的志愿者。
 
@@ -135,7 +138,7 @@ via: https://itsfoss.com/install-spotify-arch/
 作者：[Anuj Sharma][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
