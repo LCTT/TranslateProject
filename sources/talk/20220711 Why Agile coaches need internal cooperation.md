@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/agile-coach-internal-cooperation"
 [#]: author: "Kelsea Zhang https://opensource.com/users/kelsea-zhang"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "aftermath0703"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
