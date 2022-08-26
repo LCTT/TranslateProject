@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/my-open-source-career-story"
 [#]: author: "Jesse White https://opensource.com/users/jwhite-0"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "aftermath0703"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
