@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "aftermath0703"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14971-1.html"
 
 从用户到贡献者到 CTO 的开源之旅
 ======
