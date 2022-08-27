@@ -7,19 +7,19 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How I use Bash to automate tasks on Linux
+如何在 Linux 上使用 Bash 自动化任务
 ======
-Bash has a few handy automation features that make my life easier when working with files on Linux.
+Bash 有一些方便的自动化功能，可以让我在 Linux 上处理文件时更轻松。
 
 ![bash logo on green background][1]
 
-Image by: Opensource.com
+图源：Opensource.com
 
-The Bash command line is a great way to automate tasks. Whether you are running Linux on a server and need to manipulate log files or other data, or you're a desktop user who just wants to keep files tidy, you can use a few automation features in Bash to make your work easier.
+通过 Bash 命令行进行自动化任务是极好的一种方式。不论你使用运行在服务器上的 Linux，进行管理日志文件还是其他文件，或者你在个人电脑上整理文件，使桌面保持整洁，使用 Bash 的自动化功能会使你的工作变得更简单。
 
-### Linux for command: Automate tasks on a files
+### Linux `for` 命令:自动执行文件任务
 
-If you have a bunch of files to work on at once, and you need to do the same thing with every file, use the `for` command. This command iterates across a list of files, and executes one or more commands. The `for` command looks like this:
+如果你对一堆文件要同时处理，并且对每个文件进行相同的操作，请使用 `for` 命令。该命令会遍历文件列表，并执行一个或多个命令。`for` 命令如下所示：
 
 ```
 for variable in list
@@ -28,13 +28,13 @@ do
 done
 ```
 
-I've added some extra spacing in there to help separate the different parts of the `for` command. That multi-line command might look difficult to run on the command line, but you can use `;` to put everything on one line, like this:
+我在示例中添加了额外的空格，来分开 `for` 命令中不同的部分。多个命令可能无法在命令行中同时运行，不过你可以使用 `;` 将所有命令放在同一行中，就像这样:
 
 ```
 for variable in list ; do commands ; done
 ```
 
-Let's see it in action. One way I use the `for` command is to rename a bunch of files. Most recently, I had a bunch of screenshots that I wanted to rename. The screenshots had names like `filemgr.png` or `terminal.png` and I wanted to put `screenshot` before each name instead. I ran a single `for` command to rename thirty files at once. Here's an example with just two files:
+让我们看看它的实际效果。我使用 `for` 命令来重命名一些文件。最近，我有一些截图，想要重命名。这些截图名称为 `filemgr.png` 或 `terminal.png`，我想将 `screenshot` 放在每个名称前。我可以使用 `for` 命令一次性将 30 个文件重命名。这是两个文件的示例：
 
 ```
 $ ls
@@ -44,13 +44,13 @@ $ ls
 screenshot-filemgr.png  screenshot-terminal.png
 ```
 
-The `for` command makes it easy to perform one or more actions on a set of files. You can use a variable name that is meaningful to you, such as `image` or `screenshot`, or you can use a "shorthand" variable like `f`, as I did in my example. When I write scripts that use a `for` loop, I try to use meaningful variable names. But when I'm using `for` on the command line, I'll usually use a short variable name like `f` for files or `d` for directories.
+`for` 命令使得在一系列文件中执行一种或多种操作变得容易。你可以用一些有意义的变量，比如 `image` 或 `screenshot`，或者你用示例中“缩写的”变量 `f`。当我在使用 `for` 循环写脚本的时候，会选择有意义的变量名。但是当我在命令行中使用 `for`，我通常会选择缩写变量名，比如 `f` 代表文件，`d` 代表目录等。
 
-Whatever name you choose for your variable, be sure to reference the variable using `$` in the command. This expands the variable to the name of the file you are acting on. Type `help for` at your Bash prompt to learn more about the `for` command.
+不论你选择怎样的变量名，请确保在引用变量时添加 `$` 符号。这会将变量扩展为你正在处理的文件的名称。在 Bash 提示符下键入 `help for` 以了解有关 `for` 命令的更多信息。
 
-### Linux conditional execution (if)
+### Linux `if` 条件执行
 
-Looping across a set of files with `for` is helpful when you need to do the same thing with every file. But what if you need to do something different for certain files? For that, you need conditional execution with the `if` statement. The `if` statement looks like this:
+当你需要对每个文件执行相同操作时，使用 `for` 循环遍历一些文件很有帮助。但是，如果你需要对某些文件做一些不同的事情怎么办？为此，你需要使用 `if` 语句进行条件执行。`if` 语句如下所示：
 
 ```
 if test
@@ -59,7 +59,7 @@ then
 fi
 ```
 
-You can also do *if/else* tests by using the `else` keyword:
+你也可以使用 `if/else` 语句进行判断：
 
 ```
 if test
@@ -70,7 +70,7 @@ else
 fi
 ```
 
-For more complicated processing, you can use *if/else-if/else* evaluations. I might use this in a script, when I need to automate a job to process a collection of files at once:
+你可以使用 `if/else-if/else` 语句来实现更复杂的程序。当我一次性需要自动处理很多文件时，我会在脚本中使用：
 
 ```
 if test
@@ -87,11 +87,11 @@ else
 fi
 ```
 
-The `if` command allows you to perform many different tests, such as *if* a file is really a file, or *if* a file is empty (zero size). Type `help test` at your Bash prompt to see the different kinds of tests you can use in an `if` statement.
+`if` 命令可以让你进行不同的判断，例如判断一个文件是否是一个文件，或者一个文件是否为空文件（零字节）。在命令行中输入 `help test`，可以立即查看使用 `if` 语句能够进行的不同种测试。
 
-For example, let's say I wanted to clean up a log directory that had several dozen files in it. A common task in log management is to delete any empty logs, and compress the other logs. The easiest way to tackle this is to just delete the empty files. There isn't an `if` test that exactly matches that, but we have `-s` file to test *if* something is a file, and *if* the file is not empty (it has a size). That's the opposite of what we want, but we can negate the test with `!` to see *if* something is not a file or is empty.
+例如，假设我想清理一个包含几十个文件的日志目录。日志管理中的一个常见任务是删除所有空日志，并压缩其他日志。解决这个问题的最简单方法是删除空文件。没有一个 `if` 测试可以完全匹配，但是我们有 `-s` 选项来判断是否是一个文件，并且判断该文件不是空的（大小不为零）。这与我们想要的相反，但我们可以使用 `!` 来否定测试，以判断某些内容不是文件或为空。
 
-Let's look at an example to see this at work. I've created two test files: one is empty, and the other contains some data. We can use `if` to print the message "empty" *if* the file is empty:
+让我们用一个示例来看看这个过程。我创建了两个测试文件：一个是空的，另一个包含一些数据。我们可以使用 `if` 判断，*如果*文件为空打印消息 “empty”：
 
 ```
 $ ls
@@ -101,7 +101,7 @@ $ if [ ! -s emptyfile ] ; then echo "empty" ; fi
 empty
 ```
 
-We can combine this with for to examine a list of log files to delete the empty files for us:
+我们可以将 `if` 和 `for` 命令结合起来，检查日志文件列表中的空文件并删除：
 
 ```
 $ ls -l
@@ -125,7 +125,7 @@ total 20
 -rw-rw-r--. 1 jhall jhall 2 Jul  7 01:02 log.7
 ```
 
-Using the `if` command can add some intelligence to scripts, to perform actions only when needed. I often use `if` in scripts when I need to test *if* a file does or does not exist on my system, or *if* the entry the script is examining is a file or directory. Using `if` allows my script to take different actions as needed.
+使用 `if` 命令可以在需要时执行一些操作，使脚本变得智能。我经常会在脚本中使用 `if`，当我需要判断文件在我的系统上存在或不存在时，或者判断脚本正在检查的条目是文件或目录时。使用 `if` 使得脚本能够根据需要采取不同的操作。
 
 --------------------------------------------------------------------------------
 
@@ -133,7 +133,7 @@ via: https://opensource.com/article/22/7/use-bash-automate-tasks-linux
 
 作者：[Jim Hall][a]
 选题：[lkxed][b]
-译者：[Donkey](https://github.com/Donkey-Hao)
+译者：[Donkey-Hao](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
