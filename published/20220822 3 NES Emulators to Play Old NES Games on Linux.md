@@ -3,21 +3,22 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14974-1.html"
 
 3 个可在 Linux 上玩旧 NES 游戏的 NES 模拟器
 ======
-快速浏览在 Linux 中玩旧 NES 游戏的 3 个 NES 模拟器。此外，我们还提供安装指南和特性。
+
+![](https://img.linux.net.cn/data/attachment/album/202208/28/162533h41z1kynkyn5n53q.jpg)
+
+> 快速了解一下在 Linux 中玩老式 NES 游戏的 3 个 NES 模拟器。此外，我们也提供了安装指南和特性介绍。
 
 如果你想在最新的 Ubuntu、Linux Mint 版本中玩超级马里奥、口袋妖怪等老式复古游戏，有很多可用的模拟器。如果你想玩老式复古游戏，可以尝试以下三个模拟器。
 
-### NES 模拟器上玩旧 NES 游戏
+### 1、ZSNES
 
-#### 1. ZSNES
-
-[ZSNES][1] 是一个超级 [Nintendo][2] 模拟器，可以在 Windows、Linux、FreeBSD 和 DOS 上运行。它作为 GUI 界面运行，你可以在其中加载 NES 游戏的 ROM。
+[ZSNES][1] 是一个 [超级任天堂][2] 模拟器，可以在 Windows、Linux、FreeBSD 和 DOS 上运行。它作为 GUI 界面运行，你可以在其中加载 NES 游戏的 ROM。
 
 这是在 Ubuntu、Debian 和 Linux Mint 中安装 ZSNES 的方法。从终端运行以下命令：
 
@@ -25,7 +26,7 @@
 sudo apt install zsnes
 ```
 
-对于 Fedora，在[使用这个指南设置 RPM fusion][3] 后运行以下命令进行安装。因为它需要一些 Fedora 官方发行版没有提供的模块。
+对于 Fedora，在 [使用这个指南设置 RPM fusion][3] 后运行以下命令进行安装。因为它需要一些 Fedora 官方发行版没有提供的模块。
 
 ```
 sudo dnf install zsnes
@@ -37,7 +38,7 @@ sudo dnf install zsnes
 
 ![Play old NES games using ZSNES in Ubuntu][5]
 
-#### 2. Higan
+### 2、Higan
 
 higan 是 Nintendos SNES、NES、Gameboy、Gameboy Color 和 Gameboy Advance 的模拟器。它以前被称为 bsnes，并且 SNES 仿真特别完整和完善。
 
@@ -51,9 +52,9 @@ sudo apt install higan
 
 ![Higan Running in Ubuntu][6]
 
-#### 3. GFCEU
+### 3、GFCEU
 
-GNOME FCE Ultra (gfceu) 是用于 GNOME 桌面的 FCE Ultra 任天堂娱乐系统的图形前端。 Gfceu 简化了用户的游戏体验，并提供了干净、简单和直观的界面。
+GNOME FCE Ultra（gfceu）是用于 GNOME 桌面的 FCE Ultra 任天堂娱乐系统的图形前端。 Gfceu 简化了用户的游戏体验，并提供了干净、简单和直观的界面。
 
 从终端运行以下命令，为 Ubuntu、Linux Mint 和相关发行版安装 gfceu。
 
@@ -61,7 +62,7 @@ GNOME FCE Ultra (gfceu) 是用于 GNOME 桌面的 FCE Ultra 任天堂娱乐系�
 sudo apt install gfceu
 ```
 
-对于 Fedora，运行以下命令进行安装。请确保在运行此命令之前[使用这个指南设置 RPM fusion][7]。因为它需要某些官方 Fedora 发行版未提供的软件包。
+对于 Fedora，运行以下命令进行安装。请确保在运行此命令之前 [使用这个指南设置 RPM fusion][7]。因为它需要某些官方 Fedora 发行版未提供的软件包。
 
 ```
 sudo dnf install gfceu
@@ -86,7 +87,7 @@ via: https://www.debugpoint.com/3-nes-emulators-to-play-old-nes-games-in-linux/
 作者：[Arindam][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
