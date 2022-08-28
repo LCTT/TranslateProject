@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/apt-update-vs-upgrade/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Yufei-Yan"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -83,7 +83,7 @@ apt-get update doesn’t even tell you if any package can be upgraded.
 You can see the [list of upgradable packages][8] with apt but apt-get doesn’t have this option.
 
 ```
-[email protected]:~$ apt list --upgradable 
+[email protected]:~$ apt list --upgradable
 Listing... Done
 fprintd/jammy-updates 1.94.2-1ubuntu0.22.04.1 amd64 [upgradable from: 1.94.2-1]
 gnome-control-center-data/jammy-updates,jammy-updates 1:41.7-0ubuntu0.22.04.4 all [upgradable from: 1:41.7-0ubuntu0.22.04.1]
