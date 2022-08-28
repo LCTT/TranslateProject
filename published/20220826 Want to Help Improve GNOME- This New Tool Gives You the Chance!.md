@@ -42,7 +42,7 @@ GNOME 带来了一个工具，可以让用户匿名提供他们的配置、扩�
 如果你有一个基于 Ubuntu 的发行版，你可以通过输入以下内容来安装它：
 
 ```
-sudo snap install --classic gnome-info-connect
+sudo snap install --classic gnome-info-collect
 ```
 
 安装完毕后，在终端使用以下命令将其启动：
