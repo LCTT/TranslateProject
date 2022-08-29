@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/kde-plasma-5-25-kubuntu-22-04/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
