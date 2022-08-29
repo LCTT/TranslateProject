@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/marktext-editor/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: " Chth0lly"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
