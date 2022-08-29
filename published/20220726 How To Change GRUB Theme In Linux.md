@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "robsean"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14978-1.html"
 
 如何在 Linux 中更改 GRUB 主题
 ======
