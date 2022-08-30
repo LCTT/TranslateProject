@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/mac-linux-difference/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Donkey-Hao"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -245,7 +245,7 @@ via: https://itsfoss.com/mac-linux-difference/
 
 作者：[Ankush Das][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Donkey-Hao](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
