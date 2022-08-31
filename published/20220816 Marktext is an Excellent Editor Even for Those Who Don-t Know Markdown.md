@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Chth0lly"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14986-1.html"
 
 即使对那些不知道 Markdown 的人来说，Marktext 也是一个绝佳的编辑器
 ======
