@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/08/30/a-way-to-categorize-debugging-skills/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "aftermath0703"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
