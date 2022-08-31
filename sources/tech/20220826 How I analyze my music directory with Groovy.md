@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/groovy-script-java-music"
 [#]: author: "Chris Hermansen https://opensource.com/users/clhermansen"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
