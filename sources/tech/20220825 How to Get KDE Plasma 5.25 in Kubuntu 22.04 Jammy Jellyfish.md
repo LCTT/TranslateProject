@@ -7,29 +7,29 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Get KDE Plasma 5.25 in Kubuntu 22.04 Jammy Jellyfish
+如何在 Kubuntu 22.04 Jammy Jellyfish 中获取 KDE Plasma 5.25
 ======
-The KDE developers now enabled the popular backports PPA with necessary updates with KDE Plasma 5.25 which you can install now in Kubuntu 22.04 Jammy Jellyfish. Here’s how.
+KDE 开发人员现在启用了流行的反向移植 PPA，并对 KDE Plasma 5.25 进行了必要的更新，你现在可以将其安装在 Kubuntu 22.04 Jammy Jellyfish 中。下面是方法。
 
-KDE Plasma 5.25 released a few days back on June 14, 2022 with some stunning updates. With this release, you get the **dynamic accent colour**, revamped login avatars, **floating panel** and many such features which we covered in the [feature highlight article][1].
+KDE Plasma 5.25 于 2022 年 6 月 14 日几天前发布，其中包含一些惊人的更新。在此版本中，你将获得**动态强调色**、改进的登录头像、**浮动面板**以及我们在[功能亮点文章][1] 中介绍的许多功能。
 
-But, if you are running [Kubuntu 22.04 Jammy Jellyfish][2] which was released long back on April 2022, you have the KDE Plasma 5.24 with KDE Framework 5.92.
+但是，如果你正在运行早在 2022 年 4 月发布的 [Kubuntu 22.04 Jammy Jellyfish][2]，那么你将拥有带有 KDE Framework 5.92 的 KDE Plasma 5.24。
 
-You probably waiting to enjoy the new features in your stable Kubuntu 22.04 release, and now its possible to install it in Kubuntu 22.04 via the famous backports PPA.
+你可能正在等待享受稳定的 Kubuntu 22.04 版本中的新功能，现在可以通过著名的反向移植 PPA 在 Kubuntu 22.04 中安装它。
 
-### How to Install KDE Plasma 5.25 in Kubuntu 22.04
+### 如何在 Kubuntu 22.04 中安装 KDE Plasma 5.25
 
-Here’s how you can upgrade Kubuntu 22.04 with latest KDE Plasma 5.25.
+这是使用最新的 KDE Plasma 5.25 升级 Kubuntu 22.04 的方法。
 
-#### GUI Method
+#### GUI 方式
 
-If you are comfortable with KDE’s software app Discover, then open the app. Then browse to the Settings > Sources and add the PPA `ppa:kubuntu-ppa/backports-extra`. Then Click on Updates.
+如果你对 KDE 的软件应用 Discover 感到满意，请打开该应用。然后进入 Settings > Sources 并添加 PPA `ppa:kubuntu-ppa/backports-extra`。然后单击更新。
 
-#### Terminal Method (recommended)
+#### 终端方法（推荐）
 
-I would recommend you to open a terminal and do this upgrade for faster execution and installation.
+我建议你打开一个终端并进行此升级以更快地执行和安装。
 
-* Open Konsole and run the following commands to add the [backport PPA][3].
+* 打开 Konsole 并运行以下命令以添加[反向移植 PPA][3]。
 
 ```
 sudo add-apt-repository ppa:kubuntu-ppa/backports-extra
@@ -37,7 +37,7 @@ sudo add-apt-repository ppa:kubuntu-ppa/backports-extra
 
 ![Upgrade Kubuntu 22.04 with KDE Plasma 5.25][4]
 
-* Now, refresh the package list by running the following command. Then verify the 5.25 packages are available.
+* 现在，通过运行以下命令刷新包列表。然后验证 5.25 包是否可用。
 
 ```
 sudo apt update
@@ -49,33 +49,33 @@ apt list --upgradable | grep 5.25
 
 ![KDE Plasma 5.25 packages are available now][5]
 
-Finally, run the last command to kick-off the upgrade.
+最后，运行最后一个命令来启动升级。
 
 ```
 sudo apt full-upgrade
 ```
 
-The total download size is around 200 MB worth of packages. The entire process takes around 10 minutes of your time based on your internet connection speed.
+总共下载大约 200 MB 的软件包。根据你的互联网连接速度，整个过程大约需要 10 分钟。
 
-After the above command is complete, restart your system.
+上述命令完成后，重新启动系统。
 
-Post-restart, you should see the new KDE Plasma 5.25 in Kubuntu 22.04 LTS.
+重启后，你应该会在 Kubuntu 22.04 LTS 中看到新的 KDE Plasma 5.25。
 
 ![KDE Plasma 5.25 in Kubuntu 22.04 LTS][6]
 
-### Other backport PPA
+### 其他反向移植 PPA
 
-Please note that the [other backport PPA][7]  `ppa:kubuntu-ppa/backports` is currently have Plasma 5.24. So do not use the following PPA which is different than the above. I am not sure whether this PPA would get this update.
+请注意，[其他反向移植 PPA][7] `ppa:kubuntu-ppa/backports` 目前有 Plasma 5.24。因此，请勿使用与上面不同的 PPA。我不确定这个 PPA 是否会得到这个更新。
 
 ```
-sudo add-apt-repository ppa:kubuntu-ppa/backports // don't use this
+sudo add-apt-repository ppa:kubuntu-ppa/backports // 不要使用这个
 ```
 
-### How to Uninstall
+### 如何卸载
 
-At any moment, if you would like to go back to the stock version of KDE Plasma desktop, then you can install ppa-purge and remove the PPA, followed by refreshing the package.
+在任何时候，如果你想回到 KDE Plasma 桌面的原始版本，那么你可以安装 ppa-purge 并删除 PPA，然后刷新包。
 
-Open a terminal and execute the following commands in sequence.
+打开终端，依次执行以下命令。
 
 ```
 sudo apt install ppa-purge
@@ -83,15 +83,15 @@ sudo ppa-purge ppa:kubuntu-ppa/backports-extra
 sudo apt update
 ```
 
-Once the above commands are complete, restart your system.
+完成上述命令后，重启系统。
 
-### Closing Notes
+### 结束语
 
-There you have it. A nice and simple steps to upgrade stock KDE Plasma to Plasma 5.25 in Jammy Jellyfish. I hope, your upgrade goes fine.
+这就是全部了。一个漂亮而简单的步骤，将 Jammy Jellyfish 中的 KDE Plasma 升级到 Plasma 5.25。我希望你升级顺利。
 
-Do let me know in the comment section if you face any error.
+如果您遇到任何错误，请在评论栏告诉我。
 
-Cheers.
+干杯。
 
 --------------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ via: https://www.debugpoint.com/kde-plasma-5-25-kubuntu-22-04/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
