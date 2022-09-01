@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/introduce-the-different-fedora-linux-editions/"
 [#]: author: "Arman Arisman https://fedoramagazine.org/author/armanwu/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
