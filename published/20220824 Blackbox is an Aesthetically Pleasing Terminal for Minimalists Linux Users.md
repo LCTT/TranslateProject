@@ -3,28 +3,30 @@
 [#]: author: "Anuj Sharma https://itsfoss.com/author/anuj/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-14992-1.html"
 
-Blackbox 是极简主义 Linux 用户的美观终端
+Blackbox：极简主义 Linux 用户的美观终端
 ======
 
-有[许多可用于 Linux 的终端仿真器][1]。从 Terminator 到 Tilix，你有多种终端可供选择。
+![](https://img.linux.net.cn/data/attachment/album/202209/01/230823b2n8vhe6jn5vz5uq.jpg)
 
-但这并没有阻止新终端应用的到来。你最近了解了 [GNOME Console][2]，今天，我将向您介绍 Blackbox。
+有 [许多可用于 Linux 的终端仿真器][1]。从 Terminator 到 Tilix，你有多种终端可供选择。
+
+但这并没有阻止新终端应用的到来。你最近已经见过了 [GNOME Console][2] 吧，今天，我将向你介绍 Blackbox。
 
 ### Blackbox 终端：概述和功能
 
-Blackbox 是一个支持 GTK4 的终端仿真器。开发人为了他可以在 Linux 上使用外观不错的终端应用而创建了这个项目。
+Blackbox 是一个支持 GTK4 的终端仿真器。开发者为了他可以在 Linux 上使用外观优美的终端应用而创建了这个项目。
 
 所以，不要指望它有很多功能。它只是一个使用 GTK4 工具包并支持主题的终端仿真器。
 
-换句话说，它更多的是关于外观而不是功能。
+换句话说，它更多注重的是关于外观而不是功能。
 
 以下是 Blackbox 的主要亮点：
 
-* 可设置主题（[Tilix][3] 兼容的配色方案支持）
+* 可设置主题（支持 [Tilix][3] 兼容的配色方案）
 * 主题与窗口装饰的融合
 * 自定义字体
 * 各种可自定义的 UI 设置
@@ -35,12 +37,11 @@ Blackbox 是一个支持 GTK4 的终端仿真器。开发人为了他可以在 L
 
 谈到外观，让我们来看看它提供的不同外观。默认窗口将类似于下面的截图。
 
-
 ![Default look of Blackbox terminal][4]
 
 #### 没有标题栏
 
-你也可以没有标题栏，如下所示。这是 GTK4 应用程序中最“流行”的功能之一。
+你也可以取消标题栏，如下所示。这是 GTK4 应用程序中最“流行”的功能之一。
 
 ![Blackbox without header bar][5]
 
@@ -48,17 +49,17 @@ Blackbox 是一个支持 GTK4 的终端仿真器。开发人为了他可以在 L
 
 ![Floating controls with no header bar mode][6]
 
-#### 轻松复制和粘贴（不要反抗）
+#### 轻松复制和粘贴（不要抗拒）
 
-Ctrl+C 和 Ctrl+V 就像复制粘贴的通用键盘快捷键。
+`Ctrl+C` 和 `Ctrl+V` 就像复制粘贴的通用键盘快捷键。
 
 但是古老的 Unix 在宇宙之前就存在了，因此它使用 [Ctrl+C 键来终止终端中正在运行的程序][7]。
 
-但是，有些人发现不能使用他们最喜欢的快捷方式来[在终端中复制粘贴][8]有点不方便。
+但是，有些人发现不能使用他们最喜欢的快捷键来 [在终端中复制粘贴][8] 有点不方便。
 
-Blackbox 允许你通过启用“轻松复制和粘贴”设置来更改它。启用此设置后，你可以使用 Ctrl+C 和 Ctrl+v 进行复制粘贴操作。
+Blackbox 允许你通过启用“轻松复制和粘贴”设置来更改它。启用此设置后，你可以使用 `Ctrl+C` 和 `Ctrl+v` 进行复制粘贴操作。
 
-不用担心。 Ctrl+C 仍可用于停止正在运行的命令。
+不用担心。`Ctrl+C` 仍可用于停止正在运行的命令。
 
 ![Easy copy-paste mode allows using Ctrl+C and Ctrl+V keys][9]
 
@@ -78,13 +79,13 @@ Blackbox 允许你通过启用“轻松复制和粘贴”设置来更改它。�
 
 好消息是，如果你对设置进行了太多更改，你可以将它们全部还原并重置为默认设置。
 
-该选项在首选项的“高级”选项卡中可用。
+该选项在“<ruby>首选项<rt>Preferences</rt></ruby>”的“<ruby>高级<rt>Advance</rt></ruby>”选项卡中可用。
 
 ![reset blackbox settings to default][12]
 
 ### 安装 Blackbox 终端
 
-请记住，**Blackbox 处于开发的早期阶段**。我在切换主题时遇到了一些崩溃。
+请记住，**Blackbox 处于开发的早期阶段**。我在切换主题时出现过崩溃。
 
 要安装 Blackbox 终端，你应该在系统中安装 [Flatpak 并启用 Flathub 仓库][13]。
 
@@ -121,7 +122,7 @@ via: https://itsfoss.com/blackbox-terminal/
 作者：[Anuj Sharma][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
