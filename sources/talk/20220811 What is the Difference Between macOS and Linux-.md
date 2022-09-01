@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/mac-linux-difference/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: "Donkey-Hao"
+[#]: translator: "Javaisthebests"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
