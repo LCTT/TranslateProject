@@ -7,47 +7,47 @@
 [#]: publisher: " "
 [#]: url: " "
 
-What if a Lifelong Linux User Tried Windows or macOS for the First Time?
+一直用Linux的人第一次用Windows或MacOS会怎样?
 ======
-Windows users face issues while switching to Linux. What if the tables are turned? What problems a lifelong Linux user will face while switching to Windows or macOS?
+Windows用户在换Linux的过程中会遇到很多问题. 那么相反，一直用Linux的人第一次用Windows或MacOS会遇到什么问题?
 
-![What if a Lifelong Linux User Tried Windows or macOS for the First Time?][1]
+![一直用Linux的人第一次用Windows或MacOS会怎样？][1]
 
-Do you remember Linus Sebastian (from Linus Tech Tips) [trying out Linux for gaming][2]? He ended up deleting the desktop environment despite a clear warning shown in the terminal.
+还记得YouTube频道Linus Tech Tips中Linus Sebastian[在Linux上玩游戏][2]的场面吗? 尽管终端提示了"你接下来要做的事情可能是有害的", 他最后还是删掉了他的桌面环境.
 
-![Linus Sebastian destroys his Linux system][3]
+![Linus Sebastian弄坏了他的Linux系统][3]
 
-Considering he utilizes Windows as his daily driver to play games, switching to Linux will definitely need some time.
+考虑到Linus日常用Windows玩游戏, 换Linux肯定需要一定的时间.
 
-So, is this a Linux issue? Or is Linus doing it all wrong? Bet ya!
+所以这是Linux的问题吗? 还是Linus搞错了? 才不是呢!
 
-[It's Time More Linux Distros and DEs Become 'Linus-Proof'][4]
+[更多Linux版本和桌面环境出现了Linus遇到的同样问题][4]
 
-Or, is it that any user unfamiliar with an operating system encounters problems during their first trials?
+难道说，任何对某操作系统不熟悉的用户在第一次尝试使用该操作系统的时候都会遇到问题?
 
-So, here, you get to read a different perspective of a Linux user trying Windows or macOS for the first time.
+接下来, 我们要来谈一个不同观点:
 
-Will it be a smooth sail? Or will it be as bad as Linus’s experience with Linux?
+Linux用户第一次用Windows或MacOS会非常容易还是会和Linus用Linux的感觉一样糟糕?
 
-It is definitely going to be something exciting…
+这肯定是非常有趣的话题...
 
-**Scott Williams** (a Senior DevOps Engineer) imagined the scenario in a series of tweets.
+**Scott Williams** (一个高级DevOps工程师) 在一系列推文中展示了Linux用户第一次用Windows或MacOS的场面.
 
-### Enable TPM 2.0 for Windows 11?
+### 在Win11上怎么启用TPM2.0?
 
-Considering Windows 11 is the latest available Windows version. How can Scott install it?
+如何安装Windows的最新版本Windows 11?
 
 > @vwbusguy \
-> Join me tonight as I try to enable TPM 2.0 on this four year old laptop to see if we can get Windows 11 to run on it.  It says it supports Intel PTT, so this should be straightforward, right?
+> 来看我在能不能在这台用了4年的笔记本电脑上启用TPM2.0并运行Windows11. 这台电脑支持Intel PTT，所以应该会很简单?
 > 
 > @vwbusguy \
-> Between Windows and MacOS, there are too many options. Can't all proprietary operating systems users come together and just make one perfect operating system that fits every use case and preference out of the box, but most specifically mine?
+> Windows和MacOS有太多选项了. 所有专有操作系统的用户难道就不能一起开发出一种能适用于所有场合和个人偏好的完美操作系统吗?(尤其是适合我的使用环境和个人偏好)
 
-[Twitter @vwbusguy][5]
+[Twitter用户 @vwbusguy][5]
 
-*How to enable TPM 2.0? How to find it in the BIOS menu? Is it safe to enable TPM 2.0? Should I flash a newer BIOS? Will I brick my motherboard in the process of updating the BIOS?*
+*怎样启用 TPM 2.0? 在BIOS菜单中怎么找? 启用 TPM 2.0 安全吗? 我需要刷一个更新版本的 BIOS吗? 更新BIOS的过程中我主版会坏吗?*
 
-These are some of the questions, every Linux user (and even Windows/macOS users) will have when they want to upgrade their system to Windows 11.
+上面就是些每个Linux用户(甚至MacOS/Windows用户)在升级Windows11会遇到的问题.
 
 With Linux distributions, we never have to do such a peculiar thing to make it work. Even in 2022. But, Windows 11 wants you to know about the BIOS settings or the TPM chip before you can upgrade to it.
 
