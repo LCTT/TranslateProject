@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/linux-user-trying-windows-macos/"
 [#]: author: "Abhishek https://news.itsfoss.com/author/abhishek/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Kira-Pgr"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
