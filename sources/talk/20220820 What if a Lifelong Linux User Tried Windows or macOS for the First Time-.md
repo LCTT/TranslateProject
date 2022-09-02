@@ -55,24 +55,24 @@ Scott 表示: 对于老笔记本电脑来说，即使用上了最新的主板(�
 
 由于更新BIOS有一定的风险，这种事情即使是对于会技术的用户都特别不方便.
 
-### Do I Need an Antivirus Software? Which One?
+### 我需要用杀毒软件吗？如果需要的话用什么杀软呢?
 
-While Apple’s XProtect and Windows Defender should be good for basics, there are several options when it comes to Antivirus if you want enhanced protection.
+虽说苹果的XProtect和Windows Defender能提供基本保护,但对于想要更好保护的用户来说，在杀软方面还是有不同选择的.
 
 > @vwbusguy \
-> I'm surprised that MacOS doesn't even come with a modern web browser installed and you have to go to a website to download one.  That's not a great initial user experience.
+> 我惊讶的是MacOS居然没有预装新式的浏览器，用户还需要自己上网去安装.这对于新用户来说体验很不好.
 >
 > @NaheemSays \
-> It is actually deeper than that. As a user of both systems, I think people subconsciously forget how weird Windows can be.
+> 这不仅仅是是否要安装杀软的问题. 作为同时用Win和MacOS的人, 我认为人们总是忘记Windows能有多么奇怪.
 >
-> Its biggest advantage is that it comes pre installed. First step of a new system: uninstall a lot of crap. Try even getting rid of Mcaffee or Norton!
+> 其实最大的问题是杀软已经预装好了. 每次安装完新系统之后第一件事就是要卸载一堆东西. 甚至你还要卸载Mcaffee或Norton.
 >
 > @vwbusguy \
-> So do I or do I not need antivirus software and which one?
+> 所以我究竟需不需要装杀软?装什么杀软?
 
-[Twitter @vwbusguy][6]
+[Twitter用户 @vwbusguy][6]
 
-And, with so many choices and paid reviews online, it is tough to know what’s actually a genuine option and if you should spend for it.
+而且,网上有那么多选择和付费评论， it is tough to know what’s actually a genuine option and if you should spend for it.
 
 A Linux user will often wonder: *Why do I even need this? Won’t this affect the performance? What do I do with so many protection features? Isn’t Windows a secure operating system?*
 
