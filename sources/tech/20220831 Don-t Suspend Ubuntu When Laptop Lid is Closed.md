@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/laptop-lid-suspend-ubuntu/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
