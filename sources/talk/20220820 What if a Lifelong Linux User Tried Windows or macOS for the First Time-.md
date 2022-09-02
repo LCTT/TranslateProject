@@ -72,28 +72,28 @@ Scott 表示: 对于老笔记本电脑来说，即使用上了最新的主板(�
 
 [Twitter用户 @vwbusguy][6]
 
-而且,网上有那么多选择和付费评论， it is tough to know what’s actually a genuine option and if you should spend for it.
+而且,网上有那么多选择和付费评论，用户就很难确定买那个杀软最好.
 
-A Linux user will often wonder: *Why do I even need this? Won’t this affect the performance? What do I do with so many protection features? Isn’t Windows a secure operating system?*
+而Linux用户就会这么想: *我竟然还要安装杀软? 不会很浪费性能吗? 这么多安全防护功能我该怎么用? 难道Windows不是一个安全的操作系统?*
 
-### iCloud and macOS: A Love Story?
+### MacOS和iCloud:一个爱情故事？
 
 > @vwbusguy \
-> How do I access files on my @btrfs drive in Windows or MacOS?
+> 在Windows和MacOS中我该怎样访问btrfs盘中的文件？
 >
 > @vwbusguy \
-> What is iCloud and how do I make this go away?
+> iCloud是什么东东?怎样把它删掉?
 > 
 > @mikecodemonkey \
-> And then MacOS is sooooo annoying having to log into your iCloud every 5 seconds, set multiple passwords, constantly tell Siri to bugger off.
+> MacOS要你每5秒就要登陆iCloud,要你设置多重密码，还得经常关掉siri的提醒
 
 [Twtter @vwbusguy][7]
 
-Linux users are not fond of integrated cloud services. They either mount a cloud storage drive (or a network drive).
+Linux用户们并不喜欢集成的云服务. 他们宁愿挂载一个云储存磁盘(或者网络磁盘).
 
-Even if they opt for a cloud storage service, it should work as per their explicit actions. However, with macOS, you will be constantly reminded of iCloud while Siri popping up in between.
+即使他们选择了云储存磁盘, 系统也应该按照用户的意图来工作. 但是, 在MacOS上，你会经常被提示要使用iCloud，而且在icloud界面里siri还会出来捣乱
 
-### Linux User Cleans the Registry
+### Linux用户清理注册表
 
 With so many options and tools to clean registries and optimize systems for better performance, a new Linux user may end up with an unresponsive Windows.
 
