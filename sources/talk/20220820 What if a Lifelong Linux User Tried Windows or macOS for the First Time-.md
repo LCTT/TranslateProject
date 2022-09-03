@@ -23,7 +23,7 @@ Windows用户在换Linux的过程中会遇到很多问题. 不过，一直用Lin
 
 [更多Linux版本和桌面环境出现了Linus遇到的同样问题][4]
 
-难道说，任何对某操作系统不熟悉的用户在第一次尝试使用该操作系统的时候都会遇到问题?
+难道说，任何对某操作系统不熟悉的用户在第一次尝试使用该系统的时候都会遇到问题?
 
 接下来，你可以从不同的角度去了解linux用户第一次使用windows或者macOS的感受
 
@@ -87,7 +87,7 @@ Scott 表示: 对于老笔记本电脑来说，即使用上了最新的主板(�
 > @mikecodemonkey \
 > MacOS要你每5秒就要登陆iCloud,要你设置多重密码，还得经常关掉siri的提醒
 
-[Twtter @vwbusguy][7]
+[Twtter用户 @vwbusguy][7]
 
 Linux用户们并不喜欢集成的云服务. 他们宁愿挂载一个云储存磁盘(或者网络磁盘).
 
@@ -95,41 +95,40 @@ Linux用户们并不喜欢集成的云服务. 他们宁愿挂载一个云储存�
 
 ### Linux用户清理注册表
 
-With so many options and tools to clean registries and optimize systems for better performance, a new Linux user may end up with an unresponsive Windows.
+原先使用Linux的新手Windows用户为了能优化系统性能去清理注册表，但在面对那么多清理注册表的工具和选项时总是容易把Windows系统给搞坏
 
-> Reddit says I need to "clean my registry" so I followed a few tutorials and deleted a few things and now this Windows box is acting really weird.
+> Reddit上有些人说需要"清理注册表".我按照几个教程删除了一些东西，然后现在我的Windows变得很奇怪。
 
-[Twitter @vwbusguy][8]
+[Twitter用户 @vwbusguy][8]
 
-Even in 2022, there is no clarity when you work with the registry or tools that helps you “optimize” the registry.
+即使在2022年，对于什么时候应该手动或者用工具清理注册表还是没有明确的规定.
 
-Dare you, veteran Linux users love the details before trying anything. But, if there is no proper warning/notice in the GUI, how can one know about it all?
+虽说资深Linux用户喜欢在尝试新东西前关注细节. 但如果GUI中没有恰当的警告或提示，还怎么知道知道所有的注意事项呢.
+### 经常需要重启
 
-### Reboot All The Way
+Windows的重启不像Linux的重启那样不能修复问题. 不过,我到底要在更新Windows或者安装软件后重启多少次啊?
 
-It’s not like a reboot does not fix things in Linux. But, how many times do I have to reboot when updating Windows or after installing software?
+> 第一次尝试Windows或MacOS的Linux用户是这样的, \
+> "你究竟需要安装多少个版本的.NET? 重启了多少次了?" \
+> "为什么我的Adobe版本不支持这个版本的MacOS? 难怪那么多人在用MacOS时会遇到麻烦. 苹果公司需要修复这个问题了."
 
-> We can all be like, \
-> "You have to install how many .NET framework versions? How many reboots so far?" \
-> "My Adobe version doesn't support this version of MacOS? No wonder people have so many have trouble taking MacOS seriously. Apple needs to fix this."
+[Twitter用户 @vwbusguy][9]
 
-[Twitter @vwbusguy][9]
+每次我重启的时候后台运行的程序都被干掉了.
 
-Every time I reboot, I lose the active applications that were in the background.
+为什么Windows就不能在检测新安装的程序或者更新的时候简单地刷新一下，而不是需要重启. Windows咋做这么适得其反的操作呢?
 
-Why can’t Windows just detect the new installations and updated packages with a simple refresh instead of a reboot? Why is this so much counter-productive?
+### 这些东西还需要花钱? 我有了Windows许可证还不够?
 
-### Do I Have to Pay for All This? Wasn’t the Windows License Enough?
+Linux中主要就是免费和开源软件. 因此预装的工具也是免费的
 
-Linux is primarily all about free and open-source software. Hence, the pre-installed utilities are free.
+所有, 一个用惯那些工具的用户就突然要花钱买Windows许可证和软件.
 
-So, a user who is comfortable with those tools would have to suddenly pay for a Windows license, and also pay for software.
+微软是不是太贪婪了呢>
 
-Isn’t Microsoft too greedy here?
+### 默认就缺少必须的软件包
 
-### Lack of Essential Packages by Default
-
-I can’t even extract an archive after I install Windows? Is it truly a modern OS?
+在安装完Windows后我连压缩包都解压不了? Windows真的是现代操作系统吗?
 
 ### Multi-Monitor Setup for macOS
 
