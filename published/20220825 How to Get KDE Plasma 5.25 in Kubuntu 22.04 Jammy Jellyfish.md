@@ -92,7 +92,7 @@ sudo apt update
 
 这就是全部了。一个漂亮而简单的步骤，将 Jammy Jellyfish 中的 KDE Plasma 升级到 Plasma 5.25。我希望你升级顺利。
 
-如果您遇到任何错误，请在评论栏告诉我。
+如果你遇到任何错误，请在评论栏告诉我。
 
 干杯。
 
