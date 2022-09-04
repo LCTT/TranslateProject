@@ -3,160 +3,128 @@
 [#]: author: "Abhishek https://news.itsfoss.com/author/abhishek/"
 [#]: collector: "lkxed"
 [#]: translator: "Kira-Pgr"
-[#]: reviewer: " "
+[#]: reviewer: "wxy"
 [#]: publisher: " "
 [#]: url: " "
 
-用惯Linux的人第一次用Windows或MacOS会怎样?
+用惯 Linux 的人第一次用 Windows 或 macOS 会怎样?
 ======
-Windows用户在换Linux的过程中会遇到很多问题. 相反，Linux用户第一次用Windows或MacOS会遇到什么问题呢?
 
-![一直用Linux的人第一次用Windows或MacOS会怎样？][1]
+> Windows 用户在转换到 Linux 的过程中会遇到很多问题。如果反过来，一个一直用 Linux 的用户第一次用 Windows 或 macOS 会遇到什么问题呢?
 
-还记得YouTube频道Linus Tech Tips中Linus Sebastian[尝试在Linux上玩游戏][2]的场面吗? 尽管终端显示了明显的警告, 他最后还是删掉了他的桌面环境.
+![一直用 Linux 的人第一次用 Windows 或 macOS 会怎样？][1]
 
-![Linus Sebastian弄坏了他的Linux系统][3]
+还记得 YouTube 频道 Linus Tech Tips 中 Linus Sebastian [尝试在 Linux 上玩游戏][2] 的场面吗? 尽管终端显示了明显的警告, 他最后还是把他的桌面环境删掉了。
 
-考虑到Linus日常用Windows玩游戏, 换Linux肯定需要一定的时间.
+![Linus Sebastian 弄坏了他的 Linux 系统][3]
 
-所以这是Linux的问题吗? 还是Linus搞错了?
+考虑到 Sebastian 日常用 Windows 玩游戏, 换到 Linux 肯定需要一定的时间。
 
-[更多Linux版本和桌面环境出现了Linus遇到的同样问题][4]
+所以，这是 Linux 的问题吗? 还是 Sebastian 搞错了?
 
-难道说，任何对某操作系统不熟悉的用户在第一次尝试使用该系统的时候都会遇到问题?
+难道说，任何对操作系统不熟悉的用户在第一次尝试使用该系统的时候都会遇到问题?
 
-接下来，你可以从不同的角度去了解linux用户第一次使用windows或者macOS的感受
+接下来，你可以从不同的角度去了解 Linux 用户第一次使用 Windows 或者 macOS 的感受。
 
-Linux用户第一次用Windows或MacOS会非常容易？还是会感觉和Linus用Linux时一样糟糕?
+Linux 用户第一次用 Windows 或 macOS 会非常容易？还是会和 Sebastian 用 Linux 时一样感觉糟糕？
 
-这肯定是非常有趣的话题...
+这肯定是非常有趣的话题……
 
-**Scott Williams** (一个高级DevOps工程师) 在一系列推文中展示了Linux用户第一次用Windows或MacOS的场面.
+一位 DevOps 高级工程师 **Scott Williams** 在一系列推文中假想了 Linux 用户第一次用 Windows 或 macOS 的场面。
 
-### 在Win11上怎么启用TPM2.0?
+### 在 Windows 11 上怎么启用 TPM 2.0？
 
-如何安装Windows的最新版本Windows 11?
+如何安装 Windows 的最新版本 Windows 11？
 
-> @vwbusguy \
-> 看我在能不能在这台用了4年的笔记本电脑上启用TPM2.0并运行Windows11. 这台电脑支持Intel PTT，所以应该会很顺利?
-> 
-> @vwbusguy \
-> 在Windows和MacOS之间有太多的选择. 所有操作系统的用户难道就不能一起开发出一种能适用于所有场合和个人偏好的完美操作系统吗?(尤其是适合我的使用环境和个人偏好)
+> [Scott Williams][5]：\
+> 今晚，看我在能不能在这台用了 4 年的笔记本电脑上启用 TPM2.0 并运行 Windows 11。这台电脑支持 Intel PTT，所以应该会很顺利吧？
 
-[Twitter用户 @vwbusguy][5]
+怎样启用 TPM 2.0? 如何在 BIOS 菜单中找到它? 启用 TPM 2.0 安全吗? 我是否需要刷一个更新的 BIOS? 更新 BIOS 的过程中是否会弄坏我的主版？
 
-*怎样启用 TPM 2.0? 在BIOS菜单中怎么找? 启用 TPM 2.0 安全吗? 我需要刷一个更新版本的 BIOS吗? 更新BIOS的过程中我主版会坏吗?*
+这些就是些每个 Linux 用户（甚至是 macOS/Windows 用户）将系统升级到 Windows 11 时都会遇到的一些问题。
 
-这些就是些每个Linux用户(甚至MacOS/Windows用户)将系统升级到Windows11时都会遇到的问题.
+Linux 用户从来没有必要做如此奇怪的事情来让系统正常工作。即使是在 2022 年。但是 Windows 11 需要你在升级前了解 BIOS 设置和 TPM 芯片的情况。
 
-即使在2022年，Linux用户从来没有必要做如此奇怪的事情来让系统正常工作.但是Win11需要你在升级前了解BIOS设置和TPM芯片.
+虽然 Scott 提到的是旧笔记本电脑，但值得注意的是，即使是最新的主板（比如 Z590），你可能也需要调整 BIOS 设置或者刷一个版本更高的 BIOS 版本才能支持 Windows 11。
 
-Scott提到旧笔记本电脑时指出，值得注意的是，旧电脑即使用上了最新的主板(比如 Z590), 还需要调BIOS设置或者刷一个版本更高的BIOS版本才能支持Windows 11.
+由于更新 BIOS 有一定的风险，这种事情即使是对于懂技术的用户也是很不方便。
 
-由于更新BIOS有一定的风险，这种事情即使是对于会技术的用户都特别不方便.
+### 我需要用杀毒软件吗？用哪个？
 
-### 我需要用杀毒软件吗？用哪个?
+虽说苹果的 XProtect 和 Windows Defender 能提供基本保护，但对于想要更好保护的用户来说，在杀毒软件方面有几个选择：
 
-虽说苹果的XProtect和Windows Defender能提供基本保护,但对于想要更好保护的用户来说，在杀软方面有几个选择.
+> [Scott Williams][6]：\
+> 所以我究竟需不需要装杀毒软件？装哪个？
 
-> @vwbusguy \
-> 我惊讶的是MacOS居然没有预装新版浏览器，用户还需要自己上网去安装.这对于新用户来说体验很不好.
->
-> @NaheemSays \
-> 这不仅仅是是否要安装杀软的问题. 作为同时用Win和MacOS的人, 我认为人们总是忘记Windows会变得多奇怪.
->
-> 其实最大的问题是杀软已经预装好了. 每次安装完新系统之后第一件事就是要卸载一堆东西. 甚至你还要卸载McAfee或Norton.
->
-> @vwbusguy \
-> 所以我究竟需不需要装杀软?装什么杀软?
+网上有那么多选择和软文，用户很难确定那个杀毒软件最好，已经为之付费是否值得。
 
-[Twitter用户 @vwbusguy][6]
+而 Linux 用户就会这么想: *我竟然还要安装这个? 不会很浪费性能吗? 我需要这么多安全防护功能吗? Windows 不是一个安全的操作系统吗？*
 
-网上有那么多选择和付费评论，用户就很难确定买那个杀软最好.
+### macOS 和 iCloud:一个爱情故事？
 
-而Linux用户就会这么想: *我竟然还要安装杀软? 不会很浪费性能吗? 这么多安全防护功能我该怎么用? 难道Windows不是一个安全的操作系统?*
+> [Scott Williams][7]：\
+> iCloud 是什么？我怎么把它删掉？
 
-### MacOS和iCloud:一个爱情故事？
+Linux 用户们并不喜欢集成的云服务。他们宁愿挂载一个网盘（或网络存储器）。
 
-> @vwbusguy \
-> 在Windows和MacOS中我该怎样访问btrfs盘中的文件？
->
-> @vwbusguy \
-> iCloud是什么东东?怎样把它删掉?
-> 
-> @mikecodemonkey \
-> MacOS要你每5秒就要登陆iCloud,要你设置多重密码，还得经常关掉siri的提醒
+即使他们选择了网盘，也应该按照用户的意图来工作。但是，在 macOS 上，你会经常被提示要使用 iCloud，同时 Siri 还会跳出来捣乱。
 
-[Twtter用户 @vwbusguy][7]
+### Linux 用户清理注册表
 
-Linux用户们并不喜欢集成的云服务. 他们宁愿挂载一个云储存磁盘(或者网络磁盘).
+原先使用 Linux 的新手 Windows 用户为了能优化系统性能去清理注册表，但在面对那么多清理注册表和优化系统以提高性能的工具和选项时，可能会以一个没有反应的 Windows 而告终。
 
-即使他们选择了云储存磁盘, 系统也应该按照用户的意图来工作. 但是, 在MacOS上，你会经常被提示要使用iCloud，而且在icloud界面里siri还会出来捣乱
+> [Scott Williams][8]：\
+> Reddit上有些人说需要“清理注册表”，我按照几个教程删除了一些东西，然后现在我的 Windows 变得很奇怪。
 
-### Linux用户清理注册表
+即使在 2022 年，对于应该在什么时候手动或者用工具清理注册表还是没有明确的规定。
 
-原先使用Linux的新手Windows用户为了能优化系统性能去清理注册表，但在面对那么多清理注册表的工具和选项时总是容易把Windows系统给搞坏
+虽说资深 Linux 用户喜欢在尝试新东西前关注细节。但如果 GUI 中没有恰当的警告或提示，还怎么知道所有的注意事项呢。
 
-> Reddit上有些人说需要"清理注册表".我按照几个教程删除了一些东西，然后现在我的Windows变得很奇怪。
-
-[Twitter用户 @vwbusguy][8]
-
-即使在2022年，对于应该在什么时候手动或者用工具清理注册表还是没有明确的规定.
-
-虽说资深Linux用户喜欢在尝试新东西前关注细节. 但如果GUI中没有恰当的警告或提示，还怎么知道所有的注意事项呢.
 ### 经常需要重启
 
-虽说不像Linux的重启那样,Windows的重启可以修复问题. 不过,我到底要在更新Windows或者安装软件后重启多少次啊?
+虽说不像 Linux 的重启那样，Windows 的重启可以修复问题。不过，我到底要在更新 Windows 或者安装软件后重启多少次啊？
 
-> 第一次尝试Windows或MacOS的Linux用户是这样的, \
-> "你究竟需要安装多少个版本的.NET? 重启了多少次了?" \
-> "为什么我的Adobe版本不支持这个版本的MacOS? 难怪那么多人在用MacOS时会遇到麻烦. 苹果公司需要修复这个问题了."
+> [Scott Williams][9]：\
+> 第一次尝试 Windows 或 macOS 的 Linux 用户是这样的：\
+> “究竟需要安装多少个版本的 .NET? 已经重启了多少次了？” \
+> “为什么我的 Adobe 版本不支持这个版本的 macOS? 难怪那么多人在用 macOS 时会遇到麻烦。苹果公司需要修复这个问题了。”
 
-[Twitter用户 @vwbusguy][9]
+每次我重启的时候后台运行的程序都被干掉了。
 
-每次我重启的时候后台运行的程序都被干掉了.
+为什么 Windows 就不能在检测新安装的程序或者更新的时候简单地刷新一下，而不是重启呢。Windows 为什么反着来呢。
 
-为什么Windows就不能在检测新安装的程序或者更新的时候简单地刷新一下，而不是需要重启. Windows咋做这么适得其反的操作呢?
+### 这些东西还需要花钱? 我有 Windows 许可证还不够？
 
-### 这些东西还需要花钱? 我有了Windows许可证还不够?
+Linux 主要是自由和开源软件构成的，因此预装的工具也是免费的。
 
-Linux中主要就是免费和开源软件. 因此预装的工具也是免费的
+所以, 一个用惯那些工具的用户就不得不突然需要花钱买一个 Windows 许可证，而且还要支付软件费用。
 
-所以, 一个用惯那些工具的用户就需要要花钱买Windows许可证和软件.
-
-微软是不是太贪婪了呢?
+微软是不是太贪婪了呢？
 
 ### 默认就缺少必须的软件包
 
-在安装完Windows后我连压缩包都解压不了? Windows真的是现代操作系统吗?
+在安装完 Windows 后我连压缩包都解压不了？Windows 真的是现代操作系统吗?
 
-### MacOS配置多显示器
+### macOS 配置多显示器
 
-> @vwbusguy \
-> 怎样让我的显示器在MacOS上工作?
->
-> 我已经习惯了Linux上LVFS会自动更新固件.  在Windows上应该如何更新固件?  这个供应商网站提示我应该在U盘中放一些东西. 我可以找人借一个U盘吗?
-> 
-> @acruiz \
-> 确实!!!! 我必须在MacOS上安装好多拓展程序才能感觉用着还行.(为了支持多显示器，还要在拓展坞上装一些讨厌的驱动，用Linux的话这些驱动可是预装好了的)
+> [Scott Williams][10]：\
+> 怎样让我的显示器在 macOS 上工作呢？
 
-[Twitter用户 @vwbusguy][10]
-
-在Linux上配置多显示器非常轻松. 但在MacOS上完全不是那回事.
+在 Linux 上配置多显示器非常轻松。但在 macOS 上完全不是那回事。
 
 ### 总结
 
-最终的结论是:要看用户的标准和他熟悉的内容. Windows和macOS经常被看作标准的桌面系统.
+归根到底，这要看用户的标准和你熟悉的内容。Windows 和 macOS 经常被看作标准的桌面系统。
 
-然而, 大多数人除了知道Linux很难用外，对有关Linux的东西了解很少.
+然而相比之下，大多数人除了知道 Linux 很难用外，对有关 Linux 的东西了解甚少。
 
-不过，你只要掌握使用Linux的要领，就像你掌握Windows、MacOS那样，用Linux桌面环境就能很轻松了.
+不过，你只要掌握使用 Linux 的要领，就像你掌握 Windows、macOS 那样，用 Linux 桌面环境就很轻松了。
 
-只不过在用Linux的过程会遇到各种各样的问题. 但你只要有耐心就能享受整个过程了.
+只不过在用 Linux 的过程会遇到各种各样的问题，但你只要有耐心就能享受整个过程了。
 
-Linux本身没有什么问题, 其实问题本身在于其他系统用户在用Linux的时候对系统并不是很熟悉. 我们并不希望Linux变成Windows或Windows模仿Linux,任何操作系统都应该"做它自己".
+Linux 本身没有什么问题，是其他系统用户未能熟悉 Linux 的问题。我们并不希望 Linux 变成 Windows，也不希望 Windows 表现得像 Linux，任何操作系统都应该“做它自己”。
 
-最后再声明一下:Linux不应该因为一个Windows资深用户首次的Linux使用体验不佳而被剔除，毕竟一个Linux老用户在第一次用Windows或MacOS时也可能会发生同样的情况.
+但话又说回来，不应该因为一个长期使用 Windows 的用户在最初使用时没有良好的体验就把 Linux 排除在外，因为同样的情况也可能发生在一个长期使用 Linux 的用户尝试 Windows/MacOS 时。
 
 --------------------------------------------------------------------------------
 
@@ -165,7 +133,7 @@ via: https://news.itsfoss.com/linux-user-trying-windows-macos/
 作者：[Abhishek][a]
 选题：[lkxed][b]
 译者：[Kira-Pgr](https://github.com/Kira-Pgr)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
