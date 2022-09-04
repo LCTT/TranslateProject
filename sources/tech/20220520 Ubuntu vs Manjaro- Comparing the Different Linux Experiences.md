@@ -18,7 +18,7 @@ Manjaro 是基于 Arch 量身定制的 Linux 发行版。
 
 然而，在比较Manjaro的GNOME版和Ubuntu时，其中一个共同点是[桌面环境][1]。
 
-But, what exactly are the differences? Is the package manager on Manjaro better? Are software tools available on both Ubuntu and Manjaro?
+
 但它们之间的差异到底在哪？ Manjaro 的包管理器会更好用吗？Ubuntu 和 Manjaro 上的软件生态怎么样？
 
 接下来，我们来看看两个 Linux 发行版在某些关键问题上的差异。
