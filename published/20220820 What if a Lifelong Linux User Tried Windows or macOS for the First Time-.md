@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Kira-Pgr"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15000-1.html"
 
 用惯 Linux 的人第一次用 Windows 或 macOS 会怎样?
 ======
