@@ -130,33 +130,33 @@ Linux中主要就是免费和开源软件. 因此预装的工具也是免费的
 
 在安装完Windows后我连压缩包都解压不了? Windows真的是现代操作系统吗?
 
-### Multi-Monitor Setup for macOS
+### MacOS配置多显示器
 
 > @vwbusguy \
-> How do I get my monitors to work with MacOS?
+> 怎样让我的显示器在MacOS上工作?
 >
-> I'm used to firmware updates just being automatic through LVFS on Linux.  How do I update the firmware from Windows?  This vendor site says I need to put something on a USB drive.  Can I borrow one from someone?
+> 我已经习惯了Linux上LVFS会自动更新固件.  在Windows上应该如何更新固件?  这个供应商网站提示我应该在U盘中放一些东西. 我可以找人借一个U盘吗?
 > 
 > @acruiz \
-> Indeed!!!! I had to install several extensions on macOS to get to a semi decent setup (plus some shitty drivers for multimonitor support in my dock station which worked OOTB on Linux)
+> 确实!!!! 我必须要在MacOS上安装好多拓展程序才能感觉用着还行.(为了支持多显示器，还要在拓展坞上装一些讨厌的驱动，用Linux的话这些驱动可是预装好了的)
 
-[Twitter @vwbusguy][10]
+[Twitter用户 @vwbusguy][10]
 
-It is a breeze to work with Linux when you have a multi-monitor setup. But, when it comes to macOS, everything breaks away.
+在Linux上配置多显示器非常轻松. 但在MacOS上完全不是那回事.
 
-### Final Thoughts
+### 总结
 
-Ultimately, it depends on what the standard is and what you are familiar with. Windows and macOS are often considered the standard desktop operating system.
+最终的结论是:要看用户的标准和他熟悉的内容. Windows和macOS经常被看作是标准的桌面系统.
 
-In contrast, most people know little associated with Linux, except the fact that it is difficult to use.
+然而, 大多数人除了知道Linux很难用外，对有关Linux的东西了解很少.
 
-However, if you get to know the essentials, just like you know for Windows/macOS, Linux desktop experience will be a smooth experience.
+不过，你只要掌握使用Linux的要领，就像你掌握Windows、MacOS那样，用Linux桌面环境就能很轻松了.
 
-It is just because there are a variety of things when it comes to Linux. However, with patience, you can enjoy the full experience of it.
+只不过在用Linux的过程会遇到各种各样的问题. 但你只要有耐心就能享受整个过程了.
 
-Linux isn’t problematic as a whole, it's the user that fails to get acquainted with coming from another operating system. We do not want Linux to be Windows nor Windows to act like Linux, everything should have a separate presence.
+Linux本身没有什么问题, 其实问题本身在于其他系统用户在用Linux的时候对系统并不是很熟悉. 我们并不希望Linux变成Windows或Windows模仿Linux,任何操作系统都应该"做它自己".
 
-But then again, Linux should not be struck out just because a longtime Windows user did not have a good initial experience with it because the same can happen with a longtime Linux user trying Windows/macOS.
+最后再声明一下:Linux不应该因一个一直用Windows的用户在一开始用Linux时体验很不好而被剔除，毕竟一个一直用Linux的用户在第一次用Windows或MacOS时也可能会发生这种情况.
 
 --------------------------------------------------------------------------------
 
