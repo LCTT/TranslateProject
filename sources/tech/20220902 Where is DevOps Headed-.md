@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/where-is-devops-headed/"
 [#]: author: "Bhagvan Kommadi https://www.opensourceforu.com/author/bhagvan-kommadi/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Yufei-Yan"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
