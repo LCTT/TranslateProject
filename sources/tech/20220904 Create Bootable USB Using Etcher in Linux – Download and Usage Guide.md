@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/etcher-bootable-usb-linux/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
