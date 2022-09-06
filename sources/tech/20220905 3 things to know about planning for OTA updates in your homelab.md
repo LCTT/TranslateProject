@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/plan-ota-updates-edge"
 [#]: author: "Alan Smithee https://opensource.com/users/alansmithee"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
