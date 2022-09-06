@@ -38,24 +38,24 @@ Groovy 基于 Java，需要安装 Java。 Java 和 Groovy 的最新和稳定的�
 这是此任务所需的基本代码。我在脚本中加入了注释，这些注释反映了我通常留给自己的（相对简写的）“注释提醒”：
 
 ```
-1        // 定义音乐库目录
-2        def musicLibraryDirName = '/var/lib/mpd/music'
-3        // 输出 CSV 文件标题行
-4        println "artistDir|albumDir|contentFile"
-5        // 迭代音乐库目录中的每个目录
-6        // 这一层应该是艺术家目录
-7        new File(musicLibraryDirName).eachDir { artistDir ->
-8            // 迭代艺术家目录中的每个目录
-9            // 这一层应该是专辑目录
-10            artistDir.eachDir { albumDir ->
-11                // 迭代专辑目录中的每个目录
-12                // 这里应该是内容
-13                // 或相关内容（如 `cover.jpg`，PDF 格式的内页说明）
-14                albumDir.eachFile { contentFile ->
-15                    println "$artistDir.name|$albumDir.name|$contentFile.name"
-16                }
-17            }
-18        }
+// 定义音乐库目录
+def musicLibraryDirName = '/var/lib/mpd/music'
+// 输出 CSV 文件标题行
+println "artistDir|albumDir|contentFile"
+// 迭代音乐库目录中的每个目录
+// 这一层应该是艺术家目录
+new File(musicLibraryDirName).eachDir { artistDir ->
+    // 迭代艺术家目录中的每个目录
+    // 这一层应该是专辑目录
+    artistDir.eachDir { albumDir ->
+        // 迭代专辑目录中的每个目录
+        // 这里应该是内容
+        // 或相关内容（如 `cover.jpg`，PDF 格式的内页说明）
+        albumDir.eachFile { contentFile ->
+            println "$artistDir.name|$albumDir.name|$contentFile.name"
+        }
+    }
+}
 ```
 
 如上所述，我使用 `groovy.File` 在目录树中移动。具体来说：
