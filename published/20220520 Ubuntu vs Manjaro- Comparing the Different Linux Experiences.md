@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Return7g"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15006-1.html"
 
 Ubuntu 和 Manjaro：比较两种不同的 Linux 发行版体验
 ======
