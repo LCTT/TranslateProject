@@ -2,24 +2,23 @@
 macOS 和 Linux 有什么区别？
 ======
 
-我们经常对比 [Linux 和 Windows 的区别][1]，那 macOS 和 Linux 有什么区别呢？
+我们经常对比 [Linux 和 Windows][1]，那 macOS 和 Linux 有什么区别呢？
 
-虽然 Linux 和 Windows 的差异很明显，但是 Linux 和 macOS 却很相似。
+Linux 和 Windows 的差异很明显，但 Linux 和 macOS 却很相似。
 
 二者都可以在命令行中运行 Unix 命令，并且与用户在 Windows 中的体验大相径庭。同时，并不是所有 Windows 上的应用和游戏可以在 macOS 和Linux 上运行。
-Both can run Unix commands in the terminal, and the user experience is vastly different from Windows. And not all Windows applications and games are available for macOS and Linux.
 
 这就是为什么一些人认为苹果公司的 macOS 是基于 Linux 的系统。尽管有相似之处，但 macOS 并不是 Linux。
 
 这两个类 Unix 的操作系统有很多不同之处，我将在这篇文章中指出二者的异同之处。
 
-那就让我们来比较一下苹果和橙色企鹅吧。
+就让我们来比较一下苹果和橙色企鹅吧。
 
 ### macOS vs. Linux：起源
 
 macOS 有一段迷人的历史。它是由史蒂夫·乔布斯的计算机公司 NeXT 所开发的，那时候乔布斯不在苹果公司工作。从技术上讲，它是基于 [Mach 内核][2] 和 Unix 派生的 BSD。
 
-那时候，**NeXT** 开发了 [NeXTSTEP][3] 操作系统来驱动它设计的设备和电脑。尽管有一些人注意到了该操作系统，但是它未获得成功。之后，苹果公司以恢复史蒂夫董事会席位为交易的一部分，收购了 NeXT 公司，使得 NeXTSTEP OS 成为 macOS 的基础。
+那时候，**NeXT** 开发了 [NeXTSTEP][3] 操作系统来驱动它设计的设备和电脑。尽管有一些人注意到了该操作系统，但是它未获得成功。之后，苹果公司以恢复史蒂夫在董事会的席位作为交易的一部分，收购了 NeXT 公司，使得 NeXTSTEP OS 成为 macOS 的基础。
 
 这就是为什么 macOS 是 Unix 组件和苹果公司独家技术相结合的操作系统。
 
@@ -29,9 +28,9 @@ Linux 不是一个操作系统，它需要一些组件比如 [桌面环境][4] �
 
 简单起见，我们将这些操作系统成为 **Linux** 操作系统而不是特定的发行版。
 
-### macOS 内核 vs Linux 内核
+### macOS 内核 vs. Linux 内核
 
-macOS 内核的官方名称为 XNU。 [首字母缩略词][6] 代表 “XNU 不是 Unix”。根据 [苹果公司的 Github 页面][7]，XNU 是“将卡内基梅隆大学开发的 Mach 内核，与来自 FreeBSD 的组件，和用于编写驱动程序的 C++ API 相结合的一个混合内核”。代码的 BSD 子系统部分是 [“在微内核系统中实现用户空间服务”][8]。 Mach 部分负责底层工作，例如多任务处理、受保护内存、虚拟内存管理、内核调试支持和控制台 I/O。
+macOS 内核的官方名称为 XNU。 [首字母缩略词][6] 代表 “XNU 不是 Unix”。根据 [苹果公司的 Github 页面][7]，XNU 是“将卡内基梅隆大学开发的 Mach 内核，与来自 FreeBSD 的组件，和用于编写驱动程序的 C++ API 相结合的一个混合内核”。代码的 BSD 子系统部分是 [“在微内核系统中实现用户空间服务”][8]。Mach 部分负责底层工作，例如多任务处理、受保护内存、虚拟内存管理、内核调试支持和控制台 I/O。
 
 虽然 macOS 内核结合了微内核 ([Mach][9]) 和单片内核 ([BSD][10]) 的特性，但 Linux 只是一个单片内核。 [单片内核][11] 负责管理 CPU、内存、进程间通信、设备驱动程序、文件系统和系统服务器调用。
 
@@ -39,17 +38,9 @@ macOS 内核的官方名称为 XNU。 [首字母缩略词][6] 代表 “XNU 不�
 
 macOS 利用 Unix 组件，而 Linux 是作为 Unix 的替代品而构建的。那么，二者有什么共同点？
 
-二者都可以使用 **Unix 命令、bash/zsh、以及其他 shell**。
+二者都可以使用 **Unix 命令、bash/zsh、以及其他 shell**。或许 [默认 shell][12] 会有所不同，但是你可以根据你的喜好进行设置。除此之外，我想不到二者还有什么相似之处。
 
-或许 [默认 shell][12] 会有所不同，但是你可以根据你的喜好进行设置。
-
-除此之外，我想不到二者还有什么相似之处。
-
-大概在十年前，我们可以说 Linux/macOS 都提供了更少的应用程序。
-
-但时过境迁。
-
-多年来，二者的软件生态和游戏支持都在不断发展，我们将在本文后面讨论。
+大概在十年前，我们可以说 Linux/macOS 都提供了更少的应用程序。但时过境迁。多年来，二者的软件生态和游戏支持都在不断发展，我们将在本文后面讨论。
 
 ### 代码库：闭源与开源
 
@@ -74,7 +65,7 @@ macOS 专为台式机和笔记本电脑使用而设计。它非常适合于 **�
 当谈到 Linux ，你可以做很多事情。你可以将 Linux 用于：
 
 * 客户端
-* Toaster (yes! I hope you know about [IoT][17])
+* Toaster （希望你了解 [物联网 IoT][17]）
 * 单片机
 * 服务器
 
@@ -90,103 +81,103 @@ macOS 提供了 **令人愉悦的用户界面**。微妙的动画和高分辨率
 
 ![macOS Monterey][18]
 
-You can expect an easy and seamless experience across the platform.
+你可以期待 macOS Monterey 版的跨平台的无缝体验。
 
-With Linux, you can get an equally pleasing user interface that is easy to use.
+使用 Linux，你可以获得同样令人愉悦且易于使用的用户界面。
 
 ![Zorin OS 16 Pro][19]
 
-**Unfortunately**, the user experience slightly varies because of the distribution you decide to install and the desktop environment it comes along with.
+**不幸的是**，用户体验随着不同发行版所安装的桌面环境而不同。
 
-You can explore some of the [best desktop environments][20] listed. You can even opt for [macOS-like Linux distributions][21].
+你可以查看 [最好的桌面环境][20] 列表。你甚至还可以选择 [类似 macOS 的 Linux 发行版][21]。
 
-For instance, if you are using **Pop!_OS, Ubuntu, Zorin OS, or elementary OS**, you could have an excellent user experience.
+例如，如果你使用 **Pop!_OS, Ubuntu, Zorin OS, 或者 elementary OS** ，你将获得超棒的体验。
 
 ![Pop!_OS 22.04 LTS][22]
 
-If you end up using something like MX Linux, or different, the user experience may not be comparable to macOS.
+如果你使用类似于 MX Linux 或者其他的发行版，用户体验无法与 macOS 相提并论。
 
 ![MX Linux][23]
 
-Overall, the out-of-the-box experience with Linux is inconsistent, but it is capable enough if you know what you are doing.
+总的来说，Linux 的开箱即用体验是不一致的，但如果你知道自己在做什么，它就足够了。
 
-And if you are coming from Windows, the interface could be confusing initially.
+如果你之前使用 Windows，刚开始会对 Linux 的界面感到困惑。
 
 ### 可定制性
 
 ![customizability][24]
 
-If you want an operating system that lets you tinker with every aspect of it, macOS is not for you.
+如果你想要一个可以让你对它的各个方面进行修补的操作系统，那 macOS 不适合你。
 
-While Apple’s designs could be aesthetically pleasing by default, not everyone likes them.
+尽管大多情况下苹果的设计在美学上会令人愉悦，但并不是每个人都喜欢它们。
 
-If you want to personalize, take control, and heavily customize the operating system’s nuts and bolts, Linux should be the perfect pick.
+如果你想个性化、控制和大量定制操作系统的具体细节，Linux 应该是完美的选择。
 
-You can choose to customize the user interface as much as you want, with a wide range of different elements, and go wild with your preferences. To get started, look at our [KDE customization][25] guide to explore the possibilities.
+你可以根据需要选择自定义用户界面，使用广泛的不同元素，并根据你的喜好尽情发挥。请查看我们的 [KDE 定制][25] 指南以探索可能性。
 
-While that is good, it could backfire when customizing things on a Linux system. So, you need to learn/explore what you want to customize.
+虽然这很好，但在 Linux 系统上自定义内容时可能会适得其反。因此，你需要学习、探索你想要自定义的内容。
 
 ### 运行硬件要求：macOS vs Linux
 
 ![hardware illustration][26]
 
-This is where macOS suffers a solid defeat.
+硬件使 macOS 受到“重创”。
 
-If you want access to macOS and have a good experience with it, you need to purchase Apple hardware, which is costly.
+如果你想获得 macOS 并有良好的体验，那需要购买昂贵的苹果硬件
 
-For example, the base configurations for macOS-powered laptops start with **8 GB of RAM** and **256 GB of storage**, available for **$1200** or more.
+例如，支持 macOS 的笔记本电脑的基本配置从 **8 GB RAM** 和 **256 GB 存储空间**开始，价格为 **$1200** 或更多。
 
-Unless you want to constantly use the swap space for multitasking and already have a cloud storage space, it would be a terrible idea to get one for yourself.
+除非你想经常使用交换空间进行多任务处理，并且已经拥有云存储空间，否则买苹果设备将是一个糟糕的主意。
 
-In contrast, if you would rather not spend a lot but still want a decent configuration for your system (PC/laptop), it is easy to get a device with 16 GB RAM + 512 GB SSD to run Linux for around 800 USD.
+相比之下，如果你不想花很多钱，但仍希望为你的系统（PC/笔记本电脑）配置一个不错的配置，那么以 800 美元左右的价格购买一台配备 16 GB RAM + 512 GB SSD 的设备来运行 Linux 是很容易的。
 
-**A personal note**: I’m used to 32 Gigs of RAM + 500 GB of SSD storage. To get that kind of multitasking headroom (without using the swap), I will have to pay a premium to Apple.
+**个人说明**：我习惯了 32 G 的 RAM + 500 GB 的 SSD 存储。为了获得这种多任务处理空间（不使用交换），我将不得不向苹果公司支付溢价。
 
-Some skilled tinkerers try running macOS on non-Apple hardware. Such a system is called [Hackintosh][27] but it is certainly nowhere close to the comfort of running Linux on a regular computer.
+一些熟练的“修补匠”尝试在非苹果公司的硬件上运行 macOS。这样的系统被称为 [Hackintosh][27]，但它肯定远不及在一般计算机上运行 Linux 的舒适度。
 
 ### 软件生态
 
-macOS offers a **top-notch native experience** with macOS-exclusive applications or tools made by Apple.
+通过苹果公司为 macOS 制作的专有应用程序或工具，可以在 macOS 上获得 **一流的原生体验**。
 
-Yes, you may have to purchase those applications. However, unlike some subscription options, you get one-time purchase alternatives with macOS for professional applications.
+是的，你可能必须购买这些应用程序。但是，与某些订阅选项不同的是，你可以通过 macOS 一次性购买专业应用程序。
 
 ![Final Cut Pro on macOS][28]
 
-For users who want to design, edit videos, edit photos, and have a creative workflow, macOS’s software suite should be a great choice if you do not mind investing in it.
+对于想要设计、编辑视频、编辑照片并拥有创意的用户，如果你不介意投资它，macOS 的软件套件应该是一个不错的选择。
 
-The free Apple tools like iMovie, Keynote, etc. are good themselves. Couple them with premium tools like Final Cut Pro, Affinity Designer, and more and you get world-class editing experience. Not to forget that creative tools like Adobe are also available on macOS.
+免费的苹果工具（如 iMovie、Keynote 等）本身就很好。将它们与 Final Cut Pro、Affinity Designer 等高级工具结合使用，你将获得世界级的编辑体验。别忘了，在 macOS 上也可以使用 Adobe 等创意工具。
 
-Additionally, Apple has strict guidelines for applications available for its platform that enhance the native experience with third-party apps (free or paid).
+此外，苹果公司对其平台可用的应用程序有严格的指导方针，以增强第三方应用程序（免费或付费）的原生体验。
 
-This is why many designers and editors prefer using macOS over any other operating systems.
+这就是为什么许多设计师和编辑更喜欢使用 macOS 而不是任何其他操作系统的原因。
 
-For the Linux platform, you have **great FOSS alternatives** to some macOS-only apps. Unless you like or have experience with macOS-specific applications, you should not have trouble with software available for Linux.
+对于 Linux 平台，你可以使用 **很棒的 FOSS 替代品** 来替代一些仅限 macOS 的应用程序。除非你喜欢或有使用 macOS 特定应用程序的经验，否则你应该不会在使用适用于 Linux 的软件方面遇到问题。
 
 ![kdenlive editor][29]
 
-The native app experience depends on the Linux distribution you use.
+原生应用的体验基于你使用的 Linux 发行版。
 
 ![Planner (To-do list app for Linux)][30]
 
-It may not be as seamless as macOS, but if you are not a professional-grade video/graphics editor, you should not have any issues.
+它可能不像 macOS 那样完美，但如果你不是专业级的视频、图形编辑，你应该没有任何问题。
 
 ### 在 Linux 和 macOS 上游戏
 
 ![gaming illustration][31]
 
-While Apple’s making good progress on making its new M1/M2 chips as capable as possible, macOS currently has poor support for games.
+苹果公司在使其新的 M1/M2 芯片尽可能强大方面取得了不错的进展，但 macOS 目前对游戏的支持很差。
 
-A handful of games work, and most aren’t supported officially. To be honest, investing in a Mac for gaming is not what it is for.
+少数游戏可以正常工作，并且大多数都不受官方支持。说实话，为游戏而投资 Mac 并不是它的目的。
 
-Regarding Linux, numerous AAA games and Indie titles work fine. Sure, there are some hiccups with certain games. But, with Valve’s push towards official game support for Steam Deck, even the latest releases like “**Spider-Man: Remastered**” are Steam Deck verified.
+关于 Linux，许多 AAA 游戏和独立游戏运行良好。当然，某些游戏存在一些问题。但是，随着 Valve 推动 Steam Deck 对正版游戏支持，即使是像 **《蜘蛛侠：重制》** 这样的最新版本，都得到了 Steam Deck 的验证。
 
-Ultimately, helping improve the game support for the Linux platform.
+最终，会帮助 Linux 平台对游戏的支持。
 
-Additionally, considering that the PC graphics card market is almost back to normal (near or below MSRP), you can get a sweet PC build or laptop without worrying about performance bottlenecks.
+此外，考虑到 PC 显卡市场几乎恢复正常（接近或低于建议零售价），你可以获得不错的 PC 版本或笔记本电脑，而不必担心性能瓶颈。
 
-Would you spend upwards of **$1800 for a Mac with 16 GB of RAM and 512 GB of SSD** or get a PC/laptop with 32 GB RAM (or more), and at least 1 TB SSD (or more)?
+你会花 **1800 美元以上购买配备 16 GB RAM 和 512 GB SSD 的 Mac**，还是购买配备 32 GB RAM（或更多）和至少 1 TB SSD（或更多）的 PC/笔记本电脑？
 
-That’s your call.
+那由你来决定。
 
 ### 软件包管理
 
