@@ -1,3 +1,12 @@
+[#]: subject: "What is the Difference Between macOS and Linux?"
+[#]: via: "https://itsfoss.com/mac-linux-difference/"
+[#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
+[#]: collector: "lkxed"
+[#]: translator: "Donkey-Hao"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
 
 macOS 和 Linux 有什么区别？
 ======
@@ -225,7 +234,7 @@ macOS 仍然是一个不错的选择。
 
 --------------------------------------------------------------------------------
 
-via: <https://itsfoss.com/mac-linux-difference/>
+via: https://itsfoss.com/mac-linux-difference/
 
 作者：[Ankush Das][a]
 选题：[lkxed][b]
@@ -244,35 +253,35 @@ via: <https://itsfoss.com/mac-linux-difference/>
 [6]: https://github.com/apple/darwin-xnu
 [7]: https://github.com/apple/darwin-xnu
 [8]: http://osxbook.com/book/bonus/ancient/whatismacosx/arch_xnu.html
-[9]: <https://en.wikipedia.org/wiki/Mach_(kernel>
-[10]: <https://en.wikipedia.org/wiki/FreeBSD>
-[11]: <https://www.howtogeek.com/howto/31632/what-is-the-linux-kernel-and-what-does-it-do/>
-[12]: <https://linuxhandbook.com/change-shell-linux/>
-[13]: <https://itsfoss.com/wp-content/uploads/2022/08/open-source-proprietary-illustration.jpg>
-[14]: <https://opensource.apple.com/releases/>
-[15]: <https://github.com/apple/darwin-xnu>
-[16]: <https://www.techrepublic.com/article/why-apple-open-sourcing-mac-os-x-isnt-terribly-exciting/>
-[17]: <https://www.ibm.com/blogs/internet-of-things/what-is-the-iot/>
-[18]: <https://itsfoss.com/wp-content/uploads/2022/08/macos-monterey-screenshot.jpg>
-[19]: <https://itsfoss.com/wp-content/uploads/2021/12/zorin-os-16-mac.png>
-[20]: <https://itsfoss.com/best-linux-desktop-environments/>
-[21]: <https://itsfoss.com/macos-like-linux-distros/>
-[22]: <https://itsfoss.com/wp-content/uploads/2022/08/pop-os-screenshot-2022.png>
-[23]: <https://itsfoss.com/wp-content/uploads/2022/07/10.-MX-Linux.jpg>
-[24]: <https://itsfoss.com/wp-content/uploads/2022/08/customizability-illustration.jpg>
-[25]: <https://itsfoss.com/kde-customization/>
-[26]: <https://itsfoss.com/wp-content/uploads/2022/08/hardware-illustration-800x450.jpg>
-[27]: <https://www.freecodecamp.org/news/build-a-hackintosh/>
-[28]: <https://itsfoss.com/wp-content/uploads/2022/08/final-cut-pro-mac.jpg>
-[29]: <https://itsfoss.com/wp-content/uploads/2022/08/kdenlive-editor.jpg>
-[30]: <https://itsfoss.com/wp-content/uploads/2021/08/planner-board-view.png>
-[31]: <https://itsfoss.com/wp-content/uploads/2022/08/gaming-illustration.jpg>
-[32]: <https://itsfoss.com/wp-content/uploads/2022/08/package-manager-illustration-new.jpg>
-[33]: <https://itsfoss.com/what-is-flatpak/>
-[34]: <https://itsfoss.com/use-snap-packages-ubuntu-16-04/>
-[35]: <https://itsfoss.com/synaptic-package-manager/>
-[36]: <https://itsfoss.com/homebrew-linux/>
-[37]: <https://itsfoss.com/wp-content/uploads/2022/07/software-update-illustration.jpg>
-[38]: <https://itsfoss.com/long-term-support-lts/>
-[39]: <https://itsfoss.com/getting-started-with-ubuntu/>
-[40]: <https://itsfoss.com/best-rolling-release-distros/>
+[9]: https://en.wikipedia.org/wiki/Mach_(kernel
+[10]: https://en.wikipedia.org/wiki/FreeBSD
+[11]: https://www.howtogeek.com/howto/31632/what-is-the-linux-kernel-and-what-does-it-do/
+[12]: https://linuxhandbook.com/change-shell-linux/
+[13]: https://itsfoss.com/wp-content/uploads/2022/08/open-source-proprietary-illustration.jpg
+[14]: https://opensource.apple.com/releases/
+[15]: https://github.com/apple/darwin-xnu
+[16]: https://www.techrepublic.com/article/why-apple-open-sourcing-mac-os-x-isnt-terribly-exciting/
+[17]: https://www.ibm.com/blogs/internet-of-things/what-is-the-iot/
+[18]: https://itsfoss.com/wp-content/uploads/2022/08/macos-monterey-screenshot.jpg
+[19]: https://itsfoss.com/wp-content/uploads/2021/12/zorin-os-16-mac.png
+[20]: https://itsfoss.com/best-linux-desktop-environments/
+[21]: https://itsfoss.com/macos-like-linux-distros/
+[22]: https://itsfoss.com/wp-content/uploads/2022/08/pop-os-screenshot-2022.png
+[23]: https://itsfoss.com/wp-content/uploads/2022/07/10.-MX-Linux.jpg
+[24]: https://itsfoss.com/wp-content/uploads/2022/08/customizability-illustration.jpg
+[25]: https://itsfoss.com/kde-customization/
+[26]: https://itsfoss.com/wp-content/uploads/2022/08/hardware-illustration-800x450.jpg
+[27]: https://www.freecodecamp.org/news/build-a-hackintosh/
+[28]: https://itsfoss.com/wp-content/uploads/2022/08/final-cut-pro-mac.jpg
+[29]: https://itsfoss.com/wp-content/uploads/2022/08/kdenlive-editor.jpg
+[30]: https://itsfoss.com/wp-content/uploads/2021/08/planner-board-view.png
+[31]: https://itsfoss.com/wp-content/uploads/2022/08/gaming-illustration.jpg
+[32]: https://itsfoss.com/wp-content/uploads/2022/08/package-manager-illustration-new.jpg
+[33]: https://itsfoss.com/what-is-flatpak/
+[34]: https://itsfoss.com/use-snap-packages-ubuntu-16-04/
+[35]: https://itsfoss.com/synaptic-package-manager/
+[36]: https://itsfoss.com/homebrew-linux/
+[37]: https://itsfoss.com/wp-content/uploads/2022/07/software-update-illustration.jpg
+[38]: https://itsfoss.com/long-term-support-lts/
+[39]: https://itsfoss.com/getting-started-with-ubuntu/
+[40]: https://itsfoss.com/best-rolling-release-distros/
