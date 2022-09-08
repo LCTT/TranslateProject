@@ -4,12 +4,13 @@
 [#]: collector: "lkxed"
 [#]: translator: "Donkey-Hao"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
-
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15010-1.html"
 
 macOS 和 Linux 有什么区别？
 ======
+
+![](https://img.linux.net.cn/data/attachment/album/202209/08/164354illke77oz64k4smf.jpg)
 
 我们经常对比 [Linux 和 Windows][1]，那 macOS 和 Linux 有什么区别呢？
 
