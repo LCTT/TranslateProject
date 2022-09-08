@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/get-ready-to-embrace-the-aiops-era/"
 [#]: author: "Amit Shingala https://www.opensourceforu.com/author/amit-shingala/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
