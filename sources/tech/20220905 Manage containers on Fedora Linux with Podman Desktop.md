@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/manage-containers-on-fedora-linux-with-podman-desktop/"
 [#]: author: "Mehdi Haghgoo https://fedoramagazine.org/author/powergame/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
