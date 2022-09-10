@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/image-generation-model-stable-diffusion-is-now-open-source/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lkxed"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
