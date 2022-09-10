@@ -8,16 +8,17 @@
 [#]: url: " "
 
 Unix History: A Mighty Origin Story
+Unix 历史：一个伟大作品的诞生
 ======
 A brief walk down memory lane about Unix and its beginning.
 
 ![The beginning][1]
 
-### Unix: The origin story
+### Unix: 起源
 
-The world today runs on Linux. Billions of mobile phones and servers today run Linux. But before Linux, there was Unix, and without it, Linux would not have existed today.
+现在，几乎整个互联网世界都运行在 Linux 之上。数十万的移动电话和服务器运行在 Linux 之上。但在 Linux 之前，有 Unix，没有 Unix 就没有现在的 Linux。
 
-Unix’s origin can be traced back to the moon landing days. In 1965, three famous institutions started a joint venture to create an operating system that could serve multiple users and share data and resources.
+Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个有名的机构共同开展操作系统的研发工作，准备开发一个能够服务多个用户，并共享数据和资源。
 
 ![Scanned copy of actual Unix code][2]
 
