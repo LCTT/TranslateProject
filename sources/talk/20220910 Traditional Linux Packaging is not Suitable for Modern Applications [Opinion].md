@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/traditional-packaging-modern-applications/"
 [#]: author: "Community https://news.itsfoss.com/author/team/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "99541536"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
