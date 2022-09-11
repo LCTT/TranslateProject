@@ -167,12 +167,16 @@ Hari 是 Fedora 杂志的 Fedora 编辑委员会的成员。他也是 Fedoea 质
 **本文所表达的观点和意见是作者的观点，不一定代表 It's FOSS 的意见。**
 
 --------------------------------------------------------------------------------
+
 via: https://news.itsfoss.com/traditional-packaging-modern-applications/
+
 作者：[Community][a]
 选题：[lkxed][b]
 译者：[gpchn](https://github.com/gpchn)
 校对：[校对者ID](https://github.com/校对者ID)
+
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
 [a]: https://news.itsfoss.com/author/team/
 [b]: https://github.com/lkxed
 [1]: https://images.unsplash.com/photo-1573376670774-4427757f7963?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDY2fHxwYWNrYWdpbmd8ZW58MHx8fHwxNjYyNzgzMzY1&ixlib=rb-1.2.1&q=80&w=1200
