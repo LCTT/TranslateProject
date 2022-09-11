@@ -7,217 +7,203 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Traditional Linux Packaging is not Suitable for Modern Applications [Opinion]
+传统的Linux安装包格式不适合现代应用 [观点] 
 ======
-Open source contributor Hari Rana expresses his opinion on why traditional Linux packages are no longer suitable for modern applications.
+开源贡献者 Hari Rana 表达了他对传统 Linux 安装包格式不再适合现代应用的看法。
 
-![Traditional Linux Packaging is not Suitable for Modern Applications [Opinion]][1]
+![传统的Linux安装包格式不适合现代应用 [观点]][1]
 
-Image by: [Kelli McClintock][2] on [Unsplash][3]
+图片来源：来自 [Unsplash][2] 的 [Kelli McClintock][3]
 
-I repeatedly encounter users complaining about LTS and stable distributions having issues with application packages, but then claim that no such thing ever happens with bleeding-edge distributions. However, with my experience and knowledge with the technical side of packaging, I can’t emphasize enough that this is untrue.
+我多次遇到用户抱怨LTS和稳定版的应用安装包有问题，但又声称开发版从来没有发生过这种事情。然而，以我在安装包技术方面的经验和知识，我不能不强调，这是不对的。
 
-Distribution model is hardly the issue here; the fundamental issue is that traditional packaging is not suitable for modern graphical applications, no matter the distribution model. And how formats like Nix and Flatpak have managed to address these fundamental problems. Interestingly, most servers do make use of containerization (i.e., Docker), because it improves reproducibility and enhances maintainability. We could take inspiration from this and adopt a similar standard that is suitable for the Linux desktop.
+发行模式不是问题的根源所在，根本的问题是传统的安装包格式不适合现代的图形应用，不管是什么发行版。那么像 Nix 和 Flatpak 这样的格式是如何解决这些基本问题的？有趣的是，大多数服务器确实利用了容器化（即 Docker），因为它提高了可重复性并增强了可维护性。我们可以从中得到启发，采用一个适用于 Linux 桌面的类似标准。
 
-### Disclaimer
+### 免责声明
 
-1. “Traditional packaging” is defined as distributions shipping graphical applications using distribution package managers without the use of containers, such as apt, dnf, pacman, and more.
-2. “Distribution model” is defined as the releasing process, such as long-term support (LTS), stable, and bleeding-edge.
-3. “Similar application(s)” is defined as two applications that are technically really similar, like [Visual Studio Code][4] and [Code - OSS][5].
-4. I’ll be using Arch Linux as a reference for most of these examples. However, these behaviors are consistent with distributions that heavily practice traditional packaging.
-5. Nix does not use containers, nor is it a container format. However, for the sake of simplicity, I will be referring it as a container format.
+1. “传统打包”是指使用包管理器发布的图形应用程序，而不使用容器，如 apt、dnf、pacman 等。
+2. “发行模式”是指发行过程，如长期支持版（LTS）、稳定版和开发版等。
+3. “类似的应用程序”是指两个在技术上真正相似的应用程序，如 [Visual Studio Code][4] 和 [Code - OSS][5]。
+4. 在这些例子中，我将使用 Arch Linux 作为参考。然而，这些行为与那些大量采用传统安装包格式的发行版是一致的。
+5. Nix不使用容器，它也不是一种容器格式。但为了简单起见，我暂时把它称为一种容器格式。
 
-### The Fundamental Problem
+### 根本问题
 
 ![][6]
 
-Image by: [Jackson Simmer][7] on [Unsplash][8]
+图片来源：来自 [Unsplash][7] 的 [Jackson Simmer][8]
 
-Most, if not all, distributions that heavily practice traditional packaging share this common problem: none of them leverage containers or other convenient methods to separate dependencies. In Layman’s terms, a container is a box in which we can put things and use them separately without affecting the main system (host).
+大多数（或许不是全部）大量采用传统安装包格式的发行版都有这个共同的问题：它们都没有利用容器或其他方便的方法来区分依赖关系。用通俗的话说，容器是一个盒子，我们可以把东西放在里面，在不影响主系统（主机）的情况下单独使用它们。
 
-Containers usually don’t affect anything outside of the “box”. They’re also portable, as they’re installable on other distributions while still providing a consistent experience. With package managers that leverage them, they install each package in different containers, which provide an additional layer of safety. This gives packagers a lot more control and flexibility with what can be bundled inside their packages.
+容器通常不会影响“盒子”外的任何东西。并且它们是可移植的，因为它们可以安装在其他发行版上，同时提供一致的体验。利用容器的包管理器会将每个软件包安装在不同的容器中，这提供了一个额外的安全层。这给了开发者更多的控制权和灵活性，他们可以决定在软件包内捆绑什么。
 
-Traditional packaging introduces several issues, such as dependency and package conflicts, which usually require workarounds that differ from one distribution to another.
+传统的打包方式产生了一些问题，比如依赖性和包的冲突，这些问题通常需要解决，而不同的发行版有不同的解决办法。
 
-#### Dependency and Package Conflicts
+#### 依赖性和软件包的冲突
 
-If we attempt to install [Visual Studio Code][9] ([visual-studio-code-bin][10]) while [Code - OSS][11] ([code][12]) is installed on Arch Linux, we will run into this issue:
+如果我们试图安装 [Visual Studio Code][9]（[visual-studio-code-bin][10]），而 [Code - OSS][11]（[code][12]） 已经安装在 Arch Linux 上，我们会遇到这个问题：
 
 ```
 $ paru -S visual-studio-code-bin
 [...]
-
 :: Conflicts found:
     visual-studio-code-bin: code  
-
 :: Conflicting packages will have to be confirmed manually
-
 Aur (1)                     Old Version  New Version  Make Only
 aur/visual-studio-code-bin               1.70.1-1     No
 ```
 
-This is called a package conflict, whereby two or more packages cannot coexist. In this case we cannot install Visual Studio Code alongside Code - OSS.
+这就是所谓的软件包冲突，即两个或多个软件包不能共存。在这种情况下，我们不能同时安装 Visual Studio Code 和 Code - OSS。
 
-When two applications or packages provide the same file(s), with the same names and are placed in the same directory, then they literally cannot coexist, because these files will then collide. In this example, both Visual Studio Code and Code - OSS provide a `code` file, which are both placed in `/usr/bin`. The `code` file that Visual Studio Code provides is used to launch Visual Studio Code, whereas the `code` file from Code - OSS is used to launch Code - OSS.
+当两个应用程序或软件包提供相同的文件，具有相同的名称，并被放置在同一目录下，那么它们实际上是不能共存的，因为这些文件会发生冲突。在这个例子中，Visual Studio Code 和 Code - OSS 都提供了一个`code'文件，它们都被放在`/usr/bin`中。Visual Studio Code 提供的`code`文件用于启动 Visual Studio Code，而 Code - OSS 的`code`文件则用于启动 Code - OSS。
+虽然这个例子只展示了 Visual Studio Code 和 Code - OSS，但这种情况经常发生在不同的应用程序、库和其他软件中。
 
-While this example only showcases Visual Studio Code and Code - OSS, this often happens with different sets of applications, libraries and others.
-
-#### Unable to Cherry Pick Dependencies
+#### 无法选择依赖项
 
 ![][13]
+图片来源：来自 [Unsplash][14] 的 [Priscilla Du Preez][15]
+传统安装包格式的最大问题之一是，打包者不能选择依赖项。
 
-Image by: [Priscilla Du Preez][14] on [Unsplash][15]
+例如，如果一个应用程序最近更新，需要依赖版本1的程序A，但该格式安装包的打包程序只提供版本0.9的程序A，那么对于升级该应用程序来说就不太理想，因为打包程序无法满足要求。这意味着打包者将不得不暂缓打包，直到打包程序发布新的依赖项，或者采用变通的方法。
 
-One of the biggest issues with traditional packaging is that packagers cannot cherry-pick dependencies.
+同样，如果一个应用程序需要依赖0.8.1版本的程序A，但该格式安装包的打包程序却只提供了0.9版本的程序A，那么这个应用程序就会表现失常，甚至完全不能运行。
 
-For example, if an application recently updated and requires dependency A version 1, but the distribution only ships dependency A version 0.9, then it would not be ideal for upgrading the application, as the distribution will not meet the requirements. This means the packager will have to hold back the package until the new dependency is released for the distribution, or resort to workarounds.
+##### 带补丁的库和编译配置
 
-Likewise, if an application requires dependency A version 0.8.1, but the distribution ships dependency A version 0.9, then the application can misbehave or even not work altogether.
+为了扩展，一些应用程序需要带补丁的库或额外的编译配置才能正常运行。例如，OBS Studio 需要一个[打了补丁的 FFmpeg][16] 来与 OBS Studio 更好地整合。
 
-##### Patched Libraries and Build Configurations
+在传统的打包方式下，一次只能安装一个依赖项的变体。如果发行版提供的是未打过补丁的 FFmpeg，那么就没有办法安装打过补丁的 FFmpeg，除非打包者能解决这个问题。如果安装了打过补丁的 FFmpeg，但另一个程序高度依赖未打过补丁的 FFmpeg、打过其他补丁的 FFmpeg、内置或删除了其他功能的 FFmpeg，那么其他程序就会出现bug。
 
-To expand, several applications require patched libraries or additional build options to function correctly. For example, OBS Studio requires a [patched FFmpeg][16] to integrate neatly with OBS Studio.
+现代应用程序本质上是脆弱的。依赖关系树中的一个小错误或不一致，就会导致应用程序的bug，使用户体验恶化，甚至会让人觉得是应用程序的问题，而不是软件包本身的问题，这就会妨碍应用程序的声誉。
 
-With traditional packaging, there can only be one variant of the dependency installed at a time. If the distribution ships an unpatched FFmpeg, then there’s no way to install a patched FFmpeg unless the packager works around that. If the patched FFmpeg is installed, but another program relies specifically on an unpatched FFmpeg, an FFmpeg with other patches, or an FFmpeg with additional features built-in or removed, then that other program can misbehave.
+#### 变通方法
 
-Modern applications are inherently fragile. One small mistake or inconsistency within the dependency tree can cause an application to misbehave and worsen the user experience, and may even give the impression that the application is at fault and not the package itself, which can hinder the application’s reputation.
+让我们看看目前开发者用来打包应用程序的变通方法。
 
-#### Workarounds
+1. 第一种解决方法是在不同的目录中安装依赖库。例如，Electron 是一个巨大的框架，开发者用它来构建应用程序，然后将它们捆绑起来。然而，基于 Electron 的应用程序是不同的，因为它们是建立在不同版本的 Electron 之上的。Discord 捆绑了 Electron 13，而 Element 捆绑了 Electron 19。对于 Arch Linux 上的 Electron 打包，某些目录需要安装在`/opt/APPLICATION_NAME`中，所以这些 Electron 版本[不会相互冲突][17]。
+2. 第二种解决方法是篡改应用程序。例如，给应用程序打上补丁，使其在没有某些依赖库或功能的情况下编译，这可以使应用程序成功编译，但不能保证该应用程序能够启动或按预期工作。
+4. 第三种解决方法是在编译应用程序时禁用许多编译选项，这也可能禁用一些功能。例如，在 Arch Linux 上，OBS Studio 在编译时禁用了许多基本功能，这[导致了不合格的体验][18]。
 
-Let’s look at current workarounds that packagers use to package applications.
+这些解决方法因人而异，有些会限制应用程序的功能，有些会引入稳定性问题等等。
 
-1. The first workaround is to install dependencies in different directories. Electron, for example, is a massive framework that developers use to build applications on top of, and later bundle them. However, Electron based applications vary, as they are built on top of different versions of Electron. Discord bundles and ships Electron 13, whereas Element bundles and ships Electron 19. For Electron packaging on Arch Linux, certain directories require to be installed in `/opt/APPLICATION_NAME`, so these Electron versions [don’t conflict with each other][17].
-2. The second workaround is to tamper with the application. For example, patching an application to build without certain dependencies or features can make the application build for the distribution, but there’s no guarantee that the application will either launch or work as intended.
-3. The third workaround is to build the application with many build options disabled, which may also disable functionality. For example, on Arch Linux, OBS Studio is built with many essential features disabled, which [results in a subpar experience][18].
+#### 不一致的体验
 
-These workarounds vary on a case-by-case basis, some of which can limit the functionality of the application, some can introduce stability issues, etc.
+![西班牙兰萨罗特岛（加那利群岛）的蒂曼法亚火山国家公园的火山口景观][19]
 
-#### Inconsistent Experience
+图片来源：来自 [Unsplash][20] 的 [alevision.co][21]
 
-![A view of a crater in the volcanic national park, Timanfaya, in Lanzarote (Canary Islands) in Spain.][19]
+虽然这些技术限制在整个传统安装包格式中是一致的，但用户体验往往不是这样。由于安装包的发布方式，发行模式与传统安装包格式相结合会影响用户体验。
+一些发行版，如 Arch Linux，接近于开发版，因此有最新版本的软件包。然而 Debian 和 Ubuntu LTS 是 LTS 长期支持版，所以它们的很多软件包都落后几个版本。同时，Fedora Linux 和 Ubuntu 稳定版处于 Debian / Ubuntu LTS 和 Arch Linux 之间。
 
-Image by: [alevision.co][20] on [Unsplash][21]
+一些安装包格式喜欢尽可能少地给软件包打补丁，以保持它们最接近原版；而另一些格式打补丁是为了增加更多的功能，使用旧库或进行其他类型的更改，以改善用户体验。一些格式喜欢使软件更加轻量化；而另一些格式更喜欢尽可能地添加更多内置功能。这个名单还在继续。
 
-While these technical limitations are consistent throughout traditional packaging, the user experience is often not. Distribution models paired with traditional packaging impact the user experience because of how packages are shipped.
+正如我们所看到的，一个应用程序在不同的发行版中的构建方式非常不同。此外，不同的发行版的依赖关系也是不同的。传统包装的许多技术限制需要根据发行模式和包装政策采取不同的解决方法。这些微小的变化往往给用户带来不完整的、不合格的体验和错误的印象。一些应用程序可能在某些发行版上运行得更好，但在其他发行版上运行得很差，而其他一些应用程序在其他发行版上运行得更好。即使一个应用程序在每个发行版上的构建方式不同，但其名称和品牌却保持原样，给用户留下错误的印象。
 
-Some distributions, like Arch Linux, are close to bleeding-edge and thus have the latest versions of packages. However, Debian and Ubuntu LTS are LTS distributions, so a lot of their packages are several versions behind. Meanwhile, Fedora Linux and Ubuntu Stable are between Debian/Ubuntu LTS and Arch Linux.
-
-Some distributions prefer to patch packages as least as possible to keep them closest to vanilla, whereas some others patch to add more functionality, work with older libraries, or other sorts of changes to improve user experience. Some distributions prefer to build with minimal build options enabled, whereas others may prefer to add more built-in features if possible. The list goes on.
-
-As we can see, a single application is built very differently across distributions. Furthermore, dependencies are also built differently from distribution to distribution. Many technical limitations with traditional packaging require different workarounds depending on the distribution model and packaging policies. These minor changes often give incomplete, subpar experiences and wrong impressions to the user. Some applications may work better with some distributions but work badly with others, whereas some other applications may work better with other sets of distributions. Even though a single application is built differently on each distribution, the name and branding is kept as-is, giving users the wrong impression.
-
-### The Solution
+### 解决方案
 
 ![][22]
 
-[Riccardo Annandale][23]
+图片来源：来自 [Unsplash][23] 的 [Riccardo Annandale][24]
 
-[Unsplash][24]
+如上所述，解决这些问题的方法是使用容器。
 
-As mentioned earlier, the solution to these problems is using containers.
+容器被设计用来分离系统的几个方面。通过使用容器，打包者可以挑选依赖项而不受主机库的限制。因此，打包者可以发布最新的、功能完整的软件包，同时保持发行的稳定性。
 
-Containers are designed to separate several aspects of the system. With the use of containers, packagers can cherry pick dependencies without being limited by host libraries. Packagers can thus ship the latest, feature complete builds of packages, while retaining the stability of the distribution.
+这一点非常重要，因为这些容器格式可以将应用程序和发行版发挥出最大的作用，而不会对系统造成破坏性的影响。
 
-This is really important, as these container formats can push applications and distributions to their boundaries, without affecting the system destructively.
+#### Nix和Flatpak
 
-#### Nix and Flatpak
+[Nix][25] 是一个跨平台的包管理器，可以在类Unix操作系统中运行，如Linux发行版、BSD和macOS。Nix有几个[途径][26]（分支）供用户使用。
 
-[Nix][25] is a cross-platform package manager to work in Unix-like operating systems like Linux distributions, BSDs and macOS. Nix has several [channels][26] (branches) that users can use.
+另一方面，[Flatpak][27] 是一个用于Linux桌面的通用软件包格式，它也利用容器，但另外还有沙盒来隔离它们。它旨在共未来的普通人使用，并被设计为与软件商店（如GNOME Software 和 KDE Discover）集成。换句话说，Flatpak 更像是安装包格式的一个扩展，而不是一个替代品，因为它的设计初衷不是为了取代系统包管理器。
 
-[Flatpak][27], on the other hand, is a universal package format for the Linux desktop that also leverages containers but additionally sandboxes to isolate them. It is intended to be used by the average person in the future and is designed to be integrated with software stores, such as GNOME Software and KDE Discover. In other words, Flatpak is more of an extension for distributions, rather than a replacement, as it is literally designed not to replace system package managers.
+如果使用 NixOS 等发行版，Nix 也可以作为一种扩展或单独使用。
 
-Nix can also be used as an extension or exclusively if using distributions like NixOS.
+#### 类似的应用
 
-#### Similar Applications
+Nix和Flatpak解决了传统安装包格式的许多基本问题。由于应用程序的分离，这些格式可以安装类似的应用程序，如 Visual Studio Code 和 Code - OSS，而不会冲突。
 
-Nix and Flatpak address many fundamental problems with traditional packaging. Thanks to the separation of applications, these formats can have similar applications installed, like Visual Studio Code and Code - OSS, without running into conflicts.
+#### 多个版本
 
-#### Multiple Branches
+Nix 和 Flatpak 可以安装同一个应用程序的多个版本。使用 Nix，我可以从`nixpkgs-stable`（LTS）安装应用程序，同时也可以从`nixpkgs-unstable`（开发版）安装同一个应用程序。
 
-Nix and Flatpak can install multiple versions of the same application. With Nix, I can install applications from the `nixpkgs-stable` (LTS) channel while also having the same application installed from the `nixpkgs-unstable` (bleeding-edge) channel.
+同样地，使用 Flatpak，我可以同时从`stable`和`beta`分支安装应用程序。我可以从更多的途径和分支继续安装同一个应用程序，而不会遇到冲突。
 
-Likewise, with Flatpak, I can install applications from the `stable` and `beta` branch simultaneously. I can continue installing the same application from many more channels and branches, without them ever running into packaging conflicts.
+#### 挑剔的依赖项
 
-#### Cherry Pick Dependencies
+![采摘樱桃][28]
 
-![cherry-picking][28]
+图片来源：来自 [Unsplash][29] 的 [Ish de loyola][30]
 
-Image by: [Ish de loyola][29] on [Unsplash][30]
+此外，打包者可以将应用程序与不同变体的库捆绑在一起，从而有机会启用更多的构建选项，并使用打过补丁或特定版本的库，从而为用户提供完整的体验。
 
-Additionally, packagers can bundle applications with different variants of libraries, giving the opportunity to enable more build options and use patched or specific versions of libraries, and thus providing a complete experience to the user.
+这意味着打包者可以将打了补丁的 FFmpeg 与 OBS Studio 捆绑在一起，只为使用 OBS Studio。如果我在主机上安装了 vanilla FFmpeg，那么 OBS Studio 的补丁 FFmpeg 就不会与主机的 FFmpeg 发生干扰或冲突。
 
-This means packagers can bundle patched FFmpeg with OBS Studio solely for the use of OBS Studio. If I have a vanilla FFmpeg installed on the host, then the patched FFmpeg for OBS Studio won’t interfere or conflict with the host FFmpeg.
+#### 各个发行版的环境都是一致的
 
-#### Consistent Environments Across Distributions
+如上所述，各发行版使用不同的补丁、构建选项和环境构建应用程序。这导致了应用程序的碎片化，每个应用程序的构建方式和工作方式往往不尽相同。由于 Nix 和 Flatpak 是为跨发行版运行而设计的，它们在每个发行版中为应用程序提供一致的环境，前提是发行版提供了 Nix 或 Flatpak 的支持版本。
 
-As mentioned earlier, distributions build applications using different patches, build options and environments. This leads to a fragmentation of applications where every application is built and often works differently. Since Nix and Flatpak are designed to run across distributions, they provide consistent environments in each and every distribution for applications, assuming distributions ship supported versions of Nix or Flatpak.
+#### 缺点
 
-#### Disadvantages
+就像所有事物一样，Nix 和 Flatpak 不是完美的。由于容器最近被推送到了 Linux 桌面上，它们可能为许多应用程序提供不寻常的环境。
 
-Just like everything, Nix and Flatpak are imperfect. Since containers are recently getting pushed on the Linux desktop, they may provide unusual environments to many applications.
+Flatpak 不仅包含了应用程序，还对它们进行沙盒处理。Flatpak 的开发者已经实施了一个短期的变通方案，“在沙盒上打洞”，即所谓的静态权限。他们正在开发适当的长期解决方案，称为[XDG 门户][31]，以解决有关沙盒的许多问题，并使其像 Android 的安全模型一样。
 
-Flatpak not only contains applications, it also sandboxes them. Flatpak developers have implemented a short-term workaround that punches holes in the sandbox, known as static permissions. They are developing proper long-term solutions called [XDG portals][31], to address many issues regarding sandboxing and make them act like Android’s security model.
+唯一的短期问题是，工具包、框架和应用程序必须采用这些标准。GTK 和 Qt 是一些集成了其中一些门户的工具包，但它们也需要时间来集成其他的门户。同时，许多其他的工具箱还没有真正集成任何门户。
+工具包、框架和应用程序采用这些新标准是一个时间问题，因为在 XDG 门户之前没有任何适当的标准。应用程序可以直接访问文件系统和 API，所以静态权限保持这种 "标准"。
 
-The only short-term issue is that toolkits, frameworks and applications have to adopt these standards. GTK and Qt are some toolkits that integrate some of these portals, but they also need time to integrate others. Meanwhile, many others haven’t really integrated any of the portals.
+### 结论
 
-It’s a matter of time before toolkits, frameworks and applications adopt these new standards, as there weren’t any proper standards prior to XDG portals. Applications had direct access to the filesystem and APIs, so static permissions keep this “standard”.
+传统包装的根本问题是它没有利用容器。许多图形化的应用程序本质上是复杂的，需要非常具体的依赖关系才能按预期运行。许多发行版通过使用变通的方法在不同的环境中构建同一个应用程序，例如给应用程序打补丁或禁用构建选项。这导致了一个应用程序的不同变体、不一致的行为和不合格的用户体验。
 
-### Conclusion
+当然，发行版的维护者不可能在10天内现实地重写他们的包管理器并使用容器。这些重写会破坏许多脚本、功能等，而且还需要很长时间才能投入生产。
 
-The fundamental issue with traditional packaging is that it does not leverage containers. Many graphical applications are inherently complicated and require very specific dependencies to run as intended. Many distributions build the same application in different environments by making use of workarounds, such as patching the application or disabling build options. This leads to different variants of one application and suffers from inconsistent behavior and user experience.
+我个人的建议是使用和推广 Flatpak，因为它只是为了扩展现有的发行版，而不是取代它。包装商将不必担心包装应用程序和诉诸变通的问题，因为 Flatpak 已经在处理这些问题了。
 
-Of course, distribution maintainers can’t realistically rewrite their package managers and make use of containers in 10 days. These rewrites will break many scripts, features, and more and will also take a long time to be production-ready.
+作者：Hari Rana 并[最初发表于本博客][32]。
 
-My personal recommendation would be to use and promote Flatpak, as it is solely intended to extend an existing distribution rather than replace it. Packagers won’t have to worry about packaging applications and resorting to workarounds, as Flatpak will already be taking care of that.
+Hari 是 Fedora 杂志的 Fedora 编辑委员会的成员。他也是 Fedoea 质量保证（QA）的一员。Hari 希望通过推广各种技术和帮助需要帮助的人，为 Linux 桌面的采用作出贡献。
 
-Written by Hari Rana and [originally published at this blog][32].
-
-Hari is part of Fedora Editorial Board at Fedora Magazine. He is also a part of Fedoea quality assurance (QA). Hari wants to contribute to the adoption of the Linux desktop by promoting various technologies and helping people in need of assistance.
-
-**The views and opinions expressed in this article are those of the authors and do not necessarily represent opinions It's FOSS.**
+**本文所表达的观点和意见是作者的观点，不一定代表 It's FOSS 的意见。**
 
 --------------------------------------------------------------------------------
-
 via: https://news.itsfoss.com/traditional-packaging-modern-applications/
-
 作者：[Community][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[gpchn](https://github.com/gpchn)
 校对：[校对者ID](https://github.com/校对者ID)
-
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
-
 [a]: https://news.itsfoss.com/author/team/
 [b]: https://github.com/lkxed
 [1]: https://images.unsplash.com/photo-1573376670774-4427757f7963?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDY2fHxwYWNrYWdpbmd8ZW58MHx8fHwxNjYyNzgzMzY1&ixlib=rb-1.2.1&q=80&w=1200
-[2]: https://unsplash.com/es/@kelli_mcclintock?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
-[3]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[2]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[3]: https://unsplash.com/es/@kelli_mcclintock?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
 [4]: https://code.visualstudio.com/
 [5]: https://github.com/microsoft/vscode
 [6]: https://images.unsplash.com/photo-1612933510543-5b442296703b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEwfHxwcm9ibGVtfGVufDB8fHx8MTY2Mjc4MzEwNg&ixlib=rb-1.2.1&q=80&w=2000
-[7]: https://unsplash.com/@simmerdownjpg?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
-[8]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[7]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[8]: https://unsplash.com/@simmerdownjpg?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
 [9]: https://code.visualstudio.com/
 [10]: https://aur.archlinux.org/packages/visual-studio-code-bin
 [11]: https://github.com/microsoft/vscode
 [12]: https://archlinux.org/packages/community/x86_64/code/
 [13]: https://images.unsplash.com/photo-1601001816339-74036796370c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDl8fGNoZXJyeSUyMHBpY2t8ZW58MHx8fHwxNjYyNzgzNDA4&ixlib=rb-1.2.1&q=80&w=2000
-[14]: https://unsplash.com/@priscilladupreez?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
 [15]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[14]: https://unsplash.com/@priscilladupreez?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
 [16]: https://github.com/obsproject/obs-studio/blob/fe889ec28ebd2f323b5933b7b11c5a9207539c59/CI/flatpak/com.obsproject.Studio.json#L259-L261
 [17]: https://wiki.archlinux.org/index.php?title=Electron_package_guidelines&oldid=661963#Directory_structure
 [18]: https://www.youtube.com/watch?v=FPjEdrik-eQ
 [19]: https://images.unsplash.com/photo-1595399822864-94ec54889cc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDl8fGJ1bXB5JTIwcm9hZHxlbnwwfHx8fDE2NjI3ODQ3MTI&ixlib=rb-1.2.1&q=80&w=2000
-[20]: https://unsplash.com/@alevisionco?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
-[21]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[20]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[21]: https://unsplash.com/@alevisionco?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
 [22]: https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDR8fHNvbHV0aW9ufGVufDB8fHx8MTY2Mjc4MzI5NA&ixlib=rb-1.2.1&q=80&w=2000
-[23]: https://unsplash.com/@pavement_special?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
-[24]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[23]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[24]: https://unsplash.com/@pavement_special?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
 [25]: https://github.com/NixOS/Nix
 [26]: https://nixos.wiki/wiki/Nix_channels
 [27]: https://flatpak.org/
 [28]: https://images.unsplash.com/photo-1626829622490-43c7d7c80ac8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGNoZXJyeSUyMHBpY2t8ZW58MHx8fHwxNjYyNzgzNDA4&ixlib=rb-1.2.1&q=80&w=2000
-[29]: https://unsplash.com/@ishphotos_?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
-[30]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[29]: https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
+[30]: https://unsplash.com/@ishphotos_?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit
 [31]: https://github.com/flatpak/xdg-desktop-portal
 [32]: https://theevilskeleton.gitlab.io/2022/08/29/traditional-packaging-is-not-suitable-for-modern-applications.html
