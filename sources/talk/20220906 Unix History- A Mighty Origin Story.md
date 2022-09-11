@@ -7,7 +7,6 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Unix History: A Mighty Origin Story
 Unix 历史：一个伟大作品的诞生
 ======
 A brief walk down memory lane about Unix and its beginning.
@@ -18,15 +17,16 @@ A brief walk down memory lane about Unix and its beginning.
 
 现在，几乎整个互联网世界都运行在 Linux 之上。数十万的移动电话和服务器运行在 Linux 之上。但在 Linux 之前，有 Unix，没有 Unix 就没有现在的 Linux。
 
-Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个有名的机构共同开展操作系统的研发工作，准备开发一个能够服务多个用户，并共享数据和资源。
+Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个有名的机构共同开展操作系统的研发工作，准备开发一个能够服务多个用户，并共享数据和资源的商业操作系统。
 
 ![Scanned copy of actual Unix code][2]
 
-They are the famous Bell Telephone Laboratories, the General Electric Company and the Massachusetts Institute of Technology. This project or the joint venture is called “Multics” – an acronym for “Multiplex Information and Computing Service”.
+这三个机构是著名的贝尔电话实验室、通用电气公司以及麻省理工学院。该项目称为 "Multics" —— “多路传输信息和计算业务”(Multiplex Information and Computing Service)的缩写。
 
-But, the project did not see much success. Unfortunately. Due to complexity and poor outcome, Bell Labs discontinued the project.
+但是该项目并没有取得太大的成功。不幸的是，由于系统设计复杂且产出甚微，贝尔实验室退出了该项目。
 
-Ken Thomson from Bell Labs, who worked in Multics, started afresh. He started writing a new operating system for an ancient computer PDP-7 of Digital Equipment Corporation. Later, Dennis Ritchie joined, and they created a hierarchical file system, device files, command line interpreter and processes. This is how the Unix was born, named by another member of the Multics project – Brian Kernighan.
+贝尔实验室的肯·汤普森（Ken Thompson）也参与了该项目。在一台古老的数字设备公司的 PDP-7 的机器上，他重新开始一个新操作系统的设计。不久后，丹尼斯·里奇 (Dennis Ritchie) 加入了，二人一起设计了分层文件系统、设备文件、命令行解释器以及进程。这就是 Unix 的诞生方式，由 Multics 项目的另一名成员布莱恩·威尔森·克尼汉 (Brian Kernighan) 命名。
+
 
 In 1971, Unix was ported to a little advanced PDP-11 computer with just a 512 KB disk. At the time, Unix was only supporting 16 KB and 8 KB memory allocated for user programs.
 
