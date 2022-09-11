@@ -27,26 +27,25 @@ Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个
 
 贝尔实验室的肯·汤普森（Ken Thompson）也参与了该项目。在一台古老的数字设备公司的 PDP-7 的机器上，他重新开始一个新操作系统的设计。不久后，丹尼斯·里奇 (Dennis Ritchie) 加入了，二人一起设计了分层文件系统、设备文件、命令行解释器以及进程。这就是 Unix 的诞生方式，由 Multics 项目的另一名成员布莱恩·威尔森·克尼汉 (Brian Kernighan) 命名。
 
+在 1971 年，Unix 被移植到了较为先进的 PDP-11 电脑上，该电脑的磁盘仅有 512 KB。当时，Unix 为用户程序提供 16 KB 和 8 KB 大小的内存分配。  
 
-In 1971, Unix was ported to a little advanced PDP-11 computer with just a 512 KB disk. At the time, Unix was only supporting 16 KB and 8 KB memory allocated for user programs.
-
-However, most of the Unix code was in assembly language, making it hardware dependent. So, it was not portable.
+然而，Unix 大多数代码为汇编语言，十分依赖于硬件。因此它的移植性较差。
 
 ![Ken Thompson (sitting) and Dennis Ritchie at PDP-11 (credit and learn more about this image1)][3]
 
-### Creation of C Programming Language
+### C 语言的诞生
 
-So, the only way to make it portable and machine-independent is to write it in a high-level language so that the compile and corresponding object code can take care of the machine code conversion.
+如此一来，唯一提高 Unix 的移植性以及机器无关 (machine-independent) 的方法是，使用高级语言编写它，这样编译和相应的目标代码可以专注于机器指令的转换。
 
-The great brains at that time solve the problem in a jiffy. Ken Thompson created a high-level language from scratch called “B”. Then, he started the massive work to convert Unix assembly code to this newly created language. However, “B” also had some limitations, and Dennis Ritchie modified it to create the famous language “C”, which makes Unix a truly portable operating system.
+解决该问题的伟大思想诞生于一瞬间。肯·汤普森（Ken Thompson）从零开始创建了一种高级语言，称为 "B"。然而 "B" 语言有其局限性，丹尼斯·里奇 (Dennis Ritchie) 在此基础上创建了著名的 “C 语言”，这使 Unix 真正成为一个可移植的操作系统。
 
-The famous “C” language is still used today.
+著名的 “C 语言” 至今还在使用。
 
-By the mid-’80s, Unix became so successful that it was running on thousands of hardware, from micro-computers to mainframes with a variety of hardware.
+到上世纪 80 年代中期，Unix 变得十分成功，以至于它可以在数千种硬件上运行，从微型计算机到具有各种硬件的大型机。
 
 ![The text book of C which we all read][4]
 
-### MINIX and the birth of Linux
+### MINIX 和 Linux 的诞生
 
 In 1987, Andrew S. Tanenbaum – a computer science professional, created a Unix fork called MINIX to explain the operating system concepts in his famous book “Operating Systems: Design and Implementation” and distributed (the 16-bit version) free along with the book. Those who studied computer science (including me) or related subjects knows that it’s the ultimate textbook on Operating system which explains the basics.
 
@@ -54,21 +53,21 @@ In 1991, Linux Torvalds [started a hobby project][5] while studying at the Unive
 
 ![Famous operating systems book by Tanenbaum][6]
 
-### BSD and macOS
+### BSD 和 macOS
 
 During the ’80s, when Unix was shaping up, Bell Labs developed BSD (Berkeley Standard Distribution) based on the original Source code of Unix (the version that runs on PDP-7 and PDP-11). BSD is distributed by the Computer Systems Research Group (CSRG) at the University of California, Berkeley. After its formation, BSD has been adapted by many workstation vendors (the legacy desktop), such as Sun Microsystems, as a proprietary Unix variant.
 
 This version eventually forked to create open-source variants such as OpenBSD, FreeBSD and so on. These free versions created the path to create NeXTSTEP by NeXT, founded by Steve Jobs. And NeXTSTEP eventually became the foundation for Apple’s macOS.
 
-### Wrapping Up
+### 总结
 
-Unix is a remarkable achievement by a few individuals with their original ideas and takes on problem-solving. The operating system is a work of art if you consider how much computing power and memory were available at the time of its creation.
+Unix 是少数具有独到想法并致力于解决问题的人取得的非凡成就。如果考虑到在创建操作系统时可用的计算能力和内存量，该操作系统就是一件艺术品。
 
-All of these small steps, over several decades, eventually led us where we are today. No matter how many Kernels, OSes, and abstractions in the form of programming languages come in, at the core, it all started from a single source.
+几十年来，所有这些小的进步，最终使我们走到了今天。无论有多少内核、操作系统和以编程语言形式出现的抽象，其核心从来只有一个。
 
-I always think that programs/codes are thoughts of human beings. It’s your logic, ideas are merely written in “IF-ELSE” blocks to achieve some real-world result.
+我一直认为程序/代码是人类的想法。 这是你的逻辑，想法只是写在 "IF-ELSE" 块中以实现一些现实世界的结果。
 
-References
+参考：
 
 * [https://www.bell-labs.com/usr/dmr/www/picture.html][7]1
 * [https://groups.google.com/g/comp.os.minix/c/dlNtH7RRrGA/m/SwRavCzVE7gJ][8]
@@ -78,6 +77,7 @@ References
 * [https://computerhistory.org/blog/the-earliest-unix-code-an-anniversary-source-code-release/][12]
 
 *“All revolutions are, until they happen, then they are historical inevitabilities.” – Cloud Atlas*
+* “所有的革命，在它们发生之前，都是历史的必然。” —— 大卫·米切尔 《云图》 *
 
 ![Join our Telegram channel and stay informed on the move.][13]
 
