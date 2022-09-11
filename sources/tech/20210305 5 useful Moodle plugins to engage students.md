@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/3/moodle-plugins)
 [#]: author: (Sergey Zarubin https://opensource.com/users/sergey-zarubin)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MareDevi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
