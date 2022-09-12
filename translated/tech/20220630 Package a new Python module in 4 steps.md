@@ -7,17 +7,18 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Package a new Python module in 4 steps
+4步打包一个新的 Python 模块
 ======
-The pyp2rpm command makes it possible to create an RPM package and automate the process.
+pyp2rpm 使得创建 RPM 包的过程更加自动化。
+
 
 ![Hands on a keyboard with a Python book][1]
 
-Image by: WOCinTech Chat. Modified by Opensource.com. CC BY-SA 4.0
+图源：WOCinTech Chat，由 Opensource.com 修改，CC BY-SA 4.0
 
-When you install an application, you're usually installing a package that contains the executable code for an application and important files such as documentation, icons, and so on. On Linux, applications are commonly packaged as RPM or DEB files, and users install them with the `dnf` or `apt` commands, depending on the Linux distribution. However, new Python modules are released virtually every day, so you could easily encounter a module that hasn't yet been packaged. And that's exactly why the `pyp2rpm` command exists.
+通常情况下，你在安装一个应用程序时就已经安装了包含程序的可执行代码和一些如文档、图标等重要文件。在 Linux上，软件一般被打包成 RPM 或 DEB 等格式，用户只要通过 `dnf` 或者 `apt` 等命令就可以进行安装了，这取决于你使用的 Linux 发行版。然而几乎每天都有新的 Python 模块发布，因此你很容易遇到一个尚未打包的 Python 模块。这就是 `pyp2rpm` 存在的意义了。
 
-Recently, I tried to install a module called python-concentration. It didn't go well:
+最近我在尝试安装一个叫 python-concentration 的模块，但是进展并不太顺利：
 
 ```
 $ sudo dnf install python-concentration
@@ -27,32 +28,31 @@ No match for argument: python-concentration
 Error: Unable to find a match: python-concentration
 ```
 
-It’s a PyPi package, but it's not yet available as an RPM package. The good news is that you can build an RPM yourself with a relatively simple process using `pyp2rpm`.
+虽然这是一个发布在 PyPi 的包，但它仍不能被打包成 RPM 包。好消息是你可以使用    `pyp2rpm` 以一个相对简单的过程将它打包成 RPM 包。
 
-You'll need two directories to get started:
+首先你需要设置两个目录：
 
 ```
 $ mkdir rpmbuild
 $ cd rpmbuild && mkdir SPECS
 ```
 
-You'll also need to install `pyp2rpm` :
+像这样去安装 `pyp2rpm`：
 
 ```
 $ sudo dnf install pyp2rpm
 ```
 
-### 1. Generate the spec file
+### 1. 生成 spec 文件
 
-The foundation of any RPM package is a file called the spec file. This file contains all the information about how to build the package, which dependencies it needs, the version of the application it provides, what files it installs, and more. When pointed to a Python module, `pyp2rpm` generates a spec file for it, which you can use to build an RPM.
+RPM 包的基础是一个叫 spec 的文件，这个文件包含你创建这个包的所有信息，如依赖、版本号、安装文件等信息。当指向某个 Python 模块时，pyp2rpm 会为它构建一个 spec 文件，你可以用它来创建 rpm 包。
 
-Using python-concentration as an arbitrary example, here's how to generate a spec file:
-
+下面以 python-concentration 为例演示如何构建一个 spec 文件：
 ```
 $ pyp2rpm concentration > ~/rpmbuild/SPECS/concentration.spec
 ```
 
-And here's the file it generates:
+下面是它生成的文件：
 
 ```
 # Created by pyp2rpm-3.3.8
@@ -106,9 +106,9 @@ Concentration [![PyPI version]( [![Test Status]( [![Lint Status]( [![codecov](
 - Initial package.
 ```
 
-### 2. Run rpmlint
+### 2. 运行 rpmlint
 
-To ensure that the spec file is up to standards, run the `rpmlint` command on the file:
+为了确保 spec 文件符合标准，你需要对文件使用 rpmlint 命令：
 
 ```
 $ rpmlint ~/rpmbuild/SPEC/concentration.spec
@@ -116,33 +116,34 @@ error: bad date in %changelog: - 1.1.5-1
 0 packages and 1 specfiles checked; 0 errors, 0 warnings.
 ```
 
-It seems the changelog entry requires a date.
+看起来更新日志需要记录日期。
 
 ```
 %changelog
 * Sat Jun 11 2022 Tux <tux@example.com> - 1.1.5-1
 ```
 
-Try `rpmlint` again:
+再次运行 `rpmint`：
 
 ```
 $ rpmlint ~/rpmbuild/SPEC/concentration.spec
 0 packages and 1 specfiles checked; 0 errors, 0 warnings.
 ```
 
-Success!
+成功！
 
-### 3. Download the source code
 
-To build an RPM package, you must download the code you're packaging up. The easy way to do this is to parse your spec file to find the source code's location on the Internet.
+### 3. 下载源码
 
-First, install the `spectool` command with `dnf` :
+你需要下载好打包的代码才能进一步构建 RPM 包。一种简单的方式是解析你的 spec 文件以获取源码的网址。
+
+首先，通过 dnf 安装 spectool：
 
 ```
 $ sudo dnf install spectool
 ```
 
-Then use it to download the source code:
+然后通过 spectool 来下载源码：
 
 ```
 $ cd ~/rpmbuild
@@ -152,11 +153,11 @@ Downloading: https://files.pythonhosted.org/...concentration-1.1.5.tar.gz
 Downloaded: concentration-1.1.5.tar.gz
 ```
 
-This creates a SOURCES directory and places the source code archive into it.
+这样就创建了一个 SOURCES 目录并将源码放入其中。
 
-### 4. Build the source package
+### 4. 构建源文件
 
-Now you have a valid spec file, so it's time to build the source package with the `rpmbuild` command. If you don't have `rpmbuild` yet, install the rpm-build package with `dnf` (or accept your terminal's offer to install that package when you attempt to use the `rpmbuild` command).
+现在你已经验证过 spec 文件了，接下来就可以通过 rpmbuild 进行打包了。如果你不进行 rpmbuild ，你也可以通过 dnf 安装 rpm-build 包（或者在使用 rpmbuild 时就根据终端的的提示进行安装）。
 
 ```
 $ cd ~/rpmbuild
@@ -166,9 +167,9 @@ Downloading: https://files.pythonhosted.org/...concentration-1.1.5.tar.gz
 Downloaded: concentration-1.1.5.tar.gz
 ```
 
-The `-bs` option stands for build source. This option gives you an `src.rpm` file, an all-purpose package that must be rebuilt for a specific architecture.
+参数 `-bs` 表示构建源。添加这个参数会提供一个叫做 src.rpm 的文件，这是一个需要为特定架构重新构建的通用包。
 
-Build an installable RPM for your system:
+为你的系统构建一个可安装的 RPM 文件：
 
 ```
 $ rpmbuild –rebuild SRPMS/python-concentration-1.1.5-1.el9.src.rpm
@@ -176,7 +177,7 @@ error: Failed build dependencies:
         python3-devel is needed by python-concentration-1.1.5-1.el9.noarch
 ```
 
-It looks like this package requires the development libraries of Python. Install them to continue with the build. This time the build succeeds and renders a lot more output (which I abbreviate here for clarity):
+看起来这个包需要安装 Python 的开发库才能继续构建。
 
 ```
 $ sudo dnf install python3-devel -y
@@ -191,15 +192,16 @@ Executing(--clean): /bin/sh -e /var/tmp/rpm-tmp.TYA7l2
 + exit 0
 ```
 
-Your RPM package has been built in the RPMS subdirectory. Install it as usual with `dnf` :
+你的 RPM 包现在已经构建在 RPMS子目录下，像平常一样使用 `dnf` 安装它。
 
 ```
 $ sudo dnf install RPMS/noarch/python3-concentration*rpm
 ```
 
-### Why not just use PyPi?
 
-It's not absolutely necessary to make a Python module into an RPM. Installing a module with PyPi is also acceptable, but PyPi adds another package manager to your personal list of things to check and update. When you install an RPM using `dnf`, you have a complete listing of what you've installed on your system. Thanks to `pyp2rpm`, the process is quick, easy, and automatable.
+### 为什么不使用 PyPi？
+
+通常情况下我们并不需要将 Python 模块打包成 RPM 包。通过 PyPi 来安装模块也是可以接受的，但是 PyPi 会安装额外的包管理器对你的模块进行检查和更新。当你使用 dnf 来安装 RPM 包时，你在安装完成时就能够获取到完整的安装列表。有了 pyp2rpm 之后，这个过程就变得快速、简单且自动化了。
 
 --------------------------------------------------------------------------------
 
@@ -207,7 +209,7 @@ via: https://opensource.com/article/22/6/package-python-module-rpm
 
 作者：[Sumantro Mukherjee][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Return7g](https://github.com/Return7g)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
