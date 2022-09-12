@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/09/06/send-network-packets-python-tun-tap/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "HankChow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
