@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/package-python-module-rpm"
 [#]: author: "Sumantro Mukherjee https://opensource.com/users/sumantro"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Return7g"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
