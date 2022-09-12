@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Donkey-Hao"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15024-1.html"
 
 Unix 历史：一个伟大作品的诞生
 ======
