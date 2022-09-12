@@ -9,15 +9,15 @@
 
 Unix 历史：一个伟大作品的诞生
 ======
-A brief walk down memory lane about Unix and its beginning.
+关于 Unix 及其起源的简短回忆。
 
 ![The beginning][1]
 
-### Unix: 起源
+### Unix 的起源
 
-现在，几乎整个互联网世界都运行在 Linux 之上。数十万的移动电话和服务器运行在 Linux 之上。但在 Linux 之前，有 Unix，没有 Unix 就没有现在的 Linux。
+现在，几乎整个互联网世界都运行在 Linux 之上。数十万的移动电话和服务器运行在 Linux 之上。但在 Linux 之前，是 Unix，没有 Unix 就没有现在的 Linux。
 
-Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个有名的机构共同开展操作系统的研发工作，准备开发一个能够服务多个用户，并共享数据和资源的商业操作系统。
+Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个著名的机构共同开展操作系统的研发工作，准备开发一个能够服务多个用户，并共享数据和资源的商业操作系统。
 
 ![Scanned copy of actual Unix code][2]
 
@@ -25,9 +25,9 @@ Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个
 
 但是该项目并没有取得太大的成功。不幸的是，由于系统设计复杂且产出甚微，贝尔实验室退出了该项目。
 
-贝尔实验室的肯·汤普森（Ken Thompson）也参与了该项目。在一台古老的数字设备公司的 PDP-7 的机器上，他重新开始一个新操作系统的设计。不久后，丹尼斯·里奇 (Dennis Ritchie) 加入了，二人一起设计了分层文件系统、设备文件、命令行解释器以及进程。这就是 Unix 的诞生方式，由 Multics 项目的另一名成员布莱恩·威尔森·克尼汉 (Brian Kernighan) 命名。
+贝尔实验室的肯·汤普森（Ken Thompson）也参与了该项目。在数字设备公司的一台古老的 PDP-7 的机器上，他重新开始一个新操作系统的设计。不久后，丹尼斯·里奇 (Dennis Ritchie) 加入了，二人一起设计了分层文件系统、设备文件、命令行解释器以及进程。这就是 Unix 的诞生过程，由 Multics 项目的另一名成员布莱恩·威尔森·克尼汉 (Brian Kernighan) 命名。
 
-在 1971 年，Unix 被移植到了较为先进的 PDP-11 电脑上，该电脑的磁盘仅有 512 KB。当时，Unix 为用户程序提供 16 KB 和 8 KB 大小的内存分配。  
+在 1971 年，Unix 被移植到了较为先进的 PDP-11 电脑上，该电脑的磁盘仅有 512 KB。当时，Unix 为用户程序提供 16 KB 和 8 KB 大小的内存分配空间。  
 
 然而，Unix 大多数代码为汇编语言，十分依赖于硬件。因此它的移植性较差。
 
@@ -47,17 +47,17 @@ Unix 的起源可以追溯到人类登陆月球的时候。在 1965 年，三个
 
 ### MINIX 和 Linux 的诞生
 
-In 1987, Andrew S. Tanenbaum – a computer science professional, created a Unix fork called MINIX to explain the operating system concepts in his famous book “Operating Systems: Design and Implementation” and distributed (the 16-bit version) free along with the book. Those who studied computer science (including me) or related subjects knows that it’s the ultimate textbook on Operating system which explains the basics.
+1987 年，计算机科学教授安德鲁·斯图尔特·特南鲍姆 （Andrew S. Tanenbaum) 开发了名为 NINIX 的类 Unix 系统，在其著作《操作系统设计与实现》中用以解释操作系统理念，并且源码在该书的附录中作为示例。任何学习计算机科学专业（包括我）或相关专业的人都知道，这是解释操作系统基础知识的“神级”教科书。
 
-In 1991, Linux Torvalds [started a hobby project][5] while studying at the University of Helsinki. He based his work on MINIX with GNU C Compiler. He started his project to enable him to run programs on his new PC with a new 80386 processor. However, he wrote the entire operating system with features that MINIX lacked, eventually becoming the Linux Kernel.
+1991 年，李纳斯·托沃兹 (Linus Torvalds) 在赫尔辛基大学学习期间开展了一项 [爱好项目][5]。他的工作基于 MINIX 和 GNU C 编译器。为了能够在配有新款 80386 处理器的 PC 上运行程序，他开展了该项目。然而，他用 MINIX 所缺乏的特性编写了整个操作系统，最终成为了 Linux 内核。
 
 ![Famous operating systems book by Tanenbaum][6]
 
 ### BSD 和 macOS
 
-During the ’80s, when Unix was shaping up, Bell Labs developed BSD (Berkeley Standard Distribution) based on the original Source code of Unix (the version that runs on PDP-7 and PDP-11). BSD is distributed by the Computer Systems Research Group (CSRG) at the University of California, Berkeley. After its formation, BSD has been adapted by many workstation vendors (the legacy desktop), such as Sun Microsystems, as a proprietary Unix variant.
+上世纪 80 年代，当 Unix 初具规模时，贝尔实验室基于 Unix 的最初源代码（在 PDP-7 和 PDP-11 上运行的版本）开发了 BSD（伯克利标准发行版）。BSD 由加州大学伯克利分校的计算机系统研究小组 (CSRG) 分发。在其形成之后，BSD 已被许多工作站供应商（Legacy 桌面）如 Sun Microsystems ，改编为专有的 Unix 变体。
 
-This version eventually forked to create open-source variants such as OpenBSD, FreeBSD and so on. These free versions created the path to create NeXTSTEP by NeXT, founded by Steve Jobs. And NeXTSTEP eventually became the foundation for Apple’s macOS.
+该版本最终分叉以创建开源变体，例如 OpenBSD、FreeBSD 等。这些免费版本为由史蒂夫·乔布斯 (Steve Jobs) 创立的 NeXT 创建 NeXTSTEP 开辟了道路。NeXTSTEP 最终成为苹果公司 macOS 的基础。
 
 ### 总结
 
@@ -65,7 +65,7 @@ Unix 是少数具有独到想法并致力于解决问题的人取得的非凡成
 
 几十年来，所有这些小的进步，最终使我们走到了今天。无论有多少内核、操作系统和以编程语言形式出现的抽象，其核心从来只有一个。
 
-我一直认为程序/代码是人类的想法。 这是你的逻辑，想法只是写在 "IF-ELSE" 块中以实现一些现实世界的结果。
+我一直认为程序/代码是人类的想法。 这是你的逻辑，想法只是写在 "IF-ELSE" 语句中，以实现一些现实世界的结果。
 
 参考：
 
@@ -76,8 +76,7 @@ Unix 是少数具有独到想法并致力于解决问题的人取得的非凡成
 * [https://en.wikipedia.org/wiki/History_of_Unix][11]
 * [https://computerhistory.org/blog/the-earliest-unix-code-an-anniversary-source-code-release/][12]
 
-*“All revolutions are, until they happen, then they are historical inevitabilities.” – Cloud Atlas*
-* “所有的革命，在它们发生之前，都是历史的必然。” —— 大卫·米切尔 《云图》 *
+*“所有的革命，在它们发生之前，都是历史的必然。” —— 大卫·米切尔 《云图》*
 
 ![Join our Telegram channel and stay informed on the move.][13]
 
