@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/julia-and-python-which-language-is-quicker/"
 [#]: author: "B Thangaraju https://www.opensourceforu.com/author/b-thangaraju/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Return7g"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
