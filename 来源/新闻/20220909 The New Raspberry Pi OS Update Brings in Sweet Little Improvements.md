@@ -8,9 +8,10 @@
 [#]: url: " "
 
 The New Raspberry Pi OS Update Brings in Sweet Little Improvements
+树莓派系统更新带来的小改进
 ======
 Raspberry Pi OS update adds NetworkManager support along with new shortcuts.
-
+树莓派系统更新：增加了网络管理技术支持以及新的快捷方式
 ![The New Raspberry Pi OS Update Brings in Sweet Little Improvements][1]
 
 If you're an enthusiastic fan of the little computer, you may know that the Raspberry Pi can be used as a fully-fledged desktop computer. Not to forget, it is also at the heart of various electronic/IoT projects.
@@ -19,13 +20,13 @@ While many Linux distributions offer images for the Raspberry Pi, the company ma
 
 If you didn't know, Raspberry Pi OS is based on Debian. Specifically, [Debian 11 Bullseye][3] for the current version. It is lightweight and uses LXDE as its desktop environment.
 
-### Raspberry Pi OS: What's New?
+### Raspberry Pi OS: What's New? 树莓派系统带来了哪些更新内容？
 
 Although the latest update is not a major one, it still brings in a few helpful additions. If you use your Raspberry Pi as a desktop PC, you will certainly welcome them.
 
 Let's take a look at what the new release offers.
 
-#### Quick Search Functionality for Main Menu
+#### Quick Search Functionality for Main Menu 主目录具有快速搜索功能
 
 While Windows and many Linux distros already include this basic feature, Raspberry Pi OS did not have it, until now.
 
@@ -39,13 +40,13 @@ If the user does not type anything, the main menu will function exactly the same
 
 There's no need to use the mouse cursor to open up the apps anymore.
 
-#### New Keyboard Shortcuts 
+#### New Keyboard Shortcuts 新的键盘操作快捷方式
 
 Just like the main menu, you can also bring up Wi-Fi and Bluetooth toggles by the keyboard.
 
 Performing **Ctrl+Alt+W** will open the Wi-Fi menu while **Ctrl+Alt+B** is reserved for Bluetooth.
 
-#### Enhanced Audio Input Control
+#### Enhanced Audio Input Control 增强型音频输入控制
 
 The taskbar will now display two separate icons for input and output devices instead of the single default volume icon.
 
@@ -53,7 +54,7 @@ The taskbar will now display two separate icons for input and output devices ins
 
 A microphone icon will also pop up next to the speaker icon whenever an audio input device gets connected. Moreover, if multiple audio input devices are connected, users can perform a right click on the same icon to select a device from the list while a left click will display the volume control slider.
 
-#### NetworkManager Support
+#### NetworkManager Support 网络管理功能技术支持
 
 NetworkManager is a popular daemon used by many Linux distros to handle networking functionality. It includes a host of features to help users tweak and configure network settings accordingly.
 
@@ -69,7 +70,7 @@ If you still want to try NetworkManager, there are a few advanced steps required
 
 The [official release notes][9] includes a bit more details if you want to explore more about the release.
 
-### Getting Raspberry Pi OS
+### Getting Raspberry Pi OS 获取更多的树莓派操作系统
 
 Head over to the official downloads page linked below to download the new image.
 
