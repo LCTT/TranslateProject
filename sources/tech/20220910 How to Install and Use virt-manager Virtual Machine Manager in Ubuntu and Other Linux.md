@@ -2,13 +2,13 @@
 [#]: via: "https://www.debugpoint.com/virt-manager/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "yjacks"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-
 How to Install and Use virt-manager Virtual Machine Manager in Ubuntu and Other Linux
 ======
+
 virt-install
 
 A comprehensive guide on how to install and use virt-manager virtual machine emulator in Ubuntu and other Linux systems.
