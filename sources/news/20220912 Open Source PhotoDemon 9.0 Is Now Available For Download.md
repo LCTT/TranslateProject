@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/open-source-photo-editor-photodemon-9-0-is-now-available/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "littlebirdnest"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
