@@ -6,7 +6,7 @@
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-======
+
 The New Raspberry Pi OS Update Brings in Sweet Little Improvements
 ======
 Raspberry Pi OS update adds NetworkManager support along with new shortcuts.
