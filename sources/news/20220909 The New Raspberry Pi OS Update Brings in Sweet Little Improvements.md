@@ -7,7 +7,8 @@
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-[#]: zhangjiang is translating.
+
+zhangjiang is translating.
 The New Raspberry Pi OS Update Brings in Sweet Little Improvements
 ======
 Raspberry Pi OS update adds NetworkManager support along with new shortcuts.
