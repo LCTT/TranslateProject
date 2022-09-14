@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/firefox-add-ons/"
 [#]: author: "Pratham Patel https://itsfoss.com/author/pratham/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "gpchn"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
