@@ -1,3 +1,5 @@
+zjsoftceo is translating
+[#]: translator: (zjsoftceo)
 [#]: subject: "The New Raspberry Pi OS Update Brings in Sweet Little Improvements"
 [#]: via: "https://news.itsfoss.com/raspberry-pi-os-sep-update/"
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
