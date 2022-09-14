@@ -2,12 +2,10 @@
 [#]: via: "https://news.itsfoss.com/raspberry-pi-os-sep-update/"
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lkxed"
-[#]: translator: "zjsoftceo "
+[#]: translator: "zjsoftceo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-
-ZhangJiang is translating.
 ======
 The New Raspberry Pi OS Update Brings in Sweet Little Improvements
 ======
