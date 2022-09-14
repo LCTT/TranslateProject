@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/raspberry-pi-os-sep-update/"
 [#]: author: "Rishabh Moharir https://news.itsfoss.com/author/rishabh/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "zjsoftceo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
