@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "gpchn"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15027-1.html"
 
 传统的 Linux 软件包格式不适合现代应用
 ======
