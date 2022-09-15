@@ -3,43 +3,48 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15035-1.html"
 
-如何在网络浏览器中启用深色模式
+如何在浏览器中启用深色模式
 ======
-指南旨在帮助你了解如何在流行的网络浏览器，如Firefox、Google Chrome、Chromium 和 Microsoft Edge 中启用深色模式。
+
+![](https://img.linux.net.cn/data/attachment/album/202209/15/232124u1ikykxri6oehx0h.jpg)
+
+> 本指南旨在帮助你了解如何在流行的浏览器，如 Firefox、谷歌 Chrome、Chromium 和微软 Edge 中启用深色模式。
 
 我们都喜欢深色模式。许多人喜欢它，而不是标准的浅色模式。虽然许多桌面应用提供了原生的深色模式，但一些应用通过桌面环境的基础模式适应深色模式。
 
-你不能否认，我们都在网络浏览器上花了几个小时。我们很少使用桌面应用（除非你是在工作，如视频编辑等）。因此，当你花很多时间在浏览器上阅读和学习时，你总是可以选择深色模式。但是，来到网络浏览器，事情就有点不同了。
+你不能否认，我们都在浏览器上花了好多时间。我们很少使用桌面应用（除非你是在工作，如视频编辑等）。因此，当你在浏览器上花很多时间阅读和学习时，你应该也可以选择深色模式。但是，对于各个浏览器，稍微有点不同。
 
-本指南为你提供简单的步骤，你可以按照这些步骤在 Mozilla Firefox、Chromium、Google Chrome 和 Edge 浏览器中启用深色模式。
+本指南为你提供简单的步骤，你可以按照这些步骤在 Mozilla Firefox、Chromium、Chrome 和 Edge 浏览器中启用深色模式。
 
-### 在网络浏览器中启用深色模式
+### 在浏览器中启用深色模式
 
-#### 在 Firefox中启用深色模式
+#### 在 Firefox 中启用深色模式
 
-* 打开 Firefox ，点击右上角的设置菜单。
-* 点击 `设置 > 扩展和主题`。
-* 选择`深色主题`并点击`启用`。然后你应该看到深色模式被应用到 Firefox。
+打开 Firefox ，点击右上角的设置菜单。
+
+点击 “<ruby>设置<rt>Settings</rt></ruby> > <ruby>扩展和主题<rt>Extension and Themes</rt></ruby>”。
+
+选择“<ruby>深色主题<rt>Dark Theme</rt></ruby>”并点击“<ruby>启用<rt>enable</rt></ruby>”。然后你应该看到深色模式被应用到 Firefox。
 
 ![Enable dark mode in Firefox][1]
 
 ![Firefox in Dark Mode][2]
 
-* 要恢复它，按照同样的步骤，选择浅色主题。
+要恢复它，按照同样的步骤，选择浅色主题。
 
-#### Chromium 和 Google Chrome 的深色模式
+#### Chromium 和 Chrome 的深色模式
 
-Chromium 或 Google Chrome 默认不预装任何深色主题。因此，你需要去 Chrome 网络商店，下载任何你想要的深色主题。在本指南中，我将推荐 “Morpheon Dark” 主题，它有超过一百万用户在使用它。
+Chromium 或 Chrome 默认不预装任何深色主题。因此，你需要去 Chrome 商店，下载任何你想要的深色主题。在本指南中，我将推荐 “Morpheon Dark” 主题，它有超过一百万用户在使用它。
 
 从 Chromium 浏览器中打开 Morpheon Dark 主题页面（从以下链接）。
 
-[Chrome 网络商店中的 Morpheon Dark 主题][3]
+> **[Chrome 网络商店中的 Morpheon Dark 主题][3]**
 
-点击“添加到 Chrome” 按钮。它应该会在 Chrome 中启用。
+点击“<ruby>添加到 Chrome<rt>Add To Chrome</rt></ruby>” 按钮。它应该会在 Chrome 中启用。
 
 你可能想探索 Chrome 网络商店中的其他黑白或深色主题。[请访问此页面，查看所有的深色主题集合][4] 。
 
@@ -51,14 +56,13 @@ Chromium 或 Google Chrome 默认不预装任何深色主题。因此，你需�
 
 #### Edge 浏览器的深色模式
 
-然而，[Microsoft Edge 浏览器][6]默认带有更好的深色主题。它允许你从设置中使用 GTK+、浅色和深色模式。
+然而，[微软 Edge 浏览器][6] 默认带有更好的深色主题。它允许你从设置中使用 GTK+、浅色和深色模式。
 
-* Open Edge Browser
-* Click on the three little dots on the right-top side.
-* Go to Appearance and choose Dark. And you should be all set.
-* 打开 Edge 浏览器
-* 点击右上角的三个小圆点。
-* 进入外观，选择深色。这就完成了。
+打开 Edge 浏览器
+
+点击右上角的三个小圆点。
+
+进入“<ruby>外观<rt>Appearance</rt></ruby>”，选择“<ruby>深色<rt>Dark</rt></ruby>”。这就完成了。
 
 这个 Edge 的深色主题实现得更好，因为它改变了上下文菜单和地址栏。
 
@@ -79,7 +83,7 @@ via: https://www.debugpoint.com/dark-mode-browser/
 作者：[Arindam][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
