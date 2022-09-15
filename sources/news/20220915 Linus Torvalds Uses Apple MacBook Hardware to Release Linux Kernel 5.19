@@ -1,4 +1,15 @@
+
+[#]: subject: "Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19"
+[#]: via: "https://news.itsfoss.com/linux-kernel-5-19-release/"
+[#]: author: "Jacob Crume https://news.itsfoss.com/author/jacob/"
+[#]: collector: "lkxed"
+[#]: translator: "zjsoftceo/zhangjiang "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
 Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19
+======
 
 Three months after the last kernel release, Linux Kernel 5.19 is finally here. This exciting release brings plenty of improvements to every aspect of the kernel and opens up opportunities with new hardware.
 
@@ -62,6 +73,7 @@ In addition to the ones I mentioned above, Linux Kernel 5.19 also includes
 
 Raspberry Pi Sense Hat joystick driver
 Various BTRFS improvements
+
 New Intel IFS driver
 Intel Raptor Lake P graphics support.
 Alder lake improvements.
@@ -77,3 +89,17 @@ So, if you are feeling adventurous (and know what you are doing), you can find t
 However, we recommend waiting for your Linux distribution to push an update if you do not want to take any chances. It is best to stick to what’s being offered for your Linux distribution by default.
 
 Linux Kernel Archives
+
+--------------------------------------------------------------------------------
+
+via: https://news.itsfoss.com/linux-kernel-5-19-release/
+
+作者：[Laveesh Kocher][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://www.opensourceforu.com/author/laveesh-kocher/
+[b]: https://github.com/lkxed
