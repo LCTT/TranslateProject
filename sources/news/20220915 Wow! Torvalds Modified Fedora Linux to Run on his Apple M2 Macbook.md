@@ -2,7 +2,7 @@
 [#]: via: "[https://news.itsfoss.com/fedora-apple-torvalds/]
 [#]: author: "ANKUSH DAS https://news.itsfoss.com/author/ankush/"
 [#]: collector: "zjsoftceo"
-[#]: translator: "zjsoftceo/zhangjiang "
+[#]: translator: "zjsoftceo/zhangjiang"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
