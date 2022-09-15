@@ -1,7 +1,8 @@
+
 [#]: subject: "Wow! Torvalds Modified Fedora Linux to Run on his Apple M2 Macbook"
-[#]: via: "[https://news.itsfoss.com/fedora-apple-torvalds/]
+[#]: via: "[https://news.itsfoss.com/fedora-apple-torvalds/]"
 [#]: author: "ANKUSH DAS https://news.itsfoss.com/author/ankush/"
-[#]: collector: "zjsoftceo"
+[#]: collector: ""
 [#]: translator: "zjsoftceo/zhangjiang"
 [#]: reviewer: " "
 [#]: publisher: " "
