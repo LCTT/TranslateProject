@@ -1,5 +1,14 @@
+[#]: subject: "Wow! Torvalds Modified Fedora Linux to Run on his Apple M2 Macbook"
+[#]: via: "[https://news.itsfoss.com/fedora-apple-torvalds/]
+[#]: author: "ANKUSH DAS https://news.itsfoss.com/author/ankush/"
+[#]: collector: "zjsoftceo"
+[#]: translator: "zjsoftceo/zhangjiang "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Wow! Torvalds Modified Fedora Linux to Run on his Apple M2 Macbook
+====
 
 Linus Torvalds made Fedora Linux Workstation 36 work with Apple Macbook Air M2. Nice!
 
@@ -37,3 +46,18 @@ The State of Linux on Apple Silicon
 Not just Linus Torvalds, but everyone has been impressed with Apple M1/M2 chips for their performance.
 
 In fact, he utilized the Macbook Air M2 to release Linux Kernel 5.19.
+
+
+--------------------------------------------------------------------------------
+
+via: https://news.itsfoss.com/fedora-apple-torvalds/
+
+作者：[ANKUSH DAS][a] 
+选题：[zjsoftceo] [b]
+译者：[zjsoftceo](https://github.com/zjsoftceo)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: ANKUSH DAS https://news.itsfoss.com/author/ankush/
+[b]: https://github.com/zjsoftceo
