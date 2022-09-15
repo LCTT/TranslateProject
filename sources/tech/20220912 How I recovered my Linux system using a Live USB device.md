@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/recover-linux-system-live-usb"
 [#]: author: "David Both https://opensource.com/users/dboth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
