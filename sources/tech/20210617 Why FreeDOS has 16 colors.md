@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/freedos-sixteen-colors)
 [#]: author: (Jim Hall https://opensource.com/users/jim-hall)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (gpchn)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
