@@ -36,9 +36,9 @@
 
 **另请阅读**：[9 个开源插件可改善您的 Mozilla Firefox 体验][6]
 
-### 1. Facebook 容器
+### 1. Facebook Container
 
-![Facebook 容器][7]
+![Facebook Container][7]
 
 **主要亮点：**
 
@@ -50,7 +50,7 @@
 
 顾名思义，为 Facebook 创建了一个隔离容器（与 Docker 无关）。 所有与 Facebook 相关的东西都发生在这个孤立的容器中。 这最终使社交媒体巨头更难追踪您。
 
-[安装 Facebook 容器][8]
+[安装 Facebook Container][8]
 
 ### 2. uBlock Origin
 
