@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "zjsoftceo"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15032-1.html"
 
 新树莓派操作系统更新带来一些不错的小改进
 ======
