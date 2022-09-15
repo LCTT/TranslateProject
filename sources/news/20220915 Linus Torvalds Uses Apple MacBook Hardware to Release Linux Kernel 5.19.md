@@ -1,4 +1,3 @@
-
 [#]: subject: "Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19"
 [#]: via: "https://news.itsfoss.com/linux-kernel-5-19-release/"
 [#]: author: "Jacob Crume https://news.itsfoss.com/author/jacob/"
