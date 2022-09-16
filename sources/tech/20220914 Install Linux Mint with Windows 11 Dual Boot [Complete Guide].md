@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/linux-mint-install-windows/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "gpchn"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
