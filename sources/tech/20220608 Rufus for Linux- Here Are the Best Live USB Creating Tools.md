@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/live-usb-creator-linux/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "alfred-hong"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
