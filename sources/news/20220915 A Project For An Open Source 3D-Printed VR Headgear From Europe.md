@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/a-project-for-an-open-source-3d-printed-vr-headgear-from-europe/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: "zjsoftceo "
+[#]: translator: "zjsoftceo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
