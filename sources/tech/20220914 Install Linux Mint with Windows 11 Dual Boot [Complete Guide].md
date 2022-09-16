@@ -7,59 +7,69 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Install Linux Mint with Windows 11 Dual Boot [Complete Guide]
+使用 Windows 11 双引导安装 Linux Mint [完整指南]
 ======
-A comprehensive guide to installing Linux Mint alongside Windows 11 (or Windows 10) and making a dual-boot system.
+将 Linux Mint 与 Windows 11（或 Windows 10）同时安装并制作双引导系统的完整指南。
 
-If you are a new Linux user trying to install Linux Mint without removing the OEM-installed Windows, follow this guide. After you complete the steps described below, you should have a dual boot system where you can learn and do your work in a Linux system without booting Windows.
+如果您是新的 Linux 用户，尝试在不删除 OEM 安装的 Windows 的情况下安装 Linux Mint，请遵循本指南。完成下面描述的步骤后，您应该拥有一个双引导系统，您可以在其中学习和在 Linux 系统中完成工作，而无需引导 Windows。
 
-### 1. What do you need before you start?
+### 1. 开始之前您需要什么？
 
-Boot into your Windows system and Download the Linux Mint ISO file from the official website. The ISO files are the installation image of Linux Mint, which we will use for this guide.
+启动到您的 Windows 系统并从官方网站下载 Linux Mint ISO 文件。 ISO 文件是 Linux Mint 的安装映像，我们将在本指南中使用它。
 
-* In the official website (Figure 1), download the ISO for Cinnamon desktop edition (which is ideal for everyone).
+* 在官网（图1），下载 Cinnamon 桌面版的 ISO（适合大家）。
 
-* [Download link][1]
+* [下载链接][1]
 
-![Figure 1: Download Linux Mint from the official website][2]
+![图1：从官网下载Linux Mint][2]
 
-* After downloading, plugin a USB stick into your system. Then write the above downloaded .ISO file to that USB drive using Rufus or [Etcher][3].
+* 下载后，将 U 盘插入您的系统。然后使用 Rufus 或 [Etcher][3] 将上面下载的 .ISO 文件写入该 USB 驱动器。
 
-### 2. Prepare a partition to install Linux Mint
+### 2.准备一个分区来安装Linux Mint
 
-Ideally, Windows Laptops come with C and D drives in general. The C drive is where Windows is installed. For a new Laptop, the D drive is usually empty (of any subsequent drives such as E, etc.). Now, you have two options to choose from. Number 1 is to **shrink the C driv**e to make space for additional Linux installation. And Number 2 is to **use the additional drives/partitions** such as D or E.
+理想情况下，Windows 笔记本电脑通常配备 C 盘和 D 盘。 C 盘是安装 Windows 的地方。对于新的笔记本电脑，D 驱动器通常是空的（任何后续驱动器，如 E 等）。现在，您有两个选项可供选择：一是**缩小 C 盘** 为额外的 Linux 安装腾出空间。第二个是**使用其他驱动器/分区**，例如 D 盘或 E盘。
 
-Choose what you want to do.
+选择您希望的方法。
 
-* If you choose to use D or E drives for Linux installation, make sure to disable BitLocker before everything else which comes with the modern OEM-installed Windows laptop.  * Open Windows PowerShell from the start menu and type the following command (Figure 2) to disable the BitLocker. Change the drive letter according to your target driver (here, I have used drive E).
+* 如果您选择使用 D 盘或 E 盘进行 Linux 安装，请确保先禁用 BitLocker，然后再禁用现代 OEM 安装的 Windows 笔记本电脑附带的所有其他功能。 * 从开始菜单打开 Windows PowerShell 并键入以下命令（图 2）以禁用 BitLocker。根据您的目标驱动程序更改驱动器号（这里，我使用了驱动器 E）。
 
 ```
 manage-bde -off E
 ```
 
-![Figure 2: Disable BitLocker in Windows Drives to install Linux][4]
+![图2：禁用 Windows 驱动器中的 BitLocker 以安装 Linux][4]
 
-* Now, if you choose to Shrink the C drive (or any other drive), open the “Disk Management” from start menu. It would show your entire disk layout.   * Right-click and select “Shrink Volume” on the drive (Figure 3) you want to shrink to make way for Linux Mint.  * In the next window, give the size of your Partition in MB under “Enter the amount of space to shrink in MB” (Figure 4). Obviously, it should be less or equal to the value mentioned under “Size of available space”. So, for a 100 GB partition, give 100*1024=102400 MB.   * Once done, click on Shrink.
+* 现在，如果您选择缩小 C 盘（或任何其他驱动器），请从开始菜单打开“磁盘管理”，它将显示您的整个磁盘布局。
+* 右键单击​​并在要缩小的驱动器上选择“Shrink Volume”（图 3），以便为 Linux Mint 腾出位置。
+* 在下一个窗口中，在“输入要缩小的空间量（以 MB 为单位）”下以 MB 为单位提供您的分区大小（图 4）。显然，它应该小于或等于“可用空间大小”中提到的值。因此，对于 100 GB 的分区，给出 100*1024=102400 MB。
+* 完成后，单击收缩。
 
-![Example of Shrink Volume option in Disk Partition][5]
+![磁盘分区中的压缩卷选项示例][5]
 
-![Figure 4: Enter the size of your Linux Partition][6]
+![图4：输入 Linux 分区的大小][6]
 
-* Now, you should see an “Unallocated Space”, as shown below (Figure 5). Right-click on it and choose “New Simple Volume“.   * This wizard will prepare and format the partition with a file system. Note: You can do it in Windows itself or during Linux Mint installation. The Linux Mint installer also provides you with the option to create a file system table and ready the partition. I would recommend you to do it here.  * In the next series of screens (Figure 6,7, and 8), give the size of your partition in MB, assign a drive letter (such as D, E, F), and file system as fat32.  * And finally, you should see your partition is ready for Linux Mint installation. You should choose this during Mint install in the following steps.   * As a precaution, note down the partition size (which you just created as an example in Figure 9) to quickly identify it in the installer.
+* 现在，您应该会看到一个“未分配空间”，如下所示（图 5）。右键单击它并选择“新建简单卷”。
+* 此向导将使用文件系统准备和格式化分区。注意：您可以在 Windows 本身中或在 Linux Mint 安装期间执行此操作。 Linux Mint 安装程序还为您提供了创建文件系统表和准备分区的选项。我建议您在这里做。
+* 在接下来的一系列屏幕中（图 6,7 和 8），以 MB 为单位给出分区大小，分配驱动器号（例如 D、E、F）和文件系统为 fat32。
+* 最后，您应该会看到您的分区已准备好安装 Linux Mint。您应该在 Mint 安装期间按照以下步骤选择此选项。
+* 作为预防措施，记下分区大小（您刚刚在图 9 中作为示例创建）以便在安装程序中快速识别它。
 
-![Figure 5: Unallocated space is created][7]
+![图5：创建未分配空间][7]
 
-![Figure 6: New Simple Volume Wizard -page1][8]
+![图6：新建简单卷向导-page1][8]
 
-![Figure 7: New Simple Volume Wizard -page2][9]
+![图7：新建简单卷向导-page2][9]
 
-![Figure 8: New Simple Volume Wizard -page3][10]
+![图8：新建简单卷向导-page3][10]
 
-![Figure 9: Final partition for installing Linux][11]
+![图9：安装Linux的最终分区][11]
 
-### 3. Disable Secure Boot in BIOS
+### 3. 在 BIOS 中禁用安全启动
 
-* Plug in the USB drive and restart your system.  * When it starts booting,  press the applicable function Key repeatedly to enter into BIOS. The key may be different for your laptop models. Here’s a reference of major Laptop brands.  * And you should disable secure BIOS and make sure to set the boot device priority to the USB stick.  * Then press F10 to save and exit.
+* 插入 USB 驱动器并重新启动系统。
+* 开机时，反复按相应的功能键进入BIOS。您的笔记本电脑型号的密钥可能不同。这是主要笔记本电脑品牌的参考。
+* 您应该禁用安全 BIOS 并确保将启动设备优先级设置为 U 盘。
+* 然后按 F10 保存并退出。
 
 | Laptop OEM | Function key to enter BIOS | 
 | :- | :- |
@@ -77,42 +87,46 @@ manage-bde -off E
 | Sony | F1, F2, or F3 | 
 | Toshiba | F2 |
 
-### 4. Install Linux Mint
+### 4. 安装 Linux Mint
 
-If all goes well, you should see a menu to install Linux Mint. Choose the option “Start Linux Mint…..”.
+如果一切顺利，您应该会看到一个安装 Linux Mint 的菜单。选择“启动 Linux Mint……”选项。
 
-![Figure 10: Linux Mint GRUB Menu to kick-off installation][12]
+![图 10：Linux Mint GRUB 菜单启动安装][12]
 
-* After a moment, you should see the Linux Mint Live desktop. In the desktop, you should see an icon to install Linux Mint to launch the installation.
-* In the next set of screens, choose your Language, Keyboard Layout, choose to install multimedia codecs and hit the continue button.
-* On the Installation Type window, select the Something Else option.
-* In the next window (Figure 11), carefully select the following:  * Under the device, select the partition you just created; You can identify it by the size I mentioned to note down earlier.  * Then click on Change, and on the edit partition window, select Ext4 as the file system, select the format the partition option and Mount point as /.  * Click OK. Then Choose the boot loader for your system; ideally, it should be the first entry in the drop-down list.  * Review the changes carefully. Because once you hit Install Now, your disk will be formatted, and there is no going back. Once you are comfortable, click on Install Now.
+* 片刻之后，您应该会看到 Linux Mint Live 桌面。在桌面上，您应该会看到一个安装 Linux Mint 的图标以启动安装。
+* 在下一组屏幕中，选择您的语言、键盘布局、选择安装多媒体编解码器并点击继续按钮。
+* 在安装类型窗口中，选择其他选项。
+* 在下一个窗口（图 11）中，仔细选择以下内容：
+* 在设备下，选择刚刚创建的分区；您可以通过我之前提到的要记下的尺寸来识别它。
+* 然后点击更改，在编辑分区窗口中，选择Ext4作为文件系统，选择格式化分区选项和挂载点为“/”。
+* 单击确定，然后为您的系统选择引导加载程序；理想情况下，它应该是下拉列表中的第一个条目。
+* 仔细检查更改。因为一旦您点击立即安装，您的磁盘将被格式化，并且无法恢复。当您认为一切准备就绪，请单击立即安装。
 
-![Figure 11: Choose the target partition to install Linux Mint with Windows 11][13]
+![图11：选择Windows 11安装Linux Mint的目标分区][13]
 
-In the following screens, select your location, enter your name and create a user id and password for login to the system. The installation should start (Figure 12).
+在以下屏幕中，选择您的位置，输入您的姓名并创建用于登录系统的用户 ID 和密码。安装应该开始（图 12）。
 
-Once the installation is complete (Figure 13), remove the USB stick and restart your system.
+安装完成后（图 13），取出 U 盘并重新启动系统。
 
-![Figure 12: Installation is in progress][14]
+![图12：安装中][14]
 
-![Figure 13: Installation is complete][15]
+![图13：安装完成][15]
 
-If all goes well, you should see the GRUB with Windows 11 and Linux Mint after the successful installation as a dual-boot system.
+如果一切顺利，在成功安装为双引导系统后，您应该会看到带有 Windows 11 和 Linux Mint 的 GRUB。
 
-Now you can proceed to use [Linux Mint][16] and experience the fast and excellent Linux distro.
+现在您可以继续使用 [Linux Mint][16] 并体验快速而出色的 Linux 发行版。
 
-### Wrapping Up
+### 总结
 
-In this tutorial, I have shown you how to create a simple dual boot system with Linux Mint in commercially available Laptops or desktops with OEM-installed Windows. The steps include partitioning, creating a bootable USB, formatting and installation.
+在本教程中，我向您展示了如何在装有 OEM 的 Windows 的笔记本电脑或台式机中使用 Linux Mint 创建一个简单的双启动系统。这些步骤包括分区、创建可引导 USB、格式化和安装。
 
-Although the above instructions are for Linux Mint 21 Vanessa; however, it should work fine with all other awesome [Linux Distributions][17] today.
+尽管上述说明适用于 Linux Mint 21 Vanessa；但是，它现在应该可以与所有其他出色的 [Linux 发行版][17] 一起正常工作。
 
-If you followed this guide, do let me know how your installation went in the comment box below.
+如果您遵循本指南，请在下面的评论框中告诉我您的安装情况。
 
-And if you are successful, welcome to the freedom!
+如果您成功了，欢迎来到自由！
 
-[Next: How to Install Java 17 in Ubuntu 22.04, 22.10, Linux Mint 21][18]
+[下一篇：如何在 Ubuntu 22.04、22.10、Linux Mint 21 中安装 Java 17][18]
 
 --------------------------------------------------------------------------------
 
@@ -120,7 +134,7 @@ via: https://www.debugpoint.com/linux-mint-install-windows/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[gpchn](https://github.com/gpchn)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
