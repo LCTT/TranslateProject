@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/a-project-for-an-open-source-3d-printed-vr-headgear-from-europe/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "zjsoftceo "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -31,7 +31,7 @@ via: https://www.opensourceforu.com/2022/09/a-project-for-an-open-source-3d-prin
 
 作者：[Laveesh Kocher][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zjsoftceo](https://github.com/zjsoftceo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
