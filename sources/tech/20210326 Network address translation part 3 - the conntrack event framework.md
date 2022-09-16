@@ -3,7 +3,6 @@
 [#]: author: (Florian Westphal https://fedoramagazine.org/author/strlen/)
 [#]: collector: (lujun9972)
 [#]: translator: ( )
-
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
