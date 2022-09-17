@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/platforms-that-help-deploy-ai-and-ml-applications-on-the-cloud/"
 [#]: author: "Dr Kumar Gaurav https://www.opensourceforu.com/author/dr-gaurav-kumar/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "misitebao"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -126,7 +126,7 @@ via: https://www.opensourceforu.com/2022/09/platforms-that-help-deploy-ai-and-ml
 
 作者：[Dr Kumar Gaurav][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Misite Bao](https://github.com/misitebao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
