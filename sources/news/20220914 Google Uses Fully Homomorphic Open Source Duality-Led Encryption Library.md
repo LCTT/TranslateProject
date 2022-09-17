@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/google-uses-fully-homomorphic-open-source-duality-led-encryption-library/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "littlebirdnest"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
