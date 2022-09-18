@@ -9,8 +9,6 @@
 
 20 Facts About Linus Torvalds, the Creator of Linux and Git
 ======
-Brief: Some known, some lesser known – here are 20 facts about the Linus Torvalds, creator of the Linux kernel.
-
 *Brief: Some known, some lesser known – here are 20 facts about the Linus Torvalds, creator of the Linux kernel.*
 
 ![Linus Torvalds, creator of Linux and Git][1]
