@@ -4,8 +4,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (MareDevi)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-15042-1.html)
 
 5 款可以吸引学生的有用的 Moodle 插件
 ======
