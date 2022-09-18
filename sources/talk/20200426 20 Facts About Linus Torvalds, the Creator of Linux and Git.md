@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/linus-torvalds-facts/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "gpchn"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
