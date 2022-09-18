@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/python-microservices-using-flask-on-kubernetes/"
 [#]: author: "Krishna Mohan Koyya https://www.opensourceforu.com/author/krishna-mohan-koyya/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
