@@ -8,37 +8,41 @@
 [#]: url: " "
 
 Boost the power of C with these open source libraries
+使用开源库提升 C 语言编程能力
 ======
+开源库 GObject 和 libsoup 已经做了很多工作，因此你可以专注于使用 C 语言开发神奇的应用。
 GObject and libsoup do a lot of work for you, so you can turn your attention to inventing amazing applications in C.
 
 ![Why and how to handle exceptions in Python Flask][1]
 （Image by: Image from Unsplash.com, Creative Commons Zero）
 
+[GLib Object System (GObject)][2] 为 C 语言提供了灵活可扩展的面向对象框架。在这篇文章中，我将使用该库的 2.4 版本进行演示。
 The [GLib Object System (GObject)][2] is a library providing a flexible and extensible object-oriented framework for C. In this article, I demonstrate using the 2.4 version of the library.
 
+GObject 库继承了 ANSI C 标准，拥有一些常见的数据类型，例如：
 The GObject libraries extend the ANSI C standard, with typedefs for common types such as:
 
-* gchar: a character type
-* guchar: an unsigned character type
-* gunichar: a fixed 32 bit width unichar type
-* gboolean: a boolean type
-* gint8, gint16, gint32, gint64: 8, 16, 32, and 64 bit integers
-* guint8, guint16, guint32, guint64: unsigned 8, 16, 32, and 64 bit integers
-* gfloat: an IEEE Standard 754 single precision floating point number
-* gdouble: an IEEE Standard 754 double precision floating point number
-* gpointer: a generic pointer type
+* gchar: 字符型
+* guchar: 无符号字符型
+* gunichar: 宽为 32 比特的 Unicode 字符型
+* gboolean: 布尔型
+* gint8, gint16, gint32, gint64: 8, 16, 32 和 64 比特有符号整数
+* guint8, guint16, guint32, guint64: 无符号 8, 16, 32 和 64 比特整数
+* gfloat: IEEE 754 标准单精度浮点数
+* gdouble: IEEE 754 标准 双精度浮点数
+* gpointer: 泛指针
 
-### Function pointers
+### 函数指针
 
-GObject also introduces a type and object system with classes and interfaces. This is possible because the ANSI C language understands function pointers.
+GObject 库还引入了类和接口的类型和对象体系。这是可能的，因为 ANSI C 语言理解函数指针。
 
-To declare a function pointer, you can do this:
+你可以这样做来声明函数指针：
 
 ```c
 void (*my_callback)(gpointer data);
 ```
 
-But first, you need to assign the `my_callback` variable:
+首先，你需要给变量 `my_callback` 赋值：
 
 ```c
 void my_callback_func(gpointer data)
@@ -49,7 +53,7 @@ void my_callback_func(gpointer data)
 my_callback = my_callback_func;
 ```
 
-The function pointer `my_callback` can be invoked like this:
+函数指针 `my_callback` 可以这样来调用：
 
 ```c
 gpointer data;
@@ -57,11 +61,11 @@ data = g_malloc(512 * sizeof(gint16));
 my_callback(data);
 ```
 
-### Object classes
+### 对象类
 
-The GObject base class consists of 2 structs (`GObject` and `GObjectClass` ) which you inherit to implement your very own objects.
+GObject 基类由 2 个结构（`GObject` 和 `GObjectClass`）组成，你可以继承它们以实现你自己的对象。
 
-You embed GObject and GObjectClass as the first struct field:
+你需要在结构体中先嵌入 `GObject` 和 `GObjectClass` ：
 
 ```c
 struct _MyObject
@@ -79,9 +83,9 @@ struct _MyObjectClass
 GType my_object_get_type(void);
 ```
 
-The object’s implementation contains fields, which might be exposed as properties. GObject provides a solution to private fields, too. This is actually a struct in the C source file, instead of the header file. The class usually contains function pointers only.
+对象的实现包含了公有成员（译注：理解为 `public` 修饰符）。GObject 也提供了私有成员的方法。这实际上是 C 源文件中的一个结构，而不是头文件。该类通常只包含函数指针。
 
-An interface can’t be derived from another interface and is implemented as following:
+一个接口不能派生自另一个接口，比如：
 
 ```c
 struct _MyInterface
@@ -111,7 +115,7 @@ g_object_set(gobject,
   NULL);
 ```
 
-### The libsoup HTTP library
+### libsoup HTTP 库
 
 The `libsoup` project provides an HTTP client and server library for GNOME. It uses GObjects and the glib main loop to integrate with GNOME applications, and also has a synchronous API for use in command-line tools. First, create a `libsoup` session with an authentication callback specified. You can also make use of cookies.
 
@@ -245,9 +249,9 @@ soup_server_listen_socket(soup_server,
   ip4_socket, 0, &error);
 ```
 
-In this example code, there are two callbacks. One handles authentication, and the other handles the request itself.
+示例代码中，有两个回调函数。一个处理身份认证，另一个处理对它的请求。
 
-Suppose you want a web server to allow a login with the credentials username **my-username** and the password **my-password**, and to set a session cookie with a random unique user ID (UUID) string.
+假设你想要网页服务器运行一个用户名为 **my-username** 和口令为 **my-password** 的用户登录，并且用一个随机独一用户 ID 字符串设置会话 cookie 。
 
 ```c
 gboolean my_xmlrpc_server_auth_callback(SoupAuthDomain *domain,
@@ -284,7 +288,7 @@ gboolean my_xmlrpc_server_auth_callback(SoupAuthDomain *domain,
 }
 ```
 
-A handler for the context path **my-xmlrpc**:
+对内容路径 **my-xmlrpc** 的处理函数：
 
 ```c
 void my_xmlrpc_server_callback(SoupServer *soup_server,
@@ -300,7 +304,7 @@ void my_xmlrpc_server_callback(SoupServer *soup_server,
 }
 ```
 
-### A more powerful C
+### 更加强大的 C 语言
 
 I hope my examples show how the GObject and libsoup projects give C a very real boost. Libraries like these extend C in a literal sense, and by doing so they make C more approachable. They do a lot of work for you, so you can turn your attention to inventing amazing applications in the simple, direct, and timeless C language.
 
