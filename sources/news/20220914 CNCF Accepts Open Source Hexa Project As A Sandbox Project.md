@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/cncf-accepts-open-source-hexa-project-as-a-sandbox-project/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "zjsoftceo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
