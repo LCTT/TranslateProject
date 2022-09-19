@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/penpot-figma-alternative/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "zjsoftceo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
