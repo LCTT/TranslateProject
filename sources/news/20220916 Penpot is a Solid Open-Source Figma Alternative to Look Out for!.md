@@ -7,60 +7,62 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Penpot is a Solid Open-Source Figma Alternative to Look Out for!
+一个值得关注的开源软件Penpot将成为Figma 可靠的替代品！
 ======
-Penpot is a free and open-source solution as an alternative to Figma and similar design tools. What do you think?
+Penpot 是一个免费的开源解决方案，能够替代 Figma 或类似的设计工具。你怎么看？
 
 ![Penpot is a Solid Open-Source Figma Alternative to Look Out for!][1]
 
-Adobe is acquiring the popular design tool [Figma][2] for a whopping **$20 billion**.
+Adobe以高达**200 亿美元的价格收购了流行的设计工具**[Figma](https://www.figma.com/)。
 
-As usual, it is the big tech eliminating the competition by acquiring businesses. So, not entirely a piece of exciting news.
+像往常一样，大型科技公司通过收购企业来消除竞争。因此，这并不完全是一个令人兴奋的消息。
 
-But, **what's exciting** is we came across a free and open-source design tool that gets its inspiration from Figma and does a few things better!
+但是，**令人兴奋**的是，我们遇到了一个免费的开源设计工具，它从 Figma 中获得灵感并且做得更好！
 
-### Penpot: Free & Open-Source Design Tool in Development
+### **Penpot：开发中的免费和开源设计工具**
+
+### Penpot：开发中的免费和开源设计工具
 
 ![Penpot UI][3]
 
-[Penpot][4] is an open-source project in active development. It is in its beta phase following its launch on [ProductHunt][5] nearly two years ago.
+[Penpot][4] Penpot是一个正在积极开发的开源项目。近两年前它处于测试阶段时就在ProductHunt上发布。
 
-**Here's what makes Penpot interesting:**
+**Penpot 的有趣之处在于：**
 
-* Free and open-source (of course).
-* Option to Self-host.
-* Cross-platform.
-* Using SVG as the native format.
-* Web-based.
-* Featuring industry-standard features (inspired by Figma).
+- 免费和开源（顾名思义）。
+- 自托管选项。
+- 跨平台。
+- 使用 SVG 作为原生格式。
+- 基于网络。
+- 具有行业标准功能（受 Figma 启发）。
 
-You can watch its official video to know the basics of it:
+您可以观看其官方视频以了解其基础知识：
 
 ![Penpot for Beginners][6]
 
-The major highlight of Penpot is the use of SVG as its native format. With SVG files, you get compatibility with many vector graphics editing tools.
+Penpot 的主要亮点是使用 SVG 作为其原生格式。使用 SVG 文件，您可以获得与许多矢量图形编辑工具很好的兼容性。
 
-So you do not get locked down with a proprietary file format that can be accessed using a particular application.
+因此，您保存下来的文件，同样可以被其他的图片编辑软件打开，而不会被其专有的格式，锁在专门的软件上。
 
-Penpot gives you the absolute best of open standards.
+Penpot 为您提供绝对最佳的开放标准。
 
-The **CEO of Penpot,***Pablo Ruiz-Múzquiz*, mentions more about it:
+* Penpot 的 CEO，** *Pablo Ruiz-Múzquiz*提到了更多：
 
-So, using SVG as the native format has a lot of advantages!
+所以，使用 SVG 作为原生格式有很多优势！
 
-At the moment, the project is in its beta stage and constantly improving with plenty of skilled contributors in the project.
+目前，该项目处于测试阶段，且在项目中有大量熟练的贡献者不断改进。
 
-**This can turn out to be the most useful open-source alternative to Figma, breaking out of big tech for design tools.**
+**这可以证明是 Figma 最有用的开源替代品，突破了设计工具的大技术。**
 
-You can self-host it or use the cloud app to test it out. Sign up at its official website to learn and experiment with it.
+您可以自行托管它或使用云应用程序对其进行测试。在其官方网站上注册以学习和试验它。
 
-You can also check out its [GitHub page][7] to explore more.
+您还可以查看其[GitHub 页面](https://github.com/penpot/penpot)以探索更多信息。
 
-[Penpot][8]
+[Penpot](https://penpot.app/)
 
-This also reminds me of [Akira][9], which aimed to be a native Linux app for UI and UX design. It is still in its early development stage, but such efforts are always appreciated when it involves Linux or the open-source initiative.
+这也让我想起了[Akira](https://github.com/akiraux/Akira)，它的目标是成为一个用于 UI 和 UX 设计的原生 Linux 应用程序。它仍处于早期开发阶段，但当涉及 Linux 或开源计划时，这种努力总是受到赞赏。
 
-*💬 What do you think about Penpot as an open-source alternative to Figma?*
+*💬你如何看待 Penpot 作为 Figma 的开源替代品？*
 
 --------------------------------------------------------------------------------
 
@@ -68,7 +70,7 @@ via: https://news.itsfoss.com/penpot-figma-alternative/
 
 作者：[Ankush Das][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[littlebirdnest](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
