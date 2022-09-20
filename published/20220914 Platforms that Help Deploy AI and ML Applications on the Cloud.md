@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "misitebao"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15050-1.html"
 
 帮助在云端部署 AI 和 ML 应用程序的平台
 ======
