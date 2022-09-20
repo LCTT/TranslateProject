@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/komikku-manga-reader/"
 [#]: author: "Anuj Sharma https://itsfoss.com/author/anuj/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
