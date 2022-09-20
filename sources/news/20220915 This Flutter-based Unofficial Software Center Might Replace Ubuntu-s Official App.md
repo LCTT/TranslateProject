@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/unofficial-flutter-ubuntu-software/"
 [#]: author: "Sagar Sharma https://news.itsfoss.com/author/sagar/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "littlebirdnest"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
