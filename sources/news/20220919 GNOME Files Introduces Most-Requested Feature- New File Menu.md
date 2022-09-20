@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/gnome-files-new-file-document/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "littlebirdnest"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
