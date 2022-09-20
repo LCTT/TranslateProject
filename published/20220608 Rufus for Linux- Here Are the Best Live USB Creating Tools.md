@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "alfred-hong"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15052-1.html"
 
 U 盘启动盘创建工具 Rufus 在 Linux 上不能使用？这里有 6 个替代品
 ======
