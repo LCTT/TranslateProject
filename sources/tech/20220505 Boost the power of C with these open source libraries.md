@@ -7,20 +7,16 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Boost the power of C with these open source libraries
 使用开源库提升 C 语言编程能力
 ======
 开源库 GObject 和 libsoup 已经做了很多工作，因此你可以专注于使用 C 语言开发神奇的应用。
-GObject and libsoup do a lot of work for you, so you can turn your attention to inventing amazing applications in C.
 
 ![Why and how to handle exceptions in Python Flask][1]
-（Image by: Image from Unsplash.com, Creative Commons Zero）
+（图源: Unsplash.com, Creative Commons Zero）
 
-[GLib Object System (GObject)][2] 为 C 语言提供了灵活可扩展的面向对象框架。在这篇文章中，我将使用该库的 2.4 版本进行演示。
-The [GLib Object System (GObject)][2] is a library providing a flexible and extensible object-oriented framework for C. In this article, I demonstrate using the 2.4 version of the library.
+[GLib Object System (GObject)][2] 是为 C 语言提供了灵活且可扩展的面向对象框架的库。在这篇文章中，我将使用该库的 2.4 版本进行演示。
 
 GObject 库继承了 ANSI C 标准，拥有一些常见的数据类型，例如：
-The GObject libraries extend the ANSI C standard, with typedefs for common types such as:
 
 * gchar: 字符型
 * guchar: 无符号字符型
@@ -83,7 +79,7 @@ struct _MyObjectClass
 GType my_object_get_type(void);
 ```
 
-对象的实现包含了公有成员（译注：理解为 `public` 修饰符）。GObject 也提供了私有成员的方法。这实际上是 C 源文件中的一个结构，而不是头文件。该类通常只包含函数指针。
+对象的实现包含了公有成员。GObject 也提供了私有成员的方法。这实际上是 C 源文件中的一个结构，而不是头文件。该类通常只包含函数指针。
 
 一个接口不能派生自另一个接口，比如：
 
@@ -95,7 +91,7 @@ struct _MyInterface
 };
 ```
 
-Properties are accessed by `g_object_get()` and `g_object_set()` function calls. To get a property, you must provide the return location of the specific type. It’s recommended that you initialize the return location first:
+通过调用 `g_object_get()` 和 `g_object_set()` 函数来访问属性。若要获取属性，你必须提供特定类型的返回位置。建议先初始化返回位置：
 
 ```c
 gchar *str
@@ -107,7 +103,7 @@ g_object_get(gobject,
   NULL);
 ```
 
-Or you might want to set the property:
+或者你想要设置属性：
 
 ```c
 g_object_set(gobject,
@@ -135,7 +131,7 @@ g_signal_connect(soup_session, "authenticate",
   G_CALLBACK(my_authenticate_callback), NULL);
 ```
 
-Then you can create a HTTP GET request like the following:
+然后你可以像这样创建一个 HTTP GET 请求：
 
 ```c
 SoupMessage *msg;
@@ -180,9 +176,10 @@ if(status == 200){
 }
 ```
 
-The authentication callback is called as the web server asks for authentication.
+当网络服务器进行身份认证时，会调用身份认证回调函数。
 
-Here’s a function signature:
+这是一个函数签名：
+
 
 ```c
 #define MY_AUTHENTICATE_LOGIN "my-username"
@@ -201,11 +198,11 @@ void my_authenticate_callback(SoupSession *session,
 }
 ```
 
-### A libsoup server
+### 一个 libsoup 服务器
 
-For basic HTTP authentication to work, you must specify a callback and server context path. Then you add a handler with another callback.
+想要基础的 HTTP 身份认证能够运行，你需要指定回调函数和服务器内容路径。然后你添加一个带有另一个回调的处理程序。
 
-This example listens to any IPv4 address on localhost port 8080:
+下面这个例子展示了于 8080 端口监听任何 IPv4 地址的消息：
 
 ```c
 SoupServer *soup_server;
