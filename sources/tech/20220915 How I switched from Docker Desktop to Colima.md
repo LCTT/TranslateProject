@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/docker-desktop-colima"
 [#]: author: "Michael Anello https://opensource.com/users/ultimike"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
