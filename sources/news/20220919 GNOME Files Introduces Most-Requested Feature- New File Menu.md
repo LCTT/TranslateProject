@@ -7,65 +7,62 @@
 [#]: publisher: " "
 [#]: url: " "
 
-GNOME Files Introduces Most-Requested Feature: New File Menu
+GNOME 文件引入最受欢迎的功能：新文件菜单
 ======
-Here’s the “new file” feature in GNOME Files which gives you a new way of creating documents and files. Have a look.
+这是 GNOME Files 中的“新文件”功能，它为您提供了一种创建文档和文件的新方法。看一看。
 
-No more tweaking in the backend. The most anticipated feature of creating a new document / new files via the context menu in Files (aka Nautilus) finally arrives.
+无需在后端进行更多调整。通过文件（又名 Nautilus）中的上下文菜单创建新文档/新文件的最令人期待的功能终于到来了。
 
-Developed as part of the [Google Summer of Code 2022][1] (by Ignacy Kuchciński), the change was recently reviewed and merged into the main branch of Files.
+作为[Google Summer of Code 2022](https://debugpointnews.com/gsoc-2022/)的一部分（由 Ignacy Kuchciński 开发），该更改最近经过审查并合并到 Files 的主要分支中。
 
-### How it looks
+### 它看起来如何
 
-When you right-click on the Files, the context menu has a new option, “New File”.
+当您右键单击文件时，上下文菜单有一个新选项“新建文件”。
 
 ![New File Option in Files Context Menu][2]
 
-The GNOME Files New File option launches an action window, as shown in the below image.
+GNOME Files 中的 New File 选项启动一个操作窗口，如下图所示。
 
 ![GNOME Files New File Action Dialog][3]
 
-A couple of things happen behind the scenes when it launches the above dialog box.
+当它启动上述对话框时，会在后台发生一些事情。
 
-You are probably aware that you can create a “Template” folder with templates in your Home directory to easily access commonly used document types. So, Files checks whether you have a Template directory.
+您可能知道您可以在主目录中创建一个带有模板的“模板”文件夹，以便轻松访问常用的文档类型。因此，文件检查您是否有模板目录。
 
-If a template directory with templates is present, you get a list of those document types to create a new document.
+如果当前存在一个带有模板的模板目录，您能通过一个文档类型的列表以创建新文档。
 
 ![GNOME Files New File Template Dialog (when some templates present)][4]
 
-And if you don’t have any templates (which is likely), Files scans your system and shows a list of common file types based on the installed applications in your system.
+如果您没有任何模板（很可能），文件会扫描您的系统并根据系统中已安装的应用程序显示常见文件类型的列表。
 
-For example, Text editor, LibreOffice document types – Spreadsheets, presentations, etc.
+例如，文本编辑器、LibreOffice 文档类型——电子表格、演示文稿等。
 
-Some other things happen here. The file extension is selected by default when you choose a file type for a New document. That’s a protected label on the file name text box.
+这里还发生了一些其他事情。当您选择新文档为文件类型时，系统会选择默认的文件扩展名。这是文件名文本框中的受保护标签。
 
-Moreover, if you don’t have any templates or any applications installed, then the Files New Document menu option is not shown at all!
+此外，如果您没有安装任何模板或任何应用程序，则根本不会显示 Files New Document 菜单选项！
 
-### Future Roadmap
+### 未来路线图
+开发人员还提出了未来对该功能的增强，更大程度地扩展其功能。
 
-The developer also proposed a future enhancement of this feature, extending its functionality to a greater extent.
+当没有可用的模板时，对话框将如下所示。它将允许您通过选择应用程序来创建文件，包括空白文件。
 
-When no template is available, the dialog will look like the one below. It will allow you to create files by selecting the applications, including blank files.
+此外，您可以直接启动软件来安装一些可以帮助您创建相应文件类型的应用程序。
 
-In addition, you can directly launch Software to install some applications which can help you create those respective file types.
+由于这个功能比较复杂，以后可能会开发。目前还没有时间表。
 
-![Long term vision with additional features (Image Credit: GNOEM Team)][5]
+### 这在文件 43 中可用（通过 GNOME 43）吗？
 
-Since this feature is more complex, it may be developed later. There is no timeline as of now.
+但是，在我看来，这种变化需要一些额外的设计审查。我觉得它不完整。例如，当您有模板时，您无法创建标准文档类型（文本、LibreOffice 文档）——这两个对话框是互斥的。另外，我发现了一些小BUG。
 
-### Is this available in Files 43 (via GNOME 43)?
+尽管该功能目前[已获得批准和合并](https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/914)，但由于日程冲突，它无法进入[GNOME 43候选版本。](https://www.debugpoint.com/gnome-43/)
 
-However, this change requires some additional design review, in my opinion. I feel it’s not complete. For example, when you have templates, you can not create the standard document types (for text, LibreOffice docs) – those two dialog are mutually exclusive. Also, there are some minor bugs which I find.
+希望在经过一轮良好的审查和测试后，您可以在明年的 GNOME 44 版本中获得此功能。
 
-Although the feature is [approved and merged][6] at the moment, it could not make it to the [GNOME 43][7] release candidate due to schedule conflicts.
+### 总结
 
-Hopefully, you can get this in GNOME 44 release next year after a good round of review and testing.
+总的来说，这是一个优雅的功能，我认为今天没有任何其他文件管理器具有这种先进的设计。一旦这个 FIles New 文档功能被完全实现，它将会是其出色功能集的一个很好的补充。
 
-### Wrapping Up
-
-Overall, it’s an elegant feature, and I don’t think any other File manager has this advanced design today. Once this FIles New document feature is implemented entirely, it would a nice addition to its excellent set of features.
-
-So, do you like this new design? Do let me know in the comment box.
+那么，你喜欢这个新设计吗？请在评论框中告诉我。
 
 --------------------------------------------------------------------------------
 
@@ -73,7 +70,7 @@ via: https://www.debugpoint.com/gnome-files-new-file-document/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[littlebirdnest](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
