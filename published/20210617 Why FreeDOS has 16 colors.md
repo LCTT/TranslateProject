@@ -58,14 +58,14 @@ IBM 工程师意识到他们可以通过混合红色、绿色和蓝色像素来�
 
 | 颜色 | 代码 | 名称 |
 | --- | --- | --- | 
-| <section style="background-color:black;">&nbsp;</section> | 000 | 黑 |
-| <section style="background-color:blue;">&nbsp;</section> | 001 | 蓝 |
-| <section style="background-color:green;">&nbsp;</section> | 010 | 绿 |
-| <section style="background-color:cyan;">&nbsp;</section> | 011 | 青 |
-| <section style="background-color:red;">&nbsp;</section> | 100 | 红 |
-| <section style="background-color:magenta;">&nbsp;</section> | 101 | 洋红 |
-| <section style="background-color:yellow;">&nbsp;</section> | 110 | 黄 |
-| <section style="background-color:white;">&nbsp;</section> | 111 | 白 |
+| <span style="background-color:black;">　</span> | 000 | 黑 |
+| <span style="background-color:blue;">　</span> | 001 | 蓝 |
+| <span style="background-color:green;">　</span> | 010 | 绿 |
+| <span style="background-color:cyan;">　</span> | 011 | 青 |
+| <span style="background-color:red;">　</span> | 100 | 红 |
+| <span style="background-color:magenta;">　</span> | 101 | 洋红 |
+| <span style="background-color:yellow;">　</span> | 110 | 黄 |
+| <span style="background-color:white;">　</span> | 111 | 白 |
 
 但这只是最简单的情况。一位特别聪明的 IBM 工程师意识到，只需再添加一点，你就可以将颜色数量从 8 种颜色增加到 16 种。因此，我们可以使用像 iRGB 这样的位模式，而不是像 RGB 这样的位模式。我们将把这个额外的“i”位称为“强度”位，因为如果我们将“强度”位设置为 1（开），那么我们将在全亮度下点亮红色、绿色和蓝色；如果“强度”位为 0（关闭），我们可以使用一些中级亮度。
 
@@ -73,14 +73,14 @@ IBM 工程师意识到他们可以通过混合红色、绿色和蓝色像素来�
 
 | 颜色 | 代码 | 名称 | 颜色 | 代码 | 名称 |
 | :----: | :----: | :----: | :----: | :----: | :----: |
-| <section style="background-color:#000;">&nbsp;</section> | 0000 | 黑 | <section style="background-color:#000;">&nbsp;</section> | 1000 | 亮黑 |
-| <section style="background-color:#007;">&nbsp;</section> | 0001 | 蓝 | <section style="background-color:#00F;">&nbsp;</section> | 1001 | 亮蓝 |
-| <section style="background-color:#070;">&nbsp;</section> | 0010 | 绿 | <section style="background-color:#0F0;">&nbsp;</section> | 1010 | 亮绿 |
-| <section style="background-color:#077;">&nbsp;</section> | 0011 | 青 | <section style="background-color:#0FF;">&nbsp;</section> | 1011 | 亮青 |
-| <section style="background-color:#700;">&nbsp;</section> | 0100 | 红 | <section style="background-color:#F00;">&nbsp;</section> | 1100 | 亮红 |
-| <section style="background-color:#707;">&nbsp;</section> | 0101 | 洋红 | <section style="background-color:#F0F;">&nbsp;</section> | 1101 | 亮洋红 |
-| <section style="background-color:#770;">&nbsp;</section> | 0110 | 黄 | <section style="background-color:#FF0;">&nbsp;</section> | 1110 | 亮黄 |
-| <section style="background-color:#777;">&nbsp;</section> | 0111 | 白 | <section style="background-color:#FFF;">&nbsp;</section> | 1111 | 亮白 |
+| <span style="background-color:#000;">　</span> | 0000 | 黑 | <span style="background-color:#000;">　</span> | 1000 | 亮黑 |
+| <span style="background-color:#007;">　</span> | 0001 | 蓝 | <span style="background-color:#00F;">　</span> | 1001 | 亮蓝 |
+| <span style="background-color:#070;">　</span> | 0010 | 绿 | <span style="background-color:#0F0;">　</span> | 1010 | 亮绿 |
+| <span style="background-color:#077;">　</span> | 0011 | 青 | <span style="background-color:#0FF;">　</span> | 1011 | 亮青 |
+| <span style="background-color:#700;">　</span> | 0100 | 红 | <span style="background-color:#F00;">　</span> | 1100 | 亮红 |
+| <span style="background-color:#707;">　</span> | 0101 | 洋红 | <span style="background-color:#F0F;">　</span> | 1101 | 亮洋红 |
+| <span style="background-color:#770;">　</span> | 0110 | 黄 | <span style="background-color:#FF0;">　</span> | 1110 | 亮黄 |
+| <span style="background-color:#777;">　</span> | 0111 | 白 | <span style="background-color:#FFF;">　</span> | 1111 | 亮白 |
 
 哦不，等等！这实际上不是十六种颜色。如果你注意到 iRGB=0000（黑色）和 iRGB=1000（亮黑色），它们都是相同的 _黑色_。没有颜色可以“亮”，所以它们都是普通的黑色。这意味着我们只有 15 种颜色，而不是我们希望的 16 种颜色。
 
@@ -90,14 +90,14 @@ IBM 工程师意识到他们可以通过混合红色、绿色和蓝色像素来�
 
 | 颜色 | 代码 | 名称 | 颜色 | 代码 | 名称 |
 | :----: | :----: | :----: | :----: | :----: | :----: |
-| <section style="background-color:#000;">&nbsp;</section> | 0000 | 黑 | <section style="background-color:#555;">&nbsp;</section> | 1000 | 亮黑 |
-| <section style="background-color:#00A;">&nbsp;</section> | 0001 | 蓝 | <section style="background-color:#55F;">&nbsp;</section> | 1001 | 亮蓝 |
-| <section style="background-color:#0A0;">&nbsp;</section> | 0010 | 绿 | <section style="background-color:#5F5;">&nbsp;</section> | 1010 | 亮绿 |
-| <section style="background-color:#0AA;">&nbsp;</section> | 0011 | 青 | <section style="background-color:#5FF;">&nbsp;</section> | 1011 | 亮青 |
-| <section style="background-color:#A00;">&nbsp;</section> | 0100 | 红 | <section style="background-color:#F55;">&nbsp;</section> | 1100 | 亮红 |
-| <section style="background-color:#A0A;">&nbsp;</section> | 0101 | 洋红 | <section style="background-color:#F5F;">&nbsp;</section> | 1101 | 亮洋红 |
-| <section style="background-color:#AA0;">&nbsp;</section> | 0110 | 黄 | <section style="background-color:#FF5;">&nbsp;</section> | 1110 | 亮黄 |
-| <section style="background-color:#AAA;">&nbsp;</section> | 0111 | 白 | <section style="background-color:#FFF;">&nbsp;</section> | 1111 | 亮白 |
+| <span style="background-color:#000;">　</span> | 0000 | 黑 | <span style="background-color:#555;">　</span> | 1000 | 亮黑 |
+| <span style="background-color:#00A;">　</span> | 0001 | 蓝 | <span style="background-color:#55F;">　</span> | 1001 | 亮蓝 |
+| <span style="background-color:#0A0;">　</span> | 0010 | 绿 | <span style="background-color:#5F5;">　</span> | 1010 | 亮绿 |
+| <span style="background-color:#0AA;">　</span> | 0011 | 青 | <span style="background-color:#5FF;">　</span> | 1011 | 亮青 |
+| <span style="background-color:#A00;">　</span> | 0100 | 红 | <span style="background-color:#F55;">　</span> | 1100 | 亮红 |
+| <span style="background-color:#A0A;">　</span> | 0101 | 洋红 | <span style="background-color:#F5F;">　</span> | 1101 | 亮洋红 |
+| <span style="background-color:#AA0;">　</span> | 0110 | 黄 | <span style="background-color:#FF5;">　</span> | 1110 | 亮黄 |
+| <span style="background-color:#AAA;">　</span> | 0111 | 白 | <span style="background-color:#FFF;">　</span> | 1111 | 亮白 |
 
 有了这些颜色，我们终于完成了！我们拥有从 iRGB=0000（黑色）到 iRGB=1111（亮白色）以及介于两者之间的所有颜色的全光谱。就像彩虹般的颜色，这很漂亮。
 
@@ -111,14 +111,14 @@ IBM 工程师意识到他们可以通过混合红色、绿色和蓝色像素来�
 
 | 颜色 | 代码 | 名称 | 颜色 | 代码 | 名称 |
 | :----: | :----: | :----: | :----: | :----: | :----: |
-| <section style="background-color:#000;">&nbsp;</section> | 0000 | 黑 | <section style="background-color:#555;">&nbsp;</section> | 1000 | 亮黑 |
-| <section style="background-color:#00A;">&nbsp;</section> | 0001 | 蓝 | <section style="background-color:#55F;">&nbsp;</section> | 1001 | 亮蓝 |
-| <section style="background-color:#0A0;">&nbsp;</section> | 0010 | 绿 | <section style="background-color:#5F5;">&nbsp;</section> | 1010 | 亮绿 |
-| <section style="background-color:#0AA;">&nbsp;</section> | 0011 | 青 | <section style="background-color:#5FF;">&nbsp;</section> | 1011 | 亮青 |
-| <section style="background-color:#A00;">&nbsp;</section> | 0100 | 红 | <section style="background-color:#F55;">&nbsp;</section> | 1100 | 亮红 |
-| <section style="background-color:#A0A;">&nbsp;</section> | 0101 | 洋红 | <section style="background-color:#F5F;">&nbsp;</section> | 1101 | 亮洋红 |
-| <section style="background-color:#A50;">&nbsp;</section> | **0110** | **棕** | <section style="background-color:#FF5;">&nbsp;</section> | 1110 | 黄 |
-| <section style="background-color:#AAA;">&nbsp;</section> | 0111 | 白 | <section style="background-color:#FFF;">&nbsp;</section> | 1111 | 亮白 |
+| <span style="background-color:#000;">　</span> | 0000 | 黑 | <span style="background-color:#555;">　</span> | 1000 | 亮黑 |
+| <span style="background-color:#00A;">　</span> | 0001 | 蓝 | <span style="background-color:#55F;">　</span> | 1001 | 亮蓝 |
+| <span style="background-color:#0A0;">　</span> | 0010 | 绿 | <span style="background-color:#5F5;">　</span> | 1010 | 亮绿 |
+| <span style="background-color:#0AA;">　</span> | 0011 | 青 | <span style="background-color:#5FF;">　</span> | 1011 | 亮青 |
+| <span style="background-color:#A00;">　</span> | 0100 | 红 | <span style="background-color:#F55;">　</span> | 1100 | 亮红 |
+| <span style="background-color:#A0A;">　</span> | 0101 | 洋红 | <span style="background-color:#F5F;">　</span> | 1101 | 亮洋红 |
+| <span style="background-color:#A50;">　</span> | **0110** | **棕** | <span style="background-color:#FF5;">　</span> | 1110 | 黄 |
+| <span style="background-color:#AAA;">　</span> | 0111 | 白 | <span style="background-color:#FFF;">　</span> | 1111 | 亮白 |
 
 这就是 CGA 以及扩展的 DOS 获得十六种颜色的方式！如果你好奇，这也是为什么会有“亮黑色”的原因，即使它只是一种灰色阴影。
 
