@@ -113,7 +113,7 @@ g_object_set(gobject,
 
 ### libsoup HTTP 库
 
-The `libsoup` project provides an HTTP client and server library for GNOME. It uses GObjects and the glib main loop to integrate with GNOME applications, and also has a synchronous API for use in command-line tools. First, create a `libsoup` session with an authentication callback specified. You can also make use of cookies.
+`libsoup` 项目为 GNOME 提供了 HTTP 客服端和服务端使用的库。它使用 GObjects 和 glib 主循环与 GNOME 应用融合，并且还具有用于命令行的同步 API。首先，创建一个特定身份验证回调的 `libsoup` 会话。你也可以使用 cookie。
 
 ```c
 SoupSession *soup_session;
@@ -200,9 +200,9 @@ void my_authenticate_callback(SoupSession *session,
 
 ### 一个 libsoup 服务器
 
-想要基础的 HTTP 身份认证能够运行，你需要指定回调函数和服务器内容路径。然后你添加一个带有另一个回调的处理程序。
+想要基础的 HTTP 身份认证能够运行，你需要指定回调函数和服务器内容路径。然后再添加一个带有另一个回调的处理程序。
 
-下面这个例子展示了于 8080 端口监听任何 IPv4 地址的消息：
+下面这个例子展示了在 8080 端口监听任何 IPv4 地址的消息：
 
 ```c
 SoupServer *soup_server;
@@ -248,7 +248,7 @@ soup_server_listen_socket(soup_server,
 
 示例代码中，有两个回调函数。一个处理身份认证，另一个处理对它的请求。
 
-假设你想要网页服务器运行一个用户名为 **my-username** 和口令为 **my-password** 的用户登录，并且用一个随机独一用户 ID 字符串设置会话 cookie 。
+假设你想要网页服务器运行一个用户名为 **my-username** 和口令为 **my-password** 的用户登录，并且用一个随机且唯一的用户 ID 字符串设置会话 cookie。
 
 ```c
 gboolean my_xmlrpc_server_auth_callback(SoupAuthDomain *domain,
@@ -285,7 +285,7 @@ gboolean my_xmlrpc_server_auth_callback(SoupAuthDomain *domain,
 }
 ```
 
-对内容路径 **my-xmlrpc** 的处理函数：
+对内容路径 **my-xmlrpc** 进行处理的函数：
 
 ```c
 void my_xmlrpc_server_callback(SoupServer *soup_server,
@@ -303,7 +303,7 @@ void my_xmlrpc_server_callback(SoupServer *soup_server,
 
 ### 更加强大的 C 语言
 
-I hope my examples show how the GObject and libsoup projects give C a very real boost. Libraries like these extend C in a literal sense, and by doing so they make C more approachable. They do a lot of work for you, so you can turn your attention to inventing amazing applications in the simple, direct, and timeless C language.
+希望我的示例展现了 GObject 和 libsoup 项目给 C 语言带来了真正的提升。像这样在字面意义上扩展 C 语言，可以使 C 语言更易于使用。他们已经为你做了许多工作，这样你可以专注于用 C 语言开发简单、直接的应用程序了。
 
 --------------------------------------------------------------------------------
 
