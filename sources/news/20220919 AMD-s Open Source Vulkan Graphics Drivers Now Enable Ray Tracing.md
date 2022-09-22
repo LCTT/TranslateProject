@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/amds-open-source-vulkan-graphics-drivers-now-enable-ray-tracing/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "littlebirdnest"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
