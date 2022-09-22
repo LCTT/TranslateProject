@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/libreoffice-mac-os-store/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "cool-summer-021"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
