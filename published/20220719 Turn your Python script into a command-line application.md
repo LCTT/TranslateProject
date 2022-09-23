@@ -3,21 +3,20 @@
 [#]: author: "Mark Meyer https://opensource.com/users/ofosos"
 [#]: collector: "lkxed"
 [#]: translator: "MjSeven"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15061-1.html"
 
 将你的 Python 脚本转换为命令行程序
 ======
-使用 Python 中的 scaffold 和 click 库，你可以将一个简单的实用程序升级为一个成熟的命令行界面工具。
 
-![Python 吉祥物和 Linux 的吉祥物企鹅][1]
+> 使用 Python 中的 `scaffold` 和 `click` 库，你可以将一个简单的实用程序升级为一个成熟的命令行界面工具。
 
-Image by: Opensource.com
+![](https://img.linux.net.cn/data/attachment/album/202209/23/093712jyayyed8x7d8d8yd.jpg)
 
-在我的职业生涯中，我写过、用过和看到过很多松散的脚本。一些人需要半自动化的任务，于是它们诞生了。一段时间后，它们变得越来越大。它们在一生中可能转手很多次。我常常希望这些脚本提供更多的命令行**类似工具**的感觉。但是，从一次性脚本到合适的工具，真正提高质量水平有多难呢？事实证明这在 Python 中并不难。
+在我的职业生涯中，我写过、用过和看到过很多随意的脚本。一些人需要半自动化完成任务，于是它们诞生了。一段时间后，它们变得越来越大。它们在一生中可能转手很多次。我常常希望这些脚本提供更多的**命令行工具式**的感觉。但是，从一次性脚本到合适的工具，真正提高质量水平有多难呢？事实证明这在 Python 中并不难。
 
-### Scaffolding
+### 搭建骨架脚本
 
 在本文中，我将从一小段 Python 代码开始。我将把它应用到 `scaffold` 模块中，并使用 `click` 库扩展它以接受命令行参数。
 
@@ -68,7 +67,7 @@ if __name__ == '__main__':
     rotoscope()
 ```
 
-本文的所有非内联代码示例，你都可以在 [https://codeberg.org/ofosos/rotoscope][2] 中找到特定版本的代码。该仓库中的每个提交都描述了本文操作过程中一些有意义的步骤。
+本文所有没有在这里插入显示的代码示例，你都可以在 [https://codeberg.org/ofosos/rotoscope][2] 中找到特定版本的代码。该仓库中的每个提交都描述了本文操作过程中一些有意义的步骤。
 
 这个片段做了几件事：
 
@@ -78,7 +77,7 @@ if __name__ == '__main__':
 
 作为一个示例，它很简单，但它会让你理解这个过程。
 
-### 使用 pyscaffold 创建应用程序
+### 使用 Pyscaffold 创建应用程序
 
 首先，你需要安装 `scaffold`、`click` 和 `tox` [Python 库][3]。
 
@@ -86,14 +85,14 @@ if __name__ == '__main__':
 $ python3 -m pip install scaffold click tox
 ```
 
-安装 `scaffold` 后，切换到示例 `rotoscope` 项目所在的目录，然后执行以下命令：
+安装 `scaffold` 后，切换到示例的 `rotoscope` 项目所在的目录，然后执行以下命令：
 
 ```
 $ putup rotoscope -p rotoscope \
---force --no-skeleton -n rotoscope \
--d 'Move some files around.' -l GLWT \
--u http://codeberg.org/ofosos/rotoscope \
---save-config --pre-commit --markdown
+    --force --no-skeleton -n rotoscope \
+    -d 'Move some files around.' -l GLWT \
+    -u http://codeberg.org/ofosos/rotoscope \
+    --save-config --pre-commit --markdown
 ```
 
 Pyscaffold 会重写我的 `README.md`，所以从 Git 恢复它：
@@ -102,17 +101,13 @@ Pyscaffold 会重写我的 `README.md`，所以从 Git 恢复它：
 $ git checkout README.md
 ```
 
-Pyscaffold 在文档中说明了如何设置一个完整的示例项目，我不会在这里介绍，你之后可以探索。除此之外，Pyscaffold 还可以在项目中为你提供持续集成（CI）模板。
+Pyscaffold 在文档中说明了如何设置一个完整的示例项目，我不会在这里介绍，你之后可以探索。除此之外，Pyscaffold 还可以在项目中为你提供持续集成（CI）模板：
 
 * 打包: 你的项目现在启用了 PyPi，所以你可以将其上传到一个仓库并从那里安装它。
-
 * 文档: 你的项目现在有了一个完整的文档文件夹层次结构，它基于 Sphinx，包括一个 readthedocs.org 构建器。
-
 * 测试: 你的项目现在可以与 tox 一起使用，测试文件夹包含运行基于 pytest 的测试所需的所有样板文件。
-
 * 依赖管理: 打包和测试基础结构都需要一种管理依赖关系的方法。`setup.cfg` 文件解决了这个问题，它包含所有依赖项。
-
-* 预提交钩子: 包含 Python 源代码格式工具 "black" 和 Python 风格检查器 "flake8"。
+* 预提交钩子: 包括 Python 源代码格式工具 black 和 Python 风格检查器 flake8。
 
 查看测试文件夹并在项目目录中运行 `tox` 命令，它会立即输出一个错误：打包基础设施无法找到相关库。
 
@@ -133,11 +128,11 @@ console_scripts =
 
 就是这样，你可以从 Pyscaffold 免费获得所有打包、测试和文档设置。你还获得了一个预提交钩子来保证（大部分情况下）你按照设定规则提交。
 
-### CLI 工具
+### CLI 工具化
 
-现在，一些值会硬编码到脚本中，它们作为命令[参数][4]会更方便。例如，将 `INCOMING` 常量作为命令行参数会更好。
+现在，一些值会硬编码到脚本中，它们作为命令 [参数][4] 会更方便。例如，将 `INCOMING` 常量作为命令行参数会更好。
 
-首先，导入 [click][5] 库，使用 click 提供的命令装饰器对 `rotoscope()` 方法进行装饰，并添加一个 Click 传递给 `rotoscope` 函数的参数。Click 提供了一组验证器，因此要向参数添加一个路径验证器。Click 还方便地使用函数的内嵌字符串作为命令行文档的一部分。所以你最终会得到以下方法签名：
+首先，导入 [click][5] 库，使用 Click 提供的命令装饰器对 `rotoscope()` 方法进行装饰，并添加一个 Click 传递给 `rotoscope` 函数的参数。Click 提供了一组验证器，因此要向参数添加一个路径验证器。Click 还方便地使用函数的内嵌字符串作为命令行文档的一部分。所以你最终会得到以下方法签名：
 
 ```
 @click.command()
@@ -151,7 +146,7 @@ def rotoscope(incoming):
 
 主函数会调用 `rotoscope()`，它现在是一个 Click 命令，不需要传递任何参数。
 
-选项也可以使用[环境变量][6]自动填充。例如，将 `ARCHIVE` 常量改为一个选项：
+选项也可以使用 [环境变量][6] 自动填充。例如，将 `ARCHIVE` 常量改为一个选项：
 
 ```
 @click.option('archive', '--archive', default='/Users/mark/archive', envvar='ROTO_ARCHIVE', type=click.Path())
@@ -165,9 +160,9 @@ Click 可以做更多的事情，它有彩色的控制台输出、提示和子�
 
 ### 测试
 
-Click 对使用 CLI 运行器[运行端到端测试][7]提供了一些建议。你可以用它来实现一个完整的测试（在[示例项目][8]中，测试在 `tests` 文件夹中。）
+Click 对使用 CLI 运行器 [运行端到端测试][7] 提供了一些建议。你可以用它来实现一个完整的测试（在 [示例项目][8] 中，测试在 `tests` 文件夹中。）
 
-测试位于测试类的一个方法中。大多数约定与我在任何其他 Python 项目中使用的非常接近，但有一些细节，因为 rotoscope 使用 `click`。在 `test` 方法中，我创建了一个 `CliRunner`。测试使用它在一个隔离的文件系统中运行此命令。然后测试在隔离的文件系统中创建 `incoming` 和 `archive` 目录和一个虚拟的 `incoming/test.txt` 文件，然后它调用 CliRunner，就像你调用命令行应用程序一样。运行完成后，测试会检查隔离的文件系统，并验证 `incoming` 为空，并且 `archive` 包含两个文件（最新链接和存档文件）。
+测试位于测试类的一个方法中。大多数约定与我在其他 Python 项目中使用的非常接近，但有一些细节，因为 rotoscope 使用 `click`。在 `test` 方法中，我创建了一个 `CliRunner`。测试使用它在一个隔离的文件系统中运行此命令。然后测试在隔离的文件系统中创建 `incoming` 和 `archive` 目录和一个虚拟的 `incoming/test.txt` 文件，然后它调用 CliRunner，就像你调用命令行应用程序一样。运行完成后，测试会检查隔离的文件系统，并验证 `incoming` 为空，并且 `archive` 包含两个文件（最新链接和存档文件）。
 
 ```
 from os import listdir, mkdir
@@ -196,9 +191,9 @@ class TestRotoscope:
 
 要在控制台上执行这些测试，在项目的根目录中运行 `tox`。
 
-在执行测试期间，我在代码中发现了一个错误。当我进行 Click 转换时，rotoscope 只是取消了最新文件的链接，无论它是否存在。测试从一个新的文件系统（不是我的主文件夹）开始，很快就失败了。我可以通过在一个很好的隔离和自动化测试环境中运行来防止这种错误。这将避免很多“它在我的机器上正常工作”的问题。
+在执行测试期间，我在代码中发现了一个错误。当我进行 Click 转换时，`rotoscope` 只是取消了最新文件的链接，无论它是否存在。测试从一个新的文件系统（不是我的主文件夹）开始，很快就失败了。我可以通过在一个很好的隔离和自动化测试环境中运行来防止这种错误。这将避免很多“它在我的机器上正常工作”的问题。
 
-### Scaffolding 和模块
+### 搭建骨架脚本和模块
 
 本文到此结束，我们可以使用 `scaffold` 和 `click` 完成一些高级操作。有很多方法可以升级一个普通的 Python 脚本，甚至可以将你的简单实用程序变成成熟的 CLI 工具。
 
@@ -209,7 +204,7 @@ via: https://opensource.com/article/22/7/bootstrap-python-command-line-applicati
 作者：[Mark Meyer][a]
 选题：[lkxed][b]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
