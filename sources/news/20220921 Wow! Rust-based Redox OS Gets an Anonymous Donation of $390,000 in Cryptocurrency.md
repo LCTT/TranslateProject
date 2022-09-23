@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/redox-os-anonymous-donation/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "littlebirdnest"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
