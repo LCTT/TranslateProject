@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/systemd-wsl/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "vvvbbbcz"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
