@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "vvvbbbcz"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15068-1.html"
 
 systemd 已可用于 WSL
 ======
