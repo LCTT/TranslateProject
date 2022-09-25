@@ -7,42 +7,43 @@
 [#]: via: (https://opensource.com/article/21/1/open-source-distributed-trust)
 [#]: author: (Mike Bursell https://opensource.com/users/mikecamel)
 
-How open source builds distributed trust
+开源如何构建分布式信任
 ======
-Trust in open source is a positive feedback loop.
-![Trust][1]
+对开源的信任是一个积极的反馈循环。  
+![信任][1]
 
-This is an edited excerpt from my forthcoming book on _Trust in Computing and the Cloud_ for [Wiley][2] and leads on from a previous article I wrote called [_Trust &amp; choosing open source_][3].
+这是我即将为[Wiley][2]出版的《计算和云计算中的信任》（Trust in Computing and the Cloud）一书中经过编辑的节选，也是我之前写的一篇文章[_《信任与选择开源》_][3](_Trust &amp; choosing open source_)的延伸。
 
-In that article, I asked the question: What are we doing when we say, "I trust open source software"? In reply, I suggested that what we are doing is making a determination that enough of the people who have written and tested it have similar requirements to mine, and that their expertise, combined, is such that the risk to my using the software is acceptable. I also introduced the idea of _distributed trust_.
+在那篇文章中，我提出了一个问题。当我们说 "我相信开放源码软件 "时，我们在做什么？作为回答，我认为，我们正在做的是确定有足够多的编写和测试该软件的人与我有类似的要求，而且他们的专业知识加在一起，使我使用该软件的风险可以接受。我同时也介绍了 "分布式信任 "的概念。
 
-The concept of distributing trust across a community is an application of the _wisdom of the crowd_ theory posited by Aristotle, where the assumption is that the opinions of many typically show more wisdom than the opinion of one or a few. While demonstrably false in its simplest form in some situations—the most obvious example being examples of popular support for totalitarian regimes—this principle can provide a very effective mechanism for establishing certain information.
 
-This distillation of collective experience allows what we refer to as _distributed trust_ and is collected through numerous mechanisms on the internet. Some, like TripAdvisor or Glassdoor, record information about organisations or the services they provide, while others, like UrbanSitter or LinkedIn, allow users to add information about specific people (see, for instance, LinkedIn's Recommendations and Skills &amp; Endorsements sections in individuals' profiles). The benefits that can accrue from these examples are significantly increased by the network effect, as the number of possible connections between members increases exponentially as the number of members increases.
+在社区内分配信任的概念是亚里士多德提出的“人群智慧理论”的应用，其中的假设是，许多人的意见通常比一个人或少数人的意见更有明智。虽然在某些情况下，最简单的形式显然是错误的——最明显的例子是民众对极权主义政权的支持——但这一原则可以提供一个非常有效的机制来建立某些信息。
 
-Other examples of distributed trust include platforms like Twitter, where the number of followers that an account receives can be seen as a measure of its reputation and even of its trustworthiness, a calculation which we should view with a strong degree of scepticism. Indeed, Twitter felt that it had to address the social power of accounts with large numbers of followers and instituted a "verified accounts" mechanism to let people know that "an account of public interest is authentic." Interestingly, the company had to suspend the service after problems related to users' expectations of exactly what "verified" meant or implied: a classic case of differing understanding of context between different groups.
+我们称这种集体经验的提炼为“分布式信任”，它通过互联网上的许多机制收集。如TripAdvisor或Glassdoor，记录了关于组织或其提供的服务的信息,还有像UrbanSitter或LinkedIn，允许用户添加关于特定人的信息（例如，见LinkedIn的推荐和技能与个人档案中的认可部分）。从这些例子中可以获得的利益因网络效应而大大增加，因为随着成员数量的增加，成员之间可能的联系数量也成倍增加。
 
-Where is the relevance to open source, then? The community aspect of open source is actually a driver towards building distributed trust. This is because, once you become a part of the community around an open source project, you assume one or more of the roles that you start trusting once you say that you "trust" an open source project (see my previous article). Examples include architect, designer, developer, reviewer, technical writer, tester, deployer, bug reporter, or bug fixer. The more involvement you have in a project, the more you become part of the community, which can, in time, become a _community of practice_.
+分布式信任的例子还包括像Twitter这样的平台，一个账户的追随者数量可以被视为衡量其声誉，甚至是衡量其可信度的标准，我们应该以强烈的怀疑态度去看待这种计算。 事实上，Twitter认为它必须解决拥有大量追随者的账户的社会力量问题，并建立了一个为 "验证账户 "机制，让人们知道 "一个具有公共利益的账户是真实的"。但是有趣的是，该公司不得不暂停这项服务，因为用户对 "验证 "的确切含义或暗示的期望出现了问题：这就是不同群体之间对内容理解不同的典型案例。
 
-Jean Lave and Etienne Wenger introduced the concept of communities of practice in the book _[Situated Learning: Legitimate Peripheral Participation][4]_, where groups evolve into communities as their members share a passion and participate in shared activities, leading to improving their skills and knowledge together. The core concept here is that as participants learn _around_ a community of practice, they become members of it at the same time:
+那么，开源的相关性在哪里呢？开源的社区方面实际上就是建立分布式信任的一个驱动力。因为一旦你成为一个开源项目周围社区的一部分，你就会承担一个或多个角色，一旦你说你 "信任 "一个开源项目，你就会开始信任这些角色（见我之前的文章）。例如，建筑师、设计师、开发人员、审查员、技术作家、测试员、部署员、错误报告者或错误修复者。你对一个项目的参与越多，你就越是社区的一部分，久而久之，这就可以成为一个“实践社区”（community of practice）。
 
-> "Legitimate peripheral participation refers both to the development of knowledgeably skilled identities in practice and to the reproduction and transformation of communities of practice."
+Jean Lave和Etienne Wenger在[_《情境学习：正当的外围参与》_][4](_Situated Learning: Legitimate Peripheral Participation_)一书中提出了实践社区的概念，团体在成员热情分享和参与共同活动的过程中演变成社区，导致他们的技能和知识共同提高。这里的核心概念是：当参与者在实践社区周围学习时，他们同时也成为社区的成员。
 
-Wenger further explored the concept of communities of practice, how they form, requirements for their health, and how they encourage learning in _[Communities of Practice: Learning, Meaning, and Identity][5]_. He identified _negotiability of meaning_ ("why are we working together, what are we trying to achieve?") as core to a community of practice and noted that without _engagement_, _imagination_, and _alignment_ by individuals, communities of practice will not be robust.
+> “正当的的外围参与既指在实践中知识，技能，身份的发展，也指实践社区的再生产和转化。”
 
-We can align this with our views of how distributed trust is established and built: when you realise that your impact on open source can be equal to that of others, the distributed trust relationships that you hold to members of a community become less transitive (second- or third-hand or even more remote) and more immediate. You understand that the impact you can have on the creation, maintenance, requirements, and quality of the software you are running can be the same as all of the other, previously anonymous contributors with whom you are now forming a community of practice or whose existing community of practice you are joining. Then you become part of a network of trust relationships that are distributed but less removed from what you experience when buying and operating proprietary software.
+Wenger在[_《实践社区：学习、意义和身份》_][5]（_Communities of Practice: Learning, Meaning, and Identity_）中进一步探讨了实践社区的概念:它们如何形成、对其健康的要求，以及它们如何鼓励学习。他认为，意义的可协商性（"我们为什么要一起工作，我们要实现什么？"）是实践社区的核心，并指出，如果没有个人的参与、想象力和一致性，实践社区将不会有活力。
 
-The process does not stop there; as a common property of open source projects is cross-pollination, where developers from one project also work on others. This increases as the network effect of multiple open source projects allows reuse and dependencies on other projects to rise and leads to greater take-up across the entire set of projects.
+我们可以把这一点与我们对分布式信任如何建立和构建的看法结合起来：当你意识到你对开源的影响可以与其他人的影响相同时，你对社区成员的分布式信任关系就变得不那么具有传递性（第二或第三手甚至更遥远），而是更加直接。你明白，你对你所运行的软件的创建、维护、需求和质量所能产生的影响，可以与所有其他以前匿名的贡献者一样，你现在正在与他们形成一个实践社区，或者你正在加入他们的现有实践社区。然后，你就会成为一个信任关系网络的一部分，这个网络是分布式的，但与你购买和操作专利软件时的经历相差不大。
 
-It is easy to see why many open source contributors become open source enthusiasts or evangelists, not just for a single project but for open source as a whole. In fact, work by Stanford sociologist [Mark Granovetter][6] suggests that too many strong ties within communities can lead to cliques and stagnation, but weak ties provide movement of ideas and trends around communities. This awareness of other projects and the communities that exist around them and the flexibility of ideas across projects leads to distributed trust being able to be extended (albeit with weaker assurances) beyond the direct or short-chain indirect relationships that contributors experience within projects where they have immediate experience and out towards other projects where external observation or peripheral involvement shows that similar relationships exist between contributors.
+这个过程并不会停止：因为开源项目的一个共同属性是“交叉授粉”，即一个项目的开发者也在其他项目上工作。由于多个开源项目之间的网络效应，使得对其他项目的重用和依赖性上升，导致整个项目的吸收量增加。
 
-Put simply, the act of being involved in an open source project and building trust relationships through participation leads to stronger distributed trust towards similar open source projects or just to other projects that are similarly open source.
+这就很容易理解为什么许多开源贡献者会成为开源爱好者或传道者，不仅仅是为单个项目，而是为整个开源项目。事实上，斯坦福大学社会学家[Mark Granovetter][6]的工作表明，社区内太多的强关系会导致小团体和停滞不前，但弱关系会使思想和趋势在社区内流动。这种对其他项目和围绕它们存在的社区的认识，以及想法在项目间的灵活性，导致分布式信任能够被扩展（尽管保证比较弱），超越贡献者在他们有直接经验的项目中所经历的直接或短链间接关系，并向其他项目扩展，因为外部观察或外围参与显示贡献者之间存在类似关系。
 
-What does this mean for each of us? It means that the more we get involved in open source, the more trust we can have in open source, as there will be a corresponding growth in the involvement—and therefore trust—of other people in open source. Trust in open source isn't just a network effect: it's a positive feedback loop!
+简单地说，参与开源项目并通过参与建立信任关系的行为会导致对类似的开源项目或只是对其他类似的开源项目产生更强的分布式信任。
+
+这对我们每个人来说意味着什么？它意味着我们越是参与开源，我们对开源的信任度就越高，而其他人对开源的参与度也会相应提高，从而对开源的信任度也会提高。对开源的信任不仅仅是一个网络效应：它是一个积极的反馈循环！
 
 * * *
 
-_This article was originally published on [Alice, Eve, and Bob][7] and is reprinted with the author's permission._
+_本文最初发表于[Alice, Eve, and Bob][7]，经作者许可转载。_
 
 --------------------------------------------------------------------------------
 
@@ -50,7 +51,7 @@ via: https://opensource.com/article/21/1/open-source-distributed-trust
 
 作者：[Mike Bursell][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MareDevi](https://github.com/MareDevi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
