@@ -3,44 +3,43 @@
 [#]: author: "Joël Krähemann https://opensource.com/users/joel2001k"
 [#]: collector: "lkxed"
 [#]: translator: "Donkey-Hao"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: " wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15065-1.html"
 
-使用开源库提升 C 语言编程能力
+使用开源库 GObject 和 libsoup 提升 C 语言编程能力
 ======
-开源库 GObject 和 libsoup 已经做了很多工作，因此你可以专注于使用 C 语言开发神奇的应用。
 
-![Why and how to handle exceptions in Python Flask][1]
-（图源: Unsplash.com, Creative Commons Zero）
+![](https://img.linux.net.cn/data/attachment/album/202209/24/145218s1s1xk6s1mm2kg1x.jpg)
 
-[GLib Object System (GObject)][2] 是为 C 语言提供了灵活且可扩展的面向对象框架的库。在这篇文章中，我将使用该库的 2.4 版本进行演示。
+> 开源库 GObject 和 libsoup 做了很多工作，因此你可以专注于使用 C 语言开发神奇的应用。
+<ruby>[GLib 对象系统][2]<rt>Object System</rt></ruby>（GObject）是一个为 C 语言提供灵活且可扩展的面向对象框架的库。在这篇文章中，我将使用该库的 2.4 版本进行演示。
 
 GObject 库继承了 ANSI C 标准，拥有一些常见的数据类型，例如：
 
-* gchar: 字符型
-* guchar: 无符号字符型
-* gunichar: 宽为 32 比特的 Unicode 字符型
-* gboolean: 布尔型
-* gint8, gint16, gint32, gint64: 8, 16, 32 和 64 比特有符号整数
-* guint8, guint16, guint32, guint64: 无符号 8, 16, 32 和 64 比特整数
-* gfloat: IEEE 754 标准单精度浮点数
-* gdouble: IEEE 754 标准 双精度浮点数
-* gpointer: 泛指针
+* `gchar`：字符型
+* `guchar`：无符号字符型
+* `gunichar`：32 位定宽 Unicode 字符型
+* `gboolean`：布尔型
+* `gint8`、`gint16`、`gint32`、`gint64`：有符号 8、16、32 和 64 位整数
+* `guint8`、`guint16`、`guint32`、`guint64`：无符号 8、16、32 和 64 位整数
+* `gfloat`：IEEE 754 标准单精度浮点数
+* `gdouble`：IEEE 754 标准双精度浮点数
+* `gpointer`：泛指针
 
 ### 函数指针
 
-GObject 库还引入了类和接口的类型和对象体系。这是可能的，因为 ANSI C 语言理解函数指针。
+GObject 库还引入了类和接口的类型和对象体系。之所以可以，是因为 ANSI C 语言可以理解函数指针。
 
 你可以这样做来声明函数指针：
 
-```c
+```
 void (*my_callback)(gpointer data);
 ```
 
 首先，你需要给变量 `my_callback` 赋值：
 
-```c
+```
 void my_callback_func(gpointer data)
 {
   //do something
@@ -51,7 +50,7 @@ my_callback = my_callback_func;
 
 函数指针 `my_callback` 可以这样来调用：
 
-```c
+```
 gpointer data;
 data = g_malloc(512 * sizeof(gint16));
 my_callback(data);
@@ -59,11 +58,11 @@ my_callback(data);
 
 ### 对象类
 
-GObject 基类由 2 个结构（`GObject` 和 `GObjectClass`）组成，你可以继承它们以实现你自己的对象。
+`GObject` 基类由 2 个结构（`GObject` 和 `GObjectClass`）组成，你可以继承它们以实现你自己的对象。
 
-你需要在结构体中先嵌入 `GObject` 和 `GObjectClass` ：
+你需要在结构体中先嵌入 `GObject` 和 `GObjectClass`：
 
-```c
+```
 struct _MyObject
 {
   GObject gobject;
@@ -79,11 +78,11 @@ struct _MyObjectClass
 GType my_object_get_type(void);
 ```
 
-对象的实现包含了公有成员。GObject 也提供了私有成员的方法。这实际上是 C 源文件中的一个结构，而不是头文件。该类通常只包含函数指针。
+对象的实现包含了公有成员。GObject 也提供了私有成员的方法。这实际上是 C 源文件中的一个结构，而不是在头文件。该类通常只包含函数指针。
 
 一个接口不能派生自另一个接口，比如：
 
-```c
+```
 struct _MyInterface
 {
   GInterface ginterface;
@@ -93,7 +92,7 @@ struct _MyInterface
 
 通过调用 `g_object_get()` 和 `g_object_set()` 函数来访问属性。若要获取属性，你必须提供特定类型的返回位置。建议先初始化返回位置：
 
-```c
+```
 gchar *str
 
 str = NULL;
@@ -105,7 +104,7 @@ g_object_get(gobject,
 
 或者你想要设置属性：
 
-```c
+```
 g_object_set(gobject,
   "my-name", "Anderson",
   NULL);
@@ -113,9 +112,11 @@ g_object_set(gobject,
 
 ### libsoup HTTP 库
 
-`libsoup` 项目为 GNOME 提供了 HTTP 客服端和服务端使用的库。它使用 GObjects 和 glib 主循环与 GNOME 应用融合，并且还具有用于命令行的同步 API。首先，创建一个特定身份验证回调的 `libsoup` 会话。你也可以使用 cookie。
+`libsoup` 项目为 GNOME 提供了 HTTP 客服端和服务端使用的库。它使用 GObjects 和 glib 主循环与集成到 GNOME 应用，并且还具有用于命令行的同步 API。
 
-```c
+首先，创建一个特定身份验证回调的 `libsoup` 会话。你也可以使用 cookie。
+
+```
 SoupSession *soup_session;
 SoupCookieJar *jar;
 
@@ -133,7 +134,7 @@ g_signal_connect(soup_session, "authenticate",
 
 然后你可以像这样创建一个 HTTP GET 请求：
 
-```c
+```
 SoupMessage *msg;
 SoupMessageHeaders *response_headers;
 SoupMessageBody *response_body;
@@ -180,8 +181,7 @@ if(status == 200){
 
 这是一个函数签名：
 
-
-```c
+```
 #define MY_AUTHENTICATE_LOGIN "my-username"
 #define MY_AUTHENTICATE_PASSWORD "my-password"
 
@@ -200,11 +200,11 @@ void my_authenticate_callback(SoupSession *session,
 
 ### 一个 libsoup 服务器
 
-想要基础的 HTTP 身份认证能够运行，你需要指定回调函数和服务器内容路径。然后再添加一个带有另一个回调的处理程序。
+想要基础的 HTTP 身份认证能够运行，你需要指定回调函数和服务器上下文路径。然后再添加一个带有另一个回调的处理程序。
 
 下面这个例子展示了在 8080 端口监听任何 IPv4 地址的消息：
 
-```c
+```
 SoupServer *soup_server;
 SoupAuthDomain *auth_domain;
 GSocket *ip4_socket;
@@ -248,9 +248,9 @@ soup_server_listen_socket(soup_server,
 
 示例代码中，有两个回调函数。一个处理身份认证，另一个处理对它的请求。
 
-假设你想要网页服务器运行一个用户名为 **my-username** 和口令为 **my-password** 的用户登录，并且用一个随机且唯一的用户 ID 字符串设置会话 cookie。
+假设你想要网页服务器允许用户名为 `my-username` 和口令为 `my-password` 的凭证登录，并且用一个随机且唯一的用户 ID 字符串设置会话 cookie。
 
-```c
+```
 gboolean my_xmlrpc_server_auth_callback(SoupAuthDomain *domain,
   SoupMessage *msg,
   const char *username,
@@ -285,9 +285,9 @@ gboolean my_xmlrpc_server_auth_callback(SoupAuthDomain *domain,
 }
 ```
 
-对内容路径 **my-xmlrpc** 进行处理的函数：
+对上下文路径 `my-xmlrpc` 进行处理的函数：
 
-```c
+```
 void my_xmlrpc_server_callback(SoupServer *soup_server,
   SoupMessage *msg,
   const char *path,
@@ -303,7 +303,7 @@ void my_xmlrpc_server_callback(SoupServer *soup_server,
 
 ### 更加强大的 C 语言
 
-希望我的示例展现了 GObject 和 libsoup 项目给 C 语言带来了真正的提升。像这样在字面意义上扩展 C 语言，可以使 C 语言更易于使用。他们已经为你做了许多工作，这样你可以专注于用 C 语言开发简单、直接的应用程序了。
+希望我的示例展现了 GObject 和 libsoup 项目给 C 语言带来了真正的提升。像这样在字面意义上扩展 C 语言，可以使 C 语言更易于使用。它们已经为你做了许多工作，这样你可以专注于用 C 语言开发简单、直接的应用程序了。
 
 --------------------------------------------------------------------------------
 
@@ -312,7 +312,7 @@ via: https://opensource.com/article/22/5/libsoup-gobject-c
 作者：[Joël Krähemann][a]
 选题：[lkxed][b]
 译者：[Donkey-Hao](https://github.com/Donkey-Hao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
