@@ -76,7 +76,6 @@ Whereas Google Chrome’s built-in speech recognition feature is simple and easy
 That said, I hope this guide helps you to convert voice to text and do let me know in the comment box if you know of such an application which does the same for free.
 
 [Next: How to Setup Internet in CentOS, RHEL, Rocky Linux Minimal Install][10]
-
 --------------------------------------------------------------------------------
 
 via: https://www.debugpoint.com/speech-recognition-to-text-in-linux-ubuntu-using-google-docs/
