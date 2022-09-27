@@ -1,5 +1,5 @@
-name: 提交选题
-description: 提交一个选题
+name: 推荐选题
+description: 推荐一个选题
 # title: ""
 labels: []
 assignees: []
@@ -7,17 +7,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        标题请使用 **`[选题类型] 文章标题`** 格式，文章标题请使用单词首字母 **大写** 的形式，选题类型和文章标题中间有一个 **空格**。
-        选题类型包括:
-
-        - 手动选题
-        - 推荐选题
+        标题请使用 **`[推荐类型] 文章日期 文章标题`** 格式，选题类型、文章日期和文章标题中间有一个 **空格**。
 
         完整示例: 
-        - [推荐选题] The Lost Art of the Makefile
-        - [推荐选题] The Lost Art of the Makefile
-        - [手动选题] Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19
-        - [手动选题] Wow! Torvalds Modified Fedora Linux to Run on his Apple M2 Macbook
+        - [推荐选题] 20220823 The Lost Art of the Makefile
+        - [手动选题] 20220905 Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19
 
   - type: textarea
     id: title
