@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "cool-summer-021"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15075-1.html"
 
 为什么 LibreOffice 在 Mac 应用商店卖 8.99 美元？
 ======
