@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/install-jdbc-linux"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
