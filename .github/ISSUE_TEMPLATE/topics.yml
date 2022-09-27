@@ -11,7 +11,7 @@ body:
 
         完整示例: 
         - [推荐选题] 20220823 The Lost Art of the Makefile
-        - [手动选题] 20220905 Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19
+        - [推荐选题] 20220905 Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19
 
   - type: textarea
     id: title
