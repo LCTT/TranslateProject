@@ -58,7 +58,7 @@ Collabora Office（基于 LibreOffice 的企业版）在 Mac 应用商店售价�
 
 > “我们感谢 Collabora 公司长期以来在 Mac 应用商店对 LibreOffice 的支持”
 >
-> - Italo Vignoli，LibreOffice 市场营销团队
+> -- Italo Vignoli，LibreOffice 市场营销团队
 
 （LCTT 校注：也就是说，文档基金会在 Mac 应用商店推出的 LibreOffice 是无商业支持的社区版，和具有商业支持的、基于企业版定制的 Collabora Office 的售价一样。因此，这种行为可看作是文档基金会的某种自愿募捐方式 —— 如果不愿意捐助，你可以继续下载免费版本。）
 
