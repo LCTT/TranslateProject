@@ -20,7 +20,7 @@ body:
       placeholder: https://......
     validations:
       required: true
-  - type: checkboxes
+  - type: dropdown
     id: terms
     attributes:
       label: 版权协议
@@ -30,15 +30,8 @@ body:
         - label: CC-SA-BY
         - label: 其它公域许可证
         - label: 已获取作者授权
-
-  - type: textarea
-    id: reason
-    attributes:
-      label: 推荐理由
-      description: 填写你的推荐理由
-      placeholder:
     validations:
-      required: false
+      required: true
   - type: dropdown
     id: difficulty
     attributes:
@@ -63,3 +56,11 @@ body:
         - 技术（`tech`）
     validations:
       required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 推荐理由
+      description: 填写你的推荐理由
+      placeholder:
+    validations:
+      required: false
