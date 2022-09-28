@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/speech-recognition-to-text-in-linux-ubuntu-using-google-docs/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
