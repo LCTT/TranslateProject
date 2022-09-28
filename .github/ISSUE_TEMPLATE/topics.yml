@@ -1,6 +1,6 @@
 name: 推荐选题
 description: 推荐一个选题
-# title: ""
+title: "[推荐类型] 文章日期 文章标题"
 labels: []
 assignees: []
 body:
@@ -12,30 +12,20 @@ body:
         完整示例: 
         - [推荐选题] 20220823 The Lost Art of the Makefile
         - [推荐选题] 20220905 Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19
-
-  - type: textarea
-    id: title
-    attributes:
-      label: 原文标题
-      description: 填写原文章的标题
-      placeholder: 原文标题
-    validations:
-      required: true
-
-  - type: textarea
+  - type: input
     id: url
     attributes:
       label: 原文链接地址
       description: 填写原文章的链接地址
-      placeholder: 原文链接地址
+      placeholder: https://......
     validations:
       required: true
-
   - type: checkboxes
     id: terms
     attributes:
       label: 版权协议
       description: 填写原文章的版权协议
+      multiple: false
       options:
         - label: CC-SA-BY
         - label: 其它公域许可证
@@ -49,7 +39,6 @@ body:
       placeholder:
     validations:
       required: false
-
   - type: dropdown
     id: difficulty
     attributes:
@@ -60,7 +49,8 @@ body:
         - 困难
         - 一般
         - 容易
-
+    validations:
+      required: true
   - type: dropdown
     id: category
     attributes:
@@ -68,6 +58,8 @@ body:
       description: 选择文章的分类
       multiple: false
       options:
-        - 新闻(news)
-        - 观点(talk)
-        - 技术(tech)
+        - 新闻（`news`）
+        - 观点（`talk`）
+        - 技术（`tech`）
+    validations:
+      required: true
