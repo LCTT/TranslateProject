@@ -1,0 +1,73 @@
+name: 推荐选题
+description: 推荐一个选题
+# title: ""
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        标题请使用 **`[推荐类型] 文章日期 文章标题`** 格式，选题类型、文章日期和文章标题中间有一个 **空格**。
+
+        完整示例: 
+        - [推荐选题] 20220823 The Lost Art of the Makefile
+        - [推荐选题] 20220905 Linus Torvalds Uses Apple MacBook Hardware to Release Linux Kernel 5.19
+
+  - type: textarea
+    id: title
+    attributes:
+      label: 原文标题
+      description: 填写原文章的标题
+      placeholder: 原文标题
+    validations:
+      required: true
+
+  - type: textarea
+    id: url
+    attributes:
+      label: 原文链接地址
+      description: 填写原文章的链接地址
+      placeholder: 原文链接地址
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 版权协议
+      description: 填写原文章的版权协议
+      options:
+        - label: CC-SA-BY
+        - label: 其它公域许可证
+        - label: 已获取作者授权
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 推荐理由
+      description: 填写你的推荐理由
+      placeholder:
+    validations:
+      required: false
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: 文章难度
+      description: 选择文章的难度
+      multiple: false
+      options:
+        - 困难
+        - 一般
+        - 容易
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 文章分类
+      description: 选择文章的分类
+      multiple: false
+      options:
+        - 新闻(news)
+        - 观点(talk)
+        - 技术(tech)
