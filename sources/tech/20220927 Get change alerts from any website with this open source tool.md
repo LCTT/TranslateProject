@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/changedetection-io-open-source-website-changes"
 [#]: author: "Leigh Morresi https://opensource.com/users/dgtlmoon"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
