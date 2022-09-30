@@ -3,14 +3,16 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: "Donkey-Hao"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15089-1.html"
 
 清理 Ubuntu 系统的 4 个简单步骤
 ======
 
-现在，试试看这 4 个简单的步骤，来清理你的 Ubuntu 系统吧。
+![](https://img.linux.net.cn/data/attachment/album/202209/30/123825r2vri1kv0rc2f7xh.jpg)
+
+> 现在，试试看这 4 个简单的步骤，来清理你的 Ubuntu 系统吧。
 
 这份精简指南将告诉你如何清理 Ubuntu 系统以及如何释放一些磁盘空间。
 
@@ -20,9 +22,9 @@
 
 ### 清理 Ubuntu 系统的步骤
 
-#### 1. 清理 Apt 缓存
+#### 1、清理 Apt 缓存
 
-Apt 缓存(apt cache)是 Ubuntu 系统保存你下载过的所有文件的地方，以供你之后可以查看它。大多数用户不会去清理 Apt 缓存，而它却可能会占用数百兆字节。
+Apt 缓存是 Ubuntu 系统保存你下载过的所有文件的地方，以供你之后可以查看它。大多数用户不会去清理 Apt 缓存，而它却可能会占用数百兆字节。
 
 打开终端，并运行以下命令，可以得到你的 Apt 缓存有多少：
 
@@ -38,9 +40,9 @@ du -sh /var/cache/apt/archives
 sudo apt-get clean
 ```
 
-#### 2. 删除无用的内核
+#### 2、删除无用的内核
 
-如果你已经运行 Ubuntu 系统超过了一年，那么你安装多个内核的可能性很高。如果你的硬件是最新的，并且与 Linux 兼容而没有太多配置，你可以删除旧的内核，保留最新的内核。
+如果你已经运行 Ubuntu 系统超过了一年，那么你很可能安装多个内核。如果你的硬件是最新的，并且与 Linux 兼容而没有太多配置，你可以删除旧的内核，保留最新的内核。
 
 在终端运行以下命令来删除旧的内核：
 
@@ -50,7 +52,7 @@ sudo apt-get autoremove --purge
 
 ![Autoremove Purge][2]
 
-#### 3. 删除旧的应用程序和软件包
+#### 3、删除旧的应用程序和软件包
 
 如果你是一个喜欢尝试 Linux 应用程序的人，那么你的系统中肯定有一些不再需要的没用的应用程序。
 
@@ -77,12 +79,12 @@ zgrep " install " /var/log/dpkg.log.2.gz
 你可以运行以下命令来删除应用程序和软件包：
 
 ```
-sudo apt remove   app1 package1
+sudo apt remove app1 package1
 ```
 
-#### 4. 使用系统清理应用
+#### 4、使用系统清理应用
 
-有大量免费和原生系统 [清理应用][4] 可以使用。但是，我认为 [BleachBit][5] 是清理系统最好的一个应用，因为它经久不衰。
+有大量免费和原生的系统 [清理应用][4] 可以使用。但是，我认为 [BleachBit][5] 是清理系统最好的一个应用，因为它经久不衰。
 
 使用以下命令安装 BleachBit 或通过应用商店安装。
 
@@ -94,11 +96,11 @@ sudo apt install bleachbit
 
 ![][6]
 
-### 额外提示
+### 附送技巧
 
 #### 清理 Flatpak 软件包
 
-Flatpak 这一应用程序和运行时(runtime)会占用大量磁盘空间。因为在设计上，Flatpak 的可执行文件结合了运行时。尽管运行时可以在相关应用程序之间共享，但许多未使用的剩余运行时可能会占用你的磁盘空间。
+Flatpak 应用程序和<ruby>运行时<rt>runtime</rt></ruby>会占用大量磁盘空间。因为在设计上，Flatpak 的可执行文件结合了运行时。尽管运行时可以在相关应用程序之间共享，但许多未使用的剩余运行时可能会占用你的磁盘空间。
 
 删除一些未使用的 Flatpak 包最直接的方法是下面的命令。在终端运行这一命令。
 
@@ -106,7 +108,7 @@ Flatpak 这一应用程序和运行时(runtime)会占用大量磁盘空间。因
 flatpak uninstall --unused
 ```
 
-可以参考 [这篇文章][7] 了解有关  Flatpak 包的更多信息。
+可以参考 [这篇文章][7] 了解有关 Flatpak 包的更多信息。
 
 #### 清理未使用的 Snap 项目
 
@@ -130,7 +132,7 @@ snap list --all | awk '/disabled/{print $1, $3}' |
 
 可以参考 [这篇文章][8] 了解有关清理 Snap 包的更多信息。
 
-#### 额外提示
+#### 更多技巧
 
 你还可以使用以下命令来手动搜索大文件。
 
@@ -143,12 +145,12 @@ find /home -type f -exec du -h {} + | sort -hr | head -20
 ![Find Large files in Linux][9]
 
 ### 总结
+
 这样就完成了。如果你按照上述步骤操作，你一定能够释放 Ubuntu 系统中的一些空间，现在你的系统有剩余空间了。你可以按照这些措施来清理 Ubuntu 系统。不要忘记使用最新的软件包，使你的系统保持到最新。
 
 🗨️ 如果你认为使用上述的技巧可以释放一些磁盘空间，并使得你的 Ubuntu 更快了，请在下方评论区留言。你通常又是使用什么命令来清理你的 Ubuntu 系统？
 
 快留言告诉我吧。
-
 
 --------------------------------------------------------------------------------
 
@@ -157,7 +159,7 @@ via: https://www.debugpoint.com/4-simple-steps-clean-ubuntu-system-linux/
 作者：[Arindam][a]
 选题：[lkxed][b]
 译者：[Donkey-Hao](https://github.com/Donkey-Hao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
