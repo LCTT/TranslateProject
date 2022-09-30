@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/attacks-on-open-source-software-are-on-the-rise/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "vvvbbbcz"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
