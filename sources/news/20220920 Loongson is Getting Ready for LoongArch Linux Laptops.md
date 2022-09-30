@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/loongson-loongarch-linux-laptops/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "vvvbbbcz"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
