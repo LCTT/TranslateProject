@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/best-kde-plasma-themes/"
 [#]: author: "sreenath https://itsfoss.com/author/sreenath/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "vvvbbbcz"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
