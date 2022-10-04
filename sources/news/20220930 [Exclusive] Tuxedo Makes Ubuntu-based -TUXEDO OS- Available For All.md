@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/tuxedo-os/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Cubik65536"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
