@@ -104,7 +104,7 @@ Orchis 在 GNOME GTK 主题设计中相当流行，亦可用于 KDE。Orchis 有
 
 和 GNOME 一样，这个以 Material 风格为灵感的主题提高了桌面的美观度。
 
-> [Orchis][19]
+> **[Orchis][19]**
 
 ### 9、Iridescent Round
 
