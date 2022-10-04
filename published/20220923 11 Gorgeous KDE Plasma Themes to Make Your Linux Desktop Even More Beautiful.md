@@ -3,9 +3,9 @@
 [#]: author: "sreenath https://itsfoss.com/author/sreenath/"
 [#]: collector: "lkxed"
 [#]: translator: "vvvbbbcz"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15102-1.html"
 
 11 个让你的 Linux 桌面更好看的 KDE Plasma 主题
 ======
@@ -24,17 +24,17 @@ KDE Plasma 桌面的一个强大的特性就是它 [巨大的自定义潜力][1]
 
 请注意，这不是主题的排行榜。也就是说，排在第三位的主题不一定比第七位或第八位更好。
 
-### 1. Sweet
+### 1、Sweet
 
 Sweet 是目前最受欢迎的 KDE 主题之一。这个仅提供了深色模式的主题，可以为你的系统带来华丽的外观。
 
 ![Sweet 主题][3]
 
-它可以**通过 KDE 系统设置安装**。它还提供了配套的图标，叫做 Candy Icons，如果你通过 KDE 系统设置安装，这套图标将会被自动安装。
+它可以**通过 KDE 系统设置安装**。它还提供了配套的图标，叫做 “Candy Icons”，如果你通过 KDE 系统设置安装，这套图标将会被自动安装。
 
-[Sweet 主题][4]
+> **[Sweet 主题][4]**
 
-### 2. Materia KDE
+### 2、Materia KDE
 
 Materia 是另一个被很多桌面用户喜欢的主题，拥有光洁和优雅的外观。它有三个版本：Materia、Materia Light 和 Materia Dark。
 
@@ -44,19 +44,19 @@ Materia Light 是一个纯白色的主题，Materia Dark 提供了一个完整�
 
 它也**可以通过 KDE 系统设置安装**。
 
-[Materia KDE][6]
+> **[Materia KDE][6]**
 
-### 3. Nordic
+### 3、Nordic
 
-Nordic 主题在深色主题爱好者中拥有一个独立的粉丝群体。它是围绕 Nord 色系创作的，看起来既舒服又优雅。
+Nordic 主题在深色主题爱好者中单独拥有一群粉丝。它是围绕 Nord 色系创作的，看起来既舒服又优雅。
 
 ![Nordic KDE][7]
 
-它与 Sweet 主题是 [同样的开发者][8]，可以**通过 KDE 系统设置安装**。
+它与 Sweet 主题是 [同一个开发者][8]，可以**通过 KDE 系统设置安装**。
 
-[Nordic][9]
+> **[Nordic][9]**
 
-### 4. WhiteSur
+### 4、WhiteSur
 
 WhiteSur 是一个由 Vinceliuice 开发，面向 MacOS 主题爱好者的主题。它实现了与 MacOS 外观的高相似度，而且可以通过 KDE 面板、Latte Dock 等功能做到更高的相似度。
 
@@ -64,9 +64,9 @@ WhiteSur 是一个由 Vinceliuice 开发，面向 MacOS 主题爱好者的主题
 
 它还提供了一套图标，使它看起来更具美感。这个受欢迎的主题还提供了深色和浅色两个版本。
 
-[WhiteSur][11]
+> **[WhiteSur][11]**
 
-### 5. Layan
+### 5、Layan
 
 Layan 主题有浅色和深色两个版本。这是其中之一，它提供了圆角，看起来整洁而美观。
 
@@ -74,9 +74,9 @@ Layan 主题有浅色和深色两个版本。这是其中之一，它提供了�
 
 Layan 使用 Tela Circle 图标，**可以通过 KDE 系统设置安装**。
 
-[Layan][13]
+> **[Layan][13]**
 
-### 6. Qogir
+### 6、Qogir
 
 这个主题有浅色和深色两个版本，是一个极简的主题，让你的系统看起来整洁而炫酷。
 
@@ -84,9 +84,9 @@ Layan 使用 Tela Circle 图标，**可以通过 KDE 系统设置安装**。
 
 它与 Budgie 桌面有相似的外观。你可以**从 KDE 系统设置**轻易地安装 Qogir 主题和它的配套图标。
 
-[Qogir][15]
+> **[Qogir][15]**
 
-### 7. Fluent Round
+### 7、Fluent Round
 
 如果你是 Windows 11 系统的粉丝，这个主题可以创造出 Windows 11 的外观和感觉。抛开这种相似性，Fluent 主题也是一个不错的主题，有浅色和深色两个版本。
 
@@ -94,19 +94,19 @@ Layan 使用 Tela Circle 图标，**可以通过 KDE 系统设置安装**。
 
 它为你的系统提供了一个光洁的外观，同时还有一套配套的深色和浅色图标。
 
-[Fluent Round][17]
+> **[Fluent Round][17]**
 
-### 8. Orchis
+### 8、Orchis
 
 Orchis 在 GNOME GTK 主题设计中相当流行，亦可用于 KDE。Orchis 有浅色和深色两种颜色。如果你**通过 KDE 系统设置安装**，Tela Icon 这套图标也会被安装，你可以随时从系统设置中更改。
 
 ![Orchis KDE Theme][18]
 
-和 GNOME 一样，这个以材料为灵感的主题提高了桌面的美观度。
+和 GNOME 一样，这个以 Material 风格为灵感的主题提高了桌面的美观度。
 
-[Orchis][19]
+> **[Orchis][19]**
 
-### 9. Iridescent Round
+### 9、Iridescent Round
 
 如果你是赛博朋克主题或未来主义主题的粉丝，这个主题将是一个不错的选择。它的默认壁纸**可以通过 KDE 系统设置安装**，这个壁纸看起来很有艺术感，给你的桌面增添了宅男的气息。
 
@@ -114,9 +114,9 @@ Orchis 在 GNOME GTK 主题设计中相当流行，亦可用于 KDE。Orchis 有
 
 如果与一些炫酷的 Plasma 组件和图标一起使用，它可以创造一种别致的视觉享受。
 
-[Iridescent Round][21]
+> **[Iridescent Round][21]**
 
-### 10. Nova Papilio
+### 10、Nova Papilio
 
 这是一个圆润的，以紫色为主的浅色主题。如果你喜欢浅色主题和大圆角，这个主题将会为你带来视觉上的愉悦。
 
@@ -124,9 +124,9 @@ Orchis 在 GNOME GTK 主题设计中相当流行，亦可用于 KDE。Orchis 有
 
 这个主题可以**从 KDE 系统设置安装**。
 
-[Nova Papilio][23]
+> **[Nova Papilio][23]**
 
-### 11. WinSur Dark
+### 11、WinSur Dark
 
 顾名思义，它有来自 Windows 和 MacOS 主题的某些视觉元素。
 
@@ -134,7 +134,7 @@ Orchis 在 GNOME GTK 主题设计中相当流行，亦可用于 KDE。Orchis 有
 
 这个主题有浅色和深色版本，你可以**在 KDE 系统设置**中找到它。这个主题有圆角和光洁的外观。但根据我的个人体验，它可能会使小显示器上的显示略显拥挤。
 
-[WinSur Dark][25]
+> **[WinSur Dark][25]**
 
 #### 值得提及的一些事情
 
@@ -148,7 +148,7 @@ Orchis 在 GNOME GTK 主题设计中相当流行，亦可用于 KDE。Orchis 有
 
 #### 从设置安装主题
 
-这是最常见也是最简单的方法。打开 KDE 设置。选择“外观”，点击“全局主题”。然后，你可以通过点击如下图所示的按钮搜索主题。
+这是最常见也是最简单的方法。打开 KDE <ruby>设置<rt>Settings</rt></ruby>。选择“<ruby>外观<rt>Appearance</rt></ruby>”，点击“<ruby>全局主题<rt>Global Themes</rt></ruby>”。然后，你可以通过点击如下图所示的按钮搜索主题。
 
 ![从 KDE 系统设置中下载新的全局主题][30]
 
@@ -160,21 +160,21 @@ Orchis 在 GNOME GTK 主题设计中相当流行，亦可用于 KDE。Orchis 有
 
 #### 从下载的主题文件中应用主题
 
-某些情况下，你可能在网上找到了一些你感兴趣但 KDE Store 中并不包含的主题。在这种情况下，你需要下载并提取文件。随后，将下载的主题的全局主题文件夹放在 `~/.local/share/plasma/look-and-feel/` 下，将 Plasma 主题文件夹放在 `~/.local/share/plasma/desktoptheme/` 下。
+某些情况下，你可能在网上找到了一些你感兴趣但 KDE 商店中并不包含的主题。在这种情况下，你需要下载并提取文件。随后，将下载的主题的全局主题文件夹放在 `~/.local/share/plasma/look-and-feel/` 下，将 Plasma 主题文件夹放在 `~/.local/share/plasma/desktoptheme/` 下。
 
 ![在文件管理器中的 KDE Plasma 主题文件夹][32]
 
-现在，打开设置，你将看到你安装的主题已经可以在“外观”中找到。
+现在，打开设置，你将看到你安装的主题已经可以在“<ruby>外观<rt>Appearance</rt></ruby>”中找到。
 
 #### 通过软件包管理器安装主题
 
-这种方法具有局限性。有一些主题，它们有进入你使用的发行版的官方仓库。你可以通过你的软件包管理器搜索并安装它们。例如，你可以在 Ubuntu 下通过运行以下命令安装 Materia-KDE 主题：
+采用这种方法的不多。有一些主题，它们出现在你使用的发行版的官方仓库中。你可以通过你的软件包管理器搜索并安装它们。例如，你可以在 Ubuntu 下通过运行以下命令安装 Materia-KDE 主题：
 
 ```
 sudo apt install materia-kde
 ```
 
-如上文所述，这种方法只能安装有限数量的主题，而且随发行版的不同而不同。**在安装后，你可以在 系统设置 > 外观 中更改主题**。
+如上文所述，这种方法只能安装有限的几个主题，而且随发行版的不同而不同。在安装后，你可以在 <ruby>系统设置<rt>System Settings</rt></ruby> > <ruby>外观<rt>Appearance</rt></ruby> 中更改主题。
 
 ### 结语
 
@@ -189,7 +189,7 @@ via: https://itsfoss.com/best-kde-plasma-themes/
 作者：[sreenath][a]
 选题：[lkxed][b]
 译者：[自由的铁矿](https://github.com/vvvbbbcz)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
