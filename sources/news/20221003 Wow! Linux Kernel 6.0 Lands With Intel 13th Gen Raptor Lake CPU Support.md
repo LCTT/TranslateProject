@@ -23,6 +23,8 @@ As you will undoubtedly notice, the version number in Linux 6.0 has skipped the 
 
 The reason for the major version change is that the version numbers in the 5.x line were getting too big. There's not a hard rule regarding version numbering changes, and it mostly happens only when Linus Torvalds becomes worried that the [number is getting bigger][2].
 
+> As is hopefully clear to everybody, the major version number change is more about me running out of fingers and toes than it is about any big fundamental changes.
+
 That being said, Linux 6.0 is not fundamentally different from the version number might suggest. Despite this, it does bring some cool new features, which we'll look at now.
 
 ### Linux Kernel 6.0: What's New?
