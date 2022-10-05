@@ -7,39 +7,39 @@
 [#]: publisher: " "
 [#]: url: " "
 
-A Native Linux GPU Driver for Apple Silicon is Almost Ready!
+一个适用于 Apple Silicon 的原生 Linux GPU 驱动程序几乎准备就绪！
 ======
-A native Linux GPU driver on Apple M1? It's almost here!
+苹果 M1 上的原生 Linux GPU 驱动？它就快来了!
 
-![A Native Linux GPU Driver for Apple Silicon is Almost Ready!][1]
+![一个适用于 Apple Silicon 的原生 Linux GPU 驱动程序几乎准备就绪！][1] 。
 
-Making Linux work on an Apple silicon-powered device is what many of us want!
+让 Linux 在 Apple Silicon 设备上工作是我们很多人的愿望!
 
-Thanks to [Asahi Linux project][2], it is now a reality for testers. Sure, it is not ready for prime time, but if you are an advanced Linux user, you could try Linux on Apple M1/M2 devices right now.
+感谢 [Asahi Linux 项目][2]，它现在对测试人员来说已经成为现实。当然，它还没有准备好进入黄金时代，但如果你是一个高级 Linux 用户，你现在就可以在苹果 M1/M2 设备上尝试 Linux。
 
-Now, an exciting progress by **Asahi Lina**, a Linux developer, has all our attention.
+现在，Linux 开发者 **Asahi Lina** 的一个令人兴奋的进展引起了我们所有人的注意。
 
-**We might have a working native GPU driver written in Rust sooner than expected.**
+**我们可能会比预期更早地拥有一个用 Rust 编写的原生 GPU 驱动程序。**
 
-### So, What Does This Mean?
+### 所以，这意味着什么？
 
-A couple of months ago, Asahi Lina joined the Asahi Linux project and started [developing a prototype driver][3] to run graphics applications on Linux.
+几个月前，Asahi Lina 加入了 Asahi Linux 项目，并开始[开发一个驱动程序原型][3]以在 Linux 上运行图形应用程序。
 
-Now, with more tweaks and some amazing dedication by Asahi Lina to reverse engineer the M1 GPU hardware interface, she has managed to run GNOME, KDE apps, YouTube on Firefox, and more on an Apple M1 chip!
+现在，通过更多的调整和一些来自 Asahi Lina 对 M1 GPU 硬件接口的逆向工程的惊人的贡献，她已经成功地在苹果 M1 芯片上运行 GNOME、KDE 应用程序、Firefox 上的 YouTube 等！
 
-Here's what she [tweeted][4]:
+以下是她 [推特][4] 的内容：
 
-Note that this hasn't been tested with Apple M2 yet.
+需要注意的是，这还没有在苹果 M2 上测试过。
 
-Here's the video stream where you get to see it in action:
+这里还有个视频，你可以看到它运行的情况：
 
-![IT WORKS! GNOME, Firefox, KDE apps, everything!!!!][5]
+![它工作了！GNOME, Firefox, KDE App 和所有东西！！！！][5]
 
-She also explains:
+她还解释说：
 
-Of course, this is an early development when we do not even have Rust implementation with the Linux Kernel. So, probably you would see this getting closer to reality with Linux Kernel 6.1 or newer when Rust starts getting to the mainline releases.
+当然，这还只是位于早期的开发，我们甚至没有在 Linux 内核中拥有 Rust 实现。所以，当 Rust 开始进入主线版本时，也就是 Linux 内核 6.1 或更新版本时，你可能会看到它越来越接近现实。
 
-Nevertheless, this is an incredible milestone for Asahi Linux. With some of the developments, users must be anxious to try Linux on Apple silicon-powered devices.
+尽管如此，这对 Asahi Linux 来说是一个不可思议的里程碑。随着一些发展，用户一定急于在 Apple Silicon 设备上尝试Linux。
 
 --------------------------------------------------------------------------------
 
