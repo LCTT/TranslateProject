@@ -3,21 +3,22 @@
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15092-1.html"
 
 Linux inxi 命令的 3 种使用方法
 ======
-我在 Linux 上使用 inxi 来检查我的笔记本电脑电池、CPU 信息，甚至天气。
+
+> 我在 Linux 上使用 inxi 来检查我的笔记本电脑电池、CPU 信息，甚至天气。
 
 ![Coding on a computer][1]
 
 当我在查询有关笔记本电脑电池健康状况的信息时，我偶然发现了 `inxi`。它是一个命令行系统信息工具，可提供有关你的 Linux 计算机（无论是笔记本电脑、台式机还是服务器）的大量信息。
 
-`inxi` 命令使用 GPLv3 [许可][2]，许多 Linux 发行版都包含它。根据它的 Git 存储库：“inxi 努力支持最广泛的操作系统和硬件，从最简单的消费台式机到最先进的专业硬件和服务器。”
+`inxi` 命令采用 GPLv3 [许可证][2]，许多 Linux 发行版都包含它。据它的 Git 存储库称：“inxi 努力支持最广泛的操作系统和硬件，从最简单的消费台式机到最先进的专业硬件和服务器。”
 
-文档很完善，并且该项目在线维护了完整的[手册页][3]。安装后，你可以使用 `man inxi` 命令访问系统上的手册页。
+文档很完善，并且该项目在线维护了完整的 [手册页][3]。安装后，你可以使用 `man inxi` 命令访问系统上的手册页。
 
 ### 在 Linux 上安装 inxi
 
@@ -33,7 +34,7 @@ $ sudo dnf install inxi
 $ sudo apt install inxi
 ```
 
-你可以在[此处][4]找到有关 Linux 发行版安装选项的更多信息。
+你可以在 [此处][4] 找到有关 Linux 发行版安装选项的更多信息。
 
 ### 在 Linux 上使用 inxi 的 3 种方法
 
@@ -73,7 +74,7 @@ Info:
   Shell: Bash inxi: 3.3.13
 ```
 
-### 1. 显示电池状态
+### 1、显示电池状态
 
 你可以使用 `-B` 选项检查电池健康状况。结果显示系统电池 ID、充电情况和其他信息：
 
@@ -83,7 +84,7 @@ Battery:
 ID-1: BATT charge: 44.3 Wh (85.2%) condition: 52.0/53.2 Wh (97.7%)
 ```
 
-### 2. 显示 CPU 信息
+### 2、显示 CPU 信息
 
 使用 `-C` 选项了解有关 CPU 的更多信息：
 
@@ -105,7 +106,7 @@ CPU:
 $ inxi -c 42
 ```
 
-以下是使用颜色 5 和 7 的几个不同选项的示例：
+以下是使用配色 5 和 7 的几个不同选项的示例：
 
 ![inxi -c 5 command][5]
 
@@ -113,7 +114,7 @@ $ inxi -c 42
 
 ![inxi -s][6]
 
-### 3. 组合选项
+### 3、组合选项
 
 如果支持，你可以组合 `inxi` 的选项以获得复杂的输出。例如，`inxi -S` 提供系统信息，`-v` 提供详细输出。将两者结合起来可以得到以下结果：
 
@@ -155,9 +156,9 @@ Weather:
 
 ### 总结
 
-有许多很棒的工具可以收集有关你的计算机的信息。 我根据机器、桌面或我的心情使用不同的。 你最喜欢的系统信息工具是什么？
+有许多很棒的工具可以收集有关你的计算机的信息。我根据机器、桌面或我的心情使用不同的工具。你最喜欢的系统信息工具是什么？
 
-图片来源：（Don Watkins，CC BY-SA 4.0）
+*图片来源：（Don Watkins，CC BY-SA 4.0）*
 
 --------------------------------------------------------------------------------
 
@@ -166,7 +167,7 @@ via: https://opensource.com/article/22/9/linux-inxi-command
 作者：[Don Watkins][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
