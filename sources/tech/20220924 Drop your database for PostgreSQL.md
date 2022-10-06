@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/drop-your-database-for-postgresql"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
