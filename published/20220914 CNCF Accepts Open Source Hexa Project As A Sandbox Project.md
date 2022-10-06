@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "littlebirdnest"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15109-1.html"
 
 CNCF 接受开源 Hexa 项目作为沙盒项目
 ======
