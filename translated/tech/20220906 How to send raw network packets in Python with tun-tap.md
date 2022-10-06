@@ -7,7 +7,7 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to send raw network packets in Python with tun/tap
+如何使用 tun/tap 通过 Python 发送网络数据包
 ======
 
 最近我正在做一个项目，为了解释计算机网络的工作原理，我需要在不使用封装好的网络工具库的前提下，通过一些 Python 玩具代码来实现一些计算机网络协议。
