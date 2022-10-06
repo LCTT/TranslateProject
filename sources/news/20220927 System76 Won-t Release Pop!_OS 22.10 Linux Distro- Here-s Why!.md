@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/no-pop-os-21-10/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Cubik65536"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
