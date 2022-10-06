@@ -146,6 +146,3 @@ via: https://www.debugpoint.com/string-processing-in-libreoffice-calc-macro-with
 [5]: https://www.debugpoint.com/wp-content/uploads/2014/11/LibreOffice-Calc-Macro-Mid-Example.png
 [6]: https://www.debugpoint.com/wp-content/uploads/2014/11/LibreOffice-Calc-Macro-Instr-Example.png
 [7]: http://www.debugpoint.com/libreoffice-basic-macro-tutorial-index/
-[8]: https://www.debugpoint.com/enable-rpm-fusion-fedora-rhel-centos/
-[9]: https://news.google.com/publications/CAAqBwgKMOCfmgsw-qmyAw
-[10]: https://t.me/debugpoint
