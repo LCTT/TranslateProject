@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Cubik65536"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15110-1.html"
 
 Tuxedo 已对所有用户开放基于 Ubuntu 的 TUXEDO OS
 ======
