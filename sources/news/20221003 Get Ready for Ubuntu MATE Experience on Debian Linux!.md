@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/ubuntu-mate-debian/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "KevinZonda"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
