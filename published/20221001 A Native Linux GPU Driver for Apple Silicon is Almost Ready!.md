@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "KevinZonda"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15114-1.html"
 
 一个适用于苹果芯片的原生 Linux GPU 驱动程序几乎就绪！
 ======
