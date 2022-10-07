@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/open-organization/21/6/celebrate-sixth-anniversary)
 [#]: author: (Laura Hilliger https://opensource.com/users/laurahilliger)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MareDevi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

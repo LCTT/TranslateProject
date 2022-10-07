@@ -2,11 +2,10 @@
 [#]: via: (https://opensource.com/article/21/7/what-security-policy)
 [#]: author: (Chris Collins https://opensource.com/users/clcollins)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (FelixYFZ )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-
 What you need to know about security policies
 ======
 Learn about protecting your personal computer, server, and cloud systems
