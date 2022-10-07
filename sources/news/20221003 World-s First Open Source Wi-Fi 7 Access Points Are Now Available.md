@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/10/worlds-first-open-source-wi-fi-7-access-points-are-now-available/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Mariam-yxy"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
