@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Cubik65536"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15116-1.html"
 
 System 76 将不会发布 Pop!_OS 22.10 Linux 发行版
 ======
