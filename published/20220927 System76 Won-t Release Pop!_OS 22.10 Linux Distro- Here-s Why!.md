@@ -3,13 +3,14 @@
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lkxed"
 [#]: translator: "Cubik65536"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15116-1.html"
 
-System 76 将不会发布 Pop!_OS 22.10 Linux 发行版：这就是为什么！
+System 76 将不会发布 Pop!_OS 22.10 Linux 发行版
 ======
-Pop!_OS 22.10 将不会发布。所以，你将无法使用 GNOME 43... 这就是为什么！
+
+> Pop!_OS 22.10 将不会发布。所以，你将无法使用 GNOME 43…… 这里是原因。
 
 ![System 76 将不会发布 Pop!_OS 22.10 Linux 发行版：这就是为什么！][1]
 
@@ -23,7 +24,9 @@ Pop!_OS 是一个基于 Ubuntu 的 Linux 发行版，它提供了一个精心设
 
 **如果你不知道的话**，这是我们对 Pop!_OS 的 COSMIC 桌面环境的旧报道，以供说明：
 
-[哦，哇哦！Pop!_OS Linux 开发人员正在创建一个基于 Rust 的新桌面环境][4]
+![][4a]
+
+> **[哦，哇哦！Pop!_OS Linux 开发人员正在创建一个基于 Rust 的新桌面环境][4]**
 
 ### Pop!_OS 22.10 发行版将不会发布
 
@@ -53,11 +56,13 @@ Michael 提到：
 
 我们曾经介绍过 COSMIC 桌面环境的早期预览构建，你可以在这里查看：
 
-[我尝试了 System76 新的基于 Rust 的 COSMIC 桌面！][12]
+![][12a]
+
+> **[我尝试了 System76 新的基于 Rust 的 COSMIC 桌面！][12]**
 
 ### 为什么这是件好事？
 
-Pop!_OS 的 LTS 版本已经收到了比 Ubuntu 更多的包更新和内核升级，所以你不必担心没有 22.10 版本的发布。
+Pop!_OS 的 LTS 版本已经收到了比 Ubuntu 更多的包更新和内核升级，所以你不必担心没有发布 22.10 版本。
 
 相反，我们应该期待 Pop!_OS 的下一个主要升级，那时他们会正式介绍 Rust-COSMIC 桌面环境。
 
@@ -69,8 +74,8 @@ via: https://news.itsfoss.com/no-pop-os-21-10/
 
 作者：[Sourav Rudra][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[Cubik65536](https://github.com/Cubik65536)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -80,6 +85,7 @@ via: https://news.itsfoss.com/no-pop-os-21-10/
 [2]: https://system76.com/
 [3]: https://news.itsfoss.com/pop-os-cosmic-rust/
 [4]: https://news.itsfoss.com/pop-os-cosmic-rust/
+[4a]: https://news.itsfoss.com/content/images/wordpress/2021/11/pop-os-cosmic-rust.png
 [5]: https://www.omgubuntu.co.uk/2022/09/excited-for-pop_os-22-10-dont-be
 [6]: https://www.reddit.com/r/pop_os/comments/xifwt6/comment/ip3l425/
 [7]: http://proton.go2cloud.org/aff_c?offer_id=15&aff_id=1173
@@ -88,3 +94,4 @@ via: https://news.itsfoss.com/no-pop-os-21-10/
 [10]: https://www.rust-lang.org/
 [11]: https://www.freedesktop.org/wiki/Specifications/
 [12]: https://news.itsfoss.com/system76-rust-cosmic-desktop/
+[12a]: https://news.itsfoss.com/content/images/wordpress/2022/01/system76-rust-based-distro-ft.png
