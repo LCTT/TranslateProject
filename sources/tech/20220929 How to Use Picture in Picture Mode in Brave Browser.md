@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/picture-in-picture-brave/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
