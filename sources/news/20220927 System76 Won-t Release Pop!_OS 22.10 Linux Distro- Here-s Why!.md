@@ -7,61 +7,61 @@
 [#]: publisher: " "
 [#]: url: " "
 
-System76 Won't Release Pop!_OS 22.10 Linux Distro: Here's Why!
+System 76 将不会发布 Pop!_OS 22.10 Linux 发行版：这就是为什么！
 ======
-There will be no Pop!_OS 22.10. So, you can't get your hands on GNOME 43.. Here's why!
+Pop!_OS 22.10 将不会发布。所以，你将无法使用 GNOME 43... 这就是为什么！
 
-![System76 Won't Release Pop!_OS 22.10 Linux Distro: Here's Why!][1]
+![System 76 将不会发布 Pop!_OS 22.10 Linux 发行版：这就是为什么！][1]
 
-Pop!_OS is an Ubuntu-based distro that offers a polished user experience alongside a robust software suite.
+Pop!_OS 是一个基于 Ubuntu 的 Linux 发行版，它提供了一个精心设计的用户体验以及强大的软件套件。
 
-Pop!_OS releases are usually worth the wait for their latest tech stack and useful tweaks they bring in with their desktop environment experience.
+考虑到它带来的最新技术和桌面环境带来的有用的调整，Pop!_OS 发行版通常值得等待。
 
-But, you will not be getting a Pop!_OS 22.10 release.
+但是，你将无法获得 Pop!_OS 22.10 发行版。
 
-[System76][2] wants to focus on developing its own Rust-based COSMIC desktop environment ditching GNOME for future releases. 😲
+[System76][2] 希望专注于开发其自己的基于 Rust 的 COSMIC 桌面环境，并在未来的版本中放弃 GNOME。😲
 
-**In case you did not know**, here is our older coverage on the COSMIC desktop for Pop!_OS to provide clarity:
+**如果你不知道的话**，这是我们对 Pop!_OS 的 COSMIC 桌面环境的旧报道，以供说明：
 
-[Oh, Wow! Pop!_OS Linux Devs Are Creating a New Rust-based Desktop Environment][3]
+[哦，哇哦！Pop!_OS Linux 开发人员正在创建一个基于 Rust 的新桌面环境][4]
 
-### No Pop!_OS 22.10 Release
+### Pop!_OS 22.10 发行版将不会发布
 
-A new Pop!_OS release usually comes just after Ubuntu's new release for both the LTS and non-LTS versions.
+一般在 Ubuntu 发布新的 LTS 和非 LTS 版本之后，Pop!_OS 发行版就会发布。
 
-Without Pop!_OS 22.10, some users might be disappointed not to get their hands on GNOME 43 experience on Pop!_OS.
+没有 Pop!_OS 22.10，一些用户可能会失望，因为他们无法在 Pop!_OS 上体验 GNOME 43。
 
-Thanks to [OMG!Ubuntu!][5] for spotting this on a [Reddit comment][6] by Pop!_OS developer **Michael Murphy**.
+感谢 [OMG!Ubuntu!][5] 发现了 Pop!_OS 开发人员 **Michael Murphy** 的这个 [Reddit 评论][6]。
 
-Michael mentions:
+Michael 提到：
 
-> We are going to focus our development time onto the Rust implementation of COSMIC instead of 22.10. It takes a lot of effort to support multiple releases of Ubuntu, and the 6 month release cycle really eats into development time and stability of the product.
+> 我们将会把开发时间集中到 COSMIC 的 Rust 实现上，而不是 22.10。支持多个 Ubuntu 版本需要很大的努力，而 6 个月的发布周期真的会吃掉开发时间和产品的稳定性。
 
-👏 I believe that is an excellent decision. Last year, when they announced their plans for a Rust-based built-from-scratch desktop environment, I always wondered how they could pull it off.
+👏 我相信这是一个很好的决定。去年，当他们宣布了基于 Rust 从头开始构建桌面环境的计划时，我总是想知道他们如何做到的。
 
-It is a huge task to make something from the ground up and reach the expectation of users who already have a great experience on Pop!_OS with a GNOME-based desktop.
+从头开始做一件事并达到用户的期望是一项艰巨的任务，这些用户已经在基于 GNOME 的 Pop!_OS 上拥有了很好的体验。
 
-### COSMIC Desktop Environment
+### COSMIC 桌面环境
 
-![pop os cosmic de early build][9]
+![pop os cosmic 桌面环境早期构建][9]
 
-It would be interesting to see more developments in the COSMIC desktop environment. The last time we tried it (or saw the mockups), it sparked excitement among the users even when they were just starting out.
+看到 COSMIC 桌面环境的更多发展会很有趣。上次我们尝试它（或看到演示）时，用户会对它感到兴奋，即使它们只是刚刚开始。
 
-Technically, it has been in development since 2021, with a Pop!_OS release coming in 2023.
+从技术上讲，它自 2021 年以来就一直在开发中，2023 年的 Pop!_OS 发行版将会带来它。
 
-It is written in the [Rust][10] programming language following the freedesktop [interoperability specifications][11], and to completely remove any dependence on GNOME and its shell extensions.
+它使用 [Rust][10] 编程语言编写，遵循 freedesktop [互操作性规范][11]，并完全移除了对 GNOME 和其 shell 扩展的依赖。
 
-We had previously covered the early preview build of the COSMIC desktop environment, you can check that out here:
+我们曾经介绍过 COSMIC 桌面环境的早期预览构建，你可以在这里查看：
 
-[I Tried System76’s New Rust-based COSMIC Desktop!][12]
+[我尝试了 System76 新的基于 Rust 的 COSMIC 桌面！][12]
 
-### Why Is This a Good Thing?
+### 为什么这是件好事？
 
-The LTS releases for Pop!_OS already receive regular package updates and kernel upgrades more than Ubuntu, so you have nothing to worry about not getting a 22.10 version release.
+Pop!_OS 的 LTS 版本已经收到了比 Ubuntu 更多的包更新和内核升级，所以你不必担心没有 22.10 版本的发布。
 
-Instead, we should look forward to Pop!_OS's next major upgrade where they properly introduce the Rust-COSMIC desktop environment.
+相反，我们应该期待 Pop!_OS 的下一个主要升级，那时他们会正式介绍 Rust-COSMIC 桌面环境。
 
-*💬 What do you think about this decision? Are you excited to see what's in store with future Pop!_OS releases?*
+*💬 你对这个决定怎么看？你对未来的 Pop!_OS 发行版有什么期待吗？*
 
 --------------------------------------------------------------------------------
 
