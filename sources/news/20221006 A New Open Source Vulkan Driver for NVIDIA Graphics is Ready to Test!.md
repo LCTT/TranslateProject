@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/nvidia-nvk/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Cubik65536"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -73,7 +73,7 @@ via: https://news.itsfoss.com/nvidia-nvk/
 
 作者：[Sourav Rudra][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Cubik65536](https://github.com/Cubik65536)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
