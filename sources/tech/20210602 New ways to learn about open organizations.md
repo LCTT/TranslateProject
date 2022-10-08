@@ -46,7 +46,7 @@
 
 ![Open Leadership Definition word cloud][21]
 
-_Open Leadership Definition word cloud by Laura Hiliger (CC BY-SA)_
+_Laura Hiliger 提供的的开放式领导定义词云 (CC BY-SA)_
 
 #### 开放式领导定义
 
