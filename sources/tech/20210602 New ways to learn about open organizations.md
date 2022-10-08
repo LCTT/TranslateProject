@@ -7,39 +7,38 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-New ways to learn about open organizations
+了解开放组织的新途径
 ======
-Celebrate the Open Organization community's sixth anniversary by getting
-involved in two exciting new projects.
+通过参与两个令人兴奋的新项目来庆祝开放组织社区的六周年。
 ![][1]
 
-The Open Organization community celebrates its sixth anniversary on June 02. That's six years of articles ([hundreds][2]), books (an [evolving series][3]), conversations ([always inspiring][4]), teaching (we [love it][5]), and learning. We're so proud to be a vibrant community of open experts and leaders working to bring [open principles][6] to organizations large and small. In fact, many of the [Open Organization Ambassadors][7] have made careers out of helping others become more open, and our community remains dedicated to helping leaders across various industries integrate open mindsets and behaviors into their communities and contexts.
+6月2日，开放组织社区庆祝其成立六周年。这是六年来的文章（[上百篇][2]）、书籍（[一系列][3]）、对话（[具有启发性][4]）、教学（我们所[喜欢的][5]）和学习。我们非常自豪地成为一个充满活力的开放专家和领导者的社区，致力于将[开放原则][6]带到大大小小的组织。事实上，许多[开放组织大使][7]以帮助他人变得更加开放为职业，我们的社区仍然致力于帮助各行业的领导者以开放的心态和行为融入他们的社区和环境中。
 
-[Last year][8] was a period of [growth][9] and [renewal][10] for the Open Organization project. And this year, we're building on that momentum. Today, we're proud to introduce two new initiatives—and, of course, invite you to participate.
+[去年][8]是开放组织项目的一个[成长][9]和[发展][10]时期。今年，我们将在这一势头的基础上继续努力。今天，我们很自豪地介绍两项新的倡议——当然，也邀请你的参加。
 
-### Turn on, tune in, open up
+### 开启，调整，开放
 
-First, we're excited to announce a brand new venue for our community's work: [OpenOrgTV][11]. It's more than a new platform. It's an experiment in another medium: video.
+首先，我们很高兴地宣布：我们社区的工作有了一个全新的场所。[OpenOrgTV][11]。这不仅仅是一个新的平台。它也是另一种媒介的实验：视频。
 
-On our channel, we'll be hosting all kinds of conversations—from in-depth book reviews to community roundtables. To get started, check out the "[Open Leadership Conversations][12]" series, which features interviews with insightful leaders offering their perspectives on what it means to lead according to open principles. Or watch "[Ask the Ambassadors][13]," our Q&amp;A-style write-in show starring community experts answering _your_ questions about organizational culture and design. Want to be part of the show? Submit your questions to community members in our [new dedicated forum][14].
+在我们的频道上，我们将举办各种对话--从深层次的书评到社区圆桌会议。首先，请查看"[Open Leadership Conversations][12]"系列，其中包括对某些富有洞察力的领导者的采访，提供他们对根据开放原则进行领导的意义的观点。或者观看"[问大使][13]"，我们的Q&amp;A式写作节目，由社区专家回答你关于组织文化和设计的问题。也想参与这个节目吗？在我们的[new dedicated forum][14]中向社区成员提交你的问题。
 
-All month long, we'll be featuring introductions to the [Open Organization Ambassadors][15], so you can finally see the faces and hear the voices behind the stories, case studies, and interviews you've been reading for years.
+整个月，我们都会介绍 [开放组织大使][15]，让您终于可以看到他们的面孔并听到您多年来阅读的故事、案例研究和采访背后的声音。
 
-### Defining open leadership
+### 定义开放式领导
 
-Since we released it several years ago, the [Open Organization Definition][16] has become a guiding framework for organizations looking to better understand the nature of open organizational culture and design (and we've done lots to [teach others about it][17]). Over time, we even developed [a maturity model][18] that operationalizes the definition, so organizations can assess their own levels of openness and make concrete plans to become even _more_ open.
+自从我们几年前发布它以来，[开放组织定义][16] 已成为更好地理解开放组织文化和设计本质的组织指导框架（并且我们已经做了很多工作来[教导其他人] [17]）。 随着时间的推移，我们甚至开发了 [一个成熟度模型][18] 来操作该定义，因此组织可以评估自己的开放程度并制定具体计划以变得 _更加_ 开放。
 
-Now we think it's time to take that work a step further.
+现在，我们认为是时候将这项工作更进一步了。
 
-But the Open Organization community is more than any combination of platforms, tools, or projects. It's people, all working enthusiastically together to help spread open principles and practices.
+但是，开放组织社区不仅仅是平台、工具或项目的任何组合。它是所有人都热情地一起工作，以帮助传播开放原则和实践。
 
-Inspired by our own experience, pre-existing frameworks from open organizations like [Red Hat][19] and [Mozilla][20], years of studying and interviewing open leaders in the field, and a desire to better understand how open leadership _really_ works, we're pleased to unveil an early draft of a brand new document: the Open Leadership Definition.
+受我们自己经验、[Red Hat][19]和[Mozilla][20]等开放组织已有的框架、多年研究和采访该领域的开放领袖的启发，以及我们对更好地理解开放领导力如何 _真正_ 发挥作用的渴望，我们很高兴公布一份全新文件的早期草案：开放领导力定义（the Open Leadership Definition）。
 
-This document outlines the mindsets and behaviors unique to the kinds of leaders who build open organizations and make them places where open-minded people can grow and thrive. It builds on the Open Organization Definition, explaining how open leaders embody and champion open organization characteristics—like transparency, inclusivity, adaptability, collaboration, and community.
+本文档概述了建立开放型组织并使其成为思想开放的人能够成长和茁壮成长的地方的各类领导者所特有的心态和行为。它建立在开放型组织定义的基础上，解释了开放型领导者如何体现和倡导开放型组织的特征，如透明度、包容性、适应性、协作性和社区性。
 
-And we're keen to share it with the world.
+而且我们渴望与世界分享。  
 
-Beginning today (and continuing for the next two weeks), we're collecting _your_ insights and comments on our draft document. We're eager to hear your ideas, and will take them _en masse_ or in snippets. You can comment on individual parts of the document, or the entire thing. Just see the links below. We look forward to hearing from you.
+从今天开始（在接下来的两周内），我们将收集您对我们文件草案的见解和意见。我们渴望听到您的想法，并将接受您的意见的 _整体_ 或片段。您可以对文件的个别部分或整个文件提出意见。请查看下面的链接。我们期待着听到您的意见。
 
 * * *
 
@@ -49,45 +48,44 @@ Beginning today (and continuing for the next two weeks), we're collecting _your_
 
 _Open Leadership Definition word cloud by Laura Hiliger (CC BY-SA)_
 
-#### The Open Leadership Definition
+#### 开放式领导定义
 
-[Open Leadership: Introduction][22]
+[Open Leadership: 简介][22]
 
-[Open Leadership: Transparency][23]
+[Open Leadership: 透明度][23]
 
-[Open Leadership: Inclusivity][24]
+[Open Leadership: 包容性][24]
 
-[Open Leadership: Adaptability][25]
+[Open Leadership: 适应性][25]
 
-[Open Leadership: Collaboration][26]
+[Open Leadership: 协作][26]
 
-[Open Leadership: Community][27]
+[Open Leadership: 社区][27]
 
-[Read the entire thing][28] in our shared folder.
-
+在我们的共享文件夹中[阅读全文][28]
 * * *
 
-### Let's connect
+### 联系我们
 
-And of course, you can still find our community in all the usual places like:
+当然，你仍然可以在所有常见的地方找到我们的社区，如：
 
-  * [Our project website][29], your portal to the entire Open Organization project and community
-  * [Our conversation hub][4], where you can interact with community members, ask questions, learn about new projects, find resources, and help others
-  * [Our GitHub organization][30], where we're always working on new materials in the open and invite you to join us
-  * [Our publication channel at Opensource.com][2], where we're publishing the latest analyses, case studies, interviews, and resources for practitioners in various regions and industries
-  * Our [Twitter][31] and [LinkedIn][32] platforms, where we're sharing our latest updates and fostering new conversations
+  * [我们的项目网站][29], 您通往整个开放组织项目和社区的门户。
+  * [我们的对话中心][4], 在这里你可以与社区成员互动，提出问题，了解新项目，寻找资源，并帮助他人。
+  * [我们的 GitHub 组织][30]，我们一直在公开研究新项目，并邀请您加入我们
+  * [我们在Opensource.com的发表频道][2], 我们在这里为各地区和各行业的从业人员发布最新的分析、案例研究、访谈和资源。
+  * 我们的 [Twitter][31] 和 [LinkedIn][32] 平台, 我们将在这里分享我们的最新进展，并促进新的对话。
 
 
 
-But the Open Organization community is more than any combination of platforms, tools, or projects. It's _people_, all working enthusiastically together to help spread open principles and practices. Those people are what makes our community so great.
+但开放组织社区不仅仅是平台、工具或项目的任何组合。 是 _人_，所有人都热情地一起工作以帮助传播开放的原则和实践。正是这些人使我们的社区如此伟大。
 
-That's been the case for six years now. And it always will be.
+六年来一直如此，并将永远保持下去。
 
-### By the numbers
+### 从数字上看
 
 ![][33]
 
-_Infographic via Jen Kelchner_
+_Jen Kelchner提供的信息图表_
 
 --------------------------------------------------------------------------------
 
