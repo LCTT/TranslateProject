@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/10/google-ai-unveils-a-new-open-source-library-for-array-storage/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "KevinZonda"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
