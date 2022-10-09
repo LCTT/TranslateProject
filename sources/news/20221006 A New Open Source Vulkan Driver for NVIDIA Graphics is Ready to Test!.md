@@ -7,65 +7,65 @@
 [#]: publisher: " "
 [#]: url: " "
 
-A New Open Source Vulkan Driver for NVIDIA Graphics is Ready to Test!
+一个全新的用于 NVIDIA 显卡的开源 Vulkan 驱动已经准备好测试了！
 ======
-A new open-source driver is in the making for NVIDIA graphics! Some good progress here...
+为 NVIDIA 显卡开发的一个全新的开源驱动正在开发中！这里有一些好的进展……
 
-![A New Open Source Vulkan Driver for NVIDIA Graphics is Ready to Test!][1]
+![一个全新的用于 NVIDIA 显卡的开源 Vulkan 驱动已经准备好测试了！][1]
 
-**NVK** is a new open-source Vulkan driver for NVIDIA Graphics hardware and aims to be the new go-to graphics driver.
+**NVK** 是一个全新的用于 NVIDIA 显卡的开源 Vulkan 驱动，它的目标是成为新的主流显卡驱动。
 
-This was made possible in part due to Nvidia releasing open-source GPU kernel modules for its data center GPUs and consumer cards (GTX/RTX).
+这成为可能的部分原因是因为 Nvidia 开源了数据中心 GPU 和消费级 GPU（GTX/RTX）的 GPU 内核模块。
 
-[NVIDIA Takes a Big Step to Improve its GPU Experience on Linux][2]
+[NVIDIA 在改善其 GPU 在 Linux 上的体验方面迈出了重要的一步][2]
 
-It has enabled developers to improve open-source drivers and enable more features than what was possible before.
+它使开发人员能够改进开源驱动程序并启用比以前更多的功能。
 
-Let's take a look at what NVK has to offer.
+让我们来看看 NVK 可以提供什么。
 
-### New NVK Open-Source Driver for NVIDIA GPU
+### 适用于 NVIDIA GPU 的新 NVK 开源驱动程序
 
-**Jason Ekstrand** (engineer at Collabora) and a few others from Red Hat have been writing the code for NVK for the past few months.
+**Jason Ekstrand**（Collabora 的工程师）和 Red Hat 的其他人已经在过去几个月里编写了 NVK 的代码。
 
-They could take advantage of the unified firmware BLOBs that Turing GPUs offer, and built on top of it with Vulkan support.
+他们可以利用 Turing 显卡提供的统一固件 BLOB，然后在其上构建 Vulkan 支持。
 
-**But, open-source nouveau drivers exist, right?**
+**但是，nouveau 开源驱动程序已经存在了，对吗？**
 
-NVK is very different from the nouveau drivers, as it has been written from scratch.
+NVK 与其他的 nouveau 驱动非常不同，因为它是从头开始编写的。
 
-Nouveau, a major open-source driver suite for Nvidia GPUs has fallen into disrepair, and trying to build on it is a task not many can take up.
+noiveau，一个重要的 Nvidia 显卡的开源驱动程序，已经年久失修了，试图在它的基础上构建是一个很多人都无法承担的任务。
 
-Of course, skillful engineers worked on it, but lack of corporate backing and contributors affected its evolution.
+当然，它是由有很多才华的工程师开发的，但是缺乏公司的支持和贡献者的影响了它的发展。
 
-**NVK aims to get over those while focusing on support for GPUs of the Turing series and later to start with.**
+**NVK 旨在克服这些问题，同时专注于对 Turing 系列及更高版本 GPU 的支持。**
 
-Support for older GPUs such as Kepler, Maxwell, and Pascal might not come to NVK that easily, because of how the kernel is being developed. It might have a hard dependency on the new kernel, resulting in support for newer GPUs only.
+由于内核的开发方式，对于 Kepler、Maxwell 和 Pascal 等较旧的 GPU 的支持可能不会很容易地加入 NVK。它可能会对新内核有一个很大的依赖，从而只支持较新的 GPU。
 
-Also, the nouveau kernel interface not playing nice with Vulkan and hindering support for older GPUs.
+同时，nouveau 内核接口与 Vulkan 不兼容，阻碍了对较旧 GPU 的支持。
 
-But, there is still scope for further testing, which can result in support for older GPUs with NVK.
+但是，仍然有进一步测试的空间，这可能会让 NVK 可以支持较旧的 GPU。
 
-Of course, with more community contributions, NVK can be improved with additional features and GPU support.
+当然，随着更多的社区贡献，NVK 可以通过增加额外的功能和 GPU 支持来改进。
 
-### How To Try It Out?
+### 如何尝试它？
 
-NVK is currently available in a very alpha-build state, with many features missing and under constant development.
+NVK 目前处于非常初级的状态，有很多功能缺失，并且正在不断开发中。
 
-**So, it is not yet ready for all kinds of users to get a hands on it.**
+**所以，它还不适合让所有类型的用户尝试。**
 
-You can still try it out by pulling and building it from the nvk/main branch from the [nouveau/mesa project][4] on freedesktop.org.
+你还是可以通过拉取 freedesktop.org 上的 [nouveau/mesa 项目][4] 的 nvk/main 分支并构建它来尝试它。
 
-If you want, you can also contribute to the development of NVK by heading over to the [nvk/main branch][5] of the same.
+如果你想的话，你也可以通过贡献到同一个 [nvk/main 分支][5] 来帮助 NVK 的开发。
 
-For more technical info, you can refer to the [official announcement][6].
+对于更多的技术信息，你可以参考 [官方公告][6]。
 
-### Future Potential
+### 未来潜力
 
-NVK has a lot of potential, especially compared to the aging [nouveau][7] graphics driver suite.
+NVK 有很多潜力，尤其是与老化的 [nouveau][7] 图形驱动套件相比。
 
-This can lead to a proper successor of nouveau and a mainstream open-source Nvidia graphics driver suite for Linux with a lot of functionality on offer.
+这可以为 nouveau 带来一个合适的继承者，同时为 Linux 提供一个带有很多功能的，主流的开源 Nvidia 图形驱动套件。
 
-💬 *What are your thoughts on this? Do you think this will finally achieve what nouveau drivers failed to?*
+💬 *你对此有什么看法？你认为这最终能够实现 nouveau 驱动程序所未能实现的吗？*
 
 --------------------------------------------------------------------------------
 
