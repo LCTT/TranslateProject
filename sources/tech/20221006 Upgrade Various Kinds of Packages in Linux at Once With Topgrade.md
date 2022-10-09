@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/topgrade/"
 [#]: author: "Sagar Sharma https://itsfoss.com/author/sagar/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
