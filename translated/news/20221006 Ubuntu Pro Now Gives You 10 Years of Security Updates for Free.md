@@ -11,7 +11,7 @@ Ubuntu Pro 现在免费为你提供 10 年的安全更新
 ======
 一个免费的 Ubuntu Pro 计划，每个人都可以获得 10 年的安全更新。 这是个好消息。
 
-![Ubuntu Pro Now Gives You 10 Years of Security Updates for Free][1]
+![Ubuntu Pro 现在免费为你提供 10 年的安全更新][1]
 
 Canonical 为 Ubuntu Pro 引入了一个免费计价层，该层针对个人使用和小规模部署。
 
