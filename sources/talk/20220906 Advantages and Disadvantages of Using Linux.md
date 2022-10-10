@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/advantages-linux/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
