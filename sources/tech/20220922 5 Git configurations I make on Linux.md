@@ -7,21 +7,21 @@
 [#]: publisher: " "
 [#]: url: " "
 
-5 Git configurations I make on Linux
+我在 Linux 中使用的 5 个 Git 配置
 ======
-This is a simple guide to quickly get started working with Git and a few of its many configuration options.
+这份简要指南能够帮助你快速开始使用 Git，以及配置一些选项。
 
 ![Linux keys on the keyboard for a desktop computer][1]
 
-Setting up Git on Linux is simple, but here are the five things I do to get the perfect configuration:
+在 Linux 中设置 Git 十分简单，但为了获得完美的配置，我做了以下五件事：
 
-1. [Create global configuration][2]
-2. [Set default name][3]
-3. [Set default email address][4]
-4. [Set default branch name][5]
-5. [Set default editor][6]
+1. [创建全局配置][2]
+2. [设置默认名称][3]
+3. [设置默认邮箱地址][4]
+4. [设置默认分支名称][5]
+5. [设置默认编辑器][6]
 
-I manage my code, shell scripts, and documentation versioning using Git. This means that for each new project I start, the first step is to create a directory for its content and make it into a Git repository:
+我使用 Git 管理我的代码、命令行脚本以及文档版本。这意味着每次我开始一项新的任务，首先我需要创建一个文件目录并将其添加到 Git 库中：
 
 ```
 $ mkdir newproject
@@ -29,18 +29,18 @@ $ cd newproject
 $ git init
 ```
 
-There are certain general settings that I always want. Not many, but enough that I don't want to have to repeat the configuration each time. I like to take advantage of the *global* configuration capability of Git.
+有一些我一直想要的常规设置。不多，但可以避免我每次都进行配置。我喜欢利用 Git 的 *全局* 配置功能。
 
-Git offers the `git config` command for manual configuration but this is a lot of work with certain caveats. For example, a common item to set is your email address. You can set it by running `git config user.email` followed by your email address. However, this will only take effect if you are in an existing Git directory:
+Git 提供了进行手动配置的 `git config` 命令，但这有一些注意事项。例如，通常你会设置邮箱地址。你可以通过运行 `git config user.email 你的邮件地址` 命令进行设置。然而，这只会在你当前所在的 Git 目录下起作用。
 
 ```
 $ git config user.email alan@opensource.com
 fatal: not in a git directory
 ```
 
-Plus, when this command is run within a Git repository, it only configures that specific one. The process must be repeated for new repositories. I can avoid this repetition by setting it globally. The *--global* option will instruct Git to write the email address to the global configuration file; `~/.gitconfig`, even creating it if necessary:
+此外，当这个命令在 Git 仓库中运行时，它只会配置特定的一个。在新的仓库中，你不得不重复这个步骤。我可以通过全局配置来避免重复。选项 *--global* 会指示 Git 将邮箱地址写入全局配置 `~/.gitconfig` 文件中，甚至在必要时会创建它：
 
-> Remember, the tilde (~) character represents your home directory. In my case that is /home/alan.
+> 请记住，波浪线(~) 代表你的 `home` 文件夹。在我的电脑中它是 `/home/alan`。 
 
 ```
 $ git config --global user.email alan@opensource.com
@@ -49,17 +49,17 @@ $ cat ~/.gitconfig
         email = alan@opensource.com
 ```
 
-The downside here is if you have a large list of preferred settings, you will have a lot of commands to enter. This is time-consuming and prone to human error. Git provides an even more efficient and convenient way to directly edit your global configuration file—that is the first item on my list!
+这里的缺点是，如果你有大量偏好设置，需要输入很多命令，这将花费大量时间并且很容易出错。Git 提供了更加快捷有效的方式，可以直接编辑你的全局配置文件——这是我列表中的第一项！
 
-### 1. Create global configuration
+### 1. 创建全局配置
 
-If you have just started using Git, you may not have this file at all. Not to worry, let's skip the searching and get started. Just use the `--edit` option:
+如果你刚开始使用 Git，或许你还没有该文件。不用担心，让我们直接开始。只需要用 `--edit` 选项：
 
 ```
 $ git config --global --edit
 ```
 
-If no file is found, Git will generate one with the following content and open it in your shell environment's default editor:
+如果没有该文件，Git 将会创建一个包含以下内容的新文件，并使用你终端的默认编辑器打开它：
 
 ```
 # This is Git's per-user configuration file.
@@ -73,19 +73,19 @@ If no file is found, Git will generate one with the following content and open i
 "~/.gitconfig" 5L, 155B                                     1,1           All
 ```
 
-Now that we have opened the editor and Git has created the global configuration file behind the scenes, we can continue with the rest of the settings.
+现在我们已经打开了编辑器，并且 Git 已经在后台创建了全局配置文件，我们可以继续接下来的设置。
 
-### 2. Set default name
+### 2. 设置默认名称
 
-Name is the first directive in the file, so let's start with that. The command line to set mine is `git config --global user.name "Alan Formy-Duval"`. Instead of running this command, just edit the *name* directive in the configuration file:
+名称是该文件中的首要条目，让我们先从它开始。用命令行设置我的名称是 `git config --global user.name "Alan Formy-Duval"`。只需要在配置文件中编辑 *name* 条目就行，而不是在命令行中运行命令：
 
 ```
 name = Alan Formy-Duval
 ```
 
-### 3. Set default email address
+### 3. 设置默认邮箱地址
 
-The email address is the second directive, so let's update it. By default, Git uses your system-provided name and email address. If this is incorrect or you prefer something different, you can specify it in the configuration file. In fact, if you have not configured them, Git will let you know with a friendly message the first time you commit:
+邮箱地址是第二个条目，让我们添加它。默认情况下，Git 使用你的系统提供的名称和邮箱地址。如果不正确或者你想要更改，你可以在配置文件中具体说明。事实上，如果你没有配置这些，Git 在你第一次提交时会友好的提示你：
 
 ```
 Committer: Alan <alan@hopper>
@@ -93,17 +93,18 @@ Your name and email address were configured automatically based
 on your username and hostname. Please check that they are accurate....
 ```
 
-The command line to set mine is`git config --global user.email`**["alan@opensource.com"][7]**. Instead, edit the *email* directive in the configuration file and provide your preferred address:
+在命令行中运行 `git config --global user.email`**["alan@opensource.com"][7]** 会设置好我的邮箱。同样，我们在配置文件中编辑 *email* 条目，提供你的邮箱地址：
 
 ```
 email = alan@opensource.com
 ```
 
-The last two settings that I like to set are the default branch name and the default editor. These directives will need to be added while you are still in the editor.
 
-### 4. Set default branch name
+我喜欢设置的最后两个设置是默认分支名称和默认编辑器。当你仍在编辑器中时，需要添加这些指令。
 
-There is currently a trend to move away from the usage of the word *master* as the default branch name. As a matter of fact, Git will highlight this trend with a friendly message upon initialization of a new repository:
+### 4. 设置默认分支名称
+
+目前有一种趋势，即不再使用 *master* 作为默认分支名称。事实上，在新存储库初始化时，Git 将通过友好的消息提示更改默认分支名称：
 
 ```
 $ git init
@@ -114,23 +115,23 @@ hint:
 hint:   git config --global init.defaultBranch <name>
 ```
 
-This directive, named *defaultBranch*, needs to be located in a new section named *init*. It is now generally accepted that many coders use the word *main* for their default branch. This is what I like to use. Add this section followed by the directive to the configuration:
+这个名为 *defaultBranch* 的指令需要位于一个名为 *init* 的新部分中。现在普遍接受的是，许多程序员使用 *main* 这个词作为他们的默认分支。这是我喜欢使用的。将此部分后跟指令添加到配置中：
 
 ```
 [init]
             defaultBranch = main
 ```
 
-### 5. Set default editor
+### 5. 设置默认编辑器
 
-The fifth setting that I like to set is the default editor. This refers to the editor that Git will present for typing your commit message each time you commit changes to your repository. Everyone has a preference whether it is [nano][8], [emacs][9], [vi][10], or something else. I'm happy with vi. So, to set your editor, add a *core* section that includes the *editor* directive:
+第五个设置是，设置默认的编辑器。这是指 Git 将使用的编辑器，用于在你每次将更改提交到存储库时输入你的提交消息。不论是 [nano][8]、[emacs][9]、[vi][10] 还是其他编辑器，每个人都有他喜欢的。我喜欢用 vi。添加 *core* 部分，并设置 *editor* 指令为你喜欢的编辑器。
 
 ```
 [core]
             editor = vi
 ```
 
-That's the last one. Exit the editor. Git saves the global configuration file in your home directory. If you run the editing command again, you will see all of the content. Notice that the configuration file is a plain text file, so it can also be viewed using text tools such as the [cat command][11]. This is how mine appears:
+这是最后一项。退出编辑器。Git 在 *home* 目录下保存全局配置文件。如果你再次运行编辑命令，将会看到所有内容。要知道。配置文件是明文存储的文本文件，因此它可以很容易使用文本工具查看，如 [cat][11] 命令。这是我的配置文件内容：
 
 ```
 $ cat ~/.gitconfig
