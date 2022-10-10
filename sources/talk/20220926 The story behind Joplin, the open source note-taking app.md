@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/joplin-interview"
 [#]: author: "Richard Chambers https://opensource.com/users/20i"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MareDevi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
