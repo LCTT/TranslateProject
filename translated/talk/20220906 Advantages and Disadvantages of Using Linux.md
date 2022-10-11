@@ -150,7 +150,6 @@ Linux 是非常流行的，你到处都能听到与 Linux 相关的内容。人�
 
 ### 使用 Linux 的劣势
 
-Linux is not a flawless choice. Just like everything, there are some downsides to Linux as well. Those include:
 Linux 并不是一个没有缺点的选择。任何事都具有两面性，Linux 也有一些不好的地方，包括：
 
 #### 不容易快速上手
@@ -197,9 +196,6 @@ Linux 不是流行的桌面操作系统。
 
 ![gaming illustration][21]
 
-If you want to game on your computer, Windows remains the best option for its support for the newest hardware and technologies.
-
-When it comes to Linux, there are a lot of “ifs and buts” for a clear answer. You can refer to our [gaming guide for Linux][22] to explore more if interested.
 如果你想在电脑上玩游戏，Windows 仍然是支持最新硬件和技术的最佳选择。
 
 在 Linux 上玩游戏并不方便。如果你有兴趣，可以参考我们的 [Linux 游戏指南][22] 以了解更多信息。
