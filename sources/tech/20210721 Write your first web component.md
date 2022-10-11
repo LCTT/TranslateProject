@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/web-components)
 [#]: author: (Ramakrishna Pattnaik https://opensource.com/users/rkpattnaik780)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (cool-summer-021)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
