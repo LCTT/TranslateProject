@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "chai001125"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15132-1.html"
 
 使用 PostgreSQL 建立你的数据库
 ======
