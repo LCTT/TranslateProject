@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/01/29/reasons-for-servers-to-support-ipv6/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
