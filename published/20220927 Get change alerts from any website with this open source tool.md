@@ -10,7 +10,7 @@
 用这个开源工具从任何网站获取变化提醒
 ======
 
-> 使用 changeetection.io 在网站发生变化或更新时获得提醒。
+> 使用 changedetection.io 在网站发生变化或更新时获得提醒。
 
 ![](https://img.linux.net.cn/data/attachment/album/202210/11/153605ikpi81s1mz8wak2z.jpg)
 
@@ -22,11 +22,11 @@
 
 [changedetection.io][2] 项目为网站变更检测和通知提供了一个简单但强大的开源解决方案。它很容易设置，而且可以通知 70 多个（还在不断增加）不同的通知系统，如 Matrix、Mattermost、[Nextcloud][3]、[Signal][4]、[Zulip][5]、[Home Assistant][6]、电子邮件等等。它还能通知专有应用，如 Discord、Office365、Reddit、Telegram 和许多其他应用。
 
-但 [changeetection.io][7] 并不只是局限于观察网页内容。你也可以监视 XML 和 JSON 源，它将建立一个 RSS 馈送，记录变化的网站。
+但 [changedetection.io][7] 并不只是局限于观察网页内容。你也可以监视 XML 和 JSON 源，它将建立一个 RSS 馈送，记录变化的网站。
 
 由于其内置的 JSON 简单存储系统，不需要设置复杂的数据库来接收和存储信息。你可以 [使用 Docker 镜像运行][8] 或用 `pip` 安装它。该项目有一个 [全面的维基帮助页][9]，大多数常见的问题都有涵盖。
 
-对于使用复杂 JavaScript 的网站，你可以用内置的 [Playwright 内容获取器][10] 将你的 changeetection.io 连接到 Chromium 或 Chrome 浏览器。
+对于使用复杂 JavaScript 的网站，你可以用内置的 [Playwright 内容获取器][10] 将你的 changedetection.io 连接到 Chromium 或 Chrome 浏览器。
 
 运行后，在你的浏览器（默认情况下是 `http://localhost:5000`）中访问该应用。如果你的电脑可以从外部网络访问，你可以在 <ruby>设置<rt>Settings</rt></ruby>中设置一个密码。
 
