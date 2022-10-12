@@ -3,25 +3,28 @@
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
 [#]: translator: "chai001125"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15132-1.html"
 
 使用 PostgreSQL 建立你的数据库
 ======
-Postgres 是最灵活的数据库之一，并且它是开源的。
 
-数据库是一种有组织性且灵活地存储信息的工具。电子表格在本质上就是一个数据库，但是图形化应用程序这一限制使得大多数的电子表格应用程序对程序员毫无用处。随着 [边缘计算][3] 和物联网设备成为重要的平台，开发者们需要更有效且轻量级的方法，来存储、处理、查询大量的数据。我最爱的一种结合是使用 [Lua 连接][4] PostgreSQL 数据库。无论你使用什么编程语言，Postgres 一定是数据库的绝佳选择，但是在使用 Postgres 之前，首先你需要知道一些基本的东西。
+![](https://img.linux.net.cn/data/attachment/album/202210/12/100311t4k1k8hfmh4df5hh.jpg)
 
-### 安装 Postgres
+> PostgreSQL 是最灵活的数据库之一，并且它是开源的。
 
-在 linux 上安装 PostgreSQL，要使用你的软件库。在 Fedora，CentOS，Megeia 等类似的 linux 版本上使用命令：
+数据库是以一种有组织且灵活的方式存储信息的工具。电子表格在本质上就是一个数据库，但是图形化应用程序这一限制使得大多数的电子表格应用程序对程序员毫无用处。随着 [边缘计算][3] 和物联网设备成为重要的平台，开发者们需要更有效且轻量级的方法，来存储、处理、查询大量的数据。我最爱的一种组合是使用 [Lua 连接][4] PostgreSQL 数据库。无论你使用什么编程语言，PostgreSQL 一定是数据库的绝佳选择，但是在使用 PostgreSQL 之前，首先你需要知道一些基本的东西。
+
+### 安装 PostgreSQL
+
+在 Linux 上安装 PostgreSQL，要使用你的软件库。在 Fedora，CentOS，Megeia 等类似的 Linux 版本上使用命令：
 
 ```
 $ sudo dnf install postgresql postgresql-server
 ```
 
-在 Debian， Linux Mint， Elementary 等类似的 linux 版本上使用命令：
+在 Debian， Linux Mint， Elementary 等类似的 Linux 版本上使用命令：
 
 ```
 $ sudo apt install postgresql postgresql-contrib
@@ -29,14 +32,13 @@ $ sudo apt install postgresql postgresql-contrib
 
 在 macOs 和 Windows 上，可以从官网 [postgresql.org][5] 下载安装包。
 
-### 配置 Postgres
+### 配置 PostgreSQL
 
-Most distributions install the Postgres database without *starting* it, but provide you with a script or [systemd service][6] to help it start reliably. However, before you start PostgreSQL, you must create a database cluster.
-大多数发行版安装 Postgres 数据库时没有启动它，但是为你提供了一个脚本或 [systemd 服务][6]，能够可靠地启动 Postgres。但是，在启动 PostgreSQL 之前，必须创建一个数据库集群。
+大多数发行版安装 PostgreSQL 数据库时没有启动它，但是为你提供了一个脚本或 [systemd 服务][6]，能够可靠地启动 PostgreSQL。但是，在启动 PostgreSQL 之前，必须创建一个数据库集群。
 
 #### Fedora
 
-在 Fedora，CentOS 等类似的版本上，Postgres 安装包中提供了一个 Postgres 配置脚本。运行这个脚本，可以进行简单地配置：
+在 Fedora，CentOS 等类似的版本上，PostgreSQL 安装包中提供了一个 PostgreSQL 配置脚本。运行这个脚本，可以进行简单地配置：
 
 ```
 $ sudo /usr/bin/postgresql-setup --initdb
@@ -51,17 +53,17 @@ $ sudo /usr/bin/postgresql-setup --initdb
 
 #### 其他版本
 
-最后，如果你是在其他版本上运行的，那么你可以直接使用 Postgres 提供的一些工具。`initdb` 命令会创建一个数据库集群，但是这个命令必须在 `postgres` 用户下运行，你可以使用 `sudo` 来暂时地成为 `postgres` 用户：
+最后，如果你是在其他版本上运行的，那么你可以直接使用 PostgreSQL 提供的一些工具。`initdb` 命令会创建一个数据库集群，但是这个命令必须在 `postgres` 用户下运行，你可以使用 `sudo` 来暂时地成为 `postgres` 用户：
 
 ```
 $ sudo -u postgres \
-"initdb -D /var/lib/pgsql/data \
---locale en_US.UTF-8 --auth md5 --pwprompt"
+    "initdb -D /var/lib/pgsql/data \
+    --locale en_US.UTF-8 --auth md5 --pwprompt"
 ```
 
-### 运行 Postgres
+### 运行 PostgreSQL
 
-现在，数据库集群已经存在了，使用 `initdb` 的输出中提供给你的命令或者使用 systemd 启动 Postgres 服务器：
+现在，数据库集群已经存在了，使用 `initdb` 的输出中提供给你的命令或者使用 systemd 启动 PostgreSQL 服务器：
 
 ```
 $ sudo systemctl start postgresql
@@ -99,15 +101,16 @@ Type "help" for help.
 exampledb=>
 ```
 
-### 创建一个表
+#### 创建一个表
 
 数据库包含很多表。这些表可以可视化为表格，有很多行（在数据库中称为 *记录*）和很多列。行和列的交集称为 *字段*。
 
 结构化查询语言（SQL）是以它提供的内容而命名的，它能提供可预测且一致的语法，来查询数据库内容，从而收到有用的结果。
 
-目前，你的数据库是空的，没有任何的表。你可以用 `CTEATE` 语句来创建一个表。结合使用 `IF NOT EXISTS` 是很有用的，它可以避免破坏现有的表。
+目前，你的数据库是空的，没有任何的表。你可以用 `CREATE` 语句来创建一个表。结合使用 `IF NOT EXISTS` 是很有用的，它可以避免破坏现有的表。
 
 在你创建一个表之前，想想看你希望这个表包含哪一种数据（在 SQL 术语中称为“数据类型”）。在这个例子中，我创建了一个表，包含两列，有唯一标识符的一列和最多九个字符的可变长的一列。
+
 ```
 exampledb=> CREATE TABLE IF NOT EXISTS my_sample_table(
 exampledb(> id SERIAL,
@@ -117,7 +120,7 @@ exampledb(> wordlist VARCHAR(9) NOT NULL
 
 关键字 `SERIAL` 并不是一个数据类型。`SERIAL` 是 [PostgreSQL 中的一个特殊的标记][7]，它可以创建一个自动递增的整数字段。关键字 `VARCHAR` 是一个数据类型，表示限制内字符数的可变字符。在此例中，我指定了最多 9 个字符。PostgreSQL 中有很多数据类型，因此请参阅项目文档以获取选项列表。
 
-### 插入数据
+#### 插入数据
 
 你可以使用 `INSERT` 语句来给你的新表插入一些样本数据：
 
@@ -133,7 +136,7 @@ exampledb=> INSERT INTO my_sample_table (WORDLIST) VALUES ('Alexandria');
 ERROR:  VALUE too long FOR TYPE CHARACTER VARYING(9)
 ```
 
-### 改变表或者列
+#### 改变表或者列
 
 当你需要改变一个域的定义时，你可以使用 `ALTER` 这一 SQL 关键字。例如，如果你想改变 `wordlist` 域中最多只能有 9 个字符的限制，你可以重新设置这个数据类型。
 
@@ -145,20 +148,21 @@ exampledb=> INSERT INTO my_sample_table (WORDLIST) VALUES ('Alexandria');
 INSERT 0 1
 ```
 
-### 查询表中的内容
+#### 查询表中的内容
 
-SQL 是一种查询语言，因此你可以通过查询来查看数据库的内容。查询可以是很简单的，也可以涉及连接多个不同表之间的复杂关系。要查看表中的所有内容，请使用 `*` 上的 `SELECT` 关键字（`*` 是通配符）：
+SQL 是一种查询语言，因此你可以通过查询来查看数据库的内容。查询可以是很简单的，也可以涉及连接多个不同表之间的复杂关系。要查看表中的所有内容，请使用 `SELECT` 关键字和 `*`（`*` 是通配符）：
+
 ```
 exampledb=> SELECT * FROM my_sample_table;
  id |  wordlist
-\----+------------
+----+------------
   1 | Alice
   2 | Bob
   3 | Alexandria
 (3 ROWS)
 ```
 
-### 更多信息
+### 更多数据
 
 PostgreSQL 可以处理很多数据，但是对于任何数据库来说，关键之处在于你是如何设计你的数据库的，以及数据存储下来之后你是怎么查询数据的。在 [OECD.org][8] 上可以找到一个相对较大的公共数据集，你可以使用它来尝试一些先进的数据库技术。
 
@@ -166,7 +170,7 @@ PostgreSQL 可以处理很多数据，但是对于任何数据库来说，关键
 
 在文本编辑器或电子表格应用程序中浏览数据，来了解有哪些列，以及每列包含哪些类型的数据。仔细查看数据，并留意错误情况。例如，`COU` 列指的是国家代码，例如 `AUS` 表示澳大利亚和 `GRC` 表示希腊，在奇怪的 `BRIICS` 之前，这一列的值通常是 3 个字符。
 
-在你理解了这些数据项后，你就可以准备一个 Postgres 数据库了。
+在你理解了这些数据项后，你就可以准备一个 PostgreSQL 数据库了。
 
 ```
 $ createdb landcoverdb --owner bogus
@@ -195,20 +199,20 @@ flag_codes varchar(1),
 flag_names varchar(1));
 ```
 
-### 引入数据
+#### 引入数据
 
 Postgres 可以使用特殊的元命令 `\copy` 来直接引入 CSV 数据：
+
 ```
 landcoverdb=> \copy land_cover from '~/land-cover.csv' with csv header delimiter ','
 COPY 22113
 ```
 
-That's 22,113 records imported. Seems like a good start!
 插入了 22113 条记录。这是一个很好的开始！
 
-### 查询数据
+#### 查询数据
 
-用 `SELECT` 语句可以查询这 22113 条记录的所有列，此外 Postgres 将输出通过管道传输到屏幕上，因此你可以轻松地滚动鼠标来查看输出的结果。更进一步，你可以使用高级SQL，来获得一些有用的视图。
+用 `SELECT` 语句可以查询这 22113 条记录的所有列，此外 PostgreSQL 将输出通过管道传输到屏幕上，因此你可以轻松地滚动鼠标来查看输出的结果。更进一步，你可以使用高级 SQL 语句，来获得一些有用的视图。
 
 ```
 landcoverdb=> SELECT
@@ -240,11 +244,10 @@ ORDER BY country_name,
     year_value;
 ```
 
-Here's some sample output:
 下面是样例的一些输出：
 
 ```
-\---------------+------------+------------
+---------------+------------+------------
  Afghanistan    |       2019 |  743.48425
  Albania        |       2019 |  128.82532
  Algeria        |       2019 |  2417.3281
@@ -260,7 +263,7 @@ SQL 是一种很丰富的语言，超出了本文的讨论范围。通读 SQL �
 
 ### 拓展数据库
 
-PostgreSQL 是伟大的开源数据库之一。有了它，你可以为结构化数据设计存储库，然后使用 SQL 以不同的方式查询它，以便能够获得有关该数据的新视角。Postgres 也能与许多语言集成，包括Python，Lua，Groovy，Java等，因此无论你使用什么工具集，你都可以充分利用好这个出色的数据库。
+PostgreSQL 是伟大的开源数据库之一。有了它，你可以为结构化数据设计存储库，然后使用 SQL 以不同的方式查询它，以便能够获得有关该数据的新视角。PostgreSQL 也能与许多语言集成，包括 Python、Lua、Groovy、Java 等，因此无论你使用什么工具集，你都可以充分利用好这个出色的数据库。
 
 --------------------------------------------------------------------------------
 
@@ -269,7 +272,7 @@ via: https://opensource.com/article/22/9/drop-your-database-for-postgresql
 作者：[Seth Kenlon][a]
 选题：[lkxed][b]
 译者：[chai001125](https://github.com/chai001125)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
