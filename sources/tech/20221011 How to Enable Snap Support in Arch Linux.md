@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-snap-arch-linux/"
 [#]: author: "Pranav Krishna https://itsfoss.com/author/pranav/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
