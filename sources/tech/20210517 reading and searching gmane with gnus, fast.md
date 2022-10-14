@@ -1,5 +1,5 @@
 [#]: subject: "reading and searching gmane with gnus, fast"
-[#]: via: "https://jao.io/blog/2021-05-17-reading-and-searching-gmane-with-gnus-fast.html"
+[#]: via: "https://jao.io/blog/reading-and-searching-gmane-with-gnus-fast.html"
 [#]: author: "jao https://jao.io"
 [#]: collector: "lujun9972"
 [#]: translator: " "
@@ -68,7 +68,7 @@ I am not a mu4e user, but i am pretty sure one can play the same trick if that's
 
 --------------------------------------------------------------------------------
 
-via: https://jao.io/blog/2021-05-17-reading-and-searching-gmane-with-gnus-fast.html
+via: https://jao.io/blog/reading-and-searching-gmane-with-gnus-fast.html
 
 作者：[jao][a]
 选题：[lujun9972][b]
@@ -80,12 +80,12 @@ via: https://jao.io/blog/2021-05-17-reading-and-searching-gmane-with-gnus-fast.h
 [a]: https://jao.io
 [b]: https://github.com/lujun9972
 [1]: https://leafnode.sourceforge.io/
-[2]: tmp.gr7aQUOwRH#fn.1
-[3]: tmp.gr7aQUOwRH#fn.2
-[4]: tmp.gr7aQUOwRH#fn.3
-[5]: tmp.gr7aQUOwRH#fnr.1
+[2]: tmp.lc2yZpuYUV#fn.1
+[3]: tmp.lc2yZpuYUV#fn.2
+[4]: tmp.lc2yZpuYUV#fn.3
+[5]: tmp.lc2yZpuYUV#fnr.1
 [6]: https://wiki.archlinux.org/title/Rss2email
-[7]: tmp.gr7aQUOwRH#fnr.2
-[8]: tmp.gr7aQUOwRH#fnr.3
+[7]: tmp.lc2yZpuYUV#fnr.2
+[8]: tmp.lc2yZpuYUV#fnr.3
 [9]: https://jao.io/blog/tags.html
 [10]: https://jao.io/blog/tag-emacs.html
