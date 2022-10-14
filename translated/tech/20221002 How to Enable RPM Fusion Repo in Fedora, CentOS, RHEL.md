@@ -7,37 +7,38 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Enable RPM Fusion Repo in Fedora, CentOS, RHEL
+如何在 Fedora、CentOS、RHEL 中启用 RPM Fusion 仓库
 ======
-This guide explains the steps to enable third-party software repository RPM Fusion in Fedora Linux Distribution.
+本指南解释了在 Fedora Linux 发行版中启用第三方软件仓库 RPM Fusion 的步骤。
 
-The [RPM Fusion][1] software repo is a community-maintained software repo that provides additional packages for Fedora Linux which is not distributed by the official Fedora team such as DVD playback, media playback, software from GNOME and KDE work, etc. This is because of licensing, other legal reasons, and country-specific software norms.
+[RPM Fusion][1] 软件仓库是一个社区维护的软件仓库，它为 Fedora Linux 提供额外的软件包，这些软件包不是由 Fedora 官方团队分发，例如 DVD 播放、媒体播放、来自 GNOME 和 KDE 的软件等。这是因为许可、其他法律原因和特定国家/地区的软件规范。
 
-The RPM Fusion provides .rpm packages for Red Hat Enterprise Linux as well alongside Fedora.
+RPM Fusion 为 Red Hat Enterprise Linux 以及 Fedora 提供了 .rpm 包。
 
-This guide explains the steps you need to enable the RPM Fusion repo in Fedora Linux. This guide applies to all Fedora release versions.
+本指南介绍了在 Fedora Linux 中启用 RPM Fusion 仓库所需的步骤。本指南适用于所有 Fedora 发行版本。
 
-This is tested in all the current supported Fedora versions – 35, 36 and 37.
+这在所有当前支持的 Fedora 版本（35、36 和 37）中进行了测试。
 
 ![RPM Fusion][2]
 
-### How to Enable RPM Fusion Repo in Fedora Linux, RHEL, CentOS
+### 如何在 Fedora Linux、RHEL、CentOS 中启用 RPM Fusion 仓库
 
-RPM Fusion has two flavours of the repo. Free and non-Free.
+RPM Fusion 有两种版本的仓库：自由和非自由。
 
-The Free one, as its name says, contains a free version of software packages and the non-free ones contain compiled packages of closed source and “non-commercial” open-source software.
+顾名思义，自由版包含软件包的自由版本，非自由版包含封闭源代码和“非商业”开源软件的编译软件包。
 
-Before you proceed, first check whether you have RPM fusion installed. Open up a terminal and run the below command.
+在继续之前，首先检查你是否安装了 RPM fusion。打开终端并运行以下命令。
 
 ```
 dnf repolist | grep rpmfusion
 ```
 
-If RPM is installed, you should see a message like the one below. Then no need to proceed at all. If it is not installed, you may proceed with the following steps.
 
-![RPM-Fusion-Already-Installed-][3]
+如果安装了 RPM，你应该会看到如下所示的消息。就不用下面的步骤。如果未安装，你可以继续执行以下步骤。
 
-Open a terminal and run the below commands as per your operating system versions. Please note that the commands contain both a free and non-free version. If you want, you can omit either one from below while running.
+![RPM Fusion 已安装][3]
+
+打开终端并根据你的操作系统版本运行以下命令。请注意，这些命令包含自由和非自由版本。如果你愿意，你可以在运行时省略下面的任何一个。
 
 #### Fedora
 
@@ -49,7 +50,7 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
-#### Silverblue with rpm-ostree
+#### 带 rpm-ostree 的 Silverblue
 
 ```
 sudo rpm-ostree install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
@@ -95,15 +96,15 @@ sudo dnf install --nogpgcheckhttps://download1.rpmfusion.org/nonfree/el/rpmfusio
 sudo dnf config-manager --enable PowerTools
 ```
 
-### Additional Instructions
+### 附加说明
 
-* RPM Fusion also provides to help users install packages from GNOME Software or KDE Discover. To enable it in Fedora, run the below command.
+* RPM Fusion 还提供帮助用户安装来自 GNOME 软件或 KDE Discover 的软件包。要在 Fedora 中启用它，请运行以下命令。
 
 ```
 sudo dnf groupupdate core
 ```
 
-* You can also enable RPM Fusion to play multimedia files that use gstreamer, and additional multimedia playback packages via the below command.
+* 你还可以通过以下命令启用 RPM Fusion 来使用 gstreamer 和其他多媒体播放包来播放媒体文件。
 
 ```
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
@@ -113,53 +114,53 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 ```
 
-* Enable RPM Fusion to play a DVD that uses libdvdcss.
+* 启用 RPM Fusion 以使用 libdvdcss 播放 DVD。
 
 ```
 sudo dnf install rpmfusion-free-release-taintedsudo dnf install libdvdcss
 ```
 
-* Enable RPM Fusion to enable non-FLOSS hardware packages via the below command.
+* 通过以下命令启用 RPM Fusion 以启用非 FLOSS 硬件包。
 
 ```
 sudo dnf install rpmfusion-nonfree-release-taintedsudo dnf install *-firmware
 ```
 
-After running the commands, if you are using Fedora or CentOS/RHEL – run the below commands before rebooting.
+运行命令后，如果你使用的是 Fedora 或 CentOS/RHEL，请在重启前运行以下命令。
 
 ```
 sudo dnf check-updatesudo dnf update
 ```
 
-### How to remove repo using dnf
+### 如何使用 dnf 删除仓库
 
-If you want to remove the repository, follow the steps below.
+如果要删除仓库，请按照以下步骤操作。
 
-First, check using the below command to view the repo list added to your Fedora system.
+首先，使用以下命令查看添加到 Fedora 系统的仓库列表。
 
 ```
 dnf repolist
 ```
 
-![dnf repolist][4]
+![dnf 仓库列表][4]
 
-As you can see, both rpmfusion free and non-free repo is added. To remove it via dnf, you need to know precisely the repo file name using the following command.
+如你所见，添加了 rpmfusion 自由和非自由仓库。要通过 dnf 删除它，你需要使用以下命令准确知道仓库文件名。
 
 ```
 rpm -qa 'rpmfusion*'
 ```
 
-This would list the exact name of the repo. In the example, they are ‘rpmfusion-free-release’.
+这将列出仓库的确切名称。在示例中，它们是 “rpmfusion-free-release”。
 
-![remove rpmfusion from fedora][5]
+![从 Fedora 中移除 rpmfusion][5]
 
-Now you can simply run the below command to remove it.
+现在你可以简单地运行以下命令来删除它。
 
 ```
 sudo dnf remove rpmfusion-free-release
 ```
 
-You can repeat the above example to remove rpmfusion from Fedora, also, use this to remove any other repo from your system.
+你可以重复上面的例子从 Fedora 中删除 rpmfusion，也可以使用它从系统中删除任何其他仓库。
 
 --------------------------------------------------------------------------------
 
@@ -167,7 +168,7 @@ via: https://www.debugpoint.com/enable-rpm-fusion-fedora-rhel-centos/
 
 作者：[Arindam][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
