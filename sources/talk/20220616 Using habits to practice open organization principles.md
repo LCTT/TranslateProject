@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/open-organization/22/6/using-habits-practice-open-organization-principles"
 [#]: author: "Ron McFarland https://opensource.com/users/ron-mcfarland"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Donkey-Hao"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -131,7 +131,7 @@ via: https://opensource.com/open-organization/22/6/using-habits-practice-open-or
 
 作者：[Ron McFarland][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Donkey-Hao](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
