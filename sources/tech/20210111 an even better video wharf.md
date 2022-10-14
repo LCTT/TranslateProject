@@ -1,5 +1,5 @@
 [#]: subject: "an even better video wharf"
-[#]: via: "https://jao.io/blog/2021-01-11-an-even-better-video-wharf.html"
+[#]: via: "https://jao.io/blog/an-even-better-video-wharf.html"
 [#]: author: "jao https://jao.io"
 [#]: collector: "lujun9972"
 [#]: translator: " "
@@ -100,7 +100,7 @@ In my original example, i was adding also `browse-url` and `browse-url-firefox` 
 
 --------------------------------------------------------------------------------
 
-via: https://jao.io/blog/2021-01-11-an-even-better-video-wharf.html
+via: https://jao.io/blog/an-even-better-video-wharf.html
 
 作者：[jao][a]
 选题：[lujun9972][b]
@@ -113,9 +113,9 @@ via: https://jao.io/blog/2021-01-11-an-even-better-video-wharf.html
 [b]: https://github.com/lujun9972
 [1]: https://jao.io/blog/2021-01-09-embarking-videos.html
 [2]: https://github.com/oantolin/embark
-[3]: tmp.VUqMT3Yft2#fn.1
-[4]: tmp.VUqMT3Yft2#fn.2
-[5]: tmp.VUqMT3Yft2#fnr.1
-[6]: tmp.VUqMT3Yft2#fnr.2
+[3]: tmp.BCH40EUUdU#fn.1
+[4]: tmp.BCH40EUUdU#fn.2
+[5]: tmp.BCH40EUUdU#fnr.1
+[6]: tmp.BCH40EUUdU#fnr.2
 [7]: https://jao.io/blog/tags.html
 [8]: https://jao.io/blog/tag-emacs.html
