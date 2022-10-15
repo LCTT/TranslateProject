@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/pylint-good-bad-ugly"
 [#]: author: "Moshe Zadka https://opensource.com/users/moshez"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
