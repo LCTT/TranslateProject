@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/2022-opensourcecom-summer-reading-list"
 [#]: author: "Joshua Allen Holm https://opensource.com/users/holmja"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
