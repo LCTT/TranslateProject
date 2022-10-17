@@ -78,7 +78,7 @@ GNOME PackageKit 是一个使用 PackageKit 技术的 GTK3 包管理器，支持
 sudo pacman -Syu gnome-packagekit
 ```
 
-[freedesktop 上的 PackageKit][11]
+> **[freedesktop 上的 PackageKit][11]**
 
 ### 5、GNOME 软件应用
 
@@ -86,7 +86,7 @@ sudo pacman -Syu gnome-packagekit
 
 GNOME <ruby>软件<rt>Software</rt></ruby> 应用不需要向 GNOME 桌面用户介绍。它是使用 PackageKit 技术的 GTK4 应用管理器，支持 AppStream、Flatpak 和固件更新。
 
-**它没有 AUR 支持。**要安装来自 GNOME 软件应用的 Flatpak 和固件更新，需要分别安装 `flatpak` 和 `fwupd` 包。
+**它没有 AUR 支持。** 要安装来自 GNOME 软件应用的 Flatpak 和固件更新，需要分别安装 `flatpak` 和 `fwupd` 包。
 
 安装它使用：
 
@@ -180,22 +180,22 @@ via: https://itsfoss.com/arch-linux-gui-package-managers/
 [3]: https://itsfoss.com/pacman-command/
 [4]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
 [5]: https://invent.kde.org/system/apper
-[6]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
+[6]: https://itsfoss.com/wp-content/uploads/2022/09/dde-arch-install-firefox.png
 [7]: https://github.com/dekzi/dde-store
-[8]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
+[8]: https://itsfoss.com/wp-content/uploads/2022/09/discover-arch-install-firefox.png
 [9]: https://invent.kde.org/plasma/discover
-[10]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
+[10]: https://itsfoss.com/wp-content/uploads/2022/09/gnome-packagekit-arch-install-firefox.png
 [11]: https://freedesktop.org/software/PackageKit/index.html
-[12]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
+[12]: https://itsfoss.com/wp-content/uploads/2022/09/gnome-software-arch-install-firefox.png
 [13]: https://gitlab.gnome.org/GNOME/gnome-software
-[14]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
+[14]: https://itsfoss.com/wp-content/uploads/2022/09/tkpacman-arch-install-firefox.png
 [15]: https://itsfoss.com/synaptic-package-manager/
 [16]: https://itsfoss.com/aur-arch-linux/
 [17]: https://itsfoss.com/best-aur-helpers/
 [18]: https://sourceforge.net/projects/tkpacman
-[19]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
+[19]: https://itsfoss.com/wp-content/uploads/2022/09/octopi-arch-install-firefox.png
 [20]: https://github.com/aarnt/octopi
-[21]: https://itsfoss.com/wp-content/uploads/2022/09/apper-arch-install-firefox.png
+[21]: https://itsfoss.com/wp-content/uploads/2022/09/pamac-arch-install-firefox.png
 [22]: https://gitlab.manjaro.org/applications/pamac/-/issues/1017
 [23]: https://itsfoss.com/install-pamac-arch-linux/
 [24]: https://gitlab.manjaro.org/applications/pamac
