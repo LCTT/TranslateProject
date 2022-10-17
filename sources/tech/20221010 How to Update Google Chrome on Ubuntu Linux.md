@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/update-google-chrome-ubuntu/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
