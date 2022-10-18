@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/java-serverless-functions-kubernetes)
 [#]: author: (Daniel Oh https://opensource.com/users/daniel-oh)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (cool-summer-021)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
