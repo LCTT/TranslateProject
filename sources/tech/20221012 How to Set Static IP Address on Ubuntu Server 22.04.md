@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/static-ip-address-on-ubuntu-server/"
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
