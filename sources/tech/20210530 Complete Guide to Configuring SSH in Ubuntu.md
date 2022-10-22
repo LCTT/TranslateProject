@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/set-up-ssh-ubuntu/)
 [#]: author: (Chris Patrick Carias Stas https://itsfoss.com/author/chris/)
 [#]: collector: (lujun9972)
-[#]: translator: (hwlife)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
