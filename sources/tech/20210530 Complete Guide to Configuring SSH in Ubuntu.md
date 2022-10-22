@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/set-up-ssh-ubuntu/)
 [#]: author: (Chris Patrick Carias Stas https://itsfoss.com/author/chris/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Donkey-Hao)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
@@ -220,7 +220,7 @@ via: https://itsfoss.com/set-up-ssh-ubuntu/
 
 作者：[Chris Patrick Carias Stas][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Donkey-Hao](https://github.com/Donkey-Hao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
