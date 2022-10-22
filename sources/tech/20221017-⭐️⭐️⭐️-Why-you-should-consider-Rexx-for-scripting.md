@@ -1,0 +1,122 @@
+[#]: subject: "Why you should consider Rexx for scripting"
+[#]: via: "https://opensource.com/article/22/10/rexx-scripting-language"
+[#]: author: "Howard Fosdick https://opensource.com/users/howtech"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
+Why you should consider Rexx for scripting
+======
+
+How do you design a programming language to be powerful yet still easy to use? Rexx offers one example. This article describes how Rexx reconciles these two seemingly contradictory goals.
+
+### History of Rexx programming language
+
+Several decades ago, computers were shifting from batch to interactive processing. Developers required a scripting or "glue" language to tie systems together. The tool needed to do everything from supporting application development to issuing operating system commands to functioning as a macro language.
+
+Mike Cowlishaw, IBM Fellow, created a solution in a language he named Rexx. It is widely considered the first general-purpose scripting language.
+
+Rexx was so easy to use and powerful that it quickly permeated all of IBM's software. Today, Rexx is the bundled scripting language on all of IBM's commercial operating systems (z/OS, z/VM, z/VSE, and IBM i). It's no surprise that in the 1990s, IBM bundled Rexx with PC-DOS and then OS/2. Rexx popped up in Windows in the XP Resource Kit (before Microsoft decided to lock in customers with its proprietary scripting languages, VBScript and PowerShell). Rexx also emerged as the scripting language for the popular Amiga PC.
+
+### Open source Rexx
+
+With Rexx spreading across platforms, standardization was needed. The American National Standards Institute (ANSI) stepped forward in 1996.
+
+That opened the floodgates. Open source Rexx interpreters started appearing. Today, more than a half dozen interpreters run on every imaginable platform and operating system, along with many open source tools.
+
+Two Rexx variants deserve mention. _Open Object Rexx_ is a compatible superset of procedural or "classic" Rexx. _ooRexx_ is message-based and provides all the classes, objects, and methods one could hope for. For example, it supports multiple inheritance and mixin classes.
+
+Paralleling the rise in Java's popularity, Mike Cowlishaw invented _NetRexx_. NetRexx is a Rexx variant that fully integrates with everything Java (including its object model) and runs on the Java virtual machine.
+
+ooRexx went open source in 2004; NetRexx in 2011. Today the [Rexx Language Association][1] enhances and supports both products. The RexxLA also supports _Regina_, the most popular classic Rexx interpreter, and _BSF4ooRexx_, a tool that fully integrates ooRexx with Java. Everything Rexx is open source.
+
+### Layered design
+
+So, back to the initial conundrum. How does a programming language combine power with ease of use?
+
+One part of the solution is a _layered architecture_. Operators and a minimal set of instructions form the core of the classic Rexx language:
+
+![Rexx layered design][2]
+
+Image by: 
+
+(Howard Fosdick, CC BY-SA 4.0)
+
+Surrounding the core are the language's 70-odd built-in functions:
+
+- Arithmetic
+- Comparison
+- Conversion
+- Formatting
+- String manipulation
+- Miscellaneous
+
+Additional power is added in the form of _external function libraries_. You can invoke external functions from within Rexx programs as if they were built in. Simply make them accessible by proper reference at the top of your script.
+
+Function libraries are available for everything: GUIs, databases, web services, OS services, system commands, graphics, access methods, advanced math, display control, and more. The result is a highly-capable open source ecosystem.
+
+Finally, recall that Open Object Rexx is a superset of classic Rexx. So you could use procedural Rexx and then transition your skills and code to object programming by moving to ooRexx. In a sense, ooRexx is yet another Rexx extension, this time into object-oriented programming.
+
+### Rexx is human-oriented language
+
+Rexx glues all its instructions, functions, and external libraries together in a consistent, dead-simple syntax. It doesn't rely on special characters, arcane syntax, or reserved words. It's case-insensitive and free-form.
+
+This approach shifts the burden of programming from programmer to machine to the greatest degree possible. The result is a comparatively easy language to learn, code, remember, and maintain. Rexx is intended as a human-oriented language.
+
+Rexx implements the _principle of least astonishment_, the idea that systems should work in ways that people assume or expect. For example, Rexx's default decimal arithmetic—with precision you control—means you aren't surprised by rounding errors.
+
+Another example: All variables contain strings. If the strings represent valid numbers, one can perform arithmetic operations with them. This simple concept of dynamic typing makes all data visible and simplifies tracing and debugging.
+
+Rexx capitalizes on the advantages of interpreters to simplify program development. Tracing facilities allow developers to direct and witness program execution in various ways. For example, one can single-step through code, inspect variable values, change them during execution, and more.
+
+Rexx also raises common error conditions that the programmer can easily trap. This feature makes for more standardized, reliable code.
+
+### Arrays
+
+Rexx's approach to arrays (or tables) is a good example of how it combines simplicity with power.
+
+Like all Rexx variables, you don't have to declare them in advance. They automatically expand to the size of available memory. This feature relieves programmers of the burden of memory management.
+
+To form an array, a so-called _compound variable_ stitches together a _stem variable_ with one or more _subscripts_, as in these examples:
+
+```
+my_array.1
+ my_table.i.j
+ my_list.index_value
+ my_list.string_value
+ my_tree.branch_one
+ my_tree.branch_one.branch_two
+```
+
+Subscripts can represent numeric values, as you may be accustomed to in standard table processing.
+
+Alternatively, they can contain strings. String subscripts allow you to build _associative arrays_ using the same simple syntax as common tables. Some refer to associative arrays as _key-value pairs_ or _content addressable memory_. Allowing array contents to be accessed by arbitrary strings rather than simply numeric values opens up an entirely new world of algorithmic solutions.
+
+With this flexible but consistent syntax, you can build almost any data structure: Lists, two- or three- or n-dimensional tables, key-value pairs, balanced trees, unbalanced trees, dense tables, sparse tables, records, rows, and more.
+
+The beauty is in simplicity. It's all based on the notion of compound variables.
+
+### Wrap up
+
+In the future, I'll walk through some Rexx program examples. One real-world example will show how a short script using associative arrays reduced the runtime of a legacy program from several hours down to less than a minute.
+
+You can join the Rexx Language Association for free. For free Rexx downloads, tools, tutorials, and more, visit [RexxInfo.org][3].
+
+--------------------------------------------------------------------------------
+
+via: https://opensource.com/article/22/10/rexx-scripting-language
+
+作者：[Howard Fosdick][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://opensource.com/users/howtech
+[b]: https://github.com/lkxed
+[1]: http://www.RexxLA.org
+[2]: https://opensource.com/sites/default/files/2022-10/rexx_layered_design.jpg
+[3]: http://www.RexxInfo.org
