@@ -1,0 +1,113 @@
+[#]: subject: "How to Enable and Access USB Drive in VirtualBox"
+[#]: via: "https://www.debugpoint.com/enable-usb-virtualbox/"
+[#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
+How to Enable and Access USB Drive in VirtualBox
+======
+
+**Here’s a precise guide on how you can enable USB in Oracle VirtualBox.**
+
+When you work in a Virtual machine environment, the USB is usually plugged into the host system. But it is a little difficult to access that USB content from the guest system.
+
+In VirtualBox, you need to install some extensions and enable some settings to access USB in. Here’s how.
+
+This article assumes that you have already installed VirtualBox and also installed some Linux distribution or operating system inside it.
+
+If not, check out the [articles here][1].
+
+Please note that Oracle VM VirtualBox Extension Pack comes with Oracle’s Personal Use and Evaluation License (PUEL). This license is different from VirtualBox, which is under GPL. If you are using the below steps for commercial purposes, make sure you [read this page][2] carefully.
+
+### Enable USB in VirtualBox 7.0
+
+#### Install VirtualBox Extension Pack
+
+- Open the VirtualBox download page and download the VirtualBox Extension pack for all supported platforms using [this link][3].
+
+![Download the extension pack][4]
+
+- Then Click on `File > Tools > Extension Pack Manager.`
+
+- Click on the `Install` button in the toolbar and select the downloaded .vbox-extpak file.
+
+- Hit `Install`. Accept the terms, and give the admin password for the installation.
+
+![install extension pack manager][5]
+
+![install extension pack manager after accepting terms][6]
+
+- After successful installation, you can see it in the installed list.
+
+- Restart your host system. Restarting is mandatory.
+
+#### Enable USB in the guest box
+
+- Plugin the USB stick into your host system – which you want to access from the guest virtual machine.
+
+- Start VirtualBox and right-click on the VM name where you want to enable USB. Select Settings.
+
+![Launch settings for the virtual machine][7]
+
+- On the left pane, click on USB. Then select the controller version. For example, you can select USB 3.0. Then click on the small plus icon to add a USB filter.
+
+- In this list, you should see your USB stick name (which you plugged in). For this example, I can see my Transcend Jetflash drive, which I plugged in.
+
+- Select it and press OK.
+
+[![Select the USB stick][8]][9]
+
+- Now, start your virtual machine. Open the file manager, and you should see the USB is enabled and mounted on your virtual machine.
+
+- In this demonstration, you can see the Thunar file manager of my [Arch-Xfce][10] virtual machine is showing the contents of my USB stick.
+
+[![Enabling USB and accessing contents from VirtualBox][11]][12]
+
+### Usage notes
+
+Now, here are a couple of things you should remember.
+
+- When you plug in the USB in the host system, keep it mounted. But do not open or access any file before launching the virtual machine.
+
+unmounted in the host system
+
+- Once you start your virtual machine, the USB will be  and auto-mounted in the guest system, i.e. your virtual machine.
+
+- After you finish with a USB stick, ensure to eject or unmount it inside a virtual machine. Then it will be accessible again inside your host system.
+
+### Wrapping Up
+
+VirtualBox is a powerful utility and provides easy-to-use features to extensively set up your Virtual Machines. The steps are straightforward, and make sure your USB stick is detected properly in the host system to work.
+
+Also, remember that USB stick detection via extension pack is not related to VirtualBox guest addition. They are completely unrelated and provide separate functions.
+
+Finally, let me know if this guide helps you in the comment box.
+
+--------------------------------------------------------------------------------
+
+via: https://www.debugpoint.com/enable-usb-virtualbox/
+
+作者：[Arindam][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://www.debugpoint.com/author/admin1/
+[b]: https://github.com/lkxed
+[1]: https://www.debugpoint.com/tag/virtualbox
+[2]: https://www.virtualbox.org/wiki/VirtualBox_PUEL
+[3]: https://www.virtualbox.org/wiki/Downloads
+[4]: https://www.debugpoint.com/wp-content/uploads/2022/10/Download-the-extension-pack.jpg
+[5]: https://www.debugpoint.com/wp-content/uploads/2022/10/install-extension-pack-manager.jpg
+[6]: https://www.debugpoint.com/wp-content/uploads/2022/10/install-extension-pack-manager-after-accepting-terms.jpg
+[7]: https://www.debugpoint.com/wp-content/uploads/2022/10/Launch-settings-for-the-virtual-machine.jpg
+[8]: https://www.debugpoint.com/wp-content/uploads/2022/10/Select-the-USB-stick-1024x399.jpg
+[9]: https://www.debugpoint.com/wp-content/uploads/2022/10/Select-the-USB-stick.jpg
+[10]: https://www.debugpoint.com/xfce-arch-linux-install-4-16/
+[11]: https://www.debugpoint.com/wp-content/uploads/2022/10/Enabling-USB-and-accessing-contents-from-VirtualBox-1024x639.jpg
+[12]: https://www.debugpoint.com/wp-content/uploads/2022/10/Enabling-USB-and-accessing-contents-from-VirtualBox.jpg
