@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/10/kubernetes-solve-automation-challenges"
 [#]: author: "Rom Adams https://opensource.com/users/romdalf"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
