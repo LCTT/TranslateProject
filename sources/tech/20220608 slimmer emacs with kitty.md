@@ -1,5 +1,5 @@
 [#]: subject: "slimmer emacs with kitty"
-[#]: via: "https://jao.io/blog/2022-06-08-slimmer-emacs-with-kitty.html"
+[#]: via: "https://jao.io/blog/slimmer-emacs-with-kitty.html"
 [#]: author: "jao https://jao.io"
 [#]: collector: "lujun9972"
 [#]: translator: " "
@@ -69,7 +69,7 @@ The gist of it is pretty simple though, and it's basically distilled in [this se
 
 --------------------------------------------------------------------------------
 
-via: https://jao.io/blog/2022-06-08-slimmer-emacs-with-kitty.html
+via: https://jao.io/blog/slimmer-emacs-with-kitty.html
 
 作者：[jao][a]
 选题：[lujun9972][b]
@@ -87,8 +87,8 @@ via: https://jao.io/blog/2022-06-08-slimmer-emacs-with-kitty.html
 [5]: https://sw.kovidgoyal.net/kitty/
 [6]: https://codeberg.org/jao/elibs/src/branch/main/data/kitty.conf
 [7]: https://en.wikipedia.org/wiki/HarfBuzz
-[8]: tmp.aRLm0IGxe1#fn.1
-[9]: tmp.aRLm0IGxe1#fnr.1
+[8]: tmp.cmx0w4nr81#fn.1
+[9]: tmp.cmx0w4nr81#fnr.1
 [10]: https://codeberg.org/jao/elibs/src/main/init.el#L1595
 [11]: https://jao.io/blog/tags.html
 [12]: https://jao.io/blog/tag-emacs.html

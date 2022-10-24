@@ -3,29 +3,32 @@
 [#]: author: "James Kiarie https://www.linuxtechi.com/author/james/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15152-1.html"
 
-# 如何在 Linux 中逐步创建 LVM 分区
+在 Linux 中创建 LVM 分区的分步指南
+======
 
-在本指南中，我们将逐步介绍如何在 Linux 中创建 lvm 分区。
+![](https://img.linux.net.cn/data/attachment/album/202210/18/113615swffwazya3nyfve2.jpg)
 
-LVM 代表逻辑卷管理，它是专门为服务器管理 Linux 系统上的磁盘或存储的推荐方式。 LVM 分区的主要优点之一是我们可以实时扩展其大小而无需停机。 LVM 分区也可以减少，但不推荐。
+> 在本指南中，我们将逐步介绍如何在 Linux 中创建 LVM 分区。
+
+LVM 代表 “<ruby>逻辑卷管理<rt>Logical Volume Management</rt></ruby>”，它是专门为服务器管理 Linux 系统上的磁盘或存储的推荐方式。 LVM 分区的主要优点之一是我们可以实时扩展其大小而无需停机。 LVM 分区也可以缩小，但不推荐。
 
 为了演示，我在我的 Ubuntu 22.04 系统上连接了 15GB 磁盘，我们将从命令行在该磁盘上创建 LVM 分区。
 
-##### 先决条件
+##### 准备
 
 - 连接到 Linux 系统的原始磁盘
-- 具有 Sudo 权限的本地用户
+- 具有 sudo 权限的本地用户
 - 预装 lvm2 包
 
 事不宜迟，让我们深入了解这些步骤。
 
-### 步骤 1) 识别新连接的原始磁盘
+### 步骤 1、识别新连接的原始磁盘
 
-登录到你的系统，打开终端并运行以下 dmesg 命令：
+登录到你的系统，打开终端并运行以下 `dmesg` 命令：
 
 ```
 $ sudo dmesg | grep -i sd
@@ -35,7 +38,7 @@ $ sudo dmesg | grep -i sd
 
 ![dmesg-command-new-attached-disk-linux][1]
 
-识别新连接的原始磁盘的另一种方法是通过 fdisk 命令：
+识别新连接的原始磁盘的另一种方法是通过 `fdisk` 命令：
 
 ```
 $ sudo fdisk -l | grep -i /dev/sd
@@ -45,18 +48,18 @@ $ sudo fdisk -l | grep -i /dev/sd
 
 ![fdisk-command-output-new-disk][2]
 
-从上面的输出，可以确认新连接的磁盘是 “/dev/sdb”
+从上面的输出，可以确认新连接的磁盘是 `/dev/sdb`。
 
-### 步骤 2）创建 PV（物理卷）
+### 步骤 2、创建 PV（物理卷）
 
-在开始在磁盘 /dev/sdb 上创建 pv 之前，请确保已安装 lvm2 包。如果未安装，请运行以下命令：
+在开始在磁盘 `/dev/sdb` 上创建<ruby>物理卷<rt>Physical Volume</rt></ruby>（PV）之前，请确保已安装 `lvm2` 包。如果未安装，请运行以下命令：
 
 ```
 $ sudo apt install lvm2     // On Ubuntu / Debian
 $ sudo dnf install lvm2    // on RHEL / CentOS
 ```
 
-运行以下 pvcreate 命令在磁盘 /dev/sdb 上创建 pv：
+运行以下 `pvcreate` 命令在磁盘 `/dev/sdb` 上创建 PV：
 
 ```
 $ sudo pvcreate /dev/sdb
@@ -64,7 +67,7 @@ $ sudo pvcreate /dev/sdb
 $
 ```
 
-要验证 pv 状态，运行：
+要验证 PV 状态，运行：
 
 ```
 $ sudo pvs /dev/sdb
@@ -74,9 +77,9 @@ $ sudo pvdisplay /dev/sdb
 
 ![pvdisplay-command-output-linux][3]
 
-### 步骤 3) 创建 VG（卷组）
+### 步骤 3、创建 VG（卷组）
 
-要创建卷组，我们将使用 vgcreate 命令。创建 VG 意味着将 pv 添加到卷组。
+要创建<ruby>卷组<rt>Volume Group</rt></ruby>（VG），我们将使用 `vgcreate` 命令。创建 VG 意味着将 PV 添加到其中。
 
 语法：
 
@@ -92,7 +95,7 @@ $ sudo vgcreate volgrp01 /dev/sdb
 $
 ```
 
-运行以下命令以验证 vg (volgrp01) 的状态：
+运行以下命令以验证 VG（`volgrp01`）的状态：
 
 ```
 $ sudo vgs volgrp01
@@ -104,17 +107,17 @@ $ sudo vgdisplay volgrp01
 
 ![vgs-command-output-linux][4]
 
-以上输出确认大小为 15 GiB 的卷组 (volgrp01) 已成功创建，一个物理扩展 (PE) 的大小为 4 MB。创建 vg 时可以更改 PE 大小。
+以上输出确认大小为 15 GiB 的卷组 `volgrp01` 已成功创建，一个<ruby>物理扩展<er>Physical Extend</rt></ruby>（PE）的大小为 4 MB。创建 VG 时可以更改 PE 大小。
 
-### 步骤 4）创建 LV（逻辑卷）
+### 步骤 4、创建 LV（逻辑卷）
 
-Lvcreate 命令用于从 VG 创建 LV。 lvcreate 命令的语法如下所示：
+`lvcreate` 命令用于从 VG 中创建<ruby>逻辑卷<rt>Logical Volume</rt></ruby> LV。 `lvcreate` 命令的语法如下所示：
 
 ```
 $ sudo lvcreate -L <Size-of-LV> -n <LV-Name>   <VG-Name>
 ```
 
-在我们的例子中，以下命令将用于创建大小为 14 GB 的 lv：
+在我们的例子中，以下命令将用于创建大小为 14 GB 的 LV：
 
 ```
 $ sudo lvcreate -L 14G -n lv01 volgrp01
@@ -122,7 +125,7 @@ $ sudo lvcreate -L 14G -n lv01 volgrp01
 $
 ```
 
-验证 lv 的状态，运行：
+验证 LV 的状态，运行：
 
 ```
 $ sudo lvs /dev/volgrp01/lv01
@@ -134,11 +137,11 @@ $ sudo lvdisplay /dev/volgrp01/lv01
 
 ![lvs-command-output-linux][5]
 
-上面的输出显示 LV (lv01) 已成功创建，大小为 14 GiB。
+上面的输出显示 LV（`lv01`）已成功创建，大小为 14 GiB。
 
-### 步骤 5) 格式化 LVM 分区
+### 步骤 5、格式化 LVM 分区
 
-使用 mkfs 命令格式化 lvm 分区。在我们的例子中，lvm 分区是 /dev/volgrp01/lv01。
+使用 `mkfs` 命令格式化 LVM 分区。在我们的例子中，LVM 分区是 `/dev/volgrp01/lv01`。
 
 注意：我们可以将分区格式化为 ext4 或 xfs，因此请根据你的设置和要求选择文件系统类型。
 
@@ -150,19 +153,19 @@ $ sudo mkfs.ext4 /dev/volgrp01/lv01
 
 ![mkfs-ext4-filesystem-lvm][6]
 
-执行下面的命令，用 xfs 文件系统格式化 lvm 分区：
+执行下面的命令，用 xfs 文件系统格式化 LVM 分区：
 
 ```
 $ sudo mkfs.xfs /dev/volgrp01/lv01
 ```
 
-要使用上述格式化分区，我们必须将其挂载到某个文件夹中。所以，让我们创建一个文件夹 /mnt/data：
+要使用上述格式化分区，我们必须将其挂载到某个文件夹中。所以，让我们创建一个文件夹 `/mnt/data`：
 
 ```
 $ sudo mkdir /mnt/data
 ```
 
-现在运行 mount 命令将其挂载到 /mnt/data 文件夹：
+现在运行 `mount` 命令将其挂载到 `/mnt/data` 文件夹：
 
 ```
 $ sudo mount /dev/volgrp01/lv01 /mnt/data/
@@ -172,20 +175,20 @@ Filesystem                Type  Size  Used Avail Use% Mounted on
 $
 ```
 
-尝试创建一些虚拟文件，运行以下命令：
+尝试创建一些没用的文件，运行以下命令：
 
 ```
 $ cd /mnt/data/
-$ echo "testing lvm partition" | sudo tee  dummy.txt
+$ echo "testing lvm partition" | sudo tee dummy.txt
 $ cat dummy.txt
 testing lvm partition
 $
 $ sudo rm -f  dummy.txt
 ```
 
-完美，以上命令输出确认我们可以访问 lvm 分区。
+完美，以上命令输出确认我们可以访问 LVM 分区。
 
-要永久挂载到 lvm 分区之上，请使用以下 echo 命令将其条目添加到 fstab 文件中：
+要永久挂载上述 LVM 分区，请使用以下 `echo` 命令将其条目添加到 `fstab` 文件中：
 
 ```
 $ echo '/dev/volgrp01/lv01  /mnt/data  ext4  defaults 0 0' | sudo  tee -a /etc/fstab
@@ -201,7 +204,7 @@ via: https://www.linuxtechi.com/how-to-create-lvm-partition-in-linux/
 作者：[James Kiarie][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者 ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux 中国](https://linux.cn/) 荣誉推出
 
