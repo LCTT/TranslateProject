@@ -1,0 +1,56 @@
+[#]: subject: "4 open source editors I use for my writing"
+[#]: via: "https://opensource.com/article/22/10/open-source-editors"
+[#]: author: "Alan Formy-Duval https://opensource.com/users/alanfdoss"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
+4 open source editors I use for my writing
+======
+
+I've done a lot of writing throughout my career, mostly as an IT consultant creating product documentation as client deliverables. These documents generally provide instructions on installing various operating systems and software products.
+
+Since 2018, I've contributed to opensource.com with articles about open source software. Of course, I use open source editors to write my pieces. Here are the four open source editors that I have used.
+
+### 1. Vi
+
+[Vi][1], also referred to as Vim, is the first open source editor that I learned. This was the editor taught by my computer science classes and that I used for all of my C programming. I have used it as my de facto command line editor since the mid-1990s. There are so many iterations of this tool that I could write a whole series on them. Suffice it to say that I stick to its basic command line form with minimal customization for my daily use.
+
+### 2. LibreOffice Writer
+
+Writer is part of the open source LibreOffice office suite. It is a full-featured word processor maintained by The Document Foundation. It supports industry-standard formats such as the Open Document Format (ODF), Open XML, and MS Office DOC, DOCX. [Learn more about Writer][2] on its official site.
+
+### 3. Ghostwriter
+
+Ghostwriter is a [text editor for Markdown][3]. It has a nice real-time viewer and syntax guide or cheat sheet feature. [Visit the official website][4] to discover more.
+
+### 4. Gedit
+
+Gedit is the basic graphical editor found in many Linux distributions and is described as "a small and lightweight text editor for the GNOME desktop." I have begun using it lately to create articles in the Asciidoc format. The benefit of using Asciidoc is that the syntax is easily manageable and importable into web rendering systems such as Drupal. [See the Gedit Wiki][5] for many tips and tricks.
+
+### Editing text
+
+An extensive list of editing software is available in the open source world. This list will likely grow as I continue writing. The primary goal for me is simplicity in formatting. I want my articles to be easy to import, convert, and publish in a web-focused platform.
+
+Your writing style, feature needs, and target audience will guide you in determining your preferred tools.
+
+--------------------------------------------------------------------------------
+
+via: https://opensource.com/article/22/10/open-source-editors
+
+作者：[Alan Formy-Duval][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://opensource.com/users/alanfdoss
+[b]: https://github.com/lkxed
+[1]: https://opensource.com/article/20/12/vi-text-editor
+[2]: https://www.libreoffice.org/discover/writer/
+[3]: https://opensource.com/article/21/10/markdown-editors
+[4]: https://github.com/KDE/ghostwriter
+[5]: https://wiki.gnome.org/Apps/Gedit
