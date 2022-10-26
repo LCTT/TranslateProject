@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/container-orchestration-kubernetes"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: "Donkey"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "

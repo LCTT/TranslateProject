@@ -2,7 +2,7 @@
 [#]: via: "https://ostechnix.com/execute-commands-on-remote-linux-systems-via-ssh/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "

@@ -1,0 +1,91 @@
+[#]: subject: "How to Check: Xorg or Wayland Display Server?"
+[#]: via: "https://www.debugpoint.com/check-wayland-or-xorg/"
+[#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
+How to Check: Xorg or Wayland Display Server?
+======
+
+**Here’s how you can quickly check whether you are running Xorg or Wayland Display Server.**
+
+With every passing day, the modern Wayland display server is making its way to all Linux distributions. Although the legacy Xorg is still relevant and will stay, Wayland is undoubtedly better in security and other performance aspects.
+
+However, Xorg will not completely phase out anytime soon. Probably never.
+
+If you are running any Linux distribution, how can you check whether you are running Xorg or Wayland? Here’s how.
+
+### Wayland or Xorg: Which one are you running?
+
+- Open a terminal window (CTRL+ALT+T) in your Linux distributions (e.g. Ubuntu, Fedora, Arch…etc.).
+
+- Then type the following command and hit enter.
+
+```
+echo $XDG_SESSION_TYPE
+```
+
+- The output of the command will tell you whether the current session is Wayland or Xorg (X11).
+
+```
+[debugpoint@fedora ~]$ echo $XDG_SESSION_TYPEwayland
+```
+
+![This command can give you details about Xorg or Wayland][1]
+
+That’s simple. However, there are other ways as well.
+
+### Other methods
+
+#### Using Settings
+
+If you want a graphical method, open your Linux distribution settings application. In the about section, you should see the Wayland/X11 mentioned under some label.
+
+For example, in the GNOME Settings, you can find it under “Windowing system”, as shown below.
+
+![In GNOME Settings you can find it][2]
+
+#### Using session values
+
+You can also find it out using `loginctl` which is the [systemd][3] login manager. Remember, it only works for systemd-based systems.
+
+Open a terminal and run the below command. You can see the session id value. In this example `c2`.
+
+```
+loginctl
+```
+
+Now, pass the session id to the following command to get the display server type. Make sure to change c2 to your system spec.
+
+```
+loginctl show-session c2 -p Type
+```
+
+![Using loginctl to find out][4]
+
+### Wrapping Up
+
+So, these are some of the ways you can find out whether you are running Systemd or Xorg in your Linux system. You can also use the above commands in your shell scripts for further process automation.
+
+Cheers.
+
+--------------------------------------------------------------------------------
+
+via: https://www.debugpoint.com/check-wayland-or-xorg/
+
+作者：[Arindam][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://www.debugpoint.com/author/admin1/
+[b]: https://github.com/lkxed
+[1]: https://www.debugpoint.com/wp-content/uploads/2022/10/This-command-can-give-you-details-about-Xorg-or-Wayland-1024x612.jpg
+[2]: https://www.debugpoint.com/wp-content/uploads/2022/10/In-GNOME-Settings-you-can-find-it.jpg
+[3]: https://www.debugpoint.com/tag/systemd/
+[4]: https://www.debugpoint.com/wp-content/uploads/2022/10/Using-loginctl-to-find-out.jpg
