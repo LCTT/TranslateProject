@@ -1,0 +1,140 @@
+[#]: subject: "How to Get Started with Shell Scripting in Linux"
+[#]: via: "https://www.linuxtechi.com/get-started-shell-scripting-linux/"
+[#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
+How to Get Started with Shell Scripting in Linux
+======
+
+Hello readers, In this post, we will cover how to get started with shell scripting in Linux or UNIX systems.
+
+##### What is a Shell?
+
+A shell is an interpreter in UNIX/Linux like operating systems. It takes commands typed by the user and calls the operating system to run those commands. In simple terms a shell acts as form of wrapper around the OS. For example , you may use the shell to enter a command to list the files in a directory , such as [ls command][1] , or a command to copy ,such as cp.
+
+```
+$ ls Desktop Documents Downloads Music Pictures playbook.yaml Public snap Templates test5 Videos $
+```
+
+In this example , when you simply type ls and press enter . The $ is the shell prompt , which tells you the the shell awaits your commands.The remaining lines are the names of the files in the current directory.
+
+##### What is Shell Prompt?
+
+The prompt, $, which is called command prompt, is issued by the shell. While the prompt is displayed, you can type a command. The shell reads your input after you press Enter. It determines the command you want executed by looking at the first word of your input. A word is an unbroken set of characters. Spaces and tabs separate words.
+
+### What are different types of Shells
+
+since there is no monopoly of shells , you are free to run any shell as you wish. That’s all well and good , but choosing a shell without knowing the alternative is not very helpful. Below are lists of shells available in UNIX/Linux.
+
+##### The Bourne Shell
+
+The Original Unix Shell is known as sh , short for shell or the Bourne shell , named for steven Bourne , the creator of sh. This is available on almost all the UNIX like operating system. The Basic bourne shell supports only the most limited command line editing, You can type the Characters,remove characters one at a time with the Backspace key and Press enter to execute the command. If command line gets messed up , you can press Ctrl-C to cancel the whole command.
+
+##### The C Shell
+
+It is desgined by Bill Joy at the university of california at Berkeley , the C shell was so named because much of its syntax parallels that of C programming language. This shell adds some neat features to the Bourne shell,especially the ability to recall previous commands to help create future commands.Because it is very likely you will need to execute more than one command to perform a particular task,this C shell capability is very useful.
+
+if(typeof ez_ad_units != 'undefined'){ez_ad_units.push([[300,250],'linuxtechi_com-medrectangle-4','ezslot_7',340,'0','0'])};__ez_fad_position('div-gpt-ad-linuxtechi_com-medrectangle-4-0');
+
+##### The Korn Shell
+
+It is created by David Korn at AT&T Bell laboratories , the korn shell or ksh offers the same kind of enhancements offers by the C Shell , with one important difference: The korn shell is backward compatible with the older Bourne shell Synatx. In UNIX like AIX & HP-UX korn shell is the default shell.
+
+##### Bash (The Bourne Again Shell)
+
+Bash offers command-line editing like the korn shell,file name completion like the C shell and a lot of other advance features. Many Users view bash as having the best of the Korn and C shells in one shell. In Linux and Mac OS X system , bash is the default shell.
+
+##### tcsh ( The T C Shell)
+
+Linux systems popularized the T C shell ot Tcsh. Tcsh extends the traditional csh to add command line editing,file name completion and more. For example , tcsh will complete the file and directory names when you press Tab key(the same key used in bash). The older C shell did not support this feature.
+
+### What is a Shell Script?
+
+A Shell Script is a text file that contains one or more commands. In a shell script, the shell assumes each line of text file holds a separate command. These Commands appear for most parts as if you have typed them in at a shell windows.
+
+if(typeof ez_ad_units != 'undefined'){ez_ad_units.push([[250,250],'linuxtechi_com-box-4','ezslot_8',260,'0','0'])};__ez_fad_position('div-gpt-ad-linuxtechi_com-box-4-0');
+
+##### Why to use Shell Script ?
+
+Shell scripts are used to automate administrative tasks,encapsulate complex configuration details and get at the full power of the operating system.The ability to combine commands allows you to create new commands ,thereby adding value to your operating system.Furthermore ,combining a shell with graphical desktop environment allows you to get the best of both worlds.
+
+In Linux system admin profile, day to day repeated tasks can be automated using shell script which saves time and allow admins to work on quality work.
+
+##### Creating first shell script
+
+Create a text file in your current  working directory with a name myscript.sh , all the shell scripts have an “.sh” extension. First line of a shell script is either #!/bin/sh or #!/bin/bash , it is known as shebang because # symbol is called hash and ! Symbol is called a bang. Where as /bin/sh & /bin/bash shows that commands to be executed either sh or bash shell.
+
+Below are the content of  myscript.sh
+
+```
+#!/bin/bash # Written by LinuxTechi echo echo "Current Working Directory: $(pwd)" echo echo "Today' Date & Time: $(date)" DISK=$(df -Th) echo echo "Disk Space on System:" echo "$DISK"
+```
+
+Above shell script will display the current working , today’s date & time along with file system disk space. We have used [echo command][2] and other [linux commands][3] to build this script.
+
+if(typeof ez_ad_units != 'undefined'){ez_ad_units.push([[300,250],'linuxtechi_com-medrectangle-3','ezslot_6',320,'0','0'])};__ez_fad_position('div-gpt-ad-linuxtechi_com-medrectangle-3-0');
+
+Assign the executable permissions using below [chmod command][4]
+
+```
+$ chmod a+x myscript.sh
+```
+
+Now execute the script.
+
+```
+$ sh myscript.sh or $ ./myscript.sh
+```
+
+Note: To execute any shell script available in current directory, use  ./<script-name> as shown below,
+
+output,
+
+##### Taking Input from the user in shell script
+
+Read command is used to take inputs from user via keyboard and assign the value to a variable. echo command is used to display the contents.
+
+if(typeof ez_ad_units != 'undefined'){ez_ad_units.push([[250,250],'linuxtechi_com-banner-1','ezslot_9',360,'0','0'])};__ez_fad_position('div-gpt-ad-linuxtechi_com-banner-1-0');
+
+Let’s modify above script so that it starts taking input,
+
+```
+#!/bin/bash # Written by LinuxTechi read -p "Your Name: " NAME echo echo "Today' Date & Time: $(date)" echo read -p "Enter the file system:" DISK echo "$(df -Th $DISK)"
+```
+
+Now, try to execute the script this time it should prompt to enter details.
+
+```
+$ ./myscript.sh Your Name: Pradeep Kumar  Today' Date & Time: Sat 15 Oct 05:32:38 BST 2022  Enter the file system:/mnt/data Filesystem Type Size Used Avail Use% Mounted on /dev/mapper/volgrp01-lv01 ext4 14G 24K 13G 1% /mnt/data $
+```
+
+Perfect, above output confirms that scripting is prompting for input and processing data.
+
+if(typeof ez_ad_units != 'undefined'){ez_ad_units.push([[250,250],'linuxtechi_com-large-leaderboard-2','ezslot_11',550,'0','0'])};__ez_fad_position('div-gpt-ad-linuxtechi_com-large-leaderboard-2-0');
+
+That’s conclude the post. I hope you have found it informative. Kindly do post your queries and feedback in below comments section.
+
+Read Also: [How to Debug a Bash Shell Script in Linux][5]
+
+--------------------------------------------------------------------------------
+
+via: https://www.linuxtechi.com/get-started-shell-scripting-linux/
+
+作者：[Pradeep Kumar][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://www.linuxtechi.com/author/pradeep/
+[b]: https://github.com/lkxed
+[1]: https://www.linuxtechi.com/linux-ls-command-examples-beginners/
+[2]: https://www.linuxtechi.com/echo-command-examples-in-linux/
+[3]: https://www.linuxtechi.com/20-linux-commands-interview-questions-answers/
+[4]: https://www.linuxtechi.com/chmod-command-examples-in-linux/
+[5]: https://www.linuxtechi.com/debugging-shell-scripts-in-linux/

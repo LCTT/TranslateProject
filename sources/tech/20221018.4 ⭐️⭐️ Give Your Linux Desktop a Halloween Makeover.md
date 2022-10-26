@@ -1,0 +1,283 @@
+[#]: subject: "Give Your Linux Desktop a Halloween Makeover"
+[#]: via: "https://itsfoss.com/linux-halloween-makeover/"
+[#]: author: "Sreenath https://itsfoss.com/author/sreenath/"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
+Give Your Linux Desktop a Halloween Makeover
+======
+
+Halloween is around the corner. Boo!
+
+Of course, there are ways to celebrate Halloween, and I believe you might have a few ideas of your own. How about giving your Linux desktop a spooky, dark makeover? Something like the screenshot below?
+
+![ubuntu halloween theming final looks][1]
+
+Customization is a high point of Linux, and there is no end to it. Earlier, we showed you[how to make your Linux look like macOS][2]. Today, I’ll share a few tips to keep up with the Halloween ‘spirit’.
+
+This is possible with a combination of themes, icons, extensions, fonts, conky, etc. **_While you can do these things on any distribution and desktop environment, it’s not feasible for me to show them all in a single tutorial._**
+
+Here, I have used Ubuntu with the GNOME desktop environment.
+
+### Getting all the tools
+
+You need several packages and tools. Make sure you have them all (or most of them) before you start the customization.
+
+_It’s not mandatory to make all of the changes. But the more you do, the better look and feel you get._
+
+**GNOME Tweaks and GMOME Extensions manager**
+
+Get the Tweaks tool and the extension manager with this command:
+
+```
+`sudo apt install gnome-tweaks gnome-extension-manager`
+```
+
+In KDE-based systems, you don’t any tweak tool to change the look. But surely, you will need the **Kvantum-Manager** app that I discussed in the [KDE theming][3] guide.
+
+**Conky**
+
+This is actually optional. Since the conky-manager project is not receiving any maintenance, it will be a bit tricky to use conky. But anyway, let’s use it for the additional look-and-feel.
+
+```
+`sudo apt install conky-all`
+```
+
+**Neofetch or shell color scripts**
+
+This step is also a personal choice. You can choose [neofetch][4] because it’s already available in the repository and can be used easily.
+
+```
+`sudo apt install neofetch`
+```
+
+[Shell-color scripts][5] are another excellent choice. The package is available in AUR and Arch Linux users can install it from there. In Ubuntu, you need to install it manually.
+
+```
+`git clone https://gitlab.com/dwt1/shell-color-scripts.git cd shell-color-scripts sudo make install`
+```
+
+**Themes, icons, fonts, and wallpaper**
+
+I am using [Sweet][6] theme, [Beautiline][7] icon pack, [simple1e][8] cursors, and [Grey-Minimalistic][9] conky theme. Once downloaded, extract them. You should also get [Creepster][10] font.
+
+Download a [spooky wallpaper][11] from the internet.
+
+Alert! You’ll be doing a lot of customization and change. You can go back to the usual look by reverting all the changes you made. An easier way out would be to create a new user with admin access and make all these changes with this new user. This way, your original user account and appearance doesn’t get impacted. When Halloween is over, you can delete this additional user.
+
+With all resources in hand, it’s time to utilize them.
+
+### Install and use the extensions
+
+Open the gnome-extensions app. In Ubuntu 22.04, you can install extensions from within the app, by using the browse section.
+
+![install gnome shell extensions user themes blur my shell and dash to dock][12]
+
+In other versions of Ubuntu and other GNOME distributions, you can [install shell extensions][13] through the browser. For our purpose, install the following extensions :
+
+- [User Themes][14]
+- [Dash to Dock][15]
+- [Blur my Shell][16]
+
+Also, make sure that all the extensions are enabled.
+
+### Apply theme, icon, and font
+
+You need to copy and paste the extracted theme folder to `~/.themes` directory and icon and cursor folder to the `~/.icons` directory.
+
+Now open GNOME tweaks and apply the settings as shown in the screenshot below.
+
+![set themes with gnome tweaks][17]
+
+To use a [custom font in Ubuntu][18], right-click on the font file that you have downloaded and extracted and select open with Font manager. I am using [Creepster][10] font.
+
+![right click on font file and select open with fonts][19]
+
+Here, press the install button.
+
+![install font using font manager application][20]
+
+Note: In some systems, pressing the install button won’t show the “installed” prompt. In that case, you can just close the app because once you press the install button, it has been installed.
+
+Now open the Tweaks app and move to the fonts section. Here, you can change the fonts of various sections as shown in the screenshot below.
+
+![change system fonts using gnome tweaks][21]
+
+Note that, for terminals, a monospace font is required. Here, I am using a regular font and thus it may give you a slightly disoriented look sometimes.
+
+### Apply Dash to Dock Extension settings
+
+First, you need to **turn off the Ubuntu Dock extension** using the GNOME Extensions application.
+
+![Disable Ubuntu Dock][22]
+
+Run the Dash to Dock extension if it’s not running already.
+
+Now, right-click on the dash to dock application button appearing on the bottom and select dash to dock settings.
+
+![select dash to dock settings][23]
+
+Here, you need to tweak some small things.
+
+First, reduce the icon size using the respective slider.
+
+![setting dash to dock icon size][24]
+
+After that, you need to reduce the opacity of the dock. I prefer a fully transparent dock.
+
+For this, set the opacity to **fixed** and reduce it to zero with the slider, as shown in the screenshot below.
+
+![opacity setting for dash to dock][25]
+
+### GNOME terminal setting
+
+The main tweak you want to get is a custom neofetch look (or a shell color script) with some blurred transparency.
+
+On applying monospace font in GNOME-tweaks earlier, the font in the GNOME terminal is also changed.
+
+First, create a new profile from **preferences**.
+
+![select preferences from hamburger menu][26]
+
+Here, Click + sign to create a new profile. Type in a name and press **create** as shown below:
+
+![create new profile in gnome terminal][27]
+
+Inside the new profile, change the transparency setting and set it around the middle, as shown in the screenshot:
+
+![set transperancy to gnome terminal][28]
+
+Once finished, set this profile as the default. To do this, click on the triangle button associated with the new profile and select **Set as Default**.
+
+![set new profile as default in gnome terminal][29]
+
+#### Setting blur effect
+
+The above step will only create a transparent shell. But if you need a blur effect, which is good for better visibility, you need to go to the Blur my Shell extension settings.
+
+![blur my shell extension settings][30]
+
+Here, go to the **Application** tab. Now, ensure that the terminal is opened and placed conveniently on the desktop. Click on **Add Window** button and select gnome-terminal window, to set the blur effect. Note: This feature is in beta so expect minor glitches.
+
+![applying blur effect to selected windows][31]
+
+This same procedure can be repeated for other apps also, like the Nautilus file manager.
+
+#### Customizing Neofetch
+
+One of the best features of neofetch is its customizability. You can tweak the look with a wide range of methods. For Halloween, I choose a pumpkin image to appear in place of the distro logo.
+
+Neofetch supports adding custom images in a variety of formats. For that purpose, there are a variety of backends supported. Here, I use the jp2a backend, which will use an [ASCII converted image][32].
+
+```
+`neofetch --jp2a /path/to/your/image/file.png`
+```
+
+![neofetch with custom backend][33]
+
+The above code will create a neofetch instance with the custom image. You can write this code to your .bashrc file, for permanent placement.
+
+_**Unfortunately, this didn’t work on my Wayland instance.**_
+
+#### Customizing Shell Color Scripts
+
+If you installed shell color scripts, you have a variety of shell scripts. To list the available scripts, use:
+
+```
+``colorscript -l``
+```
+
+![ghosts shell color script][34]
+
+You can either get a random script each time by placing `colorscript random` in your .bashrc file. Or you can get any particular script by placing `colorscript -e <name>`
+
+### Setting up Conky
+
+I am using the [Grey-Minimalistic conky theme][9] from Deviantart. Each type of conky theme has a different installation method. So if you are using another conky file, follow its setup method, described in its README files.
+
+Extract the conky theme file. Inside, we have several folders. First, you need to install the associated icons and fonts. That is, install the given font using font-manager. Copy and paste the icon folder to your ~/.icons folder.
+
+![copy and paste conky files to home directory][35]
+
+Now, go to the conky folder. Make sure that, you have [enabled viewing hidden files][36]. Now copy the `.conkyrc` file and `.conky-vision-icons` file to your Home directory, as shown above.
+
+Now start conky to get a look like this.
+
+![conky theme applied][37]
+
+Add the conky to the [list of startup applications][38] so that it starts automatically at each boot.
+
+![add conky to the list of startup applications][39]
+
+### Change wallpaper
+
+You are almost there. The only thing you need to do now is to [change the background wallpaper][40]. You have already downloaded the spooky wallpapers I believe.
+
+![set image as wallpaper from nautilus][41]
+
+### Behold the final look!
+
+If you followed most of the steps above, you should get a desktop that looks like the one in the below screenshots.
+
+![ubuntu halloween theme final look][42]
+
+Is it scary enough for Halloween? What do you think? Let me know in the comments.
+
+--------------------------------------------------------------------------------
+
+via: https://itsfoss.com/linux-halloween-makeover/
+
+作者：[Sreenath][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://itsfoss.com/author/sreenath/
+[b]: https://github.com/lkxed
+[1]: https://itsfoss.com/wp-content/uploads/2022/10/ubuntu-halloween-theming-final-looks.jpg
+[2]: https://itsfoss.com/make-ubuntu-look-like-macos/
+[3]: https://itsfoss.com/properly-theme-kde-plasma/
+[4]: https://itsfoss.com/using-neofetch/
+[5]: https://gitlab.com/dwt1/shell-color-scripts
+[6]: https://www.gnome-look.org/p/1253385
+[7]: https://www.gnome-look.org/p/1425426
+[8]: https://www.gnome-look.org/p/1405210
+[9]: https://www.deviantart.com/bryantlloyd/art/Grey-Minimalistic-634726564
+[10]: https://fonts.google.com/specimen/Creepster?query=creepster
+[11]: https://www.wallpaperflare.com/search?wallpaper=spooky
+[12]: https://itsfoss.com/wp-content/uploads/2022/10/install-gnome-shell-extensions-user-themes-blur-my-shell-and-dash-to-dock.png
+[13]: https://itsfoss.com/gnome-shell-extensions/
+[14]: https://extensions.gnome.org/extension/19/user-themes/
+[15]: https://extensions.gnome.org/extension/307/dash-to-dock/
+[16]: https://extensions.gnome.org/extension/3193/blur-my-shell/
+[17]: https://itsfoss.com/wp-content/uploads/2022/10/set-themes-with-gnome-tweaks.png
+[18]: https://itsfoss.com/install-fonts-ubuntu/
+[19]: https://itsfoss.com/wp-content/uploads/2022/10/right-click-on-font-file-and-select-open-with-fonts.png
+[20]: https://itsfoss.com/wp-content/uploads/2022/10/install-font-using-font-manager-application.png
+[21]: https://itsfoss.com/wp-content/uploads/2022/10/change-system-fonts-using-gnome-tweaks.png
+[22]: https://itsfoss.com/wp-content/uploads/2020/06/disable-ubuntu-dock.png
+[23]: https://itsfoss.com/wp-content/uploads/2022/10/select-dash-to-dock-settings.png
+[24]: https://itsfoss.com/wp-content/uploads/2022/10/setting-dash-to-dock-icon-size.png
+[25]: https://itsfoss.com/wp-content/uploads/2022/10/opacity-setting-for-dash-to-dock.png
+[26]: https://itsfoss.com/wp-content/uploads/2022/10/select-preferences-from-hamburger-menu.png
+[27]: https://itsfoss.com/wp-content/uploads/2022/10/create-new-profile-in-gnome-terminal.png
+[28]: https://itsfoss.com/wp-content/uploads/2022/10/set-transperancy-to-gnome-terminal.png
+[29]: https://itsfoss.com/wp-content/uploads/2022/10/set-new-profile-as-default-in-gnome-terminal.png
+[30]: https://itsfoss.com/wp-content/uploads/2022/10/blur-my-shell-extension-settings.png
+[31]: https://itsfoss.com/wp-content/uploads/2022/10/applying-blur-effect-to-selected-windows.png
+[32]: https://itsfoss.com/ascii-image-converter/
+[33]: https://itsfoss.com/wp-content/uploads/2022/10/neofetch-with-custom-backend.png
+[34]: https://itsfoss.com/wp-content/uploads/2022/10/ghosts-shell-color-script.png
+[35]: https://itsfoss.com/wp-content/uploads/2022/10/copy-and-paste-conky-files-to-home-directory.png
+[36]: https://itsfoss.com/hide-folders-and-show-hidden-files-in-ubuntu-beginner-trick/
+[37]: https://itsfoss.com/wp-content/uploads/2022/10/conky-theme-applied.png
+[38]: https://itsfoss.com/manage-startup-applications-ubuntu/
+[39]: https://itsfoss.com/wp-content/uploads/2022/10/add-conky-to-the-list-of-startup-applications.png
+[40]: https://itsfoss.com/change-wallpaper-ubuntu/
+[41]: https://itsfoss.com/wp-content/uploads/2022/10/set-image-as-wallpaper-from-nautilus.png
+[42]: https://itsfoss.com/wp-content/uploads/2022/10/ubuntu-halloween-theme-final-look.jpg

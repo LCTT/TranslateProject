@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/4/ansible-community-logos)
 [#]: author: (Fiona Lin https://opensource.com/users/fionalin)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (MareDevi)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
