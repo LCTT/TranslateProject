@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/terraform-tips"
 [#]: author: "Ayush Sharma https://opensource.com/users/ayushsharma"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "cool-summer-021"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "

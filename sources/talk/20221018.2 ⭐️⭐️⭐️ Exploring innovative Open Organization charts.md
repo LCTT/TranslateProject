@@ -1,0 +1,189 @@
+[#]: subject: "Exploring innovative Open Organization charts"
+[#]: via: "https://opensource.com/article/22/10/innovative-open-organization-chart"
+[#]: author: "Ron McFarland https://opensource.com/users/ron-mcfarland"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
+
+Exploring innovative Open Organization charts
+======
+
+The ability to react quickly and adapt to changing situations is critical in today's business and work environment. In the past, offering efficient, standardized systems was the way to reduce costs and provide more to the public. In today's rapidly changing world, that's not enough. Collaborating, deciding, and executing quickly on a project requires that the traditional organization chart change to strengthen **adaptability**, **transparency**, **collaboration**, **inclusivity,** and project **community—**all five Open Organization Principles. Today, there are too many interdependencies to stick to the traditional top-down organization chart.
+
+I just read the book [Team of Teams, by Stanley McChrystal][1], which discusses this concern, particularly in military combat situations. It is the efficiency of small, empowered, trusted, goal-oriented teams working together (and with other teams) that will be successful in the future. Their ability to interact with other teams will make a small group scalable within a large organization. McChrystal writes that adaptability, transparency, and cross-silo collaboration are key to their success. These are three of the Open Organization Principles. I think it's equally valid in the business environment and not just in military operations.
+
+### Speed in decision-making and how to address continual unpredictability
+
+When do you make a decision yourself, and when do you take decisions to top management? McChrystal states, "a 70% chance of success today is better than 90% tomorrow when speed of action is critical." These days, the competitors, or enemies, are moving at that pace.
+
+In my article "[The 4 components of a great decision, What makes a "good" open decision?][2]" I wrote that decision-making speed was very important. Well, that's more true than ever, and you can't do that if you need approvals up and down a large vertical organization chart. Quick decisions must be made on the frontline, where the issues are. A horizontal organization that gets the people most directly involved in the decision-making process is required and is part of the strength that McChrystal is talking about.
+
+![A horizontal org chart with connections between teams][3]
+
+Image by: 
+
+(Ron McFarland, CC BY-SA 4.0)
+
+These connections should have solid lines, and the vertical lines should be dotted, as communications should go up the line only when need be and horizontally minute by minute in real-time.
+
+### Information reversal
+
+In another presentation, I talked about an upside-down organization chart, which I called the [hierarchy of support][4]. Compare this with a vertical organizational chart.
+
+![Hierarchy of company objectives][5]
+
+Image by: 
+
+(Ron McFarland, CC BY-SA 4.0)
+
+A typical vertical organization chart has top management in the top box. The staff provided frontline information to superiors so that they could decide.
+
+Then, lines connect downward to departments under the top box, and directives move downward. Task directives flow from those department managers to the staff under them.
+
+In a rapidly changing, unpredictable environment, the superiors should provide surrounding information to the staff so frontline people can make decisions independently. Imagine turning that organization chart upside down, with top management at the bottom and the staff at the top.
+
+![Hierarchy of company support][6]
+
+Image by: 
+
+(Ron McFarland, CC BY-SA 4.0)
+
+With today's information technology, the frontline staff is often better informed than their superiors. Therefore, managers' main job is to support the staff where needed, but the decisions should be made rapidly on the frontline.
+
+McChrystal uses the expression, "Eyes on - Hands off." I think he is suggesting what I'm saying in a different way. He calls top managers giving directives "chess players" and supporting managers "gardeners."
+
+McChrystal started a training company called [Crosslead][7] that trains individuals and companies on how this type of organization works. Their name implies the horizontal, frontline communication I mentioned in my upside-down organization chart.
+
+The book mentions Open Organization Principles throughout:
+
+- **Adaptability**, which he calls "resilience."
+- **Collaboration**, which is horizontal within teams and between teams.
+- **Community**, which is **Inclusivity** and **Transparency** within teams.
+
+### Getting through the forest by knowing the working environment
+
+Imagine your goal is to get through a forest to your home on the other side. Unfortunately, the forest is rapidly changing because of the weather and climate.
+
+One person gives you a map of the best way to go through the forest, but that map was made in the past and might be outdated. It might be the best way to get home, but blockages along that route may force you to return to your starting location.
+
+Another person has a current satellite image of the forest which shows every possible route and its present condition. Furthermore, he has guides spread throughout the forest who can communicate and advise you on the best route.
+
+Wouldn't the second method be more reliable with a rapidly changing forest?
+
+### McChrystal's organization chart
+
+It starts with a frontline team, a specific goal, and members' specific tasks. The members select a leader depending on the task at hand. Who is most experienced, informed, and qualified to lead them toward the given team goal?
+
+It might well be that the official leader is the least qualified to make decisions, so the system is very slow at best and freezes at worst. Who will most people follow? That will determine the leader of any given task.
+
+McChrystal writes about the "Perry Principle," in which top management could not give orders by sea because there was no communication system in [Admiral Perry's][8] days. McChrystal calls this a "principle" because empowerment was given to frontline staff as a last resort and only when forced. He thinks this should be reversed. Top management should only make the decision themselves when the frontline people can't decide for one reason or another.
+
+The team chart that McChrystal is proposing is on the right.
+
+![Command organizational chart versus team organizational chart][9]
+
+Image by: 
+
+Team of Teams, page 96.
+
+An exponential growth in frontline connectedness speeds up the communication and action process in a way that the current hierarchical structure can not handle. The command chart on the left is just too slow in a rapidly changing environment.
+
+By the time the situation is reported, everything changes and reported information is obsolete. Therefore, a frontline leader, like a start-up entrepreneur, must have the authority, initiative, intuition, and creative thinking to make decisions and immediately act on them to achieve the best result. Speed determines success or failure.
+
+Up until now, adaptability has mostly been characteristic of small interactive teams rather than large top-down hierarchies.
+
+In this new environment, that frontline leader's superior must withhold decision-making on the one hand but relentlessly support the frontline on the other. This will lead to frontline decision-making competence to iterate and adjust in a fraction of the normal time.
+
+### Attention directed from efficiency to adaptability
+
+McChrystal introduces the work of [Frederick Winslow Taylor][10], who developed the reductionist theory and the optimization and standardization of processes. This process was the most efficient way to reduce costs and save energy. He believed there was one ideal way for any process.
+
+So, he researched processes, developed instruction sheets, and instructed the frontline staff just to follow directions. It was a hard and fast line between thinking (by the researcher) and action (by the frontline worker). This approach is fine for repeated, well-known, stable processes, but not in changing environments, like factories with complicated but linear predictable activities, but not in changing environments. Unfortunately, this concept took the initiative to improve away from the frontline operator, as all they had to do was act and not think.
+
+When modification was required, the frontline worker froze, unqualified and unskilled at adapting.
+
+McChrystal writes that his military combat environment is not predictable. It is a "complex system." This complexity has countless unpredictable interdependencies in the environment.
+
+When one event takes place, it may have a massive impact or no impact at all. This results in great unpredictability. We have to manage this unpredictability. In the past, communication was from a few to a few with some connected impact. Now, it is many to many, and no one knows who or what the impact is on who or what. It is totally unpredictable.
+
+I believe this reductionist process is still important, but it can only go so far.
+
+Therefore, those basic practice instruction sheets should come in the form of suggestions only and not orders to follow. McChrystal calls these situations _complexity systems_. It's like opening and walking through a door only to learn of other doors to choose from.
+
+Those other doors cannot be foreseen without walking through the previous door. After selecting one of those doors, you discover more doors to choose from. To be most effective, whenever you select a door, you let everyone in the system know which one you picked and ask for advice if available. This is where real-time transparency is vital. In this environment, planning is not helpful, but feedback is.
+
+Being better equipped and more efficient are not enough in complex environments. Being agile and resilient become critical factors. When disturbances come, the system must continue to function and adjust. This is all-important in a world of continual situational change. In this world, planning for disruption is vital. It is "rolling with the punches" or even benefiting from them by developing an immune system to disruption. When shocks come, options have been planned, developed, practiced, and applied when needed. Simply working on one ideal process is not enough. If all the attention is on the execution of one procedure, other more helpful skills may suffer. It is moving away from predicting a single forecast, exploring all possibilities, and preparing for them. McChrystal asks to contrast efficiency and effectiveness. He says, "Efficiency is doing things right. Effectiveness is doing the right thing." He thinks the latter is more important in a complex situation. To do that, people should be skilled in many rarely needed but still necessary tasks.
+
+### Collaboration over vertical communication walls
+
+Furthermore, breaching vertical walls between divisions or teams increases the speed of action, particularly where cross-functional collaboration is vital to the speed of response.
+
+According to McChrystal, both between teams and within teams, collective consciousness is developed over years of joint practice, trust building, cooperation, deep group, and individual understanding, bonding, and service to their greater purpose.
+
+The entire group can improvise in a coordinated way when necessary. Teamwork is a process of reevaluating everyone's move and intent, constant messaging, and real-time adjustment.
+
+### Barriers between teams
+
+As you move down the traditional organization chart, motivation and contextual awareness become more limited and specific, and greater distance from the overall organization's objectives. Members are tight within their team but separated from the other groups within the organization and possibly the entire organization's goals.
+
+![Command of teams organizational chart][11]
+
+Image by: 
+
+Team of Teams, page 129
+
+### Real-time communication and connections between teams
+
+In a complex, rapidly changing environment, the below chart is more appropriate, where there is a good deal of continual information flow and connections.
+
+![Inter-team organizational chart][12]
+
+Image by: 
+
+Team of Teams, page 129
+
+Team members tackling complex environments must all grasp not just their team's purpose but the overarching goal of the entire organizational system. They must also consider how their activities impact other groups.
+
+To be successful, team participation and team-to-team participation are vital, according to McChrystal. In Jim Whitehurst's [book][13] on letting and encouraging everyone to speak up in meetings, even the quiet people express this same point.
+
+I wrote about it in my first article, [When empowering employee decision-making, intent is everything][14], posted on April 19, 2016. This concept is true when trying to connect teams as well.
+
+Teams working on a problem and collaborating in real time can perform tasks more concurrently rather than sequentially, saving a massive amount of valuable time.
+
+### Wrap up
+
+This article presents several images of new organization chart concepts. Unofficially, to get things done, much horizontal communication has been going on for decades. The difference now is that updates are in minutes and not at weekly or monthly meetings.
+
+I also discussed the importance of the speed of decision-making in today's working environment and that a new real-time communication flow system is needed. I mentioned that at least three critical Organization Principles, namely adaptability, transparency, and collaboration, were vitally important to make communication flow and allow faster decision-making and execution. Furthermore, I also presented that just having a highly efficient and low-cost system is not enough when faced with a rapidly changing, unpredictable working environment. An approach better able to adapt to change needs to be introduced and put into use, namely a new open organization chart.
+
+In the second part of this article, I will discuss how this type of organization can work, including how to develop it and improve it. Also, I'll give examples of how it can work in various situations.
+
+--------------------------------------------------------------------------------
+
+via: https://opensource.com/article/22/10/innovative-open-organization-chart
+
+作者：[Ron McFarland][a]
+选题：[lkxed][b]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://opensource.com/users/ron-mcfarland
+[b]: https://github.com/lkxed
+[1]: https://www.shortform.com/summary/team-of-teams-summary-stanley-mcchrystal?gclid=CjwKCAjwy_aUBhACEiwA2IHHQFl6iYqOX4zSl3JxC-BVubNJo3Ee11s2nF2t4HMN6roJn2yehivPshoCXlQQAvD_BwE
+[2]: https://opensource.com/open-organization/17/3/making-better-open-decisions
+[3]: https://opensource.com/sites/default/files/2022-10/horizontal-org-chart.png
+[4]: https://www.slideshare.net/RonMcFarland1/hierarchy-of-objectives-support
+[5]: https://opensource.com/sites/default/files/2022-10/hierarchy-company-objectives.png
+[6]: https://opensource.com/sites/default/files/2022-10/hierarchy-company-support.png
+[7]: http://www.crosslead.com/
+[8]: https://en.wikipedia.org/wiki/Matthew_C._Perry
+[9]: https://opensource.com/sites/default/files/2022-10/command-vs-team-chart.png
+[10]: https://en.wikipedia.org/wiki/Frederick_Winslow_Taylor
+[11]: https://opensource.com/sites/default/files/2022-10/command-of-teams.png
+[12]: https://opensource.com/sites/default/files/2022-10/connections-between-teams.png
+[13]: https://www.goodreads.com/book/show/23258978-the-open-organization
+[14]: https://opensource.com/open-organization/16/4/when-empowering-employee-decision-making-intent-everything
