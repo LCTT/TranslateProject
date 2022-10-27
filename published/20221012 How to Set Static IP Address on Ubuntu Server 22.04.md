@@ -105,7 +105,7 @@ $ ip route show
 
 ![ip-addr-route-command-output-ubuntu-server][4]
 
-完美，以上命令的输出确认静态ip和路由配置成功。
+完美，以上命令的输出确认静态 IP 和路由配置成功。
 
 这就是这篇文章的全部内容。请在下面的评论部分发表你的问题和反馈。
 
