@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Friend of a Friend: The Facebook That Could Have Been)
-[#]: via: (https://twobithistory.org/2020/01/05/foaf.html)
-[#]: author: (Two-Bit History https://twobithistory.org)
+[#]: subject: "Friend of a Friend: The Facebook That Could Have Been"
+[#]: via: "https://twobithistory.org/2020/01/05/foaf.html"
+[#]: author: "Two-Bit History https://twobithistory.org"
+[#]: collector: "lujun9972"
+[#]: translator: "aREversez"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Friend of a Friend: The Facebook That Could Have Been
 ======
@@ -67,12 +67,14 @@ Since FOAF is a standardized vocabulary, the most important output of the FOAF p
 The FOAF specification gives the following as an example of a well-formed FOAF document. This example uses XML, though an equivalent document could be written using JSON or a number of other formats:
 
 ```
-<foaf:Person rdf:about="#danbri" xmlns:foaf="http://xmlns.com/foaf/0.1/">
-  <foaf:name>Dan Brickley</foaf:name>
-  <foaf:homepage rdf:resource="http://danbri.org/" />
-  <foaf:openid rdf:resource="http://danbri.org/" />
-  <foaf:img rdf:resource="/images/me.jpg" />
-</foaf:Person>
+
+    <foaf:Person rdf:about="#danbri" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+      <foaf:name>Dan Brickley</foaf:name>
+      <foaf:homepage rdf:resource="http://danbri.org/" />
+      <foaf:openid rdf:resource="http://danbri.org/" />
+      <foaf:img rdf:resource="/images/me.jpg" />
+    </foaf:Person>
+
 ```
 
 This FOAF document describes a person named “Dan Brickley” (one of the specification’s authors) that has a homepage at `http://danbri.org`, something called an “open ID,” and a picture available at `/images/me.jpg`, presumably relative to the base address of Brickley’s homepage. The FOAF-specific terms are prefixed by `foaf:`, indicating that they are part of the FOAF namespace, while the more general RDF terms are prefixed by `rdf:`.
@@ -80,20 +82,22 @@ This FOAF document describes a person named “Dan Brickley” (one of the speci
 Just to persuade you that FOAF isn’t tied to XML, here is a similar FOAF example from Wikipedia, expressed using a format called JSON-LD[5][9]:
 
 ```
-{
-  "@context": {
-    "name": "http://xmlns.com/foaf/0.1/name",
-    "homepage": {
-      "@id": "http://xmlns.com/foaf/0.1/workplaceHomepage",
-      "@type": "@id"
-    },
-    "Person": "http://xmlns.com/foaf/0.1/Person"
-  },
-  "@id": "https://me.example.com",
-  "@type": "Person",
-  "name": "John Smith",
-  "homepage": "https://www.example.com/"
-}
+
+    {
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "homepage": {
+          "@id": "http://xmlns.com/foaf/0.1/workplaceHomepage",
+          "@type": "@id"
+        },
+        "Person": "http://xmlns.com/foaf/0.1/Person"
+      },
+      "@id": "https://me.example.com",
+      "@type": "Person",
+      "name": "John Smith",
+      "homepage": "https://www.example.com/"
+    }
+
 ```
 
 This FOAF document describes a person named John Smith with a homepage at `www.example.com`.
@@ -103,32 +107,34 @@ Perhaps the best way to get a feel for how FOAF works is to play around with [FO
 Here is a slightly more complicated FOAF example, representing me, that I created using FOAF-a-matic:
 
 ```
-<rdf:RDF
-      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-      xmlns:admin="http://webns.net/mvcb/">
-  <foaf:PersonalProfileDocument rdf:about="">
-    <foaf:maker rdf:resource="#me"/>
-    <foaf:primaryTopic rdf:resource="#me"/>
-    <admin:generatorAgent rdf:resource="http://www.ldodds.com/foaf/foaf-a-matic"/>
-    <admin:errorReportsTo rdf:resource="mailto:leigh@ldodds.com"/>
-  </foaf:PersonalProfileDocument>
-  <foaf:Person rdf:ID="me">
-    <foaf:name>Sinclair Target</foaf:name>
-    <foaf:givenname>Sinclair</foaf:givenname>
-    <foaf:family_name>Target</foaf:family_name>
-    <foaf:mbox rdf:resource="mailto:sinclairtarget@example.com"/>
-    <foaf:homepage rdf:resource="sinclairtarget.com"/>
-    <foaf:knows>
-      <foaf:Person>
-        <foaf:name>John Smith</foaf:name>
-        <foaf:mbox rdf:resource="mailto:johnsmith@example.com"/>
-        <rdfs:seeAlso rdf:resource="www.example.com/foaf.rdf"/>
+
+    <rdf:RDF
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+          xmlns:foaf="http://xmlns.com/foaf/0.1/"
+          xmlns:admin="http://webns.net/mvcb/">
+      <foaf:PersonalProfileDocument rdf:about="">
+        <foaf:maker rdf:resource="#me"/>
+        <foaf:primaryTopic rdf:resource="#me"/>
+        <admin:generatorAgent rdf:resource="http://www.ldodds.com/foaf/foaf-a-matic"/>
+        <admin:errorReportsTo rdf:resource="mailto:leigh@ldodds.com"/>
+      </foaf:PersonalProfileDocument>
+      <foaf:Person rdf:ID="me">
+        <foaf:name>Sinclair Target</foaf:name>
+        <foaf:givenname>Sinclair</foaf:givenname>
+        <foaf:family_name>Target</foaf:family_name>
+        <foaf:mbox rdf:resource="mailto:sinclairtarget@example.com"/>
+        <foaf:homepage rdf:resource="sinclairtarget.com"/>
+        <foaf:knows>
+          <foaf:Person>
+            <foaf:name>John Smith</foaf:name>
+            <foaf:mbox rdf:resource="mailto:johnsmith@example.com"/>
+            <rdfs:seeAlso rdf:resource="www.example.com/foaf.rdf"/>
+          </foaf:Person>
+        </foaf:knows>
       </foaf:Person>
-    </foaf:knows>
-  </foaf:Person>
-</rdf:RDF>
+    </rdf:RDF>
+
 ```
 
 This example has quite a lot of preamble setting up the various XML namespaces used by the document. There is also a section containing data about the tool that was used to generate the document, largely so that, it seems, people know whom to email with complaints. The `foaf:Person` element describing me tells you my name, email address, and homepage. There is also a nested `foaf:knows` element telling you that I am friends with John Smith.
@@ -198,39 +204,39 @@ via: https://twobithistory.org/2020/01/05/foaf.html
 
 作者：[Two-Bit History][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[aREversez](https://github.com/aREversez)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://twobithistory.org
 [b]: https://github.com/lujun9972
-[1]: tmp.k5HszJyQ4D#fn:1
+[1]: tmp.mJHAgyVHGr#fn:1
 [2]: https://en.wikipedia.org/wiki/Fediverse
 [3]: https://en.wikipedia.org/wiki/Prodigy_(online_service)
 [4]: https://twobithistory.org/2018/05/27/semantic-web.html
 [5]: https://www.ftrain.com/google_takes_all
-[6]: tmp.k5HszJyQ4D#fn:2
-[7]: tmp.k5HszJyQ4D#fn:3
-[8]: tmp.k5HszJyQ4D#fn:4
-[9]: tmp.k5HszJyQ4D#fn:5
+[6]: tmp.mJHAgyVHGr#fn:2
+[7]: tmp.mJHAgyVHGr#fn:3
+[8]: tmp.mJHAgyVHGr#fn:4
+[9]: tmp.mJHAgyVHGr#fn:5
 [10]: http://www.ldodds.com/foaf/foaf-a-matic
-[11]: tmp.k5HszJyQ4D#fn:6
-[12]: tmp.k5HszJyQ4D#fn:7
-[13]: tmp.k5HszJyQ4D#fn:8
+[11]: tmp.mJHAgyVHGr#fn:6
+[12]: tmp.mJHAgyVHGr#fn:7
+[13]: tmp.mJHAgyVHGr#fn:8
 [14]: https://en.wikipedia.org/wiki/Mastodon_(software)
-[15]: tmp.k5HszJyQ4D#fn:9
-[16]: tmp.k5HszJyQ4D#fn:10
+[15]: tmp.mJHAgyVHGr#fn:9
+[16]: tmp.mJHAgyVHGr#fn:10
 [17]: https://twitter.com/TwoBitHistory
 [18]: https://twobithistory.org/feed.xml
 [19]: https://twitter.com/TwoBitHistory/status/1192196764239093760?ref_src=twsrc%5Etfw
-[20]: tmp.k5HszJyQ4D#fnref:1
-[21]: tmp.k5HszJyQ4D#fnref:2
-[22]: tmp.k5HszJyQ4D#fnref:3
-[23]: tmp.k5HszJyQ4D#fnref:4
-[24]: tmp.k5HszJyQ4D#fnref:5
-[25]: tmp.k5HszJyQ4D#fnref:6
-[26]: tmp.k5HszJyQ4D#fnref:7
-[27]: tmp.k5HszJyQ4D#fnref:8
-[28]: tmp.k5HszJyQ4D#fnref:9
-[29]: tmp.k5HszJyQ4D#fnref:10
+[20]: tmp.mJHAgyVHGr#fnref:1
+[21]: tmp.mJHAgyVHGr#fnref:2
+[22]: tmp.mJHAgyVHGr#fnref:3
+[23]: tmp.mJHAgyVHGr#fnref:4
+[24]: tmp.mJHAgyVHGr#fnref:5
+[25]: tmp.mJHAgyVHGr#fnref:6
+[26]: tmp.mJHAgyVHGr#fnref:7
+[27]: tmp.mJHAgyVHGr#fnref:8
+[28]: tmp.mJHAgyVHGr#fnref:9
+[29]: tmp.mJHAgyVHGr#fnref:10

@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Codecademy vs. The BBC Micro)
-[#]: via: (https://twobithistory.org/2019/03/31/bbc-micro.html)
-[#]: author: (Two-Bit History https://twobithistory.org)
+[#]: subject: "Codecademy vs. The BBC Micro"
+[#]: via: "https://twobithistory.org/2019/03/31/bbc-micro.html"
+[#]: author: "Two-Bit History https://twobithistory.org"
+[#]: collector: "lujun9972"
+[#]: translator: "yesimmia"
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Codecademy vs. The BBC Micro
 ======
@@ -117,29 +117,29 @@ via: https://twobithistory.org/2019/03/31/bbc-micro.html
 
 [a]: https://twobithistory.org
 [b]: https://github.com/lujun9972
-[1]: tmp.05mfBL4kP8#fn:1
-[2]: tmp.05mfBL4kP8#fn:2
-[3]: tmp.05mfBL4kP8#fn:3
+[1]: tmp.zNBs2lK4Ca#fn:1
+[2]: tmp.zNBs2lK4Ca#fn:2
+[3]: tmp.zNBs2lK4Ca#fn:3
 [4]: https://computer-literacy-project.pilots.bbcconnectedstudio.co.uk/
 [5]: https://twobithistory.org/2018/07/22/dawn-of-the-microcomputer.html
-[6]: tmp.05mfBL4kP8#fn:4
-[7]: tmp.05mfBL4kP8#fn:5
-[8]: tmp.05mfBL4kP8#fn:6
+[6]: tmp.zNBs2lK4Ca#fn:4
+[7]: tmp.zNBs2lK4Ca#fn:5
+[8]: tmp.zNBs2lK4Ca#fn:6
 [9]: https://twobithistory.org/images/beeb.jpg
 [10]: https://twitter.com/TwoBitHistory/status/1112372000742404098
-[11]: tmp.05mfBL4kP8#fn:7
+[11]: tmp.zNBs2lK4Ca#fn:7
 [12]: https://twitter.com/TwoBitHistory/status/1111305774939234304
-[13]: tmp.05mfBL4kP8#fn:8
+[13]: tmp.zNBs2lK4Ca#fn:8
 [14]: https://twobithistory.org/2018/09/02/learning-basic.html
 [15]: https://twitter.com/TwoBitHistory
 [16]: https://twobithistory.org/feed.xml
 [17]: https://twitter.com/TwoBitHistory/status/1091148050221944832?ref_src=twsrc%5Etfw
-[18]: tmp.05mfBL4kP8#fnref:1
-[19]: tmp.05mfBL4kP8#fnref:2
+[18]: tmp.zNBs2lK4Ca#fnref:1
+[19]: tmp.zNBs2lK4Ca#fnref:2
 [20]: https://computer-literacy-project.pilots.bbcconnectedstudio.co.uk/media/Towards%20Computer%20Literacy.pdf
-[21]: tmp.05mfBL4kP8#fnref:3
-[22]: tmp.05mfBL4kP8#fnref:4
-[23]: tmp.05mfBL4kP8#fnref:5
-[24]: tmp.05mfBL4kP8#fnref:6
-[25]: tmp.05mfBL4kP8#fnref:7
-[26]: tmp.05mfBL4kP8#fnref:8
+[21]: tmp.zNBs2lK4Ca#fnref:3
+[22]: tmp.zNBs2lK4Ca#fnref:4
+[23]: tmp.zNBs2lK4Ca#fnref:5
+[24]: tmp.zNBs2lK4Ca#fnref:6
+[25]: tmp.zNBs2lK4Ca#fnref:7
+[26]: tmp.zNBs2lK4Ca#fnref:8
