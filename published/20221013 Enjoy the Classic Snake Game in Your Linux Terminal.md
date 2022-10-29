@@ -3,15 +3,18 @@
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15186-1.html"
 
-在你的 Linux 终端中享受经典的贪吃蛇游戏
+在你的 Linux 终端中玩经典的贪吃蛇游戏
 ======
-这是你在 Linux 终端中安装和玩经典贪吃蛇的方法。
 
-还记得老式手机经典简单的贪吃蛇吗？我记得玩了几个小时。嘿，当时没有其他选择，对吧？智能手机仍未上市。而你所拥有的就是这个。
+![](https://img.linux.net.cn/data/attachment/album/202210/28/091539oanrjizald7rzr7a.jpg)
+
+> 这是你在 Linux 终端中安装和玩经典贪吃蛇的方法。
+
+还记得老式手机经典简单的贪吃蛇吗？我记得玩了几个小时。嘿，当时没有其他选择，对吧？智能手机仍未上市。而你所拥有的只有这个。
 
 ![Nokia 3310 中的旧版贪吃蛇游戏][1]
 
@@ -23,7 +26,7 @@
 
 ### 安装 nSnake – Linux 终端的贪吃蛇
 
-你可以使用以下方法通过终端安装[此游戏][4]。
+你可以使用以下方法通过终端安装 [此游戏][4]。
 
 对于 Ubuntu、Linux Mint 或其他相关发行版：
 
@@ -37,7 +40,7 @@ sudo apt install nsnake
 sudo dnf install nsnake
 ```
 
-对于 Arch Linux，此游戏可在 [Arch 用户仓库][5]中获得。你可以使用以下步骤安装它。
+对于 Arch Linux，此游戏可在 [Arch 用户仓库（AUR）][5] 中获得。你可以使用以下步骤安装它。
 
 * [设置 Yay AUR 助手][6]
 * 然后打开终端并运行以下命令
@@ -46,27 +49,27 @@ sudo dnf install nsnake
 yay -S nsnake
 ```
 
-上面的命令会安装游戏的库存库版本，它可能不是最新的。但是，如果你想要最新版本，你可能需要通过 GitHub 编译源代码。我在本页末尾添加了编译说明供你参考。
+上面的命令会安装游戏的软件仓库版本，它可能不是最新的。但是，如果你想要最新版本，你可能需要通过 GitHub 编译源代码。我在本页末尾添加了编译说明供你参考。
 
 ### 玩游戏
 
-玩游戏非常简单。在终端中输入 nsnake，这将启动游戏。
+玩游戏非常简单。在终端中输入 `nsnake`，这将启动游戏。
 
-要立即退出，请按 q。
+要立即退出，请按 `q`。
 
 以下是默认键绑定。
 
-* 箭头键 - 移动蛇
-* q – 退出游戏
-* p – 暂停游戏
+* `箭头键` - 移动蛇
+* `q` – 退出游戏
+* `p` – 暂停游戏
 
 你还可以通过主菜单以各种方式配置游戏。
 
 ![nsnake Linux 终端贪吃蛇设置][7]
 
-完成了，享受吧！
+完成了，玩吧！
 
-##### 编译
+### 编译
 
 要编译最新版本，请在所有 Linux 发行版中使用以下命令。
 
@@ -85,7 +88,7 @@ via: https://www.debugpoint.com/snake-game-linux-terminal/
 作者：[Arindam][a]
 选题：[lkxed][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
