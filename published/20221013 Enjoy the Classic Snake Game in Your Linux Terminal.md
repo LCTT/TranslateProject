@@ -76,7 +76,10 @@ yay -S nsnake
 哦，确保你已经安装了 `git` 和 `ncurses-devel`，它们是编译所需的包。
 
 ```
-git clone https://github.com/alexdantas/nSnake.gitcd nsnakemakemake install
+git clone https://github.com/alexdantas/nSnake.git
+cd nsnake
+make
+make install
 ```
 
 那么，你喜欢贪吃蛇游戏吗？与其他基于终端的游戏相比，你更喜欢它吗？在下面的评论框中与其他读者分享你的观点。
