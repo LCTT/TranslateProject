@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/essential-linux-commands"
 [#]: author: "Don Watkins https://opensource.com/users/don-watkins"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
