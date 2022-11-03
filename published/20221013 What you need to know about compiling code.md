@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "Donkey-Hao"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15213-1.html"
 
 关于编译代码你应该知道的
 ======
