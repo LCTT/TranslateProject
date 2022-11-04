@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/parsing-config-files-lua)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: ( hadisi1993)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
