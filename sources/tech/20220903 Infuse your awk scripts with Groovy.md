@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/awk-groovy"
 [#]: author: "Chris Hermansen https://opensource.com/users/clhermansen"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
