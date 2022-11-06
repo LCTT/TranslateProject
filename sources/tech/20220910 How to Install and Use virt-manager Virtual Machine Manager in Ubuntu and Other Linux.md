@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/virt-manager/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: "yjacks"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
