@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "lxbwolf"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15231-1.html"
 
 为你的 awk 脚本注入 Groovy
 ======
