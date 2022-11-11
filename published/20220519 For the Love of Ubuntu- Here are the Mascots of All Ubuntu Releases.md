@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "chai001125"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15240-1.html"
 
 Ubuntu 所有版本的吉祥物
 ======
