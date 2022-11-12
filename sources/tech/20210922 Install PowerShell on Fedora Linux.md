@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/install-powershell-on-fedora-linux/"
 [#]: author: "TheEvilSkeletonOzymandias42 https://fedoramagazine.org/author/theevilskeleton/https://fedoramagazine.org/author/ozymandias42/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "cool-summer-021"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
