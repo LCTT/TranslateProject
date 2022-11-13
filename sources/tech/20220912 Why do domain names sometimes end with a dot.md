@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/09/12/why-do-domain-names-end-with-a-dot-/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
