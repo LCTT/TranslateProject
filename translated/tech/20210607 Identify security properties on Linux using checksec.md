@@ -14,7 +14,6 @@
 
 ![Target practice][1]
 
-
 编译源代码会生成一个二进制文件（即 .o 文件）。在编译期间，你可以向 `gcc` 编译器提供 <ruby>标志<rt> flags </rt></ruby>，以启用或禁用二进制文件的某些属性，这些属性与安全性相关。
 
 Checksec 是一个漂亮的小工具，同时它也是一个 shell 脚本。Checksec 可以识别编译时构建到二进制文件中的安全属性。编译器可能会默认启用一些安全属性，你也可以提供特定的标志，来启用其他的安全属性。
@@ -67,12 +66,12 @@ Checksec 输出的第一行提供了二进制文件的各种安全属性，例�
 在本文中，我将使用以下的“hello world”程序作为示例二进制文件。
 
 ```
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
 int main()
 {
-        [printf][2]("Hello World\n");
-        return 0;
+        printf("Hello World\n");
+        return 0;
 }
  
 ```
@@ -413,10 +412,49 @@ $ checksec --file=./hello --output=json | jq  | grep -i forti
 
 关于安全性的话题是永无止境的，不可能在本文涵盖所有关于安全性的内容，但我还想提一下 Checksec 命令的一些其他功能，这些功能也很好用。
 
-### 针对多个二进制文件运行
+### 对多个二进制文件运行 Checksec
 
 你不必对每个二进制文件都进行一次 Checksec。相反，你可以提供多个二进制文件所在的目录路径，Checksec 将一次性为你验证所有文件：
 
 ```
 $ checksec --dir=/usr
 ```
+
+### 对进程运行 Checksec
+
+Checksec 除了能检查二进制文件的安全属性，Checksec 还能对程序起作用。以下的命令用于查找你系统上所有正在运行的程序的安全属性。如果你希望 Checksec 检查所有正在运行的进程，可以使用 `--proc-all`，或者你也可以使用进程名称，选择特定的进程进行检查：
+
+```
+$ checksec --proc-all
+
+$ checksec --proc=bash
+```
+
+### 对内核运行 Checksec
+
+除了本文介绍的用 Checksec 检查用户态应用程序的安全属性之外，你还可以使用它来检查系统内置的 <ruby>内核属性<rt> kernel properties </rt></ruby>：
+
+```
+$ checksec --kernel
+```
+
+## 快来试一试 Checksec 吧
+
+Checksec 是一个能了解哪些用户空间和内核的安全属性被启用的好方法。现在，你就可以开始使用 Checksec，来了解每个安全属性是什么，并明白启用每个安全属性的原因，以及它能阻止的攻击类型。
+
+--------------------------------------------------------------------------------
+
+via: https://opensource.com/article/21/6/linux-checksec
+
+作者：[Gaurav Kamathe][a]
+选题：[lujun9972][b]
+译者：[chai001125](https://github.com/chai001125)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://opensource.com/users/gkamathe
+[b]: https://github.com/lujun9972
+[1]: https://opensource.com/sites/default/files/lead-images/target-security.png
+[2]: http://www.opengroup.org/onlinepubs/009695399/functions/printf.html
+[3]: https://stedolan.github.io/jq/download/
