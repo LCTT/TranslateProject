@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/whats-new-fedora-37-workstation/"
 [#]: author: "Merlin Cooper https://fedoramagazine.org/author/mxanthropocene/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
