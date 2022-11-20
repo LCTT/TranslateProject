@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/cloud-service-providers-open"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: "FelixYFZ "
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
