@@ -1,14 +1,16 @@
 [#]: collector: (lujun9972)
 [#]: translator: (chai001125)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-15281-1.html)
 [#]: subject: (The Definitive Guide to Using and Customizing the Dock in Ubuntu)
 [#]: via: (https://itsfoss.com/customize-ubuntu-dock/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 
 在 Ubuntu 中使用和自定义程序坞
 ======
+
+![][0]
 
 当你登录 Ubuntu 时，你会看到屏幕左侧的 <ruby>程序坞/停靠栏<rt> dock </rt></ruby>，上面有一些应用程序的图标。程序坞（也称为 <ruby>启动器<rt> launcher </rt></ruby>，或者 <ruby>面板<rt> panel </rt></ruby>）可以让你快速启动某个常用的应用程序。
 
@@ -23,10 +25,10 @@
   * 更改程序坞的位置：可用于单屏和多显示器的设置
   * 在程序坞中隐藏已安装的磁盘图标
   * 自动隐藏或禁用程序坞
-  * 使用 dconf-editor 对程序坞进行额外的定制
+  * 使用 `dconf-editor` 对程序坞进行额外的定制
   * 用其他程序坞应用程序替换 Ubuntu 默认的程序坞
 
-我将在教程中使用 <ruby>程序坞<rt> dock </rt></ruby>、<ruby>面板<rt> panel </rt></ruby>和 <ruby>启动器<rt> launcher </rt></ruby>等术语，它们的意思是等同的。
+我将在教程中使用 <ruby>程序坞<rt> dock </rt></ruby>、<ruby>面板<rt> panel </rt></ruby>和 <ruby>启动器<rt> launcher </rt></ruby> 等术语，它们的意思是等同的。
 
 ### 如何使用 Ubuntu 程序坞：你必须知道的基础知识
 
@@ -36,11 +38,11 @@
 
 这一步骤十分简单。从菜单中搜索你想要添加在程序坞的应用程序，然后运行它。
 
-正在运行的应用程序会显示在程序坞中，它的图标在程序坞中所有图标的下方。右键单击该图标，然后选择 <ruby>“添加到收藏夹”<rt> Add to Favorites </rt></ruby>选项。这会把该应用程序的图标锁定到程序坞上。
+正在运行的应用程序会显示在程序坞中，它的图标在程序坞中所有图标的下方。右键单击该图标，然后选择 “<ruby>添加到收藏夹<rt> Add to Favorites </rt></ruby>” 选项。这会把该应用程序的图标锁定到程序坞上。
 
 ![Right-click on the icon and select “Add to Favorites”][2]
 
-从程序坞中删除应用程序的图标，操作起来更为简单。你不需要运行你想要在程序坞删除的应用程序，只需右键单击应用程序图标，然后选择 <ruby>“从收藏夹中删除”<rt> Remove From Favorites </rt></ruby>即可。
+从程序坞中删除应用程序的图标，操作起来更为简单。你不需要运行你想要在程序坞删除的应用程序，只需右键单击应用程序图标，然后选择 “<ruby>从收藏夹中删除<rt> Remove From Favorites </rt></ruby>” 即可。
 
 ![Right-click on the icon and select “Remove from Favorites”][3]
 
@@ -48,7 +50,7 @@
 
 默认情况下，新添加到程序坞的应用程序图标会放置在程序坞上的所有图标之后。但是，你也可以改变图标的位置。
 
-要更改图标的顺序，你只需将它拖放到另一个位置即可，不用 <ruby>“锁定位置”<rt> lock it </rt></ruby>，或者做其他的事情。如果你不做任何的更改，这个图标会一直停留在那个位置。
+要更改图标的顺序，你只需将它拖放到另一个位置即可，不用 “<ruby>锁定位置<rt> lock it </rt></ruby>”，或者做其他的事情。如果你不做任何的更改，这个图标会一直停留在那个位置。
 
 ![Reorder Icons On Ubuntu Docks][4]
 
@@ -64,19 +66,19 @@
 
 右键单击**文件管理器**图标，在它的额外选项中，你可以查看所有已添加书签的目录，或预览打开的窗口。
 
-当然，你也可以通过右键单击图标，来退出应用程序。大多数应用程序能够通过右键单击而退出，而一些应用程序（例如 Telegram 等），将被最小化到 <ruby>系统托盘<rt> system tray </rt></ruby>中。
+当然，你也可以通过右键单击图标，来退出应用程序。大多数应用程序能够通过右键单击而退出，而一些应用程序（例如 Telegram 等），将被最小化到 <ruby>系统托盘<rt> system tray </rt></ruby> 中。
 
 #### 使用键盘快捷键，以快速启动程序坞中的应用程序 [知道这个的人不多]
 
 你只需用鼠标单击程序坞上的图标，即可启动应用程序。但是，你也可以用键盘快捷键，来启动应用程序。
 
-使用 **WIN/Super 键** + **数字键**的组合，能够启动程序坞中该位置的应用程序。
+使用 `WIN`/`Super` + `数字键` 的组合，能够启动程序坞中该位置的应用程序。
 
 ![][6]
 
 如果应用程序已经在运行了，它将被聚焦。
 
-由于这个功能是基于位置的，所以请不要一直对图标进行重新排序。就我个人而言，我把 Firefox 放在程序坞的第 1 个位置，文件管理器放在第 2 个位置，备用浏览器放在第 3 个位置，以此类推，直到第 9 个位置。这样，我可以使用 Super + 2，从而快速启动文件管理器。
+由于这个功能是基于位置的，所以请不要一直对图标进行重新排序。就我个人而言，我把 Firefox 放在程序坞的第 1 个位置，文件管理器放在第 2 个位置，备用浏览器放在第 3 个位置，以此类推，直到第 9 个位置。这样，我可以使用 `Super + 2`，从而快速启动文件管理器。
 
 因为我的系统连接了 3 个屏幕，所以我发现这个快速启动应用程序的功能特别好用，我不必再将鼠标移动到第一个屏幕上的程序坞上了。你也可以在其他屏幕上启用或禁用程序坞，我将在本教程的后面部分向你展示如何设置。
 
@@ -84,11 +86,11 @@
 
 默认情况下，程序坞位于屏幕的左侧。但是，有些人喜欢将程序坞放置在屏幕底部。
 
-Ubuntu 允许你更改程序坞的位置。你可以将程序坞移至底部或右侧。我不确定很多人真的想要把扩展坞放在了顶部，所以将扩展坞移到顶部并不是一个选项。
+Ubuntu 允许你更改程序坞的位置。你可以将程序坞移至底部或右侧。我不觉得有很多人真的想要把扩展坞放在了顶部，所以没有将扩展坞移到顶部的选项。
 
 ![Change Launcher Position][7]
 
-要更改程序坞位置，请进入 <ruby>“设置”<rt> Settings </rt></ruby>菜单，然后点击 <ruby>“外观”<rt> Appearance </rt></ruby>，你可以在 Dock 栏下看到一些选项，然后你可以在此处更改 <ruby>“屏幕上的位置”<rt> Position on screen </rt></ruby>这一设置。
+要更改程序坞位置，请进入 “<ruby>设置<rt> Settings </rt></ruby>” 菜单，然后点击 “<ruby>外观<rt> Appearance </rt></ruby>” ，你可以在 Dock 栏下看到一些选项，然后你可以在此处更改 “<ruby>屏幕上的位置<rt> Position on screen </rt></ruby>” 这一设置。
 
 ![Go to Settings->Appearance->Dock][8]
 
@@ -110,7 +112,7 @@ Ubuntu 允许你更改程序坞的位置。你可以将程序坞移至底部或�
 
 ![][10]
 
-要更改程序坞的图标大小，请进入 <ruby>“设置”<rt> Settings </rt></ruby>菜单，然后点击 <ruby>“外观”<rt> Appearance </rt></ruby>，并通过移动 <ruby>“图标大小”<rt> Icon size </rt></ruby>下的滑块来更改它。默认的图标大小为 48 像素。
+要更改程序坞的图标大小，请进入 “<ruby>设置<rt> Settings </rt></ruby>” 菜单，然后点击 “<ruby>外观<rt> Appearance </rt></ruby>” ，并通过移动 “<ruby>图标大小<rt> Icon size </rt></ruby>” 下的滑块来更改它。默认的图标大小为 48 像素。
 
 ![Changing Icon Size In Ubuntu Dock][11]
 
@@ -160,7 +162,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 自动隐藏选项会隐藏程序坞，你就能获得整个屏幕。不过，程序坞仍然可以使用。将光标移动到程序坞原来所在的位置，它就会再次出现。当程序坞重新出现时，它会覆盖在正在运行的应用程序窗口上。这是一件好事，否则太多元素会开始在屏幕上移动。
 
-要设置程序坞自动隐藏，请进入 <ruby>“设置”<rt> Settings </rt></ruby>菜单，然后点击 <ruby>“外观”<rt> Appearance </rt></ruby>，你可以在 Dock 栏下开启 <ruby>自动隐藏选项<rt> Auto-hide the Dock </rt></ruby>。
+要设置程序坞自动隐藏，请进入 “<ruby>设置<rt> Settings </rt></ruby>” 菜单，然后点击 “<ruby>外观<rt> Appearance </rt></ruby>” ，你可以在 Dock 栏下开启 <ruby>自动隐藏选项<rt> Auto-hide the Dock </rt></ruby>” 。
 
 ![Auto-hide the dock][14]
 
@@ -180,14 +182,13 @@ Ubuntu 程序坞的自动隐藏选项对很多人来说已经足够好了，但�
 
 ### 使用 dconf-editor 进行高级的程序坞定制 [不推荐]
 
-
 ##### 请注意
 
-dconf-editor 能让你更改 GNOME 桌面环境的几乎每个方面。这个性质喜忧参半，因为你在更改时必须小心，而且大多数设置都可以即时更改，无需确认。虽然你可以重置你的更改，但你仍可能会将系统置于难以恢复正常的状态。
+`dconf-editor` 能让你更改 GNOME 桌面环境的几乎每个方面。这个性质喜忧参半，因为你在更改时必须小心，而且大多数设置都可以即时更改，无需确认。虽然你可以重置你的更改，但你仍可能会将系统置于难以恢复正常的状态。
 
-出于这个原因，我不推荐你使用 dconf-editor，特别是如果你不喜欢花时间在故障排除和修复问题上，或者如果你不太熟悉 Linux 和 GNOME。
+出于这个原因，我不推荐你使用 `dconf-editor`，特别是如果你不喜欢花时间在故障排除和修复问题上，或者如果你不太熟悉 Linux 和 GNOME。
 
-[dconf editor][18] 给你提供了在 Ubuntu 中自定义程序坞的其他选项。你可以在从软件中心安装 dconf editor，然后导航到 org > gnome > shell > extensions > dash-to-dock，在这里你会找到很多自定义程序坞的选择。
+[dconf-editor][18] 给你提供了在 Ubuntu 中自定义程序坞的其他选项。你可以在从软件中心安装 `dconf-editor`，然后导航到 `org > gnome > shell > extensions > dash-to-dock`，在这里你会找到很多自定义程序坞的选择。
 
 ![][19]
 
@@ -195,7 +196,7 @@ dconf-editor 能让你更改 GNOME 桌面环境的几乎每个方面。这个性
 
 有几个第三方的程序坞应用程序可用于 Ubuntu 和其他 Linux 发行版。你可以安装你想要的第三方程序坞，并使用它。
 
-例如，你可以从软件中心下载 Plank dock，并以与 Ubuntu 程序坞类似的方式来使用它。
+例如，你可以从软件中心下载 “Plank dock”，并以与 Ubuntu 程序坞类似的方式来使用它。
 
 ![Plank Dock in Ubuntu][20]
 
@@ -218,7 +219,7 @@ via: https://itsfoss.com/customize-ubuntu-dock/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[chai001125](https://github.com/chai001125)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -244,3 +245,4 @@ via: https://itsfoss.com/customize-ubuntu-dock/
 [18]: https://wiki.gnome.org/Apps/DconfEditor
 [19]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2021/01/dconf-editor-dock.png?resize=592%2C599&ssl=1
 [20]: https://i1.wp.com/itsfoss.com/wp-content/uploads/2021/01/plank-dock-Ubuntu.jpg?resize=800%2C382&ssl=1
+[0]: https://img.linux.net.cn/data/attachment/album/202211/23/143533heym0bybbfm0bfbj.jpg
