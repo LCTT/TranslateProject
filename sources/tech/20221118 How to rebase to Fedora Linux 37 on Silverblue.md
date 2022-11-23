@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/how-to-rebase-to-fedora-linux-37-on-silverblue/"
 [#]: author: "Michal Konečný https://fedoramagazine.org/author/zlopez/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
