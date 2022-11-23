@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/record-streaming-audio/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "FYJNEVERFOLLOWS"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -160,7 +160,7 @@ via: https://itsfoss.com/record-streaming-audio/
 
 作者：[Abhishek Prakash][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/FYJNEVERFOLLOWS)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
