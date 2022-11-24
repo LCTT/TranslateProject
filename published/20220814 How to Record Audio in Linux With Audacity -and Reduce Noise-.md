@@ -3,14 +3,16 @@
 [#]: author: "Anuj Sharma https://itsfoss.com/author/anuj/"
 [#]: collector: "lkxed"
 [#]: translator: "FYJNEVERFOLLOWS"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15284-1.html"
 
-如何在 Linux 中使用 Audacity 录制音频（并降低噪音）
+如何在 Linux 中使用 Audacity 录制音频（并降噪）
 ======
 
-[Adacity][1] 是一个免费的开源跨平台[音频编辑器][2]。专业人士使用它是因为它提供的功能仅需安装很小的软件包。
+![][0]
+
+[Audacity][1] 是一个自由开源的跨平台 [音频编辑器][2]。专业人士使用它是因为它提供的功能仅需安装很小的软件包。
 
 你不必成为一名专业人士并使用它的所有功能。你可以使用它从麦克风录制音频，并执行一些基本操作，如背景噪声消除。
 
@@ -41,22 +43,25 @@ sudo dnf install audacity
 ```
 sudo pacman -Syu audacity
 ```
-**注意**，通过官方存储库安装可能无法获得[最新版本][3]。要获得最新版本，你可以使用 AppImage 或 Flatpak/Snap 软件包。
+
+**注意**，通过官方存储库安装可能无法获得 [最新版本][3]。要获得最新版本，你可以使用 AppImage 或 Flatpak/Snap 软件包。
 
 ### 使用 Audacity 录制音频
 
 安装 Audacity 后，从应用程序菜单打开它或从终端启动它。你会看到这样的界面：
 
 ![Audacity Interface][4]
-单击**录制**按钮（红点）即可轻松开始录制。完成后，单击**停止**按钮（方形图标）来结束录制。你还可以预览录制的波形，如下所示：
+
+单击“录制”按钮（红点）即可轻松开始录制。完成后，单击“
+停止”按钮（方形图标）来结束录制。你还可以预览录制的波形，如下所示：
 
 ![record audio with audacity][5]
 
-然后，你可以通过单击**播放**按钮（绿色图标）检查录制的内容。
+然后，你可以通过单击“播放”按钮（绿色图标）检查录制的内容。
 
-如果你没有看到任何波形，则表示未录制到任何内容。很可能，你没有正确设置音频输入。确保你选择了正确的麦克风，并确保在**系统设置**中其未被静音。你也可以通过 Audacity 接口设置。
+如果你没有看到任何波形，则表示未录制到任何内容。很可能，你没有正确设置音频输入。确保你选择了正确的麦克风，并确保在“<ruby>系统设置<rt>system settings</rt></ruby>”中其未被静音。你也可以通过 Audacity 接口设置。
 
-录音不会自动保存为 MP3 或其他格式。**要保存录音**，你可以转到 `File` → `Export` 并选择 `Export as MP3`（或任何其他想要的格式）。
+录音不会自动保存为 MP3 或其他格式。**要保存录音**，你可以转到 “<ruby>文件<rt>File</rt></ruby> → <ruby>导出<rt>Export</rt></ruby>” 并选择 “<ruby>导出为 MP3<rt>Export as MP3</rt></ruby>”（或任何其他想要的格式）。
 
 ### 使用 Audacity 降低背景噪声
 
@@ -68,9 +73,9 @@ Audacity 还有另一个很棒的功能，你可以使用它来减少录制音�
 
 ![Background noise][6]
 
-选择噪声部分后，从顶部文件菜单中转到 `Effects` → `Noise Reduction`。
+选择噪声部分后，从顶部文件菜单中转到 “<ruby>效果<rt>Effects</rt></ruby> → <ruby>降低噪音<rt>Noise Reduction</rt></ruby>”。
 
-它会像这样打开一个弹出窗口。单击此处的 `Get Noise Profile`。
+它会像这样打开一个弹出窗口。单击此处的 “<ruby>获取噪音配置文件<rt>Get Noise Profile</rt></ruby>”。
 
 ![Noise Reduction Effect Popup Window][7]
 
@@ -78,21 +83,20 @@ Audacity 还有另一个很棒的功能，你可以使用它来减少录制音�
 
 按 `Ctrl + A` 快捷键选择整段录音。你也可以选择其中的一部分，仅对所选部分减少噪声。
 
-选择音轨后，再次转到 `Effect` → `Noise Reduction`。
+选择音轨后，再次转到 “<ruby>效果<rt>Effects</rt></ruby> → <ruby>降低噪音<rt>Noise Reduction</rt></ruby>”。
 
-**这次不要单击** `Get Noise Profile`。这一次，你应该能够按下 `OK` 按钮。
+**这次不要单击** “<ruby>获取噪音配置文件<rt>Get Noise Profile</rt></ruby>”。这一次，你应该能够按下 “OK” 按钮。
 
-只需按下 `OK` 按钮，即可将降噪效果应用到录音中，并反映在波形上，如下所示：
+只需按下 “OK” 按钮，即可将降噪效果应用到录音中，并反映在波形上，如下所示：
 
 ![Audio Waveform after Noise Reduction][8]
 
-现在，相较而言，录制的音频将具有更少的噪声。你可以在选择 `Noise Reduction` 效果时微调噪声过滤。
+现在，相较而言，录制的音频将具有更少的噪声。你可以在选择 “<ruby>降低噪音<rt>Noise Reduction</rt></ruby>” 效果时微调噪声过滤。
 
 总结如下：
 
-* 选择噪声部分，转到 `Effects` → `Noise Reduction`，然后单击 `Get Noise Profile`
-
-* 按 `Ctrl + A` 选择整段音频录制，转到 `Effects` → `Noise Reduction`，这次按 `OK` 按钮
+* 选择噪声部分，转到 “<ruby>效果<rt>Effects</rt></ruby> → <ruby>降低噪音<rt>Noise Reduction</rt></ruby>”，然后单击 “<ruby>获取噪音配置文件<rt>Get Noise Profile</rt></ruby>”
+* 按 `Ctrl + A` 选择整段音频录制，转到 “<ruby>效果<rt>Effects</rt></ruby> → <ruby>降低噪音<rt>Noise Reduction</rt></ruby>”，这次按 `OK` 按钮
 
 请注意，你无法移除所有类型的噪声，但这应该会有所帮助。
 
@@ -113,7 +117,7 @@ via: https://itsfoss.com/audacity-recording/
 作者：[Anuj Sharma][a]
 选题：[lkxed][b]
 译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -128,3 +132,4 @@ via: https://itsfoss.com/audacity-recording/
 [7]: https://itsfoss.com/wp-content/uploads/2022/08/audacity-noise-steps.png
 [8]: https://itsfoss.com/wp-content/uploads/2022/08/audacity-noise-reduced.png
 [9]: https://news.itsfoss.com/audacity-fiasco-fork/
+[0]: https://img.linux.net.cn/data/attachment/album/202211/24/114858g6vpfg3gfglvxnp4.jpg
