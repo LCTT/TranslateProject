@@ -2,7 +2,7 @@
 [#]: via: "https://www.linuxtechi.com/install-kubernetes-cluster-on-debian/"
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
