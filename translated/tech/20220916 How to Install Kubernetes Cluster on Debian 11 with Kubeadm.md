@@ -2,41 +2,41 @@
 [#]: via: "https://www.linuxtechi.com/install-kubernetes-cluster-on-debian/"
 [#]: author: "Pradeep Kumar https://www.linuxtechi.com/author/pradeep/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-How to Install Kubernetes Cluster on Debian 11 with Kubeadm
+如何用 Kubeadm 在 Debian 11 上安装 Kubernetes 集群
 ======
-Are you looking for an easy guide for installing Kubernetes Cluster on Debian 11 (Bullseye)?
+你是否在寻找一份在 Debian 11 (Bullseye) 上安装 Kubernetes 集群的简易指南？
 
-The step-by-step guide on this page will demonstrate you how to install Kubernetes cluster on Debian 11 with Kubeadm utility.
+本页的分步指南将向您展示如何使用 Kubeadm 工具在 Debian 11 上安装 Kubernetes 集群。
 
-Kubernetes (k8s) cluster contains master and worker nodes which are used to run containerized applications. Master node works as control plan and worker nodes offers environment for actual workload.
+Kubernetes（k8s）集群包含主节点和工作节点，用于运行容器化的应用程序。主节点作为控制平面，工作节点为实际工作负载提供环境。
 
-##### Prerequisites
+##### 前置条件
 
-* Minimal Installed Debian 11
+* 已安装 Debian 11
 * 2 CPU / vCPU
 * 2 GB RAM
-* 20 GB free disk space
-* Sudo User with Admin rights
-* Stable Internet Connectivity
+* 20 GB 空闲硬盘空间
+* 有管理员权限的 sudo 用户
+* 稳定的网络连接
 
-##### Lab Setup
+##### Lab 配置
 
-For the demonstration, I am using three Debian 11 systems with following details,
+在本文中，我使用了 3 个 Debian 11 系统的节点，配置如下
 
 * Master Node (k8s-master) – 192.168.1.236
 * Worker Node 1 (k8s-worker1) – 192.168.1.237
 * Worker Node 2 (k8s-worker2) – 192.168.1.238
 
-Without any further delay, let’s jump into the installation steps.
+事不宜迟，我们直接进入安装步骤。
 
-### 1 ) Set Host Name and update /etc/hosts file
+### 1 ) 设置主机名和更新 /etc/hosts 文件
 
-Use hostnamectl command to set the hostname on master and worker nodes.
+在主节点和工作节点上使用 hostnamectl 命令来设置主机名。
 
 ```
 $ sudo hostnamectl set-hostname "k8s-master"       // Run on master node
@@ -44,7 +44,7 @@ $ sudo hostnamectl set-hostname "k8s-worker1"      // Run on 1st worker nod
 $ sudo hostnamectl set-hostname "k8s-worker2"      // Run on 2nd worker node
 ```
 
-Add the following entries in /etc/hosts file on all the nodes,
+在所有节点的 /etc/hosts 文件末尾添加下面几行内容，
 
 ```
 192.168.1.236       k8s-master
@@ -52,20 +52,20 @@ Add the following entries in /etc/hosts file on all the nodes,
 192.168.1.238       k8s-worker2
 ```
 
-### 2) Disable Swap on all nodes
+### 2) 在所有节点上关闭交换分区
 
-For kubelet to work smoothly, it is recommended to disable swap. Run following commands on master and worker nodes to turn off swap.
+我推荐关闭交换分区，以便更丝滑地使用 kubelet。在所有节点上执行以下命令来关闭交换分区。
 
 ```
 $ sudo swapoff -a
 $ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
-### 3) Configure Firewall Rules for Kubernetes Cluster
+### 3) 配置 Kubernetes 集群相关的防火墙规则
 
-In case, OS firewall is enabled on your debian systems then allow following ports on master and worker nodes respectively.
+如果你的操作系统防火墙是打开的，请分别在主节点和工作节点允许以下的端口。
 
-On Master node, run
+在主节点，执行
 
 ```
 $ sudo ufw allow 6443/tcp
@@ -78,7 +78,7 @@ $ sudo ufw allow 10255/tcp
 $ sudo ufw reload
 ```
 
-On Worker Nodes,
+在工作节点，执行
 
 ```
 $ sudo ufw allow 10250/tcp
@@ -86,13 +86,13 @@ $ sudo ufw allow 30000:32767/tcp
 $ sudo ufw reload
 ```
 
-Note: If firewall is disabled on your Debian 11 systems, then you can skip this step.
+注意：如果你的 Debian 11系统防火墙是关闭的，可以跳过此步骤。
 
-### 4) Install Containerd run time on all nodes
+### 4) 在所有节点安装 Containerd 运行时
 
-Containerd is the industry standard container run time, we must install containerd on all master and worker nodes.
+Containerd 是容器运行时的行业标准，所有节点必须安装 containerd。
 
-Before installing containerd, set the following kernel parameters on all the nodes.
+先在所有节点上配置如下的核心参数，再安装 containerd。
 
 ```
 $ cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
@@ -110,28 +110,28 @@ net.bridge.bridge-nf-call-ip6tables = 1
 EOF
 ```
 
-To make above changes into the effect, run
+运行如下命令，以使上面的更改生效
 
 ```
 $ sudo sysctl --system
 ```
 
-Now, install conatinerd by running following apt command on all the nodes.
+现在，在所有节点上运行如下 apt 命令来安装 conatinerd。
 
 ```
 $ sudo apt  update
 $ sudo apt -y install containerd
 ```
 
-Configure containerd so that it works with Kubernetes, run beneath command on all the nodes
+在所有节点上运行如下命令来配置 containerd
 
 ```
 $ containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
 ```
 
-Set cgroupdriver to systemd on all the nodes,
+在所有节点上设置 cgroupdriver 为 systemd，
 
-Edit the file ‘/etc/containerd/config.toml’ and look for the section ‘[plugins.”io.containerd.grpc.v1.cri”.containerd.runtimes.runc.options]’ and add SystemdCgroup = true
+编辑 “/etc/containerd/config.toml” 文件，找到 ‘[plugins.”io.containerd.grpc.v1.cri”.containerd.runtimes.runc.options]’ 部分，添加一行内容：SystemdCgroup = true
 
 ```
 $ sudo vi /etc/containerd/config.toml
@@ -139,18 +139,18 @@ $ sudo vi /etc/containerd/config.toml
 
 ![systemdCgroup-true-containerd-config-toml][1]
 
-Save and close the file.
+保存并退出文件。
 
-Restart and enable containerd service on all the nodes,
+在所有节点上重启并打开 containerd service。
 
 ```
 $ sudo systemctl restart containerd
 $ sudo systemctl enable containerd
 ```
 
-### 5) Enable Kubernetes Apt Repository
+### 5) 添加 Kubernetes Apt 库
 
-Enable Kubernetes apt repository on all the nodes, run
+执行以下命令，添加 Kubernetes Apt 库
 
 ```
 $ sudo apt install gnupg gnupg2 curl software-properties-common -y
@@ -158,9 +158,9 @@ $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dea
 $ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 ```
 
-### 6) Install Kubelet, Kubectl and Kubeadm on all nodes
+### 6) 在所有节点上安装 Kubelet， Kubectl 和 Kubeadm
 
-Run the following apt commands on all the nodes to install Kubernetes cluster components like kubelet, kubectl and Kubeadm.
+在所有节点上执行以下 apt 命令，安装 Kubernetes 集群组件，如 kubelet，kubectl 以及 Kubeadm。
 
 ```
 $ sudo apt update
@@ -168,21 +168,21 @@ $ sudo apt install kubelet kubeadm kubectl -y
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-### 7) Create Kubernetes Cluster with Kubeadm
+### 7) 使用 Kubeadm 创建 Kubernetes 集群
 
-Now, we are all set to create Kubernetes cluster, run following command only from master node,
+现在我们可以创建 Kubernetes  集群了，在主节点上执行以下命令
 
 ```
 $ sudo kubeadm init --control-plane-endpoint=k8s-master
 ```
 
-Output,
+命令输出
 
 ![Kubernetes-Control-Plane-Initialization-Debian11][2]
 
-Above output confirms that control plane has been initialized successfully. In the output, we have commands for regular user for interacting with the cluster and also the command to join any worker node to this cluster.
+出现以上内容，说明控制平面初始化成功。在输出中，有普通用户与集群交互的命令，也有把任何工作节点加入到集群的命令。
 
-To start interacting with cluster, run following commands on master node,
+要开始与集群进行交互，请在主节点上运行以下命令。
 
 ```
 $ mkdir -p $HOME/.kube
@@ -190,20 +190,20 @@ $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-Run following kubectl command to get nodes and cluster information,
+执行以下 kubectl 命令来获取节点和集群的信息，
 
 ```
 $ kubectl get nodes
 $ kubectl cluster-info
 ```
 
-Output of above commands,
+以上命令的输出
 
 ![Nodes-Cluster-Info-Kubectl][3]
 
-Join both the worker nodes to the cluster by running ‘Kubeadm join’ command.
+通过执行 ‘Kubeadm join’ 命令来把两个工作节点加入到集群。
 
-Note: Copy the exact command from the output of ‘kubeadm init’ command. In my case, following is the command
+注意：请从 ‘kubeadm init’ 命令的输出中复制完整的命令。在我的例子中，命令如下：
 
 ```
 $ sudo kubeadm join k8s-master:6443 --token ta622t.enl212euq7z87mgj \
@@ -211,15 +211,15 @@ $ sudo kubeadm join k8s-master:6443 --token ta622t.enl212euq7z87mgj \
    --discovery-token-ca-cert-hash sha256:2be58f54458d0e788c96b8841f811069019161f9a3dd8502a38c773e5c6ead17
 ```
 
-Output from Worker Node 1,
+在工作节点 1 上的输出如下
 
 ![Worker-Node1-Join-Kunernetes-Cluster][4]
 
-Output from Worker Nod 2 ,
+在工作节点 2 上的输出如下
 
 ![Worker-Node2-Join-Kubernetes-Cluster][5]
 
-Check the nodes status by running following command from master node,
+在主节点上执行以下命令，检查节点的状态：
 
 ```
 $ kubectl get nodes
@@ -230,21 +230,21 @@ k8s-worker2   NotReady   <none>          2m19s   v1.25.0
 $
 ```
 
-To make nodes status ready, we must install POD network addons like Calico or flannel.
+为了使节点状态变为 ready，我们需要安装 POD 网络插件，如 Calico 或 flannel。
 
-### 8) Install Calico Pod Network Addon
+### 8) 安装 Calico Pod 网络插件
 
-On the master node, run beneath command to install calico,
+在主节点上执行以下命令安装 calico：
 
 ```
 $ kubectl apply -f https://projectcalico.docs.tigera.io/manifests/calico.yaml
 ```
 
-Output,
+输出
 
 ![Install-calico-pod-network-addon-debian11][6]
 
-Allow Calico ports in OS firewall, run beneath ufw commands on all the nodes,
+在所有节点上执行以下命令，配置防火墙允许 Calico 的端口，
 
 ```
 $ sudo ufw allow 179/tcp
@@ -255,7 +255,7 @@ $ sudo ufw allow 4789/udp
 $ sudo ufw reload
 ```
 
-Verify the status of Calico pods, run
+执行以下命令检查下 Calico 的状态
 
 ```
 $ kubectl get pods -n kube-system
@@ -263,15 +263,15 @@ $ kubectl get pods -n kube-system
 
 ![Calico-Pods-Status-Kuberenetes-Debian11][7]
 
-Perfect, now check nodes status again,
+完美！现在再检查下节点状态。
 
 ![Nodes-status-after-calico-Installation][8]
 
-Great, output above confirms that master and worker nodes are in ready status. Now, this cluster is ready for the workload.
+非常棒！上面的输出说明主节点和工作节点的状态都是 ready。现在这个集群可以正常工作了。
 
-### 9) Test Kubernetes Cluster Installation
+### 9) 检查 Kubernetes 集群安装是否正确
 
-To test Kubernetes cluster installation, let’s try to deploy nginx based application via deployment. Run beneath commands,
+我们尝试通过 deployment 命令来部署基于 nginx 的应用程序，来验证Kubernetes 集群的安装是否正确。执行以下命令：
 
 ```
 $ kubectl create deployment nginx-app --image=nginx --replicas 2
@@ -279,13 +279,13 @@ $ kubectl expose deployment nginx-app --name=nginx-web-svc --type NodePort --por
 $ kubectl describe svc nginx-web-svc
 ```
 
-Output of above commands,
+以上命令的输出：
 
 ![Nginx-Based-App-Kubernetes-Cluster-Debian11][9]
 
-Try to access the nginx based application using following curl command along with the nodeport 30036.
+使用以下的 curl 命令通过节点端口 30036 来访问基于 nginx 的应用程序。
 
-Note : In the curl command we can use either of worker node’s hostname.
+注意：在 curl 命令中，两个工作节点的主机名都可以使用
 
 ```
 $ curl http://k8s-worker1:30036
@@ -293,9 +293,9 @@ $ curl http://k8s-worker1:30036
 
 ![Access-Nginx-Based-App-via-NodePort-Kubernetes-Debian11][10]
 
-Above command’s output confirm that we are able to access our nginx based application.
+以上的输出说明我们可以正常访问基于 nginx 的应用程序了。
 
-That’s all from this guide, I hope you have found it informative and able to install Kubernetes cluster on Debian 11 smoothly. Kindly do post your queries and feedback in below comments section.
+以上为全部内容。希望本文对你有用，参照本文可以在 Debian 11 上正常安装 Kubernetes 集群。如有任何问题，请在下面评论区告诉我。
 
 --------------------------------------------------------------------------------
 
@@ -303,7 +303,7 @@ via: https://www.linuxtechi.com/install-kubernetes-cluster-on-debian/
 
 作者：[Pradeep Kumar][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lxbwolf](https://github.com/lxbwolf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
