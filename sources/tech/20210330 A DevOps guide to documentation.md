@@ -2,13 +2,13 @@
 [#]: via: (https://opensource.com/article/21/3/devops-documentation)
 [#]: author: (Will Kelly https://opensource.com/users/willkelly)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (Veryzzj)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-
 A DevOps guide to documentation
 ======
+
 Bring your documentation writing into the DevOps lifecycle.
 ![Typewriter with hands][1]
 
@@ -52,11 +52,9 @@ Documentation also plays a role in DevOps transformation. You're going to want t
 
 Often it's developers who shoulder the work of documenting DevOps practices. Even if their organizations have technical writers, they might work across development teams. Thus, it's important that developers and sysadmins can capture, document, and communicate their best practices. Here are some tips to get that effort going in the right direction:
 
-  * Invest the time upfront to create a standard template for your DevOps best practices. Don't fall into the trap of copying a template you find online. Interview your stakeholders and teams to create a template that meets your team's needs.
-  * Look for ways to be creative with information gathering, such as recording your team meetings and using chat system logs to serve as a foundation for your documentation.
-  * Establish a wiki for publishing your best practices. Use a wiki that lets you maintain an audit trail of edits and updates. Such a platform sets your teams up to update and maintain best practices as they change.
-
-
+* Invest the time upfront to create a standard template for your DevOps best practices. Don't fall into the trap of copying a template you find online. Interview your stakeholders and teams to create a template that meets your team's needs.
+* Look for ways to be creative with information gathering, such as recording your team meetings and using chat system logs to serve as a foundation for your documentation.
+* Establish a wiki for publishing your best practices. Use a wiki that lets you maintain an audit trail of edits and updates. Such a platform sets your teams up to update and maintain best practices as they change.
 
 It's smart to document dependencies as you build out your CI/CD toolchains. Such an effort pays off when you onboard new team members. It's also a little bit of insurance when a team member forgets something.
 
