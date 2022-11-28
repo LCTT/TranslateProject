@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/adding-external-repositories-ubuntu/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "nophDog"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
