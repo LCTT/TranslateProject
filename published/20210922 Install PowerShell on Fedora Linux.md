@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "cool-summer-021"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15312-1.html"
 
 在 Fedora Linux 系统上安装 PowerShell
 ======
