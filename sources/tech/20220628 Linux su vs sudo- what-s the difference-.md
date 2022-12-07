@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/linux-su-vs-sudo-sysadmin"
 [#]: author: "David Both https://opensource.com/users/dboth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
