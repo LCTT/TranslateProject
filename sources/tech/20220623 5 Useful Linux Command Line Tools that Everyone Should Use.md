@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/06/useful-linux-command/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: "Veryzzj"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
