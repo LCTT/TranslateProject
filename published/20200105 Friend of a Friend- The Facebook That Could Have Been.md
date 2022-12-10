@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "aREversez"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15334-1.html"
 
 FOAF：本可以成为 Facebook
 ======
