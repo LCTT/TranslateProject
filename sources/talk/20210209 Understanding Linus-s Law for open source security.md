@@ -23,26 +23,59 @@ Extrapolating from these slightly uncomfortable truths, you have to wonder: When
 
 We tend to make a trite assumption in hobbyist computing that open source is "more secure" than anything else. We don't often talk about what that means, what the basis of comparison is ("more" secure than what?), or how the conclusion has even been reached. It's a dangerous statement to make because it implies that as long as you call something _open source_, it automatically and magically inherits enhanced security. That's not what open source is about, and in fact, it's what open source security is very much against.
 
+除非你已经亲自审计并理解了软件代码，否则就不应该假定一个应用程序是安全的。一但你做到了这一点，就可以给予它_最高信任_。_最高信任_不是对计算机而言的，而是对你本人而言的，至少在这一应用程序被渗透攻击之前，你信任它是因为你选择了相信它是安全的。
+
+DN
 You should never assume an application is secure unless you have personally audited and understood its code. Once you have done this, you can assign _ultimate trust_ to that application. Ultimate trust isn't a thing you do on a computer; it's something you do in your own mind: You trust software because you choose to believe that it is secure, at least until someone finds a way to exploit that software.
 
+使用者本人是唯一可以对软件代码最高信任的人，因此任何人想要获得这样的享受都必须亲自审查代码。相信其他人的话是不管用的。
+
+DN
 You're the only person who can place ultimate trust in that code, so every user who wants that luxury must audit the code for themselves. Taking someone else's word for it doesn't count!
 
+只有你已经亲自审计并理解了软件代码，你才可以对一个应用程序给予最高信任，最高信任的范围可以是从_根本不信任_到_相当信任_之间。然而我们并没有一个关于信任程度的标准对照表，这是一个你必须亲自做出的个人选择。如果你已经听说了一款应用程序的安全性是可以信任的，相比没有任何建议的情况而言，你可能更加信任它。
+
+DN
 So until you have audited and understood a codebase for yourself, the maximum trust level you can give to an application is a spectrum ranging from approximately, _not trustworthy at all_ to _pretty trustworthy_. There's no cheat sheet for this. It's a personal choice you must make for yourself. If you've heard from people you strongly trust that an application is secure, then you might trust that software more than you trust something for which you've gotten no trusted recommendations.
 
+因为无法审计专有(闭源)软件代码，你不可能给予它_最高信任_。
+
+DN
 Because you cannot audit proprietary (non-open source) code, you can never assign it _ultimate trust_.
 
+### 李纳斯定律
+
+DN
 ### Linus's Law
 
+现实很骨感，并不是每个人都是程序员，同时也不是每个程序员都有时间检查数以万计的代码行。因此如果你没有亲自审查代码，你就只能选择相信(一定程度上)_亲自_审查了代码的人。
+
+DN
 The reality is, not everyone is a programmer, and not everyone who is a programmer has the time to dedicate to reviewing hundreds and hundreds of lines of code. So if you're not going to audit code yourself, then you must choose to trust (to some degree) the people who _do_ audit code.
 
+不管怎样，有哪些人审计代码呢？
+
+DN
 So exactly who does audit code, anyway?
 
+李纳斯定律声称_只要有足够的眼睛关注，任何漏洞都无处隐藏_，然而我们并不知道多少双眼睛是“足够”的。请不要低估这一数量，应用程序往往经过了远超你想象数量的人员审计。原始开发人员以及后续开发人员显然清楚他们自己写下的代码，不过开源软件往往都是团队成果，开源时间越长，阅读了代码的开发人员越多。新加入的开发人员必须回顾项目代码的核心部分，因为他们必须学习基础代码以加入新的功能。
+
+DN
 Linus's Law asserts that _given enough eyeballs, all bugs are shallow_, but we don't really know how many eyeballs are "enough." However, don't underestimate the number. Software is very often reviewed by more people than you might imagine. The original developer or developers obviously know the code that they've written. However, open source is often a group effort, so the longer code is open, the more software developers end up seeing it. A developer must review major portions of a project's code because they must learn a codebase to write new features for it.
+
+同时，为了使开源软件能够在 Linu 发行版上可用，负责开源软件打包分发的开发人员会加入多个项目。有时一个应用程序可能会在不熟悉项目代码的情况下打包，但是大多数时候，开源软件打包人员都是熟悉所打包的项目代码的。这不仅仅是因为他们不想在他们不信任的软件上签名，还是由于他们可能不得不修改代码来使得程序能够正确编译。漏洞报告人员和漏洞修复人员一般也是熟悉基本代码的，因为他们需要尝试解决的问题小到运行异常，大到程序崩溃。当然，一些漏洞报告人员无意中揭示了代码漏洞不是通过亲自审查项目代码而是通过关注明显未按预期工作的现象。系统管理员通常都是通晓用户依赖的重要应用软件的代码的。最后，是安全研究人员，他们专门深入代码内部以揭露潜在的漏洞。
 
 Open source packagers also get involved with many projects in order to make them available to a Linux distribution. Sometimes an application can be packaged with almost no familiarity with the code, but often a packager gets familiar with a project's code, both because they don't want to sign off on software they don't trust and because they may have to make modifications to get it to compile correctly. Bug reporters and triagers also sometimes get familiar with a codebase as they try to solve anomalies ranging from quirks to major crashes. Of course, some bug reporters inadvertently reveal code vulnerabilities not by reviewing it themselves but by bringing attention to something that obviously doesn't work as intended. Sysadmins frequently get intimately familiar with the code of an important software their users rely upon. Finally, there are security researchers who dig into code exclusively to uncover potential exploits.
 
+TD
+### 信任与透明
+
+DN
 ### Trust and transparency
 
+很多人先入为主的认为大型软件的审计是基本不可能的，因为它由数以万计的代码行组成。不要被软件运行所需的代码量愚弄了。我们不需要真的阅读数以万计的代码行。代码是高度结构化的，可被利用的代码漏洞仅仅只是其中的一行，不过它通常影响软件的全部功能。
+
+当然，也有例外。有时
 Some people assume that because major software is composed of hundreds of thousands of lines of code, it's basically impossible to audit. Don't be fooled by how much code it takes to make an application run. You don't actually have to read millions of lines. Code is highly structured, and exploitable flaws are rarely just a single line hidden among the millions of lines; there are usually whole functions involved.
 
 There are exceptions, of course. Sometimes a serious vulnerability is enabled with just one system call or by linking to one flawed library. Luckily, those kinds of errors are relatively easy to notice, thanks to the active role of security researchers and vulnerability databases.
