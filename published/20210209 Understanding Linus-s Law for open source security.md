@@ -1,8 +1,8 @@
 [#]: collector: (lujun9972)
 [#]: translator: (CanYellow)
 [#]: reviewer: (wxy)
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-15344-1.html)
 [#]: subject: (Understanding Linus's Law for open source security)
 [#]: via: (https://opensource.com/article/21/2/open-source-security)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
@@ -10,7 +10,7 @@
 理解开源安全中的李纳斯定律
 ======
 
-<ruby>李纳斯定律<rt>Linus's Law</rt></ruby>即“<ruby>只要有足够多的眼睛关注，任何漏洞都无处隐藏<rt>given enough eyeballs, all bugs are shallow<rt></ruby>”。那么李纳斯定律是如何应用于开源软件安全的呢？
+<ruby>李纳斯定律<rt>Linus's Law</rt></ruby>即“<ruby>只要有足够多的眼睛关注，任何漏洞都无处隐藏<rt>given enough eyeballs, all bugs are shallow</rt></ruby>”。那么李纳斯定律是如何应用于开源软件安全的呢？
 
 ![][0]
 
