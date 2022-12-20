@@ -7,15 +7,33 @@
 [#]: via: (https://opensource.com/open-organization/21/1/open-is-future-of-work)
 [#]: author: (Ron McFarland https://opensource.com/users/ron-mcfarland)
 
+开放原则将如何影响未来工作
+======
+我们的工作性质在很多方面塑造了我们自己。未来工作的性质将发生巨大变化，我们又该做何准备呢？
+
+TD
 How open principles will impact the future of work
 ======
 In many ways, the nature of our work defines us. So how do we prepare
 for a future when the nature of work will change dramatically?
+
+
+![团队合作，忙碌的工作生活][1]
+
+TD
 ![Working on a team, busy worklife][1]
 
+如果我们将“工作”定位为获得某种回报的任何形式的付出，那么工作是并且一直是决定我们是谁的主要因素之一。工作是我们生活的一个重要方面。在工作中(不论这对我们意味着什么)，我们结识朋友，我们获得智力激励和情感满足的源泉，我们得到成长，我们感受自身无穷的创造性。对于我们的家人、朋友、社区和社会而言，工作极其重要，我们不应轻视工作的重要性亦或视其为理所当然。
+
+DN
 If we define "work" as any contribution that receives any kind of reward, then work is—and always has been—one of the major factors that define who we are. It is a major aspect of our lives. Throughout our work (whatever that may be for us), we meet friends, identify sources of intellectual stimulation and emotional fulfillment, grow, and feel at our most creative and innovative. To our families, friends, communities and societies, work is extremely important. We should not take work—or its role in our lives—lightly or for granted.
 
+因此如果未来[工作的性质将发生变化][2]，这可能意味着恰恰是我们 _自我认知_ 中的某些关键要素将发生变化。我们应该认真准备应对这些转变。
+
+DN
 So if the [nature of work is going to change][2] in the future, it might mean that something key to our very sense of _self_ is going to change. And we should plan for those changes very seriously.
+
+考察自第一次工业革命(18、19世纪)以来的工作转变，很多人从从事农业劳动转为进入城市工厂工作，这从根本上改变了他们的生活方式。新的工作方式需要全新的更专业的工作技能而不再是农村经济中常见的手艺。接下来的几十年里，当我们检视我们的个人工作环境时，我们可能会发现工业时代以来的这一趋势可能发生逆转。
 
 Consider the transformation of work throughout the Industrial Revolution (between the 1700s and 1800s). It drove many people from rural farm work into factories in the cities, fundamentally altering their lifestyles. It required new, more specialized skills (rather than the kind of artisanship common in rural economies). As we examine our own personal work environments in the decades to come, we'll see a potential reversal of the trends we saw during the Industrial era: from hierarchy and interchangeable general skills and activities to the reinstatement of horizontal collaboration and more specialized mastery (back to artisanship).
 
