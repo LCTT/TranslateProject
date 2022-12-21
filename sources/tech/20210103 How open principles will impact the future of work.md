@@ -33,18 +33,34 @@ If we define "work" as any contribution that receives any kind of reward, then w
 DN
 So if the [nature of work is going to change][2] in the future, it might mean that something key to our very sense of _self_ is going to change. And we should plan for those changes very seriously.
 
-考察自第一次工业革命(18、19世纪)以来的工作转变，很多人从从事农业劳动转为进入城市工厂工作，这从根本上改变了他们的生活方式。新的工作方式需要全新的更专业的工作技能而不再是农村经济中常见的手艺。接下来的几十年里，当我们检视我们的个人工作环境时，我们可能会发现工业时代以来的这一趋势可能发生逆转。
+考察自第一次工业革命(18、19世纪)以来的工作转变，很多人从从事农业劳动转为进入城市工厂工作，这从根本上改变了他们的生活方式。新的工作方式需要全新的更专业的工作技能而不再是农村经济中常见的手艺。接下来的几十年里，当我们检视我们的个人工作环境时，我们可能会发现工业时代以来的这一趋势可能发生逆转：从层级制度、可代替的通用技术与活动重新转变为横向协作与对专业知识的熟练掌握的更高要求(回到手工艺时代)。
 
+DN
 Consider the transformation of work throughout the Industrial Revolution (between the 1700s and 1800s). It drove many people from rural farm work into factories in the cities, fundamentally altering their lifestyles. It required new, more specialized skills (rather than the kind of artisanship common in rural economies). As we examine our own personal work environments in the decades to come, we'll see a potential reversal of the trends we saw during the Industrial era: from hierarchy and interchangeable general skills and activities to the reinstatement of horizontal collaboration and more specialized mastery (back to artisanship).
 
+这个时代与这些转变的到来将是全球性的而非区域性的，转变的速度已经大大加快了。
+
+DN
 This time, though, these changes come on a global scale rather than a local one, and the speed of change is far more accelerated.
 
+在这一新的工作环境中，[开放组织原则][3]将扮演关键性的角色。
+
+TD
 And in this new work environment, [open organization principles][3] will play a vital role.
 
+本系列中，我将回顾 [琳达·格拉顿教授的作品，_转变_][4] (中译本：转变：未来社会工作岗位需求变化及应对策略，ISBN:9787121152894)，本书成书于2014年(译注，本书原有 [2011版][T1] 与 [2014版][2] )，书中数据于2010年收集，但今天仍然适用(将来也一样)。本书中，格拉顿教授 (Professor Lynda Gratton) 指出了工作将在2025到2050年间如何变化。这是关键信息，因为它有助于我们在准备和发展我们的职业生涯时作出正确的选择。
+
+DN
 In this series, I'll review [_The Shift_, a book by Professor Lynda Gratton][4]—a book that, while written in 2014 from data assembled in 2010, still rings true today (and will in the future, too). In this book, Gratton projects how work will change around 2025 and 2050. This is vital information, as it will help us make sound choices when preparing for and developing our careers moving forward.
 
+格拉顿教授阐释了在上述时间段内影响未来工作的主要因素。本系列中，我们将对它们做一个总结并解释开放组织原则如何融入它们之中。
+
+DN
 Gratton explains predominant forces influencing the future of work in this timeframe. In this article series, I'll summarize them—and explain how open organization principles are involved in each.
 
+### 影响未来工作的五个因素
+
+DN
 ### Five factors influencing the future of work
 
 Driving the Industrial Revolution were inventions that used coal and steam power. Today, [Gratton][5] says, five subtle forces are causing a similar "shift":
@@ -109,3 +125,6 @@ via: https://opensource.com/open-organization/21/1/open-is-future-of-work
 [9]: https://opensource.com/open-organization/19/9/claiming-human-age-of-AI
 [10]: https://www.slideshare.net/RonMcFarland1/the-starting-of-the-third-industrial-revolution
 [11]: https://en.wikipedia.org/wiki/Generation_IV_reactor
+
+[T1]: https://isbnsearch.org/isbn/9780007427956
+[T2]: https://isbnsearch.org/isbn/9780007525850
