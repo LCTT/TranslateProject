@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/open-source-game-achievements/"
 [#]: author: "Dennis Payne https://fedoramagazine.org/author/dulsi/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
