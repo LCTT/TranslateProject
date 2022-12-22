@@ -63,6 +63,15 @@ Gratton explains predominant forces influencing the future of work in this timef
 DN
 ### Five factors influencing the future of work
 
+煤碳与蒸汽动力的发明推动了第一次工业革命。[格拉顿教授][5]说，今天五种微妙的力量导致了类似的转变：
+
+  1. 日益增长的全球化活动
+  2. 技术的快速进步
+  3. 人类寿命与人口数量
+  4. 社会与家庭结构变化
+  5. 低碳经济的需求
+
+DN
 Driving the Industrial Revolution were inventions that used coal and steam power. Today, [Gratton][5] says, five subtle forces are causing a similar "shift":
 
   1. increased global activities
@@ -71,21 +80,41 @@ Driving the Industrial Revolution were inventions that used coal and steam power
   4. societal and family structural changes
   5. the need for a low-carbon economy
 
+简而言之，计算机更快了，材料更强了，药物能治疗更多的疾病使得人类的寿命更长。这些都在不同程度上影响了我们未来的工作方式。以下针对上述每一点的一些笔记。
 
-
+DN
 In short: Computers will become faster. Materials will become stronger. Medicines will cure more diseases allowing longer human life. To varying degrees, these will all impact on how we work in the future. Here are a few notes on each.
 
+#### 1\. 全球化
+
+DN
 #### 1\. Globalization
 
+在以前的文章 [《全球化：开放的历史》][6] 中，我讨论了全球化的多种动力与影响因素，其中之一就是贸易。从1950年到2010年的60年间，全球贸易的体量增加了60倍，与此同时运输成本降低了，发展中国家不仅看到了贸易增长，而且看到了新的创新。我还在我的另一篇文章 [《历史变迁中的开放组织》][7]中讨论了历史早期的全球化。我另外在我的文章[《全球性的开放组织是怎么样的》][8]中探讨了从现在到未来全球治理的重要性。如格拉顿教授所言，全球化在未来工作中将发挥不可否认与不可避免的影响。
+
+DN
 In a previous article, "[Globalization: A history of openness][6]," I discussed multiple forces and factors related to globalization, one of them being trade. Between 1950 and 2010 the volume of global trade has increased by 60 times, while at the same time transportation costs have fallen. And at the same time, developing countries are seeing not only increased trade but new innovations. I also discussed globalization in early history as part of my article "[Open organizations through the ages][7]." And I explored the importance of global governance—both now and into the future—in my article ["What would a global open organization look like?"][8] According to Gratton, globalization will have an undeniable and unavoidable impact on the future work.
 
+如果未来工作的性质将发生变化，这可能意味着恰恰是我们自我认知中的某些关键要素将发生变化。我们应该认真准备应对这些转变。
+
+DN
 If the nature of work is going to change in the future, it might mean that something key to our very sense of self is going to change. And we should plan for those changes very seriously.
 
+#### 2\. 技术
+
+DN
 #### 2\. Technology
 
+计算成本一直在以惊人的速度下降，它还将继续下降。这有助于连接到目前为止仍然大部分被隔离在更大的全球经济之外的数十亿人。他们将开始进入劳动力市场并成为更有影响力的消费者。与此同时，计算机与高级自动化在未来将[取代人类工作][9]，这都将影响未来的工作转变。
+
+DN
 The cost of computing has been coming down at an alarming rate. And it will continue to decrease. This will help connect billions of people that have been mostly left out of the greater global economy until now. They will start to both enter the workforce and become more influential consumers. At the same time, computers and advanced automation [will replace jobs performed by humans][9] in the future. This all will influence work shifts in the future.
 
+#### 3\.人口数量与寿命
+
+TD
 #### 3\. Demographics and longevity
+
 
 Gratton also notes the impacts that various generations will have on the future of work, particularly in the United States. Younger generations will play a major role in the future, as their attitudes are different from earlier generations. Moreover, birth rates in various global regions will have an impact on prosperity. There will be more migration, as some regions' populations will decline while others increase. They will move to what Professor Gratton calls "creative clusters." And finally, Gratton argues, the life expectancy globally will change. By 2025, 10% of the world's population will be over the age of 65. These people will more than likely want to continue to work for sustained income, continued mental stimulation, physical activity, connection to others, and a source of meaning and purpose in their lives. Also, consider that many children today will more than likely live longer than 100 years. If they retired at 65 years old, they would have 35 years to do very little. With that thought in mind, having several career changes and being active in volunteer and community service programs in the future will expand greatly.
 
@@ -93,10 +122,14 @@ Gratton also notes the impacts that various generations will have on the future 
 
 In addition to the generational changes, Gratton notes several important social changes, too. There will be changing roles of women in the workplace, she says. People will have more choices to form the life they want than ever before. And with increased productivity per person, there will be more average free time available than ever before, she writes.
 
+#### 5\. 
 #### 5\. Energy resources
 
 I've talked about the expansion of resource-saving industries in a presentation I've given on "[The Resource Industrial Revolution][10]." Gratton adds valuable points to this conversation. Climate change, she notes, will gradually become a major issue, which will reduce transportation and consumption. In particular, global water supply will not be able to keep pace with demand. Water desalination projects will expand greatly (possibly powered by [Generation IV][11] distributed small modular nuclear power plants (SMR's) now being developed). Environmental catastrophes will displace people and migration will create displaced communities throughout the globe. More energy-efficient ways of living will be discovered and introduced. This will influence future jobs.
 
+### 为未来提前准备
+
+DN
 ### Preparing for the future
 
 These five forces will prompt fundamental changes to the way we work in the future, Gratton argues. But we need to begin preparing for that future now. In the next article of this series, I'll explain Gratton's outlook and a few scenarios for grappling with a rapidly changing future. How could a person look at those changes as career opportunities? On the other hand, what would happen if a person simply _ignored_ those changes to come? I'll review Gratton's thoughts on those questions. Also, I'll also explain how open principles can form the heart of necessary changes.
