@@ -42,7 +42,7 @@ You may also be interested in downloads of the source code because downstream pr
 
 Download metrics for source code are an even less reliable measure than binary downloads (although there is no research to demonstrate this). Just imagine that a developer wants to use the most recent version of your source code and has configured their build pipeline to always clone your repository for every build. Now imagine that an automated build process was failing and retrying to build, constantly cloning your repository. You can also imagine a scenario where the metric is lower than expected—say the repository is cached somewhere, and downloads are served by the cache.
 
-**[ Related read [5 metrics to track in your open source community][2] ]**
+**[ Related read [5 metrics to track in your open source community][2] ]**
 
 In conclusion, download metrics are good proxies for detecting trends and providing context around current usage. We cannot define specifically how a download translates to usage. But we can say that an increase in downloads is an indicator of more potential users. For example, if you advertise your software and see that download numbers are higher during the campaign, it would be fair to assume that the advertisement prompted more people to download the software. The source and metadata of the download can also provide additional context for usage patterns. What versions of your software are still in use? What operating system or language-specific versions are more popular? This helps the community prioritize which platforms to support and test.
 
