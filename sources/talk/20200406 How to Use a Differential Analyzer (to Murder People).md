@@ -2,7 +2,7 @@
 [#]: via: "https://twobithistory.org/2020/04/06/differential-analyzer.html"
 [#]: author: "Two-Bit History https://twobithistory.org"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
