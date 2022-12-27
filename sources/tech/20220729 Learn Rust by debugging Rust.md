@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/7/learn-rust-rustlings"
 [#]: author: "Gaurav Kamathe https://opensource.com/users/gkamathe"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "yzuowei"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
