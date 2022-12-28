@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "toknow-gh"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15389-1.html"
 
 Gamerzilla：一个开源游戏成就系统
 ======
