@@ -2,7 +2,7 @@
 [#]: via: (https://news.itsfoss.com/open-source-software-security/)
 [#]: author: (Ankush Das https://news.itsfoss.com/author/ankush/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (CanYellow)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
