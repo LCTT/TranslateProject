@@ -1,17 +1,19 @@
-[#]: subject: (Get started with edge computing by programming embedded systems)
-[#]: via: (https://opensource.com/article/21/3/rtos-embedded-development)
-[#]: author: (Alan Smithee https://opensource.com/users/alansmithee)
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: subject: "Get started with edge computing by programming embedded systems"
+[#]: via: "https://opensource.com/article/21/3/rtos-embedded-development"
+[#]: author: "Alan Smithee https://opensource.com/users/alansmithee"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Get started with edge computing by programming embedded systems
 ======
-The AT device package for controlling wireless modems is one of RTOS's
-most popular extensions.
+The AT device package for controlling wireless modems is one of RTOS's most popular extensions.
+
 ![Looking at a map][1]
+
+Image by: opensource.com
 
 RTOS is an open source [operating system for embedded devices][2] developed by RT-Thread. It provides a standardized, friendly foundation for developers to program a variety of devices and includes a large number of useful libraries and toolkits to make the process easier.
 
@@ -37,77 +39,71 @@ The at_device package is distributed under an LGPLv2.1 license, and it's easy to
 
 To use AT devices with RTOS, you must enable the AT component library and AT socket functionality. This requires:
 
-  * RT_Thread 4.0.2+
-  * RT_Thread AT component 1.3.0+
-  * RT_Thread SAL component
-  * RT-Thread netdev component
-
-
+* RT_Thread 4.0.2+
+* RT_Thread AT component 1.3.0+
+* RT_Thread SAL component
+* RT-Thread netdev component
 
 The AT device package has been updated for multiple versions. Different versions require different configuration options, so they must fit into the corresponding system versions. Most of the currently available AT device package versions are:
 
-  * V1.2.0: For RT-Thread versions less than V3.1.3, AT component version equals V1.0.0
-  * V1.3.0: For RT-Thread versions less than V3.1.3, AT component version equals V1.1.0
-  * V1.4.0: For RT-Thread versions less than V3.1.3 or equal to V4.0.0, AT component version equals V1.2.0
-  * V1.5.0: For RT-Thread versions less than V3.1.3 or equal to V4.0.0, AT component version equals V1.2.0
-  * V1.6.0: For RT-Thread versions equal to V3.1.3 or V4.0.1, AT component version equals V1.2.0
-  * V2.0.0/V2.0.1: For RT-Thread versions higher than V4.0.1 or higher than 3.1.3, AT component version equals V1.3.0
-  * Latest version: For RT-Thread versions higher than V4.0.1 or higher than 3.1.3, AT component version equals V1.3.0
-
-
+* V1.2.0: For RT-Thread versions less than V3.1.3, AT component version equals V1.0.0
+* V1.3.0: For RT-Thread versions less than V3.1.3, AT component version equals V1.1.0
+* V1.4.0: For RT-Thread versions less than V3.1.3 or equal to V4.0.0, AT component version equals V1.2.0
+* V1.5.0: For RT-Thread versions less than V3.1.3 or equal to V4.0.0, AT component version equals V1.2.0
+* V1.6.0: For RT-Thread versions equal to V3.1.3 or V4.0.1, AT component version equals V1.2.0
+* V2.0.0/V2.0.1: For RT-Thread versions higher than V4.0.1 or higher than 3.1.3, AT component version equals V1.3.0
+* Latest version: For RT-Thread versions higher than V4.0.1 or higher than 3.1.3, AT component version equals V1.3.0
 
 Getting the right version is mostly an automatic process done in menuconfig. It provides the best version of the at_device package based on your current system environment.
 
 As mentioned, different versions require different configuration options. For instance, version 1.x supports enabling one AT device at a time:
 
-
 ```
-RT-Thread online packages  ---&gt;
-     IoT - internet of things  ---&gt;
+RT-Thread online packages  --->
+     IoT - internet of things  --->
         -*- AT DEVICE: RT-Thread AT component porting or samples for different device  
         [ ]   Enable at device init by thread
-              AT socket device modules (Not selected, please select)  ---&gt;    
-              Version (V1.6.0)  ---&gt;
+              AT socket device modules (Not selected, please select)  --->    
+              Version (V1.6.0)  --->
 ```
 
 The option to enable the AT device init by thread dictates whether the configuration creates a separate thread to initialize the device network.
 
 Version 2.x supports enabling multiple AT devices at the same time:
 
-
 ```
-RT-Thread online packages  ---&gt;
-     IoT - internet of things  ---&gt;
+RT-Thread online packages  --->
+     IoT - internet of things  --->
         -*- AT DEVICE: RT-Thread AT component porting or samples for different device
-        [*]   Quectel M26/MC20  ---&gt;
+        [*]   Quectel M26/MC20  --->
           [*]   Enable initialize by thread
           [*]   Enable sample
           (-1)    Power pin
           (-1)    Power status pin
           (uart3) AT client device name
           (512)   The maximum length of receive line buffer
-        [ ]   Quectel EC20  ---&gt;
-        [ ]   Espressif ESP32  ---&gt;
-        [*]   Espressif ESP8266  ---&gt;
+        [ ]   Quectel EC20  --->
+        [ ]   Espressif ESP32  --->
+        [*]   Espressif ESP8266  --->
           [*]   Enable initialize by thread
           [*]   Enable sample
           (realthread) WIFI ssid
           (12345678) WIFI password
           (uart2) AT client device name
           (512)   The maximum length of receive line buffer
-        [ ]   Realthread RW007  ---&gt;
-        [ ]   SIMCom SIM800C  ---&gt;
-        [ ]   SIMCom SIM76XX  ---&gt;
-        [ ]   Notion MW31  ---&gt;
-        [ ]   WinnerMicro W60X  ---&gt;
-        [ ]   AiThink A9/A9G  ---&gt;
-        [ ]   Quectel BC26  ---&gt;
-        [ ]   Luat air720  ---&gt;
-        [ ]   GOSUNCN ME3616  ---&gt;
-        [ ]   ChinaMobile M6315  ---&gt;
-        [ ]   Quectel BC28  ---&gt;
-        [ ]   Quectel ec200x  ---&gt;
-        Version (latest)  ---&gt;
+        [ ]   Realthread RW007  --->
+        [ ]   SIMCom SIM800C  --->
+        [ ]   SIMCom SIM76XX  --->
+        [ ]   Notion MW31  --->
+        [ ]   WinnerMicro W60X  --->
+        [ ]   AiThink A9/A9G  --->
+        [ ]   Quectel BC26  --->
+        [ ]   Luat air720  --->
+        [ ]   GOSUNCN ME3616  --->
+        [ ]   ChinaMobile M6315  --->
+        [ ]   Quectel BC28  --->
+        [ ]   Quectel ec200x  --->
+        Version (latest)  --->
 ```
 
 This version includes many other options, including one to enable sample code, which might be particularly useful to new developers or any developer using an unfamiliar device.
@@ -116,24 +112,21 @@ You can also control options to choose which pin you want to use to supply power
 
 In short, there is no shortage of control options.
 
-  * V2.X.X version supports enabling multiple AT devices simultaneously, and the enabled device information can be viewed with the `ifocnfig` command in [finsh shell][6].
-  * V2.X.X version requires the device to register before it's used; the registration can be done in the samples directory file or customized in the application layer.
-  * Pin options such as **Power pin** and **Power status pin** are configured according to the device's hardware connection. They can be configured as `-1` if the hardware power-on function is not used.
-  * One AT device should correspond to one serial name, and the **AT client device name** for each device should be different.
-
-
+* V2.X.X version supports enabling multiple AT devices simultaneously, and the enabled device information can be viewed with the `ifocnfig` command in [finsh shell][6].
+* V2.X.X version requires the device to register before it's used; the registration can be done in the samples directory file or customized in the application layer.
+* Pin options such as Power pin and Power status pin are configured according to the device's hardware connection. They can be configured as `-1` if the hardware power-on function is not used.
+* One AT device should correspond to one serial name, and the AT client device name for each device should be different.
 
 ### AT components configuration options
 
 When the AT device package is selected and device support is enabled, client functionality for the AT component is selected by default. That means more options—this time for the AT component:
 
-
 ```
-RT-Thread Components  ---&gt;
-    Network  ---&gt;
-        AT commands  ---&gt;
+RT-Thread Components  --->
+    Network  --->
+        AT commands  --->
     [ ]   Enable debug log output
-    [ ]   Enable AT commands server
+    [ ]   Enable AT commands server 
     -*-   Enable AT commands client
     (1)     The maximum number of supported clients
     -*-     Enable BSD Socket API support by AT commnads
@@ -144,11 +137,9 @@ RT-Thread Components  ---&gt;
 
 The configuration options related to the AT device package are:
 
-  * **The maximum number of supported clients**: Selecting multiple devices in the AT device package requires this option to be configured as the corresponding value.
-  * **Enable BSD Socket API support by AT commands**: This option will be selected by default when selecting the AT device package.
-  * **The maximum length of AT Commands buffe:** The maximum length of the data the AT commands can send.
-
-
+* The maximum number of supported clients: Selecting multiple devices in the AT device package requires this option to be configured as the corresponding value.
+* Enable BSD Socket API support by AT commands: This option will be selected by default when selecting the AT device package.
+* The maximum length of AT Commands buffe: The maximum length of the data the AT commands can send.
 
 ### Anything is possible
 
@@ -159,15 +150,15 @@ When you start programming embedded systems, you quickly realize that you can cr
 via: https://opensource.com/article/21/3/rtos-embedded-development
 
 作者：[Alan Smithee][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/alansmithee
-[b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/tips_map_guide_ebook_help_troubleshooting_lightbulb_520.png?itok=L0BQHgjr (Looking at a map)
+[b]: https://github.com/lkxed
+[1]: https://opensource.com/sites/default/files/lead-images/tips_map_guide_ebook_help_troubleshooting_lightbulb_520.png
 [2]: https://opensource.com/article/20/6/open-source-rtos
 [3]: https://en.wikipedia.org/wiki/Berkeley_sockets
 [4]: https://github.com/RT-Thread/rtthread-manual-doc/blob/master/at/at.md

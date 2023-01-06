@@ -1,21 +1,21 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Start programming in Racket by writing a "guess the number" game)
-[#]: via: (https://opensource.com/article/21/1/racket-guess-number)
-[#]: author: (Cristiano L. Fontana https://opensource.com/users/cristianofontana)
+[#]: subject: "Start programming in Racket by writing a "guess the number" game"
+[#]: via: "https://opensource.com/article/21/1/racket-guess-number"
+[#]: author: "Cristiano L. Fontana https://opensource.com/users/cristianofontana"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Start programming in Racket by writing a "guess the number" game
 ======
-Racket is a great way to learn a language from the Scheme and Lisp
-families.
+Racket is a great way to learn a language from the Scheme and Lisp families.
+
 ![Person using a laptop][1]
 
 I am a big advocate of learning multiple programming languages. That's mostly because I tend to get bored with the languages I use the most. It also teaches me new and interesting ways to approach programming.
 
-Writing the same program in multiple languages is a good way to learn their differences and similarities. Previously, I wrote articles showing the same sample data plotting program written in [C &amp; C++][2], JavaScript with [Node.js][3], and [Python and Octave][4].
+Writing the same program in multiple languages is a good way to learn their differences and similarities. Previously, I wrote articles showing the same sample data plotting program written in [C & C++][2], JavaScript with [Node.js][3], and [Python and Octave][4].
 
 This article is part of another series about writing a "guess the number" game in different programming languages. In this game, the computer picks a number between one and 100 and asks you to guess it. The program loops until you make a correct guess.
 
@@ -30,7 +30,6 @@ When I start learning a new language, I usually look for a tutorial that introdu
 [Racket][6] is a programming language in the [Scheme family][7], which is a dialect of [Lisp][8]. Lisp is also a family of languages, which can make it hard to decide which "dialect" to start with when you want to learn Lisp. All of the implementations have various degrees of compatibility, and this plethora of options might turn away newbies. I think that is a pity because these languages are really fun and stimulating!
 
 Starting with Racket makes sense because it is very mature and versatile, and the community is very active. Since Racket is a Lisp-like language, a major characteristic is that it uses the [prefix notation][9] and a [lot of parentheses][10]. Functions and operators are applied to a list of operands by prefixing them:
-
 
 ```
 (function-name operand operand ...)
@@ -58,15 +57,14 @@ The major Linux distributions offer packaged versions of Racket, so [installatio
 
 Here is a version of the "guess the number" program written in Racket:
 
-
 ```
 #lang racket
 
 (define (inquire-user number)
   (display "Insert a number: ")
-  (define guess (string-&gt;number (read-line)))
-  (cond [(&gt; number guess) (displayln "Too low") (inquire-user number)]
-        [(&lt; number guess) (displayln "Too high") (inquire-user number)]
+  (define guess (string->number (read-line)))
+  (cond [(> number guess) (displayln "Too low") (inquire-user number)]
+        [(< number guess) (displayln "Too high") (inquire-user number)]
         [else (displayln "Correct!")]))
 
 (displayln "Guess a number between 1 and 100")
@@ -75,13 +73,11 @@ Here is a version of the "guess the number" program written in Racket:
 
 Save this listing to a file called `guess.rkt` and run it:
 
-
 ```
-`$ racket guess.rkt`
+$ racket guess.rkt
 ```
 
 Here is some example output:
-
 
 ```
 Guess a number between 1 and 100
@@ -111,9 +107,9 @@ Now for the next line. `(define ...)` is used to declare new variables or functi
 
 This function recursively calls itself to repeat the question until the user guesses the right number. Note that I am not using loops; I feel that Racket programmers do not like loops and only use recursive functions. This approach is idiomatic to Racket, but if you prefer, [loops are an option][18].
 
-The first step of the `inquire-user` function asks the user to insert a number by writing that string to the console. Then it defines a variable called `guess` that contains whatever the user entered. The [`read-line` function][19] returns the user input as a string. The string is then converted to a number with the [`string->number` function][20]. After the variable definition, the [`cond` function][21] accepts a series of conditions. If a condition is satisfied, it executes the code inside that condition. These conditions, `(> number guess)` and `(< number guess)`, are followed by two functions: a `displayln` that gives clues to the user and a `inquire-user` call. The function calls itself again when the user does not guess the right number. The `else` clause executes when the two conditions are not met, i.e., the user enters the correct number. The program's guts are this `inquire-user` function.
+The first step of the `inquire-user` function asks the user to insert a number by writing that string to the console. Then it defines a variable called `guess` that contains whatever the user entered. The [read-line function][19] returns the user input as a string. The string is then converted to a number with the [string->number function][20]. After the variable definition, the [cond function][21] accepts a series of conditions. If a condition is satisfied, it executes the code inside that condition. These conditions, `(> number guess)` and `(< number guess)`, are followed by two functions: a `displayln` that gives clues to the user and a `inquire-user` call. The function calls itself again when the user does not guess the right number. The `else` clause executes when the two conditions are not met, i.e., the user enters the correct number. The program's guts are this `inquire-user` function.
 
-However, the function still needs to be called! First, the program asks the user to guess a number between 1 and 100, and then it calls the `inquire-user` function with a random number. The random number is generated with the [`random` function][22]. You need to inform the function that you want to generate a number between 1 and 100, but the `random` function generates integer numbers up to `max-1`, so I used 101.
+However, the function still needs to be called! First, the program asks the user to guess a number between 1 and 100, and then it calls the `inquire-user` function with a random number. The random number is generated with the [random function][22]. You need to inform the function that you want to generate a number between 1 and 100, but the `random` function generates integer numbers up to `max-1`, so I used 101.
 
 ### Try Racket
 
@@ -124,15 +120,15 @@ Learning new languages is fun! I am a big advocate of programming languages poly
 via: https://opensource.com/article/21/1/racket-guess-number
 
 作者：[Cristiano L. Fontana][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/cristianofontana
-[b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/laptop_screen_desk_work_chat_text.png?itok=UXqIDRDD (Person using a laptop)
+[b]: https://github.com/lkxed
+[1]: https://opensource.com/sites/default/files/lead-images/laptop_screen_desk_work_chat_text.png
 [2]: https://opensource.com/article/20/2/c-data-science
 [3]: https://opensource.com/article/20/6/data-science-nodejs
 [4]: https://opensource.com/article/20/2/python-gnu-octave-data-science

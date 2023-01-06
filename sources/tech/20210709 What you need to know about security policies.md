@@ -6,7 +6,6 @@
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
-
 What you need to know about security policies
 ======
 Learn about protecting your personal computer, server, and cloud systems

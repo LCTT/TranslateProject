@@ -1,11 +1,11 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (Astrophotography with Fedora Astronomy Lab: setting up)
-[#]: via: (https://fedoramagazine.org/astrophotography-with-fedora-astronomy-lab-setting-up/)
-[#]: author: (Geoffrey Marr https://fedoramagazine.org/author/coremodule/)
+[#]: subject: "Astrophotography with Fedora Astronomy Lab: setting up"
+[#]: via: "https://fedoramagazine.org/astrophotography-with-fedora-astronomy-lab-setting-up/"
+[#]: author: "Geoffrey Marr https://fedoramagazine.org/author/coremodule/"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 Astrophotography with Fedora Astronomy Lab: setting up
 ======
@@ -28,21 +28,15 @@ Download Fedora Astronomy Lab from the [Fedora Labs website][4]. You will need a
 
 Before you can go capturing the heavens, you need to do some minor setup in Fedora Astronomy Lab.
 
-First of all, you need to add your user to the _dialout_ group so that you can access certain pieces of astronomical equipment from within the guiding software. Do that by opening the terminal (Konsole) and running this command (replacing _user_ with your username):
+First of all, you need to add your user to the *dialout* group so that you can access certain pieces of astronomical equipment from within the guiding software. Do that by opening the terminal (Konsole) and running this command (replacing *user* with your username):
 
-sudo usermod -a -G dialout user
-
-My personal setup includes a guide camera (QHY5 series, also known as Orion Starshoot) that does not have a driver in the mainline Fedora repositories. To enable it, ypu need to install the [qhyccd SDK][9]. (_Note that this package is not officially supported by Fedora. Use it at your own risk.)_ At the time of writing, I chose to use the latest stable release, 20.08.26. Once you download the Linux 64-bit version of the SDK, to extract it:
-```
+My personal setup includes a guide camera (QHY5 series, also known as Orion Starshoot) that does not have a driver in the mainline Fedora repositories. To enable it, ypu need to install the [qhyccd SDK][9]. (*Note that this package is not officially supported by Fedora. Use it at your own risk.)* At the time of writing, I chose to use the latest stable release, 20.08.26. Once you download the Linux 64-bit version of the SDK, to extract it:
 
 ```
-
 tar zxvf sdk_linux64_20.08.26.tgz
 ```
 
-```
-
-Now change into the directory you just extracted, change the permissions of the _install.sh_ file to give you execute privileges, and run the _install.sh_:
+Now change into the directory you just extracted, change the permissions of the *install.sh* file to give you execute privileges, and run the *install.sh*:
 
 ```
 cd sdk_linux64_20.08.26
@@ -50,49 +44,35 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 
-Now it’s time to install the qhyccd INDI driver. INDI is an open source software library used to control astronomical equipment. Unfortunately, the driver is unavailable in the mainline Fedora repositories, but it is in a Copr repository. (_Note: Copr is not officially supported by Fedora infrastructure. Use packages at your own risk.)_ If you prefer to have the newest (and perhaps unstable!) pieces of astronomy software, you can also enable the “bleeding” repositories at this time by following [this guide][10]. For this tutorial, you are only going to enable one repo:
-```
+Now it’s time to install the qhyccd INDI driver. INDI is an open source software library used to control astronomical equipment. Unfortunately, the driver is unavailable in the mainline Fedora repositories, but it is in a Copr repository. (*Note: Copr is not officially supported by Fedora infrastructure. Use packages at your own risk.)* If you  prefer to have the newest (and perhaps unstable!) pieces of astronomy software, you can also enable the “bleeding” repositories at this time by following [this guide][10]. For this tutorial, you are only going to enable one repo:
 
 ```
-
 sudo dnf copr enable xsnrg/indi-3rdparty-bleeding
 ```
 
-```
-
 Install the driver by running the following command:
-```
 
 ```
-
 sudo dnf install indi-qhy
-```
-
 ```
 
 Finally, update all of your system packages:
 
-sudo dnf update -y
-
-To recap what you accomplished in this sectio: you added your user to the _dialout_ group, downloaded and installed the qhyccd driver, enabled the _indi-3rdparty-bleeding_ copr, installed the qhyccd-INDI driver with dnf, and updated your system.
+To recap what you accomplished in this sectio: you added your user to the *dialout* group, downloaded and installed the qhyccd driver, enabled the *indi-3rdparty-bleeding* copr, installed the qhyccd-INDI driver with dnf, and updated your system.
 
 ### Connecting your equipment
 
 This is the time to connect all your equipment to your computer. Most astronomical equipment will connect via USB, and it’s really as easy as plugging each device into your computer’s USB ports. If you have a lot of equipment (mount, imaging camera, guide camera, focuser, filter wheel, etc), you should use an external powered-USB hub to make sure that all connected devices have adequate power. Once you have everything plugged in, run the following command to ensure that the system recognizes your equipment:
-```
 
 ```
-
 lsusb
-```
-
 ```
 
 You should see output similar to (but not the same as) the output here:
 
 ![][11]
 
-You see in the output that the system recognizes the telescope mount (a SkyWatcher EQM-35 Pro) as _Prolific Technology, Inc. PL2303 Serial Port_, the imaging camera (a Sony a6000) as _Sony Corp. ILCE-6000_, and the guide camera (an Orion Starshoot, aka QHY5) as _Van Ouijen Technische Informatica_. Now that you have made sure your system recognizes your equipment, it’s time to open your desktop planetarium and telescope controller, KStars!
+You see in the output that the system recognizes the telescope mount (a SkyWatcher EQM-35 Pro) as *Prolific Technology, Inc. PL2303 Serial Port*, the imaging camera (a Sony a6000) as *Sony Corp. ILCE-6000*, and the guide camera (an Orion Starshoot, aka QHY5) as *Van Ouijen Technische Informatica*. Now that you have made sure your system recognizes your equipment, it’s time to open your desktop planetarium and telescope controller, KStars!
 
 ### Setting up KStars
 
@@ -100,15 +80,15 @@ It’s time to open [KStars][12], which is a desktop planetarium and also includ
 
 ![][13]
 
-Follow the prompts to choose your home location (where you will be imaging from) and _Download Extra Data…_
+Follow the prompts to choose your home location (where you will be imaging from) and *Download Extra Data…*
 
-![Setting your location][14]
+![][14]
 
-![“Download Extra Data”][15]
+![][15]
 
-![Choosing which catalogs to download][16]
+![][16]
 
-This will allow you to install additional star, nebula, and galaxy catalogs. You don’t need them, but they don’t take up too much space and add to the experience of using KStars. Once you’ve completed this, hit _Done_ in the bottom right corner to continue.
+This will allow you to install additional star, nebula, and galaxy catalogs. You don’t need them, but they don’t take up too much space and add to the experience of using KStars. Once you’ve completed this, hit *Done* in the bottom right corner to continue.
 
 ### Getting familiar with KStars
 
@@ -116,49 +96,49 @@ Now is a good time to play around with the KStars interface. You are greeted wit
 
 ![][17]
 
-This is the desktop planetarium which allows you to view the placement of objects in the night sky. Double-clicking an object selects it, and right clicking on an object gives you options like _Center &amp; Track_ which will follow the object in the planetarium, compensating for [sidereal time][18]. _Show DSS Image_ shows a real [digitized sky survey][19] image of the selected object.
+This is the desktop planetarium which allows you to view the placement of objects in the night sky. Double-clicking an object selects it, and right clicking on an object gives you options like *Center & Track* which will follow the object in the planetarium, compensating for [sidereal time][18]. *Show DSS Image* shows a real [digitized sky survey][19] image of the selected object.
 
 ![][20]
 
-Another essential feature is the _Set Time_ option in the toolbar. Clicking this will allow you to input a future (or past) time and then simulate the night sky as if that were the current date.
+Another essential feature is the *Set Time* option in the toolbar. Clicking this will allow you to input a future (or past) time and then simulate the night sky as if that were the current date.
 
-![The Set Time button][21]
+![][21]
 
 ### Configuring capture equipment with Ekos
 
-You’re familiar with the KStars layout and some basic functions, so it’s time to move on configuring your equipment using the [Ekos][22] observatory controller and automation tool. To open Ekos, click the observatory button in the toolbar or go to _Tools_ &gt; _Ekos_.
+You’re familiar with the KStars layout and some basic functions, so it’s time to move on configuring your equipment using the [Ekos][22] observatory controller and automation tool. To open Ekos, click the observatory button in the toolbar or go to *Tools* > *Ekos*.
 
-![The Ekos button on the toolbar][23]
+![][23]
 
-You will see another setup wizard: the _Ekos Profile Wizard_. Click _Next_ to start the wizard.
+You will see another setup wizard: the *Ekos Profile Wizard*. Click *Next* to start the wizard.
 
 ![][24]
 
-In this tutorial, you have all of our equipment connected directly to your computer. A future article we will cover using an INDI server installed on a remote computer to control our equipment, allowing you to connect over a network and not have to be in the same physical space as your gear. For now though, select _Equipment is attached to this device_.
+In this tutorial, you have all of our equipment connected directly to your computer. A future article we will cover using an INDI server installed on a remote computer to control our equipment, allowing you to connect over a network and not have to be in the same physical space as your gear. For now though, select *Equipment is attached to this device*.
 
 ![][25]
 
-You are now asked to name your equipment profile. I usually name mine something like “Local Gear” to differentiate between profiles that are for remote gear, but name your profile what you wish. We will leave the button marked _Internal Guide_ checked and won’t select any additional services. Now click the _Create Profile &amp; Select Devices_ button.
+You are now asked to name your equipment profile. I usually name mine something like “Local Gear” to differentiate between profiles that are for remote gear, but name your profile what you wish. We will leave the button marked *Internal Guide* checked and won’t select any additional services. Now click the *Create Profile & Select Devices* button.
 
 ![][26]
 
 This next screen is where we can select your particular driver to use for each individual piece of equipment. This part will be specific to your setup depending on what gear you use. For this tutorial, I will select the drivers for my setup.
 
-My mount, a [SkyWatcher EQM-35 Pro][27], uses the _EQMod Mount_ under _SkyWatcher_ in the menu (this driver is also compatible with all SkyWatcher equatorial mounts, including the [EQ6-R Pro][28] and the [EQ8-R Pro][29]). For my Sony a6000 imaging camera, I choose the _Sony DSLR_ under _DSLRs_ under the CCD category. Under _Guider_, I choose the _QHY CCD_ under _QHY_ for my Orion Starshoot (and any QHY5 series camera). That last driver we want to select will be under the Aux 1 category. We want to select _Astrometry_ from the drop-down window. This will enable the Astrometry plate-solver from within Ekos that will allow our telescope to automatically figure out where in the night sky it is pointed, saving us the time and hassle of doing a one, two, or three star calibration after setting up our mount.
+My mount, a [SkyWatcher EQM-35 Pro][27], uses the *EQMod Mount* under *SkyWatcher* in the menu (this driver is also compatible with all SkyWatcher equatorial mounts, including the [EQ6-R Pro][28] and the [EQ8-R Pro][29]). For my Sony a6000 imaging camera, I choose the *Sony DSLR* under *DSLRs* under the CCD category. Under *Guider*, I choose the *QHY CCD* under *QHY* for my Orion Starshoot (and any QHY5 series camera). That last driver we want to select will be under the Aux 1 category. We want to select *Astrometry* from the drop-down window. This will enable the Astrometry plate-solver from within Ekos that will allow our telescope to automatically figure out where in the night sky it is pointed, saving us the time and hassle of doing a one, two, or three star calibration after setting up our mount.
 
-You selected your drivers. Now it’s time to configure your telescope. Add new telescope profiles by clicking on the + button in the lower right. This is essential for computing field-of-view measurements so you can tell what your images will look like when you open the shutter. Once you click the + button, you will be presented with a form where you can enter the specifications of your telescope and guide scope. For my imaging telescope, I will enter Celestron into the _Vendor_ field, SS-80 into the _Model_ field, I will leave the _Driver_ field as None, _Type_ field as Refractor, _Aperture_ as 80mm, and _Focal Length_ as 400mm.
+You selected your drivers. Now it’s time to configure your telescope. Add new telescope profiles by clicking on the + button in the lower right. This is essential for computing field-of-view measurements so you can tell what your images will look like when you open the shutter. Once you click the + button, you will be presented with a form where you can enter the specifications of your telescope and guide scope. For my imaging telescope, I will enter Celestron into the *Vendor* field, SS-80 into the *Model* field, I will leave the *Driver* field as None, *Type* field as Refractor, *Aperture* as 80mm, and *Focal Length* as 400mm.
 
 ![][30]
 
-After you enter the data, hit the _Save_ button. You will see the data you just entered appear in the left window with an index number of 1 next to it. Now you can go about entering the specs for your guide scope following the steps above. Once you hit save here, the guide scope will also appear in the left window with an index number of 2. Once all of your scopes are entered, close this window. Now select your _Primary_ and _Guide_ telescopes from the drop-down window.
+After you enter the data, hit the *Save* button. You will see the data you just entered appear in the left window with an index number of 1 next to it. Now you can go about entering the specs for your guide scope following the steps above. Once you hit save here, the guide scope will also appear in the left window with an index number of 2. Once all of your scopes are entered, close this window. Now select your *Primary* and *Guide* telescopes from the drop-down window.
 
 ![][31]
 
-After all that work, everything should be correctly configured! Click the _Close_ button and complete the final bit of setup.
+After all that work, everything should be correctly configured! Click the *Close* button and complete the final bit of setup.
 
 ### Starting your capture equipment
 
-This last step before you can start taking images should be easy enough. Click the _Play_ button under Start &amp; Stop Ekos to connect to your equipment.
+This last step before you can start taking images should be easy enough. Click the *Play* button under Start & Stop Ekos to connect to your equipment.
 
 ![][32]
 
@@ -166,26 +146,23 @@ You will be greeted with a screen that looks similar to this:
 
 ![][33]
 
-When you click on the tabs at the top of the screen, they should all show a green dot next to _Connection_, indicating that they are connected to your system. On my setup, the baud rate for my mount (the EQMod Mount tab) is set incorrectly, and so the mount is not connected.
+When you click on the tabs at the top of the screen, they should all show a green dot next to *Connection*, indicating that they are connected to your system. On my setup, the baud rate for my mount (the EQMod Mount tab) is set incorrectly, and so the mount is not connected.
 
 ![][34]
 
-This is an easy fix; click on the _EQMod Mount_ tab, then the _Connection_ sub-tab, and then change the baud rate from 9600 to 115200. Now is a good time to ensure the serial port under _Ports_ is the correct serial port for your mount. You can check which port the system has mounted your device on by running the command:
-```
+This is an easy fix; click on the *EQMod Mount* tab, then the *Connection* sub-tab, and then change the baud rate from 9600 to 115200. Now is a good time to ensure the serial port under *Ports* is the correct serial port for your mount. You can check which port the system has mounted your device on by running the command:
 
 ```
-
 ls /dev
 
-```
 | grep USB
 ```
 
-You should see _ttyUSB0_. If there is more than one USB-serial device plugged in at a time, you will see more than one ttyUSB port, with an incrementing following number. To figure out which port is correct. unplug your mount and run the command again.
+You should see *ttyUSB0*. If there is more than one USB-serial device plugged in at a time, you will see more than one ttyUSB port, with an incrementing following number. To figure out which port is correct. unplug your mount and run the command again.
 
-Now click on the _Main Control_ sub-tab, click _Connect_ again, and wait for the mount to connect. It might take a few seconds, be patient and it should connect.
+Now click on the *Main Control* sub-tab, click *Connect* again, and wait for the mount to connect. It might take a few seconds, be patient and it should connect.
 
-The last thing to do is set the sensor and pixel size parameters for my camera. Under the _Sony DSLR Alpha-A6000 (Control)_ tab, select the _Image Info_ sub-tab. This is where you can enter your sensor specifications; if you don’t know them, a quick search on the internet will bring you your sensor’s maximum resolution as well as pixel pitch. Enter this data into the right-side boxes, then press the _Set_ button to load them into the left boxes and save them into memory. Hit the _Close_ button when you are done.
+The last thing to do is set the sensor and pixel size parameters for my camera. Under the *Sony DSLR Alpha-A6000 (Control)* tab, select the *Image Info* sub-tab. This is where you can enter your sensor specifications; if you don’t know them, a quick search on the internet will bring you your sensor’s maximum resolution as well as pixel pitch. Enter this data into the right-side boxes, then press the *Set* button to load them into the left boxes and save them into memory. Hit the *Close* button when you are done.
 
 ![][35]
 
@@ -198,14 +175,14 @@ Your equipment is ready to use. In the next article, you will learn how to captu
 via: https://fedoramagazine.org/astrophotography-with-fedora-astronomy-lab-setting-up/
 
 作者：[Geoffrey Marr][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://fedoramagazine.org/author/coremodule/
-[b]: https://github.com/lujun9972
+[b]: https://github.com/lkxed
 [1]: https://fedoramagazine.org/wp-content/uploads/2021/02/astrophotography-setup-2-816x345.jpg
 [2]: https://fedoramagazine.org/wp-content/uploads/2020/11/IMG_4151-768x1024.jpg
 [3]: https://labs.fedoraproject.org/en/astronomy/

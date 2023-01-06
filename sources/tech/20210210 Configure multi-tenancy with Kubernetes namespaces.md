@@ -85,8 +85,8 @@ Describe the newly created namespace:
 ```
 [root@master ~]# kubectl describe namespace test
 Name:         test
-Labels:       &lt;none&gt;
-Annotations:  &lt;none&gt;
+Labels:       <none>
+Annotations:  <none>
 Status:       Active
 No resource quota.
 No LimitRange resource.
@@ -233,8 +233,8 @@ Verify the Roles:
 ```
 $ kubectl describe roles -n test
   Name:         list-deployments
-  Labels:       &lt;none&gt;
-  Annotations:  &lt;none&gt;
+  Labels:       <none>
+  Annotations:  <none>
   PolicyRule:
     Resources         Non-Resource URLs  Resource Names  Verbs
     ---------         -----------------  --------------  -----

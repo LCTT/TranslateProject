@@ -92,7 +92,7 @@ The system is trying to remove an item that does not exist in the basket, and it
 
 ```
 public int RemoveItem(Hashtable item) {
-        if(basket.IndexOf(item) &gt;= 0) {
+        if(basket.IndexOf(item) >= 0) {
                 basket.RemoveAt(basket.IndexOf(item));
         }
         return basket.Count;

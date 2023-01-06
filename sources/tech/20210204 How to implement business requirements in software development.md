@@ -86,7 +86,7 @@ Implement this processing logic in the `ShippingAPI` class:
 ```
 private double Calculate10PercentDiscount(double total) {
         double discount = 0.00;
-        if(total &gt; 500.00) {
+        if(total > 500.00) {
                 discount = (total/100) * 10;
         }
         return discount;
