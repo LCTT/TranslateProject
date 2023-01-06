@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/10/linux-timers"
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "FigaroCao"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
