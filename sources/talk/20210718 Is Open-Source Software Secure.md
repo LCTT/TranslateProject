@@ -7,142 +7,138 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-Is Open-Source Software Secure?
+开源软件安全吗？
 ======
 
-Being someone who prefers [Linux for desktop][1] and encourages using open-source software, you may expect the answer to the question raised in the headline with a big “**Yes**“.
+作为一个偏爱 [Linux桌面发行版][1] 并鼓励使用开源软件的人，你可能期待就标题中提出的问题得到一个响亮的**肯定**回答。
 
-But I am not going to limit discussing the benefits of open-source software. Let us explore more!
+然而，我并不打算仅限于讨论开源软件的优点。让我们一起探索更多的内容吧！
 
-Here, I plan to share my thoughts on if open-source software is secure and what are the things involved in it that make secure or insecure.
+本文，我计划分享我关于开源软件是否安全的思考以及哪些事情与开源软件的安全性相关。
 
-### Why Should You Care if Open-Source Software is Secure?
+### 为什么你需要关注开源软件是否安全？
 
-No matter whether you use [Linux][2] or any other operating system, you will be surrounded with open-source software in some way (directly/indirectly).
+不论你是使用 [Linux][2] 系统还是使用其他类型的操作系统，你都会在某种程度上（直接地/间接地）被开源软件所包围。
 
-To give you an example, most of the proprietary software tools depend on some form of open-source libraries to make things work.
+举个例子，大多数专有软件工具依赖于某种形式的开源库来保证其正常工作。
 
-Furthermore, there is a reason why companies of various scale (including Google, Microsoft, and Facebook) rely on open-source software or contribute their resources to the open-source community in one way or the other.
+此外，各种规模的公司（包括 Google、Microsoft 和 Facebook ）依赖开源软件或者以某种途径向开源社区贡献资源是有原因的。
 
-Hence, the security of open-source software is something essential to know about.
+因此，开源软件的安全性是有必要了解的。
 
-### Myths About Open-Source Software Security
-
-![][3]
-
-While there are several arguments to pitch the cons of open-source software in terms of security, some of them just do not make any sense.
-
-#### Anyone Can See &amp; Exploit the Code
-
-The code is accessible to everyone, yes. But just because you can see the code—does that mean anyone can exploit it?
-
-**Not really.**
-
-Even though anyone can create a fork (or copy) of the software, the original software cannot be manipulated easily.
-
-Usually, the project maintainer (or a group of them) manage the code repository and accept the commits from contributors. The code is reviewed before approval. And no one can hijack the code just like that.
-
-**It takes effort for an attacker to exploit a vulnerability or add malicious code in a software, no matter if it is open-source or closed source.**
-
-#### Without Dedicated Resources, Security Breaks down
-
-Many believe that without dedicated employees or a team for an open-source software, it is difficult to maintain security.
-
-In contrast, with several types of contributors joining and leaving, the software gets more attention from a wide range of developers.
-
-And they may be able to spot security issues better than a few employees assigned for a proprietary software.
-
-Some projects from the likes of Mozilla have a dedicated team to effectively iron out security issues. Similarly, most of the successful open source projects have plenty of resources to dedicate for security.
-
-Hence, the open-source software ecosystem is a mixed bag for security. Even without dedicated resources, the projects get help from various contributors, and some are profitable to a great extent which helps them dedicate more resources.
-
-### Open Source Software is Secure: Here’s How
+### 有关开源软件安全性的谣言
 
 ![][3]
 
-Now that we have tackled the myths, let me highlight how open-source software deals with security issues.
+虽然有多种理由证明开源软件在安全性方面的缺陷，然而其中一些实际毫无意义。
 
-In other words, the benefits in security with open-source software.
+#### 任何人都可以查看 &amp; 恶意利用开源软件代码
 
-Not to forget, the perks of open-source software translate to some of the reasons why [Linux is better than Windows][4].
+是的，开源软件代码对于任何人都是可访问的。但是你可以查看代码并不意味着你可以利用它。
 
-#### More Eyes Looking at the Code
+**不现实**
 
-Unlike a proprietary software, access to code is not limited to a few developers.
+即使任何人都可以克隆（或者拷贝）该软件，原始软件也不能轻易地被修改使用。
 
-Some projects may even have thousands of developers watching the code, reviewing them, and flagging or fixing security issues.
+通常，项目维护人员（或者维护团队）管理代码仓库并且接受来自贡献者的提交。开源软件代码在接受之前被审查。没有人可以像那样劫持代码。
 
-And this gives an edge over closed-source software by having **the ability to identify issues quickly and addressing them as soon as possible.**
+**不论是开源软件还是闭源软件，攻击者都需要付出努力来利用软件中的代码漏洞或者添加恶意代码**
 
-Not just limited to more developers, often enterprises get involved with open-source projects that they utilize. And when they do, they will also go through the code and review it.
+#### 失去专用资源，安全性无从谈起
 
-This gives another source of external audit that may help improve the security of the software.
+很多人相信如果开源软件没有专职人员或者专职团队，维护软件安全性是困难的。
 
-In contrast, with a closed-source software, a limited number of developers may not be able to find all kinds of security issues. And it may take them longer to fix all the issues one by one.
+恰恰相反，由于各种个样类型的贡献者的加入与离开，开源软件获得了来自更大范围的开发者的更多关注。
 
-#### Community Decision Making to Prioritize Security Issues
+他们可能比由专用软件所聘用的少数开发者更能够发现安全问题。
 
-The developers of a closed-source software may have certain restrictions and priorities as what to work on and when to resolve an issue.
+一些来自 Mozilla 等同类公司的项目拥有自己的专职团队来高效处理安全问题。同样的，大部分成功的开源项目拥有大量的资源用于保障安全性。
 
-However, in case of an open-source project, the community of contributors can prioritize and assign themselves what they want to work on and when to fix an issue. You do not need to depend on a vendor or follow their instructions to address a security issue.
+因此，开源软件的生态系统是安全性的组合包。即使没有专职资源，开源项目也可以得到来自各类贡献者的帮助，他们中的一些很大程度上是有利可图的，这有助于他们投入更多的精力。
 
-The decision making that goes into addressing and fixing the security issues is more transparent and flexible in case of an open-source software. Hence, it can prove to be more effective leaving you with three specific benefits:
-
-  * **Transparency**
-  * **No dependency on the vendor**
-  * **Faster security updates**
-
-
-
-### Open Source Software is not Bulletproof: Here’s Why
+### 开源软件是安全的，以下是原因
 
 ![][3]
 
-While there are cases where open-source software may get an edge for security, there could be instances or factors that affects it.
+既然我们已经解决了有关开源软件安全性的谣言，让我重点展示一下开源软件是如何处理安全问题的。
 
-It is important to acknowledge that these problems exist, accordingly, an enterprise or an individual can make better decision about the state of security for an open-source software.
+换句话说，开源软件在安全性上的优势。
 
-#### Not enough Eyes to Review Code and Uncertainty
+请不要忘记，开源软件的优势也是 [ Linux 比 Windows 更好][4]的一些原因。
 
-Even if the code is accessible the world of developers, there are chances that a **project does not have enough contributors/developers to thoroughly review the code**.
+#### 更多的眼晴关注开源软件代码
 
-In that case, we cannot have great confidence of an open-source software being peer-reviewed, because it lacks exactly that.
+不像专有软件，代码访问仅不限于少数开发者。
 
-The open-source software may “claim” to have the best security just because its open-source, which is misleading when there are not enough developers working on it.
+一些开源项目甚至可能拥有数以万记的开发者查看代码、审查它们并标记和修复其中的安全性问题。
 
-Also, we do not know how many developers are looking/reviewing the code and how exactly the code walkthrough is going on.
+这给予了开源项目拥有**快速识别问题并尽快修复它们的能力**的相比闭源软件的优势。
 
-For instance, the Heartbleed bug was spotted after 2 years of its introduction in a project that was already popular i.e **OpenSSL**.
+不仅仅限于拥有更多的开发者，企业通常也会参与他们所使用的开源项目。当他们这样做的时候，他们也会查阅代码并审查它们。
 
-#### Software Responsibility or Accountability
+这提供了外部审查的另一条途径，而这可能有助于提升开源软件的安全性。
 
-This may not be important for individuals, but an **open-source software often comes with no warranties**.
+反之，就闭源软件而言，有限人数的开发者可能并不能找出所有种类的安全问题。而且他们可能需要花费更长的时间来一一修复发现的问题。
 
-So, if a business uses it, they must take the responsibility of any losses or damages caused by the use of that software.
+#### 社区决定安全问题的优先级
 
-This is something that tells you that nothing can be 100% secure and bug-free. No matter how many eyes you have on a code, or how skilled the contributors are, there will be risks in some form, be it security or data loss.
+闭源软件的开发者可能在处理什么问题和什么时候解决问题等方面有某些限制或者优先等级。
 
-And this brings us to the fact that open-source software is not bulletproof.
+而如果是开源项目，贡献者社区可以自行决定优先级并自行安排他们想解决的问题以及决定合适修复问题。你不需要依赖于供应商的决定或者按照他们的指示来解决一个安全问题。
 
-### Open Source May Have its Edge for Better Security But…
+着手处理和修复安全问题的决定在开源软件项目中更加透明和灵活。因此，它可以被证明是更有效的，并为你带来以下三个益处：
 
-Nothing is superior when it comes to security. No matter if it is closed-source or open-source, the same set of principles apply when it comes to security.
+  * **透明度**
+  * **不依赖供应商**
+  * **更快的安全更新**
 
-There are various external factors that can affect the security of a software, and **many of those are not source dependent**.
+### 开源软件不是刀枪不入的，以下是原因
 
-The code must be monitored in the same way to keep things secure.
+![][3]
 
-Yes, the **open-source approach introduces benefits that closed-source software will never have**, but that does not mean that it is bulletproof.
+虽然有开源软件可能在安全性上具有优势的案例，然而仍有一些因素影响它。
 
-_What do you think about the state of security when it comes to open-source software?_ _Do you think it is superior to proprietary solutions?_
+承认这些问题的存在是很重要的，据此，企业或者个人可以就一款开源软件的安全情况做出更好的决定。
 
-I would appreciate your valuable thoughts in the comments down below.
+#### 并无足够的眼睛来审查代码和不确定性
 
-#### Big Tech Websites Get Millions in Revenue, It's FOSS Got You!
+即使开源软件代码可以由全世界的开发者自由访问，**项目没有足够的贡献者/开发者彻底审查开源代码**的可能性仍然存在。
 
-If you like what we do here at It's FOSS, please consider making a donation to support our independent publication. Your support will help us keep publishing content focusing on desktop Linux and open source software.
+既如此，我们不能对经同行审查的开源软件抱有极高的信心，因为它恰好缺失了这一点。
 
-I'm not interested
+开源软件可能“声称”拥有最高的安全性因为它们是开源的。在没有足够的开发者致力于该项目时，这是一种误导。
+
+同样，我们也无从得知有多少开发者在查看/检查代码以及代码走查在多大程度上进行。
+
+举例而言，心脏出血漏洞（[Heartbleed][T1]）是在其在广泛使用项目—— **OpenSSL** ——中引入了2年以后才被发现的。
+
+#### 软件责任与义务
+
+对于个人用户这可能并不重要，但是**开源项目通常并无任何保证**。
+
+因此，如果一家公司使用它，它们必须自行承担任何由该软件使用造成的数据丢失与损坏。
+
+这告诉你没有什么是100%安全和没有漏洞的。无论有多少眼睛聚焦在代码上或者贡献者的技术多么精湛，总会存在某种形式的风险，可能是安全风险可能是数据丢失。
+
+这告诉我们一个现实：开源软件并非刀枪不入。
+
+### 开源软件有其更高安全性的优势，但是...
+
+就安全性而言没有什么优胜者。不论是闭源还是开源，当涉及安全问题时都适用同一套原则。
+
+有很多外部因素可以印象软件安全性，而**其中很多都不是来源相关的**。
+
+代码必须被以某种形式监控以保证安全。
+
+是的，**开源道路提供了闭源软件所不具备的优势**，但是这并不意味着开源软件是刀枪不入的。
+
+_你对开源软件安全状况有何思考？_ _你又是否认为开源软件比专有软件解决方案更好呢？_
+
+提前感谢您在下面的评论中提出的宝贵意见。
+
+#### 大型科技网站坐拥百万收入，而 It's FOSS 拥有每一个你！
+
+如果你喜欢我们在 It's FOSS 中所做的工作，请您考虑捐赠以支持我们的独立出版物。你的支持将有助于我们继续发布有关 Linux 桌面版以及开源软件的内容。
 
 --------------------------------------------------------------------------------
 
@@ -150,7 +146,7 @@ via: https://news.itsfoss.com/open-source-software-security/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CanYellow](https://github.com/CanYellow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -161,3 +157,5 @@ via: https://news.itsfoss.com/open-source-software-security/
 [2]: https://itsfoss.com/what-is-linux-distribution/
 [3]: data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQzOSIgd2lkdGg9Ijc4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=
 [4]: https://itsfoss.com/linux-better-than-windows/
+
+[T1]: https://www.cve.org/CVERecord?id=CVE-2014-0160
