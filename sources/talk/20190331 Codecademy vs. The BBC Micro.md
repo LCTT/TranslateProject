@@ -7,13 +7,26 @@
 [#]: publisher: " "
 [#]: url: " "
 
+[Codecademy][T1] 比之 [The BBC Micro][T2]
+======
+
+DN
 Codecademy vs. The BBC Micro
 ======
 
+20世纪70年代末期，计算机突然成为了某种普罗大众能够买回家的商品；而此前的几十年间，它一直只是听命于企业霸主的神秘而笨重的机器。这是多么吸引人，少数狂热的爱好者注意到了并争相购买了属于自己的计算机。对更多的人而言，微形计算机的到来引发了对未来的无助焦虑。同时期的杂志上的一则广告承诺一台家用计算机将“让您的孩子在学校享有不公平的优势”。广告中展示了一位打着领带，身着时髦的西装外套的男孩子急切地举手回答问题，在他身后，他的显得不那么聪明的同学们闷闷不乐地望着他。这则广告以及其它与之类似的广告表明世界正在疾速改变，而如果你不立即学习如何使用这些令人生畏的新设备之一，你和你的家人就会被时代所抛弃。
+
+DN
 In the late 1970s, the computer, which for decades had been a mysterious, hulking machine that only did the bidding of corporate overlords, suddenly became something the average person could buy and take home. An enthusiastic minority saw how great this was and rushed to get a computer of their own. For many more people, the arrival of the microcomputer triggered helpless anxiety about the future. An ad from a magazine at the time promised that a home computer would “give your child an unfair advantage in school.” It showed a boy in a smart blazer and tie eagerly raising his hand to answer a question, while behind him his dim-witted classmates look on sullenly. The ad and others like it implied that the world was changing quickly and, if you did not immediately learn how to use one of these intimidating new devices, you and your family would be left behind.
 
+在英国，这些焦虑转化为政府高层对国家竞争力的担忧。从各种意义上，20世纪70年代对英国来说都是平平无奇的十年。通胀与失业率高企。与此同时，一系列的罢工让伦敦陷于一次又一次的停电中。一篇1979年的政府报告焦虑没有跟上计算机技术浪潮将“为我们糟糕的工业表现平添又一个影响因素”[1][1]。英国似乎已经在计算机技术的角逐中落后了——所有的大型的计算机公司都是美国的，而集成电路则在日本和中国台湾制造。
+
+DN
 In the UK, this anxiety metastasized into concern at the highest levels of government about the competitiveness of the nation. The 1970s had been, on the whole, an underwhelming decade for Great Britain. Both inflation and unemployment had been high. Meanwhile, a series of strikes put London through blackout after blackout. A government report from 1979 fretted that a failure to keep up with trends in computing technology would “add another factor to our poor industrial performance.”[1][1] The country already seemed to be behind in the computing arena—all the great computer companies were American, while integrated circuits were being assembled in Japan and Taiwan.
 
+作为一个大胆的举动，BBC（英国广播公司）——由政府建立的公共服务广播公司——决定通过帮助英国人战胜他们对计算机的反感来解决英国的国家竞争力问题。BBC 发起了 [_计算机认知计划_][T3]，
+
+TD
 In an audacious move, the BBC, a public service broadcaster funded by the government, decided that it would solve Britain’s national competitiveness problems by helping Britons everywhere overcome their aversion to computers. It launched the _Computer Literacy Project_, a multi-pronged educational effort that involved several TV series, a few books, a network of support groups, and a specially built microcomputer known as the BBC Micro. The project was so successful that, by 1983, an editor for BYTE Magazine wrote, “compared to the US, proportionally more of Britain’s population is interested in microcomputers.”[2][2] The editor marveled that there were more people at the Fifth Personal Computer World Show in the UK than had been to that year’s West Coast Computer Faire. Over a sixth of Great Britain watched an episode in the first series produced for the _Computer Literacy Project_ and 1.5 million BBC Micros were ultimately sold.[3][3]
 
 [An archive][4] containing every TV series produced and all the materials published for the _Computer Literacy Project_ was put on the web last year. I’ve had a huge amount of fun watching the TV series and trying to imagine what it would have been like to learn about computing in the early 1980s. But what’s turned out to be more interesting is how computing was _taught_. Today, we still worry about technology leaving people behind. Wealthy tech entrepreneurs and governments spend lots of money trying to teach kids “to code.” We have websites like Codecademy that make use of new technologies to teach coding interactively. One would assume that this approach is more effective than a goofy ’80s TV series. But is it?
@@ -143,3 +156,7 @@ via: https://twobithistory.org/2019/03/31/bbc-micro.html
 [24]: tmp.zNBs2lK4Ca#fnref:6
 [25]: tmp.zNBs2lK4Ca#fnref:7
 [26]: tmp.zNBs2lK4Ca#fnref:8
+
+[T1]: https://www.codecademy.com/
+[T2]: https://bbcmicro.computer/
+[T3]: https://clp.bbcrewind.co.uk/history
