@@ -7,32 +7,33 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Create a timer on Linux
+在Linux中创建计时器
 ======
-A tutorial showing how to create a POSIX-compliant interval timer.
+这是一个演示如何创建POSIX兼容的间隔计时器的教程
+
 ![Team checklist][1]
 
-The timing of certain events is a common task for a developer. Common scenarios for timers are watchdogs, cyclic execution of tasks, or scheduling events for a specific time. In this article, I show how to create a POSIX-compliant interval timer using [timer_create(...)][2].
+对开发人员来说，确定某些事件的时间是一项常见任务。 计时器的常见场景是监督任务的循环执行或在特定时间安排事件。 在这篇文章中，我将演示如何使用 [timer_create(...)][2]创建一个POSIX兼容的间隔计时器。
 
-You can download the source code for the following examples from [GitHub][3].
+你可以从[GitHub][3]下载下面样例的源代码。
 
-### Prepare Qt Creator
+### 准备 Qt Creator
 
-I used [Qt Creator][4] as the IDE for this example. To run and debug the example code in Qt Creator, clone the [GitHub][3] repository, open Qt Creator, and go to **File -&gt; Open File or Project...** and choose the **CMakeLists.txt**:
+我使用[Qt Creator][4]作为样例的IDE。为了在Qt Creator运行和调试样例代码，克隆[GitHub][3]仓库，打开Qt Creator，在**File -&gt; Open File or Project...** 并选择 **CMakeLists.txt**:
 
 ![Qt Creator open project][5]
 
-Open a project in Qt Creator (CC-BY-SA 4.0)
+在Qt Creator中打开项目 (CC-BY-SA 4.0)
 
-After selecting the toolchain, click on **Configure Project**. The project contains three independent examples (we will only cover two of them in this article). With the green-marked menu, switch between the configurations for each example and activate **Run in terminal** for each of them (see the yellow mark below). The currently active example for building and debugging can be selected over the **Debug** button on the bottom left corner (see the orange mark below):
+选择工具链之后，点击 **Configure Project**。这个项目包括三个独立的样例（我们在这篇文章中将只会用到其中的两个）。使用绿色标记出来的菜单，可以在每个样例的配置之间切换，并为每个样例激活在终端运行**Run in terminal**（用黄色标记）。当前用于构建和调试的活动示例可以通过左下角的**Debug**按钮进行选择(参见下面的橙色标记)。
 
 ![Project configuration][6]
 
-Project configuration (CC-BY-SA 4.0)
+项目配置 (CC-BY-SA 4.0)
 
-### Threading timer
+### 线程计时器
 
-Let's take a look at the _simple_threading_timer.c_ example. This is the simplest one: It shows how an interval timer is created, which calls the function **expired** on expiration. On each expiration, a new thread is created in which the function **expiration** is called.
+让我们看看_simple_threading_timer.c_样例。这是最简单的一个。它展示了一个调用了超时函数**expired**的间隔计时器是如何被创建的。
 
 
 ```
@@ -59,11 +60,11 @@ int main()
 
     struct t_eventData eventData = { .myData = 0 };
 
-    /*  sigevent specifies behaviour on expiration  */
+    /*  sigevent指定了过期时要执行的操作  */
     struct sigevent sev = { 0 };
 
-    /* specify start delay and interval
-     * it_value and it_interval must not be zero */
+    /* 指定启动延时时间和间隔时间 
+    * it_value和it_interval不能为零 */
 
     struct itimerspec its = {   .it_value.tv_sec  = 1,
                                 .it_value.tv_nsec = 0,
@@ -77,7 +78,7 @@ int main()
     sev.sigev_notify_function = &amp;expired;
     sev.sigev_value.sival_ptr = &amp;eventData;
 
-    /* create timer */
+    /* 创建计时器 */
     res = timer_create(CLOCK_REALTIME, &amp;sev, &amp;timerId);
 
     if (res != 0){
@@ -85,7 +86,7 @@ int main()
         [exit][10](-1);
     }
 
-    /* start timer */
+    /* 启动计时器 */
     res = timer_settime(timerId, 0, &amp;its, NULL);
 
     if (res != 0){
@@ -104,24 +105,24 @@ void expired(union sigval timer_data){
 }
 ```
 
-The advantage of this approach is its small footprint, in terms of code and simple debugging. The disadvantage is the additional overhead due to the creation of a new thread on expiration and, consequently, the less deterministic behavior.
+这种方法的优点是在代码和简单的调试方面占用空间小。缺点是由于到期时创建新线程而增加额外的开销和因此导致的不太确定的结果。
 
-### Interrupt Signal Timer
+### 中断信号计时器
 
-Another possibility to be notified by an expired timer is based on a [kernel signal][12]. Instead of creating a new thread each time the timer expires, the kernel sends a signal to the process, the process is interrupted, and the corresponding signal handler is called.
+超时计时器通知的另一种可能性是基于[内核信号][12]。 内核不是在每次计时器过期时创建一个新线程，而是向进程发送一个信号，进程被中断，并调用相应的信号处理程序。
 
-As the default action when receiving a signal is to terminate the process (see [signal][13] man page), we have to prepare Qt Creator in advance so that properly debugging is possible.
+由于接收信号时的默认操作是终止进程(参考[信号][13]手册页)，我们必须要提前准备Qt Creator，以便进行正确的调试。
 
-The default behavior of Qt Creator when the debuggee receives a signal is:
+当被调试对象接收到一个信号时，Qt Creator的默认行为是:
 
-  * Interrupt execution and switch to the debugger context.
-  * Display a pop-up window that notifies the user about the reception of a signal.
+  * 中断执行并切换到调试器上下文。
+  * 显示一个弹出窗口，通知用户接收到信号。
 
 
 
-Both actions are not wanted as the reception of a signal is part of our application.
+这两种操作都不需要，因为信号的接收是我们应用程序的一部分。
 
-Qt Creator uses GDB in the background. In order to prevent GDB from stopping the execution when the process receives a signal, go to **Tools** -&gt; **Options**, select **Debugger**, and navigate to **Locals &amp; Expressions**. Add the following expression to _Debugging Helper Customization_:
+Qt Creator在后台使用GDB。为了防止GDB在进程接收到信号时停止执行，在“工具”菜单**Tools** -&gt; **Options**，选择 **Debugger**，并导航到**Locals &amp; Expressions**。添加下面的表达式到_Debugging Helper Customization_:
 
 
 ```
@@ -130,23 +131,23 @@ Qt Creator uses GDB in the background. In order to prevent GDB from stopping the
 
 ![Signal no stop with error][14]
 
-Sig 34 no stop with error (CC-BY-SA 4.0)
+Sig 34 发生错误时未停止 (CC-BY-SA 4.0)
 
-You can find more information about GDB signal handling in the [GDB documentation][15].
+你可以在[GDB documentation][15]找到更多关于GDB信号处理的信息。
 
-Next, we want to suppress the pop-up window that notifies us every time a signal is received when we stop in the signal handler:
+接下来，当我们在信号处理程序中停止时，我们想要抑制每次接收到信号时通知我们的弹出窗口:
 
 ![Signal 34 pop up box][16]
 
-Signal 34 pop-up box (CC-BY-SA 4.0)
+Signal 34 弹出窗口 (CC-BY-SA 4.0)
 
-To do so, navigate to the tab **GDB** and uncheck the marked checkbox:
+为此，导航到**GDB**标签并取消勾选标记的复选框:
 
 ![Timer signal windows][17]
 
-Timer signal windows (CC-BY-SA 4.0)
+计时器信号窗口 (CC-BY-SA 4.0)
 
-Now you can properly debug the _signal_interrupt_timer_. The actual implementation of the signal timer is a bit more complex:
+现在你可以正确的调试_signal_interrupt_timer_。真正的信号计时器的实施会更复杂一些：
 
 
 ```
@@ -177,10 +178,10 @@ int main()
     struct sigevent sev = { 0 };
     struct t_eventData eventData = { .myData = 0 };
 
-    /* specifies the action when receiving a signal */
+    /* 指定收到信号时的操作 */
     struct sigaction sa = { 0 };
 
-    /* specify start delay and interval */
+    /* 指定启动延时的时间和间隔时间 */
     struct itimerspec its = {   .it_value.tv_sec  = 1,
                                 .it_value.tv_nsec = 0,
                                 .it_interval.tv_sec  = 1,
@@ -193,7 +194,7 @@ int main()
     sev.sigev_signo = SIGRTMIN;
     sev.sigev_value.sival_ptr = &amp;eventData;
 
-    /* create timer */
+    /* 创建计时器 */
     res = timer_create(CLOCK_REALTIME, &amp;sev, &amp;timerId);
 
     if ( res != 0){
@@ -201,22 +202,22 @@ int main()
         [exit][10](-1);
     }
 
-    /* specifz signal and handler */
+    /* 指定信号和处理程序 */
     sa.sa_flags = SA_SIGINFO;
     sa.sa_sigaction = handler;
 
-    /* Initialize signal */
+    /* 初始化信号 */
     sigemptyset(&amp;sa.sa_mask);
 
     [printf][7]("Establishing handler for signal %d\n", SIGRTMIN);
 
-    /* Register signal handler */
+    /* 注册信号处理程序 */
     if (sigaction(SIGRTMIN, &amp;sa, NULL) == -1){
         [fprintf][8](stderr, "Error sigaction: %s\n", [strerror][9](errno));
         [exit][10](-1);
     }
 
-    /* start timer */
+    /* 启动计时器 */
     res = timer_settime(timerId, 0, &amp;its, NULL);
 
     if ( res != 0){
@@ -239,11 +240,11 @@ handler(int sig, siginfo_t *si, void *uc)
 }
 ```
 
-In contrast to the threading timer, we have to initialize the signal and register a signal handler. This approach is more performant as it won't cause the creation of additional threads. For this reason, the execution of the signal handler is also more deterministic. The drawback is clearly the extra configuration effort to debug this properly.
+与线程计时器相反，我们必须初始化信号并注册一个信号处理程序。这种方法性能更好，因为它不会导致创建额外的线程。因此，信号处理程序的执行也更加确定。缺点显然是正确调试需要额外的配置工作。
 
-### Summary
+### 总结
 
-Both methods described in this article are close-to-the-kernel implementations of timers. Even if the [timer_create(...)][2] function is part of the POSIX specification, it is not possible to compile the sample code on a FreeBSD system due to small differences in data structures. Besides this drawback, such an implementation gives you fine-grained control for general-purpose timing applications.
+本文中描述的两种方法都是计时器的接近内核的实现。即使[timer_create(...)][2]函数是POSIX规范的一部分, 在FreeBSD系统上编译样例代码是不可能的，因为数据结构的差异很小。除了这个缺点之外，这种实现还为通用计时应用程序提供了细粒度控制。
 
 --------------------------------------------------------------------------------
 
@@ -251,7 +252,7 @@ via: https://opensource.com/article/21/10/linux-timers
 
 作者：[Stephan Avenwedde][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FigaroCao](https://github.com/FigaroCao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
