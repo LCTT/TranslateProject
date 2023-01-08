@@ -33,10 +33,17 @@ In an audacious move, the BBC, a public service broadcaster funded by the govern
 
 ### The Computer Literacy Project
 
+1978年，BBC 在一部名为《芯片来了》(["Now the Chips Are Down"][T5])（译者注：对于非英国区域的读者，可以在[这里][T6]观看该纪录片） 的纪录片中探讨了这种新的机器必将带来的剧烈的社会变革。
+
+DN
 The microcomputer revolution began in 1975 with the release of [the Altair 8800][5]. Only two years later, the Apple II, TRS-80, and Commodore PET had all been released. Sales of the new computers exploded. In 1978, the BBC explored the dramatic societal changes these new machines were sure to bring in a documentary called “Now the Chips Are Down.”
 
+该纪录片充满担忧。在前5分钟内，解说员提到这种微电子器件将“彻底改变我们的生活方式”。随着诡异的合成音乐的播放以及屏幕上绿色的电脉冲在放大后的芯片上起舞，解说员进一步说这种芯片“正是日本放弃造船业的原因，也将成为我们的孩子们长大后失业的原因”。纪录片继续探讨了机器人如何用于汽车自动化组装以及欧洲的手表工业如何在与美国的电子表工业竞争中败下阵来。它斥责了英国政府在应对未来的大规模失业的准备上做得不够。
+
+DN
 The documentary was alarming. Within the first five minutes, the narrator explains that microelectronics will “totally revolutionize our way of life.” As eerie synthesizer music plays, and green pulses of electricity dance around a magnified microprocessor on screen, the narrator argues that the new chips are why “Japan is abandoning its ship building, and why our children will grow up without jobs to go to.” The documentary goes on to explore how robots are being used to automate car assembly and how the European watch industry has lost out to digital watch manufacturers in the United States. It castigates the British government for not doing more to prepare the country for a future of mass unemployment.
 
+该纪录片据信可能在英国议会上展示。[4][6] 包括工业署和人力服务委员会在内的一些政府代表开始有兴趣尝试提高英国公众对计算机的认识。
 The documentary was supposedly shown to the British Cabinet.[4][6] Several government agencies, including the Department of Industry and the Manpower Services Commission, became interested in trying to raise awareness about computers among the British public. The Manpower Services Commission provided funds for a team from the BBC’s education division to travel to Japan, the United States, and other countries on a fact-finding trip. This research team produced a report that cataloged the ways in which microelectronics would indeed mean major changes for industrial manufacturing, labor relations, and office work. In late 1979, it was decided that the BBC should make a ten-part TV series that would help regular Britons “learn how to use and control computers and not feel dominated by them.”[5][7] The project eventually became a multimedia endeavor similar to the _Adult Literacy Project_, an earlier BBC undertaking involving both a TV series and supplemental courses that helped two million people improve their reading.
 
 The producers behind the _Computer Literacy Project_ were keen for the TV series to feature “hands-on” examples that viewers could try on their own if they had a microcomputer at home. These examples would have to be in BASIC, since that was the language (really the entire shell) used on almost all microcomputers. But the producers faced a thorny problem: Microcomputer manufacturers all had their own dialects of BASIC, so no matter which dialect they picked, they would inevitably alienate some large fraction of their audience. The only real solution was to create a new BASIC—BBC BASIC—and a microcomputer to go along with it. Members of the British public would be able to buy the new microcomputer and follow along without worrying about differences in software or hardware.
@@ -160,3 +167,6 @@ via: https://twobithistory.org/2019/03/31/bbc-micro.html
 [T1]: https://www.codecademy.com/
 [T2]: https://bbcmicro.computer/
 [T3]: https://clp.bbcrewind.co.uk/history
+
+[T5]: https://www.bbc.co.uk/iplayer/episode/p01z4rrj/horizon-19771978-now-the-chips-are-down
+[T6]: https://archive.org/details/BBCHorizon19771978NowTheChipsAreDown
