@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/manjaro-linux-experience/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: "KevinZonda"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "

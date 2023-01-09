@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/7/what-security-policy)
 [#]: author: (Chris Collins https://opensource.com/users/clcollins)
 [#]: collector: (lujun9972)
-[#]: translator: (FelixYFZ )
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

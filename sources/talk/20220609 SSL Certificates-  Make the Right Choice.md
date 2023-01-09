@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/ssl-certificates-make-the-right-choice/"
 [#]: author: "Jitendra Bhojwani https://www.opensourceforu.com/author/jitendra-bhojwani/"
 [#]: collector: "lkxed"
-[#]: translator: "KevinZonda"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "

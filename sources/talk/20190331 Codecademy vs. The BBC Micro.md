@@ -2,7 +2,7 @@
 [#]: via: "https://twobithistory.org/2019/03/31/bbc-micro.html"
 [#]: author: "Two-Bit History https://twobithistory.org"
 [#]: collector: "lujun9972"
-[#]: translator: "yesimmia"
+[#]: translator: "CanYellow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
