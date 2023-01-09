@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/3/rtos-embedded-development"
 [#]: author: "Alan Smithee https://opensource.com/users/alansmithee"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "cool-summer-021"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
