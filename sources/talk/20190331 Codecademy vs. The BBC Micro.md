@@ -7,23 +7,49 @@
 [#]: publisher: " "
 [#]: url: " "
 
+[Codecademy][T1] 比之 [The BBC Micro][T2]
+======
+
+TD
 Codecademy vs. The BBC Micro
 ======
 
+20世纪70年代末期，计算机突然成为了某种普罗大众能够买回家的商品；而此前的几十年间，它一直只是听命于企业霸主的神秘而笨重的机器。这是多么吸引人，少数狂热的爱好者注意到了并争相购买了属于自己的计算机。对更多的人而言，微形计算机的到来引发了对未来的无助焦虑。同时期的杂志上的一则广告承诺一台家用计算机将“让您的孩子在学校享有不公平的优势”。广告中展示了一位打着领带，身着时髦的西装外套的男孩子急切地举手回答问题，在他身后，他的显得不那么聪明的同学们闷闷不乐地望着他。这则广告以及其它与之类似的广告表明世界正在疾速改变，而如果你不立即学习如何使用这些令人生畏的新设备之一，你和你的家人就会被时代所抛弃。
+
+DN
 In the late 1970s, the computer, which for decades had been a mysterious, hulking machine that only did the bidding of corporate overlords, suddenly became something the average person could buy and take home. An enthusiastic minority saw how great this was and rushed to get a computer of their own. For many more people, the arrival of the microcomputer triggered helpless anxiety about the future. An ad from a magazine at the time promised that a home computer would “give your child an unfair advantage in school.” It showed a boy in a smart blazer and tie eagerly raising his hand to answer a question, while behind him his dim-witted classmates look on sullenly. The ad and others like it implied that the world was changing quickly and, if you did not immediately learn how to use one of these intimidating new devices, you and your family would be left behind.
 
+在英国，这些焦虑转化为政府高层对国家竞争力的担忧。从各种意义上，20世纪70年代对英国来说都是平平无奇的十年。通胀与失业率高企。与此同时，一系列的罢工让伦敦陷于一次又一次的停电中。一篇1979年的政府报告焦虑没有跟上计算机技术浪潮将“为我们糟糕的工业表现平添又一个影响因素”[1][1]。英国似乎已经在计算机技术的角逐中落后了——所有的大型的计算机公司都是美国的，而集成电路则在日本和中国台湾制造。
+
+DN
 In the UK, this anxiety metastasized into concern at the highest levels of government about the competitiveness of the nation. The 1970s had been, on the whole, an underwhelming decade for Great Britain. Both inflation and unemployment had been high. Meanwhile, a series of strikes put London through blackout after blackout. A government report from 1979 fretted that a failure to keep up with trends in computing technology would “add another factor to our poor industrial performance.”[1][1] The country already seemed to be behind in the computing arena—all the great computer companies were American, while integrated circuits were being assembled in Japan and Taiwan.
 
+BBC（英国广播公司）——由政府建立的公共服务广播公司——作出了一个大胆的举动，决定通过帮助英国人战胜他们对计算机的反感来解决英国的国家竞争力问题。BBC 发起了 [_计算机认知计划 (Computer Literacy Project)_][T3]，该计划包括多个教育方向的努力：几部电视系列片，一些相关书籍，一张支持团队网络以及一款名为 BBC Micro 的特别定制的微型计算机。该项目是如此成功以致于到1983年[ BYTE 杂志][T4]的一名编辑写道：“与美国相比，有更多的英国人对微型计算机感兴趣。”[2][2] 这名编辑惊讶于英国的第五届个人电脑世界展 (the Fifth Personal Computer World Show) 比当年的西海岸电脑展的人数更多。超过六分之一的英国人观看了由 _计算机认知计划_ 出品的第一部电视系列片的一集并最终售出了150万台 BBC Micro 微型计算机。[3][3]
+
+DN
 In an audacious move, the BBC, a public service broadcaster funded by the government, decided that it would solve Britain’s national competitiveness problems by helping Britons everywhere overcome their aversion to computers. It launched the _Computer Literacy Project_, a multi-pronged educational effort that involved several TV series, a few books, a network of support groups, and a specially built microcomputer known as the BBC Micro. The project was so successful that, by 1983, an editor for BYTE Magazine wrote, “compared to the US, proportionally more of Britain’s population is interested in microcomputers.”[2][2] The editor marveled that there were more people at the Fifth Personal Computer World Show in the UK than had been to that year’s West Coast Computer Faire. Over a sixth of Great Britain watched an episode in the first series produced for the _Computer Literacy Project_ and 1.5 million BBC Micros were ultimately sold.[3][3]
 
+去年，一份包括了由 _计算机认知计划_ 出版的所有材料与出品的每一部电视系列片的[档案][4]发布在了互联网上。我抱着极大的兴趣观看这些电视系列片并试图想象在20世纪80年代早期学习电脑计算是什么图景。不过我发现更有兴趣的是时年是如何教授电脑计算的。今天，我们仍然担心技术发展使人们落伍。富有的科技企业家与政府花费大量的资金试图教孩子们“编程”。我们拥有诸如 Codecademy 这样的通过新技术的运用进行交互式编程教学的网站。我们可能假定这种方式比80年代的呆板的电视系列片更高效，不过真的是这样吗？
+
+DN
 [An archive][4] containing every TV series produced and all the materials published for the _Computer Literacy Project_ was put on the web last year. I’ve had a huge amount of fun watching the TV series and trying to imagine what it would have been like to learn about computing in the early 1980s. But what’s turned out to be more interesting is how computing was _taught_. Today, we still worry about technology leaving people behind. Wealthy tech entrepreneurs and governments spend lots of money trying to teach kids “to code.” We have websites like Codecademy that make use of new technologies to teach coding interactively. One would assume that this approach is more effective than a goofy ’80s TV series. But is it?
 
+### 计算机认知计划 ([Computer Literacy Project][T3])
+
+DN
 ### The Computer Literacy Project
 
+微型计算机革命始于1975年 [Altair 8800][5] 的发布。两年后，Apple II，TRS-80 以及 Commodore PET 都相继发布。全新的计算机的销量爆发式增长。1978年，BBC 在一部名为《芯片来了》(["Now the Chips Are Down"][T5])（译者注：对于非英国区域的读者，可以在[这里][T6]观看该纪录片） 的纪录片中探讨了这种新的机器必将带来的剧烈的社会变革。
+
+DN
 The microcomputer revolution began in 1975 with the release of [the Altair 8800][5]. Only two years later, the Apple II, TRS-80, and Commodore PET had all been released. Sales of the new computers exploded. In 1978, the BBC explored the dramatic societal changes these new machines were sure to bring in a documentary called “Now the Chips Are Down.”
 
+该纪录片充满担忧。在前5分钟内，解说员提到这种微电子器件将“彻底改变我们的生活方式”。随着诡异的合成音乐的播放以及屏幕上绿色的电脉冲在放大后的芯片上起舞，解说员进一步说这种芯片“正是日本放弃造船业的原因，也将成为我们的孩子们长大后失业的原因”。纪录片继续探讨了机器人如何用于汽车自动化组装以及欧洲的手表工业如何在与美国的电子表工业竞争中败下阵来。它斥责了英国政府在应对未来的大规模失业的准备上做得不够。
+
+DN
 The documentary was alarming. Within the first five minutes, the narrator explains that microelectronics will “totally revolutionize our way of life.” As eerie synthesizer music plays, and green pulses of electricity dance around a magnified microprocessor on screen, the narrator argues that the new chips are why “Japan is abandoning its ship building, and why our children will grow up without jobs to go to.” The documentary goes on to explore how robots are being used to automate car assembly and how the European watch industry has lost out to digital watch manufacturers in the United States. It castigates the British government for not doing more to prepare the country for a future of mass unemployment.
 
+该纪录片据信可能在英国议会上展示过。[4][6] 包括工业署和人力服务委员会在内的一些政府代表开始有兴趣尝试提高英国公众对计算机的认识。
 The documentary was supposedly shown to the British Cabinet.[4][6] Several government agencies, including the Department of Industry and the Manpower Services Commission, became interested in trying to raise awareness about computers among the British public. The Manpower Services Commission provided funds for a team from the BBC’s education division to travel to Japan, the United States, and other countries on a fact-finding trip. This research team produced a report that cataloged the ways in which microelectronics would indeed mean major changes for industrial manufacturing, labor relations, and office work. In late 1979, it was decided that the BBC should make a ten-part TV series that would help regular Britons “learn how to use and control computers and not feel dominated by them.”[5][7] The project eventually became a multimedia endeavor similar to the _Adult Literacy Project_, an earlier BBC undertaking involving both a TV series and supplemental courses that helped two million people improve their reading.
 
 The producers behind the _Computer Literacy Project_ were keen for the TV series to feature “hands-on” examples that viewers could try on their own if they had a microcomputer at home. These examples would have to be in BASIC, since that was the language (really the entire shell) used on almost all microcomputers. But the producers faced a thorny problem: Microcomputer manufacturers all had their own dialects of BASIC, so no matter which dialect they picked, they would inevitably alienate some large fraction of their audience. The only real solution was to create a new BASIC—BBC BASIC—and a microcomputer to go along with it. Members of the British public would be able to buy the new microcomputer and follow along without worrying about differences in software or hardware.
@@ -143,3 +169,10 @@ via: https://twobithistory.org/2019/03/31/bbc-micro.html
 [24]: tmp.zNBs2lK4Ca#fnref:6
 [25]: tmp.zNBs2lK4Ca#fnref:7
 [26]: tmp.zNBs2lK4Ca#fnref:8
+
+[T1]: https://www.codecademy.com/
+[T2]: https://bbcmicro.computer/
+[T3]: https://clp.bbcrewind.co.uk/history
+[T4]: https://archive.org/details/byte-magazine?tab=about
+[T5]: https://www.bbc.co.uk/iplayer/episode/p01z4rrj/horizon-19771978-now-the-chips-are-down
+[T6]: https://archive.org/details/BBCHorizon19771978NowTheChipsAreDown
