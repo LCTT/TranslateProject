@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/platinum-open-access-academic-journals"
 [#]: author: "Joshua Pearce https://opensource.com/users/jmpearce"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "CanYellow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
