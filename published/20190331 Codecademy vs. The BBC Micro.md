@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "CanYellow"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15469-1.html"
 
 上世纪的 BBC Micro 和如今的 Codecademy
 ======
