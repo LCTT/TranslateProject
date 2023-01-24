@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/08/pandas-the-popular-python-library-for-data-analysis-and-data-science/"
 [#]: author: "Phani Kiran https://www.opensourceforu.com/author/phani-kiran/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
