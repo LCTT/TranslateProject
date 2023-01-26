@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/how-to-analyse-sentiments-using-machine-learning/"
 [#]: author: "Jishnu Saurav Mittapalli https://www.opensourceforu.com/author/jishnu-saurav-mittapalli/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chai001125"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
