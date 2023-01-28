@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/first-pull-request-merged"
 [#]: author: "Oluwaseun https://opensource.com/users/jhhornn"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "onionstalgia"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
