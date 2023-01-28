@@ -7,27 +7,30 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Analyse Sentiments Using Machine Learning
+如何使用机器学习来分析情感
 ======
-This article will help you understand the concept of sentiment analysis and learn how it is done. It uses different machine learning algorithms for sentiment analysis, and then compares them to decide which one is the best for the particular problem described here.
 
-Sentiment analysis is a major area in the field of natural language processing. A sentiment is any opinion or feeling that we have about an event, a product, a situation or anything else. Sentiment analysis is the field of research in which human sentiments are automatically extracted from the text. This field started evolving in the early 90s.
+>本文将帮助你理解什么是 <ruby>情感分析<rt>sentiment analysis</rt></ruby>，并且你能了解如何使用机器学习进行情感分析。我们使用了不同的机器学习算法进行情感分析，然后将各个算法的准确率结果进行比较，以确定哪一种算法最适合这个问题。
 
-This article will help you understand how machine learning (ML) can be used for sentiment analysis, and compare the different ML algorithms that can be used. It does not try to improve the performance of any of the algorithms or methods.
+情感分析是自然语言处理（NLP）中的一个重要的内容。情绪指的是我们对某一事件、物品、情况或事物产生的感觉。情感分析是一个从文本中自动提取人类情感的研究领域。它在上世纪 90 年代初才慢慢地开始发展起来。
 
-In today’s fast paced world, everything is online and everyone can post their views. A few negative online comments may hurt a company’s reputation and, thereby, its sales. Now that everything’s online, everyone can post their views and opinions. It becomes very important for companies to go through these to understand what their customers really want. But since there is so much data, it cannot be gone through manually. This is where sentiment analysis comes in.
+本文将让你明白如何将机器学习 (ML) 用于情感分析，并比较不同机器学习算法的结果。本文的目标不在于研究提高算法性能的方法。
 
-Let us now start developing a model to do a basic sentiment analysis.
+如今，我们生活在一个快节奏的社会中，所有的商品都能在网上购买到，每个人都可以在网上发表自己的评论。而一些商品的负面网络评论可能会损害公司的声誉，从而影响公司的销售额。因此对公司来说，通过商品评论来了解客户真正想要什么变得非常重要。但是这些评论数据太多了，无法一个个地手动查看所有的评论。这就是情绪分析诞生的缘由。
 
-### Let’s start!
+现在，就让我们看看如何用机器学习开发一个模型，来进行基本的情绪分析吧。
 
-The first step is to select a data set. You can choose from any publicly available reviews or comments such as tweets or movie reviews. The two columns that should definitely be there in the data set are the label and the actual piece of text.
+### 现在就开始吧!
 
-Figure 1 shows a small sample of how the data looks.
+#### 获取数据
+
+第一步是选择一个数据集。你可以从任何公开的评论中进行选择，例如推文或电影评论。数据集中包含两列：标签和实际的文本段。
+
+下图显示了我们选取的部分数据集。
 
 ![Figure 1: Data sample][1]
 
-Now we need to import the required libraries:
+接下来，我们导入所需的库：
 
 ```
 import pandas as pd
@@ -37,29 +40,33 @@ import re
 import string
 ```
 
-As you can see in the above code, we have imported NumPy and Pandas for processing the data. We will look at the other imported libraries when we use them.
+我们使用 NumPy 和 Pandas 库来处理数据。至于其他库，我们会在使用到它们时再说明。
 
-Now that the data set is ready and the libraries are imported, we need to bring the former into our project. The Pandas library is used for this purpose. We bring the data set into the Pandas data frame using the following line of code:
+数据集已准备就绪，并且已导入所需的库。接着，我们需要用 Pandas 库将数据集读入到我们的项目中去。我们使用以下的代码将数据集读入 Pandas 数据帧（DataFrame）类型：
 
 ```
 sentiment_dataframe = pd.read_csv(“/content/drive/MyDrive/Data/sentiments - sentiments.tsv”,sep = ‘\t’)
 ```
 
-Now that we have the data set in our project, let us manipulate it so that our algorithm can understand the features better. We begin by giving names to our columns in the data set. This is done by using the line of code given below:
+#### 数据处理
+
+现在我们的项目中已经导入好数据集了。然后，我们要对数据进行处理，以便算法可以更好地理解数据集的特征。我们首先为数据集中的列命名，通过下面的代码来完成：
 
 ```
 sentiment_dataframe.columns = [“label”,”body_text”]
 ```
 
-We then assign numerical labels to the classes — negative is replaced with 1 and positive is replaced with 0. Figure 2 shows how the data frame looks at this stage.
+然后，我们对 `label` 列进行数值化：`negative` 的评论替换为 1，`positive` 的评论替换为 0。下图显示了经过基本修改后的 `sentiment_dataframe` 的值。
 
 ![Figure 2: Data frame with basic modifications][2]
 
-The next step is the preprocessing of the data. This is a very important step as it helps us to convert string/text data into numerical data (machine learning algorithms can understand/process numerical data and not text). Also, the redundant and useless data needs to be removed as it may taint our training model. We remove the noisy data, missing values and other non-consistent data in this step.
+####  准备好特征值、目标值
 
-We will add the features text length and punctuation count in the data frame specifically for this application. We will also do the stemming, i.e., we will convert all similar words (like ‘give’, ‘giving’, etc) into a single form. Once this is done, we divide the data set into two — X and Y — where X is the features and Y is the prediction class.
+下一步是数据的预处理。这是非常重要的一步，因为机器学习算法只能理解/处理数值形数据，而不能理解文本，所以此时要进行特征抽取，将字符串/文本转换成数值化的数据。此外，还需要删除冗余和无用的数据，因为这些数据可能会污染我们的训练模型。我们在这一步中去除了噪声数据、缺失值数据和不一致的数据。
 
-This is done using the following piece of code. Figure 3 shows the data frame after these steps are taken.
+对于情感分析，我们在数据帧中添加特征文本的长度和标点符号计数。我们还要进行词干提取，即将所有相似词（如“give”、“giving”等）转换为单一形式。完成后，我们将数据集分为两部分：特征值 X 和 目标值 Y。
+
+上述内容是使用以下代码完成的。下图显示了执行这些步骤后的数据帧。
 
 ![Figure 3: Data frame after the division of the data set][3]
 
@@ -68,7 +75,7 @@ def count_punct(text):
    count = sum([1 for char in text if char in string.punctuation])
    return round(count/(len(text) - text.count(“ “)),3)*100
  
- tokenized_tweet = sentiment_dataframe[‘body_text’].apply(lambda x: x.split())
+tokenized_tweet = sentiment_dataframe[‘body_text’].apply(lambda x: x.split())
 stemmer = PorterStemmer()
 tokenized_tweet = tokenized_tweet.apply(lambda x: [stemmer.stem(i) for i in x])
 for i in range(len(tokenized_tweet)):
@@ -80,43 +87,53 @@ X = sentiment_dataframe[‘body_text’]
 y = sentiment_dataframe[‘label’]
 ```
 
-We now need to convert the string into numerical data. We use a count vectorizer for this purpose; that is, we get the counts of each word and convert it into a vector.
+####  特征工程：文本特征处理
 
-After this, features such as length of text and punctuation count in the dataframe, i.e., X, are calculated. A sample of X is shown in Figure 4.
+我们接下来进行文本特征抽取，对文本特征进行数值化。为此，我们使用计数向量器（CountVectorizer)，它返回词频矩阵。
+
+在此之后，计算数据帧 X 中的文本长度和标点符号计数等特征。X 的示例如下图所示。
 
 ![Figure 4: Sample of final features][4]
 
-Now the data is ready for training. The next step is to determine which algorithms we are going to use for training our model. As has been mentioned before, we are going to try several algorithms and determine the best one for sentiment analysis. Since we are basically trying to do binary classification, the following algorithms can be used:
+####  使用的机器学习算法
 
-* K-nearest neighbors (KNN)
-* Logistic regression
-* Support vector machines (SVMs)
-* Stochastic gradient descent
-* Naive Bayes
-* Decision tree
-* Random Forest
+现在数据已经可以训练了。下一步是确定使用哪些算法来训练模型。如前所述，我们将尝试多种机器学习算法，并确定最适合情感分析的算法。由于我们打算对文本进行二元分类，因此我们使用以下算法：
 
-We first need to split our data set into testing and training data. This is done by using the sklearn library using the following code:
+* K-近邻算法(KNN)
+* 逻辑回归算法
+* 支持向量机(SVMs)
+* 随机梯度下降（SGD）
+* 朴素贝叶斯算法
+* 决策树算法
+* 随机森林算法
+
+####  划分数据集
+
+首先，将数据集划分为训练集和测试集。使用 sklearn 库，详见以下代码：
 
 ```
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.20, random_state = 99)
 ```
 
-We will use 20 per cent of the data for testing and 80 per cent for the training part. We will separate the data because we want to test on a new set of data whether our model is working properly or not.
+我们使用 20% 的数据进行测试，80% 的数据用于训练。划分数据的意义在于对一组新数据（即测试集）评估我们训练的模型是否有效。
 
-Now let us start with the first model. We will try the KNN algorithm first, and use the sklearn library for this. We will first train the model and then assess its performance (all of this can be done using the sklearn library in Python itself). The following piece of code does this, and we get an accuracy of around 50 per cent.
+#####  K-近邻算法
+
+现在，让我们开始训练第一个模型。首先，我们使用 KNN 算法。先训练模型，然后再评估模型的准确率（具体的代码都可以使用 Python 的 sklearn 库来完成）。详见以下代码，KNN 训练模型的准确率大约为 50%。
 
 ```
 from sklearn.neighbors import KNeighborsClassifier
-model = KNeighborsClassifier (n_neighbors=3)
+model = KNeighborsClassifier(n_neighbors=3)
 model.fit(X_train, y_train)
 model.score (X_test,y_test)
 
 0.5056689342403629
 ```
 
-The code is similar in the logistic regression model — we first import the function from the library, fit the model, and then test it. The following piece of code uses the logistic regression algorithm. The output shows we got an accuracy of around 66 per cent.
+#####  逻辑回归算法
+
+逻辑回归模型的代码十分类似——首先从库中导入函数，拟合模型，然后对模型进行评估。下面的代码使用逻辑回归算法，准确率大约为 66%。
 
 ```
 from sklearn.linear_model import LogisticRegression
@@ -127,7 +144,9 @@ model.score (X_test,y_test)
 0.6621315192743764
 ```
 
-The following piece of code uses SVM. The output shows we got an accuracy of around 67 per cent.
+#####  支持向量机算法
+
+以下代码使用 SVM，准确率大约为 67%。
 
 ```
 from sklearn import svm
@@ -138,7 +157,9 @@ model.score(X_test,y_test)
 0.6780045351473923
 ```
 
-The following piece of code uses the Random Forest algorithm, and we get an accuracy of around 69 per cent.
+#####  随机森林算法
+
+以下的代码使用了随机森林算法，随机森林训练模型的准确率大约为 69%。
 
 ```
 from sklearn.ensemble import RandomForestClassifier
@@ -149,7 +170,9 @@ model.score(X_test,y_test)
 0.6938775510204082
 ```
 
-Next we use the Decision tree algorithm, which gives an accuracy of around 61 per cent.
+#####  决策树算法
+
+接下来，我们使用决策树算法，其准确率约为 61%。
 
 ```
 from sklearn.tree import DecisionTreeClassifier
@@ -160,7 +183,9 @@ model.score(X_test,y_test)
 0.6190476190476191
 ```
 
-The following piece of code uses the stochastic gradient descent algorithm. The output shows that we got an accuracy of around 49 per cent.
+#####  随机梯度下降算法
+
+以下的代码使用随机梯度下降算法，其准确率大约为 49%。
 
 ```
 from sklearn.linear_model import SGDClassifier
@@ -171,7 +196,9 @@ model.score(X_test,y_test)
 0.49206349206349204
 ```
 
-The following piece of code uses Naive Bayes. We get an accuracy of around 60 per cent.
+#####  朴素贝叶斯算法
+
+以下的代码使用朴素贝叶斯算法，朴素贝叶斯训练模型的准确率大约为 60%。
 
 ```
 from sklearn.naive_bayes import GaussianNB
@@ -182,13 +209,15 @@ model.score(X_test,y_test)
 0.6009070294784581
 ```
 
-Now that we have checked out all the algorithms, let us graph their accuracy performance. The graph is shown in Figure 5.
+####  情感分析的最佳算法
+
+接下来，我们绘制所有算法的准确率图。如下图所示。
 
 ![Figure 5: Accuracy performance of the different algorithms][5]
 
-As you can see, the random forest algorithm gave the best accuracy for this problem and we can conclude that it is the best fit for sentiment analysis amongst ML algorithms. We can improve the accuracy much more by getting better features, trying out other vectorising techniques, and using a better data set or newer classification algorithms.
+可以看到，对于情感分析这一问题，随机森林算法有最佳的准确率。由此，我们可以得出结论，随机森林算法是所有机器算法中最适合情感分析的算法。我们可以通过处理得到更好的特征、尝试其他矢量化技术、或者使用更好的数据集或更好的分类算法，来进一步提高准确率。
 
-Now that random forest is seen as the best algorithm for this problem, I am going to show you a sample prediction. In Figure 6, you can see that the right predictions are being made! Do try this out to improve upon this project!
+既然，随机森林算法是解决情感分析问题的最佳算法，我将向你展示一个预处理数据的样本。在下图中，你可以看到模型会做出正确的预测！试试这个来改进你的项目吧！
 
 ![Figure 6: Sample predictions made][6]
 
@@ -198,7 +227,7 @@ via: https://www.opensourceforu.com/2022/09/how-to-analyse-sentiments-using-mach
 
 作者：[Jishnu Saurav Mittapalli][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chai001125](https://github.com/chai001125)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
