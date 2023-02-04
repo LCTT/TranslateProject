@@ -7,48 +7,51 @@
 [#]: publisher: " "
 [#]: url: " "
 
-When open source meets academic publishing: Platinum open access journals
+当开源遇到学术出版：白金开放获取期刊
 ======
-Academics can now publish free, read free, and still stay on track for professional success.
+
+学者现在可以免费发表(文章)，免费阅读(文章)，与此同时仍然能够在专业成就的道路上持续进步。
 
 ![Stack of books for reading][1]
-Image by: Opensource.com
+图自：Opensource.com
 
-Academics routinely give away their work to companies for free—and then they buy it back! Can you imagine a farmer giving away free food and then paying to get it back for dinner? Probably not. Yet academics like me have been trapped for decades in a scheme where we give free work in exchange for job security and then pay millions of dollars a year to read our own writing.
+学者们经常将他们的作品免费提供给公司，然后却要花钱购买它！你能想象农民在免费送出他们的食物之后再重新花钱买回来做晚餐吗？可能不能吧。像我这样的学者陷入这样的阴谋中几十年了，我们以工作安全为交换免费提供我们的作品，然后却要每年花几百万美元来阅读我们自己的文章。
 
-Fortunately, this is changing. The results from a [study][2] I just finished show that it is possible for academics to get job security without paying for it. My study found hundreds of journals that are *platinum open access* (OA)—that is, they require neither the author nor the readers to pay for peer-reviewed work—yet still carry the prestige and readership to help academics succeed in their careers.
+幸运的是，情况正在发生改变。我刚刚完成的一项[研究][2]的结果显示：对于学者来说，获得工作安全保障的同时而不对此付出代价是可能的。我的研究发现数百种期刊是 *白金开放获取* (platinum open access，译注：源自中文网络)的——也就是说，它们不需要作者或者读者就同行评议的文章付费，却仍然享有声望和读者群以帮助学者在他们的职业生涯中取得成功。
 
-This trend is exploding: The [Directory of Open Access Journals][3] lists over 17,300 journals that offer a means of OA at some level, and over 12,250 have no article-processing charges (APCs). I used a handy open source [Python script][4] to compare this list to a list of journals ranked by the frequency with which their published papers are cited in other articles (The Journal Impact Factor List). It is clear that the last few years have seen a growing trend towards both OA in general and platinum OA specifically. These trends have the potential to accelerate science while helping prevent academic servitude.
+这一趋势正在扩张：[开放获取期刊目录][3]罗列了超过17300种期刊，这些期刊均提供了某种程度上的开放获取(OA)方式。该目录还提供了超过12250种无须文章处理费(APC)的期刊。我使用一段简易的开源[Python 脚本][4]来将该列表与另一按照期刊发表的文章被其他文章引用的频次排名的期刊列表(期刊影响因子列表)进行比较。很明显，最近几年来，总体的开放获取(OA)期刊与白金开放获取(OA)期刊均呈上升趋势。这一趋势可能有助于在避免学术奴役的同时加速科学发展。
 
-### The academic's dilemma
+### 学者的窘境
 
-Academics are generally pretty intelligent, so why have they engaged in this disadvantageous system for so long? Simply put, academics have been caught in a trap: In order to keep their jobs and get tenure, they need to publish in journals with a high impact factor. An impact factor is a metric based on the mean number of citations to articles published in the last two years in a given journal, as indexed by the proprietary Web of Science. Impact factors are a prestige metric for academics.
+学者们通常是相当聪慧的，那么他们为什么如此长时间地投身于这种不利体系中呢？简而言之，学者陷于这样一个陷阱中：为了维系他们的工作和获得终身教职，他们需要在高影响因子(impact factor)的期刊上发表文章。影响因子是一种基于最近两年间在给定期刊上发表的文章的平均引用数量的衡量指标。影响因子由 Web of Science 索引。对学者而言，影响因子是一个有影响力的衡量指标。
 
-Historically, academic publishing has been dominated by a handful of major publishers that used subscription-based business models. In this model, academic authors write articles, peer-review articles, and often do the editing of these articles—all for free. The articles are published under copyright owned by the major publishing companies. Then either the same academics pay to read these articles on an individual basis (~US $35/article), or their university libraries pay to subscribe to all of the articles in a journal. These costs can be astronomical: often over US $1 million per year for all titles from a single publisher.
+历史上，学术出版由一小部分主要出版商统治。他们采用基于订阅制的商业模式。在这样的商业模式中，学术作者撰写文章，评审同行的文章，也经常进行这些文章的编辑工作。这些工作都是没有任何报酬的。这些文章出版了，它们的版权则由那些主要的出版公司所有。即使是参与上述工作的学者也需要个人付费阅读这些文章（~每篇文章35美元），或者由他们所在学校的图书馆付费订阅期刊上的所有文章。(订阅)所花的费用是相当可观的：单一出版商的所有文章的订阅费用通常超过一百万每年。
 
-This system is senseless for many obvious reasons. Scientific progress is bogged down by restricting access to copyrighted scientific literature squirreled away behind paywalls. It is hard to do state-of-the-art research if you do not know what it is because you cannot read it. Scientists are divided into those who can afford access to the literature and those who cannot. Academics in the developing world often struggle to pay, but even well-endowed [Harvard University][5] has taken action to rein in its yearly journal expenses.
+有很多显然的理由都说明这一体制是毫无意义的。限制对隐匿在付费专区后的受版权保护的科学文献的访问使得科学进程陷于停滞。如果你因为无法查看而不知道前沿科技是什么的话，你就无法进行相应的前沿技术研究。科学家分为能够负担访问这些文章的费用的人以及不能负担（这些费用的人）。在这个发展的世界中，学者一般都努力负担这些费用，不过即使是财力雄厚的[哈佛大学][5]也已经采取行动控制它的年度期刊费用。
 
-Costs to authors are similarly high. APC values range from a few hundred dollars to jaw-dropping thousands of dollars per article. APCs can be particularly damaging for some disciplines that are less well funded, such as the humanities and social sciences (as compared to physical and medical sciences or engineering). Substantial APCs also reinforce the wealth gap in academia, making professional success dependent on having income to invest in publishing. Is there another profession that asks workers to pay money to make products for others?
+文章作者的花费也同样高昂。每篇文章的文章处理费从几百美元到骇人听闻的几千美元不等。文章处理费对一些资金不足的学科尤其有害，比如人文学科与社会学科（与物理学、医学和工程学相比而言）。大量的文章处理费也强化了学术界的贫富差距，使得(学者的)专业成就依赖于其所拥有的将收入投入文章发表的能力。还有其他的要求从业者付费为他人制造产品的职业吗？
 
-### Open access to the rescue!
+### 开放获取，解决之道！
 
-This problem can be solved by the OA movement, which advocates for making all academic literature freely accessible to everyone. There is an unmistakable rise in OA publishing: It now makes up nearly a third of the peer-reviewed literature.
+开放获取行动可以解决上述问题，开放获取行动倡导使所有的学术文献对任何人都能自由自由获取。开放获取的出版量有明显上升：它占了当前同行评议文章的将近三分之一。
 
-The benefits of OA are twofold. First, OA is a benefit to science overall, because it provides a frictionless means of reading the state of the art for making significant advancements in knowledge. Second, from an individual academic's point of view, OA provides the pragmatic advantage of enabling the broadest possible audience of their writing by making it freely and easily available on the internet.
+开放获取的优势分两个方面。首先，开放获取有利于科学整体，因为它提供了一个不受阻碍地阅读前沿技术的方式。这些技术有助于进一步做出重要的认知进步。其次，就学者个人层面而言，通过让他们的作品在网络上轻而易举地免费获得，开放获取提供了最大化他们作品的潜在受众的实际优势。
 
-Funders have begun to demand OA for these reasons, particularly public funders of science. It is hard to argue that if the public funds research, they should have to pay a second time to read it.
+基于上述原因，资助者已经开始要求开放获取，尤其是科学领域的公共资助者。如果一项研究的公共资助者还需要在阅读研究内容时二次付费，这种做法很难站得住脚。
 
-### Where is academic publishing now, and where it is going?
+### 学术出版目前身处何方，以后又去向何处？
 
-Conventional publishers still have control of this situation, largely because of the perception that they have a monopoly on journals with an impact factor. Despite the disadvantages of publishing the traditional way, many academics continue to publish in subscription-based journals or pay high APCs, knowing that publication in high impact factor journals is vital for demonstrating expertise for grants, tenure, and promotion.
+传统出版商仍然掌控着目前的局面，主要是因为认为他们垄断了具有影响因子的期刊这一认知。很多学者无视传统出版方式的缺点，仍然持续在基于订阅制的期刊上发表文章或者支付高昂的文章处理费，因为他们知道在高影响因子的期刊上发表文章是至关重要的，它能够提供赖以获取补助、终身教职与职位晋升的专业性的证明。
 
-A few years ago, academics simply had no choice: They could either publish in a journal with an impact factor or publish OA. Now they can publish OA and still get the benefits of an impact factor in one of three ways:
+多年以前，学术界完全没有选择的余地：要么在具有影响因子的期刊上发表，要么在通过开放获取方式发表。现在他们可以通过开放获取方式发表并仍然能够通过以下三种方式之一享受影响因子的益处：
 
-* Green OA: Publish in a traditional way and then self-archive by uploading preprints or accepted versions of papers into an open repository or server. Some schools have an institutional repository for this purpose. For example, Western University has [Scholarship@Western][6], where any of their professors can share their work. Academics without their own institutional repos can use servers like [preprints.org][7], [arXiv][8], or  [OSF preprints][9]. I also use social media for academics, like [Academia][10] or [ResearchGate][11], for self-archiving. This can be complex to navigate because publishers have different rules, and it is somewhat time consuming.
-* Gold OA: Publish in a growing list of journals with impact factors that make your paper freely available after publication but require an APC. This method is easy to navigate: Academics publish as usual and OA is built into the publishing process. The drawback is that funds going to APCs may be diverted from research activities.
-* Platinum OA: Publish in platinum OA journals with an impact factor. No one pays either to read or to publish. The challenge here is finding a journal in your discipline that fits this criterion, but that continues to change.
+* 绿色开放获取模式(Green OA)：以传统方式出版后，再通过上传预印版或者接受版论文至开放仓库或者服务器完成自行归档。一些高校拥有用于上述目的的公共仓库。举例而言，韦仕敦大学（Western University，译注：来自中文网络）拥用[Scholarship@Western][6]公共仓库，该校的任何教师都可以在上面分享他们的作品。没有属于自己的公共仓库的学者可以使用诸如[preprints.org][7], [arXiv][8], or  [OSF preprints][9]等网络服务器。我也会将社交媒体用于学术，比如将[Academia][10] 或 [ResearchGate][11] 用于自行存档。由于不同的出版商设计了不同的规则，这是不方便查阅的，而且某种程度上是耗时耗时耗力的。
 
-There are tens of thousands of journals, but only a few hundred platinum OA journals with impact factors. This may make it hard for academics to find a good fit between what they study and a journal that matches their interests. See the Appendix in my [study][12] for the list, or use the Python script mentioned above to run updated numbers for yourself. The number of platinum OA journals is growing quickly, so if you do not find something now you may have some solid journals to choose from soon. Happy publishing!
+* 金色开放获取模式（Gold OA）：在日益壮大的具有影响因子的期刊列表上选一份期刊发表，它将使你的文章发表后可以自由获取但是需要文章处理费。这种方式易于查阅：开放获取设置内建于出版过程中，只需要像往常一样进行学术出版。这种方式的缺点是用于文章处理的费用可能会从研究活动中挪用。
+
+* 白金开放获取模式（Platinum OA）：在具有影响因子的白金开放获取期刊上发表。不需要为出版和阅读付费。挑战在于在您的学科中找到符合上述标准的期刊，不过情况正在持续变化。
+
+目前已经有数以万计的期刊，但是具有影响因子的白金开放获取期刊仅仅几百种。对于学者，困难可能在于在他们的研究与符合他们预期的期刊之间找到一个合适的平衡。你可以在我研究的附录中找到本文提到的列表，或者使用上文提到的 Python 脚本自行更新列表数量。白金开放获取期刊的数量正在快速增长，因此如果你目前尚未找到合适的期刊，仍然可能在不久以后拥有一些可靠的期刊以供选择。祝你享受出版的乐趣！
 
 --------------------------------------------------------------------------------
 
@@ -56,7 +59,7 @@ via: https://opensource.com/article/22/5/platinum-open-access-academic-journals
 
 作者：[Joshua Pearce][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CanYellow](https://github.com/CanYellow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
