@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/why-enterprises-should-opt-for-platform-as-a-service/"
 [#]: author: "Gopala Krishna Behara https://www.opensourceforu.com/author/gopalakrishna-behara/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "onionstalgia"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
