@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/best-matrix-clients/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "Peaksol"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
