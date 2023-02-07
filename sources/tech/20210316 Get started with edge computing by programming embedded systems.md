@@ -7,56 +7,56 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Get started with edge computing by programming embedded systems
+通过编写嵌入式系统入手边缘计算
 ======
-The AT device package for controlling wireless modems is one of RTOS's most popular extensions.
+用于操控无线调制解调器的AT设备包是RTOS最流行的扩展功能之一。
 
 ![Looking at a map][1]
 
 Image by: opensource.com
 
-RTOS is an open source [operating system for embedded devices][2] developed by RT-Thread. It provides a standardized, friendly foundation for developers to program a variety of devices and includes a large number of useful libraries and toolkits to make the process easier.
+RTOS 是一个开源的[嵌入式设备操作系统][2]，由 RT-Thread 开发。它为开发者提供了标准化、友好的基础架构，开发者可以基于各种设备编写代码，它包含大量有用的类库和工具包，使开发过程更加便捷。
 
-Like Linux, RTOS uses a modular approach, which makes it easy to extend. Packages enable developers to use RTOS for any device they want to target. One of RTOS's most popular extensions is the AT device package, which includes porting files and sample code for different AT devices (i.e., modems).
+RTOS 使用的是模块方式，以便于扩展，这一点跟 Linux 类似。程序包令开发者能基于任何目标设备使用 RTOS。RTOS 最常用的一种扩展是 AT 设备包，它包含各种不同 AT 设备（例如调制解调器）的移植文件和示例代码。
 
-At over 62,000 downloads (at the time of this writing, at least), one of the most popular extensions to RTOS is the AT device package, which includes porting files and sample code for different AT devices.
+在超过62,000次下载中(至少在撰写本文时)，最流行的RTOS扩展之一是At设备包，其中包括用于不同At设备的移植文件和示例代码。
 
-### About AT commands
+### 关于 AT 命令
 
-AT commands were originally a protocol to control old dial-up modems. As modem technology moved on to higher bandwidths, it remained useful to have a light and efficient protocol for device control, and major mobile phone manufacturers jointly developed a set of AT commands to control the GSM module on mobile phones.
+起初，AT 命令是一个协议，用于控制拨号调制解调器。随着调制解调器技术发展到较高的带宽，它仍然可以用于为设备控制建立轻量级而高效的协议，主流的移动电话厂商也联手开发了一系列 AT 命令，用于控制移动电话上的 GSM 模块。
 
-Today, the AT protocol is still common in networked communication, and there are many devices, including WiFi, Bluetooth, and 4G, that accept AT commands.
+如今，AT 命令仍然在网络通信领域具有通用性，很多设备，例如WiFi、蓝牙、4G，都支持 AT 命令。
 
-If you're creating purpose-built appliances for edge computing input, monitoring, or the Internet of Things (IoT), some of the AT devices supported by RTOS that you may encounter include ESP8266, ESP32, M26, MC20, RW007, MW31, SIM800C, W60X, SIM76XX, A9/A9G, BC26, AIR720, ME3616, M 6315, BC28, and EC200X.
+如果您正在创建用于边缘计算输入、监控或物联网(IoT)的专用设备，则您可能接触到的 RTOS 支持的 AT 设备包括ESP8266、ESP32、M26、MC20、RW007、MW31、SIM800C、W60X、SIM76XX、A9/A9G、BC26、AIR720、ME3616、M 6315、BC28和EC200X。
 
-RT-Thread contains the Socket Abstraction Layer (SAL) component, which implements the abstraction of various network protocols and interfaces and provides a standard set of [BSD socket][3] APIs to the upper level. The SAL then takes over the AT socket interface so that developers just need to consider the network interface provided by the network application layer.
+RT-Thread包含套接字抽象层（SAL）组件，SAL 实现了多种网络协议和接口的抽象，为上层提供了一系列标准的 [BSD Socket][3] API。SAL 进而接替了AT 的套接字接口，所以开发者需要考虑网络应用层提供的网络接口。
 
-This package implements the AT socket on devices (including the ones above), allowing communications through standard socket interfaces in the form of AT commands. The [RT-thread programming guide][4] includes descriptions of specific functions.
+这个包实现了设备（包括上述设备）上的 AT 套接字功能，也支持通过标准套接字接口以 AT 命令的形式通信。[RT-Thread 编程指南][4]中就有关于这些功能的详细介绍。
 
-The at_device package is distributed under an LGPLv2.1 license, and it's easy to obtain by using the [RT-Thread Env tool][5]. This tool includes a configurator and a package manager, which configure the kernel and component functions and can be used to tailor the components and manage online packages. This enables developers to build systems as if they were building blocks.
+at_device 包是在 LGPLv2.1 许可证下分发的，借助 [RT-Thread Env tool][5] 可以方便地获取到。该工具包含一个配置器和一个包管理器，它们分别用于配置内核和组件功能，可以用于定制组件并管理在线包。有了这些工具，开发者可以像搭积木一样构建系统。
 
-### Get the at_device package
+### 获取 AT 设备包
 
-To use AT devices with RTOS, you must enable the AT component library and AT socket functionality. This requires:
+欲使用配置了 RTOS 的 AT 设备，你必须启用 AT 组件库和 AT 套接字功能，需要:
 
 * RT_Thread 4.0.2+
 * RT_Thread AT component 1.3.0+
 * RT_Thread SAL component
 * RT-Thread netdev component
 
-The AT device package has been updated for multiple versions. Different versions require different configuration options, so they must fit into the corresponding system versions. Most of the currently available AT device package versions are:
+AT 设备包已经针对多种版本进行了相应的更新。版本不同，配置选项也相应地不同，因此必须针对相应的系统版本进行适配。目前最常用的 AT 设备包版本有：
 
-* V1.2.0: For RT-Thread versions less than V3.1.3, AT component version equals V1.0.0
-* V1.3.0: For RT-Thread versions less than V3.1.3, AT component version equals V1.1.0
-* V1.4.0: For RT-Thread versions less than V3.1.3 or equal to V4.0.0, AT component version equals V1.2.0
-* V1.5.0: For RT-Thread versions less than V3.1.3 or equal to V4.0.0, AT component version equals V1.2.0
-* V1.6.0: For RT-Thread versions equal to V3.1.3 or V4.0.1, AT component version equals V1.2.0
-* V2.0.0/V2.0.1: For RT-Thread versions higher than V4.0.1 or higher than 3.1.3, AT component version equals V1.3.0
-* Latest version: For RT-Thread versions higher than V4.0.1 or higher than 3.1.3, AT component version equals V1.3.0
+* V1.2.0: 针对低于V3.1.3的RT-Thread，V1.0.0 的AT组件
+* V1.3.0: 针对低于V3.1.3的RT-Thread，V1.1.0 的AT组件
+* V1.4.0: 针对低于V3.1.3或等于V4.0.0 的 RT-Thread，V1.2.0 的 AT 组件
+* V1.5.0: 针对低于V3.1.3或等于V4.0.0 的 RT-Thread，V1.2.0 的 AT 组件
+* V1.6.0: 针对低于V3.1.3 或等于V4.0.1 的 RT-Thread，V1.2.0 的 AT 组件
+* V2.0.0/V2.0.1: 针对高于V3.1.3 的 RT-Thread，V1.3.0 的 AT 组件
+* 最新版: 针对高于V3.1.3 的 RT-Thread，V1.3.0 的 AT 组件
 
-Getting the right version is mostly an automatic process done in menuconfig. It provides the best version of the at_device package based on your current system environment.
+获取正确的版本的过程主要是在生成菜单时自动完成的。它基于现有的系统环境提供最合适的 AT 设备包。
 
-As mentioned, different versions require different configuration options. For instance, version 1.x supports enabling one AT device at a time:
+正如前文提到的，不同的版本需要不同的配置选项。例如，
 
 ```
 RT-Thread online packages  --->
@@ -67,9 +67,9 @@ RT-Thread online packages  --->
               Version (V1.6.0)  --->
 ```
 
-The option to enable the AT device init by thread dictates whether the configuration creates a separate thread to initialize the device network.
+启用AT设备init by thread的选项决定了配置是否创建一个单独的线程来初始化设备网络。
 
-Version 2.x supports enabling multiple AT devices at the same time:
+2.x版本支持同时启用多个 AT 设备：
 
 ```
 RT-Thread online packages  --->
@@ -106,20 +106,20 @@ RT-Thread online packages  --->
         Version (latest)  --->
 ```
 
-This version includes many other options, including one to enable sample code, which might be particularly useful to new developers or any developer using an unfamiliar device.
+这个版本包含了很多其他选项，其中也有启用示例代码的选项，这对初学者或使用不熟悉的设备的开发者很有帮助。
 
-You can also control options to choose which pin you want to use to supply power to your component, a pin to indicate the power state, the name of the serial device the sample device uses, and the maximum length of the data the sample device receives. On applicable devices, you can also set the SSID name and password.
+你也可以设置相应选项，选择你需要使用的识别码，来为你的组件供电，一个识别码来指示电源状态，样本设备使用的串行设备的名称，以及样本设备接收的数据的最大长度。在合适的设备上，你也可以设置 SSID 和密码。
 
-In short, there is no shortage of control options.
+简而言之，控制选项是够用的。
 
-* V2.X.X version supports enabling multiple AT devices simultaneously, and the enabled device information can be viewed with the `ifocnfig` command in [finsh shell][6].
-* V2.X.X version requires the device to register before it's used; the registration can be done in the samples directory file or customized in the application layer.
-* Pin options such as Power pin and Power status pin are configured according to the device's hardware connection. They can be configured as `-1` if the hardware power-on function is not used.
-* One AT device should correspond to one serial name, and the AT client device name for each device should be different.
+* V2.x.x 版本支持同时启用多个 AT 设备，欲查看启用的设备信息，在[finsh shell][6] 中执行 `ifocnfig` 命令即可。
+* V2.X.X 版本需要设备在使用前先注册；注册可以在样例目录中进行，或在应用层以自定义方式进行。
+* 识别码选项，例如电源选项和电源状态选项，是按照设备的硬件连接来配置的。如果硬件的开启功能不可用，它们就会被设置为 `-1`。
+* 一台AT 设备应当对应一个序列名称，每台设备的 AT客户端名称应当是不同的。
 
-### AT components configuration options
+### AT 组件配置选项
 
-When the AT device package is selected and device support is enabled, client functionality for the AT component is selected by default. That means more options—this time for the AT component:
+当选择了 AT 组件包，启用了设备支持，AT 组件的客户端功能也就默认选择完成了。对 AT 组件来说，这就意味着有更多的选项要设置：
 
 ```
 RT-Thread Components  --->
@@ -135,15 +135,15 @@ RT-Thread Components  --->
     (128)   The maximum length of AT Commonds buffer
 ```
 
-The configuration options related to the AT device package are:
+与AT 设备包有关的配置选项有：
 
-* The maximum number of supported clients: Selecting multiple devices in the AT device package requires this option to be configured as the corresponding value.
-* Enable BSD Socket API support by AT commands: This option will be selected by default when selecting the AT device package.
-* The maximum length of AT Commands buffe: The maximum length of the data the AT commands can send.
+* 支持的客户端最大个数：选择 AT 设备包中的多台设备时，需要将该选项配置为对应的设备台数；
+* 通过 AT 命令启用 BSD Socket API 功能：当选择 AT 设备包时默认选择该选项。
+* AT 命令的最大长度：AT 命令可发送的数据的最大长度
 
-### Anything is possible
+### 一切皆有可能
 
-When you start programming embedded systems, you quickly realize that you can create anything you can imagine. RTOS aims to help you get there, and its packages offer a head start. Interconnected devices are the expectation now. IoT technology on the [edge][7] must be able to communicate across various protocols, and the AT protocol is the key.
+当你开始进行嵌入式系统编程，你会很快意识到，你可以创造自己想象得到得任何东西。RTOS 旨在帮助你实现它，它的那些功能包为你提供了良好的开端。现在，设备的互联也是可期待的。IoT 技术一定会实现多种协议间的通信，AT 协议将发挥关键作用。 
 
 --------------------------------------------------------------------------------
 
@@ -151,7 +151,7 @@ via: https://opensource.com/article/21/3/rtos-embedded-development
 
 作者：[Alan Smithee][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[cool-summer-021](https://github.com/cool-summer-021)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
