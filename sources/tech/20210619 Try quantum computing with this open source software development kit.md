@@ -2,7 +2,7 @@
 [#]: via: (https://opensource.com/article/21/6/qiskit)
 [#]: author: (Gordon Haff https://opensource.com/users/ghaff)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (cool-summer-021)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
