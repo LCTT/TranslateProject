@@ -43,43 +43,44 @@
 
 我们在 Zulip 聊天室分享所有会议摘要，包括讨论的要点、行动项目和文档。这些听起来好像是些显而易见的要求，但我一直惊讶于很多开源项目并不提供笔记，所以 Zulip可以让那些没有参加会议的人也随时了解情况。
 
-在 Zulip上，我们讨论项目路线图，回答社区的问题和查询，并积极**促进人们通过不同的方式方法和在不同的场景下做出自己的贡献。 **有时我们为贡献者的成就而庆祝——无论是突出他们测试或者审查的第一个PR，还是强调我们志愿者所做的出色工作。
+在 Zulip上，我们讨论项目路线图，回答社区的问题和查询，并积极**促进人们通过不同的方式方法和在不同的场景下做出自己的贡献。 **有时我们为贡献者的成就而庆祝——无论是突出他们测试或者审查的第一个拉取请求，还是强调我们志愿者所做的出色工作。
 
 #### **文档**
 
 我们尽量保持**关于我们流程的开放文档**，例如常见问题解答，以便这些社区成员可以按照自己的节奏和时间了解社区。这是为了让他们在联系我们之前了解我们的工作方式以及我们从事的工作类型。
 
-### Projects and issues项目和问题
+### 项目和问题
 
-Regarding our projects and issues management, we encourage multiple ways to contribute, create specific issues for first-timers only, and try to have an easy setup for projects.
-关于我们的项目和问题管理，我们鼓励通过多种方式做出贡献，我们为新手专门创建特定的问题，并尝试让我们的项目
-
-
-#### **Multiple ways to contribute**
-
-We make an effort to create **issues that require different contributions** such as documentation, testing, design, and outreach. This is to provide ways for anyone to contribute regardless of their experience level and area of interest. It helps the community get involved, and we've found that it enables members to work their way up and contribute to some low-effort but valuable tasks.
-
-Types of contributions we promote are:
-
-  * Coding tasks that range in complexity.
-  * Quality assurance tasks—where contributors can test our apps or pull requests and report bugs.
-  * Design sessions where members can participate in discussions. Also, opportunities to create mock-ups and redesign parts of our apps, and explore user experience improvements.
-  * Outreach tasks, we primarily promote on Zulip, where we suggest blogging to our Medium publication about their open source experiences and their contributions.
-  * Documentation tasks that can include general community documentation or our project's documentation on Docusaurus.
+关于我们的项目和问题管理，我们鼓励通过多种方式做出贡献，我们为新手专门创建特定的问题，并尝试让项目的设置变得简单。
 
 
+#### **多种贡献的方式**
 
-#### **First-timers only issues**
+我们努力创建**需要不同贡献的问题**，例如文档、测试、设计和外展。这是为了让任何人，无关他们的经验水平和兴趣领域，都能做出贡献。这样能够帮助社区参与进来，而且我们发现它使成员能够从一些省力但有价值的任务开始一步步做出贡献。
 
-We label some **issues as "first-timers only."** These are for people who have not contributed yet to the issue's repository. Labeling issues also enable us to have work for people beginning their open source journey during times of contributor influx, for example, during [Google Summer of Code (GSoC)][6].
+我们提倡的贡献类型有：
 
-Sometimes these might be "low-hanging fruit" that can get them acquainted with the process of contributing and submitting pull requests.
+   * 不同复杂性的编程任务。
+   * 质量保证任务——贡献者可以测试我们的应用程序或拉取请求并报告错误。
+   * 社区成员可以参与讨论的设计会议。此外，创建模型和重新设计我们应用程序某些部分的机会，并探索改进用户体验。
+   * 外展任务，我们主要在 Zulip 上推广，我们建议在我们的 Medium 出版物上发表博客，介绍他们的开源经验和他们的贡献。
+   * 文档任务，可以包括一般社区文档或我们在 Docusaurus 上的项目文档。
 
-#### **Easy project setup**
 
-We also care about having a **beginner-friendly setup **for our projects. We notice that the most active project is generally the easiest to set up. We know that contributing to a project you aren't familiar with can take a lot of effort and make or break the experience of contributing.
+#### **仅限新手的问题**
 
-We try to provide instructions on how to run our projects on multiple operating systems. In the past, we had some projects with separate instructions to run on Unix environments, and we noticed contributors having difficulties running these projects on Windows. We've improved since then to avoid confusion among contributors who would ask for help on our Zulip.
+我们将一些**问题标记为“仅限新手”。**这些问题适用于尚未为问题存储库做出贡献的人。为问题做标签还使我们能够让人们在贡献者涌入期间开始他们的开源之旅，例如，在 [Google夏日程式碼大賽(GSoC)][6] 申请期间。
+
+有时，这些可能是“唾手可得的果实”，让他们可以熟悉作出贡献和提交拉取请求的过程。
+
+#### **简单的项目设置**
+
+我们也很在意为我们的项目提供**新手友好的安装设置**。我们注意到最活跃的项目通常是最容易设置的。我们知道，为您不熟悉的项目做出贡献可能需要付出很多努力并且关乎贡献体验的成败。
+
+我们尝试提供有关如何在多个操作系统上运行我们项目的说明。过去我们有一些项目在 Unix 环境中运行有单独的指令，我们注意到贡献者在 Windows 上运行这些项目有困难。自那以后我们不断进行改进，以避免让在 Zulip 上寻求帮助的贡献者产生混淆。
+
+
+根据贡献者的经验，我们一直在改进我们最活跃的项目之一 [mentorship-backend][7] 的自述文件。 初学者在这个项目中遇到的困难之一是设置与配置电子邮件帐户相关的部分环境变量，以使后端功能能够发送电子邮件。 但是，由于此功能对于本地开发并不重要，因此默认情况下，我们将电子邮件设置设为可选，以便将电子邮件打印到终端，而不是发送给用户。 这种方法仍然使电子邮件对贡献者可见。 与此更改类似，我们将 [SQLite 数据库][8] 作为本地开发的默认设置，以避免对 Postgres 数据库进行额外设置，即使我们在部署版本中使用它也是如此。
 
 We have been improving the README for one of our most active projects, [mentorship-backend][7], according to contributors' experience. One of the struggles for beginners in this project was setting part of the environment variables related to configuring an email account to enable the backend functionality to send emails. However, because this feature was not critical for local development, by default, we made the email setup optional so that emails, instead of being sent to users, were printed to the terminal. This approach still made the emails visible to the contributor. Similar to this change, we made [the SQLite database][8] the default for local development to avoid additional setup for the Postgres database, even though we use this in our deployed version.
 
