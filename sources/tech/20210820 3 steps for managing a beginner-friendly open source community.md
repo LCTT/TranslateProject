@@ -2,56 +2,58 @@
 [#]: via: "https://opensource.com/article/21/8/beginner-open-source-community"
 [#]: author: "Isabel Costa https://opensource.com/users/isabelcmdcosta"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "XiaotingHuang22"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-3 steps for managing a beginner-friendly open source community
+3个步骤管理对新手友好的开源社区
 ======
-As a member of an open source project, there's a lot you can do to help
-beginners find a way to contribute. 
-![Working from home at a laptop][1]
+作为开源项目的成员，您可以做很多事情来帮助新手找到为项目作出贡献的方式。
+![在家使用笔记本电脑工作][1]
 
-When someone is new to contributing to open source, the best place to start is often beginner-friendly bugs and issues. But before they can do that, they have to be able to find those kinds of issues. As a member of an open source project, there's a lot you can do to help beginners find a way to contribute. 
+当有人刚开始为开源做贡献时，最好从对新手友好的故障和问题开始。但在他们修复故障之前，他们必须要能够找到这类问题。作为开源项目的成员，您可以做很多事情来帮助新手找到为项目贡献的方式。
 
-Bearing this in mind, the [AnitaB.org open source community][2] prioritizes making our community beginner-friendly. We have initiatives to ensure that we're inclusive for contributors at different levels of experience and for different types of contributions that don't only relate to coding.
+牢记这一点，[AnitaB.org 开源社区][2] 优先考虑让我们的社区做到对新手友好。 我们提倡包容性，确保不同经验和水平的贡献者都可以参与进来，并且他们的贡献不止限于跟编程有关。
 
-I recently presented some of the community work we do at the [AnitaB.org][3] community at [Upstream 2021][4], the Tidelift event, which kicked off Maintainer Week, a weeklong celebration of open source maintainers. I discussed how there are three main parts to our strategy:
+我最近在 [Upstream 2021][4] 上介绍了我们在 [AnitaB.org][3] 上所做的一些社区工作，Tidelift举办的活动启动了维护者周，这是一个为期一周的开源维护者庆祝活动。在活动中我讨论了我们战略的三个主要部分：
 
-  * How we communicate
-  * Projects and issues
-  * Open source programs
-
+   * 我们如何沟通
+   * 项目和问题
+   * 开源项目
 
 
-### How we communicate
+### 我们如何沟通
 
-Transparency is such an essential part of open source, and we apply transparency principles to our approach to communication. In practical terms, this means that all our community sessions are run openly, affect how we've set up Zulip chat and how we provide documentation.
 
-#### **Open sessions**
+透明度是开源的重要组成部分，我们将透明度原则应用于我们的沟通方式。实际上，这意味着我们所有的社区会议都是公开进行的，并且影响我们设置Zulip聊天的方式以及我们提供文档的方式。
 
-Anyone can join our sessions and discuss topics related to our community. They can participate in discussions or just listen. These are available for everyone to see in our community calendar. We usually only use audio in these calls, which we've found can make people feel more comfortable participating.
+#### **Open sessions开放会议**
 
-We host project-focused sessions and a couple of category-related sessions, where people from different areas can discuss the same project and help improve our processes. Occasionally, we have "Ask Me Anything" sessions, where anyone can come and ask questions about anything related to open source.
+任何人都可以加入我们的会议并讨论与我们社区相关的话题。他们可以参与讨论或者旁听。会议相关信息在我们的社区日历中都可以找到。在这些通话中我们通常只使用语音聊天，我们发现这可以让人们在参与时感觉更自在。
 
-We take notes of all sessions in a shared document and share the summary and a document link in [our Zulip][5].
+我们举办以项目为中心的会议和一些与类别相关的会议。会议上，来自不同领域的人们可以讨论同一个项目并帮助改进我们的流程。偶尔，我们会有“自由提问（Ask Me Anything）”会议，任何人都可以来问任何与开源相关的问题。
 
-#### **Our Zulip chat**
+所有会议我们都会在共享文档中进行记录，并在 [我们的Zulip（our Zulip）][5] 中共享摘要和文档链接。
 
-The open source Zulip chat platform is our primary community communication channel, although we also use the comments section on issues and pull requests on Github. In general, we have disabled private messaging to make sure we are as transparent as possible. We have only a few exceptions to this rule, where we have private streams for admins dealing with the logistics of the programs we run. We've found this approach is more welcoming, and it also enables us to have more visibility into conduct violations in the public chat.
+#### **Our Zulip chat我们的Zulip聊天**
 
-We share all session summaries on the Zulip chat, including the main points discussed, action items, and documentation. This process might sound like an obvious requirement, but I've been surprised at how many open source projects don't provide notes so that people who did not attend can remain informed.
 
-On Zulip, we discuss project roadmaps, answer questions and queries from the community, and actively **promote ways for people to contribute and where they can contribute. **Sometimes we celebrate contributors' wins—whether it's to highlight the first PR they have tested, reviewed, or the excellent work our volunteers do.
+开源 Zulip 聊天平台是我们的主要社区交流渠道，虽然我们也在Github的评论区讨论问题和拉取请求（pull request）。一般来说，我们已禁用私人消息以确保我们尽可能透明。对于这条规则，我们只有少数例外，那些私人聊天是管理员在处理我们运行程序的后勤工作所用的。 我们发现这种方法更受欢迎，它还使我们能够更清楚公共聊天中的违规行为。
 
-#### **Documentation**
+我们在 Zulip 聊天室分享所有会议摘要，包括讨论的要点、行动项目和文档。这些听起来好像是些显而易见的要求，但我一直惊讶于很多开源项目并不提供笔记，所以 Zulip可以让那些没有参加会议的人也随时了解情况。
 
-We try to keep **open documentation about our processes**, such as FAQs, so those community members can learn at their own pace and in their own time about the community. This is intended to give them an idea of how we work and what type of work we do before reaching out to us.
+在 Zulip上，我们讨论项目路线图，回答社区的问题和查询，并积极**促进人们通过不同的方式方法和在不同的场景下做出自己的贡献。 **有时我们为贡献者的成就而庆祝——无论是突出他们测试或者审查的第一个PR，还是强调我们志愿者所做的出色工作。
 
-### Projects and issues
+#### **文档**
+
+我们尽量保持**关于我们流程的开放文档**，例如常见问题解答，以便这些社区成员可以按照自己的节奏和时间了解社区。这是为了让他们在联系我们之前了解我们的工作方式以及我们从事的工作类型。
+
+### Projects and issues项目和问题
 
 Regarding our projects and issues management, we encourage multiple ways to contribute, create specific issues for first-timers only, and try to have an easy setup for projects.
+关于我们的项目和问题管理，我们鼓励通过多种方式做出贡献，我们为新手专门创建特定的问题，并尝试让我们的项目
+
 
 #### **Multiple ways to contribute**
 
@@ -123,7 +125,7 @@ via: https://opensource.com/article/21/8/beginner-open-source-community
 
 作者：[Isabel Costa][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[XiaotingHuang22](https://github.com/XiaotingHuang22)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
