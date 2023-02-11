@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "XiaotingHuang22"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15530-1.html"
 
 提高 LibreOffice 生产力的技巧
 ======
