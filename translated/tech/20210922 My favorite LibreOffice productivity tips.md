@@ -11,8 +11,7 @@
 ======
 
 今天我将和大家分享一些LibreOffice的键盘快捷键和排版技巧，希望能够帮你省下宝贵的时间。
-![woman on laptop sitting at the window][1]
-![一个拿着笔记本的女人坐在窗边]
+![一个拿着笔记本的女人坐在窗边][1]
 
 LibreOffice是我首选的生产力应用程序。它是向教育工作者和学生推荐 Linux 发行版的最有力理由之一，无论是PK-12还是高等教育。新的学年快到了，我想也是时候推荐一些 LibreOffice 快捷方式和技巧，它们可以为您节省宝贵的时间。
 ### 使用键盘快捷键让你工作更快捷
@@ -92,7 +91,7 @@ via: https://opensource.com/article/21/9/libreoffice-tips
 
 作者：[Don Watkins][a]
 选题：[lujun9972][b]
-译者：[XiaotingHuang22](https://github.com/译者ID)
+译者：[XiaotingHuang22](https://github.com/XiaotingHuang22)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
