@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/its-time-to-contributing-to-open-source/"
 [#]: author: "Abbinaya Kuzhanthaivel https://www.opensourceforu.com/author/abbinaya-swath/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "XiaotingHuang22"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
