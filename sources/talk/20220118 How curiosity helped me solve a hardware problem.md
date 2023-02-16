@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/troubleshoot-hardware-sysadmin"
 [#]: author: "David Both https://opensource.com/users/dboth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
