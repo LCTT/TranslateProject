@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/10/whats-new-awk"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "connermemory"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
