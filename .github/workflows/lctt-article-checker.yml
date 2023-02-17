@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: ensure source branch is not "master"
+        run: '[ "${{ github.head_ref }}" != master ]'
       - name: "checkout master branch & return to pull request branch"
         run: CURRENT=$(echo ${{github.ref}} |  sed "s|refs/|refs/remotes/|") && git checkout master && git checkout $CURRENT
       - name: run check

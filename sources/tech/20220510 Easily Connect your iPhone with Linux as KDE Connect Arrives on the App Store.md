@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/kde-connect-ios/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "XiaotingHuang22"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
