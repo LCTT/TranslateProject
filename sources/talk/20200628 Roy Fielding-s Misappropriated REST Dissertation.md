@@ -7,14 +7,28 @@
 [#]: via: (https://twobithistory.org/2020/06/28/rest.html)
 [#]: author: (Two-Bit History https://twobithistory.org)
 
+被错误使用的罗伊·菲尔丁的有关描述性状态迁移的博士论文
+======
+
+TD
 Roy Fielding's Misappropriated REST Dissertation
 ======
 
+符合描述性状态迁移的 (RESTful,REST译自审定公布名词数据库) 应用程序接口 (API) 无处不在。有趣的是又有多少人真正了解“描述性状态迁移”的应有之义呢？
+
+DN
 RESTful APIs are everywhere. This is funny, because how many people really know what “RESTful” is supposed to mean?
 
+大概我们中的大多数人都会跟[黑客新闻网站上的这篇公开问答][1]产生共鸣：
 I think most of us can empathize with [this Hacker News poster][1]:
 
+> 我阅读了几篇介绍描述性状态迁移的文章，甚至包括原始论文的部分章节。然而我仍然对描述性状态迁移到底是什么只有一个相当模糊的想法。我开始认为没有人真的了解描述性状态迁移，它仅仅是一个定义相当不充分的概念。
+
+DN
 > I’ve read several articles about REST, even a bit of the original paper. But I still have quite a vague idea about what it is. I’m beginning to think that nobody knows, that it’s simply a very poorly defined concept.
+
+我曾经计划写一篇有关描述性状态迁移的博客，在里面探讨描述性状态迁移是如何成为这样一个在网络通信领域占主导地位的范式的。我通过阅读[2000年发表的罗伊·菲尔丁的博士论文][2]开始我的研究，这篇博士论文向世人介绍了描述性状态迁移的概念。在读过菲尔丁的博士论文以后，
+
 
 I had planned to write a blog post exploring how REST came to be such a dominant paradigm for communication across the internet. I started my research by reading [Roy Fielding’s 2000 dissertation][2], which introduced REST to the world. After reading Fielding’s dissertation, I realized that the much more interesting story here is how Fielding’s ideas came to be so widely misunderstood.
 
