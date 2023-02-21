@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/short-option-parsing-c"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
