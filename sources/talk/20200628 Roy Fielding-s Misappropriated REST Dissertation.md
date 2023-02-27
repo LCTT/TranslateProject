@@ -7,7 +7,7 @@
 [#]: via: (https://twobithistory.org/2020/06/28/rest.html)
 [#]: author: (Two-Bit History https://twobithistory.org)
 
-被错误使用的罗伊·菲尔丁的有关描述性状态迁移的博士论文
+被错误应用的罗伊·菲尔丁的有关描述性状态迁移的博士论文
 ======
 
 TD
@@ -27,15 +27,22 @@ I think most of us can empathize with [this Hacker News poster][1]:
 DN
 > I’ve read several articles about REST, even a bit of the original paper. But I still have quite a vague idea about what it is. I’m beginning to think that nobody knows, that it’s simply a very poorly defined concept.
 
-我曾经计划写一篇有关描述性状态迁移的博客，在里面探讨描述性状态迁移是如何成为这样一个在网络通信领域占主导地位的范式的。我通过阅读[2000年发表的罗伊·菲尔丁的博士论文][2]开始我的研究，这篇博士论文向世人介绍了描述性状态迁移的概念。在读过菲尔丁的博士论文以后，
+我曾经计划写一篇有关描述性状态迁移的博客，在里面探讨描述性状态迁移是如何成为这样一个在网络通信领域占主导地位的范式的。我通过阅读[2000年发表的罗伊·菲尔丁的博士论文][2]开始我的研究，这篇博士论文向世人介绍了描述性状态迁移的概念。在读过菲尔丁的博士论文以后，我意识到，相比之下，更引人注意的是菲尔丁的理论缘何受到如此普遍的误解。
 
-
+DN
 I had planned to write a blog post exploring how REST came to be such a dominant paradigm for communication across the internet. I started my research by reading [Roy Fielding’s 2000 dissertation][2], which introduced REST to the world. After reading Fielding’s dissertation, I realized that the much more interesting story here is how Fielding’s ideas came to be so widely misunderstood.
 
+(相对公平地说)很多人知道描述性状态迁移源自菲尔丁的博士论文，但并没有读过该论文。因此对于这篇博士论文的原始内容的误解才得以流行。
+
+DN
 Many more people know that Fielding’s dissertation is where REST came from than have read the dissertation (fair enough), so misconceptions about what the dissertation actually contains are pervasive.
 
+最大的误解是：这篇博士论文直接讨论了(译注：广义的)构建应用程序接口的问题，我此前一直认为描述性状态迁移从一开始就打算成为构建在超文本传输协议(HTTP)之上的网络应用程序接口(Web API)的架构模型，我相信很多人也这样认为。我猜测此前可能存在一个混乱的试验时期，开发人员采用完全错误的方式在超文本传输协议基础上开发应用程序接口，然后菲尔丁出现了并提出了将描述性状态迁移做为网络应用程序开发的正确方式。但是这种想法的时间线对不上：我们今天所熟知的网络服务的应用程序接口并非是在菲尔丁出版他的博士论文之后才出现的新生事物。
+
+DN
 The biggest of these misconceptions is that the dissertation directly addresses the problem of building APIs. I had always assumed, as I imagine many people do, that REST was intended from the get-go as an architectural model for web APIs built on top of HTTP. I thought perhaps that there had been some chaotic experimental period where people were building APIs on top of HTTP all wrong, and then Fielding came along and presented REST as the sane way to do things. But the timeline doesn’t make sense here: APIs for web services, in the sense that we know them today, weren’t a thing until a few years after Fielding published his dissertation.
 
+菲尔丁的博士论文(名为“架构风格与基于网络的软件架构设计”)(译者注，网络中文版的中文译名)不是讨论如何在超文本传输协议的基础上构建应用程序接口，而恰恰是讨论超文本协议本身菲尔丁是超文本传输协议1.0版规范的贡献者同时也是超文本传输协议1.1版的共同作者。有感于从HTTP协议的设计中获得的架构经验，他的博士论文将描述性状态迁移视为指导HTTP/1.1的标准化过程的架构原则的精华。举例而言，他拒绝了使用`MGET`和`MHEAD`方法进行批量请求的提议，因为他认为这违反了REST所定义的约束条件，尤其是在一个符合REST的系统中传递的消息应该是易于代理和缓存的约束条件。[1][3]因此，HTTP/1.1转而围绕持久性连接设计，在此基础上可以发送多个HTTP请求。（菲尔丁同时认为）
 Fielding’s dissertation (titled “Architectural Styles and the Design of Network-based Software Architectures”) is not about how to build APIs on top of HTTP but rather about HTTP itself. Fielding contributed to the HTTP/1.0 specification and co-authored the HTTP/1.1 specification, which was published in 1999. He was interested in the architectural lessons that could be drawn from the design of the HTTP protocol; his dissertation presents REST as a distillation of the architectural principles that guided the standardization process for HTTP/1.1. Fielding used these principles to make decisions about which proposals to incorporate into HTTP/1.1. For example, he rejected a proposal to batch requests using new `MGET` and `MHEAD` methods because he felt the proposal violated the constraints prescribed by REST, especially the constraint that messages in a REST system should be easy to proxy and cache.[1][3] So HTTP/1.1 was instead designed around persistent connections over which multiple HTTP requests can be sent. (Fielding also felt that cookies are not RESTful because they add state to what should be a stateless system, but their usage was already entrenched.[2][4]) REST, for Fielding, was not a guide to building HTTP-based systems but a guide to extending HTTP.
 
 This isn’t to say that Fielding doesn’t think REST could be used to build other systems. It’s just that he assumes these other systems will also be “distributed hypermedia systems.” This is another misconception people have about REST: that it is a general architecture you can use for any kind of networked application. But you could sum up the part of the dissertation where Fielding introduces REST as, essentially, “Listen, we just designed HTTP, so if you also find yourself designing a _distributed hypermedia system_ you should use this cool architecture we worked out called REST to make things easier.” It’s not obvious why Fielding thinks anyone would ever attempt to build such a thing given that the web already exists; perhaps in 2000 it seemed like there was room for more than one distributed hypermedia system in the world. Anyway, Fielding makes clear that REST is intended as a solution for the scalability and consistency problems that arise when trying to connect hypermedia across the internet, _not_ as an architectural model for distributed applications in general.
