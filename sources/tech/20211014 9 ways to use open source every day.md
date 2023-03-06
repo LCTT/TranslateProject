@@ -7,69 +7,75 @@
 [#]: publisher: " "
 [#]: url: " "
 
-9 ways to use open source every day
+每天使用开源的9种方法
 ======
-You may be surprised to learn that the tools you use every day are open
-source.
-![Tools illustration][1]
+你可能会惊奇地发现，那些你每天使用的工具竟是开源的。
+![工具插图][1]
 
-Recently I was invited to present on free and open resources that are available on the web. This presentation was part of a local effort to keep our community working—sponsored by the [Foster Center][2] at St. Bonaventure University near my home. Some of the resources I shared were not open source and merely cost $0, but many of the tools were also open source.
+最近，我受邀介绍网络上可用的免费和开放资源。这次演讲是当地为保持我们社区的正常运转而做出的部分尝试——由我家附近的圣文德大学 [Foster Center][2] 赞助。 我分享的一些资源不是开源的且基本不用花钱，但许多工具是开源的。
 
-It was interesting to see how many folks recognized the tools I mentioned. Many people are unaware that the tools they use every day are open source, and they can share them with others. 
 
-### Open source browsers
+看到有不少人认出我所提到的工具真的很有趣。 很多人并不知道他们每天使用的工具都是开源的，并且他们还可以与他人分享。
 
-Using the web requires a good browser, and [Firefox is open source][3], which some of the folks I was presenting to were unaware of. In addition to being open source, Firefox is strongly conscious of privacy, which is a growing concern for many users. Interestingly, though, even Microsoft's new browser is based on the open source Chromium project. 
+### 开源浏览器
 
-### Open source web privacy
+使用网络需要一个好的浏览器，而 [Firefox 是开源的][3]，这一点很多在场的人并不清楚。 除了是开源，Firefox 还具有强烈的隐私意识，这是许多用户越来越关注的问题。 不过，有趣的是，即使是 Microsoft 的新浏览器也是基于开源 Chromium 项目的。
 
-Another way to protect your privacy and improve your web experience, in general, is to use uBlock Origin to block advertisements. According to their website:
+### 开源网络隐私
 
-> uBlock Origin is a free and open source, cross-platform browser extension for content filtering—primarily aimed at neutralizing privacy invasion in an efficient, user-friendly method.
+通常，保护您的隐私和改善您的网络体验的另一种方法是使用 uBlock Origin 来阻止广告。 根据他们的网站：
 
-The code is [GPL v. 3.0][4]. 
+> uBlock Origin 是一个免费、开源、跨平台的内容过滤浏览器扩展——主要旨在以一种高效、用户友好的方法消除隐私侵犯。
 
-The Electronic Frontier Foundation (EFF) also maintains [Privacy Badger][5], a web browser extension licensed under the GPL v.3.0. According to their Github repository, it's:
+> 代码是 [GPL v. 3.0][4]。
 
-> A browser extension that automatically learns to block invisible trackers. Instead of keeping lists of what to block, Privacy Badger automatically discovers trackers based on their behavior.
+Electronic Frontier Foundation (电子前沿基金会 EFF) 还维护 [Privacy Badger][5]———— 这是一个根据 GPL v.3.0 获得许可的网络浏览器扩展程序。 根据他们的 Github 存储库，它是：
 
-In addition to privacy, my presentation shared the importance of secure passwords. My audience learned about [Bitwarden][6]. Many folks had no idea how to generate secure passwords, differentiate from one website to another, and store them securely. I demonstrated how the software worked to create passwords and use Bitwarden to store those passwords in the cloud. I explained how users could access those credentials as browser plugins, desktop and laptop applications, and on Android or iOS mobile devices. 
+> 一个自动学习阻止隐形跟踪器的浏览器扩展程序。 Privacy Badger 不会保存阻止的列表，而是根据它们的行为自动发现跟踪器。
 
-### Open source messaging
+除了隐私之外，我的演讲还分享了安全密码的重要性。 我的听众了解到 [Bitwarden][6]。 许多人不知道如何生成安全密码、区分不同网站的密码以及如何安全地存储它们。 我演示了该软件如何创建密码并使用 Bitwarden 将这些密码存储在云中。 我解释了用户如何通过浏览器插件、台式机和笔记本电脑应用程序以及在 Android 或 iOS 移动设备上访问这些凭据。
 
-I spoke of the ubiquity of text messaging but also its inherent insecurity. The audience was not aware of [Signal][7]. I have been using Signal for a couple of years and regularly encourage others to consider it as a secure messaging platform. It is easy to [install Signal][8] on Linux, macOS, Windows, [Android][9], and [iOS][10], and it offers excellent support [documentation][11] with detailed installation instructions for each operating system. Signal uses your existing mobile number, provided it can send and receive SMS and phone calls. The first time you set up Signal on your mobile phone, the application can search your address books for any of your contacts using Signal. 
+### 开源通讯工具
 
-### Open source office tools
+本次演讲中，我谈到了通讯工具在我们生活中的无处不在，但同时它本身固有的不安全性。 观众不知道 [Signal 信号][7]。 我已经使用 Signal 几年了，并经常鼓励其他人将其视为一个安全的消息传递平台。 在 Linux、macOS、Windows、[Android][9] 和 [iOS][10] 上[安装 Signal][8] 很容易，它提供了出色的[文档][11]支持，对不同的操作系统都有着详细的安装说明。 Signal 使用您现有的手机号码，前提是它可以发送和接收短信和电话。 当您第一次在手机上设置 Signal 时，它会在您的通讯录上搜索同样使用 Signal 的联系人。
 
-No presentation on open source tools is complete without mentioning my favorite content creation tool, which is [LibreOffice][12]. Despite its popularity, many are unaware that it exists and the freedom that comes with its use. I use it every day to write articles. I use it instead of Excel, and sometimes I used it for presentations. You can download it and install it for Linux, macOS, and Windows. One of the beauties of LibreOffice is that you really own your documents. You don't need an expensive program to access them.
 
-### Open source blog builder
+### 开源办公工具
 
-[WordPress][13] is my favorite blogging engine, and there are myriad ways you can use it, whether sharing your own opinions on world events, a low-cost writing platform for your [students][14], or a web presence for your [business][15].
+如果不提及我最喜欢的内容创建工具，即 [LibreOffice][12]，任何关于开源工具的介绍都是不完整的。 尽管它很受欢迎，但还是有许多人并不知道它的存在以及使用它所带来的自由。 我每天都用它来写文章。 我使用它来做表格而不是 Excel，有时我用它来做演示文稿。 您可以在 Linux、macOS 和 Windows 上下载并安装它。 LibreOffice 的优点之一是您真正拥有自己的文档， 不需要昂贵的程序来访问它们。
 
-### Open source media repository
 
-While creating content, you will need images that you can easily and legally share to illustrate your work. [OpenClipart][16] is my go-to. There are thousands of images available in various popular formats for inclusion in your LibreOffice documents and blog posts. In addition, you can find images that you can share with the proper attribution by visiting [Creative Commons][17]. Creative Commons offers licensing that makes sharing easier. Creative Commons is an extension of copyright that makes sharing easier. Be sure to familiarize yourself with the nuances of the licenses. 
+### 开源博客构建器
 
-### Open source video conferencing
+[WordPress][13] 是我最喜欢的博客引擎，您可以通过多种方式使用它，无论是分享您对世界大事的看法、为您的[学生][14] 提供低成本写作平台，还是在网上为您的[业务][15]做宣传。
 
-The pandemic has changed the paradigm for conferences and meetups. Jitsi, Big Blue Button, and several others have revolutionized how we interact and learn as reported [here][18] by Chris Hermansen. 
 
-### Open source educational resources
+### 开源媒体库
 
-Open educational resources have liberated learning. With [OER Commons][19], you can find content to meet your needs, from pre-kindergarten to graduate and professional degrees, and it is openly licensed so that you can use it and share it with others. Massachusetts Institute of Technology (MIT) Open Courseware is nearly all of MIT's undergraduate and graduate content offered under a Creative Commons [non-commercial share-alike][20] license. [OpenStax][21], an open textbook initiative at Rice University, offers peer-reviewed textbooks that are openly licensed and available for free. 
+在创建内容时，您需要可以轻松合法共享的图片来说明您的作品。 [OpenClipart][16] 是我的首选。 有数以千计的各种广为使用的格式的图像可以放在您的 LibreOffice 文档和博客文章中。 此外，您可以通过访问 [Creative Commons][17] 找到可以与合适的归属共享的图像。 Creative Commons 提供许可，使共享变得更容易。 Creative Commons 是版权的延伸，让分享图片变得更容易。 请务必熟悉许可证之间的细微差别。
 
-### Open source podcast tools
 
-Podcasts have become a great way to catch up on the latest [open source news][22] for me. Have you thought of starting your own podcast? There are a couple of great open source tools that I am familiar with that provide ways to make that a reality. [Audacity][23] is my favorite recording application. I have used it to flip my classroom instruction, record interviews, and experiment with sound effects. It is a 16-track audio editor that you can use in a variety of ways. If you have something to say or a skill to teach, you should use [Open Broadcaster Software][24].
+### 开源视频会议
+
+疫情改变了会议和聚会的模式。 正如 Chris Hermansen [此处][18] 所报告的那样，Jitsi、Big Blue Button 和其他一些软件已经彻底改变了我们互动和学习的方式。
+
+
+### 开源教育资源
+
+开放教育资源解放了学习。 通过 [OER Commons][19]，您可以找到满足您需求的内容，从学前班到研究生和专业学位，它是公开许可的，因此您可以使用它并与他人分享。 麻省理工学院 (MIT) 开放课件提供了麻省理工学院几乎所有的本科生和研究生项目内容，均根据知识共享 [非商业性共享方式][20] 许可提供。 [OpenStax][21] 是莱斯大学的一项开放教科书计划，提供经过同行评审的教科书，这些教科书已公开许可并免费提供。
+
+
+### 开源播客工具
+
+播客已成为了解最新 [开源新闻][22] 的好方法。 你有没有想过做自己的播客？ 我熟悉一些很棒的开源工具能够帮你实现这一目标。 [Audacity][23] 是我最喜欢的录音应用程序。 我用它来翻转我的课堂教学、记录访谈和试验音效。 它是一个 16 轨音频编辑器，您可以通过多种方式使用它。 如果您有话要说或有技能要传授，您应该使用 [Open Broadcaster Software][24]。
 
 ### Linux
 
-Finally, introduce your friends to Linux, which many of them still don't know about, and let them experience all the readily available free software. 
+最后，向您的朋友介绍他们中还有许多人不知道的 Linux，让他们体验所有现成的免费软件。
 
-In addition to the talk recorded and shared on [YouTube][25], I compiled a list of links to the resources and shared them on [GitHub][26].
+除了在 [YouTube][25] 上录制和分享的演讲外，我还编制了一份资源链接列表，并在 [GitHub][26] 上分享。
 
-There are lots of non-code ways to contribute to open source: Here are three alternatives.
+有很多非代码方式可以为开源做出贡献：这里有三种选择。
 
 --------------------------------------------------------------------------------
 
@@ -77,7 +83,7 @@ via: https://opensource.com/article/21/10/open-source-tools
 
 作者：[Don Watkins][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[XiaotingHuang22](https://github.com/XiaotingHuang22)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
