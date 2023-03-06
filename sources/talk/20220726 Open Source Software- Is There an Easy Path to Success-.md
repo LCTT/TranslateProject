@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/07/open-source-software-is-there-an-easy-path-to-success/"
 [#]: author: "Jules Graybill https://www.opensourceforu.com/author/jules-graybill/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "CanYellow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
