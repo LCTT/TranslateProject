@@ -7,24 +7,51 @@
 [#]: publisher: " "
 [#]: url: " "
 
+开源软件：存在成功的捷径吗？
+======
+
+DN
 Open Source Software: Is There an Easy Path to Success?
 ======
+
+开发开源软件背后的工作是相当庞大的。那么我们如何保证开源项目的成功呢？存在捷径吗？本文认为是没有的。
+
+DN
 There’s so much that goes on behind the scenes while developing open source software. So how does one make an open source project successful? Is there a shortcut? This article indicates there isn’t one.
 
-![team work working together][1]
+![团队合作][1]
 
+今天，开源已经风靡世界。很多大型企业在快速成功的诱惑下被推向开源。但真实情况是世界上并不存在成功的捷径。你无法做到通过一次努力就能让所有的开源项目正常运行。
+
+DN
 Open source has become all the rage now. Many entrepreneurs are drawn to it by the allure of quick success. But the truth is, there is no easy path to such success. There is no one thing that you can do to get all of open source right.
 
+事实上，上述公司早期遇到的许多挑战都不是技术上的，而是人员与文化上的。
+
+DN
 In fact, a lot of the challenges that companies face early on are not technology challenges, but are people and cultural challenges.
 
+开发一个能够在市场上获得成功的开源项目需要同不同层级(的开源社区人员)一同工作。维护这样的项目也是一个持续的过程。所有这一切的关键在于找到以下这个非常基础的问题的正确答案：开源究竟是什么。
+
+DN
 There are many layers of open source that need to be worked on to build a project that can become a hit in the market. And maintaining that success is an ongoing process. But at the crux of it all lies finding the right answer to a very basic question: what exactly is open source?
 
+### 开源就是代码
+
+DN
 ### Open source is the code
 
+对于很多没有深刻认识到构成开源的不同层级(的开源社区人员)用户而言，答案相当简单：开源就是软件！这当然没有错，毕竟这就是我们多数人如何使用它的。不过，相比仅仅被视作软件而言，开源远不止这些。
+
+DN
 For many new users who may not be fully aware of the layers that make open source, the answer is fairly simple: open source is software! And that is not wrong, of course, since that is how most of us are using it. But there’s just so much more to open source than merely being touted as software.
 
+任何开源项目的实质仍然是代码本身。代码是使一个开源项目有别于其他项目并使其对用户有益的根本。当你在开源中工作的时候，代码和软件一样都是产品自身的一部分。
+
+DN
 The essence of any open source project still remains the code. It is what makes the project special and useful for the user. When you’re working in open source, the code is just as much a part of the product as the software.
 
+从零开始开发一个(开源)项目或者复刻(fork)一个现有项目的分支
 Developing a project from the ground up, or even creating a fork of an existing project, requires thousands and thousands of lines of code to be written, even while handling such a large and complex codebase. Especially in the case of creating a fork, care must be taken to remove any prior licences, marketing material, or anything that might not be useful for the user anymore. After all, it is the features of a project that attract its user base and what retains it. When end users are deciding whether to use open source software, they will read the source code, and what they see there should be something that builds their confidence.
 
 ### Open source is the community
