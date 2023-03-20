@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/install-use-gnome-boxes/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: "void-mori"
+[#]: translator: " "
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
