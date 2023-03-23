@@ -1,0 +1,18 @@
+name: Ask Questions | 提问
+description: Please describe your problem. | 请描述您的问题。
+labels: ["question"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please answer these questions before you submit the desired feature. | 请在您提交期望的功能之前，回答以下这些问题
+
+  - type: textarea
+    attributes:
+      label: Your Questions
+      description: Please describe your problem. | 请描述您的问题。
+      placeholder: I have a question...
+    validations:
+      required: true

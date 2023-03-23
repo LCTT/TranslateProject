@@ -69,7 +69,7 @@ An action has essentially two components (Figure 4). One is a YAML file called a
 
 Let us look at what exactly these two components do.
 
-The*action.yml* file stores the metadata about the action you are building. It stores details like the name of the action, what are the inputs it needs and the outputs it delivers. It also defines whether the source code of the action is in JavaScript that can be run using Node12, or is a Docker image. It also contains information about where to find the JavaScript files or the Docker image to run the action.
+The *action.yml* file stores the metadata about the action you are building. It stores details like the name of the action, what are the inputs it needs and the outputs it delivers. It also defines whether the source code of the action is in JavaScript that can be run using Node12, or is a Docker image. It also contains information about where to find the JavaScript files or the Docker image to run the action.
 
 The source code part of your action contains the actual logic of it. This can be JavaScript files that can run using Node12, a Dockerfile that you are going to build when an action runs, or it can simply be a Docker image that you refer to. It will have access to the event payload that triggered the workflow and also the context of the workflow run through environment variables (ENV). You can easily call GitHub’s APIs or other APIs from within your source code as a part of your logic, to accomplish the action’s task.
 

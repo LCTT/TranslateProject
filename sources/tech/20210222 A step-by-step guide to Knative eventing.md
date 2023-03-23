@@ -1,17 +1,19 @@
-[#]: collector: (lujun9972)
-[#]: translator: ( )
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
-[#]: subject: (A step-by-step guide to Knative eventing)
-[#]: via: (https://opensource.com/article/21/2/knative-eventing)
-[#]: author: (Jessica Cherry https://opensource.com/users/cherrybomb)
+[#]: subject: "A step-by-step guide to Knative eventing"
+[#]: via: "https://opensource.com/article/21/2/knative-eventing"
+[#]: author: "Jessica Cherry https://opensource.com/users/cherrybomb"
+[#]: collector: "lkxed"
+[#]: translator: " "
+[#]: reviewer: " "
+[#]: publisher: " "
+[#]: url: " "
 
 A step-by-step guide to Knative eventing
 ======
-Knative eventing is a way to create, send, and verify events in your
-cloud-native environment.
+Knative eventing is a way to create, send, and verify events in your cloud-native environment.
+
 ![Computer laptop in space][1]
+
+Image by: Opensource.com
 
 In a previous article, I covered [how to create a small app with Knative][2], which is an open source project that adds components to [Kubernetes][3] for deploying, running, and managing [serverless, cloud-native][4] applications. In this article, I'll explain Knative eventing, a way to create, send, and verify events in your cloud-native environment.
 
@@ -25,7 +27,6 @@ This walkthrough uses [Minikube][7] with Kubernetes 1.19.0. It also makes some c
 
 **Minikube pre-configuration commands:**
 
-
 ```
 $ minikube config set kubernetes-version v1.19.0
 $ minikube config set memory 4000
@@ -33,7 +34,6 @@ $ minikube config set cpus 4
 ```
 
 Before starting Minikube, run the following commands to make sure your configuration stays and start Minikube:
-
 
 ```
 $ minikube delete
@@ -44,9 +44,8 @@ $ minikube start
 
 Install the Knative eventing custom resource definitions (CRDs) using kubectl. The following shows the command and a snippet of the output:
 
-
 ```
-$ kubectl apply --filename <https://github.com/knative/eventing/releases/download/v0.20.0/eventing-crds.yaml>
+$ kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.20.0/eventing-crds.yaml
 
 customresourcedefinition.apiextensions.k8s.io/apiserversources.sources.knative.dev created
 customresourcedefinition.apiextensions.k8s.io/brokers.eventing.knative.dev created
@@ -56,9 +55,8 @@ customresourcedefinition.apiextensions.k8s.io/triggers.eventing.knative.dev crea
 
 Next, install the core components using kubectl:
 
-
 ```
-$ kubectl apply --filename <https://github.com/knative/eventing/releases/download/v0.20.0/eventing-core.yaml>
+$ kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.20.0/eventing-core.yaml
 namespace/knative-eventing created
 serviceaccount/eventing-controller created
 clusterrolebinding.rbac.authorization.k8s.io/eventing-controller created
@@ -66,22 +64,19 @@ clusterrolebinding.rbac.authorization.k8s.io/eventing-controller created
 
 Since you're running a standalone version of the Knative eventing service, you must install the in-memory channel to pass events. Using kubectl, run:
 
-
 ```
-`$ kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.20.0/in-memory-channel.yaml`
+$ kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.20.0/in-memory-channel.yaml
 ```
 
 Install the broker, which utilizes the channels and runs the event routing:
 
-
 ```
-$ kubectl apply --filename <https://github.com/knative/eventing/releases/download/v0.20.0/mt-channel-broker.yaml>
+$ kubectl apply --filename https://github.com/knative/eventing/releases/download/v0.20.0/mt-channel-broker.yaml
 clusterrole.rbac.authorization.k8s.io/knative-eventing-mt-channel-broker-controller created
 clusterrole.rbac.authorization.k8s.io/knative-eventing-mt-broker-filter created
 ```
 
 Next, create a namespace and add a small broker to it; this broker routes events to triggers. Create your namespace using kubectl:
-
 
 ```
 $ kubectl create namespace eventing-test
@@ -89,7 +84,6 @@ namespace/eventing-test created
 ```
 
 Now create a small broker named `default` in your namespace. The following is the YAML from my **broker.yaml** file (which can be found in my GitHub repository):
-
 
 ```
 apiVersion: eventing.knative.dev/v1
@@ -101,7 +95,6 @@ metadata:
 
 Then apply your broker file using kubectl:
 
-
 ```
 $ kubectl create -f broker.yaml
    broker.eventing.knative.dev/default created
@@ -109,11 +102,10 @@ $ kubectl create -f broker.yaml
 
 Verify that everything is up and running (you should see the confirmation output) after you run the command:
 
-
 ```
 $ kubectl -n eventing-test get broker default                                                              
 NAME      URL                                                                              AGE    READY   REASON
-default   <http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default>   3m6s   True
+default   http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default   3m6s   True
 ```
 
 You'll need this URL from the broker output later for sending events, so save it.
@@ -126,7 +118,6 @@ First, you need to create event consumers. You'll create two consumers in this w
 
 **The hello-display YAML code:**
 
-
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -135,7 +126,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: &amp;labels
+    matchLabels: &labels
       app: hello-display
   template:
     metadata:
@@ -145,7 +136,7 @@ spec:
         - name: event-display
           image: gcr.io/knative-releases/knative.dev/eventing-contrib/cmd/event_display
 
-\---
+---
 
 kind: Service
 apiVersion: v1
@@ -162,7 +153,6 @@ spec:
 
 **The goodbye-display YAML code:**
 
-
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -171,7 +161,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: &amp;labels
+    matchLabels: &labels
       app: goodbye-display
   template:
     metadata:
@@ -179,10 +169,10 @@ spec:
     spec:
       containers:
         - name: event-display
-          # Source code: <https://github.com/knative/eventing-contrib/tree/master/cmd/event\_display>
+          # Source code: https://github.com/knative/eventing-contrib/tree/master/cmd/event_display
           image: gcr.io/knative-releases/knative.dev/eventing-contrib/cmd/event_display
 
-\---
+---
 
 kind: Service
 apiVersion: v1
@@ -199,7 +189,6 @@ spec:
 
 The differences in the YAML between the two consumers are in the `app` and `metadata name` sections. While both consumers are on the same ports, you can target one when generating an event. Create the consumers using kubectl:
 
-
 ```
 $ kubectl -n eventing-test apply -f hello-display.yaml
 deployment.apps/hello-display created
@@ -211,7 +200,6 @@ service/goodbye-display created
 ```
 
 Check to make sure the deployments are running after you've applied the YAML files:
-
 
 ```
 $ kubectl -n eventing-test get deployments hello-display goodbye-display
@@ -225,7 +213,6 @@ goodbye-display   1/1     1            1           34s
 Now, you need to create the triggers, which define the events the consumer receives. You can define triggers to use any filter from your cloud events. The broker receives events from the trigger and sends the events to the correct consumer. This set of examples creates two triggers with different definitions. For example, you can send events with the attribute type `greeting` to the `hello-display` consumer.
 
 **The greeting-trigger.yaml code:**
-
 
 ```
 apiVersion: eventing.knative.dev/v1
@@ -246,7 +233,6 @@ spec:
 
 To create the first trigger, apply your YAML file:
 
-
 ```
 $ kubectl -n eventing-test apply -f greeting-trigger.yaml
 trigger.eventing.knative.dev/hello-display created
@@ -255,7 +241,6 @@ trigger.eventing.knative.dev/hello-display created
 Next, make the second trigger using **sendoff-trigger.yaml**. This sends anything with the attribute `source sendoff` to your `goodbye-display` consumer.
 
 **The sendoff-trigger.yaml code:**
-
 
 ```
 apiVersion: eventing.knative.dev/v1
@@ -276,7 +261,6 @@ spec:
 
 Next, apply your second trigger definition to the cluster:
 
-
 ```
 $ kubectl -n eventing-test apply -f sendoff-trigger.yaml
 trigger.eventing.knative.dev/goodbye-display created
@@ -284,18 +268,16 @@ trigger.eventing.knative.dev/goodbye-display created
 
 Confirm everything is correctly in place by getting your triggers from the cluster using kubectl:
 
-
 ```
 $ kubectl -n eventing-test get triggers
-NAME              BROKER    SUBSCRIBER_URI                                            AGE   READY  
-goodbye-display   default   <http://goodbye-display.eventing-test.svc.cluster.local/>   24s   True    
-hello-display     default   <http://hello-display.eventing-test.svc.cluster.local/>     46s   True
+NAME              BROKER    SUBSCRIBER_URI                                            AGE   READY   
+goodbye-display   default   http://goodbye-display.eventing-test.svc.cluster.local/   24s   True    
+hello-display     default   http://hello-display.eventing-test.svc.cluster.local/     46s   True
 ```
 
 ### Create an event producer
 
 Create a pod you can use to send events. This is a simple pod deployment with curl and SSH access for you to [send events using curl][8]. Because the broker can be accessed only from inside the cluster where Knative eventing is installed, the pod needs to be in the cluster; this is the only way to send events into the cluster. Use the **event-producer.yaml** file with this code:
-
 
 ```
 apiVersion: v1
@@ -318,14 +300,12 @@ spec:
 
 Next, deploy the pod by using kubectl:
 
-
 ```
 $ kubectl -n eventing-test apply -f event-producer.yaml
 pod/curl created
 ```
 
 To verify, get the deployment and make sure the pod is up and running:
-
 
 ```
 $ kubectl get pods -n eventing-test
@@ -339,13 +319,11 @@ Since this article has been so configuration-heavy, I imagine you'll be happy to
 
 Begin by logging into the pod:
 
-
 ```
-`$ kubectl -n eventing-test attach curl -it`
+$ kubectl -n eventing-test attach curl -it
 ```
 
 Once logged in, you'll see output similar to:
-
 
 ```
 Defaulting container name to curl.
@@ -356,9 +334,8 @@ If you don't see a command prompt, try pressing enter.
 
 Now, generate an event using curl. This needs some extra definitions and requires the broker URL generated during the installation. This example sends a greeting to the broker:
 
-
 ```
-curl -v "<http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default>" \
+curl -v "http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default" \
   -X POST \
   -H "Ce-Id: say-hello" \
   -H "Ce-Specversion: 1.0" \
@@ -372,31 +349,29 @@ curl -v "<http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test
 
 When you run the command, this should be the output (and you should receive a [202 Accepted][10] response):
 
-
 ```
-&gt; POST /eventing-test/default HTTP/1.1
-&gt; User-Agent: curl/7.35.0
-&gt; Host: broker-ingress.knative-eventing.svc.cluster.local
-&gt; Accept: */*
-&gt; Ce-Id: say-hello
-&gt; Ce-Specversion: 1.0
-&gt; Ce-Type: greeting
-&gt; Ce-Source: not-sendoff
-&gt; Content-Type: application/json
-&gt; Content-Length: 24
-&gt;
-&lt; HTTP/1.1 202 Accepted
-&lt; Date: Sun, 24 Jan 2021 22:25:25 GMT
-&lt; Content-Length: 0
+> POST /eventing-test/default HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: broker-ingress.knative-eventing.svc.cluster.local
+> Accept: */*
+> Ce-Id: say-hello
+> Ce-Specversion: 1.0
+> Ce-Type: greeting
+> Ce-Source: not-sendoff
+> Content-Type: application/json
+> Content-Length: 24
+>
+< HTTP/1.1 202 Accepted
+< Date: Sun, 24 Jan 2021 22:25:25 GMT
+< Content-Length: 0
 ```
 
 The 202 means the trigger sent it to the **hello-display** consumer (because of the definition.)
 
 Next, send a second definition to the **goodbye-display** consumer with this new curl command:
 
-
 ```
-curl -v "<http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default>" \
+curl -v "http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default" \
   -X POST \
   -H "Ce-Id: say-goodbye" \
   -H "Ce-Specversion: 1.0" \
@@ -410,22 +385,21 @@ This time, it is a `sendoff` and not a greeting based on the previous setup sect
 
 Your output should look like this, with another 202 returned:
 
-
 ```
-&gt; POST /eventing-test/default HTTP/1.1
-&gt; User-Agent: curl/7.35.0
-&gt; Host: broker-ingress.knative-eventing.svc.cluster.local
-&gt; Accept: */*
-&gt; Ce-Id: say-goodbye
-&gt; Ce-Specversion: 1.0
-&gt; Ce-Type: not-greeting
-&gt; Ce-Source: sendoff
-&gt; Content-Type: application/json
-&gt; Content-Length: 26
-&gt;
-&lt; HTTP/1.1 202 Accepted
-&lt; Date: Sun, 24 Jan 2021 22:33:00 GMT
-&lt; Content-Length: 0
+> POST /eventing-test/default HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: broker-ingress.knative-eventing.svc.cluster.local
+> Accept: */*
+> Ce-Id: say-goodbye
+> Ce-Specversion: 1.0
+> Ce-Type: not-greeting
+> Ce-Source: sendoff
+> Content-Type: application/json
+> Content-Length: 26
+>
+< HTTP/1.1 202 Accepted
+< Date: Sun, 24 Jan 2021 22:33:00 GMT
+< Content-Length: 0
 ```
 
 Congratulations, you sent two events!
@@ -438,13 +412,11 @@ Now that the events have been sent, how do you know that the correct consumers r
 
 Start with the **hello-display** consumer::
 
-
 ```
-`$ kubectl -n eventing-test logs -l app=hello-display --tail=100`
+$ kubectl -n eventing-test logs -l app=hello-display --tail=100
 ```
 
 There isn't much running in this example cluster, so you should see only one event:
-
 
 ```
 ☁️  cloudevents.Event
@@ -466,7 +438,6 @@ Data,
 You've confirmed the **hello-display** consumer received the event! Now check the **goodbye-display** consumer and make sure the other message made it.
 
 Start by running the same command but with **goodbye-display**:
-
 
 ```
 $ kubectl -n eventing-test logs -l app=goodbye-display --tail=100
@@ -494,9 +465,8 @@ So you sent events to each consumer using curl, but what if you want to send an 
 
 Here is a curl example of a definition for sending an event to both consumers:
 
-
 ```
-curl -v "<http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default>" \
+curl -v "http://broker-ingress.knative-eventing.svc.cluster.local/eventing-test/default" \
   -X POST \
   -H "Ce-Id: say-hello-goodbye" \
   -H "Ce-Specversion: 1.0" \
@@ -512,26 +482,24 @@ Here is sample output of what the events look like after they are sent.
 
 **Output of the event being sent:**
 
-
 ```
-&gt; POST /eventing-test/default HTTP/1.1
-&gt; User-Agent: curl/7.35.0
-&gt; Host: broker-ingress.knative-eventing.svc.cluster.local
-&gt; Accept: */*
-&gt; Ce-Id: say-hello-goodbye
-&gt; Ce-Specversion: 1.0
-&gt; Ce-Type: greeting
-&gt; Ce-Source: sendoff
-&gt; Content-Type: application/json
-&gt; Content-Length: 41
-&gt;
-&lt; HTTP/1.1 202 Accepted
-&lt; Date: Sun, 24 Jan 2021 23:04:15 GMT
-&lt; Content-Length: 0
+> POST /eventing-test/default HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: broker-ingress.knative-eventing.svc.cluster.local
+> Accept: */*
+> Ce-Id: say-hello-goodbye
+> Ce-Specversion: 1.0
+> Ce-Type: greeting
+> Ce-Source: sendoff
+> Content-Type: application/json
+> Content-Length: 41
+>
+< HTTP/1.1 202 Accepted
+< Date: Sun, 24 Jan 2021 23:04:15 GMT
+< Content-Length: 0
 ```
 
 **Output of hello-display (showing two events):**
-
 
 ```
 $ kubectl -n eventing-test logs -l app=hello-display --tail=100
@@ -566,7 +534,6 @@ Data,
 ```
 
 **Output of goodbye-display (also with two events):**
-
 
 ```
 $ kubectl -n eventing-test logs -l app=goodbye-display --tail=100
@@ -611,15 +578,15 @@ Internal eventing in cloud events is pretty easy to track if it's going to a pre
 via: https://opensource.com/article/21/2/knative-eventing
 
 作者：[Jessica Cherry][a]
-选题：[lujun9972][b]
+选题：[lkxed][b]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/cherrybomb
-[b]: https://github.com/lujun9972
-[1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/computer_space_graphic_cosmic.png?itok=wu493YbB (Computer laptop in space)
+[b]: https://github.com/lkxed
+[1]: https://opensource.com/sites/default/files/lead-images/computer_space_graphic_cosmic.png
 [2]: https://opensource.com/article/20/11/knative
 [3]: https://opensource.com/resources/what-is-kubernetes
 [4]: https://en.wikipedia.org/wiki/Cloud_native_computing
