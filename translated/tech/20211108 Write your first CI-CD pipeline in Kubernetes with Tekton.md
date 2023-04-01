@@ -26,15 +26,15 @@ Tekton 是一个 Kubernetes 原生应用。它在 Kubernetes 集群中作为扩�
 
 构建 CI/CD 流水线的过程非常复杂，因此 Tekton 为每一步都提供工具。以下是 Tekton 提供的主要组件：
 
-  * **Pipeline: ** Pipeline 定义了一组 Kubernetes [自定义资源][6]，作为你用来组装 CI/CD 流水线的构建块。
-  * **Triggers: ** Triggers 是一种 Kubernetes 自定义资源，允许你根据从事件有效载荷中提取的信息来创建流水线。例如，你可以在每次创建 Git 仓库的合并请求时，触发流水线的实例化和执行。
+  * **Pipeline:** Pipeline 定义了一组 Kubernetes [自定义资源][6]，作为你用来组装 CI/CD 流水线的构建块。
+  * **Triggers:** Triggers 是一种 Kubernetes 自定义资源，允许你根据从事件有效载荷中提取的信息来创建流水线。例如，你可以在每次创建 Git 仓库的合并请求时，触发流水线的实例化和执行。
   * **CLI:**  CLI 提供一个名为 `tkn` 的命令行界面，你可以使用它从终端与 Tekton 进行交互。
   * **Dashboard:**  Dashboard 是 Tekton 流水线的一个基于网络的图形界面，显示流水线的执行信息。
   * **Catalog:** Catalog 是一个高质量的、由社区贡献的 Tekton 构建块（任务、流水线等），可在你自己的流水线中使用。
   * **Hub:** Hub 是一个基于网络的图形界面，用于访问 Tekton catalog。
   * **Operator:**  Operator 是 Kubernetes 的 [Operator 模式][7]，你可以在 Kubernetes 集群中安装、更新、升级和删除 Tekton 项目。
-  * **Chains: ** Chains 是一个 Kubernetes <ruby>自定义资源定义<rt>Custom Resource Definition</rt></ruby>（CRD）控制器，使你可以在 Tekton 中处理供应链安全的问题。正在开发中。
-  * **Results: ** Results 旨在帮助用户对 CI/CD 工作负载历史进行逻辑分组，并将长期结果的存储从流水线控制器中分离出来。
+  * **Chains:** Chains 是一个 Kubernetes <ruby>自定义资源定义<rt>Custom Resource Definition</rt></ruby>（CRD）控制器，使你可以在 Tekton 中处理供应链安全的问题。正在开发中。
+  * **Results:** Results 旨在帮助用户对 CI/CD 工作负载历史进行逻辑分组，并将长期结果的存储从流水线控制器中分离出来。
 
 
 
@@ -54,7 +54,7 @@ Tekton 是一个 Kubernetes 原生应用。它在 Kubernetes 集群中作为扩�
 
 (Source: [Tekton documentation][12])
 
-  * **PipelineRun: ** 顾名思义，是一条流水线的具体执行。
+  * **PipelineRun:** 顾名思义，是一条流水线的具体执行。
 
   * **TaskRun:** TaskRun 是一个任务的具体执行。你可以选择在流水线外运行一次 TaskRun，可以通过它查看任务中每个步骤执行的具体情况。
 
