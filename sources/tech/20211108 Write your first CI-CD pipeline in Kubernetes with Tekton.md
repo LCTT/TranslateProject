@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/cicd-pipeline-kubernetes-tekton"
 [#]: author: "Savita Ashture https://opensource.com/users/savita-ashture"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
