@@ -21,7 +21,7 @@ LCTT 术语词典
 
 ### F
 
-#### Fork
+#### Fork：复刻
 
 Fork 行为/操作广泛用于进程管理、版本管理和软件衍生方面。此词汇也长期缺乏确定的译法。
 
@@ -34,7 +34,7 @@ Fork 行为/操作广泛用于进程管理、版本管理和软件衍生方面�
 
 ### L
 
-#### Live
+#### Live：立付
 
 Live 原意多指“现场”、“实时”，在计算机环境中使用时也多引用此意。但对它的翻译就颇费神，因为无论是在 Live Patch，还是更多见的 Live USB/CD、Live Session，其实都不好翻译为“现场”、“实时”。
 
@@ -46,7 +46,18 @@ Live 原意多指“现场”、“实时”，在计算机环境中使用时也
 - 首次链接（临场）：https://linux.cn/article-12854-1.html
 - 首次链接（立付）：https://linux.cn/article-15499-1.html
 
-#### Repo/Repository
+### P
+
+#### Pod：容器荚
+
+在容器环境中使用 Pod 来代表一组容器。最初，我根据 Kubernetes 中大量采用了航海相关的比喻，而将其译为“吊舱”。但根据 Kubernetes [文档](https://kubernetes.io/docs/concepts/workloads/pods/#:~:text=A%20Pod%20(as%20in%20a,run%20in%20a%20shared%20context.)，其来自对 “<ruby>鲸鱼荚<rt>Pod of Whales</rt></ruby>”、“<ruby>豌豆荚<rt>pea pod</rt></ruby>” 的比喻。因此这个词翻译为“容器荚”。也有有将其翻译为“容器组”。
+
+- 提议者：wxy
+- 首次链接：https://linux.cn/article-14591-1.html
+
+### R
+
+#### Repo/Repository：代码仓库、软件仓库
 
 Repository 主要用于两个场景，一个是用于版本管理的代码仓库，一个是用于分发软件/组件/制品的软件仓库。
 
