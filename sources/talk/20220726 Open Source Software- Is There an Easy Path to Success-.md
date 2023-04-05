@@ -2,87 +2,81 @@
 [#]: via: "https://www.opensourceforu.com/2022/07/open-source-software-is-there-an-easy-path-to-success/"
 [#]: author: "Jules Graybill https://www.opensourceforu.com/author/jules-graybill/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "CanYellow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-Open Source Software: Is There an Easy Path to Success?
+开源软件：存在成功的捷径吗？
 ======
-There’s so much that goes on behind the scenes while developing open source software. So how does one make an open source project successful? Is there a shortcut? This article indicates there isn’t one.
 
-![team work working together][1]
+开发开源软件背后的工作是相当庞大的。那么我们如何保证开源项目的成功呢？存在捷径吗？本文认为是没有的。
 
-Open source has become all the rage now. Many entrepreneurs are drawn to it by the allure of quick success. But the truth is, there is no easy path to such success. There is no one thing that you can do to get all of open source right.
+![团队合作][1]
 
-In fact, a lot of the challenges that companies face early on are not technology challenges, but are people and cultural challenges.
+今天，开源已经风靡世界。很多大型企业在快速成功的诱惑下被推向开源。但真实情况是世界上并不存在成功的捷径。你无法做到通过一次努力就能让所有的开源项目正常运行。
 
-There are many layers of open source that need to be worked on to build a project that can become a hit in the market. And maintaining that success is an ongoing process. But at the crux of it all lies finding the right answer to a very basic question: what exactly is open source?
+事实上，上述公司早期遇到的许多挑战都不是技术上的，而是人员与文化上的。
 
-### Open source is the code
+开发一个能够在市场上获得成功的开源项目需要同不同层级(的开源社区人员)一同工作。维护这样的项目也是一个持续的过程。所有这一切的关键在于找到以下这个非常基础的问题的正确答案：开源究竟是什么。
 
-For many new users who may not be fully aware of the layers that make open source, the answer is fairly simple: open source is software! And that is not wrong, of course, since that is how most of us are using it. But there’s just so much more to open source than merely being touted as software.
+### 开源是代码
 
-The essence of any open source project still remains the code. It is what makes the project special and useful for the user. When you’re working in open source, the code is just as much a part of the product as the software.
+对于很多没有深刻认识到构成开源的不同层级(的开源社区人员)用户而言，答案相当简单：开源就是软件！这当然没有错，毕竟这就是我们多数人如何使用它的。不过，相比仅仅被视作软件而言，开源远不止这些。
 
-Developing a project from the ground up, or even creating a fork of an existing project, requires thousands and thousands of lines of code to be written, even while handling such a large and complex codebase. Especially in the case of creating a fork, care must be taken to remove any prior licences, marketing material, or anything that might not be useful for the user anymore. After all, it is the features of a project that attract its user base and what retains it. When end users are deciding whether to use open source software, they will read the source code, and what they see there should be something that builds their confidence.
+任何开源项目的实质仍然是代码本身。代码是使一个开源项目有别于其他项目并使其对用户有益的根本。当你在开源中工作的时候，代码和软件一样都是产品自身的一部分。
 
-### Open source is the community
+从零开始开发一个(开源)项目或者复刻(fork)一个现有项目的分支，即便是在处理如此庞大而复杂的代码库时，也需要编写成千上万行代码。尤其是在创新一个现有项目的分支的情况下，在移除任何在先的许可证、宣传材料或者其他任何可能已经失去作用的文件时必须小心翼翼。终究是一个项目的功能吸引了它的用户群并维持项目的持续发展。当终端用户在考虑是否使用开源软件的时候，他们会阅读项目的源代码，而他们在其中所看到的应当是那些能够建立他们的信心的内容。
 
-How you engage with the community is also a part of the task of building a product. Building a community and maintaining a healthy relationship with it is one of the most crucial aspects of open source, but is also often the hardest for most leaders as there is very little one can do to control it. One can try to lay the foundation and can be supportive but, ultimately, it’s the people who decide whether they want to join a community.
+### 开源是社区
 
-It is important to maintain a level of transparency with the community and keep it in the loop. The community can get involved at any step that it wants to. It’s really important that you show most of your work to the community while you are doing it, apart from things that need to be done confidentially, like setting up security, signing certificates, branding, and so on. This helps in winning its trust because, in the end, it is the community that you are liable to, and it can make or break your project. This may make the project work a lot more deliberate, slower and exposed, but it works well in the end.
+如何参与到社区中也是产品构建项目的一部分。创建一个社区并维护一个健康的社区关系是开源的核心之一，但对于大部分的领导者而言也往往是最坚难的任务，很少有人能很好地维护它。你可以尝试建立基金会或者提供赞助，但是最终还是人们自行决定是否想要加入社区。
 
-Making your work-in-progress so open can seem daunting, especially when you are worried about the repercussions of a delay in updates or having a bug. Yet, making the community members privy to your moves will not only help you build a trustful relationship with them, but also make them feel appreciated.
+维护一定程度的社区透明度并不断保持也是重要的。社区可以随心所欲地参与项目。除了需要秘密进行的工作之外，诸如安全设置、签发证书、注册商标等，尽可能多的将你所做的工作展示给社区是相当重要的，这有助于取得社区信任。你终究需要对社区负责，你的项目成也社区，败也社区。这可能会导致你的项目开发更谨慎、更缓慢并且向社区公开，不过项目最终会进展顺利。
 
-However, making your workflow public will also invite scrutiny from the community members, who will often have their opinions and offer you their feedback. Taking note of this feedback is important, because that is how you can make your open source project truly for them. They are the end users and their feedback will reflect how they see your project panning out for them in the long run, and ultimately, how successful and mainstream your software becomes.
+如此地公开你正在进行的工作似乎有些令人生怯，尤其是当你担心更新推迟或者是出现漏洞的影响的时候。不过，让社区成员知悉你的进展不仅有助帮助你建立与社区之间的信任关系，而且能够让社区成员感到被认可。
 
-As an example, when we are thinking about a new feature, we publish a request for comments at RFC. We get a lot of feedback, and we have to think hard about how we can incorporate it.
+另一方面，公开你的工作流也可以获得来自社区成员的监督，他们经常有自己的见解并向你反馈。记录这些反馈是很重要的，这使得你的开源项目如实地反映社区需求。他们是项目的末端用户，而他们的反馈则反映了他们如何看待你的项目的长期发展以及你的项目最终将有多么成功或者主流。
 
-Since open source is a largely collaborative work, there will be initiatives by the community to offer their support in making the project the best version possible. Not all of it will work out. But as long you are listening, the community will feel involved.
+举例而言，当我们在考虑一个新功能的时候，我们在征求意见文档(RFC, Request for Comments)中发布一个征集意见的请求，我们会收到大量的反馈，我们必须认真思考应当如何吸收这些反馈。
 
-Engaging with the community has its pitfalls too. There may be differences of opinion within the community, and also between the maintainer and the community, especially when it comes to the matter of governance. Governance is something which is really important for an open source project to have. That is why it is important to have clear documented governance practices, which also include the community.
+因为开源是一个大型的合作项目，社区在支持开源项目成为可能的万里挑一的项目上享有主动权。并非所有的问题都要解决，但只要你有在倾听社区的呼声，社区就会有参与感。
 
-Community governance is a tough, but essential, nut to crack. Delegation in itself requires a lot of trust. For a project with millions of lines of code, it can be cumbersome to find someone in the community who can meaningfully lead it. But open source projects often consist of smaller sub-projects, which are better left handled by someone from the community. This helps the community to be more closely involved too.
+参与到社区中也存在一些隐患。社区内部、项目维护与社区之间均可能存在不同意见，尤其是在涉及管理问题上。管理问题对于一个开源项目来说是相当重要的。这也就是为什么拥有一份清晰的文档化的管理条例对于项目以及社区均是如此重要。
+
+社区管理是一个关键的而又难啃的骨头。社区授权本身需要相当大的信任。对于一个拥有成千上万行代码的项目，在社区中寻找能够有效领导社区的人物是不容易的。不过开源项目经常是由更小的子项目组成的，这些子项目最好由社区中的某个人进行管理。这有助于社区更紧密地参与到项目中。
 
 | - |
 | :- |
-| Building a community always has its highs and lows. Let me list some of the tricks that helped maintain a healthy balance between the community’s and my team’s vision.
-State your principle: Especially in the early stage of the open source project when the source code is still coming together and things are not exactly going perfectly, it is hard for somebody coming from outside to really understand why you are making the decisions that you are making. Communicating the principles on which you take actions helps you to be upfront about your thought process so that the community does not interpret things incorrectly.
-This practice is really helpful. It is also important to follow through and show that when you make a decision, it is guided by one of these principles.
-Decide how you are going to collaborate: This may be through channels like Discord, Slack, or simply emails. But if you try to use all of them, you will immediately diffuse the community. People will be communicating with each other all over the place. Choose one or two collaboration tools, and really invest in them for synchronised communication.
-Treasure the feedback: Listen to feedback from the community and act on it. Show tat you care about what the community says, even if it requires you to make tough decisions.
-Maintain a code of conduct: If you interact with a community, you need to define what is going to be acceptable conduct. Having that in place helps warn people in case they go out of line. You can avoid a lot of trouble if you can just define this early on.
-Think about how you will distribute your project: There may be instances when you may not be willing to make your project available to the public because you do not have a certain component in place, or you have features you may not want to make accessible to everyone. Creating distribution terms that suit your preference without compromising on what the user wants is key, so that people who want certain features can access these while those who can do without them also have the option to start using the project without having to compromise.
-Avoid polls as much as you can: This is because, often, certain members vote for an option that may not be what the majority goes with. This can create a sense of failure in these members and make them feel excluded from the project. Instead, try asking them what problems they would like to be solved, and then try to invent a solution that does not involve trade-offs. |
+| 建立社区的过程不是一帆风顺的。让我列举一一些有助于维持社区与我的团队之间平衡的技巧。
 
-**State your principle:** Especially in the early stage of the open source project when the source code is still coming together and things are not exactly going perfectly, it is hard for somebody coming from outside to really understand why you are making the decisions that you are making. Communicating the principles on which you take actions helps you to be upfront about your thought process so that the community does not interpret things incorrectly.
+**声明你的原则：**尤其是在开源项目的早期，在项目代码仍在完善，很多事情还不完美的时候，项目之外的人员很难真正理解你所做的决定。向他们说明你做出决定所依据的原则有助于你在思考过程上保持坦率，从而让社区不会错误地干扰你的事务。
 
-This practice is really helpful. It is also important to follow through and show that when you make a decision, it is guided by one of these principles.
+这一经验非常有效，在你做出决定时坚持遵循其中一项原则并展示出来是非常重要的。
 
-*Decide how you are going to collaborate:* This may be through channels like Discord, Slack, or simply emails. But if you try to use all of them, you will immediately diffuse the community. People will be communicating with each other all over the place. Choose one or two collaboration tools, and really invest in them for synchronised communication.
+*确定如何进行协作：*你可以通过Discord、Slack或者邮件等途径完成这一工作。但是如果你试图同时使用他们，你将毫不意外的分散项目社区。社区人员将在所有这些途径上互相交流。选择一到两种沟通工具，投身于他们来保证社区的信息同步。
 
-*Treasure the feedback:* Listen to feedback from the community and act on it. Show tat you care about what the community says, even if it requires you to make tough decisions.
+*珍惜反馈意见：*倾听来自社区的反馈并付诸行动。即使需要你作出艰难的决定，你也应当向社区展示你是重视社区话语的。
 
-**Maintain a code of conduct:** If you interact with a community, you need to define what is going to be acceptable conduct. Having that in place helps warn people in case they go out of line. You can avoid a lot of trouble if you can just define this early on.
+**维护一套行为准则：**如果你与社区打交道，你需要定义什么行为是可以接受的。一套落地的行为准则有助于在人们越过红线时警示他们。如果你可以提前制定这些你可以避免很多麻烦。
 
-*Think about how you will distribute your project:* There may be instances when you may not be willing to make your project available to the public because you do not have a certain component in place, or you have features you may not want to make accessible to everyone. Creating distribution terms that suit your preference without compromising on what the user wants is key, so that people who want certain features can access these while those who can do without them also have the option to start using the project without having to compromise.
+*考虑如何分发你的项目：*存在这样的情况，因为你还没有准备好某一个组件，或者是因为存在一些项目功能你不希望所有人都能够访问，所以你可能并不希望将你的项目完全向公众公开。关键是制定符合你的要求而不是向用户妥协的分发条款，如此，需要某种功能的用户可以获取所需项目的同时不需要该功能的用户也不需要做出妥协而开始使用该项目。
 
-*Avoid polls as much as you can:* This is because, often, certain members vote for an option that may not be what the majority goes with. This can create a sense of failure in these members and make them feel excluded from the project. Instead, try asking them what problems they would like to be solved, and then try to invent a solution that does not involve trade-offs.
+*尽可能地避免投票：*这是因为部分成员经常会赞成与大部分成员的意见相左的选项，这会使这些人产生一定程度的失望，并让他们觉得被项目所孤立。反之，尽量尝试询问他们想要解决什么问题，并尝试创造一个不需要付出代价的解决方案。
 
-### Open source is licensing
+### 开源是许可
 
-Open source is about giving your users autonomy over how they want to use your software, and licensing provides just that. What’s great about an open source licence is that regardless of what you as a maintainer do, all your end users and stakeholders can always maintain a certain set of forks, which are important forks.
+开源是给予你的用户如何使用你的软件的自由，而许可能够做到这一点。一个开源项目许可是极好的，它保证了不论你作为维护者做了什么，你的所有终端用户以及利益相关方总是可以维护一系列的项目复刻版本，这些都是重要的项目复刻版。
 
-Licensing gives people the option to take the project into a different direction if they deem it fit. They have the right to create a fork, which results in a lot of amazing software being developed. Maintainers have more responsibility to listen to their community members and to run the project in a way that works for them.
+许可提供了人们可选择性，如果他们认为有必要，他们可以将项目复制到不同的路径中。他们拥有创建副本的权利，这使得许多优秀的软件能够被开发出来。维护者有责任倾听他们的社区成员的声音并以一个对项目的社区成员有利的方式运营项目。
 
-It’s advisable to make use of the many licences available instead of setting your own terms separately, simply because stakeholders and users are usually familiar with commonly used licences, so you do not have to waste time explaining them. This also helps you to focus your energy on the other parts of the project.
+我们推荐使用现有的许多可用的许可证而不是独立制作你自己的许可条款，仅仅只是因为用户以及利益相关方通常都很熟悉公共许可证，因此你不需要再花费时间在解释许可条款上。这将帮助你将你的精力集中在项目的其他部分上。
 
-### Finally, open source is a movement
+### 最后，开源是一项运动
 
-Open source involves many, many dimensions and people. Most importantly, it is about understanding what these people want and creating an environment that encourages collaboration and transparency. It is about building communities that help to build the open source project the way they want it to be. The more opportunity maintainers create to let them do that, the better the product is and the more successful it gets.
+开源包括了很多维度，也包含了很多人员。最重要的是，它是有关理解人们想要什么的，也是有关创建一个鼓励协作与透明的环境的。开源也是有关创建有利于开源项目走自己想走的道路的社区的。维护者创造越多的机会让社区自由发挥，开源产品就越好，也越发成功。
 
-Open source is all of these things and the more expansive view you take, the better you can leverage it. Think about how you can excel in every dimension of open source because, at the end of the day, there is no easy path to open source success.
+开源是以上这些方面，而你的视野越宽阔，你就能越好的利用它。请考虑你如何能够在开源的每一个维度上出类拔萃，因为时至今日，开源的成功之路并无捷径。
 
 --------------------------------------------------------------------------------
 
@@ -90,7 +84,7 @@ via: https://www.opensourceforu.com/2022/07/open-source-software-is-there-an-eas
 
 作者：[Jules Graybill][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CanYellow](https://github.com/CanYellow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
