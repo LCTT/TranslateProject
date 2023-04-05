@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/8/first-programming-language"
 [#]: author: "Jen Wike Huger https://opensource.com/users/jen-wike"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "CanYellow
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
