@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/12/kdenlive-linux-creative-app"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "yjacks"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
