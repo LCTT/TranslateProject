@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/css-html-project-documentation"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "XiaotingHuang22"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -265,7 +265,7 @@ via: https://opensource.com/article/22/8/css-html-project-documentation
 
 作者：[Jim Hall][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[XiaotingHuang22](https://github.com/XiaotingHuang22)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
