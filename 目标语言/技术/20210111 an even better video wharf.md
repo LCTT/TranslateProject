@@ -25,7 +25,7 @@
 
 ```
 
-当我们得到了一个非空的 `url` 值，即便它不是一个视频链接，但它仍然是一个确切的 URL，并且 embark 已有了一个 `url` 类别，所以我们可以借助默认的 URL 寻检器存储一个新的句法分析，语句如下：
+当我们得到了一个非空的 `url` 值，即便它不是一个视频链接，但它仍然是一个确切的 URL，并且 embark 已有了一个 `url` 类别，所以我们可以借助默认的 URL 寻检器存储一个新的句法分析,语句如下：
 
 ```
 
@@ -33,7 +33,7 @@
       (cons (if (string-match-p jao-video-url-rx url) 'video-url 'url) url))
 
 ```
-这里有一个潜在的缺点就是：我们重写了 embark 的寻检器，`embark-target-url-at-point`，我们可能更愿意保留后者。
+这里有一个潜在的缺点就是：我们重写了 embark 的寻检器，`embark-target-url-at-point`，所以我们可能更愿意保留后者。
 
 实际上多亏了 embark 的 _目标转换器_ 我们才能做成。我们可以在 `embark-transformers-alist` 中添加任意一个函数，应用于任何一个给定类别的目标，而 embark 会将其转换后的值应用于它的操作中。Omar 很贴切地把这个过程称为“目标的精化”;我们具体做法如下：
 
