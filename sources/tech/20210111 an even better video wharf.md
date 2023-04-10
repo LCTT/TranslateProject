@@ -7,12 +7,12 @@
 [#]: publisher: " "
 [#]: url: " "
 
-an even better video wharf
+一个更好的视频码头
 ======
 
-A couple of days ago, [i was writing][1] about [embark][2] and my first experiment defining a new embarking to play remote video streams. Omar Antolín Camarena, embark's author, has been kind enough to not only read it, but comment on a couple of significant improvements that i think well deserve this follow-up.
+几天前，[我在写][1] 有关 [embark][2] 的内容，我的第一设备为启动远程视频流设计了一个新的 embark。作为 embark 的作者，Omar Antolín Camarena，不仅阅读了这篇内容，还点评了一下我认为值得跟进的一些重大改进.
 
-First, you'll remember that we were defining a function to detect a video URL:
+首先，你应该记得我们曾定义过一个检测视频 URL 的函数：
 
 ```
 
@@ -25,7 +25,7 @@ First, you'll remember that we were defining a function to detect a video URL:
 
 ```
 
-Once we've got a non-null `url` value, even if it's not a video URL, it's still certainly a URL, and embark has a `url` category, so we could save a new parsing by the default URL finder by saying:
+当我们得到了一个非空的 `url` 值，即便它不是一个视频链接，但它仍然是一个确切的 URL，并且 embark 已有了一个 `url` 类别，所以我们可以借助默认的 URL 寻检器存储一个新的句法分析，语句如下：
 
 ```
 
@@ -33,10 +33,9 @@ Once we've got a non-null `url` value, even if it's not a video URL, it's still 
       (cons (if (string-match-p jao-video-url-rx url) 'video-url 'url) url))
 
 ```
+这里有一个潜在的缺点就是：我们重写了 embark 的寻检器，`embark-target-url-at-point`，我们可能更愿意保留后者。
 
-This has the potential drawback that we're overriding embark's finder, `embark-target-url-at-point`, and we might prefer to keep the latter.
-
-Turns out that we can do that thanks to embark's _target transformers_. One can add to `embark-transformers-alist` an arbitrary function to be applied to a target of any given category, and embark will apply its actions to the transformed value. Omar calls this process, very aptly, a refinement of the target; here's how we would do it:
+实际上多亏了 embark 的 _目标转换器_ 我们才能做成。我们可以在 `embark-transformers-alist` 中添加任意一个函数，应用于任何一个给定类别的目标，而 embark 会将其转换后的值应用于它的操作中。Omar 很贴切地把这个过程称为“目标的精化”;我们具体做法如下：
 
 ```
 
@@ -48,7 +47,8 @@ Turns out that we can do that thanks to embark's _target transformers_. One can 
 
 ```
 
-With this strategy, we don't need `jao-video-finder` at all, and it also makes lots of sense, conceptually, to have our `video-url` defined as a refinement rather than a new target[1][3]. Omar's second suggestion is also in line with this concept: surely we want all actions available for `url` also for our `video-url`, don't we? Well, that's exactly the reason why the `embark-define-keymap` macro we used to define our actions can inherit all the actions already defined in another keymap, using the `:parent` keyword[2][4]:
+通过这种策略，我们就不再需要 `jao-video-finder` 了，而且从概念上来说，我们的 `video-url` 应该被定义为一个精化操作而并非是一个目标[1][3]。Omar 的第二个提议也与这个概念相契合：想必我们都希望所有关于 `url` 和我们的 `video-url` 的操作都是可用的，不是吗？
+唔，这就是为什么我们用来定义行为的 `embark-define-keymap` 的宏可以通过使用关键字[2][4] `:parent` 继承其他键映射中已经定义的所有操作的原因：
 
 ```
 
@@ -61,15 +61,15 @@ With this strategy, we don't need `jao-video-finder` at all, and it also makes l
 
 ```
 
-It is worth noting that this ability to inherit a keymap is not really an embark add-on: vanilla Emacs keymaps already have it, via the standard function `set-keymap-parent`. You could actually define `jao-video-url-map` without using `embark-define-keymap` at all, and it'd work exactly the same.
+这种继承键映射的功能并非是 embark 的附属功能：vanilla Emacs 键映射通过标准函数 `set-keymap-parent` 已经搞定它了。你可以完全不用 `embark-define-keymap` 来定义 `jao-video-url-map`，工作原理是一样的。
 
-So, our code has become shorter and more featureful: thanks, Omar!
+这样我们的代码就能够更短，特征更多：谢谢你，Omar!
 
-### Footnotes:
+### 脚注：
 
 [1][5]
 
-There's a scenario where keeping jao-video-finder could make sense, namely, if we want to alter the URL detection function. For instance, i use emacs-w3m, and there often a URL is stored as a text property (the actual text being the link text). To retrieve the URL at point there, one needs to call `w3m-anchor`, and `embark-target-url-at-point` will miss it. For that scenario, i ended up writing (and using) `jao-video-finder` defined with:
+在某些情况下，保留 jao-video-finder 是有意义的，即，如果我们想要改变检测 URL 的功能的话。例如，我在使用 emacs-w3m 的时候，经常有一个 URL 作为文本属性储存了起来(实际文本是个链接文本)。要通过那里检索 URL，就需要调用 `w3m-anchor`，而用 `embark-target-url-at-point` 就会错过它。对于这种情况，我最终编写(并使用)`jao-video-finder` 将其通过下文定义:
 
 ```
 
@@ -78,7 +78,7 @@ There's a scenario where keeping jao-video-finder could make sense, namely, if w
 
 ```
 
-Another way of accomplishing the same thing (with another tip of the hat to Omar) would be to add a specific finder for w3m anchors (and keep using the transformer for video-url):
+另一种达成同件事情的方式（再次向 Omar 致敬）便是为 w3m 的锚点放置一个特定的巡检器（且继续使用 video-url 的转换器）：
 
 ```
 
@@ -90,13 +90,13 @@ Another way of accomplishing the same thing (with another tip of the hat to Omar
 
 ```
 
-This way is more modular and, depending on your taste, more elegant. These functions are small and there's not a big difference between the two approaches, but if one keeps adding finders, things can easily get uglier with the former approach.
+这种方法更加模块化，并且取决于你们的喜好，且更加巧妙。这些功能都很小巧并且两种方法之间并没有太大的差别，但是如果其中某一种继续加入更多寻检器的话，前一种方法用起来来反而会让一切变得更糟。
 
 [2][6]
 
-In my original example, i was adding also `browse-url` and `browse-url-firefox` to the video map. The former is no longer necessary, because it's already present in `embark-url-map`. If we wanted to make `browse-url-firefox` available to _all_ URLs, we could add it to `embark-url-map` (remember, embark's keymaps are just Emacs keymaps). That's yet another simple way of extending embark.
+在我最开始的例子中，我在视频地图中还添加了 `browse-url` 和 `browse-url-firefox`。前一个已不再重要，因为它已经在 `embark-url-map` 中出现过了，如果我们想让 `browse-url-firefox` 对 _所有_ 的 URLs 可用,我们可以将其加入到 `embark-url-map` （谨记，embark 的键映射只是 Emacs 的键映射）。这是另一种扩展 embark 的简便方法。
 
-[Tags][7]: [emacs][8]
+[标签][7]: [emacs][8]
 
 --------------------------------------------------------------------------------
 
@@ -104,7 +104,7 @@ via: https://jao.io/blog/2021-01-11-an-even-better-video-wharf.html
 
 作者：[jao][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Drwhooooo](https://github.com/Drwhooooo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
