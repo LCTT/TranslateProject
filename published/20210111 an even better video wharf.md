@@ -93,6 +93,8 @@
 
 **脚注 2**：在我最开始的例子中，我在视频地图中还添加了 `browse-url` 和 `browse-url-firefox`。前一个已不再重要，因为它已经在 `embark-url-map` 中出现过了，如果我们想让 `browse-url-firefox` 对 _所有_ 的 URLs 可用,我们可以将其加入到 `embark-url-map` （谨记，embark 的键映射只是 Emacs 的键映射）。这是另一种扩展 embark 的简便方法。
 
+*（题图：MJ:emacs video geek wallpaper dark plain background Illustration）*
+
 --------------------------------------------------------------------------------
 
 via: https://jao.io/blog/an-even-better-video-wharf.html
