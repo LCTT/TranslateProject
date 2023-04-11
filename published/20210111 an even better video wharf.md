@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "Drwhooooo"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15711-1.html"
 
 一个更好的视频码头
 ======
