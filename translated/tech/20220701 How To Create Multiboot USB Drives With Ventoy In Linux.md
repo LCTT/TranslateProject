@@ -7,7 +7,7 @@
 [#]: publisher: " "
 [#]: url: " "
 
-如何在 Linux 系统中使用 Ventory 创建多重引导的 U 盘
+如何在 Linux 系统中使用 Ventoy 创建多重引导的 U 盘
 ======
 **Ventoy** 是一个免费、开源和跨平台的程序，可以在 Linux、macOS 和微软的 Windows 中创建多重引导的 U 盘。
 
@@ -254,11 +254,11 @@ Ventoy 会自动为你选择已插入的 U 盘。但是我建议你确认所选�
 
 ##### Ventoy 选项和语言
 
-从菜单栏中点击选项按钮。
+从菜单栏中点击<ruby>选项<rt>Option</rt><ruby>按钮。
 
 ![Ventoy 选项][11]
 
-从选项下拉按钮，你可以做以下事情：
+从<ruby>选项<rt>Option</rt><ruby>下拉按钮，你可以做以下事情：
 
 - <ruby>安全启动支持<rt>Secure Boot Support</rt></ruby> - 勾选/取消勾选以启用或禁用安全启动。默认情况下，它处于选中状态以示启用。
 - <ruby>分区格式<rt>Partition Style</rt></ruby> - 支持 MBR 和 GPT 分区格式。默认是 MBR。
@@ -266,7 +266,7 @@ Ventoy 会自动为你选择已插入的 U 盘。但是我建议你确认所选�
 - <ruby>清除<rt>Clear</rt></ruby> Ventoy - 从你的磁盘中删除 Ventoy。
 - <ruby>显示所有设备<rt>Show All Devices</rt></ruby> - 如果你想显示包括你的本地磁盘在内的所有连接的设备，请选中这个选项。在选择这个选项时要特别小心。你可能会不小心选择你的一个本地磁盘并将其格式化。
 
-语言按钮允许你选择你喜欢的语言。
+<ruby>语言<rt>Language</rt></ruby>按钮允许你选择你喜欢的语言。
 
 ##### 更新 Ventoy
 
