@@ -338,6 +338,8 @@ Ventoy 网站、论坛和该网站上的一些文件被一些杀毒软件标记�
 * [Ventoy 官网][20]
 * [Ventoy GitHub 仓库][21]
 
+*（题图： MJ: USB disk bootload computer sci-fi future in sky stars）*
+
 --------------------------------------------------------------------------------
 
 via: https://ostechnix.com/how-to-create-multiboot-usb-drives-with-ventoy-in-linux/
