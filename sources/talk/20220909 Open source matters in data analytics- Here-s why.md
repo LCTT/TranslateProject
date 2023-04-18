@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/open-source-data-analytics"
 [#]: author: "Ray Paik https://opensource.com/users/rpaik"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "cool-summer-021"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
