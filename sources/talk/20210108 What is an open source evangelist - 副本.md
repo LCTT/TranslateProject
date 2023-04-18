@@ -7,20 +7,21 @@
 [#]: via: (https://opensource.com/article/21/1/open-source-evangelist)
 [#]: author: (Peter Czanik https://opensource.com/users/czanik)
 
-什么是开源传教士？
+What is an open source evangelist?
 ======
-了解如何成为产品用户和开发者之间的桥梁。
+Learn what it takes to be a bridge between a product's users and its
+developers.
 ![Teamwork starts with communication][1]
 
-当人们得知我是个开源传教士（专注于 [syslog-ng][2] 和 [sudo][3]）的时候，他们经常问我在 Linux 世界如此知名是什么感觉。我的回答非常简短：这很棒！
+When people learn that I work as an open source evangelist (focusing on [syslog-ng][2] and [sudo][3]), they often ask me what it's like to represent such well-known names in the Linux world. My short answer: It's good!
 
-我不会感到无聊，因为我是研发的一部分。当人们实践我教他们的东西以及我收集到的用户反馈影响产品开发的时候，我感觉我起了作用。
+I am part of research and development, so it is never boring. I feel that I make an impact when people implement what they learn from me and when the feedback I collect from users influences the development of the product.
 
-### 什么是传教士？
+### What is an evangelist?
 
-我将传教士定义为一座桥梁——软件（或其他产品）用户和开发者之间的桥梁。传教士不仅仅将好消息分享给用户，还要从他们那里收集反馈。
+I define an evangelist as a bridge between a software's (or other product's) users and its developers. It is not just about sharing good news with users but also collecting feedback from them.
 
-传教士们有着各式各样的背景：有的具有市场营销背景，对技术有着浓厚的兴趣；有的是喜欢和用户交流的开发者。我属于第三类——“高级用户”，或者说从用户视角对软件产品有深入了解的人。
+Evangelists come from a wide range of backgrounds. Some people have a marketing background with a strong interest in technology. Some are developers who like talking to users. I belong to a third group, "power users," or people with in-depth knowledge about a software product from the user's point of view.
 
 In my job, I work with many, many users. The syslog-ng user base is enormous. It is available on most Linux distributions and BSD variants. Hundreds of millions of devices run syslog-ng, including both the BMW i3 and the Kindle. Most BSD-based appliances, like FreeNAS, run syslog-ng for logging, as do Linux-based network-attached storages (NAS) devices from Synology and QNAP. I would not be surprised to learn that syslog-ng is running somewhere in space.
 
@@ -86,7 +87,7 @@ via: https://opensource.com/article/21/1/open-source-evangelist
 
 作者：[Peter Czanik][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/rsqrt2b)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
