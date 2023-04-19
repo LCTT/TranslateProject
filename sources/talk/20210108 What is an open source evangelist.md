@@ -22,11 +22,12 @@
 
 传教士们有着各式各样的背景：有的具有市场营销背景，对技术有着浓厚的兴趣；有的是喜欢和用户交流的开发者。我属于第三类——“高级用户”，或者说从用户视角对软件产品有深入了解的人。
 
-In my job, I work with many, many users. The syslog-ng user base is enormous. It is available on most Linux distributions and BSD variants. Hundreds of millions of devices run syslog-ng, including both the BMW i3 and the Kindle. Most BSD-based appliances, like FreeNAS, run syslog-ng for logging, as do Linux-based network-attached storages (NAS) devices from Synology and QNAP. I would not be surprised to learn that syslog-ng is running somewhere in space.
+我和很多很多用户一起工作。syslog-ng 的用户群体非常庞大，它适用于大多数 Linux 发行版和 BSD 变体。数以亿计的设备运行着 syslog-ng，其中包括 BMW i3 和 Kinidle。大多数基于 BSD 的设备，譬如 FreeNAS，使用用 syslog-ng 记录日志 就像基于 Linux 的<ruby>网络附属存储<rt>Network Attached Storage</rt></ruby>（NAS）使用 Synology 和 QNAP 一样。就算 syslog-ng 运行在太空的某处，我也不会感到惊讶。
 
-Most Linux and Unix users use sudo since it is installed on almost every Linux machine out there. Its community is huge, with tens of millions of people. People often ask me how I cope with these large numbers of users, but it is not difficult.
 
-### How I became an evangelist
+大多数 Linux 和 Unix 用户使用 sudo，因为它几乎被安装在每一台 Linux 设备上。社区很大，有几千万人。人们经常问我是如何处理那么多用户的，但这并不困难。
+
+### 我是如何成为一名传教士的
 
 My journey to becoming an evangelist was an evolutionary process that spanned nearly 20 years. It started many years ago while I was teaching at a university. My next step was working with POWER/PowerPC Linux users and developers. Finally, I started to cover syslog-ng in my job at [Balabit][4] and later began working with sudo.
 
