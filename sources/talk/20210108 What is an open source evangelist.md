@@ -29,23 +29,25 @@
 
 ### 我是如何成为一名传教士的
 
-My journey to becoming an evangelist was an evolutionary process that spanned nearly 20 years. It started many years ago while I was teaching at a university. My next step was working with POWER/PowerPC Linux users and developers. Finally, I started to cover syslog-ng in my job at [Balabit][4] and later began working with sudo.
+我成为传教士的旅程是一个跨越近20年的进化过程。它始于许多年前，我在大学教书的时候。我的下一步是和 POWER/PowerPC 的 Linux 用户、开发者们合作。最后，我开始在 [Balabit][4] 的工作中使用 syslog-ng，再后来我开始在 sudo 方面工作。
 
-My first job at Balabit was to help Linux distributions update the syslog-ng package to the latest upstream version. As I learned more and more about syslog-ng's details, I was asked to help its users. A year later, I was giving talks about syslog-ng at Hungarian and international conferences. Soon after, the feedback I collected from users started to make an impact on product development.
 
-Eight years later, in 2018, Balabit was acquired by [One Identity][5], and [Todd Miller][6], sudo's maintainer, became my colleague. Until then, I knew only some basic sudo features, but I became more interested in sudo and learning about its advanced features. Soon, I was also evangelizing sudo and evolving from a syslog-ng evangelist into a more generic open source evangelist.
+我在 Balabit 的第一份工作是帮助 Linux 发行版将它们的 syslog-ng 包升级到上游的最新版本。随着我越来越多地了解 syslog-ng 的细节，我被要求帮助它的用户。一年后，我在匈牙利和国际会议上发表关于 syslog-ng的演说。不久之后，我从用户那里收集到的数据开始对产品开发产生影响。
 
-### Four pillars of technical evangelism
+八年后，也就是2018年，Balabit 被 [One Identity][5] 收购，sudo 的维护者 [Todd Miller][6] 成为了我的同事。在那之前我只是了解一些基本的 sudo 功能，但我变得对 sudo 更感兴趣并开始了解它的高级功能。恒快，我开始传教 sudo，从一名 syslog-ng 传教士进化为一个更一般的开源传教士。
+
+### 技术传教的四大支柱
 
 Technical evangelists do many things that can be broadly divided into four categories: developer, support, technical product marketing, and product management. I'll look at each of these four pillars of technical evangelism in more detail.
+技术传教士做很多事情，大致可以分为四类：开发人员、支持人员、技术产品营销和产品经理
 
-#### Developer
+#### 开发人员
 
-I am not a developer, but I do many things that developers do, such as packaging syslog-ng for various Linux distributions and FreeBSD, doing lots of testing, integrating syslog-ng with other software, and testing it on exotic platforms. The developer tasks I do help the community and helps me understand its needs better.
+我不是开发人员，但我做横夺开发人员的工作，例如为各式各样的 Linux 发行版和 FreeBSD 打包 syslog-ng，做很多测试，将 syslog-ng 集成到其他软件中并在外国平台上测试。我做的开发人员的工作帮助社区和我自己更好地了解其需求。
 
-#### Support
+#### 支持人员
 
-Following bug trackers, watching the syslog-ng keyword in Google Alerts and Twitter, and reading the mailing list enable me to help our user base better. By helping our users, I also understand their problems better.
+关注 bug 追踪器，在 Google Alerts 和 Twitter 上查看 syslog-ng 关键词以及阅读邮件列表都能让我更好地帮助我们的用户群体。同我帮助他人，我也能能更好地理解他们的问题所在。
 
 #### Technical product marketing
 
