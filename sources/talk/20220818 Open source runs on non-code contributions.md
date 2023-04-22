@@ -7,66 +7,66 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Open source runs on non-code contributions
+开源的项目的运行离不开非代码贡献
 ======
-Sometimes the hardest part of becoming an open source contributor is realizing how much you have to offer.
+有时成为开源贡献者最困难的是意识到你必须付出多少。
 
-At this year's DrupalCon North America, EPAM Solution Architect John Picozzi presented a talk about the importance of non-code contribution. He talked about how everyone can get involved and why he believes this is an important topic. This article is a text adaptation of John's talk; find a link below to a video recording of the complete presentation at DrupalCon.
+在今年的北美 DrupalCon 上，EPAM 解决方案架构师 John Picozzi 发表了关于非代码贡献重要性的演讲。 他谈到每个人可以如何参与以及为什么他认为这个话题很重要。 本文是 John 演讲的文本改编； 在下方可以找到 DrupalCon 上完整演讲视频的链接。
 
-What is non-code contribution? I asked Google this question and got the following answer: "Any contribution that helps an open source project that does not involve writing code." Thanks, Google, but I already figured that out. If you asked me to dig deeper, I'd say it's about providing your time, skills, and resources to benefit a project.
+什么是非代码贡献？ 我问了谷歌这个问题并得到了以下答案：“任何有助于开源项目但不涉及编写代码的贡献。” 谷歌，听我说谢谢你，但这点我早就懂了。 如果你要我深入挖掘，我会说非代码贡献意味着你提供个人的时间、技能和资源来使项目受益。
 
-### Who is an open source contributor?
+### 谁是开源贡献者？
 
-Early on, "contribution" implied writing code. Originally, Drupal's model was "Built by developers, for developers." Over the years, however, the Drupal community has shifted away from that mindset. Our community has learned to value non-code contributions just as much as code: Any contribution is contribution.
+早期，“贡献”意味着编写代码。 最初，Drupal 的运行模式是“由开发人员构建，为开发人员服务”。 然而，多年来，Drupal 社区已经改变了这种思维方式。 我们的社区已经学会像重视代码一样重视非代码贡献：任何贡献都是贡献。
 
-Open source is built in meetups, camps, and cons; it's built-in and by the community. In fact, most of the contributions at those events have very little to do with coding. To have those events, you need attendees, speakers, trainers, and organizers. Don't get me wrong: Of course, open source communities still need people who write code, but that's not the only thing they need. If you participate in the community and share ideas, ask questions, or provide help—congratulations, you're already contributing!
+开源是在聚会、训练营和大会中组成的； 它的内在气质就是社区化，同时也由社区建立。 事实上，这些活动中的大部分贡献都与编程无关。 要举办这些活动，你需要的是参与者、演讲者、培训师和组织者。 不要误会我的意思：当然，开源社区仍然需要编写代码的人，但这并不是唯一需要的东西。 如果你参与社区并分享想法、提出问题或提供帮助——恭喜你，你已经在做出贡献了！
 
-Is contributor a self-designation ("I'm a contributor") or a community designation ("We say you're a contributor")? It's safe to say that everyone is a contributor: conference attendees, designers who create UI and module logos, marketing folks who help market modules or events, and many more. Don't wait for someone else to give you that designation. You can get involved and feel confident telling others you're a contributor.
+贡献者的称号是自我指定（“我是贡献者”）还是社区指定（“我们说你是贡献者”）？ 可以肯定地说，每个人都是贡献者：会议参加者、创建 UI 和模块徽标的设计师、帮助营销模块或活动的营销人员等等。 不要等待别人给你那个称号。 你可以参与其中并自信地告诉其他人你是贡献者。
 
-There are many ways to motivate someone (or yourself) to contribute. Money is not always the top motivator. However, sometimes contribution can be paid work. Many people contribute simply because they want to give back to the community.
+有很多方法可以激励别人（或你自己）做出贡献。 金钱并不总是最重要的激励因素。 但是，有时贡献可以是有偿工作。 许多人做出贡献只是因为他们想回馈社区。
 
-Everyone would probably give a different answer from their peers when asked why they contribute, but here are some of the most common responses:
+当被问及为什么做出贡献时，每个人可能会给出与同伴不同的答案，但以下是一些最常见的回答：
 
-* It makes you feel good
-* Building and improving skills
-* Career development
-* Making connections/networking
+* 它让你感觉良好
+* 建立和提高技能
+* 职业发展
+* 建立人际关系/网络
 
-The list is endless and as varied as the contributors themselves. Each contributor has their own reasons, and there are no right or wrong answers.
+这个列表无穷无尽，并且与贡献者本身一样多样化。 每个贡献者都有自己的理由，没有正确或错误的回答。
 
-![Reasons to contribute to open source][2]
+![为开源做出贡献的原因][2]
 
-Image by: (John Picozzi, CC BY-SA 4.0)
+图片来源: (John Picozzi, CC BY-SA 4.0)
 
-### Why non-code contribution is important to open source
+### 为什么非代码贡献对开源很重要？
 
-Non-code contribution is as valuable to the health of a project as writing code. It helps to get more people with a wide variety of skills involved in the community. Everyone has something to offer and a unique skill set to share.
+非代码贡献对于项目的健康运转与编写代码一样有价值。 它有助于让更多具有各种技能的人参与社区。 每个人都可以提供一些东西，也可以分享一套独特的技能。
 
-There are non-code requirements for all projects, and not everyone is a developer or coder. Moreover, different points of view need to be represented. For example a marketing person will likely have different experiences and perspectives than a developer. Every effort moves open source forward in some way—that's why non-code contribution is essential.
+所有项目都有非代码要求，并不是每个人都是开发人员或编码人员。 此外，不同的观点都应该得到表达。 例如，营销人员可能与开发人员有不同的经验和观点。 每一项努力都以某种方式推动开源向前发展——这就是为什么非代码贡献是必不可少的。
 
-#### Common challenges
+#### 常见的挑战
 
-This definition of contribution may make it sound very simple: Just share your knowledge, express your thoughts, and help the community. However, contributors face several challenges. One of the most common is imposter syndrome. Less experienced contributors may worry that their contribution isn't valuable or helpful. You can combat that feeling by focusing on your specific skills and passions. For example, if you have event organizing experience, you can lean into that and focus on organizing and helping with those activities.
+贡献的定义可能听起来很简单：只需分享你的知识、表达你的想法并帮助社区。 然而，贡献者面临着一些挑战。 最常见的一种是冒名顶替综合症。 经验不足的贡献者可能会担心他们的贡献没有价值或没有帮助。 你可以通过专注于自己的特定技能和热情来克服这种感觉。 例如，如果你有组织活动的经验，你可以利用这个经验专注于组织活动和在活动中帮忙。
 
-To combat these negative thoughts, make contributing a positive experience. Work/life/contribution balance is important. Contribution should be enjoyable, not just another job. If you can, implement contribution into your work. Many employers encourage and benefit from your contribution, and it's possible to build a career based on contribution.
+为了对抗这些消极的想法，你可以将贡献转化为一种积极的体验。 工作/生活/贡献的平衡很重要。 贡献应该是愉快的，而不只是另一份工作。 如果可以，请把你的贡献成果用在你的日常工作中。 许多雇主鼓励你做出贡献并从中受益，你甚至有可能基于自己做出的贡献建立职业。
 
-Don't burn out and contribute nonstop during nights and weekends. Just add 30 minutes to the start or end of your day, or incorporate contribution into your regular workday if possible.
+不要让自己筋疲力尽，不停在晚上和周末做出贡献。 你只需要在一天的开始或结束时增加 30 分钟的贡献时间，或者如果可能的话，将贡献纳入你日常工作日中。
 
-### How to make your first non-code contribution
+### 如何做出你的第一个非代码贡献？
 
-At this point in the article, I hope you're thinking, "OK, I'm ready. What do I do?" How do you get involved? Just do it! You only need to get started: For example, to start contributing in the Drupal community, ask in [the issue queue][3] or [Drupal chat][4] or reach out to camp organizers for recommendations. A whole community is waiting to support you.
+看到这里，我希望你已经开始思考，“好的，我准备好了。我要做些什么？” 你如何参与？ 去做就对了！ 你只需要开始：例如，开始在 Drupal 社区中做出贡献，去 [问题队列][3] 或 [Drupal 聊天][4] 那儿提问，或者联系营地组织者寻求建议。 整个社区都在等着支持你呢。
 
-![A slide depicting many Drupal community project logos, including regional Drupal meetups, Drupal coffee, Drupal talent and education. The slide is filled with a variety to indicate the large number and wide range of opportunities to participate in community projects.][5]
+![一张幻灯片，上面展示了许多 Drupal 社区项目徽标，包括区域性 Drupal 聚会、Drupal 咖啡、Drupal 人才和教育， 表明参与社区项目有着大量和广泛的机会。][5]
 
-Image by: (John Picozzi, CC BY-SA 4.0)
+图片来源: (John Picozzi, CC BY-SA 4.0)
 
-Remember to follow your skills and interests. You have them, so use them to inspire your contributions. Your interests may differ from your skills: You could decide to contribute to something you have little experience with but always wanted to know more about. Simply talk to people, share knowledge, ask questions, go to a camp or a meetup, and contribute.
+请记住遵从自己的技能和兴趣。 你已经拥有了技能和兴趣，请用它们来激发你的贡献。 你的兴趣可能和你的技能不同：有些事情可能是你几乎没有经验但却一直想了解更多的，你也可以决定为此做出贡献。 单纯地与人交谈、分享知识、提出问题、参加露营或线下见面，并做出贡献。
 
-I want to close with a quote by Margaret Mead (an American anthropologist) that perfectly describes open source contribution to me: "Never doubt that a small group of thoughtful, committed citizens can change the world. Indeed, it is the only thing that ever has." Dr. Mead doesn't say "a small group of code writers or developers." She says a thoughtful, committed group of citizens—citizens with great passion and many different skills. That's what powers open source, and that's what powers Drupal.
+我想引用玛格丽特·米德（美国人类学家）的话来结束对我的开源贡献的完美描述：“永远不要怀疑一小群有思想、有奉献精神的公民可以改变世界。事实上，世界的改变只能依靠这个了。” 米德博士并没有说“一小群代码编写者或开发人员”。 她说，这是一群有思想、有奉献精神的公民——他们有着极大的热情和许多不同的技能。 这就是开源的动力，也是 Drupal 的动力。
 
-Watch the talk below or [on YouTube][6].
+在文章下方观看完整视频或者在 [YouTube 上][6].
 
-![YouTube video player][7]
+![YouTube 视频播放器][7]
 
 --------------------------------------------------------------------------------
 
