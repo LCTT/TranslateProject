@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "chris000132"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15752-1.html"
 
 Linux Mint 的发行周期
 ======
