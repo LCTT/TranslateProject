@@ -67,18 +67,20 @@ Twitter 是个收集和分享技术新闻的绝佳平台。即使营销只是我
 #### 产品经理
 
 I am not a product manager, even though sometimes I wish that the feedback I collect could be turned directly into features. However, I regularly share users' feedback with developers and product management. In internal discussions, I always represent the users' side rather than the easiest way forward for developers or what will generate the most revenue.
+我不是产品经理，尽管有时候我希望自己收集到的反馈可以直接转化为功能，但我定期与开发者和产品经理风向用户反馈。在内部讨论中，我总是代表用户一方，而不是考虑开发者如何用用最简单的方法推进产品，或者如何产生最多收益。
 
-### Why evangelize broadly known and used software?
+### 为什么要传教广为人知、被广泛使用的软件？
 
-Every Linux user knows sudo, and many of them also know syslog-ng. So why evangelize? Well, most people know just the very basics of these applications, which they learned when they started to play with Linux. But neither is a simple utility that has been in maintenance mode for decades; both are living software still under continuous development.
+每个 Linux 用户都知道 sudo，他们中的许多人也知道 syslog-ng。所以我们为什么要传教呢？这是因为许多人只知道这些程序的基础知识，这也是他们刚开始使用 Linux 时学到的。但这两款软件都不是简单的、几十年来处于维护模式的实用程序，两者都是仍在持续开发中的有生命力的程序。
 
-What most people know about syslog-ng is that it collects log messages and saves them to text files. But it has a lot of [other features][12], including parsing messages, enriching messages with geographical information, precise message routing (filtering), and saving messages to databases, Hadoop, or message queues.
+大多数人对 syslog-ng 的了解仅限于它收集日志消息并把消息存储在文本文件中。但 syslog-ng 还有许多 [其他功能][12]，包括解析消息、使用地理信息丰富消息、精确的消息路径（过滤）和把消息存储在数据库、Hadoop 或消息队列中。
 
 Sudo is mostly known as a prefix for administrative commands, but it can do a lot more. It can record sessions that run through it, allowing you to check what your users are doing when they exercise their superpowers through sudo. You can also extend sudo with plugins. [Starting with sudo version 1.9][13], you can even extend sudo in Python, making the process a lot easier.
+sudo  通常被认为是管理员命令的前缀，但它可以做许多其他事情。sudo 可以记录在里面运行的会话，允许你检查用户通过 sudo 使用超级权限做了什么事情。你也可以使用插件扩展 sudo。从 [sudo 的 1.9 版本][13] 开始，你甚至可以用 Python 扩展 sudo，这让过程变得容易得多。
 
-### Conclusion
+### 结论
 
-Being an open source evangelist is a very interesting and fun job, even in the COVID-19 era, which has certainly added difficulties to my work. If you have other questions about the role or have a story about how a technical evangelist or developer advocate has helped you, please share them in the comments.
+即使在 COVID-19 时代，成为一名开源传教士也是很有趣的工作，这确实增加了我的工作难度。如果你对于这个角色有其他问题或者有关于技术传教士或者开发倡导则如何帮助你的故事，请在评论里分享。
 
 --------------------------------------------------------------------------------
 
@@ -86,7 +88,7 @@ via: https://opensource.com/article/21/1/open-source-evangelist
 
 作者：[Peter Czanik][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/rsqrt2b)
+译者：[rsqrt2b](https://github.com/rsqrt2b)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
