@@ -114,7 +114,7 @@ via: https://itsfoss.com/linux-mint-release-cycle/
 
 作者：[Ankush Das][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/chris000132)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
