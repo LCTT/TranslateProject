@@ -7,27 +7,27 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Linux Mint Release Cycle: What You Need to Know
+Linux Mint的发行周期：你需要知道的事情
 ======
-Linux Mint is an Ubuntu-based distribution. You probably already know that.
+Linux Mint是一个基于Ubuntu的发行版。你可能已经知道了。
 
-Ubuntu releases a new version every six months but Linux Mint doesn’t follow the six-monthly release pattern.
+Ubuntu 每六个月发布一个新版本，但 Linux Mint 并不遵循六个月一次的发行模式。
 
-Linux Mint uses the Ubuntu LTS ([long term support][1]) version as its base. An LTS version of Ubuntu is released every two years and hence **you also get a major Mint version every two years** (Mint 19, 20, 21, etc).
+Linux Mint 以 Ubuntu LTS ([long term support，长期支持][1]) 版本作为其基础. Ubuntu 的 LTS 版本每两年发布一次，所以 **你将会每两年得到一个 Mint 的主要发行版本** (比如 Mint 19, 20, 21 等).
 
-Like the Ubuntu LTS versions, a major Linux Mint version is also supported for five years. Although, there are **three point releases in between** (Mint 20.1, 20.2, 20.3).
+与 Ubuntu LTS 版本一样，一个主要的 Linux Mint 版本也被支持五年。虽然在这期间有 **三个小更新版本** (Mint 20.1, 20.2, 20.3).
 
-Compared to Ubuntu, how long does Linux Mint receive updates? When should you expect an upgrade for Linux Mint? Should you upgrade when a new version is available?
+与 Ubuntu 相比，Linux Mint 的更新时间是多久？你应该在什么时候等待 Linux Mint 的升级？当有新版本的时候，你应该升级到新版本吗？
 
-Here, let me highlight all these necessary details regarding the release cycle of Linux Mint.
+在这里，让我强调所有以下这些关于 Linux Mint 的发行周期的必要细节。
 
-### Release Cycle of Linux Mint
+### Linux Mint 的发行周期
 
-Ubuntu releases a long-term support release every two years. A Mint version is followed soon after. In other words, you get a new Mint version every two years.
+Ubuntu 每两年发布一个长期支持版本。之后很快就会有一个 Mint 版本。换句话说，你每两年就会得到一个新的 Mint 发行版。
 
-So, the Linux Mint 20 was released in 2020 based on Ubuntu 20.04, Mint 21 came in 2022 based on Ubuntu 22.04.
+所以，Linux Mint 20 是在 2020 年基于 Ubuntu 20.04 发行的，Mint 21 是在 2022 年基于 Ubuntu 22.04 发行的。
 
-Unlike Ubuntu, there is no strict release schedule for Mint. There is no predefined release date. The new version arrives when it is deemed ready by its developers.
+与 Ubuntu 不同，Mint 没有严格的发行时间表。没有事先确定的发行日期。新版本在其开发者认为准备好的时候就会到来。
 
 #### Point Releases
 
