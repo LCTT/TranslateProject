@@ -95,17 +95,17 @@ Linux Mint 21 → **Ubuntu 22.04 LTS**
 
 每个 Linux Mint 版本，无论是小的还是大的，都有一个代号。通常，它是一个女性的名字，通常源自希腊或拉丁语。
 
-Like Ubuntu, there is a pattern in the codename as well. The codenames are in alphabetically increasing order for the major releases. When it comes to point releases, you will find a new name starting with the same alphabet.
+和 Ubuntu 一样，代号中也有一个模式。主要发行版的代号是按字母顺序递增的。当涉及到小数点版本发布时，你会发现新的名字会以相同的字母开头。
 
-For example, Mint 20 was called **Ulyana**, with 20.1 as **Ulyssa**, 20.2 as **Uma**, and 20.3 **Una**. Similarly, Mint 19 series had codenames starting with T.
+例如，Mint 20 被称为 **Ulyana**, 20.1 为 **Ulyssa**, 20.2 为 **Uma**, 而 20.3 为 **Una**。同样地，Mint 19 系列的代号以 T 开头。
 
-At the time of writing this, Mint 21 (the latest release) codename starts with **V,** and the first release of the 21 series is called **Vanessa**.
+在写这篇文章的时候，Mint 21（最新版本）的代号以 **V** 开头，21系列的第一个版本叫 **Vanessa**。
 
-There will be at least three more minor releases in the Mint 21 series, and they will be released every six months until the next Mint major release in 2024. And they all will have a codename starting with the letter V.
+在 Mint 21 系列中至少还会有三个小版本，它们将每六个月发布一次，直到 2024 年的下一个 Mint 大版本。而它们都将有一个以字母 V 开头的代号。
 
 ### Keep it Minty
 
-I hope this article clears any confusion with Linux Mint upgrades and educates you more about the release and update cycle on Linux Mint.
+我希望这篇文章能消除对 Linux Mint 升级的任何困惑，并让你更多地了解 Linux Mint 的发布和更新周期。
 
 --------------------------------------------------------------------------------
 
