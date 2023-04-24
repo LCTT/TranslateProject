@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/linux-mint-release-cycle/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "chris000132"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
