@@ -9,7 +9,7 @@
 
 Linux Mint的发行周期：你需要知道的事情
 ======
-Linux Mint是一个基于Ubuntu的发行版。你可能已经知道了。
+Linux Mint 是一个基于 Ubuntu 的发行版。你可能已经知道了。
 
 Ubuntu 每六个月发布一个新版本，但 Linux Mint 并不遵循六个月一次的发行模式。
 
