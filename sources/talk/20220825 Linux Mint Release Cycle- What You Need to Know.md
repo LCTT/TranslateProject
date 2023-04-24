@@ -15,7 +15,7 @@ Ubuntu 每六个月发布一个新版本，但 Linux Mint 并不遵循六个月�
 
 Linux Mint 以 Ubuntu LTS ([long term support，长期支持][1]) 版本作为其基础. Ubuntu 的 LTS 版本每两年发布一次，所以 **你将会每两年得到一个 Mint 的主要发行版本** (比如 Mint 19, 20, 21 等).
 
-与 Ubuntu LTS 版本一样，一个主要的 Linux Mint 版本也被支持五年。虽然在这期间有 **三个小更新版本** (Mint 20.1, 20.2, 20.3).
+与 Ubuntu LTS 版本一样，一个主要的 Linux Mint 版本也被支持五年。虽然在这期间有**三个小更新版本** (Mint 20.1, 20.2, 20.3).
 
 与 Ubuntu 相比，Linux Mint 的更新时间是多久？你应该在什么时候等待 Linux Mint 的升级？当有新版本的时候，你应该升级到新版本吗？
 
