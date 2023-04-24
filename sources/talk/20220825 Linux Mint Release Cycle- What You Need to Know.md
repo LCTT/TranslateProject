@@ -29,56 +29,55 @@ Ubuntu 每两年发布一个长期支持版本。之后很快就会有一个 Min
 
 与 Ubuntu 不同，Mint 没有严格的发行时间表。没有事先确定的发行日期。新版本在其开发者认为准备好的时候就会到来。
 
-#### Point Releases
+#### 小数点版本
 
-In between the two (major) version releases of Mint, there are three point releases that arrive at an interval of six months.
+在 Mint 的两个（主要）版本发布之间，有三个小数点发行版，每隔6个月发布一次。
 
-So, Mint 20 (or 20.0) was released in June ’20. Mint 20.1 came in December’20, Mint 20.2 in June’21 and Mint 20.3 in December’21. After that, the Mint team works on developing the next major release.
+即 Mint 20（或 20.0）是在 20 年 6 月发布的。Mint 20.1 在 20 年 12 月，Mint 20.2 在 21 年 6 月，Mint 20.3 在 21 年 12 月。在这之后，Mint 团队致力于开发下一个主要版本。
 
-What do these point releases have? A new version of the desktop environment, containing mostly visual changes in the UI. It may also feature new applications sometimes.
+这些小数点版本会更新什么？一个新版本的桌面环境，主要包含用户图形界面的视觉变化。它有时也可能具有新的应用程序。
 
-The upgrade to the point release is optional. You can choose to stay with 20.1 and not upgrade it to 20.2 and 20.3. This is preferred by people who don’t like frequent (visual) changes to their systems.
+升级到小数点版本版是可选的。你可以选择继续使用 20.1，不升级到 20.2 和 20.3。这是那些不喜欢频繁（在图形界面上）改变他们系统的人的首选。
 
-After the last point release (XX.03), your system will only get security and maintenance updates for installed software. You won’t get new major versions of the desktop environment and some other software like GIMP or LibreOffice.
+在最后一个点发布（XX.03）之后，你的系统将只得到已安装软件的安全和维护更新。你不会得到新的主要版本的桌面环境和其他一些软件的更新，如GIMP或LibreOffice。
 
-#### Support Cycle
+#### 支持周期
 
-Not all Ubuntu-based distributions give you the same update cycle benefit as Canonical’s Ubuntu. Many Ubuntu-based distributions and the [official flavours][2] provide support for up to 3 years.
+并非所有基于 Ubuntu 的发行版都能为您提供与 Canonical 的 Ubuntu 相同的周期性更新优势。 许多基于Ubuntu的发行版和[官方的分支版本][2] 提供了长达3年的支持。
 
-Fortunately, for **Linux Mint**, you get the same update perks as Ubuntu.
+幸运的是，对于 **Linux Mint** 来说，你可以得到和Ubuntu一样的更新福利。
 
-**Each Linux Mint release is supported for five years**. After that, you must upgrade to the next version or install the newer version afresh.
+**每个Linux Mint版本的支持期为5年**，在此之后，你必须升级到下一个版本，或者重新安装较新的版本。
 
-For example, Mint 20 was released in 2020, a few months after Ubuntu 20.04. Ubuntu 20.04 LTS is supported till 2025 and thus Mint 20 series is also supported till 2025.
+例如，Mint 20 是在 2020 年发布的，比 Ubuntu 20.04 晚几个月。Ubuntu 20.04 LTS被支持到 2025 年，因此 Mint 20 系列也被支持到 2025 年。
+一个系列的所有小数点版本都支持到同一日期。Mint 20.1、20.2 和 20.3 都将被支持到 2025 年。
 
-All point releases of a series are supported till the same date. Mint 20.1, 20.2, and 20.3 will all be supported till 2025.
+同样地，Ubuntu 22.04 LTS将被支持到 2027 年 4 月。你可以期待 Linux Mint 21系列（基于 Ubuntu 22.04 ）的更新周期到相同的时间线。
 
-Similarly, Ubuntu 22.04 LTS will be supported until April 2027. You can expect the update cycle for Linux Mint 21 series (based on Ubuntu 22.04) until the same timeline.
+**总结一下:**
 
-**To summarize:**
+* 你每两年得到一个新的 Linux Mint 主要发行版
+* 每个主要发行版的支持周期为五年
+* 每个主要版本（XX版）在下一个主要版本之前都会有三个小数点版本（XX.1、XX.2、XX.3）。
+* 小数点版本（XX.1，XX.2，XX.3）与主要发行版（XX）的支持时间相同。
 
-* You get a new major version of Linux Mint every two years
-* Each major version is supported for five years
-* Each major release (version XX) is followed by three point releases (XX.1, XX.2, XX.3) before the next major release
-* The point releases (XX.1, XX.2, XX.3) are supported till the same time as their major version (XX)
+### 你什么时候应该升级 Linux Mint？
 
-### When Should You Upgrade Linux Mint?
+这完全取决于你，
 
-That totally depends on you.
+每两年会有一个新的主要发行版。你可以选择在那时升级它，或者你可以在整个五年的生命周期内保持你目前的版本。
 
-A new major version comes every two years. If you can choose to upgrade it then or you can stay with your current version for its entire lifecycle of five years.
+除非你想获得最新的功能和改进，你可以选择不把你的 Linux Mint 安装升级到另一个主要发行版。
 
-Unless you want access to the latest features and improvements, you can choose not to upgrade your Linux Mint installation to another major version.
+对于小数点版，你可以选择更新，也可以不更新。比如，20 到 20.1 或 20.1 到 20.2。即使你不使用最新的小数点版，你仍然会得到重要的安全和维护更新。
 
-For point releases, you may or may not choose to update. Like, 20 to 20.1 or 20.1 to 20.2. You will still get important security and maintenance updates even if you are not using the latest point release.
+你可以参考我们的 [Linux Mint 升级指南][3] 以寻求帮助。
 
-You can refer to our [Linux Mint upgrade guide][3] for help.
+### Linux Mint 的版本划分和命名
 
-### Linux Mint Versioning and Naming
+与 Ubuntu 发行版不同，Linux Mint 有一个不同的编号方案。Linux Mint 喜欢在每一个 Ubuntu LTS 版本中提升编号。
 
-Unlike Ubuntu’s flavours, Linux Mint has a different numbering scheme. Linux Mint likes to bump up the number with every Ubuntu LTS release.
-
-In other words:
+换句话说:
 
 Linux Mint 19 → **Ubuntu 18.04 LTS**
 
@@ -86,15 +85,15 @@ Linux Mint 20 → **Ubuntu 20.04 LTS**
 
 Linux Mint 21 → **Ubuntu 22.04 LTS**
 
-So, you should steer clear of the following confusion:
+所以，你应该避开以下的混淆：
 
-*Linux Mint 20 was based on Ubuntu 20.04 does not mean that Linux Mint 21 will be based on Ubuntu 21.04.*
+*Linux Mint 20 基于 Ubuntu 20.04 并不意味着 Linux Mint 21将基于 Ubuntu 21.04。*
 
-Furthermore, every release has **three-point releases**, with minor updates to the core and potential upgrades to some Linux Mint applications.
+此外，每个版本都有 **三个小数点发行版本**, 内核的小更新和一些 Linux Mint 应用程序的潜在升级。
 
-Now, coming to its **naming scheme**:
+现在，来看看它的**命名方案**:
 
-Every Linux Mint release, be it minor or major, has a codename. Usually, it is a female name, normally of Greek or Latin origin.
+每个 Linux Mint 版本，无论是小的还是大的，都有一个代号。通常，它是一个女性的名字，通常源自希腊或拉丁语。
 
 Like Ubuntu, there is a pattern in the codename as well. The codenames are in alphabetically increasing order for the major releases. When it comes to point releases, you will find a new name starting with the same alphabet.
 
