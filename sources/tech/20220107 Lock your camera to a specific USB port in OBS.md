@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/cameras-usb-ports-obs"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "hanszhao80"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -159,7 +159,7 @@ via: https://opensource.com/article/22/1/cameras-usb-ports-obs
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hanszhao80](https://github.com/hanszhao80)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
