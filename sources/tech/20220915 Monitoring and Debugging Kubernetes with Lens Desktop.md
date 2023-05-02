@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/monitoring-and-debugging-kubernetes-with-lens-desktop/"
 [#]: author: "Mitesh Soni https://www.opensourceforu.com/author/mitesh_soni/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "lxbwolf"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
