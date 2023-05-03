@@ -6,35 +6,33 @@
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-
-Edit video on Linux with Kdenlive
+在 Linux 上用 Kdenlive 编辑视频
 ======
-Try your hand at professional video editing with this KDE application.
+
+尝试用这个 KDE 程序做专业的视频编辑。
 ![An old-fashioned video camera][1]
 
-Whether it's due to snow days, a seasonal vacation, or time off for any number of holidays, December is a great time to settle down in front of your computer and get creative. One of my favorite pastimes is cutting video footage together. Sometimes I edit video to tell a story. Other times I edit video to convey a mood or a single idea, and sometimes I do it to provide visuals to music I've either discovered or composed. Maybe it's because I learned to edit film at a school while aiming for a career in the field, or maybe it's just because I like powerful open source tools. Still, my favorite video editing application to this day remains the formidable Kdenlive, a robust and professional editing software providing an intuitive workflow and plenty of effects and transitions.
+无论是雪日、季节性假期，或是任何假期、十二月，都是在你电脑前专心获取创意的好时候。我最喜欢的一种消遣就是剪视频。有时，我为了讲个故事来剪；其他时候，我则是为了表达我的心情、观点、为有启发性或沉着的音乐提供视频。也许这是因为我在学校就为了这一领域的职业学习了剪视频，或就只是因为我喜欢强力的开源工具。至今，我最喜欢的视频剪辑程序是优秀的 Kdenlive，一个提供了直观工作流、足够多的特效和转场的、健壮而专业的剪辑工具。
 
-### Install Kdenlive on Linux
+### 在 Linux 上安装 Kdenlive
 
-Kdenlive is available on most Linux distributions from your package manager. On Fedora, Mageia, and similar distributions:
-
+Kdenlive 在大部分的 Linux 发行版包管可用。在 Fedora、Mageia 或类似的发行版：
 
 ```
 `$ sudo dnf install kdenlive`
 ```
 
-On Elementary, Mint, and other Debian-based distributions:
-
+在 Elementary、Mine 或其他基于 Debian 的发行版：
 
 ```
 `$ sudo apt install kdenlive`
 ```
 
-However, I use Kdenlive as a [Flatpak][2].
+不过，我用 [Flatpak][2] 来安装 Kdenlive。
 
-### How to tell a story with video
+### 如何籍视频讲故事
 
-What does it mean to "edit" video, anyway?
+无论如何，“编辑”视频意味着什么？
 
 Editing footage has a somewhat inflated reputation. Sure, it's the process that enables big blockbuster movies to affect millions of people worldwide, but when you're sitting in front of your laptop, you don't have to think of it that way. Editing a video is, quite simply, removing the "bad" parts of a video until just the "good" stuff remains.
 
