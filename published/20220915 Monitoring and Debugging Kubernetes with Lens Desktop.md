@@ -3,29 +3,32 @@
 [#]: author: "Mitesh Soni https://www.opensourceforu.com/author/mitesh_soni/"
 [#]: collector: "lkxed"
 [#]: translator: "lxbwolf"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15780-1.html"
 
 使用 Lens Desktop 监控和调试 Kubernetes
 ======
-*Lens Desktop 是一个令人兴奋的 Kubernetes 工作平台。它是基于 OpenLens 资源库的一个定制化发行版本。通过本文来了解下 Lens Desktop 能做什么以及它是如何工作的。*
 
-Lens Desktop 是免费的。你可以查看 https://k8slens.dev/pricing.html 来了解更多内容。Lens Desktop 有如下优势：
+![][0]
 
-* 简单高效——你无需学习 kubectl 命令
+> Lens Desktop 是一个令人兴奋的 Kubernetes 工作平台。它是基于 OpenLens 资源库的一个定制化发行版本。通过本文来了解下 Lens Desktop 能做什么以及它是如何工作的。
+
+Lens Desktop 是免费的。你可以查看 https://app.k8slens.dev/subscribe 来了解更多内容。Lens Desktop 有如下优势：
+
+* 简单高效 —— 你无需学习 `kubectl` 命令
 * 可视化已有的 Kubernetes 资源
-* 基于开源构建
-* 可观测性——实时的统计数据、事件和日志流
+* 基于开源代码构建
+* 可观测性 —— 实时的统计数据、事件和日志流
 * 错误和警告可以直接在 Lens 仪表盘上看到
 * 支持 EKS、AKS、GKE、Minikube、Rancher、k0s、k3s、OpenShift
-* 强大的社区支持——共有 450000 用户，在 GitHub 上共获得 17000 星
+* 强大的社区支持 —— 有 450000 用户，在 GitHub 上共获得 17000 星
 
 ### Minikube 安装
 
 Minikube 是一个用于本地运行 Kubernetes 的工具。它运行一个单节点的 Kubernetes 集群，这样就可以在 Kubernetes 上进行日常软件开发的实践工作。
 
-我们将使用 minikube 并验证 Lens 的用法。首先让我们在基于 Windows 的系统上安装 minikube。你也可以把它安装在其他操作系统、虚拟机或笔记本电脑上。
+我们将使用 Minikube 并验证 Lens 的用法。首先让我们在基于 Windows 的系统上安装 Minikube。你也可以把它安装在其他操作系统、虚拟机或笔记本电脑上。
 
 * 2 核以上 CPU
 * 2GB RAM
@@ -33,7 +36,7 @@ Minikube 是一个用于本地运行 Kubernetes 的工具。它运行一个单�
 * 能连接网络
 * 容器或虚拟机管理器，如 Docker、VirtualBox
 
-在终端或命令提示符处，运行 minikube 启动命令。
+在终端或命令提示符处，运行 `minikube start` 命令：
 
 ```
 minikube start --driver=virtualbox
@@ -52,11 +55,11 @@ minikube start --driver=virtualbox
 * Done! kubectl is now configured to use “minikube”
 ```
 
-进入你的虚拟箱，并验证刚安装的 minikube 虚拟机功能正常（图 1）。
+进入你的 VirtualBox，并验证刚安装的 Minikube 虚拟机功能正常（图 1）。
 
 ![Figure 1: Minikube virtual machine in virtual box][1]
 
-使用 *minikube status* 命令，查看状态是否与下面的输出一致
+使用 `minikube status` 命令，查看状态是否与下面的输出一致：
 
 ```
 C:\>minikube status
@@ -68,7 +71,7 @@ apiserver: Running
 kubeconfig: Configured
 ```
 
-然后，使用 *kubectl cluster-info* 命令查看 kubeDNS 详情。
+然后，使用 `kubectl cluster-info` 命令查看 KubeDNS 详情：
 
 ```
 kubectl cluster-info
@@ -76,13 +79,13 @@ Kubernetes master is running at https://192.168.99.103:8443
 KubeDNS is running at https://192.168.99.103:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 
-你可以使用 *kubectl cluster-info dump* 命令来调试和诊断集群问题。
+你可以使用 `kubectl cluster-info dump` 命令来调试和诊断集群问题。
 
-当 minikube 安装完成后，安装 kubectl *[(https://kubernetes.io/docs/tasks/tools/)][2]*。它是一个命令行集群，用于对 Kubernetes 集群和 minikube 执行命令。
+当 Minikube 安装完成后，安装 `kubectl`（[https://kubernetes.io/docs/tasks/tools/][2]）。它是一个命令行集群，用于对 Kubernetes 集群和 Minikube 执行命令。
 
 ![Figure 2: Lens][3]
 
-执行 *kubectl get nodes* 命令获取所有 <ruby>节点<rt>node</rt></ruby> 的详情，在本例中是获取 minikube 的详情。
+执行 `kubectl get nodes` 命令获取所有 <ruby>节点<rt>node</rt></ruby> 的详情，在本例中是获取 Minikube 的详情：
 
 ```
 C:\>kubectl get nodes
@@ -90,7 +93,7 @@ NAME       STATUS   ROLES    AGE     VERSION
 minikube   Ready    master   7m57s   v1.18.3
 ```
 
-使用 *kubectl get all* 命令获取默认命名空间下的所有详情。
+使用 `kubectl get all` 命令获取默认命名空间下的所有详情：
 
 ```
 C:\>kubectl get all
@@ -98,29 +101,29 @@ NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   7m58s
 ```
 
-我们现在已经有一个 minikube 集群，并准备好了 kubectl。下一步是安装和配置 Lens，并用示例应用程序来验证。
+我们现在已经有一个 Minikube 集群，并准备好了 Kubectl。下一步是安装和配置 Lens，并用示例应用程序来验证。
 
-### Lens 安装和配置
+### Lens 的安装和配置
 
-打开 *https://k8slens.dev/*，下载与你的操作系统匹配的安装包。
+打开 https://k8slens.dev/ ，下载与你的操作系统匹配的安装包。
 
-然后，参照屏幕上的教程来安装 Lens，安装完成后打开 Lens。你会发现在目录中有一个 minikube（图 3）。
+然后，参照屏幕上的教程来安装 Lens，安装完成后打开 Lens。你会发现在目录中有一个 `minikube`（图 3）。
 
 ![Figure 3: Lens catalogue][4]
 
-点击 *minikube* 后，你就进入了 minikube 的世界，你会爱上它的。
+点击 “minikube” 后，你就进入了 Minikube 的世界，你会爱上它的。
 
-点击 *<ruby>节点<rt>node</rt></ruby>* 获取有关 `kubectl get nodes` 命令输出的 <ruby>节点<rt>node</rt></ruby> 详情。
+点击 <ruby>节点<rt>node</rt></ruby> 获取有关 `kubectl get nodes` 命令输出的 <ruby>节点<rt>node</rt></ruby> 详情。
 
 现在，你可以使用 Lens 了。
 
 ![Figure 4: Lens cluster][5]
 
-我们现在部署 [https://github.com/GoogleCloudPlatform/microservices-demo][6]，这是一个云原生微服务 demo 应用程序。它有 11 层的微服务应用，是一个基于网络的电子商务应用。
+我们现在部署 [https://github.com/GoogleCloudPlatform/microservices-demo][6]，这是一个云原生微服务演示应用程序。它有 11 层的微服务应用，是一个基于网络的电子商务应用。
 
-下载这个应用程序，把它解压到与 minikube 相同的目录。
+下载这个应用程序，把它解压到与 Minikube 相同的目录。
 
-进入 *release* 目录，执行以下命令。
+进入 `release` 目录，执行以下命令。
 
 ```
 kubectl apply -f kubernetes-manifests.yaml
@@ -151,7 +154,7 @@ deployment.apps/adservice created
 service/adservice created
 ```
 
-安装过程现在应该已经开始了，不过它需要一些时间来反映出我们使用了 kubectl 命令。
+安装过程现在应该已经开始了，不过它需要一些时间来反映出我们使用了 `kubectl` 命令。
 
 ![Figure 5: Lens nodes][7]
 
@@ -172,39 +175,39 @@ redis-cart-57bd646894-v7kfr    0/1   Pending   0         8h
 shippingservice-8685dd9855-pmgjm  1/1  Running  0        8h
 ```
 
-表 1 列出了你可以通过 kubectl 来获取信息的几个命令。
+表 1 列出了你可以通过 `kubectl` 来获取信息的几个命令。
 
 ![Figure 6: Lens pods][8]
 
-| Description | Command | 
+| 描述 | 命令 |
 | :- | :- |
-| List one or more nodes | kubectl get node | 
-| List all resources in the cluster | kubectl get all –all-namespaces | 
-| List one or more deployments | kubectl get deployment | 
-| Display the complete state of one or more deployments | kubectl describe deployment <deployment_name> | 
-| Edit and update one or more deployments on the cluster | kubectl edit deployment <deployment_name> | 
-| Delete deployments | kubectl delete deployment <deployment_name> | 
-| List one or more pods | kubectl get pod | 
-| Delete a pod | kubectl delete pod <pod_name> | 
-| Display the complete state of a pod | kubectl describe pod <pod_name> | 
-| Get a shell to a running single-container pod | kubectl exec -it <pod_name> /bin/bash | 
-| List secrets | kubectl get secrets | 
-| List one or more services | kubectl get services | 
-| Display the complete state of a service | kubectl describe services | 
-| Edit and update one or more services on the cluster | kubectl edit services / kubectl edit deployment <deployment_name> | 
-| List one or more namespaces | kubectl get namespace <namespace_name> | 
-| Print the logs for a pod | kubectl logs <pod_name> | 
-| Print the logs for a specific container in a pod | kubectl logs -c <container_name> <pod_name> |
+| 列出节点 | `kubectl get node` |
+| 列出集群中的所有资源 | `kubectl get all –all-namespaces` |
+| 列出部署 | `kubectl get deployment` |
+| 显示部署的完整状态 | `kubectl describe deployment <deployment_name>` |
+| 修改集群上的部署 | `kubectl edit deployment <deployment_name>` |
+| 删除部署 | `kubectl delete deployment <deployment_name>` |
+| 列出容器荚 | `kubectl get pod` |
+| 删除容器荚 | `kubectl delete pod <pod_name>` |
+| 显示容器荚的完整状态 | `kubectl describe pod <pod_name>` 
+| 在 Shell 中运行一个单容器荚 | `kubectl exec -it <pod_name> /bin/bash` | 
+| 列出机密信息 | `kubectl get secrets` |
+| 列出服务 | `kubectl get services` |
+| 列出服务的完整状态 | `kubectl describe services` |
+| 修改集群中的服务 | `kubectl edit services / kubectl edit deployment <deployment_name>` |
+| 列出命名空间 | `kubectl get namespace <namespace_name>` |
+| 打印容器荚日志 | `kubectl logs <pod_name>` |
+| 打印容器荚中特定容器的日志 | `kubectl logs -c <container_name> <pod_name>` |
 
 Lens 不仅可以帮你获取表 1 中列出的所有信息，它还可以获取指定集群的信息。我们还能用 Lens 来对 Kubernetes 资源进行编辑和删除操作。
 
 ![Figure 7: Lens deployments][9]
 
-我们来看下是如何操作的。在 *<ruby>工作负载<rt>Workloads</rt></ruby>* 部分选择 *<ruby>容器荚<rt>Pods</rt></ruby>*（图 6），我们能通过 Lens 来编辑、删除、查看日志、访问 <ruby>容器荚<rt>Pod</rt></ruby> 的终端，这是不是很酷？
+我们来看下是如何操作的。在 <ruby>工作负载<rt>Workloads</rt></ruby> 部分选择 <ruby>容器荚<rt>Pod</rt></ruby>（图 6），我们能通过 Lens 来编辑、删除、查看日志、访问 <ruby>容器荚<rt>Pod</rt></ruby> 的终端，这是不是很酷？
 
 ![Figure 8: Lens Replicasets][10]
 
-你可以验证 *<ruby>工作负载<rt>Workloads</rt></ruby>* 部分的所有 *<ruby>部署<rt>deployments</rt></ruby>*（图 7），*<ruby>工作负载<rt>Workloads</rt></ruby>* 部分的所有 *<ruby>副本<rt>Replicasets</rt></ruby>* （图 8），*<ruby>配置<rt>Config</rt></ruby>* 部分的所有 *<ruby>密钥<rt>Secrets</rt></ruby>* （图 9），以及 *<ruby>网络<rt>Network</rt></ruby>* 部分的所有 *<ruby>服务<rt>Services</rt></ruby>*  是否都正常（图 10），
+你可以验证 <ruby>工作负载<rt>Workloads</rt></ruby> 区域中所有 <ruby>部署<rt>deployments</rt></ruby>（图 7），<ruby>工作负载<rt>Workloads</rt></ruby> 区域中所有 <ruby>副本<rt>Replicasets</rt></ruby> （图 8），<ruby>配置<rt>Config</rt></ruby> 区域中所有 <ruby>密钥<rt>Secrets</rt></ruby> （图 9），以及 <ruby>网络<rt>Network</rt></ruby> 区域中所有 <ruby>服务<rt>Services</rt></ruby> 是否都正常（图 10），
 
 ![Figure 9: Lens Secrets][11]
 
@@ -214,14 +217,16 @@ Lens 不仅可以帮你获取表 1 中列出的所有信息，它还可以获取
 
 对于配置在不同的云服务商部署的多个集群，我们仍可以用 Lens 来进行观察和故障处理。
 
+*（题图：MJ/069da8c5-9043-46b3-9b14-87a0ffc6bb35）*
+
 --------------------------------------------------------------------------------
 
 via: https://www.opensourceforu.com/2022/09/monitoring-and-debugging-kubernetes-with-lens-desktop/
 
 作者：[Mitesh Soni][a]
 选题：[lkxed][b]
-译者：[lxbwolf](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/lxbwolf)
+译者：[lxbwolf](https://github.com/lxbwolf)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -239,3 +244,4 @@ via: https://www.opensourceforu.com/2022/09/monitoring-and-debugging-kubernetes-
 [10]: https://www.opensourceforu.com/wp-content/uploads/2022/08/Figure-8-Lens-Replicasets.jpg
 [11]: https://www.opensourceforu.com/wp-content/uploads/2022/08/Figure-9-Lens-Secrets.jpg
 [12]: https://www.opensourceforu.com/wp-content/uploads/2022/08/Figure-10-Lens-Services-1.jpg
+[0]: https://img.linux.net.cn/data/attachment/album/202305/04/193543uvvdi14469ngnop4.png
