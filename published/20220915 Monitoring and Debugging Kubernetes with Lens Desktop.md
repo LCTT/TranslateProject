@@ -179,7 +179,7 @@ shippingservice-8685dd9855-pmgjm  1/1  Running  0        8h
 
 ![Figure 6: Lens pods][8]
 
-| Description | Command |
+| 描述 | 命令 |
 | :- | :- |
 | 列出节点 | `kubectl get node` |
 | 列出集群中的所有资源 | `kubectl get all –all-namespaces` |
