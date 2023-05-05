@@ -34,15 +34,15 @@ Kdenlive 在大部分的 Linux 发行版包管可用。在 Fedora、Mageia 或�
 
 无论如何，“编辑”视频意味着什么？
 
-Editing footage has a somewhat inflated reputation. Sure, it's the process that enables big blockbuster movies to affect millions of people worldwide, but when you're sitting in front of your laptop, you don't have to think of it that way. Editing a video is, quite simply, removing the "bad" parts of a video until just the "good" stuff remains.
+视频剪辑有些夸张的误解。当然，这是放个大卫星，在世界范围影响数百万的方法：但是，当你在你的笔记本前坐下时，你不会往那方面想。剪辑视频就是一个十分简单的，移除”坏的“部分，并用好的部分替换的工作。
 
-What makes footage bad or good is entirely up to your own tastes, and it may even change depending on what you're trying to "say" with your creation. If you're editing footage of the wildlife you find in your backyard, you might cut out the parts of the shots that prominently feature your rubbish bins or the shot of you stepping on a rake. What remains is sure to make your backyard look like a magical secret garden filled with hummingbirds, butterflies, a curious rabbit, and a playful dog. On the other hand, leave that "bad" footage in, and you can instead create a comedy about a suburbanite taking the rubbish out, stepping on a rake, frightening all the animals away, and generally making a nuisance of themselves. There's no right or wrong. Whatever you cut, nobody knows ever existed. Whatever you keep tells a story.
+什么使镜头变坏或变好，完全取决于你自己的品味，甚至可能根据你想用你的创作 "说 "的内容而改变。如果你在剪你在后院发现的野生动物的镜头，你可能会剪掉那些突出你的垃圾桶或你踩着耙子的镜头。剩下的部分肯定会使你的后院看起来像一个神奇的秘密花园，里面有蜂鸟、蝴蝶、好奇的兔子和一只俏皮的狗。另一方面，留下这些 "坏 "的镜头，你就可以创造一部喜剧，讲述一个郊区人在清理垃圾时，踩到了耙子上，把所有的动物都吓跑了，总之是在捣乱。这没有对错之分。无论你切掉什么，没有人知道曾经存在过。无论你保留什么，都会有一个故事。
 
-### Importing footage
+### 导入镜头
 
-When you start Kdenlive, you have an empty project. The Kdenlive window consists of a **Project Bin** in the top left corner, an information panel in the center, and a **Project Monitor** in the top right. Along the bottom is the really important part—the **Timeline**. The **Timeline** is where your story gets created. Everything in the **Timeline** at the finish of your project is what your audience sees. That's your movie.
+当你启动 Kdenlive，你会有个空项目。Kdenlive 窗口包括在左上角 **Project Bin**，一个在中间的信息框，以及一个在右上的 **Project Monitor**。在下面的是十分重要的部分——**Timeline**。**Timeline** 是你故事开始创建的地方。在你的项目结束时，**timeline** 中的所有内容都是你的观众所看到的。这就是你的视频。
 
-Before you start building a story in your timeline, you need some footage. Assuming you've taken some footage on a camera or mobile device, you must add clips to the **Project Bin**. Right-click in the empty space of the **Project Bin** panel and select **Add Clip or Folder**.
+在你开始在你的时间轴上构建故事前，你需要一些镜头。我猜你已经从相机或手机上获得了一些镜头，你必须在 **Project Bin** 中增加切片。右键 **Project Bin** 面板的空位置，然后选择 **Add Clip or Folder**。
 
 ![Adding clips in Kdenlive][3]
 
