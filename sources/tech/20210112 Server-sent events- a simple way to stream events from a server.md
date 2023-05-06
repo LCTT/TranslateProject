@@ -7,29 +7,29 @@
 [#]: via: (https://jvns.ca/blog/2021/01/12/day-36--server-sent-events-are-cool--and-a-fun-bug/)
 [#]: author: (Julia Evans https://jvns.ca/)
 
-Server-sent events: a simple way to stream events from a server
+服务器推送事件：一种自服务器流式推送事件的简易方法
 ======
 
-hello! Yesterday I learned about a cool new way of streaming events from a server I hadn’t heard of before: [server-sent events][1]! They seem like a simpler alternative to websockets if you only need to have the server send events.
+哈喽！昨天我见识到了一种我以前从没见过的从服务器推送事件的炫酷方法：[服务器推送事件][1]！如果你只需要让服务器发送事件，相较于 websockets，他们或许是一个更简便的选择。
 
-I’m going to talk about what they’re for, how they work, and a couple of bugs I ran into while using them yesterday.
+我会聊一聊他们的用途、运作原理，以及我昨日在试着运行他们的过程中发现的几个 bug。
 
-### the problem: streaming updates from a server
+### 问题：自服务器传送更新数据
 
-Right now I have a web service that starts virtual machines, and the client polls the server until the virtual machine is up. But I didn’t want to be doing polling.
+现在我有一个启动了虚拟机的网络服务，并且唯有虚拟机启动后用户才能轮询服务器。但我并不想进行轮询。
 
-Instead, I wanted to stream updates from the server. I told Kamal I was going to implement websockets to do this, and he suggested that server-sent events might be a simpler alternative!
+相反，我想流式推送来自服务器的更新数据。我跟 Kamal 说我要用 websockets 来实现它，而他建议实用服务器推送数据不失为一个更简便的选择！
 
-I was like WHAT IS THAT??? It sounded like some weird fancy thing, and I’d never heard of it before. So I looked it up.
+我登时就愣住了——那什么玩意？？？听起来像是些我从来没见过的稀罕玩意儿。于是乎我就查了查。
 
-### server-sent events are just HTTP requests
+### 服务器推送事件就是个 HTTP 请求协议
 
-Here’s how server-sent events work. I was SO DELIGHTED to learn that they’re just HTTP requests.
+下文便是服务器推送事件的运作流程。我 很 高 兴 能了解到他们只是 HTTP 请求协议。
 
-  1. The client makes a GET request to (for example) `https://yoursite.com/events`
-  2. The client sets `Connection: keep-alive` so that we can have a long-lived connection
-  3. The server sets a `Content-Type: text/event-stream` header
-  4. The server starts sending events that look like this:
+  1.客户端提出一个 GET 请求（举个例子）`https://yoursite.com/events`
+  2.客户端设置 `Connection: keep-alive`，这样我们就能有一个长连接
+  3.服务器设置设置一个  `Content-Type: text/event-stream` 响应头 
+  4.服务器开始推送事件，就比如下文这样：
 
 
 
@@ -38,7 +38,7 @@ event: status
 data: one
 ```
 
-For example, here’s what some server-sent events look like when I make a request with curl:
+举个例子，这里是当我借助 curl 发送请求时，一些服务器推送事件的状态：
 
 ```
 $ curl -N 'http://localhost:3000/sessions/15/stream'
@@ -55,15 +55,15 @@ event: elephant
 data: four
 ```
 
-The server can send the events slowly over time, and the client can read them as they arrive. You can also put JSON in the events, like `data: {'name': 'ahmed'}`
+服务器可以根据时间推移缓慢推送事件，并且用户也能够在他们到来时读取它们。你也可以将 JSON 带入到事件当中，就比如 `data: {'name': 'ahmed'}`
 
-The wire protocol is really simple (just set `event:` and `data:` and maybe `id:` and `retry:` if you want), so you don’t need any fancy server libraries to implement server-sent events.
+有线协议真的很简单 (只需要设置 `event:` 和 `data:` 或者如果你愿意，可设置为 `id:` 和 `retry:`)，所以你并不需要任何花里胡哨的服务器库来实现服务器推送事件。
 
-### the Javascript code is also super simple (just use `EventSource`)
+### Javascript 的代码也超级简单 (仅使用 `事件源`)
 
-Here’s what the browser Javascript code to stream server-sent events looks like. (I got this example from the [MDN page on server-sent events][2])
+以下是用于传送服务器推送数据的浏览器上的 javascript 的代码。 (我从 [服务器推送事件的 MND 页面][2] 得到的这个范例)
 
-You can either subscribe to all events, or have different handlers for different types of events. Here I have a handler that just receives events with type `panda` (like our server was sending in the previous section).
+你可以订阅所有事件，也可以为不同类型的事件使用不同的处理程序。 这里我有一个只接受类型为 `panda` 的事件的处理程序 (就像我们的服务器在前一部分中推送的那样)。
 
 ```
 const evtSource = new EventSource("/sessions/15/stream", { withCredentials: true })
@@ -72,35 +72,35 @@ evtSource.addEventListener("panda", function(event) {
 });
 ```
 
-### the client can’t send updates in the middle
+### 客户端在中途不能推送更新数据
 
-Unlike websockets, server-sent events don’t allow a lot of back-and-forth communication. (it’s in the name – the **server** sends all the events). The client makes one request at the beginning, and then the server sends a bunch of responses.
+不同于 websockets，服务器推送事件不允许大量反复的事件交流。（这体现在它的字眼中 —— **服务器** 推送所有事件)。 初始的时候用户创造一个请求，然后服务器发出一连串响应。
 
-### if the HTTP connection ends, it’s automatically restarted
+### 如果 HTTP连接结束，它会自动重连
 
-One big difference between making an HTTP request with `EventSource` and a regular HTTP request is this note from the MDN docs:
+使用 '事件源' 发出的 HTTP 请求和常规 HTTP 请求有一个很大的区别，这里 MDN 文档中对此有所赘述：
 
-> By default, if the connection between the client and server closes, the connection is restarted. The connection is terminated with the .close() method.
+> 默认情况下，如果客户端和服务器之间的连接断开，则连接会重启。使用 .close() 方法来终止连接。
 
-This is pretty weird, and I was really thrown off it by it at first: I opened a connection, I closed it on the server side, and a couple of seconds later the client made another request to my streaming endpoint!
+很奇怪，一开始我真的和它断开了：我打开了一个连接，然后在服务器端将其关闭，然后两秒过后客户端向我的传送终端发送了另一条请求！
 
-I think the idea here is that maybe the connection might get accidentally disconnected before it’s done, so the client automatically reopens it to prevent that.
+我觉得这里可能是因为连接在完成之前意外断开了，所以客户端自动重新打开了它以防止类似情况再发生。
 
-So you have to explicitly close the connection by calling `.close()` if you don’t want the client to keep retrying.
+所以如果你不想让客户端继续重试，你就得通过调用 `.close()` 直截了当地关闭连接。
 
-### there are a few other features
+### 这里还有些其他特性
 
-You can also set `id:` and `retry:` fields in server-sent events. It looks like if you set `id`s on the events the server sends then when reconnecting, the client will send a `Last-Event-ID` header with the last ID it received. Cool!
+你还能在服务器推送事件中设置 `id:` 和 `retry:` 字段。似乎，如果你在服务器推送事件上设置，那么当重新连接时，客户端将发送带有它收到的最后一个id的 `Last-Event-ID` 响应头。酷!
 
-I found the [W3C page on server-sent events][3] to be surprisingly readable.
+我发现 [服务器推送事件的 W3C 页面][3] 可读性意外得好。
 
-### two bugs I ran into while setting up server-sent events
+### 在设置服务器推送事件的时候我遇到了两个 bug 
 
-I ran into a couple of problems using server-sent events with Rails that I thought were kinda interesting. One of them was actually caused by nginx, and the other one was caused by rails.
+我在 Rails 中使用服务器推送事件时遇到了几个问题，我认为这些问题挺有趣的。其中一个缘于 nginx，另一个是由 rails 引起的。
 
-**problem 1: I couldn’t pause in between sending events**
+**问题一：我没法在事件推送的过程中暂停**
 
-I had this weird bug where if I did:
+这个奇怪的 bug 在我做以下操作时出现：
 
 ```
 def handler
@@ -112,21 +112,21 @@ def handler
 end
 ```
 
-It would write the first event, but not the second event. I was SO MYSTIFIED by this and went on a whole digression trying to understand how `sleep` in Ruby works. But Cass (another Recurser) pointed me to a [Stack Overflow question][4] where someone else had the same problem, which contained a surprising-to-me answer!
+它会写入第一个事件，而不是第二个事件。我对此 非 常 困 惑，然后放开脑洞，试着理解 Ruby 中的 `sleep` 是如何运作的。 但是 Cass （另一个 Recurser）将我引领到一个与我有着相同困惑的 [Stack Overflow 问答帖]，而这里包含了让我为之震惊的回答！
 
-It turned out that the problem was that my Rails server was behind nginx, and that nginx seemingly by default uses HTTP/1.0 to make requests to upstreams by default (why? in 2021? really? I’m sure there’s a good reason, probably backwards compatibility or something).
+事实证明，问题出在我的 Rails 服务器这里，它处在 nginx 之后，似乎 nginx 默认使用 HTTP/1.0 向上游服务器发起请求（为啥？都2021年了，还这么干？我相信这其中一定有合乎情理的解释，也许是为了向下兼容之类的）。
 
-So the client (nginx) would just close the connection after the first event sent by the server. I think the reason why it worked if I _didn’t_ pause between sending the 2 events was basically that the server was racing with the client to send the second part of the response before the connection closed, and if I sent it fast enough then the server won the race.
+所以客户端（nginx）会在服务器推送第一个事件之后关闭连接。我觉得如果在我推送第二个事件的过程中 _没有_ 暂停，它继续正常工作，那么就是服务器在连接关闭之前和客户端之间在争速度，争着推送第二部分响应，如果我这边推送速度足够快那就是客户端拔得头筹。
 
-I’m not sure exactly why using HTTP/1.0 made the client close the connection (maybe because the server writes 2 newlines at the end of each event?), but because server-sent events are a pretty new thing it’s not that surprising that they’re not supported by HTTP/1.0 (which is Very Old).
+我不确定为什么使用 HTTP/1.0 会使客户端的连接关闭（可能是因为服务器在每个事件结尾写入了两个换行符？），但因为服务器推送事件是一个比较新的玩意儿，HTTP/1.0 （这种老旧协议）不支持它一点都会不意外。
 
-Setting `proxy_http_version 1.1` fixed that problem. Hooray!
+设置 `proxy_http_version 1.1` 从而解决那个麻烦。 好欸！
 
-**problem 2: events were being buffered**
+**问题二：事件受到缓冲**
 
-Once I sorted that out, I had a second problem. This one was actually super easy to debug because Cass had already suggested [this other stackoverflow answer][5] as a solution to the previous problem, and while that wasn’t what was causing Problem 1, it DID explain Problem 2.
+这个事情解决完，第二个麻烦接踵而至。不过这个问题相较之非常好解决因为 Cass 已经建议将 [stackoverflow 里另一篇帖的回答][5] 作为前一个问题的解决方案，虽然它并没有是导致问题一出现的源头，但它 解 释 了 问题二。
 
-The problem was with this example code:
+问题在本示例代码中：
 
 ```
 def handler
@@ -141,37 +141,37 @@ def handler
 end
 ```
 
-I expected it to return 1 event per second for 10 seconds, but instead it waited 10 seconds and returned 10 events all at once. That’s not how we want streaming to work!
+我本来期望它每秒返回1个事件，持续10秒，但实际上它等了10秒才把10个事件一起返回。这不是我们想要的流式传输方式！
 
-This turned out to because the Rack ETag middleware wanted to calculate an ETag (a hash of the response), and to do that it needed to have the whole response. So I needed to disable ETag generation.
+原来这是因为 Rack ETag 中间件想要计算 ETag（响应的哈希值），为此它需要整个响应为它服务。因此，我需要禁用 ETag 生成。
 
-The Stack Overflow answer recommended disabling the Rack ETag middleware entirely, but I didn’t want to do that so I went and looked at the [linked github issue][6].
+Stack Overflow 的回答建议完全禁用 Rack ETag 中间件，但我不想这样做，于是我去看了 [链接至 Github 上的议题][6]。
 
-That github issue suggested a workaround I could apply to just the streaming endpoint, which was to set the `Last-Modified` header, which apparently bypasses the ETag middleware for some reason.
+那个 github 问题建议我可以针对仅流式传输终端应用一个解决方法，即  `Last-Modified` 响应头，显然，这么做可以绕过 ETag 中间件。
 
-So I set
+所以我设置为：
 
 ```
 headers['Last-Modified'] = Time.now.httpdate
 ```
 
-and it worked!!!
+然后它起作用了!!!
 
-I also turned off buffering in nginx by setting the header `X-Accel-Buffering: no`. I’m not 100% sure I needed to do that but it seems safer.
+我还通过设置响应头 `X-Accel-Buffering: no` 关闭了位于 nginx 中的缓冲区。我并没有百分百确定我要那样做，但这么做似乎更安全。
 
-### stack overflow is amazing
+### stack overflow 里很棒
 
-At first I was really 100% committed to debugging both of those bugs from first principles. Cass (another Recurser) pointed me to those two Stack Overflow threads and at first I was skeptical of the solutions those threads were suggesting (I thought “I’m not using HTTP/1.0! And what does the ETag header have to do with anything??“).
+起初，我全身心致力于从头开始调试这两个 bug。Cass（另一个Recurser）为我指向了那两个 Stack Overflow 帖子，一开始我对那些帖下提出的解决方案持怀疑态度（我想：“我没有使用 HTTP/1.0 啊！ETag 响应头什么玩意，跟这一切有关系吗？？”）。
 
-But it turned out that I _was_ accidentally using HTTP/1.0, and that the Rack ETag middleware _was_ causing me problems.
+但结果证明，我确实无意中使用 _了_ HTTP / 1.0，并且 Rack ETag 中间件确实给我带来了问题。
 
-So maybe the moral of that story is that sometimes computers interact in weird ways, other people have experienced computers interacting in the exact same weird ways in the past, and Stack Overflow sometimes has answers about why :)
+因此，也许这个故事告诉我有时候计算机就是会以奇怪的方式相互作用，其他人在过去也遇到过计算机以完全相同的奇怪方式相互作用的问题，而 Stack Overflow 有时会提供关于为什么会发生这些情况的答案 :)
 
-I do think it’s important to not just randomly try things from Stack Overflow (which nobody was suggesting in this case of course!). For both of these I really had to think about them to understand what was happening and why changing those settings made sense.
+我认为重要的是不要随意从 Stack Overflow 中尝试各种解决方案（当然，在这种情况下不会有人建议这样做！）。对于这两个问题，我确实需要去仔细思考，了解发生了什么，还有为什么更改这些设置会起作用。
 
-### that’s all!
+### 就是这样！
 
-Today I’m going to keep working on implementing server-sent events, because I spent a lot of yesterday being distracted by the above bugs. It’s always such a delight to learn about a new easy-to-use web technology that I’d never heard of.
+今天我要继续着手实现服务器推送事件，因为昨天一整天我都沉浸在上述这些 bug 里。好在我学到了一个以前从未听说过的易学易用的网络技术，心里还是很高心的。
 
 --------------------------------------------------------------------------------
 
