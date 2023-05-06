@@ -48,67 +48,67 @@ Kdenlive 在大部分的 Linux 发行版包管可用。在 Fedora、Mageia 或�
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-### Cutting footage
+### 剪镜头
 
-In Kdenlive, there are lots of ways to make cuts in video footage.
+Kdenlive 中有许多方式来裁剪视频镜头。
 
-#### The three-point edit
+#### 三点编辑
 
-Historically, the official way to make a cut is to perform a "three-point edit." Count the points:
+以前，官方的创建切片的方式是“三点编辑”，包括如下几点：
 
-1\. Open a video clip in Kdenlive's **Clip Monitor** panel, find the point where you wish the video had started, and press **I** on your keyboard to mark _in_.
-2\. Then find the point where you wish the video had stopped and press **O** to mark _out_.
-3\. Drag the video clip from the **Clip Monitor** to a point in the **Timeline** at the bottom of the Kdenlive window.
+1\. 在 **Clip Monitor** 中打开一个视频片段，找到你视频的开始点，然后点键盘上的 **l** 来标记__开始__。
+2\. 然后找你想让视频停下的点，并按**O**来标记__结束__.
+3\. 从 **Clip Monitor** 拖动视频切片到在 Kdenlive 窗口底部的 **Timeline** 上的一点。
 
 ![A three-point edit in progress][5]
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-This method is still important in some settings, but it's a little formal for many users.
+这个方法依然在一些设置中保有重要地位，但对于很多用户来说太“书面化”了。
 
-#### Inline edits
+#### 线内编辑
 
-Another way to make an edit is to drag a clip into Kdenlive's **Timeline** panel and then click and drag the edges of the clip until only the good part remains.
+另一个编辑的方法是拖动切片到 Kdenlive 的 **Timeline** 面板，并拖动切片的边缘，直到只有好的部分保留。
 
 ![Editing in the timeline][6]
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-### The art of the cut-away
+### <ruby><rt>cut-away</rt>离切</ruby>的艺术
 
-Another kind of edit is the _cut-away_. It's an important trick because it not only helps you skip over bad parts of a video clip, but it can add a lot of context for your audience. You've seen lots of cut-aways in movies and on TV, even if you don't realize it.  Every time someone on the screen looks up in surprise, and then you see a shot of what they see, that is a cut-away. When a newscaster references a place in your city, and a shot of that place follows it, that is a cut-away.
+另一种编辑技巧是 _离切_。因为他不只帮助你跳过视频切片中的坏的部分，而且可以为你的观众增加背景，所以这是个重要的技巧。在电影和电视中，你已经见过了许多离切，即使你不理解它。每次一些荧幕上的人看上去正处于惊讶之中，然后你就能看到他们的视角，这就是切。当一个记者报道了你们城市中的一处地方。然后那个地方的镜头跟随其后，这也是离切。
 
-You can do cut-aways in Kdenlive easily because the Kdenlive **Timeline** is layered. There are four "tracks" in the Kdenlive timeline by default—the top two for video and the bottom two for any accompanying audio. When you place video footage on the timeline, the footage on the highest video track takes precedence over footage on a lower track. This means that you can functionally edit out footage on one video track just by placing something better on the track above it.
+你可以轻易的在 Kdenlive 中完成离切操作，因为 Kdenlive **Timeline** 是叠层式的。默认情况下，Kdenlive 中有四个 "tracks"——最上面的两个分给视频，而下面的两个给所有附加的音频。当你在 timeline 上放置视频镜头，放在最高的视频 track 上的优先于放在下面的 track。这意味着你可以函数化的在视频 track 上编辑镜头，只需要通过在较那个 track 更上面的 track 放些更好的东西就行。
 
 ![A cut-away][7]
 
 (Seth Kenlon, [CC BY-SA 4.0][4])
 
-### Export your movie
+### 导出你的电影
 
-When done with all of your edits, you can export your movie so you can post it online for others to see. To do that, click the **Render** button in the toolbar at the top of the Kdenlive window. In the **Rendering** window that appears, select the format compatible with your video hosting service. The WEBM format is pretty universal these days, and in addition to being open source it's also one of the best formats available both for distribution and archival purposes. It's capable of 4K, stereoscopic imagery, a wide color gamut, and much more, and all major browsers play it.
+你的编辑都完成后，你可以导出你的电影，然后来把它贴到线上，让其他人来看。为了那么做，点击在 Kdenlive 窗口顶端工具栏上的 **Render** 按钮。在显现的 **Rendering** 窗口中，选择你视频托管服务支持的格式。WEBMM 格式是近日很普遍的一种格式。另外，为了开源，它也是兼顾发行和存档目的的最好格式中的一个。它能支持 4K、立体影响、广色域，以及更多的特性。所有的主流浏览器都可以播放它。
 
-Rendering can take time, depending on how long your project is, how many edits you've made, and how powerful your computer is.
+Rendering 需要时间，受你的项目长度、你作出了多少编辑、以及你电脑的性能的影响。
 
-### A long-lasting solution
+## 一个长效解答
 
-As I write this, it was exactly ten years ago today that I published an [introductory six-part series on Kdenlive][8] here on Opensource.com. To my own surprise, that means I've been a Kdenlive user now longer than I'd been a user of the proprietary editors I learned in film school. That's some impressive longevity, and I still use it today because it delivers on flexibility and reliability as no other editor does. Heck, the video editor I learned on doesn't even exist, at least not in the same form, anymore (which makes me wish I'd learned to edit on an open source platform!).
+当我写这篇文章的时候，正好是十年前的今天，我在 Opensource.com 上发表了一个 [introductory six-part series on Kdenlive][8] 。令我惊讶的是，这意味着我成为 Kdenlive 用户的时间比我在电影学院学习的专有编辑器的时间还要长。这是一些令人印象深刻的寿命，而且我今天仍然在使用它，因为它的灵活性和可靠性是其他编辑器无法比拟的。糟糕的是，我所学的视频编辑器甚至都不存在了，至少不再以同样的形式存在（这让我希望我在一个开源平台上学习编辑！）。
 
-Kdenlive is a powerful editor with lots of features, but don't let that intimidate you. My introductory series is as relevant and accurate today as it was ten years ago, which in my estimation, is a characteristic of a truly reliable application. Should you choose to explore Kdenlive as an editor, be sure to download our **[cheat sheet][9]**, so you can internalize keyboard shortcuts that reduce clicks and make the editing process seamless.
+Kdenlive 是一个功能强大的编辑器，有很多功能，但不要让这些吓倒你。我的介绍系列在今天和十年前一样相关和准确，在我看来，这是一个真正可靠的应用程序的特征。如果你选择探索 Kdenlive 作为一个编辑器，一定要下载我们的 **[cheat sheet][9]** ，这样你就可以内化键盘快捷键，减少点击次数，使编辑过程无缝进行。
 
-Now go tell your story!
+现在去讲你的故事吧!
 
-GNU/Linux has infamously been wanting for a good, solid, professional-level free video editor for...
+GNU/Linux 一直在寻找一个好的、可靠的、专业级的免费视频编辑器，这已经是众所周知的了。
 
-In the previous article in this series, we reviewed the different methods of importing footage into...
+在本系列的前一篇文章中，我们回顾了将镜头导入到......
 
-It is expected that even a modest video editor will feature a set of basic video transitions. The...
+那预言了即使是一个普通的视频编辑器也会有一套基本的视频转场功能......
 
-Good photography doesn't just happen. Careful attention to lens settings, depth-of-field charts,...
+好的摄影作品并不只是发生。仔细关注镜头设置、景深图、......
 
-Traditionally, the film editing process was regimented and compartmentalized. The assistant editors...
+传统上，电影编辑过程是有条不紊和分门别类的。助理剪辑师们的工作是非常重要的。
 
-Post-production is a long and involved process. As these articles have demonstrated, Kdenlive is...
+后期制作是一个漫长而复杂的过程。正如这些文章所展示的，Kdenlive是......
 
 --------------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ via: https://opensource.com/article/21/12/kdenlive-linux-creative-app
 
 作者：[Seth Kenlon][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[yjacks译者ID](https://github.com/yjacks)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
