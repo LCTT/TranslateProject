@@ -1,5 +1,5 @@
 [#]: collector: (lujun9972)
-[#]: translator: (toknow-gh)
+[#]: translator: ( )
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )

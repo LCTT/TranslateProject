@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/11/06/making-a-dns-query-in-ruby-from-scratch/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "Drwhooooo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
