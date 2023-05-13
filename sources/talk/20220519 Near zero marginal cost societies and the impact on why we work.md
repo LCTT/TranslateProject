@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/open-organization/22/5/near-zero-marginal-cost-societies-and-impact-why-we-work"
 [#]: author: "Ron McFarland https://opensource.com/users/ron-mcfarland"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "CanYellow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
