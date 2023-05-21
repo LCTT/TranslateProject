@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972"
 [#]: translator: "CanYellow"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15832-1.html"
 
 你的第一门编程语言是什么？
 ======
