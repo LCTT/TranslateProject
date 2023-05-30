@@ -1,29 +1,30 @@
 [#]: collector: (lujun9972)
 [#]: translator: (toknow-gh)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-15859-1.html)
 [#]: subject: (Defining boundaries and interfaces in software development)
 [#]: via: (https://opensource.com/article/21/2/boundaries-interfaces)
 [#]: author: (Alex Bunardzic https://opensource.com/users/alex-bunardzic)
 
 ZOMBIES：在软件开发中定义边界和接口（三）
 ======
-丧尸是没有边界感的，需要为你的软件设定限制和期望。
-![Looking at a map for career journey][1]
+
+> 丧尸是没有边界感的，需要为你的软件设定限制和期望。
+
+![][0]
 
 丧尸没有边界感。它们踩倒栅栏，推倒围墙，进入不属于它们的地盘。在前面的文章中，我已经解释了为什么把所有编程问题当作一群丧尸一次性处理是错误的。
 
 ZOMBIES 代表首字母缩写：
 
-**Z** – 最简场景（Zero）
-**O** – 单个元素场景（One）
-**M** – 多个元素场景（Many or more complex）
-**B** – 边界行为（Boundary behaviors）
-**I** – 接口定义（Interface definition）
-**E** – 处理特殊行为（Exercise exceptional behavior）
-**S** – 简单场景用简单的解决方案（Simple scenarios, simple solutions）
-
+- **Z** – 最简场景（Zero）
+- **O** – 单个元素场景（One）
+- **M** – 多个元素场景（Many or more complex）
+- **B** – 边界行为（Boundary behaviors）
+- **I** – 接口定义（Interface definition）
+- **E** – 处理特殊行为（Exercise exceptional behavior）
+- **S** – 简单场景用简单的解决方案（Simple scenarios, simple solutions）
 
 在本系列的前面两篇文章中，我演示了 ZOMBIES 方法的前三部分：最简场景、单元素场景和多元素场景。第一篇文章 [实现了最简场景][2]，它提供了代码中的最简可行路径。第二篇文章中针对单元素场景和多元素场景 [运行测试][3]。在这篇文章中，我将带你了解边界和接口。
 
@@ -34,7 +35,6 @@ ZOMBIES 代表首字母缩写：
 首先思考下面的问题：电子商务的边界是什么？我需要限制购物框的大小吗？（事实上，我不认为这有任何意义。）
 
 目前唯一合理的边界条件是确保购物框里的商品数量不能为负数。将这个限制表示成可运行的期望：
-
 
 ```
 [Fact]
@@ -49,30 +49,27 @@ public void Add1ItemRemoveItemRemoveAgainHas0Items() {
 
 当然这个可运行期望（微测试）不出意料地会失败。想要这个微测试能够通过，最小改动是什么呢？
 
-
 ```
 [Fact]
 public void Add1ItemRemoveItemRemoveAgainHas0Items() {
         var expectedNoOfItems = 0;
-        Hashtable item = [new][4] Hashtable();
+        Hashtable item = new Hashtable();
         shoppingAPI.AddItem(item);
         shoppingAPI.RemoveItem(item);
         var actualNoOfItems = shoppingAPI.RemoveItem(item);
         Assert.Equal(expectedNoOfItems, actualNoOfItems);
 }
 ```
-这个期望测试依赖于 `RemoveItem(item)` 功能。目前的 `shippingAPI` 还不具备该功能，你需要增加该功能。
 
+这个期望测试依赖于 `RemoveItem(item)` 功能。目前的 `shippingAPI` 还不具备该功能，你需要增加该功能。
 
 回到 `app` 文件夹，打开 `IShippingAPI.cs` 文件，新增以下声明：
 
-
 ```
-`int RemoveItem(Hashtable item);`
+int RemoveItem(Hashtable item);
 ```
 
 到 `ShippingAPI.cs` 中实现该功能：
-
 
 ```
 public int RemoveItem(Hashtable item) {
@@ -85,10 +82,7 @@ public int RemoveItem(Hashtable item) {
 
 ![Error][5]
 
-(Alex Bunardzic, [CC BY-SA 4.0][6])
-
 系统在移除一个不在购物框的商品，这导致了系统崩溃。加一点点 <ruby>防御式编程<tr>defensive programming</tr></ruby>：
-
 
 ```
 public int RemoveItem(Hashtable item) {
@@ -115,7 +109,6 @@ public int RemoveItem(Hashtable item) {
 
 第五个测试（伪造版）如下：
 
-
 ```
 [Fact]
 public void Add1ItemPrice10GrandTotal10() {
@@ -124,8 +117,8 @@ public void Add1ItemPrice10GrandTotal10() {
         Assert.Equal(expectedTotal, actualTotal);
 }
 ```
-还是一样的老把戏，通过硬编码一个错误的值让 `Add1ItemPrice10GrandTotal10` 测试失败。当然前三个测试成功通过，但第四个新增的测试失败了：
 
+还是一样的老把戏，通过硬编码一个错误的值让 `Add1ItemPrice10GrandTotal10` 测试失败。当然前三个测试成功通过，但第四个新增的测试失败了：
 
 ```
 A total of 1 test files matched the specified pattern.
@@ -145,30 +138,25 @@ Total tests: 4
 
 将硬编码值换成实际的处理代码。首先，检查接口是否具备计算订单总价的功能。根本没有这种东西。目前为止接口中只声明了三个功能：
 
-
   1. `int NoOfItems();`
   2. `int AddItem(Hashtable item);`
   3. `int RemoveItem(Hashtable item);`
 
-
 它们都不具备计算总价的能力。所以需要声明一个新功能：
 
-
 ```
-`double CalculateGrandTotal();`
+double CalculateGrandTotal();
 ```
 
-这个新功能应该让 `shoppingAPI` 具备计算总价的能力。
-这是通过遍历购物框中的商品并把它们的价格累加起来实现的。
+这个新功能应该让 `shoppingAPI` 具备计算总价的能力。这是通过遍历购物框中的商品并把它们的价格累加起来实现的。
 
 修改第五个测试：
-
 
 ```
 [Fact]
 public void Add1ItemPrice10GrandTotal10() {
         var expectedGrandTotal = 10.00;
-        Hashtable item = [new][4] Hashtable();
+        Hashtable item = new Hashtable();
         item.Add("00000001", 10.00);
         shoppingAPI.AddItem(item);
         var actualGrandTotal = shoppingAPI.CalculateGrandTotal();
@@ -180,15 +168,13 @@ public void Add1ItemPrice10GrandTotal10() {
 
 那么怎么实现这个功能呢？就像以前一样，先写一个假的实现。回到 `ShippingAPI` 类中，实现在接口中声明的 `CalculateGrandTotal()` 方法：
 
-
 ```
 public double CalculateGrandTotal() {
                 return 0.00;
 }
 ```
 
-现在先将返回值硬编码为 0.00，只是为了检验这个测试能否正常运行，并确认它是能够失败的。事实上，它能够运行，并且如预期一样失败。接下来的工作就是正确实现计算商品总价的处理逻辑：
-
+现在先将返回值硬编码为 `0.00`，只是为了检验这个测试能否正常运行，并确认它是能够失败的。事实上，它能够运行，并且如预期一样失败。接下来的工作就是正确实现计算商品总价的处理逻辑：
 
 ```
 public double CalculateGrandTotal() {
@@ -209,10 +195,9 @@ public double CalculateGrandTotal() {
 
 现在是时候进入下一轮迭代了。你已经通过处理最简场景、单元素场景和边界场景迭代地构建了系统，现在需要处理稍复杂的多元素场景了。
 
-快捷提示：由于我们一直在针对单个元素场景、多元素场景和边界行为这三点上对软件进行迭代改进，一些读者可能会认为我们同样应该对接口进行改进。我们稍后就会发现，接口已经完全满足需要了，目前没有新增功能的必要。请记住，应该保持接口的简洁。（盲目地）扩增接口不会带来任何好处，只会引入噪音。我们要遵循 <ruby>奥卡姆剃刀<rt>Occam's Razor</rt></ruby> 原则：如无必要，勿增实体。现在我们已经基本完成了接口功能描述的工作，是时候改进实现了。
+快捷提示：由于我们一直在针对单个元素场景、多元素场景和边界行为这三点上对软件进行迭代改进，一些读者可能会认为我们同样应该对接口进行改进。我们稍后就会发现，接口已经完全满足需要了，目前没有新增功能的必要。请记住，应该保持接口的简洁。（盲目地）扩增接口不会带来任何好处，只会引入噪音。我们要遵循 <ruby>奥卡姆剃刀<rt>Occam's Razor</rt></ruby> 原则：**如无必要，勿增实体。** 现在我们已经基本完成了接口功能描述的工作，是时候改进实现了。
 
 通过上一轮的迭代，系统已经能够处理购物框里有超过一件商品的情况了。现在我么来让系统具备购物框里有超过一件商品时计算总价的能力。首先写可执行期望： 
-
 
 ```
 [Fact]
@@ -227,19 +212,18 @@ public void Add2ItemsGrandTotal30() {
 
 测试确实失败了，现在得想办法让它通过。向购物框添加两件商品，然后调用 `CalculateGrandTotal()` 方法： 
 
-
 ```
 [Fact]
 public void Add2ItemsGrandTotal30() {
-        var expectedGrandTotal = 30.00;
-        Hashtable item = [new][4] Hashtable();
-        item.Add("00000001", 10.00);
-        shoppingAPI.AddItem(item);
-        Hashtable item2 = [new][4] Hashtable();
-        item2.Add("00000002", 20.00);
-        shoppingAPI.AddItem(item2);
-        var actualGrandTotal = shoppingAPI.CalculateGrandTotal();
-        Assert.Equal(expectedGrandTotal, actualGrandTotal);
+	      var expectedGrandTotal = 30.00;
+        Hashtable item = new Hashtable();
+        item.Add("00000001", 10.00);
+        shoppingAPI.AddItem(item);
+        Hashtable item2 = new Hashtable();
+        item2.Add("00000002", 20.00);
+        shoppingAPI.AddItem(item2);
+        var actualGrandTotal = shoppingAPI.CalculateGrandTotal();
+        Assert.Equal(expectedGrandTotal, actualGrandTotal);
 }
 ```
 
@@ -248,7 +232,6 @@ public void Add2ItemsGrandTotal30() {
 ### 设定期望
 
 作为一个认真负责的工程师，你希望确保当用户向购物框添加一些商品然后又移除一些商品后系统仍然能够计算出正确出总价。下面是这个新的期望：
-
 
 ```
 [Fact]
@@ -261,15 +244,14 @@ public void Add2ItemsRemoveFirstItemGrandTotal200() {
 
 这个期望表示将两件商品加入到购物框，然后移除第一件后期望的总价是 ￥200。硬编码行为失败了。现在设计更具体的正面测试样例，然后运行代码：
 
-
 ```
 [Fact]
 public void Add2ItemsRemoveFirstItemGrandTotal200() {
         var expectedGrandTotal = 200.00;
-        Hashtable item = [new][4] Hashtable();
+        Hashtable item = new Hashtable();
         item.Add("00000001", 100.00);
         shoppingAPI.AddItem(item);
-        Hashtable item2 = [new][4] Hashtable();
+        Hashtable item2 = new Hashtable();
         item2.Add("00000002", 200.00);
         shoppingAPI.AddItem(item2);
         shoppingAPI.RemoveItem(item);
@@ -282,7 +264,6 @@ public void Add2ItemsRemoveFirstItemGrandTotal200() {
 
 运行期望测试，系统正确地计算出了总价，满足这个期望测试。现在有七个能顺利通过的测试了。系统运行良好，无异常！
 
-
 ```
 Test Run Successful.
 Total tests: 7
@@ -294,6 +275,7 @@ Total tests: 7
 
 现在你已经学习了 ZOMBIES 方法中的 ZOMBI 部分，下一篇文章将介绍处理特殊行为。到那个时候，你可以试试自己的测试！
 
+*（题图：MJ/c4eb23b5-84aa-4477-a6b9-7d2a6d1aeee4）*
 
 --------------------------------------------------------------------------------
 
@@ -302,15 +284,16 @@ via: https://opensource.com/article/21/2/boundaries-interfaces
 作者：[Alex Bunardzic][a]
 选题：[lujun9972][b]
 译者：[toknow-gh](https://github.com/toknow-gh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://opensource.com/users/alex-bunardzic
 [b]: https://github.com/lujun9972
 [1]: https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/career_journey_road_gps_path_map_520.png?itok=PpL6jJgY (Looking at a map for career journey)
-[2]: https://opensource.com/article/21/1/zombies-zero
-[3]: https://opensource.com/article/21/1/zombies-2-one-many
+[2]: https://linux.cn/article-15808-1.html
+[3]: https://linux.cn/article-15817-1.html
 [4]: http://www.google.com/search?q=new+msdn.microsoft.com
 [5]: https://opensource.com/sites/default/files/uploads/error_0.png (Error)
 [6]: https://creativecommons.org/licenses/by-sa/4.0/
+[0]: https://img.linux.net.cn/data/attachment/album/202305/30/092200y7hzd07eareedegg.jpg
