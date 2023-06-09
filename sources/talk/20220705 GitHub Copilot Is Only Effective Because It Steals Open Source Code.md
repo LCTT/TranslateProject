@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/07/github-copilot-is-only-effective-because-it-steals-open-source-code/"
 [#]: author: "Laveesh Kocher https://www.opensourceforu.com/author/laveesh-kocher/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "yjacks"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
