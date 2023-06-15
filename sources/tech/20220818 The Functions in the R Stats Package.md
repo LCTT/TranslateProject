@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/08/the-functions-in-the-r-stats-package/"
 [#]: author: "Shakthi Kannan https://www.opensourceforu.com/author/shakthi-kannan/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "tanloong"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
