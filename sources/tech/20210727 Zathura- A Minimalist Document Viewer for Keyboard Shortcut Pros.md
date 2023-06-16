@@ -2,7 +2,7 @@
 [#]: via: (https://itsfoss.com/zathura-document-viewer/)
 [#]: author: (Abhishek Prakash https://itsfoss.com/author/abhishek/)
 [#]: collector: (lujun9972)
-[#]: translator: ( )
+[#]: translator: (tanloong)
 [#]: reviewer: ( )
 [#]: publisher: ( )
 [#]: url: ( )
