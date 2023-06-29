@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/a-complete-guide-to-cloud-service-architectures/"
 [#]: author: "Mir H.S. Quadri https://www.opensourceforu.com/author/shah-quadri/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "cool-summer-021"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
