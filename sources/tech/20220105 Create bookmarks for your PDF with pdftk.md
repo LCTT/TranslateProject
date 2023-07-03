@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/pdf-metadata-pdftk"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
