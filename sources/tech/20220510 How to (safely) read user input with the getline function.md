@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/safely-read-user-input-getline"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "MjSeven"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
