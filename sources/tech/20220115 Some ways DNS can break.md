@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2022/01/15/some-ways-dns-can-break/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
