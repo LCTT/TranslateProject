@@ -8,42 +8,64 @@
 [#]: url: " "
 
 Build an open source project using this essential advice
+使用这些必要的建议来构建开源项目
 ======
 Use these steps for a solid foundation for your first—or next—project.
+使用这些步骤来为你的第一个或接下来的项目打下坚实的基础。
 
 [Open source][2] is a flourishing and beneficial ecosystem that publicly solves problems in communities and industries using software developed through a decentralized model and community contributions. Over the years, this ecosystem has grown in number and strength among hobbyists and professionals alike. It's mainstream now—even proprietary companies use open source to build software.
+[开源][2]是一个蓬勃发展且有益的生态系统，它通过分散模式和社区贡献开发的软件公开解决社区和行业问题。
 
 With the ecosystem booming, many developers want to get in and build new open source projects. The question is: How do you achieve that successfully?
+随着这个生态系统的爆炸式发展，许多开发者想要参与并且构建新的开源项目。问题是：你如何成功地完成它？
 
 This article will demystify the lifecycle and structure of open source projects. I want to give you an overview of what goes on inside an open source project and show you how to build a successful and sustainable project based on my personal experience.
+这篇文章将会揭秘开源项目的生命周期与结构。基于我的个人经历，我想要向您概述一下开源项目的内部情况，向您展示一下怎样构建一个成功稳定的项目。
 
 ### A quick introduction to open source
+### 对开源的快速介绍
 
 The [Open Source Initiative][3] (OSI) provides a formal, detailed definition of open source, but Wikipedia provides a nice summary:
+[开放源代码促进会][3]（OSI）提供了开源的正式、详细的定义，但是维基百科提供了一个很好的总结：
 
 > Open source software is computer software that is released under a license in which the copyright holder grants users the rights to use, study, change, and distribute the software and its source code to anyone and for any purpose.
+> 开源软件是根据许可证发布的计算机软件，在许可证中，版权所有者授予使用者使用、研究、更改和向任何人、为了任何目的分发软件和它的源代码的权利。
 
 Open source software is public code, usually on the internet, developed either collaboratively by multiple people or by one person. It's about collaborating with people from different regions, cultures, and technical backgrounds, often working remotely. This is why creating a project that welcomes everyone and enables different people to work together is essential.
+开源软件通常在网络上有公开的代码，它由多人合作或一人开发。这就需要与来自不同地区、不同文化和不同技术背景的人合作，而且往往是远程合作。
 
 ### The anatomy of an open source project
+### 开源项目的剖析
 
 Like the human body, an open source project is made up of several structures that form the entire system. I think of them as two branches: the people (microscopic) and the documents (macroscopic).
+就像人类的身体，一个开源项目由多个结构组成，这些结构构成了整个系统。我认为它们是两个分支：人（微观）和文件（宏观）。
 
 #### Branch one: people
+#### 分支一：人
 
 Generally, an open source project includes the following sets of people:
+通常，一个开源项目包括以下人群：
 
 * Creators: Those who created the project
+* 创始人： 创建项目的人
 * Maintainers: Those who actively manage the entire project
+* 维护者： 积极管理整个项目的人
 * Contributors: Those who contribute to the project (someone like you!)
+* 贡献者： 为项目做贡献的人（像你一样的人！）
 * User: Those who use the project, including developers and nontechnical customers
+* 用户： 使用这个项目的人，包括开发者和非技术客户
 * Working group: A collection of contributors split into domain-specific groups to focus on a discussion or activity around a specific subject area (such as documentation, onboarding, testing, DevOps, code reviews, performance, research, and so on)
+* 工作组： 将贡献者分成特定领域的小组，专注于围绕特定主题领域（如文档、入职、测试、DevOps、代码审查、性能、研究等）的集合。
 * Sponsor: Those who contribute financial support to the project
+* 赞助人： 为项目提供资金支持的人
 
 You need to consider each group in the list above as you prepare to build a new project. What plan do you have for each of them?
+当你准备构建一个新项目时，你需要考虑以上列表中的每一个群组。你对他们每个人有什么计划？
 
 * For maintainers, decide on the criteria you want to use to appoint them. Usually, an active contributor makes the best maintainer.
+* 对于维护者，要确定任用维护者的标准。通常，积极的贡献者就是最爱好的维护者。
 * For users and contributors, you want to prepare solid documentation, an onboarding process, and everything else they need to succeed when working with your project.
+* 对于用户和贡献者，
 * For working groups, decide whether you need them and how your project may be logically split in the future.
 * Finally, for sponsors, you must provide enough data and information about your project to enable them to choose to sponsor you.
 
