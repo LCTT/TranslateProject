@@ -63,20 +63,27 @@ You need to consider each group in the list above as you prepare to build a new 
 当你准备构建一个新项目时，你需要考虑以上列表中的每一个群组。你对他们每个人有什么计划？
 
 * For maintainers, decide on the criteria you want to use to appoint them. Usually, an active contributor makes the best maintainer.
-* 对于维护者，要确定任用维护者的标准。通常，积极的贡献者就是最爱好的维护者。
+* 对于维护者，请确定任用维护者的标准。通常，积极的贡献者就是最爱好的维护者。
 * For users and contributors, you want to prepare solid documentation, an onboarding process, and everything else they need to succeed when working with your project.
-* 对于用户和贡献者，
+* 对于用户和贡献者，你需要准备可靠的文档、入职流程和他们使用你的项目取得成功所需的一切。
 * For working groups, decide whether you need them and how your project may be logically split in the future.
+* 对于工作组，请确定你是否需要它们，以及你的项目将来如何有逻辑地拆分。
 * Finally, for sponsors, you must provide enough data and information about your project to enable them to choose to sponsor you.
+* 最后，对于赞助人，你必须提供足够的数据和有关你项目的信息来使他们会选择赞助你。
 
 You don't need to have all of these figured out at the start of your project. However, it's wise to think about them at the early stages so you can build the right foundations to ensure that future additions stand firm and lead to a successful project.
+你不必在你项目的起始阶段解决上面所有问题。然而，在早期阶段思考它们是很明智的，这样你就能打下正确的基础，确保未来的扩建项目能够站稳脚跟并取得成功。
 
 #### Branch two: documents
+#### 分支二：文件
 
 Open source projects usually include the following documents, usually in plain text or markdown format:
+开源项目通常包括下列文件，通常为纯文本或 markdown 格式
 
 * License: This legal document explains how and to what extent the project can be freely used, modified, and shared. A list of OSI-approved licenses is available on the OSI website. Without an explicit license, your project is not legally open source!
+* 许可证： 本法律文件解释了如何以及在何种程度上可以自由使用、修改和共享本项目。OSI网站上有OSI认可的许可证列表。如果没有明确的许可证，您的项目在法律上就不是开源的！
 * Code of conduct: This document outlines the rules, norms, acceptable practices, and responsibilities of anyone who decides to participate in the project in any way (including what happens when someone violates any of the rules). The [Contributor Covenant][4] is a good example and is open source (licensed under a Creative Commons license).
+* 行为准则： 本文件概述了规则、规范、可接受的做法以及决定以任何方式参与项目的任何人的责任（包括当某人违反任何规则时会发生什么）。
 * README: This file introduces your project to newcomers. On many Git hosting websites, such as GitLab, GitHub, and Codeberg, the README file is displayed under the initial file listing of a repository. It's common to feature documentation here, with links to other necessary documents.
 * Documentation: This is a file or directory containing all documentation resources for the project, including guides, API references, tutorials, and so on.
 * Contributing: Include a document explaining how to contribute to the project, including installation guides, configuration, and so on.
