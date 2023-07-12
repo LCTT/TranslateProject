@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/9/build-open-source-project"
 [#]: author: "Bolaji Ayodeji https://opensource.com/users/bolajiayodeji"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wcjjdlhws"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
