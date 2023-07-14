@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "wcjjdlhws"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15999-1.html"
 
 构建成功的开源项目的重要建议
 ======
