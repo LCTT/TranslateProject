@@ -2,7 +2,7 @@
 [#]: via: "https://www.debugpoint.com/2022/01/kde-connect-guide/"
 [#]: author: "Arindam https://www.debugpoint.com/author/admin1/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "yjacks"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
