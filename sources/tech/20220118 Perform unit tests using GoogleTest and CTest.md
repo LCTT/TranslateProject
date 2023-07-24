@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/1/unit-testing-googletest-ctest"
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
