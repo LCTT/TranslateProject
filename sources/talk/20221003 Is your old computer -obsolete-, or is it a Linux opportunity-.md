@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/10/obsolete-computer-linux-opportunity"
 [#]: author: "Phil Shapiro https://opensource.com/users/pshapiro"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wcjjdlhws"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
