@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/2/setup-ci-pipeline-gitlab"
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
