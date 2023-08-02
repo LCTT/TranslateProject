@@ -4,15 +4,15 @@
 [#]: collector: "lujun9972"
 [#]: translator: "toknow-gh"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16055-1.html"
 
 使用 GoogleTest 和 CTest 进行单元测试
 ======
 
 > 进行单元测试可以提高代码质量，并且它不会打断你的工作流。
 
-![Team checklist and to dos][1]
+![][0]
 
 本文是 [使用 CMake 和 VSCodium 设置一个构建系统][2] 的后续文章。
 
@@ -275,6 +275,8 @@ $ chmod +x pre-commit
 
 本文提到的技术实施简单，并且能够帮你快速发现代码中的问题。做单元测试可以提高代码质量，同时也不会打断你的工作流。GoogleTest 框架提供了丰富的特性以应对各种测试场景，文中我所提到的只是一小部分而已。如果你想进一步了解 GoogleTest，我推荐你阅读 [GoogleTest Primer][20]。
 
+*（题图：MJ/f212ce43-b60b-4005-b70d-8384f2ba5860）*
+
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/22/1/unit-testing-googletest-ctest
@@ -308,3 +310,4 @@ via: https://opensource.com/article/22/1/unit-testing-googletest-ctest
 [18]: https://opensource.com/sites/default/files/cpp_unit_test_git_hook_commit_failed.png (Commit failed)
 [19]: https://opensource.com/sites/default/files/cpp_unit_test_git_hook_commit_succeeded.png (Commit succeeded)
 [20]: https://google.github.io/googletest/primer.html
+[0]: https://img.linux.net.cn/data/attachment/album/202308/02/111508h0848o0oi03nih3p.jpg
