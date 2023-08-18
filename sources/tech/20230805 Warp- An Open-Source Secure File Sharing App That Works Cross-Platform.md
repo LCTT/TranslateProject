@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/warp-file-sharing/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
