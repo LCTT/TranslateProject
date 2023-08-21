@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/transflac-convert-flac-to-lossy-formats/"
 [#]: author: "Gerald B. Cox https://fedoramagazine.org/author/gbcox/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
