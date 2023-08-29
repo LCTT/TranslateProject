@@ -2,7 +2,7 @@
 [#]: via: "https://www.2daygeek.com/find-san-lun-mapping-with-vxvm-disk-veritas-linux/"
 [#]: author: "Prakash Subramanian https://www.2daygeek.com/author/prakash/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
