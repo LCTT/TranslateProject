@@ -7,34 +7,34 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to find SAN LUN Mapped to VxVM Disk in Linux
+如何在 Linux 中查找映射到 VxVM 磁盘的 SAN LUN
 ======
 
-We’ve written several articles in the past to find LUN ID mapped to Block device/disk, but when you’re managing a **[VCS cluster][1]** there are some situations where you might want to map a LUN ID against a VxVM (Veritas Volume Manager ) disk for VxFS file system expansion.
+我们过去写过几篇文章来查找映射到块设备/磁盘的 LUN ID，但是当你管理 **[VCS 集群][1]**时，在某些情况下你可能需要映射 LUN 用于 VxFS 文件系统扩展的 VxVM (Veritas Volume Manager) 磁盘的 ID。
 
-This short article describes how to find the LUN number associated with a VxVM disk in Linux
+这篇短文介绍了如何在 Linux 中查找与 VxVM 磁盘关联的 LUN 号。
 
-**Recommended Read:**
+**推荐阅读：**
 
-  * **[How to Find SAN disk LUN id in Linux][2]**
-  * **[How to map ASM disks to Physical disks in Linux][3]**
-  * **[How to map SAN LUN, Disk and FileSystem in Linux][4]**
-  * **[How to map LUN, Disk, LVM and File System in Linux][5]**
+  * **[如何在 Linux 中查找 SAN 磁盘 LUN id][2]**
+  * **[如何在 Linux 中将 ASM 磁盘映射到物理磁盘][3]**
+  * **[如何在 Linux 中映射 SAN LUN、磁盘和文件系统][4]**
+  * **[如何在 Linux 中映射 LUN、磁盘、LVM 和文件系统][5]**
 
 
 
-### Shell Script to find LUN Number Mapped to VxVM Disk in Linux
+### 在 Linux 中查找映射到 VxVM 磁盘的 LUN 号的 Shell 脚本
 
-This handy shell script helps you to identify which storage LUN associated to which VxVM disk on Linux.
+这个方便的 shell 脚本可帮助你识别哪个存储 LUN 与 Linux 上的哪个 VxVM 磁盘关联。
 
-#### How this script works
+#### 这个脚本是如何工作的
 
-This script follow the below steps to collect and print these information’s.
+该脚本按照以下步骤收集和打印这些信息。
 
-  * It collects the list of active **‘Disk Group’ (DG)** on the system
-  * Find the **‘Device Names’** associated with the respective DGs.
-  * Next, it lists the **‘Block Devices’** mapped with the respective devices.
-  * Finally collects the **LUN IDs** associated with these block devices and prints them all together like DG name, block device name and LUN numbers.
+  * 它收集系统上活动**“磁盘组”(DG)**的列表
+  * 查找与相应 DG 关联的**“设备名称”**。
+  * 接下来，它列出了与各个设备映射的**“块设备”**。
+  * 最后收集与这些块设备关联的 **LUN ID** 并将它们全部打印在一起，如 DG 名称、块设备名称和 LUN 编号。
 
 
 
@@ -64,7 +64,7 @@ This script follow the below steps to collect and print these information’s.
 
 ```
 
-Set an executable permission to shell script file.
+设置shell脚本文件的可执行权限。
 
 ```
 
@@ -72,7 +72,7 @@ Set an executable permission to shell script file.
 
 ```
 
-Finally execute the script to view the results.
+最后执行脚本查看结果。
 
 ```
 
@@ -80,11 +80,11 @@ Finally execute the script to view the results.
 
 ```
 
-Your output will resemble this. However, the DG name, Block devices and LUN would differ from this.
+你的输出将类似于此。但是，DG 名称、块设备和 LUN 会与此不同。
 
 ![][6]
 
-If you would like to run the above script on the fly, use the following one liner script.
+如果你想即时运行上述脚本，请使用下面的单行脚本。
 
 ```
 
@@ -98,11 +98,11 @@ If you would like to run the above script on the fly, use the following one line
 
 ```
 
-##### Wrapping Up
+##### 总结
 
-In this tutorial, we have shown you how to find the LUN number mapped with VxVM (Veritas Volume Manager) disk in Linux.
+在本教程中，我们向你展示了如何在 Linux 中查找与 VxVM (Veritas Volume Manager) 磁盘映射的 LUN 号。
 
-If you have any questions or feedback, feel free to comment below.
+如果你有任何问题或反馈，请随时在下面发表评论。
 
 --------------------------------------------------------------------------------
 
@@ -110,7 +110,7 @@ via: https://www.2daygeek.com/find-san-lun-mapping-with-vxvm-disk-veritas-linux/
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
