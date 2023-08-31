@@ -7,25 +7,23 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to map SAN LUN, Disk and FileSystem in Linux
+如何在 Linux 中映射 SAN LUN、磁盘和文件系统
 ======
 
-For some requirements, you may need to find a block device mapped against a logical unit number (LUNs) and filesystem (FS) for FS expansion or disaster recovery (DR) activity.
+对于某些需求，你可能需要找到映射到逻辑单元号 (LUN) 和文件系统 (FS) 的块设备，以进行文件系统扩展或灾难恢复 (DR) 活动。
 
-Similar activity may happens frequently when you are managing the bigger infrastructure. Let’s say, more than 1000+ servers hosting various applications.
+当你管理更大的基础设施时，类似的活动可能会经常发生。假设有超过 1000 台服务器托管各种应用。
 
-**Refer the following articles similar to this:**
+**参考以下类似文章：**
 
-  * **[How to Find SAN disk LUN id in Linux][1]**
-  * **[How to map ASM disks to Physical disks in Linux][2]**
+  * **[如何在 Linux 中查找 SAN 磁盘 LUN id][1]**
+  * **[如何在 Linux 中将 ASM 磁盘映射到物理磁盘][2]**
 
+在本文中，我们将向你展示如何在 Linux 中映射物理磁盘、存储 LUN 和文件系统 (FS)。
 
+### 将物理磁盘映射到 Linux 中的存储 LUN 和文件系统的 Shell 脚本
 
-In this article, we will show you how to map physical disk, Storage LUN and FileSystem (FS) in Linux.
-
-### Shell Script to map Physical disks to Storage LUNs and FileSystem in Linux
-
-This small shell script helps you to identify which SAN disks are mapped to which Block devices and Filesystem on Linux.
+这个小 shell 脚本可帮助你识别哪些 SAN 磁盘映射到 Linux 上的哪些块设备和文件系统。
 
 ```
 
@@ -42,7 +40,7 @@ This small shell script helps you to identify which SAN disks are mapped to whic
 
 ```
 
-Set an executable permission to ‘block_device_mapping_with_LUN_FS.sh’ file.
+设置 “block_device_mapping_with_LUN_FS.sh” 文件的可执行权限。
 
 ```
 
@@ -50,7 +48,7 @@ Set an executable permission to ‘block_device_mapping_with_LUN_FS.sh’ file.
 
 ```
 
-Finally run the script to view the results.
+最后运行脚本查看结果。
 
 ```
 
@@ -60,9 +58,9 @@ Finally run the script to view the results.
 
 ![][3]
 
-**Make a Note:** In the above output, device sda won’t show any LUN info because it’s a virtual disk added from VMWare end, which doesn’t have any LUN. Other 3 disks are mapped from Storage that’s why we are able to see LUN info.
+**注意：** 在上面的输出中，设备 sda 不会显示任何 LUN 信息，因为它是从 VMWare 端添加的虚拟磁盘，没有任何 LUN。其他 3 个磁盘是从存储映射的，这就是我们能够看到 LUN 信息的原因。
 
-If you would like to run the script on the fly, use the following one liner script.
+如果你想即时运行该脚本，请使用下面的一行脚本。
 
 ```
 
@@ -80,11 +78,11 @@ If you would like to run the script on the fly, use the following one liner scri
 
 ```
 
-##### Wrapping Up
+##### 总结
 
-In this tutorial, we’ve shown you how to check LUN presented from SAN with underlying OS disk and associated Filesystem on Linux.
+在本教程中，我们向你展示了如何在 Linux 上检查 SAN 提供的 LUN 以及底层操作系统磁盘和关联的文件系统。
 
-If you have any questions or feedback, feel free to comment below.
+如果你有任何问题或反馈，请随时在下面发表评论。
 
 --------------------------------------------------------------------------------
 
@@ -92,7 +90,7 @@ via: https://www.2daygeek.com/map-san-lun-physical-disk-filesystem-linux/
 
 作者：[Rasool Cool][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
