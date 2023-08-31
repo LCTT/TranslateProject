@@ -2,7 +2,7 @@
 [#]: via: "https://www.2daygeek.com/map-san-lun-physical-disk-filesystem-lvm-info-linux/"
 [#]: author: "Rasool Cool https://www.2daygeek.com/author/rasool/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
