@@ -7,28 +7,28 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to map LUN, Disk, LVM and FileSystem in Linux
+如何在 Linux 中映射 LUN、磁盘、LVM 和文件系统
 ======
 
-There are situations where you want to map storage LUN (Logical Unit Number), Block Device, LVM (LV & VG names) and File System (FS) information for FS expansion or Disaster Recovery (DR) operation.
+在某些情况下，你需要映射存储 LUN（逻辑单元号）、块设备、LVM（LV 和 VG 名称）和文件系统 (FS) 信息以进行文件系统扩展或灾难恢复 (DR) 操作。
 
-This is a routine activity for most Linux administrators, and we usually use some script that displays the block device mapping against SAN LUN, and then we will manually add the LVM and File System information to complete the operation.
+这是大多数 Linux 管理员的例行活动，我们通常使用一些脚本来显示针对 SAN LUN 的块设备映射，然后我们将手动添加 LVM 和文件系统信息来完成操作。
 
-Going forward, you don’t need to manually intervene on this activity because these information can be mapped by shell script as shown below.
+今后，你无需手动干预此活动，因为这些信息可以通过 shell 脚本进行映射，如下所示。
 
-**Refer the following articles similar to this:**
+**参考以下类似文章：**
 
-  * **[How to Find SAN disk LUN id in Linux][1]**
-  * **[How to map ASM disks to Physical disks in Linux][2]**
-  * **[How to map SAN LUN, Disk and FileSystem in Linux][3]**
+  * **[如何在 Linux 中查找 SAN 磁盘 LUN id][1]**
+  * **[如何在 Linux 中将 ASM 磁盘映射到物理磁盘][2]**
+  * **[如何在 Linux 中映射 SAN LUN、磁盘和文件系统][3]**
 
 
 
-### Shell Script to map LUN, Disk, LVM and FileSystem in Linux
+### 在 Linux 中映射 LUN、磁盘、LVM 和文件系统的 Shell 脚本
 
-This small shell script helps you to identify which SAN disks are mapped to which Block devices, LV, VG and Filesystem on Linux.
+这个 shell 脚本可帮助你识别哪些 SAN 磁盘映射到 Linux 上的哪些块设备、LV、VG 和文件系统。
 
-**Make a Note:** We have excluded **‘sda’** disk because this is Operating System (OS) disk, which has multiple partitions.
+**请注意：** 我们排除了 **“sda”** 磁盘，因为这是操作系统 (OS) 盘，它有多个分区。
 
 ```
 
@@ -47,7 +47,7 @@ This small shell script helps you to identify which SAN disks are mapped to whic
 
 ```
 
-Set an executable permission to **‘block_device_mapping_with_LUN_FS_LVM.sh’** file.
+设置 **“block_device_mapping_with_LUN_FS_LVM.sh”** 文件的可执行权限。
 
 ```
 
@@ -55,7 +55,7 @@ Set an executable permission to **‘block_device_mapping_with_LUN_FS_LVM.sh’*
 
 ```
 
-Finally run the script to view the results.
+最后运行脚本查看结果。
 
 ```
 
@@ -65,9 +65,10 @@ Finally run the script to view the results.
 
 ![][4]
 
-**Make a Note:** In the above output, device **`sdb`** won’t show any LUN info because it’s a virtual disk added from VMWare end, which doesn’t have any LUN. Other 3 disks are mapped from Storage which is why can see LUN info.
 
-If you would like to run the above script on the fly, use the following one liner script.
+**注意：** 在上面的输出中，设备 **`sdb`** 不会显示任何 LUN 信息，因为它是从 VMWare 端添加的虚拟磁盘，没有任何 LUN。其他 3 块磁盘是从存储映射的，这就是为什么可以看到 LUN 信息。
+
+如果你想即时运行上述脚本，请使用下面的一行脚本。
 
 ```
 
@@ -80,11 +81,11 @@ If you would like to run the above script on the fly, use the following one line
 
 ```
 
-##### Wrapping Up
+##### 总结
 
-In this tutorial, we’ve shown you how to check LUN presented from SAN with underlying OS disk, LV Name, VG Name and associated Filesystem on Linux.
+在本教程中，我们向你展示了如何在 Linux 上检查 SAN 提供的 LUN 以及底层操作系统磁盘、LV 名称、VG 名称和关联的文件系统。
 
-If you have any questions or feedback, feel free to comment below.
+如果你有任何问题或反馈，请随时在下面发表评论。
 
 --------------------------------------------------------------------------------
 
@@ -92,7 +93,7 @@ via: https://www.2daygeek.com/map-san-lun-physical-disk-filesystem-lvm-info-linu
 
 作者：[Rasool Cool][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
