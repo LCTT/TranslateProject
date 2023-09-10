@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/26-freedos-commands"
 [#]: author: "Jim Hall https://opensource.com/users/jim-hall"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "robsean"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
