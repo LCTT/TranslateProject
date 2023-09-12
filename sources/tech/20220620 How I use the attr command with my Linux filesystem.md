@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/6/linux-attr-command"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "wznmickey"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
