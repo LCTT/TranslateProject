@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/working-with-btrfs-general-concepts/"
 [#]: author: "Andreas Hartmann https://fedoramagazine.org/author/hartan/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "A2ureStone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
