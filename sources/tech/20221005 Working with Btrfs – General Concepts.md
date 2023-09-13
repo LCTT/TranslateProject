@@ -7,83 +7,82 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Working with Btrfs – General Concepts
+使用 Btrfs – 基础概念
 ======
 ![][1]
+图片来自 [Unsplash][3] 上的 [Heliberto Arias][2] 
 
-Photo by [Heliberto Arias][2] on [Unsplash][3]
+这篇文章是更近一步研究 Btrfs 系列文章中的一篇。Btrfs 是自 Fedora Linux 33 开始 Fedora Workstation 和 Fedora Silverblue 的默认文件系统。
 
-This article is part of a series of articles that takes a closer look at Btrfs. This is  the default filesystem for Fedora Workstation and Fedora Silverblue since Fedora Linux 33.
+### 介绍
 
-### Introduction
+文件系统是现代计算机的基础之一。它是任何操作系统必不可少的一部分，且通常不为人注意。但是，像 Btrfs 这样的现代文件系统提供许多很棒的特性去方便地使用计算机。例如，它可以无感地为你压缩文件，或者为增量备份建立可靠的基础。
 
-Filesystems are one of the foundations of modern computers. They are an essential part of every operating system and they usually work unnoticed. However, modern filesystems such as Btrfs offer many great features that make working with computers more convenient. Next to other things they can, for example, transparently compress your files for you or build a solid foundation for incremental backups.
+这篇文章将带你浏览 Btrfs 文件系统是如何工作的，有什么特性。既不会过多涉及技术细节和底层实现，系列后续的文章会详细介绍一些重要特性。
 
-This article gives you a high-level overview of how the Btrfs filesystem works and some of the features it has. It will not go into much technical detail nor look at the implementation. More detailed explanations of some highlighted features follow in later articles of this series.
+### 什么是文件系统
 
-### What is a filesystem?
+如何你基本了解过文件系统是如何工作的，那么下面的内容对你应该是不陌生的，你可以直接跳到下一节。否则，请先阅读下面对文件系统的简短介绍。
 
-If you’ve heard before how filesystems work on the most basic level, then this isn’t new to you and you can skip to the next section. Otherwise, read ahead for a short introduction into what makes a filesystem in the first place.
+简单来说，文件系统允许你的 PC 去寻找存储在磁盘上的数据。这听起来像是微不足道的工作，但实际上时至今日各种类型的非易失性存储设备（比如 HDDs，SSDs，SD cards，等等）仍然与 1970 年代 PC 被发明之处基本相同：一个（巨大的）存储块集合。
 
-In simple terms, a filesystem allows your PC to find the data that it stores on disk. This sounds like a trivial task, but in essence any type of non-volatile storage device today (such as HDDs, SSDs, SD cards, etc…) is still mostly what it was back in 1970 when PCs were being invented: A (huge) collection of storage blocks.
+块是最小的可寻址存储单元。PC 上的每个文件内容被存储在多个块中。一个块通常是 4096 字节的大小。这取决于你的硬件和在这之上的软件（即文件系统）。
 
-Blocks are the most granular addressable storage unit. Every file on your PC is stored across one or more blocks. A block is typically 4096 bytes in size. This depends on the hardware you have and the software (i.e. the filesystem) on top of it.
+文件系统允许我们从海量的存储块中查找文件的内容。这通过所谓的 *inodes* 去实现的。inode 在特殊格式的存储块里记录文件的信息。这包含文件的大小，哪里去寻找组成文件内容的存储块，访问规则（即谁可读，可写，可执行）等等。
 
-Filesystems allow us to find the contents of our files from the vast amount of available storage blocks. This is done via so-called *inodes*. An inode contains information about a file in a specially formatted storage block. This includes the file’s size, where to find the storage blocks that make up the file contents, its access rules (i.e. who can read, write or execute the file) and much more.
-
-Below is an example of what this looks like:
+下面是 inode 的示意图：
 
 ![A text file “myfile.txt” and a hypothetical example of its representation on disk. All the squares are individual storage blocks.][4]
 
-The structure of an inode has big implications on a filesystem’s capabilities, so it is one of the central datastructures for any file system. For this reason every filesystem has its own inode structure. If you want to know more about this, have a look at the inode structure of the Btrfs filesystem linked below . For a more detailed explanation of what the individual fields mean, you can refer to the inode structure of the ext4 filesystem .
+inode 的结构对文件系统的功能有巨大的影响，因此它是任何文件系统许多重要的数据结构之一。出于这个原因，每个文件系统有各自的inode 结构。如果你想了解更多信息，看看下面链接关于 Btrfs 文件系统 inode 结构的链接。想要知道图上每一项表示什么含义，你可以参考 ext4 文件系统的 inode 结构。
 
-### Copy-on-Write filesystems
+### 写时拷贝文件系统
 
-One of the outstanding features of Btrfs, compared to ext4, for example, is that it is a CoW (Copy-on-Write) filesystem. When a file is changed and written back to disk, it intentionally is not written back to where it was before. Instead, it is copied and stored in an entirely new location on disk. In this sense, it may  be simpler to think of CoW as a kind of “redirection”, because the file write is redirected to different storage blocks.
+比如说，Btrfs 与 ext4 相比杰出的特性之一，Btrfs 是一个写 Cow（Copy-on-Write）文件系统。当一个文件被改变和回写磁盘，它不会写回它原来的地方，而是被复制和存储在磁盘上的新位置。从这个意义上，可以简单地认为 Cow 是一种 ”重定向“，因为文件写入被重定向到不同的存储块上。
 
-This may sound wasteful, but in practice it isn’t. This is because the modified data must be written back to the disk in any case, regardless of how the filesystem works. Btrfs merely makes sure that the data is written to previously unoccupied blocks, so the old data remains intact. The only real drawback is that this behavior can lead to file fragmentation quicker than on other filesystems. In regular desktop usage scenarios it is unlikely you will notice a difference.
+这听起来很浪费，但实际上并不是。这是因为被修改的数据无论如何一定会被写到磁盘上，不管文件系统是如何工作的。Btrfs 仅仅是确保了数据被写入在之前没被占据的块上，所以旧数据保持完整。唯一的缺点就是这种行为会导致文件碎片化比其他文件系统要快。在日常的电脑使用中，你不太可能会注意到这点。
 
-What is the advantage of CoW? In simple terms: a history of the modified and edited files can be kept. Btrfs will keep the references to the old file versions (inodes) somewhere they can be easily accessed. This reference is a *snapshot*: An image of the filesystem state at some point in time. This will be the topic of a separate article in this series, so it will be left at that for now.
+Cow 的优势在哪里？简单的说：文件被修改和编辑的历史被保存了下来。Btrfs 保存文件旧版本的引用（inodes）可以轻易地被访问。这个引用是在某一刻文件系统状态的快照。这将是这系列文章里的单独的一篇，所以暂时留到后面介绍。
 
-Beyond keeping file histories, CoW filesystems are always in a consistent state, even if a previous filesystem transaction (like writing to a file) didn’t complete due to e.g. power loss. That is because filesystem metadata updates are also CoW: The file system itself is never overwritten, so an interruption can’t leave it in a partially written state
+除了保存文件历史，Cow 文件系统永远处于一个一致性的状态，即使之前的文件系统事务（比如写入一个文件）没有完成（例如断电）。这是因为文件系统的元数据更新也是 Cow ：文件系统本身永远不会被覆写，所以中断不会使其处于部分写入的状态。
 
-### Copy-on-Write for files
+### 对文件的写时拷贝
 
-You can think of filenames as pointers to the inodes of the file they belong to. Upon writing to a file, Btrfs creates a copy of the modified file content (the data), along with a new inode (the metadata), and then makes your filename point to this new inode. The old inode remains untouched. Below you see another hypothetical example to illustrate this:
+你可以视文件名为对 inodes 的指针。在写入文件的时候，Btrfs 创建一个被修改文件内容的拷贝，和一个新的 inode (元数据)，然后使你的文件名指向新的 inode ，旧的 inode 保持不变。下面是一个假设示例来阐述这点：
 
 ![Continuation of the example above: 3 more bytes of data were added][5]
 
-Here “myfile.txt” has had three bytes appended. A traditional filesystem would have updated the “Data” block in the middle to contain the new contents. A CoW filesystem keeps the old blocks intact (greyed out) and writes (copies) changed data and metadata somewhere new. It is important to note that only changed data blocks are copied, and not the whole file.
+这里 “myfile.txt“ 增加了三个字节。传统的文件系统会更新中间的 “Data” 块去包含新的内容。Cow 文件系统不会改变旧的数据块（图中灰色），写入（复制）更改的数据和元数据在新的地方。重要的是，只有被改变的数据块被复制，而不是全部文件。
 
-If there are no more unused blocks to write new contents to, Btrfs will reclaim space from data blocks occupied by old file versions (Unless they are part of a snapshot, see later article in this series).
+如果没有空闲的块去写入新内容，Btrfs 将从被旧文件版本占据的数据块中回收空间（除非他们是快照的一部分，本系列后续文章会看到）。
 
-### Copy-on-Write for folders
+### 对目录的写时拷贝
 
-From a filesystem’s point of view, a folder is a special type of file. In contrast to regular files, the filesystem interprets the underlying contents directly. A folder has some metadata associated with it (an inode, as seen for files above) that governs access permissions or modification time. In the simplest case, the data stored in a folder (so called “directory entries”) is a list of references to inodes, where each inode is in turn another file or folder. However, modern filesystems store at least a filename, together with a reference to an inode of the file in question, in a directory entry.
+从文件系统的角度看，目录只是特殊类型的文件。相比于常规的文件，文件系统直接解释数据块的内容。一个目录有自身的元数据（inode，就像上面说的文件一样）去记录访问权限或修改时间。最简单的形式，存在目录里的数据（被叫作目录项）是一个 inode 引用的列表，每个 inode 又是另外的文件或目录。但是，现代文件系统在目录项中存储至少一个文件名和对应的 inode 。
 
-Earlier it was pointed out that writing to a file creates a copy of the previous inode and modifies the contents accordingly. In essence, this yields a new inode that isn’t related to its predecessor. To make the modified file show up in the filesystem,  all the directory entries containing a reference to it are updated as well.
+之前指出写入一个文件会创建之前 inode 的拷贝然后修改对应的内容。从根本上，这产生了一个和之前无关的新的 inode 。为了让被修改的文件对文件系统可见，所有包含这个文件引用的目录项都会被更新。
 
-This is a recursive process! Since a folder is itself a file with an inode, modifying any of its folder entries creates a new inode for the folder file. This recursion occurs all the way up the filesystem tree, until it arrives at the filesystem root.
+这是一个递归的过程！因为一个目录本身是一个带有 inode 的文件。修改目录里的任何一项都会为这个目录文件创建新的 inode 。这会沿着文件系统树递归直到文件系统的根。
 
-As a consequence, as long as a reference is kept to any of the old directories and they are not deleted or overwritten,  the filesystem tree can be traversed in it’s previous state. This, again, is exactly what snapshots do.
+所以，一个引用被保存在任何目录下，只要这些目录都不被删除和覆写，就可以遍历之前旧状态的文件系统树。这就是快照的功能。
 
-### What to expect in future articles
+### 后续文章可以期待的内容
 
-Btrfs is more than just a CoW filesystem. It aims to implement “advanced features while also focusing on fault tolerance, repair and easy administration” (See ). Future articles of this series will have a look at these features in particular:
+Btrfs 不只是一个 Cow 文件系统。它目标是实现高级特性的同时关注容错、修复和易于管理（参见文档）。本系列未来的文章将会专门介绍这些特性。
 
-* Subvolumes – Filetrees within your filetree
-* Snapshots – Going back in time
-* Compression – Transparently saving storage space
-* Qgroups – Limiting your filesystem size
-* RAID – Replace your mdadm configuration
+* 子卷 – 文件系统中的文件系统
+* 快照 – 回到过去
+* 压缩 – 透明节省存储空间
+* 配额组 – 限制文件系统大小
+* RAID – 替代 mdadm 配置
 
-This is by far not an exhaustive list of Btrfs features. If you want the full overview of available features, check out the Wiki  and Docs .
+这远非 Btrfs 特性的详尽列表。如果你想全面地了解可用特性，查看 Wiki 和 Docs 。
 
-### Conclusion
+### 总结
 
-I hope that I managed to whet your appetite for getting to know your PC filesystem. If you have questions so far, please leave a comment about what you come up with so they can be discussed in future articles. In the meantime, feel free to study the linked resources in the text. If you stumble over a Btrfs feature that you find particularly intriguing, please add a comment below, too. If there’s enough interest in a particular topic, maybe I’ll add an article to the series. See you in the next article!
+我希望我已能激起你进一步了解 PC 文件系统的兴趣。如果目前你有任何疑问，请在评论区留言讨论以便在日后文章中探讨，同时，你也可以自行学习文中提供的相关资源。如果你发现 Btrfs 中某项特别有趣的功能，也欢迎在评论区提出。如果某个主题收到足够的关注，我可能会在系列文章中新增相关内容。下一篇文章再见！
 
-### Sources
+### 参考资料
 
 1. [https://btrfs.wiki.kernel.org/index.php/Data_Structures#btrfs_inode_item][6]
 2. [https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout#Inode_Table][7]
@@ -96,7 +95,7 @@ via: https://fedoramagazine.org/working-with-btrfs-general-concepts/
 
 作者：[Andreas Hartmann][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[A2ureStone](https://github.com/A2ureStone)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
