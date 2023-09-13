@@ -10,6 +10,8 @@
 让你的 Windows 系统为虚拟机做好准备
 ======
 
+![][0]
+
 > 以下是确保 Windows 系统已准备好运行虚拟机的必要条件。
 
 在 VirtualBox 中看到了“<ruby>无法打开虚拟机会话<rt>failed to open a session for the virtual machine</rt></ruby>”错误？
@@ -142,3 +144,4 @@ via: https://itsfoss.com/windows-enable-virtualization/
 [10]: https://itsfoss.com/content/images/2023/07/virtualbox-7.png
 [11]: https://www.vmware.com/products/workstation-player.html
 [12]: https://itsfoss.com/virtualization-software-linux/
+[0]: https://img.linux.net.cn/data/attachment/album/202309/13/100649idhbxhxehrqb9ahh.jpg
