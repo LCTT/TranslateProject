@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "A2ureStone"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16189-1.html"
 
 Btrfs 详解：基础概念
 ======
