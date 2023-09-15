@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/virtualbox-access-usb/"
 [#]: author: "Sagar Sharma https://itsfoss.com/author/sagar/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
