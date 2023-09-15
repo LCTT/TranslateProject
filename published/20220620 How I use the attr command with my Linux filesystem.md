@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "wznmickey"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16192-1.html"
 
 在 Linux 文件系统中使用 attr 添加扩展属性
 ======
