@@ -4,8 +4,8 @@
 [#]: collector: "lkxed"
 [#]: translator: "charonxin"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16193-1.html"
 
 使用 R 语言构建一个可交互的 Web 应用
 ======
