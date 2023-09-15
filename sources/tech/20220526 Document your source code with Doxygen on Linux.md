@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/5/document-source-code-doxygen-linux"
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
