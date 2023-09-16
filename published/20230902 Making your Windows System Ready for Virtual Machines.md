@@ -3,28 +3,30 @@
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16186-1.html"
 
 让你的 Windows 系统为虚拟机做好准备
 ======
 
-在 VirtualBox 中看到“**无法打开虚拟机会话**”错误？
+![][0]
+
+> 以下是确保 Windows 系统已准备好运行虚拟机的必要条件。
+
+在 VirtualBox 中看到了“<ruby>无法打开虚拟机会话<rt>failed to open a session for the virtual machine</rt></ruby>”错误？
 
 你的系统上可能没有启用虚拟化。
 
-这是在任何 Windows 支持的系统上创建虚拟机所需执行的几件事之一。
+这是在 Windows 系统上创建虚拟机所需执行的几件事之一。
 
-为了给你一个概述，你需要了解：
+简单来说，你需要了解：
 
-  * **在你的 PC 上启用虚拟化支持**
-  * **使用虚拟机程序创建/管理虚拟机**
-  * **确保某些系统资源要求以无缝使用虚拟机**
+  * 在你的 PC 上启用虚拟化支持
+  * 使用虚拟机程序创建/管理虚拟机
+  * 确保某些系统资源要求以无缝使用虚拟机
 
-
-
-这是第一件事：
+下面是第一件事：
 
 ### 在 Windows PC 上启用虚拟化
 
@@ -40,13 +42,11 @@
 
 ![][2]
 
-  1. 前往 UEFI 固件设置（或 BIOS 菜单）。你通常可以通过按“**Del**”按钮或**F1、F2、F10或F12**来访问它。
-  2. 根据主板制造商的不同，用户界面会有所不同。但是，在大多数情况下，你必须进入到其中的“**高级**”选项，并访问“**CPU 配置**”设置。
-  3. 在 CPU 配置中，你必须启用 “**Intel (VMX) Virtualization Technology**” 或 “**SVM Mode**”（适用于 AMD 处理器）。
+  1. 前往 UEFI 固件设置（或 BIOS 菜单）。你通常可以通过按 `Del` 按钮或 `F1`、`F2`、`F10` 或 `F12` 来访问它。
+  2. 根据主板制造商的不同，用户界面会有所不同。但是，在大多数情况下，你必须进入到其中的“<ruby>高级<rt>Advance</rt></ruby>”选项，并访问“<ruby>CPU 配置<rt>CPU Configuration</rt></ruby>”设置。
+  3. 在 CPU 配置中，你必须启用 “Intel (VMX) Virtualization Technology” 或 “SVM Mode”（适用于 AMD 处理器）。
 
-
-
-下一步是什么？ 考虑到你已经启用了虚拟化支持，你需要使用[虚拟化程序][3]来帮助你完成工作。
+下一步是什么？ 考虑到你已经启用了虚拟化支持，你需要使用 [虚拟化程序][3] 来帮助你完成工作。
 
 ### 使用虚拟化程序
 
@@ -56,17 +56,15 @@
 
 我们不会详细介绍如何使用 Hyper-V，但为了节省你一些时间，你可以按照以下步骤启用它，然后按照其[文档][4]使用它。
 
-📋
-
-Hyper-V 不适用于 Windows 10/11 家庭版。
+> 📋 Hyper-V 不适用于 Windows 10/11 家庭版。
 
 考虑到你的系统上安装了 Windows 专业版/教育版/企业版，可以通过**控制面板**或使用 **PowerShell** 轻松启用它。
 
 ![][5]
 
-我更喜欢控制面板，只需在搜索栏中搜索 “Windows 功能”或通过**控制面板 → 程序 → 打开或关闭 Windows 功能**打开。
+我更喜欢控制面板，只需在搜索栏中搜索 “Windows 功能”或通过 “控制面板 → 程序 → 打开或关闭 Windows 功能” 打开。
 
-接下来，单击 **“Hyper-V”** 并点击 **“OK”**。就是这样。
+接下来，单击 “Hyper-V” 并点击 “OK”。就是这样。
 
 ![][6]
 
@@ -92,7 +90,7 @@ Hyper-V 不适用于 Windows 10/11 家庭版。
 
 想了解这些程序吗？你可以查看 Linux 下的一些可用选项，了解有哪些解决方案：
 
-![][12]
+> **[9 个最佳虚拟化软件][12]**
 
 ### 检查系统资源和要求
 
@@ -103,11 +101,9 @@ Hyper-V 不适用于 Windows 10/11 家庭版。
   * 确保你的系统至少有 4 GB 内存（越多越好）
   * 双核或以上 64 位处理器
 
-
-
 如果你不知道，即使虚拟机是孤立的机器，也会占用你系统的资源。大多数最低规格建议 4 GB RAM，但**我建议使用 8 GB**。
 
-如果你想要**运行两个虚拟机**，你可能需要在 Windows 上拥有**超过 8GB 的 RAM**。
+如果你想要**运行两个虚拟机**，你可能需要在 Windows 上拥有**超过 8GB 的内存**。
 
 除了内存，你应该有一个**多核**处理器。这样，一些内核可以自由地让你在主机上做其他事情，而另一些内核则用于处理虚拟机。
 
@@ -117,11 +113,11 @@ Hyper-V 不适用于 Windows 10/11 家庭版。
 
 在某些类型的虚拟磁盘中，它保留你指定的整个空间。因此，执行此操作时，请在启动之前检查可用磁盘空间。通常最好选择一个未安装 Windows 系统的单独驱动器。
 
-**如果你遵循了上述所有提示，你的 Windows 系统就可以运行和管理虚拟机了。现在，你可以[**在 Windows 的虚拟机中轻松安装 Linux**][9]**。
+**如果你遵循了上述所有提示，你的 Windows 系统就可以运行和管理虚拟机了。现在，你可以 [在 Windows 的虚拟机中轻松地安装 Linux][9]**。
 
-![][12]
+💬 那么，你喜欢用什么方式来处理虚拟机？请在下面的评论中告诉我们你的想法。
 
-💬 _那么，你喜欢用什么方式来处理虚拟机？请在下面的评论中告诉我们你的想法。_
+*（题图：MJ/c1690724-a797-442b-8fb5-b6d41ef0c45c）*
 
 --------------------------------------------------------------------------------
 
@@ -130,7 +126,7 @@ via: https://itsfoss.com/windows-enable-virtualization/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -147,4 +143,5 @@ via: https://itsfoss.com/windows-enable-virtualization/
 [9]: https://itsfoss.com/install-linux-in-virtualbox/
 [10]: https://itsfoss.com/content/images/2023/07/virtualbox-7.png
 [11]: https://www.vmware.com/products/workstation-player.html
-[12]: https://itsfoss.com/content/images/size/w256h256/2022/12/android-chrome-192x192.png
+[12]: https://itsfoss.com/virtualization-software-linux/
+[0]: https://img.linux.net.cn/data/attachment/album/202309/13/100649idhbxhxehrqb9ahh.jpg
