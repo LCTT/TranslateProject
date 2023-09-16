@@ -3,16 +3,18 @@
 [#]: author: "Will Kelly https://opensource.com/users/willkelly"
 [#]: collector: "lujun9972"
 [#]: translator: "toknow-gh"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16196-1.html"
 
 DevOps 文档成熟度的四个层次
 ====== 
-提升 DevOps 文档成熟度的过程跟达到 DevOps 或 DevSecOps 成熟化的历程是类似的。
-![Green graph of measurements][1]
 
-为了能在软件迭代交付周期内按时交付优质的文档，DevOps 和 DevSecOps 的文档实践也需要是敏捷的。这与实现 DevOps 类似，只是更偏向自动化和敏捷的内容处理方法。如果文档现在才进入组织的 DevOps 讨论，那么是时候让文档实践追上 DevOps 的步伐了。
+![][0]
+
+> 提升 DevOps 文档成熟度的过程与达到 DevOps 或 DevSecOps 成熟化的历程是类似的。
+
+为了能在软件迭代交付周期内按时交付优质的文档，DevOps 和 DevSecOps 的文档实践也需要是敏捷的。这与实现 DevOps 类似，只是更偏向自动化和敏捷的内容处理方法。如果文档现在才进入你的机构的 DevOps 讨论，那么是时候让文档实践追上 DevOps 的步伐了。
 
 下面是 DevOps 文档成熟度的四个层次：
 
@@ -29,7 +31,7 @@ DevOps 文档成熟度的四个层次
   * 事后才雇佣技术写作人员
   * 技术写作的优先级与开发团队的实际情况不匹配
 
-这个阶段，另一个在人员配置上的挑战是“界定工作完成”。刚接触敏捷实践的技术写作可能难以适应 CI/CD 工具链和流程。
+这个阶段，另一个在人员配置上的挑战是如何“界定工作完成”。刚接触敏捷实践的技术写作可能难以适应 CI/CD 工具链和流程。
 
 #### 文档工具和流程
 
@@ -52,8 +54,6 @@ DevOps 文档成熟度的第二层是实验/试验阶段。这个阶段是 DevOp
  1. 有远见的技术写作为了更好地完成工作，用自己的时间来实验更敏捷的工具。并且向领导层提出更敏捷的文档编制过程的想法。
  2. DevOps 负责人或工程师试用 Hugo 和 Jekyll 等工具，并将这些工具集成到 CI/CD 流水线中。然后 DevOps 小组教授技术写作如何使用它们。
  3. 团队引入了第三方承包商或顾问，他们在 DevOps 文档工具方面具有专业知识，并且了解文档工具适合嵌入到 CI/CD 工具链和 DevOps 生命周期的位置。
-  
-
 
 #### 文档工具和实践
 
@@ -76,7 +76,6 @@ DevOps 文档成熟度的第三层（部分自动化和扩展）就是“落地�
 #### 人员
 
 在这个成熟度，技术写作和 DevOps 团队开始更紧密的协作。招聘新的技术写作主要关注具有 DevOps 环境经验的人选。
- 
 
 #### 工具和文档实践
 
@@ -87,17 +86,15 @@ DevOps 文档成熟度的第三层（部分自动化和扩展）就是“落地�
   * Hugo
   * Jekyll
 
-
 在这个成熟度，技术写作也负责调整遗留的文档实践。
 
 #### 成果
 
 DevOps 文档工具和实践超越试点项目，成为标准实践。在这个成熟度，随着新团队使用新的文档工具和流程，持续学习是必不可少的。
 
-
 ### 第四层：完全采用 
  
-在最高一级的 DevOps 文档成熟度（完全采用且自动化）所有工具、实践和流程都是为了支持将文档成为项目中的高优先级事项。要达到这一成熟度，需要不断实验、迭代和团队协作。 
+在最高一级的 DevOps 文档成熟度（完全采用且自动化）所有工具、实践和流程已经到位，以支持将文档为项目中的高优先级事项。要达到这一成熟度，需要不断实验、迭代和团队协作。 
 
 #### 人员
  
@@ -117,6 +114,8 @@ DevOps 文档工具和实践超越试点项目，成为标准实践。在这个�
 
 提升 DevOps 文档成熟度的过程跟达到 DevOps 或 DevSecOps 成熟化的历程是类似的。我希望行业能够将更灵活的文档实践和工具作为公司推进 DevOps 进程中的一个部分。提高 DevOps 文档成熟度应该作整体 DevOps 成熟化甚至 [DevOps 到 DevSecOps 转型][7]的一部分。 
 
+*（题图：MJ/154429b7-bdfc-4b34-9a81-55d9fe33ab07）*
+
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/22/2/devops-documentation-maturity
@@ -124,7 +123,7 @@ via: https://opensource.com/article/22/2/devops-documentation-maturity
 作者：[Will Kelly][a]
 选题：[lujun9972][b]
 译者：[toknow-gh](https://github.com/toknow-gh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -137,3 +136,4 @@ via: https://opensource.com/article/22/2/devops-documentation-maturity
 [5]: http://doctoolchain.org/
 [6]: https://opensource.com/article/17/9/docbook
 [7]: https://opensource.com/article/21/10/devops-to-devsecops
+[0]: https://img.linux.net.cn/data/attachment/album/202309/16/135943xon0788ou667jujw.jpg
