@@ -60,7 +60,7 @@ RustRover 还**具有一些简洁的实时协作功能**，例如**支持 [VCS][
 
 **想要试一试么？**
 
-RustRover 已提供 **tar.gz 包**、**JetBrains Toolbox App** 和 ** Ubuntu Snap 包** 提供。你可以从 [官方网站][14] 获取你选择的包。
+RustRover 已提供 **tar.gz 包**、**JetBrains Toolbox App** 和 **Ubuntu Snap 包** 提供。你可以从 [官方网站][14] 获取你选择的包。
 
 > **[RustRover][14]**
 
