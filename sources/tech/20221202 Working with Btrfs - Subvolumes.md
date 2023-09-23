@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/working-with-btrfs-subvolumes/"
 [#]: author: "Andreas Hartmann https://fedoramagazine.org/author/hartan/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "A2ureStone"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
