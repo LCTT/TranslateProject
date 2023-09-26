@@ -3,17 +3,16 @@
 [#]: author: "Stephan Avenwedde https://opensource.com/users/hansic99"
 [#]: collector: "lkxed"
 [#]: translator: "toknow-gh"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16227-1.html"
 
 在 Linux 上用 Doxygen 生成源代码文档
 ======
-Doxygen 是一款广泛使用的开源文档生成工具，它通过代码注释来生成文档。
 
-![5 trends in open source documentation][1]
+![][0]
 
-Image by: Internet Archive Book Images. Modified by Opensource.com. CC BY-SA 4.0
+> Doxygen 是一款广泛使用的开源文档生成工具，它通过代码注释来生成文档。
 
 在试着熟悉别人的代码时，你总希望他们留下的代码注释能对你理解代码有所帮助。同理，无论为了自己还是其他人，编写代码时写注释是好习惯。所有编程语言都有专门的注释语法，注释可以是一个单词、一行文字、甚至是一整段话。编译器或解释器处理源代码时会忽略注释。
 
@@ -46,8 +45,7 @@ sudo apt-get install doxygen
 ```
 doxygen -g
 ```
-参数 `-g` 表示生成（generate）。现在应该会出现一个名为 `Doxyfile` 的新文件。通过命令调用 
-Doxygen：
+参数 `-g` 表示 <ruby>生成<rt>generate</rt></ruby>。现在应该会出现一个名为 `Doxyfile` 的新文件。通过命令调用 Doxygen：
 
 ```
 doxygen
@@ -55,8 +53,8 @@ doxygen
 
 现在应该能会有两个新文件夹：
 
-* html/
-* latex/
+* `html/`
+* `latex/`
 
 默认情况下，Doxygen 会同时输出 LaTeX 和 HTML 格式的文档。本文主要关注 HTML 文档。你可以在 Doxygen 官方文档的**入门**小节中找到关于 LaTeX 格式输出的更多信息。
 
@@ -185,7 +183,7 @@ Doxygen 注释分两个部分：简要描述和详细描述。它们都是可选
 
 #### 分组
 
-ByteStream 类<ruby>重载<rt>overload</rt></ruby> 了的读写流操作符 （`<<` 和 `>>`）。在类的概览中可以发现操作符被分为读和写两组。分组是在 ByteStream 的头文件中定义的。
+`ByteStream` 类<ruby>重载<rt>overload</rt></ruby> 了的读写流操作符 （`<<` 和 `>>`）。在类的概览中可以发现操作符被分为读和写两组。分组是在 `ByteStream` 的头文件中定义的。
 
 分组的语法以标记 `@{` 开始，以 `}@` 结束。在标记范围中的内容都属于这个分组。在 `ByteStream.h` 中的实现如下：
 
@@ -221,6 +219,7 @@ Doxygen 是在 1997 年首次发布的。尽管有些年头了，现在仍然有
 
 注意：Doxygen 输出的 HTML 文档风格类似于九十年代网页。并且它也难以描绘元编程和模板编程架构。在这些情况下，你应该选择 [Sphinx][17] 而不是 Doxygen。
 
+*（题图：MJ/4d354094-397e-4ac5-a80d-25b9c736ede5）*
 
 --------------------------------------------------------------------------------
 
@@ -229,7 +228,7 @@ via: https://opensource.com/article/22/5/document-source-code-doxygen-linux
 作者：[Stephan Avenwedde][a]
 选题：[lkxed][b]
 译者：[toknow-gh](https://github.com/toknow-gh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -253,3 +252,4 @@ via: https://opensource.com/article/22/5/document-source-code-doxygen-linux
 [16]: https://www.drupal.org/docs/develop/standards/api-documentation-and-comment-standards
 [17]: https://opensource.com/article/18/11/building-custom-workflows-sphinx
 [18]: https://opensource.com/downloads/doxygen-cheat-sheet
+[0]: https://img.linux.net.cn/data/attachment/album/202309/26/103240lkeeijekke3egs5n.jpg
