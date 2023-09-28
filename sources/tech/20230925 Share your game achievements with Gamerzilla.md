@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/share-your-game-achievements-with-gamerzilla/"
 [#]: author: "Dennis Payne https://fedoramagazine.org/author/dulsi/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
