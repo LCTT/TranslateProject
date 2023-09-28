@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/lmde-6/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "GenshinMinecraft"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
