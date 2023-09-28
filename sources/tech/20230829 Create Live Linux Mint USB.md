@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/linux-mint-live-usb/"
 [#]: author: "Ankush Das https://itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "GenshinMinecraft"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
