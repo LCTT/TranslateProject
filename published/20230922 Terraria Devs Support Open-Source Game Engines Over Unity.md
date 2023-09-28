@@ -3,16 +3,20 @@
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "GenshinMinecraft"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16236-1.html"
 
-《泰拉瑞亚》开发人员支持开源游戏引擎而非 Unity
+《泰拉瑞亚》开发商支持开源游戏引擎而非 Unity
 ======
-开源游戏引擎万岁！
-继 Unity 掠夺性的 “[收费政策][2]” 定价模式之后，《泰拉瑞亚》的开发商 [Re-Logic][1] 承诺将会支持两个新兴的开源游戏引擎。
 
-尽管 Unity 的定价模式[已经被调整][3]，但对玩家以及开发者的信任已经被打破。许多游戏开发商不得不采取预防措施来限制成本。
+![][0]
+
+> 开源游戏引擎万岁！
+
+继 Unity 制定了会在游戏安装或启动时向开发者收取费用的掠夺性 “[运行时费用][2]” 定价模式之后，《<ruby>泰拉瑞亚<rt>Terraria</rt></ruby>》的开发商 [Re-Logic][1] 承诺将会支持两个新兴的开源游戏引擎。
+
+尽管 Unity 的定价模式 [已进行了调整][3]，但对玩家以及开发者的信任已经被打破。许多游戏开发商不得不采取预防措施来限制成本。
 
 那么，让我们看看 Re-Logic 都承诺了些什么。
 
@@ -22,23 +26,23 @@
 
 第一，他们**谴责 Unity 提出的定价模式改革**，提到了以下几点：
 
-> 我们明确谴责并拒绝接受 Unity 最近提出的服务条款/收费变更以及推出这些变更的暗箱操作方式。
-
+> 我们明确谴责并拒绝接受 Unity 最近提出的服务条款/收费变更，以及推出这些变更的暗箱操作方式。
+>
 > 最令人痛心的是，Unity 多年来培养的信任被轻描淡写地抛到了一边，成为压榨发行商、工作室和玩家的又一种方式。
 
-他们还补充说，**一份简单的公开声明**不足以挽回这样的事情，信任已经被打破，不可能轻易修复。
+他们还补充说，**一份简单的公开声明**不足以挽回这样的事情，被破坏的信任，不可能轻易修复。
 
 不过，该公告的**第二项**主要亮点是他们**承诺向开源游戏引擎 [Godot][4] 和 [FNA][5]** 各捐赠 100,000 美元。
 
-而且，这还不够，他们还决定**赞助这些项目**，每个项目的赞助费为每月 1000 美元，要求很简单：
+而且，这还不够，他们还决定**赞助这些项目**，每个项目的赞助费为每月 1000 美元，只有一个很简单的要求：
 
 > 作为回报，我们所要求的只是他们保持良好的品格，继续尽其所能为世界各地的开发人员提供功能强大、易于使用的引擎。
 
-这是一个很好的回报！ 😄
+这是一个很好的回报要求！ 😄
 
 尽管《泰拉瑞亚》的手机和游戏机移植版使用的是 Unity（由第三方维护），但这并不妨碍他们对这种情况发表意见。
 
-您可以在最初的 [公告推文][6] 上关注围绕此事发表的讨论，了解用户和游戏开发者的更多想法。
+你可以在原 [公告推文][6] 上关注围绕此事发表的讨论，了解用户和游戏开发者的更多想法。
 
 ### 是时候闪亮登场了吗？
 
@@ -52,9 +56,7 @@
 
 我希望通过这件事，**更多的开发者会对支持开源游戏引擎产生浓厚的兴趣**，无论他们以何种方式，可以是金钱，也可以是贡献代码。
 
-_💬_ _你对此怎么看？可以在下方分享你的想法。_
-
-* * *
+💬 你对此怎么看？可以在下方分享你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -63,7 +65,7 @@ via: https://news.itsfoss.com/terraria-open-source-game-engine/
 作者：[Sourav Rudra][a]
 选题：[lujun9972][b]
 译者：[GenshinMinecraft](https://github.com/GenshinMinecraft)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -77,3 +79,4 @@ via: https://news.itsfoss.com/terraria-open-source-game-engine/
 [6]: https://twitter.com/Terraria_Logic/status/1704227519027651016
 [7]: https://news.itsfoss.com/content/images/2023/09/Terraria_Devs_W.png
 [8]: https://en.wikipedia.org/wiki/Rockstar_Advanced_Game_Engine
+[0]: https://img.linux.net.cn/data/attachment/album/202309/28/133314q5y3ibodit666056.jpg
