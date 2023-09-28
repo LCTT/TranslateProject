@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "GenshinMinecraft"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16233-1.html"
 
 Linux Mint Debian 版本 6 “Faye” 来了！
 ======
