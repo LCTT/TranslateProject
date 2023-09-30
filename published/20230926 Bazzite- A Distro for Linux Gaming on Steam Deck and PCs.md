@@ -124,4 +124,4 @@ via: https://news.itsfoss.com/bazzite/
 [25]: https://universal-blue.org/blog/2023/08/20/bazzite-10/
 [26]: https://news.itsfoss.com/assets/images/Certs-and-Bundles-1536x864.webp
 [27]: https://itsfoss.click/latest-lf-offer
-[0]: https://img.linux.net.cn/data/attachment/album/202309/28/230935kngq87x47n4sxqax.jpg
+[0]: https://img.linux.net.cn/data/attachment/album/202309/30/150801h5w6wyf7s6s56ynq.jpg
