@@ -3,28 +3,30 @@
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16246-1.html"
 
 修复无法添加 PPA：“This PPA does not support jammy” 错误
 ======
 
+![][0]
+
+> 尝试添加一个 PPA，却在 Ubuntu 中收到 “无法添加 PPA： 此 PPA 不支持 xyz” 的错误？下面是解决这一错误的方法。
+
 这是一个场景。你正在尝试使用 PPA 在 Ubuntu 中安装软件。
 
-你使用 “sudo add-apt-repository” 添加 PPA 仓库，当它更新包缓存时，会出现错误：
+你使用 `sudo add-apt-repository` 添加 PPA 仓库，当它更新包缓存时，会出现错误：
 
-**Cannot add PPA: ''This PPA does not support xyz''**
+> Cannot add PPA: "This PPA does not support *xyz*
 
-其中 XYZ 是[你正在使用的 Ubuntu 版本的代号][1]。
+其中 “xyz” 是 [你正在使用的 Ubuntu 版本的代号][1]。
 
-📋
+📋 这就是发生这种情况的原因以及你可以采取的措施：
 
-****这就是发生这种情况的原因以及你可以采取的措施****：
-
-\- PPA 不适用于你正在使用的 Ubuntu 版本
-\- 你应该寻找其他来源来安装该应用
-\- 如果绝望，你可以从 PPA 网页下载 .deb 文件
+- PPA 不适用于你正在使用的 Ubuntu 版本
+- 你应该寻找其他来源来安装该应用
+- 如果绝望了，你可以从 PPA 网页下载 .deb 文件
 
 我将详细讨论以上所有内容。
 
@@ -33,9 +35,7 @@
 首先，在终端中使用以下命令获取 Ubuntu 版本和代号的详细信息：
 
 ````
-
-     lsb_release -a
-
+lsb_release -a
 ````
 
 输出将包含详细信息：
@@ -44,7 +44,7 @@
 
 现在，访问托管所有 PPA 的 Ubuntu 的 Launchpad 网站：
 
-[进入 Launchpad PPA][3]
+> **[进入 Launchpad PPA][3]**
 
 在这里，查找困扰你的 PPA。为此，你必须使用 PPA 维护者的名字。
 
@@ -54,7 +54,7 @@
 
 一名维护者可能拥有多个软件仓库。单击你要安装的那个。
 
-在里，你应该在 “Published in” 旁边的**下拉按钮选择 “Any Series”**。
+在里，你应该在 “<ruby>发布于<rt>Published in</rt></ruby>” 旁边的下拉按钮选择 “<ruby>所有系列<rt>Any Series</rt></ruby>”。
 
 ![Click on Any series dropdown button to see the supported Ubuntu versions][5]
 
@@ -74,19 +74,17 @@
 
 **新版 Ubuntu 可能也可以通过其他 PPA 获得相同的软件。请在 Launchpad 网站或互联网上查找。**
 
-这是怎么发生的？ 许多原始软件开发人员只是发布源代码，因此一些志愿者创建 Debian 软件包并从 launchpad 分发它，以便像你这样的 Ubuntu 用户可以轻松安装该软件。不止一名志愿者可以为同一软件创建自己的个人包存档 (PPA)。你应该使用活跃的。
+这是怎么发生的？许多原始软件开发人员只是发布源代码，因此一些志愿者创建 Debian 软件包并从 Launchpad 分发它，以便像你这样的 Ubuntu 用户可以轻松安装该软件。不止一名志愿者可以为同一软件创建自己的个人包存档（PPA）。你应该使用活跃的一个。
 
-例如，如果我查找 `onedriver` 包，我可以看到它可能在另一个名为 [Ubuntu 部署][6]的 PPA 中可用。
+例如，如果我查找 `onedriver` 包，我可以看到它可能在另一个名为 [Ubuntu deployment][6] 的 PPA 中可用。
 
 ![][7]
 
-**另一个选项是查看该包是否以其他格式提供，例如 Snap、Flatpak、AppImage。**
+**另一个方式是查看该包是否以其他格式提供，例如 Snap、Flatpak、AppImage。**
 
    * [检查 Snap 商店][8]
    * [检查 Flatpak 包][9]
    * [检查 AppImages][10]
-
-
 
 在极少数情况下，该软件可能已经在 Ubuntu 仓库中可用。
 
@@ -100,21 +98,21 @@ PPA 仓库为你提供 Debian 软件包。添加仓库后，你还可以直接�
 
 ![][11]
 
-在包详细信息页面上，单击展开符号并查找 deb 文件。除非你使用类似 Raspberry Pi 的主板，否则你应该选择 amd64。
+在包详细信息页面上，单击展开符号并查找 deb 文件。除非你使用类似树莓派的主板，否则你应该选择 amd64。
 
 ![Download deb package from PPA][12]
 
-🚧
+> 🚧 如果软件太旧，下载的 deb 包可能会因为依赖问题而无法安装成功。此外，你将不会获得已安装软件包的更新（如果已安装）。不过，这个方法还是值得一试。
 
-如果软件太旧，下载的deb包可能会因为依赖问题而无法安装成功。此外，你将不会获得已安装软件包的更新（如果已安装）。不过，这个方法还是值得一试。
+### 结论
 
-#### 结论
+尽管 Canonical 在大力推动 Snap 打包，PPA 仍然是用户在 Ubuntu 中安装第三方应用的最爱。
 
-尽管大力推动 Snap 打包，PPA 仍然是用户在 Ubuntu 中安装第三方应用的最爱。
-
-但 PPA 也有其自身的麻烦，而不能添加 PPA 错误就是其中之一。同样的问题还会导致 “[repository does not have release file][13]” 错误。
+但 PPA 也有其自身的麻烦，而不能添加 PPA 错误就是其中之一。同样的问题还会导致 “[仓库没有发布文件][13]” 错误。
 
 我希望现在这个问题更加清楚了。如果你仍有疑问，请告诉我。
+
+*（题图：MJ/d1013502-d518-4bc8-896c-d8dddd15ae22）*
 
 --------------------------------------------------------------------------------
 
@@ -123,7 +121,7 @@ via: https://itsfoss.com/cannot-add-ppa-error/
 作者：[Abhishek Prakash][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -142,3 +140,4 @@ via: https://itsfoss.com/cannot-add-ppa-error/
 [11]: https://itsfoss.com/content/images/2023/09/ppa-package-details.png
 [12]: https://itsfoss.com/content/images/2023/09/download-deb-from-ppa.png
 [13]: https://itsfoss.com/repository-does-not-have-release-file-error-ubuntu/
+[0]: https://img.linux.net.cn/data/attachment/album/202310/02/112157nf11fpwhwa4u1hvf.jpg
