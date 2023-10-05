@@ -7,7 +7,7 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-16257-1.html"
 
-任务中心：Linux 的流畅系统监控应用
+任务中心：一款流畅的 Linux 系统监控应用
 ======
 
 ![][0]
