@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/man-command-not-found/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
