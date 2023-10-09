@@ -2,106 +2,101 @@
 [#]: via: "https://news.itsfoss.com/pomatez/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "ChatGPT"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-This Open-Source App Helps You Stay Focused
+开源应用 Pomatez 使你保持专注
 ======
-Get a boost of productivity with the time management benefits of Pomatez
-app.
-Are you familiar with the 'Pomodoro Technique'?
 
-Well, it is **a time management method** developed in the late 1980s that uses a timer to break work into set intervals, usually 25 minutes, followed by short breaks, then repeat until the task is done.
+> Pomatez 应用可以提升你的效率，它为你的时间管理带来了巨大帮助。
 
-This has been growing in popularity over the years, with various apps featuring the [Pomodoro Technique][1] as their main selling point.
+你是否对 “番茄工作法” 有所了解呢？
 
-Here, we will be covering one such app that is **available natively for Linux** , called ' **Pomatez** '. It is **an open-source app** that features all the tools required to follow such an approach for time management.
+这是一种 **时间管理方法**，于 1980 年代末期开发，通过定时器将工作划分为一定的时间间隔，每间隔 25 分钟后进行短暂的休息，如此循环直至任务完成。
 
-You know this is not the first time we are covering an app like this, there's an app called ' **[Reminders][2]'** that serves a similar purpose, though without the Pomodoro approach.
+这种方法在近些年变得越来越流行，有很多应用程序以 <ruby>[番茄工作法][1]<rt>Pomodoro Technique</rt></ruby> 作为主要的卖点。
 
-![][3]
+这里我们将介绍一个采用这种方法的应用，它名为 “Pomatez”，并且是 **原生支持 Linux 平台的开源应用**。Pomatez 为时间管理提供了所需的全部工具。
 
-Let me highlight what you can do with the Pomatez app.
+其实这并不是我们第一次介绍这种应用，之前有一种应用叫 “Reminders”，功能类似，但并未采用番茄工作法。
 
-### Pomatez: Overview ⭐
+> **[Reminders：一个漂亮的开源 Linux 应用，可帮助你完成工作][2]**
+
+现在我来详述一下你可以用 Pomatez 应用做些什么。
+
+### Pomatez: 概述 ⭐
 
 ![][4]
 
-Written in the [**TypeScript**][5] programming language, Pomatez is **a neat tool for staying focused while also taking those much-needed breaks** during important tasks.
+Pomatez 使用 TypeScript 编程语言编写，是一款极好的工具，能让你在执行重要任务的同时安排适时的休息，保持专注。
 
-Some of its key features include:
+Pomatez 的关键特性包括：
 
-  * **Built-in Task Lists**
-  * **Desktop Notifications**
-  * **Customizable Rules**
+  * 内置的任务列表
+  * 桌面通知
+  * 可定制的规则
 
+#### 初次使用感受 👨‍💻
 
+我在我的 Ubuntu 22.04 LTS 系统上安装了它，体验了它的功能表现。
 
-#### Initial Impressions 👨‍💻
+首先，我在 “<ruby>任务列表<rt>Task List</rt></ruby>” 部分填充了一些当日必须完成的重要任务和一些不太重要的任务。
 
-I set it up on my [Ubuntu 22.04][6] LTS system to see what it had to offer.
-
-First and foremost, I populated the ' **Task List** ' section with some super important tasks and some unimportant tasks that I wanted to accomplish before the end of the day.
-
-Take a look, you won't be disappointed 👇
+一切就绪后，你将不会感到失望的 👇
 
 ![][7]
 
-Then, I headed over to the ' **Config** ' tab, where I could tweak the rules according to my preference.
+然后，我进入 “<ruby>配置<rt>Config</rt></ruby>” 栏，按照自己的喜好进行了规则调整。
 
-The ' **Stay focus** ' was for setting the task duration, the ' **Short break** ' was to set a short time off, ' **Long break** ' for a longer time off, and ' **Session rounds** ' to set the number of sessions for the timer.
+“<ruby>保持专注<rt>Stay focus</rt></ruby>” 为执行任务的时间长度，“<ruby>短暂休息<rt>Short break</rt></ruby>” 为短暂的休息时间，“<ruby>长休息<rt>Long break</rt></ruby>” 为更长的休息时间，以及 “<ruby>会话轮次<rt>Session rounds</rt></ruby>” 为定时器的会话数量。
 
-[via GIPHY][8]
-
-There was even a ' **Special Breaks** ' section that could be used to set specific breaks such as lunch, dinner, or whatever you want.
+这里还有一个 “<ruby>特殊休息<rt>Special Breaks</rt></ruby>” 部分，可以用来安排比如午餐、晚餐的特定休息时间。
 
 ![][9]
 
-Next, I proceeded to the ' **Timer** ' section, where I was shown the first task at hand, with the number of sessions being shown below along with the controls to handle the timer/session.
+接下来，我进入 “<ruby>计时器<rt>Timer</rt></ruby>” 栏，此处显示了首个待处理任务，一列显示的是会话数以及控制定时器/会话的选项。
 
-There was a button to reset the timer, one to start/stop the timer, another to go into the next phase per the rules. Another one for changing the volume, and a button to go into the ' **Compact mode** ' (at the bottom right).
+这里有一个重置定时器的按钮，一个开始/停止定时器的按钮，一个按规则进入下一阶段的按钮，一个调节音量的按钮，以及一个切换至 “<ruby>精简模式<rt>Compact mode</rt></ruby>”（位于右下角）的按钮。
 
 ![][10]
 
-I started the timer by using the 'Play' button, and proceeded to check out the possible actions for the task. I can mark it as 'Done', skip it, or even delete it from the app.
+我按下 “开始” 按钮启动了定时器，并开始查看了任务的可执行操作。我可以标记任务为 “<ruby>完成<rt>Done</rt></ruby>”，跳过任务，或者从应用中删除任务。
 
 ![][11]
 
-As the task progressed, I switched Pomatez into the **'Compact mode** ' by using the button with a box/downwards arrow logo.
+随着任务的推进，我通过按下带一个框和向下箭头图标的按钮，将 Pomatez 切换到了 “<ruby>精简模式<rt>Compact mode</rt></ruby>”。
 
-Doing that gave me a smaller, more space-conscious interface. After I was done with the task, I stopped the timer and marked the task as 'Done'.
+这样我得到了一个更小巧的，节省空间的界面。当我完成任务后，我停止了计时器并将任务标记为 “<ruby>完成<rt>Done</rt></ruby>”。
 
 ![][12]
 
-I then headed over to the ' **Settings** ' section to see what kind of options I could tweak, and I must say I was not disappointed.
+随后，我转到 “<ruby>设置<rt>Settings</rt></ruby>” 栏，看看我可以调整哪些选项，我发现它给我了不少惊喜。
 
-I was able to tweak app behavior such as **always on top** , **switch to dark mode** , **enable** **voice assistance** and more.
+我可以调整应用行为，如设置为 “<ruby>始终在顶部<rt>Always On Top</rt></ruby>”， 启用“<ruby>深色主题<rt>Dark Theme</rt></ruby>” 和 “<ruby>语音助手<rt>Voice Assiastance</rt></ruby>” 等。
 
 ![][13]
 
-Pomatez also features **support for keyboard shortcuts** , though I was expecting the ability to control the timer via a keyboard shortcut.
+Pomatez 还支持键盘快捷键，虽然我期望它能提供通过键盘快捷键控制计时器的功能。
 
-_Maybe they can consider my feedback for future releases? Hopefully!_
+或许他们可以考虑在未来的版本中参考我的反馈意见？我希望他们可以！
 
 ![][14]
 
-Overall, it is an interesting app if you want to streamline your daily workflow.
+总体而言，如果你希望改进日常工作流程，这款应用值得尝试。
 
-The best thing is, it is **a cross-platform app** , not limited to Linux. So, you can also try it on your Windows and macOS systems.
+最好的是，它是一个跨平台的应用，不仅可以在 Linux 所有现代发行版上运行，你在 Windows 和 macOS 系统上也可以试用。
 
-### 📥 Download Pomatez
+### 📥 下载 Pomatez
 
-Pomatez is available as a **.deb** , **AppImage** , and **.rpm** , packages for Linux. You can also find a Snap package for it.
+Pomatez 提供了 Linux 平台的 .deb、AppImage 和 .rpm 安装包。你还可以找到它的 Snap 包。
 
-Grab the package of your choice from the [official website][15], [Snap store][16] or its [GitHub][17] repo.
+你可以从官方网站，Snap 商店 或其在 GitHub 上的仓库获取你需要的包。
 
-[Pomatez (GitHub)][17]
+> **[Pomatez（GitHub）][15]**
 
-_💬 Have you used such an app before? Let us know in the comments below!_
-
-* * *
+你之前用过这样的应用吗？请在下方的评论区告诉我们吧！
 
 --------------------------------------------------------------------------------
 
@@ -109,15 +104,15 @@ via: https://news.itsfoss.com/pomatez/
 
 作者：[Sourav Rudra][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[ChatGPT](https://linux.cn/lctt/ChatGPT)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://news.itsfoss.com/author/sourav/
 [b]: https://github.com/lujun9972
 [1]: https://en.wikipedia.org/wiki/Pomodoro_Technique
-[2]: https://news.itsfoss.com/reminders/
+[2]: https://linux.cn/article-15852-1.html
 [3]: https://news.itsfoss.com/content/images/size/w256h256/2022/08/android-chrome-192x192.png
 [4]: https://news.itsfoss.com/content/images/2023/09/Pomatez_1.png
 [5]: https://www.typescriptlang.org/
