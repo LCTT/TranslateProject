@@ -4,11 +4,13 @@
 [#]: collector: "lujun9972"
 [#]: translator: "ChatGPT"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16267-1.html"
 
 使用 Btrfs 快照方便升级 Fedora Linux 且易于回退
 ======
+
+![][0]
 
 在 2018 年的一篇 [早前的文章][3] 中，我们介绍了在升级 Fedora Linux 前如何利用 LVM 复制根文件系统，以便在可能出现错误的情况下能有一个回退机制。然而如今，Fedora 工作站的默认安装已经是 Btrfs 文件系统了。现在，你可以利用 Btrfs 快照来更简便地创建一个可引导的回退系统。注意，本文不涉及会如何从其它文件系统转换或迁移到 Btrfs 上。
 
@@ -123,6 +125,8 @@ Don't forget to edit /mnt/root/root/etc/fstab to change the subvol mounted on "/
 
 正如本文所展示的，针对重大系统更改（如系统版本升级）可能引发问题时，只读快照作为本地恢复点，非常有用。这些快照还可以通过 Btrfs 的 `send` 子命令，发送至远程备份。（如果远程备份设备已经包含了先前的备份数据，Btrfs 可以进行增量发送，仅传输发生变更的文件，这样就能节省时间和空间。）如果你打算长期存档这些快照，保持清晰不混淆且能明确恢复顺序的关键，就是要使用一套一致的命名规则。关于如何使用 Btrfs 的 `send` 命令来创建备份的更多信息，你可以参考关于 [Btrfs 快照备份][7] 的文章。
 
+*（题图：MJ/6aed1d19-f1dd-4935-ad6f-61f6a868f150）*
+
 --------------------------------------------------------------------------------
 
 via: https://fedoramagazine.org/make-use-of-btrfs-snapshots-to-upgrade-fedora-linux-with-easy-fallback/
@@ -143,3 +147,4 @@ via: https://fedoramagazine.org/make-use-of-btrfs-snapshots-to-upgrade-fedora-li
 [5]: https://fedoramagazine.org/boot-earlier-kernel/
 [6]: https://docs.fedoraproject.org/en-US/quick-docs/dnf-system-upgrade/
 [7]: https://fedoramagazine.org/btrfs-snapshots-backup-incremental/
+[0]: https://img.linux.net.cn/data/attachment/album/202310/09/113654ba1kp126nzn6tpjv.jpg
