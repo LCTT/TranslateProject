@@ -160,7 +160,7 @@ flatpak install flathub org.gnome.Epiphany
 
 通过搜索选项卡里的“<ruby>搜索位置<rt>Search Locations</rt></ruby>”选项，你可以调整系统应用，如文件、照片、视频等的搜索位置。
 
-![动态加载图片][22]
+![][22]
 
 现在，你可以开启或者关闭已有的搜索位置。或者点击添加按钮，添加新的位置。
 
