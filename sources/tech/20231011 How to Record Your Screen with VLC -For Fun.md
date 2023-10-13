@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/vlc-record-screen/"
 [#]: author: "Sreenath https://itsfoss.com/author/sreenath/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
