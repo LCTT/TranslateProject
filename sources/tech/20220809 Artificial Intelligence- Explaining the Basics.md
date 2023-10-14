@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/08/artificial-intelligence-explaining-the-basics/"
 [#]: author: "Deepu Benson https://www.opensourceforu.com/author/deepu-benson/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
