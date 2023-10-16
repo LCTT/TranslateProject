@@ -7,70 +7,70 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Record Your Screen with VLC [For Fun]
+如何使用 VLC 录制屏幕（娱乐）
 ======
 
-VLC is more than just a video player. It's a versatile video tool with so many features that a normal user could never know them.
+VLC 不仅仅是一个视频播放器。它还是一款多功能视频工具，具有普通用户永远无法了解的众多功能。
 
-You can [download YouTube videos with VLC][1] or even trim videos with it.
+你可以[使用 VLC 下载 YouTube 视频][1]，甚至可以用它修剪视频。
 
-Another such unusual use of VLC is for screen recording.
+VLC 的另一个不寻常用途是屏幕录制。
 
-**I still recommend using a proper screen recorder for this task, you are welcome to explore this VLC feature for fun.**
+**我仍然建议使用合适的屏幕录像机来完成此任务，欢迎你探索这个 VLC 功能以获取乐趣。**
 
-### Screen recording with VLC
+### 使用 VLC 进行屏幕录制
 
 🚧
 
-While I was able to use VLC for recording desktop screen, I could not record any sound and my mouse cursor. In my opinion, it's not a replacement of a proper screen recording tool.
+虽然我可以使用 VLC 录制桌面屏幕，但无法录制任何声音和鼠标光标。在我看来，它并不能替代合适的屏幕录制工具。
 
-To record your screen using [VLC][2], open it and click on Media and select Convert/Save. (Or directly click on Media → Open Capture Device)
+要使用 [VLC][2] 录制屏幕，请打开它并单击“媒体”，然后选择“转换/保存”。（或者直接点击媒体→打开采集设备）
 
 ![Select Convert/ Save option][3]
 
-Go to the "Capture Device" Tab and select Desktop from the Capture Mode dropdown list.
+转到“捕获设备”选项卡，然后从捕获模式下拉列表中选择桌面。
 
 ![Capture Mode: Desktop][4]
 
-Now, provide some frame rate for your recording. 10, 24 fps etc will be good, and if you need more quality, go for higher. Note that this will increase the file size and system requirements. Then, press the Convert/Save button.
+现在，这里为你的录制提供了一些帧率。10、24 fps 等都不错，如果你需要更高的质量，请选择更高的。请注意，这会增加文件大小和系统要求。然后，按转换/保存按钮。
 
 ![Set Frame Rate][5]
 
-On the next page, select a profile from the drop-down and click on the adjacent button to edit the profile.
+在下一页上，从下拉列表中选择一个配置文件，然后单击相邻的按钮来编辑该配置文件。
 
 ![Set Output Profile][6]
 
-Set the Video format you need and press Save.
+设置你需要的视频格式，然后按保存。
 
 ![Edit the Output Profile][7]
 
-Now, you need to give a destination file name. Click on the Browse button, select a location, and enter the name of the output file. Click Save.
+现在，你需要给出目标文件名。单击“浏览”按钮，选择位置，然后输入输出文件的名称。单击“保存”。
 
 ![Output file location and Name][8]
 
-Press the Start button, to start recording your screen.
+按开始按钮，开始录制屏幕。
 
 ![Start Recording][9]
 
-This will start recording. Once you finished your recording, use the panel button to stop.
+这将开始录制。完成录制后，使用面板按钮停止。
 
 ![Stop Recording][10]
 
-Or click on the stop button on VLC.
+或者单击 VLC 上的停止按钮。
 
 ![Stop Button in VLC][11]
 
-That's it. You can view the screen recording on the place where you saved it.
+就是这样。你可以在保存屏幕录像的位置查看屏幕录像。
 
 ![Output File][12]
 
-### Conclusion
+### 总结
 
-As you can see, while it is possible to record the desktop screen with VLC, it is not a replacement of a [dedicated screen recording tool][13]. Lack of audio recording is a major letdown.
+如你所见，虽然可以使用 VLC 录制桌面屏幕，但它并不能替代[专用屏幕录制工具][13]。缺乏录音是一个重大的遗憾。
 
 ![][14]
 
-Use VLC for screen recording only if you don't have any other options. What do you think?
+仅当你没有任何其他选项时才使用 VLC 进行屏幕录制。你怎么认为？
 
 --------------------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ via: https://itsfoss.com/vlc-record-screen/
 
 作者：[Sreenath][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
