@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/using-influxdb-for-time-series-data-analysis/"
 [#]: author: "Jose NunezSebastian Borza https://fedoramagazine.org/author/josevnz/https://fedoramagazine.org/author/sborza/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "Drwhooooo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
