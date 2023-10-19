@@ -2,92 +2,95 @@
 [#]: via: "https://ostechnix.com/monitor-user-activity-linux/"
 [#]: author: "sk https://ostechnix.com/author/sk/"
 [#]: collector: "lkxed"
-[#]: translator: " "
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: translator: "ChatGPT"
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16297-1.html"
 
-How To Monitor User Activity In Linux
+如何在 Linux 中监控用户活动
 ======
-As a Linux administrator, you need to keep track of all users' activities. When something goes wrong in the server, you can analyze and investigate the users' activities, and try to find the root cause of the problem. There are many ways to **monitor users in Linux**. In this guide, we are going to talk about **GNU accounting utilities** that can be used to **monitor the user activity in Linux**.
 
-### What are Accounting utilities?
+![][0]
 
-The Accounting utilities provides the useful information about system usage, such as connections, programs executed, and utilization of system resources in Linux. These accounting utilities can be installed using **psacct** or **acct** package.
+作为一位 Linux 管理员，你需要跟踪所有用户的活动。当服务器发生故障时，你可以分析和查看用户活动，以便寻找问题的根源。监控 Linux 用户有多种方式。本指南将专门讨论 **GNU 记账工具**，这是一项用于监视 Linux 用户活动的实用工具。
 
-The psacct or acct are same. In RPM-based systems, it is available as psacct, and in DEB-based systems, it is available as acct.
+### 什么是记账工具？
 
-What is the use of psacct or acct utilities? You might wonder. Generally, the user's command line history details will be stored in **.bash_history** file in their $HOME directory. Some users might try to edit, modify or delete the history.
+记账工具可以提供诸如 Linux 系统中的连接、已执行的程序以及系统资源的使用等有底系统使用信息。这些记账工具可以通过 `psacct` 或 `acct` 软件包安装。
 
-However, the accounting utilities will still be able to retrieve the users activities even though they [cleared their command line history][1] completely. Because, **all process accounting files are owned by root** user, and the normal users can't edit them.
+`psacct` 和 `acct` 实际上是相同的。在基于 RPM 的系统中，它以 `psacct` 的形式存在；而在基于 DEB 的系统中，它作为 `acct` 提供。
 
-### Install psacct or acct in Linux
+你可能想知道 `psacct` 或 `acct` 工具的作用。通常，用户在命令行的历史记录会保存在他们的 `$HOME` 目录下的 `.bash_history` 文件中。有些用户可能会尝试编辑、修改或删除这些历史记录。
 
-The psacct/acct utilities are packaged for popular Linux distributions.
+然而，即使他们完全 [清除了命令行历史][1]，记账工具依然能够获取用户活动信息。这是因为，**所有进程记账文件都由 root 用户拥有**，而普通用户则无法进行编辑。
 
-To install psacct in Alpine Linux, run:
+### Linux 中如何安装 psacct 或 acct
+
+`psacct`/`acct` 被打包在多种流行的 Linux 发行版本中。
+
+如果要在 Alpine Linux 中安装 `psacct`，请运行以下命令：
 
 ```
 $ sudo apk add psacct
 ```
 
-To install acct in Arch Linux and its variants like EndeavourOS and Manjaro Linux, run:
+如果在 Arch Linux 及其变体版本（如 EndeavourOS 和 Manjaro Linux）中安装 `acct`，请运行以下命令：
 
 ```
 $ sudo pacman -S acct
 ```
 
-On Fedora, RHEL, and its clones like CentOS, AlmaLinux and Rocky Linux, run the following command to install psacct:
+在 Fedora、RHEL 及其衍生版本（如 CentOS、AlmaLinux 和 Rocky Linux）中安装 `psacct`，请运行以下命令：
 
 ```
 $ sudo dnf install psacct
 ```
 
-In RHEL 6 and older versions, you should use `yum` instead of `dnf` to install psacct.
+在 RHEL 6 以及更早版本中，你应当使用 `yum` 命令而非 `dnf` 来安装 `psacct`。
 
 ```
 $ sudo yum install psacct
 ```
 
-On Debian, Ubuntu, Linux Mint, install acct using command:
+在 Debian、Ubuntu 以及 Linux Mint 中，通过如下命令来安装 `acct`：
 
 ```
 $ sudo apt install acct
 ```
 
-To install acct on openSUSE, run:
+若在 openSUSE 中安装 `acct`，则运行：
 
 ```
 $ sudo zypper install acct
 ```
 
-### Start psacct/acct service
+### 启动 psacct/acct 服务
 
-To enable and start the psacct service, run:
+要启用并开启 `psacct` 服务，请执行以下命令：
 
 ```
 $ sudo systemctl enable psacct
 ```
 
+接着启动 `psacct` 服务：
+
 ```
 $ sudo systemctl start psacct
 ```
 
-To check if psacct service is loaded and active, run:
+如果你需要检查 `psacct` 服务是否已加载和激活，可以运行：
 
 ```
 $ sudo systemctl status psacct
 ```
 
-On DEB-based systems, the acct service will be automatically started after installing it.
+在基于 DEB 的系统中，安装完成之后，`acct` 服务会自动启动。
 
-You can verify whether acct service is started or not using command:
+如果你想验证 `acct` 服务是否已经启动，可以执行以下命令：
 
 ```
 $ sudo systemctl status acct
 ```
-
-**Sample output:**
 
 ```
 ● acct.service - Kernel process accounting
@@ -103,48 +106,46 @@ Oct 13 16:06:35 ubuntu2204 accton[3241]: Turning on process accounting, file set
 Oct 13 16:06:35 ubuntu2204 systemd[1]: Finished Kernel process accounting.
 ```
 
-> **Download** - [Free eBook: "Nagios Monitoring Handbook"][2]
+### 利用 psacct 或 acct 来监测 Linux 中的用户活动
 
-### Monitor User Activity in Linux using psacct or acct
+`psacct`（进程记账）软件包包含以下用来监测用户和进程活动的工具：
 
-The psacct (Process accounting) package contains following useful utilities to monitor the user and process activities.
+* `ac` - 提供用户登录时间的统计信息。
+* `lastcomm` - 展示先前执行过的命令的信息。
+* `accton` - 开启或关闭进程记账。
+* `dump-acct` - 把 `accton` 的输出文件转化为易读的格式。
+* `dump-utmp` - 以易读的方式打印 `utmp` 文件。
+* `sa` - 汇总信息，关于先前执行的命令。
 
-* ac - Displays statistics about how long users have been logged on.
-* lastcomm - Displays information about previously executed commands.
-* accton - Turns process accounting on or off.
-* dump-acct - Transforms the output file from the accton format to a human-readable format.
-* dump-utmp - Prints utmp files in human-readable format.
-* sa - Summarizes information about previously executed commands.
+现在就让我们一起了解如何通过每个工具来监控 Linux 用户的活动。
 
-Let us learn how to monitor the activities of Linux users by using each utility with examples.
+#### 1、使用 ac 命令
 
-#### 1. The ac command examples
+`ac` 工具可以为你提供以小时为单位的连接时间报告，这样你就能知道用户或一组用户连接到系统的时长。
 
-The **ac** utility will display the report of connect time in hours. It can tell you how long a user or group of users were connected to the system.
-
-##### 1.1. Display total connect time of all users
+##### 1.1、展示所有用户的总连接时间
 
 ```
 $ ac
 ```
 
-This command displays the total connect time of all users in hours.
+上述命令会显示所有用户的总连接时间（单位为小时）。
 
 ```
 total       52.91
 ```
 
-![Display total connect time of all users][3]
+![展示所有用户的总连接时间][3]
 
-##### 1.2. Show total connect of all users by day-wise
+##### 1.2、按日期排序显示所有用户的总连接时间
 
-You can sort this result by day-wise by using **-d** flag as shown below.
+你可以通过使用 `-d` 参数，按日期排序显示所有用户的连接时间，操作如下：
 
 ```
 $ ac -d
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 May 11	total        4.29
@@ -161,17 +162,17 @@ Jul 19	total        1.95
 Today	total        0.29
 ```
 
-![Show total connect of all users by day-wise][4]
+![按日期排序显示所有用户的总时间][4]
 
-##### 1.3. Get total connect time by user-wise
+##### 1.3、获取各个用户的总连接时间
 
-Also, you can display how long each user was connected with the system with **-p** flag.
+使用 `-p` 参数，你可以查看每位用户各自在系统中总的连接时长。
 
 ```
 $ ac -p
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 ostechnix                           52.85
@@ -179,31 +180,31 @@ root                                 0.51
 total       53.36
 ```
 
-![Get total connect time by user-wise][5]
+![获取各个用户的总连接时间][5]
 
-##### 1.4. Print total connect time of a specific user
+##### 1.4、显示指定用户的总连接时间
 
-And also, you can display the individual user's total login time as well.
+你还可以显示特定用户的总登录时间。
 
 ```
 $ ac ostechnix
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 total       52.95
 ```
 
-##### 1.5. View total connect time of a certain user by day-wise
+##### 1.5、显示特定用户各日期的总连接时间
 
-To display individual user's login time by day-wise, run:
+要按日期查看某个用户的登录时间，可以运行：
 
 ```
 $ ac -d ostechnix
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 May 11	total        4.29
@@ -220,25 +221,25 @@ Jul 19	total        1.95
 Today	total        0.68
 ```
 
-![View total connect time of a certain user by day-wise][6]
+![显示某个用户各日期的总连接时间][6]
 
-For more details, refer the man pages.
+如需更多详情，可参考手册页面。
 
 ```
 $ man ac
 ```
 
-#### 2. The lastcomm command examples
+#### 2、lastcomm 命令使用示例
 
-The **lastcomm** utility displays the list of previously executed commands. The most recent executed commands will be listed first.
+`lastcomm` 工具用于列出过去执行过的命令，它会按执行的最近程度将命令列在前面。
 
-##### 2.1. Display previously executed commands
+##### 2.1、展示过去执行的命令
 
 ```
 $ lastcomm
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 systemd-hostnam  S     root     __         0.06 secs Thu Oct 13 17:21
@@ -260,15 +261,15 @@ bash              F    ostechni pts/1      0.00 secs Thu Oct 13 17:22
 [...]
 ```
 
-##### 2.2. Print last executed commands of a specific user
+##### 2.2、打印特定用户先前执行的命令
 
-The above command displays all user's commands. You can display the previously executed commands by a particular user using command:
+上述命令显示的是所有用户的命令。要显示特定用户以前执行的命令，可以使用下面的命令：
 
 ```
 $ lastcomm ostechnix
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 less                   ostechni pts/1      0.00 secs Thu Oct 13 17:26
@@ -289,15 +290,15 @@ dpkg                   ostechni __         0.00 secs Thu Oct 13 17:23
 [...]
 ```
 
-##### 2.3. Print total number of command execution
+##### 2.3、打印特定命令的执行次数
 
-Also, you can view how many times a particular command has been executed.
+你还可以查看特定命令被执行的次数。
 
 ```
 $ lastcomm apt
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 apt              S     root     pts/2      0.70 secs Thu Oct 13 16:06
@@ -305,25 +306,25 @@ apt               F    root     pts/2      0.00 secs Thu Oct 13 16:06
 apt               F    root     pts/2      0.00 secs Thu Oct 13 16:06
 ```
 
-As you see in the above output, the `apt` command has been executed three times by `root` user.
+如上述输出所示，root 用户执行了 `apt` 命令三次。
 
-For more details, refer the man pages.
+更详细的信息，可参考手册页：
 
 ```
 $ man lastcomm
 ```
 
-#### 3. The sa command examples
+#### 3、sa 命令示例
 
-The sa utility will summarize the information about previously executed commands.
+`sa` 实用程序将总结关于先前执行的命令的信息。
 
-##### 3.1. Print summary of all commands
+##### 3.1、打印所有命令的总结
 
 ```
 $ sa
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 1522    1598.63re       0.23cp         0avio     32712k
@@ -346,15 +347,15 @@ $ sa
 [...]
 ```
 
-##### 3.2. View number of processes and CPU minutes
+##### 3.2、查看进程数量和 CPU 分钟数
 
-To print the number of processes and number of CPU minutes on a per-user basis, run `sa` command with `-m` flag:
+要打印基于每个用户的进程数量和 CPU 分钟数，运行带 `-m` 标志的 `sa` 命令：
 
 ```
 $ sa -m
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 1525    1598.63re       0.23cp         0avio     32651k
@@ -370,15 +371,15 @@ sshd                                    1       0.05re       0.00cp         0avi
 whoopsie                                1       0.00re       0.00cp         0avio      8552k
 ```
 
-##### 3.3. Print user id and command name
+##### 3.3、打印用户 ID 和命令名称
 
-For each command in the accounting file, print the userid and command name using `-u` flag.
+对于账户文件中的每个命令，使用 `-u` 标志打印用户 ID 和命令名称。
 
 ```
 $ sa -u
 ```
 
-**Sample output:**
+示例输出：
 
 ```
 root       0.00 cpu      693k mem      0 io accton          
@@ -397,27 +398,27 @@ root       0.00 cpu      911k mem      0 io gzip
 [...]
 ```
 
-For more details, refer the man pages.
+如需更多详细信息，请参考手册页：
 
 ```
 $ man sa
 ```
 
-#### 4. The dump-acct and dump-utmp command examples
+#### 4、dump-acct 和 dump-utmp 命令
 
-The **dump-acct** utility displays the output file from the accton format to a human-readable format.
+`dump-acct` 实用工具将 accton 格式的输出文件显示为人类可读的格式。
 
 ```
 $ dump-acct /var/account/pacct
 ```
 
-dump-utmp displays utmp files in human-readable format.
+`dump-utmp` 将 utmp 文件显示为人类可读的格式。
 
 ```
 $ dump-utmp /var/run/utmp
 ```
 
-For more details, refer the man pages.
+如需了解更多详情，请参考手册页：
 
 ```
 $ man dump-acct
@@ -427,35 +428,37 @@ $ man dump-acct
 $ man dump-utmp
 ```
 
-#### 5. The accton command examples
+#### 5、accton 命令
 
-The accton command will allow you to turn on or turn off accounting.
+`accton` 命令将允许你开启或关闭记账。
 
-To turn on process accounting, run:
+要开启进程记账，请运行：
 
 ```
 $ accton on
 ```
 
-To turn it off, run:
+要关闭它，运行：
 
 ```
 $ accton off
 ```
 
-For more details, refer the man pages.
+如需了解更多详情，请参考手册页：
 
 ```
 $ man accton
 ```
 
-### Conclusion
+### 总结
 
-Every Linux administrator should be aware of GNU accounting utilities to keep an eye on all users. These utilities will be quite helpful in troubleshooting time.
+每个 Linux 管理员都应该知道 GNU 记账实用程序，以便注意所有用户的行为。在故障排除时，这些实用程序会非常有帮助。
 
-**Resource:**
+### 资源
 
-* [The GNU Accounting Utilities website][7]
+* [GNU 记账实用程序官网][7]
+
+*（题图：MJ/da3f7e79-2a53-4121-a2ed-d63a22c3d3f4）*
 
 --------------------------------------------------------------------------------
 
@@ -463,8 +466,8 @@ via: https://ostechnix.com/monitor-user-activity-linux/
 
 作者：[sk][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[ChatGPT](https://linux.cn/lctt/ChatGPT)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -477,3 +480,4 @@ via: https://ostechnix.com/monitor-user-activity-linux/
 [5]: https://ostechnix.com/wp-content/uploads/2022/10/Get-total-connect-time-by-user-wise.png
 [6]: https://ostechnix.com/wp-content/uploads/2022/10/View-total-connect-time-of-a-certain-user-by-day-wise.png
 [7]: https://www.gnu.org/software/acct/manual/accounting.html
+[0]: https://img.linux.net.cn/data/attachment/album/202310/19/105911voe22858b5o7287s.jpg
