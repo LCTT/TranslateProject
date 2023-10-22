@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/21/11/open-source-12-factor-app-methodology"
 [#]: author: "Richard Conn https://opensource.com/users/richardaconn-0"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "trisbestever"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
