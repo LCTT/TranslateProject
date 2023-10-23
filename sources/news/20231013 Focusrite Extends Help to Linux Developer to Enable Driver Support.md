@@ -2,65 +2,65 @@
 [#]: via: "https://news.itsfoss.com/focusrite-linux/"
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: "geekpi"
+[#]: translator: "KaguyaQiang"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-Focusrite Extends Help to Linux Developer to Enable Driver Support
+Focusrite扩展帮助Linux开发人员启用驱动程序支持
 ======
-Focusrite's wonderful gesture towards supporting Linux.
-Even though Linux as a desktop platform is evolving fast, it is still a choice for few music producers compared to Windows and macOS. A major reason being the lack of official support from several DAWs and hardware manufacturers.
+Focusrite完美支持Linux操作系统
+尽管Linux作为一种桌面平台发展迅速，但与Windows和macOS相比，它仍然仅仅是少数音乐制作人的选择。一个主要原因是缺乏几个DAW和硬件制造商的官方支持。
 
-Fortunately, all of that is changing, with big names getting involved with Linux. Curious? Well, recently, [PreSonus announced Linux support][1] for its Studio One DAW.
+幸运的是, 随着大公司涉足Linux领域，所有的这些问题都在发生改变。感到好奇吗？好吧, 最近[PreSonus最近宣布其Studio One DAW将支持Linux][1]。
 
-And, now, [Focusrite][2], one of the direct competitors of [PreSonus][3] has joined in 🤩They also manufacture audio interfaces and other professional audio equipment.
+并且[Focusrite][2], 作为[PreSonus][3]的直接竞争者之一现在也加入进来 🤩他们也生产音频接口和其他专业音频设备。
 
-If you are a music producer or an enthusiast, you should know that these names often go as synonymous with each other. While I currently use PreSonus over Focusrite, both the companies and their products are a big deal for the mass market.
+如果你是一个音乐制作人或者是音乐爱好者,你应该知道这些大公司经常彼此有相同之处。虽然我目前使用PreSonus而不是Focusrite, 但是这两个公司和它们的产品对于大众市场都十分重要。
 
-**Suggested Read** 📖
+**建议阅读** 📖
 
 ![][4]
 
-### Focusrite's Pledge to Linux Support
+### Focusrite承诺将支持Linux
 
-**Geoffrey Bennett** is a user on the [LinuxMusicians][5] forums, known for his work to bring Linux support to popular Focusrite audio interfaces (Scarlett 2nd and 3rd gen).
+**Geoffrey Bennett**作为[LinuxMusicians][5]论坛的一名用户，以其为流行的Focusrite音频接口(Scarlett二代和三代)提供Linux支持而闻名。
 
-Of course, it is a massive undertaking, unofficially.
+Geoffrey Bennett的工作是一项巨大的事业，当然，是非官方的。
 
-To take that up a notch, he recently launched a fundraiser to get the latest audio interface by Focusrite, i.e., [Scarlett 4th gen][6].
+为了更上一层楼, 他最近发起了一场筹款活动以获得Focusrite最新的音频接口, 也即[Scarlett四代][6].
 
-Along with that, he had goals to work on podcast equipment by Focusrite.
+除此之外,他还目标为Focusrite播客设备做工作。
 
 ![][7]
 
-While the fundraiser was a success, **it also got attention from Focusrite** , and **they contributed a significant amount** to help him get the latest audio interface.
+这次筹款顺利的同时, **也引起了Focusrite的关注** , **Focusrite捐赠了一大笔钱**来帮助Geoffrey Bennett获取这件最新的音频接口.
 
-**Focusrite also offered to send him any devices he does not have and future products before release.**
+**Focusrite还主动提出赠送任何他没有的设备，并且未来新产品发布前也会送给他**
 
-To add cherry on top, they mentioned how their **engineering team can help him improve the development work**.
+最重要的是，Focusrite提到了他们的**工程团队可以如何帮助他改进开发工作**。
 
-> While I had previously struggled to connect with the engineers or management at Focusrite, news of the overwhelming response to this fundraiser reached the top tiers there. Given the niche nature of Linux audio, I had kept my expectations in check, but this was beyond what I had imagined.
+>虽然我之前很难与Focusrite的工程师或管理层取得联系, 这次筹款活动反响热烈的消息传到了公司高层那里。考虑到Linux音频的利基性质, 我本来不抱太大期望,但是结果超出了我的想象.
 >
-> I just got off a call with them where, beyond providing the hardware, they were inquiring about other ways they could support the development.
+> 我刚接到他们的电话，除了提供硬件外，他们还询问其他可以支持开发的方法。
 >
-> Focusrite not only offered to send me any devices I didn't have in my collection but also proposed that for any future product releases, they will do their utmost to send me devices in advance. This means that Linux support could be ready right from the product launch!
+> Focusrite不仅提供给我任何我没有的设备，而且提议，任何未来的产品发布，他们都将尽最大努力提前向我发送设备。这意味着Linux支持可以从产品发布时就准备就绪！
 >
-> Furthermore, they are discussing how their engineering team could better help me to streamline the development process, and eliminate much of the guesswork.
+> 此外，他们正在讨论他们的工程团队可以如何更好地帮助我提高开发过程的效率，并消除许多开发中的猜测。
 >
-> \- Geoffrey via [LinuxMusicians][8]
+> \- Geoffrey通过[LinuxMusicians][8]发布
 
-So, Focusrite wants to ensure that the Linux community gets to use their products with an improved experience. In other words, indirectly providing official support to the Linux platform.
+因此，Focusrite想要确保Linux社区可以获得更好的产品使用体验。换句话说,Focusrite可以这样间接地为Linux平台提供官方支持。
 
-And, this is big news!
+这是个大新闻！
 
-These two big audio manufacturers **should persuade other software and hardware companies as well**. Whether it is in the form of official support for drivers, troubleshooting support for their customers, anything works.
+这两大音频制造商**也应该说服其他软硬件公司**。无论是以对驱动程序的官方支持，还是以对客户的故障排除支持的形式，任何事情都是有效的。 
 
-Any kind of attention to the Linux platform will help improve the Linux audio ecosystem.
+任何对Linux平台的关注都对改善Linux音频生态系统有利。
 
-Audio professionals do not have to get locked in the proprietary platforms or pay for a license to get an operating system if more audio companies add Linux support.
+如果更多的音频公司添加Linux支持，音频专业人员就不必受困于专有平台上，也不必付费获得操作系统许可证了。
 
-_💬 I would be hopeful for that future! What do you think?_
+_💬 我对那样的未来充满希望！你觉得呢？_
 
 * * *
 
@@ -70,7 +70,7 @@ via: https://news.itsfoss.com/focusrite-linux/
 
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/KaguyaQiang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
