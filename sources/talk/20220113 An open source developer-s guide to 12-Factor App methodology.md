@@ -6,109 +6,106 @@
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
-
-An open source developer's guide to 12-Factor App methodology
+开源开发人员 12-Factor App方法指南
 ======
-How 12 basic principles can help teams build highly scalable apps
-quickly and efficiently.
+
+12 项基本原则如何帮助团队快速高效地构建高度可扩展的应用程序
 ![Tips and gears turning][1]
 
-The [12-Factor App methodology][2] provides guidelines for building apps in a short time frame and for making them scalable. It was created by the developers at Heroku for use with Software-as-a-Service (SaaS) apps, web apps, and potentially Communication-Platform-as-a-Service (CPaaS) ****apps. For organizing projects effectively and managing scalable applications, the 12-Factor App methodology has powerful advantages for open source development.
+ [12-Factor App methodology][2] 为在短时间内构建应用程序并使其具有可扩展性提供了指导。它由 Heroku 的开发人员创建，用于软件即服务（SaaS）应用程序、网络应用程序以及潜在的通信平台即服务（CPaaS）。在有效组织项目和管理可扩展应用程序方面，12 要素应用程序方法论对开源开发具有强大的优势。
 
-### The principles of 12-Factor App methodology
+### 12-Factor App方法的原则
 
-The principles of 12-Factor App methodology are strict rules that act as building blocks for developing and deploying SaaS applications, and they are not constrained to any programming language or database.
+12 要素应用程序方法的原则是严格的规则，也是开发和部署 SaaS 应用程序的基石，并且不受任何编程语言或数据库的限制。
 
-#### 1: One codebase tracked in revision control, many deploys
+#### 1: 一份基准代码，多份部署
 
 ![An infographic illustrating one codebase, represented by green lines on the left, leading into four deployments on the right, represented by green boxes. A staging environment is represented by an orange box, and production is represented by a red box][3]
 
 Seth Kenlon CC-0
 
-Every application should have one codebase with multiple different environments/deploys.
+每个应用程序都应该有一个具有多个不同环境/部署的代码库。
 
-Developers should not develop another codebase just for the sake of setup in different environments. Different environments represent different states, but these different environments should share the same codebase.
+开发人员不应仅仅为了在不同环境中设置而开发另一个代码库。不同的环境代表不同的状态，但这些不同的环境应该共享同一个代码库。
 
-An environment can be considered a branch in the context of Subversion Control Systems like GitLab, where many open source projects are stored. For example, you could create a single repository for a cloud VoIP application ****named VoIP-app in any central version control system, then create two branches, development, and staging, with "master" as the release branch.
+在许多开源项目都存储在 GitLab 等 Subversion 控制系统中的情况下，一个环境可以被视为一个分支。例如，你可以在任何中央版本控制系统中为名为VoIP-app的云 VoIP 应用程序创建一个单独的存储库，然后创建两个分支：开发分支和暂存分支，并将 "master "作为发布分支。
 
-#### 2: Explicitly declare and isolate dependencies
+#### 2: 显式声明依赖关系
 
-All dependencies should be declared. Your app may depend on external system tools or libraries, but there should be no _implicit_ reliance on system tools or libraries. Your app must always explicitly declare all dependencies and their correct versions.
+应声明所有依赖关系。您的应用程序可能会依赖外部系统工具或库，但不应对系统工具或库产生 _隐含_ 依赖。您的应用程序必须始终明确声明所有依赖项及其正确版本。
 
-Including dependencies in the codebase can create problems, especially in open source projects where a change in an external library may introduce errors into the codebase. For example, a codebase might use an external library without explicitly declaring this dependence or which version. If the external library is updated to a newer, untested version, this could create compatibility issues with your code. Your codebase is protected from this issue with an explicit declaration of the dependency and its correct version.
+在代码库中包含依赖关系可能会产生问题，特别是在开源项目中，外部库的更改可能会将错误引入代码库。例如，代码库可能会使用一个外部库，但没有明确声明该依赖关系或版本。如果外部库更新到更新的、未经测试的版本，这可能会与您的代码产生兼容性问题。如果明确声明了依赖关系及其正确版本，您的代码库就不会出现这种问题。
 
-Depending on the technology stack, it's better to use a package manager to download the dependencies on your respective system by reading a dependency declaration manifest representing the dependencies' names and versions.
+根据技术栈的不同，最好使用软件包管理器，通过读取代表依赖库名称和版本的依赖库声明清单，在各自的系统上下载依赖库。
 
-#### 3: Store config in the environment
+#### 3: 在环境中存储配置
 
-When you need to support multiple environments or clients, configurations become a vital part of an application. A configuration that varies between deployments should be stored in the environment variables. This makes it easy to change between the deploys without having to change the code.
+当需要支持多个环境或客户端时，配置就成了应用程序的重要组成部分。不同部署之间的配置应存储在环境变量中。这样就可以在部署之间轻松更改配置，而无需更改代码。
 
-For closed source apps, this principle is beneficial, as you would not want sensitive information like database connection information, or other secret data, to be given out publicly. However, in open source development, these details are open. In this case, the advantage is that you do not need to keep changing the code repeatedly. You just set the variables in such a way that you only have to change the environment to get your codebase to run perfectly.
+对于闭源应用程序来说，这一原则是有益的，因为你不会希望数据库连接信息或其他秘密数据等敏感信息被公开。然而，在开放源代码开发中，这些细节都是公开的。在这种情况下，好处是你不需要反复修改代码。你只需这样设置变量，只需改变环境，就能让代码完美运行。
 
-#### 4: Treat backing services as attached resources
+#### 4: 把后端服务当作附加资源
 
-All backing services (such as databases, external storage, or message queues) are treated as attached resources and are attached and detached by the execution environment. With this principle, if the location or connection details of these services change, you still don't need to change the code. The details are available in the config instead.
+所有后备服务（如数据库、外部存储或消息队列）都被视为附加资源，由执行环境附加或分离。根据这一原则，如果这些服务的位置或连接细节发生变化，仍无需更改代码。这些细节可以在配置中找到。
 
-Backing services can be attached or detached from deploys quickly. For example, if your cloud-based erp's database is not working correctly, the developer should be able to create a new database server restored from a recent backup—without any change to the codebase.
+备份服务可以从部署中快速附加或分离。例如，如果基于云的电子表格的数据库无法正常工作，开发人员应该能够创建一个从最近备份恢复的新数据库服务器，而无需对代码库进行任何更改。
 
-#### 5: Strictly separate build and run stages
+#### 5: 严格分离构建和运行
+12-Factor App要求严格区分构建、发布和运行阶段。
 
-A 12-Factor App requires a strict separation between build, release, and run stages.
+  * 第一阶段是 _构建_ 阶段。在这一阶段，源代码被组装或编译成可执行文件，同时加载依赖项并创建资产。每次需要部署新代码时，构建阶段就会开始。
 
-  * The first stage is the _build_ ****phase. In this phase, the source code is assembled or compiled into an executable while also loading dependencies and creating assets. Every time a new code needs to be deployed, the build phase starts.
+  * 第二阶段是 _发布_ 阶段。在此阶段，构建阶段生成的代码与部署的当前配置相结合。最终发布的版本包含构建和配置，可在执行环境中立即执行。
 
-  * The second stage is the _release_ ****phase. In this phase, the code produced during the build stage is combined with the deployment's current config. The resulting release contains both the build and the config and is ready for immediate execution in the execution environment.
-
-  * The third stage is the _run_ ****phase and is the final stage: the application is run in the execution environment. It should not be interrupted by any other stage.
-
+  * 第三个阶段是 _运行_ 阶段，也是最后阶段：应用程序在执行环境中运行。该阶段不应被其他任何阶段打断。
 
 
 
-By strictly separating these stages, we avoid code breaks and make system maintenance much more manageable.
 
-#### 6: Execute the app as one or more stateless processes
+通过严格区分这些阶段，我们可以避免代码中断，使系统维护更加易于管理。
 
-An app is executed in an execution environment as a collection of one or more processes. These processes are stateless, with persisted data stored on a backing service, such as a database.
+#### 6: 以一个或多个无状态进程运行应用
 
-This is useful for open source, because a developer using a version of the app can create multinode deployments on their cloud platform for scalability. The data is not persisted in them, since data would be lost if any one of those nodes crashes.
+应用程序作为一个或多个进程的集合在执行环境中执行。这些进程是无状态的，其持久化数据存储在数据库等后备服务中。
 
-#### 7: Export services via port binding
+这对开源非常有用，因为使用某版本应用程序的开发人员可以在其云平台上创建多节点部署，以实现可扩展性。数据不会在其中持久化，因为如果其中任何一个节点崩溃，数据就会丢失。
 
-Your app should act as a standalone service that is independent of additional apps. It should be accessible to other services through a URL, acting as a service. In this way, your app can serve as a resource for other apps when required. Using this concept, you can build [REST APIS][4].
+#### 7: 通过端口绑定提供服务
 
-#### 8: Scale out via the process model
+您的应用程序应作为独立的服务，独立于其他应用程序。它应能通过 URL 访问其他服务，并充当服务的角色。这样，您的应用程序就可以在需要时作为其他应用程序的资源。利用这一概念，您可以构建 [REST APIS][4].
 
-Also known as the concurrency principle, this principle indicates that each process in your app should be able to scale, restart, or clone itself.
+#### 8: 通过进程模型进行扩展
 
-Instead of making a process larger, a developer can create multiple processes and distribute the load of their apps among those processes. This approach allows you to build your app to handle diverse workloads by assigning each workload to a process type.
+该原则也称为并发原则，它表明应用程序中的每个进程都应能够自我扩展、重启或克隆。
 
-#### 9: Maximize robustness with fast startup and graceful shutdown
+开发人员可以创建多个进程，并将应用程序的负载分配给这些进程，而不是将一个进程变大。通过这种方法，您可以将每种工作负载分配给一个进程类型，从而构建能处理不同工作负载的应用程序。
 
-Your app should be built on simple processes, so developers can scale up processes while still allowing them to restart them if anything goes wrong. This makes the app's processes disposable.
+#### 9: 快速启动和优雅终止可最大化健壮性
 
-Building an app on this principle means rapid deployment of code, fast elastic scaling, more agility for the release process, and robust production deploys. All of these are very helpful in an open source development environment.
+您的应用程序应该建立在简单的流程基础上，这样开发人员就可以扩展流程，同时还能在出现任何问题时重新启动流程。这样，应用程序的进程就可以一次性使用。
 
-#### 10: Keep development, staging, and production as similar as possible
+根据这一原则构建应用程序意味着代码的快速部署、快速弹性扩展、更灵活的发布流程以及稳健的生产部署。所有这些在开源开发环境中都非常有用。
 
-Teams working on a project should use the same operating systems, backing services, and dependencies. This reduces the likelihood of bugs turning up, and less time is needed for development.
+#### 10: 尽可能的保持开发，预发布，线上环境相同
+参与项目的团队应使用相同的操作系统、支持服务和依赖关系。这样可以降低出现错误的可能性，减少开发所需的时间。
 
-Putting this principle into practice could be a challenge for open source projects due to the dispersed nature of its developers, who may not be ****[able to communicate][5] about the systems, services, and dependencies they use. One possibility for reducing these differences is a development guideline suggesting what operating system, services, and dependencies to use.
+由于开源项目的开发人员分散在各地，他们可能无法就所使用的系统、服务和依赖关系进行[沟通][5] ，因此将这一原则付诸实践对于开源项目来说可能是一个挑战。减少这些差异的一种可能性是制定开发指南，建议使用何种操作系统、服务和依赖项。
 
-#### 11: Treat logs as event streams
+#### 11: 把日志当作事件流
 
-Logs are essential for troubleshooting production problems or understanding user behavior. However, a 12-Factor App shouldn't be concerned with the management of logs.
+日志对于排除生产问题或了解用户行为至关重要。但是， 12-Factor App不应关注日志管理。
 
-Instead, it should route log entries as event streams, written as standard outputs, to a separate service for analysis and archival. Robotic process automation (RPA) technologies could be useful as a third-party service to process and analyze the logs. The execution environment will decide how to process this stream. This provides greater flexibility and power for introspecting the app's behavior.
+相反，它应将日志条目作为事件流，写入标准输出，并将其发送到单独的服务进行分析和存档。机器人流程自动化 (RPA) 技术可作为处理和分析日志的第三方服务。执行环境将决定如何处理该数据流。这为反省应用程序的行为提供了更大的灵活性和能力。
 
-#### 12: Run admin/management tasks as one-off processes
+#### 12:后台管理任务当作一次性进程运行
+这一原则实际上与开发无关，而是与应用程序管理有关。管理进程应在与应用程序常规长期运行进程相同的环境中运行。在本地部署中，开发人员可以直接使用应用程序签出目录内的 shell 命令来执行一次性管理进程。
 
-This principle is not really related to development but is instead about app management. Admin processes should be run in an identical environment to the regular long-running processes of the app. In a local deploy, developers could use a direct shell command inside the app checkout directory to perform one-time admin processes.
+### 结论
 
-### Conclusion
+使用 12-Factor App方法论开发应用程序，可以提高效率，加快推出速度。在开源开发中，偏离某些指导原则可能是有意义的，但最好还是尽可能严格遵守这些指导原则。
 
-By developing your app using 12-Factor App methodology, you can increase efficiency and rollout faster. It may make sense to diverge from some of the guidelines in open source development, but it is best to try to follow these guidelines as strictly as possible.
+开源 12-Factor App是可能的。一个很好的例子是 [Jitsi][6][, 这是一个开源视频会议平台][7], 在疫情期间扩展了 100 倍，取得了巨大成功，它就是采用 12-Factor App方法构建的。
 
-Open source 12-Factor Apps are possible. One great example is [Jitsi][6][, an open source video conference platform][7], which scaled 100-fold during the pandemic with great success, was built with the 12-Factor App methodology.
 
 --------------------------------------------------------------------------------
 
