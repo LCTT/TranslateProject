@@ -3,16 +3,20 @@
 [#]: author: "Sreenath https://itsfoss.com/author/sreenath/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16310-1.html"
 
-如何使用 VLC 录制屏幕（娱乐）
+如何使用 VLC 录制屏幕
 ======
+
+![][0]
+
+> 用途广泛的 VLC 可以做很多事情。屏幕录制就是其中之一。
 
 VLC 不仅仅是一个视频播放器。它还是一款多功能视频工具，具有普通用户永远无法了解的众多功能。
 
-你可以[使用 VLC 下载 YouTube 视频][1]，甚至可以用它修剪视频。
+你可以 [使用 VLC 下载 YouTube 视频][1]，甚至可以用它修剪视频。
 
 VLC 的另一个不寻常用途是屏幕录制。
 
@@ -20,19 +24,17 @@ VLC 的另一个不寻常用途是屏幕录制。
 
 ### 使用 VLC 进行屏幕录制
 
-🚧
+> 🚧 虽然我可以使用 VLC 录制桌面屏幕，但无法录制任何声音和鼠标光标。在我看来，它并不能替代合适的屏幕录制工具。
 
-虽然我可以使用 VLC 录制桌面屏幕，但无法录制任何声音和鼠标光标。在我看来，它并不能替代合适的屏幕录制工具。
-
-要使用 [VLC][2] 录制屏幕，请打开它并单击“媒体”，然后选择“转换/保存”。（或者直接点击媒体→打开采集设备）
+要使用 [VLC][2] 录制屏幕，请打开它并单击 “<ruby>媒体<rt>Media</rt></ruby>”，然后选择 “<ruby>转换/保存…<rt>Convert/Save...</rt></ruby>”。（或者直接点击 “<ruby>媒体<rt>Media</rt></ruby>”→“<ruby>打开采集设备…<rt>Open Capture Device...</rt></ruby>”）
 
 ![Select Convert/ Save option][3]
 
-转到“捕获设备”选项卡，然后从捕获模式下拉列表中选择桌面。
+转到 “<ruby>捕获设备<rt>Capture Device</rt></ruby>” 选项卡，然后从 “<ruby>捕获模式<rt>Capture Mode</rt></ruby>” 下拉列表中选择桌面。
 
 ![Capture Mode: Desktop][4]
 
-现在，这里为你的录制提供了一些帧率。10、24 fps 等都不错，如果你需要更高的质量，请选择更高的。请注意，这会增加文件大小和系统要求。然后，按转换/保存按钮。
+现在，这里为你的录制提供了一些帧率。10、24 fps 等都不错，如果你需要更高的质量，请选择更高的。请注意，这会增加文件大小和系统要求。然后，按 “<ruby>转换/保存<rt>Convert/Save</rt></ruby>” 按钮。
 
 ![Set Frame Rate][5]
 
@@ -40,15 +42,15 @@ VLC 的另一个不寻常用途是屏幕录制。
 
 ![Set Output Profile][6]
 
-设置你需要的视频格式，然后按保存。
+设置你需要的视频格式，然后按 “<ruby>保存<rt>Save</rt></ruby>”。
 
 ![Edit the Output Profile][7]
 
-现在，你需要给出目标文件名。单击“浏览”按钮，选择位置，然后输入输出文件的名称。单击“保存”。
+现在，你需要给出目标文件名。单击 “<ruby>浏览<rt>Browse</rt></ruby>”按钮，选择位置，然后输入输出文件的名称。单击 “<ruby>保存<rt>Save</rt></ruby>”。
 
 ![Output file location and Name][8]
 
-按开始按钮，开始录制屏幕。
+按 “<ruby>开始<rt>Start</rt></ruby>” 按钮，开始录制屏幕。
 
 ![Start Recording][9]
 
@@ -66,11 +68,11 @@ VLC 的另一个不寻常用途是屏幕录制。
 
 ### 总结
 
-如你所见，虽然可以使用 VLC 录制桌面屏幕，但它并不能替代[专用屏幕录制工具][13]。缺乏录音是一个重大的遗憾。
-
-![][14]
+如你所见，虽然可以使用 VLC 录制桌面屏幕，但它并不能替代 [专用屏幕录制工具][13]。缺乏录音是一个重大的遗憾。
 
 仅当你没有任何其他选项时才使用 VLC 进行屏幕录制。你怎么认为？
+
+*（题图：MJ/f48c22e9-a2d1-4567-a265-6c3aaf147aff）*
 
 --------------------------------------------------------------------------------
 
@@ -79,7 +81,7 @@ via: https://itsfoss.com/vlc-record-screen/
 作者：[Sreenath][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -99,3 +101,4 @@ via: https://itsfoss.com/vlc-record-screen/
 [12]: https://itsfoss.com/content/images/2023/09/recorded-output.png
 [13]: https://itsfoss.com/best-linux-screen-recorders/
 [14]: https://itsfoss.com/content/images/size/w256h256/2022/12/android-chrome-192x192.png
+[0]: https://img.linux.net.cn/data/attachment/album/202310/23/153033pej4f9egegjbtbbs.jpg
