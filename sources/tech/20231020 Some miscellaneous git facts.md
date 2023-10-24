@@ -7,27 +7,27 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Some miscellaneous git facts
+一些杂七杂八的 git 知识
 ======
 
-I’ve been very slowly working on writing about how Git works. I thought I already knew Git pretty well, but as usual when I try to explain something I’ve been learning some new things.
+我一直在慢慢地撰写关于 Git 工作原理的文章. 尽管我曾认为自己对 Git 非常了解，但像往常一样，当我尝试解释某事的时候，我又学到一些新东西。
 
-None of these things feel super surprising in retrospect, but I hadn’t thought about them clearly before.
+现在回想起来，这些事情都不算太令人吃惊，但我以前并没有清楚地思考过它们。
 
-The facts are:
+事实是:
 
-  * [the “index”, “staging area” and “–cached” are all the same thing][1]
-  * [the stash is a bunch of commits][2]
-  * [not all references are branches or tags][3]
-  * [merge commits aren’t empty][4]
+  * [索引"、"暂存区 "和 "缓存 "是一回事][1]
+  * [stash是一堆提交][2]
+  * [并非所有引用都是分支或标签][3]
+  * [合并提交不是空的][4]
 
 
 
-Let’s talk about them!
+下面我们来详细了解这些内容。
 
-### the “index”, “staging area” and “–cached” are all the same thing
+### 索引"、"暂存区 "和 "缓存 "是一回事
 
-When you run `git add file.txt`, and then `git status`, you’ll see something like this:
+当你运行`git add file.txt`,然后运行`git status`,你会看到类似以下的输出:
 
 ```
 
@@ -39,11 +39,11 @@ When you run `git add file.txt`, and then `git status`, you’ll see something l
 
 ```
 
-People usually call this “staging a file” or “adding a file to the staging area”.
+人们通常称这个过程为“暂存文件”或“将文件添加到暂存区”。
 
-When you stage a file with `git add`, behind the scenes git adds the file to its object database (in `.git/objects`) and updates a file called `.git/index` to refer to the newly added file.
+当你使用 git add 命令来暂存文件时，Git 在后台将文件添加到其对象数据库 (在 .git/objects 目录下)，并更新一个名为 .git/index 的文件以引用新添加的文件。
 
-This “staging area” actually gets referred to by 3 different names in Git. All of these refer to the exact same thing (the file `.git/index`):
+Git 中的这个“暂存区”事实上被用 3 种不同的名称引用，但它们都指的是同一个东西（即 .git/index 文件）：
 
   * `git diff --cached`
   * `git diff --staged`
@@ -51,13 +51,13 @@ This “staging area” actually gets referred to by 3 different names in Git. A
 
 
 
-I felt like I should have realized this earlier, but I didn’t, so there it is.
+我觉得我早该早点认识到这一点，但我之前并没有，所以在这里提醒一下。
 
-### the stash is a bunch of commits
+### stash是一堆提交
 
-When I run `git stash` to stash my changes, I’ve always been a bit confused about where those changes actually went. It turns out that when you run `git stash`, git makes some commits with your changes and labels them with a reference called `stash` (in `.git/refs/stash`).
+当我运行`git stash`命令来保存更改时, 我一直对这些更改究竟去了哪里感到有些困惑。事实上，当你运行`git stash`命令时,Git 会根据你的更改创建一些提交，并用一个名为 `stash` 的引用来标记它们（在 .git/refs/stash 目录下）。
 
-Let’s stash this blog post and look at the log of the `stash` reference:
+让我们将此博客文章保存到“stash”，然后查看“stash”引用的日志：
 
 ```
 
@@ -68,7 +68,7 @@ Let’s stash this blog post and look at the log of the `stash` reference:
 
 ```
 
-Now we can look at the commit `2ff2c273` to see what it contains:
+现在我们可以查看提交 `2ff2c273` 以查看其包含的内容：
 
 ```
 
@@ -83,19 +83,19 @@ Now we can look at the commit `2ff2c273` to see what it contains:
 
 ```
 
-Unsurprisingly, it contains this blog post. Makes sense!
+毫不意外，它包含了这篇博客文章。这很合理！
 
-`git stash` actually creates 2 separate commits: one for the index, and one for your changes that you haven’t staged yet. I found this kind of heartening because I’ve been working on a tool to snapshot and restore the state of a git repository (that I may or may not ever release) and I came up with a very similar design, so that made me feel better about my choices.
+实际上，`git stash` 会创建两个独立的提交：一个是索引提交，另一个是你尚未暂存的改动提交。这让我感到很振奋，因为我一直在开发一款工具，用于快照和恢复 Git 仓库的状态（也许永远不会发布），而我提出的设计与 Git 的 stash 实现非常相似，所以我对自己的选择感到满意。
 
-Apparently older commits in the stash are stored in the reflog.
+显然`stash`中的旧提交存储在reflog中。
 
-### not all references are branches or tags
+### 并非所有引用都是分支或标签
 
-Git’s documentation often refers to “references” in a generic way that I find a little confusing sometimes. Personally 99% of the time when I deal with a “reference” in Git it’s a branch or `HEAD` and the other 1% of the time it’s a tag. I actually didn’t know ANY examples of references that weren’t branches or tags or `HEAD`.
+Git 文档中经常泛泛地提到 "引用"，这使得我有时觉得很困惑。就个人而言，我在 Git 中处理“引用”的99%时间是指分支或 HEAD，而剩下的1%时间是指标签。事实上，我以前完全不知道任何不是分支、标签或 `HEAD` 的引用示例。
 
-But now I know one example – the stash is a reference, and it’s not a branch or tag! So that’s cool.
+但现在我知道了一个例子——`stash`是一种引用，而它既不是分支也不是标签！所以这太酷啦！
 
-Here are all the references in my blog’s git repository (other than `HEAD`):
+以下是我博客的 git 仓库中的所有引用（除了 `HEAD`）：
 
 ```
 
@@ -107,11 +107,11 @@ Here are all the references in my blog’s git repository (other than `HEAD`):
 
 ```
 
-Apparently there’s also a git command called [`git notes`][5] that can create references under `.git/refs/notes`.
+显然，Git 中还有一个[`git notes`][5]命令，可以在 .git/refs/notes 目录下创建引用。
 
-### merge commits aren’t empty
+### 合并提交不是空的
 
-Here’s a toy git repo where I created two branches `x` and `y`, each with 1 file (`x.txt` and `y.txt`) and merged them. Let’s look at the merge commit.
+这是一个示例 Git 仓库，其中我创建了两个分支 x 和 y，每个分支都有一个文件（x.txt 和 y.txt），然后将它们合并。让我们看看合并提交。
 
 ```
 
@@ -122,7 +122,7 @@ Here’s a toy git repo where I created two branches `x` and `y`, each with 1 fi
 
 ```
 
-If I run `git show 96a8afb`, the commit looks “empty”: there’s no diff!
+如果我运行 `git show 96a8afb`，合并提交看起来是“空的”：没有差异！
 
 ```
 
@@ -136,7 +136,7 @@ If I run `git show 96a8afb`, the commit looks “empty”: there’s no diff!
 
 ```
 
-But if I diff the merge commit against each of its two parent commits separately, you can see that of course there **is** a diff:
+但是，如果我单独比较合并提交与其两个父提交之间的差异，你会发现当然**有**差异：
 
 ```
 
@@ -149,9 +149,9 @@ But if I diff the merge commit against each of its two parent commits separately
 
 ```
 
-It seems kind of obvious in retrospect that merge commits aren’t actually “empty” (they’re snapshots of the current state of the repo, just like any other commit), but I’d never thought about why they appear to be empty.
+事实上，回顾起来合并提交并不是实际上“空的”（它们是仓库当前状态的快照，就像任何其他提交一样），只是我以前从未思考为什么它们看起来为空。
 
-Apparently the reason that these merge diffs are empty is that merge diffs only show **conflicts** – if I instead create a repo with a merge conflict (one branch added `x` and another branch added `y` to the same file), and show the merge commit where I resolved the conflict, it looks like this:
+显然，这些合并差异为空的原因是合并差异只显示**冲突** – 如果我创建一个带有合并冲突的仓库（一个分支在同一文件中添加了 `x`，而另一个分支添加了 `y`），然后查看我解决冲突的合并提交，它看起来会像这样：
 
 ```
 
@@ -174,13 +174,13 @@ Apparently the reason that these merge diffs are empty is that merge diffs only 
 
 ```
 
-It looks like this is trying to tell me that one branch added `x`, another branch added `y`, and the merge commit resolved it by putting `z` instead. But in the earlier example, there was no conflict, so Git didn’t display a diff at all.
+这似乎是在告诉我，一个分支添加了 `x`，另一个分支添加了 `y`，合并提交通过将 `z` 替代冲突解决了它。但在前面的示例中，没有冲突，所以 Git 并未显示任何差异。
 
-(thanks to Jordi for telling me how merge diffs work)
+(感谢 Jordi 告诉我合并差异的工作原理)
 
-### that’s all!
+### 这就是全部内容了！
 
-I’ll keep this post short, maybe I’ll write another blog post with more git facts as I learn them.
+我会保持这篇文章的简洁，也许我将在学到更多 Git 知识时撰写另一篇关于 Git 的知识的博客文章。
 
 --------------------------------------------------------------------------------
 
