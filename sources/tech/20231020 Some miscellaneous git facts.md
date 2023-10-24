@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2023/10/20/some-miscellaneous-git-facts/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "KaguyaQiang"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -188,7 +188,7 @@ via: https://jvns.ca/blog/2023/10/20/some-miscellaneous-git-facts/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/KaguyaQiang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
