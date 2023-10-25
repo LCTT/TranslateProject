@@ -3,9 +3,9 @@
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "KaguyaQiang"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16316-1.html"
 
 一些被忽略的 Git 知识
 ======
