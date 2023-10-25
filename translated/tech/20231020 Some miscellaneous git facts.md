@@ -188,13 +188,14 @@ via: https://jvns.ca/blog/2023/10/20/some-miscellaneous-git-facts/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/KaguyaQiang)
+译者：[KaguyaQiang][c]
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://jvns.ca/
 [b]: https://github.com/lujun9972
+[c]: https://github.com/KaguyaQiang
 [1]: tmp.0vBZr0yeF0#the-index-staging-area-and-cached-are-all-the-same-thing
 [2]: tmp.0vBZr0yeF0#the-stash-is-a-bunch-of-commits
 [3]: tmp.0vBZr0yeF0#not-all-references-are-branches-or-tags
