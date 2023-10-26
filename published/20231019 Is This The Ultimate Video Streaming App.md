@@ -7,7 +7,7 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-16318-1.html"
 
-这可能是一个终极视频流应用程序
+Grayjay：可能是一个终极视频流应用程序
 ======
 
 ![][0]
