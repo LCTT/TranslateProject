@@ -2,7 +2,7 @@
 [#]: via: "https://opensource.com/article/22/8/interpret-compile-java"
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
