@@ -10,6 +10,7 @@
 ======
 
 12 项基本原则如何帮助团队快速高效地构建高度可扩展的应用程序
+
 ![Tips and gears turning][1]
 
  [12-Factor App methodology][2] 为在短时间内构建应用程序并使其具有可扩展性提供了指导。它由 Heroku 的开发人员创建，用于软件即服务（SaaS）应用程序、网络应用程序以及潜在的通信平台即服务（CPaaS）。在有效组织项目和管理可扩展应用程序方面，12 要素应用程序方法论对开源开发具有强大的优势。
@@ -104,7 +105,7 @@ Seth Kenlon CC-0
 
 使用 12-Factor App方法论开发应用程序，可以提高效率，加快推出速度。在开源开发中，偏离某些指导原则可能是有意义的，但最好还是尽可能严格遵守这些指导原则。
 
-开源 12-Factor App是可能的。一个很好的例子是 [Jitsi][6][, 这是一个开源视频会议平台][7], 在疫情期间扩展了 100 倍，取得了巨大成功，它就是采用 12-Factor App方法构建的。
+开源 12-Factor App是可能的。一个很好的例子是 [Jitsi][6][, （一个开源视频会议平台）][7], 在疫情期间扩展了 100 倍的规模，取得了巨大成功，它就是采用 12-Factor App方法构建的。
 
 
 --------------------------------------------------------------------------------
@@ -113,7 +114,7 @@ via: https://opensource.com/article/21/11/open-source-12-factor-app-methodology
 
 作者：[Richard Conn][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/trisbestever)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
