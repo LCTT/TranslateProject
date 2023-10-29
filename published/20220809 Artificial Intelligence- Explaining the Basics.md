@@ -75,13 +75,13 @@ Anaconda 是一个非常流行的 Python 和 R 编程语言发行版，它主要
  
 #### 向量和矩阵
 
-矩阵是按行和列排列的数字、符号或数学表达式构成的矩形阵列。图 2 显示了一个 2 × 3 矩阵，它有 2 行和 3 列。如果你熟悉编程，在许多流行的编程语言中这个矩阵可以表示为一个二维数组。只有一行的矩阵称为行向量，只有一列的矩阵称为列向量。<!-- $[11, 22, 33]$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/svg.latex?%5B11%2C%2022%2C%2033%5D"> 就是一个行向量。
+矩阵是按行和列排列的数字、符号或数学表达式构成的矩形阵列。图 2 显示了一个 2 × 3 矩阵，它有 2 行和 3 列。如果你熟悉编程，在许多流行的编程语言中这个矩阵可以表示为一个二维数组。只有一行的矩阵称为行向量，只有一列的矩阵称为列向量。<!-- $[11, 22, 33]$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/png.latex?%5B11%2C%2022%2C%2033%5D"> 就是一个行向量。
 
 ![图 2：一个: A 2 × 3 的矩阵][2]
 
 为什么矩阵和向量在人工智能和机器学习中如此重要呢？人工智能和机器学习中广泛使用线性代数，而矩阵和向量是线性代数的核心。几个世纪以来，数学家们一直在研究矩阵和向量的性质和应用。高斯、欧拉、莱布尼茨、凯利、克莱姆和汉密尔顿等数学家在线性代数和矩阵论领域都有以他们的名字命名的定理。多年来，线性代数中发展出了许多分析矩阵和向量性质的技术。
 
-复杂的数据通常可以很容易用向量或矩阵来表示。举一个简单的例子，从一个人的医疗记录中，可以得到详细的年龄、身高（厘米）、体重（公斤）、收缩压、舒张压和空腹血糖（毫克/分升）。这些信息可以很容易用行向量来表示，<!-- $[60, 160, 90, 130, 95, 160]$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/svg.latex?%5B60%2C%20160%2C%2090%2C%20130%2C%2095%2C%20160%5D"> 。人工智能和机器学习的第一个挑战来了：如果医疗记录有十亿条怎么办？即使动用成千上万的专业人员从中手动提取数据，这项任务也是无法完成的。因此，人工智能和机器学习利用程序来提取数据。
+复杂的数据通常可以很容易用向量或矩阵来表示。举一个简单的例子，从一个人的医疗记录中，可以得到详细的年龄、身高（厘米）、体重（公斤）、收缩压、舒张压和空腹血糖（毫克/分升）。这些信息可以很容易用行向量来表示，<!-- $[60, 160, 90, 130, 95, 160]$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/png.latex?%5B60%2C%20160%2C%2090%2C%20130%2C%2095%2C%20160%5D"> 。人工智能和机器学习的第一个挑战来了：如果医疗记录有十亿条怎么办？即使动用成千上万的专业人员从中手动提取数据，这项任务也是无法完成的。因此，人工智能和机器学习利用程序来提取数据。
 
 人工智能和机器学习的第二个挑战是数据解读。这是一个广阔的领域，有许多技术值得探索。我将在后续文章中介绍相关内容。人工智能和机器学习应用除了面临数学/计算方面的挑战外，还面临硬件方面的挑战。随着处理的数据量的增加，数据存储、处理器速度、功耗等也成为人工智能应用面临的重要挑战。但现在让我们先抛开这些挑战，动手编写第一行人工智能代码。
 
@@ -103,7 +103,7 @@ print(c)                   #【基本】
 
 `a = np.array([11, 22, 33])` 和 `b = np.array([44, 55, 66]) ` 分别创建了名为 `a` 和 `b` 的一维数组（为了便于理解，目前假设向量等价于一维数组）。
 
-`c = np.add(a, b)` 将向量 `a` 和`b` 相加，并将结果存储在名为 `c` 的向量中。当然，用 `a`，`b`，`c` 作为变量名是一种糟糕的编程实践，但数学家倾向于将向量命名为 <!-- $u$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/svg.latex?u">、<!-- $v$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/svg.latex?v">、<!-- $w$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/svg.latex?w"> 等。如果你完全没有 Python 编程经验，请自行了解 Python 变量的相关知识。
+`c = np.add(a, b)` 将向量 `a` 和`b` 相加，并将结果存储在名为 `c` 的向量中。当然，用 `a`，`b`，`c` 作为变量名是一种糟糕的编程实践，但数学家倾向于将向量命名为 <!-- $u$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/png.latex?u">、<!-- $v$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/png.latex?v">、<!-- $w$ --> <img style="transform: translateY(0.1em); background: white;" src="https://latex.codecogs.com/png.latex?w"> 等。如果你完全没有 Python 编程经验，请自行了解 Python 变量的相关知识。
 
 `print(c)` 在终端上打印对象的值，即向量 `[55 77 99]`。你可以暂时这样理解向量相加, `c = [55=11+44 77=22+55 99=33+66]`。如果你想正式地了解向量和矩阵是如何相加的，但手头又没有相关的教材，我建议阅读维基百科上关于矩阵加法的文章。在网上搜索一下就会发现，用经典的 C/C++ 或 Java 程序来实现向量相加需要更多的代码。这说明 Python 很适合处理向量和矩阵。当我们执行越来越复杂的向量运算时，Python 的强大将进一步显现。
 
