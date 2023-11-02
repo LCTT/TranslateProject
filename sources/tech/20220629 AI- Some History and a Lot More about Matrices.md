@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/06/ai-some-history-and-a-lot-more-about-matrices/"
 [#]: author: "Deepu Benson https://www.opensourceforu.com/author/deepu-benson/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
