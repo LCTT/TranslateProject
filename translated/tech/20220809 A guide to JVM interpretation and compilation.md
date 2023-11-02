@@ -7,21 +7,21 @@
 [#]: publisher: " "
 [#]: url: " "
 
-A guide to JVM interpretation and compilation
+JVM 解释和编译指南
 ======
-Use interpretation, just-in-time compilation, and ahead-of-time compilation efficiently by understanding the differences among them.
+通过理解解释、即时编译和预先编译之间的区别，有效地使用它们。
 
-Java is a platform-independent language. Programs are converted to *bytecode* after compilation. This bytecode gets converted to *machine code* at runtime. An interpreter emulates the execution of bytecode instructions for the abstract machine on a specific physical machine. Just-in-time (JIT) compilation happens at some point during execution, and ahead-of-time (AOT) compilation happens during build time.
+Java 是一种跨平台的编程语言。程序源代码会被编译为<ruby>字节码<rt>bytecode</rt></ruby>，然后字节码在运行时被转换为<ruby>机器码<rt>machine code</rt></ruby>。<ruby>解释器<rt>interpreter</rt></ruby>在物理机器上模拟出的抽象计算机上执行字节码指令。<ruby>即时<rt>just-in-time，JIT</rt></ruby>编译发生在运行期，而<ruby>预先<rt>ahead-of-time，AOT</rt></ruby>编译发生在构建期。
 
-This article explains when an interpreter comes into play and when JIT and AOT will occur. I also discuss the trade-offs between JIT and AOT.
+本文将说明解释器、JIT 和 AOT 分别何时起作用，以及如何在 JIT 和 AOT 之间权衡。
 
-### Source code, bytecode, machine code
+### 源代码，字节码，机器码
 
-Applications are generally written using a programming language like C, C++, or Java. The set of instructions written using high-level programming languages is called source code. Source code is human readable. To execute it on the target machine, source code needs to be converted to machine code, which is machine readable. Source code is typically converted into machine code by a compiler.
+应用程序通常是由 C、C++ 或 Java 等编程语言编写。用这些高级编程语言编写的指令集合称为源代码。源代码是人类可读的。要在目标机器上执行它，需要将源代码转换为机器可读的机器码。这个转换工作通常是由<ruby>编译器<rt>compiler</rt></ruby>来完成的。
 
-In Java, however, the source code is first converted into an intermediate form called *bytecode*. This bytecode is platform independent, which is why Java is well known as a platform-independent programming language. The primary Java compiler `javac` converts the Java source code into bytecode. Then, the bytecode is interpreted by the interpreter.
+然而，在 Java 中，源代码首先被转换为一种中间形式，称为字节码。字节码是平台无关的，所以 Java 被称为平台无关编程语言。Java 编译器 `javac` 将源代码转换为字节码。然后解释器解释执行字节码。
 
-Here is a small `Hello.java` program:
+下面是一个简单的 Java 程序, `Hello.java`：
 
 ```
 //Hello.java
@@ -32,7 +32,7 @@ public class Hello {
 }
 ```
 
-Compile it using `javac` to generate a `Hello.class` file containing the bytecode.
+使用 `javac` 编译它，生成包含字节码的 `Hello.class` 文件。
 
 ```
 $ javac Hello.java
@@ -40,7 +40,7 @@ $ ls
 Hello.class  Hello.java
 ```
 
-Now, use `javap` to disassemble the content of the `Hello.class` file. The output of `javap` depends on the options used. If you don't choose any options, it prints basic information, including which source file this class file is compiled from, the package name, public and protected fields, and methods of the class.
+现在，使用 `javap` 来反汇编 `Hello.class` 文件的内容。使用 `javap` 时如果不指定任何选项，它将打印基本信息，包括编译这个 `.class` 文件的源文件、包名称、公共和受保护字段以及类的方法。
 
 ```
 $ javap Hello.class
@@ -51,7 +51,7 @@ public class Hello {
 }
 ```
 
-To see the bytecode content in the `.class` file, use the `-c` option:
+要查看 `.class` 文件中的字节码内容，使用 `-c` 选项：
 
 ```
 $ javap -c Hello.class
@@ -73,15 +73,15 @@ java/io/PrintStream.println:(Ljava/lang/String;)V
 }
 ```
 
-To get more detailed information, use the `-v` option:
+要获取更详细的信息，使用 `-v` 选项：
 
 ```
 $ javap -v Hello.class
 ```
 
-### Interpreter, JIT, AOT
+### 解释器，JIT 和 AOT
 
-The interpreter is responsible for emulating the execution of bytecode instructions for the abstract machine on a specific physical machine. When compiling source code using `javac` and executing using the `java` command, the interpreter operates during runtime and serves its purpose.
+解释器负责在物理机器上模拟出的抽象计算机上执行字节码指令。当使用 `javac` 编译源代码，然后使用 `java` 执行时，解释器在程序运行时运行并完成它的目标。
 
 ```
 $ javac Hello.java
@@ -89,11 +89,11 @@ $ java Hello
 Inside Hello World!
 ```
 
-The JIT compiler also operates at runtime. When the interpreter interprets a Java program, another component, called a runtime profiler, is silently monitoring the program's execution to observe which portion of the code is getting interpreted and how many times. These statistics help detect the *hotspots* of the program, that is, those portions of code frequently being interpreted. Once they're interpreted above a set threshold, they are eligible to be converted into machine code directly by the JIT compiler. The JIT compiler is also known as a profile-guided compiler. Conversion of bytecode to native code happens on the fly, hence the name just-in-time. JIT reduces overhead of the interpreter emulating the same set of instructions to machine code.
+JIT 编译器也在运行期发挥作用。当解释器解释 Java 程序时，另一个称为运行时<ruby>分析器<rt>profiler</rt></ruby>的组件将静默地监视程序的执行，统计各部分代码被解释的次数。基于这些统计信息可以检测出程序的<ruby>热点<rt>hotspot</rt></ruby>，即那些经常被解释的代码。一旦代码被解释次数超过设定的阈值，它们满足被 JIT 编译器直接转换为机器码的条件。所以 JIT 编译器也被称为分析优化的编译器。从字节码到机器码的转换是在程序运行过程中进行的，因此称为即时编译。JIT 减少了解释器将同一组指令模拟为机器码的负担。
 
-The AOT compiler compiles code during build time. Generating frequently interpreted and JIT-compiled code at build time improves the warm-up time of the Java Virtual Machine (JVM). This compiler was introduced in Java 9 as an experimental feature. The `jaotc` tool uses the Graal compiler, which is itself written in Java, for AOT compilation.
+AOT 编译器在构建期编译代码。在构建时将需要频繁解释和 JIT 编译的代码直接编译为机器码可以缩短 <ruby>Java 虚拟机<rt>Java Virtual Machine，JVM</rt></ruby> 的<ruby>warm-up<rt>xxx</rt></ruby>时间。（LCTT 译注：Java 程序启动后首先字节码被解释执行，此时执行效率较低。等到程序运行了足够的时间后，代码热点被检测出来，JIT 开始发挥作用，程序运行效率提升。JIT 发挥作用之前的过程就是预热。）AOT 是在 Java 9 中引入的一个实验性特性。`jaotc` 使用 Graal 编译器（它本身也是用 Java 编写的）来实现 AOT 编译。
 
-Here's a sample use case for a Hello program:
+以 `Hello.java` 为例：
 
 ```
 //Hello.java
@@ -110,9 +110,9 @@ $ java -XX:+UnlockExperimentalVMOptions -XX:AOTLibrary=./libHello.so Hello
 Inside Hello World!
 ```
 
-### When do interpreting and compiling come into play: an example
+###  解释和编译发生的时机
 
-This example illustrates when Java uses an interpreter and when JIT and AOT pitch in. Consider a simple Java program, `Demo.java` :
+下面通过例子来展示 Java 在什么时候使用解释器，以及 JIT 和 AOT 何时参与进来。这里有一个简单的程序 `Demo.java` :
 
 ```
 //Demo.java
@@ -136,7 +136,7 @@ public class Demo {
 }
 ```
 
-This simple program has a `main` method that creates a `Demo` object instance, and calls the method `square`, which displays the square root of the `for` loop iteration value. Now, compile and run the code:
+在这个程序的 `main()` 方法中创建了一个 `Demo` 对象的实例，并调用该实例的 `square()`方法，然后显示 `for` 循环迭代变量的平方值。编译并运行它：
 
 ```
 $ javac Demo.java
@@ -159,7 +159,7 @@ Time taken= 66498
 --------------------------------
 ```
 
-The question now is whether the output is a result of the interpreter, JIT, or AOT. In this case, it's wholly interpreted. How did I conclude that? Well, to get JIT to contribute to the compilation, the hotspots of the code must be interpreted above a defined threshold. Then and only then are those pieces of code queued for JIT compilation. To find the threshold for JDK 11:
+上面的结果是由谁产生的呢？是解释器，JIT 还是 AOT？。在目前的情况下，它完全是通过解释产生的。我是怎么得出这个结论的呢？只有代码被解释的次数必须超过某个阈值时，这些热点代码片段才会被加入 JIT 编译队列。只有这时，JIT 编译才会发挥作用。使用以下命令查看 JDK 11 中的该阈值：
 
 ```
 $ java -XX:+PrintFlagsFinal -version | grep CompileThreshold
@@ -170,9 +170,9 @@ OpenJDK Runtime Environment 18.9 (build 11.0.13+8)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.13+8, mixed mode, sharing)
 ```
 
-The above output demonstrates that a particular piece of code should be interpreted 10,000 times to be eligible for JIT compilation. Can this threshold be manually tuned, and is there some JVM flag that indicates whether a method is JIT compiled? Yes, there are multiple options to serve this purpose.
+上面的输出表明，一段代码被解释 10,000 次才符合 JIT 编译的条件。这个阈值是否可以手动调整呢？是否有 JVM 标志可以指示出方法是否被 JIT 编译了呢？答案是肯定的，而且有多种方式可以达到这个目的。
 
-One option for learning whether a method is JIT compiled is `-XX:+PrintCompilation`. Along with this option, the flag `-Xbatch` provides the output in a more readable way. If both interpretation and JIT are happening in parallel, the `-Xbatch` flag helps distinguish the output of both. Use these flags as follows:
+使用 `-XX:+PrintCompilation` 选项可以查看一个方法是否被 JIT 编译。除此之外，使用 `-Xbatch` 标志可以提高输出的可读性。如果解释和 JIT 同时发生，`-Xbatch` 可以帮助区分两者的输出。使用这些标志如下：
 
 ```
 $ java -Xbatch  -XX:+PrintCompilation  Demo
@@ -190,13 +190,13 @@ Time taken= 50150
 --------------------------------
 ```
 
-The output of the above command is too lengthy, so I've truncated the middle portion. Note that along with the Demo program code, the JDKs internal class functions are also getting compiled. This is why the output is so lengthy. Because my focus is `Demo.java` code, I'll use an option that can minimize the output by excluding the internal package functions. The command -`XX:CompileCommandFile` disables JIT for internal classes:
+注意，上面命令的实际输出太长了，这里我只是截取了一部分。输出很长的原因是除了 Demo 程序的代码外，JDK 内部类的函数也被编译了。由于我的重点是 `Demo.java` 代码，我希望排除内部包的函数来简化输出。通过选项 `-XX:CompileCommandFile` 可以禁用内部类的 JIT：
 
 ```
 $ java -Xbatch -XX:+PrintCompilation -XX:CompileCommandFile=hotspot_compiler Demo
 ```
 
-The file `hotspot_compiler` referenced by `-XX:CompileCommandFile` contains this code to exclude specific packages:
+在选项 `-XX:CompileCommandFile` 指定的文件 `hotspot_compiler` 中包含了要排除的包：
 
 ```
 $ cat hotspot_compiler
@@ -206,7 +206,7 @@ exclude jdk/* *
 exclude sun/* *
 ```
 
-In the first line, `quiet` instructs the JVM not to write anything about excluded classes. To tune the JIT threshold, use `-XX:CompileThreshold` with the value set to 5, meaning that after interpreting five times, it's time for JIT:
+第一行的 `quiet` 告诉 JVM 不要输出任何关于被排除类的内容。用 `-XX:CompileThreshold` 将 JIT 阈值设置为 5。这意味着在解释 5 次之后，就会进行 JIT 编译：
 
 ```
 $ java -Xbatch -XX:+PrintCompilation -XX:CompileCommandFile=hotspot_compiler \
@@ -246,7 +246,7 @@ Time taken= 26492
 --------------------------------
 ```
 
-The output is still not different from interpreted output! This is because, as per Oracle's documentation, the `-XX:CompileThreshold` flag is effective only when `TieredCompilation` is disabled:
+好像输出结果跟只用解释时并没有什么区别。根据 Oracle 的文档，这是因为只有禁用 `TieredCompilation` 时 `-XX:CompileThreshold` 才会生效：
 
 ```
 $ java -Xbatch -XX:+PrintCompilation -XX:CompileCommandFile=hotspot_compiler \
@@ -282,7 +282,7 @@ Square(i) = 100
 Time taken= 52393
 ```
 
-This section of code is now JIT compiled after the fifth interpretation:
+可以看到在第五次迭代之后，代码片段被 JIT 编译了：
 
 ```
 --------------------------------
@@ -294,11 +294,11 @@ Time taken= 983002
 --------------------------------
 ```
 
-Along with the `square()` method, the constructor is also getting JIT compiled because there is a Demo instance inside the `for` loop before calling `square()`. Hence, it will also reach the threshold and be JIT compiled. This example illustrates when JIT comes into play after interpretation.
+可以看到，与 `square()` 方法一起，构造方法也被 JIT 编译了。在 `for` 循环中调用 `square()` 之前要先构造 `Demo` 实例，所以构造方法的解释次数同样达到 JIT 编译阈值。这个例子说明了在解释发生之后何时 JIT 会介入。
 
-To see the compiled version of the code, use the `-XX:+PrintAssembly flag`, which works only if there is a disassembler in the library path. For OpenJDK, use the `hsdis` disassembler. Download a suitable disassembler library— in this case, `hsdis-amd64.so` — and place it under `Java_HOME/lib/server`. Make sure to use `-XX:+UnlockDiagnosticVMOptions` before `-XX:+PrintAssembly`. Otherwise, JVM will give you a warning.
+要查看编译后的代码，需要使用 `-XX:+PrintAssembly` 标志，该标志仅在库路径中有反汇编器时才起作用。对于 OpenJDK，使用 `hsdis` 作为反汇编器。下载合适版本的反汇编程序库，在本例中是 `hsdis-amd64.so`，并将其放在 `Java_HOME/lib/server` 目录下。使用时还需要在 `-XX:+PrintAssembly` 之前增加 `-XX:+UnlockDiagnosticVMOptions` 选项。否则，JVM 会给你一个警告。
 
-The entire command is as follows:
+完整命令如下：
 
 ```
 $ java -Xbatch -XX:+PrintCompilation -XX:CompileCommandFile=hotspot_compiler \ -XX:-TieredCompilation -XX:CompileThreshold=5 -XX:+UnlockDiagnosticVMOptions \ -XX:+PrintAssembly Demo
@@ -354,23 +354,22 @@ Square(i) = 100
 Time taken= 52888
 ```
 
-The output is lengthy, so I've included only the output related to `Demo.java`.
+我只截取了输出中与 `Demo.java` 相关的部分。
 
-Now it's time for AOT compilation. This option was introduced in JDK9. AOT is a static compiler to generate the `.so` library. With AOT, the interested classes can be compiled to create an `.so` library that can be directly executed instead of interpreting or JIT compiling. If JVM doesn't find any AOT-compiled code, the usual interpretation and JIT compilation takes place.
+现在再来看看 AOT 编译。它是在 JDK9 中引入的特性。AOT 是用于生成 `.so` 这样的库文件的静态编译器。用 AOT 可以将指定的类编译成 `.so` 库。这个库可以直接执行，而不用解释或 JIT 编译。如果 JVM 没有检测到 AOT 编译的代码，它会进行常规的解释和 JIT 编译。
 
-The command used for AOT compilation is as follows:
+使用 AOT 编译的命令如下：
 
 ```
 $ jaotc --output=libDemo.so Demo.class
 ```
 
-To see the symbols in the shared library, use the following:
+用下面的命令来查看共享库的符号表：
 
 ```
 $ nm libDemo.so
 ```
-
-To use the generated `.so` library, use `-XX:AOTLibrary` along with `-XX:+UnlockExperimentalVMOptions` as follows:
+要使用生成的 `.so` 库，使用 `-XX:+UnlockExperimentalVMOptions` 和  `-XX:AOTLibrary`：
 
 ```
 $ java -XX:+UnlockExperimentalVMOptions -XX:AOTLibrary=./libDemo.so Demo
@@ -387,7 +386,7 @@ Square(i) = 100
 Time taken= 42085
 ```
 
-This output looks as if it is an interpreted version itself. To make sure that the AOT compiled code is utilized, use `-XX:+PrintAOT` :
+从输出上看，跟完全用解释的情况没有区别。为了确认 AOT 发挥了作用，使用 `-XX:+PrintAOT`：
 
 ```
 $ java -XX:+UnlockExperimentalVMOptions -XX:AOTLibrary=./libDemo.so -XX:+PrintAOT Demo
@@ -408,7 +407,7 @@ Square(i) = 100
 Time taken= 53586
 ```
 
-Just to make sure that JIT compilation hasn't happened, use the following:
+要确认没有发生 JIT 编译，用如下命令：
 
 ```
 $ java -XX:+UnlockExperimentalVMOptions -Xbatch -XX:+PrintCompilation \ -XX:CompileCommandFile=hotspot_compiler -XX:-TieredCompilation \ -XX:CompileThreshold=3 -XX:AOTLibrary=./libDemo.so -XX:+PrintAOT Demo
@@ -427,7 +426,7 @@ Square(i) = 100
 Time taken= 59554
 ```
 
-If any small change is made to the source code subjected to AOT, it's important to ensure that the corresponding `.so` is created again. Otherwise, the stale AOT-compiled `.so` won't have any effect. For example, make a small change to the square function such that now it's calculating cube:
+需要特别注意的是，修改被 AOT 编译了的源代码后，一定要重新生成 `.so` 库文件。否则，过时的的 AOT 编译库文件不会起作用。例如，修改 `square()` 方法，使其计算立方值：
 
 ```
 //Demo.java
@@ -450,14 +449,13 @@ public class Demo {
     }
 }
 ```
-
-Now, compile `Demo.java` again:
+重新编译 `Demo.java`：
 
 ```
 $ java Demo.java
 ```
 
-But, don't create `libDemo.so` using `jaotc`. Instead, use this command:
+但不重新生成 `libDemo.so`。使用下面命令运行 `Demo`：
 
 ```
 $ java -XX:+UnlockExperimentalVMOptions -Xbatch -XX:+PrintCompilation -XX:CompileCommandFile=hotspot_compiler -XX:-TieredCompilation -XX:CompileThreshold=3 -XX:AOTLibrary=./libDemo.so -XX:+PrintAOT Demo
@@ -482,11 +480,12 @@ sqrt(i) = 1000
 Time taken= 47132
 ```
 
-Though the old version of `libDemo.so` is loaded, JVM detected it as a stale one. Every time a `.class` file is created, a fingerprint goes into the class file, and a class fingerprint is kept in the AOT library. Because the class fingerprint is different from the one in the AOT library, AOT-compiled native code is not used. Instead, the method is now JIT compiled, because the `-XX:CompileThreshold` is set to 3.
+可以看到，虽然旧版本的 `libDemo.so` 被加载了，但 JVM 检测出它已经过时了。每次生成 `.class` 文件时，都会在类文件中添加一个指纹，并在 AOT 库中保存该指纹。修改源代码后类指纹与旧的 AOT 库中的指纹不匹配了，所以没有执行 AOT 编译生成的原生机器码。从输出可以看出，现在实际上是 JIT 在起作用（注意 `-XX:CompileThreshold` 被设置为了 3）。
 
-### AOT or JIT?
+### AOT 和 JIT 之间的权衡
 
-If you are aiming to reduce the warm-up time of the JVM, use AOT, which reduces the burden during runtime. The catch is that AOT will not have enough data to decide which piece of code needs to be precompiled to native code.  By contrast, JIT pitches in during runtime and impacts the warm-up time. However, it will have enough profiling data to compile and decompile the code more efficiently.
+如果你的目标是减少 JVM 的预热时间，请使用 AOT，这可以减少运行时负担。问题是 AOT 没有足够的数据来决定哪段代码需要预编译为原生代码。相比之下，JIT 在运行时起作用，却对预热时间有一定的影响。然而，它将有足够的分析数据来更高效地编译和反编译代码。
+
 
 --------------------------------------------------------------------------------
 
@@ -494,7 +493,7 @@ via: https://opensource.com/article/22/8/interpret-compile-java
 
 作者：[Jayashree Huttanagoudar][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[toknow-gh](https://github.com/toknow-gh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
