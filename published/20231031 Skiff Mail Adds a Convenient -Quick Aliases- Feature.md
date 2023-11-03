@@ -3,13 +3,17 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16346-1.html"
 
 Skiff Mail 添加了方便的“快速别名”功能
 ======
-一个用户邮件别名的省时功能。
+
+![][0]
+
+> 一个用户邮件别名的省时功能。
+
 Skiff Mail 是一款开源的端到端加密电子邮件服务，非常注重隐私。在各方面，包括用户体验方面，它都是 Gmail 和 Proton mail 的不错替代品。
 
 虽然与竞争对手相比，它相当新，但它的一些注重隐私的功能可能会给你留下深刻的印象。
@@ -18,7 +22,7 @@ Skiff Mail 是一款开源的端到端加密电子邮件服务，非常注重隐
 
 ### 快速别名：一次性无忧设置
 
-一般来说，你可以使用一些[电子邮件保护工具][1]（例如 SimpleLogin）或从你的电子邮件提供商（无论是谁）创建电子邮件别名。
+一般来说，你可以使用一些 [电子邮件保护工具][1]（例如 SimpleLogin）或从你的电子邮件提供商（无论是谁）创建电子邮件别名。
 
 ![][2]
 
@@ -34,9 +38,7 @@ Skiff Mail 是一款开源的端到端加密电子邮件服务，非常注重隐
 
 如上面的截图所示，你也可以选择生成一个随机名称来声明。
 
-![][6]
-
-你可以从“设置”菜单访问“快速别名”功能：
+你可以从“<ruby>设置<rt>Settings</rt></ruby>”菜单访问“<ruby>快速别名<rt>Quick Aliases</rt></ruby>”功能：
 
 ![][7]
 
@@ -47,16 +49,13 @@ Skiff Mail 是一款开源的端到端加密电子邮件服务，非常注重隐
    * 它使你无需访问该工具即可轻松创建新别名
    * 使电子邮件别名看起来比垃圾邮件更真实
 
-
 根据你的订阅，每人最多可以申请 3 个域名（Essential：1、Pro：2、Business：3）。并且，使用它们创建无限的电子邮件别名。
 
 如果你使用免费套餐，你还可以申请 1 个域名，但最多只能使用 10 个别名。
 
-[Skiff Quick 别名][9]
+> **[Skiff Quick 别名][9]**
 
-_💬 你对此功能有何看法？ 请在下面的评论中告诉我。_
-
-* * *
+💬 你对此功能有何看法？ 请在下面的评论中告诉我。
 
 --------------------------------------------------------------------------------
 
@@ -65,7 +64,7 @@ via: https://news.itsfoss.com/skiff-quick-aliases/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -79,3 +78,4 @@ via: https://news.itsfoss.com/skiff-quick-aliases/
 [6]: https://news.itsfoss.com/content/images/2023/04/Follow-us-on-Google-News.png
 [7]: https://news.itsfoss.com/content/images/2023/10/skiff-email-alias-option.png
 [9]: https://skiff.com/quick-alias
+[0]: https://img.linux.net.cn/data/attachment/album/202311/03/222957cr3rujs9rvxjm9x7.jpg
