@@ -168,7 +168,7 @@ asciiquarium | lolcat -i -p 200
 
 ![颜色反转效果][11]
 
-### 加分项目：XFishTank（让你的桌面诠释海底世界）
+### 赠品：XFishTank（让你的桌面诠释海底世界）
 
 还有一个类似的有趣命令叫做 `xfishtank`。它在你的根窗口，即桌面，创建一片海洋世界。你可以从 Ubuntu 的官方仓库直接安装 `xfishtank`。
 
