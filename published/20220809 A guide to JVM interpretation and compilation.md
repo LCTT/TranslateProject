@@ -3,21 +3,24 @@
 [#]: author: "Jayashree Huttanagoudar https://opensource.com/users/jayashree-huttanagoudar"
 [#]: collector: "lkxed"
 [#]: translator: "toknow-gh"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16353-1.html"
 
 JVM 解释和编译指南
 ======
-通过理解解释、即时编译和预先编译之间的区别，有效地使用它们。
 
-Java 是一种跨平台的编程语言。程序源代码会被编译为<ruby>字节码<rt>bytecode</rt></ruby>，然后字节码在运行时被转换为<ruby>机器码<rt>machine code</rt></ruby>。<ruby>解释器<rt>interpreter</rt></ruby>在物理机器上模拟出的抽象计算机上执行字节码指令。<ruby>即时<rt>just-in-time，JIT</rt></ruby>编译发生在运行期，而<ruby>预先<rt>ahead-of-time，AOT</rt></ruby>编译发生在构建期。
+![][0]
+
+> 通过理解解释、即时编译和预先编译之间的区别，有效地使用它们。
+
+Java 是一种跨平台的编程语言。程序源代码会被编译为 <ruby>字节码<rt>bytecode</rt></ruby>，然后字节码在运行时被转换为 <ruby>机器码<rt>machine code</rt></ruby>。<ruby>解释器<rt>interpreter</rt></ruby> 在物理机器上模拟出的抽象计算机上执行字节码指令。<ruby>即时<rt>just-in-time</rt></ruby>（JIT）编译发生在运行期，而 <ruby>预先<rt>ahead-of-time</rt></ruby>（AOT）编译发生在构建期。
 
 本文将说明解释器、JIT 和 AOT 分别何时起作用，以及如何在 JIT 和 AOT 之间权衡。
 
-### 源代码，字节码，机器码
+### 源代码、字节码、机器码
 
-应用程序通常是由 C、C++ 或 Java 等编程语言编写。用这些高级编程语言编写的指令集合称为源代码。源代码是人类可读的。要在目标机器上执行它，需要将源代码转换为机器可读的机器码。这个转换工作通常是由<ruby>编译器<rt>compiler</rt></ruby>来完成的。
+应用程序通常是由 C、C++ 或 Java 等编程语言编写。用这些高级编程语言编写的指令集合称为源代码。源代码是人类可读的。要在目标机器上执行它，需要将源代码转换为机器可读的机器码。这个转换工作通常是由 <ruby>编译器<rt>compiler</rt></ruby> 来完成的。
 
 然而，在 Java 中，源代码首先被转换为一种中间形式，称为字节码。字节码是平台无关的，所以 Java 被称为平台无关编程语言。Java 编译器 `javac` 将源代码转换为字节码。然后解释器解释执行字节码。
 
@@ -89,9 +92,9 @@ $ java Hello
 Inside Hello World!
 ```
 
-JIT 编译器也在运行期发挥作用。当解释器解释 Java 程序时，另一个称为运行时<ruby>分析器<rt>profiler</rt></ruby>的组件将静默地监视程序的执行，统计各部分代码被解释的次数。基于这些统计信息可以检测出程序的<ruby>热点<rt>hotspot</rt></ruby>，即那些经常被解释的代码。一旦代码被解释次数超过设定的阈值，它们满足被 JIT 编译器直接转换为机器码的条件。所以 JIT 编译器也被称为分析优化的编译器。从字节码到机器码的转换是在程序运行过程中进行的，因此称为即时编译。JIT 减少了解释器将同一组指令模拟为机器码的负担。
+JIT 编译器也在运行期发挥作用。当解释器解释 Java 程序时，另一个称为运行时 <ruby>分析器<rt>profiler</rt></ruby> 的组件将静默地监视程序的执行，统计各部分代码被解释的次数。基于这些统计信息可以检测出程序的 <ruby>热点<rt>hotspot</rt></ruby>，即那些经常被解释的代码。一旦代码被解释次数超过设定的阈值，它们满足被 JIT 编译器直接转换为机器码的条件。所以 JIT 编译器也被称为分析优化的编译器。从字节码到机器码的转换是在程序运行过程中进行的，因此称为即时编译。JIT 减少了解释器将同一组指令模拟为机器码的负担。
 
-AOT 编译器在构建期编译代码。在构建时将需要频繁解释和 JIT 编译的代码直接编译为机器码可以缩短 <ruby>Java 虚拟机<rt>Java Virtual Machine，JVM</rt></ruby> 的<ruby>warm-up<rt>xxx</rt></ruby>时间。（LCTT 译注：Java 程序启动后首先字节码被解释执行，此时执行效率较低。等到程序运行了足够的时间后，代码热点被检测出来，JIT 开始发挥作用，程序运行效率提升。JIT 发挥作用之前的过程就是预热。）AOT 是在 Java 9 中引入的一个实验性特性。`jaotc` 使用 Graal 编译器（它本身也是用 Java 编写的）来实现 AOT 编译。
+AOT 编译器在构建期编译代码。在构建时将需要频繁解释和 JIT 编译的代码直接编译为机器码可以缩短 <ruby>Java 虚拟机<rt>Java Virtual Machine</rt></ruby>（JVM） 的<ruby>预热<rt>warm-up</rt></ruby>时间。（LCTT 译注：Java 程序启动后首先字节码被解释执行，此时执行效率较低。等到程序运行了足够的时间后，代码热点被检测出来，JIT 开始发挥作用，程序运行效率提升。JIT 发挥作用之前的过程就是预热。）AOT 是在 Java 9 中引入的一个实验性特性。`jaotc` 使用 Graal 编译器（它本身也是用 Java 编写的）来实现 AOT 编译。
 
 以 `Hello.java` 为例：
 
@@ -159,7 +162,7 @@ Time taken= 66498
 --------------------------------
 ```
 
-上面的结果是由谁产生的呢？是解释器，JIT 还是 AOT？。在目前的情况下，它完全是通过解释产生的。我是怎么得出这个结论的呢？只有代码被解释的次数必须超过某个阈值时，这些热点代码片段才会被加入 JIT 编译队列。只有这时，JIT 编译才会发挥作用。使用以下命令查看 JDK 11 中的该阈值：
+上面的结果是由谁产生的呢？是解释器，JIT 还是 AOT？在目前的情况下，它完全是通过解释产生的。我是怎么得出这个结论的呢？只有代码被解释的次数必须超过某个阈值时，这些热点代码片段才会被加入 JIT 编译队列。只有这时，JIT 编译才会发挥作用。使用以下命令查看 JDK 11 中的该阈值：
 
 ```
 $ java -XX:+PrintFlagsFinal -version | grep CompileThreshold
@@ -190,7 +193,7 @@ Time taken= 50150
 --------------------------------
 ```
 
-注意，上面命令的实际输出太长了，这里我只是截取了一部分。输出很长的原因是除了 Demo 程序的代码外，JDK 内部类的函数也被编译了。由于我的重点是 `Demo.java` 代码，我希望排除内部包的函数来简化输出。通过选项 `-XX:CompileCommandFile` 可以禁用内部类的 JIT：
+注意，上面命令的实际输出太长了，这里我只是截取了一部分。输出很长的原因是除了 `Demo` 程序的代码外，JDK 内部类的函数也被编译了。由于我的重点是 `Demo.java` 代码，我希望排除内部包的函数来简化输出。通过选项 `-XX:CompileCommandFile` 可以禁用内部类的 JIT：
 
 ```
 $ java -Xbatch -XX:+PrintCompilation -XX:CompileCommandFile=hotspot_compiler Demo
@@ -369,6 +372,7 @@ $ jaotc --output=libDemo.so Demo.class
 ```
 $ nm libDemo.so
 ```
+
 要使用生成的 `.so` 库，使用 `-XX:+UnlockExperimentalVMOptions` 和  `-XX:AOTLibrary`：
 
 ```
@@ -449,6 +453,7 @@ public class Demo {
     }
 }
 ```
+
 重新编译 `Demo.java`：
 
 ```
@@ -486,6 +491,7 @@ Time taken= 47132
 
 如果你的目标是减少 JVM 的预热时间，请使用 AOT，这可以减少运行时负担。问题是 AOT 没有足够的数据来决定哪段代码需要预编译为原生代码。相比之下，JIT 在运行时起作用，却对预热时间有一定的影响。然而，它将有足够的分析数据来更高效地编译和反编译代码。
 
+*（题图：MJ/ed3e6e15-56c7-4c1d-aff1-84a225faeeeb）*
 
 --------------------------------------------------------------------------------
 
@@ -494,7 +500,7 @@ via: https://opensource.com/article/22/8/interpret-compile-java
 作者：[Jayashree Huttanagoudar][a]
 选题：[lkxed][b]
 译者：[toknow-gh](https://github.com/toknow-gh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -503,3 +509,4 @@ via: https://opensource.com/article/22/8/interpret-compile-java
 [1]: https://opensource.com/sites/default/files/lead-images/studying-books-java-couch-education.png
 [2]: https://www.wocintechchat.com/
 [3]: https://creativecommons.org/licenses/by/2.0/
+[0]: https://img.linux.net.cn/data/attachment/album/202311/06/093552kheiob71meqierhd.png
