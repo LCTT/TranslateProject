@@ -108,7 +108,7 @@ Fedora 39 同样更新了一套应用程序和软件包。主要的更新包括�
 
 **对于现有用户** ，我们有一个很实用的升级指南可以帮助你开始升级操作：
 
-> **[如何从 Fedora 38 升级到 Fedora 39][19]**
+> **[如何从 Fedora 38 升级到 Fedora 39][24]**
 
 *（题图：MJ/f6e0a56a-5e8b-4c0f-89c2-596375bba00f）*
 
@@ -148,4 +148,5 @@ via: https://news.itsfoss.com/fedora-39-release/
 [21]: https://linux.cn/article-16207-1.html
 [22]: https://fedoraproject.org/wiki/Releases/39/ChangeSet
 [23]: https://fedoraproject.org/workstation/download/
+[24]: https://itsfoss.com/upgrade-fedora-version/
 [0]: https://img.linux.net.cn/data/attachment/album/202311/08/160126z6pyyg7t7iiagzzz.png
