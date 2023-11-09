@@ -3,14 +3,17 @@
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
-
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16321-1.html"
 
 Warehouse：管理 Flatpak 应用的强大工具
 ======
-你是否依赖于 Flatpak 应用？Warehouse 应该帮助你简化事情。
+
+![][0]
+
+> 你是否使用 Flatpak 应用？Warehouse 可以让你更轻松。
+
 有一个应用，可以为你提供有关 Flatpak 应用的所有重要信息，以及管理它的工具，这不是很好吗？
 
 这一次你很幸运！
@@ -25,31 +28,25 @@ Warehouse：管理 Flatpak 应用的强大工具
 
 ![][2]
 
-开发人员将其称为“**多功能工具箱**”，Warehouse 可用于**管理 Flatpak 用户数据**，**查看 Flatpak 的信息**，甚至**批量管理系统上安装的 Flatpaks**。
+开发人员将其称为“**多功能工具箱**”，Warehouse 可用于**管理 Flatpak 用户数据**、**查看 Flatpak 的信息**，甚至**批量管理系统上安装的 Flatpaks**。
 
 它主要使用 **Python 语言**编写，具有以下主要特点：
 
-  * **轻松管理用户数据**
-  * **批量操作功能**
-  * **清除剩余数据**
-
-
-
-![][3]
+  * 轻松管理用户数据
+  * 批量操作功能
+  * 清除残余数据
 
 ### 初步印象 👨‍💻
 
-我开始在我的 Ubuntu 系统上测试 Warehouse。从 **Flathub** 上安装它很简单。
+我一开始是在我的 Ubuntu 系统上测试 Warehouse。从 **Flathub** 上安装它很简单。
 
 打开后，显示了所有**已安装的 Flatpak 应用**的列表。它们**都以有序的方式排列**。
 
-在我看来，如果他们添加了切换到网格布局的选项，会看起来更好。
+在我看来，如果它们添加了切换到网格布局的选项，会看起来更好。
 
 ![][4]
 
-📋
-
-你是否对 Firefox 上面的应用感到好奇？我们最近介绍过它，它是一个名为 “[Mission Center][5]” 的系统监控应用。
+> 📋 你是否对列在 Firefox 之上的应用感到好奇？我们最近介绍过它，它是一个名为 “[Mission Center][5]” 的系统监控应用。
 
 接下来，我**查看了 Flatpak 应用的属性**，我点击应用旁边的“信息”标志，打开了应用属性窗口。
 
@@ -67,7 +64,7 @@ Warehouse 还具有**搜索功能**，允许你搜索特定的应用。当你安
 
 ![][8]
 
-你还可以**设置过滤器**，以**排序系统完成各种任务所需的应用甚至运行时**。
+你还可以**设置过滤器**，以**应用甚至运行时（系统完成各种任务所需的）进行排序**。
 
 点击应用程序左上角的“漏斗”图标以开始筛选。
 
@@ -85,7 +82,7 @@ Warehouse 还具有**搜索功能**，允许你搜索特定的应用。当你安
 
 ![][11]
 
-第一个选项“**从文件安装**”允许我使用 “.flatpakref” 文件安装 Flatpak 应用。
+第一个选项“<ruby>从文件安装<rt>Install from file</rt></ruby>”允许我使用 `.flatpakref`  文件安装 Flatpak 应用。
 
 ![][12]
 
@@ -93,15 +90,15 @@ Warehouse 还具有**搜索功能**，允许你搜索特定的应用。当你安
 
 ![][13]
 
-随后，我查看了“**管理剩余数据**”选项。它向我显示了一个旧的 Flatpak 应用留下了多少数据。
+随后，我查看了“<ruby>管理残余数据<rt>Manage Leftover Data</rt></ruby>”选项。它向我显示了一个旧的 Flatpak 应用留下了多少数据。
 
-我可以选择通过“安装”选项重新安装应用并恢复数据，也可以使用“垃圾桶”选项彻底清除系统中的任何痕迹。有时，残留数据会占用大量空间。
+我可以选择通过“<ruby>安装<rt>Install</rt></ruby>”选项重新安装应用并恢复数据，也可以使用“<ruby>垃圾桶<rt>Trash</rt></ruby>”选项彻底清除系统中的任何痕迹。有时，残留数据会占用大量空间。
 
 ![][14]
 
 如果你经常安装/删除应用，那么你的系统中可能会有很多剩余数据。
 
-如果你想管理 Flatpak 仓库，可以前往“**管理远程仓库**”选项，该选项允许你添加或删除它们。
+如果你想管理 Flatpak 仓库，可以前往“<ruby>管理远程仓库<rt>Manage Remotes</rt></ruby>”选项，该选项允许你添加或删除它们。
 
 ![][15]
 
@@ -115,13 +112,11 @@ Warehouse 还具有**搜索功能**，允许你搜索特定的应用。当你安
 
 你可以前往 [Flathub 商店][17]下载最新版本。
 
-[Warehouse（Flathub）][17］
+> **[Warehouse（Flathub）][17]**
 
-你还可以访问其 [GitHub 仓库][18]查看源代码。
+你还可以访问其 [GitHub 仓库][18] 查看源代码。
 
-_你对 Warehouse 应用有何看法？请在下面的评论中分享你的想法。_
-
-* * *
+你对 Warehouse 应用有何看法？请在下面的评论中分享你的想法。
 
 --------------------------------------------------------------------------------
 
@@ -130,7 +125,7 @@ via: https://news.itsfoss.com/warehouse/
 作者：[Sourav Rudra][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -154,3 +149,4 @@ via: https://news.itsfoss.com/warehouse/
 [16]: https://news.itsfoss.com/content/images/2023/10/Warehouse_10.png
 [17]: https://flathub.org/apps/io.github.flattool.Warehouse
 [18]: https://github.com/flattool/warehouse
+[0]: https://img.linux.net.cn/data/attachment/album/202310/26/224157oonzwjd1vp0d2p85.jpg
