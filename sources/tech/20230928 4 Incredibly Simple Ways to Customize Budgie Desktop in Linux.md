@@ -7,70 +7,70 @@
 [#]: publisher: " "
 [#]: url: " "
 
-4 Incredibly Simple Ways to Customize Budgie Desktop in Linux
+Linux 4 种极简方式自定义 budgie 桌面
 ======
 
-If you ask me to make the MATE desktop modernized with added features and GTK support, I may come up with something like Budgie!
+如果你想向我咨询有关制作夹带特性和支持 GTK 的自定义 MATE 桌面方面的内容，我会想到 Budgie！
 
-Budgie is an impressive desktop environment (DE) that provides you with a familiar layout along with a unique user experience.
+Budgie，一款令人惊艳的桌面环境（DE），为你提供与过去相似的配置以及独特的用户体验。
 
-So, how can you customize the Budgie desktop to elevate your experience? Fret not; I got your back here with some essential tips to tweak your Budgie experience.
+那么，如何自定义你的 Budgie 桌面才能提升个人体验呢？莫慌；我这里有几条妙计助你改善你的 Budgie 体验。
 
-I will help you do the following:
+我们的目标大致如下：
 
-  * **Change wallpaper**
-  * **Change themes, icons, and cursor (the easy way)**
-  * **Customize panel**
-  * **Customize dock**
-
-
-
-Let us get started! 🤩
-
-### 1\. Change the wallpaper of Budgie DE
-
-The Budgie desktop comes with some beautiful wallpapers pre-installed.
-
-To change the wallpaper on Budgie's desktop, all you have to do is follow two simple steps:
-
-  1. Right-click on the home screen and choose `Change Desktop Backgroun` option
-  2. Select the image, and it will be applied to your home screen
+  * **修改壁纸**
+  * **修改主题，图标以及光标——简易操作**
+  * **自定义面板**
+  * **自定义工具栏**
 
 
 
-![Click to enlarge the image][1]
+让我们开始吧！🤩
 
-But if you don't like the available options, you can always download wallpapers from the web.
+### 1\. 改变 Budgie 桌面环境壁纸
 
-Once done, open the file manager, navigate to where the image is located, right-click on the image, and choose the `Set as Wallpaper...` option.
+Budgie 桌面在安装前会自带一些好看的壁纸。
+
+修改 Budgie 桌面壁纸，你们只需要做这两个小步骤：
+
+  1. 在主界面点击右键，选择`Change Desktop Backgroun`
+  2. 选择图片，然后该图片就会应用在你的主界面中
+
+
+
+![点击放大图片][1]
+
+要是你不太中意其中的可用选项，你也可以自网络下载相关壁纸。
+
+下好后，打开文件管理器至图片存放位，右键点击该图片，选择`Set as Wallpaper...`选项。
 
 ![][2]
 
-### 2\. Change the desktop theme, icons, and cursor theme
+### 2\. 修改桌面主题，图标以及光标主题
 
-Traditionally, we download themes from the web, extract the downloaded file, and move files to the respective directory to [apply the theme on Linux][3].
+通常情况下，我们从网络上下载了主题，提取下载的文件，然后就会将文件移动到相应目录以便[应用于 Linux 主题][3]。
 
 ![][4]
 
-But that takes a while and may not be the quickest way to do it. You are free to explore it above if you are curious.
+但要那么整的话，既需要花费些功夫，又不是最高效的方法。（如果你好奇去试试的话）
 
-And that's where the **ocs-url** tool comes into play.
+那么此处便是**ocs-url**工具发力的地方了。
 
-A tool that will install any theme (from portals like _gnome-look.org_ ) with a single click.
+**ocs-url**————一款一键安装所有主题风格（比如说来自_gnome-look.org_门户网站内容）的工具。
 
 💡
 
-Gnome-look.org and pling.com are a network of sites by [Opendesktop.org][5] to help you find themes, wallpapers, icons, and other goodies in a single place.
+Gnome-look.org 和 pling.com 是依附在[Opendesktop.org][5]的两个络站点，帮助你一站式搜索主题风格，壁纸，图标，以及其它好物。
 
-It is in no way officially affiliated with any desktop environment.
+它与任何桌面环境都没有官方隶属关系。
 
-But the sad part is that it is not available in the package manager of any Linux distribution, which means you have to install it on your system manually.
+但也正是如此，它没法被任何软件包管理器中的 Linux 解析器识别，也就是说你得在你的系统里手动安装它。
 
-So first, go to the [official download page of the ocs-url][6], go to the `Files` tab, and download packages for your system:
+那么首先，移动至[ocs-url 的官方下载页面][6]，转到`Files`子页面，将软件包下载至你的系统中：
 
 ![][7]
 
-Once done, open your terminal and change the directory where the file was downloaded. For the most users, it will be the `Downloads` directory:
+完成后，打开你的命令提示符，将文件地址改成文件下载的位置。对于大多数用户来说，便是，`Downloads`文件所处的位置：
 
 ```
 
@@ -78,9 +78,9 @@ Once done, open your terminal and change the directory where the file was downlo
 
 ```
 
-Now, use the following command for your Linux distro:
+现在，使用你们Linux版本的指令：
 
-**For Ubuntu:**
+**适用于 Ubuntu:**
 
 ```
 
@@ -88,7 +88,7 @@ Now, use the following command for your Linux distro:
 
 ```
 
-**For Fedora:**
+**适用于 Fedora:**
 
 ```
 
@@ -96,7 +96,7 @@ Now, use the following command for your Linux distro:
 
 ```
 
-**For Arch:**
+**适用于 Arch:**
 
 ```
 
@@ -104,7 +104,7 @@ Now, use the following command for your Linux distro:
 
 ```
 
-**For openSUSE:**
+**适用于 openSUSE:**
 
 ```
 
@@ -112,137 +112,137 @@ Now, use the following command for your Linux distro:
 
 ```
 
-Now, let's take a look at how you install system themes, icons, and cursor themes.
+现在，让我们看看该如何安装主题风格，图标以及光标风格。
 
-#### Change system theme
+#### 修改系统主题风格
 
-To change the system theme, first, visit the [Gnome Look][8] portal and select your preferred theme (you can choose between GTK 3 and 4 themes):
+修改系统主题风格的第一步————访问[Gnome Look][8]门户网站并选择你中意的主题风格（你可以在 GTK 3 和 GTK 4 之间选择）。
 
 ![][9]
 
-Decide any of your favorite themes; here, I'm going with the `Kripton` theme. From there, you will see the option to `Install` themes.
+选择任意你最喜欢的主题风格；这里我选择`Kripton`风格,你可以看到有一个`Install`选项。
 
-From here, you will have to follow two simple steps:
+在这里，你需要遵循两个小步骤：
 
-  * After clicking on the `Install` button, it will show different variations of the theme. Choose one of them.
-  * Next, it will open a prompt, there you have to hit the `Install` button:
+  * 点击`Install`按钮之后，会呈现该主题风格的不同类型。选择其中一个。
+  * 然后会跳出一个提示符，你需要再点击一次`Install`按钮：
 
 
 
 ![][10]
 
-It will open ocs-url asking you whether you want to install the selected theme.
+然后它会拉取 ocs-url 工具询问你是否安装所选主题风格。
 
-Simply press the `OK` button to install the theme:
+点击`OK`按钮安装该主题风格：
 
 ![][11]
 
-Now, access the **Budgie Desktop Settings** and pick the installed theme from the `Widget` option under **Style** section.
+现在，进入**Budgie Desktop Settings**界面然后在**Style**子菜单下的`Widget`选择面板中点击需要安装的主题风格。
 
 ![][12]
 
-#### Change icons
+#### 修改图标
 
-To change icons, [visit the Icon section of the Gnome-look][13] portal, and find/search for the icon that suits you the best:
+修改图标，先访问有关[Gnome-look中的图标部分][13]门户网站，来搜索你中意的图标：
 
 ![][14]
 
-Once you find that perfect icon, you will find two options there: Download and Install. Click on the `Install` button.
+找到图标后，可以看到有两个按钮：Download 和 Install。点击`Install`按钮。
 
-You may find multiple icons, but in most cases there will only be one. Click on that option, it will open a prompt. Again, hit the `Install` button:
+可以看到有多个图标，但大多数例子里只展现了一个内容。点击其中一选项，弹出一提示符，再次点击`Install`按钮：
 
 ![][15]
 
-Soon, you'll see a prompt from ocs-url asking whether you want to install the selected icon pack or not. Hit the `OK` button to install the icon pack:
+然后，可以看到来自 ocs-url 弹出的提示符询问你是否安装所选图标包，点击`OK`安装图标包：
 
 ![][16]
 
-Next, open the **Budgie Desktop Settings** and from the icons, you can select the recently installed icons (I went with the elementary-kde option):
+下一步，打开**Budgie Desktop Settings**的 icons 子菜单，你便可以使用最近安装过的图标风格（我用过 elementary-kde 风格）：
 
 ![][17]
 
-#### Change cursor theme
+#### 修改光标主题风格
 
-Similar to the above, [visit the Gnome Look's cursor icon section][18] to find the most suitable cursor theme for you:
+和之前步骤类似，访问[Gnome Look的光标图标部分][18]门户网站搜索最适合你的光标图标：
 
 ![][19]
 
-Once you find the perfect cursor theme, click on the option, and you will see the option to install the selected cursor theme.
+选好心仪的光标风格后，点击相应选项，然后你就可以安装相对应的光标风格了。
 
-It will open a prompt and there, click again on the installation button:
+弹出提示符，再次点击安装按钮：
 
 ![][20]
 
-You will see a prompt from the ocs-url to install the cursor theme. All you have to do is press the `OK` button to start the installation:
+弹出来自 ocs-url 工具的提示符，点击安装光标主题风格。只需要点个`OK`然后开始安装：
 
 ![][21]
 
-Once done, open the Budgie Desktop Settings and choose the cursor theme from the `Cursors`:
+完成后，打开 Budgie 桌面设置界面，在对应子页面的`Cursors`面板中选择刚刚安装的光标主题风格：
 
 ![][22]
 
-### 3\. Customize the panel in Budgie Desktop
+### 3\. 自定义 Budgie 桌面面板
 
-Depending on the Linux distro, the position for the panel may differ. For instance, you could be using Solus Budgie or Ubuntu Budgie.
+考虑到不同的 Linux 发行版本。就举个例子：假设你用的是 Solus 的 Budgie 或者 Ubuntu 的 Budgie。 
 
-To access the settings for the panel, open the Budgie Desktop Settings, and from there you will find the settings for the panel:
+打开 Budgie 桌面设置，在那里你可以寻找到对于面板的相关设置：
 
 ![][23]
 
-As you can see, it shows the enabled applets on the panel in three sections:
+你可以看到该界面三个分区下已启用的小程序：
 
-**Start** (extreme left), **Center** , and **End** (extreme right).
+**Start**（最左侧），**Center**，以及**End**（最右侧）。
 
-📋
+📋+
 
-Remember, each applet has multiple options so you can also configure them individually.
+注意，每个小程序有自己不同的设置选项，所以还能单独设置他们。
 
-You can adjust between them. For example, here, I moved the clock to the left side as it suits my workflow much better:
+你可以在他们之间做些调整。比如，在这个地方我将 clock 工具挪到左边以便它和我的工作流界面看起来更加融洽：
 
 ![][24]
 
-To move applets, all you have to do is select the applet and use the up and down arrow buttons **located above the list of the applet.**
+要想移动小程序，只需要选中该小程序然后点击上下箭头按钮（位于小程序列表上方）。
 
-If you want to remove the applet, just select the applet and use the delete button:
+如果你想移除小程序，只需要选中该程序然后点击删除按钮即可：
 
 ![][25]
 
-To add more applets, there is an option to add applet with the `+` icon. Simply press the button, and it will list all the available applets to you.
+这里有一个`+`图标样式的选项，可以添加更多小程序。点击它，会为你弹出所有小程序可选项。
 
-Once you find a useful applet, select the applet and click on the `Add` button:
+找到一个有用的小程序，选中该程序并点击`Add`按钮：
 
 ![][26]
 
-If you want to make the panel transparent, add shadows, increase/decrease space between applets, then go to the settings menu as shown below:
+要是你希望面板变透明，想添加阴影，想增加或减少小程序之间的距离，那么就访问设置菜单中的这个页面（如下图）：
 
 ![][27]
 
-For example, here, I made my panel transparent and added shadows to make it look pleasant:
+举个例子，这里，我将自己的面板设置了透明和阴影，让它看起来更舒服点：
 
 ![][28]
 
-### 4\. Customize the dock in the Budgie Desktop
+### 4\. 在 Desktop Budgie 桌面自定义工具栏
 
-In this section, I will walk you through the following ways to make your dock look appealing and functional:
+在这一环节，我会传授你如何将自己的工具栏设计得更好，功能性更强：
 
-  * Changing the theme of the dock
-  * Adding docklets to add more features to the dock
+  * 修改工具栏主题风格
+  * 添加更多工具应用以赋予工具栏更多特性
 
 
 
-#### Change the theme of the dock
+#### 修改工具栏主题风格
 
-Sorry, but the ocs-url tool won't help you change the theme of the dock, so the only way you are left with it is the manual way!
+可惜啦，这次 ocs-url 工具可就帮不上什么忙了，设置该内容的唯一方式就是手动操作！
 
-First, [visit the Gnome Look's Plank theme][29] section and download any of your favorite plank dock themes.
+首先，[访问 Gnome Look 的底部面板主题风格][29]，下载你心仪的工具栏底部面板主题风格。
 
-Here, I went for the Monterey theme to mimic macOS (dark-inline version):
+这里，我选了模仿 macOS 系统的 Monterey 主题风格（dark-inline 版）：
 
 ![][30]
 
-Now, open the terminal and navigate to where the theme was downloaded.
+现在，打开命令提示符，寻址到该主题风格下载位置。
 
-For most users, it will be the `Downloads` directory:
+对大多数用户来说，即`Downloads`文件所在位置：
 
 ```
 
@@ -250,7 +250,7 @@ For most users, it will be the `Downloads` directory:
 
 ```
 
-Now, [use the unzip command][31] to extract files to the `.local/share/plank/themes/`:
+现在，[使用解压指令][31]将文件释放到`.local/share/plank/themes/`：
 
 ```
 
@@ -258,7 +258,7 @@ Now, [use the unzip command][31] to extract files to the `.local/share/plank/the
 
 ```
 
-In my case, it looked like this:
+在我的环境下是这样：
 
 ```
 
@@ -268,41 +268,41 @@ In my case, it looked like this:
 
 ![][32]
 
-Next, open the `Plank preferences` and change to the recently installed theme.
+然后，打开`Plank preferences`，改成刚下载的主题风格。
 
-I changed mine to `Monterey -Dark inline`:
+我将我的风格改成`Monterey -Dark inline`：
 
 ![][33]
 
-#### Add docklets to have more features
+#### 添加工具应用以增加更多特性
 
-Think of docklets as applets but for the dock but unlike applets, you are not given many options.
+就把工具应用当作小程序，把工具栏当作小程序页面就行，再无其他内容。
 
-To add/remove docklets, first, open the `Plank preferences` and go to the `Docklets` menu to list the available options:
+想要添加或移除工具应用，首先得需要打开`Plank preferences`，然后访问`Docklets`菜单，列出可用选项：
 
 ![][34]
 
-Now, if you want to add docklets, simply drag them to the dock:
+现在，如果你想添加一些工具应用，只需要把他们拖进工具栏即可：
 
 ![][35]
 
-But what if you would like to remove the added docklets?
+但如果你想把添加的工具应用移出出去呢？
 
-Well, that's pretty simple! Just drag them out of the dock and they will be removed:
+简单，把他们从工具栏中拖拽出去就行了：
 
 ![][36]
 
-### Ready to Get Started With Budgie?
+### 准备好使用 Budgie 了吗？
 
-Sure, you can always install a Linux distribution with Budgie desktop environment baked in—for convenience.
+当然，通常情况下，为了图方便，你也可以安装拷贝过 Budgie 桌面环境的 Linux 发行版的系统。
 
-However, you can also choose to [install Budgie][37] on your existing distro, such as Ubuntu:
-
+或者你还是可以选择在你现行的系统版本中[安装 Budgie][37]，比如说 Ubuntu：
+ 
 ![][4]
 
-For this tutorial, I utilized Ubuntu Budgie. The steps work for Budgie desktop no matter the distribution you use.
+在本教程中，我使用的是 Ubuntu 版本的 Budgie。期间在 Budgie 桌面上的操作步骤适用于任何你们现行所使用的发行版本。
 
-_💬 How do you customize your Budgie desktop experience? Do you want to add any tips to this article? Share your experiences in the comments down below._
+_💬你是怎么自定义你的 Budgie 桌面的呢？你想为这篇文章贡献更多内容吗？在下方评论区分享你的经验吧。_
 
 --------------------------------------------------------------------------------
 
