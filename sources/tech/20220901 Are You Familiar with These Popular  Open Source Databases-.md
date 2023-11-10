@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2022/09/are-you-familiar-with-these-popular-open-source-databases/"
 [#]: author: "Jishnu Saurav Mittapalli https://www.opensourceforu.com/author/jishnu-saurav-mittapalli/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
