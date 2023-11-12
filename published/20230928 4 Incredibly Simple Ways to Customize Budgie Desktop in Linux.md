@@ -36,7 +36,7 @@ Budgie 桌面预装了一些好看的壁纸。
   1. 在主界面点击右键，选择 “<ruby>改变桌面背景<rt>Change Desktop Background</rt></ruby>”
   2. 选择图片，然后该图片就会应用在你的主屏幕中
 
-![点击放大图片][1]
+![][1]
 
 要是你不太中意其中的可用壁纸，你也可以自网络下载相关壁纸。
 
@@ -133,7 +133,7 @@ sudo zypper install libQt5Svg5 libqt5-qtquickcontrols && sudo rpm -i ocs-url*.rp
 
 找到图标后，可以看到有两个按钮：“<ruby>下载<rt>Download</rt></ruby>” 和 “<ruby>安装<rt>Install</rt></ruby>”。点击 “<ruby>安装<rt>Install</rt></ruby>” 按钮。
 
-可以看到有多个图标，但大多数例子里只展现了一个。点击选项之一，弹出提示，再次点击“<ruby>安装<rt>Install</rt></ruby>”按钮：
+可以看到有多个图标，但大多数例子里只展现了一个。点击选项之一，弹出提示，再次点击“<ruby>安装<rt>Install</rt></ruby>” 按钮：
 
 ![][15]
 
@@ -153,7 +153,7 @@ sudo zypper install libQt5Svg5 libqt5-qtquickcontrols && sudo rpm -i ocs-url*.rp
 
 选好心仪的光标风格后，点击相应选项，然后你就可以安装相对应的光标风格了。
 
-弹出提示符，再次点击安装按钮：
+弹出提示，再次点击 “<ruby>安装<rt>Install</rt></ruby>” 按钮：
 
 ![][20]
 
