@@ -154,7 +154,7 @@ Cassandra 是一个 Apache 基金会旗下的 NoSQL 数据库。它具有高度�
 * 高可扩展性
 * 采用点对点架构
 
-以下命令可以帮助你在 Ubuntu 机器上使用 Firebird：
+以下命令可以帮助你在 Ubuntu 机器上使用 Cassandra：
 
 ```
 $curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
