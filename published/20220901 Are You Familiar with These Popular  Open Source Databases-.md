@@ -3,16 +3,19 @@
 [#]: author: "Jishnu Saurav Mittapalli https://www.opensourceforu.com/author/jishnu-saurav-mittapalli/"
 [#]: collector: "lkxed"
 [#]: translator: "toknow-gh"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16374-1.html"
 
 你应该知道的主流开源数据库
 ======
 
-*随着数据的飞速增长，数据的组织变得至关重要。本文将简要介绍当今软件开发中最流行的数据库。*
+![][0]
+
+> 随着数据的飞速增长，数据的组织变得至关重要。本文将简要介绍当今软件开发中最流行的数据库。
 
 在软件系统中，数据被格式化地组织和存储，通过数据库可以以电子方式访问它们。因为数据已经成为一种非常重要的资产，对我们来说，掌握当今使用的各种数据库的基本知识是非常重要的。
+
 我们要看的第一个数据库是 MySQL。
 
 ### MySQL
@@ -23,12 +26,12 @@ MySQL 是使用最广泛的开源数据库管理系统之一。它由<ruby>甲�
 
 #### 优点
 
-* 适配各种操作系统。
-* 适配多种编程语言，如 PHP，C，C++，Perl 等。
-* 开源、免费。
-* 它支持高达 8 百万 Tb 的巨大数据量。
-* 可定制化。
-* 比其他数据库快得多。
+* 适配各种操作系统
+* 适配多种编程语言，如 PHP、C、C++、Perl 等
+* 开源、免费
+* 它支持高达 8 百万 Tb 的巨大数据量
+* 可定制化
+* 比其他数据库快得多
 
 要在基于 Ubuntu 的计算机上安装并使用 MySQL，使用下面的命令：
 
@@ -67,10 +70,10 @@ RethinkDB 是一个开源、免费、分布式、基于文档的 NoSQL 数据库
 
 #### 优点
 
-* 适合于 Web 应用。
-* 易于扩展。
-* 内置函数多，可用性高。
-* 基于 JSON 动态文档。
+* 适合于 Web 应用
+* 易于扩展
+* 内置函数多，可用性高
+* 基于 JSON 动态文档
 
 要在基于 Ubuntu 的计算机上使用 RethinkDB，下面的命令会有帮助：
 
@@ -107,10 +110,10 @@ CouchDB 是用 Erlang 开发的开源 NoSQL 数据库。它使用多种协议和
 
 #### 优点
 
-* 可以存储任何类型的数据。
-* 支持 MapReduce，可以高效地处理数据。
-* 整体结构非常简单。
-* 索引和检索速度快。
+* 可以存储任何类型的数据
+* 支持 MapReduce，可以高效地处理数据
+* 整体结构非常简单
+* 索引和检索速度快
 
 下面的命令可以帮助你在 Ubuntu 机器上使用 CouchDB：
 
@@ -128,9 +131,9 @@ Firebird 是一个开源关系型数据库。它兼容所有操作系统，如 L
 
 #### 优点
 
-* 数据库功能不受限制。
-* 非常稳定，功能强大。
-* 配置和使用简单。
+* 数据库功能不受限制
+* 非常稳定，功能强大
+* 配置和使用简单
 
 以下命令可以帮助你在 Ubuntu 机器上使用 Firebird：
 
@@ -147,9 +150,9 @@ Cassandra 是一个 Apache 基金会旗下的 NoSQL 数据库。它具有高度�
 
 #### 优点
 
-* 高性能。
-* 高可扩展性。
-* 采用点对点架构。
+* 高性能
+* 高可扩展性
+* 采用点对点架构
 
 以下命令可以帮助你在 Ubuntu 机器上使用 Firebird：
 
@@ -169,9 +172,9 @@ $sudo systemctl start cassandra
 
 #### 优点
 
-* 与 MySQL 相比，Postgres 可以存储更多种类的数据。
-* 支持几乎所有的 SQL 特性。
-* 高度可扩展。
+* 与 MySQL 相比，Postgres 可以存储更多种类的数据
+* 支持几乎所有的 SQL 特性
+* 高度可扩展
 
 下面的命令可以帮助你在 Ubuntu 机器上使用 PostgreSQL：
 
@@ -188,11 +191,11 @@ CockroachDB 是一个为可靠性而生的数据库。它可以像<ruby>蟑螂<r
 
 #### 优点
 
-* 很容易部署。
-* 高一致性。
-* 分布式事务。
-* 高可用性。
-* 兼容 SQL。
+* 很容易部署
+* 高一致性
+* 分布式事务
+* 高可用性
+* 兼容 SQL
 
 ### Redis
 
@@ -204,6 +207,8 @@ Redis 是一个基于键值的开源 NoSQL 数据存储数据库。它支持各�
 
 我们已经浏览了最知名和最流行的开源数据库管理系统。了解这些不同的数据库非常有趣。尝试不同的选择，发现最适合你需求的数据库。另外，一定要查看这些数据库的官方文档。
 
+*（题图：MJ/40ba9f14-5948-431a-a899-36c6b1ff4dfe）*
+
 --------------------------------------------------------------------------------
 
 via: https://www.opensourceforu.com/2022/09/are-you-familiar-with-these-popular-open-source-databases/
@@ -211,9 +216,10 @@ via: https://www.opensourceforu.com/2022/09/are-you-familiar-with-these-popular-
 作者：[Jishnu Saurav Mittapalli][a]
 选题：[lkxed][b]
 译者：[toknow-gh](https://github.com/toknow-gh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.opensourceforu.com/author/jishnu-saurav-mittapalli/
 [b]: https://github.com/lkxed
+[0]: https://img.linux.net.cn/data/attachment/album/202311/13/092356pzxmjf7xtfnqft5t.png
