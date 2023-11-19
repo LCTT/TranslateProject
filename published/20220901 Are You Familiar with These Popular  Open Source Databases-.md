@@ -58,8 +58,8 @@ MariaDB 是一款由 MySQL 的开发人员开发的开源关系型数据库，�
 
 ```
 $sudo apt update
-$sudo apt install mysql-server
-$sudo systemctl start mysql.service
+$sudo apt install mariadb-server
+$sudo systemctl start mariadb.service
 ```
 
 ### RethinkDB
@@ -180,7 +180,7 @@ $sudo systemctl start cassandra
 
 ```
 $sudo apt-get update
-$sudo apt apt install postgresql postgresql-contrib
+$sudo apt-get install postgresql postgresql-contrib
 ```
 
 ### CockroachDB
