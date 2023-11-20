@@ -3,22 +3,20 @@
 [#]: author: "Eduard Lucena https://fedoramagazine.org/author/x3mboy/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16401-1.html"
 
-Fedora Linux Flatpak 11 月值得尝试的酷炫应用
+在 Fedora Linux 上值得尝试的酷炫 Flatpak 应用（11 月）
 ======
 
 ![][1]
 
-Daimar Stein 拍摄
-
-本文介绍了 Flathub 中可用的项目以及安装说明。
+> 本文介绍了 Flathub 中可用的项目以及安装说明。
 
 [Flathub][2] 是获取和分发适用于所有 Linux 应用的地方。它由 Flatpak 提供支持，允许 Flathub 应用在几乎任何 Linux 发行版上运行。
 
-请阅读“[Flatpak 入门][3]”。为了启用 flathub 作为你的 flatpak 提供商，请使用 [flatpak 站点][4]上的说明。
+请阅读“[Flatpak 入门][3]”。为了启用 flathub 作为你的 flatpak 提供商，请使用 [Flatpak 站点][4]上的说明。
 
 ### TurboWarp
 
@@ -26,12 +24,10 @@ Daimar Stein 拍摄
 
 我喜欢 Scratch，但自从我发现 TurboWarp 以来，我儿子就再也没有回头。界面更清晰，具有夜间模式，比原始 Scratch 运行速度更快，并且内存经过优化。
 
-你可以通过单击网站上的安装按钮或手动使用以下命令来安装 “TurboWarp”：
+你可以通过单击网站上的安装按钮或手动使用以下命令来安装 TurboWarp：
 
 ````
-
-    flatpak install flathub org.turbowarp.TurboWarp
-
+flatpak install flathub org.turbowarp.TurboWarp
 ````
 
 ### Szyszka
@@ -53,14 +49,10 @@ Daimar Stein 拍摄
   * 能够编辑、重新排序规则和结果
   * 处理数十万条记录
 
-
-
-你可以通过单击网站上的安装按钮或手动使用以下命令来安装 “Szyszka”：
+你可以通过单击网站上的安装按钮或手动使用以下命令来安装  Szyszka：
 
 ````
-
-    flatpak install flathub com.github.qarmin.szyszka
-
+flatpak install flathub com.github.qarmin.szyszka
 ````
 
 ### Marker
@@ -84,17 +76,13 @@ Daimar Stein 拍摄
     * ODT
     * DOCX
 
-
-
-你可以通过单击网站上的安装按钮或使用以下命令手动安装 “Marker”：
+你可以通过单击网站上的安装按钮或使用以下命令手动安装 Marker：
 
 ````
-
-    flatpak install flathub com.github.fabiocolacio.marker
-
+flatpak install flathub com.github.fabiocolacio.marker
 ````
 
-_**Marker 也可以在 fedora 的仓库中以 rpm 的形式提供**_
+*Marker 也在 fedora 的仓库中以 rpm 的形式提供。*
 
 ### Librum
 
@@ -107,14 +95,10 @@ _**Marker 也可以在 fedora 的仓库中以 rpm 的形式提供**_
   * 书籍在所有设备上同步
   * 高亮显示书签文本搜索
 
-
-
-你可以通过单击网站上的安装按钮或使用以下命令手动安装 “Librum”：
+你可以通过单击网站上的安装按钮或使用以下命令手动安装 Librum：
 
 ````
-
-    flatpak install flathub com.librumreader.librum
-
+flatpak install flathub com.librumreader.librum
 ````
 
 --------------------------------------------------------------------------------
@@ -124,7 +108,7 @@ via: https://fedoramagazine.org/fedora-linux-flatpak-cool-apps-to-try-for-novemb
 作者：[Eduard Lucena][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
