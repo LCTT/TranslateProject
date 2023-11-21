@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2023/07/ai-a-few-more-useful-python-libraries/"
 [#]: author: "Deepu Benson https://www.opensourceforu.com/author/deepu-benson/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
