@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-vscodium-fedora/"
 [#]: author: "Anuj Sharma https://itsfoss.com/author/anuj/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
