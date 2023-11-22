@@ -114,10 +114,10 @@ rfkill unblock bluetooth
 
 在某些情况下，如果你过去尝试过 Pipewire 和 Pulseaudio，它们可能会破坏工作。
 
-如果你使用 Pipewire，请确保安装了 pipeline-pulse：
+如果你使用 Pipewire，请确保安装了 pipewire-pulse：
 
 ```
-sudo pacman -Syu pipeline-pulse
+sudo pacman -Syu pipewire-pulse
 ```
 
 如果你使用 Pulseaudio，`bluez` 和 `pulseaudio-bluetooth` 可以帮助你。
