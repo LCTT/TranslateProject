@@ -4,11 +4,13 @@
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "ChatGPT"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16406-1.html"
 
 为集中管理的用户提供 FIDO2 认证
 =====
+
+![][0]
 
 Fedora 39 通过 SSSD 和 FreeIPA 为集中管理的用户开启了 FIDO2 认证功能。此篇文章将指导你如何进行配置和启用该功能。
 
@@ -142,3 +144,4 @@ via: https://fedoramagazine.org/fido2-for-centrally-managed-users/
 [11]: https://fedoraproject.org/wiki/Changes/Passkey_authentication_centrally_managed_users
 [12]: https://sssd.io/release-notes/sssd-2.9.0.html
 [13]: https://www.freeipa.org/release-notes/4-11-0.html
+[0]: https://img.linux.net.cn/data/attachment/album/202311/23/095049o1kdwqugdgw5d1mk.png
