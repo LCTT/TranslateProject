@@ -4,8 +4,8 @@
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
 [#]: translator: "GlassFoxowo-Dev"
 [#]: reviewer: "wxy"
-[#]: publisher: " "
-[#]: url: " "
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16408-1.html"
 
 EndeavourOS Galileo: 离开 Xfce，拥抱 KDE
 ======
