@@ -170,7 +170,7 @@ Bitwarden 集成了你在密码管理器中可能需要的所有核心功能，�
   * 简单易用
   * 专为 Linux 定制
 
-### 8、密码和秘密（即 GNOME 的 Seahorse）
+### 8、密码和密钥（即 GNOME 的 Seahorse）
 
 ![][19]
 
