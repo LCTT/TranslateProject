@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/create-images-directly-from-rhel-and-rhel-ubi-package-using-mkosi/"
 [#]: author: "Zbigniew Jędrzejewski-Szmek https://fedoramagazine.org/author/zbyszek/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "GlassFoxowo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
