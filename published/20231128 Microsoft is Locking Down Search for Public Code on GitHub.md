@@ -7,7 +7,7 @@
 [#]: publisher: "wxy"
 [#]: url: "https://linux.cn/article-16424-1.html"
 
-微软限制了对 GitHub 上的公开代码的搜索
+微软加码对 GitHub 上的公开代码搜索的限制
 ======
 
 ![][0]
