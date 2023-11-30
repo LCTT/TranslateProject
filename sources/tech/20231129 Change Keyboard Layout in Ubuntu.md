@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/ubuntu-change-keyboard/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/author/abhishek/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
