@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/fedora-linux-flatpak-cool-apps-to-try-for-december/"
 [#]: author: "Eduard Lucena https://fedoramagazine.org/author/x3mboy/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
