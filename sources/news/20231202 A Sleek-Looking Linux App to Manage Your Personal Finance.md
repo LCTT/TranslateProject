@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/denaro/"
 [#]: author: "Sourav Rudra https://news.itsfoss.com/author/sourav/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "GlassFoxowo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
