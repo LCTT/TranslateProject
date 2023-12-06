@@ -2,51 +2,51 @@
 [#]: via: "https://opensource.com/article/22/5/my-journey-c-neurodiverse-perspective"
 [#]: author: "Rikard Grossman-Nielsen https://opensource.com/users/rikardgn"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "CanYellow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
 
-My open source journey with C from a neurodiverse perspective
+从神经多样化视角看待我在 C 语言上的开源之旅
 ======
-I've learned that if you can find the method that works for you, no matter what teachers and other students may say, you can learn any open source skill that interests you.
+我了解到，如果你能找到适合你的方法，不管老师和其他学生怎么说，你都可以学到任何你感兴趣的开源技能。
 
 ![][1]
-(Image by: pensource.com)
+(图片来源: penource.com)
 
-I was born in 1982, which in human years is only 40 years in the past (at the time of writing). In terms of computer development, it's eons ago. I got my first computer, a Commodore 64, when I was ten years old. Later, I got an Amiga, and by 13 I got an "IBM Compatible" (that's what they were called, then) PC.
+我生于1982年，在人类记年里，这只过去了40年(在写这篇文章的时候)。然而就计算机发展而言，那已经是很久以前了。十岁的时候，我得到了我的第一台电脑，一台 Commodare 64 计算机。后来，我买了一台 Amiga，到了13岁的时候，我买了一台“ IBM 兼容”机(IBM Compatible，那时，大家都这么称呼它)。
 
-In high school, I did a lot basic programming on my graphing calculator. In my second year of high school, I learned basic C programming, and in my third year I started doing more advanced C programming, using libraries, pointers, and graphics.
+高中的时候，我用图形计算器做了很多基本的编程。高二的时候，我学习了基本的 C 语言编程，然后到了高三，我开始做更高级的 C 语言编程，开始应用库、指针和图形界面。
 
-### My journey from programming student to teacher
+### 我从编程学生成为老师的旅程
 
-In my college days, I learned Java and so [Java became my primary language][2]. I also made some C# programs for a device known as a personal data assistant (PDA), which were pre-cursors to the modern smart phone. Because Java is object-oriented, multi-platform, and made GUI programming easy, I thought I'd do most of my programming in Java from now on.
+在我的大学时代，我学习了 Java，所以[ Java 成为了我的主要语言][2]。我还为一种叫做个人数据助理(PDA)的设备编写了一些 C# 语言的程序，这是现代智能手机的前身。因为 Java 语言是面向对象的、跨平台的，并且使得 GUI 编程变得容易，所以我想从现在开始我会用 Java 来完成大部分的编程工作。
 
-In college, I also discovered that I had a talent for teaching, so I helped others with programming, and they helped me with math when I took computer science. I took some courses on C programming, aimed at basic embedded programming and controlling measurement instruments in my later college years.
+在大学里，我也发现自己有教学的天赋，所以我帮助别人编程，而当我选修计算机科学时，他们也帮助我学习数学。在大学后期，我选修了一些 C 语言编程的课程，目的是学习基本的嵌入式编程和测量仪器的控制。
 
-After turning 30, I've used C as a teaching tool for high school kids learning to program in C. I've also used [Fritzing][3] to teach high school kids how to program an Arduino. My interest in C programming was awakened again last year, when I got a job helping college students with learning differences in computing subjects.
+30岁之后，我用 C 语言作为高中生学习 C 语言编程的教学工具，我还用 [Fritzing][3] 教高中生如何编写 Arduino 程序。我对 C 语言编程的兴趣在去年再次被唤醒，当时我找到了一份工作，帮助大学生学习计算机科目中的差异。
 
-### How I approach programming in C and other languages
+### 我如何接触 C 语言和其他语言进行编程
 
-All people learn differently. Being a neurodiverse person with Asperger's and ADHD, my learning process is sometimes quite different from others. Of course, everyone has different learning styles, though people who are neurodiverse might have a greater preference for a certain learning style than someone else.
+每个人学习的方式都不一样。作为一个患有阿斯伯格综合症和多动症的神经多样化人士，我的学习过程有时与其他人很不一样。当然，每个人都有不同的学习风格，尽管神经多样化的人可能比其他人更喜欢某种学习风格。
 
-I tend to think in both pictures and words. Personally I need to decode things step by step, and understand them, step by step. This makes C a suitable language for my learning style. When I learn code, I gradually incorporate the code into my mind by learning to see lines of code, like `#include <stdio.h>` in front of me. From what I've read from descriptions of other neurodiverse people on the internet, some of them seem to have this kind of learning style as well. We “internalize code”.
+我倾向于用图片和文字来思考。就我个人而言，我需要一步一步地解码事物，一步一步地理解它们。这使得 C 语言适合我的学习风格。当我学习代码的时候，我通过学习观察一行行的代码，比如我面前的 `# include < stdio.h >` ，逐渐将代码合并到我的大脑中。根据我在互联网上获取的对其他神经多样化人群的描述，他们中的一些人似乎也有这种学习风格。我们“内化代码”。
 
-Some autistic people are a lot better at memorizing large chunks of code than me, but the process seems to be the same. When understanding concepts such as structs, pointers, pointers to pointers, matrices, and vectors, it's helpful for me to think in pictures, such as the ones you find in programming tutorials and books.
+有些自闭症患者在记忆大段代码方面比我强得多，但过程似乎是一样的。在理解诸如结构、指针、指针的指针、矩阵和向量之类的概念时，用图片来思考是很有帮助的，比如在编程教程和书籍中可以找到的那些。
 
-I like to use C to understand how things are done at a lower level, such as [file input and output (I/O)][4], networking programming, and so on. This doesn't mean I don't like libraries that handle tasks such as string manipulation or making arrays. I also like the ease of creating arrays and vectors in Java. However, for creating a user interface, though I have looked at such code in C, I prefer to use grapical editors, such as Netbeans and similar.
+我喜欢使用 C 语言来理解工作是如何在较低的级别上完成的，例如 [文件输入和输出(I/O)][4]、网络编程等等。这并不意味着我不喜欢处理字符串操作或创建数组等任务的库。我也喜欢用 Java 语言创建数组和向量的简单性。然而，对于创建用户界面，尽管我已经在 C 语言中看过这样的代码，但是我更喜欢使用图形化编辑器，比如 Netbeans 和类似的编辑器。
 
-### My ideal C GUI open source tool for creating applications
+### 我理想的用于创建应用程序的 C 语言 GUI 开源工具
 
-If I imagine an ideal open source tool for creating a GUI using C, it would be something similar to [Netbeans][5] that, for example, making GTK-interfaces by dragging and dropping. It should also be possible to put C on buttons, and so on, to make them perform actions. There may be such a tool. I admittedly haven't looked around that much.
+如果我想象一个理想的用 C 语言创建 GUI 的开源工具，它将类似于 [Netbeans][5]，例如，通过拖放来创建 GTK 接口。还可以在按钮上绑定 C 语言函数，等等，来使它们执行操作。也许有这样一个工具。我承认我没怎么仔细查找过。
 
-### Why I encourage young neurodiverse people to learn C
+### 为什么我鼓励年轻的神经多样化的人学习 C语言
 
-[Gaming][6] is a big industry. Some studies suggest neurodiverse kids may be even more focused on gaming than other kids. I would tell a neurodiverse high school or college kid that If you learn C, you may be able to learn the basics of, for example, writing efficient drivers for a graphics card, or to make efficient file I/O routines to optimize their favorite game. I would also be honest that it takes time and effort to learn, but that it's worth the effort. Once you learn it, you have greater control of things like hardware.
+[游戏行业][6] 是一个很大的产业。一些研究表明，神经多样化的孩子可能比其他孩子更专注于游戏。我会告诉一个神经多样化的高中生或大学生，如果你学习 C 语言，你可能会学到一些基础知识，例如，为显卡编写高效的驱动程序，或者编写高效的文件 I/O 例程来优化他们最喜欢的游戏。我还要诚实地说，学习需要时间和精力，但是值得付出努力。一旦你学会了它，你就可以更好地控制硬件一类的东西。
 
-For learning C, I recommend a neurodiverse kid to install a beginner-friendly Linux distro, and then find some tutorials on the net. I also recommend breaking down things step by step, and drawing diagrams of, for example, pointers. I did that to better understand the concept, and it worked for me.
+对于学习 C 语言，我建议一个神经多样化的孩子安装一个初学者友好的 Linux 发行版，然后在网上找到一些教程。我还建议一步一步地分解事物，并给它们绘制图表，例如，指针。我这样做是为了更好地理解这个概念，这对我很有效。
 
-In the end, that's what it's about: Find a learning method that works for you, no matter what teachers and other students may say, and use it to learn the open source skill that interests you. It can be done, and anyone can do it.
+最后，这就是它的意义所在: 找到一种适合你的学习方法，不管老师和其他学生怎么说，用它来学习你感兴趣的开源技能。这是可以做到的，任何人都可以做到。
 
 --------------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ via: https://opensource.com/article/22/5/my-journey-c-neurodiverse-perspective
 
 作者：[Rikard Grossman-Nielsen][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CanYellow](https://github.com/CanYellow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
