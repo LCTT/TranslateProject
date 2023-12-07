@@ -3,12 +3,14 @@
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
 [#]: translator: "ChatGPT"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16451-1.html"
 
 解读那些令人困惑 Git 术语
 ======
+
+![][0]
 
 我正在一步步解释 Git 的方方面面。在使用 Git 近 15 年后，我已经非常习惯于 Git 的特性，很容易忘记它令人困惑的地方。
 
@@ -51,7 +53,7 @@
 
 我认为，“head 是一个分支，`HEAD` 是当前的分支” 或许是 Git 中最奇怪的术语选择，但已经设定好了，想要更清晰的命名方案已经为时已晚，我们继续。
 
-“HEAD 是当前的分支”有一些重要的例外情况，我们将在下面讨论。
+“HEAD 是当前的分支” 有一些重要的例外情况，我们将在下面讨论。
 
 ### “分离的 HEAD 状态”
 
@@ -66,11 +68,11 @@ state without impacting any branches by switching back to a branch.
 [...]
 ```
 
-（你处于 “分离 HEAD” 的状态。你可以四处看看，进行试验性的更改并提交，你可以通过切换回一个分支来丢弃这个状态下做出的任何提交。）
+（消息译文：你处于 “分离 HEAD” 的状态。你可以四处看看，进行试验性的更改并提交，你可以通过切换回一个分支来丢弃这个状态下做出的任何提交。）
 
 这条信息的实质是：
 
-  * 在 Git 中，通常你有一个已经检出的“当前分支”，例如 `main`。
+  * 在 Git 中，通常你有一个已经检出的 “当前分支”，例如 `main`。
   * 存放当前分支的地方被称为 `HEAD`。
   * 你做出的任何新提交都会被添加到你的当前分支，如果你运行 `git merge other_branch`，这也会影响你的当前分支。
   * 但是，`HEAD` 不一定**必须**是一个分支！它也可以是一个提交 ID。
@@ -106,7 +108,7 @@ $ git rebase ours # 我们正在变基到的目标分支是 “ours”
 
 [这个精巧的小网站][22] 对 “ours” 和 “theirs” 的术语进行了解释。
 
-人们也提到，VSCode 将 “ours”/“theirs” 称作 “current change”/“incoming change”，同样会引起混淆。
+人们也提到，VSCode 将 “ours”/“theirs” 称作 “当前的更改”/“收到的更改”，同样会引起混淆。
 
 ### “你的分支已经与 `origin/main` 同步”
 
@@ -145,7 +147,7 @@ $ git rebase ours # 我们正在变基到的目标分支是 “ours”
 - `git log main..test`
 - `git log main...test`
 
-我不太常用 `..` 和 `...` 这两个命令，所以我得查一下 [man git-range-diff][23]。我的理解是比如这样一个情况：
+我从没用过 `..` 和 `...` 这两个命令，所以我得查一下 [man git-range-diff][23]。我的理解是比如这样一个情况：
 
 ```
 A - B main
@@ -164,7 +166,7 @@ A - B main
 
 有关这个的更多讨论可以参考 [这篇博客文章][24]。
 
-### “可以快速前进”
+### “可以快速前移”
 
 在 `git status` 中，我们会经常遇到如下的信息：
 
@@ -175,11 +177,9 @@ Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
   (use "git pull" to update your local branch)
 ```
 
-（你现在处于 `main` 分支上
-你的分支比 `origin/main` 分支落后了 2 个提交，可以进行快速前进。
-  (使用 `git pull` 命令可以更新你的本地分支)）
+（消息译文：你现在处于 `main` 分支上。你的分支比 `origin/main` 分支落后了 2 个提交，可以进行快速前进。  (使用 `git pull` 命令可以更新你的本地分支)）
 
-但“快速前进” 到底是何意？本质上，它在告诉我们这两个分支基本如下图所示（最新的提交在右侧）：
+但“快速前移” 到底是何意？本质上，它在告诉我们这两个分支基本如下图所示（最新的提交在右侧）：
 
 ```
 main:        A - B - C
@@ -211,7 +211,7 @@ A - B - C - X  (main)
         - - D - E  (origin/main)
 ```
 
-此时，`main` 分支上有一个 `origin/main` 分支上无的提交（`X`），所以无法执行快速前进。在此种情况，`git status` 就会如此显示：
+此时，`main` 分支上有一个 `origin/main` 分支上无的提交（`X`），所以无法执行快速前移。在此种情况，`git status` 就会如此显示：
 
 ```
 $ git status
@@ -243,7 +243,7 @@ and have 1 and 2 different commits each, respectively.
 
 我对这段代码的含义并不十分清楚，我通常只是在使用 `git clone` 或 `git remote add` 配置远程仓库时采用默认配置，并没有动机去深究或改变。
 
-### tree-ish
+### “tree-ish”
 
 在 `git checkout` 的手册页中，我们可以看到：
 
@@ -290,9 +290,9 @@ git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <paths
 
 以下是对它们各自功能的简要说明：
 
-  * 重置：`git revert COMMIT`: 在你当前的分支上，创建一个新的提交，该提交是 `COMMIT` 的“反向”操作（如果 `COMMIT` 添加了 3 行，那么新的提交就会删除这 3 行）。
-  * 还原：`git reset --hard COMMIT`: 强行将当前分支回退到 `COMMIT` 所在的状态，抹去自 `COMMIT` 以来的所有更改。这是一个高风险的操作。
-  * 恢复：`git restore --source=COMMIT PATH`: 将 `PATH` 中的所有文件回退到 `COMMIT` 当时的状态，而不扰乱其他文件或提交历史。
+  * 重置 —— `git revert COMMIT`: 在你当前的分支上，创建一个新的提交，该提交是 `COMMIT` 的“反向”操作（如果 `COMMIT` 添加了 3 行，那么新的提交就会删除这 3 行）。
+  * 还原 —— `git reset --hard COMMIT`: 强行将当前分支回退到 `COMMIT` 所在的状态，抹去自 `COMMIT` 以来的所有更改。这是一个高风险的操作。
+  * 恢复 —— `git restore --source=COMMIT PATH`: 将 `PATH` 中的所有文件回退到 `COMMIT` 当时的状态，而不扰乱其他文件或提交历史。
 
 ### “未跟踪的文件”、“远程跟踪分支”、“跟踪远程分支”
 
@@ -434,14 +434,16 @@ A - B - C (main)
 
 另外，尽管我已经尽力做到准确无误，但由于我涉猎到了一些我从未深入探讨过的Git的角落，所以可能还是出现了一些错误。
 
+*（题图：DALL-E/A/e1e5b964-5f32-41bb-811e-8978fb8556d4）*
+
 --------------------------------------------------------------------------------
 
 via: https://jvns.ca/blog/2023/11/01/confusing-git-terminology/
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[ChatGPT](https://linux.cn/lctt/ChatGPT)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -474,3 +476,4 @@ via: https://jvns.ca/blog/2023/11/01/confusing-git-terminology/
 [25]: https://git-scm.com/docs/revisions
 [26]: https://gitster.livejournal.com/39629.html
 [27]: https://longair.net/blog/2012/05/07/the-most-confusing-git-terminology/
+[0]: https://img.linux.net.cn/data/attachment/album/202312/07/200630j90z4xz7tttgztr9.jpg
