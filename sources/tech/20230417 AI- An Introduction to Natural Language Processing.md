@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2023/04/ai-an-introduction-to-natural-language-processing/"
 [#]: author: "Deepu Benson https://www.opensourceforu.com/author/deepu-benson/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "Drwhooooo"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
