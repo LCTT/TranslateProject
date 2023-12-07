@@ -2,7 +2,7 @@
 [#]: via: "https://news.itsfoss.com/car-design-was-better-before-computers/"
 [#]: author: "Community https://news.itsfoss.com/author/team/"
 [#]: collector: "lkxed"
-[#]: translator: " "
+[#]: translator: "CanYellow"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
