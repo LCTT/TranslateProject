@@ -7,85 +7,81 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Opinion: Car Design Was Better Before Computers
+观点: 计算机出现之前，汽车设计更加先进
 ======
-The ethical hellscape of today's automobile industry, and why cars were better designed before the widespread use of computers.
+今日汽车工业的道德地狱，以及为什么在计算机广泛使用之前，汽车能够被设计得更好。
 
-![Opinion: Car Design Was Better Before Computers][1]
+![观点: 计算机出现之前，汽车设计更加先进][1]
 
-[Karla Alexander][2] on [Unsplash][3]
+[Unsplash][3]上的[Karla Alexander][2] 
 
-The ethical car designers will quickly discover that corruption in the car industry goes way beyond manufacturers' faked emission-tests; their mass-participation in war crimes; and the children they force to work in the cobalt, mica, and lithium mines. In fact, the corruption in *Car Land* begins the moment you switch on a computer and load your CAD software.
+尚存职业道德的汽车设计师很快就会发现，汽车行业的腐败已经远远超出了制造商伪造的排放测试，他们大规模参与的战争犯罪、以及他们强迫孩子在钴矿、云母矿和锂矿工作的范畴。事实上，当你打开计算机并加载你的 CAD 软件时， *汽车领域*的腐败就开始了。
 
-![Solvespace: An ethical, free, opensource parametric modeling tool][4]
+![SolveSpace： 一个规范的，免费的，开源的参数化建模工具][4] 
 
-All modern computer processors are backdoored-by-design, and so airgapping all production machines is the only rational solution. Intel's  'Management Engine' and AMD's 'Platform Security Processor' openly snoop on everything you do on your computer, reporting this data back to whoever has keys to the CPU backdoors.
+所有的现代计算机处理器都是设计了后门的，因此，对所有的生产机器进行物理隔离是唯一合理的解决方案。英特尔的“管理引擎”(译者注：Management Engine)和 AMD 的“平台安全处理器”(译者注：Platform Security Processor)公开窥探你在电脑上做的一切，将这些数据报告给任何能够利用 CPU 后门的人。
 
-The larger automobile conglomerates are inextricable from the state. National Socialism was essentially corporatism. Therefore, the problem can be stated simply: If you plan to design and engineer products, then it is foundational to ensure that your competitors cannot steal your designs.
+大型汽车企业集团与政府密不可分。国家社会主义本质上是社团主义。因此，简而言之，问题是，如果你计划设计和工程化一款产品，那么基础是确保你的竞争对手无法窃取你的设计。
 
-If you are working in the car industry, then your  competitors are state-level combatants. In other words: Governments.
+如果你在汽车行业工作，那么你的竞争对手就是国家级别的竞争者。换句话说就是政府。
 
-It is no accident that notorious car-manufacturers are able to fake their emissions-tests and build unchecked monopolies: These car companies 'own' vast swathes of the political apparatus. This gives these conglomerates access to surveillance systems; the Intel and AMD backdoors; and (you guessed it) access to your computer.
+臭名昭著的汽车制造商能够伪造他们的排放测试并形成不受约束的垄断，这并非偶然。 这些汽车公司“拥有”大量的政治性的机构。这使得这些企业集团可以访问监控系统、 英特尔和 AMD 的后门以及访问你的电脑(你猜对了)。
 
-Remember, many of these car companies are currently child-slavers; several literally have Nazi-origins. These companies ran concentration-camps and, in the years since, have lied about poisoning our shared air-supply; multiple times, in multiple countries. This 'Automobile Establishment' will have no qualms about reading stolen information from your computer screen, assisted by the government(s) they think they own.
+请记住，这些汽车公司中的许多目前是儿童奴隶贩子; 其中一些确实有纳粹血统。这些公司经营着集中营，在此后的几年里，他们多次在多个国家就污染我们共享的空气供应撒谎。这个“汽车机构”在他们认为自己拥有的政府的协助下，不会对从你的电脑屏幕上读取被盗信息感到不安。
 
-Airgapping all engineering-computers should be routine if you are working in the independent automotive-design field. To 'airgap' a computer means to remove any wifi, ethernet or bluetooth equipment from the system and to ensure the computer is completely disconnected from the internet or other exploitable network-connection.
+如果你在独立的汽车设计领域工作，物理隔离所有的工程计算机应该是例行事务。物理隔离计算机意味着从系统中移除任何无线、以太网或蓝牙设备，并确保计算机与互联网或其他可利用的网络连接完全断开。
 
-By airgapping a system, you ensure that (although the CPU is backdoored) the computer can no longer spy on you because it cannot report its spying to anyone. The CPU will continue to monitor your work, but it will be trapped; unable to transfer this information out to the Automobile Establishment and their cronies in government(s).
+通过物理隔离，你可以确保(尽管 CPU 开了后门)计算机不再监视您，因为它不能将 它刺探到的任何东西报告给任何人。CPU 将继续监视你的工作，但它将被困住; 无法将这些信息传递给汽车制造商和他们在政府中的亲信。
 
-Here, we should touch briefly on the issue of the ethics of CAD (Computer Aided Design) computers themselves. Almost every modern computer is manufactured in a Communist dictatorship, often by children. This is, after all, the reason companies manufacture in these regions: It is cheap to manufacture in the 'Slave Zones' because there are few human rights, and children are often used as labor.
+在这里，我们应该简要地谈谈 CAD (计算机辅助设计)计算机本身的伦理问题。几乎所有的现代计算机都是在共产主义独裁政权下制造的，通常是由儿童制造的。毕竟，这就是公司在这些地区生产的原因: 在“奴隶区”生产成本低廉，因为那里几乎没有人权，而且儿童经常被用作劳动力。
 
-Ethical options do exist, but they take some hunting down. For example, Raspberry Pi manufactures their computer boards in the UK. Although you might consider this an underpowered computer, it is perfectly sufficient for running software like the excellent [Solvespace][5] (for parametric modeling) or [Blender][6] (for visualization work).
+尚存职业道德的选择是存在的，但是需要一些搜寻。例如，树莓派在英国制造他们的电脑主板。尽管您可能认为这是一台功能不足的计算机，但是对于运行优秀的  [ SolveSpace ][5]  (用于参数建模)或  [ Blender ][6] (用于可视化工作)这样的软件来说，它是完全足够的。
 
-Remember that most of the greatest cars ever designed came from an era before desktop computers. You should consider eliminating computers as much as possible from your engineering workflow. They tend to destroy creativity and generate lazy, derivative designs. The engineers who worked on the *Corvette Stingray*, for example, went nowhere near a computer.
+请记住，有史以来设计的最伟大的汽车来自桌面计算机出现之前。55计算机侵倾向于破坏创造力，并产生懒惰的，衍生的设计。例如，那些设计*Corvette Stingray*(译者注：雪佛蓝科尔维特跑车系列第7代，第7代沿用了科尔维特第二、三代的代号Stingray)的工程师们除了在电脑旁边，哪儿也不用去。
 
-![Corvette Stingray][7]
+![Corvette Stingray(译者注：我认为这里作者引用的图片不合适，这是科尔维特C2，1968年版，显然不是使用桌面计算机的时代。)][7]
 
-If you absolutely must use a 3D workstation for your automotive design, then the closest thing to an ethical PC are those made by Fujitsu, which are manufactured in Germany and Japan. Similarly, Eizo make their screens in Japan. This information is not given lightly: It took us many months to figure out that Raspberry Pi, Fujistu, and Eizo are the ethical options. Most country-of-manufacture information is hidden. Most major search engines are 'gamed' to stop the consumer from avoiding the profitable 'Slave Zone' manufacturers.
+如果你的汽车设计必须使用 3D 工作站，那么最具职业道德的个人电脑是由富士通制造的，它在德国和日本生产。同样，Eizo (译者注：艺卓，显示方案供应商)在日本生产他们的屏幕。以上信息并非轻易给出。 我们花了好几个月的时间才弄清楚树莓派(译者注：Raspberry Pi)、富士通和 Eizo 是否符合道德标准。大多数生产国的信息都是隐藏的。大多数主要的搜索引擎都被“利用”了，它们阻止消费者避开利润丰厚的“奴隶区”制造商。
 
-The elephant in the room of the computer industry is this: That most of our computers are made by slaves, and profit the slave-masters.
+计算机工业这间房里的大象是这样的: 我们的大部分计算机是由奴隶制造的，奴隶主从中获利。
 
-Even a Fujitsu PC contains many China-sourced parts. The balance, however, shifts towards ethical manufacture.
+甚至富士通的个人电脑也包含许多来自中国的零部件。然而，这种平衡转向了具有职业道德的生产。
 
-A second-hand Fujitsu and Eizo screen is perhaps the only option for CAD designers who don't want to fund slavery; but let us know if you discover other options.
+对于那些不想资助奴隶制的 CAD 设计师来说，一个二手的富士通和 Eizo 屏幕可能是唯一的选择; 但是如果你发现了其他的选择，请让我们知道。
 
-Finally, there is the question of software. Given the association between the former-head of one major operating system manufacturer and Jeffrey Epstein, nobody with any sense of morality can use his product. The other major operating system (and computer) manufacturer is a major child-slaver, so again, we can rule them out.
+最后，还有软件的问题。鉴于一家大型操作系统制造商的前负责人与 Jeffrey Epstein 之间的关系，没有任何一个有道德感的人愿意使用他们的产品。另一个主要的操作系统(和计算机)制造商是一个主要的儿童奴役者，所以，我们可以再次排除他们。
 
-The solution here is obvious: Linux.
+这里的解决方案是显而易见的： Linux。
 
-If you haven't tried Linux in a few years, you will be surprised by how it has made strides past everything else. Now there is even a project in the works to connect *Blender* to *Solvespace*. The project is called [CAD Sketcher][8], and it drives parametric modeling on free, open-source software to dizzy new heights.
+如果你几年都没有尝试过 Linux，你会惊讶于它是如何超越一切的。现在甚至有一个项目正在开发，它可以把 *Blender* 连接到  *Solvespace*。这个项目叫做 [ CAD Sketcher ][8]，它在免费的开源软件上驱动参数化建模，达到了炫目的新高度。
 
-![CAD Sketcher: This software allows you to use Blender as a parametric modeler.][9]
+![CAD Sketcher：这个软件允许你将 Blender 作为一个参数化建模器。][9] 
 
-Most impressive of all, however, is the work of a developer called RealThunder. This hotshot-coder is firing on all turbines and has produced [a fork of FreeCAD that outshines the original][10]. RealThunder's fork includes a topological naming feature and other slick hacks.
+然而，最令人印象深刻的是名为 RealThunderd 的开发人员的工作。这个精英程序员竭尽全力，并创造了一个[胜过原版的 FreeCAD 的复刻版本][10]。RealThunder 的改进版本包括对拓扑命名功能的改进和其他巧妙的技术。
 
 ![][11]
 
-In RealThunder's own words, "I am an extremely efficient coder. In fact, my coding pace is probably too fast for FreeCAD upstream."
+用 RealThunderd 自己的话来说，“我是一个非常高效的程序员。事实上，我的程序节奏对于上游的 FreeCAD 来说可能太快了。”
 
-That's fighting talk. Things are getting very interesting here in the frontier towns of Liberated CAD.
+那是激进的说法。在解放计算机辅助设计的前沿阵地，事情正变得越来越有趣。
 
-Given that open-source has overtaken the industry: What now for the legacy, closed-source CAD tools that the automobile industry has come to rely on? Look around you on the streets. Do these cars look good? In my opinion, they are irredeemably horrible and the tools that created them should be burned at the digital stake.
+鉴于开源已经取代工业: 目前汽车工业已经开始依赖的传统的、封闭源码的 CAD 工具怎么办？看看你周围的街道。这些车好看吗？在我看来，它们是无可救药的可怕，创造它们的工具应该得到数字时代的严厉惩罚。
 
-Form does not merely follow function; it also follows the tools we use to create the things we build.
+形式不仅仅遵循功能，它还遵循我们用来创建我们所构建的东西的工具。
 
-Today's collapsing automobile-industry is a decrepit monster. Whatever tools were used to build this industry, and the cars it produced, were not fit for purpose. It's time for something new.
+今天正在崩溃的汽车工业是一个陈旧的怪物。无论使用什么工具来建造汽车，建立汽车行业，都不符合这个目的。是时候推陈出新了。
 
 ![][12]
 
-Chris Stevens collaborated with Steve Jobs to bring [an interactive version of Alice in Wonderland][13] back into the popular consciousness. Stevens' work on *Alice* was promoted by Steve Jobs through global television advertising campaigns and together they shipped millions of copies of the software. Chris Stevens' work is also acclaimed by [Fast Company][14] and [The Atlantic][15] among others. After some serious self-reflection, Stevens sold his software company, *Atomic Antelope*, to *Oceanhouse Media*, in California, for an undisclosed sum. Stevens then left the world of closed-source forever. He is now an automotive engineer working on open-source automobiles. Stevens is a cheerleader for the open-source revolution. "If it's not open-source; then it's sauce," is Stevens' enduring motto.
+克里斯 · 史蒂文斯与史蒂夫 · 乔布斯合作，将一个互动版本的][爱丽丝梦游仙境][13]带回了大众的意识中。史蒂文斯关于《爱丽丝漫游仙境》的工作是由史蒂夫 · 乔布斯通过全球电视广告宣传推广的，他们一起运送了数百万份该软件的拷贝。克里斯 · 史蒂文斯的作品也受到[《快公司》][14]、[《大西洋月刊》][15]等杂志的好评。经过一番认真的自我反省，史蒂文斯将他的软件公司—— *Atomic Antelope*——卖给了位于加利福尼亚州的 Oceanhouse Media 公司 ，具体金额不详。然后，史蒂文斯永远地离开了封闭源码的世界。他现在是一名汽车工程师，致力于开源汽车。Stevens 是开源革命的支持者。“If it's not open-source; then it's sauce”，这是史蒂文斯经久不衰的座右铭。
 
-**The views and opinions expressed in this article are those of the authors and do not necessarily represent opinions It's FOSS.**
 
-The article originally appeared at [Volcano][16].
-
---------------------------------------------------------------------------------
 
 via: https://news.itsfoss.com/car-design-was-better-before-computers/
 
 作者：[Community][a]
 选题：[lkxed][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CanYellow](https://github.com/CanYellow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
