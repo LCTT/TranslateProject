@@ -2,7 +2,7 @@
 [#]: via: "https://www.opensourceforu.com/2023/01/ai-introduction-to-keras-and-our-first-data-set/"
 [#]: author: "Deepu Benson https://www.opensourceforu.com/author/deepu-benson/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "toknow-gh"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
