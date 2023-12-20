@@ -3,13 +3,16 @@
 [#]: author: "Ankush Das https://news.itsfoss.com/author/ankush/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16492-1.html"
 
 Celeste：Rust 开发的多云端开源 GUI 文件同步客户端
 ======
-一个简单而优雅的 GUI 同步客户端，提供双向同步。
+
+![][0]
+
+> 一个简单而优雅的 GUI 同步客户端，提供双向同步。
 
 当谈到与云文件同步时，我们有 [Insync][1]、[FreeFileSync][2] 等选项，以及 [rclone][3] 等几个命令行工具。
 
@@ -19,9 +22,7 @@ Insync 是一款付费工具，而 FreeFileSync 或 rclone 对于 Linux 新用�
 
 Celeste，一个简单的 GUI 同步客户端，支持多个云提供商。
 
-📋
-
-该应用正在积极开发中。目前它可能没有足够的功能和贡献者。欢迎你探索并帮助该项目。
+> 📋 该应用正在积极开发中。目前它可能没有足够的功能和贡献者。欢迎你探索并帮助该项目。
 
 ### 适用于 Linux 的基于 Rust 的同步客户端
 
@@ -41,7 +42,7 @@ Celeste 仅支持双向同步，目前没有其他同步方式。
 
 ![][5]
 
-你可以自定义该工具的服务器名称，然后点击“**登录**”开始授权过程。pCloud 的情况如下：
+你可以自定义该工具的服务器名称，然后点击“<ruby>登录<rt>Log in</rt></ruby>”开始授权过程。pCloud 的情况如下：
 
 ![][6]
 
@@ -49,13 +50,11 @@ Celeste 仅支持双向同步，目前没有其他同步方式。
 
 ![][7]
 
-如果还没有正斜杠 (/)** 符号，那么只需输入它即可，它应该开始以下拉样式列出你拥有的远程文件夹。
+如果还没有正斜杠（`/`） 符号，那么只需输入它即可，它应该开始以下拉样式列出你拥有的远程文件夹。
 
-💡
+> 💡 这将是双向同步。因此，你的云文件将被下载到远程文件夹（如果有）。同步后，从云中删除的任何内容都不会从本地文件夹中消失。而且，你从系统中删除的任何内容都将从云中删除。
 
-这将是双向同步。因此，你的云文件将被下载到远程文件夹（如果有）。同步后，从云中删除的任何内容都不会从本地文件夹中消失。而且，你从系统中删除的任何内容都将从云中删除。
-
-**此同步过程定期发生。**我没有找到强制启动或停止同步的方法。如果此应用的未来版本中提供类似的选项，它应该会有所帮助。
+**此同步过程定期发生。** 我没有找到强制启动或停止同步的方法。如果此应用的未来版本中提供类似的选项，它应该会有所帮助。
 
 ![][8]
 
@@ -67,7 +66,7 @@ Celeste 仅支持双向同步，目前没有其他同步方式。
 
 ![][9]
 
-它显示错误，并且没有使用 GUI 刷新令牌的选项。我宁愿不尝试命令行方式，因为这违背了 GUI 工具的目的。
+它会显示错误，但没有使用 GUI 刷新令牌的选项。我不想尝试命令行方式，因为这违背了 GUI 工具的目的。
 
 因此，你可以选择再次重新添加相同的同步服务器，重新进行所有授权和同步。这就是目前的解决方案。
 
@@ -79,9 +78,9 @@ Celeste 似乎是一个非常有用且简单的 GUI 同步客户端。
 
 考虑到它是一个相当新的应用，有更多的贡献者和用户尝试它，Celeste 可以凭借其坚实的基础发展成更多的东西。
 
-_你觉得 Celeste 怎么样？ 在下面的评论中分享你的想法。_
+你觉得 Celeste 怎么样？ 在下面的评论中分享你的想法。
 
-* * *
+*（题图：DA/48cf6b8e-8f5a-46e4-a7c1-50fe1cfd068f）*
 
 --------------------------------------------------------------------------------
 
@@ -90,7 +89,7 @@ via: https://news.itsfoss.com/celeste/
 作者：[Ankush Das][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -106,3 +105,4 @@ via: https://news.itsfoss.com/celeste/
 [8]: https://news.itsfoss.com/content/images/2023/12/celeste-gui-sync-check.png
 [9]: https://news.itsfoss.com/content/images/2023/12/celeste-dropbox-error.png
 [10]: https://itsfoss.com/content/images/size/w256h256/2022/12/android-chrome-192x192.png
+[0]: https://img.linux.net.cn/data/attachment/album/202312/20/210937s96kbwwycd71ciiu.jpg
