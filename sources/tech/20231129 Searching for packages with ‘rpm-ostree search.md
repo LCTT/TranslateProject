@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/searching-for-packages-with-rpm-ostree-search/"
 [#]: author: "Mateus Rodrigues Costa https://fedoramagazine.org/author/mateusrodcosta/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
