@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/introducing-fedora-asahi-remix-39/"
 [#]: author: "Neal GompaDavide Cavalca https://fedoramagazine.org/author/ngompa/https://fedoramagazine.org/author/dcavalca/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
