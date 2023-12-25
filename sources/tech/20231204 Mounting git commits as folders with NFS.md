@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2023/12/04/mounting-git-commits-as-folders-with-nfs/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "guevaraya"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
