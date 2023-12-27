@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/install-docker-ubuntu/"
 [#]: author: "Sagar Sharma https://itsfoss.com/author/sagar/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
