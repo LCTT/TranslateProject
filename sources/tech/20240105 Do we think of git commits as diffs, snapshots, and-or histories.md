@@ -2,7 +2,7 @@
 [#]: via: "https://jvns.ca/blog/2024/01/05/do-we-think-of-git-commits-as-diffs--snapshots--or-histories/"
 [#]: author: "Julia Evans https://jvns.ca/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "Cubik65536"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
@@ -202,7 +202,7 @@ via: https://jvns.ca/blog/2024/01/05/do-we-think-of-git-commits-as-diffs--snapsh
 
 作者：[Julia Evans][a]
 选题：[lujun9972][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Cubik65536](https://github.com/Cubik65536)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
