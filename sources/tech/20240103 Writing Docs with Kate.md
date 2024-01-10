@@ -2,7 +2,7 @@
 [#]: via: "https://fedoramagazine.org/writing-docs-with-kate-and-git/"
 [#]: author: "Hank Lee https://fedoramagazine.org/author/hankuoffroad/"
 [#]: collector: "lujun9972/lctt-scripts-1700446145"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
