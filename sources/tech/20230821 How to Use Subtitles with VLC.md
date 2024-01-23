@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/vlc-use-subtitles/"
 [#]: author: "Sagar Sharma https://itsfoss.com/author/sagar/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
