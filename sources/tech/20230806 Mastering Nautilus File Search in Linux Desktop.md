@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/nautilus-file-search/"
 [#]: author: "Sreenath https://itsfoss.com/author/sreenath/"
 [#]: collector: "lujun9972"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
