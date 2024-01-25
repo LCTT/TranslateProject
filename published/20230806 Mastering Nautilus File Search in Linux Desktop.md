@@ -3,22 +3,26 @@
 [#]: author: "Sreenath https://itsfoss.com/author/sreenath/"
 [#]: collector: "lujun9972"
 [#]: translator: "geekpi"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-16583-1.html"
 
 掌握 Linux 桌面中的 Nautilus 文件搜索
 ======
 
-GNOME 的 Nautilus 文件管理器非常通用。
+![][0]
 
-不相信我？ 查看这篇文章，了解如何[调整 Nautilus 的全部功能][1]。
+> 使用 GNOME 的 Nautilus 文件搜索，通过这些方便的提示改善您的文件搜索体验，成为一名专业的搜索者。
 
-文件搜索是 Nautilus 被忽视的功能之一。没有多少 Linux 用户充分发挥其潜力。
+GNOME 的 Nautilus 文件管理器功能丰富。
 
-这就是我创建本教程来分享有关使用 Nautilus 文件管理器中的文件搜索选项的一些技巧的原因。
+不信？看看这篇文章，你就会知道如何将 [Nautilus 的全部功能][1] 发挥到极致。
 
-我知道经验丰富的 Linux 用户可以使用终端中的 [find 命令][2]实现相同的目的，但许多桌面用户更喜欢使用 GUI。
+文件搜索是 Nautilus 被忽视的功能之一。没有多少 Linux 用户充分发挥了它的潜力。
+
+因此，我编写了本教程，与大家分享一些使用 Nautilus 文件管理器中文件搜索选项的技巧。
+
+我知道经验丰富的 Linux 用户可以使用终端中的 [find 命令][2] 实现相同的目的，但许多桌面用户更喜欢使用 GUI。
 
 让我们从最简单的搜索选项开始。
 
@@ -26,13 +30,11 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 打开 Nautilus 并单击顶部栏上的放大镜。这将打开一个搜索栏，你可以在其中输入查询字符串。
 
-当你输入时，结果将得到完善，并在输入完整文件名时进行匹配。
+当你输入时，搜索结果会不断完善，并在输入完整文件名时进行匹配。
 
 ![在 Nautilus 中搜索][3]
 
-💡
-
-搜索在当前目录及其子目录中执行。你可以启用[隐藏文件视图][4]以在搜索结果中包含隐藏文件。
+> 💡 搜索在当前目录及其子目录中执行。可以启用 [隐藏文件视图][4]，将隐藏文件包含在搜索结果中。
 
 ### 根据时间搜索文件
 
@@ -42,7 +44,7 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 ![单击下拉菜单][5]
 
-单击下拉菜单上的“选择日期”按钮。另外，选择选项“**文件名** ”以按文件名匹配。
+单击下拉菜单上的 “<ruby>选择日期<rt>Select Dates</rt></ruby>” 按钮。另外，选择选项 “<ruby>文件名<rt>File Name</rt></ruby>” 以按文件名匹配。
 
 ![按日期搜索的设置][6]
 
@@ -54,7 +56,7 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 ![点击日历图标][8]
 
-现在，你将获得一个小日历，并可以相应地选择日期。
+现在，你将看到一个小日历，并可以相应地选择日期。
 
 ![选择日期][9]
 
@@ -66,7 +68,7 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 你还可以根据文件类型过滤搜索。假设你正在寻找 PDF 文件。
 
-与上一步一样，单击搜索图标并开始输入文件名。现在，从下拉菜单中，单击“任何”选项并选择“文件名”。
+与上一步一样，单击搜索图标并开始输入文件名。现在，从下拉菜单中，单击 “<ruby>任何<rt>Anything</rt></ruby>” 选项并选择 “<ruby>文件名<rt>File Name</rt></ruby>”。
 
 ![根据文件类型搜索][11]
 
@@ -78,7 +80,7 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 ![应用文件类型标准][13]
 
-在搜索选项中没有找到所需的文件类型？ 向下滚动到底部并单击“其他类型”。
+在搜索选项中没有找到所需的文件类型？向下滚动到底部并单击 “<ruby>其他类型<rt>other types</rt></ruby>”。
 
 ![获取更多文件类型][14]
 
@@ -92,9 +94,9 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 首先，单击搜索图标并开始输入。现在，与前面的部分一样，转到下拉菜单。
 
-在下拉菜单中，不要选择“[**文件名**][2]”，而是选择“**全文** ”。
+在下拉菜单中，不要选择 “<ruby>文件名<rt>File Name</rt></ruby>”，而是选择 “<ruby>全文<rt>Full Text</rt></ruby>”。
 
-现在，你可以搜索特定字符串并根据特定日期或文件类型进行搜索过滤器。过滤的方法与前面提到的相同。
+现在，你可以搜索特定字符串并根据特定日期或文件类型进行搜索过滤。过滤的方法与前面提到的相同。
 
 ![选择“全文”选项][16]
 
@@ -104,7 +106,7 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 默认情况下，Nautilus 会搜索文件和文件夹。你可以将搜索细化为文件或文件夹。
 
-为此，请在下拉菜单中选择“文件名”，然后从类型列表中选择文件或文件夹，如下所示。
+为此，请在下拉菜单中选择 “<ruby>文件名<rt>File Name</rt></ruby>”，然后从类型列表中选择 “<ruby>文件<rt>Files</rt></ruby>” 或 “<ruby>文件夹<rt>Folders</rt></ruby>”，如下所示。
 
 ![仅在文件或文件夹中搜索][17]
 
@@ -122,23 +124,25 @@ GNOME 的 Nautilus 文件管理器非常通用。
 
 Nautilus 足以满足大多数搜索场景。如果你需要更多，还有专用的 GUI 工具，可让你执行桌面范围的自定义搜索。
 
-![][19]
+> **[ANGRYsearch - 用于 Linux 的快速搜索图形用户界面工具][19A]**
 
-想要更多这样的 Nautilus 技巧吗？ [以 root 身份打开文件][20]怎么样？
+想要更多这样的 Nautilus 技巧吗？ [以 root 身份打开文件][20] 怎么样？
 
-![][19]
+> **[在 Nautilus 文件管理器中以管理员身份打开文件和文件夹][20]**
 
 或者将终端的功能与文件管理器结合起来？
 
-![][19]
+> **[在 Linux 中混合搭配终端与 Nautilus 文件管理器][20A]**
 
 这里还有更多此类提示。请自行查看。
 
-![][19]
+> **[在 Linux 中调整 Nautilus 文件管理器的 13 种方法][20B]**
 
 我希望你喜欢这些技巧，它们有助于更好地改善你的桌面 Linux 体验。
 
 你还知道其他这样酷的技巧吗？ 请在评论中分享。
+
+*（题图：DA/77ae519f-e942-42b0-9808-4af943b168cb）*
 
 --------------------------------------------------------------------------------
 
@@ -147,7 +151,7 @@ via: https://itsfoss.com/nautilus-file-search/
 作者：[Sreenath][a]
 选题：[lujun9972][b]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -172,4 +176,8 @@ via: https://itsfoss.com/nautilus-file-search/
 [17]: https://itsfoss.com/content/images/2023/08/search-for-only-folders-or-only-files.png
 [18]: https://itsfoss.com/content/images/2023/08/applied-multiple-criteria.png
 [19]: https://itsfoss.com/content/images/size/w256h256/2022/12/android-chrome-192x192.png
+[19A]: https://itsfoss.com/angrysearch/
 [20]: https://itsfoss.com/open-nautilus-as-administrator/
+[20A]: https://itsfoss.com/terminal-nautilus-combination/
+[20B]: https://itsfoss.com/nautilus-tips-tweaks/
+[0]: https://img.linux.net.cn/data/attachment/album/202401/25/155635ocrk3q8dgg3rkkgh.jpg
