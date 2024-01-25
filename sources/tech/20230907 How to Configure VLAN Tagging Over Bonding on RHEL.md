@@ -2,7 +2,7 @@
 [#]: via: "https://www.2daygeek.com/configure-vlan-tagging-over-network-bonding-rhel/"
 [#]: author: "Jayabal Thiyagarajan https://www.2daygeek.com/author/jayabal/"
 [#]: collector: "lujun9972/lctt-scripts-1693450080"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
