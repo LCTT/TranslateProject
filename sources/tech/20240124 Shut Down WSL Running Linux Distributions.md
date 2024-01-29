@@ -2,7 +2,7 @@
 [#]: via: "https://itsfoss.com/shut-down-wsl-distros/"
 [#]: author: "Sreenath https://itsfoss.com/author/sreenath/"
 [#]: collector: "lujun9972/lctt-scripts-1705972010"
-[#]: translator: " "
+[#]: translator: "geekpi"
 [#]: reviewer: " "
 [#]: publisher: " "
 [#]: url: " "
