@@ -98,7 +98,7 @@ wsl.exe -l -v
 wsl.exe --terminate <发行版名称>
 ```
 
-![从另一个 WSL 分发版中关闭 WSL 分发版][6]
+![从另一个 WSL 发行版中关闭 WSL 发行版][6]
 
 ### 总结
 
