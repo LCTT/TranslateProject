@@ -1,0 +1,2235 @@
+{
+  "translating": [],
+  "unselected": [
+    {
+      "file": "sources/tech/20220526 Write C applications using Vely on Linux.md",
+      "time": "2022-05-26",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220804 Lengthen the life of your hardware with Linux.md",
+      "time": "2022-08-05",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220328 Not a Systemd Fan- Here are 11 Systemd-Free Linux Distributions.md",
+      "time": "2022-03-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220118 KDE Plasma Desktop Guide [A Beginner-s Manual].md",
+      "time": "2022-05-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221101.8 ⭐️⭐️ Feren OS Review Clever KDE Distro for Easy Migration from Windows.md",
+      "time": "2022-11-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220813 What is PDB in Kubernetes-.md",
+      "time": "2022-08-14",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220807 Why we chose the Clojure programming language for Penpot.md",
+      "time": "2022-08-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220111 How to find a domain-s authoritative nameservers.md",
+      "time": "2022-01-12",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220830 Crystal Linux- Emerging Arch Linux Spin for GNOME Fans.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220820 What-s your favorite screenshot tool on Linux-.md",
+      "time": "2022-08-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221109.7 ⭐️⭐️ Why sysadmins should choose Awesome window manager on Linux.md",
+      "time": "2022-11-10",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221017.4 ⭐️⭐️⭐️ Why you should consider Rexx for scripting.md",
+      "time": "2023-12-09",
+      "user": "Xiaoyan Zhang"
+    },
+    {
+      "file": "sources/tech/20220627 What is distributed consensus for site reliability engineering-.md",
+      "time": "2022-06-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220124 Hosting my static sites with nginx.md",
+      "time": "2022-01-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230425.3 ⭐️⭐️ Retry your Python code until it fails.md",
+      "time": "2023-10-29",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20220906 How to send raw network packets in Python with tun-tap.md",
+      "time": "2022-11-02",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20220901 How Tracee solves the lack of BTF information.md",
+      "time": "2022-09-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220927 165+ JavaScript terms you need to know.md",
+      "time": "2022-09-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220915 How to Check if You are Using Wayland or Xorg-.md",
+      "time": "2022-09-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230816 How to Configure Veritas Cluster Server 8 in RHEL.md",
+      "time": "2023-08-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220128 Essential DNF Commands for Linux Users -With Examples.md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20240116 mv Command Examples.md",
+      "time": "2024-01-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220810 Our favorite Linux replacements for antiquated open source tools.md",
+      "time": "2022-08-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220916 Using Python and NetworkManager to control the network.md",
+      "time": "2022-09-18",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221007 What is KDE Connect- How Do You Use It- [Beginner-s Guide].md",
+      "time": "2022-10-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220623 5 Useful Linux Command Line Tools that Everyone Should Use.md",
+      "time": "2022-06-24",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220718 Community container images available for applications development.md",
+      "time": "2022-07-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221209.1 ⭐️⭐️ A Linux file manager for Emacs fans.md",
+      "time": "2022-12-09",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220627 DevSecOps- A Philosophy that Puts Security First.md",
+      "time": "2022-06-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20240115 Emacs for writers.md",
+      "time": "2024-01-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230515 AI- Introduction to Computer Vision.md",
+      "time": "2023-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220603 Simplifying Cloud Native Development with Skaffold.md",
+      "time": "2022-06-04",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230426.1 ⭐️⭐️ Test your Drupal website with Cypress.md",
+      "time": "2023-04-27",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20231225 D-Bus overview.md",
+      "time": "2023-12-26",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20240126 Setting Up PrivateGPT to Use AI Chat With Your Documents.md",
+      "time": "2024-01-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221105.2 ⭐️ How to Install and Configure KDE Plasma Desktop in Arch Linux [Complete Guide].md",
+      "time": "2022-11-07",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220811 A gentle introduction to HTML.md",
+      "time": "2022-08-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221208.7 ⭐️⭐️ Kumandar Linux Lightweight Debian & Xfce Spin with Windows 7 Look.md",
+      "time": "2022-12-09",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220812 How I get students excited about math with Python and Raspberry Pi.md",
+      "time": "2022-08-12",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220828 How I use Groovy to analyze album art in my music directory.md",
+      "time": "2022-08-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220628 Why organizations need site reliability engineers.md",
+      "time": "2022-06-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220719 Event-driven architecture explained in a coloring book.md",
+      "time": "2022-07-19",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220427 Updating Edge Devices with OSTree and Pulp.md",
+      "time": "2022-04-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221006 Implementing JWT Using the Flask Framework.md",
+      "time": "2022-10-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220705 Hamming Codes- The Error-Correcting Codes.md",
+      "time": "2022-07-05",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221207.4 ⭐️ Why I use the Enlightenment file manager on Linux.md",
+      "time": "2022-12-07",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220727 6 Tips and Tools to Enhance Your Flatpak Experience in Linux.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221216.2 ⭐️⭐️ 5 reasons to love Linux GNOME Files.md",
+      "time": "2022-12-16",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220730 Top 10 Kdenlive Features for Faster Video Editing [Beginner-s Guide].md",
+      "time": "2022-07-31",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220913 Open source blockchain development- Get started with Hyperledger FireFly.md",
+      "time": "2022-09-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220531 SQLx- The Rust SQL Toolkit.md",
+      "time": "2022-05-31",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220812 Writing project documentation in HTML.md",
+      "time": "2022-08-12",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220901 Micro- Making File Editing Easier in Linux Terminal.md",
+      "time": "2022-09-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220914 Packaging Job scripts in Kubernetes operators.md",
+      "time": "2022-09-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220608 Using Ansible to automate software installation on my Mac.md",
+      "time": "2022-06-08",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220621 An Introduction to Teradata.md",
+      "time": "2022-06-22",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220826 Microservices Deployment Architecture with Kubernetes Clusters.md",
+      "time": "2022-08-26",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220701 Why I switched from Apple Music to Jellyfin and Raspberry Pi.md",
+      "time": "2022-07-01",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220830 7 Best Open Source Library Management Software.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221001 Transform Your Arch Installation with Stunning XMonad WM Setup.md",
+      "time": "2022-10-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20231114 Some notes on nix flakes.md",
+      "time": "2023-11-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221108.5 ⭐️⭐️ Titan Linux A Blend of Debian Stable and KDE Plasma.md",
+      "time": "2022-11-08",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221005 How to Fix VirtualBox Kernel Headers Not Found Error.md",
+      "time": "2022-10-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220725 Feren OS Review- Clever KDE Distro for Easy Migration from Windows.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220610 Handling maps in Groovy vs Java.md",
+      "time": "2022-06-10",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220621 EdUBudgie Linux- Ubuntu Spin with Budgie Desktop for Students, Teachers.md",
+      "time": "2022-06-21",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220720 A Beginners Manual To Docker Desktop For Linux.md",
+      "time": "2022-07-21",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220726 Shrink PDFs with this Linux tool.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220615 Why Edge Computing is Important for IoT Applications.md",
+      "time": "2022-06-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220213 26 open source creative apps to try in 2022.md",
+      "time": "2022-02-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220525 Migrate databases to Kubernetes using Konveyor.md",
+      "time": "2022-05-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220625 Linux Distros That Turn Your PC into Retro Gaming Console.md",
+      "time": "2022-06-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220829 How to Setup EKS Cluster along with NLB on AWS.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220716 Top Nitrux Applications -Maui- Everyone Should Try.md",
+      "time": "2022-07-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220518 A guide to Pipy, a programmable network proxy for cloud.md",
+      "time": "2022-05-18",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220709 How to Use Microsoft Office on Linux.md",
+      "time": "2022-07-09",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221215.3 ⭐️⭐️ Enjoy two-panel file management on Linux with far2l.md",
+      "time": "2022-12-15",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220805 Keep IT Services Up and Running with AI Based Digital Assistants.md",
+      "time": "2022-08-05",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220619 Top 10 App Launchers for Ubuntu & GNOME Desktop [With Bonus List].md",
+      "time": "2022-06-19",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220203 Build your own container on Linux.md",
+      "time": "2022-02-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220517 Travel off the grid and still send emails with putmail.md",
+      "time": "2022-05-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220208 Twine- Open Source Tool for Making Games with Words, aka Interactive Fiction.md",
+      "time": "2022-02-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220511 Share Files Between Guest and Host OS in GNOME Boxes.md",
+      "time": "2022-05-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220816 Check Disk Space Using Agedu In Linux.md",
+      "time": "2022-08-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221220.6 ⭐️ How to Update Pi-hole Easily.md",
+      "time": "2022-12-22",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220803 A sysadmin-s guide to network interface configuration files.md",
+      "time": "2022-08-03",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20240123 scp Command Examples.md",
+      "time": "2024-01-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220727 How to Install Pamac GUI Package Manager in Arch Linux.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221108.2 ⭐️⭐️ How to Install LXQt Desktop in Arch Linux [Complete Guide].md",
+      "time": "2023-10-29",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20220907 How to Run a Kubernetes Cluster Locally with Kind.md",
+      "time": "2022-09-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220308 Top Nitrux Applications (Maui) Everyone Should Try.md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220524 pdfgrep- Use Grep Like Search on PDF Files in Linux Command Line.md",
+      "time": "2022-05-24",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220826 Bash Scripting – Select Loop Explained With Examples.md",
+      "time": "2022-08-26",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221019.4 ⭐️ How to Enable and Access USB Drive in VirtualBox.md",
+      "time": "2022-10-23",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221221.1 ⭐️ Debugging LibreOffice Basic Macro using Breakpoint and Watch.md",
+      "time": "2022-12-22",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220715 3 open source GUI disk usage analyzers for Linux.md",
+      "time": "2022-07-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220815 How To Check Disk Space Usage In Linux Using Ncdu.md",
+      "time": "2022-08-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221221.2 ⭐️⭐️ How to migrate your code from PHP 7.4 to 8.1.md",
+      "time": "2022-12-22",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220721 Hands-on With openSUSE MicroOS – Adaptable Linux Platform [First Look].md",
+      "time": "2022-07-22",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221030.1 ⭐️⭐️ 3 Best Free Photoshop Alternatives for Ubuntu and other Linux.md",
+      "time": "2022-10-31",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221004 How to Install and Configure IceWM in Arch Linux.md",
+      "time": "2022-10-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220827 My favorite open source library for analyzing music files.md",
+      "time": "2022-08-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221013 Asynchronous programming in Rust.md",
+      "time": "2022-10-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221103.4 ⭐️ How to Install and Use Snap Packages in Ubuntu.md",
+      "time": "2022-11-04",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220613 A Quick Look at Cloud Cost Management Tools.md",
+      "time": "2022-06-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230710 AI- Beyond Python.md",
+      "time": "2023-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221212.1 ⭐️⭐️ How to Install the Minimalist ArchBang Linux Distro.md",
+      "time": "2022-12-12",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221026.2 ⭐️ How To Monitor File Changes Using fswatch In Linux.md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20231108 Tracking Changes and Version Management with LibreOffice.md",
+      "time": "2023-11-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221101.9 ⭐️⭐️ Garuda Linux All-Rounder Distro Based on Arch Linux.md",
+      "time": "2022-11-02",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20230214.0 ⭐️⭐️ Create a modern user interface with the Tkinter Python library.md",
+      "time": "2023-02-14",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221129.5 ⭐️⭐️ How to Set Up Pi-hole to Get an Ad-free Life.md",
+      "time": "2022-12-01",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220810 Hibernation in Fedora Workstation.md",
+      "time": "2022-08-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230213.0 ⭐️⭐️ Learn Expect by writing and automating a simple game.md",
+      "time": "2023-02-14",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220522 Ultramarine Linux- Ultimate Fedora Spin with Budgie, Cutefish and Pantheon.md",
+      "time": "2022-05-22",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220923 How To Enable RPM Fusion Repository In Fedora, RHEL, AlmaLinux, Rocky Linux.md",
+      "time": "2022-09-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221215.1 ⭐️⭐️ Why Drupal is the future of content strategy.md",
+      "time": "2022-12-15",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220617 Containerisation of Java Microservices.md",
+      "time": "2022-06-23",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220516 Use Composer to require Git repositories within PHP projects.md",
+      "time": "2022-05-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220220 Transform Your Arch Installation with Stunning XMonad WM Setup.md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220814 Best 5 Alternatives to Microsoft Office [Compared].md",
+      "time": "2022-08-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220823 How I migrated to NetworkManager keyfiles for configuration.md",
+      "time": "2022-08-24",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220905 How to Deploy Docker Swarm on Ubuntu 22.04 Step-by-Step.md",
+      "time": "2022-09-05",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220626 Manjaro Linux Review- Detailed deep-dive with Performance, Hardware Support + More.md",
+      "time": "2022-06-26",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220524 Build a Quarkus reactive application using Kubernetes Secrets.md",
+      "time": "2022-05-24",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220718 How I configure a DHCP server on my personal network.md",
+      "time": "2022-07-18",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20240117 How to achieve -dnf swap--equivalent functionality with rpm-ostree.md",
+      "time": "2024-01-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220825 Using eBPF for network observability in the cloud.md",
+      "time": "2022-08-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220528 How I automate plant care using Raspberry Pi and open source tools.md",
+      "time": "2022-05-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220701 Your Personal Voice Assistant on Fedora Linux.md",
+      "time": "2022-07-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220120 Solve network fragmentation with MTU.md",
+      "time": "2022-01-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220930 How to Properly Theme KDE Plasma [An in-depth Guide].md",
+      "time": "2022-10-01",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220914 How to Install FreeIPA Server on RHEL 9 Step-by-Step.md",
+      "time": "2022-09-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221213.4 ⭐️⭐️ Use Django to send emails with SMTP.md",
+      "time": "2022-12-13",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221201.4 ⭐️⭐️ Getting Nostalgic With the Historical Coherent Operating System.md",
+      "time": "2022-12-03",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220830 Share screens on Linux with GNOME Connections.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220603 Titan Linux- A Blend of Debian Stable and KDE Plasma.md",
+      "time": "2022-06-03",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220930 How I dock my Linux laptop.md",
+      "time": "2022-10-01",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220601 Linux desktops- KDE vs GNOME.md",
+      "time": "2022-06-01",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221126.0 ⭐️⭐️ Pop OS Review Reasons why its an all-rounder Linux distro.md",
+      "time": "2022-11-27",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230602.2 ⭐️⭐️ Install Windows 11 as Guest in Ubuntu using virt-manager.md",
+      "time": "2023-06-05",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220706 3 steps to create an awesome UX in a CLI application.md",
+      "time": "2022-07-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220718 Create a JavaScript API in 6 minutes.md",
+      "time": "2022-07-18",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221019.3 ⭐️⭐️ How to Remove Snap Packages in Ubuntu Linux.md",
+      "time": "2022-10-23",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230830 Supercharge Grammar Checking in LibreOffice With LanguageTool.md",
+      "time": "2023-08-31",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220707 10 Great KDE Apps for Everyone [Part 2].md",
+      "time": "2022-07-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221027.7 ⭐️⭐️ Mabox Linux – Beautiful Arch Linux with Openbox [Review].md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220923 How to build a dynamic distributed database with DistSQL.md",
+      "time": "2022-09-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221027.9 ⭐️ Customize GNOME Desktop in Ubuntu with this Colorful Looks.md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230308.5 ⭐️⭐️⭐️ Own your cloud with NextcloudPi on the Raspberry Pi.md",
+      "time": "2023-03-09",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220825 15 Ways to Tweak Nemo File Manager in Linux to Get More Out of it.md",
+      "time": "2022-08-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230316.0 ⭐️ Terminal Basics Series 5 View the File Contents in Linux.md",
+      "time": "2023-03-16",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221114.0 ⭐️⭐️ Using Firewall With UFW in Ubuntu Linux [Beginner’s Guide].md",
+      "time": "2022-11-26",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220602 Get started with Cadence, an open source workflow engine.md",
+      "time": "2022-06-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220817 How to Setup HAProxy SSL Termination on Ubuntu 22.04.md",
+      "time": "2022-08-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220205 Create an app with this Arnold Schwarzenegger-themed programming language.md",
+      "time": "2022-02-06",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221110.2 ⭐️ How to Install Enlightenment Desktop in Arch Linux [Complete Guide].md",
+      "time": "2022-11-13",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221027.11 ⭐️ Customize GNOME Desktop in Ubuntu with a Clean Look.md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20240126 VS Code vs VS Codium- What-s the Difference.md",
+      "time": "2024-01-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221206.6 ⭐️⭐️ LibreOffice vs FreeOffice Comparing Popular Free Office Suites.md",
+      "time": "2022-12-07",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221108.0 ⭐️⭐️ Apt++ Nala is Like Apt in Ubuntu but Better.md",
+      "time": "2022-11-08",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220815 Try Asciidoc instead of Markdown.md",
+      "time": "2022-08-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220829 How To Manage Docker Containers Using Portainer In Linux.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221101.0 ⭐️⭐️ Get started with Parseable, an open source log storage and observability platform.md",
+      "time": "2022-11-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220906 A beginner-s guide to making a dark theme for a website.md",
+      "time": "2022-09-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220408 Samba as AD and Domain Controller.md",
+      "time": "2022-04-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20231006 Using InfluxDB for time-series data analysis.md",
+      "time": "2023-10-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220615 A beginner-s guide to cloud-native open source communities.md",
+      "time": "2022-06-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230314.1 ⭐️⭐️ Calculate pi by counting pixels.md",
+      "time": "2023-03-16",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220305 10 Awesome Apps to Improve Your GNOME Desktop Experience [Part 5].md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220729 Fix bugs in Bash scripts by printing a stack trace.md",
+      "time": "2022-07-29",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20231227 Kubernetes with CRI-O on Fedora Linux 39.md",
+      "time": "2023-12-28",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221121.4 ⭐️⭐️ Using the Lesser Known File Tagging Feature in KDE’s Dolphin File Manager.md",
+      "time": "2022-11-27",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221008 Make KDE Control Centre Look Like macOS with this Widget.md",
+      "time": "2022-10-09",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220530 11 Themes to Make Xfce Look Modern and Beautiful.md",
+      "time": "2022-05-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220621 How SREs can achieve effective incident response.md",
+      "time": "2022-06-21",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220723 Nala – A Feature-rich Commandline Frontend For APT Package Manager.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221109.0 ⭐️⭐️ How To Install Netdata Performance Monitoring Tool In Linux.md",
+      "time": "2022-11-10",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220806 Fixing Could not get lock -var-lib-dpkg-lock Error in Ubuntu.md",
+      "time": "2022-08-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220216 Integrating fuzzing into your open source project with OSS-Fuzz.md",
+      "time": "2022-02-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220910 5 ways to resize and optimize images for the web on Linux.md",
+      "time": "2022-09-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221122.1 ⭐️ Anaconda Web UI preview image now public.md",
+      "time": "2022-11-27",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220126 Quarkus and Mutiny.md",
+      "time": "2022-01-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220916 Fix the apt-key deprecation error in Linux.md",
+      "time": "2022-09-18",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221101.6 ⭐️⭐️ How to Install and Use GNOME Boxes to Create Virtual Machines.md",
+      "time": "2022-11-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220530 Top 10 Linux Distributions for Windows Users in 2022.md",
+      "time": "2022-05-31",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220905 How To Perform Arithmetic Operations In Bash.md",
+      "time": "2022-09-05",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220913 Remixing Linux for blind and visually impaired users.md",
+      "time": "2022-09-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220821 risiOS- A Friendly Fedora Spin with Distinctive Features.md",
+      "time": "2022-08-21",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230401.1 ⭐️⭐️ Using mocks in Python.md",
+      "time": "2023-04-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230417 AI- An Introduction to Natural Language Processing.md",
+      "time": "2023-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220627 Linux Lite 6 Review- Well Designed -bridging-distro- for Windows Users.md",
+      "time": "2022-06-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221130.4 ⭐️⭐️ Exodia OS Emerging BSPWM-based Arch Linux for Pentesters.md",
+      "time": "2022-12-01",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230811 Use Split Screen in Ubuntu to View Multiple Application Windows at Once.md",
+      "time": "2023-08-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220728 A Few Tools that Help Machines to Learn.md",
+      "time": "2022-07-29",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220718 5 Best and Free Desktop Email Clients for Linux and Windows.md",
+      "time": "2022-07-19",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220825 Building a Stateless Firewall Using Netfilter in Linux.md",
+      "time": "2022-08-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221004 How to Enable, Disable Keyboard, Mouse and Touch Devices via Terminal.md",
+      "time": "2022-10-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220124 Why choose Rocket.Chat for your open source chat tool.md",
+      "time": "2022-01-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221212.2 ⭐️⭐️ A sysadmin's guide to Carbonio.md",
+      "time": "2022-12-12",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221002 How to Delete Background in Image Using GIMP.md",
+      "time": "2022-10-05",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230113.0 ⭐️⭐️⭐️ Examples of floating point problems.md",
+      "time": "2023-04-08",
+      "user": "Edward Liu"
+    },
+    {
+      "file": "sources/tech/20231106 git rebase- what can go wrong.md",
+      "time": "2023-11-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220120 How to back your open source project-s stack.md",
+      "time": "2022-01-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220429 From ifcfg to keyfiles- modernizing NetworkManager configuration in Fedora Linux 36.md",
+      "time": "2022-04-30",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221010 14 Best Open Source WYSIWYG HTML Editors.md",
+      "time": "2022-10-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220628 ripgrep-all Command in Linux- One grep to Rule Them All.md",
+      "time": "2022-06-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220716 13 Ways to Tweak Nautilus File Manager in Linux to Get More Out of it.md",
+      "time": "2022-07-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220513 Install Third Party Software Using Fedy In Fedora 36.md",
+      "time": "2022-05-14",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220911 Installing Arch Linux Using archinstall Automated Script [Complete Guide].md",
+      "time": "2022-09-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220117 Restarting and Offline Updates.md",
+      "time": "2022-01-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230811 Notes on using a single-person Mastodon server.md",
+      "time": "2023-08-13",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220709 DAT Linux- Perfect Distro for Data Science Based on Ubuntu LTS.md",
+      "time": "2022-07-10",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220720 Fedora and Parental Controls.md",
+      "time": "2022-07-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220620 Please – A Simple Command Line Todo Manager.md",
+      "time": "2022-06-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220217 Top 5 Live Streaming Application for Ubuntu and Other Linux [2022 Edition].md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220711 Run Linux, macOS, Windows Virtual Machines With Quickemu.md",
+      "time": "2022-07-12",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230304.1 ⭐️ Ubuntu Workspaces Enabling, Creating, and Switching.md",
+      "time": "2023-03-05",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20231220 Monitoring Linux Systems With InfluxDB.md",
+      "time": "2023-12-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20231117 Mastering Joplin Notes- 8 Tips and Tweaks.md",
+      "time": "2023-11-18",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221110.5 ⭐️⭐️ Audit your sharding database algorithm.md",
+      "time": "2022-11-13",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220609 A guide to container orchestration with Kubernetes.md",
+      "time": "2022-10-22",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20220809 Top 10 Great Ubuntu Apps for Everyone [Part 4].md",
+      "time": "2022-08-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220624 How I sketchnote with open source tools.md",
+      "time": "2022-06-24",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220512 Get started with Bareos, an open source client-server backup solution.md",
+      "time": "2022-05-12",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220923 Customize Xfce Desktop for Modern Look and Productivity.md",
+      "time": "2022-09-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220620 What you need to know about site reliability engineering.md",
+      "time": "2022-06-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220515 Top 10 Best Linux Distributions in 2022 For Everyone.md",
+      "time": "2022-05-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220915 Change the Default LibreOffice Look and Feel [Tutorial].md",
+      "time": "2022-09-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220528 Top 10 GNOME Themes for Your Ubuntu Desktop.md",
+      "time": "2022-05-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220606 A Drupal developer-s guide to Progressive Web Apps.md",
+      "time": "2022-06-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221201.1 ⭐️⭐️ 5 reasons I use the Dolphin file manager on Linux.md",
+      "time": "2022-12-03",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20240101 Some notes on NixOS.md",
+      "time": "2024-01-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221220.0 ⭐️⭐️ Writing a Macro in LibreOffice Calc Getting Started.md",
+      "time": "2022-12-22",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221029.1 ⭐️⭐️ Set up a Matrix to Discord bot.md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220526 Garuda Linux- All-Rounder Distro Based on Arch Linux.md",
+      "time": "2022-05-26",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220123 10 Great Apps to Improve Your GNOME Experience [Part 3].md",
+      "time": "2022-05-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230613.0 ⭐️⭐️ Using head Command in Linux.md",
+      "time": "2023-06-23",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230301 AI- More About Neural Networks and an Introduction to PyTorch.md",
+      "time": "2023-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221204.0 ⭐️⭐️ Make your Linux computer feel faster with the Xfe file manager.md",
+      "time": "2022-12-05",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221018.3 ⭐️ Setup Docker And Docker Compose With DockSTARTer.md",
+      "time": "2022-10-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220204 10 Necessary Apps to Improve Your GNOME Desktop Experience [Part 4].md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220622 A site reliability engineer-s guide to change management.md",
+      "time": "2022-06-22",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220206 Write code inspired by Shakespeare with esolang.md",
+      "time": "2022-02-07",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220919 How to Install Cockpit Web Console on Ubuntu 22.04.md",
+      "time": "2022-09-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220730 SpiralLinux- The New Distro Making Debian Easier for Beginners.md",
+      "time": "2022-07-31",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230816 Using Cockpit to graphically manage systems, without installing Cockpit on them.md",
+      "time": "2023-08-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220614 Distrobox- Try Multiple Linux Distributions via the Terminal.md",
+      "time": "2022-06-14",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221125.3 ⭐️⭐️ Leaving Twitter for Mastodon Here are the 7 Best Mastodon Instances You Can Join.md",
+      "time": "2022-11-28",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20231201 Getting Started With Ubuntu.md",
+      "time": "2023-12-02",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221022.2 ⭐️ PaperDE is a Touch-Friendly Linux Desktop Environment.md",
+      "time": "2022-10-23",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220502 dahliaOS – A Unique Linux Distribution Based on Google Fuchsia [First Look].md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220701 Deprecated Linux Commands You Should Not Use Anymore -And Their Alternatives-.md",
+      "time": "2022-07-01",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221009 5 Great Subtitle Editors in Linux Systems.md",
+      "time": "2022-10-09",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220201 A toy DNS resolver.md",
+      "time": "2022-02-03",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220614 Building the metaverse with open source.md",
+      "time": "2022-06-14",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230323.0 ⭐️⭐️ A Screenshot Tour & Walkthrough of New Ubuntu Installer.md",
+      "time": "2023-03-24",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221002 String Processing in LibreOffice Calc Macro with Examples.md",
+      "time": "2022-10-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221220.3 ⭐️⭐️ Explore the features of the Linux Double Commander file manager.md",
+      "time": "2022-12-22",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220824 Your guide to DistSQL-s cluster governance capability.md",
+      "time": "2022-08-24",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220209 Comparison of Fedora Flatpaks and Flathub remotes.md",
+      "time": "2022-02-10",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221124.3 ⭐️⭐️ 10 Best Steam Games on Sale for Linux Users 🎮(November 2022).md",
+      "time": "2022-11-29",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20230418.0 ⭐️⭐️ Use autoloading and namespaces in PHP.md",
+      "time": "2023-04-20",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220830 Why We Need Time Series Databases for  Site Reliability Engineering.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221214.0 ⭐️⭐️ Experience Linux desktop nostalgia with Rox.md",
+      "time": "2022-12-14",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20231218 Fedora uses cookies.md",
+      "time": "2023-12-19",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20240126 Inside .git.md",
+      "time": "2024-01-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230814 Create Table of Contents, Figures and Index of Tables in LibreOffice.md",
+      "time": "2023-08-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220922 EuroLinux Desktop is an RHEL-based Distro With Enterprise Perks.md",
+      "time": "2022-09-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220628 Notes on running containers with bubblewrap.md",
+      "time": "2022-06-29",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220216 How I Customize Fedora Silverblue and Fedora Kinoite.md",
+      "time": "2022-02-17",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220127 Open Source Video Converters for Linux -GUI and CLI.md",
+      "time": "2022-01-27",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220917 What is OpenRAN-.md",
+      "time": "2022-09-18",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220708 Umbrel- Unique Linux Distro for Self Hosting Open Source Software for Your Homelab.md",
+      "time": "2022-07-08",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220207 Accumulating into lists in Java and Groovy.md",
+      "time": "2022-02-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221027.1 ⭐️⭐️ Trick Lua into becoming an object-oriented language.md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220910 How to Install and Use virt-manager Virtual Machine Manager in Ubuntu and Other Linux.md",
+      "time": "2022-11-02",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/tech/20220204 Play the Viral Wordle Game in Linux.md",
+      "time": "2022-02-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221006 EuroLinux Desktop Review- A Worthy Alternative to Ubuntu LTS-.md",
+      "time": "2022-10-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220829 4 ways to use the Linux tar command.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220222 Internxt is an Open Source Encrypted Cloud Service With Native Linux Client.md",
+      "time": "2022-02-22",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221002 5 Great GUI Apps for Visual Disk Usage in Linux, Ubuntu [With Bonus].md",
+      "time": "2022-10-05",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230310.0 ⭐️⭐️ What is an edge-native application.md",
+      "time": "2023-03-11",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220303 Get started with Carbonio, an open source collaboration platform.md",
+      "time": "2022-03-04",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230930 17 Dolphin File Manager Tweaks for KDE Users.md",
+      "time": "2023-10-01",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221001 How To Use Ansible Vault To Protect Sensitive Playbook Data.md",
+      "time": "2022-10-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221218.0 ⭐️⭐️ Use my Groovy color wheel calculator.md",
+      "time": "2022-12-18",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221022.0 ⭐️⭐️ How to use journalctl to View and Analyze Systemd Logs [With Examples].md",
+      "time": "2022-10-23",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220527 4 cool new projects to try in Copr for May 2022.md",
+      "time": "2022-05-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220108 11 open source ideas for being more eco-friendly in 2022.md",
+      "time": "2022-01-09",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230303.2 ⭐️⭐️⭐️ How do Nix builds work.md",
+      "time": "2023-04-08",
+      "user": "Edward Liu"
+    },
+    {
+      "file": "sources/tech/20220729 7 Docks to Customize Your Linux Desktop.md",
+      "time": "2022-07-29",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220502 Data Profiler- An Open Source Machine Learning Technology For Data Monitoring.md",
+      "time": "2022-05-03",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221006 Dynamically update TLS certificates in a Golang server without downtime.md",
+      "time": "2022-10-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220927 How to Migrate to Fedora Linux from Ubuntu [Beginner-s Guide].md",
+      "time": "2022-09-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220908 How to use modern Python packaging and setuptools plugins together.md",
+      "time": "2022-09-09",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220912 Control your home automation remotely with Raspberry Pi and Traefik Hub.md",
+      "time": "2022-09-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220907 The business case for supporting EPEL.md",
+      "time": "2022-09-08",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220702 13 Interesting Distributions Based on Debian Linux.md",
+      "time": "2022-07-03",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220713 A guide to productivity management in open source projects.md",
+      "time": "2022-07-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221007 Tar Command in Linux with Practical Examples.md",
+      "time": "2022-10-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220915 How To Run All Programs In A Directory Via Sudo In Linux.md",
+      "time": "2022-09-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220715 Microservices Collaboration with Containerised Kafka.md",
+      "time": "2022-08-04",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/tech/20220814 New GNOME Text Editor – Everything You Need to Know.md",
+      "time": "2022-08-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20240122 OKD on Fedora Workstation with CRC.md",
+      "time": "2024-01-23",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20221207.3 ⭐️⭐️ 16 reasons DDEV will be your new favorite development environment.md",
+      "time": "2022-12-07",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220517 Top 10 Best GNOME Extensions in 2022.md",
+      "time": "2022-05-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220819 sssnake – A Super Addictive Snake Game for Linux Terminal.md",
+      "time": "2022-08-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221021.0 ⭐️ How to find GNOME Shell version from the Terminal.md",
+      "time": "2022-10-23",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230309.2 ⭐️⭐️ Compiler optimization and its effect on debugger line information.md",
+      "time": "2023-03-09",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230206.2 ⭐️⭐️ Reinvent your release strategy with an API gateway.md",
+      "time": "2023-02-06",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220722 Create conditional pipelines with CEL.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221011 Groovy vs Java- Connecting a PostgreSQL database with JDBC.md",
+      "time": "2022-10-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220929 How Podman packaging works on Linux.md",
+      "time": "2022-09-29",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220719 Code your first React UI app.md",
+      "time": "2022-07-19",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220817 How to Iron Out IDE Issues with Auto Stub Generation.md",
+      "time": "2022-08-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221021.4 ⭐️⭐️ Observability-driven development with OpenTelemetry.md",
+      "time": "2022-10-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220829 Clean up unwanted files in your music directory using Groovy.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230201.1 ⭐️⭐️⭐️ A guide to fuzzy queries with Apache ShardingSphere.md",
+      "time": "2023-02-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230516.3 ⭐️⭐️ Beginner's Guide to System Updates in Linux Mint.md",
+      "time": "2023-05-17",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221104.7 ⭐️ How to iterate over tables in Lua.md",
+      "time": "2022-11-04",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221031.3 ⭐️⭐️ 5 Best Mastodon Clients for Ubuntu and Other Linux.md",
+      "time": "2022-11-01",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220727 An Introduction to Sentiment Analysis Using NLP and ML.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230626 AI- Classical Techniques and Hidden Python Gems.md",
+      "time": "2023-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220829 Scrivano- Fascinating Whiteboard App For Handwritten Notes.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221014 How To Restrict Access To Linux Servers Using TCP Wrappers.md",
+      "time": "2022-10-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221203.0 ⭐️⭐️ Feel like a Linux wizard with the Thunar file manager.md",
+      "time": "2022-12-03",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230404.0 ⭐️⭐️ Linux Terminal Basics 8 Move Files and Directories (Cut-Paste Operation).md",
+      "time": "2023-04-08",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220601 KDE Plasma vs. Xfce- Comparing Lean and Mean Desktop Environments for Linux Users.md",
+      "time": "2022-06-01",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220708 Data Visualisation in R- Graphs.md",
+      "time": "2022-07-08",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230816 How to Upgrade VCS from 7.4.2 to 8.0 in RHEL.md",
+      "time": "2023-08-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220523 A hands-on guide to images and containers for developers.md",
+      "time": "2022-05-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220323 Implementing a toy version of TLS 1.3.md",
+      "time": "2022-03-24",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220812 5 Tools to Protect Your Email Address From Websites and Newsletters.md",
+      "time": "2022-08-12",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220815 Handling -apt-key is deprecated. Manage keyring files in trusted.gpg.d instead- in Ubuntu Linux.md",
+      "time": "2022-08-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20231024 Install, Configure and Use Remmina on Ubuntu.md",
+      "time": "2023-10-25",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220813 How To Create And Manage Btrfs Snapshots With Snapper In openSUSE.md",
+      "time": "2022-08-14",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220902 How to display the presence and absence of nth-highest group-wise values in SQL.md",
+      "time": "2022-09-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220211 Tame your text with Perl.md",
+      "time": "2022-02-11",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230403.3 ⭐️⭐️ Open source text editing for your website with CKEditor.md",
+      "time": "2023-04-04",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220603 Kubecost Releases Open Source Project To Rein in K8s Costs.md",
+      "time": "2022-06-04",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221026.1 ⭐️⭐️ Tips for using the Linux test command.md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221003 CPU-X an Alternative to CPU-Z for Linux.md",
+      "time": "2022-10-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220620 Are Low-Code Platforms Helpful for Professional Developers-.md",
+      "time": "2022-06-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221101.2 ⭐️ Uninstall Snap Packages from Ubuntu and Other Linux Distros.md",
+      "time": "2022-11-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230816 How to Install Veritas Cluster Server 8.0 in RHEL.md",
+      "time": "2023-08-16",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220728 A toy remote login server.md",
+      "time": "2022-07-29",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220619 Rocket.Chat vs. Slack- Choosing the Perfect Team Collaboration App.md",
+      "time": "2022-06-19",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230414.1 ⭐️⭐️⭐️ A distributed database load-balancing architecture with ShardingSphere.md",
+      "time": "2023-04-20",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220516 How to rebase to Fedora Linux 36 on Silverblue.md",
+      "time": "2022-05-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220629 DIY Embroidery with Inkscape and Ink-Stitch.md",
+      "time": "2022-06-29",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220924 Wolfi is a Linux Un-distro- Built for Software Supply Chain Security.md",
+      "time": "2022-09-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220516 -Extension Manager- App Helps You Install and Manage GNOME Shell Extensions.md",
+      "time": "2022-05-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221130.2 ⭐️⭐️⭐️ Build test scripts for your IoT platform.md",
+      "time": "2022-12-01",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220921 My favorite open source alternatives to Notion.md",
+      "time": "2022-09-21",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220715 The Ultimate Guide to Epic Games Store on Linux.md",
+      "time": "2022-07-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220608 slimmer emacs with kitty.md",
+      "time": "2022-10-15",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220707 Recommender Systems- An Overview of the Mathematics.md",
+      "time": "2022-07-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220627 Open Programmable Infrastructure- 1+1=3.md",
+      "time": "2022-06-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221006 Pros and Cons of Using Btrfs Filesystem in Linux.md",
+      "time": "2022-10-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221004 5 new improvements in Apache ShardingSphere.md",
+      "time": "2022-10-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230407.0 ⭐️⭐️ A Quick Guide to Install and Play GOG Games on Linux.md",
+      "time": "2023-04-08",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220601 A visual guide to Kubernetes networking fundamentals.md",
+      "time": "2022-06-01",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221208.4 ⭐️⭐️ Manage your file system from the Linux terminal.md",
+      "time": "2022-12-09",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220728 Use this nifty Unix tool to process text on Linux.md",
+      "time": "2022-07-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230411.4 ⭐️⭐️ Linux Terminal Basics 9 Editing Files in Linux Terminal.md",
+      "time": "2023-04-12",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220616 Voyager Live- Ubuntu LTS Spin with Immersive Experience.md",
+      "time": "2022-06-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220830 Clean up music tags with a Groovy script.md",
+      "time": "2022-08-30",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230312.0 ⭐️ Fixing Slow Download Speed while Using pacman in Arch Linux.md",
+      "time": "2023-03-16",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220806 Old-school technical writing with groff.md",
+      "time": "2022-08-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220601 What is Federated Learning-.md",
+      "time": "2022-06-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220626 Linux Mint- The Beginner-Friendly Linux Operating System for Everyone.md",
+      "time": "2022-06-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220525 Improve network performance with this open source framework.md",
+      "time": "2022-05-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220602 Creating a GitHub Action from Scratch.md",
+      "time": "2022-07-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220713 9 Rather Unknown Ways of Using Neofetch in Linux.md",
+      "time": "2022-07-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221007 Essential DNF Commands for Linux Users [With Examples].md",
+      "time": "2022-10-07",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220714 Top 10 Linux Distros for Beginners in 2022 [Compared].md",
+      "time": "2022-07-15",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220910 Export or Save As PDF A Specific Range in LibreOffice Calc Sheets using Macro.md",
+      "time": "2022-09-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220922 Ansible Register Variable.md",
+      "time": "2022-09-23",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220901 How To Convert Arch Linux Packages To AppImage Using Arch2appimage.md",
+      "time": "2022-09-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220613 Use Terraform to manage TrueNAS.md",
+      "time": "2022-06-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220528 Portmaster- A GlassWire Alternative for Linux to Monitor & Secure Network Connections.md",
+      "time": "2022-05-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220503 PHP MySQL WHERE Clause.md",
+      "time": "2022-05-04",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220618 How Wordle inspired me to create a 3D printing wiki the open source way.md",
+      "time": "2022-06-19",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221101.11 ⭐️⭐️ How to Install Flatpak Apps in Ubuntu and Other Linux.md",
+      "time": "2022-11-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220913 How I troubleshoot swappiness and startup time on Linux.md",
+      "time": "2022-09-13",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220512 sqlite-utils- a nice way to import data into SQLite for analysis.md",
+      "time": "2022-05-14",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220810 Using Machine Learning to Identify Reefs in the Ocean.md",
+      "time": "2022-08-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230118.0 ⭐️⭐️⭐️ Examples of problems with integers.md",
+      "time": "2023-04-08",
+      "user": "Edward Liu"
+    },
+    {
+      "file": "sources/tech/20231009 Coq and Lean- Powerful Interactive Theorem Provers.md",
+      "time": "2023-11-20",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20220916 Developing Low Latency Applications in the Cloud  with AI and ML.md",
+      "time": "2022-09-18",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220716 4 Ways to Fix the Laptop Brightness Problem In Ubuntu.md",
+      "time": "2022-07-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220513 Fedora Media Writer- World-Class LIVE USB Creator [Tutorial].md",
+      "time": "2022-05-14",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20230228.3 ⭐️ Terminal Basics Series 3 Listing the Contents of Directory With ls Command.md",
+      "time": "2023-03-02",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220511 Manage your Gmail filters from the Linux command line.md",
+      "time": "2022-05-11",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220503 Automate and manage multiple devices with Remote Home Assistant.md",
+      "time": "2022-05-04",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221005 Use OCI containers to run WebAssembly workloads.md",
+      "time": "2022-10-06",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220831 How we track the community health of our open source project.md",
+      "time": "2022-08-31",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221206.5 ⭐️ How the Linux Worker file manager can work for you.md",
+      "time": "2022-12-07",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220514 An introduction to USB Device Emulation and how to take advantage of it.md",
+      "time": "2022-05-14",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220503 How I use the Bacula GUI for backup and recovery.md",
+      "time": "2022-05-04",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221024.2 ⭐️ How to Clean Up Flatpak Apps to Clear Disk Space.md",
+      "time": "2022-10-30",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221221.4 ⭐️⭐️ My 4 favorite features of the 4pane file manager on Linux.md",
+      "time": "2022-12-22",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220708 Reptyr – Move A Running Process From One Terminal To Another Without Closing It.md",
+      "time": "2022-07-09",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20221107.0 ⭐️⭐️ Ghostwriter An Excellent Open-Source Writing App.md",
+      "time": "2022-11-08",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20230304.2 ⭐️⭐️ Create templates for your video graphics with Inkscape.md",
+      "time": "2023-03-05",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20220427 5 Best Mastodon Clients for Ubuntu and Other Linux.md",
+      "time": "2022-05-20",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220628 How to Install and Configure HAProxy on Ubuntu 22.04.md",
+      "time": "2022-06-28",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220619 simple note taking.md",
+      "time": "2022-07-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/tech/20230418.4 ⭐️⭐️ Linux Terminal Basics 10 Getting Help in Linux Terminal.md",
+      "time": "2023-04-20",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/tech/20221008 How to Use Raspberry Pi via VNC.md",
+      "time": "2022-10-09",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220803 Play Crossword Puzzle Games on Linux Desktop With this Brand New GNOME App.md",
+      "time": "2022-08-03",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/tech/20220921 Garuda Linux- All-Rounder Distro Based on Arch Linux.md",
+      "time": "2022-09-21",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/news/20240119 SparkyLinux 2024.01 Update Debuts With PipeWire and More.md",
+      "time": "2024-01-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/news/20240116 Linux Mint 21.3 Lands With Cinnamon 6.0 Desktop.md",
+      "time": "2024-01-21",
+      "user": "DarkSun"
+    },
+    {
+      "file": "sources/talk/20231127 PipeWire 1.0 - An interview with PipeWire creator Wim Taymans.md",
+      "time": "2023-11-28",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20220319 What-s the Fuss About GNOME-s Libadwaita Library in Linux World.md",
+      "time": "2022-03-20",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20220901 Usability and accessibility starts with open communication.md",
+      "time": "2022-09-02",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20220820 There is Life After the Death of x86.md",
+      "time": "2022-08-22",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20230430.0 ⭐️⭐️ Meet the Techs of Tomorrow Where They Are Today A Conversation With Stu Keroff.md",
+      "time": "2023-05-01",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20230210.1 ⭐️⭐️ What an open license means to gamers.md",
+      "time": "2023-10-19",
+      "user": "wuming"
+    },
+    {
+      "file": "sources/talk/20230405.2 ⭐️⭐️ Open source community analysis with actionable insights.md",
+      "time": "2023-04-08",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20220723 Why Design Thinking is a box office hit for open source teams.md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20230807 Some tactics for writing in public.md",
+      "time": "2023-08-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20221206.2 ⭐️⭐️ 'Don't be Afraid to Contribute' Mirko Brombin Talks about Vanilla OS and Other Future Projects.md",
+      "time": "2022-12-07",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20220617 What scrum masters can learn from dancing.md",
+      "time": "2022-06-17",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20220724 Wayland Core Protocol is Tailored Only for GNOME and That-s Not a Good Thing [Opinion].md",
+      "time": "2022-07-27",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20220609 SSL Certificates-  Make the Right Choice.md",
+      "time": "2022-11-20",
+      "user": "Xingyu Wang"
+    },
+    {
+      "file": "sources/talk/20230117.2 ⭐️⭐️ Making Content that Resonates An Interview with 'The Linux Cast' Creator, Matthew Weber.md",
+      "time": "2023-01-28",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20230922 I Switched to LanguageTool from Grammarly- Taking Control of Creativity and Privacy.md",
+      "time": "2023-09-23",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20220604 Attract contributors to your open source project with authenticity.md",
+      "time": "2022-06-04",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20220825 -I wish the industry would not follow this ever increasing hype cycle for new stuff-.md",
+      "time": "2022-08-25",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20220623 Applying smart thinking to open organization principles.md",
+      "time": "2023-06-18",
+      "user": "Xiaoting Huang"
+    },
+    {
+      "file": "sources/talk/20230317.2 ⭐️⭐️ How being open at work results in happy customers.md",
+      "time": "2023-03-18",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20230301.2 ⭐️⭐️ 3 myths about open source CMS platforms.md",
+      "time": "2023-03-03",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20230419.2 ⭐️⭐️ The sharing economy and the open organization.md",
+      "time": "2023-05-22",
+      "user": "yjacks"
+    },
+    {
+      "file": "sources/talk/20230322.1 ⭐️⭐️ Why your open source project needs a content strategy.md",
+      "time": "2023-03-24",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20220624 Create a more diverse and equitable open source project with open standards.md",
+      "time": "2022-06-24",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20221018.2 ⭐️⭐️⭐️ Exploring innovative Open Organization charts.md",
+      "time": "2023-12-17",
+      "user": "CanYellow"
+    },
+    {
+      "file": "sources/talk/20230421.0 ⭐️⭐️ The future of the sharing business model.md",
+      "time": "2023-04-27",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20221010 Defining an open source AI for the greater good.md",
+      "time": "2022-10-12",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20220816 The Effect of Nvidia-s Open Source Drivers On Linux Gamers.md",
+      "time": "2022-08-16",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20230209.2 ⭐️⭐️ 3 types of leadership for open organizations.md",
+      "time": "2023-02-11",
+      "user": "六开箱"
+    },
+    {
+      "file": "sources/talk/20220808 How open organizations can harness energy disruptions.md",
+      "time": "2022-08-08",
+      "user": "lkxed"
+    },
+    {
+      "file": "sources/talk/20230605 Some blogging myths.md",
+      "time": "2023-08-13",
+      "user": "Xingyu.Wang"
+    },
+    {
+      "file": "sources/talk/20240122 CP-M- An Unsung Architect of Micro-Computing.md",
+      "time": "2024-01-25",
+      "user": "Xingyu.Wang"
+    }
+  ]
+}
