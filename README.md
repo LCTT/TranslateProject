@@ -20,21 +20,7 @@ LCTT 已经拥有几百名活跃成员，并欢迎更多的 Linux 志愿者加�
 - LCTT 官网： [https://linux.cn/lctt/](https://linux.cn/lctt/)
 - LCTT 状态： [https://lctt.github.io/](https://lctt.github.io/)
 
-加入我们
--------------------------------
-
-请首先加入翻译组的 QQ 群，群号是：**198889102**，加群时请说明是“*志愿者*”。
-
-加入的成员，请：
-
-1. 修改你的 QQ 群名片为“译者-您的_GitHub_ID”。
-2. 阅读 [WIKI](https://lctt.github.io/wiki) 了解如何开始。
-3. 遇到不解之处，请在群内发问。
-
-如何开始
--------------------------------
-
-请阅读 [WIKI](https://lctt.github.io/wiki)。如需要协助，请在群内发问。
+**LCTT 已经伴随 Linux 中国开源社区 [停止运营](LinuxChina-End.md) 而停止运作。**
 
 历史
 -------------------------------
@@ -76,7 +62,11 @@ LCTT 已经拥有几百名活跃成员，并欢迎更多的 Linux 志愿者加�
 * 2018/09/10 [LCTT 五周年](https://linux.cn/article-9999-1.html)。
 * 2018/10/25 重构了 CI，感谢 vizv、lujun9972、bestony。
 * 2018/11/13 [成立了项目管理委员会（PMC）](https://linux.cn/article-10279-1.html)，初始成员为：@wxy （主席）、@oska874、@lujun9972、@bestony、@pityonline、@geekpi、@qhwdw。
-
+* 2020/09/10 Linux 中国旗下贡献者组织 [LCTT 七年回顾和展望](https://linux.cn/article-12600-1.html)
+* 2022/09/10 开源贡献者翻译组 [LCTT 九岁](https://linux.cn/article-15017-1.html) 啦
+* 2023/01/31 发布《[LCTT 术语词典](https://linux.cn/article-15496-1.html)》
+* 2023/09/10 [LCTT 10 年，迎来新蜕变](https://linux.cn/article-16178-1.html)
+* 2024/02/01 [Linux 中国及 LCTT 停止运营](https://linux.cn/article-16602-1.html)
 
 项目管理委员及核心成员
 -------------------------------
